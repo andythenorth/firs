@@ -1,0 +1,24 @@
+//Action 0 defined cargo types.
+
+//Coal
+-1 * 0 00 0B \b19 01 	//Action 0 feature 0B for cargos 19 properties
+01 						//ID
+08 01 			// B Bit number for bitmasks  
+09 \b01 DC 		// W TextID for the cargo type name  
+0A \b34 DC 		// W TextID for the name of one unit from the cargo type  
+0B \b67 DC 		// W TextID to be displayed for 1 unit of cargo  
+0C \b100 DC 	// W TextID to be displayed for multiple units of cargo  
+0D \b133 DC 	// W TextID for cargo type abbreviation  
+0E \w4298 		// W Sprite number for the icon of the cargo  
+0F \b16 		// B Weight of one unit of the cargo  
+10 \b7 			// B Penalty times 
+11 \b255 		// B Penalty times  
+12 \d5916 		// D Base price  
+13 \b6 			// B Color for the station list window  
+14 \b6 			// B Color for the cargo payment list window  
+15 01 			// B Freight status (for freighttrains switch); 0=not freight, 1=is freight  
+16 \b10 		// W Cargo classes  
+17 "COAL" 	 	// D Cargo label  
+18 FF 			// B Substitute type for town growth  
+19 \w256 		// W Multiplier for town growth  
+1A 00 			// B Callback flags 
