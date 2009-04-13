@@ -2,4 +2,18 @@
 // (Info version 7)
 // Format: spritenum pcxfile xpos ypos compression ysize xsize xrel yrel
 -1 * 0 00 00 00 00
--1 * 0 08 07 FB FB 04 01 "FIRS Industry Replacement Set" 00 "FIRS Industry Replacement Set\nLicense: GPL v2\nBy andythenorth, FooBar and Zephyris" 00
+-1 * 0 08 07 FB FB 04 01 "FIRS Industry Replacement Set" 00 "FIRS Industry Replacement Set\nLicense: GPL v2\nBy andythenorth, FooBar and Zephyris." 00
+
+//Skip if OTTD
+-1 * 0 09 9D 04 \7= 01 00 00 00 02
+//Error not for TTDP
+-1 * 0 0B 03 7F 02 "OpenTTD" 00
+//Terminate if TTDP
+-1 * 0 09 9A 01 \71 00 00
+
+//Skip if climate != toyland
+-1 * 0 07 83 01 \7! 03 02
+//Error not for TTDP
+-1 * 0 0B 03 7F FF "Not designed to be used with Toyland climate" 00
+//Terminate if TTDP
+-1 * 0 07 9A 01 \71 00 00

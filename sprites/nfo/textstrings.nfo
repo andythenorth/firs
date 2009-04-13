@@ -7,6 +7,8 @@
 
 
 //Sugar cane
+//We only need this in tropic:
+-1 * 0 07 83 01 \7! 02 01
 //Names: cargo type; 1 unit of type; 1 unit of cargo; multiple units of cargo; type abbreviation
 //Format: Action 04; Feature 0B; LangID 7F with bit 7 set; \bx strings to change; starting with string DC \bxx
 -1 * 0 04 0B FF \b4 \b01 DC
@@ -34,7 +36,7 @@
 "Fruit and Vegetable" 00
 "\7C ton of fruit and vegetables" 00
 "\7C tons of fruit and vegetables" 00
-			//FD already exists as 009E
+			//FD already exists as 009C
 
 
 //Fish
@@ -47,9 +49,9 @@
 "\0EFI" 00
 
 
+//Wool
 //We only need this in temperate and arctic:
 -1 * 0 07 83 01 \7> 01 01
-//Wool
 //Names: cargo type; 1 unit of type; 1 unit of cargo; multiple units of cargo; type abbreviation
 //Format: Action 04; Feature 0B; LangID 7F with bit 7 set; \bx strings to change; starting with string DC \bxx
 -1 * 0 04 0B FF \b4 \b17 DC
@@ -59,9 +61,9 @@
 "\0EWL" 00
 
 
+//Cotton
 //We only need this in tropic:
 -1 * 0 07 83 01 \7! 02 01
-//Cotton
 //Names: cargo type; 1 unit of type; 1 unit of cargo; multiple units of cargo; type abbreviation
 //Format: Action 04; Feature 0B; LangID 7F with bit 7 set; \bx strings to change; starting with string DC \bxx
 -1 * 0 04 0B FF \b4 \b17 DC
@@ -203,6 +205,6 @@
 //Format: Action 04; Feature 0B; LangID 7F with bit 7 set; \bx strings to change; starting with string DC \bxx
 -1 * 0 04 0B FF \b4 \b69 DC
 "Survey Supplies" 00 		//both types of type
-\7C crate of survey supplies" 00
+"\7C crate of survey supplies" 00
 "\7C crates of survey supplies" 00
 "\0ESS" 00
