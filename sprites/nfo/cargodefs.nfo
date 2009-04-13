@@ -1,24 +1,192 @@
 //Action 0 defined cargo types.
 
+//Passengers
+-1 * 0 00 0B \b19 01 	//Action 0, feature 0B for cargos, 19 properties, changing 1 cargo def
+00 		//ID
+08 00 		// B Bit number for bitmasks  
+09 0F 00	// W TextID for the cargo type name  
+0A 2F 00 	// W TextID for the name of one unit from the cargo type  
+0B 4F 00 	// W TextID to be displayed for 1 unit of cargo  
+0C 6F 00 	// W TextID to be displayed for multiple units of cargo  
+0D 8F 00 	// W TextID for cargo type abbreviation  
+0E \w4297 	// W Sprite number for the icon of the cargo  
+0F \b1 		// B Weight of one unit of the cargo  
+10 \b0 		// B Penalty times 
+11 \b22 	// B Penalty times  
+12 \d3185 	// D Base price  
+13 \b152 	// B Color for the station list window  
+14 \b152 	// B Color for the cargo payment list window  
+15 00 		// B Freight status (for freighttrains switch); 0=not freight, 1=is freight  
+16 \w1 		// W Cargo classes  
+17 "PASS" 	// D Cargo label  
+18 00 		// B Substitute type for town growth  
+19 \w256 	// W Multiplier for town growth  
+1A 00 		// B Callback flags 
+
+
 //Coal
--1 * 0 00 0B \b19 01 	//Action 0 feature 0B for cargos 19 properties
-01 						//ID
-08 01 			// B Bit number for bitmasks  
-09 \b01 DC 		// W TextID for the cargo type name  
-0A \b34 DC 		// W TextID for the name of one unit from the cargo type  
-0B \b67 DC 		// W TextID to be displayed for 1 unit of cargo  
-0C \b100 DC 	// W TextID to be displayed for multiple units of cargo  
-0D \b133 DC 	// W TextID for cargo type abbreviation  
-0E \w4298 		// W Sprite number for the icon of the cargo  
-0F \b16 		// B Weight of one unit of the cargo  
-10 \b7 			// B Penalty times 
-11 \b255 		// B Penalty times  
-12 \d5916 		// D Base price  
-13 \b6 			// B Color for the station list window  
-14 \b6 			// B Color for the cargo payment list window  
-15 01 			// B Freight status (for freighttrains switch); 0=not freight, 1=is freight  
-16 \b10 		// W Cargo classes  
-17 "COAL" 	 	// D Cargo label  
-18 FF 			// B Substitute type for town growth  
-19 \w256 		// W Multiplier for town growth  
-1A 00 			// B Callback flags 
+-1 * 0 00 0B \b19 01 	//Action 0, feature 0B for cargos, 19 properties, changing 1 cargo def
+01 		//ID
+08 01 		// B Bit number for bitmasks  
+09 10 00	// W TextID for the cargo type name  
+0A 30 00 	// W TextID for the name of one unit from the cargo type  
+0B 50 00 	// W TextID to be displayed for 1 unit of cargo  
+0C 70 00 	// W TextID to be displayed for multiple units of cargo  
+0D 90 00 	// W TextID for cargo type abbreviation  
+0E \w4298 	// W Sprite number for the icon of the cargo  
+0F \b16 	// B Weight of one unit of the cargo  
+10 \b7 		// B Penalty times 
+11 \b255 	// B Penalty times  
+12 \d5916 	// D Base price  
+13 \b6 		// B Color for the station list window  
+14 \b6 		// B Color for the cargo payment list window  
+15 01 		// B Freight status (for freighttrains switch); 0=not freight, 1=is freight  
+16 \w10 	// W Cargo classes  
+17 "COAL" 	// D Cargo label  
+18 FF 		// B Substitute type for town growth  
+19 \w256 	// W Multiplier for town growth  
+1A 00 		// B Callback flags 
+
+
+//Mail
+-1 * 0 00 0B \b19 01 	//Action 0, feature 0B for cargos, 19 properties, changing 1 cargo def
+02 		//ID
+08 02 		// B Bit number for bitmasks  
+09 11 00	// W TextID for the cargo type name  
+0A 31 00 	// W TextID for the name of one unit from the cargo type  
+0B 51 00 	// W TextID to be displayed for 1 unit of cargo  
+0C 71 00 	// W TextID to be displayed for multiple units of cargo  
+0D 91 00 	// W TextID for cargo type abbreviation  
+0E \w4550 	// W Sprite number for the icon of the cargo  
+0F \b4 		// B Weight of one unit of the cargo  
+10 \b6 		// B Penalty times 
+11 \b24 	// B Penalty times  
+12 \d5916 	// D Base price  
+13 \b15 	// B Color for the station list window  
+14 \b15 	// B Color for the cargo payment list window  
+15 01 		// B Freight status (for freighttrains switch); 0=not freight, 1=is freight  
+16 \w2 		// W Cargo classes  
+17 "MAIL" 	// D Cargo label  
+18 02 		// B Substitute type for town growth  
+19 \w256 	// W Multiplier for town growth  
+1A 00 		// B Callback flags 
+
+
+//Oil
+-1 * 0 00 0B \b19 01 	//Action 0, feature 0B for cargos, 19 properties, changing 1 cargo def
+03 		//ID
+08 03 		// B Bit number for bitmasks  
+09 12 00	// W TextID for the cargo type name  
+0A 32 00 	// W TextID for the name of one unit from the cargo type  
+0B 52 00 	// W TextID to be displayed for 1 unit of cargo  
+0C 72 00 	// W TextID to be displayed for multiple units of cargo  
+0D 92 00 	// W TextID for cargo type abbreviation  
+0E \w4300 	// W Sprite number for the icon of the cargo  
+0F \b14 	// B Weight of one unit of the cargo  
+10 \b25 	// B Penalty times 
+11 \b255 	// B Penalty times  
+12 \d4437 	// D Base price  
+13 \b172 	// B Color for the station list window  
+14 \b172 	// B Color for the cargo payment list window  
+15 01 		// B Freight status (for freighttrains switch); 0=not freight, 1=is freight  
+16 \w40 	// W Cargo classes  
+17 "OIL_" 	// D Cargo label  
+18 FF 		// B Substitute type for town growth  
+19 \w256 	// W Multiplier for town growth  
+1A 00 		// B Callback flags 
+
+
+//Livestock
+-1 * 0 00 0B \b19 01 	//Action 0, feature 0B for cargos, 19 properties, changing 1 cargo def
+04 		//ID
+08 04 		// B Bit number for bitmasks  
+09 13 00	// W TextID for the cargo type name  
+0A 33 00 	// W TextID for the name of one unit from the cargo type  
+0B 53 00 	// W TextID to be displayed for 1 unit of cargo  
+0C 73 00 	// W TextID to be displayed for multiple units of cargo  
+0D 93 00 	// W TextID for cargo type abbreviation 
+0E \w4301 	// W Sprite number for the icon of the cargo  
+0F \b3 		// B Weight of one unit of the cargo  
+10 \b0 		// B Penalty times 
+11 \b24 	// B Penalty times  
+12 \d4322 	// D Base price  
+13 \b209 	// B Color for the station list window  
+14 \b209 	// B Color for the cargo payment list window  
+15 01 		// B Freight status (for freighttrains switch); 0=not freight, 1=is freight  
+16 \w20 	// W Cargo classes  
+17 "LVST" 	// D Cargo label  
+18 FF 		// B Substitute type for town growth  
+19 \w256 	// W Multiplier for town growth  
+1A 00 		// B Callback flags 
+
+
+//Goods
+-1 * 0 00 0B \b19 01 	//Action 0, feature 0B for cargos, 19 properties, changing 1 cargo def
+05 		//ID
+08 05 		// B Bit number for bitmasks  
+09 14 00	// W TextID for the cargo type name  
+0A 34 00 	// W TextID for the name of one unit from the cargo type  
+0B 54 00 	// W TextID to be displayed for 1 unit of cargo  
+0C 74 00 	// W TextID to be displayed for multiple units of cargo  
+0D 94 00 	// W TextID for cargo type abbreviation  
+0E \w4302 	// W Sprite number for the icon of the cargo  
+0F \b8 		// B Weight of one unit of the cargo  
+10 \b5 		// B Penalty times 
+11 \b28 	// B Penalty times  
+12 \d6144 	// D Base price  
+13 \b194 	// B Color for the station list window  
+14 \b194 	// B Color for the cargo payment list window  
+15 01 		// B Freight status (for freighttrains switch); 0=not freight, 1=is freight  
+16 \w24 	// W Cargo classes  
+17 "GOOD" 	// D Cargo label  
+18 05 		// B Substitute type for town growth  
+19 \w256 	// W Multiplier for town growth  
+1A 00 		// B Callback flags 
+
+
+//Grain
+-1 * 0 00 0B \b19 01 	//Action 0, feature 0B for cargos, 19 properties, changing 1 cargo def
+06 		//ID
+08 06 		// B Bit number for bitmasks  
+09 15 00	// W TextID for the cargo type name  
+0A 35 00 	// W TextID for the name of one unit from the cargo type  
+0B 55 00 	// W TextID to be displayed for 1 unit of cargo  
+0C 75 00 	// W TextID to be displayed for multiple units of cargo  
+0D 95 00 	// W TextID for cargo type abbreviation 
+0E \w4303 	// W Sprite number for the icon of the cargo  
+0F \b16 	// B Weight of one unit of the cargo  
+10 \b4 		// B Penalty times 
+11 \b40 	// B Penalty times  
+12 \d4778 	// D Base price  
+13 \b191 	// B Color for the station list window  
+14 \b191 	// B Color for the cargo payment list window  
+15 01 		// B Freight status (for freighttrains switch); 0=not freight, 1=is freight  
+16 \w10 	// W Cargo classes  
+17 "GRAI" 	// D Cargo label  
+18 FF 		// B Substitute type for town growth  
+19 \w256 	// W Multiplier for town growth  
+1A 00 		// B Callback flags 
+
+
+//Sugar Cane
+-1 * 0 00 0B \b19 01 	//Action 0, feature 0B for cargos, 19 properties, changing 1 cargo def
+06 		//ID
+08 06 		// B Bit number for bitmasks  
+09 \b01 DC 	// W TextID for the cargo type name  
+0A \b01 DC 	// W TextID for the name of one unit from the cargo type  
+0B \b02 DC 	// W TextID to be displayed for 1 unit of cargo  
+0C \b03 DC 	// W TextID to be displayed for multiple units of cargo  
+0D \b04 DC 	// W TextID for cargo type abbreviation  
+0E \w4303 	// W Sprite number for the icon of the cargo  
+0F \b16 	// B Weight of one unit of the cargo  
+10 \b3 		// B Penalty times 
+11 \b30 	// B Penalty times  
+12 \d4523 	// D Base price  
+13 \b91 	// B Color for the station list window  
+14 \b91 	// B Color for the cargo payment list window  
+15 01 		// B Freight status (for freighttrains switch); 0=not freight, 1=is freight  
+16 \w10 	// W Cargo classes  
+17 "SGCN" 	// D Cargo label  
+18 FF 		// B Substitute type for town growth  
+19 \w256 	// W Multiplier for town growth  
+1A 00 		// B Callback flags 
