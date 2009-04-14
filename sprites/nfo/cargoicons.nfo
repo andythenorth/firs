@@ -1,0 +1,160 @@
+//Cargo Icons
+
+//Let's start with an Action 1, defining 32 new sprites; feature 0B cargos; 32 sets and 1 entry per set
+-1 * 0 01 0B \b32 01
+// Format: spritenum pcxfile xpos ypos compression ysize xsize xrel yrel
+-1 firs/sprites/pcx/other/cargoicons.pcx 10 10 09 10 10 0 0
+-1 firs/sprites/pcx/other/cargoicons.pcx 30 10 09 10 10 0 0
+-1 firs/sprites/pcx/other/cargoicons.pcx 50 10 09 10 10 0 0
+-1 firs/sprites/pcx/other/cargoicons.pcx 70 10 09 10 10 0 0
+-1 firs/sprites/pcx/other/cargoicons.pcx 90 10 09 10 10 0 0
+-1 firs/sprites/pcx/other/cargoicons.pcx 110 10 09 10 10 0 0
+-1 firs/sprites/pcx/other/cargoicons.pcx 130 10 09 10 10 0 0
+-1 firs/sprites/pcx/other/cargoicons.pcx 150 10 09 10 10 0 0
+-1 firs/sprites/pcx/other/cargoicons.pcx 170 10 09 10 10 0 0
+-1 firs/sprites/pcx/other/cargoicons.pcx 190 10 09 10 10 0 0
+-1 firs/sprites/pcx/other/cargoicons.pcx 210 10 09 10 10 0 0
+-1 firs/sprites/pcx/other/cargoicons.pcx 230 10 09 10 10 0 0
+-1 firs/sprites/pcx/other/cargoicons.pcx 250 10 09 10 10 0 0
+-1 firs/sprites/pcx/other/cargoicons.pcx 270 10 09 10 10 0 0
+-1 firs/sprites/pcx/other/cargoicons.pcx 290 10 09 10 10 0 0
+-1 firs/sprites/pcx/other/cargoicons.pcx 310 10 09 10 10 0 0
+// Format: spritenum pcxfile xpos ypos compression ysize xsize xrel yrel
+-1 firs/sprites/pcx/other/cargoicons.pcx 10 30 09 10 10 0 0
+-1 firs/sprites/pcx/other/cargoicons.pcx 30 30 09 10 10 0 0
+-1 firs/sprites/pcx/other/cargoicons.pcx 50 30 09 10 10 0 0
+-1 firs/sprites/pcx/other/cargoicons.pcx 70 30 09 10 10 0 0
+-1 firs/sprites/pcx/other/cargoicons.pcx 90 30 09 10 10 0 0
+-1 firs/sprites/pcx/other/cargoicons.pcx 110 30 09 10 10 0 0
+-1 firs/sprites/pcx/other/cargoicons.pcx 130 30 09 10 10 0 0
+-1 firs/sprites/pcx/other/cargoicons.pcx 150 30 09 10 10 0 0
+-1 firs/sprites/pcx/other/cargoicons.pcx 170 30 09 10 10 0 0
+-1 firs/sprites/pcx/other/cargoicons.pcx 190 30 09 10 10 0 0
+-1 firs/sprites/pcx/other/cargoicons.pcx 210 30 09 10 10 0 0
+-1 firs/sprites/pcx/other/cargoicons.pcx 230 30 09 10 10 0 0
+-1 firs/sprites/pcx/other/cargoicons.pcx 250 30 09 10 10 0 0
+-1 firs/sprites/pcx/other/cargoicons.pcx 270 30 09 10 10 0 0
+-1 firs/sprites/pcx/other/cargoicons.pcx 290 30 09 10 10 0 0
+-1 firs/sprites/pcx/other/cargoicons.pcx 310 30 09 10 10 0 0
+
+
+//And now the Action 2, again 32 of those; feature 0B cargos; etID; literal 01 and 00; 32 sets
+-1 * 0 02 0B \b0 01 00 \w0
+-1 * 0 02 0B \b1 01 00 \w1
+-1 * 0 02 0B \b2 01 00 \w2
+-1 * 0 02 0B \b3 01 00 \w3
+-1 * 0 02 0B \b4 01 00 \w4
+-1 * 0 02 0B \b5 01 00 \w5
+-1 * 0 02 0B \b6 01 00 \w6
+-1 * 0 02 0B \b7 01 00 \w7
+-1 * 0 02 0B \b8 01 00 \w8
+-1 * 0 02 0B \b9 01 00 \w9
+-1 * 0 02 0B \b10 01 00 \w10
+-1 * 0 02 0B \b11 01 00 \w11
+-1 * 0 02 0B \b12 01 00 \w12
+-1 * 0 02 0B \b13 01 00 \w13
+-1 * 0 02 0B \b14 01 00 \w14
+-1 * 0 02 0B \b15 01 00 \w15
+
+-1 * 0 02 0B \b16 01 00 \w16
+-1 * 0 02 0B \b17 01 00 \w17
+-1 * 0 02 0B \b18 01 00 \w18
+-1 * 0 02 0B \b19 01 00 \w19
+-1 * 0 02 0B \b20 01 00 \w20
+-1 * 0 02 0B \b21 01 00 \w21
+-1 * 0 02 0B \b22 01 00 \w22
+-1 * 0 02 0B \b23 01 00 \w23
+-1 * 0 02 0B \b24 01 00 \w24
+-1 * 0 02 0B \b25 01 00 \w25
+-1 * 0 02 0B \b26 01 00 \w26
+-1 * 0 02 0B \b27 01 00 \w27
+-1 * 0 02 0B \b28 01 00 \w28
+-1 * 0 02 0B \b29 01 00 \w29
+-1 * 0 02 0B \b30 01 00 \w30
+-1 * 0 02 0B \b31 01 00 \w31
+
+
+//Finally the Action 3, using the setIDs just defined, linking the icons to the cargo types
+//feature 0B cargos; 1 cargo to change; cargo's ID; 00; setID from action 2
+//Passengers
+-1 * 0 03 0B 01 00 00 \w0
+//Coal
+-1 * 0 03 0B 01 01 00 \w1
+//Mail
+-1 * 0 03 0B 01 02 00 \w2
+//Oil
+-1 * 0 03 0B 01 03 00 \w3
+//Livestock
+-1 * 0 03 0B 01 04 00 \w4
+//Goods
+-1 * 0 03 0B 01 05 00 \w5
+//Grain
+//We only need this in temperate and arctic:
+-1 * 0 07 83 01 \7> 01 01
+-1 * 0 03 0B 01 06 00 \w6
+//Sugar Cane
+//We only need this in tropic:
+-1 * 0 07 83 01 \7! 02 01
+-1 * 0 03 0B 01 06 00 \w7
+//Wood
+-1 * 0 03 0B 01 07 00 \w8
+//Iron ore
+-1 * 0 03 0B 01 08 00 \w9
+//Steel
+-1 * 0 03 0B 01 09 00 \w10
+//Waste
+-1 * 0 03 0B 01 0A 00 \w11
+//Food
+-1 * 0 03 0B 01 0B 00 \w12
+//Milk
+-1 * 0 03 0B 01 0C 00 \w13
+//Fruit and vegetables
+-1 * 0 03 0B 01 0D 00 \w14
+
+//Fish
+-1 * 0 03 0B 01 0E 00 \w15
+
+
+//Water
+//We only need this in tropic:
+-1 * 0 07 83 01 \7! 02 01
+-1 * 0 03 0B 01 0F 00 \w17
+//Sand
+//We only need this in temperate and arctic. There's enough sand in the desert already ;)
+-1 * 0 07 83 01 \7> 01 01
+-1 * 0 03 0B 01 0F 00 \w16
+//Scrap metal
+-1 * 0 03 0B 01 10 00 \w18
+//Cotton
+//We only need this in tropic:
+-1 * 0 07 83 01 \7! 02 01
+-1 * 0 03 0B 01 11 00 \w19
+//Wool
+//We only need this in temperate and arctic.
+-1 * 0 07 83 01 \7> 01 01
+-1 * 0 03 0B 01 11 00 \w20
+//Gravel
+-1 * 0 03 0B 01 12 00 \w21
+//Lumber
+-1 * 0 03 0B 01 13 00 \w22
+//Packaging
+-1 * 0 03 0B 01 14 00 \w23
+//Farm Supplies
+-1 * 0 03 0B 01 15 00 \w24
+
+//Survey Supplies
+-1 * 0 03 0B 01 16 00 \w25
+//Chemicals
+-1 * 0 03 0B 01 17 00 \w26
+//Engineering Supplies
+-1 * 0 03 0B 01 18 00 \w27
+//Fuel oil
+-1 * 0 03 0B 01 19 00 \w28
+//Bauxite
+-1 * 0 03 0B 01 1A 00 \w29
+//Parts
+-1 * 0 03 0B 01 1B 00 \w30
+//Aluminium
+
+-1 * 0 03 0B 01 1C 00 \w31
+
