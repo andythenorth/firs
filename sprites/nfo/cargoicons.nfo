@@ -106,55 +106,54 @@
 -1 * 0 03 0B 01 0A 00 \w11
 //Food
 -1 * 0 03 0B 01 0B 00 \w12
-//Milk
--1 * 0 03 0B 01 0C 00 \w13
 //Fruit and vegetables
--1 * 0 03 0B 01 0D 00 \w14
+-1 * 0 03 0B 01 0C 00 \w14
 
 //Fish
--1 * 0 03 0B 01 0E 00 \w15
+-1 * 0 03 0B 01 0D 00 \w15
+//Milk
+-1 * 0 03 0B 01 0E 00 \w13
 
-
-//Water
-//We only need this in tropic:
--1 * 0 07 83 01 \7! 02 01
--1 * 0 03 0B 01 0F 00 \w17
-//Sand
-//We only need this in temperate and arctic. There's enough sand in the desert already ;)
--1 * 0 07 83 01 \7> 01 01
--1 * 0 03 0B 01 0F 00 \w16
-//Scrap metal
--1 * 0 03 0B 01 10 00 \w18
 //Cotton
 //We only need this in tropic:
 -1 * 0 07 83 01 \7! 02 01
--1 * 0 03 0B 01 11 00 \w19
+-1 * 0 03 0B 01 0F 00 \w19
 //Wool
 //We only need this in temperate and arctic.
 -1 * 0 07 83 01 \7> 01 01
--1 * 0 03 0B 01 11 00 \w20
+-1 * 0 03 0B 01 0F 00 \w20
+//Water
+//We only need this in tropic:
+-1 * 0 07 83 01 \7! 02 01
+-1 * 0 03 0B 01 10 00 \w17
+//Sand
+//We only need this in temperate and arctic. There's enough sand in the desert already ;)
+-1 * 0 07 83 01 \7> 01 01
+-1 * 0 03 0B 01 10 00 \w16
 //Gravel
--1 * 0 03 0B 01 12 00 \w21
+-1 * 0 03 0B 01 11 00 \w21
 //Lumber
--1 * 0 03 0B 01 13 00 \w22
-//Packaging
--1 * 0 03 0B 01 14 00 \w23
-//Farm Supplies
--1 * 0 03 0B 01 15 00 \w24
-
-//Survey Supplies
--1 * 0 03 0B 01 16 00 \w25
-//Chemicals
--1 * 0 03 0B 01 17 00 \w26
-//Engineering Supplies
--1 * 0 03 0B 01 18 00 \w27
-//Fuel oil
--1 * 0 03 0B 01 19 00 \w28
+-1 * 0 03 0B 01 12 00 \w22
 //Bauxite
--1 * 0 03 0B 01 1A 00 \w29
-//Parts
--1 * 0 03 0B 01 1B 00 \w30
+-1 * 0 03 0B 01 13 00 \w29
 //Aluminium
 
--1 * 0 03 0B 01 1C 00 \w31
+-1 * 0 03 0B 01 14 00 \w31
+//Scrap metal
+-1 * 0 03 0B 01 15 00 \w18
+//Chemicals
+-1 * 0 03 0B 01 16 00 \w26
+//Fuel oil
+-1 * 0 03 0B 01 17 00 \w28
+//Packaging
+-1 * 0 03 0B 01 18 00 \w23
+//Parts
+-1 * 0 03 0B 01 19 00 \w30
+//Engineering Supplies
+-1 * 0 03 0B 01 1A 00 \w27
+//Farm Supplies
+-1 * 0 03 0B 01 1B 00 \w24
+
+//Survey Supplies
+-1 * 0 03 0B 01 1C 00 \w25
 
