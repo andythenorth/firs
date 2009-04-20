@@ -2,7 +2,7 @@ cd sprites
 DEL firs.nfo
 
 cd nfo
-COPY header.nfo+textstrings.nfo+cargodefs.nfo+cargoicons.nfo firs.nfo
+COPY header.nfo+checks.nfo+textstrings.nfo+cargodefs.nfo+cargoicons.nfo firs.nfo
 
 MOVE firs.nfo ../firs.nfo
 
