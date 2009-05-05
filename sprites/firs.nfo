@@ -132,7 +132,7 @@
 //FIRS +	ECS Agricultural	(64)
    59 * 9	 07 00 04 \7= \d64 FC
 //FIRS +	Regearing	(128)
-   60 * 9	 07 00 04 \7= \d128 FC 	//do not notify about compatibility mode, as no cargos moved
+   60 * 9	 07 00 04 \7= \d128 F0 	//do not notify about compatibility mode, as no cargos moved
 //Else goto error FD
    61 * 6	 07 9A 01 \71 00 FD
 

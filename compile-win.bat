@@ -10,7 +10,6 @@ cd ../../../
 renum.exe firs/sprites/firs.nfo
 grfcodec.exe -e -p 2 firs.nfo firs/sprites/
 
-MOVE firs.grf firs/firs.grf
 
 PAUSE
 exit

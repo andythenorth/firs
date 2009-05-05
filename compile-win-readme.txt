@@ -10,4 +10,4 @@ After that it changes to /sprites/nfo and compiles a new firs.nfo file from the 
 Please note that the order of files is important as they end up in the same order in the grf file.
 Now it moves the new firs.nfo back to the /sprites dir.
 Then it changes directory to the parent of the batch file's dir and runs renum and grfcodec.
-Finally, it moves the newly created grf file back into the firs dir.
+The grf file will be created and is located in the parent directory of compile-win.bat
