@@ -82,8 +82,8 @@ $(PNFO_FILENAME) : $(OTHER_FILES) $(HEADER_FILE)
 # rest commented out till needed as not needed yet
 #	@echo "...engines by region..."
 #	@cat $(SUB_FILES) >> $(PNFO_FILENAME)
-#	@echo "...languages..."
-#	@cat $(LANG_FILES) >> $(PNFO_FILENAME)
+	@echo "...languages..."
+	@cat $(LANG_FILES) >> $(PNFO_FILENAME)
 #	@echo "... and footer."
 #	@cat $(NFODIR)/$(FOOTER) >> $(PNFO_FILENAME)
 
