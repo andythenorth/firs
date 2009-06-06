@@ -3,6 +3,17 @@ FIRS Industry Replacement Set
 =============================
 
 -------
+Web Links
+
+  FIRS Website: http://tt-foundry.com/sets/FIRS/schema/industries
+   
+  Set Thread at TT Forums: http://www.tt-forums.net/viewtopic.php?f=36&t=41607
+
+  Source Repository / Issue Tracker: http://dev.openttdcoop.org/projects/firs
+ 
+-------
+
+-------
 License
 -------
 
