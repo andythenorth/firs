@@ -1,13 +1,13 @@
 # The local makefile should be ignored:
 Makefile.local
-
+firs*
+sprites/firs.nfo
+sprites/firs.pnfo
 #The .renum dir
 .renum/*.*
 
 # Any built grfs, too:
 ./*.grf
-./*.tar
 ./*.orig
 ./*.bak
 ./*log
-./*.nfo
