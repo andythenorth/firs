@@ -88,8 +88,7 @@ $(PNFO_FILENAME) : $(OTHER_FILES) $(HEADER_FILE)
 #	@cat $(NFODIR)/$(FOOTER) >> $(PNFO_FILENAME)
 
 # Fallback rule: Just update the file's time and be done
-#%.$(PNFO_SUFFIX):
-#	touch $@
+%.$(PNFO_SUFFIX):
 			
 # Clean the source tree
 clean:
