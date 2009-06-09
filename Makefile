@@ -110,10 +110,10 @@ $(TAR_FILENAME): $(DIR_NAME) $(BUNDLE_FILES)
 	@echo
 tar: $(TAR_FILENAME)
 
-zip : tar $(ZIP_FILENAME)
-$(ZIP_FILENAME):
+zip : $(ZIP_FILENAME)
+$(ZIP_FILENAME): $(DIR_NAME)
 	@echo "creating zip'ed tar archive"
-	cat $(TAR_FILENAME) | $(ZIP) $(ZIP_FLAGS) > $(ZIP_FILENAME)
+	$(ZIP) $(ZIP_FLAGS) $(ZIP_FILENAME) $(DIR_NAME)
 
 bzip: tar $(BZIP_FILENAME)
 $(BZIP_FILENAME): 
