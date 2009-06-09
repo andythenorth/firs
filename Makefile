@@ -99,7 +99,7 @@ clean:
 $(DIR_NAME): $(BUNDLE_FILES)
 	@echo "Creating dir $(DIR_NAME)."
 	@-mkdir $@ 2>/dev/null
-	@-for i in $(REPO_DIRS); do mkdir $@/$$i 2>/dev/null; done
+	@-for i in $(REPO_DIRS); do [ ! -e $@/$$i ] && mkdir $@/$$i 2>/dev/null; done
 	@echo "Copying files: $(BUNDLE_FILES)"
 	@-for i in $(BUNDLE_FILES); do cp $$i $(DIR_NAME)/$$i; done	
 
