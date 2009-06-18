@@ -1,4 +1,4 @@
-# Makefile for the 2cc train set
+# Makefile for the FIRS industry set
 
 # Name of the Makefile which contains all the settings which describe
 # how to make this newgrf. It defines all the paths, the grf name,
