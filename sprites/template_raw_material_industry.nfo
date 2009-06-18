@@ -2,19 +2,19 @@
     1 * 36	 08 06 "AP" 02 01 "Industry Chain" 00 "Industry Chain" 00
     2 * 19	 04 0A 9F 01 00 DC "Catfood Mine" 00
     3 * 45	 00 0A 0F 01 00 // action 0 for industry
-      08 00 
-      09 00 
+      08 00 // substitute industry type (use FF to disable default industry with this ID)
+      09 00 // industry type override (to replace a disabled industry, don't use prop 09)
       0B 01 // industry production flags (1=extractive, 2= organic, 4=processing, 0=accepts only, will never close)
       10 01 08 // cargo types produced
       11 07 FF FF FF // cargo types accepted
       12 00 // production multiplier cargo 1
       13 0A // production multiplier cargo 2
       16 FF FF FF // conflicting industry types
-      17 02
-      18 02
-      19 D0
-      1A 00 00 00 00
-      1F 00 DC // text string to use for name (defined in an action 4 - how?)
+      17 02 // probability in random game (range 0-10)
+      18 02 // probability during gameplay (range 0-10)
+      19 D0 // map color (index from DOS palette)
+      1A 00 00 00 00 // flags for special behaviour
+      1F 00 DC // text string to use for name
       21 6C // callback flags (4=256 tick production callback, 8=determine location, 40=cargo subtype display) 
       22 01 // callback flags (1=show additional text in industry window)
     4 * 16	 04 00 9F 01 01 D0 " (canned)" 00
