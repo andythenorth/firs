@@ -101,13 +101,13 @@ $(TAR_FILENAME): $(DIR_NAME) $(BUNDLE_FILES)
 	@echo
 tar: $(TAR_FILENAME)
 
-zip : $(ZIP_FILENAME)
+zip: $(ZIP_FILENAME)
 $(ZIP_FILENAME): $(DIR_NAME)
 	@echo "creating zip'ed tar archive"
 	$(ZIP) $(ZIP_FLAGS) $(ZIP_FILENAME) $(DIR_NAME)
 
-bzip: tar $(BZIP_FILENAME)
-$(BZIP_FILENAME):
+bzip: $(BZIP_FILENAME)
+$(BZIP_FILENAME): $(TAR_FILENAME)
 	@echo "creating bzip2'ed tar archive"
 	$(BZIP) $(BZIP_FLAGS) $(TAR_FILENAME)
 
@@ -118,7 +118,6 @@ install: $(TAR_FILENAME)
 	@echo
 
 bundle: grf tar bzip zip
-	@echo creating bundle for grf
 
 $(DEV_FILENAME):
 	@-mkdir $@ 2>/dev/null
