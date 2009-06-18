@@ -23,10 +23,9 @@ include ${MAKEFILECONFIG}
 # this overrides definitions from above by individual settings:
 -include ${MAKEFILELOCAL}
 
-REPO_DIRS = $(dir $(BUNDLE_FILES))
-
+REPO_DIRS    = $(dir $(BUNDLE_FILES))
 # Targets:
-# all, test, tar, install, bundle
+# all, test, tar, install
 
 # Target for all:
 all : grf
@@ -35,60 +34,50 @@ all : grf
 test : 
 	@echo "Call of nforenum:             $(NFORENUM) $(NFORENUM_FLAGS)"
 	@echo "Call of grfcodec:             $(GRFCODEC) $(GRFCODEC_FLAGS)"
-	@echo "Local installation directory: $(INSTALLDIR)"
+	@echo "Local installation directory: $(shell [ -n "$(INSTALLDIR)" ] && echo "$(INSTALLDIR)" || echo "Not defined!")"
 	@echo "Repository revision:          r$(GRF_REVISION)"
 	@echo "GRF title:                    $(GRF_TITLE)"
-	@echo "Bundled files:				 $(FILES_BUNDLE)"
+	@echo "Bundled files:				 $(BUNDLE_FILES)"
 	@echo "Bundle filenames:             Tar=$(TAR_FILENAME) Zip=$(ZIP_FILENAME) Bz2=$(BZIP_FILENAME)"
 	@echo "Language files:               $(LANG_FILES)"
-	@echo "NFO files:                    $(OTHER_FILES) $(SUB_FILES)"
-	@echo "Header and footer:            $(NFODIR)/$(HEADER) $(NFODIR)/$(FOOTER)"
-	@echo "Repo-Dirs:                    $(REPO_DIRS)"
+	@echo "NFO files:                    $(HEADER_FILE) $(OTHER_FILES) $(NFO_SUBFILES) $(FOOTER_FILE)"
+	@echo "PCX files:                    $(PCX_FILES)"
+	@echo "Sub dirs:                     $(foreach dir,$(NFO_SUBDIRS),$(NFODIR)/$(dir))"
+#	@echo "Files in sub dirs:            $(NFO_SUBFILES)"
+#	@echo "Sub files:                    $(foreach dir,$(NFO_SUBDIRS),$(wildcard $(NFODIR)/$(dir)/*.$(PNFO_SUFFIX)))"
 
 # Compile GRF
-grf : $(GRF_FILENAME) $(SUB_FILES) $(LANG_FILES) $(OTHER_FILES) $(HEADER_FILE) $(FOOTER_FILE)
+grf : $(GRF_FILENAME)
 
 $(GRF_FILENAME): $(NFO_FILENAME)
 	# pipe all nfo files through grfcodec and produce the grf(s)
 	@echo "Compiling GRF:"
-	$(GRFCODEC) ${GRFCODEC_FLAGS} $(notdir ${NFO_FILENAME})
+	$(GRFCODEC) ${GRFCODEC_FLAGS} $(notdir ${GRF_FILENAME})
 	@echo
 	
 # NFORENUM process copy of the NFO
-$(NFO_FILENAME) : $(PNFO_FILENAME)
-	# take the combined pnfo file and replace place holders for the name and version by the actual string and create
-	# the nfo file for renumbering and grfcodec.
-	@echo "Setting title to $(GRF_TITLE)"
-	@sed s/{{GRF_TITLE}}/'$(GRF_TITLE)'/ $(PNFO_FILENAME) > $(NFO_FILENAME)
+$(NFO_FILENAME) : $(CPNFO_FILENAME)
+	@# replace the place holders for version and name by the respective variables:
+	@echo "Setting title to $(GRF_TITLE)..."
+	@sed s/{{GRF_TITLE}}/'$(GRF_TITLE)'/ $(CPNFO_FILENAME) > $(NFO_FILENAME)
 	@echo	
 	@echo "NFORENUM processing:"
 	-$(NFORENUM) ${NFORENUM_FLAGS} $(NFO_FILENAME)
 	@echo
 	
 # Prepare the nfo file	
-# $(PNFO_FILENAME) : $(SUB_FILES) $(LANG_FILES) $(OTHER_FILES) $(HEADER_FILE) $(FOOTER_FILE)
-$(PNFO_FILENAME) : $(OTHER_FILES) $(HEADER_FILE)
-	# This rule defines how to create a joint pnfo file from the single source files
-	# E.g. copy here all relevant files into on file for further processing.
+$(CPNFO_FILENAME) : $(NFO_SUBFILES) $(PCX_FILES) $(LANG_FILES) $(OTHER_FILES) $(HEADER_FILE) $(FOOTER_FILE)
 	@echo
-	@echo "Generating the nfo:"
-	# The header file has to go first, the footer file has to go last. The others may in principle
-	# be juggled in between as seen fit.
-	@-rm $(PNFO_FILENAME)
-	@echo "Header..."
-	@cat $(HEADER_FILE) > $(PNFO_FILENAME)
-	@echo "...other stuff..."
-	@cat $(OTHER_FILES) >> $(PNFO_FILENAME)
-# rest commented out till needed as not needed yet
-#	@echo "...engines by region..."
-#	@cat $(SUB_FILES) >> $(PNFO_FILENAME)
-	@echo "...languages..."
-	@cat $(LANG_FILES) >> $(PNFO_FILENAME)
-#	@echo "... and footer."
-#	@cat $(NFODIR)/$(FOOTER) >> $(PNFO_FILENAME)
-
-# Fallback rule: Just update the file's time and be done
+	@echo "Generating the $(CPNFO_FILENAME)..."
+	@# The header file has to go first, the footer file has to go last. The others may in principle
+	@# be juggled in between as seen fit.
+	@cat $(HEADER_FILE) $(OTHER_FILES) $(NFO_SUBFILES) $(LANG_FILES) $(FOOTER_FILE) > $(CPNFO_FILENAME)
+	
+# Rules for making the appropriate files: no rule. Just check for them
+%.$(PCX_SUFFIX):
+	@echo "Checking $@"
 %.$(PNFO_SUFFIX):
+	@echo "Checking $@"
 			
 # Clean the source tree
 clean:
@@ -99,9 +88,9 @@ clean:
 $(DIR_NAME): $(BUNDLE_FILES)
 	@echo "Creating dir $(DIR_NAME)."
 	@-mkdir $@ 2>/dev/null
-	@-for i in $(REPO_DIRS); do [ ! -e $@/$$i ] && mkdir $@/$$i 2>/dev/null; done
+	@-rm $@/* 2>/dev/null
 	@echo "Copying files: $(BUNDLE_FILES)"
-	@-for i in $(BUNDLE_FILES); do cp $$i $(DIR_NAME)/$$i; done	
+	@-for i in $(BUNDLE_FILES); do cp $$i $(DIR_NAME); done	
 
 $(TAR_FILENAME): $(DIR_NAME) $(BUNDLE_FILES)
 	# Create the release bundle with all files in one tar
@@ -116,12 +105,12 @@ $(ZIP_FILENAME): $(DIR_NAME)
 	$(ZIP) $(ZIP_FLAGS) $(ZIP_FILENAME) $(DIR_NAME)
 
 bzip: tar $(BZIP_FILENAME)
-$(BZIP_FILENAME): 
+$(BZIP_FILENAME):
 	@echo "creating bzip2'ed tar archive"
 	$(BZIP) $(BZIP_FLAGS) $(TAR_FILENAME)
 
 # Installation process
-install: tar
+install: $(TAR_FILENAME)
 	@echo "Installing grf to $(INSTALLDIR)"
 	-cp $(TAR_FILENAME) $(INSTALLDIR)/$(TAR_FILENAME)
 	@echo
@@ -130,3 +119,4 @@ bundle: grf tar bzip zip
 	@echo creating bundle for grf	
 	
 remake: clean all
+
