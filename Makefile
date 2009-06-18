@@ -118,6 +118,16 @@ install: $(TAR_FILENAME)
 	@echo
 
 bundle: grf tar bzip zip
-	@echo creating bundle for grf	
+	@echo creating bundle for grf
+
+$(DEV_FILENAME):
+	@-mkdir $@ 2>/dev/null
+	@-rm $@/* 2>/dev/null
+	@echo "Copying files: $(BUNDLE_FILES)"
+	@-for i in $(BUNDLE_FILES); do cp $$i $(DEV_FILENAME); done
+	$(TAR) $(TAR_FLAGS) $(DEV_FILENAME).$(TAR_SUFFIX) $(DEV_FILENAME)
+	@-cp $(DEV_FILENAME).$(TAR_SUFFIX) $(INSTALLDIR)
+	
+dev: grf $(DEV_FILENAME)
 	
 remake: clean all
