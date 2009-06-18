@@ -59,7 +59,9 @@ $(GRF_FILENAME): $(NFO_FILENAME)
 $(NFO_FILENAME) : $(CPNFO_FILENAME)
 	@# replace the place holders for version and name by the respective variables:
 	@echo "Setting title to $(GRF_TITLE)..."
-	@sed s/{{GRF_TITLE}}/'$(GRF_TITLE)'/ $(CPNFO_FILENAME) > $(NFO_FILENAME)
+	@sed -e "s/{{GRF_TITLE}}/$(GRF_TITLE)/" \
+		-e "s/{{GRF_ID}}/$(GRF_ID)/" \
+		$(CPNFO_FILENAME) > $(NFO_FILENAME)
 	@echo	
 	@echo "NFORENUM processing:"
 	-$(NFORENUM) ${NFORENUM_FLAGS} $(NFO_FILENAME)
@@ -119,4 +121,3 @@ bundle: grf tar bzip zip
 	@echo creating bundle for grf	
 	
 remake: clean all
-
