@@ -56,24 +56,14 @@ $(GRF_FILENAME): $(NFO_FILENAME)
 	@echo
 	
 # NFORENUM process copy of the NFO
-$(NFO_FILENAME) : $(CPNFO_FILENAME)
+$(NFO_FILENAME): $(NFO_SUBFILES) $(PCX_FILES) $(LANG_FILES) $(OTHER_FILES) $(HEADER_FILE) $(FOOTER_FILE) $
 	@# replace the place holders for version and name by the respective variables:
 	@echo "Setting title to $(GRF_TITLE)..."
-	@sed -e "s/{{GRF_TITLE}}/$(GRF_TITLE)/" \
-		-e "s/{{GRF_ID}}/$(GRF_ID)/" \
-		$(CPNFO_FILENAME) > $(NFO_FILENAME)
+	$(CC) $(CC_FLAGS) sprites/nfo/firs.pnfo | sed -e "s/{{GRF_ID}}/$(GRF_ID)/" -e "s/{{GRF_TITLE}}/$(GRF_TITLE)/" | grep -v '#' > $@
 	@echo	
 	@echo "NFORENUM processing:"
-	-$(NFORENUM) ${NFORENUM_FLAGS} $(NFO_FILENAME)
+	-$(NFORENUM) ${NFORENUM_FLAGS} $@
 	@echo
-	
-# Prepare the nfo file	
-$(CPNFO_FILENAME) : $(NFO_SUBFILES) $(PCX_FILES) $(LANG_FILES) $(OTHER_FILES) $(HEADER_FILE) $(FOOTER_FILE)
-	@echo
-	@echo "Generating the $(CPNFO_FILENAME)..."
-	@# The header file has to go first, the footer file has to go last. The others may in principle
-	@# be juggled in between as seen fit.
-	@cat $(HEADER_FILE) $(OTHER_FILES) $(NFO_SUBFILES) $(LANG_FILES) $(FOOTER_FILE) > $(CPNFO_FILENAME)
 	
 # Rules for making the appropriate files: no rule. Just check for them
 %.$(PCX_SUFFIX):
