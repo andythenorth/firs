@@ -106,20 +106,23 @@ $(BZIP_FILENAME): $(TAR_FILENAME)
 	$(BZIP) $(BZIP_FLAGS) $(TAR_FILENAME)
 
 # Installation process
-install: $(TAR_FILENAME)
+install: $(TAR_FILENAME) $(INSTALLDIR)
 	@echo "Installing grf to $(INSTALLDIR)"
-	-cp $(TAR_FILENAME) $(INSTALLDIR)/$(TAR_FILENAME)
+	-cp $(TAR_FILENAME) $(INSTALLDIR)
 	@echo
 
 bundle: grf tar bzip zip
 
-$(DEV_FILENAME):
+$(DEV_FILENAME): $(INSTALLDIR)
 	@-mkdir $@ 2>/dev/null
 	@-rm $@/* 2>/dev/null
 	@echo "Copying files: $(BUNDLE_FILES)"
 	@-for i in $(BUNDLE_FILES); do cp $$i $(DEV_FILENAME); done
 	$(TAR) $(TAR_FLAGS) $(DEV_FILENAME).$(TAR_SUFFIX) $(DEV_FILENAME)
 	@-cp $(DEV_FILENAME).$(TAR_SUFFIX) $(INSTALLDIR)
+	
+$(INSTALLDIR):
+	@echo "$(error Installation dir does not exist. Check your makefile.local)"
 
 dev: grf $(DEV_FILENAME)
 	
