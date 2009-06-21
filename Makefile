@@ -93,7 +93,7 @@ $(NFO_FILENAME): $(PCX_FILES) $(PNFO_FILES)
 	@-rm $(CPNFO_FILENAME)
 	@for i in $(PNFO_FILES); do echo "#include \"$$i\"" >> $(CPNFO_FILENAME); done
 	@echo "Setting title to $(GRF_TITLE)..."
-	@$(CC) $(CC_FLAGS) $(CPNFO_FILENAME) | sed -e "s/{{GRF_ID}}/$(GRF_ID)/" -e "s/{{GRF_TITLE}}/$(GRF_TITLE)/" | grep -v '#' > $@
+	@$(CC) $(CC_FLAGS) $(CPNFO_FILENAME) | sed -e "s/$(GRF_ID_DUMMY)/$(GRF_ID)/" -e "s/$(GRF_TITLE_DUMMY)/$(GRF_TITLE)/" | grep -v '#' > $@
 	@echo	
 	@echo "NFORENUM processing:"
 	-$(NFORENUM) ${NFORENUM_FLAGS} $@
@@ -117,6 +117,7 @@ $(DIR_NAME): $(BUNDLE_FILES)
 	@-rm $@/* 2>/dev/null
 	@echo "Copying files: $(BUNDLE_FILES)"
 	@-for i in $(BUNDLE_FILES); do cp $$i $(DIR_NAME); done	
+	@-cat $(READMEFILE) | sed -e "s/$(GRF_TITLE_DUMMY)/$(GRF_TITLE)/" > $@/$(notdir $(READMEFILE))
 
 $(TAR_FILENAME): $(DIR_NAME) $(BUNDLE_FILES)
 	# Create the release bundle with all files in one tar
@@ -143,11 +144,12 @@ install: $(TAR_FILENAME) $(INSTALLDIR)
 
 bundle: grf tar bzip zip
 
-$(DEV_FILENAME): $(INSTALLDIR)
+$(DEV_FILENAME): $(INSTALLDIR) $(BUNDLE_FILES)
 	@-mkdir $@ 2>/dev/null
 	@-rm $@/* 2>/dev/null
 	@echo "Copying files: $(BUNDLE_FILES)"
 	@-for i in $(BUNDLE_FILES); do cp $$i $(DEV_FILENAME); done
+	@-cat $(READMEFILE) | sed -e "s/$(GRF_TITLE_DUMMY)/$(GRF_TITLE)/" > $@/$(notdir $(READMEFILE))
 	$(TAR) $(TAR_FLAGS) $(DEV_FILENAME).$(TAR_SUFFIX) $(DEV_FILENAME)
 	@-cp $(DEV_FILENAME).$(TAR_SUFFIX) $(INSTALLDIR)
 	
