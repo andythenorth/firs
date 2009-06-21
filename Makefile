@@ -9,7 +9,7 @@ MAKEFILECONFIG=Makefile.config
 # the global settings in Makefile.config.
 MAKEFILELOCAL=Makefile.local
 
-SHELL = /bin/sh
+shell = /bin/sh
 
 # Add some OS detection and guess an install path (use the system's default)
 OSTYPE=$(shell uname -s)
