@@ -11,6 +11,22 @@ MAKEFILELOCAL=Makefile.local
 
 SHELL = /bin/sh
 
+# Add some OS detection and guess an install path (use the system's default)
+OSTYPE=$(shell uname -s)
+ifeq ($(OSTYPE),Linux)
+INSTALLDIR=$(HOME)/.openttd/data
+else 
+ifeq ($(OSTYPE),Darwin)
+INSTALLDIR=$(HOME)/Documents/OpenTTD/data
+else
+ifeq ($(OSTYPE),MINGW32_NT-5.1)
+INSTALLDIR=C:\Documents and Settings\$(USERNAME)\My Documents\OpenTTD\data
+else
+INSTALLDIR=
+endif
+endif
+endif
+
 # Get the Repository revision, tags and the modified status
 GRF_REVISION = $(shell hg parent --template="{rev}")
 GRF_MODIFIED = $(shell [ -n "`hg status \"." | grep -v '^?'`" ] && echo "M" || echo "")
@@ -47,7 +63,21 @@ test :
 	@echo "Bundle filenames:             Tar=$(TAR_FILENAME) Zip=$(ZIP_FILENAME) Bz2=$(BZIP_FILENAME)"
 	@echo "PNFO files:                   $(PNFO_FILES)"
 	@echo "PCX files:                    $(PCX_FILES)"
-	
+	@echo "DEV_FILENAME:                 $(DEV_FILENAME)"
+ifeq ($(OSTYPE),Linux)
+	@echo "Host type:                    $(OSTYPE) (Linux)"
+else 
+ifeq ($(OSTYPE),Darwin)
+	@echo "Host type:                    $(OSTYPE) (Mac)"
+else
+ifeq ($(OSTYPE),MINGW32_NT-5.1)
+	@echo "Host type:                    $(OSTYPE) (Win)"
+else
+	@echo "Host type unknown (win?)"
+endif
+endif
+endif
+
 # Compile GRF
 grf : $(GRF_FILENAME)
 
