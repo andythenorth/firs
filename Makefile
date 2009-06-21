@@ -24,6 +24,9 @@ include ${MAKEFILECONFIG}
 -include ${MAKEFILELOCAL}
 
 REPO_DIRS    = $(dir $(BUNDLE_FILES))
+# read the main source file and get a list of all (p)nfo files which comprise the newgrf. We depend on them.
+PNFO_FILES = $(shell cat $(PNFO_FILENAME) | sed "s/^[ \t]*//")
+
 # Targets:
 # all, test, tar, install
 
@@ -39,10 +42,9 @@ test :
 	@echo "GRF title:                    $(GRF_TITLE)"
 	@echo "Bundled files:				 $(BUNDLE_FILES)"
 	@echo "Bundle filenames:             Tar=$(TAR_FILENAME) Zip=$(ZIP_FILENAME) Bz2=$(BZIP_FILENAME)"
-	@echo "Language files:               $(LANG_FILES)"
-	@echo "NFO files:                    $(HEADER_FILE) $(OTHER_FILES) $(NFO_SUBFILES) $(FOOTER_FILE)"
+	@echo "PNFO files:                   $(PNFO_FILES)"
 	@echo "PCX files:                    $(PCX_FILES)"
-	@echo "Sub dirs:                     $(foreach dir,$(NFO_SUBDIRS),$(NFODIR)/$(dir))"
+	@echo $(PNFO_FILES)
 #	@echo "Files in sub dirs:            $(NFO_SUBFILES)"
 #	@echo "Sub files:                    $(foreach dir,$(NFO_SUBDIRS),$(wildcard $(NFODIR)/$(dir)/*.$(PNFO_SUFFIX)))"
 
@@ -56,10 +58,12 @@ $(GRF_FILENAME): $(NFO_FILENAME)
 	@echo
 	
 # NFORENUM process copy of the NFO
-$(NFO_FILENAME): $(NFO_SUBFILES) $(PCX_FILES) $(LANG_FILES) $(OTHER_FILES) $(HEADER_FILE) $(FOOTER_FILE) $
+$(NFO_FILENAME): $(PCX_FILES) $(PNFO_FILES)
 	@# replace the place holders for version and name by the respective variables:
+	@-rm $(CPNFO_FILENAME)
+	@for i in $(PNFO_FILES); do echo "#include \"$$i\"" >> $(CPNFO_FILENAME); done
 	@echo "Setting title to $(GRF_TITLE)..."
-	$(CC) $(CC_FLAGS) sprites/nfo/firs.pnfo | sed -e "s/{{GRF_ID}}/$(GRF_ID)/" -e "s/{{GRF_TITLE}}/$(GRF_TITLE)/" | grep -v '#' > $@
+	@$(CC) $(CC_FLAGS) $(CPNFO_FILENAME) | sed -e "s/{{GRF_ID}}/$(GRF_ID)/" -e "s/{{GRF_TITLE}}/$(GRF_TITLE)/" | grep -v '#' > $@
 	@echo	
 	@echo "NFORENUM processing:"
 	-$(NFORENUM) ${NFORENUM_FLAGS} $@
