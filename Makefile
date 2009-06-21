@@ -29,7 +29,9 @@ PNFO_FILES = $(shell cat $(PNFO_FILENAME) | sed "s/^[ \t]*//" | grep '$(PNFO_SUF
 PCX_FILES  = $(shell cat $(PNFO_FILENAME) | sed "s/^[ \t]*//" | grep '$(PCX_SUFFIX)')
 
 # Targets:
-# all, test, tar, install
+# all, test, bundle, install, dev, remake
+
+.PHONY: clean all tar zip bzip install dev bundle remake test
 
 # Target for all:
 all : grf
@@ -45,10 +47,7 @@ test :
 	@echo "Bundle filenames:             Tar=$(TAR_FILENAME) Zip=$(ZIP_FILENAME) Bz2=$(BZIP_FILENAME)"
 	@echo "PNFO files:                   $(PNFO_FILES)"
 	@echo "PCX files:                    $(PCX_FILES)"
-	@echo $(PNFO_FILES)
-#	@echo "Files in sub dirs:            $(NFO_SUBFILES)"
-#	@echo "Sub files:                    $(foreach dir,$(NFO_SUBDIRS),$(wildcard $(NFODIR)/$(dir)/*.$(PNFO_SUFFIX)))"
-
+	
 # Compile GRF
 grf : $(GRF_FILENAME)
 
@@ -121,7 +120,7 @@ $(DEV_FILENAME):
 	@-for i in $(BUNDLE_FILES); do cp $$i $(DEV_FILENAME); done
 	$(TAR) $(TAR_FLAGS) $(DEV_FILENAME).$(TAR_SUFFIX) $(DEV_FILENAME)
 	@-cp $(DEV_FILENAME).$(TAR_SUFFIX) $(INSTALLDIR)
-	
+
 dev: grf $(DEV_FILENAME)
 	
 remake: clean all
