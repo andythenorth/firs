@@ -31,6 +31,8 @@ PCX_FILES  = $(shell cat $(PNFO_FILENAME) | sed "s/^[ \t]*//" | grep '$(PCX_SUFF
 # Targets:
 # all, test, tar, install
 
+.PHONY: clean all tar zip bzip install dev bundle remake test
+
 # Target for all:
 all : grf
 
@@ -121,7 +123,7 @@ $(DEV_FILENAME):
 	@-for i in $(BUNDLE_FILES); do cp $$i $(DEV_FILENAME); done
 	$(TAR) $(TAR_FLAGS) $(DEV_FILENAME).$(TAR_SUFFIX) $(DEV_FILENAME)
 	@-cp $(DEV_FILENAME).$(TAR_SUFFIX) $(INSTALLDIR)
-	
+
 dev: grf $(DEV_FILENAME)
 	
 remake: clean all
