@@ -9,10 +9,10 @@ MAKEFILECONFIG=Makefile.config
 # the global settings in Makefile.config.
 MAKEFILELOCAL=Makefile.local
 
-SHELL = /bin/sh
+shell = /bin/sh
 
 # Add some OS detection and guess an install path (use the system's default)
-OSTYPE=$(SHELL uname -s)
+OSTYPE=$(shell uname -s)
 ifeq ($(OSTYPE),Linux)
 INSTALLDIR=$(HOME)/.openttd/data
 else 
@@ -28,10 +28,10 @@ endif
 endif
 
 # Get the Repository revision, tags and the modified status
-GRF_REVISION = $(SHELL hg parent --template="{rev}")
-GRF_MODIFIED = $(SHELL [ -n "`hg status \"." | grep -v '^?'`" ] && echo "M" || echo "")
+GRF_REVISION = $(shell hg parent --template="{rev}")
+GRF_MODIFIED = $(shell [ -n "`hg status \"." | grep -v '^?'`" ] && echo "M" || echo "")
 # " \" (syntax highlighting line
-REPO_TAGS    = $(SHELL hg parent --template="{tags}" | grep -v "tip" | cut -d\  -f1)
+REPO_TAGS    = $(shell hg parent --template="{tags}" | grep -v "tip" | cut -d\  -f1)
 
 # Include the global configuration file
 include ${MAKEFILECONFIG}
@@ -41,8 +41,8 @@ include ${MAKEFILECONFIG}
 
 REPO_DIRS    = $(dir $(BUNDLE_FILES))
 # read the main source file and get a list of all (p)nfo files which comprise the newgrf. We depend on them.
-PNFO_FILES = $(SHELL cat $(PNFO_FILENAME) | sed "s/^[ \t]*//" | grep '$(PNFO_SUFFIX)')
-PCX_FILES  = $(SHELL cat $(PNFO_FILENAME) | sed "s/^[ \t]*//" | grep '$(PCX_SUFFIX)')
+PNFO_FILES = $(shell cat $(PNFO_FILENAME) | sed "s/^[ \t]*//" | grep '$(PNFO_SUFFIX)')
+PCX_FILES  = $(shell cat $(PNFO_FILENAME) | sed "s/^[ \t]*//" | grep '$(PCX_SUFFIX)')
 
 # Targets:
 # all, test, bundle, install, dev, remake
@@ -56,7 +56,7 @@ all : grf
 test : 
 	@echo "Call of nforenum:             $(NFORENUM) $(NFORENUM_FLAGS)"
 	@echo "Call of grfcodec:             $(GRFCODEC) $(GRFCODEC_FLAGS)"
-	@echo "Local installation directory: $(SHELL [ -n "$(INSTALLDIR)" ] && echo "$(INSTALLDIR)" || echo "Not defined!")"
+	@echo "Local installation directory: $(shell [ -n "$(INSTALLDIR)" ] && echo "$(INSTALLDIR)" || echo "Not defined!")"
 	@echo "Repository revision:          r$(GRF_REVISION)"
 	@echo "GRF title:                    $(GRF_TITLE)"
 	@echo "Bundled files:				 $(BUNDLE_FILES)"
