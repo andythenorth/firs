@@ -118,6 +118,7 @@ $(DIR_NAME): $(BUNDLE_FILES)
 	@echo "Copying files: $(BUNDLE_FILES)"
 	@-for i in $(BUNDLE_FILES); do cp $$i $(DIR_NAME); done	
 	@-cat $(READMEFILE) | sed -e "s/$(GRF_TITLE_DUMMY)/$(GRF_TITLE)/" > $@/$(notdir $(READMEFILE))
+bundle: $(DIR_NAME)
 
 $(TAR_FILENAME): $(DIR_NAME) $(BUNDLE_FILES)
 	# Create the release bundle with all files in one tar
@@ -141,8 +142,6 @@ install: $(TAR_FILENAME) $(INSTALLDIR)
 	@echo "Installing grf to $(INSTALLDIR)"
 	-cp $(TAR_FILENAME) $(INSTALLDIR)
 	@echo
-
-bundle: grf tar bzip zip
 
 $(DEV_FILENAME): $(INSTALLDIR) $(BUNDLE_FILES)
 	@-mkdir $@ 2>/dev/null
