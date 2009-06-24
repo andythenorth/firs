@@ -19,7 +19,7 @@ else
 ifeq ($(OSTYPE),Darwin)
 INSTALLDIR=$(HOME)/Documents/OpenTTD/data
 else
-ifeq ($(OSTYPE),MINGW32_NT-5.1)
+ifeq ($(shell echo "$(OSTYPE)" | cut -d_ -f1),MINGW32)
 INSTALLDIR=C:\Documents and Settings\$(USERNAME)\My Documents\OpenTTD\data
 else
 INSTALLDIR=
