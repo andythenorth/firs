@@ -47,7 +47,7 @@ PCX_FILES  = $(shell cat $(PNFO_FILENAME) | sed "s/^[ \t]*//" | grep '$(PCX_SUFF
 # Targets:
 # all, test, bundle, install, dev, remake
 
-.PHONY: clean all tar zip bzip install dev bundle remake test
+.PHONY: clean all bundle bundle_tar bundle_zip bundle_bzip install release release_zip remake test
 
 # Target for all:
 all : grf
@@ -59,11 +59,11 @@ test :
 	@echo "Local installation directory: $(shell [ -n "$(INSTALLDIR)" ] && echo "$(INSTALLDIR)" || echo "Not defined!")"
 	@echo "Repository revision:          r$(GRF_REVISION)"
 	@echo "GRF title:                    $(GRF_TITLE)"
-	@echo "Bundled files:				 $(BUNDLE_FILES)"
+	@echo "Bundled files:                $(BUNDLE_FILES)"
 	@echo "Bundle filenames:             Tar=$(TAR_FILENAME) Zip=$(ZIP_FILENAME) Bz2=$(BZIP_FILENAME)"
 	@echo "PNFO files:                   $(PNFO_FILES)"
 	@echo "PCX files:                    $(PCX_FILES)"
-	@echo "DEV_FILENAME:                 $(DEV_FILENAME)"
+	@echo "Dirs (nightly/release/base):  $(DIR_NIGHTLY) / $(DIR_RELEASE) / $(DIR_BASE)"
 ifeq ($(OSTYPE),Linux)
 	@echo "Host type:                    $(OSTYPE) (Linux)"
 else 
@@ -111,28 +111,29 @@ clean:
 	@echo "Remove backups:"
 	-rm -rf *.orig *.pre *.bak *~ $(FILENAME)* $(SPRITEDIR)/$(FILENAME).*
 	
-$(DIR_NAME): $(BUNDLE_FILES)
-	@echo "Creating dir $(DIR_NAME)."
+$(DIR_NIGHTLY) $(DIR_RELEASE) : $(BUNDLE_FILES)
+	@echo "Creating dir $@."
 	@-mkdir $@ 2>/dev/null
 	@-rm $@/* 2>/dev/null
 	@echo "Copying files: $(BUNDLE_FILES)"
-	@-for i in $(BUNDLE_FILES); do cp $$i $(DIR_NAME); done	
+	@-for i in $(BUNDLE_FILES); do cp $$i $@; done	
 	@-cat $(READMEFILE) | sed -e "s/$(GRF_TITLE_DUMMY)/$(GRF_TITLE)/" > $@/$(notdir $(READMEFILE))
-bundle: $(DIR_NAME)
+bundle: $(DIR_NIGHTLY)
 
-$(TAR_FILENAME): $(DIR_NAME) $(BUNDLE_FILES)
+%.$(TAR_SUFFIX): % $(BUNDLE_FILES)
 	# Create the release bundle with all files in one tar
-	$(TAR) $(TAR_FLAGS) $(TAR_FILENAME) $(DIR_NAME)
+	@echo "Basename: $(basename $@) (and $(DIR_NIGHTLY) and $(DIR_RELEASE))"
+	$(TAR) $(TAR_FLAGS) $@ $(basename $@)
 	@echo "Creating tar for publication"
 	@echo
-tar: $(TAR_FILENAME)
+bundle_tar: $(TAR_FILENAME)
 
-zip: $(ZIP_FILENAME)
+bundle_zip: $(ZIP_FILENAME)
 $(ZIP_FILENAME): $(DIR_NAME)
 	@echo "creating zip'ed tar archive"
 	$(ZIP) $(ZIP_FLAGS) $(ZIP_FILENAME) $(DIR_NAME)
 
-bzip: $(BZIP_FILENAME)
+bundle_bzip: $(BZIP_FILENAME)
 $(BZIP_FILENAME): $(TAR_FILENAME)
 	@echo "creating bzip2'ed tar archive"
 	$(BZIP) $(BZIP_FLAGS) $(TAR_FILENAME)
@@ -142,19 +143,17 @@ install: $(TAR_FILENAME) $(INSTALLDIR)
 	@echo "Installing grf to $(INSTALLDIR)"
 	-cp $(TAR_FILENAME) $(INSTALLDIR)
 	@echo
-
-$(DEV_FILENAME): $(INSTALLDIR) $(BUNDLE_FILES)
-	@-mkdir $@ 2>/dev/null
-	@-rm $@/* 2>/dev/null
-	@echo "Copying files: $(BUNDLE_FILES)"
-	@-for i in $(BUNDLE_FILES); do cp $$i $(DEV_FILENAME); done
-	@-cat $(READMEFILE) | sed -e "s/$(GRF_TITLE_DUMMY)/$(GRF_TITLE)/" > $@/$(notdir $(READMEFILE))
-	$(TAR) $(TAR_FLAGS) $(DEV_FILENAME).$(TAR_SUFFIX) $(DEV_FILENAME)
-	@-cp $(DEV_FILENAME).$(TAR_SUFFIX) $(INSTALLDIR)
+release: $(DIR_RELEASE) $(DIR_RELEASE).$(TAR_SUFFIX)
+	@echo "Installing grf to $(INSTALLDIR)"
+	-cp $(DIR_RELEASE).$(TAR_SUFFIX) $(INSTALLDIR)
+	@echo
+release_zip: $(DIR_RELEASE)
+	$(ZIP) $(ZIP_FLAGS) $(ZIP_FILENAME) $@
 	
 $(INSTALLDIR):
 	@echo "$(error Installation dir does not exist. Check your makefile.local)"
-
-dev: grf $(DEV_FILENAME)
+	
+nix*: 
+	@echo "hier!"
 	
 remake: clean all
