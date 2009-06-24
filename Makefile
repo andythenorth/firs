@@ -143,8 +143,11 @@ install: $(TAR_FILENAME) $(INSTALLDIR)
 	@echo "Installing grf to $(INSTALLDIR)"
 	-cp $(TAR_FILENAME) $(INSTALLDIR)
 	@echo
+	
 release: $(DIR_RELEASE) $(DIR_RELEASE).$(TAR_SUFFIX)
-	@echo "Installing grf to $(INSTALLDIR)"
+	@echo "Creating release bundle $(DIR_RELEASE) and tar"
+release-install: release
+	@echo "Installing $(DIR_RELEASE) to $(INSTALLDIR)"
 	-cp $(DIR_RELEASE).$(TAR_SUFFIX) $(INSTALLDIR)
 	@echo
 release_zip: $(DIR_RELEASE)
