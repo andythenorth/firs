@@ -70,7 +70,7 @@ else
 ifeq ($(OSTYPE),Darwin)
 	@echo "Host type:                    $(OSTYPE) (Mac)"
 else
-ifeq ($(OSTYPE),MINGW32_NT-5.1)
+ifeq ($(shell echo "$(OSTYPE)" | cut -d_ -f1),MINGW32)
 	@echo "Host type:                    $(OSTYPE) (Win)"
 else
 	@echo "Host type:                    unknown (win?)"
