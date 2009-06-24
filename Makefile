@@ -73,7 +73,7 @@ else
 ifeq ($(OSTYPE),MINGW32_NT-5.1)
 	@echo "Host type:                    $(OSTYPE) (Win)"
 else
-	@echo "Host type unknown (win?)"
+	@echo "Host type:                    unknown (win?)"
 endif
 endif
 endif
