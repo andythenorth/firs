@@ -153,7 +153,4 @@ release_zip: $(DIR_RELEASE)
 $(INSTALLDIR):
 	@echo "$(error Installation dir does not exist. Check your makefile.local)"
 	
-nix*: 
-	@echo "hier!"
-	
 remake: clean all
