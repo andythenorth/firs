@@ -88,7 +88,7 @@ $(GRF_FILENAME): $(NFO_FILENAME)
 	@echo
 	
 # NFORENUM process copy of the NFO
-$(NFO_FILENAME): $(PCX_FILES) $(PNFO_FILES)
+$(NFO_FILENAME): $(PCX_FILES) $(PNFO_FILES) $(REV_FILENAME)
 	@# replace the place holders for version and name by the respective variables:
 	@-rm $(CPNFO_FILENAME)
 	@for i in $(PNFO_FILES); do echo "#include \"$$i\"" >> $(CPNFO_FILENAME); done
@@ -104,12 +104,16 @@ $(NFO_FILENAME): $(PCX_FILES) $(PNFO_FILES)
 	@echo "Checking $@"
 %.$(PNFO_SUFFIX):
 	@echo "Checking $@"
+	
+$(REV_FILENAME):
+	@-rm *.$(REV_SUFFIX)
+	echo "$(BUILDFILENAME)" > $(REV_FILENAME)
 			
 # Clean the source tree
 clean:
 	@echo "Cleaning source tree:"
 	@echo "Remove backups:"
-	-rm -rf *.orig *.pre *.bak *~ $(FILENAME)* $(SPRITEDIR)/$(FILENAME).*
+	-rm -rf *.orig *.pre *.bak *~ $(FILENAME)* $(SPRITEDIR)/$(FILENAME).* *.$(REV_SUFFIX)
 	
 $(DIR_NIGHTLY) $(DIR_RELEASE) : $(BUNDLE_FILES)
 	@echo "Creating dir $@."
