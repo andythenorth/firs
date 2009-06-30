@@ -208,3 +208,14 @@
 "\7C crate of survey supplies" 00
 "\7C crates of survey supplies" 00
 "\0ESS" 00
+
+
+
+//Industry texts
+//Format: Action 04; Feature 0B; LangID with bit 7 set; 01; starting with string STR_IND_*; quoted string; 00
+-1 * 0 04 0B FF 01 STR_IND_ARABLE_FARM "Arable Farm" 00
+
+
+//Station texts for station name prefixes/suffixes. \80 where town name goes
+//Format: Action 04; Feature 0B; LangID with bit 7 set; 01; starting with string STR_STA_*; quoted string; 00
+-1 * 0 04 0B FF 01 STR_STA_FARM "Arable Farm" 00

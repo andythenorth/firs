@@ -99,7 +99,7 @@
 // #define CARGO_RESERVED1          1F
 // #define CARGO_RESERVED2          1E
 
-// Definition of the cargo bits
+// Definition of the cargo labels
 #define CLABEL_COAL               COAL
 #define CLABEL_IRONORE            IORE
 #define CLABEL_SAND               SAND
@@ -134,3 +134,9 @@
 #define CLABEL_WASTE              WSTE
 
 
+//Definition of text IDs for industries
+#define STR_IND_ARABLE_FARM       70 DC
+
+
+//Definition of text IDs for station name suffixes
+#define STR_STA_FARM              90 DC

@@ -1,0 +1,153 @@
+//Industry tiles definition; Arable Farm has 5 different tiles
+
+//Tile 21, action 0
+-1 * 0 00 09 \b5 01 21 // -1 * 0 00 09 <num-props> 01 <id>
+	08 21 //subsitute type
+	0A 08 CARGO_FARM_SUPPLIES //tile acceptance 1
+	0B 00 00 //tile acceptance 2
+	0C 00 00 //tile acceptance 3
+	0D 10 //land shape flags: 10 = only on flat land
+	
+//Tile 22, action 0
+-1 * 0 00 09 \b5 01 22 // -1 * 0 00 09 <num-props> 01 <id>
+	08 22 //subsitute type
+	0A 08 CARGO_FARM_SUPPLIES //tile acceptance 1
+	0B 00 00 //tile acceptance 2
+	0C 00 00 //tile acceptance 3
+	0D 10 //land shape flags: 10 = only on flat land
+
+//Tile 23, action 0
+-1 * 0 00 09 \b5 01 23 // -1 * 0 00 09 <num-props> 01 <id>
+	08 23 //subsitute type
+	0A 08 CARGO_FARM_SUPPLIES //tile acceptance 1
+	0B 00 00 //tile acceptance 2
+	0C 00 00 //tile acceptance 3
+	0D 10 //land shape flags: 10 = only on flat land
+
+//Tile 24, action 0
+-1 * 0 00 09 \b5 01 24 // -1 * 0 00 09 <num-props> 01 <id>
+	08 24 //subsitute type
+	0A 08 CARGO_FARM_SUPPLIES //tile acceptance 1
+	0B 00 00 //tile acceptance 2
+	0C 00 00 //tile acceptance 3
+	0D 10 //land shape flags: 10 = only on flat land
+
+//Tile 25, action 0
+-1 * 0 00 09 \b5 01 25 // -1 * 0 00 09 <num-props> 01 <id>
+	08 25 //subsitute type
+	0A 08 CARGO_FARM_SUPPLIES //tile acceptance 1
+	0B 00 00 //tile acceptance 2
+	0C 00 00 //tile acceptance 3
+	0D 10 //land shape flags: 10 = only on flat land
+
+
+//Industry tile sprites; one sprite for each tile; eventually more for each tile to include  construction stages
+
+//All tiles, Action 1
+-1 * 0 01 09 \b5 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
+// Format: spritenum pcxfile xpos ypos compression ysize xsize xrel yrel
+-1 sprites/pcx/industries/arablefarm.pcx 10 10 09 59 64 -31 -28
+-1 sprites/pcx/industries/arablefarm.pcx 80 10 09 59 64 -31 -28
+-1 sprites/pcx/industries/arablefarm.pcx 150 10 09 59 64 -31 -28
+-1 sprites/pcx/industries/arablefarm.pcx 220 10 09 59 64 -31 -28
+-1 sprites/pcx/industries/arablefarm.pcx 290 10 09 59 64 -31 -28
+
+
+//sprite 21, Action 2 
+-1 * 0 02 09 21 00 //-1 * 0 02 09 <set-id> 00
+	\d3981 //groundsprite
+	\dx80008000 //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b32 //xextent yextent zextent
+
+//sprite 22, Action 2 
+-1 * 0 02 09 22 00 //-1 * 0 02 09 <set-id> 00
+	\d3981 //groundsprite
+	\dx80008001 //building sprite
+	00 00 //xofs yofs
+	\b16 \b16 \b32 //xextent yextent zextent
+
+//sprite 23, Action 2 
+-1 * 0 02 09 23 00 //-1 * 0 02 09 <set-id> 00
+	\d3981 //groundsprite
+	\dx80008002 //building sprite
+	00 00 //xofs yofs
+	\b16 \b16 \b32 //xextent yextent zextent
+
+//sprite 24, Action 2 
+-1 * 0 02 09 24 00 //-1 * 0 02 09 <set-id> 00
+	\d3981 //groundsprite
+	\dx80008003 //building sprite
+	00 00 //xofs yofs
+	\b16 \b16 \b32 //xextent yextent zextent
+
+//sprite 25, Action 2 
+-1 * 0 02 09 25 00 //-1 * 0 02 09 <set-id> 00
+	\d3981 //groundsprite
+	\dx80008004 //building sprite
+	00 00 //xofs yofs
+	\b16 \b16 \b32 //xextent yextent zextent
+
+
+//Action3 attach sprites to industry tiles
+
+//Tile 21, action 3
+-1 * 0 03 09 01 21 00 \wx21 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
+//Tile 22, action 3
+-1 * 0 03 09 01 22 00 \wx22 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
+//Tile 23, action 3
+-1 * 0 03 09 01 23 00 \wx23 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
+//Tile 24, action 3
+-1 * 0 03 09 01 24 00 \wx24 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
+//Tile 25, action 3
+-1 * 0 03 09 01 25 00 \wx25 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
+
+
+
+
+//Industry definition
+
+//Action 0
+-1 * 0 00 0A \b25 01 IND_ARABLE_FARM //-1 * 0 00 0A <num-props> 01 <id>
+	08 IND_ARABLE_FARM //disable original industry with this here ID
+	0A 01 //number of industry layouts
+		\d27 //size of layout definition +2 for termination
+		//layout:
+			01 00 FE 21 00 //xoffs yoffs FE newtile(W)
+			01 01 FE 22 00
+			00 02 FE 23 00
+			02 01 FE 24 00
+			00 01 FE 25 00
+		00 80 //terminate layout definition
+	0B 02 //production flags 1h=extractive, 2h=organic, 4h=processing
+	0C \wx4833 //industry closure message (default: 4833; lack of trees: 4834)
+	0D \wx4838 //production increase message (default: 4835; coal: 4836; oil: 4837; farm: 4838)
+	0E \wx483A //production decrease message (default: 4839; insect infestation: 483A)
+	1B \wx482D //new industry message (default: 482D; planted: 482E)
+	1F STR_IND_ARABLE_FARM //industry name
+	24 STR_STA_FARM //default text for nearby station
+	10 CARGO_FRUITS CARGO_GRAIN //production cargo types (word; fill unused with FFh)
+	11 CARGO_FARM_SUPPLIES FF FF FF //acceptance cargo types (dword; fill unused with FFh)
+	12 \b10 //production multiplier cargo 1
+	13 \b10 //production multiplier cargo 2
+	1C 00 80 00 80 //input cargo 1 multiplier (dword M1 M2; output_typen = X*Mn/256)
+	1D 00 00 00 00 //input cargo 2 multiplier
+	1E 00 00 00 00 //input cargo 3 multiplier
+	14 \b05 //minimal cargo distribution amount
+	16 FF FF FF //conflicting industry types (3*byte; ID+80h; FF to disable)
+	17 \b9 //probability in random game
+	18 \b2 //probability during gameplay
+	20 FF FF FF BF //prospecting success chance (dword; FFFFFFFFh=100%)
+	0F \b255 //fund cost multiplier (byte)
+	19 30 //map colour (byte; using indexes from dos palette)
+	23 \d0  //descruction cost multiplier (dword; default: 0)
+	1A \dx41 //special industry flag (dword; farms: 41h)
+	//21  //callback flags
+	//22  //callback flags
+	
+
+//No action 1 for industries, as graphics are defined by the industry-tile feature.
+
+//Industry production callback: action 2. Skip that for now to see if this works without all fancy stuff
+
+//Hence no action 3 yet either.
