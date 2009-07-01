@@ -1,0 +1,52 @@
+//Redefinition of original TTD industry
+//Coal Mine
+-1 * 0 00 0A \b6 01 IND_COALMINE //-1 * 0 00 0A <num-props> 01 <id>
+	08 IND_COALMINE //substitute industry type
+	09 IND_COALMINE //industry type override
+	11 CARGO_ENGINEERINGSUPPLIES FF FF FF //acceptance cargo types (dword; fill unused with FFh)
+	1C 00 54 00 00 //input cargo 1 multiplier (dword M1 M2; output_typen = X*Mn/256)
+	17 \b8 //probability in random game
+	18 \b3 //probability during gameplay
+//Tiles 00..06
+-1 * 0 00 09 \b5 01 00 // -1 * 0 00 09 <num-props> 01 <id>
+	08 00 //subsitute tile type
+	09 00 //industry tile override
+	0A CARGO_ENGINEERINGSUPPLIES 08 //tile acceptance 1
+	0B 00 00 //tile acceptance 2
+	0C 00 00 //tile acceptance 3
+-1 * 0 00 09 \b5 01 01 // -1 * 0 00 09 <num-props> 01 <id>
+	08 01 //subsitute tile type
+	09 01 //industry tile override
+	0A CARGO_ENGINEERINGSUPPLIES 08 //tile acceptance 1
+	0B 00 00 //tile acceptance 2
+	0C 00 00 //tile acceptance 3
+-1 * 0 00 09 \b5 01 02 // -1 * 0 00 09 <num-props> 01 <id>
+	08 02 //subsitute tile type
+	09 02 //industry tile override
+	0A CARGO_ENGINEERINGSUPPLIES 08 //tile acceptance 1
+	0B 00 00 //tile acceptance 2
+	0C 00 00 //tile acceptance 3
+-1 * 0 00 09 \b5 01 03 // -1 * 0 00 09 <num-props> 01 <id>
+	08 03 //subsitute tile type
+	09 03 //industry tile override
+	0A CARGO_ENGINEERINGSUPPLIES 08 //tile acceptance 1
+	0B 00 00 //tile acceptance 2
+	0C 00 00 //tile acceptance 3
+-1 * 0 00 09 \b5 01 04 // -1 * 0 00 09 <num-props> 01 <id>
+	08 04 //subsitute tile type
+	09 04 //industry tile override
+	0A CARGO_ENGINEERINGSUPPLIES 08 //tile acceptance 1
+	0B 00 00 //tile acceptance 2
+	0C 00 00 //tile acceptance 3
+-1 * 0 00 09 \b5 01 05 // -1 * 0 00 09 <num-props> 01 <id>
+	08 05 //subsitute tile type
+	09 05 //industry tile override
+	0A CARGO_ENGINEERINGSUPPLIES 08 //tile acceptance 1
+	0B 00 00 //tile acceptance 2
+	0C 00 00 //tile acceptance 3
+-1 * 0 00 09 \b5 01 06 // -1 * 0 00 09 <num-props> 01 <id>
+	08 06 //subsitute tile type
+	09 06 //industry tile override
+	0A CARGO_ENGINEERINGSUPPLIES 08 //tile acceptance 1
+	0B 00 00 //tile acceptance 2
+	0C 00 00 //tile acceptance 3
