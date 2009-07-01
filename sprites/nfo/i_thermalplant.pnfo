@@ -1,0 +1,40 @@
+//Redefinition of original TTD industry
+//Thermal Plant
+-1 * 0 00 0A \b12 01 IND_THERMALPLANT //-1 * 0 00 0A <num-props> 01 <id>
+	08 IND_THERMALPLANT //substitute industry type
+	09 IND_THERMALPLANT //industry type override
+	0B 04 //production flags 1h=extractive, 2h=organic, 4h=processing
+	1F STR_IND_THERMALPLANT //industry name
+	24 STR_STA_THERMALPLANT //default text for nearby station
+	11 CARGO_COAL CARGO_FUELOIL CARGO_ENGINEERINGSUPPLIES FF //acceptance cargo types (dword; fill unused with FFh)
+	10 FF FF //production cargo types (word; fill unused with FFh)
+	1C 00 00 00 00 //input cargo 1 multiplier (dword M1 M2; output_typen = X*Mn/256)
+	1D 00 00 00 00 //input cargo 2 multiplier
+	1E 00 00 00 00 //input cargo 3 multiplier
+	17 \b5 //probability in random game
+	18 \b2 //probability during gameplay
+//Tiles 07..0A
+-1 * 0 00 09 \b5 01 07 // -1 * 0 00 09 <num-props> 01 <id>
+	08 07 //subsitute tile type
+	09 07 //industry tile override
+	0A CARGO_COAL 08 //tile acceptance 1
+	0B CARGO_FUELOIL 08 //tile acceptance 2
+	0C CARGO_ENGINEERINGSUPPLIES 08 //tile acceptance 3
+-1 * 0 00 09 \b5 01 08 // -1 * 0 00 09 <num-props> 01 <id>
+	08 08 //subsitute tile type
+	09 08 //industry tile override
+	0A CARGO_COAL 08 //tile acceptance 1
+	0B CARGO_FUELOIL 08 //tile acceptance 2
+	0C CARGO_ENGINEERINGSUPPLIES 08 //tile acceptance 3
+-1 * 0 00 09 \b5 01 09 // -1 * 0 00 09 <num-props> 01 <id>
+	08 09 //subsitute tile type
+	09 09 //industry tile override
+	0A CARGO_COAL 08 //tile acceptance 1
+	0B CARGO_FUELOIL 08 //tile acceptance 2
+	0C CARGO_ENGINEERINGSUPPLIES 08 //tile acceptance 3
+-1 * 0 00 09 \b5 01 0A // -1 * 0 00 09 <num-props> 01 <id>
+	08 0A //subsitute tile type
+	09 0A //industry tile override
+	0A CARGO_COAL 08 //tile acceptance 1
+	0B CARGO_FUELOIL 08 //tile acceptance 2
+	0C CARGO_ENGINEERINGSUPPLIES 08 //tile acceptance 3
