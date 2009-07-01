@@ -3,7 +3,7 @@
 //Tile 21, action 0
 -1 * 0 00 09 \b5 01 21 // -1 * 0 00 09 <num-props> 01 <id>
 	08 21 //subsitute type
-	0A 08 CARGO_FARM_SUPPLIES //tile acceptance 1
+	0A 08 CARGO_FARMSUPPLIES //tile acceptance 1
 	0B 00 00 //tile acceptance 2
 	0C 00 00 //tile acceptance 3
 	0D 10 //land shape flags: 10 = only on flat land
@@ -11,7 +11,7 @@
 //Tile 22, action 0
 -1 * 0 00 09 \b5 01 22 // -1 * 0 00 09 <num-props> 01 <id>
 	08 22 //subsitute type
-	0A 08 CARGO_FARM_SUPPLIES //tile acceptance 1
+	0A 08 CARGO_FARMSUPPLIES //tile acceptance 1
 	0B 00 00 //tile acceptance 2
 	0C 00 00 //tile acceptance 3
 	0D 10 //land shape flags: 10 = only on flat land
@@ -19,7 +19,7 @@
 //Tile 23, action 0
 -1 * 0 00 09 \b5 01 23 // -1 * 0 00 09 <num-props> 01 <id>
 	08 23 //subsitute type
-	0A 08 CARGO_FARM_SUPPLIES //tile acceptance 1
+	0A 08 CARGO_FARMSUPPLIES //tile acceptance 1
 	0B 00 00 //tile acceptance 2
 	0C 00 00 //tile acceptance 3
 	0D 10 //land shape flags: 10 = only on flat land
@@ -27,7 +27,7 @@
 //Tile 24, action 0
 -1 * 0 00 09 \b5 01 24 // -1 * 0 00 09 <num-props> 01 <id>
 	08 24 //subsitute type
-	0A 08 CARGO_FARM_SUPPLIES //tile acceptance 1
+	0A 08 CARGO_FARMSUPPLIES //tile acceptance 1
 	0B 00 00 //tile acceptance 2
 	0C 00 00 //tile acceptance 3
 	0D 10 //land shape flags: 10 = only on flat land
@@ -35,7 +35,7 @@
 //Tile 25, action 0
 -1 * 0 00 09 \b5 01 25 // -1 * 0 00 09 <num-props> 01 <id>
 	08 25 //subsitute type
-	0A 08 CARGO_FARM_SUPPLIES //tile acceptance 1
+	0A 08 CARGO_FARMSUPPLIES //tile acceptance 1
 	0B 00 00 //tile acceptance 2
 	0C 00 00 //tile acceptance 3
 	0D 10 //land shape flags: 10 = only on flat land
@@ -108,8 +108,8 @@
 //Industry definition
 
 //Action 0
--1 * 0 00 0A \b25 01 IND_ARABLE_FARM //-1 * 0 00 0A <num-props> 01 <id>
-	08 IND_ARABLE_FARM //disable original industry with this here ID
+-1 * 0 00 0A \b25 01 IND_ARABLEFARM //-1 * 0 00 0A <num-props> 01 <id>
+	08 IND_ARABLEFARM //disable original industry with this here ID
 	0A 01 //number of industry layouts
 		\d27 //size of layout definition +2 for termination
 		//layout:
@@ -120,14 +120,14 @@
 			00 01 FE 25 00
 		00 80 //terminate layout definition
 	0B 02 //production flags 1h=extractive, 2h=organic, 4h=processing
-	0C \wx4833 //industry closure message (default: 4833; lack of trees: 4834)
-	0D \wx4838 //production increase message (default: 4835; coal: 4836; oil: 4837; farm: 4838)
-	0E \wx483A //production decrease message (default: 4839; insect infestation: 483A)
-	1B \wx482D //new industry message (default: 482D; planted: 482E)
-	1F STR_IND_ARABLE_FARM //industry name
+	0C STR_IND_CLOSE_GENERIC //industry closure message
+	0D STR_IND_PRODINCR_FARM //production increase message
+	0E STR_IND_PRODDECR_INSECTS //production decrease message
+	1B STR_IND_NEW_GENERIC //new industry message
+	1F STR_IND_ARABLEFARM //industry name
 	24 STR_STA_FARM //default text for nearby station
-	10 CARGO_FRUITS CARGO_GRAIN //production cargo types (word; fill unused with FFh)
-	11 CARGO_FARM_SUPPLIES FF FF FF //acceptance cargo types (dword; fill unused with FFh)
+	10 CARGO_FRUITSANDVEGETABLES CARGO_GRAIN //production cargo types (word; fill unused with FFh)
+	11 CARGO_FARMSUPPLIES FF FF FF //acceptance cargo types (dword; fill unused with FFh)
 	12 \b10 //production multiplier cargo 1
 	13 \b10 //production multiplier cargo 2
 	1C 00 80 00 80 //input cargo 1 multiplier (dword M1 M2; output_typen = X*Mn/256)

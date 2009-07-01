@@ -6,11 +6,11 @@
 -1 * 0 00 0B \b19 01 	//Action 0, feature 0B for cargos, 19 properties, changing 1 cargo def
 00 		//ID
 08 00 		// B Bit number for bitmasks  
-09 0F 00	// W TextID for the cargo type name  
-0A 2F 00 	// W TextID for the name of one unit from the cargo type  
-0B 4F 00 	// W TextID to be displayed for 1 unit of cargo  
-0C 6F 00 	// W TextID to be displayed for multiple units of cargo  
-0D 8F 00 	// W TextID for cargo type abbreviation  
+09 STR_CRG_PASSENGERS_CTYPE		// W TextID for the cargo type name  
+0A STR_CRG_PASSENGERS_1TYPE 	// W TextID for the name of one unit from the cargo type  
+0B STR_CRG_PASSENGERS_1UNIT 	// W TextID to be displayed for 1 unit of cargo  
+0C STR_CRG_PASSENGERS_MUNIT 	// W TextID to be displayed for multiple units of cargo  
+0D STR_CRG_PASSENGERS_TABBR 	// W TextID for cargo type abbreviation  
 0E FF FF 	// W Sprite number for the icon of the cargo  
 0F \b1 		// B Weight of one unit of the cargo  
 10 \b0 		// B Penalty times 
@@ -30,11 +30,11 @@
 -1 * 0 00 0B \b19 01 	//Action 0, feature 0B for cargos, 19 properties, changing 1 cargo def
 01 		//ID
 08 01 		// B Bit number for bitmasks  
-09 10 00	// W TextID for the cargo type name  
-0A 30 00 	// W TextID for the name of one unit from the cargo type  
-0B 50 00 	// W TextID to be displayed for 1 unit of cargo  
-0C 70 00 	// W TextID to be displayed for multiple units of cargo  
-0D 90 00 	// W TextID for cargo type abbreviation  
+09 STR_CRG_COAL_CTYPE	// W TextID for the cargo type name  
+0A STR_CRG_COAL_1TYPE 	// W TextID for the name of one unit from the cargo type  
+0B STR_CRG_COAL_1UNIT 	// W TextID to be displayed for 1 unit of cargo  
+0C STR_CRG_COAL_MUNIT 	// W TextID to be displayed for multiple units of cargo  
+0D STR_CRG_COAL_TABBR 	// W TextID for cargo type abbreviation  
 0E FF FF 	// W Sprite number for the icon of the cargo  
 0F \b16 	// B Weight of one unit of the cargo  
 10 \b7 		// B Penalty times 
@@ -54,11 +54,11 @@
 -1 * 0 00 0B \b19 01 	//Action 0, feature 0B for cargos, 19 properties, changing 1 cargo def
 02 		//ID
 08 02 		// B Bit number for bitmasks  
-09 11 00	// W TextID for the cargo type name  
-0A 31 00 	// W TextID for the name of one unit from the cargo type  
-0B 51 00 	// W TextID to be displayed for 1 unit of cargo  
-0C 71 00 	// W TextID to be displayed for multiple units of cargo  
-0D 91 00 	// W TextID for cargo type abbreviation  
+09 STR_CRG_MAIL_CTYPE	// W TextID for the cargo type name  
+0A STR_CRG_MAIL_1TYPE 	// W TextID for the name of one unit from the cargo type  
+0B STR_CRG_MAIL_1UNIT 	// W TextID to be displayed for 1 unit of cargo  
+0C STR_CRG_MAIL_MUNIT 	// W TextID to be displayed for multiple units of cargo  
+0D STR_CRG_MAIL_TABBR 	// W TextID for cargo type abbreviation  
 0E FF FF 	// W Sprite number for the icon of the cargo  
 0F \b4 		// B Weight of one unit of the cargo  
 10 \b6 		// B Penalty times 
@@ -78,11 +78,11 @@
 -1 * 0 00 0B \b19 01 	//Action 0, feature 0B for cargos, 19 properties, changing 1 cargo def
 03 		//ID
 08 03 		// B Bit number for bitmasks  
-09 12 00	// W TextID for the cargo type name  
-0A 32 00 	// W TextID for the name of one unit from the cargo type  
-0B 52 00 	// W TextID to be displayed for 1 unit of cargo  
-0C 72 00 	// W TextID to be displayed for multiple units of cargo  
-0D 92 00 	// W TextID for cargo type abbreviation  
+09 STR_CRG_OIL_CTYPE	// W TextID for the cargo type name  
+0A STR_CRG_OIL_1TYPE 	// W TextID for the name of one unit from the cargo type  
+0B STR_CRG_OIL_1UNIT 	// W TextID to be displayed for 1 unit of cargo  
+0C STR_CRG_OIL_MUNIT 	// W TextID to be displayed for multiple units of cargo  
+0D STR_CRG_OIL_TABBR 	// W TextID for cargo type abbreviation  
 0E FF FF 	// W Sprite number for the icon of the cargo  
 0F \b14 	// B Weight of one unit of the cargo  
 10 \b25 	// B Penalty times 
@@ -102,11 +102,11 @@
 -1 * 0 00 0B \b19 01 	//Action 0, feature 0B for cargos, 19 properties, changing 1 cargo def
 04 		//ID
 08 04 		// B Bit number for bitmasks  
-09 13 00	// W TextID for the cargo type name  
-0A 33 00 	// W TextID for the name of one unit from the cargo type  
-0B 53 00 	// W TextID to be displayed for 1 unit of cargo  
-0C 73 00 	// W TextID to be displayed for multiple units of cargo  
-0D 93 00 	// W TextID for cargo type abbreviation 
+09 STR_CRG_LIVESTOCK_CTYPE	// W TextID for the cargo type name  
+0A STR_CRG_LIVESTOCK_1TYPE 	// W TextID for the name of one unit from the cargo type  
+0B STR_CRG_LIVESTOCK_1UNIT 	// W TextID to be displayed for 1 unit of cargo  
+0C STR_CRG_LIVESTOCK_MUNIT 	// W TextID to be displayed for multiple units of cargo  
+0D STR_CRG_LIVESTOCK_TABBR 	// W TextID for cargo type abbreviation 
 0E FF FF 	// W Sprite number for the icon of the cargo  
 0F \b3 		// B Weight of one unit of the cargo  
 10 \b0 		// B Penalty times 
@@ -126,11 +126,11 @@
 -1 * 0 00 0B \b19 01 	//Action 0, feature 0B for cargos, 19 properties, changing 1 cargo def
 05 		//ID
 08 05 		// B Bit number for bitmasks  
-09 14 00	// W TextID for the cargo type name  
-0A 34 00 	// W TextID for the name of one unit from the cargo type  
-0B 54 00 	// W TextID to be displayed for 1 unit of cargo  
-0C 74 00 	// W TextID to be displayed for multiple units of cargo  
-0D 94 00 	// W TextID for cargo type abbreviation  
+09 STR_CRG_GOODS_CTYPE	// W TextID for the cargo type name  
+0A STR_CRG_GOODS_1TYPE	// W TextID for the name of one unit from the cargo type  
+0B STR_CRG_GOODS_1UNIT 	// W TextID to be displayed for 1 unit of cargo  
+0C STR_CRG_GOODS_MUNIT 	// W TextID to be displayed for multiple units of cargo  
+0D STR_CRG_GOODS_TABBR 	// W TextID for cargo type abbreviation  
 0E FF FF 	// W Sprite number for the icon of the cargo  
 0F \b8 		// B Weight of one unit of the cargo  
 10 \b5 		// B Penalty times 
@@ -152,11 +152,11 @@
 -1 * 0 00 0B \b19 01 	//Action 0, feature 0B for cargos, 19 properties, changing 1 cargo def
 06 		//ID
 08 06 		// B Bit number for bitmasks  
-09 15 00	// W TextID for the cargo type name  
-0A 35 00 	// W TextID for the name of one unit from the cargo type  
-0B 55 00 	// W TextID to be displayed for 1 unit of cargo  
-0C 75 00 	// W TextID to be displayed for multiple units of cargo  
-0D 95 00 	// W TextID for cargo type abbreviation 
+09 STR_CRG_GRAIN_CTYPE	// W TextID for the cargo type name  
+0A STR_CRG_GRAIN_1TYPE 	// W TextID for the name of one unit from the cargo type  
+0B STR_CRG_GRAIN_1UNIT 	// W TextID to be displayed for 1 unit of cargo  
+0C STR_CRG_GRAIN_MUNIT 	// W TextID to be displayed for multiple units of cargo  
+0D STR_CRG_GRAIN_TABBR 	// W TextID for cargo type abbreviation 
 0E FF FF 	// W Sprite number for the icon of the cargo  
 0F \b16 	// B Weight of one unit of the cargo  
 10 \b4 		// B Penalty times 
@@ -178,11 +178,11 @@
 -1 * 0 00 0B \b19 01 	//Action 0, feature 0B for cargos, 19 properties, changing 1 cargo def
 06 		//ID
 08 06 		// B Bit number for bitmasks  
-09 \b01 DC 	// W TextID for the cargo type name  
-0A \b01 DC 	// W TextID for the name of one unit from the cargo type  
-0B \b02 DC 	// W TextID to be displayed for 1 unit of cargo  
-0C \b03 DC 	// W TextID to be displayed for multiple units of cargo  
-0D \b04 DC 	// W TextID for cargo type abbreviation  
+09 STR_CRG_SUGARCANE_CTYPE 	// W TextID for the cargo type name  
+0A STR_CRG_SUGARCANE_1TYPE 	// W TextID for the name of one unit from the cargo type  
+0B STR_CRG_SUGARCANE_1UNIT 	// W TextID to be displayed for 1 unit of cargo  
+0C STR_CRG_SUGARCANE_MUNIT 	// W TextID to be displayed for multiple units of cargo  
+0D STR_CRG_SUGARCANE_TABBR 	// W TextID for cargo type abbreviation  
 0E FF FF 	// W Sprite number for the icon of the cargo  
 0F \b16 	// B Weight of one unit of the cargo  
 10 \b3 		// B Penalty times 
@@ -202,11 +202,11 @@
 -1 * 0 00 0B \b19 01 	//Action 0, feature 0B for cargos, 19 properties, changing 1 cargo def
 07 		//ID
 08 07 		// B Bit number for bitmasks  
-09 16 00 	// W TextID for the cargo type name  
-0A 36 00 	// W TextID for the name of one unit from the cargo type  
-0B 56 00 	// W TextID to be displayed for 1 unit of cargo  
-0C 76 00 	// W TextID to be displayed for multiple units of cargo  
-0D 96 00 	// W TextID for cargo type abbreviation  
+09 STR_CRG_WOOD_CTYPE 	// W TextID for the cargo type name  
+0A STR_CRG_WOOD_1TYPE 	// W TextID for the name of one unit from the cargo type  
+0B STR_CRG_WOOD_1UNIT 	// W TextID to be displayed for 1 unit of cargo  
+0C STR_CRG_WOOD_MUNIT 	// W TextID to be displayed for multiple units of cargo  
+0D STR_CRG_WOOD_TABBR 	// W TextID for cargo type abbreviation  
 0E FF FF 	// W Sprite number for the icon of the cargo  
 0F \b16 	// B Weight of one unit of the cargo  
 10 \b15 	// B Penalty times 
@@ -226,11 +226,11 @@
 -1 * 0 00 0B \b19 01 	//Action 0, feature 0B for cargos, 19 properties, changing 1 cargo def
 08 		//ID
 08 08 		// B Bit number for bitmasks  
-09 17 00 	// W TextID for the cargo type name  
-0A 37 00 	// W TextID for the name of one unit from the cargo type  
-0B 57 00 	// W TextID to be displayed for 1 unit of cargo  
-0C 77 00 	// W TextID to be displayed for multiple units of cargo  
-0D 97 00 	// W TextID for cargo type abbreviation  
+09 STR_CRG_IRONORE_CTYPE 	// W TextID for the cargo type name  
+0A STR_CRG_IRONORE_1TYPE 	// W TextID for the name of one unit from the cargo type  
+0B STR_CRG_IRONORE_1UNIT 	// W TextID to be displayed for 1 unit of cargo  
+0C STR_CRG_IRONORE_MUNIT 	// W TextID to be displayed for multiple units of cargo  
+0D STR_CRG_IRONORE_TABBR 	// W TextID for cargo type abbreviation  
 0E FF FF 	// W Sprite number for the icon of the cargo  
 0F \b16 	// B Weight of one unit of the cargo  
 10 \b9 		// B Penalty times 
@@ -250,11 +250,11 @@
 -1 * 0 00 0B \b19 01 	//Action 0, feature 0B for cargos, 19 properties, changing 1 cargo def
 09 		//ID
 08 09 		// B Bit number for bitmasks  
-09 18 00 	// W TextID for the cargo type name  
-0A 38 00 	// W TextID for the name of one unit from the cargo type  
-0B 58 00 	// W TextID to be displayed for 1 unit of cargo  
-0C 78 00 	// W TextID to be displayed for multiple units of cargo  
-0D 98 00 	// W TextID for cargo type abbreviation  
+09 STR_CRG_STEEL_CTYPE 	// W TextID for the cargo type name  
+0A STR_CRG_STEEL_1TYPE 	// W TextID for the name of one unit from the cargo type  
+0B STR_CRG_STEEL_1UNIT 	// W TextID to be displayed for 1 unit of cargo  
+0C STR_CRG_STEEL_MUNIT 	// W TextID to be displayed for multiple units of cargo  
+0D STR_CRG_STEEL_TABBR 	// W TextID for cargo type abbreviation  
 0E FF FF 	// W Sprite number for the icon of the cargo  
 0F \b16 	// B Weight of one unit of the cargo  
 10 \b7 		// B Penalty times 
@@ -274,11 +274,11 @@
 -1 * 0 00 0B \b19 01 	//Action 0, feature 0B for cargos, 19 properties, changing 1 cargo def
 0A 		//ID
 08 0A 		// B Bit number for bitmasks  
-09 \b05 DC 	// W TextID for the cargo type name  
-0A \b05 DC 	// W TextID for the name of one unit from the cargo type  
-0B \b06 DC 	// W TextID to be displayed for 1 unit of cargo  
-0C \b07 DC 	// W TextID to be displayed for multiple units of cargo  
-0D \b08 DC 	// W TextID for cargo type abbreviation  
+09 STR_CRG_WASTE_CTYPE 	// W TextID for the cargo type name  
+0A STR_CRG_WASTE_1TYPE 	// W TextID for the name of one unit from the cargo type  
+0B STR_CRG_WASTE_1UNIT 	// W TextID to be displayed for 1 unit of cargo  
+0C STR_CRG_WASTE_MUNIT 	// W TextID to be displayed for multiple units of cargo  
+0D STR_CRG_WASTE_TABBR 	// W TextID for cargo type abbreviation  
 0E FF FF 	// W Sprite number for the icon of the cargo  
 0F \b16 	// B Weight of one unit of the cargo  
 10 \b15 	// B Penalty times 
@@ -298,11 +298,11 @@
 -1 * 0 00 0B \b19 01 	//Action 0, feature 0B for cargos, 19 properties, changing 1 cargo def
 0B 		//ID
 08 0B 		// B Bit number for bitmasks  
-09 1E 00 	// W TextID for the cargo type name  
-0A 3E 00 	// W TextID for the name of one unit from the cargo type  
-0B 5E 00 	// W TextID to be displayed for 1 unit of cargo  
-0C 7E 00 	// W TextID to be displayed for multiple units of cargo  
-0D 9E 00 	// W TextID for cargo type abbreviation  
+09 STR_CRG_FOOD_CTYPE 	// W TextID for the cargo type name  
+0A STR_CRG_FOOD_1TYPE 	// W TextID for the name of one unit from the cargo type  
+0B STR_CRG_FOOD_1UNIT 	// W TextID to be displayed for 1 unit of cargo  
+0C STR_CRG_FOOD_MUNIT 	// W TextID to be displayed for multiple units of cargo  
+0D STR_CRG_FOOD_TABBR 	// W TextID for cargo type abbreviation  
 0E FF FF 	// W Sprite number for the icon of the cargo  
 0F \b16 	// B Weight of one unit of the cargo  
 10 \b0 		// B Penalty times 
@@ -322,11 +322,11 @@
 -1 * 0 00 0B \b19 01 	//Action 0, feature 0B for cargos, 19 properties, changing 1 cargo def
 0C 		//ID
 08 0C 		// B Bit number for bitmasks  
-09 \b62 DC 	// W TextID for the cargo type name  
-0A \b62 DC 	// W TextID for the name of one unit from the cargo type  
-0B \b63 DC 	// W TextID to be displayed for 1 unit of cargo  
-0C \b63 DC 	// W TextID to be displayed for multiple units of cargo  
-0D \b64 DC 	// W TextID for cargo type abbreviation   
+09 STR_CRG_MILK_CTYPE 	// W TextID for the cargo type name  
+0A STR_CRG_MILK_1TYPE 	// W TextID for the name of one unit from the cargo type  
+0B STR_CRG_MILK_1UNIT 	// W TextID to be displayed for 1 unit of cargo  
+0C STR_CRG_MILK_MUNIT 	// W TextID to be displayed for multiple units of cargo  
+0D STR_CRG_MILK_TABBR 	// W TextID for cargo type abbreviation   
 0E FF FF 	// W Sprite number for the icon of the cargo  
 0F \b17 	// B Weight of one unit of the cargo  
 10 \b0 		// B Penalty times 
@@ -346,11 +346,11 @@
 -1 * 0 00 0B \b19 01 	//Action 0, feature 0B for cargos, 19 properties, changing 1 cargo def
 0D 		//ID
 08 0D 		// B Bit number for bitmasks  
-09 \b09 DC 	// W TextID for the cargo type name  
-0A \b10 DC 	// W TextID for the name of one unit from the cargo type  
-0B \b11 DC 	// W TextID to be displayed for 1 unit of cargo  
-0C \b12 DC 	// W TextID to be displayed for multiple units of cargo  
-0D 9C 00 	// W TextID for cargo type abbreviation  
+09 STR_CRG_FRUITSANDVEGETABLES_CTYPE 	// W TextID for the cargo type name  
+0A STR_CRG_FRUITSANDVEGETABLES_1TYPE 	// W TextID for the name of one unit from the cargo type  
+0B STR_CRG_FRUITSANDVEGETABLES_1UNIT 	// W TextID to be displayed for 1 unit of cargo  
+0C STR_CRG_FRUITSANDVEGETABLES_MUNIT 	// W TextID to be displayed for multiple units of cargo  
+0D STR_CRG_FRUITSANDVEGETABLES_TABBR 	// W TextID for cargo type abbreviation  
 0E FF FF 	// W Sprite number for the icon of the cargo  
 0F \b16 	// B Weight of one unit of the cargo  
 10 \b0 		// B Penalty times 
@@ -370,11 +370,11 @@
 -1 * 0 00 0B \b19 01 	//Action 0, feature 0B for cargos, 19 properties, changing 1 cargo def
 0E 		//ID
 08 0E 		// B Bit number for bitmasks  
-09 \b13 DC 	// W TextID for the cargo type name  
-0A \b13 DC 	// W TextID for the name of one unit from the cargo type  
-0B \b14 DC 	// W TextID to be displayed for 1 unit of cargo  
-0C \b15 DC 	// W TextID to be displayed for multiple units of cargo  
-0D \b16 DC 	// W TextID for cargo type abbreviation  
+09 STR_CRG_FISH_CTYPE 	// W TextID for the cargo type name  
+0A STR_CRG_FISH_1TYPE 	// W TextID for the name of one unit from the cargo type  
+0B STR_CRG_FISH_1UNIT 	// W TextID to be displayed for 1 unit of cargo  
+0C STR_CRG_FISH_MUNIT 	// W TextID to be displayed for multiple units of cargo  
+0D STR_CRG_FISH_TABBR 	// W TextID for cargo type abbreviation  
 0E FF FF 	// W Sprite number for the icon of the cargo  
 0F \b16 	// B Weight of one unit of the cargo  
 10 \b0 		// B Penalty times 
@@ -396,11 +396,11 @@
 -1 * 0 00 0B \b19 01 	//Action 0, feature 0B for cargos, 19 properties, changing 1 cargo def
 0F 		//ID
 08 0F 		// B Bit number for bitmasks  
-09 \b17 DC 	// W TextID for the cargo type name  
-0A \b17 DC 	// W TextID for the name of one unit from the cargo type  
-0B \b18 DC 	// W TextID to be displayed for 1 unit of cargo  
-0C \b19 DC 	// W TextID to be displayed for multiple units of cargo  
-0D \b20 DC 	// W TextID for cargo type abbreviation  
+09 STR_CRG_COTTON_CTYPE 	// W TextID for the cargo type name  
+0A STR_CRG_COTTON_1TYPE 	// W TextID for the name of one unit from the cargo type  
+0B STR_CRG_COTTON_1UNIT 	// W TextID to be displayed for 1 unit of cargo  
+0C STR_CRG_COTTON_MUNIT 	// W TextID to be displayed for multiple units of cargo  
+0D STR_CRG_COTTON_TABBR 	// W TextID for cargo type abbreviation  
 0E FF FF 	// W Sprite number for the icon of the cargo  
 0F \b16 	// B Weight of one unit of the cargo  
 10 \b12 	// B Penalty times 
@@ -422,11 +422,11 @@
 -1 * 0 00 0B \b19 01 	//Action 0, feature 0B for cargos, 19 properties, changing 1 cargo def
 0F 		//ID
 08 0F 		// B Bit number for bitmasks  
-09 \b17 DC 	// W TextID for the cargo type name  
-0A \b17 DC 	// W TextID for the name of one unit from the cargo type  
-0B \b18 DC 	// W TextID to be displayed for 1 unit of cargo  
-0C \b19 DC 	// W TextID to be displayed for multiple units of cargo  
-0D \b20 DC 	// W TextID for cargo type abbreviation   
+09 STR_CRG_WOOL_CTYPE 	// W TextID for the cargo type name  
+0A STR_CRG_WOOL_1TYPE 	// W TextID for the name of one unit from the cargo type  
+0B STR_CRG_WOOL_1UNIT 	// W TextID to be displayed for 1 unit of cargo  
+0C STR_CRG_WOOL_MUNIT 	// W TextID to be displayed for multiple units of cargo  
+0D STR_CRG_WOOL_TABBR 	// W TextID for cargo type abbreviation   
 0E FF FF 	// W Sprite number for the icon of the cargo  
 0F \b16 	// B Weight of one unit of the cargo  
 10 \b11 	// B Penalty times 
@@ -446,11 +446,11 @@
 -1 * 0 00 0B \b19 01 	//Action 0, feature 0B for cargos, 19 properties, changing 1 cargo def
 10 		//ID
 08 10 		// B Bit number for bitmasks  
-09 \b25 DC 	// W TextID for the cargo type name  
-0A \b25 DC 	// W TextID for the name of one unit from the cargo type  
-0B \b26 DC 	// W TextID to be displayed for 1 unit of cargo  
-0C \b27 DC 	// W TextID to be displayed for multiple units of cargo  
-0D \b28 DC 	// W TextID for cargo type abbreviation   
+09 STR_CRG_GRAVEL_CTYPE 	// W TextID for the cargo type name  
+0A STR_CRG_GRAVEL_1TYPE 	// W TextID for the name of one unit from the cargo type  
+0B STR_CRG_GRAVEL_1UNIT 	// W TextID to be displayed for 1 unit of cargo  
+0C STR_CRG_GRAVEL_MUNIT 	// W TextID to be displayed for multiple units of cargo  
+0D STR_CRG_GRAVEL_TABBR 	// W TextID for cargo type abbreviation   
 0E FF FF 	// W Sprite number for the icon of the cargo  
 0F \b16 	// B Weight of one unit of the cargo  
 10 \b11 	// B Penalty times 
@@ -472,11 +472,11 @@
 -1 * 0 00 0B \b19 01 	//Action 0, feature 0B for cargos, 19 properties, changing 1 cargo def
 11 		//ID
 08 11 		// B Bit number for bitmasks  
-09 21 00 	// W TextID for the cargo type name  
-0A 41 00 	// W TextID for the name of one unit from the cargo type  
-0B 61 00 	// W TextID to be displayed for 1 unit of cargo  
-0C 81 00 	// W TextID to be displayed for multiple units of cargo  
-0D A1 00 	// W TextID for cargo type abbreviation  
+09 STR_CRG_WATER_CTYPE 	// W TextID for the cargo type name  
+0A STR_CRG_WATER_1TYPE 	// W TextID for the name of one unit from the cargo type  
+0B STR_CRG_WATER_1UNIT 	// W TextID to be displayed for 1 unit of cargo  
+0C STR_CRG_WATER_MUNIT 	// W TextID to be displayed for multiple units of cargo  
+0D STR_CRG_WATER_TABBR 	// W TextID for cargo type abbreviation  
 0E FF FF 	// W Sprite number for the icon of the cargo  
 0F \b16 	// B Weight of one unit of the cargo  
 10 \b20 	// B Penalty times 
@@ -498,11 +498,11 @@
 -1 * 0 00 0B \b19 01 	//Action 0, feature 0B for cargos, 19 properties, changing 1 cargo def
 11 		//ID
 08 11 		// B Bit number for bitmasks  
-09 \b21 DC 	// W TextID for the cargo type name  
-0A \b21 DC 	// W TextID for the name of one unit from the cargo type  
-0B \b22 DC 	// W TextID to be displayed for 1 unit of cargo  
-0C \b23 DC 	// W TextID to be displayed for multiple units of cargo  
-0D \b24 DC 	// W TextID for cargo type abbreviation  
+09 STR_CRG_SAND_CTYPE 	// W TextID for the cargo type name  
+0A STR_CRG_SAND_1TYPE 	// W TextID for the name of one unit from the cargo type  
+0B STR_CRG_SAND_1UNIT 	// W TextID to be displayed for 1 unit of cargo  
+0C STR_CRG_SAND_MUNIT 	// W TextID to be displayed for multiple units of cargo  
+0D STR_CRG_SAND_TABBR 	// W TextID for cargo type abbreviation  
 0E FF FF 	// W Sprite number for the icon of the cargo  
 0F \b16 	// B Weight of one unit of the cargo  
 10 \b12 	// B Penalty times 
@@ -522,11 +522,11 @@
 -1 * 0 00 0B \b19 01 	//Action 0, feature 0B for cargos, 19 properties, changing 1 cargo def
 12 		//ID
 08 12 		// B Bit number for bitmasks  
-09 \b29 DC 	// W TextID for the cargo type name  
-0A \b29 DC 	// W TextID for the name of one unit from the cargo type  
-0B \b30 DC 	// W TextID to be displayed for 1 unit of cargo  
-0C \b31 DC 	// W TextID to be displayed for multiple units of cargo  
-0D \b32 DC 	// W TextID for cargo type abbreviation   
+09 STR_CRG_LUMBER_CTYPE 	// W TextID for the cargo type name  
+0A STR_CRG_LUMBER_1TYPE 	// W TextID for the name of one unit from the cargo type  
+0B STR_CRG_LUMBER_1UNIT 	// W TextID to be displayed for 1 unit of cargo  
+0C STR_CRG_LUMBER_MUNIT 	// W TextID to be displayed for multiple units of cargo  
+0D STR_CRG_LUMBER_TABBR 	// W TextID for cargo type abbreviation   
 0E FF FF 	// W Sprite number for the icon of the cargo  
 0F \b16 	// B Weight of one unit of the cargo  
 10 \b7 		// B Penalty times 
@@ -546,11 +546,11 @@
 -1 * 0 00 0B \b19 01 	//Action 0, feature 0B for cargos, 19 properties, changing 1 cargo def
 13 		//ID
 08 13 		// B Bit number for bitmasks  
-09 \b51 DC 	// W TextID for the cargo type name  
-0A \b51 DC 	// W TextID for the name of one unit from the cargo type  
-0B \b52 DC 	// W TextID to be displayed for 1 unit of cargo  
-0C \b53 DC 	// W TextID to be displayed for multiple units of cargo  
-0D AB 00 	// W TextID for cargo type abbreviation   
+09 STR_CRG_BAUXITE_CTYPE 	// W TextID for the cargo type name  
+0A STR_CRG_BAUXITE_1TYPE 	// W TextID for the name of one unit from the cargo type  
+0B STR_CRG_BAUXITE_1UNIT 	// W TextID to be displayed for 1 unit of cargo  
+0C STR_CRG_BAUXITE_MUNIT 	// W TextID to be displayed for multiple units of cargo  
+0D STR_CRG_BAUXITE_TABBR 	// W TextID for cargo type abbreviation   
 0E FF FF 	// W Sprite number for the icon of the cargo  
 0F \b16 	// B Weight of one unit of the cargo  
 10 \b10 	// B Penalty times 
@@ -570,11 +570,11 @@
 -1 * 0 00 0B \b19 01 	//Action 0, feature 0B for cargos, 19 properties, changing 1 cargo def
 14 		//ID
 08 14 		// B Bit number for bitmasks  
-09 \b58 DC 	// W TextID for the cargo type name  
-0A \b58 DC 	// W TextID for the name of one unit from the cargo type  
-0B \b59 DC 	// W TextID to be displayed for 1 unit of cargo  
-0C \b60 DC 	// W TextID to be displayed for multiple units of cargo  
-0D \b61 DC 	// W TextID for cargo type abbreviation   
+09 STR_CRG_ALUMINUM_CTYPE 	// W TextID for the cargo type name  
+0A STR_CRG_ALUMINUM_1TYPE 	// W TextID for the name of one unit from the cargo type  
+0B STR_CRG_ALUMINUM_1UNIT 	// W TextID to be displayed for 1 unit of cargo  
+0C STR_CRG_ALUMINUM_MUNIT 	// W TextID to be displayed for multiple units of cargo  
+0D STR_CRG_ALUMINUM_TABBR 	// W TextID for cargo type abbreviation   
 0E FF FF 	// W Sprite number for the icon of the cargo  
 0F \b16 	// B Weight of one unit of the cargo  
 10 \b7 		// B Penalty times 
@@ -594,11 +594,11 @@
 -1 * 0 00 0B \b19 01 	//Action 0, feature 0B for cargos, 19 properties, changing 1 cargo def
 15 		//ID
 08 15 		// B Bit number for bitmasks  
-09 \b65 DC 	// W TextID for the cargo type name  
-0A \b65 DC 	// W TextID for the name of one unit from the cargo type  
-0B \b66 DC 	// W TextID to be displayed for 1 unit of cargo  
-0C \b67 DC 	// W TextID to be displayed for multiple units of cargo  
-0D \b68 DC 	// W TextID for cargo type abbreviation   
+09 STR_CRG_SCRAPMETAL_CTYPE 	// W TextID for the cargo type name  
+0A STR_CRG_SCRAPMETAL_1TYPE 	// W TextID for the name of one unit from the cargo type  
+0B STR_CRG_SCRAPMETAL_1UNIT 	// W TextID to be displayed for 1 unit of cargo  
+0C STR_CRG_SCRAPMETAL_MUNIT 	// W TextID to be displayed for multiple units of cargo  
+0D STR_CRG_SCRAPMETAL_TABBR 	// W TextID for cargo type abbreviation   
 0E FF FF 	// W Sprite number for the icon of the cargo  
 0F \b16 	// B Weight of one unit of the cargo  
 10 \b15 	// B Penalty times 
@@ -618,11 +618,11 @@
 -1 * 0 00 0B \b19 01 	//Action 0, feature 0B for cargos, 19 properties, changing 1 cargo def
 16 		//ID
 08 16 		// B Bit number for bitmasks  
-09 \b48 DC 	// W TextID for the cargo type name  
-0A \b48 DC 	// W TextID for the name of one unit from the cargo type  
-0B \b49 DC 	// W TextID to be displayed for 1 unit of cargo  
-0C \b49 DC 	// W TextID to be displayed for multiple units of cargo  
-0D \b50 DC 	// W TextID for cargo type abbreviation   
+09 STR_CRG_FUELOIL_CTYPE 	// W TextID for the cargo type name  
+0A STR_CRG_FUELOIL_1TYPE 	// W TextID for the name of one unit from the cargo type  
+0B STR_CRG_FUELOIL_1UNIT	// W TextID to be displayed for 1 unit of cargo  
+0C STR_CRG_FUELOIL_MUNIT 	// W TextID to be displayed for multiple units of cargo  
+0D STR_CRG_FUELOIL_TABBR 	// W TextID for cargo type abbreviation   
 0E FF FF 	// W Sprite number for the icon of the cargo  
 0F \b11 	// B Weight of one unit of the cargo  
 10 \b15 	// B Penalty times 
@@ -642,11 +642,11 @@
 -1 * 0 00 0B \b19 01 	//Action 0, feature 0B for cargos, 19 properties, changing 1 cargo def
 17 		//ID
 08 17 		// B Bit number for bitmasks  
-09 \b41 DC 	// W TextID for the cargo type name  
-0A \b41 DC 	// W TextID for the name of one unit from the cargo type  
-0B \b42 DC 	// W TextID to be displayed for 1 unit of cargo  
-0C \b42 DC 	// W TextID to be displayed for multiple units of cargo  
-0D \b43 DC 	// W TextID for cargo type abbreviation   
+09 STR_CRG_CHEMICALS_CTYPE 	// W TextID for the cargo type name  
+0A STR_CRG_CHEMICALS_1TYPE 	// W TextID for the name of one unit from the cargo type  
+0B STR_CRG_CHEMICALS_1UNIT 	// W TextID to be displayed for 1 unit of cargo  
+0C STR_CRG_CHEMICALS_MUNIT 	// W TextID to be displayed for multiple units of cargo  
+0D STR_CRG_CHEMICALS_TABBR 	// W TextID for cargo type abbreviation   
 0E FF FF 	// W Sprite number for the icon of the cargo  
 0F \b10 	// B Weight of one unit of the cargo  
 10 \b8 		// B Penalty times 
@@ -666,11 +666,11 @@
 -1 * 0 00 0B \b19 01 	//Action 0, feature 0B for cargos, 19 properties, changing 1 cargo def
 18 		//ID
 08 18 		// B Bit number for bitmasks  
-09 \b33 DC 	// W TextID for the cargo type name  
-0A \b33 DC 	// W TextID for the name of one unit from the cargo type  
-0B \b34 DC 	// W TextID to be displayed for 1 unit of cargo  
-0C \b35 DC 	// W TextID to be displayed for multiple units of cargo  
-0D \b36 DC 	// W TextID for cargo type abbreviation   
+09 STR_CRG_PACKAGING_CTYPE 	// W TextID for the cargo type name  
+0A STR_CRG_PACKAGING_1TYPE 	// W TextID for the name of one unit from the cargo type  
+0B STR_CRG_PACKAGING_1UNIT 	// W TextID to be displayed for 1 unit of cargo  
+0C STR_CRG_PACKAGING_MUNIT 	// W TextID to be displayed for multiple units of cargo  
+0D STR_CRG_PACKAGING_TABBR 	// W TextID for cargo type abbreviation   
 0E FF FF 	// W Sprite number for the icon of the cargo  
 0F \b5 		// B Weight of one unit of the cargo  
 10 \b18 	// B Penalty times 
@@ -690,11 +690,11 @@
 -1 * 0 00 0B \b19 01 	//Action 0, feature 0B for cargos, 19 properties, changing 1 cargo def
 19 		//ID
 08 19 		// B Bit number for bitmasks  
-09 \b54 DC 	// W TextID for the cargo type name  
-0A \b54 DC 	// W TextID for the name of one unit from the cargo type  
-0B \b55 DC 	// W TextID to be displayed for 1 unit of cargo  
-0C \b56 DC 	// W TextID to be displayed for multiple units of cargo  
-0D \b57 DC 	// W TextID for cargo type abbreviation   
+09 STR_CRG_PARTS_CTYPE 	// W TextID for the cargo type name  
+0A STR_CRG_PARTS_1TYPE 	// W TextID for the name of one unit from the cargo type  
+0B STR_CRG_PARTS_1UNIT 	// W TextID to be displayed for 1 unit of cargo  
+0C STR_CRG_PARTS_MUNIT 	// W TextID to be displayed for multiple units of cargo  
+0D STR_CRG_PARTS_TABBR 	// W TextID for cargo type abbreviation   
 0E FF FF 	// W Sprite number for the icon of the cargo  
 0F \b9 		// B Weight of one unit of the cargo  
 10 \b18 	// B Penalty times 
@@ -714,11 +714,11 @@
 -1 * 0 00 0B \b19 01 	//Action 0, feature 0B for cargos, 19 properties, changing 1 cargo def
 1A 		//ID
 08 1A 		// B Bit number for bitmasks  
-09 \b44 DC 	// W TextID for the cargo type name  
-0A \b44 DC 	// W TextID for the name of one unit from the cargo type  
-0B \b45 DC 	// W TextID to be displayed for 1 unit of cargo  
-0C \b46 DC 	// W TextID to be displayed for multiple units of cargo  
-0D \b47 DC 	// W TextID for cargo type abbreviation   
+09 STR_CRG_ENGINEERINGSUPPLIES_CTYPE 	// W TextID for the cargo type name  
+0A STR_CRG_ENGINEERINGSUPPLIES_1TYPE 	// W TextID for the name of one unit from the cargo type  
+0B STR_CRG_ENGINEERINGSUPPLIES_1UNIT 	// W TextID to be displayed for 1 unit of cargo  
+0C STR_CRG_ENGINEERINGSUPPLIES_MUNIT 	// W TextID to be displayed for multiple units of cargo  
+0D STR_CRG_ENGINEERINGSUPPLIES_TABBR 	// W TextID for cargo type abbreviation   
 0E FF FF 	// W Sprite number for the icon of the cargo  
 0F \b10 	// B Weight of one unit of the cargo  
 10 \b10 	// B Penalty times 
@@ -738,11 +738,11 @@
 -1 * 0 00 0B \b19 01 	//Action 0, feature 0B for cargos, 19 properties, changing 1 cargo def
 1B 		//ID
 08 1B 		// B Bit number for bitmasks  
-09 \b37 DC 	// W TextID for the cargo type name  
-0A \b37 DC 	// W TextID for the name of one unit from the cargo type  
-0B \b38 DC 	// W TextID to be displayed for 1 unit of cargo  
-0C \b39 DC 	// W TextID to be displayed for multiple units of cargo  
-0D \b40 DC 	// W TextID for cargo type abbreviation   
+09 STR_CRG_FARMSUPPLIES_CTYPE 	// W TextID for the cargo type name  
+0A STR_CRG_FARMSUPPLIES_1TYPE 	// W TextID for the name of one unit from the cargo type  
+0B STR_CRG_FARMSUPPLIES_1UNIT 	// W TextID to be displayed for 1 unit of cargo  
+0C STR_CRG_FARMSUPPLIES_MUNIT 	// W TextID to be displayed for multiple units of cargo  
+0D STR_CRG_FARMSUPPLIES_TABBR 	// W TextID for cargo type abbreviation   
 0E FF FF 	// W Sprite number for the icon of the cargo  
 0F \b9 		// B Weight of one unit of the cargo  
 10 \b10 	// B Penalty times 
@@ -762,11 +762,11 @@
 -1 * 0 00 0B \b19 01 	//Action 0, feature 0B for cargos, 19 properties, changing 1 cargo def
 1C 		//ID
 08 1C 		// B Bit number for bitmasks  
-09 \b69 DC 	// W TextID for the cargo type name  
-0A \b69 DC 	// W TextID for the name of one unit from the cargo type  
-0B \b70 DC 	// W TextID to be displayed for 1 unit of cargo  
-0C \b71 DC 	// W TextID to be displayed for multiple units of cargo  
-0D \b72 DC 	// W TextID for cargo type abbreviation   
+09 STR_CRG_SURVEYSUPPLIES_CTYPE 	// W TextID for the cargo type name  
+0A STR_CRG_SURVEYSUPPLIES_1TYPE 	// W TextID for the name of one unit from the cargo type  
+0B STR_CRG_SURVEYSUPPLIES_1UNIT 	// W TextID to be displayed for 1 unit of cargo  
+0C STR_CRG_SURVEYSUPPLIES_MUNIT 	// W TextID to be displayed for multiple units of cargo  
+0D STR_CRG_SURVEYSUPPLIES_TABBR 	// W TextID for cargo type abbreviation   
 0E FF FF 	// W Sprite number for the icon of the cargo  
 0F \b7 		// B Weight of one unit of the cargo  
 10 \b10 	// B Penalty times 

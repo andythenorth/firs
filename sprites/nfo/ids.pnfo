@@ -1,142 +1,351 @@
 // Definition of the IDs of the single industries
-#define IND_COAL_MINE            00
-#define IND_IRONORE_MINE         01
-#define IND_BAUXITE_MINE         02
-#define IND_SANDPIT              03
-#define IND_GRAVEL_QUARRY        04
-#define IND_DREDGING_SITE        05
-#define IND_OIL_PLATFORM         06
-#define IND_OIL_WELL             07
-#define IND_STEEL_MILL           08
-#define IND_ALUMINUM_PLANT       09
-#define IND_DAIRY_FARM           0A
-#define IND_SHEEP_FARM           0B
-#define IND_ARABLE_FARM          0C
-#define IND_MIXED_FARM           0D
-#define IND_FRUIT_PLANTATION     0E
-#define IND_CANE_PLANTATION      0F
-#define IND_WATER_PLANT          10
-#define IND_DAIRY                11
-#define IND_FISH_PROCESSOR       12
-#define IND_BREWERY              13
-#define IND_WHOLESALE_MARKET     14
-#define IND_MEAT_PACKER          15
-#define IND_OIL_REFINERY         16
-#define IND_FERTILIZER_PLANT     17
-#define IND_SAWMILL              18
-#define IND_PAPER_MILL           19
-#define IND_PLASTICS_PLANT       1A
-#define IND_GLASS_WORKS          1B
-#define IND_METAL_FOUNDRY        1C
-#define IND_CEMENT_PLANT         1D
-#define IND_MACHINE_SHOP         1E
-#define IND_ENGINEERING_YARD     1F
-#define IND_FARM_SUPPLY_DEPOT    20
-#define IND_VEHICLE_PLANT        21
-#define IND_BLACKSMITH           22
-#define IND_TEXTILE_MILL         23
-#define IND_FACTORY              24
-#define IND_FURNITURE_FACTORY    25
-#define IND_JUNK_YARD            26
-#define IND_RECYCLING_PLANT      27
-#define IND_SURVEY_SUPPLY_DEPOT  28
-#define IND_SURVEY_CAMP          29
-#define IND_RESORT_HOTEL         2A
-#define IND_LANDFILL             2B
-#define IND_INCINERATOR          2C
-#define IND_THERMAL_PLANT        2D
-#define IND_WATER_TOWER          2E
-#define IND_WINDFARM             2F
-#define IND_FOREST               30
-#define IND_WASTE_COLLECTION     31
-#define IND_GUANO_MINE           32
-#define IND_BAKERY               33
-#define IND_SUGAR_REFINERY       34
-#define IND_COTTON_PLANTATION    35
-#define IND_FISHING_HARBOUR      36
-#define IND_FISH_FARM            37
-#define IND_ANIMAL_FEED_PLANT    38
-#define IND_WINDMILL             39
-#define IND_RETAIL_MARKET        3A
-#define IND_GENERAL_STORE        3B
-#define IND_GAS_STATION          3C
-#define IND_SUPERMARKET          3D
-#define IND_GREENHOUSE           3E
+#define IND_COALMINE            00
+#define IND_IRONOREMINE         01
+#define IND_BAUXITEMINE         02
+#define IND_SANDPIT             03
+#define IND_GRAVELQUARRY        04
+#define IND_DREDGINGSITE        05
+#define IND_OILPLATFORM         06
+#define IND_OILWELL             07
+#define IND_STEELMILL           08
+#define IND_ALUMINUMPLANT       09
+#define IND_DAIRYFARM           0A
+#define IND_SHEEPFARM           0B
+#define IND_ARABLEFARM          0C
+#define IND_MIXEDFARM           0D
+#define IND_FRUITPLANTATION     0E
+#define IND_CANEPLANTATION      0F
+#define IND_WATERPLANT          10
+#define IND_DAIRY               11
+#define IND_FISHPROCESSOR       12
+#define IND_BREWERY             13
+#define IND_WHOLESALEMARKET     14
+#define IND_MEATPACKER          15
+#define IND_OILREFINERY         16
+#define IND_FERTILIZERPLANT     17
+#define IND_SAWMILL             18
+#define IND_PAPERMILL           19
+#define IND_PLASTICSPLANT       1A
+#define IND_GLASSWORKS          1B
+#define IND_METALFOUNDRY        1C
+#define IND_CEMENTPLANT         1D
+#define IND_MACHINESHOP         1E
+#define IND_ENGINEERINGYARD     1F
+#define IND_FARMSUPPLYDEPOT     20
+#define IND_VEHICLEPLANT        21
+#define IND_BLACKSMITH          22
+#define IND_TEXTILEMILL         23
+#define IND_FACTORY             24
+#define IND_FURNITUREFACTORY    25
+#define IND_JUNKYARD            26
+#define IND_RECYCLINGPLANT      27
+#define IND_SURVEYSUPPLYDEPOT   28
+#define IND_SURVEYCAMP          29
+#define IND_RESORTHOTEL         2A
+#define IND_LANDFILL            2B
+#define IND_INCINERATOR         2C
+#define IND_THERMALPLANT        2D
+#define IND_WATERTOWER          2E
+#define IND_WINDFARM            2F
+#define IND_FOREST              30
+#define IND_WASTECOLLECTION     31
+#define IND_GUANOMINE           32
+#define IND_BAKERY              33
+#define IND_SUGARREFINERY       34
+#define IND_COTTONPLANTATION    35
+#define IND_FISHINGHARBOUR      36
+#define IND_FISHFARM            37
+#define IND_ANIMALFEEDPLANT     38
+#define IND_WINDMILL            39
+#define IND_RETAILMARKET        3A
+#define IND_GENERALSTORE        3B
+#define IND_GASSTATION          3C
+#define IND_SUPERMARKET         3D
+#define IND_GREENHOUSE          3E
 
 // Definition of the cargo bits
-#define CARGO_COAL               01
-#define CARGO_IRONORE            08
-#define CARGO_SAND               11
-#define CARGO_GRAVEL             10
-#define CARGO_OIL                03
-#define CARGO_BAUXITE            13
-#define CARGO_STEEL              09
-#define CARGO_ALUMINUM           14
-#define CARGO_LIVESTOCK          04
-#define CARGO_MILK               0C
-#define CARGO_FRUITS             0D
-#define CARGO_GRAIN              06
-#define CARGO_SUGAR_CANE         06
-#define CARGO_FISH               0E
-#define CARGO_FOOD               0B
-#define CARGO_GOODS              05
-#define CARGO_WATER              11
-#define CARGO_SURVEY_SUPPLIES    1C
-#define CARGO_FARM_SUPPLIES      1B
-#define CARGO_ENGINEERING_SUPPLIES 1A
-#define CARGO_WOOD               07
-#define CARGO_LUMBER             12
-#define CARGO_CHEMICALS          17
-#define CARGO_FUEL_OIL           16
-#define CARGO_SCRAP_METAL        15
-#define CARGO_PARTS              19
-#define CARGO_PACKAGING          18
-#define CARGO_COTTON             0F
-#define CARGO_WOOL               0F
-#define CARGO_PASSENGERS         00
-#define CARGO_MAIL               02
-#define CARGO_WASTE              0A
-// #define CARGO_RESERVED1          1F
-// #define CARGO_RESERVED2          1E
+#define CARGO_COAL                01
+#define CARGO_IRONORE             08
+#define CARGO_SAND                11
+#define CARGO_GRAVEL              10
+#define CARGO_OIL                 03
+#define CARGO_BAUXITE             13
+#define CARGO_STEEL               09
+#define CARGO_ALUMINUM            14
+#define CARGO_LIVESTOCK           04
+#define CARGO_MILK                0C
+#define CARGO_FRUITSANDVEGETABLES 0D
+#define CARGO_GRAIN               06
+#define CARGO_SUGARCANE           06
+#define CARGO_FISH                0E
+#define CARGO_FOOD                0B
+#define CARGO_GOODS               05
+#define CARGO_WATER               11
+#define CARGO_SURVEYSUPPLIES      1C
+#define CARGO_FARMSUPPLIES        1B
+#define CARGO_ENGINEERINGSUPPLIES 1A
+#define CARGO_WOOD                07
+#define CARGO_LUMBER              12
+#define CARGO_CHEMICALS           17
+#define CARGO_FUELOIL             16
+#define CARGO_SCRAPMETAL          15
+#define CARGO_PARTS               19
+#define CARGO_PACKAGING           18
+#define CARGO_COTTON              0F
+#define CARGO_WOOL                0F
+#define CARGO_PASSENGERS          00
+#define CARGO_MAIL                02
+#define CARGO_WASTE               0A
+// #define CARGO_RESERVED1           1F
+// #define CARGO_RESERVED2           1E
 
 // Definition of the cargo labels
-#define CLABEL_COAL               COAL
-#define CLABEL_IRONORE            IORE
-#define CLABEL_SAND               SAND
-#define CLABEL_GRAVEL             GRVL
-#define CLABEL_OIL                OIL_
-#define CLABEL_BAUXITE            AORE
-#define CLABEL_STEEL              STEL
-#define CLABEL_ALUMINUM           ALUM
-#define CLABEL_LIVESTOCK          LVST
-#define CLABEL_MILK               MILK
-#define CLABEL_FRUITS             FRUT
-#define CLABEL_GRAIN              GRAI
-#define CLABEL_SUGAR_CANE         SGCN
-#define CLABEL_FISH               FISH
-#define CLABEL_FOOD               FOOD
-#define CLABEL_GOODS              GOOD
-#define CLABEL_WATER              WATR
-#define CLABEL_SURVEY_SUPPLIES    SVSP
-#define CLABEL_FARM_SUPPLIES      FMSP
-#define CLABEL_ENGINEERING_SUPPLIES ENSP
-#define CLABEL_WOOD               WOOD
-#define CLABEL_LUMBER             WDPR
-#define CLABEL_CHEMICALS          RFPR
-#define CLABEL_FUEL_OIL           PETR
-#define CLABEL_SCRAP_METAL        SCRP
-#define CLABEL_PARTS              PART
-#define CLABEL_PACKAGING          PACK
-#define CLABEL_COTTON             CTTN
-#define CLABEL_WOOL               WOOL
-#define CLABEL_PASSENGERS         PASS
-#define CLABEL_MAIL               MAIL
-#define CLABEL_WASTE              WSTE
+#define CLABEL_COAL                COAL
+#define CLABEL_IRONORE             IORE
+#define CLABEL_SAND                SAND
+#define CLABEL_GRAVEL              GRVL
+#define CLABEL_OIL                 OIL_
+#define CLABEL_BAUXITE             AORE
+#define CLABEL_STEEL               STEL
+#define CLABEL_ALUMINUM            ALUM
+#define CLABEL_LIVESTOCK           LVST
+#define CLABEL_MILK                MILK
+#define CLABEL_FRUITSANDVEGETABLES FRUT
+#define CLABEL_GRAIN               GRAI
+#define CLABEL_SUGARCANE           SGCN
+#define CLABEL_FISH                FISH
+#define CLABEL_FOOD                FOOD
+#define CLABEL_GOODS               GOOD
+#define CLABEL_WATER               WATR
+#define CLABEL_SURVEYSUPPLIES      SVSP
+#define CLABEL_FARMSUPPLIES        FMSP
+#define CLABEL_ENGINEERINGSUPPLIES ENSP
+#define CLABEL_WOOD                WOOD
+#define CLABEL_LUMBER              WDPR
+#define CLABEL_CHEMICALS           RFPR
+#define CLABEL_FUELOIL             PETR
+#define CLABEL_SCRAPMETAL          SCRP
+#define CLABEL_PARTS               PART
+#define CLABEL_PACKAGING           PACK
+#define CLABEL_COTTON              CTTN
+#define CLABEL_WOOL                WOOL
+#define CLABEL_PASSENGERS          PASS
+#define CLABEL_MAIL                MAIL
+#define CLABEL_WASTE               WSTE
 
 
 //Definition of text IDs for industries
-#define STR_IND_ARABLE_FARM       70 DC
+#define STR_IND_ARABLEFARM        70 DC
+
+
+//Definition of industry messages
+#define STR_IND_CLOSE_GENERIC     33 48
+#define STR_IND_CLOSE_LACKTREES   34 48
+#define STR_IND_PRODINCR_GENERIC  35 48
+#define STR_IND_PRODINCR_COAL     36 48
+#define STR_IND_PRODINCR_OIL      37 48
+#define STR_IND_PRODINCR_FARM     38 48
+#define STR_IND_PRODDECR_GENERIC  39 48
+#define STR_IND_PRODDECR_INSECTS  3A 48
+#define STR_IND_NEW_GENERIC       2D 48
+#define STR_IND_NEW_PLANTED       2E 48
 
 
 //Definition of text IDs for station name suffixes
 #define STR_STA_FARM              90 DC
+
+
+//Definition of text IDs for cargos
+#define STR_CRG_SUGARCANE_CTYPE             01 DC
+#define STR_CRG_SUGARCANE_1TYPE             01 DC //same as above
+#define STR_CRG_SUGARCANE_1UNIT             02 DC
+#define STR_CRG_SUGARCANE_MUNIT             03 DC
+#define STR_CRG_SUGARCANE_TABBR             04 DC
+
+#define STR_CRG_WASTE_CTYPE                 05 DC
+#define STR_CRG_WASTE_1TYPE                 05 DC //same as above
+#define STR_CRG_WASTE_1UNIT                 06 DC
+#define STR_CRG_WASTE_MUNIT                 07 DC
+#define STR_CRG_WASTE_TABBR                 08 DC
+
+#define STR_CRG_FRUITSANDVEGETABLES_CTYPE   09 DC
+#define STR_CRG_FRUITSANDVEGETABLES_1TYPE   0A DC
+#define STR_CRG_FRUITSANDVEGETABLES_1UNIT   0B DC
+#define STR_CRG_FRUITSANDVEGETABLES_MUNIT   0C DC
+#define STR_CRG_FRUITSANDVEGETABLES_TABBR   9C 00
+
+#define STR_CRG_FISH_CTYPE                  0D DC
+#define STR_CRG_FISH_1TYPE                  0D DC //same as above
+#define STR_CRG_FISH_1UNIT                  0E DC
+#define STR_CRG_FISH_MUNIT                  0F DC
+#define STR_CRG_FISH_TABBR                  10 DC
+
+#define STR_CRG_WOOL_CTYPE                  11 DC
+#define STR_CRG_WOOL_1TYPE                  11 DC //same as above
+#define STR_CRG_WOOL_1UNIT                  12 DC
+#define STR_CRG_WOOL_MUNIT                  13 DC
+#define STR_CRG_WOOL_TABBR                  14 DC
+
+#define STR_CRG_COTTON_CTYPE                15 DC
+#define STR_CRG_COTTON_1TYPE                15 DC //same as above
+#define STR_CRG_COTTON_1UNIT                16 DC
+#define STR_CRG_COTTON_MUNIT                17 DC
+#define STR_CRG_COTTON_TABBR                18 DC
+
+#define STR_CRG_SAND_CTYPE                  19 DC
+#define STR_CRG_SAND_1TYPE                  19 DC //same as above
+#define STR_CRG_SAND_1UNIT                  1A DC
+#define STR_CRG_SAND_MUNIT                  1B DC
+#define STR_CRG_SAND_TABBR                  1C DC
+
+#define STR_CRG_GRAVEL_CTYPE                1D DC
+#define STR_CRG_GRAVEL_1TYPE                1D DC //same as above
+#define STR_CRG_GRAVEL_1UNIT                1E DC
+#define STR_CRG_GRAVEL_MUNIT                1F DC
+#define STR_CRG_GRAVEL_TABBR                11 DC
+
+#define STR_CRG_LUMBER_CTYPE                12 DC
+#define STR_CRG_LUMBER_1TYPE                12 DC //same as above
+#define STR_CRG_LUMBER_1UNIT                13 DC
+#define STR_CRG_LUMBER_MUNIT                14 DC
+#define STR_CRG_LUMBER_TABBR                15 DC
+
+#define STR_CRG_PACKAGING_CTYPE             16 DC
+#define STR_CRG_PACKAGING_1TYPE             16 DC //same as above
+#define STR_CRG_PACKAGING_1UNIT             17 DC
+#define STR_CRG_PACKAGING_MUNIT             18 DC
+#define STR_CRG_PACKAGING_TABBR             19 DC
+
+#define STR_CRG_FARMSUPPLIES_CTYPE          1A DC
+#define STR_CRG_FARMSUPPLIES_1TYPE          1A DC //same as above
+#define STR_CRG_FARMSUPPLIES_1UNIT          1B DC
+#define STR_CRG_FARMSUPPLIES_MUNIT          1C DC
+#define STR_CRG_FARMSUPPLIES_TABBR          1D DC
+
+#define STR_CRG_CHEMICALS_CTYPE             1E DC
+#define STR_CRG_CHEMICALS_1TYPE             1E DC //same as above
+#define STR_CRG_CHEMICALS_1UNIT             1F DC
+#define STR_CRG_CHEMICALS_MUNIT             1F DC //same as above
+#define STR_CRG_CHEMICALS_TABBR             20 DC
+
+#define STR_CRG_ENGINEERINGSUPPLIES_CTYPE   21 DC
+#define STR_CRG_ENGINEERINGSUPPLIES_1TYPE   21 DC //same as above
+#define STR_CRG_ENGINEERINGSUPPLIES_1UNIT   22 DC
+#define STR_CRG_ENGINEERINGSUPPLIES_MUNIT   23 DC
+#define STR_CRG_ENGINEERINGSUPPLIES_TABBR   24 DC
+
+#define STR_CRG_FUELOIL_CTYPE               25 DC
+#define STR_CRG_FUELOIL_1TYPE               25 DC //same as above
+#define STR_CRG_FUELOIL_1UNIT               26 DC
+#define STR_CRG_FUELOIL_MUNIT               26 DC //same as above
+#define STR_CRG_FUELOIL_TABBR               27 DC
+
+#define STR_CRG_BAUXITE_CTYPE               28 DC
+#define STR_CRG_BAUXITE_1TYPE               28 DC //same as above
+#define STR_CRG_BAUXITE_1UNIT               29 DC
+#define STR_CRG_BAUXITE_MUNIT               2A DC
+#define STR_CRG_BAUXITE_TABBR               AB 00
+
+#define STR_CRG_PARTS_CTYPE                 2B DC
+#define STR_CRG_PARTS_1TYPE                 2B DC //same as above
+#define STR_CRG_PARTS_1UNIT                 2C DC
+#define STR_CRG_PARTS_MUNIT                 2D DC
+#define STR_CRG_PARTS_TABBR                 2E DC
+
+#define STR_CRG_ALUMINUM_CTYPE              2F DC
+#define STR_CRG_ALUMINUM_1TYPE              2F DC //same as above
+#define STR_CRG_ALUMINUM_1UNIT              30 DC
+#define STR_CRG_ALUMINUM_MUNIT              31 DC
+#define STR_CRG_ALUMINUM_TABBR              32 DC
+
+#define STR_CRG_MILK_CTYPE                  33 DC
+#define STR_CRG_MILK_1TYPE                  33 DC //same as above
+#define STR_CRG_MILK_1UNIT                  34 DC
+#define STR_CRG_MILK_MUNIT                  34 DC //same as above
+#define STR_CRG_MILK_TABBR                  35 DC
+
+#define STR_CRG_SCRAPMETAL_CTYPE            36 DC
+#define STR_CRG_SCRAPMETAL_1TYPE            36 DC //same as above
+#define STR_CRG_SCRAPMETAL_1UNIT            37 DC
+#define STR_CRG_SCRAPMETAL_MUNIT            38 DC
+#define STR_CRG_SCRAPMETAL_TABBR            39 DC
+
+#define STR_CRG_SURVEYSUPPLIES_CTYPE        3A DC
+#define STR_CRG_SURVEYSUPPLIES_1TYPE        3A DC //same as above
+#define STR_CRG_SURVEYSUPPLIES_1UNIT        3B DC
+#define STR_CRG_SURVEYSUPPLIES_MUNIT        3C DC
+#define STR_CRG_SURVEYSUPPLIES_TABBR        3D DC
+
+//Cargo strings below are from original TTD: http://wiki.ttdpatch.net/tiki-index.php?page=TextIDs
+
+#define STR_CRG_PASSENGERS_CTYPE            0F 00
+#define STR_CRG_PASSENGERS_1TYPE            2F 00
+#define STR_CRG_PASSENGERS_1UNIT            4F 00
+#define STR_CRG_PASSENGERS_MUNIT            6F 00
+#define STR_CRG_PASSENGERS_TABBR            8F 00
+
+#define STR_CRG_COAL_CTYPE                  10 00
+#define STR_CRG_COAL_1TYPE                  30 00
+#define STR_CRG_COAL_1UNIT                  50 00
+#define STR_CRG_COAL_MUNIT                  70 00
+#define STR_CRG_COAL_TABBR                  90 00
+
+#define STR_CRG_MAIL_CTYPE                  11 00
+#define STR_CRG_MAIL_1TYPE                  31 00
+#define STR_CRG_MAIL_1UNIT                  51 00
+#define STR_CRG_MAIL_MUNIT                  71 00
+#define STR_CRG_MAIL_TABBR                  91 00
+
+#define STR_CRG_OIL_CTYPE                   12 00
+#define STR_CRG_OIL_1TYPE                   32 00
+#define STR_CRG_OIL_1UNIT                   52 00
+#define STR_CRG_OIL_MUNIT                   72 00
+#define STR_CRG_OIL_TABBR                   92 00
+
+#define STR_CRG_LIVESTOCK_CTYPE             13 00
+#define STR_CRG_LIVESTOCK_1TYPE             33 00
+#define STR_CRG_LIVESTOCK_1UNIT             53 00
+#define STR_CRG_LIVESTOCK_MUNIT             73 00
+#define STR_CRG_LIVESTOCK_TABBR             93 00
+
+#define STR_CRG_GOODS_CTYPE                 14 00
+#define STR_CRG_GOODS_1TYPE                 34 00
+#define STR_CRG_GOODS_1UNIT                 54 00
+#define STR_CRG_GOODS_MUNIT                 74 00
+#define STR_CRG_GOODS_TABBR                 94 00
+
+#define STR_CRG_GRAIN_CTYPE                 15 00
+#define STR_CRG_GRAIN_1TYPE                 35 00
+#define STR_CRG_GRAIN_1UNIT                 55 00
+#define STR_CRG_GRAIN_MUNIT                 75 00
+#define STR_CRG_GRAIN_TABBR                 95 00
+
+#define STR_CRG_WOOD_CTYPE                  16 00
+#define STR_CRG_WOOD_1TYPE                  36 00
+#define STR_CRG_WOOD_1UNIT                  56 00
+#define STR_CRG_WOOD_MUNIT                  76 00
+#define STR_CRG_WOOD_TABBR                  96 00
+
+#define STR_CRG_IRONORE_CTYPE               17 00
+#define STR_CRG_IRONORE_1TYPE               37 00
+#define STR_CRG_IRONORE_1UNIT               57 00
+#define STR_CRG_IRONORE_MUNIT               77 00
+#define STR_CRG_IRONORE_TABBR               97 00
+
+#define STR_CRG_STEEL_CTYPE                 18 00
+#define STR_CRG_STEEL_1TYPE                 38 00
+#define STR_CRG_STEEL_1UNIT                 58 00
+#define STR_CRG_STEEL_MUNIT                 78 00
+#define STR_CRG_STEEL_TABBR                 98 00
+
+#define STR_CRG_FOOD_CTYPE                  1E 00
+#define STR_CRG_FOOD_1TYPE                  3E 00
+#define STR_CRG_FOOD_1UNIT                  5E 00
+#define STR_CRG_FOOD_MUNIT                  7E 00
+#define STR_CRG_FOOD_TABBR                  9E 00
+
+#define STR_CRG_WATER_CTYPE                 21 00
+#define STR_CRG_WATER_1TYPE                 41 00
+#define STR_CRG_WATER_1UNIT                 61 00
+#define STR_CRG_WATER_MUNIT                 81 00
+#define STR_CRG_WATER_TABBR                 A1 00
