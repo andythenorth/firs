@@ -1,0 +1,20 @@
+We're reusing some original industries (for now). Most of these industries are getting a new ID. To save some work we need to copy the original industries to their new IDs before they are overwritten.
+
+The industries we're keeping are listed in the table below.
+
+Industry          OrigID  NewID
+Coal Mine         00      00 //keeper
+Thermal Plant     01      01 //keeper
+Paper Mill        0E      0E //keeper
+
+Iron Ore Mine     12      04
+Steel Mill        08      07
+Forest            03      0B
+Sawmill           02      0C
+Oil Well          0B      0F
+Oil Platform      05      10
+Oil Refinery      04      11
+Water Plant       15      17 //only in tropic; shared with sand pit in temperate and arctic
+Water Tower       16      18 //only in tropic; shared with windmill in temperate and arctic
+Fruit Plantation  13      1E //only in temperate and tropic; shared with greenhouse in arctic
+Factory           06      28
