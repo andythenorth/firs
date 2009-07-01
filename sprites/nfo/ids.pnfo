@@ -1,67 +1,67 @@
 // Definition of the IDs of the single industries
 #define IND_COALMINE            00
-#define IND_IRONOREMINE         01
-#define IND_BAUXITEMINE         02
-#define IND_SANDPIT             03
-#define IND_GRAVELQUARRY        04
-#define IND_DREDGINGSITE        05
-#define IND_OILPLATFORM         06
-#define IND_OILWELL             07
-#define IND_STEELMILL           08
-#define IND_ALUMINUMPLANT       09
-#define IND_DAIRYFARM           0A
-#define IND_SHEEPFARM           0B
-#define IND_ARABLEFARM          0C
-#define IND_MIXEDFARM           0D
-#define IND_FRUITPLANTATION     0E
-#define IND_CANEPLANTATION      0F
-#define IND_WATERPLANT          10
-#define IND_DAIRY               11
-#define IND_FISHPROCESSOR       12
-#define IND_BREWERY             13
-#define IND_WHOLESALEMARKET     14
-#define IND_MEATPACKER          15
-#define IND_OILREFINERY         16
-#define IND_FERTILIZERPLANT     17
-#define IND_SAWMILL             18
-#define IND_PAPERMILL           19
-#define IND_PLASTICSPLANT       1A
-#define IND_GLASSWORKS          1B
-#define IND_METALFOUNDRY        1C
-#define IND_CEMENTPLANT         1D
-#define IND_MACHINESHOP         1E
-#define IND_ENGINEERINGYARD     1F
-#define IND_FARMSUPPLYDEPOT     20
-#define IND_VEHICLEPLANT        21
-#define IND_BLACKSMITH          22
-#define IND_TEXTILEMILL         23
-#define IND_FACTORY             24
-#define IND_FURNITUREFACTORY    25
-#define IND_JUNKYARD            26
-#define IND_RECYCLINGPLANT      27
-#define IND_SURVEYSUPPLYDEPOT   28
-#define IND_SURVEYCAMP          29
-#define IND_RESORTHOTEL         2A
-#define IND_LANDFILL            2B
-#define IND_INCINERATOR         2C
-#define IND_THERMALPLANT        2D
-#define IND_WATERTOWER          2E
-#define IND_WINDFARM            2F
-#define IND_FOREST              30
-#define IND_WASTECOLLECTION     31
-#define IND_GUANOMINE           32
-#define IND_BAKERY              33
-#define IND_SUGARREFINERY       34
-#define IND_COTTONPLANTATION    35
-#define IND_FISHINGHARBOUR      36
-#define IND_FISHFARM            37
-#define IND_ANIMALFEEDPLANT     38
-#define IND_WINDMILL            39
-#define IND_RETAILMARKET        3A
-#define IND_GENERALSTORE        3B
-#define IND_GASSTATION          3C
-#define IND_SUPERMARKET         3D
-#define IND_GREENHOUSE          3E
+#define IND_IRONOREMINE         04
+#define IND_BAUXITEMINE         05
+#define IND_SANDPIT             17
+#define IND_GRAVELQUARRY        15
+#define IND_DREDGINGSITE        14
+#define IND_OILPLATFORM         10
+#define IND_OILWELL             0F
+#define IND_STEELMILL           07
+#define IND_ALUMINUMPLANT       08
+#define IND_DAIRYFARM           1C
+#define IND_SHEEPFARM           1B
+#define IND_ARABLEFARM          1A
+#define IND_MIXEDFARM           1D
+#define IND_FRUITPLANTATION     1E
+#define IND_CANEPLANTATION      1A
+#define IND_WATERPLANT          17
+#define IND_DAIRY               24
+#define IND_FISHPROCESSOR       26
+#define IND_BREWERY             23
+#define IND_WHOLESALEMARKET     27
+#define IND_MEATPACKER          25
+#define IND_OILREFINERY         11
+#define IND_FERTILIZERPLANT     2F
+#define IND_SAWMILL             0C
+#define IND_PAPERMILL           0E
+#define IND_PLASTICSPLANT       12
+#define IND_GLASSWORKS          16
+#define IND_METALFOUNDRY        09
+#define IND_CEMENTPLANT         2C
+#define IND_MACHINESHOP         2E
+#define IND_ENGINEERINGYARD     2D
+#define IND_FARMSUPPLYDEPOT     32
+#define IND_VEHICLEPLANT        29
+#define IND_BLACKSMITH          06
+#define IND_TEXTILEMILL         2A
+#define IND_FACTORY             28
+#define IND_FURNITUREFACTORY    0D
+#define IND_JUNKYARD            38
+#define IND_RECYCLINGPLANT      39
+#define IND_SURVEYSUPPLYDEPOT   33
+#define IND_SURVEYCAMP          34
+#define IND_RESORTHOTEL         3B
+#define IND_LANDFILL            36
+#define IND_INCINERATOR         37
+#define IND_THERMALPLANT        01
+#define IND_WATERTOWER          18
+#define IND_WINDFARM            02
+#define IND_FOREST              0B
+#define IND_WASTECOLLECTION     3A
+#define IND_GUANOMINE           30
+#define IND_BAKERY              22
+#define IND_SUGARREFINERY       22
+#define IND_COTTONPLANTATION    1B
+#define IND_FISHINGHARBOUR      1F
+#define IND_FISHFARM            20
+#define IND_ANIMALFEEDPLANT     31
+#define IND_WINDMILL            18
+#define IND_GREENHOUSE          1E
+//#define IND_RETAILMARKET        3A
+//#define IND_GENERALSTORE        3B
+//#define IND_GASSTATION          3C
+//#define IND_SUPERMARKET         3D
 
 // Definition of the cargo bits/IDs
 #define CARGO_COAL                01
@@ -137,7 +137,7 @@
 
 //Definition of text IDs for industries
 #define STR_IND_ARABLEFARM        70 DC
-
+#define STR_IND_THERMALPLANT      71 DC
 
 //Definition of industry messages
 #define STR_IND_CLOSE_GENERIC     33 48
@@ -154,7 +154,8 @@
 
 //Definition of text IDs for station name suffixes
 #define STR_STA_FARM              90 DC
-
+#define STR_STA_THERMALPLANT      91 DC
+#define STR_STA_MILLS             92 DC
 
 //Definition of text IDs for cargos
 #define STR_CRG_SUGARCANE_CTYPE             01 DC
