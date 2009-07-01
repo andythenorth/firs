@@ -1,0 +1,62 @@
+//Redefinition of original TTD industry
+//Paper Mill
+-1 * 0 00 0A \b10 01 IND_PAPERMILL //-1 * 0 00 0A <num-props> 01 <id>
+	08 IND_PAPERMILL //substitute industry type
+	09 IND_PAPERMILL //industry type override
+	24 STR_STA_MILLS //default text for nearby station
+	10 CARGO_GOODS CARGO_PACKAGING //production cargo types (word; fill unused with FFh)
+	11 CARGO_WOOD CARGO_ENGINEERINGSUPPLIES FF FF //acceptance cargo types (dword; fill unused with FFh)
+	1C 00 66 00 19 //input cargo 1 multiplier (dword M1 M2; output_typen = X*Mn/256)
+	1D 00 66 00 19 //input cargo 2 multiplier
+	1E 00 00 00 00 //input cargo 3 multiplier
+	17 \b5 //probability in random game
+	18 \b2 //probability during gameplay
+//Tiles 40..47
+-1 * 0 00 09 \b5 01 40 // -1 * 0 00 09 <num-props> 01 <id>
+	08 40 //subsitute tile type
+	09 40 //industry tile override
+	0A CARGO_WOOD 08 //tile acceptance 1
+	0B CARGO_ENGINEERINGSUPPLIES 08 //tile acceptance 2
+	0C 00 00 //tile acceptance 3
+-1 * 0 00 09 \b5 01 41 // -1 * 0 00 09 <num-props> 01 <id>
+	08 41 //subsitute tile type
+	09 41 //industry tile override
+	0A CARGO_WOOD 08 //tile acceptance 1
+	0B CARGO_ENGINEERINGSUPPLIES 08 //tile acceptance 2
+	0C 00 00 //tile acceptance 3
+-1 * 0 00 09 \b5 01 42 // -1 * 0 00 09 <num-props> 01 <id>
+	08 42 //subsitute tile type
+	09 42 //industry tile override
+	0A CARGO_WOOD 08 //tile acceptance 1
+	0B CARGO_ENGINEERINGSUPPLIES 08 //tile acceptance 2
+	0C 00 00 //tile acceptance 3
+-1 * 0 00 09 \b5 01 43 // -1 * 0 00 09 <num-props> 01 <id>
+	08 43 //subsitute tile type
+	09 43 //industry tile override
+	0A CARGO_WOOD 08 //tile acceptance 1
+	0B CARGO_ENGINEERINGSUPPLIES 08 //tile acceptance 2
+	0C 00 00 //tile acceptance 3
+-1 * 0 00 09 \b5 01 44 // -1 * 0 00 09 <num-props> 01 <id>
+	08 44 //subsitute tile type
+	09 44 //industry tile override
+	0A CARGO_WOOD 08 //tile acceptance 1
+	0B CARGO_ENGINEERINGSUPPLIES 08 //tile acceptance 2
+	0C 00 00 //tile acceptance 3
+-1 * 0 00 09 \b5 01 45 // -1 * 0 00 09 <num-props> 01 <id>
+	08 45 //subsitute tile type
+	09 45 //industry tile override
+	0A CARGO_WOOD 08 //tile acceptance 1
+	0B CARGO_ENGINEERINGSUPPLIES 08 //tile acceptance 2
+	0C 00 00 //tile acceptance 3
+-1 * 0 00 09 \b5 01 46 // -1 * 0 00 09 <num-props> 01 <id>
+	08 46 //subsitute tile type
+	09 46 //industry tile override
+	0A CARGO_WOOD 08 //tile acceptance 1
+	0B CARGO_ENGINEERINGSUPPLIES 08 //tile acceptance 2
+	0C 00 00 //tile acceptance 3
+-1 * 0 00 09 \b5 01 47 // -1 * 0 00 09 <num-props> 01 <id>
+	08 47 //subsitute tile type
+	09 47 //industry tile override
+	0A CARGO_WOOD 08 //tile acceptance 1
+	0B CARGO_ENGINEERINGSUPPLIES 08 //tile acceptance 2
+	0C 00 00 //tile acceptance 3
