@@ -1,0 +1,19 @@
+//Redefinition of original TTD industry
+//We only need this in tropic
+-1 * 0 07 83 01 \7! 02 \b2
+//Water Tower
+-1 * 0 00 0A \b7 01 IND_WATERTOWER //-1 * 0 00 0A <num-props> 01 <id>
+	08 16 //substitute industry type
+	09 16 //industry type override
+	24 STR_STA_WATER //default text for nearby station
+	10 FF FF //production cargo types (word; fill unused with FFh)
+	11 CARGO_WATER FF FF FF //acceptance cargo types (dword; fill unused with FFh)
+	17 \b8 //probability in random game
+	18 \b4 //probability during gameplay
+//Tiles 78
+-1 * 0 00 09 \b5 01 78 // -1 * 0 00 09 <num-props> 01 <id>
+	08 78 //subsitute tile type
+	09 78 //industry tile override
+	0A CARGO_WATER 08 //tile acceptance 1
+	0B 00 00 //tile acceptance 2
+	0C 00 00 //tile acceptance 3
