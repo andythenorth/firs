@@ -63,7 +63,7 @@
 #define IND_SUPERMARKET         3D
 #define IND_GREENHOUSE          3E
 
-// Definition of the cargo bits
+// Definition of the cargo bits/IDs
 #define CARGO_COAL                01
 #define CARGO_IRONORE             08
 #define CARGO_SAND                11
@@ -96,42 +96,43 @@
 #define CARGO_PASSENGERS          00
 #define CARGO_MAIL                02
 #define CARGO_WASTE               0A
-// #define CARGO_RESERVED1           1F
-// #define CARGO_RESERVED2           1E
+// #define CARGO_RESERVED1           1D
+// #define CARGO_REGEARING           1E
+// #define CARGO_RESERVED2           1F
 
 // Definition of the cargo labels
-#define CLABEL_COAL                COAL
-#define CLABEL_IRONORE             IORE
-#define CLABEL_SAND                SAND
-#define CLABEL_GRAVEL              GRVL
-#define CLABEL_OIL                 OIL_
-#define CLABEL_BAUXITE             AORE
-#define CLABEL_STEEL               STEL
-#define CLABEL_ALUMINUM            ALUM
-#define CLABEL_LIVESTOCK           LVST
-#define CLABEL_MILK                MILK
-#define CLABEL_FRUITSANDVEGETABLES FRUT
-#define CLABEL_GRAIN               GRAI
-#define CLABEL_SUGARCANE           SGCN
-#define CLABEL_FISH                FISH
-#define CLABEL_FOOD                FOOD
-#define CLABEL_GOODS               GOOD
-#define CLABEL_WATER               WATR
-#define CLABEL_SURVEYSUPPLIES      SVSP
-#define CLABEL_FARMSUPPLIES        FMSP
-#define CLABEL_ENGINEERINGSUPPLIES ENSP
-#define CLABEL_WOOD                WOOD
-#define CLABEL_LUMBER              WDPR
-#define CLABEL_CHEMICALS           RFPR
-#define CLABEL_FUELOIL             PETR
-#define CLABEL_SCRAPMETAL          SCRP
-#define CLABEL_PARTS               PART
-#define CLABEL_PACKAGING           PACK
-#define CLABEL_COTTON              CTTN
-#define CLABEL_WOOL                WOOL
-#define CLABEL_PASSENGERS          PASS
-#define CLABEL_MAIL                MAIL
-#define CLABEL_WASTE               WSTE
+#define CLABEL_COAL                "COAL"
+#define CLABEL_IRONORE             "IORE"
+#define CLABEL_SAND                "SAND"
+#define CLABEL_GRAVEL              "GRVL"
+#define CLABEL_OIL                 "OIL_"
+#define CLABEL_BAUXITE             "AORE"
+#define CLABEL_STEEL               "STEL"
+#define CLABEL_ALUMINUM            "ALUM"
+#define CLABEL_LIVESTOCK           "LVST"
+#define CLABEL_MILK                "MILK"
+#define CLABEL_FRUITSANDVEGETABLES "FRUT"
+#define CLABEL_GRAIN               "GRAI"
+#define CLABEL_SUGARCANE           "SGCN"
+#define CLABEL_FISH                "FISH"
+#define CLABEL_FOOD                "FOOD"
+#define CLABEL_GOODS               "GOOD"
+#define CLABEL_WATER               "WATR"
+#define CLABEL_SURVEYSUPPLIES      "SVSP"
+#define CLABEL_FARMSUPPLIES        "FMSP"
+#define CLABEL_ENGINEERINGSUPPLIES "ENSP"
+#define CLABEL_WOOD                "WOOD"
+#define CLABEL_LUMBER              "WDPR"
+#define CLABEL_CHEMICALS           "RFPR"
+#define CLABEL_FUELOIL             "PETR"
+#define CLABEL_SCRAPMETAL          "SCRP"
+#define CLABEL_PARTS               "PART"
+#define CLABEL_PACKAGING           "PACK"
+#define CLABEL_COTTON              "CTTN"
+#define CLABEL_WOOL                "WOOL"
+#define CLABEL_PASSENGERS          "PASS"
+#define CLABEL_MAIL                "MAIL"
+#define CLABEL_WASTE               "WSTE"
 
 
 //Definition of text IDs for industries
@@ -202,79 +203,79 @@
 #define STR_CRG_GRAVEL_1TYPE                1D DC //same as above
 #define STR_CRG_GRAVEL_1UNIT                1E DC
 #define STR_CRG_GRAVEL_MUNIT                1F DC
-#define STR_CRG_GRAVEL_TABBR                11 DC
+#define STR_CRG_GRAVEL_TABBR                21 DC
 
-#define STR_CRG_LUMBER_CTYPE                12 DC
-#define STR_CRG_LUMBER_1TYPE                12 DC //same as above
-#define STR_CRG_LUMBER_1UNIT                13 DC
-#define STR_CRG_LUMBER_MUNIT                14 DC
-#define STR_CRG_LUMBER_TABBR                15 DC
+#define STR_CRG_LUMBER_CTYPE                22 DC
+#define STR_CRG_LUMBER_1TYPE                22 DC //same as above
+#define STR_CRG_LUMBER_1UNIT                23 DC
+#define STR_CRG_LUMBER_MUNIT                24 DC
+#define STR_CRG_LUMBER_TABBR                25 DC
 
-#define STR_CRG_PACKAGING_CTYPE             16 DC
-#define STR_CRG_PACKAGING_1TYPE             16 DC //same as above
-#define STR_CRG_PACKAGING_1UNIT             17 DC
-#define STR_CRG_PACKAGING_MUNIT             18 DC
-#define STR_CRG_PACKAGING_TABBR             19 DC
+#define STR_CRG_PACKAGING_CTYPE             26 DC
+#define STR_CRG_PACKAGING_1TYPE             26 DC //same as above
+#define STR_CRG_PACKAGING_1UNIT             27 DC
+#define STR_CRG_PACKAGING_MUNIT             28 DC
+#define STR_CRG_PACKAGING_TABBR             29 DC
 
-#define STR_CRG_FARMSUPPLIES_CTYPE          1A DC
-#define STR_CRG_FARMSUPPLIES_1TYPE          1A DC //same as above
-#define STR_CRG_FARMSUPPLIES_1UNIT          1B DC
-#define STR_CRG_FARMSUPPLIES_MUNIT          1C DC
-#define STR_CRG_FARMSUPPLIES_TABBR          1D DC
+#define STR_CRG_FARMSUPPLIES_CTYPE          2A DC
+#define STR_CRG_FARMSUPPLIES_1TYPE          2A DC //same as above
+#define STR_CRG_FARMSUPPLIES_1UNIT          2B DC
+#define STR_CRG_FARMSUPPLIES_MUNIT          2C DC
+#define STR_CRG_FARMSUPPLIES_TABBR          2D DC
 
-#define STR_CRG_CHEMICALS_CTYPE             1E DC
-#define STR_CRG_CHEMICALS_1TYPE             1E DC //same as above
-#define STR_CRG_CHEMICALS_1UNIT             1F DC
-#define STR_CRG_CHEMICALS_MUNIT             1F DC //same as above
-#define STR_CRG_CHEMICALS_TABBR             20 DC
+#define STR_CRG_CHEMICALS_CTYPE             2E DC
+#define STR_CRG_CHEMICALS_1TYPE             2E DC //same as above
+#define STR_CRG_CHEMICALS_1UNIT             2F DC
+#define STR_CRG_CHEMICALS_MUNIT             2F DC //same as above
+#define STR_CRG_CHEMICALS_TABBR             30 DC
 
-#define STR_CRG_ENGINEERINGSUPPLIES_CTYPE   21 DC
-#define STR_CRG_ENGINEERINGSUPPLIES_1TYPE   21 DC //same as above
-#define STR_CRG_ENGINEERINGSUPPLIES_1UNIT   22 DC
-#define STR_CRG_ENGINEERINGSUPPLIES_MUNIT   23 DC
-#define STR_CRG_ENGINEERINGSUPPLIES_TABBR   24 DC
+#define STR_CRG_ENGINEERINGSUPPLIES_CTYPE   31 DC
+#define STR_CRG_ENGINEERINGSUPPLIES_1TYPE   31 DC //same as above
+#define STR_CRG_ENGINEERINGSUPPLIES_1UNIT   32 DC
+#define STR_CRG_ENGINEERINGSUPPLIES_MUNIT   33 DC
+#define STR_CRG_ENGINEERINGSUPPLIES_TABBR   34 DC
 
-#define STR_CRG_FUELOIL_CTYPE               25 DC
-#define STR_CRG_FUELOIL_1TYPE               25 DC //same as above
-#define STR_CRG_FUELOIL_1UNIT               26 DC
-#define STR_CRG_FUELOIL_MUNIT               26 DC //same as above
-#define STR_CRG_FUELOIL_TABBR               27 DC
+#define STR_CRG_FUELOIL_CTYPE               35 DC
+#define STR_CRG_FUELOIL_1TYPE               35 DC //same as above
+#define STR_CRG_FUELOIL_1UNIT               36 DC
+#define STR_CRG_FUELOIL_MUNIT               36 DC //same as above
+#define STR_CRG_FUELOIL_TABBR               37 DC
 
-#define STR_CRG_BAUXITE_CTYPE               28 DC
-#define STR_CRG_BAUXITE_1TYPE               28 DC //same as above
-#define STR_CRG_BAUXITE_1UNIT               29 DC
-#define STR_CRG_BAUXITE_MUNIT               2A DC
+#define STR_CRG_BAUXITE_CTYPE               38 DC
+#define STR_CRG_BAUXITE_1TYPE               38 DC //same as above
+#define STR_CRG_BAUXITE_1UNIT               39 DC
+#define STR_CRG_BAUXITE_MUNIT               3A DC
 #define STR_CRG_BAUXITE_TABBR               AB 00
 
-#define STR_CRG_PARTS_CTYPE                 2B DC
-#define STR_CRG_PARTS_1TYPE                 2B DC //same as above
-#define STR_CRG_PARTS_1UNIT                 2C DC
-#define STR_CRG_PARTS_MUNIT                 2D DC
-#define STR_CRG_PARTS_TABBR                 2E DC
+#define STR_CRG_PARTS_CTYPE                 3B DC
+#define STR_CRG_PARTS_1TYPE                 3B DC //same as above
+#define STR_CRG_PARTS_1UNIT                 3C DC
+#define STR_CRG_PARTS_MUNIT                 3D DC
+#define STR_CRG_PARTS_TABBR                 3E DC
 
-#define STR_CRG_ALUMINUM_CTYPE              2F DC
-#define STR_CRG_ALUMINUM_1TYPE              2F DC //same as above
-#define STR_CRG_ALUMINUM_1UNIT              30 DC
-#define STR_CRG_ALUMINUM_MUNIT              31 DC
-#define STR_CRG_ALUMINUM_TABBR              32 DC
+#define STR_CRG_ALUMINUM_CTYPE              3F DC
+#define STR_CRG_ALUMINUM_1TYPE              3F DC //same as above
+#define STR_CRG_ALUMINUM_1UNIT              40 DC
+#define STR_CRG_ALUMINUM_MUNIT              41 DC
+#define STR_CRG_ALUMINUM_TABBR              42 DC
 
-#define STR_CRG_MILK_CTYPE                  33 DC
-#define STR_CRG_MILK_1TYPE                  33 DC //same as above
-#define STR_CRG_MILK_1UNIT                  34 DC
-#define STR_CRG_MILK_MUNIT                  34 DC //same as above
-#define STR_CRG_MILK_TABBR                  35 DC
+#define STR_CRG_MILK_CTYPE                  43 DC
+#define STR_CRG_MILK_1TYPE                  43 DC //same as above
+#define STR_CRG_MILK_1UNIT                  44 DC
+#define STR_CRG_MILK_MUNIT                  44 DC //same as above
+#define STR_CRG_MILK_TABBR                  45 DC
 
-#define STR_CRG_SCRAPMETAL_CTYPE            36 DC
-#define STR_CRG_SCRAPMETAL_1TYPE            36 DC //same as above
-#define STR_CRG_SCRAPMETAL_1UNIT            37 DC
-#define STR_CRG_SCRAPMETAL_MUNIT            38 DC
-#define STR_CRG_SCRAPMETAL_TABBR            39 DC
+#define STR_CRG_SCRAPMETAL_CTYPE            46 DC
+#define STR_CRG_SCRAPMETAL_1TYPE            46 DC //same as above
+#define STR_CRG_SCRAPMETAL_1UNIT            47 DC
+#define STR_CRG_SCRAPMETAL_MUNIT            48 DC
+#define STR_CRG_SCRAPMETAL_TABBR            49 DC
 
-#define STR_CRG_SURVEYSUPPLIES_CTYPE        3A DC
-#define STR_CRG_SURVEYSUPPLIES_1TYPE        3A DC //same as above
-#define STR_CRG_SURVEYSUPPLIES_1UNIT        3B DC
-#define STR_CRG_SURVEYSUPPLIES_MUNIT        3C DC
-#define STR_CRG_SURVEYSUPPLIES_TABBR        3D DC
+#define STR_CRG_SURVEYSUPPLIES_CTYPE        4A DC
+#define STR_CRG_SURVEYSUPPLIES_1TYPE        4A DC //same as above
+#define STR_CRG_SURVEYSUPPLIES_1UNIT        4B DC
+#define STR_CRG_SURVEYSUPPLIES_MUNIT        4C DC
+#define STR_CRG_SURVEYSUPPLIES_TABBR        4D DC
 
 //Cargo strings below are from original TTD: http://wiki.ttdpatch.net/tiki-index.php?page=TextIDs
 

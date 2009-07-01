@@ -4,8 +4,8 @@
 
 //Passengers
 -1 * 0 00 0B \b19 01 	//Action 0, feature 0B for cargos, 19 properties, changing 1 cargo def
-00 		//ID
-08 00 		// B Bit number for bitmasks  
+CARGO_PASSENGERS 		//ID
+08 CARGO_PASSENGERS 		// B Bit number for bitmasks  
 09 STR_CRG_PASSENGERS_CTYPE		// W TextID for the cargo type name  
 0A STR_CRG_PASSENGERS_1TYPE 	// W TextID for the name of one unit from the cargo type  
 0B STR_CRG_PASSENGERS_1UNIT 	// W TextID to be displayed for 1 unit of cargo  
@@ -20,7 +20,7 @@
 14 \b152 	// B Color for the cargo payment list window  
 15 00 		// B Freight status (for freighttrains switch); 0=not freight, 1=is freight  
 16 \w1 		// W Cargo classes  
-17 "PASS" 	// D Cargo label  
+17 CLABEL_PASSENGERS 	// D Cargo label  
 18 00 		// B Substitute type for town growth  
 19 \w256 	// W Multiplier for town growth  
 1A 00 		// B Callback flags 
@@ -28,8 +28,8 @@
 
 //Coal
 -1 * 0 00 0B \b19 01 	//Action 0, feature 0B for cargos, 19 properties, changing 1 cargo def
-01 		//ID
-08 01 		// B Bit number for bitmasks  
+CARGO_COAL 		//ID
+08 CARGO_COAL 		// B Bit number for bitmasks  
 09 STR_CRG_COAL_CTYPE	// W TextID for the cargo type name  
 0A STR_CRG_COAL_1TYPE 	// W TextID for the name of one unit from the cargo type  
 0B STR_CRG_COAL_1UNIT 	// W TextID to be displayed for 1 unit of cargo  
@@ -44,7 +44,7 @@
 14 \b6 		// B Color for the cargo payment list window  
 15 01 		// B Freight status (for freighttrains switch); 0=not freight, 1=is freight  
 16 \w16 	// W Cargo classes  
-17 "COAL" 	// D Cargo label  
+17 CLABEL_COAL 	// D Cargo label  
 18 FF 		// B Substitute type for town growth  
 19 \w256 	// W Multiplier for town growth  
 1A 00 		// B Callback flags 
@@ -52,8 +52,8 @@
 
 //Mail
 -1 * 0 00 0B \b19 01 	//Action 0, feature 0B for cargos, 19 properties, changing 1 cargo def
-02 		//ID
-08 02 		// B Bit number for bitmasks  
+CARGO_MAIL 		//ID
+08 CARGO_MAIL 		// B Bit number for bitmasks  
 09 STR_CRG_MAIL_CTYPE	// W TextID for the cargo type name  
 0A STR_CRG_MAIL_1TYPE 	// W TextID for the name of one unit from the cargo type  
 0B STR_CRG_MAIL_1UNIT 	// W TextID to be displayed for 1 unit of cargo  
@@ -68,7 +68,7 @@
 14 \b15 	// B Color for the cargo payment list window  
 15 01 		// B Freight status (for freighttrains switch); 0=not freight, 1=is freight  
 16 \w2 		// W Cargo classes  
-17 "MAIL" 	// D Cargo label  
+17 CLABEL_MAIL 	// D Cargo label  
 18 02 		// B Substitute type for town growth  
 19 \w256 	// W Multiplier for town growth  
 1A 00 		// B Callback flags 
@@ -76,8 +76,8 @@
 
 //Oil
 -1 * 0 00 0B \b19 01 	//Action 0, feature 0B for cargos, 19 properties, changing 1 cargo def
-03 		//ID
-08 03 		// B Bit number for bitmasks  
+CARGO_OIL 		//ID
+08 CARGO_OIL 		// B Bit number for bitmasks  
 09 STR_CRG_OIL_CTYPE	// W TextID for the cargo type name  
 0A STR_CRG_OIL_1TYPE 	// W TextID for the name of one unit from the cargo type  
 0B STR_CRG_OIL_1UNIT 	// W TextID to be displayed for 1 unit of cargo  
@@ -92,7 +92,7 @@
 14 \b172 	// B Color for the cargo payment list window  
 15 01 		// B Freight status (for freighttrains switch); 0=not freight, 1=is freight  
 16 \w64 	// W Cargo classes  
-17 "OIL_" 	// D Cargo label  
+17 CLABEL_OIL 	// D Cargo label  
 18 FF 		// B Substitute type for town growth  
 19 \w256 	// W Multiplier for town growth  
 1A 00 		// B Callback flags 
@@ -100,8 +100,8 @@
 
 //Livestock
 -1 * 0 00 0B \b19 01 	//Action 0, feature 0B for cargos, 19 properties, changing 1 cargo def
-04 		//ID
-08 04 		// B Bit number for bitmasks  
+CARGO_LIVESTOCK 		//ID
+08 CARGO_LIVESTOCK 		// B Bit number for bitmasks  
 09 STR_CRG_LIVESTOCK_CTYPE	// W TextID for the cargo type name  
 0A STR_CRG_LIVESTOCK_1TYPE 	// W TextID for the name of one unit from the cargo type  
 0B STR_CRG_LIVESTOCK_1UNIT 	// W TextID to be displayed for 1 unit of cargo  
@@ -116,7 +116,7 @@
 14 \b209 	// B Color for the cargo payment list window  
 15 01 		// B Freight status (for freighttrains switch); 0=not freight, 1=is freight  
 16 \w32 	// W Cargo classes  
-17 "LVST" 	// D Cargo label  
+17 CLABEL_LIVESTOCK 	// D Cargo label  
 18 FF 		// B Substitute type for town growth  
 19 \w256 	// W Multiplier for town growth  
 1A 00 		// B Callback flags 
@@ -124,8 +124,8 @@
 
 //Goods
 -1 * 0 00 0B \b19 01 	//Action 0, feature 0B for cargos, 19 properties, changing 1 cargo def
-05 		//ID
-08 05 		// B Bit number for bitmasks  
+CARGO_GOODS 		//ID
+08 CARGO_GOODS 		// B Bit number for bitmasks  
 09 STR_CRG_GOODS_CTYPE	// W TextID for the cargo type name  
 0A STR_CRG_GOODS_1TYPE	// W TextID for the name of one unit from the cargo type  
 0B STR_CRG_GOODS_1UNIT 	// W TextID to be displayed for 1 unit of cargo  
@@ -140,7 +140,7 @@
 14 \b194 	// B Color for the cargo payment list window  
 15 01 		// B Freight status (for freighttrains switch); 0=not freight, 1=is freight  
 16 \w36 	// W Cargo classes  
-17 "GOOD" 	// D Cargo label  
+17 CLABEL_GOODS 	// D Cargo label  
 18 05 		// B Substitute type for town growth  
 19 \w256 	// W Multiplier for town growth  
 1A 00 		// B Callback flags 
@@ -150,8 +150,8 @@
 //We only need this in temperate and arctic:
 -1 * 0 07 83 01 \7> 01 01
 -1 * 0 00 0B \b19 01 	//Action 0, feature 0B for cargos, 19 properties, changing 1 cargo def
-06 		//ID
-08 06 		// B Bit number for bitmasks  
+CARGO_GRAIN 		//ID
+08 CARGO_GRAIN 		// B Bit number for bitmasks  
 09 STR_CRG_GRAIN_CTYPE	// W TextID for the cargo type name  
 0A STR_CRG_GRAIN_1TYPE 	// W TextID for the name of one unit from the cargo type  
 0B STR_CRG_GRAIN_1UNIT 	// W TextID to be displayed for 1 unit of cargo  
@@ -166,7 +166,7 @@
 14 \b191 	// B Color for the cargo payment list window  
 15 01 		// B Freight status (for freighttrains switch); 0=not freight, 1=is freight  
 16 \w16 	// W Cargo classes  
-17 "GRAI" 	// D Cargo label  
+17 CLABEL_GRAIN 	// D Cargo label  
 18 FF 		// B Substitute type for town growth  
 19 \w256 	// W Multiplier for town growth  
 1A 00 		// B Callback flags 
@@ -176,8 +176,8 @@
 //We only need this in tropic:
 -1 * 0 07 83 01 \7! 02 01
 -1 * 0 00 0B \b19 01 	//Action 0, feature 0B for cargos, 19 properties, changing 1 cargo def
-06 		//ID
-08 06 		// B Bit number for bitmasks  
+CARGO_SUGARCANE 		//ID
+08 CARGO_SUGARCANE 		// B Bit number for bitmasks  
 09 STR_CRG_SUGARCANE_CTYPE 	// W TextID for the cargo type name  
 0A STR_CRG_SUGARCANE_1TYPE 	// W TextID for the name of one unit from the cargo type  
 0B STR_CRG_SUGARCANE_1UNIT 	// W TextID to be displayed for 1 unit of cargo  
@@ -192,7 +192,7 @@
 14 \b91 	// B Color for the cargo payment list window  
 15 01 		// B Freight status (for freighttrains switch); 0=not freight, 1=is freight  
 16 \w16 	// W Cargo classes  
-17 "SGCN" 	// D Cargo label  
+17 CLABEL_SUGARCANE 	// D Cargo label  
 18 FF 		// B Substitute type for town growth  
 19 \w256 	// W Multiplier for town growth  
 1A 00 		// B Callback flags 
@@ -200,8 +200,8 @@
 
 //Wood
 -1 * 0 00 0B \b19 01 	//Action 0, feature 0B for cargos, 19 properties, changing 1 cargo def
-07 		//ID
-08 07 		// B Bit number for bitmasks  
+CARGO_WOOD 		//ID
+08 CARGO_WOOD 		// B Bit number for bitmasks  
 09 STR_CRG_WOOD_CTYPE 	// W TextID for the cargo type name  
 0A STR_CRG_WOOD_1TYPE 	// W TextID for the name of one unit from the cargo type  
 0B STR_CRG_WOOD_1UNIT 	// W TextID to be displayed for 1 unit of cargo  
@@ -216,7 +216,7 @@
 14 \b55 	// B Color for the cargo payment list window  
 15 01 		// B Freight status (for freighttrains switch); 0=not freight, 1=is freight  
 16 \w32 	// W Cargo classes  
-17 "WOOD" 	// D Cargo label  
+17 CLABEL_WOOD 	// D Cargo label  
 18 FF 		// B Substitute type for town growth  
 19 \w256 	// W Multiplier for town growth  
 1A 00 		// B Callback flags 
@@ -224,8 +224,8 @@
 
 //Iron ore
 -1 * 0 00 0B \b19 01 	//Action 0, feature 0B for cargos, 19 properties, changing 1 cargo def
-08 		//ID
-08 08 		// B Bit number for bitmasks  
+CARGO_IRONORE 		//ID
+08 CARGO_IRONORE 		// B Bit number for bitmasks  
 09 STR_CRG_IRONORE_CTYPE 	// W TextID for the cargo type name  
 0A STR_CRG_IRONORE_1TYPE 	// W TextID for the name of one unit from the cargo type  
 0B STR_CRG_IRONORE_1UNIT 	// W TextID to be displayed for 1 unit of cargo  
@@ -240,7 +240,7 @@
 14 \b181 	// B Color for the cargo payment list window  
 15 01 		// B Freight status (for freighttrains switch); 0=not freight, 1=is freight  
 16 \w16 	// W Cargo classes  
-17 "IORE" 	// D Cargo label  
+17 CLABEL_IRONORE 	// D Cargo label  
 18 FF 		// B Substitute type for town growth  
 19 \w256 	// W Multiplier for town growth  
 1A 00 		// B Callback flags 
@@ -248,8 +248,8 @@
 
 //Steel
 -1 * 0 00 0B \b19 01 	//Action 0, feature 0B for cargos, 19 properties, changing 1 cargo def
-09 		//ID
-08 09 		// B Bit number for bitmasks  
+CARGO_STEEL 		//ID
+08 CARGO_STEEL 		// B Bit number for bitmasks  
 09 STR_CRG_STEEL_CTYPE 	// W TextID for the cargo type name  
 0A STR_CRG_STEEL_1TYPE 	// W TextID for the name of one unit from the cargo type  
 0B STR_CRG_STEEL_1UNIT 	// W TextID to be displayed for 1 unit of cargo  
@@ -264,7 +264,7 @@
 14 \b10 	// B Color for the cargo payment list window  
 15 01 		// B Freight status (for freighttrains switch); 0=not freight, 1=is freight  
 16 \w32 	// W Cargo classes  
-17 "STEL" 	// D Cargo label  
+17 CLABEL_STEEL 	// D Cargo label  
 18 FF 		// B Substitute type for town growth  
 19 \w256 	// W Multiplier for town growth  
 1A 00 		// B Callback flags 
@@ -272,8 +272,8 @@
 
 //Waste
 -1 * 0 00 0B \b19 01 	//Action 0, feature 0B for cargos, 19 properties, changing 1 cargo def
-0A 		//ID
-08 0A 		// B Bit number for bitmasks  
+CARGO_WASTE 		//ID
+08 CARGO_WASTE 		// B Bit number for bitmasks  
 09 STR_CRG_WASTE_CTYPE 	// W TextID for the cargo type name  
 0A STR_CRG_WASTE_1TYPE 	// W TextID for the name of one unit from the cargo type  
 0B STR_CRG_WASTE_1UNIT 	// W TextID to be displayed for 1 unit of cargo  
@@ -288,7 +288,7 @@
 14 \b166 	// B Color for the cargo payment list window  
 15 01 		// B Freight status (for freighttrains switch); 0=not freight, 1=is freight  
 16 \w16 	// W Cargo classes  
-17 "WSTE" 	// D Cargo label  
+17 CLABEL_WASTE 	// D Cargo label  
 18 FF 		// B Substitute type for town growth  
 19 \w256 	// W Multiplier for town growth  
 1A 00 		// B Callback flags 
@@ -296,8 +296,8 @@
 
 //Food
 -1 * 0 00 0B \b19 01 	//Action 0, feature 0B for cargos, 19 properties, changing 1 cargo def
-0B 		//ID
-08 0B 		// B Bit number for bitmasks  
+CARGO_FOOD 		//ID
+08 CARGO_FOOD 		// B Bit number for bitmasks  
 09 STR_CRG_FOOD_CTYPE 	// W TextID for the cargo type name  
 0A STR_CRG_FOOD_1TYPE 	// W TextID for the name of one unit from the cargo type  
 0B STR_CRG_FOOD_1UNIT 	// W TextID to be displayed for 1 unit of cargo  
@@ -312,7 +312,7 @@
 14 \b48 	// B Color for the cargo payment list window  
 15 01 		// B Freight status (for freighttrains switch); 0=not freight, 1=is freight  
 16 \w132 	// W Cargo classes  
-17 "FOOD" 	// D Cargo label  
+17 CLABEL_FOOD 	// D Cargo label  
 18 0B 		// B Substitute type for town growth  
 19 \w256 	// W Multiplier for town growth  
 1A 00 		// B Callback flags 
@@ -320,8 +320,8 @@
 
 //Milk
 -1 * 0 00 0B \b19 01 	//Action 0, feature 0B for cargos, 19 properties, changing 1 cargo def
-0C 		//ID
-08 0C 		// B Bit number for bitmasks  
+CARGO_MILK 		//ID
+08 CARGO_MILK 		// B Bit number for bitmasks  
 09 STR_CRG_MILK_CTYPE 	// W TextID for the cargo type name  
 0A STR_CRG_MILK_1TYPE 	// W TextID for the name of one unit from the cargo type  
 0B STR_CRG_MILK_1UNIT 	// W TextID to be displayed for 1 unit of cargo  
@@ -336,7 +336,7 @@
 14 \b153 	// B Color for the cargo payment list window  
 15 01 		// B Freight status (for freighttrains switch); 0=not freight, 1=is freight  
 16 \w196 	// W Cargo classes  
-17 "MILK" 	// D Cargo label  
+17 CLABEL_MILK 	// D Cargo label  
 18 FF 		// B Substitute type for town growth  
 19 \w256 	// W Multiplier for town growth  
 1A 00 		// B Callback flags
@@ -344,8 +344,8 @@
 
 //Fruit and vegetables
 -1 * 0 00 0B \b19 01 	//Action 0, feature 0B for cargos, 19 properties, changing 1 cargo def
-0D 		//ID
-08 0D 		// B Bit number for bitmasks  
+CARGO_FRUITSANDVEGETABLES 		//ID
+08 CARGO_FRUITSANDVEGETABLES 		// B Bit number for bitmasks  
 09 STR_CRG_FRUITSANDVEGETABLES_CTYPE 	// W TextID for the cargo type name  
 0A STR_CRG_FRUITSANDVEGETABLES_1TYPE 	// W TextID for the name of one unit from the cargo type  
 0B STR_CRG_FRUITSANDVEGETABLES_1UNIT 	// W TextID to be displayed for 1 unit of cargo  
@@ -360,7 +360,7 @@
 14 \b206 	// B Color for the cargo payment list window  
 15 01 		// B Freight status (for freighttrains switch); 0=not freight, 1=is freight  
 16 \w132 	// W Cargo classes  
-17 "FRUT" 	// D Cargo label  
+17 CLABEL_FRUITSANDVEGETABLES 	// D Cargo label  
 18 FF 		// B Substitute type for town growth  
 19 \w256 	// W Multiplier for town growth  
 1A 00 		// B Callback flags 
@@ -368,8 +368,8 @@
 
 //Fish
 -1 * 0 00 0B \b19 01 	//Action 0, feature 0B for cargos, 19 properties, changing 1 cargo def
-0E 		//ID
-08 0E 		// B Bit number for bitmasks  
+CARGO_FISH 		//ID
+08 CARGO_FISH 		// B Bit number for bitmasks  
 09 STR_CRG_FISH_CTYPE 	// W TextID for the cargo type name  
 0A STR_CRG_FISH_1TYPE 	// W TextID for the name of one unit from the cargo type  
 0B STR_CRG_FISH_1UNIT 	// W TextID to be displayed for 1 unit of cargo  
@@ -384,7 +384,7 @@
 14 \b147 	// B Color for the cargo payment list window  
 15 01 		// B Freight status (for freighttrains switch); 0=not freight, 1=is freight  
 16 \w132 	// W Cargo classes  
-17 "FISH" 	// D Cargo label  
+17 CLABEL_FISH 	// D Cargo label  
 18 FF 		// B Substitute type for town growth  
 19 \w256 	// W Multiplier for town growth  
 1A 00 		// B Callback flags 
@@ -394,8 +394,8 @@
 //We only need this in tropic:
 -1 * 0 07 83 01 \7! 02 01
 -1 * 0 00 0B \b19 01 	//Action 0, feature 0B for cargos, 19 properties, changing 1 cargo def
-0F 		//ID
-08 0F 		// B Bit number for bitmasks  
+CARGO_COTTON 		//ID
+08 CARGO_COTTON 		// B Bit number for bitmasks  
 09 STR_CRG_COTTON_CTYPE 	// W TextID for the cargo type name  
 0A STR_CRG_COTTON_1TYPE 	// W TextID for the name of one unit from the cargo type  
 0B STR_CRG_COTTON_1UNIT 	// W TextID to be displayed for 1 unit of cargo  
@@ -410,7 +410,7 @@
 14 \b39 	// B Color for the cargo payment list window  
 15 01 		// B Freight status (for freighttrains switch); 0=not freight, 1=is freight  
 16 \w32 	// W Cargo classes  
-17 "CTTN" 	// D Cargo label  
+17 CLABEL_COTTON 	// D Cargo label  
 18 FF 		// B Substitute type for town growth  
 19 \w256 	// W Multiplier for town growth  
 1A 00 		// B Callback flags 
@@ -420,8 +420,8 @@
 //We only need this in temperate and arctic.
 -1 * 0 07 83 01 \7> 01 01
 -1 * 0 00 0B \b19 01 	//Action 0, feature 0B for cargos, 19 properties, changing 1 cargo def
-0F 		//ID
-08 0F 		// B Bit number for bitmasks  
+CARGO_WOOL 		//ID
+08 CARGO_WOOL 		// B Bit number for bitmasks  
 09 STR_CRG_WOOL_CTYPE 	// W TextID for the cargo type name  
 0A STR_CRG_WOOL_1TYPE 	// W TextID for the name of one unit from the cargo type  
 0B STR_CRG_WOOL_1UNIT 	// W TextID to be displayed for 1 unit of cargo  
@@ -436,7 +436,7 @@
 14 \b134 	// B Color for the cargo payment list window  
 15 01 		// B Freight status (for freighttrains switch); 0=not freight, 1=is freight  
 16 \w32 	// W Cargo classes  
-17 "WOOL" 	// D Cargo label  
+17 CLABEL_WOOL 	// D Cargo label  
 18 FF 		// B Substitute type for town growth  
 19 \w256 	// W Multiplier for town growth  
 1A 00 		// B Callback flags 
@@ -444,8 +444,8 @@
 
 //Gravel
 -1 * 0 00 0B \b19 01 	//Action 0, feature 0B for cargos, 19 properties, changing 1 cargo def
-10 		//ID
-08 10 		// B Bit number for bitmasks  
+CARGO_GRAVEL 		//ID
+08 CARGO_GRAVEL 		// B Bit number for bitmasks  
 09 STR_CRG_GRAVEL_CTYPE 	// W TextID for the cargo type name  
 0A STR_CRG_GRAVEL_1TYPE 	// W TextID for the name of one unit from the cargo type  
 0B STR_CRG_GRAVEL_1UNIT 	// W TextID to be displayed for 1 unit of cargo  
@@ -460,7 +460,7 @@
 14 \b16 	// B Color for the cargo payment list window  
 15 01 		// B Freight status (for freighttrains switch); 0=not freight, 1=is freight  
 16 \w16 	// W Cargo classes  
-17 "GRVL" 	// D Cargo label  
+17 CLABEL_GRAVEL 	// D Cargo label  
 18 FF 		// B Substitute type for town growth  
 19 \w256 	// W Multiplier for town growth  
 1A 00 		// B Callback flags 
@@ -470,8 +470,8 @@
 //We only need this in tropic:
 -1 * 0 07 83 01 \7! 02 01
 -1 * 0 00 0B \b19 01 	//Action 0, feature 0B for cargos, 19 properties, changing 1 cargo def
-11 		//ID
-08 11 		// B Bit number for bitmasks  
+CARGO_WATER 		//ID
+08 CARGO_WATER 		// B Bit number for bitmasks  
 09 STR_CRG_WATER_CTYPE 	// W TextID for the cargo type name  
 0A STR_CRG_WATER_1TYPE 	// W TextID for the name of one unit from the cargo type  
 0B STR_CRG_WATER_1UNIT 	// W TextID to be displayed for 1 unit of cargo  
@@ -486,7 +486,7 @@
 14 \b149 	// B Color for the cargo payment list window  
 15 01 		// B Freight status (for freighttrains switch); 0=not freight, 1=is freight  
 16 \w64 	// W Cargo classes  
-17 "WATR" 	// D Cargo label  
+17 CLABEL_WATER 	// D Cargo label  
 18 09 		// B Substitute type for town growth  
 19 \w256 	// W Multiplier for town growth  
 1A 00 		// B Callback flags 
@@ -496,8 +496,8 @@
 //We only need this in temperate and arctic. There's enough sand in the desert already ;)
 -1 * 0 07 83 01 \7> 01 01
 -1 * 0 00 0B \b19 01 	//Action 0, feature 0B for cargos, 19 properties, changing 1 cargo def
-11 		//ID
-08 11 		// B Bit number for bitmasks  
+CARGO_SAND 		//ID
+08 CARGO_SAND 		// B Bit number for bitmasks  
 09 STR_CRG_SAND_CTYPE 	// W TextID for the cargo type name  
 0A STR_CRG_SAND_1TYPE 	// W TextID for the name of one unit from the cargo type  
 0B STR_CRG_SAND_1UNIT 	// W TextID to be displayed for 1 unit of cargo  
@@ -512,7 +512,7 @@
 14 \b64 	// B Color for the cargo payment list window  
 15 01 		// B Freight status (for freighttrains switch); 0=not freight, 1=is freight  
 16 \w16 	// W Cargo classes  
-17 "SAND" 	// D Cargo label  
+17 CLABEL_SAND 	// D Cargo label  
 18 FF 		// B Substitute type for town growth  
 19 \w256 	// W Multiplier for town growth  
 1A 00 		// B Callback flags 
@@ -520,8 +520,8 @@
 
 //Lumber
 -1 * 0 00 0B \b19 01 	//Action 0, feature 0B for cargos, 19 properties, changing 1 cargo def
-12 		//ID
-08 12 		// B Bit number for bitmasks  
+CARGO_LUMBER 		//ID
+08 CARGO_LUMBER 		// B Bit number for bitmasks  
 09 STR_CRG_LUMBER_CTYPE 	// W TextID for the cargo type name  
 0A STR_CRG_LUMBER_1TYPE 	// W TextID for the name of one unit from the cargo type  
 0B STR_CRG_LUMBER_1UNIT 	// W TextID to be displayed for 1 unit of cargo  
@@ -536,7 +536,7 @@
 14 \b58 	// B Color for the cargo payment list window  
 15 01 		// B Freight status (for freighttrains switch); 0=not freight, 1=is freight  
 16 \w32 	// W Cargo classes  
-17 "WDPR" 	// D Cargo label  
+17 CLABEL_LUMBER 	// D Cargo label  
 18 FF 		// B Substitute type for town growth  
 19 \w256 	// W Multiplier for town growth  
 1A 00 		// B Callback flags 
@@ -544,8 +544,8 @@
 
 //Bauxite
 -1 * 0 00 0B \b19 01 	//Action 0, feature 0B for cargos, 19 properties, changing 1 cargo def
-13 		//ID
-08 13 		// B Bit number for bitmasks  
+CARGO_BAUXITE 		//ID
+08 CARGO_BAUXITE 		// B Bit number for bitmasks  
 09 STR_CRG_BAUXITE_CTYPE 	// W TextID for the cargo type name  
 0A STR_CRG_BAUXITE_1TYPE 	// W TextID for the name of one unit from the cargo type  
 0B STR_CRG_BAUXITE_1UNIT 	// W TextID to be displayed for 1 unit of cargo  
@@ -560,7 +560,7 @@
 14 \b184 	// B Color for the cargo payment list window  
 15 01 		// B Freight status (for freighttrains switch); 0=not freight, 1=is freight  
 16 \w16 	// W Cargo classes  
-17 "AORE" 	// D Cargo label  
+17 CLABEL_BAUXITE 	// D Cargo label  
 18 FF 		// B Substitute type for town growth  
 19 \w256 	// W Multiplier for town growth  
 1A 00 		// B Callback flags 
@@ -568,8 +568,8 @@
 
 //Aluminium
 -1 * 0 00 0B \b19 01 	//Action 0, feature 0B for cargos, 19 properties, changing 1 cargo def
-14 		//ID
-08 14 		// B Bit number for bitmasks  
+CARGO_ALUMINUM 		//ID
+08 CARGO_ALUMINUM 		// B Bit number for bitmasks  
 09 STR_CRG_ALUMINUM_CTYPE 	// W TextID for the cargo type name  
 0A STR_CRG_ALUMINUM_1TYPE 	// W TextID for the name of one unit from the cargo type  
 0B STR_CRG_ALUMINUM_1UNIT 	// W TextID to be displayed for 1 unit of cargo  
@@ -584,7 +584,7 @@
 14 \b13 	// B Color for the cargo payment list window  
 15 01 		// B Freight status (for freighttrains switch); 0=not freight, 1=is freight  
 16 \w32 	// W Cargo classes  
-17 "ALUM" 	// D Cargo label  
+17 CLABEL_ALUMINUM 	// D Cargo label  
 18 FF 		// B Substitute type for town growth  
 19 \w256 	// W Multiplier for town growth  
 1A 00 		// B Callback flags
@@ -592,8 +592,8 @@
 
 //Scrap metal
 -1 * 0 00 0B \b19 01 	//Action 0, feature 0B for cargos, 19 properties, changing 1 cargo def
-15 		//ID
-08 15 		// B Bit number for bitmasks  
+CARGO_SCRAPMETAL 		//ID
+08 CARGO_SCRAPMETAL 		// B Bit number for bitmasks  
 09 STR_CRG_SCRAPMETAL_CTYPE 	// W TextID for the cargo type name  
 0A STR_CRG_SCRAPMETAL_1TYPE 	// W TextID for the name of one unit from the cargo type  
 0B STR_CRG_SCRAPMETAL_1UNIT 	// W TextID to be displayed for 1 unit of cargo  
@@ -608,7 +608,7 @@
 14 \b20 	// B Color for the cargo payment list window  
 15 01 		// B Freight status (for freighttrains switch); 0=not freight, 1=is freight  
 16 \w16 	// W Cargo classes  
-17 "SCRP" 	// D Cargo label  
+17 CLABEL_SCRAPMETAL 	// D Cargo label  
 18 FF 		// B Substitute type for town growth  
 19 \w256 	// W Multiplier for town growth  
 1A 00 		// B Callback flags
@@ -616,8 +616,8 @@
 
 //Fuel oil
 -1 * 0 00 0B \b19 01 	//Action 0, feature 0B for cargos, 19 properties, changing 1 cargo def
-16 		//ID
-08 16 		// B Bit number for bitmasks  
+CARGO_FUELOIL 		//ID
+08 CARGO_FUELOIL 		// B Bit number for bitmasks  
 09 STR_CRG_FUELOIL_CTYPE 	// W TextID for the cargo type name  
 0A STR_CRG_FUELOIL_1TYPE 	// W TextID for the name of one unit from the cargo type  
 0B STR_CRG_FUELOIL_1UNIT	// W TextID to be displayed for 1 unit of cargo  
@@ -632,7 +632,7 @@
 14 \b175 	// B Color for the cargo payment list window  
 15 01 		// B Freight status (for freighttrains switch); 0=not freight, 1=is freight  
 16 \w64 	// W Cargo classes  
-17 "PETR" 	// D Cargo label  
+17 CLABEL_FUELOIL 	// D Cargo label  
 18 FF 		// B Substitute type for town growth  
 19 \w256 	// W Multiplier for town growth  
 1A 00 		// B Callback flags 
@@ -640,8 +640,8 @@
 
 //Chemicals
 -1 * 0 00 0B \b19 01 	//Action 0, feature 0B for cargos, 19 properties, changing 1 cargo def
-17 		//ID
-08 17 		// B Bit number for bitmasks  
+CARGO_CHEMICALS 		//ID
+08 CARGO_CHEMICALS 		// B Bit number for bitmasks  
 09 STR_CRG_CHEMICALS_CTYPE 	// W TextID for the cargo type name  
 0A STR_CRG_CHEMICALS_1TYPE 	// W TextID for the name of one unit from the cargo type  
 0B STR_CRG_CHEMICALS_1UNIT 	// W TextID to be displayed for 1 unit of cargo  
@@ -656,7 +656,7 @@
 14 \b86 	// B Color for the cargo payment list window  
 15 01 		// B Freight status (for freighttrains switch); 0=not freight, 1=is freight  
 16 \w64 	// W Cargo classes  
-17 "RFPR" 	// D Cargo label  
+17 CLABEL_CHEMICALS 	// D Cargo label  
 18 FF 		// B Substitute type for town growth  
 19 \w256 	// W Multiplier for town growth  
 1A 00 		// B Callback flags
@@ -664,8 +664,8 @@
 
 //Packaging
 -1 * 0 00 0B \b19 01 	//Action 0, feature 0B for cargos, 19 properties, changing 1 cargo def
-18 		//ID
-08 18 		// B Bit number for bitmasks  
+CARGO_PACKAGING 		//ID
+08 CARGO_PACKAGING 		// B Bit number for bitmasks  
 09 STR_CRG_PACKAGING_CTYPE 	// W TextID for the cargo type name  
 0A STR_CRG_PACKAGING_1TYPE 	// W TextID for the name of one unit from the cargo type  
 0B STR_CRG_PACKAGING_1UNIT 	// W TextID to be displayed for 1 unit of cargo  
@@ -680,7 +680,7 @@
 14 \b44 	// B Color for the cargo payment list window  
 15 01 		// B Freight status (for freighttrains switch); 0=not freight, 1=is freight  
 16 \w36 	// W Cargo classes  
-17 "PACK" 	// D Cargo label  
+17 CLABEL_PACKAGING 	// D Cargo label  
 18 FF 		// B Substitute type for town growth  
 19 \w256 	// W Multiplier for town growth  
 1A 00 		// B Callback flags 
@@ -688,8 +688,8 @@
 
 //Parts
 -1 * 0 00 0B \b19 01 	//Action 0, feature 0B for cargos, 19 properties, changing 1 cargo def
-19 		//ID
-08 19 		// B Bit number for bitmasks  
+CARGO_PARTS 		//ID
+08 CARGO_PARTS 		// B Bit number for bitmasks  
 09 STR_CRG_PARTS_CTYPE 	// W TextID for the cargo type name  
 0A STR_CRG_PARTS_1TYPE 	// W TextID for the name of one unit from the cargo type  
 0B STR_CRG_PARTS_1UNIT 	// W TextID to be displayed for 1 unit of cargo  
@@ -704,7 +704,7 @@
 14 \b41 	// B Color for the cargo payment list window  
 15 01 		// B Freight status (for freighttrains switch); 0=not freight, 1=is freight  
 16 \w36 	// W Cargo classes  
-17 "PART" 	// D Cargo label  
+17 CLABEL_PARTS 	// D Cargo label  
 18 FF 		// B Substitute type for town growth  
 19 \w256 	// W Multiplier for town growth  
 1A 00 		// B Callback flags 
@@ -712,8 +712,8 @@
 
 //Engineering Supplies
 -1 * 0 00 0B \b19 01 	//Action 0, feature 0B for cargos, 19 properties, changing 1 cargo def
-1A 		//ID
-08 1A 		// B Bit number for bitmasks  
+CARGO_ENGINEERINGSUPPLIES 		//ID
+08 CARGO_ENGINEERINGSUPPLIES 		// B Bit number for bitmasks  
 09 STR_CRG_ENGINEERINGSUPPLIES_CTYPE 	// W TextID for the cargo type name  
 0A STR_CRG_ENGINEERINGSUPPLIES_1TYPE 	// W TextID for the name of one unit from the cargo type  
 0B STR_CRG_ENGINEERINGSUPPLIES_1UNIT 	// W TextID to be displayed for 1 unit of cargo  
@@ -728,7 +728,7 @@
 14 \b79 	// B Color for the cargo payment list window  
 15 01 		// B Freight status (for freighttrains switch); 0=not freight, 1=is freight  
 16 \w32 	// W Cargo classes  
-17 "ENSP" 	// D Cargo label  
+17 CLABEL_ENGINEERINGSUPPLIES 	// D Cargo label  
 18 FF 		// B Substitute type for town growth  
 19 \w256 	// W Multiplier for town growth  
 1A 00 		// B Callback flags 
@@ -736,8 +736,8 @@
 
 //Farm Supplies
 -1 * 0 00 0B \b19 01 	//Action 0, feature 0B for cargos, 19 properties, changing 1 cargo def
-1B 		//ID
-08 1B 		// B Bit number for bitmasks  
+CARGO_FARMSUPPLIES 		//ID
+08 CARGO_FARMSUPPLIES 		// B Bit number for bitmasks  
 09 STR_CRG_FARMSUPPLIES_CTYPE 	// W TextID for the cargo type name  
 0A STR_CRG_FARMSUPPLIES_1TYPE 	// W TextID for the name of one unit from the cargo type  
 0B STR_CRG_FARMSUPPLIES_1UNIT 	// W TextID to be displayed for 1 unit of cargo  
@@ -752,7 +752,7 @@
 14 \b75 	// B Color for the cargo payment list window  
 15 01 		// B Freight status (for freighttrains switch); 0=not freight, 1=is freight  
 16 \w32 	// W Cargo classes  
-17 "FMSP" 	// D Cargo label  
+17 CLABEL_FARMSUPPLIES 	// D Cargo label  
 18 FF 		// B Substitute type for town growth  
 19 \w256 	// W Multiplier for town growth  
 1A 00 		// B Callback flags 
@@ -760,8 +760,8 @@
 
 //Survey Supplies
 -1 * 0 00 0B \b19 01 	//Action 0, feature 0B for cargos, 19 properties, changing 1 cargo def
-1C 		//ID
-08 1C 		// B Bit number for bitmasks  
+CARGO_SURVEYSUPPLIES 		//ID
+08 CARGO_SURVEYSUPPLIES 		// B Bit number for bitmasks  
 09 STR_CRG_SURVEYSUPPLIES_CTYPE 	// W TextID for the cargo type name  
 0A STR_CRG_SURVEYSUPPLIES_1TYPE 	// W TextID for the name of one unit from the cargo type  
 0B STR_CRG_SURVEYSUPPLIES_1UNIT 	// W TextID to be displayed for 1 unit of cargo  
@@ -776,12 +776,12 @@
 14 \b71 	// B Color for the cargo payment list window  
 15 01 		// B Freight status (for freighttrains switch); 0=not freight, 1=is freight  
 16 \w36 	// W Cargo classes  
-17 "SVSP" 	// D Cargo label  
+17 CLABEL_SURVEYSUPPLIES 	// D Cargo label  
 18 FF 		// B Substitute type for town growth  
 19 \w256 	// W Multiplier for town growth  
 1A 00 		// B Callback flags
 
 
-//Cargo 1D: Reserved 1
-//Cargo 1E: Reserved for Regearing
-//Cargo 1F: Reserved 2
+//Cargo CARGO_RESERVED1: Reserved 1
+//Cargo CARGO_REGEARING: Reserved for Regearing
+//Cargo CARGO_RESERVED2: Reserved 2
