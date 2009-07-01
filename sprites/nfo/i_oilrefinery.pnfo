@@ -1,0 +1,50 @@
+//Redefinition of original TTD industry
+//Paper Mill
+-1 * 0 00 0A \b10 01 IND_OILREFINERY //-1 * 0 00 0A <num-props> 01 <id>
+	08 04 //substitute industry type
+	09 04 //industry type override
+	24 STR_STA_REFINERY //default text for nearby station
+	10 CARGO_CHEMICALS CARGO_FUELOIL //production cargo types (word; fill unused with FFh)
+	11 CARGO_OIL CARGO_ENGINEERINGSUPPLIES FF FF //acceptance cargo types (dword; fill unused with FFh)
+	1C 73 00 73 00 //input cargo 1 multiplier (dword M1 M2; output_typen = X*Mn/256)
+	1D 26 00 26 00 //input cargo 2 multiplier
+	1E 00 00 00 00 //input cargo 3 multiplier
+	17 \b4 //probability in random game
+	18 \b2 //probability during gameplay
+//Tiles 12..17
+-1 * 0 00 09 \b5 01 12 // -1 * 0 00 09 <num-props> 01 <id>
+	08 12 //subsitute tile type
+	09 12 //industry tile override
+	0A CARGO_OIL 08 //tile acceptance 1
+	0B CARGO_ENGINEERINGSUPPLIES 08 //tile acceptance 2
+	0C 00 00 //tile acceptance 3
+-1 * 0 00 09 \b5 01 13 // -1 * 0 00 09 <num-props> 01 <id>
+	08 13 //subsitute tile type
+	09 13 //industry tile override
+	0A CARGO_OIL 08 //tile acceptance 1
+	0B CARGO_ENGINEERINGSUPPLIES 08 //tile acceptance 2
+	0C 00 00 //tile acceptance 3
+-1 * 0 00 09 \b5 01 14 // -1 * 0 00 09 <num-props> 01 <id>
+	08 14 //subsitute tile type
+	09 14 //industry tile override
+	0A CARGO_OIL 08 //tile acceptance 1
+	0B CARGO_ENGINEERINGSUPPLIES 08 //tile acceptance 2
+	0C 00 00 //tile acceptance 3
+-1 * 0 00 09 \b5 01 15 // -1 * 0 00 09 <num-props> 01 <id>
+	08 15 //subsitute tile type
+	09 15 //industry tile override
+	0A CARGO_OIL 08 //tile acceptance 1
+	0B CARGO_ENGINEERINGSUPPLIES 08 //tile acceptance 2
+	0C 00 00 //tile acceptance 3
+-1 * 0 00 09 \b5 01 16 // -1 * 0 00 09 <num-props> 01 <id>
+	08 16 //subsitute tile type
+	09 16 //industry tile override
+	0A CARGO_OIL 08 //tile acceptance 1
+	0B CARGO_ENGINEERINGSUPPLIES 08 //tile acceptance 2
+	0C 00 00 //tile acceptance 3
+-1 * 0 00 09 \b5 01 17 // -1 * 0 00 09 <num-props> 01 <id>
+	08 17 //subsitute tile type
+	09 17 //industry tile override
+	0A CARGO_OIL 08 //tile acceptance 1
+	0B CARGO_ENGINEERINGSUPPLIES 08 //tile acceptance 2
+	0C 00 00 //tile acceptance 3
