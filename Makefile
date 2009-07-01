@@ -133,9 +133,9 @@ bundle: $(DIR_NIGHTLY)
 bundle_tar: $(TAR_FILENAME)
 
 bundle_zip: $(ZIP_FILENAME)
-$(ZIP_FILENAME): $(DIR_NAME)
-	@echo "creating zip'ed tar archive"
-	$(ZIP) $(ZIP_FLAGS) $(ZIP_FILENAME) $(DIR_NAME)
+$(ZIP_FILENAME): $(DIR_NIGHTLY)
+	@echo "creating zip archive"
+	$(ZIP) $(ZIP_FLAGS) $(ZIP_FILENAME) $(DIR_NIGHTLY)
 
 bundle_bzip: $(BZIP_FILENAME)
 $(BZIP_FILENAME): $(TAR_FILENAME)
