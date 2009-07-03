@@ -2,8 +2,18 @@
 {{GRF_TITLE}}
 =============================
 
--------
+---------
+Compiling
+---------
+
+In order to compile FIRS from source you need the STABLE VERSIONS of NFORenum (v3.4.6) and GRFCodec (v0.9.10). At the moment, building FIRS with the latest builds WILL FAIL.
+
+Place both renum and grfcodec in the FIRS main directory and run either 'make', 'make install', 'make bundle' or 'make release'. There's more options, but these are probably sufficient.
+
+
+---------
 Web Links
+---------
 
   FIRS Website: http://tt-foundry.com/sets/FIRS/schema/industries
    
@@ -11,7 +21,6 @@ Web Links
 
   Source Repository / Issue Tracker: http://dev.openttdcoop.org/projects/firs
  
--------
 
 -------
 License
