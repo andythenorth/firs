@@ -124,15 +124,16 @@
 //Error messages
 //For label FF
 -1 * 0 10 FF
+-1 * 0 10 FC //Moved this to here for now to disallow all industry set combinations.
 -1 * 0 0B 03 7F FF "\8EE01: Incompatible set. \90Consult FIRS ReadMe." 00
 //For label FE
 -1 * 0 10 FE
 -1 * 0 0B 03 7F FF "\8EE02: Incompatible parameter. \90Consult FIRS ReadMe." 00
 //For label FD
 -1 * 0 10 FD
--1 * 0 0B 03 7F FF "\8EE02: Incompatible combination. \90Consult FIRS ReadMe." 00
+-1 * 0 0B 03 7F FF "\8EE03: Incompatible combination. \90Consult FIRS ReadMe." 00
 //For label FC
--1 * 0 10 FC
--1 * 0 0B 00 7F FF "\80\80\8EC\7B: \91Compatibility mode." 00 " " 00 00
+//-1 * 0 10 FC
+//-1 * 0 0B 00 7F FF "\80\80\8EC\7B: \91Compatibility mode." 00 " " 00 00
 //Skip to here if no error message to display
 -1 * 0 10 F0
