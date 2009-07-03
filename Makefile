@@ -121,7 +121,11 @@ $(DIR_NIGHTLY) $(DIR_RELEASE) : $(BUNDLE_FILES)
 	@-rm $@/* 2>/dev/null
 	@echo "Copying files: $(BUNDLE_FILES)"
 	@-for i in $(BUNDLE_FILES); do cp $$i $@; done	
-	@-cat $(READMEFILE) | sed -e "s/$(GRF_TITLE_DUMMY)/$(GRF_TITLE)/" > $@/$(notdir $(READMEFILE))
+	@-cat $(READMEFILE) | sed -e "s/$(GRF_TITLE_DUMMY)/$(GRF_TITLE)/" \
+		| sed -e "s/{{GRF_MD5}}/`$(MD5SUM) $(GRF_FILENAME)`/" \
+		| sed -e "s/{{GRF_REVISION}}/$(GRF_REVISION)/" \
+		| sed -e "s/{{GRF_ID}}/$(GRF_ID)/" \
+		> $@/$(notdir $(READMEFILE))
 bundle: $(DIR_NIGHTLY)
 
 %.$(TAR_SUFFIX): % $(BUNDLE_FILES)
