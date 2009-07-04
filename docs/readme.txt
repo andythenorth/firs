@@ -24,6 +24,8 @@ Place both renum and grfcodec in the FIRS main directory and run either 'make', 
 2 This NewGRF
 -------------
 
+If you want to check the integrity of your grf or check wether your self-compiled grf is the the same as it should, compare the values shown ingame in the NewGRF selection window with these values:
+
 GRF Name: {{GRF_TITLE}}
 GRF ID:   {{GRF_ID}}
 GRF MD5:  {{GRF_MD5}}
