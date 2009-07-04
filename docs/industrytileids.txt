@@ -17,7 +17,8 @@ Steel Mill         34..39
 Paper Mill         40..47
                              48..49        Incinerator
                              4A..53        Recycling Plant
-                             54..63        
+                             54..5B        Firtiliser Plant
+							 5C..63        
 Iron Ore Mine      64..73
 Fruit Plantation   74
                              75            Waste Collection Point
@@ -26,6 +27,7 @@ Water Tower        78
                              79+
 
 
-ID    Generic tile       Accepts      Defined in
-2E    Sand Staithes      Sand         Cement Plant
-4A    Plain paved tile   Nothing      Recycling Plant
+ID    Generic tile            Accepts      Defined in
+2E    Sand Staithes           Sand         Cement Plant
+4A    Plain paved tile        Nothing      Recycling Plant
+0A    Electrical substation   Nothing      Thermal Plant

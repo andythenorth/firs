@@ -1,0 +1,200 @@
+//Industry tiles definition; Fertiliser Plant has 8 different tiles
+
+//Tile 54, action 0
+-1 * 0 00 09 \b5 01 54 // -1 * 0 00 09 <num-props> 01 <id>
+	08 00 //subsitute type
+	0A CARGO_CHEMICALS 08 //tile acceptance 1
+	0B CARGO_ENGINEERINGSUPPLIES 08 //tile acceptance 2
+	0C 00 00 //tile acceptance 3
+	0D 10 //land shape flags: 10 = only on flat land
+//Tile 55, action 0
+-1 * 0 00 09 \b5 01 55 // -1 * 0 00 09 <num-props> 01 <id>
+	08 00 //subsitute type
+	0A CARGO_CHEMICALS 08 //tile acceptance 1
+	0B CARGO_ENGINEERINGSUPPLIES 08 //tile acceptance 2
+	0C 00 00 //tile acceptance 3
+	0D 10 //land shape flags: 10 = only on flat land
+//Tile 56, action 0
+-1 * 0 00 09 \b5 01 56 // -1 * 0 00 09 <num-props> 01 <id>
+	08 00 //subsitute type
+	0A CARGO_CHEMICALS 08 //tile acceptance 1
+	0B CARGO_ENGINEERINGSUPPLIES 08 //tile acceptance 2
+	0C 00 00 //tile acceptance 3
+	0D 10 //land shape flags: 10 = only on flat land
+//Tile 57, action 0
+-1 * 0 00 09 \b5 01 57 // -1 * 0 00 09 <num-props> 01 <id>
+	08 00 //subsitute type
+	0A CARGO_CHEMICALS 08 //tile acceptance 1
+	0B CARGO_ENGINEERINGSUPPLIES 08 //tile acceptance 2
+	0C 00 00 //tile acceptance 3
+	0D 10 //land shape flags: 10 = only on flat land
+//Tile 58, action 0
+-1 * 0 00 09 \b5 01 58 // -1 * 0 00 09 <num-props> 01 <id>
+	08 00 //subsitute type
+	0A CARGO_CHEMICALS 08 //tile acceptance 1
+	0B CARGO_ENGINEERINGSUPPLIES 08 //tile acceptance 2
+	0C 00 00 //tile acceptance 3
+	0D 10 //land shape flags: 10 = only on flat land
+//Tile 59, action 0
+-1 * 0 00 09 \b5 01 59 // -1 * 0 00 09 <num-props> 01 <id>
+	08 00 //subsitute type
+	0A CARGO_CHEMICALS 08 //tile acceptance 1
+	0B CARGO_ENGINEERINGSUPPLIES 08 //tile acceptance 2
+	0C 00 00 //tile acceptance 3
+	0D 10 //land shape flags: 10 = only on flat land
+//Tile 5A, action 0
+-1 * 0 00 09 \b5 01 5A // -1 * 0 00 09 <num-props> 01 <id>
+	08 22 //subsitute type
+	0A CARGO_CHEMICALS 08 //tile acceptance 1
+	0B CARGO_ENGINEERINGSUPPLIES 08 //tile acceptance 2
+	0C 00 00 //tile acceptance 3
+	0D 10 //land shape flags: 10 = only on flat land
+//Tile 5B, action 0
+-1 * 0 00 09 \b5 01 5B // -1 * 0 00 09 <num-props> 01 <id>
+	08 22 //subsitute type
+	0A CARGO_CHEMICALS 08 //tile acceptance 1
+	0B CARGO_ENGINEERINGSUPPLIES 08 //tile acceptance 2
+	0C 00 00 //tile acceptance 3
+	0D 10 //land shape flags: 10 = only on flat land
+
+
+
+
+//Industry tile sprites; one sprite for each tile; eventually more for each tile to include  construction stages
+
+//All tiles, Action 1
+-1 * 0 01 09 \b8 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
+// Format: spritenum pcxfile xpos ypos compression ysize xsize xrel yrel
+-1 sprites/pcx/industries/fertiliserplant.pcx 80 10 09  114 64 -31 -83
+-1 sprites/pcx/industries/fertiliserplant.pcx 150 10 09  114 64 -31 -83
+-1 sprites/pcx/industries/fertiliserplant.pcx 220 10 09  114 64 -31 -83
+-1 sprites/pcx/industries/fertiliserplant.pcx 290 10 09  114 64 -31 -83
+-1 sprites/pcx/industries/fertiliserplant.pcx 360 10 09  66 64 -31 -35
+-1 sprites/pcx/industries/fertiliserplant.pcx 430 10 09  66 64 -31 -35
+-1 sprites/pcx/industries/fertiliserplant.pcx 500 10 09  66 64 -31 -35
+-1 sprites/pcx/industries/fertiliserplant.pcx 570 10 09  66 64 -31 -35
+
+
+//sprite 54, Action 2 
+-1 * 0 02 09 54 00 //-1 * 0 02 09 <set-id> 00
+	\d1420 //groundsprite
+	\dx80008000 //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b48 //xextent yextent zextent
+//sprite 55, Action 2 
+-1 * 0 02 09 55 00 //-1 * 0 02 09 <set-id> 00
+	\d1420 //groundsprite
+	\dx80008001 //building sprite
+	00 00 //xofs yofs
+	\b16 \b16 \b48 //xextent yextent zextent
+//sprite 56, Action 2 
+-1 * 0 02 09 56 00 //-1 * 0 02 09 <set-id> 00
+	\d1420 //groundsprite
+	\dx80008002 //building sprite
+	00 00 //xofs yofs
+	\b16 \b16 \b48 //xextent yextent zextent
+//sprite 57, Action 2 
+-1 * 0 02 09 57 00 //-1 * 0 02 09 <set-id> 00
+	\d1420 //groundsprite
+	\dx80008003 //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b48 //xextent yextent zextent
+//sprite 58, Action 2 
+-1 * 0 02 09 58 00 //-1 * 0 02 09 <set-id> 00
+	\d1420 //groundsprite
+	\dx80008004 //building sprite
+	00 00 //xofs yofs
+	\b16 \b16 \b48 //xextent yextent zextent
+//sprite 59, Action 2 
+-1 * 0 02 09 59 00 //-1 * 0 02 09 <set-id> 00
+	\d1420 //groundsprite
+	\dx80008005 //building sprite
+	00 00 //xofs yofs
+	\b16 \b16 \b48 //xextent yextent zextent
+//sprite 5A, Action 2 
+-1 * 0 02 09 5A 00 //-1 * 0 02 09 <set-id> 00
+	\d1420 //groundsprite
+	\dx80008006 //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b48 //xextent yextent zextent
+//sprite 5B, Action 2 
+-1 * 0 02 09 5B 00 //-1 * 0 02 09 <set-id> 00
+	\d1420 //groundsprite
+	\dx80008007 //building sprite
+	00 00 //xofs yofs
+	\b16 \b16 \b48 //xextent yextent zextent
+
+
+//Action3 attach sprites to industry tiles
+
+//Tile 54, action 3
+-1 * 0 03 09 01 54 00 \wx54 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
+//Tile 55, action 3
+-1 * 0 03 09 01 55 00 \wx55 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
+//Tile 56, action 3
+-1 * 0 03 09 01 56 00 \wx56 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
+//Tile 57, action 3
+-1 * 0 03 09 01 57 00 \wx57 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
+//Tile 58, action 3
+-1 * 0 03 09 01 58 00 \wx58 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
+//Tile 59, action 3
+-1 * 0 03 09 01 59 00 \wx59 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
+//Tile 5A, action 3
+-1 * 0 03 09 01 5A 00 \wx5A //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
+//Tile 5B, action 3
+-1 * 0 03 09 01 5B 00 \wx5B //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
+
+
+
+//Industry definition
+
+//Action 0
+-1 * 0 00 0A \b24 01 IND_FERTILISERPLANT //-1 * 0 00 0A <num-props> 01 <id>
+	08 00 //reuse original industry with this here ID
+	0A 01 //number of industry layouts
+		\d62 //size of layout definition +2 for termination
+		//layout:
+			01 00 FE 4A 00 //xoffs yoffs FE newtile(W)
+			01 01 FE 4A 00
+			05 01 FE 4A 00
+			06 00 FE 0A 00
+			05 00 FE 54 00
+			04 00 FE 55 00
+			03 00 FE 56 00
+			02 00 FE 57 00
+			04 01 FE 58 00
+			03 01 FE 59 00
+			02 01 FE 5A 00
+			00 00 FE 5B 00
+		00 80 //terminate layout definition
+	0B 04 //production flags 1h=extractive, 2h=organic, 4h=processing
+	0C STR_IND_CLOSE_GENERIC //industry closure message
+	0D STR_IND_PRODINCR_GENERIC //production increase message
+	0E STR_IND_PRODDECR_GENERIC //production decrease message
+	1B STR_IND_NEW_GENERIC //new industry message
+	1F STR_IND_FERTILISERPLANT //industry name
+	10 CARGO_FARMSUPPLIES FF //production cargo types (word; fill unused with FFh)
+	11 CARGO_CHEMICALS CARGO_ENGINEERINGSUPPLIES FF FF //acceptance cargo types (dword; fill unused with FFh)
+	12 00 //production multiplier cargo 1
+	13 00 //production multiplier cargo 2
+	1C E6 00 00 00 //input cargo 1 multiplier (dword M1 M2; output_typen = X*Mn/256)
+	1D 54 00 00 00 //input cargo 2 multiplier
+	1E 00 01 00 00 //input cargo 3 multiplier
+	14 \b05 //minimal cargo distribution amount
+	16 FF FF FF //conflicting industry types (3*byte; ID+80h; FF to disable)
+	17 \b5 //probability in random game
+	18 \b3 //probability during gameplay
+	20 FF FF FF BF //prospecting success chance (dword; FFFFFFFFh=100%)
+	0F \b255 //fund cost multiplier (byte)
+	19 30 //map colour (byte; using indexes from dos palette)
+	23 \d0  //descruction cost multiplier (dword; default: 0)
+	1A \d0 //special industry flag (dword)
+	//21  //callback flags
+	//22  //callback flags
+	
+
+//No action 1 for industries, as graphics are defined by the industry-tile feature.
+
+//Industry production callback: action 2. Skip that for now to see if this works without all fancy stuff
+
+//Hence no action 3 yet either.
