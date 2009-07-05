@@ -1,4 +1,5 @@
 // Definition of the IDs of the single industries
+#define IND_NULL                  00
 #define IND_COALMINE              00
 #define IND_IRONOREMINE           04
 #define IND_BAUXITEMINE           05
@@ -62,6 +63,19 @@
 //#define IND_GENERALSTORE          3B
 //#define IND_GASSTATION            3C
 //#define IND_SUPERMARKET           3D
+
+//Definition of industry tile IDs
+//Generic empty tiles
+#define TILE_NULL                          00
+#define TILE_GENERIC_CONCRETE              E0
+#define TILE_GENERIC_BARELAND              E1
+#define TILE_GENERIC_HALFGRASS             E2
+//#define TILE_GENERIC_ELECTRICALSUBSTATION  0A
+//#define TILE_GENERIC_SANDSTAITHES          2E
+//Generic structure tiles
+#define TILE_GENERIC_SILOS                 D0
+//Industry specific tiles
+#define TILE_PLASTICSPLANT_1               B0
 
 // Definition of the cargo bits/IDs
 #define CARGO_COAL                01
@@ -146,6 +160,7 @@
 #define STR_IND_INCINERATOR           77 DC
 #define STR_IND_RECYCLINGPLANT        78 DC
 #define STR_IND_FERTILISERPLANT       79 DC
+#define STR_IND_PLASTICSPLANT         7A DC
 
 //Definition of industry messages using TTD strings
 #define STR_IND_CLOSE_GENERIC     33 48
@@ -168,6 +183,7 @@
 #define STR_STA_REFINERY          94 DC
 #define STR_STA_WATER             95 DC
 #define STR_STA_FACTORY           96 DC
+#define STR_STA_PLANT             97 DC
 
 //Definition of text IDs for cargos
 #define STR_CRG_SUGARCANE_CTYPE             01 DC

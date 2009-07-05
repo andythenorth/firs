@@ -1,0 +1,27 @@
+//Generic Industry tiles definition
+
+//Tile TILE_GENERIC_CONCRETE, action 0
+-1 * 0 00 09 \b5 01 TILE_GENERIC_CONCRETE // -1 * 0 00 09 <num-props> 01 <id>
+	08 TILE_NULL //subsitute type
+	0A 00 00 //tile acceptance 1
+	0B 00 00 //tile acceptance 2
+	0C 00 00 //tile acceptance 3
+	0D 10 //land shape flags: 10 = only on flat land
+
+
+//No custom graphics
+
+
+//Action 2  attach graphics to graphics id
+//sprite TILE_GENERIC_CONCRETE
+-1 * 0 02 09 TILE_GENERIC_CONCRETE 00 //-1 * 0 02 09 <set-id> 00
+	\d1420 //groundsprite
+	\d0 //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b4 //xextent yextent zextent
+
+
+//Action 3 attach graphics id to industry tiles
+
+//Tile TILE_GENERIC_CONCRETE
+-1 * 0 03 09 01 TILE_GENERIC_CONCRETE 00 TILE_GENERIC_CONCRETE 00 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
