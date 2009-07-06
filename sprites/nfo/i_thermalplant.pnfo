@@ -1,10 +1,9 @@
 //Redefinition of original TTD industry
 //Thermal Plant
--1 * 0 00 0A \b12 01 IND_THERMALPLANT //-1 * 0 00 0A <num-props> 01 <id>
+-1 * 0 00 0A \b11 01 IND_THERMALPLANT //-1 * 0 00 0A <num-props> 01 <id>
 	08 IND_THERMALPLANT //substitute industry type
 	09 IND_THERMALPLANT //industry type override
 	0B 04 //production flags 1h=extractive, 2h=organic, 4h=processing
-	1F STR_IND_THERMALPLANT //industry name
 	24 STR_STA_THERMALPLANT //default text for nearby station
 	11 CARGO_COAL CARGO_FUELOIL CARGO_ENGINEERINGSUPPLIES FF //acceptance cargo types (dword; fill unused with FFh)
 	10 FF FF //production cargo types (word; fill unused with FFh)
