@@ -57,8 +57,8 @@
 	1E 00 00 00 00 //input cargo 3 multiplier
 	14 \b2 //minimal cargo distribution amount
 	16 FF FF FF //conflicting industry types (3*byte; ID+80h; FF to disable)
-	17 \b255 //probability in random game
-	18 \b9 //probability during gameplay
+	17 \b10 //probability in random game
+	18 \b20 //probability during gameplay
 	20 FF FF FF BF //prospecting success chance (dword; FFFFFFFFh=100%)
 	0F \b255 //fund cost multiplier (byte)
 	19 30 //map colour (byte; using indexes from dos palette)
