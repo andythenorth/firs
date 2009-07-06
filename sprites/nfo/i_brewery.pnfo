@@ -74,19 +74,17 @@
 -1 * 0 00 0A \b24 01 IND_BREWERY //-1 * 0 00 0A <num-props> 01 <id>
 	08 IND_BREWERY //reuse original industry with this here ID
 	0A 03 //number of industry layouts
-		\d17 //size of layout definition +2 for termination
+		\d51 //size of layout definition +2 for termination
 		//layout:
 			01 00 FE 2B 00 //xoffs yoffs FE newtile(W)
 			01 02 FE 2C 00
 			00 02 FE 2D 00
 		00 80 //terminate layout definition
-		\d17 //size of layout definition +2 for termination
 		//layout:
 			02 00 FE 2B 00 //xoffs yoffs FE newtile(W)
 			01 00 FE 2C 00
 			00 00 FE 2D 00
 		00 80 //terminate layout definition
-		\d17 //size of layout definition +2 for termination
 		//layout:
 			01 00 FE 2B 00 //xoffs yoffs FE newtile(W)
 			01 01 FE 2C 00
@@ -113,7 +111,7 @@
 	0F \b255 //fund cost multiplier (byte)
 	19 30 //map colour (byte; using indexes from dos palette)
 	23 \d0  //descruction cost multiplier (dword; default: 0)
-	1A \dx20 //special industry flag (dword; brewery: 20h)
+	1A \dx10 //special industry flag
 	//21  //callback flags
 	//22  //callback flags
 	
