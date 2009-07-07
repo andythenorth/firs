@@ -119,7 +119,7 @@ clean:
 $(DIR_NIGHTLY) $(DIR_RELEASE) : $(BUNDLE_FILES)
 	$(V) echo "Creating dir $@ ."
 	$(V) -mkdir $@  2>/dev/null
-	$(V) -rm $@ /* 2>/dev/null
+	$(V) -rm $@/* 2>/dev/null
 	$(V) echo "Copying files: $(BUNDLE_FILES)"
 	$(V) -for i in $(BUNDLE_FILES); do cp $$i $@ ; done	
 	$(V) -cat $(READMEFILE) | sed -e "s/$(GRF_TITLE_DUMMY)/$(GRF_TITLE)/" \
