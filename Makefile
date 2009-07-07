@@ -94,7 +94,7 @@ $(NFO_FILENAME): $(PCX_FILES) $(PNFO_FILES) $(REV_FILENAME)
 	$(V) -rm $(CPNFO_FILENAME)
 	$(V) for i in $(PNFO_FILES); do echo "#include \"$$i\"" >> $(CPNFO_FILENAME); done
 	$(V) echo "Setting title to $(GRF_TITLE)..."
-	$(V) $(CC) $(CC_FLAGS) $(CPNFO_FILENAME) | sed -e "s/$(GRF_ID_DUMMY)/$(GRF_ID)/" -e "s/$(GRF_TITLE_DUMMY)/$(GRF_TITLE)/" | grep -v '#' > $@ 
+	$(V) $(CC) $(CC_FLAGS) $(CPNFO_FILENAME) | sed -e "s/$(GRF_ID_DUMMY)/$(GRF_ID)/" -e "s/$(GRF_TITLE_DUMMY)/$(GRF_TITLE)/" | grep -v '#' > $@
 	$(V) echo	
 	$(V) echo "NFORENUM processing:"
 	$(V)-$(NFORENUM) ${NFORENUM_FLAGS} $@ 
@@ -117,22 +117,22 @@ clean:
 	-rm -rf *.orig *.pre *.bak *~ $(FILENAME)* $(SPRITEDIR)/$(FILENAME).* *.$(REV_SUFFIX)
 	
 $(DIR_NIGHTLY) $(DIR_RELEASE) : $(BUNDLE_FILES)
-	$(V) echo "Creating dir $@ ."
-	$(V) -mkdir $@  2>/dev/null
+	$(V) echo "Creating dir $@."
+	$(V) -mkdir $@ 2>/dev/null
 	$(V) -rm $@/* 2>/dev/null
 	$(V) echo "Copying files: $(BUNDLE_FILES)"
-	$(V) -for i in $(BUNDLE_FILES); do cp $$i $@ ; done	
+	$(V) -for i in $(BUNDLE_FILES); do cp $$i $@; done	
 	$(V) -cat $(READMEFILE) | sed -e "s/$(GRF_TITLE_DUMMY)/$(GRF_TITLE)/" \
 		| sed -e "s/{{GRF_MD5}}/`$(MD5SUM) $(GRF_FILENAME)`/" \
 		| sed -e "s/{{GRF_REVISION}}/$(GRF_REVISION)/" \
 		| sed -e "s/{{GRF_ID}}/$(GRF_ID)/" \
-		> $@ /$(notdir $(READMEFILE))
+		> $@/$(notdir $(READMEFILE))
 bundle: $(DIR_NIGHTLY)
 
 %.$(TAR_SUFFIX): % $(BUNDLE_FILES)
 	# Create the release bundle with all files in one tar
-	$(V) echo "Basename: $(basename $@ ) (and $(DIR_NIGHTLY) and $(DIR_RELEASE))"
-	$(V) $(TAR) $(TAR_FLAGS) $@  $(basename $@ )
+	$(V) echo "Basename: $(basename $@) (and $(DIR_NIGHTLY) and $(DIR_RELEASE))"
+	$(V) $(TAR) $(TAR_FLAGS) $@ $(basename $@)
 	$(V) echo "Creating tar for publication"
 	$(V) echo
 bundle_tar: $(TAR_FILENAME)
