@@ -1,57 +1,130 @@
-=============================
-{{GRF_TITLE}}
-=============================
+====================================
+{{GRF_TITLE}} ReadMe
+====================================
 
-Content
+----------
+0 Contents
+----------
 
-1 Compiling
-2 This NewGRF
-3 Web Links
-4 License
-
-
-
------------
-1 Compiling
------------
-
-In order to compile FIRS from source you need the STABLE VERSIONS of NFORenum (v3.4.6) and GRFCodec (v0.9.10). At the moment, building FIRS with the latest builds WILL FAIL.
-Place both renum and grfcodec in the FIRS main directory and run either 'make', 'make install', 'make bundle' or 'make release'. There's more options, but these are probably sufficient.
+1 Preface
+2 Downloading FIRS
+3 Using FIRS
+4 Compiling FIRS
+5 The FIRS NewGRF
+6 FIRS Web Links
+7 FIRS License
 
 
 
--------------
-2 This NewGRF
--------------
+---------
+1 Preface
+---------
 
-If you want to check the integrity of your grf or check wether your self-compiled grf is the the same as it should, compare the values shown ingame in the NewGRF selection window with these values:
+The FIRS Industry Replacement Set is an industry set for OpenTTD. Once done it will include the following features, amongst others:
+- Over 60 different industries:
+  - 57 industries per climate;
+  - Industry availability changes over time. Some types of industries will close and disappear from the map at certain points in history, others will become available;
+  - Industries change looks over time;
+  - Some industries change cargo acceptance over time.
+  - Includes some things that have been asked for recently including a 'waste' cargo chain;
+  - Stockpiling produces output gradually, but without a strict limit on the input. Only output-increasing input cargos will be capped, other cargos will be limited to the technical maximum of 65536 items;
+  - No natural resource limits enforced;
+  - Default TTD unserviced industry closure behaviour for all secondary industries. Even Power Stations will close if not serviced.
+- 29 different cargos:
+  - Some of the cargos are present in other sets, some are new.
+  - 2 spare cargo slots and 1 reserved for regearing (as featured in NARS);
+  - Includes some things that have been asked for recently including 'waste';
+  - Cargo classes to ensure support from the major vehicle sets (at least the ones that have good cargo class support).
+- GNU GPL licensed.
 
-GRF Name: {{GRF_TITLE}}
-GRF ID:   {{GRF_ID}}
-GRF MD5:  {{GRF_MD5}}
 
-Repository version: {{GRF_REVISION}}
+------------------
+2 Downloading FIRS
+------------------
+
+If you don't want to compile FIRS yourself, you can download precompiled nightly versions from http://mz.openttdcoop.org/bundles/firs/.
+Nightly versions are made available on a regular basis. Once we reach a stable release, you can get those from the same address as well, or via the OpenTTD built-in download manager.
 
 
 
------------
-3 Web Links
------------
+------------
+3 Using FIRS
+------------
+
+Obviously you need to add it to the game first. We're not explaining that here, go read the OpenTTD manual at http://wiki.openttd.org/NewGRF.
+
+FIRS shouldn't be used with other industry sets active. FIRS will disable itself if an incompatible industry set is detected, but this detection will only work for industry sets known at the time of the FIRS release. There's a possibility that FIRS will be compatible with other industry sets in the future.
+
+Furthermore you need a vehicle set that supports the FIRS cargos. Any vehicle set with proper Cargo Classes support should do that by default. The OpenTTD vehicles will not be able to transport all FIRS cargos. The following sets available from the OpenTTD built-in download manager are known to support FIRS:
+- Train Sets:
+  - 2cc Train Set 1.0.1
+  - North American Renewal Set (NARS) 2.02
+  - Old Wagons with New Cargos 1.1
+  - UK Renewal Train Set v3.04
+- Road Vehicle Sets:
+  - eGRVTS v1.0
+  - HEQS (Heavy Equipment Set) 0.5b
+
+(Contact a FIRS developer to have your own set listed here)
+
+
+
+----------------
+4 Compiling FIRS
+----------------
+
+The FIRS source is available in a Mercurial repository and is available through http://mz.openttdcoop.org/hg/firs. E.g. use hg clone http://mz.openttdcoop.org/hg/firs to get yourself a copy.
+
+In order to compile FIRS from source you need at least r2125 of NFORenum and GRFCodec or the latest stable versions of those tools (at the moment v3.4.6 resp. v0.9.10). Using any recent version inbetween will most likely fail to compile FIRS correctly.
+Place both renum and grfcodec in the FIRS main directory or your system's PATH environment variable and run the makefile:
+   make                  Compile the FIRS newgrf
+   make bundle           Compile and create a tar with directory structure and documentation
+   make install          Compile, tar and install to OpenTTD data directory (either guessed by the makefile or to be configured in Makefile.local)
+   make release          Compile and tar/zip with version information for shipping
+   make release-install  Compile, tar/zip with version information and install tar to data directory
+
+either 'make', 'make install', 'make bundle' or 'make release'. There's more options, but these are probably sufficient for you to know.
+
+
+
+-----------------
+5 The FIRS NewGRF
+-----------------
+
+If you want to check the integrity of your grf or check whether your self-compiled grf is the the same as it should, compare the values shown ingame in the NewGRF selection window with these values:
+
+GRF Name : {{GRF_TITLE}}
+GRF ID   : {{GRF_ID}}
+GRF MD5  : {{GRF_MD5}}
+
+This version of FIRS is created using repository version {{GRF_REVISION}}
+
+
+
+----------------
+6 FIRS Web Links
+----------------
 
   FIRS Website: http://tt-foundry.com/sets/FIRS/schema/industries
+  Information about industries and cargos for both users and set authors.
    
-  Set Thread at TT Forums: http://www.tt-forums.net/viewtopic.php?f=36&t=41607
-
-  Source Repository / Issue Tracker: http://dev.openttdcoop.org/projects/firs
+  Project Page: http://dev.openttdcoop.org/projects/firs
+  Source repository and issue tracker.
+  
+  General Discussion: http://www.tt-forums.net/viewtopic.php?t=44177
+  Discussion of the FIRS releases. Talk about it's features, discuss bugs and ventilating your ideas.
+  
+  Development Discussion: http://www.tt-forums.net/viewtopic.php?t=41607
+  Follow the latest development.
  
 
 
----------
-4 License
----------
+--------------
+7 FIRS License
+--------------
 
     FIRS Industry Replacement Set - Full industry replacement set for OpenTTD
-    Copyright (C) 2009  andythenorth, FooBar, Zephyris
+    Copyright (C) 2009  andythenorth, FooBar, Zephyris and others
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
