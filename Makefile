@@ -102,9 +102,9 @@ $(NFO_FILENAME): $(PCX_FILES) $(PNFO_FILES) $(REV_FILENAME)
 	
 # Rules for making the appropriate files: no rule. Just check for them
 %.$(PCX_SUFFIX):
-	$(V) echo "Checking $$(V) "
+	$(V) echo "Checking $@"
 %.$(PNFO_SUFFIX):
-	$(V) echo "Checking $$(V) "
+	$(V) echo "Checking $@"
 	
 $(REV_FILENAME):
 	$(V) -rm *.$(REV_SUFFIX)
@@ -117,22 +117,22 @@ clean:
 	-rm -rf *.orig *.pre *.bak *~ $(FILENAME)* $(SPRITEDIR)/$(FILENAME).* *.$(REV_SUFFIX)
 	
 $(DIR_NIGHTLY) $(DIR_RELEASE) : $(BUNDLE_FILES)
-	$(V) echo "Creating dir $$(V) ."
-	$(V) -mkdir $$(V)  2>/dev/null
-	$(V) -rm $$(V) /* 2>/dev/null
+	$(V) echo "Creating dir $@ ."
+	$(V) -mkdir $@  2>/dev/null
+	$(V) -rm $@ /* 2>/dev/null
 	$(V) echo "Copying files: $(BUNDLE_FILES)"
-	$(V) -for i in $(BUNDLE_FILES); do cp $$i $$(V) ; done	
+	$(V) -for i in $(BUNDLE_FILES); do cp $$i $@ ; done	
 	$(V) -cat $(READMEFILE) | sed -e "s/$(GRF_TITLE_DUMMY)/$(GRF_TITLE)/" \
 		| sed -e "s/{{GRF_MD5}}/`$(MD5SUM) $(GRF_FILENAME)`/" \
 		| sed -e "s/{{GRF_REVISION}}/$(GRF_REVISION)/" \
 		| sed -e "s/{{GRF_ID}}/$(GRF_ID)/" \
-		> $$(V) /$(notdir $(READMEFILE))
+		> $@ /$(notdir $(READMEFILE))
 bundle: $(DIR_NIGHTLY)
 
 %.$(TAR_SUFFIX): % $(BUNDLE_FILES)
 	# Create the release bundle with all files in one tar
-	$(V) echo "Basename: $(basename $$(V) ) (and $(DIR_NIGHTLY) and $(DIR_RELEASE))"
-	$(V) $(TAR) $(TAR_FLAGS) $$(V)  $(basename $$(V) )
+	$(V) echo "Basename: $(basename $@ ) (and $(DIR_NIGHTLY) and $(DIR_RELEASE))"
+	$(V) $(TAR) $(TAR_FLAGS) $@  $(basename $@ )
 	$(V) echo "Creating tar for publication"
 	$(V) echo
 bundle_tar: $(TAR_FILENAME)
@@ -160,7 +160,7 @@ release-install: release
 	$(V)-cp $(DIR_RELEASE).$(TAR_SUFFIX) $(INSTALLDIR)
 	$(V) echo
 release_zip: $(DIR_RELEASE)
-	$(V) $(ZIP) $(ZIP_FLAGS) $(ZIP_FILENAME) $$(V) 
+	$(V) $(ZIP) $(ZIP_FLAGS) $(ZIP_FILENAME) $@
 	
 $(INSTALLDIR):
 	$(V) echo "$(error Installation dir does not exist. Check your makefile.local)"
