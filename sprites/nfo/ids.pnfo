@@ -64,19 +64,21 @@
 //#define IND_GASSTATION            3C
 //#define IND_SUPERMARKET           3D
 
+
 //Definition of industry tile IDs
-//Generic empty tiles
 #define TILE_NULL                          00
+//Generic empty tiles
 #define TILE_GENERIC_CONCRETE              E0
 #define TILE_GENERIC_BARELAND              E1
 #define TILE_GENERIC_HALFGRASS             E2
-//#define TILE_GENERIC_ELECTRICALSUBSTATION  0A
-//#define TILE_GENERIC_SANDSTAITHES          2E
 //Generic structure tiles
+#define TILE_GENERIC_ELECTRICALSUBSTATION  0A
 #define TILE_GENERIC_SILOS                 D0
+#define TILE_GENERIC_SANDSTAITHES          D1
 //Industry specific tiles
 #define TILE_PLASTICSPLANT_1               B0
 #define TILE_SANDPIT_1                     B1
+#define TILE_GLASSWORKS_1                  B2
 
 // Definition of the cargo bits/IDs
 #define CARGO_COAL                01

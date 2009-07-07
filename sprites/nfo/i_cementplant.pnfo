@@ -1,12 +1,5 @@
-//Industry tiles definition; Cement Plant has 12 different tiles
+//Industry tiles definition; Cement Plant has 11 different tiles
 
-//Tile 2E, action 0 //this one can be shared with the glass works
--1 * 0 00 09 \b5 01 2E // -1 * 0 00 09 <num-props> 01 <id>
-	08 2E //subsitute type
-	0A CARGO_SAND 08 //tile acceptance 1
-	0B 00 00 //tile acceptance 2
-	0C 00 00 //tile acceptance 3
-	0D 10 //land shape flags: 10 = only on flat land
 //Tile 2F, action 0
 -1 * 0 00 09 \b5 01 2F // -1 * 0 00 09 <num-props> 01 <id>
 	08 2F //subsitute type
@@ -91,9 +84,8 @@
 //Industry tile sprites; one sprite for each tile; eventually more for each tile to include  construction stages
 
 //All tiles, Action 1
--1 * 0 01 09 \b12 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
+-1 * 0 01 09 \b11 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
 // Format: spritenum pcxfile xpos ypos compression ysize xsize xrel yrel
--1 sprites/pcx/industries/cementplant.pcx 10 10 09 113 64 -31 -82
 -1 sprites/pcx/industries/cementplant.pcx 80 10 09  113 64 -31 -82
 -1 sprites/pcx/industries/cementplant.pcx 150 10 09  113 64 -31 -82
 -1 sprites/pcx/industries/cementplant.pcx 220 10 09  113 64 -31 -82
@@ -107,84 +99,76 @@
 -1 sprites/pcx/industries/cementplant.pcx 780 10 09  113 64 -31 -82
 
 
-//sprite 2E, Action 2 
--1 * 0 02 09 2E 00 //-1 * 0 02 09 <set-id> 00
-	\d1420 //groundsprite
-	\dx80008000 //building sprite
-	\b0 \b0 //xofs yofs
-	\b16 \b16 \b48 //xextent yextent zextent
 //sprite 2F, Action 2 
 -1 * 0 02 09 2F 00 //-1 * 0 02 09 <set-id> 00
 	\d1420 //groundsprite
-	\dx80008001 //building sprite
+	\dx80008000 //building sprite
 	00 00 //xofs yofs
 	\b16 \b16 \b48 //xextent yextent zextent
 //sprite 30, Action 2 
 -1 * 0 02 09 30 00 //-1 * 0 02 09 <set-id> 00
 	\d1420 //groundsprite
-	\dx80008002 //building sprite
+	\dx80008001 //building sprite
 	00 00 //xofs yofs
 	\b16 \b16 \b48 //xextent yextent zextent
 //sprite 31, Action 2 
 -1 * 0 02 09 31 00 //-1 * 0 02 09 <set-id> 00
 	\d1420 //groundsprite
-	\dx80008003 //building sprite
+	\dx80008002 //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b48 //xextent yextent zextent
 //sprite 32, Action 2 
 -1 * 0 02 09 32 00 //-1 * 0 02 09 <set-id> 00
 	\d1420 //groundsprite
-	\dx80008004 //building sprite
+	\dx80008003 //building sprite
 	00 00 //xofs yofs
 	\b16 \b16 \b48 //xextent yextent zextent
 //sprite 33, Action 2 
 -1 * 0 02 09 33 00 //-1 * 0 02 09 <set-id> 00
 	\d1420 //groundsprite
-	\dx80008005 //building sprite
+	\dx80008004 //building sprite
 	00 00 //xofs yofs
 	\b16 \b16 \b48 //xextent yextent zextent
 //sprite 3A, Action 2 
 -1 * 0 02 09 3A 00 //-1 * 0 02 09 <set-id> 00
 	\d1420 //groundsprite
-	\dx80008006 //building sprite
+	\dx80008005 //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b48 //xextent yextent zextent
 //sprite 3B, Action 2 
 -1 * 0 02 09 3B 00 //-1 * 0 02 09 <set-id> 00
 	\d1420 //groundsprite
-	\dx80008007 //building sprite
+	\dx80008006 //building sprite
 	00 00 //xofs yofs
 	\b16 \b16 \b48 //xextent yextent zextent
 //sprite 3C, Action 2 
 -1 * 0 02 09 3C 00 //-1 * 0 02 09 <set-id> 00
 	\d1420 //groundsprite
-	\dx80008008 //building sprite
+	\dx80008007 //building sprite
 	00 00 //xofs yofs
 	\b16 \b16 \b48 //xextent yextent zextent
 //sprite 3D, Action 2 
 -1 * 0 02 09 3D 00 //-1 * 0 02 09 <set-id> 00
 	\d1420 //groundsprite
-	\dx80008009 //building sprite
+	\dx80008008 //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b48 //xextent yextent zextent
 //sprite 3E, Action 2 
 -1 * 0 02 09 3E 00 //-1 * 0 02 09 <set-id> 00
 	\d1420 //groundsprite
-	\dx8000800A //building sprite
+	\dx80008009 //building sprite
 	00 00 //xofs yofs
 	\b16 \b16 \b48 //xextent yextent zextent
 //sprite 3F, Action 2 
 -1 * 0 02 09 3F 00 //-1 * 0 02 09 <set-id> 00
 	\d1420 //groundsprite
-	\dx8000800B //building sprite
+	\dx8000800A //building sprite
 	00 00 //xofs yofs
 	\b16 \b16 \b48 //xextent yextent zextent
 
 
 //Action3 attach sprites to industry tiles
 
-//Tile 2E, action 3
--1 * 0 03 09 01 2E 00 \wx2E //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
 //Tile 2F, action 3
 -1 * 0 03 09 01 2F 00 \wx2F //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
 //Tile 30, action 3
@@ -218,8 +202,8 @@
 	0A 01 //number of industry layouts
 		\d62 //size of layout definition +2 for termination
 		//layout:
-			05 00 FE 2E 00 //xoffs yoffs FE newtile(W)
-			06 00 FE 2E 00
+			05 00 FE TILE_GENERIC_SANDSTAITHES 00 //xoffs yoffs FE newtile(W)
+			06 00 FE TILE_GENERIC_SANDSTAITHES 00
 			00 00 FE 2F 00
 			00 01 FE 30 00
 			00 02 FE 31 00
