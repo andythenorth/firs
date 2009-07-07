@@ -55,26 +55,26 @@ all : grf
 
 # Print the output for a number of variables which define this newgrf.
 test : 
-	@echo "Call of nforenum:             $(NFORENUM) $(NFORENUM_FLAGS)"
-	@echo "Call of grfcodec:             $(GRFCODEC) $(GRFCODEC_FLAGS)"
-	@echo "Local installation directory: $(shell [ -n "$(INSTALLDIR)" ] && echo "$(INSTALLDIR)" || echo "Not defined!")"
-	@echo "Repository revision:          r$(GRF_REVISION)"
-	@echo "GRF title:                    $(GRF_TITLE)"
-	@echo "Bundled files:                $(BUNDLE_FILES)"
-	@echo "Bundle filenames:             Tar=$(TAR_FILENAME) Zip=$(ZIP_FILENAME) Bz2=$(BZIP_FILENAME)"
-	@echo "PNFO files:                   $(PNFO_FILES)"
-	@echo "PCX files:                    $(PCX_FILES)"
-	@echo "Dirs (nightly/release/base):  $(DIR_NIGHTLY) / $(DIR_RELEASE) / $(DIR_BASE)"
+	$(V) echo "Call of nforenum:             $(NFORENUM) $(NFORENUM_FLAGS)"
+	$(V) echo "Call of grfcodec:             $(GRFCODEC) $(GRFCODEC_FLAGS)"
+	$(V) echo "Local installation directory: $(shell [ -n "$(INSTALLDIR)" ] && echo "$(INSTALLDIR)" || echo "Not defined!")"
+	$(V) echo "Repository revision:          r$(GRF_REVISION)"
+	$(V) echo "GRF title:                    $(GRF_TITLE)"
+	$(V) echo "Bundled files:                $(BUNDLE_FILES)"
+	$(V) echo "Bundle filenames:             Tar=$(TAR_FILENAME) Zip=$(ZIP_FILENAME) Bz2=$(BZIP_FILENAME)"
+	$(V) echo "PNFO files:                   $(PNFO_FILES)"
+	$(V) echo "PCX files:                    $(PCX_FILES)"
+	$(V) echo "Dirs (nightly/release/base):  $(DIR_NIGHTLY) / $(DIR_RELEASE) / $(DIR_BASE)"
 ifeq ($(OSTYPE),Linux)
-	@echo "Host type:                    $(OSTYPE) (Linux)"
+	$(V) echo "Host type:                    $(OSTYPE) (Linux)"
 else 
 ifeq ($(OSTYPE),Darwin)
-	@echo "Host type:                    $(OSTYPE) (Mac)"
+	$(V) echo "Host type:                    $(OSTYPE) (Mac)"
 else
 ifeq ($(shell echo "$(OSTYPE)" | cut -d_ -f1),MINGW32)
-	@echo "Host type:                    $(OSTYPE) (Win)"
+	$(V) echo "Host type:                    $(OSTYPE) (Win)"
 else
-	@echo "Host type:                    unknown (win?)"
+	$(V) echo "Host type:                    unknown (win?)"
 endif
 endif
 endif
@@ -84,85 +84,85 @@ grf : $(GRF_FILENAME)
 
 $(GRF_FILENAME): $(NFO_FILENAME)
 	# pipe all nfo files through grfcodec and produce the grf(s)
-	@echo "Compiling GRF:"
-	$(GRFCODEC) ${GRFCODEC_FLAGS} $(notdir ${GRF_FILENAME})
-	@echo
+	$(V) echo "Compiling GRF:"
+	$(V) $(GRFCODEC) ${GRFCODEC_FLAGS} $(notdir ${GRF_FILENAME})
+	$(V) echo
 	
 # NFORENUM process copy of the NFO
 $(NFO_FILENAME): $(PCX_FILES) $(PNFO_FILES) $(REV_FILENAME)
-	@# replace the place holders for version and name by the respective variables:
-	@-rm $(CPNFO_FILENAME)
-	@for i in $(PNFO_FILES); do echo "#include \"$$i\"" >> $(CPNFO_FILENAME); done
-	@echo "Setting title to $(GRF_TITLE)..."
-	@$(CC) $(CC_FLAGS) $(CPNFO_FILENAME) | sed -e "s/$(GRF_ID_DUMMY)/$(GRF_ID)/" -e "s/$(GRF_TITLE_DUMMY)/$(GRF_TITLE)/" | grep -v '#' > $@
-	@echo	
-	@echo "NFORENUM processing:"
-	-$(NFORENUM) ${NFORENUM_FLAGS} $@
-	@echo
+	$(V) # replace the place holders for version and name by the respective variables:
+	$(V) -rm $(CPNFO_FILENAME)
+	$(V) for i in $(PNFO_FILES); do echo "#include \"$$i\"" >> $(CPNFO_FILENAME); done
+	$(V) echo "Setting title to $(GRF_TITLE)..."
+	$(V) $(CC) $(CC_FLAGS) $(CPNFO_FILENAME) | sed -e "s/$(GRF_ID_DUMMY)/$(GRF_ID)/" -e "s/$(GRF_TITLE_DUMMY)/$(GRF_TITLE)/" | grep -v '#' > $@ 
+	$(V) echo	
+	$(V) echo "NFORENUM processing:"
+	$(V)-$(NFORENUM) ${NFORENUM_FLAGS} $@ 
+	$(V) echo
 	
 # Rules for making the appropriate files: no rule. Just check for them
 %.$(PCX_SUFFIX):
-	@echo "Checking $@"
+	$(V) echo "Checking $$(V) "
 %.$(PNFO_SUFFIX):
-	@echo "Checking $@"
+	$(V) echo "Checking $$(V) "
 	
 $(REV_FILENAME):
-	@-rm *.$(REV_SUFFIX)
-	echo "$(BUILDFILENAME)" > $(REV_FILENAME)
+	$(V) -rm *.$(REV_SUFFIX)
+	$(V) echo "$(BUILDFILENAME)" > $(REV_FILENAME)
 			
 # Clean the source tree
 clean:
-	@echo "Cleaning source tree:"
-	@echo "Remove backups:"
+	$(V) echo "Cleaning source tree:"
+	$(V) echo "Remove backups:"
 	-rm -rf *.orig *.pre *.bak *~ $(FILENAME)* $(SPRITEDIR)/$(FILENAME).* *.$(REV_SUFFIX)
 	
 $(DIR_NIGHTLY) $(DIR_RELEASE) : $(BUNDLE_FILES)
-	@echo "Creating dir $@."
-	@-mkdir $@ 2>/dev/null
-	@-rm $@/* 2>/dev/null
-	@echo "Copying files: $(BUNDLE_FILES)"
-	@-for i in $(BUNDLE_FILES); do cp $$i $@; done	
-	@-cat $(READMEFILE) | sed -e "s/$(GRF_TITLE_DUMMY)/$(GRF_TITLE)/" \
+	$(V) echo "Creating dir $$(V) ."
+	$(V) -mkdir $$(V)  2>/dev/null
+	$(V) -rm $$(V) /* 2>/dev/null
+	$(V) echo "Copying files: $(BUNDLE_FILES)"
+	$(V) -for i in $(BUNDLE_FILES); do cp $$i $$(V) ; done	
+	$(V) -cat $(READMEFILE) | sed -e "s/$(GRF_TITLE_DUMMY)/$(GRF_TITLE)/" \
 		| sed -e "s/{{GRF_MD5}}/`$(MD5SUM) $(GRF_FILENAME)`/" \
 		| sed -e "s/{{GRF_REVISION}}/$(GRF_REVISION)/" \
 		| sed -e "s/{{GRF_ID}}/$(GRF_ID)/" \
-		> $@/$(notdir $(READMEFILE))
+		> $$(V) /$(notdir $(READMEFILE))
 bundle: $(DIR_NIGHTLY)
 
 %.$(TAR_SUFFIX): % $(BUNDLE_FILES)
 	# Create the release bundle with all files in one tar
-	@echo "Basename: $(basename $@) (and $(DIR_NIGHTLY) and $(DIR_RELEASE))"
-	$(TAR) $(TAR_FLAGS) $@ $(basename $@)
-	@echo "Creating tar for publication"
-	@echo
+	$(V) echo "Basename: $(basename $$(V) ) (and $(DIR_NIGHTLY) and $(DIR_RELEASE))"
+	$(V) $(TAR) $(TAR_FLAGS) $$(V)  $(basename $$(V) )
+	$(V) echo "Creating tar for publication"
+	$(V) echo
 bundle_tar: $(TAR_FILENAME)
 
 bundle_zip: $(ZIP_FILENAME)
 $(ZIP_FILENAME): $(DIR_NIGHTLY)
-	@echo "creating zip archive"
-	$(ZIP) $(ZIP_FLAGS) $(ZIP_FILENAME) $(DIR_NIGHTLY)
+	$(V) echo "creating zip archive"
+	$(V) $(ZIP) $(ZIP_FLAGS) $(ZIP_FILENAME) $(DIR_NIGHTLY)
 
 bundle_bzip: $(BZIP_FILENAME)
 $(BZIP_FILENAME): $(TAR_FILENAME)
-	@echo "creating bzip2'ed tar archive"
-	$(BZIP) $(BZIP_FLAGS) $(TAR_FILENAME)
+	$(V) echo "creating bzip2'ed tar archive"
+	$(V) $(BZIP) $(BZIP_FLAGS) $(TAR_FILENAME)
 
 # Installation process
 install: $(TAR_FILENAME) $(INSTALLDIR)
-	@echo "Installing grf to $(INSTALLDIR)"
-	-cp $(TAR_FILENAME) $(INSTALLDIR)
-	@echo
+	$(V) echo "Installing grf to $(INSTALLDIR)"
+	$(V)-cp $(TAR_FILENAME) $(INSTALLDIR)
+	$(V) echo
 	
 release: $(DIR_RELEASE) $(DIR_RELEASE).$(TAR_SUFFIX)
-	@echo "Creating release bundle $(DIR_RELEASE) and tar"
+	$(V) echo "Creating release bundle $(DIR_RELEASE) and tar"
 release-install: release
-	@echo "Installing $(DIR_RELEASE) to $(INSTALLDIR)"
-	-cp $(DIR_RELEASE).$(TAR_SUFFIX) $(INSTALLDIR)
-	@echo
+	$(V) echo "Installing $(DIR_RELEASE) to $(INSTALLDIR)"
+	$(V)-cp $(DIR_RELEASE).$(TAR_SUFFIX) $(INSTALLDIR)
+	$(V) echo
 release_zip: $(DIR_RELEASE)
-	$(ZIP) $(ZIP_FLAGS) $(ZIP_FILENAME) $@
+	$(V) $(ZIP) $(ZIP_FLAGS) $(ZIP_FILENAME) $$(V) 
 	
 $(INSTALLDIR):
-	@echo "$(error Installation dir does not exist. Check your makefile.local)"
+	$(V) echo "$(error Installation dir does not exist. Check your makefile.local)"
 	
 remake: clean all
