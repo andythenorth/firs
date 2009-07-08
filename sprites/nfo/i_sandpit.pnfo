@@ -1,5 +1,8 @@
 //Industry tiles definition
 
+//Only have this in climates 0 and 1
+-1 * 0 07 83 01 \7> 01 FF
+
 //Tile action 0
 -1 * 0 00 09 \b5 01 TILE_SANDPIT_1 // -1 * 0 00 09 <num-props> 01 <id>
 	08 TILE_NULL //subsitute type
@@ -486,3 +489,6 @@
 //Industry production callback: action 2. Skip that for now to see if this works without all fancy stuff
 
 //Hence no action 3 yet either.
+
+//End of only have this in this and that climate
+-1 * 0 10 FF

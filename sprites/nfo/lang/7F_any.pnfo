@@ -49,6 +49,8 @@
 -1 * 0 04 0B FF 01 STR_CRG_COTTON_MUNIT "\7C tons of cotton" 00
 -1 * 0 04 0B FF 01 STR_CRG_COTTON_TABBR "\0ECT" 00
 
+//We only the following four in temperate and arctic:
+-1 * 0 07 83 01 \7> 01 \b4
 //Sand
 -1 * 0 04 0B FF 01 STR_CRG_SAND_CTYPE "Sand" 00
 -1 * 0 04 0B FF 01 STR_CRG_SAND_1UNIT "\7C ton of sand" 00
@@ -131,9 +133,7 @@
 
 
 //Industry texts
--1 * 0 04 0A FF 01 STR_IND_ARABLEFARM "Arable Farm" 00
 -1 * 0 04 0A FF 01 STR_IND_OILPLATFORM "Oil Platform" 00
--1 * 0 04 0A FF 01 STR_IND_WATERPLANT "Water Plant" 00
 -1 * 0 04 0A FF 01 STR_IND_BREWERY "Brewery" 00
 -1 * 0 04 0A FF 01 STR_IND_CEMENTPLANT "Cement Plant" 00
 -1 * 0 04 0A FF 01 STR_IND_WASTECOLLECTIONPOINT "Waste Collection Point" 00
@@ -141,9 +141,16 @@
 -1 * 0 04 0A FF 01 STR_IND_RECYCLINGPLANT "Recycling Plant" 00
 -1 * 0 04 0A FF 01 STR_IND_FERTILISERPLANT "Fertiliser Plant" 00
 -1 * 0 04 0A FF 01 STR_IND_PLASTICSPLANT "Plastics Plant" 00
--1 * 0 04 0A FF 01 STR_IND_SANDPIT "Sand Pit" 00
 -1 * 0 04 0A FF 01 STR_IND_GLASSWORKS "Glass Works" 00
 -1 * 0 04 0A FF 01 STR_IND_MEATPACKER "Meat Packer" 00
+
+-1 * 0 07 83 01 \7> 01 \b1 //We only the following in temperate and arctic:
+-1 * 0 04 0A FF 01 STR_IND_ARABLEFARM "Arable Farm" 00
+-1 * 0 04 0A FF 01 STR_IND_SANDPIT "Sand Pit" 00
+
+-1 * 0 07 83 01 \7! 02 \b1 //We only the following in tropic:
+-1 * 0 04 0A FF 01 STR_IND_WATERPLANT "Water Plant" 00
+
 
 //Station texts for station name prefixes/suffixes. \80 where town name goes
 -1 * 0 04 0A FF 01 STR_STA_FARM "\80 Farm" 00
