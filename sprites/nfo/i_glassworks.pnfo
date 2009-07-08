@@ -126,7 +126,7 @@
 	24 STR_STA_FACTORY //default text for nearby station
 	10 CARGO_PACKAGING CARGO_PARTS //production cargo types (word; fill unused with FFh)
 	11 CARGO_SAND CARGO_ENGINEERINGSUPPLIES FF FF //acceptance cargo types (dword; fill unused with FFh)
-	12 \b10 //production multiplier cargo 1
+	12 \b0 //production multiplier cargo 1
 	13 00 //production multiplier cargo 2
 	1C \w115 \w115 //input cargo 1 multiplier (dword M1 M2; output_typen = X*Mn/256)
 	1D \w38  \w38  //input cargo 2 multiplier
