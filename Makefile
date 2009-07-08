@@ -43,7 +43,7 @@ REPO_DIRS    = $(dir $(BUNDLE_FILES))
 # read the main source file and get a list of all (p)nfo files which comprise the newgrf. We depend on them.
 PNFO_FILES = $(shell cat $(PNFO_FILENAME) | sed "s/^[ \t]*//" | grep '$(PNFO_SUFFIX)')
 # PCX_FILES  = $(shell cat $(PNFO_FILENAME) | sed "s/^[ \t]*//" | grep '$(PCX_SUFFIX)')
-PCX_FILES  = $(shell cat $(PNFO_FILES) | grep '$(PCX_SUFFIX)' | awk '{ print $$2 }' | grep 'pcx' | sort | uniq)
+PCX_FILES  = $(shell cat $(PNFO_FILES) | grep '$(PCX_SUFFIX)' | awk '{ print $$2 }' | grep '$(PCX_SUFFIX)' | sort | uniq)
 
 # Targets:
 # all, test, bundle, install, dev, remake
@@ -94,7 +94,7 @@ $(NFO_FILENAME): $(PCX_FILES) $(PNFO_FILES) $(REV_FILENAME)
 	$(V) -rm $(CPNFO_FILENAME)
 	$(V) for i in $(PNFO_FILES); do echo "#include \"$$i\"" >> $(CPNFO_FILENAME); done
 	$(V) echo "Setting title to $(GRF_TITLE)..."
-	$(V) $(CC) $(CC_FLAGS) $(CPNFO_FILENAME) | sed -e "s/$(GRF_ID_DUMMY)/$(GRF_ID)/" -e "s/$(GRF_TITLE_DUMMY)/$(GRF_TITLE)/" | grep -v '#' > $@
+	$(V) $(CC) $(CC_FLAGS) $(CPNFO_FILENAME) | sed -e "s/$(GRF_ID_DUMMY)/$(GRF_ID)/" -e "s/$(GRF_TITLE_DUMMY)/$(GRF_TITLE)/" | grep -v '#' > $@ 
 	$(V) echo	
 	$(V) echo "NFORENUM processing:"
 	$(V)-$(NFORENUM) ${NFORENUM_FLAGS} $@ 
