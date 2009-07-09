@@ -9,7 +9,7 @@
 #define IND_OILPLATFORM           10
 #define IND_OILWELL               0F
 #define IND_STEELMILL             07
-#define IND_ALUMINUMPLANT         08
+#define IND_ALUMINIUMPLANT        08
 #define IND_DAIRYFARM             1C
 #define IND_SHEEPFARM             1B
 #define IND_ARABLEFARM            1A
@@ -85,6 +85,7 @@
 #define TILE_BAKERY_1                      B6
 #define TILE_TEXTILEMILL_1                 B7
 #define TILE_FURNITUREFACTORY_1            B8
+#define TILE_ALUMINIUMPLANT_1              B9
 
 // Definition of the cargo bits/IDs
 #define CARGO_COAL                01
@@ -94,7 +95,7 @@
 #define CARGO_OIL                 03
 #define CARGO_BAUXITE             13
 #define CARGO_STEEL               09
-#define CARGO_ALUMINUM            14
+#define CARGO_ALUMINIUM           14
 #define CARGO_LIVESTOCK           04
 #define CARGO_MILK                0C
 #define CARGO_FRUITSANDVEGETABLES 0D
@@ -131,7 +132,7 @@
 #define CLABEL_OIL                 "OIL_"
 #define CLABEL_BAUXITE             "AORE"
 #define CLABEL_STEEL               "STEL"
-#define CLABEL_ALUMINUM            "ALUM"
+#define CLABEL_ALUMINIUM           "ALUM"
 #define CLABEL_LIVESTOCK           "LVST"
 #define CLABEL_MILK                "MILK"
 #define CLABEL_FRUITSANDVEGETABLES "FRUT"
@@ -177,6 +178,7 @@
 #define STR_IND_BAKERY                7F DC
 #define STR_IND_TEXTILEMILL           80 DC
 #define STR_IND_FURNITUREFACTORY      81 DC
+#define STR_IND_ALUMINIUMPLANT        82 DC
 
 
 //Definition of industry messages using TTD strings
@@ -300,11 +302,11 @@
 #define STR_CRG_PARTS_MUNIT                 3D DC
 #define STR_CRG_PARTS_TABBR                 3E DC
 
-#define STR_CRG_ALUMINUM_CTYPE              3F DC
-#define STR_CRG_ALUMINUM_1TYPE              3F DC //same as above
-#define STR_CRG_ALUMINUM_1UNIT              40 DC
-#define STR_CRG_ALUMINUM_MUNIT              41 DC
-#define STR_CRG_ALUMINUM_TABBR              42 DC
+#define STR_CRG_ALUMINIUM_CTYPE             3F DC
+#define STR_CRG_ALUMINIUM_1TYPE             3F DC //same as above
+#define STR_CRG_ALUMINIUM_1UNIT             40 DC
+#define STR_CRG_ALUMINIUM_MUNIT             41 DC
+#define STR_CRG_ALUMINIUM_TABBR             42 DC
 
 #define STR_CRG_MILK_CTYPE                  43 DC
 #define STR_CRG_MILK_1TYPE                  43 DC //same as above

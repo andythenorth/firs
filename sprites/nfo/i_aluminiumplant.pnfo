@@ -1,0 +1,238 @@
+//Industry tiles definition
+
+//Tile action 0
+-1 * 0 00 09 \b5 01 TILE_ALUMINIUMPLANT_1 // -1 * 0 00 09 <num-props> 01 <id>
+	08 TILE_NULL //subsitute type
+	0A CARGO_BAUXITE 08 //tile acceptance 1
+	0B CARGO_SCRAPMETAL 08 //tile acceptance 2
+	0C 00 00 //tile acceptance 3
+	0D 10 //land shape flags: 10 = only on flat land
+
+
+//Industry tile sprites; one sprite for each tile; eventually more for each tile to include  construction stages
+
+//Tile action 1
+-1 * 0 01 09 \b16 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
+// Format: spritenum pcxfile xpos ypos compression ysize xsize xrel yrel
+-1 sprites/pcx/industries/aluminiumplant.pcx 10 10 09  130 64 -31 -99
+-1 sprites/pcx/industries/aluminiumplant.pcx 80 10 09  130 64 -31 -99
+-1 sprites/pcx/industries/aluminiumplant.pcx 150 10 09  130 64 -31 -99
+-1 sprites/pcx/industries/aluminiumplant.pcx 220 10 09  130 64 -31 -99
+-1 sprites/pcx/industries/aluminiumplant.pcx 290 10 09  130 64 -31 -99
+-1 sprites/pcx/industries/aluminiumplant.pcx 360 10 09  130 64 -31 -99
+
+-1 sprites/pcx/industries/aluminiumplant.pcx 430 10 09  130 64 -31 -99
+-1 sprites/pcx/industries/aluminiumplant.pcx 500 10 09  130 64 -31 -99
+-1 sprites/pcx/industries/aluminiumplant.pcx 570 10 09  130 64 -31 -99
+-1 sprites/pcx/industries/aluminiumplant.pcx 640 10 09  130 64 -31 -99
+-1 sprites/pcx/industries/aluminiumplant.pcx 710 10 09  130 64 -31 -99
+-1 sprites/pcx/industries/aluminiumplant.pcx 780 10 09  130 64 -31 -99
+-1 sprites/pcx/industries/aluminiumplant.pcx 850 10 09  130 64 -31 -99
+-1 sprites/pcx/industries/aluminiumplant.pcx 920 10 09  130 64 -31 -99
+-1 sprites/pcx/industries/aluminiumplant.pcx 990 10 09  130 64 -31 -99
+-1 sprites/pcx/industries/aluminiumplant.pcx 1060 10 09  130 64 -31 -99
+
+//Warning: automatic CC colouring disabled for the following action2s
+
+//Tile action 2 
+-1 * 0 02 09 00 00 //-1 * 0 02 09 <set-id> 00
+	\d1420 //groundsprite
+	\dx80000000 //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b68 //xextent yextent zextent
+-1 * 0 02 09 01 00 //-1 * 0 02 09 <set-id> 00
+	\d1420 //groundsprite
+	\dx80000001 //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b68 //xextent yextent zextent
+-1 * 0 02 09 02 00 //-1 * 0 02 09 <set-id> 00
+	\d1420 //groundsprite
+	\dx80000002 //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b68 //xextent yextent zextent
+-1 * 0 02 09 03 00 //-1 * 0 02 09 <set-id> 00
+	\d1420 //groundsprite
+	\dx80000003 //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b68 //xextent yextent zextent
+-1 * 0 02 09 04 00 //-1 * 0 02 09 <set-id> 00
+	\d1420 //groundsprite
+	\dx80000004 //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b68 //xextent yextent zextent
+-1 * 0 02 09 05 00 //-1 * 0 02 09 <set-id> 00
+	\d1420 //groundsprite
+	\dx80000005 //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b68 //xextent yextent zextent
+
+-1 * 0 02 09 06 00 //-1 * 0 02 09 <set-id> 00
+	\d1420 //groundsprite
+	\dx80000006 //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b68 //xextent yextent zextent
+-1 * 0 02 09 07 00 //-1 * 0 02 09 <set-id> 00
+	\d1420 //groundsprite
+	\dx80000007 //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b68 //xextent yextent zextent
+-1 * 0 02 09 08 00 //-1 * 0 02 09 <set-id> 00
+	\d1420 //groundsprite
+	\dx80000008 //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b68 //xextent yextent zextent
+-1 * 0 02 09 09 00 //-1 * 0 02 09 <set-id> 00
+	\d1420 //groundsprite
+	\dx80000009 //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b68 //xextent yextent zextent
+-1 * 0 02 09 0A 00 //-1 * 0 02 09 <set-id> 00
+	\d1420 //groundsprite
+	\dx8000000A //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b68 //xextent yextent zextent
+-1 * 0 02 09 0B 00 //-1 * 0 02 09 <set-id> 00
+	\d1420 //groundsprite
+	\dx8000000B //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b68 //xextent yextent zextent
+-1 * 0 02 09 0C 00 //-1 * 0 02 09 <set-id> 00
+	\d1420 //groundsprite
+	\dx8000000C //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b68 //xextent yextent zextent
+-1 * 0 02 09 0D 00 //-1 * 0 02 09 <set-id> 00
+	\d1420 //groundsprite
+	\dx8000000D //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b68 //xextent yextent zextent
+-1 * 0 02 09 0E 00 //-1 * 0 02 09 <set-id> 00
+	\d1420 //groundsprite
+	\dx8000000E //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b68 //xextent yextent zextent
+-1 * 0 02 09 0F 00 //-1 * 0 02 09 <set-id> 00
+	\d1420 //groundsprite
+	\dx8000000F //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b68 //xextent yextent zextent
+
+-1 * 0 02 09 10 00 //-1 * 0 02 09 <set-id> 00
+	\d1420 //groundsprite
+	\d0 //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b0 //xextent yextent zextent
+	
+//-1 * 0 02 09 <set-id> <type> <variable> <varadjust> <nvar> (<set-id> <low-range> <high-range>){n} <default>
+
+-1 * 0 02 09 B0 //layout 0
+	85 43 //check relative position (00yx[YYXX])
+	00 FF FF //don't shift, don't mask
+	\b18 //number of ranges to check (number of tiles)
+	\wx00   03 07  03 07
+	\wx01   02 07  02 07
+	\wx02   01 07  01 07
+	\wx03   00 07  00 07
+	\wx04   03 06  03 06
+	\wx05   03 05  03 05
+	\wx06   03 03  03 03
+	\wx07   02 03  02 03
+	\wx08   01 03  01 03
+	\wx09   00 03  00 03
+	\wx0A   03 02  03 02
+	\wx0B   03 01  03 01
+	\wx0C   03 00  03 00
+	\wx0D   02 01  02 01
+	\wx0E   01 01  01 01
+	
+	\wx10   00 00  02 00
+	\wx10   00 02  02 02
+	\wx10   00 05  02 06
+	
+	\wx0F //00 01  00 01 <default>
+
+-1 * 0 02 09 A0 
+	82 44 //check layout number (lowest byte of related industry)
+	00 FF //don't shift, don't mask
+	\b1 //number of ranges to check (number of layouts)
+	\wxB0 \b1 \b1 //<set-id \w> <low-range> <high-range>
+	\wx00 //<default> (first tile layout available)
+
+
+//Action3 attach sprites to industry tile
+
+//Tile action 3
+-1 * 0 03 09 01 TILE_ALUMINIUMPLANT_1 00 \wxA0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
+
+
+
+//Industry definition
+
+//Action 0
+-1 * 0 00 0A \b25 01 IND_ALUMINIUMPLANT //-1 * 0 00 0A <num-props> 01 <id>
+	08 IND_NULL //reuse original industry with this here ID
+	0A 01 //number of industry layouts
+		\d147 //sum(size of layout definition +2 for termination)
+		//layout:
+			00 00 FE TILE_ALUMINIUMPLANT_1 00 //xoffs yoffs FE newtile(W)
+			00 01 FE TILE_ALUMINIUMPLANT_1 00
+			00 02 FE TILE_ALUMINIUMPLANT_1 00
+			00 03 FE TILE_ALUMINIUMPLANT_1 00
+			00 05 FE TILE_ALUMINIUMPLANT_1 00
+			00 06 FE TILE_ALUMINIUMPLANT_1 00
+			00 07 FE TILE_ALUMINIUMPLANT_1 00
+			01 00 FE TILE_ALUMINIUMPLANT_1 00 //xoffs yoffs FE newtile(W)
+			01 01 FE TILE_ALUMINIUMPLANT_1 00
+			01 02 FE TILE_ALUMINIUMPLANT_1 00
+			01 03 FE TILE_ALUMINIUMPLANT_1 00
+			01 05 FE TILE_ALUMINIUMPLANT_1 00
+			01 06 FE TILE_ALUMINIUMPLANT_1 00
+			01 07 FE TILE_ALUMINIUMPLANT_1 00
+			02 00 FE TILE_ALUMINIUMPLANT_1 00 //xoffs yoffs FE newtile(W)
+			02 01 FE TILE_ALUMINIUMPLANT_1 00
+			02 02 FE TILE_ALUMINIUMPLANT_1 00
+			02 03 FE TILE_ALUMINIUMPLANT_1 00
+			02 05 FE TILE_ALUMINIUMPLANT_1 00
+			02 06 FE TILE_ALUMINIUMPLANT_1 00
+			02 07 FE TILE_ALUMINIUMPLANT_1 00
+			03 00 FE TILE_ALUMINIUMPLANT_1 00 //xoffs yoffs FE newtile(W)
+			03 01 FE TILE_ALUMINIUMPLANT_1 00
+			03 02 FE TILE_ALUMINIUMPLANT_1 00
+			03 03 FE TILE_ALUMINIUMPLANT_1 00
+			03 05 FE TILE_ALUMINIUMPLANT_1 00
+			03 06 FE TILE_ALUMINIUMPLANT_1 00
+			03 07 FE TILE_ALUMINIUMPLANT_1 00
+			05 02 FE TILE_GENERIC_ELECTRICALSUBSTATION 00
+		00 80 //terminate layout definition
+	0B 04 //production flags 1h=extractive, 2h=organic, 4h=processing
+	0C STR_IND_CLOSE_GENERIC //industry closure message
+	0D STR_IND_PRODINCR_GENERIC //production increase message
+	0E STR_IND_PRODDECR_GENERIC //production decrease message
+	1B STR_IND_NEW_GENERIC //new industry message
+	1F STR_IND_ALUMINIUMPLANT //industry name
+	24 STR_STA_PLANT //default text for nearby station
+	10 CARGO_ALUMINIUM FF //production cargo types (word; fill unused with FFh)
+	11 CARGO_BAUXITE CARGO_SCRAPMETAL FF FF //acceptance cargo types (dword; fill unused with FFh)
+	12 \b0 //production multiplier cargo 1
+	13 \b0 //production multiplier cargo 2
+	1C \w128 \w0 //input cargo 1 multiplier (dword M1 M2; output_typen = X*Mn/256)
+	1D \w192 \w0 //input cargo 2 multiplier
+	1E \w0   \w0 //input cargo 3 multiplier
+	14 \b05 //minimal cargo distribution amount
+	16 FF FF FF //conflicting industry types (3*byte; ID+80h; FF to disable)
+	17 \b5 //probability in random game
+	18 \b3 //probability during gameplay
+	20 FF FF FF BF //prospecting success chance (dword; FFFFFFFFh=100%)
+	0F \b255 //fund cost multiplier (byte)
+	19 30 //map colour (byte; using indexes from dos palette)
+	23 \d0  //descruction cost multiplier (dword; default: 0)
+	1A \d0 //special industry flag (dword)
+	//21  //callback flags
+	//22  //callback flags
+	
+
+//No action 1 for industries, as graphics are defined by the industry-tile feature.
+
+//Industry production callback: action 2. Skip that for now to see if this works without all fancy stuff
+
+//Hence no action 3 yet either.

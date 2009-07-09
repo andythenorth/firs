@@ -568,13 +568,13 @@ CARGO_BAUXITE 		//ID
 
 //Aluminium
 -1 * 0 00 0B \b19 01 	//Action 0, feature 0B for cargos, 19 properties, changing 1 cargo def
-CARGO_ALUMINUM 		//ID
-08 CARGO_ALUMINUM 		// B Bit number for bitmasks  
-09 STR_CRG_ALUMINUM_CTYPE 	// W TextID for the cargo type name  
-0A STR_CRG_ALUMINUM_1TYPE 	// W TextID for the name of one unit from the cargo type  
-0B STR_CRG_ALUMINUM_1UNIT 	// W TextID to be displayed for 1 unit of cargo  
-0C STR_CRG_ALUMINUM_MUNIT 	// W TextID to be displayed for multiple units of cargo  
-0D STR_CRG_ALUMINUM_TABBR 	// W TextID for cargo type abbreviation   
+CARGO_ALUMINIUM 		//ID
+08 CARGO_ALUMINIUM 		// B Bit number for bitmasks  
+09 STR_CRG_ALUMINIUM_CTYPE 	// W TextID for the cargo type name  
+0A STR_CRG_ALUMINIUM_1TYPE 	// W TextID for the name of one unit from the cargo type  
+0B STR_CRG_ALUMINIUM_1UNIT 	// W TextID to be displayed for 1 unit of cargo  
+0C STR_CRG_ALUMINIUM_MUNIT 	// W TextID to be displayed for multiple units of cargo  
+0D STR_CRG_ALUMINIUM_TABBR 	// W TextID for cargo type abbreviation   
 0E FF FF 	// W Sprite number for the icon of the cargo  
 0F \b16 	// B Weight of one unit of the cargo  
 10 \b7 		// B Penalty times 
@@ -584,7 +584,7 @@ CARGO_ALUMINUM 		//ID
 14 \b13 	// B Color for the cargo payment list window  
 15 01 		// B Freight status (for freighttrains switch); 0=not freight, 1=is freight  
 16 \w32 	// W Cargo classes  
-17 CLABEL_ALUMINUM 	// D Cargo label  
+17 CLABEL_ALUMINIUM 	// D Cargo label  
 18 FF 		// B Substitute type for town growth  
 19 \w256 	// W Multiplier for town growth  
 1A 00 		// B Callback flags
