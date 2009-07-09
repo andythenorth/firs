@@ -42,32 +42,29 @@
 -1 * 0 02 09 B1 //layout 1
 	85 43 //check relative position (00yx[YYXX])
 	00 FF FF //don't shift, don't mask
-	\b3 //number of ranges to check (number of tiles)
+	\b2 //number of ranges to check (number of tiles)
 	//pit
-	\wx00  01 00  01 00
-	\wx01  00 00  00 00
-	\wx02  00 02  00 02
-	\wx00 //<default> (first sprite available)
+	\wx00   01 00  01 00
+	\wx01   00 00  00 00
+	\wx02 //00 02  00 02 <default>
 
 -1 * 0 02 09 B2 //layout 2 
 	85 43 //check relative position (00yx[YYXX])
 	00 FF FF //don't shift, don't mask
-	\b3 //number of ranges to check (number of tiles)
+	\b2 //number of ranges to check (number of tiles)
 	//pit
-	\wx00  01 02  01 02
-	\wx01  00 02  00 02
-	\wx02  02 02  02 02
-	\wx00 //<default> (first sprite available)
+	\wx00   01 02  01 02
+	\wx01   00 02  00 02
+	\wx02 //02 02  02 02 <default>
 
 -1 * 0 02 09 B3 //layout 3 
 	85 43 //check relative position (00yx[YYXX])
 	00 FF FF //don't shift, don't mask
-	\b3 //number of ranges to check (number of tiles)
+	\b2 //number of ranges to check (number of tiles)
 	//pit
-	\wx00  01 02  01 02
-	\wx01  00 02  00 02
-	\wx02  01 00  01 00
-	\wx00 //<default> (first sprite available)
+	\wx00   01 02  01 02
+	\wx01   00 02  00 02
+	\wx02 //01 00  01 00 <default>
 
 -1 * 0 02 09 A0 
 	82 44 //check layout number (lowest byte of related industry)
@@ -76,7 +73,7 @@
 	\wxB1 \b1 \b1 //<set-id \w> <low-range> <high-range>
 	\wxB2 \b2 \b2 //<set-id \w> <low-range> <high-range>
 	\wxB3 \b3 \b3 //<set-id \w> <low-range> <high-range>
-	\wxB0 //<default> (first layout available)
+	\wx00 //<default> (first layout available)
 
 
 //Action3 attach sprites to industry tile
