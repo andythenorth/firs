@@ -151,13 +151,15 @@
 -1 * 0 04 0A LANG_ID2 01 STR_IND_FURNITUREFACTORY "Furniture Factory" 00
 -1 * 0 04 0A LANG_ID2 01 STR_IND_ALUMINIUMPLANT "Aluminium Plant" 00
 -1 * 0 04 0A LANG_ID2 01 STR_IND_MACHINESHOP "Machine Shop" 00
+-1 * 0 04 0A LANG_ID2 01 STR_IND_ENGINEERINGYARD "Engineering Materials Yard" 00
+-1 * 0 04 0A LANG_ID2 01 STR_IND_METALFOUNDRY "Metal Foundry" 00
 
--1 * 0 07 83 01 \7> 01 \b3 //We only the following in temperate and arctic:
+-1 * 0 07 83 01 \7> 01 \b3 //The following in temperate and arctic only:
 -1 * 0 04 0A LANG_ID2 01 STR_IND_ARABLEFARM "Arable Farm" 00
 -1 * 0 04 0A LANG_ID2 01 STR_IND_SANDPIT "Sand Pit" 00
 -1 * 0 04 0A LANG_ID2 01 STR_IND_BAKERY "Bakery" 00
 
--1 * 0 07 83 01 \7! 02 \b1 //We only the following in tropic:
+-1 * 0 07 83 01 \7! 02 \b1 //The following in tropic only:
 -1 * 0 04 0A LANG_ID2 01 STR_IND_WATERPLANT "Water Plant" 00
 
 
@@ -173,7 +175,7 @@
 -1 * 0 04 0A LANG_ID2 01 STR_STA_QUARRY "\80 Quarry" 00
 
 
-//Additional texts for purchase window
+//Additional texts for purchase window; note the additional D0
 -1 * 0 04 0A LANG_ID2 01 STR_INFO_MACHINESHOP D0 "\90The Machine Shop \98builds and repairs engineering structures and machinery." 00
 
 #undef LANG_ID
