@@ -88,7 +88,8 @@
 #define TILE_ALUMINIUMPLANT_1              B9
 #define TILE_MACHINESHOP_1                 BA
 #define TILE_ENGINEERINGYARD_1             BB
-#define TILE_METALFOUNDRY_1             BC
+#define TILE_METALFOUNDRY_1                BC
+#define TILE_FARMSUPPLYDEPOT_1             BD
 
 // Definition of the cargo bits/IDs
 #define CARGO_COAL                01
@@ -185,6 +186,7 @@
 #define STR_IND_MACHINESHOP           83 DC
 #define STR_IND_ENGINEERINGYARD       84 DC
 #define STR_IND_METALFOUNDRY          85 DC
+#define STR_IND_FARMSUPPLYDEPOT       86 DC
 
 
 //Definition of industry messages using TTD strings
@@ -210,6 +212,7 @@
 #define STR_STA_FACTORY           96 DC
 #define STR_STA_PLANT             97 DC
 #define STR_STA_QUARRY            98 DC
+#define STR_STA_DEPOT            99 DC
 
 
 //Definition of text IDs for additional texts in purchase window (D0xx)
