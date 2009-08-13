@@ -4,16 +4,16 @@
 -1 * 4 00 00 00 00
 -1 * 0 08 07 {{GRF_ID}} "{{GRF_TITLE}}" 00 "\8EFIRS Industry Replacement Set        \98License: \89GPL v2\n\89www.tt-foundry.com/sets/FIRS\n\98By \8Eandythenorth\98, \8EFooBar\98 and \8EZephyris\98.\nSpecial thanks to \89Ammler\98, \89Core Xii\98 and \89planetmaker\98." 00
 
-//Skip if OTTD
+// Skip if OTTD
 -1 * 0 09 9D 04 \7= 01 00 00 00 02
-//Error not for TTDP
+// Error not for TTDP
 -1 * 0 0B 03 7F 02 "OpenTTD" 00
 //Terminate if TTDP
 -1 * 0 09 9A 01 \71 00 00
 
-//Skip if climate != toyland
+// Skip if climate != toyland
 -1 * 0 07 83 01 \7! 03 02
-//Error not for TTDP
+// Error not for TTDP
 -1 * 0 0B 03 7F FF "\8ENot designed to be used with Toyland climate" 00
-//Terminate if TTDP
+// Terminate if TTDP
 -1 * 0 07 9A 01 \71 00 00
