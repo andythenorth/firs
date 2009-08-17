@@ -85,7 +85,7 @@ endif
 # Compile GRF
 grf : $(GRF_FILENAME)
 
-%.grf: $(SPRITEDIR)/%.nfo
+%.$(GRF_SUFFIX): $(SPRITEDIR)/%.$(NFO_SUFFIX)
 # pipe all nfo files through grfcodec and produce the grf(s)
 	$(_E) "[GRFCODEC] $@"
 	$(_V) $(GRFCODEC) ${GRFCODEC_FLAGS} $(notdir $@)
@@ -119,9 +119,12 @@ $(REV_FILENAME):
 # Clean the source tree
 clean:
 	$(_E) "[CLEANING]"
-	$(_V)-rm -rf *.orig *.pre *.bak *~ $(FILENAME)* $(SPRITEDIR)/$(FILENAME).* *.$(REV_SUFFIX) $(BANANAS_FILENAME)
+	$(_V)-rm -rf *.orig *.new *.pre *.bak *~ $(FILENAME)* $(SPRITEDIR)/$(FILENAME).* *.$(REV_SUFFIX) $(BANANAS_FILENAME)
+mrproper: clean
+	$(_V)-rm -rf $(DIR_NIGHTLY)* $(DIR_RELEASE)* $(DIR_RELEASE_SRC)
 	
 $(DIR_NIGHTLY) $(DIR_RELEASE) : $(BUNDLE_FILES)
+	$(_E) "[BUNDLE]"
 	$(_E) "[Generating] $@."
 	$(_V) if [ -e $@ ]; then rm -rf $@; fi
 	$(_V) mkdir $@
@@ -165,6 +168,17 @@ release-install: release
 release_zip: $(DIR_RELEASE)
 	$(_E) "[Generating] $(ZIP_FILENAME)"
 	$(_V) $(ZIP) $(ZIP_FLAGS) $(ZIP_FILENAME) $<
+release_source:
+	$(_V) rm -rf $(DIR_RELEASE_SRC)
+	$(_V) mkdir -p $(DIR_RELEASE_SRC)
+	$(_V) cp -R $(SPRITEDIR) $(DOCDIR) Makefile Makefile.config $(DIR_RELEASE_SRC)
+	$(_V) cp Makefile.local.sample $(DIR_RELEASE_SRC)/Makefile.local
+	$(_V) echo 'GRF_REVISION = $(GRF_REVISION)' >> $(DIR_RELEASE_SRC)/Makefile.local
+	$(_V) echo 'GRF_MODIFIED = $(GRF_MODIFIED)' >> $(DIR_RELEASE_SRC)/Makefile.local
+	$(_V) echo 'REPO_TAGS    = $(REPO_TAGS)'    >> $(DIR_RELEASE_SRC)/Makefile.local
+	$(_V) $(MAKE) -C $(DIR_RELEASE_SRC) mrproper
+	$(_V) $(TAR) --gzip -cf $(DIR_RELEASE_SRC).tar.gz $(DIR_RELEASE_SRC)
+	$(_V) rm -rf $(DIR_RELEASE_SRC)
 	
 $(INSTALLDIR):
 	$(_E) "$(error Installation dir does not exist. Check your makefile.local)"

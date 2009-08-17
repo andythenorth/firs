@@ -1,16 +1,35 @@
+# Use glob syntax:
+syntax: glob
+
 # The local makefile should be ignored:
 Makefile.local
-firs*
-sprites/firs.nfo
-sprites/firs.pnfo
+
+# And the description file and the grs which are generated automatically
+firs*.grf
+
+# Ignore intermediate files created by the Makefile:
+*.cpnfo
+*.nfo
+docs/license.txt
+docs/changelog.txt
+docs/readme.txt
+# Dependency files:
+*.d
+
+# Ignore directories from bundle creation / install:
+firs-*
+
 #The .renum dir
-.renum/*.*
+.renum
 
-# Any built grfs, too:
-./*.grf
-./*.orig
-./*.bak
-./*log
+# Ignore frequent development left-overs like
+# editor backups, patches, rejects etc. pp
+*.orig
+*.bak
+*.log
+*.rej
+*.diff
 
-# Ignore things the Mac likes to litter around the place:
+# Files created by Mac image preview and file browser:
 .DS_Store
+Thumbs.db
