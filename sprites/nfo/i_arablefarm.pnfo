@@ -1,43 +1,11 @@
-//Industry tiles definition; Arable Farm has 5 different tiles
-
 //Only have this in climates 0 and 1
 -1 * 0 07 83 01 \7> 01 FF
 
-//Tile 21, action 0
--1 * 0 00 09 \b5 01 21 // -1 * 0 00 09 <num-props> 01 <id>
-	08 21 //subsitute type
-	0A CARGO_FARMSUPPLIES 08 //tile acceptance 1
-	0B 00 00 //tile acceptance 2
-	0C 00 00 //tile acceptance 3
-	0D 10 //land shape flags: 10 = only on flat land
-	
-//Tile 22, action 0
--1 * 0 00 09 \b5 01 22 // -1 * 0 00 09 <num-props> 01 <id>
-	08 22 //subsitute type
-	0A CARGO_FARMSUPPLIES 08 //tile acceptance 1
-	0B 00 00 //tile acceptance 2
-	0C 00 00 //tile acceptance 3
-	0D 10 //land shape flags: 10 = only on flat land
+//Industry tiles definition
 
-//Tile 23, action 0
--1 * 0 00 09 \b5 01 23 // -1 * 0 00 09 <num-props> 01 <id>
-	08 23 //subsitute type
-	0A CARGO_FARMSUPPLIES 08 //tile acceptance 1
-	0B 00 00 //tile acceptance 2
-	0C 00 00 //tile acceptance 3
-	0D 10 //land shape flags: 10 = only on flat land
-
-//Tile 24, action 0
--1 * 0 00 09 \b5 01 24 // -1 * 0 00 09 <num-props> 01 <id>
-	08 24 //subsitute type
-	0A CARGO_FARMSUPPLIES 08 //tile acceptance 1
-	0B 00 00 //tile acceptance 2
-	0C 00 00 //tile acceptance 3
-	0D 10 //land shape flags: 10 = only on flat land
-
-//Tile 25, action 0
--1 * 0 00 09 \b5 01 25 // -1 * 0 00 09 <num-props> 01 <id>
-	08 25 //subsitute type
+//Tile action 0
+-1 * 0 00 09 \b5 01 TILE_ARABLEFARM_1 // -1 * 0 00 09 <num-props> 01 <id>
+	08 TILE_NULL //subsitute type
 	0A CARGO_FARMSUPPLIES 08 //tile acceptance 1
 	0B 00 00 //tile acceptance 2
 	0C 00 00 //tile acceptance 3
@@ -46,7 +14,7 @@
 
 //Industry tile sprites; one sprite for each tile; eventually more for each tile to include  construction stages
 
-//All tiles, Action 1
+//Tile action 1
 -1 * 0 01 09 \b5 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
 // Format: spritenum pcxfile xpos ypos compression ysize xsize xrel yrel
 -1 sprites/pcx/industries/arablefarm.pcx 10 10 09 59 64 -31 -28
@@ -56,55 +24,57 @@
 -1 sprites/pcx/industries/arablefarm.pcx 290 10 09 59 64 -31 -28
 
 
-//sprite 21, Action 2 
--1 * 0 02 09 21 00 //-1 * 0 02 09 <set-id> 00
+//Tile action 2 
+-1 * 0 02 09 00 00 //-1 * 0 02 09 <set-id> 00
 	\d3981 //groundsprite
 	\dx80008000 //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b32 //xextent yextent zextent
-
-//sprite 22, Action 2 
--1 * 0 02 09 22 00 //-1 * 0 02 09 <set-id> 00
+-1 * 0 02 09 01 00 //-1 * 0 02 09 <set-id> 00
 	\d3981 //groundsprite
 	\dx80008001 //building sprite
 	00 00 //xofs yofs
 	\b16 \b16 \b32 //xextent yextent zextent
-
-//sprite 23, Action 2 
--1 * 0 02 09 23 00 //-1 * 0 02 09 <set-id> 00
+-1 * 0 02 09 02 00 //-1 * 0 02 09 <set-id> 00
 	\d3981 //groundsprite
 	\dx80008002 //building sprite
 	00 00 //xofs yofs
 	\b16 \b16 \b32 //xextent yextent zextent
-
-//sprite 24, Action 2 
--1 * 0 02 09 24 00 //-1 * 0 02 09 <set-id> 00
+-1 * 0 02 09 03 00 //-1 * 0 02 09 <set-id> 00
 	\d3981 //groundsprite
 	\dx80008003 //building sprite
 	00 00 //xofs yofs
 	\b16 \b16 \b32 //xextent yextent zextent
-
-//sprite 25, Action 2 
--1 * 0 02 09 25 00 //-1 * 0 02 09 <set-id> 00
+-1 * 0 02 09 04 00 //-1 * 0 02 09 <set-id> 00
 	\d3981 //groundsprite
 	\dx80008004 //building sprite
 	00 00 //xofs yofs
 	\b16 \b16 \b32 //xextent yextent zextent
 
+	
+//-1 * 0 02 09 <set-id> <type> <variable> <varadjust> <nvar> (<set-id> <low-range> <high-range>){n} <default>
 
-//Action3 attach sprites to industry tiles
+-1 * 0 02 09 B1 //layout 1
+	85 43 //check relative position (00yx[YYXX])
+	00 FF FF //don't shift, don't mask
+	\b4 //number of ranges to check (number of tiles) [range: XX YY  XX YY]
+	\wx00   01 00  01 00
+	\wx01   01 01  01 01
+	\wx02   00 02  00 02
+	\wx03   02 01  02 01
+	\wx04 //00 01  00 01 <default>
+                   
 
-//Tile 21, action 3
--1 * 0 03 09 01 21 00 \wx21 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
-//Tile 22, action 3
--1 * 0 03 09 01 22 00 \wx22 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
-//Tile 23, action 3
--1 * 0 03 09 01 23 00 \wx23 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
-//Tile 24, action 3
--1 * 0 03 09 01 24 00 \wx24 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
-//Tile 25, action 3
--1 * 0 03 09 01 25 00 \wx25 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
+-1 * 0 02 09 A0 
+	82 44 //check layout number (lowest byte of related industry)
+	00 FF //don't shift, don't mask
+	\b1 //number of ranges to check (number of layouts)
+	\wxB1 \b1 \b1 //<set-id \w> <low-range> <high-range>
+	\wx00 //<default> (first tile layout available)
 
+
+//Tile action 3: attach sprites to industry tile
+-1 * 0 03 09 01 TILE_ARABLEFARM_1 00 \wxA0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>	
 
 
 
@@ -112,15 +82,15 @@
 
 //Action 0
 -1 * 0 00 0A \b25 01 IND_ARABLEFARM //-1 * 0 00 0A <num-props> 01 <id>
-	08 IND_ARABLEFARM //disable original industry with this here ID
+	08 IND_NULL //reuse original industry with this here ID
 	0A 01 //number of industry layouts
 		\d27 //size of layout definition +2 for termination
 		//layout:
-			01 00 FE 21 00 //xoffs yoffs FE newtile(W)
-			01 01 FE 22 00
-			00 02 FE 23 00
-			02 01 FE 24 00
-			00 01 FE 25 00
+			01 00 FE TILE_ARABLEFARM_1 00 //xoffs yoffs FE newtile(W)
+			01 01 FE TILE_ARABLEFARM_1 00
+			00 02 FE TILE_ARABLEFARM_1 00
+			02 01 FE TILE_ARABLEFARM_1 00
+			00 01 FE TILE_ARABLEFARM_1 00
 		00 80 //terminate layout definition
 	0B 02 //production flags 1h=extractive, 2h=organic, 4h=processing
 	0C STR_IND_CLOSE_GENERIC //industry closure message
@@ -133,9 +103,9 @@
 	11 CARGO_FARMSUPPLIES FF FF FF //acceptance cargo types (dword; fill unused with FFh)
 	12 \b10 //production multiplier cargo 1
 	13 \b10 //production multiplier cargo 2
-	1C 54 00 54 00 //input cargo 1 multiplier (dword M1 M2; output_typen = X*Mn/256)
-	1D 00 00 00 00 //input cargo 2 multiplier
-	1E 00 00 00 00 //input cargo 3 multiplier
+	1C \w84 \w84 //input cargo 1 multiplier (dword M1 M2; output_typen = X*Mn/256)
+	1D \w0  \w0  //input cargo 2 multiplier
+	1E \w0  \w0  //input cargo 3 multiplier
 	14 \b05 //minimal cargo distribution amount
 	16 FF FF FF //conflicting industry types (3*byte; ID+80h; FF to disable)
 	17 \b9 //probability in random game
@@ -149,11 +119,8 @@
 	//22  //callback flags
 	
 
-//No action 1 for industries, as graphics are defined by the industry-tile feature.
+//No action 1/2/3
 
-//Industry production callback: action 2. Skip that for now to see if this works without all fancy stuff
-
-//Hence no action 3 yet either.
 
 //End of only have this in this and that climate
 -1 * 0 10 FF
