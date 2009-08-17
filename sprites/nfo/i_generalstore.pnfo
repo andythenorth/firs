@@ -1,0 +1,69 @@
+//Industry tiles definition; Waste Collection Point has 1 tile
+
+//Tile Action 0
+-1 * 0 00 09 \b5 01 TILE_GENERALSTORE_1 // -1 * 0 00 09 <num-props> 01 <id>
+	08 TILE_NULL //subsitute type
+	0A CARGO_FOOD 08 //tile acceptance 1
+	0B CARGO_GOODS 08 //tile acceptance 2
+	0C 00 00 //tile acceptance 3
+	0D 10 //land shape flags: 10 = only on flat land
+
+
+//Industry tile sprites; one sprite for each tile; eventually more for each tile to include  construction stages
+
+//Tile Action 1
+-1 * 0 01 09 \b1 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
+// Format: spritenum pcxfile xpos ypos compression ysize xsize xrel yrel
+-1 sprites/pcx/industries/generalstore.pcx 10 10 09 35 64 -31 -4
+
+
+//Tile Action 2 
+-1 * 0 02 09 00 00 //-1 * 0 02 09 <set-id> 00
+	\d1420 //groundsprite
+	\dx80008000 //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b16 //xextent yextent zextent
+
+
+//Tile Action 3
+-1 * 0 03 09 01 TILE_GENERALSTORE_1 00 \wx00 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
+
+
+
+//Industry definition
+
+//Action 0
+-1 * 0 00 0A \b24 01 IND_GENERALSTORE //-1 * 0 00 0A <num-props> 01 <id>
+	08 IND_NULL //reuse original industry with this here ID
+	0A 01 //number of industry layouts
+		\d7 //size of layout definition +2 for termination
+		//layout:
+			00 00 FE TILE_GENERALSTORE_1 00 //xoffs yoffs FE newtile(W)
+		00 80 //terminate layout definition
+	0B 04 //production flags 1h=extractive, 2h=organic, 4h=processing
+	0C STR_IND_CLOSE_GENERIC //industry closure message
+	0D STR_IND_PRODINCR_GENERIC //production increase message
+	0E STR_IND_PRODDECR_GENERIC //production decrease message
+	1B STR_IND_NEW_GENERIC //new industry message
+	1F STR_IND_GENERALSTORE //industry name
+	10 CARGO_WASTE FF //production cargo types (word; fill unused with FFh)
+	11 CARGO_FOOD CARGO_GOODS FF FF //acceptance cargo types (dword; fill unused with FFh)
+	12 00 //production multiplier cargo 1
+	13 00 //production multiplier cargo 2
+	1C \w38 \w38 //input cargo 1 multiplier (dword M1 M2; output_typen = X*Mn/256)
+	1D \w0  \w0  //input cargo 2 multiplier
+	1E \w0  \w0  //input cargo 3 multiplier
+	14 \b2 //minimal cargo distribution amount
+	16 FF FF FF //conflicting industry types (3*byte; ID+80h; FF to disable)
+	17 \b10 //probability in random game
+	18 \b20 //probability during gameplay
+	20 FF FF FF BF //prospecting success chance (dword; FFFFFFFFh=100%)
+	0F \b255 //fund cost multiplier (byte)
+	19 BF //map colour (byte; using indexes from dos palette)
+	23 \d0  //descruction cost multiplier (dword; default: 0)
+	1A \dx10 //special industry flag (dword; in town: 10h)
+	//21  //callback flags
+	//22  //callback flags
+	
+
+//No action 1/2/3
