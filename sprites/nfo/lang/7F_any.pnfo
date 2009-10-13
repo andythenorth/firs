@@ -182,7 +182,8 @@
 -1 * 0 04 0A LANG_ID2 01 STR_STA_DEPOT "\80 Depot" 00
 
 
-//Additional texts for purchase window; note the additional D0
+.//Additional texts for purchase window; note the additional D0
+-1 * 0 04 0A LANG_ID2 01 STR_INFO_GENERIC D0 "\98This industry needs a description..." 00
 -1 * 0 04 0A LANG_ID2 01 STR_INFO_MACHINESHOP D0 "\90The Machine Shop \98builds and repairs engineering structures and machinery." 00
 
 #undef LANG_ID

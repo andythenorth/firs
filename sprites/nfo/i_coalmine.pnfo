@@ -1,12 +1,36 @@
 //Redefinition of original TTD industry
 //Coal Mine
--1 * 0 00 0A \b6 01 IND_COALMINE //-1 * 0 00 0A <num-props> 01 <id>
+-1 * 0 00 0A \b8 01 IND_COALMINE //-1 * 0 00 0A <num-props> 01 <id>
 	08 IND_COALMINE //substitute industry type
 	09 IND_COALMINE //industry type override
 	11 CARGO_ENGINEERINGSUPPLIES FF FF FF //acceptance cargo types (dword; fill unused with FFh)
 	1C 54 00 00 00 //input cargo 1 multiplier (dword M1 M2; output_typen = X*Mn/256)
 	17 \b8 //probability in random game
 	18 \b3 //probability during gameplay
+	21 84 //callback flags 
+	22 01  //callback flags
+//To show cargo waiting to be processed at industry, ensure prop 21 is set to use production callback
+
+//Dummy production callback to keep default-id happy
+-1 * 0 02 0A 00 //-1 * 0 0A <set-id>
+	00 //version
+	\w0 \w0 \w0 //<subtract-in-1..3>
+	\w0 \w0 //<add-out-1..2>
+	00 //don't repeat
+	
+//Callback 38 display additional text in fund window
+-1 * 0 02 0A C0 //-1 * 0 0A <set-id>
+	85 0C //<type> <variable> word-access callback
+	00 FF FF //no shift, no mask
+	\b2 //number of ranges to check
+	STR_INFO_GENERIC 80   38 00   38 00 //return text-ID D0xx if cb 38 (fund window)
+	STR_INFO_GENERIC 80   3A 00   3A 00 //return text-ID D0xx if cb 3A (industry window)
+	\w0 //default
+
+
+//Industry action 3 attach varaction2 chain to industry
+-1 * 0 03 0A 01 IND_COALMINE 00 \wxC0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
+
 //Tiles 00..06
 -1 * 0 00 09 \b5 01 00 // -1 * 0 00 09 <num-props> 01 <id>
 	08 00 //subsitute tile type

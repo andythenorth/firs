@@ -22,7 +22,7 @@
     6 * 48	 04 00 9F 01 03 D0 94 " Cats prefer population greater than 300" 00    
     7 * 58	 04 00 9F 01 04 D0 94 " Cats like to be within 5 tiles of a Power Station" 00    
 
-    8 * 10	 02 0A 2A // setup production callback (may not be used, but is required to teminate var action 2 chain)
+    -1 * -1	 02 0A 01 // setup production callback (may not be used, but is required to teminate var action 2 chain)
       01  // callback version
       98 // register for amount to subtract from first accepted cargo
       00 // ...second accepted cargo
