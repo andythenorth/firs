@@ -100,7 +100,7 @@
 //Industry definition
 
 //Action 0
--1 * 0 00 0A \b24 01 IND_FERTILISERPLANT //-1 * 0 00 0A <num-props> 01 <id>
+-1 * 0 00 0A \b26 01 IND_FERTILISERPLANT //-1 * 0 00 0A <num-props> 01 <id>
 	08 IND_NULL //reuse original industry with this here ID
 	0A 01 //number of industry layouts
 		\d62 //size of layout definition +2 for termination
@@ -140,8 +140,29 @@
 	19 AE //map colour (byte; using indexes from dos palette)
 	23 \d0  //descruction cost multiplier (dword; default: 0)
 	1A \d0 //special industry flag (dword)
-	//21  //callback flags
-	//22  //callback flags
-	
+	21 84 //callback flags 
+	22 01  //callback flags
+//To show cargo waiting to be processed at industry, ensure prop 21 is set to use production callback
 
-//No action 1/2/3
+//No action 1 for industries, as graphics are defined by the industry-tile feature.
+
+//Dummy production callback to keep default-id happy
+-1 * 0 02 0A 00 //-1 * 0 0A <set-id>
+	00 //version
+	\w0 \w0 \w0 //<subtract-in-1..3>
+	\w0 \w0 //<add-out-1..2>
+	00 //don't repeat
+	
+//Callback 38 display additional text in fund window
+-1 * 0 02 0A C0 //-1 * 0 0A <set-id>
+	85 0C //<type> <variable> word-access callback
+	00 FF FF //no shift, no mask
+	\b2 //number of ranges to check
+	STR_INFO_GENERIC 80   38 00   38 00 //return text-ID D0xx if cb 38 (fund window)
+	STR_INFO_GENERIC 80   3A 00   3A 00 //return text-ID D0xx if cb 3A (industry window)
+	\w0 //default
+
+
+//Industry action 3 attach varaction2 chain to industry
+-1 * 0 03 0A 01 IND_FERTILISERPLANT 00 \wxC0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>	
+
