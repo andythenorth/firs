@@ -162,8 +162,8 @@
 //Dummy production callback to keep default-id happy
 -1 * 0 02 0A 00 //-1 * 0 0A <set-id>
 	00 //version
-	\w0 \w0 \w0 //<subtract-in-1..3>
-	\w0 \w0 //<add-out-1..2>
+	\w256 \w256 \w64 //<subtract-in-1..3>
+	\w128 \w128 //<add-out-1..2>
 	00 //don't repeat
 	
 //Callback 38 display additional text in fund window
