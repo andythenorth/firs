@@ -7,8 +7,8 @@
 	1C 00 00 00 00 //input cargo 1 multiplier (dword M1 M2; output_typen = X*Mn/256)
 	17 \b5 //probability in random game
 	18 \b2 //probability during gameplay
-	21 B6 //callback flags 
-	22 01  //callback flags
+	21 B4 //callback flags 
+	22 05  //callback flags
 //To show cargo waiting to be processed at industry, ensure prop 21 is set to use production callback
 
 //No action 1 for industries, as graphics are defined by the industry-tile feature.
@@ -35,10 +35,9 @@
   85 40 00 FF FF //check cargo waiting
   \b2 // range
     00 00  \w24  FF FF    
-    01 00  \w16  \w23    
+    01 00  \w8  \w23    
   02 00 // default
 
-	
 -1 * 0 02 0A D2 //Random production increase if engineering supplies stockpiled...  
   81 18 00 03
   \b1 //range
@@ -47,117 +46,191 @@
   
 -1 * 0 02 0A D1 //Handle cb 35 monthly production change 
   85 40 00 FF FF //check cargo waiting
-  \b1 // range
+  \b1 //range
     D2 00  01 00  FF FF    
-  00 80 //else do the standard random production change as if this industry was a primary one.
+  00 80 //else no change
 	
--1 * 0 02 0A C0 //Callback 38 display additional text in fund window
+-1 * 0 02 0A A2//Return cargo acceptance (0 or 1) depending on amount of first cargo waiting
+  85 40 00 FF FF
+  \b1 //range 
+    00 80 \w220 FF FF //I've set the industry limit slightly higher than the tile limit...otherwise the limit won't be reached for 'cargo waiting' 
+  01 80
+
+-1 * 0 02 0A A1//Handle cb 3D industry cargo acceptance
+  81 18 00 FF 
+  \b1
+    A2 00 CARGO_ENGINEERINGSUPPLIES CARGO_ENGINEERINGSUPPLIES
+  A2 00	 //what should the default be here?
+	
+-1 * 0 02 0A C0 //Handle callbacks
 	85 0C //<type> <variable> word-access callback
 	00 FF FF //no shift, no mask
-	\b4 //number of ranges to check
-	  00 80   29 00   29 00 //monthly production change cb 29
+	\b5 //number of ranges to check
+	  04 80   29 00   29 00 //monthly production change cb 29
 	  D1 00   35 00   35 00 //monthly production change cb 35
-    STR_INFO_GENERIC 80   38 00   38 00 //return text-ID D0xx if cb 38 (fund window)
-    STR_INFO_GENERIC 80   3A 00   3A 00 //return text-ID D0xx if cb 3A (industry window)
+	  A1 00   3D 00   3D 00 //industry cargo acceptance
+    STR_INFO_IRONOREMINE 80   38 00   38 00 //return text-ID D0xx if cb 38 (fund window)
+    STR_INFO_IRONOREMINE 80   3A 00   3A 00 //return text-ID D0xx if cb 3A (industry window)
 	C1 00 //default
 
 //Industry action 3 attach varaction2 chain to industry
 -1 * 0 03 0A 01 IND_IRONOREMINE 00 \wxC0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>	
 
 //Tiles 64..73
--1 * 0 00 09 \b5 01 64 // -1 * 0 00 09 <num-props> 01 <id>
+-1 * 0 00 09 \b6 01 64 // -1 * 0 00 09 <num-props> 01 <id>
 	08 64 //subsitute tile type
 	09 64 //industry tile override
+	0E 04 //callback flags
 	0A CARGO_ENGINEERINGSUPPLIES 08 //tile acceptance 1
 	0B 00 00 //tile acceptance 2
 	0C 00 00 //tile acceptance 3
--1 * 0 00 09 \b5 01 65 // -1 * 0 00 09 <num-props> 01 <id>
+-1 * 0 00 09 \b6 01 65 // -1 * 0 00 09 <num-props> 01 <id>
 	08 65 //subsitute tile type
 	09 65 //industry tile override
 	0A CARGO_ENGINEERINGSUPPLIES 08 //tile acceptance 1
 	0B 00 00 //tile acceptance 2
 	0C 00 00 //tile acceptance 3
--1 * 0 00 09 \b5 01 66 // -1 * 0 00 09 <num-props> 01 <id>
+	0E 04 //callback flags
+-1 * 0 00 09 \b6 01 66 // -1 * 0 00 09 <num-props> 01 <id>
 	08 66 //subsitute tile type
 	09 66 //industry tile override
 	0A CARGO_ENGINEERINGSUPPLIES 08 //tile acceptance 1
 	0B 00 00 //tile acceptance 2
 	0C 00 00 //tile acceptance 3
--1 * 0 00 09 \b5 01 67 // -1 * 0 00 09 <num-props> 01 <id>
+	0E 04 //callback flags
+-1 * 0 00 09 \b6 01 67 // -1 * 0 00 09 <num-props> 01 <id>
 	08 67 //subsitute tile type
 	09 67 //industry tile override
 	0A CARGO_ENGINEERINGSUPPLIES 08 //tile acceptance 1
 	0B 00 00 //tile acceptance 2
 	0C 00 00 //tile acceptance 3
--1 * 0 00 09 \b5 01 68 // -1 * 0 00 09 <num-props> 01 <id>
+	0E 04 //callback flags
+-1 * 0 00 09 \b6 01 68 // -1 * 0 00 09 <num-props> 01 <id>
 	08 68 //subsitute tile type
 	09 68 //industry tile override
 	0A CARGO_ENGINEERINGSUPPLIES 08 //tile acceptance 1
 	0B 00 00 //tile acceptance 2
 	0C 00 00 //tile acceptance 3
--1 * 0 00 09 \b5 01 69 // -1 * 0 00 09 <num-props> 01 <id>
+	0E 04 //callback flags
+-1 * 0 00 09 \b6 01 69 // -1 * 0 00 09 <num-props> 01 <id>
 	08 69 //subsitute tile type
 	09 69 //industry tile override
 	0A CARGO_ENGINEERINGSUPPLIES 08 //tile acceptance 1
 	0B 00 00 //tile acceptance 2
 	0C 00 00 //tile acceptance 3
--1 * 0 00 09 \b5 01 6A // -1 * 0 00 09 <num-props> 01 <id>
+	0E 04 //callback flags
+-1 * 0 00 09 \b6 01 6A // -1 * 0 00 09 <num-props> 01 <id>
 	08 6A //subsitute tile type
 	09 6A //industry tile override
 	0A CARGO_ENGINEERINGSUPPLIES 08 //tile acceptance 1
 	0B 00 00 //tile acceptance 2
 	0C 00 00 //tile acceptance 3
--1 * 0 00 09 \b5 01 6B // -1 * 0 00 09 <num-props> 01 <id>
+	0E 04 //callback flags
+-1 * 0 00 09 \b6 01 6B // -1 * 0 00 09 <num-props> 01 <id>
 	08 6B //subsitute tile type
 	09 6B //industry tile override
 	0A CARGO_ENGINEERINGSUPPLIES 08 //tile acceptance 1
 	0B 00 00 //tile acceptance 2
 	0C 00 00 //tile acceptance 3
--1 * 0 00 09 \b5 01 6C // -1 * 0 00 09 <num-props> 01 <id>
+	0E 04 //callback flags
+-1 * 0 00 09 \b6 01 6C // -1 * 0 00 09 <num-props> 01 <id>
 	08 6C //subsitute tile type
 	09 6C //industry tile override
 	0A CARGO_ENGINEERINGSUPPLIES 08 //tile acceptance 1
 	0B 00 00 //tile acceptance 2
 	0C 00 00 //tile acceptance 3
--1 * 0 00 09 \b5 01 6D // -1 * 0 00 09 <num-props> 01 <id>
+	0E 04 //callback flags
+-1 * 0 00 09 \b6 01 6D // -1 * 0 00 09 <num-props> 01 <id>
 	08 6D //subsitute tile type
 	09 6D //industry tile override
 	0A CARGO_ENGINEERINGSUPPLIES 08 //tile acceptance 1
 	0B 00 00 //tile acceptance 2
 	0C 00 00 //tile acceptance 3
--1 * 0 00 09 \b5 01 6E // -1 * 0 00 09 <num-props> 01 <id>
+	0E 04 //callback flags
+-1 * 0 00 09 \b6 01 6E // -1 * 0 00 09 <num-props> 01 <id>
 	08 6E //subsitute tile type
 	09 6E //industry tile override
 	0A CARGO_ENGINEERINGSUPPLIES 08 //tile acceptance 1
 	0B 00 00 //tile acceptance 2
 	0C 00 00 //tile acceptance 3
--1 * 0 00 09 \b5 01 6F // -1 * 0 00 09 <num-props> 01 <id>
+	0E 04 //callback flags
+-1 * 0 00 09 \b6 01 6F // -1 * 0 00 09 <num-props> 01 <id>
 	08 6F //subsitute tile type
 	09 6F //industry tile override
 	0A CARGO_ENGINEERINGSUPPLIES 08 //tile acceptance 1
 	0B 00 00 //tile acceptance 2
 	0C 00 00 //tile acceptance 3
--1 * 0 00 09 \b5 01 70 // -1 * 0 00 09 <num-props> 01 <id>
+	0E 04 //callback flags
+-1 * 0 00 09 \b6 01 70 // -1 * 0 00 09 <num-props> 01 <id>
 	08 70 //subsitute tile type
 	09 70 //industry tile override
 	0A CARGO_ENGINEERINGSUPPLIES 08 //tile acceptance 1
 	0B 00 00 //tile acceptance 2
 	0C 00 00 //tile acceptance 3
--1 * 0 00 09 \b5 01 71 // -1 * 0 00 09 <num-props> 01 <id>
+	0E 04 //callback flags
+-1 * 0 00 09 \b6 01 71 // -1 * 0 00 09 <num-props> 01 <id>
 	08 71 //subsitute tile type
 	09 71 //industry tile override
 	0A CARGO_ENGINEERINGSUPPLIES 08 //tile acceptance 1
 	0B 00 00 //tile acceptance 2
 	0C 00 00 //tile acceptance 3
--1 * 0 00 09 \b5 01 72 // -1 * 0 00 09 <num-props> 01 <id>
+	0E 04 //callback flags
+-1 * 0 00 09 \b6 01 72 // -1 * 0 00 09 <num-props> 01 <id>
 	08 72 //subsitute tile type
 	09 72 //industry tile override
 	0A CARGO_ENGINEERINGSUPPLIES 08 //tile acceptance 1
 	0B 00 00 //tile acceptance 2
 	0C 00 00 //tile acceptance 3
--1 * 0 00 09 \b5 01 73 // -1 * 0 00 09 <num-props> 01 <id>
+	0E 04 //callback flags
+-1 * 0 00 09 \b6 01 73 // -1 * 0 00 09 <num-props> 01 <id>
 	08 73 //subsitute tile type
 	09 73 //industry tile override
 	0A CARGO_ENGINEERINGSUPPLIES 08 //tile acceptance 1
 	0B 00 00 //tile acceptance 2
 	0C 00 00 //tile acceptance 3
+	0E 04 //callback flags
+	
+-1 * 0 02 09 C1 //industry tile cargo acceptance depending on waiting cargo
+    86 40 00 FF FF
+    \b1 //range
+     00 80 \w200 FF FF //lookup cb 2B in wiki for what the returned value means 
+   01 80
+-1 * 0 02 09 C0 //Handle callbacks
+	81 0C 00 FF //no shift, no mask
+	\b1 //range
+    C1 00 2B 2B //cargo acceptance cb 2B
+  FF 00 //what should the default be?
+	
+// action 3s for industry tiles 64-73	
+-1 * 0 03 09 01 64
+  00 C0 00
+-1 * 0 03 09 01 65
+  00 C0 00
+-1 * 0 03 09 01 66
+  00 C0 00
+-1 * 0 03 09 01 67
+  00 C0 00
+-1 * 0 03 09 01 68
+  00 C0 00
+-1 * 0 03 09 01 69
+  00 C0 00
+-1 * 0 03 09 01 6A
+  00 C0 00
+-1 * 0 03 09 01 6B
+  00 C0 00
+-1 * 0 03 09 01 6C
+  00 C0 00
+-1 * 0 03 09 01 6D
+  00 C0 00
+-1 * 0 03 09 01 6E
+  00 C0 00
+-1 * 0 03 09 01 6F
+  00 C0 00
+-1 * 0 03 09 01 70
+  00 C0 00
+-1 * 0 03 09 01 71
+  00 C0 00
+-1 * 0 03 09 01 72
+  00 C0 00
+-1 * 0 03 09 01 73
+  00 C0 00

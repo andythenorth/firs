@@ -184,6 +184,7 @@
 
 .//Additional texts for purchase window; note the additional D0
 -1 * 0 04 0A LANG_ID2 01 STR_INFO_GENERIC D0 "\98This industry needs a description..." 00
+-1 * 0 04 0A LANG_ID2 01 STR_INFO_IRONOREMINE D0 "\98Will stop accepting Engineering Supplies if more than about 200 crates are awaiting processing.\n\n\90Production Boost:\98 at the end of each month production may* increase if Engineering Supplies are available for processing. \n\n\98*It's a random chance...feeling lucky?   :)" 00
 -1 * 0 04 0A LANG_ID2 01 STR_INFO_MACHINESHOP D0 "\90The Machine Shop \98builds and repairs engineering structures and machinery." 00
 
 #undef LANG_ID
