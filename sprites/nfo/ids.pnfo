@@ -235,9 +235,12 @@
 
 
 //Definition of text IDs for additional texts in purchase window (D0xx)
+//IDs for industry-specific texts match the industry ID
+//Generic text IDs start at A0
+#define STR_INFO_GENERIC          A0
 #define STR_INFO_IRONOREMINE      04
 #define STR_INFO_MACHINESHOP      2E
-#define STR_INFO_GENERIC          00
+#define STR_INFO_LIMIT_200        C0
 
 
 //Definition of text IDs for cargos
