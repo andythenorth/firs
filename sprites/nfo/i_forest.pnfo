@@ -49,17 +49,11 @@
     D2 00  01 00  FF FF    
   00 80 //else no change
 	
--1 * 0 02 0A A2//Return cargo acceptance (0 or 1) depending on amount of first cargo waiting
+-1 * 0 02 0A A1//Return cargo acceptance (0 or 1) depending on amount of first cargo waiting
   85 40 00 FF FF
   \b1 //range 
     00 80 \w220 FF FF //I've set the industry limit slightly higher than the tile limit...otherwise the limit won't be reached for 'cargo waiting' 
   01 80
-
--1 * 0 02 0A A1//Handle cb 3D industry cargo acceptance
-  81 18 00 FF 
-  \b1
-    A2 00 CARGO_ENGINEERINGSUPPLIES CARGO_ENGINEERINGSUPPLIES
-  FF FF	 //default
 	
 -1 * 0 02 0A B1//Handle cb 37 cargo subtexts (used here to provide max cargo limit information)
   81 18 00 FF 
@@ -74,7 +68,7 @@
 	\b6 //number of ranges to check
 	  04 80   29 00   29 00 //monthly production change cb 29
 	  D1 00   35 00   35 00 //monthly production change cb 35
-	  B1 00   37 00   37 00 //monthly production change cb 37
+	  B1 00   37 00   37 00 //cargo subtext industry window cb 37
 	  A1 00   3D 00   3D 00 //industry cargo acceptance
     STR_INFO_GENERIC 80   38 00   38 00 //return text-ID D0xx if cb 38 (fund window)
     STR_INFO_ES_PRIMARY_BOOST 80   3A 00   3A 00 //return text-ID D0xx if cb 3A (industry window)
