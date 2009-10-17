@@ -4,12 +4,13 @@
 //Industry tiles definition
 
 //Tile action 0
--1 * 0 00 09 \b5 01 TILE_SHEEPFARM_1 // -1 * 0 00 09 <num-props> 01 <id>
+-1 * 0 00 09 \b6 01 TILE_SHEEPFARM_1 // -1 * 0 00 09 <num-props> 01 <id>
 	08 TILE_NULL //subsitute type
 	0A CARGO_FARMSUPPLIES 08 //tile acceptance 1
 	0B 00 00 //tile acceptance 2
 	0C 00 00 //tile acceptance 3
 	0D 10 //land shape flags: 10 = only on flat land
+	0E 04 //callback flags
 
 
 //Industry tile sprites; one sprite for each tile; eventually more for each tile to include  construction stages
@@ -75,11 +76,22 @@
 //	\wxB3 \b3 \b3 //<set-id \w> <low-range> <high-range>
 //	\wx00 //<default> (first layout available)
 
+-1 * 0 02 09 C1 //industry tile cargo acceptance depending on waiting cargo
+    86 40 00 FF FF
+    \b1 //range
+     00 80 \w200 FF FF //lookup cb 2B in wiki for what the returned value means 
+   08 80
+   
+-1 * 0 02 09 C0 //Handle callbacks
+	81 0C 00 FF //no shift, no mask
+	\b1 //range
+    C1 00 2B 2B //cargo acceptance cb 2B
+  B1 00 //default
 
 //Action3 attach sprites to industry tile
 
 //Tile action 3
--1 * 0 03 09 01 TILE_SHEEPFARM_1 00 \wxB1 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
+-1 * 0 03 09 01 TILE_SHEEPFARM_1 00 \wxC0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
 
 
 
@@ -120,28 +132,72 @@
 	19 B8 //map colour (byte; using indexes from dos palette)
 	23 \d0  //descruction cost multiplier (dword; default: 0)
 	1A \d0 //special industry flag (dword)
-	21 84 //callback flags 
-	22 01  //callback flags
+		21 F4 //callback flags 
+	22 05  //callback flags
 //To show cargo waiting to be processed at industry, ensure prop 21 is set to use production callback
 
 //No action 1 for industries, as graphics are defined by the industry-tile feature.
 
-//Dummy production callback to keep default-id happy
--1 * 0 02 0A 00 //-1 * 0 0A <set-id>
+-1 * 0 02 0A 00 //Production callback high production
 	00 //version
-	\w0 \w0 \w0 //<subtract-in-1..3>
+	\w16 \w0 \w0 //<subtract-in-1..3>
+	\w0 \w0 //<add-out-1..2>
+	00 //don't repeat
+
+-1 * 0 02 0A 01 //Production callback low production
+	00 //version
+	\w8 \w0 \w0 //<subtract-in-1..3>
+	\w0 \w0 //<add-out-1..2>
+	00 //don't repeat
+
+-1 * 0 02 0A 02 //Production callback low production
+	00 //version
+	\w1 \w0 \w0 //<subtract-in-1..3>
 	\w0 \w0 //<add-out-1..2>
 	00 //don't repeat
 	
-//Callback 38 display additional text in fund window
--1 * 0 02 0A C0 //-1 * 0 0A <set-id>
+-1 * 0 02 0A C1 //branch production depending on cargo waiting 
+  85 40 00 FF FF //check cargo waiting
+  \b2 // range
+    00 00  \w24  FF FF    
+    01 00  \w8  \w23    
+  02 00 // default
+
+-1 * 0 02 0A D2 //Random production increase if engineering supplies stockpiled...  
+  81 18 00 03
+  \b1 //range
+    0E 80 00 00 //lookat cb 35 or 29 in wiki to see what the returned value means
+  00 80 //else no change	
+  
+-1 * 0 02 0A D1 //Handle cb 35 monthly production change 
+  85 40 00 FF FF //check cargo waiting
+  \b1 //range
+    D2 00  01 00  FF FF    
+  00 80 //else no change
+	
+-1 * 0 02 0A A1//Return cargo acceptance (0 or 1) depending on amount of first cargo waiting
+  85 40 00 FF FF
+  \b1 //range 
+    00 80 \w220 FF FF //I've set the industry limit slightly higher than the tile limit...otherwise the limit won't be reached for 'cargo waiting' 
+  01 80
+	
+-1 * 0 02 0A B1//Handle cb 37 cargo subtexts (used here to provide max cargo limit information)
+  81 18 00 FF 
+  \b1
+    STR_INFO_LIMIT_200 80 00 00
+  FF FF	 //default
+	
+-1 * 0 02 0A C0 //Handle callbacks
 	85 0C //<type> <variable> word-access callback
 	00 FF FF //no shift, no mask
-	\b2 //number of ranges to check
-	STR_INFO_GENERIC 80   38 00   38 00 //return text-ID D0xx if cb 38 (fund window)
-	STR_INFO_GENERIC 80   3A 00   3A 00 //return text-ID D0xx if cb 3A (industry window)
-	\w0 //default
-
+	\b6 //number of ranges to check
+	  04 80   29 00   29 00 //monthly production change cb 29
+	  D1 00   35 00   35 00 //monthly production change cb 35
+	  B1 00   37 00   37 00 //cargo subtext industry window cb 37
+	  A1 00   3D 00   3D 00 //industry cargo acceptance
+    STR_INFO_GENERIC 80   38 00   38 00 //return text-ID D0xx if cb 38 (fund window)
+    STR_INFO_FS_PRIMARY_BOOST 80   3A 00   3A 00 //return text-ID D0xx if cb 3A (industry window)
+	C1 00 //default
 
 //Industry action 3 attach varaction2 chain to industry
 -1 * 0 03 0A 01 IND_SHEEPFARM 00 \wxC0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>	
