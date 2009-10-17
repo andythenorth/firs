@@ -77,8 +77,8 @@
 	  D1 00   35 00   35 00 //monthly production change cb 35
 	  B1 00   37 00   37 00 //monthly production change cb 37
 	  A1 00   3D 00   3D 00 //industry cargo acceptance
-    STR_INFO_IRONOREMINE 80   38 00   38 00 //return text-ID D0xx if cb 38 (fund window)
-    STR_INFO_IRONOREMINE 80   3A 00   3A 00 //return text-ID D0xx if cb 3A (industry window)
+    STR_INFO_GENERIC 80   38 00   38 00 //return text-ID D0xx if cb 38 (fund window)
+    STR_INFO_ES_PRIMARY_BOOST 80   3A 00   3A 00 //return text-ID D0xx if cb 3A (industry window)
 	C1 00 //default
 
 //Industry action 3 attach varaction2 chain to industry
