@@ -77,7 +77,7 @@
        STR_INFO_ES_PRIMARY_BOOST 80 00 00 00 00
      STR_INFO_ES_PRIMARY_BOOST 80 //default
       
--1 * 0 02 0A BA //branch production depending on cargo waiting 
+-1 * 0 02 0A BA //branch depending on cargo waiting (we want different text to show in industry window) 
   85 40 00 FF FF //check cargo waiting
   \b1 // range
     BB 00  \w200  FF FF    
