@@ -53,7 +53,7 @@
 -1 * 0 02 0A A1//Return cargo acceptance (0 or 1) depending on amount of first cargo waiting
   85 40 00 FF FF
   \b1 //range 
-    00 80 \w220 FF FF //I've set the industry limit slightly higher than the tile limit...otherwise the limit won't be reached for 'cargo waiting' 
+    00 80 \w208 FF FF //I've set the industry limit slightly higher than the tile limit...otherwise the limit won't be reached for 'cargo waiting' 
   01 80
 	
 -1 * 0 02 0A B1//Handle cb 37 cargo subtexts (used here to provide max cargo limit information)
@@ -80,7 +80,7 @@
 -1 * 0 02 0A BA //branch production depending on cargo waiting 
   85 40 00 FF FF //check cargo waiting
   \b1 // range
-    BB 00  \w220  FF FF    
+    BB 00  \w200  FF FF    
   BC 00 // default	
 	
 	
