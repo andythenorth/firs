@@ -152,9 +152,9 @@
 	11 CARGO_COAL CARGO_SAND CARGO_GRAVEL FF //acceptance cargo types (dword; fill unused with FFh)
 	12 00 //production multiplier cargo 1
 	13 00 //production multiplier cargo 2
-	1C \w84  \w0 //input cargo 1 multiplier (dword M1 M2; output_typen = X*Mn/256)
-	1D \w205 \w0 //input cargo 2 multiplier
-	1E \w256 \w0 //input cargo 3 multiplier
+	1C \w0 \w0 //input cargo 1 multiplier (dword M1 M2; output_typen = X*Mn/256)
+	1D \w0 \w0 //input cargo 2 multiplier
+	1E \w0 \w0 //input cargo 3 multiplier
 	14 \b05 //minimal cargo distribution amount
 	16 FF FF FF //conflicting industry types (3*byte; ID+80h; FF to disable)
 	17 \b5 //probability in random game
@@ -170,21 +170,59 @@
 
 //No action 1 for industries, as graphics are defined by the industry-tile feature.
 
-//Dummy production callback to keep default-id happy
--1 * 0 02 0A 00 //-1 * 0 0A <set-id>
+-1 * 0 02 0A 00 //Production callback stupidly high production
 	00 //version
-	FF FF  FF FF  FF FF //<subtract-in-1..3>
-	FF FF  FF FF //<add-out-1..2>
+	\w4096  \w4096  \w4096 //<subtract-in-1..3>
+	\w4096  \w4096 //<add-out-1..2>
 	00 //don't repeat
+
+-1 * 0 02 0A 01 //Production callback very high production
+	00 //version
+	\w1024 \w1024 \w1024 //<subtract-in-1..3>
+	\w1024 \w1024 //<add-out-1..2>
+	00 //don't repeat
+
+-1 * 0 02 0A 02 //Production callback high production
+	00 //version
+	\w128 \w128 \w128 //<subtract-in-1..3>
+	\w128 \w128 //<add-out-1..2>
+	00 //don't repeat
+
+-1 * 0 02 0A 03 //Production callback med production
+	00 //version
+	\w16 \w16 \w16 //<subtract-in-1..3>
+	\w16 \w16 //<add-out-1..2>
+	00 //don't repeat
+
+-1 * 0 02 0A 04 //Production callback low production
+	00 //version
+	\w01 \w01 \w01 //<subtract-in-1..3>
+	\w01 \w01 //<add-out-1..2>
+	00 //don't repeat
+
+-1 * 0 02 0A 05 //Production callback no production
+	00 //version
+	\w00 \w00 \w00 //<subtract-in-1..3>
+	\w00 \w00 //<add-out-1..2>
+	00 //don't repeat
+	
+-1 * 0 02 0A C1 //branch production depending on cargo waiting 
+  85 40 00 FF FF //check cargo waiting
+  \b4 // range
+    00 00  \w4097  FF FF    
+    01 00  \w1025  \w4096    
+    03 00  \w17  \w1024    
+    04 00  \w01  \w16    
+  05 00 // default
 	
 //Callback 38 display additional text in fund window
 -1 * 0 02 0A C0 //-1 * 0 0A <set-id>
 	85 0C //<type> <variable> word-access callback
 	00 FF FF //no shift, no mask
 	\b2 //number of ranges to check
-	STR_INFO_GENERIC 80   38 00   38 00 //return text-ID D0xx if cb 38 (fund window)
-	STR_INFO_GENERIC 80   3A 00   3A 00 //return text-ID D0xx if cb 3A (industry window)
-	\w0 //default
+	  STR_INFO_GENERIC 80   38 00   38 00 //return text-ID D0xx if cb 38 (fund window)
+	  STR_INFO_GENERIC 80   3A 00   3A 00 //return text-ID D0xx if cb 3A (industry window)
+	C1 00 //default
 
 
 //Industry action 3 attach varaction2 chain to industry
