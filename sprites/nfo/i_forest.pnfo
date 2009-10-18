@@ -61,6 +61,26 @@
     STR_INFO_LIMIT_200 80 00 00
   FF FF	 //default
 	
+-1 * 0 02 0A BC //store sub-text ID to register, return text ID  
+    85 // 
+      1A 20 \wxD4D0 // create a value (constant 1A anded (20) with following bytes) 
+      0E 1A 00 \wx100 // store in register
+    \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
+       STR_INFO_ES_PRIMARY_BOOST 80 00 00 00 00
+     STR_INFO_ES_PRIMARY_BOOST 80 //default
+-1 * 0 02 0A BB //store sub-text ID to register, return text ID  
+    85 // 
+      1A 20 \wxD4D1 // create a value (constant 1A anded (20) with following bytes) 
+      0E 1A 00 \wx100 // store in register
+    \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
+       STR_INFO_ES_PRIMARY_BOOST 80 00 00 00 00
+     STR_INFO_ES_PRIMARY_BOOST 80 //default
+      
+-1 * 0 02 0A BA //branch depending on cargo waiting (we want different text to show in industry window) 
+  85 40 00 FF FF //check cargo waiting
+  \b1 // range
+    BB 00  \w200  FF FF    
+  BC 00 // default		
 	
 -1 * 0 02 0A C0 //Handle callbacks
 	85 0C //<type> <variable> word-access callback
@@ -71,7 +91,7 @@
 	  B1 00   37 00   37 00 //cargo subtext industry window cb 37
 	  A1 00   3D 00   3D 00 //industry cargo acceptance
     STR_INFO_GENERIC 80   38 00   38 00 //return text-ID D0xx if cb 38 (fund window)
-    STR_INFO_ES_PRIMARY_BOOST 80   3A 00   3A 00 //return text-ID D0xx if cb 3A (industry window)
+    BA 00   3A 00   3A 00 //return text-ID D0xx if cb 3A (industry window)
 	C1 00 //default
 
 //Industry action 3 attach varaction2 chain to industry
