@@ -312,25 +312,24 @@
 	00 //don't repeat
 
 -1 * 0 02 0A B0 //store production ratios for each cargo
-    85 // 
-      1A 20  FF FF // cargo 1 ratio (as fraction off FF FF) 
-      10 1A 20 \wx01 // store in persistent storage
+    89 // 
+      1A 20  FF FF FF FF // cargo 1 ratio (as fraction off FF FF) 
+      10 1A 00 \dx01 // store in persistent storage
       0F // end calculation, start afresh
-      1A 20  FF FF // cargo 2 ratio (as fraction off FF FF)
-      10 1A 20 \wx02 // store in persistent storage
+      1A 20  FF FF FF FF // cargo 2 ratio (as fraction off FF FF)
+      10 1A 00 \dx02 // store in persistent storage
       0F // end calculation, start afresh
-      1A 20  FF FF // cargo 3 ratio (as fraction off FF FF)
-      10 1A 20 \wx03 // store in persistent storage
+      1A 20  FF FF FF FF // cargo 3 ratio (as fraction off FF FF)
+      10 1A 00 \dx03 // store in persistent storage
     \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
-       A0 00 00 00 00 00
+       A0 00  00 00 00 00  00 00 00 00
      A0 00 //default
-
 
 
 -1 * 0 02 0A CC //store something to register, return text ID  
     89 // 
       7C 03 20 00 00  FF FF FF FF // get a value from persistent storage 
-      0E 1A 00 \wx101 // store in register
+      0E 1A 00 \wx102 // store in register
     \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
        STR_INFO_DEBUG 80  00 00 00 00  00 00 00 00
      STR_INFO_DEBUG 80 //default
@@ -338,7 +337,7 @@
 -1 * 0 02 0A CB //store something to register, return text ID  
     89 // 
       7C 02 20 00 00  FF FF FF FF // get a value from persistent storage 
-      0E 1A 00 \wx100 // store in register
+      0E 1A 00 \wx101 // store in register
     \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
        CC 00  00 00 00 00  00 00 00 00
      CC 00 //default
