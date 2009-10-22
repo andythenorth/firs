@@ -314,13 +314,13 @@
 -1 * 0 02 0A B0 //store production ratios for each cargo
     85 // 
       1A 20  FF FF // cargo 1 ratio (as fraction off FF FF) 
-      10 1A 00 \wx01 // store in persistent storage
+      10 1A 20 \wx01 // store in persistent storage
       0F // end calculation, start afresh
       1A 20  FF FF // cargo 2 ratio (as fraction off FF FF)
-      10 1A 00 \wx02 // store in persistent storage
+      10 1A 20 \wx02 // store in persistent storage
       0F // end calculation, start afresh
       1A 20  FF FF // cargo 3 ratio (as fraction off FF FF)
-      10 1A 00 \wx03 // store in persistent storage
+      10 1A 20 \wx03 // store in persistent storage
     \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
        A0 00 00 00 00 00
      A0 00 //default
