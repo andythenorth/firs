@@ -325,13 +325,31 @@
        A0 00 00 00 00 00
      A0 00 //default
 
--1 * 0 02 0A CA //store something to register, return text ID  
+
+
+-1 * 0 02 0A CC //store something to register, return text ID  
     89 // 
-      7C 01 00 00 00  FF FF  // get a value from persistent storage 
-      0E 1A 00 \wx100 // store in register
+      7C 03 20 00 00  FF FF FF FF // get a value from persistent storage 
+      0E 1A 00 \wx101 // store in register
     \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
        STR_INFO_DEBUG 80  00 00 00 00  00 00 00 00
      STR_INFO_DEBUG 80 //default
+
+-1 * 0 02 0A CB //store something to register, return text ID  
+    89 // 
+      7C 02 20 00 00  FF FF FF FF // get a value from persistent storage 
+      0E 1A 00 \wx100 // store in register
+    \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
+       CC 00  00 00 00 00  00 00 00 00
+     CC 00 //default
+
+-1 * 0 02 0A CA //store something to register, return text ID  
+    89 // 
+      7C 01 20 00 00  FF FF FF FF // get a value from persistent storage 
+      0E 1A 00 \wx100 // store in register
+    \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
+       CB 00  00 00 00 00  00 00 00 00
+     CB 00 //default
 
 //Callback 38 display additional text in fund window
 -1 * 0 02 0A C0 //-1 * 0 0A <set-id>
