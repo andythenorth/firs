@@ -126,7 +126,7 @@
 -1 * 0 00 0A \b26 01 IND_CEMENTPLANT //-1 * 0 00 0A <num-props> 01 <id>
 	08 IND_NULL //reuse original industry with this here ID
 	0A 01 //number of industry layouts
-		\d62 //size of layout definition +2 for termination
+		\d67 //size of layout definition +2 for termination
 		//layout:
 			05 00 FE TILE_GENERIC_SANDSTAITHES 00 //xoffs yoffs FE newtile(W)
 			06 00 FE TILE_GENERIC_SANDSTAITHES 00
