@@ -336,74 +336,77 @@
      B4 00 //default
 
 -1 * 0 02 0A B2 //store production ratios for each cargo
-      89 // using type 89 because register IDs are better specified as double words
-        1A 20  \d200 // create a value (constant 1A anded (20) with following bytes) 
-        10  1A 00 \dx03 // store in persistent storage
-       01
-         B3 00  00 00 00 00  00 00 00 00
-       B3 00     
+    89 // using type 89 because register IDs are better specified as double words
+      1A 20  \d200 // create a value (constant 1A anded (20) with following bytes) 
+      10  1A 00 \dx03 // store in persistent storage
+    \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
+       B3 00  00 00 00 00  00 00 00 00
+     B3 00     
        
 -1 * 0 02 0A B1 //store production ratios for each cargo
-      89 // using type 89 because register IDs are better specified as double words
-        1A 20  \d400 // create a value (constant 1A anded (20) with following bytes) 
-        10  1A 00 \dx02 // store in persistent storage
-       01
-         B2 00  00 00 00 00  00 00 00 00
-       B2 00
+    89 // using type 89 because register IDs are better specified as double words
+      1A 20  \d400 // create a value (constant 1A anded (20) with following bytes) 
+      10  1A 00 \dx02 // store in persistent storage
+    \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
+       B2 00  00 00 00 00  00 00 00 00
+     B2 00
        
 -1 * 0 02 0A B0 //store production ratios for each cargo
-      89 // using type 89 because register IDs are better specified as double words
-        1A 20  \d800 // create a value (constant 1A anded (20) with following bytes) 
-        10  1A 00 \dx01 // store in persistent storage
-       01
-         B1 00  00 00 00 00  00 00 00 00
-       B1 00
+    89 // using type 89 because register IDs are better specified as double words
+      1A 20  \d800 // create a value (constant 1A anded (20) with following bytes) 
+      10  1A 00 \dx01 // store in persistent storage
+    \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
+       B1 00  00 00 00 00  00 00 00 00
+     B1 00
 
+-1 * 0 02 0A BA //store production ratios for each cargo
+    89 // using type 89 because register IDs are better specified as double words
+      1A 20  \d500 // create a value (constant 1A anded (20) with following bytes) 
+      10  1A 00 \dx00 // store in persistent storage
+    \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
+       B0 00  00 00 00 00  00 00 00 00
+     B0 00
+
+
+// PROVIDE DEBUG INFO TO INDUSTRY WINDOW 
 //Remember text stack is LIFO (like array.pop) - put values to render first in highest registers
--1 * 0 02 0A CF //store something to register, return text ID  
+
+-1 * 0 02 0A CD //store two values to text stack for debugging
     89 // 
-      7C 06 20  \dxFFFFFFFF // get a value from persistent storage 
-      0E 1A 00 \dx105 // store in register 
+      7c 00 20 \dxffff
+      \2ror 1a 20 \d16
+      \2| 7c 00 20 \dxffff
+      \2sto 1a 00 \dx103
     \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
        STR_INFO_DEBUG 80  00 00 00 00  00 00 00 00
      STR_INFO_DEBUG 80 //default
 
--1 * 0 02 0A CE //store something to register, return text ID  
+-1 * 0 02 0A CC //store two values to text stack for debugging
     89 // 
-      7C 05 20  \dxFFFFFFFF // get a value from persistent storage 
-      0E 1A 00 \dx104 // store in register
-    \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
-       CF 00  00 00 00 00  00 00 00 00
-     CF 00 //default
-
--1 * 0 02 0A CD //store something to register, return text ID  
-    89 // 
-      7C 04 20  \dxFFFFFFFF // get a value from persistent storage 
-      0E 1A 00 \dx103 // store in register
-    \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
-       CE 00  00 00 00 00  00 00 00 00
-     CE 00 //default
-
--1 * 0 02 0A CC //store something to register, return text ID  
-    89 // 
-      7C 03 20  \dxFFFFFFFF // get a value from persistent storage 
-      0E 1A 00 \dx100 // store in register 
+      7c 06 20 \dxffff
+      \2ror 1a 20 \d16
+      \2| 7c 05 20 \dxffff
+      \2sto 1a 00 \dx102
     \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
        CD 00  00 00 00 00  00 00 00 00
      CD 00 //default
      
--1 * 0 02 0A CB //store something to register, return text ID  
+-1 * 0 02 0A CB //store two values to text stack for debugging
     89 // 
-      7C 02 20  \dxFFFFFFFF // get a value from persistent storage 
-      0E 1A 00 \dx101 // store in register
+      7c 04 20 \dxffff
+      \2ror 1a 20 \d16
+      \2| 7c 01 20 \dxffff
+      \2sto 1a 00 \dx101
     \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
        CC 00  00 00 00 00  00 00 00 00
      CC 00 //default
 
--1 * 0 02 0A CA //store something to register, return text ID  
-    89 // 
-      7C 01 20 \dxFFFFFFFF // get a value from persistent storage 
-      0E 1A 00 \dx102 // store in register
+-1 * 0 02 0A CA //store two values to text stack for debugging
+    89
+      7c 02 20 \dxffff
+      \2ror 1a 20 \d16
+      \2| 7c 03 20 \dxffff
+      \2sto 1a 00 \dx100
     \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
        CB 00  00 00 00 00  00 00 00 00
      CB 00 //default
@@ -415,7 +418,7 @@
 	\b2 //number of ranges to check
 	  STR_INFO_MACHINESHOP 80   38 00   38 00 //return text-ID D0xx if cb 38 (fund window)
 	  CA 00   3A 00   3A 00 // cb 3A (industry window)
-	B0 00 //default
+	BA 00 //default
 
 
 //Industry action 3 attach varaction2 chain to industry
