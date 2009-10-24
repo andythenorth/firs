@@ -359,9 +359,9 @@
        B1 00  00 00 00 00  00 00 00 00
      B1 00
 
--1 * 0 02 0A BA //store production ratios for each cargo
+-1 * 0 02 0A BA //store production limit (as units of output cargo) to use when processing each input cargo
     89 // using type 89 because register IDs are better specified as double words
-      1A 20  \d500 // create a value (constant 1A anded (20) with following bytes) 
+      1A 20  \d65535 // create a value (constant 1A anded (20) with following bytes) 
       10  1A 00 \dx00 // store in persistent storage
     \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
        B0 00  00 00 00 00  00 00 00 00
@@ -373,9 +373,7 @@
 
 -1 * 0 02 0A CD //store two values to text stack for debugging
     89 // 
-      7c 00 20 \dxffff
-      \2ror 1a 20 \d16
-      \2| 7c 00 20 \dxffff
+      7c 00 20 \dxffffffff
       \2sto 1a 00 \dx103
     \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
        STR_INFO_DEBUG 80  00 00 00 00  00 00 00 00
