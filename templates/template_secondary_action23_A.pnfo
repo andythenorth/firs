@@ -1,0 +1,28 @@
+// Action2/3-chain for cargo processing at secondary industries
+// Currently designed for secondary industries with three independent inputs, two outputs, no production boost
+// May be able to template for number of input/output cargos
+
+// How to use:
+// Add to the top of a primary industry a few #define lines. For example:
+// #define THIS_INDUSTRY         IND_MACHINESHOP
+// #define THIS_STR_INFO_CB38    STR_INFO_GENERIC
+
+// then add as the 2nd last line, prior to the end of the climate avialability label
+// #include "../../templates/template_primary_action23.pnfo"
+
+// In principle you can also add the defines immediately above this #define line...
+
+// Preferred action 2 ID ranges, to keep life simple...
+//   production code	00-0F, A0-AF
+//   cargo acceptance	B0-BF
+//   misc branching, handle callbacks etc	C0-CF
+//   monthly / random production change	D0-DF
+//   texts	E0-FF
+//   generally unused and available	10-9F
+
+
+// industry action 3 attach varaction2 chain to industry
+-1 * 0 03 0A 01 THIS_INDUSTRY 00 \wxC0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>	
+
+#undef THIS_INDUSTRY
+#undef THIS_STR_INFO_CB38

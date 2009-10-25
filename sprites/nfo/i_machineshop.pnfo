@@ -1,3 +1,7 @@
+// Defines for use in industry template
+#define THIS_INDUSTRY         IND_MACHINESHOP
+#define THIS_STR_INFO_CB38    STR_INFO_MACHINESHOP
+
 //Industry tiles definition
 
 //Tile action 0
@@ -477,6 +481,4 @@
 	  CA 00   3A 00   3A 00 // cb 3A (industry window)
 	BA 00 //default
 
-
-//Industry action 3 attach varaction2 chain to industry
--1 * 0 03 0A 01 IND_MACHINESHOP 00 \wxC0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
+#include "../../templates/template_secondary_action23_A.pnfo"
