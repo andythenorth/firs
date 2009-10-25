@@ -168,8 +168,8 @@
       7c 00 20 \dxffffffff
       \2sto 1a 00 \dx104
     \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
-       STR_INFO_DEBUG 80  00 00 00 00  00 00 00 00
-     STR_INFO_DEBUG 80 //default
+       STR_INFO_DEBUG_1 80  00 00 00 00  00 00 00 00
+     STR_INFO_DEBUG_1 80 //default
 
 -1 * 0 02 0A FD //store two values to text stack for debugging
     89 // 
