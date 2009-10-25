@@ -1,14 +1,16 @@
 //Only have this in climates 0 and 1
 -1 * 0 07 83 01 \7> 01 FF
 
-//Industry tiles definition
-
+// Defines for use in industry template
 #define THIS_INDUSTRY         IND_ARABLEFARM
 #define THIS_TILE             TILE_ARABLEFARM_1
 #define THIS_STR_INFO_CB38    STR_INFO_GENERIC
 #define THIS_STR_BOOST        STR_INFO_FS_PRIMARY_BOOST
 #define THIS_STR_ACCEPT       \wxD4D2
 #define THIS_STR_NOT_ACCEPT   \wxD4D3
+
+//Industry tiles definition
+
 
 //Tile action 0
 -1 * 0 00 09 \b6 01 TILE_ARABLEFARM_1 // -1 * 0 00 09 <num-props> 01 <id>
