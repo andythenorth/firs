@@ -26,119 +26,140 @@
 //50:50 distribution to output cargos C1 output = 50% total input, C1 output = 50% total input
 
 
-//Production callback 
--1 * 0 02 0A A0 //-1 * 0 0A <set-id>
+// production code 
+//!! case of 0 output cargo? - probably a different template...
+-1 * 0 02 0A 00 //production cb, 1 output cargo 
 	01 //version
 	07  08  09 //<subtract-in-1..3>
-	0A  0A //<add-out-1..2>
+	0A  0B //<add-out-1..2>
 	00 //don't repeat
 
--1 * 0 02 0A B9 //add up total cargo produced...for this industry output is split 50:50, so only bother setting one register
+-1 * 0 02 0A AC //where one cargo produced, all of production goes in register 0A, register 0B is zeroed
+    89 // 
+      1A 20 \dx00 // create 0
+      10 1A 20 \dx0B //store in persistent storage (for debug only, can be commented if not in use)
+      \2sto 1A 20 \dx0B //store in register
+      0F
+      7D 0A 20  \dxFFFFFFFF //get stored amount for total cargo output
+      10 1A 20 \dx0A //store in persistent storage (for debug only, can be commented if not in use)
+      \2sto 1A 00 \dx0A //store in register
+    \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
+       00 00  00 00 00 00  00 00 00 00
+     00 00 //default
+
+-1 * 0 02 0A AB //where two cargos produced, industry output is split 50:50
+    89 // 
+      7D 0A 20  \dxFFFFFFFF //get stored amount for total cargo output
+      \2/ 1A 20 THIS_NUM_OUTPUT_CARGOS
+      10 1A 20 \dx0A //store in persistent storage (for debug only, can be commented if not in use)
+      \2sto 1A 20 \dx0A //store in register
+      10 1A 20 \dx0B //store in persistent storage (for debug only, can be commented if not in use)
+      \2sto 1A 00 \dx0B //store in register
+    \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
+       00 00  00 00 00 00  00 00 00 00
+     00 00 //default
+
+-1 * 0 02 0A AA //how many output cargos do we have?  branch accordingly (branching easier than advanced varaction 2 here)
+    89 // 
+      1A 00 THIS_NUM_OUTPUT_CARGOS 
+    \b1 //range
+       AB 00  \d02  \d02
+     AC 00 //default
+
+-1 * 0 02 0A A9 //add up total cargo produced...for this industry output is split 50:50, so only bother setting one register
     89 // 
       7C 04 20  \dxFFFFFFFF //get stored amount for production from cargo 1
       \2+ 7C 05 20  \dxFFFFFFFF //get stored amount for production from cargo 2
       \2+ 7C 06 20  \dxFFFFFFFF //get stored amount for production from cargo 3 
-      \2/ 1A 20 \d02 //divide by number of output cargos for this industry
       10 1A 20 \dx0A //store in persistent storage (for debug only, can be commented if not in use)
       \2sto 1A 00 \dx0A //store in register
     \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
-       A0 00  00 00 00 00  00 00 00 00
-     A0 00 //default
+       AA 00  00 00 00 00  00 00 00 00
+     AA 00 //default
 
--1 * 0 02 0A B8 //calculate amount of input cargo actually processed
+-1 * 0 02 0A A8 //calculate amount of input cargo actually processed
     89 // 
       7C 06 20  \dxFFFFFFFF //get stored amount for production from cargo 3
       \2* 7C 03 20  \dxFFFFFFFF //multiply production amount by production ratio 
       10 1A 20 \dx09 //store in persistent storage (for debug only, can be commented if not in use)
       \2sto 1A 00 \dx09 //store in register
     \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
-       B9 00  00 00 00 00  00 00 00 00
-     B9 00 //default
+       A9 00  00 00 00 00  00 00 00 00
+     A9 00 //default
 
--1 * 0 02 0A B7 //calculate amount of input cargo actually processed
+-1 * 0 02 0A A7 //calculate amount of input cargo actually processed
     89 // 
       7C 05 20  \dxFFFFFFFF //get stored amount for production from cargo 2
       \2* 7C 02 20  \dxFFFFFFFF //multiply production amount by production ratio 
       10 1A 20 \dx08 //store in persistent storage (for debug only, can be commented if not in use)
       \2sto 1A 00 \dx08 //store in register
     \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
-       B8 00  00 00 00 00  00 00 00 00
-     B8 00 //default
+       A8 00  00 00 00 00  00 00 00 00
+     A8 00 //default
 
--1 * 0 02 0A B6 //calculate amount of input cargo actually processed
+-1 * 0 02 0A A6 //calculate amount of input cargo actually processed
     89 // 
       7C 04 20  \dxFFFFFFFF //get stored amount for production from cargo 1
       \2* 7C 01 20  \dxFFFFFFFF //multiply production amount by production ratio 
       10 1A 20 \dx07 //store in persistent storage (for debug only, can be commented if not in use)
       \2sto 1A 00 \dx07 //store in register
     \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
-       B7 00  00 00 00 00  00 00 00 00
-     B7 00 //default
+       A7 00  00 00 00 00  00 00 00 00
+     A7 00 //default
 
--1 * 0 02 0A B5 //store lower value of: (cargo waiting divided by prod ratio for cargo) or (output limit for produced cargo) 
+-1 * 0 02 0A A5 //store lower value of: (cargo waiting divided by prod ratio for cargo) or (output limit for produced cargo) 
     89 // 
       42 20  \dxFFFFFFFF // cargo waiting
       \2/ 7C 03 20  \dxFFFFFFFF //divide cargo waiting by production ratio to get calculated production value 
       \2< 7C 00 20  \dxFFFFFFFF //result = min(calculated production value, output limit for produced cargo)
       10 1A 00 \dx06 //store in persistent storage (could use ordinary register, but this is easier to debug)
     \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
-       B6 00  00 00 00 00  00 00 00 00
-     B6 00 //default
+       A6 00  00 00 00 00  00 00 00 00
+     A6 00 //default
 
--1 * 0 02 0A B4 //store lower value of: (cargo waiting divided by prod ratio for cargo) or (output limit for produced cargo) 
+-1 * 0 02 0A A4 //store lower value of: (cargo waiting divided by prod ratio for cargo) or (output limit for produced cargo) 
     89 // 
       41 20  \dxFFFFFFFF // cargo waiting 
       \2/ 7C 02 20  \dxFFFFFFFF //divide cargo waiting by production ratio to get calculated production value
       \2< 7C 00 20  \dxFFFFFFFF //result = min(calculated production value, output limit for produced cargo)
       10 1A 00 \dx05 //store in persistent storage (could use ordinary register, but this is easier to debug)
     \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
-       B5 00  00 00 00 00  00 00 00 00
-     B5 00 //default
+       A5 00  00 00 00 00  00 00 00 00
+     A5 00 //default
 
--1 * 0 02 0A B3 //store lower value of: (cargo waiting divided by prod ratio for cargo) or (output limit for produced cargo) 
+-1 * 0 02 0A A3 //store lower value of: (cargo waiting divided by prod ratio for cargo) or (output limit for produced cargo) 
     89 // 
       40 20  \dxFFFFFFFF // cargo waiting 
       \2/ 7C 01 20  \dxFFFFFFFF //divide cargo waiting by production ratio to get calculated production value 
       \2< 7C 00 20  \dxFFFFFFFF //result = min(calculated production value, output limit for produced cargo)
       10 1A 00 \dx04 //store in persistent storage (could use ordinary register, but this is easier to debug)
     \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
-       B4 00  00 00 00 00  00 00 00 00
-     B4 00 //default
+       A4 00  00 00 00 00  00 00 00 00
+     A4 00 //default
 
--1 * 0 02 0A B2 //store production ratios for cargo 3
+-1 * 0 02 0A A2 //store production ratios for cargo 3
     89 // using type 89 because register IDs are better specified as double words
       1A 20  \d1 //production ratio (number of units input to create 1 unit output)
       10  1A 00 \dx03 //store in persistent storage (could use ordinary register, but this is easier to debug)
     \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
-       B3 00  00 00 00 00  00 00 00 00
-     B3 00     
+       A3 00  00 00 00 00  00 00 00 00
+     A3 00     
        
--1 * 0 02 0A B1 //store production ratios for cargo 2
+-1 * 0 02 0A A1 //store production ratios for cargo 2
     89 // using type 89 because register IDs are better specified as double words
       1A 20  \d1 //production ratio (number of units input to create 1 unit output)    
       10  1A 00 \dx02 //store in persistent storage (could use ordinary register, but this is easier to debug)
     \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
-       B2 00  00 00 00 00  00 00 00 00
-     B2 00
+       A2 00  00 00 00 00  00 00 00 00
+     A2 00
        
--1 * 0 02 0A B0 //store production ratios for cargo 1
+-1 * 0 02 0A A0 //store production ratios for cargo 1
     89 // using type 89 because register IDs are better specified as double words
       1A 20  \d1 //production ratio (number of units input to create 1 unit output)
       10  1A 00 \dx01 // store in persistent storage
     \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
-       B1 00  00 00 00 00  00 00 00 00
-     B1 00
-// !! the logic for output limit is flawed.  This assumes limit is FF FF; when 2 output cargos are split 50:50, output limit before split is 2 * FF FF
-// TTDPatch wiki for production callback: "results are clamped to the allowed range (0..32767 for incoming cargo amounts, 0..65535 for outgoing cargo amounts)."
--1 * 0 02 0A BA //store output limit for produced cargo (as units of output cargo) to use when processing each input cargo
-    89 // using type 89 because register IDs are better specified as double words
-      1A 20  \dxFFFF // create a value (constant 1A anded (20) with following bytes); total production limit is FF FF per output cargo
-      \2/ 1a 20 \d03 // divide by number of input cargos for this industry (exclude production-boosting cargos from input cargo count)
-      10  1A 00 \dx00 // store in persistent storage
-    \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
-       B0 00  00 00 00 00  00 00 00 00
-     B0 00
-
+       A1 00  00 00 00 00  00 00 00 00
+     A1 00
 
 // PROVIDE DEBUG INFO TO INDUSTRY WINDOW 
 //Remember text stack is LIFO (like array.pop) - put values to render first in highest registers
@@ -152,7 +173,7 @@
 
 -1 * 0 02 0A FD //store two values to text stack for debugging
     89 // 
-      7c 0A 20 \dxffff
+      7c 0B 20 \dxffff
       \2ror 1a 20 \d16
       \2| 7c 0A 20 \dxffff
       \2sto 1a 00 \dx103
@@ -190,17 +211,30 @@
        FB 00  00 00 00 00  00 00 00 00
      FB 00 //default
 
-//Callback 38 display additional text in fund window
+// !! the logic for output limit is flawed.  This assumes limit is FF FF; when 2 output cargos are split 50:50, output limit before split is 2 * FF FF
+// TTDPatch wiki for production callback: "results are clamped to the allowed range (0..32767 for incoming cargo amounts, 0..65535 for outgoing cargo amounts)."
+-1 * 0 02 0A C1 //store output limit for produced cargo (as units of output cargo) to use when processing each input cargo
+    89 // using type 89 because register IDs are better specified as double words
+      1A 20  \dxFFFF // create a value (constant 1A); total production limit is FF FF per output cargo
+      \2/ 1a 20 THIS_NUM_INPUT_CARGOS // divide by number of input cargos for this industry (exclude production-boosting cargos from input cargo count)
+      10  1A 00 \dx00 // store in persistent storage
+    \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
+       A0 00  00 00 00 00  00 00 00 00
+     A0 00
+
+// handle callbacks
 -1 * 0 02 0A C0 //-1 * 0 0A <set-id>
 	85 0C //<type> <variable> word-access callback
 	00 FF FF //no shift, no mask
 	\b2 //number of ranges to check
-	  THIS_STR_INFO_CB38 80   38 00   38 00 //return text-ID D0xx if cb 38 (fund window)
-	  FA 00   3A 00   3A 00 // cb 3A (industry window)
-	BA 00 //default
+	  THIS_STR_INFO_CB38 80   38 00   38 00 ////cb 38 display additional text in fund window
+	  FA 00   3A 00   3A 00 //cb 3A (industry window)
+	C1 00 //default
 
 // industry action 3 attach varaction2 chain to industry
 -1 * 0 03 0A 01 THIS_INDUSTRY 00 \wxC0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>	
 
 #undef THIS_INDUSTRY
 #undef THIS_STR_INFO_CB38
+#undef THIS_NUM_INPUT_CARGOS
+#undef THIS_NUM_OUTPUT_CARGOS
