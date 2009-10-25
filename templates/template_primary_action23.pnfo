@@ -32,7 +32,7 @@
 	\w0 \w0 //<add-out-1..2>
 	00 //don't repeat
 	
--1 * 0 02 0A C1 //branch production depending on cargo waiting 
+-1 * 0 02 0A A0 //branch production depending on cargo waiting 
   85 40 00 FF FF //check cargo waiting
   \b2 // range
     00 00  \w24  FF FF    
@@ -78,7 +78,7 @@
        THIS_STR_BOOST 80 00 00 00 00
      THIS_STR_BOOST 80 //default
       
--1 * 0 02 0A BA //branch depending on cargo waiting (we want different text to show in industry window) 
+-1 * 0 02 0A F0 //branch depending on cargo waiting (we want different text to show in industry window) 
   85 40 00 FF FF //check cargo waiting
   \b1 // range
     BB 00  \w200  FF FF    
@@ -93,8 +93,8 @@
 	  B1 00   37 00   37 00 //cargo subtext industry window cb 37
 	  A1 00   3D 00   3D 00 //industry cargo acceptance
     THIS_STR_INFO_CB38 80   38 00   38 00 //return text-ID D0xx if cb 38 (fund window)
-    BA 00   3A 00   3A 00 //return text-ID D0xx if cb 3A (industry window)
-	C1 00 //default
+    F0 00   3A 00   3A 00 //return text-ID D0xx if cb 3A (industry window)
+	A0 00 //default
 
 //Industry action 3 attach varaction2 chain to industry
 -1 * 0 03 0A 01 THIS_INDUSTRY 00 \wxC0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>	
