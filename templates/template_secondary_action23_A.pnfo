@@ -20,6 +20,64 @@
 //   texts	E0-FF
 //   generally unused and available	10-9F
 
+// PROVIDE DEBUG INFO TO INDUSTRY WINDOW 
+//Remember text stack is LIFO (like array.pop) - put values to render first in highest registers
+-1 * 0 02 0A CE //store one values to text stack for debugging
+    89 // 
+      7c 00 20 \dxffffffff
+      \2sto 1a 00 \dx104
+    \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
+       STR_INFO_DEBUG 80  00 00 00 00  00 00 00 00
+     STR_INFO_DEBUG 80 //default
+
+-1 * 0 02 0A CD //store two values to text stack for debugging
+    89 // 
+      7c 0A 20 \dxffff
+      \2ror 1a 20 \d16
+      \2| 7c 0A 20 \dxffff
+      \2sto 1a 00 \dx103
+    \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
+       CE 00  00 00 00 00  00 00 00 00
+     CE 00 //default
+
+-1 * 0 02 0A CC //store two values to text stack for debugging
+    89 // 
+      7c 09 20 \dxffff
+      \2ror 1a 20 \d16
+      \2| 7c 08 20 \dxffff
+      \2sto 1a 00 \dx102
+    \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
+       CD 00  00 00 00 00  00 00 00 00
+     CD 00 //default
+     
+-1 * 0 02 0A CB //store two values to text stack for debugging
+    89 // 
+      7c 07 20 \dxffff
+      \2ror 1a 20 \d16
+      \2| 7c 01 20 \dxffff
+      \2sto 1a 00 \dx101
+    \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
+       CC 00  00 00 00 00  00 00 00 00
+     CC 00 //default
+
+-1 * 0 02 0A CA //store two values to text stack for debugging
+    89
+      7c 02 20 \dxffff  
+      \2ror 1a 20 \d16
+      \2| 7c 03 20 \dxffff
+      \2sto 1a 00 \dx100
+    \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
+       CB 00  00 00 00 00  00 00 00 00
+     CB 00 //default
+
+//Callback 38 display additional text in fund window
+-1 * 0 02 0A C0 //-1 * 0 0A <set-id>
+	85 0C //<type> <variable> word-access callback
+	00 FF FF //no shift, no mask
+	\b2 //number of ranges to check
+	  THIS_STR_INFO_CB38 80   38 00   38 00 //return text-ID D0xx if cb 38 (fund window)
+	  CA 00   3A 00   3A 00 // cb 3A (industry window)
+	BA 00 //default
 
 // industry action 3 attach varaction2 chain to industry
 -1 * 0 03 0A 01 THIS_INDUSTRY 00 \wxC0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>	
