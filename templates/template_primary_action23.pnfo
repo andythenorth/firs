@@ -14,19 +14,20 @@
 
 // In principle you can also add the defines immediately above this #define line...
 
--1 * 0 02 0A 00 //Production callback high production
+// production code
+-1 * 0 02 0A 00 //production callback high production
 	00 //version
 	\w16 \w0 \w0 //<subtract-in-1..3>
 	\w0 \w0 //<add-out-1..2>
 	00 //don't repeat
 
--1 * 0 02 0A 01 //Production callback med production
+-1 * 0 02 0A 01 //production callback med production
 	00 //version
 	\w8 \w0 \w0 //<subtract-in-1..3>
 	\w0 \w0 //<add-out-1..2>
 	00 //don't repeat
 
--1 * 0 02 0A 02 //Production callback low production
+-1 * 0 02 0A 02 //production callback low production
 	00 //version
 	\w1 \w0 \w0 //<subtract-in-1..3>
 	\w0 \w0 //<add-out-1..2>
@@ -39,64 +40,69 @@
     01 00  \w8  \w23    
   02 00 // default
 
--1 * 0 02 0A D2 //Random production increase if production-boosting cargo stockpiled...  
+// cargo acceptance
+-1 * 0 02 0A B0//return cargo acceptance (0 or 1) depending on amount of first cargo waiting
+  85 40 00 FF FF
+  \b1 //range 
+    00 80 \w208 FF FF //I've set the industry limit slightly higher than the tile limit...otherwise the limit won't be reached for 'cargo waiting' 
+  01 80
+
+// production changes
+-1 * 0 02 0A D2 //random production increase if production-boosting cargo stockpiled...  
   81 18 00 03
   \b1 //range
     0E 80 00 00 //lookat cb 35 or 29 in wiki to see what the returned value means
   00 80 //else no change	
   
--1 * 0 02 0A D1 //Handle cb 35 monthly production change 
+-1 * 0 02 0A D1 //handle cb 35 monthly production change 
   85 40 00 FF FF //check cargo waiting
   \b1 //range
     D2 00  01 00  FF FF    
   00 80 //else no change
 	
--1 * 0 02 0A A1//Return cargo acceptance (0 or 1) depending on amount of first cargo waiting
-  85 40 00 FF FF
-  \b1 //range 
-    00 80 \w208 FF FF //I've set the industry limit slightly higher than the tile limit...otherwise the limit won't be reached for 'cargo waiting' 
-  01 80
-	
--1 * 0 02 0A B1//Handle cb 37 cargo subtexts (used here to provide max cargo limit information)
+// industry window texts	
+-1 * 0 02 0A E0//handle cb 37 cargo subtexts (used here to provide max cargo limit information)
   81 18 00 FF 
   \b1
     STR_INFO_LIMIT_200 80 00 00
   FF FF	 //default
 
--1 * 0 02 0A BC //store sub-text ID to register, return text ID  
+-1 * 0 02 0A F2 //store sub-text ID to register, return text ID  
     85 // 
-      1A 20 THIS_STR_ACCEPT // create a value (constant 1A anded (20) with following bytes) 
-      0E 1A 00 \wx100 // store in register
+      1A 20 THIS_STR_ACCEPT //create a value (constant 1A anded (20) with following bytes) 
+      0E 1A 00 \wx100 //store in register
     \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
        THIS_STR_BOOST 80 00 00 00 00
      THIS_STR_BOOST 80 //default
--1 * 0 02 0A BB //store sub-text ID to register, return text ID  
+     
+-1 * 0 02 0A F1 //store sub-text ID to register, return text ID  
     85 // 
-      1A 20 THIS_STR_NOT_ACCEPT // create a value (constant 1A anded (20) with following bytes) 
-      0E 1A 00 \wx100 // store in register
+      1A 20 THIS_STR_NOT_ACCEPT //create a value (constant 1A anded (20) with following bytes) 
+      0E 1A 00 \wx100 //store in register
     \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
        THIS_STR_BOOST 80 00 00 00 00
      THIS_STR_BOOST 80 //default
       
 -1 * 0 02 0A F0 //branch depending on cargo waiting (we want different text to show in industry window) 
   85 40 00 FF FF //check cargo waiting
-  \b1 // range
-    BB 00  \w200  FF FF    
-  BC 00 // default	
+  \b1 //range
+    F1 00  \w200  FF FF    
+  F2 00 //default	
 	
--1 * 0 02 0A C0 //Handle callbacks
+// handle callbacks
+-1 * 0 02 0A C0 
 	85 0C //<type> <variable> word-access callback
 	00 FF FF //no shift, no mask
 	\b6 //number of ranges to check
 	  04 80   29 00   29 00 //monthly production change cb 29
+	  B0 00   3D 00   3D 00 //industry cargo acceptance
 	  D1 00   35 00   35 00 //monthly production change cb 35
-	  B1 00   37 00   37 00 //cargo subtext industry window cb 37
-	  A1 00   3D 00   3D 00 //industry cargo acceptance
+	  E0 00   37 00   37 00 //cargo subtext industry window cb 37
     THIS_STR_INFO_CB38 80   38 00   38 00 //return text-ID D0xx if cb 38 (fund window)
     F0 00   3A 00   3A 00 //return text-ID D0xx if cb 3A (industry window)
 	A0 00 //default
 
-//Industry action 3 attach varaction2 chain to industry
+// industry action 3 attach varaction2 chain to industry
 -1 * 0 03 0A 01 THIS_INDUSTRY 00 \wxC0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>	
 
 #undef THIS_INDUSTRY
