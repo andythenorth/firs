@@ -1,3 +1,10 @@
+// Defines for use in industry template
+#define THIS_INDUSTRY         IND_COALMINE
+#define THIS_STR_INFO_CB38    STR_INFO_GENERIC
+#define THIS_STR_BOOST        STR_INFO_ES_PRIMARY_BOOST
+#define THIS_STR_ACCEPT       \wxD4D0
+#define THIS_STR_NOT_ACCEPT   \wxD4D1
+
 //Redefinition of original TTD industry
 //Coal Mine
 -1 * 0 00 0A \b8 01 IND_COALMINE //-1 * 0 00 0A <num-props> 01 <id>
@@ -11,90 +18,7 @@
 	22 05  //callback flags
 //To show cargo waiting to be processed at industry, ensure prop 21 is set to use production callback
 
--1 * 0 02 0A 00 //Production callback high production
-	00 //version
-	\w16 \w0 \w0 //<subtract-in-1..3>
-	\w0 \w0 //<add-out-1..2>
-	00 //don't repeat
-
--1 * 0 02 0A 01 //Production callback med production
-	00 //version
-	\w8 \w0 \w0 //<subtract-in-1..3>
-	\w0 \w0 //<add-out-1..2>
-	00 //don't repeat
-
--1 * 0 02 0A 02 //Production callback low production
-	00 //version
-	\w1 \w0 \w0 //<subtract-in-1..3>
-	\w0 \w0 //<add-out-1..2>
-	00 //don't repeat
-	
--1 * 0 02 0A C1 //branch production depending on cargo waiting 
-  85 40 00 FF FF //check cargo waiting
-  \b2 // range
-    00 00  \w24  FF FF    
-    01 00  \w8  \w23    
-  02 00 // default
-
--1 * 0 02 0A D2 //Random production increase if engineering supplies stockpiled...  
-  81 18 00 03
-  \b1 //range
-    0E 80 00 00 //lookat cb 35 or 29 in wiki to see what the returned value means
-  00 80 //else no change	
-  
--1 * 0 02 0A D1 //Handle cb 35 monthly production change 
-  85 40 00 FF FF //check cargo waiting
-  \b1 //range
-    D2 00  01 00  FF FF    
-  00 80 //else no change
-	
--1 * 0 02 0A A1//Return cargo acceptance (0 or 1) depending on amount of first cargo waiting
-  85 40 00 FF FF
-  \b1 //range 
-    00 80 \w208 FF FF //I've set the industry limit slightly higher than the tile limit...otherwise the limit won't be reached for 'cargo waiting' 
-  01 80
-	
--1 * 0 02 0A B1//Handle cb 37 cargo subtexts (used here to provide max cargo limit information)
-  81 18 00 FF 
-  \b1
-    STR_INFO_LIMIT_200 80 00 00
-  FF FF	 //default
-	
--1 * 0 02 0A BC //store sub-text ID to register, return text ID  
-    85 // 
-      1A 20 \wxD4D0 // create a value (constant 1A anded (20) with following bytes) 
-      0E 1A 00 \wx100 // store in register
-    \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
-       STR_INFO_ES_PRIMARY_BOOST 80 00 00 00 00
-     STR_INFO_ES_PRIMARY_BOOST 80 //default
--1 * 0 02 0A BB //store sub-text ID to register, return text ID  
-    85 // 
-      1A 20 \wxD4D1 // create a value (constant 1A anded (20) with following bytes) 
-      0E 1A 00 \wx100 // store in register
-    \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
-       STR_INFO_ES_PRIMARY_BOOST 80 00 00 00 00
-     STR_INFO_ES_PRIMARY_BOOST 80 //default
-      
--1 * 0 02 0A BA //branch depending on cargo waiting (we want different text to show in industry window) 
-  85 40 00 FF FF //check cargo waiting
-  \b1 // range
-    BB 00  \w200  FF FF    
-  BC 00 // default	
-	
--1 * 0 02 0A C0 //Handle callbacks
-	85 0C //<type> <variable> word-access callback
-	00 FF FF //no shift, no mask
-	\b6 //number of ranges to check
-	  04 80   29 00   29 00 //monthly production change cb 29
-	  D1 00   35 00   35 00 //monthly production change cb 35
-	  B1 00   37 00   37 00 //cargo subtext industry window cb 37
-	  A1 00   3D 00   3D 00 //industry cargo acceptance
-    STR_INFO_GENERIC 80   38 00   38 00 //return text-ID D0xx if cb 38 (fund window)
-    BA 00   3A 00   3A 00 //return text-ID D0xx if cb 3A (industry window)
-	C1 00 //default
-
-//Industry action 3 attach varaction2 chain to industry
--1 * 0 03 0A 01 IND_COALMINE 00 \wxC0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
+#include "../../templates/template_primary_action23.pnfo"
 
 //Tiles 00..06
 -1 * 0 00 09 \b6 01 00 // -1 * 0 00 09 <num-props> 01 <id>

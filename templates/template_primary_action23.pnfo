@@ -3,7 +3,6 @@
 // How to use:
 // Add to the top of a primary industry a few #define lines. For example:
 // #define THIS_INDUSTRY         IND_ARABLEFARM
-// #define THIS_TILE             TILE_ARABLEFARM_1
 // #define THIS_STR_INFO_CB38    STR_INFO_GENERIC
 // #define THIS_STR_BOOST        STR_INFO_FS_PRIMARY_BOOST
 // #define THIS_STR_ACCEPT       \wxD4D2
@@ -115,7 +114,6 @@
 -1 * 0 03 0A 01 THIS_INDUSTRY 00 \wxC0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>	
 
 #undef THIS_INDUSTRY
-#undef THIS_TILE
 #undef THIS_STR_INFO_CB38
 #undef THIS_STR_BOOST
 #undef THIS_STR_ACCEPT
