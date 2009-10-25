@@ -14,6 +14,15 @@
 
 // In principle you can also add the defines immediately above this #define line...
 
+// Preferred action 2 ID ranges, to keep life simple...
+//   production code	00-0F, A0-AF
+//   cargo acceptance	B0-BF
+//   misc branching, handle callbacks etc	C0-CF
+//   monthly / random production change	D0-DF
+//   texts	E0-FF
+//   generally unused and available	10-9F
+
+
 // production code
 -1 * 0 02 0A 00 //production callback high production
 	00 //version
