@@ -406,7 +406,8 @@
     \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
        B1 00  00 00 00 00  00 00 00 00
      B1 00
-
+// !! the logic for output limit is flawed.  This assumes limit is FF FF; when 2 output cargos are split 50:50, output limit before split is 2 * FF FF
+// TTDPatch wiki for production callback: "results are clamped to the allowed range (0..32767 for incoming cargo amounts, 0..65535 for outgoing cargo amounts)."
 -1 * 0 02 0A BA //store output limit for produced cargo (as units of output cargo) to use when processing each input cargo
     89 // using type 89 because register IDs are better specified as double words
       1A 20  \dxFFFF // create a value (constant 1A anded (20) with following bytes); total production limit is FF FF per output cargo
@@ -419,9 +420,6 @@
 
 // PROVIDE DEBUG INFO TO INDUSTRY WINDOW 
 //Remember text stack is LIFO (like array.pop) - put values to render first in highest registers
-
-
-
 -1 * 0 02 0A CE //store one values to text stack for debugging
     89 // 
       7c 00 20 \dxffffffff
@@ -462,7 +460,7 @@
 
 -1 * 0 02 0A CA //store two values to text stack for debugging
     89
-      7c 02 20 \dxffff
+      7c 02 20 \dxffff  
       \2ror 1a 20 \d16
       \2| 7c 03 20 \dxffff
       \2sto 1a 00 \dx100
