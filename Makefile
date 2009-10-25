@@ -32,8 +32,7 @@ endif
 
 # Get the Repository revision, tags and the modified status
 GRF_REVISION = $(shell hg parent --template="{rev}")
-GRF_MODIFIED = $(shell [ -n "`hg status \"." | grep -v '^?'`" ] && echo "M" || echo "")
-# " \" (syntax highlighting line
+GRF_MODIFIED = $(shell [ -n "`hg status | grep -v '^?'`" ] && echo "M" || echo "")
 REPO_TAGS    = $(shell hg parent --template="{tags}" | grep -v "tip" | cut -d\  -f1)
 
 # Include the global configuration file
