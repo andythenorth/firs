@@ -13,7 +13,7 @@
 -1 * 0 07 83 01 \7= 00 \b1
 -1 * 0 07 83 01 \7! 02 \b2
 //Fruit Plantation
--1 * 0 00 0A \b13 01 IND_FRUITPLANTATION //-1 * 0 00 0A <num-props> 01 <id>
+-1 * 0 00 0A \b14 01 IND_FRUITPLANTATION //-1 * 0 00 0A <num-props> 01 <id>
 	08 13 //substitute industry type
 	09 13 //industry type override
 	10 CARGO_FRUITSANDVEGETABLES FF //production cargo types (word; fill unused with FFh)
@@ -25,6 +25,7 @@
 	1E 00 00 00 00 //input cargo 3 multiplier
 	17 \b4 //probability in random game
 	18 \b3 //probability during gameplay
+	19 CLR_FRUITPLANTATION //map colour (byte; using indexes from dos palette)
 	21 F4 //callback flags 
 	22 05  //callback flags
 //To show cargo waiting to be processed at industry, ensure prop 21 is set to use production callback

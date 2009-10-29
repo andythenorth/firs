@@ -8,7 +8,7 @@
 
 //Redefinition of original TTD industry
 //Oil Platform
--1 * 0 00 0A \b14 01 IND_OILPLATFORM //-1 * 0 00 0A <num-props> 01 <id>
+-1 * 0 00 0A \b15 01 IND_OILPLATFORM //-1 * 0 00 0A <num-props> 01 <id>
 	08 05 //substitute industry type
 	09 05 //industry type override
 	1F STR_IND_OILPLATFORM //industry name
@@ -21,6 +21,7 @@
 	1E 00 00 00 00 //input cargo 3 multiplier
 	17 \b0 //probability in random game
 	18 \b6 //probability during gameplay
+	19 CLR_OILPLATFORM //map colour (byte; using indexes from dos palette)
 	21 F4 //callback flags 
 	22 05  //callback flags
 //To show cargo waiting to be processed at industry, ensure prop 21 is set to use production callback

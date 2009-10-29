@@ -7,13 +7,14 @@
 
 //Redefinition of original TTD industry
 //Forest
--1 * 0 00 0A \b8 01 IND_FOREST //-1 * 0 00 0A <num-props> 01 <id>
+-1 * 0 00 0A \b9 01 IND_FOREST //-1 * 0 00 0A <num-props> 01 <id>
 	08 03 //substitute industry type
 	09 03 //industry type override
 	11 CARGO_ENGINEERINGSUPPLIES FF FF FF //acceptance cargo types (dword; fill unused with FFh)
 	1C 54 00 00 00 //input cargo 1 multiplier (dword M1 M2; output_typen = X*Mn/256)
 	17 \b5 //probability in random game
 	18 \b3 //probability during gameplay
+	19 CLR_FOREST //map colour (byte; using indexes from dos palette)
 	21 F4 //callback flags 
 	22 05  //callback flags
 //To show cargo waiting to be processed at industry, ensure prop 21 is set to use production callback

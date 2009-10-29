@@ -7,7 +7,7 @@
 
 //Redefinition of original TTD industry
 //Oil Well
--1 * 0 00 0A \b9 01 IND_OILWELL //-1 * 0 00 0A <num-props> 01 <id>
+-1 * 0 00 0A \b10 01 IND_OILWELL //-1 * 0 00 0A <num-props> 01 <id>
 	08 0B //substitute industry type
 	09 0B //industry type override
 	24 STR_STA_WELLS //default text for nearby station
@@ -15,6 +15,7 @@
 	1C 54 00 00 00 //input cargo 1 multiplier (dword M1 M2; output_typen = X*Mn/256)
 	17 \b5 //probability in random game
 	18 \b3 //probability during gameplay
+	19 CLR_OILWELL //map colour (byte; using indexes from dos palette)
 	21 F4 //callback flags 
 	22 05  //callback flags
 //To show cargo waiting to be processed at industry, ensure prop 21 is set to use production callback
