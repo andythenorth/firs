@@ -203,7 +203,7 @@
 	18 \b3 //probability during gameplay
 	20 FF FF FF BF //prospecting success chance (dword; FFFFFFFFh=100%)
 	0F \b255 //fund cost multiplier (byte)
-	19 B8 //map colour (byte; using indexes from dos palette)
+	19 CLR_DAIRYFARM //map colour (byte; using indexes from dos palette)
 	23 \d0  //descruction cost multiplier (dword; default: 0)
 	1A \dx1000 //special industry flag (dword)
 	21 F4 //callback flags 

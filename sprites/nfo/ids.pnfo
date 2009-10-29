@@ -250,6 +250,11 @@
 
 
 //Definition of text IDs for cargos
+// _CTYPE: name of cargo type
+// _1TYPE: name of one unit of cargo type
+// _1UNIT: suffix of one unit of cargo
+// _MUNIT: suffix of multiple units of cargo
+// _TABBR: cargo type abreviation
 #define STR_CRG_SUGARCANE_CTYPE             01 DC
 #define STR_CRG_SUGARCANE_1TYPE             01 DC //same as above
 #define STR_CRG_SUGARCANE_1UNIT             02 DC
