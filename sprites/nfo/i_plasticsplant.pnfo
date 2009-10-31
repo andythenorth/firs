@@ -1,3 +1,12 @@
+// Defines for use in industry template
+#define THIS_INDUSTRY                 IND_PLASTICSPLANT
+#define THIS_NUM_INPUT_CARGOS         \d02
+#define THIS_NUM_OUTPUT_CARGOS        \d02
+#define THIS_PROD_RATIO_CARGO_IN_1    \d06
+#define THIS_PROD_RATIO_CARGO_IN_2    \d04
+#define THIS_PROD_RATIO_CARGO_IN_3    \d08
+#define THIS_STR_INFO_CB38            STR_INFO_GENERIC
+
 //Industry tiles definition
 
 //Tile TILE_PLASTICSPLANT_1, action 0
@@ -156,23 +165,6 @@
 
 //No action 1 for industries, as graphics are defined by the industry-tile feature.
 
-//Dummy production callback to keep default-id happy
--1 * 0 02 0A 00 //-1 * 0 0A <set-id>
-	00 //version
-	FF FF  FF FF  FF FF //<subtract-in-1..3>
-	FF FF  FF FF //<add-out-1..2>
-	00 //don't repeat
-	
-//Callback 38 display additional text in fund window
--1 * 0 02 0A C0 //-1 * 0 0A <set-id>
-	85 0C //<type> <variable> word-access callback
-	00 FF FF //no shift, no mask
-	\b2 //number of ranges to check
-	STR_INFO_GENERIC 80   38 00   38 00 //return text-ID D0xx if cb 38 (fund window)
-	STR_INFO_GENERIC 80   3A 00   3A 00 //return text-ID D0xx if cb 3A (industry window)
-	\w0 //default
+#include "../../templates/template_secondary_action23_A.pnfo"
 
-
-//Industry action 3 attach varaction2 chain to industry
--1 * 0 03 0A 01 IND_PLASTICSPLANT 00 \wxC0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>	
 
