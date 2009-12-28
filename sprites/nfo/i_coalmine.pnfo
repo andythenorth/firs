@@ -15,7 +15,7 @@
 	17 \b8 //probability in random game
 	18 \b3 //probability during gameplay
 	19 CLR_COALMINE //map colour (byte; using indexes from dos palette)
-	21 FC //callback flags 
+	21 F4 //callback flags 
 	22 05  //callback flags
 //To show cargo waiting to be processed at industry, ensure prop 21 is set to use production callback
 
