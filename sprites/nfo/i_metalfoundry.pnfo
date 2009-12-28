@@ -160,7 +160,7 @@
 	20 FF FF FF BF //prospecting success chance (dword; FFFFFFFFh=100%)
 	0F \b255 //fund cost multiplier (byte)
 	19 CLR_METALFOUNDRY //map colour (byte; using indexes from dos palette)
-	23 \d0  //descruction cost multiplier (dword; default: 0)
+	23 \d0  //destruction cost multiplier (dword; default: 0)
 	1A \d0 //special industry flag (dword)
 	21 84 //callback flags 
 	22 01  //callback flags
