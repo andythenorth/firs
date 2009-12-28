@@ -2,7 +2,7 @@
 #define IND_NULL                  00
 #define IND_COALMINE              00
 #define IND_IRONOREMINE           04
-#define IND_BAUXITEMINE           05
+#define IND_BAUXITEMINE           0A
 #define IND_SANDPIT               17
 #define IND_GRAVELQUARRY          15
 #define IND_DREDGINGSITE          14
@@ -206,6 +206,7 @@
 #define STR_IND_SHEEPFARM             89 DC
 #define STR_IND_JUNKYARD              8A DC
 #define STR_IND_GENERALSTORE          8B DC
+#define STR_IND_BAUXITEMINE           8C DC
 
 
 //Definition of industry messages using TTD strings

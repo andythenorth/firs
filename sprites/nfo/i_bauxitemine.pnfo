@@ -1,0 +1,101 @@
+// Defines for use in industry template
+#define THIS_INDUSTRY         IND_BAUXITEMINE
+#define THIS_STR_INFO_CB38    STR_INFO_GENERIC
+#define THIS_STR_BOOST        STR_INFO_ES_PRIMARY_BOOST
+#define THIS_STR_ACCEPT       \wxD4D0
+#define THIS_STR_NOT_ACCEPT   \wxD4D1
+
+//Redefinition of original TTD industry
+//Copper Mine
+-1 * 0 00 0A \b10 01 IND_BAUXITEMINE //-1 * 0 00 0A <num-props> 01 <id>
+	08 IND_BAUXITEMINE //substitute industry type
+	09 IND_BAUXITEMINE //industry type override
+	10 CARGO_BAUXITE FF //production cargo types (word; fill unused with FFh)
+	11 CARGO_ENGINEERINGSUPPLIES FF FF FF //acceptance cargo types (dword; fill unused with FFh)
+	1C 54 00 00 00 //input cargo 1 multiplier (dword M1 M2; output_typen = X*Mn/256)
+	17 \b8 //probability in random game
+	18 \b3 //probability during gameplay
+	19 CLR_BAUXITEMINE //map colour (byte; using indexes from dos palette)
+	21 F4 //callback flags 
+	22 05  //callback flags
+//To show cargo waiting to be processed at industry, ensure prop 21 is set to use production callback
+
+#include "../../templates/template_primary_action23.pnfo"
+
+//Tiles 00..06
+-1 * 0 00 09 \b6 01 00 // -1 * 0 00 09 <num-props> 01 <id>
+	08 00 //subsitute tile type
+	09 00 //industry tile override
+	0A CARGO_ENGINEERINGSUPPLIES 08 //tile acceptance 1
+	0B 00 00 //tile acceptance 2
+	0C 00 00 //tile acceptance 3
+	0E 04 //callback flags
+-1 * 0 00 09 \b6 01 01 // -1 * 0 00 09 <num-props> 01 <id>
+	08 01 //subsitute tile type
+	09 01 //industry tile override
+	0A CARGO_ENGINEERINGSUPPLIES 08 //tile acceptance 1
+	0B 00 00 //tile acceptance 2
+	0C 00 00 //tile acceptance 3
+	0E 04 //callback flags
+-1 * 0 00 09 \b6 01 02 // -1 * 0 00 09 <num-props> 01 <id>
+	08 02 //subsitute tile type
+	09 02 //industry tile override
+	0A CARGO_ENGINEERINGSUPPLIES 08 //tile acceptance 1
+	0B 00 00 //tile acceptance 2
+	0C 00 00 //tile acceptance 3
+	0E 04 //callback flags
+-1 * 0 00 09 \b6 01 03 // -1 * 0 00 09 <num-props> 01 <id>
+	08 03 //subsitute tile type
+	09 03 //industry tile override
+	0A CARGO_ENGINEERINGSUPPLIES 08 //tile acceptance 1
+	0B 00 00 //tile acceptance 2
+	0C 00 00 //tile acceptance 3
+	0E 04 //callback flags
+-1 * 0 00 09 \b6 01 04 // -1 * 0 00 09 <num-props> 01 <id>
+	08 04 //subsitute tile type
+	09 04 //industry tile override
+	0A CARGO_ENGINEERINGSUPPLIES 08 //tile acceptance 1
+	0B 00 00 //tile acceptance 2
+	0C 00 00 //tile acceptance 3
+	0E 04 //callback flags
+-1 * 0 00 09 \b6 01 05 // -1 * 0 00 09 <num-props> 01 <id>
+	08 05 //subsitute tile type
+	09 05 //industry tile override
+	0A CARGO_ENGINEERINGSUPPLIES 08 //tile acceptance 1
+	0B 00 00 //tile acceptance 2
+	0C 00 00 //tile acceptance 3
+	0E 04 //callback flags
+-1 * 0 00 09 \b6 01 06 // -1 * 0 00 09 <num-props> 01 <id>
+	08 06 //subsitute tile type
+	09 06 //industry tile override
+	0A CARGO_ENGINEERINGSUPPLIES 08 //tile acceptance 1
+	0B 00 00 //tile acceptance 2
+	0C 00 00 //tile acceptance 3
+	0E 04 //callback flags
+
+-1 * 0 02 09 C1 //industry tile cargo acceptance depending on waiting cargo
+    86 40 00 FF FF
+    \b1 //range
+     00 80 \w200 FF FF //lookup cb 2B in wiki for what the returned value means 
+   08 80
+-1 * 0 02 09 C0 //Handle callbacks
+	81 0C 00 FF //no shift, no mask
+	\b1 //range
+    C1 00 2B 2B //cargo acceptance cb 2B
+  FF FF //default
+	
+// action 3s for industry tiles 00-06	
+-1 * 0 03 09 01 00
+  00 C0 00
+-1 * 0 03 09 01 01
+  00 C0 00
+-1 * 0 03 09 01 02
+  00 C0 00
+-1 * 0 03 09 01 03
+  00 C0 00
+-1 * 0 03 09 01 04
+  00 C0 00
+-1 * 0 03 09 01 05
+  00 C0 00
+-1 * 0 03 09 01 06
+  00 C0 00
