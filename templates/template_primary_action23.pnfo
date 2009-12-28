@@ -8,6 +8,10 @@
 // #define THIS_STR_ACCEPT       \wxD4D2
 // #define THIS_STR_NOT_ACCEPT   \wxD4D3
 
+
+// Optional: #define THIS_HANDLE_CB28 [Action 2 ID]  - make sure Action 2 chain is also present in industry, above template include.
+
+
 // then add as the 2nd last line, prior to the end of the climate avialability label
 // #include "../../templates/template_primary_action23.pnfo"
 
@@ -102,7 +106,12 @@
 	85 0C //<type> <variable> word-access callback
 	00 FF FF //no shift, no mask
 	\b7 //number of ranges to check
-    THIS_HANDLE_CB28   28 00   28 00 //can industry be built // relies on action 2 with ID 10 defined in industry
+	  #ifdef THIS_HANDLE_CB28
+    THIS_HANDLE_CB28   28 00   28 00 //can industry be built? ...relies on action 2 with correct ID defined in industry pnfo
+    #endif
+    #ifndef THIS_HANDLE_CB28
+    00 84   28 00   28 00 //just allow the industry to be built (this industry doesn't care about location)
+    #endif
 	  04 80   29 00   29 00 //random production change cb 29
 	  B0 00   3D 00   3D 00 //industry cargo acceptance
 	  D1 00   35 00   35 00 //monthly production change cb 35
