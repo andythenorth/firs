@@ -1,3 +1,9 @@
+// Defines for use in industry template
+#define THIS_INDUSTRY         IND_FISHINGHARBOUR
+#define THIS_STR_INFO_CB38    STR_INFO_GENERIC
+#define THIS_STR_BOOST        STR_INFO_ES_PRIMARY_BOOST
+#define THIS_STR_ACCEPT       \wxD4D0
+#define THIS_STR_NOT_ACCEPT   \wxD4D1
 //Industry tiles definition
 
 //Tile action 0
@@ -61,32 +67,16 @@
 	18 \b20 //probability during gameplay
 	20 FF FF FF BF //prospecting success chance (dword; FFFFFFFFh=100%)
 	0F \b255 //fund cost multiplier (byte)
-	19 CLR_WASTECOLLECTIONPOINT //map colour (byte; using indexes from dos palette)
+	19 CLR_FISHINGHARBOUR //map colour (byte; using indexes from dos palette)
 	23 \d0  //destruction cost multiplier (dword; default: 0)
 	1A \dx10 //special industry flag (dword; in town: 10h)
-	21 84 //callback flags 
-	22 01  //callback flags
+	21 F4 //callback flags 
+	22 05  //callback flags
 //To show cargo waiting to be processed at industry, ensure prop 21 is set to use production callback
 
 //No action 1 for industries, as graphics are defined by the industry-tile feature.
 
-//Dummy production callback to keep default-id happy
--1 * 0 02 0A 00 //-1 * 0 0A <set-id>
-	00 //version
-	FF FF  FF FF  FF FF //<subtract-in-1..3>
-	FF FF  FF FF //<add-out-1..2>
-	00 //don't repeat
-	
-//Callback 38 display additional text in fund window
--1 * 0 02 0A C0 //-1 * 0 0A <set-id>
-	85 0C //<type> <variable> word-access callback
-	00 FF FF //no shift, no mask
-	\b2 //number of ranges to check
-	STR_INFO_GENERIC 80   38 00   38 00 //return text-ID D0xx if cb 38 (fund window)
-	STR_INFO_GENERIC 80   3A 00   3A 00 //return text-ID D0xx if cb 3A (industry window)
-	\w0 //default
+#include "../../templates/template_primary_action23.pnfo"
 
-
-//Industry action 3 attach varaction2 chain to industry
--1 * 0 03 0A 01 IND_FISHINGHARBOUR 00 \wxC0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>	
-
+//End of only have this in this and that climate
+-1 * 0 10 FF
