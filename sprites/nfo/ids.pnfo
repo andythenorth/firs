@@ -450,3 +450,10 @@
 #define STR_CRG_WATER_1UNIT                 61 00
 #define STR_CRG_WATER_MUNIT                 81 00
 #define STR_CRG_WATER_TABBR                 A1 00
+
+// The parameter number which allows choosing a cargo payment scheme.
+#define SCHEME_PARAMETER \b01
+
+// The parameter values and their scheme names:
+#define SCHEME_DEFAULT \b00
+#define SCHEME_MINING  \b01

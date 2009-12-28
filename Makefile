@@ -83,7 +83,10 @@ endif
 endif
 endif
 	$(_E) "Templates: $(TEMPLATE_FILES)"
-
+	
+sprites/nfo/cargo_schemes.pnfo: sprites/nfo/cargo_schemes.list sprites/nfo/cargo_schemes.template
+	$(_E) "[Generationg Cargo schemes]"
+	$(_V) cat sprites/nfo/cargo_schemes.list | grep -v '//' | $(AWK) -f 'scripts/cargoschemes_fieldnames.awk' -f 'scripts/gen_cargo_schemes.awk' > $@
 # Compile GRF
 grf : $(GRF_FILENAME)
 
