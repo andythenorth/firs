@@ -14,3 +14,9 @@
 
 // warning about Default ID appears earlier in sprite.
 //@@WARNING DISABLE 100
+
+// warning about production callback going negative (production callback is supposed to self-limit to 0) 
+//@@WARNING DISABLE 197
+
+// warning about escaped words being bad escaped bytes 
+//@@WARNING DISABLE 209

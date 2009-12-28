@@ -15,10 +15,18 @@
 	17 \b8 //probability in random game
 	18 \b3 //probability during gameplay
 	19 CLR_COALMINE //map colour (byte; using indexes from dos palette)
-	21 F4 //callback flags 
+	21 FC //callback flags 
 	22 05  //callback flags
 //To show cargo waiting to be processed at industry, ensure prop 21 is set to use production callback
 
+
+//Do not enable location cb 28 unless industry provides action 2 with ID 10 to handle it
+-1 * 15	 02 0A 10  // check distance to nearest industry of type n
+  81 64 01 00 FF // check variable 67, with industry type in first byte after variable 
+   01 // check one range
+     00 84 00 05 // build industry if distance is in range 0 - 5 (use a byte for each end of range)
+   04 80 // otherwise return string D0 04
+       
 #include "../../templates/template_primary_action23.pnfo"
 
 //Tiles 00..06

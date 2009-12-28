@@ -19,8 +19,8 @@
 //   misc branching, handle callbacks etc	C0-CF
 //   monthly / random production change	D0-DF
 //   texts	E0-FF
-//   generally unused and available	10-9F
-
+//   industry location permissibility (CB 28)  10-1F  (NB CB 28 is not templated - handled on a per-industry basis)
+//   generally unused and available	30-9F
 
 // production code
 -1 * 0 02 0A 00 //production callback high production
@@ -101,8 +101,9 @@
 -1 * 0 02 0A C0 
 	85 0C //<type> <variable> word-access callback
 	00 FF FF //no shift, no mask
-	\b6 //number of ranges to check
-	  04 80   29 00   29 00 //monthly production change cb 29
+	\b7 //number of ranges to check
+    10 00   28 00   28 00 //can industry be built // relies on action 2 with ID 10 defined in industry
+	  04 80   29 00   29 00 //random production change cb 29
 	  B0 00   3D 00   3D 00 //industry cargo acceptance
 	  D1 00   35 00   35 00 //monthly production change cb 35
 	  E0 00   37 00   37 00 //cargo subtext industry window cb 37
