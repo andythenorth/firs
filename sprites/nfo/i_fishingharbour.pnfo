@@ -4,7 +4,8 @@
 #define THIS_STR_BOOST        STR_INFO_ES_PRIMARY_BOOST
 #define THIS_STR_ACCEPT       \wxD4D0
 #define THIS_STR_NOT_ACCEPT   \wxD4D1
-#define THIS_HANDLE_CB28      00 84
+#define THIS_HANDLE_CB28      10 00
+
 //Industry tiles definition
 
 //Tile action 0
@@ -70,12 +71,19 @@
 	0F \b255 //fund cost multiplier (byte)
 	19 CLR_FISHINGHARBOUR //map colour (byte; using indexes from dos palette)
 	23 \d0  //destruction cost multiplier (dword; default: 0)
-	1A \dx10 //special industry flag (dword; in town: 10h)
-	21 F4 //callback flags 
+	1A \dx04 //special industry flag
+	21 FC //callback flags 
 	22 05  //callback flags
 //To show cargo waiting to be processed at industry, ensure prop 21 is set to use production callback
 
 //No action 1 for industries, as graphics are defined by the industry-tile feature.
+
+-1 * 0	 02 0A 10 //handle cb 28 (industry location permissibility)
+  85 8B 00 FF FF
+  \b1
+    00 84 \w00 \w01
+  01 84 //default
+
 
 #include "../../templates/template_primary_action23.pnfo"
 
