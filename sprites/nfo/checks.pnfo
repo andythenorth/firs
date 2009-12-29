@@ -1,5 +1,6 @@
 //Containing various checks to disable FIRS if incompatible sets are loaded and stuff to make addons work properly.
 
+// NewGRF parameters used by this file are defined in ids.pnfo
 
 //Checks for incompatible sets
 //Checks if incompatible set is not nor will be active. If incompatible set active, then skip to appropriate error message (FF).
@@ -36,20 +37,19 @@
 //Lumber Mill 1.0 (2008-11-20)	(4D 47 08 01)
 -1 * 0 07 88 04 \7GG 4D 47 08 01 FF
 
-
 //Reset parameters 01 and 00
--1 * 0 0D 01 \D= FF 00 00 00 00 00
--1 * 0 0D 00 \D= FF 00 00 00 00 00
+-1 * 0 0D COMPATIBILITY_PARAM2 \D= FF 00 00 00 00 00
+-1 * 0 0D COMPATIBILITY_PARAM1 \D= FF 00 00 00 00 00
 
 
 //Checks for sets with incompatible parameter settings
 //First load specific parameter value into FIRS parameter 00, then check loaded parameter value.
 //NA City Set	(43 41 43 61) (goto error message if parm 2 (01h) != 0)
--1 * 0 0D 01 \D= 01 FE 43 41 43 61
--1 * 0 07 01 01 \7! 00 FE
+-1 * 0 0D COMPATIBILITY_PARAM2 \D= 01 FE 43 41 43 61
+-1 * 0 07 COMPATIBILITY_PARAM2 01 \7! 00 FE
 //CanSet	(43 41 53 61) (goto error message if parm 2 (01h) != 0)
--1 * 0 0D 01 \D= 01 FE 43 41 53 61
--1 * 0 07 01 01 \7! 00 FE
+-1 * 0 0D COMPATIBILITY_PARAM2 \D= 01 FE 43 41 53 61
+-1 * 0 07 COMPATIBILITY_PARAM2 01 \7! 00 FE
 
 
 
@@ -58,79 +58,79 @@
 //If active or will be active add value for bit mask.
 //ECS Town Vector	(4D 65 6F 91)
 -1 * 0 07 88 04 \7gg 4D 65 6F 91 01
--1 * 0 0D 00 \D+ FF 00 \d1
+-1 * 0 0D COMPATIBILITY_PARAM1 \D+ FF 00 \d1
 //ECS Basic Vector	(4D 65 6F 92)
 -1 * 0 07 88 04 \7gg 4D 65 6F 92 01
--1 * 0 0D 00 \D+ FF 00 \d2
+-1 * 0 0D COMPATIBILITY_PARAM1 \D+ FF 00 \d2
 //ECS Chemical II Vector	(4D 65 6F 9C)
 -1 * 0 07 88 04 \7gg 4D 65 6F 9C 01
--1 * 0 0D 00 \D+ FF 00 \d4
+-1 * 0 0D COMPATIBILITY_PARAM1 \D+ FF 00 \d4
 //ECS Machinery Vector	(4D 65 6F 94)
 -1 * 0 07 88 04 \7gg 4D 65 6F 94 01
--1 * 0 0D 00 \D+ FF 00 \d8
+-1 * 0 0D COMPATIBILITY_PARAM1 \D+ FF 00 \d8
 //ECS Wood Vector	(4D 65 6F 95)
 -1 * 0 07 88 04 \7gg 4D 65 6F 95 01
--1 * 0 0D 00 \D+ FF 00 \d16
+-1 * 0 0D COMPATIBILITY_PARAM1 \D+ FF 00 \d16
 //ECS Construction Vector	(4D 65 6F 96)
 -1 * 0 07 88 04 \7gg 4D 65 6F 96 01
--1 * 0 0D 00 \D+ FF 00 \d32
+-1 * 0 0D COMPATIBILITY_PARAM1 \D+ FF 00 \d32
 //ECS Agricultural Vector	(4D 65 6F 97)
 -1 * 0 07 88 04 \7gg 4D 65 6F 97 01
--1 * 0 0D 00 \D+ FF 00 \d64
+-1 * 0 0D COMPATIBILITY_PARAM1 \D+ FF 00 \d64
 //North American Renewal Set 2 (44 44 03 02)
 -1 * 0 07 88 04 \7gg 44 44 03 02 03
 //Get NARS2 parm 00
--1 * 0 0D 01 \D= 00 FE 44 44 03 02
+-1 * 0 0D COMPATIBILITY_PARAM2 \D= 00 FE 44 44 03 02
 //Only set this bit if NARS2 parm 0 bit 2 is set.
--1 * 0 07 01 04 \71 01 01
--1 * 0 0D 00 \D+ FF 00 \d128
+-1 * 0 07 COMPATIBILITY_PARAM2 04 \71 01 01
+-1 * 0 0D COMPATIBILITY_PARAM1 \D+ FF 00 \d128
 
 
 //Check if bitmask is allowed. We're using a dword for the parameter length.
 //No compatible grfs loaded
--1 * 0 07 00 04 \7= \d0 F0
+-1 * 0 07 COMPATIBILITY_PARAM1 04 \7= \d0 F0
 //FIRS +	ECS Town	(1)
--1 * 0 07 00 04 \7= \d1 FC
+-1 * 0 07 COMPATIBILITY_PARAM1 04 \7= \d1 FC
 //FIRS +	ECS Town	+ Regearing	(129)
--1 * 0 07 00 04 \7= \d129 FC
+-1 * 0 07 COMPATIBILITY_PARAM1 04 \7= \d129 FC
 //FIRS +	ECS Town	+ ECS Machinery	(9)
--1 * 0 07 00 04 \7= \d9 FC
+-1 * 0 07 COMPATIBILITY_PARAM1 04 \7= \d9 FC
 //FIRS +	ECS Town	+ ECS Wood	(17)
--1 * 0 07 00 04 \7= \d17 FC
+-1 * 0 07 COMPATIBILITY_PARAM1 04 \7= \d17 FC
 //FIRS +	ECS Basic	(2)
--1 * 0 07 00 04 \7= \d2 FC
+-1 * 0 07 COMPATIBILITY_PARAM1 04 \7= \d2 FC
 //FIRS +	ECS Basic	+ Regearing	(130)
--1 * 0 07 00 04 \7= \d130 FC
+-1 * 0 07 COMPATIBILITY_PARAM1 04 \7= \d130 FC
 //FIRS +	ECS Basic	+ ECS Machinery	(10)
--1 * 0 07 00 04 \7= \d10 FC
+-1 * 0 07 COMPATIBILITY_PARAM1 04 \7= \d10 FC
 //FIRS +	ECS Basic	+ ECS Wood	(18)
--1 * 0 07 00 04 \7= \d18 FC
+-1 * 0 07 COMPATIBILITY_PARAM1 04 \7= \d18 FC
 //FIRS +	ECS Chemical	(4)
--1 * 0 07 00 04 \7= \d4 FC
+-1 * 0 07 COMPATIBILITY_PARAM1 04 \7= \d4 FC
 //FIRS +	ECS Chemical	+ Regearing	(132)
--1 * 0 07 00 04 \7= \d132 FC
+-1 * 0 07 COMPATIBILITY_PARAM1 04 \7= \d132 FC
 //FIRS +	ECS Chemical	+ ECS Machinery	(12)
--1 * 0 07 00 04 \7= \d12 FC
+-1 * 0 07 COMPATIBILITY_PARAM1 04 \7= \d12 FC
 //FIRS +	ECS Chemical	+ ECS Wood	(20)
--1 * 0 07 00 04 \7= \d20 FC
+-1 * 0 07 COMPATIBILITY_PARAM1 04 \7= \d20 FC
 //FIRS +	ECS Machinery	(8)
--1 * 0 07 00 04 \7= \d8 FC
+-1 * 0 07 COMPATIBILITY_PARAM1 04 \7= \d8 FC
 //FIRS +	ECS Machinery	+ Regearing	(136)
--1 * 0 07 00 04 \7= \d136 FC
+-1 * 0 07 COMPATIBILITY_PARAM1 04 \7= \d136 FC
 //FIRS +	ECS Machinery	+ ECS Wood	(24)
--1 * 0 07 00 04 \7= \d24 FC
+-1 * 0 07 COMPATIBILITY_PARAM1 04 \7= \d24 FC
 //FIRS +	ECS Machinery	+ ECS Wood	+ Regearing	(152)
--1 * 0 07 00 04 \7= \d152 FC
+-1 * 0 07 COMPATIBILITY_PARAM1 04 \7= \d152 FC
 //FIRS +	ECS Wood	(16)
--1 * 0 07 00 04 \7= \d16 FC
+-1 * 0 07 COMPATIBILITY_PARAM1 04 \7= \d16 FC
 //FIRS +	ECS Wood	+ Regearing	(144)
--1 * 0 07 00 04 \7= \d144 FC
+-1 * 0 07 COMPATIBILITY_PARAM1 04 \7= \d144 FC
 //FIRS +	ECS Construction	(32)
--1 * 0 07 00 04 \7= \d32 FC
+-1 * 0 07 COMPATIBILITY_PARAM1 04 \7= \d32 FC
 //FIRS +	ECS Agricultural	(64)
--1 * 0 07 00 04 \7= \d64 FC
+-1 * 0 07 COMPATIBILITY_PARAM1 04 \7= \d64 FC
 //FIRS +	Regearing	(128)
--1 * 0 07 00 04 \7= \d128 F0 	//do not notify about compatibility mode, as no cargos moved
+-1 * 0 07 COMPATIBILITY_PARAM1 04 \7= \d128 F0 	//do not notify about compatibility mode, as no cargos moved
 //Else goto error FD
 -1 * 0 07 9A 01 \71 00 FD
 

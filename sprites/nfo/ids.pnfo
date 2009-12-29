@@ -451,8 +451,10 @@
 #define STR_CRG_WATER_MUNIT                 81 00
 #define STR_CRG_WATER_TABBR                 A1 00
 
-// The parameter number which allows choosing a cargo payment scheme.
-#define SCHEME_PARAMETER \b04
+// The parameter numbers used by FIRS
+#define SCHEME_PARAMETER \b00      // Choice of the payment scheme (see acceptable values below)
+#define COMPATIBILITY_PARAM1 \b09  // Used internally in checks.pnfo. Not read
+#define COMPATIBILITY_PARAM2 \b10  // Used internally in checks.pnfo. Not read
 
 // The parameter values and their scheme names:
 #define SCHEME_DEFAULT \d02
