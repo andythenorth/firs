@@ -1,3 +1,9 @@
+// This file contains the properties of all cargos used by FIRS
+// Mind that the cargo classes are NOT separated by commata. They're defined in scripts/gen_cargos.awk.
+// Available cargo classes are: pax, mail, armoured, bulk, piece, liquid express, refrigerate, covered, hazardous, oversize
+// The climate availability template is defined in ids.pnfo
+// The action0 template used to define the action0s is cargos.template
+//
 //Properties:08 + div.	0E	0F	13+14	15	16				18	19	1A	--
 // CargoID		Sprite#	Weight	Colour	Freight	Cargo				Subst	Mult	Callback Climates
 //						status	classes				Towngrowth	Flags	template

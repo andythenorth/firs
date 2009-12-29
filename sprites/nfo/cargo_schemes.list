@@ -1,3 +1,7 @@
+// This file contains the cargo properties related to payment.
+// You can define different scheme names which then can be selected
+// via NewGRF parameter. See ids.pnfo for the connection between
+// scheme name and parameter value. 
 //Properties:08 + div.	--		10	11	12	
 // CargoID		SchemeName	t1	t2	BasePrice
 //
