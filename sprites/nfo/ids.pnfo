@@ -457,8 +457,9 @@
 #define COMPATIBILITY_PARAM2 \b10  // Used internally in checks.pnfo. Not read
 
 // The parameter values and their scheme names:
-#define SCHEME_DEFAULT \d02
-#define SCHEME_MINING  \d03
+#define SCHEME_DEFAULT \d00
+#define SCHEME_MINING  \d01
+#define SCHEME_FARMING \d02
 
 // Action7 to skip some cargos in certain climates
 #define CLIMATE_ALL       -1 * 0  0C "All climates"  // All climates
