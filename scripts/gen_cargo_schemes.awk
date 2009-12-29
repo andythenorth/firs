@@ -1,5 +1,6 @@
 BEGIN {	FS = "," } 
  {
+	print "-1 * 0  0C \"Defining "$(n_id)"\""
 	print "#define THIS_CARGO_ID CARGO_"remove_white($(n_id))
 	print "#define THIS_CARGO_SCHEME SCHEME_"remove_white($(n_scheme))
 	print "#define THIS_CARGO_T1 \\b"int($(n_t1))
