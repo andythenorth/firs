@@ -1,0 +1,38 @@
+THIS_CARGO_CLIMATE
+
+-1 * 0  00 0B \b16 01 THIS_CARGO_ID // Define Action0 for cargos, Define 16 properties for one cargo type
+	08 THIS_CARGO_BITMASK              // Bitmask
+	09 THIS_CARGO_STR_CTYPE            // String CargoClass
+	0A THIS_CARGO_STR_1TYPE            // String for one type
+	0B THIS_CARGO_STR_1UNIT            // String for one unit (singular)
+	0C THIS_CARGO_STR_MUNIT            // String for several units (plural)
+	0D THIS_CARGO_STR_TABBR            // String for abbreviation
+	0E THIS_CARGO_SPRITENO             // Some not used sprite no
+	0F THIS_CARGO_WEIGHT               // weight of one unit
+	13 THIS_CARGO_COLOUR               // colour used in station list window
+	14 THIS_CARGO_COLOUR               // colour used in cargo payment list window
+	15 THIS_CARGO_FREIGHTSTATUS        // 0=no freight, 1=freight. Used by AIs
+	16 THIS_CARGO_CARGOCLASSES         // Cargoclasses (2 bytes)
+	17 THIS_CARGO_CLABEL               // Carg label (4 bytes string)
+	18 THIS_CARGO_SUBST_TOWNGROWTH     // substitutes this cargo type to stimulate town growth
+	19 THIS_CARGO_MULT_TOWNGROWTH      // multiplier for town growth
+	1A THIS_CARGO_CALLBACKFLAGS        // callback flags (OpenTTD: only 01=CB39)
+	
+#undef THIS_CARGO_NAME
+#undef THIS_CARGO_ID
+#undef THIS_CARGO_BITMASK
+#undef THIS_CARGO_STR_CTYPE
+#undef THIS_CARGO_STR_1TYPE
+#undef THIS_CARGO_STR_1UNIT
+#undef THIS_CARGO_STR_MUNIT
+#undef THIS_CARGO_STR_TABBR
+#undef THIS_CARGO_SPRITENO
+#undef THIS_CARGO_WEIGHT
+#undef THIS_CARGO_COLOUR
+#undef THIS_CARGO_FREIGHTSTATUS
+#undef THIS_CARGO_CARGOCLASSES
+#undef THIS_CARGO_CLABEL
+#undef THIS_CARGO_SUBST_TOWNGROWTH
+#undef THIS_CARGO_MULT_TOWNGROWTH
+#undef THIS_CARGO_CALLBACKFLAGS
+#undef THIS_CARGO_CLIMATE

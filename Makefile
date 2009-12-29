@@ -85,8 +85,14 @@ endif
 	$(_E) "Templates: $(TEMPLATE_FILES)"
 	
 sprites/nfo/cargo_schemes.pnfo: sprites/nfo/cargo_schemes.list sprites/nfo/cargo_schemes.template
-	$(_E) "[Generationg Cargo schemes]"
+	$(_E) "[Generating Cargo schemes]"
 	$(_V) cat sprites/nfo/cargo_schemes.list | grep -v '//' | $(AWK) -f 'scripts/cargoschemes_fieldnames.awk' -f 'scripts/gen_cargo_schemes.awk' > $@
+
+sprites/nfo/cargos.pnfo: sprites/nfo/cargos.list sprites/nfo/cargos.template
+	$(_E) "[Generating Cargos]"
+	$(_V) cat sprites/nfo/cargos.list | grep -v '//' | $(AWK) -f 'scripts/cargos_fieldnames.awk' -f 'scripts/gen_cargos.awk' > $@
+
+	
 # Compile GRF
 grf : $(GRF_FILENAME)
 
@@ -125,6 +131,7 @@ $(REV_FILENAME):
 clean:
 	$(_E) "[CLEANING]"
 	$(_V)-rm -rf *.orig *.new *.pre *.bak *~ $(FILENAME)* $(SPRITEDIR)/$(FILENAME).* *.$(REV_SUFFIX) $(BANANAS_FILENAME)
+	$(_V)-rm -rf sprites/nfo/cargos.pnfo sprites/nfo/cargo_schemes.pnfo
 mrproper: clean
 	$(_V)-rm -rf $(DIR_NIGHTLY)* $(DIR_RELEASE)* $(DIR_RELEASE_SRC)
 	

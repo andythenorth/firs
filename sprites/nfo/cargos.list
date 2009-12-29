@@ -1,0 +1,37 @@
+//Properties:08 + div.	0E	0F	13+14	15	16				18	19	1A	--
+// CargoID		Sprite#	Weight	Colour	Freight	Cargo				Subst	Mult	Callback Climates
+//						status	classes				Towngrowth	Flags	template
+PASSENGERS,		FF FF,	 1,	152,	0,	pax,				00,	256,	00,	CLIMATE_ALL
+COAL,			FF FF,	16,	  6,	1,	bulk,				FF,	256,	00,	CLIMATE_ALL
+MAIL,			FF FF,	 4,	 15,	1,	mail,				02,	256,	00,	CLIMATE_ALL
+OIL,			FF FF,	14,	172,	1,	liquid,				FF,	256,	00,	CLIMATE_ALL
+LIVESTOCK,		FF FF,	 3,	209,	1,	piece,				FF,	256,	00,	CLIMATE_ALL
+GOODS,			FF FF,	 8,	194,	1,	express piece,			05,	256,	00,	CLIMATE_ALL
+GRAIN,			FF FF,	16,	191,	1,	bulk,				FF,	256,	00,	CLIMATE_NO_TROPIC
+SUGARCANE,		FF FF,	16,	 91,	1,	bulk,				FF,	256,	00,	CLIMATE_TROPIC
+WOOD,			FF FF,	16,	 55,	1,	bulk,				FF,	256,	00,	CLIMATE_ALL
+IRONORE,		FF FF,	16,	181,	1,	bulk,				FF,	256,	00,	CLIMATE_ALL
+STEEL,			FF FF,	16,	 10,	1,	piece,				FF,	256,	00,	CLIMATE_ALL
+WASTE,			FF FF,	16,	166,	1,	bulk,				FF,	256,	00,	CLIMATE_ALL
+FOOD,			FF FF,	16,	 48,	1,	refrigerate express,		0B,	256,	00,	CLIMATE_ALL
+MILK,			FF FF,	17,	153,	1,	liquid express refrigerate,	FF,	256,	00,	CLIMATE_ALL
+FRUITSANDVEGETABLES,	FF FF,	16,	206,	1,	express refrigerate,		FF,	256,	00,	CLIMATE_ALL
+FISH,			FF FF,	16,	147,	1,	express refrigerate,		FF,	256,	00,	CLIMATE_ALL
+COTTON,			FF FF,	16,	 39,	1,	piece,				FF,	256,	00,	CLIMATE_TROPIC
+WOOL,			FF FF,	16,	134,	1,	piece,				FF,	256,	00,	CLIMATE_NO_TROPIC
+GRAVEL,			FF FF,	16,	 16,	1,	bulk,				FF,	256,	00,	CLIMATE_ALL
+WATER,			FF FF,	16,	149,	1,	liquid,				09,	256,	00,	CLIMATE_TROPIC
+SAND,			FF FF,	16,	 64,	1,	bulk,				FF,	256,	00,	CLIMATE_NO_TROPIC
+LUMBER,			FF FF,	16,	 58,	1,	piece,				FF,	256,	00,	CLIMATE_ALL
+BAUXITE,		FF FF,	16,	184,	1,	bulk,				FF,	256,	00,	CLIMATE_ALL
+ALUMINIUM,		FF FF,	16,	 13,	1,	piece,				FF,	256,	00,	CLIMATE_ALL
+// Do we really want scrap metal as piece goods?,	
+SCRAPMETAL,		FF FF,	16,	 20,	1,	piece,				FF,	256,	00,	CLIMATE_ALL
+FUELOIL,		FF FF,	11,	175,	1,	liquid,				FF,	256,	00,	CLIMATE_ALL
+CHEMICALS,		FF FF,	10,	 86,	1,	liquid,				FF,	256,	00,	CLIMATE_ALL
+PACKAGING,		FF FF,	 5,	 44,	1,	piece express,			FF,	256,	00,	CLIMATE_ALL
+PARTS,			FF FF,	 9,	 41,	1,	piece express,			FF,	256,	00,	CLIMATE_ALL
+ENGINEERINGSUPPLIES,	FF FF,	10,	 79,	1,	piece,				FF,	256,	00,	CLIMATE_ALL
+FARMSUPPLIES,		FF FF,	 9,	 75,	1,	piece,				FF,	256,	00,	CLIMATE_ALL
+SURVEYSUPPLIES,		FF FF,	 7,	 71,	1,	piece express,			FF,	256,	00,	CLIMATE_ALL
+// Don't add a trailing empty line here!

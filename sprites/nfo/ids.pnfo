@@ -457,3 +457,9 @@
 // The parameter values and their scheme names:
 #define SCHEME_DEFAULT \b00
 #define SCHEME_MINING  \b01
+
+// Action7 to skip some cargos in certain climates
+#define CLIMATE_ALL       -1 * 0  0C "All climates"  // All climates
+#define CLIMATE_TROPIC    -1 * 0  07 83 01 \7! 02 01 // Only in tropical climate
+#define CLIMATE_NO_TROPIC -1 * 0  07 83 01 \7= 02 01 // Not in tropical climate
+
