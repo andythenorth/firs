@@ -452,14 +452,13 @@
 #define STR_CRG_WATER_TABBR                 A1 00
 
 // The parameter number which allows choosing a cargo payment scheme.
-#define SCHEME_PARAMETER \b01
+#define SCHEME_PARAMETER \b04
 
 // The parameter values and their scheme names:
-#define SCHEME_DEFAULT \b00
-#define SCHEME_MINING  \b01
+#define SCHEME_DEFAULT \d02
+#define SCHEME_MINING  \d03
 
 // Action7 to skip some cargos in certain climates
 #define CLIMATE_ALL       -1 * 0  0C "All climates"  // All climates
 #define CLIMATE_TROPIC    -1 * 0  07 83 01 \7! 02 01 // Only in tropical climate
 #define CLIMATE_NO_TROPIC -1 * 0  07 83 01 \7= 02 01 // Not in tropical climate
-

@@ -1,7 +1,7 @@
 //Properties:08 + div.	--		10	11	12	
 // CargoID		SchemeName	t1	t2	BasePrice
 //
-PASSENGERS,		DEFAULT,	 0,	 22,	3185
+PASSENGERS,		DEFAULT,	 0,	 22,	99999999
 COAL,			DEFAULT,	 7,	255,	5916
 MAIL,			DEFAULT,	 6,	 24,	5916
 OIL,			DEFAULT,	25,	255,	4437
@@ -37,7 +37,7 @@ SURVEYSUPPLIES,		DEFAULT,	10,	 36,	5628
 //Properties:08 + div.	--		10	11	12	
 // CargoID		SchemeName	t1	t2	BasePrice
 //
-PASSENGERS,		MINING,	 	 0,	 22,	4099
+PASSENGERS,		MINING,	 	 0,	 22,	10
 COAL,			MINING,	 	 7,	255,	5916
 MAIL,			MINING,		 6,	 24,	5916
 OIL,			MINING,		25,	255,	4437
@@ -69,4 +69,3 @@ PARTS,			MINING,		18,	 60,	6231
 ENGINEERINGSUPPLIES,	MINING,		10,	 36,	5781
 FARMSUPPLIES,		MINING,		10,	 36,	5268
 SURVEYSUPPLIES,		MINING,		10,	 36,	5628
-// Don't add a trailing empty line here!

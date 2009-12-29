@@ -1,4 +1,7 @@
--1 * 0  07 SCHEME_PARAMETER 01 \7! THIS_CARGO_SCHEME \b01     // skip one action, if the parameter doesn't match.
+// Template file which sets the cargo payment rates depending upon the grf parameters.
+-1 * 0  0C "Cargo payment for THIS_COMMENT" 00
+-1 * 0  0C \b04 \D= FF FF \d02 // not used | useful to make this an action D when debugging params
+-1 * 0  07 SCHEME_PARAMETER 04 \7! THIS_CARGO_SCHEME \b01     // skip one action, if the parameter doesn't match.
 -1 * 0  00 0B \b03 \b01 THIS_CARGO_ID // define three properties for the given cargoID.
 	10 THIS_CARGO_T1              // Penalty time 1
 	11 THIS_CARGO_T2              // Penalty time 2
