@@ -21,47 +21,164 @@
 	0B 00 00 //tile acceptance 2
 	0C 00 00 //tile acceptance 3
 	0D 20 //land shape flags: 10 = only on flat land
-	0E 10 // callback flacks // use custom shape check cb25
+	0E 30 // callback flacks // use custom shape check cb25, decide drawing default foundations cb30
 
 
 //Industry tile sprites; one sprite for each tile; eventually more for each tile to include  construction stages
 
 //Tile action 1
--1 * 0 01 09 \b2 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
+-1 * 0 01 09 \b18 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
 // Format: spritenum pcxfile xpos ypos compression ysize xsize xrel yrel
-// extension tiles
--1 sprites/pcx/industries/fishingharbour.pcx 10  10 09 39 64 -31 -8
--1 sprites/pcx/industries/fishingharbour.pcx 80  10 09 39 64 -31 -8
+// extension tile NE->SW  | also  SW -> NE
+-1 sprites/pcx/industries/fishingharbour.pcx  10 10  09  39 64 -31 -8
+// extension tile SE->NW  | also  NW -> SE 
+-1 sprites/pcx/industries/fishingharbour.pcx  80 10  09  39 64 -31 -8
+// end tiles
+-1 sprites/pcx/industries/fishingharbour.pcx   10 60  09  39 64 -31 -8
+-1 sprites/pcx/industries/fishingharbour.pcx   80 60  09  39 64 -31 -8
+-1 sprites/pcx/industries/fishingharbour.pcx  150 60  09  39 64 -31 -8
+-1 sprites/pcx/industries/fishingharbour.pcx  220 60  09  39 64 -31 -8
+// corner tiles
+-1 sprites/pcx/industries/fishingharbour.pcx  10 110  09  39 64 -31 -8
+-1 sprites/pcx/industries/fishingharbour.pcx  80 110  09  39 64 -31 -8
+-1 sprites/pcx/industries/fishingharbour.pcx  10 110  09  39 64 -31 -8
+-1 sprites/pcx/industries/fishingharbour.pcx  80 110  09  39 64 -31 -8
+// wharf-meets-coast tiles NW->SE  
+-1 sprites/pcx/industries/fishingharbour.pcx  580 10  09  74 64 -31 -19
+-1 sprites/pcx/industries/fishingharbour.pcx  650 10  09  74 64   1 -43
+// wharf-meets-coast tiles NE->SW
+-1 sprites/pcx/industries/fishingharbour.pcx  10 10  09  39 64 -31 -8
+-1 sprites/pcx/industries/fishingharbour.pcx  80 10  09  39 64 -31 -8
+// building tiles
+-1 sprites/pcx/industries/fishingharbour.pcx  440 10  09  74 64 -31 -28
+-1 sprites/pcx/industries/fishingharbour.pcx  510 10  09  74 64   1 -52
+// boat lift tiles
+-1 sprites/pcx/industries/fishingharbour.pcx  440 110  09  74 64 -31 -19
+-1 sprites/pcx/industries/fishingharbour.pcx  510 110  09  74 64   1 -43
+
 
 //wharf extension tiles action 2 apply graphics
 -1 * 0 02 09 00 00 //-1 * 0 02 09 <set-id> 00
-	\d1458 //groundsprite
+	\dx80008000 //groundsprite
 	\dx80008000 //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b16 //xextent yextent zextent
 -1 * 0 02 09 01 00 //-1 * 0 02 09 <set-id> 00
-	\d1458 //groundsprite
+	\dx80008001 //groundsprite
 	\dx80008001 //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b16 //xextent yextent zextent
+	
+//wharf end tiles action 2 apply graphics
+-1 * 0 02 09 02 00 //-1 * 0 02 09 <set-id> 00
+	\dx80008002 //groundsprite
+	\dx0 //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b16 //xextent yextent zextent
+-1 * 0 02 09 03 00 //-1 * 0 02 09 <set-id> 00
+	\dx80008003 //groundsprite
+	\dx0 //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b16 //xextent yextent zextent
+-1 * 0 02 09 04 00 //-1 * 0 02 09 <set-id> 00
+	\dx80008004 //groundsprite
+	\dx0 //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b16 //xextent yextent zextent
+-1 * 0 02 09 05 00 //-1 * 0 02 09 <set-id> 00
+	\dx80008005 //groundsprite
+	\dx0 //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b16 //xextent yextent zextent
+
+//wharf corner tiles action 2 apply graphics
+-1 * 0 02 09 06 00 //-1 * 0 02 09 <set-id> 00
+	\dx80008006 //groundsprite
+	\dx0 //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b16 //xextent yextent zextent
+-1 * 0 02 09 07 00 //-1 * 0 02 09 <set-id> 00
+	\dx80008007 //groundsprite
+	\dx0 //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b16 //xextent yextent zextent
+-1 * 0 02 09 08 00 //-1 * 0 02 09 <set-id> 00
+	\dx80008008 //groundsprite
+	\dx0 //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b16 //xextent yextent zextent
+-1 * 0 02 09 09 00 //-1 * 0 02 09 <set-id> 00
+	\dx80008009 //groundsprite
+	\dx0 //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b16 //xextent yextent zextent
+
+//wharf-meets-coast NW->SE tiles action 2 apply graphics
+-1 * 0 02 09 0A 00 //-1 * 0 02 09 <set-id> 00
+	\dx8000800A //groundsprite
+	\dx8000800E //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b16 //xextent yextent zextent
+-1 * 0 02 09 0B 00 //-1 * 0 02 09 <set-id> 00
+	\dx8000800B //groundsprite
+	\dx8000800F //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b16 //xextent yextent zextent
+//wharf-meets-coast NE->SW tiles action 2 apply graphics
+-1 * 0 02 09 0C 00 //-1 * 0 02 09 <set-id> 00
+	\dx8000800C //groundsprite
+	\dx8000800C //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b16 //xextent yextent zextent
+-1 * 0 02 09 0D 00 //-1 * 0 02 09 <set-id> 00
+	\dx8000800D //groundsprite
+	\dx8000800D //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b16 //xextent yextent zextent
+
+//boat lift tiles action 2 apply graphics
+-1 * 0 02 09 0E 00 //-1 * 0 02 09 <set-id> 00
+	\dx00 //groundsprite
+	\dx80008010 //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b16 //xextent yextent zextent
+-1 * 0 02 09 0F 00 //-1 * 0 02 09 <set-id> 00
+	\dx00 //groundsprite
+	\dx80008011 //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b16 //xextent yextent zextent
+
 
 -1 * 0 02 09 B1 //Layout 1 
 	85 43 //check relative position (00yx[YYXX])
 	00 FF FF //don't shift, don't mask
 	\b2 //number of ranges to check (number of tiles)
 	//pit
-	\wx00   00 00  00 00
+	\wx01   00 00  00 00
 	\wx01   01 00  01 00
-	\wx00 // <default>
+	\wx01 // <default>
+  
+-1 * 0 02 09 B4 //Layout 1 
+	85 43 //check relative position (00yx[YYXX])
+	00 FF FF //don't shift, don't mask
+	\b6 //number of ranges to check (number of tiles)
+	//pit
+	\wx0A   00 00  00 00
+	\wx0B   00 01  00 01
+	\wx01   00 02  00 02
+	\wx01   00 03  00 03
+	\wx0E   01 00  01 00
+	\wx0F   01 01  01 01
+	\wx00 // <default>  
   
 -1 * 0 02 09 A0 
 	82 44 //check layout number (lowest byte of related industry)
 	00 FF //don't shift, don't mask
 	\b4 //number of ranges to check (number of layouts)
 	\wxB1 \b1 \b1 //<set-id \w> <low-range> <high-range>
-	\wxB1 \b2 \b2 //<set-id \w> <low-range> <high-range>
-	\wxB1 \b3 \b3 //<set-id \w> <low-range> <high-range>
-	\wxB1 \b4 \b4 //<set-id \w> <low-range> <high-range>
+	\wx00 \b2 \b2 //<set-id \w> <low-range> <high-range>
+	\wx00 \b3 \b3 //<set-id \w> <low-range> <high-range>
+	\wxB4 \b4 \b4 //<set-id \w> <low-range> <high-range>
 	\wx00 //<default> (first tile layout available)
 
 //Tiles varaction 2 chain
@@ -79,15 +196,16 @@
    
 -1 * 0 02 09 C0 //Handle callbacks
 	81 0C 00 FF //no shift, no mask
-	\b2 //range
+	\b3 //range
     C1 00 2B 2B //cargo acceptance cb 2B
 	  F0 00 2F 2F //custom shape check cb 2F
+	  01 80 30 30 //disable drawing default foundations cb30
   A0 00 //default
 
 //Action3 attach sprites to industry tile
 
 //Tile action 3
--1 * 0 03 09 01 TILE_FISHINGHARBOUR_1 00 \wx00 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
+-1 * 0 03 09 01 TILE_FISHINGHARBOUR_1 00 \wxC0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
 //Tile action 3
 -1 * 0 03 09 01 TILE_FISHINGHARBOUR_2 00 \wxC0 //-1 * 0 03 09 <n-ids> <id> 01 <def-cid>
 
@@ -99,10 +217,12 @@
 -1 * 0 00 0A \b26 01 IND_FISHINGHARBOUR //-1 * 0 00 0A <num-props> 01 <id>
 	08 IND_NULL //reuse original industry with this here ID
 	0A 04 //number of industry layouts
-		\d52 //size of layout definition +2 for termination
+		\d83 //size of layout definition +2 for termination
 		//layout 1:  Coast runs SW -> NE, Harbour Faces NW
 			00 00 FE TILE_FISHINGHARBOUR_1 00 //xoffs yoffs FE newtile(W)
-			00 01 FE TILE_FISHINGHARBOUR_2 00 //xoffs yoffs FE newtile(W)
+			00 01 FE TILE_FISHINGHARBOUR_1 00 //xoffs yoffs FE newtile(W)
+			00 02 FE TILE_FISHINGHARBOUR_1 00 //xoffs yoffs FE newtile(W)
+			00 03 FE TILE_FISHINGHARBOUR_2 00 //xoffs yoffs FE newtile(W)
 		00 80 //terminate layout definition
 		//layout 2:  Coast runs NW -> SE, Harbour Faces NE
 			00 00 FE TILE_FISHINGHARBOUR_1 00 //xoffs yoffs FE newtile(W)
@@ -116,6 +236,10 @@
 		//layout 4:  Coast runs SW -> NE, Harbour faces SE
 			00 00 FE TILE_FISHINGHARBOUR_2 00 //xoffs yoffs FE newtile(W)
 			00 01 FE TILE_FISHINGHARBOUR_1 00 //xoffs yoffs FE newtile(W)
+			00 02 FE TILE_FISHINGHARBOUR_1 00 //xoffs yoffs FE newtile(W)
+			00 03 FE TILE_FISHINGHARBOUR_1 00 //xoffs yoffs FE newtile(W)
+			01 00 FE TILE_FISHINGHARBOUR_2 00 //xoffs yoffs FE newtile(W)
+			01 01 FE TILE_FISHINGHARBOUR_1 00 //xoffs yoffs FE newtile(W)
 		00 80 //terminate layout definition
 	0B 02 //production flags 1h=extractive, 2h=organic, 4h=processing
 	0C STR_IND_CLOSE_GENERIC //industry closure message
