@@ -27,10 +27,13 @@
 //Industry tile sprites; one sprite for each tile; eventually more for each tile to include  construction stages
 
 //Tile action 1
--1 * 0 01 09 \b2 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
+-1 * 0 01 09 \b4 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
 // Format: spritenum pcxfile xpos ypos compression ysize xsize xrel yrel
--1 sprites/pcx/industries/fishingharbour.pcx 10 10 09 67 64 -31 -36
--1 sprites/pcx/industries/fishingharbour.pcx 10 10 09 1 1 -31 -29
+// extension tiles
+-1 sprites/pcx/industries/fishingharbour.pcx 10  10 09 39 64 -31 -8
+-1 sprites/pcx/industries/fishingharbour.pcx 80  10 09 39 64 -31 -8
+-1 sprites/pcx/industries/fishingharbour.pcx 150 10 09 39 64 -31 -8
+-1 sprites/pcx/industries/fishingharbour.pcx 220 10 09 39 64 -31 -8
 
 //Tiles action 2 apply graphics
 -1 * 0 02 09 00 00 //-1 * 0 02 09 <set-id> 00
