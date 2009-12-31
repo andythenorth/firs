@@ -29,17 +29,17 @@
 //Tile action 1
 -1 * 0 01 09 \b2 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
 // Format: spritenum pcxfile xpos ypos compression ysize xsize xrel yrel
--1 sprites/pcx/industries/wastecollectionpoint.pcx 10 10 09 31 64 -31 0
--1 sprites/pcx/industries/generictiles.pcx 10 10 09  54 64 -31 -23
+-1 sprites/pcx/industries/fishingharbour.pcx 10 10 09 67 64 -31 -36
+-1 sprites/pcx/industries/fishingharbour.pcx 10 10 09 1 1 -31 -29
 
 //Tiles action 2 apply graphics
 -1 * 0 02 09 00 00 //-1 * 0 02 09 <set-id> 00
-	\d3981 //groundsprite
+	\d1458 //groundsprite
 	\dx80008000 //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b16 //xextent yextent zextent
 -1 * 0 02 09 01 00 //-1 * 0 02 09 <set-id> 00
-	\d3981 //groundsprite
+	\d3924 //groundsprite
 	\dx80008001 //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b16 //xextent yextent zextent
@@ -75,7 +75,7 @@
 -1 * 0 00 0A \b26 01 IND_FISHINGHARBOUR //-1 * 0 00 0A <num-props> 01 <id>
 	08 IND_NULL //reuse original industry with this here ID
 	0A 04 //number of industry layouts
-		\d48 //size of layout definition +2 for termination
+		\d52 //size of layout definition +2 for termination
 		//layout:
 			00 00 FE TILE_FISHINGHARBOUR_1 00 //xoffs yoffs FE newtile(W)
 			01 00 FE TILE_FISHINGHARBOUR_2 00 //xoffs yoffs FE newtile(W)
@@ -87,6 +87,7 @@
 		//layout:
 			00 00 FE TILE_FISHINGHARBOUR_2 00 //xoffs yoffs FE newtile(W)
 			01 00 FE TILE_FISHINGHARBOUR_1 00 //xoffs yoffs FE newtile(W)
+			02 00 FE TILE_FISHINGHARBOUR_1 00 //xoffs yoffs FE newtile(W)
 		00 80 //terminate layout definition
 		//layout:
 			00 00 FE TILE_FISHINGHARBOUR_2 00 //xoffs yoffs FE newtile(W)
