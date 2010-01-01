@@ -27,7 +27,7 @@
 //Industry tile sprites; one sprite for each tile; eventually more for each tile to include  construction stages
 
 //Tile action 1
--1 * 0 01 09 \b22 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
+-1 * 0 01 09 \b24 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
 // Format: spritenum pcxfile xpos ypos compression ysize xsize xrel yrel
 // extension tile NE->SW  | also  SW -> NE
 -1 sprites/pcx/industries/fishingharbour.pcx  10 10  09  39 64 -31 -8
@@ -43,10 +43,10 @@
 -1 sprites/pcx/industries/fishingharbour.pcx  80 110  09  39 64 -31 -8
 -1 sprites/pcx/industries/fishingharbour.pcx  10 110  09  39 64 -31 -8
 -1 sprites/pcx/industries/fishingharbour.pcx  80 110  09  39 64 -31 -8
-// wharf-meets-coast tiles NW->SE  
+// wharf-meets-coast tiles harbour faces NW->SE  
 -1 sprites/pcx/industries/fishingharbour.pcx  580 10  09  74 64 -31 -19
 -1 sprites/pcx/industries/fishingharbour.pcx  650 10  09  74 64   1 -43
-// wharf-meets-coast tiles NE->SW
+// wharf-meets-coast tiles harbour faces NE->SW
 -1 sprites/pcx/industries/fishingharbour.pcx  720 10  09  74 64 -31 -43
 -1 sprites/pcx/industries/fishingharbour.pcx  790 10  09  74 64   1 -19
 // shed tiles
@@ -62,6 +62,10 @@
 -1 sprites/pcx/industries/fishingharbour.pcx  10 10  09  39 64 -31 0
 // wharf-on-coast (compensates for foundations) tile SE->NW  | also  NW -> SE 
 -1 sprites/pcx/industries/fishingharbour.pcx  80 10  09  39 64 -31 0
+// wharf-meets-coast tiles harbour faces SE->NW
+-1 sprites/pcx/industries/fishingharbour.pcx  290 60  09  39 64 -31 0
+// wharf-meets-coast tiles harbour faces SW->NW
+-1 sprites/pcx/industries/fishingharbour.pcx  360 60  09  39 64 -31 0
 // end tiles
 
 
@@ -167,13 +171,13 @@
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b16 //xextent yextent zextent
 
-//wharf on coast NW->SE empty (compensate for foundations) tiles action 2 apply graphics (extended format)
--1 * 0 02 09 12 01 //-1 * 0 02 09 <set-id> 00
+//wharf on coast NW->SE empty (compensate for foundations) tiles action 2 apply graphics
+-1 * 0 02 09 12 00 //-1 * 0 02 09 <set-id> 00
 	\dx80008015 //groundsprite
 	\dx80008015 //building sprite
-	\b0 \b0 \b0 //xofs yofs zofs
+	\b0 \b0 //xofs yofs
 	\b16 \b16 \b16 //xextent yextent zextent
-//wharf on coast NW->SE shed (compensate for foundations) tiles action 2 apply graphics (extended format)
+//wharf on coast NW->SE shed (compensate for foundations) tiles action 2 apply graphics
 -1 * 0 02 09 13 00 //-1 * 0 02 09 <set-id> 00
 	\dx80008015 //groundsprite
 	\dx8000800E //building sprite
@@ -184,16 +188,39 @@
 	\dx8000800F //building sprite
 	\b4 \b4 //xofs yofs
 	\b16 \b16 \b16 //xextent yextent zextent
-
+//wharf on coast, harbour faces SE->NW empty tiles action 2 apply graphics
+-1 * 0 02 09 15 00 //-1 * 0 02 09 <set-id> 00
+	\dx80008016 //groundsprite
+	\dx80008016 //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b16 //xextent yextent zextent
+//wharf on coast, harbour faces SW->NE empty tiles action 2 apply graphics
+-1 * 0 02 09 16 00 //-1 * 0 02 09 <set-id> 00
+	\dx80008017 //groundsprite
+	\dx80008017 //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b16 //xextent yextent zextent
 
 
 -1 * 0 02 09 B1 //Layout 1 
 	85 43 //check relative position (00yx[YYXX])
 	00 FF FF //don't shift, don't mask
-	\b2 //number of ranges to check (number of tiles)
+	\b3 //number of ranges to check (number of tiles)
 	//pit
-	\wx01   00 00  00 00
-	\wx01   01 00  01 00
+	\wx01   00 01  00 01
+	\wx01   00 02  00 02
+	\wx15   00 03  00 03
+	\wx01 // <default>
+
+-1 * 0 02 09 B2 //Layout 1 
+	85 43 //check relative position (00yx[YYXX])
+	00 FF FF //don't shift, don't mask
+	\b4 //number of ranges to check (number of tiles)
+	//pit
+	\wx00   01 00  00 00
+	\wx16   02 00  02 00
+	\wx16   02 01  02 01
+	\wx16   02 02  02 02
 	\wx01 // <default>
 
 -1 * 0 02 09 B3 //Layout 1 
@@ -229,7 +256,7 @@
 	00 FF //don't shift, don't mask
 	\b4 //number of ranges to check (number of layouts)
  	\wxB1 \b1 \b1 //<set-id \w> <low-range> <high-range>
-	\wx00 \b2 \b2 //<set-id \w> <low-range> <high-range>
+	\wxB2 \b2 \b2 //<set-id \w> <low-range> <high-range>
 	\wxB3 \b3 \b3 //<set-id \w> <low-range> <high-range>
 	\wxB4 \b4 \b4 //<set-id \w> <low-range> <high-range>
 	\wx00 //<default> (first tile layout available)
@@ -270,16 +297,19 @@
 -1 * 0 00 0A \b26 01 IND_FISHINGHARBOUR //-1 * 0 00 0A <num-props> 01 <id>
 	08 IND_NULL //reuse original industry with this here ID
 	0A 04 //number of industry layouts
-		\d112 //size of layout definition +2 for termination
+		\d128 //size of layout definition +2 for termination
 		//layout 1:  Coast runs SW -> NE, Harbour Faces NW
-			00 00 FE TILE_FISHINGHARBOUR_1 00 //xoffs yoffs FE newtile(W)
+			00 00 FF // special clearance tile - nothing built
 			00 01 FE TILE_FISHINGHARBOUR_1 00 //xoffs yoffs FE newtile(W)
 			00 02 FE TILE_FISHINGHARBOUR_1 00 //xoffs yoffs FE newtile(W)
 			00 03 FE TILE_FISHINGHARBOUR_2 00 //xoffs yoffs FE newtile(W)
 		00 80 //terminate layout definition
 		//layout 2:  Coast runs NW -> SE, Harbour Faces NE
-			00 00 FE TILE_FISHINGHARBOUR_1 00 //xoffs yoffs FE newtile(W)
-			01 00 FE TILE_FISHINGHARBOUR_2 00 //xoffs yoffs FE newtile(W)
+			00 00 FF // special clearance tile - nothing built
+			01 00 FE TILE_FISHINGHARBOUR_1 00 //xoffs yoffs FE newtile(W)
+			02 00 FE TILE_FISHINGHARBOUR_2 00 //xoffs yoffs FE newtile(W)
+			02 01 FE TILE_FISHINGHARBOUR_2 00 //xoffs yoffs FE newtile(W)
+			02 02 FE TILE_FISHINGHARBOUR_2 00 //xoffs yoffs FE newtile(W)
 		00 80 //terminate layout definition
 		//layout 3:  Coast runs NW -> SE, Harbour faces SW
 			00 00 FE TILE_FISHINGHARBOUR_2 00 //xoffs yoffs FE newtile(W)
