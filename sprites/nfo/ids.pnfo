@@ -2,7 +2,7 @@
 #define IND_NULL                  00
 #define IND_COALMINE              00
 #define IND_IRONOREMINE           04
-#define IND_BAUXITEMINE           0A
+#define IND_BAUXITEMINE           05
 #define IND_SANDPIT               17
 #define IND_GRAVELQUARRY          15
 #define IND_DREDGINGSITE          14
@@ -105,6 +105,7 @@
 #define TILE_GENERALSTORE_1                C2
 #define TILE_FISHINGHARBOUR_1              C3
 #define TILE_FISHINGHARBOUR_2              C4
+#define TILE_BAUXITE_MINE_1                  C5
 
 
 // Definition of the cargo bits/IDs
