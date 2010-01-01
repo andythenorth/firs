@@ -27,7 +27,7 @@
 //Industry tile sprites; one sprite for each tile; eventually more for each tile to include  construction stages
 
 //Tile action 1
--1 * 0 01 09 \b24 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
+-1 * 0 01 09 \b26 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
 // Format: spritenum pcxfile xpos ypos compression ysize xsize xrel yrel
 // extension tile NE->SW  | also  SW -> NE
 -1 sprites/pcx/industries/fishingharbour.pcx  10 10  09  39 64 -31 -8
@@ -44,16 +44,16 @@
 -1 sprites/pcx/industries/fishingharbour.pcx  10 110  09  39 64 -31 -8
 -1 sprites/pcx/industries/fishingharbour.pcx  80 110  09  39 64 -31 -8
 // wharf-meets-coast tiles harbour faces NW->SE  
--1 sprites/pcx/industries/fishingharbour.pcx  580 10  09  74 64 -31 -19
+-1 sprites/pcx/industries/fishingharbour.pcx  580 10  09  74 64 -31 -27
 -1 sprites/pcx/industries/fishingharbour.pcx  650 10  09  74 64   1 -43
 // wharf-meets-coast tiles harbour faces NE->SW
 -1 sprites/pcx/industries/fishingharbour.pcx  720 10  09  74 64 -31 -43
 -1 sprites/pcx/industries/fishingharbour.pcx  790 10  09  74 64   1 -19
 // shed tiles
--1 sprites/pcx/industries/fishingharbour.pcx  440 10  09  74 64 -31 -28
+-1 sprites/pcx/industries/fishingharbour.pcx  440 10  09  74 64 -31 -36
 -1 sprites/pcx/industries/fishingharbour.pcx  510 10  09  74 64   1 -52
 // boat lift tiles
--1 sprites/pcx/industries/fishingharbour.pcx  440 110  09  74 64 -31 -19
+-1 sprites/pcx/industries/fishingharbour.pcx  440 110  09  74 64 -31 -27
 -1 sprites/pcx/industries/fishingharbour.pcx  510 110  09  74 64   1 -43
 // fishing boat tiles
 -1 sprites/pcx/industries/fishingharbour.pcx  290 10  09  39 64 -31 -8
@@ -64,20 +64,24 @@
 -1 sprites/pcx/industries/fishingharbour.pcx  80 10  09  39 64 -31 0
 // wharf-meets-coast tiles harbour faces SE->NW
 -1 sprites/pcx/industries/fishingharbour.pcx  290 60  09  39 64 -31 0
-// wharf-meets-coast tiles harbour faces SW->NW
+// wharf-meets-coast tiles harbour faces SW->NE
 -1 sprites/pcx/industries/fishingharbour.pcx  360 60  09  39 64 -31 0
+// foundation full 2 angles tiles
+-1 sprites/pcx/industries/fishingharbour.pcx  10 160  09  39 64 -31 -8
+// foundation slope single angles tiles harbour faces SE->NW
+-1 sprites/pcx/industries/fishingharbour.pcx  290 160  09  39 64 -31 -8
 // end tiles
 
 
 //wharf extension tiles action 2 apply graphics
 -1 * 0 02 09 00 00 //-1 * 0 02 09 <set-id> 00
-	\dx80008000 //groundsprite
-	\dx80008000 //building sprite
+	\dx80008018 //groundsprite
+	\dxC0008000 //building sprite   // ! bit 30 set to prevent transparency
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b16 //xextent yextent zextent
 -1 * 0 02 09 01 00 //-1 * 0 02 09 <set-id> 00
-	\dx80008001 //groundsprite
-	\dx80008001 //building sprite
+	\dx80008018 //groundsprite
+	\dxC0008001 //building sprite  // ! bit 30 set to prevent transparency
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b16 //xextent yextent zextent
 	
@@ -151,12 +155,12 @@
 //boat lift tiles action 2 apply graphics
 -1 * 0 02 09 0E 00 //-1 * 0 02 09 <set-id> 00
 	\dx4061 //groundsprite
-	\dx80008010 //building sprite
+	\dxC0008010 //building sprite  // ! bit 30 set to prevent transparency
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b16 //xextent yextent zextent
 -1 * 0 02 09 0F 00 //-1 * 0 02 09 <set-id> 00
 	\dx4061 //groundsprite
-	\dx80008011 //building sprite
+	\dxC0008011 //building sprite  // ! bit 30 set to prevent transparency
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b16 //xextent yextent zextent
 //fishing boat tiles action 2 apply graphics
@@ -190,15 +194,18 @@
 	\b16 \b16 \b16 //xextent yextent zextent
 //wharf on coast, harbour faces SE->NW empty tiles action 2 apply graphics
 -1 * 0 02 09 15 00 //-1 * 0 02 09 <set-id> 00
-	\dx80008016 //groundsprite
-	\dx80008016 //building sprite
+	\dxC0008019 //groundsprite  // ! bit 30 set to prevent transparency
+	\dxC0008001 //building sprite  // ! bit 30 set to prevent transparency
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b16 //xextent yextent zextent
-//wharf on coast, harbour faces SW->NE empty tiles action 2 apply graphics
--1 * 0 02 09 16 00 //-1 * 0 02 09 <set-id> 00
-	\dx80008017 //groundsprite
+//wharf on coast, harbour faces SW->NE empty tiles action 2 apply graphics 
+-1 * 0 02 09 16 02 //-1 * 0 02 09 <set-id> 01 (extended format)
+	\d00 //groundsprite
+	\dxC0008017 //building sprite  // ! bit 30 set to prevent transparency
+	\b0 \b0 \b0 //xofs yofs zofs
+	\b16 \b16 \b7 //xextent yextent zextent
 	\dx80008017 //building sprite
-	\b0 \b0 //xofs yofs
+	\b0 \b0 \b0 //xofs yofs zofs
 	\b16 \b16 \b16 //xextent yextent zextent
 
 
@@ -279,7 +286,7 @@
 	\b3 //range
     C1 00 2B 2B //cargo acceptance cb 2B
 	  F0 00 2F 2F //custom shape check cb 2F
-	  01 80 30 30 //disable drawing default foundations cb30
+	  00 80 30 30 //disable drawing default foundations cb30
   A0 00 //default
 
 //Action3 attach sprites to industry tile
