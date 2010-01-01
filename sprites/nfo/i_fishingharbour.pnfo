@@ -234,7 +234,7 @@
 -1 * 0 00 0A \b26 01 IND_FISHINGHARBOUR //-1 * 0 00 0A <num-props> 01 <id>
 	08 IND_NULL //reuse original industry with this here ID
 	0A 04 //number of industry layouts
-		\d88 //size of layout definition +2 for termination
+		\d94 //size of layout definition +2 for termination
 		//layout 1:  Coast runs SW -> NE, Harbour Faces NW
 			00 00 FE TILE_FISHINGHARBOUR_1 00 //xoffs yoffs FE newtile(W)
 			00 01 FE TILE_FISHINGHARBOUR_1 00 //xoffs yoffs FE newtile(W)
@@ -255,9 +255,11 @@
 			00 01 FE TILE_FISHINGHARBOUR_1 00 //xoffs yoffs FE newtile(W)
 			00 02 FE TILE_FISHINGHARBOUR_1 00 //xoffs yoffs FE newtile(W)
 			00 03 FE TILE_FISHINGHARBOUR_1 00 //xoffs yoffs FE newtile(W)
+			00 04 FF
 			01 00 FE TILE_FISHINGHARBOUR_2 00 //xoffs yoffs FE newtile(W)
 			01 01 FE TILE_FISHINGHARBOUR_1 00 //xoffs yoffs FE newtile(W)
 			01 03 FE TILE_FISHINGHARBOUR_1 00 //xoffs yoffs FE newtile(W)
+			01 04 FF
 		00 80 //terminate layout definition
 	0B 02 //production flags 1h=extractive, 2h=organic, 4h=processing
 	0C STR_IND_CLOSE_GENERIC //industry closure message
