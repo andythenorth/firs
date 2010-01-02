@@ -56,8 +56,8 @@
 -1 sprites/pcx/industries/fishingharbour.pcx  290 110  09  39 64 -15 -11
 -1 sprites/pcx/industries/fishingharbour.pcx  360 110  09  39 64 -27 -12
 // boat lift tiles
--1 sprites/pcx/industries/fishingharbour.pcx  440 110  09  74 64 -31 -27
--1 sprites/pcx/industries/fishingharbour.pcx  510 110  09  74 64   1 -43
+-1 sprites/pcx/industries/fishingharbour.pcx  440 110  09  74 64 -31 -26
+-1 sprites/pcx/industries/fishingharbour.pcx  510 110  09  74 64   1 -42
 // end tiles
 
 // Tile Action 2 ID scheme:
@@ -521,7 +521,7 @@
     \wx82   01 00  01 00
     \wx82   01 01  01 01
     \wx95   02 00  02 00
-    \wxF1   02 01  02 01
+    \wx21   02 01  02 01
     \wx80   02 02  02 02
     \wxF1   03 01  03 01
     \wxF0   03 02  03 02
@@ -543,14 +543,16 @@
 -1 * 0 02 09 B4 //Layout 
 	85 43 //check relative position (00yx[YYXX])
 	00 FF FF //don't shift, don't mask
-	\b7 //number of ranges to check (number of tiles)
+	\b9 //number of ranges to check (number of tiles)
     \wxF1   00 00  00 00
     \wx20   00 01  00 01
     \wx00   00 02  00 02
-    \wx93   00 03  00 03
-    \wx40   01 00  01 00
-    \wx41   01 01  01 01
-    \wx84   01 03  01 03
+    \wx00   00 03  00 03
+    \wx93   00 04  00 04
+    \wxF0   01 00  01 00
+    \wx40   01 01  01 01
+    \wx41   01 02  01 02
+    \wx84   01 04  01 04
 	\wx00 // <default>  
   
 -1 * 0 02 09 A0 
@@ -599,7 +601,7 @@
 -1 * 0 00 0A \b26 01 IND_FISHINGHARBOUR //-1 * 0 00 0A <num-props> 01 <id>
 	08 IND_NULL //reuse original industry with this here ID
 	0A 04 //number of industry layouts
-		\d184 //size of layout definition +2 for termination
+		\d194 //size of layout definition +2 for termination
 		//layout 1:  Coast runs SW -> NE, Harbour Faces NW
 			00 03 FE TILE_FISHINGHARBOUR_1 00 //xoffs yoffs FE newtile(W)
 			00 04 FE TILE_FISHINGHARBOUR_2 00 //xoffs yoffs FE newtile(W)
@@ -639,14 +641,16 @@
 			00 01 FE TILE_FISHINGHARBOUR_1 00 //xoffs yoffs FE newtile(W)
 			00 02 FE TILE_FISHINGHARBOUR_1 00 //xoffs yoffs FE newtile(W)
 			00 03 FE TILE_FISHINGHARBOUR_1 00 //xoffs yoffs FE newtile(W)
-			00 04 FF // special clearance tile - nothing built
+			00 04 FE TILE_FISHINGHARBOUR_1 00 //xoffs yoffs FE newtile(W)
+			00 05 FF // special clearance tile - nothing built
 			01 00 FE TILE_FISHINGHARBOUR_2 00 //xoffs yoffs FE newtile(W)
 			01 01 FE TILE_FISHINGHARBOUR_1 00 //xoffs yoffs FE newtile(W)
-			01 03 FE TILE_FISHINGHARBOUR_1 00 //xoffs yoffs FE newtile(W)
-			01 04 FF // special clearance tile - nothing built
-			02 02 FF // special clearance tile - nothing built
+			01 02 FE TILE_FISHINGHARBOUR_1 00 //xoffs yoffs FE newtile(W)
+			01 04 FE TILE_FISHINGHARBOUR_1 00 //xoffs yoffs FE newtile(W)
+			01 05 FF // special clearance tile - nothing built
 			02 03 FF // special clearance tile - nothing built
 			02 04 FF // special clearance tile - nothing built
+			02 05 FF // special clearance tile - nothing built
 		00 80 //terminate layout definition
 	0B 02 //production flags 1h=extractive, 2h=organic, 4h=processing
 	0C STR_IND_CLOSE_GENERIC //industry closure message
