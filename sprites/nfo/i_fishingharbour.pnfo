@@ -27,28 +27,18 @@
 //Industry tile sprites; one sprite for each tile; eventually more for each tile to include  construction stages
 
 //Tile action 1
--1 * 0 01 09 \b26 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
+-1 * 0 01 09 \b18 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
 // Format: spritenum pcxfile xpos ypos compression ysize xsize xrel yrel
-// extension tile NE->SW  | also  SW -> NE
+// asphalt tile
 -1 sprites/pcx/industries/fishingharbour.pcx  10 10  09  39 64 -31 -8
-// extension tile SE->NW  | also  NW -> SE 
--1 sprites/pcx/industries/fishingharbour.pcx  80 10  09  39 64 -31 -8
-// end tiles
--1 sprites/pcx/industries/fishingharbour.pcx   10 60  09  39 64 -31 -8
--1 sprites/pcx/industries/fishingharbour.pcx   80 60  09  39 64 -31 -8
--1 sprites/pcx/industries/fishingharbour.pcx  150 60  09  39 64 -31 -8
--1 sprites/pcx/industries/fishingharbour.pcx  220 60  09  39 64 -31 -8
-// corner tiles
--1 sprites/pcx/industries/fishingharbour.pcx  10 110  09  39 64 -31 -8
--1 sprites/pcx/industries/fishingharbour.pcx  80 110  09  39 64 -31 -8
--1 sprites/pcx/industries/fishingharbour.pcx  10 110  09  39 64 -31 -8
--1 sprites/pcx/industries/fishingharbour.pcx  80 110  09  39 64 -31 -8
-// wharf-meets-coast tiles harbour faces NW->SE  
--1 sprites/pcx/industries/fishingharbour.pcx  580 10  09  74 64 -31 -27
--1 sprites/pcx/industries/fishingharbour.pcx  650 10  09  74 64   1 -43
-// wharf-meets-coast tiles harbour faces NE->SW
--1 sprites/pcx/industries/fishingharbour.pcx  720 10  09  74 64 -31 -43
--1 sprites/pcx/industries/fishingharbour.pcx  790 10  09  74 64   1 -19
+// foundation tile faces SW  
+-1 sprites/pcx/industries/fishingharbour.pcx  10 60  09  39 64 -31 -7
+// foundation tile faces SE  
+-1 sprites/pcx/industries/fishingharbour.pcx  80 60  09  39 64 -31 -7
+// foundation tile slope, coast faces SE  
+-1 sprites/pcx/industries/fishingharbour.pcx  150 60  09  39 64 -31 -7
+// foundation tile slope, coast faces SW  
+-1 sprites/pcx/industries/fishingharbour.pcx  220 60  09  39 64 -31 -7
 // shed tiles
 -1 sprites/pcx/industries/fishingharbour.pcx  440 10  09  74 64 -31 -36
 -1 sprites/pcx/industries/fishingharbour.pcx  510 10  09  74 64   1 -52
@@ -70,54 +60,99 @@
 -1 sprites/pcx/industries/fishingharbour.pcx  10 160  09  39 64 -31 -8
 // foundation slope single angles tiles harbour faces SE->NW
 -1 sprites/pcx/industries/fishingharbour.pcx  290 160  09  39 64 -31 -8
+// foundation slope single angles tiles harbour faces SW->NE
+-1 sprites/pcx/industries/fishingharbour.pcx  360 160  09  39 64 -31 -8
 // end tiles
 
 
-//wharf extension tiles action 2 apply graphics
--1 * 0 02 09 00 00 //-1 * 0 02 09 <set-id> 00
-	\dx80008018 //groundsprite
-	\dxC0008000 //building sprite   // ! bit 30 set to prevent transparency
-	\b0 \b0 //xofs yofs
+// wharf tiles action 2 apply graphics
+// foundation face SW 
+-1 * 0 02 09 00 02 //-1 * 0 02 09 <set-id> 01 (extended format)
+	\d00 //groundsprite
+	\dxC0008001 //foundation sprite  // ! bit 30 set to prevent transparency
+	\b0 \b0 \b0 //xofs yofs zofs
+	\b16 \b16 \b7 //xextent yextent zextent
+	\dxC0008000 //building sprite
+	\b0 \b0 \b0 //xofs yofs zofs
 	\b16 \b16 \b16 //xextent yextent zextent
--1 * 0 02 09 01 00 //-1 * 0 02 09 <set-id> 00
-	\dx80008018 //groundsprite
-	\dxC0008001 //building sprite  // ! bit 30 set to prevent transparency
-	\b0 \b0 //xofs yofs
+// foundation face SE 
+-1 * 0 02 09 01 02 //-1 * 0 02 09 <set-id> 01 (extended format)
+	\d00 //groundsprite
+	\dxC0008002 //foundation sprite  // ! bit 30 set to prevent transparency
+	\b0 \b0 \b0 //xofs yofs zofs
+	\b16 \b16 \b7 //xextent yextent zextent
+	\dxC0008000 //building sprite
+	\b0 \b0 \b0 //xofs yofs zofs
 	\b16 \b16 \b16 //xextent yextent zextent
-	
-//wharf end tiles action 2 apply graphics
--1 * 0 02 09 02 00 //-1 * 0 02 09 <set-id> 00
-	\dx80008002 //groundsprite
-	\dx0 //building sprite
-	\b0 \b0 //xofs yofs
+// foundations face SW and SE 
+-1 * 0 02 09 02 03 //-1 * 0 02 09 <set-id> 01 (extended format)
+	\d00 //groundsprite
+	\dxC0008001 //foundation sprite  // ! bit 30 set to prevent transparency
+	\b0 \b0 \b0 //xofs yofs zofs
+	\b16 \b16 \b7 //xextent yextent zextent
+	\dxC0008002 //foundation sprite  // ! bit 30 set to prevent transparency
+	\b0 \b0 \b0 //xofs yofs zofs
+	\b16 \b16 \b7 //xextent yextent zextent
+	\dxC0008000 //building sprite
+	\b0 \b0 \b0 //xofs yofs zofs
 	\b16 \b16 \b16 //xextent yextent zextent
--1 * 0 02 09 03 00 //-1 * 0 02 09 <set-id> 00
-	\dx80008003 //groundsprite
-	\dx0 //building sprite
-	\b0 \b0 //xofs yofs
+// foundation slope, coast faces SE 
+-1 * 0 02 09 03 02 //-1 * 0 02 09 <set-id> 01 (extended format)
+	\d00 //groundsprite
+	\dxC0008003 //foundation sprite  // ! bit 30 set to prevent transparency
+	\b0 \b0 \b0 //xofs yofs zofs
+	\b16 \b16 \b7 //xextent yextent zextent
+	\dxC0008000 //building sprite
+	\b0 \b0 \b0 //xofs yofs zofs
+	\b16 \b16 \b16 //xextent yextent zextent	
+// foundation face SE; foundation slope, coast faces SE 
+-1 * 0 02 09 04 03 //-1 * 0 02 09 <set-id> 01 (extended format)
+	\d00 //groundsprite
+	\dxC0008002 //foundation sprite  // ! bit 30 set to prevent transparency
+	\b0 \b0 \b0 //xofs yofs zofs
+	\b16 \b16 \b7 //xextent yextent zextent
+	\dxC0008003 //foundation sprite  // ! bit 30 set to prevent transparency
+	\b0 \b0 \b0 //xofs yofs zofs
+	\b16 \b16 \b7 //xextent yextent zextent
+	\dxC0008000 //building sprite
+	\b0 \b0 \b0 //xofs yofs zofs
 	\b16 \b16 \b16 //xextent yextent zextent
--1 * 0 02 09 04 00 //-1 * 0 02 09 <set-id> 00
-	\dx80008004 //groundsprite
-	\dx0 //building sprite
-	\b0 \b0 //xofs yofs
+// foundation slope, coast face SW; foundation slope, coast faces SE 
+-1 * 0 02 09 05 03 //-1 * 0 02 09 <set-id> 01 (extended format)
+	\d00 //groundsprite
+	\dxC0008004 //foundation sprite  // ! bit 30 set to prevent transparency
+	\b0 \b0 \b0 //xofs yofs zofs
+	\b16 \b16 \b7 //xextent yextent zextent
+	\dxC0008003 //foundation sprite  // ! bit 30 set to prevent transparency
+	\b0 \b0 \b0 //xofs yofs zofs
+	\b16 \b16 \b7 //xextent yextent zextent
+	\dxC0008000 //building sprite
+	\b0 \b0 \b0 //xofs yofs zofs
 	\b16 \b16 \b16 //xextent yextent zextent
--1 * 0 02 09 05 00 //-1 * 0 02 09 <set-id> 00
-	\d1420 //groundsprite
-	\dx0 //building sprite
-	\b0 \b0 //xofs yofs
+// foundation slope, coast face SW; foundation face SW 
+-1 * 0 02 09 06 03 //-1 * 0 02 09 <set-id> 01 (extended format)
+	\d00 //groundsprite
+	\dxC0008004 //foundation sprite  // ! bit 30 set to prevent transparency
+	\b0 \b0 \b0 //xofs yofs zofs
+	\b16 \b16 \b7 //xextent yextent zextent
+	\dxC0008001 //foundation sprite  // ! bit 30 set to prevent transparency
+	\b0 \b0 \b0 //xofs yofs zofs
+	\b16 \b16 \b7 //xextent yextent zextent
+	\dxC0008000 //building sprite
+	\b0 \b0 \b0 //xofs yofs zofs
 	\b16 \b16 \b16 //xextent yextent zextent
+// foundation slope, coast faces SW
+-1 * 0 02 09 07 02 //-1 * 0 02 09 <set-id> 01 (extended format)
+	\d00 //groundsprite
+	\dxC0008004 //foundation sprite  // ! bit 30 set to prevent transparency
+	\b0 \b0 \b0 //xofs yofs zofs
+	\b16 \b16 \b7 //xextent yextent zextent
+	\dxC0008000 //building sprite
+	\b0 \b0 \b0 //xofs yofs zofs
+	\b16 \b16 \b16 //xextent yextent zextent	
 
-//wharf corner tiles action 2 apply graphics
--1 * 0 02 09 06 00 //-1 * 0 02 09 <set-id> 00
-	\dx80008006 //groundsprite
-	\dx0 //building sprite
-	\b0 \b0 //xofs yofs
-	\b16 \b16 \b16 //xextent yextent zextent
--1 * 0 02 09 07 00 //-1 * 0 02 09 <set-id> 00
-	\dx80008007 //groundsprite
-	\dx0 //building sprite
-	\b0 \b0 //xofs yofs
-	\b16 \b16 \b16 //xextent yextent zextent
+
+
 -1 * 0 02 09 08 00 //-1 * 0 02 09 <set-id> 00
 	\dx80008008 //groundsprite
 	\dx0 //building sprite
@@ -201,10 +236,10 @@
 //wharf on coast, harbour faces SW->NE empty tiles action 2 apply graphics 
 -1 * 0 02 09 16 02 //-1 * 0 02 09 <set-id> 01 (extended format)
 	\d00 //groundsprite
-	\dxC0008017 //building sprite  // ! bit 30 set to prevent transparency
+	\dxC000801A //foundation sprite  // ! bit 30 set to prevent transparency
 	\b0 \b0 \b0 //xofs yofs zofs
 	\b16 \b16 \b7 //xextent yextent zextent
-	\dx80008017 //building sprite
+	\dxC0008001 //building sprite
 	\b0 \b0 \b0 //xofs yofs zofs
 	\b16 \b16 \b16 //xextent yextent zextent
 
@@ -214,8 +249,8 @@
 	00 FF FF //don't shift, don't mask
 	\b3 //number of ranges to check (number of tiles)
 	//pit
-	\wx01   00 01  00 01
-	\wx01   00 02  00 02
+	\wx00   00 01  00 01
+	\wx00   00 02  00 02
 	\wx15   00 03  00 03
 	\wx01 // <default>
 
@@ -225,9 +260,9 @@
 	\b4 //number of ranges to check (number of tiles)
 	//pit
 	\wx00   01 00  00 00
-	\wx16   02 00  02 00
-	\wx16   02 01  02 01
-	\wx16   02 02  02 02
+	\wx01   02 00  02 00
+	\wx01   02 01  02 01
+	\wx01   02 02  02 02
 	\wx01 // <default>
 
 -1 * 0 02 09 B3 //Layout 1 
@@ -235,13 +270,13 @@
 	00 FF FF //don't shift, don't mask
 	\b7 //number of ranges to check (number of tiles)
 	//pit
-	\wx13   00 00  00 00
-	\wx14   00 01  00 01
-	\wx12   00 02  00 02
-	\wx0D   00 03  00 03
-	\wx0C   01 03  01 03
-	\wx00   02 03  02 03
-	\wx10   01 01  01 01
+	\wx00   00 00  00 00
+	\wx00   00 01  00 01
+	\wx00   00 02  00 02
+	\wx00   00 03  00 03
+	\wx10   01 00  01 00
+	\wx02   01 03  01 03
+	\wx02   02 03  02 03
 	\wx00 // <default>  
   
 -1 * 0 02 09 B4 //Layout 1 
@@ -249,10 +284,10 @@
 	00 FF FF //don't shift, don't mask
 	\b7 //number of ranges to check (number of tiles)
 	//pit
-	\wx0A   00 00  00 00
-	\wx0B   00 01  00 01
-	\wx01   00 02  00 02
-	\wx01   00 03  00 03
+	\wx03   00 00  00 00
+	\wx00   00 01  00 01
+	\wx00   00 02  00 02
+	\wx02   00 03  00 03
 	\wx0E   01 00  01 00
 	\wx0F   01 01  01 01
 	\wx10   01 03  01 03
@@ -322,7 +357,7 @@
 			00 00 FE TILE_FISHINGHARBOUR_2 00 //xoffs yoffs FE newtile(W)
 			00 01 FE TILE_FISHINGHARBOUR_2 00 //xoffs yoffs FE newtile(W)
 			00 02 FE TILE_FISHINGHARBOUR_2 00 //xoffs yoffs FE newtile(W)
-			01 01 FE TILE_FISHINGHARBOUR_1 00 //xoffs yoffs FE newtile(W)
+			01 00 FE TILE_FISHINGHARBOUR_1 00 //xoffs yoffs FE newtile(W)
 			00 03 FE TILE_FISHINGHARBOUR_2 00 //xoffs yoffs FE newtile(W)
 			01 03 FE TILE_FISHINGHARBOUR_1 00 //xoffs yoffs FE newtile(W)
 			02 03 FE TILE_FISHINGHARBOUR_1 00 //xoffs yoffs FE newtile(W)
