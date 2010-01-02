@@ -65,6 +65,10 @@
 // 20-2F boat lift tiles
 // 80-8F boats
 // 90-9F greeble tiles (shed, cranes etc)
+// A0-AF varaction choose layout
+// B0-BF varaction layout definitions
+// C0-EF general varactions
+// F0-FF varactions choose tile slope graphics
 
 // wharf tiles action 2 apply graphics
 // foundation face SW 
@@ -327,12 +331,34 @@
 	\b16 \b16 \b16 //xextent yextent zextent
 
 
+// varaction 2 to choose graphics according to tile slope
+-1 * 0	 02 09 F0 //handle cb 2F (custom shape check for tiles)
+  81 60 00 00 1F // check tile contents
+  \b15
+    0B 00   \b00 \b00 // flat
+    04 00   \b01 \b01 
+    09 00   \b02 \b02  
+    0A 00   \b03 \b03  
+    06 00   \b04 \b04  
+    05 00   \b05 \b05  
+    08 00   \b06 \b06  
+    0B 00   \b07 \b07  
+    02 00   \b08 \b08  
+    04 00   \b09 \b09  
+    09 00   \b10 \b10  
+    0A 00   \b11 \b11  
+    06 00   \b12 \b12  
+    05 00   \b13 \b13  
+    08 00   \b14 \b14  
+  00 00 //default
+
+
 -1 * 0 02 09 B1 //Layout
 	85 43 //check relative position (00yx[YYXX])
 	00 FF FF //don't shift, don't mask
 	\b7 //number of ranges to check (number of tiles)
     \wx86   00 03  00 03
-    \wx0A   00 04  00 04
+    \wxF0   00 04  00 04
     \wx90   01 01  01 01
     \wx94   01 02  01 02
     \wx90   01 03  01 03
@@ -350,7 +376,7 @@
     \wx91   02 01  02 01
     \wx80   02 02  02 02
     \wx92   03 01  03 01
-    \wx0A   03 02  03 02
+    \wxF0   03 02  03 02
 	\wx01 // <default>
 
 -1 * 0 02 09 B3 //Layout
@@ -390,7 +416,7 @@
 	\wx00 //<default> (first tile layout available)
 
 //Tiles varaction 2 chain
--1 * 0	 02 09 F0 //handle cb 2F (custom shape check for tiles)
+-1 * 0	 02 09 D0 //handle cb 2F (custom shape check for tiles)
   89 60 00 00 1F 02 FF 00 // check tile contents
   \b1
     01 84 \dx0000 \dx0200
@@ -406,7 +432,7 @@
 	81 0C 00 FF //no shift, no mask
 	\b3 //range
     C1 00 2B 2B //cargo acceptance cb 2B
-	  F0 00 2F 2F //custom shape check cb 2F
+	  D0 00 2F 2F //custom shape check cb 2F
 	  00 80 30 30 //disable drawing default foundations cb30
   A0 00 //default
 
