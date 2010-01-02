@@ -39,6 +39,10 @@
 -1 sprites/pcx/industries/fishingharbour.pcx  150 60  09  39 64 -31 -7
 // foundation tile slope, coast faces SW  
 -1 sprites/pcx/industries/fishingharbour.pcx  220 60  09  39 64 -31 -7
+// foundation tile slope, coast faces NW  
+-1 sprites/pcx/industries/fishingharbour.pcx  290 60  09  39 64 -31 -7
+// foundation tile slope, coast faces NE  
+-1 sprites/pcx/industries/fishingharbour.pcx  360 60  09  39 64 -31 -7
 // shed tiles
 -1 sprites/pcx/industries/fishingharbour.pcx  440 10  09  74 64 -31 -36
 -1 sprites/pcx/industries/fishingharbour.pcx  510 10  09  74 64   1 -52
@@ -58,10 +62,6 @@
 -1 sprites/pcx/industries/fishingharbour.pcx  360 60  09  39 64 -31 0
 // foundation full 2 angles tiles
 -1 sprites/pcx/industries/fishingharbour.pcx  10 160  09  39 64 -31 -8
-// foundation slope single angles tiles harbour faces SE->NW
--1 sprites/pcx/industries/fishingharbour.pcx  290 160  09  39 64 -31 -8
-// foundation slope single angles tiles harbour faces SW->NE
--1 sprites/pcx/industries/fishingharbour.pcx  360 160  09  39 64 -31 -8
 // end tiles
 
 
@@ -145,6 +145,35 @@
 -1 * 0 02 09 07 02 //-1 * 0 02 09 <set-id> 01 (extended format)
 	\d00 //groundsprite
 	\dxC0008004 //foundation sprite  // ! bit 30 set to prevent transparency
+	\b0 \b0 \b0 //xofs yofs zofs
+	\b16 \b16 \b7 //xextent yextent zextent
+	\dxC0008000 //building sprite
+	\b0 \b0 \b0 //xofs yofs zofs
+	\b16 \b16 \b16 //xextent yextent zextent	
+// foundation slope, coast faces NW	
+-1 * 0 02 09 08 02 //-1 * 0 02 09 <set-id> 01 (extended format)
+	\d00 //groundsprite
+	\dxC0008005 //foundation sprite  // ! bit 30 set to prevent transparency
+	\b0 \b0 \b0 //xofs yofs zofs
+	\b16 \b16 \b7 //xextent yextent zextent
+	\dxC0008000 //building sprite
+	\b0 \b0 \b0 //xofs yofs zofs
+	\b16 \b16 \b16 //xextent yextent zextent	
+// foundation slope, coast face NW; foundation slope, coast faces NE 
+-1 * 0 02 09 09 03 //-1 * 0 02 09 <set-id> 01 (extended format)
+	\d00 //groundsprite
+	\dxC0008005 //foundation sprite  // ! bit 30 set to prevent transparency
+	\b0 \b0 \b0 //xofs yofs zofs
+	\b16 \b16 \b7 //xextent yextent zextent
+	\dxC0008006 //foundation sprite  // ! bit 30 set to prevent transparency
+	\b0 \b0 \b0 //xofs yofs zofs
+	\b16 \b16 \b7 //xextent yextent zextent
+	\dxC0008000 //building sprite
+	\b0 \b0 \b0 //xofs yofs zofs
+	\b16 \b16 \b16 //xextent yextent zextent// foundation slope, coast faces NE
+-1 * 0 02 09 0A 02 //-1 * 0 02 09 <set-id> 01 (extended format)
+	\d00 //groundsprite
+	\dxC0008006 //foundation sprite  // ! bit 30 set to prevent transparency
 	\b0 \b0 \b0 //xofs yofs zofs
 	\b16 \b16 \b7 //xextent yextent zextent
 	\dxC0008000 //building sprite
