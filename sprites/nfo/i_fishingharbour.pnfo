@@ -222,6 +222,14 @@
 	\dx8000800E //'building' sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b16 //xextent yextent zextent
+-1 * 0 02 09 86 02 //-1 * 0 02 09 <set-id> 01 (extended format)
+	\d4061 //groundsprite
+	\dx8000800C //'building' sprite  // 
+	FA \b0 \b3 //xofs yofs zofs
+	\b16 \b16 \b16 //xextent yextent zextent
+	\dx8000800C //'building' sprite
+	\b0 \b0 \b3 //xofs yofs zofs
+	\b16 \b16 \b16 //xextent yextent zextent
 
 
 // shed, foundation face SW 
@@ -323,7 +331,7 @@
 	85 43 //check relative position (00yx[YYXX])
 	00 FF FF //don't shift, don't mask
 	\b7 //number of ranges to check (number of tiles)
-    \wx80   00 03  00 03
+    \wx86   00 03  00 03
     \wx0A   00 04  00 04
     \wx90   01 01  01 01
     \wx94   01 02  01 02
@@ -362,7 +370,7 @@
 	85 43 //check relative position (00yx[YYXX])
 	00 FF FF //don't shift, don't mask
 	\b7 //number of ranges to check (number of tiles)
-    \wx03   00 00  00 00
+    \wx90   00 00  00 00
     \wx90   00 01  00 01
     \wx00   00 02  00 02
     \wx93   00 03  00 03
