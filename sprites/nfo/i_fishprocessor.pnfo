@@ -1,5 +1,5 @@
 // Defines for use in industry template
-#define THIS_INDUSTRY                 IND_MEATPACKER
+#define THIS_INDUSTRY                 IND_FISHPROCESSOR
 #define THIS_NUM_INPUT_CARGOS         \d02
 #define THIS_NUM_OUTPUT_CARGOS        \d01
 #define THIS_PROD_RATIO_CARGO_IN_1    \d05
@@ -138,7 +138,7 @@
 //Industry definition
 
 //Action 0
--1 * 0 00 0A \b27 01 IND_MEATPACKER //-1 * 0 00 0A <num-props> 01 <id>
+-1 * 0 00 0A \b27 01 IND_FISHPROCESSOR //-1 * 0 00 0A <num-props> 01 <id>
 	08 IND_NULL //reuse original industry with this here ID
 	0A 01 //number of industry layouts
 		\d82 //sum(size of layout definition +2 for termination)
