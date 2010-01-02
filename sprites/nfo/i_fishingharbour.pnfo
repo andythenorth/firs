@@ -193,49 +193,6 @@
 	\b0 \b0 \b0 //xofs yofs zofs
 	\b16 \b16 \b16 //xextent yextent zextent
 
-//fishing boat tiles action 2 apply graphics
--1 * 0 02 09 80 00 //-1 * 0 02 09 <set-id> 00
-	\d4061 //groundsprite
-	\dx8000800A //'building' sprite
-	\b0 \b0 //xofs yofs
-	\b16 \b16 \b16 //xextent yextent zextent
--1 * 0 02 09 81 00 //-1 * 0 02 09 <set-id> 00
-	\d4061 //groundsprite
-	\dx8000800B //'building' sprite
-	\b0 \b0 //xofs yofs
-	\b16 \b16 \b16 //xextent yextent zextent
--1 * 0 02 09 82 00 //-1 * 0 02 09 <set-id> 00
-	\d4061 //groundsprite
-	\dx8000800C //'building' sprite
-	\b0 \b0 //xofs yofs
-	\b16 \b16 \b16 //xextent yextent zextent
--1 * 0 02 09 83 00 //-1 * 0 02 09 <set-id> 00
-	\d4061 //groundsprite
-	\dx8000800D //'building' sprite
-	\b0 \b0 //xofs yofs
-	\b16 \b16 \b16 //xextent yextent zextent
--1 * 0 02 09 84 02 //-1 * 0 02 09 <set-id> 01 (extended format)
-	\d4061 //groundsprite
-	\dx8000800D //'building' sprite  // 
-	\b8 \b0 \b0 //xofs yofs zofs
-	\b16 \b16 \b16 //xextent yextent zextent
-	\dx8000800D //'building' sprite
-	\b0 \b0 \b0 //xofs yofs zofs
-	\b16 \b16 \b16 //xextent yextent zextent
--1 * 0 02 09 85 00 //-1 * 0 02 09 <set-id> 00
-	\d4061 //groundsprite
-	\dx8000800E //'building' sprite
-	\b0 \b0 //xofs yofs
-	\b16 \b16 \b16 //xextent yextent zextent
--1 * 0 02 09 86 02 //-1 * 0 02 09 <set-id> 01 (extended format)
-	\d4061 //groundsprite
-	\dx8000800C //'building' sprite  // 
-	FA \b0 \b3 //xofs yofs zofs
-	\b16 \b16 \b16 //xextent yextent zextent
-	\dx8000800C //'building' sprite
-	\b0 \b0 \b3 //xofs yofs zofs
-	\b16 \b16 \b16 //xextent yextent zextent
-
 
 // shed tiles action 2 apply graphics
 // foundation face SW 
@@ -395,6 +352,49 @@
 	\b0 \b0 \b18 //xofs yofs zofs
 	\b16 \b16 \b16 //xextent yextent zextent
 
+
+//fishing boat tiles action 2 apply graphics
+-1 * 0 02 09 80 00 //-1 * 0 02 09 <set-id> 00
+	\d4061 //groundsprite
+	\dx8000800A //'building' sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b16 //xextent yextent zextent
+-1 * 0 02 09 81 00 //-1 * 0 02 09 <set-id> 00
+	\d4061 //groundsprite
+	\dx8000800B //'building' sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b16 //xextent yextent zextent
+-1 * 0 02 09 82 00 //-1 * 0 02 09 <set-id> 00
+	\d4061 //groundsprite
+	\dx8000800C //'building' sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b16 //xextent yextent zextent
+-1 * 0 02 09 83 00 //-1 * 0 02 09 <set-id> 00
+	\d4061 //groundsprite
+	\dx8000800D //'building' sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b16 //xextent yextent zextent
+-1 * 0 02 09 84 02 //-1 * 0 02 09 <set-id> 01 (extended format)
+	\d4061 //groundsprite
+	\dx8000800D //'building' sprite  // 
+	\b8 \b0 \b0 //xofs yofs zofs
+	\b16 \b16 \b16 //xextent yextent zextent
+	\dx8000800D //'building' sprite
+	\b0 \b0 \b0 //xofs yofs zofs
+	\b16 \b16 \b16 //xextent yextent zextent
+-1 * 0 02 09 85 00 //-1 * 0 02 09 <set-id> 00
+	\d4061 //groundsprite
+	\dx8000800E //'building' sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b16 //xextent yextent zextent
+-1 * 0 02 09 86 02 //-1 * 0 02 09 <set-id> 01 (extended format)
+	\d4061 //groundsprite
+	\dx8000800C //'building' sprite  // 
+	FA \b0 \b3 //xofs yofs zofs
+	\b16 \b16 \b16 //xextent yextent zextent
+	\dx8000800C //'building' sprite
+	\b0 \b0 \b3 //xofs yofs zofs
+	\b16 \b16 \b16 //xextent yextent zextent
 	
 // crane angle #1, offset SE, foundations face SW and SE 
 -1 * 0 02 09 93 04 //-1 * 0 02 09 <set-id> 01 (extended format)
@@ -554,15 +554,34 @@
     \wx41   01 02  01 02
     \wx84   01 04  01 04
 	\wx00 // <default>  
+
+-1 * 0 02 09 B5 //Layout 
+	85 43 //check relative position (00yx[YYXX])
+	00 FF FF //don't shift, don't mask
+	\b11 //number of ranges to check (number of tiles)
+    \wxF0   00 00  00 00
+    \wx02   01 00  01 00
+    \wx02   02 00  02 00
+    \wx40   02 01  02 01
+    \wx41   02 02  02 02
+    \wx95   03 00  03 00
+    \wx22   03 01  03 01
+    \wx22   03 02  03 02
+    \wx83   04 00  04 00
+    \wx83   04 01  04 01
+    \wx83   04 02  04 02
+	\wx00 // <default>  
+
   
 -1 * 0 02 09 A0 
 	82 44 //check layout number (lowest byte of related industry)
 	00 FF //don't shift, don't mask
-	\b4 //number of ranges to check (number of layouts)
+	\b5 //number of ranges to check (number of layouts)
  	\wxB1 \b1 \b1 //<set-id \w> <low-range> <high-range>
 	\wxB2 \b2 \b2 //<set-id \w> <low-range> <high-range>
 	\wxB3 \b3 \b3 //<set-id \w> <low-range> <high-range>
 	\wxB4 \b4 \b4 //<set-id \w> <low-range> <high-range>
+	\wxB5 \b5 \b5 //<set-id \w> <low-range> <high-range>
 	\wx00 //<default> (first tile layout available)
 
 //Tiles varaction 2 chain
@@ -600,8 +619,8 @@
 //Action 0
 -1 * 0 00 0A \b26 01 IND_FISHINGHARBOUR //-1 * 0 00 0A <num-props> 01 <id>
 	08 IND_NULL //reuse original industry with this here ID
-	0A 04 //number of industry layouts
-		\d194 //size of layout definition +2 for termination
+	0A 05 //number of industry layouts
+		\d275 //size of layout definition +2 for termination
 		//layout 1:  Coast runs SW -> NE, Harbour Faces NW
 			00 03 FE TILE_FISHINGHARBOUR_1 00 //xoffs yoffs FE newtile(W)
 			00 04 FE TILE_FISHINGHARBOUR_2 00 //xoffs yoffs FE newtile(W)
@@ -651,6 +670,27 @@
 			02 03 FF // special clearance tile - nothing built
 			02 04 FF // special clearance tile - nothing built
 			02 05 FF // special clearance tile - nothing built
+		00 80 //terminate layout definition
+		//layout 5:  Coast runs NW -> SE, Harbour faces SW
+			00 00 FE TILE_FISHINGHARBOUR_2 00 //xoffs yoffs FE newtile(W)
+			01 00 FE TILE_FISHINGHARBOUR_1 00 //xoffs yoffs FE newtile(W)
+			01 02 FF // special clearance tile - nothing built
+			02 00 FE TILE_FISHINGHARBOUR_1 00 //xoffs yoffs FE newtile(W)
+			02 01 FE TILE_FISHINGHARBOUR_1 00 //xoffs yoffs FE newtile(W)
+			02 02 FE TILE_FISHINGHARBOUR_1 00 //xoffs yoffs FE newtile(W)
+			02 03 FF // special clearance tile - nothing built
+			03 00 FE TILE_FISHINGHARBOUR_1 00 //xoffs yoffs FE newtile(W)
+			03 01 FE TILE_FISHINGHARBOUR_1 00 //xoffs yoffs FE newtile(W)
+			03 02 FE TILE_FISHINGHARBOUR_1 00 //xoffs yoffs FE newtile(W)
+      04 00 FE TILE_FISHINGHARBOUR_1 00 //xoffs yoffs FE newtile(W)
+			04 01 FE TILE_FISHINGHARBOUR_1 00 //xoffs yoffs FE newtile(W)
+			04 02 FE TILE_FISHINGHARBOUR_1 00 //xoffs yoffs FE newtile(W)
+			04 03 FF // special clearance tile - nothing built
+			03 03 FF // special clearance tile - nothing built
+			05 00 FF // special clearance tile - nothing built
+			05 01 FF // special clearance tile - nothing built
+			05 02 FF // special clearance tile - nothing built
+			05 03 FF // special clearance tile - nothing built
 		00 80 //terminate layout definition
 	0B 02 //production flags 1h=extractive, 2h=organic, 4h=processing
 	0C STR_IND_CLOSE_GENERIC //industry closure message
