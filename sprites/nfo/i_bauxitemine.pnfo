@@ -6,7 +6,7 @@
 #define THIS_STR_NOT_ACCEPT   \wxD4D1
 
 //Tile action 0
--1 * 0 00 09 \b6 01 TILE_BAUXITE_MINE_1 // -1 * 0 00 09 <num-props> 01 <id>
+-1 * 0 00 09 \b6 01 TILE_BAUXITEMINE_1 // -1 * 0 00 09 <num-props> 01 <id>
 	08 TILE_NULL //subsitute type
 	0A CARGO_ENGINEERINGSUPPLIES 08 //tile acceptance 1
 	0B 00 00 //tile acceptance 2
@@ -81,7 +81,7 @@
 //Action3 attach sprites to industry tile
 
 //Tile action 3
--1 * 0 03 09 01 TILE_BAUXITE_MINE_1 00 \wxC0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
+-1 * 0 03 09 01 TILE_BAUXITEMINE_1 00 \wxC0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
 
 //Industry definition
 
@@ -91,16 +91,16 @@
 	0A 01 //number of industry layouts
 		\d52 //sum(size of layout definition +2 for termination)
 		//layout:
-			00 00 FE TILE_BAUXITE_MINE_1 00 //xoffs yoffs FE newtile(W)
-			02 00 FE TILE_BAUXITE_MINE_1 00
-			03 00 FE TILE_BAUXITE_MINE_1 00
-			00 01 FE TILE_BAUXITE_MINE_1 00
-			02 01 FE TILE_BAUXITE_MINE_1 00
-			03 01 FE TILE_BAUXITE_MINE_1 00
-			04 01 FE TILE_BAUXITE_MINE_1 00
-			00 02 FE TILE_BAUXITE_MINE_1 00
-			02 02 FE TILE_BAUXITE_MINE_1 00
-			03 02 FE TILE_BAUXITE_MINE_1 00
+			00 00 FE TILE_BAUXITEMINE_1 00 //xoffs yoffs FE newtile(W)
+			02 00 FE TILE_BAUXITEMINE_1 00
+			03 00 FE TILE_BAUXITEMINE_1 00
+			00 01 FE TILE_BAUXITEMINE_1 00
+			02 01 FE TILE_BAUXITEMINE_1 00
+			03 01 FE TILE_BAUXITEMINE_1 00
+			04 01 FE TILE_BAUXITEMINE_1 00
+			00 02 FE TILE_BAUXITEMINE_1 00
+			02 02 FE TILE_BAUXITEMINE_1 00
+			03 02 FE TILE_BAUXITEMINE_1 00
 		00 80 //terminate layout definition
 	0B 04 //production flags 1h=extractive, 2h=organic, 4h=processing
 	0C STR_IND_CLOSE_GENERIC //industry closure message
