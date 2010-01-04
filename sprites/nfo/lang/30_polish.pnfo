@@ -1,0 +1,207 @@
+//FIRS Translation File
+//Language: Polish
+//Lang-ID: 30 -> B0
+#define LANG_ID  30
+#define LANG_ID2 B0
+
+//Format: action 04; feature; langID with bit 7 set; 01; stringID; "string"; 00
+
+
+//Cargo texts
+
+//We only the following four in tropic:
+-1 * 0 07 83 01 \7! 02 \b4
+//Sugar cane
+-1 * 0 04 0B LANG_ID2 01 STR_CRG_SUGARCANE_CTYPE "Trzcina cukrowa" 00
+-1 * 0 04 0B LANG_ID2 01 STR_CRG_SUGARCANE_1UNIT "\7C tona trzciny cukrowej" 00
+-1 * 0 04 0B LANG_ID2 01 STR_CRG_SUGARCANE_MUNIT "\7C ton trzciny cukrowej" 00
+-1 * 0 04 0B LANG_ID2 01 STR_CRG_SUGARCANE_TABBR "\0ESC" 00
+
+//Waste 
+-1 * 0 04 0B LANG_ID2 01 STR_CRG_WASTE_CTYPE "Odpady" 00
+-1 * 0 04 0B LANG_ID2 01 STR_CRG_WASTE_1UNIT "\7C tona odpadow" 00
+-1 * 0 04 0B LANG_ID2 01 STR_CRG_WASTE_MUNIT "\7C ton ospadow" 00
+-1 * 0 04 0B LANG_ID2 01 STR_CRG_WASTE_TABBR "\0EWS" 00
+
+//Fruit and Vegetables
+-1 * 0 04 0B LANG_ID2 01 STR_CRG_FRUITSANDVEGETABLES_CTYPE "Owoce i warzywa" 00
+-1 * 0 04 0B LANG_ID2 01 STR_CRG_FRUITSANDVEGETABLES_1TYPE "Owoce i warzywa" 00
+-1 * 0 04 0B LANG_ID2 01 STR_CRG_FRUITSANDVEGETABLES_1UNIT "\7C tona owocow i warzyw" 00
+-1 * 0 04 0B LANG_ID2 01 STR_CRG_FRUITSANDVEGETABLES_MUNIT "\7C ton owocow i warzyw" 00
+
+//Fish 
+-1 * 0 04 0B LANG_ID2 01 STR_CRG_FISH_CTYPE "Ryby" 00
+-1 * 0 04 0B LANG_ID2 01 STR_CRG_FISH_1UNIT "\7C tona ryb" 00
+-1 * 0 04 0B LANG_ID2 01 STR_CRG_FISH_MUNIT "\7C ton ryb" 00
+-1 * 0 04 0B LANG_ID2 01 STR_CRG_FISH_TABBR "\0EFI" 00
+
+//We only the following four in temperate and arctic:
+-1 * 0 07 83 01 \7> 01 \b4
+//Wool
+-1 * 0 04 0B LANG_ID2 01 STR_CRG_WOOL_CTYPE "Welna" 00
+-1 * 0 04 0B LANG_ID2 01 STR_CRG_WOOL_1UNIT "\7C tona welny" 00
+-1 * 0 04 0B LANG_ID2 01 STR_CRG_WOOL_MUNIT "\7C ton welny" 00
+-1 * 0 04 0B LANG_ID2 01 STR_CRG_WOOL_TABBR "\0EWL" 00
+
+//We only the following four in tropic:
+-1 * 0 07 83 01 \7! 02 \b4
+//Cotton
+-1 * 0 04 0B LANG_ID2 01 STR_CRG_COTTON_CTYPE "Bawelna" 00
+-1 * 0 04 0B LANG_ID2 01 STR_CRG_COTTON_1UNIT "\7C tona bawlna" 00
+-1 * 0 04 0B LANG_ID2 01 STR_CRG_COTTON_MUNIT "\7C ton bawelna" 00
+-1 * 0 04 0B LANG_ID2 01 STR_CRG_COTTON_TABBR "\0ECT" 00
+
+//We only the following four in temperate and arctic:
+-1 * 0 07 83 01 \7> 01 \b4
+//Sand
+-1 * 0 04 0B LANG_ID2 01 STR_CRG_SAND_CTYPE "Piasek" 00
+-1 * 0 04 0B LANG_ID2 01 STR_CRG_SAND_1UNIT "\7C tona piasku" 00
+-1 * 0 04 0B LANG_ID2 01 STR_CRG_SAND_MUNIT "\7C ton piasku" 00
+-1 * 0 04 0B LANG_ID2 01 STR_CRG_SAND_TABBR "\0ESA" 00
+
+//Gravel
+-1 * 0 04 0B LANG_ID2 01 STR_CRG_GRAVEL_CTYPE "Zwir" 00
+-1 * 0 04 0B LANG_ID2 01 STR_CRG_GRAVEL_1UNIT "\7C ton of gravel" 00
+-1 * 0 04 0B LANG_ID2 01 STR_CRG_GRAVEL_MUNIT "\7C tons of gravel" 00
+-1 * 0 04 0B LANG_ID2 01 STR_CRG_GRAVEL_TABBR "\0EGV" 00
+
+//Lumber
+-1 * 0 04 0B LANG_ID2 01 STR_CRG_LUMBER_CTYPE "Deski" 00
+-1 * 0 04 0B LANG_ID2 01 STR_CRG_LUMBER_1UNIT "\7C tona desek" 00
+-1 * 0 04 0B LANG_ID2 01 STR_CRG_LUMBER_MUNIT "\7C ton desek" 00
+-1 * 0 04 0B LANG_ID2 01 STR_CRG_LUMBER_TABBR "\0ELU" 00
+
+//Packaging
+-1 * 0 04 0B LANG_ID2 01 STR_CRG_PACKAGING_CTYPE "Opakowania" 00
+-1 * 0 04 0B LANG_ID2 01 STR_CRG_PACKAGING_1UNIT "\7C skrzynia opakowan" 00
+-1 * 0 04 0B LANG_ID2 01 STR_CRG_PACKAGING_MUNIT "\7C skrzyn opakowan" 00
+-1 * 0 04 0B LANG_ID2 01 STR_CRG_PACKAGING_TABBR "\0EPK" 00
+
+//Farm supplies
+-1 * 0 04 0B LANG_ID2 01 STR_CRG_FARMSUPPLIES_CTYPE "Sprzet rolniczy" 00
+-1 * 0 04 0B LANG_ID2 01 STR_CRG_FARMSUPPLIES_1UNIT "\7C skrzynia sprzetu rolniczego" 00
+-1 * 0 04 0B LANG_ID2 01 STR_CRG_FARMSUPPLIES_MUNIT "\7C skrzyn sprzetu rolniczego" 00
+-1 * 0 04 0B LANG_ID2 01 STR_CRG_FARMSUPPLIES_TABBR "\0EFS" 00
+
+//Chemicals
+-1 * 0 04 0B LANG_ID2 01 STR_CRG_CHEMICALS_CTYPE "Chemikalia" 00
+-1 * 0 04 0B LANG_ID2 01 STR_CRG_CHEMICALS_1UNIT "\87 chemikaliow" 00
+-1 * 0 04 0B LANG_ID2 01 STR_CRG_CHEMICALS_TABBR "\0ECH" 00
+
+//Engineering supplies
+-1 * 0 04 0B LANG_ID2 01 STR_CRG_ENGINEERINGSUPPLIES_CTYPE "Maszyny przemyslowe" 00
+-1 * 0 04 0B LANG_ID2 01 STR_CRG_ENGINEERINGSUPPLIES_1UNIT "\7C skrzynia maszyn przemyslowych" 00
+-1 * 0 04 0B LANG_ID2 01 STR_CRG_ENGINEERINGSUPPLIES_MUNIT "\7C skrzyn maszyn przemyslowych" 00
+-1 * 0 04 0B LANG_ID2 01 STR_CRG_ENGINEERINGSUPPLIES_TABBR "\0EES" 00
+
+//Fuel oil
+-1 * 0 04 0B LANG_ID2 01 STR_CRG_FUELOIL_CTYPE "Olej opalowy" 00
+-1 * 0 04 0B LANG_ID2 01 STR_CRG_FUELOIL_1UNIT "\87 oleju opalowego" 00
+-1 * 0 04 0B LANG_ID2 01 STR_CRG_FUELOIL_TABBR "\0EFO" 00
+
+//Bauxite
+-1 * 0 04 0B LANG_ID2 01 STR_CRG_BAUXITE_CTYPE "Boksyt" 00
+-1 * 0 04 0B LANG_ID2 01 STR_CRG_BAUXITE_1UNIT "\7C tona boksytu" 00
+-1 * 0 04 0B LANG_ID2 01 STR_CRG_BAUXITE_MUNIT "\7C ton boksytu" 00
+
+//Parts
+-1 * 0 04 0B LANG_ID2 01 STR_CRG_PARTS_CTYPE "Czesci" 00
+-1 * 0 04 0B LANG_ID2 01 STR_CRG_PARTS_1UNIT "\7C skrzynia czesci" 00
+-1 * 0 04 0B LANG_ID2 01 STR_CRG_PARTS_MUNIT "\7C skrzyn czesci" 00
+-1 * 0 04 0B LANG_ID2 01 STR_CRG_PARTS_TABBR "\0EPA" 00
+
+//Aluminium
+-1 * 0 04 0B LANG_ID2 01 STR_CRG_ALUMINIUM_CTYPE "Aluminium" 00
+-1 * 0 04 0B LANG_ID2 01 STR_CRG_ALUMINIUM_1UNIT "\7C tona aluminium" 00
+-1 * 0 04 0B LANG_ID2 01 STR_CRG_ALUMINIUM_MUNIT "\7C ton aluminium" 00
+-1 * 0 04 0B LANG_ID2 01 STR_CRG_ALUMINIUM_TABBR "\0EAL" 00
+
+//Milk
+-1 * 0 04 0B LANG_ID2 01 STR_CRG_MILK_CTYPE "Mleko" 00
+-1 * 0 04 0B LANG_ID2 01 STR_CRG_MILK_1UNIT "\87 mleka" 00
+-1 * 0 04 0B LANG_ID2 01 STR_CRG_MILK_TABBR "\0EMK" 00
+
+//Scrap Metal
+-1 * 0 04 0B LANG_ID2 01 STR_CRG_SCRAPMETAL_CTYPE "Zlom" 00
+-1 * 0 04 0B LANG_ID2 01 STR_CRG_SCRAPMETAL_1UNIT "\7C tona zlomu" 00
+-1 * 0 04 0B LANG_ID2 01 STR_CRG_SCRAPMETAL_MUNIT "\7C ton zlomu" 00
+-1 * 0 04 0B LANG_ID2 01 STR_CRG_SCRAPMETAL_TABBR "\0ESM" 00
+
+//Survey supplies
+-1 * 0 04 0B LANG_ID2 01 STR_CRG_SURVEYSUPPLIES_CTYPE "Narzedzia pomiarowe" 00
+-1 * 0 04 0B LANG_ID2 01 STR_CRG_SURVEYSUPPLIES_1UNIT "\7C skrzynia narzedzi pomiarowych" 00
+-1 * 0 04 0B LANG_ID2 01 STR_CRG_SURVEYSUPPLIES_MUNIT "\7C skrzyn narzedzi pomiarowych" 00
+-1 * 0 04 0B LANG_ID2 01 STR_CRG_SURVEYSUPPLIES_TABBR "\0ESS" 00
+
+
+//Industry texts
+-1 * 0 04 0A LANG_ID2 01 STR_IND_OILPLATFORM "Platforma wiertnicza" 00
+-1 * 0 04 0A LANG_ID2 01 STR_IND_BREWERY "Browar" 00
+-1 * 0 04 0A LANG_ID2 01 STR_IND_CEMENTPLANT "Cementownia" 00
+-1 * 0 04 0A LANG_ID2 01 STR_IND_WASTECOLLECTIONPOINT "Skup zlomu" 00
+-1 * 0 04 0A LANG_ID2 01 STR_IND_INCINERATOR "Spalarnia" 00
+-1 * 0 04 0A LANG_ID2 01 STR_IND_RECYCLINGPLANT "Centrum recyklingu" 00
+-1 * 0 04 0A LANG_ID2 01 STR_IND_FERTILISERPLANT "Zaklady nawozow" 00
+-1 * 0 04 0A LANG_ID2 01 STR_IND_PLASTICSPLANT "Zaklad tworzyw sztucznych" 00
+-1 * 0 04 0A LANG_ID2 01 STR_IND_GLASSWORKS "Huta szkla" 00
+-1 * 0 04 0A LANG_ID2 01 STR_IND_MEATPACKER "Ubojnia bydla" 00
+-1 * 0 04 0A LANG_ID2 01 STR_IND_DAIRYFARM "Dojarnia" 00
+-1 * 0 04 0A LANG_ID2 01 STR_IND_DAIRY "Mleczarnia" 00
+-1 * 0 04 0A LANG_ID2 01 STR_IND_TEXTILEMILL "Zaklady odziezowe" 00
+-1 * 0 04 0A LANG_ID2 01 STR_IND_FURNITUREFACTORY "Fabryka mebli" 00
+-1 * 0 04 0A LANG_ID2 01 STR_IND_ALUMINIUMPLANT "Huta aluminium" 00
+-1 * 0 04 0A LANG_ID2 01 STR_IND_MACHINESHOP "Zaklad Produkcji i Mechaniki Maszyn" 00
+-1 * 0 04 0A LANG_ID2 01 STR_IND_ENGINEERINGYARD "Hurtownia maszyn przemyslowych" 00
+-1 * 0 04 0A LANG_ID2 01 STR_IND_METALFOUNDRY "Odlewnia metali" 00
+-1 * 0 04 0A LANG_ID2 01 STR_IND_FARMSUPPLYDEPOT "Hurtownia narzedzi rolniczych" 00
+-1 * 0 04 0A LANG_ID2 01 STR_IND_MIXEDFARM "Gospodarstwo rolne" 00
+-1 * 0 04 0A LANG_ID2 01 STR_IND_SURVEYSUPPLYDEPOT "Hurtownia narzedzi pomiarowych" 00
+-1 * 0 04 0A LANG_ID2 01 STR_IND_JUNKYARD "Zlomowisko" 00
+-1 * 0 04 0A LANG_ID2 01 STR_IND_GENERALSTORE "Sklep" 00
+-1 * 0 04 0A LANG_ID2 01 STR_IND_BAUXITEMINE "Kopalnia boksytu" 00
+-1 * 0 04 0A LANG_ID2 01 STR_IND_FISHINGHARBOUR "Port rybacki" 00
+-1 * 0 04 0A LANG_ID2 01 STR_IND_FISHPROCESSOR "Przetwornia ryb" 00
+-1 * 0 04 0A LANG_ID2 01 STR_IND_DREDGINGSITE "Poglebiarka" 00
+
+-1 * 0 07 83 01 \7> 01 \b3 //The following in temperate and arctic only:
+-1 * 0 04 0A LANG_ID2 01 STR_IND_ARABLEFARM "Pola uprawne" 00
+-1 * 0 04 0A LANG_ID2 01 STR_IND_SANDPIT "Kopalnia piasku" 00
+-1 * 0 04 0A LANG_ID2 01 STR_IND_BAKERY "Piekarnia" 00
+-1 * 0 04 0A LANG_ID2 01 STR_IND_SHEEPFARM "Wypas owiec" 00
+
+-1 * 0 07 83 01 \7! 02 \b1 //The following in tropic only:
+-1 * 0 04 0A LANG_ID2 01 STR_IND_WATERPLANT "Oczyszczalnia" 00
+
+
+//Station texts for station name prefixes/suffixes. \80 where town name goes
+-1 * 0 04 0A LANG_ID2 01 STR_STA_FARM "\80 Farma" 00
+-1 * 0 04 0A LANG_ID2 01 STR_STA_THERMALPLANT "\80 Elektrownia" 00
+-1 * 0 04 0A LANG_ID2 01 STR_STA_MILLS "\80 Mill" 00
+-1 * 0 04 0A LANG_ID2 01 STR_STA_WELLS "\80 Wells" 00
+-1 * 0 04 0A LANG_ID2 01 STR_STA_REFINERY "\80 Refineria" 00
+-1 * 0 04 0A LANG_ID2 01 STR_STA_WATER "\80 Water Works" 00
+-1 * 0 04 0A LANG_ID2 01 STR_STA_FACTORY "\80 Fabryka" 00
+-1 * 0 04 0A LANG_ID2 01 STR_STA_PLANT "\80 Manufacturing Plant" 00
+-1 * 0 04 0A LANG_ID2 01 STR_STA_QUARRY "\80 Quarry" 00
+-1 * 0 04 0A LANG_ID2 01 STR_STA_DEPOT "\80 Depot" 00
+-1 * 0 04 0A LANG_ID2 01 STR_STA_DREDGINGSITE "\80 Poglebiarka" 00
+
+
+//Additional texts for purchase window; note the additional D0
+-1 * 0 04 0A LANG_ID2 01 STR_INFO_DEBUG_1 D0 "\98------------ DEBUG ------------\0D"
+"\0D\98Prod. ratio (out/in):\0D\941st Cargo: \7C/8 \0D2nd Cargo: \7C/8 \0D3rd Cargo: \7C/8 \0D"
+"\0D\98Cargo consumption (when cb ran):\0D\94...From 1st Cargo: \7C \0D...From 2nd Cargo: \7C \0D...From 3rd Cargo: \7C \0D"
+"\0D\98Total production :\0D\941st Cargo: \7C \0D2nd Cargo: \7C \0D"
+"\0D\98Output production limit (per input cargo):\0D\94\7B" 00
+-1 * 0 04 0A LANG_ID2 01 STR_INFO_GENERIC D0 "\98This industry needs a description..." 00
+-1 * 0 04 0A LANG_ID2 01 STR_INFO_LIMIT_200 D0 "\98 (max 200)" 00
+-1 * 0 04 0A LANG_ID2 01 STR_INFO_ACCEPTING_ES D0 "\0D" 00 // empty line breaks to stop window size jumping around 
+-1 * 0 04 0A LANG_ID2 01 STR_INFO_NOT_ACCEPTING_ES D0 "\94Not accepting engineering supplies\98\0D(Limit Reached)" 00
+-1 * 0 04 0A LANG_ID2 01 STR_INFO_ACCEPTING_FS D0 "\0D" 00 // empty line breaks to stop window size jumping around 
+-1 * 0 04 0A LANG_ID2 01 STR_INFO_NOT_ACCEPTING_FS D0 "\94Not accepting farm supplies\98\0D(Limit Reached)" 00
+-1 * 0 04 0A LANG_ID2 01 STR_INFO_ES_PRIMARY_BOOST D0 "\98Engineering supplies improve the chances of a production increase.\0D\0D\80" 00
+-1 * 0 04 0A LANG_ID2 01 STR_INFO_FS_PRIMARY_BOOST D0 "\98Farm supplies improve the chances of a production increase.\0D\0D\80" 00
+-1 * 0 04 0A LANG_ID2 01 STR_INFO_MACHINESHOP D0 "\90The Machine Shop \98builds and repairs engineering structures and machinery." 00
+
+#undef LANG_ID
+#undef LANG_ID2
