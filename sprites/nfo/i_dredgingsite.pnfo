@@ -25,21 +25,19 @@
 //Tile action 1
 -1 * 0 01 09 \b2 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
 // Format: spritenum pcxfile xpos ypos compression ysize xsize xrel yrel
--1 sprites/pcx/industries/dredgingsite.pcx 10 10 09  74 64 -31 -37
--1 sprites/pcx/industries/dredgingsite.pcx 80 10 09  74 64 -31 -37
+-1 sprites/pcx/industries/dredgingsite.pcx 10 10 09  74 64 -44 -41
+-1 sprites/pcx/industries/dredgingsite.pcx 80 10 09  74 64 -12 -25
 
 
 // graphics Action 2 
--1 * 0 02 09 00 02 //-1 * 0 02 09 <set-id> 00 (extended format)
+-1 * 0 02 09 00 01 //-1 * 0 02 09 <set-id> 00 (extended format)
 	\d4061 //groundsprite
 	\dxC0008000 //building sprite
 	\b0 \b0 \b0 //xofs yofs
 	\b16 \b16 \b74 //xextent yextent zextent
-	\dx80008001 //building sprite
-	\b23 \b1 \bx80//xofs yofs
 -1 * 0 02 09 01 01 //-1 * 0 02 09 <set-id> 00 (extended format)
 	\d4061 //groundsprite
-	\dxC0008000 //building sprite
+	\dxC0008001 //building sprite
 	\b0 \b0 \b0 //xofs yofs
 	\b16 \b16 \b16 //xextent yextent zextent
 
@@ -49,7 +47,7 @@
 	00 FF FF //don't shift, don't mask
 	\b3 //number of ranges to check (number of tiles)
     \wx01   01 01  01 01
-    \wx01   01 00  01 00
+    \wx00   01 00  01 00
     \wx00   02 01  02 01
 	\wx00 // <default>
 
@@ -91,7 +89,7 @@
 			01 02 18 // special water station tile, must be 2 adjacent in y direction 
 			01 03 18 // special water station tile, must be 2 adjacent in y direction
 			02 05 FF // special clearance tile - nothing built
-			01 00 FE TILE_DREDGINGSITE_1 00 //xoffs yoffs FE newtile(W)
+			01 00 FF // special clearance tile - nothing built
 			01 01 FE TILE_DREDGINGSITE_1 00 //xoffs yoffs FE newtile(W)
 			01 04 FF // special clearance tile - nothing built
 			02 00 FF // special clearance tile - nothing built
