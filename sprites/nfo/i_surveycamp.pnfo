@@ -1,3 +1,5 @@
+
+
 //Industry tiles definition
 
 //Tile action 0
@@ -82,11 +84,11 @@
 	0A 01 //number of industry layouts
 		\d47 //sum(size of layout definition +2 for termination)
 		//layout:
-			00 00 FE TILE_GENERIC_BARELAND 00
+			00 00 FE TILE_SURVEYCAMP_1 00
 			00 01 FE TILE_SURVEYCAMP_1 00 //xoffs yoffs FE newtile(W)
 			01 00 FE TILE_SURVEYCAMP_1 00
 			01 01 FE TILE_SURVEYCAMP_1 00
-			02 00 FE TILE_GENERIC_BARELAND 00
+			02 00 FE TILE_SURVEYCAMP_1 00
 			02 01 FE TILE_SURVEYCAMP_1 00
 			03 00 FE TILE_SURVEYCAMP_1 00
 			03 01 FE TILE_SURVEYCAMP_1 00
