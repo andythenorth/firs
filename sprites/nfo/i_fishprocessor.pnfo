@@ -10,9 +10,9 @@
 //Industry tiles definition
 
 //Tile action 0
--1 * 0 00 09 \b5 01 TILE_MEATPACKER_1 // -1 * 0 00 09 <num-props> 01 <id>
+-1 * 0 00 09 \b5 01 TILE_FISHPROCESSOR_1 // -1 * 0 00 09 <num-props> 01 <id>
 	08 TILE_NULL //subsitute type
-	0A CARGO_LIVESTOCK 08 //tile acceptance 1
+	0A CARGO_FISH 08 //tile acceptance 1
 	0B CARGO_PACKAGING 08 //tile acceptance 2
 	0C 00 00 //tile acceptance 3
 	0D 10 //land shape flags: 10 = only on flat land
@@ -131,7 +131,7 @@
 //Action3 attach sprites to industry tile
 
 //Tile action 3
--1 * 0 03 09 01 TILE_MEATPACKER_1 00 \wxA0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
+-1 * 0 03 09 01 TILE_FISHPROCESSOR_1 00 \wxA0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
 
 
 
@@ -144,13 +144,13 @@
 		\d62 //sum(size of layout definition +2 for termination)
 		//layout:
 			00 00 FE TILE_GENERIC_CONCRETE 00
-			00 01 FE TILE_MEATPACKER_1 00 //xoffs yoffs FE newtile(W)
-			00 02 FE TILE_MEATPACKER_1 00
-			00 03 FE TILE_MEATPACKER_1 00
+			00 01 FE TILE_FISHPROCESSOR_1 00 //xoffs yoffs FE newtile(W)
+			00 02 FE TILE_FISHPROCESSOR_1 00
+			00 03 FE TILE_FISHPROCESSOR_1 00
 			01 00 FE TILE_GENERIC_CONCRETE 00
-			01 01 FE TILE_MEATPACKER_1 00
-			01 02 FE TILE_MEATPACKER_1 00
-			01 03 FE TILE_MEATPACKER_1 00
+			01 01 FE TILE_FISHPROCESSOR_1 00
+			01 02 FE TILE_FISHPROCESSOR_1 00
+			01 03 FE TILE_FISHPROCESSOR_1 00
 			02 00 FE TILE_GENERIC_CONCRETE 00
 			02 01 FE TILE_GENERIC_CONCRETE 00
 			02 02 FE TILE_GENERIC_CONCRETE 00
