@@ -90,7 +90,7 @@
 //Industry definition
 
 //Action 0
--1 * 0 00 0A \b27 01 IND_SURVEYSUPPLYDEPOT //-1 * 0 00 0A <num-props> 01 <id>
+-1 * 0 00 0A \b27 01 IND_SURVEYCAMP //-1 * 0 00 0A <num-props> 01 <id>
 	08 IND_NULL //reuse original industry with this here ID
 	0A 02 //number of industry layouts
 		\d69 //sum(size of layout definition +2 for termination)
@@ -158,5 +158,5 @@
 
 
 //Industry action 3 attach varaction2 chain to industry
--1 * 0 03 0A 01 IND_SURVEYSUPPLYDEPOT 00 \wxC0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>	
+-1 * 0 03 0A 01 IND_SURVEYCAMP 00 \wxC0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>	
 
