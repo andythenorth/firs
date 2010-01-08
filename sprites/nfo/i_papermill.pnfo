@@ -1,7 +1,7 @@
 // Defines for use in industry template
 #define THIS_INDUSTRY                 IND_PAPERMILL
-#define THIS_NUM_INPUT_CARGOS         \d02
-#define THIS_NUM_OUTPUT_CARGOS        \d01
+#define THIS_NUM_INPUT_CARGOS         \d01
+#define THIS_NUM_OUTPUT_CARGOS        \d02
 #define THIS_PROD_RATIO_CARGO_IN_1    \d04
 #define THIS_PROD_RATIO_CARGO_IN_2    \d04
 #define THIS_PROD_RATIO_CARGO_IN_3    \d08
@@ -14,7 +14,7 @@
 	09 IND_PAPERMILL //industry type override
 	24 STR_STA_MILLS //default text for nearby station
 	10 CARGO_GOODS CARGO_MANUFACTURINGSUPPLIES //production cargo types (word; fill unused with FFh)
-	11 CARGO_WOOD CARGO_ENGINEERINGSUPPLIES FF FF //acceptance cargo types (dword; fill unused with FFh)
+	11 CARGO_WOOD FF FF FF //acceptance cargo types (dword; fill unused with FFh)
 	1C 66 00 19 00 //input cargo 1 multiplier (dword M1 M2; output_typen = X*Mn/256)
 	1D 66 00 19 00 //input cargo 2 multiplier
 	1E 00 00 00 00 //input cargo 3 multiplier
