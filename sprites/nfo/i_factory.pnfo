@@ -14,7 +14,7 @@
 	09 06 //industry type override
 	24 STR_STA_FACTORY //default text for nearby station
 	10 CARGO_GOODS FF //production cargo types (word; fill unused with FFh)
-	11 CARGO_PARTS CARGO_PACKAGING FF FF //acceptance cargo types (dword; fill unused with FFh)
+	11 CARGO_PACKAGING FF FF FF //acceptance cargo types (dword; fill unused with FFh)
 	1C C0 00 54 00 //input cargo 1 multiplier (dword M1 M2; output_typen = X*Mn/256)
 	1D 00 00 00 00 //input cargo 2 multiplier
 	1E 00 00 00 00 //input cargo 3 multiplier
@@ -34,24 +34,24 @@
 -1 * 0 00 09 \b5 01 27 // -1 * 0 00 09 <num-props> 01 <id>
 	08 27 //subsitute tile type
 	09 27 //industry tile override
-	0A CARGO_PARTS 08 //tile acceptance 1
-	0B CARGO_PACKAGING 08 //tile acceptance 2
+	0A CARGO_PACKAGING 08 //tile acceptance 1
+	0B 00 00 //tile acceptance 2
 	0C 00 00 //tile acceptance 3
 -1 * 0 00 09 \b5 01 28 // -1 * 0 00 09 <num-props> 01 <id>
 	08 28 //subsitute tile type
 	09 28 //industry tile override
-	0A CARGO_PARTS 08 //tile acceptance 1
-	0B CARGO_PACKAGING 08 //tile acceptance 2
+	0A CARGO_PACKAGING 08 //tile acceptance 1
+	0B 00 00 //tile acceptance 2
 	0C 00 00 //tile acceptance 3
 -1 * 0 00 09 \b5 01 29 // -1 * 0 00 09 <num-props> 01 <id>
 	08 29 //subsitute tile type
 	09 29 //industry tile override
-	0A CARGO_PARTS 08 //tile acceptance 1
-	0B CARGO_PACKAGING 08 //tile acceptance 2
+	0A CARGO_PACKAGING 08 //tile acceptance 1
+	0B 00 00 //tile acceptance 2
 	0C 00 00 //tile acceptance 3
 -1 * 0 00 09 \b5 01 2A // -1 * 0 00 09 <num-props> 01 <id>
 	08 2A //subsitute tile type
 	09 2A //industry tile override
-	0A CARGO_PARTS 08 //tile acceptance 1
-	0B CARGO_PACKAGING 08 //tile acceptance 2
+	0A CARGO_PACKAGING 08 //tile acceptance 1
+	0B 00 00 //tile acceptance 2
 	0C 00 00 //tile acceptance 3
