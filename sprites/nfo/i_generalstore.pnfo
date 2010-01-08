@@ -46,11 +46,11 @@
 	0E STR_IND_PRODDECR_GENERIC //production decrease message
 	1B STR_IND_NEW_GENERIC //new industry message
 	1F STR_IND_GENERALSTORE //industry name
-	10 CARGO_WASTE FF //production cargo types (word; fill unused with FFh)
+	10 FF FF //production cargo types (word; fill unused with FFh)
 	11 CARGO_FOOD CARGO_GOODS FF FF //acceptance cargo types (dword; fill unused with FFh)
 	12 00 //production multiplier cargo 1
 	13 00 //production multiplier cargo 2
-	1C \w38 \w38 //input cargo 1 multiplier (dword M1 M2; output_typen = X*Mn/256)
+	1C \w0  \w0 //input cargo 1 multiplier (dword M1 M2; output_typen = X*Mn/256)
 	1D \w0  \w0  //input cargo 2 multiplier
 	1E \w0  \w0  //input cargo 3 multiplier
 	14 \b2 //minimal cargo distribution amount
