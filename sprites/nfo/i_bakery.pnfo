@@ -16,7 +16,7 @@
 -1 * 0 00 09 \b5 01 TILE_BAKERY_1 // -1 * 0 00 09 <num-props> 01 <id>
 	08 TILE_NULL //subsitute type
 	0A CARGO_GRAIN 08 //tile acceptance 1
-	0B CARGO_PACKAGING 08 //tile acceptance 2
+	0B CARGO_MANUFACTURINGSUPPLIES 08 //tile acceptance 2
 	0C 00 00 //tile acceptance 3
 	0D 10 //land shape flags: 10 = only on flat land
 
@@ -114,7 +114,7 @@
 	1B STR_IND_NEW_GENERIC //new industry message
 	1F STR_IND_BAKERY //industry name
 	10 CARGO_FOOD FF //production cargo types (word; fill unused with FFh)
-	11 CARGO_GRAIN CARGO_PACKAGING FF FF //acceptance cargo types (dword; fill unused with FFh)
+	11 CARGO_GRAIN CARGO_MANUFACTURINGSUPPLIES FF FF //acceptance cargo types (dword; fill unused with FFh)
 	12 \b0 //production multiplier cargo 1
 	13 \b0 //production multiplier cargo 2
 	1C \w0 \w0  //input cargo 1 multiplier (dword M1 M2; output_typen = X*Mn/256)

@@ -146,7 +146,7 @@
 	0E STR_IND_PRODDECR_GENERIC //production decrease message
 	1B STR_IND_NEW_GENERIC //new industry message
 	1F STR_IND_METALFOUNDRY //industry name
-	10 CARGO_PACKAGING FF //production cargo types (word; fill unused with FFh)
+	10 CARGO_MANUFACTURINGSUPPLIES FF //production cargo types (word; fill unused with FFh)
 	11 CARGO_STEEL CARGO_ALUMINIUM CARGO_ENGINEERINGSUPPLIES FF //acceptance cargo types (dword; fill unused with FFh)
 	12 \b0 //production multiplier cargo 1
 	13 \b0 //production multiplier cargo 2

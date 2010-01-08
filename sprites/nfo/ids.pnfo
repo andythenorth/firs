@@ -112,75 +112,76 @@
 #define TILE_FISHPROCESSOR_1               C9
 
 // Definition of the cargo bits/IDs
-#define CARGO_COAL                01
-#define CARGO_IRONORE             08
-#define CARGO_SAND                11
-#define CARGO_GRAVEL              10
-#define CARGO_OIL                 03
-#define CARGO_BAUXITE             13
-#define CARGO_STEEL               09
-#define CARGO_ALUMINIUM           14
-#define CARGO_LIVESTOCK           04
-#define CARGO_MILK                0C
-#define CARGO_FRUITSANDVEGETABLES 0D
-#define CARGO_GRAIN               06
-#define CARGO_SUGARCANE           06
-#define CARGO_FISH                0E
-#define CARGO_FOOD                0B
-#define CARGO_GOODS               05
-#define CARGO_WATER               11
-#define CARGO_SURVEYSUPPLIES      1C
-#define CARGO_FARMSUPPLIES        1B
-#define CARGO_ENGINEERINGSUPPLIES 1A
-#define CARGO_WOOD                07
-#define CARGO_LUMBER              12
-#define CARGO_CHEMICALS           17
-#define CARGO_FUELOIL             16
-#define CARGO_SCRAPMETAL          15
+#define CARGO_COAL                  01
+#define CARGO_IRONORE               08
+#define CARGO_SAND                  11
+#define CARGO_GRAVEL                10
+#define CARGO_OIL                   03
+#define CARGO_BAUXITE               13
+#define CARGO_STEEL                 09
+#define CARGO_ALUMINIUM             14
+#define CARGO_LIVESTOCK             04
+#define CARGO_MILK                  0C
+#define CARGO_FRUITSANDVEGETABLES   0D
+#define CARGO_GRAIN                 06
+#define CARGO_SUGARCANE             06
+#define CARGO_FISH                  0E
+#define CARGO_FOOD                  0B
+#define CARGO_GOODS                 05
+#define CARGO_WATER                 11
+#define CARGO_SURVEYSUPPLIES        1C
+#define CARGO_FARMSUPPLIES          1B
+#define CARGO_ENGINEERINGSUPPLIES   1A
+#define CARGO_WOOD                  07
+#define CARGO_LUMBER                12
+#define CARGO_CHEMICALS             17
+#define CARGO_FUELOIL               16
+#define CARGO_SCRAPMETAL            15
 // #define CARGO_PARTS               19
-#define CARGO_PACKAGING           18
-#define CARGO_COTTON              0F
-#define CARGO_WOOL                0F
-#define CARGO_PASSENGERS          00
-#define CARGO_MAIL                02
-#define CARGO_WASTE               0A
+#define CARGO_MANUFACTURINGSUPPLIES 18
+#define CARGO_COTTON                0F
+#define CARGO_WOOL                  0F
+#define CARGO_PASSENGERS            00
+#define CARGO_MAIL                  02
+#define CARGO_WASTE                 0A
 // #define CARGO_RESERVED1           1D
 // #define CARGO_REGEARING           1E
 // #define CARGO_RESERVED2           1F
 
 // Definition of the cargo labels
-#define CLABEL_COAL                "COAL"
-#define CLABEL_IRONORE             "IORE"
-#define CLABEL_SAND                "SAND"
-#define CLABEL_GRAVEL              "GRVL"
-#define CLABEL_OIL                 "OIL_"
-#define CLABEL_BAUXITE             "AORE"
-#define CLABEL_STEEL               "STEL"
-#define CLABEL_ALUMINIUM           "ALUM"
-#define CLABEL_LIVESTOCK           "LVST"
-#define CLABEL_MILK                "MILK"
-#define CLABEL_FRUITSANDVEGETABLES "FRUT"
-#define CLABEL_GRAIN               "GRAI"
-#define CLABEL_SUGARCANE           "SGCN"
-#define CLABEL_FISH                "FISH"
-#define CLABEL_FOOD                "FOOD"
-#define CLABEL_GOODS               "GOOD"
-#define CLABEL_WATER               "WATR"
-#define CLABEL_SURVEYSUPPLIES      "SVSP"
-#define CLABEL_FARMSUPPLIES        "FMSP"
-#define CLABEL_ENGINEERINGSUPPLIES "ENSP"
-#define CLABEL_WOOD                "WOOD"
-#define CLABEL_LUMBER              "WDPR"
-#define CLABEL_CHEMICALS           "RFPR"
-#define CLABEL_FUELOIL             "PETR"
-#define CLABEL_SCRAPMETAL          "SCRP"
+#define CLABEL_COAL                  "COAL"
+#define CLABEL_IRONORE               "IORE"
+#define CLABEL_SAND                  "SAND"
+#define CLABEL_GRAVEL                "GRVL"
+#define CLABEL_OIL                   "OIL_"
+#define CLABEL_BAUXITE               "AORE"
+#define CLABEL_STEEL                 "STEL"
+#define CLABEL_ALUMINIUM             "ALUM"
+#define CLABEL_LIVESTOCK             "LVST"
+#define CLABEL_MILK                  "MILK"
+#define CLABEL_FRUITSANDVEGETABLES   "FRUT"
+#define CLABEL_GRAIN                 "GRAI"
+#define CLABEL_SUGARCANE             "SGCN"
+#define CLABEL_FISH                  "FISH"
+#define CLABEL_FOOD                  "FOOD"
+#define CLABEL_GOODS                 "GOOD"
+#define CLABEL_WATER                 "WATR"
+#define CLABEL_SURVEYSUPPLIES        "SVSP"
+#define CLABEL_FARMSUPPLIES          "FMSP"
+#define CLABEL_ENGINEERINGSUPPLIES   "ENSP"
+#define CLABEL_WOOD                  "WOOD"
+#define CLABEL_LUMBER                "WDPR"
+#define CLABEL_CHEMICALS             "RFPR"
+#define CLABEL_FUELOIL               "PETR"
+#define CLABEL_SCRAPMETAL            "SCRP"
 // #define CLABEL_PARTS               "PART"
-#define CLABEL_PACKAGING           "PACK"
-#define CLABEL_COTTON              "CTTN"
-#define CLABEL_WOOL                "WOOL"
-#define CLABEL_PASSENGERS          "PASS"
-#define CLABEL_MAIL                "MAIL"
-#define CLABEL_WASTE               "WSTE"
+// #define CLABEL_PACKAGING           "PACK"
+#define CLABEL_MANUFACTURINGSUPPLIES "MNSP"
+#define CLABEL_COTTON                "CTTN"
+#define CLABEL_WOOL                  "WOOL"
+#define CLABEL_PASSENGERS            "PASS"
+#define CLABEL_MAIL                  "MAIL"
+#define CLABEL_WASTE                 "WSTE"
 
 
 //Definition of text IDs for industries
@@ -320,11 +321,11 @@
 #define STR_CRG_LUMBER_MUNIT                24 DC
 #define STR_CRG_LUMBER_TABBR                25 DC
 
-#define STR_CRG_PACKAGING_CTYPE             26 DC
-#define STR_CRG_PACKAGING_1TYPE             26 DC //same as above
-#define STR_CRG_PACKAGING_1UNIT             27 DC
-#define STR_CRG_PACKAGING_MUNIT             28 DC
-#define STR_CRG_PACKAGING_TABBR             29 DC
+#define STR_CRG_MANUFACTURINGSUPPLIES_CTYPE 26 DC
+#define STR_CRG_MANUFACTURINGSUPPLIES_1TYPE 26 DC //same as above
+#define STR_CRG_MANUFACTURINGSUPPLIES_1UNIT 27 DC
+#define STR_CRG_MANUFACTURINGSUPPLIES_MUNIT 28 DC
+#define STR_CRG_MANUFACTURINGSUPPLIES_TABBR 29 DC
 
 #define STR_CRG_FARMSUPPLIES_CTYPE          2A DC
 #define STR_CRG_FARMSUPPLIES_1TYPE          2A DC //same as above
@@ -356,11 +357,11 @@
 #define STR_CRG_BAUXITE_MUNIT               3A DC
 #define STR_CRG_BAUXITE_TABBR               AB 00 //using TTD string
 
-#define STR_CRG_PARTS_CTYPE                 3B DC
-#define STR_CRG_PARTS_1TYPE                 3B DC //same as above
-#define STR_CRG_PARTS_1UNIT                 3C DC
-#define STR_CRG_PARTS_MUNIT                 3D DC
-#define STR_CRG_PARTS_TABBR                 3E DC
+// #define STR_CRG_PARTS_CTYPE                 3B DC
+// #define STR_CRG_PARTS_1TYPE                 3B DC //same as above
+// #define STR_CRG_PARTS_1UNIT                 3C DC
+// #define STR_CRG_PARTS_MUNIT                 3D DC
+// #define STR_CRG_PARTS_TABBR                 3E DC
 
 #define STR_CRG_ALUMINIUM_CTYPE             3F DC
 #define STR_CRG_ALUMINIUM_1TYPE             3F DC //same as above

@@ -143,7 +143,7 @@
 	1B STR_IND_NEW_GENERIC //new industry message
 	1F STR_IND_PLASTICSPLANT //industry name
 	24 STR_STA_PLANT //default text for nearby station
-	10 CARGO_PACKAGING FF //production cargo types (word; fill unused with FFh)
+	10 CARGO_MANUFACTURINGSUPPLIES FF //production cargo types (word; fill unused with FFh)
 	11 CARGO_CHEMICALS CARGO_ENGINEERINGSUPPLIES FF FF //acceptance cargo types (dword; fill unused with FFh)
 	12 00 //production multiplier cargo 1
 	13 00 //production multiplier cargo 2

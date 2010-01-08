@@ -13,7 +13,7 @@
 	08 IND_PAPERMILL //substitute industry type
 	09 IND_PAPERMILL //industry type override
 	24 STR_STA_MILLS //default text for nearby station
-	10 CARGO_GOODS CARGO_PACKAGING //production cargo types (word; fill unused with FFh)
+	10 CARGO_GOODS CARGO_MANUFACTURINGSUPPLIES //production cargo types (word; fill unused with FFh)
 	11 CARGO_WOOD CARGO_ENGINEERINGSUPPLIES FF FF //acceptance cargo types (dword; fill unused with FFh)
 	1C 66 00 19 00 //input cargo 1 multiplier (dword M1 M2; output_typen = X*Mn/256)
 	1D 66 00 19 00 //input cargo 2 multiplier
