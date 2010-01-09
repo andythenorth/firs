@@ -7,9 +7,6 @@
 
 //Industry tiles definition
 
-//Only have this in climates 0 and 1
--1 * 0 07 83 01 \7> 01 FF
-
 //Tile action 0
 -1 * 0 00 09 \b6 01 TILE_SANDPIT_1 // -1 * 0 00 09 <num-props> 01 <id>
 	08 TILE_NULL //subsitute type
@@ -504,6 +501,3 @@
 //No action 1 for industries, as graphics are defined by the industry-tile feature.
 
 #include "../../templates/template_primary_action23.pnfo"
-
-//End of only have this in this and that climate
--1 * 0 10 FF
