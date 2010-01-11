@@ -10,15 +10,16 @@
 
 
 //Action 1 define graphics
--1 * 0 01 09 \b1 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
+-1 * 0 01 09 \b2 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
 // Format: spritenum pcxfile xpos ypos compression ysize xsize xrel yrel
 -1 sprites/pcx/industries/generictiles.pcx 10 10 09  54 64 -31 -23
+-1 sprites/pcx/industries/groundtiles.pcx  80 10 09   31 64 -31   0
 
 
 //Action 2  attach graphics to graphics id
 //sprite TILE_GENERIC_SILOS
 -1 * 0 02 09 TILE_GENERIC_SILOS 00 //-1 * 0 02 09 <set-id> 00
-	\d1420 //groundsprite
+	\dx80008001 //groundsprite
 	\dx80008000 //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b32 //xextent yextent zextent
@@ -49,7 +50,7 @@
 //Action 2  attach graphics to graphics id
 //sprite TILE_GENERIC_SILOS
 -1 * 0 02 09 TILE_GENERIC_SANDSTAITHES 00 //-1 * 0 02 09 <set-id> 00
-	\d1420 //groundsprite
+	\dx80008001 //groundsprite
 	\dx80008000 //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b8 //xextent yextent zextent
