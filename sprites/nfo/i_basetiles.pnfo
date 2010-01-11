@@ -10,14 +10,14 @@
 
 // concrete sprite is currently commented out - uses TTD default sprite
 //Tile action 1
-//-1 * 0 01 09 \b1 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
+-1 * 0 01 09 \b1 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
 // Format: spritenum pcxfile xpos ypos compression ysize xsize xrel yrel
-//-1 sprites/pcx/industries/groundtiles.pcx  80 10  09  31 64 -31 0
+-1 sprites/pcx/industries/groundtiles.pcx  80 10  09  31 64 -31 0
 
 //Action 2  attach graphics to graphics id
 -1 * 0 02 09 TILE_GENERIC_CONCRETE 00 //-1 * 0 02 09 <set-id> 00
-	//\dx80008000 //groundsprite
-	\d1420 //groundsprite
+	\dx80008000 //groundsprite
+	// \d1420 //groundsprite
 	\d0 //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b0 //xextent yextent zextent
