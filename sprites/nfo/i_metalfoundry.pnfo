@@ -58,31 +58,41 @@
 	\dx80008004 //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b32 //xextent yextent zextent
+-1 * 0 02 09 05 00 //-1 * 0 02 09 <set-id> 00
+	\dx80008005 //groundsprite
+	\d0 //building sprite (empty tile)
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b32 //xextent yextent zextent
 
 //-1 * 0 02 09 <set-id> <type> <variable> <varadjust> <nvar> (<set-id> <low-range> <high-range>){n} <default>
 
 -1 * 0 02 09 B1 //layout 1
 	85 43 //check relative position (00yx[YYXX])
 	00 FF FF //don't shift, don't mask
-	\b5 //number of ranges to check (number of tiles) [range: XX YY  XX YY]
+	\b8 //number of ranges to check (number of tiles) [range: XX YY  XX YY]
 	\wx00   02 01  02 01
 	\wx01   02 02  02 02
+	\wx05   02 03  02 03
+	\wx05   02 04  02 04
 	
 	\wx02   00 00  02 00
 	\wx02   00 01  01 01
 	\wx03   00 03  01 03
+	\wx05   01 04  01 04
 	\wx04 //(multiple) <default>
 
 -1 * 0 02 09 B2 //layout 2
 	85 43 //check relative position (00yx[YYXX])
 	00 FF FF //don't shift, don't mask
-	\b6 //number of ranges to check (number of tiles) [range: XX YY  XX YY]
+	\b8 //number of ranges to check (number of tiles) [range: XX YY  XX YY]
 	\wx00   01 00  01 00
 	\wx01   01 01  01 01
 	
 	\wx02   00 02  01 02
 	\wx02   00 03  03 03
 	\wx03   02 00  03 00
+	\wx05   02 01  02 01
+	\wx05   02 02  02 02
 	\wx03   03 02  03 02
 	\wx04 //02 01  03 01 <default>
                  
@@ -122,9 +132,9 @@
 			02 00 FE TILE_METALFOUNDRY_1 00 //xoffs yoffs FE newtile(W)
 			02 01 FE TILE_METALFOUNDRY_1 00
 			02 02 FE TILE_METALFOUNDRY_1 00
-			01 04 FE TILE_GENERIC_CONCRETE 00
-			02 03 FE TILE_GENERIC_CONCRETE 00
-			02 04 FE TILE_GENERIC_CONCRETE 00
+			01 04 FE TILE_METALFOUNDRY_1 00
+			02 03 FE TILE_METALFOUNDRY_1 00
+			02 04 FE TILE_METALFOUNDRY_1 00
 		00 80 //terminate layout definition
 		//layout:
 			00 02 FE TILE_METALFOUNDRY_1 00 //xoffs yoffs FE newtile(W)
@@ -139,8 +149,8 @@
 			03 01 FE TILE_METALFOUNDRY_1 00
 			03 02 FE TILE_METALFOUNDRY_1 00
 			03 03 FE TILE_METALFOUNDRY_1 00
-			02 01 FE TILE_GENERIC_CONCRETE 00
-			02 02 FE TILE_GENERIC_CONCRETE 00
+			02 01 FE TILE_METALFOUNDRY_1 00 //
+			02 02 FE TILE_METALFOUNDRY_1 00 //
 		00 80 //terminate layout definition
 	0B 04 //production flags 1h=extractive, 2h=organic, 4h=processing
 	0C STR_IND_CLOSE_GENERIC //industry closure message
