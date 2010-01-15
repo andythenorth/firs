@@ -43,9 +43,10 @@ include ${MAKEFILECONFIG}
 
 REPO_DIRS    = $(dir $(BUNDLE_FILES))
 # read the main source file and get a list of all (p)nfo files which comprise the newgrf. We depend on them.
-PNFO_FILES = $(shell cat $(PNFO_FILENAME) | sed "s/^[ \t]*//" | grep -v 'cargo_schemes.pnfo' | grep -v 'cargos.pnfo' | grep '$(PNFO_SUFFIX)')
+SOURCE_PNFO_FILES = $(shell cat $(PNFO_FILENAME) | sed "s/^[ \t]*//" | grep -v 'cargo_schemes.pnfo' | grep -v 'cargos.pnfo' | grep '$(PNFO_SUFFIX)')
+PNFO_FILES = $(shell cat $(PNFO_FILENAME) | sed "s/^[ \t]*//" | grep '$(PNFO_SUFFIX)')
 # PCX_FILES  = $(shell cat $(PNFO_FILENAME) | sed "s/^[ \t]*//" | grep '$(PCX_SUFFIX)')
-PCX_FILES  = $(shell cat $(PNFO_FILES) | grep '$(PCX_SUFFIX)' | awk '{ print $$2 }' | grep '$(PCX_SUFFIX)' | sort | uniq)
+PCX_FILES  = $(shell cat $(SOURCE_PNFO_FILES) | grep '$(PCX_SUFFIX)' | awk '{ print $$2 }' | grep '$(PCX_SUFFIX)' | sort | uniq)
 # Assume that all pnfo files in the template dir are part of the code:
 TEMPLATE_FILES = $(shell ls $(TEMPLATE_DIR)/*.$(PNFO_SUFFIX))
 
