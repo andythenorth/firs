@@ -1,0 +1,27 @@
+//-1 * 0 02 09 <set-id> <type> <variable> <varadjust> <nvar> (<set-id> <low-range> <high-range>){n} <default>
+
+-1 * 0 02 09 B0 //layout 0
+	85 43 //check relative position (00yx[YYXX])
+	00 FF FF //don't shift, don't mask
+	\b18 //number of ranges to check (number of tiles)
+    \wx00   03 07  03 07
+    \wx01   02 07  02 07
+    \wx02   01 07  01 07
+    \wx03   00 07  00 07
+    \wx04   03 06  03 06
+    \wx05   03 05  03 05
+    \wx06   03 03  03 03
+    \wx07   02 03  02 03
+    \wx08   01 03  01 03
+    \wx09   00 03  00 03
+    \wx0A   03 02  03 02
+    \wx0B   03 01  03 01
+    \wx0C   03 00  03 00
+    \wx0D   02 01  02 01
+    \wx0E   01 01  01 01
+    
+    \wx10   00 00  02 00
+    \wx10   00 02  02 02
+    \wx10   00 05  02 06
+
+	\wx0F //00 01  00 01 <default>
