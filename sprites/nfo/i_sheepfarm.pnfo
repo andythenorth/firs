@@ -1,16 +1,9 @@
-//Only have this in climates 0 and 1
--1 * 0 07 83 01 \7> 01 FF
-
 // Defines for use in industry template
 #define THIS_INDUSTRY         IND_SHEEPFARM
 #define THIS_STR_INFO_CB38    STR_INFO_GENERIC
 #define THIS_STR_BOOST        STR_INFO_FS_PRIMARY_BOOST
 #define THIS_STR_ACCEPT       \wxD4D2
 #define THIS_STR_NOT_ACCEPT   \wxD4D3
-
-
-//Only have this in climates 0 and 1
--1 * 0 07 83 01 \7> 01 FF
 
 //Industry tiles definition
 
@@ -150,6 +143,3 @@
 //No action 1 for industries, as graphics are defined by the industry-tile feature.
 
 #include "../../templates/template_primary_action23.pnfo"
-
-//End of only have this in this and that climate
--1 * 0 10 FF
