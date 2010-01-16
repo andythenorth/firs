@@ -94,310 +94,51 @@
 -1 sprites/pcx/industries/sandpit.pcx 800 100 09  31 64 -31 0
 -1 sprites/pcx/industries/sandpit.pcx 940 90 09  47 64 -31 -16
 
+// include tiles and layouts, ! Action 2 IDs here are deliberately repeated by the various tile includes
+#include "i_sandpit_tiles_layouts/sandpit_tiles_standard.pnfo"
+#include "i_sandpit_tiles_layouts/sandpit_layouts.pnfo"
 
-
-//\b0-\b23: pit tiles, Action 2 
--1 * 0 02 09 00 02 //-1 * 0 02 09 <set-id> <count> (extended format)
-  \d3981 //groundsprite
-	\dxC0000000 //'building' sprite (actually ground tile)
-	\b0 \b0 \b0 //xofs yofs zofs
-	\b8 \b8 \b12 //xextent yextent zextent
-	\dx80008018 // greeble sprite 
-	\b0 \b0 \b0 //xofs yofs zofs
-	\b16 \b16 \b12 //xextent yextent zextent
--1 * 0 02 09 01 02 //-1 * 0 02 09 <set-id> <count> (extended format)
-	\d3981 //groundsprite
-	\dxC0000001 //'building' sprite (actually ground tile)
-	\b0 \b0 \b0 //xofs yofs zofs
-	\b8 \b8 \b12 //xextent yextent zextent
-	\dx80008019 //greeble sprite
-	\b0 \b0 \b0 //xofs yofs zofs
-	\b16 \b16 \b12 //xextent yextent zextent
--1 * 0 02 09 02 02 //-1 * 0 02 09 <set-id> <count> (extended format)
-	\d3981 //groundsprite
-	\dxC0000002 //'building' sprite (actually ground tile)
-	\b0 \b0 \b0 //xofs yofs zofs
-	\b8 \b8 \b12 //xextent yextent zextent
-	\dx8000801A //greeble sprite
-	\b0 \b0 \b0 //xofs yofs zofs
-	\b16 \b16 \b12 //xextent yextent zextent
--1 * 0 02 09 03 02 //-1 * 0 02 09 <set-id> <count> (extended format)
-	\d3981 //groundsprite
-	\dxC0000003 //'building' (actually ground tile)
-	\b0 \b0 \b0 //xofs yofs zofs
-	\b8 \b8 \b12 //xextent yextent zextent
-	\dx8000801B //greeble sprite
-	\b0 \b0 \b0 //xofs yofs zofs
-	\b11 \b16 \b42 //xextent yextent zextent
--1 * 0 02 09 04 00 //-1 * 0 02 09 <set-id> 00
-	\d3981 //groundsprite
-	\dxC0000004 //building sprite
-	\b0 \b0 //xofs yofs
-	\b16 \b16 \b4 //xextent yextent zextent
--1 * 0 02 09 05 00 //-1 * 0 02 09 <set-id> 00
-	\d3981 //groundsprite
-	\dxC0000005 //building sprite
-	\b0 \b0 //xofs yofs
-	\b16 \b16 \b4 //xextent yextent zextent
-
--1 * 0 02 09 06 02 //-1 * 0 02 09 <set-id> <count> (extended format)
-	\d3981 //groundsprite
-	\dxC0000006 //groundsprite
-	\b0 \b0 \b0 //xofs yofs zofs
-	\b16 \b16 \b32 //xextent yextent zextent
-	\dx8000801C //building sprite
-	\b0 \b0 \b0 //xofs yofs zofs
-	\b16 \b16 \b32 //xextent yextent zextent
--1 * 0 02 09 07 02 //-1 * 0 02 09 <set-id> <count> (extended format)
-	\d3981 //groundsprite
-	\dxC0000007 //groundsprite
-	\b0 \b0 \b0 //xofs yofs zofs
-	\b8 \b8 \b12 //xextent yextent zextent
-	\dx8000801D //building sprite
-	\b0 \b0 \b0 //xofs yofs zofs
-	\b16 \b16 \b32 //xextent yextent zextent
--1 * 0 02 09 08 00 //-1 * 0 02 09 <set-id> 00
-	\d3981 //groundsprite
-	\dxC0000008 //building sprite
-	\b0 \b0 //xofs yofs
-	\b16 \b16 \b6 //xextent yextent zextent
--1 * 0 02 09 09 00 //-1 * 0 02 09 <set-id> 00
-	\dx80000009 //groundsprite
-	\dx8000801E //building sprite
-	\b0 \b0 //xofs yofs
-	\b16 \b16 \b32 //xextent yextent zextent
--1 * 0 02 09 0A 00 //-1 * 0 02 09 <set-id> 00
-	\dx8000000A //groundsprite
-	\dx8000801F //building sprite
-	\b0 \b0 //xofs yofs
-	\b16 \b16 \b32 //xextent yextent zextent
--1 * 0 02 09 0B 00 //-1 * 0 02 09 <set-id> 00
-	\d3981 //groundsprite
-	\dxC000000B //building sprite
-	\b0 \b0 //xofs yofs
-	\b16 \b16 \b6 //xextent yextent zextent
-
--1 * 0 02 09 0C 00 //-1 * 0 02 09 <set-id> 00
-	\d3981 //groundsprite
-	\dxC000000C //building sprite
-	\b0 \b0 //xofs yofs
-	\b16 \b16 \b6 //xextent yextent zextent
--1 * 0 02 09 0D 00 //-1 * 0 02 09 <set-id> 00
-	\d3981 //groundsprite
-	\dxC000000D //building sprite
-	\b0 \b0 //xofs yofs
-	\b16 \b16 \b6 //xextent yextent zextent
--1 * 0 02 09 0E 00 //-1 * 0 02 09 <set-id> 00
-	\d3981 //groundsprite
-	\dxC000000E //building sprite
-	\b0 \b0 //xofs yofs
-	\b16 \b16 \b6 //xextent yextent zextent
--1 * 0 02 09 0F 00 //-1 * 0 02 09 <set-id> 00
-	\dx8000000F //groundsprite
-	\dx80008020 //building sprite
-	\b0 \b0 //xofs yofs
-	\b16 \b16 \b32 //xextent yextent zextent
--1 * 0 02 09 10 00 //-1 * 0 02 09 <set-id> 00
-	\dx80000010 //groundsprite
-	\dx80008021 //building sprite
-	\b0 \b0 //xofs yofs
-	\b16 \b16 \b32 //xextent yextent zextent
--1 * 0 02 09 11 00 //-1 * 0 02 09 <set-id> 00
-	\d3981 //groundsprite
-	\dxC0000011 //building sprite
-	\b0 \b0 //xofs yofs
-	\b16 \b16 \b6 //xextent yextent zextent
-
--1 * 0 02 09 12 00 //-1 * 0 02 09 <set-id> 00
-	\d3981 //groundsprite
-	\dxC0000012 //building sprite
-	\b0 \b0 //xofs yofs
-	\b16 \b16 \b6 //xextent yextent zextent
--1 * 0 02 09 13 00 //-1 * 0 02 09 <set-id> 00
-	\d3981 //groundsprite
-	\dxC0000013 //building sprite
-	\b0 \b0 //xofs yofs
-	\b16 \b16 \b6 //xextent yextent zextent
--1 * 0 02 09 14 00 //-1 * 0 02 09 <set-id> 00
-	\d3981 //groundsprite
-	\dxC0000014 //building sprite
-	\b0 \b0 //xofs yofs
-	\b16 \b16 \b6 //xextent yextent zextent
--1 * 0 02 09 15 00 //-1 * 0 02 09 <set-id> 00
-	\d3981 //groundsprite
-	\dxC0000015 //building sprite
-	\b0 \b0 //xofs yofs
-	\b16 \b16 \b6 //xextent yextent zextent
--1 * 0 02 09 16 00 //-1 * 0 02 09 <set-id> 00
-	\d3981 //groundsprite
-	\dxC0000016 //building sprite
-	\b0 \b0 //xofs yofs
-	\b16 \b16 \b6 //xextent yextent zextent
--1 * 0 02 09 17 00 //-1 * 0 02 09 <set-id> 00
-	\d3981 //groundsprite
-	\dxC0000017 //building sprite
-	\b0 \b0 //xofs yofs
-	\b16 \b16 \b6 //xextent yextent zextent
-
-//\b24-\b33: processor 1, Action 2 
--1 * 0 02 09 18 00 //-1 * 0 02 09 <set-id> 00
-	\dx80000022 //groundsprite
-	\dx0 //building sprite
-	\b0 \b0 //xofs yofs
-	\b16 \b16 \b4 //xextent yextent zextent
--1 * 0 02 09 19 00 //-1 * 0 02 09 <set-id> 00
-	\dx80000023 //groundsprite
-	\dx8000802C //building sprite
-	\b0 \b0 //xofs yofs
-	\b16 \b16 \b16 //xextent yextent zextent
--1 * 0 02 09 1A 00 //-1 * 0 02 09 <set-id> 00
-	\dx80000024 //groundsprite
-	\dx8000802D //building sprite
-	\b0 \b0 //xofs yofs
-	\b16 \b16 \b32 //xextent yextent zextent
--1 * 0 02 09 1B 00 //-1 * 0 02 09 <set-id> 00
-	\d3981 //groundsprite
-	\dxC0000025 //building sprite
-	\b0 \b0 //xofs yofs
-	\b16 \b16 \b4 //xextent yextent zextent
--1 * 0 02 09 1C 00 //-1 * 0 02 09 <set-id> 00
-	\dx80000026 //groundsprite
-	\dx8000802E //building sprite
-	\b0 \b0 //xofs yofs
-	\b16 \b16 \b48 //xextent yextent zextent
--1 * 0 02 09 1D 00 //-1 * 0 02 09 <set-id> 00
-	\dx80000027 //groundsprite
-	\dx8000802F //building sprite
-	\b0 \b0 //xofs yofs
-	\b16 \b16 \b32 //xextent yextent zextent
--1 * 0 02 09 1E 00 //-1 * 0 02 09 <set-id> 00
-	\dx80000028 //groundsprite
-	\dx80000030 //building sprite
-	\b0 \b0 //xofs yofs
-	\b16 \b16 \b48 //xextent yextent zextent
--1 * 0 02 09 1F 00 //-1 * 0 02 09 <set-id> 00
-	\d3981 //groundsprite
-	\dxC0000029 //building sprite
-	\b0 \b0 //xofs yofs
-	\b16 \b16 \b4 //xextent yextent zextent	
--1 * 0 02 09 20 00 //-1 * 0 02 09 <set-id> 00
-	\d3981 //groundsprite
-	\dxC000002A //building sprite
-	\b0 \b0 //xofs yofs
-	\b16 \b16 \b4 //xextent yextent zextent
--1 * 0 02 09 21 00 //-1 * 0 02 09 <set-id> 00
-	\d3981 //groundsprite
-	\dxC000002B //building sprite
-	\b0 \b0 //xofs yofs
-	\b16 \b16 \b4 //xextent yextent zextent	
-
-//\b24-\b33: processor 2 additional tiles, Action 2 
--1 * 0 02 09 22 00 //-1 * 0 02 09 <set-id> 00
-	\dx80000031 //groundsprite
-	\dx80008034 //building sprite
-	\b0 \b0 //xofs yofs
-	\b16 \b16 \b32 //xextent yextent zextent
--1 * 0 02 09 23 02 //-1 * 0 02 09 <set-id> <count> (extended format)
-	\d3981 //groundsprite
-	\dxC0000032 // 'bulding' sprite (ground tile)
-	\b0 \b0 \b0 //xofs yofs zofs
-	\b16 \b16 \b8 //xextent yextent zextent
-	\dx80008035 // greeble sprite
-	\b0 \b0 \b0 //xofs yofs zofs
-	\b16 \b16 \b8 //xextent yextent zextent
--1 * 0 02 09 24 00 //-1 * 0 02 09 <set-id> 00
-	\dx80000033 //groundsprite
-	\dx80008036 //building sprite
-	\b0 \b0 //xofs yofs
-	\b16 \b16 \b32 //xextent yextent zextent
-
-	
-//-1 * 0 02 09 <set-id> <type> <variable> <varadjust> <nvar> (<set-id> <low-range> <high-range>){n} <default>
-
--1 * 0 02 09 B0 //layout 0
-	85 43 //check relative position (00yx[YYXX])
-	00 FF FF //don't shift, don't mask
-	\b33 //number of ranges to check (number of tiles)
-	//pit
-	\wx00   05 03  05 03
-	\wx01   04 03  04 03
-	\wx02   03 03  03 03
-	\wx03   02 03  02 03
-	\wx04   01 03  01 03
-	\wx05   00 03  00 03
-	\wx06   05 02  05 02
-	\wx07   04 02  04 02
-	\wx08   03 02  03 02
-	\wx09   02 02  02 02
-	\wx0A   01 02  01 02
-	\wx0B   00 02  00 02
-	\wx0C   05 01  05 01
-	\wx0D   04 01  04 01
-	\wx0E   03 01  03 01
-	\wx0F   02 01  02 01
-	\wx10   01 01  01 01
-	\wx11   00 01  00 01
-	\wx12   05 00  05 00
-	\wx13   04 00  04 00
-	\wx14   03 00  03 00
-	\wx15   02 00  02 00
-	\wx16   01 00  01 00
-	\wx17   00 00  00 00
-	 //processor 1
-	\wx18   08 02  08 02
-	\wx19   07 02  07 02
-	\wx1A   06 02  06 02
-	\wx1B   06 03  06 03
-	\wx1C   08 01  08 01
-	\wx1D   07 01  07 01
-	\wx1E   06 01  06 01
-	\wx1F   07 00  07 00
-	\wx20   08 00  08 00
-	\wx21 //06 00  06 00 <default>
-
--1 * 0 02 09 B1 //layout 1 
-	85 43 //check relative position (00yx[YYXX])
-	00 FF FF //don't shift, don't mask
-	\b28 //number of ranges to check (number of tiles)
-	//pit
-	\wx00   05 04  05 04
-	\wx01   04 04  04 04
-	\wx02   03 04  03 04
-	\wx03   02 04  02 04
-	\wx04   01 04  01 04
-	\wx05   00 04  00 04
-	\wx06   05 03  05 03
-	\wx07   04 03  04 03
-	\wx08   03 03  03 03
-	\wx09   02 03  02 03
-	\wx0A   01 03  01 03
-	\wx0B   00 03  00 03
-	\wx0C   05 02  05 02
-	\wx0D   04 02  04 02
-	\wx0E   03 02  03 02
-	\wx0F   02 02  02 02
-	\wx10   01 02  01 02
-	\wx11   00 02  00 02
-	\wx12   05 01  05 01
-	\wx13   04 01  04 01
-	\wx14   03 01  03 01
-	\wx15   02 01  02 01
-	\wx16   01 01  01 01
-	\wx17   00 01  00 01
-	//processor 2
-	\wx1C   06 00  06 00
-	\wx24   06 01  06 01
-	\wx1E   06 02  06 02
-	\wx22   06 03  06 03
-	\wx23 //06 04  06 04 <default>
-
--1 * 0 02 09 A0 
+-1 * 0 02 09 A1
 	82 44 //check layout number (lowest byte of related industry)
 	00 FF //don't shift, don't mask
 	\b2 //number of ranges to check (number of layouts)
-	\wxB0 \b1 \b1 //<set-id \w> <low-range> <high-range>
-	\wxB1 \b2 \b2 //<set-id \w> <low-range> <high-range>
+    \wxB0 \b1 \b1 //<set-id \w> <low-range> <high-range>
+    \wxB1 \b2 \b2 //<set-id \w> <low-range> <high-range>
 	\wx00 //<default> (first tile layout available)
+
+#include "i_sandpit_tiles_layouts/sandpit_tiles_desert.pnfo"
+#include "i_sandpit_tiles_layouts/sandpit_layouts.pnfo"
+
+-1 * 0 02 09 A2 
+	82 44 //check layout number (lowest byte of related industry)
+	00 FF //don't shift, don't mask
+	\b2 //number of ranges to check (number of layouts)
+    \wxB0 \b1 \b1 //<set-id \w> <low-range> <high-range>
+    \wxB1 \b2 \b2 //<set-id \w> <low-range> <high-range>
+	\wx00 //<default> (first tile layout available)
+
+
+#include "i_sandpit_tiles_layouts/sandpit_tiles_snow.pnfo"
+#include "i_sandpit_tiles_layouts/sandpit_layouts.pnfo"
+
+-1 * 0 02 09 A3 
+	82 44 //check layout number (lowest byte of related industry)
+	00 FF //don't shift, don't mask
+	\b2 //number of ranges to check (number of layouts)
+    \wxB0 \b1 \b1 //<set-id \w> <low-range> <high-range>
+    \wxB1 \b2 \b2 //<set-id \w> <low-range> <high-range>
+	\wx00 //<default> (first tile layout available)
+
+
+// check terrain type and branch to different layout checks appropriately
+-1 * 0 02 09 A0 
+	81 41 //check terrain type (lowest byte of related industry)
+	00 FF //don't shift, don't mask
+	\b2 //number of ranges to check (number of layouts)
+	  \wxA2 \b1 \b1 //<set-id \w> <low-range> <high-range>  // desert
+	  \wxA3 \b4 \b4 //<set-id \w> <low-range> <high-range>  // snow
+	\wxA1 //<default>
+
 
 -1 * 0 02 09 C1 //industry tile cargo acceptance depending on waiting cargo
     86 40 00 FF FF
