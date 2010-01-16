@@ -89,12 +89,8 @@
 //Goods
 -1 * 0 03 0B 01 CARGO_GOODS 00 \w5
 //Grain
-//We only need this in temperate and arctic:
--1 * 0 07 83 01 \7> 01 01
 -1 * 0 03 0B 01 CARGO_GRAIN 00 \w6
 //Sugar Cane
-//We only need this in tropic:
--1 * 0 07 83 01 \7! 02 01
 -1 * 0 03 0B 01 CARGO_SUGARCANE 00 \w7
 //Wood
 -1 * 0 03 0B 01 CARGO_WOOD 00 \w8
@@ -114,18 +110,12 @@
 -1 * 0 03 0B 01 CARGO_FISH 00 \w15
 
 //Cotton
-//We only need this in tropic:
--1 * 0 07 83 01 \7! 02 01
 -1 * 0 03 0B 01 CARGO_COTTON 00 \w19
 //Wool
-//We only need this in temperate and arctic.
--1 * 0 07 83 01 \7> 01 01
 -1 * 0 03 0B 01 CARGO_WOOL 00 \w20
 //Gravel
 -1 * 0 03 0B 01 CARGO_GRAVEL 00 \w21
 //Water
-//We only need this in tropic:
--1 * 0 07 83 01 \7! 02 01
 -1 * 0 03 0B 01 CARGO_WATER 00 \w17
 //Sand
 -1 * 0 03 0B 01 CARGO_SAND 00 \w16
