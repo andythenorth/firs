@@ -1,57 +1,1 @@
-//Only have this in climates 0 and 1
--1 * 0 07 83 01 \7> 01 FF
-
-// Defines for use in industry template
-#define THIS_INDUSTRY         IND_FRUITPLANTATION
-#define THIS_STR_INFO_CB38    STR_INFO_GENERIC
-#define THIS_STR_BOOST        STR_INFO_FS_PRIMARY_BOOST
-#define THIS_STR_ACCEPT       \wxD4D2
-#define THIS_STR_NOT_ACCEPT   \wxD4D3
-
-//Redefinition of original TTD industry
-//We only need this in temperate and tropic
--1 * 0 07 83 01 \7! 02 \b2
-//Fruit Plantation
--1 * 0 00 0A \b14 01 IND_FRUITPLANTATION //-1 * 0 00 0A <num-props> 01 <id>
-	08 13 //substitute industry type
-	09 13 //industry type override
-	10 CARGO_FRUITSANDVEGETABLES FF //production cargo types (word; fill unused with FFh)
-	11 CARGO_FARMSUPPLIES FF FF FF //acceptance cargo types (dword; fill unused with FFh)
-	12 \b10 //production multiplier cargo 1
-	13 00 //production multiplier cargo 2
-	1C 54 00 00 00 //input cargo 1 multiplier (dword M1 M2; output_typen = X*Mn/256)
-	1D 00 00 00 00 //input cargo 2 multiplier
-	1E 00 00 00 00 //input cargo 3 multiplier
-	17 \b4 //probability in random game
-	18 \b3 //probability during gameplay
-	19 CLR_FRUITPLANTATION //map colour (byte; using indexes from dos palette)
-	21 F4 //callback flags 
-	22 05  //callback flags
-//To show cargo waiting to be processed at industry, ensure prop 21 is set to use production callback
-
-//No action 1 for industries, as graphics are defined by the industry-tile feature.
-#include "../../templates/template_primary_action23.pnfo"
-
-//Tiles 74
--1 * 0 00 09 \b6 01 74 // -1 * 0 00 09 <num-props> 01 <id>
-	08 74 //subsitute tile type
-	09 74 //industry tile override
-	0A CARGO_FARMSUPPLIES 08 //tile acceptance 1
-	0B 00 00 //tile acceptance 2
-	0C 00 00 //tile acceptance 3
-	0E 04 //callback flags
-
--1 * 0 02 09 C1 //industry tile cargo acceptance depending on waiting cargo
-    86 40 00 FF FF
-    \b1 //range
-     00 80 \w200 FF FF //lookup cb 2B in wiki for what the returned value means 
-   08 80
--1 * 0 02 09 C0 //Handle callbacks
-	81 0C 00 FF //no shift, no mask
-	\b1 //range
-    C1 00 2B 2B //cargo acceptance cb 2B
-  FF FF //default
-
-// action 3s for industry tile 74	
--1 * 0 03 09 01 74
-  00 C0 00
+// Defines for use in industry template#define THIS_INDUSTRY         IND_FRUITPLANTATION#define THIS_STR_INFO_CB38    STR_INFO_GENERIC#define THIS_STR_BOOST        STR_INFO_FS_PRIMARY_BOOST#define THIS_STR_ACCEPT       \wxD4D2#define THIS_STR_NOT_ACCEPT   \wxD4D3//Redefinition of original TTD industry//Fruit Plantation-1 * 0 00 0A \b14 01 IND_FRUITPLANTATION //-1 * 0 00 0A <num-props> 01 <id>	08 13 //substitute industry type	09 13 //industry type override	10 CARGO_FRUITSANDVEGETABLES FF //production cargo types (word; fill unused with FFh)	11 CARGO_FARMSUPPLIES FF FF FF //acceptance cargo types (dword; fill unused with FFh)	12 \b10 //production multiplier cargo 1	13 00 //production multiplier cargo 2	1C 54 00 00 00 //input cargo 1 multiplier (dword M1 M2; output_typen = X*Mn/256)	1D 00 00 00 00 //input cargo 2 multiplier	1E 00 00 00 00 //input cargo 3 multiplier	17 \b4 //probability in random game	18 \b3 //probability during gameplay	19 CLR_FRUITPLANTATION //map colour (byte; using indexes from dos palette)	21 F4 //callback flags 	22 05  //callback flags//To show cargo waiting to be processed at industry, ensure prop 21 is set to use production callback//No action 1 for industries, as graphics are defined by the industry-tile feature.#include "../../templates/template_primary_action23.pnfo"//Tiles 74-1 * 0 00 09 \b6 01 74 // -1 * 0 00 09 <num-props> 01 <id>	08 74 //subsitute tile type	09 74 //industry tile override	0A CARGO_FARMSUPPLIES 08 //tile acceptance 1	0B 00 00 //tile acceptance 2	0C 00 00 //tile acceptance 3	0E 04 //callback flags-1 * 0 02 09 C1 //industry tile cargo acceptance depending on waiting cargo    86 40 00 FF FF    \b1 //range     00 80 \w200 FF FF //lookup cb 2B in wiki for what the returned value means    08 80-1 * 0 02 09 C0 //Handle callbacks	81 0C 00 FF //no shift, no mask	\b1 //range    C1 00 2B 2B //cargo acceptance cb 2B  FF FF //default// action 3s for industry tile 74	-1 * 0 03 09 01 74  00 C0 00
