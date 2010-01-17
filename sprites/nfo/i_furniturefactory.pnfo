@@ -18,80 +18,50 @@
 	0C 00 00 //tile acceptance 3
 	0D 10 //land shape flags: 10 = only on flat land
 
+// include tiles and layouts, ! Action 2 IDs here are deliberately repeated by the various tile includes
+#include "i_furniturefactory_tiles_layouts/furniturefactory_tiles_standard.pnfo"
+#include "i_furniturefactory_tiles_layouts/furniturefactory_layouts.pnfo"
 
-//Industry tile sprites; one sprite for each tile; eventually more for each tile to include  construction stages
-
-//Tile action 1
--1 * 0 01 09 \b6 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
-// Format: spritenum pcxfile xpos ypos compression ysize xsize xrel yrel
--1 sprites/pcx/industries/furniturefactory.pcx  10 10 09  73 64 -31 -41
--1 sprites/pcx/industries/furniturefactory.pcx  80 10 09  73 64 -31 -41
--1 sprites/pcx/industries/furniturefactory.pcx 150 10 09  73 64 -31 -41
--1 sprites/pcx/industries/furniturefactory.pcx 220 10 09  73 64 -31 -41
--1 sprites/pcx/industries/furniturefactory.pcx 290 10 09  73 64 -31 -41
-// ground tile
--1 sprites/pcx/industries/groundtiles.pcx  150 10 09   31 64 -31   0
-
-
-//Tile action 2 
--1 * 0 02 09 00 00 //-1 * 0 02 09 <set-id> 00
-	\dx80008005 //groundsprite
-	\dx80008000 //building sprite
-	\b0 \b0 //xofs yofs
-	\b16 \b16 \b92 //xextent yextent zextent
--1 * 0 02 09 01 00 //-1 * 0 02 09 <set-id> 00
-	\dx80008005 //groundsprite
-	\dx80008001 //building sprite
-	\b0 \b0 //xofs yofs
-	\b16 \b16 \b64 //xextent yextent zextent
--1 * 0 02 09 02 00 //-1 * 0 02 09 <set-id> 00
-	\dx80008005 //groundsprite
-	\dx80008002 //building sprite
-	\b0 \b0 //xofs yofs
-	\b16 \b16 \b64 //xextent yextent zextent
--1 * 0 02 09 03 00 //-1 * 0 02 09 <set-id> 00
-	\dx80008005 //groundsprite
-	\dx80008003 //building sprite
-	\b0 \b0 //xofs yofs
-	\b16 \b16 \b64 //xextent yextent zextent
--1 * 0 02 09 04 00 //-1 * 0 02 09 <set-id> 00
-	\dx80008005 //groundsprite
-	\dx80008004 //building sprite
-	\b0 \b0 //xofs yofs
-	\b16 \b16 \b16 //xextent yextent zextent
-
-
-
-//-1 * 0 02 09 <set-id> <type> <variable> <varadjust> <nvar> (<set-id> <low-range> <high-range>){n} <default>
-
--1 * 0 02 09 B1 //layout 1
-	85 43 //check relative position (00yx[YYXX])
-	00 FF FF //don't shift, don't mask
-	\b4 //number of ranges to check (number of tiles)
-	\wx00   02 01  02 01
-	\wx01   01 01  01 01
-	\wx02   00 01  00 01
-	\wx03   02 00  02 00
-	\wx04 //01 00  01 00 <default>
-                 
--1 * 0 02 09 B2 //layout 2
-	85 43 //check relative position (00yx[YYXX])
-	00 FF FF //don't shift, don't mask
-	\b4 //number of ranges to check (number of tiles)
-	\wx00   02 01  02 01
-	\wx01   01 01  01 01
-	\wx02   00 01  00 01
-	\wx03   01 00  01 00
-	\wx04 //00 00  00 00 <default>)
-           
--1 * 0 02 09 A0 
+-1 * 0 02 09 A1
 	82 44 //check layout number (lowest byte of related industry)
 	00 FF //don't shift, don't mask
 	\b2 //number of ranges to check (number of layouts)
-	\wxB1 \b1 \b1 //<set-id \w> <low-range> <high-range>
-	\wxB2 \b2 \b2 //<set-id \w> <low-range> <high-range>
-	\wx00 //<default> (first tilelayout available)
+    \wxB1 \b1 \b1 //<set-id \w> <low-range> <high-range>
+    \wxB2 \b2 \b2 //<set-id \w> <low-range> <high-range>
+	\wx00 //<default> (first tile layout available)
 
+#include "i_furniturefactory_tiles_layouts/furniturefactory_tiles_standard.pnfo"
+#include "i_furniturefactory_tiles_layouts/furniturefactory_layouts.pnfo"
+
+-1 * 0 02 09 A2
+	82 44 //check layout number (lowest byte of related industry)
+	00 FF //don't shift, don't mask
+	\b2 //number of ranges to check (number of layouts)
+    \wxB1 \b1 \b1 //<set-id \w> <low-range> <high-range>
+    \wxB2 \b2 \b2 //<set-id \w> <low-range> <high-range>
+	\wx00 //<default> (first tile layout available)
+
+#include "i_furniturefactory_tiles_layouts/furniturefactory_tiles_snow.pnfo"
+#include "i_furniturefactory_tiles_layouts/furniturefactory_layouts.pnfo"
+
+-1 * 0 02 09 A3
+	82 44 //check layout number (lowest byte of related industry)
+	00 FF //don't shift, don't mask
+	\b2 //number of ranges to check (number of layouts)
+    \wxB1 \b1 \b1 //<set-id \w> <low-range> <high-range>
+    \wxB2 \b2 \b2 //<set-id \w> <low-range> <high-range>
+	\wx00 //<default> (first tile layout available)
+
+
+// check terrain type and branch to different layout checks appropriately
+-1 * 0 02 09 A0 
+	81 41 //check terrain type (lowest byte of related industry)
+	00 FF //don't shift, don't mask
+	\b2 //number of ranges to check (number of layouts)
+	  \wxA2 \b1 \b1 //<set-id \w> <low-range> <high-range>  // desert
+	  \wxA3 \b4 \b4 //<set-id \w> <low-range> <high-range>  // snow
+	\wxA1 //<default>
+	          
 
 //Action3 attach sprites to industry tile
 
