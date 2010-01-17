@@ -1,6 +1,6 @@
 //\b0-\b23: pit tiles, Action 2 
 -1 * 0 02 09 00 02 //-1 * 0 02 09 <set-id> <count> (extended format)
-  \d4550 //groundsprite
+  THIS_GROUNDSPRITE //groundsprite
 	\dxC0000000 //'building' sprite (actually ground tile)
 	\b0 \b0 \b0 //xofs yofs zofs
 	\b8 \b8 \b12 //xextent yextent zextent
@@ -8,7 +8,7 @@
 	\b0 \b0 \b0 //xofs yofs zofs
 	\b16 \b16 \b12 //xextent yextent zextent
 -1 * 0 02 09 01 02 //-1 * 0 02 09 <set-id> <count> (extended format)
-	\d4550 //groundsprite
+	THIS_GROUNDSPRITE //groundsprite
 	\dxC0000001 //'building' sprite (actually ground tile)
 	\b0 \b0 \b0 //xofs yofs zofs
 	\b8 \b8 \b12 //xextent yextent zextent
@@ -16,7 +16,7 @@
 	\b0 \b0 \b0 //xofs yofs zofs
 	\b16 \b16 \b12 //xextent yextent zextent
 -1 * 0 02 09 02 02 //-1 * 0 02 09 <set-id> <count> (extended format)
-	\d4550 //groundsprite
+	THIS_GROUNDSPRITE //groundsprite
 	\dxC0000002 //'building' sprite (actually ground tile)
 	\b0 \b0 \b0 //xofs yofs zofs
 	\b8 \b8 \b12 //xextent yextent zextent
@@ -24,7 +24,7 @@
 	\b0 \b0 \b0 //xofs yofs zofs
 	\b16 \b16 \b12 //xextent yextent zextent
 -1 * 0 02 09 03 02 //-1 * 0 02 09 <set-id> <count> (extended format)
-	\d4550 //groundsprite
+	THIS_GROUNDSPRITE //groundsprite
 	\dxC0000003 //'building' (actually ground tile)
 	\b0 \b0 \b0 //xofs yofs zofs
 	\b8 \b8 \b12 //xextent yextent zextent
@@ -32,18 +32,18 @@
 	\b0 \b0 \b0 //xofs yofs zofs
 	\b11 \b16 \b42 //xextent yextent zextent
 -1 * 0 02 09 04 00 //-1 * 0 02 09 <set-id> 00
-	\d4550 //groundsprite
+	THIS_GROUNDSPRITE //groundsprite
 	\dxC0000004 //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b4 //xextent yextent zextent
 -1 * 0 02 09 05 00 //-1 * 0 02 09 <set-id> 00
-	\d4550 //groundsprite
+	THIS_GROUNDSPRITE //groundsprite
 	\dxC0000005 //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b4 //xextent yextent zextent
 
 -1 * 0 02 09 06 02 //-1 * 0 02 09 <set-id> <count> (extended format)
-	\d4550 //groundsprite
+	THIS_GROUNDSPRITE //groundsprite
 	\dxC0000006 //groundsprite
 	\b0 \b0 \b0 //xofs yofs zofs
 	\b16 \b16 \b32 //xextent yextent zextent
@@ -51,7 +51,7 @@
 	\b0 \b0 \b0 //xofs yofs zofs
 	\b16 \b16 \b32 //xextent yextent zextent
 -1 * 0 02 09 07 02 //-1 * 0 02 09 <set-id> <count> (extended format)
-	\d4550 //groundsprite
+	THIS_GROUNDSPRITE //groundsprite
 	\dxC0000007 //groundsprite
 	\b0 \b0 \b0 //xofs yofs zofs
 	\b8 \b8 \b12 //xextent yextent zextent
@@ -59,7 +59,7 @@
 	\b0 \b0 \b0 //xofs yofs zofs
 	\b16 \b16 \b32 //xextent yextent zextent
 -1 * 0 02 09 08 00 //-1 * 0 02 09 <set-id> 00
-	\d4550 //groundsprite
+	THIS_GROUNDSPRITE //groundsprite
 	\dxC0000008 //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b6 //xextent yextent zextent
@@ -74,23 +74,23 @@
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b32 //xextent yextent zextent
 -1 * 0 02 09 0B 00 //-1 * 0 02 09 <set-id> 00
-	\d4550 //groundsprite
+	THIS_GROUNDSPRITE //groundsprite
 	\dxC000000B //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b6 //xextent yextent zextent
 
 -1 * 0 02 09 0C 00 //-1 * 0 02 09 <set-id> 00
-	\d4550 //groundsprite
+	THIS_GROUNDSPRITE //groundsprite
 	\dxC000000C //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b6 //xextent yextent zextent
 -1 * 0 02 09 0D 00 //-1 * 0 02 09 <set-id> 00
-	\d4550 //groundsprite
+	THIS_GROUNDSPRITE //groundsprite
 	\dxC000000D //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b6 //xextent yextent zextent
 -1 * 0 02 09 0E 00 //-1 * 0 02 09 <set-id> 00
-	\d4550 //groundsprite
+	THIS_GROUNDSPRITE //groundsprite
 	\dxC000000E //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b6 //xextent yextent zextent
@@ -105,38 +105,38 @@
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b32 //xextent yextent zextent
 -1 * 0 02 09 11 00 //-1 * 0 02 09 <set-id> 00
-	\d4550 //groundsprite
+	THIS_GROUNDSPRITE //groundsprite
 	\dxC0000011 //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b6 //xextent yextent zextent
 
 -1 * 0 02 09 12 00 //-1 * 0 02 09 <set-id> 00
-	\d4550 //groundsprite
+	THIS_GROUNDSPRITE //groundsprite
 	\dxC0000012 //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b6 //xextent yextent zextent
 -1 * 0 02 09 13 00 //-1 * 0 02 09 <set-id> 00
-	\d4550 //groundsprite
+	THIS_GROUNDSPRITE //groundsprite
 	\dxC0000013 //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b6 //xextent yextent zextent
 -1 * 0 02 09 14 00 //-1 * 0 02 09 <set-id> 00
-	\d4550 //groundsprite
+	THIS_GROUNDSPRITE //groundsprite
 	\dxC0000014 //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b6 //xextent yextent zextent
 -1 * 0 02 09 15 00 //-1 * 0 02 09 <set-id> 00
-	\d4550 //groundsprite
+	THIS_GROUNDSPRITE //groundsprite
 	\dxC0000015 //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b6 //xextent yextent zextent
 -1 * 0 02 09 16 00 //-1 * 0 02 09 <set-id> 00
-	\d4550 //groundsprite
+	THIS_GROUNDSPRITE //groundsprite
 	\dxC0000016 //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b6 //xextent yextent zextent
 -1 * 0 02 09 17 00 //-1 * 0 02 09 <set-id> 00
-	\d4550 //groundsprite
+	THIS_GROUNDSPRITE //groundsprite
 	\dxC0000017 //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b6 //xextent yextent zextent
@@ -158,7 +158,7 @@
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b32 //xextent yextent zextent
 -1 * 0 02 09 1B 00 //-1 * 0 02 09 <set-id> 00
-	\d4550 //groundsprite
+	THIS_GROUNDSPRITE //groundsprite
 	\dxC0000025 //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b4 //xextent yextent zextent
@@ -178,17 +178,17 @@
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b48 //xextent yextent zextent
 -1 * 0 02 09 1F 00 //-1 * 0 02 09 <set-id> 00
-	\d4550 //groundsprite
+	THIS_GROUNDSPRITE //groundsprite
 	\dxC0000029 //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b4 //xextent yextent zextent	
 -1 * 0 02 09 20 00 //-1 * 0 02 09 <set-id> 00
-	\d4550 //groundsprite
+	THIS_GROUNDSPRITE //groundsprite
 	\dxC000002A //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b4 //xextent yextent zextent
 -1 * 0 02 09 21 00 //-1 * 0 02 09 <set-id> 00
-	\d4550 //groundsprite
+	THIS_GROUNDSPRITE //groundsprite
 	\dxC000002B //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b4 //xextent yextent zextent	
@@ -200,7 +200,7 @@
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b32 //xextent yextent zextent
 -1 * 0 02 09 23 02 //-1 * 0 02 09 <set-id> <count> (extended format)
-	\d4550 //groundsprite
+	THIS_GROUNDSPRITE //groundsprite
 	\dxC0000032 // 'bulding' sprite (ground tile)
 	\b0 \b0 \b0 //xofs yofs zofs
 	\b16 \b16 \b8 //xextent yextent zextent
@@ -212,3 +212,5 @@
 	\dx80008036 //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b32 //xextent yextent zextent
+	
+#undef THIS_GROUNDSPRITE
