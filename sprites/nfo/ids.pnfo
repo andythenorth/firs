@@ -469,3 +469,7 @@
 #define CLIMATE_ALL       -1 * 0  0C "All climates"  // All climates
 #define CLIMATE_TROPIC    -1 * 0  07 83 01 \7! 02 01 // Only in tropical climate
 #define CLIMATE_NO_TROPIC -1 * 0  07 83 01 \7= 02 01 // Not in tropical climate
+
+#define GROUNDSPRITE_NORMAL \d3981
+#define GROUNDSPRITE_SNOW   \d4550
+#define GROUNDSPRITE_DESERT GROUNDSPRITE_SNOW
