@@ -9,8 +9,6 @@
 
 //Cargo texts
 
-//We only the following four in tropic:
--1 * 0 07 83 01 \7! 02 \b4
 //Sugar cane
 -1 * 0 04 0B LANG_ID2 01 STR_CRG_SUGARCANE_CTYPE "Sugar Cane" 00
 -1 * 0 04 0B LANG_ID2 01 STR_CRG_SUGARCANE_1UNIT "\7C ton of sugar cane" 00
@@ -43,8 +41,6 @@
 -1 * 0 04 0B LANG_ID2 01 STR_CRG_WOOL_MUNIT "\7C tons of wool" 00
 -1 * 0 04 0B LANG_ID2 01 STR_CRG_WOOL_TABBR "\0EWL" 00
 
-//We only the following four in tropic:
--1 * 0 07 83 01 \7! 02 \b4
 //Cotton
 -1 * 0 04 0B LANG_ID2 01 STR_CRG_COTTON_CTYPE "Cotton" 00
 -1 * 0 04 0B LANG_ID2 01 STR_CRG_COTTON_1UNIT "\7C ton of cotton" 00
@@ -193,6 +189,7 @@
 "\0D\98Output production limit (per input cargo):\0D\94\7B" 00
 -1 * 0 04 0A LANG_ID2 01 STR_INFO_GENERIC D0 "\98This industry needs a description..." 00
 -1 * 0 04 0A LANG_ID2 01 STR_INFO_LIMIT_200 D0 "\98 (max 200)" 00
+-1 * 0 04 0A LANG_ID2 01 STR_INFO_LIMIT_800 D0 "\98 (max 800)" 00
 -1 * 0 04 0A LANG_ID2 01 STR_INFO_ACCEPTING_ES D0 "\0D" 00 // empty line breaks to stop window size jumping around 
 -1 * 0 04 0A LANG_ID2 01 STR_INFO_NOT_ACCEPTING_ES D0 "\94Not accepting engineering supplies\98\0D(Limit Reached)" 00
 -1 * 0 04 0A LANG_ID2 01 STR_INFO_ACCEPTING_FS D0 "\0D" 00 // empty line breaks to stop window size jumping around 

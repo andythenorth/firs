@@ -4,12 +4,12 @@
 
 // How to use:
 // Add to the top of a primary industry a few #define lines. For example:
-//#define THIS_INDUSTRY                 IND_MACHINESHOP
-//#define THIS_NUM_INPUT_CARGOS         \d03      // range 01-03
+//#define THIS_INDUSTRY                 IND_TEXTILE_MILL
+//#define THIS_NUM_INPUT_CARGOS         \d02      // range 01-02  // do not include prod boost cargo
 //#define THIS_NUM_OUTPUT_CARGOS        \d02      // range 01-02
 //#define THIS_PROD_RATIO_CARGO_IN_1    \d01      // do not set to 0 - used for division
 //#define THIS_PROD_RATIO_CARGO_IN_2    \d01      // do not set to 0 - used for division
-//#define THIS_PROD_RATIO_CARGO_IN_3    \d01      // do not set to 0 - used for division
+//#define THIS_PROD_RATIO_CARGO_IN_3    \d01      // do not set to 0 - used for division  // !! remove when code cleaned
 //#define THIS_STR_INFO_CB38            STR_INFO_MACHINESHOP
 
 // then add as the 2nd last line, prior to the end of the climate availability label
@@ -173,6 +173,29 @@
        A1 00  00 00 00 00  00 00 00 00
      A1 00
 
+
+// industry window texts
+// production boost cargo - branching chain based on number of input cargos defined 
+// value for THIS_NUM_INPUT_CARGOS should not include prod boost cargo 
+-1 * 0 02 0A E1//handle cb 37 cargo subtexts (used here to provide max cargo limit information)
+  81 18 00 FF 
+  \b1
+    STR_INFO_LIMIT_800 80 01 01 // prod boost subtext for second cargo
+  FF FF	 //default
+
+-1 * 0 02 0A E2//handle cb 37 cargo subtexts (used here to provide max cargo limit information)
+  81 18 00 FF 
+  \b1
+    STR_INFO_LIMIT_800 80 02 02 // prod boost subtext for third cargo
+  FF FF	 //default
+  
+-1 * 0 02 0A E0 //production boost cargo may be in position 2 or 3 depending on number of input cargos 
+    89 // 
+      1A 00 THIS_NUM_INPUT_CARGOS 
+    \b1 //range
+       E2 00  \d02  \d02
+     E1 00 //default
+
 // PROVIDE DEBUG INFO TO INDUSTRY WINDOW 
 //Remember text stack is LIFO (like array.pop) - put values to render first in highest registers
 -1 * 0 02 0A FE //store one values to text stack for debugging
@@ -223,6 +246,23 @@
        FB 00  00 00 00 00  00 00 00 00
      FB 00 //default
 
+// PSEUDO 
+// Assume prod boost cargo is in slot 3
+// varaction 2 checking cargo 42 (slot 3)
+// if prod boost cargo is waiting branch action 2s to:
+  // store production ratio of 100% 
+  // store 50t of consumption for prod boost (no production from this), may need to branch to run down cargo accurately
+  // else store production ratio as defined for THIS_PROD_RATIO_CARGO_IN_1, THIS_PROD_RATIO_CARGO_IN_2 (how to handle multiple input cargos?)
+// then use existing production calculation code, stripping code for cargo 3
+
+// unfinished start of branch for checking prod boost cargo waiting 
+-1 * 0 02 0A C2 //production boost cargo may be in position 2 or 3 depending on number of input cargos
+    89 // 
+      1A 00 THIS_NUM_INPUT_CARGOS 
+    \b1 //range
+       A0 00  \d02  \d02
+     A0 00 //default
+
 // !! the logic for output limit is flawed.  This assumes limit is FF FF; when 2 output cargos are split 50:50, output limit before split is 2 * FF FF
 // TTDPatch wiki for production callback: "results are clamped to the allowed range (0..32767 for incoming cargo amounts, 0..65535 for outgoing cargo amounts)."
 -1 * 0 02 0A C1 //store output limit for produced cargo (as units of output cargo) to use when processing each input cargo
@@ -231,15 +271,16 @@
       \2/ 1a 20 THIS_NUM_INPUT_CARGOS // divide by number of input cargos for this industry (exclude production-boosting cargos from input cargo count)
       10  1A 00 \dx00 // store in persistent storage
     \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
-       A0 00  00 00 00 00  00 00 00 00
-     A0 00
+       C2 00  00 00 00 00  00 00 00 00
+     C2 00
 
 // handle callbacks
 -1 * 0 02 0A C0 //-1 * 0 0A <set-id>
 	85 0C //<type> <variable> word-access callback
 	00 FF FF //no shift, no mask
-	\b2 //number of ranges to check
+	\b3 //number of ranges to check
 	  THIS_STR_INFO_CB38 80   38 00   38 00 ////cb 38 display additional text in fund window
+	  E0 00   37 00   37 00 //cargo subtext industry window cb 37
 	  FA 00   3A 00   3A 00 //cb 3A (industry window)
 	C1 00 //default
 
@@ -250,6 +291,7 @@
 #undef THIS_STR_INFO_CB38
 #undef THIS_NUM_INPUT_CARGOS
 #undef THIS_NUM_OUTPUT_CARGOS
+#undef THIS_PROD_BOOST_CARGO 
 #undef THIS_PROD_RATIO_CARGO_IN_1
 #undef THIS_PROD_RATIO_CARGO_IN_2
 #undef THIS_PROD_RATIO_CARGO_IN_3
