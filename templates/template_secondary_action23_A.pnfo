@@ -72,6 +72,8 @@
        AB 00  \d02  \d02
      AC 00 //default
 
+//!! not really sure what is going on with A9, seems to duplicate AA - AC section of chain?
+
 -1 * 0 02 0A A9 //add up total cargo produced...for this industry output is split 50:50, so only bother setting one register
     89 // 
       7C 04 20  \dxFFFFFFFF //get stored amount for production from cargo 1
