@@ -145,7 +145,7 @@
 	1F STR_IND_TEXTILEMILL //industry name
 	24 STR_STA_MILLS //default text for nearby station
 	10 CARGO_GOODS FF //production cargo types (word; fill unused with FFh)
-	11 CARGO_WOOL FF FF CARGO_MANUFACTURINGSUPPLIES //acceptance cargo types (dword; fill unused with FFh)
+	11 CARGO_MANUFACTURINGSUPPLIES CARGO_WOOL FF FF //acceptance cargo types (dword; fill unused with FFh)
 	12 \b0 //production multiplier cargo 1
 	13 \b0 //production multiplier cargo 2
 	1C \w0 \w0  //input cargo 1 multiplier (dword M1 M2; output_typen = X*Mn/256)

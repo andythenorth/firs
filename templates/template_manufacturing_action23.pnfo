@@ -140,6 +140,9 @@
     \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
        A6 00  00 00 00 00  00 00 00 00
      A6 00 //default
+// ^^ would be more correct to branch for case where no cargo waiting, or cargo waiting < 8.  
+// There is a bit of a hack for case when low cargo amounts are present
+
 
 // case NO production boost waiting   
 -1 * 0 02 0A A4 //store production ratios for cargo 3
