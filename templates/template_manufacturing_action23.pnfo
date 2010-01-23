@@ -98,8 +98,9 @@
 -1 * 0 02 0A A8 //calculate amount of input cargo 3 actually processed
     89 // 
       7C 05 20  \dxFFFFFFFF //get stored amount for production from cargo 3
-      \2/ 7C 02 20  \dxFFFFFFFF //divide production amount by production ratio 
       \2* 1A 20 \d08 // multiply result by 8
+      \2/ 7C 02 20  \dxFFFFFFFF //divide production amount by production ratio 
+      \2> 1A 20 \d03 // take greater value of result | 03 to handle case where result < 1 and cargo doesn't clear (3 is arbitrary, seems about right)
       10 1A 20 LOCAL_CARGO_3_CONSUMED_STORE_DWORD //store in persistent storage (for debug only, can be commented if not in use)
       \2sto 1A 00 LOCAL_CARGO_3_CONSUMED_STORE_DWORD //store in register
     \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
@@ -109,8 +110,9 @@
 -1 * 0 02 0A A7 //calculate amount of input cargo 2 actually processed
     89 // 
       7C 04 20  \dxFFFFFFFF //get stored amount for production from cargo 2
-      \2/ 7C 01 20  \dxFFFFFFFF //divide production amount by production ratio 
       \2* 1A 20 \d08 // multiply result by 8
+      \2/ 7C 01 20  \dxFFFFFFFF //divide production amount by production ratio 
+      \2> 1A 20 \d03 // take greater value of result | 03 to handle case where result < 1 and cargo doesn't clear (3 is arbitrary, seems about right)
       10 1A 20 LOCAL_CARGO_2_CONSUMED_STORE_DWORD //store in persistent storage (for debug only, can be commented if not in use)
       \2sto 1A 00 LOCAL_CARGO_2_CONSUMED_STORE_DWORD //store in register
     \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
@@ -120,8 +122,8 @@
 -1 * 0 02 0A A6 //store lower value of: (cargo waiting divided by prod ratio for cargo) or (output limit for produced cargo) 
     89 // 
       42 20  \dxFFFFFFFF // cargo 3 waiting  
-      \2/ 1A 20  \d08 //divide cargo waiting by 8
       \2* 7C 02 20  \dxFFFFFFFF //multiply cargo waiting by production ratio to get calculated production value
+      \2/ 1A 20  \d08 //divide result by 8
       \2< 7C 00 20  \dxFFFFFFFF //result = min(calculated production value, output limit for produced cargo)
       10 1A 00 \dx05 //store in persistent storage (could use ordinary register, but this is easier to debug)
     \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
@@ -131,8 +133,8 @@
 -1 * 0 02 0A A5 //store lower value of: (cargo waiting divided by prod ratio for cargo) or (output limit for produced cargo) 
     89 // 
       41 20  \dxFFFFFFFF // cargo 2 waiting 
-      \2/ 1A 20  \d08 //divide cargo waiting by 8
       \2* 7C 01 20  \dxFFFFFFFF //divide cargo waiting by production ratio to get calculated production value 
+      \2/ 1A 20  \d08 //divide cargo waiting by 8
       \2< 7C 00 20  \dxFFFFFFFF //result = min(calculated production value, output limit for produced cargo)
       10 1A 00 \dx04 //store in persistent storage (could use ordinary register, but this is easier to debug)
     \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
@@ -156,7 +158,7 @@
        A4 00  00 00 00 00  00 00 00 00
      A4 00
 
--1 * 0 02 0A C4 //consume 0t of production boost cargo if some waiting
+-1 * 0 02 0A C4 //consume 0t of production boost cargo
     89 // 
       1A 20 \d00 // create 0
       10 1A 20 LOCAL_CARGO_1_CONSUMED_STORE_DWORD //store in persistent storage (for debug only, can be commented if not in use)
