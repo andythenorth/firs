@@ -37,7 +37,7 @@
 -1 * 0 02 0A 00 //production cb, 1 output cargo 
 	01 //version
 	07  08  09 //<subtract-in-1..3>
-	0A  0B //<add-out-1..2>
+	0A  0A //<add-out-1..2>
 	00 //don't repeat
 
 -1 * 0 02 0A AC //where one cargo produced, all of production goes in register 0A, register 0B is zeroed
@@ -72,7 +72,7 @@
        AB 00  \d02  \d02
      AC 00 //default
 
--1 * 0 02 0A A9 //add up total cargo produced...for this industry output is split 50:50, so only bother setting one register
+-1 * 0 02 0A A9 //add up total cargo produced...
     89 // 
       7C 04 20  \dxFFFFFFFF //get stored amount for production from cargo 1
       \2+ 7C 05 20  \dxFFFFFFFF //get stored amount for production from cargo 2
@@ -83,8 +83,7 @@
        AA 00  00 00 00 00  00 00 00 00
      AA 00 //default
 
-
--1 * 0 02 0A A8 //calculate amount of input cargo actually processed
+-1 * 0 02 0A A8 //calculate amount of input cargo 2 actually processed
     89 // 
       7C 05 20  \dxFFFFFFFF //get stored amount for production from cargo 2
       \2/ 7C 02 20  \dxFFFFFFFF //divide production amount by production ratio 
@@ -95,7 +94,7 @@
        A9 00  00 00 00 00  00 00 00 00
      A9 00 //default
 
--1 * 0 02 0A A7 //calculate amount of input cargo actually processed
+-1 * 0 02 0A A7 //calculate amount of input cargo 1 actually processed
     89 // 
       7C 04 20  \dxFFFFFFFF //get stored amount for production from cargo 1
       \2/ 7C 01 20  \dxFFFFFFFF //divide production amount by production ratio 
@@ -108,7 +107,7 @@
 
 -1 * 0 02 0A A6 //store lower value of: (cargo waiting divided by prod ratio for cargo) or (output limit for produced cargo) 
     89 // 
-      41 20  \dxFFFFFFFF // cargo waiting 
+      41 20  \dxFFFFFFFF // cargo 2 waiting  
       \2/ 1A 20  \d08 //divide cargo waiting by 8
       \2* 7C 02 20  \dxFFFFFFFF //multiply cargo waiting by production ratio to get calculated production value
       \2< 7C 00 20  \dxFFFFFFFF //result = min(calculated production value, output limit for produced cargo)
@@ -119,7 +118,7 @@
 
 -1 * 0 02 0A A5 //store lower value of: (cargo waiting divided by prod ratio for cargo) or (output limit for produced cargo) 
     89 // 
-      40 20  \dxFFFFFFFF // cargo waiting 
+      40 20  \dxFFFFFFFF // cargo 1 waiting 
       \2/ 1A 20  \d08 //divide cargo waiting by 8
       \2* 7C 01 20  \dxFFFFFFFF //divide cargo waiting by production ratio to get calculated production value 
       \2< 7C 00 20  \dxFFFFFFFF //result = min(calculated production value, output limit for produced cargo)
@@ -171,11 +170,9 @@
 
 // PROVIDE DEBUG INFO TO INDUSTRY WINDOW 
 //Remember text stack is LIFO (like array.pop) - put values to render first in highest registers
--1 * 0 02 0A FD //store two values to text stack for debugging
+-1 * 0 02 0A FD //store one values to text stack for debugging
     89 // 
-      7c 0C 20 \dxffff
-      \2ror 1a 20 \d16
-      \2| 7c 0B 20 \dxffff
+      7c 00 20 \dxffffffff // storage 00 holds cargo production limit
       \2sto 1a 00 \dx103
     \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
        STR_INFO_DEBUG_2 80  00 00 00 00  00 00 00 00
@@ -183,9 +180,9 @@
 
 -1 * 0 02 0A FC //store two values to text stack for debugging
     89 // 
-      7c 0A 20 \dxffff
+      7c 0B 20 \dxffff  // storage 0B holds amount cargo 2 produced
       \2ror 1a 20 \d16
-      \2| 7c 09 20 \dxffff
+      \2| 7c 0A 20 \dxffff // storage 0A holds amount cargo 1 produced
       \2sto 1a 00 \dx102
     \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
        FD 00  00 00 00 00  00 00 00 00
@@ -193,9 +190,9 @@
      
 -1 * 0 02 0A FB //store two values to text stack for debugging
     89 // 
-      7c 07 20 \dxffff
+      7c 08 20 \dxffff  // storage 08 holds amount cargo 2 consumed
       \2ror 1a 20 \d16
-      \2| 7c 08 20 \dxffff
+      \2| 7c 07 20 \dxffff  // storage 07 holds amount cargo 1 consumed
       \2sto 1a 00 \dx101
     \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
        FC 00  00 00 00 00  00 00 00 00
@@ -203,9 +200,9 @@
 
 -1 * 0 02 0A FA //store two values to text stack for debugging
     89
-      7c 02 20 \dxffff  
+      7c 02 20 \dxffff    // storage 01 holds prod ratio cargo 2
       \2ror 1a 20 \d16
-      \2| 7c 01 20 \dxffff
+      \2| 7c 01 20 \dxffff  // storage 02 holds = prod ratio cargo 1
       \2sto 1a 00 \dx100
     \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
        FB 00  00 00 00 00  00 00 00 00
