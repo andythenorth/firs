@@ -283,11 +283,34 @@
        FB 00  00 00 00 00  00 00 00 00
      FB 00 //default
 
+
+-1 * 0 02 0A F3 //store sub-text ID to register, return text ID  
+    85 // 
+      1A 20 THIS_STR_ACCEPT //create a value (constant 1A anded (20) with following bytes) 
+      0E 1A 00 \wx100 //store in register
+    \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
+       THIS_STR_BOOST 80 00 00 00 00
+     THIS_STR_BOOST 80 //default
+     
+-1 * 0 02 0A F2 //store sub-text ID to register, return text ID  
+    85 // 
+      1A 20 THIS_STR_NOT_ACCEPT //create a value (constant 1A anded (20) with following bytes) 
+      0E 1A 00 \wx100 //store in register
+    \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
+       THIS_STR_BOOST 80 00 00 00 00
+     THIS_STR_BOOST 80 //default
+      
+-1 * 0 02 0A F1 //branch depending on cargo waiting (we want different text to show in industry window) 
+  85 40 00 FF FF //check cargo waiting
+  \b1 //range
+    F2 00  \w100  FF FF    
+  F3 00 //default	
+
 -1 * 0 02 0A F0 //
     81 // 
       7F DEBUG_PARAMETER 00 DEBUG_PARAMETER_INDUSTRY_TEXT_BIT // check if first bit is set for debug parameter
     \b1 //range
-       FA 00  DEBUG_PARAMETER_INDUSTRY_TEXT_BIT  DEBUG_PARAMETER_INDUSTRY_TEXT_BIT
+       F1 00  DEBUG_PARAMETER_INDUSTRY_TEXT_BIT  DEBUG_PARAMETER_INDUSTRY_TEXT_BIT
      STR_INFO_GENERIC 80 //default
 
 
