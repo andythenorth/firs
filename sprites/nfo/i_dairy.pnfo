@@ -10,12 +10,13 @@
 //Industry tiles definition
 
 //Tile action 0
--1 * 0 00 09 \b5 01 TILE_DAIRY_1 // -1 * 0 00 09 <num-props> 01 <id>
+-1 * 0 00 09 \b6 01 TILE_DAIRY_1 // -1 * 0 00 09 <num-props> 01 <id>
 	08 TILE_NULL //subsitute type
-	0A CARGO_MILK 08 //tile acceptance 1
-	0B CARGO_MANUFACTURINGSUPPLIES 08 //tile acceptance 2
+	0A CARGO_MANUFACTURINGSUPPLIES 08 //tile acceptance 1
+	0B CARGO_MILK 08 //tile acceptance 2
 	0C 00 00 //tile acceptance 3
 	0D 10 //land shape flags: 10 = only on flat land
+	0E 04 //callback flags
 
 // include tiles and layouts, ! Action 2 IDs here are deliberately repeated by the various tile includes
 #include "i_dairy_tiles_layouts/dairy_tiles_standard.pnfo"
@@ -64,11 +65,22 @@
 	  \wxA3 \b4 \b4 //<set-id \w> <low-range> <high-range>  // snow
 	\wxA1 //<default>
 
+-1 * 0 02 09 C1 //industry tile cargo acceptance depending on waiting cargo
+    86 40 00 FF FF
+    \b1 //range
+     80 88 LIMIT_MANUFACTURING_SUPPLIES FF FF // 0x8CBA for c1 = A, c2 = B, c3 = C.  But reversed as a word so BA 8C .... lookup cb 2B for more info 
+   88 88
+   
+-1 * 0 02 09 C0 //Handle callbacks
+	81 0C 00 FF //no shift, no mask
+	\b1 //range
+    C1 00 2B 2B //cargo acceptance cb 2B
+  A0 00 //default
 
 //Action3 attach sprites to industry tile
 
 //Tile action 3
--1 * 0 03 09 01 TILE_DAIRY_1 00 \wxA0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
+-1 * 0 03 09 01 TILE_DAIRY_1 00 \wxC0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
 
 
 
@@ -133,7 +145,7 @@
 	23 \d0  //destruction cost multiplier (dword; default: 0)
 	1A \dx1000 //special industry flag (dword)
 	21 F4 //callback flags 
-	22 01  //callback flags
+	22 05  //callback flags
 //To show cargo waiting to be processed at industry, ensure prop 21 is set to use production callback
 
 //No action 1 for industries, as graphics are defined by the industry-tile feature.

@@ -230,7 +230,7 @@
 -1 * 0 02 0A B0//return cargo acceptance (0 or 1) depending on amount of first cargo waiting
   85 40 00 FF FF
   \b1 //range 
-    00 80 \w808 FF FF //I've set the industry limit slightly higher than the tile limit...otherwise the limit won't be reached for 'cargo waiting' 
+    00 80 \w100 FF FF //I've set the industry limit slightly higher than the tile limit...otherwise the limit won't be reached for 'cargo waiting' 
   01 80
 
   
@@ -283,6 +283,13 @@
        FB 00  00 00 00 00  00 00 00 00
      FB 00 //default
 
+-1 * 0 02 0A F0 //
+    81 // 
+      7F DEBUG_PARAMETER 00 FF
+    \b1 //range
+       FA 00  01  01
+     STR_INFO_GENERIC 80 //default
+
 
 // WRITE OUT WHICH REGISTERS / PERSISTENT STORAGE ARE USED FOR WHAT
 // PSEUDO 
@@ -302,7 +309,7 @@
 	\b4 //number of ranges to check
 	  THIS_STR_INFO_CB38 80   38 00   38 00 ////cb 38 display additional text in fund window
 	  E0 00   37 00   37 00 //cargo subtext industry window cb 37
-	  FA 00   3A 00   3A 00 //cb 3A (industry window)
+	  F0 00   3A 00   3A 00 //cb 3A (industry window)
 	  B0 00   3D 00   3D 00 //industry cargo acceptance
 	C1 00 //default
 

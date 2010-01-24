@@ -460,10 +460,11 @@
 // Limits on production boosting cargos for tiles only (industry limit = tile limit + 8, and is in template)
 #define LIMIT_ENGINEERING_SUPPLIES        \w200
 #define LIMIT_FARM_SUPPLIES               \w200
-#define LIMIT_MANUFACTURING_SUPPLIES      \w800
+#define LIMIT_MANUFACTURING_SUPPLIES      \w100
 
 // The parameter numbers used by FIRS
 #define SCHEME_PARAMETER \b00      // Choice of the payment scheme (see acceptable values below)
+#define DEBUG_PARAMETER \b01       // Used to turn on debug options (bit map)
 #define COMPATIBILITY_PARAM1 \b09  // Used internally in checks.pnfo. Not read
 #define COMPATIBILITY_PARAM2 \b10  // Used internally in checks.pnfo. Not read
 
