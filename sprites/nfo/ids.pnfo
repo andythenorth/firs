@@ -249,12 +249,15 @@
 #define STR_INFO_MACHINESHOP        2E
 #define STR_INFO_ES_PRIMARY_BOOST   B0
 #define STR_INFO_FS_PRIMARY_BOOST   B1
+#define STR_INFO_MS_PRIMARY_BOOST   B2
 #define STR_INFO_LIMIT_200          C0
 #define STR_INFO_LIMIT_800          C1
 #define STR_INFO_ACCEPTING_ES       D0
 #define STR_INFO_NOT_ACCEPTING_ES   D1
 #define STR_INFO_ACCEPTING_FS       D2
 #define STR_INFO_NOT_ACCEPTING_FS   D3
+#define STR_INFO_ACCEPTING_MS       D4
+#define STR_INFO_NOT_ACCEPTING_MS   D5
 
 
 //Definition of text IDs for cargos

@@ -9,7 +9,10 @@
 //#define THIS_NUM_OUTPUT_CARGOS        \d02      // range 01-02
 //#define THIS_PROD_RATIO_CARGO_IN_2    \d01      // do not set to 0 - used for division
 //#define THIS_PROD_RATIO_CARGO_IN_3    \d01      // do not set to 0 - used for division  // !! remove when code cleaned
-//#define THIS_STR_INFO_CB38            STR_INFO_MACHINESHOP
+//#define THIS_STR_INFO_CB38            STR_INFO_GENERIC
+//#define THIS_STR_BOOST        STR_INFO_MS_PRIMARY_BOOST
+//#define THIS_STR_ACCEPT       \wxD4D0
+//#define THIS_STR_NOT_ACCEPT   \wxD4D1
 
 // then add as the 2nd last line, prior to the end of the climate availability label
 // #include "../../templates/template_secondary_action23_A.pnfo"
@@ -217,7 +220,7 @@
      C2 00
 
 
-// industry window texts
+// industry window cargo sub texts
 // production boost cargo - branching chain based on number of input cargos defined 
 // value for THIS_NUM_INPUT_CARGOS should not include prod boost cargo 
 -1 * 0 02 0A E0//handle cb 37 cargo subtexts (used here to provide max cargo limit information)
@@ -230,7 +233,7 @@
 -1 * 0 02 0A B0//return cargo acceptance (0 or 1) depending on amount of first cargo waiting
   85 40 00 FF FF
   \b1 //range 
-    00 80 \w100 FF FF //I've set the industry limit slightly higher than the tile limit...otherwise the limit won't be reached for 'cargo waiting' 
+    00 80 LIMIT_MANUFACTURING_SUPPLIES FF FF 
   01 80
 
   
@@ -303,7 +306,7 @@
 -1 * 0 02 0A F1 //branch depending on cargo waiting (we want different text to show in industry window) 
   85 40 00 FF FF //check cargo waiting
   \b1 //range
-    F2 00  \w100  FF FF    
+    F2 00  LIMIT_MANUFACTURING_SUPPLIES  FF FF    
   F3 00 //default	
 
 -1 * 0 02 0A F0 //
@@ -312,18 +315,6 @@
     \b1 //range
        FA 00  DEBUG_PARAMETER_INDUSTRY_TEXT_BIT  DEBUG_PARAMETER_INDUSTRY_TEXT_BIT
      F1 00 //default
-
-
-// WRITE OUT WHICH REGISTERS / PERSISTENT STORAGE ARE USED FOR WHAT
-// PSEUDO 
-// Assume prod boost cargo is in slot (num_input_cargos)
-// varaction 2 checking cargo (41 if num_input_cargos = 1, 42 if num_input_cargos = 2)
-// if prod boost cargo is waiting branch action 2s to:
-  // store production ratio of 100% 
-  // store 50t of consumption for prod boost (no production from this), may need to branch to run down cargo accurately
-  // else store production ratio as defined for THIS_PROD_RATIO_CARGO_IN_1, THIS_PROD_RATIO_CARGO_IN_2 (how to handle multiple input cargos?)
-// then use existing production calculation code, stripping code for cargo 3
-
 
 // handle callbacks
 -1 * 0 02 0A C0 //-1 * 0 0A <set-id>
