@@ -225,6 +225,14 @@
   \b1
     STR_INFO_LIMIT_800 80 00 00 // prod boost subtext for second cargo
   FF FF	 //default
+
+// handle cargo acceptance - production boost cargo
+-1 * 0 02 0A B0//return cargo acceptance (0 or 1) depending on amount of first cargo waiting
+  85 40 00 FF FF
+  \b1 //range 
+    00 80 \w808 FF FF //I've set the industry limit slightly higher than the tile limit...otherwise the limit won't be reached for 'cargo waiting' 
+  01 80
+
   
 // PROVIDE DEBUG INFO TO INDUSTRY WINDOW 
 //Remember text stack is LIFO (like array.pop) - put values to render first in highest registers
@@ -291,7 +299,7 @@
 -1 * 0 02 0A C0 //-1 * 0 0A <set-id>
 	85 0C //<type> <variable> word-access callback
 	00 FF FF //no shift, no mask
-	\b3 //number of ranges to check
+	\b4 //number of ranges to check
 	  THIS_STR_INFO_CB38 80   38 00   38 00 ////cb 38 display additional text in fund window
 	  E0 00   37 00   37 00 //cargo subtext industry window cb 37
 	  FA 00   3A 00   3A 00 //cb 3A (industry window)

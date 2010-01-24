@@ -141,7 +141,7 @@
 -1 * 0 02 09 C1 //industry tile cargo acceptance depending on waiting cargo
     86 40 00 FF FF
     \b1 //range
-     00 80 \w200 FF FF //lookup cb 2B in wiki for what the returned value means 
+     00 80 LIMIT_ENGINEERING_SUPPLIES FF FF //lookup cb 2B in wiki for what the returned value means 
    08 80
 -1 * 0 02 09 C0 //Handle callbacks
 	81 0C 00 FF //no shift, no mask
