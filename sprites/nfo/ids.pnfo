@@ -464,14 +464,18 @@
 
 // The parameter numbers used by FIRS
 #define SCHEME_PARAMETER \b00      // Choice of the payment scheme (see acceptable values below)
-#define DEBUG_PARAMETER \b01       // Used to turn on debug options (bit map)
+#define DEBUG_PARAMETER \b01       // Used to turn on debug options (bit map) 
 #define COMPATIBILITY_PARAM1 \b09  // Used internally in checks.pnfo. Not read
 #define COMPATIBILITY_PARAM2 \b10  // Used internally in checks.pnfo. Not read
 
-// The parameter values and their scheme names:
+
+// The economy parameter values and their scheme names:
 #define SCHEME_DEFAULT \d00
 #define SCHEME_MINING  \d01
 #define SCHEME_FARMING \d02
+
+// The debug parameter values
+#define DEBUG_PARAMETER_INDUSTRY_TEXT_BIT  \b01
 
 // Action7 to skip some cargos in certain climates
 #define CLIMATE_ALL       -1 * 0  0C "All climates"  // All climates
