@@ -158,7 +158,7 @@
 	0E STR_IND_PRODDECR_INSECTS //production decrease message
 	1B STR_IND_NEW_GENERIC //new industry message
 	1F STR_IND_CEMENTPLANT //industry name
-	10 CARGO_ENGINEERINGSUPPLIES FF //production cargo types (word; fill unused with FFh)
+	10 CARGO_GOODS FF //production cargo types (word; fill unused with FFh)
 	11 CARGO_COAL CARGO_SAND CARGO_GRAVEL FF //acceptance cargo types (dword; fill unused with FFh)
 	12 00 //production multiplier cargo 1
 	13 00 //production multiplier cargo 2
