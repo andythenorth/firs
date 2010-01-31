@@ -1,10 +1,14 @@
 // Defines for use in industry template
 #define THIS_INDUSTRY                 IND_FURNITUREFACTORY
 #define THIS_NUM_INPUT_CARGOS         \d01
+// input cargo count should not include manufacturing supplies (which must be cargo 1)
 #define THIS_NUM_OUTPUT_CARGOS        \d01
 #define THIS_PROD_RATIO_CARGO_IN_2    \d08
 #define THIS_PROD_RATIO_CARGO_IN_3    \d08
 #define THIS_STR_INFO_CB38            STR_INFO_GENERIC
+#define THIS_STR_BOOST                STR_INFO_MS_PRIMARY_BOOST
+#define THIS_STR_ACCEPT               \wxD4D4
+#define THIS_STR_NOT_ACCEPT           \wxD4D5
 
 
 //Industry tiles definition
