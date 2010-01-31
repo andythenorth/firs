@@ -618,7 +618,7 @@
 -1 * 0 00 0A \b26 01 IND_FISHINGHARBOUR //-1 * 0 00 0A <num-props> 01 <id>
 	08 IND_NULL //reuse original industry with this here ID
 	0A 05 //number of industry layouts
-		\d291 //size of layout definition +2 for termination
+		\d297 //size of layout definition +2 for termination
 		//layout 1:  Coast runs SW -> NE, Harbour Faces NW
 			00 03 FE TILE_FISHINGHARBOUR_1 00 //xoffs yoffs FE newtile(W)
 			00 04 FE TILE_FISHINGHARBOUR_2 00 //xoffs yoffs FE newtile(W)
@@ -684,11 +684,13 @@
 			03 00 FE TILE_FISHINGHARBOUR_1 00 //xoffs yoffs FE newtile(W)
 			03 01 FE TILE_FISHINGHARBOUR_1 00 //xoffs yoffs FE newtile(W)
 			03 02 FE TILE_FISHINGHARBOUR_1 00 //xoffs yoffs FE newtile(W)
+			03 03 FF // special clearance tile - nothing built
+			04 FF FF // special clearance tile - nothing built  (can use signed ints to offset negative)
       04 00 FE TILE_FISHINGHARBOUR_1 00 //xoffs yoffs FE newtile(W)
 			04 01 FE TILE_FISHINGHARBOUR_1 00 //xoffs yoffs FE newtile(W)
 			04 02 FE TILE_FISHINGHARBOUR_1 00 //xoffs yoffs FE newtile(W)
 			04 03 FF // special clearance tile - nothing built
-			03 03 FF // special clearance tile - nothing built
+			05 FF FF // special clearance tile - nothing built  (can use signed ints to offset negative)
 			05 00 FF // special clearance tile - nothing built
 			05 01 FF // special clearance tile - nothing built
 			05 02 FF // special clearance tile - nothing built
