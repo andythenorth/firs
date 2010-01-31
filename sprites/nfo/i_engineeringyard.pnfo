@@ -79,7 +79,7 @@
 //Industry definition
 
 //Action 0
--1 * 0 00 0A \b27 01 IND_SURVEYCAMP //-1 * 0 00 0A <num-props> 01 <id>
+-1 * 0 00 0A \b27 01 IND_ENGINEERINGYARD //-1 * 0 00 0A <num-props> 01 <id>
 	08 IND_NULL //reuse original industry with this here ID
 	0A 01 //number of industry layouts
 		\d47 //sum(size of layout definition +2 for termination)
@@ -99,10 +99,10 @@
 	0D STR_IND_PRODINCR_GENERIC //production increase message
 	0E STR_IND_PRODDECR_GENERIC //production decrease message
 	1B STR_IND_NEW_GENERIC //new industry message
-	1F STR_IND_SURVEYCAMP //industry name
+	1F STR_IND_ENGINEERINGYARD //industry name
 	24 STR_STA_DEPOT //default text for nearby station
-	10 FF FF //production cargo types (word; fill unused with FFh)
-	11 CARGO_SURVEYSUPPLIES FF FF FF //acceptance cargo types (dword; fill unused with FFh)
+	10 CARGO_ENGINEERINGSUPPLIES FF //production cargo types (word; fill unused with FFh)
+	11 CARGO_LUMBER CARGO_CHEMICALS FF FF //acceptance cargo types (dword; fill unused with FFh)
 	12 \b0 //production multiplier cargo 1
 	13 \b0 //production multiplier cargo 2
 	1C \w115 \w115 //input cargo 1 multiplier (dword M1 M2; output_typen = X*Mn/256)
@@ -141,5 +141,5 @@
 
 
 //Industry action 3 attach varaction2 chain to industry
--1 * 0 03 0A 01 IND_SURVEYCAMP 00 \wxC0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>	
+-1 * 0 03 0A 01 IND_ENGINEERINGYARD 00 \wxC0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>	
 
