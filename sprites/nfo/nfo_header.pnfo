@@ -5,6 +5,9 @@
 // Initial sprite with line count. Leave it empty because NFORenum will fix it for you.
 -1 * 4  00 00 00 00
 
+// warning about unused IDs
+//@@WARNING DISABLE 94
+
 // disable the warning:for newgrfs
 // warning about high IDs
 //@@WARNING DISABLE 141
@@ -14,7 +17,6 @@
 
 // warning about Default ID appears earlier in sprite.
 //@@WARNING DISABLE 100
-
 
 // warning about escaped words being bad escaped bytes 
 //@@WARNING DISABLE 209
