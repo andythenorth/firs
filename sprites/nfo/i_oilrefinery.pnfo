@@ -14,7 +14,7 @@
 	09 04 //industry type override
 	24 STR_STA_REFINERY //default text for nearby station
 	10 CARGO_CHEMICALS CARGO_FUELOIL //production cargo types (word; fill unused with FFh)
-	11 CARGO_OIL CARGO_ENGINEERINGSUPPLIES FF FF //acceptance cargo types (dword; fill unused with FFh)
+	11 CARGO_OIL FF FF FF //acceptance cargo types (dword; fill unused with FFh)
 	1C 73 00 73 00 //input cargo 1 multiplier (dword M1 M2; output_typen = X*Mn/256)
 	1D 26 00 26 00 //input cargo 2 multiplier
 	1E 00 00 00 00 //input cargo 3 multiplier
