@@ -5,6 +5,7 @@
 #define THIS_STR_ACCEPT       \wxD4D2
 #define THIS_STR_NOT_ACCEPT   \wxD4D3
 
+#define THIS_LIMIT		LIMIT_FARM_SUPPLIES
 //Industry tiles definition
 
 
@@ -78,21 +79,12 @@
 	\wxB1 \b1 \b1 //<set-id \w> <low-range> <high-range>
 	\wx00 //<default> (first tile layout available)
 
--1 * 0 02 09 C1 //industry tile cargo acceptance depending on waiting cargo
-    86 40 00 FF FF
-    \b1 //range
-     00 80 LIMIT_FARM_SUPPLIES FF FF //lookup cb 2B in wiki for what the returned value means 
-   08 80
-   
--1 * 0 02 09 C0 //Handle callbacks
-	81 0C 00 FF //no shift, no mask
-	\b1 //range
-    C1 00 2B 2B //cargo acceptance cb 2B
-  A0 00 //default
-
+#include "../../templates/template_primary_action2_cargo.pnfo"
 //Tile action 3: attach sprites to industry tile
--1 * 0 03 09 01 TILE_ARABLEFARM_1 00 \wxC0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>	
-
+-1 * 0 03 09              // action3, industry tiles
+	01                // <n-ids>
+	TILE_ARABLEFARM_1 // <id>
+	00 \wxC0          // 00 <def-cid>
 
 
 //Industry definition
