@@ -53,14 +53,32 @@ Nightly versions are made available on a regular basis. Once we reach a stable r
 
 Obviously you need to add it to the game first. We're not explaining that here, go read the OpenTTD manual at http://wiki.openttd.org/NewGRF.
 
+FIRS has a few parameters which control how FIRS behaves:
+Param#	values	meaning
+0	0 .. 2		Economy parameters. This choses between different economy models. Roughly equivalent to different climates as it affects the availability of industries
+			0: Default industry selection
+			1: Focus on mining industry
+			2: Focus on farming industry
+			
+1	0 .. 255	Stockpile parameter defining the size multiplier of the stockpile limit for manufacturing, farm and survey supplies. 
+			Default limits (multiplier = 1) are
+			manufacturing supplies: 800
+			farm supplies:		200
+			survey supplies:	200
+			which is twice the monthly usage of the industries. Setting the multiplier to 2 will double these, thus industries 
+			will have a maximum stockpile which lasts for four months, setting it to 3 will increase the maximum stockpile to 
+			6 months worth of usage and so on. A value of 255 will probably completely disable the stockpile limits. Note that 
+			all industries also work without these 'boost' cargos, they'll just work at 50% efficiency, thus produce only half
+			of the output they would produce with these supplies available.
+
 FIRS shouldn't be used with other industry sets active. FIRS will disable itself if an incompatible industry set is detected, but this detection will only work for industry sets known at the time of the FIRS release. There's a possibility that FIRS will be compatible with other industry sets in the future.
 
 Furthermore you need a vehicle set that supports the FIRS cargos. Any vehicle set with proper Cargo Classes support should do that by default. The OpenTTD vehicles will not be able to transport all FIRS cargos. The following sets available from the OpenTTD built-in download manager are known to support FIRS:
 - Train Sets:
-  - 2cc Train Set 1.0.1
-  - North American Renewal Set (NARS) 2.02
+  - 2cc Train Set
+  - North American Renewal Set (NARS) 2
   - Old Wagons with New Cargos 1.1
-  - UK Renewal Train Set v3.04
+  - UK Renewal Train Set v3
 - Road Vehicle Sets:
   - eGRVTS v1.0
   - HEQS (Heavy Equipment Set) 0.5b
