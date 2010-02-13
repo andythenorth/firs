@@ -5,6 +5,8 @@
 #define THIS_STR_ACCEPT       \wxD4D0
 #define THIS_STR_NOT_ACCEPT   \wxD4D1
 
+#define THIS_LIMIT            LIMIT_ENGINEERING_SUPPLIES
+
 //Industry tiles definition
 
 //Tile action 0  This tile is built on water
@@ -588,12 +590,9 @@
     01 84 \dx0000 \dx0200
   00 84 //default
 
--1 * 0 02 09 C1 //industry tile cargo acceptance depending on waiting cargo
-    86 40 00 FF FF
-    \b1 //range
-     00 80 LIMIT_ENGINEERING_SUPPLIES FF FF //lookup cb 2B in wiki for what the returned value means 
-   08 80
-   
+#define ONLY_ID_C1
+#include "../../templates/template_primary_action2_cargo.pnfo"
+
 -1 * 0 02 09 C0 //Handle callbacks
 	81 0C 00 FF //no shift, no mask
 	\b3 //range

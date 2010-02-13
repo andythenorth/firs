@@ -1,0 +1,18 @@
+// This file deals with the (global) handling of grf parameters
+// An exception is the handling of the compatibility with other newgrfs
+// which is handled in checks.pnfo
+
+// Calculate and set the stockpile limits for 'boost cargos'
+
+// First set the parameters later used ingame to the default value
+-1 * 0 0D LIMIT_ENGINEERING_SUPPLIES \D= FF 00 LIMIT_VAL_ENGINEERING_SUPPLIES
+-1 * 0 0D LIMIT_FARM_SUPPLIES \D= FF 00 LIMIT_VAL_FARM_SUPPLIES
+-1 * 0 0D LIMIT_MANUFACTURING_SUPPLIES \D= FF 00 LIMIT_VAL_MANUFACTURING_SUPPLIES
+
+-1 * 0 0D LIMIT_PARAMETER 80 \b01 00 // If the Limit parameter is not defined, set it to 1.
+// Now apply the multiplicator set by the parameter
+-1 * 0 0D LIMIT_ENGINEERING_SUPPLIES   \Du* LIMIT_ENGINEERING_SUPPLIES LIMIT_PARAMETER
+-1 * 0 0D LIMIT_FARM_SUPPLIES          \Du* LIMIT_FARM_SUPPLIES LIMIT_PARAMETER
+-1 * 0 0D LIMIT_MANUFACTURING_SUPPLIES \Du* LIMIT_MANUFACTURING_SUPPLIES LIMIT_PARAMETER
+
+// Some text stack magic has to go here in order to create the proper strings showing the stockpile limit

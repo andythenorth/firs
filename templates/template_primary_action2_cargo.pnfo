@@ -7,18 +7,37 @@
 #define THIS_DEFAULT_ID A0 00
 #endif
 
--1 * 0 02 09 C1                  //industry tile cargo acceptance depending on waiting cargo
-	86 40 00 FF FF           // Check for waiting cargo <check related> <var 40 (1st cargo)> <??> <??> <??>
-	\b1                      //number of ranges
-	00 80 THIS_LIMIT FF FF   //lookup cb 2B in wiki for what the returned value means  <decide normal values> <min> <max>
-	08 80
-   
+#ifndef THIS_DEFAULT_CB_ID
+#define THIS_DEFAULT_CB_ID 08 80
+#endif
+
+#ifndef THIS_CB_ID
+#define THIS_CB_ID 00 80
+#endif
+
+// Set the actual limit in the following action2 by means of this action6
+-1 * 0 06 THIS_LIMIT \b02 \b11 FF
+
+-1 * 0 02 09 C1                 //industry tile cargo acceptance depending on waiting cargo
+	86 40 00 FF FF          // Check for waiting cargo <check related> <var 40 (1st cargo)> <??> <??> <??>
+	\b1                     //number of ranges
+	THIS_CB_ID 01 00 FF FF  //lookup cb 2B in wiki for what the returned value means  <decide normal values> <min> <max>
+	THIS_DEFAULT_CB_ID
+
+#ifndef ONLY_ID_C1   
 -1 * 0 02 09 C0         //Handle callbacks <action2> <feature: ind.> <ID>
 	81 0C 00 FF     //no shift, no mask <chevar> <varID of CB> <shift> <mask>
 	\b1             //number of ranges
 	C1 00 2B 2B     //cargo acceptance cb 2B <use action2 ID C1 for CB 2B??>
 	THIS_DEFAULT_ID //default <otherwise use action2 ID A0>
+#endif
 
+#ifndef NO_UNDEFINE
 #undef THIS_LIMIT
 #undef THIS_DEFAULT_ID
+#undef THIS_DEFAULT_CB_ID
+#undef THIS_CB_ID
+#undef ONLY_ID_C1
+#endif
+#undef NO_UNDEFINE
 

@@ -10,6 +10,10 @@
 #define THIS_STR_ACCEPT               \wxD4D4
 #define THIS_STR_NOT_ACCEPT           \wxD4D5
 
+#define THIS_LIMIT                    LIMIT_MANUFACTURING_SUPPLIES
+#define THIS_DEFAULT_CB_ID            88 88
+#define THIS_CB_ID                    08 88
+
 //Industry tiles definition
 
 //Tile action 0
@@ -68,17 +72,7 @@
 	  \wxA3 \b4 \b4 //<set-id \w> <low-range> <high-range>  // snow
 	\wxA1 //<default>
 
--1 * 0 02 09 C1 //industry tile cargo acceptance depending on waiting cargo
-    86 40 00 FF FF
-    \b1 //range
-     80 88 LIMIT_MANUFACTURING_SUPPLIES FF FF // 0x8CBA for c1 = A, c2 = B, c3 = C.  But reversed as a word so BA 8C .... lookup cb 2B for more info 
-   88 88
-   
--1 * 0 02 09 C0 //Handle callbacks
-	81 0C 00 FF //no shift, no mask
-	\b1 //range
-    C1 00 2B 2B //cargo acceptance cb 2B
-  A0 00 //default
+#include "../../templates/template_primary_action2_cargo.pnfo"
 
 //Action3 attach sprites to industry tile
 

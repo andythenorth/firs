@@ -229,11 +229,14 @@
     STR_INFO_LIMIT_800 80 00 00 // prod boost subtext for second cargo
   FF FF	 //default
 
+// Set the actual limit in the following action2 by means of this action6
+-1 * 0 06 LIMIT_MANUFACTURING_SUPPLIES \b02 \b11 FF
+
 // handle cargo acceptance - production boost cargo
 -1 * 0 02 0A B0//return cargo acceptance (0 or 1) depending on amount of first cargo waiting
   85 40 00 FF FF
   \b1 //range 
-    00 80 LIMIT_MANUFACTURING_SUPPLIES FF FF 
+    00 80 01 00 FF FF 
   01 80
 
   
@@ -303,10 +306,13 @@
        THIS_STR_BOOST 80 00 00 00 00
      THIS_STR_BOOST 80 //default
       
+// Set the actual limit in the following action2 by means of this action6
+-1 * 0 06 LIMIT_MANUFACTURING_SUPPLIES \b02 \b11 FF
+
 -1 * 0 02 0A F1 //branch depending on cargo waiting (we want different text to show in industry window) 
   85 40 00 FF FF //check cargo waiting
   \b1 //range
-    F2 00  LIMIT_MANUFACTURING_SUPPLIES  FF FF    
+    F2 00  01 00  FF FF    
   F3 00 //default	
 
 -1 * 0 02 0A F0 //
