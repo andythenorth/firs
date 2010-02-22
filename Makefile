@@ -15,25 +15,25 @@ shell = /bin/sh
 .SUFFIXES:
 
 # Add some OS detection and guess an install path (use the system's default)
-OSTYPE=$(shell uname -s)
+OSTYPE:=$(shell uname -s)
 ifeq ($(OSTYPE),Linux)
-INSTALLDIR=$(HOME)/.openttd/data
+INSTALLDIR:=$(HOME)/.openttd/data
 else 
 ifeq ($(OSTYPE),Darwin)
-INSTALLDIR=$(HOME)/Documents/OpenTTD/data
+INSTALLDIR:=$(HOME)/Documents/OpenTTD/data
 else
 ifeq ($(shell echo "$(OSTYPE)" | cut -d_ -f1),MINGW32)
-INSTALLDIR=C:\Documents and Settings\$(USERNAME)\My Documents\OpenTTD\data
+INSTALLDIR:=C:\Documents and Settings\$(USERNAME)\My Documents\OpenTTD\data
 else
-INSTALLDIR=
+INSTALLDIR:=
 endif
 endif
 endif
 
 # Get the Repository revision, tags and the modified status
-GRF_REVISION = $(shell hg parent --template="{rev}")
-GRF_MODIFIED = $(shell [ -n "`hg status | grep -v '^?'`" ] && echo "M" || echo "")
-REPO_TAGS    = $(shell hg parent --template="{tags}" | grep -v "tip" | cut -d\  -f1)
+GRF_REVISION := $(shell hg parent --template="{rev}")
+GRF_MODIFIED := $(shell [ -n "`hg status | grep -v '^?'`" ] && echo "M" || echo "")
+REPO_TAGS    := $(shell hg parent --template="{tags}" | grep -v "tip" | cut -d\  -f1)
 
 # Include the global configuration file
 include ${MAKEFILECONFIG}
@@ -41,14 +41,14 @@ include ${MAKEFILECONFIG}
 # this overrides definitions from above by individual settings:
 -include ${MAKEFILELOCAL}
 
-REPO_DIRS    = $(dir $(BUNDLE_FILES))
+REPO_DIRS    := $(dir $(BUNDLE_FILES))
 # read the main source file and get a list of all (p)nfo files which comprise the newgrf. We depend on them.
-SOURCE_PNFO_FILES = $(shell cat $(PNFO_FILENAME) | sed "s/^[ \t]*//" | grep -v 'cargo_schemes.pnfo' | grep -v 'cargos.pnfo' | grep '$(PNFO_SUFFIX)')
-PNFO_FILES = $(shell cat $(PNFO_FILENAME) | sed "s/^[ \t]*//" | grep '$(PNFO_SUFFIX)')
+SOURCE_PNFO_FILES := $(shell cat $(PNFO_FILENAME) | sed "s/^[ \t]*//" | grep -v 'cargo_schemes.pnfo' | grep -v 'cargos.pnfo' | grep '$(PNFO_SUFFIX)')
+PNFO_FILES := $(shell cat $(PNFO_FILENAME) | sed "s/^[ \t]*//" | grep '$(PNFO_SUFFIX)')
 # PCX_FILES  = $(shell cat $(PNFO_FILENAME) | sed "s/^[ \t]*//" | grep '$(PCX_SUFFIX)')
-PCX_FILES  = $(shell cat $(SOURCE_PNFO_FILES) | grep '$(PCX_SUFFIX)' | awk '{ print $$2 }' | grep '$(PCX_SUFFIX)' | sort | uniq)
+PCX_FILES  := $(shell cat $(SOURCE_PNFO_FILES) | grep '$(PCX_SUFFIX)' | awk '{ print $$2 }' | grep '$(PCX_SUFFIX)' | sort | uniq)
 # Assume that all pnfo files in the template dir are part of the code:
-TEMPLATE_FILES = $(shell ls $(TEMPLATE_DIR)/*.$(PNFO_SUFFIX))
+TEMPLATE_FILES := $(shell ls $(TEMPLATE_DIR)/*.$(PNFO_SUFFIX))
 
 # Targets:
 # all, test, bundle, install, dev, remake
