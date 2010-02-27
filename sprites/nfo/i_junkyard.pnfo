@@ -137,7 +137,7 @@
 			04 01 FE TILE_JUNKYARD_1 00
 			04 02 FE TILE_JUNKYARD_1 00
 		00 80 //terminate layout definition
-	0B 04 //production flags 1h=extractive, 2h=organic, 4h=processing
+	0B 01 //production flags 1h=extractive, 2h=organic, 4h=processing
 	0C STR_IND_CLOSE_GENERIC //industry closure message
 	0D STR_IND_PRODINCR_GENERIC //production increase message
 	0E STR_IND_PRODDECR_GENERIC //production decrease message
@@ -161,6 +161,7 @@
 	1A \dx20 //special industry flag (dword)
 	21 F4 //callback flags 
 	22 05  //callback flags
+	24 \w00 // Station name String ID. No special one, but don't use 'mine'.
 //To show cargo waiting to be processed at industry, ensure prop 21 is set to use production callback
 
 //No action 1 for industries, as graphics are defined by the industry-tile feature.

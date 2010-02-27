@@ -158,7 +158,7 @@
 			03 03 FE TILE_RECYCLINGPLANT_1 00
 			04 04 FE TILE_RECYCLINGPLANT_1 00
 		00 80 //terminate layout definition
-	0B 04 //production flags 1h=extractive, 2h=organic, 4h=processing
+	0B 01 //production flags 1h=extractive, 2h=organic, 4h=processing
 	0C STR_IND_CLOSE_GENERIC //industry closure message
 	0D STR_IND_PRODINCR_FARM //production increase message
 	0E STR_IND_PRODDECR_INSECTS //production decrease message

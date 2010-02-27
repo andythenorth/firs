@@ -62,9 +62,9 @@ Param#	values	meaning
 			
 1	0 .. 255	Stockpile parameter defining the size multiplier of the stockpile limit for manufacturing, farm and survey supplies. 
 			Default limits (multiplier = 1) are
-			manufacturing supplies: 800
-			farm supplies:		200
-			survey supplies:	200
+			Manufacturing Supplies: 800
+			Farm Supplies:		200
+			Engineering Supplies:	200
 			which is twice the monthly usage of the industries. Setting the multiplier to 2 will double these, thus industries 
 			will have a maximum stockpile which lasts for four months, setting it to 3 will increase the maximum stockpile to 
 			6 months worth of usage and so on. A value of 255 will probably completely disable the stockpile limits. Note that 
