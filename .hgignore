@@ -8,15 +8,15 @@ Makefile.local
 firs*.grf
 
 # Ignore intermediate files created by the Makefile:
-*.cpnfo
 *.nfo
 docs/license.txt
 docs/changelog.txt
 docs/readme.txt
 # Dependency files:
-*.d
 sprites/nfo/cargo_schemes.pnfo
 sprites/nfo/cargos.pnfo
+Makefile.dep
+REV
 
 # Ignore directories from bundle creation / install:
 firs-*
