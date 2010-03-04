@@ -9,7 +9,7 @@ shell = /bin/sh
 # Build parameters and programmes
 NFORENUM_FLAGS ?=
 GRFCODEC_FLAGS ?= -e -p 2
-TAR_FLAGS      ?= --gzip -cf 
+TAR_FLAGS      ?= -cf 
 ZIP_FLAGS      ?= -r
 BZIP_FLAGS     ?= -k9f
 CC_FLAGS       ?= -C -E - <
