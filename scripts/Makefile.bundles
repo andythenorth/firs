@@ -7,7 +7,7 @@ $(DIR_NAME): all $(BUNDLE_FILES)
 
 %.tar: $(DIR_NAME)
 # Create the release bundle with all files in one tar
-	$(_E) "[Generating:] $@"
+	$(_E) "[Generating] $@"
 	$(_V)$(TAR) $(TAR_FLAGS) $@ $(basename $@)
 	$(_E)
 
@@ -15,24 +15,30 @@ bundle: $(DIR_NAME)
 bundle_tar: $(TAR_FILENAME)
 bundle_zip: $(ZIP_FILENAME)
 $(ZIP_FILENAME): $(DIR_NAME)
-	$(_E) "[Generating:] $@"
+	$(_E) "[Generating] $@"
 	$(_V) $(ZIP) $(ZIP_FLAGS) $@ $^
 bundle_bzip: $(BZIP_FILENAME)
 $(BZIP_FILENAME): $(TAR_FILENAME)
-	$(_E) "[Generating:] $@"
+	$(_E) "[Generating] $@"
 	$(_V)$(BZIP) $(BZIP_FLAGS) $^
 
 # Installation process
 install: $(TAR_FILENAME) $(INSTALL_DIR)
 	$(_E) "[INSTALL] to $(INSTALL_DIR)"
 	$(_V)-cp $(TAR_FILENAME) $(INSTALL_DIR)
-	$(_E)
+ifdef INSTALLDIR
+	$(_E) [Warning] The use of 'INSTALLDIR' is deprecated and may be removed in the future.
+	$(_E) [Warning] Use 'INSTALL_DIR' instead.
+endif
 
-md5: $(MAIN_TARGET)
+md5: $(MD5_FILENAME)
+
+$(MD5_FILENAME): $(MAIN_TARGET)
+	$(_E) "[Generating] $@"
 	$(_V) $(MD5SUM) $(GRF_FILES) $(MAIN_TARGET) > $(MD5_FILENAME)
 
-bundle_src: md5
-	$(_E) "[Generating] $(DIR_NAME_SRC)"
+bundle_src: $(REV_FILENAME) $(MD5_FILENAME)
+	$(_E) "[Preparing] $(DIR_NAME_SRC)"
 	$(_V) rm -rf $(DIR_NAME_SRC) $(DIR_NAME_SRC).tar.gz
 	$(_V) mkdir -p $(DIR_NAME_SRC)
 	$(_V) mkdir -p $(addprefix $(DIR_NAME_SRC)/,$(shell for i in $(REPO_DIRS); do for j in $(MAIN_DIRS); do echo $$i | grep -E "^$$j"; done; done))
@@ -49,6 +55,7 @@ bundle_src: md5
 	$(_V) echo 'REPO_FILES = $(REPO_FILES)' >> $(DIR_NAME_SRC)/$(MAKEFILE_LOCAL)
 	$(_V) echo 'REPO_DIRS = $(REPO_DIRS)' >> $(DIR_NAME_SRC)/$(MAKEFILE_LOCAL)
 	$(_V) $(TAR) $(TAR_FLAGS) $(DIR_NAME_SRC).tar $(DIR_NAME_SRC)
+	$(_E) "[Generating] $(DIR_NAME_SRC).tar.gz"
 	$(_V) $(SRCZIP) $(SRCZIP_FLAGS) $(DIR_NAME_SRC).tar
 	$(_V) rm -rf $(DIR_NAME_SRC)
 
