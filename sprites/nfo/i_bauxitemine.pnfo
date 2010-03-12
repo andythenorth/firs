@@ -14,7 +14,7 @@
 	0B 00 00 //tile acceptance 2
 	0C 00 00 //tile acceptance 3
 	0D 10 //land shape flags: 10 = only on flat land
-	0E 04 //callback flags
+	0E 00 //callback flags
 
 //mine tiles, Action 2 
 -1 * 0 02 09 00 00 //-1 * 0 02 09 <set-id> 00
@@ -132,35 +132,35 @@
 	0A CARGO_ENGINEERINGSUPPLIES 08 //tile acceptance 1
 	0B 00 00 //tile acceptance 2
 	0C 00 00 //tile acceptance 3
-	0E 04 //callback flags
+	0E 00 //callback flags
 -1 * 0 00 09 \b6 01 30 // -1 * 0 00 09 <num-props> 01 <id>
 	08 30 //subsitute tile type
 	09 30 //industry tile override
 	0A CARGO_ENGINEERINGSUPPLIES 08 //tile acceptance 1
 	0B 00 00 //tile acceptance 2
 	0C 00 00 //tile acceptance 3
-	0E 04 //callback flags
+	0E 00 //callback flags
 -1 * 0 00 09 \b6 01 31 // -1 * 0 00 09 <num-props> 01 <id>
 	08 31 //subsitute tile type
 	09 31 //industry tile override
 	0A CARGO_ENGINEERINGSUPPLIES 08 //tile acceptance 1
 	0B 00 00 //tile acceptance 2
 	0C 00 00 //tile acceptance 3
-	0E 04 //callback flags
+	0E 00 //callback flags
 -1 * 0 00 09 \b6 01 32 // -1 * 0 00 09 <num-props> 01 <id>
 	08 32 //subsitute tile type
 	09 32 //industry tile override
 	0A CARGO_ENGINEERINGSUPPLIES 08 //tile acceptance 1
 	0B 00 00 //tile acceptance 2
 	0C 00 00 //tile acceptance 3
-	0E 04 //callback flags
+	0E 00 //callback flags
 -1 * 0 00 09 \b6 01 33 // -1 * 0 00 09 <num-props> 01 <id>
 	08 33 //subsitute tile type
 	09 33 //industry tile override
 	0A CARGO_ENGINEERINGSUPPLIES 08 //tile acceptance 1
 	0B 00 00 //tile acceptance 2
 	0C 00 00 //tile acceptance 3
-	0E 04 //callback flags
+	0E 00 //callback flags
 
 #undef THIS_DEFAULT_ID
 #define THIS_DEFAULT_ID FF FF 

@@ -34,28 +34,28 @@
 	0A CARGO_ENGINEERINGSUPPLIES 08 //tile acceptance 1
 	0B 00 00 //tile acceptance 2
 	0C 00 00 //tile acceptance 3
-	0E 04 //callback flags
+	0E 00 //callback flags
 -1 * 0 00 09 \b6 01 1E // -1 * 0 00 09 <num-props> 01 <id>
 	08 1E //subsitute tile type
 	09 1E //industry tile override
 	0A CARGO_ENGINEERINGSUPPLIES 08 //tile acceptance 1
 	0B 00 00 //tile acceptance 2
 	0C 00 00 //tile acceptance 3
-	0E 04 //callback flags
+	0E 00 //callback flags
 -1 * 0 00 09 \b6 01 1F // -1 * 0 00 09 <num-props> 01 <id>
 	08 1F //subsitute tile type
 	09 1F //industry tile override
 	0A CARGO_ENGINEERINGSUPPLIES 08 //tile acceptance 1
 	0B 00 00 //tile acceptance 2
 	0C 00 00 //tile acceptance 3
-	0E 04 //callback flags
+	0E 00 //callback flags
 -1 * 0 00 09 \b6 01 20 // -1 * 0 00 09 <num-props> 01 <id>
 	08 20 //subsitute tile type
 	09 20 //industry tile override
 	0A CARGO_ENGINEERINGSUPPLIES 08 //tile acceptance 1
 	0B 00 00 //tile acceptance 2
 	0C 00 00 //tile acceptance 3
-	0E 04 //callback flags
+	0E 00 //callback flags
 
 #define THIS_DEFAULT_ID FF FF
 #include "../../templates/template_primary_action2_cargo.pnfo"
