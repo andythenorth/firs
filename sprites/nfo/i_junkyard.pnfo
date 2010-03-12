@@ -121,7 +121,7 @@
 //Industry definition
 
 //Action 0
--1 * 0 00 0A \b26 01 IND_JUNKYARD //-1 * 0 00 0A <num-props> 01 <id>
+-1 * 0 00 0A \b27 01 IND_JUNKYARD //-1 * 0 00 0A <num-props> 01 <id>
 	08 IND_NULL //reuse original industry with this here ID
 	0A 01 //number of industry layouts
 		\d52 //sum(size of layout definition +2 for termination)
