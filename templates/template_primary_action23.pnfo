@@ -11,6 +11,8 @@
 
 // Optional: #define THIS_HANDLE_CB28 [Action 2 ID]  - make sure Action 2 chain is also present in industry, above template include.
 
+// Local defines - to improve readability
+#define LOCAL_CARGO_1_DELIVERED_STORE    00
 
 // then add as the 2nd last line, prior to the end of the climate avialability label
 // #include "../../templates/template_primary_action23.pnfo"
@@ -26,86 +28,65 @@
 //   industry location permissibility (CB 28)  10-1F  (NB CB 28 is not templated - handled on a per-industry basis)
 //   generally unused and available	30-9F
 
+
 // production code
--1 * 0 02 0A 00 //production callback high production
-	00 //version
-	\w16 \w0 \w0 //<subtract-in-1..3>
-	\w0 \w0 //<add-out-1..2>
-	00 //don't repeat
-
--1 * 0 02 0A 01 //production callback med production
-	00 //version
-	\w8 \w0 \w0 //<subtract-in-1..3>
-	\w0 \w0 //<add-out-1..2>
-	00 //don't repeat
-
--1 * 0 02 0A 02 //production callback low production
-	00 //version
-	\w1 \w0 \w0 //<subtract-in-1..3>
-	\w0 \w0 //<add-out-1..2>
-	00 //don't repeat
 	
--1 * 0 02 0A A0 //branch production depending on cargo waiting 
-  85 40 00 FF FF //check cargo waiting
-  \b2 // range
-    00 00  \w24  FF FF    
-    01 00  \w8  \w23    
-  02 00 // default
+-1 * 0 02 0A A1 //production callback with consumption
+	00 //version
+	\w9999 \w0 \w0 //<subtract-in-1..3>
+	\w0 \w0 //<add-out-1..2>
+	00 //don't repeat
 
-// cargo acceptance
--1 * 0 02 0A B0//return cargo acceptance (0 or 1) depending on amount of first cargo waiting
-  85 40 00 FF FF
-  \b1 //range 
-    00 80 \w208 FF FF //I've set the industry limit slightly higher than the tile limit...otherwise the limit won't be reached for 'cargo waiting' 
-  01 80
+-1 * 0 02 0A A0 //branch production depending on boost cargo 
+  89 // 
+    40 20  \dxFFFFFFFF // cargo 1 waiting 
+    \2+ 7C LOCAL_CARGO_1_DELIVERED_STORE 20  \dxFFFFFFFF //get stored amount for delivered cargo 1   
+    10 1A 00 \dx00 //store result in persistent storage
+  \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
+    A1 00  \d00  \d00 
+  A1 00 // default
+
 
 // production changes
--1 * 0 02 0A D2 //random production increase if production-boosting cargo stockpiled...  
+-1 * 0 02 0A D3 //random production increase if production-boosting cargo stockpiled...  
   81 18 00 03
   \b1 //range
     0E 80 00 00 //lookat cb 35 or 29 in wiki to see what the returned value means
   00 80 //else no change	
   
--1 * 0 02 0A D1 //handle cb 35 monthly production change 
-  85 40 00 FF FF //check cargo waiting
+-1 * 0 02 0A D2 // 
+  89 // 
+    1A 20 \d00 //create a value (constant 1A anded (20) with following bytes) 
+    10 1A 20 \dx00 //store in persistent storage
+    0F
+    7D 01 00  \dxFFFFFFFF //get local storage amount for delivered cargo 1 in last month
   \b1 //range
-    D2 00  01 00  FF FF    
+    D3 00  \d01  \dxFFFFFFFF    
   00 80 //else no change
+
+-1 * 0 02 0A D1 //handle cb 35 monthly production change 
+  89 // 
+    7C LOCAL_CARGO_1_DELIVERED_STORE 20  \dxFFFFFFFF //get persistent storage amount for delivered cargo 1 in last month
+    \2sto 1A 00 \dx01 //store in local register
+  \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
+    D2 00  \d00  \d00 
+  D2 00 // default
+	
 	
 // industry window texts	
--1 * 0 02 0A E0//handle cb 37 cargo subtexts (used here to provide max cargo limit information)
-  81 18 00 FF 
-  \b1
-    STR_INFO_LIMIT_200 80 00 00
-  FF FF	 //default
-
--1 * 0 02 0A F2 //store sub-text ID to register, return text ID  
-    85 // 
-      1A 20 THIS_STR_ACCEPT //create a value (constant 1A anded (20) with following bytes) 
-      0E 1A 00 \wx100 //store in register
+     -1 * 0 02 0A F0 //store sub-text ID to register, return text ID  
+    89 // 
+      7C LOCAL_CARGO_1_DELIVERED_STORE 20  \dxFFFFFFFF //get stored amount for production from cargo 1
+      0E 1A 00 \dx100 //store in register
     \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
-       THIS_STR_BOOST 80 00 00 00 00
+       THIS_STR_BOOST 80 \d00 \d00
      THIS_STR_BOOST 80 //default
-     
--1 * 0 02 0A F1 //store sub-text ID to register, return text ID  
-    85 // 
-      1A 20 THIS_STR_NOT_ACCEPT //create a value (constant 1A anded (20) with following bytes) 
-      0E 1A 00 \wx100 //store in register
-    \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
-       THIS_STR_BOOST 80 00 00 00 00
-     THIS_STR_BOOST 80 //default
-      
--1 * 0 02 0A F0 //branch depending on cargo waiting (we want different text to show in industry window) 
-  85 40 00 FF FF //check cargo waiting
-  \b1 //range
-    F1 00  \w200  FF FF    
-  F2 00 //default	
-	
+      	
 // handle callbacks
 -1 * 0 02 0A C0 
 	85 0C //<type> <variable> word-access callback
 	00 FF FF //no shift, no mask
-	\b7 //number of ranges to check
+	\b5 //number of ranges to check
 	  #ifdef THIS_HANDLE_CB28
     THIS_HANDLE_CB28   28 00   28 00 //can industry be built? ...relies on action 2 with correct ID defined in industry pnfo
     #endif
@@ -113,15 +94,15 @@
     00 84   28 00   28 00 //just allow the industry to be built (this industry doesn't care about location)
     #endif
 	  04 80   29 00   29 00 //random production change cb 29
-	  B0 00   3D 00   3D 00 //industry cargo acceptance
 	  D1 00   35 00   35 00 //monthly production change cb 35
-	  E0 00   37 00   37 00 //cargo subtext industry window cb 37
     THIS_STR_INFO_CB38 80   38 00   38 00 //return text-ID D0xx if cb 38 (fund window)
     F0 00   3A 00   3A 00 //return text-ID D0xx if cb 3A (industry window)
 	A0 00 //default
 
 // industry action 3 attach varaction2 chain to industry
 -1 * 0 03 0A 01 THIS_INDUSTRY 00 \wxC0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>	
+
+#undef LOCAL_CARGO_1_DELIVERED_STORE
 
 #undef THIS_INDUSTRY
 #undef THIS_STR_INFO_CB38
