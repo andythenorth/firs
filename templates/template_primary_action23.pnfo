@@ -5,8 +5,6 @@
 // #define THIS_INDUSTRY         IND_ARABLEFARM
 // #define THIS_STR_INFO_CB38    STR_INFO_GENERIC
 // #define THIS_STR_BOOST        STR_INFO_FS_PRIMARY_BOOST
-// #define THIS_STR_ACCEPT       \wxD4D2
-// #define THIS_STR_NOT_ACCEPT   \wxD4D3
 
 
 // Optional: #define THIS_HANDLE_CB28 [Action 2 ID]  - make sure Action 2 chain is also present in industry, above template include.
@@ -107,6 +105,4 @@
 #undef THIS_INDUSTRY
 #undef THIS_STR_INFO_CB38
 #undef THIS_STR_BOOST
-#undef THIS_STR_ACCEPT
-#undef THIS_STR_NOT_ACCEPT
 #undef THIS_HANDLE_CB28

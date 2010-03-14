@@ -11,8 +11,6 @@
 //#define THIS_PROD_RATIO_CARGO_IN_3    \d01      // do not set to 0 - used for division  // !! remove when code cleaned
 //#define THIS_STR_INFO_CB38            STR_INFO_GENERIC
 //#define THIS_STR_BOOST        STR_INFO_MS_PRIMARY_BOOST
-//#define THIS_STR_ACCEPT       \wxD4D0
-//#define THIS_STR_NOT_ACCEPT   \wxD4D1
 
 // then add as the 2nd last line, prior to the end of the climate availability label
 // #include "../../templates/template_secondary_action23_A.pnfo"
@@ -357,6 +355,3 @@
 #undef THIS_PROD_RATIO_CARGO_IN_3
 
 #undef THIS_STR_BOOST
-#undef THIS_STR_ACCEPT
-#undef THIS_STR_NOT_ACCEPT
-
