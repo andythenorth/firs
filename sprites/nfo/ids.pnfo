@@ -461,8 +461,6 @@
 #define STR_CRG_WATER_TABBR                 A1 00
 
 // Minimum Limits on production boosting cargos for tiles only (industry limit = tile limit + 8, and is in template)
-#define LIMIT_VAL_ENGINEERING_SUPPLIES        \d200
-#define LIMIT_VAL_FARM_SUPPLIES               \d200
 #define LIMIT_VAL_MANUFACTURING_SUPPLIES      \d800
 
 // The parameter numbers used by FIRS
@@ -474,8 +472,6 @@
 #define COMPATIBILITY_PARAM1 \b09  // Used internally in checks.pnfo. Not read
 #define COMPATIBILITY_PARAM2 \b10  // Used internally in checks.pnfo. Not read
 
-#define LIMIT_ENGINEERING_SUPPLIES        \b11
-#define LIMIT_FARM_SUPPLIES               \b12
 #define LIMIT_MANUFACTURING_SUPPLIES      \b13
 
 
