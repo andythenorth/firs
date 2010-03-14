@@ -5,9 +5,7 @@
 #define THIS_STR_ACCEPT       \wxD4D2
 #define THIS_STR_NOT_ACCEPT   \wxD4D3
 
-#define THIS_LIMIT		LIMIT_FARM_SUPPLIES
 //Industry tiles definition
-
 
 //Tile action 0
 -1 * 0 00 09 \b6 01 TILE_ARABLEFARM_1 // -1 * 0 00 09 <num-props> 01 <id>
@@ -79,12 +77,11 @@
 	\wxB1 \b1 \b1 //<set-id \w> <low-range> <high-range>
 	\wx00 //<default> (first tile layout available)
 
-#include "../../templates/template_primary_action2_cargo.pnfo"
 //Tile action 3: attach sprites to industry tile
 -1 * 0 03 09              // action3, industry tiles
 	01                // <n-ids>
 	TILE_ARABLEFARM_1 // <id>
-	00 \wxC0          // 00 <def-cid>
+	00 \wxA0          // 00 <def-cid>
 
 
 //Industry definition

@@ -589,13 +589,9 @@
     01 84 \dx0000 \dx0200
   00 84 //default
 
-#define ONLY_ID_C1
-#include "../../templates/template_primary_action2_cargo.pnfo"
-
 -1 * 0 02 09 C0 //Handle callbacks
 	81 0C 00 FF //no shift, no mask
-	\b3 //range
-    C1 00 2B 2B //cargo acceptance cb 2B
+	\b2 //range
 	  D0 00 2F 2F //custom shape check cb 2F
 	  00 80 30 30 //disable drawing default foundations cb30
   A0 00 //default

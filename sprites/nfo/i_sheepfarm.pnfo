@@ -71,23 +71,19 @@
 	\wx03   01 02  01 02
 	\wx04 //03 01  03 01 <default>
 
-//don't need this with one layout
-//-1 * 0 02 09 A0 
-//	82 44 //check layout number (lowest byte of related industry)
-//	00 FF //don't shift, don't mask
-//	\b3 //number of ranges to check (number of layouts)
-//	\wxB1 \b1 \b1 //<set-id \w> <low-range> <high-range>
+-1 * 0 02 09 A0 
+	82 44 //check layout number (lowest byte of related industry)
+	00 FF //don't shift, don't mask
+	\b1 //number of ranges to check (number of layouts)
+    \wxB1 \b1 \b1 //<set-id \w> <low-range> <high-range>
 //	\wxB2 \b2 \b2 //<set-id \w> <low-range> <high-range>
 //	\wxB3 \b3 \b3 //<set-id \w> <low-range> <high-range>
-//	\wx00 //<default> (first layout available)
-
-#define THIS_DEFAULT_ID B1 00
-#include "../../templates/template_primary_action2_cargo.pnfo"
+	\wxB1 //<default> (first layout available)
 
 //Action3 attach sprites to industry tile
 
 //Tile action 3
--1 * 0 03 09 01 TILE_SHEEPFARM_1 00 \wxC0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
+-1 * 0 03 09 01 TILE_SHEEPFARM_1 00 \wxA0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
 
 
 

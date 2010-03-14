@@ -36,9 +36,6 @@
 	0C 00 00 //tile acceptance 3
 	0E 00 //callback flags
 
-#define THIS_DEFAULT_ID FF FF
-#include "../../templates/template_primary_action2_cargo.pnfo"
-
 // action 3s for industry tile 74	
 -1 * 0 03 09 01 74
-  00 C0 00
+  00 FF FF

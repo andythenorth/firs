@@ -67,13 +67,11 @@
 	\wxB0 \b1 \b1 //<set-id \w> <low-range> <high-range>
 	\wx00 //<default> (first tile layout available)
 
-#define NO_UNDEFINE
-#include "../../templates/template_primary_action2_cargo.pnfo"
 
 //Action3 attach sprites to industry tile
 
 //Tile action 3
--1 * 0 03 09 01 TILE_BAUXITEMINE_1 00 \wxC0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
+-1 * 0 03 09 01 TILE_BAUXITEMINE_1 00 \wxA0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
 
 //Industry definition
 
@@ -161,18 +159,15 @@
 	0C 00 00 //tile acceptance 3
 	0E 00 //callback flags
 
-#undef THIS_DEFAULT_ID
-#define THIS_DEFAULT_ID FF FF 
-#include "../../templates/template_primary_action2_cargo.pnfo"
 	
 // action 3s for industry tiles 2F-33	
 -1 * 0 03 09 01 2F
-  00 C0 00
--1 * 0 03 09 01 30
-  00 C0 00
--1 * 0 03 09 01 31
-  00 C0 00
--1 * 0 03 09 01 32
-  00 C0 00
--1 * 0 03 09 01 33
-  00 C0 00
+  00 FF FF
+ 09 01 30
+  00 FF FF
+ 09 01 31
+  00 FF FF
+ 09 01 32
+  00 FF FF
+ 09 01 33
+  00 FF FF
