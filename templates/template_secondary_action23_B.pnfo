@@ -1,15 +1,23 @@
 // Action2/3-chain for cargo processing at secondary industries
-// Currently designed for secondary industries with three independent inputs, two outputs, no production boost
-// May be able to template for number of input/output cargos
+// This is a template for combinatory cargos
+// Each cargo contributes a certain amount to a production ratio n / 8
+// ! Total for all cargos cannot exceed 8 
+// For each cargo, the regular production cb checks number of cycles since cargo was last delivered.
+// If cargo delivered within last n cycles, production contribution for that cargo is added to total (n to be be based on testing)
+// Output for this cycle is then calculated for all input cargo using current ratio.
+// For gameplay benefit, this makes certain allowances against realism and the exact timings of deliveries etc.
+// - we assume that certain internal processes at the industry are the cause of the varying ratio (boilers being lit for example).
 
 // How to use:
 // Add to the top of a primary industry a few #define lines. For example:
 //#define THIS_INDUSTRY                 IND_MACHINESHOP
 //#define THIS_NUM_INPUT_CARGOS         \d03      // range 01-03
 //#define THIS_NUM_OUTPUT_CARGOS        \d02      // range 01-02
+// - production ratios each cargo: !! total for all cargos cannot exceed 8 -
 //#define THIS_PROD_RATIO_CARGO_IN_1    \d01      // do not set to 0 - used for division
 //#define THIS_PROD_RATIO_CARGO_IN_2    \d01      // do not set to 0 - used for division
 //#define THIS_PROD_RATIO_CARGO_IN_3    \d01      // do not set to 0 - used for division
+// - end ratios -
 //#define THIS_STR_INFO_CB38            STR_INFO_MACHINESHOP
 
 // then add as the 2nd last line, prior to the end of the climate availability label
@@ -27,7 +35,6 @@
 
 //3 input cargos
 //2 output cargos
-//1:1 production ratio input:output 
 //50:50 distribution to output cargos C1 output = 50% total input, C1 output = 50% total input
 
 // !! there may be flawed logic here; if production ratio is < 8, I think too much / not enough input cargo may be used.  Needs checking.
