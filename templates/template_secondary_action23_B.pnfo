@@ -32,6 +32,14 @@
 //   texts	E0-FF
 //   generally unused and available	10-9F
 
+// Persistent storage used (not guaranteed to be up to date, but it's a starting point for making sense of this)
+// 01,02,03: prod. ratios cargo 1,2,3 (dynamic value between 0 and 8, total all 3 cannot exceed 8)
+// 04,05,06: store production from each of cargo 1,2,3
+// 07,08,09: store amounts used of each cargo 1,2,3
+// 0A, 0B: output amounts for output cargo 1,2 (second often not needed, but code handles both cases)
+// 0C: total production ratio all cargos summed (value between 0 and 8)
+// 0D,0E,0F:  'combinatory production ticker' cargo 1,2,3 
+
 //3 input cargos
 //if 2 output cargos
 //  50:50 distribution to output cargos C1 output = 50% total input, C2 output = 50% total input
@@ -80,6 +88,8 @@
      AC 00 //default
 
 //!! not really sure what is going on with A9, seems to duplicate AA - AC section of chain?
+// i.e. for two cargos, the 50:50 split is done twice.
+// possibly it's just the comment on A9 that is misleading....
 
 -1 * 0 02 0A A9 //add up total cargo produced...for this industry output is split 50:50, so only bother setting one register
     89 // 
@@ -95,7 +105,7 @@
 -1 * 0 02 0A A8 //calculate amount of input cargo actually processed
     89 // 
       7C 06 20  \dxFFFFFFFF //get stored amount for production from cargo 3
-      \2/ 7C 03 20  \dxFFFFFFFF //divide production amount by production ratio 
+      \2/ 7C 0C 20  \dxFFFFFFFF //divide production amount by production ratio 
       \2* 1A 20 \d08 // multiply result by 8
       10 1A 20 \dx09 //store in persistent storage (for debug only, can be commented if not in use)
       \2sto 1A 00 \dx09 //store in register
@@ -106,7 +116,7 @@
 -1 * 0 02 0A A7 //calculate amount of input cargo actually processed
     89 // 
       7C 05 20  \dxFFFFFFFF //get stored amount for production from cargo 2
-      \2/ 7C 02 20  \dxFFFFFFFF //divide production amount by production ratio 
+      \2/ 7C 0C 20  \dxFFFFFFFF //divide production amount by production ratio 
       \2* 1A 20 \d08 // multiply result by 8
       10 1A 20 \dx08 //store in persistent storage (for debug only, can be commented if not in use)
       \2sto 1A 00 \dx08 //store in register
@@ -117,7 +127,7 @@
 -1 * 0 02 0A A6 //calculate amount of input cargo actually processed
     89 // 
       7C 04 20  \dxFFFFFFFF //get stored amount for production from cargo 1
-      \2/ 7C 01 20  \dxFFFFFFFF //divide production amount by production ratio 
+      \2/ 7C 0C 20  \dxFFFFFFFF //divide production amount by production ratio 
       \2* 1A 20 \d08 // multiply result by 8
       10 1A 20 \dx07 //store in persistent storage (for debug only, can be commented if not in use)
       \2sto 1A 00 \dx07 //store in register
@@ -129,7 +139,7 @@
     89 // 
       42 20  \dxFFFFFFFF // cargo waiting
       \2/ 1A 20  \d08 //divide cargo waiting by 8
-      \2* 7C 03 20  \dxFFFFFFFF //divide cargo waiting by production ratio to get calculated production value 
+      \2* 7C 0C 20  \dxFFFFFFFF //multiply cargo waiting by production ratio to get calculated production value 
       \2< 7C 00 20  \dxFFFFFFFF //result = min(calculated production value, output limit for produced cargo)
       10 1A 00 \dx06 //store in persistent storage (could use ordinary register, but this is easier to debug)
     \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
@@ -140,7 +150,7 @@
     89 // 
       41 20  \dxFFFFFFFF // cargo waiting 
       \2/ 1A 20  \d08 //divide cargo waiting by 8
-      \2* 7C 02 20  \dxFFFFFFFF //multiply cargo waiting by production ratio to get calculated production value
+      \2* 7C 0C 20  \dxFFFFFFFF //multiply cargo waiting by production ratio to get calculated production value
       \2< 7C 00 20  \dxFFFFFFFF //result = min(calculated production value, output limit for produced cargo)
       10 1A 00 \dx05 //store in persistent storage (could use ordinary register, but this is easier to debug)
     \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
@@ -151,48 +161,109 @@
     89 // 
       40 20  \dxFFFFFFFF // cargo waiting 
       \2/ 1A 20  \d08 //divide cargo waiting by 8
-      \2* 7C 01 20  \dxFFFFFFFF //divide cargo waiting by production ratio to get calculated production value 
+      \2* 7C 0C 20  \dxFFFFFFFF //multiply cargo waiting by production ratio to get calculated production value 
       \2< 7C 00 20  \dxFFFFFFFF //result = min(calculated production value, output limit for produced cargo)
       10 1A 00 \dx04 //store in persistent storage (could use ordinary register, but this is easier to debug)
     \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
        A4 00  00 00 00 00  00 00 00 00
      A4 00 //default
 
--1 * 0 02 0A A2 //store production ratios for cargo 3
+-1 * 0 02 0A A2 // set total production ratio
+    89 // 
+      1A 20  \d00 // create 00 
+      \2+ 7C 01 20  \dxFFFFFFFF //add prod ratio for cargo 1   
+      \2+ 7C 02 20  \dxFFFFFFFF //add prod ratio for cargo 2   
+      \2+ 7C 03 20  \dxFFFFFFFF //add prod ratio for cargo 3   
+      10 1A 00 \dx0C //store in persistent storage (could use ordinary register, but this is easier to debug)
+    \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
+       A3 00  00 00 00 00  00 00 00 00
+     A3 00     
+
+-1 * 0 02 0A BF //store production ratios for cargo 3
     89 // using type 89 because register IDs are better specified as double words
       1A 20  THIS_PROD_RATIO_CARGO_IN_3 //production ratio (number of units input to create 1 unit output)
       10  1A 00 \dx03 //store in persistent storage (could use ordinary register, but this is easier to debug)
     \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
-       A3 00  00 00 00 00  00 00 00 00
-     A3 00     
+       A2 00  00 00 00 00  00 00 00 00
+     A2 00     
        
--1 * 0 02 0A A1 //store production ratios for cargo 2
+-1 * 0 02 0A BE //store production ratios for cargo 2
     89 // using type 89 because register IDs are better specified as double words
       1A 20  THIS_PROD_RATIO_CARGO_IN_2 //production ratio (number of units input to create 1 unit output)    
       10  1A 00 \dx02 //store in persistent storage (could use ordinary register, but this is easier to debug)
     \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
-       A2 00  00 00 00 00  00 00 00 00
-     A2 00
+       BF 00  00 00 00 00  00 00 00 00
+     BF 00
+
        
--1 * 0 02 0A A0 //store production ratios for cargo 1
+-1 * 0 02 0A B4 //case no cargo 1 delivered recently
     89 // using type 89 because register IDs are better specified as double words
-      1A 20  THIS_PROD_RATIO_CARGO_IN_1 //production ratio (number of units input to create 1 unit output)
-      10  1A 00 \dx01 // store in persistent storage
+      1A 20  \d00 //set 0 for production ratio cargo 1
+      10  1A 20 \dx01 // store in persistent storage
+      0F // renum gets sad about passing 0 to the range check, so create 1 and pass that instead <roll>   
+      1A 00 \d01 //create value 1
     \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
-       A1 00  00 00 00 00  00 00 00 00
-     A1 00
+       BE 00  00 00 00 00  00 00 00 00
+     BE 00
+
+-1 * 0 02 0A B3 //case some cargo 1 delivered recently
+    89 // using type 89 because register IDs are better specified as double words
+      1A 20  THIS_PROD_RATIO_CARGO_IN_1 //set positive value for production ratio cargo 1
+      10  1A 20 \dx01 // store in persistent storage
+      0F
+      1A 20  \d01 //create value 1
+      \2+ 7C 0D 20  \dxFFFFFFFF //add to 'combinatory production ticker' for cargo 1   
+      10  1A 00 \dx0D // store in persistent storage
+    \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
+       BE 00  00 00 00 00  00 00 00 00
+     BE 00
+
+-1 * 0 02 0A B2 //check if some cargo 1 delivered recently - in last 8(?check?) production cycles
+    89 // 
+      7c  0D 00 \dxFFFFFFFF
+    \b1 //range
+       B3 00  \d00  NUM_PROD_CYCLES_INVENTORY_HELD_FOR
+     B4 00 //default
+
+-1 * 0 02 0A B1 //case some cargo 1 waiting
+    89 // using type 89 because register IDs are better specified as double words
+      1A 20  \d00 //set 0 for 'combinatory production ticker' cargo 1
+      10 1A 20 \dx0D //store in persistent storage (for debug only, can be commented if not in use)
+      0F // renum gets sad about passing 0 to the range check, so create 1 and pass that instead <roll>   
+      1A 00 \d01 //create value 1
+    \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
+       B3 00  00 00 00 00  00 00 00 00
+     B3 00
+     
+-1 * 0 02 0A B0 //check cargo waiting 1 
+    85 // 
+      40 00  \wxFFFF 
+    \b1 //range
+       B2 00  \w00 \w00 //no cargo waiting
+     B1 00 //some cargo waiting
+
 
 // PROVIDE DEBUG INFO TO INDUSTRY WINDOW 
 //Remember text stack is LIFO (like array.pop) - put values to render first in highest registers
--1 * 0 02 0A FE //store one values to text stack for debugging
+-1 * 0 02 0A FF //store one values to text stack for debugging
     89 // 
-      7c 00 20 \dxffff
+      7c 0F 20 \dxffff
       \2ror 1a 20 \d16
-      \2| 7c 00 20 \dxffff
-      \2sto 1a 00 \dx104
+      \2| 7c 0E 20 \dxffff
+      \2sto 1a 00 \dx105
     \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
        STR_INFO_DEBUG_3 80  00 00 00 00  00 00 00 00
      STR_INFO_DEBUG_3 80 //default
+
+-1 * 0 02 0A FE //store two values to text stack for debugging
+    89 // 
+      7c 0D 20 \dxffff
+      \2ror 1a 20 \d16
+      \2| 7c 0C 20 \dxffff
+      \2sto 1a 00 \dx104
+    \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
+       FF 00  00 00 00 00  00 00 00 00
+     FF 00 //default
 
 -1 * 0 02 0A FD //store two values to text stack for debugging
     89 // 
@@ -242,8 +313,8 @@
       \2/ 1a 20 THIS_NUM_INPUT_CARGOS // divide by number of input cargos for this industry (exclude production-boosting cargos from input cargo count)
       10  1A 00 \dx00 // store in persistent storage
     \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
-       A0 00  00 00 00 00  00 00 00 00
-     A0 00
+       B0 00  00 00 00 00  00 00 00 00
+     B0 00
 
 // handle callbacks
 -1 * 0 02 0A C0 //-1 * 0 0A <set-id>

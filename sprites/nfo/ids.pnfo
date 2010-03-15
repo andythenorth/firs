@@ -475,6 +475,9 @@
 
 #define LIMIT_MANUFACTURING_SUPPLIES      \b13
 
+// How many production cycles are allowed by processing industries before crago ratios are reset to 0
+#define NUM_PROD_CYCLES_INVENTORY_HELD_FOR  \d07
+
 
 // The economy parameter values and their scheme names:
 #define SCHEME_DEFAULT \d00
