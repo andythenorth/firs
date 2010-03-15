@@ -26,16 +26,16 @@
 // In principle you can also add the defines immediately above this #define line...
 
 // Preferred action 2 ID ranges, to keep life simple...
-//   production code	00-0F, A0-AF
-//   cargo acceptance	B0-BF
+//   production code	00-0F, A0-AF,	B0-BF
 //   misc branching, handle callbacks etc	C0-CF
 //   monthly / random production change	D0-DF
 //   texts	E0-FF
 //   generally unused and available	10-9F
 
 //3 input cargos
-//2 output cargos
-//50:50 distribution to output cargos C1 output = 50% total input, C2 output = 50% total input
+//if 2 output cargos
+//  50:50 distribution to output cargos C1 output = 50% total input, C2 output = 50% total input
+//if 1 output cargo, 100% distribution!
 
 // !! there may be flawed logic here; if production ratio is < 8, I think too much / not enough input cargo may be used.  Needs checking.
 
@@ -186,11 +186,13 @@
 //Remember text stack is LIFO (like array.pop) - put values to render first in highest registers
 -1 * 0 02 0A FE //store one values to text stack for debugging
     89 // 
-      7c 00 20 \dxffffffff
+      7c 00 20 \dxffff
+      \2ror 1a 20 \d16
+      \2| 7c 00 20 \dxffff
       \2sto 1a 00 \dx104
     \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
-       STR_INFO_DEBUG_1 80  00 00 00 00  00 00 00 00
-     STR_INFO_DEBUG_1 80 //default
+       STR_INFO_DEBUG_3 80  00 00 00 00  00 00 00 00
+     STR_INFO_DEBUG_3 80 //default
 
 -1 * 0 02 0A FD //store two values to text stack for debugging
     89 // 
