@@ -109,6 +109,11 @@
       7C 06 20  \dxFFFFFFFF //get stored amount for production from cargo 3
       \2/ 7C 0C 20  \dxFFFFFFFF //divide production amount by production ratio 
       \2* 1A 20 \d08 // multiply result by 8
+      \2sto 1A 20 \dx09 //store in register
+      0F  
+      42 20  \dxFFFFFFFF //get cargo 3 waiting 
+      \2- 7D 09 20  \dxFFFFFFFF //subtract cargo waiting from amount to be used (is any remaindered?)
+      \2+ 7D 09 20  \dxFFFFFFFF //add result to amount to be used (to clear any remainder)
       10 1A 20 \dx09 //store in persistent storage (for debug only, can be commented if not in use)
       \2sto 1A 00 \dx09 //store in register
     \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
@@ -123,8 +128,8 @@
       \2sto 1A 20 \dx08 //store in register
       0F  
       41 20  \dxFFFFFFFF //get cargo 2 waiting 
-      \2- 7D 07 20  \dxFFFFFFFF //subtract cargo waiting from amount to be used (is any remaindered?)
-      \2+ 7D 07 20  \dxFFFFFFFF //add result to amount to be used (to clear any remainder)
+      \2- 7D 08 20  \dxFFFFFFFF //subtract cargo waiting from amount to be used (is any remaindered?)
+      \2+ 7D 08 20  \dxFFFFFFFF //add result to amount to be used (to clear any remainder)
       10 1A 20 \dx08 //store in persistent storage (for debug only, can be commented if not in use)
       \2sto 1A 00 \dx08 //store in register
     \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
