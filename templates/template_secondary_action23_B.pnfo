@@ -187,24 +187,62 @@
        A2 00  00 00 00 00  00 00 00 00
      A2 00     
        
--1 * 0 02 0A BE //store production ratios for cargo 2
+-1 * 0 02 0A B9 //case no cargo 2 delivered recently
     89 // using type 89 because register IDs are better specified as double words
-      1A 20  THIS_PROD_RATIO_CARGO_IN_2 //production ratio (number of units input to create 1 unit output)    
-      10  1A 00 \dx02 //store in persistent storage (could use ordinary register, but this is easier to debug)
+      1A 20  \d00 //set 0 for production ratio cargo 2
+      10  1A 20 \dx02 // store in persistent storage
+      0F // renum gets sad about passing 0 to the range check, so create 1 and pass that instead <roll>   
+      1A 00 \d01 //create value 1
     \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
        BF 00  00 00 00 00  00 00 00 00
      BF 00
 
+-1 * 0 02 0A B8 //case some cargo 2 delivered recently
+    89 // using type 89 because register IDs are better specified as double words
+      1A 20  THIS_PROD_RATIO_CARGO_IN_2 //set positive value for production ratio cargo 2
+      10  1A 20 \dx02 // store in persistent storage
+      0F
+      1A 20  \d01 //create value 1
+      \2+ 7C 0E 20  \dxFFFFFFFF //add to 'combinatory production ticker' for cargo 2   
+      10  1A 00 \dx0E // store in persistent storage
+    \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
+       BF 00  00 00 00 00  00 00 00 00
+     BF 00
+
+-1 * 0 02 0A B7 //check if some cargo 2 delivered recently - in last 8(?check?) production cycles
+    89 // 
+      7c  0E 00 \dxFFFFFFFF //get 'combinatory production ticker' value from storage.    
+    \b1 //range
+       B8 00  \d00  NUM_PROD_CYCLES_INVENTORY_HELD_FOR
+     B9 00 //default
+
+-1 * 0 02 0A B6 //case some cargo 2 waiting
+    89 // using type 89 because register IDs are better specified as double words
+      1A 20  \d00 //set 0 for 'combinatory production ticker' cargo 2
+      10 1A 20 \dx0E //store in persistent storage
+      0F // renum gets sad about passing 0 to the range check, so create 1 and pass that instead <roll>   
+      1A 00 \d01 //create value 1
+    \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
+       B8 00  00 00 00 00  00 00 00 00
+     B8 00
+     
+-1 * 0 02 0A B5 //check cargo waiting 2 
+    85 // 
+      41 00  \wxFFFF 
+    \b1 //range
+       B7 00  \w00 \w00 //no cargo waiting
+     B6 00 //some cargo waiting
+
        
--1 * 0 02 0A B4 //case no cargo 1 delivered recently
+-1 * 0 02 0A B4 //case no cargo 2 delivered recently
     89 // using type 89 because register IDs are better specified as double words
       1A 20  \d00 //set 0 for production ratio cargo 1
       10  1A 20 \dx01 // store in persistent storage
       0F // renum gets sad about passing 0 to the range check, so create 1 and pass that instead <roll>   
       1A 00 \d01 //create value 1
     \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
-       BE 00  00 00 00 00  00 00 00 00
-     BE 00
+       B5 00  00 00 00 00  00 00 00 00
+     B5 00
 
 -1 * 0 02 0A B3 //case some cargo 1 delivered recently
     89 // using type 89 because register IDs are better specified as double words
@@ -215,8 +253,8 @@
       \2+ 7C 0D 20  \dxFFFFFFFF //add to 'combinatory production ticker' for cargo 1   
       10  1A 00 \dx0D // store in persistent storage
     \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
-       BE 00  00 00 00 00  00 00 00 00
-     BE 00
+       B5 00  00 00 00 00  00 00 00 00
+     B5 00
 
 -1 * 0 02 0A B2 //check if some cargo 1 delivered recently - in last 8(?check?) production cycles
     89 // 
@@ -228,7 +266,7 @@
 -1 * 0 02 0A B1 //case some cargo 1 waiting
     89 // using type 89 because register IDs are better specified as double words
       1A 20  \d00 //set 0 for 'combinatory production ticker' cargo 1
-      10 1A 20 \dx0D //store in persistent storage (for debug only, can be commented if not in use)
+      10 1A 20 \dx0D //store in persistent storage
       0F // renum gets sad about passing 0 to the range check, so create 1 and pass that instead <roll>   
       1A 00 \d01 //create value 1
     \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
