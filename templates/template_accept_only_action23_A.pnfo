@@ -2,15 +2,18 @@
 
 // How to use:
 // Add to the top of a primary industry a few #define lines. For example:
-// #define THIS_INDUSTRY         IND_ARABLEFARM
+// #define THIS_INDUSTRY         IND_POWERSTATION
 // #define THIS_STR_INFO_CB38    STR_INFO_GENERIC
-// #define THIS_STR_BOOST        STR_INFO_FS_PRIMARY_BOOST
-
+// #define THIS_STR_INFO         STR_INFO_POWERSTATION_0
+// #define THIS_STR_PRODUCING    STR_INFO_POWERSTATION_1
+// #define THIS_STR_RESERVES     STR_INFO_POWERSTATION_2
+// #define THIS_STR_CLOSURE      STR_INFO_POWERSTATION_3
 
 // Optional: #define THIS_HANDLE_CB28 [Action 2 ID]  - make sure Action 2 chain is also present in industry, above template include.
 
 // Local defines - to improve readability
 #define LOCAL_CARGO_1_DELIVERED_STORE    00
+#define LOCAL_DELIVERY_TICKER_STORE      01
 
 // then add as the 2nd last line, prior to the end of the climate avialability label
 // #include "../../templates/template_primary_action23.pnfo"
@@ -70,15 +73,38 @@
     D2 00  \d00  \d00 
   D2 00 // default
 	
-	
+-1 * 0 02 0A F3 //store sub-text ID to register, return text ID  
+    85 // 
+      1A 20 THIS_STR_CLOSURE //create a value (constant 1A anded (20) with following bytes) 
+      0E 1A 00 \wx100 //store in register
+    \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
+       THIS_STR_INFO 80 00 00 00 00
+     THIS_STR_INFO 80 //default	
+
+-1 * 0 02 0A F2 //store sub-text ID to register, return text ID  
+    85 // 
+      1A 20 THIS_STR_RESERVES //create a value (constant 1A anded (20) with following bytes) 
+      0E 1A 00 \wx100 //store in register
+    \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
+       THIS_STR_INFO 80 00 00 00 00
+     THIS_STR_INFO 80 //default	
+
+-1 * 0 02 0A F1 //store sub-text ID to register, return text ID  
+    85 // 
+      1A 20 THIS_STR_PRODUCING //create a value (constant 1A anded (20) with following bytes) 
+      0E 1A 00 \wx100 //store in register
+    \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
+       THIS_STR_INFO 80 00 00 00 00
+     THIS_STR_INFO 80 //default	
+     
 // industry window texts	
      -1 * 0 02 0A F0 //store sub-text ID to register, return text ID  
     89 // 
-      7C LOCAL_CARGO_1_DELIVERED_STORE 20  \dxFFFFFFFF //get stored amount for production from cargo 1
-      0E 1A 00 \dx100 //store in register
-    \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
-       THIS_STR_BOOST 80 \d00 \d00
-     THIS_STR_BOOST 80 //default
+      7C LOCAL_DELIVERY_TICKER_STORE 00  \dxFFFFFFFF //get value of ticker for months since most recent delivery
+    \b2 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
+       F1 00 \d01 \d07 // some trickery around here to get the right default text showing (use 01 not 00 as ticker start)
+       F3 00 \d31 \d31
+     F2 00 //default
       	
 // handle callbacks
 -1 * 0 02 0A C0 
@@ -91,7 +117,7 @@
     #ifndef THIS_HANDLE_CB28
     00 84   28 00   28 00 //just allow the industry to be built (this industry doesn't care about location)
     #endif
-	  04 80   29 00   29 00 //random production change cb 29
+	  00 80   29 00   29 00 //random production change cb 29
 	  D1 00   35 00   35 00 //monthly production change cb 35
     THIS_STR_INFO_CB38 80   38 00   38 00 //return text-ID D0xx if cb 38 (fund window)
     F0 00   3A 00   3A 00 //return text-ID D0xx if cb 3A (industry window)
@@ -104,5 +130,7 @@
 
 #undef THIS_INDUSTRY
 #undef THIS_STR_INFO_CB38
-#undef THIS_STR_BOOST
 #undef THIS_HANDLE_CB28
+#undef THIS_STR_PRODUCING
+#undef THIS_STR_RESERVES
+#undef THIS_STR_CLOSURE
