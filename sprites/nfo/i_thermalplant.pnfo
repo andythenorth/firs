@@ -5,7 +5,7 @@
 	09 IND_THERMALPLANT //industry type override
 	0B 04 //production flags 1h=extractive, 2h=organic, 4h=processing
 	24 STR_STA_THERMALPLANT //default text for nearby station
-	11 CARGO_COAL CARGO_FUELOIL CARGO_ENGINEERINGSUPPLIES FF //acceptance cargo types (dword; fill unused with FFh)
+	11 CARGO_COAL CARGO_FUELOIL FF FF //acceptance cargo types (dword; fill unused with FFh)
 	10 FF FF //production cargo types (word; fill unused with FFh)
 	1C 00 00 00 00 //input cargo 1 multiplier (dword M1 M2; output_typen = X*Mn/256)
 	1D 00 00 00 00 //input cargo 2 multiplier
