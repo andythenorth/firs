@@ -69,8 +69,8 @@
 		00 80 //terminate layout definition
 	0B 04 //production flags 1h=extractive, 2h=organic, 4h=processing
 	0C STR_IND_CLOSE_GENERIC //industry closure message
-	0D STR_IND_PRODINCR_FARM //production increase message
-	0E STR_IND_PRODDECR_INSECTS //production decrease message
+	0D STR_IND_PRODINCR_GENERIC //production increase message
+	0E STR_IND_PRODDECR_GENERIC //production decrease message
 	1B STR_IND_NEW_GENERIC //new industry message
 	1F STR_IND_INCINERATOR //industry name
 	10 FF FF //production cargo types (word; fill unused with FFh)
