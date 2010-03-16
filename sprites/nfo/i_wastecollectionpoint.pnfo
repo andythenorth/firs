@@ -42,7 +42,7 @@
 		//layout:
 			00 00 FE TILE_WASTECOLLECTIONPOINT_1 00 //xoffs yoffs FE newtile(W)
 		00 80 //terminate layout definition
-	0B 02 //production flags 1h=extractive, 2h=organic, 4h=processing
+	0B 01 //production flags 1h=extractive, 2h=organic, 4h=processing
 	0C STR_IND_CLOSE_GENERIC //industry closure message
 	0D STR_IND_PRODINCR_GENERIC //production increase message
 	0E STR_IND_PRODDECR_GENERIC //production decrease message

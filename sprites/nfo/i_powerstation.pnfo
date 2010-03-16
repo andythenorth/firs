@@ -3,7 +3,7 @@
 -1 * 0 00 0A \b14 01 IND_POWERSTATION //-1 * 0 00 0A <num-props> 01 <id>
 	08 IND_POWERSTATION //substitute industry type
 	09 IND_POWERSTATION //industry type override
-	0B 04 //production flags 1h=extractive, 2h=organic, 4h=processing
+	0B 00 //production flags 1h=extractive, 2h=organic, 4h=processing
 	24 STR_STA_POWERSTATION //default text for nearby station
 	11 CARGO_COAL CARGO_FUELOIL FF FF //acceptance cargo types (dword; fill unused with FFh)
 	10 FF FF //production cargo types (word; fill unused with FFh)
