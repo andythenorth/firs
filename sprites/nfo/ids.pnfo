@@ -1,7 +1,7 @@
 // Definition of the IDs of the single industries
 #define IND_NULL                  00
 #define IND_COALMINE              00
-#define IND_THERMALPLANT          01
+#define IND_POWERSTATION          01
 #define IND_WINDFARM              02
 #define IND_IRONOREMINE           04
 #define IND_BAUXITEMINE           05
@@ -229,7 +229,7 @@
 
 //Definition of text IDs for station name suffixes
 #define STR_STA_FARM              E0 DC
-#define STR_STA_THERMALPLANT      E1 DC
+#define STR_STA_POWERSTATION      E1 DC
 #define STR_STA_MILLS             E2 DC
 #define STR_STA_WELLS             E3 DC
 #define STR_STA_REFINERY          E4 DC
