@@ -209,12 +209,11 @@
 -1 * 0 04 0A LANG_ID2 01 STR_INFO_ES_PRIMARY_BOOST D0 "\98Engineering supplies may increase production.\0D\90  \7B crates delivered this month" 00
 -1 * 0 04 0A LANG_ID2 01 STR_INFO_FS_PRIMARY_BOOST D0 "\98Farm supplies may increase production.\0D\90  \7B crates delivered this month" 00
 -1 * 0 04 0A LANG_ID2 01 STR_INFO_MS_PRIMARY_BOOST D0 "\98Manufacturing supplies double production from other cargos.\0D\0D\80" 00
--1 * 0 04 0A LANG_ID2 01 STR_INFO_MACHINESHOP D0 "\90The Machine Shop \98builds and repairs engineering structures and machinery." 00
+-1 * 0 04 0A LANG_ID2 01 STR_INFO_MACHINESHOP D0 "\98Builds and repairs engineering structures and machinery." 00
 
--1 * 0 04 0A LANG_ID2 01 STR_INFO_POWERSTATION_0 D0 "\98Will not close for at last five years after a coal or fuel oil delivery.\0D\0D\80" 00
--1 * 0 04 0A LANG_ID2 01 STR_INFO_POWERSTATION_1 D0 "\94Cargo has been delivered recently." 00
--1 * 0 04 0A LANG_ID2 01 STR_INFO_POWERSTATION_2 D0 "\94Cargo has not been delivered for at least six months. Reserves are being used." 00
--1 * 0 04 0A LANG_ID2 01 STR_INFO_POWERSTATION_3 D0 "\94Cargo not been delivered for more than five years. Reserves are running out.  \0D\0DThere is a chance of closure soon.\0D" 00
+-1 * 0 04 0A LANG_ID2 01 STR_INFO_POWERSTATION_0 D0 "\98Generates electricity.\0D\0DThis Power Station might close unless coal or fuel oil are delivered within:\0D\90  \7C months" 00
+-1 * 0 04 0A LANG_ID2 01 STR_INFO_POWERSTATION_1 D0 "\98Generates electricity.\0D\0DThis Power Station might close unless coal or fuel oil are delivered within:\0D\94  \7C month" 00
+-1 * 0 04 0A LANG_ID2 01 STR_INFO_POWERSTATION_2 D0 "\98Generates electricity.\0D\0D\94No coal or fuel oil has been delivered for at least "NUM_MONTHS_INDUSTRY_CLOSURE_PROTECTED_TEXT" months. This Power Station may close soon." 00
 
 #undef LANG_ID
 #undef LANG_ID2

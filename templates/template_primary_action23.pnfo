@@ -35,7 +35,7 @@
 	\w0 \w0 //<add-out-1..2>
 	00 //don't repeat
 
--1 * 0 02 0A A0 //branch production depending on boost cargo 
+-1 * 0 02 0A A0 //
   89 // 
     40 20  \dxFFFFFFFF // cargo 1 waiting 
     \2+ 7C LOCAL_CARGO_1_DELIVERED_STORE 20  \dxFFFFFFFF //get stored amount for delivered cargo 1   
