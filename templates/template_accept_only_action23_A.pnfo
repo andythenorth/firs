@@ -12,7 +12,8 @@
 // Optional: #define THIS_HANDLE_CB28 [Action 2 ID]  - make sure Action 2 chain is also present in industry, above template include.
 
 // Local defines - to improve readability
-#define LOCAL_DELIVERY_TICKER_STORE    00
+#define LOCAL_DELIVERY_TICKER_STORE         00
+#define HAS_CARGO_EVER_BEEN_DELIVERED_FLAG  01
 
 // then add as the 2nd last line, prior to the end of the climate avialability label
 // #include "../../templates/template_primary_action23.pnfo"
@@ -41,41 +42,61 @@
   89 // 
     1A 20  \d00 //set 0 for 'delivery ticker'
     10 1A 20 \dx00 //store in persistent storage
-    0F // renum gets sad about passing 0 to the range check, so create 1 and pass that instead <roll>   
-    1A 00 \d01 //create value 1
+    0F //   
+    1A 20 \d01 //create value 1 for 'cargo has been delivered flag'
+    10 1A 00 \dx01 //store in persistent storage
   \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
     A3 00  \d00  \d00 
-  A3 00 // default
+  A3 00 //default
 
 -1 * 0 02 0A A1 //
   89 // 
-    41 00  \dxFFFFFFFF // cargo 2 waiting 
+    41 00  \dxFFFFFFFF //cargo 2 waiting 
   \b1 //range
     A3 00  \d00  \d00 
-  A2 00 // some cargo waiting
+  A2 00 //some cargo waiting
 
 -1 * 0 02 0A A0 //
   89 // 
-    40 00  \dxFFFFFFFF // cargo 1 waiting 
+    40 00  \dxFFFFFFFF //cargo 1 waiting 
   \b1 //range
     A1 00  \d00  \d00 
-  A2 00 // some cargo waiting
+  A2 00 //some cargo waiting
 
 // production changes
+-1 * 0 02 0A D5 //case protection period has ended and cargo has never been delivered - low random chance of closure  
+  81 18 00  3F //randomise 
+  \b1 //range
+    03 80 00 00 //lookat cb 35 or 29 in wiki to see what the returned value means
+  00 80 //else no change	
+
+-1 * 0 02 0A D4 //case protection period has ended and cargo has been delivered at some point - high random chance of closure  
+  81 18 00  03 //randomise 
+  \b1 //range
+    03 80 00 00 //lookat cb 35 or 29 in wiki to see what the returned value means
+  00 80 //else no change	
+
+-1 * 0 02 0A D3 //case we've reached the protection limit 
+  89 // 
+    7C HAS_CARGO_EVER_BEEN_DELIVERED_FLAG 00  \dxFFFFFFFF //has this industry ever been served?
+  \b1 //range
+     D4 00  \d01  \d01 //cargo delivered
+  D5 00 //cargo never delivered
+
 -1 * 0 02 0A D2 //update delivery ticker
   89 // 
       1A 20  \d01 //create value 1
       \2+ 7C 00 20  \dxFFFFFFFF //add to 'delivery ticker' store   
       10  1A 00 \dx00 // store in persistent storage
   \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
-    00 80  \d00  \d00 
+    00 80  \d00  \d00  //return result to cb - lookat cb 35 or 29 in wiki to see what the returned value means
   00 80 // default
 
 -1 * 0 02 0A D1 //handle cb 35 monthly production change 
   89 // 
     7C LOCAL_DELIVERY_TICKER_STORE 00  \dxFFFFFFFF //get value of ticker for months since most recent delivery
   \b1 //range
-     00 80  NUM_MONTHS_INDUSTRY_CLOSURE_PROTECTED  NUM_MONTHS_INDUSTRY_CLOSURE_PROTECTED // don't increment ticker if we've reached the limit
+     D3 00  NUM_MONTHS_INDUSTRY_CLOSURE_PROTECTED  NUM_MONTHS_INDUSTRY_CLOSURE_PROTECTED //we've reached the protection limit
   D2 00 //default
 
 

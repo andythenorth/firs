@@ -7,16 +7,17 @@
 
 //Redefinition of original TTD industry
 //Thermal Plant
--1 * 0 00 0A \b14 01 IND_POWERSTATION //-1 * 0 00 0A <num-props> 01 <id>
+-1 * 0 00 0A \b15 01 IND_POWERSTATION //-1 * 0 00 0A <num-props> 01 <id>
 	08 IND_POWERSTATION //substitute industry type
 	09 IND_POWERSTATION //industry type override
-	0B 00 //production flags 1h=extractive, 2h=organic, 4h=processing
+	0B 04 //production flags 1h=extractive, 2h=organic, 4h=processing
 	24 STR_STA_POWERSTATION //default text for nearby station
 	11 CARGO_COAL CARGO_FUELOIL FF FF //acceptance cargo types (dword; fill unused with FFh)
 	10 FF FF //production cargo types (word; fill unused with FFh)
 	1C 00 00 00 00 //input cargo 1 multiplier (dword M1 M2; output_typen = X*Mn/256)
 	1D 00 00 00 00 //input cargo 2 multiplier
 	1E 00 00 00 00 //input cargo 3 multiplier
+	16 FF FF FF //conflicting industry types (3*byte; ID+80h; FF to disable)
 	17 \b5 //probability in random game
 	18 \b2 //probability during gameplay
 	19 CLR_POWERSTATION //map colour (byte; using indexes from dos palette)
