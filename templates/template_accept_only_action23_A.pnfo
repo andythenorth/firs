@@ -12,9 +12,12 @@
 // Optional: #define THIS_HANDLE_CB28 [Action 2 ID]  - make sure Action 2 chain is also present in industry, above template include.
 
 // Local defines - to improve readability
+// Not everything can be defined due to some shenanigans with dwords etc.  So some values are still hardcoded in action 2s. 
 #define LOCAL_DELIVERY_TICKER_STORE         00
 #define LOCAL_CLOSURE_SPREAD_TICKER_STORE   01
 #define LOCAL_CLOSURE_SPREAD_LIMIT_STORE    02
+#define LOCAL_INDUSTRY_COUNT_STORE_1        03
+#define LOCAL_INDUSTRY_COUNT_STORE_2        04
 
 // then add as the 2nd last line, prior to the end of the climate avialability label
 // #include "../../templates/template_primary_action23.pnfo"
@@ -63,34 +66,29 @@
     A1 00  \d00  \d00 
   A2 00 //some cargo waiting
 
-// production changes
--1 * 0 02 0A D7 //case protection period has ended and closure spread limit not reached - low random chance of closure  
-  81 18 00  3F //randomise 
-  \b1 //range
-    03 80 00 00 //lookat cb 35 or 29 in wiki to see what the returned value means
-  00 80 //else no change	
-  
--1 * 0 02 0A D6 //case protection period has ended and closure spread limit reached - high random chance of closure  
+
+// production changes  
+-1 * 0 02 0A D8 //case protection period has ended and closure spread limit reached - high random chance of closure  
   81 18 00  03 //randomise 
   \b1 //range
     03 80 00 00 //lookat cb 35 or 29 in wiki to see what the returned value means
   00 80 //else no change	
 
--1 * 0 02 0A D5 //case we've reached the spread ticker limit - reset the spread ticker and spread ticker limit. 
+-1 * 0 02 0A D7 //case we've reached the spread ticker limit - reset the spread ticker and spread ticker limit. 
   89 // 
     1A 20  \d00 //create value 0
     10  1A 20 \dx01 // store in persistent storage
     0F
-    18 20 \dx02 //access some random bits
-    \2+ 1A 20 \d01 //add 1 in case previous random is 0
+    18 20 \dx03 //access some random bits
+    \2+ 1A 20 \d01 //add 1 to handle possibility that previous random may be 0
     \2* 5F 28 \dx0F //multiply by this industry's random bits
     \2+ 1A 20 \d01 //add 1 again in case result of multiplying both randoms is 0
     10  1A 00 \dx02 // store in persistent storage
   \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
-     D6 00  \d00  \d00 //
-  D6 00 //limit reached
+     D8 00  \d00  \d00 //
+  D8 00 //limit reached
 
--1 * 0 02 0A D4 //case we have not reached the spread ticker limit - increment closure spread ticker
+-1 * 0 02 0A D6 //case we have not reached the spread ticker limit - increment closure spread ticker, then return cb result
   89 // 
       1A 20  \d01 //create value 1
       \2+ 7C LOCAL_CLOSURE_SPREAD_TICKER_STORE 20  \dxFFFFFFFF //add to 'closure spread ticker' store   
@@ -99,15 +97,33 @@
      00 80  \d00  \d00 //lookat cb 35 or 29 in wiki to see what the returned value means
   00 80 //
 
--1 * 0 02 0A D3 //case we've reached the protection limit - check if closure spread limit reached
+-1 * 0 02 0A D5 //case industry count same or more than last month - now check if closure spread limit reached
   89 // 
     7C LOCAL_CLOSURE_SPREAD_TICKER_STORE 20  \dxFFFFFFFF //
     12 7C LOCAL_CLOSURE_SPREAD_LIMIT_STORE 00  \dxFFFFFFFF//compare ticker with limit
   \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
-     D5 00  \d01  \d02 //if result=1, we're at the limit, if 2 we're over the limit (somehow!)
-  D4 00 //default
+     D7 00  \d01  \d02 //if result=1, we're at the limit, if 2 we're over the limit (somehow!)
+  D6 00 //default
+  
+-1 * 0 02 0A D4 //case industry count less than last month - decrement closure spread ticker to add delay, then return cb result
+  89 // 
+      1A 20  \d06 //create value 6 (minimum delay in months between industry closure)
+      \2- 7C LOCAL_CLOSURE_SPREAD_TICKER_STORE 20  \dxFFFFFFFF //decrement 'closure spread ticker' store
+      \2> 1A 20 \d00 //take maximum of (previous result, 0)...to avoid negative value for closure spread ticker 
+      10  1A 00 \dx01 //store in persistent storage
+  \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
+     00 80  \d00  \d00 //lookat cb 35 or 29 in wiki to see what the returned value means
+  00 80 //  
+  
+-1 * 0 02 0A D3 //case protection limit reached - now check if other industries of this type closed last month 
+  89 // 
+    7C LOCAL_INDUSTRY_COUNT_STORE_1 20  \dxFFFFFFFF //get stored count of industries this month
+    12 7C LOCAL_INDUSTRY_COUNT_STORE_2 00  \dxFFFFFFFF //compare industries this month with industries last month
+  \b1 //range
+     D5 00  \d01  \d02 //if result=1 industry count same, if 2 we have more industries now than last month
+  D4 00 //otherwise assume result=0 so fewer industries now than last month
 
--1 * 0 02 0A D2 //increment delivery ticker
+-1 * 0 02 0A D2 //case protection limit not reached - increment delivery (protection) ticker
   89 // 
       1A 20  \d01 //create value 1
       \2+ 7C 00 20  \dxFFFFFFFF //add to 'delivery ticker' store   
@@ -118,14 +134,28 @@
 
 -1 * 0 02 0A D1 //handle cb 35 monthly production change 
   89 // 
-    7C LOCAL_DELIVERY_TICKER_STORE 00  \dxFFFFFFFF //get value of ticker for months since most recent delivery
+    7C LOCAL_DELIVERY_TICKER_STORE 00  \dxFFFFFFFF //get value of delivery (protection) ticker (months since most recent delivery)
   \b1 //range
      D3 00  NUM_MONTHS_INDUSTRY_CLOSURE_PROTECTED  NUM_MONTHS_INDUSTRY_CLOSURE_PROTECTED //we've reached the protection limit
   D2 00 //default
 
+-1 * 0 02 0A D0 //industry counts: rotate storage for last count, get new count and put into storage  
+  89
+    7C LOCAL_INDUSTRY_COUNT_STORE_1 20  \dxFFFFFFFF //rotate stored counts so previous count is in LOCAL_INDUSTRY_COUNT_STORE_2
+    10  1A 20 \dx04 // store in persistent storage
+    0F 
+    1A 20  \dxFFFFFFFF //create grfid (FFFFFFFF = 'this' grf)
+    \2sto 1A 20  \dx100 //store grfid in register 100h
+    0F
+    67 THIS_INDUSTRY  30  FF 00 00 00 //get industry count for type THIS_INDUSTRY
+    10  1A 00 \dx03 // store in persistent storage (LOCAL_INDUSTRY_COUNT_STORE_1)
+  \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
+    D1 00 \d00 \d00 //
+  D1 00 //default	
+  
 
 // industry window texts		
--1 * 0 02 0A F1 //calculate number months remaining before closure protection ends - store for display  
+-1 * 0 02 0A F0 //calculate number months remaining before closure protection ends - store for display  
     89 // 
       1A 20 NUM_MONTHS_INDUSTRY_CLOSURE_PROTECTED //create a value (constant 1A anded (20) with following bytes)
       \2- 7C LOCAL_DELIVERY_TICKER_STORE 20  \dxFFFFFFFF //get value of ticker for months since most recent delivery
@@ -134,19 +164,10 @@
        THIS_STR_INFO_WARN_1 80 \d01 \d01 //show warning text
        THIS_STR_INFO_WARN_2 80 \d00 \d00 //show warning text
      THIS_STR_INFO 80 //default
-
-// industry window texts - debug case
--1 * 0 02 0A F0 //calculate number months remaining before closure protection ends - store for display  
-    89 // 
-      7C LOCAL_CLOSURE_SPREAD_LIMIT_STORE 20  \dxFFFFFFFF //
-      \2sto 1a 00 \dx100 // store to text stack
-  \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
-       THIS_STR_INFO 80 \d00 \d00
-     THIS_STR_INFO 80 //default
-
+     
       	
 // handle callbacks
--1 * 0 02 0A C0 
+-1 * 0 02 0A C2
 	85 0C //<type> <variable> word-access callback
 	00 FF FF //no shift, no mask
 	\b5 //number of ranges to check
@@ -157,10 +178,18 @@
     00 84   28 00   28 00 //just allow the industry to be built (this industry doesn't care about location)
     #endif
 	  00 80   29 00   29 00 //random production change cb 29 // 00 80 = do nothing
-	  D1 00   35 00   35 00 //monthly production change cb 35
+	  D0 00   35 00   35 00 //monthly production change cb 35
     THIS_STR_INFO_CB38 80   38 00   38 00 //return text-ID D0xx if cb 38 (fund window)
     F0 00   3A 00   3A 00 //return text-ID D0xx if cb 3A (industry window)
 	A0 00 //default
+
+-1 * 0 02 0A C0 //use this to initialise variables - one time only UNFINISHED
+  89 // 
+      1A 20 \d00 //get the industry xy co-ordinates
+      10  1A 00 \dx0A // store in persistent storage
+  \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
+    C2 00  \d00  \d00  //
+  C2 00 // default
 
 // industry action 3 attach varaction2 chain to industry
 -1 * 0 03 0A 01 THIS_INDUSTRY 00 \wxC0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>	
