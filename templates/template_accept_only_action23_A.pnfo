@@ -13,7 +13,8 @@
 
 // Local defines - to improve readability
 #define LOCAL_DELIVERY_TICKER_STORE         00
-#define HAS_CARGO_EVER_BEEN_DELIVERED_FLAG  01
+#define LOCAL_CLOSURE_SPREAD_TICKER_STORE   01
+#define LOCAL_CLOSURE_SPREAD_LIMIT_STORE    02
 
 // then add as the 2nd last line, prior to the end of the climate avialability label
 // #include "../../templates/template_primary_action23.pnfo"
@@ -42,9 +43,8 @@
   89 // 
     1A 20  \d00 //set 0 for 'delivery ticker'
     10 1A 20 \dx00 //store in persistent storage
-    0F //   
-    1A 20 \d01 //create value 1 for 'cargo has been delivered flag'
-    10 1A 00 \dx01 //store in persistent storage
+    0F // renum gets sad about passing 0 to the range check, so create 1 and pass that instead <roll>   
+    1A 00 \d01 //create value 1
   \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
     A3 00  \d00  \d00 
   A3 00 //default
@@ -64,26 +64,50 @@
   A2 00 //some cargo waiting
 
 // production changes
--1 * 0 02 0A D5 //case protection period has ended and cargo has never been delivered - low random chance of closure  
+-1 * 0 02 0A D7 //case protection period has ended and closure spread limit not reached - low random chance of closure  
   81 18 00  3F //randomise 
   \b1 //range
     03 80 00 00 //lookat cb 35 or 29 in wiki to see what the returned value means
   00 80 //else no change	
-
--1 * 0 02 0A D4 //case protection period has ended and cargo has been delivered at some point - high random chance of closure  
+  
+-1 * 0 02 0A D6 //case protection period has ended and closure spread limit reached - high random chance of closure  
   81 18 00  03 //randomise 
   \b1 //range
     03 80 00 00 //lookat cb 35 or 29 in wiki to see what the returned value means
   00 80 //else no change	
 
--1 * 0 02 0A D3 //case we've reached the protection limit 
+-1 * 0 02 0A D5 //case we've reached the spread ticker limit - reset the spread ticker and spread ticker limit. 
   89 // 
-    7C HAS_CARGO_EVER_BEEN_DELIVERED_FLAG 00  \dxFFFFFFFF //has this industry ever been served?
-  \b1 //range
-     D4 00  \d01  \d01 //cargo delivered
-  D5 00 //cargo never delivered
+    1A 20  \d00 //create value 0
+    10  1A 20 \dx01 // store in persistent storage
+    0F
+    18 20 \dx02 //access some random bits
+    \2+ 1A 20 \d01 //add 1 in case previous random is 0
+    \2* 5F 28 \dx0F //multiply by this industry's random bits
+    \2+ 1A 20 \d01 //add 1 again in case result of multiplying both randoms is 0
+    10  1A 00 \dx02 // store in persistent storage
+  \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
+     D6 00  \d00  \d00 //
+  D6 00 //limit reached
 
--1 * 0 02 0A D2 //update delivery ticker
+-1 * 0 02 0A D4 //case we have not reached the spread ticker limit - increment closure spread ticker
+  89 // 
+      1A 20  \d01 //create value 1
+      \2+ 7C LOCAL_CLOSURE_SPREAD_TICKER_STORE 20  \dxFFFFFFFF //add to 'closure spread ticker' store   
+      10  1A 00 \dx01 // store in persistent storage
+  \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
+     00 80  \d00  \d00 //lookat cb 35 or 29 in wiki to see what the returned value means
+  00 80 //
+
+-1 * 0 02 0A D3 //case we've reached the protection limit - check if closure spread limit reached
+  89 // 
+    7C LOCAL_CLOSURE_SPREAD_TICKER_STORE 20  \dxFFFFFFFF //
+    12 7C LOCAL_CLOSURE_SPREAD_LIMIT_STORE 00  \dxFFFFFFFF//compare ticker with limit
+  \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
+     D5 00  \d01  \d02 //if result=1, we're at the limit, if 2 we're over the limit (somehow!)
+  D4 00 //default
+
+-1 * 0 02 0A D2 //increment delivery ticker
   89 // 
       1A 20  \d01 //create value 1
       \2+ 7C 00 20  \dxFFFFFFFF //add to 'delivery ticker' store   
@@ -101,7 +125,7 @@
 
 
 // industry window texts		
--1 * 0 02 0A F0 //calculate number months remaining before closure protection ends - store for display  
+-1 * 0 02 0A F1 //calculate number months remaining before closure protection ends - store for display  
     89 // 
       1A 20 NUM_MONTHS_INDUSTRY_CLOSURE_PROTECTED //create a value (constant 1A anded (20) with following bytes)
       \2- 7C LOCAL_DELIVERY_TICKER_STORE 20  \dxFFFFFFFF //get value of ticker for months since most recent delivery
@@ -110,6 +134,16 @@
        THIS_STR_INFO_WARN_1 80 \d01 \d01 //show warning text
        THIS_STR_INFO_WARN_2 80 \d00 \d00 //show warning text
      THIS_STR_INFO 80 //default
+
+// industry window texts - debug case
+-1 * 0 02 0A F0 //calculate number months remaining before closure protection ends - store for display  
+    89 // 
+      7C LOCAL_CLOSURE_SPREAD_LIMIT_STORE 20  \dxFFFFFFFF //
+      \2sto 1a 00 \dx100 // store to text stack
+  \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
+       THIS_STR_INFO 80 \d00 \d00
+     THIS_STR_INFO 80 //default
+
       	
 // handle callbacks
 -1 * 0 02 0A C0 

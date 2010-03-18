@@ -481,7 +481,7 @@
 // How many production cycles are allowed by some processing industries before crago ratios are reset to 0
 #define NUM_PROD_CYCLES_INVENTORY_HELD_FOR     \d07
 // How many months are some industries protected from closure for?
-#define NUM_MONTHS_INDUSTRY_CLOSURE_PROTECTED  \d60 // if changing, update value *and* the text string
+#define NUM_MONTHS_INDUSTRY_CLOSURE_PROTECTED  \d00 // if changing, update value *and* the text string
 #define NUM_MONTHS_INDUSTRY_CLOSURE_PROTECTED_TEXT  "60" 
 
 
