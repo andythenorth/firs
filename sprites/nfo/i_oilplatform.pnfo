@@ -6,7 +6,7 @@
 
 //Redefinition of original TTD industry
 //Oil Platform
--1 * 0 00 0A \b15 01 IND_OILPLATFORM //-1 * 0 00 0A <num-props> 01 <id>
+-1 * 0 00 0A \b16 01 IND_OILPLATFORM //-1 * 0 00 0A <num-props> 01 <id>
 	08 05 //substitute industry type
 	09 05 //industry type override
 	1F STR_IND_OILPLATFORM //industry name
@@ -17,6 +17,7 @@
 	1C 00 00 00 01 //input cargo 1 multiplier (dword M1 M2; output_typen = X*Mn/256)
 	1D 54 00 00 00 //input cargo 2 multiplier
 	1E 00 00 00 00 //input cargo 3 multiplier
+	16 FF FF FF //conflicting industry types (3*byte; ID+80h; FF to disable)
 	17 \b0 //probability in random game
 	18 \b6 //probability during gameplay
 	19 CLR_OILPLATFORM //map colour (byte; using indexes from dos palette)
