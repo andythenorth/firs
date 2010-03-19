@@ -6,11 +6,12 @@
 
 //Redefinition of original TTD industry
 //Coal Mine
--1 * 0 00 0A \b9 01 IND_COALMINE //-1 * 0 00 0A <num-props> 01 <id>
+-1 * 0 00 0A \b10 01 IND_COALMINE //-1 * 0 00 0A <num-props> 01 <id>
 	08 IND_COALMINE //substitute industry type
 	09 IND_COALMINE //industry type override
 	11 CARGO_ENGINEERINGSUPPLIES FF FF FF //acceptance cargo types (dword; fill unused with FFh)
 	1C 54 00 00 00 //input cargo 1 multiplier (dword M1 M2; output_typen = X*Mn/256)
+	16 FF FF FF //conflicting industry types (3*byte; ID+80h; FF to disable)
 	17 \b8 //probability in random game
 	18 \b3 //probability during gameplay
 	19 CLR_COALMINE //map colour (byte; using indexes from dos palette)
