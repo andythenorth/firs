@@ -9,7 +9,7 @@
 
 //Redefinition of original TTD industry
 //Oil Refinery
--1 * 0 00 0A \b13 01 IND_OILREFINERY //-1 * 0 00 0A <num-props> 01 <id>
+-1 * 0 00 0A \b14 01 IND_OILREFINERY //-1 * 0 00 0A <num-props> 01 <id>
 	08 04 //substitute industry type
 	09 04 //industry type override
 	24 STR_STA_REFINERY //default text for nearby station
@@ -18,6 +18,7 @@
 	1C 73 00 73 00 //input cargo 1 multiplier (dword M1 M2; output_typen = X*Mn/256)
 	1D 26 00 26 00 //input cargo 2 multiplier
 	1E 00 00 00 00 //input cargo 3 multiplier
+	16 FF FF FF //conflicting industry types (3*byte; ID+80h; FF to disable)
 	17 \b4 //probability in random game
 	18 \b2 //probability during gameplay
 	19 CLR_OILREFINERY //map colour (byte; using indexes from dos palette)
