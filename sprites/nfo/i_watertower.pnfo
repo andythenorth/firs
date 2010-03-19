@@ -2,12 +2,13 @@
 //We only need this in tropic
 -1 * 0 07 83 01 \7! 02 \b2
 //Water Tower
--1 * 0 00 0A \b10 01 IND_WATERTOWER //-1 * 0 00 0A <num-props> 01 <id>
+-1 * 0 00 0A \b11 01 IND_WATERTOWER //-1 * 0 00 0A <num-props> 01 <id>
 	08 16 //substitute industry type
 	09 16 //industry type override
 	24 STR_STA_WATER //default text for nearby station
 	10 FF FF //production cargo types (word; fill unused with FFh)
 	11 CARGO_WATER FF FF FF //acceptance cargo types (dword; fill unused with FFh)
+	16 FF FF FF //conflicting industry types (3*byte; ID+80h; FF to disable)
 	17 \b8 //probability in random game
 	18 \b4 //probability during gameplay
 	19 CLR_WATERTOWER //map colour (byte; using indexes from dos palette)

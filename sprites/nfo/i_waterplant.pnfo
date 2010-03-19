@@ -8,7 +8,7 @@
 //We only need this in tropic
 -1 * 0 07 83 01 \7! 02 \b3
 //Water Plant
--1 * 0 00 0A \b16 01 IND_WATERPLANT //-1 * 0 00 0A <num-props> 01 <id>
+-1 * 0 00 0A \b17 01 IND_WATERPLANT //-1 * 0 00 0A <num-props> 01 <id>
 	08 15 //substitute industry type
 	09 15 //industry type override
 	1F STR_IND_WATERPLANT //industry name
@@ -20,6 +20,7 @@
 	1C 00 00 80 00 //input cargo 1 multiplier (dword M1 M2; output_typen = X*Mn/256)
 	1D 00 00 00 00 //input cargo 2 multiplier
 	1E 00 00 00 00 //input cargo 3 multiplier
+	16 FF FF FF //conflicting industry types (3*byte; ID+80h; FF to disable)
 	17 \b4 //probability in random game
 	18 \b3 //probability during gameplay
 	19 CLR_WATERPLANT //map colour (byte; using indexes from dos palette)
