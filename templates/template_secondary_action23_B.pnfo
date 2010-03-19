@@ -1,10 +1,14 @@
 // Action2/3-chain for cargo processing at secondary industries
+// ------------------------------------------------------------
 // This is a template for combinatory cargos
+//
 // Each cargo contributes a certain amount to a production ratio n / 8
 // ! Total for all cargos cannot exceed 8 
+//
 // For each cargo, the regular production cb checks number of cycles since cargo was last delivered.
 // If cargo delivered within last n cycles, production contribution for that cargo is added to total (n to be be based on testing)
 // Output for this cycle is then calculated for all input cargo using current ratio.
+//
 // For gameplay benefit, this makes certain allowances against realism and the exact timings of deliveries etc.
 // - we assume that certain internal processes at the industry are the cause of the varying ratio (boilers being lit for example).
 

@@ -69,9 +69,9 @@
 
 // production changes  
 -1 * 0 02 0A D8 //case protection period has ended and closure spread limit reached - high random chance of closure  
-  81 18 00  03 //randomise 
+  81 18 00  0F //randomise 
   \b1 //range
-    03 80 00 00 //lookat cb 35 or 29 in wiki to see what the returned value means
+    03 80 00 03 //lookat cb 35 or 29 in wiki to see what the returned value means
   00 80 //else no change	
 
 -1 * 0 02 0A D7 //case we've reached the spread ticker limit - reset the spread ticker and spread ticker limit. 
@@ -107,7 +107,7 @@
   
 -1 * 0 02 0A D4 //case industry count less than last month - decrement closure spread ticker to add delay, then return cb result
   89 // 
-      1A 20  \d06 //create value 6 (minimum delay in months between industry closure)
+      1A 20  \d09 //create value 9 (minimum delay in months between industry closure)
       \2- 7C LOCAL_CLOSURE_SPREAD_TICKER_STORE 20  \dxFFFFFFFF //decrement 'closure spread ticker' store
       \2> 1A 20 \d00 //take maximum of (previous result, 0)...to avoid negative value for closure spread ticker 
       10  1A 00 \dx01 //store in persistent storage
@@ -186,7 +186,7 @@
 
 -1 * 0 02 0A C0 //use this to initialise variables - one time only UNFINISHED
   89 // 
-      1A 20 \d00 //create some value (this is UNFINISHED)
+      1A 00 \d01 //create some value (this is UNFINISHED)
   \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
     C2 00  \d00  \d00  //
   C2 00 // default
