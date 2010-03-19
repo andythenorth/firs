@@ -186,8 +186,7 @@
 
 -1 * 0 02 0A C0 //use this to initialise variables - one time only UNFINISHED
   89 // 
-      1A 20 \d00 //get the industry xy co-ordinates
-      10  1A 00 \dx0A // store in persistent storage
+      1A 20 \d00 //create some value (this is UNFINISHED)
   \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
     C2 00  \d00  \d00  //
   C2 00 // default
