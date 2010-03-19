@@ -79,7 +79,7 @@
     1A 20  \d00 //create value 0
     10  1A 20 \dx01 // store in persistent storage
     0F
-    18 20 \dx03 //access some random bits
+    18 20 \dx02 //access some random bits
     \2+ 1A 20 \d01 //add 1 to handle possibility that previous random may be 0
     \2* 5F 28 \dx0F //multiply by this industry's random bits
     \2+ 1A 20 \d01 //add 1 again in case result of multiplying both randoms is 0
@@ -136,7 +136,7 @@
   89 // 
     7C LOCAL_DELIVERY_TICKER_STORE 00  \dxFFFFFFFF //get value of delivery (protection) ticker (months since most recent delivery)
   \b1 //range
-     D3 00  NUM_MONTHS_INDUSTRY_CLOSURE_PROTECTED  NUM_MONTHS_INDUSTRY_CLOSURE_PROTECTED //we've reached the protection limit
+     D3 00  THIS_NUM_MONTHS_CLOSURE_PROTECTED  THIS_NUM_MONTHS_CLOSURE_PROTECTED //we've reached the protection limit
   D2 00 //default
 
 -1 * 0 02 0A D0 //industry counts: rotate storage for last count, get new count and put into storage  
@@ -154,15 +154,16 @@
   D1 00 //default	
   
 
-// industry window texts		
+// industry window texts	
 -1 * 0 02 0A F0 //calculate number months remaining before closure protection ends - store for display  
     89 // 
-      1A 20 NUM_MONTHS_INDUSTRY_CLOSURE_PROTECTED //create a value (constant 1A anded (20) with following bytes)
+      1A 20 THIS_NUM_MONTHS_CLOSURE_PROTECTED //create a value (constant 1A anded (20) with following bytes)
+      \2sto 1A 20 \dx101 // store to text stack
       \2- 7C LOCAL_DELIVERY_TICKER_STORE 20  \dxFFFFFFFF //get value of ticker for months since most recent delivery
       \2sto 1a 00 \dx100 // store to text stack
     \b2 //range
        THIS_STR_INFO_WARN_1 80 \d01 \d01 //show warning text
-       THIS_STR_INFO_WARN_2 80 \d00 \d00 //show warning text
+       THIS_STR_INFO_WARN_2 80 \d00 \d00 //branch as we need to put a different value on the text stack
      THIS_STR_INFO 80 //default
      
       	
@@ -194,11 +195,15 @@
 // industry action 3 attach varaction2 chain to industry
 -1 * 0 03 0A 01 THIS_INDUSTRY 00 \wxC0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>	
 
-#undef LOCAL_CARGO_DELIVERED_STORE
+#undef LOCAL_DELIVERY_TICKER_STORE
+#undef LOCAL_CLOSURE_SPREAD_TICKER_STORE
+#undef LOCAL_CLOSURE_SPREAD_LIMIT_STORE
+#undef LOCAL_INDUSTRY_COUNT_STORE_1
+#undef LOCAL_INDUSTRY_COUNT_STORE_2
 
 #undef THIS_INDUSTRY
 #undef THIS_STR_INFO_CB38
 #undef THIS_HANDLE_CB28
-#undef THIS_STR_PRODUCING
-#undef THIS_STR_RESERVES
-#undef THIS_STR_CLOSURE
+#undef THIS_STR_INFO
+#undef THIS_STR_INFO_WARN_1
+#undef THIS_STR_INFO_WARN_2
