@@ -18,6 +18,7 @@
 #define LOCAL_CLOSURE_SPREAD_LIMIT_STORE    02
 #define LOCAL_INDUSTRY_COUNT_STORE_1        03
 #define LOCAL_INDUSTRY_COUNT_STORE_2        04
+#define LOCAL_PROTECTION_OFFSET_STORE       05
 
 // then add as the 2nd last line, prior to the end of the climate avialability label
 // #include "../../templates/template_primary_action23.pnfo"
@@ -134,7 +135,9 @@
 
 -1 * 0 02 0A D1 //handle cb 35 monthly production change 
   89 // 
-    7C LOCAL_DELIVERY_TICKER_STORE 00  \dxFFFFFFFF //get value of delivery (protection) ticker (months since most recent delivery)
+    7C LOCAL_DELIVERY_TICKER_STORE 20  \dxFFFFFFFF //get value of delivery (protection) ticker (months since most recent delivery)
+    \2- 7C LOCAL_PROTECTION_OFFSET_STORE 20 \dxFFFFFFFF //subtract a stored pseudo-random offset - this is used to spread initial protection periods
+    \2> 1A 00 \d00 //take maximum of (previous result, 0)...to avoid possible hassle with negative value  
   \b1 //range
      D3 00  THIS_NUM_MONTHS_CLOSURE_PROTECTED  THIS_NUM_MONTHS_CLOSURE_PROTECTED //we've reached the protection limit
   D2 00 //default
@@ -162,13 +165,13 @@
       \2- 7C LOCAL_DELIVERY_TICKER_STORE 20  \dxFFFFFFFF //get value of ticker for months since most recent delivery
       \2sto 1a 00 \dx100 // store to text stack
     \b2 //range
+       THIS_STR_INFO 80 \d02 THIS_NUM_MONTHS_CLOSURE_PROTECTED //branch as we need to put a different value on the text stack
        THIS_STR_INFO_WARN_1 80 \d01 \d01 //show warning text
-       THIS_STR_INFO_WARN_2 80 \d00 \d00 //branch as we need to put a different value on the text stack
-     THIS_STR_INFO 80 //default
+     THIS_STR_INFO_WARN_2 80 //default
      
       	
 // handle callbacks
--1 * 0 02 0A C2
+-1 * 0 02 0A C3
 	85 0C //<type> <variable> word-access callback
 	00 FF FF //no shift, no mask
 	\b5 //number of ranges to check
@@ -184,15 +187,24 @@
     F0 00   3A 00   3A 00 //return text-ID D0xx if cb 3A (industry window)
 	A0 00 //default
 
--1 * 0 02 0A C0 //use this to initialise variables - one time only UNFINISHED
+-1 * 0 02 0A C2 //use this to initialise variables
   89 // 
-      1A 00 \d01 //create some value (this is UNFINISHED)
+    1A 20 \d00 //create 0
+    //1C 20 \dxFFFFFFFF //get result of previous varaction 2 // commented out for power station
+    10  1A 00 \dx05 // store in persistent storage
   \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
-    C2 00  \d00  \d00  //
+    C3 00  \d00  \d00  //
+  C3 00 // default
+
+-1 * 0 02 0A C1 //use this to initialise variables
+  82 // 
+    41 00 \bxFF //get index of town that the industry belongs to
+  \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
+    C2 00  \b00  \b00  //
   C2 00 // default
 
 // industry action 3 attach varaction2 chain to industry
--1 * 0 03 0A 01 THIS_INDUSTRY 00 \wxC0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>	
+-1 * 0 03 0A 01 THIS_INDUSTRY 00 \wxC1 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>	
 
 #undef LOCAL_DELIVERY_TICKER_STORE
 #undef LOCAL_CLOSURE_SPREAD_TICKER_STORE
