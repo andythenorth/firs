@@ -120,7 +120,7 @@
 	19 CLR_BREWERY //map colour (byte; using indexes from dos palette)
 	23 \d0  //destruction cost multiplier (dword; default: 0)
 	1A \dx20 //special industry flag
-	21 F4 //callback flags 
+	21 84 //callback flags 
 	22 01  //callback flags
 //To show cargo waiting to be processed at industry, ensure prop 21 is set to use production callback
 
