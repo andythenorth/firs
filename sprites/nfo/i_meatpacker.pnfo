@@ -2,6 +2,7 @@
 #define THIS_INDUSTRY                 IND_MEATPACKER
 #define THIS_NUM_INPUT_CARGOS         \d02
 #define THIS_NUM_OUTPUT_CARGOS        \d01
+// manufacturing supplies should be in first slot for this to work correctly
 #define THIS_PROD_RATIO_CARGO_IN_1    \d03
 #define THIS_PROD_RATIO_CARGO_IN_2    \d05
 #define THIS_PROD_RATIO_CARGO_IN_3    \d00
@@ -123,4 +124,4 @@
 
 //No action 1 for industries, as graphics are defined by the industry-tile feature.
 
-#include "../../templates/template_secondary_action23_B.pnfo"
+#include "../../templates/template_secondary_action23_C.pnfo"
