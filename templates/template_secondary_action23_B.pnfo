@@ -36,7 +36,9 @@
 //   misc branching, handle callbacks etc	C0-CF
 //   monthly / random production change	D0-DF
 //   texts	E0-FF
-//   generally unused and available	10-9F
+//   industry location permissibility (CB 28)  10-1F  (NB CB 28 is not templated - handled on a per-industry basis)
+//   industry availability (CB 22) 20
+//   generally unused and available	2A-9F
 
 // Persistent storage used (not guaranteed to be up to date, but it's a starting point for making sense of this)
 // 01,02,03: prod. ratios cargo 1,2,3 (dynamic value between 0 and 8, total all 3 cannot exceed 8)
@@ -414,6 +416,9 @@
     \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
        B0 00  00 00 00 00  00 00 00 00
      B0 00
+     
+// handle cb 22 industry availability
+#include "industry_availability_check.pnfo"     
 
 // handle callbacks
 -1 * 0 02 0A C0 //-1 * 0 0A <set-id>

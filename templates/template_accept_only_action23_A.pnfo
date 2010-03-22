@@ -32,7 +32,8 @@
 //   monthly / random production change	D0-DF
 //   texts	E0-FF
 //   industry location permissibility (CB 28)  10-1F  (NB CB 28 is not templated - handled on a per-industry basis)
-//   generally unused and available	30-9F
+//   industry availability (CB 22) 20
+//   generally unused and available	2A-9F
 
 
 // production code
@@ -169,7 +170,9 @@
        THIS_STR_INFO_WARN_1 80 \d01 \d01 //show warning text
      THIS_STR_INFO_WARN_2 80 //default
      
-      	
+// handle cb 22 industry availability
+#include "industry_availability_check.pnfo"     
+     
 // handle callbacks
 -1 * 0 02 0A C3
 	85 0C //<type> <variable> word-access callback

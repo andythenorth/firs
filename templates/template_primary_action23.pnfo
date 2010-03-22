@@ -24,7 +24,8 @@
 //   monthly / random production change	D0-DF
 //   texts	E0-FF
 //   industry location permissibility (CB 28)  10-1F  (NB CB 28 is not templated - handled on a per-industry basis)
-//   generally unused and available	30-9F
+//   industry availability (CB 22) 20
+//   generally unused and available	2A-9F
 
 
 // production code
@@ -79,6 +80,9 @@
     \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
        THIS_STR_BOOST 80 \d00 \d00
      THIS_STR_BOOST 80 //default
+     
+// handle cb 22 industry availability
+#include "industry_availability_check.pnfo"     
       	
 // handle callbacks
 -1 * 0 02 0A C0 
