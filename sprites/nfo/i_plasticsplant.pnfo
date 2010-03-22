@@ -6,7 +6,7 @@
 #define THIS_PROD_RATIO_CARGO_IN_2    \d04
 #define THIS_PROD_RATIO_CARGO_IN_3    \d08
 #define THIS_STR_INFO_CB38            STR_INFO_GENERIC
-#define THIS_INTRO_DATE               \d00
+#define THIS_INTRO_DATE               \d1931
 
 //Industry tiles definition
 
@@ -162,7 +162,7 @@
 	19 CLR_PLASTICSPLANT //map colour (byte; using indexes from dos palette)
 	23 \d0  //destruction cost multiplier (dword; default: 0)
 	1A \d0 //special industry flag (dword)
-	21 84 //callback flags 
+	21 85 //callback flags 
 	22 01  //callback flags
 //To show cargo waiting to be processed at industry, ensure prop 21 is set to use production callback
 
