@@ -6,7 +6,7 @@
 #define THIS_PROD_RATIO_CARGO_IN_2    \d04
 #define THIS_PROD_RATIO_CARGO_IN_3    \d08
 #define THIS_STR_INFO_CB38            STR_INFO_GENERIC
-#define THIS_INTRO_DATE               \d00
+#define THIS_INTRO_DATE               \d1610
 
 //Redefinition of original TTD industry
 //Paper Mill
@@ -23,7 +23,7 @@
 	17 \b5 //probability in random game
 	18 \b2 //probability during gameplay
 	19 CLR_PAPERMILL //map colour (byte; using indexes from dos palette)
-	21 84 //callback flags 
+	21 85 //callback flags 
 	22 01  //callback flags
 //To show cargo waiting to be processed at industry, ensure prop 21 is set to use production callback
 
