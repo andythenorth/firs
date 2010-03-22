@@ -98,15 +98,15 @@
 	1F STR_IND_BAUXITEMINE //industry name
 	10 CARGO_BAUXITE FF //production cargo types (word; fill unused with FFh)
 	11 CARGO_ENGINEERINGSUPPLIES FF FF FF //acceptance cargo types (dword; fill unused with FFh)
-	12 \b8 //production multiplier cargo 1
+	12 \b9 //production multiplier cargo 1
 	13 \b0 //production multiplier cargo 2
 	1C \w0 \w0 //input cargo 1 multiplier (dword M1 M2; output_typen = X*Mn/256)
 	1D \w0  \w0  //input cargo 2 multiplier
 	1E \w0  \w0  //input cargo 3 multiplier
 	14 \b05 //minimal cargo distribution amount
 	16 FF FF FF //conflicting industry types (3*byte; ID+80h; FF to disable)
-	17 \b3 //probability in random game
-	18 \b3 //probability during gameplay
+	17 \b5 //probability in random game
+	18 \b5 //probability during gameplay
 	20 FF FF FF BF //prospecting success chance (dword; FFFFFFFFh=100%)
 	0F \b255 //fund cost multiplier (byte)
 	19 CLR_BAUXITEMINE //map colour (byte; using indexes from dos palette)
