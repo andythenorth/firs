@@ -1,1 +1,10 @@
 // This file provides an industry availability check for use with cb 22
+-1 * 0 02 0A 20 //use this to initialise variables
+  89 // 
+    24 20 \dxFFFFFFFF //get current date
+    \2+ 1A 00   \d01  //add 1 - due to way range check works below
+  \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
+    01 80  \d00  THIS_INTRO_DATE  //
+  00 80 // default
+  
+#undef THIS_INTRO_DATE
