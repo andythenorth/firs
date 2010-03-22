@@ -1,0 +1,216 @@
+//\b0-\b23: pit tiles, Action 2 
+-1 * 0 02 09 00 02 //-1 * 0 02 09 <set-id> <count> (extended format)
+  THIS_GROUNDSPRITE //groundsprite
+	\dxC0000000 //'building' sprite (actually ground tile)
+	\b0 \b0 \b0 //xofs yofs zofs
+	\b8 \b8 \b12 //xextent yextent zextent
+	\dx80008018 // greeble sprite 
+	\b0 \b0 \b0 //xofs yofs zofs
+	\b16 \b16 \b12 //xextent yextent zextent
+-1 * 0 02 09 01 02 //-1 * 0 02 09 <set-id> <count> (extended format)
+	THIS_GROUNDSPRITE //groundsprite
+	\dxC0000001 //'building' sprite (actually ground tile)
+	\b0 \b0 \b0 //xofs yofs zofs
+	\b8 \b8 \b12 //xextent yextent zextent
+	\dx80008019 //greeble sprite
+	\b0 \b0 \b0 //xofs yofs zofs
+	\b16 \b16 \b12 //xextent yextent zextent
+-1 * 0 02 09 02 02 //-1 * 0 02 09 <set-id> <count> (extended format)
+	THIS_GROUNDSPRITE //groundsprite
+	\dxC0000002 //'building' sprite (actually ground tile)
+	\b0 \b0 \b0 //xofs yofs zofs
+	\b8 \b8 \b12 //xextent yextent zextent
+	\dx8000801A //greeble sprite
+	\b0 \b0 \b0 //xofs yofs zofs
+	\b16 \b16 \b12 //xextent yextent zextent
+-1 * 0 02 09 03 02 //-1 * 0 02 09 <set-id> <count> (extended format)
+	THIS_GROUNDSPRITE //groundsprite
+	\dxC0000003 //'building' (actually ground tile)
+	\b0 \b0 \b0 //xofs yofs zofs
+	\b8 \b8 \b12 //xextent yextent zextent
+	\dx8000801B //greeble sprite
+	\b0 \b0 \b0 //xofs yofs zofs
+	\b11 \b16 \b42 //xextent yextent zextent
+-1 * 0 02 09 04 00 //-1 * 0 02 09 <set-id> 00
+	THIS_GROUNDSPRITE //groundsprite
+	\dxC0000004 //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b4 //xextent yextent zextent
+-1 * 0 02 09 05 00 //-1 * 0 02 09 <set-id> 00
+	THIS_GROUNDSPRITE //groundsprite
+	\dxC0000005 //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b4 //xextent yextent zextent
+
+-1 * 0 02 09 06 02 //-1 * 0 02 09 <set-id> <count> (extended format)
+	THIS_GROUNDSPRITE //groundsprite
+	\dxC0000006 //groundsprite
+	\b0 \b0 \b0 //xofs yofs zofs
+	\b16 \b16 \b32 //xextent yextent zextent
+	\dx8000801C //building sprite
+	\b0 \b0 \b0 //xofs yofs zofs
+	\b16 \b16 \b32 //xextent yextent zextent
+-1 * 0 02 09 07 02 //-1 * 0 02 09 <set-id> <count> (extended format)
+	THIS_GROUNDSPRITE //groundsprite
+	\dxC0000007 //groundsprite
+	\b0 \b0 \b0 //xofs yofs zofs
+	\b8 \b8 \b12 //xextent yextent zextent
+	\dx8000801D //building sprite
+	\b0 \b0 \b0 //xofs yofs zofs
+	\b16 \b16 \b32 //xextent yextent zextent
+-1 * 0 02 09 08 00 //-1 * 0 02 09 <set-id> 00
+	THIS_GROUNDSPRITE //groundsprite
+	\dxC0000008 //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b6 //xextent yextent zextent
+-1 * 0 02 09 09 00 //-1 * 0 02 09 <set-id> 00
+	\dx80000009 //groundsprite
+	\dx8000801E //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b32 //xextent yextent zextent
+-1 * 0 02 09 0A 00 //-1 * 0 02 09 <set-id> 00
+	\dx8000000A //groundsprite
+	\dx8000801F //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b32 //xextent yextent zextent
+-1 * 0 02 09 0B 00 //-1 * 0 02 09 <set-id> 00
+	THIS_GROUNDSPRITE //groundsprite
+	\dxC000000B //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b6 //xextent yextent zextent
+
+-1 * 0 02 09 0C 00 //-1 * 0 02 09 <set-id> 00
+	THIS_GROUNDSPRITE //groundsprite
+	\dxC000000C //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b6 //xextent yextent zextent
+-1 * 0 02 09 0D 00 //-1 * 0 02 09 <set-id> 00
+	THIS_GROUNDSPRITE //groundsprite
+	\dxC000000D //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b6 //xextent yextent zextent
+-1 * 0 02 09 0E 00 //-1 * 0 02 09 <set-id> 00
+	THIS_GROUNDSPRITE //groundsprite
+	\dxC000000E //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b6 //xextent yextent zextent
+-1 * 0 02 09 0F 00 //-1 * 0 02 09 <set-id> 00
+	\dx8000000F //groundsprite
+	\dx80008020 //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b32 //xextent yextent zextent
+-1 * 0 02 09 10 00 //-1 * 0 02 09 <set-id> 00
+	\dx80000010 //groundsprite
+	\dx80008021 //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b32 //xextent yextent zextent
+-1 * 0 02 09 11 00 //-1 * 0 02 09 <set-id> 00
+	THIS_GROUNDSPRITE //groundsprite
+	\dxC0000011 //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b6 //xextent yextent zextent
+
+-1 * 0 02 09 12 00 //-1 * 0 02 09 <set-id> 00
+	THIS_GROUNDSPRITE //groundsprite
+	\dxC0000012 //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b6 //xextent yextent zextent
+-1 * 0 02 09 13 00 //-1 * 0 02 09 <set-id> 00
+	THIS_GROUNDSPRITE //groundsprite
+	\dxC0000013 //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b6 //xextent yextent zextent
+-1 * 0 02 09 14 00 //-1 * 0 02 09 <set-id> 00
+	THIS_GROUNDSPRITE //groundsprite
+	\dxC0000014 //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b6 //xextent yextent zextent
+-1 * 0 02 09 15 00 //-1 * 0 02 09 <set-id> 00
+	THIS_GROUNDSPRITE //groundsprite
+	\dxC0000015 //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b6 //xextent yextent zextent
+-1 * 0 02 09 16 00 //-1 * 0 02 09 <set-id> 00
+	THIS_GROUNDSPRITE //groundsprite
+	\dxC0000016 //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b6 //xextent yextent zextent
+-1 * 0 02 09 17 00 //-1 * 0 02 09 <set-id> 00
+	THIS_GROUNDSPRITE //groundsprite
+	\dxC0000017 //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b6 //xextent yextent zextent
+
+//\b24-\b33: processor 1, Action 2 
+-1 * 0 02 09 18 00 //-1 * 0 02 09 <set-id> 00
+	\dx80000022 //groundsprite
+	\dx0 //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b4 //xextent yextent zextent
+-1 * 0 02 09 19 00 //-1 * 0 02 09 <set-id> 00
+	\dx80000023 //groundsprite
+	\dx8000802C //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b16 //xextent yextent zextent
+-1 * 0 02 09 1A 00 //-1 * 0 02 09 <set-id> 00
+	\dx80000024 //groundsprite
+	\dx8000802D //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b32 //xextent yextent zextent
+-1 * 0 02 09 1B 00 //-1 * 0 02 09 <set-id> 00
+	THIS_GROUNDSPRITE //groundsprite
+	\dxC0000025 //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b4 //xextent yextent zextent
+-1 * 0 02 09 1C 00 //-1 * 0 02 09 <set-id> 00
+	\dx80000026 //groundsprite
+	\dx8000802E //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b48 //xextent yextent zextent
+-1 * 0 02 09 1D 00 //-1 * 0 02 09 <set-id> 00
+	\dx80000027 //groundsprite
+	\dx8000802F //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b32 //xextent yextent zextent
+-1 * 0 02 09 1E 00 //-1 * 0 02 09 <set-id> 00
+	\dx80000028 //groundsprite
+	\dx80000030 //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b48 //xextent yextent zextent
+-1 * 0 02 09 1F 00 //-1 * 0 02 09 <set-id> 00
+	THIS_GROUNDSPRITE //groundsprite
+	\dxC0000029 //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b4 //xextent yextent zextent	
+-1 * 0 02 09 20 00 //-1 * 0 02 09 <set-id> 00
+	THIS_GROUNDSPRITE //groundsprite
+	\dxC000002A //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b4 //xextent yextent zextent
+-1 * 0 02 09 21 00 //-1 * 0 02 09 <set-id> 00
+	THIS_GROUNDSPRITE //groundsprite
+	\dxC000002B //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b4 //xextent yextent zextent	
+
+//\b24-\b33: processor 2 additional tiles, Action 2 
+-1 * 0 02 09 22 00 //-1 * 0 02 09 <set-id> 00
+	\dx80000031 //groundsprite
+	\dx80008034 //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b32 //xextent yextent zextent
+-1 * 0 02 09 23 02 //-1 * 0 02 09 <set-id> <count> (extended format)
+	THIS_GROUNDSPRITE //groundsprite
+	\dxC0000032 // 'bulding' sprite (ground tile)
+	\b0 \b0 \b0 //xofs yofs zofs
+	\b16 \b16 \b8 //xextent yextent zextent
+	\dx80008035 // greeble sprite
+	\b0 \b0 \b0 //xofs yofs zofs
+	\b16 \b16 \b8 //xextent yextent zextent
+-1 * 0 02 09 24 00 //-1 * 0 02 09 <set-id> 00
+	\dx80000033 //groundsprite
+	\dx80008036 //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b32 //xextent yextent zextent
+	
+#undef THIS_GROUNDSPRITE
