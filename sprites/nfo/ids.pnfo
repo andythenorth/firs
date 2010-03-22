@@ -103,6 +103,7 @@
 #define TILE_SURVEYCAMP_1                  C7
 #define TILE_WINDFARM_1                    C8
 #define TILE_FISHPROCESSOR_1               C9
+#define TILE_QUARRY_1                      CA
 // generic tiles start at D0 !
 
 // Definition of the cargo bits/IDs
@@ -214,6 +215,7 @@
 #define STR_IND_DREDGINGSITE          8F DC
 #define STR_IND_SURVEYCAMP            90 DC
 #define STR_IND_WINDFARM              91 DC
+#define STR_IND_GRAVELQUARRY          92 DC
 
 //Definition of industry messages using TTD strings
 #define STR_IND_CLOSE_GENERIC     33 48
