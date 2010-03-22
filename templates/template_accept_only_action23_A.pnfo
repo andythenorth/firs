@@ -1,4 +1,6 @@
 // Action2/3-chain for cargo processing
+// Use for an 'accept only' industry like Power Station
+// includes closing behaviour - these industries normally need regular deliveries
 
 // How to use:
 // Add to the top of a primary industry a few #define lines. For example:
@@ -177,20 +179,21 @@
 -1 * 0 02 0A C3
 	85 0C //<type> <variable> word-access callback
 	00 FF FF //no shift, no mask
-	\b5 //number of ranges to check
+	\b6 //number of ranges to check
 	  #ifdef THIS_HANDLE_CB28
     THIS_HANDLE_CB28   28 00   28 00 //can industry be built? ...relies on action 2 with correct ID defined in industry pnfo
     #endif
     #ifndef THIS_HANDLE_CB28
     00 84   28 00   28 00 //just allow the industry to be built (this industry doesn't care about location)
     #endif
+    20 00   22 00   22 00 //industry availability cb 22
 	  00 80   29 00   29 00 //random production change cb 29 // 00 80 = do nothing
 	  D0 00   35 00   35 00 //monthly production change cb 35
     THIS_STR_INFO_CB38 80   38 00   38 00 //return text-ID D0xx if cb 38 (fund window)
     F0 00   3A 00   3A 00 //return text-ID D0xx if cb 3A (industry window)
 	A0 00 //default
 
--1 * 0 02 0A C2 //use this to initialise variables
+-1 * 0 02 0A C2 //use this to initialise variables // !! seems to blow up if industry not built
   89 // 
     1A 20 \d01 //create 01
     //1C 20 \dxFFFFFFFF //get result of previous varaction 2 // commented out for power station
@@ -199,7 +202,7 @@
     C3 00  \d00  \d00  //
   C3 00 // default
 
--1 * 0 02 0A C1 //use this to initialise variables
+-1 * 0 02 0A C1 //use this to initialise variables // !! seems to blow up if industry not built
   82 // 
     41 00 \bxFF //get index of town that the industry belongs to
   \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
@@ -207,7 +210,7 @@
   C2 00 // default
 
 // industry action 3 attach varaction2 chain to industry
--1 * 0 03 0A 01 THIS_INDUSTRY 00 \wxC1 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>	
+-1 * 0 03 0A 01 THIS_INDUSTRY 00 \wxC3 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>	
 
 #undef LOCAL_DELIVERY_TICKER_STORE
 #undef LOCAL_CLOSURE_SPREAD_TICKER_STORE

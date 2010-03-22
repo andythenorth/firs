@@ -379,7 +379,8 @@
 -1 * 0 02 0A C0 //-1 * 0 0A <set-id>
 	85 0C //<type> <variable> word-access callback
 	00 FF FF //no shift, no mask
-	\b2 //number of ranges to check
+	\b3 //number of ranges to check
+    20 00   22 00   22 00 //industry availability cb 22
 	  THIS_STR_INFO_CB38 80   38 00   38 00 ////cb 38 display additional text in fund window
 	  FA 00   3A 00   3A 00 //cb 3A (industry window)
 	C1 00 //default
