@@ -2,7 +2,7 @@
 #define THIS_INDUSTRY         IND_JUNKYARD
 #define THIS_STR_INFO_CB38    STR_INFO_GENERIC
 #define THIS_STR_BOOST        STR_INFO_ES_PRIMARY_BOOST
-#define THIS_INTRO_DATE               \d00
+#define THIS_INTRO_DATE       \d1848
 
 //Industry tiles definition
 
@@ -153,7 +153,7 @@
 	19 CLR_JUNKYARD //map colour (byte; using indexes from dos palette)
 	23 \d0  //destruction cost multiplier (dword; default: 0)
 	1A \dx20 //special industry flag (dword)
-	21 32 //callback flags 
+	21 33 //callback flags 
 	22 05  //callback flags
 	24 \w00 // Station name String ID. No special one, but don't use 'mine'.
 //To show cargo waiting to be processed at industry, ensure prop 21 is set to use production callback
