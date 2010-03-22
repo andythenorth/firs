@@ -189,7 +189,7 @@
 
 -1 * 0 02 0A C2 //use this to initialise variables
   89 // 
-    1A 20 \d00 //create 0
+    1A 20 \d01 //create 01
     //1C 20 \dxFFFFFFFF //get result of previous varaction 2 // commented out for power station
     10  1A 00 \dx05 // store in persistent storage
   \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
