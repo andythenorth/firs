@@ -106,38 +106,38 @@
 // generic tiles start at D0 !
 
 // Definition of the cargo bits/IDs
+#define CARGO_PASSENGERS            00
 #define CARGO_COAL                  01
-#define CARGO_IRONORE               08
-#define CARGO_SAND                  19
-#define CARGO_GRAVEL                10
+#define CARGO_MAIL                  02
 #define CARGO_OIL                   03
-#define CARGO_BAUXITE               13
-#define CARGO_STEEL                 09
-#define CARGO_ALUMINIUM             14
 #define CARGO_LIVESTOCK             04
+#define CARGO_GOODS                 05
+#define CARGO_GRAIN                 06
+#define CARGO_WOOD                  07
+#define CARGO_IRONORE               08
+#define CARGO_STEEL                 09
+#define CARGO_WASTE                 0A
+#define CARGO_FOOD                  0B
 #define CARGO_MILK                  0C
 #define CARGO_FRUITSANDVEGETABLES   0D
-#define CARGO_GRAIN                 06
+#define CARGO_WOOL                  0E
+#define CARGO_COTTON                0F
+#define CARGO_GRAVEL                10
+#define CARGO_WATER                 11
+#define CARGO_LUMBER                12
+#define CARGO_BAUXITE               13
+#define CARGO_ALUMINIUM             14
+#define CARGO_SCRAPMETAL            15
+#define CARGO_FUELOIL               16
+#define CARGO_CHEMICALS             17
+#define CARGO_MANUFACTURINGSUPPLIES 18
+#define CARGO_SAND                  19
+#define CARGO_ENGINEERINGSUPPLIES   1A
+#define CARGO_FARMSUPPLIES          1B
+#define CARGO_SURVEYSUPPLIES        1C
 #define CARGO_SUGARCANE             1D
 #define CARGO_FISH                  1D
-#define CARGO_FOOD                  0B
-#define CARGO_GOODS                 05
-#define CARGO_WATER                 11
-#define CARGO_SURVEYSUPPLIES        1C
-#define CARGO_FARMSUPPLIES          1B
-#define CARGO_ENGINEERINGSUPPLIES   1A
-#define CARGO_WOOD                  07
-#define CARGO_LUMBER                12
-#define CARGO_CHEMICALS             17
-#define CARGO_FUELOIL               16
-#define CARGO_SCRAPMETAL            15
 // #define CARGO_PARTS               19
-#define CARGO_MANUFACTURINGSUPPLIES 18
-#define CARGO_COTTON                0F
-#define CARGO_WOOL                  0E
-#define CARGO_PASSENGERS            00
-#define CARGO_MAIL                  02
-#define CARGO_WASTE                 0A
 // #define CARGO_RESERVED1           1D
 // #define CARGO_REGEARING           1E
 // #define CARGO_RESERVED2           1F
