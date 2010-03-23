@@ -246,13 +246,12 @@
 //Definition of text IDs for additional texts in purchase window (D0xx)
 //IDs for industry-specific texts match the industry ID
 //Generic text IDs start at A0
+//Don't bother with info texts for primary industries
 #define STR_INFO_GENERIC            A0
 #define STR_INFO_DEBUG_1            A1
 #define STR_INFO_DEBUG_2            A2
 #define STR_INFO_DEBUG_3            A3
 #define STR_INFO_DEBUG_4            A4
-#define STR_INFO_MACHINESHOP        IND_MACHINESHOP
-#define STR_INFO_SAWMILL            IND_SAWMILL
 #define STR_INFO_ES_PRIMARY_BOOST   B0
 #define STR_INFO_FS_PRIMARY_BOOST   B1
 #define STR_INFO_MS_PRIMARY_BOOST   B2
@@ -267,7 +266,26 @@
 #define STR_INFO_POWERSTATION_0     D6
 #define STR_INFO_POWERSTATION_1     D7
 #define STR_INFO_POWERSTATION_2     D8
-
+#define STR_INFO_MACHINESHOP        IND_MACHINESHOP
+#define STR_INFO_SAWMILL            IND_SAWMILL
+#define STR_INFO_WINDFARM           IND_WINDFARM
+#define STR_INFO_STEELMILL          IND_STEELMILL
+#define STR_INFO_ALUMINIUMPLANT     IND_ALUMINIUMPLANT
+#define STR_INFO_METALFOUNDRY       IND_METALFOUNDRY
+#define STR_INFO_SAWMILL            IND_SAWMILL
+#define STR_INFO_FURNITUREFACTORY   IND_FURNITUREFACTORY
+#define STR_INFO_PAPERMILL          IND_PAPERMILL
+#define STR_INFO_OILREFINERY        IND_OILREFINERY
+#define STR_INFO_PLASTICSPLANT      IND_PLASTICSPLANT
+#define STR_INFO_GLASSWORKS         IND_GLASSWORKS
+#define STR_INFO_WATERTOWER         IND_WATERTOWER
+#define STR_INFO_BAKERY             IND_BAKERY
+#define STR_INFO_BREWERY            IND_BREWERY
+#define STR_INFO_DAIRY              IND_DAIRY
+#define STR_INFO_MEATPACKER         IND_MEATPACKER
+#define STR_INFO_TEXTILEMILL        IND_TEXTILEMILL
+#define STR_INFO_CEMENTPLANT        IND_CEMENTPLANT
+#define STR_INFO_FERTILISERPLANT    IND_FERTILISERPLANT
 
 //Definition of text IDs for cargos
 // _CTYPE: name of cargo type
