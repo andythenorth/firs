@@ -406,6 +406,13 @@
        FB 00  00 00 00 00  00 00 00 00
      FB 00 //default
 
+-1 * 0 02 0A F0 //
+    81 // 
+      7F DEBUG_PARAMETER 00 DEBUG_PARAMETER_INDUSTRY_TEXT_BIT // check if first bit is set for debug parameter
+    \b1 //range
+       FA 00  DEBUG_PARAMETER_INDUSTRY_TEXT_BIT  DEBUG_PARAMETER_INDUSTRY_TEXT_BIT
+     STR_INFO_GENERIC 80 //default
+
 // !! the logic for output limit is flawed.  This assumes limit is FF FF; when 2 output cargos are split 50:50, output limit before split is 2 * FF FF
 // TTDPatch wiki for production callback: "results are clamped to the allowed range (0..32767 for incoming cargo amounts, 0..65535 for outgoing cargo amounts)."
 -1 * 0 02 0A C1 //store output limit for produced cargo (as units of output cargo) to use when processing each input cargo
@@ -427,7 +434,7 @@
 	\b3 //number of ranges to check
     20 00   22 00   22 00 //industry availability cb 22
 	  THIS_STR_INFO_CB38 80   38 00   38 00 ////cb 38 display additional text in fund window
-	  FA 00   3A 00   3A 00 //cb 3A (industry window)
+	  F0 00   3A 00   3A 00 //cb 3A (industry window)
 	C1 00 //default
 
 // industry action 3 attach varaction2 chain to industry
