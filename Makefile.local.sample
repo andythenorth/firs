@@ -3,8 +3,8 @@
 # Copy the file to Makefile.local and uncomment the 
 # appropriate lines.
 
-# REPO_NAME          := FIRS Industry Replacement Set
-# GRF_ID             := F1 25 00 11
+# REPO_NAME          := My first NewGRF 
+# GRF_ID             := 01 02 03 04
 
 # If everything is default, you don't need the rest:
 
@@ -48,16 +48,19 @@
 # Build parameters and programmes
 # NFORENUM_FLAGS =
 # GRFCODEC_FLAGS = -e -p 2
-# TAR_FLAGS      = --gzip -cf 
+# TAR_FLAGS      = -cf 
 # ZIP_FLAGS      = -r
+# SRCZIP_FLAGS   =
 # BZIP_FLAGS     = -k9f
 # CC_FLAGS       = -C -E - <
 # MAKE_FLAGS     =
+# UNIX2DOS_FLAGS ?= -q
 
 # NFORENUM       = renum
 # GRFCODEC       = grfcodec
 # TAR            = tar
 # ZIP            = zip
+# SRCZIP         = gzip
 # BZIP           = bzip2
 # CC             = gcc
 # AWK            = awk
@@ -65,6 +68,9 @@
 # MAKE           = make
 # UNIX2DOS       = $(shell [ `which unix2dos` ] && echo "unix2dos" || echo "cat")
 # MD5SUM         = md5 -r
+
+# Installation dir
+INSTALL_DIR      =
 
 ################################################################
 # Get the Repository revision, tags and the modified status
@@ -94,7 +100,8 @@
 # TAR_FILENAME       := $(DIR_NAME).tar
 # BZIP_FILENAME      := $(TAR_FILENAME).bz2
 # ZIP_FILENAME       := $(VERSIONED_FILENAME).zip
-# REV_FILENAME       := REV
+# MD5_FILENAME       := $(DIR_NAME).md5
+# REV_EXTENSION      := REV
 
 # DOC_FILES_SRC      := $(LICENSE_FILENAME_SRC) $(README_FILENAME_SRC) $(CHANGELOG_FILENAME_SRC)
 
