@@ -20,23 +20,39 @@
 1 Preface
 ---------
 
-The FIRS Industry Replacement Set is an industry set for OpenTTD. Once done it will include the following features, amongst others:
-- Over 60 different industries:
-  - 57 industries per climate;
-  - Industry availability changes over time. Some types of industries will close and disappear from the map at certain points in history, others will become available;
-  - Industries change looks over time;
-  - Some industries change cargo acceptance over time.
-  - Includes some things that have been asked for recently including a 'waste' cargo chain;
-  - Stockpiling produces output gradually, but without a strict limit on the input. Only output-increasing input cargos will be capped, other cargos will be limited to the technical maximum of 65536 items;
-  - No natural resource limits enforced;
-  - Default TTD unserviced industry closure behaviour for all secondary industries. Even Power Stations will close if not serviced.
-- 29 different cargos:
-  - Some of the cargos are present in other sets, some are new.
-  - 2 spare cargo slots and 1 reserved for regearing (as featured in NARS);
-  - Includes some things that have been asked for recently including 'waste';
-  - Cargo classes to ensure support from the major vehicle sets (at least the ones that have good cargo class support).
-- GNU GPL licensed.
+*FIRS 0.1 Release Notes*
 
+FIRS 0.1 is a fully playable release of FIRS featuring 35 industries and 26 cargos.
+http://tt-foundry.com/sets/FIRS/schema/industries?economy=point_1_release  
+
+Unlike some FIRS nightlies, all the included cargo chains are complete, and all industry production code is finished.  All future releases will be equally as complete and stable, but will add new features.  
+
+Nightly builds of FIRS will still be available, but aren't recommended for most players as they often contain work-in-progress!  Thanks though to all those who do try the nightlies and report problems :)
+
+
+*Getting Started with FIRS*
+FIRS lets you get started playing straight away with easy-to-understand gameplay:
+- there are plenty of familiar industries and cargos you'll recognise from the default game
+- FIRS adds lots of exciting new cargos and industries to play with
+- primary industries like mines and farms _always_ produce cargo
+- secondary industries like the steel mill and cement plant _always_ produce some output cargo when an input cargo is delivered.
+
+For players who want more, FIRS also rewards you by:
+- increasing primary industry production when you deliver supplies regularly
+- increasing production at some secondary industries when you deliver more than one input cargo regularly
+- introducing new industries and cargos as time goes by.
+
+The pixels are lickable and work brilliantly with original graphics and OpenGFX.
+
+
+*More Info / Things to Watch Out For!*
+- many secondary industries will start to close abut five years after the start of the game.  Currently FIRS uses the default TTD closing behaviour, which can be annoying.  This will be improved in a future release of FIRS.  Meanwhile, make plenty of money and build new industries when you need them.  :twisted: 
+- closure is currently disabled for primary industries.  A side effect of disabling closure is that primary industry will not increase production unless supplies are delivered.  This will be improved in a future release of FIRS. 
+- Power Stations in FIRS do close if cargo is not delivered every now and then.  This is intentional.  The Power Station window gives information about whether there is currently a chance of closure.  In future additional gameplay will be added around Power Stations :)   
+- some industries are available from year 0. Some industries (and the cargos they use) are only available after a certain date.
+- FIRS works well if the colour of the mini-map is changed - this is possible in recent nightly builds of OTTD (in advanced options -> interface) 
+- one known bug: Textile Mill will not accept Manufacturing Supplies.  Will be fixed soon.
+- any savegame using the nightly build of FIRS is likely to break :o
 
 ------------------
 2 Downloading FIRS
@@ -53,23 +69,7 @@ Nightly versions are made available on a regular basis. Once we reach a stable r
 
 Obviously you need to add it to the game first. We're not explaining that here, go read the OpenTTD manual at http://wiki.openttd.org/NewGRF.
 
-FIRS has a few parameters which control how FIRS behaves:
-Param#	values	meaning
-0	0 .. 2		Economy parameters. This choses between different economy models. Roughly equivalent to different climates as it affects the availability of industries
-			0: Default industry selection
-			1: Focus on mining industry
-			2: Focus on farming industry
-			
-1	0 .. 255	Stockpile parameter defining the size multiplier of the stockpile limit for manufacturing, farm and survey supplies. 
-			Default limits (multiplier = 1) are
-			Manufacturing Supplies: 800
-			Farm Supplies:		200
-			Engineering Supplies:	200
-			which is twice the monthly usage of the industries. Setting the multiplier to 2 will double these, thus industries 
-			will have a maximum stockpile which lasts for four months, setting it to 3 will increase the maximum stockpile to 
-			6 months worth of usage and so on. A value of 255 will probably completely disable the stockpile limits. Note that 
-			all industries also work without these 'boost' cargos, they'll just work at 50% efficiency, thus produce only half
-			of the output they would produce with these supplies available.
+FIRS currently has no parameters for players.  Do not try and set parameters as strange things may happen!
 
 FIRS shouldn't be used with other industry sets active. FIRS will disable itself if an incompatible industry set is detected, but this detection will only work for industry sets known at the time of the FIRS release. There's a possibility that FIRS will be compatible with other industry sets in the future.
 
