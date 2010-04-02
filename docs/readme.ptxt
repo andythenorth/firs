@@ -22,44 +22,67 @@
 
 *FIRS 0.1 Release Notes*
 
-FIRS 0.1 is a fully playable release of FIRS featuring 35 industries and 26 cargos.
+FIRS 0.1 is a fully playable release of FIRS featuring 35 industries and 26
+cargos.
 http://tt-foundry.com/sets/FIRS/schema/industries?economy=point_1_release  
 
-Unlike some FIRS nightlies, all the included cargo chains are complete, and all industry production code is finished.  All future releases will be equally as complete and stable, but will add new features.  
+Unlike some FIRS nightlies, all the included cargo chains are complete, and all
+industry production code is finished.  All future releases will be equally as
+complete and stable, but will add new features.  
 
-Nightly builds of FIRS will still be available, but aren't recommended for most players as they often contain work-in-progress!  Thanks though to all those who do try the nightlies and report problems :)
+Nightly builds of FIRS will still be available, but aren't recommended for most
+players as they often contain work-in-progress!  Thanks though to all those who
+do try the nightlies and report problems :)
 
 
 *Getting Started with FIRS*
-FIRS lets you get started playing straight away with easy-to-understand gameplay:
-- there are plenty of familiar industries and cargos you'll recognise from the default game
+FIRS lets you get started playing straight away with easy-to-understand
+gameplay:
+- there are plenty of familiar industries and cargos you'll recognise from the
+default game
 - FIRS adds lots of exciting new cargos and industries to play with
 - primary industries like mines and farms _always_ produce cargo
-- secondary industries like the steel mill and cement plant _always_ produce some output cargo when an input cargo is delivered.
+- secondary industries like the steel mill and cement plant _always_ produce
+some output cargo when an input cargo is delivered.
 
 For players who want more, FIRS also rewards you by:
 - increasing primary industry production when you deliver supplies regularly
-- increasing production at some secondary industries when you deliver more than one input cargo regularly
+- increasing production at some secondary industries when you deliver more than
+one input cargo regularly
 - introducing new industries and cargos as time goes by.
 
 The pixels are lickable and work brilliantly with original graphics and OpenGFX.
 
 
 *More Info / Things to Watch Out For!*
-- many secondary industries will start to close abut five years after the start of the game.  Currently FIRS uses the default TTD closing behaviour, which can be annoying.  This will be improved in a future release of FIRS.  Meanwhile, make plenty of money and build new industries when you need them.  :twisted: 
-- closure is currently disabled for primary industries.  A side effect of disabling closure is that primary industry will not increase production unless supplies are delivered.  This will be improved in a future release of FIRS. 
-- Power Stations in FIRS do close if cargo is not delivered every now and then.  This is intentional.  The Power Station window gives information about whether there is currently a chance of closure.  In future additional gameplay will be added around Power Stations :)   
-- some industries are available from year 0. Some industries (and the cargos they use) are only available after a certain date.
-- FIRS works well if the colour of the mini-map is changed - this is possible in recent nightly builds of OTTD (in advanced options -> interface) 
-- one known bug: Textile Mill will not accept Manufacturing Supplies.  Will be fixed soon.
+- many secondary industries will start to close abut five years after the start
+of the game.  Currently FIRS uses the default TTD closing behaviour, which can
+be annoying.  This will be improved in a future release of FIRS.  Meanwhile,
+make plenty of money and build new industries when you need them.  :twisted: 
+- closure is currently disabled for primary industries.  A side effect of
+disabling closure is that primary industry will not increase production unless
+supplies are delivered.  This will be improved in a future release of FIRS. 
+- Power Stations in FIRS do close if cargo is not delivered every now and then. 
+This is intentional.  The Power Station window gives information about whether
+there is currently a chance of closure.  In future additional gameplay will be
+added around Power Stations :)   
+- some industries are available from year 0. Some industries (and the cargos
+they use) are only available after a certain date.
+- FIRS works well if the colour of the mini-map is changed - this is possible in
+recent nightly builds of OTTD (in advanced options -> interface) 
+- one known bug: Textile Mill will not accept Manufacturing Supplies.  Will be
+fixed soon.
 - any savegame using the nightly build of FIRS is likely to break :o
 
 ------------------
 2 Downloading FIRS
 ------------------
 
-If you don't want to compile FIRS yourself, you can download precompiled nightly versions from http://mz.openttdcoop.org/bundles/firs/.
-Nightly versions are made available on a regular basis. Once we reach a stable release, you can get those from the same address as well, or via the OpenTTD built-in download manager.
+If you don't want to compile FIRS yourself, you can download precompiled nightly
+versions from http://mz.openttdcoop.org/bundles/firs/.
+Nightly versions are made available on a regular basis. Once we reach a stable
+release, you can get those from the same address as well, or via the OpenTTD
+built-in download manager.
 
 
 
@@ -67,13 +90,21 @@ Nightly versions are made available on a regular basis. Once we reach a stable r
 3 Using FIRS
 ------------
 
-Obviously you need to add it to the game first. We're not explaining that here, go read the OpenTTD manual at http://wiki.openttd.org/NewGRF.
+Obviously you need to add it to the game first. We're not explaining that here,
+go read the OpenTTD manual at http://wiki.openttd.org/NewGRF.
 
-FIRS currently has no parameters for players.  Do not try and set parameters as strange things may happen!
+FIRS currently has no parameters for players.  Do not try and set parameters as
+strange things may happen!
 
-FIRS shouldn't be used with other industry sets active. FIRS will disable itself if an incompatible industry set is detected, but this detection will only work for industry sets known at the time of the FIRS release. There's a possibility that FIRS will be compatible with other industry sets in the future.
+FIRS shouldn't be used with other industry sets active. FIRS will disable itself
+if an incompatible industry set is detected, but this detection will only work
+for industry sets known at the time of the FIRS release. There's a possibility
+that FIRS will be compatible with other industry sets in the future.
 
-Furthermore you need a vehicle set that supports the FIRS cargos. Any vehicle set with proper Cargo Classes support should do that by default. The OpenTTD vehicles will not be able to transport all FIRS cargos. The following sets available from the OpenTTD built-in download manager are known to support FIRS:
+Furthermore you need a vehicle set that supports the FIRS cargos. Any vehicle
+set with proper Cargo Classes support should do that by default. The OpenTTD
+vehicles will not be able to transport all FIRS cargos. The following sets
+available from the OpenTTD built-in download manager are known to support FIRS:
 - Train Sets:
   - 2cc Train Set
   - North American Renewal Set (NARS) 2
@@ -91,17 +122,28 @@ Furthermore you need a vehicle set that supports the FIRS cargos. Any vehicle se
 4 Compiling FIRS
 ----------------
 
-The FIRS source is available in a Mercurial repository and is available through http://mz.openttdcoop.org/hg/firs. E.g. use hg clone http://mz.openttdcoop.org/hg/firs to get yourself a copy.
+The FIRS source is available in a Mercurial repository and is available through
+http://mz.openttdcoop.org/hg/firs. E.g. use hg clone
+http://mz.openttdcoop.org/hg/firs to get yourself a copy.
 
-In order to compile FIRS from source you need at least r2125 of NFORenum and GRFCodec or the latest stable versions of those tools (at the moment v3.4.6 resp. v0.9.10). Using any recent version inbetween will most likely fail to compile FIRS correctly.
-Place both renum and grfcodec in the FIRS main directory or your system's PATH environment variable and run the makefile:
+In order to compile FIRS from source you need at least r2125 of NFORenum and
+GRFCodec or the latest stable versions of those tools (at the moment v3.4.6
+resp. v0.9.10). Using any recent version inbetween will most likely fail to
+compile FIRS correctly.
+Place both renum and grfcodec in the FIRS main directory or your system's PATH
+environment variable and run the makefile:
    make                  Compile the FIRS newgrf
-   make bundle           Compile and create a tar with directory structure and documentation
-   make install          Compile, tar and install to OpenTTD data directory (either guessed by the makefile or to be configured in Makefile.local)
-   make release          Compile and tar/zip with version information for shipping
-   make release-install  Compile, tar/zip with version information and install tar to data directory
+   make bundle           Compile and create a tar with directory structure and
+documentation
+   make install          Compile, tar and install to OpenTTD data directory
+(either guessed by the makefile or to be configured in Makefile.local)
+   make release          Compile and tar/zip with version information for
+shipping
+   make release-install  Compile, tar/zip with version information and install
+tar to data directory
 
-either 'make', 'make install', 'make bundle' or 'make release'. There's more options, but these are probably sufficient for you to know.
+either 'make', 'make install', 'make bundle' or 'make release'. There's more
+options, but these are probably sufficient for you to know.
 
 
 
@@ -109,7 +151,9 @@ either 'make', 'make install', 'make bundle' or 'make release'. There's more opt
 5 The FIRS NewGRF
 -----------------
 
-If you want to check the integrity of your grf or check whether your self-compiled grf is the the same as it should, compare the values shown ingame in the NewGRF selection window with these values:
+If you want to check the integrity of your grf or check whether your
+self-compiled grf is the the same as it should, compare the values shown ingame
+in the NewGRF selection window with these values:
 
 GRF Name : {{GRF_TITLE}}
 GRF ID   : {{GRF_ID}}
@@ -129,7 +173,8 @@ This version of FIRS is created using repository version {{REPO_REVISION}}
   Source repository and issue tracker.
   
   General Discussion: http://www.tt-forums.net/viewtopic.php?t=44177
-  Discussion of the FIRS releases. Talk about it's features, discuss bugs and ventilating your ideas.
+  Discussion of the FIRS releases. Talk about it's features, discuss bugs and
+ventilating your ideas.
   
   Development Discussion: http://www.tt-forums.net/viewtopic.php?t=41607
   Follow the latest development.
