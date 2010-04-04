@@ -5,6 +5,8 @@
 // Define our error messages here for further easy re-use:
 #define INCOMPATIBLE_GRF(x) -1 * 0 0B 03 7F FF "\8EE01: Incompatible set: "x"\90Consult FIRS ReadMe: \8E\0Dhttp://bundles.openttdcoop.org/firs/releases/readme.txt" 00
 #define INCOMPATIBLE_PARAM(x,y) -1 * 0 0B 03 7F FF "\8EE02: Incompatible parameter:\8E"x" parmeter "y". \90Consult FIRS ReadMe: \8E\0Dhttp://bundles.openttdcoop.org/firs/releases/readme.txt" 00
+#define INCOMPATIBLE_COMBI(x) -1 * 0 0B 03 7F FF "\8EE01: Incompatible newgrf combination:\0D\90"x"\0D\8EConsult FIRS ReadMe:\90\0Dhttp://bundles.openttdcoop.org/firs/releases/readme.txt" 00
+
 
 //Checks for incompatible sets
 //Checks if incompatible set is not nor will be active. If incompatible set active, then skip to appropriate error message (FF).
@@ -110,49 +112,71 @@ INCOMPATIBLE_PARAM("CanSet", "#2 != 0")
 //No compatible grfs loaded
 -1 * 0 07 COMPATIBILITY_PARAM1 04 \7= \d0 F0
 //FIRS +	ECS Town	(1)
--1 * 0 07 COMPATIBILITY_PARAM1 04 \7= \d1 FC
+-1 * 0 07 COMPATIBILITY_PARAM1 04 \7! \d1 01
+INCOMPATIBLE_COMBI("ECS Town")
 //FIRS +	ECS Town	+ Regearing	(129)
--1 * 0 07 COMPATIBILITY_PARAM1 04 \7= \d129 FC
+-1 * 0 07 COMPATIBILITY_PARAM1 04 \7! \d129 01
+INCOMPATIBLE_COMBI("ECS Town + Regearing")
 //FIRS +	ECS Town	+ ECS Machinery	(9)
--1 * 0 07 COMPATIBILITY_PARAM1 04 \7= \d9 FC
+-1 * 0 07 COMPATIBILITY_PARAM1 04 \7! \d9 01
+INCOMPATIBLE_COMBI("ECS Town + ECS Machinery")
 //FIRS +	ECS Town	+ ECS Wood	(17)
--1 * 0 07 COMPATIBILITY_PARAM1 04 \7= \d17 FC
+-1 * 0 07 COMPATIBILITY_PARAM1 04 \7! \d17 01
+INCOMPATIBLE_COMBI("ECS Town + Wood")
 //FIRS +	ECS Basic	(2)
--1 * 0 07 COMPATIBILITY_PARAM1 04 \7= \d2 FC
+-1 * 0 07 COMPATIBILITY_PARAM1 04 \7! \d2 01
+INCOMPATIBLE_COMBI("ECS Basic")
 //FIRS +	ECS Basic	+ Regearing	(130)
--1 * 0 07 COMPATIBILITY_PARAM1 04 \7= \d130 FC
+-1 * 0 07 COMPATIBILITY_PARAM1 04 \7! \d130 01
+INCOMPATIBLE_COMBI("ECS Basic + Regearing")
 //FIRS +	ECS Basic	+ ECS Machinery	(10)
--1 * 0 07 COMPATIBILITY_PARAM1 04 \7= \d10 FC
+-1 * 0 07 COMPATIBILITY_PARAM1 04 \7! \d10 01
+INCOMPATIBLE_COMBI("ECS Basic + Machinery")
 //FIRS +	ECS Basic	+ ECS Wood	(18)
--1 * 0 07 COMPATIBILITY_PARAM1 04 \7= \d18 FC
+-1 * 0 07 COMPATIBILITY_PARAM1 04 \7! \d18 01
+INCOMPATIBLE_COMBI("ECS Basic + Wood")
 //FIRS +	ECS Chemical	(4)
--1 * 0 07 COMPATIBILITY_PARAM1 04 \7= \d4 FC
+-1 * 0 07 COMPATIBILITY_PARAM1 04 \7! \d4 01
+INCOMPATIBLE_COMBI("ECS Chemical")
 //FIRS +	ECS Chemical	+ Regearing	(132)
--1 * 0 07 COMPATIBILITY_PARAM1 04 \7= \d132 FC
+-1 * 0 07 COMPATIBILITY_PARAM1 04 \7! \d132 01
+INCOMPATIBLE_COMBI("ECS Chemical + Regearing")
 //FIRS +	ECS Chemical	+ ECS Machinery	(12)
--1 * 0 07 COMPATIBILITY_PARAM1 04 \7= \d12 FC
+-1 * 0 07 COMPATIBILITY_PARAM1 04 \7! \d12 01
+INCOMPATIBLE_COMBI("ECS Chemical + Machinery")
 //FIRS +	ECS Chemical	+ ECS Wood	(20)
--1 * 0 07 COMPATIBILITY_PARAM1 04 \7= \d20 FC
+-1 * 0 07 COMPATIBILITY_PARAM1 04 \7! \d20 01
+INCOMPATIBLE_COMBI("ECS Chamical + Wood")
 //FIRS +	ECS Machinery	(8)
--1 * 0 07 COMPATIBILITY_PARAM1 04 \7= \d8 FC
+-1 * 0 07 COMPATIBILITY_PARAM1 04 \7! \d8 01
+INCOMPATIBLE_COMBI("ECS Machinery")
 //FIRS +	ECS Machinery	+ Regearing	(136)
--1 * 0 07 COMPATIBILITY_PARAM1 04 \7= \d136 FC
+-1 * 0 07 COMPATIBILITY_PARAM1 04 \7! \d136 01
+INCOMPATIBLE_COMBI("ECS Machinery + Regearing")
 //FIRS +	ECS Machinery	+ ECS Wood	(24)
--1 * 0 07 COMPATIBILITY_PARAM1 04 \7= \d24 FC
+-1 * 0 07 COMPATIBILITY_PARAM1 04 \7! \d24 01
+INCOMPATIBLE_COMBI("ECS Machinery + Wood")
 //FIRS +	ECS Machinery	+ ECS Wood	+ Regearing	(152)
--1 * 0 07 COMPATIBILITY_PARAM1 04 \7= \d152 FC
+-1 * 0 07 COMPATIBILITY_PARAM1 04 \7! \d152 01
+INCOMPATIBLE_COMBI("ECS Machinery + Wood + Regearing")
 //FIRS +	ECS Wood	(16)
--1 * 0 07 COMPATIBILITY_PARAM1 04 \7= \d16 FC
+-1 * 0 07 COMPATIBILITY_PARAM1 04 \7! \d16 01
+INCOMPATIBLE_COMBI("ECS Wood")
 //FIRS +	ECS Wood	+ Regearing	(144)
--1 * 0 07 COMPATIBILITY_PARAM1 04 \7= \d144 FC
+-1 * 0 07 COMPATIBILITY_PARAM1 04 \7! \d144 01
+INCOMPATIBLE_COMBI("ECS Wood + Regearing")
 //FIRS +	ECS Construction	(32)
--1 * 0 07 COMPATIBILITY_PARAM1 04 \7= \d32 FC
+-1 * 0 07 COMPATIBILITY_PARAM1 04 \7! \d32 01
+INCOMPATIBLE_COMBI("ECS Construction")
 //FIRS +	ECS Agricultural	(64)
--1 * 0 07 COMPATIBILITY_PARAM1 04 \7= \d64 FC
+-1 * 0 07 COMPATIBILITY_PARAM1 04 \7! \d64 01
+INCOMPATIBLE_COMBI("ECS Agricultural")
 //FIRS +	Regearing	(128)
--1 * 0 07 COMPATIBILITY_PARAM1 04 \7= \d128 F0 	//do not notify about compatibility mode, as no cargos moved
+-1 * 0 07 COMPATIBILITY_PARAM1 04 \7! \d128 F0 	//do not notify about compatibility mode, as no cargos moved
 //Else goto error FD
--1 * 0 07 9A 01 \71 00 FD
+-1 * 0 07 9A 01 \71 00 01
+INCOMPATIBLE_COMBI("N/A (other newgrfs)")
+
 
 
 
