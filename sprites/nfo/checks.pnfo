@@ -2,40 +2,59 @@
 
 // NewGRF parameters used by this file are defined in ids.pnfo
 
+// Define our error messages here for further easy re-use:
+#define INCOMPATIBLE_GRF(x) -1 * 0 0B 03 7F FF "\8EE01: Incompatible set: "x"\90Consult FIRS ReadMe: \8E\0Dhttp://bundles.openttdcoop.org/firs/releases/readme.txt" 00
+#define INCOMPATIBLE_PARAM(x,y) -1 * 0 0B 03 7F FF "\8EE02: Incompatible parameter:\8E"x" parmeter "y". \90Consult FIRS ReadMe: \8E\0Dhttp://bundles.openttdcoop.org/firs/releases/readme.txt" 00
+
 //Checks for incompatible sets
 //Checks if incompatible set is not nor will be active. If incompatible set active, then skip to appropriate error message (FF).
 //ECS Chemical Vector (I) (4D 65 6F 93)
--1 * 0 07 88 04 \7GG 4D 65 6F 93 FF
+-1 * 0 07 88 04 \7gg 4D 65 6F 93 01
+INCOMPATIBLE_GRF("ECS Chemical Vector")
 //ECS Basic for Arctic	(4D 65 6F 98)
--1 * 0 07 88 04 \7GG 4D 65 6F 98 FF
+-1 * 0 07 88 04 \7gg 4D 65 6F 98 01
+INCOMPATIBLE_GRF("ESC Basic for Arctic")
 //ECS Basic for Tropic	(4D 65 6F 99)
--1 * 0 07 88 04 \7GG 4D 65 6F 99 FF
+-1 * 0 07 88 04 \7gg 4D 65 6F 99 01
+INCOMPATIBLE_GRF("ECS Basic for Tropic")
 //New Cargos by George	(4D 65 6F 81)
--1 * 0 07 88 04 \7GG 4D 65 6F 81 FF
+-1 * 0 07 88 04 \7gg 4D 65 6F 81 01
+INCOMPATIBLE_GRF("New Cargos")
 //New Cargos by George - Petrol and Tourists	(4D 65 6F 82)
--1 * 0 07 88 04 \7GG 4D 65 6F 82 FF
+-1 * 0 07 88 04 \7gg 4D 65 6F 82 01
+INCOMPATIBLE_GRF("New Cargos Petrol + Tourists")
 //UKRS Industries	(44 44 06 01)
--1 * 0 07 88 04 \7GG 44 44 06 01 FF
+-1 * 0 07 88 04 \7gg 44 44 06 01 01
+INCOMPATIBLE_GRF("UKRS Industries")
 //Manual Industries	(66 72 4D 49)
--1 * 0 07 88 04 \7GG 66 72 4D 49 FF
+-1 * 0 07 88 04 \7gg 66 72 4D 49 01
+INCOMPATIBLE_GRF("Manual Industries")
 //Tourist Set	(53 4C 54 55)
--1 * 0 07 88 04 \7GG 53 4C 54 55 FF
+-1 * 0 07 88 04 \7gg 53 4C 54 55 01
+INCOMPATIBLE_GRF("Tourist Set")
 //Only_decrease neutraliser for Oil Wells in temperate terrain	(53 5A 13 44)
--1 * 0 07 88 04 \7GG 53 5A 13 44 FF
+-1 * 0 07 88 04 \7gg 53 5A 13 44 01
+INCOMPATIBLE_GRF("Oil well decrease neutralizer")
 
 //Following set compatibility is undecided, but set to false for now.
 //UKRS Brick Chain	(44 44 06 03)
--1 * 0 07 88 04 \7GG 44 44 06 03 FF
+-1 * 0 07 88 04 \7gg 44 44 06 03 01
+INCOMPATIBLE_GRF("UKRS Brick Chain")
 //Pikka's Basic Industries	(44 44 06 02)
--1 * 0 07 88 04 \7GG 44 44 06 02 FF
+-1 * 0 07 88 04 \7gg 44 44 06 02 01
+INCOMPATIBLE_GRF("Pikka Basic Industries")
 //NewCargo by Michael Blunck	(6D 62 08 00)
--1 * 0 07 88 04 \7GG 6D 62 08 00 FF
+-1 * 0 07 88 04 \7gg 6D 62 08 00 01
+INCOMPATIBLE_GRF("NewCargos by Michael Blunck")
 //Alpine Climate by Michael Blunck	(6D 62 07 00)
--1 * 0 07 88 04 \7GG 6D 62 07 00 FF
+-1 * 0 07 88 04 \7gg 6D 62 07 00 01
+INCOMPATIBLE_GRF("Alpine Climate")
 //Station's name from nearby industry	(41 4C 01 01)
--1 * 0 07 88 04 \7GG 41 4C 01 01 FF
+-1 * 0 07 88 04 \7gg 41 4C 01 01 01
+INCOMPATIBLE_GRF("Nearby Station Names")
 //Lumber Mill 1.0 (2008-11-20)	(4D 47 08 01)
--1 * 0 07 88 04 \7GG 4D 47 08 01 FF
+-1 * 0 07 88 04 \7gg 4D 47 08 01 01
+INCOMPATIBLE_GRF("Lumber Mill 1.0")
 
 //Reset parameters 01 and 00
 -1 * 0 0D COMPATIBILITY_PARAM2 \D= FF 00 00 00 00 00
@@ -46,11 +65,12 @@
 //First load specific parameter value into FIRS parameter 00, then check loaded parameter value.
 //NA City Set	(43 41 43 61) (goto error message if parm 2 (01h) != 0)
 -1 * 0 0D COMPATIBILITY_PARAM2 \D= 01 FE 43 41 43 61
--1 * 0 07 COMPATIBILITY_PARAM2 01 \7! 00 FE
+-1 * 0 07 COMPATIBILITY_PARAM2 01 \7= 00 01
+INCOMPATIBLE_PARAM("NA City Set", "#2 != 0")
 //CanSet	(43 41 53 61) (goto error message if parm 2 (01h) != 0)
 -1 * 0 0D COMPATIBILITY_PARAM2 \D= 01 FE 43 41 53 61
--1 * 0 07 COMPATIBILITY_PARAM2 01 \7! 00 FE
-
+-1 * 0 07 COMPATIBILITY_PARAM2 01 \7= 00 01
+INCOMPATIBLE_PARAM("CanSet", "#2 != 0")
 
 
 //Set bitmask for compatible sets
