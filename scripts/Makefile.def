@@ -8,7 +8,7 @@ shell = /bin/sh
 ################################################################
 # Build parameters and programmes
 NFORENUM_FLAGS ?=
-GRFCODEC_FLAGS ?= -e -p 2
+GRFCODEC_FLAGS ?= -e -p 2 -c
 TAR_FLAGS      ?= -cf
 ZIP_FLAGS      ?= -r
 SRCZIP_FLAGS   ?=

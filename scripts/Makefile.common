@@ -8,8 +8,18 @@ clean:
 	$(_V)-rm -rf $(MAKEFILE_DEP) $(MAIN_TARGET) $(SRC_DIR)/*.nfo $(DOC_FILENAMES) $(REV_FILENAME) md5.check
 	$(_V)-rm -rf $(CLEAN_ADD)
 
-mrproper: clean
-	$(_V)-rm -rf $(DIR_BASE)* $(SRC_DIR)/$(FILENAME_STUB) $(DIR_NAME_SRC) $(MD5_FILENAME)
+# More thoroughly clean the source tree. Should restore the initial
+# state of a tarball (except for manual changes to Makefile.local, of
+# course).
+distclean: clean
+	$(_V)-rm -rf $(SRC_DIR)/$(FILENAME_STUB) $(DIR_NAME_SRC) $(DIR_NAME)
+	$(_V)for i in `ls -d $(DIR_BASE)*`; do if [ "$$i" != "$(MD5_FILENAME)" ]; then rm $$i; fi; done
+
+# Even more thoroughly clean the tree. Intended to be used on a
+# repository checkout. Also cleans files that are in a source tarball,
+# but not in the repository.
+mrproper: distclean
+	$(_V)-rm -rf $(MD5_FILENAME)
 
 # Print the output for a number of variables which define this newgrf.
 test :
