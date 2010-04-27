@@ -54,7 +54,7 @@
 // snow
 #include "i_textilemill_tiles_layouts/textilemill_tiles_snow.pnfo"
 #include "i_textilemill_tiles_layouts/textilemill_layouts.pnfo"
-                   
+                                     
 -1 * 0 02 09 A3
 	82 44 //check layout number (lowest byte of related industry)
 	00 FF //don't shift, don't mask
@@ -73,7 +73,6 @@
 	  \wxA2 \b1 \b1 //<set-id \w> <low-range> <high-range>  // desert
 	  \wxA3 \b4 \b4 //<set-id \w> <low-range> <high-range>  // snow
 	\wxA1 //<default>
-
 
 
 //Action3 attach sprites to industry tile
