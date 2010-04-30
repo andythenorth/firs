@@ -105,8 +105,8 @@
 	24 STR_STA_FARM //default text for nearby station
 	10 CARGO_GRAIN FF //production cargo types (word; fill unused with FFh)
 	11 CARGO_FARMSUPPLIES FF FF FF //acceptance cargo types (dword; fill unused with FFh)
-	12 \b10 //production multiplier cargo 1
-	13 \b10 //production multiplier cargo 2
+	12 \b02 //production multiplier cargo 1
+	13 \b02 //production multiplier cargo 2
 	1C \w84 \w84 //input cargo 1 multiplier (dword M1 M2; output_typen = X*Mn/256)
 	1D \w0  \w0  //input cargo 2 multiplier
 	1E \w0  \w0  //input cargo 3 multiplier
