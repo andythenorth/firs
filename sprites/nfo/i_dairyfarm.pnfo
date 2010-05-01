@@ -175,9 +175,9 @@
 	24 STR_STA_FARM //default text for nearby station
 	10 CARGO_LIVESTOCK CARGO_MILK //production cargo types (word; fill unused with FFh)
 	11 CARGO_FARMSUPPLIES FF FF FF //acceptance cargo types (dword; fill unused with FFh)
-	12 \b8 //production multiplier cargo 1
-	13 \b8 //production multiplier cargo 2
-	1C \w38 \w38 //input cargo 1 multiplier (dword M1 M2; output_typen = X*Mn/256)
+	12 \b2 //production multiplier cargo 1
+	13 \b2 //production multiplier cargo 2
+	1C \w0  \w0 //input cargo 1 multiplier (dword M1 M2; output_typen = X*Mn/256)
 	1D \w0  \w0  //input cargo 2 multiplier
 	1E \w0  \w0  //input cargo 3 multiplier
 	14 \b05 //minimal cargo distribution amount
