@@ -47,8 +47,20 @@
 
 
 // production changes
--1 * 0 02 0A D5 //random chance of production decrease if conditions met...  
-  81 18 00 00 //randomise
+-1 * 0 02 0A D7 //random chance of closure if conditions met...  
+  81 18 00 3F //randomise
+  \b1 //range
+    0D 80 00 00 //lookat cb 35 or 29 in wiki to see what the returned value means
+  00 80 //else no change	
+
+-1 * 0 02 0A D6 //low random chance of production decrease if conditions met...  
+  81 18 00 1F //randomise
+  \b1 //range
+    0D 80 00 00 //lookat cb 35 or 29 in wiki to see what the returned value means
+  00 80 //else no change	
+
+-1 * 0 02 0A D5 //high random chance of production decrease if conditions met...  
+  81 18 00 03 //randomise
   \b1 //range
     0D 80 00 00 //lookat cb 35 or 29 in wiki to see what the returned value means
   00 80 //else no change	
@@ -57,8 +69,9 @@
   89
     93 20 \dxFFFFFFFF //check current production multiplier
     10 1A 00 \dx02 //store in persistent storage
-  \b1 //range
-    00 80 \d00 \d04 //lookat cb 35 or 29 in wiki to see what the returned value means
+  \b2 //range
+    D7 00 \d00 \d04 //
+    D6 00 \d05 \d32 //
   D5 00 //
 
 -1 * 0 02 0A D3 //random production increase if production-boosting cargo stockpiled...  
