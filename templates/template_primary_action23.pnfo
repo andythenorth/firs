@@ -47,6 +47,20 @@
 
 
 // production changes
+-1 * 0 02 0A D5 //random chance of production decrease if conditions met...  
+  81 18 00 00 //randomise
+  \b1 //range
+    0D 80 00 00 //lookat cb 35 or 29 in wiki to see what the returned value means
+  00 80 //else no change	
+
+-1 * 0 02 0A D4 //  
+  89
+    93 20 \dxFFFFFFFF //check current production multiplier
+    10 1A 00 \dx02 //store in persistent storage
+  \b1 //range
+    00 80 \d00 \d04 //lookat cb 35 or 29 in wiki to see what the returned value means
+  D5 00 //
+
 -1 * 0 02 0A D3 //random production increase if production-boosting cargo stockpiled...  
   81 18 00 03 //randomise
   \b1 //range
@@ -61,7 +75,7 @@
     7D 01 00  \dxFFFFFFFF //get local storage amount for delivered cargo 1 in last month
   \b1 //range
     D3 00  \d01  \dxFFFFFFFF    
-  00 80 //else no change
+  D4 00 //else no change
 
 -1 * 0 02 0A D1 //handle cb 35 monthly production change 
   89 // 
