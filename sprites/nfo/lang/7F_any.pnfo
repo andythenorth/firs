@@ -67,7 +67,7 @@
 -1 * 0 04 0B LANG_ID2 01 STR_CRG_MANUFACTURINGSUPPLIES_CTYPE "Manufacturing Supplies" 00
 -1 * 0 04 0B LANG_ID2 01 STR_CRG_MANUFACTURINGSUPPLIES_1UNIT "\7C crate of manufacturing supplies" 00
 -1 * 0 04 0B LANG_ID2 01 STR_CRG_MANUFACTURINGSUPPLIES_MUNIT "\7C crates of manufacturing supplies" 00
--1 * 0 04 0B LANG_ID2 01 STR_CRG_MANUFACTURINGSUPPLIES_TABBR "\0EPK" 00
+-1 * 0 04 0B LANG_ID2 01 STR_CRG_MANUFACTURINGSUPPLIES_TABBR "\0EMS" 00
 
 //Farm supplies
 -1 * 0 04 0B LANG_ID2 01 STR_CRG_FARMSUPPLIES_CTYPE "Farm Supplies" 00
@@ -203,7 +203,7 @@
 -1 * 0 04 0A LANG_ID2 01 STR_INFO_ACCEPTING_ES D0 "\0D" 00 // empty line breaks to stop window size jumping around 
 -1 * 0 04 0A LANG_ID2 01 STR_INFO_NOT_ACCEPTING_ES D0 "\94Not accepting engineering supplies\98\0D(Limit Reached)" 00
 -1 * 0 04 0A LANG_ID2 01 STR_INFO_ACCEPTING_FS D0 "\0D" 00 // empty line breaks to stop window size jumping around 
--1 * 0 04 0A LANG_ID2 01 STR_INFO_NOT_ACCEPTING_FS D0 "\94Not accepting manufacturing supplies\98\0D(Limit Reached)" 00
+-1 * 0 04 0A LANG_ID2 01 STR_INFO_NOT_ACCEPTING_FS D0 "\94Not accepting farm supplies\98\0D(Limit Reached)" 00
 -1 * 0 04 0A LANG_ID2 01 STR_INFO_ACCEPTING_MS D0 "\0D" 00 // empty line breaks to stop window size jumping around 
 -1 * 0 04 0A LANG_ID2 01 STR_INFO_NOT_ACCEPTING_MS D0 "\94Not accepting manufacturing supplies\98\0D(Limit Reached)" 00
 -1 * 0 04 0A LANG_ID2 01 STR_INFO_ES_PRIMARY_BOOST D0 "\98Engineering supplies may increase production.\0D\90  \7B crates delivered this month" 00
