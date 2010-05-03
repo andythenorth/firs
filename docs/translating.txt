@@ -3,17 +3,18 @@ In order to translate firs copy /sprites/nfo/lang/7F_any.pnfo and rename it appr
 Next, open the file using your favourite plain text editor and first change the few bits at the top:
 //Language: <language>
 //Lang-ID: <id> -> <id+80h>
-
-Next, do a search and replace for "04 0B FF", replacing all of those instances with "04 0B <id+80h>" (without the quotes).
+#define LANG_ID  <id>
+#define LANG_ID2 <id+80h>
 
 <id+80h> is the actual ID from the list (http://wiki.ttdpatch.net/tiki-index.php?page=Action4#language_id) with 80 (in hex) added to it.
 So if you're translating to Swedish for instance, <id> equals 2E and thus <id+80h> equals AE, so in that case use "04 0B AE" for the replace.
 
-Now go ahead and translate the strings. Only translate things enclosed in quotes ("). Under no circumstance change anything else (except the search-and-replace above) or you'll most likely break things.
+Now go ahead and translate the strings. Only translate things enclosed in quotes ("). Under no circumstance change anything else or you'll most likely break things.
 
-Some strings have a special escape sequence in it. Make sure to keep this sequence in the string, as the game uses one of the following to put in place of the escape sequence. If your language requires it, you can move the particular escape sequence about the string.
+Some strings have a special escape sequence in it. Make sure to keep this sequence in the string, as the game uses one of the following to put in place of the escape sequence. If your language requires it, you can move the particular escape sequence about the string. Escape strings that are not in this list should not be moved.
 \80 = name of nearby town
 \7C = amount of cargo
+\7B = amount of cargo
 \87 = amount of liquid cargo including 'litres' suffix
 \0E = indication to use small font
 
@@ -21,4 +22,5 @@ The various two-letter strings (preceded by \0E) are abbreviations for the cargo
 
 When done, submit the file in the topic http://www.tt-forums.net/viewtopic.php?t=41607. We only accept new translations after the release of version 0.1.0, so you might want to wait a bit before starting a translation.
 
-Developers: also add a new translation to Makefile.config
+Developers: also add a new translation to firs.pnfo
+

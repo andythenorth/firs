@@ -1,0 +1,21 @@
+//Strings that will not get translated.
+
+//Format: action 04; feature; langID with bit 7 set; 01; stringID; "string"; 00
+-1 * 0 04 0A FF 01 STR_INFO_DEBUG_1 D0 "\98------------ DEBUG ------------\0D"
+                                       "\0D\98Prod. ratio (out/in):\0D\941st Cargo: \7C/8 \0D2nd Cargo: \7C/8 \0D3rd Cargo: \7C/8 \0D"
+                                       "\0D\98Cargo consumption (when cb ran):\0D\94...From 1st Cargo: \7C \0D...From 2nd Cargo: \7C \0D...From 3rd Cargo: \7C \0D"
+                                       "\0D\98Total production :\0D\941st Cargo: \7C \0D2nd Cargo: \7C \0D"
+                                       "\0D\98Output production limit (per input cargo):\0D\94\7B" 00
+-1 * 0 04 0A FF 01 STR_INFO_DEBUG_2 D0 "\98------------ DEBUG ------------\0D"
+                                       "\0D\98Prod. ratio (out/in):\0D\942nd Cargo: \7C/8 \0D3rd Cargo: \7C/8 \0D"
+                                       "\0D\98Cargo consumption (when cb ran):\0D\94...From 2nd Cargo: \7C \0D...From 3rd Cargo: \7C \0D"
+                                       "\0D\98Total production :\0D\941st Cargo: \7C \0D2nd Cargo: \7C \0D"
+                                       "\0D\98Production Supplies consumed last cycle:\0D\94\7B"
+                                       "\0D\98Output production limit (per input cargo):\0D\94\7B" 00
+-1 * 0 04 0A FF 01 STR_INFO_DEBUG_3 D0 "\98------------ DEBUG ------------\0D"
+                                       "\0D\98Current prod. contribution each cargo:\0D\941st Cargo: \7C/8 \0D2nd Cargo: \7C/8 \0D3rd Cargo: \7C/8 \0D"
+                                       "\0D\98Cargo consumption (when cb ran):\0D\94...From 1st Cargo: \7C \0D...From 2nd Cargo: \7C \0D...From 3rd Cargo: \7C \0D"
+                                       "\0D\98Total production :\0D\941st Cargo: \7C \0D2nd Cargo: \7C \0D"
+                                       "\0D\98Current total production ratio:\0D\94\7C \0D"
+                                       "\0D\98'Combinatory production ticker':\0D\941st Cargo: \7C \0D2nd Cargo: \7C \0D3rd Cargo: \7C" 00
+
