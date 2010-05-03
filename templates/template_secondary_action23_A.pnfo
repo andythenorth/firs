@@ -46,7 +46,9 @@
 -1 * 0 02 0A 00 //store a value for the number of times to repeat the cb (typically 0)
     89 // 
       1A 20 \dx00 // create 0
-      \2sto 1A 00 \dx00 //store in register
+      \2sto 1A 20 \dx00 //store in register
+      0F // renum gets sad about passing 0 to the range check, so create 1 and pass that instead <roll>   
+      1A 00 \d01 //create value 1
     \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
        01 00  00 00 00 00  00 00 00 00
      01 00 //default
