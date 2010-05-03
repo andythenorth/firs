@@ -99,7 +99,7 @@
 
 //-1 * 0 02 09 <set-id> <type> <variable> <varadjust> <nvar> (<set-id> <low-range> <high-range>){n} <default>
 
--1 * 0 02 09 B1 //layout 1
+-1 * 0 02 09 B1 //layout
 	85 43 //check relative position (00yx[YYXX])
 	00 FF FF //don't shift, don't mask
 	\b10 //number of ranges to check (number of tiles) [range: XX YY  XX YY]
@@ -115,7 +115,7 @@
     \wx09   05 01  05 01
 	\wx0A //04 01  04 01 <default>
 
--1 * 0 02 09 B2 //layout 1
+-1 * 0 02 09 B2 //layout
 	85 43 //check relative position (00yx[YYXX])
 	00 FF FF //don't shift, don't mask
 	\b14 //number of ranges to check (number of tiles) [range: XX YY  XX YY]
@@ -134,7 +134,30 @@
     \wx09   03 02  03 02
     \wx08   03 03  03 03
 	\wx0A //04 01  04 01 <default>
-                   
+
+-1 * 0 02 09 B3 //layout
+	85 43 //check relative position (00yx[YYXX])
+	00 FF FF //don't shift, don't mask
+	\b17 //number of ranges to check (number of tiles) [range: XX YY  XX YY]
+    \wx01   00 00  00 00
+    \wx02   00 01  00 01
+    \wx05   00 02  00 02
+    \wx05   00 03  00 03
+    \wx00   00 04  00 04
+    \wx00   00 05  00 05
+    \wx00   01 00  01 00
+    \wx00   01 01  01 01
+    \wx04   01 02  01 02
+    \wx04   01 03  01 03
+    \wx0A   01 04  01 04
+    \wx07   01 05  01 05
+    \wx06   01 06  01 06
+    \wx03   02 02  02 02
+    \wx03   02 03  02 03
+    \wx09   02 04  02 04
+    \wx08   02 05  02 05
+	\wx0A //04 01  04 01 <default>                   
+
 
 -1 * 0 02 09 A0 
 	82 44 //check layout number (lowest byte of related industry)
@@ -142,6 +165,7 @@
 	\b2 //number of ranges to check (number of layouts)
     \wxB1 \b1 \b1 //<set-id \w> <low-range> <high-range>
     \wxB2 \b2 \b2 //<set-id \w> <low-range> <high-range>
+    \wxB3 \b3 \b3 //<set-id \w> <low-range> <high-range>
 	\wx00 //<default> (first tile layout available)
 
 
@@ -158,8 +182,8 @@
 //Action 0
 -1 * 0 00 0A \b26 01 IND_CEMENTPLANT //-1 * 0 00 0A <num-props> 01 <id>
 	08 IND_NULL //reuse original industry with this here ID
-	0A 02 //number of industry layouts
-		\d154 //size of layout definition +2 for termination
+	0A 03 //number of industry layouts
+		\d241 //size of layout definition +2 for termination
 		//layout:
 			00 00 FE TILE_CEMENTPLANT_1 00
 			00 01 FE TILE_CEMENTPLANT_1 00
@@ -193,6 +217,25 @@
 			03 01 FE TILE_CEMENTPLANT_1 00
 			03 02 FE TILE_CEMENTPLANT_1 00
 			03 03 FE TILE_CEMENTPLANT_1 00
+		00 80 //terminate layout definition
+		//layout:
+			00 00 FE TILE_CEMENTPLANT_1 00
+			00 01 FE TILE_CEMENTPLANT_1 00
+			00 02 FE TILE_CEMENTPLANT_1 00
+			00 03 FE TILE_CEMENTPLANT_1 00
+			00 04 FE TILE_GENERIC_SANDSTAITHES 00
+			00 05 FE TILE_GENERIC_SANDSTAITHES 00
+			01 00 FE TILE_CEMENTPLANT_1 00
+			01 01 FE TILE_CEMENTPLANT_1 00
+			01 02 FE TILE_CEMENTPLANT_1 00
+			01 03 FE TILE_CEMENTPLANT_1 00
+			01 04 FE TILE_CEMENTPLANT_1 00
+			01 05 FE TILE_CEMENTPLANT_1 00
+			01 06 FE TILE_CEMENTPLANT_1 00
+			02 02 FE TILE_CEMENTPLANT_1 00
+			02 03 FE TILE_CEMENTPLANT_1 00
+			02 04 FE TILE_CEMENTPLANT_1 00
+			02 05 FE TILE_CEMENTPLANT_1 00
 		00 80 //terminate layout definition
 	0B 04 //production flags 1h=extractive, 2h=organic, 4h=processing
 	0C STR_IND_CLOSE_GENERIC //industry closure message
