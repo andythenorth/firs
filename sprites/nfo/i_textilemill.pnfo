@@ -97,7 +97,7 @@
 -1 * 0 00 0A \b27 01 IND_TEXTILEMILL //-1 * 0 00 0A <num-props> 01 <id>
 	08 IND_NULL //reuse original industry with this here ID
 	0A 06 //number of industry layouts
-		\d237 //sum(size of layout definition +2 for termination)
+		\d247 //sum(size of layout definition +2 for termination)
 		//layout:
 			00 00 FE TILE_TEXTILEMILL_1 00 //xoffs yoffs FE newtile(W)
 			00 01 FE TILE_TEXTILEMILL_1 00 //xoffs yoffs FE newtile(W)

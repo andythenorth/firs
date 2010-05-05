@@ -4,18 +4,66 @@
 	85 43 //check relative position (00yx[YYXX])
 	00 FF FF //don't shift, don't mask
 	\b4 //number of ranges to check (number of tiles)
-    \wx00   02 01  02 01
-    \wx01   01 01  01 01
     \wx02   00 01  00 01
+    \wx01   01 01  01 01
     \wx03   02 00  02 00
+    \wx00   02 01  02 01
 	\wx04 //01 00  01 00 <default>
                  
 -1 * 0 02 09 B2 //layout 2
 	85 43 //check relative position (00yx[YYXX])
 	00 FF FF //don't shift, don't mask
-	\b4 //number of ranges to check (number of tiles)
-    \wx00   02 01  02 01
-    \wx01   01 01  01 01
+	\b5 //number of ranges to check (number of tiles)
     \wx02   00 01  00 01
     \wx03   01 00  01 00
+    \wx01   01 01  01 01
+    \wx05   02 00  02 00
+    \wx00   02 01  02 01
 	\wx04 //00 00  00 00 <default>)
+	
+-1 * 0 02 09 B3 //layout 2
+	85 43 //check relative position (00yx[YYXX])
+	00 FF FF //don't shift, don't mask
+	\b10 //number of ranges to check (number of tiles)
+    \wx02   00 00  00 00
+    \wx05   00 01  00 01
+    \wx01   01 00  01 00
+    \wx02   01 01  01 01
+    \wx00   02 00  02 00
+    \wx01   02 01  02 01
+    \wx04   03 00  03 00
+    \wx00   03 01  03 01
+    \wx03   04 00  04 00
+    \wx05   04 01  04 01
+	\wx04 //00 00  00 00 <default>)	
+	
+-1 * 0 02 09 B4 //layout 2
+	85 43 //check relative position (00yx[YYXX])
+	00 FF FF //don't shift, don't mask
+	\b10 //number of ranges to check (number of tiles)
+    \wx04   00 00  00 00
+    \wx05   00 01  00 01
+    \wx03   01 00  01 00
+    \wx05   01 01  01 01
+    \wx02   02 00  02 00
+    \wx02   02 01  02 01
+    \wx01   03 00  03 00
+    \wx01   03 01  03 01
+    \wx00   04 00  04 00
+    \wx00   04 01  04 01
+	\wx04 //00 00  00 00 <default>)	
+	
+-1 * 0 02 09 B5 //layout 2
+	85 43 //check relative position (00yx[YYXX])
+	00 FF FF //don't shift, don't mask
+	\b9 //number of ranges to check (number of tiles)
+    \wx04   00 00  00 00
+    \wx02   00 01  00 01
+    \wx02   00 02  00 02
+    \wx03   01 00  01 00
+    \wx01   01 01  01 01
+    \wx01   01 02  01 02
+    \wx05   02 00  02 00
+    \wx00   02 01  02 01
+    \wx00   02 02  02 02
+	\wx04 //00 00  00 00 <default>)		
