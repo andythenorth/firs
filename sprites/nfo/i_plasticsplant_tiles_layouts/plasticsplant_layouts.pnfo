@@ -4,11 +4,45 @@
 	85 43 //check relative position (00yx[YYXX])
 	00 FF FF //don't shift, don't mask
 	\b7 //number of ranges to check (number of tiles)
-	\wx00   00 01  01 01
-	\wx01   00 00  01 00
-	\wx02   04 02  04 02
-	\wx03   04 01  04 01
-	\wx04   04 00  04 00
-	\wx05   03 01  03 01
-	\wx06   02 01  02 01
+    \wx01   00 00  01 00
+    \wx00   00 01  01 01
+    \wx06   02 01  02 01
+    \wx05   03 01  03 01
+    \wx04   04 00  04 00
+    \wx03   04 01  04 01
+    \wx02   04 02  04 02
+	\wx07 //03 00  03 00 <default>
+
+-1 * 0 02 09 B2
+	85 43 //check relative position (00yx[YYXX])
+	00 FF FF //don't shift, don't mask
+	\b9 //number of ranges to check (number of tiles)
+    \wx06   00 01  00 01
+    \wx04   00 02  00 02
+    \wx07   01 00  01 00
+    \wx05   01 01  01 01
+    \wx04   02 00  02 00
+    \wx03   02 01  02 01
+    \wx02   02 02  02 02
+    \wx01   03 00  03 00
+    \wx00   03 01  03 01
+	\wx07 //03 00  03 00 <default>
+
+-1 * 0 02 09 B3
+	85 43 //check relative position (00yx[YYXX])
+	00 FF FF //don't shift, don't mask
+	\b13 //number of ranges to check (number of tiles)
+    \wx01   00 00  00 00
+    \wx00   00 01  00 01
+    \wx05   00 02  00 02
+    \wx06   00 03  00 03
+    \wx01   01 00  01 00
+    \wx00   01 01  01 01
+    \wx07   01 02  01 02
+    \wx05   01 03  01 03
+    \wx01   02 00  02 00
+    \wx00   02 01  02 01
+    \wx04   02 02  02 02
+    \wx03   02 03  02 03
+    \wx02   02 04  02 04
 	\wx07 //03 00  03 00 <default>
