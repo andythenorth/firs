@@ -28,7 +28,8 @@
 -1 sprites/pcx/industries/machineshop.pcx  10 10 09  31 64 -31 0
 -1 sprites/pcx/industries/machineshop.pcx  80 10 09  31 64 -31 0
 -1 sprites/pcx/industries/machineshop.pcx 150 10 09  31 64 -31 0
--1 sprites/pcx/industries/machineshop.pcx 220 10 09  31 64 -31 0
+
+-1 sprites/pcx/industries/machineshop.pcx 220 10 09  78 64 -54 -28
 
 -1 sprites/pcx/industries/machineshop.pcx 290 10 09  78 64 -31 -47
 -1 sprites/pcx/industries/machineshop.pcx 360 10 09  78 64 -31 -47
@@ -122,7 +123,7 @@
 -1 * 0 02 09 B1 //layout 1
 	85 43 //check relative position (00yx[YYXX])
 	00 FF FF //don't shift, don't mask
-	\b13 //number of ranges to check (number of tiles) [range: XX YY  XX YY]
+	\b12 //number of ranges to check (number of tiles) [range: XX YY  XX YY]
     \wx06   00 01  00 01
     \wx05   01 00  01 00
     \wx04   01 01  01 01
@@ -132,8 +133,7 @@
     \wx08   03 00  03 00
     \wx07   03 01  03 01
     \wx0B   03 02  03 02
-    \wx03   04 00  04 00
-    \wx01   04 01  04 01
+    \wx03   04 01  04 01
     \wx02   05 00  05 00
     \wx00   05 01  05 01                                   
 	\wx00 //00 00  00 00 <default>
@@ -141,7 +141,7 @@
 -1 * 0 02 09 B2 //layout 2
 	85 43 //check relative position (00yx[YYXX])
 	00 FF FF //don't shift, don't mask
-	\b13 //number of ranges to check (number of tiles) [range: XX YY  XX YY]
+	\b12 //number of ranges to check (number of tiles) [range: XX YY  XX YY]
     \wx06   00 01  00 01
     \wx05   01 00  01 00
     \wx04   01 01  01 01
@@ -152,7 +152,6 @@
     \wx07   03 01  03 01
     \wx0B   03 02  03 02
     \wx03   04 00  04 00
-    \wx01   04 01  04 01
     \wx02   05 00  05 00
     \wx00   05 01  05 01                                   
 	\wx00 //01 02  01 02 <default>
@@ -192,7 +191,7 @@
 			03 00 FE TILE_MACHINESHOP_1 00 //xoffs yoffs FE newtile(W)
 			03 01 FE TILE_MACHINESHOP_1 00
 			03 02 FE TILE_MACHINESHOP_1 00
-			04 00 FE TILE_MACHINESHOP_1 00 //xoffs yoffs FE newtile(W)
+			04 00 FE TILE_GENERIC_CONCRETE 00 //xoffs yoffs FE newtile(W)
 			04 01 FE TILE_MACHINESHOP_1 00
 			04 02 FE TILE_GENERIC_CONCRETE 00
 			05 00 FE TILE_MACHINESHOP_1 00 //xoffs yoffs FE newtile(W)
@@ -212,7 +211,7 @@
 			03 00 FE TILE_MACHINESHOP_1 00 //xoffs yoffs FE newtile(W)
 			03 01 FE TILE_MACHINESHOP_1 00
 			03 02 FE TILE_MACHINESHOP_1 00
-			04 00 FE TILE_MACHINESHOP_1 00 //xoffs yoffs FE newtile(W)
+			04 00 FE TILE_GENERIC_CONCRETE 00 //xoffs yoffs FE newtile(W)
 			04 01 FE TILE_MACHINESHOP_1 00
 			04 02 FE TILE_GENERIC_CONCRETE 00
 			05 00 FE TILE_MACHINESHOP_1 00 //xoffs yoffs FE newtile(W)
