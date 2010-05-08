@@ -23,7 +23,7 @@
 //Industry tile sprites; one sprite for each tile; eventually more for each tile to include  construction stages
 
 //Tile action 1
--1 * 0 01 09 \b23 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
+-1 * 0 01 09 \b14 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
 // Format: spritenum pcxfile xpos ypos compression ysize xsize xrel yrel
 -1 sprites/pcx/industries/machineshop.pcx  10 10 09  31 64 -31 0
 -1 sprites/pcx/industries/machineshop.pcx  80 10 09  31 64 -31 0
@@ -38,180 +38,124 @@
 -1 sprites/pcx/industries/machineshop.pcx 570 10 09  85 64 -31 -54
 -1 sprites/pcx/industries/machineshop.pcx 640 10 09  85 64 -31 -54
 
--1 sprites/pcx/industries/machineshop.pcx 710 10 09  31 64 -31 0
-
 -1 sprites/pcx/industries/machineshop.pcx 780 10 09  31 64 -31 0
 -1 sprites/pcx/industries/machineshop.pcx 850 10 09  31 64 -31 0
 -1 sprites/pcx/industries/machineshop.pcx 920 10 09  49 64 -31 -18
 
--1 sprites/pcx/industries/machineshop.pcx  10 50 09  31 64 -31 0
--1 sprites/pcx/industries/machineshop.pcx  80 50 09  31 64 -31 0
--1 sprites/pcx/industries/machineshop.pcx 150 50 09  31 64 -31 0
--1 sprites/pcx/industries/machineshop.pcx 220 50 09  31 64 -31 0
--1 sprites/pcx/industries/machineshop.pcx 710 50 09  31 64 -31 0
--1 sprites/pcx/industries/machineshop.pcx 780 50 09  31 64 -31 0
-
--1 sprites/pcx/industries/machineshop.pcx 150 90 09  32 64 -31 -1
--1 sprites/pcx/industries/machineshop.pcx 220 90 09  31 64 -31 0
 // ground sprite
 -1 sprites/pcx/industries/groundtiles.pcx  80 10 09   31 64 -31   0
 
 
 //Tile action 2 
 -1 * 0 02 09 00 00 //-1 * 0 02 09 <set-id> 00
-	\dx80008016 //groundsprite
+	\dx8000800D //groundsprite
 	\dx80008000 //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b16 //xextent yextent zextent
 -1 * 0 02 09 01 00 //-1 * 0 02 09 <set-id> 00
-	\dx80008016 //groundsprite
+	\dx8000800D //groundsprite
 	\dx80008001 //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b16 //xextent yextent zextent
 -1 * 0 02 09 02 00 //-1 * 0 02 09 <set-id> 00
-	\dx80008016 //groundsprite
+	\dx8000800D //groundsprite
 	\dx80008002 //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b16 //xextent yextent zextent
 -1 * 0 02 09 03 00 //-1 * 0 02 09 <set-id> 00
-	\dx80008016 //groundsprite
+	\dx8000800D //groundsprite
 	\dx80008003 //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b16 //xextent yextent zextent
 
 -1 * 0 02 09 04 00 //-1 * 0 02 09 <set-id> 00
-	\dx80008016 //groundsprite
+	\dx8000800D //groundsprite
 	\dx80008004 //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b32 //xextent yextent zextent
 -1 * 0 02 09 05 00 //-1 * 0 02 09 <set-id> 00
-	\dx80008016 //groundsprite
+	\dx8000800D //groundsprite
 	\dx80008005 //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b32 //xextent yextent zextent
 -1 * 0 02 09 06 00 //-1 * 0 02 09 <set-id> 00
-	\dx80008016 //groundsprite
+	\dx8000800D //groundsprite
 	\dx80008006 //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b32 //xextent yextent zextent
 
 -1 * 0 02 09 07 00 //-1 * 0 02 09 <set-id> 00
-	\dx80008016 //groundsprite
+	\dx8000800D //groundsprite
 	\dx80008007 //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b64 //xextent yextent zextent
 -1 * 0 02 09 08 00 //-1 * 0 02 09 <set-id> 00
-	\dx80008016 //groundsprite
+	\dx8000800D //groundsprite
 	\dx80008008 //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b64 //xextent yextent zextent
 -1 * 0 02 09 09 00 //-1 * 0 02 09 <set-id> 00
-	\dx80008016 //groundsprite
+	\dx8000800D //groundsprite
 	\dx80008009 //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b64 //xextent yextent zextent
 
--1 * 0 02 09 0A 00 //-1 * 0 02 09 <set-id> 00
-	\dx8000800A //groundsprite
-	\d0 //building sprite
-	\b0 \b0 //xofs yofs
-	\b16 \b16 \b0 //xextent yextent zextent
-
 -1 * 0 02 09 0B 00 //-1 * 0 02 09 <set-id> 00
-	\dx80008016 //groundsprite
-	\dx8000800B //building sprite
+	\dx8000800D //groundsprite
+	\dx8000800A //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b16 //xextent yextent zextent
 -1 * 0 02 09 0C 00 //-1 * 0 02 09 <set-id> 00
-	\dx8000800A //groundsprite
-	\dx8000800C //building sprite
+	\dx8000800D //groundsprite
+	\dx8000800B //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b16 //xextent yextent zextent
 -1 * 0 02 09 0D 00 //-1 * 0 02 09 <set-id> 00
-	\dx8000800A //groundsprite
-	\dx8000800D //building sprite
+	\dx8000800D //groundsprite
+	\dx8000800C //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b32 //xextent yextent zextent
 
--1 * 0 02 09 0E 00 //-1 * 0 02 09 <set-id> 00
-	\dx8000800E //groundsprite
-	\d0 //building sprite
-	\b0 \b0 //xofs yofs
-	\b16 \b16 \b0 //xextent yextent zextent
--1 * 0 02 09 0F 00 //-1 * 0 02 09 <set-id> 00
-	\dx8000800F //groundsprite
-	\d0 //building sprite
-	\b0 \b0 //xofs yofs
-	\b16 \b16 \b0 //xextent yextent zextent
--1 * 0 02 09 10 00 //-1 * 0 02 09 <set-id> 00
-	\dx80008010 //groundsprite
-	\dx80008014 //building sprite
-	\b0 \b0 //xofs yofs
-	\b16 \b16 \b16 //xextent yextent zextent
--1 * 0 02 09 11 00 //-1 * 0 02 09 <set-id> 00
-	\dx80008011 //groundsprite
-	\dx80008015 //building sprite
-	\b0 \b0 //xofs yofs
-	\b16 \b16 \b16 //xextent yextent zextent
--1 * 0 02 09 12 00 //-1 * 0 02 09 <set-id> 00
-	\dx80008012 //groundsprite
-	\d0 //building sprite
-	\b0 \b0 //xofs yofs
-	\b16 \b16 \b0 //xextent yextent zextent
--1 * 0 02 09 13 00 //-1 * 0 02 09 <set-id> 00
-	\dx80008013 //groundsprite
-	\d0 //building sprite
-	\b0 \b0 //xofs yofs
-	\b16 \b16 \b0 //xextent yextent zextent
 	
 //-1 * 0 02 09 <set-id> <type> <variable> <varadjust> <nvar> (<set-id> <low-range> <high-range>){n} <default>
 
 -1 * 0 02 09 B1 //layout 1
 	85 43 //check relative position (00yx[YYXX])
 	00 FF FF //don't shift, don't mask
-	\b18 //number of ranges to check (number of tiles) [range: XX YY  XX YY]
-	\wx00   07 01  07 01
-	\wx01   06 01  06 01
-	\wx02   07 00  07 00
-	\wx03   06 00  06 00
-	\wx04   05 01  05 01
-	\wx05   05 00  05 00
-	\wx06   04 01  04 01
-	\wx07   03 01  03 01
-	\wx08   03 00  03 00
-	\wx09   02 01  02 01
-
-	\wx0B   04 02  04 02
-	\wx0C   03 02  03 02
-	\wx0D   02 02  02 02
-
-	\wx0E   01 02  01 02
-	\wx0F   00 02  00 02
-	\wx10   01 01  01 01
-	\wx11   00 01  00 01
-	\wx12   01 00  01 00
-	\wx13 //00 00  00 00 <default>
+	\b13 //number of ranges to check (number of tiles) [range: XX YY  XX YY]
+    \wx06   00 01  00 01
+    \wx05   01 00  01 00
+    \wx04   01 01  01 01
+    \wx0D   01 02  01 02
+    \wx09   02 01  02 01
+    \wx0C   02 02  02 02
+    \wx08   03 00  03 00
+    \wx07   03 01  03 01
+    \wx0B   03 02  03 02
+    \wx03   04 00  04 00
+    \wx01   04 01  04 01
+    \wx02   05 00  05 00
+    \wx00   05 01  05 01                                   
+	\wx00 //00 00  00 00 <default>
 
 -1 * 0 02 09 B2 //layout 2
 	85 43 //check relative position (00yx[YYXX])
 	00 FF FF //don't shift, don't mask
 	\b13 //number of ranges to check (number of tiles) [range: XX YY  XX YY]
-	\wx00   05 01  05 01
-	\wx01   04 01  04 01
-	\wx02   05 00  05 00
-	\wx03   04 00  04 00
-	\wx04   01 01  01 01
-	\wx05   01 00  01 00
-	\wx06   00 01  00 01
-	\wx07   03 01  03 01
-	\wx08   03 00  03 00
-	\wx09   02 01  02 01
-	               
-	\wx0B   03 02  03 02
-	\wx0C   02 02  02 02
-	\wx0D   01 02  01 02
-	               
-	\wx0A //01 02  01 02 <default>
+    \wx06   00 01  00 01
+    \wx05   01 00  01 00
+    \wx04   01 01  01 01
+    \wx0D   01 02  01 02
+    \wx09   02 01  02 01
+    \wx0C   02 02  02 02
+    \wx08   03 00  03 00
+    \wx07   03 01  03 01
+    \wx0B   03 02  03 02
+    \wx03   04 00  04 00
+    \wx01   04 01  04 01
+    \wx02   05 00  05 00
+    \wx00   05 01  05 01                                   
+	\wx00 //01 02  01 02 <default>
                  
 -1 * 0 02 09 A0 
 	82 44 //check layout number (lowest byte of related industry)
@@ -228,44 +172,21 @@
 -1 * 0 03 09 01 TILE_MACHINESHOP_1 00 \wxA0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
 
 
-
 //Industry definition
 
 //Action 0
 -1 * 0 00 0A \b26 01 IND_MACHINESHOP //-1 * 0 00 0A <num-props> 01 <id>
 	08 IND_NULL //reuse original industry with this here ID
 	0A 02 //number of industry layouts
-		\d204 //sum(size of layout definition +2 for termination)
+		\d184 //sum(size of layout definition +2 for termination)
 		//layout:
-			00 00 FE TILE_MACHINESHOP_1 00 //xoffs yoffs FE newtile(W)
-			00 01 FE TILE_MACHINESHOP_1 00
-			00 02 FE TILE_MACHINESHOP_1 00
-			01 00 FE TILE_MACHINESHOP_1 00 //xoffs yoffs FE newtile(W)
-			01 01 FE TILE_MACHINESHOP_1 00
-			01 02 FE TILE_MACHINESHOP_1 00
-			02 01 FE TILE_MACHINESHOP_1 00 //xoffs yoffs FE newtile(W)
-			02 02 FE TILE_MACHINESHOP_1 00
-			03 00 FE TILE_MACHINESHOP_1 00 //xoffs yoffs FE newtile(W)
-			03 01 FE TILE_MACHINESHOP_1 00
-			03 02 FE TILE_MACHINESHOP_1 00
-			04 01 FE TILE_MACHINESHOP_1 00 //xoffs yoffs FE newtile(W)
-			04 02 FE TILE_MACHINESHOP_1 00
-			05 00 FE TILE_MACHINESHOP_1 00 //xoffs yoffs FE newtile(W)
-			05 01 FE TILE_MACHINESHOP_1 00
-			06 00 FE TILE_MACHINESHOP_1 00 //xoffs yoffs FE newtile(W)
-			06 01 FE TILE_MACHINESHOP_1 00
-			07 00 FE TILE_MACHINESHOP_1 00 //xoffs yoffs FE newtile(W)
-			07 01 FE TILE_MACHINESHOP_1 00
-			02 00 FE TILE_GENERIC_CONCRETE 00
-			04 00 FE TILE_GENERIC_CONCRETE 00
-			05 02 FE TILE_GENERIC_CONCRETE 00
-		00 80 //terminate layout definition
-		//layout:
+			00 00 FE TILE_GENERIC_CONCRETE 00
 			00 01 FE TILE_MACHINESHOP_1 00 //xoffs yoffs FE newtile(W)
-			00 02 FE TILE_MACHINESHOP_1 00
+			00 02 FE TILE_GENERIC_CONCRETE 00
 			01 00 FE TILE_MACHINESHOP_1 00 //xoffs yoffs FE newtile(W)
 			01 01 FE TILE_MACHINESHOP_1 00
 			01 02 FE TILE_MACHINESHOP_1 00
+			02 00 FE TILE_GENERIC_CONCRETE 00
 			02 01 FE TILE_MACHINESHOP_1 00 //xoffs yoffs FE newtile(W)
 			02 02 FE TILE_MACHINESHOP_1 00
 			03 00 FE TILE_MACHINESHOP_1 00 //xoffs yoffs FE newtile(W)
@@ -273,11 +194,29 @@
 			03 02 FE TILE_MACHINESHOP_1 00
 			04 00 FE TILE_MACHINESHOP_1 00 //xoffs yoffs FE newtile(W)
 			04 01 FE TILE_MACHINESHOP_1 00
+			04 02 FE TILE_GENERIC_CONCRETE 00
 			05 00 FE TILE_MACHINESHOP_1 00 //xoffs yoffs FE newtile(W)
 			05 01 FE TILE_MACHINESHOP_1 00
+			05 02 FE TILE_GENERIC_CONCRETE 00
+		00 80 //terminate layout definition
+		//layout:
 			00 00 FE TILE_GENERIC_CONCRETE 00
+			00 01 FE TILE_MACHINESHOP_1 00 //xoffs yoffs FE newtile(W)
+			00 02 FE TILE_GENERIC_CONCRETE 00
+			01 00 FE TILE_MACHINESHOP_1 00 //xoffs yoffs FE newtile(W)
+			01 01 FE TILE_MACHINESHOP_1 00
+			01 02 FE TILE_MACHINESHOP_1 00
 			02 00 FE TILE_GENERIC_CONCRETE 00
+			02 01 FE TILE_MACHINESHOP_1 00 //xoffs yoffs FE newtile(W)
+			02 02 FE TILE_MACHINESHOP_1 00
+			03 00 FE TILE_MACHINESHOP_1 00 //xoffs yoffs FE newtile(W)
+			03 01 FE TILE_MACHINESHOP_1 00
+			03 02 FE TILE_MACHINESHOP_1 00
+			04 00 FE TILE_MACHINESHOP_1 00 //xoffs yoffs FE newtile(W)
+			04 01 FE TILE_MACHINESHOP_1 00
 			04 02 FE TILE_GENERIC_CONCRETE 00
+			05 00 FE TILE_MACHINESHOP_1 00 //xoffs yoffs FE newtile(W)
+			05 01 FE TILE_MACHINESHOP_1 00
 			05 02 FE TILE_GENERIC_CONCRETE 00
 		00 80 //terminate layout definition
 	0B 04 //production flags 1h=extractive, 2h=organic, 4h=processing
