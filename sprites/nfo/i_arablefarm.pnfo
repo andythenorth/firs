@@ -14,6 +14,11 @@
 	0D 10 //land shape flags: 10 = only on flat land
 	0E 00 //callback flags
 
+//Tile action 0
+-1 * 0 00 09 \b3 01 TILE_FIELD_TEST // -1 * 0 00 09 <num-props> 01 <id>
+	08 FE //subsitute type
+  0F 00 00 //animation information
+  11 02 //animation triggers
 
 //Industry tile sprites; one sprite for each tile; eventually more for each tile to include  construction stages
 
@@ -80,6 +85,31 @@
 	01                // <n-ids>
 	TILE_ARABLEFARM_1 // <id>
 	00 \wxA0          // 00 <def-cid>
+	
+	
+-1 * 0 02 09 C1 //layout 1
+	85 43 //check relative position (00yx[YYXX])
+	00 FF FF //don't shift, don't mask
+	\b4 //number of ranges to check (number of tiles) [range: XX YY  XX YY]
+    \wx00   00 00  79 79
+    \wx01   00 80  79 FF
+    \wx02   80 00  FF 79
+    \wx03   80 80  FF FF
+	\wx04 //00 01  00 01 <default>
+	
+-1 * 0 02 09 C0 
+	85 0C //<type> <variable> word-access callback
+	00 FF FF //no shift, no mask
+	\b1 //number of ranges to check
+    FC 80   25 00   25 00 //handle tile animation cb    
+	00 00 //default
+	
+
+//Tile action 3: attach sprites to industry tile
+-1 * 0 03 09              // action3, industry tiles
+	01                // <n-ids>
+  TILE_FIELD_TEST
+	00 \wxC1          // 00 <def-cid>
 
 
 //Industry definition

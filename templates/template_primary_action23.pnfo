@@ -24,8 +24,9 @@
 //   monthly / random production change	D0-DF
 //   texts	E0-FF
 //   industry location permissibility (CB 28)  10-1F  (NB CB 28 is not templated - handled on a per-industry basis)
-//   industry availability (CB 22) 20
-//   generally unused and available	2A-9F
+//   industry availability (CB 22) 20-2F
+//   fields (CB 155) 30-3F
+//   generally unused and available	40-9F
 
 
 // production code
@@ -107,6 +108,15 @@
     \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
        THIS_STR_BOOST 80 \d00 \d00
      THIS_STR_BOOST 80 //default
+
+// fields	
+     -1 * 0 02 0A 30 //store tile ID to register, return field size in XY   
+    89 // 
+      1A 20 \dxF0 // create 0
+      \2sto 1A 00 \dx100 //store in register
+    \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
+       44 80 \d00 \d00
+     44 80 //default
      
 // handle cb 22 industry availability
 #include "industry_availability_check.pnfo"     
@@ -115,7 +125,7 @@
 -1 * 0 02 0A C0 
 	85 0C //<type> <variable> word-access callback
 	00 FF FF //no shift, no mask
-	\b6 //number of ranges to check
+	\b7 //number of ranges to check
 	  #ifdef THIS_HANDLE_CB28
     THIS_HANDLE_CB28   28 00   28 00 //can industry be built? ...relies on action 2 with correct ID defined in industry pnfo
     #endif
@@ -127,6 +137,7 @@
 	  D1 00   35 00   35 00 //monthly production change cb 35
     THIS_STR_INFO_CB38 80   38 00   38 00 //return text-ID D0xx if cb 38 (fund window)
     F0 00   3A 00   3A 00 //return text-ID D0xx if cb 3A (industry window)
+    30 00   55 01   55 01 //handle fields cb 155    
 	A0 00 //default
 
 // industry action 3 attach varaction2 chain to industry
