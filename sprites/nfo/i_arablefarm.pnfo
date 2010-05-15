@@ -62,22 +62,44 @@
 	
 //-1 * 0 02 09 <set-id> <type> <variable> <varadjust> <nvar> (<set-id> <low-range> <high-range>){n} <default>
 
--1 * 0 02 09 B1 //layout 1
+-1 * 0 02 09 B1 //layout
 	85 43 //check relative position (00yx[YYXX])
 	00 FF FF //don't shift, don't mask
 	\b4 //number of ranges to check (number of tiles) [range: XX YY  XX YY]
-	\wx00   01 00  01 00
-	\wx01   01 01  01 01
-	\wx02   00 02  00 02
-	\wx03   02 01  02 01
+    \wx00   01 00  01 00
+    \wx01   01 01  01 01
+    \wx02   00 02  00 02
+    \wx03   02 01  02 01
 	\wx04 //00 01  00 01 <default>
+
+-1 * 0 02 09 B2 //layout
+	85 43 //check relative position (00yx[YYXX])
+	00 FF FF //don't shift, don't mask
+	\b4 //number of ranges to check (number of tiles) [range: XX YY  XX YY]
+    \wx04   00 00  00 00
+    \wx03   00 01  00 01
+    \wx00   01 00  01 00
+    \wx01   01 01  01 01
+	\wx02 //00 01  00 01 <default>
+	
+-1 * 0 02 09 B3 //layout
+	85 43 //check relative position (00yx[YYXX])
+	00 FF FF //don't shift, don't mask
+	\b4 //number of ranges to check (number of tiles) [range: XX YY  XX YY]
+    \wx00   00 00  00 00
+    \wx01   00 01  00 01
+    \wx04   01 00  01 00
+    \wx03   02 00  02 00
+	\wx02 //00 01  00 01 <default>
                    
 
 -1 * 0 02 09 A0 
 	82 44 //check layout number (lowest byte of related industry)
 	00 FF //don't shift, don't mask
-	\b1 //number of ranges to check (number of layouts)
-	\wxB1 \b1 \b1 //<set-id \w> <low-range> <high-range>
+	\b3 //number of ranges to check (number of layouts)
+    \wxB1 \b1 \b1 //<set-id \w> <low-range> <high-range>
+    \wxB2 \b2 \b2 //<set-id \w> <low-range> <high-range>
+    \wxB3 \b3 \b3 //<set-id \w> <low-range> <high-range>
 	\wx00 //<default> (first tile layout available)
 
 //Tile action 3: attach sprites to industry tile
@@ -96,6 +118,8 @@
     \wx02   80 00  FF 79
     \wx03   80 80  FF FF
 	\wx04 //00 01  00 01 <default>
+
+
 	
 -1 * 0 02 09 C0 
 	85 0C //<type> <variable> word-access callback
@@ -117,14 +141,26 @@
 //Action 0
 -1 * 0 00 0A \b27 01 IND_ARABLEFARM //-1 * 0 00 0A <num-props> 01 <id>
 	08 IND_NULL //reuse original industry with this here ID
-	0A 01 //number of industry layouts
-		\d27 //size of layout definition +2 for termination
+	0A 03 //number of industry layouts
+		\d81 //size of layout definition +2 for termination
 		//layout:
 			01 00 FE TILE_ARABLEFARM_1 00 //xoffs yoffs FE newtile(W)
 			01 01 FE TILE_ARABLEFARM_1 00
 			00 02 FE TILE_ARABLEFARM_1 00
 			02 01 FE TILE_ARABLEFARM_1 00
 			00 01 FE TILE_ARABLEFARM_1 00
+		00 80 //terminate layout definition
+			00 00 FE TILE_ARABLEFARM_1 00 //xoffs yoffs FE newtile(W)
+			00 01 FE TILE_ARABLEFARM_1 00
+			01 00 FE TILE_ARABLEFARM_1 00
+			01 01 FE TILE_ARABLEFARM_1 00
+			02 00 FE TILE_ARABLEFARM_1 00
+		00 80 //terminate layout definition
+			00 00 FE TILE_ARABLEFARM_1 00 //xoffs yoffs FE newtile(W)
+			00 01 FE TILE_ARABLEFARM_1 00
+			01 00 FE TILE_ARABLEFARM_1 00
+			02 00 FE TILE_ARABLEFARM_1 00
+			02 01 FE TILE_ARABLEFARM_1 00
 		00 80 //terminate layout definition
 	0B 02 //production flags 1h=extractive, 2h=organic, 4h=processing
 	0C STR_IND_CLOSE_GENERIC //industry closure message
