@@ -10,16 +10,18 @@
 
 
 //Action 1 define graphics
--1 * 0 01 09 \b2 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
+-1 * 0 01 09 \b4 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
 // Format: spritenum pcxfile xpos ypos compression ysize xsize xrel yrel
--1 sprites/pcx/industries/generictiles.pcx 10 10 09  54 64 -31 -23
--1 sprites/pcx/industries/groundtiles.pcx  80 10 09   31 64 -31   0
+-1 sprites/pcx/industries/generictiles.pcx  10 10 09   54 64 -31 -23
+-1 sprites/pcx/industries/groundtiles.pcx   10 10 09   31 64 -31   0
+-1 sprites/pcx/industries/groundtiles.pcx   80 10 09   31 64 -31   0
+-1 sprites/pcx/industries/groundtiles.pcx  150 10 09   31 64 -31   0
 
 
 //Action 2  attach graphics to graphics id
 //sprite TILE_GENERIC_SILOS
 -1 * 0 02 09 TILE_GENERIC_SILOS 00 //-1 * 0 02 09 <set-id> 00
-	\dx80008001 //groundsprite
+	\dx80008002 //groundsprite
 	\dx80008000 //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b32 //xextent yextent zextent
@@ -32,31 +34,50 @@
 
 
 
-//Tile TILE_GENERIC_SANDSTAITHES, action 0
--1 * 0 00 09 \b5 01 TILE_GENERIC_SANDSTAITHES // -1 * 0 00 09 <num-props> 01 <id>
+
+
+//Tile TILE_GENERIC_SANDSTAITHES_1, action 0
+-1 * 0 00 09 \b5 01 TILE_GENERIC_SANDSTAITHES_1 // -1 * 0 00 09 <num-props> 01 <id>
+	08 TILE_NULL //subsitute type
+	0A CARGO_SAND 08 //tile acceptance 1
+	0B 00 00 //tile acceptance 2
+	0C 00 00 //tile acceptance 3
+	0D 10 //land shape flags: 10 = only on flat land
+//Tile TILE_GENERIC_SANDSTAITHES_2, action 0
+-1 * 0 00 09 \b5 01 TILE_GENERIC_SANDSTAITHES_2 // -1 * 0 00 09 <num-props> 01 <id>
 	08 TILE_NULL //subsitute type
 	0A CARGO_SAND 08 //tile acceptance 1
 	0B 00 00 //tile acceptance 2
 	0C 00 00 //tile acceptance 3
 	0D 10 //land shape flags: 10 = only on flat land
 
-
 //Action 1 define graphics
--1 * 0 01 09 \b1 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
+-1 * 0 01 09 \b4 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
 // Format: spritenum pcxfile xpos ypos compression ysize xsize xrel yrel
 -1 sprites/pcx/industries/generictiles.pcx 80 10 09  31 64 -31 0
-
+-1 sprites/pcx/industries/groundtiles.pcx   10 10 09   31 64 -31   0
+-1 sprites/pcx/industries/groundtiles.pcx   80 10 09   31 64 -31   0
+-1 sprites/pcx/industries/groundtiles.pcx  150 10 09   31 64 -31   0
 
 //Action 2  attach graphics to graphics id
-//sprite TILE_GENERIC_SILOS
--1 * 0 02 09 TILE_GENERIC_SANDSTAITHES 00 //-1 * 0 02 09 <set-id> 00
-	\d1420 //groundsprite
+//sprite TILE_GENERIC_SILOS_1
+-1 * 0 02 09 TILE_GENERIC_SANDSTAITHES_1 00 //-1 * 0 02 09 <set-id> 00
+	\dx80008002 //groundsprite
 	\dx80008000 //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b8 //xextent yextent zextent
-
+//Action 2  attach graphics to graphics id
+//sprite TILE_GENERIC_SILOS_2
+-1 * 0 02 09 TILE_GENERIC_SANDSTAITHES_2 00 //-1 * 0 02 09 <set-id> 00
+	\dx80008003 //groundsprite
+	\dx80008000 //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b8 //xextent yextent zextent
+	
 
 //Action 3 attach graphics id to industry tiles
 
-//Tile TILE_GENERIC_SILOS
--1 * 0 03 09 01 TILE_GENERIC_SANDSTAITHES 00 TILE_GENERIC_SANDSTAITHES 00 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
+//Tile TILE_GENERIC_SILOS_1
+-1 * 0 03 09 01 TILE_GENERIC_SANDSTAITHES_1 00 TILE_GENERIC_SANDSTAITHES_1 00 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
+//Tile TILE_GENERIC_SILOS_2
+-1 * 0 03 09 01 TILE_GENERIC_SANDSTAITHES_2 00 TILE_GENERIC_SANDSTAITHES_2 00 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
