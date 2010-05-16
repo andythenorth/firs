@@ -40,7 +40,7 @@
 #define IND_VEHICLEPLANT          29
 #define IND_TEXTILEMILL           2A
 #define IND_CEMENTPLANT           2C
-#define IND_LUMBERTREATMENTPLANT  2D
+#define IND_LUMBERYARD            2D
 #define IND_MACHINESHOP           2E
 #define IND_FERTILISERPLANT       2F
 #define IND_GUANOMINE             30
@@ -204,7 +204,7 @@
 #define STR_IND_FURNITUREFACTORY      81 DC
 #define STR_IND_ALUMINIUMPLANT        82 DC
 #define STR_IND_MACHINESHOP           83 DC
-#define STR_IND_LUMBERTREATMENTPLANT       84 DC
+#define STR_IND_LUMBERYARD            84 DC
 #define STR_IND_METALFOUNDRY          85 DC
 #define STR_IND_FARMSUPPLYDEPOT       86 DC
 #define STR_IND_MIXEDFARM             87 DC
@@ -288,6 +288,7 @@
 #define STR_INFO_TEXTILEMILL        IND_TEXTILEMILL
 #define STR_INFO_CEMENTPLANT        IND_CEMENTPLANT
 #define STR_INFO_FERTILISERPLANT    IND_FERTILISERPLANT
+#define STR_INFO_LUMBERYARD         IND_LUMBERYARD
 
 //Definition of text IDs for cargos
 // _CTYPE: name of cargo type
