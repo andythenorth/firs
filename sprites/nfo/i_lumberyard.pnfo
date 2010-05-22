@@ -22,36 +22,19 @@
 //Industry tile sprites; one sprite for each tile; eventually more for each tile to include  construction stages
 
 //Tile action 1
--1 * 0 01 09 \b5 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
+-1 * 0 01 09 \b1 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
 // Format: spritenum pcxfile xpos ypos compression ysize xsize xrel yrel
--1 sprites/pcx/industries/surveysupplydepot.pcx  10 10 09  38 64 -31 -7
--1 sprites/pcx/industries/surveysupplydepot.pcx  80 10 09  38 64 -31 -7
--1 sprites/pcx/industries/surveysupplydepot.pcx 150 10 09  38 64 -31 -7
--1 sprites/pcx/industries/surveysupplydepot.pcx 220 10 09  38 64 -31 -7
--1 sprites/pcx/industries/surveysupplydepot.pcx 290 10 09  38 64 -31 -7
+-1 sprites/pcx/industries/groundtiles.pcx  10 10 09   31 64 -31   0
+
 
 
 //Tile action 2 
 -1 * 0 02 09 00 00 //-1 * 0 02 09 <set-id> 00
-	\d1420 //groundsprite
+	\dx80008000 //groundsprite
 	\dx80008000 //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b16 //xextent yextent zextent
--1 * 0 02 09 01 00 //-1 * 0 02 09 <set-id> 00
-	\d1420 //groundsprite
-	\dx80008001 //building sprite
-	\b0 \b0 //xofs yofs
-	\b16 \b16 \b16 //xextent yextent zextent
--1 * 0 02 09 02 00 //-1 * 0 02 09 <set-id> 00
-	\d1420 //groundsprite
-	\dx80008002 //building sprite
-	\b0 \b0 //xofs yofs
-	\b16 \b16 \b16 //xextent yextent zextent
--1 * 0 02 09 03 00 //-1 * 0 02 09 <set-id> 00
-	\d2674 //groundsprite
-	\d0 //building sprite
-	\b0 \b0 //xofs yofs
-	\b16 \b16 \b16 //xextent yextent zextent
+
 
 
 //-1 * 0 02 09 <set-id> <type> <variable> <varadjust> <nvar> (<set-id> <low-range> <high-range>){n} <default>
@@ -59,14 +42,8 @@
 -1 * 0 02 09 B1 //layout 1
 	85 43 //check relative position (00yx[YYXX])
 	00 FF FF //don't shift, don't mask
-	\b7 //number of ranges to check (number of tiles) [range: XX YY  XX YY]
-    \wx03   00 01  00 01
-    \wx01   01 00  01 00
-    \wx03   01 01  01 01
-    \wx03   02 01  02 01
-    \wx01   03 00  03 00
-    \wx03   03 01  03 01
-    \wx03   04 01  04 01
+	\b1 //number of ranges to check (number of tiles) [range: XX YY  XX YY]
+    \wx00   00 01  00 01
 	\wx00 //(multiple) <default>
 
 -1 * 0 02 09 A0 
