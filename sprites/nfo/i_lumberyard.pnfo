@@ -22,16 +22,23 @@
 //Industry tile sprites; one sprite for each tile; eventually more for each tile to include  construction stages
 
 //Tile action 1
--1 * 0 01 09 \b1 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
+-1 * 0 01 09 \b3 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
 // Format: spritenum pcxfile xpos ypos compression ysize xsize xrel yrel
--1 sprites/pcx/industries/groundtiles.pcx  10 10 09   31 64 -31   0
+-1 sprites/pcx/industries/groundtiles.pcx  10 10 09   31 64  -31  0
+-1 sprites/pcx/industries/lumberyard.pcx   80 10 09   64 64  -31  0
+-1 sprites/pcx/industries/lumberyard.pcx  150 10 09   64 64  -31  0
 
 
 
 //Tile action 2 
 -1 * 0 02 09 00 00 //-1 * 0 02 09 <set-id> 00
 	\dx80008000 //groundsprite
-	\dx80008000 //building sprite
+	\dx80008001 //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b16 //xextent yextent zextent
+-1 * 0 02 09 00 01 //-1 * 0 02 09 <set-id> 00
+	\dx80008000 //groundsprite
+	\dx80008002 //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b16 //xextent yextent zextent
 
@@ -43,7 +50,7 @@
 	85 43 //check relative position (00yx[YYXX])
 	00 FF FF //don't shift, don't mask
 	\b1 //number of ranges to check (number of tiles) [range: XX YY  XX YY]
-    \wx00   00 01  00 01
+    \wx01   00 01  00 01
 	\wx00 //(multiple) <default>
 
 -1 * 0 02 09 A0 
@@ -67,17 +74,26 @@
 -1 * 0 00 0A \b26 01 IND_LUMBERYARD //-1 * 0 00 0A <num-props> 01 <id>
 	08 IND_NULL //reuse original industry with this here ID
 	0A 01 //number of industry layouts
-		\d47 //sum(size of layout definition +2 for termination)
+		\d92 //sum(size of layout definition +2 for termination)
 		//layout:
-			00 00 FE TILE_LUMBERYARD_1 00
-			00 01 FE TILE_LUMBERYARD_1 00 //xoffs yoffs FE newtile(W)
+			00 00 FE TILE_LUMBERYARD_1 00 //xoffs yoffs FE newtile(W)
+			00 01 FE TILE_LUMBERYARD_1 00
+			00 02 FE TILE_LUMBERYARD_1 00
 			01 00 FE TILE_LUMBERYARD_1 00
 			01 01 FE TILE_LUMBERYARD_1 00
+			01 02 FE TILE_LUMBERYARD_1 00
 			02 00 FE TILE_LUMBERYARD_1 00
 			02 01 FE TILE_LUMBERYARD_1 00
+			02 02 FE TILE_LUMBERYARD_1 00
 			03 00 FE TILE_LUMBERYARD_1 00
 			03 01 FE TILE_LUMBERYARD_1 00
+			03 02 FE TILE_LUMBERYARD_1 00
+			04 00 FE TILE_LUMBERYARD_1 00
 			04 01 FE TILE_LUMBERYARD_1 00
+			04 02 FE TILE_LUMBERYARD_1 00
+			05 00 FE TILE_LUMBERYARD_1 00
+			05 01 FE TILE_LUMBERYARD_1 00
+			05 02 FE TILE_LUMBERYARD_1 00
 		00 80 //terminate layout definition
 	0B 04 //production flags 1h=extractive, 2h=organic, 4h=processing
 	0C STR_IND_CLOSE_GENERIC //industry closure message
