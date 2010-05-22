@@ -109,14 +109,15 @@
 	00 \wxA0          // 00 <def-cid>
 	
 	
+// experimental code to handle fields	
 -1 * 0 02 09 C1 //layout 1
 	85 43 //check relative position (00yx[YYXX])
 	00 FF FF //don't shift, don't mask
 	\b4 //number of ranges to check (number of tiles) [range: XX YY  XX YY]
-    \wx00   00 00  79 79
-    \wx01   00 80  79 FF
-    \wx02   80 00  FF 79
-    \wx03   80 80  FF FF
+    \wx00   00 00  00 00
+    \wx01   01 01  01 01
+    \wx02   02 02  02 02
+    \wx03   03 03  03 03
 	\wx04 //00 01  00 01 <default>
 
 
