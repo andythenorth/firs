@@ -22,13 +22,14 @@
 //Industry tile sprites; one sprite for each tile; eventually more for each tile to include  construction stages
 
 //Tile action 1
--1 * 0 01 09 \b5 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
+-1 * 0 01 09 \b6 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
 // Format: spritenum pcxfile xpos ypos compression ysize xsize xrel yrel
 -1 sprites/pcx/industries/groundtiles.pcx  10 10 09   31 64  -31  0
--1 sprites/pcx/industries/lumberyard.pcx   80 10 09   64 64  -31  -34
--1 sprites/pcx/industries/lumberyard.pcx  150 10 09   64 64  -31  -40
--1 sprites/pcx/industries/lumberyard.pcx  220 10 09   64 64  -31  -34
--1 sprites/pcx/industries/lumberyard.pcx  290 10 09   64 64  -31  -40
+-1 sprites/pcx/industries/lumberyard.pcx   80 10 09   64 64  -31  -40
+-1 sprites/pcx/industries/lumberyard.pcx  150 10 09   64 64  -31  -34
+-1 sprites/pcx/industries/lumberyard.pcx  220 10 09   64 64  -31  -20
+-1 sprites/pcx/industries/lumberyard.pcx  290 10 09   64 64  -31  -20
+-1 sprites/pcx/industries/lumberyard.pcx  360 10 09   64 64  -31  -36
 
 
 
@@ -58,6 +59,11 @@
 	\dx80008004 //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b16 //xextent yextent zextent
+-1 * 0 02 09 05 00 //-1 * 0 02 09 <set-id> 00
+	\dx80008000 //groundsprite
+	\dx80008005 //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b16 //xextent yextent zextent
 
 
 
@@ -66,11 +72,12 @@
 -1 * 0 02 09 B1 //layout 1
 	85 43 //check relative position (00yx[YYXX])
 	00 FF FF //don't shift, don't mask
-	\b4 //number of ranges to check (number of tiles) [range: XX YY  XX YY]
-    \wx01   00 00  00 00
-    \wx02   00 01  00 01
-    \wx03   02 00  02 00
+	\b5 //number of ranges to check (number of tiles) [range: XX YY  XX YY]
+    \wx02   00 00  00 00
+    \wx01   00 01  00 01
     \wx04   02 01  02 01
+    \wx05   02 02  02 02
+    \wx03   01 02  01 02
 	\wx00 //(multiple) <default>
 
 -1 * 0 02 09 A0 
