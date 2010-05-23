@@ -14,7 +14,7 @@
 //Tile Action 1
 -1 * 0 01 09 \b1 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
 // Format: spritenum pcxfile xpos ypos compression ysize xsize xrel yrel
--1 sprites/pcx/industries/generalstore.pcx 10 10 09 35 64 -31 -4
+-1 sprites/pcx/industries/groundtiles.pcx  80 10 09   31 64  -31  0
 
 
 //Tile Action 2 
@@ -35,9 +35,14 @@
 //Action 0
 -1 * 0 00 0A \b26 01 IND_GASSTATION //-1 * 0 00 0A <num-props> 01 <id>
 	08 IND_NULL //reuse original industry with this here ID
-	0A 01 //number of industry layouts
-		\d7 //size of layout definition +2 for termination
+	0A 02 //number of industry layouts
+		\d24 //size of layout definition +2 for termination
 		//layout:
+			00 00 FE TILE_GASSTATION_1 00 //xoffs yoffs FE newtile(W)
+			01 00 FE TILE_GASSTATION_1 00 //xoffs yoffs FE newtile(W)
+		00 80 //terminate layout definition
+		//layout:
+			00 01 FE TILE_GASSTATION_1 00 //xoffs yoffs FE newtile(W)
 			00 00 FE TILE_GASSTATION_1 00 //xoffs yoffs FE newtile(W)
 		00 80 //terminate layout definition
 	0B 00 //production flags 1h=extractive, 2h=organic, 4h=processing, 0h=no closure etc.
