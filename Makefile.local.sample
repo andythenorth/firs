@@ -55,6 +55,7 @@
 # CC_FLAGS       = -C -E - <
 # MAKE_FLAGS     =
 # UNIX2DOS_FLAGS = -q
+# NML_FLAGS      =
 
 # NFORENUM       = $(shell [ `which nforenum 2>/dev/null` ] && echo "nforenum" || echo "renum")
 # GRFCODEC       = grfcodec
@@ -68,6 +69,7 @@
 # MAKE           = make
 # UNIX2DOS       = $(shell [ `which unix2dos 2>/dev/null` ] && echo "unix2dos" || echo "")
 # MD5SUM         = $(shell [ "$(OSTYPE)" = "Darwin" ] && echo "md5 -r" || echo "md5sum")
+# NML            = nml.py
 
 # Installation dir
 INSTALL_DIR      =
