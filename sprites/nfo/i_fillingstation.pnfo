@@ -5,7 +5,7 @@
 	08 TILE_NULL //subsitute type
 	0A CARGO_FOOD 08 //tile acceptance 1
 	0B CARGO_GOODS 08 //tile acceptance 2
-	0C 00 00 //tile acceptance 3
+	0C CARGO_FUELOIL 08 //tile acceptance 3
 	0D 10 //land shape flags: 10 = only on flat land
 
 
@@ -47,7 +47,7 @@
 	1B STR_IND_NEW_GENERIC //new industry message
 	1F STR_IND_FILLINGSTATION //industry name
 	10 FF FF //production cargo types (word; fill unused with FFh)
-	11 CARGO_FOOD CARGO_GOODS FF FF //acceptance cargo types (dword; fill unused with FFh)
+	11 CARGO_FOOD CARGO_GOODS CARGO_FUELOIL FF //acceptance cargo types (dword; fill unused with FFh)
 	12 00 //production multiplier cargo 1
 	13 00 //production multiplier cargo 2
 	1C \w0  \w0 //input cargo 1 multiplier (dword M1 M2; output_typen = X*Mn/256)
@@ -62,7 +62,7 @@
 	19 CLR_FILLINGSTATION //map colour (byte; using indexes from dos palette)
 	23 \d0  //destruction cost multiplier (dword; default: 0)
 	1A \dx10 //special industry flag (dword; in town: 10h)
-	21 84 //callback flags 
+	21 80 //callback flags 
 	22 01  //callback flags
 //To show cargo waiting to be processed at industry, ensure prop 21 is set to use production callback
 
