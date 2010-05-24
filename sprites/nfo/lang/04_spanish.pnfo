@@ -157,6 +157,7 @@
 #define TEXT_IND_SHEEPFARM                              "Granja de Ovejas"
 #define TEXT_IND_GRAVELQUARRY                           "Dragado de Grava"
 #define TEXT_IND_WATERPLANT                             "Planta de Agua"
+#define TEXT_IND_GASSTATION                             "Gasolinera"
 
 //Station texts for station name prefixes/suffixes. \80 where town name goes
 #define TEXT_STA_FARM                                   "\80 Granja"
@@ -184,33 +185,40 @@
 #define TEXT_INFO_ES_PRIMARY_BOOST                      "\98La producción puede aumentar con Suministros de Ingeniería.\0D\90  \UE07B cajas entregadas este mes"
 #define TEXT_INFO_FS_PRIMARY_BOOST                      "\98La producción puede aumentar con Suministros Agrarios.\0D\90  \UE07B cajas entregadas este mes"
 #define TEXT_INFO_MS_PRIMARY_BOOST                      "\98Entregar Suministros de Manufactura duplica la producción del resto de cargas.\0D\0D\80"
-
-
 #define TEXT_INFO_CARGO_PRODUCTION                      "\98Producción:\0D"
 #define TEXT_INFO_6T_PER_8T                             "\0D6t producidas por cada 8t entregadas."
+
 #define TEXT_INFO_8T_PER_8T                             "\0D8t producidas por cada 8t entregadas."
+
 #define TEXT_INFO_STEPUP_TWO_CARGOS                     "\0DLa producción aumenta si dos o más cargas son entregadas en un intervalo inferior a un mes."
+
 #define TEXT_INFO_INCREASE_BOTH_CARGOS                  "\0DAumenta a 8t por cada 8t si ambas cargas son entregadas en un intervalo inferior a un mes."
 
 #define TEXT_INFO_3T_PER_8T_MS                          "  3t por cada 8t de suministros de manufactura entregadas\0D"
+
 #define TEXT_INFO_2T_PER_8T_IRON_ORE                    "  2t por cada 8t de mineral de hierro entregadas\0D"
+
 #define TEXT_INFO_2T_PER_8T_COAL                        "  2t por cada 8t de carbón entregadas\0D"
 #define TEXT_INFO_4T_PER_8T_SCRAP_METAL                 "  4t por cada 8t de chatarra entregadas\0D"
 #define TEXT_INFO_4T_PER_8T_BAUXITE                     "  4t por cada 8t de bauxita entregadas\0D"
 #define TEXT_INFO_5T_PER_8T_LUMBER                      "  5t por cada 8t de tablas entregadas\0D" 
+#define TEXT_INFO_6T_PER_8T_LUMBER                      "  6t por cada 8t de tablas entregadas\0D"
+#define TEXT_INFO_2T_PER_8T_CHEMICALS                   "  2t por cada 8t de productos químicos entregadas\0D"
 #define TEXT_INFO_5T_PER_8T_GRAIN                       "  5t por cada 8t de grano entregadas\0D"
 #define TEXT_INFO_5T_PER_8T_FRUITSANDVEGETABLES         "  5t por cada 8t de frutas y vegetales entregadas\0D"
-
 #define TEXT_INFO_5T_PER_8T_MILK                        "  5t por cada 8t de leche entregadas\0D"
 #define TEXT_INFO_5T_PER_8T_LIVESTOCK                   "  5t por cada 8t de ganado entregadas\0D"
 #define TEXT_INFO_5T_PER_8T_WOOL                        "  5t por cada 8t de lana entregadas\0D"
 #define TEXT_INFO_2T_PER_8T_SAND                        "  2t por cada 8t de arena entregadas\0D"
 #define TEXT_INFO_4T_PER_8T_GRAVEL                      "  4t por cada 8t de grava entregadas\0D"
 
+
 #define TEXT_INFO_MACHINESHOP                           "\98Construye y repara maquinaria.\0D" 
 #define TEXT_INFO_SAWMILL                               "\98Aserra madera.\0D" 
 #define TEXT_INFO_WINDFARM                              "\98 \0D" 
+
 #define TEXT_INFO_METALFOUNDRY                          "\98Fabrica productos metálicos tales como herramientas o piezas.\0D"
+
 #define TEXT_INFO_PAPERMILL                             "\98Convierte madera en pulpa para hacer papel y cartón.\0D" 
 #define TEXT_INFO_OILREFINERY                           "\98Procesa petróleo crudo en fueloil y productos químicos.\0D" 
 #define TEXT_INFO_PLASTICSPLANT                         "\98Fabrica productos de plástico tales como embalaje o productos del hogar.\0D" 
@@ -218,6 +226,7 @@
 #define TEXT_INFO_WATERTOWER                            "\98 \0D"
 #define TEXT_INFO_BREWERY_STEPUP                        "\0DAumenta a 8t por cada 8t si se entregan suministros de manufactura y una de las otras cargas en un intervalo inferior a un mes."
 #define TEXT_INFO_FERTILISERPLANT                       "\98Transforma productos químicos en fertilizante para ser usado en granjas.\0D"
+#define TEXT_INFO_LUMBERYARD                            "\98Produce objetos tales como mástiles y cercas.\0D"
 #define TEXT_INFO_POWERSTATION                          "\98Genera electricidad.\0D"
 #define TEXT_INFO_POWERSTATION_CLOSE_0                  "\0DEsta Central Eléctrica podría cerrar a menos que se entregue carbón o fueloil antes de que pasen:\0D\90  \UE07C meses"
 #define TEXT_INFO_POWERSTATION_CLOSE_1                  "\0DEsta Central Eléctrica podría cerrar a menos que se entregue carbón o fueloil antes de que pase:\0D\94  \UE07C mes"
