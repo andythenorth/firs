@@ -31,14 +31,15 @@
 // large shed
 -1 sprites/pcx/industries/lumberyard.pcx  220 10 09   64 64  -31  -19
 -1 sprites/pcx/industries/lumberyard.pcx  290 10 09   64 64  -31  -35
-// crane base
--1 sprites/pcx/industries/lumberyard.pcx   80 90 09   64 64  -31  -33
--1 sprites/pcx/industries/lumberyard.pcx  150 90 09   64 64  -31  -35
-// crane 
--1 sprites/pcx/industries/lumberyard.pcx   10 90 09   18 26  -21  -14
+// office
+-1 sprites/pcx/industries/lumberyard.pcx   10 10 09   64 64  -31  -26
 // wood piles
+-1 sprites/pcx/industries/lumberyard.pcx  150 90 09   31 64  -31  -4
 -1 sprites/pcx/industries/lumberyard.pcx  220 90 09   31 64  -31  -4
 -1 sprites/pcx/industries/lumberyard.pcx  290 90 09   31 64  -31  -4
+// crane
+-1 sprites/pcx/industries/lumberyard.pcx  360 10 09   64 64  -31  -24
+// forklift
 -1 sprites/pcx/industries/lumberyard.pcx  360 90 09   31 64  -31  -4
 
 
@@ -72,35 +73,29 @@
 	\dx80008004 //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b16 //xextent yextent zextent
-// crane
--1 * 0 02 09 05 02 //-1 * 0 02 09 <set-id> 01 (extended format)
+// office with crane
+-1 * 0 02 09 05 00 //-1 * 0 02 09 <set-id> 00
 	\d3924 //groundsprite
 	\dx80008005 //building sprite
-	\b0 \b0 \b0 //xofs yofs zofs
+	\b0 \b0 //xofs yofs
 	\b16 \b16 \b16 //xextent yextent zextent
-	\dx80008007 //building sprite
-	\b0 \b0 \b0 //xofs yofs zofs
-	\b16 \b16 \b16 //xextent yextent zextent
+// wood piles
 -1 * 0 02 09 06 00 //-1 * 0 02 09 <set-id> 00
 	\d3924 //groundsprite
 	\dx80008006 //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b16 //xextent yextent zextent
-// (07 used for crane sprites)
-// wood piles
+-1 * 0 02 09 07 02 //-1 * 0 02 09 <set-id> 00 (extended format)
+	\d3924 //groundsprite
+	\dx80008009 //building sprite
+	\b0 \b0 \b0 //xofs yofs zofs
+	\b16 \b16 \b16 //xextent yextent zextent
+	\dx80008007 //building sprite
+	\b0 \b0 \b0 //xofs yofs zofs
+	\b16 \b16 \b16 //xextent yextent zextent
 -1 * 0 02 09 08 00 //-1 * 0 02 09 <set-id> 00
 	\d3924 //groundsprite
 	\dx80008008 //building sprite
-	\b0 \b0 //xofs yofs
-	\b16 \b16 \b16 //xextent yextent zextent
--1 * 0 02 09 09 00 //-1 * 0 02 09 <set-id> 00
-	\d3924 //groundsprite
-	\dx80008009 //building sprite
-	\b0 \b0 //xofs yofs
-	\b16 \b16 \b16 //xextent yextent zextent
--1 * 0 02 09 0A 00 //-1 * 0 02 09 <set-id> 00
-	\d3924 //groundsprite
-	\dx8000800A //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b16 //xextent yextent zextent
 
@@ -111,17 +106,19 @@
 -1 * 0 02 09 B1 //layout 1
 	85 43 //check relative position (00yx[YYXX])
 	00 FF FF //don't shift, don't mask
-	\b10 //number of ranges to check (number of tiles) [range: XX YY  XX YY]
+	\b12 //number of ranges to check (number of tiles) [range: XX YY  XX YY]
     \wx02   00 00  00 00
     \wx01   00 01  00 01
-    \wx09   00 02  00 02
-    \wx03   01 02  01 02
-    \wx04   02 02  02 02
-    \wx06   03 01  03 01
-    \wx05   03 02  03 02
-    \wx08   04 01  04 01
-    \wx08   04 02  04 02
-    \wx0A   05 01  05 01    
+    \wx05   00 02  00 02
+    \wx06   01 00  01 00
+    \wx03   01 01  01 01
+    \wx08   02 00  02 00
+    \wx04   02 01  02 01
+    \wx08   01 02  01 02
+    \wx07   02 02  02 02
+    \wx06   03 00  03 00
+    \wx05   03 01  03 01
+    \wx06   03 02  03 02
 	\wx00 //(multiple) <default>
 
 -1 * 0 02 09 A0 
@@ -145,7 +142,7 @@
 -1 * 0 00 0A \b26 01 IND_LUMBERYARD //-1 * 0 00 0A <num-props> 01 <id>
 	08 IND_NULL //reuse original industry with this here ID
 	0A 01 //number of industry layouts
-		\d92 //sum(size of layout definition +2 for termination)
+		\d62 //sum(size of layout definition +2 for termination)
 		//layout:
 			00 00 FE TILE_LUMBERYARD_1 00 //xoffs yoffs FE newtile(W)
 			00 01 FE TILE_LUMBERYARD_1 00
@@ -159,12 +156,6 @@
 			03 00 FE TILE_LUMBERYARD_1 00
 			03 01 FE TILE_LUMBERYARD_1 00
 			03 02 FE TILE_LUMBERYARD_1 00
-			04 00 FE TILE_LUMBERYARD_1 00
-			04 01 FE TILE_LUMBERYARD_1 00
-			04 02 FE TILE_LUMBERYARD_1 00
-			05 00 FE TILE_LUMBERYARD_1 00
-			05 01 FE TILE_LUMBERYARD_1 00
-			05 02 FE TILE_LUMBERYARD_1 00
 		00 80 //terminate layout definition
 	0B 04 //production flags 1h=extractive, 2h=organic, 4h=processing
 	0C STR_IND_CLOSE_GENERIC //industry closure message
