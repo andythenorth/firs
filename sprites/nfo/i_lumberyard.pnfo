@@ -22,7 +22,7 @@
 //Industry tile sprites; one sprite for each tile; eventually more for each tile to include  construction stages
 
 //Tile action 1
--1 * 0 01 09 \b11 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
+-1 * 0 01 09 \b10 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
 // Format: spritenum pcxfile xpos ypos compression ysize xsize xrel yrel
 -1 sprites/pcx/industries/groundtiles.pcx  10 10 09   31 64  -31  0
 // creosote shed
@@ -39,8 +39,6 @@
 -1 sprites/pcx/industries/lumberyard.pcx  290 90 09   31 64  -31  -4
 // crane
 -1 sprites/pcx/industries/lumberyard.pcx  360 10 09   64 64  -31  -24
-// forklift
--1 sprites/pcx/industries/lumberyard.pcx  360 90 09   31 64  -31  -4
 
 
 
