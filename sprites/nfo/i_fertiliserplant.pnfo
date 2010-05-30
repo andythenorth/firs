@@ -23,7 +23,7 @@
 //Industry tile sprites; one sprite for each tile; eventually more for each tile to include  construction stages
 
 //Tile action 1
--1 * 0 01 09 \b9 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
+-1 * 0 01 09 \b11 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
 // Format: spritenum pcxfile xpos ypos compression ysize xsize xrel yrel
 -1 sprites/pcx/industries/fertiliserplant.pcx 80 10 09  114 64 -31 -83
 -1 sprites/pcx/industries/fertiliserplant.pcx 150 10 09  114 64 -31 -83
@@ -33,48 +33,62 @@
 -1 sprites/pcx/industries/fertiliserplant.pcx 430 10 09  66 64 -31 -35
 -1 sprites/pcx/industries/fertiliserplant.pcx 500 10 09  66 64 -31 -35
 -1 sprites/pcx/industries/fertiliserplant.pcx 570 10 09  66 64 -31 -35
+// office / tanks
+-1 sprites/pcx/industries/fertiliserplant.pcx 640 10 09  66 64  -31 -12
+-1 sprites/pcx/industries/fertiliserplant.pcx 710 10 09  66 64  -54 -28
+// ground
 -1 sprites/pcx/industries/groundtiles.pcx  80 10 09   31 64 -31   0
 
 
 //Tile action 2 
 -1 * 0 02 09 00 00 //-1 * 0 02 09 <set-id> 00
-	\dx80008008 //groundsprite
+	\dx8000800A //groundsprite
 	\dx80008000 //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b48 //xextent yextent zextent
 -1 * 0 02 09 01 00 //-1 * 0 02 09 <set-id> 00
-	\dx80008008 //groundsprite
+	\dx8000800A //groundsprite
 	\dx80008001 //building sprite
 	00 00 //xofs yofs
 	\b16 \b16 \b48 //xextent yextent zextent
 -1 * 0 02 09 02 00 //-1 * 0 02 09 <set-id> 00
-	\dx80008008 //groundsprite
+	\dx8000800A //groundsprite
 	\dx80008002 //building sprite
 	00 00 //xofs yofs
 	\b16 \b16 \b48 //xextent yextent zextent
 -1 * 0 02 09 03 00 //-1 * 0 02 09 <set-id> 00
-	\dx80008008 //groundsprite
+	\dx8000800A //groundsprite
 	\dx80008003 //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b48 //xextent yextent zextent
 -1 * 0 02 09 04 00 //-1 * 0 02 09 <set-id> 00
-	\dx80008008 //groundsprite
+	\dx8000800A //groundsprite
 	\dx80008004 //building sprite
 	00 00 //xofs yofs
 	\b16 \b16 \b48 //xextent yextent zextent
 -1 * 0 02 09 05 00 //-1 * 0 02 09 <set-id> 00
-	\dx80008008 //groundsprite
+	\dx8000800A //groundsprite
 	\dx80008005 //building sprite
 	00 00 //xofs yofs
 	\b16 \b16 \b48 //xextent yextent zextent
 -1 * 0 02 09 06 00 //-1 * 0 02 09 <set-id> 00
-	\dx80008008 //groundsprite
+	\dx8000800A //groundsprite
 	\dx80008006 //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b48 //xextent yextent zextent
 -1 * 0 02 09 07 00 //-1 * 0 02 09 <set-id> 00
-	\dx80008008 //groundsprite
+	\dx8000800A //groundsprite
 	\dx80008007 //building sprite
+	00 00 //xofs yofs
+	\b16 \b16 \b48 //xextent yextent zextent
+-1 * 0 02 09 08 00 //-1 * 0 02 09 <set-id> 00
+	\dx8000800A //groundsprite
+	\dx80008008 //building sprite
+	00 00 //xofs yofs
+	\b16 \b16 \b48 //xextent yextent zextent
+-1 * 0 02 09 09 00 //-1 * 0 02 09 <set-id> 00
+	\dx8000800A //groundsprite
+	\dx80008009 //building sprite
 	00 00 //xofs yofs
 	\b16 \b16 \b48 //xextent yextent zextent
 
@@ -83,14 +97,16 @@
 -1 * 0 02 09 B1 //layout 1
 	85 43 //check relative position (00yx[YYXX])
 	00 FF FF //don't shift, don't mask
-	\b7 //number of ranges to check (number of tiles) [range: XX YY  XX YY]
-	\wx00   05 00  05 00
-	\wx01   04 00  04 00
-	\wx02   03 00  03 00
-	\wx03   02 00  02 00
-	\wx04   04 01  04 01
-	\wx05   03 01  03 01
-	\wx06   02 01  02 01
+	\b9 //number of ranges to check (number of tiles) [range: XX YY  XX YY]
+    \wx08   01 00  01 00
+    \wx09   01 01  01 01
+    \wx03   02 00  02 00
+    \wx06   02 01  02 01
+    \wx02   03 00  03 00
+    \wx05   03 01  03 01
+    \wx01   04 00  04 00
+    \wx04   04 01  04 01
+    \wx00   05 00  05 00
 	\wx07 //00 00  00 00 <default>
 
 
@@ -118,9 +134,9 @@
 		\d62 //size of layout definition +2 for termination
 		//layout:
 			06 00 FE TILE_GENERIC_ELECTRICALSUBSTATION 00 //xoffs yoffs FE newtile(W)
-			01 01 FE TILE_GENERIC_CONCRETE 00
+			01 01 FE TILE_FERTILISERPLANT_1 00
 			05 01 FE TILE_GENERIC_CONCRETE 00
-			01 00 FE TILE_GENERIC_CONCRETE 00
+			01 00 FE TILE_FERTILISERPLANT_1 00
 			05 00 FE TILE_FERTILISERPLANT_1 00
 			04 00 FE TILE_FERTILISERPLANT_1 00
 			03 00 FE TILE_FERTILISERPLANT_1 00
