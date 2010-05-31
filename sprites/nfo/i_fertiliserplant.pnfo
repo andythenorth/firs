@@ -25,13 +25,18 @@
 //Tile action 1
 -1 * 0 01 09 \b9 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
 // Format: spritenum pcxfile xpos ypos compression ysize xsize xrel yrel
--1 sprites/pcx/industries/fertiliserplant.pcx 80 10 09  114 64 -31 -83
+// chimney
+-1 sprites/pcx/industries/fertiliserplant.pcx 80 10 09  114 64 -31 -88
+// main building
 -1 sprites/pcx/industries/fertiliserplant.pcx 150 10 09  114 64 -31 -83
 -1 sprites/pcx/industries/fertiliserplant.pcx 220 10 09  114 64 -31 -83
 -1 sprites/pcx/industries/fertiliserplant.pcx 290 10 09  114 64 -31 -83
+// warehouse
 -1 sprites/pcx/industries/fertiliserplant.pcx 360 10 09  66 64 -31 -35
 -1 sprites/pcx/industries/fertiliserplant.pcx 430 10 09  66 64 -31 -35
+// spherical tanks
 -1 sprites/pcx/industries/fertiliserplant.pcx 500 10 09  66 64 -31 -35
+// silos
 -1 sprites/pcx/industries/fertiliserplant.pcx 570 10 09  66 64 -31 -35
 // ground
 -1 sprites/pcx/industries/groundtiles.pcx  80 10 09   31 64 -31   0
@@ -120,7 +125,7 @@
 		//layout:
 			06 00 FE TILE_GENERIC_ELECTRICALSUBSTATION 00 //xoffs yoffs FE newtile(W)
 			01 00 FE TILE_GENERIC_CONCRETE 00
-			01 01 FE TILE_GENERIC_CONCRETE 00
+			01 01 FE TILE_FERTILISERPLANT_1 00
 			05 01 FE TILE_GENERIC_CONCRETE 00
 			05 00 FE TILE_FERTILISERPLANT_1 00
 			04 00 FE TILE_FERTILISERPLANT_1 00
