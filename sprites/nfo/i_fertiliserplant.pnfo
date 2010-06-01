@@ -198,17 +198,48 @@
     \wx06   04 02  04 02
     \wx08   04 03  04 03
 	\wx07 //00 00  00 00 <default>
+
+-1 * 0 02 09 B7 //layout 1
+	85 43 //check relative position (00yx[YYXX])
+	00 FF FF //don't shift, don't mask
+	\b24 //number of ranges to check (number of tiles) [range: XX YY  XX YY]
+    \wx03   00 00  00 00
+    \wx06   00 01  00 01
+    \wx00   00 02  00 02
+    \wx07   00 05  00 05
+    \wx07   00 06  00 06
+    \wx02   01 00  01 00
+    \wx06   01 01  01 01
+    \wx05   01 02  01 02
+    \wx07   01 05  01 05
+    \wx05   01 06  01 06
+    \wx01   02 00  02 00
+    \wx08   02 01  02 01
+    \wx04   02 02  02 02
+    \wx08   02 05  02 05
+    \wx04   02 06  02 06
+    \wx06   04 00  04 00
+    \wx06   04 01  04 01
+    \wx06   04 02  04 02
+    \wx07   04 05  04 05
+    \wx07   04 06  04 06
+    \wx06   05 01  05 01
+    \wx08   05 02  05 02
+    \wx07   05 05  05 05
+    \wx08   05 06  05 06
+	\wx07 //00 00  00 00 <default>
 	
 -1 * 0 02 09 A0 
 	82 44 //check layout number (lowest byte of related industry)
 	00 FF //don't shift, don't mask
-	\b6 //number of ranges to check (number of layouts)
+	\b7 //number of ranges to check (number of layouts)
     \wxB1 \b1 \b1 //
     \wxB2 \b2 \b2 //
     \wxB3 \b3 \b3 //
     \wxB4 \b4 \b4 //
     \wxB5 \b5 \b5 //
     \wxB6 \b6 \b6 //
+    \wxB7 \b7 \b7 //
 	\wx00 //<default> (first tile layout available)
 
 
@@ -224,8 +255,8 @@
 //Action 0
 -1 * 0 00 0A \b26 01 IND_FERTILISERPLANT //-1 * 0 00 0A <num-props> 01 <id>
 	08 IND_NULL //reuse original industry with this here ID
-	0A 06 //number of industry layouts
-		\d357 //size of layout definition +2 for termination
+	0A 07 //number of industry layouts
+		\d479 //size of layout definition +2 for termination
 		//layout:
 			00 00 FE TILE_FERTILISERPLANT_1 00
 			00 01 FE TILE_FERTILISERPLANT_1 00
@@ -306,6 +337,32 @@
 			04 00 FE TILE_FERTILISERPLANT_1 00
 			04 02 FE TILE_FERTILISERPLANT_1 00
 			04 03 FE TILE_FERTILISERPLANT_1 00
+		00 80 //terminate layout definition
+		//layout:
+			00 00 FE TILE_FERTILISERPLANT_1 00
+			00 01 FE TILE_FERTILISERPLANT_1 00
+			00 02 FE TILE_FERTILISERPLANT_1 00
+			00 05 FE TILE_FERTILISERPLANT_1 00
+			00 06 FE TILE_FERTILISERPLANT_1 00
+			01 00 FE TILE_FERTILISERPLANT_1 00
+			01 01 FE TILE_FERTILISERPLANT_1 00
+			01 02 FE TILE_FERTILISERPLANT_1 00
+			01 05 FE TILE_FERTILISERPLANT_1 00
+			01 06 FE TILE_FERTILISERPLANT_1 00
+			02 00 FE TILE_FERTILISERPLANT_1 00
+			02 01 FE TILE_FERTILISERPLANT_1 00
+			02 02 FE TILE_FERTILISERPLANT_1 00
+			02 05 FE TILE_FERTILISERPLANT_1 00
+			02 06 FE TILE_FERTILISERPLANT_1 00
+			04 00 FE TILE_FERTILISERPLANT_1 00
+			04 01 FE TILE_FERTILISERPLANT_1 00
+			04 02 FE TILE_FERTILISERPLANT_1 00
+			04 05 FE TILE_FERTILISERPLANT_1 00
+			04 06 FE TILE_FERTILISERPLANT_1 00
+			05 01 FE TILE_FERTILISERPLANT_1 00
+			05 02 FE TILE_FERTILISERPLANT_1 00
+			05 05 FE TILE_FERTILISERPLANT_1 00
+			05 06 FE TILE_FERTILISERPLANT_1 00
 		00 80 //terminate layout definition
 	0B 04 //production flags 1h=extractive, 2h=organic, 4h=processing
 	0C STR_IND_CLOSE_GENERIC //industry closure message
