@@ -178,7 +178,7 @@
 	23 \d0  //destruction cost multiplier (dword; default: 0)
 	1A \d0 //special industry flag (dword)
 	21 85 //callback flags
-	22 01  //callback flags
+	22 09  //callback flags
 //To show cargo waiting to be processed at industry, ensure prop 21 is set to use production callback
 
 //No action 1 for industries, as graphics are defined by the industry-tile feature.
