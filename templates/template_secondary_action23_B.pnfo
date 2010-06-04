@@ -439,13 +439,7 @@
 #include "industry_availability_check.pnfo"     
 
 // handle cb 14A industry color
--1 * 0 02 0A 21 //
-    85 // 
-      1A 00  \w01 // create a value (constant 1A)
-    \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
-       01 80  00 00  00 00
-     01 80
-
+#include "industry_color.pnfo"     
 
 // handle callbacks
 -1 * 0 02 0A C0 //-1 * 0 0A <set-id>
