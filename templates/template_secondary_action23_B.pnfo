@@ -38,6 +38,7 @@
 //   texts	E0-FF
 //   industry location permissibility (CB 28)  10-1F  (NB CB 28 is not templated - handled on a per-industry basis)
 //   industry availability (CB 22) 20
+//   industry color (CB 14A) 21
 //   generally unused and available	2A-9F
 
 // Persistent storage used (not guaranteed to be up to date, but it's a starting point for making sense of this)
@@ -437,12 +438,22 @@
 // handle cb 22 industry availability
 #include "industry_availability_check.pnfo"     
 
+// handle cb 14A industry color
+-1 * 0 02 0A 21 //
+    85 // 
+      1A 00  \w01 // create a value (constant 1A)
+    \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
+       01 80  00 00  00 00
+     01 80
+
+
 // handle callbacks
 -1 * 0 02 0A C0 //-1 * 0 0A <set-id>
 	85 0C //<type> <variable> word-access callback
 	00 FF FF //no shift, no mask
-	\b3 //number of ranges to check
+	\b4 //number of ranges to check
     20 00   22 00   22 00 //industry availability cb 22
+    21 00   4A 01   4A 01 //industry color cb 14A
 	  THIS_STR_INFO_CB38 80   38 00   38 00 ////cb 38 display additional text in fund window
 	  F0 00   3A 00   3A 00 //cb 3A (industry window)
 	C1 00 //default
