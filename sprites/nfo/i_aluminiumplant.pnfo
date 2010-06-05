@@ -82,28 +82,28 @@
 			00 03 FE TILE_ALUMINIUMPLANT_1 00
 			00 05 FE TILE_ALUMINIUMPLANT_1 00
 			00 06 FE TILE_ALUMINIUMPLANT_1 00
-			00 07 FE TILE_ALUMINIUMPLANT_1 00
+			00 08 FE TILE_ALUMINIUMPLANT_1 00
 			01 00 FE TILE_ALUMINIUMPLANT_1 00 //xoffs yoffs FE newtile(W)
 			01 01 FE TILE_ALUMINIUMPLANT_1 00
 			01 02 FE TILE_ALUMINIUMPLANT_1 00
 			01 03 FE TILE_ALUMINIUMPLANT_1 00
 			01 05 FE TILE_ALUMINIUMPLANT_1 00
 			01 06 FE TILE_ALUMINIUMPLANT_1 00
-			01 07 FE TILE_ALUMINIUMPLANT_1 00
+			01 08 FE TILE_ALUMINIUMPLANT_1 00
 			02 00 FE TILE_ALUMINIUMPLANT_1 00 //xoffs yoffs FE newtile(W)
 			02 01 FE TILE_ALUMINIUMPLANT_1 00
 			02 02 FE TILE_ALUMINIUMPLANT_1 00
 			02 03 FE TILE_ALUMINIUMPLANT_1 00
 			02 05 FE TILE_ALUMINIUMPLANT_1 00
 			02 06 FE TILE_ALUMINIUMPLANT_1 00
-			02 07 FE TILE_ALUMINIUMPLANT_1 00
+			02 08 FE TILE_ALUMINIUMPLANT_1 00
 			03 00 FE TILE_ALUMINIUMPLANT_1 00 //xoffs yoffs FE newtile(W)
 			03 01 FE TILE_ALUMINIUMPLANT_1 00
 			03 02 FE TILE_ALUMINIUMPLANT_1 00
 			03 03 FE TILE_ALUMINIUMPLANT_1 00
 			03 05 FE TILE_ALUMINIUMPLANT_1 00
 			03 06 FE TILE_ALUMINIUMPLANT_1 00
-			03 07 FE TILE_ALUMINIUMPLANT_1 00
+			03 08 FE TILE_ALUMINIUMPLANT_1 00
 			05 02 FE TILE_GENERIC_ELECTRICALSUBSTATION 00
 		00 80 //terminate layout definition
 	0B 04 //production flags 1h=extractive, 2h=organic, 4h=processing
@@ -130,11 +130,11 @@
 	23 \d0  //destruction cost multiplier (dword; default: 0)
 	1A \d0 //special industry flag (dword)
 	21 85 //callback flags 
-	22 01  //callback flags
+	22 09 //callback flags
 //To show cargo waiting to be processed at industry, ensure prop 21 is set to use production callback
 
 //No action 1 for industries, as graphics are defined by the industry-tile feature.
 
-#include "../../templates/template_secondary_action23_A.pnfo"
+#include "../../templates/template_secondary_action23_B.pnfo"
 
 
