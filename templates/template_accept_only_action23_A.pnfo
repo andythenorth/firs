@@ -202,13 +202,6 @@
     C3 00  \d00  \d00  //
   C3 00 // default
 
--1 * 0 02 0A C1 //use this to initialise variables // !! seems to blow up if industry not built
-  82 // 
-    41 00 \bxFF //get index of town that the industry belongs to
-  \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
-    C2 00  \b00  \b00  //
-  C2 00 // default
-
 // industry action 3 attach varaction2 chain to industry
 -1 * 0 03 0A 01 THIS_INDUSTRY 00 \wxC3 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>	
 
