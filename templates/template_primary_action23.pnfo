@@ -124,6 +124,19 @@
 // handle cb 14A industry color
 #include "industry_color.pnfo"     
 
+-1 * 0 02 0A 10 //high random chance of production decrease if conditions met...  
+  81 18 00 FE //randomise
+  \b1 //range
+    00 84 00 00 //build industry (ignore distance check)
+  11 00 //use distance check to decide whether to build industry
+
+-1 * 15	 02 0A 11  //check distance to nearest industry of type n
+      81 64  9A  00 FF //check distance to industry type n.  Set bit 7 for new industry types (add 8 to first nibble of Store ID). 
+       01 //range
+         00 84  \b0 \b16 //build industry if distance is in range
+       04 80 //otherwise return string D0 04
+
+
 // handle callbacks
 -1 * 0 02 0A C0 
 	85 0C //<type> <variable> word-access callback
