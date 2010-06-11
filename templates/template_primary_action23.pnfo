@@ -112,7 +112,7 @@
 // fields	
      -1 * 0 02 0A 30 //store tile ID to register, return field size in XY   
     89 // 
-      1A 20 \dxF0 // create 0
+      1A 20 \dx00 // create 0
       \2sto 1A 00 \dx100 //store in register
     \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
        44 80 \d00 \d00
@@ -124,17 +124,30 @@
 // handle cb 14A industry color
 #include "industry_color.pnfo"     
 
--1 * 0 02 0A 10 //high random chance of production decrease if conditions met...  
-  81 18 00 FE //randomise
-  \b1 //range
-    00 84 00 00 //build industry (ignore distance check)
-  11 00 //use distance check to decide whether to build industry
+
+-1 * 15	 02 0A 12  //check distance to nearest industry of type n
+    85 
+      67  1A  00 \wxFFFF //check count and distance of industry  (var, param, shift, mask) 
+       01 //range
+         00 84  \w0 \w20 //build industry if count is in range
+       04 80 //otherwise return string D0 04
+
 
 -1 * 15	 02 0A 11  //check distance to nearest industry of type n
-      81 64  9A  00 FF //check distance to industry type n.  Set bit 7 for new industry types (add 8 to first nibble of Store ID). 
+    81 
+      67  1A  10 \bxFF //check count and distance of industry  (var, param, shift, mask) 
        01 //range
-         00 84  \b0 \b16 //build industry if distance is in range
-       04 80 //otherwise return string D0 04
+         00 84  \b0 \b4 //build industry if count is in range
+       12 00 //default
+
+-1 * 0 02 0A 10 //store FFFFFFFF (special value for current GRFID) to register 100   
+    89 // 
+      1A 20 \dxFFFFFFFF // create value
+      \2sto 1A 00 \dx100 //store in register
+    \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
+       11 00 \d00 \d00
+     11 00 //default
+
 
 
 // handle callbacks
