@@ -137,7 +137,7 @@
     81 
       67  1A  10 \bxFF //check count and distance of industry  (var, param, shift, mask) 
        01 //range
-         00 84  \b0 \b4 //build industry if count is in range
+         00 84  \b0 \b5 //build industry if count is in range
        12 00 //default
 
 -1 * 0 02 0A 10 //store FFFFFFFF (special value for current GRFID) to register 100   
