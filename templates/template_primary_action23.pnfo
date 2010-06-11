@@ -129,7 +129,7 @@
     85 
       67  1A  00 \wxFFFF //check count and distance of industry  (var, param, shift, mask) 
        01 //range
-         00 84  \w0 \w20 //build industry if count is in range
+         00 84  \w8 \w20 //build industry if count is in range
        04 80 //otherwise return string D0 04
 
 
