@@ -1,4 +1,4 @@
--1 * 15	 02 0A 12  //check distance to nearest industry of type n
+-1 * 15	 02 0A 13  //check distance to nearest industry of type n
     85 
       67  THIS_INDUSTRY  00 \wxFFFF // var, param (industry ID), shift, mask 
        01 //range
@@ -6,17 +6,23 @@
        04 80 //otherwise return string D0 04
 
 
--1 * 15	 02 0A 11  //check count of nearest industry of type n
+-1 * 15	 02 0A 12  //check count of nearest industry of type n
     81 
       67  THIS_INDUSTRY  10 \bxFF // var, param (industry ID), shift, mask 
        01 //range
          00 84  \b0 \b5 //build industry if count is in range
-       12 00 //default
+       13 00 //default
 
--1 * 0 02 0A 10 //store FFFFFFFF (special value for current GRFID) to register 100   
+-1 * 0 02 0A 11 //store FFFFFFFF (special value for current GRFID) to register 100   
     89 // 
       1A 20 \dxFFFFFFFF // create value
       \2sto 1A 00 \dx100 //store in register
     \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
-       11 00 \d00 \d00
-     11 00 //default
+       12 00 \d00 \d00
+     12 00 //default
+
+-1 * 15	 02 0A 10  //check if industry is being built by player or game
+    81  A7  00 \bxFF 
+       01 //range
+         11 00  \bx10 \bx10 //use placement routine if game is building industry
+       00 84 //build industry if player is funding it
