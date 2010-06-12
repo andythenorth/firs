@@ -3,6 +3,7 @@
 #define THIS_STR_INFO_CB38    STR_INFO_GENERIC
 #define THIS_STR_BOOST        STR_INFO_FS_PRIMARY_BOOST
 #define THIS_INTRO_DATE               \d00
+#define THIS_HANDLE_CB28      10 00
 
 //Redefinition of original TTD industry
 //Fruit Plantation
@@ -17,10 +18,10 @@
 	1D 00 00 00 00 //input cargo 2 multiplier
 	1E 00 00 00 00 //input cargo 3 multiplier
 	16 FF FF FF //conflicting industry types (3*byte; ID+80h; FF to disable)
-	17 \b4 //probability in random game
+	17 \b6 //probability in random game
 	18 \b3 //probability during gameplay
 	19 CLR_FRUITPLANTATION //map colour (byte; using indexes from dos palette)
-	21 32 //callback flags 
+	21 3A //callback flags 
 	22 05  //callback flags
 	
 //To show cargo waiting to be processed at industry, ensure prop 21 is set to use production callback
