@@ -127,15 +127,15 @@
 
 -1 * 15	 02 0A 12  //check distance to nearest industry of type n
     85 
-      67  1A  00 \wxFFFF //check count and distance of industry  (var, param, shift, mask) 
+      67  THIS_INDUSTRY  00 \wxFFFF // var, param (industry ID), shift, mask 
        01 //range
-         00 84  \w8 \w20 //build industry if count is in range
+         00 84  \w10 \w30 //build industry if distance is in range
        04 80 //otherwise return string D0 04
 
 
--1 * 15	 02 0A 11  //check distance to nearest industry of type n
+-1 * 15	 02 0A 11  //check count of nearest industry of type n
     81 
-      67  1A  10 \bxFF //check count and distance of industry  (var, param, shift, mask) 
+      67  THIS_INDUSTRY  10 \bxFF // var, param (industry ID), shift, mask 
        01 //range
          00 84  \b0 \b5 //build industry if count is in range
        12 00 //default

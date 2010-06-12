@@ -180,7 +180,7 @@
 	1E \w0  \w0  //input cargo 3 multiplier
 	14 \b01 //minimal cargo distribution amount
 	16 FF FF FF //conflicting industry types (3*byte; ID+80h; FF to disable)
-	17 \b9 //probability in random game
+	17 \b7 //probability in random game
 	18 \b2 //probability during gameplay
 	20 FF FF FF BF //prospecting success chance (dword; FFFFFFFFh=100%)
 	0F \b255 //fund cost multiplier (byte)
