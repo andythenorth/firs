@@ -21,4 +21,4 @@
 -1 * 0 0D MAP_SIZE_PARAMETER \Du<< MAP_SIZE_PARAMETER TEMP_PARAMETER        // shift the 1 by the log2 of the actual map size
 -1 * 0 0D MAP_SIZE_PARAMETER \Du/ MAP_SIZE_PARAMETER FF \d262144            // Divide by the tile count of a 512^2 map
 -1 * 0 0D INDUSTRY_CLUSTER_PARAMETER \D* MAP_SIZE_PARAMETER FF \d02         // Multiply map_size_parameter by 2
--1 * 0 0D INDUSTRY_CLUSTER_PARAMETER \D+ INDUSTRY_CLUSTER_PARAMETER FF \d01 // Add two to the cluster parameter
+-1 * 0 0D INDUSTRY_CLUSTER_PARAMETER \D+ INDUSTRY_CLUSTER_PARAMETER FF \d01 // Add one to the cluster parameter
