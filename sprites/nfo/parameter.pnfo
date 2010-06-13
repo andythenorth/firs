@@ -12,3 +12,13 @@
 -1 * 0 0D LIMIT_MANUFACTURING_SUPPLIES \Du* LIMIT_MANUFACTURING_SUPPLIES LIMIT_PARAMETER
 
 // Some text stack magic has to go here in order to create the proper strings showing the stockpile limit
+
+// Get a measure for the map size and set it into parameter
+-1 * 0 0D TEMP_PARAMETER \D= 13 FE FF FF 00 00                              // get the map size (global parameter 13)
+-1 * 0 0D TEMP_PARAMETER \D& TEMP_PARAMETER FF \dx000000FF                  // mask out only the map size nibbles
+-1 * 0 0D TEMP_PARAMETER \D+ TEMP_PARAMETER FF \d12                         // add the minimum size of each border
+-1 * 0 0D MAP_SIZE_PARAMETER \D= FF FF \d01                                 // write 1 into the map size parameter
+-1 * 0 0D MAP_SIZE_PARAMETER \Du<< MAP_SIZE_PARAMETER TEMP_PARAMETER        // shift the 1 by the log2 of the actual map size
+-1 * 0 0D MAP_SIZE_PARAMETER \Du/ MAP_SIZE_PARAMETER FF \d262144            // Divide by the tile count of a 512^2 map
+-1 * 0 0D INDUSTRY_CLUSTER_PARAMETER \D= MAP_SIZE_PARAMETER FF \d02         // Multiply map_size_parameter by 2
+-1 * 0 0D INDUSTRY_CLUSTER_PARAMETER \D+ INDUSTRY_CLUSTER_PARAMETER FF \d02 // Add two to the cluster parameter
