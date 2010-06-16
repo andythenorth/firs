@@ -76,7 +76,7 @@
 	0A 01 //number of industry layouts
 		\d107 //sum(size of layout definition +2 for termination)
 		//layout:
-			00 02 FE TILE_ALUMINIUMPLANT_1 00 //xoffs yoffs FE newtile(W)
+			00 02 FE TILE_GENERIC_CONCRETE 00 //xoffs yoffs FE newtile(W)
 			00 03 FE TILE_ALUMINIUMPLANT_1 00
 			01 02 FE TILE_ALUMINIUMPLANT_1 00
 			01 03 FE TILE_ALUMINIUMPLANT_1 00

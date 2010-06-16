@@ -1,7 +1,7 @@
 //Industry tile sprites; one sprite for each tile; eventually more for each tile to include  construction stages
 
 //Tile action 1
--1 * 0 01 09 \b9 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
+-1 * 0 01 09 \b12 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
 // Format: spritenum pcxfile xpos ypos compression ysize xsize xrel yrel
 // ground tile
 -1 sprites/pcx/industries/groundtiles.pcx  80 10 09   31 64 -31   0
@@ -21,6 +21,10 @@
 -1 sprites/pcx/industries/aluminiumplant.pcx  430 10 09  56 64 -31 -26
 // greeble tile 2
 -1 sprites/pcx/industries/aluminiumplant.pcx  500 10 09  56 64 -31 -26
+// stockpile building (3 parts)
+-1 sprites/pcx/industries/aluminiumplant.pcx  570 10 09  90 64 -31 -61
+-1 sprites/pcx/industries/aluminiumplant.pcx  640 10 09  90 64 -31 -61
+-1 sprites/pcx/industries/aluminiumplant.pcx  710 10 09  90 64 -31 -61
 
 //Tile action 2 
 // mill shed
@@ -69,5 +73,21 @@
 -1 * 0 02 09 07 00 //-1 * 0 02 09 <set-id> 00
 	\dx80008000 //groundsprite
 	\dx80008008 //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b90 //xextent yextent zextent
+// stockpile building (3 parts)
+-1 * 0 02 09 08 00 //-1 * 0 02 09 <set-id> 00
+	\dx80008000 //groundsprite
+	\dx80008009 //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b90 //xextent yextent zextent
+-1 * 0 02 09 09 00 //-1 * 0 02 09 <set-id> 00
+	\dx80008000 //groundsprite
+	\dx8000800A //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b90 //xextent yextent zextent
+-1 * 0 02 09 0A 00 //-1 * 0 02 09 <set-id> 00
+	\dx80008000 //groundsprite
+	\dx8000800B //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b90 //xextent yextent zextent
