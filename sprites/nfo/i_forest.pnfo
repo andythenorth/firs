@@ -3,6 +3,7 @@
 #define THIS_STR_INFO_CB38    STR_INFO_GENERIC
 #define THIS_STR_BOOST        STR_INFO_ES_PRIMARY_BOOST
 #define THIS_INTRO_DATE               \d00
+#define THIS_HANDLE_CB28      10 00
 
 //Redefinition of original TTD industry
 //Forest
@@ -15,9 +16,13 @@
 	17 \b5 //probability in random game
 	18 \b3 //probability during gameplay
 	19 CLR_FOREST //map colour (byte; using indexes from dos palette)
-	21 32 //callback flags 
+	21 3A //callback flags 
 	22 05  //callback flags
 //To show cargo waiting to be processed at industry, ensure prop 21 is set to use production callback
+
+// handle cb 28 industry location - included on a per-industry basis to allow industries to use various different schemes 
+#include "../../templates/cb28_cluster_forests.pnfo"     
+
 
 #include "../../templates/template_primary_action23.pnfo"
 
