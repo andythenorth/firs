@@ -26,6 +26,11 @@
 	
 //To show cargo waiting to be processed at industry, ensure prop 21 is set to use production callback
 //No action 1 for industries, as graphics are defined by the industry-tile feature.
+
+// handle cb 28 industry location - included on a per-industry basis to allow industries to use various different schemes 
+#include "../../templates/cb28_cluster_farms.pnfo"     
+
+
 #include "../../templates/template_primary_action23.pnfo"
 //Tiles 74
 -1 * 0 00 09 \b6 01 74 // -1 * 0 00 09 <num-props> 01 <id>
