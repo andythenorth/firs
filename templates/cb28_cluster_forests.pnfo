@@ -1,0 +1,34 @@
+-1 * 15	 02 0A 1A  //check distance to nearest industry of type n
+    85 
+      67  THIS_INDUSTRY  00 \wxFFFF // var, param (industry ID), shift, mask 
+       01 //range
+         00 84  \w10 \w30 //build industry if distance is in range
+       04 80 //otherwise return string D0 04
+
+-1 * 0 02 0A 13 //check count of industry of type n, do some magic with map size cluster scaling parameter
+    89 //
+      67  THIS_INDUSTRY  30 \dxFFFFFFFF // var, param (industry ID), shift, mask 
+      \2/ 7F INDUSTRY_CLUSTER_PARAMETER 00 \dxFFFFFFFF // 
+    \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
+       00 84  \d0 \d0 //build anywhere if cluster limit not reached
+    1A 00 //build using placement routine
+
+-1 * 0 02 0A 12 //store FFFFFFFF (special value for current GRFID) to register 100   
+    89 // 
+      1A 20 \dxFFFFFFFF // create value
+      \2sto 1A 00 \dx100 //store in register
+    \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
+       13 00 \d00 \d00
+     13 00 //default
+
+-1 * 15	 02 0A 11  //check if industry is being built by player or game
+    81  A7  00 \bxFF 
+       01 //range
+         12 00  \bx10 \bx10 //use placement routine if game is building industry
+       00 84 //build industry if player is funding it
+       
+-1 * 15	 02 0A 10  //check if in scenario editor
+    81  12  00 \bxFF 
+       01 //range
+         11 00  \bx01 \bx01 //use placement routine if in game mode
+       00 84 //build industry if in other mode
