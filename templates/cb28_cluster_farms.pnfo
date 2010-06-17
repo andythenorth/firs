@@ -8,8 +8,7 @@
 -1 * 0 02 0A 13 //check count of industry of type n, do some magic with map size cluster scaling parameter
     89 //
       67  THIS_INDUSTRY  30 \dxFFFFFFFF // var, param (industry ID), shift, mask 
-      \2/ 7F INDUSTRY_CLUSTER_PARAMETER 20 \dxFFFFFFFF // 
-      10 1a 00 \dx04 // store to storage
+      \2/ 7F INDUSTRY_CLUSTER_PARAMETER 00 \dxFFFFFFFF // 
     \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
        00 84  \d0 \d0 //build anywhere if cluster limit not reached
     1A 00 //build using placement routine
