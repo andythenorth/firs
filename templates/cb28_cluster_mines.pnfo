@@ -8,7 +8,7 @@
 -1 * 0 02 0A 13 //check count of industry of type n, do some magic with map size cluster scaling parameter
     89 //
       67  THIS_INDUSTRY  30 \dxFFFFFFFF // var, param (industry ID), shift, mask 
-      \2* 1A 20 \d02 // adjust result: (n * 3) / 4 (effectively multiplies number of clusters by ~1.3)
+      \2* 1A 20 \d02 // adjust result: (n * 2) / 3 (effectively multiplies number of clusters by 1.5)
       \2/ 1A 20 \d03 // ^
       \2/ 7F INDUSTRY_CLUSTER_PARAMETER 00 \dxFFFFFFFF // 
     \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
