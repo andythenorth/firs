@@ -2,7 +2,7 @@
     85 
       67  THIS_INDUSTRY  00 \wxFFFF // var, param (industry ID), shift, mask 
        01 //range
-         00 84  \w10 \w30 //build industry if distance is in range
+         00 84  \w10 \w36 //build industry if distance is in range
        04 80 //otherwise return string D0 04
 
 -1 * 0 02 0A 13 //check count of industry of type n, do some magic with map size cluster scaling parameter
