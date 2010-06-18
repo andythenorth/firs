@@ -13,6 +13,9 @@
 
 // Some text stack magic has to go here in order to create the proper strings showing the stockpile limit
 
+// suppress warning about invalid parameter (Action D)
+//@@WARNING DISABLE 123
+
 // Get a measure for the map size and set it into parameter
 -1 * 0 0D TEMP_PARAMETER \D= 13 FE FF FF 00 00                              // get the map size (global parameter 13)
 -1 * 0 0D TEMP_PARAMETER \D& TEMP_PARAMETER FF \dx000000FF                  // mask out only the map size nibbles
@@ -22,3 +25,6 @@
 -1 * 0 0D MAP_SIZE_PARAMETER \Du/ MAP_SIZE_PARAMETER FF \d262144            // Divide by the tile count of a 512^2 map
 -1 * 0 0D INDUSTRY_CLUSTER_PARAMETER \D* MAP_SIZE_PARAMETER FF \d02         // Multiply map_size_parameter by 2
 -1 * 0 0D INDUSTRY_CLUSTER_PARAMETER \D+ INDUSTRY_CLUSTER_PARAMETER FF \d01 // Add one to the cluster parameter
+
+// enable warning about invalid parameter (Action D)
+//@@WARNING ENABLE 123
