@@ -445,7 +445,13 @@
 -1 * 0 02 0A C0 //-1 * 0 0A <set-id>
 	85 0C //<type> <variable> word-access callback
 	00 FF FF //no shift, no mask
-	\b4 //number of ranges to check
+	\b5 //number of ranges to check
+	  #ifdef THIS_HANDLE_CB28
+    THIS_HANDLE_CB28   28 00   28 00 //can industry be built? ...relies on action 2 with correct ID defined in industry pnfo
+    #endif
+    #ifndef THIS_HANDLE_CB28
+    00 84   28 00   28 00 //just allow the industry to be built (this industry doesn't care about location)
+    #endif
     20 00   22 00   22 00 //industry availability cb 22
     21 00   4A 01   4A 01 //industry color cb 14A
 	  THIS_STR_INFO_CB38 80   38 00   38 00 ////cb 38 display additional text in fund window
