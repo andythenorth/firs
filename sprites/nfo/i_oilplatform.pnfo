@@ -12,7 +12,7 @@
 	1F STR_IND_OILPLATFORM //industry name
 	10 CARGO_OIL CARGO_PASSENGERS //production cargo types (word; fill unused with FFh)
 	11 CARGO_ENGINEERINGSUPPLIES FF FF FF //acceptance cargo types (dword; fill unused with FFh)
-	12 \b15 //production multiplier cargo 1
+	12 \b20 //production multiplier cargo 1
 	13 \b02 //production multiplier cargo 2
 	1C 00 00 00 00 //input cargo 1 multiplier (dword M1 M2; output_typen = X*Mn/256)
 	1D 00 00 00 00 //input cargo 2 multiplier
