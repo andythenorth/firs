@@ -28,12 +28,13 @@
 -1 * 0 02 09 A1
 	82 44 //check layout number (lowest byte of related industry)
 	00 FF //don't shift, don't mask
-	\b5 //number of ranges to check (number of layouts)
+	\b6 //number of ranges to check (number of layouts)
     \wxB1 \b1 \b1 //<set-id \w> <low-range> <high-range>
     \wxB2 \b2 \b2 //<set-id \w> <low-range> <high-range>
     \wxB3 \b3 \b3 //<set-id \w> <low-range> <high-range>
     \wxB4 \b4 \b4 //<set-id \w> <low-range> <high-range>
     \wxB5 \b5 \b5 //<set-id \w> <low-range> <high-range>
+    \wxB6 \b6 \b6 //<set-id \w> <low-range> <high-range>
 	\wx00 //<default> (first tile layout available)
 
 #include "i_dairy_tiles_layouts/dairy_tiles_standard.pnfo"
@@ -42,12 +43,13 @@
 -1 * 0 02 09 A2
 	82 44 //check layout number (lowest byte of related industry)
 	00 FF //don't shift, don't mask
-	\b5 //number of ranges to check (number of layouts)
+	\b6 //number of ranges to check (number of layouts)
     \wxB1 \b1 \b1 //<set-id \w> <low-range> <high-range>
     \wxB2 \b2 \b2 //<set-id \w> <low-range> <high-range>
     \wxB3 \b3 \b3 //<set-id \w> <low-range> <high-range>
     \wxB4 \b4 \b4 //<set-id \w> <low-range> <high-range>
     \wxB5 \b5 \b5 //<set-id \w> <low-range> <high-range>
+    \wxB6 \b6 \b6 //<set-id \w> <low-range> <high-range>
 	\wx00 //<default> (first tile layout available)
 
 #include "i_dairy_tiles_layouts/dairy_tiles_snow.pnfo"
@@ -56,12 +58,13 @@
 -1 * 0 02 09 A3
 	82 44 //check layout number (lowest byte of related industry)
 	00 FF //don't shift, don't mask
-	\b5 //number of ranges to check (number of layouts)
+	\b6 //number of ranges to check (number of layouts)
     \wxB1 \b1 \b1 //<set-id \w> <low-range> <high-range>
     \wxB2 \b2 \b2 //<set-id \w> <low-range> <high-range>
     \wxB3 \b3 \b3 //<set-id \w> <low-range> <high-range>
     \wxB4 \b4 \b4 //<set-id \w> <low-range> <high-range>
     \wxB5 \b5 \b5 //<set-id \w> <low-range> <high-range>
+    \wxB6 \b6 \b6 //<set-id \w> <low-range> <high-range>
 	\wx00 //<default> (first tile layout available)
 
 

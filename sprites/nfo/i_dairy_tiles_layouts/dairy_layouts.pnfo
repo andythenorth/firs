@@ -58,3 +58,15 @@
     \wx04   01 02  01 02
     \wx02   01 03  01 03
 	\wx05 //00 00  00 00 <default>		
+
+-1 * 0 02 09 B6 //layout 3
+	85 43 //check relative position (00yx[YYXX])
+	00 FF FF //don't shift, don't mask
+	\b6 //number of ranges to check (number of tiles)
+    \wx05   00 00  00 00
+    \wx03   00 01  00 01
+    \wx04   01 00  01 00
+    \wx02   01 01  01 01
+    \wx01   03 00  03 00
+    \wx00   03 01  03 01
+	\wx05 //00 00  00 00 <default>			
