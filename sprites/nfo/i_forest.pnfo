@@ -11,7 +11,7 @@
 	08 03 //substitute industry type
 	09 03 //industry type override
 	11 CARGO_ENGINEERINGSUPPLIES FF FF FF //acceptance cargo types (dword; fill unused with FFh)
-	1C 54 00 00 00 //input cargo 1 multiplier (dword M1 M2; output_typen = X*Mn/256)
+	12 \b12 //production multiplier cargo 1
 	16 FF FF FF //conflicting industry types (3*byte; ID+80h; FF to disable)
 	17 \b8 //probability in random game
 	18 \b3 //probability during gameplay
