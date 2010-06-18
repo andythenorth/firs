@@ -2,7 +2,7 @@
     85 
       67  THIS_INDUSTRY  00 \wxFFFF // var, param (industry ID), shift, mask 
        01 //range
-         04 80  \w00 \w52 //don't build industry if distance is in certain range
+         04 80  \w00 \w56 //don't build industry if distance is in certain range
        00 84 //otherwise build industry
 
 -1 * 15	 02 0A 11  //check if industry is being built by player or game
