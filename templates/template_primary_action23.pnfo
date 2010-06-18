@@ -112,7 +112,7 @@
 // fields	
      -1 * 0 02 0A 30 //store tile ID to register, return field size in XY   
     89 // 
-      1A 20 \dx00 // create 0
+      1A 20 \dx01 // create 1
       \2sto 1A 00 \dx100 //store in register
     \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
        44 80 \d00 \d00
