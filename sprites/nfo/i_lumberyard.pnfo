@@ -23,9 +23,8 @@
 //Industry tile sprites; one sprite for each tile; eventually more for each tile to include  construction stages
 
 //Tile action 1
--1 * 0 01 09 \b10 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
+-1 * 0 01 09 \b9 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
 // Format: spritenum pcxfile xpos ypos compression ysize xsize xrel yrel
--1 sprites/pcx/industries/groundtiles.pcx  10 10 09   31 64  -31  0
 // creosote shed
 -1 sprites/pcx/industries/lumberyard.pcx   80 10 09   64 64  -31  -40
 -1 sprites/pcx/industries/lumberyard.pcx  150 10 09   64 64  -31  -34
@@ -53,48 +52,48 @@
 // creosote shed
 -1 * 0 02 09 01 00 //-1 * 0 02 09 <set-id> 00
 	\d3924 //groundsprite
-	\dx80008001 //building sprite
+	\dx80008000 //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b16 //xextent yextent zextent
 -1 * 0 02 09 02 00 //-1 * 0 02 09 <set-id> 00
 	\d3924 //groundsprite
-	\dx80008002 //building sprite
+	\dx80008001 //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b16 //xextent yextent zextent
 // large shed
 -1 * 0 02 09 03 00 //-1 * 0 02 09 <set-id> 00
 	\d3924 //groundsprite
-	\dx80008003 //building sprite
+	\dx80008002 //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b16 //xextent yextent zextent
 -1 * 0 02 09 04 00 //-1 * 0 02 09 <set-id> 00
 	\d3924 //groundsprite
-	\dx80008004 //building sprite
+	\dx80008003 //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b16 //xextent yextent zextent
 // office with crane
 -1 * 0 02 09 05 00 //-1 * 0 02 09 <set-id> 00
 	\d3924 //groundsprite
-	\dx80008005 //building sprite
+	\dx80008004 //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b16 //xextent yextent zextent
 // wood piles
 -1 * 0 02 09 06 00 //-1 * 0 02 09 <set-id> 00
 	\d3924 //groundsprite
-	\dx80008006 //building sprite
+	\dx80008005 //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b16 //xextent yextent zextent
 -1 * 0 02 09 07 02 //-1 * 0 02 09 <set-id> 00 (extended format)
 	\d3924 //groundsprite
-	\dx80008009 //building sprite
+	\dx80008008 //building sprite
 	\b0 \b0 \b0 //xofs yofs zofs
 	\b16 \b16 \b16 //xextent yextent zextent
-	\dx80008007 //building sprite
+	\dx80008006 //building sprite
 	\b0 \b0 \b0 //xofs yofs zofs
 	\b16 \b16 \b16 //xextent yextent zextent
 -1 * 0 02 09 08 00 //-1 * 0 02 09 <set-id> 00
 	\d3924 //groundsprite
-	\dx80008008 //building sprite
+	\dx80008007 //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b16 //xextent yextent zextent
 
