@@ -8,6 +8,7 @@
 #define THIS_STR_INFO_CB3A            STR_INFO_CEMENTPLANT
 #define THIS_STR_INFO_CB38            STR_INFO_GENERIC
 #define THIS_INTRO_DATE               \d1902
+#define THIS_HANDLE_CB28              10 00
 
 //Industry tiles definition
 
@@ -355,11 +356,15 @@
 	19 CLR_CEMENTPLANT //map colour (byte; using indexes from dos palette)
 	23 \d0  //destruction cost multiplier (dword; default: 0)
 	1A \dx1000 //special industry flag (dword;)
-	21 85 //callback flags 
+	21 8D //callback flags 
 	22 09  //callback flags
 //To show cargo waiting to be processed at industry, ensure prop 21 is set to use production callback
 
 //No action 1 for industries, as graphics are defined by the industry-tile feature.
+
+// handle cb 28 industry location - included on a per-industry basis to allow industries to use various different schemes 
+#include "../../templates/cb28_secondary_generic.pnfo"     
+
 
 #include "../../templates/template_secondary_action23_B.pnfo"
 
