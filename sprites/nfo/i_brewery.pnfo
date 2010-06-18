@@ -86,8 +86,8 @@
 //Action 0
 -1 * 0 00 0A \b26 01 IND_BREWERY //-1 * 0 00 0A <num-props> 01 <id>
 	08 IND_NULL //reuse original industry with this here ID
-	0A 04 //number of industry layouts
-		\d68 //size of layout definition +2 for termination
+	0A 05 //number of industry layouts
+		\d95 //size of layout definition +2 for termination
 		//layout:
 			00 02 FE TILE_BREWERY_1 00
 			01 00 FE TILE_BREWERY_1 00 //xoffs yoffs FE newtile(W)
@@ -106,6 +106,13 @@
 		//layout:
 			00 00 FE TILE_BREWERY_1 00
 			01 00 FE TILE_BREWERY_1 00 //xoffs yoffs FE newtile(W)
+			02 00 FE TILE_BREWERY_1 00
+		00 80 //terminate layout definition
+		//layout:
+			00 00 FE TILE_BREWERY_1 00
+			00 01 FE TILE_BREWERY_1 00
+			01 00 FE TILE_BREWERY_1 00 //xoffs yoffs FE newtile(W)
+			01 01 FE TILE_BREWERY_1 00
 			02 00 FE TILE_BREWERY_1 00
 		00 80 //terminate layout definition
 	0B 04 //production flags 1h=extractive, 2h=organic, 4h=processing
