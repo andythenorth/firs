@@ -11,7 +11,7 @@
 	09 0B //industry type override
 	24 STR_STA_WELLS //default text for nearby station
 	11 CARGO_ENGINEERINGSUPPLIES FF FF FF //acceptance cargo types (dword; fill unused with FFh)
-	1C 54 00 00 00 //input cargo 1 multiplier (dword M1 M2; output_typen = X*Mn/256)
+	12 \b19 //production multiplier cargo 1
 	16 FF FF FF //conflicting industry types (3*byte; ID+80h; FF to disable)
 	17 \b5 //probability in random game
 	18 \b3 //probability during gameplay
