@@ -78,6 +78,8 @@
     03 80 00 03 //lookat cb 35 or 29 in wiki to see what the returned value means
   00 80 //else no change	
 
+// suppress warning about nonexistent variable (trips up on var 5F)
+//@@WARNING DISABLE 86
 -1 * 0 02 0A D7 //case we've reached the spread ticker limit - reset the spread ticker and spread ticker limit. 
   89 // 
     1A 20  \d00 //create value 0
@@ -91,6 +93,8 @@
   \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
      D8 00  \d00  \d00 //
   D8 00 //limit reached
+// enable warning about nonexistent variable
+//@@WARNING ENABLE 86
 
 -1 * 0 02 0A D6 //case we have not reached the spread ticker limit - increment closure spread ticker, then return cb result
   89 // 
