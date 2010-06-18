@@ -1,25 +1,33 @@
 //-1 * 0 02 09 <set-id> <type> <variable> <varadjust> <nvar> (<set-id> <low-range> <high-range>){n} <default>
 
--1 * 0 02 09 B1 //layout 1
+-1 * 0 02 09 B1 //layout
 	85 43 //check relative position (00yx[YYXX])
 	00 FF FF //don't shift, don't mask
 	\b2 //number of ranges to check (number of tiles) [range: XX YY  XX YY]
-	\wx00   01 00  01 00
-	\wx01   01 02  01 02
+    \wx00   01 00  01 00
+    \wx01   01 02  01 02
 	\wx02 //00 02  00 02 <default>
                    
--1 * 0 02 09 B2 //layout 2
+-1 * 0 02 09 B2 //layout
 	85 43 //check relative position (00yx[YYXX])
 	00 FF FF //don't shift, don't mask
 	\b2 //number of ranges to check (number of tiles) [range: XX YY  XX YY]
-	\wx00   02 00  02 00
-	\wx01   01 00  01 00
+    \wx01   01 00  01 00
+    \wx00   02 00  02 00
 	\wx02 //00 00  00 00 <default>
                    
--1 * 0 02 09 B3 //layout 3
+-1 * 0 02 09 B3 //layout
 	85 43 //check relative position (00yx[YYXX])
 	00 FF FF //don't shift, don't mask
 	\b2 //number of ranges to check (number of tiles) [range: XX YY  XX YY]
-	\wx00   01 00  01 00
-	\wx01   01 01  01 01
+    \wx00   01 00  01 00
+    \wx01   01 01  01 01
 	\wx02 //00 01  00 01 <default>
+	
+-1 * 0 02 09 B4 //layout
+	85 43 //check relative position (00yx[YYXX])
+	00 FF FF //don't shift, don't mask
+	\b2 //number of ranges to check (number of tiles) [range: XX YY  XX YY]
+    \wx00   00 00  00 00
+    \wx01   02 00  02 00
+	\wx02 //00 01  00 01 <default>	

@@ -28,10 +28,11 @@
 -1 * 0 02 09 A1
 	82 44 //check layout number (lowest byte of related industry)
 	00 FF //don't shift, don't mask
-	\b3 //number of ranges to check (number of layouts)
+	\b4 //number of ranges to check (number of layouts)
     \wxB1 \b1 \b1 //<set-id \w> <low-range> <high-range>
     \wxB2 \b2 \b2 //<set-id \w> <low-range> <high-range>
     \wxB3 \b3 \b3 //<set-id \w> <low-range> <high-range>
+    \wxB4 \b4 \b4 //<set-id \w> <low-range> <high-range>
 	\wx00 //<default> (first tile layout available)
 
 #include "i_brewery_tiles_layouts/brewery_tiles_standard.pnfo"
@@ -40,10 +41,11 @@
 -1 * 0 02 09 A2
 	82 44 //check layout number (lowest byte of related industry)
 	00 FF //don't shift, don't mask
-	\b3 //number of ranges to check (number of layouts)
+	\b4 //number of ranges to check (number of layouts)
     \wxB1 \b1 \b1 //<set-id \w> <low-range> <high-range>
     \wxB2 \b2 \b2 //<set-id \w> <low-range> <high-range>
     \wxB3 \b3 \b3 //<set-id \w> <low-range> <high-range>
+    \wxB4 \b4 \b4 //<set-id \w> <low-range> <high-range>
 	\wx00 //<default> (first tile layout available)
 
 
@@ -53,10 +55,11 @@
 -1 * 0 02 09 A3
 	82 44 //check layout number (lowest byte of related industry)
 	00 FF //don't shift, don't mask
-	\b3 //number of ranges to check (number of layouts)
+	\b4 //number of ranges to check (number of layouts)
     \wxB1 \b1 \b1 //<set-id \w> <low-range> <high-range>
     \wxB2 \b2 \b2 //<set-id \w> <low-range> <high-range>
     \wxB3 \b3 \b3 //<set-id \w> <low-range> <high-range>
+    \wxB4 \b4 \b4 //<set-id \w> <low-range> <high-range>
 	\wx00 //<default> (first tile layout available)
 
 
@@ -84,7 +87,7 @@
 -1 * 0 00 0A \b26 01 IND_BREWERY //-1 * 0 00 0A <num-props> 01 <id>
 	08 IND_NULL //reuse original industry with this here ID
 	0A 04 //number of industry layouts
-		\d66 //size of layout definition +2 for termination
+		\d68 //size of layout definition +2 for termination
 		//layout:
 			00 02 FE TILE_BREWERY_1 00
 			01 00 FE TILE_BREWERY_1 00 //xoffs yoffs FE newtile(W)
