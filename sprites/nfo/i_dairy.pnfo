@@ -28,13 +28,14 @@
 -1 * 0 02 09 A1
 	82 44 //check layout number (lowest byte of related industry)
 	00 FF //don't shift, don't mask
-	\b6 //number of ranges to check (number of layouts)
+	\b7 //number of ranges to check (number of layouts)
     \wxB1 \b1 \b1 //<set-id \w> <low-range> <high-range>
     \wxB2 \b2 \b2 //<set-id \w> <low-range> <high-range>
     \wxB3 \b3 \b3 //<set-id \w> <low-range> <high-range>
     \wxB4 \b4 \b4 //<set-id \w> <low-range> <high-range>
     \wxB5 \b5 \b5 //<set-id \w> <low-range> <high-range>
     \wxB6 \b6 \b6 //<set-id \w> <low-range> <high-range>
+    \wxB7 \b7 \b7 //<set-id \w> <low-range> <high-range>
 	\wx00 //<default> (first tile layout available)
 
 #include "i_dairy_tiles_layouts/dairy_tiles_standard.pnfo"
@@ -43,13 +44,14 @@
 -1 * 0 02 09 A2
 	82 44 //check layout number (lowest byte of related industry)
 	00 FF //don't shift, don't mask
-	\b6 //number of ranges to check (number of layouts)
+	\b7 //number of ranges to check (number of layouts)
     \wxB1 \b1 \b1 //<set-id \w> <low-range> <high-range>
     \wxB2 \b2 \b2 //<set-id \w> <low-range> <high-range>
     \wxB3 \b3 \b3 //<set-id \w> <low-range> <high-range>
     \wxB4 \b4 \b4 //<set-id \w> <low-range> <high-range>
     \wxB5 \b5 \b5 //<set-id \w> <low-range> <high-range>
     \wxB6 \b6 \b6 //<set-id \w> <low-range> <high-range>
+    \wxB7 \b7 \b7 //<set-id \w> <low-range> <high-range>
 	\wx00 //<default> (first tile layout available)
 
 #include "i_dairy_tiles_layouts/dairy_tiles_snow.pnfo"
@@ -58,13 +60,14 @@
 -1 * 0 02 09 A3
 	82 44 //check layout number (lowest byte of related industry)
 	00 FF //don't shift, don't mask
-	\b6 //number of ranges to check (number of layouts)
+	\b7 //number of ranges to check (number of layouts)
     \wxB1 \b1 \b1 //<set-id \w> <low-range> <high-range>
     \wxB2 \b2 \b2 //<set-id \w> <low-range> <high-range>
     \wxB3 \b3 \b3 //<set-id \w> <low-range> <high-range>
     \wxB4 \b4 \b4 //<set-id \w> <low-range> <high-range>
     \wxB5 \b5 \b5 //<set-id \w> <low-range> <high-range>
     \wxB6 \b6 \b6 //<set-id \w> <low-range> <high-range>
+    \wxB7 \b7 \b7 //<set-id \w> <low-range> <high-range>
 	\wx00 //<default> (first tile layout available)
 
 
@@ -89,8 +92,8 @@
 //Action 0
 -1 * 0 00 0A \b27 01 IND_DAIRY //-1 * 0 00 0A <num-props> 01 <id>
 	08 IND_NULL //reuse original industry with this here ID
-	0A 06 //number of industry layouts
-		\d260 //sum(size of layout definition +2 for termination)
+	0A 07 //number of industry layouts
+		\d374 //sum(size of layout definition +2 for termination)
 		//layout:
 			00 00 FE TILE_DAIRY_1 00 //xoffs yoffs FE newtile(W)
 			00 01 FE TILE_DAIRY_1 00
@@ -161,6 +164,22 @@
 			04 00 FE TILE_GENERIC_CONCRETE 00
 			04 01 FE TILE_GENERIC_CONCRETE 00
 		00 80 //terminate layout definition		
+		//layout:
+			00 00 FE TILE_DAIRY_1 00 //xoffs yoffs FE newtile(W)
+			00 01 FE TILE_DAIRY_1 00
+			00 03 FE TILE_DAIRY_1 00
+			00 04 FE TILE_DAIRY_1 00
+			01 00 FE TILE_DAIRY_1 00
+			01 01 FE TILE_DAIRY_1 00
+			01 03 FE TILE_DAIRY_1 00
+			01 04 FE TILE_DAIRY_1 00
+			02 00 FE TILE_DAIRY_1 00
+			02 01 FE TILE_DAIRY_1 00
+			02 03 FE TILE_DAIRY_1 00
+			02 04 FE TILE_DAIRY_1 00
+			03 00 FE TILE_GENERIC_CONCRETE 00
+			03 01 FE TILE_GENERIC_CONCRETE 00
+		00 80 //terminate layout definition
 	0B 04 //production flags 1h=extractive, 2h=organic, 4h=processing
 	0C STR_IND_CLOSE_GENERIC //industry closure message
 	0D STR_IND_PRODINCR_GENERIC //production increase message
