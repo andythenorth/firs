@@ -20,9 +20,9 @@
 1 Preface
 ---------
 
-*FIRS 0.1 Release Notes*
+*FIRS 0.2 Release Notes*
 
-FIRS 0.1 is a fully playable release of FIRS featuring 35 industries and 26
+FIRS 0.2 is a fully playable release of FIRS featuring 35 industries and 26
 cargos.
 http://tt-foundry.com/sets/FIRS/schema/industries?economy=point_1_release  
 
@@ -55,23 +55,26 @@ The pixels are lickable and work brilliantly with original graphics and OpenGFX.
 
 
 *More Info / Things to Watch Out For!*
-- many secondary industries will start to close abut five years after the start
+- many secondary industries will start to close about five years after the start
 of the game.  Currently FIRS uses the default TTD closing behaviour, which can
 be annoying.  This will be improved in a future release of FIRS.  Meanwhile,
 make plenty of money and build new industries when you need them.  :twisted: 
-- closure is currently disabled for primary industries.  A side effect of
-disabling closure is that primary industry will not increase production unless
-supplies are delivered.  This will be improved in a future release of FIRS. 
-- Power Stations in FIRS do close if cargo is not delivered every now and then. 
+- primary industry will not increase production unless supplies are delivered. 
+- in FIRS 0.2 closure / production decrease is enabled for primary industries.  
+If no supplies are delivered in a month, there is a chance that the industry will
+reduce production.  If production is very low, there is a small chance that the 
+industry will close.     
+- Power Stations in FIRS close if cargo is not delivered every now and then. 
 This is intentional.  The Power Station window gives information about whether
 there is currently a chance of closure.  In future additional gameplay will be
 added around Power Stations :)   
 - some industries are available from year 0. Some industries (and the cargos
-they use) are only available after a certain date.
+they use) are only available after a certain date.  Intro dates can be found at:
+http://tt-foundry.com/sets/FIRS/schema/industries
 - FIRS works well if the colour of the mini-map is changed - this is possible in
 recent nightly builds of OTTD (in advanced options -> interface) 
-- one known bug: Textile Mill will not accept Manufacturing Supplies.  Will be
-fixed soon.
+- FIRS 0.2 is *not* savegame compatible with FIRS 0.1.  The grfID has been changed 
+to reduce the chance of problems for players.  
 - any savegame using the nightly build of FIRS is likely to break :o
 
 ------------------
@@ -110,6 +113,7 @@ available from the OpenTTD built-in download manager are known to support FIRS:
   - North American Renewal Set (NARS) 2
   - Old Wagons with New Cargos 1.1
   - UK Renewal Train Set v3
+  - DB Set XL (with FIRS extension)
 - Road Vehicle Sets:
   - eGRVTS v1.0
   - HEQS (Heavy Equipment Set) 0.5b
