@@ -232,9 +232,9 @@
 	11 CARGO_ENGINEERINGSUPPLIES FF FF FF //acceptance cargo types (dword; fill unused with FFh)
 	12 \b10 //production multiplier cargo 1
 	13 \b200 //production multiplier cargo 2
-	1C 00 00 00 00 //input cargo 1 multiplier (dword M1 M2; output_typen = X*Mn/256)
-	1D 00 00 00 00 //input cargo 2 multiplier
-	1E 00 00 00 00 //input cargo 3 multiplier
+	1C \w0 \w0 //input cargo 1 multiplier (dword M1 M2; output_typen = X*Mn/256)
+	1D \w0 \w0 //input cargo 2 multiplier
+	1E \w0 \w0 //input cargo 3 multiplier
 	14 \b05 //minimal cargo distribution amount
 	16 FF FF FF //conflicting industry types (3*byte; ID+80h; FF to disable)
 	17 \b5 //probability in random game

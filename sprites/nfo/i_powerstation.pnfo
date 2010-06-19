@@ -17,9 +17,9 @@
 	24 STR_STA_POWERSTATION //default text for nearby station
 	11 CARGO_COAL CARGO_FUELOIL FF FF //acceptance cargo types (dword; fill unused with FFh)
 	10 FF FF //production cargo types (word; fill unused with FFh)
-	1C 00 00 00 00 //input cargo 1 multiplier (dword M1 M2; output_typen = X*Mn/256)
-	1D 00 00 00 00 //input cargo 2 multiplier
-	1E 00 00 00 00 //input cargo 3 multiplier
+	1C \w0 \w0 //input cargo 1 multiplier (dword M1 M2; output_typen = X*Mn/256)
+	1D \w0 \w0 //input cargo 2 multiplier
+	1E \w0 \w0 //input cargo 3 multiplier
 	16 FF FF FF //conflicting industry types (3*byte; ID+80h; FF to disable)
 	17 \b5 //probability in random game
 	18 \b2 //probability during gameplay

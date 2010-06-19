@@ -191,8 +191,8 @@
 	12 \b02 //production multiplier cargo 1
 	13 \b02 //production multiplier cargo 2
 	1C \w0 \w0 //input cargo 1 multiplier (dword M1 M2; output_typen = X*Mn/256)
-	1D \w0  \w0  //input cargo 2 multiplier
-	1E \w0  \w0  //input cargo 3 multiplier
+	1D \w0 \w0  //input cargo 2 multiplier
+	1E \w0 \w0  //input cargo 3 multiplier
 	14 \b01 //minimal cargo distribution amount
 	16 FF FF FF //conflicting industry types (3*byte; ID+80h; FF to disable)
 	17 \b7 //probability in random game
