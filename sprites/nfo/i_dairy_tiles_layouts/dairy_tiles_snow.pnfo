@@ -43,3 +43,9 @@
 	\dx80008005 //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b64 //xextent yextent zextent
+//greeble tile	
+-1 * 0 02 09 06 00 //-1 * 0 02 09 <set-id> 00
+	\dx80008006 //groundsprite
+	\d0 //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b64 //xextent yextent zextent	
