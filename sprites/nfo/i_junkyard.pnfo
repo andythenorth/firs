@@ -81,7 +81,7 @@
 
 //-1 * 0 02 09 <set-id> <type> <variable> <varadjust> <nvar> (<set-id> <low-range> <high-range>){n} <default>
 
--1 * 0 02 09 B1 //layout 1
+-1 * 0 02 09 B1 //layout
 	85 43 //check relative position (00yx[YYXX])
 	00 FF FF //don't shift, don't mask
 	\b9 //number of ranges to check (number of tiles) [range: XX YY  XX YY]
@@ -96,7 +96,7 @@
     \wx05   04 02  04 02
 	\wx08 //01 02  01 02 <default>
 
--1 * 0 02 09 B2 //layout 1
+-1 * 0 02 09 B2 //layout
 	85 43 //check relative position (00yx[YYXX])
 	00 FF FF //don't shift, don't mask
 	\b6 //number of ranges to check (number of tiles) [range: XX YY  XX YY]
@@ -108,7 +108,7 @@
     \wx05   02 02  02 02
 	\wx08 //01 02  01 02 <default>
                  
--1 * 0 02 09 B3 //layout 1
+-1 * 0 02 09 B3 //layout
 	85 43 //check relative position (00yx[YYXX])
 	00 FF FF //don't shift, don't mask
 	\b10 //number of ranges to check (number of tiles) [range: XX YY  XX YY]
