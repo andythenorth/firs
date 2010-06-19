@@ -85,23 +85,36 @@
 	85 43 //check relative position (00yx[YYXX])
 	00 FF FF //don't shift, don't mask
 	\b9 //number of ranges to check (number of tiles) [range: XX YY  XX YY]
-	\wx00   02 01  02 01
-	\wx01   01 01  01 01
-	\wx01   00 02  00 02
-	\wx02   04 01  04 01
-	\wx03   03 01  03 01
-	\wx04   04 00  04 00
-	\wx05   04 02  04 02
-	\wx06   03 02  03 02
-	\wx07   02 02  02 02
+    \wx01   00 02  00 02
+    \wx01   01 01  01 01
+    \wx00   02 01  02 01
+    \wx07   02 02  02 02
+    \wx03   03 01  03 01
+    \wx06   03 02  03 02
+    \wx04   04 00  04 00
+    \wx02   04 01  04 01
+    \wx05   04 02  04 02
+	\wx08 //01 02  01 02 <default>
+
+-1 * 0 02 09 B2 //layout 1
+	85 43 //check relative position (00yx[YYXX])
+	00 FF FF //don't shift, don't mask
+	\b6 //number of ranges to check (number of tiles) [range: XX YY  XX YY]
+    \wx06   00 01  00 01
+    \wx00   01 01  01 01
+    \wx07   01 02  01 02
+    \wx04   02 00  02 00
+    \wx02   02 01  02 01
+    \wx05   02 02  02 02
 	\wx08 //01 02  01 02 <default>
                  
 
 -1 * 0 02 09 A0 
 	82 44 //check layout number (lowest byte of related industry)
 	00 FF //don't shift, don't mask
-	\b1 //number of ranges to check (number of layouts)
-	\wxB1 \b1 \b1 //<set-id \w> <low-range> <high-range>
+	\b2 //number of ranges to check (number of layouts)
+    \wxB1 \b1 \b1 //<set-id \w> <low-range> <high-range>
+    \wxB2 \b2 \b2 //<set-id \w> <low-range> <high-range>
 	\wx00 //<default> (first tile layout available)
 
 //Action3 attach sprites to industry tile
