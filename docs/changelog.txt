@@ -8,12 +8,15 @@ FIRS Industry Replacement Set Changelog
 
 Over 230 changes since FIRS 0.1.2
 
-Introduced new industry:
+Introduced new industries:
 - Lumber Yard: produces Engineering Supplies from Lumber and Chemicals
+- Gas Station: accepts Food, Goods, Fuel Oil.  Locates in town only.
 
-Clustering for primary industries (farms, mines, forests, plantations).  These industries will locate in clusters when constructed by the game during map generation or randomly during gameplay.  Players may build these industries anywhere during gameplay or in scenario editor.  The number of clusters is adjusted to suit the map size.  Thanks Planetmaker, Yexo and Frosch for making this feature possible.
+Clustering for primary industries (farms, mines, forests, plantations).  These industries will locate in clusters when constructed by the game during map generation or randomly during gameplay.  Players may build these industries anywhere during gameplay or in scenario editor.  The number of clusters is adjusted to suit the map size.  Thanks Planetmaker, Yexo and Frosch for making this feature possible.*
 
-Anti-clustering for most secondary industries.  This prevents secondary industries of the same type locating next to each other when constructed by the game during map generation or randomly during gameplay.  Players may build these industries anywhere during gameplay or in scenario editor.
+Anti-clustering for most secondary industries.  This prevents secondary industries of the same type locating next to each other when constructed by the game during map generation or randomly during gameplay.  Players may build these industries anywhere during gameplay or in scenario editor.*
+
+*Clustering only available in OpenTTD nightly r19902 or newer.  Will fail gracefully in older versions.
 
 Tweaked numerous production levels.  
 - Farms now have much lower production.  Use feeder services or one large station to cover multiple farms.
