@@ -47,10 +47,11 @@
   A1 00 // default
 
 // production changes
--1 * 0 02 0A D7 //random chance of closure if conditions met...  
+-1 * 0 02 0A D7 //random chance of closure if conditions met...CLOSURE CURRENTLY DISABLED - ADD PARAM IN FUTURE  
   81 18 00 3F //randomise
   \b1 //range
-    0D 80 00 00 //lookat cb 35 or 29 in wiki to see what the returned value means
+    00 80 00 00 //lookat cb 35 or 29 in wiki to see what the returned value means
+    //0D 80 00 00 //lookat cb 35 or 29 in wiki to see what the returned value means
   00 80 //else no change	
 
 -1 * 0 02 0A D6 //low random chance of production decrease if conditions met...  
