@@ -1,5 +1,6 @@
-//Industry tiles definition; Waste Collection Point has 1 tile
+#define THIS_INTRO_DATE               \d1909
 
+//Industry tiles definition
 //Tile Action 0
 -1 * 0 00 09 \b5 01 TILE_GASSTATION_1 // -1 * 0 00 09 <num-props> 01 <id>
 	08 TILE_NULL //subsitute type
@@ -87,7 +88,7 @@
 	19 CLR_GASSTATION //map colour (byte; using indexes from dos palette)
 	23 \d0  //destruction cost multiplier (dword; default: 0)
 	1A \dx10 //special industry flag (dword; in town: 10h)
-	21 80 //callback flags 
+	21 81 //callback flags 
 	22 01  //callback flags
 //To show cargo waiting to be processed at industry, ensure prop 21 is set to use production callback
 
