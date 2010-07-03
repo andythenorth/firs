@@ -2,19 +2,12 @@
 // An exception is the handling of the compatibility with other newgrfs
 // which is handled in checks.pnfo
 
-// Calculate and set the stockpile limits for 'boost cargos'
-
-// First set the parameters later used ingame to the default value
--1 * 0 0D LIMIT_MANUFACTURING_SUPPLIES \D= FF 00 LIMIT_VAL_MANUFACTURING_SUPPLIES
-
--1 * 0 0D LIMIT_PARAMETER 80 \b01 00 // If the Limit parameter is not defined, set it to 1.
-// Now apply the multiplicator set by the parameter
--1 * 0 0D LIMIT_MANUFACTURING_SUPPLIES \Du* LIMIT_MANUFACTURING_SUPPLIES LIMIT_PARAMETER
-
-// Some text stack magic has to go here in order to create the proper strings showing the stockpile limit
-
 // suppress warning about invalid parameter (Action D)
 //@@WARNING DISABLE 123
+
+// ***********************
+// MAP SIZE AND CLUSTERING
+// ***********************
 
 // Get a measure for the map size and set it into parameter
 -1 * 0 0D TEMP_PARAMETER \D= 13 FE FF FF 00 00                              // get the map size (global parameter 13)
@@ -25,6 +18,41 @@
 -1 * 0 0D MAP_SIZE_PARAMETER \Du/ MAP_SIZE_PARAMETER FF \d262144            // Divide by the tile count of a 512^2 map
 -1 * 0 0D INDUSTRY_CLUSTER_PARAMETER \D* MAP_SIZE_PARAMETER FF \d02         // Multiply map_size_parameter by 2
 -1 * 0 0D INDUSTRY_CLUSTER_PARAMETER \D+ INDUSTRY_CLUSTER_PARAMETER FF \d01 // Add one to the cluster parameter
+
+// *********************
+// CLOSURES AND OPENINGS
+// *********************
+
+// Primary Industry closures:
+-1 * 0 0D TEMP_PARAMETER \D= FF FF \d01                                     // Write 1 into temp parameter
+-1 * 0 0D TEMP_PARAMETER \Du<< TEMP_PARAMETER FF BIT_CLOSE_PRIMARY          // Prepare the bitmask
+-1 * 0 0D PARAM_CLOSE_PRIMARY \D& CLOSURE_PARAMETER TEMP_PARAMETER          // Mask out the primary closure
+-1 * 0 0D TEMP_PARAMETER \Du<< TEMP_PARAMETER FF 80 00 00 01                // We want to shift it to 0 or 1. Not completely to 0. Right shift by negative 1
+-1 * 0 0D TEMP_PARAMETER \D+ TEMP_PARAMETER FF 80 00 00 00                  // Make it a signed value with negative sign
+-1 * 0 0D PARAM_CLOSE_PRIMARY \Du<< PARAM_CLOSE_PRIMARY TEMP_PARAMETER      // Shift to 0 or 1
+
+// Secondary Industry closures:
+-1 * 0 0D TEMP_PARAMETER \D= FF FF \d01                                     // Write 1 into temp parameter
+-1 * 0 0D TEMP_PARAMETER \Du<< TEMP_PARAMETER FF BIT_CLOSE_SECONDARY        // Prepare the bitmask
+-1 * 0 0D PARAM_CLOSE_SECONDARY \D& CLOSURE_PARAMETER TEMP_PARAMETER        // Mask out the secondary closure
+-1 * 0 0D TEMP_PARAMETER \Du<< TEMP_PARAMETER FF 80 00 00 01                // We want to shift it to 0 or 1. Not completely to 0. Right shift by negative 1
+-1 * 0 0D TEMP_PARAMETER \D+ TEMP_PARAMETER FF 80 00 00 00                  // Make it a signed value with negative sign
+-1 * 0 0D PARAM_CLOSE_SECONDARY \Du<< PARAM_CLOSE_SECONDARY TEMP_PARAMETER  // Shift to 0 or 1
+
+// Industry openings:
+-1 * 0 0D TEMP_PARAMETER \D= FF FF \d01                                     // Write 1 into temp parameter
+-1 * 0 0D TEMP_PARAMETER \Du<< TEMP_PARAMETER FF BIT_OPEN_NONE              // Prepare the bitmask
+-1 * 0 0D PARAM_OPEN_NONE \D& CLOSURE_PARAMETER TEMP_PARAMETER              // Mask out the secondary closure
+-1 * 0 0D TEMP_PARAMETER \Du<< TEMP_PARAMETER FF 80 00 00 01                // We want to shift it to 0 or 1. Not completely to 0. Right shift by negative 1
+-1 * 0 0D TEMP_PARAMETER \D+ TEMP_PARAMETER FF 80 00 00 00                  // Make it a signed value with negative sign
+-1 * 0 0D PARAM_OPEN_NONE \Du<< PARAM_OPEN_NONE TEMP_PARAMETER              // Shift to 0 or 1
+
+// Easy defines for usage in order to skip single sprites
+#define SKIP1_NO_CLOSURE_PRIMARY   -1 * 0 07 PARAM_CLOSE_PRIMARY \b01 \D= \b01 \b01        // Skip next sprite, if no primaries shall be closed
+#define SKIP1_NO_CLOSURE_SECONDARY -1 * 0 07 PARAM_CLOSE_SECONDARY \b01 \D= \b01 \b01      // Skip next sprite, if no primaries shall be closed
+#define SKIP1_NO_OPENINGS          -1 * 0 07 PARAM_OPEN_NONE \b01 \D= \b01 \b01            // Skip next sprite, if no primaries shall be closed
+
+
 
 // enable warning about invalid parameter (Action D)
 //@@WARNING ENABLE 123
