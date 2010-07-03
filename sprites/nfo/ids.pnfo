@@ -492,37 +492,58 @@
 #define STR_CRG_WATER_MUNIT                 81 00
 #define STR_CRG_WATER_TABBR                 A1 00
 
-// Minimum Limits on production boosting cargos for tiles only (industry limit = tile limit + 8, and is in template)
-#define LIMIT_VAL_MANUFACTURING_SUPPLIES      \d800
+// *****************
+// PUBLIC PARAMETERS
+// *****************
 
 // The parameter numbers used by FIRS
-#define SCHEME_PARAMETER \b00      // Choice of the payment scheme (see acceptable values below)
-#define LIMIT_PARAMETER \b01       // Parameter to set the stockpile size for the boost cargos
-#define DEBUG_PARAMETER \b02       // Used to turn on debug options (bit map) 
-
-#define MAP_SIZE_PARAMETER \b11         // Stores the map size in tiles
-#define INDUSTRY_CLUSTER_PARAMETER \b12 // divisor for industry cluster decisions.
-#define TEMP_PARAMETER     \b60         // For temporary storage
-
-// The parameters used internally by FIRS:
-#define COMPATIBILITY_PARAM1 \b09  // Used internally in checks.pnfo. Not read
-#define COMPATIBILITY_PARAM2 \b10  // Used internally in checks.pnfo. Not read
-
-#define LIMIT_MANUFACTURING_SUPPLIES      \b13
-
-// How many production cycles are allowed by some processing industries before crago ratios are reset to 0
-#define NUM_PROD_CYCLES_INVENTORY_HELD_FOR     \d07
-// How many months are some industries protected from closure for?
-#define NUM_MONTHS_INDUSTRY_CLOSURE_PROTECTED_DEFAULT   \d120 //default value - can be over-ridden by industries with a local define
-
+#define SCHEME_PARAMETER     \b00      // Choice of the payment scheme (see acceptable values below)
+#define PRODUCTION_PARAMETER \b01      // Parameter which controls production changes
+#define CLOSURE_PARAMETER    \b02      // Parameter which controls industry openings and closure
+#define DEBUG_PARAMETER      \b03      // Used to turn on debug options (bit map) 
 
 // The economy parameter values and their scheme names:
 #define SCHEME_DEFAULT \d00
 #define SCHEME_MINING  \d01
 #define SCHEME_FARMING \d02
 
+// Values for the production change parameter:
+#define PROD_DECREASE_FIRS  \d00
+#define PROD_DECREASE_NEVER \d01
+#define PROD_DECREASE_TTD   \d02
+
+// Bits for the Closure parameter (Bitset!)
+#define BIT_CLOSE_PRIMARY     \d00   // 0x01
+#define BIT_CLOSE_SECONDARY   \d01   // 0x02
+#define BIT_OPEN_NONE         \d02   // 0x04
+
 // The debug parameter values
 #define DEBUG_PARAMETER_INDUSTRY_TEXT_BIT  \b01
+
+// *******************
+// INTERNAL PARAMETERS
+// *******************
+
+// The parameters used internally by FIRS:
+#define COMPATIBILITY_PARAM1       \b09 // Used internally in checks.pnfo. Not read
+#define COMPATIBILITY_PARAM2       \b10 // Used internally in checks.pnfo. Not read
+
+#define MAP_SIZE_PARAMETER         \b11 // Stores the map size in tiles
+#define INDUSTRY_CLUSTER_PARAMETER \b12 // divisor for industry cluster decisions.
+
+#define PARAM_CLOSE_PRIMARY        \b13 // Set to one, if primaries may close
+#define PARAM_CLOSE_SECONDARY      \b14 // Set to one, if secondaries may close
+#define PARAM_OPEN_NONE            \b15 // Set to one, if no industries may open
+
+#define TEMP_PARAMETER             \b60 // For temporary storage
+
+ 
+
+// How many production cycles are allowed by some processing industries before crago ratios are reset to 0
+#define NUM_PROD_CYCLES_INVENTORY_HELD_FOR     \d07
+// How many months are some industries protected from closure for?
+#define NUM_MONTHS_INDUSTRY_CLOSURE_PROTECTED_DEFAULT   \d120 //default value - can be over-ridden by industries with a local define
+
 
 // Action7 to skip some cargos in certain climates
 #define CLIMATE_ALL       -1 * 0  0C "All climates"  // All climates
