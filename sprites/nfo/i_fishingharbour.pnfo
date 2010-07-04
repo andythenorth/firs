@@ -11,14 +11,14 @@
 	08 TILE_NULL //subsitute type
 	0A CARGO_ENGINEERINGSUPPLIES 08 //tile acceptance 1
 	0B CARGO_MANUFACTURINGSUPPLIES 08 //tile acceptance 2
-	0C 00 00 //tile acceptance 3
+	0C CARGO_FISH 08 //tile acceptance 3
 	0D 10 //land shape flags: 10 = only on flat land
 //Tile action 0  This tile is built on land
 -1 * 0 00 09 \b6 01 TILE_FISHINGHARBOUR_2 // -1 * 0 00 09 <num-props> 01 <id>
 	08 TILE_NULL //subsitute type
 	0A CARGO_ENGINEERINGSUPPLIES 08 //tile acceptance 1
 	0B CARGO_MANUFACTURINGSUPPLIES 08 //tile acceptance 2
-	0C 00 00 //tile acceptance 3
+	0C CARGO_FISH 08 //tile acceptance 3
 	0D 20 //land shape flags: 10 = only on flat land
 	0E 30 // callback flacks // use custom shape check cb25, decide drawing default foundations cb30
 
@@ -694,12 +694,12 @@
 	1B STR_IND_NEW_GENERIC //new industry message
 	1F STR_IND_FISHINGHARBOUR //industry name
 	10 CARGO_FOOD FF //production cargo types (word; fill unused with FFh)
-	11 CARGO_ENGINEERINGSUPPLIES CARGO_MANUFACTURINGSUPPLIES FF FF //acceptance cargo types (dword; fill unused with FFh)
-	12 \b6 //production multiplier cargo 1
+	11 CARGO_ENGINEERINGSUPPLIES CARGO_MANUFACTURINGSUPPLIES CARGO_FISH FF //acceptance cargo types (dword; fill unused with FFh)
+	12 \b0 //production multiplier cargo 1
 	13 00 //production multiplier cargo 2
 	1C \w0 \w0 //input cargo 1 multiplier (dword M1 M2; output_typen = X*Mn/256)
 	1D \w0 \w0  //input cargo 2 multiplier
-	1E \w0 \w0  //input cargo 3 multiplier
+	1E \w192 \w0  //input cargo 3 multiplier
 	14 \b2 //minimal cargo distribution amount
 	16 FF FF FF //conflicting industry types (3*byte; ID+80h; FF to disable)
 	17 \b20 //probability in random game
