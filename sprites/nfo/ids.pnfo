@@ -30,6 +30,7 @@
 #define IND_FRUITPLANTATION       1E
 #define IND_FISHINGHARBOUR        1F
 #define IND_FISHFARM              20
+#define IND_FISHINGGROUNDS        20
 #define IND_BAKERY                22
 #define IND_BREWERY               23
 #define IND_DAIRY                 24
@@ -107,7 +108,8 @@
 #define TILE_WINDFARM_1                    C8
 #define TILE_FISHPROCESSOR_1               C9
 #define TILE_QUARRY_1                      CA
-#define TILE_GASSTATION_1              CB
+#define TILE_GASSTATION_1                  CB
+#define TILE_FISHINGGROUNDS_1              CC
 
 #define TILE_FIELD_TEST                    F0
 // generic tiles start at D0 !
@@ -222,7 +224,8 @@
 #define STR_IND_SURVEYCAMP            90 DC
 #define STR_IND_WINDFARM              91 DC
 #define STR_IND_GRAVELQUARRY          92 DC
-#define STR_IND_GASSTATION        93 DC
+#define STR_IND_GASSTATION            93 DC
+#define STR_IND_FISHINGGROUNDS        94 DC
 
 //Definition of industry messages using TTD strings
 #define STR_IND_CLOSE_GENERIC     33 48
@@ -249,6 +252,7 @@
 #define STR_STA_QUARRY            E8 DC
 #define STR_STA_DEPOT             E9 DC
 #define STR_STA_DREDGINGSITE      EA DC
+#define STR_STA_FISHINGGROUNDS    EB DC
 
 //Definition of text IDs for additional texts in purchase window (D0xx)
 //IDs for industry-specific texts match the industry ID
