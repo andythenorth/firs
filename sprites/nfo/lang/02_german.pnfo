@@ -1,165 +1,115 @@
 //FIRS Translation File
 //Language: German
 //Lang-ID: 02 -> 82
+#define LANG_ID  02
+#define LANG_ID2 82
 
+
+//Cargo texts
 
 //Sugar cane
-//We only need this in tropic:
--1 * 0 07 83 01 \7! 02 01
--1 * 0 04 0B 82 \b4 \b01 DC
-"Rohrzucker" 00 
-"\7C Tonne Rohrzucker" 00
-"\7C Tonnen Rohrzucker" 00
-"\0ESC" 00
+#define TEXT_CRG_SUGARCANE_CTYPE                        "Rohrzucker"
+#define TEXT_CRG_SUGARCANE_1UNIT                        "\UE07C Tonne Rohrzucker"
+#define TEXT_CRG_SUGARCANE_MUNIT                        "\UE07C Tonnen Rohrzucker"
+#define TEXT_CRG_SUGARCANE_TABBR                        "\0ERZ"
 
-
-//Waste
--1 * 0 04 0B 82 \b4 \b05 DC
-"Müll" 00 
-"\7C Tonne Müll" 00
-"\7C Tonnen Müll" 00
-"\0EWS" 00
-
+//Waste 
+#define TEXT_CRG_WASTE_CTYPE                            "MÃ¼ll"
+#define TEXT_CRG_WASTE_1UNIT                            "\UE07C Tonne MÃ¼ll"
+#define TEXT_CRG_WASTE_MUNIT                            "\UE07C Tonnen MÃ¼ll"
+#define TEXT_CRG_WASTE_TABBR                            "\0EML"
 
 //Fruit and Vegetables
--1 * 0 04 0B 82 \b4 \b09 DC
-"Früchte und Gemüse" 00
-"Früchte und Gemüse" 00
-"\7C Tonne Früchte und Gemüse" 00
-"\7C Tonnen Früchte und Gemüse" 00
+#define TEXT_CRG_FRUITSANDVEGETABLES_CTYPE              "FrÃ¼chte und GemÃ¼se"
+#define TEXT_CRG_FRUITSANDVEGETABLES_1TYPE              "FrÃ¼chte und GemÃ¼se"
+#define TEXT_CRG_FRUITSANDVEGETABLES_1UNIT              "\UE07C Tonne FrÃ¼chte und GemÃ¼se"
+#define TEXT_CRG_FRUITSANDVEGETABLES_MUNIT              "\UE07C Tonnen FrÃ¼chte und GemÃ¼se"
 
-
-//Fish
--1 * 0 04 0B 82 \b4 \b13 DC
-"Fisch" 00 
-"\7C Tonne Fisch" 00
-"\7C Tonnen Fisch" 00
-"\0EFI" 00
-
+//Fish 
+#define TEXT_CRG_FISH_CTYPE                             "Fisch"
+#define TEXT_CRG_FISH_1UNIT                             "\UE07C Tonne Fisch"
+#define TEXT_CRG_FISH_MUNIT                             "\UE07C Tonnen Fisch"
+#define TEXT_CRG_FISH_TABBR                             "\0EFI"
 
 //Wool
-//We only need this in temperate and arctic:
--1 * 0 07 83 01 \7> 01 01
--1 * 0 04 0B 82 \b4 \b17 DC
-"Wolle" 00 
-"\7C Tonne Wolle" 00
-"\7C Tonnen Wolle" 00
-"\0EWL" 00
-
+#define TEXT_CRG_WOOL_CTYPE                             "Wolle"
+#define TEXT_CRG_WOOL_1UNIT                             "\UE07C Tonne Wolle"
+#define TEXT_CRG_WOOL_MUNIT                             "\UE07C Tonnen Wolle"
+#define TEXT_CRG_WOOL_TABBR                             "\0EWL"
 
 //Cotton
-//We only need this in tropic:
--1 * 0 07 83 01 \7! 02 01
--1 * 0 04 0B 82 \b4 \b17 DC
-"Baumwolle" 00 
-"\7C Tonne Baumwolle" 00
-"\7C Tonnen Baumwolle" 00
-"\0ECT" 00
-
+#define TEXT_CRG_COTTON_CTYPE                           "Baumwolle"
+#define TEXT_CRG_COTTON_1UNIT                           "\UE07C Tonne Baumwolle"
+#define TEXT_CRG_COTTON_MUNIT                           "\UE07C Tonnen Baumwolle"
+#define TEXT_CRG_COTTON_TABBR                           "\0EBW"
 
 //Sand
--1 * 0 04 0B 82 \b4 \b21 DC
-"Sand" 00 
-"\7C Tonne Sand" 00
-"\7C Tonnen Sand" 00
-"\0ESA" 00
-
+#define TEXT_CRG_SAND_CTYPE                             "Sand"
+#define TEXT_CRG_SAND_1UNIT                             "\UE07C Tonne Sand"
+#define TEXT_CRG_SAND_MUNIT                             "\UE07C Tonnen Sand"
+#define TEXT_CRG_SAND_TABBR                             "\0ESD"
 
 //Gravel
--1 * 0 04 0B 82 \b4 \b25 DC
-"Kies" 00 
-"\7C Tonne Kies" 00
-"\7C Tonnen Kies" 00
-"\0EGV" 00
-
+#define TEXT_CRG_GRAVEL_CTYPE                           "Kies"
+#define TEXT_CRG_GRAVEL_1UNIT                           "\UE07C Tonne Kies"
+#define TEXT_CRG_GRAVEL_MUNIT                           "\UE07C Tonnen Kies"
+#define TEXT_CRG_GRAVEL_TABBR                           "\0EKS"
 
 //Lumber
--1 * 0 04 0B 82 \b4 \b29 DC
-"Bauholz" 00 
-"\7C Tonne Bauholz" 00
-"\7C Tonnen Bauholz" 00
-"\0ELU" 00
+#define TEXT_CRG_LUMBER_CTYPE                           "Bauholz"
+#define TEXT_CRG_LUMBER_1UNIT                           "\UE07C Tonne Bauholz"
+#define TEXT_CRG_LUMBER_MUNIT                           "\UE07C Tonnen Bauholz"
+#define TEXT_CRG_LUMBER_TABBR                           "\0EHZ"
 
-
-//Packaging - NEEDS CHANGING TO MANUFACTURING SUPPLIES
--1 * 0 04 0B 82 \b4 \b33 DC
-"Verpackungsmaterial" 00 
-"\7C Kiste Verpackungsmaterial" 00
-"\7C Kisten Verpackungsmaterial" 00
-"\0EPK" 00
 
 
 //Farm supplies
--1 * 0 04 0B 82 \b4 \b37 DC
-"landw. Betriebsmittel" 00 
-"\7C Kiste landw. Betriebsmittel" 00
-"\7C Kisten landw. Betriebsmittel" 00
-"\0EFS" 00
-
+#define TEXT_CRG_FARMSUPPLIES_CTYPE                     "landw. Betriebsmittel"
+#define TEXT_CRG_FARMSUPPLIES_1UNIT                     "\UE07C Kiste landw. Betriebsmittel"
+#define TEXT_CRG_FARMSUPPLIES_MUNIT                     "\UE07C Kisten landw. Betriebsmittel"
+#define TEXT_CRG_FARMSUPPLIES_TABBR                     "\0ELB"
 
 //Chemicals
--1 * 0 04 0B 82 \b3 \b41 DC
-"Chemikalien" 00 
-"\7C Chemikalien" 00 
-"\0ECH" 00
-
+#define TEXT_CRG_CHEMICALS_CTYPE                        "Chemikalien"
+#define TEXT_CRG_CHEMICALS_1UNIT                        "\UE087 Chemikalien"
+#define TEXT_CRG_CHEMICALS_TABBR                        "\0ECH"
 
 //Engineering supplies
--1 * 0 04 0B 82 \b4 \b44 DC
-"Ersatzteile" 00 
-"\7C Kiste Ersatzteile" 00
-"\7C Kisten Ersatzteile" 00
-"\0EES" 00
-
+#define TEXT_CRG_ENGINEERINGSUPPLIES_CTYPE              "Ersatzteile"
+#define TEXT_CRG_ENGINEERINGSUPPLIES_1UNIT              "\UE07C Kiste Ersatzteile"
+#define TEXT_CRG_ENGINEERINGSUPPLIES_MUNIT              "\UE07C Kisten Ersatzteile"
+#define TEXT_CRG_ENGINEERINGSUPPLIES_TABBR              "\0EEZ"
 
 //Fuel oil
--1 * 0 04 0B 82 \b3 \b48 DC
-"Treibstoff" 00 
-"\87 Treibstoff" 00 
-"\0EFO" 00
-
+#define TEXT_CRG_FUELOIL_CTYPE                          "Treibstoff"
+#define TEXT_CRG_FUELOIL_1UNIT                          "\87 Treibstoff"
+#define TEXT_CRG_FUELOIL_TABBR                          "\0ETS"
 
 //Bauxite
--1 * 0 04 0B 82 \b3 \b51 DC
-"Bauxit" 00 
-"\7C Tonne Bauxit" 00
-"\7C Tonnen Bauxit" 00
-
-
-//Parts - DEPRECATED
-// -1 * 0 04 0B 82 \b4 \b54 DC
-// "Bauteile" 00 
-// "\7C Kiste Bauteile" 00
-// "\7C Kisten Bauteile" 00
-// "\0EPA" 00
-
+#define TEXT_CRG_BAUXITE_CTYPE                          "Bauxit"
+#define TEXT_CRG_BAUXITE_1UNIT                          "\UE07C Tonne Bauxit"
+#define TEXT_CRG_BAUXITE_MUNIT                          "\UE07C Tonnen Bauxit"
+#define TEXT_CRG_BAUXITE_TABBR                          "\0EBX"
 
 //Aluminium
--1 * 0 04 0B 82 \b4 \b58 DC
-"Aluminium" 00 
-"\7C Tonne Aluminium" 00
-"\7C Tonnen Aluminium" 00
-"\0EAL" 00
-
+#define TEXT_CRG_ALUMINIUM_CTYPE                        "Aluminium"
+#define TEXT_CRG_ALUMINIUM_1UNIT                        "\UE07C Tonne aluminium"
+#define TEXT_CRG_ALUMINIUM_MUNIT                        "\UE07C Tonnen aluminium"
+#define TEXT_CRG_ALUMINIUM_TABBR                        "\0EAL"
 
 //Milk
--1 * 0 04 0B 82 \b3 \b62 DC
-"Milch" 00 
-"\87 Milch" 00 
-"\0EMK" 00
-
+#define TEXT_CRG_MILK_CTYPE                             "Milch"
+#define TEXT_CRG_MILK_1UNIT                             "\87 Milch"
+#define TEXT_CRG_MILK_TABBR                             "\0EML"
 
 //Scrap Metal
--1 * 0 04 0B 82 \b4 \b65 DC
-"Altmetall" 00 
-"\7C Tonne Altmetall" 00
-"\7C Tonnen Altmetall" 00
-"\0ESM" 00
-
+#define TEXT_CRG_SCRAPMETAL_CTYPE                       "Altmetall"
+#define TEXT_CRG_SCRAPMETAL_1UNIT                       "\UE07C Tonne Altmetall"
+#define TEXT_CRG_SCRAPMETAL_MUNIT                       "\UE07C Tonnen Altmetall"
+#define TEXT_CRG_SCRAPMETAL_TABBR                       "\0EAM"
 
 //Survey supplies
--1 * 0 04 0B 82 \b4 \b69 DC
-"Vermessungsbedarf" 00 
-"\7C Kiste Vermessungsbedarf" 00
-"\7C Kisten Vermessungsbedarf" 00
-"\0ESS" 00
+#define TEXT_CRG_SURVEYSUPPLIES_CTYPE                   "Vermessungsbedarf"
+#define TEXT_CRG_SURVEYSUPPLIES_1UNIT                   "\UE07C Kiste Vermessungsbedarf"
+#define TEXT_CRG_SURVEYSUPPLIES_MUNIT                   "\UE07C Kisten Vermessungsbedarf"
+#define TEXT_CRG_SURVEYSUPPLIES_TABBR                   "\0EVB"
