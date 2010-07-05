@@ -1,5 +1,5 @@
 //FIRS Translation File
-//Language: Any
+//Language: Spanish
 //Lang-ID: 7F -> FF
 #define LANG_ID  04
 #define LANG_ID2 84
@@ -231,9 +231,3 @@
 #define TEXT_INFO_POWERSTATION_CLOSE_0                  "\0DEsta Central Eléctrica podría cerrar a menos que se entregue carbón o fueloil antes de que pasen:\0D\90  \UE07C meses"
 #define TEXT_INFO_POWERSTATION_CLOSE_1                  "\0DEsta Central Eléctrica podría cerrar a menos que se entregue carbón o fueloil antes de que pase:\0D\94  \UE07C mes"
 #define TEXT_INFO_POWERSTATION_CLOSE_2                  "\0D\94No se ha entregado carbón ni fueloil por al menos \85\85\UE07C meses. Esta central eléctrica podría cerrar pronto. \0D"
-
-#include "nfo_lang.pnfo"
-#include "remove_defines.pnfo"
-
-#undef LANG_ID
-#undef LANG_ID2
