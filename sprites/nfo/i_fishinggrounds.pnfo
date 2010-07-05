@@ -96,7 +96,7 @@
 //Industry defenition
 
 //Action 0
--1 * 0 00 0A \b26 01 IND_FISHINGGROUNDS //-1 * 0 00 0A <num-props> 01 <id>
+-1 * 0 00 0A \b27 01 IND_FISHINGGROUNDS //-1 * 0 00 0A <num-props> 01 <id>
 	08 05 //substitute industry type; reuse original industry with this here ID
 	0A 03 //number of industry layouts
 		\d498 //size of layout definition +2 for termination
