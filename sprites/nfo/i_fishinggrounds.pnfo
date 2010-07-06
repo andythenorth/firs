@@ -27,7 +27,6 @@
 -1 sprites/pcx/industries/fishinggrounds.pcx 150 10 09  31 64 -31 0
 -1 sprites/pcx/industries/fishinggrounds.pcx 220 10 09  31 64 -31 0
 -1 sprites/pcx/industries/fishinggrounds.pcx  290 10 09  31 64 -31 -32
-//-1 sprites/pcx/industries/fishinggrounds.pcx  290 10 09  1 1 0 0
 
 
 //Tile action 2 
@@ -46,11 +45,7 @@
 	\dx80008002 //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b16 //xextent yextent zextent
-//-1 * 0 02 09 03 00 //-1 * 0 02 09 <set-id> 00
-//	\d4061 //groundsprite
-//	\dx80008003 //building sprite
-//	\b0 \b0 //xofs yofs
-//	\b16 \b16 \b16 //xextent yextent zextent
+//@@WARNING DISABLE 135
 -1 * 0 02 09 03 02 //-1 * 0 02 09 <set-id> <num-sprites> (extended format)
 	\d4061 //groundsprite
 	\dx80008004 //second ground sprite
@@ -58,6 +53,7 @@
 	\dx80008003 //building sprite
 	\b0 \b0 \b0 //<xoffset> <yoffset> <zoffset>
 	\b16 \b16 \b16 //<xextent> <yextent> <zextent>
+//@@WARNING ENABLE 135
 
 //-1 * 0 02 09 <set-id> <type> <variable> <varadjust> <nvar> (<set-id> <low-range> <high-range>){n} <default>
 
