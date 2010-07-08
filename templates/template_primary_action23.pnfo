@@ -118,12 +118,19 @@
     \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
        44 80 \d00 \d00
      44 80 //default
-     
+
+
+
 // handle cb 22 industry availability
-#include "industry_availability_check.pnfo"     
-      	
+#include "industry_availability_check.pnfo" 
+
+//handle cb 38 additional text industry fund window
+#include "industry_fundwindow_text.pnfo"
+
 // handle cb 14A industry color
-#include "industry_color.pnfo"     
+#include "industry_color.pnfo"
+
+
 
 // handle callbacks
 -1 * 0 02 0A C0 
@@ -138,9 +145,9 @@
     #endif
     20 00   22 00   22 00 //industry availability cb 22
     21 00   4A 01   4A 01 //industry color cb 14A
+	22 00   38 00   38 00 //cb 38 display additional text in fund window
 	  00 80   29 00   29 00 //random production change cb 29 // 00 80 = do nothing
-	  D1 00   35 00   35 00 //monthly production change cb 35
-    THIS_STR_INFO_CB38 80   38 00   38 00 //return text-ID D0xx if cb 38 (fund window)
+	  D1 00   35 00   35 00 //monthly production change cb 35 
     F0 00   3A 00   3A 00 //return text-ID D0xx if cb 3A (industry window)
     //30 00   55 01   55 01 //handle fields cb 155    
 	A0 00 //default
@@ -154,3 +161,4 @@
 #undef THIS_STR_INFO_CB38
 #undef THIS_STR_BOOST
 #undef THIS_HANDLE_CB28
+#undef THIS_INTRO_DATE
