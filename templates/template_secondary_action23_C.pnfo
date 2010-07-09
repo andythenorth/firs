@@ -401,13 +401,15 @@
 // handle cb 14A industry color
 #include "industry_color.pnfo"     
 
+// handle monthly / random production change cb
+#include "industry_closure_check.pnfo"
 
 
 // handle callbacks
 -1 * 0 02 0A C0 //-1 * 0 0A <set-id>
 	85 0C //<type> <variable> word-access callback
 	00 FF FF //no shift, no mask
-	\b5 //number of ranges to check
+	\b7 //number of ranges to check
 	  #ifdef THIS_HANDLE_CB28
     THIS_HANDLE_CB28   28 00   28 00 //can industry be built? ...relies on action 2 with correct ID defined in industry pnfo
     #endif
@@ -416,8 +418,10 @@
     #endif
     20 00   22 00   22 00 //industry availability cb 22
     21 00   4A 01   4A 01 //industry color cb 14A
-	22 00   38 00   38 00 //cb 38 display additional text in fund window
-	F0 00   3A 00   3A 00 //cb 3A (industry window)
+    22 00   38 00   38 00 //cb 38 display additional text in fund window
+	  00 80   29 00   29 00 //random production change cb 29 // 00 80 = do nothing
+	  D0 00   35 00   35 00 //monthly production change cb 35 
+    F0 00   3A 00   3A 00 //cb 3A (industry window)
 	C1 00 //default
 
 // industry action 3 attach varaction2 chain to industry

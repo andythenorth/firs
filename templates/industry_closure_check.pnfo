@@ -1,2 +1,8 @@
 // This file provides an industry closure check for use with monthly / random production change cbs
+-1 * 0 02 0A D0 //  
+  81 1A 00 01 //    
+  \b1 //range
+    00 80 00 00 //lookat cb 35 or 29 in wiki to see what the returned value means
+  00 80 //else no change	
+
 
