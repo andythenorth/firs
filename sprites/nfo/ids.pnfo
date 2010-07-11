@@ -548,7 +548,7 @@
 // How many production cycles are allowed by some processing industries before cargo ratios are reset to 0
 #define NUM_PROD_CYCLES_INVENTORY_HELD_FOR     \d07
 // How many months are some industries protected from closure for?
-#define NUM_MONTHS_INDUSTRY_CLOSURE_PROTECTED_DEFAULT   \d0 //default value - can be over-ridden by industries with a local define
+#define NUM_MONTHS_INDUSTRY_CLOSURE_PROTECTED_DEFAULT   \d18 //default value - can be over-ridden by industries with a local define
 
 
 // Action7 to skip some cargos in certain climates
