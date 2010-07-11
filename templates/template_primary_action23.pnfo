@@ -46,19 +46,23 @@
     A1 00  \d00  \d00 
   A1 00 // default
 
-// production changes
--1 * 0 02 0A D8 //random chance of closure if conditions met
-  81 18 00 00 //randomise (use 3F)
-  \b1 //range
-    03 80 00 00 //lookat cb 35 or 29 in wiki to see what the returned value means
-  00 80 //else no change	
+// handle closure
 
--1 * 0 02 0A D7 //check closure parameter
-  81
-    7F PARAM_CLOSE_PRIMARY  00 FF //check if closure parameter is set
+-1 * 0 02 0A DB //  
+  89
+    93 00 \dxFFFFFFFF //check current production multiplier
   \b1 //range
-    D8 00 01 FF //if param is set
+    03 80 \d00 \d04 //close if <=4 
   00 80 //else no change
+
+-1 * 0 02 0A DA //check closure parameter
+  81
+    7F PARAM_CLOSE_PRIMARY  00 FF //check closure parameter
+  \b1 //range
+    DB 00 01 FF //if param is set
+  00 80 //else no change
+
+// production changes
 
 -1 * 0 02 0A D6 //low random chance of production decrease if conditions met...  
   81 18 00 1F //randomise
@@ -77,7 +81,7 @@
     93 20 \dxFFFFFFFF //check current production multiplier
     10 1A 00 \dx02 //store in persistent storage
   \b2 //range
-    D7 00 \d00 \d04 //will try to close if <=4 
+    00 80 \d00 \d04 //do nothing if <=4 
     D6 00 \d05 \d32 //low multiplier
   D5 00 //high multiplier
 
@@ -152,7 +156,7 @@
     20 00   22 00   22 00 //industry availability cb 22
     21 00   4A 01   4A 01 //industry color cb 14A
   	22 00   38 00   38 00 //cb 38 display additional text in fund window
-	  00 80   29 00   29 00 //random production change cb 29 // 00 80 = do nothing
+	  DA 00   29 00   29 00 //random production change cb 29 // 00 80 = do nothing
 	  D1 00   35 00   35 00 //monthly production change cb 35 
     F0 00   3A 00   3A 00 //return text-ID D0xx if cb 3A (industry window)
     //30 00   55 01   55 01 //handle fields cb 155    
