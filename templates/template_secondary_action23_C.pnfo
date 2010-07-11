@@ -43,10 +43,12 @@
 //   generally unused and available	2A-9F
 
 // Persistent storage used (not guaranteed to be up to date, but it's a starting point for making sense of this)
+// Some use of persistent storage not strictly necessary, could be registers instead
 // 01,02: prod. ratios cargo 1, (2 and 3) (dynamic value between 0 and 8, total cannot exceed 8)
 // 04,05,06: store production from each of cargo 1,2,3
 // 07,08,09: store amounts used of each cargo 1,2,3
-// 0A, 0B: output amounts for output cargo 1,2 (second often not needed, but code handles both cases)
+// 0A: used for closure protection ticker 
+// 0B: debug slot - use to store whatever needs debugging
 // 0C: total production ratio all cargos summed (value between 0 and 8)
 // 0D,0E:  'combinatory production ticker' cargo 1, (2 and 3) 
 
@@ -82,7 +84,6 @@
       \2sto 1A 20 \dx0B //store in register
       0F
       7D 0A 20  \dxFFFFFFFF //get stored amount for total cargo output
-      10 1A 20 \dx0A //store in persistent storage (for debug only, can be commented if not in use)
       \2sto 1A 00 \dx0A //store in register
     \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
        00 00  00 00 00 00  00 00 00 00
@@ -92,7 +93,6 @@
     89 // 
       7D 0A 20  \dxFFFFFFFF //get stored amount for total cargo output
       \2/ 1A 20 THIS_NUM_OUTPUT_CARGOS
-      10 1A 20 \dx0A //store in persistent storage (for debug only, can be commented if not in use)
       \2sto 1A 20 \dx0A //store in register
       10 1A 20 \dx0B //store in persistent storage (for debug only, can be commented if not in use)
       \2sto 1A 00 \dx0B //store in register
@@ -116,7 +116,6 @@
       7C 04 20  \dxFFFFFFFF //get stored amount for production from cargo 1
       \2+ 7C 05 20  \dxFFFFFFFF //get stored amount for production from cargo 2
       \2+ 7C 06 20  \dxFFFFFFFF //get stored amount for production from cargo 3 
-      10 1A 20 \dx0A //store in persistent storage (for debug only, can be commented if not in use)
       \2sto 1A 00 \dx0A //store in register
     \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
        AA 00  00 00 00 00  00 00 00 00
@@ -419,8 +418,8 @@
     20 00   22 00   22 00 //industry availability cb 22
     21 00   4A 01   4A 01 //industry color cb 14A
     22 00   38 00   38 00 //cb 38 display additional text in fund window
-	  00 80   29 00   29 00 //random production change cb 29 // 00 80 = do nothing
-	  D0 00   35 00   35 00 //monthly production change cb 35 
+	  00 80   29 00   29 00 //random production change cb 29
+	  DA 00   35 00   35 00 //monthly production change cb 35 
     F0 00   3A 00   3A 00 //cb 3A (industry window)
 	C1 00 //default
 
