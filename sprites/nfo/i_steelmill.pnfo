@@ -25,7 +25,7 @@
 	17 \b5 //probability in random game
 	18 \b2 //probability during gameplay
 	19 CLR_STEELMILL //map colour (byte; using indexes from dos palette)
-	21 8D //callback flags 
+	21 BD //callback flags 
 	22 01  //callback flags
 //To show cargo waiting to be processed at industry, ensure prop 21 is set to use production callback
 
