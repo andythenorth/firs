@@ -106,7 +106,7 @@
     7D 01 00  \dxFFFFFFFF //get local storage amount for delivered cargo 1 in last month
   \b1 //range
     D3 00  \d01  \dxFFFFFFFF    
-  D5 00 //else no change
+  D4 00 //else no change
 
 -1 * 0 02 0A D1 //handle cb 35 monthly production change 
   89 // 
