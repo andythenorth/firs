@@ -85,7 +85,12 @@
     D7 00 \d05 \d32 //low multiplier
   D6 00 //high multiplier
 
-// use D4 to handle checking parameter for no decreases (not added yet)
+-1 * 0 02 0A D4 //check production change parameter
+  81
+    7F PRODUCTION_PARAMETER  00 FF //check parameter
+  \b1 //range
+    D5 00 01 FF //if param is set
+  00 80 //else no change
 
 -1 * 0 02 0A D3 //random production increase if production-boosting cargo stockpiled...  
   81 18 00 03 //randomise
