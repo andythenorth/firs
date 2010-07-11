@@ -44,7 +44,7 @@
   81
     7F PARAM_CLOSE_SECONDARY  00 FF // check if closure parameter is set
   \b1 //range
-    D1 00 01 FF //lookat cb 35 or 29 in wiki to see what the returned value means
+    D1 00 01 FF //if param is set
   00 80 //else no change
   
 #undef THIS_NUM_MONTHS_CLOSURE_PROTECTED

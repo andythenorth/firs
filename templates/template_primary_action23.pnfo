@@ -47,12 +47,18 @@
   A1 00 // default
 
 // production changes
--1 * 0 02 0A D7 //random chance of closure if conditions met...CLOSURE CURRENTLY DISABLED - ADD PARAM IN FUTURE  
-  81 18 00 3F //randomise
+-1 * 0 02 0A D8 //random chance of closure if conditions met
+  81 18 00 00 //randomise (use 3F)
   \b1 //range
-    00 80 00 00 //lookat cb 35 or 29 in wiki to see what the returned value means
-    //0D 80 00 00 //lookat cb 35 or 29 in wiki to see what the returned value means
+    03 80 00 00 //lookat cb 35 or 29 in wiki to see what the returned value means
   00 80 //else no change	
+
+-1 * 0 02 0A D7 //check closure parameter
+  81
+    7F PARAM_CLOSE_PRIMARY  00 FF //check if closure parameter is set
+  \b1 //range
+    D8 00 01 FF //if param is set
+  00 80 //else no change
 
 -1 * 0 02 0A D6 //low random chance of production decrease if conditions met...  
   81 18 00 1F //randomise
