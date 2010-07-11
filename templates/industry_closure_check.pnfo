@@ -33,12 +33,18 @@
 
 // closure code
 
+-1 * 0 02 0A D2 //random chance of closure if conditions met
+  81 18 00 01 //randomise
+  \b1 //range
+    03 80 00 00 //lookat cb 35 or 29 in wiki to see what the returned value means
+  00 80 //else no change	
+
 -1 * 0 02 0A D1 //check closure ticker 
   89 // 
     7C 0A 00  \dxFFFFFFFF //get value of closure ticker (in persistent storage)
   \b1 //range
      00 80  \d00  THIS_NUM_MONTHS_CLOSURE_PROTECTED //lookat cb 35 or 29 in wiki to see what the returned value means
-  03 80 //lookat cb 35 or 29 in wiki to see what the returned value means
+  D2 00 //closure protection exceeded
 
 -1 * 0 02 0A D0 //  
   81
