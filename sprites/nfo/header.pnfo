@@ -2,6 +2,11 @@
 // SETTINGS GUI  
 // ************
 
+ -1 * -1   14 "C" "INFO"
+                  "B" "VRSN" \w4 \d{{REPO_REVISION}}
+                  00
+              00
+
 // set number of parameters
 -1 * -1   14 "C" "INFO"
                   "B" "NPAR" \w1 \b4
