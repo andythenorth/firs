@@ -1,165 +1,220 @@
-//FIRS Translation File
+//FIRS Tranlation File
 //Language: German
-//Lang-ID: 02 -> 82
+//Lang-ID: 7F -> FF
+#define LANG_ID  02
+#define LANG_ID2 82
+
+//Format: action 04; feature; langID with bit 7 set; 01; stringID; "string"; 00
 
 
 //Sugar cane
-//We only need this in tropic:
--1 * 0 07 83 01 \7! 02 01
--1 * 0 04 0B 82 \b4 \b01 DC
-"Rohrzucker" 00 
-"\7C Tonne Rohrzucker" 00
-"\7C Tonnen Rohrzucker" 00
-"\0ESC" 00
+#define TEXT_CRG_SUGARCANE_CTYPE                        "Rohrzucker"
+#define TEXT_CRG_SUGARCANE_1UNIT                        "\UE07C Tonne Rohrzucker"
+#define TEXT_CRG_SUGARCANE_MUNIT                        "\UE07C Tonnen Rohrzucker"
+#define TEXT_CRG_SUGARCANE_TABBR                        "\0ERZ"
 
-
-//Waste
--1 * 0 04 0B 82 \b4 \b05 DC
-"M�ll" 00 
-"\7C Tonne M�ll" 00
-"\7C Tonnen M�ll" 00
-"\0EWS" 00
-
+//Waste 
+#define TEXT_CRG_WASTE_CTYPE                            "Müll"
+#define TEXT_CRG_WASTE_1UNIT                            "\UE07C Tonne Müll"
+#define TEXT_CRG_WASTE_MUNIT                            "\UE07C Tonnen Müll"
+#define TEXT_CRG_WASTE_TABBR                            "\0EML"
 
 //Fruit and Vegetables
--1 * 0 04 0B 82 \b4 \b09 DC
-"Fr�chte und Gem�se" 00
-"Fr�chte und Gem�se" 00
-"\7C Tonne Fr�chte und Gem�se" 00
-"\7C Tonnen Fr�chte und Gem�se" 00
+#define TEXT_CRG_FRUITSANDVEGETABLES_CTYPE              "Früchte und Gemüse"
+#define TEXT_CRG_FRUITSANDVEGETABLES_1TYPE              "Früchte und Gemüse"
+#define TEXT_CRG_FRUITSANDVEGETABLES_1UNIT              "\UE07C Tonne Früchte und Gemüse"
+#define TEXT_CRG_FRUITSANDVEGETABLES_MUNIT              "\UE07C Tonnen Früchte und Gemüse"
 
-
-//Fish
--1 * 0 04 0B 82 \b4 \b13 DC
-"Fisch" 00 
-"\7C Tonne Fisch" 00
-"\7C Tonnen Fisch" 00
-"\0EFI" 00
-
+//Fish 
+#define TEXT_CRG_FISH_CTYPE                             "Fisch"
+#define TEXT_CRG_FISH_1UNIT                             "\UE07C Tonne Fisch"
+#define TEXT_CRG_FISH_MUNIT                             "\UE07C Tonnen Fisch"
+#define TEXT_CRG_FISH_TABBR                             "\0EFI"
 
 //Wool
-//We only need this in temperate and arctic:
--1 * 0 07 83 01 \7> 01 01
--1 * 0 04 0B 82 \b4 \b17 DC
-"Wolle" 00 
-"\7C Tonne Wolle" 00
-"\7C Tonnen Wolle" 00
-"\0EWL" 00
-
+#define TEXT_CRG_WOOL_CTYPE                             "Wolle"
+#define TEXT_CRG_WOOL_1UNIT                             "\UE07C Tonne Wolle"
+#define TEXT_CRG_WOOL_MUNIT                             "\UE07C Tonnen Wolle"
+#define TEXT_CRG_WOOL_TABBR                             "\0EWL"
 
 //Cotton
-//We only need this in tropic:
--1 * 0 07 83 01 \7! 02 01
--1 * 0 04 0B 82 \b4 \b17 DC
-"Baumwolle" 00 
-"\7C Tonne Baumwolle" 00
-"\7C Tonnen Baumwolle" 00
-"\0ECT" 00
-
+#define TEXT_CRG_COTTON_CTYPE                           "Baumwolle"
+#define TEXT_CRG_COTTON_1UNIT                           "\UE07C Tonne Baumwolle"
+#define TEXT_CRG_COTTON_MUNIT                           "\UE07C Tonnen Baumwolle"
+#define TEXT_CRG_COTTON_TABBR                           "\0EBW"
 
 //Sand
--1 * 0 04 0B 82 \b4 \b21 DC
-"Sand" 00 
-"\7C Tonne Sand" 00
-"\7C Tonnen Sand" 00
-"\0ESA" 00
-
+#define TEXT_CRG_SAND_CTYPE                             "Sand"
+#define TEXT_CRG_SAND_1UNIT                             "\UE07C Tonne Sand"
+#define TEXT_CRG_SAND_MUNIT                             "\UE07C Tonnen Sand"
+#define TEXT_CRG_SAND_TABBR                             "\0ESD"
 
 //Gravel
--1 * 0 04 0B 82 \b4 \b25 DC
-"Kies" 00 
-"\7C Tonne Kies" 00
-"\7C Tonnen Kies" 00
-"\0EGV" 00
-
+#define TEXT_CRG_GRAVEL_CTYPE                           "Kies"
+#define TEXT_CRG_GRAVEL_1UNIT                           "\UE07C Tonne Kies"
+#define TEXT_CRG_GRAVEL_MUNIT                           "\UE07C Tonnen Kies"
+#define TEXT_CRG_GRAVEL_TABBR                           "\0EKS"
 
 //Lumber
--1 * 0 04 0B 82 \b4 \b29 DC
-"Bauholz" 00 
-"\7C Tonne Bauholz" 00
-"\7C Tonnen Bauholz" 00
-"\0ELU" 00
+#define TEXT_CRG_LUMBER_CTYPE                           "Bauholz"
+#define TEXT_CRG_LUMBER_1UNIT                           "\UE07C Tonne Bauholz"
+#define TEXT_CRG_LUMBER_MUNIT                           "\UE07C Tonnen Bauholz"
+#define TEXT_CRG_LUMBER_TABBR                           "\0EHZ"
 
-
-//Packaging - NEEDS CHANGING TO MANUFACTURING SUPPLIES
--1 * 0 04 0B 82 \b4 \b33 DC
-"Verpackungsmaterial" 00 
-"\7C Kiste Verpackungsmaterial" 00
-"\7C Kisten Verpackungsmaterial" 00
-"\0EPK" 00
-
+//Manufacturing Supplies - formerly Packaging
+#define TEXT_CRG_MANUFACTURINGSUPPLIES_CTYPE            "Produktionsgüter"
+#define TEXT_CRG_MANUFACTURINGSUPPLIES_1UNIT            "\UE07C Kiste Produktionsgüter"
+#define TEXT_CRG_MANUFACTURINGSUPPLIES_MUNIT            "\UE07C Kisten Produktionsgüter"
+#define TEXT_CRG_MANUFACTURINGSUPPLIES_TABBR            "\0ESM"
 
 //Farm supplies
--1 * 0 04 0B 82 \b4 \b37 DC
-"landw. Betriebsmittel" 00 
-"\7C Kiste landw. Betriebsmittel" 00
-"\7C Kisten landw. Betriebsmittel" 00
-"\0EFS" 00
-
+#define TEXT_CRG_FARMSUPPLIES_CTYPE                     "landw. Betriebsmittel"
+#define TEXT_CRG_FARMSUPPLIES_1UNIT                     "\UE07C Kiste landw. Betriebsmittel"
+#define TEXT_CRG_FARMSUPPLIES_MUNIT                     "\UE07C Kisten landw. Betriebsmittel"
+#define TEXT_CRG_FARMSUPPLIES_TABBR                     "\0ELB"
 
 //Chemicals
--1 * 0 04 0B 82 \b3 \b41 DC
-"Chemikalien" 00 
-"\7C Chemikalien" 00 
-"\0ECH" 00
-
+#define TEXT_CRG_CHEMICALS_CTYPE                        "Chemikalien"
+#define TEXT_CRG_CHEMICALS_1UNIT                        "\UE087 Chemikalien"
+#define TEXT_CRG_CHEMICALS_TABBR                        "\0ECH"
 
 //Engineering supplies
--1 * 0 04 0B 82 \b4 \b44 DC
-"Ersatzteile" 00 
-"\7C Kiste Ersatzteile" 00
-"\7C Kisten Ersatzteile" 00
-"\0EES" 00
-
+#define TEXT_CRG_ENGINEERINGSUPPLIES_CTYPE              "Ersatzteile"
+#define TEXT_CRG_ENGINEERINGSUPPLIES_1UNIT              "\UE07C Kiste Ersatzteile"
+#define TEXT_CRG_ENGINEERINGSUPPLIES_MUNIT              "\UE07C Kisten Ersatzteile"
+#define TEXT_CRG_ENGINEERINGSUPPLIES_TABBR              "\0EEZ"
 
 //Fuel oil
--1 * 0 04 0B 82 \b3 \b48 DC
-"Treibstoff" 00 
-"\87 Treibstoff" 00 
-"\0EFO" 00
-
+#define TEXT_CRG_FUELOIL_CTYPE                          "Treibstoff"
+#define TEXT_CRG_FUELOIL_1UNIT                          "\87 Treibstoff"
+#define TEXT_CRG_FUELOIL_TABBR                          "\0ETS"
 
 //Bauxite
--1 * 0 04 0B 82 \b3 \b51 DC
-"Bauxit" 00 
-"\7C Tonne Bauxit" 00
-"\7C Tonnen Bauxit" 00
-
-
-//Parts - DEPRECATED
-// -1 * 0 04 0B 82 \b4 \b54 DC
-// "Bauteile" 00 
-// "\7C Kiste Bauteile" 00
-// "\7C Kisten Bauteile" 00
-// "\0EPA" 00
-
+#define TEXT_CRG_BAUXITE_CTYPE                          "Bauxit"
+#define TEXT_CRG_BAUXITE_1UNIT                          "\UE07C Tonne Bauxit"
+#define TEXT_CRG_BAUXITE_MUNIT                          "\UE07C Tonnen Bauxit"
+#define TEXT_CRG_BAUXITE_TABBR                          "\0EBX"
 
 //Aluminium
--1 * 0 04 0B 82 \b4 \b58 DC
-"Aluminium" 00 
-"\7C Tonne Aluminium" 00
-"\7C Tonnen Aluminium" 00
-"\0EAL" 00
-
+#define TEXT_CRG_ALUMINIUM_CTYPE                        "Aluminium"
+#define TEXT_CRG_ALUMINIUM_1UNIT                        "\UE07C Tonne aluminium"
+#define TEXT_CRG_ALUMINIUM_MUNIT                        "\UE07C Tonnen aluminium"
+#define TEXT_CRG_ALUMINIUM_TABBR                        "\0EAL"
 
 //Milk
--1 * 0 04 0B 82 \b3 \b62 DC
-"Milch" 00 
-"\87 Milch" 00 
-"\0EMK" 00
-
+#define TEXT_CRG_MILK_CTYPE                             "Milch"
+#define TEXT_CRG_MILK_1UNIT                             "\87 Milch"
+#define TEXT_CRG_MILK_TABBR                             "\0EML"
 
 //Scrap Metal
--1 * 0 04 0B 82 \b4 \b65 DC
-"Altmetall" 00 
-"\7C Tonne Altmetall" 00
-"\7C Tonnen Altmetall" 00
-"\0ESM" 00
-
+#define TEXT_CRG_SCRAPMETAL_CTYPE                       "Altmetall"
+#define TEXT_CRG_SCRAPMETAL_1UNIT                       "\UE07C Tonne Altmetall"
+#define TEXT_CRG_SCRAPMETAL_MUNIT                       "\UE07C Tonnen Altmetall"
+#define TEXT_CRG_SCRAPMETAL_TABBR                       "\0EAM"
 
 //Survey supplies
--1 * 0 04 0B 82 \b4 \b69 DC
-"Vermessungsbedarf" 00 
-"\7C Kiste Vermessungsbedarf" 00
-"\7C Kisten Vermessungsbedarf" 00
-"\0ESS" 00
+#define TEXT_CRG_SURVEYSUPPLIES_CTYPE                   "Vermessungsbedarf"
+#define TEXT_CRG_SURVEYSUPPLIES_1UNIT                   "\UE07C Kiste Vermessungsbedarf"
+#define TEXT_CRG_SURVEYSUPPLIES_MUNIT                   "\UE07C Kisten Vermessungsbedarf"
+#define TEXT_CRG_SURVEYSUPPLIES_TABBR                   "\0EVB"
+
+
+//Industry texts
+#define TEXT_IND_OILPLATFORM                            "Ölbohr-Platform"
+#define TEXT_IND_BREWERY                                "Brauerei"
+#define TEXT_IND_CEMENTPLANT                            "Zementfabrik"
+#define TEXT_IND_WASTECOLLECTIONPOINT                   "Abfallsammelstelle"
+#define TEXT_IND_INCINERATOR                            "Verbrennungsanlage"
+#define TEXT_IND_RECYCLINGPLANT                         "Recyclinganlage"
+#define TEXT_IND_FERTILISERPLANT                        "Düngerfabrik"
+#define TEXT_IND_PLASTICSPLANT                          "Plastikfabrik"
+#define TEXT_IND_GLASSWORKS                             "Glashütte"
+#define TEXT_IND_MEATPACKER                             "Schlachthof"
+#define TEXT_IND_DAIRYFARM                              "Milchvieh-Bauernhof"
+#define TEXT_IND_DAIRY                                  "Molkerei"
+#define TEXT_IND_TEXTILEMILL                            "Textilfabrik"
+#define TEXT_IND_FURNITUREFACTORY                       "Möbelfabrik"
+#define TEXT_IND_ALUMINIUMPLANT                         "Aluminiumhütte"
+#define TEXT_IND_MACHINESHOP                            "Maschinenladen"
+#define TEXT_IND_LUMBERYARD                             "Holzverarbeitung"
+#define TEXT_IND_METALFOUNDRY                           "Gießerei"
+#define TEXT_IND_FARMSUPPLYDEPOT                        "Landhandel"
+#define TEXT_IND_MIXEDFARM                              "gemischte Farm"
+#define TEXT_IND_SURVEYSUPPLYDEPOT                      "Vermessungsbedarf"
+#define TEXT_IND_SURVEYCAMP                             "Vermesungscamp"
+#define TEXT_IND_JUNKYARD                               "Abfallhalde"
+#define TEXT_IND_GENERALSTORE                           "Gemischtwarenladen"
+#define TEXT_IND_BAUXITEMINE                            "Bauxitmine"
+#define TEXT_IND_FISHINGHARBOUR                         "Fischereihafen"
+#define TEXT_IND_FISHPROCESSOR                          "Fischverarbeitung"
+#define TEXT_IND_DREDGINGSITE                           "Baggerstelle"
+#define TEXT_IND_WINDFARM                               "Windpark"
+#define TEXT_IND_SANDPIT                                "Sandgrube"
+#define TEXT_IND_ARABLEFARM                             "Ackerbau-Bauernhof"
+#define TEXT_IND_BAKERY                                 "Bäckerei"
+#define TEXT_IND_SHEEPFARM                              "Schaf-Bauernhof"
+#define TEXT_IND_GRAVELQUARRY                           "Kiesgrube"
+#define TEXT_IND_WATERPLANT                             "Brunnen"
+#define TEXT_IND_GASSTATION                             "Tankstelle"
+
+//Station texts for station name prefixes/suffixes. \80 where town name goes
+#define TEXT_STA_FARM                                   "\80 Hof"
+#define TEXT_STA_POWERSTATION                           "\80 Kraftwerk"
+#define TEXT_STA_MILLS                                  "\80 Fabrik"
+#define TEXT_STA_WELLS                                  "\80 Bohrung"
+#define TEXT_STA_REFINERY                               "\80 Raffinerie"
+#define TEXT_STA_WATER                                  "\80 Quelle"
+
+#define TEXT_STA_FACTORY                                "\80 Fabrik"
+#define TEXT_STA_PLANT                                  "\80 Fabrik"
+#define TEXT_STA_QUARRY                                 "\80 Grube"
+#define TEXT_STA_DEPOT                                  "\80 Depot"
+#define TEXT_STA_DREDGINGSITE                           "\80 Baggersee"
+
+
+//Additional texts for purchase window
+#define TEXT_INFO_GENERIC                               ""
+#define TEXT_INFO_LIMIT_200                             "\98 (max 200)"
+#define TEXT_INFO_LIMIT_800                             "\98 (max 800)"
+
+#define TEXT_INFO_ES_PRIMARY_BOOST                       "\98Ersatzteile können die Produktion erhöhen.\0D\90 Diesen Monat wurden \UE07B Kisten geliefert" 
+#define TEXT_INFO_FS_PRIMARY_BOOST                       "\98landw. Betriebsmittel können die Produktion erhöhen.\0D\90 Diesen Monat wurden \UE07B Kisten geliefert" 
+#define TEXT_INFO_MS_PRIMARY_BOOST                       "\98Produktionsgüter verdoppeln die Produktionseffizienz.\0D\0D\80" 
+#define TEXT_INFO_CARGO_PRODUCTION                       "\98Produktion:\0D" 
+#define TEXT_INFO_6T_PER_8T                              "\0D6t Produktion pro gelieferter 8t."
+#define TEXT_INFO_8T_PER_8T                              "\0D8t Produktion pro gelieferter 8t."
+#define TEXT_INFO_STEPUP_TWO_CARGOS                      "\0DProduktion steigt, wenn zwei oder mehr Frachtarten innerhalb eines Monats geliefert werden." 
+#define TEXT_INFO_INCREASE_BOTH_CARGOS                   "\0DSteigt auf 8t Produktion pro gelieferter 8t, wenn beide Fractharten innerhalb eines Monats geliefert werden." 
+#define TEXT_INFO_3T_PER_8T_MS                           "  3t pro gelieferter 8t Produktionsgüter\0D" 
+#define TEXT_INFO_2T_PER_8T_IRON_ORE                     "  2t pro gelieferter 8t Eisenerz\0D" 
+#define TEXT_INFO_2T_PER_8T_COAL                         "  2t pro gelieferter 8t Kohle\0D" 
+#define TEXT_INFO_4T_PER_8T_SCRAP_METAL                  "  4t pro gelieferter 8t Altmetall\0D" 
+#define TEXT_INFO_2T_PER_8T_BAUXITE                      "  2t pro gelieferter 8t Bauxit\0D" 
+#define TEXT_INFO_5T_PER_8T_LUMBER                       "  5t pro gelieferter 8t Bauholz\0D" 
+#define TEXT_INFO_6T_PER_8T_LUMBER                       "  6t pro gelieferter 8t Bauholz\0D" 
+#define TEXT_INFO_2T_PER_8T_CHEMICALS                    "  2t pro gelieferter 8t Chemikalien\0D" 
+#define TEXT_INFO_5T_PER_8T_GRAIN                        "  5t pro gelieferter 8t Getreide\0D" 
+#define TEXT_INFO_5T_PER_8T_FRUITSANDVEGETABLES          "  5t pro gelieferter 8t Früchte und Gemüse\0D" 
+#define TEXT_INFO_5T_PER_8T_MILK                         "  5t pro gelieferter 8t Milch\0D" 
+#define TEXT_INFO_5T_PER_8T_LIVESTOCK                    "  5t pro gelieferter 8t Vieh\0D" 
+#define TEXT_INFO_5T_PER_8T_FISH                         "  5t pro gelieferter 8t Fisch\0D" 
+#define TEXT_INFO_5T_PER_8T_WOOL                         "  5t pro gelieferter 8t Wolle\0D" 
+#define TEXT_INFO_2T_PER_8T_SAND                         "  2t pro gelieferter 8t Sand\0D" 
+#define TEXT_INFO_4T_PER_8T_GRAVEL                       "  4t pro gelieferter 8t Kies\0D" 
+#define TEXT_INFO_MACHINESHOP                            "\98Baut und wartet Maschinen.\0D" 
+#define TEXT_INFO_SAWMILL                                "\98Sägt Holz.\0D" 
+#define TEXT_INFO_METALFOUNDRY                           "\98Produziert Metallgegenstände wie Werkzeuge und Ersatzteile.\0D" 
+#define TEXT_INFO_PAPERMILL                              "\98Zermahlt Holz und stellt daraus Papier und Karton her.\0D" 
+#define TEXT_INFO_OILREFINERY                            "\98Verarbeitet Rohöl in Treibstoff und Chemikalien.\0D" 
+#define TEXT_INFO_PLASTICSPLANT                          "\98Produziert Plastikteile wie Verpackungen und Haushaltswaren.\0D" 
+#define TEXT_INFO_GLASSWORKS                             "\98Produziert Glasteile wie Flaschen, Gläser und Fensterscheiben.\0D" 
+#define TEXT_INFO_BREWERY_STEPUP                         "\0DProduktion steigt, wenn Produktionsgüter innerhalb eines Monats gelieert werden." 
+#define TEXT_INFO_FERTILISERPLANT                        "\98Prozessiert Chemikalien zu Dünger für landwirtschaftlichen Gebrauch.\0D" 
+#define TEXT_INFO_LUMBERYARD                             "\98Produziert Dinge wie Balken und Zaunpfähle.\0D" 
+#define TEXT_INFO_POWERSTATION                           "\98Generiert Elektrizität.\0D" 
+
+
+
+
+
+

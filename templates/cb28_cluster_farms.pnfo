@@ -5,21 +5,29 @@
          00 84  \w10 \w36 //build industry if distance is in range
        04 80 //otherwise return string D0 04
 
--1 * 0 02 0A 13 //check count of industry of type n, do some magic with map size cluster scaling parameter
+-1 * 0 02 0A 14 //check count of industry of type n, do some magic with map size cluster scaling parameter
     89 //
       67  THIS_INDUSTRY  30 \dxFFFFFFFF // var, param (industry ID), shift, mask 
+      \2/ 1A 20 \d2 // adjust result: (n / 2) (effectively multiplies number of clusters by 2)
       \2/ 7F INDUSTRY_CLUSTER_PARAMETER 00 \dxFFFFFFFF // 
     \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
        00 84  \d0 \d0 //build anywhere if cluster limit not reached
     1A 00 //build using placement routine
+
+// use varact 2 with ID 13 to check: 
+//    snowline height - current height
+//    multiply by 1 or 0 (to allow for some farms allowed above snowline)
+// check result is (greater than 0?) and end chain or go to 14
+// snowline height is var 97
+// use 60+ var to get tile height, mask or shift to get xxxxHHxx
 
 -1 * 0 02 0A 12 //store FFFFFFFF (special value for current GRFID) to register 100   
     89 // 
       1A 20 \dxFFFFFFFF // create value
       \2sto 1A 00 \dx100 //store in register
     \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
-       13 00 \d00 \d00
-     13 00 //default
+       14 00 \d00 \d00
+     14 00 //default
 
 -1 * 15	 02 0A 11  //check if industry is being built by player or game
     81  A7  00 \bxFF 

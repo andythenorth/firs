@@ -18,7 +18,7 @@
 	1D \w0 \w0 //input cargo 2 multiplier
 	1E \w0 \w0 //input cargo 3 multiplier
 	16 FF FF FF //conflicting industry types (3*byte; ID+80h; FF to disable)
-	17 \b6 //probability in random game
+	17 \b8 //probability in random game
 	18 \b3 //probability during gameplay
 	19 CLR_FRUITPLANTATION //map colour (byte; using indexes from dos palette)
 	21 3A //callback flags 

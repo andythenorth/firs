@@ -1,164 +1,119 @@
 //FIRS Translation File
 //Language: Dutch
 //Lang-ID: 1F -> 9F
+#define LANG_ID  1F
+#define LANG_ID2 9F
+
+
+//Cargo texts
 
 //Sugar cane
-//We only need this in tropic:
--1 * 0 07 83 01 \7! 02 01
--1 * 0 04 0B 9F \b4 \b01 DC
-"Suikerriet" 00
-7C " ton suikerriet" 00
-7C " ton suikerriet" 00
-0E "SC" 00
+#define TEXT_CRG_SUGARCANE_CTYPE                        "Suikerriet"
+#define TEXT_CRG_SUGARCANE_1UNIT                        "\UE07C ton suikerriet"
+#define TEXT_CRG_SUGARCANE_MUNIT                        "\UE07C ton suikerriet"
+#define TEXT_CRG_SUGARCANE_TABBR                        "\0ESR"
 
-
-//Waste
--1 * 0 04 0B 9F \b4 \b05 DC
-"Afval" 00
-7C " ton afval" 00
-7C " ton afval" 00
-0E "WS" 00
-
+//Waste 
+#define TEXT_CRG_WASTE_CTYPE                            "Afval"
+#define TEXT_CRG_WASTE_1UNIT                            "\UE07C ton afval"
+#define TEXT_CRG_WASTE_MUNIT                            "\UE07C ton afval"
+#define TEXT_CRG_WASTE_TABBR                            "\0EAV"
 
 //Fruit and Vegetables
--1 * 0 04 0B 9F \b4 \b09 DC
-"Fruit en Groente" 00
-"Fruit en Groente" 00
-7C " ton fruit en groente" 00
-7C " ton fruit en groente" 00
+#define TEXT_CRG_FRUITSANDVEGETABLES_CTYPE              "Fruit en Groente"
+#define TEXT_CRG_FRUITSANDVEGETABLES_1TYPE              "Fruit en Groente"
+#define TEXT_CRG_FRUITSANDVEGETABLES_1UNIT              "\UE07C ton fruit en groente"
+#define TEXT_CRG_FRUITSANDVEGETABLES_MUNIT              "\UE07C ton fruit en groente"
 
-
-//Fish
--1 * 0 04 0B 9F \b4 \b13 DC
-"Vis" 00 
-7C " ton vis" 00
-7C " ton vis" 00
-0E "FI" 00
-
+//Fish 
+#define TEXT_CRG_FISH_CTYPE                             "Vis"
+#define TEXT_CRG_FISH_1UNIT                             "\UE07C ton vis"
+#define TEXT_CRG_FISH_MUNIT                             "\UE07C ton vis"
+#define TEXT_CRG_FISH_TABBR                             "\0EVS"
 
 //Wool
-//We only need this in temperate and arctic:
--1 * 0 07 83 01 \7> 01 01
--1 * 0 04 0B 9F \b4 \b17 DC
-"Wol" 00 
-7C " ton wol" 00
-7C " ton wol" 00
-0E "WL" 00
-
+#define TEXT_CRG_WOOL_CTYPE                             "Wol"
+#define TEXT_CRG_WOOL_1UNIT                             "\UE07C ton wol"
+#define TEXT_CRG_WOOL_MUNIT                             "\UE07C ton wol"
+#define TEXT_CRG_WOOL_TABBR                             "\0EWL"
 
 //Cotton
-//We only need this in tropic:
--1 * 0 07 83 01 \7! 02 01
--1 * 0 04 0B 9F \b4 \b17 DC
-"Katoen" 00 
-7C " ton katoen" 00
-7C " ton katoen" 00
-0E "CT" 00
-
+#define TEXT_CRG_COTTON_CTYPE                           "Katoen"
+#define TEXT_CRG_COTTON_1UNIT                           "\UE07C ton katoen"
+#define TEXT_CRG_COTTON_MUNIT                           "\UE07C ton katoen"
+#define TEXT_CRG_COTTON_TABBR                           "\0EKT"
 
 //Sand
--1 * 0 04 0B 9F \b4 \b21 DC
-"Zand" 00 
-7C " ton zand" 00
-7C " ton zand" 00
-0E "SA" 00
-
+#define TEXT_CRG_SAND_CTYPE                             "Zand"
+#define TEXT_CRG_SAND_1UNIT                             "\UE07C ton zand"
+#define TEXT_CRG_SAND_MUNIT                             "\UE07C ton zand"
+#define TEXT_CRG_SAND_TABBR                             "\0EZD"
 
 //Gravel
--1 * 0 04 0B 9F \b4 \b25 DC
-"Grind" 00 
-7C " ton grind" 00
-7C " ton grind" 00
-0E "GV" 00
-
+#define TEXT_CRG_GRAVEL_CTYPE                           "Frind"
+#define TEXT_CRG_GRAVEL_1UNIT                           "\UE07C ton grind"
+#define TEXT_CRG_GRAVEL_MUNIT                           "\UE07C ton grind"
+#define TEXT_CRG_GRAVEL_TABBR                           "\0EGD"
 
 //Lumber
--1 * 0 04 0B 9F \b4 \b29 DC
-"Hout" 00
-7C " ton hout" 00
-7C " ton hout" 00
-0E "LU" 00
+#define TEXT_CRG_LUMBER_CTYPE                           "Hout"
+#define TEXT_CRG_LUMBER_1UNIT                           "\UE07C ton hout"
+#define TEXT_CRG_LUMBER_MUNIT                           "\UE07C ton hout"
+#define TEXT_CRG_LUMBER_TABBR                           "\0EHT"
 
-
-//Packaging - NEEDS CHANGING TO MANUFACTURING SUPPLIES
--1 * 0 04 0B 9F \b4 \b33 DC
-"Verpakkingsmateriaal" 00 
-7C " pallet verpakkingsmateriaal" 00
-7C " pallets verpakkingsmateriaal" 00
-0E "PK" 00
-
+//Manufacturing Supplies - formerly Packaging
+#define TEXT_CRG_MANUFACTURINGSUPPLIES_CTYPE            "Productiehulpgoederen"
+#define TEXT_CRG_MANUFACTURINGSUPPLIES_1UNIT            "\UE07C pallet productiehulpgoederen"
+#define TEXT_CRG_MANUFACTURINGSUPPLIES_MUNIT            "\UE07C pallets productiehulpgoederen"
+#define TEXT_CRG_MANUFACTURINGSUPPLIES_TABBR            "\0EHP"
 
 //Farm supplies
--1 * 0 04 0B 9F \b4 \b37 DC
-"Landbouwgoederen" 00 
-7C " pallet landbouwgoederen" 00
-7C " pallets landbouwgoederen" 00
-0E "FS" 00
-
+#define TEXT_CRG_FARMSUPPLIES_CTYPE                     "Landbouwhulpgoederen"
+#define TEXT_CRG_FARMSUPPLIES_1UNIT                     "\UE07C pallet landbouwhulpgoederen"
+#define TEXT_CRG_FARMSUPPLIES_MUNIT                     "\UE07C pallets landbouwhulpgoederen"
+#define TEXT_CRG_FARMSUPPLIES_TABBR                     "\0EHL"
 
 //Chemicals
--1 * 0 04 0B 9F \b3 \b41 DC
-"Chemicalien" 00 
-"\87 chemicalien" 00 
-0E "CH" 00
-
+#define TEXT_CRG_CHEMICALS_CTYPE                        "Chemicaliën"
+#define TEXT_CRG_CHEMICALS_1UNIT                        "\UE087 chemicaliën"
+#define TEXT_CRG_CHEMICALS_TABBR                        "\0ECH"
 
 //Engineering supplies
--1 * 0 04 0B 9F \b4 \b44 DC
-"Constructieonderdelen" 00 
-7C " pallet constructieonderdelen" 00
-7C " pallets constructieonderdelen" 00
-0E "ES" 00
-
+#define TEXT_CRG_ENGINEERINGSUPPLIES_CTYPE              "Constructiehulpgoederen"
+#define TEXT_CRG_ENGINEERINGSUPPLIES_1UNIT              "\UE07C pallet constructiehulpgoederen"
+#define TEXT_CRG_ENGINEERINGSUPPLIES_MUNIT              "\UE07C pallets constructiehulpgoederen"
+#define TEXT_CRG_ENGINEERINGSUPPLIES_TABBR              "\0EHC"
 
 //Fuel oil
--1 * 0 04 0B 9F \b3 \b48 DC
-"Brandstof" 00 
-"\87 brandstof" 00 
-0E "FO" 00
-
+#define TEXT_CRG_FUELOIL_CTYPE                          "Brandstof"
+#define TEXT_CRG_FUELOIL_1UNIT                          "\87 brandstof"
+#define TEXT_CRG_FUELOIL_TABBR                          "\0EBZ"
 
 //Bauxite
--1 * 0 04 0B 9F \b3 \b51 DC
-"Bauxiet" 00 
-7C " ton bauxiet" 00
-7C " ton bauxiet" 00
-
-
-//Parts - DEPRECATED
-//-1 * 0 04 0B 9F \b4 \b54 DC
-//"Onderdelen" 00 
-//7C " pallet onderdelen" 00
-//7C " pallets onderdelen" 00
-//0E "PA" 00
-
+#define TEXT_CRG_BAUXITE_CTYPE                          "Bauxiet"
+#define TEXT_CRG_BAUXITE_1UNIT                          "\UE07C ton bauxiet"
+#define TEXT_CRG_BAUXITE_MUNIT                          "\UE07C ton bauxiet"
+#define TEXT_CRG_BAUXITE_TABBR                          "\0EBX"
 
 //Aluminium
--1 * 0 04 0B 9F \b4 \b58 DC
-"Aluminium" 00 
-7C " ton aluminium" 00
-7C " ton aluminium" 00
-0E "AL" 00
-
+#define TEXT_CRG_ALUMINIUM_CTYPE                        "Aluminium"
+#define TEXT_CRG_ALUMINIUM_1UNIT                        "\UE07C ton aluminium"
+#define TEXT_CRG_ALUMINIUM_MUNIT                        "\UE07C ton aluminium"
+#define TEXT_CRG_ALUMINIUM_TABBR                        "\0EAL"
 
 //Milk
--1 * 0 04 0B 9F \b3 \b62 DC
-"Melk" 00 
-"\87 milk" 00 
-0E "MK" 00
-
+#define TEXT_CRG_MILK_CTYPE                             "Melk"
+#define TEXT_CRG_MILK_1UNIT                             "\87 melk"
+#define TEXT_CRG_MILK_TABBR                             "\0EML"
 
 //Scrap Metal
--1 * 0 04 0B 9F \b4 \b65 DC
-"Recyclebaar Metaal" 00 
-7C " ton recyclebaar metaal" 00
-7C " ton recyclebaar metaal" 00
-0E "SM" 00
-
+#define TEXT_CRG_SCRAPMETAL_CTYPE                       "Schroot"
+#define TEXT_CRG_SCRAPMETAL_1UNIT                       "\UE07C ton schroot"
+#define TEXT_CRG_SCRAPMETAL_MUNIT                       "\UE07C ton schroot"
+#define TEXT_CRG_SCRAPMETAL_TABBR                       "\0EST"
 
 //Survey supplies
--1 * 0 04 0B 9F \b4 \b69 DC
-"Onderzoeksgoederen" 00 
-7C " kist onderzoeksgoederen" 00
-7C " kisten onderzoeksgoederen" 00
-0E "SS" 00
+#define TEXT_CRG_SURVEYSUPPLIES_CTYPE                   "Onderzoekshulpgoederen"
+#define TEXT_CRG_SURVEYSUPPLIES_1UNIT                   "\UE07C kist onderzoekshulpgoederen"
+#define TEXT_CRG_SURVEYSUPPLIES_MUNIT                   "\UE07C kisten onderzoekshulpgoederen"
+#define TEXT_CRG_SURVEYSUPPLIES_TABBR                   "\0EHO"

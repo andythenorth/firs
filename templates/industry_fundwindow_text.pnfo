@@ -1,0 +1,14 @@
+// This file provides a callback result for the industry fund window text for use with cb 38 (requires r20086)
+//pre-r20086 displays bogus availability date
+
+-1 * 0 02 0A 22 //-1 * 0 02 0A <set-id>
+	89 1A //<type> general dword <variable> always -1
+	20 THIS_INTRO_DATE //<shift-num> varaction2advanced <and-mask> intro date
+		\2- 1A //<operator> subtract <variable> always -1 <varadjust> (below)
+	20 \d1920-01-01 //<shift-num> varaction2advanced <and-mask> days until 1920
+		0E 1A //<operator> store result <variable> always -1 <varadjust> (below)
+	20 \dx100 //<shift-num> varaction2advanced <and-mask> register
+		0F 1A //<operator> start fresh <variable> always -1 <varadjust> (below)
+	00 THIS_STR_INFO_CB38 80 00 00 //<shift-num> none <and-mask> string id
+	00 //<nvar> no ranges
+	00 80 //default

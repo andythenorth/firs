@@ -1,2 +1,57 @@
 // This file provides an industry closure check for use with monthly / random production change cbs
 
+#define THIS_NUM_MONTHS_CLOSURE_PROTECTED NUM_MONTHS_INDUSTRY_CLOSURE_PROTECTED_DEFAULT
+
+// closure ticker code
+
+-1 * 0 02 0A DC //case no production last month - increment closure ticker
+  89 // 
+      1A 20  \d01 //create value 1
+      \2+ 7C 0A 20  \dxFFFFFFFF //add to 'closure ticker' store   
+      10  1A 00 \dx0A // store in persistent storage
+  \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
+    00 80  \d00  \d00  //return result to cb - lookat cb 35 or 29 in wiki to see what the returned value means
+  00 80 // default
+
+-1 * 0 02 0A DB //case some cargo produced last month
+  89 // 
+    1A 20  \d00 //set 0 for 'closure ticker'
+    10 1A 20 \dx0A //store in persistent storage
+    0F // renum gets sad about passing 0 to the range check, so create 1 and pass that instead <roll>   
+    1A 00 \d01 //create value 1
+  \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
+    00 80 \d00 \d00 //lookat cb 35 or 29 in wiki to see what the returned value means
+  00 80 //
+
+-1 * 0 02 0A DA //check cargo produced last month
+  85
+    9E 00 \wxFFFF // check amount cargo produced last month
+  \b1 //range
+    DC 00 \w00 \w00 //no cargo produced last month
+  DB 00 //some cargo produced last month
+
+
+// closure code
+
+-1 * 0 02 0A D2 //random chance of closure if conditions met
+  81 18 00 01 //randomise
+  \b1 //range
+    03 80 00 00 //lookat cb 35 or 29 in wiki to see what the returned value means
+  00 80 //else no change	
+
+-1 * 0 02 0A D1 //check closure ticker 
+  89 // 
+    7C 0A 00  \dxFFFFFFFF //get value of closure ticker (in persistent storage)
+  \b1 //range
+     00 80  \d00  THIS_NUM_MONTHS_CLOSURE_PROTECTED //lookat cb 35 or 29 in wiki to see what the returned value means
+  D2 00 //closure protection exceeded
+
+-1 * 0 02 0A D0 //  
+  81
+    7F PARAM_CLOSE_SECONDARY  00 FF // check if closure parameter is set
+  \b1 //range
+    D1 00 01 FF //if param is set
+  00 80 //else no change
+  
+#undef THIS_NUM_MONTHS_CLOSURE_PROTECTED
+  

@@ -1,10 +1,10 @@
 // Defines for use in industry template
 #define THIS_INDUSTRY         IND_POWERSTATION
-#define THIS_STR_INFO_CB38    STR_INFO_GENERIC
+#define THIS_STR_INFO_CB38    STR_INFO_AVAILABILITY
 #define THIS_STR_INFO         STR_INFO_POWERSTATION_0
 #define THIS_STR_INFO_WARN_1  STR_INFO_POWERSTATION_1
 #define THIS_STR_INFO_WARN_2  STR_INFO_POWERSTATION_2
-#define THIS_INTRO_DATE       \d1881
+#define THIS_INTRO_DATE       \d1881-01-01
 
 #define THIS_NUM_MONTHS_CLOSURE_PROTECTED     \d30
 
@@ -24,7 +24,7 @@
 	17 \b5 //probability in random game
 	18 \b2 //probability during gameplay
 	19 CLR_POWERSTATION //map colour (byte; using indexes from dos palette)
-	21 33 //callback flags 
+	21 B3 //callback flags 
 	22 01 //callback flags
 //To show cargo waiting to be processed at industry, ensure prop 21 is set to use production callback
 
@@ -57,3 +57,5 @@
 	0A 00 00 //tile acceptance 1
 	0B 00 00 //tile acceptance 2
 	0C 00 00 //tile acceptance 3
+
+#undef THIS_NUM_MONTHS_CLOSURE_PROTECTED

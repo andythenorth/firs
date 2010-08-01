@@ -54,28 +54,20 @@ one input cargo regularly
 The pixels are lickable and work brilliantly with original graphics and OpenGFX.
 
 
-*More Info / Things to Watch Out For!*
-- many secondary industries will start to close about five years after the start
-of the game.  Currently FIRS uses the default TTD closing behaviour, which can
-be annoying.  This will be improved in a future release of FIRS.  Meanwhile,
-make plenty of money and build new industries when you need them.  :twisted: 
+*More Info / Things to Watch Out For!* 
 - primary industry will not increase production unless supplies are delivered. 
-- in FIRS 0.2 closure / production decrease is enabled for primary industries.  
-If no supplies are delivered in a month, there is a chance that the industry will
-reduce production.  If production is very low, there is a small chance that the 
-industry will close.     
-- Power Stations in FIRS close if cargo is not delivered every now and then. 
-This is intentional.  The Power Station window gives information about whether
-there is currently a chance of closure.  In future additional gameplay will be
-added around Power Stations :)   
 - some industries are available from year 0. Some industries (and the cargos
-they use) are only available after a certain date.  Intro dates can be found at:
+they use) are only available after a certain date.  
+Intro dates can be found at:
 http://tt-foundry.com/sets/FIRS/schema/industries
 - FIRS works well if the colour of the mini-map is changed - this is possible in
 recent nightly builds of OTTD (in advanced options -> interface) 
-- FIRS 0.2 is *not* savegame compatible with FIRS 0.1.  The grfID has been changed 
+- FIRS 0.3 is *not* savegame compatible with FIRS 0.1.  
+The grfID was changed in FIRS 0.2 
 to reduce the chance of problems for players.  
-- any savegame using the nightly build of FIRS is likely to break :o
+
+- any savegame using the nightly build of FIRS may break :o
+
 
 ------------------
 2 Downloading FIRS
@@ -96,13 +88,12 @@ built-in download manager.
 Obviously you need to add it to the game first. We're not explaining that here,
 go read the OpenTTD manual at http://wiki.openttd.org/NewGRF.
 
-FIRS currently has no parameters for players.  Do not try and set parameters as
-strange things may happen!
-
 FIRS shouldn't be used with other industry sets active. FIRS will disable itself
 if an incompatible industry set is detected, but this detection will only work
 for industry sets known at the time of the FIRS release. There's a possibility
 that FIRS will be compatible with other industry sets in the future.
+
+* Vehicle Set Support *
 
 Furthermore you need a vehicle set that supports the FIRS cargos. Any vehicle
 set with proper Cargo Classes support should do that by default. The OpenTTD
@@ -117,8 +108,71 @@ available from the OpenTTD built-in download manager are known to support FIRS:
 - Road Vehicle Sets:
   - eGRVTS v1.0
   - HEQS (Heavy Equipment Set) 0.5b
+- Ship sets
+
+  - FISH
+  - New Ships (partial support)
+- Plane Sets
+
+ - AV8
+
+ - GeneralAv8ion
+  - Plane Set
 
 (Contact a FIRS developer to have your own set listed here)
+
+
+* Parameters *
+Parameter 1. Economy setting: unfinished, may only be set to 0
+
+
+Parameter 2. Primary production change:
+	
+  0 = no production decreases (ever); production increase chance if supplies delivered monthly (default)
+	
+  1 = production decrease chance if no ENSP; production increase chance if supplies delivered monthly.
+
+
+Parameter 3. Industry Closure / Openings.  Bit map (add the numbers to get the required setting.
+
+  0 = no primary or secondary industry closures (default)
+  1 = allow primary industry closure
+  2 = allow secondary industry closure	
+  3 = allow primary and secondary industry closure (combination of 1 + 2) 
+	
+  4 = no industries open during game (unfinished, doesn't work yet)
+
+
+  
+* Boosting Primary Production *
+
+Primary industries produce raw materials, e.g. 
+- mines, farms, junk yard, oil wells, oil rig etc.
+
+
+
+Many FIRS primary industries accept Engineering Supplies or Farm Supplies.  
+They will only increase production if the correct supplies are delivered.
+
+
+Every month there is a chance of a production increase if at least 1t of the 
+correct supplies are delivered.  
+Only 1t of supplies is required - delivering more than 1t of supplies will 
+not make a production increase more likely.  
+
+Small vehicles are best for delivering supplies. 
+(transfer orders are recommended, with a large vehicle dropping supplies at
+a station to be delivered by small vehicles).
+
+
+
+If parameter 1 is set to 0, primary industry production will never reduce.  
+
+
+If parameter 1 is set to 1, there is a chance that a primary industry will 
+reduce production if no supplies are delivered in a month.  
+If the industry is producing a high level of output, there is a greater chance
+of a production decrease.
 
 
 

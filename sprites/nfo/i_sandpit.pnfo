@@ -18,7 +18,7 @@
 
 //Industry tile sprites; one sprite for each tile; eventually more for each tile to include  construction stages
 
-//Tile action 1
+//Tile action 1 (normal terrain)
 -1 * 0 01 09 \b55 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
 // Format: spritenum pcxfile xpos ypos compression ysize xsize xrel yrel
 //\b0-\b23: pit groundsprites
@@ -118,6 +118,81 @@
     \wxB1 \b2 \b2 //<set-id \w> <low-range> <high-range>
 	\wx00 //<default> (first tile layout available)
 
+//Tile action 1 (snow terrain)
+-1 * 0 01 09 \b55 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
+// Format: spritenum pcxfile xpos ypos compression ysize xsize xrel yrel
+//\b0-\b23: pit groundsprites
+-1 sprites/pcx/industries/sandpit_snow.pcx 10 10 09  31 64 -31 0
+-1 sprites/pcx/industries/sandpit_snow.pcx 80 10 09  31 64 -31 0
+-1 sprites/pcx/industries/sandpit_snow.pcx 150 10 09  31 64 -31 0
+-1 sprites/pcx/industries/sandpit_snow.pcx 220 10 09  31 64 -31 0
+-1 sprites/pcx/industries/sandpit_snow.pcx 290 10 09  31 64 -31 0
+-1 sprites/pcx/industries/sandpit_snow.pcx 360 10 09  31 64 -31 0
+
+-1 sprites/pcx/industries/sandpit_snow.pcx 10 50 09  31 64 -31 0
+-1 sprites/pcx/industries/sandpit_snow.pcx 80 50 09  31 64 -31 0
+-1 sprites/pcx/industries/sandpit_snow.pcx 150 50 09  31 64 -31 0
+-1 sprites/pcx/industries/sandpit_snow.pcx 220 50 09  31 64 -31 0
+-1 sprites/pcx/industries/sandpit_snow.pcx 290 50 09  31 64 -31 0
+-1 sprites/pcx/industries/sandpit_snow.pcx 360 50 09  31 64 -31 0
+
+-1 sprites/pcx/industries/sandpit_snow.pcx 10 90 09  31 64 -31 0
+-1 sprites/pcx/industries/sandpit_snow.pcx 80 90 09  31 64 -31 0
+-1 sprites/pcx/industries/sandpit_snow.pcx 150 90 09  31 64 -31 0
+-1 sprites/pcx/industries/sandpit_snow.pcx 220 90 09  31 64 -31 0
+-1 sprites/pcx/industries/sandpit_snow.pcx 290 90 09  31 64 -31 0
+-1 sprites/pcx/industries/sandpit_snow.pcx 360 90 09  31 64 -31 0
+
+-1 sprites/pcx/industries/sandpit_snow.pcx 10 130 09  31 64 -31 0
+-1 sprites/pcx/industries/sandpit_snow.pcx 80 130 09  31 64 -31 0
+-1 sprites/pcx/industries/sandpit_snow.pcx 150 130 09  31 64 -31 0
+-1 sprites/pcx/industries/sandpit_snow.pcx 220 130 09  31 64 -31 0
+-1 sprites/pcx/industries/sandpit_snow.pcx 290 130 09  31 64 -31 0
+-1 sprites/pcx/industries/sandpit_snow.pcx 360 130 09  31 64 -31 0
+
+//\b24-\b33 pit building sprites
+-1 sprites/pcx/industries/sandpit_snow.pcx 440 10 09  31 64 -31 0
+-1 sprites/pcx/industries/sandpit_snow.pcx 510 10 09  31 64 -31 0
+-1 sprites/pcx/industries/sandpit_snow.pcx 580 10 09  31 64 -31 0
+-1 sprites/pcx/industries/sandpit_snow.pcx 650 10 09  31 64 -31 0
+
+-1 sprites/pcx/industries/sandpit_snow.pcx 440 50 09  31 64 -31 0
+-1 sprites/pcx/industries/sandpit_snow.pcx 510 50 09  31 64 -31 0
+-1 sprites/pcx/industries/sandpit_snow.pcx 580 50 09  31 64 -31 0
+-1 sprites/pcx/industries/sandpit_snow.pcx 650 50 09  31 64 -31 0
+
+-1 sprites/pcx/industries/sandpit_snow.pcx 580 90 09  31 64 -31 0
+-1 sprites/pcx/industries/sandpit_snow.pcx 650 90 09  31 64 -31 0
+
+//\b34-\b43 processor layout 1 ground sprites
+-1 sprites/pcx/industries/sandpit_snow.pcx 730 10 09  31 64 -31 0
+-1 sprites/pcx/industries/sandpit_snow.pcx 800 10 09  31 64 -31 0
+-1 sprites/pcx/industries/sandpit_snow.pcx 870 10 09  31 64 -31 0
+-1 sprites/pcx/industries/sandpit_snow.pcx 940 10 09  31 64 -31 0
+-1 sprites/pcx/industries/sandpit_snow.pcx 1010 10 09  31 64 -31 0
+-1 sprites/pcx/industries/sandpit_snow.pcx 1080 10 09  31 64 -31 0
+-1 sprites/pcx/industries/sandpit_snow.pcx 1150 10 09  34 64 -31 -3
+-1 sprites/pcx/industries/sandpit_snow.pcx 1220 10 09  33 64 -31 -2
+-1 sprites/pcx/industries/sandpit_snow.pcx 1290 10 09  34 64 -31 -3
+-1 sprites/pcx/industries/sandpit_snow.pcx 1360 10 09  31 64 -31 0
+
+//\b44-\b48 processor layout 1 building sprites
+-1 sprites/pcx/industries/sandpit_snow.pcx 800 50 09  31 64 -31 0
+-1 sprites/pcx/industries/sandpit_snow.pcx 870 50 09  51 64 -31 -20
+-1 sprites/pcx/industries/sandpit_snow.pcx 1010 50 09  64 64 -31 -33
+-1 sprites/pcx/industries/sandpit_snow.pcx 1080 50 09  49 64 -31 -18
+-1 sprites/pcx/industries/sandpit_snow.pcx 1150 50 09  55 64 -31 -24
+
+//\b49-\b52 additional sprites for layout 2 ground sprites
+-1 sprites/pcx/industries/sandpit_snow.pcx 730 140 09  31 64 -31 0
+-1 sprites/pcx/industries/sandpit_snow.pcx 800 140 09  31 64 -31 0
+-1 sprites/pcx/industries/sandpit_snow.pcx 940 140 09  31 64 -31 0
+
+//\b52-\b55 additional sprites for layout 2 building sprites
+-1 sprites/pcx/industries/sandpit_snow.pcx 730 80 09  51 64 -31 -20
+-1 sprites/pcx/industries/sandpit_snow.pcx 800 100 09  31 64 -31 0
+-1 sprites/pcx/industries/sandpit_snow.pcx 940 90 09  47 64 -31 -16
+	
 #define THIS_GROUNDSPRITE GROUNDSPRITE_SNOW
 #include "i_sandpit_tiles_layouts/sandpit_tiles.template"
 #include "i_sandpit_tiles_layouts/sandpit_layouts.pnfo"
@@ -136,8 +211,8 @@
 	81 41 //check terrain type (lowest byte of related industry)
 	00 FF //don't shift, don't mask
 	\b2 //number of ranges to check (number of layouts)
-	  \wxA2 \b1 \b1 //<set-id \w> <low-range> <high-range>  // desert
-	  \wxA3 \b4 \b4 //<set-id \w> <low-range> <high-range>  // snow
+	\wxA2 \b1 \b1 //<set-id \w> <low-range> <high-range>  // desert
+	\wxA3 \b4 \b4 //<set-id \w> <low-range> <high-range>  // snow
 	\wxA1 //<default>
 
 //Action3 attach sprites to industry tile

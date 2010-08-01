@@ -300,6 +300,8 @@
 
 -1 * 0 04 0A LANG_ID2 01 STR_IND_GASSTATION       UTF_STRING TEXT_IND_GASSTATION 00
 
+-1 * 0 04 0A LANG_ID2 01 STR_IND_FISHINGGROUNDS       UTF_STRING TEXT_IND_FISHINGGROUNDS 00
+
 
 -1 * 0 07 83 01 \7! 02 \b1 //The following in tropic only:
 
@@ -332,13 +334,15 @@
 
 -1 * 0 04 0A LANG_ID2 01 STR_STA_DREDGINGSITE UTF_STRING TEXT_STA_DREDGINGSITE 00
 
-
+-1 * 0 04 0A LANG_ID2 01 STR_STA_FISHINGGROUNDS UTF_STRING TEXT_STA_FISHINGGROUNDS 00
 
 
 
 //Additional texts for purchase window; note the additional D0
 
 -1 * 0 04 0A LANG_ID2 01 STR_INFO_GENERIC D0          UTF_STRING TEXT_INFO_GENERIC 00
+
+-1 * 0 04 0A LANG_ID2 01 STR_INFO_AVAILABILITY D0     UTF_STRING TEXT_INFO_AVAILABILITY 00
 
 -1 * 0 04 0A LANG_ID2 01 STR_INFO_LIMIT_200 D0        UTF_STRING TEXT_INFO_LIMIT_200 00
 
@@ -451,6 +455,13 @@
 
                                                                  TEXT_INFO_INCREASE_BOTH_CARGOS 00
 
+-1 * 0 04 0A LANG_ID2 01 STR_INFO_FISHINGHARBOUR D0 UTF_STRING   TEXT_INFO_CARGO_PRODUCTION
+                                                                 TEXT_INFO_3T_PER_8T_MS
+
+                                                                 TEXT_INFO_5T_PER_8T_FISH
+
+                                                                 TEXT_INFO_INCREASE_BOTH_CARGOS 00
+																 
 -1 * 0 04 0A LANG_ID2 01 STR_INFO_TEXTILEMILL D0 UTF_STRING      TEXT_INFO_CARGO_PRODUCTION
                                                                  TEXT_INFO_3T_PER_8T_MS
 
