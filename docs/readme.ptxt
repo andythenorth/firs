@@ -20,9 +20,9 @@
 1 Preface
 ---------
 
-*FIRS 0.2 Release Notes*
+*FIRS 0.3 Release Notes*
 
-FIRS 0.2 is a fully playable release of FIRS featuring 35 industries and 26
+FIRS 0.3 is a fully playable release of FIRS featuring 35 industries and 26
 cargos.
 http://tt-foundry.com/sets/FIRS/schema/industries?economy=point_1_release  
 
@@ -56,6 +56,7 @@ The pixels are lickable and work brilliantly with original graphics and OpenGFX.
 
 *More Info / Things to Watch Out For!* 
 - primary industry will not increase production unless supplies are delivered. 
+- industries will never close (unless closures are enabled by player) 
 - some industries are available from year 0. Some industries (and the cargos
 they use) are only available after a certain date.  
 Intro dates can be found at:
@@ -129,7 +130,6 @@ Parameter 1. Economy setting: unfinished, may only be set to 0
 Parameter 2. Primary production change:
 	
   0 = no production decreases (ever); production increase chance if supplies delivered monthly (default)
-	
   1 = production decrease chance if no ENSP; production increase chance if supplies delivered monthly.
 
 
@@ -139,17 +139,13 @@ Parameter 3. Industry Closure / Openings.  Bit map (add the numbers to get the r
   1 = allow primary industry closure
   2 = allow secondary industry closure	
   3 = allow primary and secondary industry closure (combination of 1 + 2) 
-	
   4 = no industries open during game (unfinished, doesn't work yet)
-
-
   
+
 * Boosting Primary Production *
 
 Primary industries produce raw materials, e.g. 
 - mines, farms, junk yard, oil wells, oil rig etc.
-
-
 
 Many FIRS primary industries accept Engineering Supplies or Farm Supplies.  
 They will only increase production if the correct supplies are delivered.
@@ -166,8 +162,7 @@ a station to be delivered by small vehicles).
 
 
 
-If parameter 1 is set to 0, primary industry production will never reduce.  
-
+If parameter 1 is set to 0, primary industry production will never reduce (default)
 
 If parameter 1 is set to 1, there is a chance that a primary industry will 
 reduce production if no supplies are delivered in a month.  
