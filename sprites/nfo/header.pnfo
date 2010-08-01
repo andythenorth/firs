@@ -23,7 +23,7 @@
             "T" "NAME" 7F "Economy" 00
             "T" "DESC" 7F "When finished, FIRS will feature a choice of economies."
             "Cargos and industries vary in each economy.  Cargo payment rates are also different in each economy."
-            "\0D\94Currently only one economy is available :) " 00
+            "\0D\0D\89Currently only one economy is available :) " 00
             "B" "LIMI" \w8 \d0 \d0
             "C" "VALU" \
                 "T" \d0 7F "Test Economy" 00
@@ -39,7 +39,10 @@
       "C" "PARA"
           "C" \d01
               "T" "NAME" 7F "Allow primary production to decrease: " 00
-              "T" "DESC" 7F "" 00
+              "T" "DESC" 7F "By default, FIRS primary industry production will never decrease."
+              "\0D\0DIf primary prduction decrease is turned on, there is a chance that "
+              "production will decrease if no supplies are delivered in a month. " 
+              "If production level is high, chance of decrease will be greater." 00
               "B" "TYPE" \w1 \b1
               00
           00
@@ -52,16 +55,24 @@
     "C" "PARA"
       "C" \d2
         "T" "NAME" 7F "Allow primary industries to close: " 00
+        "T" "DESC" 7F "By default, FIRS primary industries will never close."
+         "\0D\0DIf primary closing is turned on, primary industries will close when production "
+         "falls to low levels (the level varies for each type of industry). "
+         "\89Requires 'primary production decrease' on." 00
         "B" "TYPE" \w1 1
         "B" "MASK" \w3 2 0 1
         00
       "C" \d3
         "T" "NAME" 7F "Allow secondary industries to close: " 00
+        "T" "DESC" 7F "By default, FIRS secondary industries will never close."
+         "\0D\0DIf secondary closing is turned on, secondary industries may close "
+         "if no cargo is transported for a long time." 00
         "B" "TYPE" \w1 1
         "B" "MASK" \w3 2 1 1
         00
       "C" \d4
         "T" "NAME" 7F "Prevent industry construction: " 00
+        "T" "DESC" 7F "If turned on, industries cannot be constructed by game or players.  'Sandbox mode' for use with scenarios." 00
         "B" "TYPE" \w1 1
         "B" "MASK" \w3 2 2 1
         00
@@ -76,7 +87,7 @@
       "C" "PARA"
           "C" \d05
               "T" "NAME" 7F "Show debug texts: " 00
-              "T" "DESC" 7F "" 00
+              "T" "DESC" 7F "For developers only." 00
               "B" "TYPE" \w1 \b1
               "B" "MASK" \w1 3
               00
