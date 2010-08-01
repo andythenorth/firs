@@ -11,7 +11,7 @@
 // set number of parameters
 -1 * -1   14
   "C" "INFO"
-      "B" "NPAR" \w1 \b5
+      "B" "NPAR" \w1 \b6
       00
   00
 
@@ -69,6 +69,21 @@
     00
   00
 00          
+
+// debug info setting
+ -1 * -1   14
+  "C" "INFO"
+      "C" "PARA"
+          "C" \d05
+              "T" "NAME" 7F "Show debug texts: " 00
+              "T" "DESC" 7F "" 00
+              "B" "TYPE" \w1 \b1
+              "B" "MASK" \w1 3
+              00
+          00
+      00
+  00
+
 
 // *********************
 // ACTION 8 - DEFINE GRF  
