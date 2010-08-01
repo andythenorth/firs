@@ -9,7 +9,7 @@
 
 // set number of parameters
 -1 * -1   14 "C" "INFO"
-                  "B" "NPAR" \w1 \b4
+                  "B" "NPAR" \w1 \b5
                   00
               00
 
@@ -20,22 +20,8 @@
                           "T" "NAME" 7F "Economy" 00
                           "T" "DESC" 7F "When finished, FIRS will feature a choice of economies."
                           "Cargos and industries vary in each economy.  Cargo payment rates are also different in each economy."
-                          "\94Currently only one economy is available :) "00
-                          00
-                      00
-                  00
-              00
--1 * -1   14 "C" "INFO"
-                  "C" "PARA"
-                      "C" \d00
+                          "\0D\94Currently only one economy is available :) " 00
                           "B" "LIMI" \w8 \d0 \d0
-                          00
-                      00
-                  00
-              00
- -1 * -1   14 "C" "INFO"
-                  "C" "PARA"
-                      "C" \d0
                           "C" "VALU" \
                               "T" \d0 7F "Test Economy" 00
                               00
@@ -43,6 +29,43 @@
                       00
                   00
               00
+
+// primary production change setting
+ -1 * -1   14 "C" "INFO"
+                  "C" "PARA"
+                      "C" \d01
+                          "T" "NAME" 7F "Allow primary production to decrease: " 00
+                          "T" "DESC" 7F "" 00
+                          "B" "TYPE" \w1 \b1
+                          00
+                      00
+                  00
+              00
+
+// industry closure / opening
+-1 * 0	 14 
+  "C" "INFO"
+    "C" "PARA"
+      "C" \d2
+        "T" "NAME" 7F "Allow primary industries to close: " 00
+        "B" "TYPE" \w1 1
+        "B" "MASK" \w3 2 0 1
+        00
+      "C" \d3
+        "T" "NAME" 7F "Allow secondary industries to close: " 00
+        "B" "TYPE" \w1 1
+        "B" "MASK" \w3 2 1 1
+        00
+      "C" \d4
+        "T" "NAME" 7F "Prevent industry construction: " 00
+        "B" "TYPE" \w1 1
+        "B" "MASK" \w3 2 2 1
+        00
+      00
+    00
+  00
+00          
+
 // *********************
 // ACTION 8 - DEFINE GRF  
 // *********************
