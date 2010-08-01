@@ -1,4 +1,5 @@
 // This file deals with the (global) handling of grf parameters
+// Settings GUI is handled before action 8 in header.pnfo
 // An exception is the handling of the compatibility with other newgrfs
 // which is handled in checks.pnfo
 
@@ -52,7 +53,6 @@
 #define SKIP1_NO_CLOSURE_SECONDARY -1 * 0 07 PARAM_CLOSE_SECONDARY \b01 \D= \b01 \b01      // Skip next sprite, if no primaries shall be closed
 #define SKIP1_NO_OPENINGS          -1 * 0 07 PARAM_OPEN_NONE \b01 \D= \b01 \b01            // Skip next sprite, if no primaries shall be closed
 
-
-
 // enable warning about invalid parameter (Action D)
 //@@WARNING ENABLE 123
+
