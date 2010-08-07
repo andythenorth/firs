@@ -13,8 +13,8 @@
 	0A CARGO_FARMSUPPLIES 08 //tile acceptance 1
 	0B 00 00 //tile acceptance 2
 	0C 00 00 //tile acceptance 3
-	0D 10 //land shape flags: 10 = only on flat land
-	0E 00 //callback flags
+	0D 00 //land shape flags: 10 = only on flat land
+	0E 10 //callback flags
 
 
 //Industry tile sprites; one sprite for each tile; eventually more for each tile to include  construction stages
@@ -124,11 +124,12 @@
 	\wxB3 \b3 \b3 //<set-id \w> <low-range> <high-range>
 	\wx00 //<default> (first layout available)
 
-//Tile action 3: attach sprites to industry tile
--1 * 0 03 09             // action3, industry tiles
-	01               // <n-ids>
-	TILE_DAIRYFARM_1 // <id>
-	00 \wxA0         // 00 <def-cid>
+// handle cb 2f for building on slopes (uses ID C0)
+#include "../../templates/cb2f_slopes_1.pnfo"     
+
+//Tile action 3
+-1 * 0 03 09 01 TILE_DAIRYFARM_1 00 \wxC0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
+
 
 //Industry definition
 
@@ -198,6 +199,5 @@
 
 // handle cb 28 industry location - included on a per-industry basis to allow industries to use various different schemes 
 #include "../../templates/cb28_cluster_farms.pnfo"     
-
 
 #include "../../templates/template_primary_action23.pnfo"

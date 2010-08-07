@@ -1,0 +1,9 @@
+// handles allowing an industry to build on slopes (currently any slope)
+// plan is to update this to prevent building on steep slopes
+
+-1 * 0 02 09 C0 //Handle callbacks
+	81 0C 00 FF //no shift, no mask
+	\b1 //range
+	  00 84 2F 2F //custom shape check cb 2F
+  A0 00 //default
+
