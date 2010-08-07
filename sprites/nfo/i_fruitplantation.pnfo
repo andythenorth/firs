@@ -33,12 +33,13 @@
 
 #include "../../templates/template_primary_action23.pnfo"
 //Tiles 74
--1 * 0 00 09 \b6 01 74 // -1 * 0 00 09 <num-props> 01 <id>
+-1 * 0 00 09 \b7 01 74 // -1 * 0 00 09 <num-props> 01 <id>
 	08 74 //subsitute tile type
 	09 74 //industry tile override
 	0A CARGO_FARMSUPPLIES 08 //tile acceptance 1
 	0B 00 00 //tile acceptance 2
 	0C 00 00 //tile acceptance 3
+	0D 00 //land shape flags: 10 = only on flat land
 	0E 00 //callback flags
 
 // action 3s for industry tile 74	
