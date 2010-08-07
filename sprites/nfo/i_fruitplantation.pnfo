@@ -40,8 +40,11 @@
 	0B 00 00 //tile acceptance 2
 	0C 00 00 //tile acceptance 3
 	0D 00 //land shape flags: 10 = only on flat land
-	0E 00 //callback flags
+	0E 10 //callback flags
 
-// action 3s for industry tile 74	
--1 * 0 03 09 01 74
-  00 FF FF
+
+// handle cb 2f for building on slopes (uses ID C0)
+#include "../../templates/cb2f_slopes_1.pnfo"     
+
+// action 3 for industry tile 74	
+-1 * 0 03 09 01 74  00  \wxC0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
