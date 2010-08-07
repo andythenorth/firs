@@ -13,8 +13,8 @@
 	0A CARGO_FARMSUPPLIES 08 //tile acceptance 1
 	0B 00 00 //tile acceptance 2
 	0C 00 00 //tile acceptance 3
-	0D 10 //land shape flags: 10 = only on flat land
-	0E 00 //callback flags
+	0D 00 //land shape flags: 10 = only on flat land
+	0E 10 //callback flags
 
 
 //Industry tile sprites; one sprite for each tile; eventually more for each tile to include  construction stages
@@ -70,7 +70,7 @@
 	\wx03   01 02  01 02
 	\wx04 //03 01  03 01 <default>
 
--1 * 0 02 09 A0 
+-1 * 0 02 09 A0
 	82 44 //check layout number (lowest byte of related industry)
 	00 FF //don't shift, don't mask
 	\b1 //number of ranges to check (number of layouts)
@@ -79,10 +79,17 @@
 //	\wxB3 \b3 \b3 //<set-id \w> <low-range> <high-range>
 	\wxB1 //<default> (first layout available)
 
+-1 * 0 02 09 C0 //Handle callbacks
+	81 0C 00 FF //no shift, no mask
+	\b1 //range
+	  00 84 2F 2F //custom shape check cb 2F
+  A0 00 //default
+
+
 //Action3 attach sprites to industry tile
 
 //Tile action 3
--1 * 0 03 09 01 TILE_SHEEPFARM_1 00 \wxA0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
+-1 * 0 03 09 01 TILE_SHEEPFARM_1 00 \wxC0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
 
 
 
@@ -116,7 +123,7 @@
 	1E \w0  \w0  //input cargo 3 multiplier
 	14 \b01 //minimal cargo distribution amount
 	16 FF FF FF //conflicting industry types (3*byte; ID+80h; FF to disable)
-	17 \b16 //probability in random game
+	17 \b6 //probability in random game
 	18 \b3 //probability during gameplay
 	20 FF FF FF BF //prospecting success chance (dword; FFFFFFFFh=100%)
 	0F \b255 //fund cost multiplier (byte)
