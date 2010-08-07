@@ -13,8 +13,8 @@
 	0A CARGO_FARMSUPPLIES 08 //tile acceptance 1
 	0B 00 00 //tile acceptance 2
 	0C 00 00 //tile acceptance 3
-	0D 10 //land shape flags: 10 = only on flat land
-	0E 00 //callback flags
+	0D 00 //land shape flags: 10 = only on flat land
+	0E 10 //callback flags
 
 
 //Industry tile sprites; one sprite for each tile; eventually more for each tile to include  construction stages
@@ -119,15 +119,18 @@
 	82 44 //check layout number (lowest byte of related industry)
 	00 FF //don't shift, don't mask
 	\b3 //number of ranges to check (number of layouts)
-	\wxB1 \b1 \b1 //<set-id \w> <low-range> <high-range>
-	\wxB2 \b2 \b2 //<set-id \w> <low-range> <high-range>
-	\wxB3 \b3 \b3 //<set-id \w> <low-range> <high-range>
+    \wxB1 \b1 \b1 //<set-id \w> <low-range> <high-range>
+    \wxB2 \b2 \b2 //<set-id \w> <low-range> <high-range>
+    \wxB3 \b3 \b3 //<set-id \w> <low-range> <high-range>
 	\wx00 //<default> (first tile layout available)
+
+// handle cb 2f for building on slopes (uses ID C0)
+#include "../../templates/cb2f_slopes_1.pnfo"     
 
 //Action3 attach sprites to industry tile
 
 //Tile action 3
--1 * 0 03 09 01 TILE_MIXEDFARM_1 00 \wxA0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
+-1 * 0 03 09 01 TILE_MIXEDFARM_1 00 \wxC0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
 
 
 

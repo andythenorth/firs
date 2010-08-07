@@ -119,9 +119,9 @@
 	82 44 //check layout number (lowest byte of related industry)
 	00 FF //don't shift, don't mask
 	\b3 //number of ranges to check (number of layouts)
-	\wxB1 \b1 \b1 //<set-id \w> <low-range> <high-range>
-	\wxB2 \b2 \b2 //<set-id \w> <low-range> <high-range>
-	\wxB3 \b3 \b3 //<set-id \w> <low-range> <high-range>
+    \wxB1 \b1 \b1 //<set-id \w> <low-range> <high-range>
+    \wxB2 \b2 \b2 //<set-id \w> <low-range> <high-range>
+    \wxB3 \b3 \b3 //<set-id \w> <low-range> <high-range>
 	\wx00 //<default> (first layout available)
 
 // handle cb 2f for building on slopes (uses ID C0)
