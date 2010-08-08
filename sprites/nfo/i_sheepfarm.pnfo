@@ -79,12 +79,8 @@
 //	\wxB3 \b3 \b3 //<set-id \w> <low-range> <high-range>
 	\wxB1 //<default> (first layout available)
 
--1 * 0 02 09 C0 //Handle callbacks
-	81 0C 00 FF //no shift, no mask
-	\b1 //range
-	  00 84 2F 2F //custom shape check cb 2F
-  A0 00 //default
-
+// handle cb 2f for building on slopes (uses ID C0)
+#include "../../templates/cb2f_slopes_2.pnfo"     
 
 //Action3 attach sprites to industry tile
 
