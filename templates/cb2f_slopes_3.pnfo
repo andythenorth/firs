@@ -1,0 +1,9 @@
+// handles allowing an industry to build on *steep* slopes
+// disables default foundations
+
+-1 * 0 02 09 C0 //Handle callbacks
+	81 0C 00 FF //no shift, no mask
+	\b2 //range
+	  00 84 2F 2F //custom shape check cb 2F
+	  00 80 30 30 //disable drawing default foundations cb30
+  A0 00 //default
