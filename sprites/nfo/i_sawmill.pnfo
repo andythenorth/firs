@@ -38,33 +38,53 @@
 #include "../../templates/template_secondary_action23_A.pnfo"
 
 //Tiles 0B..0F
--1 * 0 00 09 \b5 01 0B // -1 * 0 00 09 <num-props> 01 <id>
+-1 * 0 00 09 \b7 01 0B // -1 * 0 00 09 <num-props> 01 <id>
 	08 0B //subsitute tile type
 	09 0B //industry tile override
 	0A CARGO_WOOD 08 //tile acceptance 1
 	0B 00 00 //tile acceptance 2
 	0C 00 00 //tile acceptance 3
--1 * 0 00 09 \b5 01 0C // -1 * 0 00 09 <num-props> 01 <id>
+	0D 00 //land shape flags: 10 = only on flat land
+	0E 10 //callback flags
+-1 * 0 00 09 \b7 01 0C // -1 * 0 00 09 <num-props> 01 <id>
 	08 0C //subsitute tile type
 	09 0C //industry tile override
 	0A CARGO_WOOD 08 //tile acceptance 1
 	0B 00 00 //tile acceptance 2
 	0C 00 00 //tile acceptance 3
--1 * 0 00 09 \b5 01 0D // -1 * 0 00 09 <num-props> 01 <id>
+	0D 00 //land shape flags: 10 = only on flat land
+	0E 10 //callback flags
+-1 * 0 00 09 \b7 01 0D // -1 * 0 00 09 <num-props> 01 <id>
 	08 0D //subsitute tile type
 	09 0D //industry tile override
 	0A CARGO_WOOD 08 //tile acceptance 1
 	0B 00 00 //tile acceptance 2
 	0C 00 00 //tile acceptance 3
--1 * 0 00 09 \b5 01 0E // -1 * 0 00 09 <num-props> 01 <id>
+	0D 00 //land shape flags: 10 = only on flat land
+	0E 10 //callback flags
+-1 * 0 00 09 \b7 01 0E // -1 * 0 00 09 <num-props> 01 <id>
 	08 0E //subsitute tile type
 	09 0E //industry tile override
 	0A CARGO_WOOD 08 //tile acceptance 1
 	0B 00 00 //tile acceptance 2
 	0C 00 00 //tile acceptance 3
--1 * 0 00 09 \b5 01 0F // -1 * 0 00 09 <num-props> 01 <id>
+	0D 00 //land shape flags: 10 = only on flat land
+	0E 10 //callback flags
+-1 * 0 00 09 \b7 01 0F // -1 * 0 00 09 <num-props> 01 <id>
 	08 0F //subsitute tile type
 	09 0F //industry tile override
 	0A CARGO_WOOD 08 //tile acceptance 1
 	0B 00 00 //tile acceptance 2
 	0C 00 00 //tile acceptance 3
+	0D 00 //land shape flags: 10 = only on flat land
+	0E 10 //callback flags
+
+// handle cb 2f for building on slopes (uses ID C0)
+#include "../../templates/cb2f_slopes_1.pnfo"     
+	
+// action 3s for industry tiles 10-11	
+-1 * 0 03 09 01 0B  00  \wxC0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
+-1 * 0 03 09 01 0C  00  \wxC0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
+-1 * 0 03 09 01 0D  00  \wxC0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
+-1 * 0 03 09 01 0E  00  \wxC0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
+-1 * 0 03 09 01 0F  00  \wxC0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
