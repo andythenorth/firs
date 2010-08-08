@@ -1,9 +1,18 @@
 // handles allowing an industry to build on *steep* slopes
+// prevents building right on coast
 // disables default foundations
+// prevents terraforming under tiles
+
+-1 * 0	02 09 D0 //handle cb 2F (custom shape check for tiles)
+  81 60 00 09 \b01 // check tile contents
+  \b1
+    01 84 \b01 \b01
+  00 84 //default
 
 -1 * 0 02 09 C0 //Handle callbacks
 	81 0C 00 FF //no shift, no mask
-	\b2 //range
-	  00 84 2F 2F //custom shape check cb 2F
+	\b3 //range
+	  D0 00 2F 2F //custom shape check cb 2F
 	  00 80 30 30 //disable drawing default foundations cb30
+	  FF 80 3C 3C //disable autoslope cb3C	  
   A0 00 //default
