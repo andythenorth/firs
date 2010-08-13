@@ -1,5 +1,3 @@
-//-1 * 0 02 09 <set-id> <type> <variable> <varadjust> <nvar> (<set-id> <low-range> <high-range>){n} <default>
-
 //varaction 2 to choose graphics according to tile slope
 -1 * 0	 02 09 F1 //handle cb 2F (custom shape check for tiles)
   81 60 00 00 1F // check tile contents
@@ -22,5 +20,5 @@
     15 00   \b15 \b15  
     16 00   \b16 \b16  
     17 00   \b17 \b17  
-    18 00   \b17 \b18  
+    18 00   \b18 \b18  
   00 00 //default
