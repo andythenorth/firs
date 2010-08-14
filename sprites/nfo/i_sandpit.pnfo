@@ -211,8 +211,8 @@
 	81 41 //check terrain type (lowest byte of related industry)
 	00 FF //don't shift, don't mask
 	\b2 //number of ranges to check (number of layouts)
-	\wxA2 \b1 \b1 //<set-id \w> <low-range> <high-range>  // desert
-	\wxA3 \b4 \b4 //<set-id \w> <low-range> <high-range>  // snow
+    \wxA2 \b1 \b1 //<set-id \w> <low-range> <high-range>  // desert
+    \wxA3 \b4 \b4 //<set-id \w> <low-range> <high-range>  // snow
 	\wxA1 //<default>
 
 //Action3 attach sprites to industry tile
