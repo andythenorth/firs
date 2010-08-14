@@ -1,0 +1,178 @@
+//Industry tile sprites; one sprite for each tile; eventually more for each tile to include  construction stages
+
+//Tile action 1
+//not used for forest currently - uses base set sprites 
+
+//Defines are used to set ground tile and tree/other sprites
+//To cater for complex stuff (e.g. snow / not snow / partial stuff), repeat each tile set new defines
+//Repeat as many times as needed.  Use terrain check to decide which tile set is actually needed
+
+
+//Arctic - no snow
+
+//Set IDs for tree tile sprites
+#define TREE_SPRITE0  \d1593
+#define TREE_SPRITE1  \d1733
+#define TREE_SPRITE2  \d1711
+
+#define TILE_SPRITE0  \d3962
+#define TILE_SPRITE1  \d3963
+#define TILE_SPRITE2  \d3964
+#define TILE_SPRITE3  \d3965
+#define TILE_SPRITE4  \d3966
+#define TILE_SPRITE5  \d3967
+#define TILE_SPRITE6  \d3968
+#define TILE_SPRITE7  \d3969
+#define TILE_SPRITE8  \d3970
+#define TILE_SPRITE9  \d3971
+#define TILE_SPRITE10 \d3972
+#define TILE_SPRITE11 \d3973
+#define TILE_SPRITE12 \d3974
+#define TILE_SPRITE13 \d3975
+#define TILE_SPRITE14 \d3976
+#define TILE_SPRITE15 \d3977
+#define TILE_SPRITE16 \d3978
+#define TILE_SPRITE17 \d3979
+#define TILE_SPRITE18 \d3980
+
+//define the layout check varact to use for this repeat
+//match with terrain check results in i_forest for this climate
+#define LAYOUT_CHECK_VARACT2 C0
+
+#include "fruitplantation_tiles_template.pnfo"
+
+
+//Arctic - 1/4 snow
+
+//Set IDs for tree tile sprites
+#define TREE_SPRITE0  \d1810
+#define TREE_SPRITE1  \d1733
+#define TREE_SPRITE2  \d1711
+
+#define TILE_SPRITE0  \d4493
+#define TILE_SPRITE1  \d4494
+#define TILE_SPRITE2  \d4495
+#define TILE_SPRITE3  \d4496
+#define TILE_SPRITE4  \d4497
+#define TILE_SPRITE5  \d4498
+#define TILE_SPRITE6  \d4499
+#define TILE_SPRITE7  \d4500
+#define TILE_SPRITE8  \d4501
+#define TILE_SPRITE9  \d4502
+#define TILE_SPRITE10 \d4503
+#define TILE_SPRITE11 \d4504
+#define TILE_SPRITE12 \d4505
+#define TILE_SPRITE13 \d4506
+#define TILE_SPRITE14 \d4507
+#define TILE_SPRITE15 \d4508
+#define TILE_SPRITE16 \d4509
+#define TILE_SPRITE17 \d4510
+#define TILE_SPRITE18 \d4511
+
+//define the layout check varact to use for this repeat
+//match with terrain check results in i_forest for this climate
+#define LAYOUT_CHECK_VARACT2 C1
+
+#include "fruitplantation_tiles_template.pnfo"
+
+
+//Arctic - 2/4 snow
+
+//Set IDs for tree tile sprites
+#define TREE_SPRITE0  \d1810
+#define TREE_SPRITE1  \d1789
+#define TREE_SPRITE2  \d1768
+
+#define TILE_SPRITE0  \d4512
+#define TILE_SPRITE1  \d4513
+#define TILE_SPRITE2  \d4514
+#define TILE_SPRITE3  \d4515
+#define TILE_SPRITE4  \d4516
+#define TILE_SPRITE5  \d4517
+#define TILE_SPRITE6  \d4518
+#define TILE_SPRITE7  \d4519
+#define TILE_SPRITE8  \d4520
+#define TILE_SPRITE9  \d4521
+#define TILE_SPRITE10 \d4522
+#define TILE_SPRITE11 \d4523
+#define TILE_SPRITE12 \d4524
+#define TILE_SPRITE13 \d4525
+#define TILE_SPRITE14 \d4526
+#define TILE_SPRITE15 \d4527
+#define TILE_SPRITE16 \d4528
+#define TILE_SPRITE17 \d4529
+#define TILE_SPRITE18 \d4530
+
+//define the layout check varact to use for this repeat
+//match with terrain check results in i_forest for this climate
+#define LAYOUT_CHECK_VARACT2 C2
+
+#include "fruitplantation_tiles_template.pnfo"
+
+
+//Arctic - 3/4 snow
+
+//Set IDs for tree tile sprites
+#define TREE_SPRITE0  \d1810
+#define TREE_SPRITE1  \d1789
+#define TREE_SPRITE2  \d1768
+
+#define TILE_SPRITE0  \d4531
+#define TILE_SPRITE1  \d4532
+#define TILE_SPRITE2  \d4533
+#define TILE_SPRITE3  \d4534
+#define TILE_SPRITE4  \d4535
+#define TILE_SPRITE5  \d4536
+#define TILE_SPRITE6  \d4537
+#define TILE_SPRITE7  \d4538
+#define TILE_SPRITE8  \d4539
+#define TILE_SPRITE9  \d4540
+#define TILE_SPRITE10 \d4541
+#define TILE_SPRITE11 \d4542
+#define TILE_SPRITE12 \d4543
+#define TILE_SPRITE13 \d4544
+#define TILE_SPRITE14 \d4545
+#define TILE_SPRITE15 \d4546
+#define TILE_SPRITE16 \d4547
+#define TILE_SPRITE17 \d4548
+#define TILE_SPRITE18 \d4549
+
+//define the layout check varact to use for this repeat
+//match with terrain check results in i_forest for this climate
+#define LAYOUT_CHECK_VARACT2 C3
+
+#include "fruitplantation_tiles_template.pnfo"
+
+
+//Arctic - full snow
+
+//Set IDs for tree tile sprites
+#define TREE_SPRITE0  \d1810
+#define TREE_SPRITE1  \d1789
+#define TREE_SPRITE2  \d1768
+
+#define TILE_SPRITE0  \d4550
+#define TILE_SPRITE1  \d4551
+#define TILE_SPRITE2  \d4552
+#define TILE_SPRITE3  \d4553
+#define TILE_SPRITE4  \d4554
+#define TILE_SPRITE5  \d4555
+#define TILE_SPRITE6  \d4556
+#define TILE_SPRITE7  \d4557
+#define TILE_SPRITE8  \d4558
+#define TILE_SPRITE9  \d4559
+#define TILE_SPRITE10 \d4560
+#define TILE_SPRITE11 \d4561
+#define TILE_SPRITE12 \d4562
+#define TILE_SPRITE13 \d4563
+#define TILE_SPRITE14 \d4564
+#define TILE_SPRITE15 \d4565
+#define TILE_SPRITE16 \d4566
+#define TILE_SPRITE17 \d4567
+#define TILE_SPRITE18 \d4568
+
+//define the layout check varact to use for this repeat
+//match with terrain check results in i_forest for this climate
+#define LAYOUT_CHECK_VARACT2 C4
+
+#include "fruitplantation_tiles_template.pnfo"
