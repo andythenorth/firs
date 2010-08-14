@@ -3,9 +3,12 @@
 //Tile action 1
 //not used for forest currently - uses base set sprites 
 
+//Defines are used to set ground tile and tree/other sprites
+//To cater for complex stuff (e.g. snow / not snow / partial stuff), repeat each tile set new defines
+//Repeat as many times as needed.  Use terrain check to decide which tile set is actually needed
 
-//Tree tile action 2
-#define TREE_SPRITE0  \d1593
+//Set IDs for tree tile sprites
+#define TREE_SPRITE0  \d1873
 
 #define TILE_SPRITE0  \d3962
 #define TILE_SPRITE1  \d3963
@@ -28,6 +31,3 @@
 #define TILE_SPRITE18 \d3980
 
 #include "forest_tiles_template.pnfo"
-
-
-//Other tile action 2
