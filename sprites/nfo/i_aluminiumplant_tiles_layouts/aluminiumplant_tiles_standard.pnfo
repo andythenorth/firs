@@ -91,3 +91,9 @@
 	\dx8000800B //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b90 //xextent yextent zextent
+//electrical substation	
+-1 * 0 02 09 0B 00 //-1 * 0 02 09 <set-id> 00
+	\d3924 //groundsprite
+	\d2054 //building sprite
+	\b1 \b2 //xofs yofs
+	\b16 \b16 \b16 //xextent yextent zextent
