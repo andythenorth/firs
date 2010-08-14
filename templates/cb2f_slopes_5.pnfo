@@ -1,10 +1,10 @@
 // handles allowing an industry to build on *steep* slopes
 // prevents building right on coast
+// prevents building on snow
 // disables default foundations
 // prevents terraforming under tiles
 
 
-// check terrain type and branch to different layout checks appropriately
 -1 * 0 02 09 A3
 	81 41 //check terrain type (lowest byte of related industry)
 	00 FF //don't shift, don't mask
