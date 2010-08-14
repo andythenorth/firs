@@ -97,6 +97,7 @@
     \wxB3 \b3 \b3 //<set-id \w> <low-range> <high-range>
 	\wx00 //<default> (first tile layout available)
 
+#include "../../templates/cb2f_prevent_industry_overlap.pnfo"     
 
 //handle cb2f (prevent building on snow in this case)
 -1 * 0 02 09 D0
@@ -104,7 +105,7 @@
 	00 FF //don't shift, don't mask
 	\b1 //number of ranges to check (number of layouts)
 	  01 84 \b4 \b4 //<set-id \w> <low-range> <high-range>  // snow
-	00 84 //<default>
+	DA 00 //<default>
 
 -1 * 0 02 09 C0 //Handle callbacks
 	81 0C 00 FF //no shift, no mask
