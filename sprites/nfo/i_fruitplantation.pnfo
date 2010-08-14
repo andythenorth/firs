@@ -70,6 +70,35 @@
 -1 * 0 03 09 01 TILE_FRUITPLANTATION_1 00 \wxC0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
 
 
+//Greeble tile
+-1 * 0 00 09 \b6 01 TILE_FRUITPLANTATION_2 // -1 * 0 00 09 <num-props> 01 <id>
+	08 TILE_NULL //subsitute tile type
+	0A CARGO_FARMSUPPLIES 08 //tile acceptance 1
+	0B 00 00 //tile acceptance 2
+	0C 00 00 //tile acceptance 3
+	0D 00 //land shape flags: 10 = only on flat land
+	0E 10 //callback flags
+
+//Greeble tile action 1
+//much of forest uses base set sprites
+-1 * 0 01 09 \b2 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
+// Format: spritenum pcxfile xpos ypos compression ysize xsize xrel yrel
+-1 sprites/pcx/industries/fruitplantation.pcx 10 10  09  59 64  -31 -28
+-1 sprites/pcx/industries/fruitplantation.pcx 80 10  09  59 64  -31 -28
+
+-1 * 0 02 09 A0 01 //-1 * 0 02 09 <set-id> 01 (extended format)
+	\d2022 //groundsprite
+  \dx80008000 //greeble sprite  // ! bit 30 set to prevent transparency
+	\b0 \b0 \b0 //xofs yofs zofs
+	\b7 \b7 \b7 //xextent yextent zextent
+
+// handle cb 2f for building on slopes (uses ID C0)
+#include "../../templates/cb2f_slopes_no_desert.pnfo"     
+
+//Tile action 3
+-1 * 0 03 09 01 TILE_FRUITPLANTATION_2 00 \wxC0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
+
+
 //Redefinition of original TTD industry
 //Fruit Plantation
 -1 * 0 00 0A \b17 01 IND_FRUITPLANTATION //-1 * 0 00 0A <num-props> 01 <id>
@@ -84,7 +113,7 @@
 			01 01 FE TILE_FRUITPLANTATION_1 00
 			01 02 FE TILE_FRUITPLANTATION_1 00
 			02 01 FE TILE_FRUITPLANTATION_1 00
-			02 02 FE TILE_FRUITPLANTATION_1 00
+			02 02 FE TILE_FRUITPLANTATION_2 00
 		00 80 //terminate layout definition
 	0B 02 //production flags 1h=extractive, 2h=organic, 4h=processing
 	0C STR_IND_CLOSE_GENERIC //industry closure message
