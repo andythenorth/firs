@@ -13,14 +13,13 @@
 //Industry tiles definition
 
 //Tile TILE_PLASTICSPLANT_1, action 0
--1 * 0 00 09 \b5 01 TILE_PLASTICSPLANT_1 // -1 * 0 00 09 <num-props> 01 <id>
+-1 * 0 00 09 \b6 01 TILE_PLASTICSPLANT_1 // -1 * 0 00 09 <num-props> 01 <id>
 	08 TILE_NULL //subsitute type
 	0A CARGO_CHEMICALS 08 //tile acceptance 1
 	0B 00 00 //tile acceptance 2
 	0C 00 00 //tile acceptance 3
 	0D 10 //land shape flags: 10 = only on flat land
-
-
+	0E 10 //callback flags
 
 // include tiles and layouts, ! Action 2 IDs here are deliberately repeated by the various tile includes
 // temperate
@@ -72,11 +71,13 @@
 	  \wxA3 \b4 \b4 //<set-id \w> <low-range> <high-range>  // snow
 	\wxA1 //<default>
 
+//handle cb2f (tile shape check)
+#include "../../templates/cb2f_generic.pnfo"     
 
 //Action3 attach sprites to industry tile
 
 //Tile TILE_PLASTICSPLANT_1, action 3
--1 * 0 03 09 01 TILE_PLASTICSPLANT_1 00 \wxA0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
+-1 * 0 03 09 01 TILE_PLASTICSPLANT_1 00 \wxC0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
 
 
 
