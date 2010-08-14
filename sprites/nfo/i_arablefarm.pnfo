@@ -13,13 +13,7 @@
 	0B 00 00 //tile acceptance 2
 	0C 00 00 //tile acceptance 3
 	0D 10 //land shape flags: 10 = only on flat land
-	0E 00 //callback flags
-
-//Tile action 0
--1 * 0 00 09 \b3 01 TILE_FIELD_TEST // -1 * 0 00 09 <num-props> 01 <id>
-	08 FE //subsitute type
-  0F 00 00 //animation information
-  11 02 //animation triggers
+	0E 10 //callback flags
 
 //Industry tile sprites; one sprite for each tile; eventually more for each tile to include  construction stages
 
@@ -103,40 +97,24 @@
     \wxB3 \b3 \b3 //<set-id \w> <low-range> <high-range>
 	\wx00 //<default> (first tile layout available)
 
-//Tile action 3: attach sprites to industry tile
--1 * 0 03 09              // action3, industry tiles
-	01                // <n-ids>
-	TILE_ARABLEFARM_1 // <id>
-	00 \wxA0          // 00 <def-cid>
-	
-	
-// experimental code to handle fields	
--1 * 0 02 09 C1 //layout 1
-	85 43 //check relative position (00yx[YYXX])
-	00 FF FF //don't shift, don't mask
-	\b4 //number of ranges to check (number of tiles) [range: XX YY  XX YY]
-    \wx00   00 00  00 00
-    \wx01   01 01  01 01
-    \wx02   02 02  02 02
-    \wx03   03 03  03 03
-	\wx04 //00 01  00 01 <default>
 
+//handle cb2f (prevent building on snow in this case)
+-1 * 0 02 09 D0
+	81 41 //check terrain type (lowest byte of related industry)
+	00 FF //don't shift, don't mask
+	\b1 //number of ranges to check (number of layouts)
+	  01 84 \b4 \b4 //<set-id \w> <low-range> <high-range>  // snow
+	00 84 //<default>
 
-	
--1 * 0 02 09 C0 
-	85 0C //<type> <variable> word-access callback
-	00 FF FF //no shift, no mask
-	\b1 //number of ranges to check
-    FC 80   25 00   25 00 //handle tile animation cb    
-	00 00 //default
-	
+-1 * 0 02 09 C0 //Handle callbacks
+	81 0C 00 FF //no shift, no mask
+	\b1 //range
+	  D0 00 2F 2F //custom shape check cb 2F
+  A0 00 //default
 
-//Tile action 3: attach sprites to industry tile
--1 * 0 03 09              // action3, industry tiles
-	01                // <n-ids>
-  TILE_FIELD_TEST
-	00 \wxC1          // 00 <def-cid>
-
+//Tile action 3
+-1 * 0 03 09 01 TILE_ARABLEFARM_1 00 \wxC0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
+		
 
 //Industry definition
 
