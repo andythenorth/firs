@@ -11,29 +11,29 @@
 //Tropic - normal / rainforest
 
 //Set IDs for tree tile sprites
-#define TREE_SPRITE0  \d1901
-#define TREE_SPRITE1  \d1872
-#define TREE_SPRITE2  \d1871
+#define TREE_SPRITE0  \d1830
+#define TREE_SPRITE1  \d1831
+#define TREE_SPRITE2  \d1832
 
-#define TILE_SPRITE0  \d3962
-#define TILE_SPRITE1  \d3963
-#define TILE_SPRITE2  \d3964
-#define TILE_SPRITE3  \d3965
-#define TILE_SPRITE4  \d3966
-#define TILE_SPRITE5  \d3967
-#define TILE_SPRITE6  \d3968
-#define TILE_SPRITE7  \d3969
-#define TILE_SPRITE8  \d3970
-#define TILE_SPRITE9  \d3971
-#define TILE_SPRITE10 \d3972
-#define TILE_SPRITE11 \d3973
-#define TILE_SPRITE12 \d3974
-#define TILE_SPRITE13 \d3975
-#define TILE_SPRITE14 \d3976
-#define TILE_SPRITE15 \d3977
-#define TILE_SPRITE16 \d3978
-#define TILE_SPRITE17 \d3979
-#define TILE_SPRITE18 \d3980
+#define TILE_SPRITE0  \d4145
+#define TILE_SPRITE1  \d4146
+#define TILE_SPRITE2  \d4147
+#define TILE_SPRITE3  \d4148
+#define TILE_SPRITE4  \d4149
+#define TILE_SPRITE5  \d4150
+#define TILE_SPRITE6  \d4151
+#define TILE_SPRITE7  \d4152
+#define TILE_SPRITE8  \d4153
+#define TILE_SPRITE9  \d4154
+#define TILE_SPRITE10 \d4155
+#define TILE_SPRITE11 \d4156
+#define TILE_SPRITE12 \d4157
+#define TILE_SPRITE13 \d4158
+#define TILE_SPRITE14 \d4159
+#define TILE_SPRITE15 \d4160
+#define TILE_SPRITE16 \d4161
+#define TILE_SPRITE17 \d4162
+#define TILE_SPRITE18 \d4163
 
 //define the layout check varact to use for this repeat
 //match with terrain check results in i_forest for this climate
@@ -42,69 +42,35 @@
 #include "fruitplantation_tiles_template.pnfo"
 
 
-//Tropic - desert transition
+//Tropic - desert
 
 //Set IDs for tree tile sprites
-#define TREE_SPRITE0  \d1900
-#define TREE_SPRITE1  \d1899
-#define TREE_SPRITE2  \d1915 //1876 is dead tree (alternative?)
+#define TREE_SPRITE0  \d1830
+#define TREE_SPRITE1  \d1831
+#define TREE_SPRITE2  \d1832
 
-#define TILE_SPRITE0  \d4550
-#define TILE_SPRITE1  \d4551
-#define TILE_SPRITE2  \d4552
-#define TILE_SPRITE3  \d4553
-#define TILE_SPRITE4  \d4554
-#define TILE_SPRITE5  \d4555
-#define TILE_SPRITE6  \d4556
-#define TILE_SPRITE7  \d4557
-#define TILE_SPRITE8  \d4558
-#define TILE_SPRITE9  \d4559
-#define TILE_SPRITE10 \d4560
-#define TILE_SPRITE11 \d4561
-#define TILE_SPRITE12 \d4562
-#define TILE_SPRITE13 \d4563
-#define TILE_SPRITE14 \d4564
-#define TILE_SPRITE15 \d4565
-#define TILE_SPRITE16 \d4566
-#define TILE_SPRITE17 \d4567
-#define TILE_SPRITE18 \d4568
+#define TILE_SPRITE0  \d4145
+#define TILE_SPRITE1  \d4146
+#define TILE_SPRITE2  \d4147
+#define TILE_SPRITE3  \d4148
+#define TILE_SPRITE4  \d4149
+#define TILE_SPRITE5  \d4150
+#define TILE_SPRITE6  \d4151
+#define TILE_SPRITE7  \d4152
+#define TILE_SPRITE8  \d4153
+#define TILE_SPRITE9  \d4154
+#define TILE_SPRITE10 \d4155
+#define TILE_SPRITE11 \d4156
+#define TILE_SPRITE12 \d4157
+#define TILE_SPRITE13 \d4158
+#define TILE_SPRITE14 \d4159
+#define TILE_SPRITE15 \d4160
+#define TILE_SPRITE16 \d4161
+#define TILE_SPRITE17 \d4162
+#define TILE_SPRITE18 \d4163
 
 //define the layout check varact to use for this repeat
 //match with terrain check results in i_forest for this climate
 #define LAYOUT_CHECK_VARACT2 C1
-
-#include "fruitplantation_tiles_template.pnfo"
-
-
-//Tropic - desert
-
-//Set IDs for tree tile sprites
-#define TREE_SPRITE0  \d1900
-#define TREE_SPRITE1  \d1899
-#define TREE_SPRITE2  \d1915 //1876 is dead tree (alternative?)
-
-#define TILE_SPRITE0  \d4550
-#define TILE_SPRITE1  \d4551
-#define TILE_SPRITE2  \d4552
-#define TILE_SPRITE3  \d4553
-#define TILE_SPRITE4  \d4554
-#define TILE_SPRITE5  \d4555
-#define TILE_SPRITE6  \d4556
-#define TILE_SPRITE7  \d4557
-#define TILE_SPRITE8  \d4558
-#define TILE_SPRITE9  \d4559
-#define TILE_SPRITE10 \d4560
-#define TILE_SPRITE11 \d4561
-#define TILE_SPRITE12 \d4562
-#define TILE_SPRITE13 \d4563
-#define TILE_SPRITE14 \d4564
-#define TILE_SPRITE15 \d4565
-#define TILE_SPRITE16 \d4566
-#define TILE_SPRITE17 \d4567
-#define TILE_SPRITE18 \d4568
-
-//define the layout check varact to use for this repeat
-//match with terrain check results in i_forest for this climate
-#define LAYOUT_CHECK_VARACT2 C2
 
 #include "fruitplantation_tiles_template.pnfo"
