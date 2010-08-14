@@ -7,8 +7,12 @@
 //To cater for complex stuff (e.g. snow / not snow / partial stuff), repeat each tile set new defines
 //Repeat as many times as needed.  Use terrain check to decide which tile set is actually needed
 
+
+//Tropic - normal / rainforest
+
 //Set IDs for tree tile sprites
 #define TREE_SPRITE0  \d1873
+#define TREE_SPRITE1  \d1901
 
 #define TILE_SPRITE0  \d3962
 #define TILE_SPRITE1  \d3963
@@ -29,5 +33,42 @@
 #define TILE_SPRITE16 \d3978
 #define TILE_SPRITE17 \d3979
 #define TILE_SPRITE18 \d3980
+
+//define the layout check varact to use for this repeat
+//match with terrain check results in i_forest for this climate
+#define LAYOUT_CHECK_VARACT2 C0
+
+#include "forest_tiles_template.pnfo"
+
+
+//Tropic - desert
+
+//Set IDs for tree tile sprites
+#define TREE_SPRITE0  \d1901
+#define TREE_SPRITE1  \d1915 //1876 is dead tree (alternative?) or 1926 for other palm tree
+
+#define TILE_SPRITE0  \d4550
+#define TILE_SPRITE1  \d4551
+#define TILE_SPRITE2  \d4552
+#define TILE_SPRITE3  \d4553
+#define TILE_SPRITE4  \d4554
+#define TILE_SPRITE5  \d4555
+#define TILE_SPRITE6  \d4556
+#define TILE_SPRITE7  \d4557
+#define TILE_SPRITE8  \d4558
+#define TILE_SPRITE9  \d4559
+#define TILE_SPRITE10 \d4560
+#define TILE_SPRITE11 \d4561
+#define TILE_SPRITE12 \d4562
+#define TILE_SPRITE13 \d4563
+#define TILE_SPRITE14 \d4564
+#define TILE_SPRITE15 \d4565
+#define TILE_SPRITE16 \d4566
+#define TILE_SPRITE17 \d4567
+#define TILE_SPRITE18 \d4568
+
+//define the layout check varact to use for this repeat
+//match with terrain check results in i_forest for this climate
+#define LAYOUT_CHECK_VARACT2 C1
 
 #include "forest_tiles_template.pnfo"

@@ -1,7 +1,7 @@
 //Tile action 2 
 -1 * 0 02 09 00 04 //-1 * 0 02 09 <set-id> 01 (extended format)
 	TILE_SPRITE0 //groundsprite
-	TREE_SPRITE0 //'building' sprite
+	TREE_SPRITE1 //'building' sprite
 	\b2 \b2 \b0 //xofs yofs zofs
 	\b13 \b13 \b16 //xextent yextent zextent
 	TREE_SPRITE0 //'building' sprite
@@ -10,7 +10,7 @@
 	TREE_SPRITE0 //'building' sprite
 	\b0 \b7 \b0 //xofs yofs zofs
 	\b16 \b8 \b16 //xextent yextent zextent
-	TREE_SPRITE0 //'building' sprite
+	TREE_SPRITE1 //'building' sprite
 	\b8 \b7 \b0 //xofs yofs zofs
 	\b7 \b8 \b16 //xextent yextent zextent
 -1 * 0 02 09 01 04 //-1 * 0 02 09 <set-id> 01 (extended format)
@@ -21,7 +21,7 @@
 	TREE_SPRITE0 //'building' sprite
 	\b8 \b2 \b0 //xofs yofs zofs
 	\b7 \b13 \b16 //xextent yextent zextent
-	TREE_SPRITE0 //'building' sprite
+	TREE_SPRITE1 //'building' sprite
 	\b0 \b7 \b0 //xofs yofs zofs
 	\b16 \b8 \b16 //xextent yextent zextent
 	TREE_SPRITE0 //'building' sprite
@@ -29,10 +29,10 @@
 	\b7 \b8 \b16 //xextent yextent zextent
 -1 * 0 02 09 02 04 //-1 * 0 02 09 <set-id> 01 (extended format)
 	TILE_SPRITE2 //groundsprite
-	TREE_SPRITE0 //'building' sprite
+	TREE_SPRITE1 //'building' sprite
 	\b2 \b2 \b0 //xofs yofs zofs
 	\b13 \b13 \b16 //xextent yextent zextent
-	TREE_SPRITE0 //'building' sprite
+	TREE_SPRITE1 //'building' sprite
 	\b8 \b2 \b0 //xofs yofs zofs
 	\b7 \b13 \b16 //xextent yextent zextent
 	TREE_SPRITE0 //'building' sprite
@@ -43,13 +43,13 @@
 	\b7 \b8 \b16 //xextent yextent zextent
 -1 * 0 02 09 03 04 //-1 * 0 02 09 <set-id> 01 (extended format)
 	TILE_SPRITE3 //groundsprite
-	TREE_SPRITE0 //'building' sprite
+	TREE_SPRITE1 //'building' sprite
 	\b2 \b2 \b0 //xofs yofs zofs
 	\b13 \b13 \b16 //xextent yextent zextent
 	TREE_SPRITE0 //'building' sprite
 	\b8 \b2 \b0 //xofs yofs zofs
 	\b7 \b13 \b16 //xextent yextent zextent
-	TREE_SPRITE0 //'building' sprite
+	TREE_SPRITE1 //'building' sprite
 	\b0 \b7 \b0 //xofs yofs zofs
 	\b16 \b8 \b16 //xextent yextent zextent
 	TREE_SPRITE0 //'building' sprite
@@ -57,16 +57,16 @@
 	\b7 \b8 \b16 //xextent yextent zextent
 -1 * 0 02 09 04 04 //-1 * 0 02 09 <set-id> 01 (extended format)
 	TILE_SPRITE4 //groundsprite
-	TREE_SPRITE0 //'building' sprite
+	TREE_SPRITE1 //'building' sprite
 	\b2 \b2 \b0 //xofs yofs zofs
 	\b13 \b13 \b16 //xextent yextent zextent
 	TREE_SPRITE0 //'building' sprite
 	\b8 \b2 \b0 //xofs yofs zofs
 	\b7 \b13 \b16 //xextent yextent zextent
-	TREE_SPRITE0 //'building' sprite
+	TREE_SPRITE1 //'building' sprite
 	\b0 \b7 \b0 //xofs yofs zofs
 	\b16 \b8 \b16 //xextent yextent zextent
-	TREE_SPRITE0 //'building' sprite
+	TREE_SPRITE1 //'building' sprite
 	\b8 \b7 \b0 //xofs yofs zofs
 	\b7 \b8 \b16 //xextent yextent zextent
 -1 * 0 02 09 05 04 //-1 * 0 02 09 <set-id> 01 (extended format)
@@ -74,7 +74,7 @@
 	TREE_SPRITE0 //'building' sprite
 	\b2 \b2 \b0 //xofs yofs zofs
 	\b13 \b13 \b16 //xextent yextent zextent
-	TREE_SPRITE0 //'building' sprite
+	TREE_SPRITE1 //'building' sprite
 	\b8 \b2 \b0 //xofs yofs zofs
 	\b7 \b13 \b16 //xextent yextent zextent
 	TREE_SPRITE0 //'building' sprite
@@ -85,7 +85,7 @@
 	\b7 \b8 \b16 //xextent yextent zextent
 -1 * 0 02 09 06 04 //-1 * 0 02 09 <set-id> 01 (extended format)
 	TILE_SPRITE6 //groundsprite
-	TREE_SPRITE0 //'building' sprite
+	TREE_SPRITE1 //'building' sprite
 	\b2 \b2 \b0 //xofs yofs zofs
 	\b13 \b13 \b16 //xextent yextent zextent
 	TREE_SPRITE0 //'building' sprite
@@ -94,7 +94,7 @@
 	TREE_SPRITE0 //'building' sprite
 	\b0 \b7 \b0 //xofs yofs zofs
 	\b16 \b8 \b16 //xextent yextent zextent
-	TREE_SPRITE0 //'building' sprite
+	TREE_SPRITE1 //'building' sprite
 	\b8 \b7 \b0 //xofs yofs zofs
 	\b7 \b8 \b16 //xextent yextent zextent
 -1 * 0 02 09 07 04 //-1 * 0 02 09 <set-id> 01 (extended format)
@@ -102,24 +102,24 @@
 	TREE_SPRITE0 //'building' sprite
 	\b2 \b2 \b0 //xofs yofs zofs
 	\b13 \b13 \b16 //xextent yextent zextent
-	TREE_SPRITE0 //'building' sprite
+	TREE_SPRITE1 //'building' sprite
 	\b8 \b2 \b0 //xofs yofs zofs
 	\b7 \b13 \b16 //xextent yextent zextent
 	TREE_SPRITE0 //'building' sprite
 	\b0 \b7 \b0 //xofs yofs zofs
 	\b16 \b8 \b16 //xextent yextent zextent
-	TREE_SPRITE0 //'building' sprite
+	TREE_SPRITE1 //'building' sprite
 	\b8 \b7 \b0 //xofs yofs zofs
 	\b7 \b8 \b16 //xextent yextent zextent
 -1 * 0 02 09 08 04 //-1 * 0 02 09 <set-id> 01 (extended format)
 	TILE_SPRITE8 //groundsprite
-	TREE_SPRITE0 //'building' sprite
+	TREE_SPRITE1 //'building' sprite
 	\b2 \b2 \b0 //xofs yofs zofs
 	\b13 \b13 \b16 //xextent yextent zextent
 	TREE_SPRITE0 //'building' sprite
 	\b8 \b2 \b0 //xofs yofs zofs
 	\b7 \b13 \b16 //xextent yextent zextent
-	TREE_SPRITE0 //'building' sprite
+	TREE_SPRITE1 //'building' sprite
 	\b0 \b7 \b0 //xofs yofs zofs
 	\b16 \b8 \b16 //xextent yextent zextent
 	TREE_SPRITE0 //'building' sprite
@@ -127,7 +127,7 @@
 	\b7 \b8 \b16 //xextent yextent zextent
 -1 * 0 02 09 09 04 //-1 * 0 02 09 <set-id> 01 (extended format)
 	TILE_SPRITE9 //groundsprite
-	TREE_SPRITE0 //'building' sprite
+	TREE_SPRITE1 //'building' sprite
 	\b2 \b2 \b0 //xofs yofs zofs
 	\b13 \b13 \b16 //xextent yextent zextent
 	TREE_SPRITE0 //'building' sprite
@@ -136,7 +136,7 @@
 	TREE_SPRITE0 //'building' sprite
 	\b0 \b7 \b0 //xofs yofs zofs
 	\b16 \b8 \b16 //xextent yextent zextent
-	TREE_SPRITE0 //'building' sprite
+	TREE_SPRITE1 //'building' sprite
 	\b8 \b7 \b0 //xofs yofs zofs
 	\b7 \b8 \b16 //xextent yextent zextent
 -1 * 0 02 09 10 04 //-1 * 0 02 09 <set-id> 01 (extended format)
@@ -147,7 +147,7 @@
 	TREE_SPRITE0 //'building' sprite
 	\b8 \b2 \b0 //xofs yofs zofs
 	\b7 \b13 \b16 //xextent yextent zextent
-	TREE_SPRITE0 //'building' sprite
+	TREE_SPRITE1 //'building' sprite
 	\b0 \b7 \b0 //xofs yofs zofs
 	\b16 \b8 \b16 //xextent yextent zextent
 	TREE_SPRITE0 //'building' sprite
@@ -164,12 +164,12 @@
 	TREE_SPRITE0 //'building' sprite
 	\b0 \b7 \b0 //xofs yofs zofs
 	\b16 \b8 \b16 //xextent yextent zextent
-	TREE_SPRITE0 //'building' sprite
+	TREE_SPRITE1 //'building' sprite
 	\b8 \b7 \b0 //xofs yofs zofs
 	\b7 \b8 \b16 //xextent yextent zextent
 -1 * 0 02 09 12 04 //-1 * 0 02 09 <set-id> 01 (extended format)
 	TILE_SPRITE12 //groundsprite
-	TREE_SPRITE0 //'building' sprite
+	TREE_SPRITE1 //'building' sprite
 	\b2 \b2 \b0 //xofs yofs zofs
 	\b13 \b13 \b16 //xextent yextent zextent
 	TREE_SPRITE0 //'building' sprite
@@ -178,7 +178,7 @@
 	TREE_SPRITE0 //'building' sprite
 	\b0 \b7 \b0 //xofs yofs zofs
 	\b16 \b8 \b16 //xextent yextent zextent
-	TREE_SPRITE0 //'building' sprite
+	TREE_SPRITE1 //'building' sprite
 	\b8 \b7 \b0 //xofs yofs zofs
 	\b7 \b8 \b16 //xextent yextent zextent
 -1 * 0 02 09 13 04 //-1 * 0 02 09 <set-id> 01 (extended format)
@@ -189,7 +189,7 @@
 	TREE_SPRITE0 //'building' sprite
 	\b8 \b2 \b0 //xofs yofs zofs
 	\b7 \b13 \b16 //xextent yextent zextent
-	TREE_SPRITE0 //'building' sprite
+	TREE_SPRITE1 //'building' sprite
 	\b0 \b7 \b0 //xofs yofs zofs
 	\b16 \b8 \b16 //xextent yextent zextent
 	TREE_SPRITE0 //'building' sprite
@@ -203,7 +203,7 @@
 	TREE_SPRITE0 //'building' sprite
 	\b8 \b2 \b0 //xofs yofs zofs
 	\b7 \b13 \b16 //xextent yextent zextent
-	TREE_SPRITE0 //'building' sprite
+	TREE_SPRITE1 //'building' sprite
 	\b0 \b7 \b0 //xofs yofs zofs
 	\b16 \b8 \b16 //xextent yextent zextent
 	TREE_SPRITE0 //'building' sprite
@@ -211,10 +211,10 @@
 	\b7 \b8 \b16 //xextent yextent zextent
 -1 * 0 02 09 15 04 //-1 * 0 02 09 <set-id> 01 (extended format)
 	TILE_SPRITE15 //groundsprite
-	TREE_SPRITE0 //'building' sprite
+	TREE_SPRITE1 //'building' sprite
 	\b2 \b2 \b0 //xofs yofs zofs
 	\b13 \b13 \b16 //xextent yextent zextent
-	TREE_SPRITE0 //'building' sprite
+	TREE_SPRITE1 //'building' sprite
 	\b8 \b2 \b0 //xofs yofs zofs
 	\b7 \b13 \b16 //xextent yextent zextent
 	TREE_SPRITE0 //'building' sprite
@@ -225,7 +225,7 @@
 	\b7 \b8 \b16 //xextent yextent zextent
 -1 * 0 02 09 16 04 //-1 * 0 02 09 <set-id> 01 (extended format)
 	TILE_SPRITE16 //groundsprite
-	TREE_SPRITE0 //'building' sprite
+	TREE_SPRITE1 //'building' sprite
 	\b2 \b2 \b0 //xofs yofs zofs
 	\b13 \b13 \b16 //xextent yextent zextent
 	TREE_SPRITE0 //'building' sprite
@@ -242,7 +242,7 @@
 	TREE_SPRITE0 //'building' sprite
 	\b2 \b2 \b0 //xofs yofs zofs
 	\b13 \b13 \b16 //xextent yextent zextent
-	TREE_SPRITE0 //'building' sprite
+	TREE_SPRITE1 //'building' sprite
 	\b8 \b2 \b0 //xofs yofs zofs
 	\b7 \b13 \b16 //xextent yextent zextent
 	TREE_SPRITE0 //'building' sprite
@@ -259,7 +259,7 @@
 	TREE_SPRITE0 //'building' sprite
 	\b8 \b2 \b0 //xofs yofs zofs
 	\b7 \b13 \b16 //xextent yextent zextent
-	TREE_SPRITE0 //'building' sprite
+	TREE_SPRITE1 //'building' sprite
 	\b0 \b7 \b0 //xofs yofs zofs
 	\b16 \b8 \b16 //xextent yextent zextent
 	TREE_SPRITE0 //'building' sprite
@@ -267,7 +267,7 @@
 	\b7 \b8 \b16 //xextent yextent zextent
 
 //varaction 2 to choose tree tile graphics according to tile slope
--1 * 0	 02 09 F1 //handle cb 2F (custom shape check for tiles)
+-1 * 0	 02 09 E0 //handle cb 2F (custom shape check for tiles)
   81 60 00 00 1F // check tile contents
   \b19
     00 00   \b00 \b00 // flat
@@ -290,8 +290,28 @@
     17 00   \b27 \b27  
     18 00   \b30 \b30  
   00 00 //default  
+
+
+//Layouts
+
+-1 * 0 02 09 B1 //layout 1
+	85 43 //check relative position (00yx[YYXX])
+	00 FF FF //don't shift, don't mask
+	\b1 //number of ranges to check (number of tiles)
+    \wxE0   00 01  FF FF
+	\wxE0 //00 00  00 00 <default>
+
+-1 * 0 02 09 LAYOUT_CHECK_VARACT2
+	82 44 //check layout number (lowest byte of related industry)
+	00 FF //don't shift, don't mask
+	\b1 //number of ranges to check (number of layouts)
+    \wxB1 \b1 \b1 //<set-id \w> <low-range> <high-range>
+	\wxB1 //<default> (first layout available)
+
+#undef LAYOUT_CHECK_VARACT2	
 	
 #undef TREE_SPRITE0
+#undef TREE_SPRITE1
 
 #undef TILE_SPRITE0
 #undef TILE_SPRITE1
