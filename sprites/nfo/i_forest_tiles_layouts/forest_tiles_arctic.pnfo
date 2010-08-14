@@ -42,7 +42,75 @@
 #include "forest_tiles_template.pnfo"
 
 
-//Arctic - full snow
+//Arctic - 1/4 snow
+
+//Set IDs for tree tile sprites
+#define TREE_SPRITE0  \d1810
+#define TREE_SPRITE1  \d1711
+#define TREE_SPRITE2  \d1768
+
+#define TILE_SPRITE0  \d4493
+#define TILE_SPRITE1  \d4494
+#define TILE_SPRITE2  \d4495
+#define TILE_SPRITE3  \d4496
+#define TILE_SPRITE4  \d4497
+#define TILE_SPRITE5  \d4498
+#define TILE_SPRITE6  \d4499
+#define TILE_SPRITE7  \d4500
+#define TILE_SPRITE8  \d4501
+#define TILE_SPRITE9  \d4502
+#define TILE_SPRITE10 \d4503
+#define TILE_SPRITE11 \d4504
+#define TILE_SPRITE12 \d4505
+#define TILE_SPRITE13 \d4506
+#define TILE_SPRITE14 \d4507
+#define TILE_SPRITE15 \d4508
+#define TILE_SPRITE16 \d4509
+#define TILE_SPRITE17 \d4510
+#define TILE_SPRITE18 \d4511
+
+//define the layout check varact to use for this repeat
+//match with terrain check results in i_forest for this climate
+#define LAYOUT_CHECK_VARACT2 C1
+
+#include "forest_tiles_template.pnfo"
+
+
+//Arctic - 2/4 snow
+
+//Set IDs for tree tile sprites
+#define TREE_SPRITE0  \d1810
+#define TREE_SPRITE1  \d1810
+#define TREE_SPRITE2  \d1768
+
+#define TILE_SPRITE0  \d4512
+#define TILE_SPRITE1  \d4513
+#define TILE_SPRITE2  \d4514
+#define TILE_SPRITE3  \d4515
+#define TILE_SPRITE4  \d4516
+#define TILE_SPRITE5  \d4517
+#define TILE_SPRITE6  \d4518
+#define TILE_SPRITE7  \d4519
+#define TILE_SPRITE8  \d4520
+#define TILE_SPRITE9  \d4521
+#define TILE_SPRITE10 \d4522
+#define TILE_SPRITE11 \d4523
+#define TILE_SPRITE12 \d4524
+#define TILE_SPRITE13 \d4525
+#define TILE_SPRITE14 \d4526
+#define TILE_SPRITE15 \d4527
+#define TILE_SPRITE16 \d4528
+#define TILE_SPRITE17 \d4529
+#define TILE_SPRITE18 \d4530
+
+//define the layout check varact to use for this repeat
+//match with terrain check results in i_forest for this climate
+#define LAYOUT_CHECK_VARACT2 C2
+
+#include "forest_tiles_template.pnfo"
+
+
+//Arctic - 3/4 snow
 
 //Set IDs for tree tile sprites
 #define TREE_SPRITE0  \d1810
@@ -71,6 +139,40 @@
 
 //define the layout check varact to use for this repeat
 //match with terrain check results in i_forest for this climate
-#define LAYOUT_CHECK_VARACT2 C1
+#define LAYOUT_CHECK_VARACT2 C3
+
+#include "forest_tiles_template.pnfo"
+
+
+//Arctic - full snow
+
+//Set IDs for tree tile sprites
+#define TREE_SPRITE0  \d1810
+#define TREE_SPRITE1  \d1810
+#define TREE_SPRITE2  \d1768
+
+#define TILE_SPRITE0  \d4550
+#define TILE_SPRITE1  \d4551
+#define TILE_SPRITE2  \d4552
+#define TILE_SPRITE3  \d4553
+#define TILE_SPRITE4  \d4554
+#define TILE_SPRITE5  \d4555
+#define TILE_SPRITE6  \d4556
+#define TILE_SPRITE7  \d4557
+#define TILE_SPRITE8  \d4558
+#define TILE_SPRITE9  \d4559
+#define TILE_SPRITE10 \d4560
+#define TILE_SPRITE11 \d4561
+#define TILE_SPRITE12 \d4562
+#define TILE_SPRITE13 \d4563
+#define TILE_SPRITE14 \d4564
+#define TILE_SPRITE15 \d4565
+#define TILE_SPRITE16 \d4566
+#define TILE_SPRITE17 \d4567
+#define TILE_SPRITE18 \d4568
+
+//define the layout check varact to use for this repeat
+//match with terrain check results in i_forest for this climate
+#define LAYOUT_CHECK_VARACT2 C4
 
 #include "forest_tiles_template.pnfo"

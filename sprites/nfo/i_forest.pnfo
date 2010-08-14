@@ -31,12 +31,16 @@
 
 #include "i_forest_tiles_layouts/forest_tiles_arctic.pnfo"
 
-// check terrain type and branch to different layout checks appropriately
+// check tile against snowline height and branch to different layout checks appropriately
 -1 * 0 02 09 A2
-	81 41 //check terrain type (lowest byte of related industry)
-	00 FF //don't shift, don't mask
-	\b1 //number of ranges to check (number of layouts)
-	  \wxC1 \b4 \b4 //<set-id \w> <low-range> <high-range>  // snow
+	85 60 00 30 \wxFF //get current tile height (lowest corner)
+	\2- 20 20 \wxFF   //get current snowline height  
+	\2+ 1A 00 \w8     //add 8 due to way snowline works  
+	\b4 //number of ranges to check (number of layouts)
+	  \wxC1 \w0 \w7   //<set-id \w> <low-range> <high-range>  // 1/4 snow
+	  \wxC2 \w8 \w15   //<set-id \w> <low-range> <high-range>  // 2/4 snow
+	  \wxC3 \w16 \w23   //<set-id \w> <low-range> <high-range>  // 3/4 snow
+	  \wxC4 \w24 \w127 //<set-id \w> <low-range> <high-range>  // snow
 	\wxC0 //<default>
 
 
