@@ -1,6 +1,13 @@
 // handles allowing an industry to build on *steep* slopes
+// prevent building on coasts
 
 #include "cb2f_prevent_industry_overlap.pnfo"     
+
+-1 * 0	02 09 DA //handle cb 2F (custom shape check for tiles)
+  81 60 00 09 \b01 //check tile contents
+  \b1
+    01 84 \b01 \b01 //water on the tile - don't build
+  DA 00 //default
 
 -1 * 0 02 09 C0 //Handle callbacks
 	81 0C 00 FF //no shift, no mask
