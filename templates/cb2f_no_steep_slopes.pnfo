@@ -1,0 +1,6 @@
+// prevents building on steep slopes only.  Doesn't prevent other slopes
+-1 * 0	02 09 DA //handle cb 2F (custom shape check for tiles)
+  81 60 00 04 \b01 // check tile contents
+  \b1
+    01 84 \b01 \b01  //prevents building if tile is steep slope 
+  DA 00 //default

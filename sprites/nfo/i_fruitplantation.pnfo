@@ -115,7 +115,6 @@
 //allowing building on *steep* slopes
 //prevents building on coast
 //prevents building on snow
-//disables default foundations
 //prevents terraforming under tiles
 
 #include "../../templates/cb2f_prevent_industry_overlap.pnfo"     
@@ -130,6 +129,7 @@
 	  DA 00 2F 2F //custom shape check cb 2F
 	  FF 80 3C 3C //disable autoslope cb3C	  
   A0 00 //default
+  
 //Tile action 3
 -1 * 0 03 09 01 TILE_FRUITPLANTATION_2 00 \wxC0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
 
