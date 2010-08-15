@@ -4,7 +4,7 @@
 
 #define TEXT_FOR_UNBUILDABLE 01 84
 
--1 * 0	02 09 DB //handle cb 2F (custom shape check for tiles)
+-1 * 0	02 09 DA //handle cb 2F (custom shape check for tiles)
   81 60 11 18 \bx0F // check landscape class of tiles
   \b1
     TEXT_FOR_UNBUILDABLE \b08 \b08  //prevents building if tile is industry tile 
@@ -14,9 +14,9 @@
   81 60 10 18 \bx0F // check landscape class of tiles
   \b1
     TEXT_FOR_UNBUILDABLE \b08 \b08  //prevents building if tile is industry tile 
-  DB 00 //default
+  DA 00 //default
 
--1 * 0	02 09 DB //handle cb 2F (custom shape check for tiles)
+-1 * 0	02 09 DA //handle cb 2F (custom shape check for tiles)
   81 60 1F 18 \bx0F // check landscape class of tiles
   \b1
     TEXT_FOR_UNBUILDABLE \b08 \b08  //prevents building if tile is industry tile 
@@ -26,9 +26,9 @@
   81 60 01 18 \bx0F // check landscape class of tiles
   \b1
     TEXT_FOR_UNBUILDABLE \b08 \b08  //prevents building if tile is industry tile 
-  DB 00 //default
+  DA 00 //default
 
--1 * 0	02 09 DB //handle cb 2F (custom shape check for tiles)
+-1 * 0	02 09 DA //handle cb 2F (custom shape check for tiles)
   81 60 0F 18 \bx0F // check landscape class of tiles
   \b1
     TEXT_FOR_UNBUILDABLE \b08 \b08  //prevents building if tile is industry tile 
@@ -38,9 +38,9 @@
   81 60 F1 18 \bx0F // check landscape class of tiles
   \b1
     TEXT_FOR_UNBUILDABLE \b08 \b08  //prevents building if tile is industry tile 
-  DB 00 //default
+  DA 00 //default
 
--1 * 0	02 09 DB //handle cb 2F (custom shape check for tiles)
+-1 * 0	02 09 DA //handle cb 2F (custom shape check for tiles)
   81 60 F0 18 \bx0F // check landscape class of tiles
   \b1
     TEXT_FOR_UNBUILDABLE \b08 \b08  //prevents building if tile is industry tile 
@@ -50,6 +50,6 @@
   81 60 FF 18 \bx0F // check landscape class of tiles
   \b1
     TEXT_FOR_UNBUILDABLE \b08 \b08  //prevents building if tile is industry tile 
-  DB 00 //default
+  DA 00 //default
   
 #undef TEXT_FOR_UNBUILDABLE

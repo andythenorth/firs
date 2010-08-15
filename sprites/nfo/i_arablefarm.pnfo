@@ -97,7 +97,9 @@
     \wxB3 \b3 \b3 //<set-id \w> <low-range> <high-range>
 	\wx00 //<default> (first tile layout available)
 
-#include "../../templates/cb2f_prevent_industry_overlap.pnfo"     
+#include "../../templates/cb2f_generic.pnfo"     
+
+#include "../../templates/cb2f_no_slopes.pnfo"     
 
 //handle cb2f (prevent building on snow in this case)
 -1 * 0 02 09 D0

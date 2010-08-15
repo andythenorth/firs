@@ -1,7 +1,10 @@
 // generic case to handle cb2f (shape checks)
+// prevents building on slopes
 
 #include "cb2f_prevent_industry_overlap.pnfo"     
-
+  
+#include "cb2f_no_slopes.pnfo"     
+  
 -1 * 0 02 09 C0 //Handle callbacks
 	81 0C 00 FF //no shift, no mask
 	\b1 //range
