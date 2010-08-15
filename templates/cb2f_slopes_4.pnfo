@@ -6,13 +6,7 @@
 
 #include "cb2f_prevent_industry_overlap.pnfo"     
 
-// check terrain type and branch to different layout checks appropriately
--1 * 0 02 09 DA
-	81 41 //check terrain type (lowest byte of related industry)
-	00 FF //don't shift, don't mask
-	\b1 //number of ranges to check (number of layouts)
-	  01 84 \b1 \b1 //<set-id \w> <low-range> <high-range>  // desert
-	DA 00 //<default>
+#include "cb2f_not_in_desert.pnfo"     
 
 #include "cb2f_not_on_coasts.pnfo"     
 

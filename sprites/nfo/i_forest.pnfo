@@ -64,8 +64,24 @@
 	  \wxA3 \b2 \b2 //<set-id \w> <low-range> <high-range>  // tropic
 	\wxA1 //<default>
 
-// handle cb 2f for building on slopes (uses ID C0), prevent building on desert
-#include "../../templates/cb2f_slopes_4.pnfo"     
+//Tree tile - handles allowing an industry to build on *steep* slopes
+// prevents building right on coast
+// prevents building on desert
+// disables default foundations
+// prevents terraforming under tiles
+#include "../../templates/cb2f_prevent_industry_overlap.pnfo"     
+
+#include "../../templates/cb2f_not_in_desert.pnfo"     
+
+#include "../../templates/cb2f_not_on_coasts.pnfo"     
+
+-1 * 0 02 09 C0 //Handle callbacks
+	81 0C 00 FF //no shift, no mask
+	\b3 //range
+	  DA 00 2F 2F //custom shape check cb 2F
+	  00 80 30 30 //disable drawing default foundations cb30
+	  FF 80 3C 3C //disable autoslope cb3C	  
+  A0 00 //default
 
 //Tree tile action 3
 -1 * 0 03 09 01 TILE_FOREST_1 00 \wxC0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
