@@ -79,7 +79,7 @@ else
 %.grf: %.nfo
 # pipe all nfo files through grfcodec and produce the grf(s)
 	$(_E) "[Generating] $@ with dep $^"
-	$(_V) $(GRFCODEC) ${GRFCODEC_FLAGS} $(notdir $@)
+	$(_V) $(GRFCODEC) ${GRFCODEC_FLAGS} $(notdir $@) | cat
 endif
 # .INTERMEDIATE: %.nfo
 .PRECIOUS: %.nfo %.nml
