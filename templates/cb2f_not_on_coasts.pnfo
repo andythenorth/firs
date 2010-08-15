@@ -1,0 +1,6 @@
+//prevent building on coasts
+-1 * 0	02 09 DA //handle cb 2F (custom shape check for tiles)
+  81 60 00 09 \b01 // check tile contents
+  \b1
+    01 84 \b01 \b01 //water on the tile - don't build
+  DA 00 //default

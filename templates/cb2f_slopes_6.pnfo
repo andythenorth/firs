@@ -2,16 +2,10 @@
 // prevents building on coast
 // prevents building on snow
 
-// !! snow routine isn't sophisticated enough, needs updating to use snowline height
 
 #include "cb2f_prevent_industry_overlap.pnfo"     
 
--1 * 0 02 09 DA
-	81 41 //check terrain type (lowest byte of related industry)
-	00 FF //don't shift, don't mask
-	\b1 //number of ranges to check (number of layouts)
-	  01 84 \b4 \b4 //<set-id \w> <low-range> <high-range>  // snow
-	DA 00 //<default>
+#include "cb2f_not_above_snowline.pnfo"     
 
 -1 * 0	02 09 DA //handle cb 2F (custom shape check for tiles)
   81 60 00 09 \b01 //check tile contents

@@ -1,0 +1,8 @@
+// check tile against snowline height.  Won't build on more than 1/4 snow
+-1 * 0 02 09 DA
+	85 60 00 30 \wxFF //get current tile height (lowest corner)
+	\2- 20 20 \wxFF   //get current snowline height  
+	\2+ 1A 00 \w8     //add 8 due to way snowline works  
+	\b1 //number of ranges to check (number of layouts)
+	  01 84 \w8 \w127   //<set-id \w> <low-range> <high-range>  // > 1/4 snow
+	DA 00 //<default>

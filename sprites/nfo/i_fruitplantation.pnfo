@@ -91,9 +91,27 @@
 	\b0 \b0 \b0 //xofs yofs zofs
 	\b7 \b7 \b7 //xextent yextent zextent
 
-// handle cb 2f for building on slopes (uses ID C0)
-#include "../../templates/cb2f_slopes_5.pnfo"     
+//Handle cb2f stuff
+//allowing building on *steep* slopes
+//prevents building on coast
+//prevents building on snow
+//disables default foundations
+//prevents terraforming under tiles
 
+#include "../../templates/cb2f_prevent_industry_overlap.pnfo"     
+
+#include "../../templates/cb2f_not_above_snowline.pnfo"     
+
+#include "../../templates/cb2f_not_on_coasts.pnfo"     
+
+-1 * 0 02 09 C0 //Handle callbacks
+	81 0C 00 FF //no shift, no mask
+	\b3 //range
+	  DA 00 2F 2F //custom shape check cb 2F
+	  00 80 30 30 //disable drawing default foundations cb30
+	  FF 80 3C 3C //disable autoslope cb3C	  
+  A0 00 //default
+  
 //Tile action 3
 -1 * 0 03 09 01 TILE_FRUITPLANTATION_2 00 \wxC0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
 
