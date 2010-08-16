@@ -381,6 +381,9 @@
 #ifndef TEXT_IND_FRUITPLANTATION                          
 #define TEXT_IND_FRUITPLANTATION                         "Fruit Plantation" 
 #endif
+#ifndef TEXT_IND_BLACKSMITH                          
+#define TEXT_IND_BLACKSMITH                                   "Blacksmith" 
+#endif
 
 //Station texts for station name prefixes/suffixes. \80 where town name goes
 #ifndef TEXT_STA_FARM                                    
@@ -420,6 +423,9 @@
 
 #ifndef TEXT_STA_FISHINGGROUNDS                          
 #define TEXT_STA_FISHINGGROUNDS                          "\80 Fishing Grounds" 
+#endif
+#ifndef TEXT_STA_BLACKSMITH                          
+#define TEXT_STA_BLACKSMITH                              "\80 Blacksmith" 
 #endif
 
 
