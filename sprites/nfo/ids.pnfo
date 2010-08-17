@@ -19,7 +19,7 @@
 #define IND_OILPLATFORM           10
 #define IND_OILREFINERY           11
 #define IND_PLASTICSPLANT         12
-//                                  13
+#define IND_SUGARREFINERY         13
 #define IND_DREDGINGSITE          14
 #define IND_GRAVELQUARRY          15
 #define IND_GLASSWORKS            16
@@ -129,6 +129,7 @@
 #define TILE_WHOLESALEMARKET_1             D3
 #define TILE_SUPERMARKET_1                 D4
 #define TILE_RETAILMARKET_1                D5
+#define TILE_SUGARREFINERY_1               D6
 
 #define TILE_FIELD_TEST                    F0
 // generic tiles start at D0 !
@@ -168,7 +169,7 @@
 // #define CARGO_RESERVED4             1F
 // #define CARGO_REGEARING             1E
 // #define CARGO_WASTE                 1D
-// #define CARGO_SUGARCANE             1D
+#define CARGO_SUGARCANE             1B
 #define CARGO_FISH                  1D
 
 // Definition of the cargo labels
@@ -252,6 +253,7 @@
 #define STR_IND_WHOLESALEMARKET       99 DC
 #define STR_IND_SUPERMARKET           9A DC
 #define STR_IND_RETAILMARKET          9B DC
+#define STR_IND_SUGARREFINERY         9C DC
 
 
 //Definition of industry messages using TTD strings
