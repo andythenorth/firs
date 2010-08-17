@@ -60,13 +60,16 @@
 #define IND_JUNKYARD              38
 #define IND_RECYCLINGPLANT        39
 #define IND_WASTECOLLECTIONPOINT  3A
-//#define IND_RETAILMARKET          3A
 #define IND_GENERALSTORE          3B
 #define IND_GENERALSTORE_CONFLICT BB // special case prevents stores too close (via prop 16). Set bit 7 (add 8 to first nibble of Store ID).
 #define IND_GASSTATION            3C
 #define IND_GASSTATION_CONFLICT   BC // special case prevents Gas Stations too close (via prop 16). Set bit 7 (add 8 to first nibble of Store ID).
 #define IND_SUPERMARKET           3D
 #define IND_SUPERMARKET_CONFLICT  BD // special case prevents supermarkets too close (via prop 16). Set bit 7 (add 8 to first nibble of Store ID).
+#define IND_RETAILMARKET          3E
+#define IND_RETAILMARKET_CONFLICT BE // special case prevents supermarkets too close (via prop 16). Set bit 7 (add 8 to first nibble of Store ID).
+
+//3F is last ID to be used (64 industry limit)
 
 
 //Definition of industry tile IDs
@@ -125,6 +128,7 @@
 #define TILE_WINDMILL_1                    D2
 #define TILE_WHOLESALEMARKET_1             D3
 #define TILE_SUPERMARKET_1                 D4
+#define TILE_RETAILMARKET_1                D5
 
 #define TILE_FIELD_TEST                    F0
 // generic tiles start at D0 !
@@ -247,6 +251,7 @@
 #define STR_IND_WINDMILL              98 DC
 #define STR_IND_WHOLESALEMARKET       99 DC
 #define STR_IND_SUPERMARKET           9A DC
+#define STR_IND_RETAILMARKET          9B DC
 
 
 //Definition of industry messages using TTD strings
