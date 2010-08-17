@@ -34,7 +34,7 @@
 #define IND_FISHINGHARBOUR        1F
 //#define IND_FISHFARM              20
 #define IND_FISHINGGROUNDS        20
-//                                  21
+#define IND_CANEPLANTATION        21
 #define IND_BAKERY                22
 #define IND_BREWERY               23
 #define IND_DAIRY                 24
@@ -130,6 +130,7 @@
 #define TILE_SUPERMARKET_1                 D4
 #define TILE_RETAILMARKET_1                D5
 #define TILE_SUGARREFINERY_1               D6
+#define TILE_CANEPLANTATION_1              D7
 
 #define TILE_FIELD_TEST                    F0
 // generic tiles start at D0 !
@@ -254,6 +255,7 @@
 #define STR_IND_SUPERMARKET           9A DC
 #define STR_IND_RETAILMARKET          9B DC
 #define STR_IND_SUGARREFINERY         9C DC
+#define STR_IND_CANEPLANTATION        9D DC
 
 
 //Definition of industry messages using TTD strings
