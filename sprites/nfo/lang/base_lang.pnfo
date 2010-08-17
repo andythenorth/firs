@@ -390,6 +390,9 @@
 #ifndef TEXT_IND_WHOLESALEMARKET                          
 #define TEXT_IND_WHOLESALEMARKET                         "Wholesale Market" 
 #endif
+#ifndef TEXT_IND_SUPERMARKET                          
+#define TEXT_IND_SUPERMARKET                             "Supermarket" 
+#endif
 
 //Station texts for station name prefixes/suffixes. \80 where town name goes
 #ifndef TEXT_STA_FARM                                    
@@ -445,6 +448,16 @@
 #ifndef TEXT_INFO_AVAILABILITY 								 
 #define TEXT_INFO_AVAILABILITY                           "\98Available: \90\UE082" 
 #endif
+#ifndef TEXT_INFO_GENERIC_CLOSE_0                   
+#define TEXT_INFO_GENERIC_CLOSE_0                        "\n\98This industry might close unless any cargo is delivered within:\0D\90  \UE07C months" 
+#endif
+#ifndef TEXT_INFO_GENERIC_CLOSE_1                   
+#define TEXT_INFO_GENERIC_CLOSE_1                        "\n\98This industry might close unless any cargo is delivered within:\0D\94  \UE07C month" 
+#endif
+#ifndef TEXT_INFO_GENERIC_CLOSE_2                   
+#define TEXT_INFO_GENERIC_CLOSE_2                        "\n\8BNo cargo has been delivered for at least \85\85\UE07C months. This industry may close soon. \0D" 
+#endif
+
 #ifndef TEXT_INFO_LIMIT_200                              
 #define TEXT_INFO_LIMIT_200                              "\98 (max 200)" 
 #endif
