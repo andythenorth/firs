@@ -387,6 +387,9 @@
 #ifndef TEXT_IND_WINDMILL                          
 #define TEXT_IND_WINDMILL                                "Windmill" 
 #endif
+#ifndef TEXT_IND_WHOLESALEMARKET                          
+#define TEXT_IND_WHOLESALEMARKET                         "Wholesale Market" 
+#endif
 
 //Station texts for station name prefixes/suffixes. \80 where town name goes
 #ifndef TEXT_STA_FARM                                    
@@ -429,6 +432,9 @@
 #endif
 #ifndef TEXT_STA_BLACKSMITH                          
 #define TEXT_STA_BLACKSMITH                              "\80 Blacksmith" 
+#endif
+#ifndef TEXT_STA_MARKET
+#define TEXT_STA_MARKET                                  "\80 Market" 
 #endif
 
 

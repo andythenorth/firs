@@ -122,6 +122,7 @@
 #define TILE_FRUITPLANTATION_2             D0
 #define TILE_BLACKSMITH_1                  D1
 #define TILE_WINDMILL_1                    D2
+#define TILE_WHOLESALEMARKET_1             D3
 
 #define TILE_FIELD_TEST                    F0
 // generic tiles start at D0 !
@@ -242,6 +243,7 @@
 #define STR_IND_FRUITPLANTATION       96 DC
 #define STR_IND_BLACKSMITH            97 DC
 #define STR_IND_WINDMILL              98 DC
+#define STR_IND_WHOLESALEMARKET       99 DC
 
 
 //Definition of industry messages using TTD strings
@@ -271,6 +273,7 @@
 #define STR_STA_DREDGINGSITE      EA DC
 #define STR_STA_FISHINGGROUNDS    EB DC
 #define STR_STA_BLACKSMITH        EC DC
+#define STR_STA_MARKET            ED DC
 
 //Definition of text IDs for additional texts in purchase window (D0xx)
 //IDs for industry-specific texts match the industry ID
