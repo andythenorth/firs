@@ -19,6 +19,20 @@
 #define TEXT_CRG_SUGARCANE_TABBR                         "\0ESC" 
 #endif
 
+//Sugar beet
+#ifndef TEXT_CRG_SUGARBEET_CTYPE                         
+#define TEXT_CRG_SUGARBEET_CTYPE                         "Sugar Beet" 
+#endif
+#ifndef TEXT_CRG_SUGARBEET_1UNIT                         
+#define TEXT_CRG_SUGARBEET_1UNIT                         "\UE07C ton of sugar beet" 
+#endif
+#ifndef TEXT_CRG_SUGARBEET_MUNIT                         
+#define TEXT_CRG_SUGARBEET_MUNIT                         "\UE07C tons of sugar beet" 
+#endif
+#ifndef TEXT_CRG_SUGARBEET_TABBR                         
+#define TEXT_CRG_SUGARBEET_TABBR                         "\0ESB" 
+#endif
+
 //Waste 
 #ifndef TEXT_CRG_WASTE_CTYPE                             
 #define TEXT_CRG_WASTE_CTYPE                             "Waste" 
