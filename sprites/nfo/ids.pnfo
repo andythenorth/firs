@@ -568,7 +568,7 @@
 
 // The parameters used internally by FIRS:
 #define COMPATIBILITY_PARAM1       \b09 // Used internally in checks.pnfo. Not read
-#define COMPATIBILITY_PARAM2       \b10 // Used internally in checks.pnfo. Not read
+//#define COMPATIBILITY_PARAM2       \b10 // Used internally in checks.pnfo. Not read
 
 #define MAP_SIZE_PARAMETER         \b11 // Stores the map size in tiles
 #define INDUSTRY_CLUSTER_PARAMETER \b12 // divisor for industry cluster decisions.

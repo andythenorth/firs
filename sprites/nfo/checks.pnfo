@@ -3,28 +3,78 @@
 // NewGRF parameters used by this file are defined in ids.pnfo
 
 // Define our error messages here for further easy re-use:
-#define INCOMPATIBLE_GRF(x) -1 * 0 0B 03 7F FF "\8EE01: Incompatible set: "x"\90Consult FIRS ReadMe: \8E\0Dhttp://bundles.openttdcoop.org/firs/releases/readme.txt" 00
-#define INCOMPATIBLE_PARAM(x,y) -1 * 0 0B 03 7F FF "\8EE02: Incompatible parameter:\8E"x" parmeter "y". \90Consult FIRS ReadMe: \8E\0Dhttp://bundles.openttdcoop.org/firs/releases/readme.txt" 00
-#define INCOMPATIBLE_COMBI(x) -1 * 0 0B 03 7F FF "\8EE01: Incompatible newgrf combination:\0D\90"x"\0D\8EConsult FIRS ReadMe:\90\0Dhttp://bundles.openttdcoop.org/firs/releases/readme.txt" 00
+#define INCOMPATIBLE_GRF(x) -1 * 0 0B 03 7F FF "\8EE01: Incompatible set: "x" \90Consult FIRS ReadMe: \8E\0Dhttp://bundles.openttdcoop.org/firs/releases/readme.txt" 00
+#define INCOMPATIBLE_PARAM(x,y) -1 * 0 0B 03 7F FF "\8EE02: Incompatible parameter:\8E"x" parameter "y"  to work with FIRS. \90Consult FIRS ReadMe: \8E\0Dhttp://bundles.openttdcoop.org/firs/releases/readme.txt" 00
+//#define INCOMPATIBLE_COMBI(x) -1 * 0 0B 03 7F FF "\8EE01: Incompatible newgrf combination:\0D\90"x"\0D\8EConsult FIRS ReadMe:\90\0Dhttp://bundles.openttdcoop.org/firs/releases/readme.txt" 00
 
+
+//Check for game version
+//skip if ttdp
+-1 * 0 09 //Action 7
+	9D //variable: ttd platform
+	04 //varsize in bytes
+	\7= //condition: equal
+	\d0 //value: 0
+	05 //skip next 5 to disable FIRS
+
+	//skip if ottd version returns FF FF FF FF
+	-1 * 0 09 //Action 7
+		A1 //variable: openttd version
+		04 //varsize in bytes
+		\7= //condition: equal
+		FF FF FF FF //value: undefined
+		04 //skip next 4 to disable FIRS
+		
+		//skip if ottd < 1.03
+		-1 * 0 09 //Action 7
+			A1 //variable: openttd version
+			04 //varsize in bytes
+			\7< //condition: smaller
+			\dx10380000 //value: ottd version 1.0.3
+			03 //skip next 3 to disable FIRS
+		
+		//skip if ottd < 1.1.0
+		-1 * 0 09 //Action 7
+			A1 //variable: openttd version
+			04 //varsize in bytes
+			\7< //condition: smaller
+			\dx11000000 //value: ottd version 1.1.0
+			01 //skip next 1 to disable FIRS
+			
+		//skip if ottd < 1.1.0 r20086
+		-1 * 0 09 //Action 7
+			A1 //variable: openttd version
+			04 //varsize in bytes
+			\7< //condition: smaller
+			\dx11004E76 //value: ottd version 1.1.0 r20086 (4E76)
+			01 //skip next 1 to disable FIRS
+			
+		//do not disable if we ended up here
+		-1 * 0 09 //Action 7
+			9A //variable: has all bits set
+			01 //varsize
+			\71 //cond-type: bit is set
+			00 //value: bit to test
+			01 //skip next 1 to disable disabling FIRS
+		
+		//only do this if ttdp or ottd <1.03 or ottd <20086
+		-1 * 0 0B //Action 0B
+			03 //severity: fatal
+			7F //language: any
+			FF //message: custom
+			"\8EE00: FIRS requires OpenTTD 1.0.3 / trunk r20086 or better. \90Consult FIRS ReadMe: \8E\0Dhttp://bundles.openttdcoop.org/firs/releases/readme.txt" 00 //message
 
 //Checks for incompatible sets
 //Checks if incompatible set is not nor will be active. If incompatible set active, then skip to appropriate error message (FF).
-//ECS Chemical Vector (I) (4D 65 6F 93)
--1 * 0 07 88 04 \7gg 4D 65 6F 93 01
-INCOMPATIBLE_GRF("ECS Chemical Vector")
-//ECS Basic for Arctic	(4D 65 6F 98)
--1 * 0 07 88 04 \7gg 4D 65 6F 98 01
-INCOMPATIBLE_GRF("ESC Basic for Arctic")
-//ECS Basic for Tropic	(4D 65 6F 99)
--1 * 0 07 88 04 \7gg 4D 65 6F 99 01
-INCOMPATIBLE_GRF("ECS Basic for Tropic")
 //New Cargos by George	(4D 65 6F 81)
 -1 * 0 07 88 04 \7gg 4D 65 6F 81 01
 INCOMPATIBLE_GRF("New Cargos")
 //New Cargos by George - Petrol and Tourists	(4D 65 6F 82)
 -1 * 0 07 88 04 \7gg 4D 65 6F 82 01
 INCOMPATIBLE_GRF("New Cargos Petrol + Tourists")
+//All ECS vectors (4D 65 6F *)
+-1 * 0 07 88 08 \7gg 4D 65 6F 00 FF FF FF 00 01
+INCOMPATIBLE_GRF("ECS Vectors")
 //UKRS Industries	(44 44 06 01)
 -1 * 0 07 88 04 \7gg 44 44 06 01 01
 INCOMPATIBLE_GRF("UKRS Industries")
@@ -54,128 +104,21 @@ INCOMPATIBLE_GRF("Alpine Climate")
 //Station's name from nearby industry	(41 4C 01 01)
 -1 * 0 07 88 04 \7gg 41 4C 01 01 01
 INCOMPATIBLE_GRF("Nearby Station Names")
-//Lumber Mill 1.0 (2008-11-20)	(4D 47 08 01)
--1 * 0 07 88 04 \7gg 4D 47 08 01 01
-INCOMPATIBLE_GRF("Lumber Mill 1.0")
+//Lumber Mill 1.0 (2008-11-20) and Lumber Mill PS	(4D 47 08 *)
+-1 * 0 07 88 08 \7gg 4D 47 08 00 FF FF FF 00 01
+INCOMPATIBLE_GRF("Lumber Mill")
 
-//Reset parameters 01 and 00
--1 * 0 0D COMPATIBILITY_PARAM2 \D= FF 00 00 00 00 00
+
+//Reset parameters
 -1 * 0 0D COMPATIBILITY_PARAM1 \D= FF 00 00 00 00 00
-
 
 //Checks for sets with incompatible parameter settings
 //First load specific parameter value into FIRS parameter 00, then check loaded parameter value.
 //NA City Set	(43 41 43 61) (goto error message if parm 2 (01h) != 0)
--1 * 0 0D COMPATIBILITY_PARAM2 \D= 01 FE 43 41 43 61
--1 * 0 07 COMPATIBILITY_PARAM2 01 \7= 00 01
-INCOMPATIBLE_PARAM("NA City Set", "#2 != 0")
+-1 * 0 0D COMPATIBILITY_PARAM1 \D= 01 FE 43 41 43 61
+-1 * 0 07 COMPATIBILITY_PARAM1 01 \7= 00 01
+INCOMPATIBLE_PARAM("NA City Set", "2 must be 0")
 //CanSet	(43 41 53 61) (goto error message if parm 2 (01h) != 0)
--1 * 0 0D COMPATIBILITY_PARAM2 \D= 01 FE 43 41 53 61
--1 * 0 07 COMPATIBILITY_PARAM2 01 \7= 00 01
-INCOMPATIBLE_PARAM("CanSet", "#2 != 0")
-
-
-//Set bitmask for compatible sets
-//For each compatible set, check if set is or will become active.
-//If active or will be active add value for bit mask.
-//ECS Town Vector	(4D 65 6F 91)
--1 * 0 07 88 04 \7gg 4D 65 6F 91 01
--1 * 0 0D COMPATIBILITY_PARAM1 \D+ FF 00 \d1
-//ECS Basic Vector	(4D 65 6F 92)
--1 * 0 07 88 04 \7gg 4D 65 6F 92 01
--1 * 0 0D COMPATIBILITY_PARAM1 \D+ FF 00 \d2
-//ECS Chemical II Vector	(4D 65 6F 9C)
--1 * 0 07 88 04 \7gg 4D 65 6F 9C 01
--1 * 0 0D COMPATIBILITY_PARAM1 \D+ FF 00 \d4
-//ECS Machinery Vector	(4D 65 6F 94)
--1 * 0 07 88 04 \7gg 4D 65 6F 94 01
--1 * 0 0D COMPATIBILITY_PARAM1 \D+ FF 00 \d8
-//ECS Wood Vector	(4D 65 6F 95)
--1 * 0 07 88 04 \7gg 4D 65 6F 95 01
--1 * 0 0D COMPATIBILITY_PARAM1 \D+ FF 00 \d16
-//ECS Construction Vector	(4D 65 6F 96)
--1 * 0 07 88 04 \7gg 4D 65 6F 96 01
--1 * 0 0D COMPATIBILITY_PARAM1 \D+ FF 00 \d32
-//ECS Agricultural Vector	(4D 65 6F 97)
--1 * 0 07 88 04 \7gg 4D 65 6F 97 01
--1 * 0 0D COMPATIBILITY_PARAM1 \D+ FF 00 \d64
-//North American Renewal Set 2 (44 44 03 02)
--1 * 0 07 88 04 \7gg 44 44 03 02 03
-//Get NARS2 parm 00
--1 * 0 0D COMPATIBILITY_PARAM2 \D= 00 FE 44 44 03 02
-//Only set this bit if NARS2 parm 0 bit 2 is set.
--1 * 0 07 COMPATIBILITY_PARAM2 04 \71 01 01
--1 * 0 0D COMPATIBILITY_PARAM1 \D+ FF 00 \d128
-
-
-//Check if bitmask is allowed. We're using a dword for the parameter length.
-//No compatible grfs loaded
--1 * 0 07 COMPATIBILITY_PARAM1 04 \7= \d0 F0
-//FIRS +	ECS Town	(1)
--1 * 0 07 COMPATIBILITY_PARAM1 04 \7! \d1 01
-INCOMPATIBLE_COMBI("ECS Town")
-//FIRS +	ECS Town	+ Regearing	(129)
--1 * 0 07 COMPATIBILITY_PARAM1 04 \7! \d129 01
-INCOMPATIBLE_COMBI("ECS Town + Regearing")
-//FIRS +	ECS Town	+ ECS Machinery	(9)
--1 * 0 07 COMPATIBILITY_PARAM1 04 \7! \d9 01
-INCOMPATIBLE_COMBI("ECS Town + ECS Machinery")
-//FIRS +	ECS Town	+ ECS Wood	(17)
--1 * 0 07 COMPATIBILITY_PARAM1 04 \7! \d17 01
-INCOMPATIBLE_COMBI("ECS Town + Wood")
-//FIRS +	ECS Basic	(2)
--1 * 0 07 COMPATIBILITY_PARAM1 04 \7! \d2 01
-INCOMPATIBLE_COMBI("ECS Basic")
-//FIRS +	ECS Basic	+ Regearing	(130)
--1 * 0 07 COMPATIBILITY_PARAM1 04 \7! \d130 01
-INCOMPATIBLE_COMBI("ECS Basic + Regearing")
-//FIRS +	ECS Basic	+ ECS Machinery	(10)
--1 * 0 07 COMPATIBILITY_PARAM1 04 \7! \d10 01
-INCOMPATIBLE_COMBI("ECS Basic + Machinery")
-//FIRS +	ECS Basic	+ ECS Wood	(18)
--1 * 0 07 COMPATIBILITY_PARAM1 04 \7! \d18 01
-INCOMPATIBLE_COMBI("ECS Basic + Wood")
-//FIRS +	ECS Chemical	(4)
--1 * 0 07 COMPATIBILITY_PARAM1 04 \7! \d4 01
-INCOMPATIBLE_COMBI("ECS Chemical")
-//FIRS +	ECS Chemical	+ Regearing	(132)
--1 * 0 07 COMPATIBILITY_PARAM1 04 \7! \d132 01
-INCOMPATIBLE_COMBI("ECS Chemical + Regearing")
-//FIRS +	ECS Chemical	+ ECS Machinery	(12)
--1 * 0 07 COMPATIBILITY_PARAM1 04 \7! \d12 01
-INCOMPATIBLE_COMBI("ECS Chemical + Machinery")
-//FIRS +	ECS Chemical	+ ECS Wood	(20)
--1 * 0 07 COMPATIBILITY_PARAM1 04 \7! \d20 01
-INCOMPATIBLE_COMBI("ECS Chamical + Wood")
-//FIRS +	ECS Machinery	(8)
--1 * 0 07 COMPATIBILITY_PARAM1 04 \7! \d8 01
-INCOMPATIBLE_COMBI("ECS Machinery")
-//FIRS +	ECS Machinery	+ Regearing	(136)
--1 * 0 07 COMPATIBILITY_PARAM1 04 \7! \d136 01
-INCOMPATIBLE_COMBI("ECS Machinery + Regearing")
-//FIRS +	ECS Machinery	+ ECS Wood	(24)
--1 * 0 07 COMPATIBILITY_PARAM1 04 \7! \d24 01
-INCOMPATIBLE_COMBI("ECS Machinery + Wood")
-//FIRS +	ECS Machinery	+ ECS Wood	+ Regearing	(152)
--1 * 0 07 COMPATIBILITY_PARAM1 04 \7! \d152 01
-INCOMPATIBLE_COMBI("ECS Machinery + Wood + Regearing")
-//FIRS +	ECS Wood	(16)
--1 * 0 07 COMPATIBILITY_PARAM1 04 \7! \d16 01
-INCOMPATIBLE_COMBI("ECS Wood")
-//FIRS +	ECS Wood	+ Regearing	(144)
--1 * 0 07 COMPATIBILITY_PARAM1 04 \7! \d144 01
-INCOMPATIBLE_COMBI("ECS Wood + Regearing")
-//FIRS +	ECS Construction	(32)
--1 * 0 07 COMPATIBILITY_PARAM1 04 \7! \d32 01
-INCOMPATIBLE_COMBI("ECS Construction")
-//FIRS +	ECS Agricultural	(64)
--1 * 0 07 COMPATIBILITY_PARAM1 04 \7! \d64 01
-INCOMPATIBLE_COMBI("ECS Agricultural")
-//FIRS +	Regearing	(128)
--1 * 0 07 COMPATIBILITY_PARAM1 04 \7! \d128 F0 	//do not notify about compatibility mode, as no cargos moved
-//Else goto error FD
--1 * 0 07 9A 01 \71 00 01
-INCOMPATIBLE_COMBI("N/A (other newgrfs)")
-
-//Skip to here if no error message to display
--1 * 0 10 F0
+-1 * 0 0D COMPATIBILITY_PARAM1 \D= 01 FE 43 41 53 61
+-1 * 0 07 COMPATIBILITY_PARAM1 01 \7= 00 01
+INCOMPATIBLE_PARAM("CanSet", "2 must be 0")
