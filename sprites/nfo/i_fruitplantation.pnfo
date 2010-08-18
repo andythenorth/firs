@@ -138,8 +138,8 @@
 //Fruit Plantation
 -1 * 0 00 0A \b17 01 IND_FRUITPLANTATION //-1 * 0 00 0A <num-props> 01 <id>
 	08 IND_NULL //substitute industry type
-	0A 01 //number of industry layouts
-		\d42 //sum(size of layout definition +2 for termination)
+	0A 02 //number of industry layouts
+		\d84 //sum(size of layout definition +2 for termination)
 		//layout:
 			00 00 FE TILE_FRUITPLANTATION_1 00 //xoffs yoffs FE newtile(W)
 			00 01 FE TILE_FRUITPLANTATION_1 00
@@ -149,6 +149,16 @@
 			01 02 FE TILE_FRUITPLANTATION_1 00
 			02 01 FE TILE_FRUITPLANTATION_1 00
 			02 02 FE TILE_FRUITPLANTATION_2 00
+		00 80 //terminate layout definition
+		//layout:
+			00 00 FE TILE_FRUITPLANTATION_1 00 //xoffs yoffs FE newtile(W)
+			00 01 FE TILE_FRUITPLANTATION_1 00
+			00 02 FE TILE_FRUITPLANTATION_1 00
+			00 03 FE TILE_FRUITPLANTATION_1 00
+			01 01 FE TILE_FRUITPLANTATION_1 00
+			01 02 FE TILE_FRUITPLANTATION_1 00
+			01 03 FE TILE_FRUITPLANTATION_1 00
+			01 04 FE TILE_FRUITPLANTATION_2 00
 		00 80 //terminate layout definition
 	0B 02 //production flags 1h=extractive, 2h=organic, 4h=processing
 	0C STR_IND_CLOSE_GENERIC //industry closure message
