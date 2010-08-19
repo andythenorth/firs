@@ -59,8 +59,11 @@
 	0D 00 //land shape flags: 10 = only on flat land
 	0E 10 //callback flags
 
+// warning about ID defined with wrong feature - suppress until default tiles are replaced, then remove.
+//@@WARNING DISABLE 188
 // handle cb 2f for building on slopes (uses ID C0)
 #include "../../templates/cb2f_slopes_1.pnfo"     
+//@@WARNING ENABLE 188	
 	
 // action 3s for industry tiles 10-11	
 -1 * 0 03 09 01 1D  00  \wxC0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
