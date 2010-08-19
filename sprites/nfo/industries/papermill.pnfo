@@ -1,0 +1,89 @@
+// Defines for use in industry template
+#define THIS_INDUSTRY                 IND_PAPERMILL
+#define THIS_NUM_INPUT_CARGOS         \d01
+#define THIS_NUM_OUTPUT_CARGOS        \d02
+#define THIS_PROD_RATIO_CARGO_IN_1    \d06
+#define THIS_PROD_RATIO_CARGO_IN_2    \d01
+#define THIS_PROD_RATIO_CARGO_IN_3    \d01
+#define THIS_STR_INFO_CB3A            STR_INFO_PAPERMILL
+#define THIS_STR_INFO_CB38            STR_INFO_AVAILABILITY_1610
+#define THIS_INTRO_DATE               \d1610-01-01
+#define THIS_HANDLE_CB28              10 00
+ 
+//Redefinition of original TTD industry
+//Paper Mill
+-1 * 0 00 0A \b14 01 IND_PAPERMILL //-1 * 0 00 0A <num-props> 01 <id>
+	08 IND_PAPERMILL //substitute industry type
+	09 IND_PAPERMILL //industry type override
+	24 STR_STA_MILLS //default text for nearby station
+	10 CARGO_GOODS CARGO_MANUFACTURINGSUPPLIES //production cargo types (word; fill unused with FFh)
+	11 CARGO_WOOD FF FF FF //acceptance cargo types (dword; fill unused with FFh)
+	1C \w0 \w0 //input cargo 1 multiplier (dword M1 M2; output_typen = X*Mn/256)
+	1D \w0 \w0 //input cargo 2 multiplier
+	1E \w0 \w0 //input cargo 3 multiplier
+	16 FF FF FF //conflicting industry types (3*byte; ID+80h; FF to disable)
+	17 \b5 //probability in random game
+	18 \b2 //probability during gameplay
+	19 CLR_PAPERMILL //map colour (byte; using indexes from dos palette)
+	21 BD //callback flags 
+	22 01  //callback flags
+//To show cargo waiting to be processed at industry, ensure prop 21 is set to use production callback
+
+//No action 1 for industries, as graphics are defined by the industry-tile feature.
+
+// handle cb 28 industry location - included on a per-industry basis to allow industries to use various different schemes 
+#include "../../../templates/cb28_secondary_generic.pnfo"     
+
+
+#include "../../../templates/template_secondary_action23_A.pnfo"
+
+
+//Tiles 40..47
+-1 * 0 00 09 \b5 01 40 // -1 * 0 00 09 <num-props> 01 <id>
+	08 40 //subsitute tile type
+	09 40 //industry tile override
+	0A CARGO_WOOD 08 //tile acceptance 1
+	0B 00 00 //tile acceptance 2
+	0C 00 00 //tile acceptance 3
+-1 * 0 00 09 \b5 01 41 // -1 * 0 00 09 <num-props> 01 <id>
+	08 41 //subsitute tile type
+	09 41 //industry tile override
+	0A CARGO_WOOD 08 //tile acceptance 1
+	0B 00 00 //tile acceptance 2
+	0C 00 00 //tile acceptance 3
+-1 * 0 00 09 \b5 01 42 // -1 * 0 00 09 <num-props> 01 <id>
+	08 42 //subsitute tile type
+	09 42 //industry tile override
+	0A CARGO_WOOD 08 //tile acceptance 1
+	0B 00 00 //tile acceptance 2
+	0C 00 00 //tile acceptance 3
+-1 * 0 00 09 \b5 01 43 // -1 * 0 00 09 <num-props> 01 <id>
+	08 43 //subsitute tile type
+	09 43 //industry tile override
+	0A CARGO_WOOD 08 //tile acceptance 1
+	0B 00 00 //tile acceptance 2
+	0C 00 00 //tile acceptance 3
+-1 * 0 00 09 \b5 01 44 // -1 * 0 00 09 <num-props> 01 <id>
+	08 44 //subsitute tile type
+	09 44 //industry tile override
+	0A CARGO_WOOD 08 //tile acceptance 1
+	0B 00 00 //tile acceptance 2
+	0C 00 00 //tile acceptance 3
+-1 * 0 00 09 \b5 01 45 // -1 * 0 00 09 <num-props> 01 <id>
+	08 45 //subsitute tile type
+	09 45 //industry tile override
+	0A CARGO_WOOD 08 //tile acceptance 1
+	0B 00 00 //tile acceptance 2
+	0C 00 00 //tile acceptance 3
+-1 * 0 00 09 \b5 01 46 // -1 * 0 00 09 <num-props> 01 <id>
+	08 46 //subsitute tile type
+	09 46 //industry tile override
+	0A CARGO_WOOD 08 //tile acceptance 1
+	0B 00 00 //tile acceptance 2
+	0C 00 00 //tile acceptance 3
+-1 * 0 00 09 \b5 01 47 // -1 * 0 00 09 <num-props> 01 <id>
+	08 47 //subsitute tile type
+	09 47 //industry tile override
+	0A CARGO_WOOD 08 //tile acceptance 1
+	0B 00 00 //tile acceptance 2
+	0C 00 00 //tile acceptance 3

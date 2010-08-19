@@ -1,0 +1,45 @@
+// Defines for use in industry template
+#define THIS_INDUSTRY         IND_WATERPLANT
+#define THIS_STR_INFO_CB38    STR_INFO_GENERIC
+#define THIS_STR_BOOST        STR_INFO_ES_PRIMARY_BOOST
+#define THIS_INTRO_DATE               \d00
+
+//Redefinition of original TTD industry
+//We only need this in tropic
+-1 * 0 07 83 01 \7! 02 \b3
+//Water Plant
+-1 * 0 00 0A \b17 01 IND_WATERPLANT //-1 * 0 00 0A <num-props> 01 <id>
+	08 15 //substitute industry type
+	09 15 //industry type override
+	1F STR_IND_WATERPLANT //industry name
+	24 STR_STA_WATER //default text for nearby station
+	10 CARGO_WATER FF //production cargo types (word; fill unused with FFh)
+	11 CARGO_ENGINEERINGSUPPLIES FF FF FF //acceptance cargo types (dword; fill unused with FFh)
+	12 \b12 //production multiplier cargo 1
+	13 00 //production multiplier cargo 2
+	1C \w0 \w0 //input cargo 1 multiplier (dword M1 M2; output_typen = X*Mn/256)
+	1D \w0 \w0 //input cargo 2 multiplier
+	1E \w0 \w0 //input cargo 3 multiplier
+	16 FF FF FF //conflicting industry types (3*byte; ID+80h; FF to disable)
+	17 \b4 //probability in random game
+	18 \b3 //probability during gameplay
+	19 CLR_WATERPLANT //map colour (byte; using indexes from dos palette)
+	21 32 //callback flags 
+	22 01  //callback flags
+//To show cargo waiting to be processed at industry, ensure prop 21 is set to use production callback
+
+#include "../../../templates/template_primary_action23.pnfo"
+
+//Tiles 76..77
+-1 * 0 00 09 \b5 01 76 // -1 * 0 00 09 <num-props> 01 <id>
+	08 76 //subsitute tile type
+	09 76 //industry tile override
+	0A CARGO_ENGINEERINGSUPPLIES 08 //tile acceptance 1
+	0B 00 00 //tile acceptance 2
+	0C 00 00 //tile acceptance 3
+-1 * 0 00 09 \b5 01 77 // -1 * 0 00 09 <num-props> 01 <id>
+	08 77 //subsitute tile type
+	09 77 //industry tile override
+	0A CARGO_ENGINEERINGSUPPLIES 08 //tile acceptance 1
+	0B 00 00 //tile acceptance 2
+	0C 00 00 //tile acceptance 3

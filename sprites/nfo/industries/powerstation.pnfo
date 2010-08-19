@@ -1,0 +1,61 @@
+// Defines for use in industry template
+#define THIS_INDUSTRY         IND_POWERSTATION
+#define THIS_STR_INFO_CB38    STR_INFO_AVAILABILITY
+#define THIS_STR_INFO         STR_INFO_POWERSTATION_0
+#define THIS_STR_INFO_WARN_1  STR_INFO_POWERSTATION_1
+#define THIS_STR_INFO_WARN_2  STR_INFO_POWERSTATION_2
+#define THIS_INTRO_DATE       \d1881-01-01
+
+#define THIS_NUM_MONTHS_CLOSURE_PROTECTED     \d30
+
+//Redefinition of original TTD industry
+//Power Station
+-1 * 0 00 0A \b15 01 IND_POWERSTATION //-1 * 0 00 0A <num-props> 01 <id>
+	08 IND_POWERSTATION //substitute industry type
+	09 IND_POWERSTATION //industry type override
+	0B 04 //production flags 1h=extractive, 2h=organic, 4h=processing
+	24 STR_STA_POWERSTATION //default text for nearby station
+	11 CARGO_COAL CARGO_FUELOIL FF FF //acceptance cargo types (dword; fill unused with FFh)
+	10 FF FF //production cargo types (word; fill unused with FFh)
+	1C \w0 \w0 //input cargo 1 multiplier (dword M1 M2; output_typen = X*Mn/256)
+	1D \w0 \w0 //input cargo 2 multiplier
+	1E \w0 \w0 //input cargo 3 multiplier
+	16 FF FF FF //conflicting industry types (3*byte; ID+80h; FF to disable)
+	17 \b5 //probability in random game
+	18 \b2 //probability during gameplay
+	19 CLR_POWERSTATION //map colour (byte; using indexes from dos palette)
+	21 B3 //callback flags 
+	22 01 //callback flags
+//To show cargo waiting to be processed at industry, ensure prop 21 is set to use production callback
+
+//No action 1 for industries, as graphics are defined by the industry-tile feature.
+
+#include "../../../templates/template_accept_only_action23_A.pnfo"
+
+//Tiles 07..0A
+-1 * 0 00 09 \b5 01 07 // -1 * 0 00 09 <num-props> 01 <id>
+	08 07 //subsitute tile type
+	09 07 //industry tile override
+	0A CARGO_COAL 08 //tile acceptance 1
+	0B CARGO_FUELOIL 08 //tile acceptance 2
+	0C 00 00 //tile acceptance 3
+-1 * 0 00 09 \b5 01 08 // -1 * 0 00 09 <num-props> 01 <id>
+	08 08 //subsitute tile type
+	09 08 //industry tile override
+	0A CARGO_COAL 08 //tile acceptance 1
+	0B CARGO_FUELOIL 08 //tile acceptance 2
+	0C 00 00 //tile acceptance 3
+-1 * 0 00 09 \b5 01 09 // -1 * 0 00 09 <num-props> 01 <id>
+	08 09 //subsitute tile type
+	09 09 //industry tile override
+	0A CARGO_COAL 08 //tile acceptance 1
+	0B CARGO_FUELOIL 08 //tile acceptance 2
+	0C 00 00 //tile acceptance 3
+-1 * 0 00 09 \b5 01 0A // -1 * 0 00 09 <num-props> 01 <id>
+	08 0A //subsitute tile type
+	09 0A //industry tile override
+	0A 00 00 //tile acceptance 1
+	0B 00 00 //tile acceptance 2
+	0C 00 00 //tile acceptance 3
+
+#undef THIS_NUM_MONTHS_CLOSURE_PROTECTED

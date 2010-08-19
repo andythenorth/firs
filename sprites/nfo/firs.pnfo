@@ -27,61 +27,67 @@
 
  #include "sprites/nfo/disablettdind.pnfo"
 
- #include "sprites/nfo/i_basetiles.pnfo"
- #include "sprites/nfo/i_generictiles.pnfo"
+ #include "sprites/nfo/basetiles.pnfo"
+ #include "sprites/nfo/generictiles.pnfo"
 
-// industry includes.  I found grouping them in fives improved readability :)
+// industry includes.  Grouped alphabetically
  #include "sprites/nfo/industries/aluminiumplant.pnfo"
  #include "sprites/nfo/industries/arablefarm.pnfo"
+
  #include "sprites/nfo/industries/bakery.pnfo"
  #include "sprites/nfo/industries/bauxitemine.pnfo"
+ #include "sprites/nfo/industries/blacksmith.pnfo"
+ #include "sprites/nfo/industries/brewery.pnfo"
 
+ #include "sprites/nfo/industries/cementplant.pnfo"
+ #include "sprites/nfo/industries/coalmine.pnfo"
+ 
+ #include "sprites/nfo/industries/dairyfarm.pnfo"
+ #include "sprites/nfo/industries/dairy.pnfo"
+ 
+ #include "sprites/nfo/industries/fertiliserplant.pnfo"
+ #include "sprites/nfo/industries/fishinggrounds.pnfo"
+ #include "sprites/nfo/industries/fishingharbour.pnfo" 
+ #include "sprites/nfo/industries/forest.pnfo"
+ #include "sprites/nfo/industries/fruitplantation.pnfo"
+ #include "sprites/nfo/industries/furniturefactory.pnfo"
 
- #include "sprites/nfo/i_coalmine.pnfo"
- #include "sprites/nfo/i_ironoremine.pnfo"
- #include "sprites/nfo/i_oilwell.pnfo"
- #include "sprites/nfo/i_oilplatform.pnfo"
- #include "sprites/nfo/i_oilrefinery.pnfo"
+ #include "sprites/nfo/industries/gasstation.pnfo"
+ #include "sprites/nfo/industries/generalstore.pnfo"
+ #include "sprites/nfo/industries/glassworks.pnfo"
+ 
+ #include "sprites/nfo/industries/ironoremine.pnfo"
 
- #include "sprites/nfo/i_forest.pnfo"
- #include "sprites/nfo/i_sawmill.pnfo"
- #include "sprites/nfo/i_papermill.pnfo"
- #include "sprites/nfo/i_steelmill.pnfo"
- #include "sprites/nfo/i_machineshop.pnfo"
+ #include "sprites/nfo/industries/junkyard.pnfo"
+
+ #include "sprites/nfo/industries/lumberyard.pnfo"
+
+ #include "sprites/nfo/industries/machineshop.pnfo"
+ #include "sprites/nfo/industries/meatpacker.pnfo"
+ #include "sprites/nfo/industries/metalfoundry.pnfo"
+ #include "sprites/nfo/industries/mixedfarm.pnfo"
  
- #include "sprites/nfo/i_waterplant.pnfo" 
- #include "sprites/nfo/i_watertower.pnfo"
- #include "sprites/nfo/i_fruitplantation.pnfo"
-  
- #include "sprites/nfo/i_brewery.pnfo"
- #include "sprites/nfo/i_cementplant.pnfo"
- #include "sprites/nfo/i_fertiliserplant.pnfo"
- #include "sprites/nfo/i_plasticsplant.pnfo"
+ #include "sprites/nfo/industries/oilplatform.pnfo"
+ #include "sprites/nfo/industries/oilrefinery.pnfo"
+ #include "sprites/nfo/industries/oilwell.pnfo"
+
+ #include "sprites/nfo/industries/papermill.pnfo"
+ #include "sprites/nfo/industries/plasticsplant.pnfo"
+
+ #include "sprites/nfo/industries/quarry.pnfo"
  
- #include "sprites/nfo/i_sandpit.pnfo"
- #include "sprites/nfo/i_glassworks.pnfo"
- #include "sprites/nfo/i_meatpacker.pnfo"
- #include "sprites/nfo/i_dairyfarm.pnfo"
- #include "sprites/nfo/i_dairy.pnfo"
+ #include "sprites/nfo/industries/retailmarket.pnfo"
+
+ #include "sprites/nfo/industries/sandpit.pnfo"
+ #include "sprites/nfo/industries/sawmill.pnfo"
+ #include "sprites/nfo/industries/sheepfarm.pnfo"
+ #include "sprites/nfo/industries/steelmill.pnfo"
+ #include "sprites/nfo/industries/sugarrefinery.pnfo"
+ #include "sprites/nfo/industries/supermarket.pnfo"
+
+ #include "sprites/nfo/industries/textilemill.pnfo"
  
- #include "sprites/nfo/i_textilemill.pnfo"
- #include "sprites/nfo/i_furniturefactory.pnfo"
- #include "sprites/nfo/i_metalfoundry.pnfo"
- 
- #include "sprites/nfo/i_mixedfarm.pnfo"
- #include "sprites/nfo/i_sheepfarm.pnfo"
- #include "sprites/nfo/i_junkyard.pnfo"
- #include "sprites/nfo/i_generalstore.pnfo"
- #include "sprites/nfo/i_quarry.pnfo"
- 
- #include "sprites/nfo/i_lumberyard.pnfo"
- #include "sprites/nfo/i_fishinggrounds.pnfo"
- #include "sprites/nfo/i_fishingharbour.pnfo" 
- #include "sprites/nfo/i_gasstation.pnfo"
- #include "sprites/nfo/i_blacksmith.pnfo"
- 
- #include "sprites/nfo/i_windmill.pnfo"
- #include "sprites/nfo/i_wholesalemarket.pnfo"
- #include "sprites/nfo/i_supermarket.pnfo"
- #include "sprites/nfo/i_retailmarket.pnfo"
- #include "sprites/nfo/i_sugarrefinery.pnfo"
+ #include "sprites/nfo/industries/waterplant.pnfo" 
+ #include "sprites/nfo/industries/watertower.pnfo"
+ #include "sprites/nfo/industries/wholesalemarket.pnfo"
+ #include "sprites/nfo/industries/windmill.pnfo"
