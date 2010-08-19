@@ -63,7 +63,7 @@
 	\wxA1 //<default>
 
 //handle cb2f (tile shape check)
-#include "../../templates/cb2f_generic.pnfo"     
+#include "../../../templates/cb2f_generic.pnfo"     
 
 //Action3 attach sprites to industry tile
 
@@ -132,9 +132,9 @@
 //No action 1 for industries, as graphics are defined by the industry-tile feature.
 
 // handle cb 28 industry location - included on a per-industry basis to allow industries to use various different schemes 
-#include "../../templates/cb28_secondary_generic.pnfo"     
+#include "../../../templates/cb28_secondary_generic.pnfo"     
 
 
-#include "../../templates/template_secondary_action23_B.pnfo"
+#include "../../../templates/template_secondary_action23_B.pnfo"
 
 
