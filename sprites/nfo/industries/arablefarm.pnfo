@@ -97,13 +97,13 @@
     \wxB3 \b3 \b3 //<set-id \w> <low-range> <high-range>
 	\wx00 //<default> (first tile layout available)
 
-#include "../../templates/cb2f_generic.pnfo"     
+#include "../../../templates/cb2f_generic.pnfo"     
 
-#include "../../templates/cb2f_no_slopes.pnfo"  
+#include "../../../templates/cb2f_no_slopes.pnfo"  
 
-#include "../../templates/cb2f_not_too_far_into_desert.pnfo"     
+#include "../../../templates/cb2f_not_too_far_into_desert.pnfo"     
 
-#include "../../templates/cb2f_not_above_snowline.pnfo"     
+#include "../../../templates/cb2f_not_above_snowline.pnfo"     
 
 -1 * 0 02 09 C0 //Handle callbacks
 	81 0C 00 FF //no shift, no mask
@@ -172,7 +172,7 @@
 
 
 // handle cb 28 industry location - included on a per-industry basis to allow industries to use various different schemes 
-#include "../../templates/cb28_cluster_farms.pnfo"     
+#include "../../../templates/cb28_cluster_farms.pnfo"     
 
 
-#include "../../templates/template_primary_action23.pnfo"
+#include "../../../templates/template_primary_action23.pnfo"
