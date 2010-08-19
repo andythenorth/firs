@@ -1,0 +1,54 @@
+// prevents industries building too far into desert
+// checks neighbouring tiles
+// if any tile is 'normal' or 'rainforest', branches to allow building
+// otherwise building not allowed
+
+-1 * 0	02 09 DB //handle cb 2F (custom shape check for tiles)
+  81 60 11 0A \b01 // check tile contents
+  \b1
+    01 84 00 \b01 \b01  //don't allow building if desert (all tiles checked in this chain are desert)
+  DA 00 //default 
+
+-1 * 0	02 09 DB //handle cb 2F (custom shape check for tiles)
+  81 60 10 0A \b01 // check tile contents
+  \b1
+    DB 00 \b01 \b01  //go to next tile check if desert 
+  DA 00 //default
+
+-1 * 0	02 09 DB //handle cb 2F (custom shape check for tiles)
+  81 60 1F 0A \b01 // check tile contents
+  \b1
+    DB 00 \b01 \b01  //go to next tile check if desert 
+  DA 00 //default
+
+-1 * 0	02 09 DB //handle cb 2F (custom shape check for tiles)
+  81 60 01 0A \b01 // check tile contents
+  \b1
+    DB 00 \b01 \b01  //go to next tile check if desert 
+  DA 00 //default
+
+-1 * 0	02 09 DB //handle cb 2F (custom shape check for tiles)
+  81 60 0F 0A \b01 // check tile contents
+  \b1
+    DB 00 \b01 \b01  //go to next tile check if desert 
+  DA 00 //default
+
+-1 * 0	02 09 DB //handle cb 2F (custom shape check for tiles)
+  81 60 F1 0A \b01 // check tile contents
+  \b1
+    DB 00 \b01 \b01  //go to next tile check if desert 
+  DA 00 //default
+
+-1 * 0	02 09 DB //handle cb 2F (custom shape check for tiles)
+  81 60 F0 0A \b01 // check tile contents
+  \b1
+    DB 00 \b01 \b01  //go to next tile check if desert 
+  DA 00 //default
+  
+-1 * 0	02 09 DA //handle cb 2F (custom shape check for tiles)
+  81 60 FF 0A \b01 // check tile contents
+  \b1
+    DB 00 \b01 \b01  //go to next tile check if desert 
+  DA 00 //default
+  
+  
