@@ -68,7 +68,7 @@
 
 
 // handle cb 2f for building on slopes (uses ID C0)
-#include "../../templates/cb2f_slopes_1.pnfo"     
+#include "../../../templates/cb2f_slopes_1.pnfo"     
 
 //Action3 attach sprites to industry tile
 
@@ -121,7 +121,7 @@
 //To show cargo waiting to be processed at industry, ensure prop 21 is set to use production callback
 
 // handle cb 28 industry location - included on a per-industry basis to allow industries to use various different schemes 
-#include "../../templates/cb28_cluster_mines.pnfo"     
+#include "../../../templates/cb28_cluster_mines.pnfo"     
 
 
-#include "../../templates/template_primary_action23.pnfo"
+#include "../../../templates/template_primary_action23.pnfo"
