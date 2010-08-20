@@ -1,0 +1,48 @@
+//WATER TOWER
+//Redefinition of original TTD industry
+//We only need this in tropic
+-1 * 0 07 83 01 \7! 02 \b2
+//Water Tower
+-1 * 0 00 0A \b11 01 IND_WATERTOWER //-1 * 0 00 0A <num-props> 01 <id>
+	08 16 //substitute industry type
+	09 16 //industry type override
+	24 STR_STA_WATER //default text for nearby station
+	10 FF FF //production cargo types (word; fill unused with FFh)
+	11 CARGO_WATER FF FF FF //acceptance cargo types (dword; fill unused with FFh)
+	16 FF FF FF //conflicting industry types (3*byte; ID+80h; FF to disable)
+	17 \b8 //probability in random game
+	18 \b4 //probability during gameplay
+	19 CLR_WATERTOWER //map colour (byte; using indexes from dos palette)
+	21 84 //callback flags 
+	22 01  //callback flags
+//To show cargo waiting to be processed at industry, ensure prop 21 is set to use production callback
+
+//No action 1 for industries, as graphics are defined by the industry-tile feature.
+
+//Dummy production callback to keep default-id happy
+-1 * 0 02 0A 00 //-1 * 0 0A <set-id>
+	00 //version
+	\w255 \w255  \w255 //<subtract-in-1..3>
+	\w255 \w255 //<add-out-1..2>
+	00 //don't repeat
+	
+//Callback 38 display additional text in fund window
+-1 * 0 02 0A C0 //-1 * 0 0A <set-id>
+	85 0C //<type> <variable> word-access callback
+	00 FF FF //no shift, no mask
+	\b2 //number of ranges to check
+	STR_INFO_GENERIC 80   38 00   38 00 //return text-ID D0xx if cb 38 (fund window)
+	STR_INFO_GENERIC 80   3A 00   3A 00 //return text-ID D0xx if cb 3A (industry window)
+	\w0 //default
+
+
+//Industry action 3 attach varaction2 chain to industry
+-1 * 0 03 0A 01 IND_WATERTOWER 00 \wxC0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>	
+
+//Tiles 78
+-1 * 0 00 09 \b5 01 78 // -1 * 0 00 09 <num-props> 01 <id>
+	08 78 //subsitute tile type
+	09 78 //industry tile override
+	0A CARGO_WATER 08 //tile acceptance 1
+	0B 00 00 //tile acceptance 2
+	0C 00 00 //tile acceptance 3
