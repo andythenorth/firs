@@ -6,9 +6,8 @@
 
 //Redefinition of original TTD industry
 //Oil Well
--1 * 0 00 0A \b11 01 IND_OILWELL //-1 * 0 00 0A <num-props> 01 <id>
-	08 0B //substitute industry type
-	09 0B //industry type override
+-1 * 0 00 09 \b11 01 IND_OILWELL //-1 * 0 00 0A <num-props> 01 <id>
+	08 IND_NULL //substitute industry type
 	24 STR_STA_WELLS //default text for nearby station
 	11 CARGO_ENGINEERINGSUPPLIES FF FF FF //acceptance cargo types (dword; fill unused with FFh)
 	12 \b19 //production multiplier cargo 1
