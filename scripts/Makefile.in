@@ -1,5 +1,7 @@
 # Here also go all build targets specific to this very newgrf
 
+sprites/nfo/firs.pnfo: sprites/nfo/cargo_schemes.pnfo sprites/nfo/cargos.pnfo
+
 sprites/nfo/cargo_schemes.pnfo:: sprites/nfo/cargo_schemes.list sprites/nfo/cargo_schemes.template
 	$(_E) "[Generating] $@"
 	$(_V) cat sprites/nfo/cargo_schemes.list | grep -v '//' | $(AWK) -f 'scripts/cargoschemes_fieldnames.awk' -f 'scripts/gen_cargo_schemes.awk' > $@
