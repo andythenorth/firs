@@ -4,11 +4,55 @@
 #define THIS_STR_BOOST        STR_INFO_ES_PRIMARY_BOOST
 #define THIS_INTRO_DATE       \d1884-01-01
 
+//Industry tiles definition (everything for pumps first, then greeble tile)
+
+//Pumps tile action 0
+-1 * 0 00 09 \b6 01 TILE_OILWELL_1 // -1 * 0 00 09 <num-props> 01 <id>
+	08 TILE_NULL //subsitute tile type
+	0A CARGO_ENGINEERINGSUPPLIES 08 //tile acceptance 1
+	0B 00 00 //tile acceptance 2
+	0C 00 00 //tile acceptance 3
+	0D 00 //land shape flags: 10 = only on flat land
+	0E 00 //callback flags
+
+//Pumps tile action 2	
+-1 * 0 02 09 00 00 //-1 * 0 02 09 <set-id> 00
+	\d2173 //groundsprite
+	\d2177 //building sprite
+	\b1 \b2 //xofs yofs
+	\b15 \b14 \b16 //xextent yextent zextent
+
+// warning about ID defined with wrong feature - suppress until default tiles are replaced, then remove.
+//@@WARNING DISABLE 188
+// handle cb 2f for building on slopes (uses ID C0)
+//Tile action 3
+-1 * 0 03 09 01 TILE_OILWELL_1 00 \wx00 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
+//@@WARNING ENABLE 188
+
+
 //Redefinition of original TTD industry
 //Oil Well
--1 * 0 00 09 \b11 01 IND_OILWELL //-1 * 0 00 0A <num-props> 01 <id>
+-1 * 0 00 0A \b18 01 IND_OILWELL //-1 * 0 00 0A <num-props> 01 <id>
 	08 IND_NULL //substitute industry type
-	24 STR_STA_WELLS //default text for nearby station
+	0A 01 //number of industry layouts
+		\d42 //sum(size of layout definition +2 for termination)
+		//layout:
+			00 00 FE TILE_OILWELL_1 00 //xoffs yoffs FE newtile(W)
+			00 01 FE TILE_OILWELL_1 00
+			00 02 FE TILE_OILWELL_1 00
+			01 00 FE TILE_OILWELL_1 00
+			01 01 FE TILE_OILWELL_1 00
+			01 02 FE TILE_OILWELL_1 00
+			02 01 FE TILE_OILWELL_1 00
+			02 02 FE TILE_OILWELL_1 00
+		00 80 //terminate layout definition	
+	0B 02 //production flags 1h=extractive, 2h=organic, 4h=processing
+	0C STR_IND_CLOSE_GENERIC //industry closure message
+	0D STR_IND_PRODINCR_GENERIC //production increase message
+	0E STR_IND_PRODDECR_GENERIC //production decrease message
+	1B STR_IND_NEW_GENERIC //new industry message
+	1F STR_IND_FOREST //industry name
+	10 CARGO_OIL FF //production cargo types (word; fill unused with FFh)
 	11 CARGO_ENGINEERINGSUPPLIES FF FF FF //acceptance cargo types (dword; fill unused with FFh)
 	12 \b19 //production multiplier cargo 1
 	16 FF FF FF //conflicting industry types (3*byte; ID+80h; FF to disable)
@@ -16,56 +60,10 @@
 	18 \b3 //probability during gameplay
 	19 CLR_OILWELL //map colour (byte; using indexes from dos palette)
 	21 B3 //callback flags 
-	22 05  //callback flags
+	22 05  //callback flags	
+	24 STR_STA_WELLS //default text for nearby station
 //To show cargo waiting to be processed at industry, ensure prop 21 is set to use production callback
 
 //No action 1 for industries, as graphics are defined by the industry-tile feature.
 
 #include "../../../templates/template_primary_action23.pnfo"
-
-
-//Tiles 1D..20
--1 * 0 00 09 \b7 01 1D // -1 * 0 00 09 <num-props> 01 <id>
-	08 1D //subsitute tile type
-	09 1D //industry tile override
-	0A CARGO_ENGINEERINGSUPPLIES 08 //tile acceptance 1
-	0B 00 00 //tile acceptance 2
-	0C 00 00 //tile acceptance 3
-	0D 00 //land shape flags: 10 = only on flat land
-	0E 10 //callback flags
--1 * 0 00 09 \b7 01 1E // -1 * 0 00 09 <num-props> 01 <id>
-	08 1E //subsitute tile type
-	09 1E //industry tile override
-	0A CARGO_ENGINEERINGSUPPLIES 08 //tile acceptance 1
-	0B 00 00 //tile acceptance 2
-	0C 00 00 //tile acceptance 3
-	0D 00 //land shape flags: 10 = only on flat land
-	0E 10 //callback flags
--1 * 0 00 09 \b7 01 1F // -1 * 0 00 09 <num-props> 01 <id>
-	08 1F //subsitute tile type
-	09 1F //industry tile override
-	0A CARGO_ENGINEERINGSUPPLIES 08 //tile acceptance 1
-	0B 00 00 //tile acceptance 2
-	0C 00 00 //tile acceptance 3
-	0D 00 //land shape flags: 10 = only on flat land
-	0E 10 //callback flags
--1 * 0 00 09 \b7 01 20 // -1 * 0 00 09 <num-props> 01 <id>
-	08 20 //subsitute tile type
-	09 20 //industry tile override
-	0A CARGO_ENGINEERINGSUPPLIES 08 //tile acceptance 1
-	0B 00 00 //tile acceptance 2
-	0C 00 00 //tile acceptance 3
-	0D 00 //land shape flags: 10 = only on flat land
-	0E 10 //callback flags
-
-// warning about ID defined with wrong feature - suppress until default tiles are replaced, then remove.
-//@@WARNING DISABLE 188
-// handle cb 2f for building on slopes (uses ID C0)
-#include "../../../templates/cb2f_slopes_1.pnfo"     
-//@@WARNING ENABLE 188	
-	
-// action 3s for industry tiles 10-11	
--1 * 0 03 09 01 1D  00  \wxC0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
--1 * 0 03 09 01 1E  00  \wxC0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
--1 * 0 03 09 01 1F  00  \wxC0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
--1 * 0 03 09 01 20  00  \wxC0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
