@@ -15,7 +15,7 @@
 #define IND_SAWMILL               0C
 #define IND_FURNITUREFACTORY      0D
 #define IND_PAPERMILL             0E
-#define IND_OILWELL               0F
+#define IND_OILWELLS              0F
 #define IND_OILPLATFORM           10
 #define IND_OILREFINERY           11
 #define IND_PLASTICSPLANT         12
@@ -130,8 +130,8 @@
 #define TILE_SUPERMARKET_1                 D4
 #define TILE_RETAILMARKET_1                D5
 #define TILE_SUGARREFINERY_1               D6
-#define TILE_OILWELL_1                     D7
-#define TILE_OILWELL_2                     D8
+#define TILE_OILWELLS_1                    D7
+#define TILE_OILWELLS_2                    D8
 
 #define TILE_FIELD_TEST                    F0
 // generic tiles start at D0 !
@@ -256,7 +256,7 @@
 #define STR_IND_SUPERMARKET           9A DC
 #define STR_IND_RETAILMARKET          9B DC
 #define STR_IND_SUGARREFINERY         9C DC
-#define STR_IND_CANEPLANTATION        9D DC
+#define STR_IND_OILWELLS              9D DC
 
 
 //Definition of industry messages using TTD strings
