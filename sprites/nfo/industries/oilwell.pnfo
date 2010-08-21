@@ -13,7 +13,7 @@
 	0B 00 00 //tile acceptance 2
 	0C 00 00 //tile acceptance 3
 	0D 00 //land shape flags: 10 = only on flat land
-	0E 00 //callback flags
+	0E 10 //callback flags
 
 //Pumps tile action 2	
 -1 * 0 02 09 00 00 //-1 * 0 02 09 <set-id> 00
@@ -22,12 +22,25 @@
 	\b1 \b2 //xofs yofs
 	\b15 \b14 \b16 //xextent yextent zextent
 
+
+// check climate and branch to different terrain checks appropriately
+-1 * 0 02 09 A0 
+	81 03 //check climate
+	00 FF //don't shift, don't mask
+	\b3 //number of ranges to check (number of layouts)
+	  \wx00 \b0 \b0 //<set-id \w> <low-range> <high-range>  // temperate
+	  \wx00 \b1 \b1 //<set-id \w> <low-range> <high-range>  // arctic
+	  \wx00 \b2 \b2 //<set-id \w> <low-range> <high-range>  // tropic
+	\wx00 //<default>
+
 // warning about ID defined with wrong feature - suppress until default tiles are replaced, then remove.
 //@@WARNING DISABLE 188
 // handle cb 2f for building on slopes (uses ID C0)
-//Tile action 3
--1 * 0 03 09 01 TILE_OILWELLS_1 00 \wx00 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
+#include "../../../templates/cb2f_slopes_1.pnfo"     
 //@@WARNING ENABLE 188
+
+//Tile action 3
+-1 * 0 03 09 01 TILE_OILWELLS_1 00 \wxC0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
 
 
 //Redefinition of original TTD industry
