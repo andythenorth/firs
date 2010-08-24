@@ -115,10 +115,12 @@ INCOMPATIBLE_GRF("Lumber Mill")
 //Checks for sets with incompatible parameter settings
 //First load specific parameter value into FIRS parameter 00, then check loaded parameter value.
 //NA City Set	(43 41 43 61) (goto error message if parm 2 (01h) != 0)
+-1 * 0 07 88 04 \7gg 43 41 43 61 03 //skip next three if NA City Set is not active nor will be active
 -1 * 0 0D COMPATIBILITY_PARAM1 \D= 01 FE 43 41 43 61
 -1 * 0 07 COMPATIBILITY_PARAM1 01 \7= 00 01
 INCOMPATIBLE_PARAM("NA City Set", "2 must be 0")
 //CanSet	(43 41 53 61) (goto error message if parm 2 (01h) != 0)
+-1 * 0 07 88 04 \7gg 43 41 53 61 03 //skip next three if CanSet is not active nor will be active
 -1 * 0 0D COMPATIBILITY_PARAM1 \D= 01 FE 43 41 53 61
 -1 * 0 07 COMPATIBILITY_PARAM1 01 \7= 00 01
 INCOMPATIBLE_PARAM("CanSet", "2 must be 0")
