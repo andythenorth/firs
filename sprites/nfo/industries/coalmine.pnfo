@@ -1,3 +1,4 @@
+//COAL MINE
 // Defines for use in industry template
 #define THIS_INDUSTRY         IND_COALMINE
 #define THIS_STR_INFO_CB38    STR_INFO_GENERIC
@@ -76,19 +77,3 @@
 	0B 00 00 //tile acceptance 2
 	0C 00 00 //tile acceptance 3
 	0E 00 //callback flags
-	
-// action 3s for industry tiles 00-06	
--1 * 0 03 09 01 00
-  00 FF FF
--1 * 0 03 09 01 01
-  00 FF FF
--1 * 0 03 09 01 02
-  00 FF FF
--1 * 0 03 09 01 03
-  00 FF FF
--1 * 0 03 09 01 04
-  00 FF FF
--1 * 0 03 09 01 05
-  00 FF FF
--1 * 0 03 09 01 06
-  00 FF FF
