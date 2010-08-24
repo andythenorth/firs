@@ -122,3 +122,7 @@ INCOMPATIBLE_PARAM("NA City Set", "2 must be 0")
 -1 * 0 0D COMPATIBILITY_PARAM1 \D= 01 FE 43 41 53 61
 -1 * 0 07 COMPATIBILITY_PARAM1 01 \7= 00 01
 INCOMPATIBLE_PARAM("CanSet", "2 must be 0")
+//TTRS	(56 43 00 01) (goto error message if parm 5 (04h) != 1)
+-1 * 0 0D COMPATIBILITY_PARAM1 \D= 04 FE 56 43 00 01
+-1 * 0 07 COMPATIBILITY_PARAM1 01 \7= 01 01
+INCOMPATIBLE_PARAM("Total Town Replacement Set v3.03 or higher with the", "to disable the banks set is required for TTRS")
