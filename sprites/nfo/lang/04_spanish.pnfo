@@ -15,7 +15,13 @@
 #define TEXT_CRG_SUGARCANE_MUNIT                        "\UE07C toneladas de caña de azúcar"
 #define TEXT_CRG_SUGARCANE_TABBR                        "\0ECA"
 
-//Waste 
+//Sugar beet
+#define TEXT_CRG_SUGARBEET_CTYPE                         "Remolacha azucarera"
+#define TEXT_CRG_SUGARBEET_1UNIT                         "\UE07C tonelada de remolacha azucarera"
+#define TEXT_CRG_SUGARBEET_MUNIT                         "\UE07C toneladas de remolacha azucarera"
+#define TEXT_CRG_SUGARBEET_TABBR                         "\0ERA"
+
+//Waste
 #define TEXT_CRG_WASTE_CTYPE                            "Residuos"
 #define TEXT_CRG_WASTE_1UNIT                            "\UE07C tonelada de residuos"
 #define TEXT_CRG_WASTE_MUNIT                            "\UE07C toneladas de residuos"
@@ -145,7 +151,7 @@
 #define TEXT_IND_SURVEYSUPPLYDEPOT                      "Depósito de Suministros de Prospección"
 #define TEXT_IND_SURVEYCAMP                             "Campo de Prospección"
 #define TEXT_IND_JUNKYARD                               "Desguace"
-#define TEXT_IND_GENERALSTORE                           "Grandes Almacenes"
+#define TEXT_IND_GENERALSTORE                           "Tienda"
 #define TEXT_IND_BAUXITEMINE                            "Mina de Bauxita"
 #define TEXT_IND_FISHINGHARBOUR                         "Puerto de Pesca"
 #define TEXT_IND_FISHPROCESSOR                          "Procesadora de Pescado"
@@ -158,6 +164,13 @@
 #define TEXT_IND_GRAVELQUARRY                           "Dragado de Grava"
 #define TEXT_IND_WATERPLANT                             "Planta de Agua"
 #define TEXT_IND_GASSTATION                             "Gasolinera"
+#define TEXT_IND_FISHINGGROUNDS                         "Zona de Pesca"
+#define TEXT_IND_BLACKSMITH                             "Herrería"
+#define TEXT_IND_WINDMILL                               "Molino de Viento"
+#define TEXT_IND_WHOLESALEMARKET                        "Mercado Mayorista"
+#define TEXT_IND_SUPERMARKET                            "Supermercado"
+#define TEXT_IND_RETAILMARKET                           "Centro Comercial"
+#define TEXT_IND_SUGARREFINERY                          "Refinería de Azúcar"
 
 //Station texts for station name prefixes/suffixes. \80 where town name goes
 #define TEXT_STA_FARM                                   "\80 Granja"
@@ -172,10 +185,22 @@
 #define TEXT_STA_QUARRY                                 "\80 Cantera"
 #define TEXT_STA_DEPOT                                  "\80 Depósito"
 #define TEXT_STA_DREDGINGSITE                           "\80 Zona de Dragado"
+#define TEXT_STA_FISHINGGROUNDS                         "\80 Zona de Pesca"
+#define TEXT_STA_BLACKSMITH                             "\80 Herrería"
+#define TEXT_STA_MARKET                                 "\80 Mercado"
 
 
 //Additional texts for purchase window
 #define TEXT_INFO_GENERIC                               ""
+#define TEXT_INFO_AVAILABILITY                          "\98Disponible: \90\UE082"
+#define TEXT_INFO_AVAILABILITY_1610                     "\98Disponible: \901 de Enero de 1610"
+#define TEXT_INFO_AVAILABILITY_1730                     "\98Disponible: \901 de Enero de 1730"
+#define TEXT_INFO_AVAILABILITY_1762                     "\98Disponible: \901 de Enero de 1762"
+#define TEXT_INFO_AVAILABILITY_1780                     "\98Disponible: \901 de Enero de 1780"
+#define TEXT_INFO_GENERIC_CLOSE_0                       "\n\98Esta industria podría cerrar a menos que se entregue carga en un plazo de:\0D\90  \UE07C meses"
+#define TEXT_INFO_GENERIC_CLOSE_1                       "\n\98Esta industria podría cerrar a menos que se entregue carga en un plazo de:\0D\94  \UE07C mes"
+#define TEXT_INFO_GENERIC_CLOSE_2                       "\n\8BNo se ha entregado carga durante al menos\85\85\UE07C meses. Esta industria podría cerrar pronto. \0D"
+
 #define TEXT_INFO_LIMIT_200                             "\98 (max 200)"
 #define TEXT_INFO_LIMIT_800                             "\98 (max 800)"
 #define TEXT_INFO_ACCEPTING                             "\0D" // empty line breaks to stop window size jumping around 
@@ -208,6 +233,7 @@
 #define TEXT_INFO_5T_PER_8T_FRUITSANDVEGETABLES         "  5t por cada 8t de frutas y vegetales entregadas\0D"
 #define TEXT_INFO_5T_PER_8T_MILK                        "  5t por cada 8t de leche entregadas\0D"
 #define TEXT_INFO_5T_PER_8T_LIVESTOCK                   "  5t por cada 8t de ganado entregadas\0D"
+#define TEXT_INFO_5T_PER_8T_FISH                        "  5t por cada 8t de pescado entregadas\0D"
 #define TEXT_INFO_5T_PER_8T_WOOL                        "  5t por cada 8t de lana entregadas\0D"
 #define TEXT_INFO_2T_PER_8T_SAND                        "  2t por cada 8t de arena entregadas\0D"
 #define TEXT_INFO_4T_PER_8T_GRAVEL                      "  4t por cada 8t de grava entregadas\0D"
