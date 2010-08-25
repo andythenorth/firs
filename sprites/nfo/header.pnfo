@@ -52,35 +52,34 @@
 
 // industry closure / opening
 -1 * 0	 14 
-  "C" "INFO"
-    "C" "PARA"
-      "C" \d2
-        "T" "NAME" 7F "Allow primary industries to close " 00
-        "T" "DESC" 7F "By default, FIRS primary industries will never close."
-         "\0D\0DIf primary closing is turned on, primary industries will close when production "
-         "falls to low levels (the level varies for each type of industry). "
-         "\89Requires 'primary production decrease' on." 00
-        "B" "TYPE" \w1 1
-        "B" "MASK" \w3 2 0 1
-        00
-      "C" \d3
-        "T" "NAME" 7F "Allow secondary industries to close " 00
-        "T" "DESC" 7F "By default, FIRS secondary industries will never close."
-         "\0D\0DIf secondary closing is turned on, secondary industries may close "
-         "if no cargo is transported for a long time." 00
-        "B" "TYPE" \w1 1
-        "B" "MASK" \w3 2 1 1
-        00
-      "C" \d4
-        "T" "NAME" 7F "Prevent industry construction (unfinished) " 00
-        "T" "DESC" 7F "\89This does nothing yet.  \98When finished it will provide a 'Sandbox mode' for use with scenarios." 00 //If turned on, industries cannot be constructed by game or players.  
-        "B" "TYPE" \w1 1
-        "B" "MASK" \w3 2 2 1
-        00
-      00
-    00
-  00
-00          
+	"C" "INFO"
+		"C" "PARA"
+			"C" \d2
+				"T" "NAME" 7F "Allow primary industries to close " 00
+				"T" "DESC" 7F "By default, FIRS primary industries will never close."
+					 "\0D\0DIf primary closing is turned on, primary industries will close when production "
+					 "falls to low levels (the level varies for each type of industry). "
+					 "\89Requires 'primary production decrease' on." 00
+				"B" "TYPE" \w1 1
+				"B" "MASK" \w3 2 0 1
+			00
+			"C" \d3
+				"T" "NAME" 7F "Allow secondary industries to close " 00
+				"T" "DESC" 7F "By default, FIRS secondary industries will never close."
+					 "\0D\0DIf secondary closing is turned on, secondary industries may close "
+					 "if no cargo is transported for a long time." 00
+				"B" "TYPE" \w1 1
+				"B" "MASK" \w3 2 1 1
+			00
+			"C" \d4
+				"T" "NAME" 7F "Prevent industry construction (unfinished) " 00
+				"T" "DESC" 7F "\89This does nothing yet.  \98When finished it will provide a 'Sandbox mode' for use with scenarios." 00 //If turned on, industries cannot be constructed by game or players.  
+				"B" "TYPE" \w1 1
+				"B" "MASK" \w3 2 2 1
+			00
+		00
+	00
+00         
 
 // debug info setting
  -1 * -1   14
