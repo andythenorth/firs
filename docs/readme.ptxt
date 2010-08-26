@@ -9,10 +9,11 @@
 1 Preface
 2 Downloading FIRS
 3 Using FIRS
-4 Compiling FIRS
-5 The FIRS NewGRF
-6 FIRS Web Links
-7 FIRS License
+4 Errors and warnings
+5 Compiling FIRS
+6 The FIRS NewGRF
+7 FIRS Web Links
+8 FIRS License
 
 
 
@@ -176,8 +177,47 @@ of a production decrease.
 
 
 
+---------------------
+4 Errors and warnings
+---------------------
+
+FIRS is not compatible with all other NewGRFs out there. Great care has been taken
+to locate all incompatible NewGRFs, but not all may have been found.
+In case FIRS is able to detect an incompatible NewGRF, it will issue an error (and
+disable itself) or issue a warning. Below you will find an explanation of possible
+errors and warnings.
+
+
+E00: FIRS requires...
+FIRS requires a reasonably recent version of OpenTTD, as listed in the error
+message, and cannot work on older versions due to missing features.
+Either upgrade your OpenTTD to at least on of the versions indicated in the error
+message or don't use FIRS.
+
+E01: Incompatible set...
+FIRS has detected an other NewGRF that conflicts with FIRS' features and
+possibilities. If you want to use FIRS, you have to remove the indicated NewGRF
+from the active NewGRF files list. After doing so, you might receive the same 
+warning but then for a different NewGRF. Continue to remove all NewGRFs indicated
+until the error messages disappear.
+
+E02: Incompatible parameter...
+Some NewGRFs have parameter options that are incompatible with FIRS. To use FIRS,
+you have to change the parameter settings of the NewGRF idicated in the error
+message. What parameter to change to what value is indicated as well.
+
+
+W01: Possible set incompatibility detected...
+If you receive this warning, FIRS is not sure if the NewGRF indicated is compatible
+or not. You need to check the version of the NewGRF indicated manually. If you 
+continue to use an incompatible NewGRF together with FIRS, you may not complain
+about possible problems in FIRS at the penalty of never being allowed to use FIRS
+again.
+
+
+
 ----------------
-4 Compiling FIRS
+5 Compiling FIRS
 ----------------
 
 The FIRS source is available in a Mercurial repository and is available through
@@ -206,7 +246,7 @@ options, but these are probably sufficient for you to know.
 
 
 -----------------
-5 The FIRS NewGRF
+6 The FIRS NewGRF
 -----------------
 
 If you want to check the integrity of your grf or check whether your
@@ -221,7 +261,7 @@ This version of FIRS is created using repository version {{REPO_REVISION}}
 
 
 ----------------
-6 FIRS Web Links
+7 FIRS Web Links
 ----------------
 
   FIRS Website: http://tt-foundry.com/sets/FIRS/schema/industries
@@ -240,7 +280,7 @@ ventilating your ideas.
 
 
 --------------
-7 FIRS License
+8 FIRS License
 --------------
 
     FIRS Industry Replacement Set - Full industry replacement set for OpenTTD
