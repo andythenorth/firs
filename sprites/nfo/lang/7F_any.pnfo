@@ -278,3 +278,28 @@
 #define TEXT_INFO_POWERSTATION_CLOSE_0                   "\0DThis Power Station might close unless coal or fuel oil are delivered within:\0D\90  \UE07C months" 
 #define TEXT_INFO_POWERSTATION_CLOSE_1                   "\0DThis Power Station might close unless coal or fuel oil are delivered within:\0D\94  \UE07C month" 
 #define TEXT_INFO_POWERSTATION_CLOSE_2                   "\0D\94No coal or fuel oil has been delivered for at least \85\85\UE07C months. This Power Station may close soon. \0D" 
+
+
+
+
+
+#define TEXT_GRF_DESC                                    "\8EFIRS Industry Replacement Set\n\98By \89andythenorth\98 and \89FooBar\98.\n\98'1,000 commits and counting...'\98\n\nWebsite: \89www.tt-foundry.com/sets/FIRS\98.License: \89GPL v2\98.Special thanks to \89Ammler\98, \89Core Xii\98, \89Irwe\98, \89planetmaker\98 and \89Zephyris\98.Uses parts of \89eGRVTS\98, \89ISR\98 and \89OpenGFX\98."
+
+#define TEXT_PNAME_ECONOMY                               "Economy"
+#define TEXT_PDESC_ECONOMY                               "When finished, FIRS will feature a choice of economies. Cargos and industries vary in each economy. Cargo payment rates are also different in each economy. \0D\0D\89Currently only one economy is available :)"
+#define TEXT_PVALU0_ECONOMY                              "Test Economy"
+
+#define TEXT_PNAME_PRIMARYDECREASE                       "Allow primary production decrease"
+#define TEXT_PDESC_PRIMARYDECREASE                       "By default, FIRS primary industry production will never decrease.\0D\0DIf primary production decrease is turned on, there is a chance that production will decrease if no supplies are delivered in a month. If production level is high, chance of decrease will be greater."
+
+#define TEXT_PNAME_PRIMARYCLOSE                          "Allow primary industries to close"
+#define TEXT_PDESC_PRIMARYCLOSE                          "By default, FIRS primary industries will never close.\0D\0DIf primary closing is turned on, primary industries will close when production falls to low levels (the level varies for each type of industry). \89Requires 'primary production decrease' on."
+
+#define TEXT_PNAME_SECONDARYCLOSE                        "Allow secondary industries to close"
+#define TEXT_PDESC_SECONDARYCLOSE                        "By default, FIRS secondary industries will never close.\0D\0DIf secondary closing is turned on, secondary industries may close if no cargo is transported for a long time."
+
+#define TEXT_PNAME_PREVENTCONSTRUCTION                   "Prevent industry construction (unfinished)"
+#define TEXT_PDESC_PREVENTCONSTRUCTION                   "\89This does nothing yet. \98When finished it will provide a 'Sandbox mode' for use with scenarios."
+
+#define TEXT_PNAME_DEBUG                                 "Show debug texts"
+#define TEXT_PDESC_DEBUG                                 "For developers only"
