@@ -15,7 +15,7 @@ then
 fi
 
 echo "Missing strings at file $file"
-for text in `grep "#define" ../sprites/nfo/lang/base_lang.pnfo | cut -f2 -d " "`; do
+for text in `grep "#define" ../sprites/nfo/lang/7F_any.pnfo | cut -f2 -d " "`; do
 	value=`grep "$text" $file`
 	if [ -z "$value" ]
 	then

@@ -1,5 +1,9 @@
 // Remove defines to avoid a warning in other translations.
 
+//undefine language IDs
+#undef LANG_ID
+#undef LANG_ID2
+
 //remove cargo defines
 #undef TEXT_CRG_SUGARCANE_CTYPE
 #undef TEXT_CRG_SUGARCANE_1UNIT
