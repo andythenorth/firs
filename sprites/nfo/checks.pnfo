@@ -17,9 +17,10 @@
 // NewGRF parameters used by this file are defined in ids.pnfo
 
 // Define our error messages here for further easy re-use:
-#define INCOMPATIBLE_GRF(x) -1 * 0 0B 03 7F FF "\8EE01: Incompatible set: "x" \90Consult FIRS ReadMe: \8E\0Dhttp://bundles.openttdcoop.org/firs/releases/readme.txt" 00
-#define INCOMPATIBLE_PARAM(x,y) -1 * 0 0B 03 7F FF "\8EE02: Incompatible parameter:\8E"x" parameter "y"  to work with FIRS. \90Consult FIRS ReadMe: \8E\0Dhttp://bundles.openttdcoop.org/firs/releases/readme.txt" 00
-//#define INCOMPATIBLE_COMBI(x) -1 * 0 0B 03 7F FF "\8EE01: Incompatible newgrf combination:\0D\90"x"\0D\8EConsult FIRS ReadMe:\90\0Dhttp://bundles.openttdcoop.org/firs/releases/readme.txt" 00
+#define INCOMPATIBLE_GRF(x) -1 * 0 0B 03 7F FF "\8EE01: \90Incompatible set: \8E"x" \90Consult FIRS ReadMe: \8E\0Dhttp://bundles.openttdcoop.org/firs/releases/readme.txt" 00
+#define INCOMPATIBLE_PARAM(x,y) -1 * 0 0B 03 7F FF "\8EE02: \90Incompatible parameter: \8E"x" parameter "y"  to work with FIRS. \90Consult FIRS ReadMe: \8E\0Dhttp://bundles.openttdcoop.org/firs/releases/readme.txt" 00
+//#define INCOMPATIBLE_COMBI(x) -1 * 0 0B 03 7F FF "\8EE01: \90Incompatible newgrf combination: \8E"x" \90Consult FIRS ReadMe: \8E\0Dhttp://bundles.openttdcoop.org/firs/releases/readme.txt" 00
+#define INCOMPATIBLE_WARNING(x,y) -1 * 0 0B 01 7F FF "\8EW01: \90Possible set incompatibility detected: \8EFIRS only works correctly with "x" version "y" or higher. \90Consult FIRS ReadMe: \8E\0Dhttp://bundles.openttdcoop.org/firs/releases/readme.txt" 00
 
 
 //Check for game version
@@ -127,6 +128,7 @@ INCOMPATIBLE_GRF("Lumber Mill")
 -1 * 0 0D COMPATIBILITY_PARAM1 \D= FF 00 00 00 00 00
 
 //Checks for sets with incompatible parameter settings
+
 //First load specific parameter value into FIRS parameter 00, then check loaded parameter value.
 //NA City Set	(43 41 43 61) (goto error message if parm 2 (01h) != 0)
 -1 * 0 07 88 04 \7gg 43 41 43 61 03 //skip next three if NA City Set is not active nor will be active
@@ -138,8 +140,9 @@ INCOMPATIBLE_PARAM("NA City Set", "2 must be 0")
 -1 * 0 0D COMPATIBILITY_PARAM1 \D= 01 FE 43 41 53 61
 -1 * 0 07 COMPATIBILITY_PARAM1 01 \7= 00 01
 INCOMPATIBLE_PARAM("CanSet", "2 must be 0")
+
+//Checks for sets which need a persistent warning
+
 //TTRS	(56 43 00 01) (goto error message if parm 5 (04h) != 1)
--1 * 0 07 88 04 \7gg 56 43 00 01 03 //skip next three if TTRS is not active nor will be active
--1 * 0 0D COMPATIBILITY_PARAM1 \D= 04 FE 56 43 00 01
--1 * 0 07 COMPATIBILITY_PARAM1 01 \7= 01 01
-INCOMPATIBLE_PARAM("Total Town Replacement Set v3.03 or higher with the", "to disable the banks set is required for TTRS")
+-1 * 0 07 88 04 \7gg 56 43 00 01 01 //skip next if TTRS is not active nor will be active
+INCOMPATIBLE_WARNING("Total Town Replacement Set", "v3.03")
