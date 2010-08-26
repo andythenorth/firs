@@ -1,5 +1,19 @@
 //Containing various checks to disable FIRS if incompatible sets are loaded and stuff to make addons work properly.
 
+//Skip if OTTD
+-1 * 0 09 9D 04 \7= 01 00 00 00 02
+//Error not for TTDP
+-1 * 0 0B 03 7F 02 "OpenTTD" 00
+//Terminate if TTDP
+-1 * 0 09 9A 01 \71 00 00
+
+//Skip if climate != toyland
+-1 * 0 07 83 01 \7! 03 02
+//Error not for toyland
+-1 * 0 0B 03 7F FF "\8EFIRS is not designed to be used with Toyland climate" 00
+//Terminate if toyland
+-1 * 0 07 9A 01 \71 00 00
+
 // NewGRF parameters used by this file are defined in ids.pnfo
 
 // Define our error messages here for further easy re-use:
