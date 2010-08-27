@@ -34,9 +34,11 @@
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b16 //xextent yextent zextent
 
+//handle cb2f (tile shape check)
+#include "../../../templates/cb2f_generic.pnfo"     
 
 //Tile Action 3
--1 * 0 03 09 01 TILE_RETAILMARKET_1 00 \wxA0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
+-1 * 0 03 09 01 TILE_RETAILMARKET_1 00 \wxC0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
 
 
 

@@ -56,10 +56,13 @@
 	\b1 //number of ranges to check (number of layouts)
     \wxB1 \b1 \b1 //<set-id \w> <low-range> <high-range>
 	\wx00 //<default> (first tile layout available)
+	
+//handle cb2f (tile shape check)
+#include "../../../templates/cb2f_generic.pnfo"     
 
 //Tile Action 3
 -1 * 0 03 09 01 TILE_GASSTATION_1 
-  00 \wxA0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
+  00 \wxC0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
 
 
 
