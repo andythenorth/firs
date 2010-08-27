@@ -54,7 +54,6 @@
 #define TEXT_CRG_SAND_MUNIT                              "\UE07C tons of sand" 
 #define TEXT_CRG_SAND_TABBR                              "\0ESA" 
 
-
 //Gravel
 #define TEXT_CRG_GRAVEL_CTYPE                            "Gravel" 
 #define TEXT_CRG_GRAVEL_1UNIT                            "\UE07C ton of gravel" 
@@ -125,6 +124,7 @@
 #define TEXT_CRG_SURVEYSUPPLIES_TABBR                    "\0ESS" 
 
 
+
 //Industry texts
 
 #define TEXT_IND_BREWERY                                 "Brewery" 
@@ -169,16 +169,15 @@
 #define TEXT_IND_WATERPLANT                              "Water Plant" 
 #define TEXT_IND_GASSTATION                        	     "Petrol Pump" 
 
-
 #define TEXT_IND_FISHINGGROUNDS                          "Fishing Grounds" 
 #define TEXT_IND_BLACKSMITH                              "Blacksmith" 
 #define TEXT_IND_WINDMILL                                "Windmill" 
 #define TEXT_IND_WHOLESALEMARKET                         "Wholesale Market" 
 #define TEXT_IND_SUPERMARKET                             "Supermarket" 
 
-
 #define TEXT_IND_RETAILMARKET                            "Retailmarket" 
 #define TEXT_IND_SUGARREFINERY                           "Sugar Refinery" 
+
 
 
 //Station texts for station name prefixes/suffixes. \80 where town name goes
@@ -269,11 +268,9 @@
 
 #define TEXT_INFO_BREWERY_STEPUP                         "\0DProduction steps up if manufacturing supplies delivered within a month of other cargos." 
 
-
 #define TEXT_INFO_FERTILISERPLANT                        "\98Processes chemicals into fertiliser for use by farms.\0D" 
 #define TEXT_INFO_LUMBERYARD                             "\98Produces items such as poles and fence posts.\0D" 
 #define TEXT_INFO_POWERSTATION                           "\98Generates electricity.\0D" 
-
 
 #define TEXT_INFO_POWERSTATION_CLOSE_0                   "\0DThis Power Station might close unless coal or fuel oil are delivered within:\0D\90  \UE07C months" 
 #define TEXT_INFO_POWERSTATION_CLOSE_1                   "\0DThis Power Station might close unless coal or fuel oil are delivered within:\0D\94  \UE07C month" 
@@ -281,7 +278,7 @@
 
 
 
-
+//grf and parameter descriptions
 
 #define TEXT_GRF_DESC                                    "\8EFIRS Industry Replacement Set\n\98By \89andythenorth\98 and \89FooBar\98.\n\98'1,000 commits and counting...'\98\n\nWebsite: \89www.tt-foundry.com/sets/FIRS\98.License: \89GPL v2\98.Special thanks to \89Ammler\98, \89Core Xii\98, \89Irwe\98, \89planetmaker\98 and \89Zephyris\98.Uses parts of \89eGRVTS\98, \89ISR\98 and \89OpenGFX\98."
 
