@@ -256,3 +256,25 @@
 #define TEXT_INFO_POWERSTATION_CLOSE_0                  "\0DEsta Central Eléctrica podría cerrar a menos que se entregue carbón o fueloil antes de que pasen:\0D\90  \UE07C meses"
 #define TEXT_INFO_POWERSTATION_CLOSE_1                  "\0DEsta Central Eléctrica podría cerrar a menos que se entregue carbón o fueloil antes de que pase:\0D\94  \UE07C mes"
 #define TEXT_INFO_POWERSTATION_CLOSE_2                  "\0D\94No se ha entregado carbón ni fueloil por al menos \85\85\UE07C meses. Esta central eléctrica podría cerrar pronto. \0D"
+
+#define TEXT_GRF_DESC                                    "\8EFIRS Industry Replacement Set\n\98Creado por \89andythenorth\98 y \89FooBar\98.\n\98'1,000 commits y contando...'\98\n\nWeb: \89www.tt-foundry.com/sets/FIRS\98.Licencia: \89GPL v2\98. Agradecimientos a \89Ammler\98, \89Core Xii\98, \89Irwe\98, \89planetmaker\98 y \89Zephyris\98. Usa partes de \89eGRVTS\98, \89ISR\98 y \89OpenGFX\98."
+
+#define TEXT_PNAME_ECONOMY                               "Economía"
+#define TEXT_PDESC_ECONOMY                               "Cuando esté terminado, FIRS permitirá escoger entre diferentes economías. Las cargas e industrias variarán en cada economía, así como los pagos por carga. \0D\0D\89Actualmente solamente hay disponible una economía :)"
+#define TEXT_PVALU0_ECONOMY                              "Economía de prueba"
+
+#define TEXT_PNAME_PRIMARYDECREASE                       "Permitir disminución de la producción de industrias primarias"
+#define TEXT_PDESC_PRIMARYDECREASE                       "Por defecto, la producción de las industrias primarias en FIRS nunca se reduce.\0D\0DSi esta opción es activada, hay una probabilidad de que la producción se reduzca si no se entregan suministros a la industria durante un mes. Si el nivel de producción es alto, las posibilidades de que la producción se reduzca en este caso son mayores."
+
+#define TEXT_PNAME_PRIMARYCLOSE                          "Permitir cierre de industrias primarias"
+#define TEXT_PDESC_PRIMARYCLOSE                          "Por defecto, las industrias primarias nunca cierran en FIRS.\0D\0DSi esta opción es activada, las industrias primarias cerrarán cuando la producción caiga a niveles bajos (el nivel varía para cada tipo de industria).\89Requiere activar'Permitir disminución de la producción de industrias primarias'."
+
+#define TEXT_PNAME_SECONDARYCLOSE                        "Permitir cierre de industrias primarias"
+#define TEXT_PDESC_SECONDARYCLOSE                        "Por defecto, las industrias secundarias nunca cierran en FIRS.\0D\0DSi esta opción es activada, las industrias secundarias pueden cerrar si no se entrega carga durante largo tiempo."
+
+#define TEXT_PNAME_PREVENTCONSTRUCTION                   "Prevenir construcción de nuevas industrias (no terminado)"
+#define TEXT_PDESC_PREVENTCONSTRUCTION                   "\89Opción no terminada. \98Cuando esté terminada proporcionará un modo especial para uso con escenarios."
+
+#define TEXT_PNAME_DEBUG                                 "Mostrar texto de depuración"
+#define TEXT_PDESC_DEBUG                                 "Solo para desarrolladores"
+
