@@ -13,6 +13,12 @@
 #define TEXT_CRG_SUGARCANE_MUNIT                        "\UE07C Tonnen Rohrzucker"
 #define TEXT_CRG_SUGARCANE_TABBR                        "\0ERZ"
 
+//Sugar beet
+#define TEXT_CRG_SUGARBEET_CTYPE                         "Zuckerrüben" 
+#define TEXT_CRG_SUGARBEET_1UNIT                         "\UE07C Tonne Zuckerrüben" 
+#define TEXT_CRG_SUGARBEET_MUNIT                         "\UE07C Tonnen Zuckerrüben" 
+#define TEXT_CRG_SUGARBEET_TABBR                         "\0ESB" 
+
 //Waste 
 #define TEXT_CRG_WASTE_CTYPE                            "Müll"
 #define TEXT_CRG_WASTE_1UNIT                            "\UE07C Tonne Müll"
@@ -213,8 +219,47 @@
 #define TEXT_INFO_LUMBERYARD                             "\98Produziert Dinge wie Balken und Zaunpfähle.\0D" 
 #define TEXT_INFO_POWERSTATION                           "\98Generiert Elektrizität.\0D" 
 
+#define TEXT_IND_FISHINGGROUNDS                          "Fischgründe"
+#define TEXT_IND_BLACKSMITH                              "Schmiede"
+#define TEXT_IND_WINDMILL                                "Windmühle"
+#define TEXT_IND_WHOLESALEMARKET                         "Großhandel"
+#define TEXT_IND_SUPERMARKET                             "Supermarkt"
+#define TEXT_IND_RETAILMARKET                            "Einzelhändler"
+#define TEXT_IND_SUGARREFINERY                           "Zuckerrafinerie"
 
+#define TEXT_STA_FISHINGGROUNDS                          "\80 Fischgrund"
+#define TEXT_STA_BLACKSMITH                              "\80 Schmide"
+#define TEXT_STA_MARKET                                  "\80 Markt"
 
+#define TEXT_INFO_AVAILABILITY                           "\98Verfügbar: \90\UE082"
+#define TEXT_INFO_AVAILABILITY_1610                      "\98Verfügbar \90ab 1. Jan 1610"
+#define TEXT_INFO_AVAILABILITY_1730                      "\98Verfügbar \90ab 1. Jan 1730"
+#define TEXT_INFO_AVAILABILITY_1762                      "\98Verfügbar \90ab 1. Jan 1762"
+#define TEXT_INFO_AVAILABILITY_1780                      "\98Verfügbar \90ab 1. Jan 1780"
 
+#define TEXT_INFO_GENERIC_CLOSE_0                        "\n\98Diese Industrie könnte schließen, wenn nicht in den \90nächsten \UE07C Monaten\98 Fracht angeliefert wird."
+#define TEXT_INFO_GENERIC_CLOSE_1                        "\n\98Diese Industrie könnte schließen, wenn nicht im \94nächsten Monat\98 Fracht angeliefert wird."
+#define TEXT_INFO_GENERIC_CLOSE_2                        "\n\8BIn mindestens den letzten \85\85\UE07C Monaten\8B wurde keine Fracht angeliefert. Diese Industrie könnte bald schließen.\0D"
+
+#define TEXT_GRF_DESC                                    "\8EFIRS Industrie-Set\n\98Von \89andythenorth\98 und \89FooBar\98.\n\98Website: \89www.tt-foundry.com/sets/FIRS\0D\98. Lizenz: \89GPL v20D\98. Besonderen Dank an \89Ammler\98, \89CoreXii\98, \89Irwe\98, \89planetmaker\98 und \89Zephyris\98.\0DFIRS nutzt Teile von \89eGRVTS\98, \89ISR\98 und \89OpenGFX\98."
+
+#define TEXT_PNAME_ECONOMY                               "Wirtschaftstyp"
+#define TEXT_PDESC_ECONOMY                               "Sobald fertiggestellt, wird FIRS eine Anzahl verschiedener Wirtschaft(sschwerpunkte) anbieten. Diese unterscheiden sich in Frachtarten, deren Profitabilität und den verfügbaren Industrien.\0D\0D\89Zur Zeit gibt es nur einen Wirtschaftstyp."
+#define TEXT_PVALU0_ECONOMY                              "Standard"
+
+#define TEXT_PNAME_PRIMARYDECREASE                       "Primärindustrien dürfen Produktion vermindern"
+#define TEXT_PDESC_PRIMARYDECREASE                       "Standardmäßig reduzieren Primärindustrien in FIRS ihre Produktion nie.\0DWenn eine Reduzierung der Produktionsmenge bei Primärindustrien erlaubt ist, gibt es eine Wahrscheinlichkeit mit der eine Industrie seine Produktion senkt, wenn einen Monat lang keine Güter angeliefert wurden. Bei hohen Produktionsraten ist die Wahrscheinlichkeit größer."
+
+#define TEXT_PNAME_PRIMARYCLOSE                          "Primärindustrien dürfen schließen"
+#define TEXT_PDESC_PRIMARYCLOSE                          "Standardmäßig schließen Primärindustrien in FIRS nie.\0DWenn das Schließen von Primärindustrien erlaubt ist, so schließt eine Industrie, wenn ihre Produktion sehr niedrig ist (die genaue Menge hängt von der Industrie ab). \89Voraussetzung: 'Primärindustrien dürfen Produktion vermindern' ist aktiviert."
+
+#define TEXT_PNAME_SECONDARYCLOSE                        "Sekundärindustrien dürfen schließen"
+#define TEXT_PDESC_SECONDARYCLOSE                        "Standardmäßig schließen Sekundärindustrien in FIRS nie.\0D\0DWenn das Schließen von Sekundärindustrien erlaubt ist, so kann sie schließen, wenn über einen längeren Zeitraum keine Fracht transportiert worden ist."
+
+#define TEXT_PNAME_PREVENTCONSTRUCTION                   "Bau von Industrien verbieten (nicht vollständig)"
+#define TEXT_PDESC_PREVENTCONSTRUCTION                   "\89Diese Funktion ist noch nicht implementiert.\98 Sobald sie fertig gestellt ist, wird dieser Parameter einen 'Sandkasten-Modus' für Scenarien ermöglichen"
+
+#define TEXT_PNAME_DEBUG                                 "Zeige Debug-Texte"
+#define TEXT_PDESC_DEBUG                                 "Nur für Entwickler"
 
 
