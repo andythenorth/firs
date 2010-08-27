@@ -52,4 +52,12 @@
     TEXT_FOR_UNBUILDABLE \b08 \b08  //prevents building if tile is industry tile 
   DA 00 //default
   
+//check if user or game is building. If user builds, don't require 1 tile buffer between industries
+-1 * 0 02 09 DA //action 2 industry tiles c-id 
+	82 A7 //related object, industry founder
+	00 FF //no shift, no mask
+	\b1 //ranges
+		DA 00  10  10 //use 1 tile buffer if randomly generated
+	00 84 //allow construction if user-built
+  
 #undef TEXT_FOR_UNBUILDABLE
