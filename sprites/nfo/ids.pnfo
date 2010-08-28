@@ -39,7 +39,7 @@
 #define IND_BREWERY               23
 #define IND_DAIRY                 24
 #define IND_MEATPACKER            25
-//#define IND_FISHPROCESSOR         26
+//#define IND_VACANT         26
 #define IND_WHOLESALEMARKET       27
 //#define IND_FACTORY               28
 //#define IND_VEHICLEPLANT          29
@@ -51,7 +51,7 @@
 #define IND_FERTILISERPLANT       2F
 #define IND_GUANOMINE             30
 //                                  31
-//#define IND_FARMSUPPLYDEPOT       32
+//#define IND_VACANTDEPOT       32
 //#define IND_SURVEYSUPPLYDEPOT     33
 //#define IND_SURVEYCAMP            34
 //                                  35
@@ -104,7 +104,7 @@
 #define TILE_MACHINESHOP_1                 BA
 #define TILE_LUMBERYARD_1                  BB
 #define TILE_METALFOUNDRY_1                BC
-//#define TILE_FARMSUPPLYDEPOT_1             BD
+//#define TILE_VACANTDEPOT_1             BD
 #define TILE_MIXEDFARM_1                   BE
 #define TILE_SURVEYSUPPLYDEPOT_1           BF
 #define TILE_SHEEPFARM_1                   C0
@@ -116,7 +116,7 @@
 #define TILE_DREDGINGSITE_1                C6
 #define TILE_SURVEYCAMP_1                  C7
 #define TILE_WINDFARM_1                    C8
-//#define TILE_FISHPROCESSOR_1               C9
+//#define TILE_VACANT               C9
 #define TILE_QUARRY_1                      CA
 #define TILE_GASSTATION_1                  CB
 #define TILE_FISHINGGROUNDS_1              CC
@@ -232,7 +232,7 @@
 #define STR_IND_MACHINESHOP           82 DC
 #define STR_IND_LUMBERYARD            83 DC
 #define STR_IND_METALFOUNDRY          84 DC
-//#define STR_IND_FARMSUPPLYDEPOT       85 DC
+//#define STR_IND_VACANTDEPOT       85 DC
 #define STR_IND_MIXEDFARM             86 DC
 #define STR_IND_SURVEYSUPPLYDEPOT     87 DC
 #define STR_IND_SHEEPFARM             88 DC
@@ -240,7 +240,7 @@
 #define STR_IND_GENERALSTORE          8A DC
 #define STR_IND_BAUXITEMINE           8B DC
 #define STR_IND_FISHINGHARBOUR        8C DC
-//#define STR_IND_FISHPROCESSOR         8D DC
+//#define STR_IND_VACANT         8D DC
 #define STR_IND_DREDGINGSITE          8E DC
 #define STR_IND_SURVEYCAMP            8F DC
 #define STR_IND_WINDFARM              90 DC
