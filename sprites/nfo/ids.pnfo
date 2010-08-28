@@ -430,11 +430,11 @@
 #define STR_CRG_BAUXITE_MUNIT               3A DC
 #define STR_CRG_BAUXITE_TABBR               3B DC
 
-#define STR_CRG_ALUMINIUM_CTYPE             3F DC
-#define STR_CRG_ALUMINIUM_1TYPE             3F DC //same as above
-#define STR_CRG_ALUMINIUM_1UNIT             40 DC
-#define STR_CRG_ALUMINIUM_MUNIT             41 DC
-#define STR_CRG_ALUMINIUM_TABBR             42 DC
+#define STR_CRG_STEEL_CTYPE                 3C DC //used for "Metal"
+#define STR_CRG_STEEL_1TYPE                 3C DC //use same as above
+#define STR_CRG_STEEL_1UNIT                 3D DC
+#define STR_CRG_STEEL_MUNIT                 3E DC
+#define STR_CRG_STEEL_TABBR                 3F DC
 
 #define STR_CRG_MILK_CTYPE                  43 DC
 #define STR_CRG_MILK_1TYPE                  43 DC //same as above
@@ -503,12 +503,6 @@
 #define STR_CRG_IRONORE_1UNIT               57 00
 #define STR_CRG_IRONORE_MUNIT               77 00
 #define STR_CRG_IRONORE_TABBR               97 00
-
-#define STR_CRG_STEEL_CTYPE                 18 00
-#define STR_CRG_STEEL_1TYPE                 38 00
-#define STR_CRG_STEEL_1UNIT                 58 00
-#define STR_CRG_STEEL_MUNIT                 78 00
-#define STR_CRG_STEEL_TABBR                 98 00
 
 #define STR_CRG_FOOD_CTYPE                  1E 00
 #define STR_CRG_FOOD_1TYPE                  3E 00
