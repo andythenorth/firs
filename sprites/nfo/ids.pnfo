@@ -52,8 +52,8 @@
 #define IND_GUANOMINE             30
 //#define IND_VACANT                31
 //#define IND_VACANT                32
-//#define IND_SURVEYSUPPLYDEPOT     33
-//#define IND_SURVEYCAMP            34
+//#define IND_VACANT                33
+//#define IND_VACANT                34
 //#define IND_VACANT                35
 //#define IND_LANDFILL              36
 //#define IND_INCINERATOR           37
@@ -105,7 +105,7 @@
 #define TILE_METALFOUNDRY_1                BC
 //#define TILE_VACANT                        BD
 #define TILE_MIXEDFARM_1                   BE
-#define TILE_SURVEYSUPPLYDEPOT_1           BF
+//#define TILE_VACANT                        BF
 #define TILE_SHEEPFARM_1                   C0
 #define TILE_JUNKYARD_1                    C1
 #define TILE_GENERALSTORE_1                C2
@@ -113,7 +113,7 @@
 #define TILE_FISHINGHARBOUR_2              C4
 #define TILE_BAUXITEMINE_1                 C5
 #define TILE_DREDGINGSITE_1                C6
-#define TILE_SURVEYCAMP_1                  C7
+//#define TILE_VACANT                        C7
 #define TILE_WINDFARM_1                    C8
 //#define TILE_VACANT                        C9
 #define TILE_QUARRY_1                      CA
@@ -163,7 +163,7 @@
 #define CARGO_MANUFACTURINGSUPPLIES 18
 #define CARGO_ENGINEERINGSUPPLIES   19
 #define CARGO_FARMSUPPLIES          1A
-// #define CARGO_SURVEYSUPPLIES        1B
+// #define CARGO_VACANT                1B
 // #define CARGO_RESERVED1             1C
 // #define CARGO_RESERVED2             1D
 // #define CARGO_RESERVED3             1E
@@ -191,7 +191,6 @@
 #define CLABEL_FOOD                  "FOOD"
 #define CLABEL_GOODS                 "GOOD"
 #define CLABEL_WATER                 "WATR"
-#define CLABEL_SURVEYSUPPLIES        "SVSP"
 #define CLABEL_FARMSUPPLIES          "FMSP"
 #define CLABEL_ENGINEERINGSUPPLIES   "ENSP"
 #define CLABEL_WOOD                  "WOOD"
@@ -231,17 +230,17 @@
 #define STR_IND_MACHINESHOP           82 DC
 #define STR_IND_LUMBERYARD            83 DC
 #define STR_IND_METALFOUNDRY          84 DC
-//#define STR_IND_VACANTDEPOT       85 DC
+//#define STR_IND_VACANT                85 DC
 #define STR_IND_MIXEDFARM             86 DC
-#define STR_IND_SURVEYSUPPLYDEPOT     87 DC
+//#define STR_IND_VACANT                87 DC
 #define STR_IND_SHEEPFARM             88 DC
 #define STR_IND_JUNKYARD              89 DC
 #define STR_IND_GENERALSTORE          8A DC
 #define STR_IND_BAUXITEMINE           8B DC
 #define STR_IND_FISHINGHARBOUR        8C DC
-//#define STR_IND_VACANT         8D DC
+//#define STR_IND_VACANT                8D DC
 #define STR_IND_DREDGINGSITE          8E DC
-#define STR_IND_SURVEYCAMP            8F DC
+//#define STR_IND_VACANT                8F DC
 #define STR_IND_WINDFARM              90 DC
 #define STR_IND_GRAVELQUARRY          91 DC
 #define STR_IND_GASSTATION            92 DC
@@ -458,12 +457,6 @@
 #define STR_CRG_SCRAPMETAL_1UNIT            47 DC
 #define STR_CRG_SCRAPMETAL_MUNIT            48 DC
 #define STR_CRG_SCRAPMETAL_TABBR            49 DC
-
-#define STR_CRG_SURVEYSUPPLIES_CTYPE        4A DC
-#define STR_CRG_SURVEYSUPPLIES_1TYPE        4A DC //same as above
-#define STR_CRG_SURVEYSUPPLIES_1UNIT        4B DC
-#define STR_CRG_SURVEYSUPPLIES_MUNIT        4C DC
-#define STR_CRG_SURVEYSUPPLIES_TABBR        4D DC
 
 //Cargo strings below are from original TTD: http://wiki.ttdpatch.net/tiki-index.php?page=TextIDs
 
