@@ -1,5 +1,5 @@
-//GASSTATION
-#define THIS_INDUSTRY                 IND_GASSTATION
+//PETROLPUMP
+#define THIS_INDUSTRY                 IND_PETROLPUMP
 #define THIS_STR_INFO_CB38            STR_INFO_AVAILABILITY
 #define THIS_STR_INFO                 STR_INFO_GENERIC_CLOSE_0
 #define THIS_STR_INFO_WARN_1          STR_INFO_GENERIC_CLOSE_1
@@ -10,7 +10,7 @@
 
 //Industry tiles definition
 //Tile Action 0
--1 * 0 00 09 \b5 01 TILE_GASSTATION_1 // -1 * 0 00 09 <num-props> 01 <id>
+-1 * 0 00 09 \b5 01 TILE_PETROLPUMP_1 // -1 * 0 00 09 <num-props> 01 <id>
 	08 TILE_NULL //subsitute type
 	0A CARGO_FOOD 08 //tile acceptance 1
 	0B CARGO_GOODS 08 //tile acceptance 2
@@ -25,8 +25,8 @@
 // Format: spritenum pcxfile xpos ypos compression ysize xsize xrel yrel
 -1 sprites/pcx/industries/groundtiles.pcx  80 10 09   31 64  -31  0
 // tanks
--1 sprites/pcx/industries/gasstation.pcx 150 10 09  78 64  -31 -12
--1 sprites/pcx/industries/gasstation.pcx 220 10 09  78 64  -54 -28
+-1 sprites/pcx/industries/petrolpump.pcx 150 10 09  78 64  -31 -12
+-1 sprites/pcx/industries/petrolpump.pcx 220 10 09  78 64  -54 -28
 
 
 //Tile Action 2 
@@ -61,7 +61,7 @@
 #include "../../../templates/cb2f_generic.pnfo"     
 
 //Tile Action 3
--1 * 0 03 09 01 TILE_GASSTATION_1 
+-1 * 0 03 09 01 TILE_PETROLPUMP_1 
   00 \wxC0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
 
 
@@ -69,20 +69,20 @@
 //Industry definition
 
 //Action 0
--1 * 0 00 0A \b26 01 IND_GASSTATION //-1 * 0 00 0A <num-props> 01 <id>
+-1 * 0 00 0A \b26 01 IND_PETROLPUMP //-1 * 0 00 0A <num-props> 01 <id>
 	08 IND_NULL //reuse original industry with this here ID
 	0A 01 //number of industry layouts
 		\d12 //size of layout definition +2 for termination
 		//layout:
-			00 00 FE TILE_GASSTATION_1 00 //xoffs yoffs FE newtile(W)
-			00 01 FE TILE_GASSTATION_1 00 //xoffs yoffs FE newtile(W)
+			00 00 FE TILE_PETROLPUMP_1 00 //xoffs yoffs FE newtile(W)
+			00 01 FE TILE_PETROLPUMP_1 00 //xoffs yoffs FE newtile(W)
 		00 80 //terminate layout definition
 	0B 00 //production flags 1h=extractive, 2h=organic, 4h=processing, 0h=no closure etc.
 	0C STR_IND_CLOSE_GENERIC //industry closure message
 	0D STR_IND_PRODINCR_GENERIC //production increase message
 	0E STR_IND_PRODDECR_GENERIC //production decrease message
 	1B STR_IND_NEW_GENERIC //new industry message
-	1F STR_IND_GASSTATION //industry name
+	1F STR_IND_PETROLPUMP //industry name
 	10 FF FF //production cargo types (word; fill unused with FFh)
 	11 CARGO_FOOD CARGO_GOODS CARGO_FUELOIL FF //acceptance cargo types (dword; fill unused with FFh)
 	12 00 //production multiplier cargo 1
@@ -91,12 +91,12 @@
 	1D \w0  \w0  //input cargo 2 multiplier
 	1E \w0  \w0  //input cargo 3 multiplier
 	14 \b2 //minimal cargo distribution amount
-	16 IND_GASSTATION_CONFLICT FF FF //conflicting industry types (3*byte; ID+80h; FF to disable)
+	16 IND_PETROLPUMP_CONFLICT FF FF //conflicting industry types (3*byte; ID+80h; FF to disable)
 	17 \b10 //probability in random game
 	18 \b20 //probability during gameplay
 	20 FF FF FF BF //prospecting success chance (dword; FFFFFFFFh=100%)
 	0F \b255 //fund cost multiplier (byte)
-	19 CLR_GASSTATION //map colour (byte; using indexes from dos palette)
+	19 CLR_PETROLPUMP //map colour (byte; using indexes from dos palette)
 	23 \d0  //destruction cost multiplier (dword; default: 0)
 	1A \dx10 //special industry flag (dword; in town: 10h)
 	21 81 //callback flags 

@@ -62,8 +62,8 @@
 //#define IND_WASTECOLLECTIONPOINT  3A
 #define IND_GENERALSTORE          3B
 #define IND_GENERALSTORE_CONFLICT BB // special case prevents stores too close (via prop 16). Set bit 7 (add 8 to first nibble of Store ID).
-#define IND_GASSTATION            3C
-#define IND_GASSTATION_CONFLICT   BC // special case prevents Gas Stations too close (via prop 16). Set bit 7 (add 8 to first nibble of Store ID).
+#define IND_PETROLPUMP            3C
+#define IND_PETROLPUMP_CONFLICT   BC // special case prevents Gas Stations too close (via prop 16). Set bit 7 (add 8 to first nibble of Store ID).
 #define IND_SUPERMARKET           3D
 #define IND_SUPERMARKET_CONFLICT  BD // special case prevents supermarkets too close (via prop 16). Set bit 7 (add 8 to first nibble of Store ID).
 #define IND_RETAILMARKET          3E
@@ -117,7 +117,7 @@
 #define TILE_WINDFARM_1                    C8
 //#define TILE_VACANT                        C9
 #define TILE_QUARRY_1                      CA
-#define TILE_GASSTATION_1                  CB
+#define TILE_PETROLPUMP_1                  CB
 #define TILE_FISHINGGROUNDS_1              CC
 #define TILE_FOREST_1                      CD
 #define TILE_FOREST_2                      CE
@@ -241,7 +241,7 @@
 //#define STR_IND_VACANT                8F DC
 #define STR_IND_WINDFARM              90 DC
 #define STR_IND_GRAVELQUARRY          91 DC
-#define STR_IND_GASSTATION            92 DC
+#define STR_IND_PETROLPUMP            92 DC
 #define STR_IND_FISHINGGROUNDS        93 DC
 #define STR_IND_BLACKSMITH            94 DC
 #define STR_IND_WINDMILL              95 DC
