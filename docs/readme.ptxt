@@ -206,6 +206,17 @@ Some NewGRFs have parameter options that are incompatible with FIRS. To use FIRS
 you have to change the parameter settings of the NewGRF idicated in the error
 message. What parameter to change to what value is indicated as well.
 
+E03: Incompatible version...
+Only more recent versions of the NewGRF indicated are compatible with FIRS. If you
+want to use the indicated NewGRF together with FIRS, you should upgrade that NewGRF
+to at least the version indicated.
+
+E04: Incompatible version...
+Only more recent versions of the NewGRF indicated are compatible with FIRS. If you
+want to use the indicated NewGRF together with FIRS, you should upgrade that NewGRF
+to at least the version indicated. The difference with an E03 error is that you also
+need at least OpenTTD r20675.
+
 
 W01: Possible set incompatibility detected...
 If you receive this warning, FIRS is not sure if the NewGRF indicated is compatible

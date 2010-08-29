@@ -18,9 +18,11 @@
 
 // Define our error messages here for further easy re-use:
 #define INCOMPATIBLE_GRF(x) -1 * 0 0B 03 7F FF "\8EE01: \90Incompatible set: \8E"x" \90Consult FIRS ReadMe: \8E\0Dhttp://bundles.openttdcoop.org/firs/releases/readme.txt" 00
-#define INCOMPATIBLE_PARAM(x,y) -1 * 0 0B 03 7F FF "\8EE02: \90Incompatible parameter: \8E"x" parameter "y"  to work with FIRS. \90Consult FIRS ReadMe: \8E\0Dhttp://bundles.openttdcoop.org/firs/releases/readme.txt" 00
-//#define INCOMPATIBLE_COMBI(x) -1 * 0 0B 03 7F FF "\8EE01: \90Incompatible newgrf combination: \8E"x" \90Consult FIRS ReadMe: \8E\0Dhttp://bundles.openttdcoop.org/firs/releases/readme.txt" 00
-#define INCOMPATIBLE_WARNING(x,y) -1 * 0 0B 01 7F FF "\8EW01: \90Possible set incompatibility detected: \8EFIRS only works correctly with "x" version "y" or higher. \90Consult FIRS ReadMe: \8E\0Dhttp://bundles.openttdcoop.org/firs/releases/readme.txt" 00
+#define INCOMPATIBLE_PARAM(x,y) -1 * 0 0B 03 7F FF "\8EE02: \90Incompatible parameter: \8E"x" parameter "y" to work with FIRS. \90Consult FIRS ReadMe: \8E\0Dhttp://bundles.openttdcoop.org/firs/releases/readme.txt" 00
+//#define INCOMPATIBLE_VERSION(x,y) -1 * 0 0B 03 7F FF "\8EE03: \90Incompatible version: \8E"x" must be version "y" or higher to work with FIRS. \90Consult FIRS ReadMe: \8E\0Dhttp://bundles.openttdcoop.org/firs/releases/readme.txt" 00 //for use with version check without action 14, as this doesn't require OpenTTD r20675
+#define INCOMPATIBLE_VERSION14(x,y) -1 * 0 0B 03 7F FF "\8EE04: \90Incompatible version: \8E"x" must be version "y" or higher to work with FIRS. \90Consult FIRS ReadMe: \8E\0Dhttp://bundles.openttdcoop.org/firs/releases/readme.txt" 00 //requires OpenTTD r20675
+//#define INCOMPATIBLE_COMBI(x) -1 * 0 0B 03 7F FF "\8EE04: \90Incompatible newgrf combination: \8E"x" \90Consult FIRS ReadMe: \8E\0Dhttp://bundles.openttdcoop.org/firs/releases/readme.txt" 00
+//#define INCOMPATIBLE_WARNING(x,y) -1 * 0 0B 01 7F FF "\8EW01: \90Possible set incompatibility detected: \8EFIRS only works correctly with "x" version "y" or higher. \90Consult FIRS ReadMe: \8E\0Dhttp://bundles.openttdcoop.org/firs/releases/readme.txt" 00
 
 
 //Check for game version
@@ -128,8 +130,8 @@ INCOMPATIBLE_GRF("Lumber Mill")
 -1 * 0 0D COMPATIBILITY_PARAM1 \D= FF 00 00 00 00 00
 
 //Checks for sets with incompatible parameter settings
+//First load specific parameter value into FIRS parameter COMPATIBILITY_PARAM1, then check loaded parameter value.
 
-//First load specific parameter value into FIRS parameter 00, then check loaded parameter value.
 //NA City Set	(43 41 43 61) (goto error message if parm 2 (01h) != 0)
 -1 * 0 07 88 04 \7gg 43 41 43 61 03 //skip next three if NA City Set is not active nor will be active
 -1 * 0 0D COMPATIBILITY_PARAM1 \D= 01 FE 43 41 43 61
@@ -141,8 +143,17 @@ INCOMPATIBLE_PARAM("NA City Set", "2 must be 0")
 -1 * 0 07 COMPATIBILITY_PARAM1 01 \7= 00 01
 INCOMPATIBLE_PARAM("CanSet", "2 must be 0")
 
+//Checks reading other GRF's Action 14 version number
+//First load version into FIRS parameter COMPATIBILITY_PARAM1, then check loaded parameter value.
+
+//TTRS	(56 43 00 01) (goto error message if version < 18)
+-1 * 0 07 88 04 \7gg 56 43 00 01 03 //skip next three if TTRS is not active nor will be active
+-1 * 0 0D COMPATIBILITY_PARAM1 \D= FE FE 56 43 00 01
+-1 * 0 07 COMPATIBILITY_PARAM1 04 \7> \d17 01
+INCOMPATIBLE_VERSION14("Total Town Replacement Set", "release 3.02b / nightly r18")
+
 //Checks for sets which need a persistent warning
 
-//TTRS	(56 43 00 01) (goto error message if parm 5 (04h) != 1)
--1 * 0 07 88 04 \7gg 56 43 00 01 01 //skip next if TTRS is not active nor will be active
-INCOMPATIBLE_WARNING("Total Town Replacement Set", "v3.03")
+//EXAMPLE: TTRS	(56 43 00 01) (goto error message if parm 5 (04h) != 1)
+//-1 * 0 07 88 04 \7gg 56 43 00 01 01 //skip next if TTRS is not active nor will be active
+//INCOMPATIBLE_WARNING("Total Town Replacement Set", "v3.03")
