@@ -140,7 +140,19 @@
 	\wxA1 //<default>
 
 //handle cb2f (tile shape check)
-#include "../../../templates/cb2f_generic.pnfo"     
+#include "../../../templates/cb2f_prevent_industry_overlap.pnfo"     
+
+#include "../../../templates/cb2f_not_too_far_into_desert.pnfo"     
+
+#include "../../../templates/cb2f_no_slopes.pnfo"     
+
+-1 * 0 02 09 C0 //Handle callbacks
+	81 0C 00 FF //no shift, no mask
+	\b3 //range
+	  DA 00 2F 2F //custom shape check cb 2F
+	  00 80 30 30 //disable drawing default foundations cb30
+	  FF 80 3C 3C //disable autoslope cb3C	  
+  A0 00 //default
 
 //Action3 attach sprites to industry tile
 
