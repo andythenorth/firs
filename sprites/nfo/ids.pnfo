@@ -542,7 +542,8 @@
 #define BIT_OPEN_NONE         \d02   // 0x04
 
 // The debug parameter values
-#define DEBUG_PARAMETER_INDUSTRY_TEXT_BIT  \b01
+#define DEBUG_PARAMETER_INDUSTRY_TEXT_BIT  \b01 //this actually tests for bit 0 set
+#define DEBUG_PARAMETER_DISABLE_CHECKS_BIT  \b01 //this tests for bit 1 set
 
 // *******************
 // INTERNAL PARAMETERS
