@@ -2,6 +2,8 @@
 
 file=""
 
+cd `dirname $0`
+
 #Try to find a language that matches the parameter (02, spa, any, etc)
 if [ -n "$1" ]
 then
