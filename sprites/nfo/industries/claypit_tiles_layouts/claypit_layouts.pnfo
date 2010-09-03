@@ -1,0 +1,77 @@
+//-1 * 0 02 09 <set-id> <type> <variable> <varadjust> <nvar> (<set-id> <low-range> <high-range>){n} <default>
+
+-1 * 0 02 09 B0 //layout 0
+	85 43 //check relative position (00yx[YYXX])
+	00 FF FF //don't shift, don't mask
+	\b33 //number of ranges to check (number of tiles)
+	//pit
+	\wx00   05 03  05 03
+	\wx01   04 03  04 03
+	\wx02   03 03  03 03
+	\wx03   02 03  02 03
+	\wx04   01 03  01 03
+	\wx05   00 03  00 03
+	\wx06   05 02  05 02
+	\wx07   04 02  04 02
+	\wx08   03 02  03 02
+	\wx09   02 02  02 02
+	\wx0A   01 02  01 02
+	\wx0B   00 02  00 02
+	\wx0C   05 01  05 01
+	\wx0D   04 01  04 01
+	\wx0E   03 01  03 01
+	\wx0F   02 01  02 01
+	\wx10   01 01  01 01
+	\wx11   00 01  00 01
+	\wx12   05 00  05 00
+	\wx13   04 00  04 00
+	\wx14   03 00  03 00
+	\wx15   02 00  02 00
+	\wx16   01 00  01 00
+	\wx17   00 00  00 00
+	 //processor 1
+	\wx18   08 02  08 02
+	\wx19   07 02  07 02
+	\wx1A   06 02  06 02
+	\wx1B   06 03  06 03
+	\wx1C   08 01  08 01
+	\wx1D   07 01  07 01
+	\wx1E   06 01  06 01
+	\wx1F   07 00  07 00
+	\wx20   08 00  08 00
+	\wx21 //06 00  06 00 <default>
+-1 * 0 02 09 B1 //layout 1 
+	85 43 //check relative position (00yx[YYXX])
+	00 FF FF //don't shift, don't mask
+	\b28 //number of ranges to check (number of tiles)
+	//pit
+	\wx00   05 04  05 04
+	\wx01   04 04  04 04
+	\wx02   03 04  03 04
+	\wx03   02 04  02 04
+	\wx04   01 04  01 04
+	\wx05   00 04  00 04
+	\wx06   05 03  05 03
+	\wx07   04 03  04 03
+	\wx08   03 03  03 03
+	\wx09   02 03  02 03
+	\wx0A   01 03  01 03
+	\wx0B   00 03  00 03
+	\wx0C   05 02  05 02
+	\wx0D   04 02  04 02
+	\wx0E   03 02  03 02
+	\wx0F   02 02  02 02
+	\wx10   01 02  01 02
+	\wx11   00 02  00 02
+	\wx12   05 01  05 01
+	\wx13   04 01  04 01
+	\wx14   03 01  03 01
+	\wx15   02 01  02 01
+	\wx16   01 01  01 01
+	\wx17   00 01  00 01
+	//processor 2
+	\wx1C   06 00  06 00
+	\wx24   06 01  06 01
+	\wx1E   06 02  06 02
+	\wx22   06 03  06 03
+	\wx23 //06 04  06 04 <default>
