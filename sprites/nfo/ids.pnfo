@@ -44,7 +44,7 @@
 #define IND_LUMBERYARD            29
 #define IND_TEXTILEMILL           2A
 #define IND_CEMENTPLANT           2B
-//#define IND_VACANT                2C
+#define IND_CLAYPIT               2C
 //#define IND_VACANT                2D
 //#define IND_VACANT                2E
 //#define IND_VACANT                2F
@@ -102,7 +102,7 @@
 #define TILE_MACHINESHOP_1                 BA
 #define TILE_LUMBERYARD_1                  BB
 #define TILE_METALFOUNDRY_1                BC
-//#define TILE_VACANT                        BD
+#define TILE_CLAYPIT_1                     BD
 #define TILE_MIXEDFARM_1                   BE
 //#define TILE_VACANT                        BF
 #define TILE_SHEEPFARM_1                   C0
@@ -245,6 +245,7 @@
 #define STR_IND_SUPERMARKET           97 DC
 #define STR_IND_RETAILMARKET          98 DC
 #define STR_IND_SUGARREFINERY         99 DC
+#define STR_IND_CLAYPIT               9A DC
 //IDs for industries that use original TTD strings
 #define STR_IND_FOREST                05 48
 #define STR_IND_OILPLATFORM           07 48
