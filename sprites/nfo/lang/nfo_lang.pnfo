@@ -674,18 +674,18 @@
 		//start TEXT_INFO_CARGO_PRODUCTION and TEXT_INFO_3T_PER_8T_MS and TEXT_INFO_INCREASE_BOTH_CARGOS
 		#ifdef TEXT_INFO_INCREASE_BOTH_CARGOS
 		//from here, each string has it's own special ifdefs, no more grouping
-		
+
+			#ifdef TEXT_INFO_5T_PER_8T_GRAIN
+-1 * 0 04 0A LANG_ID2 01 STR_INFO_MS_GRAIN_INCREASE D0 UTF_STRING    TEXT_INFO_CARGO_PRODUCTION
+                                                                     TEXT_INFO_3T_PER_8T_MS
+                                                                     TEXT_INFO_5T_PER_8T_GRAIN
+                                                                     TEXT_INFO_INCREASE_BOTH_CARGOS 00
+			#endif
+
 			#ifdef TEXT_INFO_5T_PER_8T_LUMBER
 -1 * 0 04 0A LANG_ID2 01 STR_INFO_FURNITUREFACTORY D0 UTF_STRING TEXT_INFO_CARGO_PRODUCTION
                                                                  TEXT_INFO_3T_PER_8T_MS
                                                                  TEXT_INFO_5T_PER_8T_LUMBER
-                                                                 TEXT_INFO_INCREASE_BOTH_CARGOS 00
-			#endif
-
-			#ifdef TEXT_INFO_5T_PER_8T_GRAIN
--1 * 0 04 0A LANG_ID2 01 STR_INFO_BAKERY D0 UTF_STRING           TEXT_INFO_CARGO_PRODUCTION
-                                                                 TEXT_INFO_3T_PER_8T_MS
-                                                                 TEXT_INFO_5T_PER_8T_GRAIN
                                                                  TEXT_INFO_INCREASE_BOTH_CARGOS 00
 			#endif
 
