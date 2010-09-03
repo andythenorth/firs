@@ -847,6 +847,11 @@
 -1 * 0 04 0A LANG_ID2 01 STR_INFO_MACHINESHOP D0 UTF_STRING      TEXT_INFO_MACHINESHOP
                                                                  TEXT_INFO_8T_PER_8T 00
 	#endif
+	
+	#ifdef TEXT_INFO_WHOLESALEMARKET
+-1 * 0 04 0A LANG_ID2 01 STR_INFO_WHOLESALEMARKET D0 UTF_STRING  TEXT_INFO_WHOLESALEMARKET
+                                                                 TEXT_INFO_8T_PER_8T 00
+	#endif
 
 	#ifdef TEXT_INFO_WINDFARM
 -1 * 0 04 0A LANG_ID2 01 STR_INFO_WINDFARM D0 UTF_STRING         TEXT_INFO_WINDFARM
