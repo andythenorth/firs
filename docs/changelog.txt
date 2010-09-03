@@ -3,6 +3,82 @@ FIRS Industry Replacement Set Changelog
 =======================================
 
 -----------
+0.4 Release
+-----------
+
+*Important*
+The grfID has changed in FIRS 0.4.  It is *not* savegame compatible with any previous release of FIRS.
+
+*What's new in 0.4?*
+
+Over 220 changes since FIRS 0.3
+
+*New Industries*
+- Blacksmith (no new graphics)
+- Windmill (no new graphics)
+- Wholesale Market (no new graphics)
+- Supermarket (no new graphics)
+- Retail Market (no new graphics)
+- Sugar refinery (no new graphics)
+- Cane Plantation
+
+*New Cargos*
+- Sugar Cane / Sugar Beet
+- Petrol (formerly Fuel Oil)
+- Metal (formerly Steel and Aluminium)
+
+*Removed Industries*
+- Cane Plantation (yes, we added it and removed it in the same release!)
+
+*New Features*
+- Several industries can now build on slopes
+- Improved forest appearance
+- Improved fruit planation appearance
+- Improved sand and gravel pit appearance
+- Disallow certain industries above snowline
+- Disallow certain industries to build in desert
+- 1 tile buffer between most industries if randomly generated
+- Strict OpenTTD version requirements
+- Reviewed third party set compatibility: Allow LV4 and recent TTRS
+- Blacksmith now also produces farm supplies
+
+*Translations*
+- Most translations updated
+- Reworked translation framework
+
+
+
+-----------
+0.3 Release
+-----------
+
+*What's new in 0.3?*
+
+Over 80 changes since FIRS 0.2
+
+*New Industries*
+- Fishing Grounds
+- Fishing Harbour
+
+*New Cargo*
+- Fish
+
+*Removed Industries*
+- Power station
+
+*New Features*
+- Set parameters for production increase/decrease and industry closure.
+- Industry introduction dates in fund industry window. See how long you have to wait before you can build something.
+- New industry production code
+
+*Translations*
+- Dutch
+- German
+- Polish
+
+
+
+-----------
 0.2 Release
 -----------
 
@@ -73,6 +149,3 @@ Improved detail and anti-aliasing of graphics for many industries including:
 - Machine Shop
 - Textile Mill
 ...and more.
-
-
-
