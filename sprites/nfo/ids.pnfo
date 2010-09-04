@@ -155,7 +155,7 @@
 #define CARGO_WATER                 11
 #define CARGO_LUMBER                12
 #define CARGO_BAUXITE               13
-#define CARGO_ALUMINIUM             14
+#define CARGO_CLAY                  14
 #define CARGO_SCRAPMETAL            15
 #define CARGO_FUELOIL               16
 #define CARGO_CHEMICALS             17
@@ -200,6 +200,7 @@
 #define CLABEL_PASSENGERS            "PASS"
 #define CLABEL_MAIL                  "MAIL"
 #define CLABEL_WASTE                 "WSTE"
+#define CLABEL_CLAY                  "CLAY"
 
 
 //Definition of text IDs for industries
@@ -385,6 +386,12 @@
 #define STR_CRG_SAND_1UNIT                  1A DC
 #define STR_CRG_SAND_MUNIT                  1B DC
 #define STR_CRG_SAND_TABBR                  1C DC
+
+#define STR_CRG_CLAY_CTYPE                  19 DC
+#define STR_CRG_CLAY_1TYPE                  19 DC //same as above
+#define STR_CRG_CLAY_1UNIT                  1A DC
+#define STR_CRG_CLAY_MUNIT                  1B DC
+#define STR_CRG_CLAY_TABBR                  1C DC
 
 #define STR_CRG_GRAVEL_CTYPE                1D DC
 #define STR_CRG_GRAVEL_1TYPE                1D DC //same as above
