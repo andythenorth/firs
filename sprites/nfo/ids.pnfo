@@ -23,8 +23,8 @@
 #define IND_DREDGINGSITE          14
 #define IND_GRAVELQUARRY          15
 #define IND_GLASSWORKS            16
-#define IND_WATERPLANT            17
-#define IND_WATERTOWER            18
+//#define IND_WATERPLANT            17
+//#define IND_WATERTOWER            18
 #define IND_JUNKYARD              19
 #define IND_ARABLEFARM            1A
 #define IND_SHEEPFARM             1B
@@ -152,7 +152,7 @@
 #define CARGO_WOOL                  0E
 #define CARGO_COTTON                0F
 #define CARGO_GRAVEL                10
-#define CARGO_WATER                 11
+//#define CARGO_WATER                 11
 #define CARGO_LUMBER                12
 #define CARGO_BAUXITE               13
 #define CARGO_ALUMINIUM             14
@@ -186,7 +186,7 @@
 #define CLABEL_FISH                  "FISH"
 #define CLABEL_FOOD                  "FOOD"
 #define CLABEL_GOODS                 "GOOD"
-#define CLABEL_WATER                 "WATR"
+//#define CLABEL_WATER                 "WATR"
 #define CLABEL_FARMSUPPLIES          "FMSP"
 #define CLABEL_ENGINEERINGSUPPLIES   "ENSP"
 #define CLABEL_WOOD                  "WOOD"
@@ -205,7 +205,7 @@
 //Definition of text IDs for industries
 #define STR_IND_ARABLEFARM            70 DC
 #define STR_IND_SANDPIT               71 DC
-#define STR_IND_WATERPLANT            72 DC
+//#define STR_IND_WATERPLANT            72 DC
 #define STR_IND_BREWERY               73 DC
 #define STR_IND_CEMENTPLANT           74 DC
 #define STR_IND_WASTECOLLECTIONPOINT  75 DC
@@ -271,7 +271,7 @@
 #define STR_STA_MILLS             E2 DC
 #define STR_STA_WELLS             E3 DC
 #define STR_STA_REFINERY          E4 DC
-#define STR_STA_WATER             E5 DC
+//#define STR_STA_WATER             E5 DC
 #define STR_STA_FACTORY           E6 DC
 #define STR_STA_PLANT             E7 DC
 #define STR_STA_QUARRY            E8 DC
@@ -323,7 +323,7 @@
 #define STR_INFO_OILREFINERY        IND_OILREFINERY
 #define STR_INFO_PLASTICSPLANT      IND_PLASTICSPLANT
 #define STR_INFO_GLASSWORKS         IND_GLASSWORKS
-#define STR_INFO_WATERTOWER         IND_WATERTOWER
+//#define STR_INFO_WATERTOWER         IND_WATERTOWER
 #define STR_INFO_MS_GRAIN_INCREASE  IND_BAKERY //windmill uses this string as well
 #define STR_INFO_BREWERY            IND_BREWERY
 #define STR_INFO_DAIRY              IND_DAIRY
@@ -513,11 +513,11 @@
 #define STR_CRG_FOOD_MUNIT                  7E 00
 #define STR_CRG_FOOD_TABBR                  9E 00
 
-#define STR_CRG_WATER_CTYPE                 21 00
-#define STR_CRG_WATER_1TYPE                 41 00
-#define STR_CRG_WATER_1UNIT                 61 00
-#define STR_CRG_WATER_MUNIT                 81 00
-#define STR_CRG_WATER_TABBR                 A1 00
+//#define STR_CRG_WATER_CTYPE                 21 00
+//#define STR_CRG_WATER_1TYPE                 41 00
+//#define STR_CRG_WATER_1UNIT                 61 00
+//#define STR_CRG_WATER_MUNIT                 81 00
+//#define STR_CRG_WATER_TABBR                 A1 00
 
 // *****************
 // PUBLIC PARAMETERS
