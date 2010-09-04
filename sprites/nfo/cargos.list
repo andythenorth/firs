@@ -12,7 +12,7 @@ COAL,			FF FF,	16,	  6,	1,	bulk,				FF,	256,	00,	CLIMATE_ALL
 MAIL,			FF FF,	 4,	 15,	1,	mail,				02,	256,	00,	CLIMATE_ALL
 OIL,			FF FF,	14,	172,	1,	liquid,				FF,	256,	00,	CLIMATE_ALL
 LIVESTOCK,		FF FF,	 3,	209,	1,	piece,				FF,	256,	00,	CLIMATE_ALL
-GOODS,			FF FF,	 8,	194,	1,	express piece,			05,	256,	00,	CLIMATE_ALL
+GOODS,			FF FF,	 8,	194,	1,	express piece,			09,	256,	00,	CLIMATE_ALL
 GRAIN,			FF FF,	16,	191,	1,	bulk,				FF,	256,	00,	CLIMATE_ALL
 WOOD,			FF FF,	16,	 55,	1,	piece,				FF,	256,	00,	CLIMATE_ALL
 IRONORE,		FF FF,	16,	181,	1,	bulk,				FF,	256,	00,	CLIMATE_ALL
@@ -23,7 +23,7 @@ FRUITSANDVEGETABLES,	FF FF,	16,	206,	1,	piece express refrigerate,	FF,	256,	00,	
 FISH,			FF FF, 	16,	158,	1,	express refrigerate,	FF,	256,	00,	CLIMATE_ALL
 WOOL,			FF FF,	16,	134,	1,	piece,				FF,	256,	00,	CLIMATE_ALL
 GRAVEL,			FF FF,	16,	 16,	1,	bulk,				FF,	256,	00,	CLIMATE_ALL
-WATER,			FF FF,	16,	149,	1,	liquid,				09,	256,	00,	CLIMATE_TROPIC
+//WATER,			FF FF,	16,	149,	1,	liquid,				09,	256,	00,	CLIMATE_TROPIC
 SAND,			FF FF,	16,	 64,	1,	bulk,				FF,	256,	00,	CLIMATE_ALL
 CLAY,			FF FF,	16,	 64,	1,	bulk,				FF,	256,	00,	CLIMATE_ALL
 LUMBER,			FF FF,	16,	 58,	1,	bulk piece,			FF,	256,	00,	CLIMATE_ALL
@@ -31,7 +31,7 @@ BAUXITE,		FF FF,	16,	184,	1,	bulk,				FF,	256,	00,	CLIMATE_ALL
 // Do we really want scrap metal as piece goods?,	
 SCRAPMETAL,		FF FF,	16,	 20,	1,	piece,				FF,	256,	00,	CLIMATE_ALL
 SUGARCANE,      FF FF,  16,  69,    1,  bulk,               FF, 256,    00, CLIMATE_ALL
-FUELOIL,		FF FF,	11,	175,	1,	liquid,				FF,	256,	00,	CLIMATE_ALL
+FUELOIL,		FF FF,	11,	175,	1,	liquid,				05,	256,	00,	CLIMATE_ALL
 CHEMICALS,		FF FF,	10,	 86,	1,	liquid,				FF,	256,	00,	CLIMATE_ALL
 MANUFACTURINGSUPPLIES,	FF FF,	 5,	 44,	1,	piece express,			FF,	256,	00,	CLIMATE_ALL
 ENGINEERINGSUPPLIES,	FF FF,	10,	 79,	1,	piece express, 			FF,	256,	00,	CLIMATE_ALL
