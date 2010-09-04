@@ -387,12 +387,6 @@
 #define STR_CRG_SAND_MUNIT                  1B DC
 #define STR_CRG_SAND_TABBR                  1C DC
 
-#define STR_CRG_CLAY_CTYPE                  19 DC
-#define STR_CRG_CLAY_1TYPE                  19 DC //same as above
-#define STR_CRG_CLAY_1UNIT                  1A DC
-#define STR_CRG_CLAY_MUNIT                  1B DC
-#define STR_CRG_CLAY_TABBR                  1C DC
-
 #define STR_CRG_GRAVEL_CTYPE                1D DC
 #define STR_CRG_GRAVEL_1TYPE                1D DC //same as above
 #define STR_CRG_GRAVEL_1UNIT                1E DC
@@ -458,6 +452,12 @@
 #define STR_CRG_SCRAPMETAL_1UNIT            47 DC
 #define STR_CRG_SCRAPMETAL_MUNIT            48 DC
 #define STR_CRG_SCRAPMETAL_TABBR            49 DC
+
+#define STR_CRG_CLAY_CTYPE                  4A DC
+#define STR_CRG_CLAY_1TYPE                  4A DC //same as above
+#define STR_CRG_CLAY_1UNIT                  4B DC
+#define STR_CRG_CLAY_MUNIT                  4C DC
+#define STR_CRG_CLAY_TABBR                  4D DC
 
 //Cargo strings below are from original TTD: http://wiki.ttdpatch.net/tiki-index.php?page=TextIDs
 
