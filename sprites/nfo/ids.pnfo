@@ -67,6 +67,8 @@
 #define IND_SUPERMARKET_CONFLICT  BD // special case prevents supermarkets too close (via prop 16). Set bit 7 (add 8 to first nibble of Store ID).
 #define IND_RETAILMARKET          3E
 #define IND_RETAILMARKET_CONFLICT BE // special case prevents retail markets too close (via prop 16). Set bit 7 (add 8 to first nibble of Store ID).
+#define IND_BUILDERSYARD          3F
+#define IND_BUILDERSYARD_CONFLICT BF // special case prevents retail markets too close (via prop 16). Set bit 7 (add 8 to first nibble of Store ID).
 
 //3F is last ID to be used (64 industry limit)
 
