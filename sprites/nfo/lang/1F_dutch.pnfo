@@ -13,6 +13,12 @@
 #define TEXT_CRG_SUGARCANE_MUNIT                        "\UE07C ton suikerriet"
 #define TEXT_CRG_SUGARCANE_TABBR                        "\0ESR"
 
+//Sugar beet
+#define TEXT_CRG_SUGARBEET_CTYPE                         "Suikerbieten" 
+#define TEXT_CRG_SUGARBEET_1UNIT                         "\UE07C ton suikerbieten" 
+#define TEXT_CRG_SUGARBEET_MUNIT                         "\UE07C ton suikerbieten" 
+#define TEXT_CRG_SUGARBEET_TABBR                         "\0ESB" 
+
 //Fruit and Vegetables
 #define TEXT_CRG_FRUITSANDVEGETABLES_CTYPE              "Fruit en Groente"
 #define TEXT_CRG_FRUITSANDVEGETABLES_1TYPE              "Fruit en Groente"
@@ -48,6 +54,12 @@
 #define TEXT_CRG_GRAVEL_1UNIT                           "\UE07C ton grind"
 #define TEXT_CRG_GRAVEL_MUNIT                           "\UE07C ton grind"
 #define TEXT_CRG_GRAVEL_TABBR                           "\0EGD"
+
+//Clay
+#define TEXT_CRG_CLAY_CTYPE                              "Klei" 
+#define TEXT_CRG_CLAY_1UNIT                              "\UE07C ton klei" 
+#define TEXT_CRG_CLAY_MUNIT                              "\UE07C ton klei" 
+#define TEXT_CRG_CLAY_TABBR                              "\0EKL" 
 
 //Lumber
 #define TEXT_CRG_LUMBER_CTYPE                           "Gezaagd hout"
@@ -106,10 +118,18 @@
 #define TEXT_CRG_SCRAPMETAL_MUNIT                       "\UE07C ton schroot"
 #define TEXT_CRG_SCRAPMETAL_TABBR                       "\0EST"
 
+//Building Materials
+#define TEXT_CRG_BUILDINGMATERIALS_CTYPE                 "Bouwmaterialen" 
+#define TEXT_CRG_BUILDINGMATERIALS_1UNIT                 "\UE07C ton bouwmaterialen" 
+#define TEXT_CRG_BUILDINGMATERIALS_MUNIT                 "\UE07C ton bouwmaterialen" 
+#define TEXT_CRG_BUILDINGMATERIALS_TABBR                 "\0EBM" 
+
 //Industry texts
 
 #define TEXT_IND_BREWERY                                 "Brouwerij" 
-#define TEXT_IND_CEMENTPLANT                             "Cementfabriek" 
+#define TEXT_IND_CEMENTPLANT                             "Cementfabriek"
+#define TEXT_IND_CLAYPIT                                 "Kleiwinning"
+#define TEXT_IND_WINDFARM                                "Windmolenpark"
 
 #define TEXT_IND_FERTILISERPLANT                         "Kunstmestfabriek" 
 #define TEXT_IND_PLASTICSPLANT                           "Kunststoffabriek" 
@@ -221,6 +241,9 @@
 #define TEXT_INFO_2T_PER_8T_SAND                         "  2t per 8t zand\0D" 
 
 #define TEXT_INFO_4T_PER_8T_GRAVEL                       "  4t per 8t grind\0D" 
+#define TEXT_INFO_5T_PER_8T_SUGAR                        "  5t per 8t suiker\0D" 
+#define TEXT_INFO_6T_PER_8T_WOOD                         "  6t per 8t hout\0D" 
+#define TEXT_INFO_2T_PER_8T_CLAY                         "  2t per 8t klei\0D" 
 
 #define TEXT_INFO_MACHINESHOP                            "\98Bouwt en onderhoudt machines.\0D" 
 #define TEXT_INFO_SAWMILL                                "\98Hakt hout.\0D" 
