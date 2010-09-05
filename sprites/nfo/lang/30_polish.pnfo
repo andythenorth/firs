@@ -13,12 +13,6 @@
 #define TEXT_CRG_SUGARCANE_MUNIT "\UE07C ton trzciny cukrowej"
 #define TEXT_CRG_SUGARCANE_TABBR "\0ESC"
 
-//Waste 
-#define TEXT_CRG_WASTE_CTYPE "Odpady"
-#define TEXT_CRG_WASTE_1UNIT "\UE07C tona odpadow"
-#define TEXT_CRG_WASTE_MUNIT "\UE07C ton ospadow"
-#define TEXT_CRG_WASTE_TABBR "\0EWS"
-
 //Fruit and Vegetables
 #define TEXT_CRG_FRUITSANDVEGETABLES_CTYPE "Owoce i warzywa"
 #define TEXT_CRG_FRUITSANDVEGETABLES_1TYPE "Owoce i warzywa"
@@ -61,12 +55,6 @@
 #define TEXT_CRG_LUMBER_MUNIT "\UE07C ton desek"
 #define TEXT_CRG_LUMBER_TABBR "\0ELU"
 
-//Packaging - NEEDS CHANGING TO MANUFACTURING SUPPLIES
-//#define TEXT_CRG_MANUFACTURINGSUPPLIES_CTYPE "Opakowania"
-//#define TEXT_CRG_MANUFACTURINGSUPPLIES_1UNIT "\UE07C skrzynia opakowan"
-//#define TEXT_CRG_MANUFACTURINGSUPPLIES_MUNIT "\UE07C skrzyn opakowan"
-//#define TEXT_CRG_MANUFACTURINGSUPPLIES_TABBR "\0EPK"
-
 //Farm supplies
 #define TEXT_CRG_FARMSUPPLIES_CTYPE "Sprzet rolniczy"
 #define TEXT_CRG_FARMSUPPLIES_1UNIT "\UE07C skrzynia sprzetu rolniczego"
@@ -94,12 +82,6 @@
 #define TEXT_CRG_BAUXITE_1UNIT "\UE07C tona boksytu"
 #define TEXT_CRG_BAUXITE_MUNIT "\UE07C ton boksytu"
 
-//Metal, needs changing from Aluminium
-//#define TEXT_CRG_METAL_CTYPE "Aluminium"
-//#define TEXT_CRG_METAL_1UNIT "\UE07C tona aluminium"
-//#define TEXT_CRG_METAL_MUNIT "\UE07C ton aluminium"
-//#define TEXT_CRG_METAL_TABBR "\0EAL"
-
 //Milk
 #define TEXT_CRG_MILK_CTYPE "Mleko"
 #define TEXT_CRG_MILK_1UNIT "\87 mleka"
@@ -115,9 +97,6 @@
 //Industry texts
 #define TEXT_IND_BREWERY "Browar"
 #define TEXT_IND_CEMENTPLANT "Cementownia"
-#define TEXT_IND_WASTECOLLECTIONPOINT "Skup zlomu"
-#define TEXT_IND_INCINERATOR "Spalarnia"
-#define TEXT_IND_RECYCLINGPLANT "Centrum recyklingu"
 #define TEXT_IND_FERTILISERPLANT "Zaklady nawozow"
 #define TEXT_IND_PLASTICSPLANT "Zaklad tworzyw sztucznych"
 #define TEXT_IND_GLASSWORKS "Huta szkla"
@@ -140,16 +119,13 @@
 #define TEXT_IND_SANDPIT "Kopalnia piasku"
 #define TEXT_IND_BAKERY "Piekarnia"
 #define TEXT_IND_SHEEPFARM "Wypas owiec"
-//#define TEXT_IND_WATERPLANT "Oczyszczalnia"
 
 
 //Station texts for station name prefixes/suffixes. \80 where town name goes
 #define TEXT_STA_FARM "\80 Farma"
-#define TEXT_STA_POWERSTATION "\80 Elektrownia"
 #define TEXT_STA_MILLS "\80 Mill"
 #define TEXT_STA_WELLS "\80 Wells"
 #define TEXT_STA_REFINERY "\80 Refineria"
-//#define TEXT_STA_WATER "\80 Water Works"
 #define TEXT_STA_FACTORY "\80 Fabryka"
 #define TEXT_STA_PLANT "\80 Manufacturing Plant"
 #define TEXT_STA_QUARRY "\80 Quarry"

@@ -18,12 +18,6 @@
 #define TEXT_CRG_SUGARBEET_MUNIT                         "\UE07C Tonnen Zuckerrüben" 
 #define TEXT_CRG_SUGARBEET_TABBR                         "\0ESB" 
 
-//Waste 
-#define TEXT_CRG_WASTE_CTYPE                            "Müll"
-#define TEXT_CRG_WASTE_1UNIT                            "\UE07C Tonne Müll"
-#define TEXT_CRG_WASTE_MUNIT                            "\UE07C Tonnen Müll"
-#define TEXT_CRG_WASTE_TABBR                            "\0EML"
-
 //Fruit and Vegetables
 #define TEXT_CRG_FRUITSANDVEGETABLES_CTYPE              "Früchte und Gemüse"
 #define TEXT_CRG_FRUITSANDVEGETABLES_1TYPE              "Früchte und Gemüse"
@@ -66,7 +60,7 @@
 #define TEXT_CRG_LUMBER_MUNIT                           "\UE07C Tonnen Bauholz"
 #define TEXT_CRG_LUMBER_TABBR                           "\0EHZ"
 
-//Manufacturing Supplies - formerly Packaging
+//Manufacturing Supplies
 #define TEXT_CRG_MANUFACTURINGSUPPLIES_CTYPE            "Produktionsgüter"
 #define TEXT_CRG_MANUFACTURINGSUPPLIES_1UNIT            "\UE07C Kiste Produktionsgüter"
 #define TEXT_CRG_MANUFACTURINGSUPPLIES_MUNIT            "\UE07C Kisten Produktionsgüter"
@@ -123,9 +117,6 @@
 
 #define TEXT_IND_BREWERY                                "Brauerei"
 #define TEXT_IND_CEMENTPLANT                            "Zementfabrik"
-#define TEXT_IND_WASTECOLLECTIONPOINT                   "Abfallsammelstelle"
-#define TEXT_IND_INCINERATOR                            "Verbrennungsanlage"
-#define TEXT_IND_RECYCLINGPLANT                         "Recyclinganlage"
 
 #define TEXT_IND_FERTILISERPLANT                        "Düngerfabrik"
 #define TEXT_IND_PLASTICSPLANT                          "Plastikfabrik"
@@ -155,7 +146,6 @@
 #define TEXT_IND_BAKERY                                 "Bäckerei"
 #define TEXT_IND_SHEEPFARM                              "Schaf-Bauernhof"
 #define TEXT_IND_GRAVELQUARRY                           "Kiesgrube"
-//#define TEXT_IND_WATERPLANT                             "Brunnen"
 
 #define TEXT_IND_PETROLPUMP                             "Tankstelle"
 #define TEXT_IND_FISHINGGROUNDS                          "Fischgründe"
@@ -172,12 +162,10 @@
 //Station texts for station name prefixes/suffixes. \80 where town name goes
 
 #define TEXT_STA_FARM                                   "\80 Hof"
-#define TEXT_STA_POWERSTATION                           "\80 Kraftwerk"
 #define TEXT_STA_MILLS                                  "\80 Fabrik"
 #define TEXT_STA_WELLS                                  "\80 Bohrung"
 #define TEXT_STA_REFINERY                               "\80 Raffinerie"
 
-//#define TEXT_STA_WATER                                  "\80 Quelle"
 #define TEXT_STA_FACTORY                                "\80 Fabrik"
 #define TEXT_STA_PLANT                                  "\80 Fabrik"
 #define TEXT_STA_QUARRY                                 "\80 Grube"
@@ -258,12 +246,6 @@
 
 #define TEXT_INFO_FERTILISERPLANT                        "\98Prozessiert Chemikalien zu Dünger für landwirtschaftlichen Gebrauch.\0D" 
 #define TEXT_INFO_LUMBERYARD                             "\98Produziert Dinge wie Balken und Zaunpfähle.\0D" 
-#define TEXT_INFO_POWERSTATION                           "\98Generiert Elektrizität.\0D" 
-
-#define TEXT_INFO_POWERSTATION_CLOSE_0					 "\0DDieses Kraftwerk könnte schließen, wenn nicht in den \90nächsten \UE07C Monaten\98 Kohle oder Treibstoff angeliefert wird."
-#define TEXT_INFO_POWERSTATION_CLOSE_1					 "\0DDieses Kraftwerk könnte schließen, wenn nicht im \94nächsten Monat\98 Kohle oder Treibstoff angeliefert wird."
-#define TEXT_INFO_POWERSTATION_CLOSE_2					 "\n\8BIn mindestens den letzten \85\85\UE07C Monaten\8B wurden weder Kohle noch Treibstoff geliefert. Dieses Kraftwerk könnte bald schließen.\0D"
-
 
 
 //grf and parameter descriptions

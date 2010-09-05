@@ -13,12 +13,6 @@
 #define TEXT_CRG_SUGARCANE_MUNIT                        "\UE07C ton suikerriet"
 #define TEXT_CRG_SUGARCANE_TABBR                        "\0ESR"
 
-//Waste 
-#define TEXT_CRG_WASTE_CTYPE                            "Afval"
-#define TEXT_CRG_WASTE_1UNIT                            "\UE07C ton afval"
-#define TEXT_CRG_WASTE_MUNIT                            "\UE07C ton afval"
-#define TEXT_CRG_WASTE_TABBR                            "\0EAV"
-
 //Fruit and Vegetables
 #define TEXT_CRG_FRUITSANDVEGETABLES_CTYPE              "Fruit en Groente"
 #define TEXT_CRG_FRUITSANDVEGETABLES_1TYPE              "Fruit en Groente"
@@ -61,7 +55,7 @@
 #define TEXT_CRG_LUMBER_MUNIT                           "\UE07C ton gezaagd hout"
 #define TEXT_CRG_LUMBER_TABBR                           "\0EHT"
 
-//Manufacturing Supplies - formerly Packaging
+//Manufacturing Supplies
 #define TEXT_CRG_MANUFACTURINGSUPPLIES_CTYPE            "Productiehulpgoederen"
 #define TEXT_CRG_MANUFACTURINGSUPPLIES_1UNIT            "\UE07C pallet productiehulpgoederen"
 #define TEXT_CRG_MANUFACTURINGSUPPLIES_MUNIT            "\UE07C pallets productiehulpgoederen"
@@ -116,9 +110,6 @@
 
 #define TEXT_IND_BREWERY                                 "Brouwerij" 
 #define TEXT_IND_CEMENTPLANT                             "Cementfabriek" 
-#define TEXT_IND_WASTECOLLECTIONPOINT                    "Afvalverzamelingspunt" 
-#define TEXT_IND_INCINERATOR                             "Afvalverbrandingsinstallatie"
-#define TEXT_IND_RECYCLINGPLANT                          "Recyclingsinstallatie" 
 
 #define TEXT_IND_FERTILISERPLANT                         "Kunstmestfabriek" 
 #define TEXT_IND_PLASTICSPLANT                           "Kunststoffabriek" 
@@ -146,7 +137,6 @@
 #define TEXT_IND_BAKERY                                  "Bakkerij" 
 #define TEXT_IND_SHEEPFARM                               "Schapenhouderij" 
 #define TEXT_IND_GRAVELQUARRY                            "Grindwinning" 
-//#define TEXT_IND_WATERPLANT                              "Waterbron" 
 #define TEXT_IND_PETROLPUMP                        	     "Tankstation" 
 
 #define TEXT_IND_FISHINGHARBOUR                          "Vissershaven" 

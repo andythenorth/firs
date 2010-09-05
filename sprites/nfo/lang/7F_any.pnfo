@@ -18,12 +18,6 @@
 #define TEXT_CRG_SUGARBEET_MUNIT                         "\UE07C tons of sugar beet" 
 #define TEXT_CRG_SUGARBEET_TABBR                         "\0ESB" 
 
-//Waste 
-#define TEXT_CRG_WASTE_CTYPE                             "Waste" 
-#define TEXT_CRG_WASTE_1UNIT                             "\UE07C ton of waste" 
-#define TEXT_CRG_WASTE_MUNIT                             "\UE07C tons of waste" 
-#define TEXT_CRG_WASTE_TABBR                             "\0EWS" 
-
 //Fruit and Vegetables
 #define TEXT_CRG_FRUITSANDVEGETABLES_CTYPE               "Fruit and Vegetables" 
 #define TEXT_CRG_FRUITSANDVEGETABLES_1TYPE               "Fruit and Vegetable" 
@@ -133,9 +127,6 @@
 
 #define TEXT_IND_BREWERY                                 "Brewery" 
 #define TEXT_IND_CEMENTPLANT                             "Cement Plant" 
-#define TEXT_IND_WASTECOLLECTIONPOINT                    "Waste Collection Point" 
-#define TEXT_IND_INCINERATOR                             "Incinerator"
-#define TEXT_IND_RECYCLINGPLANT                          "Recycling Plant" 
 
 #define TEXT_IND_FERTILISERPLANT                         "Fertiliser Plant" 
 #define TEXT_IND_PLASTICSPLANT                           "Plastics Plant" 
@@ -162,9 +153,8 @@
 #define TEXT_IND_ARABLEFARM                              "Arable Farm" 
 
 #define TEXT_IND_BAKERY                                  "Bakery" 
-#define TEXT_IND_SHEEPFARM                               "Sheep Farm" 
-#define TEXT_IND_GRAVELQUARRY                            "Gravel Pit" 
-//#define TEXT_IND_WATERPLANT                              "Water Plant" 
+#define TEXT_IND_SHEEPFARM                               "Sheep Farm"
+#define TEXT_IND_GRAVELQUARRY                            "Gravel Pit"
 #define TEXT_IND_PETROLPUMP                        	     "Petrol Pump" 
 
 #define TEXT_IND_FISHINGHARBOUR                          "Fishing Harbour" 
@@ -183,12 +173,10 @@
 //Station texts for station name prefixes/suffixes. \80 where town name goes
 
 #define TEXT_STA_FARM                                    "\80 Farm" 
-#define TEXT_STA_POWERSTATION                            "\80 Power Station" 
 #define TEXT_STA_MILLS                                   "\80 Mills" 
 #define TEXT_STA_WELLS                                   "\80 Wells" 
 #define TEXT_STA_REFINERY                                "\80 Refinery" 
 
-//#define TEXT_STA_WATER                                   "\80 Water Works" 
 #define TEXT_STA_FACTORY                                 "\80 Factory" 
 #define TEXT_STA_PLANT                                   "\80 Manufacturing Plant" 
 #define TEXT_STA_QUARRY                                  "\80 Quarry" 
@@ -276,12 +264,7 @@
 #define TEXT_INFO_BREWERY_STEPUP                         "\0DProduction steps up if manufacturing supplies delivered within a month of other cargos." 
 
 #define TEXT_INFO_FERTILISERPLANT                        "\98Processes chemicals into fertiliser for use by farms.\0D" 
-#define TEXT_INFO_LUMBERYARD                             "\98Produces items such as poles and fence posts.\0D" 
-#define TEXT_INFO_POWERSTATION                           "\98Generates electricity.\0D" 
-
-#define TEXT_INFO_POWERSTATION_CLOSE_0                   "\0DThis Power Station might close unless coal or fuel oil are delivered within:\0D\90  \UE07C months" 
-#define TEXT_INFO_POWERSTATION_CLOSE_1                   "\0DThis Power Station might close unless coal or fuel oil are delivered within:\0D\94  \UE07C month" 
-#define TEXT_INFO_POWERSTATION_CLOSE_2                   "\0D\94No coal or fuel oil has been delivered for at least \85\85\UE07C months. This Power Station may close soon. \0D" 
+#define TEXT_INFO_LUMBERYARD                             "\98Produces items such as poles and fence posts.\0D"
 
 
 

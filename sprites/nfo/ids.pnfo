@@ -1,7 +1,7 @@
 // Definition of the IDs of the single industries
 #define IND_NULL                  00
 #define IND_COALMINE              00
-#define IND_POWERSTATION          01
+//#define IND_VACANT                01
 #define IND_WINDFARM              02
 #define IND_WINDMILL              03
 #define IND_IRONOREMINE           04
@@ -23,8 +23,8 @@
 #define IND_DREDGINGSITE          14
 #define IND_GRAVELQUARRY          15
 #define IND_GLASSWORKS            16
-//#define IND_WATERPLANT            17
-//#define IND_WATERTOWER            18
+//#define IND_VACANT                17
+//#define IND_VACANT                18
 #define IND_JUNKYARD              19
 #define IND_ARABLEFARM            1A
 #define IND_SHEEPFARM             1B
@@ -57,7 +57,7 @@
 //#define IND_LANDFILL              36
 //#define IND_INCINERATOR           37
 //#define IND_VACANT                38
-#define IND_RECYCLINGPLANT        39
+//#define IND_RECYCLINGPLANT        39
 //#define IND_WASTECOLLECTIONPOINT  3A
 #define IND_GENERALSTORE          3B
 #define IND_GENERALSTORE_CONFLICT BB // special case prevents stores too close (via prop 16). Set bit 7 (add 8 to first nibble of Store ID).
@@ -88,9 +88,9 @@
 #define TILE_BREWERY_1                     A1
 #define TILE_CEMENTPLANT_1                 A2
 #define TILE_FERTILISERPLANT_1             A3
-#define TILE_INCINERATOR_1                 A4
-#define TILE_RECYCLINGPLANT_1              A5
-#define TILE_WASTECOLLECTIONPOINT_1        A6
+//#define TILE_VACANT                        A4
+//#define TILE_VACANT                        A5
+//#define TILE_VACANT                        A6
 #define TILE_PLASTICSPLANT_1               B0
 #define TILE_SANDPIT_1                     B1
 #define TILE_GLASSWORKS_1                  B2
@@ -209,12 +209,12 @@
 //Definition of text IDs for industries
 #define STR_IND_ARABLEFARM            70 DC
 #define STR_IND_SANDPIT               71 DC
-//#define STR_IND_WATERPLANT            72 DC
+//#define STR_IND_VACANT              72 DC
 #define STR_IND_BREWERY               73 DC
 #define STR_IND_CEMENTPLANT           74 DC
-#define STR_IND_WASTECOLLECTIONPOINT  75 DC
-#define STR_IND_INCINERATOR           76 DC
-#define STR_IND_RECYCLINGPLANT        77 DC
+//#define STR_IND_VACANT              75 DC
+//#define STR_IND_VACANT              76 DC
+//#define STR_IND_VACANT              77 DC
 #define STR_IND_FERTILISERPLANT       78 DC
 #define STR_IND_PLASTICSPLANT         79 DC
 #define STR_IND_GLASSWORKS            7A DC
@@ -272,11 +272,11 @@
 
 //Definition of text IDs for station name suffixes
 #define STR_STA_FARM              E0 DC
-#define STR_STA_POWERSTATION      E1 DC
+//#define                         E1 DC
 #define STR_STA_MILLS             E2 DC
 #define STR_STA_WELLS             E3 DC
 #define STR_STA_REFINERY          E4 DC
-//#define STR_STA_WATER             E5 DC
+//#define                         E5 DC
 #define STR_STA_FACTORY           E6 DC
 #define STR_STA_PLANT             E7 DC
 #define STR_STA_QUARRY            E8 DC
@@ -314,9 +314,6 @@
 #define STR_INFO_NOT_ACCEPTING_FS   D3
 #define STR_INFO_ACCEPTING_MS       D4
 #define STR_INFO_NOT_ACCEPTING_MS   D5
-#define STR_INFO_POWERSTATION_0     D6
-#define STR_INFO_POWERSTATION_1     D7
-#define STR_INFO_POWERSTATION_2     D8
 #define STR_INFO_MACHINESHOP        IND_MACHINESHOP
 #define STR_INFO_SAWMILL            IND_SAWMILL
 #define STR_INFO_WINDFARM           IND_WINDFARM
@@ -328,7 +325,6 @@
 #define STR_INFO_OILREFINERY        IND_OILREFINERY
 #define STR_INFO_PLASTICSPLANT      IND_PLASTICSPLANT
 #define STR_INFO_GLASSWORKS         IND_GLASSWORKS
-//#define STR_INFO_WATERTOWER         IND_WATERTOWER
 #define STR_INFO_MS_GRAIN_INCREASE  IND_BAKERY //windmill uses this string as well
 #define STR_INFO_BREWERY            IND_BREWERY
 #define STR_INFO_DAIRY              IND_DAIRY
@@ -354,11 +350,11 @@
 #define STR_CRG_SUGARCANE_MUNIT             03 DC
 #define STR_CRG_SUGARCANE_TABBR             04 DC
 
-#define STR_CRG_WASTE_CTYPE                 05 DC
-#define STR_CRG_WASTE_1TYPE                 05 DC //same as above
-#define STR_CRG_WASTE_1UNIT                 06 DC
-#define STR_CRG_WASTE_MUNIT                 07 DC
-#define STR_CRG_WASTE_TABBR                 08 DC
+#define STR_CRG_BUILDINGMATERIALS_CTYPE     05 DC
+#define STR_CRG_BUILDINGMATERIALS_1TYPE     05 DC //same as above
+#define STR_CRG_BUILDINGMATERIALS_1UNIT     06 DC
+#define STR_CRG_BUILDINGMATERIALS_MUNIT     07 DC
+#define STR_CRG_BUILDINGMATERIALS_TABBR     08 DC
 
 #define STR_CRG_FRUITSANDVEGETABLES_CTYPE   09 DC
 #define STR_CRG_FRUITSANDVEGETABLES_1TYPE   0A DC
@@ -462,11 +458,6 @@
 #define STR_CRG_CLAY_MUNIT                  4C DC
 #define STR_CRG_CLAY_TABBR                  4D DC
 
-#define STR_CRG_BUILDINGMATERIALS_CTYPE     4E DC
-#define STR_CRG_BUILDINGMATERIALS_1TYPE     4E DC //same as above
-#define STR_CRG_BUILDINGMATERIALS_1UNIT     4F DC
-#define STR_CRG_BUILDINGMATERIALS_MUNIT     50 DC
-#define STR_CRG_BUILDINGMATERIALS_TABBR     51 DC
 
 //Cargo strings below are from original TTD: http://wiki.ttdpatch.net/tiki-index.php?page=TextIDs
 

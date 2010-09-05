@@ -21,12 +21,6 @@
 #define TEXT_CRG_SUGARBEET_MUNIT                         "\UE07C toneladas de remolacha azucarera"
 #define TEXT_CRG_SUGARBEET_TABBR                         "\0ERA"
 
-//Waste
-#define TEXT_CRG_WASTE_CTYPE                            "Residuos"
-#define TEXT_CRG_WASTE_1UNIT                            "\UE07C tonelada de residuos"
-#define TEXT_CRG_WASTE_MUNIT                            "\UE07C toneladas de residuos"
-#define TEXT_CRG_WASTE_TABBR                            "\0ERS"
-
 //Fruit and Vegetables
 #define TEXT_CRG_FRUITSANDVEGETABLES_CTYPE              "Frutas y Vegetales"
 #define TEXT_CRG_FRUITSANDVEGETABLES_1TYPE              "Fruta y Vegetal"
@@ -69,7 +63,7 @@
 #define TEXT_CRG_LUMBER_MUNIT                           "\UE07C toneladas de tablas"
 #define TEXT_CRG_LUMBER_TABBR                           "\0ETB"
 
-//Manufacturing Supplies - formerly Packaging
+//Manufacturing Supplies
 #define TEXT_CRG_MANUFACTURINGSUPPLIES_CTYPE            "Suministros de Manufactura"
 #define TEXT_CRG_MANUFACTURINGSUPPLIES_1UNIT            "\UE07C caja de suministros de manufactura"
 #define TEXT_CRG_MANUFACTURINGSUPPLIES_MUNIT            "\UE07C cajas de suministros de manufactura"
@@ -124,9 +118,6 @@
 //Industry texts
 #define TEXT_IND_BREWERY                                "Destilería"
 #define TEXT_IND_CEMENTPLANT                            "Planta de Cemento"
-#define TEXT_IND_WASTECOLLECTIONPOINT                   "Recogida de Residuos"
-#define TEXT_IND_INCINERATOR                            "Incinerador"
-#define TEXT_IND_RECYCLINGPLANT                         "Planta de Reciclaje"
 #define TEXT_IND_FERTILISERPLANT                        "Fábrica de Fertilizantes"
 #define TEXT_IND_PLASTICSPLANT                          "Fábrica de Plásticos"
 #define TEXT_IND_GLASSWORKS                             "Cristalería"
@@ -151,7 +142,6 @@
 #define TEXT_IND_BAKERY                                 "Panadería"
 #define TEXT_IND_SHEEPFARM                              "Granja de Ovejas"
 #define TEXT_IND_GRAVELQUARRY                           "Dragado de Grava"
-//#define TEXT_IND_WATERPLANT                             "Planta de Agua"
 #define TEXT_IND_PETROLPUMP                             "Gasolinera"
 #define TEXT_IND_FISHINGGROUNDS                         "Zona de Pesca"
 #define TEXT_IND_BLACKSMITH                             "Herrería"
@@ -163,11 +153,9 @@
 
 //Station texts for station name prefixes/suffixes. \80 where town name goes
 #define TEXT_STA_FARM                                   "\80 Granja"
-#define TEXT_STA_POWERSTATION                           "\80 Central Eléctrica"
 #define TEXT_STA_MILLS                                  "\80 Planta"
 #define TEXT_STA_WELLS                                  "\80 Pozos"
 #define TEXT_STA_REFINERY                               "\80 Refinería"
-//#define TEXT_STA_WATER                                  "\80 Tratamiento de Agua"
 
 #define TEXT_STA_FACTORY                                "\80 Fábrica"
 #define TEXT_STA_PLANT                                  "\80 Planta de Manufactura"
@@ -242,10 +230,6 @@
 #define TEXT_INFO_BREWERY_STEPUP                        "\0DAumenta a 8t por cada 8t si se entregan suministros de manufactura y una de las otras cargas en un intervalo inferior a un mes."
 #define TEXT_INFO_FERTILISERPLANT                       "\98Transforma productos químicos en fertilizante para ser usado en granjas.\0D"
 #define TEXT_INFO_LUMBERYARD                            "\98Produce objetos tales como mástiles y cercas.\0D"
-#define TEXT_INFO_POWERSTATION                          "\98Genera electricidad.\0D"
-#define TEXT_INFO_POWERSTATION_CLOSE_0                  "\0DEsta Central Eléctrica podría cerrar a menos que se entregue carbón o fueloil antes de que pasen:\0D\90  \UE07C meses"
-#define TEXT_INFO_POWERSTATION_CLOSE_1                  "\0DEsta Central Eléctrica podría cerrar a menos que se entregue carbón o fueloil antes de que pase:\0D\94  \UE07C mes"
-#define TEXT_INFO_POWERSTATION_CLOSE_2                  "\0D\94No se ha entregado carbón ni fueloil por al menos \85\85\UE07C meses. Esta central eléctrica podría cerrar pronto. \0D"
 
 #define TEXT_GRF_DESC                                    "\8EFIRS Industry Replacement Set\n\98Creado por \89andythenorth\98 y \89FooBar\98.\n\98'1,000 commits y contando...'\98\n\nWeb: \89www.tt-foundry.com/sets/FIRS\98.Licencia: \89GPL v2\98. Agradecimientos a \89Ammler\98, \89Core Xii\98, \89Irwe\98, \89planetmaker\98 y \89Zephyris\98. Usa partes de \89eGRVTS\98, \89ISR\98 y \89OpenGFX\98."
 
