@@ -165,7 +165,7 @@
 #define CARGO_FUELOIL               19
 #define CARGO_GRAVEL                1A
 #define CARGO_BAUXITE               1B
-// #define CARGO_CEMENT                1C
+#define CARGO_BUILDINGMATERIALS     1C
 // #define CARGO_RESERVED1             1D
 // #define CARGO_RESERVED2             1E
 // #define CARGO_RESERVED3             1F
@@ -189,7 +189,7 @@
 #define CLABEL_FISH                  "FISH"
 #define CLABEL_FOOD                  "FOOD"
 #define CLABEL_GOODS                 "GOOD"
-//#define CLABEL_WATER                 "WATR"
+#define CLABEL_BUILDINGMATERIALS     "BDMT"
 #define CLABEL_FARMSUPPLIES          "FMSP"
 #define CLABEL_ENGINEERINGSUPPLIES   "ENSP"
 #define CLABEL_WOOD                  "WOOD"
@@ -462,6 +462,12 @@
 #define STR_CRG_CLAY_MUNIT                  4C DC
 #define STR_CRG_CLAY_TABBR                  4D DC
 
+#define STR_CRG_BUILDINGMATERIALS_CTYPE     4E DC
+#define STR_CRG_BUILDINGMATERIALS_1TYPE     4E DC //same as above
+#define STR_CRG_BUILDINGMATERIALS_1UNIT     4F DC
+#define STR_CRG_BUILDINGMATERIALS_MUNIT     50 DC
+#define STR_CRG_BUILDINGMATERIALS_TABBR     51 DC
+
 //Cargo strings below are from original TTD: http://wiki.ttdpatch.net/tiki-index.php?page=TextIDs
 
 #define STR_CRG_PASSENGERS_CTYPE            0F 00
@@ -524,11 +530,6 @@
 #define STR_CRG_FOOD_MUNIT                  7E 00
 #define STR_CRG_FOOD_TABBR                  9E 00
 
-//#define STR_CRG_WATER_CTYPE                 21 00
-//#define STR_CRG_WATER_1TYPE                 41 00
-//#define STR_CRG_WATER_1UNIT                 61 00
-//#define STR_CRG_WATER_MUNIT                 81 00
-//#define STR_CRG_WATER_TABBR                 A1 00
 
 // *****************
 // PUBLIC PARAMETERS
