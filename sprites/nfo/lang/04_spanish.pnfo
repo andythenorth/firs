@@ -4,16 +4,13 @@
 #define LANG_ID  04
 #define LANG_ID2 84
 
-//Format: action 04; feature; langID with bit 7 set; 01; stringID; "string"; 00
-
-
 //Cargo texts
 
 //Sugar cane
-#define TEXT_CRG_SUGARCANE_CTYPE                        "Caña de azúcar"
-#define TEXT_CRG_SUGARCANE_1UNIT                        "\UE07C tonelada de caña de azúcar"
-#define TEXT_CRG_SUGARCANE_MUNIT                        "\UE07C toneladas de caña de azúcar"
-#define TEXT_CRG_SUGARCANE_TABBR                        "\0ECA"
+#define TEXT_CRG_SUGARCANE_CTYPE                         "Caña de azúcar"
+#define TEXT_CRG_SUGARCANE_1UNIT                         "\UE07C tonelada de caña de azúcar"
+#define TEXT_CRG_SUGARCANE_MUNIT                         "\UE07C toneladas de caña de azúcar"
+#define TEXT_CRG_SUGARCANE_TABBR                         "\0ECA"
 
 //Sugar beet
 #define TEXT_CRG_SUGARBEET_CTYPE                         "Remolacha azucarera"
@@ -22,214 +19,254 @@
 #define TEXT_CRG_SUGARBEET_TABBR                         "\0ERA"
 
 //Fruit and Vegetables
-#define TEXT_CRG_FRUITSANDVEGETABLES_CTYPE              "Frutas y Vegetales"
-#define TEXT_CRG_FRUITSANDVEGETABLES_1TYPE              "Fruta y Vegetal"
-#define TEXT_CRG_FRUITSANDVEGETABLES_1UNIT              "\UE07C tonelada de frutas y vegetales"
-#define TEXT_CRG_FRUITSANDVEGETABLES_MUNIT              "\UE07C toneladas de frutas y vegetales"
+#define TEXT_CRG_FRUITSANDVEGETABLES_CTYPE               "Frutas y Vegetales"
+#define TEXT_CRG_FRUITSANDVEGETABLES_1TYPE               "Fruta y Vegetal"
+#define TEXT_CRG_FRUITSANDVEGETABLES_1UNIT               "\UE07C tonelada de frutas y vegetales"
+#define TEXT_CRG_FRUITSANDVEGETABLES_MUNIT               "\UE07C toneladas de frutas y vegetales"
 
 //Fish 
-#define TEXT_CRG_FISH_CTYPE                             "Pescado"
-#define TEXT_CRG_FISH_1UNIT                             "\UE07C tonelada de pescado"
-#define TEXT_CRG_FISH_MUNIT                             "\UE07C toneladas de pescado"
-#define TEXT_CRG_FISH_TABBR                             "\0EPC"
+#define TEXT_CRG_FISH_CTYPE                              "Pescado"
+#define TEXT_CRG_FISH_1UNIT                              "\UE07C tonelada de pescado"
+#define TEXT_CRG_FISH_MUNIT                              "\UE07C toneladas de pescado"
+#define TEXT_CRG_FISH_TABBR                              "\0EPC"
 
 //Wool
-#define TEXT_CRG_WOOL_CTYPE                             "Lana"
-#define TEXT_CRG_WOOL_1UNIT                             "\UE07C tonelada de lana"
-#define TEXT_CRG_WOOL_MUNIT                             "\UE07C toneladas de lana"
-#define TEXT_CRG_WOOL_TABBR                             "\0EWL"
+#define TEXT_CRG_WOOL_CTYPE                              "Lana"
+#define TEXT_CRG_WOOL_1UNIT                              "\UE07C tonelada de lana"
+#define TEXT_CRG_WOOL_MUNIT                              "\UE07C toneladas de lana"
+#define TEXT_CRG_WOOL_TABBR                              "\0EWL"
 
 //Cotton
-#define TEXT_CRG_COTTON_CTYPE                           "Algodón"
-#define TEXT_CRG_COTTON_1UNIT                           "\UE07C tonelada de algodón"
-#define TEXT_CRG_COTTON_MUNIT                           "\UE07C toneladas de algodón"
-#define TEXT_CRG_COTTON_TABBR                           "\0EAG"
+#define TEXT_CRG_COTTON_CTYPE                            "Algodón"
+#define TEXT_CRG_COTTON_1UNIT                            "\UE07C tonelada de algodón"
+#define TEXT_CRG_COTTON_MUNIT                            "\UE07C toneladas de algodón"
+#define TEXT_CRG_COTTON_TABBR                            "\0EAG"
 
 //Sand
-#define TEXT_CRG_SAND_CTYPE                             "Arena"
-#define TEXT_CRG_SAND_1UNIT                             "\UE07C tonelada de arena"
-#define TEXT_CRG_SAND_MUNIT                             "\UE07C toneladas de arena"
-#define TEXT_CRG_SAND_TABBR                             "\0EAR"
+#define TEXT_CRG_SAND_CTYPE                              "Arena"
+#define TEXT_CRG_SAND_1UNIT                              "\UE07C tonelada de arena"
+#define TEXT_CRG_SAND_MUNIT                              "\UE07C toneladas de arena"
+#define TEXT_CRG_SAND_TABBR                              "\0EAR"
 
 //Gravel
-#define TEXT_CRG_GRAVEL_CTYPE                           "Grava"
-#define TEXT_CRG_GRAVEL_1UNIT                           "\UE07C tonelada de grava"
-#define TEXT_CRG_GRAVEL_MUNIT                           "\UE07C toneladas de grava"
-#define TEXT_CRG_GRAVEL_TABBR                           "\0EGV"
+#define TEXT_CRG_GRAVEL_CTYPE                            "Piedra"
+#define TEXT_CRG_GRAVEL_1UNIT                            "\UE07C tonelada de piedra"
+#define TEXT_CRG_GRAVEL_MUNIT                            "\UE07C toneladas de piedra"
+#define TEXT_CRG_GRAVEL_TABBR                            "\0EGV"
+
+//Clay
+#define TEXT_CRG_CLAY_CTYPE                              "Arcilla"
+#define TEXT_CRG_CLAY_1UNIT                              "\UE07C tonelada de arcilla"
+#define TEXT_CRG_CLAY_MUNIT                              "\UE07C toneladas de arcilla"
+#define TEXT_CRG_CLAY_TABBR                              "\0ECL"
 
 //Lumber
-#define TEXT_CRG_LUMBER_CTYPE                           "Tablas"
-#define TEXT_CRG_LUMBER_1UNIT                           "\UE07C tonelada de tablas"
-#define TEXT_CRG_LUMBER_MUNIT                           "\UE07C toneladas de tablas"
-#define TEXT_CRG_LUMBER_TABBR                           "\0ETB"
+#define TEXT_CRG_LUMBER_CTYPE                            "Tablas"
+#define TEXT_CRG_LUMBER_1UNIT                            "\UE07C tonelada de tablas"
+#define TEXT_CRG_LUMBER_MUNIT                            "\UE07C toneladas de tablas"
+#define TEXT_CRG_LUMBER_TABBR                            "\0ETB"
 
 //Manufacturing Supplies
-#define TEXT_CRG_MANUFACTURINGSUPPLIES_CTYPE            "Suministros de Manufactura"
-#define TEXT_CRG_MANUFACTURINGSUPPLIES_1UNIT            "\UE07C caja de suministros de manufactura"
-#define TEXT_CRG_MANUFACTURINGSUPPLIES_MUNIT            "\UE07C cajas de suministros de manufactura"
-#define TEXT_CRG_MANUFACTURINGSUPPLIES_TABBR            "\0ESM"
+#define TEXT_CRG_MANUFACTURINGSUPPLIES_CTYPE             "Suministros de Manufactura"
+#define TEXT_CRG_MANUFACTURINGSUPPLIES_1UNIT             "\UE07C caja de suministros de manufactura"
+#define TEXT_CRG_MANUFACTURINGSUPPLIES_MUNIT             "\UE07C cajas de suministros de manufactura"
+#define TEXT_CRG_MANUFACTURINGSUPPLIES_TABBR             "\0ESM"
 
 //Farm supplies
-#define TEXT_CRG_FARMSUPPLIES_CTYPE                     "Suministros Agrarios"
-#define TEXT_CRG_FARMSUPPLIES_1UNIT                     "\UE07C caja de suministros agrarios"
-#define TEXT_CRG_FARMSUPPLIES_MUNIT                     "\UE07C cajas de suministros agrarios"
-#define TEXT_CRG_FARMSUPPLIES_TABBR                     "\0ESA"
+#define TEXT_CRG_FARMSUPPLIES_CTYPE                      "Suministros Agrarios"
+#define TEXT_CRG_FARMSUPPLIES_1UNIT                      "\UE07C caja de suministros agrarios"
+#define TEXT_CRG_FARMSUPPLIES_MUNIT                      "\UE07C cajas de suministros agrarios"
+#define TEXT_CRG_FARMSUPPLIES_TABBR                      "\0ESA"
 
 //Chemicals
-#define TEXT_CRG_CHEMICALS_CTYPE                        "Productos Químicos"
-#define TEXT_CRG_CHEMICALS_1UNIT                        "\87 de productos químicos"
-#define TEXT_CRG_CHEMICALS_TABBR                        "\0EPQ"
+#define TEXT_CRG_CHEMICALS_CTYPE                         "Productos Químicos"
+#define TEXT_CRG_CHEMICALS_1UNIT                         "\87 de productos químicos"
+#define TEXT_CRG_CHEMICALS_TABBR                         "\0EPQ"
 
 //Engineering supplies
-#define TEXT_CRG_ENGINEERINGSUPPLIES_CTYPE              "Suministros de Ingeniería"
-#define TEXT_CRG_ENGINEERINGSUPPLIES_1UNIT              "\UE07C caja de suministros de ingeniería"
-#define TEXT_CRG_ENGINEERINGSUPPLIES_MUNIT              "\UE07C cajas de suministros de ingeniería"
-#define TEXT_CRG_ENGINEERINGSUPPLIES_TABBR              "\0EES"
+#define TEXT_CRG_ENGINEERINGSUPPLIES_CTYPE               "Suministros de Ingeniería"
+#define TEXT_CRG_ENGINEERINGSUPPLIES_1UNIT               "\UE07C caja de suministros de ingeniería"
+#define TEXT_CRG_ENGINEERINGSUPPLIES_MUNIT               "\UE07C cajas de suministros de ingeniería"
+#define TEXT_CRG_ENGINEERINGSUPPLIES_TABBR               "\0EES"
 
 //Fuel oil
-#define TEXT_CRG_FUELOIL_CTYPE                          "Fueloil"
-#define TEXT_CRG_FUELOIL_1UNIT                          "\87 de fueloil"
-#define TEXT_CRG_FUELOIL_TABBR                          "\0EFO"
+#define TEXT_CRG_FUELOIL_CTYPE                           "Fueloil"
+#define TEXT_CRG_FUELOIL_1UNIT                           "\87 de fueloil"
+#define TEXT_CRG_FUELOIL_TABBR                           "\0EFO"
 
 //Bauxite
-#define TEXT_CRG_BAUXITE_CTYPE                          "Bauxita"
-#define TEXT_CRG_BAUXITE_1UNIT                          "\UE07C tonelada de bauxita"
-#define TEXT_CRG_BAUXITE_MUNIT                          "\UE07C toneladas de bauxita"
-#define TEXT_CRG_BAUXITE_TABBR                          "\0EBX"
+#define TEXT_CRG_BAUXITE_CTYPE                           "Bauxita"
+#define TEXT_CRG_BAUXITE_1UNIT                           "\UE07C tonelada de bauxita"
+#define TEXT_CRG_BAUXITE_MUNIT                           "\UE07C toneladas de bauxita"
+#define TEXT_CRG_BAUXITE_TABBR                           "\0EBX"
 
 //Metal
-#define TEXT_CRG_METAL_CTYPE                            "Metal"
-#define TEXT_CRG_METAL_1UNIT                            "\UE07C tonelada de metal"
-#define TEXT_CRG_METAL_MUNIT                            "\UE07C toneladas de metal"
-#define TEXT_CRG_METAL_TABBR                            "\0EAL"
+#define TEXT_CRG_METAL_CTYPE                             "Metal"
+#define TEXT_CRG_METAL_1UNIT                             "\UE07C tonelada de metal"
+#define TEXT_CRG_METAL_MUNIT                             "\UE07C toneladas de metal"
+#define TEXT_CRG_METAL_TABBR                             "\0EML"
 
 //Milk
-#define TEXT_CRG_MILK_CTYPE                             "Leche"
-#define TEXT_CRG_MILK_1UNIT                             "\87 de leche"
-#define TEXT_CRG_MILK_TABBR                             "\0ELC"
+#define TEXT_CRG_MILK_CTYPE                              "Leche"
+#define TEXT_CRG_MILK_1UNIT                              "\87 de leche"
+#define TEXT_CRG_MILK_TABBR                              "\0ELC"
 
 //Scrap Metal
-#define TEXT_CRG_SCRAPMETAL_CTYPE                       "Chatarra"
-#define TEXT_CRG_SCRAPMETAL_1UNIT                       "\UE07C tonelada de chatarra"
-#define TEXT_CRG_SCRAPMETAL_MUNIT                       "\UE07C toneladas de chatarra"
-#define TEXT_CRG_SCRAPMETAL_TABBR                       "\0ECT"
+#define TEXT_CRG_SCRAPMETAL_CTYPE                        "Chatarra"
+#define TEXT_CRG_SCRAPMETAL_1UNIT                        "\UE07C tonelada de chatarra"
+#define TEXT_CRG_SCRAPMETAL_MUNIT                        "\UE07C toneladas de chatarra"
+#define TEXT_CRG_SCRAPMETAL_TABBR                        "\0ECT"
 
+//Building Materials
+#define TEXT_CRG_BUILDINGMATERIALS_CTYPE                 "Materiales de construcción"
+#define TEXT_CRG_BUILDINGMATERIALS_1UNIT                 "\UE07C tonelada de materiales de construcción"
+#define TEXT_CRG_BUILDINGMATERIALS_MUNIT                 "\UE07C toneladas de materiales de construcción"
+#define TEXT_CRG_BUILDINGMATERIALS_TABBR                 "\0EMC"
 
 //Industry texts
-#define TEXT_IND_BREWERY                                "Destilería"
-#define TEXT_IND_CEMENTPLANT                            "Planta de Cemento"
-#define TEXT_IND_FERTILISERPLANT                        "Fábrica de Fertilizantes"
-#define TEXT_IND_PLASTICSPLANT                          "Fábrica de Plásticos"
-#define TEXT_IND_GLASSWORKS                             "Cristalería"
-#define TEXT_IND_MEATPACKER                             "Matadero"
-#define TEXT_IND_DAIRYFARM                              "Granja Lechera"
-#define TEXT_IND_DAIRY                                  "Industria Láctea"
-#define TEXT_IND_TEXTILEMILL                            "Hilatura Textil"
-#define TEXT_IND_FURNITUREFACTORY                       "Fábrica de Muebles"
-#define TEXT_IND_ALUMINIUMPLANT                         "Planta de Aluminio"
-#define TEXT_IND_MACHINESHOP                            "Fábrica de Maquinaria"
-#define TEXT_IND_LUMBERYARD                             "Planta de Tratamiento de Madera"
-#define TEXT_IND_METALFOUNDRY                           "Forja"
-#define TEXT_IND_MIXEDFARM                              "Granja Mixta"
-#define TEXT_IND_JUNKYARD                               "Desguace"
-#define TEXT_IND_GENERALSTORE                           "Tienda"
-#define TEXT_IND_BAUXITEMINE                            "Mina de Bauxita"
-#define TEXT_IND_FISHINGHARBOUR                         "Puerto de Pesca"
-#define TEXT_IND_DREDGINGSITE                           "Zona de Dragado"
-#define TEXT_IND_WINDFARM                               "Parque Eólico"
-#define TEXT_IND_SANDPIT                                "Dragado de Arena"
-#define TEXT_IND_ARABLEFARM                             "Granja Arable"
-#define TEXT_IND_BAKERY                                 "Panadería"
-#define TEXT_IND_SHEEPFARM                              "Granja de Ovejas"
-#define TEXT_IND_GRAVELQUARRY                           "Dragado de Grava"
-#define TEXT_IND_PETROLPUMP                             "Gasolinera"
-#define TEXT_IND_FISHINGGROUNDS                         "Zona de Pesca"
-#define TEXT_IND_BLACKSMITH                             "Herrería"
-#define TEXT_IND_WINDMILL                               "Molino de Viento"
-#define TEXT_IND_WHOLESALEMARKET                        "Mercado Mayorista"
-#define TEXT_IND_SUPERMARKET                            "Supermercado"
-#define TEXT_IND_RETAILMARKET                           "Centro Comercial"
-#define TEXT_IND_SUGARREFINERY                          "Refinería de Azúcar"
+
+#define TEXT_IND_BREWERY                                 "Destilería"
+#define TEXT_IND_CEMENTPLANT                             "Planta de Cemento"
+
+#define TEXT_IND_FERTILISERPLANT                         "Fábrica de Fertilizantes"
+#define TEXT_IND_PLASTICSPLANT                           "Fábrica de Plásticos"
+#define TEXT_IND_GLASSWORKS                              "Cristalería"
+#define TEXT_IND_MEATPACKER                              "Matadero"
+#define TEXT_IND_DAIRYFARM                               "Granja Lechera"
+
+#define TEXT_IND_DAIRY                                   "Industria Láctea"
+#define TEXT_IND_TEXTILEMILL                             "Hilatura Textil"
+#define TEXT_IND_FURNITUREFACTORY                        "Fábrica de Muebles"
+#define TEXT_IND_ALUMINIUMPLANT                          "Planta de Aluminio"
+#define TEXT_IND_MACHINESHOP                             "Fábrica de Maquinaria"
+
+#define TEXT_IND_LUMBERYARD                              "Planta de Tratamiento de Madera"
+#define TEXT_IND_METALFOUNDRY                            "Forja"
+#define TEXT_IND_MIXEDFARM                               "Granja Mixta"
+#define TEXT_IND_JUNKYARD                                "Desguace"
+#define TEXT_IND_GENERALSTORE                            "Tienda"
+
+#define TEXT_IND_BAUXITEMINE                             "Mina de Bauxita"
+#define TEXT_IND_DREDGINGSITE                            "Zona de Dragado"
+#define TEXT_IND_WINDFARM                                "Parque Eólico"
+#define TEXT_IND_SANDPIT                                 "Dragado de Arena"
+#define TEXT_IND_ARABLEFARM                              "Granja Arable"
+
+#define TEXT_IND_BAKERY                                  "Panadería"
+#define TEXT_IND_SHEEPFARM                               "Granja de Ovejas"
+#define TEXT_IND_GRAVELQUARRY                            "Dragado de Grava"
+#define TEXT_IND_PETROLPUMP                              "Gasolinera"
+#define TEXT_IND_FISHINGHARBOUR                          "Puerto de Pesca"
+
+#define TEXT_IND_FISHINGGROUNDS                          "Zona de Pesca"
+#define TEXT_IND_BLACKSMITH                              "Herrería"
+#define TEXT_IND_WINDMILL                                "Molino de Viento"
+#define TEXT_IND_WHOLESALEMARKET                         "Mercado Mayorista"
+#define TEXT_IND_SUPERMARKET                             "Supermercado"
+
+#define TEXT_IND_RETAILMARKET                            "Centro Comercial"
+#define TEXT_IND_SUGARREFINERY                           "Refinería de Azúcar"
+#define TEXT_IND_CLAYPIT                                 "Cantera de arcilla"
+
+
 
 //Station texts for station name prefixes/suffixes. \80 where town name goes
-#define TEXT_STA_FARM                                   "\80 Granja"
-#define TEXT_STA_MILLS                                  "\80 Planta"
-#define TEXT_STA_WELLS                                  "\80 Pozos"
-#define TEXT_STA_REFINERY                               "\80 Refinería"
 
-#define TEXT_STA_FACTORY                                "\80 Fábrica"
-#define TEXT_STA_PLANT                                  "\80 Planta de Manufactura"
-#define TEXT_STA_QUARRY                                 "\80 Cantera"
-#define TEXT_STA_DEPOT                                  "\80 Depósito"
-#define TEXT_STA_DREDGINGSITE                           "\80 Zona de Dragado"
-#define TEXT_STA_FISHINGGROUNDS                         "\80 Zona de Pesca"
-#define TEXT_STA_BLACKSMITH                             "\80 Herrería"
-#define TEXT_STA_MARKET                                 "\80 Mercado"
+#define TEXT_STA_FARM                                    "\80 Granja"
+#define TEXT_STA_MILLS                                   "\80 Planta"
+#define TEXT_STA_WELLS                                   "\80 Pozos"
+#define TEXT_STA_REFINERY                                "\80 Refinería"
+
+#define TEXT_STA_FACTORY                                 "\80 Fábrica"
+#define TEXT_STA_PLANT                                   "\80 Planta de Manufactura"
+#define TEXT_STA_QUARRY                                  "\80 Cantera"
+#define TEXT_STA_DEPOT                                   "\80 Depósito"
+
+#define TEXT_STA_DREDGINGSITE                            "\80 Zona de Dragado"
+#define TEXT_STA_FISHINGGROUNDS                          "\80 Zona de Pesca"
+#define TEXT_STA_BLACKSMITH                              "\80 Herrería"
+#define TEXT_STA_MARKET                                  "\80 Mercado"
+
 
 
 //Additional texts for purchase window
-#define TEXT_INFO_GENERIC                               ""
-#define TEXT_INFO_AVAILABILITY                          "\98Disponible: \90\UE082"
-#define TEXT_INFO_AVAILABILITY_1610                     "\98Disponible: \901 de Enero de 1610"
-#define TEXT_INFO_AVAILABILITY_1730                     "\98Disponible: \901 de Enero de 1730"
-#define TEXT_INFO_AVAILABILITY_1762                     "\98Disponible: \901 de Enero de 1762"
-#define TEXT_INFO_AVAILABILITY_1780                     "\98Disponible: \901 de Enero de 1780"
-#define TEXT_INFO_GENERIC_CLOSE_0                       "\n\98Esta industria podría cerrar a menos que se entregue carga en un plazo de:\0D\90  \UE07C meses"
-#define TEXT_INFO_GENERIC_CLOSE_1                       "\n\98Esta industria podría cerrar a menos que se entregue carga en un plazo de:\0D\94  \UE07C mes"
-#define TEXT_INFO_GENERIC_CLOSE_2                       "\n\8BNo se ha entregado carga durante al menos\85\85\UE07C meses. Esta industria podría cerrar pronto. \0D"
 
-#define TEXT_INFO_LIMIT_200                             "\98 (max 200)"
-#define TEXT_INFO_LIMIT_800                             "\98 (max 800)"
-#define TEXT_INFO_ACCEPTING                             "\0D" // empty line breaks to stop window size jumping around 
-#define TEXT_INFO_NOT_ACCEPTING_ES                      "\94No acepta suministros de ingeniería\98\0D(Límite alcanzado)"
-#define TEXT_INFO_NOT_ACCEPTING_FS                      "\94No acepta suministros agrarios\98\0D(Límite alcanzado)"
-#define TEXT_INFO_NOT_ACCEPTING_MS                      "\94No acepta suministros de manufactura\98\0D(Límite alcanzado)"
-#define TEXT_INFO_ES_PRIMARY_BOOST                      "\98La producción puede aumentar con Suministros de Ingeniería.\0D\90  \UE07B cajas entregadas este mes"
-#define TEXT_INFO_FS_PRIMARY_BOOST                      "\98La producción puede aumentar con Suministros Agrarios.\0D\90  \UE07B cajas entregadas este mes"
-#define TEXT_INFO_MS_PRIMARY_BOOST                      "\98Entregar Suministros de Manufactura duplica la producción del resto de cargas.\0D\0D\80"
-#define TEXT_INFO_CARGO_PRODUCTION                      "\98Producción:\0D"
-#define TEXT_INFO_6T_PER_8T                             "\0D6t producidas por cada 8t entregadas."
+#define TEXT_INFO_GENERIC                                ""
 
-#define TEXT_INFO_8T_PER_8T                             "\0D8t producidas por cada 8t entregadas."
+#define TEXT_INFO_AVAILABILITY                           "\98Disponible: \90\UE082"
+#define TEXT_INFO_AVAILABILITY_1610                      "\98Disponible: \901 de Enero de 1610"
+#define TEXT_INFO_AVAILABILITY_1730                      "\98Disponible: \901 de Enero de 1730"
+#define TEXT_INFO_AVAILABILITY_1762                      "\98Disponible: \901 de Enero de 1762"
+#define TEXT_INFO_AVAILABILITY_1780                      "\98Disponible: \901 de Enero de 1780"
 
-#define TEXT_INFO_STEPUP_TWO_CARGOS                     "\0DLa producción aumenta si dos o más cargas son entregadas en un intervalo inferior a un mes."
+#define TEXT_INFO_GENERIC_CLOSE_0                        "\n\98Esta industria podría cerrar a menos que se entregue carga en un plazo de:\0D\90  \UE07C meses"
+#define TEXT_INFO_GENERIC_CLOSE_1                        "\n\98Esta industria podría cerrar a menos que se entregue carga en un plazo de:\0D\94  \UE07C mes"
+#define TEXT_INFO_GENERIC_CLOSE_2                        "\n\8BNo se ha entregado carga durante al menos\85\85\UE07C meses. Esta industria podría cerrar pronto. \0D"
 
-#define TEXT_INFO_INCREASE_BOTH_CARGOS                  "\0DAumenta a 8t por cada 8t si ambas cargas son entregadas en un intervalo inferior a un mes."
+#define TEXT_INFO_LIMIT_200                              "\98 (max 200)"
+#define TEXT_INFO_LIMIT_800                              "\98 (max 800)"
 
-#define TEXT_INFO_3T_PER_8T_MS                          "  3t por cada 8t de suministros de manufactura entregadas\0D"
+#define TEXT_INFO_ACCEPTING                              "\0D" // empty line breaks to stop window size jumping around 
+#define TEXT_INFO_NOT_ACCEPTING_ES                       "\94No acepta suministros de ingeniería\98\0D(Límite alcanzado)"
+#define TEXT_INFO_NOT_ACCEPTING_FS                       "\94No acepta suministros agrarios\98\0D(Límite alcanzado)"
+#define TEXT_INFO_NOT_ACCEPTING_MS                       "\94No acepta suministros de manufactura\98\0D(Límite alcanzado)"
 
-#define TEXT_INFO_2T_PER_8T_IRON_ORE                    "  2t por cada 8t de mineral de hierro entregadas\0D"
+#define TEXT_INFO_ES_PRIMARY_BOOST                       "\98La producción puede aumentar con Suministros de Ingeniería.\0D\90  \UE07B cajas entregadas este mes"
+#define TEXT_INFO_FS_PRIMARY_BOOST                       "\98La producción puede aumentar con Suministros Agrarios.\0D\90  \UE07B cajas entregadas este mes"
+#define TEXT_INFO_MS_PRIMARY_BOOST                       "\98Entregar Suministros de Manufactura duplica la producción del resto de cargas.\0D\0D\80"
 
-#define TEXT_INFO_2T_PER_8T_COAL                        "  2t por cada 8t de carbón entregadas\0D"
-#define TEXT_INFO_4T_PER_8T_SCRAP_METAL                 "  4t por cada 8t de chatarra entregadas\0D"
-#define TEXT_INFO_2T_PER_8T_BAUXITE                     "  2t por cada 8t de bauxita entregadas\0D"
-#define TEXT_INFO_5T_PER_8T_LUMBER                      "  5t por cada 8t de tablas entregadas\0D" 
-#define TEXT_INFO_6T_PER_8T_LUMBER                      "  6t por cada 8t de tablas entregadas\0D"
-#define TEXT_INFO_2T_PER_8T_CHEMICALS                   "  2t por cada 8t de productos químicos entregadas\0D"
-#define TEXT_INFO_5T_PER_8T_GRAIN                       "  5t por cada 8t de grano entregadas\0D"
-#define TEXT_INFO_5T_PER_8T_FRUITSANDVEGETABLES         "  5t por cada 8t de frutas y vegetales entregadas\0D"
-#define TEXT_INFO_5T_PER_8T_MILK                        "  5t por cada 8t de leche entregadas\0D"
-#define TEXT_INFO_5T_PER_8T_LIVESTOCK                   "  5t por cada 8t de ganado entregadas\0D"
-#define TEXT_INFO_5T_PER_8T_FISH                        "  5t por cada 8t de pescado entregadas\0D"
-#define TEXT_INFO_5T_PER_8T_WOOL                        "  5t por cada 8t de lana entregadas\0D"
-#define TEXT_INFO_2T_PER_8T_SAND                        "  2t por cada 8t de arena entregadas\0D"
-#define TEXT_INFO_4T_PER_8T_GRAVEL                      "  4t por cada 8t de grava entregadas\0D"
+#define TEXT_INFO_CARGO_PRODUCTION                       "\98Producción:\0D"
+
+#define TEXT_INFO_6T_PER_8T                              "\0D6t producidas por cada 8t entregadas."
+#define TEXT_INFO_8T_PER_8T                              "\0D8t producidas por cada 8t entregadas."
+
+#define TEXT_INFO_STEPUP_TWO_CARGOS                      "\0DLa producción aumenta si dos o más cargas son entregadas en un intervalo inferior a un mes."
+#define TEXT_INFO_INCREASE_BOTH_CARGOS                   "\0DAumenta a 8t por cada 8t si ambas cargas son entregadas en un intervalo inferior a un mes."
+
+#define TEXT_INFO_3T_PER_8T_MS                           "  3t por cada 8t de suministros de manufactura entregadas\0D"
+#define TEXT_INFO_2T_PER_8T_IRON_ORE                     "  2t por cada 8t de mineral de hierro entregadas\0D"
+#define TEXT_INFO_2T_PER_8T_COAL                         "  2t por cada 8t de carbón entregadas\0D"
+#define TEXT_INFO_4T_PER_8T_SCRAP_METAL                  "  4t por cada 8t de chatarra entregadas\0D"
+#define TEXT_INFO_2T_PER_8T_BAUXITE                      "  2t por cada 8t de bauxita entregadas\0D"
+
+#define TEXT_INFO_5T_PER_8T_LUMBER                       "  5t por cada 8t de tablas entregadas\0D" 
+#define TEXT_INFO_6T_PER_8T_LUMBER                       "  6t por cada 8t de tablas entregadas\0D"
+#define TEXT_INFO_2T_PER_8T_CHEMICALS                    "  2t por cada 8t de productos químicos entregadas\0D"
+#define TEXT_INFO_5T_PER_8T_GRAIN                        "  5t por cada 8t de grano entregadas\0D"
+#define TEXT_INFO_5T_PER_8T_FRUITSANDVEGETABLES          "  5t por cada 8t de frutas y vegetales entregadas\0D"
+
+#define TEXT_INFO_5T_PER_8T_MILK                         "  5t por cada 8t de leche entregadas\0D"
+#define TEXT_INFO_5T_PER_8T_LIVESTOCK                    "  5t por cada 8t de ganado entregadas\0D"
+#define TEXT_INFO_5T_PER_8T_FISH                         "  5t por cada 8t de pescado entregadas\0D"
+#define TEXT_INFO_5T_PER_8T_WOOL                         "  5t por cada 8t de lana entregadas\0D"
+#define TEXT_INFO_5T_PER_8T_SUGAR                        "  5t por cada 8t de azúcar entregadas\0D"
+
+#define TEXT_INFO_2T_PER_8T_SAND                         "  2t por cada 8t de arena entregadas\0D"
+#define TEXT_INFO_4T_PER_8T_GRAVEL                       "  4t por cada 8t de grava entregadas\0D"
+#define TEXT_INFO_6T_PER_8T_WOOD                         "  6t por cada 8t de madera entregadas\0D" 
+#define TEXT_INFO_2T_PER_8T_CLAY                         "  2t por cada 8t de arcilla entregadas\0D" 
 
 
-#define TEXT_INFO_MACHINESHOP                           "\98Construye y repara maquinaria.\0D" 
-#define TEXT_INFO_SAWMILL                               "\98Aserra madera.\0D" 
-#define TEXT_INFO_WINDFARM                              "\98 \0D" 
+#define TEXT_INFO_MACHINESHOP                            "\98Construye y repara maquinaria.\0D" 
+#define TEXT_INFO_SAWMILL                                "\98Aserra madera.\0D" 
+#define TEXT_INFO_WINDFARM                               "\98 \0D"
+#define TEXT_INFO_METALFOUNDRY                           "\98Fabrica productos metálicos tales como herramientas o piezas.\0D"
+#define TEXT_INFO_PAPERMILL                              "\98Convierte madera en pulpa para hacer papel y cartón.\0D"
 
-#define TEXT_INFO_METALFOUNDRY                          "\98Fabrica productos metálicos tales como herramientas o piezas.\0D"
+#define TEXT_INFO_OILREFINERY                            "\98Procesa petróleo crudo en fueloil y productos químicos.\0D"
+#define TEXT_INFO_PLASTICSPLANT                          "\98Fabrica productos de plástico tales como embalaje o productos del hogar.\0D"
+#define TEXT_INFO_GLASSWORKS                             "\98Fabrica productos de cristal tales como botellas, jarras o ventanas.\0D"
+#define TEXT_INFO_WHOLESALEMARKET                        "\98Vende productos a negocios de restauración y hostelería.\0D"
+#define TEXT_INFO_BLACKSMITH                             "\98Produce objetos de metal forjado como puertas de hierro enrejado, herramientas, útiles de labranza o cocina y herraduras.\0D"
 
-#define TEXT_INFO_PAPERMILL                             "\98Convierte madera en pulpa para hacer papel y cartón.\0D" 
-#define TEXT_INFO_OILREFINERY                           "\98Procesa petróleo crudo en fueloil y productos químicos.\0D" 
-#define TEXT_INFO_PLASTICSPLANT                         "\98Fabrica productos de plástico tales como embalaje o productos del hogar.\0D" 
-#define TEXT_INFO_GLASSWORKS                            "\98Fabrica productos de cristal tales como botellas, jarras o ventanas.\0D" 
-//#define TEXT_INFO_WATERTOWER                            "\98 \0D"
-#define TEXT_INFO_BREWERY_STEPUP                        "\0DAumenta a 8t por cada 8t si se entregan suministros de manufactura y una de las otras cargas en un intervalo inferior a un mes."
-#define TEXT_INFO_FERTILISERPLANT                       "\98Transforma productos químicos en fertilizante para ser usado en granjas.\0D"
-#define TEXT_INFO_LUMBERYARD                            "\98Produce objetos tales como mástiles y cercas.\0D"
+#define TEXT_INFO_BREWERY_STEPUP                         "\0DAumenta a 8t por cada 8t si se entregan suministros de manufactura y una de las otras cargas en un intervalo inferior a un mes."
+
+#define TEXT_INFO_FERTILISERPLANT                        "\98Transforma productos químicos en fertilizante para ser usado en granjas.\0D"
+#define TEXT_INFO_LUMBERYARD                             "\98Produce objetos tales como mástiles y cercas.\0D"
+
+
+
+//grf and parameter descriptions
 
 #define TEXT_GRF_DESC                                    "\8EFIRS Industry Replacement Set\n\98Creado por \89andythenorth\98 y \89FooBar\98.\n\98'1,000 commits y contando...'\98\n\nWeb: \89www.tt-foundry.com/sets/FIRS\98.Licencia: \89GPL v2\98. Agradecimientos a \89Ammler\98, \89Core Xii\98, \89Irwe\98, \89planetmaker\98 y \89Zephyris\98. Usa partes de \89eGRVTS\98, \89ISR\98 y \89OpenGFX\98."
 
