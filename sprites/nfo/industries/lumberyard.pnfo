@@ -1,7 +1,7 @@
 // Defines for use in industry template
 #define THIS_INDUSTRY                 IND_LUMBERYARD
 #define THIS_NUM_INPUT_CARGOS         \d02
-#define THIS_NUM_OUTPUT_CARGOS        \d01
+#define THIS_NUM_OUTPUT_CARGOS        \d02
 #define THIS_PROD_RATIO_CARGO_IN_1    \d02
 #define THIS_PROD_RATIO_CARGO_IN_2_3  \d06
 #define THIS_STR_INFO_CB3A            STR_INFO_LUMBERYARD
@@ -163,7 +163,7 @@
 	0E STR_IND_PRODDECR_GENERIC //production decrease message
 	1B STR_IND_NEW_GENERIC //new industry message
 	1F STR_IND_LUMBERYARD //industry name
-	10 CARGO_ENGINEERINGSUPPLIES FF //production cargo types (word; fill unused with FFh)
+	10 CARGO_ENGINEERINGSUPPLIES CARGO_BUILDINGMATERIALS //production cargo types (word; fill unused with FFh)
 	11 CARGO_LUMBER CARGO_CHEMICALS FF FF //acceptance cargo types (dword; fill unused with FFh)
 	12 \b0 //production multiplier cargo 1
 	13 \b0 //production multiplier cargo 2
