@@ -10,7 +10,7 @@
 
 //Industry tiles definition
 //Tile Action 0
--1 * 0 00 09 \b5 01 TILE_PETROLPUMP_1 // -1 * 0 00 09 <num-props> 01 <id>
+-1 * 0 00 09 \b5 01 TILE_BUILDERSYARD_1 // -1 * 0 00 09 <num-props> 01 <id>
 	08 TILE_NULL //subsitute type
 	0A CARGO_FOOD 08 //tile acceptance 1
 	0B CARGO_GOODS 08 //tile acceptance 2
@@ -25,8 +25,8 @@
 // Format: spritenum pcxfile xpos ypos compression ysize xsize xrel yrel
 -1 sprites/pcx/industries/groundtiles.pcx  80 10 09   31 64  -31  0
 // tanks
--1 sprites/pcx/industries/petrolpump.pcx 150 10 09  78 64  -31 -12
--1 sprites/pcx/industries/petrolpump.pcx 220 10 09  78 64  -54 -28
+-1 sprites/pcx/industries/placeholder_boxes.pcx  150 10 09  51 64 -31 -20
+-1 sprites/pcx/industries/placeholder_boxes.pcx  150 10 09  51 64 -31 -20
 
 
 //Tile Action 2 
@@ -61,7 +61,7 @@
 #include "../../../templates/cb2f_generic.pnfo"     
 
 //Tile Action 3
--1 * 0 03 09 01 TILE_PETROLPUMP_1 
+-1 * 0 03 09 01 TILE_BUILDERSYARD_1 
   00 \wxC0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
 
 
@@ -74,8 +74,8 @@
 	0A 01 //number of industry layouts
 		\d12 //size of layout definition +2 for termination
 		//layout:
-			00 00 FE TILE_PETROLPUMP_1 00 //xoffs yoffs FE newtile(W)
-			00 01 FE TILE_PETROLPUMP_1 00 //xoffs yoffs FE newtile(W)
+			00 00 FE TILE_BUILDERSYARD_1 00 //xoffs yoffs FE newtile(W)
+			00 01 FE TILE_BUILDERSYARD_1 00 //xoffs yoffs FE newtile(W)
 		00 80 //terminate layout definition
 	0B 00 //production flags 1h=extractive, 2h=organic, 4h=processing, 0h=no closure etc.
 	0C STR_IND_CLOSE_GENERIC //industry closure message
