@@ -1,0 +1,109 @@
+//PETROLPUMP
+#define THIS_INDUSTRY                 IND_BUILDERSYARD
+#define THIS_STR_INFO_CB38            STR_INFO_AVAILABILITY
+#define THIS_STR_INFO                 STR_INFO_GENERIC_CLOSE_0
+#define THIS_STR_INFO_WARN_1          STR_INFO_GENERIC_CLOSE_1
+#define THIS_STR_INFO_WARN_2          STR_INFO_GENERIC_CLOSE_2
+#define THIS_INTRO_DATE               \d00
+
+#define THIS_NUM_MONTHS_CLOSURE_PROTECTED     \d30
+
+//Industry tiles definition
+//Tile Action 0
+-1 * 0 00 09 \b5 01 TILE_PETROLPUMP_1 // -1 * 0 00 09 <num-props> 01 <id>
+	08 TILE_NULL //subsitute type
+	0A CARGO_FOOD 08 //tile acceptance 1
+	0B CARGO_GOODS 08 //tile acceptance 2
+	0C CARGO_FUELOIL 08 //tile acceptance 3
+	0D 10 //land shape flags: 10 = only on flat land
+
+
+//Industry tile sprites; one sprite for each tile; eventually more for each tile to include  construction stages
+
+//Tile Action 1
+-1 * 0 01 09 \b3 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
+// Format: spritenum pcxfile xpos ypos compression ysize xsize xrel yrel
+-1 sprites/pcx/industries/groundtiles.pcx  80 10 09   31 64  -31  0
+// tanks
+-1 sprites/pcx/industries/petrolpump.pcx 150 10 09  78 64  -31 -12
+-1 sprites/pcx/industries/petrolpump.pcx 220 10 09  78 64  -54 -28
+
+
+//Tile Action 2 
+-1 * 0 02 09 00 00 //-1 * 0 02 09 <set-id> 00
+	\dx80008000 //groundsprite
+	\dx80008001 //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b16 //xextent yextent zextent
+-1 * 0 02 09 01 00 //-1 * 0 02 09 <set-id> 00
+	\dx80008000 //groundsprite
+	\dx80008002 //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b16 //xextent yextent zextent
+
+
+-1 * 0 02 09 B1//layout
+	85 43 //check relative position (00yx[YYXX])
+	00 FF FF //don't shift, don't mask
+	\b2 //number of ranges to check (number of tiles) [range: XX YY  XX YY]
+    \wx00   00 00  00 00
+    \wx01   00 01  00 01
+	\wx00 //01 02  01 02 <default>
+
+-1 * 0 02 09 A0 
+	82 44 //check layout number (lowest byte of related industry)
+	00 FF //don't shift, don't mask
+	\b1 //number of ranges to check (number of layouts)
+    \wxB1 \b1 \b1 //<set-id \w> <low-range> <high-range>
+	\wx00 //<default> (first tile layout available)
+	
+//handle cb2f (tile shape check)
+#include "../../../templates/cb2f_generic.pnfo"     
+
+//Tile Action 3
+-1 * 0 03 09 01 TILE_PETROLPUMP_1 
+  00 \wxC0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
+
+
+
+//Industry definition
+
+//Action 0
+-1 * 0 00 0A \b26 01 IND_BUILDERSYARD //-1 * 0 00 0A <num-props> 01 <id>
+	08 IND_NULL //reuse original industry with this here ID
+	0A 01 //number of industry layouts
+		\d12 //size of layout definition +2 for termination
+		//layout:
+			00 00 FE TILE_PETROLPUMP_1 00 //xoffs yoffs FE newtile(W)
+			00 01 FE TILE_PETROLPUMP_1 00 //xoffs yoffs FE newtile(W)
+		00 80 //terminate layout definition
+	0B 00 //production flags 1h=extractive, 2h=organic, 4h=processing, 0h=no closure etc.
+	0C STR_IND_CLOSE_GENERIC //industry closure message
+	0D STR_IND_PRODINCR_GENERIC //production increase message
+	0E STR_IND_PRODDECR_GENERIC //production decrease message
+	1B STR_IND_NEW_GENERIC //new industry message
+	1F STR_IND_BUILDERSYARD //industry name
+	10 FF FF //production cargo types (word; fill unused with FFh)
+	11 CARGO_BUILDINGMATERIALS FF FF FF //acceptance cargo types (dword; fill unused with FFh)
+	12 00 //production multiplier cargo 1
+	13 00 //production multiplier cargo 2
+	1C \w0  \w0 //input cargo 1 multiplier (dword M1 M2; output_typen = X*Mn/256)
+	1D \w0  \w0  //input cargo 2 multiplier
+	1E \w0  \w0  //input cargo 3 multiplier
+	14 \b0 //minimal cargo distribution amount
+	16 IND_BUILDERSYARD_CONFLICT FF FF //conflicting industry types (3*byte; ID+80h; FF to disable)
+	17 \b10 //probability in random game
+	18 \b20 //probability during gameplay
+	20 FF FF FF BF //prospecting success chance (dword; FFFFFFFFh=100%)
+	0F \b255 //fund cost multiplier (byte)
+	19 CLR_PETROLPUMP //map colour (byte; using indexes from dos palette)
+	23 \d0  //destruction cost multiplier (dword; default: 0)
+	1A \dx20 //special industry flag (dword; in town: 10h)
+	21 81 //callback flags 
+	22 01  //callback flags
+//To show cargo waiting to be processed at industry, ensure prop 21 is set to use production callback
+
+//No action 1 for industries, as graphics are defined by the industry-tile feature.
+
+#include "../../../templates/template_accept_only_action23_A.pnfo"
+
