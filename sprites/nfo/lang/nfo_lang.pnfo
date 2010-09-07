@@ -423,6 +423,10 @@
 -1 * 0 04 0A LANG_ID2 01 STR_IND_BUILDERSYARD         UTF_STRING TEXT_IND_BUILDERSYARD 00
 #endif
 
+#ifdef TEXT_IND_BRICKWORKS
+-1 * 0 04 0A LANG_ID2 01 STR_IND_BRICKWORKS           UTF_STRING TEXT_IND_BRICKWORKS 00
+#endif
+
 
 //Station texts for station name prefixes/suffixes. \80 where town name goes
 
@@ -643,6 +647,20 @@
 				#endif
 			#endif
 		#endif
+
+
+		#ifdef TEXT_INFO_2T_PER_8T_COAL
+			#ifdef TEXT_INFO_4T_PER_8T_CLAY
+				#ifdef TEXT_INFO_2T_PER_8T_SAND
+-1 * 0 04 0A LANG_ID2 01 STR_INFO_CEMENTPLANT D0 UTF_STRING      TEXT_INFO_CARGO_PRODUCTION
+                                                                 TEXT_INFO_2T_PER_8T_COAL
+                                                                 TEXT_INFO_4T_PER_8T_CLAY
+                                                                 TEXT_INFO_2T_PER_8T_SAND
+                                                                 TEXT_INFO_STEPUP_TWO_CARGOS 00
+				#endif
+			#endif
+		#endif
+
 
 		#ifdef TEXT_INFO_2T_PER_8T_IRON_ORE
 			#ifdef TEXT_INFO_2T_PER_8T_COAL
