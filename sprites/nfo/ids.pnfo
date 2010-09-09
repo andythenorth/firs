@@ -308,6 +308,7 @@
 #define STR_INFO_ES_PRIMARY_BOOST   B0
 #define STR_INFO_FS_PRIMARY_BOOST   B1
 #define STR_INFO_MS_PRIMARY_BOOST   B2
+#define STR_INFO_BOOST_MAXED        B3
 #define STR_INFO_LIMIT_200          C0
 #define STR_INFO_LIMIT_800          C1
 #define STR_INFO_ACCEPTING_ES       D0
@@ -339,6 +340,7 @@
 #define STR_INFO_FISHINGHARBOUR     IND_FISHINGHARBOUR
 #define STR_INFO_WHOLESALEMARKET    IND_WHOLESALEMARKET
 #define STR_INFO_BLACKSMITH         IND_BLACKSMITH
+
 
 //Definition of text IDs for cargos
 // _CTYPE: name of cargo type
