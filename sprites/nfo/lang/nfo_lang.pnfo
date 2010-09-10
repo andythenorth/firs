@@ -698,12 +698,13 @@
 		#endif
 		
 		#ifdef TEXT_INFO_PAPERMILL
-			#ifdef TEXT_INFO_6T_PER_8T_WOOD
+			#ifdef TEXT_INFO_4T_PER_8T_WOOD
 				#ifdef TEXT_INFO_2T_PER_8T_CLAY
 -1 * 0 04 0A LANG_ID2 01 STR_INFO_PAPERMILL D0 UTF_STRING        TEXT_INFO_PAPERMILL 0D
                                                                  TEXT_INFO_CARGO_PRODUCTION
-                                                                 TEXT_INFO_6T_PER_8T_WOOD
+                                                                 TEXT_INFO_4T_PER_8T_WOOD
                                                                  TEXT_INFO_2T_PER_8T_CLAY
+                                                                 TEXT_INFO_2T_PER_8T_CHEMICALS
                                                                  TEXT_INFO_INCREASE_BOTH_CARGOS 00
 				#endif
 			#endif
