@@ -25,23 +25,29 @@
 //Industry tile sprites; one sprite for each tile; eventually more for each tile to include  construction stages
 
 //Tile action 1
--1 * 0 01 09 \b3 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
+-1 * 0 01 09 \b4 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
 // Format: spritenum pcxfile xpos ypos compression ysize xsize xrel yrel
--1 sprites/pcx/industries/brickworks.pcx 10 10 09 82 64 -31 -51
--1 sprites/pcx/industries/brickworks.pcx 80 10 09 82 64 -31 -51
+-1 sprites/pcx/industries/brickworks.pcx   10 10 09   82 64  -31 -51
+-1 sprites/pcx/industries/brickworks.pcx   80 10 09   82 64  -31 -51
+-1 sprites/pcx/industries/brickworks.pcx  150 10 09  101 64  -32 -62
 // ground tile
--1 sprites/pcx/industries/groundtiles.pcx  150 10 09   31 64 -31   0
+-1 sprites/pcx/industries/groundtiles.pcx 150 10 09   31 64  -31   0
 
 
 //Tile action 2 
 -1 * 0 02 09 00 00 //-1 * 0 02 09 <set-id> 00
-	\dx80008002 //groundsprite
+	\dx80008003 //groundsprite
 	\dx80008000 //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b64 //xextent yextent zextent
 -1 * 0 02 09 01 00 //-1 * 0 02 09 <set-id> 00
-	\dx80008002 //groundsprite
+	\dx80008003 //groundsprite
 	\dx80008001 //building sprite
+	00 00 //xofs yofs
+	\b16 \b16 \b32 //xextent yextent zextent
+-1 * 0 02 09 02 00 //-1 * 0 02 09 <set-id> 00
+	\dx80008003 //groundsprite
+	\dx80008002 //building sprite
 	00 00 //xofs yofs
 	\b16 \b16 \b32 //xextent yextent zextent
 
@@ -51,9 +57,14 @@
 -1 * 0 02 09 B1 //layout 1
 	85 43 //check relative position (00yx[YYXX])
 	00 FF FF //don't shift, don't mask
-	\b1 //number of ranges to check (number of tiles) [range: XX YY  XX YY]
-	\wx00   00 00  00 00
-	\wx01 //00 01  00 01 <default>
+	\b6 //number of ranges to check (number of tiles) [range: XX YY  XX YY]
+    \wx02   00 00  00 00
+    \wx02   00 01  00 01
+    \wx02   01 00  01 00
+    \wx02   01 01  01 01
+    \wx00   02 00  02 00
+    \wx01   02 01  02 01
+	\wx00 //00 01  00 01 <default>
 
 
 -1 * 0 02 09 A0 
@@ -80,10 +91,14 @@
 -1 * 0 00 0A \b26 01 IND_BRICKWORKS //-1 * 0 00 0A <num-props> 01 <id>
 	08 IND_NULL //reuse original industry with this here ID
 	0A 01 //number of industry layouts
-		\d12 //size of layout definition +2 for termination
+		\d32 //size of layout definition +2 for termination
 		//layout:
 			00 00 FE TILE_BRICKWORKS_1 00 //xoffs yoffs FE newtile(W)
 			00 01 FE TILE_BRICKWORKS_1 00
+			01 00 FE TILE_BRICKWORKS_1 00
+			01 01 FE TILE_BRICKWORKS_1 00
+			02 00 FE TILE_BRICKWORKS_1 00
+			02 01 FE TILE_BRICKWORKS_1 00
 		00 80 //terminate layout definition
 	0B 04 //production flags 1h=extractive, 2h=organic, 4h=processing
 	0C STR_IND_CLOSE_GENERIC //industry closure message
