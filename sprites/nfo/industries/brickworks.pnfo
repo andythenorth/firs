@@ -25,29 +25,35 @@
 //Industry tile sprites; one sprite for each tile; eventually more for each tile to include  construction stages
 
 //Tile action 1
--1 * 0 01 09 \b4 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
+-1 * 0 01 09 \b5 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
 // Format: spritenum pcxfile xpos ypos compression ysize xsize xrel yrel
--1 sprites/pcx/industries/brickworks.pcx   10 10 09   82 64  -31 -51
--1 sprites/pcx/industries/brickworks.pcx   80 10 09   82 64  -31 -51
--1 sprites/pcx/industries/brickworks.pcx  150 10 09  101 64  -32 -62
+-1 sprites/pcx/industries/brickworks.pcx   10 10 09  101 64  -31 -64
+-1 sprites/pcx/industries/brickworks.pcx   80 10 09  101 64  -31 -59
+-1 sprites/pcx/industries/brickworks.pcx  150 10 09  101 64  -31 -71
+-1 sprites/pcx/industries/brickworks.pcx  220 10 09  101 64  -31 -69
 // ground tile
 -1 sprites/pcx/industries/groundtiles.pcx 150 10 09   31 64  -31   0
 
 
 //Tile action 2 
 -1 * 0 02 09 00 00 //-1 * 0 02 09 <set-id> 00
-	\dx80008003 //groundsprite
+	\dx80008004 //groundsprite
 	\dx80008000 //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b64 //xextent yextent zextent
 -1 * 0 02 09 01 00 //-1 * 0 02 09 <set-id> 00
-	\dx80008003 //groundsprite
+	\dx80008004 //groundsprite
 	\dx80008001 //building sprite
 	00 00 //xofs yofs
 	\b16 \b16 \b32 //xextent yextent zextent
 -1 * 0 02 09 02 00 //-1 * 0 02 09 <set-id> 00
-	\dx80008003 //groundsprite
+	\dx80008004 //groundsprite
 	\dx80008002 //building sprite
+	00 00 //xofs yofs
+	\b16 \b16 \b32 //xextent yextent zextent
+-1 * 0 02 09 03 00 //-1 * 0 02 09 <set-id> 00
+	\dx80008004 //groundsprite
+	\dx80008003 //building sprite
 	00 00 //xofs yofs
 	\b16 \b16 \b32 //xextent yextent zextent
 
@@ -58,12 +64,12 @@
 	85 43 //check relative position (00yx[YYXX])
 	00 FF FF //don't shift, don't mask
 	\b6 //number of ranges to check (number of tiles) [range: XX YY  XX YY]
-    \wx02   00 00  00 00
-    \wx02   00 01  00 01
+    \wx03   00 00  00 00
+    \wx03   00 01  00 01
     \wx02   01 00  01 00
     \wx02   01 01  01 01
-    \wx00   02 00  02 00
-    \wx01   02 01  02 01
+    \wx01   02 00  02 00
+    \wx00   02 01  02 01
 	\wx00 //00 01  00 01 <default>
 
 
