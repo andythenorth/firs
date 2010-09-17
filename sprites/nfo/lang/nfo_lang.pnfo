@@ -728,11 +728,11 @@
 	
 	#ifdef TEXT_INFO_BLACKSMITH
 		#ifdef TEXT_INFO_2T_PER_8T_IRON_ORE
-			#ifdef TEXT_INFO_2T_PER_8T_COAL
+			#ifdef TEXT_INFO_2T_PER_8T_WOOD
 -1 * 0 04 0A LANG_ID2 01 STR_INFO_BLACKSMITH D0 UTF_STRING       TEXT_INFO_BLACKSMITH 0D
                                                                  TEXT_INFO_CARGO_PRODUCTION
                                                                  TEXT_INFO_2T_PER_8T_IRON_ORE
-                                                                 TEXT_INFO_2T_PER_8T_COAL 00
+                                                                 TEXT_INFO_2T_PER_8T_WOOD 00
 			#endif
 		#endif
 	#endif
