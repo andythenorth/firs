@@ -56,6 +56,11 @@
 	\dx80008003 //building sprite
 	00 00 //xofs yofs
 	\b16 \b16 \b32 //xextent yextent zextent
+-1 * 0 02 09 04 00 //-1 * 0 02 09 <set-id> 00
+	\dx80008004 //groundsprite
+	\d0 //building sprite (empty tile)
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b12 //xextent yextent zextent
 
 
 //-1 * 0 02 09 <set-id> <type> <variable> <varadjust> <nvar> (<set-id> <low-range> <high-range>){n} <default>
@@ -70,7 +75,7 @@
     \wx02   01 01  01 01
     \wx01   02 00  02 00
     \wx00   02 01  02 01
-	\wx00 //00 01  00 01 <default>
+	\wx04 //00 01  00 01 <default>
 
 
 -1 * 0 02 09 A0 
@@ -97,7 +102,7 @@
 -1 * 0 00 0A \b26 01 IND_BRICKWORKS //-1 * 0 00 0A <num-props> 01 <id>
 	08 IND_NULL //reuse original industry with this here ID
 	0A 01 //number of industry layouts
-		\d32 //size of layout definition +2 for termination
+		\d52 //size of layout definition +2 for termination
 		//layout:
 			00 00 FE TILE_BRICKWORKS_1 00 //xoffs yoffs FE newtile(W)
 			00 01 FE TILE_BRICKWORKS_1 00
@@ -105,6 +110,10 @@
 			01 01 FE TILE_BRICKWORKS_1 00
 			02 00 FE TILE_BRICKWORKS_1 00
 			02 01 FE TILE_BRICKWORKS_1 00
+			03 00 FE TILE_GENERIC_CLAYSTAITHES_2 00
+			03 01 FE TILE_BRICKWORKS_1 00
+			04 00 FE TILE_GENERIC_SANDSTAITHES_2 00
+			04 01 FE TILE_BRICKWORKS_1 00
 		00 80 //terminate layout definition
 	0B 04 //production flags 1h=extractive, 2h=organic, 4h=processing
 	0C STR_IND_CLOSE_GENERIC //industry closure message
