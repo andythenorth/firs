@@ -158,8 +158,14 @@
 
 //No action 1 for industries, as graphics are defined by the industry-tile feature.
 
-// handle cb 28 industry location - included on a per-industry basis to allow industries to use various different schemes 
+//Handle cb 28 industry location - included on a per-industry basis to allow industries to use various different schemes 
+//generic cb28 stuff
 #include "../../../templates/cb28_secondary_generic.pnfo"     
-
+//cb28 stuff specific to this industry - checked before generic stuff
+-1 * 15	 02 0A 10  //check layout number
+    81  86  00 \bxFF 
+       01 //range
+         01 84  \bxFF \bxFF //don't allow if layout n-z (zero indexed during cb 28)
+       00 84 //default
 
 #include "../../../templates/template_secondary_action23_C.pnfo"
