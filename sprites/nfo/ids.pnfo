@@ -6,7 +6,7 @@
 #define IND_WINDMILL              03
 #define IND_IRONOREMINE           04
 #define IND_BAUXITEMINE           05
-#define IND_BLACKSMITH            06
+#define IND_FORGE            06
 #define IND_STEELMILL             07
 #define IND_ALUMINIUMPLANT        08
 #define IND_METALFOUNDRY          09
@@ -126,7 +126,7 @@
 #define TILE_FOREST_2                      CE
 #define TILE_FRUITPLANTATION_1             CF
 #define TILE_FRUITPLANTATION_2             D0
-#define TILE_BLACKSMITH_1                  D1
+#define TILE_FORGE_1                  D1
 #define TILE_WINDMILL_1                    D2
 #define TILE_WHOLESALEMARKET_1             D3
 #define TILE_SUPERMARKET_1                 D4
@@ -245,7 +245,7 @@
 #define STR_IND_GRAVELQUARRY          91 DC
 #define STR_IND_PETROLPUMP            92 DC
 #define STR_IND_FISHINGGROUNDS        93 DC
-#define STR_IND_BLACKSMITH            94 DC
+#define STR_IND_FORGE            94 DC
 #define STR_IND_WINDMILL              95 DC
 #define STR_IND_WHOLESALEMARKET       96 DC
 #define STR_IND_SUPERMARKET           97 DC
@@ -285,7 +285,7 @@
 #define STR_STA_DEPOT             E9 DC
 #define STR_STA_DREDGINGSITE      EA DC
 #define STR_STA_FISHINGGROUNDS    EB DC
-#define STR_STA_BLACKSMITH        EC DC
+#define STR_STA_FORGE        EC DC
 #define STR_STA_MARKET            ED DC
 
 //Definition of text IDs for additional texts in purchase window (D0xx)
@@ -339,7 +339,7 @@
 #define STR_INFO_LUMBERYARD         IND_LUMBERYARD
 #define STR_INFO_FISHINGHARBOUR     IND_FISHINGHARBOUR
 #define STR_INFO_WHOLESALEMARKET    IND_WHOLESALEMARKET
-#define STR_INFO_BLACKSMITH         IND_BLACKSMITH
+#define STR_INFO_FORGE         IND_FORGE
 
 
 //Definition of text IDs for cargos
