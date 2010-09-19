@@ -1,0 +1,123 @@
+//FORGE
+// Defines for use in industry template
+#define THIS_INDUSTRY                 IND_FORGE
+#define THIS_NUM_INPUT_CARGOS         \d02
+#define THIS_NUM_OUTPUT_CARGOS        \d02
+#define THIS_PROD_RATIO_CARGO_IN_1    \d02
+#define THIS_PROD_RATIO_CARGO_IN_2    \d02
+#define THIS_PROD_RATIO_CARGO_IN_3    \d01
+#define THIS_STR_INFO_CB3A            STR_INFO_FORGE
+#define THIS_STR_INFO_CB38            STR_INFO_GENERIC
+#define THIS_INTRO_DATE               \d0
+#define THIS_END_DATE                 \d1960-01-01
+#define THIS_HANDLE_CB28              10 00
+
+//Industry tiles definition
+
+//Tile action 0
+-1 * 0 00 09 \b6 01 TILE_FORGE_1 // -1 * 0 00 09 <num-props> 01 <id>
+	08 TILE_NULL //subsitute type
+	0A CARGO_WOOD 08 //tile acceptance 1
+	0B CARGO_IRONORE 08 //tile acceptance 2
+	0C 00 00 //tile acceptance 3
+	0D 10 //land shape flags: 10 = only on flat land
+	0E 10 //callback flags
+
+
+//Industry tile sprites; one sprite for each tile; eventually more for each tile to include  construction stages
+
+//Tile action 1
+-1 * 0 01 09 \b3 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
+// Format: spritenum pcxfile xpos ypos compression ysize xsize xrel yrel
+-1 sprites/pcx/industries/forge.pcx   10 10 09  60 64 -31 -26
+-1 sprites/pcx/industries/forge.pcx   80 10 09  60 64 -31 -26
+-1 sprites/pcx/industries/groundtiles.pcx       150 10 09  31 64 -31   0 //cobble
+
+
+//Tile action 2 
+-1 * 0 02 09 00 00 //-1 * 0 02 09 <set-id> 00
+	\dx80008002 //groundsprite
+	\dx80008000 //building sprite
+	00 00 //xofs yofs
+	\b16 \b16 \b48 //xextent yextent zextent
+-1 * 0 02 09 01 00 //-1 * 0 02 09 <set-id> 00
+	\dx80008002 //groundsprite
+	\dx80008001 //building sprite
+	00 00 //xofs yofs
+	\b16 \b16 \b48 //xextent yextent zextent
+
+
+-1 * 0 02 09 B1 //layout 1
+	85 43 //check relative position (00yx[YYXX])
+	00 FF FF //don't shift, don't mask
+	\b1 //number of ranges to check (number of tiles) [range: XX YY  XX YY]
+    \wx00   00 00  00 00
+	\wx01 //00 01  00 01 <default>
+
+
+-1 * 0 02 09 A0 
+	82 44 //check layout number (lowest byte of related industry)
+	00 FF //don't shift, don't mask
+	\b1 //number of ranges to check (number of layouts)
+    \wxB1 \b1 \b1 //<set-id \w> <low-range> <high-range>
+	\wx00 //<default> (first tile layout available)
+
+
+//handle cb2f (tile shape check)
+#include "../../../templates/cb2f_generic.pnfo"     
+
+//Action3 attach sprites to industry tile
+
+//Tile action 3
+-1 * 0 03 09 01 TILE_FORGE_1 00 \wxC0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
+
+
+
+
+//Industry definition
+
+//Action 0
+-1 * 0 00 0A \b27 01 IND_FORGE //-1 * 0 00 0A <num-props> 01 <id>
+	08 IND_NULL //reuse original industry with this here ID
+	0A 01 //number of industry layouts
+		\d12 //size of layout definition +2 for termination
+		//layout:
+			00 00 FE TILE_FORGE_1 00
+			01 00 FE TILE_FORGE_1 00
+		00 80 //terminate layout definition
+	0B 04 //production flags 1h=extractive, 2h=organic, 4h=processing
+	0C STR_IND_CLOSE_GENERIC //industry closure message
+	0D STR_IND_PRODINCR_GENERIC //production increase message
+	0E STR_IND_PRODDECR_GENERIC //production decrease message
+	1B STR_IND_NEW_GENERIC //new industry message
+	1F STR_IND_FORGE //industry name
+	24 STR_STA_FORGE //default text for nearby station
+	10 CARGO_ENGINEERINGSUPPLIES CARGO_FARMSUPPLIES //production cargo types (word; fill unused with FFh)
+	11 CARGO_IRONORE CARGO_WOOD FF FF //acceptance cargo types (dword; fill unused with FFh)
+	12 00 //production multiplier cargo 1
+	13 00 //production multiplier cargo 2
+	1C \w0 \w0 //input cargo 1 multiplier (dword M1 M2; output_typen = X*Mn/256)
+	1D \w0 \w0 //input cargo 2 multiplier
+	1E \w0 \w0 //input cargo 3 multiplier
+	14 \b05 //minimal cargo distribution amount
+	16 FF FF FF //conflicting industry types (3*byte; ID+80h; FF to disable)
+	17 \b5 //probability in random game
+	18 \b2 //probability during gameplay
+	20 FF FF FF BF //prospecting success chance (dword; FFFFFFFFh=100%)
+	0F \b255 //fund cost multiplier (byte)
+	19 CLR_FORGE //map colour (byte; using indexes from dos palette)
+	23 \d0  //destruction cost multiplier (dword; default: 0)
+	1A \dx10 //special industry flag (dword; replaces house)
+	21 BD //callback flags 
+	22 09  //callback flags
+//To show cargo waiting to be processed at industry, ensure prop 21 is set to use production callback
+
+//No action 1 for industries, as graphics are defined by the industry-tile feature.
+
+// handle cb 28 industry location - included on a per-industry basis to allow industries to use various different schemes 
+#include "../../../templates/cb28_secondary_generic.pnfo"     
+
+
+#include "../../../templates/template_secondary_action23_A.pnfo"
+
+#undef THIS_END_DATE
