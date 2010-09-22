@@ -162,6 +162,7 @@
 //generic cb28 stuff
 #include "../../../templates/cb28_secondary_generic.pnfo"     
 //cb28 stuff specific to this industry - checked before generic stuff
+// !! this is experimental code to test restricting layouts with cb28.  Waiting on patch support, so doesn't do anything currently. 
 -1 * 15	 02 0A 10  //check layout number
     81  86  00 \bxFF 
        01 //range
