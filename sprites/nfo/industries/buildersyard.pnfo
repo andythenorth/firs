@@ -25,18 +25,18 @@
 // Format: spritenum pcxfile xpos ypos compression ysize xsize xrel yrel
 -1 sprites/pcx/industries/groundtiles.pcx  80 10 09   31 64  -31  0
 // tanks
--1 sprites/pcx/industries/placeholder_boxes.pcx  150 10 09  51 64 -31 -20
--1 sprites/pcx/industries/placeholder_boxes.pcx  150 10 09  51 64 -31 -20
+-1 sprites/pcx/industries/builders_yard.pcx  150 10 09  51 64 -31 -20
+-1 sprites/pcx/industries/builders_yard.pcx  150 10 09  51 64 -31 -20
 
 
 //Tile Action 2 
 -1 * 0 02 09 00 00 //-1 * 0 02 09 <set-id> 00
-	\dx80008000 //groundsprite
+	\d3924 //groundsprite
 	\dx80008001 //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b16 //xextent yextent zextent
 -1 * 0 02 09 01 00 //-1 * 0 02 09 <set-id> 00
-	\dx80008000 //groundsprite
+	\d3924 //groundsprite
 	\dx80008002 //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b16 //xextent yextent zextent
