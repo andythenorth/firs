@@ -1,6 +1,6 @@
 // Defines for use in industry template
 #define THIS_INDUSTRY                 IND_TEXTILEMILL
-#define THIS_NUM_INPUT_CARGOS         \d02
+#define THIS_NUM_INPUT_CARGOS         \d03
 #define THIS_NUM_OUTPUT_CARGOS        \d01
 // manufacturing supplies should be in first slot for this to work correctly
 #define THIS_PROD_RATIO_CARGO_IN_1    \d03
@@ -15,9 +15,9 @@
 //Tile action 0
 -1 * 0 00 09 \b6 01 TILE_TEXTILEMILL_1 // -1 * 0 00 09 <num-props> 01 <id>
 	08 TILE_NULL //subsitute type
-	0A CARGO_WOOL 08 //tile acceptance 1
-	0B CARGO_MANUFACTURINGSUPPLIES 08 //tile acceptance 2
-	0C 00 00 //tile acceptance 3
+	0A CARGO_MANUFACTURINGSUPPLIES 08 //tile acceptance 2
+	0B CARGO_WOOL 08 //tile acceptance 1
+	0C CARGO_PLANTFIBRES 08 //tile acceptance 3
 	0D 10 //land shape flags: 10 = only on flat land
 	0E 10 //callback flags
 	
