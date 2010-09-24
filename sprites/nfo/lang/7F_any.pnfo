@@ -6,23 +6,41 @@
 
 //Cargo texts
 
-//Sugar cane
-#define TEXT_CRG_SUGARCANE_CTYPE                         "Sugar Cane" 
-#define TEXT_CRG_SUGARCANE_1UNIT                         "\UE07C ton of sugar cane" 
-#define TEXT_CRG_SUGARCANE_MUNIT                         "\UE07C tons of sugar cane" 
-#define TEXT_CRG_SUGARCANE_TABBR                         "\0ESC" 
+//Bauxite
+#define TEXT_CRG_BAUXITE_CTYPE                           "Bauxite" 
+#define TEXT_CRG_BAUXITE_1UNIT                           "\UE07C ton of bauxite" 
+#define TEXT_CRG_BAUXITE_MUNIT                           "\UE07C tons of bauxite" 
+#define TEXT_CRG_BAUXITE_TABBR                           "\0EBX" 
 
-//Sugar beet
-#define TEXT_CRG_SUGARBEET_CTYPE                         "Sugar Beet" 
-#define TEXT_CRG_SUGARBEET_1UNIT                         "\UE07C ton of sugar beet" 
-#define TEXT_CRG_SUGARBEET_MUNIT                         "\UE07C tons of sugar beet" 
-#define TEXT_CRG_SUGARBEET_TABBR                         "\0ESB" 
 
-//Fruit and Vegetables
-#define TEXT_CRG_FRUITSANDVEGETABLES_CTYPE               "Fruit and Vegetables" 
-#define TEXT_CRG_FRUITSANDVEGETABLES_1TYPE               "Fruit and Vegetable" 
-#define TEXT_CRG_FRUITSANDVEGETABLES_1UNIT               "\UE07C ton of fruit and vegetables" 
-#define TEXT_CRG_FRUITSANDVEGETABLES_MUNIT               "\UE07C tons of fruit and vegetables" 
+//Building Materials
+#define TEXT_CRG_BUILDINGMATERIALS_CTYPE                 "Building materials" 
+#define TEXT_CRG_BUILDINGMATERIALS_1UNIT                 "\UE07C ton of building materials" 
+#define TEXT_CRG_BUILDINGMATERIALS_MUNIT                 "\UE07C tons of building materials" 
+#define TEXT_CRG_BUILDINGMATERIALS_TABBR                 "\0EBM" 
+
+//Chemicals
+#define TEXT_CRG_CHEMICALS_CTYPE                         "Chemicals" 
+#define TEXT_CRG_CHEMICALS_1UNIT                         "\87 of chemicals" 
+#define TEXT_CRG_CHEMICALS_TABBR                         "\0ECH" 
+
+//Clay
+#define TEXT_CRG_CLAY_CTYPE                              "Clay" 
+#define TEXT_CRG_CLAY_1UNIT                              "\UE07C ton of clay" 
+#define TEXT_CRG_CLAY_MUNIT                              "\UE07C tons of clay" 
+#define TEXT_CRG_CLAY_TABBR                              "\0ECL" 
+
+//Engineering supplies
+#define TEXT_CRG_ENGINEERINGSUPPLIES_CTYPE               "Engineering Supplies" 
+#define TEXT_CRG_ENGINEERINGSUPPLIES_1UNIT               "\UE07C crate of engineering supplies" 
+#define TEXT_CRG_ENGINEERINGSUPPLIES_MUNIT               "\UE07C crates of engineering supplies" 
+#define TEXT_CRG_ENGINEERINGSUPPLIES_TABBR               "\0EES" 
+
+//Farm supplies
+#define TEXT_CRG_FARMSUPPLIES_CTYPE                      "Farm Supplies" 
+#define TEXT_CRG_FARMSUPPLIES_1UNIT                      "\UE07C crate of farm supplies" 
+#define TEXT_CRG_FARMSUPPLIES_MUNIT                      "\UE07C crates of farm supplies" 
+#define TEXT_CRG_FARMSUPPLIES_TABBR                      "\0EFS" 
 
 //Fish 
 #define TEXT_CRG_FISH_CTYPE                              "Fish" 
@@ -30,35 +48,22 @@
 #define TEXT_CRG_FISH_MUNIT                              "\UE07C tons of fish" 
 #define TEXT_CRG_FISH_TABBR                              "\0EFI" 
 
-//Wool
-#define TEXT_CRG_WOOL_CTYPE                              "Wool" 
-#define TEXT_CRG_WOOL_1UNIT                              "\UE07C ton of wool" 
-#define TEXT_CRG_WOOL_MUNIT                              "\UE07C tons of wool" 
-#define TEXT_CRG_WOOL_TABBR                              "\0EWL" 
+//Fruit and Vegetables
+#define TEXT_CRG_FRUITSANDVEGETABLES_CTYPE               "Fruit and Vegetables" 
+#define TEXT_CRG_FRUITSANDVEGETABLES_1TYPE               "Fruit and Vegetable" 
+#define TEXT_CRG_FRUITSANDVEGETABLES_1UNIT               "\UE07C ton of fruit and vegetables" 
+#define TEXT_CRG_FRUITSANDVEGETABLES_MUNIT               "\UE07C tons of fruit and vegetables" 
 
-//PLANTFIBRES
-#define TEXT_CRG_PLANTFIBRES_CTYPE                       "Plant Fibres" 
-#define TEXT_CRG_PLANTFIBRES_1UNIT                        "\UE07C ton of plant fibres" 
-#define TEXT_CRG_PLANTFIBRES_MUNIT                        "\UE07C tons of plant fibres" 
-#define TEXT_CRG_PLANTFIBRES_TABBR                        "\0ECT" 
-
-//Sand
-#define TEXT_CRG_SAND_CTYPE                              "Sand" 
-#define TEXT_CRG_SAND_1UNIT                              "\UE07C ton of sand" 
-#define TEXT_CRG_SAND_MUNIT                              "\UE07C tons of sand" 
-#define TEXT_CRG_SAND_TABBR                              "\0ESA" 
+//Fuel oil
+#define TEXT_CRG_FUELOIL_CTYPE                           "Petrol" 
+#define TEXT_CRG_FUELOIL_1UNIT                           "\87 of petrol" 
+#define TEXT_CRG_FUELOIL_TABBR                           "\0EPT" 
 
 //Gravel
 #define TEXT_CRG_GRAVEL_CTYPE                            "Stone" 
 #define TEXT_CRG_GRAVEL_1UNIT                            "\UE07C ton of stone" 
 #define TEXT_CRG_GRAVEL_MUNIT                            "\UE07C tons of stone" 
 #define TEXT_CRG_GRAVEL_TABBR                            "\0EGV" 
-
-//Clay
-#define TEXT_CRG_CLAY_CTYPE                              "Clay" 
-#define TEXT_CRG_CLAY_1UNIT                              "\UE07C ton of clay" 
-#define TEXT_CRG_CLAY_MUNIT                              "\UE07C tons of clay" 
-#define TEXT_CRG_CLAY_TABBR                              "\0ECL" 
 
 //Lumber
 #define TEXT_CRG_LUMBER_CTYPE                            "Lumber" 
@@ -72,34 +77,6 @@
 #define TEXT_CRG_MANUFACTURINGSUPPLIES_MUNIT             "\UE07C crates of manufacturing supplies" 
 #define TEXT_CRG_MANUFACTURINGSUPPLIES_TABBR             "\0EMS" 
 
-//Farm supplies
-#define TEXT_CRG_FARMSUPPLIES_CTYPE                      "Farm Supplies" 
-#define TEXT_CRG_FARMSUPPLIES_1UNIT                      "\UE07C crate of farm supplies" 
-#define TEXT_CRG_FARMSUPPLIES_MUNIT                      "\UE07C crates of farm supplies" 
-#define TEXT_CRG_FARMSUPPLIES_TABBR                      "\0EFS" 
-
-//Chemicals
-#define TEXT_CRG_CHEMICALS_CTYPE                         "Chemicals" 
-#define TEXT_CRG_CHEMICALS_1UNIT                         "\87 of chemicals" 
-#define TEXT_CRG_CHEMICALS_TABBR                         "\0ECH" 
-
-//Engineering supplies
-#define TEXT_CRG_ENGINEERINGSUPPLIES_CTYPE               "Engineering Supplies" 
-#define TEXT_CRG_ENGINEERINGSUPPLIES_1UNIT               "\UE07C crate of engineering supplies" 
-#define TEXT_CRG_ENGINEERINGSUPPLIES_MUNIT               "\UE07C crates of engineering supplies" 
-#define TEXT_CRG_ENGINEERINGSUPPLIES_TABBR               "\0EES" 
-
-//Fuel oil
-#define TEXT_CRG_FUELOIL_CTYPE                           "Petrol" 
-#define TEXT_CRG_FUELOIL_1UNIT                           "\87 of petrol" 
-#define TEXT_CRG_FUELOIL_TABBR                           "\0EPT" 
-
-//Bauxite
-#define TEXT_CRG_BAUXITE_CTYPE                           "Bauxite" 
-#define TEXT_CRG_BAUXITE_1UNIT                           "\UE07C ton of bauxite" 
-#define TEXT_CRG_BAUXITE_MUNIT                           "\UE07C tons of bauxite" 
-#define TEXT_CRG_BAUXITE_TABBR                           "\0EBX" 
-
 //Metal
 #define TEXT_CRG_METAL_CTYPE                             "Metal" 
 #define TEXT_CRG_METAL_1UNIT                             "\UE07C ton of metal" 
@@ -111,17 +88,42 @@
 #define TEXT_CRG_MILK_1UNIT                              "\87 of milk" 
 #define TEXT_CRG_MILK_TABBR                              "\0EMK" 
 
+//PLANTFIBRES
+#define TEXT_CRG_PLANTFIBRES_CTYPE                       "Plant Fibres" 
+#define TEXT_CRG_PLANTFIBRES_1UNIT                        "\UE07C ton of plant fibres" 
+#define TEXT_CRG_PLANTFIBRES_MUNIT                        "\UE07C tons of plant fibres" 
+#define TEXT_CRG_PLANTFIBRES_TABBR                        "\0ECT" 
+
+//Sand
+#define TEXT_CRG_SAND_CTYPE                              "Sand" 
+#define TEXT_CRG_SAND_1UNIT                              "\UE07C ton of sand" 
+#define TEXT_CRG_SAND_MUNIT                              "\UE07C tons of sand" 
+#define TEXT_CRG_SAND_TABBR                              "\0ESA" 
+
 //Scrap Metal
 #define TEXT_CRG_SCRAPMETAL_CTYPE                        "Scrap Metal" 
 #define TEXT_CRG_SCRAPMETAL_1UNIT                        "\UE07C ton of scrap metal" 
 #define TEXT_CRG_SCRAPMETAL_MUNIT                        "\UE07C tons of scrap metal" 
 #define TEXT_CRG_SCRAPMETAL_TABBR                        "\0ESM" 
 
-//Building Materials
-#define TEXT_CRG_BUILDINGMATERIALS_CTYPE                 "Building materials" 
-#define TEXT_CRG_BUILDINGMATERIALS_1UNIT                 "\UE07C ton of building materials" 
-#define TEXT_CRG_BUILDINGMATERIALS_MUNIT                 "\UE07C tons of building materials" 
-#define TEXT_CRG_BUILDINGMATERIALS_TABBR                 "\0EBM" 
+//Sugar beet
+#define TEXT_CRG_SUGARBEET_CTYPE                         "Sugar Beet" 
+#define TEXT_CRG_SUGARBEET_1UNIT                         "\UE07C ton of sugar beet" 
+#define TEXT_CRG_SUGARBEET_MUNIT                         "\UE07C tons of sugar beet" 
+#define TEXT_CRG_SUGARBEET_TABBR                         "\0ESB" 
+
+//Sugar cane
+#define TEXT_CRG_SUGARCANE_CTYPE                         "Sugar Cane" 
+#define TEXT_CRG_SUGARCANE_1UNIT                         "\UE07C ton of sugar cane" 
+#define TEXT_CRG_SUGARCANE_MUNIT                         "\UE07C tons of sugar cane" 
+#define TEXT_CRG_SUGARCANE_TABBR                         "\0ESC" 
+
+//Wool
+#define TEXT_CRG_WOOL_CTYPE                              "Wool" 
+#define TEXT_CRG_WOOL_1UNIT                              "\UE07C ton of wool" 
+#define TEXT_CRG_WOOL_MUNIT                              "\UE07C tons of wool" 
+#define TEXT_CRG_WOOL_TABBR                              "\0EWL" 
+
 
 //Industry texts
 #define TEXT_IND_ARABLEFARM                              "Arable Farm" 
@@ -191,7 +193,7 @@
 
 #define TEXT_STA_DREDGINGSITE                            "\80 Dredging Site" 
 #define TEXT_STA_FISHINGGROUNDS                          "\80 Fishing Grounds" 
-#define TEXT_STA_FORGE                              "\80 Forge" 
+#define TEXT_STA_FORGE                                   "\80 Forge" 
 #define TEXT_STA_MARKET                                  "\80 Market" 
 
 
