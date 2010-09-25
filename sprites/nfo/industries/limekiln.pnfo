@@ -9,7 +9,6 @@
 #define THIS_STR_INFO_CB3A            STR_INFO_FORGE
 #define THIS_STR_INFO_CB38            STR_INFO_GENERIC
 #define THIS_INTRO_DATE               \d0
-#define THIS_END_DATE                 \d1960-01-01
 #define THIS_HANDLE_CB28              10 00
 
 //Industry tiles definition
@@ -77,7 +76,7 @@
 //Industry definition
 
 //Action 0
--1 * 0 00 0A \b27 01 IND_LIMEKILN //-1 * 0 00 0A <num-props> 01 <id>
+-1 * 0 00 0A \b26 01 IND_LIMEKILN //-1 * 0 00 0A <num-props> 01 <id>
 	08 IND_NULL //reuse original industry with this here ID
 	0A 01 //number of industry layouts
 		\d12 //size of layout definition +2 for termination
@@ -90,8 +89,7 @@
 	0D STR_IND_PRODINCR_GENERIC //production increase message
 	0E STR_IND_PRODDECR_GENERIC //production decrease message
 	1B STR_IND_NEW_GENERIC //new industry message
-	1F STR_IND_FORGE //industry name
-	24 STR_STA_FORGE //default text for nearby station
+	1F STR_IND_LIMEKILN //industry name
 	10 CARGO_ENGINEERINGSUPPLIES CARGO_FARMSUPPLIES //production cargo types (word; fill unused with FFh)
 	11 CARGO_IRONORE CARGO_WOOD FF FF //acceptance cargo types (dword; fill unused with FFh)
 	12 00 //production multiplier cargo 1
@@ -119,5 +117,3 @@
 
 
 #include "../../../templates/template_secondary_action23_A.pnfo"
-
-#undef THIS_END_DATE
