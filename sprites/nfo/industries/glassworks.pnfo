@@ -1,10 +1,10 @@
 // Defines for use in industry template
 #define THIS_INDUSTRY                 IND_GLASSWORKS
-#define THIS_NUM_INPUT_CARGOS         \d01
+#define THIS_NUM_INPUT_CARGOS         \d02
 #define THIS_NUM_OUTPUT_CARGOS        \d02
 #define THIS_PROD_RATIO_CARGO_IN_1    \d06
-#define THIS_PROD_RATIO_CARGO_IN_2    \d01
-#define THIS_PROD_RATIO_CARGO_IN_3    \d01
+#define THIS_PROD_RATIO_CARGO_IN_2    \d02
+#define THIS_PROD_RATIO_CARGO_IN_3    \d01 //not used here
 #define THIS_STR_INFO_CB3A            STR_INFO_GLASSWORKS
 #define THIS_STR_INFO_CB38            STR_INFO_GENERIC
 #define THIS_INTRO_DATE               \d00
@@ -16,7 +16,7 @@
 -1 * 0 00 09 \b6 01 TILE_GLASSWORKS_1 // -1 * 0 00 09 <num-props> 01 <id>
 	08 TILE_NULL //subsitute type
 	0A CARGO_SAND 08 //tile acceptance 1
-	0B 00 00 //tile acceptance 2
+	0B CARGO_CHEMICALS 08 //tile acceptance 2
 	0C 00 00 //tile acceptance 3
 	0D 10 //land shape flags: 10 = only on flat land
 	0E 10 //callback flags
@@ -118,7 +118,7 @@
 	1F STR_IND_GLASSWORKS //industry name
 	24 STR_STA_FACTORY //default text for nearby station
 	10 CARGO_GOODS CARGO_MANUFACTURINGSUPPLIES //production cargo types (word; fill unused with FFh)
-	11 CARGO_SAND FF FF FF //acceptance cargo types (dword; fill unused with FFh)
+	11 CARGO_SAND CARGO_CHEMICALS FF FF //acceptance cargo types (dword; fill unused with FFh)
 	12 \b0 //production multiplier cargo 1
 	13 \b0 //production multiplier cargo 2
 	1C \w0 \w0 //input cargo 1 multiplier (dword M1 M2; output_typen = X*Mn/256)
@@ -143,5 +143,5 @@
 #include "../../../templates/cb28_secondary_generic.pnfo"     
 
 
-#include "../../../templates/template_secondary_action23_A.pnfo"
+#include "../../../templates/template_secondary_action23_B.pnfo"
 
