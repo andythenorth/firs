@@ -25,3 +25,11 @@ for string_id in `grep -v "^//" ../sprites/nfo/lang/7F_any.pnfo | cut -f2 -s -d 
 	fi
 done
 
+echo "Not required strings at file $translation_file"
+for string_id in `grep -v "^//" $translation_file | cut -f2 -s -d " "`; do
+	translated_string_id=`grep "$string_id" ../sprites/nfo/lang/7F_any.pnfo`
+	if [ -z "$translated_string_id" ]
+	then
+		echo "$string_id"
+	fi
+done
