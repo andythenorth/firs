@@ -772,12 +772,6 @@
 //start strings with TEXT_INFO_6T_PER_8T
 #ifdef TEXT_INFO_6T_PER_8T
 
-
-
-
-//end strings with TEXT_INFO_6T_PER_8T
-#endif
-
 	#ifdef TEXT_INFO_SAWMILL
 -1 * 0 04 0A LANG_ID2 01 STR_INFO_SAWMILL D0 UTF_STRING          TEXT_INFO_SAWMILL
                                                                  TEXT_INFO_6T_PER_8T 00
@@ -788,15 +782,23 @@
                                                                  TEXT_INFO_6T_PER_8T 00
 	#endif
 
+	#ifdef TEXT_INFO_BIOREFINERY 
+-1 * 0 04 0A LANG_ID2 01 STR_INFO_BIOREFINERY D0 UTF_STRING      TEXT_INFO_BIOREFINERY 
+                                                                 TEXT_INFO_6T_PER_8T 00
+	#endif
+
 	#ifdef TEXT_INFO_PLASTICSPLANT
 -1 * 0 04 0A LANG_ID2 01 STR_INFO_PLASTICSPLANT D0 UTF_STRING    TEXT_INFO_PLASTICSPLANT
                                                                  TEXT_INFO_6T_PER_8T 00
 	#endif
 
-	#ifdef TEXT_INFO_BIOREFINERY 
--1 * 0 04 0A LANG_ID2 01 STR_INFO_BIOREFINERY D0 UTF_STRING      TEXT_INFO_BIOREFINERY 
+	#ifdef TEXT_INFO_OILREFINERY 
+-1 * 0 04 0A LANG_ID2 01 STR_INFO_OILREFINERY D0 UTF_STRING      TEXT_INFO_OILREFINERY 
                                                                  TEXT_INFO_6T_PER_8T 00
 	#endif
+
+//end strings with TEXT_INFO_6T_PER_8T
+#endif
 
 //start strings with TEXT_INFO_8T_PER_8T
 #ifdef TEXT_INFO_8T_PER_8T
