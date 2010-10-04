@@ -1,5 +1,5 @@
 // Defines for use in industry template
-#define THIS_INDUSTRY                 IND_OILREFINERY
+#define THIS_INDUSTRY                 IND_BIOREFINERY
 #define THIS_NUM_INPUT_CARGOS         \d01
 #define THIS_NUM_OUTPUT_CARGOS        \d02
 #define THIS_PROD_RATIO_CARGO_IN_1    \d06
@@ -12,7 +12,7 @@
  
 //Redefinition of original TTD industry
 //Oil Refinery
--1 * 0 00 0A \b14 01 IND_OILREFINERY //-1 * 0 00 0A <num-props> 01 <id>
+-1 * 0 00 0A \b14 01 IND_BIOREFINERY //-1 * 0 00 0A <num-props> 01 <id>
 	08 04 //substitute industry type
 	09 04 //industry type override
 	24 STR_STA_REFINERY //default text for nearby station
