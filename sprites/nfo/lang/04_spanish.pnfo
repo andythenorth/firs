@@ -128,6 +128,7 @@
 #define TEXT_IND_ALUMINIUMPLANT                          "Planta de Aluminio"
 #define TEXT_IND_BAKERY                                  "Molino de Grano"
 #define TEXT_IND_BAUXITEMINE                             "Mina de Bauxita"
+#define TEXT_IND_BIOREFINERY                             "Biorrefinería"
 #define TEXT_IND_BREWERY                                 "Destilería"
 
 #define TEXT_IND_BRICKWORKS                              "Fábrica de Ladrillo" 
@@ -149,6 +150,7 @@
 #define TEXT_IND_GRAVELQUARRY                            "Dragado de Grava"
 
 #define TEXT_IND_JUNKYARD                                "Desguace"
+#define TEXT_IND_LIMEKILN                                "Horno de Cal" 
 #define TEXT_IND_LUMBERYARD                              "Planta de Tratamiento de Madera"
 #define TEXT_IND_MACHINESHOP                             "Fábrica de Maquinaria"
 #define TEXT_IND_MEATPACKER                              "Matadero"
@@ -248,17 +250,19 @@
 #define TEXT_INFO_5T_PER_8T_LIVESTOCK                    "  5t por cada 8t de ganado entregadas\0D"
 #define TEXT_INFO_5T_PER_8T_FISH                         "  5t por cada 8t de pescado entregadas\0D"
 #define TEXT_INFO_5T_PER_8T_WOOL                         "  5t por cada 8t de lana entregadas\0D"
-#define TEXT_INFO_5T_PER_8T_PLANTFIBRES                  "  5t por cada 8t de fibras vegetales entregadas\0D" 
+#define TEXT_INFO_5T_PER_8T_PLANTFIBRES                  "  5t por cada 8t de fibras vegetales entregadas\0D"
 
 #define TEXT_INFO_5T_PER_8T_SUGAR                        "  5t por cada 8t de azúcar entregadas\0D"
-#define TEXT_INFO_2T_PER_8T_WOOD                         "  2t por cada 8t de madera entregadas\0D" 
-#define TEXT_INFO_4T_PER_8T_WOOD                         "  4t por cada 8t de madera entregadas\0D" 
-#define TEXT_INFO_6T_PER_8T_WOOD                         "  6t por cada 8t de madera entregadas\0D" 
+#define TEXT_INFO_2T_PER_8T_WOOD                         "  2t por cada 8t de madera entregadas\0D"
+#define TEXT_INFO_4T_PER_8T_WOOD                         "  4t por cada 8t de madera entregadas\0D"
+#define TEXT_INFO_6T_PER_8T_WOOD                         "  6t por cada 8t de madera entregadas\0D"
 
 #define TEXT_INFO_2T_PER_8T_SAND                         "  2t por cada 8t de arena entregadas\0D"
 #define TEXT_INFO_4T_PER_8T_GRAVEL                       "  4t por cada 8t de grava entregadas\0D"
-#define TEXT_INFO_2T_PER_8T_CLAY                         "  2t por cada 8t de arcilla entregadas\0D" 
-#define TEXT_INFO_4T_PER_8T_CLAY                         "  4t por cada 8t de arcilla entregadas\0D" 
+#define TEXT_INFO_2T_PER_8T_CLAY                         "  2t por cada 8t de arcilla entregadas\0D"
+#define TEXT_INFO_4T_PER_8T_CLAY                         "  4t por cada 8t de arcilla entregadas\0D"
+#define TEXT_INFO_4T_PER_8T_COAL                         "  4t por cada 8t de carbón entregadas\0D"
+#define TEXT_INFO_6T_PER_8T_SAND                         "  6t por cada 8t de arena entregadas\0D"
 
 
 #define TEXT_INFO_MACHINESHOP                            "\98Construye y repara maquinaria.\0D" 
@@ -278,6 +282,7 @@
 
 #define TEXT_INFO_FERTILISERPLANT                        "\98Transforma productos químicos en fertilizante para ser usado en granjas.\0D"
 #define TEXT_INFO_LUMBERYARD                             "\98Produce objetos tales como mástiles y cercas.\0D"
+#define TEXT_INFO_BIOREFINERY                            "\98Procesa grano y azúcar en petróleo y productos químicos.\0D" 
 
 
 
