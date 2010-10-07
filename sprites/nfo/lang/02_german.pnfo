@@ -130,7 +130,7 @@
 
 #define TEXT_IND_BAKERY                                  "Bäckerei"
 #define TEXT_IND_BAUXITEMINE                             "Bauxitmine"
-#define TEXT_IND_FORGE                                   "Schmiede"
+#define TEXT_IND_BIOREFINERY                             "Bioraffinery" 
 #define TEXT_IND_BREWERY                                 "Brauerei"
 #define TEXT_IND_BRICKWORKS                              "Ziegelei" 
 #define TEXT_IND_BUILDERSYARD                            "Bauhof"
@@ -145,6 +145,7 @@
 #define TEXT_IND_FERTILISERPLANT                         "Düngerfabrik"
 #define TEXT_IND_FISHINGHARBOUR                          "Fischereihafen"
 #define TEXT_IND_FISHINGGROUNDS                          "Fischgründe"
+#define TEXT_IND_FORGE                                   "Schmiede" 
 #define TEXT_IND_FURNITUREFACTORY                        "Möbelfabrik"
 
 #define TEXT_IND_GENERALSTORE                            "Gemischtwarenladen"
@@ -166,10 +167,10 @@
 
 #define TEXT_IND_RETAILMARKET                            "Einzelhändler"
 
-#define TEXT_IND_SANDPIT                                 "Sandgrube"
+#define TEXT_IND_SANDPIT                                 "Sand- und Kiesgrube"
 #define TEXT_IND_SHEEPFARM                               "Schaf-Bauernhof"
 #define TEXT_IND_SUPERMARKET                             "Supermarkt"
-#define TEXT_IND_SUGARREFINERY                           "Zuckerrafinerie"
+#define TEXT_IND_SUGARREFINERY                           "Zuckerraffinerie"
 
 #define TEXT_IND_TEXTILEMILL                             "Textilfabrik"
 
@@ -276,11 +277,11 @@
 #define TEXT_INFO_WHOLESALEMARKET                        "\98Verkauft Produkte an Restaurants und Gaststätten.\0D"
 #define TEXT_INFO_FORGE                                  "\98Verarbeitet Schmiedeeisen zu Gegenständen wie Zäune, Werkzäuge, Pflüge, Schaufeln und Hufeisen.\0D"
 
-#define TEXT_INFO_BREWERY_STEPUP                         "\0DProduktion steigt, wenn Produktionsgüter innerhalb des gleichen Monats wie die andere Fracht geliefert werden." 
-
-#define TEXT_INFO_FERTILISERPLANT                        "\98Prozessiert Chemikalien zu Dünger für landwirtschaftlichen Gebrauch.\0D" 
+#define TEXT_INFO_FERTILISERPLANT                        "\98Verarbeitet Chemikalien zu Dünger für landwirtschaftlichen Gebrauch.\0D" 
 #define TEXT_INFO_LUMBERYARD                             "\98Produziert Dinge wie Balken und Zaunpfähle.\0D" 
+#define TEXT_INFO_BIOREFINERY                            "\98Verarbeitet Getreide und Zucker zu Treibstoff und Chemikalien.\0D" 
 
+#define TEXT_INFO_BREWERY_STEPUP                         "\0DProduktion steigt, wenn Produktionsgüter innerhalb des gleichen Monats wie die andere Fracht geliefert werden." 
 
 
 //grf and parameter descriptions
