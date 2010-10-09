@@ -689,6 +689,19 @@
 			#endif
 		#endif
 
+    #ifdef TEXT_INFO_2T_PER_8T_BAUXITE
+      #ifdef TEXT_INFO_2T_PER_8T_CHEMICALS
+        #ifdef TEXT_INFO_4T_PER_8T_SCRAP_METAL
+-1 * 0 04 0A LANG_ID2 01 STR_INFO_ALUMINIUMPLANT D0 UTF_STRING   TEXT_INFO_CARGO_PRODUCTION
+                                                                 TEXT_INFO_2T_PER_8T_BAUXITE
+                                                                 TEXT_INFO_2T_PER_8T_CHEMICALS
+                                                                 TEXT_INFO_4T_PER_8T_SCRAP_METAL 
+                                                                 TEXT_INFO_STEPUP_TWO_CARGOS 00
+        #endif
+      #endif
+    #endif
+
+
 	//end TEXT_INFO_CARGO_PRODUCTION and TEXT_INFO_STEPUP_TWO_CARGOS
 	#endif
 	
@@ -733,17 +746,6 @@
 	#endif
 	
 	//only TEXT_INFO_CARGO_PRODUCTION below
-
-	#ifdef TEXT_INFO_2T_PER_8T_BAUXITE
-		#ifdef TEXT_INFO_2T_PER_8T_CHEMICALS
-			#ifdef TEXT_INFO_4T_PER_8T_SCRAP_METAL
--1 * 0 04 0A LANG_ID2 01 STR_INFO_ALUMINIUMPLANT D0 UTF_STRING   TEXT_INFO_CARGO_PRODUCTION
-                                                                 TEXT_INFO_2T_PER_8T_BAUXITE
-                                                                 TEXT_INFO_2T_PER_8T_CHEMICALS
-                                                                 TEXT_INFO_4T_PER_8T_SCRAP_METAL 00
-			#endif
-		#endif
-	#endif
 	
 	#ifdef TEXT_INFO_FORGE
 		#ifdef TEXT_INFO_2T_PER_8T_IRON_ORE
