@@ -3,6 +3,65 @@ FIRS Industry Replacement Set Changelog
 =======================================
 
 -----------
+0.5 Release
+-----------
+
+*Important*
+The grfID has changed in FIRS 0.5.  It is *not* savegame compatible with any previous release of FIRS.
+
+*What's new in 0.5?*
+
+Over 120 changes since FIRS 0.4
+
+*New Industries*
+- Biorefinery (no graphics yet)
+- Lime Kiln (graphics unfinished)
+- Builders Yard
+- Brick Works
+
+*New / Changed Cargos*
+- Building Materials
+- Plant Fibres (replaces Cotton and available in all climates)
+- Stone (formerly Gravel)
+- removed Water cargo.  Tropic towns in Desert require Goods instead.
+
+*Removed Industries*
+- Water Plant and Water Tower
+- Windmill 
+- Supermarket
+- Retail Market
+- Wholesale Market
+- Gravel Pit
+
+*New Features*
+- Sand Pit is now Quarry, also produces Stone
+- Significantly improved appearance of Quarry (formerly Sand Pit) and Clay Pit
+- Cement Plant now produces Building Materials cargo instead of Goods
+- Lumber Yard produces additional cargo - Building Materials
+- primary industries show when maximum production of output cargos is reached (experimental)
+- Paper Mill accepts additional cargos - Clay, Chemicals
+- Blacksmith renamed to Forge
+- Forge accepts Wood instead of Coal
+- Forge produces Engineering Supplies instead of Goods
+- Bakery renamed to Grain Mill, intro date removed
+- Mixed Farm now produces Plant Fibres instead of Fruit & Vegetables
+- Textile Mill accepts additional cargo - Plant Fibres
+- Plastics Plant accepts additional cargo - Plant Fibres
+- Meat Packer renamed to Stockyard, intro date removed
+- Glass Works accepts additional cargo - Chemicals
+- Lumber Yard intro date removed
+- General Store renamed to Store
+- Fishing Grounds production lower to better match vehicles
+- improved minimap colours for various industries
+- bug fixed with Lumber Yard production ratios 
+- various industry window texts fixed
+
+
+*Translations*
+- Most translations updated
+
+
+-----------
 0.4 Release
 -----------
 
