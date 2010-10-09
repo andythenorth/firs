@@ -126,7 +126,11 @@
 
 //Industry texts
 
+#define TEXT_IND_BIOREFINERY                             "Bioraffinaderij" 
 #define TEXT_IND_BREWERY                                 "Brouwerij" 
+#define TEXT_IND_BRICKWORKS                              "Steenfabriek" 
+#define TEXT_IND_BUILDERSYARD                            "Aannemeropslagplaats" 
+
 #define TEXT_IND_CEMENTPLANT                             "Cementfabriek"
 #define TEXT_IND_CLAYPIT                                 "Kleiwinning"
 #define TEXT_IND_WINDFARM                                "Windmolenpark"
@@ -147,6 +151,8 @@
 #define TEXT_IND_METALFOUNDRY                            "IJzergieterij" 
 #define TEXT_IND_MIXEDFARM                               "Gemengd boerenbedrijf" 
 #define TEXT_IND_JUNKYARD                                "Schroothoop" 
+
+#define TEXT_IND_LIMEKILN                                "Kalkoven" 
 #define TEXT_IND_GENERALSTORE                            "Kruidenier" 
 
 #define TEXT_IND_BAUXITEMINE                             "Bauxietmijn" 
@@ -173,7 +179,7 @@
 #define TEXT_STA_FARM                                    "\80 Boerderij" 
 #define TEXT_STA_MILLS                                   "\80 Molen" 
 #define TEXT_STA_WELLS                                   "\80 Bron" 
-#define TEXT_STA_REFINERY                                "\80 Raffinaarderij"
+#define TEXT_STA_REFINERY                                "\80 Raffinaderij"
 #define TEXT_STA_FACTORY                                 "\80 Fabriek" 
 #define TEXT_STA_PLANT                                   "\80 Werkplaats" 
 #define TEXT_STA_QUARRY                                  "\80 Groeve" 
@@ -210,6 +216,7 @@
 #define TEXT_INFO_ES_PRIMARY_BOOST                       "\98Constructiehulpgoederen kunnen de productie verhogen.\0D\90  \UE07B pallets geleverd deze maand" 
 #define TEXT_INFO_FS_PRIMARY_BOOST                       "\98Landbouwhulpgoederen kunnen de productie verhogen.\0D\90  \UE07B pallets geleverd deze maand" 
 #define TEXT_INFO_MS_PRIMARY_BOOST                       "\98Productiehulpgoederen verdubbelen de productiecapaciteit.\0D\0D\80" 
+#define TEXT_INFO_BOOST_MAXED                            "\98Maximale productiecapaciteit bereikt."
 
 #define TEXT_INFO_CARGO_PRODUCTION                       "\98Productie:\0D" 
 
@@ -222,7 +229,9 @@
 #define TEXT_INFO_MANUFACTURINGSUPPLIES_STEPUP                         "\0DProductie verhoogt als productiehulpgoederen binnen een maand van andere vracht worden geleverd." 
 
 #define TEXT_INFO_3T_PER_8T_MS                           "  3t per 8t productiehulpgoederen\0D" 
+#define TEXT_INFO_5T_PER_8T_PLANTFIBRES                  "  5t per 8t katoen\0D" 
 #define TEXT_INFO_2T_PER_8T_IRON_ORE                     "  2t per 8t ijzererts\0D" 
+#define TEXT_INFO_4T_PER_8T_COAL                         "  4t per 8t kolen\0D" 
 #define TEXT_INFO_2T_PER_8T_COAL                         "  2t per 8t kolen\0D" 
 #define TEXT_INFO_4T_PER_8T_SCRAP_METAL                  "  4t per 8t schroot\0D" 
 #define TEXT_INFO_2T_PER_8T_BAUXITE                      "  2t per 8t bauxiet\0D" 
@@ -237,18 +246,23 @@
 #define TEXT_INFO_5T_PER_8T_LIVESTOCK                    "  5t per 8t vee\0D" 
 #define TEXT_INFO_5T_PER_8T_FISH                         "  5t per 8t vis\0D" 
 #define TEXT_INFO_5T_PER_8T_WOOL                         "  5t per 8t wol\0D" 
+#define TEXT_INFO_6T_PER_8T_SAND                         "  6t per 8t zand\0D" 
 #define TEXT_INFO_2T_PER_8T_SAND                         "  2t per 8t zand\0D" 
 
 #define TEXT_INFO_4T_PER_8T_GRAVEL                       "  4t per 8t grind\0D" 
 #define TEXT_INFO_5T_PER_8T_SUGAR                        "  5t per 8t suiker\0D" 
 #define TEXT_INFO_6T_PER_8T_WOOD                         "  6t per 8t hout\0D" 
+#define TEXT_INFO_4T_PER_8T_WOOD                         "  4t per 8t hout\0D" 
+#define TEXT_INFO_2T_PER_8T_WOOD                         "  2t per 8t hout\0D" 
+#define TEXT_INFO_4T_PER_8T_CLAY                         "  4t per 8t klei\0D" 
 #define TEXT_INFO_2T_PER_8T_CLAY                         "  2t per 8t klei\0D" 
 
 #define TEXT_INFO_MACHINESHOP                            "\98Bouwt en onderhoudt machines.\0D" 
 #define TEXT_INFO_SAWMILL                                "\98Hakt hout.\0D" 
+#define TEXT_INFO_WINDFARM                               "\98 \0D" 
 #define TEXT_INFO_METALFOUNDRY                           "\98Maakt metalen gereedschappen en onderdelen.\0D" 
 #define TEXT_INFO_PAPERMILL                              "\98Maakt papier en karton uit houtpulp.\0D"
-#define TEXT_INFO_FORGE                             "\98Maakt smeedijzeren producten zoals hekken, roosters, gereedschappen, ploegen, keukengerei en hoefijzers.\0D" 
+#define TEXT_INFO_FORGE                                  "\98Maakt smeedijzeren producten zoals hekken, roosters, gereedschappen, ploegen, keukengerei en hoefijzers.\0D" 
 
 #define TEXT_INFO_OILREFINERY                            "\98Verwerkt ruwe olie tot benzine en chemicaliën.\0D" 
 #define TEXT_INFO_PLASTICSPLANT                          "\98Maakt plasticproducten zoals verpakking en huishoudartikelen.\0D" 
@@ -257,11 +271,16 @@
 
 #define TEXT_INFO_FERTILISERPLANT                        "\98Verwerkt chemicaliën tot kunstmest voor gebruik door boerderijen.\0D" 
 #define TEXT_INFO_LUMBERYARD                             "\98Maakt onder andere houten palen en stijgerplanken..\0D" 
+#define TEXT_INFO_BIOREFINERY                            "\98Verwerkt graan en suiker tot benzine and chemicaliën.\0D" 
 
 
 //grf and parameter descriptions
 
 #define TEXT_GRF_DESC                                    "\8EFIRS Industry Replacement Set\n\98Door: \89andythenorth\98 en \89FooBar\n\n\98Website: \89www.tt-foundry.com/sets/FIRS\n\98Licentie: \89GPL v2\n\98Speciale dank aan \89Ammler\98, \89Core Xii\98, \89Irwe\98, \89planetmaker\98 en \89Zephyris\n\98Gebruikt onderdelen van: \89eGRVTS\98, \89ISR\98 en \89OpenGFX"
+
+#define TEXT_PNAME_ECONOMY                               "Economie"
+#define TEXT_PDESC_ECONOMY                               "Uiteindelijk zal FIRS een keuze aan economieën hebben. Goederen en industrieën varieren in elke economie. Betalingen voor goederen verschillen ook in elke economie. \0D\0D\89Op dit moment is slechts één economie :)"
+#define TEXT_PVALU0_ECONOMY                              "Test Economie"
 
 #define TEXT_PNAME_PRIMARYDECREASE                       "Primaire industrieën kunnen productie verlagen"
 #define TEXT_PDESC_PRIMARYDECREASE                       "Standaard kunnen FIRS primaire industrieën hun productie nooit verlagen.\nAls productieverlaging voor primaire industrieën is ingeschakeld is er een kans dat een industrie zijn productie verlaagt als er in een maand geen hulpgoederen zijn geleverd. Bij een hoge productie is de kans op productieverlaging groter."
@@ -271,6 +290,9 @@
 
 #define TEXT_PNAME_SECONDARYCLOSE                        "Secundaire industrieën kunnen sluiten"
 #define TEXT_PDESC_SECONDARYCLOSE                        "Standaard zullen FIRS primaire industrieën nooit sluiten.\nAls sluiten van secundaire industrieën is ingeschakeld kunnen secundaire industrieën sluiten als voor lange tijd geen vracht is getransporteerd."
+
+#define TEXT_PNAME_PREVENTCONSTRUCTION                   "Voorkom bouwen van nieuwe industrieën (nog niet af)"
+#define TEXT_PDESC_PREVENTCONSTRUCTION                   "\89Dit doet nog niets. \98Al het klaar is, zal het een 'zandbak mode' geven om te gebruiken in scenario's."
 
 #define TEXT_PNAME_DEBUG                                 "Laat debug-informatie zien"
 #define TEXT_PDESC_DEBUG                                 "Alleen voor ontwikkelaars."
