@@ -10,7 +10,7 @@
 #define IND_STEELMILL             07
 #define IND_ALUMINIUMPLANT        08
 #define IND_METALFOUNDRY          09
-#define IND_SANDPIT               0A
+#define IND_QUARRY               0A
 #define IND_FOREST                0B
 #define IND_SAWMILL               0C
 #define IND_FURNITUREFACTORY      0D
@@ -94,7 +94,7 @@
 #define TILE_BRICKWORKS_1                  A5
 #define TILE_BIOREFINERY_1                 A6
 #define TILE_PLASTICSPLANT_1               B0
-#define TILE_SANDPIT_1                     B1
+#define TILE_QUARRY_1                      B1
 #define TILE_GLASSWORKS_1                  B2
 #define TILE_MEATPACKER_1                  B3
 #define TILE_DAIRYFARM_1                   B4
@@ -119,7 +119,7 @@
 //#define TILE_VACANT                        C7
 #define TILE_WINDFARM_1                    C8
 //#define TILE_VACANT                        C9
-#define TILE_QUARRY_1                      CA
+//#define TILE_VACANT                        CA
 #define TILE_PETROLPUMP_1                  CB
 #define TILE_FISHINGGROUNDS_1              CC
 #define TILE_FOREST_1                      CD
@@ -210,7 +210,7 @@
 
 //Definition of text IDs for industries
 #define STR_IND_ARABLEFARM            70 DC
-#define STR_IND_SANDPIT               71 DC
+#define STR_IND_QUARRY               71 DC
 #define STR_IND_BUILDERSYARD          72 DC
 #define STR_IND_BREWERY               73 DC
 #define STR_IND_CEMENTPLANT           74 DC
