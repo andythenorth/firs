@@ -147,7 +147,7 @@
     89 // 
       42 20  \dxFFFFFFFF // cargo waiting
       \2/ 1A 20  \d08 //divide cargo waiting by 8
-      \2* 7C 03 20  \dxFFFFFFFF //divide cargo waiting by production ratio to get calculated production value 
+      \2* 7C 03 20  \dxFFFFFFFF //multiply cargo waiting by production ratio to get calculated production value 
       \2< 7C 00 20  \dxFFFFFFFF //result = min(calculated production value, output limit for produced cargo)
       10 1A 00 \dx06 //store in persistent storage (could use ordinary register, but this is easier to debug)
     \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
@@ -169,7 +169,7 @@
     89 // 
       40 20  \dxFFFFFFFF // cargo waiting 
       \2/ 1A 20  \d08 //divide cargo waiting by 8
-      \2* 7C 01 20  \dxFFFFFFFF //divide cargo waiting by production ratio to get calculated production value 
+      \2* 7C 01 20  \dxFFFFFFFF //multiply cargo waiting by production ratio to get calculated production value 
       \2< 7C 00 20  \dxFFFFFFFF //result = min(calculated production value, output limit for produced cargo)
       10 1A 00 \dx04 //store in persistent storage (could use ordinary register, but this is easier to debug)
     \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
