@@ -21,14 +21,10 @@
 1 Preface
 ---------
 
-*FIRS 0.4 Release Notes*
+*FIRS 0.5 Release Notes*
 
-FIRS 0.4 is a fully playable release of FIRS featuring 44 industries and 27 cargos.
-http://tt-foundry.com/sets/FIRS/schema/industries?economy=point_4_release  
-
-In early years, not all cargo chains are complete, but there are enough other
-chains available to keep yourself occupied while waiting for the industries to 
-become available and complete the chains.
+FIRS 0.5 is a fully playable release of FIRS featuring 42 industries and 29 cargos.
+http://tt-foundry.com/sets/FIRS/schema/industries?economy=point_5_release  
 
 Nightly builds of FIRS are available, but aren't recommended for most
 players as they often contain work-in-progress!  Thanks though to all those who
@@ -62,8 +58,8 @@ Intro dates can be found at:
 http://tt-foundry.com/sets/FIRS/schema/industries
 - FIRS works well if the colour of the mini-map is changed - this is possible in
 recent nightly builds of OTTD (in advanced options -> interface) 
-- FIRS 0.4 is *not* savegame compatible with FIRS 0.3.  
-The grfID was changed in FIRS 0.4 to reduce the chance of problems for players.  
+- FIRS 0.5 is *not* savegame compatible with FIRS 0.4 or earlier.  
+The grfID was changed in FIRS 0.5 to reduce the chance of problems for players.  
 - any savegame using the nightly build of FIRS may break :o
 
 
@@ -103,11 +99,11 @@ available from the OpenTTD built-in download manager are known to support FIRS:
   - North American Renewal Set (NARS) 2
   - Old Wagons with New Cargos 1.1
   - UK Renewal Train Set v3
-  - DB Set XL (with FIRS extension)
+  - DB Set XL (with FIRS extension - partial support)
   - UK Railway Set (UKRS2)
 - Road Vehicle Sets:
   - eGRVTS v1.0
-  - HEQS (Heavy Equipment Set) 0.5b
+  - HEQS (Heavy Equipment Set)
 - Ship sets
   - FISH
   - New Ships (partial support)
@@ -120,6 +116,7 @@ available from the OpenTTD built-in download manager are known to support FIRS:
 
 
 * Parameters *
+
 Parameter 1. Economy setting: unfinished, may only be set to 0
 
 
@@ -146,25 +143,21 @@ Parameter 3. Industry Closure / Openings.  Bit map (add the numbers to get the r
 Primary industries produce raw materials, e.g. 
 - mines, farms, junk yard, oil wells, oil rig etc.
 
-
-
 Many FIRS primary industries accept Engineering Supplies or Farm Supplies.  
 They will only increase production if the correct supplies are delivered.
-
 
 Every month there is a chance of a production increase if at least 1t of the 
 correct supplies are delivered.  
 Only 1t of supplies is required - delivering more than 1t of supplies will 
 not make a production increase more likely.  
 
+
 Small vehicles are best for delivering supplies. 
 (transfer orders are recommended, with a large vehicle dropping supplies at
 a station to be delivered by small vehicles).
 
 
-
 If parameter 1 is set to 0, primary industry production will never reduce.  
-
 
 If parameter 1 is set to 1, there is a chance that a primary industry will 
 reduce production if no supplies are delivered in a month.  
