@@ -35,16 +35,16 @@ do try the nightlies and report problems :)
 FIRS lets you get started playing straight away with easy-to-understand
 gameplay:
 - there are plenty of familiar industries and cargos you'll recognise from the
-default game
+  default game
 - FIRS adds lots of exciting new cargos and industries to play with
 - primary industries like mines and farms _always_ produce cargo
 - secondary industries like the steel mill and cement plant _always_ produce
-some output cargo when an input cargo is delivered.
+  some output cargo when an input cargo is delivered.
 
 For players who want more, FIRS also rewards you by:
 - increasing primary industry production when you deliver supplies regularly
 - increasing production at some secondary industries when you deliver more than
-one input cargo regularly
+  one input cargo regularly
 - introducing new industries and cargos as time goes by.
 
 The pixels are lickable and work brilliantly with original graphics and OpenGFX.
@@ -53,13 +53,13 @@ The pixels are lickable and work brilliantly with original graphics and OpenGFX.
 *More Info / Things to Watch Out For!* 
 - primary industry will not increase production unless supplies are delivered. 
 - some industries are available from year 0. Some industries (and the cargos
-they use) are only available after a certain date.  
-Intro dates can be found at:
-http://tt-foundry.com/sets/FIRS/schema/industries
+  they use) are only available after a certain date.  
+  Intro dates can be found at:
+  http://tt-foundry.com/sets/FIRS/schema/industries
 - FIRS works well if the colour of the mini-map is changed - this is possible in
-recent nightly builds of OTTD (in advanced options -> interface) 
+  recent nightly builds of OTTD (in advanced options -> interface) 
 - FIRS 0.5 is *not* savegame compatible with FIRS 0.4 or earlier.  
-The grfID was changed in FIRS 0.5 to reduce the chance of problems for players.  
+  The grfID was changed in FIRS 0.5 to reduce the chance of problems for players.  
 - any savegame using the nightly build of FIRS may break :o
 
 
@@ -127,7 +127,7 @@ Parameter 2. Primary production change:
   1 = production decrease chance if no ENSP; production increase chance if supplies delivered monthly.
 
 
-Parameter 3. Industry Closure / Openings.  Bit map (add the numbers to get the required setting.
+Parameter 3. Industry Closure / Openings.  Bit map (add the numbers to get the required setting).
 
   0 = no primary or secondary industry closures (default)
   1 = allow primary industry closure
@@ -232,13 +232,14 @@ Place both renum and grfcodec in the FIRS main directory or your system's PATH
 environment variable and run the makefile:
    make                  Compile the FIRS newgrf
    make bundle           Compile and create a tar with directory structure and
-documentation
+                         documentation
    make install          Compile, tar and install to OpenTTD data directory
-(either guessed by the makefile or to be configured in Makefile.local)
+                         (either guessed by the makefile or to be configured
+                          in Makefile.local)
    make release          Compile and tar/zip with version information for
-shipping
+                         shipping
    make release-install  Compile, tar/zip with version information and install
-tar to data directory
+                         tar to data directory
 
 either 'make', 'make install', 'make bundle' or 'make release'. There's more
 options, but these are probably sufficient for you to know.
@@ -264,18 +265,18 @@ This version of FIRS is created using repository version {{REPO_REVISION}}
 7 FIRS Web Links
 ----------------
 
-  FIRS Website: http://tt-foundry.com/sets/FIRS/schema/industries
-  Information about industries and cargos for both users and set authors.
+FIRS Website: http://tt-foundry.com/sets/FIRS/schema/industries
+Information about industries and cargos for both users and set authors.
    
-  Project Page: http://dev.openttdcoop.org/projects/firs
-  Source repository and issue tracker.
+Project Page: http://dev.openttdcoop.org/projects/firs
+Source repository and issue tracker.
   
-  General Discussion: http://www.tt-forums.net/viewtopic.php?t=44177
-  Discussion of the FIRS releases. Talk about it's features, discuss bugs and
+General Discussion: http://www.tt-forums.net/viewtopic.php?t=44177
+Discussion of the FIRS releases. Talk about it's features, discuss bugs and
 ventilating your ideas.
   
-  Development Discussion: http://www.tt-forums.net/viewtopic.php?t=41607
-  Follow the latest development.
+Development Discussion: http://www.tt-forums.net/viewtopic.php?t=41607
+Follow the latest development.
  
 
 
@@ -283,19 +284,19 @@ ventilating your ideas.
 8 FIRS License
 --------------
 
-    FIRS Industry Replacement Set - Full industry replacement set for OpenTTD
-    Copyright (C) 2009  andythenorth, FooBar, Zephyris and others
+FIRS Industry Replacement Set - Full industry replacement set for OpenTTD
+Copyright (C) 2009  andythenorth, FooBar, Zephyris and others
 
-    This program is free software; you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation; either version 2 of the License, or
-    (at your option) any later version.
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
 
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
 
-    You should have received a copy of the GNU General Public License along
-    with this program; if not, write to the Free Software Foundation, Inc.,
-    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+You should have received a copy of the GNU General Public License along
+with this program; if not, write to the Free Software Foundation, Inc.,
+51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
