@@ -12,6 +12,7 @@ COAL,			FF FF,	16,	  6,	1,	bulk,				FF,	256,	00,	CLIMATE_ALL
 MAIL,			FF FF,	 4,	 15,	1,	mail,				02,	256,	00,	CLIMATE_ALL
 OIL,			FF FF,	14,	172,	1,	liquid,				FF,	256,	00,	CLIMATE_ALL
 LIVESTOCK,		FF FF,	 3,	209,	1,	piece,				FF,	256,	00,	CLIMATE_ALL
+// Goods classes don't match goods defined elsewhere; planetmaker believes there's a good reason for it, doesn't know what.
 GOODS,			FF FF,	 8,	194,	1,	express piece,			09,	256,	00,	CLIMATE_ALL
 GRAIN,			FF FF,	16,	191,	1,	bulk,				FF,	256,	00,	CLIMATE_ALL
 WOOD,			FF FF,	16,	 55,	1,	piece,				FF,	256,	00,	CLIMATE_ALL
@@ -27,6 +28,7 @@ GRAVEL,			FF FF,	16,	 16,	1,	bulk,				FF,	256,	00,	CLIMATE_ALL
 BUILDINGMATERIALS,      FF FF,	16,	149,	1,      covered piece,                  FF,	256,	00,	CLIMATE_ALL
 SAND,			FF FF,	16,	 64,	1,	bulk,				FF,	256,	00,	CLIMATE_ALL
 CLAY,			FF FF,	16,	 64,	1,	bulk,				FF,	256,	00,	CLIMATE_ALL
+// The classes of lumber (WDPR) are much discussed, and will be left as they are below.  All other options are worse.
 LUMBER,			FF FF,	16,	 58,	1,	bulk piece,			FF,	256,	00,	CLIMATE_ALL
 BAUXITE,		FF FF,	16,	184,	1,	bulk,				FF,	256,	00,	CLIMATE_ALL
 // Do we really want scrap metal as piece goods?,	
