@@ -74,9 +74,9 @@
 #define TEXT_CRG_CHEMICALS_TABBR "\0ECH"
 
 //Engineering supplies (edited by me)
-#define TEXT_CRG_ENGINEERINGSUPPLIES_CTYPE "Artykuly przemyslowe"
-#define TEXT_CRG_ENGINEERINGSUPPLIES_1UNIT "\UE07C skrzynia artykulow przemyslowych"
-#define TEXT_CRG_ENGINEERINGSUPPLIES_MUNIT "\UE07C skrzyn artykulow przemyslowych"
+#define TEXT_CRG_ENGINEERINGSUPPLIES_CTYPE "Maszyny"
+#define TEXT_CRG_ENGINEERINGSUPPLIES_1UNIT "\UE07C skrzyn maszyn"
+#define TEXT_CRG_ENGINEERINGSUPPLIES_MUNIT "\UE07C skrzyn maszyn"
 #define TEXT_CRG_ENGINEERINGSUPPLIES_TABBR "\0EES"
 
 //Fuel oil (edited by me)
@@ -88,7 +88,7 @@
 #define TEXT_CRG_BAUXITE_CTYPE "Boksyt"
 #define TEXT_CRG_BAUXITE_1UNIT "\UE07C tona boksytu"
 #define TEXT_CRG_BAUXITE_MUNIT "\UE07C ton boksytu"
-#define TEXT_CRG_BAUXITE_TABBR                           "\0EBX" 
+#define TEXT_CRG_BAUXITE_TABBR "\0EBX" 
 
 //Milk
 #define TEXT_CRG_MILK_CTYPE "Mleko"
@@ -114,9 +114,9 @@
 #define TEXT_CRG_CLAY_TABBR                              "\0ECL" 
 
 //Manufacturing Supplies - formerly Packaging (translate by me)
-#define TEXT_CRG_MANUFACTURINGSUPPLIES_CTYPE             "Zasoby produkcyjne" 
-#define TEXT_CRG_MANUFACTURINGSUPPLIES_1UNIT             "\UE07C skrzynia zasobow produkcyjnych" 
-#define TEXT_CRG_MANUFACTURINGSUPPLIES_MUNIT             "\UE07C skrzyn zasobow produkcyjnych" 
+#define TEXT_CRG_MANUFACTURINGSUPPLIES_CTYPE             "Opakowania" 
+#define TEXT_CRG_MANUFACTURINGSUPPLIES_1UNIT             "\UE07C skrzynia opakowan" 
+#define TEXT_CRG_MANUFACTURINGSUPPLIES_MUNIT             "\UE07C skrzyn opakowan" 
 #define TEXT_CRG_MANUFACTURINGSUPPLIES_TABBR             "\0EMS" 
 
 //Metal (translated by me)
@@ -158,7 +158,7 @@
 #define TEXT_IND_JUNKYARD                                "Zlomowisko" 
 
 #define TEXT_IND_LIMEKILN                                "Piec wapienny" 
-#define TEXT_IND_LUMBERYARD                              "Sklad materialow drewnianych" 
+#define TEXT_IND_LUMBERYARD                              "Sklad materialow drzewnych" 
 
 #define TEXT_IND_MACHINESHOP                             "Fabryka maszyn" 
 #define TEXT_IND_MEATPACKER                              "Ubojnia bydla" 
@@ -168,7 +168,7 @@
 #define TEXT_IND_PETROLPUMP                              "Stacja paliw" 
 #define TEXT_IND_PLASTICSPLANT                           "Fabryka tworzyw sztucznych" 
 
-#define TEXT_IND_QUARRY                                  "Kopalnia piasku" 
+#define TEXT_IND_QUARRY                                  "Kamieniolomy" 
 
 #define TEXT_IND_RETAILMARKET                            "Hipermarket" 
 
@@ -217,13 +217,13 @@
 #define TEXT_INFO_LIMIT_800                              "\98 (max 800)" 
 
 #define TEXT_INFO_ACCEPTING                              "\0D" // empty line breaks to stop window size jumping around 
-#define TEXT_INFO_NOT_ACCEPTING_ES                       "\94Nie akceptuje artykulow przemyskowych\98\0D(Limit osiagniety)" 
+#define TEXT_INFO_NOT_ACCEPTING_ES                       "\94Nie akceptuje maszyn \98\0D(Limit osiagniety)" 
 #define TEXT_INFO_NOT_ACCEPTING_FS                       "\94Nie akceptuje sprzetu rolniczego\98\0D(Limit osiagniety)" 
-#define TEXT_INFO_NOT_ACCEPTING_MS                       "\94Nie akceptuje zasobow produkcyjnych\98\0D(Limit osiagniety)" 
+#define TEXT_INFO_NOT_ACCEPTING_MS                       "\94Nie akceptuje opakowan\98\0D(Limit osiagniety)" 
 
-#define TEXT_INFO_ES_PRIMARY_BOOST                       "\98Dostawy art. przemyslowych moga zwiekszyc produkcje\0D\90  \UE07B skrzyn dostarczono w tym miesiacu" 
+#define TEXT_INFO_ES_PRIMARY_BOOST                       "\98Dostawy maszyn moga zwiekszyc produkcje\0D\90  \UE07B skrzyn dostarczono w tym miesiacu" 
 #define TEXT_INFO_FS_PRIMARY_BOOST                       "\98Dostawy sprzetu rolniczego moga zwiekszyc produkcje.\0D\90  \UE07B skrzyn dostarczono w tym miesiacu" 
-#define TEXT_INFO_MS_PRIMARY_BOOST                       "\98Zasoby produkcyjne podwajaja produkcje z dostarczanych towarow.\0D\0D\80" 
+#define TEXT_INFO_MS_PRIMARY_BOOST                       "\98Dostarczanie opakowan pozwala na podwojenie produkcji.\0D\0D\80" 
 #define TEXT_INFO_BOOST_MAXED                            "\98Osiagnieto maksymalny poziom produkcji"
 
 #define TEXT_INFO_CARGO_PRODUCTION                       "\98Produkcja:\0D" 
@@ -236,7 +236,8 @@
 
 #define TEXT_INFO_3T_PER_8T_MS                           "  3 tony produkcji za 8 skrzyn zasobow produkcyjnych\0D" 
 #define TEXT_INFO_2T_PER_8T_IRON_ORE                     "  2 tony produkcji za 8 ton rudy zelaza\0D" 
-#define TEXT_INFO_2T_PER_8T_COAL                         "  2 tony produkcji za 8 ton wegla\0D" 
+#define TEXT_INFO_2T_PER_8T_COAL                         "  2 tony produkcji za 8 ton wegla\0D"
+#define TEXT_INFO_4T_PER_8T_COAL                         "  4 tony produkcji za 8 ton wegla\0D" 
 #define TEXT_INFO_4T_PER_8T_SCRAP_METAL                  "  4 tony produkcji za 8 ton zlomu\0D" 
 #define TEXT_INFO_2T_PER_8T_BAUXITE                      "  4 tony produkcji za 8 ton boksytu\0D" 
 
@@ -263,6 +264,7 @@
 #define TEXT_INFO_4T_PER_8T_CLAY                         "  4 tony produkcji za 8 ton gliny\0D" 
 #define TEXT_INFO_4T_PER_8T_COAL                         "  4 tony produkcji za 8 ton wegla\0D" 
 #define TEXT_INFO_6T_PER_8T_SAND                         "  6 ton produkcji za 8 ton piasku\0D"
+#define TEXT_INFO_2T_PER_8T_SAND                         "  2 tony produkcji za 8 ton piasku\0D" 
 
 #define TEXT_INFO_MACHINESHOP                            "\98Produkuje roznego rodazju maszyny.\0D" 
 #define TEXT_INFO_SAWMILL                                "\98Drzewo sie rznie. Jest deska, jest sek. \0D" 
@@ -279,6 +281,8 @@
 #define TEXT_INFO_FERTILISERPLANT                        "\98Produkuje nawozy z chemikaliow.\0D" 
 #define TEXT_INFO_LUMBERYARD                             "\98Produkuje ploty, slupy itd.\0D"
 #define TEXT_INFO_BIOREFINERY                            "\98Przerabia zboze i cukier na paliwo i chemikalia.\0D" 
+
+#define TEXT_INFO_MANUFACTURINGSUPPLIES_STEPUP                         "\0DProdukcja jest zwiekszona, gdy opakowania sa dostarczone najpozniej miesiac po towarach" 
 
 
 
