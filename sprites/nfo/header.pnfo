@@ -4,8 +4,9 @@
 
  -1 * -1   14
   "C" "INFO"
-      "B" "VRSN" \w4 \d{{REPO_REVISION}}
-	  "B" "PALS" \w1 "W" //palette
+        "B" "VRSN" \w4 \d{{REPO_REVISION}}
+        "B" "MINV" \w4 \d1469
+        "B" "PALS" \w1 "W" //palette
       00
   00
 
