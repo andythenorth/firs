@@ -40,7 +40,7 @@
 -1 * 0 02 0A A0 //
   89 // 
     40 20  \dxFFFFFFFF // cargo 1 waiting 
-    \2+ 7C LOCAL_CARGO_1_DELIVERED_STORE 20  \dxFFFFFFFF //get stored amount for delivered cargo 1   
+    \2+ 7C LOCAL_CARGO_1_DELIVERED_STORE 20  \dxFFFFFFFF //add with stored amount for delivered cargo 1   
     10 1A 00 \dx00 //store result in persistent storage
   \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
     A1 00  \d00  \d00 

@@ -84,6 +84,7 @@
       \2sto 1A 20 \dx0B //store in register
       0F
       7D 0A 20  \dxFFFFFFFF //get stored amount for total cargo output
+      10 1A 20 \dx0A //store in persistent storage (for debug only, can be commented if not in use)
       \2sto 1A 00 \dx0A //store in register
     \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
        00 00  00 00 00 00  00 00 00 00
@@ -93,6 +94,8 @@
     89 // 
       7D 0A 20  \dxFFFFFFFF //get stored amount for total cargo output
       \2/ 1A 20 THIS_NUM_OUTPUT_CARGOS
+      \2> 1A 20 \d01 // take max(cargo output result, 1) - to make sure that low amounts of cargo not lost
+      10 1A 20 \dx0A //store in persistent storage (for debug only, can be commented if not in use)
       \2sto 1A 20 \dx0A //store in register
       10 1A 20 \dx0B //store in persistent storage (for debug only, can be commented if not in use)
       \2sto 1A 00 \dx0B //store in register
@@ -107,11 +110,7 @@
        AB 00  \d02  \d02
      AC 00 //default
 
-//!! not really sure what is going on with A9, seems to duplicate AA - AC section of chain?
-// i.e. for two cargos, the 50:50 split is done twice.
-// possibly it's just the comment on A9 that is misleading....
-
--1 * 0 02 0A A9 //add up total cargo produced...for this industry output is split 50:50, so only bother setting one register
+-1 * 0 02 0A A9 //add up total cargo produced and store in register
     89 // 
       7C 04 20  \dxFFFFFFFF //get stored amount for production from cargo 1
       \2+ 7C 05 20  \dxFFFFFFFF //get stored amount for production from cargo 2
@@ -169,38 +168,68 @@
        A7 00  00 00 00 00  00 00 00 00
      A7 00 //default
 
--1 * 0 02 0A A5 //store lower value of: (cargo waiting divided by prod ratio for cargo) or (output limit for produced cargo) 
+-1 * 0 02 0A A5 //store min(cargo waiting divided by prod ratio for cargo) or (output limit for produced cargo) 
     89 // 
-      42 20  \dxFFFFFFFF // cargo waiting
+      42 20  \dxFFFFFFFF //get cargo waiting 
       \2/ 1A 20  \d08 //divide cargo waiting by 8
-      \2* 7C 0C 20  \dxFFFFFFFF //multiply cargo waiting by production ratio to get calculated production value 
+      \2* 7C 03 20  \dxFFFFFFFF //multiply cargo waiting by production ratio to get calculated production value 
       \2< 7C 00 20  \dxFFFFFFFF //result = min(calculated production value, output limit for produced cargo)
+      \2> 1A 20  \d01 //take max(calculated production, 1) to prevent lost production for small values of delivered cargo (e.g. small trucks etc) 
       10 1A 00 \dx06 //store in persistent storage (could use ordinary register, but this is easier to debug)
     \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
        A6 00  00 00 00 00  00 00 00 00
      A6 00 //default
+//next ID repeated from calculation varact 2 above...reusing ID easier than shuffling all IDs in chain when inserting a new varact 2
+-1 * 0 02 0A A5 //is there cargo waiting?  If so, calculate production, otherwise go to next cargo.  Also cleanup some registers here.
+    89 //
+      1A 20  \d00 //create constant 0 
+      10 1A 20 \dx06 //use 0 to zero persistent storage register for cargo production from this cargo
+      \2r 42 00  \dxFFFFFFFF //discard previous results; check cargo waiting 
+    \b1 //range
+      A6 00  \d00  \d00 // no cargo waiting 
+    A5 00 // default
 
--1 * 0 02 0A A4 //store lower value of: (cargo waiting divided by prod ratio for cargo) or (output limit for produced cargo) 
+-1 * 0 02 0A A4 //store min(cargo waiting divided by prod ratio for cargo) or (output limit for produced cargo)
     89 // 
-      41 20  \dxFFFFFFFF // cargo waiting 
+      41 20  \dxFFFFFFFF //get cargo waiting 
       \2/ 1A 20  \d08 //divide cargo waiting by 8
-      \2* 7C 0C 20  \dxFFFFFFFF //multiply cargo waiting by production ratio to get calculated production value
+      \2* 7C 02 20  \dxFFFFFFFF //multiply cargo waiting by production ratio to get calculated production value
       \2< 7C 00 20  \dxFFFFFFFF //result = min(calculated production value, output limit for produced cargo)
+      \2> 1A 20  \d01 //take max(calculated production, 1) to prevent lost production for small values of delivered cargo (e.g. small trucks etc) 
       10 1A 00 \dx05 //store in persistent storage (could use ordinary register, but this is easier to debug)
     \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
        A5 00  00 00 00 00  00 00 00 00
      A5 00 //default
+//next ID repeated from calculation varact 2 above...reusing ID easier than shuffling all IDs in chain when inserting a new varact 2
+-1 * 0 02 0A A4 //is there cargo waiting?  If so, calculate production, otherwise go to next cargo.  Also cleanup some registers here.
+    89 //
+      1A 20  \d00 //create constant 0 
+      10 1A 20 \dx05 //use 0 to zero persistent storage register for cargo production from this cargo
+      \2r 41 00  \dxFFFFFFFF //discard previous results; check cargo waiting 
+    \b1 //range
+      A5 00  \d00  \d00 // no cargo waiting 
+    A4 00 // default
 
--1 * 0 02 0A A3 //store lower value of: (cargo waiting divided by prod ratio for cargo) or (output limit for produced cargo) 
+-1 * 0 02 0A A3 //store min(cargo waiting divided by prod ratio for cargo) or (output limit for produced cargo)
     89 // 
-      40 20  \dxFFFFFFFF // cargo waiting 
+      40 20  \dxFFFFFFFF //get cargo waiting 
       \2/ 1A 20  \d08 //divide cargo waiting by 8
-      \2* 7C 0C 20  \dxFFFFFFFF //multiply cargo waiting by production ratio to get calculated production value 
+      \2* 7C 01 20  \dxFFFFFFFF //multiply cargo waiting by production ratio to get calculated production value 
       \2< 7C 00 20  \dxFFFFFFFF //result = min(calculated production value, output limit for produced cargo)
+      \2> 1A 20  \d01 //take max(calculated production, 1) to prevent lost production for small values of delivered cargo (e.g. small trucks etc) 
       10 1A 00 \dx04 //store in persistent storage (could use ordinary register, but this is easier to debug)
     \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
        A4 00  00 00 00 00  00 00 00 00
      A4 00 //default
+//next ID repeated from calculation varact 2 above...reusing ID easier than shuffling all IDs in chain when inserting a new varact 2
+-1 * 0 02 0A A3 //is there cargo waiting?  If so, calculate production, otherwise go to next cargo.  Also cleanup some registers here.
+    89 //
+      1A 20  \d00 //create constant 0 
+      10 1A 20 \dx04 //use 0 to zero persistent storage register for cargo production from this cargo
+      \2r 40 00  \dxFFFFFFFF //discard previous results; check cargo waiting 
+    \b1 //range
+      A4 00  \d00  \d00 // no cargo waiting 
+    A3 00 // default
 
 -1 * 0 02 0A A2 // set total production ratio
     89 // 
