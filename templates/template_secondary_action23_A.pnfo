@@ -60,6 +60,7 @@
       \2sto 1A 20 \dx0B //store in register
       0F
       7D 0A 20  \dxFFFFFFFF //get stored amount for total cargo output
+      10 1A 20 \dx0A //store in persistent storage (for debug only, can be commented if not in use)
       \2sto 1A 00 \dx0A //store in register
     \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
        00 00  00 00 00 00  00 00 00 00
@@ -69,6 +70,7 @@
     89 // 
       7D 0A 20  \dxFFFFFFFF //get stored amount for total cargo output
       \2/ 1A 20 THIS_NUM_OUTPUT_CARGOS
+      10 1A 20 \dx0A //store in persistent storage (for debug only, can be commented if not in use)
       \2sto 1A 20 \dx0A //store in register
       10 1A 20 \dx0B //store in persistent storage (for debug only, can be commented if not in use)
       \2sto 1A 00 \dx0B //store in register
@@ -83,9 +85,7 @@
        AB 00  \d02  \d02
      AC 00 //default
 
-//!! not really sure what is going on with A9, seems to duplicate AA - AC section of chain?
-
--1 * 0 02 0A A9 //add up total cargo produced...for this industry output is split 50:50, so only bother setting one register
+-1 * 0 02 0A A9 //add up total cargo produced and store in register
     89 // 
       7C 04 20  \dxFFFFFFFF //get stored amount for production from cargo 1
       \2+ 7C 05 20  \dxFFFFFFFF //get stored amount for production from cargo 2
@@ -142,8 +142,9 @@
     \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
        A7 00  00 00 00 00  00 00 00 00
      A7 00 //default
+// branch depending whether cargo waiting > 0 or not
 
--1 * 0 02 0A A5 //store lower value of: (cargo waiting divided by prod ratio for cargo) or (output limit for produced cargo) 
+-1 * 0 02 0A A5 //store min(cargo waiting divided by prod ratio for cargo) or (output limit for produced cargo) 
     89 // 
       42 20  \dxFFFFFFFF // cargo waiting
       \2/ 1A 20  \d08 //divide cargo waiting by 8
@@ -153,8 +154,9 @@
     \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
        A6 00  00 00 00 00  00 00 00 00
      A6 00 //default
+// branch depending whether cargo waiting > 0 or not
 
--1 * 0 02 0A A4 //store lower value of: (cargo waiting divided by prod ratio for cargo) or (output limit for produced cargo) 
+-1 * 0 02 0A A4 //store min(cargo waiting divided by prod ratio for cargo) or (output limit for produced cargo)
     89 // 
       41 20  \dxFFFFFFFF // cargo waiting 
       \2/ 1A 20  \d08 //divide cargo waiting by 8
@@ -164,8 +166,9 @@
     \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
        A5 00  00 00 00 00  00 00 00 00
      A5 00 //default
+// branch depending whether cargo waiting > 0 or not
 
--1 * 0 02 0A A3 //store lower value of: (cargo waiting divided by prod ratio for cargo) or (output limit for produced cargo) 
+-1 * 0 02 0A A3 //store min(cargo waiting divided by prod ratio for cargo) or (output limit for produced cargo)
     89 // 
       40 20  \dxFFFFFFFF // cargo waiting 
       \2/ 1A 20  \d08 //divide cargo waiting by 8
