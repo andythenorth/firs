@@ -1,4 +1,4 @@
-//FIRS Translation File
+﻿//FIRS Translation File
 //Language: Serbian
 //Lang-ID: 0D -> 8D (any)
 #define LANG_ID  0D
@@ -13,9 +13,9 @@
 #define TEXT_CRG_BAUXITE_TABBR                           "\0EBX" 
 
 //Building Materials
-#define TEXT_CRG_BUILDINGMATERIALS_CTYPE                 "graðevinski materijali" 
-#define TEXT_CRG_BUILDINGMATERIALS_1UNIT                 "\UE07C tona graðevinskog materijala" 
-#define TEXT_CRG_BUILDINGMATERIALS_MUNIT                 "\UE07C tona graðevinskog materijala" 
+#define TEXT_CRG_BUILDINGMATERIALS_CTYPE                 "građevinski materijali" 
+#define TEXT_CRG_BUILDINGMATERIALS_1UNIT                 "\UE07C tona građevinskog materijala" 
+#define TEXT_CRG_BUILDINGMATERIALS_MUNIT                 "\UE07C tona građevinskog materijala" 
 #define TEXT_CRG_BUILDINGMATERIALS_TABBR                 "\0EBM" 
 
 //Chemicals
@@ -30,9 +30,9 @@
 #define TEXT_CRG_CLAY_TABBR                              "\0ECL" 
 
 //Engineering supplies
-#define TEXT_CRG_ENGINEERINGSUPPLIES_CTYPE               "tehnièka oprema" 
-#define TEXT_CRG_ENGINEERINGSUPPLIES_1UNIT               "\UE07C sanduk tehnièke opreme" 
-#define TEXT_CRG_ENGINEERINGSUPPLIES_MUNIT               "\UE07C sanduka tehnièke opreme" 
+#define TEXT_CRG_ENGINEERINGSUPPLIES_CTYPE               "tehnička oprema" 
+#define TEXT_CRG_ENGINEERINGSUPPLIES_1UNIT               "\UE07C sanduk tehničke opreme" 
+#define TEXT_CRG_ENGINEERINGSUPPLIES_MUNIT               "\UE07C sanduka tehničke opreme" 
 #define TEXT_CRG_ENGINEERINGSUPPLIES_TABBR               "\0EES" 
 
 //Farm supplies
@@ -48,10 +48,10 @@
 #define TEXT_CRG_FISH_TABBR                              "\0EFI" 
 
 //Fruit and Vegetables
-#define TEXT_CRG_FRUITSANDVEGETABLES_CTYPE               "voæe i povræe" 
-#define TEXT_CRG_FRUITSANDVEGETABLES_1TYPE               "voæe i povræe" 
-#define TEXT_CRG_FRUITSANDVEGETABLES_1UNIT               "\UE07C tona voæa i povræa" 
-#define TEXT_CRG_FRUITSANDVEGETABLES_MUNIT               "\UE07C tona voæa i povræa" 
+#define TEXT_CRG_FRUITSANDVEGETABLES_CTYPE               "voće i povrće" 
+#define TEXT_CRG_FRUITSANDVEGETABLES_1TYPE               "voće i povrće" 
+#define TEXT_CRG_FRUITSANDVEGETABLES_1UNIT               "\UE07C tona voća i povrća" 
+#define TEXT_CRG_FRUITSANDVEGETABLES_MUNIT               "\UE07C tona voća i povrća" 
 
 //Fuel oil
 #define TEXT_CRG_FUELOIL_CTYPE                           "benzin" 
@@ -106,15 +106,15 @@
 #define TEXT_CRG_SCRAPMETAL_TABBR                        "\0ESM" 
 
 //Sugar beet
-#define TEXT_CRG_SUGARBEET_CTYPE                         "šeæerna repa" 
-#define TEXT_CRG_SUGARBEET_1UNIT                         "\UE07C tona šeæerne repe" 
-#define TEXT_CRG_SUGARBEET_MUNIT                         "\UE07C tona šeæerne repe" 
+#define TEXT_CRG_SUGARBEET_CTYPE                         "šećerna repa" 
+#define TEXT_CRG_SUGARBEET_1UNIT                         "\UE07C tona šećerne repe" 
+#define TEXT_CRG_SUGARBEET_MUNIT                         "\UE07C tona šećerne repe" 
 #define TEXT_CRG_SUGARBEET_TABBR                         "\0ESB" 
 
 //Sugar cane
-#define TEXT_CRG_SUGARCANE_CTYPE                         "šeæerna trska" 
-#define TEXT_CRG_SUGARCANE_1UNIT                         "\UE07C tona šeæerne trske" 
-#define TEXT_CRG_SUGARCANE_MUNIT                         "\UE07C tona šeæerne trske" 
+#define TEXT_CRG_SUGARCANE_CTYPE                         "šećerna trska" 
+#define TEXT_CRG_SUGARCANE_1UNIT                         "\UE07C tona šećerne trske" 
+#define TEXT_CRG_SUGARCANE_MUNIT                         "\UE07C tona šećerne trske" 
 #define TEXT_CRG_SUGARCANE_TABBR                         "\0ESC" 
 
 //Wool
@@ -133,13 +133,13 @@
 #define TEXT_IND_BIOREFINERY                             "Biorafinerija" 
 #define TEXT_IND_BREWERY                                 "Pivara" 
 #define TEXT_IND_BRICKWORKS                              "Ciglana" 
-#define TEXT_IND_BUILDERSYARD                            "Graðevinsko skladište" 
+#define TEXT_IND_BUILDERSYARD                            "Građevinsko skladište" 
 
 #define TEXT_IND_CEMENTPLANT                             "Cementara" 
 #define TEXT_IND_CLAYPIT                                 "Kop gline" 
 
 #define TEXT_IND_DAIRY                                   "Mlekara" 
-#define TEXT_IND_DAIRYFARM                               "Stoèna farma" 
+#define TEXT_IND_DAIRYFARM                               "Stočna farma" 
 #define TEXT_IND_DREDGINGSITE                            "Iskop" 
 
 #define TEXT_IND_FERTILISERPLANT                         "Azotara" 
@@ -153,7 +153,7 @@
 
 #define TEXT_IND_JUNKYARD                                "Otpad" 
 
-#define TEXT_IND_LIMEKILN                                "Kreèana" 
+#define TEXT_IND_LIMEKILN                                "Krečana" 
 #define TEXT_IND_LUMBERYARD                              "Drvara" 
 
 #define TEXT_IND_MACHINESHOP                             "Mašinska radionica" 
@@ -170,13 +170,13 @@
 
 #define TEXT_IND_SHEEPFARM                               "Farma ovaca"
 #define TEXT_IND_SUPERMARKET                             "Supermarket" 
-#define TEXT_IND_SUGARREFINERY                           "Šeæerana" 
+#define TEXT_IND_SUGARREFINERY                           "Šećerana" 
 
 #define TEXT_IND_TEXTILEMILL                             "Tekstilni kombinat" 
 
-#define TEXT_IND_WHOLESALEMARKET                         "Kvataška pijaca" 
+#define TEXT_IND_WHOLESALEMARKET                         "Kvantaška pijaca" 
 #define TEXT_IND_WINDFARM                                "Vetro-elektrana" 
-#define TEXT_IND_WINDMILL                                "Vetrenjaèa" 
+#define TEXT_IND_WINDMILL                                "Vetrenjača" 
 
 
 
@@ -211,31 +211,31 @@
 
 #define TEXT_INFO_GENERIC_CLOSE_0                        "\n\98Fabrika se može zatvoriti ako ne primi nijedan tovar u roku od:\0D\90  \UE07C meseci" 
 #define TEXT_INFO_GENERIC_CLOSE_1                        "\n\98Fabrika se može zatvoriti ako ne primi nijedan tovar u roku od:\0D\94  \UE07C mesec" 
-#define TEXT_INFO_GENERIC_CLOSE_2                        "\n\8BNijedan tovar nije primljen \85\85\UE07C meseci. Fabrika æe se možda zatvoriti. \0D" 
+#define TEXT_INFO_GENERIC_CLOSE_2                        "\n\8BNijedan tovar nije primljen \85\85\UE07C meseci. Fabrika će se možda zatvoriti. \0D" 
 
 #define TEXT_INFO_LIMIT_200                              "\98 (najviše 200)" 
 #define TEXT_INFO_LIMIT_800                              "\98 (najviše 800)" 
 
 #define TEXT_INFO_ACCEPTING                              "\0D" // empty line breaks to stop window size jumping around 
-#define TEXT_INFO_NOT_ACCEPTING_ES                       "\94Ne prihvata tehnièku opremu\98\0D(Zadovoljene potrebe)" 
+#define TEXT_INFO_NOT_ACCEPTING_ES                       "\94Ne prihvata tehničku opremu\98\0D(Zadovoljene potrebe)" 
 #define TEXT_INFO_NOT_ACCEPTING_FS                       "\94Ne prihvata poljoprivrednu opremu\98\0D(Zadovoljene potrebe)" 
 #define TEXT_INFO_NOT_ACCEPTING_MS                       "\94Ne prihvata proizvodni materijal\98\0D(Zadovoljene potrebe)" 
 
-#define TEXT_INFO_ES_PRIMARY_BOOST                       "\98Tehnièka oprema može poveæati proizvodnju.\0D\90  \UE07B sanduka isporuèeno ovog meseca" 
-#define TEXT_INFO_FS_PRIMARY_BOOST                       "\98Poljoprivredna oprema može poveæati proizvodnju.\0D\90  \UE07B sanduka isporuèeno ovog meseca" 
-#define TEXT_INFO_MS_PRIMARY_BOOST                       "\98Proizvodni materijal udvostruèuje proizvodnju od drugog potrebnog tovara.\0D\0D\80" 
+#define TEXT_INFO_ES_PRIMARY_BOOST                       "\98Tehnička oprema može povećati proizvodnju.\0D\90  \UE07B sanduka isporučeno ovog meseca" 
+#define TEXT_INFO_FS_PRIMARY_BOOST                       "\98Poljoprivredna oprema može povećati proizvodnju.\0D\90  \UE07B sanduka isporučeno ovog meseca" 
+#define TEXT_INFO_MS_PRIMARY_BOOST                       "\98Proizvodni materijal udvostručuje proizvodnju od drugog potrebnog tovara.\0D\0D\80" 
 #define TEXT_INFO_BOOST_MAXED                            "\98Dostignut je najviši nivo proizvodnje"
 
 #define TEXT_INFO_CARGO_PRODUCTION                       "\98Proizvodni odnos:\0D" 
 
-#define TEXT_INFO_6T_PER_8T                              "\0D6t proizvoda po 8t isporuèenog tovara." 
-#define TEXT_INFO_8T_PER_8T                              "\0D8t proizvoda po 8t isporuèenog tovara." 
+#define TEXT_INFO_6T_PER_8T                              "\0D6t proizvoda po 8t isporučenog tovara." 
+#define TEXT_INFO_8T_PER_8T                              "\0D8t proizvoda po 8t isporučenog tovara." 
 
-#define TEXT_INFO_STEPUP_TWO_CARGOS                      "\0DProizvodnja se poveæava ukoliko se dve ili više vrsta potrebnog tovara dostavi u roku od mesec dana." 
+#define TEXT_INFO_STEPUP_TWO_CARGOS                      "\0DProizvodnja se povećava ukoliko se dve ili više vrsta potrebnog tovara dostavi u roku od mesec dana." 
 #define TEXT_INFO_INCREASE_BOTH_CARGOS                   "\0DProizvodnja se poboljšava na 8t po 8t kada su obe vrste potrebnog tovara dostavljene u roku od mesec dana." 
 
 #define TEXT_INFO_3T_PER_8T_MS                           "  3t po 8t dostavljenog proizvodnog materijala\0D" 
-#define TEXT_INFO_2T_PER_8T_IRON_ORE                     "  2t po 8t dostavljene rude gvožða\0D" 
+#define TEXT_INFO_2T_PER_8T_IRON_ORE                     "  2t po 8t dostavljene rude gvožđa\0D" 
 #define TEXT_INFO_2T_PER_8T_COAL                         "  2t po 8t dostavljenog uglja\0D" 
 #define TEXT_INFO_4T_PER_8T_COAL                         "  4t po 8t dostavljenog uglja\0D" 
 #define TEXT_INFO_4T_PER_8T_SCRAP_METAL                  "  4t po 8t dostavljenih metalnih otpadaka\0D" 
@@ -245,7 +245,7 @@
 #define TEXT_INFO_6T_PER_8T_LUMBER                       "  6t po 8t dostavljenih drvnih greda\0D" 
 #define TEXT_INFO_2T_PER_8T_CHEMICALS                    "  2t po 8t dostavljenih hemijskih proizvoda\0D" 
 #define TEXT_INFO_5T_PER_8T_GRAIN                        "  5t po 8t dostavljenih žitarica\0D" 
-#define TEXT_INFO_5T_PER_8T_FRUITSANDVEGETABLES          "  5t po 8t dostavljenog voæa i povræa\0D" 
+#define TEXT_INFO_5T_PER_8T_FRUITSANDVEGETABLES          "  5t po 8t dostavljenog voća i povrća\0D" 
 
 #define TEXT_INFO_5T_PER_8T_MILK                         "  5t po 8t dostavljenog mleka\0D" 
 #define TEXT_INFO_5T_PER_8T_LIVESTOCK                    "  5t po 8t dostavljene žive stoke\0D" 
@@ -253,7 +253,7 @@
 #define TEXT_INFO_5T_PER_8T_WOOL                         "  5t po 8t dostavljene vune\0D" 
 #define TEXT_INFO_5T_PER_8T_PLANTFIBRES                  "  5t po 8t dostavljenih biljnih vlakana\0D" 
 
-#define TEXT_INFO_5T_PER_8T_SUGAR                        "  5t po 8t dostavljenog šeæera\0D" 
+#define TEXT_INFO_5T_PER_8T_SUGAR                        "  5t po 8t dostavljenog šećera\0D" 
 #define TEXT_INFO_2T_PER_8T_WOOD                         "  2t po 8t dostavljenih drva\0D" 
 #define TEXT_INFO_4T_PER_8T_WOOD                         "  4t po 8t dostavljenih drva\0D" 
 #define TEXT_INFO_6T_PER_8T_WOOD                         "  6t po 8t dostavljenih drva\0D" 
@@ -264,23 +264,23 @@
 #define TEXT_INFO_2T_PER_8T_SAND                         "  2t po 8t dostavljenog peska\0D" 
 #define TEXT_INFO_6T_PER_8T_SAND                         "  6t po 8t dostavljenog peska\0D"
 
-#define TEXT_INFO_MACHINESHOP                            "\98Proizvodi i servisira tehnièku opremu.\0D" 
+#define TEXT_INFO_MACHINESHOP                            "\98Proizvodi i servisira tehničku opremu.\0D" 
 #define TEXT_INFO_SAWMILL                                "\98Priprema drva za upotrebu.\0D" 
 #define TEXT_INFO_WINDFARM                               "\98 \0D" 
 #define TEXT_INFO_METALFOUNDRY                           "\98Proizvodi metalne alatke i razne delove.\0D" 
-#define TEXT_INFO_PAPERMILL                              "\98Preraðuje drvo radi proizvodnje papira i kartona.\0D" 
+#define TEXT_INFO_PAPERMILL                              "\98Prerađuje drvo radi proizvodnje papira i kartona.\0D" 
 
-#define TEXT_INFO_OILREFINERY                            "\98Preraðuje sirovu naftu u benzin i hemijske proizvode.\0D" 
-#define TEXT_INFO_PLASTICSPLANT                          "\98Proizvodi plastiènu ambalažu i robu za domaæinstvo.\0D" 
+#define TEXT_INFO_OILREFINERY                            "\98Prerađuje sirovu naftu u benzin i hemijske proizvode.\0D" 
+#define TEXT_INFO_PLASTICSPLANT                          "\98Proizvodi plastičnu ambalažu i robu za domaćinstvo.\0D" 
 #define TEXT_INFO_GLASSWORKS                             "\98Proizvodi staklenu ambalažu, prozore i druge staklene proizvode.\0D" 
-#define TEXT_INFO_WHOLESALEMARKET                        "\98Prodaje proizvode prehranbenim i ugostiteljskim preduzeæima.\0D"
+#define TEXT_INFO_WHOLESALEMARKET                        "\98Prodaje proizvode prehranbenim i ugostiteljskim preduzećima.\0D"
 #define TEXT_INFO_FORGE                                  "\98Proizvodi robu od kovanog metala kao što su alatke, lopate, potkovice, plugovi i gvozdene kapije.\0D"
 
-#define TEXT_INFO_FERTILISERPLANT                        "\98Preraðuje hemijske proizvode u ðubriva za agrar.\0D" 
-#define TEXT_INFO_LUMBERYARD                             "\98Proizvodi pomoæne graðevinske objekte, stubove i ograde.\0D"
-#define TEXT_INFO_BIOREFINERY                            "\98Preraðuje žitarice i šeæer u benzin i hemijske proizvode.\0D" 
+#define TEXT_INFO_FERTILISERPLANT                        "\98Prerađuje hemijske proizvode u đubriva za agrar.\0D" 
+#define TEXT_INFO_LUMBERYARD                             "\98Proizvodi pomoćne građevinske objekte, stubove i ograde.\0D"
+#define TEXT_INFO_BIOREFINERY                            "\98Prerađuje žitarice i šećer u benzin i hemijske proizvode.\0D" 
 
-#define TEXT_INFO_MANUFACTURINGSUPPLIES_STEPUP           "\0DProizvodnja se poboljšava ako se proizvodni materijal dostavlja u roku od mesec dana u odnosu na dostavu ostalih potraživanja." 
+#define TEXT_INFO_MANUFACTURINGSUPPLIES_STEPUP                         "\0DProizvodnja se poboljšava ako se proizvodni materijal dostavlja u roku od mesec dana u odnosu na dostavu ostalih potraživanja." 
 
 
 //grf and parameter descriptions
@@ -288,20 +288,20 @@
 #define TEXT_GRF_DESC                                    "\8EFIRS Zamenski Skup Industrija\n\98Kreirali \89andythenorth\98 i \89FooBar\98.\n\98'sa 1,000 i više izmena...'\98\n\nInternet stranica: \89www.tt-foundry.com/sets/FIRS\98.Licenca: \89GPL v2\98.Posebne zahvalnice za \89Ammler\98, \89Core Xii\98, \89Irwe\98, \89planetmaker\98 and \89Zephyris\98.Koristi delove \89eGRVTS\98, \89ISR\98 i \89OpenGFX\98."
 
 #define TEXT_PNAME_ECONOMY                               "Ekonomija"
-#define TEXT_PDESC_ECONOMY                               "Kada se završi, FIRS æe sadržati više ekonomija za izbor. Vrste tovara i industrija su razlièite u svakoj ekonomiji. Takoðe, stope naplata su razlièite u svakoj ekonomiji. \0D\0D\89Trenutno postoji samo jedna ekonomija :)"
+#define TEXT_PDESC_ECONOMY                               "Kada se završi, FIRS će sadržati više ekonomija za izbor. Vrste tovara i industrija su različite u svakoj ekonomiji. Takođe, stope naplata su različite u svakoj ekonomiji. \0D\0D\89Trenutno postoji samo jedna ekonomija :)"
 #define TEXT_PVALU0_ECONOMY                              "Probna Ekonomija"
 
 #define TEXT_PNAME_PRIMARYDECREASE                       "Dozvoljen pad proizvodnje primarnih industrija"
-#define TEXT_PDESC_PRIMARYDECREASE                       "Po podrazumevanoj vrednosti, proizvodnja primarnih industrija se neæe nikada smanjivati.\0D\0DAko je dozvoljeno smanjivanje proizvodnje primarnih proizvoda, postoji šansa da æe proizvodnja opasti ako se u roku od mesec dana ne isporuèi potrebni tovar. Ukoliko je proizvodnja visoka, šanse za smanjenje su veæe."
+#define TEXT_PDESC_PRIMARYDECREASE                       "Po podrazumevanoj vrednosti, proizvodnja primarnih industrija se neće nikada smanjivati.\0D\0DAko je dozvoljeno smanjivanje proizvodnje primarnih proizvoda, postoji šansa da će proizvodnja opasti ako se u roku od mesec dana ne isporuči potrebni tovar. Ukoliko je proizvodnja visoka, šanse za smanjenje su veće."
 
 #define TEXT_PNAME_PRIMARYCLOSE                          "Dozvoljeno zatvaranje primarnih industrija"
-#define TEXT_PDESC_PRIMARYCLOSE                          "Po podrazumevanoj vrednosti, primarne industrije se nikada neæe zatvoriti.\0D\0DAko je dozvoljeno zatvaranje primarnih industrija, zatvaraæe se kada proizvodnja padne na nizak nivo (taj nivo zavisi od vrste industrije). \89Zahteva ukljuèen 'dozvoljen pad proizvodnje primarnih industrija'."
+#define TEXT_PDESC_PRIMARYCLOSE                          "Po podrazumevanoj vrednosti, primarne industrije se nikada neće zatvoriti.\0D\0DAko je dozvoljeno zatvaranje primarnih industrija, zatvaraće se kada proizvodnja padne na nizak nivo (taj nivo zavisi od vrste industrije). \89Zahteva uključen 'dozvoljen pad proizvodnje primarnih industrija'."
 
 #define TEXT_PNAME_SECONDARYCLOSE                        "Dozvoljeno zatvaranje sekundarnih industrija"
-#define TEXT_PDESC_SECONDARYCLOSE                        "Po podrazumevanoj vrednosti, sekundarne industrije se nikada neæe zatvoriti.\0D\0DAko je dozvoljeno zatvaranje sekundarnih industrija, zatvaraæe se ukoliko se na duži period ne preuzme tovar."
+#define TEXT_PDESC_SECONDARYCLOSE                        "Po podrazumevanoj vrednosti, sekundarne industrije se nikada neće zatvoriti.\0D\0DAko je dozvoljeno zatvaranje sekundarnih industrija, zatvaraće se ukoliko se na duži period ne preuzme tovar."
 
 #define TEXT_PNAME_PREVENTCONSTRUCTION                   "Zabranjena izgradnja fabrika (nedovršeno)"
-#define TEXT_PDESC_PREVENTCONSTRUCTION                   "\89Još uvek ne funkcioniše. \98Kada se završi omoguæiæe režim 'izolovanog izvršavanja' za scenarija."
+#define TEXT_PDESC_PREVENTCONSTRUCTION                   "\89Još uvek ne funkcioniše. \98Kada se završi omogućiće režim 'izolovanog izvršavanja' za scenarija."
 
 #define TEXT_PNAME_DEBUG                                 "Prikaži unutrašnje podatke"
 #define TEXT_PDESC_DEBUG                                 "Samo za programere."
