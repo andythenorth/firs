@@ -6,6 +6,7 @@ Makefile.local
 
 # And the description file and the grs which are generated automatically
 firs*.grf
+*.cnfo
 
 # Ignore intermediate files created by the Makefile:
 *.nfo
@@ -16,6 +17,7 @@ docs/readme.txt
 sprites/nfo/cargo_schemes.pnfo
 sprites/nfo/cargos.pnfo
 Makefile.dep
+*.dep
 REV
 
 # Ignore directories from bundle creation / install:
