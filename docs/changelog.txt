@@ -2,6 +2,10 @@
 FIRS Industry Replacement Set Changelog
 =======================================
 
+*0.5.5*  Changes the following:
+- Fixed mistake where secondary industries with two output cargos would produce even with no input cargo
+- Fixed mistake with production ratio registers which broke production at many industries
+
 *0.5.4*  Changes the following:
 - Small amounts of delivered cargo no longer 'lost' at secondary industries
 - Additional layouts for Biorefinery
