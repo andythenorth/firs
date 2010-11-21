@@ -77,6 +77,19 @@
        01 00  00 00 00 00  00 00 00 00
      01 00 //default
 
+-1 * 0 02 0A AD //no cargo produced, register 0A and 0B zeroed
+    89 // 
+      1A 20 \dx00 // create 0
+      10 1A 20 \dx0B //store in persistent storage (for debug only, can be commented if not in use)
+      \2sto 1A 20 \dx0B //store in register
+      10 1A 20 \dx0A //store in persistent storage (for debug only, can be commented if not in use)
+      \2sto 1A 20 \dx0A //store in register
+      0F // renum gets sad about passing 0 to the range check, so create 1 and pass that instead <roll>   
+      1A 00 \d01 //create value 1
+    \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
+       00 00  00 00 00 00  00 00 00 00
+     00 00 //default
+
 -1 * 0 02 0A AC //where one cargo produced, all of production goes in register 0A, register 0B is zeroed
     89 // 
       1A 20 \dx00 // create 0
@@ -117,7 +130,7 @@
       \2+ 7C 06 20  \dxFFFFFFFF //get stored amount for production from cargo 3 
       \2sto 1A 00 \dx0A //store in register
     \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
-       AA 00  00 00 00 00  00 00 00 00
+       AD 00  00 00 00 00  00 00 00 00 //no cargo produced
      AA 00 //default
 
 -1 * 0 02 0A A8 //calculate amount of input cargo actually processed
