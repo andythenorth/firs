@@ -185,7 +185,7 @@
     89 // 
       42 20  \dxFFFFFFFF //get cargo waiting 
       \2/ 1A 20  \d08 //divide cargo waiting by 8
-      \2* 7C 03 20  \dxFFFFFFFF //multiply cargo waiting by production ratio to get calculated production value 
+      \2* 7C 0C 20  \dxFFFFFFFF //multiply cargo waiting by production ratio to get calculated production value 
       \2< 7C 00 20  \dxFFFFFFFF //result = min(calculated production value, output limit for produced cargo)
       \2> 1A 20  \d01 //take max(calculated production, 1) to prevent lost production for small values of delivered cargo (e.g. small trucks etc) 
       10 1A 00 \dx06 //store in persistent storage (could use ordinary register, but this is easier to debug)
@@ -206,7 +206,7 @@
     89 // 
       41 20  \dxFFFFFFFF //get cargo waiting 
       \2/ 1A 20  \d08 //divide cargo waiting by 8
-      \2* 7C 02 20  \dxFFFFFFFF //multiply cargo waiting by production ratio to get calculated production value
+      \2* 7C 0C 20  \dxFFFFFFFF //multiply cargo waiting by production ratio to get calculated production value
       \2< 7C 00 20  \dxFFFFFFFF //result = min(calculated production value, output limit for produced cargo)
       \2> 1A 20  \d01 //take max(calculated production, 1) to prevent lost production for small values of delivered cargo (e.g. small trucks etc) 
       10 1A 00 \dx05 //store in persistent storage (could use ordinary register, but this is easier to debug)
@@ -227,7 +227,7 @@
     89 // 
       40 20  \dxFFFFFFFF //get cargo waiting 
       \2/ 1A 20  \d08 //divide cargo waiting by 8
-      \2* 7C 01 20  \dxFFFFFFFF //multiply cargo waiting by production ratio to get calculated production value 
+      \2* 7C 0C 20  \dxFFFFFFFF //multiply cargo waiting by production ratio to get calculated production value 
       \2< 7C 00 20  \dxFFFFFFFF //result = min(calculated production value, output limit for produced cargo)
       \2> 1A 20  \d01 //take max(calculated production, 1) to prevent lost production for small values of delivered cargo (e.g. small trucks etc) 
       10 1A 00 \dx04 //store in persistent storage (could use ordinary register, but this is easier to debug)
