@@ -86,3 +86,7 @@
 "License: \89GPL v2\98. "
 "Special thanks to \89Alberth\98, \89Ammler\98, \89Core Xii\98, \89Frosch\98, \89Irwe\98, \89mph\98, \89Terkhen\98 and \89Zephyris\98. "
 "Uses parts of \89eGRVTS\98, \89ISR\98 and \89OpenGFX\98." 00
+
+// set base cost for funding industry
+-1 * 0    00 08 01 01 \b48 08
+  0C // default is 08, adding 1 doubles, subtract 1 halves
