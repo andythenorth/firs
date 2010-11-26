@@ -204,7 +204,7 @@
 	17 \b5 //probability in random game
 	18 \b3 //probability during gameplay
 	20 FF FF FF BF //prospecting success chance (dword; FFFFFFFFh=100%)
-	0F \b255 //fund cost multiplier (byte)
+	0F \b140 //fund cost multiplier (byte)
 	19 CLR_SUGARREFINERY //map colour (byte; using indexes from dos palette)
 	23 \d0  //destruction cost multiplier (dword; default: 0)
 	1A \dx800 //special industry flag (dword; exploded by plane)
