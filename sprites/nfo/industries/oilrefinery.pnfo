@@ -12,7 +12,7 @@
  
 //Redefinition of original TTD industry
 //Oil Refinery
--1 * 0 00 0A \b14 01 IND_OILREFINERY //-1 * 0 00 0A <num-props> 01 <id>
+-1 * 0 00 0A \b15 01 IND_OILREFINERY //-1 * 0 00 0A <num-props> 01 <id>
 	08 04 //substitute industry type
 	09 04 //industry type override
 	24 STR_STA_REFINERY //default text for nearby station
@@ -24,6 +24,7 @@
 	16 FF FF FF //conflicting industry types (3*byte; ID+80h; FF to disable)
 	17 \b4 //probability in random game
 	18 \b2 //probability during gameplay
+	0F \b200 //fund cost multiplier (byte)
 	19 CLR_OILREFINERY //map colour (byte; using indexes from dos palette)
 	21 BD //callback flags 
 	22 01  //callback flags
