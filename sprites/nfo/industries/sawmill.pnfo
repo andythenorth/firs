@@ -12,7 +12,7 @@
  
 //Redefinition of original TTD industry
 //Sawmill
--1 * 0 00 0A \b14 01 IND_SAWMILL //-1 * 0 00 0A <num-props> 01 <id>
+-1 * 0 00 0A \b15 01 IND_SAWMILL //-1 * 0 00 0A <num-props> 01 <id>
 	08 02 //substitute industry type
 	09 02 //industry type override
 	24 STR_STA_MILLS //default text for nearby station
@@ -24,6 +24,7 @@
 	16 FF FF FF //conflicting industry types (3*byte; ID+80h; FF to disable)
 	17 \b5 //probability in random game
 	18 \b2 //probability during gameplay
+	0F \b97 //fund cost multiplier (byte)
 	19 CLR_SAWMILL //map colour (byte; using indexes from dos palette)
 	21 BC //callback flags 
 	22 01  //callback flags
