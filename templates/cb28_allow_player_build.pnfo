@@ -1,0 +1,11 @@
+-1 * 15	 02 0A 10  //check if industry is being built by player or game
+    81  A7  00 \bxFF 
+       01 //range
+         10 00  \bx10 \bx10 //use placement routine if game is building industry
+       00 84 //build industry if player is funding it
+       
+-1 * 15	 02 0A 10  //check if in scenario editor
+    81  12  00 \bxFF 
+       01 //range
+         10 00  \bx01 \bx01 //use placement routine if in game mode
+       00 84 //build industry if in other mode
