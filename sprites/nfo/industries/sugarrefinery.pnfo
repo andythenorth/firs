@@ -217,6 +217,10 @@
 // handle cb 28 industry location - included on a per-industry basis to allow industries to use various different schemes 
 #include "../../../templates/cb28_secondary_generic.pnfo"     
 
+#define THIS_CONFLICTING_INDUSTRY IND_ARABLEFARM
+#include "../../../templates/cb28_space_neighbours_in_chain.pnfo"
+#undef THIS_CONFLICTING_INDUSTRY
+
 #include "../../../templates/cb28_allow_player_build.pnfo"     
 
 
