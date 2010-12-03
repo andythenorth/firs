@@ -339,4 +339,21 @@
 
 //No action 1 for industries, as graphics are defined by the industry-tile feature.
 
+// handle cb 28 industry location - included on a per-industry basis to allow industries to use various different schemes 
+#include "../../../templates/cb28_generic_terminator.pnfo"
+
+#define THIS_CONFLICTING_INDUSTRY IND_PAPERMILL
+#include "../../../templates/cb28_space_neighbours_in_chain.pnfo"
+#undef THIS_CONFLICTING_INDUSTRY
+
+#define THIS_CONFLICTING_INDUSTRY IND_CEMENTPLANT
+#include "../../../templates/cb28_space_neighbours_in_chain.pnfo"
+#undef THIS_CONFLICTING_INDUSTRY
+
+#define THIS_CONFLICTING_INDUSTRY IND_BRICKWORKS
+#include "../../../templates/cb28_space_neighbours_in_chain.pnfo"
+#undef THIS_CONFLICTING_INDUSTRY
+
+#include "../../../templates/cb28_allow_player_build.pnfo"
+
 #include "../../../templates/template_primary_action23.pnfo" 

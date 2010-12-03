@@ -21,11 +21,20 @@
 	17 \b6 //probability in random game
 	18 \b6 //probability during gameplay
 	19 CLR_OILPLATFORM //map colour (byte; using indexes from dos palette)
-	21 B3 //callback flags 
+	21 BB //callback flags 
 	22 05  //callback flags
 //To show cargo waiting to be processed at industry, ensure prop 21 is set to use production callback
 
 //No action 1 for industries, as graphics are defined by the industry-tile feature.
+
+// handle cb 28 industry location - included on a per-industry basis to allow industries to use various different schemes 
+#include "../../../templates/cb28_generic_terminator.pnfo"
+
+#define THIS_CONFLICTING_INDUSTRY IND_OILREFINERY
+#include "../../../templates/cb28_space_neighbours_in_chain.pnfo"
+#undef THIS_CONFLICTING_INDUSTRY
+
+#include "../../../templates/cb28_allow_player_build.pnfo"
 
 #include "../../../templates/template_primary_action23.pnfo"
 
