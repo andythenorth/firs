@@ -85,7 +85,7 @@
 #define INCOMPATIBLE_GRF(x) -1 * 0 0B 03 7F FF "\8EE01: \90Incompatible set: \8E"x" \90Consult FIRS ReadMe: \8E\0Dhttp://bundles.openttdcoop.org/firs/releases/readme.txt" 00
 #define INCOMPATIBLE_PARAM(x,y) -1 * 0 0B 03 7F FF "\8EE02: \90Incompatible parameter: \8E"x" parameter "y" to work with FIRS. \90Consult FIRS ReadMe: \8E\0Dhttp://bundles.openttdcoop.org/firs/releases/readme.txt" 00
 //#define INCOMPATIBLE_VERSION(x,y) -1 * 0 0B 03 7F FF "\8EE03: \90Incompatible version: \8E"x" must be version "y" or higher to work with FIRS. \90Consult FIRS ReadMe: \8E\0Dhttp://bundles.openttdcoop.org/firs/releases/readme.txt" 00 //for use with version check without action 14, as this doesn't require OpenTTD r20675
-#define INCOMPATIBLE_VERSION14(x,y) -1 * 0 0B 03 7F FF "\8EE04: \90Incompatible version: \8E"x" must be version "y" or higher to work with FIRS. OpenTTD 1.1.0 / trunk r20675 or higher required. \90Consult FIRS ReadMe: \8E\0Dhttp://bundles.openttdcoop.org/firs/releases/readme.txt" 00 //requires OpenTTD r20675
+#define INCOMPATIBLE_VERSION14(x,y) -1 * 0 0B 03 7F FF "\8EE04: \90Incompatible version: \8E"x" must be version "y" or higher and OpenTTD 1.1.0 / trunk r20675 or higher is required. \90Consult FIRS ReadMe: \8E\0Dhttp://bundles.openttdcoop.org/firs/releases/readme.txt" 00 //requires OpenTTD r20675
 //#define INCOMPATIBLE_COMBI(x) -1 * 0 0B 03 7F FF "\8EE04: \90Incompatible newgrf combination: \8E"x" \90Consult FIRS ReadMe: \8E\0Dhttp://bundles.openttdcoop.org/firs/releases/readme.txt" 00
 //#define INCOMPATIBLE_WARNING(x,y) -1 * 0 0B 01 7F FF "\8EW01: \90Possible set incompatibility detected: \8EFIRS only works correctly with "x" version "y" or higher. \90Consult FIRS ReadMe: \8E\0Dhttp://bundles.openttdcoop.org/firs/releases/readme.txt" 00
 
