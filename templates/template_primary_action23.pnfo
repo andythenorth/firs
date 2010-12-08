@@ -106,7 +106,7 @@
     7D 01 00  \dxFFFFFFFF //get local storage amount for delivered cargo 1 in last month
   \b1 //range
     D3 00  \d01  \dxFFFFFFFF    
-  D4 00 //else no change
+  D4 00 //default
 
 -1 * 0 02 0A D1 //handle cb 35 monthly production change 
   89 // 
@@ -114,7 +114,7 @@
     \2sto 1A 00 \dx01 //store in local register
   \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
     D2 00  \d00  \d00 
-  D2 00 // default
+  D2 00 //default
 	
 	
 // industry window texts	
