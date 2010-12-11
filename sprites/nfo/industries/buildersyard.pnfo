@@ -13,10 +13,8 @@
 //Industry tile sprites; one sprite for each tile; eventually more for each tile to include  construction stages
 
 //Tile Action 1
--1 * 0 01 09 \b3 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
+-1 * 0 01 09 \b2 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
 // Format: spritenum pcxfile xpos ypos compression ysize xsize xrel yrel
--1 sprites/pcx/industries/groundtiles.pcx  80 10 09   31 64  -31  0
-// tanks
 -1 sprites/pcx/industries/buildersyard.pcx  10 10 09  51 64 -31 -13
 -1 sprites/pcx/industries/buildersyard.pcx  80 10 09  51 64 -31 -13
 
@@ -24,12 +22,12 @@
 //Tile Action 2 
 -1 * 0 02 09 00 00 //-1 * 0 02 09 <set-id> 00
 	\d3924 //groundsprite
-	\dx80008001 //building sprite
+	\dx80008000 //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b16 //xextent yextent zextent
 -1 * 0 02 09 01 00 //-1 * 0 02 09 <set-id> 00
 	\d3924 //groundsprite
-	\dx80008002 //building sprite
+	\dx80008001 //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b16 //xextent yextent zextent
 
