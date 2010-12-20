@@ -150,6 +150,17 @@ INCOMPATIBLE_GRF("Tourist Set")
 -1 * 0 07 88 04 \7gg 53 5A 13 44 01
 INCOMPATIBLE_GRF("Oil well decrease neutralizer")
 
+// Experts Hard industries 0.4 don't work with FIRS for OpenTTD 1.0.x
+-1 * 0 07 88 04 \7gg 45 48 01 01 02
+//skip if ottd < 1.1.0 r20086 (random 1.1 trunk version, somewhat recent-ish)
+-1 * 0 09 //Action 7
+	A1 //variable: openttd version
+	04 //varsize in bytes
+	\7> //condition: larger
+	\dx11004E76 //value: ottd version 1.1.0 r20086 (4E76)
+	01 //skip next 1 to not disable FIRS
+INCOMPATIBLE_GRF("Experts hard industries")
+
 //Following set compatibility is undecided, but set to false for now.
 //UKRS Brick Chain	(44 44 06 03)
 -1 * 0 07 88 04 \7gg 44 44 06 03 01
