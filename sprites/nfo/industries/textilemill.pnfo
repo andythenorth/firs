@@ -26,8 +26,7 @@
 // include tiles and layouts, ! Action 2 IDs here are deliberately repeated by the various tile includes
 // temperate
 #define THIS_GRAPHICS_FILE textilemill.pcx
-#include "textilemill_tiles_layouts/textilemill_tiles_standard.pnfo"
-#include "textilemill_tiles_layouts/textilemill_layouts.pnfo"
+#include "textilemill_tiles_layouts/textilemill_tiles_layouts.pnfo"
                    
 -1 * 0 02 09 A1
 	82 44 //check layout number (lowest byte of related industry)
@@ -44,8 +43,7 @@
 // include tiles and layouts, ! Action 2 IDs here are deliberately repeated by the various tile includes
 // tropic
 #define THIS_GRAPHICS_FILE textilemill.pcx
-#include "textilemill_tiles_layouts/textilemill_tiles_standard.pnfo"
-#include "textilemill_tiles_layouts/textilemill_layouts.pnfo"
+#include "textilemill_tiles_layouts/textilemill_tiles_layouts.pnfo"
                    
 -1 * 0 02 09 A2
 	82 44 //check layout number (lowest byte of related industry)
@@ -62,8 +60,7 @@
 // include tiles and layouts, ! Action 2 IDs here are deliberately repeated by the various tile includes
 // snow
 #define THIS_GRAPHICS_FILE textilemill_snow.pcx
-#include "textilemill_tiles_layouts/textilemill_tiles_standard.pnfo"
-#include "textilemill_tiles_layouts/textilemill_layouts.pnfo"
+#include "textilemill_tiles_layouts/textilemill_tiles_layouts.pnfo"
                                      
 -1 * 0 02 09 A3
 	82 44 //check layout number (lowest byte of related industry)
