@@ -60,12 +60,7 @@
 	\dx80008005 //building sprite
 	00 00 //xofs yofs
 	\b16 \b16 \b48 //xextent yextent zextent
-//building part 2
--1 * 0 02 09 06 00 //-1 * 0 02 09 <set-id> 00
-	\dx80008000 //groundsprite
-	\dx80008006 //building sprite
-	00 00 //xofs yofs
-	\b16 \b16 \b48 //xextent yextent zextent
+//deprecated non-animated chimney was using ID 06
 //grain tanks 1
 -1 * 0 02 09 07 00 //-1 * 0 02 09 <set-id> 00
 	\dx80008000 //groundsprite
@@ -79,6 +74,94 @@
 	00 00 //xofs yofs
 	\b16 \b16 \b48 //xextent yextent zextent
 
+//building part 2 - animated chimney smoke
+-1 * 0 02 09 10 00 //-1 * 0 02 09 <set-id> 00
+	\dx80008000 //groundsprite
+	\dx80008006 //building sprite
+	00 00 //xofs yofs
+	\b16 \b16 \b48 //xextent yextent zextent
+
+
+-1 * 0 02 09 10 02 //-1 * 0 02 09 <set-id> 01 (extended format)
+	\dx80008000 //groundsprite
+	\dx80008006 //building sprite
+	\b0 \b0 \b0 //xofs yofs zofs
+	\b16 \b16 \b7 //xextent yextent zextent
+	\d3701 //smoke
+	\b1 \b0 \b62 //xofs yofs zofs
+	\b15 \b16 \b7 //xextent yextent zextent	
+-1 * 0 02 09 11 02 //-1 * 0 02 09 <set-id> 01 (extended format)
+	\dx80008000 //groundsprite
+	\dx80008006 //building sprite
+	\b0 \b0 \b0 //xofs yofs zofs
+	\b16 \b16 \b7 //xextent yextent zextent
+	\d3702 //smoke
+	\b1 \b0 \b62 //xofs yofs zofs
+	\b15 \b16 \b7 //xextent yextent zextent	
+-1 * 0 02 09 12 02 //-1 * 0 02 09 <set-id> 01 (extended format)
+	\dx80008000 //groundsprite
+	\dx80008006 //building sprite
+	\b0 \b0 \b0 //xofs yofs zofs
+	\b16 \b16 \b7 //xextent yextent zextent
+	\d3703 //smoke
+	\b1 \b0 \b62 //xofs yofs zofs
+	\b15 \b16 \b7 //xextent yextent zextent
+-1 * 0 02 09 13 02 //-1 * 0 02 09 <set-id> 01 (extended format)
+	\dx80008000 //groundsprite
+	\dx80008006 //building sprite
+	\b0 \b0 \b0 //xofs yofs zofs
+	\b16 \b16 \b7 //xextent yextent zextent
+	\d3704 //smoke
+	\b1 \b0 \b62 //xofs yofs zofs
+	\b15 \b16 \b7 //xextent yextent zextent	
+-1 * 0 02 09 14 02 //-1 * 0 02 09 <set-id> 01 (extended format)
+	\dx80008000 //groundsprite
+	\dx80008006 //building sprite
+	\b0 \b0 \b0 //xofs yofs zofs
+	\b16 \b16 \b7 //xextent yextent zextent
+	\d3705 //smoke
+	\b1 \b0 \b62 //xofs yofs zofs
+	\b15 \b16 \b7 //xextent yextent zextent	
+-1 * 0 02 09 15 02 //-1 * 0 02 09 <set-id> 01 (extended format)
+	\dx80008000 //groundsprite
+	\dx80008006 //building sprite
+	\b0 \b0 \b0 //xofs yofs zofs
+	\b16 \b16 \b7 //xextent yextent zextent
+	\d3706 //smoke
+	\b1 \b0 \b62 //xofs yofs zofs
+	\b15 \b16 \b7 //xextent yextent zextent	
+-1 * 0 02 09 16 02 //-1 * 0 02 09 <set-id> 01 (extended format)
+	\dx80008000 //groundsprite
+	\dx80008006 //building sprite
+	\b0 \b0 \b0 //xofs yofs zofs
+	\b16 \b16 \b7 //xextent yextent zextent
+	\d3707 //smoke
+	\b1 \b0 \b62 //xofs yofs zofs
+	\b15 \b16 \b7 //xextent yextent zextent	
+-1 * 0 02 09 17 02 //-1 * 0 02 09 <set-id> 01 (extended format)
+	\dx80008000 //groundsprite
+	\dx80008006 //building sprite
+	\b0 \b0 \b0 //xofs yofs zofs
+	\b16 \b16 \b7 //xextent yextent zextent
+	\d3708 //smoke
+	\b1 \b0 \b62 //xofs yofs zofs
+	\b15 \b16 \b7 //xextent yextent zextent	
+
+
+-1 * 0 02 09 C0 //smoke animation
+	81 44 // current animation frame
+	00 FF //don't shift, don't mask
+	\b8 //number of ranges to check
+  	\wx10   \b0  \b0
+  	\wx11   \b1  \b1
+  	\wx12   \b2  \b2
+  	\wx13   \b3  \b3
+  	\wx14   \b4  \b4
+  	\wx15   \b5  \b5
+  	\wx16   \b6  \b6
+  	\wx17   \b7  \b7
+	\wx10 //00 01  00 01 <default>
+
 
 -1 * 0 02 09 B1 //layout 1
 	85 43 //check relative position (00yx[YYXX])
@@ -91,7 +174,7 @@
     \wx08   01 00  01 00
     \wx04   01 02  01 02
     \wx05   01 03  01 03
-    \wx06   01 04  01 04
+    \wxC0   01 04  01 04
     \wx07   02 00  02 00
     \wx00   02 02  02 02
     \wx03   02 03  02 03
@@ -105,7 +188,7 @@
     \wx08   00 00  00 00
     \wx04   00 01  00 01
     \wx05   00 02  00 02
-    \wx06   00 03  00 03
+    \wxC0   00 03  00 03
     \wx00   00 04  00 04
     \wx07   01 00  01 00
     \wx00   01 01  01 01
@@ -131,7 +214,7 @@
     \wx03   01 03  01 03
     \wx08   02 00  02 00
     \wx05   02 02  02 02
-    \wx06   02 03  02 03
+    \wxC0   02 03  02 03
     \wx07   03 00  03 00
     \wx03   03 02  03 02
     \wx00   03 03  03 03
@@ -155,7 +238,7 @@
     \wx00   02 02  02 02
     \wx04   03 00  03 00
     \wx05   03 01  03 01
-    \wx06   03 02  03 02
+    \wxC0   03 02  03 02
     \wx02   04 00  04 00
     \wx03   04 01  04 01
     \wx00   04 02  04 02
