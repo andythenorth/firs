@@ -23,8 +23,9 @@
 
 
 // include tiles and layouts, ! Action 2 IDs here are deliberately repeated by the various tile includes
-#include "brewery_tiles_layouts/brewery_tiles_standard.pnfo"
-#include "brewery_tiles_layouts/brewery_layouts.pnfo"
+#define THIS_GRAPHICS_FILE brewery.pcx
+
+#include "brewery_tiles_layouts/brewery_tiles_layouts.pnfo"
 
 -1 * 0 02 09 A1
 	82 44 //check layout number (lowest byte of related industry)
@@ -37,8 +38,8 @@
     \wxB5 \b5 \b5 //<set-id \w> <low-range> <high-range>
 	\wx00 //<default> (first tile layout available)
 
-#include "brewery_tiles_layouts/brewery_tiles_standard.pnfo"
-#include "brewery_tiles_layouts/brewery_layouts.pnfo"
+#define THIS_GRAPHICS_FILE brewery.pcx
+#include "brewery_tiles_layouts/brewery_tiles_layouts.pnfo"
 
 -1 * 0 02 09 A2
 	82 44 //check layout number (lowest byte of related industry)
@@ -51,9 +52,8 @@
     \wxB5 \b5 \b5 //<set-id \w> <low-range> <high-range>
 	\wx00 //<default> (first tile layout available)
 
-
-#include "brewery_tiles_layouts/brewery_tiles_snow.pnfo"
-#include "brewery_tiles_layouts/brewery_layouts.pnfo"
+#define THIS_GRAPHICS_FILE brewery_snow.pcx
+#include "brewery_tiles_layouts/brewery_tiles_layouts.pnfo"
 
 -1 * 0 02 09 A3
 	82 44 //check layout number (lowest byte of related industry)
