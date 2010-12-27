@@ -13,11 +13,13 @@
 
 
 //Tile action 2 
+// deprecated non-animated chimney
 -1 * 0 02 09 00 00 //-1 * 0 02 09 <set-id> 00
 	\dx80008005 //groundsprite
 	\dx80008000 //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b92 //xextent yextent zextent
+// building
 -1 * 0 02 09 01 00 //-1 * 0 02 09 <set-id> 00
 	\dx80008005 //groundsprite
 	\dx80008001 //building sprite
@@ -38,3 +40,13 @@
 	\dx80008004 //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b16 //xextent yextent zextent
+
+// animated chimney
+-1 * 0 02 09 10 02 //-1 * 0 02 09 <set-id> 01 (extended format)
+	\d00 //groundsprite
+	\dxC0008002 //foundation sprite  // ! bit 30 set to prevent transparency
+	\b0 \b0 \b0 //xofs yofs zofs
+	\b16 \b16 \b7 //xextent yextent zextent
+	\dxC0008003 //foundation sprite  // ! bit 30 set to prevent transparency
+	\b0 \b0 \b0 //xofs yofs zofs
+	\b16 \b16 \b7 //xextent yextent zextent	

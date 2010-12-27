@@ -3,21 +3,23 @@
 //Tile action 1
 -1 * 0 01 09 \b6 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
 // Format: spritenum pcxfile xpos ypos compression ysize xsize xrel yrel
--1 sprites/pcx/industries/textilemill.pcx  10 10 09  103 64 -31 -72
--1 sprites/pcx/industries/textilemill.pcx  80 10 09  103 64 -31 -72
--1 sprites/pcx/industries/textilemill.pcx 150 10 09  103 64 -31 -72
--1 sprites/pcx/industries/textilemill.pcx 220 10 09  103 64 -31 -72
--1 sprites/pcx/industries/textilemill.pcx 290 10 09  103 64 -31 -72
+-1 sprites/pcx/industries/THIS_GRAPHICS_FILE  10 10 09  103 64 -31 -72
+-1 sprites/pcx/industries/THIS_GRAPHICS_FILE  80 10 09  103 64 -31 -72
+-1 sprites/pcx/industries/THIS_GRAPHICS_FILE 150 10 09  103 64 -31 -72
+-1 sprites/pcx/industries/THIS_GRAPHICS_FILE 220 10 09  103 64 -31 -72
+-1 sprites/pcx/industries/THIS_GRAPHICS_FILE 290 10 09  103 64 -31 -72
 // ground tile
 -1 sprites/pcx/industries/groundtiles.pcx  150 10 09   31 64 -31   0
 
 
-//Tile action 2 
+//Tile action 2
+// deprecated non-animated chimney
 -1 * 0 02 09 00 00 //-1 * 0 02 09 <set-id> 00
 	\dx80008005 //groundsprite
 	\dx80008000 //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b92 //xextent yextent zextent
+// building
 -1 * 0 02 09 01 00 //-1 * 0 02 09 <set-id> 00
 	\dx80008005 //groundsprite
 	\dx80008001 //building sprite
@@ -38,3 +40,71 @@
 	\dx80008004 //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b16 //xextent yextent zextent
+
+// animated chimney
+-1 * 0 02 09 10 02 //-1 * 0 02 09 <set-id> 01 (extended format)
+	\dx80008005 //groundsprite
+	\dx80008000 //building sprite
+	\b0 \b0 \b0 //xofs yofs zofs
+	\b16 \b16 \b7 //xextent yextent zextent
+	\d3701 //smoke
+	\b0 \b9 \b78 //xofs yofs zofs
+	\b16 \b32 \b7 //xextent yextent zextent	
+-1 * 0 02 09 11 02 //-1 * 0 02 09 <set-id> 01 (extended format)
+	\dx80008005 //groundsprite
+	\dx80008000 //building sprite
+	\b0 \b0 \b0 //xofs yofs zofs
+	\b16 \b16 \b7 //xextent yextent zextent
+	\d3702 //smoke
+	\b0 \b9 \b78 //xofs yofs zofs
+	\b16 \b32 \b7 //xextent yextent zextent	
+-1 * 0 02 09 12 02 //-1 * 0 02 09 <set-id> 01 (extended format)
+	\dx80008005 //groundsprite
+	\dx80008000 //building sprite
+	\b0 \b0 \b0 //xofs yofs zofs
+	\b16 \b16 \b7 //xextent yextent zextent
+	\d3703 //smoke
+	\b0 \b9 \b78 //xofs yofs zofs
+	\b16 \b32 \b7 //xextent yextent zextent
+-1 * 0 02 09 13 02 //-1 * 0 02 09 <set-id> 01 (extended format)
+	\dx80008005 //groundsprite
+	\dx80008000 //building sprite
+	\b0 \b0 \b0 //xofs yofs zofs
+	\b16 \b16 \b7 //xextent yextent zextent
+	\d3704 //smoke
+	\b0 \b9 \b78 //xofs yofs zofs
+	\b16 \b32 \b7 //xextent yextent zextent	
+-1 * 0 02 09 14 02 //-1 * 0 02 09 <set-id> 01 (extended format)
+	\dx80008005 //groundsprite
+	\dx80008000 //building sprite
+	\b0 \b0 \b0 //xofs yofs zofs
+	\b16 \b16 \b7 //xextent yextent zextent
+	\d3705 //smoke
+	\b0 \b9 \b78 //xofs yofs zofs
+	\b16 \b32 \b7 //xextent yextent zextent	
+-1 * 0 02 09 15 02 //-1 * 0 02 09 <set-id> 01 (extended format)
+	\dx80008005 //groundsprite
+	\dx80008000 //building sprite
+	\b0 \b0 \b0 //xofs yofs zofs
+	\b16 \b16 \b7 //xextent yextent zextent
+	\d3706 //smoke
+	\b0 \b9 \b78 //xofs yofs zofs
+	\b16 \b32 \b7 //xextent yextent zextent	
+-1 * 0 02 09 16 02 //-1 * 0 02 09 <set-id> 01 (extended format)
+	\dx80008005 //groundsprite
+	\dx80008000 //building sprite
+	\b0 \b0 \b0 //xofs yofs zofs
+	\b16 \b16 \b7 //xextent yextent zextent
+	\d3707 //smoke
+	\b0 \b9 \b78 //xofs yofs zofs
+	\b16 \b32 \b7 //xextent yextent zextent	
+-1 * 0 02 09 17 02 //-1 * 0 02 09 <set-id> 01 (extended format)
+	\dx80008005 //groundsprite
+	\dx80008000 //building sprite
+	\b0 \b0 \b0 //xofs yofs zofs
+	\b16 \b16 \b7 //xextent yextent zextent
+	\d3708 //smoke
+	\b0 \b9 \b78 //xofs yofs zofs
+	\b16 \b32 \b7 //xextent yextent zextent	
+	
+#undef THIS_GRAPHICS_FILE	

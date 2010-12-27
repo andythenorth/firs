@@ -13,17 +13,19 @@
 //Industry tiles definition
 
 //Tile action 0
--1 * 0 00 09 \b6 01 TILE_TEXTILEMILL_1 // -1 * 0 00 09 <num-props> 01 <id>
+-1 * 0 00 09 \b8 01 TILE_TEXTILEMILL_1 // -1 * 0 00 09 <num-props> 01 <id>
 	08 TILE_NULL //subsitute type
 	0A CARGO_MANUFACTURINGSUPPLIES 08 //tile acceptance 2
 	0B CARGO_WOOL 08 //tile acceptance 1
 	0C CARGO_PLANTFIBRES 08 //tile acceptance 3
 	0D 10 //land shape flags: 10 = only on flat land
 	0E 10 //callback flags
-	
+  0F 07 01 //animation: number frames | loop (01) / not loop (00)
+	10 03 //animation speed
 
 // include tiles and layouts, ! Action 2 IDs here are deliberately repeated by the various tile includes
 // temperate
+#define THIS_GRAPHICS_FILE textilemill.pcx
 #include "textilemill_tiles_layouts/textilemill_tiles_standard.pnfo"
 #include "textilemill_tiles_layouts/textilemill_layouts.pnfo"
                    
@@ -41,6 +43,7 @@
 
 // include tiles and layouts, ! Action 2 IDs here are deliberately repeated by the various tile includes
 // tropic
+#define THIS_GRAPHICS_FILE textilemill.pcx
 #include "textilemill_tiles_layouts/textilemill_tiles_standard.pnfo"
 #include "textilemill_tiles_layouts/textilemill_layouts.pnfo"
                    
@@ -58,7 +61,8 @@
 
 // include tiles and layouts, ! Action 2 IDs here are deliberately repeated by the various tile includes
 // snow
-#include "textilemill_tiles_layouts/textilemill_tiles_snow.pnfo"
+#define THIS_GRAPHICS_FILE textilemill_snow.pcx
+#include "textilemill_tiles_layouts/textilemill_tiles_standard.pnfo"
 #include "textilemill_tiles_layouts/textilemill_layouts.pnfo"
                                      
 -1 * 0 02 09 A3
