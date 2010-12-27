@@ -1,0 +1,153 @@
+//Industry tile sprites; one sprite for each tile; eventually more for each tile to include  construction stages
+
+//Tile action 1
+-1 * 0 01 09 \b4 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
+// Format: spritenum pcxfile xpos ypos compression ysize xsize xrel yrel
+// chimney
+-1 sprites/pcx/industries/THIS_GRAPHICS_FILE  80 10  09 91 64  -31 -60
+-1 sprites/pcx/industries/THIS_GRAPHICS_FILE 150 10  09 91 64  -31 -60
+-1 sprites/pcx/industries/THIS_GRAPHICS_FILE 220 10  09 91 64  -31 -60
+// ground tile
+-1 sprites/pcx/industries/groundtiles.pcx  150 10 09   31 64 -31   0
+
+
+//Tile action 2
+// deprecated non-animated chimney was using ID 0
+-1 * 0 02 09 01 00 //-1 * 0 02 09 <set-id> 00
+	\dx80008003 //groundsprite
+	\dx80008001 //building sprite
+	00 00 //xofs yofs
+	\b16 \b16 \b48 //xextent yextent zextent
+-1 * 0 02 09 02 00 //-1 * 0 02 09 <set-id> 00
+	\dx80008003 //groundsprite
+	\dx80008002 //building sprite
+	00 00 //xofs yofs
+	\b16 \b16 \b48 //xextent yextent zextent
+	
+// animated chimney
+-1 * 0 02 09 10 02 //-1 * 0 02 09 <set-id> 01 (extended format)
+	\dx80008003 //groundsprite
+	\dx80008000 //building sprite
+	\b0 \b0 \b0 //xofs yofs zofs
+	\b16 \b16 \b7 //xextent yextent zextent
+	\d3701 //smoke
+	\b8 \b0 \b54 //xofs yofs zofs
+	\b8 \b16 \b7 //xextent yextent zextent		
+-1 * 0 02 09 11 02 //-1 * 0 02 09 <set-id> 01 (extended format)
+	\dx80008003 //groundsprite
+	\dx80008000 //building sprite
+	\b0 \b0 \b0 //xofs yofs zofs
+	\b16 \b16 \b7 //xextent yextent zextent
+	\d3702 //smoke
+	\b8 \b0 \b54 //xofs yofs zofs
+	\b8 \b16 \b7 //xextent yextent zextent		
+-1 * 0 02 09 12 02 //-1 * 0 02 09 <set-id> 01 (extended format)
+	\dx80008003 //groundsprite
+	\dx80008000 //building sprite
+	\b0 \b0 \b0 //xofs yofs zofs
+	\b16 \b16 \b7 //xextent yextent zextent
+	\d3703 //smoke
+	\b8 \b0 \b54 //xofs yofs zofs
+	\b8 \b16 \b7 //xextent yextent zextent		
+-1 * 0 02 09 13 02 //-1 * 0 02 09 <set-id> 01 (extended format)
+	\dx80008003 //groundsprite
+	\dx80008000 //building sprite
+	\b0 \b0 \b0 //xofs yofs zofs
+	\b16 \b16 \b7 //xextent yextent zextent
+	\d3704 //smoke
+	\b8 \b0 \b54 //xofs yofs zofs
+	\b8 \b16 \b7 //xextent yextent zextent		
+-1 * 0 02 09 14 02 //-1 * 0 02 09 <set-id> 01 (extended format)
+	\dx80008003 //groundsprite
+	\dx80008000 //building sprite
+	\b0 \b0 \b0 //xofs yofs zofs
+	\b16 \b16 \b7 //xextent yextent zextent
+	\d3705 //smoke
+	\b8 \b0 \b54 //xofs yofs zofs
+	\b8 \b16 \b7 //xextent yextent zextent		
+-1 * 0 02 09 15 02 //-1 * 0 02 09 <set-id> 01 (extended format)
+	\dx80008003 //groundsprite
+	\dx80008000 //building sprite
+	\b0 \b0 \b0 //xofs yofs zofs
+	\b16 \b16 \b7 //xextent yextent zextent
+	\d3706 //smoke
+	\b8 \b0 \b54 //xofs yofs zofs
+	\b8 \b16 \b7 //xextent yextent zextent		
+-1 * 0 02 09 16 02 //-1 * 0 02 09 <set-id> 01 (extended format)
+	\dx80008003 //groundsprite
+	\dx80008000 //building sprite
+	\b0 \b0 \b0 //xofs yofs zofs
+	\b16 \b16 \b7 //xextent yextent zextent
+	\d3707 //smoke
+	\b8 \b0 \b54 //xofs yofs zofs
+	\b8 \b16 \b7 //xextent yextent zextent		
+-1 * 0 02 09 17 02 //-1 * 0 02 09 <set-id> 01 (extended format)
+	\dx80008003 //groundsprite
+	\dx80008000 //building sprite
+	\b0 \b0 \b0 //xofs yofs zofs
+	\b16 \b16 \b7 //xextent yextent zextent
+	\d3708 //smoke
+	\b8 \b0 \b54 //xofs yofs zofs
+	\b8 \b16 \b7 //xextent yextent zextent		
+
+//-1 * 0 02 09 <set-id> <type> <variable> <varadjust> <nvar> (<set-id> <low-range> <high-range>){n} <default>
+
+-1 * 0 02 09 C0 //smoke animation
+	81 44 // current animation frame
+	00 FF //don't shift, don't mask
+	\b8 //number of ranges to check
+  	\wx10   \b0  \b0
+  	\wx11   \b1  \b1
+  	\wx12   \b2  \b2
+  	\wx13   \b3  \b3
+  	\wx14   \b4  \b4
+  	\wx15   \b5  \b5
+  	\wx16   \b6  \b6
+  	\wx17   \b7  \b7
+	\wx10 //00 01  00 01 <default>
+
+-1 * 0 02 09 B1 //layout
+	85 43 //check relative position (00yx[YYXX])
+	00 FF FF //don't shift, don't mask
+	\b2 //number of ranges to check (number of tiles) [range: XX YY  XX YY]
+    \wxC0   01 00  01 00
+    \wx01   01 02  01 02
+	\wx02 //00 02  00 02 <default>
+                   
+-1 * 0 02 09 B2 //layout
+	85 43 //check relative position (00yx[YYXX])
+	00 FF FF //don't shift, don't mask
+	\b2 //number of ranges to check (number of tiles) [range: XX YY  XX YY]
+    \wx01   01 00  01 00
+    \wxC0   02 00  02 00
+	\wx02 //00 00  00 00 <default>
+                   
+-1 * 0 02 09 B3 //layout
+	85 43 //check relative position (00yx[YYXX])
+	00 FF FF //don't shift, don't mask
+	\b2 //number of ranges to check (number of tiles) [range: XX YY  XX YY]
+    \wxC0   01 00  01 00
+    \wx01   01 01  01 01
+	\wx02 //00 01  00 01 <default>
+	
+-1 * 0 02 09 B4 //layout
+	85 43 //check relative position (00yx[YYXX])
+	00 FF FF //don't shift, don't mask
+	\b2 //number of ranges to check (number of tiles) [range: XX YY  XX YY]
+    \wxC0   00 00  00 00
+    \wx01   02 00  02 00
+	\wx02 //00 01  00 01 <default>	
+	
+-1 * 0 02 09 B5 //layout
+	85 43 //check relative position (00yx[YYXX])
+	00 FF FF //don't shift, don't mask
+	\b5 //number of ranges to check (number of tiles) [range: XX YY  XX YY]
+    \wx02   00 00  00 00
+    \wx02   00 01  00 01
+    \wx01   01 00  01 00
+    \wx01   01 01  01 01
+    \wxC0   02 00  02 00
+	\wx02 //00 01  00 01 <default>
+		
+	
+#undef THIS_GRAPHICS_FILE	
