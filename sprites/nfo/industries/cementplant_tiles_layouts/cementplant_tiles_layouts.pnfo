@@ -1,12 +1,13 @@
 //Industry tile sprites; one sprite for each tile; eventually more for each tile to include  construction stages
 
 //Tile action 1
--1 * 0 01 09 \b12 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
+-1 * 0 01 09 \b14 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
 // Format: spritenum pcxfile xpos ypos compression ysize xsize xrel yrel
 -1 sprites/pcx/industries/THIS_GRAPHICS_FILE 80 10 09  113 64 -31 -82
 -1 sprites/pcx/industries/THIS_GRAPHICS_FILE 150 10 09  113 64 -31 -82
 -1 sprites/pcx/industries/THIS_GRAPHICS_FILE 220 10 09  113 64 -31 -82
 -1 sprites/pcx/industries/THIS_GRAPHICS_FILE 290 10 09  113 64 -31 -82
+// kiln animated frame 1
 -1 sprites/pcx/industries/THIS_GRAPHICS_FILE 360 10 09  113 64 -31 -82
 -1 sprites/pcx/industries/THIS_GRAPHICS_FILE 430 10 09  113 64 -31 -82
 -1 sprites/pcx/industries/THIS_GRAPHICS_FILE 500 10 09  113 64 -31 -82
@@ -15,6 +16,9 @@
 -1 sprites/pcx/industries/THIS_GRAPHICS_FILE 710 10 09  113 64 -31 -82
 -1 sprites/pcx/industries/THIS_GRAPHICS_FILE 780 10 09  113 64 -31 -82
 -1 sprites/pcx/industries/groundtiles.pcx  80 10 09   31 64 -31   0
+// kiln animated frames 2-4
+-1 sprites/pcx/industries/THIS_GRAPHICS_FILE 360 130 09  113 64 -31 -82
+-1 sprites/pcx/industries/THIS_GRAPHICS_FILE 360 250 09  113 64 -31 -82
 
 
 //Tile action 2 
@@ -38,11 +42,7 @@
 	\dx80008003 //building sprite
 	00 00 //xofs yofs
 	\b16 \b16 \b48 //xextent yextent zextent
--1 * 0 02 09 04 00 //-1 * 0 02 09 <set-id> 00
-	\dx8000800B //groundsprite
-	\dx80008004 //building sprite
-	00 00 //xofs yofs
-	\b16 \b16 \b48 //xextent yextent zextent
+// deprecated non-animated kiln was using ID 04 
 -1 * 0 02 09 05 00 //-1 * 0 02 09 <set-id> 00
 	\dx8000800B //groundsprite
 	\dx80008005 //building sprite
@@ -159,8 +159,39 @@
 	\b3 \b0 \b81 //xofs yofs zofs
 	\b13 \b7 \b7 //xextent yextent zextent		
 
+// animated kiln
+-1 * 0 02 09 20 00 //-1 * 0 02 09 <set-id> 00
+	\dx8000800B //groundsprite
+	\dx80008004 //building sprite ??
+	00 00 //xofs yofs
+	\b16 \b16 \b48 //xextent yextent zextent
+-1 * 0 02 09 21 00 //-1 * 0 02 09 <set-id> 00
+	\dx8000800B //groundsprite
+	\dx8000800C //building sprite
+	00 00 //xofs yofs
+	\b16 \b16 \b48 //xextent yextent zextent
+-1 * 0 02 09 22 00 //-1 * 0 02 09 <set-id> 00
+	\dx8000800B //groundsprite
+	\dx8000800D //building sprite ??
+	00 00 //xofs yofs
+	\b16 \b16 \b48 //xextent yextent zextent
+
 
 //-1 * 0 02 09 <set-id> <type> <variable> <varadjust> <nvar> (<set-id> <low-range> <high-range>){n} <default>
+
+-1 * 0 02 09 C1 //kiln animation
+	81 44 // current animation frame
+	00 FF //don't shift, don't mask
+	\b8 //number of ranges to check
+  	\wx20   \b0  \b0
+  	\wx20   \b1  \b1
+  	\wx21   \b2  \b2
+  	\wx21   \b3  \b3
+  	\wx21   \b4  \b4
+  	\wx22   \b5  \b5
+  	\wx22   \b6  \b6
+  	\wx22   \b7  \b7
+	\wx20 //00 01  00 01 <default>
 
 -1 * 0 02 09 C0 //smoke animation
 	81 44 // current animation frame
@@ -184,7 +215,7 @@
     \wx02   00 02  00 02
     \wx00   01 01  01 01
     \wx05   01 02  01 02
-    \wx04   02 02  02 02
+    \wxC1   02 02  02 02
     \wx03   03 02  03 02
     \wx07   04 02  04 02
     \wx06   04 03  04 03
@@ -201,8 +232,8 @@
     \wx00   00 02  00 02
     \wx05   01 00  01 00
     \wx05   01 01  01 01
-    \wx04   02 00  02 00
-    \wx04   02 01  02 01
+    \wxC1   02 00  02 00
+    \wxC1   02 01  02 01
     \wx07   02 03  02 03
     \wx06   02 04  02 04
     \wx03   03 00  03 00
@@ -223,9 +254,9 @@
     \wx00   00 05  00 05
     \wx01   01 00  01 00
     \wx02   01 01  01 01
-    \wx04   01 02  01 02
-    \wx04   01 03  01 03
-    \wx0A   01 04  01 04
+    \wxC1   01 02  01 02
+    \wxC1   01 03  01 03
+    \wxC0   01 04  01 04
     \wx07   01 05  01 05
     \wx06   01 06  01 06
     \wx00   02 00  02 00
@@ -248,13 +279,13 @@
     \wx05   01 01  01 01
     \wx05   01 02  01 02
     \wx00   01 03  01 03
-    \wx04   02 00  02 00
-    \wx04   02 01  02 01
-    \wx04   02 02  02 02
+    \wxC1   02 00  02 00
+    \wxC1   02 01  02 01
+    \wxC1   02 02  02 02
     \wx03   03 00  03 00
     \wx03   03 01  03 01
     \wx03   03 02  03 02
-    \wx0A   04 01  04 01
+    \wxC0   04 01  04 01
     \wx07   04 02  04 02
     \wx06   04 03  04 03
     \wx09   05 01  05 01
@@ -274,9 +305,9 @@
     \wx05   02 00  02 00
     \wx05   02 01  02 01
     \wx05   02 02  02 02
-    \wx04   03 00  03 00
-    \wx04   03 01  03 01
-    \wx04   03 02  03 02
+    \wxC1   03 00  03 00
+    \wxC1   03 01  03 01
+    \wxC1   03 02  03 02
     \wx03   04 00  04 00
     \wx03   04 01  04 01
     \wx03   04 02  04 02
