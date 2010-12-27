@@ -1,0 +1,192 @@
+//Industry tile sprites; one sprite for each tile; eventually more for each tile to include  construction stages
+
+//Tile action 1
+-1 * 0 01 09 \b12 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
+// Format: spritenum pcxfile xpos ypos compression ysize xsize xrel yrel
+-1 sprites/pcx/industries/cementplant.pcx 80 10 09  113 64 -31 -82
+-1 sprites/pcx/industries/cementplant.pcx 150 10 09  113 64 -31 -82
+-1 sprites/pcx/industries/cementplant.pcx 220 10 09  113 64 -31 -82
+-1 sprites/pcx/industries/cementplant.pcx 290 10 09  113 64 -31 -82
+-1 sprites/pcx/industries/cementplant.pcx 360 10 09  113 64 -31 -82
+-1 sprites/pcx/industries/cementplant.pcx 430 10 09  113 64 -31 -82
+-1 sprites/pcx/industries/cementplant.pcx 500 10 09  113 64 -31 -82
+-1 sprites/pcx/industries/cementplant.pcx 570 10 09  113 64 -31 -82
+-1 sprites/pcx/industries/cementplant.pcx 640 10 09  113 64 -31 -82
+-1 sprites/pcx/industries/cementplant.pcx 710 10 09  113 64 -31 -82
+-1 sprites/pcx/industries/cementplant.pcx 780 10 09  113 64 -31 -82
+-1 sprites/pcx/industries/groundtiles.pcx  80 10 09   31 64 -31   0
+
+
+//Tile action 2 
+-1 * 0 02 09 00 00 //-1 * 0 02 09 <set-id> 00
+	\dx8000800B //groundsprite
+	\dx80008000 //building sprite
+	00 00 //xofs yofs
+	\b16 \b16 \b48 //xextent yextent zextent
+-1 * 0 02 09 01 00 //-1 * 0 02 09 <set-id> 00
+	\dx8000800B //groundsprite
+	\dx80008001 //building sprite
+	00 00 //xofs yofs
+	\b16 \b16 \b48 //xextent yextent zextent
+-1 * 0 02 09 02 00 //-1 * 0 02 09 <set-id> 00
+	\dx8000800B //groundsprite
+	\dx80008002 //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b48 //xextent yextent zextent
+-1 * 0 02 09 03 00 //-1 * 0 02 09 <set-id> 00
+	\dx8000800B //groundsprite
+	\dx80008003 //building sprite
+	00 00 //xofs yofs
+	\b16 \b16 \b48 //xextent yextent zextent
+-1 * 0 02 09 04 00 //-1 * 0 02 09 <set-id> 00
+	\dx8000800B //groundsprite
+	\dx80008004 //building sprite
+	00 00 //xofs yofs
+	\b16 \b16 \b48 //xextent yextent zextent
+-1 * 0 02 09 05 00 //-1 * 0 02 09 <set-id> 00
+	\dx8000800B //groundsprite
+	\dx80008005 //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b48 //xextent yextent zextent
+-1 * 0 02 09 06 00 //-1 * 0 02 09 <set-id> 00
+	\dx8000800B //groundsprite
+	\dx80008006 //building sprite
+	00 00 //xofs yofs
+	\b16 \b16 \b48 //xextent yextent zextent
+-1 * 0 02 09 07 00 //-1 * 0 02 09 <set-id> 00
+	\d1420 //groundsprite
+	\dx80008007 //building sprite
+	00 00 //xofs yofs
+	\b16 \b16 \b48 //xextent yextent zextent
+-1 * 0 02 09 08 00 //-1 * 0 02 09 <set-id> 00
+	\dx8000800B //groundsprite
+	\dx80008008 //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b48 //xextent yextent zextent
+-1 * 0 02 09 09 00 //-1 * 0 02 09 <set-id> 00
+	\dx8000800B //groundsprite
+	\dx80008009 //building sprite
+	00 00 //xofs yofs
+	\b16 \b16 \b48 //xextent yextent zextent
+-1 * 0 02 09 0A 00 //-1 * 0 02 09 <set-id> 00
+	\dx8000800B //groundsprite
+	\dx8000800A //building sprite
+	00 00 //xofs yofs
+	\b16 \b16 \b48 //xextent yextent zextent
+
+
+//-1 * 0 02 09 <set-id> <type> <variable> <varadjust> <nvar> (<set-id> <low-range> <high-range>){n} <default>
+
+-1 * 0 02 09 B1 //layout
+	85 43 //check relative position (00yx[YYXX])
+	00 FF FF //don't shift, don't mask
+	\b10 //number of ranges to check (number of tiles) [range: XX YY  XX YY]
+    \wx01   00 01  00 01
+    \wx02   00 02  00 02
+    \wx00   01 01  01 01
+    \wx05   01 02  01 02
+    \wx04   02 02  02 02
+    \wx03   03 02  03 02
+    \wx07   04 02  04 02
+    \wx06   04 03  04 03
+    \wx09   05 01  05 01
+    \wx08   05 02  05 02
+	\wx0A //04 01  04 01 <default>
+
+-1 * 0 02 09 B2 //layout
+	85 43 //check relative position (00yx[YYXX])
+	00 FF FF //don't shift, don't mask
+	\b13 //number of ranges to check (number of tiles) [range: XX YY  XX YY]
+    \wx01   00 00  00 00
+    \wx02   00 01  00 01
+    \wx00   00 02  00 02
+    \wx05   01 00  01 00
+    \wx05   01 01  01 01
+    \wx04   02 00  02 00
+    \wx04   02 01  02 01
+    \wx07   02 03  02 03
+    \wx06   02 04  02 04
+    \wx03   03 00  03 00
+    \wx03   03 01  03 01
+    \wx09   03 02  03 02
+    \wx08   03 03  03 03
+	\wx0A //04 01  04 01 <default>
+
+-1 * 0 02 09 B3 //layout
+	85 43 //check relative position (00yx[YYXX])
+	00 FF FF //don't shift, don't mask
+	\b19 //number of ranges to check (number of tiles) [range: XX YY  XX YY]
+    \wx01   00 00  00 00
+    \wx02   00 01  00 01
+    \wx05   00 02  00 02
+    \wx05   00 03  00 03
+    \wx00   00 04  00 04
+    \wx00   00 05  00 05
+    \wx01   01 00  01 00
+    \wx02   01 01  01 01
+    \wx04   01 02  01 02
+    \wx04   01 03  01 03
+    \wx0A   01 04  01 04
+    \wx07   01 05  01 05
+    \wx06   01 06  01 06
+    \wx00   02 00  02 00
+    \wx00   02 01  02 01
+    \wx03   02 02  02 02
+    \wx03   02 03  02 03
+    \wx09   02 04  02 04
+    \wx08   02 05  02 05
+	\wx0A //04 01  04 01 <default>                   
+
+-1 * 0 02 09 B4 //layout
+	85 43 //check relative position (00yx[YYXX])
+	00 FF FF //don't shift, don't mask
+	\b19 //number of ranges to check (number of tiles) [range: XX YY  XX YY]
+    \wx01   00 00  00 00
+    \wx02   00 01  00 01
+    \wx01   00 02  00 02
+    \wx02   00 03  00 03
+    \wx05   01 00  01 00
+    \wx05   01 01  01 01
+    \wx05   01 02  01 02
+    \wx00   01 03  01 03
+    \wx04   02 00  02 00
+    \wx04   02 01  02 01
+    \wx04   02 02  02 02
+    \wx03   03 00  03 00
+    \wx03   03 01  03 01
+    \wx03   03 02  03 02
+    \wx0A   04 01  04 01
+    \wx07   04 02  04 02
+    \wx06   04 03  04 03
+    \wx09   05 01  05 01
+    \wx08   05 02  05 02
+	\wx0A //04 01  04 01 <default>      
+	
+-1 * 0 02 09 B5 //layout
+	85 43 //check relative position (00yx[YYXX])
+	00 FF FF //don't shift, don't mask
+	\b20 //number of ranges to check (number of tiles) [range: XX YY  XX YY]
+    \wx00   00 00  00 00
+    \wx00   00 01  00 01
+    \wx01   01 00  01 00
+    \wx02   01 01  01 01
+    \wx01   01 02  01 02
+    \wx02   01 03  01 03
+    \wx05   02 00  02 00
+    \wx05   02 01  02 01
+    \wx05   02 02  02 02
+    \wx04   03 00  03 00
+    \wx04   03 01  03 01
+    \wx04   03 02  03 02
+    \wx03   04 00  04 00
+    \wx03   04 01  04 01
+    \wx03   04 02  04 02
+    \wx0A   05 00  05 00
+    \wx07   05 01  05 01
+    \wx06   05 02  05 02
+    \wx09   06 00  06 00
+    \wx08   06 01  06 01
+	\wx0A //04 01  04 01 <default>
+
+	
+#undef THIS_GRAPHICS_FILE	
