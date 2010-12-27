@@ -68,14 +68,113 @@
 	\dx80008009 //building sprite
 	00 00 //xofs yofs
 	\b16 \b16 \b48 //xextent yextent zextent
--1 * 0 02 09 0A 00 //-1 * 0 02 09 <set-id> 00
+
+// animated chimney
+-1 * 0 02 09 10 03 //-1 * 0 02 09 <set-id> 01 (extended format)
 	\dx8000800B //groundsprite
 	\dx8000800A //building sprite
-	00 00 //xofs yofs
-	\b16 \b16 \b48 //xextent yextent zextent
+	\b0 \b0 \b0 //xofs yofs zofs
+	\b16 \b16 \b7 //xextent yextent zextent
+	\d3701 //smoke
+	\b0 \b0 \b81 //xofs yofs zofs
+	\b16 \b7 \b7 //xextent yextent zextent	
+	\d3701 //smoke
+	\b3 \b0 \b81 //xofs yofs zofs
+	\b13 \b7 \b7 //xextent yextent zextent	
+-1 * 0 02 09 11 03 //-1 * 0 02 09 <set-id> 01 (extended format)
+	\dx8000800B //groundsprite
+	\dx8000800A //building sprite
+	\b0 \b0 \b0 //xofs yofs zofs
+	\b16 \b16 \b7 //xextent yextent zextent
+	\d3702 //smoke
+	\b3 \b0 \b81 //xofs yofs zofs
+	\b13 \b7 \b7 //xextent yextent zextent
+	\d3702 //smoke
+	\b0 \b0 \b81 //xofs yofs zofs
+	\b16 \b7 \b7 //xextent yextent zextent	
+-1 * 0 02 09 12 03 //-1 * 0 02 09 <set-id> 01 (extended format)
+	\dx8000800B //groundsprite
+	\dx8000800A //building sprite
+	\b0 \b0 \b0 //xofs yofs zofs
+	\b16 \b16 \b7 //xextent yextent zextent
+	\d3703 //smoke
+	\b0 \b0 \b81 //xofs yofs zofs
+	\b16 \b7 \b7 //xextent yextent zextent
+	\d3703 //smoke
+	\b3 \b0 \b81 //xofs yofs zofs
+	\b13 \b7 \b7 //xextent yextent zextent	
+-1 * 0 02 09 13 03 //-1 * 0 02 09 <set-id> 01 (extended format)
+	\dx8000800B //groundsprite
+	\dx8000800A //building sprite
+	\b0 \b0 \b0 //xofs yofs zofs
+	\b16 \b16 \b7 //xextent yextent zextent
+	\d3704 //smoke
+	\b0 \b0 \b81 //xofs yofs zofs
+	\b16 \b7 \b7 //xextent yextent zextent	
+	\d3704 //smoke
+	\b3 \b0 \b81 //xofs yofs zofs
+	\b13 \b7 \b7 //xextent yextent zextent	
+-1 * 0 02 09 14 03 //-1 * 0 02 09 <set-id> 01 (extended format)
+	\dx8000800B //groundsprite
+	\dx8000800A //building sprite
+	\b0 \b0 \b0 //xofs yofs zofs
+	\b16 \b16 \b7 //xextent yextent zextent
+	\d3705 //smoke
+	\b0 \b0 \b81 //xofs yofs zofs
+	\b16 \b7 \b7 //xextent yextent zextent	
+	\d3705 //smoke
+	\b3 \b0 \b81 //xofs yofs zofs
+	\b13 \b7 \b7 //xextent yextent zextent	
+-1 * 0 02 09 15 03 //-1 * 0 02 09 <set-id> 01 (extended format)
+	\dx8000800B //groundsprite
+	\dx8000800A //building sprite
+	\b0 \b0 \b0 //xofs yofs zofs
+	\b16 \b16 \b7 //xextent yextent zextent
+	\d3706 //smoke
+	\b0 \b0 \b81 //xofs yofs zofs
+	\b16 \b7 \b7 //xextent yextent zextent	
+	\d3706 //smoke
+	\b3 \b0 \b81 //xofs yofs zofs
+	\b13 \b7 \b7 //xextent yextent zextent	
+-1 * 0 02 09 16 03 //-1 * 0 02 09 <set-id> 01 (extended format)
+	\dx8000800B //groundsprite
+	\dx8000800A //building sprite
+	\b0 \b0 \b0 //xofs yofs zofs
+	\b16 \b16 \b7 //xextent yextent zextent
+	\d3707 //smoke
+	\b0 \b0 \b81 //xofs yofs zofs
+	\b16 \b7 \b7 //xextent yextent zextent	
+	\d3707 //smoke
+	\b3 \b0 \b81 //xofs yofs zofs
+	\b13 \b7 \b7 //xextent yextent zextent	
+-1 * 0 02 09 17 03 //-1 * 0 02 09 <set-id> 01 (extended format)
+	\dx8000800B //groundsprite
+	\dx8000800A //building sprite
+	\b0 \b0 \b0 //xofs yofs zofs
+	\b16 \b16 \b7 //xextent yextent zextent
+	\d3708 //smoke
+	\b0 \b0 \b81 //xofs yofs zofs
+	\b16 \b7 \b7 //xextent yextent zextent		
+	\d3708 //smoke
+	\b3 \b0 \b81 //xofs yofs zofs
+	\b13 \b7 \b7 //xextent yextent zextent		
 
 
 //-1 * 0 02 09 <set-id> <type> <variable> <varadjust> <nvar> (<set-id> <low-range> <high-range>){n} <default>
+
+-1 * 0 02 09 C0 //smoke animation
+	81 44 // current animation frame
+	00 FF //don't shift, don't mask
+	\b8 //number of ranges to check
+  	\wx10   \b0  \b0
+  	\wx11   \b1  \b1
+  	\wx12   \b2  \b2
+  	\wx13   \b3  \b3
+  	\wx14   \b4  \b4
+  	\wx15   \b5  \b5
+  	\wx16   \b6  \b6
+  	\wx17   \b7  \b7
+	\wx10 //00 01  00 01 <default>
 
 -1 * 0 02 09 B1 //layout
 	85 43 //check relative position (00yx[YYXX])
@@ -91,7 +190,7 @@
     \wx06   04 03  04 03
     \wx09   05 01  05 01
     \wx08   05 02  05 02
-	\wx0A //04 01  04 01 <default>
+	\wxC0 //04 01  04 01 <default>
 
 -1 * 0 02 09 B2 //layout
 	85 43 //check relative position (00yx[YYXX])
@@ -110,7 +209,7 @@
     \wx03   03 01  03 01
     \wx09   03 02  03 02
     \wx08   03 03  03 03
-	\wx0A //04 01  04 01 <default>
+	\wxC0 //04 01  04 01 <default>
 
 -1 * 0 02 09 B3 //layout
 	85 43 //check relative position (00yx[YYXX])
@@ -135,7 +234,7 @@
     \wx03   02 03  02 03
     \wx09   02 04  02 04
     \wx08   02 05  02 05
-	\wx0A //04 01  04 01 <default>                   
+	\wxC0 //04 01  04 01 <default>                   
 
 -1 * 0 02 09 B4 //layout
 	85 43 //check relative position (00yx[YYXX])
@@ -160,7 +259,7 @@
     \wx06   04 03  04 03
     \wx09   05 01  05 01
     \wx08   05 02  05 02
-	\wx0A //04 01  04 01 <default>      
+	\wxC0 //04 01  04 01 <default>      
 	
 -1 * 0 02 09 B5 //layout
 	85 43 //check relative position (00yx[YYXX])
@@ -186,7 +285,7 @@
     \wx06   05 02  05 02
     \wx09   06 00  06 00
     \wx08   06 01  06 01
-	\wx0A //04 01  04 01 <default>
+	\wxC0 //04 01  04 01 <default>
 
 	
 #undef THIS_GRAPHICS_FILE	
