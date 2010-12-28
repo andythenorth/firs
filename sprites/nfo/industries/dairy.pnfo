@@ -13,13 +13,15 @@
 //Industry tiles definition
 
 //Tile action 0
--1 * 0 00 09 \b6 01 TILE_DAIRY_1 // -1 * 0 00 09 <num-props> 01 <id>
+-1 * 0 00 09 \b8 01 TILE_DAIRY_1 // -1 * 0 00 09 <num-props> 01 <id>
 	08 TILE_NULL //subsitute type
 	0A CARGO_MANUFACTURINGSUPPLIES 08 //tile acceptance 1
 	0B CARGO_MILK 08 //tile acceptance 2
 	0C 00 00 //tile acceptance 3
 	0D 10 //land shape flags: 10 = only on flat land
 	0E 10 //callback flags
+  0F 07 01 //animation: number frames | loop (01) / not loop (00)
+	10 03 //animation speed
 
 // include tiles and layouts, ! Action 2 IDs here are deliberately repeated by the various tile includes
 #define THIS_GRAPHICS_FILE dairy.pcx
@@ -36,7 +38,7 @@
     \wxB5 \b5 \b5 //<set-id \w> <low-range> <high-range>
     \wxB6 \b6 \b6 //<set-id \w> <low-range> <high-range>
     \wxB7 \b7 \b7 //<set-id \w> <low-range> <high-range>
-	\wx00 //<default> (first tile layout available)
+	\wxB1 //<default> (first tile layout available)
 
 #define THIS_GRAPHICS_FILE dairy.pcx
 #include "dairy_tiles_layouts/dairy_tiles_layouts.pnfo"
@@ -52,7 +54,7 @@
     \wxB5 \b5 \b5 //<set-id \w> <low-range> <high-range>
     \wxB6 \b6 \b6 //<set-id \w> <low-range> <high-range>
     \wxB7 \b7 \b7 //<set-id \w> <low-range> <high-range>
-	\wx00 //<default> (first tile layout available)
+	\wxB1 //<default> (first tile layout available)
 
 #define THIS_GRAPHICS_FILE dairy_snow.pcx
 #include "dairy_tiles_layouts/dairy_tiles_layouts.pnfo"
@@ -68,7 +70,7 @@
     \wxB5 \b5 \b5 //<set-id \w> <low-range> <high-range>
     \wxB6 \b6 \b6 //<set-id \w> <low-range> <high-range>
     \wxB7 \b7 \b7 //<set-id \w> <low-range> <high-range>
-	\wx00 //<default> (first tile layout available)
+	\wxB1 //<default> (first tile layout available)
 
 
 // check terrain type and branch to different layout checks appropriately
