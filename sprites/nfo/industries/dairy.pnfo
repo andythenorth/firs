@@ -23,8 +23,7 @@
 
 // include tiles and layouts, ! Action 2 IDs here are deliberately repeated by the various tile includes
 #define THIS_GRAPHICS_FILE dairy.pcx
-#include "dairy_tiles_layouts/dairy_tiles_standard.pnfo"
-#include "dairy_tiles_layouts/dairy_layouts.pnfo"
+#include "dairy_tiles_layouts/dairy_tiles_layouts.pnfo"
 
 -1 * 0 02 09 A1
 	82 44 //check layout number (lowest byte of related industry)
@@ -40,8 +39,7 @@
 	\wx00 //<default> (first tile layout available)
 
 #define THIS_GRAPHICS_FILE dairy.pcx
-#include "dairy_tiles_layouts/dairy_tiles_standard.pnfo"
-#include "dairy_tiles_layouts/dairy_layouts.pnfo"
+#include "dairy_tiles_layouts/dairy_tiles_layouts.pnfo"
 
 -1 * 0 02 09 A2
 	82 44 //check layout number (lowest byte of related industry)
@@ -57,8 +55,7 @@
 	\wx00 //<default> (first tile layout available)
 
 #define THIS_GRAPHICS_FILE dairy_snow.pcx
-#include "dairy_tiles_layouts/dairy_tiles_standard.pnfo"
-#include "dairy_tiles_layouts/dairy_layouts.pnfo"
+#include "dairy_tiles_layouts/dairy_tiles_layouts.pnfo"
 
 -1 * 0 02 09 A3
 	82 44 //check layout number (lowest byte of related industry)
