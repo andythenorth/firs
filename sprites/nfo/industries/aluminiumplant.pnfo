@@ -13,13 +13,15 @@
 //Industry tiles definition
 
 //Tile action 0
--1 * 0 00 09 \b6 01 TILE_ALUMINIUMPLANT_1 // -1 * 0 00 09 <num-props> 01 <id>
+-1 * 0 00 09 \b8 01 TILE_ALUMINIUMPLANT_1 // -1 * 0 00 09 <num-props> 01 <id>
 	08 TILE_NULL //subsitute type
 	0A CARGO_BAUXITE 08 //tile acceptance 1
 	0B CARGO_CHEMICALS 08 //tile acceptance 2
 	0C CARGO_SCRAPMETAL 08 //tile acceptance 3
 	0D 10 //land shape flags: 10 = only on flat land
 	0E 10 //callback flags
+  0F \b31 01 //animation: number frames | loop (01) / not loop (00)
+	10 02 //animation speed
 
 // include tiles and layouts, ! Action 2 IDs here are deliberately repeated by the various tile includes
 #define THIS_GRAPHICS_FILE aluminiumplant.pcx
@@ -30,7 +32,7 @@
 	00 FF //don't shift, don't mask
 	\b1 //number of ranges to check (number of layouts)
     \wxB0 \b1 \b1 //<set-id \w> <low-range> <high-range>
-	\wx00 //<default> (first tile layout available)
+	\wxB0 //<default> (first tile layout available)
 
 #define THIS_GRAPHICS_FILE aluminiumplant.pcx
 #include "aluminiumplant_tiles_layouts/aluminiumplant_tiles_layouts.pnfo"
@@ -40,7 +42,7 @@
 	00 FF //don't shift, don't mask
 	\b1 //number of ranges to check (number of layouts)
     \wxB0 \b1 \b1 //<set-id \w> <low-range> <high-range>
-	\wx00 //<default> (first tile layout available)
+	\wxB0 //<default> (first tile layout available)
 
 #define THIS_GRAPHICS_FILE aluminiumplant.pcx // !! awaiting snow sprites
 #include "aluminiumplant_tiles_layouts/aluminiumplant_tiles_layouts.pnfo"
@@ -50,7 +52,7 @@
 	00 FF //don't shift, don't mask
 	\b1 //number of ranges to check (number of layouts)
     \wxB0 \b1 \b1 //<set-id \w> <low-range> <high-range>
-	\wx00 //<default> (first tile layout available)
+	\wxB0 //<default> (first tile layout available)
 
 
 // check terrain type and branch to different layout checks appropriately
