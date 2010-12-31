@@ -20,7 +20,7 @@
 	0C 00 00 //tile acceptance 3
 	0D 10 //land shape flags: 10 = only on flat land
 	0E 10 //callback flags
-  0F \b31 01 //animation: number frames | loop (01) / not loop (00)
+  0F \b47 01 //animation: number frames | loop (01) / not loop (00)
 	10 02 //animation speed
 
 // include tiles and layouts, ! Action 2 IDs here are deliberately repeated by the various tile includes
