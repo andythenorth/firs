@@ -154,7 +154,7 @@
 -1 * 0 02 0A C0 
 	85 0C //<type> <variable> word-access callback
 	00 FF FF //no shift, no mask
-	\b7 //number of ranges to check
+	\b8 //number of ranges to check
     A0 00   00 00   00 00 //production cb
 	  #ifdef THIS_HANDLE_CB28
     THIS_HANDLE_CB28   28 00   28 00 //can industry be built? ...relies on action 2 with correct ID defined in industry pnfo
