@@ -169,7 +169,7 @@
 	  D1 00   35 00   35 00 //monthly production change cb 35 
     F0 00   3A 00   3A 00 //return text-ID D0xx if cb 3A (industry window)
     //30 00   55 01   55 01 //handle fields cb 155    
-	A1 00 //default to production cb (necessary to fail unknown cbs)
+	A1 00 //default to production cb (needed so that we fail unknown cbs with unintended results)
 
 // industry action 3 attach varaction2 chain to industry
 -1 * 0 03 0A 01 THIS_INDUSTRY 00 \wxC0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>	
