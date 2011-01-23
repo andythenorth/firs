@@ -155,6 +155,7 @@
 	85 0C //<type> <variable> word-access callback
 	00 FF FF //no shift, no mask
 	\b7 //number of ranges to check
+    A0 00   00 00   00 00 //production cb
 	  #ifdef THIS_HANDLE_CB28
     THIS_HANDLE_CB28   28 00   28 00 //can industry be built? ...relies on action 2 with correct ID defined in industry pnfo
     #endif
@@ -168,7 +169,7 @@
 	  D1 00   35 00   35 00 //monthly production change cb 35 
     F0 00   3A 00   3A 00 //return text-ID D0xx if cb 3A (industry window)
     //30 00   55 01   55 01 //handle fields cb 155    
-	A0 00 //default
+	A1 00 //default to production cb (necessary to fail unknown cbs)
 
 // industry action 3 attach varaction2 chain to industry
 -1 * 0 03 0A 01 THIS_INDUSTRY 00 \wxC0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>	
