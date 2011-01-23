@@ -496,7 +496,8 @@
 -1 * 0 02 0A C0 //-1 * 0 0A <set-id>
 	85 0C //<type> <variable> word-access callback
 	00 FF FF //no shift, no mask
-	\b7 //number of ranges to check
+	\b8 //number of ranges to check
+    C1 00   00 00   00 00 //handle production cb chain
 	  #ifdef THIS_HANDLE_CB28
     THIS_HANDLE_CB28   28 00   28 00 //can industry be built? ...relies on action 2 with correct ID defined in industry pnfo
     #endif
@@ -509,7 +510,7 @@
 	  D0 00   29 00   29 00 //random production change cb 29
 	  DA 00   35 00   35 00 //monthly production change cb 35 
     F0 00   3A 00   3A 00 //cb 3A (industry window)
-	C1 00 //default
+	00 00 //default to production cb (needed so that we fail unknown cbs with unintended results)
 
 // industry action 3 attach varaction2 chain to industry
 -1 * 0 03 0A 01 THIS_INDUSTRY 00 \wxC0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>	
