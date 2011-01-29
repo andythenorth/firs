@@ -611,12 +611,24 @@
 			#endif
 
 
-			#ifdef TEXT_INFO_5T_PER_8T_SUGAR
+			#ifdef TEXT_INFO_5T_PER_8T_SUGARCANE
+//Sugar cane
+-1 * 0 07 83 01 \7! 02 \b1 //only in tropic
 -1 * 0 04 0A LANG_ID2 01 STR_INFO_SUGARREFINERY D0 UTF_STRING    TEXT_INFO_CARGO_PRODUCTION
                                                                  TEXT_INFO_3T_PER_8T_MS
-                                                                 TEXT_INFO_5T_PER_8T_SUGAR
+                                                                 TEXT_INFO_5T_PER_8T_SUGARCANE
                                                                  TEXT_INFO_INCREASE_BOTH_CARGOS 00
 			#endif
+			#ifdef TEXT_INFO_5T_PER_8T_SUGARBEET
+//Sugar beet
+-1 * 0 07 83 01 \7= 02 \b1 //not in tropic
+-1 * 0 04 0A LANG_ID2 01 STR_INFO_SUGARREFINERY D0 UTF_STRING    TEXT_INFO_CARGO_PRODUCTION
+                                                                 TEXT_INFO_3T_PER_8T_MS
+                                                                 TEXT_INFO_5T_PER_8T_SUGARBEET
+                                                                 TEXT_INFO_INCREASE_BOTH_CARGOS 00
+			#endif
+
+
 
 		//end TEXT_INFO_CARGO_PRODUCTION and TEXT_INFO_3T_PER_8T_MS and TEXT_INFO_INCREASE_BOTH_CARGOS
 		#endif
