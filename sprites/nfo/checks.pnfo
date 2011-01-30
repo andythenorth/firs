@@ -26,7 +26,6 @@
 //Check for game version
 
 #define LABEL_TERMINATE_VERSION FA
-#define LABEL_CONTINUE_VERSION FB
 
 //skip if ottd version returns FF FF FF FF
 -1 * 0 09 //Action 7
@@ -34,7 +33,7 @@
 	04 //varsize in bytes
 	\7= //condition: equal
 	FF FF FF FF //value: undefined
-	FE //skip to label FE
+	LABEL_TERMINATE_VERSION // terminate for this version
 
 //skip if ottd < 1.1.0 r21208
 -1 * 0 09 //Action 7
@@ -44,7 +43,7 @@
 	\dx110052D9 //value: ottd version 1.1.0 r21208 (52D9)
 	LABEL_TERMINATE_VERSION //skip next 1 to disable FIRS
 
--1 * 0 07 9A 01 \71 00 02
+-1 * 0 07 9A 01 \71 00 02 // Skip the termination sprites
 -1 * 0 10 LABEL_TERMINATE_VERSION
 // Disable FIRS if one of the above conditions was met
 -1 * 0 0B //Action 0B
@@ -52,7 +51,6 @@
 	7F //language: any
 	FF //message: custom
 	"\8EE00: FIRS requires OpenTTD 1.1.0 / trunk r21208 or higher. \90Consult FIRS ReadMe: \8E\0Dhttp://bundles.openttdcoop.org/firs/releases/readme.txt" 00 //message
--1 * 0 10 LABEL_CONTINUE_VERSION
 
 // Define our error messages here for further easy re-use:
 #define INCOMPATIBLE_GRF(x) -1 * 0 0B 03 7F FF "\8EE01: \90Incompatible set: \8E"x" \90Consult FIRS ReadMe: \8E\0Dhttp://bundles.openttdcoop.org/firs/releases/readme.txt" 00
