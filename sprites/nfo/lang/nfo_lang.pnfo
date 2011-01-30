@@ -1,6 +1,9 @@
 //Common NFO code used by all languages.
 #define UTF_STRING C3 9E
 
+#ifdef GENDER_TRANSLATION_TABLE
+-1 * 0 00 08 01 01 LANG_ID 13 GENDER_TRANSLATION_TABLE
+#endif
 //Cargo texts
 
 //Sugar cane
@@ -851,7 +854,3 @@
 
 //end strings with TEXT_INFO_8T_PER_8T
 #endif
-
-
-//undefine strings and lang-ids
-#include "remove_defines.pnfo"
