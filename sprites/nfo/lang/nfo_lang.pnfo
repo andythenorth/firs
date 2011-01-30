@@ -2,6 +2,8 @@
 #define UTF_STRING C3 9E
 
 #ifdef GENDER_TRANSLATION_TABLE
+// action 08, property 13 (NewGRF gender translations) are only available from r21208 onward)
+-1 * 0 09 A1 04	\7<	\dx110052D9 01 
 -1 * 0 00 08 01 01 LANG_ID 13 GENDER_TRANSLATION_TABLE
 #endif
 //Cargo texts
