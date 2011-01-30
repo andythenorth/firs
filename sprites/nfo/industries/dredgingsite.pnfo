@@ -21,7 +21,7 @@
 //Tile action 1
 -1 * 0 01 09 \b1 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
 // Format: spritenum pcxfile xpos ypos compression ysize xsize xrel yrel
--1 sprites/pcx/industries/dredgingsite.pcx 10 10 09  74 64 -44 -49
+-1 sprites/pcx/industries/dredgingsite.pcx 10 10 09  74 64 -31 -54
 
 
 // graphics Action 2 
@@ -66,10 +66,10 @@
 			00 02 18 // special water station tile, must be 2 adjacent in y direction 
 			00 04 FF // special clearance tile - nothing built
 			01 00 FF // special clearance tile - nothing built
-			01 03 FE TILE_DREDGINGSITE_1 00 //xoffs yoffs FE newtile(W)
 			01 04 FF // special clearance tile - nothing built
 			02 00 FF // special clearance tile - nothing built
 			02 02 FF // special clearance tile - nothing built
+			02 03 FE TILE_DREDGINGSITE_1 00 //xoffs yoffs FE newtile(W)
 			02 04 FF // special clearance tile - nothing built
 		00 80 //terminate layout definition
 	0B 01 //production flags 1h=extractive, 2h=organic, 4h=processing
