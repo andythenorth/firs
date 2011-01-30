@@ -29,20 +29,20 @@
 //Tile action 1
 -1 * 0 01 09 \b3 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
 // Format: spritenum pcxfile xpos ypos compression ysize xsize xrel yrel
--1 sprites/graphics/industries/forge.pcx   10 10 09  60 64 -31 -26
--1 sprites/graphics/industries/forge.pcx   80 10 09  60 64 -31 -26
 -1 sprites/graphics/industries/groundtiles.pcx       150 10 09  31 64 -31   0 //cobble
+-1 sprites/graphics/industries/forge.pcx   10 10 09  60 64 -31 -24
+-1 sprites/graphics/industries/forge.pcx   80 10 09  60 64 -25 -40
 
 
 //Tile action 2 
 -1 * 0 02 09 00 00 //-1 * 0 02 09 <set-id> 00
-	\dx80008002 //groundsprite
-	\dx80008000 //building sprite
+	\dx80008000 //groundsprite
+	\dx80008001 //building sprite
 	00 00 //xofs yofs
 	\b16 \b16 \b48 //xextent yextent zextent
 -1 * 0 02 09 01 00 //-1 * 0 02 09 <set-id> 00
-	\dx80008002 //groundsprite
-	\dx80008001 //building sprite
+	\dx80008000 //groundsprite
+	\dx80008002 //building sprite
 	00 00 //xofs yofs
 	\b16 \b16 \b48 //xextent yextent zextent
 
@@ -83,7 +83,7 @@
 		\d12 //size of layout definition +2 for termination
 		//layout:
 			00 00 FE TILE_FORGE_1 00
-			01 00 FE TILE_FORGE_1 00
+			00 01 FE TILE_FORGE_1 00
 		00 80 //terminate layout definition
 	0B 04 //production flags 1h=extractive, 2h=organic, 4h=processing
 	0C STR_IND_CLOSE_GENERIC //industry closure message
