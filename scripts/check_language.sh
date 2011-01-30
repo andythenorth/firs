@@ -7,7 +7,7 @@ cd `dirname $0`
 #Try to find a language that matches the parameter (02, spa, any, etc)
 if [ -n "$1" ]
 then
-	translation_file="`find ../sprites/nfo/lang/ -iname "*$1*.pnfo" | grep -v '.new.'`"
+	translation_file="`find ../sprites/nfo/lang/ -iname "*$1*.pnfo" | grep -v '.new.' | grep -v 'cleanup.pnfo'`"
 fi
 
 #If not found, use remove_defines.pnfo
