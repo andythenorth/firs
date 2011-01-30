@@ -1,14 +1,14 @@
 -1 * 15	 02 0A 10  //check distance to nearest industry of type n
     85 
-      67  THIS_INDUSTRY  00 \wxFFFF // var, param (industry ID), shift, mask 
+      67  THIS_COLOCATED_INDUSTRY  00 \wxFFFF // var, param (industry ID), shift, mask 
        01 //range
-         00 84  \w15 \w80 //build industry if distance is in range
+         00 84  \w16 \w60 //build industry if distance is in range
        04 80 //otherwise return string D0 04
 
 -1 * 0 02 0A 10 //check count of industry of type n, do some magic with map size cluster scaling parameter
     89 //
-      67  THIS_INDUSTRY  30 \dxFFFFFFFF // var, param (industry ID), shift, mask 
-      \2* 1A 20 \d03 // adjust result: (n * 3) / 4 (effectively multiplies number of clusters by 1.3)
+      67  THIS_COLOCATED_INDUSTRY  30 \dxFFFFFFFF // var, param (industry ID), shift, mask 
+      \2* 1A 20 THIS_CLUSTER_SCALE // adjust result: (n * industry_value) / 4 (effectively increases or reduces number of clusters by 4/industry_value)
       \2/ 1A 20 \d04 // ^
       \2/ 7F INDUSTRY_CLUSTER_PARAMETER 00 \dxFFFFFFFF // 
     \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
@@ -22,3 +22,6 @@
     \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
        10 00 \d00 \d00
      10 00 //default
+     
+#undef THIS_COLOCATED_INDUSTRY     
+#undef THIS_CLUSTER_SCALE
