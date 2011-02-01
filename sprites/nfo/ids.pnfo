@@ -21,7 +21,7 @@
 #define IND_PLASTICSPLANT         12
 #define IND_SUGARREFINERY         13
 #define IND_DREDGINGSITE          14
-//#define IND_VACANT                15
+#define IND_IRONWORKS             15
 #define IND_GLASSWORKS            16
 //#define IND_VACANT                17
 //#define IND_VACANT                18
@@ -118,7 +118,7 @@
 #define TILE_FISHINGHARBOUR_2              C4
 #define TILE_BAUXITEMINE_1                 C5
 #define TILE_DREDGINGSITE_1                C6
-//#define TILE_VACANT                        C7
+#define TILE_IRONWORKS_1                   C7
 #define TILE_WINDFARM_1                    C8
 //#define TILE_VACANT                        C9
 //#define TILE_VACANT                        CA
@@ -212,13 +212,13 @@
 
 //Definition of text IDs for industries
 #define STR_IND_ARABLEFARM            70 DC
-#define STR_IND_QUARRY               71 DC
+#define STR_IND_QUARRY                71 DC
 #define STR_IND_BUILDERSYARD          72 DC
 #define STR_IND_BREWERY               73 DC
 #define STR_IND_CEMENTPLANT           74 DC
 #define STR_IND_BRICKWORKS            75 DC
 #define STR_IND_BIOREFINERY           76 DC
-//#define STR_IND_VACANT              77 DC
+#define STR_IND_IRONWORKS             77 DC
 #define STR_IND_FERTILISERPLANT       78 DC
 #define STR_IND_PLASTICSPLANT         79 DC
 #define STR_IND_GLASSWORKS            7A DC
