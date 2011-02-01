@@ -1,15 +1,15 @@
 //FORGE
 // Defines for use in industry template
 #define THIS_INDUSTRY                 IND_FORGE
-#define THIS_NUM_INPUT_CARGOS         \d02
+#define THIS_NUM_INPUT_CARGOS         \d01
 #define THIS_NUM_OUTPUT_CARGOS        \d02
-#define THIS_PROD_RATIO_CARGO_IN_1    \d02
-#define THIS_PROD_RATIO_CARGO_IN_2    \d02
+#define THIS_PROD_RATIO_CARGO_IN_1    \d06
+#define THIS_PROD_RATIO_CARGO_IN_2    \d01
 #define THIS_PROD_RATIO_CARGO_IN_3    \d01
 #define THIS_STR_INFO_CB3A            STR_INFO_FORGE
 #define THIS_STR_INFO_CB38            STR_INFO_GENERIC
 #define THIS_INTRO_DATE               \d0
-#define THIS_END_DATE                 \d1960-01-01
+#define THIS_END_DATE                 \d1950-01-01
 #define THIS_HANDLE_CB28              10 00
 
 //Industry tiles definition
@@ -17,8 +17,8 @@
 //Tile action 0
 -1 * 0 00 09 \b6 01 TILE_FORGE_1 // -1 * 0 00 09 <num-props> 01 <id>
 	08 TILE_NULL //subsitute type
-	0A CARGO_WOOD 08 //tile acceptance 1
-	0B CARGO_IRONORE 08 //tile acceptance 2
+	0A CARGO_STEEL 08 //tile acceptance 1
+	0B 00 00 //tile acceptance 2
 	0C 00 00 //tile acceptance 3
 	0D 10 //land shape flags: 10 = only on flat land
 	0E 10 //callback flags
@@ -29,9 +29,9 @@
 //Tile action 1
 -1 * 0 01 09 \b3 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
 // Format: spritenum pcxfile xpos ypos compression ysize xsize xrel yrel
--1 sprites/graphics/industries/groundtiles.pcx       150 10 09  31 64 -31   0 //cobble
--1 sprites/graphics/industries/forge.pcx   10 10 09  80 64 -31 -49
--1 sprites/graphics/industries/forge.pcx   80 10 09  80 64 -31 -49
+-1 sprites/graphics/industries/groundtiles.pcx  150 10  09  31 64  -31   0 //cobble
+-1 sprites/graphics/industries/forge.pcx         10 10  09  80 64  -31 -49
+-1 sprites/graphics/industries/forge.pcx         80 10  09  80 64  -31 -49
 
 
 //Tile action 2 
@@ -93,7 +93,7 @@
 	1F STR_IND_FORGE //industry name
 	24 STR_STA_FORGE //default text for nearby station
 	10 CARGO_ENGINEERINGSUPPLIES CARGO_FARMSUPPLIES //production cargo types (word; fill unused with FFh)
-	11 CARGO_IRONORE CARGO_WOOD FF FF //acceptance cargo types (dword; fill unused with FFh)
+	11 CARGO_STEEL FF FF FF //acceptance cargo types (dword; fill unused with FFh)
 	12 00 //production multiplier cargo 1
 	13 00 //production multiplier cargo 2
 	1C \w0 \w0 //input cargo 1 multiplier (dword M1 M2; output_typen = X*Mn/256)
@@ -117,16 +117,7 @@
 // handle cb 28 industry location - included on a per-industry basis to allow industries to use various different schemes 
 #include "../../../templates/cb28_secondary_generic.pnfo"     
 
-#define THIS_CONFLICTING_INDUSTRY IND_FOREST
-#include "../../../templates/cb28_space_neighbours_in_chain.pnfo"
-#undef THIS_CONFLICTING_INDUSTRY
-
-#define THIS_CONFLICTING_INDUSTRY IND_IRONOREMINE
-#include "../../../templates/cb28_space_neighbours_in_chain.pnfo"
-#undef THIS_CONFLICTING_INDUSTRY
-
 #include "../../../templates/cb28_allow_player_build.pnfo"     
-
 
 #include "../../../templates/template_secondary_action23_A.pnfo"
 
