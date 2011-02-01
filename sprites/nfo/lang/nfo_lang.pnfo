@@ -778,8 +778,22 @@
         #endif
       #endif
     #endif
-	
+
 	//end TEXT_INFO_CARGO_PRODUCTION and TEXT_INFO_INCREASE_BOTH_CARGOS
+	#endif
+
+	//start TEXT_INFO_CARGO_PRODUCTION and TEXT_INFO_INCREASE_TO_3T_BOTH_CARGOS
+	#ifdef TEXT_INFO_INCREASE_TO_3T_BOTH_CARGOS
+    #ifdef TEXT_INFO_1T_PER_8T_WOOD
+      #ifdef TEXT_INFO_2T_PER_8T_IRON_ORE
+  -1 * 0 04 0A LANG_ID2 01 STR_INFO_IRONWORKS D0 UTF_STRING        TEXT_INFO_CARGO_PRODUCTION
+                                                                   TEXT_INFO_1T_PER_8T_WOOD 
+                                                                   TEXT_INFO_2T_PER_8T_IRON_ORE
+                                                                   TEXT_INFO_INCREASE_TO_3T_BOTH_CARGOS 00
+      #endif
+    #endif
+	
+	//end TEXT_INFO_CARGO_PRODUCTION and TEXT_INFO_SMALL_INCREASE_BOTH_CARGOS
 	#endif
 	
 	//only TEXT_INFO_CARGO_PRODUCTION below
