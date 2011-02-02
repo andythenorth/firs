@@ -8,7 +8,7 @@
 
 //Redefinition of original TTD industry
 //Iron Ore Mine
--1 * 0 00 0A \b10 01 IND_IRONOREMINE //-1 * 0 00 0A <num-props> 01 <id>
+-1 * 0 00 0A \b12 01 IND_IRONOREMINE //-1 * 0 00 0A <num-props> 01 <id>
 	08 12 //substitute industry type
 	09 12 //industry type override
 	11 CARGO_ENGINEERINGSUPPLIES FF FF FF //acceptance cargo types (dword; fill unused with FFh)
@@ -16,6 +16,8 @@
 	16 FF FF FF //conflicting industry types (3*byte; ID+80h; FF to disable)
 	17 \b7 //probability in random game
 	18 \b3 //probability during gameplay
+	20 FF FF FF BF //prospecting success chance (dword; FFFFFFFFh=100%)
+	0F \b232 //fund cost multiplier (byte)
 	19 CLR_IRONOREMINE //map colour (byte; using indexes from dos palette)
 	21 3A //callback flags 
 	22 05  //callback flags
