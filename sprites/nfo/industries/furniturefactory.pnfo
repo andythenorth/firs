@@ -22,6 +22,7 @@
 	0E 10 //callback flags
 
 // include tiles and layouts, ! Action 2 IDs here are deliberately repeated by the various tile includes
+#define THIS_GRAPHICS_FILE furniturefactory.pcx
 #include "furniturefactory_tiles_layouts/furniturefactory_tiles_standard.pnfo"
 #include "furniturefactory_tiles_layouts/furniturefactory_layouts.pnfo"
 
@@ -36,6 +37,7 @@
     \wxB5 \b5 \b5 //<set-id \w> <low-range> <high-range>
 	\wx00 //<default> (first tile layout available)
 
+#define THIS_GRAPHICS_FILE furniturefactory.pcx
 #include "furniturefactory_tiles_layouts/furniturefactory_tiles_standard.pnfo"
 #include "furniturefactory_tiles_layouts/furniturefactory_layouts.pnfo"
 
@@ -50,7 +52,8 @@
     \wxB5 \b5 \b5 //<set-id \w> <low-range> <high-range>
 	\wx00 //<default> (first tile layout available)
 
-#include "furniturefactory_tiles_layouts/furniturefactory_tiles_snow.pnfo"
+#define THIS_GRAPHICS_FILE furniturefactory_snow.pcx
+#include "furniturefactory_tiles_layouts/furniturefactory_tiles_standard.pnfo"
 #include "furniturefactory_tiles_layouts/furniturefactory_layouts.pnfo"
 
 -1 * 0 02 09 A3
