@@ -295,7 +295,7 @@
 -1 * 0 02 09 B5 //layout
 	85 43 //check relative position (00yx[YYXX])
 	00 FF FF //don't shift, don't mask
-	\b20 //number of ranges to check (number of tiles) [range: XX YY  XX YY]
+	\b19 //number of ranges to check (number of tiles) [range: XX YY  XX YY]
     \wx00   00 00  00 00
     \wx00   00 01  00 01
     \wx01   01 00  01 00
@@ -311,7 +311,6 @@
     \wx03   04 00  04 00
     \wx03   04 01  04 01
     \wx03   04 02  04 02
-    \wx0A   05 00  05 00
     \wx07   05 01  05 01
     \wx06   05 02  05 02
     \wx09   06 00  06 00
