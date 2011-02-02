@@ -796,12 +796,12 @@
 	//end TEXT_INFO_CARGO_PRODUCTION and TEXT_INFO_SMALL_INCREASE_BOTH_CARGOS
 	#endif
 	
-	//only TEXT_INFO_CARGO_PRODUCTION below
-	
+	//start TEXT_INFO_CARGO_PRODUCTION and TEXT_INFO_5T_PER_8T
+
 	#ifdef TEXT_INFO_FORGE
-		#ifdef TEXT_INFO_6T_PER_8T
+		#ifdef TEXT_INFO_5T_PER_8T
 -1 * 0 04 0A LANG_ID2 01 STR_INFO_FORGE D0 UTF_STRING            TEXT_INFO_FORGE
-                                                                 TEXT_INFO_6T_PER_8T 00                                                                
+                                                                 TEXT_INFO_5T_PER_8T 00                                                                
 		#endif
 	#endif
 
