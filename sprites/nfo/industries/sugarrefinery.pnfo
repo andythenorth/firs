@@ -22,7 +22,7 @@
 	0E 10 //callback flags
 
 //Tile action 1
--1 * 0 01 09 \b8 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
+-1 * 0 01 09 \b5 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
 // Format: spritenum pcxfile xpos ypos compression ysize xsize xrel yrel
 //asphalt
 -1 sprites/graphics/industries/groundtiles.pcx   80 10 09  31 64  -31   0
@@ -34,12 +34,6 @@
 -1 sprites/graphics/industries/sugarrefinery.pcx 150 10 09  88 64 -31 -56
 //large silo cluster
 -1 sprites/graphics/industries/sugarrefinery.pcx 220 10 09  88 64 -31 -58
-//large building part 1
--1 sprites/graphics/industries/sugarrefinery.pcx 290 10 09  130 64 -31 -103
-//large building part 2
--1 sprites/graphics/industries/sugarrefinery.pcx 360 10 09  130 64 -31 -103
-//large building part 3
--1 sprites/graphics/industries/sugarrefinery.pcx 430 10 09  130 64 -31 -102
 
 
 //Tile action 2 
@@ -73,27 +67,9 @@
 	\dx80008004 //building sprite
 	00 00 //xofs yofs
 	\b16 \b16 \b48 //xextent yextent zextent
-//large building part 1
--1 * 0 02 09 05 00 //-1 * 0 02 09 <set-id> 00
-	\dx80008000 //groundsprite
-	\dx80008005 //building sprite
-	00 00 //xofs yofs
-	\b16 \b16 \b48 //xextent yextent zextent
-//large building part 2
--1 * 0 02 09 06 00 //-1 * 0 02 09 <set-id> 00
-	\dx80008000 //groundsprite
-	\dx80008006 //building sprite
-	00 00 //xofs yofs
-	\b16 \b16 \b48 //xextent yextent zextent
-//large building part 3
--1 * 0 02 09 07 00 //-1 * 0 02 09 <set-id> 00
-	\dx80008000 //groundsprite
-	\dx80008007 //building sprite
-	00 00 //xofs yofs
-	\b16 \b16 \b48 //xextent yextent zextent
 
 
--1 * 0 02 09 B1 //layout 1
+-1 * 0 02 09 B1 //layout
 	85 43 //check relative position (00yx[YYXX])
 	00 FF FF //don't shift, don't mask
 	\b6 //number of ranges to check (number of tiles) [range: XX YY  XX YY]
@@ -105,7 +81,7 @@
     \wx01   02 01  02 01
 	\wx00 //00 01  00 01 <default>
 
--1 * 0 02 09 B2 //layout 1
+-1 * 0 02 09 B2 //layout
 	85 43 //check relative position (00yx[YYXX])
 	00 FF FF //don't shift, don't mask
 	\b6 //number of ranges to check (number of tiles) [range: XX YY  XX YY]
@@ -117,28 +93,13 @@
     \wx01   01 02  01 02
 	\wx00 //00 01  00 01 <default>
 
--1 * 0 02 09 B3 //layout 1
-	85 43 //check relative position (00yx[YYXX])
-	00 FF FF //don't shift, don't mask
-	\b8 //number of ranges to check (number of tiles) [range: XX YY  XX YY]
-    \wx05   00 00  00 00
-    \wx06   00 01  00 01
-    \wx07   00 02  00 02
-    \wx04   01 00  01 00
-    \wx03   01 01  01 01
-    \wx02   01 02  01 02
-    \wx04   02 00  02 00
-    \wx01   02 02  02 02
-	\wx00 //00 01  00 01 <default>
-
 
 -1 * 0 02 09 A0 
 	82 44 //check layout number (lowest byte of related industry)
 	00 FF //don't shift, don't mask
-	\b3 //number of ranges to check (number of layouts)
+	\b2 //number of ranges to check (number of layouts)
     \wxB1 \b1 \b1 //<set-id \w> <low-range> <high-range>
     \wxB2 \b2 \b2 //<set-id \w> <low-range> <high-range>
-    \wxB3 \b3 \b3 //<set-id \w> <low-range> <high-range>
 	\wx00 //<default> (first tile layout available)
 
 
@@ -157,8 +118,8 @@
 //Action 0
 -1 * 0 00 0A \b27 01 IND_SUGARREFINERY //-1 * 0 00 0A <num-props> 01 <id>
 	08 IND_NULL //reuse original industry with this here ID
-	0A 03 //number of industry layouts
-		\d106 //sum(size of layout definition +2 for termination)
+	0A 02 //number of industry layouts
+		\d64 //sum(size of layout definition +2 for termination)
 		//layout:
 			00 00 FE TILE_SUGARREFINERY_1 00 //xoffs yoffs FE newtile(W)
 			00 01 FE TILE_SUGARREFINERY_1 00
@@ -174,16 +135,6 @@
 			01 00 FE TILE_SUGARREFINERY_1 00
 			01 01 FE TILE_SUGARREFINERY_1 00
 			01 02 FE TILE_SUGARREFINERY_1 00
-		00 80 //terminate layout definition
-		//layout:
-			00 00 FE TILE_SUGARREFINERY_1 00 //xoffs yoffs FE newtile(W)
-			00 01 FE TILE_SUGARREFINERY_1 00
-			00 02 FE TILE_SUGARREFINERY_1 00
-			01 00 FE TILE_SUGARREFINERY_1 00
-			01 01 FE TILE_SUGARREFINERY_1 00
-			01 02 FE TILE_SUGARREFINERY_1 00
-			02 00 FE TILE_SUGARREFINERY_1 00
-			02 02 FE TILE_SUGARREFINERY_1 00
 		00 80 //terminate layout definition
 	0B 04 //production flags 1h=extractive, 2h=organic, 4h=processing
 	0C STR_IND_CLOSE_GENERIC //industry closure message
