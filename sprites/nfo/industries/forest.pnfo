@@ -134,7 +134,7 @@
 //Industry definition
 
 //Action 0
--1 * 0 00 0A \b17 01 IND_FOREST //-1 * 0 00 0A <num-props> 01 <id>
+-1 * 0 00 0A \b19 01 IND_FOREST //-1 * 0 00 0A <num-props> 01 <id>
 	08 IND_NULL //substitute industry type
 	0A 03 //number of industry layouts
 		\d206 //sum(size of layout definition +2 for termination)
@@ -196,6 +196,8 @@
 	16 FF FF FF //conflicting industry types (3*byte; ID+80h; FF to disable)
 	17 \b8 //probability in random game
 	18 \b3 //probability during gameplay
+	20 FF FF FF BF //prospecting success chance (dword; FFFFFFFFh=100%)
+	0F \b95 //fund cost multiplier (byte)
 	19 CLR_FOREST //map colour (byte; using indexes from dos palette)
 	21 3A //callback flags 
 	22 09  //callback flags
