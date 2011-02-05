@@ -12,7 +12,7 @@
 // clerestory shed
 -1 sprites/graphics/industries/THIS_GRAPHICS_FILE 150 10 09  70 64 -31 -39
 // iron pigs (unfinished)
--1 sprites/graphics/industries/THIS_GRAPHICS_FILE 150 10 09  70 64 -31 -20
+-1 sprites/graphics/industries/THIS_GRAPHICS_FILE 220 10 09  70 64 -31 -39
 
 
 //Tile action 2 
@@ -241,11 +241,13 @@
 -1 * 0 02 09 B1 //layout 1
 	85 43 //check relative position (00yx[YYXX])
 	00 FF FF //don't shift, don't mask
-	\b5 //number of ranges to check (number of tiles) [range: XX YY  XX YY]
+	\b7 //number of ranges to check (number of tiles) [range: XX YY  XX YY]
     \wx02   00 00  00 00
     \wxC0   00 01  00 01
+    \wx03   00 02  00 02
     \wx02   01 00  01 00
     \wxC0   01 01  01 01
+    \wx03   01 02  01 02
     \wx01   02 00  02 00
 	\wx00 //(multiple) <default>
 
