@@ -2,6 +2,68 @@
 FIRS Industry Replacement Set Changelog
 =======================================
 
+
+-----------
+0.6 Release
+-----------
+
+
+*What's new in 0.6?*
+
+Over 150 changes since FIRS 0.5.5
+
+*New Industries*
+- Dredging Site
+- Smithy Forge
+- Iron Works 
+
+*Removed Industries*
+- Forge
+
+*New Features*
+- Fund / prospecting costs set for all industries
+- Production level reduced at Fishing Grounds to better match fishing boat capacity
+- Many industries try to locate a minimum distance from industries that supply / accept their cargo
+- Improved appearance of Textile Mill
+- Builders Yard / Petrol Pump - industry window no longer indicates closure in n months (they didn't close anyway)
+- Smoke (animated) for many industries
+- Rebalanced cargo payment rates for better gameplay
+- Game will try and locate Fishing Harbours and Fishing Grounds near each other
+- Graphics for Smithy Forge (Yatta / DanMacK)
+- Remove large brick building from Sugar Refinery for better appearance
+- Furniture Factory graphics now feature lumber and crates 
+- Cement plant has animation for rotating kiln (not very good, needs improving)
+- Brewery uses company colour for flag
+
+*Fixes*
+- Secondary industries were unexpectedly closing even when supplied with cargo (mistake with industry registers)  
+- Deliveries of Engineering Supplies / Farm Supplies now reported correctly in industry windows  
+- Mixed Farm now creates fields when built
+- Boring minor error with Petrol Pump ground sprite  
+- Minor errors with Biorefinery tiles
+- Flashing red pixel in Lumber Yard
+- Boring minor error with Dairy ground sprite
+- Changed callback handling to be more explicit in production code (removes one known error now, prevents future errors)
+- Update attribution of graphics 
+
+*Translations*
+- Some translations update
+- German language now uses genders
+
+*New / Changed Cargos*
+- Cargo classes changed for Wool from Piece to Piece + Covered (to match ECS spec) 
+- Cargo classes changed for Goods from Piece + Express to Express (to match default TTD)
+
+*Additional Compatibility checks*
+- Experts Hard Industries NewGRF will be reported as incompatible
+- Citybuilder NewGRFS will be reported as incompatible
+- FIRS 0.6 will report requirement for OTTD 1.1.x or r21208 or later 
+
+--------------
+0.5.x Releases
+--------------
+
+
 *0.5.5*  Changes the following:
 - Fixed mistake where secondary industries with two output cargos would produce even with no input cargo
 - Fixed mistake with production ratio registers which broke production at many industries
@@ -27,9 +89,6 @@ FIRS Industry Replacement Set Changelog
 
 *0.5.0*  First release of FIRS 0.5.
 
------------
-0.5 Release
------------
 
 *Important*
 The grfID has changed in FIRS 0.5.  It is *not* savegame compatible with any previous release of FIRS.
@@ -48,7 +107,7 @@ Over 120 changes since FIRS 0.4
 - Building Materials
 - Plant Fibres (replaces Cotton and available in all climates)
 - Stone (formerly Gravel)
-- removed Water cargo.  Tropic towns in Desert require Goods instead.
+- Removed Water cargo.  Tropic towns in Desert require Goods instead.
 
 *Removed Industries*
 - Water Plant and Water Tower
@@ -61,7 +120,7 @@ Over 120 changes since FIRS 0.4
 *New Features*
 - Sand Pit is now Quarry, also produces Stone
 - Significantly improved appearance of Quarry (formerly Sand Pit) and Clay Pit
-- primary industries show when maximum production of output cargos is reached (experimental)
+- Primary industries show when maximum production of output cargos is reached (experimental)
 - Cement Plant now produces Building Materials cargo instead of Goods
 - Paper Mill accepts additional cargos - Clay, Chemicals
 - Blacksmith renamed to Forge
@@ -78,9 +137,9 @@ Over 120 changes since FIRS 0.4
 - Lumber Yard produces additional cargo - Building Materials
 - General Store renamed to Store
 - Fishing Grounds production lower to better match vehicles
-- improved minimap colours for various industries
-- bug fixed with Lumber Yard production ratios 
-- various industry window texts fixed
+- Improved minimap colours for various industries
+- Bug fixed with Lumber Yard production ratios 
+- Various industry window texts fixed
 
 *Translations*
 - Most translations updated
