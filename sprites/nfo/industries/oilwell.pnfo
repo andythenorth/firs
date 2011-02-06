@@ -143,7 +143,7 @@
 	20 FF FF FF BF //prospecting success chance (dword; FFFFFFFFh=100%)
 	0F \b230 //fund cost multiplier (byte)
 	19 CLR_OILWELL //map colour (byte; using indexes from dos palette)
-	21 BD //callback flags 
+	21 BB //callback flags 
 	22 05  //callback flags	
 	24 STR_STA_WELLS //default text for nearby station
 //To show cargo waiting to be processed at industry, ensure prop 21 is set to use production callback
