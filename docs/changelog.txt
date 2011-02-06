@@ -7,6 +7,7 @@ FIRS Industry Replacement Set Changelog
 0.6 Release
 -----------
 
+FIRS 0.6 is *not* savegame compatible with any previous release of FIRS.
 
 *What's new in 0.6?*
 
@@ -20,11 +21,17 @@ Over 150 changes since FIRS 0.5.5
 *Removed Industries*
 - Forge
 
+*New / Changed Cargos*
+- Alcohol cargo added (cargo label: BEER) - produced by Brewery, Sugar Refinery (Tropic only) - accepted by Store
+- Cargo classes changed for Wool from Piece to Piece + Covered (to match ECS spec) 
+- Cargo classes changed for Goods from Piece + Express to Express (to match default TTD)
+
 *New Features*
 - Fund / prospecting costs set for all industries
 - Production level reduced at Fishing Grounds to better match fishing boat capacity
 - Many industries try to locate a minimum distance from industries that supply / accept their cargo
 - Improved appearance of Textile Mill
+- New graphics for Lime Kiln
 - Builders Yard / Petrol Pump - industry window no longer indicates closure in n months (they didn't close anyway)
 - Smoke (animated) for many industries
 - Rebalanced cargo payment rates for better gameplay
@@ -34,6 +41,7 @@ Over 150 changes since FIRS 0.5.5
 - Furniture Factory graphics now feature lumber and crates 
 - Cement plant has animation for rotating kiln (not very good, needs improving)
 - Brewery uses company colour for flag
+- Cargo colours improved (used in cargo payment rate graph, and in industry chain view)
 
 *Fixes*
 - Secondary industries were unexpectedly closing even when supplied with cargo (mistake with industry registers)  
@@ -50,14 +58,15 @@ Over 150 changes since FIRS 0.5.5
 - Some translations update
 - German language now uses genders
 
-*New / Changed Cargos*
-- Cargo classes changed for Wool from Piece to Piece + Covered (to match ECS spec) 
-- Cargo classes changed for Goods from Piece + Express to Express (to match default TTD)
+
+*Documentation*
+- Readme now explains what causes primary and secondary industry to close (if closure is enabled)
 
 *Additional Compatibility checks*
 - Experts Hard Industries NewGRF will be reported as incompatible
 - Citybuilder NewGRFS will be reported as incompatible
 - FIRS 0.6 will report requirement for OTTD 1.1.x or r21208 or later 
+- Set FIRS 0.6 as minimum compatible version to prevent breaking savegames using older FIRS  
 
 --------------
 0.5.x Releases
