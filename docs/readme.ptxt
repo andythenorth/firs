@@ -165,6 +165,16 @@ If the industry is producing a high level of output, there is a greater chance
 of a production decrease.
 
 
+* Industry Closure *
+
+Industries won't close unless closure is enabled by parameter.
+
+If primary industry closure is enabled, there is a chance of closure each 
+month if industry production falls to a low level.
+
+If secondary industry closure is enabled, there is a chance of closure each
+month if no cargo has been delivered in the previous 18 months.
+
 
 ---------------------
 4 Errors and warnings
