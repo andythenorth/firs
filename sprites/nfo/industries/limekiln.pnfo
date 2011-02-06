@@ -24,7 +24,7 @@
 //Industry tile sprites; one sprite for each tile; eventually more for each tile to include  construction stages
 
 //Tile action 1
--1 * 0 01 09 \b3 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
+-1 * 0 01 09 \b6 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
 // Format: spritenum pcxfile xpos ypos compression ysize xsize xrel yrel
 // ground tile
 -1 sprites/graphics/industries/groundtiles.pcx       80 10 09  31 64 -31   0
@@ -32,6 +32,12 @@
 -1 sprites/graphics/industries/limekiln.pcx   10 10 09  110 64 -31 -70
 // charging conveyor building
 -1 sprites/graphics/industries/limekiln.pcx   80 10 09  110 64 -31 -70
+// office
+-1 sprites/graphics/industries/limekiln.pcx   150 10 09  64 64 -31 -31
+// silo
+-1 sprites/graphics/industries/limekiln.pcx   220 10 09  92 64 -31 -60
+// loader
+-1 sprites/graphics/industries/limekiln.pcx   290 10 09  64 64 -31 -31
 
 
 //Tile action 2 
@@ -53,15 +59,36 @@
 	\dx80008000 //greeble sprite
 	00 00 //xofs yofs
 	\b16 \b16 \b48 //xextent yextent zextent
+// office	
+-1 * 0 02 09 03 00 //-1 * 0 02 09 <set-id> 00
+	\dx80008000 //groundsprite
+	\dx80008003 //building sprite
+	00 00 //xofs yofs
+	\b16 \b16 \b48 //xextent yextent zextent
+// silo	
+-1 * 0 02 09 04 00 //-1 * 0 02 09 <set-id> 00
+	\dx80008000 //groundsprite
+	\dx80008004 //building sprite
+	00 00 //xofs yofs
+	\b16 \b16 \b48 //xextent yextent zextent
+// loader	
+-1 * 0 02 09 05 00 //-1 * 0 02 09 <set-id> 00
+	\dx80008000 //groundsprite
+	\dx80008005 //building sprite
+	00 00 //xofs yofs
+	\b16 \b16 \b48 //xextent yextent zextent
 
 
 -1 * 0 02 09 B1 //layout 1
 	85 43 //check relative position (00yx[YYXX])
 	00 FF FF //don't shift, don't mask
-	\b3 //number of ranges to check (number of tiles) [range: XX YY  XX YY]
+	\b6 //number of ranges to check (number of tiles) [range: XX YY  XX YY]
     \wx01   00 00  00 00
     \wx00   00 01  00 01
     \wx00   00 02  00 02
+    \wx04   01 00  01 00
+    \wx05   01 01  01 01
+    \wx03   01 02  01 02
 	\wx02 //00 01  00 01 <default>
 
 
