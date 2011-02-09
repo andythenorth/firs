@@ -3,39 +3,39 @@
 //Let's start with an Action 1, defining 32 new sprites; feature 0B cargos; 32 sets and 1 entry per set
 -1 * 0 01 0B \b32 01
 // Format: spritenum pcxfile xpos ypos compression ysize xsize xrel yrel
--1 sprites/graphics/other/cargoicons.pcx 10 10 09 10 10 0 0
--1 sprites/graphics/other/cargoicons.pcx 30 10 09 10 10 0 0
--1 sprites/graphics/other/cargoicons.pcx 50 10 09 10 10 0 0
--1 sprites/graphics/other/cargoicons.pcx 70 10 09 10 10 0 0
--1 sprites/graphics/other/cargoicons.pcx 90 10 09 10 10 0 0
--1 sprites/graphics/other/cargoicons.pcx 110 10 09 10 10 0 0
--1 sprites/graphics/other/cargoicons.pcx 130 10 09 10 10 0 0
--1 sprites/graphics/other/cargoicons.pcx 150 10 09 10 10 0 0
--1 sprites/graphics/other/cargoicons.pcx 170 10 09 10 10 0 0
--1 sprites/graphics/other/cargoicons.pcx 190 10 09 10 10 0 0
--1 sprites/graphics/other/cargoicons.pcx 210 10 09 10 10 0 0
--1 sprites/graphics/other/cargoicons.pcx 230 10 09 10 10 0 0
--1 sprites/graphics/other/cargoicons.pcx 250 10 09 10 10 0 0
--1 sprites/graphics/other/cargoicons.pcx 270 10 09 10 10 0 0
--1 sprites/graphics/other/cargoicons.pcx 290 10 09 10 10 0 0
--1 sprites/graphics/other/cargoicons.pcx 310 10 09 10 10 0 0
+-1 sprites/graphics/other/cargoicons.png 10 10 09 10 10 0 0
+-1 sprites/graphics/other/cargoicons.png 30 10 09 10 10 0 0
+-1 sprites/graphics/other/cargoicons.png 50 10 09 10 10 0 0
+-1 sprites/graphics/other/cargoicons.png 70 10 09 10 10 0 0
+-1 sprites/graphics/other/cargoicons.png 90 10 09 10 10 0 0
+-1 sprites/graphics/other/cargoicons.png 110 10 09 10 10 0 0
+-1 sprites/graphics/other/cargoicons.png 130 10 09 10 10 0 0
+-1 sprites/graphics/other/cargoicons.png 150 10 09 10 10 0 0
+-1 sprites/graphics/other/cargoicons.png 170 10 09 10 10 0 0
+-1 sprites/graphics/other/cargoicons.png 190 10 09 10 10 0 0
+-1 sprites/graphics/other/cargoicons.png 210 10 09 10 10 0 0
+-1 sprites/graphics/other/cargoicons.png 230 10 09 10 10 0 0
+-1 sprites/graphics/other/cargoicons.png 250 10 09 10 10 0 0
+-1 sprites/graphics/other/cargoicons.png 270 10 09 10 10 0 0
+-1 sprites/graphics/other/cargoicons.png 290 10 09 10 10 0 0
+-1 sprites/graphics/other/cargoicons.png 310 10 09 10 10 0 0
 // Format: spritenum pcxfile xpos ypos compression ysize xsize xrel yrel
--1 sprites/graphics/other/cargoicons.pcx 10 30 09 10 10 0 0
--1 sprites/graphics/other/cargoicons.pcx 30 30 09 10 10 0 0
--1 sprites/graphics/other/cargoicons.pcx 50 30 09 10 10 0 0
--1 sprites/graphics/other/cargoicons.pcx 70 30 09 10 10 0 0
--1 sprites/graphics/other/cargoicons.pcx 90 30 09 10 10 0 0
--1 sprites/graphics/other/cargoicons.pcx 110 30 09 10 10 0 0
--1 sprites/graphics/other/cargoicons.pcx 130 30 09 10 10 0 0
--1 sprites/graphics/other/cargoicons.pcx 150 30 09 10 10 0 0
--1 sprites/graphics/other/cargoicons.pcx 170 30 09 10 10 0 0
--1 sprites/graphics/other/cargoicons.pcx 190 30 09 10 10 0 0
--1 sprites/graphics/other/cargoicons.pcx 210 30 09 10 10 0 0
--1 sprites/graphics/other/cargoicons.pcx 230 30 09 10 10 0 0
--1 sprites/graphics/other/cargoicons.pcx 250 30 09 10 10 0 0
--1 sprites/graphics/other/cargoicons.pcx 270 30 09 10 10 0 0
--1 sprites/graphics/other/cargoicons.pcx 290 30 09 10 10 0 0
--1 sprites/graphics/other/cargoicons.pcx 310 30 09 10 10 0 0
+-1 sprites/graphics/other/cargoicons.png 10 30 09 10 10 0 0
+-1 sprites/graphics/other/cargoicons.png 30 30 09 10 10 0 0
+-1 sprites/graphics/other/cargoicons.png 50 30 09 10 10 0 0
+-1 sprites/graphics/other/cargoicons.png 70 30 09 10 10 0 0
+-1 sprites/graphics/other/cargoicons.png 90 30 09 10 10 0 0
+-1 sprites/graphics/other/cargoicons.png 110 30 09 10 10 0 0
+-1 sprites/graphics/other/cargoicons.png 130 30 09 10 10 0 0
+-1 sprites/graphics/other/cargoicons.png 150 30 09 10 10 0 0
+-1 sprites/graphics/other/cargoicons.png 170 30 09 10 10 0 0
+-1 sprites/graphics/other/cargoicons.png 190 30 09 10 10 0 0
+-1 sprites/graphics/other/cargoicons.png 210 30 09 10 10 0 0
+-1 sprites/graphics/other/cargoicons.png 230 30 09 10 10 0 0
+-1 sprites/graphics/other/cargoicons.png 250 30 09 10 10 0 0
+-1 sprites/graphics/other/cargoicons.png 270 30 09 10 10 0 0
+-1 sprites/graphics/other/cargoicons.png 290 30 09 10 10 0 0
+-1 sprites/graphics/other/cargoicons.png 310 30 09 10 10 0 0
 
 
 //And now the Action 2, again 32 of those; feature 0B cargos; setID; literal 01 and 00; 32 sets
