@@ -8,127 +8,106 @@
 
 //Bauxite
 #define TEXT_CRG_ALCOHOL_CTYPE                           "Alcohol" 
-#define TEXT_CRG_ALCOHOL_1UNIT                           "\87 of alcohol" 
-#define TEXT_CRG_ALCOHOL_CARGOAMOUNT                     "foo"
+#define TEXT_CRG_ALCOHOL_CARGOAMOUNT                     "\87 of alcohol"
 #define TEXT_CRG_ALCOHOL_TABBR                           "\0EAL" 
 
 //Bauxite
 #define TEXT_CRG_BAUXITE_CTYPE                           "Bauxite" 
-#define TEXT_CRG_BAUXITE_1UNIT                           "\UE07C ton of bauxite" 
 #define TEXT_CRG_BAUXITE_CARGOAMOUNT                     "\UE07C tons of bauxite" 
 #define TEXT_CRG_BAUXITE_TABBR                           "\0EBX" 
 
 //Building Materials
 #define TEXT_CRG_BUILDINGMATERIALS_CTYPE                 "Building materials" 
-#define TEXT_CRG_BUILDINGMATERIALS_1UNIT                 "\UE07C ton of building materials" 
 #define TEXT_CRG_BUILDINGMATERIALS_CARGOAMOUNT           "\UE07C tons of building materials" 
 #define TEXT_CRG_BUILDINGMATERIALS_TABBR                 "\0EBM" 
 
 //Chemicals
 #define TEXT_CRG_CHEMICALS_CTYPE                         "Chemicals" 
-#define TEXT_CRG_CHEMICALS_1UNIT                         "\87 of chemicals" 
-#define TEXT_CRG_CHEMICALS_CARGOAMOUNT                   "foo"
+#define TEXT_CRG_CHEMICALS_CARGOAMOUNT                   "\87 of chemicals"
 #define TEXT_CRG_CHEMICALS_TABBR                         "\0ECH" 
 
 //Clay
 #define TEXT_CRG_CLAY_CTYPE                              "Clay" 
-#define TEXT_CRG_CLAY_1UNIT                              "\UE07C ton of clay" 
 #define TEXT_CRG_CLAY_CARGOAMOUNT                        "\UE07C tons of clay" 
 #define TEXT_CRG_CLAY_TABBR                              "\0ECL" 
 
 //Engineering supplies
 #define TEXT_CRG_ENGINEERINGSUPPLIES_CTYPE               "Engineering Supplies" 
-#define TEXT_CRG_ENGINEERINGSUPPLIES_1UNIT               "\UE07C crate of engineering supplies" 
 #define TEXT_CRG_ENGINEERINGSUPPLIES_CARGOAMOUNT         "\UE07C crates of engineering supplies" 
 #define TEXT_CRG_ENGINEERINGSUPPLIES_TABBR               "\0EES" 
 
 //Farm supplies
 #define TEXT_CRG_FARMSUPPLIES_CTYPE                      "Farm Supplies" 
-#define TEXT_CRG_FARMSUPPLIES_1UNIT                      "\UE07C crate of farm supplies" 
 #define TEXT_CRG_FARMSUPPLIES_CARGOAMOUNT                "\UE07C crates of farm supplies" 
 #define TEXT_CRG_FARMSUPPLIES_TABBR                      "\0EFS" 
 
 //Fish 
 #define TEXT_CRG_FISH_CTYPE                              "Fish" 
-#define TEXT_CRG_FISH_1UNIT                              "\UE07C ton of fish" 
 #define TEXT_CRG_FISH_CARGOAMOUNT                        "\UE07C tons of fish" 
 #define TEXT_CRG_FISH_TABBR                              "\0EFI" 
 
 //Fruit and Vegetables
 #define TEXT_CRG_FRUITSANDVEGETABLES_CTYPE               "Fruit and Vegetables" 
 #define TEXT_CRG_FRUITSANDVEGETABLES_1TYPE               "Fruit and Vegetable" 
-#define TEXT_CRG_FRUITSANDVEGETABLES_1UNIT               "\UE07C ton of fruit and vegetables" 
 #define TEXT_CRG_FRUITSANDVEGETABLES_CARGOAMOUNT         "\UE07C tons of fruit and vegetables" 
 
 //Fuel oil
 #define TEXT_CRG_FUELOIL_CTYPE                           "Petrol" 
-#define TEXT_CRG_FUELOIL_1UNIT                           "\87 of petrol" 
-#define TEXT_CRG_FUELOIL_CARGOAMOUNT                     "foo" 
+#define TEXT_CRG_FUELOIL_CARGOAMOUNT                     "\87 of petrol"  
 #define TEXT_CRG_FUELOIL_TABBR                           "\0EPT" 
 
 //Gravel
 #define TEXT_CRG_GRAVEL_CTYPE                            "Stone" 
-#define TEXT_CRG_GRAVEL_1UNIT                            "\UE07C ton of stone" 
 #define TEXT_CRG_GRAVEL_CARGOAMOUNT                      "\UE07C tons of stone" 
 #define TEXT_CRG_GRAVEL_TABBR                            "\0EST" 
 
 //Lumber
 #define TEXT_CRG_LUMBER_CTYPE                            "Lumber" 
-#define TEXT_CRG_LUMBER_1UNIT                            "\UE07C ton of lumber" 
 #define TEXT_CRG_LUMBER_CARGOAMOUNT                      "\UE07C tons of lumber" 
 #define TEXT_CRG_LUMBER_TABBR                            "\0ELU" 
 
 //Manufacturing Supplies - formerly Packaging
 #define TEXT_CRG_MANUFACTURINGSUPPLIES_CTYPE             "Manufacturing Supplies" 
-#define TEXT_CRG_MANUFACTURINGSUPPLIES_1UNIT             "\UE07C crate of manufacturing supplies" 
 #define TEXT_CRG_MANUFACTURINGSUPPLIES_CARGOAMOUNT       "\UE07C crates of manufacturing supplies" 
 #define TEXT_CRG_MANUFACTURINGSUPPLIES_TABBR             "\0EMS" 
 
 //Metal
 #define TEXT_CRG_METAL_CTYPE                             "Metal" 
-#define TEXT_CRG_METAL_1UNIT                             "\UE07C ton of metal" 
 #define TEXT_CRG_METAL_CARGOAMOUNT                       "\UE07C tons of metal" 
 #define TEXT_CRG_METAL_TABBR                             "\0EML" 
 
 //Milk
 #define TEXT_CRG_MILK_CTYPE                              "Milk" 
-#define TEXT_CRG_MILK_1UNIT                              "\87 of milk" 
-#define TEXT_CRG_MILK_CARGOAMOUNT                        "\UE07C tons of metal" 
+#define TEXT_CRG_MILK_CARGOAMOUNT                        "\UE07C tons of milk" 
 #define TEXT_CRG_MILK_TABBR                              "\0EMK" 
 
 //Plant Fibres
 #define TEXT_CRG_PLANTFIBRES_CTYPE                       "Plant Fibres" 
-#define TEXT_CRG_PLANTFIBRES_1UNIT                       "\UE07C ton of plant fibres" 
 #define TEXT_CRG_PLANTFIBRES_CARGOAMOUNT                 "\UE07C tons of plant fibres" 
 #define TEXT_CRG_PLANTFIBRES_TABBR                       "\0EPF" 
 
 //Sand
 #define TEXT_CRG_SAND_CTYPE                              "Sand" 
-#define TEXT_CRG_SAND_1UNIT                              "\UE07C ton of sand" 
 #define TEXT_CRG_SAND_CARGOAMOUNT                        "\UE07C tons of sand" 
 #define TEXT_CRG_SAND_TABBR                              "\0ESA" 
 
 //Scrap Metal
 #define TEXT_CRG_SCRAPMETAL_CTYPE                        "Scrap Metal" 
-#define TEXT_CRG_SCRAPMETAL_1UNIT                        "\UE07C ton of scrap metal" 
 #define TEXT_CRG_SCRAPMETAL_CARGOAMOUNT                  "\UE07C tons of scrap metal" 
 #define TEXT_CRG_SCRAPMETAL_TABBR                        "\0ESM" 
 
 //Sugar beet
 #define TEXT_CRG_SUGARBEET_CTYPE                         "Sugar Beet" 
-#define TEXT_CRG_SUGARBEET_1UNIT                         "\UE07C ton of sugar beet" 
 #define TEXT_CRG_SUGARBEET_CARGOAMOUNT                   "\UE07C tons of sugar beet" 
 #define TEXT_CRG_SUGARBEET_TABBR                         "\0ESB" 
 
 //Sugar cane
 #define TEXT_CRG_SUGARCANE_CTYPE                         "Sugar Cane" 
-#define TEXT_CRG_SUGARCANE_1UNIT                         "\UE07C ton of sugar cane" 
 #define TEXT_CRG_SUGARCANE_CARGOAMOUNT                   "\UE07C tons of sugar cane" 
 #define TEXT_CRG_SUGARCANE_TABBR                         "\0ESC" 
 
 //Wool
 #define TEXT_CRG_WOOL_CTYPE                              "Wool" 
-#define TEXT_CRG_WOOL_1UNIT                              "\UE07C ton of wool" 
 #define TEXT_CRG_WOOL_CARGOAMOUNT                        "\UE07C tons of wool" 
 #define TEXT_CRG_WOOL_TABBR                              "\0EWL" 
 
