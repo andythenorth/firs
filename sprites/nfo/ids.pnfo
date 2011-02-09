@@ -276,6 +276,15 @@
 #define STR_IND_NEW_PLANTED       2E 48
 
 
+//Definition of cargo units using default TTD strings (automatically translated)
+#define STR_CRG_UNIT_PASSENGERS   4F 00 //default text for 'passengers'
+#define STR_CRG_UNIT_TONNES       50 00 //default text for 'tonnes' (also tons, kgs etc).
+#define STR_CRG_UNIT_BAGS         51 00 //default text for 'bags'
+#define STR_CRG_UNIT_LITRES       52 00 //default text for 'litres'
+#define STR_CRG_UNIT_ITEMS        53 00 //default text for 'items'
+#define STR_CRG_UNIT_CRATES       54 00 //default text for 'crates'
+
+
 //Definition of text IDs for station name suffixes
 #define STR_STA_FARM              E0 DC
 //#define                         E1 DC
@@ -352,189 +361,190 @@
 //Definition of text IDs for cargos
 // _CTYPE: name of cargo type
 // _1TYPE: name of one unit of cargo type
-// _1UNIT: suffix of one unit of cargo
-// _MUNIT: suffix of multiple units of cargo
+// _CARGOUNITS: for displaying the units of a cargo (prop 1B)
+// _CARGOAMOUNT: for displaying the amount of cargo (prop 1C)
 // _TABBR: cargo type abreviation
 #define STR_CRG_SUGARCANE_CTYPE             01 DC
 #define STR_CRG_SUGARCANE_1TYPE             01 DC //same as above
-#define STR_CRG_SUGARCANE_1UNIT             02 DC
-#define STR_CRG_SUGARCANE_MUNIT             03 DC
+#define STR_CRG_SUGARCANE_CARGOUNITS        STR_CRG_UNIT_TONNES
+#define STR_CRG_SUGARCANE_CARGOAMOUNT       03 DC
 #define STR_CRG_SUGARCANE_TABBR             04 DC
 
-#define STR_CRG_BUILDINGMATERIALS_CTYPE     05 DC
-#define STR_CRG_BUILDINGMATERIALS_1TYPE     05 DC //same as above
-#define STR_CRG_BUILDINGMATERIALS_1UNIT     06 DC
-#define STR_CRG_BUILDINGMATERIALS_MUNIT     07 DC
-#define STR_CRG_BUILDINGMATERIALS_TABBR     08 DC
+#define STR_CRG_BUILDINGMATERIALS_CTYPE             05 DC
+#define STR_CRG_BUILDINGMATERIALS_1TYPE             05 DC //same as above
+#define STR_CRG_BUILDINGMATERIALS_CARGOUNITS        STR_CRG_UNIT_TONNES
+#define STR_CRG_BUILDINGMATERIALS_CARGOAMOUNT       07 DC
+#define STR_CRG_BUILDINGMATERIALS_TABBR             08 DC
 
-#define STR_CRG_FRUITSANDVEGETABLES_CTYPE   09 DC
-#define STR_CRG_FRUITSANDVEGETABLES_1TYPE   0A DC
-#define STR_CRG_FRUITSANDVEGETABLES_1UNIT   0B DC
-#define STR_CRG_FRUITSANDVEGETABLES_MUNIT   0C DC
-#define STR_CRG_FRUITSANDVEGETABLES_TABBR   9C 00 //using TTD string
+
+#define STR_CRG_FRUITSANDVEGETABLES_CTYPE           09 DC
+#define STR_CRG_FRUITSANDVEGETABLES_1TYPE           0A DC
+#define STR_CRG_FRUITSANDVEGETABLES_CARGOUNITS      STR_CRG_UNIT_TONNES
+#define STR_CRG_FRUITSANDVEGETABLES_CARGOAMOUNT     0C DC
+#define STR_CRG_FRUITSANDVEGETABLES_TABBR           9C 00 //using TTD string
 
 #define STR_CRG_FISH_CTYPE                  0D DC
 #define STR_CRG_FISH_1TYPE                  0D DC //same as above
-#define STR_CRG_FISH_1UNIT                  0E DC
-#define STR_CRG_FISH_MUNIT                  0F DC
+#define STR_CRG_FISH_CARGOUNITS             STR_CRG_UNIT_TONNES
+#define STR_CRG_FISH_CARGOAMOUNT            0F DC
 #define STR_CRG_FISH_TABBR                  10 DC
 
 #define STR_CRG_WOOL_CTYPE                  11 DC
 #define STR_CRG_WOOL_1TYPE                  11 DC //same as above
-#define STR_CRG_WOOL_1UNIT                  12 DC
-#define STR_CRG_WOOL_MUNIT                  13 DC
+#define STR_CRG_WOOL_CARGOUNITS             STR_CRG_UNIT_TONNES
+#define STR_CRG_WOOL_CARGOAMOUNT            13 DC
 #define STR_CRG_WOOL_TABBR                  14 DC
 
-#define STR_CRG_PLANTFIBRES_CTYPE                15 DC
-#define STR_CRG_PLANTFIBRES_1TYPE                15 DC //same as above
-#define STR_CRG_PLANTFIBRES_1UNIT                16 DC
-#define STR_CRG_PLANTFIBRES_MUNIT                17 DC
-#define STR_CRG_PLANTFIBRES_TABBR                18 DC
+#define STR_CRG_PLANTFIBRES_CTYPE           15 DC
+#define STR_CRG_PLANTFIBRES_1TYPE           15 DC //same as above
+#define STR_CRG_PLANTFIBRES_CARGOUNITS      STR_CRG_UNIT_TONNES
+#define STR_CRG_PLANTFIBRES_CARGOAMOUNT     17 DC
+#define STR_CRG_PLANTFIBRES_TABBR           18 DC
 
 #define STR_CRG_SAND_CTYPE                  19 DC
 #define STR_CRG_SAND_1TYPE                  19 DC //same as above
-#define STR_CRG_SAND_1UNIT                  1A DC
-#define STR_CRG_SAND_MUNIT                  1B DC
+#define STR_CRG_SAND_CARGOUNITS             STR_CRG_UNIT_TONNES
+#define STR_CRG_SAND_CARGOAMOUNT            1B DC
 #define STR_CRG_SAND_TABBR                  1C DC
 
 #define STR_CRG_GRAVEL_CTYPE                1D DC
 #define STR_CRG_GRAVEL_1TYPE                1D DC //same as above
-#define STR_CRG_GRAVEL_1UNIT                1E DC
-#define STR_CRG_GRAVEL_MUNIT                1F DC
+#define STR_CRG_GRAVEL_CARGOUNITS           STR_CRG_UNIT_TONNES
+#define STR_CRG_GRAVEL_CARGOAMOUNT          1F DC
 #define STR_CRG_GRAVEL_TABBR                21 DC
 
 #define STR_CRG_LUMBER_CTYPE                22 DC
 #define STR_CRG_LUMBER_1TYPE                22 DC //same as above
-#define STR_CRG_LUMBER_1UNIT                23 DC
-#define STR_CRG_LUMBER_MUNIT                24 DC
+#define STR_CRG_LUMBER_CARGOUNITS           STR_CRG_UNIT_TONNES
+#define STR_CRG_LUMBER_CARGOAMOUNT          24 DC
 #define STR_CRG_LUMBER_TABBR                25 DC
 
-#define STR_CRG_MANUFACTURINGSUPPLIES_CTYPE 26 DC
-#define STR_CRG_MANUFACTURINGSUPPLIES_1TYPE 26 DC //same as above
-#define STR_CRG_MANUFACTURINGSUPPLIES_1UNIT 27 DC
-#define STR_CRG_MANUFACTURINGSUPPLIES_MUNIT 28 DC
-#define STR_CRG_MANUFACTURINGSUPPLIES_TABBR 29 DC
+#define STR_CRG_MANUFACTURINGSUPPLIES_CTYPE         26 DC
+#define STR_CRG_MANUFACTURINGSUPPLIES_1TYPE         26 DC //same as above
+#define STR_CRG_MANUFACTURINGSUPPLIES_CARGOUNITS    STR_CRG_UNIT_CRATES
+#define STR_CRG_MANUFACTURINGSUPPLIES_CARGOAMOUNT   28 DC
+#define STR_CRG_MANUFACTURINGSUPPLIES_TABBR         29 DC
 
 #define STR_CRG_FARMSUPPLIES_CTYPE          2A DC
 #define STR_CRG_FARMSUPPLIES_1TYPE          2A DC //same as above
-#define STR_CRG_FARMSUPPLIES_1UNIT          2B DC
-#define STR_CRG_FARMSUPPLIES_MUNIT          2C DC
+#define STR_CRG_FARMSUPPLIES_CARGOUNITS     STR_CRG_UNIT_CRATES
+#define STR_CRG_FARMSUPPLIES_CARGOAMOUNT    2C DC
 #define STR_CRG_FARMSUPPLIES_TABBR          2D DC
 
 #define STR_CRG_CHEMICALS_CTYPE             2E DC
 #define STR_CRG_CHEMICALS_1TYPE             2E DC //same as above
-#define STR_CRG_CHEMICALS_1UNIT             2F DC
-#define STR_CRG_CHEMICALS_MUNIT             2F DC //same as above
+#define STR_CRG_CHEMICALS_CARGOUNITS        STR_CRG_UNIT_LITRES
+#define STR_CRG_CHEMICALS_CARGOAMOUNT       2F DC //same as above
 #define STR_CRG_CHEMICALS_TABBR             30 DC
 
-#define STR_CRG_ENGINEERINGSUPPLIES_CTYPE   31 DC
-#define STR_CRG_ENGINEERINGSUPPLIES_1TYPE   31 DC //same as above
-#define STR_CRG_ENGINEERINGSUPPLIES_1UNIT   32 DC
-#define STR_CRG_ENGINEERINGSUPPLIES_MUNIT   33 DC
-#define STR_CRG_ENGINEERINGSUPPLIES_TABBR   34 DC
+#define STR_CRG_ENGINEERINGSUPPLIES_CTYPE           31 DC
+#define STR_CRG_ENGINEERINGSUPPLIES_1TYPE           31 DC //same as above
+#define STR_CRG_ENGINEERINGSUPPLIES_CARGOUNITS      STR_CRG_UNIT_CRATES
+#define STR_CRG_ENGINEERINGSUPPLIES_CARGOAMOUNT     33 DC
+#define STR_CRG_ENGINEERINGSUPPLIES_TABBR           34 DC
 
 #define STR_CRG_FUELOIL_CTYPE               35 DC
 #define STR_CRG_FUELOIL_1TYPE               35 DC //same as above
-#define STR_CRG_FUELOIL_1UNIT               36 DC
-#define STR_CRG_FUELOIL_MUNIT               36 DC //same as above
+#define STR_CRG_FUELOIL_CARGOUNITS          STR_CRG_UNIT_LITRES
+#define STR_CRG_FUELOIL_CARGOAMOUNT         36 DC //same as above
 #define STR_CRG_FUELOIL_TABBR               37 DC
 
 #define STR_CRG_BAUXITE_CTYPE               38 DC
 #define STR_CRG_BAUXITE_1TYPE               38 DC //same as above
-#define STR_CRG_BAUXITE_1UNIT               39 DC
-#define STR_CRG_BAUXITE_MUNIT               3A DC
+#define STR_CRG_BAUXITE_CARGOUNITS          STR_CRG_UNIT_TONNES
+#define STR_CRG_BAUXITE_CARGOAMOUNT         3A DC
 #define STR_CRG_BAUXITE_TABBR               3B DC
 
 #define STR_CRG_STEEL_CTYPE                 3C DC //used for "Metal"
 #define STR_CRG_STEEL_1TYPE                 3C DC //use same as above
-#define STR_CRG_STEEL_1UNIT                 3D DC
-#define STR_CRG_STEEL_MUNIT                 3E DC
+#define STR_CRG_STEEL_CARGOUNITS            STR_CRG_UNIT_TONNES
+#define STR_CRG_STEEL_CARGOAMOUNT           3E DC
 #define STR_CRG_STEEL_TABBR                 3F DC
 
 #define STR_CRG_MILK_CTYPE                  43 DC
 #define STR_CRG_MILK_1TYPE                  43 DC //same as above
-#define STR_CRG_MILK_1UNIT                  44 DC
-#define STR_CRG_MILK_MUNIT                  44 DC //same as above
+#define STR_CRG_MILK_CARGOUNITS             STR_CRG_UNIT_LITRES
+#define STR_CRG_MILK_CARGOAMOUNT            44 DC //same as above
 #define STR_CRG_MILK_TABBR                  45 DC
 
 #define STR_CRG_SCRAPMETAL_CTYPE            46 DC
 #define STR_CRG_SCRAPMETAL_1TYPE            46 DC //same as above
-#define STR_CRG_SCRAPMETAL_1UNIT            47 DC
-#define STR_CRG_SCRAPMETAL_MUNIT            48 DC
+#define STR_CRG_SCRAPMETAL_CARGOUNITS       STR_CRG_UNIT_TONNES
+#define STR_CRG_SCRAPMETAL_CARGOAMOUNT      48 DC
 #define STR_CRG_SCRAPMETAL_TABBR            49 DC
 
 #define STR_CRG_CLAY_CTYPE                  4A DC
 #define STR_CRG_CLAY_1TYPE                  4A DC //same as above
-#define STR_CRG_CLAY_1UNIT                  4B DC
-#define STR_CRG_CLAY_MUNIT                  4C DC
+#define STR_CRG_CLAY_CARGOUNITS             STR_CRG_UNIT_TONNES
+#define STR_CRG_CLAY_CARGOAMOUNT            4C DC
 #define STR_CRG_CLAY_TABBR                  4D DC
 
-#define STR_CRG_ALCOHOL_CTYPE                  4E DC
-#define STR_CRG_ALCOHOL_1TYPE                  4E DC //same as above
-#define STR_CRG_ALCOHOL_1UNIT                  4F DC
-#define STR_CRG_ALCOHOL_MUNIT                  4F DC //same as above
-#define STR_CRG_ALCOHOL_TABBR                  50 DC
+#define STR_CRG_ALCOHOL_CTYPE               4E DC
+#define STR_CRG_ALCOHOL_1TYPE               4E DC //same as above
+#define STR_CRG_ALCOHOL_CARGOUNITS          STR_CRG_UNIT_LITRES
+#define STR_CRG_ALCOHOL_CARGOAMOUNT         4F DC //same as above
+#define STR_CRG_ALCOHOL_TABBR               50 DC
 
 //Cargo strings below are from original TTD: http://wiki.ttdpatch.net/tiki-index.php?page=TextIDs
 
 #define STR_CRG_PASSENGERS_CTYPE            0F 00
 #define STR_CRG_PASSENGERS_1TYPE            2F 00
-#define STR_CRG_PASSENGERS_1UNIT            4F 00
-#define STR_CRG_PASSENGERS_MUNIT            6F 00
+#define STR_CRG_PASSENGERS_CARGOUNITS       4F 00
+#define STR_CRG_PASSENGERS_CARGOAMOUNT      6F 00
 #define STR_CRG_PASSENGERS_TABBR            8F 00
 
 #define STR_CRG_COAL_CTYPE                  10 00
 #define STR_CRG_COAL_1TYPE                  30 00
-#define STR_CRG_COAL_1UNIT                  50 00
-#define STR_CRG_COAL_MUNIT                  70 00
+#define STR_CRG_COAL_CARGOUNITS             50 00
+#define STR_CRG_COAL_CARGOAMOUNT            70 00
 #define STR_CRG_COAL_TABBR                  90 00
 
 #define STR_CRG_MAIL_CTYPE                  11 00
 #define STR_CRG_MAIL_1TYPE                  31 00
-#define STR_CRG_MAIL_1UNIT                  51 00
-#define STR_CRG_MAIL_MUNIT                  71 00
+#define STR_CRG_MAIL_CARGOUNITS             51 00
+#define STR_CRG_MAIL_CARGOAMOUNT            71 00
 #define STR_CRG_MAIL_TABBR                  91 00
 
 #define STR_CRG_OIL_CTYPE                   12 00
 #define STR_CRG_OIL_1TYPE                   32 00
-#define STR_CRG_OIL_1UNIT                   52 00
-#define STR_CRG_OIL_MUNIT                   72 00
+#define STR_CRG_OIL_CARGOUNITS              52 00
+#define STR_CRG_OIL_CARGOAMOUNT             72 00
 #define STR_CRG_OIL_TABBR                   92 00
 
 #define STR_CRG_LIVESTOCK_CTYPE             13 00
 #define STR_CRG_LIVESTOCK_1TYPE             33 00
-#define STR_CRG_LIVESTOCK_1UNIT             53 00
-#define STR_CRG_LIVESTOCK_MUNIT             73 00
+#define STR_CRG_LIVESTOCK_CARGOUNITS        53 00
+#define STR_CRG_LIVESTOCK_CARGOAMOUNT       73 00
 #define STR_CRG_LIVESTOCK_TABBR             93 00
 
 #define STR_CRG_GOODS_CTYPE                 14 00
 #define STR_CRG_GOODS_1TYPE                 34 00
-#define STR_CRG_GOODS_1UNIT                 54 00
-#define STR_CRG_GOODS_MUNIT                 74 00
+#define STR_CRG_GOODS_CARGOUNITS            54 00
+#define STR_CRG_GOODS_CARGOAMOUNT           74 00
 #define STR_CRG_GOODS_TABBR                 94 00
 
 #define STR_CRG_GRAIN_CTYPE                 15 00
 #define STR_CRG_GRAIN_1TYPE                 35 00
-#define STR_CRG_GRAIN_1UNIT                 55 00
-#define STR_CRG_GRAIN_MUNIT                 75 00
+#define STR_CRG_GRAIN_CARGOUNITS            55 00
+#define STR_CRG_GRAIN_CARGOAMOUNT           75 00
 #define STR_CRG_GRAIN_TABBR                 95 00
 
 #define STR_CRG_WOOD_CTYPE                  16 00
 #define STR_CRG_WOOD_1TYPE                  36 00
-#define STR_CRG_WOOD_1UNIT                  56 00
-#define STR_CRG_WOOD_MUNIT                  76 00
+#define STR_CRG_WOOD_CARGOUNITS             56 00
+#define STR_CRG_WOOD_CARGOAMOUNT            76 00
 #define STR_CRG_WOOD_TABBR                  96 00
 
 #define STR_CRG_IRONORE_CTYPE               17 00
 #define STR_CRG_IRONORE_1TYPE               37 00
-#define STR_CRG_IRONORE_1UNIT               57 00
-#define STR_CRG_IRONORE_MUNIT               77 00
+#define STR_CRG_IRONORE_CARGOUNITS          57 00
+#define STR_CRG_IRONORE_CARGOAMOUNT         77 00
 #define STR_CRG_IRONORE_TABBR               97 00
 
 #define STR_CRG_FOOD_CTYPE                  1E 00
 #define STR_CRG_FOOD_1TYPE                  3E 00
-#define STR_CRG_FOOD_1UNIT                  5E 00
-#define STR_CRG_FOOD_MUNIT                  7E 00
+#define STR_CRG_FOOD_CARGOUNITS             5E 00
+#define STR_CRG_FOOD_CARGOAMOUNT            7E 00
 #define STR_CRG_FOOD_TABBR                  9E 00
 
 
@@ -584,7 +594,9 @@
 
 #define TEMP_PARAMETER             \b60 // For temporary storage
 
- 
+// *********
+// CONSTANTS
+// *********
 
 // How many production cycles are allowed by some processing industries before cargo ratios are reset to 0
 #define NUM_PROD_CYCLES_INVENTORY_HELD_FOR     \d07

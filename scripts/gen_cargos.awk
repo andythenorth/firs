@@ -5,8 +5,8 @@ BEGIN {	FS = "," }
 	print "#define THIS_CARGO_BITMASK CARGO_"remove_white($(n_id))
 	print "#define THIS_CARGO_STR_CTYPE STR_CRG_"remove_white($(n_id))"_CTYPE"
 	print "#define THIS_CARGO_STR_1TYPE STR_CRG_"remove_white($(n_id))"_1TYPE"
-	print "#define THIS_CARGO_STR_1UNIT STR_CRG_"remove_white($(n_id))"_1UNIT"
-	print "#define THIS_CARGO_STR_MUNIT STR_CRG_"remove_white($(n_id))"_MUNIT"
+	print "#define THIS_CARGO_STR_CARGOUNITS STR_CRG_"remove_white($(n_id))"_CARGOUNITS"
+	print "#define THIS_CARGO_STR_CARGOAMOUNT STR_CRG_"remove_white($(n_id))"_CARGOAMOUNT"
 	print "#define THIS_CARGO_STR_TABBR STR_CRG_"remove_white($(n_id))"_TABBR"
 	print "#define THIS_CARGO_SPRITENO "$(n_spriteno)
 	print "#define THIS_CARGO_WEIGHT \\b"int($(n_weight))

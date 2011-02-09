@@ -4,8 +4,6 @@ THIS_CARGO_CLIMATE
 	08 THIS_CARGO_BITMASK              // Bitmask
 	09 THIS_CARGO_STR_CTYPE            // String CargoClass
 	0A THIS_CARGO_STR_1TYPE            // String for one type
-	0B THIS_CARGO_STR_1UNIT            // String for one unit (singular)
-	0C THIS_CARGO_STR_MUNIT            // String for several units (plural)
 	0D THIS_CARGO_STR_TABBR            // String for abbreviation
 	0E THIS_CARGO_SPRITENO             // Some not used sprite no
 	0F THIS_CARGO_WEIGHT               // weight of one unit
@@ -17,14 +15,14 @@ THIS_CARGO_CLIMATE
 	18 THIS_CARGO_SUBST_TOWNGROWTH     // substitutes this cargo type to stimulate town growth
 	19 THIS_CARGO_MULT_TOWNGROWTH      // multiplier for town growth
 	1A THIS_CARGO_CALLBACKFLAGS        // callback flags (OpenTTD: only 01=CB39)
+	1B THIS_CARGO_STR_CARGOUNITS       // String for units (singular / plural)
+	1C THIS_CARGO_STR_CARGOAMOUNT      // String for cargo amount (singular / plural)
 	
 #undef THIS_CARGO_NAME
 #undef THIS_CARGO_ID
 #undef THIS_CARGO_BITMASK
 #undef THIS_CARGO_STR_CTYPE
 #undef THIS_CARGO_STR_1TYPE
-#undef THIS_CARGO_STR_1UNIT
-#undef THIS_CARGO_STR_MUNIT
 #undef THIS_CARGO_STR_TABBR
 #undef THIS_CARGO_SPRITENO
 #undef THIS_CARGO_WEIGHT
@@ -36,3 +34,5 @@ THIS_CARGO_CLIMATE
 #undef THIS_CARGO_MULT_TOWNGROWTH
 #undef THIS_CARGO_CALLBACKFLAGS
 #undef THIS_CARGO_CLIMATE
+#undef THIS_CARGO_STR_CARGOUNITS
+#undef THIS_CARGO_STR_CARGOAMOUNT
