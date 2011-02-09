@@ -10,7 +10,7 @@
 -1 sprites/graphics/other/cargoicons.png 90 10 09 10 10 0 0
 -1 sprites/graphics/other/cargoicons.png 110 10 09 10 10 0 0
 -1 sprites/graphics/other/cargoicons.png 130 10 09 10 10 0 0
--1 sprites/graphics/other/cargoicons.png 150 10 09 10 10 0 0
+-1 sprites/graphics/other/cargoicons.png 150 10 09 10 10 0 0  // beer
 -1 sprites/graphics/other/cargoicons.png 170 10 09 10 10 0 0
 -1 sprites/graphics/other/cargoicons.png 190 10 09 10 10 0 0
 -1 sprites/graphics/other/cargoicons.png 210 10 09 10 10 0 0
@@ -21,7 +21,7 @@
 -1 sprites/graphics/other/cargoicons.png 310 10 09 10 10 0 0
 // Format: spritenum pcxfile xpos ypos compression ysize xsize xrel yrel
 -1 sprites/graphics/other/cargoicons.png 10 30 09 10 10 0 0
--1 sprites/graphics/other/cargoicons.png 30 30 09 10 10 0 0
+-1 sprites/graphics/other/cargoicons.png 30 30 09 10 10 0 0   // bdmt
 -1 sprites/graphics/other/cargoicons.png 50 30 09 10 10 0 0
 -1 sprites/graphics/other/cargoicons.png 70 30 09 10 10 0 0
 -1 sprites/graphics/other/cargoicons.png 90 30 09 10 10 0 0
@@ -29,13 +29,13 @@
 -1 sprites/graphics/other/cargoicons.png 130 30 09 10 10 0 0
 -1 sprites/graphics/other/cargoicons.png 150 30 09 10 10 0 0
 -1 sprites/graphics/other/cargoicons.png 170 30 09 10 10 0 0
--1 sprites/graphics/other/cargoicons.png 190 30 09 10 10 0 0
+-1 sprites/graphics/other/cargoicons.png 190 30 09 10 10 0 0  // clay
 -1 sprites/graphics/other/cargoicons.png 210 30 09 10 10 0 0
 -1 sprites/graphics/other/cargoicons.png 230 30 09 10 10 0 0
 -1 sprites/graphics/other/cargoicons.png 250 30 09 10 10 0 0
 -1 sprites/graphics/other/cargoicons.png 270 30 09 10 10 0 0
--1 sprites/graphics/other/cargoicons.png 290 30 09 10 10 0 0
--1 sprites/graphics/other/cargoicons.png 310 30 09 10 10 0 0
+-1 sprites/graphics/other/cargoicons.png 290 30 09 10 10 0 0  // rsgr (beet)
+-1 sprites/graphics/other/cargoicons.png 310 30 09 10 10 0 0  // rsgr (cane)
 
 
 //And now the Action 2, again 32 of those; feature 0B cargos; setID; literal 01 and 00; 32 sets
@@ -91,7 +91,7 @@
 //Grain
 -1 * 0 03 0B 01 CARGO_GRAIN 00 \w6
 //Sugar Cane
--1 * 0 03 0B 01 CARGO_SUGARCANE 00 \w7
+-1 * 0 03 0B 01 CARGO_ALCOHOL 00 \w7
 //Wood
 -1 * 0 03 0B 01 CARGO_WOOD 00 \w8
 //Iron ore
@@ -109,29 +109,37 @@
 //Fish
 -1 * 0 03 0B 01 CARGO_FISH 00 \w15
 
+//Sand
+-1 * 0 03 0B 01 CARGO_SAND 00 \w16
+//Water
+-1 * 0 03 0B 01 CARGO_BUILDINGMATERIALS 00 \w17
+//Scrap metal
+-1 * 0 03 0B 01 CARGO_SCRAPMETAL 00 \w18
 //Plant Fibres
 -1 * 0 03 0B 01 CARGO_PLANTFIBRES 00 \w19
 //Wool
 -1 * 0 03 0B 01 CARGO_WOOL 00 \w20
 //Gravel
 -1 * 0 03 0B 01 CARGO_GRAVEL 00 \w21
-//Water
-//-1 * 0 03 0B 01 CARGO_WATER 00 \w17
-//Sand
--1 * 0 03 0B 01 CARGO_SAND 00 \w16
 //Lumber
 -1 * 0 03 0B 01 CARGO_LUMBER 00 \w22
-//Bauxite
--1 * 0 03 0B 01 CARGO_BAUXITE 00 \w29
-//Scrap metal
--1 * 0 03 0B 01 CARGO_SCRAPMETAL 00 \w18
-//Fuel oil
--1 * 0 03 0B 01 CARGO_FUELOIL 00 \w28
-//Chemicals
--1 * 0 03 0B 01 CARGO_CHEMICALS 00 \w26
 //Manufacturing Supplies (formerly packaging)
 -1 * 0 03 0B 01 CARGO_MANUFACTURINGSUPPLIES 00 \w23
-//Engineering Supplies
--1 * 0 03 0B 01 CARGO_ENGINEERINGSUPPLIES 00 \w27
 //Farm Supplies
 -1 * 0 03 0B 01 CARGO_FARMSUPPLIES 00 \w24
+//Clay
+-1 * 0 03 0B 01 CARGO_CLAY 00 \w25
+//Chemicals
+-1 * 0 03 0B 01 CARGO_CHEMICALS 00 \w26
+//Engineering Supplies
+-1 * 0 03 0B 01 CARGO_ENGINEERINGSUPPLIES 00 \w27
+//Fuel oil
+-1 * 0 03 0B 01 CARGO_FUELOIL 00 \w28
+//Bauxite
+-1 * 0 03 0B 01 CARGO_BAUXITE 00 \w29
+//Sugar Beet
+-1 * 0 07 83 01 \7= 02 \b1 //not in tropic
+-1 * 0 03 0B 01 CARGO_SUGARCANE 00 \w30
+//Alcohol
+-1 * 0 07 83 01 \7! 02 \b1 //only in tropic
+-1 * 0 03 0B 01 CARGO_SUGARCANE 00 \w31
