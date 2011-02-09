@@ -284,6 +284,10 @@
 #define STR_CRG_UNIT_ITEMS        53 00 //default text for 'items'
 #define STR_CRG_UNIT_CRATES       54 00 //default text for 'crates'
 
+//Definition of string codes + spaces for formatting cargo units in strings
+//n.b. These are string control codes, not IDs
+#define STR_FORMAT_CARGO_TONNES   9A 0D " "
+#define STR_FORMAT_CARGO_LITRES   87 " "
 
 //Definition of text IDs for station name suffixes
 #define STR_STA_FARM              E0 DC
