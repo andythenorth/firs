@@ -283,7 +283,7 @@
 
 #define TEXT_PNAME_ECONOMY                               "Economy"
 #define TEXT_PDESC_ECONOMY                               "When finished, FIRS will feature a choice of economies. Cargos and industries vary in each economy. Cargo payment rates are also different in each economy. \0D\0D\89Currently only one economy is available :)"
-#define TEXT_PVALU0_ECONOMY                              "Test Economy"
+#define TEXT_PVALUE0_ECONOMY                             "Test Economy"
 
 #define TEXT_PNAME_PRIMARYDECREASE                       "Allow primary production decrease"
 #define TEXT_PDESC_PRIMARYDECREASE                       "By default, FIRS primary industry production will never decrease.\0D\0DIf primary production decrease is turned on, there is a chance that production will decrease if no supplies are delivered in a month. If production level is high, chance of decrease will be greater."
@@ -296,6 +296,10 @@
 
 #define TEXT_PNAME_PREVENTCONSTRUCTION                   "Prevent industry construction (unfinished)"
 #define TEXT_PDESC_PREVENTCONSTRUCTION                   "\89This does nothing yet. \98When finished it will provide a 'Sandbox mode' for use with scenarios."
+
+#define TEXT_PNAME_MAXCOASTDISTANCE                      "Maximum coastal distance of marine industries in tiles"
+#define TEXT_PDESC_MAXCOASTDISTANCE                      "\89Maximum distance of fishing grounds and dredging sites from the coast in tiles."
+#define TEXT_PVALUE0_MAXCOASTDISTANCE                    "No limit"
 
 #define TEXT_PNAME_DEBUG                                 "Show debug texts"
 #define TEXT_PDESC_DEBUG                                 "For developers only"

@@ -560,6 +560,7 @@
 #define SCHEME_PARAMETER     \b00      // Choice of the payment scheme (see acceptable values below)
 #define PRODUCTION_PARAMETER \b01      // Parameter which controls production changes
 #define CLOSURE_PARAMETER    \b02      // Parameter which controls industry openings and closure
+#define PARAM_COAST_DISTANCE \b04      // Distance of dredging site and fishing grounds from the shore
 #define DEBUG_PARAMETER      \b03      // Used to turn on debug options (bit map) 
 
 // The economy parameter values and their scheme names:
@@ -595,6 +596,9 @@
 #define PARAM_CLOSE_PRIMARY        \b13 // Set to one, if primaries may close
 #define PARAM_CLOSE_SECONDARY      \b14 // Set to one, if secondaries may close
 #define PARAM_OPEN_NONE            \b15 // Set to one, if no industries may open
+
+#define MAX_COAST_DISTANCE         \b16 // Max. distance from the coast for water industries
+#define MIN_COAST_DISTANCE         \b17 // Min. distance from the coast for water industries (unused)
 
 #define TEMP_PARAMETER             \b60 // For temporary storage
 

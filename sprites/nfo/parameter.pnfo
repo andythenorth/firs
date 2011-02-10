@@ -53,6 +53,14 @@
 #define SKIP1_NO_CLOSURE_SECONDARY -1 * 0 07 PARAM_CLOSE_SECONDARY \b01 \D= \b01 \b01      // Skip next sprite, if no primaries shall be closed
 #define SKIP1_NO_OPENINGS          -1 * 0 07 PARAM_OPEN_NONE \b01 \D= \b01 \b01            // Skip next sprite, if no primaries shall be closed
 
+// ********************************************
+// MAX DISTANCE FROM COAST FOR WATER INDUSTRIES
+// ********************************************
+-1 * 0 0D MAX_COAST_DISTANCE \D= PARAM_COAST_DISTANCE FF \d00
+-1 * 0 07 PARAM_COAST_DISTANCE \b1 \7! \b0 \b1
+-1 * 0 0D MAX_COAST_DISTANCE \D= FF FF \d255
+
+
 // enable warning about invalid parameter (Action D)
 //@@WARNING ENABLE 123
 

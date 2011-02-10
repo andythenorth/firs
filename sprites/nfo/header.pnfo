@@ -13,7 +13,7 @@
 // set number of parameters
 -1 * -1   14
   "C" "INFO"
-      "B" "NPAR" \w1 \b6
+      "B" "NPAR" \w1 \b7
       00
   00
 
@@ -58,6 +58,20 @@
 		00
 	00
 00         
+
+// Coastal distance
+ -1 * -1   14
+  "C" "INFO"
+      "C" "PARA"
+          "C" \d06
+              "B" "TYPE" \w1 \b0           // integer style parameter
+              "B" "MASK" \w3 \b4 \b0 \b8   // 4th newgrf parameter, bits 0-7
+              "B" "DFLT" \w4 \d0           // default value: 0
+              "B" "LIMI" \w8 \d0 \d255     // permissible values: 0 ... 255
+              00
+          00
+      00
+  00
 
 // debug info setting
  -1 * -1   14
