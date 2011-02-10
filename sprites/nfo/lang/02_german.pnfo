@@ -13,121 +13,108 @@
 
 //Cargo texts
 
+#define TEXT_CRG_ALCOHOL_CTYPE                           "Spirituosen" 
+#define TEXT_CRG_ALCOHOL_CARGOAMOUNT                     "Spirituosen"
+#define TEXT_CRG_ALCOHOL_TABBR                           "\0EAL" 
+
 //Bauxite
 #define TEXT_CRG_BAUXITE_CTYPE                           GENDER_N "Bauxit"
-#define TEXT_CRG_BAUXITE_1UNIT                           "\UE07C Tonne Bauxit"
-#define TEXT_CRG_BAUXITE_MUNIT                           "\UE07C Tonnen Bauxit"
+#define TEXT_CRG_BAUXITE_CARGOAMOUNT                     "Bauxit" 
 #define TEXT_CRG_BAUXITE_TABBR                           "\0EBX"
 
 //Building Materials
 #define TEXT_CRG_BUILDINGMATERIALS_CTYPE                 GENDER_P "Baustoffe" 
-#define TEXT_CRG_BUILDINGMATERIALS_1UNIT                 "\UE07C Tonne Baustoffe" 
-#define TEXT_CRG_BUILDINGMATERIALS_MUNIT                 "\UE07C Tonnen Baustoffe" 
+#define TEXT_CRG_BUILDINGMATERIALS_CARGOAMOUNT           "Baustoffe" 
 #define TEXT_CRG_BUILDINGMATERIALS_TABBR                 "\0EBS" 
 
 //Chemicals
 #define TEXT_CRG_CHEMICALS_CTYPE                         GENDER_P "Chemikalien"
-#define TEXT_CRG_CHEMICALS_1UNIT                         "\UE087 Chemikalien"
+#define TEXT_CRG_CHEMICALS_CARGOAMOUNT                   "Chemikalien"
 #define TEXT_CRG_CHEMICALS_TABBR                         "\0ECH"
 
 //Clay
 #define TEXT_CRG_CLAY_CTYPE                              GENDER_P "Tonminerale" 
-#define TEXT_CRG_CLAY_1UNIT                              "\UE07C Tonne Tonminerale" 
-#define TEXT_CRG_CLAY_MUNIT                              "\UE07C Tonnen Tonminerale" 
+#define TEXT_CRG_CLAY_CARGOAMOUNT                        "Tonminerale" 
 #define TEXT_CRG_CLAY_TABBR                              "\0ETM" 
 
 //Engineering supplies
 #define TEXT_CRG_ENGINEERINGSUPPLIES_CTYPE               GENDER_P "Ersatzteile"
-#define TEXT_CRG_ENGINEERINGSUPPLIES_1UNIT               "\UE07C Kiste Ersatzteile"
-#define TEXT_CRG_ENGINEERINGSUPPLIES_MUNIT               "\UE07C Kisten Ersatzteile"
+#define TEXT_CRG_ENGINEERINGSUPPLIES_CARGOAMOUNT         "Kisten Ersatzteile" 
 #define TEXT_CRG_ENGINEERINGSUPPLIES_TABBR               "\0EET"
 
 //Farm supplies
 #define TEXT_CRG_FARMSUPPLIES_CTYPE                      GENDER_P "landw. Betriebsmittel"
-#define TEXT_CRG_FARMSUPPLIES_1UNIT                      "\UE07C Kiste landw. Betriebsmittel"
-#define TEXT_CRG_FARMSUPPLIES_MUNIT                      "\UE07C Kisten landw. Betriebsmittel"
+#define TEXT_CRG_FARMSUPPLIES_CARGOAMOUNT                "Kisten landw. Betriebsmittel" 
 #define TEXT_CRG_FARMSUPPLIES_TABBR                      "\0ELB"
 
 //Fish
 #define TEXT_CRG_FISH_CTYPE                              GENDER_M "Fisch"
-#define TEXT_CRG_FISH_1UNIT                              "\UE07C Tonne Fisch"
-#define TEXT_CRG_FISH_MUNIT                              "\UE07C Tonnen Fisch"
+#define TEXT_CRG_FISH_CARGOAMOUNT                        "Fisch" 
 #define TEXT_CRG_FISH_TABBR                              "\0EFI"
 
 //Fruit and Vegetables
 #define TEXT_CRG_FRUITSANDVEGETABLES_CTYPE               GENDER_P "Früchte und Gemüse"
 #define TEXT_CRG_FRUITSANDVEGETABLES_1TYPE               "Früchte und Gemüse"
-#define TEXT_CRG_FRUITSANDVEGETABLES_1UNIT               "\UE07C Tonne Früchte und Gemüse"
-#define TEXT_CRG_FRUITSANDVEGETABLES_MUNIT               "\UE07C Tonnen Früchte und Gemüse"
+#define TEXT_CRG_FRUITSANDVEGETABLES_CARGOAMOUNT         "Früchte und Gemüse" 
 
 //Fuel oil
 #define TEXT_CRG_FUELOIL_CTYPE                           GENDER_M "Treibstoff"
-#define TEXT_CRG_FUELOIL_1UNIT                           "\87 Treibstoff"
+#define TEXT_CRG_FUELOIL_CARGOAMOUNT                     "Treibstoff"  
 #define TEXT_CRG_FUELOIL_TABBR                           "\0ETS"
 
 //Gravel
 #define TEXT_CRG_GRAVEL_CTYPE                            GENDER_P "Steine"
-#define TEXT_CRG_GRAVEL_1UNIT                            "\UE07C Tonne Steine"
-#define TEXT_CRG_GRAVEL_MUNIT                            "\UE07C Tonnen Steine"
+#define TEXT_CRG_GRAVEL_CARGOAMOUNT                      "Steine" 
 #define TEXT_CRG_GRAVEL_TABBR                            "\0EST"
 
 //Lumber
 #define TEXT_CRG_LUMBER_CTYPE                            GENDER_N "Bauholz"
-#define TEXT_CRG_LUMBER_1UNIT                            "\UE07C Tonne Bauholz"
-#define TEXT_CRG_LUMBER_MUNIT                            "\UE07C Tonnen Bauholz"
+#define TEXT_CRG_LUMBER_CARGOAMOUNT                      "Bauholz" 
 #define TEXT_CRG_LUMBER_TABBR                            "\0EBH"
 
 //Manufacturing Supplies - formerly Packaging
 #define TEXT_CRG_MANUFACTURINGSUPPLIES_CTYPE             GENDER_P "Produktionsgüter"
-#define TEXT_CRG_MANUFACTURINGSUPPLIES_1UNIT             "\UE07C Kiste Produktionsgüter"
-#define TEXT_CRG_MANUFACTURINGSUPPLIES_MUNIT             "\UE07C Kisten Produktionsgüter"
+#define TEXT_CRG_MANUFACTURINGSUPPLIES_CARGOAMOUNT       "Kisten Produktionsgüter" 
 #define TEXT_CRG_MANUFACTURINGSUPPLIES_TABBR             "\0EPG"
 
 //Metal
 #define TEXT_CRG_METAL_CTYPE                             GENDER_N "Metall"
-#define TEXT_CRG_METAL_1UNIT                             "\UE07C Tonne Metall"
-#define TEXT_CRG_METAL_MUNIT                             "\UE07C Tonnen Metall"
+#define TEXT_CRG_METAL_CARGOAMOUNT                       "Metall" 
 #define TEXT_CRG_METAL_TABBR                             "\0EME"
 
 //Milk
 #define TEXT_CRG_MILK_CTYPE                              GENDER_W "Milch"
-#define TEXT_CRG_MILK_1UNIT                              "\87 Milch"
+#define TEXT_CRG_MILK_CARGOAMOUNT                        "Milch" 
 #define TEXT_CRG_MILK_TABBR                              "\0EML"
 
 //Plant Fibres
 #define TEXT_CRG_PLANTFIBRES_CTYPE                       GENDER_P "Pflanzenfasern" 
-#define TEXT_CRG_PLANTFIBRES_1UNIT                       "\UE07C Tonne Pflanzenfasern" 
-#define TEXT_CRG_PLANTFIBRES_MUNIT                       "\UE07C Tonnen Pflanzenfasern" 
+#define TEXT_CRG_PLANTFIBRES_CARGOAMOUNT                 "Pflanzenfasern" 
 #define TEXT_CRG_PLANTFIBRES_TABBR                       "\0EPF" 
 
 //Sand
 #define TEXT_CRG_SAND_CTYPE                              GENDER_M "Sand"
-#define TEXT_CRG_SAND_1UNIT                              "\UE07C Tonne Sand"
-#define TEXT_CRG_SAND_MUNIT                              "\UE07C Tonnen Sand"
+#define TEXT_CRG_SAND_CARGOAMOUNT                        "Sand" 
 #define TEXT_CRG_SAND_TABBR                              "\0ESD"
 
 //Scrap Metal
 #define TEXT_CRG_SCRAPMETAL_CTYPE                        GENDER_N "Altmetall"
-#define TEXT_CRG_SCRAPMETAL_1UNIT                        "\UE07C Tonne Altmetall"
-#define TEXT_CRG_SCRAPMETAL_MUNIT                        "\UE07C Tonnen Altmetall"
+#define TEXT_CRG_SCRAPMETAL_CARGOAMOUNT                  "Altmetall" 
 #define TEXT_CRG_SCRAPMETAL_TABBR                        "\0EAM"
 
 //Sugar beet
 #define TEXT_CRG_SUGARBEET_CTYPE                         GENDER_P "Zuckerrüben" 
-#define TEXT_CRG_SUGARBEET_1UNIT                         "\UE07C Tonne Zuckerrüben" 
-#define TEXT_CRG_SUGARBEET_MUNIT                         "\UE07C Tonnen Zuckerrüben" 
+#define TEXT_CRG_SUGARBEET_CARGOAMOUNT                   "Zuckerrüben" 
 #define TEXT_CRG_SUGARBEET_TABBR                         "\0EZR" 
 
 //Sugar cane
 #define TEXT_CRG_SUGARCANE_CTYPE                         GENDER_M "Rohrzucker"
-#define TEXT_CRG_SUGARCANE_1UNIT                         "\UE07C Tonne Rohrzucker"
-#define TEXT_CRG_SUGARCANE_MUNIT                         "\UE07C Tonnen Rohrzucker"
+#define TEXT_CRG_SUGARCANE_CARGOAMOUNT                   "Rohrzucker" 
 #define TEXT_CRG_SUGARCANE_TABBR                         "\0ERZ"
 
 //Wool
 #define TEXT_CRG_WOOL_CTYPE                              GENDER_W "Wolle"
-#define TEXT_CRG_WOOL_1UNIT                              "\UE07C Tonne Wolle"
-#define TEXT_CRG_WOOL_MUNIT                              "\UE07C Tonnen Wolle"
+#define TEXT_CRG_WOOL_CARGOAMOUNT                        "Wolle" 
 #define TEXT_CRG_WOOL_TABBR                              "\0EWL"
 
 
@@ -135,7 +122,7 @@
 #define TEXT_IND_ARABLEFARM                              GENDER_M "Bauernhof (Ackerbau)"
 #define TEXT_IND_ALUMINIUMPLANT                          GENDER_W "Aluminiumhütte"
 
-#define TEXT_IND_BAKERY                                  GENDER_W "Bäckerei"
+#define TEXT_IND_BAKERY                                  GENDER_W "Mühle"
 #define TEXT_IND_BAUXITEMINE                             GENDER_W "Bauxitmine"
 #define TEXT_IND_BIOREFINERY                             GENDER_W "Bioraffinerie" 
 #define TEXT_IND_BREWERY                                 GENDER_W "Brauerei"
@@ -158,10 +145,12 @@
 #define TEXT_IND_GENERALSTORE                            GENDER_M "Gemischtwarenladen"
 #define TEXT_IND_GLASSWORKS                              GENDER_W "Glashütte"
 
+#define TEXT_IND_IRONWORKS                               GENDER_M "Hüttenwerk" 
+
 #define TEXT_IND_JUNKYARD                                GENDER_M "Schrottplatz"
 
-#define TEXT_IND_LUMBERYARD                              GENDER_W "Holzverarbeitung"
 #define TEXT_IND_LIMEKILN                                GENDER_W "Kalkbrennerei" 
+#define TEXT_IND_LUMBERYARD                              GENDER_W "Holzverarbeitung"
 
 #define TEXT_IND_MACHINESHOP                             GENDER_M "Maschinenbaubetrieb"
 #define TEXT_IND_MEATPACKER                              GENDER_M "Schlachthof"
@@ -171,9 +160,10 @@
 #define TEXT_IND_PETROLPUMP                              GENDER_W "Tankstelle"
 #define TEXT_IND_PLASTICSPLANT                           GENDER_W "Plastikfabrik"
 
+#define TEXT_IND_QUARRY                                  GENDER_M "Steinbruch"
+
 #define TEXT_IND_RETAILMARKET                            GENDER_M "Einzelhändler"
 
-#define TEXT_IND_QUARRY                                  GENDER_M "Steinbruch"
 #define TEXT_IND_SHEEPFARM                               GENDER_M "Bauernhof (Schafhaltung)"
 #define TEXT_IND_SUPERMARKET                             GENDER_M "Supermarkt"
 #define TEXT_IND_SUGARREFINERY                           GENDER_W "Zuckerraffinerie"
@@ -190,7 +180,7 @@
 
 #define TEXT_STA_FARM                                    "\80 Hof"
 #define TEXT_STA_MILLS                                   "\80 Mühle"
-#define TEXT_STA_WELLS                                   "\80 Bohrung"
+#define TEXT_STA_WELLS                                   "\80 Quelle"
 #define TEXT_STA_REFINERY                                "\80 Raffinerie"
 
 #define TEXT_STA_FACTORY                                 "\80 Fabrik"
@@ -234,15 +224,18 @@
 
 #define TEXT_INFO_CARGO_PRODUCTION                       "\98Produktion:\0D" 
 
+#define TEXT_INFO_5T_PER_8T                              "\0D5t Produktion pro gelieferter 8t." 
 #define TEXT_INFO_6T_PER_8T                              "\0D6t Produktion pro gelieferter 8t."
 #define TEXT_INFO_8T_PER_8T                              "\0D8t Produktion pro gelieferter 8t."
 
 #define TEXT_INFO_STEPUP_TWO_CARGOS                      "\0DProduktion steigt, wenn zwei oder mehr Frachtarten innerhalb eines Monats geliefert werden." 
+#define TEXT_INFO_INCREASE_TO_3T_BOTH_CARGOS             "\0DSteigt auf 3t Produktion pro gelieferter 8t, wenn beide Frachtarten innerhalb eines Monats geliefert werden." 
 #define TEXT_INFO_INCREASE_BOTH_CARGOS                   "\0DSteigt auf 8t Produktion pro gelieferter 8t, wenn beide Frachtarten innerhalb eines Monats geliefert werden." 
 
 #define TEXT_INFO_3T_PER_8T_MS                           "  3t pro gelieferter 8t Produktionsgüter\0D" 
 #define TEXT_INFO_2T_PER_8T_IRON_ORE                     "  2t pro gelieferter 8t Eisenerz\0D" 
 #define TEXT_INFO_2T_PER_8T_COAL                         "  2t pro gelieferter 8t Kohle\0D" 
+#define TEXT_INFO_4T_PER_8T_COAL                         "  4t pro gelieferter 8t Kohle\0D" 
 #define TEXT_INFO_4T_PER_8T_SCRAP_METAL                  "  4t pro gelieferter 8t Altmetall\0D" 
 #define TEXT_INFO_2T_PER_8T_BAUXITE                      "  2t pro gelieferter 8t Bauxit\0D" 
 
@@ -256,25 +249,24 @@
 #define TEXT_INFO_5T_PER_8T_LIVESTOCK                    "  5t pro gelieferter 8t Vieh\0D" 
 #define TEXT_INFO_5T_PER_8T_FISH                         "  5t pro gelieferter 8t Fisch\0D" 
 #define TEXT_INFO_5T_PER_8T_WOOL                         "  5t pro gelieferter 8t Wolle\0D" 
-#define TEXT_INFO_2T_PER_8T_SAND                         "  2t pro gelieferter 8t Sand\0D" 
 #define TEXT_INFO_5T_PER_8T_PLANTFIBRES                  "  5t pro gelieferter 8t pflanzlicher Fasern\0D" 
 
 #define TEXT_INFO_5T_PER_8T_SUGARCANE                    "  5t pro gelieferter 8t Rohrzucker\0D"
 #define TEXT_INFO_5T_PER_8T_SUGARBEET                    "  5t pro gelieferter 8t Zuckerrüben\0D"
+#define TEXT_INFO_1T_PER_8T_WOOD                         "  1t pro gelieferter 8t Holz\0D" 
 #define TEXT_INFO_2T_PER_8T_WOOD                         "  2t pro gelieferter 8t Holz\0D" 
 #define TEXT_INFO_4T_PER_8T_WOOD                         "  4t pro gelieferter 8t Holz\0D" 
 #define TEXT_INFO_6T_PER_8T_WOOD                         "  6t pro gelieferter 8t Holz\0D" 
-#define TEXT_INFO_2T_PER_8T_SAND                         "  2t pro gelieferter 8t Sand\0D" 
 
 #define TEXT_INFO_4T_PER_8T_GRAVEL                       "  4t pro gelieferter 8t Steine\0D" 
 #define TEXT_INFO_2T_PER_8T_CLAY                         "  2t pro gelieferter 8t Ton\0D" 
 #define TEXT_INFO_4T_PER_8T_CLAY                         "  4t pro gelieferter 8t Ton\0D" 
-#define TEXT_INFO_4T_PER_8T_COAL                         "  4t pro gelieferter 8t Kohle\0D" 
+#define TEXT_INFO_2T_PER_8T_SAND                         "  2t pro gelieferter 8t Sand\0D" 
 #define TEXT_INFO_6T_PER_8T_SAND                         "  6t pro gelieferter 8t Sand\0D"
 
 #define TEXT_INFO_MACHINESHOP                            "\98Baut und wartet Maschinen.\0D" 
-#define TEXT_INFO_WINDFARM								 "\98 \0D"
 #define TEXT_INFO_SAWMILL                                "\98Sägt Holz.\0D" 
+#define TEXT_INFO_WINDFARM								 "\98 \0D"
 #define TEXT_INFO_METALFOUNDRY                           "\98Produziert Metallgegenstände wie Werkzeuge und Ersatzteile.\0D" 
 #define TEXT_INFO_PAPERMILL                              "\98Zermahlt Holz und stellt daraus Papier und Karton her.\0D" 
 
@@ -297,7 +289,7 @@
 
 #define TEXT_PNAME_ECONOMY                               "Wirtschaftstyp"
 #define TEXT_PDESC_ECONOMY                               "Sobald fertiggestellt, wird FIRS eine Anzahl verschiedener Wirtschaft(sschwerpunkte) anbieten. Diese unterscheiden sich in Frachtarten, deren Profitabilität und den verfügbaren Industrien.\0D\0D\89Zur Zeit gibt es nur einen Wirtschaftstyp."
-#define TEXT_PVALU0_ECONOMY                              "Standard"
+#define TEXT_PVALUE0_ECONOMY                             "Standard"
 
 #define TEXT_PNAME_PRIMARYDECREASE                       "Primärindustrien dürfen Produktion vermindern"
 #define TEXT_PDESC_PRIMARYDECREASE                       "Standardmäßig reduzieren Primärindustrien in FIRS ihre Produktion nie.\0DWenn eine Reduzierung der Produktionsmenge bei Primärindustrien erlaubt ist, gibt es eine Wahrscheinlichkeit mit der eine Industrie seine Produktion senkt, wenn einen Monat lang keine Güter angeliefert wurden. Bei hohen Produktionsraten ist die Wahrscheinlichkeit größer."
@@ -310,6 +302,10 @@
 
 #define TEXT_PNAME_PREVENTCONSTRUCTION                   "Bau von Industrien verbieten (nicht vollständig)"
 #define TEXT_PDESC_PREVENTCONSTRUCTION                   "\89Diese Funktion ist noch nicht implementiert.\98 Sobald sie fertig gestellt ist, wird dieser Parameter einen 'Sandkasten-Modus' für Scenarien ermöglichen"
+
+#define TEXT_PNAME_MAXCOASTDISTANCE                      "Maximaler Abstrand mariner Industrien von der Küste"
+#define TEXT_PDESC_MAXCOASTDISTANCE                      "\89Maximaler Abstand von Fischgründen und Baggersees von der Küste in Feldern"
+#define TEXT_PVALUE0_MAXCOASTDISTANCE                    "Kein Limit"
 
 #define TEXT_PNAME_DEBUG                                 "Zeige Debug-Texte"
 #define TEXT_PDESC_DEBUG                                 "Nur für Entwickler"
