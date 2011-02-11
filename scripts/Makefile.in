@@ -1,6 +1,6 @@
 # Here also go all build targets specific to this very newgrf
 
-sprites/nfo/firs.pnfo: sprites/nfo/cargo_schemes.pnfo sprites/nfo/cargos.pnfo
+firs.cnfo: sprites/nfo/cargo_schemes.pnfo sprites/nfo/cargos.pnfo sprites/nfo/lang/remove_defines.pnfo
 
 sprites/nfo/cargo_schemes.pnfo:: sprites/nfo/cargo_schemes.list sprites/nfo/cargo_schemes.template
 	$(_E) "[Generating] $@"
@@ -9,3 +9,10 @@ sprites/nfo/cargo_schemes.pnfo:: sprites/nfo/cargo_schemes.list sprites/nfo/carg
 sprites/nfo/cargos.pnfo:: sprites/nfo/cargos.list sprites/nfo/cargos.template
 	$(_E) "[Generating] $@"
 	$(_V) cat sprites/nfo/cargos.list | grep -v '//' | $(AWK) -f 'scripts/cargos_fieldnames.awk' -f 'scripts/gen_cargos.awk' > $@
+
+sprites/nfo/lang/remove_defines.pnfo: sprites/nfo/lang/7F_any.pnfo scripts/Makefile.in
+	$(_E) "[Generating] $@"
+	$(_V) cat $< | grep "#define" | $(AWK) '{ print "#undef "$$2 }' > $@
+	$(_V) echo "#undef GENDER_TRANSLATION_TABLE" >> $@
+#	$(_V) echo "#include \"7F_any.pnfo\"" >> $@
+	

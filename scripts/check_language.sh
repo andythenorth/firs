@@ -13,7 +13,7 @@ fi
 #If not found, use remove_defines.pnfo
 if [ -z "$translation_file" ]
 then
-	translation_file="../sprites/nfo/lang/remove_defines.pnfo"
+	translation_file="../sprites/nfo/lang/7F_any.pnfo"
 fi
 
 echo "Missing strings at file $translation_file:"
