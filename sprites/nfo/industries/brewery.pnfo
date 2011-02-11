@@ -13,7 +13,7 @@
 //Industry tiles definition
 
 //Tile action 0
--1 * 0 00 09 \b8 01 TILE_BREWERY_1 // -1 * 0 00 09 <num-props> 01 <id>
+-1 * 0 00 09 \b9 01 TILE_BREWERY_1 // -1 * 0 00 09 <num-props> 01 <id>
 	08 TILE_NULL //subsitute type
 	0A CARGO_FRUITSANDVEGETABLES 08 //tile acceptance 1
 	0B CARGO_GRAIN 08 //tile acceptance 2
@@ -22,6 +22,7 @@
 	0E 10 //callback flags
   0F 47 01 //animation: (number frames -1) | loop (01) / not loop (00)
 	10 02 //animation speed
+	11 01 //triggers for cb25 (animation control) 
 
 
 // include tiles and layouts, ! Action 2 IDs here are deliberately repeated by the various tile includes
@@ -79,6 +80,9 @@
 	
 //handle cb2f (tile shape check)
 #include "../../../templates/cb2f_generic.pnfo"     	
+
+//handle cb25 (animation triggers)
+#include "../../../templates/cb25_randomised_offset_smoke_animation_2.pnfo"
 
 //Action3 attach sprites to industry tile
 
