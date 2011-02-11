@@ -1,0 +1,17 @@
+-1 * 0 02 09 C1 //handle randmising animation frame when triggered
+	81 10 00 07 //get random bits from var 10 (mask sets num bits)
+	\b7 //range
+	  00 80  00  00 //
+	  01 80  01  01 //
+	  02 80  02  02 //
+	  03 80  03  03 //
+	  04 80  04  04 //
+	  05 80  05  05 //
+	  06 80  06  06 //
+  FE 80 //default
+
+-1 * 0 02 09 C0 //Handle callback 25
+	81 0C 00 FF //no shift, no mask
+	\b1 //range
+	  C1 00 25 25 //custom shape check cb 2F
+  C0 00 //default
