@@ -13,7 +13,7 @@
 //Industry tiles definition
 
 //Tile action 0
--1 * 0 00 09 \b8 01 TILE_TEXTILEMILL_1 // -1 * 0 00 09 <num-props> 01 <id>
+-1 * 0 00 09 \b9 01 TILE_TEXTILEMILL_1 // -1 * 0 00 09 <num-props> 01 <id>
 	08 TILE_NULL //subsitute type
 	0A CARGO_MANUFACTURINGSUPPLIES 08 //tile acceptance 2
 	0B CARGO_WOOL 08 //tile acceptance 1
@@ -22,6 +22,7 @@
 	0E 10 //callback flags
   0F 07 01 //animation: number frames | loop (01) / not loop (00)
 	10 03 //animation speed
+	11 01 //triggers for cb25 (animation control) 
 
 // include tiles and layouts, ! Action 2 IDs here are deliberately repeated by the various tile includes
 // temperate
