@@ -3,9 +3,7 @@
 //Lang-ID: 07 -> 87
 
 //To make correct translation it's need to use
-//TEXT_CRG_xxxx_1UNIT is the Nominative singular
 //TEXT_CRG_xxxx_GUNIT is the Genetive singular
-//TEXT_CRG_xxxx_MUNIT is the Genetive plural
 //Function for correct numerals declension: http://pastebin.com/4wKGDvRn
 //Correct translation according to function is added after the main translation
 
@@ -16,135 +14,98 @@
 
 //Bauxite
 #define TEXT_CRG_BAUXITE_CTYPE                           "Боксит" 
-#define TEXT_CRG_BAUXITE_1UNIT                           "\UE07C тонна боксита" 
-#define TEXT_CRG_BAUXITE_MUNIT                           "\UE07C тонн боксита" 
 #define TEXT_CRG_BAUXITE_TABBR                           "\0EBX" 
 //#define TEXT_CRG_BAUXITE_GUNIT                           "\UE07C тонны боксита" 
 
 //Building Materials
 #define TEXT_CRG_BUILDINGMATERIALS_CTYPE                 "Стройматериалы" 
-#define TEXT_CRG_BUILDINGMATERIALS_1UNIT                 "\UE07C тонна стройматериалов" 
-#define TEXT_CRG_BUILDINGMATERIALS_MUNIT                 "\UE07C тонн стройматериалов" 
 #define TEXT_CRG_BUILDINGMATERIALS_TABBR                 "\0EBM" 
 //#define TEXT_CRG_BUILDINGMATERIALS_GUNIT                 "\UE07C тонны стройматериалов" 
 
 //Chemicals
 #define TEXT_CRG_CHEMICALS_CTYPE                         "Химикаты" 
-#define TEXT_CRG_CHEMICALS_1UNIT                         "\87 химикатов" 
 #define TEXT_CRG_CHEMICALS_TABBR                         "\0ECH"  
 
 //Clay
 #define TEXT_CRG_CLAY_CTYPE                              "Глина" 
-#define TEXT_CRG_CLAY_1UNIT                              "\UE07C тонна глины" 
-#define TEXT_CRG_CLAY_MUNIT                              "\UE07C тонн глины" 
 #define TEXT_CRG_CLAY_TABBR                              "\0ECL" 
 //#define TEXT_CRG_CLAY_GUNIT                              "\UE07C тонны глины" 
 
 //Engineering supplies
 #define TEXT_CRG_ENGINEERINGSUPPLIES_CTYPE               "Промышленное оборудование" 
-#define TEXT_CRG_ENGINEERINGSUPPLIES_1UNIT               "\UE07C ящик промышленного оборудования" 
-#define TEXT_CRG_ENGINEERINGSUPPLIES_MUNIT               "\UE07C ящиков промышленного оборудования" 
 #define TEXT_CRG_ENGINEERINGSUPPLIES_TABBR               "\0EES" 
 //#define TEXT_CRG_ENGINEERINGSUPPLIES_GUNIT               "\UE07C ящика промышленного оборудования" 
 
 //Farm supplies
 #define TEXT_CRG_FARMSUPPLIES_CTYPE                      "Сельхозтовары" 
-#define TEXT_CRG_FARMSUPPLIES_1UNIT                      "\UE07C ящик сельхозтоваров" 
-#define TEXT_CRG_FARMSUPPLIES_MUNIT                      "\UE07C ящиков сельхозтоваров" 
 #define TEXT_CRG_FARMSUPPLIES_TABBR                      "\0EFS" 
 //#define TEXT_CRG_FARMSUPPLIES_GUNIT                      "\UE07C ящика сельхозтоваров" 
 
 //Fish 
 #define TEXT_CRG_FISH_CTYPE                              "Рыба" 
-#define TEXT_CRG_FISH_1UNIT                              "\UE07C тонна рыбы" 
-#define TEXT_CRG_FISH_MUNIT                              "\UE07C тонн рыбы" 
 #define TEXT_CRG_FISH_TABBR                              "\0EFI" 
 //#define TEXT_CRG_FISH_GUNIT                              "\UE07C тонны рыбы" 
 
 //Fruit and Vegetables
 #define TEXT_CRG_FRUITSANDVEGETABLES_CTYPE               "Фрукты и овощи" // was: Fruit and Vegetables
 #define TEXT_CRG_FRUITSANDVEGETABLES_1TYPE               "Фрукты и овощи" // was(?): Fruit and Vegetable
-#define TEXT_CRG_FRUITSANDVEGETABLES_1UNIT               "\UE07C тонна фруктов и овощей" 
-#define TEXT_CRG_FRUITSANDVEGETABLES_MUNIT               "\UE07C тонн фруктов и овощей" 
 //#define TEXT_CRG_FRUITSANDVEGETABLES_GUNIT               "\UE07C тонны фруктов и овощей" 
 
 //Fuel oil
 #define TEXT_CRG_FUELOIL_CTYPE                           "Бензин" 
-#define TEXT_CRG_FUELOIL_1UNIT                           "\87 бензина" 
 #define TEXT_CRG_FUELOIL_TABBR                           "\0EPT"
 
 //Gravel
 #define TEXT_CRG_GRAVEL_CTYPE                            "Камень" 
-#define TEXT_CRG_GRAVEL_1UNIT                            "\UE07C тонна камня" 
-#define TEXT_CRG_GRAVEL_MUNIT                            "\UE07C тонн камня" 
 #define TEXT_CRG_GRAVEL_TABBR                            "\0EGV" 
 //#define TEXT_CRG_GRAVEL_GUNIT                            "\UE07C тонны камня" 
 
 //Lumber
 #define TEXT_CRG_LUMBER_CTYPE                            "Пиломатериалы" 
-#define TEXT_CRG_LUMBER_1UNIT                            "\UE07C тонна пиломатериалов" 
-#define TEXT_CRG_LUMBER_MUNIT                            "\UE07C тонн пиломатериалов" 
 #define TEXT_CRG_LUMBER_TABBR                            "\0ELU" 
 //#define TEXT_CRG_LUMBER_GUNIT                            "\UE07C тонны пиломатериалов" 
 
 //Manufacturing Supplies - formerly Packaging
 #define TEXT_CRG_MANUFACTURINGSUPPLIES_CTYPE             "Производственные материалы" 
-#define TEXT_CRG_MANUFACTURINGSUPPLIES_1UNIT             "\UE07C ящик производственных материалов" 
-#define TEXT_CRG_MANUFACTURINGSUPPLIES_MUNIT             "\UE07C ящиков производственных материалов" 
 #define TEXT_CRG_MANUFACTURINGSUPPLIES_TABBR             "\0EMS" 
 //#define TEXT_CRG_MANUFACTURINGSUPPLIES_GUNIT             "\UE07C ящика производственных материалов" 
 
 //Metal
 #define TEXT_CRG_METAL_CTYPE                             "Металл" 
-#define TEXT_CRG_METAL_1UNIT                             "\UE07C тонна металла" 
-#define TEXT_CRG_METAL_MUNIT                             "\UE07C тонн металла" 
 #define TEXT_CRG_METAL_TABBR                             "\0EML" 
 //#define TEXT_CRG_METAL_GUNIT                             "\UE07C тонны металла" 
 
 //Milk
 #define TEXT_CRG_MILK_CTYPE                              "Молоко" 
-#define TEXT_CRG_MILK_1UNIT                              "\87 молока" 
 #define TEXT_CRG_MILK_TABBR                              "\0EMK" 
 
 //Plant Fibres
 #define TEXT_CRG_PLANTFIBRES_CTYPE                       "Растительные волокна" 
-#define TEXT_CRG_PLANTFIBRES_1UNIT                       "\UE07C тонна растительных волокон" 
-#define TEXT_CRG_PLANTFIBRES_MUNIT                       "\UE07C тонн растительных волокон" 
 #define TEXT_CRG_PLANTFIBRES_TABBR                       "\0ECT" 
 //#define TEXT_CRG_PLANTFIBRES_GUNIT                       "\UE07C тонны растительных волокон" 
 
 //Sand
 #define TEXT_CRG_SAND_CTYPE                              "Песок" 
-#define TEXT_CRG_SAND_1UNIT                              "\UE07C тонна песка" 
-#define TEXT_CRG_SAND_MUNIT                              "\UE07C тонн песка" 
 #define TEXT_CRG_SAND_TABBR                              "\0ESA" 
 //#define TEXT_CRG_SAND_GUNIT                              "\UE07C тонны песка" 
 
 //Scrap Metal
 #define TEXT_CRG_SCRAPMETAL_CTYPE                        "Металлолом" 
-#define TEXT_CRG_SCRAPMETAL_1UNIT                        "\UE07C тонна металлолома" 
-#define TEXT_CRG_SCRAPMETAL_MUNIT                        "\UE07C тонн металлолома" 
 #define TEXT_CRG_SCRAPMETAL_TABBR                        "\0ESM" 
 //#define TEXT_CRG_SCRAPMETAL_GUNIT                        "\UE07C тонны металлолома" 
 
 //Sugar beet
 #define TEXT_CRG_SUGARBEET_CTYPE                         "Сахарная свёкла" 
-#define TEXT_CRG_SUGARBEET_1UNIT                         "\UE07C тонна сахарной свёклы" 
-#define TEXT_CRG_SUGARBEET_MUNIT                         "\UE07C тонн сахарной свёклы" 
 #define TEXT_CRG_SUGARBEET_TABBR                         "\0ESB" 
 //#define TEXT_CRG_SUGARBEET_GUNIT                         "\UE07C тонны сахарной свеклы"
 
 //Sugar cane
 #define TEXT_CRG_SUGARCANE_CTYPE                         "Сахарный тростник" 
-#define TEXT_CRG_SUGARCANE_1UNIT                         "\UE07C тонна сахарного тростника" 
-#define TEXT_CRG_SUGARCANE_MUNIT                         "\UE07C тонн сахарного тростника" 
 #define TEXT_CRG_SUGARCANE_TABBR                         "\0ESC" 
 //#define TEXT_CRG_SUGARCANE_GUNIT                         "\UE07C тонны сахарного тростника"
 
 //Wool
 #define TEXT_CRG_WOOL_CTYPE                              "Шерсть" 
-#define TEXT_CRG_WOOL_1UNIT                              "\UE07C тонна шерсти" 
-#define TEXT_CRG_WOOL_MUNIT                              "\UE07C тонн шерсти" 
 #define TEXT_CRG_WOOL_TABBR                              "\0EWL" 
 //#define TEXT_CRG_WOOL_GUNIT                              "\UE07C тонны шерсти"
 

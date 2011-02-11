@@ -9,119 +9,82 @@
 
 //Sugar cane
 #define TEXT_CRG_SUGARCANE_CTYPE                        "Suikerriet"
-#define TEXT_CRG_SUGARCANE_1UNIT                        "\UE07C ton suikerriet"
-#define TEXT_CRG_SUGARCANE_MUNIT                        "\UE07C ton suikerriet"
 #define TEXT_CRG_SUGARCANE_TABBR                        "\0ESR"
 
 //Sugar beet
 #define TEXT_CRG_SUGARBEET_CTYPE                         "Suikerbieten" 
-#define TEXT_CRG_SUGARBEET_1UNIT                         "\UE07C ton suikerbieten" 
-#define TEXT_CRG_SUGARBEET_MUNIT                         "\UE07C ton suikerbieten" 
 #define TEXT_CRG_SUGARBEET_TABBR                         "\0ESB" 
 
 //Fruit and Vegetables
 #define TEXT_CRG_FRUITSANDVEGETABLES_CTYPE              "Fruit en Groente"
 #define TEXT_CRG_FRUITSANDVEGETABLES_1TYPE              "Fruit en Groente"
-#define TEXT_CRG_FRUITSANDVEGETABLES_1UNIT              "\UE07C ton fruit en groente"
-#define TEXT_CRG_FRUITSANDVEGETABLES_MUNIT              "\UE07C ton fruit en groente"
 
 //Fish 
 #define TEXT_CRG_FISH_CTYPE                             "Vis"
-#define TEXT_CRG_FISH_1UNIT                             "\UE07C ton vis"
-#define TEXT_CRG_FISH_MUNIT                             "\UE07C ton vis"
 #define TEXT_CRG_FISH_TABBR                             "\0EVS"
 
 //Wool
 #define TEXT_CRG_WOOL_CTYPE                             "Wol"
-#define TEXT_CRG_WOOL_1UNIT                             "\UE07C ton wol"
-#define TEXT_CRG_WOOL_MUNIT                             "\UE07C ton wol"
 #define TEXT_CRG_WOOL_TABBR                             "\0EWL"
 
 //PLANTFIBRES
 #define TEXT_CRG_PLANTFIBRES_CTYPE                           "Katoen"
-#define TEXT_CRG_PLANTFIBRES_1UNIT                           "\UE07C ton katoen"
-#define TEXT_CRG_PLANTFIBRES_MUNIT                           "\UE07C ton katoen"
 #define TEXT_CRG_PLANTFIBRES_TABBR                           "\0EKT"
 
 //Sand
 #define TEXT_CRG_SAND_CTYPE                             "Zand"
-#define TEXT_CRG_SAND_1UNIT                             "\UE07C ton zand"
-#define TEXT_CRG_SAND_MUNIT                             "\UE07C ton zand"
 #define TEXT_CRG_SAND_TABBR                             "\0EZD"
 
 //Gravel
 #define TEXT_CRG_GRAVEL_CTYPE                           "Grind"
-#define TEXT_CRG_GRAVEL_1UNIT                           "\UE07C ton grind"
-#define TEXT_CRG_GRAVEL_MUNIT                           "\UE07C ton grind"
 #define TEXT_CRG_GRAVEL_TABBR                           "\0EGD"
 
 //Clay
 #define TEXT_CRG_CLAY_CTYPE                              "Klei" 
-#define TEXT_CRG_CLAY_1UNIT                              "\UE07C ton klei" 
-#define TEXT_CRG_CLAY_MUNIT                              "\UE07C ton klei" 
 #define TEXT_CRG_CLAY_TABBR                              "\0EKL" 
 
 //Lumber
 #define TEXT_CRG_LUMBER_CTYPE                           "Gezaagd hout"
-#define TEXT_CRG_LUMBER_1UNIT                           "\UE07C ton gezaagd hout"
-#define TEXT_CRG_LUMBER_MUNIT                           "\UE07C ton gezaagd hout"
 #define TEXT_CRG_LUMBER_TABBR                           "\0EHT"
 
 //Manufacturing Supplies
 #define TEXT_CRG_MANUFACTURINGSUPPLIES_CTYPE            "Productiehulpgoederen"
-#define TEXT_CRG_MANUFACTURINGSUPPLIES_1UNIT            "\UE07C pallet productiehulpgoederen"
-#define TEXT_CRG_MANUFACTURINGSUPPLIES_MUNIT            "\UE07C pallets productiehulpgoederen"
 #define TEXT_CRG_MANUFACTURINGSUPPLIES_TABBR            "\0EHP"
 
 //Farm supplies
 #define TEXT_CRG_FARMSUPPLIES_CTYPE                     "Landbouwhulpgoederen"
-#define TEXT_CRG_FARMSUPPLIES_1UNIT                     "\UE07C pallet landbouwhulpgoederen"
-#define TEXT_CRG_FARMSUPPLIES_MUNIT                     "\UE07C pallets landbouwhulpgoederen"
 #define TEXT_CRG_FARMSUPPLIES_TABBR                     "\0EHL"
 
 //Chemicals
 #define TEXT_CRG_CHEMICALS_CTYPE                        "Chemicaliën"
-#define TEXT_CRG_CHEMICALS_1UNIT                        "\UE087 chemicaliën"
 #define TEXT_CRG_CHEMICALS_TABBR                        "\0ECH"
 
 //Engineering supplies
 #define TEXT_CRG_ENGINEERINGSUPPLIES_CTYPE              "Constructiehulpgoederen"
-#define TEXT_CRG_ENGINEERINGSUPPLIES_1UNIT              "\UE07C pallet constructiehulpgoederen"
-#define TEXT_CRG_ENGINEERINGSUPPLIES_MUNIT              "\UE07C pallets constructiehulpgoederen"
 #define TEXT_CRG_ENGINEERINGSUPPLIES_TABBR              "\0EHC"
 
 //Fuel oil
 #define TEXT_CRG_FUELOIL_CTYPE                          "Benzine"
-#define TEXT_CRG_FUELOIL_1UNIT                          "\87 benzine"
 #define TEXT_CRG_FUELOIL_TABBR                          "\0EBZ"
 
 //Bauxite
 #define TEXT_CRG_BAUXITE_CTYPE                          "Bauxiet"
-#define TEXT_CRG_BAUXITE_1UNIT                          "\UE07C ton bauxiet"
-#define TEXT_CRG_BAUXITE_MUNIT                          "\UE07C ton bauxiet"
 #define TEXT_CRG_BAUXITE_TABBR                          "\0EBX"
 
 //Aluminium
 #define TEXT_CRG_METAL_CTYPE                            "Metaal"
-#define TEXT_CRG_METAL_1UNIT                            "\UE07C ton metaal"
-#define TEXT_CRG_METAL_MUNIT                            "\UE07C ton metaal"
 #define TEXT_CRG_METAL_TABBR                            "\0EAL"
 
 //Milk
 #define TEXT_CRG_MILK_CTYPE                             "Melk"
-#define TEXT_CRG_MILK_1UNIT                             "\87 melk"
 #define TEXT_CRG_MILK_TABBR                             "\0EML"
 
 //Scrap Metal
 #define TEXT_CRG_SCRAPMETAL_CTYPE                       "Schroot"
-#define TEXT_CRG_SCRAPMETAL_1UNIT                       "\UE07C ton schroot"
-#define TEXT_CRG_SCRAPMETAL_MUNIT                       "\UE07C ton schroot"
 #define TEXT_CRG_SCRAPMETAL_TABBR                       "\0EST"
 
 //Building Materials
 #define TEXT_CRG_BUILDINGMATERIALS_CTYPE                 "Bouwmaterialen" 
-#define TEXT_CRG_BUILDINGMATERIALS_1UNIT                 "\UE07C ton bouwmaterialen" 
-#define TEXT_CRG_BUILDINGMATERIALS_MUNIT                 "\UE07C ton bouwmaterialen" 
 #define TEXT_CRG_BUILDINGMATERIALS_TABBR                 "\0EBM" 
 
 //Industry texts
