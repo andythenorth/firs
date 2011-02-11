@@ -1,16 +1,19 @@
 -1 * 0 02 09 C1 //handle randmising animation frame when triggered
-	81 10 00 07 //get random bits from var 10 (mask sets num bits)
-	\b10 //range
-	  00 80  00  01 //
-	  02 80  02  03 //
-	  04 80  04  05 //
-	  06 80  06  07 //
-	  08 80  08  09 //
-	  0A 80  0A  0B //
-	  0C 80  0C  0D //
-	  0E 80  0E  0F //
-	  10 80  10  11 //
-	  12 80  12  13 //
+	81 10 00 0E  //get random bits from var 10 (mask sets num bits)
+	\b13 //range
+	  00 80  00  00 //
+	  02 80  01  01 //
+	  04 80  02  02 //
+	  06 80  03  03 //
+	  08 80  04  04 //
+	  0A 80  05  05 //
+	  0C 80  06  06 //
+	  0E 80  07  07 //
+	  10 80  08  08 //
+	  12 80  09  09 //
+	  14 80  0A  0A//
+	  16 80  0B  0B //
+	  18 80  0C  0C //
   FE 80 //default
 
 -1 * 0 02 09 C0 //Handle callback 25
