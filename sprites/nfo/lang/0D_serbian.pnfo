@@ -6,6 +6,10 @@
 
 //Cargo texts
 
+//Alcohol
+#define TEXT_CRG_ALCOHOL_CTYPE                           "alkohol" 
+#define TEXT_CRG_ALCOHOL_TABBR                           "\0EAL" 
+
 //Bauxite
 #define TEXT_CRG_BAUXITE_CTYPE                           "boksit" 
 #define TEXT_CRG_BAUXITE_TABBR                           "\0EBX" 
@@ -27,7 +31,7 @@
 #define TEXT_CRG_ENGINEERINGSUPPLIES_TABBR               "\0EES" 
 
 //Farm supplies
-#define TEXT_CRG_FARMSUPPLIES_CTYPE                      "pljoprivredna oprema" 
+#define TEXT_CRG_FARMSUPPLIES_CTYPE                      "poljoprivredna oprema" 
 #define TEXT_CRG_FARMSUPPLIES_TABBR                      "\0EFS" 
 
 //Fish 
@@ -44,7 +48,7 @@
 
 //Gravel
 #define TEXT_CRG_GRAVEL_CTYPE                            "kamen" 
-#define TEXT_CRG_GRAVEL_TABBR                            "\0EGV" 
+#define TEXT_CRG_GRAVEL_TABBR                            "\0EST" 
 
 //Lumber
 #define TEXT_CRG_LUMBER_CTYPE                            "drvne grede" 
@@ -64,7 +68,7 @@
 
 //Plant Fibres
 #define TEXT_CRG_PLANTFIBRES_CTYPE                       "biljna vlakna" 
-#define TEXT_CRG_PLANTFIBRES_TABBR                       "\0ECT" 
+#define TEXT_CRG_PLANTFIBRES_TABBR                       "\0EPF" 
 
 //Sand
 #define TEXT_CRG_SAND_CTYPE                              "pesak" 
@@ -108,11 +112,13 @@
 #define TEXT_IND_FERTILISERPLANT                         "Azotara" 
 #define TEXT_IND_FISHINGHARBOUR                          "Ribarska luka" 
 #define TEXT_IND_FISHINGGROUNDS                          "Ribarska lovišta" 
-#define TEXT_IND_FORGE                                   "Železara" 
+#define TEXT_IND_FORGE                                   "Kovačnica" 
 #define TEXT_IND_FURNITUREFACTORY                        "Kombinat nameštaja" 
 
 #define TEXT_IND_GENERALSTORE                            "Prodavnica" 
 #define TEXT_IND_GLASSWORKS                              "Staklara" 
+
+#define TEXT_IND_IRONWORKS                               "Železara" 
 
 #define TEXT_IND_JUNKYARD                                "Otpad" 
 
@@ -157,7 +163,7 @@
 
 #define TEXT_STA_DREDGINGSITE                            "\80 Bagerovanje" 
 #define TEXT_STA_FISHINGGROUNDS                          "\80 Lovišta" 
-#define TEXT_STA_FORGE                                   "Železara \80" 
+#define TEXT_STA_FORGE                                   "Kovačnica \80" 
 #define TEXT_STA_MARKET                                  "\80 Pijaca" 
 
 
@@ -191,10 +197,12 @@
 
 #define TEXT_INFO_CARGO_PRODUCTION                       "\98Proizvodni odnos:\0D" 
 
+#define TEXT_INFO_5T_PER_8T                              "\0D5t proizvoda po 8t isporučenog tovara." 
 #define TEXT_INFO_6T_PER_8T                              "\0D6t proizvoda po 8t isporučenog tovara." 
 #define TEXT_INFO_8T_PER_8T                              "\0D8t proizvoda po 8t isporučenog tovara." 
 
 #define TEXT_INFO_STEPUP_TWO_CARGOS                      "\0DProizvodnja se povećava ukoliko se dve ili više vrsta potrebnog tovara dostavi u roku od mesec dana." 
+#define TEXT_INFO_INCREASE_TO_3T_BOTH_CARGOS             "\0DProizvodnja se poboljšava na 3t po 8t kada su obe vrste potrebnog tovara dostavljene u roku od mesec dana." 
 #define TEXT_INFO_INCREASE_BOTH_CARGOS                   "\0DProizvodnja se poboljšava na 8t po 8t kada su obe vrste potrebnog tovara dostavljene u roku od mesec dana." 
 
 #define TEXT_INFO_3T_PER_8T_MS                           "  3t po 8t dostavljenog proizvodnog materijala\0D" 
@@ -216,7 +224,9 @@
 #define TEXT_INFO_5T_PER_8T_WOOL                         "  5t po 8t dostavljene vune\0D" 
 #define TEXT_INFO_5T_PER_8T_PLANTFIBRES                  "  5t po 8t dostavljenih biljnih vlakana\0D" 
 
-#define TEXT_INFO_5T_PER_8T_SUGARCANE                    "  5t po 8t dostavljenog šećera\0D" 
+#define TEXT_INFO_5T_PER_8T_SUGARCANE                    "  5t po 8t dostavljene šećerne trske\0D" 
+#define TEXT_INFO_5T_PER_8T_SUGARBEET                    "  5t po 8t dostavljene šećerne repe\0D" 
+#define TEXT_INFO_1T_PER_8T_WOOD                         "  1t po 8t dostavljenih drva\0D" 
 #define TEXT_INFO_2T_PER_8T_WOOD                         "  2t po 8t dostavljenih drva\0D" 
 #define TEXT_INFO_4T_PER_8T_WOOD                         "  4t po 8t dostavljenih drva\0D" 
 #define TEXT_INFO_6T_PER_8T_WOOD                         "  6t po 8t dostavljenih drva\0D" 
