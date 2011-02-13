@@ -4,86 +4,115 @@
 #define LANG_ID  04
 #define LANG_ID2 84
 
+//Cargo suffixes
+#define TEXT_CRG_SUFFIX_CRATES                           "cajas"
+
+
 //Cargo texts
+
+//Alcohol
+#define TEXT_CRG_ALCOHOL_CTYPE                           "Alcohol"
+#define TEXT_CRG_ALCOHOL_CARGOAMOUNT                     "de alcohol"
+#define TEXT_CRG_ALCOHOL_TABBR                           "\0EAL"
 
 //Bauxite
 #define TEXT_CRG_BAUXITE_CTYPE                           "Bauxita"
+#define TEXT_CRG_BAUXITE_CARGOAMOUNT                     "de bauxita"
 #define TEXT_CRG_BAUXITE_TABBR                           "\0EBX"
 
 //Building Materials
 #define TEXT_CRG_BUILDINGMATERIALS_CTYPE                 "Materiales de Construcción"
+#define TEXT_CRG_BUILDINGMATERIALS_CARGOAMOUNT           "de materiales de construcción"
 #define TEXT_CRG_BUILDINGMATERIALS_TABBR                 "\0EMC"
 
 //Chemicals
 #define TEXT_CRG_CHEMICALS_CTYPE                         "Productos Químicos"
+#define TEXT_CRG_CHEMICALS_CARGOAMOUNT                   "de productos químicos"
 #define TEXT_CRG_CHEMICALS_TABBR                         "\0EPQ"
 
 //Clay
 #define TEXT_CRG_CLAY_CTYPE                              "Arcilla"
+#define TEXT_CRG_CLAY_CARGOAMOUNT                        "de arcilla"
 #define TEXT_CRG_CLAY_TABBR                              "\0ECL"
 
 //Engineering supplies
 #define TEXT_CRG_ENGINEERINGSUPPLIES_CTYPE               "Suministros de Ingeniería"
+#define TEXT_CRG_ENGINEERINGSUPPLIES_CARGOAMOUNT         "de suministros de ingeniería"
 #define TEXT_CRG_ENGINEERINGSUPPLIES_TABBR               "\0EES"
 
 //Farm supplies
 #define TEXT_CRG_FARMSUPPLIES_CTYPE                      "Suministros Agrarios"
+#define TEXT_CRG_FARMSUPPLIES_CARGOAMOUNT                "de suministros agrarios"
 #define TEXT_CRG_FARMSUPPLIES_TABBR                      "\0ESA"
 
 //Fish 
 #define TEXT_CRG_FISH_CTYPE                              "Pescado"
+#define TEXT_CRG_FISH_CARGOAMOUNT                        "de pescado"
 #define TEXT_CRG_FISH_TABBR                              "\0EPC"
 
 //Fruit and Vegetables
 #define TEXT_CRG_FRUITSANDVEGETABLES_CTYPE               "Frutas y Vegetales"
 #define TEXT_CRG_FRUITSANDVEGETABLES_1TYPE               "Fruta y Vegetal"
+#define TEXT_CRG_FRUITSANDVEGETABLES_CARGOAMOUNT         "de fruta y vegetales"
 
 //Fuel oil
 #define TEXT_CRG_FUELOIL_CTYPE                           "Fueloil"
+#define TEXT_CRG_FUELOIL_CARGOAMOUNT                     "de fueloil"
 #define TEXT_CRG_FUELOIL_TABBR                           "\0EFO"
 
 //Gravel
 #define TEXT_CRG_GRAVEL_CTYPE                            "Piedra"
+#define TEXT_CRG_GRAVEL_CARGOAMOUNT                      "de piedra"
 #define TEXT_CRG_GRAVEL_TABBR                            "\0EPI"
 
 //Lumber
 #define TEXT_CRG_LUMBER_CTYPE                            "Tablas"
+#define TEXT_CRG_LUMBER_CARGOAMOUNT                      "de tablas"
 #define TEXT_CRG_LUMBER_TABBR                            "\0ETB"
 
 //Manufacturing Supplies
 #define TEXT_CRG_MANUFACTURINGSUPPLIES_CTYPE             "Suministros de Manufactura"
+#define TEXT_CRG_MANUFACTURINGSUPPLIES_CARGOAMOUNT       "de suministros de manufactura"
 #define TEXT_CRG_MANUFACTURINGSUPPLIES_TABBR             "\0ESM"
 
 //Metal
 #define TEXT_CRG_METAL_CTYPE                             "Metal"
+#define TEXT_CRG_METAL_CARGOAMOUNT                       "de metal"
 #define TEXT_CRG_METAL_TABBR                             "\0EML"
 
 //Milk
 #define TEXT_CRG_MILK_CTYPE                              "Leche"
+#define TEXT_CRG_MILK_CARGOAMOUNT                        "de leche"
 #define TEXT_CRG_MILK_TABBR                              "\0ELC"
 
 //Plant Fibres
 #define TEXT_CRG_PLANTFIBRES_CTYPE                       "Fibras Vegetales"
+#define TEXT_CRG_PLANTFIBRES_CARGOAMOUNT                 "de fibras vegetales"
 #define TEXT_CRG_PLANTFIBRES_TABBR                       "\0EFV"
 
 //Sand
 #define TEXT_CRG_SAND_CTYPE                              "Arena"
+#define TEXT_CRG_SAND_CARGOAMOUNT                        "de arena"
 #define TEXT_CRG_SAND_TABBR                              "\0EAR"
 
 //Scrap Metal
 #define TEXT_CRG_SCRAPMETAL_CTYPE                        "Chatarra"
+#define TEXT_CRG_SCRAPMETAL_CARGOAMOUNT                  "de chatarra"
 #define TEXT_CRG_SCRAPMETAL_TABBR                        "\0ECT"
 
 //Sugar beet
 #define TEXT_CRG_SUGARBEET_CTYPE                         "Remolacha Azucarera"
+#define TEXT_CRG_SUGARBEET_CARGOAMOUNT                   "de remolacha azucarera"
 #define TEXT_CRG_SUGARBEET_TABBR                         "\0ERA"
 
 //Sugar cane
 #define TEXT_CRG_SUGARCANE_CTYPE                         "Caña de Azúcar"
+#define TEXT_CRG_SUGARCANE_CARGOAMOUNT                   "de caña de azúcar"
 #define TEXT_CRG_SUGARCANE_TABBR                         "\0ECA"
 
 //Wool
 #define TEXT_CRG_WOOL_CTYPE                              "Lana"
+#define TEXT_CRG_WOOL_CARGOAMOUNT                        "de lana"
 #define TEXT_CRG_WOOL_TABBR                              "\0EWL"
 
 //Industry texts
@@ -110,6 +139,7 @@
 #define TEXT_IND_FURNITUREFACTORY                        "Fábrica de Muebles"
 #define TEXT_IND_GENERALSTORE                            "Tienda"
 #define TEXT_IND_GLASSWORKS                              "Cristalería"
+#define TEXT_IND_IRONWORKS                               "Herrería"
 
 #define TEXT_IND_JUNKYARD                                "Desguace"
 #define TEXT_IND_LIMEKILN                                "Horno de Cal" 
@@ -171,9 +201,10 @@
 #define TEXT_INFO_AVAILABILITY_1762                      "\98Disponible: \901 de Enero de 1762"
 #define TEXT_INFO_AVAILABILITY_1780                      "\98Disponible: \901 de Enero de 1780"
 
-#define TEXT_INFO_GENERIC_CLOSE_0                        "\n\98Esta industria podría cerrar a menos que se entregue carga en un plazo de:\0D\90  \UE07C meses"
-#define TEXT_INFO_GENERIC_CLOSE_1                        "\n\98Esta industria podría cerrar a menos que se entregue carga en un plazo de:\0D\94  \UE07C mes"
-#define TEXT_INFO_GENERIC_CLOSE_2                        "\n\8BNo se ha entregado carga durante al menos\85\85\UE07C meses. Esta industria podría cerrar pronto. \0D"
+#define TEXT_INFO_GENERIC_CLOSE_0                        "\n\98Esta industria podría cerrar a menos que se entregue carga en un plazo de:\0D\90 meses"
+#define TEXT_INFO_GENERIC_CLOSE_1                        "\n\98Esta industria podría cerrar a menos que se entregue carga en un plazo de:\0D\94 mes"
+#define TEXT_INFO_GENERIC_CLOSE_2                        "\n\8BNo se ha entregado carga durante al menos\85\85meses. Esta industria podría cerrar pronto. \0D"
+
 
 #define TEXT_INFO_LIMIT_200                              "\98 (max 200)"
 #define TEXT_INFO_LIMIT_800                              "\98 (max 800)"
@@ -194,6 +225,7 @@
 #define TEXT_INFO_8T_PER_8T                              "\0D8t producidas por cada 8t entregadas."
 
 #define TEXT_INFO_STEPUP_TWO_CARGOS                      "\0DLa producción aumenta si dos o más cargas son entregadas en un intervalo inferior a un mes."
+#define TEXT_INFO_INCREASE_TO_3T_BOTH_CARGOS             "\0DAumenta a 3t por cada 8t si ambas cargas son entregadas en un intervalo inferior a un mes."
 #define TEXT_INFO_INCREASE_BOTH_CARGOS                   "\0DAumenta a 8t por cada 8t si ambas cargas son entregadas en un intervalo inferior a un mes."
 
 #define TEXT_INFO_3T_PER_8T_MS                           "  3t por cada 8t de suministros de manufactura entregadas\0D"
@@ -216,6 +248,7 @@
 
 #define TEXT_INFO_5T_PER_8T_SUGARCANE                    "  5t por cada 8t de caña de azúcar entregadas\0D"
 #define TEXT_INFO_5T_PER_8T_SUGARBEET                    "  5t por cada 85 de remolacha azucarera entregadas\0D"
+#define TEXT_INFO_1T_PER_8T_WOOD                         "  1t por cada 8t de madera entregadas\0D" 
 #define TEXT_INFO_2T_PER_8T_WOOD                         "  2t por cada 8t de madera entregadas\0D"
 #define TEXT_INFO_4T_PER_8T_WOOD                         "  4t por cada 8t de madera entregadas\0D"
 #define TEXT_INFO_6T_PER_8T_WOOD                         "  6t por cada 8t de madera entregadas\0D"
@@ -240,12 +273,11 @@
 #define TEXT_INFO_WHOLESALEMARKET                        "\98Vende productos a negocios de restauración y hostelería.\0D"
 #define TEXT_INFO_FORGE                                  "\98Produce objetos de metal forjado como puertas de hierro enrejado, herramientas, útiles de labranza o cocina y herraduras.\0D"
 
-
-#define TEXT_INFO_MANUFACTURINGSUPPLIES_STEPUP           "\0DLa producción aumenta si se entregan suministros de manufactura en un intervalo inferior a un mes desde el envío de una de las otras cargas."
-
 #define TEXT_INFO_FERTILISERPLANT                        "\98Transforma productos químicos en fertilizante para ser usado en granjas.\0D"
 #define TEXT_INFO_LUMBERYARD                             "\98Produce objetos tales como mástiles y cercas.\0D"
 #define TEXT_INFO_BIOREFINERY                            "\98Procesa grano y azúcar en petróleo y productos químicos.\0D" 
+
+#define TEXT_INFO_MANUFACTURINGSUPPLIES_STEPUP           "\0DLa producción aumenta si se entregan suministros de manufactura en un intervalo inferior a un mes desde el envío de una de las otras cargas."
 
 
 
@@ -268,6 +300,10 @@
 
 #define TEXT_PNAME_PREVENTCONSTRUCTION                   "Prevenir construcción de nuevas industrias (no terminado)"
 #define TEXT_PDESC_PREVENTCONSTRUCTION                   "\89Opción no terminada. \98Cuando esté terminada proporcionará un modo especial para uso con escenarios."
+
+#define TEXT_PNAME_MAXCOASTDISTANCE                      "Máxima distancia con la costa para industrias marítimas (en casillas)"
+#define TEXT_PDESC_MAXCOASTDISTANCE                      "\89Máxima distancia de las zonas de pesca y  de dragado con la costa (en casillas)."
+#define TEXT_PVALUE0_MAXCOASTDISTANCE                    "Sin límite"
 
 #define TEXT_PNAME_DEBUG                                 "Mostrar texto de depuración"
 #define TEXT_PDESC_DEBUG                                 "Sólo para desarrolladores"
