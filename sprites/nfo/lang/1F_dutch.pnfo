@@ -7,88 +7,93 @@
 
 //Cargo texts
 
-//Sugar cane
-#define TEXT_CRG_SUGARCANE_CTYPE                        "Suikerriet"
-#define TEXT_CRG_SUGARCANE_TABBR                        "\0ESR"
-
-//Sugar beet
-#define TEXT_CRG_SUGARBEET_CTYPE                         "Suikerbieten" 
-#define TEXT_CRG_SUGARBEET_TABBR                         "\0ESB" 
-
-//Fruit and Vegetables
-#define TEXT_CRG_FRUITSANDVEGETABLES_CTYPE              "Fruit en Groente"
-#define TEXT_CRG_FRUITSANDVEGETABLES_1TYPE              "Fruit en Groente"
-
-//Fish 
-#define TEXT_CRG_FISH_CTYPE                             "Vis"
-#define TEXT_CRG_FISH_TABBR                             "\0EVS"
-
-//Wool
-#define TEXT_CRG_WOOL_CTYPE                             "Wol"
-#define TEXT_CRG_WOOL_TABBR                             "\0EWL"
-
-//PLANTFIBRES
-#define TEXT_CRG_PLANTFIBRES_CTYPE                           "Katoen"
-#define TEXT_CRG_PLANTFIBRES_TABBR                           "\0EKT"
-
-//Sand
-#define TEXT_CRG_SAND_CTYPE                             "Zand"
-#define TEXT_CRG_SAND_TABBR                             "\0EZD"
-
-//Gravel
-#define TEXT_CRG_GRAVEL_CTYPE                           "Grind"
-#define TEXT_CRG_GRAVEL_TABBR                           "\0EGD"
-
-//Clay
-#define TEXT_CRG_CLAY_CTYPE                              "Klei" 
-#define TEXT_CRG_CLAY_TABBR                              "\0EKL" 
-
-//Lumber
-#define TEXT_CRG_LUMBER_CTYPE                           "Gezaagd hout"
-#define TEXT_CRG_LUMBER_TABBR                           "\0EHT"
-
-//Manufacturing Supplies
-#define TEXT_CRG_MANUFACTURINGSUPPLIES_CTYPE            "Productiehulpgoederen"
-#define TEXT_CRG_MANUFACTURINGSUPPLIES_TABBR            "\0EHP"
-
-//Farm supplies
-#define TEXT_CRG_FARMSUPPLIES_CTYPE                     "Landbouwhulpgoederen"
-#define TEXT_CRG_FARMSUPPLIES_TABBR                     "\0EHL"
-
-//Chemicals
-#define TEXT_CRG_CHEMICALS_CTYPE                        "Chemicaliën"
-#define TEXT_CRG_CHEMICALS_TABBR                        "\0ECH"
-
-//Engineering supplies
-#define TEXT_CRG_ENGINEERINGSUPPLIES_CTYPE              "Constructiehulpgoederen"
-#define TEXT_CRG_ENGINEERINGSUPPLIES_TABBR              "\0EHC"
-
-//Fuel oil
-#define TEXT_CRG_FUELOIL_CTYPE                          "Benzine"
-#define TEXT_CRG_FUELOIL_TABBR                          "\0EBZ"
-
 //Bauxite
-#define TEXT_CRG_BAUXITE_CTYPE                          "Bauxiet"
-#define TEXT_CRG_BAUXITE_TABBR                          "\0EBX"
-
-//Aluminium
-#define TEXT_CRG_METAL_CTYPE                            "Metaal"
-#define TEXT_CRG_METAL_TABBR                            "\0EAL"
-
-//Milk
-#define TEXT_CRG_MILK_CTYPE                             "Melk"
-#define TEXT_CRG_MILK_TABBR                             "\0EML"
-
-//Scrap Metal
-#define TEXT_CRG_SCRAPMETAL_CTYPE                       "Schroot"
-#define TEXT_CRG_SCRAPMETAL_TABBR                       "\0EST"
+#define TEXT_CRG_BAUXITE_CTYPE                           "Bauxiet"
+#define TEXT_CRG_BAUXITE_TABBR                           "\0EBX"
 
 //Building Materials
 #define TEXT_CRG_BUILDINGMATERIALS_CTYPE                 "Bouwmaterialen" 
 #define TEXT_CRG_BUILDINGMATERIALS_TABBR                 "\0EBM" 
 
-//Industry texts
+//Chemicals
+#define TEXT_CRG_CHEMICALS_CTYPE                         "Chemicaliën"
+#define TEXT_CRG_CHEMICALS_TABBR                         "\0ECH"
 
+//Clay
+#define TEXT_CRG_CLAY_CTYPE                              "Klei" 
+#define TEXT_CRG_CLAY_TABBR                              "\0EKL" 
+
+//Engineering supplies
+#define TEXT_CRG_ENGINEERINGSUPPLIES_CTYPE               "Constructiehulpgoederen"
+#define TEXT_CRG_ENGINEERINGSUPPLIES_TABBR               "\0EHC"
+
+//Farm supplies
+#define TEXT_CRG_FARMSUPPLIES_CTYPE                      "Landbouwhulpgoederen"
+#define TEXT_CRG_FARMSUPPLIES_TABBR                      "\0EHL"
+
+//Fish
+#define TEXT_CRG_FISH_CTYPE                              "Vis"
+#define TEXT_CRG_FISH_TABBR                              "\0EVS"
+
+//Fruit and Vegetables
+#define TEXT_CRG_FRUITSANDVEGETABLES_CTYPE               "Fruit en Groente"
+#define TEXT_CRG_FRUITSANDVEGETABLES_1TYPE               "Fruit en Groente"
+
+//Fuel oil
+#define TEXT_CRG_FUELOIL_CTYPE                           "Benzine"
+#define TEXT_CRG_FUELOIL_TABBR                           "\0EBZ"
+
+//Gravel
+#define TEXT_CRG_GRAVEL_CTYPE                            "Grind"
+#define TEXT_CRG_GRAVEL_TABBR                            "\0EGD"
+
+//Lumber
+#define TEXT_CRG_LUMBER_CTYPE                            "Gezaagd hout"
+#define TEXT_CRG_LUMBER_TABBR                            "\0EHT"
+
+//Manufacturing Supplies
+#define TEXT_CRG_MANUFACTURINGSUPPLIES_CTYPE             "Productiehulpgoederen"
+#define TEXT_CRG_MANUFACTURINGSUPPLIES_TABBR             "\0EHP"
+
+//Metal
+#define TEXT_CRG_METAL_CTYPE                             "Metaal"
+#define TEXT_CRG_METAL_TABBR                             "\0EAL"
+
+//Milk
+#define TEXT_CRG_MILK_CTYPE                              "Melk"
+#define TEXT_CRG_MILK_TABBR                              "\0EML"
+
+//Plant Fibres
+#define TEXT_CRG_PLANTFIBRES_CTYPE                       "Katoen"
+#define TEXT_CRG_PLANTFIBRES_TABBR                       "\0EKT"
+
+//Sand
+#define TEXT_CRG_SAND_CTYPE                              "Zand"
+#define TEXT_CRG_SAND_TABBR                              "\0EZD"
+
+//Scrap Metal
+#define TEXT_CRG_SCRAPMETAL_CTYPE                        "Schroot"
+#define TEXT_CRG_SCRAPMETAL_TABBR                        "\0EST"
+
+//Sugar beet
+#define TEXT_CRG_SUGARBEET_CTYPE                         "Suikerbieten" 
+#define TEXT_CRG_SUGARBEET_TABBR                         "\0ESB" 
+
+//Sugar cane
+#define TEXT_CRG_SUGARCANE_CTYPE                         "Suikerriet"
+#define TEXT_CRG_SUGARCANE_TABBR                         "\0ESR"
+
+//Wool
+#define TEXT_CRG_WOOL_CTYPE                              "Wol"
+#define TEXT_CRG_WOOL_TABBR                              "\0EWL"
+
+
+//Industry texts
+#define TEXT_IND_ARABLEFARM                              "Landbouw boerenbedrijf" 
+#define TEXT_IND_ALUMINIUMPLANT                          "Aluminiumfabriek" 
+
+#define TEXT_IND_BAKERY                                  "Bakkerij" 
+#define TEXT_IND_BAUXITEMINE                             "Bauxietmijn" 
 #define TEXT_IND_BIOREFINERY                             "Bioraffinaderij" 
 #define TEXT_IND_BREWERY                                 "Brouwerij" 
 #define TEXT_IND_BRICKWORKS                              "Steenfabriek" 
@@ -96,46 +101,49 @@
 
 #define TEXT_IND_CEMENTPLANT                             "Cementfabriek"
 #define TEXT_IND_CLAYPIT                                 "Kleiwinning"
-#define TEXT_IND_WINDFARM                                "Windmolenpark"
-
-#define TEXT_IND_FERTILISERPLANT                         "Kunstmestfabriek" 
-#define TEXT_IND_PLASTICSPLANT                           "Kunststoffabriek" 
-#define TEXT_IND_GLASSWORKS                              "Glasfabriek" 
-#define TEXT_IND_MEATPACKER                              "Slachterij" 
-#define TEXT_IND_DAIRYFARM                               "Melkveehouderij" 
 
 #define TEXT_IND_DAIRY                                   "Zuivelfabriek" 
-#define TEXT_IND_TEXTILEMILL                             "Textielfabriek" 
-#define TEXT_IND_FURNITUREFACTORY                        "Meubelfabriek" 
-#define TEXT_IND_ALUMINIUMPLANT                          "Aluminiumfabriek" 
-#define TEXT_IND_MACHINESHOP                             "Machinewerkplaats" 
+#define TEXT_IND_DAIRYFARM                               "Melkveehouderij" 
+#define TEXT_IND_DREDGINGSITE                            "Baggermolen" 
 
-#define TEXT_IND_LUMBERYARD                              "Houtwerkplaats" 
-#define TEXT_IND_METALFOUNDRY                            "IJzergieterij" 
-#define TEXT_IND_MIXEDFARM                               "Gemengd boerenbedrijf" 
+#define TEXT_IND_FERTILISERPLANT                         "Kunstmestfabriek" 
+#define TEXT_IND_FISHINGHARBOUR                          "Vissershaven" 
+#define TEXT_IND_FISHINGGROUNDS                          "Visgebied" 
+#define TEXT_IND_FORGE                                   "Smederij" 
+#define TEXT_IND_FURNITUREFACTORY                        "Meubelfabriek" 
+
+#define TEXT_IND_GENERALSTORE                            "Kruidenier" 
+#define TEXT_IND_GLASSWORKS                              "Glasfabriek" 
+
+
 #define TEXT_IND_JUNKYARD                                "Schroothoop" 
 
 #define TEXT_IND_LIMEKILN                                "Kalkoven" 
-#define TEXT_IND_GENERALSTORE                            "Kruidenier" 
+#define TEXT_IND_LUMBERYARD                              "Houtwerkplaats" 
 
-#define TEXT_IND_BAUXITEMINE                             "Bauxietmijn" 
-#define TEXT_IND_DREDGINGSITE                            "Baggermolen" 
-#define TEXT_IND_QUARRY                                 "Zandwinning" 
-#define TEXT_IND_ARABLEFARM                              "Landbouw boerenbedrijf" 
+#define TEXT_IND_MACHINESHOP                             "Machinewerkplaats" 
+#define TEXT_IND_MEATPACKER                              "Slachterij" 
+#define TEXT_IND_METALFOUNDRY                            "IJzergieterij" 
+#define TEXT_IND_MIXEDFARM                               "Gemengd boerenbedrijf" 
 
-#define TEXT_IND_BAKERY                                  "Bakkerij" 
-#define TEXT_IND_SHEEPFARM                               "Schapenhouderij" 
-#define TEXT_IND_PETROLPUMP                        	     "Tankstation" 
+#define TEXT_IND_PETROLPUMP                              "Tankstation" 
+#define TEXT_IND_PLASTICSPLANT                           "Kunststoffabriek" 
 
-#define TEXT_IND_FISHINGHARBOUR                          "Vissershaven" 
-#define TEXT_IND_FISHINGGROUNDS                          "Visgebied" 
-#define TEXT_IND_FORGE                              "Smederij" 
-#define TEXT_IND_WINDMILL                                "Windmolen" 
-#define TEXT_IND_WHOLESALEMARKET                         "Groothandel" 
+#define TEXT_IND_QUARRY                                  "Zandwinning" 
 
-#define TEXT_IND_SUPERMARKET                             "Supermarkt" 
 #define TEXT_IND_RETAILMARKET                            "Detailhandel" 
+
+#define TEXT_IND_SHEEPFARM                               "Schapenhouderij" 
+#define TEXT_IND_SUPERMARKET                             "Supermarkt" 
 #define TEXT_IND_SUGARREFINERY                           "Suikerfabriek" 
+
+#define TEXT_IND_TEXTILEMILL                             "Textielfabriek" 
+
+#define TEXT_IND_WHOLESALEMARKET                         "Groothandel" 
+#define TEXT_IND_WINDFARM                                "Windmolenpark"
+#define TEXT_IND_WINDMILL                                "Windmolen" 
+
+
 
 //Station texts for station name prefixes/suffixes. \80 where town name goes
 
@@ -143,6 +151,7 @@
 #define TEXT_STA_MILLS                                   "\80 Molen" 
 #define TEXT_STA_WELLS                                   "\80 Bron" 
 #define TEXT_STA_REFINERY                                "\80 Raffinaderij"
+
 #define TEXT_STA_FACTORY                                 "\80 Fabriek" 
 #define TEXT_STA_PLANT                                   "\80 Werkplaats" 
 #define TEXT_STA_QUARRY                                  "\80 Groeve" 
@@ -150,8 +159,9 @@
 
 #define TEXT_STA_DREDGINGSITE                            "\80 Grindgat" 
 #define TEXT_STA_FISHINGGROUNDS                          "\80 Visgebied" 
-#define TEXT_STA_FORGE                              "\80 Smidse" 
+#define TEXT_STA_FORGE                                   "\80 Smidse" 
 #define TEXT_STA_MARKET                                  "\80 Markt" 
+
 
 
 //Additional texts for purchase window
@@ -187,15 +197,13 @@
 #define TEXT_INFO_8T_PER_8T                              "\0D8t productie voor iedere 8t geleverd." 
 
 #define TEXT_INFO_STEPUP_TWO_CARGOS                      "\0DProductie verhoogt als twee of meer vrachtsoorten binnen een maand van elkaar worden geleverd." 
+#
 #define TEXT_INFO_INCREASE_BOTH_CARGOS                   "\0DVerhoogt tot 8t per 8t als beide vrachtsoorten binnen een maand van elkaar worden geleverd." 
 
-#define TEXT_INFO_MANUFACTURINGSUPPLIES_STEPUP                         "\0DProductie verhoogt als productiehulpgoederen binnen een maand van andere vracht worden geleverd." 
-
 #define TEXT_INFO_3T_PER_8T_MS                           "  3t per 8t productiehulpgoederen\0D" 
-#define TEXT_INFO_5T_PER_8T_PLANTFIBRES                  "  5t per 8t katoen\0D" 
 #define TEXT_INFO_2T_PER_8T_IRON_ORE                     "  2t per 8t ijzererts\0D" 
-#define TEXT_INFO_4T_PER_8T_COAL                         "  4t per 8t kolen\0D" 
 #define TEXT_INFO_2T_PER_8T_COAL                         "  2t per 8t kolen\0D" 
+#define TEXT_INFO_4T_PER_8T_COAL                         "  4t per 8t kolen\0D" 
 #define TEXT_INFO_4T_PER_8T_SCRAP_METAL                  "  4t per 8t schroot\0D" 
 #define TEXT_INFO_2T_PER_8T_BAUXITE                      "  2t per 8t bauxiet\0D" 
 
@@ -209,32 +217,37 @@
 #define TEXT_INFO_5T_PER_8T_LIVESTOCK                    "  5t per 8t vee\0D" 
 #define TEXT_INFO_5T_PER_8T_FISH                         "  5t per 8t vis\0D" 
 #define TEXT_INFO_5T_PER_8T_WOOL                         "  5t per 8t wol\0D" 
-#define TEXT_INFO_6T_PER_8T_SAND                         "  6t per 8t zand\0D" 
-#define TEXT_INFO_2T_PER_8T_SAND                         "  2t per 8t zand\0D" 
+#define TEXT_INFO_5T_PER_8T_PLANTFIBRES                  "  5t per 8t katoen\0D" 
+
+#define TEXT_INFO_5T_PER_8T_SUGARCANE                    "  5t per 8t suiker\0D" 
+
+#define TEXT_INFO_2T_PER_8T_WOOD                         "  2t per 8t hout\0D" 
+#define TEXT_INFO_4T_PER_8T_WOOD                         "  4t per 8t hout\0D" 
+#define TEXT_INFO_6T_PER_8T_WOOD                         "  6t per 8t hout\0D" 
 
 #define TEXT_INFO_4T_PER_8T_GRAVEL                       "  4t per 8t grind\0D" 
-#define TEXT_INFO_5T_PER_8T_SUGARCANE                    "  5t per 8t suiker\0D" 
-#define TEXT_INFO_6T_PER_8T_WOOD                         "  6t per 8t hout\0D" 
-#define TEXT_INFO_4T_PER_8T_WOOD                         "  4t per 8t hout\0D" 
-#define TEXT_INFO_2T_PER_8T_WOOD                         "  2t per 8t hout\0D" 
-#define TEXT_INFO_4T_PER_8T_CLAY                         "  4t per 8t klei\0D" 
 #define TEXT_INFO_2T_PER_8T_CLAY                         "  2t per 8t klei\0D" 
+#define TEXT_INFO_4T_PER_8T_CLAY                         "  4t per 8t klei\0D" 
+#define TEXT_INFO_2T_PER_8T_SAND                         "  2t per 8t zand\0D" 
+#define TEXT_INFO_6T_PER_8T_SAND                         "  6t per 8t zand\0D" 
 
 #define TEXT_INFO_MACHINESHOP                            "\98Bouwt en onderhoudt machines.\0D" 
 #define TEXT_INFO_SAWMILL                                "\98Hakt hout.\0D" 
 #define TEXT_INFO_WINDFARM                               "\98 \0D" 
 #define TEXT_INFO_METALFOUNDRY                           "\98Maakt metalen gereedschappen en onderdelen.\0D" 
 #define TEXT_INFO_PAPERMILL                              "\98Maakt papier en karton uit houtpulp.\0D"
-#define TEXT_INFO_FORGE                                  "\98Maakt smeedijzeren producten zoals hekken, roosters, gereedschappen, ploegen, keukengerei en hoefijzers.\0D" 
 
 #define TEXT_INFO_OILREFINERY                            "\98Verwerkt ruwe olie tot benzine en chemicaliën.\0D" 
 #define TEXT_INFO_PLASTICSPLANT                          "\98Maakt plasticproducten zoals verpakking en huishoudartikelen.\0D" 
 #define TEXT_INFO_GLASSWORKS                             "\98Maakt glasproducten zoals flessen, potten en vensterglas.\0D" 
 #define TEXT_INFO_WHOLESALEMARKET                        "\98Verkoopt producten aan horeca-ondernemingen.\0D"
+#define TEXT_INFO_FORGE                                  "\98Maakt smeedijzeren producten zoals hekken, roosters, gereedschappen, ploegen, keukengerei en hoefijzers.\0D" 
 
 #define TEXT_INFO_FERTILISERPLANT                        "\98Verwerkt chemicaliën tot kunstmest voor gebruik door boerderijen.\0D" 
 #define TEXT_INFO_LUMBERYARD                             "\98Maakt onder andere houten palen en stijgerplanken..\0D" 
 #define TEXT_INFO_BIOREFINERY                            "\98Verwerkt graan en suiker tot benzine and chemicaliën.\0D" 
+
+#define TEXT_INFO_MANUFACTURINGSUPPLIES_STEPUP           "\0DProductie verhoogt als productiehulpgoederen binnen een maand van andere vracht worden geleverd." 
 
 
 //grf and parameter descriptions
