@@ -4,6 +4,10 @@
 #define LANG_ID  7F
 #define LANG_ID2 FF
 
+//Cargo suffixes
+#define TEXT_CRG_SUFFIX_CRATES                           "crates" 
+
+
 //Cargo texts
 
 //Alcohol
@@ -33,12 +37,12 @@
 
 //Engineering supplies
 #define TEXT_CRG_ENGINEERINGSUPPLIES_CTYPE               "Engineering Supplies" 
-#define TEXT_CRG_ENGINEERINGSUPPLIES_CARGOAMOUNT         "crates of engineering supplies" 
+#define TEXT_CRG_ENGINEERINGSUPPLIES_CARGOAMOUNT         "of engineering supplies" 
 #define TEXT_CRG_ENGINEERINGSUPPLIES_TABBR               "\0EES" 
 
 //Farm supplies
 #define TEXT_CRG_FARMSUPPLIES_CTYPE                      "Farm Supplies" 
-#define TEXT_CRG_FARMSUPPLIES_CARGOAMOUNT                "crates of farm supplies" 
+#define TEXT_CRG_FARMSUPPLIES_CARGOAMOUNT                "of farm supplies" 
 #define TEXT_CRG_FARMSUPPLIES_TABBR                      "\0EFS" 
 
 //Fish 
@@ -68,7 +72,7 @@
 
 //Manufacturing Supplies - formerly Packaging
 #define TEXT_CRG_MANUFACTURINGSUPPLIES_CTYPE             "Manufacturing Supplies" 
-#define TEXT_CRG_MANUFACTURINGSUPPLIES_CARGOAMOUNT       "crates of manufacturing supplies" 
+#define TEXT_CRG_MANUFACTURINGSUPPLIES_CARGOAMOUNT       "of manufacturing supplies" 
 #define TEXT_CRG_MANUFACTURINGSUPPLIES_TABBR             "\0EMS" 
 
 //Metal
