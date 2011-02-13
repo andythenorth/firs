@@ -81,7 +81,7 @@
 
 //Redefinition of original TTD industry
 //Oil Well
--1 * 0 00 0A \b20 01 IND_OILWELLS //-1 * 0 00 0A <num-props> 01 <id>
+-1 * 0 00 0A \b21 01 IND_OILWELLS //-1 * 0 00 0A <num-props> 01 <id>
 	08 IND_NULL //substitute industry type
 	0A 04 //number of industry layouts
 		\d183 //sum(size of layout definition +2 for termination)
@@ -143,6 +143,7 @@
 	20 FF FF FF BF //prospecting success chance (dword; FFFFFFFFh=100%)
 	0F \b230 //fund cost multiplier (byte)
 	19 CLR_OILWELL //map colour (byte; using indexes from dos palette)
+	1A \dx0 //special industry flag (dword)
 	21 BB //callback flags 
 	22 05  //callback flags	
 	24 STR_STA_WELLS //default text for nearby station
