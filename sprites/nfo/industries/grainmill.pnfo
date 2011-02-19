@@ -23,8 +23,8 @@
 	0E 10 //callback flags
 
 // include tiles and layouts, ! Action 2 IDs here are deliberately repeated by the various tile includes
-#include "bakery_tiles_layouts/bakery_tiles_standard.pnfo"
-#include "bakery_tiles_layouts/bakery_layouts.pnfo"
+#include "grainmill_tiles_layouts/grainmill_tiles_standard.pnfo"
+#include "grainmill_tiles_layouts/grainmill_layouts.pnfo"
 
 -1 * 0 02 09 A1
 	82 44 //check layout number (lowest byte of related industry)
@@ -37,8 +37,8 @@
     \wxB5 \b5 \b5 //<set-id \w> <low-range> <high-range>
 	\wx00 //<default> (first tile layout available)
 
-#include "bakery_tiles_layouts/bakery_tiles_standard.pnfo"
-#include "bakery_tiles_layouts/bakery_layouts.pnfo"
+#include "grainmill_tiles_layouts/grainmill_tiles_standard.pnfo"
+#include "grainmill_tiles_layouts/grainmill_layouts.pnfo"
 
 -1 * 0 02 09 A2
 	82 44 //check layout number (lowest byte of related industry)
@@ -51,8 +51,8 @@
     \wxB5 \b5 \b5 //<set-id \w> <low-range> <high-range>
 	\wx00 //<default> (first tile layout available)
 
-#include "bakery_tiles_layouts/bakery_tiles_snow.pnfo"
-#include "bakery_tiles_layouts/bakery_layouts.pnfo"
+#include "grainmill_tiles_layouts/grainmill_tiles_snow.pnfo"
+#include "grainmill_tiles_layouts/grainmill_layouts.pnfo"
 
 -1 * 0 02 09 A3
 	82 44 //check layout number (lowest byte of related industry)
