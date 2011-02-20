@@ -34,7 +34,7 @@
 #define IND_FISHINGHARBOUR        1F
 #define IND_FISHINGGROUNDS        20
 #define IND_GUANOMINE             21
-#define IND_BAKERY                22
+#define IND_GRAINMILL             22
 #define IND_BREWERY               23
 #define IND_DAIRY                 24
 #define IND_MEATPACKER            25
@@ -101,7 +101,7 @@
 #define TILE_MEATPACKER_1                  B3
 #define TILE_DAIRYFARM_1                   B4
 #define TILE_DAIRY_1                       B5
-#define TILE_BAKERY_1                      B6
+#define TILE_GRAINMILL_1                   B6
 #define TILE_TEXTILEMILL_1                 B7
 #define TILE_FURNITUREFACTORY_1            B8
 #define TILE_ALUMINIUMPLANT_1              B9
@@ -346,7 +346,7 @@
 #define STR_INFO_OILREFINERY        IND_OILREFINERY
 #define STR_INFO_PLASTICSPLANT      IND_PLASTICSPLANT
 #define STR_INFO_GLASSWORKS         IND_GLASSWORKS
-#define STR_INFO_MS_GRAIN_INCREASE  IND_BAKERY //windmill uses this string as well
+#define STR_INFO_MS_GRAIN_INCREASE  IND_GRAINMILL
 #define STR_INFO_BREWERY            IND_BREWERY
 #define STR_INFO_DAIRY              IND_DAIRY
 #define STR_INFO_MEATPACKER         IND_MEATPACKER

@@ -1,6 +1,6 @@
 //BAKERY
 // Defines for use in industry template
-#define THIS_INDUSTRY                 IND_BAKERY
+#define THIS_INDUSTRY                 IND_GRAINMILL
 #define THIS_NUM_INPUT_CARGOS         \d02
 #define THIS_NUM_OUTPUT_CARGOS        \d01
 // manufacturing supplies should be in first slot for this to work correctly
@@ -14,7 +14,7 @@
 //Industry tiles definition
 
 //Tile action 0
--1 * 0 00 09 \b6 01 TILE_BAKERY_1 // -1 * 0 00 09 <num-props> 01 <id>
+-1 * 0 00 09 \b6 01 TILE_GRAINMILL_1 // -1 * 0 00 09 <num-props> 01 <id>
 	08 TILE_NULL //subsitute type
 	0A CARGO_GRAIN 08 //tile acceptance 1
 	0B CARGO_MANUFACTURINGSUPPLIES 08 //tile acceptance 2
@@ -81,54 +81,54 @@
 //Action3 attach sprites to industry tile
 
 //Tile action 3
--1 * 0 03 09 01 TILE_BAKERY_1 00 \wxC0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
+-1 * 0 03 09 01 TILE_GRAINMILL_1 00 \wxC0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
 
 
 
 //Industry definition
 
 //Action 0
--1 * 0 00 0A \b26 01 IND_BAKERY //-1 * 0 00 0A <num-props> 01 <id>
+-1 * 0 00 0A \b26 01 IND_GRAINMILL //-1 * 0 00 0A <num-props> 01 <id>
 	08 IND_NULL //reuse original industry with this here ID
 	0A 05 //number of industry layouts
 		\d150 //sum(size of layout definition +2 for termination)
 		//layout:
-			00 00 FE TILE_BAKERY_1 00 //xoffs yoffs FE newtile(W)
-			00 01 FE TILE_BAKERY_1 00
-			01 00 FE TILE_BAKERY_1 00
-			01 01 FE TILE_BAKERY_1 00
+			00 00 FE TILE_GRAINMILL_1 00 //xoffs yoffs FE newtile(W)
+			00 01 FE TILE_GRAINMILL_1 00
+			01 00 FE TILE_GRAINMILL_1 00
+			01 01 FE TILE_GRAINMILL_1 00
 		00 80 //terminate layout definition
 		//layout:
-			00 00 FE TILE_BAKERY_1 00 //xoffs yoffs FE newtile(W)
-			00 01 FE TILE_BAKERY_1 00
-			01 00 FE TILE_BAKERY_1 00
-			01 01 FE TILE_BAKERY_1 00
+			00 00 FE TILE_GRAINMILL_1 00 //xoffs yoffs FE newtile(W)
+			00 01 FE TILE_GRAINMILL_1 00
+			01 00 FE TILE_GRAINMILL_1 00
+			01 01 FE TILE_GRAINMILL_1 00
 		00 80 //terminate layout definition
 		//layout:
-			00 00 FE TILE_BAKERY_1 00 //xoffs yoffs FE newtile(W)
-			00 01 FE TILE_BAKERY_1 00
-			01 00 FE TILE_BAKERY_1 00
-			01 01 FE TILE_BAKERY_1 00
-			02 00 FE TILE_BAKERY_1 00
-			02 01 FE TILE_BAKERY_1 00
+			00 00 FE TILE_GRAINMILL_1 00 //xoffs yoffs FE newtile(W)
+			00 01 FE TILE_GRAINMILL_1 00
+			01 00 FE TILE_GRAINMILL_1 00
+			01 01 FE TILE_GRAINMILL_1 00
+			02 00 FE TILE_GRAINMILL_1 00
+			02 01 FE TILE_GRAINMILL_1 00
 		00 80 //terminate layout definition
 		//layout:
-			00 00 FE TILE_BAKERY_1 00 //xoffs yoffs FE newtile(W)
-			00 01 FE TILE_BAKERY_1 00
-			01 00 FE TILE_BAKERY_1 00
-			01 01 FE TILE_BAKERY_1 00
-			02 00 FE TILE_BAKERY_1 00
-			02 01 FE TILE_BAKERY_1 00
+			00 00 FE TILE_GRAINMILL_1 00 //xoffs yoffs FE newtile(W)
+			00 01 FE TILE_GRAINMILL_1 00
+			01 00 FE TILE_GRAINMILL_1 00
+			01 01 FE TILE_GRAINMILL_1 00
+			02 00 FE TILE_GRAINMILL_1 00
+			02 01 FE TILE_GRAINMILL_1 00
 		00 80 //terminate layout definition
 		//layout:
-			00 00 FE TILE_BAKERY_1 00 //xoffs yoffs FE newtile(W)
-			00 01 FE TILE_BAKERY_1 00
-			00 02 FE TILE_BAKERY_1 00
-			00 03 FE TILE_BAKERY_1 00
-			01 00 FE TILE_BAKERY_1 00
-			01 01 FE TILE_BAKERY_1 00
-			01 02 FE TILE_BAKERY_1 00
-			01 03 FE TILE_BAKERY_1 00
+			00 00 FE TILE_GRAINMILL_1 00 //xoffs yoffs FE newtile(W)
+			00 01 FE TILE_GRAINMILL_1 00
+			00 02 FE TILE_GRAINMILL_1 00
+			00 03 FE TILE_GRAINMILL_1 00
+			01 00 FE TILE_GRAINMILL_1 00
+			01 01 FE TILE_GRAINMILL_1 00
+			01 02 FE TILE_GRAINMILL_1 00
+			01 03 FE TILE_GRAINMILL_1 00
 		00 80 //terminate layout definition
 	0B 04 //production flags 1h=extractive, 2h=organic, 4h=processing
 	0C STR_IND_CLOSE_GENERIC //industry closure message

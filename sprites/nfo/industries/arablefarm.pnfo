@@ -174,7 +174,7 @@
 // handle cb 28 industry location - included on a per-industry basis to allow industries to use various different schemes 
 #include "../../../templates/cb28_cluster_farms.pnfo"
 
-#define THIS_CONFLICTING_INDUSTRY IND_BAKERY
+#define THIS_CONFLICTING_INDUSTRY IND_GRAINMILL
 #include "../../../templates/cb28_space_neighbours_in_chain.pnfo"
 #undef THIS_CONFLICTING_INDUSTRY
 
