@@ -1,7 +1,7 @@
 //Industry tile sprites; one sprite for each tile; eventually more for each tile to include  construction stages
 
 //Tile action 1
--1 * 0 01 09 \b5 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
+-1 * 0 01 09 \b11 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
 // Format: spritenum pcxfile xpos ypos compression ysize xsize xrel yrel
 // ground tile
 -1 sprites/graphics/industries/groundtiles.pcx  150 10 09   31 64 -31   0
@@ -10,9 +10,16 @@
 -1 sprites/graphics/industries/THIS_GRAPHICS_FILE  80 10 09  59 64 -31 -28
 -1 sprites/graphics/industries/THIS_GRAPHICS_FILE 150 10 09  82 64 -31 -51
 -1 sprites/graphics/industries/THIS_GRAPHICS_FILE 220 10 09  82 64 -31 -51
-
+// windmill
+-1 sprites/graphics/industries/THIS_GRAPHICS_FILE  10 110 09  82 64 -31 -51
+-1 sprites/graphics/industries/THIS_GRAPHICS_FILE  80 110 09  82 64 -31 -51
+-1 sprites/graphics/industries/THIS_GRAPHICS_FILE 150 110 09  82 64 -31 -51
+-1 sprites/graphics/industries/THIS_GRAPHICS_FILE 220 110 09  82 64 -31 -51
+-1 sprites/graphics/industries/THIS_GRAPHICS_FILE 290 110 09  82 64 -31 -51
+-1 sprites/graphics/industries/THIS_GRAPHICS_FILE 360 110 09  82 64 -31 -51
 
 //Tile action 2 
+//bakery
 -1 * 0 02 09 00 00 //-1 * 0 02 09 <set-id> 00
 	\dx80008000 //groundsprite
 	\dx80008001 //building sprite
@@ -33,7 +40,50 @@
 	\dx80008004 //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b48 //xextent yextent zextent
+//windmill animated frames
+-1 * 0 02 09 10 00 //-1 * 0 02 09 <set-id> 00
+	\dx80008000 //groundsprite
+	\dx80008005 //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b24 //xextent yextent zextent
+-1 * 0 02 09 11 00 //-1 * 0 02 09 <set-id> 00
+	\dx80008000 //groundsprite
+	\dx80008006 //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b24 //xextent yextent zextent
+-1 * 0 02 09 12 00 //-1 * 0 02 09 <set-id> 00
+	\dx80008000 //groundsprite
+	\dx80008007 //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b24 //xextent yextent zextent
+-1 * 0 02 09 13 00 //-1 * 0 02 09 <set-id> 00
+	\dx80008000 //groundsprite
+	\dx80008008 //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b24 //xextent yextent zextent
+-1 * 0 02 09 14 00 //-1 * 0 02 09 <set-id> 00
+	\dx80008000 //groundsprite
+	\dx80008009 //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b24 //xextent yextent zextent
+-1 * 0 02 09 15 00 //-1 * 0 02 09 <set-id> 00
+	\dx80008000 //groundsprite
+	\dx8000800A //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b24 //xextent yextent zextent
 
+
+-1 * 0 02 09 C0 //windmill animation
+	81 44 // current animation frame
+	00 FF //don't shift, don't mask
+	\b6 //number of ranges to check
+  	\wx10    \b0   \b0
+  	\wx11    \b1   \b1
+  	\wx12    \b2   \b2
+  	\wx13    \b3   \b3
+  	\wx14    \b4   \b4
+  	\wx15    \b5   \b5
+	\wx10 //00 01  00 01 <default>
 
 
 -1 * 0 02 09 B1 //layout
@@ -91,5 +141,13 @@
     \wx01   01 02  01 02
     \wx00   01 03  01 03
   \wx03 //00 00  00 00 <default>
+
+-1 * 0 02 09 B6 //layout
+	85 43 //check relative position (00yx[YYXX])
+	00 FF FF //don't shift, don't mask
+	\b1 //number of ranges to check (number of tiles)
+    \wxC0   00 00  00 00
+  \wxC0 //00 00  00 00 <default>
+
 
 #undef THIS_GRAPHICS_FILE
