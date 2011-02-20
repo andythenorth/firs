@@ -23,6 +23,7 @@
 	0E 10 //callback flags
 
 // include tiles and layouts, ! Action 2 IDs here are deliberately repeated by the various tile includes
+#define THIS_GRAPHICS_FILE grainmill.png
 #include "grainmill_tiles_layouts/grainmill_tiles_standard.pnfo"
 #include "grainmill_tiles_layouts/grainmill_layouts.pnfo"
 
@@ -37,6 +38,7 @@
     \wxB5 \b5 \b5 //<set-id \w> <low-range> <high-range>
 	\wx00 //<default> (first tile layout available)
 
+#define THIS_GRAPHICS_FILE grainmill.png
 #include "grainmill_tiles_layouts/grainmill_tiles_standard.pnfo"
 #include "grainmill_tiles_layouts/grainmill_layouts.pnfo"
 
@@ -51,7 +53,8 @@
     \wxB5 \b5 \b5 //<set-id \w> <low-range> <high-range>
 	\wx00 //<default> (first tile layout available)
 
-#include "grainmill_tiles_layouts/grainmill_tiles_snow.pnfo"
+#define THIS_GRAPHICS_FILE grainmill_snow.png
+#include "grainmill_tiles_layouts/grainmill_tiles_standard.pnfo"
 #include "grainmill_tiles_layouts/grainmill_layouts.pnfo"
 
 -1 * 0 02 09 A3
