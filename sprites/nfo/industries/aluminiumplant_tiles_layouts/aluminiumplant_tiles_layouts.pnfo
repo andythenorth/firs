@@ -346,4 +346,28 @@
     \wx06   04 04  04 04
 	\wx00 //00 01  00 01 <default>
 	
+-1 * 0 02 09 B2 //layout
+	85 43 //check relative position (00yx[YYXX])
+	00 FF FF //don't shift, don't mask
+	\b19 //number of ranges to check (number of tiles)
+    \wx0B   00 00  00 00
+    \wx02   01 00  01 00
+    \wx01   01 01  01 01
+    \wxC0   02 00  02 00
+    \wx07   02 01  02 01
+    \wx00   03 00  03 00
+    \wx00   03 01  03 01
+    \wx00   04 00  04 00
+    \wx00   04 01  04 01
+    \wx00   05 00  05 00
+    \wx00   05 01  05 01
+    \wx06   06 00  06 00
+    \wx06   06 01  06 01
+    \wx07   07 00  07 00
+    \wx0A   07 01  07 01
+    \wx08   08 00  08 00
+    \wx09   08 01  08 01
+    \wx04   09 00  09 00
+    \wx05   09 01  09 01
+	\wx00 //00 01  00 01 <default>	
 #undef THIS_GRAPHICS_FILE	

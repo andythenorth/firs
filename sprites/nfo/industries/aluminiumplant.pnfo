@@ -31,9 +31,10 @@
 -1 * 0 02 09 A1
 	82 44 //check layout number (lowest byte of related industry)
 	00 FF //don't shift, don't mask
-	\b2 //number of ranges to check (number of layouts)
+	\b3 //number of ranges to check (number of layouts)
     \wxB0 \b1 \b1 //<set-id \w> <low-range> <high-range>
     \wxB1 \b2 \b2 //<set-id \w> <low-range> <high-range>
+    \wxB2 \b3 \b3 //<set-id \w> <low-range> <high-range>
 	\wxB0 //<default> (first tile layout available)
 
 #define THIS_GRAPHICS_FILE aluminiumplant.pcx
@@ -42,9 +43,10 @@
 -1 * 0 02 09 A2
 	82 44 //check layout number (lowest byte of related industry)
 	00 FF //don't shift, don't mask
-	\b2 //number of ranges to check (number of layouts)
+	\b3 //number of ranges to check (number of layouts)
     \wxB0 \b1 \b1 //<set-id \w> <low-range> <high-range>
     \wxB1 \b2 \b2 //<set-id \w> <low-range> <high-range>
+    \wxB2 \b3 \b3 //<set-id \w> <low-range> <high-range>
 	\wxB0 //<default> (first tile layout available)
 
 #define THIS_GRAPHICS_FILE aluminiumplant.pcx // !! awaiting snow sprites
@@ -53,9 +55,10 @@
 -1 * 0 02 09 A3
 	82 44 //check layout number (lowest byte of related industry)
 	00 FF //don't shift, don't mask
-	\b2 //number of ranges to check (number of layouts)
+	\b3 //number of ranges to check (number of layouts)
     \wxB0 \b1 \b1 //<set-id \w> <low-range> <high-range>
     \wxB1 \b2 \b2 //<set-id \w> <low-range> <high-range>
+    \wxB2 \b3 \b3 //<set-id \w> <low-range> <high-range>
 	\wxB0 //<default> (first tile layout available)
 
 
@@ -86,8 +89,8 @@
 //Action 0
 -1 * 0 00 0A \b27 01 IND_ALUMINIUMPLANT //-1 * 0 00 0A <num-props> 01 <id>
 	08 IND_NULL //reuse original industry with this here ID
-	0A 02 //number of industry layouts
-		\d234 //sum(size of layout definition +2 for termination)
+	0A 03 //number of industry layouts
+		\d331 //sum(size of layout definition +2 for termination)
 		//layout:
 			00 02 FE TILE_GENERIC_CONCRETE 00 //xoffs yoffs FE newtile(W)
 			00 03 FE TILE_ALUMINIUMPLANT_1 00
@@ -138,7 +141,28 @@
 			04 03 FE TILE_ALUMINIUMPLANT_1 00
 			04 04 FE TILE_ALUMINIUMPLANT_1 00
 		00 80 //terminate layout definition
-	0B 04 //production flags 1h=extractive, 2h=organic, 4h=processing
+		//layout:
+			00 00 FE TILE_ALUMINIUMPLANT_1 00 //xoffs yoffs FE newtile(W)
+			01 00 FE TILE_ALUMINIUMPLANT_1 00
+			01 01 FE TILE_ALUMINIUMPLANT_1 00
+			02 00 FE TILE_ALUMINIUMPLANT_1 00
+			02 01 FE TILE_ALUMINIUMPLANT_1 00
+			03 00 FE TILE_ALUMINIUMPLANT_1 00
+			03 01 FE TILE_ALUMINIUMPLANT_1 00
+			04 00 FE TILE_ALUMINIUMPLANT_1 00
+			04 01 FE TILE_ALUMINIUMPLANT_1 00
+			05 00 FE TILE_ALUMINIUMPLANT_1 00
+			05 01 FE TILE_ALUMINIUMPLANT_1 00
+			06 00 FE TILE_ALUMINIUMPLANT_1 00
+			06 01 FE TILE_ALUMINIUMPLANT_1 00
+			07 00 FE TILE_ALUMINIUMPLANT_1 00
+			07 01 FE TILE_ALUMINIUMPLANT_1 00
+			08 00 FE TILE_ALUMINIUMPLANT_1 00
+			08 01 FE TILE_ALUMINIUMPLANT_1 00
+			09 00 FE TILE_ALUMINIUMPLANT_1 00
+			09 01 FE TILE_ALUMINIUMPLANT_1 00
+		00 80 //terminate layout definition	
+  0B 04 //production flags 1h=extractive, 2h=organic, 4h=processing
 	0C STR_IND_CLOSE_GENERIC //industry closure message
 	0D STR_IND_PRODINCR_GENERIC //production increase message
 	0E STR_IND_PRODDECR_GENERIC //production decrease message
