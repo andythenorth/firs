@@ -10,6 +10,9 @@
 #define THIS_INTRO_DATE               \d00
 #define THIS_HANDLE_CB28              10 00
  
+#define THIS_COLOCATED_INDUSTRY  IND_FOREST
+#define THIS_CLUSTER_SCALE       \d05 // // reduce number of clusters by 0.8 for sawmill - forces them closer to forests
+
 //Redefinition of original TTD industry
 //Sawmill
 -1 * 0 00 0A \b15 01 IND_SAWMILL //-1 * 0 00 0A <num-props> 01 <id>
@@ -33,7 +36,10 @@
 //No action 1 for industries, as graphics are defined by the industry-tile feature.
 
 // handle cb 28 industry location - included on a per-industry basis to allow industries to use various different schemes 
-#include "../../../templates/cb28_secondary_generic.pnfo"     
+
+// the sawmill is slightly bizarre in that it both forces space from the forest, and colocates near the forest  
+// handle cb 28 industry location - included on a per-industry basis to allow industries to use various different schemes 
+#include "../../../templates/cb28_colocate_industries.pnfo"     
 
 #define THIS_CONFLICTING_INDUSTRY IND_FOREST
 #include "../../../templates/cb28_space_neighbours_in_chain.pnfo"
