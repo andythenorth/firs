@@ -7,6 +7,21 @@ FIRS Industry Replacement Set Changelog
 0.6.x Releases
 --------------
 
+*0.6.2*  Changes the following:
+- Sugar Refinery no longer produces Alcohol in Tropic, this wasn't working and is too much work to support
+- Improved appearance of Plastics Plant (uses company colours)
+- Improved appearance of Brickworks (additional layouts, uses more company colours)
+- Improved appearance of Lime Kiln (additional layouts, better graphics, 
+- Updated translations for Spanish, Dutch (Terkhen, Alberth)
+- Windmill graphics for Grain Mill (work in progress, DanMacK)
+- Fixed missing cargo amount string for Fruit and Vegetables cargo
+- Fix (untested) - Plantation and Oil Wells could incorrectly cause a subsidence
+- Plastic Plant - removed easter egg ability to hide a truck station in the industry as this allowed town buildings to appear inside the industry
+- Updated some credits in documentation
+- Multiple internal improvements and code changes with no effect on gameplay
+
+Between releases:
+- Translators can use a script that indicates what's changed in language files. 
 - Added a FIRS page to OpenTTD wiki http://wiki.openttd.org/FIRS
 
 *0.6.1*  Changes the following:
