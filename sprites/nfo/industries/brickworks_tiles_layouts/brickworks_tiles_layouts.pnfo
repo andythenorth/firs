@@ -200,7 +200,7 @@
   	\wx17   \b7  \b7
 	\wx10 //00 01  00 01 <default>
 
--1 * 0 02 09 B1 //layout 1
+-1 * 0 02 09 B1 //layout
 	85 43 //check relative position (00yx[YYXX])
 	00 FF FF //don't shift, don't mask
 	\b6 //number of ranges to check (number of tiles) [range: XX YY  XX YY]
@@ -210,6 +210,30 @@
     \wxC1   01 01  01 01
     \wx01   02 00  02 00
     \wxC0   02 01  02 01
+	\wx04 //00 01  00 01 <default>
+
+-1 * 0 02 09 B2 //layout
+	85 43 //check relative position (00yx[YYXX])
+	00 FF FF //don't shift, don't mask
+	\b6 //number of ranges to check (number of tiles) [range: XX YY  XX YY]
+    \wx03   00 00  00 00
+    \wx03   00 01  00 01
+    \wxC1   01 00  01 00
+    \wxC1   01 01  01 01
+    \wx01   02 00  02 00
+    \wxC0   03 00  03 00
+	\wx04 //00 01  00 01 <default>
+
+-1 * 0 02 09 B3 //layout
+	85 43 //check relative position (00yx[YYXX])
+	00 FF FF //don't shift, don't mask
+	\b6 //number of ranges to check (number of tiles) [range: XX YY  XX YY]
+    \wx03   00 00  00 00
+    \wx03   00 01  00 01
+    \wxC0   00 02  00 02
+    \wxC1   01 00  01 00
+    \wxC1   01 01  01 01
+    \wx01   01 02  01 02
 	\wx04 //00 01  00 01 <default>
 			
 	
