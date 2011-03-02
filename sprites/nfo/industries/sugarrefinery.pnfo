@@ -115,7 +115,7 @@
 
 //Industry definition
 //Action 0
--1 * 0 00 0A \b26 01 IND_SUGARREFINERY //-1 * 0 00 0A <num-props> 01 <id>
+-1 * 0 00 0A \b27 01 IND_SUGARREFINERY //-1 * 0 00 0A <num-props> 01 <id>
 	08 IND_NULL //reuse original industry with this here ID
 	0A 02 //number of industry layouts
 		\d64 //sum(size of layout definition +2 for termination)
@@ -142,6 +142,7 @@
 	1B STR_IND_NEW_GENERIC //new industry message
 	1F STR_IND_SUGARREFINERY //industry name
 	24 STR_STA_REFINERY //default text for nearby station
+	10 CARGO_FOOD FF //production cargo types (word; fill unused with FFh)
 	11 CARGO_MANUFACTURINGSUPPLIES CARGO_SUGARCANE FF FF //acceptance cargo types (dword; fill unused with FFh)
 	12 \b0 //production multiplier cargo 1
 	13 \b0 //production multiplier cargo 2
@@ -161,14 +162,6 @@
 	22 01  //callback flags
 //To show cargo waiting to be processed at industry, ensure prop 21 is set to use production callback
 
-//Sugar refinery produces rum (from cane) in tropic only.  Sugar beet doesn't make good rum :P
--1 * 0 07 83 01 \7! 02 \b1 //only in tropic
--1 * 0 00 0A \b1 01 IND_SUGARREFINERY //-1 * 0 00 0A <num-props> 01 <id>
-	10 CARGO_FOOD CARGO_ALCOHOL //production cargo types (word; fill unused with FFh)
-
--1 * 0 07 83 01 \7= 02 \b1 //not in tropic
--1 * 0 00 0A \b1 01 IND_SUGARREFINERY //-1 * 0 00 0A <num-props> 01 <id>
-	10 CARGO_FOOD FF //production cargo types (word; fill unused with FFh)
 
 //No action 1 for industries, as graphics are defined by the industry-tile feature.
 
