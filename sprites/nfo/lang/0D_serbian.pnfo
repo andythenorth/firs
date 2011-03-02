@@ -4,147 +4,177 @@
 #define LANG_ID  0D
 #define LANG_ID2 8D
 
+// Gender table
+
+#define GENDER_TRANSLATION_TABLE 01 "muški" 00 02 "ženski" 00 03 "srednji" 00 00 
+
+#define GENDER_MUSKI 9A 0E 01 
+#define GENDER_ZENSKI 9A 0E 02 
+#define GENDER_SREDNJI 9A 0E 03 
+
 //Cargo texts
 
 //Alcohol
-#define TEXT_CRG_ALCOHOL_CTYPE                           "alkohol" 
+#define TEXT_CRG_ALCOHOL_CTYPE                           GENDER_MUSKI "alkohol" 
+#define TEXT_CRG_ALCOHOL_CARGOAMOUNT                     "alkohola" 
 #define TEXT_CRG_ALCOHOL_TABBR                           "\0EAL" 
 
 //Bauxite
-#define TEXT_CRG_BAUXITE_CTYPE                           "boksit" 
+#define TEXT_CRG_BAUXITE_CTYPE                           GENDER_MUSKI "boksit" 
+#define TEXT_CRG_BAUXITE_CARGOAMOUNT                     "boksita" 
 #define TEXT_CRG_BAUXITE_TABBR                           "\0EBX" 
 
 //Building Materials
-#define TEXT_CRG_BUILDINGMATERIALS_CTYPE                 "građevinski materijali" 
+#define TEXT_CRG_BUILDINGMATERIALS_CTYPE                 GENDER_MUSKI "građevinski materijali" 
+#define TEXT_CRG_BUILDINGMATERIALS_CARGOAMOUNT           "građevinskog materijala" 
 #define TEXT_CRG_BUILDINGMATERIALS_TABBR                 "\0EBM" 
 
 //Chemicals
-#define TEXT_CRG_CHEMICALS_CTYPE                         "hemijski proizvodi" 
+#define TEXT_CRG_CHEMICALS_CTYPE                         GENDER_MUSKI "hemijski proizvodi" 
+#define TEXT_CRG_CHEMICALS_CARGOAMOUNT                   "hemijskog proizvoda"
 #define TEXT_CRG_CHEMICALS_TABBR                         "\0ECH" 
 
 //Clay
-#define TEXT_CRG_CLAY_CTYPE                              "glina" 
+#define TEXT_CRG_CLAY_CTYPE                              GENDER_ZENSKI "glina" 
+#define TEXT_CRG_CLAY_CARGOAMOUNT                        "gline" 
 #define TEXT_CRG_CLAY_TABBR                              "\0ECL" 
 
 //Engineering supplies
-#define TEXT_CRG_ENGINEERINGSUPPLIES_CTYPE               "tehnička oprema" 
+#define TEXT_CRG_ENGINEERINGSUPPLIES_CTYPE               GENDER_ZENSKI "tehnička oprema" 
+#define TEXT_CRG_ENGINEERINGSUPPLIES_CARGOAMOUNT         "sanduka tehničke opreme" 
 #define TEXT_CRG_ENGINEERINGSUPPLIES_TABBR               "\0EES" 
 
 //Farm supplies
-#define TEXT_CRG_FARMSUPPLIES_CTYPE                      "poljoprivredna oprema" 
+#define TEXT_CRG_FARMSUPPLIES_CTYPE                      GENDER_ZENSKI "poljoprivredna oprema" 
+#define TEXT_CRG_FARMSUPPLIES_CARGOAMOUNT                "sanduka poljoprivredne opreme" 
 #define TEXT_CRG_FARMSUPPLIES_TABBR                      "\0EFS" 
 
 //Fish 
-#define TEXT_CRG_FISH_CTYPE                              "riba" 
+#define TEXT_CRG_FISH_CTYPE                              GENDER_ZENSKI "riba" 
+#define TEXT_CRG_FISH_CARGOAMOUNT                        "ribe" 
 #define TEXT_CRG_FISH_TABBR                              "\0EFI" 
 
 //Fruit and Vegetables
-#define TEXT_CRG_FRUITSANDVEGETABLES_CTYPE               "voće i povrće" 
+#define TEXT_CRG_FRUITSANDVEGETABLES_CTYPE               GENDER_SREDNJI "voće i povrće" 
+#define TEXT_CRG_FRUITSANDVEGETABLES_1TYPE               "voće i povrće" 
+#define TEXT_CRG_FRUITSANDVEGETABLES_CARGOAMOUNT         "voća i povrća" 
 
 //Fuel oil
-#define TEXT_CRG_FUELOIL_CTYPE                           "benzin" 
+#define TEXT_CRG_FUELOIL_CTYPE                           GENDER_MUSKI "benzin" 
+#define TEXT_CRG_FUELOIL_CARGOAMOUNT                     "benzina"  
 #define TEXT_CRG_FUELOIL_TABBR                           "\0EPT" 
 
 //Gravel
-#define TEXT_CRG_GRAVEL_CTYPE                            "kamen" 
+#define TEXT_CRG_GRAVEL_CTYPE                            GENDER_MUSKI "kamen" 
+#define TEXT_CRG_GRAVEL_CARGOAMOUNT                      "kamena" 
 #define TEXT_CRG_GRAVEL_TABBR                            "\0EST" 
 
 //Lumber
-#define TEXT_CRG_LUMBER_CTYPE                            "drvne grede" 
+#define TEXT_CRG_LUMBER_CTYPE                            GENDER_ZENSKI "drvne grede" 
+#define TEXT_CRG_LUMBER_CARGOAMOUNT                      "drvne grede" 
 #define TEXT_CRG_LUMBER_TABBR                            "\0ELU" 
 
 //Manufacturing Supplies - formerly Packaging
-#define TEXT_CRG_MANUFACTURINGSUPPLIES_CTYPE             "proizvodni materijali" 
+#define TEXT_CRG_MANUFACTURINGSUPPLIES_CTYPE             GENDER_MUSKI "proizvodni materijali" 
+#define TEXT_CRG_MANUFACTURINGSUPPLIES_CARGOAMOUNT       "paketa proizvodnih materijala" 
 #define TEXT_CRG_MANUFACTURINGSUPPLIES_TABBR             "\0EMS" 
 
 //Metal
-#define TEXT_CRG_METAL_CTYPE                             "metali" 
+#define TEXT_CRG_METAL_CTYPE                             GENDER_MUSKI "metali" 
+#define TEXT_CRG_METAL_CARGOAMOUNT                       "metala" 
 #define TEXT_CRG_METAL_TABBR                             "\0EML" 
 
 //Milk
-#define TEXT_CRG_MILK_CTYPE                              "mleko" 
+#define TEXT_CRG_MILK_CTYPE                              GENDER_SREDNJI "mleko" 
+#define TEXT_CRG_MILK_CARGOAMOUNT                        "mleka" 
 #define TEXT_CRG_MILK_TABBR                              "\0EMK" 
 
 //Plant Fibres
-#define TEXT_CRG_PLANTFIBRES_CTYPE                       "biljna vlakna" 
+#define TEXT_CRG_PLANTFIBRES_CTYPE                       GENDER_SREDNJI "biljna vlakna" 
+#define TEXT_CRG_PLANTFIBRES_CARGOAMOUNT                 "biljnih vlakna" 
 #define TEXT_CRG_PLANTFIBRES_TABBR                       "\0EPF" 
 
 //Sand
-#define TEXT_CRG_SAND_CTYPE                              "pesak" 
+#define TEXT_CRG_SAND_CTYPE                              GENDER_MUSKI "pesak" 
+#define TEXT_CRG_SAND_CARGOAMOUNT                        "peska" 
 #define TEXT_CRG_SAND_TABBR                              "\0ESA" 
 
 //Scrap Metal
-#define TEXT_CRG_SCRAPMETAL_CTYPE                        "metalni otpaci" 
+#define TEXT_CRG_SCRAPMETAL_CTYPE                        GENDER_MUSKI "metalni otpaci" 
+#define TEXT_CRG_SCRAPMETAL_CARGOAMOUNT                  "metalnih otpadaka" 
 #define TEXT_CRG_SCRAPMETAL_TABBR                        "\0ESM" 
 
 //Sugar beet
-#define TEXT_CRG_SUGARBEET_CTYPE                         "šećerna repa" 
+#define TEXT_CRG_SUGARBEET_CTYPE                         GENDER_ZENSKI "šećerna repa" 
+#define TEXT_CRG_SUGARBEET_CARGOAMOUNT                   "šećerne repe" 
 #define TEXT_CRG_SUGARBEET_TABBR                         "\0ESB" 
 
 //Sugar cane
-#define TEXT_CRG_SUGARCANE_CTYPE                         "šećerna trska" 
+#define TEXT_CRG_SUGARCANE_CTYPE                         GENDER_ZENSKI "šećerna trska" 
+#define TEXT_CRG_SUGARCANE_CARGOAMOUNT                   "šećerne trske" 
 #define TEXT_CRG_SUGARCANE_TABBR                         "\0ESC" 
 
 //Wool
-#define TEXT_CRG_WOOL_CTYPE                              "vuna" 
+#define TEXT_CRG_WOOL_CTYPE                              GENDER_ZENSKI "vuna" 
+#define TEXT_CRG_WOOL_CARGOAMOUNT                        "vune" 
 #define TEXT_CRG_WOOL_TABBR                              "\0EWL" 
 
 
 //Industry texts
-#define TEXT_IND_ARABLEFARM                              "Agrarna farma" 
-#define TEXT_IND_ALUMINIUMPLANT                          "Kombinat aluminijuma" 
+#define TEXT_IND_ARABLEFARM                              GENDER_ZENSKI "Agrarna farma" 
+#define TEXT_IND_ALUMINIUMPLANT                          GENDER_MUSKI "Kombinat aluminijuma" 
 
-#define TEXT_IND_BAKERY                                  "Mlin" 
-#define TEXT_IND_BAUXITEMINE                             "Rudnik boksita" 
-#define TEXT_IND_BIOREFINERY                             "Biorafinerija" 
-#define TEXT_IND_BREWERY                                 "Pivara" 
-#define TEXT_IND_BRICKWORKS                              "Ciglana" 
-#define TEXT_IND_BUILDERSYARD                            "Građevinsko skladište" 
+#define TEXT_IND_BAKERY                                  GENDER_MUSKI "Mlin" 
+#define TEXT_IND_BAUXITEMINE                             GENDER_MUSKI "Rudnik boksita" 
+#define TEXT_IND_BIOREFINERY                             GENDER_ZENSKI "Biorafinerija" 
+#define TEXT_IND_BREWERY                                 GENDER_ZENSKI "Pivara" 
+#define TEXT_IND_BRICKWORKS                              GENDER_ZENSKI "Ciglana" 
+#define TEXT_IND_BUILDERSYARD                            GENDER_SREDNJI "Građevinsko skladište" 
 
-#define TEXT_IND_CEMENTPLANT                             "Cementara" 
-#define TEXT_IND_CLAYPIT                                 "Kop gline" 
+#define TEXT_IND_CEMENTPLANT                             GENDER_ZENSKI "Cementara" 
+#define TEXT_IND_CLAYPIT                                 GENDER_MUSKI "Kop gline" 
 
-#define TEXT_IND_DAIRY                                   "Mlekara" 
-#define TEXT_IND_DAIRYFARM                               "Stočna farma" 
-#define TEXT_IND_DREDGINGSITE                            "Iskop" 
+#define TEXT_IND_DAIRY                                   GENDER_ZENSKI "Mlekara" 
+#define TEXT_IND_DAIRYFARM                               GENDER_ZENSKI "Stočna farma" 
+#define TEXT_IND_DREDGINGSITE                            GENDER_MUSKI "Iskop" 
 
-#define TEXT_IND_FERTILISERPLANT                         "Azotara" 
-#define TEXT_IND_FISHINGHARBOUR                          "Ribarska luka" 
-#define TEXT_IND_FISHINGGROUNDS                          "Ribarska lovišta" 
-#define TEXT_IND_FORGE                                   "Kovačnica" 
-#define TEXT_IND_FURNITUREFACTORY                        "Kombinat nameštaja" 
+#define TEXT_IND_FERTILISERPLANT                         GENDER_ZENSKI "Azotara" 
+#define TEXT_IND_FISHINGHARBOUR                          GENDER_ZENSKI "Ribarska luka" 
+#define TEXT_IND_FISHINGGROUNDS                          GENDER_ZENSKI "Ribarska lovišta" 
+#define TEXT_IND_FORGE                                   GENDER_ZENSKI "Kovačnica" 
+#define TEXT_IND_FURNITUREFACTORY                        GENDER_MUSKI "Kombinat nameštaja" 
 
-#define TEXT_IND_GENERALSTORE                            "Prodavnica" 
-#define TEXT_IND_GLASSWORKS                              "Staklara" 
+#define TEXT_IND_GENERALSTORE                            GENDER_ZENSKI "Prodavnica" 
+#define TEXT_IND_GLASSWORKS                              GENDER_ZENSKI "Staklara" 
 
-#define TEXT_IND_IRONWORKS                               "Železara" 
+#define TEXT_IND_IRONWORKS                               GENDER_ZENSKI "Železara" 
 
-#define TEXT_IND_JUNKYARD                                "Otpad" 
+#define TEXT_IND_JUNKYARD                                GENDER_MUSKI "Otpad" 
 
-#define TEXT_IND_LIMEKILN                                "Krečana" 
-#define TEXT_IND_LUMBERYARD                              "Drvara" 
+#define TEXT_IND_LIMEKILN                                GENDER_ZENSKI "Krečana" 
+#define TEXT_IND_LUMBERYARD                              GENDER_ZENSKI "Drvara" 
 
-#define TEXT_IND_MACHINESHOP                             "Mašinska radionica" 
-#define TEXT_IND_MEATPACKER                              "Mesni kombinat" 
-#define TEXT_IND_METALFOUNDRY                            "Livnica metala" 
-#define TEXT_IND_MIXEDFARM                               "Farma" 
+#define TEXT_IND_MACHINESHOP                             GENDER_ZENSKI "Mašinska radionica" 
+#define TEXT_IND_MEATPACKER                              GENDER_MUSKI "Mesni kombinat" 
+#define TEXT_IND_METALFOUNDRY                            GENDER_ZENSKI "Livnica metala" 
+#define TEXT_IND_MIXEDFARM                               GENDER_ZENSKI "Farma" 
 
-#define TEXT_IND_PETROLPUMP                              "Benzinska pumpa" 
-#define TEXT_IND_PLASTICSPLANT                           "Kombinat plastike" 
+#define TEXT_IND_PETROLPUMP                              GENDER_ZENSKI "Benzinska pumpa" 
+#define TEXT_IND_PLASTICSPLANT                           GENDER_MUSKI "Kombinat plastike" 
 
-#define TEXT_IND_QUARRY                                  "Kamenolom" 
+#define TEXT_IND_QUARRY                                  GENDER_MUSKI "Kamenolom" 
 
-#define TEXT_IND_RETAILMARKET                            "Pijaca" 
+#define TEXT_IND_RETAILMARKET                            GENDER_ZENSKI "Pijaca" 
 
-#define TEXT_IND_SHEEPFARM                               "Farma ovaca"
-#define TEXT_IND_SUPERMARKET                             "Supermarket" 
-#define TEXT_IND_SUGARREFINERY                           "Šećerana" 
+#define TEXT_IND_SHEEPFARM                               GENDER_ZENSKI "Farma ovaca"
+#define TEXT_IND_SUPERMARKET                             GENDER_MUSKI "Supermarket" 
+#define TEXT_IND_SUGARREFINERY                           GENDER_ZENSKI "Šećerana" 
 
-#define TEXT_IND_TEXTILEMILL                             "Tekstilni kombinat" 
+#define TEXT_IND_TEXTILEMILL                             GENDER_MUSKI "Tekstilni kombinat" 
 
-#define TEXT_IND_WHOLESALEMARKET                         "Kvantaška pijaca" 
-#define TEXT_IND_WINDFARM                                "Vetro-elektrana" 
-#define TEXT_IND_WINDMILL                                "Vetrenjača" 
+#define TEXT_IND_WHOLESALEMARKET                         GENDER_ZENSKI "Kvantaška pijaca" 
+#define TEXT_IND_WINDFARM                                GENDER_ZENSKI "Vetro-elektrana" 
+#define TEXT_IND_WINDMILL                                GENDER_ZENSKI "Vetrenjača" 
 
 
 
@@ -177,9 +207,9 @@
 #define TEXT_INFO_AVAILABILITY_1762                      "\98Dostupno: \901. jan 1762" 
 #define TEXT_INFO_AVAILABILITY_1780                      "\98Dostupno: \901. jan 1780" 
 
-#define TEXT_INFO_GENERIC_CLOSE_0                        "\n\98Fabrika se može zatvoriti ako ne primi nijedan tovar u roku od:\0D\90  \UE07C meseci" 
-#define TEXT_INFO_GENERIC_CLOSE_1                        "\n\98Fabrika se može zatvoriti ako ne primi nijedan tovar u roku od:\0D\94  \UE07C mesec" 
-#define TEXT_INFO_GENERIC_CLOSE_2                        "\n\8BNijedan tovar nije primljen \85\85\UE07C meseci. Fabrika će se možda zatvoriti. \0D" 
+#define TEXT_INFO_GENERIC_CLOSE_0                        "\n\98Fabrika se može zatvoriti ako ne primi nijedan tovar u roku od:\0D\90  meseci" 
+#define TEXT_INFO_GENERIC_CLOSE_1                        "\n\98Fabrika se može zatvoriti ako ne primi nijedan tovar u roku od:\0D\94  mesec" 
+#define TEXT_INFO_GENERIC_CLOSE_2                        "\n\8BNijedan tovar nije primljen \85\85meseci. Fabrika će se možda zatvoriti. \0D" 
 
 #define TEXT_INFO_LIMIT_200                              "\98 (najviše 200)" 
 #define TEXT_INFO_LIMIT_800                              "\98 (najviše 800)" 
@@ -246,13 +276,13 @@
 #define TEXT_INFO_PLASTICSPLANT                          "\98Proizvodi plastičnu ambalažu i robu za domaćinstvo.\0D" 
 #define TEXT_INFO_GLASSWORKS                             "\98Proizvodi staklenu ambalažu, prozore i druge staklene proizvode.\0D" 
 #define TEXT_INFO_WHOLESALEMARKET                        "\98Prodaje proizvode prehranbenim i ugostiteljskim preduzećima.\0D"
-#define TEXT_INFO_FORGE                                  "\98Proizvodi robu od kovanog metala kao što su alatke, lopate, potkovice, plugovi i gvozdene kapije.\0D"
+#define TEXT_INFO_FORGE                                  "\98Proizvodi robu od metala kao što su alatke, lopate, potkovice, plugovi i gvozdene kapije.\0D"
 
 #define TEXT_INFO_FERTILISERPLANT                        "\98Prerađuje hemijske proizvode u đubriva za agrar.\0D" 
 #define TEXT_INFO_LUMBERYARD                             "\98Proizvodi pomoćne građevinske objekte, stubove i ograde.\0D"
 #define TEXT_INFO_BIOREFINERY                            "\98Prerađuje žitarice i šećer u benzin i hemijske proizvode.\0D" 
 
-#define TEXT_INFO_MANUFACTURINGSUPPLIES_STEPUP                         "\0DProizvodnja se poboljšava ako se proizvodni materijal dostavlja u roku od mesec dana u odnosu na dostavu ostalih potraživanja." 
+#define TEXT_INFO_MANUFACTURINGSUPPLIES_STEPUP           "\0DProizvodnja se poboljšava ako se proizvodni materijal dostavlja u roku od mesec dana u odnosu na dostavu ostalih potraživanja." 
 
 
 //grf and parameter descriptions
@@ -274,6 +304,10 @@
 
 #define TEXT_PNAME_PREVENTCONSTRUCTION                   "Zabranjena izgradnja fabrika (nedovršeno)"
 #define TEXT_PDESC_PREVENTCONSTRUCTION                   "\89Još uvek ne funkcioniše. \98Kada se završi omogućiće režim 'izolovanog izvršavanja' za scenarija."
+
+#define TEXT_PNAME_MAXCOASTDISTANCE                      "Najveća udaljenost fabrika na vodi od obale"
+#define TEXT_PDESC_MAXCOASTDISTANCE                      "\89Najveća udaljenost ribarskih lovišta i iskopa od obale mereno u pločicama"
+#define TEXT_PVALUE0_MAXCOASTDISTANCE                    "Bez ograničenja"
 
 #define TEXT_PNAME_DEBUG                                 "Prikaži unutrašnje podatke"
 #define TEXT_PDESC_DEBUG                                 "Samo za programere."
