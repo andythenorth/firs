@@ -293,7 +293,7 @@
 		
 //-1 * 0 02 09 <set-id> <type> <variable> <varadjust> <nvar> (<set-id> <low-range> <high-range>){n} <default>
 
--1 * 0 02 09 B0 //layout 0
+-1 * 0 02 09 B0 //layout
 	85 43 //check relative position (00yx[YYXX])
 	00 FF FF //don't shift, don't mask
 	\b20 //number of ranges to check (number of tiles)
@@ -319,5 +319,31 @@
     \wx0B   07 01  07 01
 	\wx00 //00 01  00 01 <default>
 	
+-1 * 0 02 09 B1 //layout
+	85 43 //check relative position (00yx[YYXX])
+	00 FF FF //don't shift, don't mask
+	\b21 //number of ranges to check (number of tiles)
+    \wx00   00 00  00 00
+    \wx00   00 02  00 02
+    \wx0A   00 04  00 04
+    \wx00   01 00  01 00
+    \wxC0   01 01  01 01
+    \wx00   01 02  01 02
+    \wx08   01 03  01 03
+    \wx09   01 04  01 04
+    \wx00   02 00  02 00
+    \wx02   02 01  02 01
+    \wx00   02 02  02 02
+    \wx04   02 03  02 03
+    \wx05   02 04  02 04
+    \wx00   03 00  03 00
+    \wx00   03 02  03 02
+    \wx07   03 03  03 03
+    \wx00   04 00  04 00
+    \wx0B   04 01  04 01
+    \wx00   04 02  04 02
+    \wx01   04 03  04 03
+    \wx06   04 04  04 04
+	\wx00 //00 01  00 01 <default>
 	
 #undef THIS_GRAPHICS_FILE	
