@@ -24,7 +24,7 @@ Build script for #openttdcoop DevZone projects
 [ "$(echo %{version} | cut -b-1)" != "r" ] && hg up %{version}
 
 %build                                                                                                                                                                                                     
-make %{?_smp_mflags} bundle_zip ZIP="7za a" ZIP_FLAGS="-tzip -mx9" 1>%{name}-%{version}-build.log 2>%{name}-%{version}-build.err.log                                                                       
+make %{?_smp_mflags} bundle_zip bundle_src ZIP="7za a" ZIP_FLAGS="-tzip -mx9" 1>%{name}-%{version}-build.log 2>%{name}-%{version}-build.err.log                                                                       
 
 for i in $(ls -1 sprites/nfo/lang/ | grep '.pnfo$' | grep -v '.new.' | grep -v 'cleanup' | grep -v 'nfo_lang' | grep -v 'untranslated' | grep -v 'remove'); do 
   ./scripts/check_language.sh $i >$i.log
