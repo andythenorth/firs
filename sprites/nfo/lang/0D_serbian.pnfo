@@ -12,6 +12,11 @@
 #define GENDER_ZENSKI 9A 0E 02 
 #define GENDER_SREDNJI 9A 0E 03 
 
+//Cargo suffixes
+
+#define TEXT_CRG_SUFFIX_CRATES                           "sanduka" 
+
+
 //Cargo texts
 
 //Alcohol
@@ -41,12 +46,12 @@
 
 //Engineering supplies
 #define TEXT_CRG_ENGINEERINGSUPPLIES_CTYPE               GENDER_ZENSKI "tehnička oprema" 
-#define TEXT_CRG_ENGINEERINGSUPPLIES_CARGOAMOUNT         "sanduka tehničke opreme" 
+#define TEXT_CRG_ENGINEERINGSUPPLIES_CARGOAMOUNT         "tehničke opreme" 
 #define TEXT_CRG_ENGINEERINGSUPPLIES_TABBR               "\0EES" 
 
 //Farm supplies
 #define TEXT_CRG_FARMSUPPLIES_CTYPE                      GENDER_ZENSKI "poljoprivredna oprema" 
-#define TEXT_CRG_FARMSUPPLIES_CARGOAMOUNT                "sanduka poljoprivredne opreme" 
+#define TEXT_CRG_FARMSUPPLIES_CARGOAMOUNT                "poljoprivredne opreme" 
 #define TEXT_CRG_FARMSUPPLIES_TABBR                      "\0EFS" 
 
 //Fish 
@@ -56,7 +61,6 @@
 
 //Fruit and Vegetables
 #define TEXT_CRG_FRUITSANDVEGETABLES_CTYPE               GENDER_SREDNJI "voće i povrće" 
-#define TEXT_CRG_FRUITSANDVEGETABLES_1TYPE               "voće i povrće" 
 #define TEXT_CRG_FRUITSANDVEGETABLES_CARGOAMOUNT         "voća i povrća" 
 
 //Fuel oil
@@ -76,7 +80,7 @@
 
 //Manufacturing Supplies - formerly Packaging
 #define TEXT_CRG_MANUFACTURINGSUPPLIES_CTYPE             GENDER_MUSKI "proizvodni materijali" 
-#define TEXT_CRG_MANUFACTURINGSUPPLIES_CARGOAMOUNT       "paketa proizvodnih materijala" 
+#define TEXT_CRG_MANUFACTURINGSUPPLIES_CARGOAMOUNT       "proizvodnih materijala" 
 #define TEXT_CRG_MANUFACTURINGSUPPLIES_TABBR             "\0EMS" 
 
 //Metal
