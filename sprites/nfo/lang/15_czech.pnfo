@@ -3,86 +3,112 @@
 //Lang-ID: 7F -> FF
 #define LANG_ID  15
 #define LANG_ID2 95
+//Cargo suffixes
+#define TEXT_CRG_SUFFIX_CRATES                           "beden" 
 
 //Cargo texts
 
+//Alcohol
+#define TEXT_CRG_ALCOHOL_CTYPE                           "Alkohol" 
+#define TEXT_CRG_ALCOHOL_CARGOAMOUNT                     "alkoholu"
+#define TEXT_CRG_ALCOHOL_TABBR                           "\0EAL" 
 //Bauxite
 #define TEXT_CRG_BAUXITE_CTYPE                           "Bauxit" 
+#define TEXT_CRG_BAUXITE_CARGOAMOUNT                     "bauxitu" 
 #define TEXT_CRG_BAUXITE_TABBR                           "\0EBX" 
 
 //Building Materials
 #define TEXT_CRG_BUILDINGMATERIALS_CTYPE                 "Stavební materiály" 
+#define TEXT_CRG_BUILDINGMATERIALS_CARGOAMOUNT           "stavebních materiálů" 
 #define TEXT_CRG_BUILDINGMATERIALS_TABBR                 "\0EBM" 
 
 //Chemicals
 #define TEXT_CRG_CHEMICALS_CTYPE                         "Chemikálie" 
+#define TEXT_CRG_CHEMICALS_CARGOAMOUNT                   "chemikálií"
 #define TEXT_CRG_CHEMICALS_TABBR                         "\0ECH" 
 
 //Clay
 #define TEXT_CRG_CLAY_CTYPE                              "Jíl" 
+#define TEXT_CRG_CLAY_CARGOAMOUNT                        "jílu" 
 #define TEXT_CRG_CLAY_TABBR                              "\0ECL" 
 
 //Engineering supplies
 #define TEXT_CRG_ENGINEERINGSUPPLIES_CTYPE               "Strojírenské potřeby" 
+#define TEXT_CRG_ENGINEERINGSUPPLIES_CARGOAMOUNT         "strojírenských potřeb" 
 #define TEXT_CRG_ENGINEERINGSUPPLIES_TABBR               "\0EES" 
 
 //Farm supplies
 #define TEXT_CRG_FARMSUPPLIES_CTYPE                      "Zemědělské potřeby" 
+#define TEXT_CRG_FARMSUPPLIES_CARGOAMOUNT                "zemědělských potřeb" 
 #define TEXT_CRG_FARMSUPPLIES_TABBR                      "\0EFS" 
 
 //Fish 
 #define TEXT_CRG_FISH_CTYPE                              "Ryby" 
+#define TEXT_CRG_FISH_CARGOAMOUNT                        "ryb" 
 #define TEXT_CRG_FISH_TABBR                              "\0EFI" 
 
 //Fruit and Vegetables
 #define TEXT_CRG_FRUITSANDVEGETABLES_CTYPE               "Ovoce a Zelenina" 
+#define TEXT_CRG_FRUITSANDVEGETABLES_CARGOAMOUNT         "ovoce a zeleniny" 
 
 //Fuel oil
 #define TEXT_CRG_FUELOIL_CTYPE                           "Benzín" 
+#define TEXT_CRG_FUELOIL_CARGOAMOUNT                     "benzínu"  
 #define TEXT_CRG_FUELOIL_TABBR                           "\0EPT" 
 
 //Gravel
 #define TEXT_CRG_GRAVEL_CTYPE                            "Kámen"
-#define TEXT_CRG_GRAVEL_TABBR                            "\0EGV" 
+#define TEXT_CRG_GRAVEL_CARGOAMOUNT                      "kamenů" 
+#define TEXT_CRG_GRAVEL_TABBR                            "\0EST" 
 
 //Lumber
-#define TEXT_CRG_LUMBER_CTYPE                            "Dřevo" 
+#define TEXT_CRG_LUMBER_CTYPE                            "Řezivo" 
+#define TEXT_CRG_LUMBER_CARGOAMOUNT                      "řeziva" 
 #define TEXT_CRG_LUMBER_TABBR                            "\0ELU" 
 
 //Manufacturing Supplies - formerly Packaging
 #define TEXT_CRG_MANUFACTURINGSUPPLIES_CTYPE             "Výrobní suroviny" 
+#define TEXT_CRG_MANUFACTURINGSUPPLIES_CARGOAMOUNT       "výrobních surovin" 
 #define TEXT_CRG_MANUFACTURINGSUPPLIES_TABBR             "\0EMS" 
 
 //Metal
 #define TEXT_CRG_METAL_CTYPE                             "Kov" 
+#define TEXT_CRG_METAL_CARGOAMOUNT                       "kovu" 
 #define TEXT_CRG_METAL_TABBR                             "\0EML" 
 
 //Milk
 #define TEXT_CRG_MILK_CTYPE                              "Mléko" 
+#define TEXT_CRG_MILK_CARGOAMOUNT                        "mléka" 
 #define TEXT_CRG_MILK_TABBR                              "\0EMK" 
 
 //Plant Fibres
-#define TEXT_CRG_PLANTFIBRES_CTYPE                       "Filament"
-#define TEXT_CRG_PLANTFIBRES_TABBR                       "\0ECT" 
+#define TEXT_CRG_PLANTFIBRES_CTYPE                       "Rostlinná vlákna"
+#define TEXT_CRG_PLANTFIBRES_CARGOAMOUNT                 "rostlinných vláken" 
+#define TEXT_CRG_PLANTFIBRES_TABBR                       "\0EPF" 
 
 //Sand
 #define TEXT_CRG_SAND_CTYPE                              "Písek" 
+#define TEXT_CRG_SAND_CARGOAMOUNT                        "písku" 
 #define TEXT_CRG_SAND_TABBR                              "\0ESA" 
 
 //Scrap Metal
 #define TEXT_CRG_SCRAPMETAL_CTYPE                        "Kovový šrot" 
+#define TEXT_CRG_SCRAPMETAL_CARGOAMOUNT                  "kovového šrotu" 
 #define TEXT_CRG_SCRAPMETAL_TABBR                        "\0ESM" 
 
 //Sugar beet
 #define TEXT_CRG_SUGARBEET_CTYPE                         "Cukrová řepa" 
+#define TEXT_CRG_SUGARBEET_CARGOAMOUNT                   "cukrové řepy" 
 #define TEXT_CRG_SUGARBEET_TABBR                         "\0ESB" 
 
 //Sugar cane
 #define TEXT_CRG_SUGARCANE_CTYPE                         "Cukrová třtina" 
+#define TEXT_CRG_SUGARCANE_CARGOAMOUNT                   "cukrové třtiny" 
 #define TEXT_CRG_SUGARCANE_TABBR                         "\0ESC" 
 
 //Wool
 #define TEXT_CRG_WOOL_CTYPE                              "Vlna" 
+#define TEXT_CRG_WOOL_CARGOAMOUNT                        "vlny" 
 #define TEXT_CRG_WOOL_TABBR                              "\0EWL" 
 
 
@@ -97,8 +123,8 @@
 #define TEXT_IND_BRICKWORKS                              "Cihelna" 
 #define TEXT_IND_BUILDERSYARD                            "Stavebniny"
 
-#define TEXT_IND_CEMENTPLANT                             "Výrobna cementu"
-#define TEXT_IND_CLAYPIT                                 "Jílový povrchový důl"
+#define TEXT_IND_CEMENTPLANT                             "Cementárna"
+#define TEXT_IND_CLAYPIT                                 "Jílový důl"
 
 #define TEXT_IND_DAIRY                                   "Mlékárna" 
 #define TEXT_IND_DAIRYFARM                               "Mléčná farma" 
@@ -106,27 +132,29 @@
 
 #define TEXT_IND_FERTILISERPLANT                         "Továrna na hnojivo"
 #define TEXT_IND_FISHINGHARBOUR                          "Rybí trh"
-#define TEXT_IND_FISHINGGROUNDS                          "Chov ryb"
+#define TEXT_IND_FISHINGGROUNDS                          "Loviště ryb"
 #define TEXT_IND_FORGE                                   "Kovárna"
 #define TEXT_IND_FURNITUREFACTORY                        "Truhlářství"
 
 #define TEXT_IND_GENERALSTORE                            "Obchod" 
 #define TEXT_IND_GLASSWORKS                              "Sklárna"
 
+#define TEXT_IND_IRONWORKS                               "Železárna" 
+
 #define TEXT_IND_JUNKYARD                                "Smetiště" 
 
 #define TEXT_IND_LIMEKILN                                "Vápenka"
-#define TEXT_IND_LUMBERYARD                              "Pila" 
+#define TEXT_IND_LUMBERYARD                              "Řezárna" 
 
 #define TEXT_IND_MACHINESHOP                             "Obchod se stroji"
-#define TEXT_IND_MEATPACKER                              "Skládka materiálu" 
+#define TEXT_IND_MEATPACKER                              "Masokombinát" 
 #define TEXT_IND_METALFOUNDRY                            "Slévárna"
-#define TEXT_IND_MIXEDFARM                               "Farma" 
+#define TEXT_IND_MIXEDFARM                               "Smíšená farma" 
 
-#define TEXT_IND_PETROLPUMP                              "Benzínová pumpa"
+#define TEXT_IND_PETROLPUMP                              "Benzínová stanice"
 #define TEXT_IND_PLASTICSPLANT                           "Továrna na plasty"
 
-#define TEXT_IND_QUARRY                                  "Lom" 
+#define TEXT_IND_QUARRY                                  "Kamenolom" 
 
 #define TEXT_IND_RETAILMARKET                            "Maloobchod"
 
@@ -155,7 +183,7 @@
 #define TEXT_STA_DEPOT                                   "\80 Depo" 
 
 #define TEXT_STA_DREDGINGSITE                            "\80 Sedimenty"
-#define TEXT_STA_FISHINGGROUNDS                          "\80 Chov ryb"
+#define TEXT_STA_FISHINGGROUNDS                          "\80 Rybolov"
 #define TEXT_STA_FORGE                                   "\80 Kovárna"
 #define TEXT_STA_MARKET                                  "\80 Tržnice"
 
@@ -190,10 +218,12 @@
 
 #define TEXT_INFO_CARGO_PRODUCTION                       "\98Produkce :\0D"
 
+#define TEXT_INFO_5T_PER_8T                              "\0D5t produkce na 8t dodaných." 
 #define TEXT_INFO_6T_PER_8T                              "\0D6t produkce na 8t dodaných."
 #define TEXT_INFO_8T_PER_8T                              "\0D8t produkce na 8t dodaných."
 
 #define TEXT_INFO_STEPUP_TWO_CARGOS                      "\0DProdukce se zvýší pokud jsou 2 různé suroviny doručeny během jednoho měsíce."
+#define TEXT_INFO_INCREASE_TO_3T_BOTH_CARGOS             "\0DZvýší se na 3t za každých 8t obou nákladů přivezených během jednoho měsíce od sebe." 
 #define TEXT_INFO_INCREASE_BOTH_CARGOS                   "\0DZvýší se na 8t za každých 8t obou nákladů přivezených během jednoho měsíce od sebe."
 
 #define TEXT_INFO_3T_PER_8T_MS                           "  3t za 8t dodaných výrobních surovin\0D"
@@ -203,8 +233,8 @@
 #define TEXT_INFO_4T_PER_8T_SCRAP_METAL                  "  4t za 8t dodaného kovového šrotu\0D"
 #define TEXT_INFO_2T_PER_8T_BAUXITE                      "  2t za 8t dodaného bauxitu\0D"
 
-#define TEXT_INFO_5T_PER_8T_LUMBER                       "  5t za 8t dodaného dříví\0D"
-#define TEXT_INFO_6T_PER_8T_LUMBER                       "  6t za 8t dodaného dříví\0D"
+#define TEXT_INFO_5T_PER_8T_LUMBER                       "  5t za 8t dodaného řeziva\0D"
+#define TEXT_INFO_6T_PER_8T_LUMBER                       "  6t za 8t dodaného řeziva\0D"
 #define TEXT_INFO_2T_PER_8T_CHEMICALS                    "  2t za 8t dodaných chemikálií\0D"
 #define TEXT_INFO_5T_PER_8T_GRAIN                        "  5t za 8t dodaného zrní\0D"
 #define TEXT_INFO_5T_PER_8T_FRUITSANDVEGETABLES          "  5t za 8t dodaného ovoce a zeleniny\0D"
@@ -213,9 +243,11 @@
 #define TEXT_INFO_5T_PER_8T_LIVESTOCK                    "  5t za 8t dodaného dobytka\0D"
 #define TEXT_INFO_5T_PER_8T_FISH                         "  5t za 8t dodaných ryb\0D"
 #define TEXT_INFO_5T_PER_8T_WOOL                         "  5t za 8t dodané vlny\0D"
-#define TEXT_INFO_5T_PER_8T_PLANTFIBRES                  "  5t za 8t dodaného filamentu\0D"
+#define TEXT_INFO_5T_PER_8T_PLANTFIBRES                  "  5t za 8t dodaných rostliných vláken\0D"
 
 #define TEXT_INFO_5T_PER_8T_SUGARCANE                    "  5t za 8t dodaného cukru\0D"
+#define TEXT_INFO_5T_PER_8T_SUGARBEET                    "  5t za 8t dodané cukrové řepy\0D" 
+#define TEXT_INFO_1T_PER_8T_WOOD                         "  1t za 8t dodaného dřeva\0D" 
 #define TEXT_INFO_2T_PER_8T_WOOD                         "  2t za 8t dodaného dřeva\0D"
 #define TEXT_INFO_4T_PER_8T_WOOD                         "  4t za 8t dodaného dřeva\0D"
 #define TEXT_INFO_6T_PER_8T_WOOD                         "  6t za 8t dodaného dřeva\0D"
@@ -264,6 +296,10 @@
 
 #define TEXT_PNAME_PREVENTCONSTRUCTION                   "Zabránit stavbě průmyslu (nodokončeno)"
 #define TEXT_PDESC_PREVENTCONSTRUCTION                   "\89Prozatím nema efekt. \98Po dokončení přinese 'Sandbox mód' pro scénáře."
+
+#define TEXT_PNAME_MAXCOASTDISTANCE                      "Maximální vzdálenost vodního průmyslu"
+#define TEXT_PDESC_MAXCOASTDISTANCE                      "\89Maximální vzdálenost loviště ryb a těžby podvodních sedimentů od pobřeží."
+#define TEXT_PVALUE0_MAXCOASTDISTANCE                    "Bez limitu"
 
 #define TEXT_PNAME_DEBUG                                 "Zobrazit debug texty"
 #define TEXT_PDESC_DEBUG                                 "Pouze pro vývojáře"
