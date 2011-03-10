@@ -47,46 +47,46 @@
 //Tile action 2 
 -1 * 0 02 09 00 00 //-1 * 0 02 09 <set-id> 00
 // empty ground
-	\dx80008000 //groundsprite
+	\d2022 //groundsprite
 	\d0 //building sprite
 	\b0 \b0 //xofs yofs
 	\b0 \b0 \b0 //xextent yextent zextent
 // creosote shed
 -1 * 0 02 09 01 00 //-1 * 0 02 09 <set-id> 00
-	\dx80008000 //groundsprite
+	\d2022 //groundsprite
 	\dx80008001 //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b16 //xextent yextent zextent
 -1 * 0 02 09 02 00 //-1 * 0 02 09 <set-id> 00
-	\dx80008000 //groundsprite
+	\d2022 //groundsprite
 	\dx80008002 //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b16 //xextent yextent zextent
 // large shed
 -1 * 0 02 09 03 00 //-1 * 0 02 09 <set-id> 00
-	\dx80008000 //groundsprite
+	\d2022 //groundsprite
 	\dx80008003 //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b16 //xextent yextent zextent
 -1 * 0 02 09 04 00 //-1 * 0 02 09 <set-id> 00
-	\dx80008000 //groundsprite
+	\d2022 //groundsprite
 	\dx80008004 //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b16 //xextent yextent zextent
 // office with crane
 -1 * 0 02 09 05 00 //-1 * 0 02 09 <set-id> 00
-	\dx80008000 //groundsprite
+	\d2022 //groundsprite
 	\dx80008005 //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b16 //xextent yextent zextent
 // wood piles
 -1 * 0 02 09 06 00 //-1 * 0 02 09 <set-id> 00
-	\dx80008000 //groundsprite
+	\d2022 //groundsprite
 	\dx80008006 //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b16 //xextent yextent zextent
 -1 * 0 02 09 07 02 //-1 * 0 02 09 <set-id> 00 (extended format)
-	\dx80008000 //groundsprite
+	\d2022 //groundsprite
 	\dx80008009 //building sprite
 	\b0 \b0 \b0 //xofs yofs zofs
 	\b16 \b16 \b16 //xextent yextent zextent
@@ -94,7 +94,7 @@
 	\b0 \b0 \b0 //xofs yofs zofs
 	\b16 \b16 \b16 //xextent yextent zextent
 -1 * 0 02 09 08 00 //-1 * 0 02 09 <set-id> 00
-	\dx80008000 //groundsprite
+	\d2022 //groundsprite
 	\dx80008008 //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b16 //xextent yextent zextent
