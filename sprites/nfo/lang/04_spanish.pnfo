@@ -21,7 +21,7 @@
 #define TEXT_CRG_BAUXITE_TABBR                           "\0EBX"
 
 //Building Materials
-#define TEXT_CRG_BUILDINGMATERIALS_CTYPE                 "Materiales de Construcción"
+#define TEXT_CRG_BUILDINGMATERIALS_CTYPE                 "Materiales de Construcción" // Checked.
 #define TEXT_CRG_BUILDINGMATERIALS_CARGOAMOUNT           "de materiales de construcción"
 #define TEXT_CRG_BUILDINGMATERIALS_TABBR                 "\0EMC"
 
@@ -33,12 +33,12 @@
 //Clay
 #define TEXT_CRG_CLAY_CTYPE                              "Arcilla"
 #define TEXT_CRG_CLAY_CARGOAMOUNT                        "de arcilla"
-#define TEXT_CRG_CLAY_TABBR                              "\0ECL"
+#define TEXT_CRG_CLAY_TABBR                              "\0EAC"
 
 //Engineering supplies
 #define TEXT_CRG_ENGINEERINGSUPPLIES_CTYPE               "Suministros de Ingeniería"
 #define TEXT_CRG_ENGINEERINGSUPPLIES_CARGOAMOUNT         "de suministros de ingeniería"
-#define TEXT_CRG_ENGINEERINGSUPPLIES_TABBR               "\0EES"
+#define TEXT_CRG_ENGINEERINGSUPPLIES_TABBR               "\0ESI"
 
 //Farm supplies
 #define TEXT_CRG_FARMSUPPLIES_CTYPE                      "Suministros Agrarios"
@@ -60,29 +60,29 @@
 #define TEXT_CRG_FUELOIL_TABBR                           "\0EFO"
 
 //Gravel
-#define TEXT_CRG_GRAVEL_CTYPE                            "Piedra"
+#define TEXT_CRG_GRAVEL_CTYPE                            "Piedra" // Checked.
 #define TEXT_CRG_GRAVEL_CARGOAMOUNT                      "de piedra"
-#define TEXT_CRG_GRAVEL_TABBR                            "\0EPI"
+#define TEXT_CRG_GRAVEL_TABBR                            "\0EPI" // Checked.
 
 //Lumber
-#define TEXT_CRG_LUMBER_CTYPE                            "Tablas"
+#define TEXT_CRG_LUMBER_CTYPE                            "Tablas" // Checked.
 #define TEXT_CRG_LUMBER_CARGOAMOUNT                      "de tablas"
-#define TEXT_CRG_LUMBER_TABBR                            "\0ETB"
+#define TEXT_CRG_LUMBER_TABBR                            "\0ETB" // Checked.
 
 //Manufacturing Supplies
-#define TEXT_CRG_MANUFACTURINGSUPPLIES_CTYPE             "Suministros de Manufactura"
+#define TEXT_CRG_MANUFACTURINGSUPPLIES_CTYPE             "Suministros de Manufactura" // Checked.
 #define TEXT_CRG_MANUFACTURINGSUPPLIES_CARGOAMOUNT       "de suministros de manufactura"
-#define TEXT_CRG_MANUFACTURINGSUPPLIES_TABBR             "\0ESM"
+#define TEXT_CRG_MANUFACTURINGSUPPLIES_TABBR             "\0ESM" // Checked.
 
 //Metal
-#define TEXT_CRG_METAL_CTYPE                             "Metal"
+#define TEXT_CRG_METAL_CTYPE                             "Metal" // Checked.
 #define TEXT_CRG_METAL_CARGOAMOUNT                       "de metal"
-#define TEXT_CRG_METAL_TABBR                             "\0EML"
+#define TEXT_CRG_METAL_TABBR                             "\0EML" // Checked.
 
 //Milk
-#define TEXT_CRG_MILK_CTYPE                              "Leche"
+#define TEXT_CRG_MILK_CTYPE                              "Leche" // Checked.
 #define TEXT_CRG_MILK_CARGOAMOUNT                        "de leche"
-#define TEXT_CRG_MILK_TABBR                              "\0ELC"
+#define TEXT_CRG_MILK_TABBR                              "\0ELC" // Checked.
 
 //Plant Fibres
 #define TEXT_CRG_PLANTFIBRES_CTYPE                       "Fibras Vegetales"
@@ -112,7 +112,7 @@
 //Wool
 #define TEXT_CRG_WOOL_CTYPE                              "Lana"
 #define TEXT_CRG_WOOL_CARGOAMOUNT                        "de lana"
-#define TEXT_CRG_WOOL_TABBR                              "\0EWL"
+#define TEXT_CRG_WOOL_TABBR                              "\0ELN"
 
 //Industry texts
 #define TEXT_IND_ARABLEFARM                              "Finca Agrícola"
@@ -134,7 +134,7 @@
 #define TEXT_IND_FISHINGHARBOUR                          "Puerto de Pesca"
 #define TEXT_IND_FISHINGGROUNDS                          "Zona de Pesca"
 
-#define TEXT_IND_FORGE                                   "Forja"
+#define TEXT_IND_FORGE                                   "Forja" // Checked.
 #define TEXT_IND_FURNITUREFACTORY                        "Fábrica de Muebles"
 #define TEXT_IND_GENERALSTORE                            "Tienda"
 #define TEXT_IND_GLASSWORKS                              "Cristalería"
@@ -149,25 +149,18 @@
 
 #define TEXT_IND_MIXEDFARM                               "Granja Mixta"
 #define TEXT_IND_PETROLPUMP                              "Gasolinera"
-#define TEXT_IND_PLASTICSPLANT                           "Fábrica de Plásticos"
-#define TEXT_IND_QUARRY                                  "Cantera"
+#define TEXT_IND_PLASTICSPLANT                           "Fábrica de Plásticos" // Checked.
+#define TEXT_IND_QUARRY                                  "Cantera" // Checked.
 #define TEXT_IND_RETAILMARKET                            "Centro Comercial"
 
-#define TEXT_IND_SHEEPFARM                               "Granja de Ovejas"
+#define TEXT_IND_SHEEPFARM                               "Granja de Ovejas" // Checked.
 #define TEXT_IND_SUPERMARKET                             "Supermercado"
-#define TEXT_IND_SUGARREFINERY                           "Refinería de Azúcar"
+#define TEXT_IND_SUGARREFINERY                           "Refinería de Azúcar" // Checked.
 #define TEXT_IND_TEXTILEMILL                             "Hilatura Textil"
 #define TEXT_IND_WHOLESALEMARKET                         "Mercado Mayorista"
 
 #define TEXT_IND_WINDFARM                                "Parque Eólico"
 #define TEXT_IND_WINDMILL                                "Molino de Viento"
-
-
-
-
-
-
-
 
 
 
@@ -230,33 +223,34 @@
 #define TEXT_INFO_3T_PER_8T_MS                           "  3t por cada 8t de suministros de manufactura entregadas\0D"
 #define TEXT_INFO_2T_PER_8T_IRON_ORE                     "  2t por cada 8t de mineral de hierro entregadas\0D"
 #define TEXT_INFO_2T_PER_8T_COAL                         "  2t por cada 8t de carbón entregadas\0D"
+#define TEXT_INFO_4T_PER_8T_COAL                         "  4t por cada 8t de carbón entregadas\0D"
 #define TEXT_INFO_4T_PER_8T_SCRAP_METAL                  "  4t por cada 8t de chatarra entregadas\0D"
-#define TEXT_INFO_2T_PER_8T_BAUXITE                      "  2t por cada 8t de bauxita entregadas\0D"
 
+#define TEXT_INFO_2T_PER_8T_BAUXITE                      "  2t por cada 8t de bauxita entregadas\0D"
 #define TEXT_INFO_5T_PER_8T_LUMBER                       "  5t por cada 8t de tablas entregadas\0D" 
 #define TEXT_INFO_6T_PER_8T_LUMBER                       "  6t por cada 8t de tablas entregadas\0D"
 #define TEXT_INFO_2T_PER_8T_CHEMICALS                    "  2t por cada 8t de productos químicos entregadas\0D"
 #define TEXT_INFO_5T_PER_8T_GRAIN                        "  5t por cada 8t de grano entregadas\0D"
-#define TEXT_INFO_5T_PER_8T_FRUITSANDVEGETABLES          "  5t por cada 8t de frutas y vegetales entregadas\0D"
 
+#define TEXT_INFO_5T_PER_8T_FRUITSANDVEGETABLES          "  5t por cada 8t de frutas y vegetales entregadas\0D"
 #define TEXT_INFO_5T_PER_8T_MILK                         "  5t por cada 8t de leche entregadas\0D"
 #define TEXT_INFO_5T_PER_8T_LIVESTOCK                    "  5t por cada 8t de ganado entregadas\0D"
 #define TEXT_INFO_5T_PER_8T_FISH                         "  5t por cada 8t de pescado entregadas\0D"
 #define TEXT_INFO_5T_PER_8T_WOOL                         "  5t por cada 8t de lana entregadas\0D"
-#define TEXT_INFO_5T_PER_8T_PLANTFIBRES                  "  5t por cada 8t de fibras vegetales entregadas\0D"
 
+#define TEXT_INFO_5T_PER_8T_PLANTFIBRES                  "  5t por cada 8t de fibras vegetales entregadas\0D"
 #define TEXT_INFO_5T_PER_8T_SUGARCANE                    "  5t por cada 8t de caña de azúcar entregadas\0D"
 #define TEXT_INFO_5T_PER_8T_SUGARBEET                    "  5t por cada 85 de remolacha azucarera entregadas\0D"
 #define TEXT_INFO_1T_PER_8T_WOOD                         "  1t por cada 8t de madera entregadas\0D" 
 #define TEXT_INFO_2T_PER_8T_WOOD                         "  2t por cada 8t de madera entregadas\0D"
+
 #define TEXT_INFO_4T_PER_8T_WOOD                         "  4t por cada 8t de madera entregadas\0D"
 #define TEXT_INFO_6T_PER_8T_WOOD                         "  6t por cada 8t de madera entregadas\0D"
-
-#define TEXT_INFO_2T_PER_8T_SAND                         "  2t por cada 8t de arena entregadas\0D"
 #define TEXT_INFO_4T_PER_8T_GRAVEL                       "  4t por cada 8t de grava entregadas\0D"
 #define TEXT_INFO_2T_PER_8T_CLAY                         "  2t por cada 8t de arcilla entregadas\0D"
 #define TEXT_INFO_4T_PER_8T_CLAY                         "  4t por cada 8t de arcilla entregadas\0D"
-#define TEXT_INFO_4T_PER_8T_COAL                         "  4t por cada 8t de carbón entregadas\0D"
+
+#define TEXT_INFO_2T_PER_8T_SAND                         "  2t por cada 8t de arena entregadas\0D"
 #define TEXT_INFO_6T_PER_8T_SAND                         "  6t por cada 8t de arena entregadas\0D"
 
 
@@ -270,7 +264,7 @@
 #define TEXT_INFO_PLASTICSPLANT                          "\98Fabrica productos de plástico tales como embalaje o productos del hogar.\0D"
 #define TEXT_INFO_GLASSWORKS                             "\98Fabrica productos de cristal tales como botellas, jarras o ventanas.\0D"
 #define TEXT_INFO_WHOLESALEMARKET                        "\98Vende productos a negocios de restauración y hostelería.\0D"
-#define TEXT_INFO_FORGE                                  "\98Produce objetos de metal forjado como puertas de hierro enrejado, herramientas, útiles de labranza o cocina y herraduras.\0D"
+#define TEXT_INFO_FORGE                                  "\98Produce objetos de metal forjado como herramientas, puertas, útiles de labranza o cocina y herraduras.\0D"
 
 #define TEXT_INFO_FERTILISERPLANT                        "\98Transforma productos químicos en fertilizante para ser usado en granjas.\0D"
 #define TEXT_INFO_LUMBERYARD                             "\98Produce objetos tales como mástiles y cercas.\0D"
