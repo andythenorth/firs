@@ -1,9 +1,7 @@
 // Defines for use in industry template
 #define THIS_INDUSTRY         IND_FISHINGGROUNDS
 #define THIS_STR_INFO_CB38    STR_INFO_GENERIC
-#define THIS_STR_BOOST        STR_INFO_ES_PRIMARY_BOOST
 #define THIS_INTRO_DATE       \d00
-#define THIS_HANDLE_CB28      10 00
 
 #define THIS_COLOCATED_INDUSTRY  IND_FISHINGHARBOUR
 #define THIS_CLUSTER_SCALE       \d03 // increase number of clusters by 1.3 for fishing grounds - spreads them across the map more
@@ -383,4 +381,55 @@
 
 #include "../../../templates/cb28_allow_player_build.pnfo"
 
-#include "../../../templates/template_primary_action23.pnfo"
+// Preferred action 2 ID ranges, to keep life simple...
+//   production code	00-0F, A0-AF
+//   cargo acceptance	B0-BF
+//   misc branching, handle callbacks etc	C0-CF
+//   monthly / random production change	D0-DF
+//   texts	E0-FF
+//   industry location permissibility (CB 28)  10-1F  (NB CB 28 does not have to be templated - can be handled on a per-industry basis)
+//   industry availability (CB 22) 20-2F
+//   generally unused and available	40-9F
+
+
+// production code
+	
+-1 * 0 02 0A A0 //production callback with consumption
+	00 //version
+	\w9999 \w0 \w0 //<subtract-in-1..3>
+	\w0 \w0 //<add-out-1..2>
+	00 //don't repeat
+
+// handle cb 22 industry availability
+#include "../../../templates/industry_availability_check.pnfo" 
+
+//handle cb 38 additional text industry fund window
+#include "../../../templates/industry_fundwindow_text.pnfo"
+
+// handle cb 14A industry color
+#include "../../../templates/industry_color.pnfo"
+
+
+
+// handle callbacks
+-1 * 0 02 0A C0 
+	85 0C //<type> <variable> word-access callback
+	00 FF FF //no shift, no mask
+	\b7 //number of ranges to check
+    A0 00   00 00   00 00 //production cb chain
+    10 00   28 00   28 00 //can industry be built?
+    20 00   22 00   22 00 //industry availability cb 22
+    21 00   4A 01   4A 01 //industry color cb 14A
+  	22 00   38 00   38 00 //cb 38 display additional text in fund window
+	  00 80   29 00   29 00 //random production change cb 29 // 00 80 = do nothing
+	  00 80   35 00   35 00 //monthly production change cb 35 
+	A0 00 //default to final part of production cb chain (needed so that we fail unknown cbs with unintended results)
+
+// industry action 3 attach varaction2 chain to industry
+-1 * 0 03 0A 01 THIS_INDUSTRY 00 \wxC0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>	
+
+#undef LOCAL_CARGO_1_DELIVERED_STORE
+
+#undef THIS_INDUSTRY
+#undef THIS_STR_INFO_CB38
+#undef THIS_INTRO_DATE
