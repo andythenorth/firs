@@ -54,10 +54,10 @@
 //#define IND_VACANT                33
 //#define IND_VACANT                34
 //#define IND_VACANT                35
-//#define IND_LANDFILL              36
-//#define IND_INCINERATOR           37
+//#define IND_VACANT                36
+//#define IND_VACANT                37
 //#define IND_VACANT                38
-//#define IND_RECYCLINGPLANT        39
+//#define IND_VACANT                39
 //#define IND_WASTECOLLECTIONPOINT  3A
 #define IND_GENERALSTORE          3B
 #define IND_GENERALSTORE_CONFLICT BB // special case prevents stores too close (via prop 16). Set bit 7 (add 8 to first nibble of Store ID).
@@ -233,7 +233,7 @@
 #define STR_IND_MACHINESHOP           82 DC
 #define STR_IND_LUMBERYARD            83 DC
 #define STR_IND_METALFOUNDRY          84 DC
-//#define STR_IND_VACANT                85 DC
+#define STR_IND_RECYCLINGPLANT        85 DC
 #define STR_IND_MIXEDFARM             86 DC
 //#define STR_IND_VACANT                87 DC
 #define STR_IND_SHEEPFARM             88 DC
@@ -244,7 +244,7 @@
 //#define STR_IND_VACANT                8D DC
 #define STR_IND_DREDGINGSITE          8E DC
 //#define STR_IND_VACANT                8F DC
-#define STR_IND_WINDFARM              90 DC
+#define STR_IND_WINDFARM              90 DC // deprecated
 //#define STR_IND_VACANT                91 DC
 #define STR_IND_PETROLPUMP            92 DC
 #define STR_IND_FISHINGGROUNDS        93 DC
@@ -362,6 +362,7 @@
 #define STR_INFO_BIOREFINERY        IND_BIOREFINERY
 #define STR_INFO_BRICKWORKS         IND_BRICKWORKS
 #define STR_INFO_IRONWORKS          IND_IRONWORKS
+#define STR_INFO_RECYCLINGPLANT     IND_RECYCLINGPLANT
 
 //Definition of text IDs for cargos
 // _CTYPE: name of cargo type

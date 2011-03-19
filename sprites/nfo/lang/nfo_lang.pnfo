@@ -403,6 +403,10 @@
 -1 * 0 04 0A LANG_ID2 01 STR_IND_IRONWORKS            UTF_STRING TEXT_IND_IRONWORKS 00
 #endif
 
+#ifdef TEXT_IND_RECYCLINGPLANT
+-1 * 0 04 0A LANG_ID2 01 STR_IND_RECYCLINGPLANT       UTF_STRING TEXT_IND_RECYCLINGPLANT 00
+#endif
+
 
 //Station texts for station name prefixes/suffixes. \80 where town name goes
 
@@ -789,6 +793,11 @@
 
 	#ifdef TEXT_INFO_PLASTICSPLANT
 -1 * 0 04 0A LANG_ID2 01 STR_INFO_PLASTICSPLANT D0 UTF_STRING    TEXT_INFO_PLASTICSPLANT
+                                                                 TEXT_INFO_6T_PER_8T 00
+	#endif
+
+	#ifdef TEXT_INFO_RECYCLINGPLANT
+-1 * 0 04 0A LANG_ID2 01 STR_INFO_RECYCLINGPLANT D0 UTF_STRING   TEXT_INFO_RECYCLINGPLANT
                                                                  TEXT_INFO_6T_PER_8T 00
 	#endif
 
