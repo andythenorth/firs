@@ -153,7 +153,7 @@
 			03 03 FE TILE_RECYCLINGPLANT_1 00
 			04 04 FE TILE_RECYCLINGPLANT_1 00
 		00 80 //terminate layout definition
-	0B 01 //production flags 1h=extractive, 2h=organic, 4h=processing
+	0B 04 //production flags 1h=extractive, 2h=organic, 4h=processing
 	0C STR_IND_CLOSE_GENERIC //industry closure message
 	0D STR_IND_PRODINCR_GENERIC //production increase message
 	0E STR_IND_PRODDECR_INSECTS //production decrease message
@@ -171,7 +171,7 @@
 	17 \b7 //probability in random game
 	18 \b7 //probability during gameplay
 	20 FF FF FF BF //prospecting success chance (dword; FFFFFFFFh=100%)
-	0F \b255 //fund cost multiplier (byte)
+	0F \b118 //fund cost multiplier (byte)
 	19 CLR_RECYCLINGPLANT //map colour (byte; using indexes from dos palette)
 	23 \d0  //destruction cost multiplier (dword; default: 0)
 	1A \dx0 //special industry flag
