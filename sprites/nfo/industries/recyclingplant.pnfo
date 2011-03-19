@@ -1,8 +1,13 @@
 // Defines for use in industry template
-#define THIS_INDUSTRY         IND_RECYCLINGPLANT
-#define THIS_STR_INFO_CB38    STR_INFO_AVAILABILITY
-#define THIS_STR_BOOST        STR_INFO_ES_PRIMARY_BOOST
-#define THIS_INTRO_DATE       \d1975-01-01
+#define THIS_INDUSTRY                 IND_RECYCLINGPLANT
+#define THIS_NUM_INPUT_CARGOS         \d01
+#define THIS_NUM_OUTPUT_CARGOS        \d02
+#define THIS_PROD_RATIO_CARGO_IN_1    \d08
+#define THIS_PROD_RATIO_CARGO_IN_2    \d01
+#define THIS_PROD_RATIO_CARGO_IN_3    \d01
+#define THIS_STR_INFO_CB3A            STR_INFO_METALFOUNDRY
+#define THIS_STR_INFO_CB38            STR_INFO_AVAILABILITY
+#define THIS_INTRO_DATE               \d1997-01-01
 //Industry tiles definition
 
 //Tile action 0
@@ -181,4 +186,4 @@
 
 //No action 1 for industries, as graphics are defined by the industry-tile feature.
 
-#include "../../../templates/template_primary_action23.pnfo"
+#include "../../../templates/template_secondary_action23_A.pnfo"
