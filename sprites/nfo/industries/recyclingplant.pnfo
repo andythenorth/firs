@@ -174,7 +174,7 @@
 	0F \b255 //fund cost multiplier (byte)
 	19 CLR_RECYCLINGPLANT //map colour (byte; using indexes from dos palette)
 	23 \d0  //destruction cost multiplier (dword; default: 0)
-	1A \dx220 //special industry flag
+	1A \dx0 //special industry flag
 	21 85 //callback flags 
 	22 01  //callback flags
 //To show cargo waiting to be processed at industry, ensure prop 21 is set to use production callback
