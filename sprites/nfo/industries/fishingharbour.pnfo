@@ -591,7 +591,7 @@
 
 //Tiles varaction 2 chain
 -1 * 0	 02 09 D0 //handle cb 2F (custom shape check for tiles)
-  89 60 00 00 1F 02 FF 00 // check tile contents
+  89 60 00 00 1F 02 00 00 // check tile contents
   \b1
     01 84 \dx0000 \dx0200
   00 84 //default
