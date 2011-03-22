@@ -171,7 +171,7 @@
 #define CARGO_BAUXITE               1B
 #define CARGO_BUILDINGMATERIALS     1C
 #define CARGO_ALCOHOL               1D
-// #define CARGO_RESERVED1             1E
+#define CARGO_RECYCLABLES           1E
 // #define CARGO_RESERVED2             1F
 // #define CARGO_REGEARING             1F
 
@@ -209,6 +209,7 @@
 #define CLABEL_WASTE                 "WSTE"
 #define CLABEL_CLAY                  "CLAY"
 #define CLABEL_ALCOHOL               "BEER"
+#define CLABEL_RECYCLABLES           "RCYC"
 
 
 //Definition of text IDs for industries
@@ -490,6 +491,12 @@
 #define STR_CRG_ALCOHOL_CARGOUNITS          STR_CRG_UNIT_LITRES
 #define STR_CRG_ALCOHOL_CARGOAMOUNT         4F DC //same as above
 #define STR_CRG_ALCOHOL_TABBR               50 DC
+
+#define STR_CRG_RECYCLABLES_CTYPE           51 DC
+#define STR_CRG_RECYCLABLES_1TYPE           51 DC //same as above
+#define STR_CRG_RECYCLABLES_CARGOUNITS      STR_CRG_UNIT_TONNES
+#define STR_CRG_RECYCLABLES_CARGOAMOUNT     52 DC //same as above
+#define STR_CRG_RECYCLABLES_TABBR           53 DC
 
 //Cargo strings below are from original TTD: http://wiki.ttdpatch.net/tiki-index.php?page=TextIDs
 
