@@ -26,7 +26,8 @@
 //   texts	E0-FF
 //   industry location permissibility (CB 28)  10-1F  (NB CB 28 is not templated - handled on a per-industry basis)
 //   industry availability (CB 22) 20
-//   generally unused and available	2A-9F
+//   customise cargos (CB 14B, 14C) 2A-2F
+//   generally unused and available	30-9F
 
 //3 input cargos
 //2 output cargos
