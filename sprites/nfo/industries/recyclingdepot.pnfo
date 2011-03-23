@@ -78,12 +78,23 @@
 
 // !! production to be 1/16 or 1/12 of town population
 
-//Dummy production callback to keep default-id happy
+//Production callback
 -1 * 0 02 0A 00 //-1 * 0 0A <set-id>
-	00 //version
-	\w255 \w255  \w255 //<subtract-in-1..3>
-	\w255 \w255 //<add-out-1..2>
+	01 //version
+        // Register 0 has value 0, so use it as dummy.
+        // Register 1 has the production value
+	00 00 00 //<subtract-in-1..3>
+	01 00 //<add-out-1..2>
 	00 //don't repeat
+
+-1 * 0 02 0A 00 86
+      1A 20 \wx0 // literal value 0
+\2sto 1A 20 \wx0 // Store in register 0
+\2r   82 64 \wxFFFF \wx7 \wx8 // Population. shift by 4 (=/16), add 7, divide by 8
+\2sto 1A 00 \wx1 // Store in register 1
+\b1 // 1 range to not fall in the nvar=0 bear trap
+\wx00 \wx0 \wx0
+\wx00 // go to production callback
 
 // handle cb 28 industry location - included on a per-industry basis to allow industries to use various different schemes 
 #include "../../../templates/cb28_secondary_generic.pnfo"     
