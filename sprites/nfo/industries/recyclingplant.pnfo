@@ -9,7 +9,7 @@
 #define THIS_STR_INFO_CB38            STR_INFO_AVAILABILITY
 #define THIS_INTRO_DATE               \d1997-01-01
 #define THIS_HANDLE_CB28              10 00
-//#define THIS_HANDLE_CB14C              2A 00
+#define THIS_HANDLE_CB14C             2A 00
 
 //Industry tiles definition
 
@@ -184,7 +184,7 @@
 	23 \d0  //destruction cost multiplier (dword; default: 0)
 	1A \dx0 //special industry flag
 	21 BD //callback flags 
-	22 01  //callback flags
+	22 21  //callback flags
 //To show cargo waiting to be processed at industry, ensure prop 21 is set to use production callback
 
 //No action 1 for industries, as graphics are defined by the industry-tile feature.
@@ -196,10 +196,23 @@
 #include "../../../templates/cb28_space_neighbours_in_chain.pnfo"
 #undef THIS_CONFLICTING_INDUSTRY
 
-#include "../../../templates/cb28_allow_player_build.pnfo"     
+#include "../../../templates/cb28_allow_player_build.pnfo"
+
+-1 * 0 02 0A 2A 81
+    5F 08 03 // 2 random bits, 4 possible values
+    \b3
+    CARGO_SCRAPMETAL 80 00 00
+    CARGO_CHEMICALS 89 01 01
+    CARGO_BUILDINGMATERIALS 89 02 02
+    CARGO_FARMSUPPLIES 80
 
 // handle cb 14C customise industry cargos on build
-// nothing here yet
+-1 * 0 02 0A 2A 81
+    10 00 FF
+    \b2 // num ranges
+    CARGO_MANUFACTURINGSUPPLIES 80 00 00 // first cargo is manufacturings suppliers
+    2A 00 01 01 // second cargo is random
+    FF 80
 
 
 #include "../../../templates/template_secondary_action23_A.pnfo"
