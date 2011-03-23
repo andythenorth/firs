@@ -24,7 +24,7 @@
 #define IND_IRONWORKS             15
 #define IND_GLASSWORKS            16
 #define IND_RECYCLINGPLANT        17
-//#define IND_VACANT                18
+#define IND_RECYCLINGDEPOT        18
 #define IND_JUNKYARD              19
 #define IND_ARABLEFARM            1A
 #define IND_SHEEPFARM             1B
@@ -121,7 +121,7 @@
 #define TILE_IRONWORKS_1                   C7
 #define TILE_WINDFARM_1                    C8
 #define TILE_RECYCLINGPLANT_1              C9
-//#define TILE_VACANT                        CA
+#define TILE_RECYCLINGDEPOT_1              CA
 #define TILE_PETROLPUMP_1                  CB
 #define TILE_FISHINGGROUNDS_1              CC
 #define TILE_FOREST_1                      CD
@@ -236,7 +236,7 @@
 #define STR_IND_METALFOUNDRY          84 DC
 #define STR_IND_RECYCLINGPLANT        85 DC
 #define STR_IND_MIXEDFARM             86 DC
-//#define STR_IND_VACANT                87 DC
+#define STR_IND_RECYCLINGDEPOT        87 DC
 #define STR_IND_SHEEPFARM             88 DC
 #define STR_IND_JUNKYARD              89 DC
 #define STR_IND_GENERALSTORE          8A DC
