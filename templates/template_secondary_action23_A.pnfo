@@ -333,10 +333,10 @@
 -1 * 0 02 0A C0 //-1 * 0 0A <set-id>
 	85 0C //<type> <variable> word-access callback
 	00 FF FF //no shift, no mask
-	#ifdef THIS_HANDLECB14C
+	#ifdef THIS_HANDLE_CB14C
 	\b9 //number of ranges to check
 	#endif
-	#ifndef THIS_HANDLECB14C
+	#ifndef THIS_HANDLE_CB14C
 	\b8 //number of ranges to check
   #endif
     C1 00   00 00   00 00 //handle production cb chain
@@ -348,8 +348,8 @@
     #endif
     20 00   22 00   22 00 //industry availability cb 22
     21 00   4A 01   4A 01 //industry color cb 14A
-    #ifdef THIS_HANDLECB14C
-    THIS_HANDLECB14C   4C 01   4C 01 //customise output cargos on build cb 14C
+    #ifdef THIS_HANDLE_CB14C
+    THIS_HANDLE_CB14C   4C 01   4C 01 //customise output cargos on build cb 14C
     #endif
     22 00   38 00   38 00 //cb 38 display additional text in fund window
 	  D0 00   29 00   29 00 //random production change cb 29
