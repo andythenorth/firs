@@ -198,20 +198,20 @@
 
 #include "../../../templates/cb28_allow_player_build.pnfo"
 
--1 * 0 02 0A 2A 81
-    5F 08 03 // 2 random bits, 4 possible values
+-1 * 0 02 0A 2A 
+    81 5F 08 03 // 2 random bits, 4 possible values
     \b3
-    CARGO_SCRAPMETAL 80 00 00
-    CARGO_CHEMICALS 89 01 01
-    CARGO_BUILDINGMATERIALS 89 02 02
+      CARGO_SCRAPMETAL 80 00 00
+      CARGO_CHEMICALS 89 01 01
+      CARGO_BUILDINGMATERIALS 89 02 02
     CARGO_FARMSUPPLIES 80
 
 // handle cb 14C customise industry cargos on build
--1 * 0 02 0A 2A 81
-    10 00 FF
+-1 * 0 02 0A 2A 
+    81 10 00 FF
     \b2 // num ranges
-    CARGO_MANUFACTURINGSUPPLIES 80 00 00 // first cargo is manufacturings suppliers
-    2A 00 01 01 // second cargo is random
+      2A 00 01 01 // second cargo is random
+      CARGO_MANUFACTURINGSUPPLIES 80 00 00 // first cargo is manufacturings suppliers
     FF 80
 
 
