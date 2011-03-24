@@ -62,8 +62,8 @@
 	1E \w0 \w0  //input cargo 3 multiplier
 	14 \b2 //minimal cargo distribution amount
 	16 FF FF FF //conflicting industry types (3*byte; ID+80h; FF to disable)
-	17 \b10 //probability in random game
-	18 \b20 //probability during gameplay
+	17 \b64 //probability in random game
+	18 \b64 //probability during gameplay
 	20 FF FF FF BF //prospecting success chance (dword; FFFFFFFFh=100%)
 	0F \b118 //fund cost multiplier (byte)
 	19 CLR_WASTECOLLECTIONPOINT //map colour (byte; using indexes from dos palette)
@@ -100,6 +100,10 @@
 #include "../../../templates/cb28_secondary_generic.pnfo"     
 
 #define THIS_CONFLICTING_INDUSTRY IND_RECYCLINGPLANT
+#include "../../../templates/cb28_space_neighbours_in_chain.pnfo"
+#undef THIS_CONFLICTING_INDUSTRY
+
+#define THIS_CONFLICTING_INDUSTRY IND_RECYCLINGDEPOT
 #include "../../../templates/cb28_space_neighbours_in_chain.pnfo"
 #undef THIS_CONFLICTING_INDUSTRY
 
