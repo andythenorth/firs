@@ -55,8 +55,8 @@
 	1F STR_IND_RECYCLINGDEPOT //industry name
 	10 CARGO_RECYCLABLES FF //production cargo types (word; fill unused with FFh)
 	11 FF FF FF FF //acceptance cargo types (dword; fill unused with FFh)
-	12 \b6 //production multiplier cargo 1
-	13 00 //production multiplier cargo 2
+	12 \b0 //production multiplier cargo 1
+	13 \b0 //production multiplier cargo 2
 	1C \w0 \w0 //input cargo 1 multiplier (dword M1 M2; output_typen = X*Mn/256)
 	1D \w0 \w0  //input cargo 2 multiplier
 	1E \w0 \w0  //input cargo 3 multiplier
@@ -90,7 +90,7 @@
 -1 * 0 02 0A 00 86
       1A 20 \wx0 // literal value 0
 \2sto 1A 20 \wx0 // Store in register 0
-\2r   82 64 \wxFFFF \wx7 \wx8 // Population. shift by 4 (=/16), add 7, divide by 8
+\2r   82 63 \wx1FFF \w11 \w12 // Population. shift by 3 (=/8), add 11, divide by 12
 \2sto 1A 00 \wx1 // Store in register 1
 \b1 // 1 range to not fall in the nvar=0 bear trap
 \wx00 \wx0 \wx0
