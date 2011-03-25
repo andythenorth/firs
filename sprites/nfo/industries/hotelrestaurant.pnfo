@@ -45,7 +45,7 @@
 	0D STR_IND_PRODINCR_GENERIC //production increase message
 	0E STR_IND_PRODDECR_GENERIC //production decrease message
 	1B STR_IND_NEW_GENERIC //new industry message
-	1F STR_IND_GENERALSTORE //industry name
+	1F STR_IND_HOTELRESTAURANT //industry name
 	10 FF FF //production cargo types (word; fill unused with FFh)
 	11 CARGO_FOOD CARGO_ALCOHOL FF FF //acceptance cargo types (dword; fill unused with FFh)
 	12 00 //production multiplier cargo 1

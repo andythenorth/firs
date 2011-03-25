@@ -422,6 +422,10 @@
 -1 * 0 04 0A LANG_ID2 01 STR_IND_RECYCLINGDEPOT       UTF_STRING TEXT_IND_RECYCLINGDEPOT 00
 #endif
 
+#ifdef TEXT_IND_HOTELRESTAURANT
+-1 * 0 04 0A LANG_ID2 01 STR_IND_HOTELRESTAURANT      UTF_STRING TEXT_IND_HOTELRESTAURANT 00
+#endif
+
 
 //Station texts for station name prefixes/suffixes. \80 where town name goes
 
