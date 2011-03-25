@@ -36,9 +36,12 @@
 -1 * 0 00 0A \b26 01 IND_HOTELRESTAURANT //-1 * 0 00 0A <num-props> 01 <id>
 	08 IND_NULL //reuse original industry with this here ID
 	0A 01 //number of industry layouts
-		\d7 //size of layout definition +2 for termination
+		\d22 //size of layout definition +2 for termination
 		//layout:
 			00 00 FE TILE_HOTELRESTAURANT_1 00 //xoffs yoffs FE newtile(W)
+			00 01 FE TILE_HOTELRESTAURANT_1 00 //xoffs yoffs FE newtile(W)
+			01 00 FE TILE_HOTELRESTAURANT_1 00 //xoffs yoffs FE newtile(W)
+			01 01 FE TILE_HOTELRESTAURANT_1 00 //xoffs yoffs FE newtile(W)
 		00 80 //terminate layout definition
 	0B 00 //production flags 1h=extractive, 2h=organic, 4h=processing, 0h=no closure etc.
 	0C STR_IND_CLOSE_GENERIC //industry closure message
