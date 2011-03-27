@@ -14,23 +14,53 @@
 //Industry tile sprites; one sprite for each tile; eventually more for each tile to include  construction stages
 
 //Tile action 1
--1 * 0 01 09 \b1 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
+-1 * 0 01 09 \b2 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
 // Format: spritenum pcxfile xpos ypos compression ysize xsize xrel yrel
--1 sprites/graphics/industries/wastecollectionpoint.pcx 10 10 09 31 64 -31 0
+-1 sprites/graphics/industries/recyclingdepot.pcx 10 10 09 31 64 -31 0
+-1 sprites/graphics/industries/recyclingdepot.pcx 80 10 09 31 64 -31 0
 
 
 //Tile action 2 
 -1 * 0 02 09 00 00 //-1 * 0 02 09 <set-id> 00
-	\d3981 //groundsprite
+	\d1420 //groundsprite
 	\dx80008000 //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b16 //xextent yextent zextent
+-1 * 0 02 09 01 00 //-1 * 0 02 09 <set-id> 00
+	\d1420 //groundsprite
+	\dx80008001 //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b16 //xextent yextent zextent
 
+// !! climate aware code is provided in stub form, but currently only 1, non-climate sensitive layout used.
+
+-1 * 0 02 09 B0 //layout
+	85 43 //check relative position (00yx[YYXX])
+	00 FF FF //don't shift, don't mask
+	\b1 //number of ranges to check (number of tiles) [range: XX YY  XX YY]
+    \wx00   00 00  00 00
+	\wx01 //02 01  03 01 <default>
+
+-1 * 0 02 09 A1
+	82 44 //check layout number (lowest byte of related industry)
+	00 FF //don't shift, don't mask
+	\b1 //number of ranges to check (number of layouts)
+    \wxB0 \b1 \b1 //<set-id \w> <low-range> <high-range>
+	\wxB0 //<default> (first tile layout available)
+
+// check terrain type and branch to different layout checks appropriately
+-1 * 0 02 09 A0 
+	81 41 //check terrain type (lowest byte of related industry)
+	00 FF //don't shift, don't mask
+	\b2 //range
+	  \wxA1 \b1 \b1 //<set-id \w> <low-range> <high-range>  // desert
+	  \wxA1 \b4 \b4 //<set-id \w> <low-range> <high-range>  // snow
+	\wxA1 //<default>
 
 //Action3 attach sprites to industry tile
 
 //Tile action 3
--1 * 0 03 09 01 TILE_RECYCLINGDEPOT_1 00 \wx00 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
+-1 * 0 03 09 01 TILE_RECYCLINGDEPOT_1 00 \wxA0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
 
 
 
