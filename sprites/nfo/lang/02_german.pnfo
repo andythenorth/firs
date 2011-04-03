@@ -11,6 +11,10 @@
 #define GENDER_N 9A 0E 03
 #define GENDER_P 9A 0E 04
 
+//Cargo suffixes
+#define TEXT_CRG_SUFFIX_CRATES                           "Kisten" 
+
+
 //Cargo texts
 
 #define TEXT_CRG_ALCOHOL_CTYPE                           "Spirituosen" 
@@ -23,7 +27,7 @@
 #define TEXT_CRG_BAUXITE_TABBR                           "\0EBX"
 
 //Building Materials
-#define TEXT_CRG_BUILDINGMATERIALS_CTYPE                 GENDER_P "Baustoffe" 
+#define TEXT_CRG_BUILDINGMATERIALS_CTYPE                 GENDER_P "Baustoffe"
 #define TEXT_CRG_BUILDINGMATERIALS_CARGOAMOUNT           "Baustoffe" 
 #define TEXT_CRG_BUILDINGMATERIALS_TABBR                 "\0EBS" 
 
@@ -39,12 +43,12 @@
 
 //Engineering supplies
 #define TEXT_CRG_ENGINEERINGSUPPLIES_CTYPE               GENDER_P "Ersatzteile"
-#define TEXT_CRG_ENGINEERINGSUPPLIES_CARGOAMOUNT         "Kisten Ersatzteile" 
+#define TEXT_CRG_ENGINEERINGSUPPLIES_CARGOAMOUNT         "Kisten Ersatzteile"
 #define TEXT_CRG_ENGINEERINGSUPPLIES_TABBR               "\0EET"
 
 //Farm supplies
 #define TEXT_CRG_FARMSUPPLIES_CTYPE                      GENDER_P "landw. Betriebsmittel"
-#define TEXT_CRG_FARMSUPPLIES_CARGOAMOUNT                "Kisten landw. Betriebsmittel" 
+#define TEXT_CRG_FARMSUPPLIES_CARGOAMOUNT                "Kisten landw. Betriebsmittel"
 #define TEXT_CRG_FARMSUPPLIES_TABBR                      "\0ELB"
 
 //Fish
@@ -63,8 +67,8 @@
 
 //Gravel
 #define TEXT_CRG_GRAVEL_CTYPE                            GENDER_P "Steine"
-#define TEXT_CRG_GRAVEL_CARGOAMOUNT                      "Steine" 
-#define TEXT_CRG_GRAVEL_TABBR                            "\0EST"
+#define TEXT_CRG_GRAVEL_CARGOAMOUNT                      "Steine"
+#define TEXT_CRG_GRAVEL_TABBR                            "\0EST" // checked  r1908
 
 //Lumber
 #define TEXT_CRG_LUMBER_CTYPE                            GENDER_N "Bauholz"
@@ -73,7 +77,7 @@
 
 //Manufacturing Supplies - formerly Packaging
 #define TEXT_CRG_MANUFACTURINGSUPPLIES_CTYPE             GENDER_P "Produktionsgüter"
-#define TEXT_CRG_MANUFACTURINGSUPPLIES_CARGOAMOUNT       "Kisten Produktionsgüter" 
+#define TEXT_CRG_MANUFACTURINGSUPPLIES_CARGOAMOUNT       "Produktionsgüter"
 #define TEXT_CRG_MANUFACTURINGSUPPLIES_TABBR             "\0EPG"
 
 //Metal
@@ -89,7 +93,12 @@
 //Plant Fibres
 #define TEXT_CRG_PLANTFIBRES_CTYPE                       GENDER_P "Pflanzenfasern" 
 #define TEXT_CRG_PLANTFIBRES_CARGOAMOUNT                 "Pflanzenfasern" 
-#define TEXT_CRG_PLANTFIBRES_TABBR                       "\0EPF" 
+#define TEXT_CRG_PLANTFIBRES_TABBR                       "\0EPF"
+
+//Recyclables
+#define TEXT_CRG_RECYCLABLES_CTYPE                       GENDER_P "Wertstoffe" 
+#define TEXT_CRG_RECYCLABLES_CARGOAMOUNT                 "Wertstoffe" 
+#define TEXT_CRG_RECYCLABLES_TABBR                       "\0EWS" 
 
 //Sand
 #define TEXT_CRG_SAND_CTYPE                              GENDER_M "Sand"
@@ -138,11 +147,13 @@
 #define TEXT_IND_FERTILISERPLANT                         GENDER_W "Düngerfabrik"
 #define TEXT_IND_FISHINGHARBOUR                          GENDER_M "Fischereihafen"
 #define TEXT_IND_FISHINGGROUNDS                          GENDER_P "Fischgründe"
-#define TEXT_IND_FORGE                                   GENDER_W "Schmiede" 
+#define TEXT_IND_FORGE                                   GENDER_W "Schmiede"
 #define TEXT_IND_FURNITUREFACTORY                        GENDER_W "Möbelfabrik"
 
 #define TEXT_IND_GENERALSTORE                            GENDER_M "Gemischtwarenladen"
 #define TEXT_IND_GLASSWORKS                              GENDER_W "Glashütte"
+
+#define TEXT_IND_HOTELRESTAURANT                         GENDER_N "Hotel / Restaurant"
 
 #define TEXT_IND_IRONWORKS                               GENDER_N "Hüttenwerk" 
 
@@ -162,6 +173,8 @@
 #define TEXT_IND_QUARRY                                  GENDER_M "Steinbruch"
 
 #define TEXT_IND_RETAILMARKET                            GENDER_M "Einzelhändler"
+#define TEXT_IND_RECYCLINGPLANT                          GENDER_W "Recyclingfabrik"
+#define TEXT_IND_RECYCLINGDEPOT                          GENDER_M "Wertstoffhof"
 
 #define TEXT_IND_SHEEPFARM                               GENDER_M "Bauernhof (Schafhaltung)"
 #define TEXT_IND_SUPERMARKET                             GENDER_M "Supermarkt"
@@ -204,9 +217,9 @@
 #define TEXT_INFO_AVAILABILITY_1762                      "\98Verfügbar: \90ab 1. Jan 1762"
 #define TEXT_INFO_AVAILABILITY_1780                      "\98Verfügbar: \90ab 1. Jan 1780"
 
-#define TEXT_INFO_GENERIC_CLOSE_0                        "\n\98Diese Industrie könnte schließen, wenn nicht in den \90nächsten \UE07C Monaten\98 Fracht angeliefert wird."
-#define TEXT_INFO_GENERIC_CLOSE_1                        "\n\98Diese Industrie könnte schließen, wenn nicht im \94nächsten Monat\98 Fracht angeliefert wird."
-#define TEXT_INFO_GENERIC_CLOSE_2                        "\n\8BIn mindestens den letzten \85\85\UE07C Monaten\8B wurde keine Fracht angeliefert. Diese Industrie könnte bald schließen.\0D"
+#define TEXT_INFO_GENERIC_CLOSE_0                        "\n\98Diese Industrie könnte schließen, wenn nicht in den \90nächsten \UE07C Monaten\98 Fracht angeliefert wird." // checked r1908
+#define TEXT_INFO_GENERIC_CLOSE_1                        "\n\98Diese Industrie könnte schließen, wenn nicht im \94nächsten Monat\98 Fracht angeliefert wird." // checked r1908
+#define TEXT_INFO_GENERIC_CLOSE_2                        "\n\8BIn mindestens den letzten \85\85\UE07C Monaten\8B wurde keine Fracht angeliefert. Diese Industrie könnte bald schließen.\0D" // checked r1908
 
 #define TEXT_INFO_LIMIT_200                              "\98 (max 200)"
 #define TEXT_INFO_LIMIT_800                              "\98 (max 800)"
@@ -273,13 +286,14 @@
 #define TEXT_INFO_PLASTICSPLANT                          "\98Produziert Plastikteile wie Verpackungen und Haushaltswaren.\0D" 
 #define TEXT_INFO_GLASSWORKS                             "\98Produziert Glasteile wie Flaschen, Gläser und Fensterscheiben.\0D" 
 #define TEXT_INFO_WHOLESALEMARKET                        "\98Verkauft Produkte an Restaurants und Gaststätten.\0D"
-#define TEXT_INFO_FORGE                                  "\98Verarbeitet Schmiedeeisen zu Gegenständen wie Zäune, Werkzäuge, Pflüge, Schaufeln und Hufeisen.\0D"
+#define TEXT_INFO_FORGE                                  "\98Verarbeitet Schmiedeeisen zu Gegenständen wie Zäune, Werkzäuge, Pflüge, Schaufeln und Hufeisen.\0D" // checked r1908
 
 #define TEXT_INFO_FERTILISERPLANT                        "\98Verarbeitet Chemikalien zu Dünger für landwirtschaftlichen Gebrauch.\0D" 
 #define TEXT_INFO_LUMBERYARD                             "\98Produziert Dinge wie Balken und Zaunpfähle.\0D" 
 #define TEXT_INFO_BIOREFINERY                            "\98Verarbeitet Getreide und Zucker zu Treibstoff und Chemikalien.\0D" 
+#define TEXT_INFO_RECYCLINGPLANT                         "\98Verarbeitet Wertstoffe zur Wiederverwendung in der Produktion.\0D"
 
-#define TEXT_INFO_MANUFACTURINGSUPPLIES_STEPUP           "\0DProduktion steigt, wenn Produktionsgüter innerhalb des gleichen Monats wie die andere Fracht geliefert werden." 
+#define TEXT_INFO_MANUFACTURINGSUPPLIES_STEPUP           "\0DProduktion steigt, wenn Produktionsgüter innerhalb eines Monats wie die andere Fracht geliefert werden." 
 
 
 //grf and parameter descriptions
@@ -306,5 +320,5 @@
 #define TEXT_PDESC_MAXCOASTDISTANCE                      "\89Maximaler Abstand von Fischgründen und Baggersees von der Küste in Feldern"
 #define TEXT_PVALUE0_MAXCOASTDISTANCE                    "Kein Limit"
 
-#define TEXT_PNAME_DEBUG                                 "Zeige Debug-Texte"
-#define TEXT_PDESC_DEBUG                                 "Nur für Entwickler"
+#define TEXT_PNAME_DEBUG                                 "Debug-Texte anzeigen"
+#define TEXT_PDESC_DEBUG                                 "Für Entwickler"
