@@ -89,6 +89,11 @@
 #define TEXT_CRG_PLANTFIBRES_CARGOAMOUNT                 "katoen"
 #define TEXT_CRG_PLANTFIBRES_TABBR                       "\0EKT"
 
+//Recyclables
+#define TEXT_CRG_RECYCLABLES_CTYPE                       "Herbruikbare goederen" 
+#define TEXT_CRG_RECYCLABLES_CARGOAMOUNT                 "herbruikbare goederen" 
+#define TEXT_CRG_RECYCLABLES_TABBR                       "\0ERC" 
+
 //Sand
 #define TEXT_CRG_SAND_CTYPE                              "Zand"
 #define TEXT_CRG_SAND_CARGOAMOUNT                        "zand"
@@ -142,6 +147,8 @@
 #define TEXT_IND_GENERALSTORE                            "Kruidenier" 
 #define TEXT_IND_GLASSWORKS                              "Glasfabriek" 
 
+#define TEXT_IND_HOTELRESTAURANT                         "Hotel / Restaurant"
+
 #define TEXT_IND_IRONWORKS                               "Ijzeroven" 
 
 #define TEXT_IND_JUNKYARD                                "Schroothoop" 
@@ -160,6 +167,8 @@
 #define TEXT_IND_QUARRY                                  "Zandwinning" 
 
 #define TEXT_IND_RETAILMARKET                            "Detailhandel" 
+#define TEXT_IND_RECYCLINGPLANT                          "Recyclingfabriek"
+#define TEXT_IND_RECYCLINGDEPOT                          "Recycling verzamelpunt"
 
 #define TEXT_IND_SHEEPFARM                               "Schapenhouderij" 
 #define TEXT_IND_SUPERMARKET                             "Supermarkt" 
@@ -276,6 +285,7 @@
 #define TEXT_INFO_FERTILISERPLANT                        "\98Verwerkt chemicaliën tot kunstmest voor gebruik door boerderijen.\0D" 
 #define TEXT_INFO_LUMBERYARD                             "\98Maakt onder andere houten palen en stijgerplanken..\0D" 
 #define TEXT_INFO_BIOREFINERY                            "\98Verwerkt graan en suiker tot benzine and chemicaliën.\0D" 
+#define TEXT_INFO_RECYCLINGPLANT                         "\98Verwerkt afval tot herbruikbare goederen.\0D"
 
 #define TEXT_INFO_MANUFACTURINGSUPPLIES_STEPUP           "\0DProductie verhoogt als productiehulpgoederen binnen een maand van andere vracht worden geleverd." 
 
