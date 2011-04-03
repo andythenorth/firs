@@ -1,112 +1,123 @@
 //FIRS Translation File
 //Language: Russian
-//Lang-ID: 07 -> 87
+//Lang-ID: 7F -> FF
+#define LANG_ID  7F
+#define LANG_ID2 FF
 
-//To make correct translation it's need to use
-//TEXT_CRG_xxxx_GUNIT is the Genetive singular
-//Function for correct numerals declension: http://pastebin.com/4wKGDvRn
-//Correct translation according to function is added after the main translation
+//Cargo suffixes
+#define TEXT_CRG_SUFFIX_CRATES                           "упаковок" 
 
-#define LANG_ID  07
-#define LANG_ID2 87
 
 //Cargo texts
 
+//Alcohol
+#define TEXT_CRG_ALCOHOL_CTYPE                           "Алкоголь" 
+#define TEXT_CRG_ALCOHOL_CARGOAMOUNT                     "алкоголя"
+#define TEXT_CRG_ALCOHOL_TABBR                           "\0EAL" 
+
 //Bauxite
 #define TEXT_CRG_BAUXITE_CTYPE                           "Боксит" 
+#define TEXT_CRG_BAUXITE_CARGOAMOUNT                     "боксита" 
 #define TEXT_CRG_BAUXITE_TABBR                           "\0EBX" 
-//#define TEXT_CRG_BAUXITE_GUNIT                           "\UE07C тонны боксита" 
 
 //Building Materials
 #define TEXT_CRG_BUILDINGMATERIALS_CTYPE                 "Стройматериалы" 
+#define TEXT_CRG_BUILDINGMATERIALS_CARGOAMOUNT           "стройматериалов" 
 #define TEXT_CRG_BUILDINGMATERIALS_TABBR                 "\0EBM" 
-//#define TEXT_CRG_BUILDINGMATERIALS_GUNIT                 "\UE07C тонны стройматериалов" 
 
 //Chemicals
 #define TEXT_CRG_CHEMICALS_CTYPE                         "Химикаты" 
-#define TEXT_CRG_CHEMICALS_TABBR                         "\0ECH"  
+#define TEXT_CRG_CHEMICALS_CARGOAMOUNT                   "химикатов"
+#define TEXT_CRG_CHEMICALS_TABBR                         "\0ECH" 
 
 //Clay
 #define TEXT_CRG_CLAY_CTYPE                              "Глина" 
+#define TEXT_CRG_CLAY_CARGOAMOUNT                        "глины" 
 #define TEXT_CRG_CLAY_TABBR                              "\0ECL" 
-//#define TEXT_CRG_CLAY_GUNIT                              "\UE07C тонны глины" 
 
 //Engineering supplies
 #define TEXT_CRG_ENGINEERINGSUPPLIES_CTYPE               "Промышленное оборудование" 
+#define TEXT_CRG_ENGINEERINGSUPPLIES_CARGOAMOUNT         "промышленного оборудования" 
 #define TEXT_CRG_ENGINEERINGSUPPLIES_TABBR               "\0EES" 
-//#define TEXT_CRG_ENGINEERINGSUPPLIES_GUNIT               "\UE07C ящика промышленного оборудования" 
 
 //Farm supplies
 #define TEXT_CRG_FARMSUPPLIES_CTYPE                      "Сельхозтовары" 
+#define TEXT_CRG_FARMSUPPLIES_CARGOAMOUNT                "сельхозтоваров" 
 #define TEXT_CRG_FARMSUPPLIES_TABBR                      "\0EFS" 
-//#define TEXT_CRG_FARMSUPPLIES_GUNIT                      "\UE07C ящика сельхозтоваров" 
 
 //Fish 
 #define TEXT_CRG_FISH_CTYPE                              "Рыба" 
+#define TEXT_CRG_FISH_CARGOAMOUNT                        "рыбы" 
 #define TEXT_CRG_FISH_TABBR                              "\0EFI" 
-//#define TEXT_CRG_FISH_GUNIT                              "\UE07C тонны рыбы" 
 
 //Fruit and Vegetables
-#define TEXT_CRG_FRUITSANDVEGETABLES_CTYPE               "Фрукты и овощи" // was: Fruit and Vegetables
-//#define TEXT_CRG_FRUITSANDVEGETABLES_GUNIT               "\UE07C тонны фруктов и овощей" 
+#define TEXT_CRG_FRUITSANDVEGETABLES_CTYPE               "Овощи и фрукты" 
+#define TEXT_CRG_FRUITSANDVEGETABLES_CARGOAMOUNT         "овощей и фруктов" 
 
 //Fuel oil
-#define TEXT_CRG_FUELOIL_CTYPE                           "Бензин" 
-#define TEXT_CRG_FUELOIL_TABBR                           "\0EPT"
+#define TEXT_CRG_FUELOIL_CTYPE                           "Топливо" 
+#define TEXT_CRG_FUELOIL_CARGOAMOUNT                     "топлива"  
+#define TEXT_CRG_FUELOIL_TABBR                           "\0EPT" 
 
 //Gravel
 #define TEXT_CRG_GRAVEL_CTYPE                            "Камень" 
-#define TEXT_CRG_GRAVEL_TABBR                            "\0EGV" 
-//#define TEXT_CRG_GRAVEL_GUNIT                            "\UE07C тонны камня" 
+#define TEXT_CRG_GRAVEL_CARGOAMOUNT                      "камня" 
+#define TEXT_CRG_GRAVEL_TABBR                            "\0EST" 
 
 //Lumber
 #define TEXT_CRG_LUMBER_CTYPE                            "Пиломатериалы" 
+#define TEXT_CRG_LUMBER_CARGOAMOUNT                      "пиломатериалов" 
 #define TEXT_CRG_LUMBER_TABBR                            "\0ELU" 
-//#define TEXT_CRG_LUMBER_GUNIT                            "\UE07C тонны пиломатериалов" 
 
 //Manufacturing Supplies - formerly Packaging
 #define TEXT_CRG_MANUFACTURINGSUPPLIES_CTYPE             "Производственные материалы" 
+#define TEXT_CRG_MANUFACTURINGSUPPLIES_CARGOAMOUNT       "производственных материалов" 
 #define TEXT_CRG_MANUFACTURINGSUPPLIES_TABBR             "\0EMS" 
-//#define TEXT_CRG_MANUFACTURINGSUPPLIES_GUNIT             "\UE07C ящика производственных материалов" 
 
 //Metal
 #define TEXT_CRG_METAL_CTYPE                             "Металл" 
+#define TEXT_CRG_METAL_CARGOAMOUNT                       "металла" 
 #define TEXT_CRG_METAL_TABBR                             "\0EML" 
-//#define TEXT_CRG_METAL_GUNIT                             "\UE07C тонны металла" 
 
 //Milk
 #define TEXT_CRG_MILK_CTYPE                              "Молоко" 
+#define TEXT_CRG_MILK_CARGOAMOUNT                        "молока" 
 #define TEXT_CRG_MILK_TABBR                              "\0EMK" 
 
 //Plant Fibres
 #define TEXT_CRG_PLANTFIBRES_CTYPE                       "Растительные волокна" 
-#define TEXT_CRG_PLANTFIBRES_TABBR                       "\0ECT" 
-//#define TEXT_CRG_PLANTFIBRES_GUNIT                       "\UE07C тонны растительных волокон" 
+#define TEXT_CRG_PLANTFIBRES_CARGOAMOUNT                 "растительных волокон" 
+#define TEXT_CRG_PLANTFIBRES_TABBR                       "\0EPF" 
+
+//Reyclables
+#define TEXT_CRG_RECYCLABLES_CTYPE                       "Вторсырьё" 
+#define TEXT_CRG_RECYCLABLES_CARGOAMOUNT                 "вторсырья" 
+#define TEXT_CRG_RECYCLABLES_TABBR                       "\0ERC" 
 
 //Sand
 #define TEXT_CRG_SAND_CTYPE                              "Песок" 
+#define TEXT_CRG_SAND_CARGOAMOUNT                        "песка" 
 #define TEXT_CRG_SAND_TABBR                              "\0ESA" 
-//#define TEXT_CRG_SAND_GUNIT                              "\UE07C тонны песка" 
 
 //Scrap Metal
 #define TEXT_CRG_SCRAPMETAL_CTYPE                        "Металлолом" 
+#define TEXT_CRG_SCRAPMETAL_CARGOAMOUNT                  "металлолома" 
 #define TEXT_CRG_SCRAPMETAL_TABBR                        "\0ESM" 
-//#define TEXT_CRG_SCRAPMETAL_GUNIT                        "\UE07C тонны металлолома" 
 
 //Sugar beet
 #define TEXT_CRG_SUGARBEET_CTYPE                         "Сахарная свёкла" 
+#define TEXT_CRG_SUGARBEET_CARGOAMOUNT                   "сахарной свёклы" 
 #define TEXT_CRG_SUGARBEET_TABBR                         "\0ESB" 
-//#define TEXT_CRG_SUGARBEET_GUNIT                         "\UE07C тонны сахарной свеклы"
 
 //Sugar cane
 #define TEXT_CRG_SUGARCANE_CTYPE                         "Сахарный тростник" 
+#define TEXT_CRG_SUGARCANE_CARGOAMOUNT                   "сахарного тростника" 
 #define TEXT_CRG_SUGARCANE_TABBR                         "\0ESC" 
-//#define TEXT_CRG_SUGARCANE_GUNIT                         "\UE07C тонны сахарного тростника"
 
 //Wool
 #define TEXT_CRG_WOOL_CTYPE                              "Шерсть" 
+#define TEXT_CRG_WOOL_CARGOAMOUNT                        "шерсти" 
 #define TEXT_CRG_WOOL_TABBR                              "\0EWL" 
-//#define TEXT_CRG_WOOL_GUNIT                              "\UE07C тонны шерсти"
 
 
 //Industry texts
@@ -136,6 +147,10 @@
 #define TEXT_IND_GENERALSTORE                            "Магазин" 
 #define TEXT_IND_GLASSWORKS                              "Стекольный завод" 
 
+#define TEXT_IND_HOTELRESTAURANT                         "Отель / Ресторан"
+
+#define TEXT_IND_IRONWORKS                               "Сталелитейный завод" 
+
 #define TEXT_IND_JUNKYARD                                "Свалка" 
 
 #define TEXT_IND_LIMEKILN                                "Известковые печи" 
@@ -143,15 +158,17 @@
 
 #define TEXT_IND_MACHINESHOP                             "Машиностроительный завод" 
 #define TEXT_IND_MEATPACKER                              "Скотобойня" 
-#define TEXT_IND_METALFOUNDRY                            "Металлолитейный завод" 
+#define TEXT_IND_METALFOUNDRY                            "Литейный завод" 
 #define TEXT_IND_MIXEDFARM                               "Смешанная ферма" 
 
-#define TEXT_IND_PETROLPUMP                              "Бензозаправка" 
+#define TEXT_IND_PETROLPUMP                              "Заправка" 
 #define TEXT_IND_PLASTICSPLANT                           "Пластмассовый завод" 
 
 #define TEXT_IND_QUARRY                                  "Карьер" 
 
 #define TEXT_IND_RETAILMARKET                            "Рынок" 
+#define TEXT_IND_RECYCLINGPLANT                          "Мусороперерабатывающий завод"
+#define TEXT_IND_RECYCLINGDEPOT                          "Пункт приема мусора"
 
 #define TEXT_IND_SHEEPFARM                               "Овцеферма"
 #define TEXT_IND_SUPERMARKET                             "Супермаркет" 
@@ -167,20 +184,20 @@
 
 //Station texts for station name prefixes/suffixes. \80 where town name goes
 
-#define TEXT_STA_FARM                                    "Ферма \80" 
-#define TEXT_STA_MILLS                                   "Цеха \80" 
-#define TEXT_STA_WELLS                                   "Скважина \80" 
-#define TEXT_STA_REFINERY                                "Комплекс \80" 
+#define TEXT_STA_FARM                                    "\80 Ферма" 
+#define TEXT_STA_MILLS                                   "\80 Цеха" 
+#define TEXT_STA_WELLS                                   "\80 Скважина" 
+#define TEXT_STA_REFINERY                                "\80 Комплекс" 
 
-#define TEXT_STA_FACTORY                                 "Фабрика \80" 
-#define TEXT_STA_PLANT                                   "Завод \80" 
-#define TEXT_STA_QUARRY                                  "Карьер \80" 
-#define TEXT_STA_DEPOT                                   "Депо \80" 
+#define TEXT_STA_FACTORY                                 "\80 Фабрика" 
+#define TEXT_STA_PLANT                                   "\80 Завод" 
+#define TEXT_STA_QUARRY                                  "\80 Карьер" 
+#define TEXT_STA_DEPOT                                   "\80 Депо" 
 
-#define TEXT_STA_DREDGINGSITE                            "Дноуглубление \80" 
-#define TEXT_STA_FISHINGGROUNDS                          "Рыболовство \80" 
-#define TEXT_STA_FORGE                                   "Кузницы \80" 
-#define TEXT_STA_MARKET                                  "Рынок \80" 
+#define TEXT_STA_DREDGINGSITE                            "\80 Дноуглубление" 
+#define TEXT_STA_FISHINGGROUNDS                          "\80 Рыболовство" 
+#define TEXT_STA_FORGE                                   "\80 Кузницы" 
+#define TEXT_STA_MARKET                                  "\80 Рынок" 
 
 
 
@@ -189,14 +206,14 @@
 #define TEXT_INFO_GENERIC                                "" 
 
 #define TEXT_INFO_AVAILABILITY                           "\98Доступно: \90\UE082" 
-#define TEXT_INFO_AVAILABILITY_1610                      "\98Доступно: \901-е янв 1610г." 
-#define TEXT_INFO_AVAILABILITY_1730                      "\98Доступно: \901-е янв 1730г." 
-#define TEXT_INFO_AVAILABILITY_1762                      "\98Доступно: \901-е янв 1762г." 
-#define TEXT_INFO_AVAILABILITY_1780                      "\98Доступно: \901-е янв 1780г." 
+#define TEXT_INFO_AVAILABILITY_1610                      "\98Доступно: \901 янв 1610" 
+#define TEXT_INFO_AVAILABILITY_1730                      "\98Доступно: \901 янв 1730" 
+#define TEXT_INFO_AVAILABILITY_1762                      "\98Доступно: \901 янв 1762" 
+#define TEXT_INFO_AVAILABILITY_1780                      "\98Доступно: \901 янв 1780" 
 
-#define TEXT_INFO_GENERIC_CLOSE_0                        "\n\98Предприятие может закрыться если поставок не будет в течение:\0D\90  \UE07C месяцев" 
-#define TEXT_INFO_GENERIC_CLOSE_1                        "\n\98Предприятие может закрыться если поставок не будет в течение:\0D\94  \UE07C месяца" 
-#define TEXT_INFO_GENERIC_CLOSE_2                        "\n\8BПоставок не было как минимум \85\85\UE07C месяцев. Это предприятие может скоро закрыться. \0D" 
+#define TEXT_INFO_GENERIC_CLOSE_0                        "\n\98Предприятие может закрыться если поставок не будет в течение:\0D\90  мес." 
+#define TEXT_INFO_GENERIC_CLOSE_1                        "\n\98Предприятие может закрыться если поставок не будет в течение:\0D\94  мес." 
+#define TEXT_INFO_GENERIC_CLOSE_2                        "\n\8BПоставок не было как минимум \85\85месяцев. Это предприятие может скоро закрыться. \0D" 
 
 #define TEXT_INFO_LIMIT_200                              "\98 (макс. 200)" 
 #define TEXT_INFO_LIMIT_800                              "\98 (макс. 800)" 
@@ -206,18 +223,20 @@
 #define TEXT_INFO_NOT_ACCEPTING_FS                       "\94Не принимает сельхозтовары\98\0D(Достигнут предел)" 
 #define TEXT_INFO_NOT_ACCEPTING_MS                       "\94Не принимает производственные материалы\98\0D(Достигнут предел)" 
 
-#define TEXT_INFO_ES_PRIMARY_BOOST                       "\98Поставки оборудования могут увеличить производительность.\0D\90  \UE07B ящиков поставлено в этом месяце" 
-#define TEXT_INFO_FS_PRIMARY_BOOST                       "\98Поставки сельхозтоваров могут увеличить производительность.\0D\90  \UE07B ящиков поставлено в этом месяце" 
+#define TEXT_INFO_ES_PRIMARY_BOOST                       "\98Поставки оборудования могут увеличить производительность.\0D\90  \UE07B упаковок поставлено в этом месяце" 
+#define TEXT_INFO_FS_PRIMARY_BOOST                       "\98Поставки сельхозтоваров могут увеличить производительность.\0D\90  \UE07B упаковок поставлено в этом месяце" 
 #define TEXT_INFO_MS_PRIMARY_BOOST                       "\98Поставки производственных материалов удвоят производительность от других грузов.\0D\0D\80" 
 #define TEXT_INFO_BOOST_MAXED                            "\98Достигнута максимальная производительность"
 
-#define TEXT_INFO_CARGO_PRODUCTION                       "\98Производится:\0D" //Cargo production: 3t per 6t %smth% delivered
+#define TEXT_INFO_CARGO_PRODUCTION                       "\98Производится:\0D" 
 
+#define TEXT_INFO_5T_PER_8T                              "\0D5т продукции на 8т поставок." 
 #define TEXT_INFO_6T_PER_8T                              "\0D6т продукции на 8т поставок." 
 #define TEXT_INFO_8T_PER_8T                              "\0D8т продукции на 8т поставок." 
 
 #define TEXT_INFO_STEPUP_TWO_CARGOS                      "\0DПроизводительность увеличится если два и более типа грузов будут поставлены в течение месяца." 
-#define TEXT_INFO_INCREASE_BOTH_CARGOS                   "\0DУвеличится до 8т на 8т если в течение месяца будут поставлены оба типа грузов." 
+#define TEXT_INFO_INCREASE_TO_3T_BOTH_CARGOS             "\0DУвеличится до 3т на 8т если оба типа грузов будут поставлены в течение месяца." 
+#define TEXT_INFO_INCREASE_BOTH_CARGOS                   "\0DУвеличится до 8т на 8т если оба типа грузов будут поставлены в течение месяца." 
 
 #define TEXT_INFO_3T_PER_8T_MS                           "  3т на 8т производственных материалов\0D" 
 #define TEXT_INFO_2T_PER_8T_IRON_ORE                     "  2т на 8т железной руды\0D" 
@@ -238,10 +257,12 @@
 #define TEXT_INFO_5T_PER_8T_WOOL                         "  5т на 8т шерсти\0D" 
 #define TEXT_INFO_5T_PER_8T_PLANTFIBRES                  "  5т на 8т растительных волокон\0D" 
 
-#define TEXT_INFO_5T_PER_8T_SUGARCANE                    "  5т на 8т сахара\0D" 
-#define TEXT_INFO_2T_PER_8T_WOOD                         "  2т на 8т шерсти\0D" 
-#define TEXT_INFO_4T_PER_8T_WOOD                         "  4т на 8т шерсти\0D" 
-#define TEXT_INFO_6T_PER_8T_WOOD                         "  6т на 8т шерсти\0D" 
+#define TEXT_INFO_5T_PER_8T_SUGARCANE                    "  5т на 8т сахарного тростника\0D" 
+#define TEXT_INFO_5T_PER_8T_SUGARBEET                    "  5т на 8т сахарной свёклы\0D" 
+#define TEXT_INFO_1T_PER_8T_WOOD                         "  1т на 8т древесины\0D" 
+#define TEXT_INFO_2T_PER_8T_WOOD                         "  2т на 8т древесины\0D" 
+#define TEXT_INFO_4T_PER_8T_WOOD                         "  4т на 8т древесины\0D" 
+#define TEXT_INFO_6T_PER_8T_WOOD                         "  6т на 8т древесины\0D" 
 
 #define TEXT_INFO_4T_PER_8T_GRAVEL                       "  4т на 8т камня\0D" 
 #define TEXT_INFO_2T_PER_8T_CLAY                         "  2т на 8т глины\0D" 
@@ -250,9 +271,9 @@
 #define TEXT_INFO_6T_PER_8T_SAND                         "  6т на 8т песка\0D"
 
 #define TEXT_INFO_MACHINESHOP                            "\98Производит и обслуживает технику и промышленное оборудование.\0D" 
-#define TEXT_INFO_SAWMILL                                "\98Распиливает древесину.\0D" 
+#define TEXT_INFO_SAWMILL                                "\98Пилит деревья.\0D" 
 #define TEXT_INFO_WINDFARM                               "\98 \0D" 
-#define TEXT_INFO_METALFOUNDRY                           "\98Производит металлические изделия, такие как инструменты или запчасти.\0D" 
+#define TEXT_INFO_METALFOUNDRY                           "\98Производит металлические изделия, такие как инструменты и запчасти.\0D" 
 #define TEXT_INFO_PAPERMILL                              "\98Перерабатывает древесину для производства бумаги и картона.\0D" 
 
 #define TEXT_INFO_OILREFINERY                            "\98Перегоняет сырую нефть в бензин и химикаты.\0D" 
@@ -264,6 +285,7 @@
 #define TEXT_INFO_FERTILISERPLANT                        "\98Преобразует химические вещества в удобрения для ферм.\0D" 
 #define TEXT_INFO_LUMBERYARD                             "\98Производит предметы, такие как столбы и колья для забора.\0D"
 #define TEXT_INFO_BIOREFINERY                            "\98Перерабатывает зерно и сахар в бензин и химикаты.\0D" 
+#define TEXT_INFO_RECYCLINGPLANT                         "\98Производит вторсырье для использования в производстве.\0D"
 
 #define TEXT_INFO_MANUFACTURINGSUPPLIES_STEPUP           "\0DПроизводительность увеличится если производственных материалов будут поставлены в том же месяце, что и остальной груз." 
 
@@ -273,20 +295,24 @@
 #define TEXT_GRF_DESC                                    "\8EFIRS Industry Replacement Set\n\98By \89andythenorth\98 and \89FooBar\98.\n\98'1,000 commits and counting...'\98\n\nWebsite: \89www.tt-foundry.com/sets/FIRS\98.License: \89GPL v2\98.Special thanks to \89Ammler\98, \89Core Xii\98, \89Irwe\98, \89planetmaker\98 and \89Zephyris\98.Uses parts of \89eGRVTS\98, \89ISR\98 and \89OpenGFX\98."
 
 #define TEXT_PNAME_ECONOMY                               "Экономика"
-#define TEXT_PDESC_ECONOMY                               "Когда это будет сделано, FIRS станет предоставлять выбор из списка возможных типов экономик. Набор грузов и предприятий будет разным в каждой из них. Величины вознаграждения за доставку грузов также будут разными. \0D\0D\89На данный момент только один тип экономики доступен. :)"
+#define TEXT_PDESC_ECONOMY                               "Когда будет реализовано, FIRS предоставит выбор различных типов экономик. Набор грузов и предприятий будет разным в каждой из них. Вознаграждения за доставку грузов также будут различными. \0D\0D\89Сейчас доступен лишь один тип экономики."
 #define TEXT_PVALUE0_ECONOMY                             "Тестовая экономика"
 
-#define TEXT_PNAME_PRIMARYDECREASE                       "Разрешить уменьшение производительности сырьевых предприятий"
-#define TEXT_PDESC_PRIMARYDECREASE                       "По умолчанию, сырьевые предприятия в FIRS никогда не снижают своей производительности.\0D\0DЕсли данная опция включена, то появится вероятность того, что производительность снизится в случае если предприятию в течении месяца не будут поставляться средства производства. Чем выше уровень производительности, тем больше вероятность того, что это случится."
+#define TEXT_PNAME_PRIMARYDECREASE                       "Разрешить снижение производительности сырьевых предприятий"
+#define TEXT_PDESC_PRIMARYDECREASE                       "По умолчанию сырьевые предприятия в FIRS никогда не снижают производительность.\0D\0DЕсли данная опция включена, то появится вероятность того, что производительность снизится в случае если предприятию в течении месяца не будут поставляться средства производства. Чем выше уровень производительности, тем больше вероятность того, что это случится."
 
 #define TEXT_PNAME_PRIMARYCLOSE                          "Разрешить закрытие сырьевых предприятий"
-#define TEXT_PDESC_PRIMARYCLOSE                          "По умолчанию, сырьевые предприятия в FIRS не могут закрываться.\0D\0DЕсли данная опция включена, сырьевые предприятия будут закрываться когда их уровень производительности упадет ниже определенной отметки, различной для каждого типа предприятий. \89Данная опция требует разрешения уменьшения производительности сырьевых предприятий."
+#define TEXT_PDESC_PRIMARYCLOSE                          "По умолчанию сырьевые предприятия в FIRS не могут закрываться.\0D\0DЕсли данная опция включена, сырьевые предприятия будут закрываться когда их уровень производительности упадет ниже определенной отметки, различной для каждого типа предприятий. \89Данная опция требует разрешения снижения производительности сырьевых предприятий."
 
 #define TEXT_PNAME_SECONDARYCLOSE                        "Разрешить закрытие обрабатывающих предприятий"
 #define TEXT_PDESC_SECONDARYCLOSE                        "По умолчанию, обрабатывающие предприятия в FIRS не могут закрываться.\0D\0DЕсли данная опция включена, обрабатывающие предприятия могут закрыться, если груз не будет перевозиться в течении долгого времени."
 
 #define TEXT_PNAME_PREVENTCONSTRUCTION                   "Предотвращать создание предприятий (незавершено)"
-#define TEXT_PDESC_PREVENTCONSTRUCTION                   "\89На данный момент эта опция ни на что не влияет. \98Когда будет сделана, данная опция будет предоставлять 'режим песочницы' для совместного использования со сценариями."
+#define TEXT_PDESC_PREVENTCONSTRUCTION                   "\89На данный момент эта опция ни на что не влияет. \98Когда будет реализована, данная опция будет предоставлять 'режим песочницы' для совместного использования со сценариями."
+
+#define TEXT_PNAME_MAXCOASTDISTANCE                      "Максимальная длина морских объектов вдоль побережья"
+#define TEXT_PDESC_MAXCOASTDISTANCE                      "\89Максимальная удаленность рыболовств и дноуглублений от побережья."
+#define TEXT_PVALUE0_MAXCOASTDISTANCE                    "Нет пределов"
 
 #define TEXT_PNAME_DEBUG                                 "Показывать отладочные сообщения"
-#define TEXT_PDESC_DEBUG                                 "Только для разработчиков."
+#define TEXT_PDESC_DEBUG                                 "Только для разработчиков"
