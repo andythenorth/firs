@@ -98,6 +98,10 @@
 #define TEXT_CRG_PLANTFIBRES_CARGOAMOUNT                 "biljnih vlakna" 
 #define TEXT_CRG_PLANTFIBRES_TABBR                       "\0EPF" 
 
+//Recyclables
+#define TEXT_CRG_RECYCLABLES_CTYPE                       GENDER_MUSKI "reciklažni materijal" 
+#define TEXT_CRG_RECYCLABLES_CARGOAMOUNT                 "reciklažnog materijala" 
+#define TEXT_CRG_RECYCLABLES_TABBR                       "\0ERC" 
 //Sand
 #define TEXT_CRG_SAND_CTYPE                              GENDER_MUSKI "pesak" 
 #define TEXT_CRG_SAND_CARGOAMOUNT                        "peska" 
@@ -151,6 +155,8 @@
 #define TEXT_IND_GENERALSTORE                            GENDER_ZENSKI "Prodavnica" 
 #define TEXT_IND_GLASSWORKS                              GENDER_ZENSKI "Staklara" 
 
+#define TEXT_IND_HOTELRESTAURANT                         GENDER_MUSKI "Hotel / Restoran"
+
 #define TEXT_IND_IRONWORKS                               GENDER_ZENSKI "Železara" 
 
 #define TEXT_IND_JUNKYARD                                GENDER_MUSKI "Otpad" 
@@ -169,6 +175,9 @@
 #define TEXT_IND_QUARRY                                  GENDER_MUSKI "Kamenolom" 
 
 #define TEXT_IND_RETAILMARKET                            GENDER_ZENSKI "Pijaca" 
+
+#define TEXT_IND_RECYCLINGPLANT                          GENDER_SREDNJI "Postrojenje za reciklažu"
+#define TEXT_IND_RECYCLINGDEPOT                          GENDER_SREDNJI "Skladište za reciklažu"
 
 #define TEXT_IND_SHEEPFARM                               GENDER_ZENSKI "Farma ovaca"
 #define TEXT_IND_SUPERMARKET                             GENDER_MUSKI "Supermarket" 
@@ -285,6 +294,7 @@
 #define TEXT_INFO_FERTILISERPLANT                        "\98Prerađuje hemijske proizvode u đubriva za agrar.\0D" 
 #define TEXT_INFO_LUMBERYARD                             "\98Proizvodi pomoćne građevinske objekte, stubove i ograde.\0D"
 #define TEXT_INFO_BIOREFINERY                            "\98Prerađuje žitarice i šećer u benzin i hemijske proizvode.\0D" 
+#define TEXT_INFO_RECYCLINGPLANT                         "\98Reciklira materijale za potrebe nove proizvodnje.\0D"
 
 #define TEXT_INFO_MANUFACTURINGSUPPLIES_STEPUP           "\0DProizvodnja se poboljšava ako se proizvodni materijal dostavlja u roku od mesec dana u odnosu na dostavu ostalih potraživanja." 
 
