@@ -22,7 +22,7 @@
 	0D 10 //land shape flags: 10 = only on flat land
 	0E 10 //callback flags
   0F \b5 01 //animation: number frames | loop (01) / not loop (00)
-	10 02 //animation speed
+	10 03 //animation speed
 
 // include tiles and layouts, ! Action 2 IDs here are deliberately repeated by the various tile includes
 #define THIS_GRAPHICS_FILE grainmill.png
