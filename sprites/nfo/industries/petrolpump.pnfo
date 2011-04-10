@@ -18,19 +18,19 @@
 // Format: spritenum pcxfile xpos ypos compression ysize xsize xrel yrel
 -1 sprites/graphics/industries/groundtiles.pcx  80 10 09   31 64  -31  0
 // buiilding / tanks
--1 sprites/graphics/industries/petrolpump.png 10 10 09  59 64  -31 -30
+-1 sprites/graphics/industries/petrolpump.png 10 10 09  59 64  -31 -28
 // canopy
 -1 sprites/graphics/industries/petrolpump.png 80 10 09  59 64  -31 -28
 
 
 //Tile Action 2 
 -1 * 0 02 09 00 00 //-1 * 0 02 09 <set-id> 00
-	\dx80008000 //groundsprite
+	\d1420 //groundsprite
 	\dx80008001 //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b16 //xextent yextent zextent
 -1 * 0 02 09 01 00 //-1 * 0 02 09 <set-id> 00
-	\dx80008000 //groundsprite
+	\d1420 //groundsprite
 	\dx80008002 //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b16 //xextent yextent zextent
