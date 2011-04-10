@@ -11,7 +11,8 @@
 
 //Industry tile sprites; one sprite for each tile; eventually more for each tile to include  construction stages
 
-//Tile Action 1
+//Tile Action 1 
+// !! not currently used
 -1 * 0 01 09 \b1 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
 // Format: spritenum pcxfile xpos ypos compression ysize xsize xrel yrel
 -1 sprites/graphics/industries/generalstore.pcx 10 10 09 35 64 -31 -4
@@ -19,14 +20,35 @@
 
 //Tile Action 2 
 -1 * 0 02 09 00 00 //-1 * 0 02 09 <set-id> 00
-	\d1420 //groundsprite
-	\dx80008000 //building sprite
+	\d3924 //groundsprite
+	\d4475 //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b16 //xextent yextent zextent
+-1 * 0 02 09 01 00 //-1 * 0 02 09 <set-id> 00
+	\d3924 //groundsprite
+	\d4476 //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b16 //xextent yextent zextent
 
+-1 * 0 02 09 B1 //layout 1
+	85 43 //check relative position (00yx[YYXX])
+	00 FF FF //don't shift, don't mask
+	\b4 //number of ranges to check (number of tiles) [range: XX YY  XX YY]
+    \wx00   00 00  00 00
+    \wx01   00 01  00 01
+    \wx00   01 00  01 00
+    \wx01   01 01  01 01
+	\wx00 //00 01  00 01 <default>
+
+-1 * 0 02 09 A0 
+	82 44 //check layout number (lowest byte of related industry)
+	00 FF //don't shift, don't mask
+	\b1 //number of ranges to check (number of layouts)
+    \wxB1 \b1 \b1 //<set-id \w> <low-range> <high-range>
+	\wxB1 //<default> (first tile layout available)
 
 //Tile Action 3
--1 * 0 03 09 01 TILE_HOTELRESTAURANT_1 00 \wx00 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
+-1 * 0 03 09 01 TILE_HOTELRESTAURANT_1 00 \wxA0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
 
 
 
