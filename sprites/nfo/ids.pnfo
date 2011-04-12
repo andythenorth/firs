@@ -63,7 +63,7 @@
 #define IND_GENERALSTORE          3B
 #define IND_GENERALSTORE_CONFLICT BB // special case prevents stores too close (via prop 16). Set bit 7 (add 8 to first nibble of Store ID).
 #define IND_PETROLPUMP            3C
-#define IND_PETROLPUMP_CONFLICT   BC // special case prevents Gas Stations too close (via prop 16). Set bit 7 (add 8 to first nibble of Store ID).
+#define IND_PETROLPUMP_CONFLICT   BC // (deprecated) special case prevents Gas Stations too close (via prop 16). Set bit 7 (add 8 to first nibble of Store ID).
 #define IND_SUPERMARKET           3D
 #define IND_SUPERMARKET_CONFLICT  BD // special case prevents supermarkets too close (via prop 16). Set bit 7 (add 8 to first nibble of Store ID).
 #define IND_RETAILMARKET          3E

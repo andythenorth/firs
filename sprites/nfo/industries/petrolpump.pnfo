@@ -3,13 +3,13 @@
 
 //Industry tiles definition
 //Tile Action 0
--1 * 0 00 09 \b5 01 TILE_PETROLPUMP_1 // -1 * 0 00 09 <num-props> 01 <id>
+-1 * 0 00 09 \b6 01 TILE_PETROLPUMP_1 // -1 * 0 00 09 <num-props> 01 <id>
 	08 TILE_NULL //subsitute type
 	0A CARGO_FOOD 08 //tile acceptance 1
 	0B CARGO_GOODS 08 //tile acceptance 2
 	0C CARGO_FUELOIL 08 //tile acceptance 3
 	0D 10 //land shape flags: 10 = only on flat land
-
+  0E 10 //callback flags
 
 //Industry tile sprites; one sprite for each tile; eventually more for each tile to include  construction stages
 
@@ -62,7 +62,97 @@
 	\wx00 //<default> (first tile layout available)
 	
 //handle cb2f (tile shape check)
-#include "../../../templates/cb2f_generic.pnfo"     
+-1 * 0 02 09 30 
+  81 1A 20 00
+	\2sto 1A 20 00
+	\2r 60 F0 38 0F // get landscape class
+	\2cmp 1A 20 02 // check for road
+	\2| 7D 00 20 FF
+	\2sto 1A 20 00
+	
+	\2r 60 20 38 0F // get landscape class
+	\2cmp 1A 20 02 // check for road
+	\2| 7D 00 20 FF
+	\2sto 1A 20 00
+
+	\2r 60 0F 38 0F // get landscape class
+	\2cmp 1A 20 02 // check for road
+	\2| 7D 00 20 FF
+	\2sto 1A 20 00
+
+	\2r 60 1F 38 0F // get landscape class
+	\2cmp 1A 20 02 // check for road
+	\2| 7D 00 20 FF
+	\2sto 1A 20 00
+
+	\2r 60 01 38 0F // get landscape class
+	\2cmp 1A 20 02 // check for road
+	\2| 7D 00 20 FF
+	\2sto 1A 20 00
+
+	\2r 60 11 38 0F // get landscape class
+	\2cmp 1A 20 02 // check for road
+	\2| 7D 00 20 FF
+	
+	\2& 1A 00 01
+
+	\b1
+    \wx8400 01 01 // at least one road tile, industry can be build
+	\wx8401 // industry can't be build
+
+
+
+-1 * 0 02 09 31 
+  81 1A 20 00
+	\2sto 1A 20 00
+	\2r 60 F0 38 0F // get landscape class
+	\2cmp 1A 20 02 // check for road
+	\2| 7D 00 20 FF
+	\2sto 1A 20 00
+
+	\2r 60 10 38 0F // get landscape class
+	\2cmp 1A 20 02 // check for road
+	\2| 7D 00 20 FF
+	\2sto 1A 20 00
+
+	\2r 60 F1 38 0F // get landscape class
+	\2cmp 1A 20 02 // check for road
+	\2| 7D 00 20 FF
+	\2sto 1A 20 00
+
+	\2r 60 11 38 0F // get landscape class
+	\2cmp 1A 20 02 // check for road
+	\2| 7D 00 20 FF
+	\2sto 1A 20 00
+
+	\2r 60 0F 38 0F // get landscape class
+	\2cmp 1A 20 02 // check for road
+	\2| 7D 00 20 FF
+	\2sto 1A 20 00
+
+	\2r 60 02 38 0F // get landscape class
+	\2cmp 1A 20 02 // check for road
+	\2| 7D 00 20 FF
+
+	\2& 1A 00 01
+
+	\b1
+    \wx8400 01 01 // at least one road tile, industry can be build
+	\wx8401 // industry can't be build
+
+-1 * 0 02 09 DA 
+	81 18 //check layout number (lowest byte of var 18 - can't access industry in this cb)
+	00 FF //don't shift, don't mask
+	\b2 //number of ranges to check (number of layouts)
+    30 00 \b0 \b0 //
+    31 00 \b1 \b1 //
+	\wx8401 //<default> (first tile layout available)
+
+-1 * 0 02 09 C0 //Handle callbacks
+	81 0C 00 FF //no shift, no mask
+	\b1 //range
+	  DA 00 2F 2F //custom shape check cb 2F
+  A0 00 //default
 
 //Tile Action 3
 -1 * 0 03 09 01 TILE_PETROLPUMP_1 
@@ -99,14 +189,14 @@
 	1D \w0  \w0  //input cargo 2 multiplier
 	1E \w0  \w0  //input cargo 3 multiplier
 	14 \b2 //minimal cargo distribution amount
-	16 IND_PETROLPUMP_CONFLICT FF FF //conflicting industry types (3*byte; ID+80h; FF to disable)
+	16 FF FF FF //conflicting industry types (3*byte; ID+80h; FF to disable)
 	17 \b10 //probability in random game
 	18 \b20 //probability during gameplay
 	20 FF FF FF BF //prospecting success chance (dword; FFFFFFFFh=100%)
 	0F \b8 //fund cost multiplier (byte)
 	19 CLR_PETROLPUMP //map colour (byte; using indexes from dos palette)
 	23 \d0  //destruction cost multiplier (dword; default: 0)
-	1A \dx10 //special industry flag (dword; in town: 10h)
+	1A \dx00 //special industry flag (dword; in town: 10h)
 	21 81 //callback flags 
 	22 01  //callback flags
 //To show cargo waiting to be processed at industry, ensure prop 21 is set to use production callback
