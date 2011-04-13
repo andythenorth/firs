@@ -57,7 +57,8 @@
 //#define IND_VACANT                36
 //#define IND_VACANT                37
 //#define IND_VACANT                38
-//#define IND_VACANT                39
+#define IND_HARDWARESTORE           39
+#define IND_HARDWARESTORE_CONFLICT    B9
 #define IND_HOTELRESTAURANT       3A
 #define IND_HOTELRESTAURANT_CONFLICT  BA
 #define IND_GENERALSTORE          3B
@@ -138,6 +139,7 @@
 #define TILE_OILWELLS_1                    D7
 #define TILE_OILWELLS_2                    D8
 #define TILE_HOTELRESTAURANT_1             D9
+#define TILE_HARDWARESTORE_1               DA
 
 #define TILE_FIELD_TEST                    F0
 // generic tiles start at D0 !
@@ -246,7 +248,7 @@
 #define STR_IND_FISHINGHARBOUR        8C DC
 #define STR_IND_HOTELRESTAURANT       8D DC
 #define STR_IND_DREDGINGSITE          8E DC
-//#define STR_IND_VACANT                8F DC
+#define STR_IND_HARDWARESTORE         8F DC
 #define STR_IND_WINDFARM              90 DC // deprecated
 //#define STR_IND_VACANT                91 DC
 #define STR_IND_PETROLPUMP            92 DC
