@@ -1,0 +1,90 @@
+//Industry tiles definition; Waste Collection Point has 1 tile
+
+//Tile Action 0
+-1 * 0 00 09 \b5 01 TILE_HARDWARESTORE_1 // -1 * 0 00 09 <num-props> 01 <id>
+	08 TILE_NULL //subsitute type
+	0A CARGO_GOODS 08 //tile acceptance 1
+	0B CARGO_BUILDINGMATERIALS 08 //tile acceptance 2
+	0C 00 00 //tile acceptance 3
+	0D 10 //land shape flags: 10 = only on flat land
+
+
+//Industry tile sprites; one sprite for each tile; eventually more for each tile to include  construction stages
+
+//Tile Action 1
+-1 * 0 01 09 \b1 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
+// Format: spritenum pcxfile xpos ypos compression ysize xsize xrel yrel
+-1 sprites/graphics/industries/foodmarket.pcx 10 10 09 35 64 -31 -4
+
+
+//Tile Action 2 
+-1 * 0 02 09 00 00 //-1 * 0 02 09 <set-id> 00
+	\d1420 //groundsprite
+	\dx80008000 //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b16 //xextent yextent zextent
+
+
+//Tile Action 3
+-1 * 0 03 09 01 TILE_HARDWARESTORE_1 00 \wx00 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
+
+
+
+//Industry definition
+
+//Action 0
+-1 * 0 00 0A \b26 01 IND_HARDWARESTORE //-1 * 0 00 0A <num-props> 01 <id>
+	08 IND_NULL //reuse original industry with this here ID
+	0A 01 //number of industry layouts
+		\d7 //size of layout definition +2 for termination
+		//layout:
+			00 00 FE TILE_HARDWARESTORE_1 00 //xoffs yoffs FE newtile(W)
+		00 80 //terminate layout definition
+	0B 00 //production flags 1h=extractive, 2h=organic, 4h=processing, 0h=no closure etc.
+	0C STR_IND_CLOSE_GENERIC //industry closure message
+	0D STR_IND_PRODINCR_GENERIC //production increase message
+	0E STR_IND_PRODDECR_GENERIC //production decrease message
+	1B STR_IND_NEW_GENERIC //new industry message
+	1F STR_IND_HARDWARESTORE //industry name
+	10 FF FF //production cargo types (word; fill unused with FFh)
+	11 CARGO_GOODS CARGO_BUILDINGMATERIALS FF FF //acceptance cargo types (dword; fill unused with FFh)
+	12 00 //production multiplier cargo 1
+	13 00 //production multiplier cargo 2
+	1C \w0  \w0 //input cargo 1 multiplier (dword M1 M2; output_typen = X*Mn/256)
+	1D \w0  \w0  //input cargo 2 multiplier
+	1E \w0  \w0  //input cargo 3 multiplier
+	14 \b2 //minimal cargo distribution amount
+	16 IND_HARDWARESTORE_CONFLICT FF FF //conflicting industry types (3*byte; ID+80h; FF to disable)
+	17 \b24 //probability in random game
+	18 \b12 //probability during gameplay
+	20 FF FF FF BF //prospecting success chance (dword; FFFFFFFFh=100%)
+	0F \b6 //fund cost multiplier (byte)
+	19 CLR_HARDWARESTORE //map colour (byte; using indexes from dos palette)
+	23 \d0  //destruction cost multiplier (dword; default: 0)
+	1A \dx10 //special industry flag (dword; in town: 10h)
+	21 80 //callback flags 
+	22 01  //callback flags
+//To show cargo waiting to be processed at industry, ensure prop 21 is set to use production callback
+
+//No action 1 for industries, as graphics are defined by the industry-tile feature.
+
+//Dummy production callback to keep default-id happy
+-1 * 0 02 0A 00 //-1 * 0 0A <set-id>
+	00 //version
+	\w9999 \w9999  \w0 //<subtract-in-1..3>
+	\w0 \w0 //<add-out-1..2>
+	00 //don't repeat
+	
+//Callback 38 display additional text in fund window
+-1 * 0 02 0A C0 //-1 * 0 0A <set-id>
+	85 0C //<type> <variable> word-access callback
+	00 FF FF //no shift, no mask
+	\b2 //number of ranges to check
+	STR_INFO_GENERIC 80   38 00   38 00 //return text-ID D0xx if cb 38 (fund window)
+	STR_INFO_GENERIC 80   3A 00   3A 00 //return text-ID D0xx if cb 3A (industry window)
+	\w0 //default
+
+
+//Industry action 3 attach varaction2 chain to industry
+-1 * 0 03 0A 01 IND_HARDWARESTORE 00 \wxC0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>	
+
