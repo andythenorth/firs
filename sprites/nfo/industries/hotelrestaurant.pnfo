@@ -5,7 +5,7 @@
 	08 TILE_NULL //subsitute type
 	0A CARGO_FOOD 08 //tile acceptance 1
 	0B CARGO_ALCOHOL 08 //tile acceptance 2
-	0C 00 00 //tile acceptance 3
+	0C CARGO_PASSENGERS 08 //tile acceptance 3
 	0D 10 //land shape flags: 10 = only on flat land
 
 
@@ -71,9 +71,9 @@
 	0E STR_IND_PRODDECR_GENERIC //production decrease message
 	1B STR_IND_NEW_GENERIC //new industry message
 	1F STR_IND_HOTELRESTAURANT //industry name
-	10 FF FF //production cargo types (word; fill unused with FFh)
-	11 CARGO_FOOD CARGO_ALCOHOL FF FF //acceptance cargo types (dword; fill unused with FFh)
-	12 00 //production multiplier cargo 1
+	10 CARGO_PASSENGERS FF //production cargo types (word; fill unused with FFh)
+	11 CARGO_FOOD CARGO_ALCOHOL CARGO_PASSENGERS FF //acceptance cargo types (dword; fill unused with FFh)
+	12 0E //production multiplier cargo 1
 	13 00 //production multiplier cargo 2
 	1C \w0  \w0 //input cargo 1 multiplier (dword M1 M2; output_typen = X*Mn/256)
 	1D \w0  \w0  //input cargo 2 multiplier
