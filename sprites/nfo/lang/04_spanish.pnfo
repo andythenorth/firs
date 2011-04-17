@@ -21,7 +21,7 @@
 #define TEXT_CRG_BAUXITE_TABBR                           "\0EBX"
 
 //Building Materials
-#define TEXT_CRG_BUILDINGMATERIALS_CTYPE                 "Materiales de Construcción" // Checked.
+#define TEXT_CRG_BUILDINGMATERIALS_CTYPE                 "Materiales de Construcción"
 #define TEXT_CRG_BUILDINGMATERIALS_CARGOAMOUNT           "de materiales de construcción"
 #define TEXT_CRG_BUILDINGMATERIALS_TABBR                 "\0EMC"
 
@@ -51,8 +51,8 @@
 #define TEXT_CRG_FISH_TABBR                              "\0EPC"
 
 //Fruit and Vegetables
-#define TEXT_CRG_FRUITSANDVEGETABLES_CTYPE               "Frutas y Vegetales"
-#define TEXT_CRG_FRUITSANDVEGETABLES_CARGOAMOUNT         "de fruta y vegetales"
+#define TEXT_CRG_FRUITSANDVEGETABLES_CTYPE               "Fruta"
+#define TEXT_CRG_FRUITSANDVEGETABLES_CARGOAMOUNT         "de fruta"
 
 //Fuel oil
 #define TEXT_CRG_FUELOIL_CTYPE                           "Fueloil"
@@ -60,34 +60,39 @@
 #define TEXT_CRG_FUELOIL_TABBR                           "\0EFO"
 
 //Gravel
-#define TEXT_CRG_GRAVEL_CTYPE                            "Piedra" // Checked.
+#define TEXT_CRG_GRAVEL_CTYPE                            "Piedra"
 #define TEXT_CRG_GRAVEL_CARGOAMOUNT                      "de piedra"
-#define TEXT_CRG_GRAVEL_TABBR                            "\0EPI" // Checked.
+#define TEXT_CRG_GRAVEL_TABBR                            "\0EPI"
 
 //Lumber
-#define TEXT_CRG_LUMBER_CTYPE                            "Tablas" // Checked.
+#define TEXT_CRG_LUMBER_CTYPE                            "Tablas"
 #define TEXT_CRG_LUMBER_CARGOAMOUNT                      "de tablas"
-#define TEXT_CRG_LUMBER_TABBR                            "\0ETB" // Checked.
+#define TEXT_CRG_LUMBER_TABBR                            "\0ETB"
 
 //Manufacturing Supplies
-#define TEXT_CRG_MANUFACTURINGSUPPLIES_CTYPE             "Suministros de Manufactura" // Checked.
+#define TEXT_CRG_MANUFACTURINGSUPPLIES_CTYPE             "Suministros de Manufactura"
 #define TEXT_CRG_MANUFACTURINGSUPPLIES_CARGOAMOUNT       "de suministros de manufactura"
-#define TEXT_CRG_MANUFACTURINGSUPPLIES_TABBR             "\0ESM" // Checked.
+#define TEXT_CRG_MANUFACTURINGSUPPLIES_TABBR             "\0ESM"
 
 //Metal
-#define TEXT_CRG_METAL_CTYPE                             "Metal" // Checked.
+#define TEXT_CRG_METAL_CTYPE                             "Metal"
 #define TEXT_CRG_METAL_CARGOAMOUNT                       "de metal"
-#define TEXT_CRG_METAL_TABBR                             "\0EML" // Checked.
+#define TEXT_CRG_METAL_TABBR                             "\0EML"
 
 //Milk
-#define TEXT_CRG_MILK_CTYPE                              "Leche" // Checked.
+#define TEXT_CRG_MILK_CTYPE                              "Leche"
 #define TEXT_CRG_MILK_CARGOAMOUNT                        "de leche"
-#define TEXT_CRG_MILK_TABBR                              "\0ELC" // Checked.
+#define TEXT_CRG_MILK_TABBR                              "\0ELC"
 
 //Plant Fibres
 #define TEXT_CRG_PLANTFIBRES_CTYPE                       "Fibras Vegetales"
 #define TEXT_CRG_PLANTFIBRES_CARGOAMOUNT                 "de fibras vegetales"
 #define TEXT_CRG_PLANTFIBRES_TABBR                       "\0EFV"
+
+//Recyclables
+#define TEXT_CRG_RECYCLABLES_CTYPE                       "Reciclables" 
+#define TEXT_CRG_RECYCLABLES_CARGOAMOUNT                 "de reciclables" 
+#define TEXT_CRG_RECYCLABLES_TABBR                       "\0ERC" 
 
 //Sand
 #define TEXT_CRG_SAND_CTYPE                              "Arena"
@@ -134,28 +139,33 @@
 #define TEXT_IND_FISHINGHARBOUR                          "Puerto de Pesca"
 #define TEXT_IND_FISHINGGROUNDS                          "Zona de Pesca"
 
-#define TEXT_IND_FORGE                                   "Forja" // Checked.
+#define TEXT_IND_FORGE                                   "Forja"
 #define TEXT_IND_FURNITUREFACTORY                        "Fábrica de Muebles"
-#define TEXT_IND_GENERALSTORE                            "Tienda"
+#define TEXT_IND_GENERALSTORE                            "Tienda de Alimentación"
 #define TEXT_IND_GLASSWORKS                              "Cristalería"
-#define TEXT_IND_IRONWORKS                               "Herrería"
+#define TEXT_IND_HOTELRESTAURANT                         "Hotel"
 
+#define TEXT_IND_HARDWARESTORE                           "Ferretería"
+#define TEXT_IND_IRONWORKS                               "Herrería"
 #define TEXT_IND_JUNKYARD                                "Desguace"
 #define TEXT_IND_LIMEKILN                                "Horno de Cal" 
 #define TEXT_IND_LUMBERYARD                              "Planta de Tratamiento de Madera"
+
 #define TEXT_IND_MACHINESHOP                             "Fábrica de Maquinaria"
 #define TEXT_IND_MEATPACKER                              "Matadero"
 #define TEXT_IND_METALFOUNDRY                            "Fundición"
-
 #define TEXT_IND_MIXEDFARM                               "Granja Mixta"
 #define TEXT_IND_PETROLPUMP                              "Gasolinera"
-#define TEXT_IND_PLASTICSPLANT                           "Fábrica de Plásticos" // Checked.
-#define TEXT_IND_QUARRY                                  "Cantera" // Checked.
-#define TEXT_IND_RETAILMARKET                            "Centro Comercial"
 
-#define TEXT_IND_SHEEPFARM                               "Granja de Ovejas" // Checked.
+#define TEXT_IND_PLASTICSPLANT                           "Fábrica de Plásticos"
+#define TEXT_IND_QUARRY                                  "Cantera"
+#define TEXT_IND_RETAILMARKET                            "Centro Comercial"
+#define TEXT_IND_RECYCLINGPLANT                          "Planta de Reciclado"
+#define TEXT_IND_RECYCLINGDEPOT                          "Depósito de Reciclado"
+
+#define TEXT_IND_SHEEPFARM                               "Granja de Ovejas"
 #define TEXT_IND_SUPERMARKET                             "Supermercado"
-#define TEXT_IND_SUGARREFINERY                           "Refinería de Azúcar" // Checked.
+#define TEXT_IND_SUGARREFINERY                           "Refinería de Azúcar"
 #define TEXT_IND_TEXTILEMILL                             "Hilatura Textil"
 #define TEXT_IND_WHOLESALEMARKET                         "Mercado Mayorista"
 
@@ -232,7 +242,7 @@
 #define TEXT_INFO_2T_PER_8T_CHEMICALS                    "  2t por cada 8t de productos químicos entregadas\0D"
 #define TEXT_INFO_5T_PER_8T_GRAIN                        "  5t por cada 8t de grano entregadas\0D"
 
-#define TEXT_INFO_5T_PER_8T_FRUITSANDVEGETABLES          "  5t por cada 8t de frutas y vegetales entregadas\0D"
+#define TEXT_INFO_5T_PER_8T_FRUITSANDVEGETABLES          "  5t por cada 8t de fruta entregadas\0D"
 #define TEXT_INFO_5T_PER_8T_MILK                         "  5t por cada 8t de leche entregadas\0D"
 #define TEXT_INFO_5T_PER_8T_LIVESTOCK                    "  5t por cada 8t de ganado entregadas\0D"
 #define TEXT_INFO_5T_PER_8T_FISH                         "  5t por cada 8t de pescado entregadas\0D"
@@ -269,6 +279,7 @@
 #define TEXT_INFO_FERTILISERPLANT                        "\98Transforma productos químicos en fertilizante para ser usado en granjas.\0D"
 #define TEXT_INFO_LUMBERYARD                             "\98Produce objetos tales como mástiles y cercas.\0D"
 #define TEXT_INFO_BIOREFINERY                            "\98Procesa grano y azúcar en petróleo y productos químicos.\0D" 
+#define TEXT_INFO_RECYCLINGPLANT                         "\98Procesa productos reciclables para ser reutilizados en manufacturas.\0D"
 
 #define TEXT_INFO_MANUFACTURINGSUPPLIES_STEPUP           "\0DLa producción aumenta si se entregan suministros de manufactura en un intervalo inferior a un mes desde el envío de una de las otras cargas."
 
