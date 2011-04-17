@@ -34,7 +34,7 @@
 //Industry tile sprites; one sprite for each tile; eventually more for each tile to include  construction stages
 
 //Tile action 1
--1 * 0 01 09 \b18 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
+-1 * 0 01 09 \b19 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
 // Format: spritenum pcxfile xpos ypos compression ysize xsize xrel yrel
 // asphalt tile
 -1 sprites/graphics/industries/fishingharbour.pcx  10 10  09  39 64 -31 -8
@@ -65,7 +65,8 @@
 // boat lift tiles
 -1 sprites/graphics/industries/fishingharbour.pcx  440 110  09  74 64 -31 -26
 -1 sprites/graphics/industries/fishingharbour.pcx  510 110  09  74 64   1 -42
-// end tiles
+// crates tiles
+-1 sprites/graphics/industries/fishingharbour.pcx  290 10  09  39 64 -31 -0
 
 // Tile Action 2 ID scheme:
 // 00-1F empty tiles, various foundation slope combinations
@@ -80,25 +81,31 @@
 
 // wharf tiles action 2 apply graphics
 // foundation face SW 
--1 * 0 02 09 00 02 //-1 * 0 02 09 <set-id> 01 (extended format)
+-1 * 0 02 09 00 03 //-1 * 0 02 09 <set-id> 01 (extended format)
 	\d00 //groundsprite
 	\dxC0008001 //foundation sprite  // ! bit 30 set to prevent transparency
 	\b0 \b0 \b0 //xofs yofs zofs
 	\b16 \b16 \b7 //xextent yextent zextent
 	\dxC0008000 //'building' sprite (actually ground tile in this industry)
 	\b0 \b0 \b0 //xofs yofs zofs
+	\b16 \b16 \b16 //xextent yextent zextent
+	\dx80008012 //greeble sprite
+	\b0 \b0 \b18 //xofs yofs zofs
 	\b16 \b16 \b16 //xextent yextent zextent
 // foundation face SE 
--1 * 0 02 09 01 02 //-1 * 0 02 09 <set-id> 01 (extended format)
+-1 * 0 02 09 01 03 //-1 * 0 02 09 <set-id> 01 (extended format)
 	\d00 //groundsprite
 	\dxC0008002 //foundation sprite  // ! bit 30 set to prevent transparency
 	\b0 \b0 \b0 //xofs yofs zofs
 	\b16 \b16 \b7 //xextent yextent zextent
 	\dxC0008000 //'building' sprite (actually ground tile in this industry)
 	\b0 \b0 \b0 //xofs yofs zofs
+	\b16 \b16 \b16 //xextent yextent zextent
+	\dx80008012 //greeble sprite
+	\b0 \b0 \b18 //xofs yofs zofs
 	\b16 \b16 \b16 //xextent yextent zextent
 // foundations face SW and SE 
--1 * 0 02 09 02 03 //-1 * 0 02 09 <set-id> 01 (extended format)
+-1 * 0 02 09 02 04 //-1 * 0 02 09 <set-id> 01 (extended format)
 	\d00 //groundsprite
 	\dxC0008001 //foundation sprite  // ! bit 30 set to prevent transparency
 	\b0 \b0 \b0 //xofs yofs zofs
@@ -108,9 +115,12 @@
 	\b16 \b16 \b7 //xextent yextent zextent
 	\dxC0008000 //'building' sprite (actually ground tile in this industry)
 	\b0 \b0 \b0 //xofs yofs zofs
+	\b16 \b16 \b16 //xextent yextent zextent
+	\dx80008012 //greeble sprite
+	\b0 \b0 \b18 //xofs yofs zofs
 	\b16 \b16 \b16 //xextent yextent zextent
 // foundation slope, coast faces SE  !! commented - not used !!
--1 * 0 0C 09 03 02 //-1 * 0 02 09 <set-id> 01 (extended format) 
+-1 * 0 0C 09 03 03 //-1 * 0 02 09 <set-id> 01 (extended format) 
 	\d00 //groundsprite
 	\dxC0008003 //foundation sprite  // ! bit 30 set to prevent transparency
 	\b0 \b0 \b0 //xofs yofs zofs
@@ -118,8 +128,11 @@
 	\dxC0008000 //'building' sprite (actually ground tile in this industry)
 	\b0 \b0 \b0 //xofs yofs zofs
 	\b16 \b16 \b16 //xextent yextent zextent	
+	\dx80008012 //greeble sprite
+	\b0 \b0 \b18 //xofs yofs zofs
+	\b16 \b16 \b16 //xextent yextent zextent
 // foundation face SE; foundation slope, coast faces SE 
--1 * 0 02 09 04 03 //-1 * 0 02 09 <set-id> 01 (extended format)
+-1 * 0 02 09 04 04 //-1 * 0 02 09 <set-id> 01 (extended format)
 	\d00 //groundsprite
 	\dxC0008002 //foundation sprite  // ! bit 30 set to prevent transparency
 	\b0 \b0 \b0 //xofs yofs zofs
@@ -130,8 +143,11 @@
 	\dxC0008000 //'building' sprite (actually ground tile in this industry)
 	\b0 \b0 \b0 //xofs yofs zofs
 	\b16 \b16 \b16 //xextent yextent zextent
+	\dx80008012 //greeble sprite
+	\b0 \b0 \b18 //xofs yofs zofs
+	\b16 \b16 \b16 //xextent yextent zextent
 // foundation slope, coast face SW; foundation slope, coast faces SE 
--1 * 0 02 09 05 03 //-1 * 0 02 09 <set-id> 01 (extended format)
+-1 * 0 02 09 05 04 //-1 * 0 02 09 <set-id> 01 (extended format)
 	\d00 //groundsprite
 	\dxC0008004 //foundation sprite  // ! bit 30 set to prevent transparency
 	\b0 \b0 \b0 //xofs yofs zofs
@@ -142,8 +158,11 @@
 	\dxC0008000 //'building' sprite (actually ground tile in this industry)
 	\b0 \b0 \b0 //xofs yofs zofs
 	\b16 \b16 \b16 //xextent yextent zextent
+	\dx80008012 //greeble sprite
+	\b0 \b0 \b18 //xofs yofs zofs
+	\b16 \b16 \b16 //xextent yextent zextent
 // foundation slope, coast face SW; foundation face SW 
--1 * 0 02 09 06 03 //-1 * 0 02 09 <set-id> 01 (extended format)
+-1 * 0 02 09 06 04 //-1 * 0 02 09 <set-id> 01 (extended format)
 	\d00 //groundsprite
 	\dxC0008004 //foundation sprite  // ! bit 30 set to prevent transparency
 	\b0 \b0 \b0 //xofs yofs zofs
@@ -154,8 +173,11 @@
 	\dxC0008000 //'building' sprite (actually ground tile in this industry)
 	\b0 \b0 \b0 //xofs yofs zofs
 	\b16 \b16 \b16 //xextent yextent zextent
+	\dx80008012 //greeble sprite
+	\b0 \b0 \b18 //xofs yofs zofs
+	\b16 \b16 \b16 //xextent yextent zextent
 // foundation slope, coast faces SW  !! commented - not used !!
--1 * 0 0C 09 07 02 //-1 * 0 02 09 <set-id> 01 (extended format)
+-1 * 0 0C 09 07 03 //-1 * 0 02 09 <set-id> 01 (extended format)
 	\d00 //groundsprite
 	\dxC0008004 //foundation sprite  // ! bit 30 set to prevent transparency
 	\b0 \b0 \b0 //xofs yofs zofs
@@ -163,8 +185,11 @@
 	\dxC0008000 //'building' sprite (actually ground tile in this industry)
 	\b0 \b0 \b0 //xofs yofs zofs
 	\b16 \b16 \b16 //xextent yextent zextent	
+	\dx80008012 //greeble sprite
+	\b0 \b0 \b18 //xofs yofs zofs
+	\b16 \b16 \b16 //xextent yextent zextent
 // foundation slope, coast faces NW	
--1 * 0 02 09 08 02 //-1 * 0 02 09 <set-id> 01 (extended format)
+-1 * 0 02 09 08 03 //-1 * 0 02 09 <set-id> 01 (extended format)
 	\d00 //groundsprite
 	\dxC0008005 //foundation sprite  // ! bit 30 set to prevent transparency
 	\b0 \b0 \b0 //xofs yofs zofs
@@ -172,8 +197,11 @@
 	\dxC0008000 //'building' sprite (actually ground tile in this industry)
 	\b0 \b0 \b0 //xofs yofs zofs
 	\b16 \b16 \b16 //xextent yextent zextent	
+	\dx80008012 //greeble sprite
+	\b0 \b0 \b18 //xofs yofs zofs
+	\b16 \b16 \b16 //xextent yextent zextent
 // foundation slope, coast face NW; foundation slope, coast faces NE 
--1 * 0 02 09 09 03 //-1 * 0 02 09 <set-id> 01 (extended format)
+-1 * 0 02 09 09 04 //-1 * 0 02 09 <set-id> 01 (extended format)
 	\d00 //groundsprite
 	\dxC0008005 //foundation sprite  // ! bit 30 set to prevent transparency
 	\b0 \b0 \b0 //xofs yofs zofs
@@ -184,7 +212,10 @@
 	\dxC0008000 //'building' sprite (actually ground tile in this industry)
 	\b0 \b0 \b0 //xofs yofs zofs
 	\b16 \b16 \b16 //xextent yextent zextent// foundation slope, coast faces NE
--1 * 0 02 09 0A 02 //-1 * 0 02 09 <set-id> 01 (extended format)
+	\dx80008012 //greeble sprite
+	\b0 \b0 \b18 //xofs yofs zofs
+	\b16 \b16 \b16 //xextent yextent zextent
+-1 * 0 02 09 0A 03 //-1 * 0 02 09 <set-id> 01 (extended format)
 	\d00 //groundsprite
 	\dxC0008006 //foundation sprite  // ! bit 30 set to prevent transparency
 	\b0 \b0 \b0 //xofs yofs zofs
@@ -192,6 +223,9 @@
 	\dxC0008000 //'building' sprite (actually ground tile in this industry)
 	\b0 \b0 \b0 //xofs yofs zofs
 	\b16 \b16 \b16 //xextent yextent zextent	
+	\dx80008012 //greeble sprite
+	\b0 \b0 \b18 //xofs yofs zofs
+	\b16 \b16 \b16 //xextent yextent zextent
 
 // wharf tile, no foundations 
 -1 * 0 02 09 0B 01 //-1 * 0 02 09 <set-id> 01 (extended format)
