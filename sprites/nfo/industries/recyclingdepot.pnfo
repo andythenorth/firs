@@ -1,4 +1,6 @@
 #define THIS_INDUSTRY                 IND_RECYCLINGDEPOT
+#define THIS_STR_INFO_CB38            STR_INFO_AVAILABILITY
+#define THIS_INTRO_DATE               \d1997-01-01
 
 //Industry tiles definition
 
@@ -99,7 +101,7 @@
 	19 CLR_WASTECOLLECTIONPOINT //map colour (byte; using indexes from dos palette)
 	23 \d0  //destruction cost multiplier (dword; default: 0)
 	1A \dx20 //special industry flag (dword; in town: 10h)
-	21 8C //callback flags 
+	21 8D //callback flags 
 	22 01  //callback flags
 //To show cargo waiting to be processed at industry, ensure prop 21 is set to use production callback
 
@@ -139,14 +141,22 @@
 
 #include "../../../templates/cb28_allow_player_build.pnfo"     
 
+
+// handle cb 22 industry availability
+#include "../../../templates/industry_availability_check.pnfo"
+
+//handle cb 38 additional text industry fund window
+#include "../../../templates/industry_fundwindow_text.pnfo"
+
 	
 //Callback 38 display additional text in fund window
 -1 * 0 02 0A C0 //-1 * 0 0A <set-id>
 	85 0C //<type> <variable> word-access callback
 	00 FF FF //no shift, no mask
-	\b3 //number of ranges to check
+	\b4 //number of ranges to check
 	  10 00                 28 00   28 00 //industry location permission cb 28
-    STR_INFO_GENERIC 80   38 00   38 00 //return text-ID D0xx if cb 38 (fund window)
+    20 00   22 00   22 00 //industry availability cb 22
+    22 00   38 00   38 00 //cb 38 display additional text in fund window
     STR_INFO_GENERIC 80   3A 00   3A 00 //return text-ID D0xx if cb 3A (industry window)
 	\w0 //default
 
@@ -156,4 +166,6 @@
 -1 * 0 03 0A 01 IND_RECYCLINGDEPOT 00 \wxC0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>	
 
 #undef THIS_INDUSTRY
+#undef THIS_STR_INFO_CB38
+#undef THIS_INTRO_DATE
 
