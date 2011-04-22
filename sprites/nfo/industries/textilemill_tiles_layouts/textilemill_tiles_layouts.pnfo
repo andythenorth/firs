@@ -3,7 +3,7 @@
 //Tile action 1
 -1 * 0 01 09 \b6 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
 // Format: spritenum pcxfile xpos ypos compression ysize xsize xrel yrel
--1 sprites/graphics/industries/THIS_GRAPHICS_FILE  10 10 09  103 64 -31 -72
+-1 sprites/graphics/industries/THIS_GRAPHICS_FILE  10 10 09  103 64 -31 -74
 -1 sprites/graphics/industries/THIS_GRAPHICS_FILE  80 10 09  103 64 -31 -72
 -1 sprites/graphics/industries/THIS_GRAPHICS_FILE 150 10 09  103 64 -31 -72
 -1 sprites/graphics/industries/THIS_GRAPHICS_FILE 220 10 09  103 64 -31 -72
@@ -125,13 +125,13 @@
 	\b10 //number of ranges to check (number of tiles)
     \wx03   00 00  00 00
     \wxC0   00 01  00 01
-    \wx02   01 00  01 00
-    \wx03   01 01  01 01
-    \wx02   02 00  02 00
-    \wx02   02 01  02 01
-    \wx02   03 00  03 00
+    \wx01   01 00  01 00
+    \wx04   01 01  01 01
+    \wx03   02 00  02 00
+    \wx03   02 01  02 01
+    \wx01   03 00  03 00
     \wx01   03 01  03 01
-    \wx01   04 00  04 00
+    \wx04   04 00  04 00
     \wx04   04 01  04 01
 	\wx04 //04 00  04 00 <default>
                    
@@ -141,10 +141,10 @@
 	\b6 //number of ranges to check (number of tiles)
     \wx03   00 00  00 00
     \wx03   00 01  00 01
-    \wx02   01 00  01 00
+    \wx01   01 00  01 00
     \wx01   01 01  01 01
     \wxC0   01 02  01 02
-    \wx01   02 00  02 00
+    \wx04   02 00  02 00
 	\wx04 //00 01  00 01 <default>)
                    
 -1 * 0 02 09 B3 //layout
