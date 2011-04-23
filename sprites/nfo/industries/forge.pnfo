@@ -36,12 +36,12 @@
 
 //Tile action 2 
 -1 * 0 02 09 00 00 //-1 * 0 02 09 <set-id> 00
-	\dx80008000 //groundsprite
+	\d2022 //groundsprite
 	\dx80008001 //building sprite
 	00 00 //xofs yofs
 	\b16 \b16 \b48 //xextent yextent zextent
 -1 * 0 02 09 01 00 //-1 * 0 02 09 <set-id> 00
-	\dx80008000 //groundsprite
+	\d2022 //groundsprite
 	\dx80008002 //building sprite
 	00 00 //xofs yofs
 	\b16 \b16 \b48 //xextent yextent zextent
