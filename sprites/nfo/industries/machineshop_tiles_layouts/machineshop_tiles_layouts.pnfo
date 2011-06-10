@@ -89,6 +89,13 @@
 	\dx8000800C //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b32 //xextent yextent zextent
+// empty tile
+-1 * 0 02 09 0E 00 //-1 * 0 02 09 <set-id> 00
+	\dx8000800D //groundsprite
+	\dx8000800D //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b1 //xextent yextent zextent
+
 
 // animated chimney
 -1 * 0 02 09 10 02 //-1 * 0 02 09 <set-id> 01 (extended format)
@@ -291,8 +298,9 @@
 -1 * 0 02 09 B1 //layout
 	85 43 //check relative position (00yx[YYXX])
 	00 FF FF //don't shift, don't mask
-	\b13 //number of ranges to check (number of tiles) [range: XX YY  XX YY]
+	\b15 //number of ranges to check (number of tiles) [range: XX YY  XX YY]
     \wx06   00 01  00 01
+    \wx0E   00 02  00 02
     \wx05   01 00  01 00
     \wx04   01 01  01 01
     \wx0D   01 02  01 02
@@ -303,14 +311,15 @@
     \wx0B   03 02  03 02
     \wx02   04 00  04 00
     \wx03   04 01  04 01
+    \wx0D   04 02  04 02
     \wx01   05 00  05 00
     \wx00   05 01  05 01                                   
-	\wx00 //00 00  00 00 <default>
+	\wx01 //00 00  00 00 <default>
 
 -1 * 0 02 09 B2 //layout
 	85 43 //check relative position (00yx[YYXX])
 	00 FF FF //don't shift, don't mask
-	\b15 //number of ranges to check (number of tiles) [range: XX YY  XX YY]
+	\b16 //number of ranges to check (number of tiles) [range: XX YY  XX YY]
     \wx0C   00 04  00 04
     \wx06   00 01  00 01
     \wx06   00 03  00 03
@@ -320,6 +329,7 @@
     \wx04   01 03  01 03
     \wx0B   01 04  01 04
     \wx09   02 01  02 01
+    \wx0E   02 02  02 02
     \wx02   02 03  02 03
     \wx03   02 04  02 04
     \wx08   03 00  03 00
@@ -331,9 +341,10 @@
 -1 * 0 02 09 B3 //layout
 	85 43 //check relative position (00yx[YYXX])
 	00 FF FF //don't shift, don't mask
-	\b15 //number of ranges to check (number of tiles) [range: XX YY  XX YY]
+	\b16 //number of ranges to check (number of tiles) [range: XX YY  XX YY]
     \wx06   00 01  00 01
     \wx06   00 03  00 03
+    \wx0E   00 04  00 04
     \wx05   01 00  01 00
     \wx04   01 01  01 01
     \wx05   01 02  01 02
@@ -352,7 +363,7 @@
 -1 * 0 02 09 B4 //layout
 	85 43 //check relative position (00yx[YYXX])
 	00 FF FF //don't shift, don't mask
-	\b16 //number of ranges to check (number of tiles) [range: XX YY  XX YY]
+	\b17 //number of ranges to check (number of tiles) [range: XX YY  XX YY]
     \wx06   00 01  00 01
     \wx0D   00 02  00 02
     \wx02   00 03  00 03
@@ -369,12 +380,13 @@
     \wx04   03 01  03 01
     \wx08   03 02  03 02
     \wxC0   03 03  03 03
+    \wx0D   03 04  03 04
 	\wx00 //01 02  01 02 <default>	
                  
 -1 * 0 02 09 B5 //layout
 	85 43 //check relative position (00yx[YYXX])
 	00 FF FF //don't shift, don't mask
-	\b15 //number of ranges to check (number of tiles) [range: XX YY  XX YY]
+	\b16 //number of ranges to check (number of tiles) [range: XX YY  XX YY]
     \wx02   00 00  00 00
     \wx03   00 01  00 01
     \wx00   00 02  00 02
@@ -388,6 +400,7 @@
     \wx0B   01 01  01 01
     \wx0D   02 00  02 00
     \wx0D   02 01  02 01
+    \wx0E   02 02  02 02
     \wx01   02 03  02 03
     \wx00   02 04  02 04
 	\wx00 //01 02  01 02 <default> 
