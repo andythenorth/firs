@@ -100,7 +100,7 @@
 	0F \b118 //fund cost multiplier (byte)
 	19 CLR_WASTECOLLECTIONPOINT //map colour (byte; using indexes from dos palette)
 	23 \d0  //destruction cost multiplier (dword; default: 0)
-	1A \dx20 //special industry flag (dword; in town: 10h)
+	1A \dx00 //special industry flag (dword; in town: 10h)
 	21 8D //callback flags 
 	22 01  //callback flags
 //To show cargo waiting to be processed at industry, ensure prop 21 is set to use production callback
@@ -129,18 +129,21 @@
 \wx00 // go to production callback
 
 // handle cb 28 industry location - included on a per-industry basis to allow industries to use various different schemes 
-#include "../../../templates/cb28_secondary_generic.pnfo"     
+#include "../../../templates/cb28_generic_terminator.pnfo"     
 
-#define THIS_CONFLICTING_INDUSTRY IND_RECYCLINGPLANT
-#include "../../../templates/cb28_space_neighbours_in_chain.pnfo"
-#undef THIS_CONFLICTING_INDUSTRY
+//#define THIS_CONFLICTING_INDUSTRY IND_RECYCLINGPLANT
+//#include "../../../templates/cb28_space_neighbours_in_chain.pnfo"
+//#undef THIS_CONFLICTING_INDUSTRY
 
-#define THIS_CONFLICTING_INDUSTRY IND_RECYCLINGDEPOT
-#include "../../../templates/cb28_space_neighbours_in_chain.pnfo"
-#undef THIS_CONFLICTING_INDUSTRY
+//#define THIS_CONFLICTING_INDUSTRY IND_RECYCLINGDEPOT
+//#include "../../../templates/cb28_space_neighbours_in_chain.pnfo"
+//#undef THIS_CONFLICTING_INDUSTRY
 
-#include "../../../templates/cb28_allow_player_build.pnfo"     
+#define THIS_LIMIT_PER_TOWN_MINUS_ONE  \b0
+#include "../../../templates/cb28_limit_per_town.pnfo"
+#undef THIS_LIMIT_PER_TOWN_MINUS_ONE
 
+#include "../../../templates/cb28_near_town.pnfo"
 
 // handle cb 22 industry availability
 #include "../../../templates/industry_availability_check.pnfo"
@@ -154,7 +157,7 @@
 	85 0C //<type> <variable> word-access callback
 	00 FF FF //no shift, no mask
 	\b4 //number of ranges to check
-	  10 00                 28 00   28 00 //industry location permission cb 28
+	  10 00   28 00   28 00 //industry location permission cb 28
     20 00   22 00   22 00 //industry availability cb 22
     22 00   38 00   38 00 //cb 38 display additional text in fund window
     STR_INFO_GENERIC 80   3A 00   3A 00 //return text-ID D0xx if cb 3A (industry window)

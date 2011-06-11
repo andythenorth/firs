@@ -1,0 +1,22 @@
+-1 * 15	 02 0A 10  //check count of industry type n in this town (requires bit 8 set)
+    81 
+      68  THIS_INDUSTRY  10 \bxFF // var, param (industry ID), shift, mask 
+       01 //range
+         10 00  \b00 THIS_LIMIT_PER_TOWN_MINUS_ONE //continue using placement routine if below limit
+       01 84 //otherwise don't build industry if limit is exceeded      
+       
+-1 * 0 02 0A 10 //store 100h (sets bit 8 for var 68) to register 101h   
+    89 // 
+      1A 20 \dx100 // create value
+      \2sto 1A 00 \dx101 //store in register
+    \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
+       10 00 \d00 \d00
+     10 00 //default       
+     
+-1 * 0 02 0A 10 //store FFFFFFFF (special value for current GRFID) to register 100h   
+    89 // 
+      1A 20 \dxFFFFFFFF // create value
+      \2sto 1A 00 \dx100 //store in register
+    \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
+       10 00 \d00 \d00
+     10 00 //default
