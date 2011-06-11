@@ -280,7 +280,6 @@
 #define STR_IND_NEW_GENERIC       2D 48
 #define STR_IND_NEW_PLANTED       2E 48
 
-
 //Definition of cargo units using default TTD strings (automatically translated)
 #define STR_CRG_UNIT_PASSENGERS   4F 00 //default text for 'passengers'
 #define STR_CRG_UNIT_TONNES       50 00 //default text for 'tonnes' (also tons, kgs etc).
@@ -324,22 +323,23 @@
 #define STR_INFO_GENERIC_CLOSE_0    A6
 #define STR_INFO_GENERIC_CLOSE_1    A7
 #define STR_INFO_GENERIC_CLOSE_2    A8
-#define STR_INFO_AVAILABILITY_1610  AA
-#define STR_INFO_AVAILABILITY_1730  AB
-#define STR_INFO_AVAILABILITY_1762  AC
-//#define STR_INFO_EMPTY              AD
+#define STR_INFO_AVAILABILITY_1610  AA  // special case believed to be needed due to limitations in date code
+#define STR_INFO_AVAILABILITY_1730  AB  // special case believed to be needed due to limitations in date code
+#define STR_INFO_AVAILABILITY_1762  AC  // special case believed to be needed due to limitations in date code 
+#define STR_INFO_AVAILABILITY_RECYCLING_DEPOT  AD  // special case - extra info used
+
 #define STR_INFO_ES_PRIMARY_BOOST   B0
 #define STR_INFO_FS_PRIMARY_BOOST   B1
 #define STR_INFO_MS_PRIMARY_BOOST   B2
 #define STR_INFO_BOOST_MAXED        B3
-#define STR_INFO_LIMIT_200          C0
-#define STR_INFO_LIMIT_800          C1
-#define STR_INFO_ACCEPTING_ES       D0
-#define STR_INFO_NOT_ACCEPTING_ES   D1
-#define STR_INFO_ACCEPTING_FS       D2
-#define STR_INFO_NOT_ACCEPTING_FS   D3
-#define STR_INFO_ACCEPTING_MS       D4
-#define STR_INFO_NOT_ACCEPTING_MS   D5
+#define STR_INFO_LIMIT_200          C0 // deprecated
+#define STR_INFO_LIMIT_800          C1 // deprecated
+#define STR_INFO_ACCEPTING_ES       D0 // deprecated
+#define STR_INFO_NOT_ACCEPTING_ES   D1 // deprecated
+#define STR_INFO_ACCEPTING_FS       D2 // deprecated
+#define STR_INFO_NOT_ACCEPTING_FS   D3 // deprecated
+#define STR_INFO_ACCEPTING_MS       D4 // deprecated
+#define STR_INFO_NOT_ACCEPTING_MS   D5 // deprecated
 #define STR_INFO_MACHINESHOP        IND_MACHINESHOP
 #define STR_INFO_SAWMILL            IND_SAWMILL
 #define STR_INFO_WINDFARM           IND_WINDFARM
@@ -368,6 +368,7 @@
 #define STR_INFO_BRICKWORKS         IND_BRICKWORKS
 #define STR_INFO_IRONWORKS          IND_IRONWORKS
 #define STR_INFO_RECYCLINGPLANT     IND_RECYCLINGPLANT
+
 
 //Definition of text IDs for cargos
 // _CTYPE: name of cargo type
