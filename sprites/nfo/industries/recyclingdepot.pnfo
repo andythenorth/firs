@@ -141,8 +141,9 @@
 
 #define THIS_LIMIT_PER_TOWN_MINUS_ONE  \b0
 #include "../../../templates/cb28_limit_per_town.pnfo"
-#undef THIS_LIMIT_PER_TOWN_MINUS_ONE
 
+
+#define THIS_DISTANCE_LIMIT_SQUARED  \w256
 #include "../../../templates/cb28_near_town.pnfo"
 
 // handle cb 22 industry availability

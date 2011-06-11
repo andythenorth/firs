@@ -20,3 +20,6 @@
     \b1 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
        10 00 \d00 \d00
      10 00 //default
+     
+#undef THIS_LIMIT_PER_TOWN_MINUS_ONE
+     

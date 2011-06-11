@@ -2,5 +2,7 @@
     85 
       66  THIS_INDUSTRY  00 \wxFFFF // var, param (industry ID), shift, mask 
        01 //range
-         10 00  \w00 \w256 //continue using placement routine if below limit
+         10 00  \w00 THIS_DISTANCE_LIMIT_SQUARED //continue using placement routine if below limit
        01 84 //otherwise don't build industry if limit is exceeded      
+       
+#undef THIS_DISTANCE_LIMIT_SQUARED       
