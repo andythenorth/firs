@@ -147,8 +147,8 @@
 	85 43 //check relative position (00yx[YYXX])
 	00 FF FF //don't shift, don't mask
 	\b8 //number of ranges to check (number of tiles)
-    \wx03   00 00  00 00
-    \wx02   00 01  00 01
+    \wx02   00 00  00 00
+    \wx03   00 01  00 01
     \wxC0   00 02  00 02
     \wx01   01 00  01 00
     \wx05   01 01  01 01
