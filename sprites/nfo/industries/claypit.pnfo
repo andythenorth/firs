@@ -334,7 +334,7 @@
 	19 CLR_CLAYPIT //map colour (byte; using indexes from dos palette)
 	23 \d0  //destruction cost multiplier (dword; default: 0)
 	1A \dx0 //special industry flag (dword)
-	21 3A //callback flags 
+	21 3B //callback flags 
 	22 05  //callback flags
 //To show cargo waiting to be processed at industry, ensure prop 21 is set to use production callback
 

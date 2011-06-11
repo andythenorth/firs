@@ -29,7 +29,7 @@
 	18 \b2 //probability during gameplay
 	0F \b97 //fund cost multiplier (byte)
 	19 CLR_SAWMILL //map colour (byte; using indexes from dos palette)
-	21 3C //callback flags 
+	21 3D //callback flags 
 	22 01  //callback flags
 //To show cargo waiting to be processed at industry, ensure prop 21 is set to use production callback
 

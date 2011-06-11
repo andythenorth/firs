@@ -1,14 +1,28 @@
+#ifndef THIS_INTRO_DATE
+  #define THIS_INTRO_DATE  \d00
+#endif
+
 // This file provides an industry availability check for use with cb 22
--1 * 0 02 0A 20 //use this to initialise variables
+-1 * 0 02 0A 20 //
   89 // 
     23 20 \dxFFFFFFFF //get current date
     \2+ 1A 00   \d01  //add 1 - due to way range check works below
-#ifdef THIS_END_DATE
-	\b2 //number of ranges to check
-  01 80  THIS_END_DATE  \dxFFFFFFFF  //industry unavailable between end date and infinity (well, sort of infinity)
-#endif
-#ifndef THIS_END_DATE
-	\b1 //number of ranges to check
-#endif
-  01 80  \d00  THIS_INTRO_DATE  //industry unavailable between 0 and intro date
-  00 80 // default
+    #ifdef THIS_END_DATE
+      \b2 //number of ranges to check
+      01 80  THIS_END_DATE  \dxFFFFFFFF  //industry unavailable between end date and infinity (well, sort of infinity)
+    #endif
+    #ifndef THIS_END_DATE
+      \b1 //number of ranges to check
+    #endif
+      01 80  \d00  THIS_INTRO_DATE  //industry unavailable between 0 and intro date
+    00 80 // default
+
+-1 * 0 02 0A 20 // Check var 18 - is the industry being built by map gen / in game / player 
+  81 // 
+      18 00 \bxFF 
+    \b2 //range
+       20 00  \b01  \b01
+       20 00  \b02  \b02
+     20 00 //default
+
+// return 00 80 to allow building, any other value to prevent (using 80 to give as cb result)

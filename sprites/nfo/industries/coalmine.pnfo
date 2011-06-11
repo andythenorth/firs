@@ -21,7 +21,7 @@
 	20 FF FF FF BF //prospecting success chance (dword; FFFFFFFFh=100%)
 	0F \b252 //fund cost multiplier (byte)
 	19 CLR_COALMINE //map colour (byte; using indexes from dos palette)
-	21 3A //callback flags 
+	21 3B //callback flags 
 	22 05  //callback flags
 //To show cargo waiting to be processed at industry, ensure prop 21 is set to use production callback
 

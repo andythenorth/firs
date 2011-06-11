@@ -134,7 +134,7 @@
 	19 CLR_GLASSWORKS //map colour (byte; using indexes from dos palette)
 	23 \d0  //destruction cost multiplier (dword; default: 0)
 	1A \dx1000 //special industry flag (dword)
-	21 3C //callback flags 
+	21 3D //callback flags 
 	22 09  //callback flags
 //To show cargo waiting to be processed at industry, ensure prop 21 is set to use production callback
 
