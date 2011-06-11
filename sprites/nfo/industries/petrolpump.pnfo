@@ -1,5 +1,6 @@
 //PETROLPUMP
 #define THIS_INTRO_DATE               \d1909-01-01
+#define THIS_STR_INFO_CB38            STR_INFO_AVAILABILITY
 
 //Industry tiles definition
 //Tile Action 0
@@ -201,8 +202,8 @@
 	1E \w0  \w0  //input cargo 3 multiplier
 	14 \b2 //minimal cargo distribution amount
 	16 FF FF FF //conflicting industry types (3*byte; ID+80h; FF to disable)
-	17 \b10 //probability in random game
-	18 \b20 //probability during gameplay
+	17 \b14 //probability in random game
+	18 \b14 //probability during gameplay
 	20 FF FF FF BF //prospecting success chance (dword; FFFFFFFFh=100%)
 	0F \b8 //fund cost multiplier (byte)
 	19 CLR_PETROLPUMP //map colour (byte; using indexes from dos palette)
@@ -224,13 +225,16 @@
 // handle cb 22 industry availability
 #include "../../../templates/industry_availability_check.pnfo" 
 	
-//Callback 38 display additional text in fund window
+//handle cb 38 additional text industry fund window
+#include "../../../templates/industry_fundwindow_text.pnfo"
+	
+// handle callbacks
 -1 * 0 02 0A C0 //-1 * 0 0A <set-id>
 	85 0C //<type> <variable> word-access callback
 	00 FF FF //no shift, no mask
 	\b3 //number of ranges to check
     20 00   22 00   22 00 //industry availability cb 22
-    STR_INFO_GENERIC 80   38 00   38 00 //return text-ID D0xx if cb 38 (fund window)
+    22 00   38 00   38 00 //return text-ID D0xx if cb 38 (fund window)
     STR_INFO_GENERIC 80   3A 00   3A 00 //return text-ID D0xx if cb 3A (industry window)
 	\w0 //default
 
