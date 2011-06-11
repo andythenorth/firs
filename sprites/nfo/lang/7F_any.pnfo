@@ -309,8 +309,8 @@
 #define TEXT_PNAME_SECONDARYCLOSE                        "Allow secondary industries to close"
 #define TEXT_PDESC_SECONDARYCLOSE                        "By default, FIRS secondary industries will never close.\0D\0DIf secondary closing is turned on, secondary industries may close if no cargo is transported for a long time."
 
-#define TEXT_PNAME_PREVENTCONSTRUCTION                   "Prevent industry construction (unfinished)"
-#define TEXT_PDESC_PREVENTCONSTRUCTION                   "\89This does nothing yet. \98When finished it will provide a 'Sandbox mode' for use with scenarios."
+#define TEXT_PNAME_PREVENTCONSTRUCTION                   "Prevent industries opening during gameplay"
+#define TEXT_PDESC_PREVENTCONSTRUCTION                   "No new industries will be constructed during the game. \nPlayers will not be able to fund or prospect for industries.  \nIndustries will be constructed at the start of the game by the map generator (depending on map settings used)."
 
 #define TEXT_PNAME_MAXCOASTDISTANCE                      "Maximum coastal distance of marine industries in tiles"
 #define TEXT_PDESC_MAXCOASTDISTANCE                      "\89Maximum distance of fishing grounds and dredging sites from the coast in tiles."
