@@ -205,7 +205,7 @@
 	19 CLR_FRUITPLANTATION //map colour (byte; using indexes from dos palette)
 	1A \dx0 //special industry flag (dword)
 	21 3A //callback flags 
-	22 09  //callback flags	
+	22 01  //callback flags	
 //To show cargo waiting to be processed at industry, ensure prop 21 is set to use production callback
 //No action 1 for industries, as graphics are defined by the industry-tile feature.
 

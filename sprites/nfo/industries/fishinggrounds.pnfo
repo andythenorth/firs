@@ -406,20 +406,16 @@
 //handle cb 38 additional text industry fund window
 #include "../../../templates/industry_fundwindow_text.pnfo"
 
-// handle cb 14A industry color
-#include "../../../templates/industry_color.pnfo"
-
 
 
 // handle callbacks
 -1 * 0 02 0A C0 
 	85 0C //<type> <variable> word-access callback
 	00 FF FF //no shift, no mask
-	\b7 //number of ranges to check
+	\b6 //number of ranges to check
     A0 00   00 00   00 00 //production cb chain
     10 00   28 00   28 00 //can industry be built?
     20 00   22 00   22 00 //industry availability cb 22
-    30 00   4A 01   4A 01 //industry color cb 14A
   	22 00   38 00   38 00 //cb 38 display additional text in fund window
 	  00 80   29 00   29 00 //random production change cb 29 // 00 80 = do nothing
 	  00 80   35 00   35 00 //monthly production change cb 35 

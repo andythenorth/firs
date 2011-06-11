@@ -1,4 +1,8 @@
-#define THIS_COLOUR_SCHEMA    \b1
+// handle case where industry isn't controlling color, but production template includes color handling
+#ifndef THIS_COLOUR_SCHEMA
+  #define THIS_COLOUR_SCHEMA    \b1
+#endif
+
 // This file remaps industry colors that suck.  For use with cb 14A
 // handle cb 14A industry color
 -1 * 0 02 0A 31 //
