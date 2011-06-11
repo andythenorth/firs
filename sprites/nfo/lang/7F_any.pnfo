@@ -217,13 +217,13 @@
 #define TEXT_INFO_GENERIC_CLOSE_1                        "\n\98This industry might close unless any cargo is delivered within:\0D\94  month" 
 #define TEXT_INFO_GENERIC_CLOSE_2                        "\n\8BNo cargo has been delivered for at least \85\85months. This industry may close soon. \0D" 
 
-#define TEXT_INFO_LIMIT_200                              "\98 (max 200)" 
-#define TEXT_INFO_LIMIT_800                              "\98 (max 800)" 
+#define TEXT_INFO_LIMIT_200                              "\98 (max 200)" // deprecated
+#define TEXT_INFO_LIMIT_800                              "\98 (max 800)" // deprecated
 
-#define TEXT_INFO_ACCEPTING                              "\0D" // empty line breaks to stop window size jumping around 
-#define TEXT_INFO_NOT_ACCEPTING_ES                       "\94Not accepting engineering supplies\98\0D(Limit Reached)" 
-#define TEXT_INFO_NOT_ACCEPTING_FS                       "\94Not accepting farm supplies\98\0D(Limit Reached)" 
-#define TEXT_INFO_NOT_ACCEPTING_MS                       "\94Not accepting manufacturing supplies\98\0D(Limit Reached)" 
+#define TEXT_INFO_ACCEPTING                              "\0D" // empty line breaks to stop window size jumping around   // deprecated
+#define TEXT_INFO_NOT_ACCEPTING_ES                       "\94Not accepting engineering supplies\98\0D(Limit Reached)"    // deprecated 
+#define TEXT_INFO_NOT_ACCEPTING_FS                       "\94Not accepting farm supplies\98\0D(Limit Reached)"           // deprecated
+#define TEXT_INFO_NOT_ACCEPTING_MS                       "\94Not accepting manufacturing supplies\98\0D(Limit Reached)"  // deprecated 
 
 #define TEXT_INFO_ES_PRIMARY_BOOST                       "\98Engineering supplies may increase production.\0D\90  \UE07B crates delivered this month" 
 #define TEXT_INFO_FS_PRIMARY_BOOST                       "\98Farm supplies may increase production.\0D\90  \UE07B crates delivered this month" 
