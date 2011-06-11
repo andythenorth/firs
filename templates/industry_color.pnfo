@@ -1,10 +1,10 @@
+// This file remaps industry colors that suck.  For use with cb 14A
+
 // handle case where industry isn't controlling color, but production template includes color handling
 #ifndef THIS_COLOUR_SCHEMA
   #define THIS_COLOUR_SCHEMA    \b1
 #endif
 
-// This file remaps industry colors that suck.  For use with cb 14A
-// handle cb 14A industry color
 -1 * 0 02 0A 31 //
     81 A8 00 FF //check existing random colour
     \b16 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
@@ -26,11 +26,33 @@
        0E 80   0F  0F //white -> map grey
      00 80
      
+-1 * 0 02 0A 32 //
+    81 A8 00 FF //check existing random colour
+    \b16 //range (stay out of the nvar=0 bear pit by checking one range, but returning same for both)
+       05 80   00  00 //dark blue -> map light blue
+       01 80   01  01 //pale green
+       02 80   02  02 //pink
+       03 80   03  03 //yellow
+       02 80   04  04 //red -> map pink
+       05 80   05  05 //light blue
+       01 80   06  06 //green -> map pale green
+       07 80   07  07 //dark green
+       05 80   08  08 //blue -> map light blue
+       0E 80   09  09 //cream -> map grey
+       0A 80   0A  0A //mauve
+       0A 80   0B  0B //purple -> map mauve
+       03 80   0C  0C //orange -> map yellow
+       0D 80   0D  0D //brown
+       0E 80   0E  0E //grey
+       0F 80   0F  0F //white
+     00 80
+     
 -1 * 0 02 0A 30 //branch according to industry's colour schema
     81 // 
       1A 00 THIS_COLOUR_SCHEMA
-    \b1 //range
+    \b2 //range
        31 00  \b01  \b01
+       32 00  \b02  \b02
      31 00 //default
      
 #undef THIS_COLOUR_SCHEMA     
