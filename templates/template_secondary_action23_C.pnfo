@@ -40,7 +40,8 @@
 //   texts	E0-FF
 //   industry location permissibility (CB 28)  10-1F  (NB CB 28 is not templated - handled on a per-industry basis)
 //   industry availability (CB 22) 20
-//   generally unused and available	2A-9F
+//   customise colors (CB 14A) 30-3F
+//   generally unused and available	40-9F
 
 // Persistent storage used (not guaranteed to be up to date, but it's a starting point for making sense of this)
 // Some use of persistent storage not strictly necessary, could be registers instead
@@ -459,7 +460,7 @@
     00 84   28 00   28 00 //just allow the industry to be built (this industry doesn't care about location)
     #endif
     20 00   22 00   22 00 //industry availability cb 22
-    21 00   4A 01   4A 01 //industry color cb 14A
+    30 00   4A 01   4A 01 //industry color cb 14A
     22 00   38 00   38 00 //cb 38 display additional text in fund window
 	  D0 00   29 00   29 00 //random production change cb 29
 	  DA 00   35 00   35 00 //monthly production change cb 35 

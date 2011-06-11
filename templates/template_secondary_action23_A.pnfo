@@ -27,7 +27,8 @@
 //   industry location permissibility (CB 28)  10-1F  (NB CB 28 is not templated - handled on a per-industry basis)
 //   industry availability (CB 22) 20
 //   customise cargos (CB 14B, 14C) 2A-2F
-//   generally unused and available	30-9F
+//   customise colors (CB 14A) 30-3F
+//   generally unused and available	40-9F
 
 //3 input cargos
 //2 output cargos
@@ -347,7 +348,7 @@
     00 84   28 00   28 00 //just allow the industry to be built (this industry doesn't care about location)
     #endif
     20 00   22 00   22 00 //industry availability cb 22
-    21 00   4A 01   4A 01 //industry color cb 14A
+    30 00   4A 01   4A 01 //industry color cb 14A
     #ifdef THIS_HANDLE_CB14C
     THIS_HANDLE_CB14C   4C 01   4C 01 //customise output cargos on build cb 14C
     #endif
