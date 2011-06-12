@@ -12,6 +12,8 @@
 
 // include tiles and layouts, ! Action 2 IDs here are deliberately repeated by the various tile includes
 //#define THIS_GRAPHICS_FILE NULL.png
+#define THIS_BUILDING_SPRITE_1   \d4475  // special case when reusing default graphics
+#define THIS_BUILDING_SPRITE_2   \d4476
 #include "hotel_tiles_layouts/hotel_tiles_layouts.pnfo"
 
 -1 * 0 02 09 A1
@@ -22,6 +24,8 @@
 	\wx00 //<default> (first tile layout available)
 
 //#define THIS_GRAPHICS_FILE NULL.png
+#define THIS_BUILDING_SPRITE_1   \d4475  // special case when reusing default graphics
+#define THIS_BUILDING_SPRITE_2   \d4476
 #include "hotel_tiles_layouts/hotel_tiles_layouts.pnfo"
 
 -1 * 0 02 09 A2
@@ -32,6 +36,8 @@
 	\wx00 //<default> (first tile layout available)
 
 //#define THIS_GRAPHICS_FILE NULL_snow.png
+#define THIS_BUILDING_SPRITE_1   \d4583  // special case when reusing default graphics
+#define THIS_BUILDING_SPRITE_2   \d4584
 #include "hotel_tiles_layouts/hotel_tiles_layouts.pnfo"
 
 -1 * 0 02 09 A3
