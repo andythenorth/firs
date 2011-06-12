@@ -1,7 +1,7 @@
 //Industry tile sprites; one sprite for each tile; eventually more for each tile to include  construction stages
 
 //Tile action 1
--1 * 0 01 09 \b12 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
+-1 * 0 01 09 \b13 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
 // Format: spritenum pcxfile xpos ypos compression ysize xsize xrel yrel
 // groundsprite
 -1 sprites/graphics/industries/groundtiles.pcx  80 10 09   31 64  -31 0
@@ -20,6 +20,8 @@
 -1 sprites/graphics/industries/THIS_GRAPHICS_FILE  80 120 09  64 64 -31 -65
 -1 sprites/graphics/industries/THIS_GRAPHICS_FILE 150 120 09  64 64 -31 -65
 -1 sprites/graphics/industries/THIS_GRAPHICS_FILE 220 120 09  64 64 -31 -65
+// greeble tile
+-1 sprites/graphics/industries/THIS_GRAPHICS_FILE 500 10 09  94 64 -31 -63
 
 //Tile action 2 
 // office
@@ -61,9 +63,9 @@
 //greeble tile	
 -1 * 0 02 09 07 00 //-1 * 0 02 09 <set-id> 00
 	\dx80008000 //groundsprite
-	\d0 //building sprite
+	\dx8000800C //building sprite
 	\b0 \b0 //xofs yofs
-	\b16 \b16 \b64 //xextent yextent zextent
+	\b16 \b16 \b16 //xextent yextent zextent
 
 // animated chimney
 -1 * 0 02 09 10 02 //-1 * 0 02 09 <set-id> 01 (extended format)
