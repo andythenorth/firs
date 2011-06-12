@@ -1,0 +1,26 @@
+//Industry tile sprites; one sprite for each tile; eventually more for each tile to include  construction stages
+
+//Tile action 1
+-1 * 0 01 09 \b1 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
+// Format: spritenum pcxfile xpos ypos compression ysize xsize xrel yrel
+// building
+-1 sprites/graphics/industries/THIS_GRAPHICS_FILE  0 0  09  36 64  -31 -4
+
+
+//Tile Action 2 
+-1 * 0 02 09 00 00 //-1 * 0 02 09 <set-id> 00
+	\d1420 //groundsprite
+	\dx80008000 //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b16 //xextent yextent zextent
+
+
+-1 * 0 02 09 B1 //layout
+	85 43 //check relative position (00yx[YYXX])
+	00 FF FF //don't shift, don't mask
+	\b1 //number of ranges to check (number of tiles)
+    \wx00   00 00  00 00 
+  \wx00 //00 00  00 00 <default>
+  
+
+#undef THIS_GRAPHICS_FILE
