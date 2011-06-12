@@ -112,7 +112,7 @@
 	0F \b8 //fund cost multiplier (byte)
 	19 CLR_PETROLPUMP //map colour (byte; using indexes from dos palette)
 	23 \d0  //destruction cost multiplier (dword; default: 0)
-	21 01 //callback flags 
+	21 09 //callback flags 
 	22 01  //callback flags
 
 //No action 1 for industries, as graphics are defined by the industry-tile feature.
@@ -124,6 +124,15 @@
 	\w0 \w0 //<add-out-1..2>
 	00 //don't repeat
 
+// handle cb 28 industry location - included on a per-industry basis to allow industries to use various different schemes 
+
+#include "../../../templates/cb28_generic_terminator.pnfo"
+
+#define THIS_DISTANCE_LIMIT_SQUARED  \w64
+#include "../../../templates/cb28_near_town.pnfo"
+
+#include "../../../templates/cb28_allow_player_build.pnfo"
+
 // handle cb 22 industry availability
 #include "../../../templates/industry_availability_check.pnfo"
 	
@@ -131,8 +140,9 @@
 -1 * 0 02 0A C0 //-1 * 0 0A <set-id>
 	85 0C //<type> <variable> word-access callback
 	00 FF FF //no shift, no mask
-	\b3 //number of ranges to check
+	\b4 //number of ranges to check
     20 00                 22 00   22 00 //industry availability cb 22
+    10 00                 28 00   28 00 //location permission cb 28
     STR_INFO_GENERIC 80   38 00   38 00 //return text-ID D0xx if cb 38 (fund window)
     STR_INFO_GENERIC 80   3A 00   3A 00 //return text-ID D0xx if cb 3A (industry window)
 	\w0 //default
