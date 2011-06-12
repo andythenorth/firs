@@ -1,7 +1,7 @@
 //Industry tiles definition; Waste Collection Point has 1 tile
 
 //Tile Action 0
--1 * 0 00 09 \b5 01 TILE_HOTELRESTAURANT_1 // -1 * 0 00 09 <num-props> 01 <id>
+-1 * 0 00 09 \b5 01 TILE_HOTEL_1 // -1 * 0 00 09 <num-props> 01 <id>
 	08 TILE_NULL //subsitute type
 	0A CARGO_FOOD 08 //tile acceptance 1
 	0B CARGO_ALCOHOL 08 //tile acceptance 2
@@ -12,7 +12,7 @@
 
 // include tiles and layouts, ! Action 2 IDs here are deliberately repeated by the various tile includes
 //#define THIS_GRAPHICS_FILE NULL.png
-#include "hotelrestaurant_tiles_layouts/hotelrestaurant_tiles_layouts.pnfo"
+#include "hotel_tiles_layouts/hotel_tiles_layouts.pnfo"
 
 -1 * 0 02 09 A1
 	82 44 //check layout number (lowest byte of related industry)
@@ -22,7 +22,7 @@
 	\wx00 //<default> (first tile layout available)
 
 //#define THIS_GRAPHICS_FILE NULL.png
-#include "hotelrestaurant_tiles_layouts/hotelrestaurant_tiles_layouts.pnfo"
+#include "hotel_tiles_layouts/hotel_tiles_layouts.pnfo"
 
 -1 * 0 02 09 A2
 	82 44 //check layout number (lowest byte of related industry)
@@ -32,7 +32,7 @@
 	\wx00 //<default> (first tile layout available)
 
 //#define THIS_GRAPHICS_FILE NULL_snow.png
-#include "hotelrestaurant_tiles_layouts/hotelrestaurant_tiles_layouts.pnfo"
+#include "hotel_tiles_layouts/hotel_tiles_layouts.pnfo"
 
 -1 * 0 02 09 A3
 	82 44 //check layout number (lowest byte of related industry)
@@ -52,22 +52,22 @@
 	\wxA1 //<default>
 
 //Tile Action 3
--1 * 0 03 09 01 TILE_HOTELRESTAURANT_1 00 \wxA0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
+-1 * 0 03 09 01 TILE_HOTEL_1 00 \wxA0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
 
 
 
 //Industry definition
 
 //Action 0
--1 * 0 00 0A \b26 01 IND_HOTELRESTAURANT //-1 * 0 00 0A <num-props> 01 <id>
+-1 * 0 00 0A \b26 01 IND_HOTEL //-1 * 0 00 0A <num-props> 01 <id>
 	08 IND_NULL //reuse original industry with this here ID
 	0A 01 //number of industry layouts
 		\d22 //size of layout definition +2 for termination
 		//layout:
-			00 00 FE TILE_HOTELRESTAURANT_1 00 //xoffs yoffs FE newtile(W)
-			00 01 FE TILE_HOTELRESTAURANT_1 00 //xoffs yoffs FE newtile(W)
-			01 00 FE TILE_HOTELRESTAURANT_1 00 //xoffs yoffs FE newtile(W)
-			01 01 FE TILE_HOTELRESTAURANT_1 00 //xoffs yoffs FE newtile(W)
+			00 00 FE TILE_HOTEL_1 00 //xoffs yoffs FE newtile(W)
+			00 01 FE TILE_HOTEL_1 00 //xoffs yoffs FE newtile(W)
+			01 00 FE TILE_HOTEL_1 00 //xoffs yoffs FE newtile(W)
+			01 01 FE TILE_HOTEL_1 00 //xoffs yoffs FE newtile(W)
 		00 80 //terminate layout definition
 	0B 00 //production flags 1h=extractive, 2h=organic, 4h=processing, 0h=no closure etc.
 	0C STR_IND_CLOSE_GENERIC //industry closure message
@@ -119,5 +119,5 @@
 
 
 //Industry action 3 attach varaction2 chain to industry
--1 * 0 03 0A 01 IND_HOTELRESTAURANT 00 \wxC0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>	
+-1 * 0 03 0A 01 IND_HOTEL 00 \wxC0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>	
 

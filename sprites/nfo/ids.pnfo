@@ -59,7 +59,7 @@
 //#define IND_VACANT                38
 #define IND_HARDWARESTORE           39
 #define IND_HARDWARESTORE_CONFLICT    B9
-#define IND_HOTELRESTAURANT       3A
+#define IND_HOTEL       3A
 #define IND_HOTELRESTAURANT_CONFLICT  BA
 #define IND_GENERALSTORE          3B
 #define IND_GENERALSTORE_CONFLICT BB // special case prevents stores too close (via prop 16). Set bit 7 (add 8 to first nibble of Store ID).
@@ -138,7 +138,7 @@
 #define TILE_SUGARREFINERY_1               D6
 #define TILE_OILWELLS_1                    D7
 #define TILE_OILWELLS_2                    D8
-#define TILE_HOTELRESTAURANT_1             D9
+#define TILE_HOTEL_1                       D9
 #define TILE_HARDWARESTORE_1               DA
 
 #define TILE_FIELD_TEST                    F0
