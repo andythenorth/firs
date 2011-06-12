@@ -205,7 +205,7 @@
 	0F \b101 //fund cost multiplier (byte)
 	19 CLR_JUNKYARD //map colour (byte; using indexes from dos palette)
 	23 \d0  //destruction cost multiplier (dword; default: 0)
-	1A \dx20 //special industry flag (dword)
+	1A \dx00 //special industry flag (dword)
 	21 BB //callback flags 
 	22 05  //callback flags
 	24 \w00 // Station name String ID. No special one, but don't use 'mine'.
@@ -217,6 +217,8 @@
 
 #include "../../../templates/cb28_generic_terminator.pnfo"
   
+#define THIS_DISTANCE_LIMIT_SQUARED  \w144
+#include "../../../templates/cb28_near_town.pnfo"
 
 #include "../../../templates/cb28_allow_player_build.pnfo"
 
