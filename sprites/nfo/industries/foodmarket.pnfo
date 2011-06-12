@@ -9,15 +9,6 @@
 	0D 10 //land shape flags: 10 = only on flat land
 
 
-//Industry tile sprites; one sprite for each tile; eventually more for each tile to include  construction stages
-
-//Tile Action 1
--1 * 0 01 09 \b1 \b2 //-1 * 0 01 09 <num-sets> <num-ent>
-// Format: spritenum pcxfile xpos ypos compression ysize xsize xrel yrel
--1 sprites/graphics/industries/foodmarket.png 0 0  09  36 64  -31 -4
--1 sprites/graphics/industries/foodmarket_snow.png 0 0  09  36 64  -31 -4
-
-
 // include tiles and layouts, ! Action 2 IDs here are deliberately repeated by the various tile includes
 #define THIS_GRAPHICS_FILE foodmarket.png
 #include "foodmarket_tiles_layouts/foodmarket_tiles_layouts.pnfo"
