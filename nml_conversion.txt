@@ -1,0 +1,5 @@
+First run automatic conversion. The following manual fixes are needed:
+
+action2_6382 refers to action2_63488, the default case should be "CB_FAILED" instead.
+param_5 has "bit: 0;" as property, nml doesn't support this, but since 0 is the default it can be left out.
+

@@ -1,0 +1,149 @@
+##grflangid 0x30
+STR_GENERIC_DC9B                                                                :Piec wapienny
+STR_GENERIC_DC26                                                                :Opakowania
+STR_GENERIC_DC25                                                                :{TINYFONT}LU
+STR_GENERIC_DC9A                                                                :Kopalnia gliny
+STR_GENERIC_DC22                                                                :Deski
+STR_GENERIC_DC21                                                                :{TINYFONT}GV
+STR_GENERIC_DC29                                                                :{TINYFONT}MS
+STR_PARAM_6_NAME                                                                :Tryb debugowania
+STR_GENERIC_D0A8                                                                :{}{RED}Nic nie dostarczono przez {POP_WORD}{POP_WORD}{WORD_S} miesiecy. Dalszy brak dostaw skonczy sie upadloscia spolki. {}
+STR_GENERIC_D0C1                                                                :{BLACK} (max 800)
+STR_GENERIC_D0C0                                                                :{BLACK} (max 200)
+STR_PARAM_1_DESC                                                                :Domyslnie produkcja w kopalniach i farmach nie spada.{}{}Jezeli parametr jest wlaczony, produkcja moze sie zmniejszyc jesli nie dostarczy sie odpowiednich zasobow. Im wyzsza produkcja, tym wiesza szansa na jej zmniejszenie.
+STR_GENERIC_DC1D                                                                :Kamienie
+STR_GENERIC_DC18                                                                :{TINYFONT}CT
+STR_GENERIC_DC19                                                                :Piasek
+STR_GENERIC_DC10                                                                :{TINYFONT}FI
+STR_GENERIC_DC11                                                                :Welna
+STR_GENERIC_DC14                                                                :{TINYFONT}WL
+STR_GENERIC_DC15                                                                :Wlokna naturalne
+STR_GENERIC_D0A5                                                                :{BLACK}Dostepne: {YELLOW}{DATE_LONG}
+STR_GENERIC_DC92                                                                :Stacja paliw
+STR_GENERIC_DC93                                                                :Lowisko
+STR_GENERIC_DC90                                                                :Ferma wiatrowa
+STR_GENERIC_DC2D                                                                :{TINYFONT}FS
+STR_GENERIC_DC96                                                                :Hurtownia
+STR_GENERIC_DC97                                                                :Supermarket
+STR_GENERIC_DC94                                                                :Kuznia
+STR_GENERIC_DC95                                                                :Wiatrak
+STR_GENERIC_DC98                                                                :Hipermarket
+STR_GENERIC_DC99                                                                :Cukrownia
+STR_PARAM_3_DESC                                                                :Domyslnie przedsiebiorstwa przetworcze nie upadaja.{}{}Jesli parametr jest wlaczony, spolki do ktorych nie dostarcza sie towrow upadaja po pewnym czasie.
+STR_GENERIC_DC09                                                                :Owoce i warzywa
+STR_GENERIC_DC08                                                                :{TINYFONT}BM
+STR_GENERIC_DC05                                                                :Materialy budowlane
+STR_GENERIC_DC04                                                                :{TINYFONT}SC
+STR_GENERIC_DC7B                                                                :Ubojnia bydla
+STR_GENERIC_DC7C                                                                :Dojarnia
+STR_GENERIC_DC01                                                                :Trzcina cukrowa
+STR_GENERIC_DC7E                                                                :Piekarnia
+STR_GENERIC_DC7F                                                                :Zaklady odziezowe
+STR_GENERIC_DCEA                                                                :{STRING} Poglebiarka
+STR_GENERIC_D022                                                                :{BLACK}Produkcja:{}  3 tony produkcji za 8 skrzyn zasobow produkcyjnych{}  5 ton produkcji za 8 ton zboza{}{}Produkcja wzrasta do 8 ton za 8t substratow gdy oba towary sa dostarczane w czasie krotszym niz 1 miesiac.
+STR_GENERIC_D023                                                                :{BLACK}Produkcja:{}  3 tony produkcji za 8 skrzyn zasobow produkcyjnych{}  5 ton produkcji za 8 ton zboza{}  5 ton produkcji za 8 ton owocow i warzyw{}{}Produkcja jest zwiekszona, gdy opakowania sa dostarczone najpozniej miesiac po towarach
+STR_PARAM_4_NAME                                                                :PZapobiegaj powstawaniu nowych przedsiebiorstw (niedokonczone)
+STR_GENERIC_D025                                                                :{BLACK}Produkcja:{}  3 tony produkcji za 8 skrzyn zasobow produkcyjnych{}  5 ton produckji za 8 sztuk zywca{}{}Produkcja wzrasta do 8 ton za 8t substratow gdy oba towary sa dostarczane w czasie krotszym niz 1 miesiac.
+STR_GENERIC_D026                                                                :{BLACK}Produkuje roznego rodazju maszyny.{}{}8 ton za dostarczenie 8 ton.
+STR_GENERIC_D027                                                                :{BLACK}Sprzedaje jedzenie uslugom gastronomicznym i szpitalom.{}{}8 ton za dostarczenie 8 ton.
+STR_GENERIC_D028                                                                :{BLACK}Produkuje nawozy z chemikaliow.{}{}8 ton za dostarczenie 8 ton.
+STR_GENERIC_D029                                                                :{BLACK}Produkuje ploty, slupy itd.{}{}{BLACK}Produkcja:{}  2 tony produkcji za 8 kl chemikaliow{}  6 ton produkcji za 8 ton desek{}{}Produkcja wzrasta do 8 ton za 8t substratow gdy oba towary sa dostarczane w czasie krotszym niz 1 miesiac.
+STR_GENERIC_DC2E                                                                :Chemikalia
+STR_GENERIC_DC84                                                                :Odlewnia metali
+STR_GENERIC_DC86                                                                :Gospodarstwo mieszane
+STR_GENERIC_DC81                                                                :Huta aluminium
+STR_GENERIC_DC80                                                                :Fabryka mebli
+STR_GENERIC_DC83                                                                :Sklad materialow drzewnych
+STR_GENERIC_DC82                                                                :Fabryka maszyn
+STR_GENERIC_D0A0                                                                :
+STR_PARAM_1_NAME                                                                :Pozwalaj na spadek produkcji w kopalniach i farmach
+STR_GENERIC_DC89                                                                :Zlomowisko
+STR_GENERIC_DC88                                                                :Wypas owiec
+STR_PARAM_4_DESC                                                                :{SILVER}Na razie nie robi nic. {BLACK}Gdy skonczone, umozliwi wlaczenie trybu sandboksowego dla tworcow scenariuszy.
+STR_GENERIC_D0A6                                                                :{}{BLACK}Przedsiebiorstwo upadnie jesli nic nie zostanie dostarczone w ciagu:{}{YELLOW}  {WORD_S} miesiecy
+STR_GENERIC_DC8E                                                                :Poglebiarka
+STR_GENERIC_DC8A                                                                :Sklep
+STR_GENERIC_DC2A                                                                :Sprzet rolniczy
+STR_GENERIC_DC8C                                                                :Port rybacki
+STR_GENERIC_DC8B                                                                :Kopalnia boksytu
+STR_GENERIC_D0AA                                                                :{BLACK}Dostepne: {YELLOW}1szy Sty 1610
+STR_GENERIC_D0AC                                                                :{BLACK}Dostepne: {YELLOW}1szy Sty 1762
+STR_GENERIC_D0AB                                                                :{BLACK}Dostepne: {YELLOW}1szy Sty 1730
+STR_GENERIC_D02A                                                                :{BLACK}Produkcja:{}  3 tony produkcji za 8 skrzyn zasobow produkcyjnych{}  5 ton pordukcji za 8 ton welny{}  5 ton produkcji za 8 ton wlokien naturalnych{}{}Produkcja jest zwiekszona, gdy opakowania sa dostarczone najpozniej miesiac po towarach
+STR_GENERIC_D02B                                                                :{BLACK}Produkcja:{}  2 tony produkcji za 8 ton wegla{}  2 tony produkcji za 8 ton gliny{}  4 tony produkcji za 8 ton kamieni{}{}Poziom produkcji wzrasta, jesli dwa lub wiecej towarow sa dostarczane w czasie krotszym niz 1 miesiac.
+STR_GENERIC_D02D                                                                :{BLACK}Produkcja:{}  2 tony produkcji za 8 ton wegla{}  2 tony produkcji za 8 ton piasku{}  4 tony produkcji za 8 ton gliny{}{}Poziom produkcji wzrasta, jesli dwa lub wiecej towarow sa dostarczane w czasie krotszym niz 1 miesiac.
+STR_GENERIC_D02E                                                                :{BLACK}Przerabia zboze i cukier na paliwo i chemikalia.{}{}6 ton za dostarczenie 8 ton
+STR_PARAM_0_DESC                                                                :FIRS docelowo ma skladac sie z kilku ekonomii rozniacych sie przedsiebiorstwami, towarami i cenami. {}{}{SILVER}Na razie tylko jedna ekonomia jest dostepna :)
+STR_GENERIC_DCED                                                                :{STRING} Hurt/Detal
+STR_GENERIC_DCEC                                                                :{STRING} Kuznia
+STR_GENERIC_DC78                                                                :Zaklady chemiczne
+STR_GENERIC_DC79                                                                :Fabryka tworzyw sztucznych
+STR_GENERIC_DC70                                                                :Pole uprawne
+STR_GENERIC_DC71                                                                :Kamieniolomy
+STR_GENERIC_DC72                                                                :Spolka budowlana
+STR_GENERIC_DC73                                                                :Browar
+STR_GENERIC_DC74                                                                :Cementownia
+STR_GENERIC_DC75                                                                :Cegielnia
+STR_GENERIC_DC76                                                                :Biorafineria
+STR_GENERIC_DCE8                                                                :{STRING} Odkrywka
+STR_GENERIC_DCE9                                                                :{STRING} Depozyt
+STR_GENERIC_DCE6                                                                :{STRING} Fabryka
+STR_GENERIC_DCE7                                                                :{STRING} Zaklady
+STR_GENERIC_DCE4                                                                :{STRING} Rafineria
+STR_GENERIC_DCE2                                                                :{STRING} Zaklady
+STR_GENERIC_DCE3                                                                :{STRING} Pole Naftowe
+STR_GENERIC_DCE0                                                                :{STRING} Farma
+STR_GENERIC_D01F                                                                :{BLACK}Produkcja:{}  3 tony produkcji za 8 skrzyn zasobow produkcyjnych{}  5 ton produkcji za 8 ton ryb{}{}Produkcja wzrasta do 8 ton za 8t substratow gdy oba towary sa dostarczane w czasie krotszym niz 1 miesiac.
+STR_GENERIC_D007                                                                :{BLACK}Produkcja:{}  2 tony produkcji za 8 ton rudy zelaza{}  2 tony produkcji za 8 ton wegla{}  4 tony produkcji za 8 ton zlomu{}{}Poziom produkcji wzrasta, jesli dwa lub wiecej towarow sa dostarczane w czasie krotszym niz 1 miesiac.
+STR_GENERIC_D002                                                                :{BLACK} {}{}8 ton za dostarczenie 8 ton.
+STR_GENERIC_D001                                                                :{BLACK}Produkcja:{}  4 tony produkcji za 8 ton kamieni{}  4 tony produkcji za 8 ton wegla{}{}Produkcja wzrasta do 8 ton za 8t substratow gdy oba towary sa dostarczane w czasie krotszym niz 1 miesiac.
+STR_GENERIC_D040                                                                :{BLACK}Produkcja:{}  3 tony produkcji za 8 skrzyn zasobow produkcyjnych{}  5 ton produkcji za 8 ton trzciny/buraka cukrowego{}{}Produkcja wzrasta do 8 ton za 8t substratow gdy oba towary sa dostarczane w czasie krotszym niz 1 miesiac.
+STR_GENERIC_D008                                                                :{BLACK}Produkcja:{}  4 tony produkcji za 8 ton boksytu{}  2 tony produkcji za 8 kl chemikaliow{}  4 tony produkcji za 8 ton zlomu{}{}Poziom produkcji wzrasta, jesli dwa lub wiecej towarow sa dostarczane w czasie krotszym niz 1 miesiac.
+STR_GENERIC_D009                                                                :{BLACK}Produkuje narzedzia i czesci z dostarczonych metali.{}{}8 ton za dostarczenie 8 ton.
+STR_GENERIC_DC7A                                                                :Huta szkla
+STR_GENERIC_D0D2                                                                :{}
+STR_GENERIC_D0D3                                                                :{WHITE}Nie akceptuje sprzetu rolniczego{BLACK}{}(Limit osiagniety)
+STR_GENERIC_D0D0                                                                :{}
+STR_GENERIC_D0D1                                                                :{WHITE}Nie akceptuje maszyn {BLACK}{}(Limit osiagniety)
+STR_GENERIC_D0D4                                                                :{}
+STR_GENERIC_D0D5                                                                :{WHITE}Nie akceptuje opakowan{BLACK}{}(Limit osiagniety)
+STR_GENERIC_DC7D                                                                :Mleczarnia
+STR_GENERIC_D00D                                                                :{BLACK}Produkcja:{}  3 tony produkcji za 8 skrzyn zasobow produkcyjnych{}  5 ton produkcji za 8 ton desek{}{}Produkcja wzrasta do 8 ton za 8t substratow gdy oba towary sa dostarczane w czasie krotszym niz 1 miesiac.
+STR_GENERIC_D00E                                                                :{BLACK}Mieli drewno na papier i karton.{}{}{BLACK}Produkcja:{}  4 tony produkcji za 8 ton drewna{}  2 tony produkcji za 8 ton gliny{}  2 tony produkcji za 8 kl chemikaliow{}{}Poziom produkcji wzrasta, jesli dwa lub wiecej towarow sa dostarczane w czasie krotszym niz 1 miesiac.
+STR_GENERIC_D00C                                                                :{BLACK}Drzewo sie rznie. Jest deska, jest sek. {}{}6 ton za dostarczenie 8 ton
+STR_GENERIC_DC1C                                                                :{TINYFONT}SA
+STR_GENERIC_D0A7                                                                :{}{BLACK}Przedsiebiorstwo upadnie jesli nic nie zostanie dostarczone w ciagu:{}{WHITE}  {WORD_S} miesiaca
+STR_PARAM_2_DESC                                                                :Domysklnie kopalnie i farmy nie upadaja.{}{}Jezeli parametr jest wlaczony, przedsiebiorstwo upada, jesli jego produkcja zejdzie do zbyt niskiego poziomu. {SILVER}Parametr 'pozwalaj na spadek produkcji w kopalniach i farmach' musi byc wlaczony.
+STR_GENERIC_D011                                                                :{BLACK}W procesie rafinowania produkuje paliwo i chemikalia.{}{}6 ton za dostarczenie 8 ton
+STR_GENERIC_D012                                                                :{BLACK}Produkuje artykuly plastikowe na uzytek przedsiebiorstw i gospodarstw domowych.{}{}6 ton za dostarczenie 8 ton
+STR_GENERIC_D016                                                                :{BLACK}Produkuje butelki, sloje, szyby i inne rzeczy ze szkla.{}{}{BLACK}Produkcja:{}  6 ton produkcji za 8 ton piasku{}  2 tony produkcji za 8 kl chemikaliow{}{}Produkcja wzrasta do 8 ton za 8t substratow gdy oba towary sa dostarczane w czasie krotszym niz 1 miesiac.
+STR_GENERIC_DC54                                                                :{TINYFONT}SB
+STR_GENERIC_DCEB                                                                :{STRING} Lowisko
+STR_PARAM_3_NAME                                                                :Pozwalaj zakladom przetworczym na upadlosc.
+STR_GENERIC_DC51                                                                :Buraki cukrowe
+STR_GENERIC_DC43                                                                :Mleko
+STR_GENERIC_DC45                                                                :{TINYFONT}MK
+STR_GENERIC_DC46                                                                :Zlom
+STR_GENERIC_DC49                                                                :{TINYFONT}SM
+STR_GENERIC_D0B0                                                                :{BLACK}Dostawy maszyn moga zwiekszyc produkcje{}{YELLOW}  {DWORD_S} skrzyn dostarczono w tym miesiacu
+STR_GENERIC_DC3F                                                                :{TINYFONT}ML
+STR_GENERIC_DC3B                                                                :{TINYFONT}BX
+STR_GENERIC_DC3C                                                                :Metal
+STR_GENERIC_DC34                                                                :{TINYFONT}ES
+STR_GENERIC_DC35                                                                :Paliwo
+STR_PARAM_2_NAME                                                                :Pozwalaj na upadlosc kopaln i farm
+STR_GENERIC_DC37                                                                :{TINYFONT}FO
+STR_GENERIC_DC30                                                                :{TINYFONT}CH
+STR_GENERIC_DC31                                                                :Maszyny
+STR_PARAM_0_NAME                                                                :Ekonomia
+STR_GENERIC_DC38                                                                :Boksyt
+STR_GENERIC_DC0D                                                                :Ryby
+STR_GENERIC_D024                                                                :{BLACK}Produkcja:{}  3 tony produkcji za 8 skrzyn zasobow produkcyjnych{}  5 ton produkcji za 8 kl mleka{}{}Produkcja wzrasta do 8 ton za 8t substratow gdy oba towary sa dostarczane w czasie krotszym niz 1 miesiac.
+STR_GRF_DESC                                                                    :{ORANGE}FIRS Industry Replacement Set{}{BLACK}Autorzy: {SILVER}andythenorth{BLACK} i {SILVER}FooBar{BLACK}.{}{BLACK}'1,000 i wiecej zmian...'{BLACK}{}{}Strona internetowa: {SILVER}www.tt-foundry.com/sets/FIRS{BLACK}.Licencja: {SILVER}GPL v2{BLACK}.Podziekowania dla {SILVER}Ammler{BLACK}, {SILVER}Core Xii{BLACK}, {SILVER}Irwe{BLACK}, {SILVER}planetmaker{BLACK} i {SILVER}Zephyris{BLACK}.Wykorzystuje elementy {SILVER}eGRVTS{BLACK}, {SILVER}ISR{BLACK} and {SILVER}OpenGFX{BLACK}.
+STR_PARAM_6_DESC                                                                :Tylko dla deweloperow
+STR_GENERIC_DC4A                                                                :Glina
+STR_GENERIC_D0B1                                                                :{BLACK}Dostawy sprzetu rolniczego moga zwiekszyc produkcje.{}{YELLOW}  {DWORD_S} skrzyn dostarczono w tym miesiacu
+STR_GENERIC_D0B2                                                                :{BLACK}Dostarczanie opakowan pozwala na podwojenie produkcji.{}{}{STRING}
+STR_GENERIC_D0B3                                                                :{BLACK}Osiagnieto maksymalny poziom produkcji
+STR_GENERIC_DC4D                                                                :{TINYFONT}CL
+STR_PARAM_0_VALUE_0                                                             :Ekonomia testowa
