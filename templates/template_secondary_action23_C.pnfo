@@ -413,12 +413,25 @@
        FB 00  00 00 00 00  00 00 00 00
      FB 00 //default
 
+#ifdef THIS_STR_INFO_CB3A_TROPICAL
+-1 * 0 02 0A F0
+    81
+      03 00 FF
+    \b1
+      THIS_STR_INFO_CB3A_TROPICAL 80   02 02
+      THIS_STR_INFO_CB3A 80
+#endif
+
 -1 * 0 02 0A F0 //
     81 // 
       7F DEBUG_PARAMETER 00 DEBUG_PARAMETER_INDUSTRY_TEXT_BIT // check if first bit is set for debug parameter
     \b1 //range
        FA 00  DEBUG_PARAMETER_INDUSTRY_TEXT_BIT  DEBUG_PARAMETER_INDUSTRY_TEXT_BIT
+#ifndef THIS_STR_INFO_CB3A_TROPICAL
      THIS_STR_INFO_CB3A 80 //default
+#else
+     F0 00
+#endif
 
 
 // !! the logic for output limit is flawed.  This assumes limit is FF FF; when 2 output cargos are split 50:50, output limit before split is 2 * FF FF
@@ -473,6 +486,7 @@
 #undef THIS_INDUSTRY
 #undef THIS_HANDLE_CB28
 #undef THIS_STR_INFO_CB3A
+#undef THIS_STR_INFO_CB3A_TROPICAL
 #undef THIS_STR_INFO_CB38
 #undef THIS_NUM_INPUT_CARGOS
 #undef THIS_NUM_OUTPUT_CARGOS
