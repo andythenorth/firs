@@ -3,29 +3,37 @@
 //Tile action 1
 -1 * 0 01 09 \b5 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
 // Format: spritenum pcxfile xpos ypos compression ysize xsize xrel yrel
+//barn
 -1 sprites/graphics/industries/THIS_GRAPHICS_FILE  10 10 09  52 64 -31 -21
+//farmhouse
 -1 sprites/graphics/industries/THIS_GRAPHICS_FILE  80 10 09  52 64 -31 -21
+//small shed
 -1 sprites/graphics/industries/THIS_GRAPHICS_FILE 150 10 09  52 64 -31 -21
+//sheepfolds
 -1 sprites/graphics/industries/THIS_GRAPHICS_FILE 220 10 09  52 64 -31 -21
 -1 sprites/graphics/industries/THIS_GRAPHICS_FILE 290 10 09  52 64 -31 -21
 
 
 //Tile action 2 
+//barn
 -1 * 0 02 09 00 00 //-1 * 0 02 09 <set-id> 00
 	\d3981 //groundsprite
 	\dx80008000 //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b24 //xextent yextent zextent
+//farmhouse
 -1 * 0 02 09 01 00 //-1 * 0 02 09 <set-id> 00
 	\d3981 //groundsprite
 	\dx80008001 //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b24 //xextent yextent zextent
+//small shed	
 -1 * 0 02 09 02 00 //-1 * 0 02 09 <set-id> 00
 	\d3981 //groundsprite
 	\dx80008002 //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b24 //xextent yextent zextent
+//sheepfolds	
 -1 * 0 02 09 03 00 //-1 * 0 02 09 <set-id> 00
 	\d3981 //groundsprite
 	\dx80008003 //building sprite
@@ -42,10 +50,20 @@
 	85 43 //check relative position (00yx[YYXX])
 	00 FF FF //don't shift, don't mask
 	\b4 //range
-    \wx00   03 00  03 00
-    \wx01   01 00  01 00
     \wx02   00 00  00 00
+    \wx01   01 00  01 00
     \wx03   01 02  01 02
+    \wx00   03 00  03 00
+	\wx04 //03 01  03 01 <default>
+
+-1 * 0 02 09 B2 //layout
+	85 43 //check relative position (00yx[YYXX])
+	00 FF FF //don't shift, don't mask
+	\b4 //range
+    \wx01   00 00  00 00
+    \wx00   00 01  00 01
+    \wx03   00 02  00 02
+    \wx02   02 00  02 00
 	\wx04 //03 01  03 01 <default>
 		
 	
