@@ -52,10 +52,15 @@
 	0D 00 //land shape flags: 10 = only on flat land
 	0E 10 //callback flags
 
+//Tile action 1
+-1 * 0 01 09 \b1 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
+// Format: spritenum pcxfile xpos ypos compression ysize xsize xrel yrel
+-1 sprites/graphics/industries/oilwell.png  10 10 09  38 64 -31 -9
+
 //Greeble tile action 2 (currently using pump sprite - temporary)	
 -1 * 0 02 09 00 00 //-1 * 0 02 09 <set-id> 00
-	\d2173 //groundsprite
-	\d2176 //building sprite
+	\d2022 //groundsprite
+	\dx80008000 //building sprite
 	\b1 \b2 //xofs yofs
 	\b15 \b14 \b16 //xextent yextent zextent
 
