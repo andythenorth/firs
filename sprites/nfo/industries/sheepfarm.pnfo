@@ -67,6 +67,21 @@
 	\wxA1 //<default>
 
 
+-1 * 0 02 09 A1 // procedure for returning climate-dependent ground tile !! waiting on nforenum support for advanced sprite layouts
+  81 41 00 FF
+  \b2
+    \wx91C6  \b1  \b1 // desert // values will be wrong for these tiles!!
+    \wx91C6  \b4  \b4 // snow
+  \wx8F8D        // normal
+
+-1 * 0 02 09 A0
+  81 7E A1 20 FF // Get ground tile from procedure
+  \2+    7E 41 20 FF // Add climate offset from procedure 41
+  \2sto  1A    00 \bx10 // Store in register 0x10
+  \b1 //range
+    \wxA0   \b0 \b0
+  \wxA0
+
 // handle cb 2f for building on slopes (uses ID C0)
 // allow building on *steep* slopes
 // prevent building on coasts
