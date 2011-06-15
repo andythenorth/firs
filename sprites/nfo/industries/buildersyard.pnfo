@@ -11,54 +11,55 @@
 	0E 10 //callback flags
 
 
-//Industry tile sprites; one sprite for each tile; eventually more for each tile to include  construction stages
-
-//Tile Action 1
--1 * 0 01 09 \b3 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
-// ground tile
--1 sprites/graphics/industries/groundtiles.pcx  10 10 09   31 64 -31   0
-// Format: spritenum pcxfile xpos ypos compression ysize xsize xrel yrel
--1 sprites/graphics/industries/buildersyard.pcx  10 10 09  51 64 -31 -13
--1 sprites/graphics/industries/buildersyard.pcx  80 10 09  51 64 -31 -13
-
-
-//Tile Action 2 
--1 * 0 02 09 00 00 //-1 * 0 02 09 <set-id> 00
-	\d2022 //groundsprite
-	\dx80008001 //building sprite
-	\b0 \b0 //xofs yofs
-	\b16 \b16 \b16 //xextent yextent zextent
--1 * 0 02 09 01 00 //-1 * 0 02 09 <set-id> 00
-	\d2022 //groundsprite
-	\dx80008002 //building sprite
-	\b0 \b0 //xofs yofs
-	\b16 \b16 \b16 //xextent yextent zextent
-
-
--1 * 0 02 09 B1//layout
-	85 43 //check relative position (00yx[YYXX])
-	00 FF FF //don't shift, don't mask
-	\b2 //number of ranges to check (number of tiles) [range: XX YY  XX YY]
-    \wx00   00 00  00 00
-    \wx01   00 01  00 01
-	\wx00 //01 02  01 02 <default>
-
--1 * 0 02 09 B2//layout
-	85 43 //check relative position (00yx[YYXX])
-	00 FF FF //don't shift, don't mask
-	\b2 //number of ranges to check (number of tiles) [range: XX YY  XX YY]
-    \wx00   00 00  00 00
-    \wx01   01 00  01 00
-	\wx00 //01 02  01 02 <default>
-
-
--1 * 0 02 09 A0 
+// include tiles and layouts, ! Action 2 IDs here are deliberately repeated by the various tile includes
+// temperate
+#define THIS_GRAPHICS_FILE buildersyard.png
+#include "buildersyard_tiles_layouts/buildersyard_tiles_layouts.pnfo"
+                   
+-1 * 0 02 09 A1
 	82 44 //check layout number (lowest byte of related industry)
 	00 FF //don't shift, don't mask
 	\b2 //number of ranges to check (number of layouts)
     \wxB1 \b1 \b1 //<set-id \w> <low-range> <high-range>
     \wxB2 \b2 \b2 //<set-id \w> <low-range> <high-range>
-	\wx00 //<default> (first tile layout available)
+	\wxB1 //<default> (first layout available)
+
+// include tiles and layouts, ! Action 2 IDs here are deliberately repeated by the various tile includes
+// tropic
+#define THIS_GRAPHICS_FILE buildersyard.png
+#include "buildersyard_tiles_layouts/buildersyard_tiles_layouts.pnfo"
+                   
+-1 * 0 02 09 A2
+	82 44 //check layout number (lowest byte of related industry)
+	00 FF //don't shift, don't mask
+	\b2 //number of ranges to check (number of layouts)
+    \wxB1 \b1 \b1 //<set-id \w> <low-range> <high-range>
+    \wxB2 \b2 \b2 //<set-id \w> <low-range> <high-range>
+	\wxB1 //<default> (first layout available)
+
+// include tiles and layouts, ! Action 2 IDs here are deliberately repeated by the various tile includes
+// snow
+#define THIS_GRAPHICS_FILE buildersyard_snow.png
+#include "buildersyard_tiles_layouts/buildersyard_tiles_layouts.pnfo"
+                                     
+-1 * 0 02 09 A3
+	82 44 //check layout number (lowest byte of related industry)
+	00 FF //don't shift, don't mask
+	\b2 //number of ranges to check (number of layouts)
+    \wxB1 \b1 \b1 //<set-id \w> <low-range> <high-range>
+    \wxB2 \b2 \b2 //<set-id \w> <low-range> <high-range>
+	\wxB1 //<default> (first layout available)
+
+
+// check terrain type and branch to different layout checks appropriately
+-1 * 0 02 09 A0 
+	81 41 //check terrain type (lowest byte of related industry)
+	00 FF //don't shift, don't mask
+	\b2 //number of ranges to check (number of layouts)
+	  \wxA2 \b1 \b1 //<set-id \w> <low-range> <high-range>  // desert
+	  \wxA3 \b4 \b4 //<set-id \w> <low-range> <high-range>  // snow
+	\wxA1 //<default>
+	
 	
 //handle cb2f (tile shape check)
 #include "../../../templates/cb2f_prevent_industry_overlap.pnfo"     
