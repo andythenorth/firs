@@ -1,26 +1,33 @@
 //Industry tile sprites; one sprite for each tile; eventually more for each tile to include  construction stages
 
 //Tile Action 1
--1 * 0 01 09 \b3 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
+-1 * 0 01 09 \b4 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
 // ground tile
 -1 sprites/graphics/industries/groundtiles.pcx  10 10 09   31 64 -31   0
-// Format: spritenum pcxfile xpos ypos compression ysize xsize xrel yrel
+// sheds
 -1 sprites/graphics/industries/THIS_GRAPHICS_FILE  10 10 09  51 64 -31 -13
 -1 sprites/graphics/industries/THIS_GRAPHICS_FILE  80 10 09  51 64 -31 -13
+// snow overlay for ground tile
+-1 sprites/graphics/industries/THIS_GRAPHICS_FILE 150 10 09  43 64 -31 -13
 
 
 //Tile Action 2 
--1 * 0 02 09 00 00 //-1 * 0 02 09 <set-id> 00
+-1 * 0 02 09 00 02 //-1 * 0 02 09 <set-id> 00 (extended format)
 	\d2022 //groundsprite
+	\dx80008003 //building sprite
+	\b0 \b0 \b0 //xofs yofs zofs
+	\b16 \b16 \b16 //xextent yextent zextent
 	\dx80008001 //building sprite
-	\b0 \b0 //xofs yofs
+	\b0 \b0 \b0 //xofs yofs zofs
 	\b16 \b16 \b16 //xextent yextent zextent
--1 * 0 02 09 01 00 //-1 * 0 02 09 <set-id> 00
+-1 * 0 02 09 01 02 //-1 * 0 02 09 <set-id> 00 (extended format)
 	\d2022 //groundsprite
-	\dx80008002 //building sprite
-	\b0 \b0 //xofs yofs
+	\dx80008003 //building sprite
+	\b0 \b0 \b0 //xofs yofs zofs
 	\b16 \b16 \b16 //xextent yextent zextent
-
+	\dx80008002 //building sprite
+	\b0 \b0 \b0 //xofs yofs zofs
+	\b16 \b16 \b16 //xextent yextent zextent
 
 -1 * 0 02 09 B1//layout
 	85 43 //check relative position (00yx[YYXX])
