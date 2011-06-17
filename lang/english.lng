@@ -7,10 +7,10 @@ STR_GENERIC_DC22                                                                
 STR_GENERIC_DC21                                                                :{TINYFONT}ST
 STR_GENERIC_DC29                                                                :{TINYFONT}MS
 STR_GENERIC_DC28                                                                :{WORD_S} crates of manufacturing supplies
-STR_ERROR_107                                                                   :{ORANGE}E02: {YELLOW}Incompatible parameter: {ORANGE}CanSet parameter 2 must be 0 to work with FIRS. {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERROR_107                                                                   :{ORANGE}E04: {YELLOW}Incompatible version: {ORANGE}Total Town Replacement Set must be version release 3.02b / nightly r18 or higher and OpenTTD 1.1.0 / trunk r20675 or higher is required. {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 STR_GENERIC_D0A6                                                                :{}{BLACK}This industry might close unless any cargo is delivered within:{}{YELLOW}  months
 STR_GENERIC_DC9A                                                                :Clay Pit
-STR_ERROR_103                                                                   :{ORANGE}E02: {YELLOW}Incompatible parameter: {ORANGE}NA City Set parameter 2 must be 0 to work with FIRS. {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERROR_103                                                                   :{ORANGE}E02: {YELLOW}Incompatible parameter: {ORANGE}CanSet parameter 2 must be 0 to work with FIRS. {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 STR_PARAM_6_NAME                                                                :Show debug texts
 STR_GENERIC_D0A8                                                                :{}{RED}No cargo has been delivered for at least {POP_WORD}{POP_WORD}months. This industry may close soon. {}
 STR_GENERIC_DCE9                                                                :{STRING} Depot
@@ -36,6 +36,7 @@ STR_GENERIC_D0A3                                                                
 STR_GENERIC_DC93                                                                :Fishing Grounds
 STR_PARAM_1_NAME                                                                :Allow primary production decrease
 STR_GENERIC_DCE3                                                                :{STRING} Wells
+STR_GENERIC_DC71                                                                :Quarry
 STR_GENERIC_DC89                                                                :Junk Yard
 STR_GENERIC_DC92                                                                :Petrol Pump
 STR_GENERIC_DC2F                                                                :{VOLUME} of chemicals
@@ -45,11 +46,11 @@ STR_GENERIC_DC2C                                                                
 STR_ERROR_65                                                                    :{ORANGE}E01: {YELLOW}Incompatible set: {ORANGE}Luukland Citybuilder {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 STR_GENERIC_DC2A                                                                :Farm Supplies
 STR_GENERIC_DC95                                                                :Windmill
-STR_ERROR_71                                                                    :{ORANGE}E01: {YELLOW}Incompatible set: {ORANGE}Luukland Citybuilder {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERROR_71                                                                    :{ORANGE}E01: {YELLOW}Incompatible set: {ORANGE}Ex Citybuilder {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 STR_GENERIC_DC98                                                                :Retail Market
-STR_ERROR_73                                                                    :{ORANGE}E01: {YELLOW}Incompatible set: {ORANGE}Ex Citybuilder {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
-STR_ERROR_75                                                                    :{ORANGE}E01: {YELLOW}Incompatible set: {ORANGE}Ex Citybuilder {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
-STR_ERROR_77                                                                    :{ORANGE}E01: {YELLOW}Incompatible set: {ORANGE}UKRS Industries {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERROR_73                                                                    :{ORANGE}E01: {YELLOW}Incompatible set: {ORANGE}UKRS Industries {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERROR_75                                                                    :{ORANGE}E01: {YELLOW}Incompatible set: {ORANGE}Manual Industries {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERROR_77                                                                    :{ORANGE}E01: {YELLOW}Incompatible set: {ORANGE}Tourist Set {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 STR_GENERIC_DC09                                                                :Fruit and Vegetables
 STR_GENERIC_DC08                                                                :{TINYFONT}BM
 STR_GENERIC_DC05                                                                :Building Materials
@@ -65,13 +66,13 @@ STR_GENERIC_D023                                                                
 STR_PARAM_4_NAME                                                                :Prevent industry construction (unfinished)
 STR_GENERIC_D025                                                                :{BLACK}Cargo production:{}  3t per 8t manufacturing supplies delivered{}  5t per 8t livestock delivered{}{}Increases to 8t per 8t when both cargos are delivered within a month of each other.
 STR_GENERIC_D026                                                                :{BLACK}Builds and services machinery.{}{}8t production per 8t delivered.
-STR_ERROR_79                                                                    :{ORANGE}E01: {YELLOW}Incompatible set: {ORANGE}Manual Industries {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERROR_79                                                                    :{ORANGE}E01: {YELLOW}Incompatible set: {ORANGE}Oil well decrease neutralizer {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 STR_GENERIC_D028                                                                :{BLACK}Processes chemicals into fertiliser for use by farms.{}{}8t production per 8t delivered.
 STR_GENERIC_D029                                                                :{BLACK}Produces items such as poles and fence posts.{}{}{BLACK}Cargo production:{}  2t per 8t chemicals delivered{}  6t per 8t lumber delivered{}{}Increases to 8t per 8t when both cargos are delivered within a month of each other.
 STR_GENERIC_DC90                                                                :Wind Farm
 STR_GENERIC_DC85                                                                :Recycling Plant
 STR_GENERIC_DC84                                                                :Metal Foundry
-STR_ERROR_69                                                                    :{ORANGE}E01: {YELLOW}Incompatible set: {ORANGE}Luukland Citybuilder {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERROR_69                                                                    :{ORANGE}E01: {YELLOW}Incompatible set: {ORANGE}Ex Citybuilder {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 STR_GENERIC_DC86                                                                :Mixed Farm
 STR_GENERIC_DC81                                                                :Aluminium Plant
 STR_GENERIC_DC80                                                                :Furniture Factory
@@ -79,7 +80,7 @@ STR_GENERIC_DC83                                                                
 STR_GENERIC_DC82                                                                :Machine Shop
 STR_GENERIC_D0A1                                                                :{BLACK}------------ DEBUG ------------{}{}{BLACK}Prod. ratio (out/in):{}{WHITE}1st Cargo: {WORD_S}/8 {}2nd Cargo: {WORD_S}/8 {}3rd Cargo: {WORD_S}/8 {}{}{BLACK}Cargo consumption (when cb ran):{}{WHITE}...From 1st Cargo: {WORD_S} {}...From 2nd Cargo: {WORD_S} {}...From 3rd Cargo: {WORD_S} {}{}{BLACK}Total production :{}{WHITE}1st Cargo: {WORD_S} {}2nd Cargo: {WORD_S} {}{}{BLACK}Output production limit (per input cargo):{}{WHITE}{DWORD_S}
 STR_GENERIC_DC96                                                                :Wholesale Market
-STR_ERROR_61                                                                    :{ORANGE}E01: {YELLOW}Incompatible set: {ORANGE}ECS Chemical Vector II {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERROR_61                                                                    :{ORANGE}E01: {YELLOW}Incompatible set: {ORANGE}Luukland Citybuilder {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 STR_GENERIC_D0A2                                                                :{BLACK}------------ DEBUG ------------{}{}{BLACK}Prod. ratio (out/in):{}{WHITE}2nd Cargo: {WORD_S}/8 {}3rd Cargo: {WORD_S}/8 {}{}{BLACK}Cargo consumption (when cb ran):{}{WHITE}...From 2nd Cargo: {WORD_S} {}...From 3rd Cargo: {WORD_S} {}{}{BLACK}Total production :{}{WHITE}1st Cargo: {WORD_S} {}2nd Cargo: {WORD_S} {}{}{BLACK}Production Supplies consumed last cycle:{}{WHITE}{DWORD_S}{}{BLACK}Output production limit (per input cargo):{}{WHITE}{DWORD_S}
 STR_ERROR_67                                                                    :{ORANGE}E01: {YELLOW}Incompatible set: {ORANGE}Luukland Citybuilder {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 STR_GENERIC_DC88                                                                :Sheep Farm
@@ -100,12 +101,13 @@ STR_GENERIC_D02E                                                                
 STR_PARAM_0_DESC                                                                :When finished, FIRS will feature a choice of economies. Cargos and industries vary in each economy. Cargo payment rates are also different in each economy. {}{}{SILVER}Currently only one economy is available :)
 STR_GENERIC_DCED                                                                :{STRING} Market
 STR_GENERIC_DC99                                                                :Sugar Refinery
+STR_GENERIC_D0D3                                                                :{WHITE}Not accepting farm supplies{BLACK}{}(Limit Reached)
 STR_GENERIC_DC53                                                                :\UE09A\0D of sugar beet
 STR_GENERIC_DC78                                                                :Fertiliser Plant
-STR_ERROR_57                                                                    :{ORANGE}E01: {YELLOW}Incompatible set: {ORANGE}ECS Machinery for Tropic {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
-STR_ERROR_55                                                                    :{ORANGE}E01: {YELLOW}Incompatible set: {ORANGE}ECS Basic for Tropic {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
-STR_ERROR_53                                                                    :{ORANGE}E01: {YELLOW}Incompatible set: {ORANGE}ESC Basic for Arctic {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
-STR_ERROR_51                                                                    :{ORANGE}E01: {YELLOW}Incompatible set: {ORANGE}ECS Agricultural Vector {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERROR_57                                                                    :{ORANGE}E01: {YELLOW}Incompatible set: {ORANGE}ECS Chemical Vector II {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERROR_55                                                                    :{ORANGE}E01: {YELLOW}Incompatible set: {ORANGE}ECS Construction Vector by Pikkabird {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERROR_53                                                                    :{ORANGE}E01: {YELLOW}Incompatible set: {ORANGE}ECS Machinery for Tropic {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERROR_51                                                                    :{ORANGE}E01: {YELLOW}Incompatible set: {ORANGE}ECS Basic for Tropic {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 STR_GENERIC_DC70                                                                :Arable Farm
 STR_GENERIC_DC0D                                                                :Fish
 STR_GENERIC_DC72                                                                :Builders Yard
@@ -113,18 +115,19 @@ STR_GENERIC_DC0F                                                                
 STR_GENERIC_DC74                                                                :Cement Plant
 STR_GENERIC_DC75                                                                :Brick Works
 STR_GENERIC_DC0C                                                                :\UE09A\0D of fruit and vegetables
-STR_ERROR_59                                                                    :{ORANGE}E01: {YELLOW}Incompatible set: {ORANGE}ECS Construction Vector by Pikkabird {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
-STR_ERROR_35                                                                    :{ORANGE}E01: {YELLOW}Incompatible set: {ORANGE}New Cargos {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
-STR_ERROR_37                                                                    :{ORANGE}E01: {YELLOW}Incompatible set: {ORANGE}New Cargos Petrol + Tourists {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERROR_59                                                                    :{ORANGE}E01: {YELLOW}Incompatible set: {ORANGE}Luukland Citybuilder {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 STR_GENERIC_D0B0                                                                :{BLACK}Engineering supplies may increase production.{}{YELLOW}  {DWORD_S} crates delivered this month
+STR_ERROR_35                                                                    :{ORANGE}E01: {YELLOW}Incompatible set: {ORANGE}ECS Town Vector {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERROR_37                                                                    :{ORANGE}E01: {YELLOW}Incompatible set: {ORANGE}ECS Basic Vector {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERROR_31                                                                    :{ORANGE}E01: {YELLOW}Incompatible set: {ORANGE}New Cargos {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 STR_GENERIC_DCE8                                                                :{STRING} Quarry
-STR_ERROR_33                                                                    :{ORANGE}E00: FIRS requires OpenTTD 1.1.0 / trunk r21208 or higher. {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERROR_33                                                                    :{ORANGE}E01: {YELLOW}Incompatible set: {ORANGE}New Cargos Petrol + Tourists {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 STR_GENERIC_DCE6                                                                :{STRING} Factory
 STR_GENERIC_DCE7                                                                :{STRING} Manufacturing Plant
 STR_GENERIC_DCE4                                                                :{STRING} Refinery
 STR_PARAM_5_VALUE_0                                                             :No limit
 STR_GENERIC_DCE2                                                                :{STRING} Mills
-STR_ERROR_39                                                                    :{ORANGE}E01: {YELLOW}Incompatible set: {ORANGE}ECS Town Vector {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERROR_39                                                                    :{ORANGE}E01: {YELLOW}Incompatible set: {ORANGE}ECS Chemical Vector {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 STR_GENERIC_DCE0                                                                :{STRING} Farm
 STR_ERROR_DATA_23                                                               :OpenTTD
 STR_GENERIC_DC11                                                                :Wool
@@ -138,26 +141,27 @@ STR_GENERIC_D001                                                                
 STR_GENERIC_D040                                                                :{BLACK}Cargo production:{}  3t per 8t manufacturing supplies delivered{}  5t per 8t sugar cane delivered{}{}Increases to 8t per 8t when both cargos are delivered within a month of each other.
 STR_GENERIC_D008                                                                :{BLACK}Cargo production:{}  2t per 8t bauxite delivered{}  2t per 8t chemicals delivered{}  4t per 8t scrap metal delivered{}{}Production steps up if two or more cargos are delivered within a month of each other.
 STR_GRF_DESC                                                                    :{ORANGE}FIRS Industry Replacement Set{}{BLACK}By {SILVER}andythenorth{BLACK} and {SILVER}FooBar{BLACK}.{}{BLACK}'1,000 commits and counting...'{BLACK}{}{}Website: {SILVER}www.tt-foundry.com/sets/FIRS{BLACK}.License: {SILVER}GPL v2{BLACK}.Special thanks to {SILVER}Ammler{BLACK}, {SILVER}Core Xii{BLACK}, {SILVER}Irwe{BLACK}, {SILVER}planetmaker{BLACK} and {SILVER}Zephyris{BLACK}.Uses parts of {SILVER}eGRVTS{BLACK}, {SILVER}ISR{BLACK} and {SILVER}OpenGFX{BLACK}.
-STR_ERROR_41                                                                    :{ORANGE}E01: {YELLOW}Incompatible set: {ORANGE}ECS Basic Vector {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
-STR_ERROR_43                                                                    :{ORANGE}E01: {YELLOW}Incompatible set: {ORANGE}ECS Chemical Vector {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
-STR_ERROR_45                                                                    :{ORANGE}E01: {YELLOW}Incompatible set: {ORANGE}ECS Machinery Vector {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
-STR_ERROR_47                                                                    :{ORANGE}E01: {YELLOW}Incompatible set: {ORANGE}ECS Wood Vector {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERROR_41                                                                    :{ORANGE}E01: {YELLOW}Incompatible set: {ORANGE}ECS Machinery Vector {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERROR_43                                                                    :{ORANGE}E01: {YELLOW}Incompatible set: {ORANGE}ECS Wood Vector {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERROR_45                                                                    :{ORANGE}E01: {YELLOW}Incompatible set: {ORANGE}ECS Construction Vector {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERROR_47                                                                    :{ORANGE}E01: {YELLOW}Incompatible set: {ORANGE}ECS Agricultural Vector {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 STR_GENERIC_DC7A                                                                :Glass Works
-STR_ERROR_49                                                                    :{ORANGE}E01: {YELLOW}Incompatible set: {ORANGE}ECS Construction Vector {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERROR_49                                                                    :{ORANGE}E01: {YELLOW}Incompatible set: {ORANGE}ESC Basic for Arctic {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 STR_GENERIC_DC7B                                                                :Stockyard
-STR_ERROR_27                                                                    :{ORANGE}FIRS is not designed to be used with Toyland climate
-STR_GENERIC_D0D3                                                                :{WHITE}Not accepting farm supplies{BLACK}{}(Limit Reached)
+STR_GENERIC_D0D2                                                                :{}
+STR_ERROR_26                                                                    :{ORANGE}FIRS is not designed to be used with Toyland climate
 STR_GENERIC_D0D0                                                                :{}
 STR_GENERIC_D0D1                                                                :{WHITE}Not accepting engineering supplies{BLACK}{}(Limit Reached)
 STR_GENERIC_D0D4                                                                :{}
 STR_GENERIC_D0D5                                                                :{WHITE}Not accepting manufacturing supplies{BLACK}{}(Limit Reached)
 STR_GENERIC_DC7D                                                                :Dairy
+STR_ERROR_29                                                                    :{ORANGE}E00: FIRS requires OpenTTD 1.1.0 / trunk r21208 or higher. {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 STR_GENERIC_DC7E                                                                :Grain Mill
 STR_GENERIC_D00D                                                                :{BLACK}Cargo production:{}  3t per 8t manufacturing supplies delivered{}  5t per 8t lumber delivered{}{}Increases to 8t per 8t when both cargos are delivered within a month of each other.
 STR_GENERIC_D00E                                                                :{BLACK}Pulps wood to produce paper and cardboard.{}{}{BLACK}Cargo production:{}  4t per 8t wood delivered{}  2t per 8t clay delivered{}  2t per 8t chemicals delivered{}{}Production steps up if two or more cargos are delivered within a month of each other.
 STR_GENERIC_DC7F                                                                :Textile Mill
 STR_GENERIC_DC1C                                                                :{TINYFONT}SA
-STR_GRF_NAME                                                                    :FIRS Industry Replacement Set 0.6-r1993M
+STR_GRF_NAME                                                                    :FIRS Industry Replacement Set 0.6-r2061M
 STR_PARAM_2_DESC                                                                :By default, FIRS primary industries will never close.{}{}If primary closing is turned on, primary industries will close when production falls to low levels (the level varies for each type of industry). {SILVER}Requires 'primary production decrease' on.
 STR_GENERIC_D011                                                                :{BLACK}Processes crude oil into petrol and chemicals.{}{}6t production per 8t delivered.
 STR_GENERIC_DCEC                                                                :{STRING} Forge
@@ -170,7 +174,6 @@ STR_GENERIC_DCEB                                                                
 STR_PARAM_3_NAME                                                                :Allow secondary industries to close
 STR_GENERIC_DC50                                                                :{TINYFONT}AL
 STR_GENERIC_DC51                                                                :Sugar Beet
-STR_GENERIC_D0D2                                                                :{}
 STR_GENERIC_DC43                                                                :Milk
 STR_GENERIC_DC45                                                                :{TINYFONT}MK
 STR_GENERIC_DC44                                                                :{VOLUME} of milk
@@ -178,12 +181,11 @@ STR_GENERIC_DC46                                                                
 STR_GENERIC_DC49                                                                :{TINYFONT}SM
 STR_GENERIC_DC48                                                                :\UE09A\0D of scrap metal
 STR_PARAM_3_DESC                                                                :By default, FIRS secondary industries will never close.{}{}If secondary closing is turned on, secondary industries may close if no cargo is transported for a long time.
-STR_ERROR_98                                                                    :{ORANGE}E01: {YELLOW}Incompatible set: {ORANGE}Lumber Mill {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
-STR_ERROR_92                                                                    :{ORANGE}E01: {YELLOW}Incompatible set: {ORANGE}NewCargos by Michael Blunck {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
-STR_ERROR_90                                                                    :{ORANGE}E01: {YELLOW}Incompatible set: {ORANGE}Pikka Basic Industries {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
-STR_ERROR_96                                                                    :{ORANGE}E01: {YELLOW}Incompatible set: {ORANGE}Nearby Station Names {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERROR_99                                                                    :{ORANGE}E02: {YELLOW}Incompatible parameter: {ORANGE}NA City Set parameter 2 must be 0 to work with FIRS. {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERROR_92                                                                    :{ORANGE}E01: {YELLOW}Incompatible set: {ORANGE}Nearby Station Names {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERROR_90                                                                    :{ORANGE}E01: {YELLOW}Incompatible set: {ORANGE}Alpine Climate {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 STR_GENERIC_D013                                                                :{BLACK}Cargo production:{}  3t per 8t manufacturing supplies delivered{}  5t per 8t sugar beet delivered{}{}Increases to 8t per 8t when both cargos are delivered within a month of each other.
-STR_ERROR_94                                                                    :{ORANGE}E01: {YELLOW}Incompatible set: {ORANGE}Alpine Climate {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERROR_94                                                                    :{ORANGE}E01: {YELLOW}Incompatible set: {ORANGE}Lumber Mill {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 STR_GENERIC_DC76                                                                :Biorefinery
 STR_GENERIC_DC79                                                                :Plastics Plant
 STR_GENERIC_D0B2                                                                :{BLACK}Manufacturing supplies double production from other cargos.{}{}{STRING}
@@ -201,15 +203,13 @@ STR_GENERIC_DC31                                                                
 STR_GENERIC_DC33                                                                :{WORD_S} crates of engineering supplies
 STR_PARAM_0_NAME                                                                :Economy
 STR_GENERIC_DC38                                                                :Bauxite
-STR_ERROR_86                                                                    :{ORANGE}E01: {YELLOW}Incompatible set: {ORANGE}Experts hard industries {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
-STR_ERROR_81                                                                    :{ORANGE}E01: {YELLOW}Incompatible set: {ORANGE}Tourist Set {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
-STR_ERROR_83                                                                    :{ORANGE}E01: {YELLOW}Incompatible set: {ORANGE}Oil well decrease neutralizer {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
-STR_GENERIC_DC71                                                                :Quarry
+STR_ERROR_84                                                                    :{ORANGE}E01: {YELLOW}Incompatible set: {ORANGE}UKRS Brick Chain {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERROR_86                                                                    :{ORANGE}E01: {YELLOW}Incompatible set: {ORANGE}Pikka Basic Industries {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERROR_82                                                                    :{ORANGE}E01: {YELLOW}Incompatible set: {ORANGE}Experts hard industries {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 STR_GENERIC_D024                                                                :{BLACK}Cargo production:{}  3t per 8t manufacturing supplies delivered{}  5t per 8t milk delivered{}{}Increases to 8t per 8t when both cargos are delivered within a month of each other.
-STR_ERROR_88                                                                    :{ORANGE}E01: {YELLOW}Incompatible set: {ORANGE}UKRS Brick Chain {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERROR_88                                                                    :{ORANGE}E01: {YELLOW}Incompatible set: {ORANGE}NewCargos by Michael Blunck {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 STR_GENERIC_DC73                                                                :Brewery
 STR_PARAM_6_DESC                                                                :For developers only
-STR_ERROR_111                                                                   :{ORANGE}E04: {YELLOW}Incompatible version: {ORANGE}Total Town Replacement Set must be version release 3.02b / nightly r18 or higher and OpenTTD 1.1.0 / trunk r20675 or higher is required. {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 STR_GENERIC_D027                                                                :{BLACK}Sells products to food & beverage and hospitality businesses.{}{}8t production per 8t delivered.
 STR_GENERIC_DC4A                                                                :Clay
 STR_GENERIC_D0B1                                                                :{BLACK}Farm supplies may increase production.{}{YELLOW}  {DWORD_S} crates delivered this month

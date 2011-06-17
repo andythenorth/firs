@@ -9,12 +9,12 @@
 -1 * 0 09 9A 01 \71 00 00
 
 //Skip next checks  if debug parameter set
--1 * 0 09 //Action 9
-	DEBUG_PARAMETER //variable: debug parameter
-	01 //varsize in bytes
-	\71 //condition: bit set
-	DEBUG_PARAMETER_DISABLE_CHECKS_BIT //value: checks skip bit
-	FF //label
+//-1 * 0 09 //Action 9
+//	DEBUG_PARAMETER //variable: debug parameter
+//	01 //varsize in bytes
+//	\71 //condition: bit set
+//	DEBUG_PARAMETER_DISABLE_CHECKS_BIT //value: checks skip bit
+//	FF //label
 
 //Skip if climate != toyland
 -1 * 0 07 83 01 \7! 03 02
@@ -25,26 +25,25 @@
 
 //Check for game version
 
-#define LABEL_TERMINATE_VERSION FA
 
 //skip if ottd version returns FF FF FF FF
--1 * 0 09 //Action 7
-	A1 //variable: openttd version
-	04 //varsize in bytes
-	\7= //condition: equal
-	FF FF FF FF //value: undefined
-	LABEL_TERMINATE_VERSION // terminate for this version
+//-1 * 0 09 //Action 7
+//	A1 //variable: openttd version
+//	04 //varsize in bytes
+//	\7= //condition: equal
+//	FF FF FF FF //value: undefined
+//	02 // terminate for this version
 
 //skip if ottd < 1.1.0 r21208
 -1 * 0 09 //Action 7
 	A1 //variable: openttd version
 	04 //varsize in bytes
-	\7< //condition: smaller
-	\dx110052D9 //value: ottd version 1.1.0 r21208 (52D9)
-	LABEL_TERMINATE_VERSION //skip next 1 to disable FIRS
+	\7> //condition: smaller
+	\dx110052D8 //value: ottd version 1.1.0 r21208 (52D9)
+	01 //skip next 1 to disable FIRS
 
--1 * 0 07 9A 01 \71 00 02 // Skip the termination sprites
--1 * 0 10 LABEL_TERMINATE_VERSION
+//-1 * 0 07 9A 01 \71 00 02 // Skip the termination sprites
+//-1 * 0 10 LABEL_TERMINATE_VERSION
 // Disable FIRS if one of the above conditions was met
 -1 * 0 0B //Action 0B
 	03 //severity: fatal
@@ -202,4 +201,4 @@ INCOMPATIBLE_VERSION14("Total Town Replacement Set", "release 3.02b / nightly r1
 //INCOMPATIBLE_WARNING("Total Town Replacement Set", "v3.03")
 
 //end if skipping due to debug parameter
--1 * 0 10 FF //label
+//-1 * 0 10 FF //label
