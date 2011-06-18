@@ -1,7 +1,7 @@
 //Industry tile sprites; one sprite for each tile; eventually more for each tile to include  construction stages
 
 //Tile action 1
--1 * 0 01 09 \b12 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
+-1 * 0 01 09 \b13 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
 // Format: spritenum pcxfile xpos ypos compression ysize xsize xrel yrel
 // ground tile
 -1 sprites/graphics/industries/groundtiles.pcx  80 10 09   31 64 -31   0
@@ -25,6 +25,8 @@
 -1 sprites/graphics/industries/THIS_GRAPHICS_FILE  570 10 09  110 64 -31 -61
 -1 sprites/graphics/industries/THIS_GRAPHICS_FILE  640 10 09  110 64 -31 -61
 -1 sprites/graphics/industries/THIS_GRAPHICS_FILE  710 10 09  110 64 -31 -61
+// snow ground tile overlay
+-1 sprites/graphics/industries/THIS_GRAPHICS_FILE  780 10 09  56 64 -31 -61
 
 //Tile action 2 
 // mill shed
