@@ -23,9 +23,8 @@
 	0E 10 //callback flags
 
 // include tiles and layouts, ! Action 2 IDs here are deliberately repeated by the various tile includes
-// temperate
-#include "plasticsplant_tiles_layouts/plasticsplant_tiles_standard.pnfo"
-#include "plasticsplant_tiles_layouts/plasticsplant_layouts.pnfo"
+#define THIS_GRAPHICS_FILE plasticsplant.png
+#include "plasticsplant_tiles_layouts/plasticsplant_tiles_layouts.pnfo"
 
 -1 * 0 02 09 A1
 	82 44 //check layout number (lowest byte of related industry)
@@ -36,9 +35,8 @@
     \wxB3 \b3 \b3 //<set-id \w> <low-range> <high-range>
 	\wx00 //<default> (first tile layout available)
 
-// tropic
-#include "plasticsplant_tiles_layouts/plasticsplant_tiles_standard.pnfo"
-#include "plasticsplant_tiles_layouts/plasticsplant_layouts.pnfo"
+#define THIS_GRAPHICS_FILE plasticsplant.png
+#include "plasticsplant_tiles_layouts/plasticsplant_tiles_layouts.pnfo"
 
 -1 * 0 02 09 A2
 	82 44 //check layout number (lowest byte of related industry)
@@ -49,9 +47,8 @@
     \wxB3 \b3 \b3 //<set-id \w> <low-range> <high-range>
 	\wx00 //<default> (first tile layout available)
 
-// snow
-#include "plasticsplant_tiles_layouts/plasticsplant_tiles_snow.pnfo"
-#include "plasticsplant_tiles_layouts/plasticsplant_layouts.pnfo"
+#define THIS_GRAPHICS_FILE plasticsplant_snow.png
+#include "plasticsplant_tiles_layouts/plasticsplant_tiles_layouts.pnfo"
 
 -1 * 0 02 09 A3
 	82 44 //check layout number (lowest byte of related industry)
