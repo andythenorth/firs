@@ -10,20 +10,37 @@
 
 // concrete sprite is currently commented out - uses TTD default sprite
 //Tile action 1
--1 * 0 01 09 \b1 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
+-1 * 0 01 09 \b2 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
 // Format: spritenum pcxfile xpos ypos compression ysize xsize xrel yrel
 -1 sprites/graphics/industries/groundtiles.png  80 10  09  31 64 -31 0
+-1 sprites/graphics/industries/groundtiles.png 220 10  09  31 64 -31 0
 
 //Action 2  attach graphics to graphics id
--1 * 0 02 09 TILE_GENERIC_CONCRETE 00 //-1 * 0 02 09 <set-id> 00
+-1 * 0 02 09 00 00 //-1 * 0 02 09 <set-id> 00
 	\dx80008000 //groundsprite
 	// \d1420 //groundsprite
 	\d0 //building sprite
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b0 //xextent yextent zextent
 
+-1 * 0 02 09 01 00 //-1 * 0 02 09 <set-id> 00
+	\dx80008001 //groundsprite
+	// \d1420 //groundsprite
+	\d0 //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b0 //xextent yextent zextent
+
+// check terrain type and branch to different layout checks appropriately
+-1 * 0 02 09 A0 
+	81 41 //check terrain type (lowest byte of related industry)
+	00 FF //don't shift, don't mask
+	\b2 //number of ranges to check (number of layouts)
+	  \wx00 \b1 \b1 //<set-id \w> <low-range> <high-range>  // desert
+	  \wx01 \b4 \b4 //<set-id \w> <low-range> <high-range>  // snow
+	\wx00 //<default>
+
 //Action 3 attach graphics id to industry tiles
--1 * 0 03 09 01 TILE_GENERIC_CONCRETE 00 TILE_GENERIC_CONCRETE 00 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
+-1 * 0 03 09 01 TILE_GENERIC_CONCRETE 00 A0 00 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
 
 
 
