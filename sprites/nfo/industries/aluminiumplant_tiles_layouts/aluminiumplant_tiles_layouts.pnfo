@@ -4,7 +4,7 @@
 -1 * 0 01 09 \b13 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
 // Format: spritenum pcxfile xpos ypos compression ysize xsize xrel yrel
 // ground tile
--1 sprites/graphics/industries/groundtiles.pcx  80 10 09   31 64 -31   0
+-1 sprites/graphics/industries/groundtiles.png  80 10 09   31 64 -31   0
 // mill shed
 -1 sprites/graphics/industries/THIS_GRAPHICS_FILE  10 10 09  57 64 -31 -26
 // small office / tanks
@@ -26,7 +26,7 @@
 -1 sprites/graphics/industries/THIS_GRAPHICS_FILE  640 10 09  110 64 -31 -61
 -1 sprites/graphics/industries/THIS_GRAPHICS_FILE  710 10 09  110 64 -31 -61
 // snow ground tile overlay
--1 sprites/graphics/industries/THIS_GRAPHICS_FILE  780 10 09  56 64 -31 -61
+-1 sprites/graphics/industries/THIS_GRAPHICS_FILE  780 10 09  56 64 -31 -25
 
 //Tile action 2 
 // mill shed
@@ -61,17 +61,23 @@
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b64 //xextent yextent zextent
 // greeble tile 1
--1 * 0 02 09 06 00 //-1 * 0 02 09 <set-id> 00
+-1 * 0 02 09 06 02 //-1 * 0 02 09 <set-id> 00 (extended format)
 	\dx80008000 //groundsprite
+	\dx8000800C //building sprite
+	\b0 \b0 \b0 //xofs yofs zofs
+	\b16 \b16 \b16 //xextent yextent zextent
 	\dx80008007 //building sprite
-	\b0 \b0 //xofs yofs
-	\b16 \b16 \b90 //xextent yextent zextent
+	\b0 \b0 \b0 //xofs yofs zofs
+	\b16 \b16 \b32 //xextent yextent zextent
 // greeble tile 2
--1 * 0 02 09 07 00 //-1 * 0 02 09 <set-id> 00
+-1 * 0 02 09 07 02 //-1 * 0 02 09 <set-id> 00 (extended format)
 	\dx80008000 //groundsprite
+	\dx8000800C //building sprite
+	\b0 \b0 \b0 //xofs yofs zofs
+	\b16 \b16 \b16 //xextent yextent zextent
 	\dx80008008 //building sprite
-	\b0 \b0 //xofs yofs
-	\b16 \b16 \b90 //xextent yextent zextent
+	\b0 \b0 \b0 //xofs yofs zofs
+	\b16 \b16 \b32 //xextent yextent zextent
 // stockpile building (3 parts)
 -1 * 0 02 09 08 00 //-1 * 0 02 09 <set-id> 00
 	\dx80008000 //groundsprite
@@ -89,10 +95,13 @@
 	\b0 \b0 //xofs yofs
 	\b16 \b16 \b90 //xextent yextent zextent
 //electrical substation	
--1 * 0 02 09 0B 00 //-1 * 0 02 09 <set-id> 00
+-1 * 0 02 09 0B 02 //-1 * 0 02 09 <set-id> 00 (extended format)
 	\d3924 //groundsprite
+	\dx8000800C //building sprite
+	\b0 \b0 \b0 //xofs yofs zofs
+	\b16 \b16 \b16 //xextent yextent zextent
 	\d2054 //building sprite
-	\b1 \b2 //xofs yofs
+	\b1 \b2 \b0 //xofs yofs
 	\b15 \b14 \b16 //xextent yextent zextent
 
 // animated chimney
