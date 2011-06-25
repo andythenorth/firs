@@ -9,19 +9,49 @@
 	0D 10 //land shape flags: 10 = only on flat land
 
 
-//Industry tile sprites; one sprite for each tile; eventually more for each tile to include  construction stages
+// include tiles and layouts, ! Action 2 IDs here are deliberately repeated by the various tile includes
+#define THIS_GRAPHICS_FILE hardwarestore.png
+#include "hardwarestore_tiles_layouts/hardwarestore_tiles_layouts.pnfo"
+
+-1 * 0 02 09 A1
+	82 44 //check layout number (lowest byte of related industry)
+	00 FF //don't shift, don't mask
+	\b1 //number of ranges to check (number of layouts)
+    \wxB1 \b1 \b1 //<set-id \w> <low-range> <high-range>
+	\wx00 //<default> (first tile layout available)
+
+#define THIS_GRAPHICS_FILE hardwarestore.png
+#include "hardwarestore_tiles_layouts/hardwarestore_tiles_layouts.pnfo"
+
+-1 * 0 02 09 A2
+	82 44 //check layout number (lowest byte of related industry)
+	00 FF //don't shift, don't mask
+	\b1 //number of ranges to check (number of layouts)
+    \wxB1 \b1 \b1 //<set-id \w> <low-range> <high-range>
+	\wx00 //<default> (first tile layout available)
+
+#define THIS_GRAPHICS_FILE hardwarestore.png
+#include "hardwarestore_tiles_layouts/hardwarestore_tiles_layouts.pnfo"
+
+-1 * 0 02 09 A3
+	82 44 //check layout number (lowest byte of related industry)
+	00 FF //don't shift, don't mask
+	\b1 //number of ranges to check (number of layouts)
+    \wxB1 \b1 \b1 //<set-id \w> <low-range> <high-range>
+	\wx00 //<default> (first tile layout available)
 
 
-//Tile Action 2 
--1 * 0 02 09 00 00 //-1 * 0 02 09 <set-id> 00
-	\d1420 //groundsprite
-	\d1475 //building sprite
-	\b0 \b2 //xofs yofs
-	\b16 \b14 \b16 //xextent yextent zextent
-
+// check terrain type and branch to different layout checks appropriately
+-1 * 0 02 09 A0 
+	81 41 //check terrain type (lowest byte of related industry)
+	00 FF //don't shift, don't mask
+	\b2 //number of ranges to check (number of layouts)
+	  \wxA2 \b1 \b1 //<set-id \w> <low-range> <high-range>  // desert
+	  \wxA3 \b4 \b4 //<set-id \w> <low-range> <high-range>  // snow
+	\wxA1 //<default>
 
 //Tile Action 3
--1 * 0 03 09 01 TILE_HARDWARESTORE_1 00 \wx00 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
+-1 * 0 03 09 01 TILE_HARDWARESTORE_1 00 \wxA0 //-1 * 0 03 09 <n-ids> <id> 00 <def-cid>
 
 
 
