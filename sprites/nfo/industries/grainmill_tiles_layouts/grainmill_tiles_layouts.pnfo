@@ -6,10 +6,10 @@
 // ground tile
 -1 sprites/graphics/industries/groundtiles.png  150 10 09   31 64 -31   0
 // bakery building
--1 sprites/graphics/industries/THIS_GRAPHICS_FILE  10 10 09  59 64 -31 -28
--1 sprites/graphics/industries/THIS_GRAPHICS_FILE  80 10 09  59 64 -31 -28
--1 sprites/graphics/industries/THIS_GRAPHICS_FILE 150 10 09  82 64 -31 -51
--1 sprites/graphics/industries/THIS_GRAPHICS_FILE 220 10 09  82 64 -31 -51
+-1 sprites/graphics/industries/THIS_GRAPHICS_FILE  10 10 09  59 64 -33 -26
+-1 sprites/graphics/industries/THIS_GRAPHICS_FILE  80 10 09  59 64 -33 -26
+-1 sprites/graphics/industries/THIS_GRAPHICS_FILE 150 10 09  82 64 -33 -49
+-1 sprites/graphics/industries/THIS_GRAPHICS_FILE 220 10 09  82 64 -33 -49
 // windmill
 -1 sprites/graphics/industries/THIS_GRAPHICS_FILE  10 110 09  82 64 -31 -52
 -1 sprites/graphics/industries/THIS_GRAPHICS_FILE  80 110 09  82 64 -31 -52
@@ -95,15 +95,8 @@
     \wx02   00 01  00 01
   \wx03 //00 00  00 00 <default>
 
-	-1 * 0 02 09 B2 //layout
-	85 43 //check relative position (00yx[YYXX])
-	00 FF FF //don't shift, don't mask
-	\b3 //number of ranges to check (number of tiles)
-    \wx00   00 01  00 01 
-    \wx01   00 00  00 00
-    \wx02   01 01  01 01
-  \wx03 //00 00  00 00 <default>
-    
+// layout 2 deprecated and removed
+
 -1 * 0 02 09 B3 //layout
 	85 43 //check relative position (00yx[YYXX])
 	00 FF FF //don't shift, don't mask
@@ -116,17 +109,7 @@
     \wx00   02 01  02 01
   \wx03 //00 00  00 00 <default>
     
--1 * 0 02 09 B4 //layout
-	85 43 //check relative position (00yx[YYXX])
-	00 FF FF //don't shift, don't mask
-	\b6 //number of ranges to check (number of tiles)
-    \wx01   00 00  00 00
-    \wx00   00 01  00 01
-    \wx03   01 00  01 00
-    \wx02   01 01  01 01 
-    \wx03   02 00  02 00
-    \wx02   02 01  02 01
-  \wx03 //00 00  00 00 <default>
+// layout 4 deprecated and removed
         
 -1 * 0 02 09 B5 //layout
 	85 43 //check relative position (00yx[YYXX])

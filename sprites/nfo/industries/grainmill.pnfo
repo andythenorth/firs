@@ -32,12 +32,12 @@
 	82 44 //check layout number (lowest byte of related industry)
 	00 FF //don't shift, don't mask
 	\b6 //number of ranges to check (number of layouts)
-    \wxB1 \b1 \b1 //<set-id \w> <low-range> <high-range>
-    \wxB2 \b2 \b2 //<set-id \w> <low-range> <high-range>
-    \wxB3 \b3 \b3 //<set-id \w> <low-range> <high-range>
-    \wxB4 \b4 \b4 //<set-id \w> <low-range> <high-range>
-    \wxB5 \b5 \b5 //<set-id \w> <low-range> <high-range>
-    \wxB6 \b6 \b6 //<set-id \w> <low-range> <high-range>
+    \wxB1 \b1 \b1 //
+    \wxB1 \b2 \b2 // layout 2 deprecated - uses layout 1
+    \wxB3 \b3 \b3 //
+    \wxB3 \b4 \b4 // layout 4 deprecated - uses layout 2
+    \wxB5 \b5 \b5 //
+    \wxB6 \b6 \b6 //
 	\wx00 //<default> (first tile layout available)
 
 #define THIS_GRAPHICS_FILE grainmill.png
@@ -47,12 +47,12 @@
 	82 44 //check layout number (lowest byte of related industry)
 	00 FF //don't shift, don't mask
 	\b6 //number of ranges to check (number of layouts)
-    \wxB1 \b1 \b1 //<set-id \w> <low-range> <high-range>
-    \wxB2 \b2 \b2 //<set-id \w> <low-range> <high-range>
-    \wxB3 \b3 \b3 //<set-id \w> <low-range> <high-range>
-    \wxB4 \b4 \b4 //<set-id \w> <low-range> <high-range>
-    \wxB5 \b5 \b5 //<set-id \w> <low-range> <high-range>
-    \wxB6 \b6 \b6 //<set-id \w> <low-range> <high-range>
+    \wxB1 \b1 \b1 //
+    \wxB1 \b2 \b2 // layout 2 deprecated - uses layout 1
+    \wxB3 \b3 \b3 //
+    \wxB3 \b4 \b4 // layout 4 deprecated - uses layout 2
+    \wxB5 \b5 \b5 //
+    \wxB6 \b6 \b6 //
 	\wx00 //<default> (first tile layout available)
 
 #define THIS_GRAPHICS_FILE grainmill_snow.png
@@ -62,12 +62,12 @@
 	82 44 //check layout number (lowest byte of related industry)
 	00 FF //don't shift, don't mask
 	\b6 //number of ranges to check (number of layouts)
-    \wxB1 \b1 \b1 //<set-id \w> <low-range> <high-range>
-    \wxB2 \b2 \b2 //<set-id \w> <low-range> <high-range>
-    \wxB3 \b3 \b3 //<set-id \w> <low-range> <high-range>
-    \wxB4 \b4 \b4 //<set-id \w> <low-range> <high-range>
-    \wxB5 \b5 \b5 //<set-id \w> <low-range> <high-range>
-    \wxB6 \b6 \b6 //<set-id \w> <low-range> <high-range>
+    \wxB1 \b1 \b1 //
+    \wxB1 \b2 \b2 // layout 2 deprecated - uses layout 1
+    \wxB3 \b3 \b3 //
+    \wxB3 \b4 \b4 // layout 4 deprecated - uses layout 3
+    \wxB5 \b5 \b5 //
+    \wxB6 \b6 \b6 //
 	\wx00 //<default> (first tile layout available)
 
 
@@ -76,8 +76,8 @@
 	81 41 //check terrain type (lowest byte of related industry)
 	00 FF //don't shift, don't mask
 	\b2 //number of ranges to check (number of layouts)
-	  \wxA2 \b1 \b1 //<set-id \w> <low-range> <high-range>  // desert
-	  \wxA3 \b4 \b4 //<set-id \w> <low-range> <high-range>  // snow
+	  \wxA2 \b1 \b1 //  // desert
+	  \wxA3 \b4 \b4 //  // snow
 	\wxA1 //<default>
 
 //handle cb2f (tile shape check)
