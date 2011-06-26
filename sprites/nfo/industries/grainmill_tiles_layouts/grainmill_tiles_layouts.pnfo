@@ -5,9 +5,9 @@
 // Format: spritenum pcxfile xpos ypos compression ysize xsize xrel yrel
 // ground tile
 -1 sprites/graphics/industries/groundtiles.png  150 10 09   31 64 -31   0
-// bakery building (deprecated - uses empty/transparent sprites)
--1 sprites/graphics/industries/THIS_GRAPHICS_FILE  10 10 09  59 64 -33 -26
--1 sprites/graphics/industries/THIS_GRAPHICS_FILE  80 10 09  59 64 -33 -26
+// bakery building tile greeble
+-1 sprites/graphics/industries/THIS_GRAPHICS_FILE  10 10 09  59 64 -34 -20
+-1 sprites/graphics/industries/THIS_GRAPHICS_FILE  80 10 09  59 64 -34 -36
 // bakery building large
 -1 sprites/graphics/industries/THIS_GRAPHICS_FILE 150 10 09  82 64 -33 -49
 -1 sprites/graphics/industries/THIS_GRAPHICS_FILE 220 10 09  82 64 -33 -49
@@ -20,7 +20,7 @@
 -1 sprites/graphics/industries/THIS_GRAPHICS_FILE 360 110 09  82 64 -31 -52
 
 //Tile action 2 
-//bakery building small (deprecated - uses empty graphics)
+//bakery building tile greeble
 -1 * 0 02 09 00 00 //-1 * 0 02 09 <set-id> 00
 	\dx80008000 //groundsprite
 	\dx80008001 //building sprite
@@ -92,9 +92,9 @@
 	85 43 //check relative position (00yx[YYXX])
 	00 FF FF //don't shift, don't mask
 	\b3 //number of ranges to check (number of tiles)
-    \wx00   01 01  01 01 
-    \wx01   01 00  01 00
     \wx02   00 01  00 01
+    \wx00   01 00  01 00
+    \wx01   01 01  01 01 
   \wx03 //00 00  00 00 <default>
 
 // layout 2 deprecated and removed
@@ -107,8 +107,8 @@
     \wx02   00 01  00 01
     \wx03   01 00  01 00
     \wx02   01 01  01 01 
-    \wx01   02 00  02 00
-    \wx00   02 01  02 01
+    \wx00   02 00  02 00
+    \wx01   02 01  02 01
   \wx03 //00 00  00 00 <default>
     
 // layout 4 deprecated and removed
@@ -123,8 +123,8 @@
     \wx02   00 03  00 03
     \wx01   01 00  01 00
     \wx00   01 01  01 01 
-    \wx01   01 02  01 02
-    \wx00   01 03  01 03
+    \wx00   01 02  01 02
+    \wx01   01 03  01 03
   \wx03 //00 00  00 00 <default>
 
 -1 * 0 02 09 B6 //layout
