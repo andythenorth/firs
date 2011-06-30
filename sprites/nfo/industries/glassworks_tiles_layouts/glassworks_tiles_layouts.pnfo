@@ -1,0 +1,68 @@
+//Industry tile sprites; one sprite for each tile; eventually more for each tile to include  construction stages
+
+//Tile action 1
+-1 * 0 01 09 \b4 \b1 //-1 * 0 01 09 <num-sets> <num-ent>
+// Format: spritenum pcxfile xpos ypos compression ysize xsize xrel yrel
+-1 sprites/graphics/industries/THIS_GRAPHICS_FILE  10 10 09  90 64 -31 -59
+-1 sprites/graphics/industries/THIS_GRAPHICS_FILE  80 10 09  90 64 -31 -71
+-1 sprites/graphics/industries/THIS_GRAPHICS_FILE 150 10 09  90 64 -31 -59
+// ground tile
+-1 sprites/graphics/industries/groundtiles.png  150 10 09   31 64 -31   0
+
+
+//Tile action 2 
+-1 * 0 02 09 00 00 //-1 * 0 02 09 <set-id> 00
+	\dx80008003 //groundsprite
+	\dx80008000 //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b12 //xextent yextent zextent
+-1 * 0 02 09 01 00 //-1 * 0 02 09 <set-id> 00
+	\dx80008003 //groundsprite
+	\dx80008001 //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b12 //xextent yextent zextent
+-1 * 0 02 09 02 00 //-1 * 0 02 09 <set-id> 00
+	\dx80008003 //groundsprite
+	\dx80008002 //building sprite
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b12 //xextent yextent zextent
+-1 * 0 02 09 03 00 //-1 * 0 02 09 <set-id> 00
+	\dx80008003 //groundsprite
+	\d0 //building sprite (empty tile)
+	\b0 \b0 //xofs yofs
+	\b16 \b16 \b12 //xextent yextent zextent
+
+
+-1 * 0 02 09 B1 //layout 1
+	85 43 //check relative position (00yx[YYXX])
+	00 FF FF //don't shift, don't mask
+	\b4 //number of ranges to check (number of tiles)
+    \wx03   00 00  00 00
+    \wx02   00 01  00 01
+    \wx00   01 00  01 00
+    \wx01   01 01  01 01
+	\wx03 //00 02  00 02 <default>
+
+-1 * 0 02 09 B2 //layout 2 
+	85 43 //check relative position (00yx[YYXX])
+	00 FF FF //don't shift, don't mask
+	\b5 //number of ranges to check (number of tiles)
+    \wx03   00 01  00 01
+    \wx03   01 01  01 01
+    \wx03   02 01  02 01
+    \wx00   01 02  01 02
+    \wx01   00 02  00 02
+	\wx02 //02 02  02 02 <default>
+
+-1 * 0 02 09 B3 //layout 3 
+	85 43 //check relative position (00yx[YYXX])
+	00 FF FF //don't shift, don't mask
+	\b4 //number of ranges to check (number of tiles)
+    \wx03   00 01  00 01
+    \wx03   01 01  01 01
+    \wx00   01 02  01 02
+    \wx01   00 02  00 02
+	\wx02 //01 00  01 00 <default>
+	
+	
+#undef THIS_GRAPHICS_FILE	
