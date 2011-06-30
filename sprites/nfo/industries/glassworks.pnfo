@@ -85,13 +85,37 @@
 //Action 0
 -1 * 0 00 0A \b27 01 IND_GLASSWORKS //-1 * 0 00 0A <num-props> 01 <id>
 	08 IND_NULL //reuse original industry with this here ID
-	0A 01 //number of industry layouts
-		\d22 //sum(size of layout definition +2 for termination)
+	0A 03 //number of industry layouts
+		\d126 //sum(size of layout definition +2 for termination)
 		//layout:
 			00 00 FE TILE_GLASSWORKS_1 00 //xoffs yoffs FE newtile(W)
 			00 01 FE TILE_GLASSWORKS_1 00 //xoffs yoffs FE newtile(W)
 			01 00 FE TILE_GLASSWORKS_1 00
 			01 01 FE TILE_GLASSWORKS_1 00
+		00 80 //terminate layout definition
+		//layout:
+			00 00 FE TILE_GLASSWORKS_1 00 //xoffs yoffs FE newtile(W)
+			00 01 FE TILE_GLASSWORKS_1 00 //xoffs yoffs FE newtile(W)
+			01 00 FE TILE_GLASSWORKS_1 00
+			01 01 FE TILE_GLASSWORKS_1 00
+			02 00 FE TILE_GLASSWORKS_1 00 //xoffs yoffs FE newtile(W)
+			02 01 FE TILE_GLASSWORKS_1 00 //xoffs yoffs FE newtile(W)
+			03 00 FE TILE_GLASSWORKS_1 00
+			03 01 FE TILE_GLASSWORKS_1 00
+		00 80 //terminate layout definition
+		//layout:
+			00 00 FE TILE_GLASSWORKS_1 00 //xoffs yoffs FE newtile(W)
+			00 01 FE TILE_GLASSWORKS_1 00 //xoffs yoffs FE newtile(W)
+			00 02 FE TILE_GLASSWORKS_1 00 //xoffs yoffs FE newtile(W)
+			00 03 FE TILE_GLASSWORKS_1 00 //xoffs yoffs FE newtile(W)
+			01 00 FE TILE_GLASSWORKS_1 00
+			01 01 FE TILE_GLASSWORKS_1 00
+			01 02 FE TILE_GLASSWORKS_1 00
+			01 03 FE TILE_GLASSWORKS_1 00
+			02 01 FE TILE_GLASSWORKS_1 00 //xoffs yoffs FE newtile(W)
+			02 02 FE TILE_GLASSWORKS_1 00 //xoffs yoffs FE newtile(W)
+			03 01 FE TILE_GLASSWORKS_1 00
+			03 02 FE TILE_GLASSWORKS_1 00
 		00 80 //terminate layout definition
 	0B 04 //production flags 1h=extractive, 2h=organic, 4h=processing
 	0C STR_IND_CLOSE_GENERIC //industry closure message

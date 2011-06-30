@@ -46,23 +46,34 @@
 -1 * 0 02 09 B2 //layout 2 
 	85 43 //check relative position (00yx[YYXX])
 	00 FF FF //don't shift, don't mask
-	\b5 //number of ranges to check (number of tiles)
-    \wx03   00 01  00 01
-    \wx03   01 01  01 01
-    \wx03   02 01  02 01
-    \wx00   01 02  01 02
-    \wx01   00 02  00 02
-	\wx02 //02 02  02 02 <default>
+	\b8 //number of ranges to check (number of tiles)
+    \wx03   00 00  00 00
+    \wx02   00 01  00 01
+    \wx00   01 00  01 00
+    \wx01   01 01  01 01
+    \wx03   02 00  02 00
+    \wx02   02 01  02 01
+    \wx00   03 00  03 00
+    \wx01   03 01  03 01
+	\wx03 //02 02  02 02 <default>
 
 -1 * 0 02 09 B3 //layout 3 
 	85 43 //check relative position (00yx[YYXX])
 	00 FF FF //don't shift, don't mask
-	\b4 //number of ranges to check (number of tiles)
-    \wx03   00 01  00 01
-    \wx03   01 01  01 01
+	\b12 //number of ranges to check (number of tiles)
+    \wx03   00 00  00 00
+    \wx02   00 01  00 01
+    \wx03   00 02  00 02
+    \wx02   00 03  00 03
+    \wx00   01 00  01 00
+    \wx01   01 01  01 01
     \wx00   01 02  01 02
-    \wx01   00 02  00 02
-	\wx02 //01 00  01 00 <default>
+    \wx01   01 03  01 03
+    \wx03   02 01  02 01
+    \wx02   02 02  02 02
+    \wx00   03 01  03 01
+    \wx01   03 02  03 02
+	\wx03 //01 00  01 00 <default>
 	
 	
 #undef THIS_GRAPHICS_FILE	
