@@ -103,7 +103,7 @@ ifeq ($(DEP_CHECK_TYPE),normal)
 %.gfx.dep: %.src.dep
 	$(_E) "[DEP] $@"
 	$(_V) echo "" > $@
-	$(_V) for i in `cat $<`; do for j in `echo "$$i" | grep -iE "($(FILE_SRC_RE))"`; do for k in `cat $$j | grep -v '^//'| grep -E -o "[-|a-z|A-Z|0-9|_|/|\.]*\.($(FILE_INC_RE))"`; do echo "$(patsubst %.gfx.dep,%.grf,$@): $$k"; done; done; done | sort | uniq >> $@
+	$(_V) for i in `cat $<`; do for j in `echo "$$i" | grep -iE "($(FILE_SRC_RE))"`; do if [ -f $$j ]; then for k in `cat $$j | grep -v '^//'| grep -E -o "[-|a-z|A-Z|0-9|_|/|\.]*\.($(FILE_INC_RE))"`; do echo "$(patsubst %.gfx.dep,%.grf,$@): $$k"; done; fi; done; done | sort | uniq >> $@
 	$(_V) touch $@
 endif
 
