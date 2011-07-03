@@ -1,0 +1,164 @@
+if ((ttd_platform != 1)) {
+	// Sprite 24
+	error(FATAL, USED_WITH, string(STR_ERROR_DATA_24));
+	exit;
+}
+//TODO: add check for debug parameter to disable the checks below
+//TODO: add check for OpenTTD version
+
+if (grf_future_status("Meo\81")) {
+	// Sprite 36
+	error(FATAL, string(STR_ERROR_36));
+}
+if (grf_future_status("Meo\82")) {
+	// Sprite 38
+	error(FATAL, string(STR_ERROR_38));
+}
+if (grf_future_status("Meo\91")) {
+	// Sprite 40
+	error(FATAL, string(STR_ERROR_40));
+}
+if (grf_future_status("Meo\92")) {
+	// Sprite 42
+	error(FATAL, string(STR_ERROR_42));
+}
+if (grf_future_status("Meo\93")) {
+	// Sprite 44
+	error(FATAL, string(STR_ERROR_44));
+}
+if (grf_future_status("Meo\94")) {
+	// Sprite 46
+	error(FATAL, string(STR_ERROR_46));
+}
+if (grf_future_status("Meo\95")) {
+	// Sprite 48
+	error(FATAL, string(STR_ERROR_48));
+}
+if (grf_future_status("Meo\96")) {
+	// Sprite 50
+	error(FATAL, string(STR_ERROR_50));
+}
+if (grf_future_status("Meo\97")) {
+	// Sprite 52
+	error(FATAL, string(STR_ERROR_52));
+}
+if (grf_future_status("Meo\98")) {
+	// Sprite 54
+	error(FATAL, string(STR_ERROR_54));
+}
+if (grf_future_status("Meo\99")) {
+	// Sprite 56
+	error(FATAL, string(STR_ERROR_56));
+}
+if (grf_future_status("Meo\9A")) {
+	// Sprite 58
+	error(FATAL, string(STR_ERROR_58));
+}
+if (grf_future_status("Meo\9B")) {
+	// Sprite 60
+	error(FATAL, string(STR_ERROR_60));
+}
+if (grf_future_status("Meo\9C")) {
+	// Sprite 62
+	error(FATAL, string(STR_ERROR_62));
+}
+if (grf_future_status("SK\05\01")) {
+	// Sprite 64
+	error(FATAL, string(STR_ERROR_64));
+}
+if (grf_future_status("JS\0A\02")) {
+	// Sprite 66
+	error(FATAL, string(STR_ERROR_66));
+}
+if (grf_future_status("JS\0A\03")) {
+	// Sprite 68
+	error(FATAL, string(STR_ERROR_68));
+}
+if (grf_future_status("JS\0A\04")) {
+	// Sprite 70
+	error(FATAL, string(STR_ERROR_70));
+}
+if (grf_future_status("JS\0A\05")) {
+	// Sprite 72
+	error(FATAL, string(STR_ERROR_72));
+}
+if (grf_future_status("EX\01\02")) {
+	// Sprite 74
+	error(FATAL, string(STR_ERROR_74));
+}
+if (grf_future_status("EX\01\03")) {
+	// Sprite 76
+	error(FATAL, string(STR_ERROR_76));
+}
+if (grf_future_status("DD\06\01")) {
+	// Sprite 78
+	error(FATAL, string(STR_ERROR_78));
+}
+if (grf_future_status("frMI")) {
+	// Sprite 80
+	error(FATAL, string(STR_ERROR_80));
+}
+if (grf_future_status("SLTU")) {
+	// Sprite 82
+	error(FATAL, string(STR_ERROR_82));
+}
+if (grf_future_status("SZ\13D")) {
+	// Sprite 84
+	error(FATAL, string(STR_ERROR_84));
+}
+if (grf_future_status("EH\01\01")) {
+	// Sprite 86
+	if ((openttd_version <= 285232758)) {
+		// Sprite 87
+		error(FATAL, string(STR_ERROR_87));
+	}
+}
+if (grf_future_status("DD\06\03")) {
+	// Sprite 89
+	error(FATAL, string(STR_ERROR_89));
+}
+if (grf_future_status("DD\06\02")) {
+	// Sprite 91
+	error(FATAL, string(STR_ERROR_91));
+}
+if (grf_future_status("mb\08\00")) {
+	// Sprite 93
+	error(FATAL, string(STR_ERROR_93));
+}
+if (grf_future_status("mb\07\00")) {
+	// Sprite 95
+	error(FATAL, string(STR_ERROR_95));
+}
+if (grf_future_status("AL\01\01")) {
+	// Sprite 97
+	error(FATAL, string(STR_ERROR_97));
+}
+if (grf_future_status("MG\08\00", "\FF\FF\FF\00")) {
+	// Sprite 99
+	error(FATAL, string(STR_ERROR_99));
+}
+param[9] = 0;
+if (grf_future_status("CACa")) {
+	// Sprite 102
+	param[9] = param["CACa", 1];
+	if ((param[9] != 0)) {
+		// Sprite 104
+		error(FATAL, string(STR_ERROR_104));
+	}
+}
+if (grf_future_status("CASa")) {
+	// Sprite 106
+	param[9] = param["CASa", 1];
+	if ((param[9] != 0)) {
+		// Sprite 108
+		error(FATAL, string(STR_ERROR_108));
+	}
+}
+if (grf_future_status("VC\00\01")) {
+	// Sprite 110
+	param[9] = param["VC\00\01", 254];
+	if ((param[9] <= 17)) {
+		// Sprite 112
+		error(FATAL, string(STR_ERROR_112));
+	}
+}
