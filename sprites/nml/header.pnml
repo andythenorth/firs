@@ -1,0 +1,77 @@
+grf {
+	grfid: "\F1%\00\05";
+	name: string(STR_GRF_NAME);
+	desc: string(STR_GRF_DESC);
+	version: 2102;
+	min_compatible_version: 1717;
+	param 0 {
+		param_0 {
+			name: string(STR_PARAM_0_NAME);
+			desc: string(STR_PARAM_0_DESC);
+			min_value: 0;
+			max_value: 0;
+			names: {
+				0: string(STR_PARAM_0_VALUE_0);
+			};
+		}
+	}
+	param 1 {
+		param_1 {
+			name: string(STR_PARAM_1_NAME);
+			desc: string(STR_PARAM_1_DESC);
+			type: bool;
+		}
+	}
+	param 2 {
+		param_2 {
+			name: string(STR_PARAM_2_NAME);
+			desc: string(STR_PARAM_2_DESC);
+			type: bool;
+			bit: 0;
+		}
+		param_3 {
+			name: string(STR_PARAM_3_NAME);
+			desc: string(STR_PARAM_3_DESC);
+			type: bool;
+			bit: 1;
+		}
+		param_4 {
+			name: string(STR_PARAM_4_NAME);
+			desc: string(STR_PARAM_4_DESC);
+			type: bool;
+			bit: 2;
+		}
+	}
+	param 4 {
+		param_5 {
+			name: string(STR_PARAM_5_NAME);
+			desc: string(STR_PARAM_5_DESC);
+			type: int;
+			def_value: 0;
+			min_value: 0;
+			max_value: 255;
+			names: {
+				0: string(STR_PARAM_5_VALUE_0);
+			};
+		}
+	}
+	param 3 {
+		param_6 {
+			name: string(STR_PARAM_6_NAME);
+			desc: string(STR_PARAM_6_DESC);
+			type: int;
+		}
+	}
+}
+
+basecost {
+	48: 4;
+}
+
+basecost {
+	56: 0;
+}
+
+basecost {
+	59: 0;
+}

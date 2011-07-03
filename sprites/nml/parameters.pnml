@@ -1,0 +1,33 @@
+// parameters also referenced by action 14 stuff - likely to be found in header.pnml, unless it got moved
+
+param[60] = map_size;
+param[60] = (param[60] & 255);
+param[60] = (param[60] + 12);
+param[11] = 1;
+param[11] = (param[11] << param[60]);
+param[11] = (param[11]  /  262144);
+param[12] = (param[11] * 2);
+param[12] = (param[12] + 1);
+param[60] = 1;
+param[60] = (param[60] << 0);
+param[13] = (param[2] & param[60]);
+param[60] = (param[60] << 16777344);
+param[60] = (param[60] + 128);
+param[13] = (param[13] << param[60]);
+param[60] = 1;
+param[60] = (param[60] << 1);
+param[14] = (param[2] & param[60]);
+param[60] = (param[60] << 16777344);
+param[60] = (param[60] + 128);
+param[14] = (param[14] << param[60]);
+param[60] = 1;
+param[60] = (param[60] << 2);
+param[15] = (param[2] & param[60]);
+param[60] = (param[60] << 16777344);
+param[60] = (param[60] + 128);
+param[15] = (param[15] << param[60]);
+param[16] = param[4];
+if ((param[4] == 0)) {
+	// Sprite 142
+	param[16] = 255;
+}
