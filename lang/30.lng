@@ -1,42 +1,42 @@
 ##grflangid 0x30
-STR_GENERIC_DC9B                                                                :Piec wapienny
-STR_GENERIC_DC26                                                                :Opakowania
-STR_GENERIC_DC25                                                                :{TINYFONT}LU
-STR_GENERIC_DC9A                                                                :Kopalnia gliny
-STR_GENERIC_DC22                                                                :Deski
+STR_IND_LIME_KILN                                                               :Piec wapienny
+STR_CARGO_NAME_MNSP                                                             :Opakowania
+STR_CID_LUMBER                                                                  :{TINYFONT}LU
+STR_IND_CLAY_PIT                                                                :Kopalnia gliny
+STR_CARGO_NAME_LUMBER                                                           :Deski
 STR_GENERIC_DC21                                                                :{TINYFONT}GV
 STR_GENERIC_DC29                                                                :{TINYFONT}MS
-STR_PARAM_6_NAME                                                                :Tryb debugowania
+STR_PARAM_NAME_DEBUG                                                            :Tryb debugowania
 STR_GENERIC_D0A8                                                                :{}{RED}Nic nie dostarczono przez {POP_WORD}{POP_WORD}{WORD_S} miesiecy. Dalszy brak dostaw skonczy sie upadloscia spolki. {}
 STR_GENERIC_D0C1                                                                :{BLACK} (max 800)
 STR_GENERIC_D0C0                                                                :{BLACK} (max 200)
 STR_PARAM_1_DESC                                                                :Domyslnie produkcja w kopalniach i farmach nie spada.{}{}Jezeli parametr jest wlaczony, produkcja moze sie zmniejszyc jesli nie dostarczy sie odpowiednich zasobow. Im wyzsza produkcja, tym wiesza szansa na jej zmniejszenie.
-STR_GENERIC_DC1D                                                                :Kamienie
+STR_CARGO_NAME_STONE                                                            :Kamienie
 STR_GENERIC_DC18                                                                :{TINYFONT}CT
-STR_GENERIC_DC19                                                                :Piasek
+STR_CARGO_NAME_SAND                                                             :Piasek
 STR_GENERIC_DC10                                                                :{TINYFONT}FI
 STR_GENERIC_DC11                                                                :Welna
 STR_GENERIC_DC14                                                                :{TINYFONT}WL
-STR_GENERIC_DC15                                                                :Wlokna naturalne
+STR_CARGO_NAME_FIBRES                                                           :Wlokna naturalne
 STR_GENERIC_D0A5                                                                :{BLACK}Dostepne: {YELLOW}{DATE_LONG}
-STR_GENERIC_DC92                                                                :Stacja paliw
-STR_GENERIC_DC93                                                                :Lowisko
+STR_IND_PETROLPUMP                                                              :Stacja paliw
+STR_IND_FISHING_GROUND                                                          :Lowisko
 STR_GENERIC_DC90                                                                :Ferma wiatrowa
 STR_GENERIC_DC2D                                                                :{TINYFONT}FS
 STR_GENERIC_DC96                                                                :Hurtownia
 STR_GENERIC_DC97                                                                :Supermarket
 STR_GENERIC_DC94                                                                :Kuznia
-STR_GENERIC_DC95                                                                :Wiatrak
-STR_GENERIC_DC98                                                                :Hipermarket
+STR_IND_WINDMILL                                                                :Wiatrak
+STR_IND_RETAILMARKET                                                            :Hipermarket
 STR_GENERIC_DC99                                                                :Cukrownia
 STR_PARAM_3_DESC                                                                :Domyslnie przedsiebiorstwa przetworcze nie upadaja.{}{}Jesli parametr jest wlaczony, spolki do ktorych nie dostarcza sie towrow upadaja po pewnym czasie.
-STR_GENERIC_DC09                                                                :Owoce i warzywa
+STR_CARGO_NAME_FRUITS                                                           :Owoce i warzywa
 STR_GENERIC_DC08                                                                :{TINYFONT}BM
-STR_GENERIC_DC05                                                                :Materialy budowlane
+STR_CARGO_NAME_BUILDINGMATERIALS                                                :Materialy budowlane
 STR_GENERIC_DC04                                                                :{TINYFONT}SC
 STR_GENERIC_DC7B                                                                :Ubojnia bydla
-STR_GENERIC_DC7C                                                                :Dojarnia
-STR_GENERIC_DC01                                                                :Trzcina cukrowa
+STR_IND_DAIRYFARM                                                               :Dojarnia
+STR_CARGO_NAME_SUGARCANE                                                        :Trzcina cukrowa
 STR_GENERIC_DC7E                                                                :Piekarnia
 STR_GENERIC_DC7F                                                                :Zaklady odziezowe
 STR_GENERIC_DCEA                                                                :{STRING} Poglebiarka
@@ -48,7 +48,7 @@ STR_GENERIC_D026                                                                
 STR_GENERIC_D027                                                                :{BLACK}Sprzedaje jedzenie uslugom gastronomicznym i szpitalom.{}{}8 ton za dostarczenie 8 ton.
 STR_GENERIC_D028                                                                :{BLACK}Produkuje nawozy z chemikaliow.{}{}8 ton za dostarczenie 8 ton.
 STR_GENERIC_D029                                                                :{BLACK}Produkuje ploty, slupy itd.{}{}{BLACK}Produkcja:{}  2 tony produkcji za 8 kl chemikaliow{}  6 ton produkcji za 8 ton desek{}{}Produkcja wzrasta do 8 ton za 8t substratow gdy oba towary sa dostarczane w czasie krotszym niz 1 miesiac.
-STR_GENERIC_DC2E                                                                :Chemikalia
+STR_CARGO_NAME_CHEMICALS                                                        :Chemikalia
 STR_GENERIC_DC84                                                                :Odlewnia metali
 STR_GENERIC_DC86                                                                :Gospodarstwo mieszane
 STR_GENERIC_DC81                                                                :Huta aluminium
@@ -56,14 +56,14 @@ STR_GENERIC_DC80                                                                
 STR_GENERIC_DC83                                                                :Sklad materialow drzewnych
 STR_GENERIC_DC82                                                                :Fabryka maszyn
 STR_GENERIC_D0A0                                                                :
-STR_PARAM_1_NAME                                                                :Pozwalaj na spadek produkcji w kopalniach i farmach
-STR_GENERIC_DC89                                                                :Zlomowisko
+STR_PARAM_NAME_PRIMARY_PRODUCTION                                               :Pozwalaj na spadek produkcji w kopalniach i farmach
+STR_IND_JUNKYARD                                                                :Zlomowisko
 STR_GENERIC_DC88                                                                :Wypas owiec
 STR_PARAM_4_DESC                                                                :{SILVER}Na razie nie robi nic. {BLACK}Gdy skonczone, umozliwi wlaczenie trybu sandboksowego dla tworcow scenariuszy.
 STR_GENERIC_D0A6                                                                :{}{BLACK}Przedsiebiorstwo upadnie jesli nic nie zostanie dostarczone w ciagu:{}{YELLOW}  {WORD_S} miesiecy
 STR_GENERIC_DC8E                                                                :Poglebiarka
 STR_GENERIC_DC8A                                                                :Sklep
-STR_GENERIC_DC2A                                                                :Sprzet rolniczy
+STR_CARGO_NAME_FMSP                                                             :Sprzet rolniczy
 STR_GENERIC_DC8C                                                                :Port rybacki
 STR_GENERIC_DC8B                                                                :Kopalnia boksytu
 STR_GENERIC_D0AA                                                                :{BLACK}Dostepne: {YELLOW}1szy Sty 1610
@@ -79,7 +79,7 @@ STR_GENERIC_DCEC                                                                
 STR_GENERIC_DC78                                                                :Zaklady chemiczne
 STR_GENERIC_DC79                                                                :Fabryka tworzyw sztucznych
 STR_GENERIC_DC70                                                                :Pole uprawne
-STR_GENERIC_DC71                                                                :Kamieniolomy
+STR_IND_QUARRY                                                                  :Kamieniolomy
 STR_GENERIC_DC72                                                                :Spolka budowlana
 STR_GENERIC_DC73                                                                :Browar
 STR_GENERIC_DC74                                                                :Cementownia
@@ -128,7 +128,7 @@ STR_GENERIC_DC49                                                                
 STR_GENERIC_D0B0                                                                :{BLACK}Dostawy maszyn moga zwiekszyc produkcje{}{YELLOW}  {DWORD_S} skrzyn dostarczono w tym miesiacu
 STR_GENERIC_DC3F                                                                :{TINYFONT}ML
 STR_GENERIC_DC3B                                                                :{TINYFONT}BX
-STR_GENERIC_DC3C                                                                :Metal
+STR_CARGO_NAME_METAL                                                            :Metal
 STR_GENERIC_DC34                                                                :{TINYFONT}ES
 STR_GENERIC_DC35                                                                :Paliwo
 STR_PARAM_2_NAME                                                                :Pozwalaj na upadlosc kopaln i farm

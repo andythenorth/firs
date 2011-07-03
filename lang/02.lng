@@ -1,49 +1,49 @@
 ##grflangid 0x02
-STR_GENERIC_DC9B                                                                :\UE09A\0EKalkbrennerei
-STR_GENERIC_DC26                                                                :\UE09A\0EProduktionsgüter
-STR_GENERIC_DC25                                                                :{TINYFONT}BH
-STR_GENERIC_DC24                                                                :\UE09A\0D Bauholz
-STR_GENERIC_DC22                                                                :\UE09A\0EBauholz
+STR_IND_LIME_KILN                                                               :\UE09A\0EKalkbrennerei
+STR_CARGO_NAME_MNSP                                                             :\UE09A\0EProduktionsgüter
+STR_CID_LUMBER                                                                  :{TINYFONT}BH
+STR_CARGO_NAME_UNIT_LUMBER                                                      :\UE09A\0D Bauholz
+STR_CARGO_NAME_LUMBER                                                           :\UE09A\0EBauholz
 STR_GENERIC_DC21                                                                :{TINYFONT}ST
 STR_GENERIC_DC29                                                                :{TINYFONT}PG
-STR_GENERIC_DC9A                                                                :\UE09A\0ETongrube
-STR_PARAM_6_NAME                                                                :Zeige Debug-Texte
+STR_IND_CLAY_PIT                                                                :\UE09A\0ETongrube
+STR_PARAM_NAME_DEBUG                                                            :Zeige Debug-Texte
 STR_GENERIC_D0A8                                                                :{}{RED}In mindestens den letzten {POP_WORD}{POP_WORD}{WORD_S} Monaten{RED} wurde keine Fracht angeliefert. Diese Industrie könnte bald schließen.{}
 STR_PARAM_5_DESC                                                                :{SILVER}Maximaler Abstand von Fischgründen und Baggersees von der Küste in Feldern
 STR_GENERIC_D0C1                                                                :{BLACK} (max 800)
 STR_GENERIC_D0C0                                                                :{BLACK} (max 200)
-STR_GENERIC_DC1B                                                                :\UE09A\0D Sand
+STR_CARGO_UNIT_SAND                                                             :\UE09A\0D Sand
 STR_PARAM_1_DESC                                                                :Standardmäßig reduzieren Primärindustrien in FIRS ihre Produktion nie.{}Wenn eine Reduzierung der Produktionsmenge bei Primärindustrien erlaubt ist, gibt es eine Wahrscheinlichkeit mit der eine Industrie seine Produktion senkt, wenn einen Monat lang keine Güter angeliefert wurden. Bei hohen Produktionsraten ist die Wahrscheinlichkeit größer.
-STR_GENERIC_DC1F                                                                :\UE09A\0D Steine
-STR_GENERIC_DC1D                                                                :\UE09A\0ESteine
+STR_CARGO_UNIT_STONE                                                            :\UE09A\0D Steine
+STR_CARGO_NAME_STONE                                                            :\UE09A\0ESteine
 STR_GENERIC_DC18                                                                :{TINYFONT}PF
-STR_GENERIC_DC19                                                                :\UE09A\0ESand
-STR_GENERIC_DC13                                                                :\UE09A\0D Wolle
+STR_CARGO_NAME_SAND                                                             :\UE09A\0ESand
+STR_CARGO_UNIT_WOOL                                                             :\UE09A\0D Wolle
 STR_GENERIC_DC10                                                                :{TINYFONT}FI
 STR_GENERIC_DC11                                                                :\UE09A\0EWolle
-STR_GENERIC_DC17                                                                :\UE09A\0D Pflanzenfasern
+STR_CARGO_UNIT_FIBRES                                                           :\UE09A\0D Pflanzenfasern
 STR_GENERIC_DC14                                                                :{TINYFONT}WL
-STR_GENERIC_DC15                                                                :\UE09A\0EPflanzenfasern
+STR_CARGO_NAME_FIBRES                                                           :\UE09A\0EPflanzenfasern
 STR_GENERIC_D0A5                                                                :{BLACK}Verfügbar: {YELLOW}{DATE_LONG}
-STR_GENERIC_DC92                                                                :\UE09A\0ETankstelle
-STR_GENERIC_DC2F                                                                :{VOLUME} Chemikalien
-STR_GENERIC_DC2E                                                                :\UE09A\0EChemikalien
+STR_IND_PETROLPUMP                                                              :\UE09A\0ETankstelle
+STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} Chemikalien
+STR_CARGO_NAME_CHEMICALS                                                        :\UE09A\0EChemikalien
 STR_GENERIC_DC2D                                                                :{TINYFONT}LB
 STR_GENERIC_DC96                                                                :\UE09A\0EGroßhandel
 STR_GENERIC_DC97                                                                :\UE09A\0ESupermarkt
-STR_GENERIC_DC2A                                                                :\UE09A\0Elandw. Betriebsmittel
-STR_GENERIC_DC95                                                                :\UE09A\0EWindmühle
-STR_GENERIC_DC98                                                                :\UE09A\0EEinzelhändler
+STR_CARGO_NAME_FMSP                                                             :\UE09A\0Elandw. Betriebsmittel
+STR_IND_WINDMILL                                                                :\UE09A\0EWindmühle
+STR_IND_RETAILMARKET                                                            :\UE09A\0EEinzelhändler
 STR_GENERIC_DC99                                                                :\UE09A\0EZuckerraffinerie
 STR_GENERIC_D013                                                                :{BLACK}Produktion:{}  3t pro gelieferter 8t Produktionsgüter{}  5t pro gelieferter 8t Zuckerrüben{}{}Steigt auf 8t Produktion pro gelieferter 8t, wenn beide Frachtarten innerhalb eines Monats geliefert werden.
 STR_PARAM_3_DESC                                                                :Standardmäßig schließen Sekundärindustrien in FIRS nie.{}{}Wenn das Schließen von Sekundärindustrien erlaubt ist, so kann sie schließen, wenn über einen längeren Zeitraum keine Fracht transportiert worden ist.
-STR_GENERIC_DC09                                                                :\UE09A\0EFrüchte und Gemüse
+STR_CARGO_NAME_FRUITS                                                           :\UE09A\0EFrüchte und Gemüse
 STR_GENERIC_DC08                                                                :{TINYFONT}BS
-STR_GENERIC_DC05                                                                :\UE09A\0EBaustoffe
+STR_CARGO_NAME_BUILDINGMATERIALS                                                :\UE09A\0EBaustoffe
 STR_GENERIC_DC04                                                                :{TINYFONT}RZ
-STR_GENERIC_DC07                                                                :\UE09A\0D Baustoffe
-STR_GENERIC_DC7C                                                                :\UE09A\0EBauernhof (Milchviehhaltung)
-STR_GENERIC_DC01                                                                :\UE09A\0ERohrzucker
+STR_CARGO_UNIT_BUILDINGMATERIALS                                                :\UE09A\0D Baustoffe
+STR_IND_DAIRYFARM                                                               :\UE09A\0EBauernhof (Milchviehhaltung)
+STR_CARGO_NAME_SUGARCANE                                                        :\UE09A\0ERohrzucker
 STR_PARAM_2_NAME                                                                :Primärindustrien dürfen schließen
 STR_GENERIC_DC7F                                                                :\UE09A\0ETextilfabrik
 STR_GENERIC_DCEA                                                                :{STRING} Baggersee
@@ -52,7 +52,7 @@ STR_GENERIC_D023                                                                
 STR_PARAM_4_NAME                                                                :Bau von Industrien verbieten (nicht vollständig)
 STR_GENERIC_D025                                                                :{BLACK}Produktion:{}  3t pro gelieferter 8t Produktionsgüter{}  5t pro gelieferter 8t Vieh{}{}Steigt auf 8t Produktion pro gelieferter 8t, wenn beide Frachtarten innerhalb eines Monats geliefert werden.
 STR_GENERIC_D026                                                                :{BLACK}Baut und wartet Maschinen.{}{}8t Produktion pro gelieferter 8t.
-STR_GENERIC_DC93                                                                :\UE09A\0EFischgründe
+STR_IND_FISHING_GROUND                                                          :\UE09A\0EFischgründe
 STR_GENERIC_D028                                                                :{BLACK}Verarbeitet Chemikalien zu Dünger für landwirtschaftlichen Gebrauch.{}{}8t Produktion pro gelieferter 8t.
 STR_GENERIC_D029                                                                :{BLACK}Produziert Dinge wie Balken und Zaunpfähle.{}{}{BLACK}Produktion:{}  2t pro gelieferter 8t Chemikalien{}  6t pro gelieferter 8t Bauholz{}{}Steigt auf 8t Produktion pro gelieferter 8t, wenn beide Frachtarten innerhalb eines Monats geliefert werden.
 STR_GENERIC_DC90                                                                :\UE09A\0EWindpark
@@ -63,8 +63,8 @@ STR_GENERIC_DC80                                                                
 STR_GENERIC_DC83                                                                :\UE09A\0EHolzverarbeitung
 STR_GENERIC_DC82                                                                :\UE09A\0EMaschinenbaubetrieb
 STR_GENERIC_D0A0                                                                :
-STR_PARAM_1_NAME                                                                :Primärindustrien dürfen Produktion vermindern
-STR_GENERIC_DC89                                                                :\UE09A\0ESchrottplatz
+STR_PARAM_NAME_PRIMARY_PRODUCTION                                               :Primärindustrien dürfen Produktion vermindern
+STR_IND_JUNKYARD                                                                :\UE09A\0ESchrottplatz
 STR_GENERIC_DC88                                                                :\UE09A\0EBauernhof (Schafhaltung)
 STR_PARAM_4_DESC                                                                :{SILVER}Diese Funktion ist noch nicht implementiert.{BLACK} Sobald sie fertig gestellt ist, wird dieser Parameter einen 'Sandkasten-Modus' für Scenarien ermöglichen
 STR_GENERIC_D0A6                                                                :{}{BLACK}Diese Industrie könnte schließen, wenn nicht in den {YELLOW}nächsten {WORD_S} Monaten{BLACK} Fracht angeliefert wird.
@@ -143,7 +143,7 @@ STR_GENERIC_DC44                                                                
 STR_GENERIC_DC46                                                                :\UE09A\0EAltmetall
 STR_GENERIC_DC49                                                                :{TINYFONT}AM
 STR_GENERIC_DC48                                                                :\UE09A\0D Altmetall
-STR_GENERIC_DC3C                                                                :\UE09A\0EMetall
+STR_CARGO_NAME_METAL                                                            :\UE09A\0EMetall
 STR_GENERIC_DC76                                                                :\UE09A\0EBioraffinerie
 STR_GENERIC_D0B2                                                                :{BLACK}Produktionsgüter verdoppeln die Produktionseffizienz.{}{}{STRING}
 STR_GENERIC_DC3E                                                                :\UE09A\0D Metall
@@ -159,7 +159,7 @@ STR_GENERIC_DC30                                                                
 STR_GENERIC_DC31                                                                :\UE09A\0EErsatzteile
 STR_PARAM_0_NAME                                                                :Wirtschaftstyp
 STR_GENERIC_DC38                                                                :\UE09A\0EBauxit
-STR_GENERIC_DC71                                                                :\UE09A\0ESteinbruch
+STR_IND_QUARRY                                                                  :\UE09A\0ESteinbruch
 STR_GENERIC_D024                                                                :{BLACK}Produktion:{}  3t pro gelieferter 8t Produktionsgüter{}  5t pro gelieferter 8t Milch{}{}Steigt auf 8t Produktion pro gelieferter 8t, wenn beide Frachtarten innerhalb eines Monats geliefert werden.
 STR_GRF_DESC                                                                    :{ORANGE}FIRS Industrie-Set{}{BLACK}Von {SILVER}andythenorth{BLACK} und {SILVER}FooBar{BLACK}.{}{BLACK}Website: {SILVER}www.tt-foundry.com/sets/FIRS{}{BLACK}. Lizenz: {SILVER}GPL v20D{BLACK}. Besonderen Dank an {SILVER}Ammler{BLACK}, {SILVER}CoreXii{BLACK}, {SILVER}Irwe{BLACK}, {SILVER}planetmaker{BLACK} und {SILVER}Zephyris{BLACK}.{}FIRS nutzt Teile von {SILVER}eGRVTS{BLACK}, {SILVER}ISR{BLACK} und {SILVER}OpenGFX{BLACK}.
 STR_GENERIC_DC0F                                                                :\UE09A\0D Fisch

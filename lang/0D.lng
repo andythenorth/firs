@@ -1,51 +1,51 @@
 ##grflangid 0x0D
-STR_GENERIC_DC9B                                                                :\UE09A\0EKrečana
-STR_GENERIC_DC26                                                                :\UE09A\0Eproizvodni materijali
-STR_GENERIC_DC25                                                                :{TINYFONT}LU
-STR_GENERIC_DC24                                                                :\UE09A\0D drvne grede
-STR_GENERIC_DC22                                                                :\UE09A\0Edrvne grede
+STR_IND_LIME_KILN                                                               :\UE09A\0EKrečana
+STR_CARGO_NAME_MNSP                                                             :\UE09A\0Eproizvodni materijali
+STR_CID_LUMBER                                                                  :{TINYFONT}LU
+STR_CARGO_NAME_UNIT_LUMBER                                                      :\UE09A\0D drvne grede
+STR_CARGO_NAME_LUMBER                                                           :\UE09A\0Edrvne grede
 STR_GENERIC_DC21                                                                :{TINYFONT}ST
 STR_GENERIC_DC29                                                                :{TINYFONT}MS
-STR_GENERIC_DC28                                                                :{WORD_S} sanduka proizvodnih materijala
-STR_GENERIC_DC9A                                                                :\UE09A\0EKop gline
-STR_PARAM_6_NAME                                                                :Prikaži unutrašnje podatke
+STR_CARGO_UNIT_MNSP                                                             :{WORD_S} sanduka proizvodnih materijala
+STR_IND_CLAY_PIT                                                                :\UE09A\0EKop gline
+STR_PARAM_NAME_DEBUG                                                            :Prikaži unutrašnje podatke
 STR_GENERIC_D0A8                                                                :{}{RED}Nijedan tovar nije primljen {POP_WORD}{POP_WORD}meseci. Fabrika će se možda zatvoriti. {}
 STR_PARAM_5_DESC                                                                :{SILVER}Najveća udaljenost ribarskih lovišta i iskopa od obale mereno u pločicama
 STR_GENERIC_D0C1                                                                :{BLACK} (najviše 800)
 STR_GENERIC_D0C0                                                                :{BLACK} (najviše 200)
-STR_GENERIC_DC1B                                                                :\UE09A\0D peska
+STR_CARGO_UNIT_SAND                                                             :\UE09A\0D peska
 STR_PARAM_1_DESC                                                                :Po podrazumevanoj vrednosti, proizvodnja primarnih industrija se neće nikada smanjivati.{}{}Ako je dozvoljeno smanjivanje proizvodnje primarnih proizvoda, postoji šansa da će proizvodnja opasti ako se u roku od mesec dana ne isporuči potrebni tovar. Ukoliko je proizvodnja visoka, šanse za smanjenje su veće.
-STR_GENERIC_DC1F                                                                :\UE09A\0D kamena
-STR_GENERIC_DC1D                                                                :\UE09A\0Ekamen
+STR_CARGO_UNIT_STONE                                                            :\UE09A\0D kamena
+STR_CARGO_NAME_STONE                                                            :\UE09A\0Ekamen
 STR_GENERIC_DC18                                                                :{TINYFONT}PF
-STR_GENERIC_DC19                                                                :\UE09A\0Epesak
-STR_GENERIC_DC13                                                                :\UE09A\0D vune
+STR_CARGO_NAME_SAND                                                             :\UE09A\0Epesak
+STR_CARGO_UNIT_WOOL                                                             :\UE09A\0D vune
 STR_GENERIC_DC10                                                                :{TINYFONT}FI
 STR_GENERIC_DC11                                                                :\UE09A\0Evuna
-STR_GENERIC_DC17                                                                :\UE09A\0D biljnih vlakna
+STR_CARGO_UNIT_FIBRES                                                           :\UE09A\0D biljnih vlakna
 STR_GENERIC_DC14                                                                :{TINYFONT}WL
-STR_GENERIC_DC15                                                                :\UE09A\0Ebiljna vlakna
+STR_CARGO_NAME_FIBRES                                                           :\UE09A\0Ebiljna vlakna
 STR_GENERIC_D0A0                                                                :
 STR_GENERIC_D0A5                                                                :{BLACK}Dostupno: {YELLOW}{DATE_LONG}
-STR_GENERIC_DC92                                                                :\UE09A\0EBenzinska pumpa
-STR_GENERIC_DC2F                                                                :{VOLUME} hemijskog proizvoda
-STR_GENERIC_DC2E                                                                :\UE09A\0Ehemijski proizvodi
+STR_IND_PETROLPUMP                                                              :\UE09A\0EBenzinska pumpa
+STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} hemijskog proizvoda
+STR_CARGO_NAME_CHEMICALS                                                        :\UE09A\0Ehemijski proizvodi
 STR_GENERIC_DC2D                                                                :{TINYFONT}FS
-STR_GENERIC_DC2C                                                                :{WORD_S} sanduka poljoprivredne opreme
+STR_CARGO_UNIT_FMSP                                                             :{WORD_S} sanduka poljoprivredne opreme
 STR_GENERIC_DC97                                                                :\UE09A\0ESupermarket
-STR_GENERIC_DC2A                                                                :\UE09A\0Epoljoprivredna oprema
-STR_GENERIC_DC95                                                                :\UE09A\0EVetrenjača
-STR_GENERIC_DC98                                                                :\UE09A\0EPijaca
+STR_CARGO_NAME_FMSP                                                             :\UE09A\0Epoljoprivredna oprema
+STR_IND_WINDMILL                                                                :\UE09A\0EVetrenjača
+STR_IND_RETAILMARKET                                                            :\UE09A\0EPijaca
 STR_GENERIC_DC99                                                                :\UE09A\0EŠećerana
 STR_GENERIC_D013                                                                :{BLACK}Proizvodni odnos:{}  3t po 8t dostavljenog proizvodnog materijala{}  5t po 8t dostavljene šećerne repe{}{}Proizvodnja se poboljšava na 8t po 8t kada su obe vrste potrebnog tovara dostavljene u roku od mesec dana.
 STR_PARAM_3_DESC                                                                :Po podrazumevanoj vrednosti, sekundarne industrije se nikada neće zatvoriti.{}{}Ako je dozvoljeno zatvaranje sekundarnih industrija, zatvaraće se ukoliko se na duži period ne preuzme tovar.
-STR_GENERIC_DC09                                                                :\UE09A\0Evoće i povrće
+STR_CARGO_NAME_FRUITS                                                           :\UE09A\0Evoće i povrće
 STR_GENERIC_DC08                                                                :{TINYFONT}BM
-STR_GENERIC_DC05                                                                :\UE09A\0Egrađevinski materijali
+STR_CARGO_NAME_BUILDINGMATERIALS                                                :\UE09A\0Egrađevinski materijali
 STR_GENERIC_DC04                                                                :{TINYFONT}SC
-STR_GENERIC_DC07                                                                :\UE09A\0D građevinskog materijala
-STR_GENERIC_DC7C                                                                :\UE09A\0EStočna farma
-STR_GENERIC_DC01                                                                :\UE09A\0Ešećerna trska
+STR_CARGO_UNIT_BUILDINGMATERIALS                                                :\UE09A\0D građevinskog materijala
+STR_IND_DAIRYFARM                                                               :\UE09A\0EStočna farma
+STR_CARGO_NAME_SUGARCANE                                                        :\UE09A\0Ešećerna trska
 STR_PARAM_2_NAME                                                                :Dozvoljeno zatvaranje primarnih industrija
 STR_GENERIC_DC03                                                                :\UE09A\0D šećerne trske
 STR_GENERIC_DCEA                                                                :{STRING} Bagerovanje
@@ -54,7 +54,7 @@ STR_GENERIC_D023                                                                
 STR_PARAM_4_NAME                                                                :Zabranjena izgradnja fabrika (nedovršeno)
 STR_GENERIC_D025                                                                :{BLACK}Proizvodni odnos:{}  3t po 8t dostavljenog proizvodnog materijala{}  5t po 8t dostavljene žive stoke{}{}Proizvodnja se poboljšava na 8t po 8t kada su obe vrste potrebnog tovara dostavljene u roku od mesec dana.
 STR_GENERIC_D026                                                                :{BLACK}Proizvodi i servisira tehničku opremu.{}{}8t proizvoda po 8t isporučenog tovara.
-STR_GENERIC_DC93                                                                :\UE09A\0ERibarska lovišta
+STR_IND_FISHING_GROUND                                                          :\UE09A\0ERibarska lovišta
 STR_GENERIC_D028                                                                :{BLACK}Prerađuje hemijske proizvode u đubriva za agrar.{}{}8t proizvoda po 8t isporučenog tovara.
 STR_GENERIC_D029                                                                :{BLACK}Proizvodi pomoćne građevinske objekte, stubove i ograde.{}{}{BLACK}Proizvodni odnos:{}  2t po 8t dostavljenih hemijskih proizvoda{}  6t po 8t dostavljenih drvnih greda{}{}Proizvodnja se poboljšava na 8t po 8t kada su obe vrste potrebnog tovara dostavljene u roku od mesec dana.
 STR_GENERIC_DC90                                                                :\UE09A\0EVetro-elektrana
@@ -65,8 +65,8 @@ STR_GENERIC_DC80                                                                
 STR_GENERIC_DC83                                                                :\UE09A\0EDrvara
 STR_GENERIC_DC82                                                                :\UE09A\0EMašinska radionica
 STR_GENERIC_DC96                                                                :\UE09A\0EKvantaška pijaca
-STR_PARAM_1_NAME                                                                :Dozvoljen pad proizvodnje primarnih industrija
-STR_GENERIC_DC89                                                                :\UE09A\0EOtpad
+STR_PARAM_NAME_PRIMARY_PRODUCTION                                               :Dozvoljen pad proizvodnje primarnih industrija
+STR_IND_JUNKYARD                                                                :\UE09A\0EOtpad
 STR_GENERIC_DC88                                                                :\UE09A\0EFarma ovaca
 STR_PARAM_4_DESC                                                                :{SILVER}Još uvek ne funkcioniše. {BLACK}Kada se završi omogućiće režim 'izolovanog izvršavanja' za scenarija.
 STR_GENERIC_D0A6                                                                :{}{BLACK}Fabrika se može zatvoriti ako ne primi nijedan tovar u roku od:{}{YELLOW}  meseci
@@ -145,7 +145,7 @@ STR_GENERIC_DC44                                                                
 STR_GENERIC_DC46                                                                :\UE09A\0Emetalni otpaci
 STR_GENERIC_DC49                                                                :{TINYFONT}SM
 STR_GENERIC_DC48                                                                :\UE09A\0D metalnih otpadaka
-STR_GENERIC_DC3C                                                                :\UE09A\0Emetali
+STR_CARGO_NAME_METAL                                                            :\UE09A\0Emetali
 STR_GENERIC_DC76                                                                :\UE09A\0EBiorafinerija
 STR_GENERIC_D0B2                                                                :{BLACK}Proizvodni materijal udvostručuje proizvodnju od drugog potrebnog tovara.{}{}{STRING}
 STR_GENERIC_DC3E                                                                :\UE09A\0D metala
@@ -162,7 +162,7 @@ STR_GENERIC_DC31                                                                
 STR_GENERIC_DC33                                                                :{WORD_S} sanduka tehničke opreme
 STR_PARAM_0_NAME                                                                :Ekonomija
 STR_GENERIC_DC38                                                                :\UE09A\0Eboksit
-STR_GENERIC_DC71                                                                :\UE09A\0EKamenolom
+STR_IND_QUARRY                                                                  :\UE09A\0EKamenolom
 STR_GENERIC_D024                                                                :{BLACK}Proizvodni odnos:{}  3t po 8t dostavljenog proizvodnog materijala{}  5t po 8t dostavljenog mleka{}{}Proizvodnja se poboljšava na 8t po 8t kada su obe vrste potrebnog tovara dostavljene u roku od mesec dana.
 STR_GRF_DESC                                                                    :{ORANGE}FIRS Zamenski Skup Industrija{}{BLACK}Kreirali {SILVER}andythenorth{BLACK} i {SILVER}FooBar{BLACK}.{}{BLACK}'sa 1,000 i više izmena...'{BLACK}{}{}Internet stranica: {SILVER}www.tt-foundry.com/sets/FIRS{BLACK}.Licenca: {SILVER}GPL v2{BLACK}.Posebne zahvalnice za {SILVER}Ammler{BLACK}, {SILVER}Core Xii{BLACK}, {SILVER}Irwe{BLACK}, {SILVER}planetmaker{BLACK} and {SILVER}Zephyris{BLACK}.Koristi delove {SILVER}eGRVTS{BLACK}, {SILVER}ISR{BLACK} i {SILVER}OpenGFX{BLACK}.
 STR_GENERIC_DC0F                                                                :\UE09A\0D ribe

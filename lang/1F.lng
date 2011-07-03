@@ -1,51 +1,51 @@
 ##grflangid 0x1F
-STR_GENERIC_DC9B                                                                :Kalkoven
-STR_GENERIC_DC26                                                                :Productiehulpgoederen
-STR_GENERIC_DC25                                                                :{TINYFONT}HT
-STR_GENERIC_DC24                                                                :\UE09A\0D gezaagd hout
-STR_GENERIC_DC22                                                                :Gezaagd hout
+STR_IND_LIME_KILN                                                               :Kalkoven
+STR_CARGO_NAME_MNSP                                                             :Productiehulpgoederen
+STR_CID_LUMBER                                                                  :{TINYFONT}HT
+STR_CARGO_NAME_UNIT_LUMBER                                                      :\UE09A\0D gezaagd hout
+STR_CARGO_NAME_LUMBER                                                           :Gezaagd hout
 STR_GENERIC_DC21                                                                :{TINYFONT}GD
 STR_GENERIC_DC29                                                                :{TINYFONT}HP
-STR_GENERIC_DC28                                                                :{WORD_S} kratten productiehulpgoederen
-STR_GENERIC_DC9A                                                                :Kleiwinning
-STR_PARAM_6_NAME                                                                :Laat debug-informatie zien
+STR_CARGO_UNIT_MNSP                                                             :{WORD_S} kratten productiehulpgoederen
+STR_IND_CLAY_PIT                                                                :Kleiwinning
+STR_PARAM_NAME_DEBUG                                                            :Laat debug-informatie zien
 STR_GENERIC_D0A8                                                                :{}{RED}Geen vracht geleverd voor ten minste {POP_WORD}{POP_WORD}{WORD_S} maanden. Deze industrie kan spoedig sluiten. {}
 STR_PARAM_5_DESC                                                                :{SILVER}Maximale afstand tot de kust in tegels voor visgebieden en baggermolens.
 STR_GENERIC_D0C1                                                                :{BLACK} (max 800)
 STR_GENERIC_D0C0                                                                :{BLACK} (max 200)
-STR_GENERIC_DC1B                                                                :\UE09A\0D zand
+STR_CARGO_UNIT_SAND                                                             :\UE09A\0D zand
 STR_PARAM_1_DESC                                                                :Standaard kunnen FIRS primaire industrieën hun productie nooit verlagen.{}Als productieverlaging voor primaire industrieën is ingeschakeld is er een kans dat een industrie zijn productie verlaagt als er in een maand geen hulpgoederen zijn geleverd. Bij een hoge productie is de kans op productieverlaging groter.
-STR_GENERIC_DC1F                                                                :\UE09A\0D grind
-STR_GENERIC_DC1D                                                                :Grind
+STR_CARGO_UNIT_STONE                                                            :\UE09A\0D grind
+STR_CARGO_NAME_STONE                                                            :Grind
 STR_GENERIC_DC18                                                                :{TINYFONT}KT
-STR_GENERIC_DC19                                                                :Zand
-STR_GENERIC_DC13                                                                :\UE09A\0D wol
+STR_CARGO_NAME_SAND                                                             :Zand
+STR_CARGO_UNIT_WOOL                                                             :\UE09A\0D wol
 STR_GENERIC_DC10                                                                :{TINYFONT}VS
 STR_GENERIC_DC11                                                                :Wol
-STR_GENERIC_DC17                                                                :\UE09A\0D katoen
+STR_CARGO_UNIT_FIBRES                                                           :\UE09A\0D katoen
 STR_GENERIC_DC14                                                                :{TINYFONT}WL
-STR_GENERIC_DC15                                                                :Katoen
+STR_CARGO_NAME_FIBRES                                                           :Katoen
 STR_GENERIC_D0A0                                                                :
 STR_GENERIC_D0A5                                                                :{BLACK}Beschikbaar: {YELLOW}{DATE_LONG}
-STR_GENERIC_DC92                                                                :Tankstation
-STR_GENERIC_DC2F                                                                :{VOLUME} chemicaliën
-STR_GENERIC_DC2E                                                                :Chemicaliën
+STR_IND_PETROLPUMP                                                              :Tankstation
+STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} chemicaliën
+STR_CARGO_NAME_CHEMICALS                                                        :Chemicaliën
 STR_GENERIC_DC2D                                                                :{TINYFONT}HL
-STR_GENERIC_DC2C                                                                :{WORD_S} kratten landbouwhulpgoederen
+STR_CARGO_UNIT_FMSP                                                             :{WORD_S} kratten landbouwhulpgoederen
 STR_GENERIC_DC97                                                                :Supermarkt
-STR_GENERIC_DC2A                                                                :Landbouwhulpgoederen
-STR_GENERIC_DC95                                                                :Windmolen
-STR_GENERIC_DC98                                                                :Detailhandel
+STR_CARGO_NAME_FMSP                                                             :Landbouwhulpgoederen
+STR_IND_WINDMILL                                                                :Windmolen
+STR_IND_RETAILMARKET                                                            :Detailhandel
 STR_GENERIC_DC99                                                                :Suikerfabriek
 STR_GENERIC_D013                                                                :{BLACK}Productie:{}  3t per 8t geleverde productiehulpgoederen{}  5t per 8t geleverde suikerbieten{}{}Verhoogt tot 8t per 8t als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
 STR_PARAM_3_DESC                                                                :Standaard zullen FIRS primaire industrieën nooit sluiten.{}Als sluiten van secundaire industrieën is ingeschakeld kunnen secundaire industrieën sluiten als voor lange tijd geen vracht is getransporteerd.
-STR_GENERIC_DC09                                                                :Fruit en Groente
+STR_CARGO_NAME_FRUITS                                                           :Fruit en Groente
 STR_GENERIC_DC08                                                                :{TINYFONT}BM
-STR_GENERIC_DC05                                                                :Bouwmaterialen
+STR_CARGO_NAME_BUILDINGMATERIALS                                                :Bouwmaterialen
 STR_GENERIC_DC04                                                                :{TINYFONT}SR
-STR_GENERIC_DC07                                                                :\UE09A\0D bouwmaterialen
-STR_GENERIC_DC7C                                                                :Melkveehouderij
-STR_GENERIC_DC01                                                                :Suikerriet
+STR_CARGO_UNIT_BUILDINGMATERIALS                                                :\UE09A\0D bouwmaterialen
+STR_IND_DAIRYFARM                                                               :Melkveehouderij
+STR_CARGO_NAME_SUGARCANE                                                        :Suikerriet
 STR_PARAM_2_NAME                                                                :Primaire industrieën kunnen sluiten
 STR_GENERIC_DC03                                                                :\UE09A\0D suikerriet
 STR_GENERIC_DCEA                                                                :{STRING} Grindgat
@@ -54,7 +54,7 @@ STR_GENERIC_D023                                                                
 STR_PARAM_4_NAME                                                                :Voorkom bouwen van nieuwe industrieën (nog niet af)
 STR_GENERIC_D025                                                                :{BLACK}Productie:{}  3t per 8t geleverde productiehulpgoederen{}  5t per 8t geleverd vee{}{}Verhoogt tot 8t per 8t als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
 STR_GENERIC_D026                                                                :{BLACK}Bouwt en onderhoudt machines.{}{}8t productie voor iedere 8t geleverd.
-STR_GENERIC_DC93                                                                :Visgebied
+STR_IND_FISHING_GROUND                                                          :Visgebied
 STR_GENERIC_D028                                                                :{BLACK}Verwerkt chemicaliën tot kunstmest voor gebruik door boerderijen.{}{}8t productie voor iedere 8t geleverd.
 STR_GENERIC_D029                                                                :{BLACK}Maakt onder andere houten palen en stijgerplanken..{}{}{BLACK}Productie:{}  2t per 8t geleverde chemicaliën{}  6t per 8t geleverd gezaagd hout{}{}Verhoogt tot 8t per 8t als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
 STR_GENERIC_DC90                                                                :Windmolenpark
@@ -65,8 +65,8 @@ STR_GENERIC_DC80                                                                
 STR_GENERIC_DC83                                                                :Houtwerkplaats
 STR_GENERIC_DC82                                                                :Machinewerkplaats
 STR_GENERIC_DC96                                                                :Groothandel
-STR_PARAM_1_NAME                                                                :Primaire industrieën kunnen productie verlagen
-STR_GENERIC_DC89                                                                :Schroothoop
+STR_PARAM_NAME_PRIMARY_PRODUCTION                                               :Primaire industrieën kunnen productie verlagen
+STR_IND_JUNKYARD                                                                :Schroothoop
 STR_GENERIC_DC88                                                                :Schapenhouderij
 STR_PARAM_4_DESC                                                                :{SILVER}Dit doet nog niets. {BLACK}Al het klaar is, zal het een 'zandbak mode' geven om te gebruiken in scenario's.
 STR_GENERIC_D0A6                                                                :{}{BLACK}Deze industrie kan sluiten tenzij vracht wordt geleverd binnen:{}{YELLOW}  {WORD_S} maanden
@@ -145,7 +145,7 @@ STR_GENERIC_DC44                                                                
 STR_GENERIC_DC46                                                                :Schroot
 STR_GENERIC_DC49                                                                :{TINYFONT}ST
 STR_GENERIC_DC48                                                                :\UE09A\0D schroot
-STR_GENERIC_DC3C                                                                :Metaal
+STR_CARGO_NAME_METAL                                                            :Metaal
 STR_GENERIC_DC76                                                                :Bioraffinaderij
 STR_GENERIC_D0B2                                                                :{BLACK}Productiehulpgoederen verdubbelen de productiecapaciteit.{}{}{STRING}
 STR_GENERIC_DC3E                                                                :\UE09A\0D metaal
@@ -162,7 +162,7 @@ STR_GENERIC_DC31                                                                
 STR_GENERIC_DC33                                                                :{WORD_S} kratten constructiehulpgoederen
 STR_PARAM_0_NAME                                                                :Economie
 STR_GENERIC_DC38                                                                :Bauxiet
-STR_GENERIC_DC71                                                                :Zandwinning
+STR_IND_QUARRY                                                                  :Zandwinning
 STR_GENERIC_D024                                                                :{BLACK}Productie:{}  3t per 8t geleverde productiehulpgoederen{}  5t per 8t geleverde melk{}{}Verhoogt tot 8t per 8t als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
 STR_GRF_DESC                                                                    :{ORANGE}FIRS Industry Replacement Set{}{BLACK}Door: {SILVER}andythenorth{BLACK} en {SILVER}FooBar{BLACK}.{}{BLACK}'1,000 commits en nog niet klaar...'{BLACK}{}{}Website: {SILVER}www.tt-foundry.com/sets/FIRS{BLACK}.Licentie: {SILVER}GPL v2{}{BLACK}Speciale dank aan {SILVER}Ammler{BLACK}, {SILVER}Core Xii{BLACK}, {SILVER}Irwe{BLACK}, {SILVER}planetmaker{BLACK} en {SILVER}Zephyris{}{BLACK}.Gebruikt onderdelen van: {SILVER}eGRVTS{BLACK}, {SILVER}ISR{BLACK} en {SILVER}OpenGFX{BLACK}.
 STR_GENERIC_DC0F                                                                :\UE09A\0D vis

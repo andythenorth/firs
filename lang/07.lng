@@ -1,42 +1,42 @@
 ##grflangid 0x07
-STR_GENERIC_DC9B                                                                :Известковые печи
-STR_GENERIC_DC26                                                                :Производственные материалы
-STR_GENERIC_DC25                                                                :{TINYFONT}LU
-STR_GENERIC_DC9A                                                                :Глиняный карьер
-STR_GENERIC_DC22                                                                :Пиломатериалы
+STR_IND_LIME_KILN                                                               :Известковые печи
+STR_CARGO_NAME_MNSP                                                             :Производственные материалы
+STR_CID_LUMBER                                                                  :{TINYFONT}LU
+STR_IND_CLAY_PIT                                                                :Глиняный карьер
+STR_CARGO_NAME_LUMBER                                                           :Пиломатериалы
 STR_GENERIC_DC21                                                                :{TINYFONT}GV
 STR_GENERIC_DC29                                                                :{TINYFONT}MS
-STR_PARAM_6_NAME                                                                :Показывать отладочные сообщения
+STR_PARAM_NAME_DEBUG                                                            :Показывать отладочные сообщения
 STR_GENERIC_D0A8                                                                :{}{RED}Поставок не было как минимум {POP_WORD}{POP_WORD}{WORD_S} месяцев. Это предприятие может скоро закрыться. {}
 STR_GENERIC_D0C1                                                                :{BLACK} (макс. 800)
 STR_GENERIC_D0C0                                                                :{BLACK} (макс. 200)
 STR_PARAM_1_DESC                                                                :По умолчанию, сырьевые предприятия в FIRS никогда не снижают своей производительности.{}{}Если данная опция включена, то появится вероятность того, что производительность снизится в случае если предприятию в течении месяца не будут поставляться средства производства. Чем выше уровень производительности, тем больше вероятность того, что это случится.
-STR_GENERIC_DC1D                                                                :Камень
+STR_CARGO_NAME_STONE                                                            :Камень
 STR_GENERIC_DC18                                                                :{TINYFONT}CT
-STR_GENERIC_DC19                                                                :Песок
+STR_CARGO_NAME_SAND                                                             :Песок
 STR_GENERIC_DC10                                                                :{TINYFONT}FI
 STR_GENERIC_DC11                                                                :Шерсть
 STR_GENERIC_DC14                                                                :{TINYFONT}WL
-STR_GENERIC_DC15                                                                :Растительные волокна
+STR_CARGO_NAME_FIBRES                                                           :Растительные волокна
 STR_GENERIC_D0A5                                                                :{BLACK}Доступно: {YELLOW}{DATE_LONG}
-STR_GENERIC_DC92                                                                :Бензозаправка
-STR_GENERIC_DC93                                                                :Рыболовный промысел
+STR_IND_PETROLPUMP                                                              :Бензозаправка
+STR_IND_FISHING_GROUND                                                          :Рыболовный промысел
 STR_GENERIC_DC90                                                                :Ветряная электростанция
 STR_GENERIC_DC2D                                                                :{TINYFONT}FS
 STR_GENERIC_DC96                                                                :Оптовый рынок
 STR_GENERIC_DC97                                                                :Супермаркет
 STR_GENERIC_DC94                                                                :Кузница
-STR_GENERIC_DC95                                                                :Мельница
-STR_GENERIC_DC98                                                                :Рынок
+STR_IND_WINDMILL                                                                :Мельница
+STR_IND_RETAILMARKET                                                            :Рынок
 STR_GENERIC_DC99                                                                :Сахарорафинадный завод
 STR_PARAM_3_DESC                                                                :По умолчанию, обрабатывающие предприятия в FIRS не могут закрываться.{}{}Если данная опция включена, обрабатывающие предприятия могут закрыться, если груз не будет перевозиться в течении долгого времени.
-STR_GENERIC_DC09                                                                :Фрукты и овощи
+STR_CARGO_NAME_FRUITS                                                           :Фрукты и овощи
 STR_GENERIC_DC08                                                                :{TINYFONT}BM
-STR_GENERIC_DC05                                                                :Стройматериалы
+STR_CARGO_NAME_BUILDINGMATERIALS                                                :Стройматериалы
 STR_GENERIC_DC04                                                                :{TINYFONT}SC
 STR_GENERIC_DC7B                                                                :Скотобойня
-STR_GENERIC_DC7C                                                                :Молочная ферма
-STR_GENERIC_DC01                                                                :Сахарный тростник
+STR_IND_DAIRYFARM                                                               :Молочная ферма
+STR_CARGO_NAME_SUGARCANE                                                        :Сахарный тростник
 STR_GENERIC_DC7E                                                                :Пекарня
 STR_GENERIC_DC7F                                                                :Текстильная фабрика
 STR_GENERIC_DCEA                                                                :Дноуглубление {STRING}
@@ -48,7 +48,7 @@ STR_GENERIC_D026                                                                
 STR_GENERIC_D027                                                                :{BLACK}Продает продукты предприятиям общепита, развлекательным заведениям и гостиницам.{}{}8т продукции на 8т поставок.
 STR_GENERIC_D028                                                                :{BLACK}Преобразует химические вещества в удобрения для ферм.{}{}8т продукции на 8т поставок.
 STR_GENERIC_D029                                                                :{BLACK}Производит предметы, такие как столбы и колья для забора.{}{}{BLACK}Производится:{}  2т на 8т химикатов{}  6т на 8т пиломатериалов{}{}Увеличится до 8т на 8т если в течение месяца будут поставлены оба типа грузов.
-STR_GENERIC_DC2E                                                                :Химикаты
+STR_CARGO_NAME_CHEMICALS                                                        :Химикаты
 STR_GENERIC_DC84                                                                :Металлолитейный завод
 STR_GENERIC_DC86                                                                :Смешанная ферма
 STR_GENERIC_DC81                                                                :Алюминиевый завод
@@ -56,14 +56,14 @@ STR_GENERIC_DC80                                                                
 STR_GENERIC_DC83                                                                :Лесоторговая база
 STR_GENERIC_DC82                                                                :Машиностроительный завод
 STR_GENERIC_D0A0                                                                :
-STR_PARAM_1_NAME                                                                :Разрешить уменьшение производительности сырьевых предприятий
-STR_GENERIC_DC89                                                                :Свалка
+STR_PARAM_NAME_PRIMARY_PRODUCTION                                               :Разрешить уменьшение производительности сырьевых предприятий
+STR_IND_JUNKYARD                                                                :Свалка
 STR_GENERIC_DC88                                                                :Овцеферма
 STR_PARAM_4_DESC                                                                :{SILVER}На данный момент эта опция ни на что не влияет. {BLACK}Когда будет сделана, данная опция будет предоставлять 'режим песочницы' для совместного использования со сценариями.
 STR_GENERIC_D0A6                                                                :{}{BLACK}Предприятие может закрыться если поставок не будет в течение:{}{YELLOW}  {WORD_S} месяцев
 STR_GENERIC_DC8E                                                                :Участок дноуглубления
 STR_GENERIC_DC8A                                                                :Магазин
-STR_GENERIC_DC2A                                                                :Сельхозтовары
+STR_CARGO_NAME_FMSP                                                             :Сельхозтовары
 STR_GENERIC_DC8C                                                                :Рыболовная пристань
 STR_GENERIC_DC8B                                                                :Бокситовая шахта
 STR_GENERIC_D0AA                                                                :{BLACK}Доступно: {YELLOW}1-е янв 1610г.
@@ -79,7 +79,7 @@ STR_GENERIC_DCEC                                                                
 STR_GENERIC_DC78                                                                :Фабрика удобрений
 STR_GENERIC_DC79                                                                :Пластмассовый завод
 STR_GENERIC_DC70                                                                :Зерновое хозяйство
-STR_GENERIC_DC71                                                                :Карьер
+STR_IND_QUARRY                                                                  :Карьер
 STR_GENERIC_DC72                                                                :Стройбаза
 STR_GENERIC_DC73                                                                :Пивоваренный завод
 STR_GENERIC_DC74                                                                :Цементный завод
@@ -128,7 +128,7 @@ STR_GENERIC_DC49                                                                
 STR_GENERIC_D0B0                                                                :{BLACK}Поставки оборудования могут увеличить производительность.{}{YELLOW}  {DWORD_S} ящиков поставлено в этом месяце
 STR_GENERIC_DC3F                                                                :{TINYFONT}ML
 STR_GENERIC_DC3B                                                                :{TINYFONT}BX
-STR_GENERIC_DC3C                                                                :Металл
+STR_CARGO_NAME_METAL                                                            :Металл
 STR_GENERIC_DC34                                                                :{TINYFONT}ES
 STR_GENERIC_DC35                                                                :Бензин
 STR_PARAM_2_NAME                                                                :Разрешить закрытие сырьевых предприятий

@@ -19,7 +19,7 @@ grf {
 	}
 	param 1 {
 		param_1 {
-			name: string(STR_PARAM_1_NAME);
+			name: string(STR_PARAM_NAME_PRIMARY_PRODUCTION);
 			desc: string(STR_PARAM_1_DESC);
 			type: bool;
 		}
@@ -59,7 +59,7 @@ grf {
 	}
 	param 3 {
 		param_6 {
-			name: string(STR_PARAM_6_NAME);
+			name: string(STR_PARAM_NAME_DEBUG);
 			desc: string(STR_PARAM_6_DESC);
 			type: int;
 		}
@@ -177,12 +177,12 @@ if (grf_future_status("JS\0A\02")) {
 
 if (grf_future_status("JS\0A\03")) {
 	// Sprite 63
-	error(FATAL, string(STR_ERROR_63));
+	error(FATAL, string(STR_ERR_INCOMPATIBLE_CITYBUILDER));
 }
 
 if (grf_future_status("JS\0A\04")) {
 	// Sprite 65
-	error(FATAL, string(STR_ERROR_65));
+	error(FATAL, string(STR_ERR_INCOMPATIBLE_CITYBUILDER2));
 }
 
 if (grf_future_status("JS\0A\05")) {
@@ -197,22 +197,22 @@ if (grf_future_status("EX\01\02")) {
 
 if (grf_future_status("EX\01\03")) {
 	// Sprite 71
-	error(FATAL, string(STR_ERROR_71));
+	error(FATAL, string(STR_ERR_INCOMPATIBLE_CITYBUILDER3));
 }
 
 if (grf_future_status("DD\06\01")) {
 	// Sprite 73
-	error(FATAL, string(STR_ERROR_73));
+	error(FATAL, string(STR_ERR_INCOMPATIBLE_UKRS));
 }
 
 if (grf_future_status("frMI")) {
 	// Sprite 75
-	error(FATAL, string(STR_ERROR_75));
+	error(FATAL, string(STR_ERR_INCOMPATIBLE_MANIND));
 }
 
 if (grf_future_status("SLTU")) {
 	// Sprite 77
-	error(FATAL, string(STR_ERROR_77));
+	error(FATAL, string(STR_ERR_INCOMPATIBLE_TOURISTSET));
 }
 
 if (grf_future_status("SZ\13D")) {
@@ -274,7 +274,7 @@ if (grf_future_status("CASa")) {
 	param[9] = param["CASa", 1];
 	if ((param[9] != 0)) {
 		// Sprite 103
-		error(FATAL, string(STR_ERROR_103));
+		error(FATAL, string(STR_ERR_CANSET_PARAM));
 	}
 }
 
@@ -283,7 +283,7 @@ if (grf_future_status("VC\00\01")) {
 	param[9] = param["VC\00\01", 254];
 	if ((param[9] <= 17)) {
 		// Sprite 107
-		error(FATAL, string(STR_ERROR_107));
+		error(FATAL, string(STR_ERR_TTRS_VERSION));
 	}
 }
 
@@ -546,8 +546,8 @@ item(FEAT_CARGOS, item_FEAT_CARGOS_8, 8) {
 item(FEAT_CARGOS, item_FEAT_CARGOS_9, 9) {
 	property {
 		number: 9;
-		type_name: string(STR_GENERIC_DC3C);
-		unit_name: string(STR_GENERIC_DC3C);
+		type_name: string(STR_CARGO_NAME_METAL);
+		unit_name: string(STR_CARGO_NAME_METAL);
 		type_abbreviation: string(STR_GENERIC_DC3F);
 		sprite: 65535;
 		weight: 1.0;
@@ -630,8 +630,8 @@ item(FEAT_CARGOS, item_FEAT_CARGOS_10, 10) {
 item(FEAT_CARGOS, item_FEAT_CARGOS_13, 13) {
 	property {
 		number: 13;
-		type_name: string(STR_GENERIC_DC09);
-		unit_name: string(STR_GENERIC_DC09);
+		type_name: string(STR_CARGO_NAME_FRUITS);
+		unit_name: string(STR_CARGO_NAME_FRUITS);
 		type_abbreviation: 156;
 		sprite: 65535;
 		weight: 1.0;
@@ -686,15 +686,15 @@ item(FEAT_CARGOS, item_FEAT_CARGOS_15, 15) {
 		town_growth_multiplier: 1.0;
 		callback_flags: 0;
 		units_of_cargo: 80;
-		items_of_cargo: string(STR_GENERIC_DC13);
+		items_of_cargo: string(STR_CARGO_UNIT_WOOL);
 	}
 }
 
 item(FEAT_CARGOS, item_FEAT_CARGOS_22, 22) {
 	property {
 		number: 22;
-		type_name: string(STR_GENERIC_DC15);
-		unit_name: string(STR_GENERIC_DC15);
+		type_name: string(STR_CARGO_NAME_FIBRES);
+		unit_name: string(STR_CARGO_NAME_FIBRES);
 		type_abbreviation: string(STR_GENERIC_DC18);
 		sprite: 65535;
 		weight: 1.0;
@@ -707,15 +707,15 @@ item(FEAT_CARGOS, item_FEAT_CARGOS_22, 22) {
 		town_growth_multiplier: 1.0;
 		callback_flags: 0;
 		units_of_cargo: 80;
-		items_of_cargo: string(STR_GENERIC_DC17);
+		items_of_cargo: string(STR_CARGO_UNIT_FIBRES);
 	}
 }
 
 item(FEAT_CARGOS, item_FEAT_CARGOS_26, 26) {
 	property {
 		number: 26;
-		type_name: string(STR_GENERIC_DC1D);
-		unit_name: string(STR_GENERIC_DC1D);
+		type_name: string(STR_CARGO_NAME_STONE);
+		unit_name: string(STR_CARGO_NAME_STONE);
 		type_abbreviation: string(STR_GENERIC_DC21);
 		sprite: 65535;
 		weight: 1.0;
@@ -728,15 +728,15 @@ item(FEAT_CARGOS, item_FEAT_CARGOS_26, 26) {
 		town_growth_multiplier: 1.0;
 		callback_flags: 0;
 		units_of_cargo: 80;
-		items_of_cargo: string(STR_GENERIC_DC1F);
+		items_of_cargo: string(STR_CARGO_UNIT_STONE);
 	}
 }
 
 item(FEAT_CARGOS, item_FEAT_CARGOS_28, 28) {
 	property {
 		number: 28;
-		type_name: string(STR_GENERIC_DC05);
-		unit_name: string(STR_GENERIC_DC05);
+		type_name: string(STR_CARGO_NAME_BUILDINGMATERIALS);
+		unit_name: string(STR_CARGO_NAME_BUILDINGMATERIALS);
 		type_abbreviation: string(STR_GENERIC_DC08);
 		sprite: 65535;
 		weight: 1.0;
@@ -749,15 +749,15 @@ item(FEAT_CARGOS, item_FEAT_CARGOS_28, 28) {
 		town_growth_multiplier: 1.0;
 		callback_flags: 0;
 		units_of_cargo: 80;
-		items_of_cargo: string(STR_GENERIC_DC07);
+		items_of_cargo: string(STR_CARGO_UNIT_BUILDINGMATERIALS);
 	}
 }
 
 item(FEAT_CARGOS, item_FEAT_CARGOS_17, 17) {
 	property {
 		number: 17;
-		type_name: string(STR_GENERIC_DC19);
-		unit_name: string(STR_GENERIC_DC19);
+		type_name: string(STR_CARGO_NAME_SAND);
+		unit_name: string(STR_CARGO_NAME_SAND);
 		type_abbreviation: string(STR_GENERIC_DC1C);
 		sprite: 65535;
 		weight: 1.0;
@@ -770,7 +770,7 @@ item(FEAT_CARGOS, item_FEAT_CARGOS_17, 17) {
 		town_growth_multiplier: 1.0;
 		callback_flags: 0;
 		units_of_cargo: 80;
-		items_of_cargo: string(STR_GENERIC_DC1B);
+		items_of_cargo: string(STR_CARGO_UNIT_SAND);
 	}
 }
 
@@ -798,9 +798,9 @@ item(FEAT_CARGOS, item_FEAT_CARGOS_16, 16) {
 item(FEAT_CARGOS, item_FEAT_CARGOS_19, 19) {
 	property {
 		number: 19;
-		type_name: string(STR_GENERIC_DC22);
-		unit_name: string(STR_GENERIC_DC22);
-		type_abbreviation: string(STR_GENERIC_DC25);
+		type_name: string(STR_CARGO_NAME_LUMBER);
+		unit_name: string(STR_CARGO_NAME_LUMBER);
+		type_abbreviation: string(STR_CID_LUMBER);
 		sprite: 65535;
 		weight: 1.0;
 		station_list_colour: 58;
@@ -812,7 +812,7 @@ item(FEAT_CARGOS, item_FEAT_CARGOS_19, 19) {
 		town_growth_multiplier: 1.0;
 		callback_flags: 0;
 		units_of_cargo: 80;
-		items_of_cargo: string(STR_GENERIC_DC24);
+		items_of_cargo: string(STR_CARGO_NAME_UNIT_LUMBER);
 	}
 }
 
@@ -861,8 +861,8 @@ item(FEAT_CARGOS, item_FEAT_CARGOS_20, 20) {
 item(FEAT_CARGOS, item_FEAT_CARGOS_12, 12) {
 	property {
 		number: 12;
-		type_name: string(STR_GENERIC_DC01);
-		unit_name: string(STR_GENERIC_DC01);
+		type_name: string(STR_CARGO_NAME_SUGARCANE);
+		unit_name: string(STR_CARGO_NAME_SUGARCANE);
 		type_abbreviation: string(STR_GENERIC_DC04);
 		sprite: 65535;
 		weight: 1.0;
@@ -903,8 +903,8 @@ item(FEAT_CARGOS, item_FEAT_CARGOS_25, 25) {
 item(FEAT_CARGOS, item_FEAT_CARGOS_23, 23) {
 	property {
 		number: 23;
-		type_name: string(STR_GENERIC_DC2E);
-		unit_name: string(STR_GENERIC_DC2E);
+		type_name: string(STR_CARGO_NAME_CHEMICALS);
+		unit_name: string(STR_CARGO_NAME_CHEMICALS);
 		type_abbreviation: string(STR_GENERIC_DC30);
 		sprite: 65535;
 		weight: 0.625;
@@ -917,15 +917,15 @@ item(FEAT_CARGOS, item_FEAT_CARGOS_23, 23) {
 		town_growth_multiplier: 1.0;
 		callback_flags: 0;
 		units_of_cargo: 82;
-		items_of_cargo: string(STR_GENERIC_DC2F);
+		items_of_cargo: string(STR_CARGO_UNIT_CHEMICALS);
 	}
 }
 
 item(FEAT_CARGOS, item_FEAT_CARGOS_18, 18) {
 	property {
 		number: 18;
-		type_name: string(STR_GENERIC_DC26);
-		unit_name: string(STR_GENERIC_DC26);
+		type_name: string(STR_CARGO_NAME_MNSP);
+		unit_name: string(STR_CARGO_NAME_MNSP);
 		type_abbreviation: string(STR_GENERIC_DC29);
 		sprite: 65535;
 		weight: 0.3125;
@@ -938,7 +938,7 @@ item(FEAT_CARGOS, item_FEAT_CARGOS_18, 18) {
 		town_growth_multiplier: 1.0;
 		callback_flags: 0;
 		units_of_cargo: 84;
-		items_of_cargo: string(STR_GENERIC_DC28);
+		items_of_cargo: string(STR_CARGO_UNIT_MNSP);
 	}
 }
 
@@ -966,8 +966,8 @@ item(FEAT_CARGOS, item_FEAT_CARGOS_24, 24) {
 item(FEAT_CARGOS, item_FEAT_CARGOS_21, 21) {
 	property {
 		number: 21;
-		type_name: string(STR_GENERIC_DC2A);
-		unit_name: string(STR_GENERIC_DC2A);
+		type_name: string(STR_CARGO_NAME_FMSP);
+		unit_name: string(STR_CARGO_NAME_FMSP);
 		type_abbreviation: string(STR_GENERIC_DC2D);
 		sprite: 65535;
 		weight: 0.5625;
@@ -980,7 +980,7 @@ item(FEAT_CARGOS, item_FEAT_CARGOS_21, 21) {
 		town_growth_multiplier: 1.0;
 		callback_flags: 0;
 		units_of_cargo: 84;
-		items_of_cargo: string(STR_GENERIC_DC2C);
+		items_of_cargo: string(STR_CARGO_UNIT_FMSP);
 	}
 }
 
@@ -12414,7 +12414,7 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_44, 44) {
 		prod_increase_msg: 18485;
 		prod_decrease_msg: 18489;
 		new_ind_msg: 18477;
-		name: string(STR_GENERIC_DC9A);
+		name: string(STR_IND_CLAY_PIT);
 		nearby_station_name: string(STR_GENERIC_DCE8);
 		prod_cargo_types: [16, 255];
 		accept_cargo_types: [24, 255, 255];
@@ -14233,7 +14233,7 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_28, 28) {
 		prod_increase_msg: 18488;
 		prod_decrease_msg: 18489;
 		new_ind_msg: 18477;
-		name: string(STR_GENERIC_DC7C);
+		name: string(STR_IND_DAIRYFARM);
 		nearby_station_name: string(STR_GENERIC_DCE0);
 		prod_cargo_types: [4, 10];
 		accept_cargo_types: [21, 255, 255];
@@ -17612,7 +17612,7 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_32, 32) {
 		prod_increase_msg: 18485;
 		prod_decrease_msg: 18489;
 		new_ind_msg: 18477;
-		name: string(STR_GENERIC_DC93);
+		name: string(STR_IND_FISHING_GROUND);
 		nearby_station_name: string(STR_GENERIC_DCEB);
 		prod_cargo_types: [14, 255];
 		accept_cargo_types: [255, 255, 255];
@@ -36133,7 +36133,7 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_25, 25) {
 		prod_increase_msg: 18485;
 		prod_decrease_msg: 18489;
 		new_ind_msg: 18477;
-		name: string(STR_GENERIC_DC89);
+		name: string(STR_IND_JUNKYARD);
 		prod_cargo_types: [20, 255];
 		accept_cargo_types: [24, 255, 255];
 		prod_multiplier: [7, 0];
@@ -36525,7 +36525,7 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_1, 1) {
 		prod_increase_msg: 18485;
 		prod_decrease_msg: 18489;
 		new_ind_msg: 18477;
-		name: string(STR_GENERIC_DC9B);
+		name: string(STR_IND_LIME_KILN);
 		prod_cargo_types: [23, 21];
 		accept_cargo_types: [26, 1, 255];
 		prod_multiplier: [0, 0];
@@ -43750,7 +43750,7 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_60, 60) {
 		prod_increase_msg: 18485;
 		prod_decrease_msg: 18489;
 		new_ind_msg: 18477;
-		name: string(STR_GENERIC_DC92);
+		name: string(STR_IND_PETROLPUMP);
 		prod_cargo_types: [255, 255];
 		accept_cargo_types: [11, 5, 25];
 		prod_multiplier: [0, 0];
@@ -47015,7 +47015,7 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_10, 10) {
 		prod_increase_msg: 18485;
 		prod_decrease_msg: 18489;
 		new_ind_msg: 18477;
-		name: string(STR_GENERIC_DC71);
+		name: string(STR_IND_QUARRY);
 		nearby_station_name: string(STR_GENERIC_DCE8);
 		prod_cargo_types: [17, 26];
 		accept_cargo_types: [24, 255, 255];
