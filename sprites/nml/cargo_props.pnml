@@ -1,5 +1,5 @@
 
-item(FEAT_CARGOS, item_FEAT_CARGOS_0, 0) {
+item(FEAT_CARGOS, cargo_passengers, 0) {
 	property {
 		number: 0;
 		type_name: 15;
@@ -20,7 +20,7 @@ item(FEAT_CARGOS, item_FEAT_CARGOS_0, 0) {
 	}
 }
 
-item(FEAT_CARGOS, item_FEAT_CARGOS_1, 1) {
+item(FEAT_CARGOS, cargo_coal, 1) {
 	property {
 		number: 1;
 		type_name: 16;
@@ -41,7 +41,7 @@ item(FEAT_CARGOS, item_FEAT_CARGOS_1, 1) {
 	}
 }
 
-item(FEAT_CARGOS, item_FEAT_CARGOS_2, 2) {
+item(FEAT_CARGOS, cargo_mail, 2) {
 	property {
 		number: 2;
 		type_name: 17;
@@ -62,7 +62,7 @@ item(FEAT_CARGOS, item_FEAT_CARGOS_2, 2) {
 	}
 }
 
-item(FEAT_CARGOS, item_FEAT_CARGOS_3, 3) {
+item(FEAT_CARGOS, cargo_oil, 3) {
 	property {
 		number: 3;
 		type_name: 18;
@@ -83,7 +83,7 @@ item(FEAT_CARGOS, item_FEAT_CARGOS_3, 3) {
 	}
 }
 
-item(FEAT_CARGOS, item_FEAT_CARGOS_4, 4) {
+item(FEAT_CARGOS, cargo_livestock, 4) {
 	property {
 		number: 4;
 		type_name: 19;
@@ -104,7 +104,7 @@ item(FEAT_CARGOS, item_FEAT_CARGOS_4, 4) {
 	}
 }
 
-item(FEAT_CARGOS, item_FEAT_CARGOS_5, 5) {
+item(FEAT_CARGOS, cargo_goods, 5) {
 	property {
 		number: 5;
 		type_name: 20;
@@ -125,7 +125,7 @@ item(FEAT_CARGOS, item_FEAT_CARGOS_5, 5) {
 	}
 }
 
-item(FEAT_CARGOS, item_FEAT_CARGOS_6, 6) {
+item(FEAT_CARGOS, cargo_grain, 6) {
 	property {
 		number: 6;
 		type_name: 21;
@@ -146,7 +146,7 @@ item(FEAT_CARGOS, item_FEAT_CARGOS_6, 6) {
 	}
 }
 
-item(FEAT_CARGOS, item_FEAT_CARGOS_7, 7) {
+item(FEAT_CARGOS, cargo_wood, 7) {
 	property {
 		number: 7;
 		type_name: 22;
@@ -167,7 +167,7 @@ item(FEAT_CARGOS, item_FEAT_CARGOS_7, 7) {
 	}
 }
 
-item(FEAT_CARGOS, item_FEAT_CARGOS_8, 8) {
+item(FEAT_CARGOS, cargo_iron_ore, 8) {
 	property {
 		number: 8;
 		type_name: 23;
@@ -188,7 +188,7 @@ item(FEAT_CARGOS, item_FEAT_CARGOS_8, 8) {
 	}
 }
 
-item(FEAT_CARGOS, item_FEAT_CARGOS_9, 9) {
+item(FEAT_CARGOS, cargo_steel, 9) {
 	property {
 		number: 9;
 		type_name: string(STR_GENERIC_DC3C);
@@ -209,7 +209,7 @@ item(FEAT_CARGOS, item_FEAT_CARGOS_9, 9) {
 	}
 }
 
-item(FEAT_CARGOS, item_FEAT_CARGOS_11, 11) {
+item(FEAT_CARGOS, cargo_food, 11) {
 	property {
 		number: 11;
 		type_name: 30;
@@ -230,7 +230,7 @@ item(FEAT_CARGOS, item_FEAT_CARGOS_11, 11) {
 	}
 }
 
-item(FEAT_CARGOS, item_FEAT_CARGOS_29, 29) {
+item(FEAT_CARGOS, cargo_alcohol, 29) {
 	property {
 		number: 29;
 		type_name: string(STR_GENERIC_DC4E);
@@ -251,7 +251,7 @@ item(FEAT_CARGOS, item_FEAT_CARGOS_29, 29) {
 	}
 }
 
-item(FEAT_CARGOS, item_FEAT_CARGOS_10, 10) {
+item(FEAT_CARGOS, cargo_milk, 10) {
 	property {
 		number: 10;
 		type_name: string(STR_GENERIC_DC43);
@@ -272,7 +272,7 @@ item(FEAT_CARGOS, item_FEAT_CARGOS_10, 10) {
 	}
 }
 
-item(FEAT_CARGOS, item_FEAT_CARGOS_13, 13) {
+item(FEAT_CARGOS, cargo_fruits, 13) {
 	property {
 		number: 13;
 		type_name: string(STR_GENERIC_DC09);
@@ -293,7 +293,7 @@ item(FEAT_CARGOS, item_FEAT_CARGOS_13, 13) {
 	}
 }
 
-item(FEAT_CARGOS, item_FEAT_CARGOS_14, 14) {
+item(FEAT_CARGOS, cargo_fish, 14) {
 	property {
 		number: 14;
 		type_name: string(STR_GENERIC_DC0D);
@@ -314,7 +314,7 @@ item(FEAT_CARGOS, item_FEAT_CARGOS_14, 14) {
 	}
 }
 
-item(FEAT_CARGOS, item_FEAT_CARGOS_15, 15) {
+item(FEAT_CARGOS, cargo_wool, 15) {
 	property {
 		number: 15;
 		type_name: string(STR_GENERIC_DC11);
@@ -335,7 +335,7 @@ item(FEAT_CARGOS, item_FEAT_CARGOS_15, 15) {
 	}
 }
 
-item(FEAT_CARGOS, item_FEAT_CARGOS_31, 31) {
+item(FEAT_CARGOS, cargo_recyclables, 31) {
 	property {
 		number: 31;
 		type_name: string(STR_GENERIC_DC51);
@@ -356,7 +356,7 @@ item(FEAT_CARGOS, item_FEAT_CARGOS_31, 31) {
 	}
 }
 
-item(FEAT_CARGOS, item_FEAT_CARGOS_22, 22) {
+item(FEAT_CARGOS, cargo_plant_fibres, 22) {
 	property {
 		number: 22;
 		type_name: string(STR_GENERIC_DC15);
@@ -377,7 +377,7 @@ item(FEAT_CARGOS, item_FEAT_CARGOS_22, 22) {
 	}
 }
 
-item(FEAT_CARGOS, item_FEAT_CARGOS_26, 26) {
+item(FEAT_CARGOS, cargo_gravel, 26) {
 	property {
 		number: 26;
 		type_name: string(STR_GENERIC_DC1D);
@@ -398,7 +398,7 @@ item(FEAT_CARGOS, item_FEAT_CARGOS_26, 26) {
 	}
 }
 
-item(FEAT_CARGOS, item_FEAT_CARGOS_28, 28) {
+item(FEAT_CARGOS, cargo_building_materials, 28) {
 	property {
 		number: 28;
 		type_name: string(STR_GENERIC_DC05);
@@ -419,7 +419,7 @@ item(FEAT_CARGOS, item_FEAT_CARGOS_28, 28) {
 	}
 }
 
-item(FEAT_CARGOS, item_FEAT_CARGOS_17, 17) {
+item(FEAT_CARGOS, cargo_sand, 17) {
 	property {
 		number: 17;
 		type_name: string(STR_GENERIC_DC19);
@@ -440,7 +440,7 @@ item(FEAT_CARGOS, item_FEAT_CARGOS_17, 17) {
 	}
 }
 
-item(FEAT_CARGOS, item_FEAT_CARGOS_16, 16) {
+item(FEAT_CARGOS, cargo_clay, 16) {
 	property {
 		number: 16;
 		type_name: string(STR_GENERIC_DC4A);
@@ -461,7 +461,7 @@ item(FEAT_CARGOS, item_FEAT_CARGOS_16, 16) {
 	}
 }
 
-item(FEAT_CARGOS, item_FEAT_CARGOS_19, 19) {
+item(FEAT_CARGOS, cargo_lumber, 19) {
 	property {
 		number: 19;
 		type_name: string(STR_GENERIC_DC22);
@@ -482,7 +482,7 @@ item(FEAT_CARGOS, item_FEAT_CARGOS_19, 19) {
 	}
 }
 
-item(FEAT_CARGOS, item_FEAT_CARGOS_27, 27) {
+item(FEAT_CARGOS, cargo_bauxite, 27) {
 	property {
 		number: 27;
 		type_name: string(STR_GENERIC_DC38);
@@ -503,7 +503,7 @@ item(FEAT_CARGOS, item_FEAT_CARGOS_27, 27) {
 	}
 }
 
-item(FEAT_CARGOS, item_FEAT_CARGOS_20, 20) {
+item(FEAT_CARGOS, cargo_scrap_metal, 20) {
 	property {
 		number: 20;
 		type_name: string(STR_GENERIC_DC46);
@@ -524,7 +524,7 @@ item(FEAT_CARGOS, item_FEAT_CARGOS_20, 20) {
 	}
 }
 
-item(FEAT_CARGOS, item_FEAT_CARGOS_12, 12) {
+item(FEAT_CARGOS, cargo_sugarcane, 12) {
 	property {
 		number: 12;
 		type_name: string(STR_GENERIC_DC01);
@@ -545,7 +545,7 @@ item(FEAT_CARGOS, item_FEAT_CARGOS_12, 12) {
 	}
 }
 
-item(FEAT_CARGOS, item_FEAT_CARGOS_25, 25) {
+item(FEAT_CARGOS, cargo_fuel_oil, 25) {
 	property {
 		number: 25;
 		type_name: string(STR_GENERIC_DC35);
@@ -566,7 +566,7 @@ item(FEAT_CARGOS, item_FEAT_CARGOS_25, 25) {
 	}
 }
 
-item(FEAT_CARGOS, item_FEAT_CARGOS_23, 23) {
+item(FEAT_CARGOS, cargo_chemicals, 23) {
 	property {
 		number: 23;
 		type_name: string(STR_GENERIC_DC2E);
@@ -587,7 +587,7 @@ item(FEAT_CARGOS, item_FEAT_CARGOS_23, 23) {
 	}
 }
 
-item(FEAT_CARGOS, item_FEAT_CARGOS_18, 18) {
+item(FEAT_CARGOS, cargo_manufacturing_supplies, 18) {
 	property {
 		number: 18;
 		type_name: string(STR_GENERIC_DC26);
@@ -608,7 +608,7 @@ item(FEAT_CARGOS, item_FEAT_CARGOS_18, 18) {
 	}
 }
 
-item(FEAT_CARGOS, item_FEAT_CARGOS_24, 24) {
+item(FEAT_CARGOS, cargo_engineering_supplies, 24) {
 	property {
 		number: 24;
 		type_name: string(STR_GENERIC_DC31);
@@ -629,7 +629,7 @@ item(FEAT_CARGOS, item_FEAT_CARGOS_24, 24) {
 	}
 }
 
-item(FEAT_CARGOS, item_FEAT_CARGOS_21, 21) {
+item(FEAT_CARGOS, cargo_farm_supplies, 21) {
 	property {
 		number: 21;
 		type_name: string(STR_GENERIC_DC2A);
@@ -652,7 +652,7 @@ item(FEAT_CARGOS, item_FEAT_CARGOS_21, 21) {
 
 if (economy == 0) {
 	// Sprite 2042
-	item(FEAT_CARGOS, item_FEAT_CARGOS_0, 0) {
+	item(FEAT_CARGOS, cargo_passengers, 0) {
 		property {
 			penalty_lowerbound: 0;
 			single_penalty_length: 22;
@@ -663,7 +663,7 @@ if (economy == 0) {
 
 if (economy == 0) {
 	// Sprite 2047
-	item(FEAT_CARGOS, item_FEAT_CARGOS_1, 1) {
+	item(FEAT_CARGOS, cargo_coal, 1) {
 		property {
 			penalty_lowerbound: 30;
 			single_penalty_length: 255;
@@ -674,7 +674,7 @@ if (economy == 0) {
 
 if (economy == 0) {
 	// Sprite 2052
-	item(FEAT_CARGOS, item_FEAT_CARGOS_2, 2) {
+	item(FEAT_CARGOS, cargo_mail, 2) {
 		property {
 			penalty_lowerbound: 6;
 			single_penalty_length: 24;
@@ -685,7 +685,7 @@ if (economy == 0) {
 
 if (economy == 0) {
 	// Sprite 2057
-	item(FEAT_CARGOS, item_FEAT_CARGOS_3, 3) {
+	item(FEAT_CARGOS, cargo_oil, 3) {
 		property {
 			penalty_lowerbound: 30;
 			single_penalty_length: 255;
@@ -696,7 +696,7 @@ if (economy == 0) {
 
 if (economy == 0) {
 	// Sprite 2062
-	item(FEAT_CARGOS, item_FEAT_CARGOS_4, 4) {
+	item(FEAT_CARGOS, cargo_livestock, 4) {
 		property {
 			penalty_lowerbound: 0;
 			single_penalty_length: 22;
@@ -707,7 +707,7 @@ if (economy == 0) {
 
 if (economy == 0) {
 	// Sprite 2067
-	item(FEAT_CARGOS, item_FEAT_CARGOS_5, 5) {
+	item(FEAT_CARGOS, cargo_goods, 5) {
 		property {
 			penalty_lowerbound: 5;
 			single_penalty_length: 24;
@@ -718,7 +718,7 @@ if (economy == 0) {
 
 if (economy == 0) {
 	// Sprite 2072
-	item(FEAT_CARGOS, item_FEAT_CARGOS_6, 6) {
+	item(FEAT_CARGOS, cargo_grain, 6) {
 		property {
 			penalty_lowerbound: 4;
 			single_penalty_length: 40;
@@ -729,7 +729,7 @@ if (economy == 0) {
 
 if (economy == 0) {
 	// Sprite 2077
-	item(FEAT_CARGOS, item_FEAT_CARGOS_7, 7) {
+	item(FEAT_CARGOS, cargo_wood, 7) {
 		property {
 			penalty_lowerbound: 24;
 			single_penalty_length: 255;
@@ -740,7 +740,7 @@ if (economy == 0) {
 
 if (economy == 0) {
 	// Sprite 2082
-	item(FEAT_CARGOS, item_FEAT_CARGOS_8, 8) {
+	item(FEAT_CARGOS, cargo_iron_ore, 8) {
 		property {
 			penalty_lowerbound: 30;
 			single_penalty_length: 255;
@@ -751,7 +751,7 @@ if (economy == 0) {
 
 if (economy == 0) {
 	// Sprite 2087
-	item(FEAT_CARGOS, item_FEAT_CARGOS_9, 9) {
+	item(FEAT_CARGOS, cargo_steel, 9) {
 		property {
 			penalty_lowerbound: 7;
 			single_penalty_length: 255;
@@ -762,7 +762,7 @@ if (economy == 0) {
 
 if (economy == 0) {
 	// Sprite 2092
-	item(FEAT_CARGOS, item_FEAT_CARGOS_11, 11) {
+	item(FEAT_CARGOS, cargo_food, 11) {
 		property {
 			penalty_lowerbound: 0;
 			single_penalty_length: 24;
@@ -773,7 +773,7 @@ if (economy == 0) {
 
 if (economy == 0) {
 	// Sprite 2097
-	item(FEAT_CARGOS, item_FEAT_CARGOS_29, 29) {
+	item(FEAT_CARGOS, cargo_alcohol, 29) {
 		property {
 			penalty_lowerbound: 0;
 			single_penalty_length: 24;
@@ -784,7 +784,7 @@ if (economy == 0) {
 
 if (economy == 0) {
 	// Sprite 2102
-	item(FEAT_CARGOS, item_FEAT_CARGOS_10, 10) {
+	item(FEAT_CARGOS, cargo_milk, 10) {
 		property {
 			penalty_lowerbound: 0;
 			single_penalty_length: 20;
@@ -795,7 +795,7 @@ if (economy == 0) {
 
 if (economy == 0) {
 	// Sprite 2107
-	item(FEAT_CARGOS, item_FEAT_CARGOS_13, 13) {
+	item(FEAT_CARGOS, cargo_fruits, 13) {
 		property {
 			penalty_lowerbound: 0;
 			single_penalty_length: 26;
@@ -806,7 +806,7 @@ if (economy == 0) {
 
 if (economy == 0) {
 	// Sprite 2112
-	item(FEAT_CARGOS, item_FEAT_CARGOS_14, 14) {
+	item(FEAT_CARGOS, cargo_fish, 14) {
 		property {
 			penalty_lowerbound: 12;
 			single_penalty_length: 30;
@@ -817,7 +817,7 @@ if (economy == 0) {
 
 if (economy == 0) {
 	// Sprite 2117
-	item(FEAT_CARGOS, item_FEAT_CARGOS_15, 15) {
+	item(FEAT_CARGOS, cargo_wool, 15) {
 		property {
 			penalty_lowerbound: 8;
 			single_penalty_length: 90;
@@ -828,7 +828,7 @@ if (economy == 0) {
 
 if (economy == 0) {
 	// Sprite 2122
-	item(FEAT_CARGOS, item_FEAT_CARGOS_26, 26) {
+	item(FEAT_CARGOS, cargo_gravel, 26) {
 		property {
 			penalty_lowerbound: 30;
 			single_penalty_length: 255;
@@ -839,7 +839,7 @@ if (economy == 0) {
 
 if (economy == 0) {
 	// Sprite 2127
-	item(FEAT_CARGOS, item_FEAT_CARGOS_28, 28) {
+	item(FEAT_CARGOS, cargo_building_materials, 28) {
 		property {
 			penalty_lowerbound: 12;
 			single_penalty_length: 255;
@@ -850,7 +850,7 @@ if (economy == 0) {
 
 if (economy == 0) {
 	// Sprite 2132
-	item(FEAT_CARGOS, item_FEAT_CARGOS_17, 17) {
+	item(FEAT_CARGOS, cargo_sand, 17) {
 		property {
 			penalty_lowerbound: 30;
 			single_penalty_length: 255;
@@ -861,7 +861,7 @@ if (economy == 0) {
 
 if (economy == 0) {
 	// Sprite 2137
-	item(FEAT_CARGOS, item_FEAT_CARGOS_16, 16) {
+	item(FEAT_CARGOS, cargo_clay, 16) {
 		property {
 			penalty_lowerbound: 30;
 			single_penalty_length: 255;
@@ -872,7 +872,7 @@ if (economy == 0) {
 
 if (economy == 0) {
 	// Sprite 2142
-	item(FEAT_CARGOS, item_FEAT_CARGOS_19, 19) {
+	item(FEAT_CARGOS, cargo_lumber, 19) {
 		property {
 			penalty_lowerbound: 12;
 			single_penalty_length: 255;
@@ -883,7 +883,7 @@ if (economy == 0) {
 
 if (economy == 0) {
 	// Sprite 2147
-	item(FEAT_CARGOS, item_FEAT_CARGOS_27, 27) {
+	item(FEAT_CARGOS, cargo_bauxite, 27) {
 		property {
 			penalty_lowerbound: 30;
 			single_penalty_length: 255;
@@ -894,7 +894,7 @@ if (economy == 0) {
 
 if (economy == 0) {
 	// Sprite 2152
-	item(FEAT_CARGOS, item_FEAT_CARGOS_20, 20) {
+	item(FEAT_CARGOS, cargo_scrap_metal, 20) {
 		property {
 			penalty_lowerbound: 30;
 			single_penalty_length: 255;
@@ -905,7 +905,7 @@ if (economy == 0) {
 
 if (economy == 0) {
 	// Sprite 2157
-	item(FEAT_CARGOS, item_FEAT_CARGOS_12, 12) {
+	item(FEAT_CARGOS, cargo_sugarcane, 12) {
 		property {
 			penalty_lowerbound: 5;
 			single_penalty_length: 30;
@@ -916,7 +916,7 @@ if (economy == 0) {
 
 if (economy == 0) {
 	// Sprite 2162
-	item(FEAT_CARGOS, item_FEAT_CARGOS_25, 25) {
+	item(FEAT_CARGOS, cargo_fuel_oil, 25) {
 		property {
 			penalty_lowerbound: 18;
 			single_penalty_length: 255;
@@ -927,7 +927,7 @@ if (economy == 0) {
 
 if (economy == 0) {
 	// Sprite 2167
-	item(FEAT_CARGOS, item_FEAT_CARGOS_23, 23) {
+	item(FEAT_CARGOS, cargo_chemicals, 23) {
 		property {
 			penalty_lowerbound: 12;
 			single_penalty_length: 255;
@@ -938,7 +938,7 @@ if (economy == 0) {
 
 if (economy == 0) {
 	// Sprite 2172
-	item(FEAT_CARGOS, item_FEAT_CARGOS_18, 18) {
+	item(FEAT_CARGOS, cargo_manufacturing_supplies, 18) {
 		property {
 			penalty_lowerbound: 8;
 			single_penalty_length: 60;
@@ -949,7 +949,7 @@ if (economy == 0) {
 
 if (economy == 0) {
 	// Sprite 2177
-	item(FEAT_CARGOS, item_FEAT_CARGOS_24, 24) {
+	item(FEAT_CARGOS, cargo_engineering_supplies, 24) {
 		property {
 			penalty_lowerbound: 6;
 			single_penalty_length: 36;
@@ -960,7 +960,7 @@ if (economy == 0) {
 
 if (economy == 0) {
 	// Sprite 2182
-	item(FEAT_CARGOS, item_FEAT_CARGOS_21, 21) {
+	item(FEAT_CARGOS, cargo_farm_supplies, 21) {
 		property {
 			penalty_lowerbound: 6;
 			single_penalty_length: 36;
@@ -971,7 +971,7 @@ if (economy == 0) {
 
 if (economy == 0) {
 	// Sprite 2187
-	item(FEAT_CARGOS, item_FEAT_CARGOS_22, 22) {
+	item(FEAT_CARGOS, cargo_plant_fibres, 22) {
 		property {
 			penalty_lowerbound: 10;
 			single_penalty_length: 36;
@@ -982,7 +982,7 @@ if (economy == 0) {
 
 if (economy == 0) {
 	// Sprite 2192
-	item(FEAT_CARGOS, item_FEAT_CARGOS_31, 31) {
+	item(FEAT_CARGOS, cargo_recyclables, 31) {
 		property {
 			penalty_lowerbound: 10;
 			single_penalty_length: 128;
