@@ -1,78 +1,60 @@
-if ((ttd_platform != 1)) {
-	// Sprite 24
-	error(FATAL, USED_WITH, string(STR_ERROR_DATA_24));
+if ((ttd_platform != PLATFORM_OPENTTD)) {
+	error(FATAL, USED_WITH, "OpenTTD");
 	exit;
 }
 //TODO: add check for debug parameter to disable the checks below
 //TODO: add check for OpenTTD version
 
 if (grf_future_status("Meo\81")) {
-	// Sprite 36
 	error(FATAL, string(STR_ERROR_36));
 }
 if (grf_future_status("Meo\82")) {
-	// Sprite 38
 	error(FATAL, string(STR_ERROR_38));
 }
 if (grf_future_status("Meo\91")) {
-	// Sprite 40
 	error(FATAL, string(STR_ERROR_40));
 }
 if (grf_future_status("Meo\92")) {
-	// Sprite 42
 	error(FATAL, string(STR_ERROR_42));
 }
 if (grf_future_status("Meo\93")) {
-	// Sprite 44
 	error(FATAL, string(STR_ERROR_44));
 }
 if (grf_future_status("Meo\94")) {
-	// Sprite 46
 	error(FATAL, string(STR_ERROR_46));
 }
 if (grf_future_status("Meo\95")) {
-	// Sprite 48
 	error(FATAL, string(STR_ERROR_48));
 }
 if (grf_future_status("Meo\96")) {
-	// Sprite 50
 	error(FATAL, string(STR_ERROR_50));
 }
 if (grf_future_status("Meo\97")) {
-	// Sprite 52
 	error(FATAL, string(STR_ERROR_52));
 }
 if (grf_future_status("Meo\98")) {
-	// Sprite 54
 	error(FATAL, string(STR_ERROR_54));
 }
 if (grf_future_status("Meo\99")) {
-	// Sprite 56
 	error(FATAL, string(STR_ERROR_56));
 }
 if (grf_future_status("Meo\9A")) {
-	// Sprite 58
 	error(FATAL, string(STR_ERROR_58));
 }
 if (grf_future_status("Meo\9B")) {
-	// Sprite 60
 	error(FATAL, string(STR_ERROR_60));
 }
 if (grf_future_status("Meo\9C")) {
-	// Sprite 62
 	error(FATAL, string(STR_ERROR_62));
 }
 if (grf_future_status("SK\05\01")) {
-	// Sprite 64
-	error(FATAL, string(STR_ERROR_64));
+	error(FATAL, string(STR_ERROR_INCOMPATIBLE_SET_LUUKLAND_CITYBUILDER));
 }
 if (grf_future_status("JS\0A\02")) {
-	// Sprite 66
-	error(FATAL, string(STR_ERROR_66));
+	error(FATAL, string(STR_ERROR_INCOMPATIBLE_SET_LUUKLAND_CITYBUILDER));
 }
 if (grf_future_status("JS\0A\03")) {
-	// Sprite 68
-	error(FATAL, string(STR_ERROR_68));
+	error(FATAL, string(STR_ERROR_INCOMPATIBLE_SET_LUUKLAND_CITYBUILDER));
 }
 if (grf_future_status("JS\0A\04")) {
 	// Sprite 70
