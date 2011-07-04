@@ -4,11 +4,8 @@
 //We compute the number of tiles on the map divided
 //by the number of tiles on a 512*512 map.
 param[11] = (1 << map_size) / (512 * 512);
-//param[11] = MAP_SIZE_PARAMETER
 
-
-param[12] = (param[11] * 2) + 1;
-//param[12] = INDUSTRY_CLUSTER_PARAMETER
+industry_clusters = (param[11] * 2) + 1;
 
 
 param_max_coastal_distance = marine_industry_max_coastal_distance;

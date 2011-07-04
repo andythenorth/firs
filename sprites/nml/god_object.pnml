@@ -3823,7 +3823,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_2724, var[0x67, 0, 65535, 26]) {
 	return 4;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_2725, ((var[0x67, 16, -1, 26] / 2) / var[0x7F, 0, -1, 12])) {
+switch(FEAT_INDUSTRIES, SELF, action2_2725, ((var[0x67, 16, -1, 26] / 2) / industry_clusters)) {
 	0: return 1024;
 	action2_2724;
 }
@@ -4196,7 +4196,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_2776, var[0x67, 0, 65535, 5]) {
 	return 4;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_2777, (((var[0x67, 16, -1, 5] * 2) / 3) / var[0x7F, 0, -1, 12])) {
+switch(FEAT_INDUSTRIES, SELF, action2_2777, (((var[0x67, 16, -1, 5] * 2) / 3) / industry_clusters)) {
 	0: return 1024;
 	action2_2776;
 }
@@ -12282,7 +12282,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3643, var[0x67, 0, 65535, 0]) {
 	return 4;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3644, (((var[0x67, 16, -1, 0] * 2) / 3) / var[0x7F, 0, -1, 12])) {
+switch(FEAT_INDUSTRIES, SELF, action2_3644, (((var[0x67, 16, -1, 0] * 2) / 3) / industry_clusters)) {
 	0: return 1024;
 	action2_3643;
 }
@@ -12880,7 +12880,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3724, var[0x67, 0, 65535, 28]) {
 	return 4;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3725, ((var[0x67, 16, -1, 28] / 2) / var[0x7F, 0, -1, 12])) {
+switch(FEAT_INDUSTRIES, SELF, action2_3725, ((var[0x67, 16, -1, 28] / 2) / industry_clusters)) {
 	0: return 1024;
 	action2_3724;
 }
@@ -16596,7 +16596,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_4092, var[0x67, 0, 65535, 31]) {
 	return 4;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_4093, (((var[0x67, 16, -1, 31] * 3) / 4) / var[0x7F, 0, -1, 12])) {
+switch(FEAT_INDUSTRIES, SELF, action2_4093, (((var[0x67, 16, -1, 31] * 3) / 4) / industry_clusters)) {
 	0: return 1024;
 	action2_4092;
 }
@@ -17692,7 +17692,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_4176, var[0x67, 0, 65535, 32]) {
 	return 4;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_4177, (((var[0x67, 16, -1, 32] * 5) / 4) / var[0x7F, 0, -1, 12])) {
+switch(FEAT_INDUSTRIES, SELF, action2_4177, (((var[0x67, 16, -1, 32] * 5) / 4) / industry_clusters)) {
 	0: return 1024;
 	action2_4176;
 }
@@ -23642,7 +23642,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_4479, var[0x67, 0, 65535, 11]) {
 	return 4;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_4480, (((var[0x67, 16, -1, 11] * 3) / 4) / var[0x7F, 0, -1, 12])) {
+switch(FEAT_INDUSTRIES, SELF, action2_4480, (((var[0x67, 16, -1, 11] * 3) / 4) / industry_clusters)) {
 	0: return 1024;
 	action2_4479;
 }
@@ -29790,7 +29790,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_4808, var[0x67, 0, 65535, 30]) {
 	return 4;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_4809, ((var[0x67, 16, -1, 30] / 2) / var[0x7F, 0, -1, 12])) {
+switch(FEAT_INDUSTRIES, SELF, action2_4809, ((var[0x67, 16, -1, 30] / 2) / industry_clusters)) {
 	0: return 1024;
 	action2_4808;
 }
@@ -33268,7 +33268,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_5281, var[0x67, 0, 65535, 4]) {
 	return 4;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_5282, (((var[0x67, 16, -1, 4] * 2) / 3) / var[0x7F, 0, -1, 12])) {
+switch(FEAT_INDUSTRIES, SELF, action2_5282, (((var[0x67, 16, -1, 4] * 2) / 3) / industry_clusters)) {
 	0: return 1024;
 	action2_5281;
 }
@@ -35408,7 +35408,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_5447, var[0x67, 0, 65535, 4]) {
 	return 4;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_5448, (((var[0x67, 16, -1, 4] * 5) / 4) / var[0x7F, 0, -1, 12])) {
+switch(FEAT_INDUSTRIES, SELF, action2_5448, (((var[0x67, 16, -1, 4] * 5) / 4) / industry_clusters)) {
 	0: return 1024;
 	action2_5447;
 }
@@ -45237,7 +45237,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6447, var[0x67, 0, 65535, 29]) {
 	return 4;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6448, ((var[0x67, 16, -1, 29] / 2) / var[0x7F, 0, -1, 12])) {
+switch(FEAT_INDUSTRIES, SELF, action2_6448, ((var[0x67, 16, -1, 29] / 2) / industry_clusters)) {
 	0: return 1024;
 	action2_6447;
 }
@@ -51297,7 +51297,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_7242, var[0x67, 0, 65535, 11]) {
 	return 4;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7243, (((var[0x67, 16, -1, 11] * 5) / 4) / var[0x7F, 0, -1, 12])) {
+switch(FEAT_INDUSTRIES, SELF, action2_7243, (((var[0x67, 16, -1, 11] * 5) / 4) / industry_clusters)) {
 	0: return 1024;
 	action2_7242;
 }
@@ -52183,7 +52183,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_7377, var[0x67, 0, 65535, 27]) {
 	return 4;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7378, ((var[0x67, 16, -1, 27] / 2) / var[0x7F, 0, -1, 12])) {
+switch(FEAT_INDUSTRIES, SELF, action2_7378, ((var[0x67, 16, -1, 27] / 2) / industry_clusters)) {
 	0: return 1024;
 	action2_7377;
 }
