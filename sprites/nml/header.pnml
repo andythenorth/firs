@@ -23,19 +23,19 @@ grf {
 		}
 	}
 	param 2 {
-		param_2 {
+		allow_close_primary {
 			name: string(STR_PARAM_2_NAME);
 			desc: string(STR_PARAM_2_DESC);
 			type: bool;
 			bit: 0;
 		}
-		param_3 {
+		allow_close_secondary {
 			name: string(STR_PARAM_3_NAME);
 			desc: string(STR_PARAM_3_DESC);
 			type: bool;
 			bit: 1;
 		}
-		param_4 {
+		restrict_open_during_gameplay {
 			name: string(STR_PARAM_4_NAME);
 			desc: string(STR_PARAM_4_DESC);
 			type: bool;
@@ -43,7 +43,7 @@ grf {
 		}
 	}
 	param 4 {
-		param_5 {
+		marine_industry_max_coastal_distance {
 			name: string(STR_PARAM_5_NAME);
 			desc: string(STR_PARAM_5_DESC);
 			type: int;
