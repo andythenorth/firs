@@ -1,40 +1,40 @@
 ##grflangid 0x38
-STR_GENERIC_DC9B                                                                :Vapnara
-STR_GENERIC_DC26                                                                :Proizvodni materijal
-STR_GENERIC_DC25                                                                :{TINYFONT}LU
-STR_GENERIC_DC9A                                                                :Glinokop
-STR_GENERIC_DC22                                                                :Drvo
+STR_IND_LIME_KILN                                                               :Vapnara
+STR_CARGO_NAME_MNSP                                                             :Proizvodni materijal
+STR_CID_LUMBER                                                                  :{TINYFONT}LU
+STR_IND_CLAY_PIT                                                                :Glinokop
+STR_CARGO_NAME_LUMBER                                                           :Drvo
 STR_GENERIC_DC21                                                                :{TINYFONT}GV
 STR_GENERIC_DC29                                                                :{TINYFONT}MS
-STR_PARAM_6_NAME                                                                :Prikaûi tekst otklanjana neispravnosti (debug)
+STR_PARAM_NAME_DEBUG                                                            :Prikaûi tekst otklanjana neispravnosti (debug)
 STR_GENERIC_D0A8                                                                :{}{RED}Nijedan teret nije isporucen u posljednjih {POP_WORD}{POP_WORD}{WORD_S} mejseci. Ova industrija bi se mogla uskoro zatvoriti. {}
 STR_GENERIC_D0C1                                                                :{BLACK} (max 800)
 STR_GENERIC_D0C0                                                                :{BLACK} (max 200)
 STR_PARAM_1_DESC                                                                :Po standardnim postavkama, FIRS primarne industrije nikad ne smanjuju proizvodnju.{}{}Ako se ukljuci mogucnost smanjenja primarne proizvodnje, postoji mogucnost da se proizvodnja smanju ako se potrepötine ne dostave unutar mjesec dana. Ako je razina proizvodnje visoka, mogucnost smanjenja ce biti veca.
-STR_GENERIC_DC1D                                                                :Kamen
+STR_CARGO_NAME_STONE                                                            :Kamen
 STR_GENERIC_DC18                                                                :{TINYFONT}CT
-STR_GENERIC_DC19                                                                :Pijesak
+STR_CARGO_NAME_SAND                                                             :Pijesak
 STR_GENERIC_DC10                                                                :{TINYFONT}FI
 STR_GENERIC_DC11                                                                :Vuna
 STR_GENERIC_DC14                                                                :{TINYFONT}WL
-STR_GENERIC_DC15                                                                :Biljna vlakna
+STR_CARGO_NAME_FIBRES                                                           :Biljna vlakna
 STR_GENERIC_D0A5                                                                :{BLACK}Dostupno: {YELLOW}{DATE_LONG}
-STR_GENERIC_DC92                                                                :Benzinska pumpa
-STR_GENERIC_DC93                                                                :Ribarska zona
-STR_GENERIC_DC2E                                                                :Kemikalije
+STR_IND_PETROLPUMP                                                              :Benzinska pumpa
+STR_IND_FISHING_GROUND                                                          :Ribarska zona
+STR_CARGO_NAME_CHEMICALS                                                        :Kemikalije
 STR_GENERIC_DC2D                                                                :{TINYFONT}FS
 STR_GENERIC_DC97                                                                :Supermarket
 STR_GENERIC_DC94                                                                :éeljezara
-STR_GENERIC_DC98                                                                :Maloprodaja
+STR_IND_RETAILMARKET                                                            :Maloprodaja
 STR_GENERIC_DC99                                                                :äecerana
 STR_PARAM_3_DESC                                                                :Po standardnim postavkama, FIRS sekundarne industrije nikad se ne zatvaraju.{}{}Ako se ukljuci mogucnost zatvaranja, sekundarne industrije se mogu zatvoriti ako duûe vrijeme nije prevoûen nijedan teret.
-STR_GENERIC_DC09                                                                :Voce i povrce
+STR_CARGO_NAME_FRUITS                                                           :Voce i povrce
 STR_GENERIC_DC08                                                                :{TINYFONT}BM
-STR_GENERIC_DC05                                                                :Gradevni materijal
+STR_CARGO_NAME_BUILDINGMATERIALS                                                :Gradevni materijal
 STR_GENERIC_DC04                                                                :{TINYFONT}SB
 STR_GENERIC_DC7B                                                                :Stocno dvoriöte
-STR_GENERIC_DC7C                                                                :Mljecna farma
-STR_GENERIC_DC01                                                                :äecerna repa
+STR_IND_DAIRYFARM                                                               :Mljecna farma
+STR_CARGO_NAME_SUGARCANE                                                        :äecerna repa
 STR_GENERIC_DC7E                                                                :Mlin za ûito
 STR_GENERIC_DC7F                                                                :Tvornica tekstila
 STR_GENERIC_D022                                                                :{BLACK}Proizvodnja tereta:{}  3t od 8t dostavljenih proizvodnih potrepötina{}  5t od 8t dostavljenog ûita{}{}Povecanje na 8t od 8t ako oba tereta budu dostavljena unutar mjesec dana jedan od drugog.
@@ -51,14 +51,14 @@ STR_GENERIC_DC80                                                                
 STR_GENERIC_DC83                                                                :Pilana
 STR_GENERIC_DC82                                                                :Trgovina strojevima
 STR_GENERIC_D0A0                                                                :
-STR_PARAM_1_NAME                                                                :Dozvoli smanjenje primarne proizvodnje
-STR_GENERIC_DC89                                                                :Odlagaliöte otpada
+STR_PARAM_NAME_PRIMARY_PRODUCTION                                               :Dozvoli smanjenje primarne proizvodnje
+STR_IND_JUNKYARD                                                                :Odlagaliöte otpada
 STR_GENERIC_DC88                                                                :Ovcja farma
 STR_PARAM_4_DESC                                                                :{SILVER}Ovo za sada ne radi. {BLACK}Kada bude zavröeno, dozvoliti ce 'Sandbox mode' za koriötenje sa scenarijima.
 STR_GENERIC_D0A6                                                                :{}{BLACK}Ova industrija bi se mogla zatvoriti ako nijedan teret ne bude isporucen u roku od:{}{YELLOW}  {WORD_S} mjeseci
 STR_GENERIC_DC8E                                                                :Jaruûaliöte
 STR_GENERIC_DC8A                                                                :Trgovina
-STR_GENERIC_DC2A                                                                :Poljoprivredne potrepötine
+STR_CARGO_NAME_FMSP                                                             :Poljoprivredne potrepötine
 STR_GENERIC_DC8C                                                                :Ribarska luka
 STR_GENERIC_DC8B                                                                :Rudnik boksita
 STR_GENERIC_D0AA                                                                :{BLACK}Dostupno: {YELLOW}1st Jan 1610
@@ -73,7 +73,7 @@ STR_GENERIC_DCEC                                                                
 STR_GENERIC_DC78                                                                :Tvornica gnojiva
 STR_GENERIC_DC79                                                                :Tvornica plastike
 STR_GENERIC_DC70                                                                :Obradiva farma
-STR_GENERIC_DC71                                                                :Kamenolom
+STR_IND_QUARRY                                                                  :Kamenolom
 STR_GENERIC_DC72                                                                :Gradiliöte
 STR_GENERIC_DC73                                                                :Pivovara
 STR_GENERIC_DC74                                                                :Cementara
@@ -121,7 +121,7 @@ STR_GENERIC_DC49                                                                
 STR_GENERIC_D0B0                                                                :{BLACK}Inûinjerske potrepötine mogu povecati proizvodnju.{}{YELLOW}  {DWORD_S} sanduka dostavljeno ovaj mjesec
 STR_GENERIC_DC3F                                                                :{TINYFONT}ML
 STR_GENERIC_DC3B                                                                :{TINYFONT}BX
-STR_GENERIC_DC3C                                                                :Metal
+STR_CARGO_NAME_METAL                                                            :Metal
 STR_GENERIC_DC34                                                                :{TINYFONT}ES
 STR_GENERIC_DC35                                                                :Benzin
 STR_PARAM_2_NAME                                                                :Dozvoli zatvaranje primarnih industrija

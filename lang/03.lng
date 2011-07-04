@@ -1,40 +1,40 @@
 ##grflangid 0x03
-STR_GENERIC_DC9B                                                                :Four à chaux
-STR_GENERIC_DC26                                                                :Fourniture industrielle
-STR_GENERIC_DC25                                                                :{TINYFONT}LU
-STR_GENERIC_DC9A                                                                :Carrière d'Argile
-STR_GENERIC_DC22                                                                :Planches
+STR_IND_LIME_KILN                                                               :Four à chaux
+STR_CARGO_NAME_MNSP                                                             :Fourniture industrielle
+STR_CID_LUMBER                                                                  :{TINYFONT}LU
+STR_IND_CLAY_PIT                                                                :Carrière d'Argile
+STR_CARGO_NAME_LUMBER                                                           :Planches
 STR_GENERIC_DC21                                                                :{TINYFONT}GV
 STR_GENERIC_DC29                                                                :{TINYFONT}MS
-STR_PARAM_6_NAME                                                                :Affiche les textes de débogage
+STR_PARAM_NAME_DEBUG                                                            :Affiche les textes de débogage
 STR_GENERIC_D0A8                                                                :{}{RED}Aucune marchandise n'a été livrée depuis {POP_WORD}{POP_WORD}{WORD_S} mois. Cette industrie va bientôt fermer. {}
 STR_GENERIC_D0C1                                                                :{BLACK} (max 800)
 STR_GENERIC_D0C0                                                                :{BLACK} (max 200)
 STR_PARAM_1_DESC                                                                :Par défaut, la production des industries primaires ne diminue jamais.{}{}Si ce paramètre est activé, il y a un chance que la production diminuera si du matériel n'est pas livré dans le mois en cours. Plus le niveau de production est élevé, plus il y a de chance de voir la production diminuer.
-STR_GENERIC_DC1D                                                                :Gravier
+STR_CARGO_NAME_STONE                                                            :Gravier
 STR_GENERIC_DC18                                                                :{TINYFONT}CT
-STR_GENERIC_DC19                                                                :Sable
+STR_CARGO_NAME_SAND                                                             :Sable
 STR_GENERIC_DC10                                                                :{TINYFONT}FI
 STR_GENERIC_DC11                                                                :Laine
 STR_GENERIC_DC14                                                                :{TINYFONT}WL
-STR_GENERIC_DC15                                                                :Fibres végétales
+STR_CARGO_NAME_FIBRES                                                           :Fibres végétales
 STR_GENERIC_D0A5                                                                :{BLACK}Disponible: {YELLOW}{DATE_LONG}
-STR_GENERIC_DC92                                                                :Station essence
-STR_GENERIC_DC93                                                                :Zone de pêche
-STR_GENERIC_DC2E                                                                :Produits chimiques
+STR_IND_PETROLPUMP                                                              :Station essence
+STR_IND_FISHING_GROUND                                                          :Zone de pêche
+STR_CARGO_NAME_CHEMICALS                                                        :Produits chimiques
 STR_GENERIC_DC2D                                                                :{TINYFONT}FS
 STR_GENERIC_DC97                                                                :Supermarché
 STR_GENERIC_DC94                                                                :Forge
-STR_GENERIC_DC98                                                                :Marché
+STR_IND_RETAILMARKET                                                            :Marché
 STR_GENERIC_DC99                                                                :Raffinerie de sucre
 STR_PARAM_3_DESC                                                                :Par défaut, les industries secondaires ne ferment jamais.{}{}Si ce paramètre est activé, les industries secondaires peuvent fermer si aucune marchandises n'est transportée pendant un grand moment.
-STR_GENERIC_DC09                                                                :Fruits et légumes
+STR_CARGO_NAME_FRUITS                                                           :Fruits et légumes
 STR_GENERIC_DC08                                                                :{TINYFONT}BM
-STR_GENERIC_DC05                                                                :Matériaux de construction
+STR_CARGO_NAME_BUILDINGMATERIALS                                                :Matériaux de construction
 STR_GENERIC_DC04                                                                :{TINYFONT}SB
 STR_GENERIC_DC7B                                                                :Abattoir
-STR_GENERIC_DC7C                                                                :Ferme laitière
-STR_GENERIC_DC01                                                                :Betterave sucrière
+STR_IND_DAIRYFARM                                                               :Ferme laitière
+STR_CARGO_NAME_SUGARCANE                                                        :Betterave sucrière
 STR_GENERIC_DC7E                                                                :Moulin
 STR_GENERIC_DC7F                                                                :Usine Textile
 STR_GENERIC_D022                                                                :{BLACK}Marchandises produites:{}  3t pour 8t de fournitures industrielle livrées{}  5t pour 8t de céréales livrées{}{}Augmente par tranche de 8t lorsque les deux marchandises sont livrées à un mois d'intervalle.
@@ -51,14 +51,14 @@ STR_GENERIC_DC80                                                                
 STR_GENERIC_DC83                                                                :Scierie
 STR_GENERIC_DC82                                                                :Constructeur de machine
 STR_GENERIC_D0A0                                                                :
-STR_PARAM_1_NAME                                                                :Permettre la baisse de production des industries primaires
-STR_GENERIC_DC89                                                                :Casse automobile
+STR_PARAM_NAME_PRIMARY_PRODUCTION                                               :Permettre la baisse de production des industries primaires
+STR_IND_JUNKYARD                                                                :Casse automobile
 STR_GENERIC_DC88                                                                :Élevage ovin
 STR_PARAM_4_DESC                                                                :{SILVER}Ce paramètre n'est pas encore implémenté. {BLACK}Lorsqu'il sera fini il fournira un mode 'Bac à sable' pour l'utiliser avec les scenarios.
 STR_GENERIC_D0A6                                                                :{}{BLACK}Cette industrie va fermer si aucune marchandise n'est livrée avant:{}{YELLOW}  {WORD_S} mois
 STR_GENERIC_DC8E                                                                :Site de dragage
 STR_GENERIC_DC8A                                                                :Magasin
-STR_GENERIC_DC2A                                                                :Matériel agricole
+STR_CARGO_NAME_FMSP                                                             :Matériel agricole
 STR_GENERIC_DC8C                                                                :Port de pêche
 STR_GENERIC_DC8B                                                                :Mine de Bauxite
 STR_GENERIC_D0AA                                                                :{BLACK}Disponible: {YELLOW}1er Jan 1610
@@ -73,7 +73,7 @@ STR_GENERIC_DCEC                                                                
 STR_GENERIC_DC78                                                                :Usine d'engrais chimiques
 STR_GENERIC_DC79                                                                :Usine plastique
 STR_GENERIC_DC70                                                                :Ferme céréalière
-STR_GENERIC_DC71                                                                :Carrière
+STR_IND_QUARRY                                                                  :Carrière
 STR_GENERIC_DC72                                                                :Chantier de construction
 STR_GENERIC_DC73                                                                :Brasserie
 STR_GENERIC_DC74                                                                :Cimenterie
@@ -121,7 +121,7 @@ STR_GENERIC_DC49                                                                
 STR_GENERIC_D0B0                                                                :{BLACK}Le matériel d'ingénierie peut augmenter la production.{}{YELLOW}  {DWORD_S} caisses livrées ce mois
 STR_GENERIC_DC3F                                                                :{TINYFONT}ML
 STR_GENERIC_DC3B                                                                :{TINYFONT}BX
-STR_GENERIC_DC3C                                                                :Métal
+STR_CARGO_NAME_METAL                                                            :Métal
 STR_GENERIC_DC34                                                                :{TINYFONT}ES
 STR_GENERIC_DC35                                                                :Essence
 STR_PARAM_2_NAME                                                                :Permettre aux industries primaires de fermer

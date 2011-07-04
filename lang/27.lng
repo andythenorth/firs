@@ -1,48 +1,48 @@
 ##grflangid 0x27
-STR_GENERIC_DC9B                                                                :Forno per ceramiche
-STR_GENERIC_DC26                                                                :Forniture industriali
-STR_GENERIC_DC25                                                                :{TINYFONT}LU
-STR_GENERIC_DC24                                                                :\UE09A\0D di prodotti in legno
-STR_GENERIC_DC22                                                                :Prodotti in legno
+STR_IND_LIME_KILN                                                               :Forno per ceramiche
+STR_CARGO_NAME_MNSP                                                             :Forniture industriali
+STR_CID_LUMBER                                                                  :{TINYFONT}LU
+STR_CARGO_NAME_UNIT_LUMBER                                                      :\UE09A\0D di prodotti in legno
+STR_CARGO_NAME_LUMBER                                                           :Prodotti in legno
 STR_GENERIC_DC21                                                                :{TINYFONT}ST
 STR_GENERIC_DC29                                                                :{TINYFONT}MS
-STR_GENERIC_DC28                                                                :{WORD_S} casse di forniture industriali
-STR_GENERIC_DC9A                                                                :Cava di argilla
-STR_PARAM_6_NAME                                                                :Mostra i testi di debug
+STR_CARGO_UNIT_MNSP                                                             :{WORD_S} casse di forniture industriali
+STR_IND_CLAY_PIT                                                                :Cava di argilla
+STR_PARAM_NAME_DEBUG                                                            :Mostra i testi di debug
 STR_GENERIC_D0A8                                                                :{}{RED}Non è stata consegnata alcuna merce da {POP_WORD}{POP_WORD}mesi. Quest'industria potrebbe chiudere presto. {}
 STR_PARAM_5_DESC                                                                :{SILVER}Distanza massima, in caselle, delle zone di pesca e dei siti di dragaggio dalla costa.
 STR_GENERIC_D0C1                                                                :{BLACK} (max 800)
 STR_GENERIC_D0C0                                                                :{BLACK} (max 200)
-STR_GENERIC_DC1B                                                                :\UE09A\0D di sabbia
+STR_CARGO_UNIT_SAND                                                             :\UE09A\0D di sabbia
 STR_PARAM_1_DESC                                                                :Di default, il livello di produzione delle industrie primarie in FIRS non scende mai.{}{}Se vuoi permettere al livello di cambiare, ci sarà la possibilità che il livello diminuisca se nessun tipo di forniture (industriali, meccaniche o agricole) non viene consegnato entro un mese. Più alto è il livello di produzione, maggiore è la possibilità di una sua diminuzione.
-STR_GENERIC_DC1F                                                                :\UE09A\0D di pietre
-STR_GENERIC_DC1D                                                                :Pietre
+STR_CARGO_UNIT_STONE                                                            :\UE09A\0D di pietre
+STR_CARGO_NAME_STONE                                                            :Pietre
 STR_GENERIC_DC18                                                                :{TINYFONT}PF
-STR_GENERIC_DC19                                                                :Sabbia
-STR_GENERIC_DC13                                                                :\UE09A\0D di lana
+STR_CARGO_NAME_SAND                                                             :Sabbia
+STR_CARGO_UNIT_WOOL                                                             :\UE09A\0D di lana
 STR_GENERIC_DC10                                                                :{TINYFONT}FI
 STR_GENERIC_DC11                                                                :Lana
-STR_GENERIC_DC17                                                                :\UE09A\0D di fibre tessili
+STR_CARGO_UNIT_FIBRES                                                           :\UE09A\0D di fibre tessili
 STR_GENERIC_DC14                                                                :{TINYFONT}WL
-STR_GENERIC_DC15                                                                :Fibre tessili
+STR_CARGO_NAME_FIBRES                                                           :Fibre tessili
 STR_GENERIC_D0A5                                                                :{BLACK}Disponibile: {YELLOW}{DATE_LONG}
-STR_GENERIC_DC92                                                                :Pompa di benzina
-STR_GENERIC_DC2F                                                                :{VOLUME} di prodotti chimici
-STR_GENERIC_DC2E                                                                :Prodotti chimici
+STR_IND_PETROLPUMP                                                              :Pompa di benzina
+STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} di prodotti chimici
+STR_CARGO_NAME_CHEMICALS                                                        :Prodotti chimici
 STR_GENERIC_DC2D                                                                :{TINYFONT}FS
-STR_GENERIC_DC2C                                                                :{WORD_S} casse di forniture agricole
+STR_CARGO_UNIT_FMSP                                                             :{WORD_S} casse di forniture agricole
 STR_GENERIC_DC97                                                                :Supermercato
-STR_GENERIC_DC2A                                                                :Forniture agricole
-STR_GENERIC_DC98                                                                :Negozio al dettaglio
+STR_CARGO_NAME_FMSP                                                             :Forniture agricole
+STR_IND_RETAILMARKET                                                            :Negozio al dettaglio
 STR_GENERIC_DC99                                                                :Raffineria di zucchero
 STR_PARAM_3_DESC                                                                :Di default, le industrie secondarie in FIRS non chiudono mai.{}{}Se permetti la loro chiusura, potrebbero chiudere se non trasporti le loro merci per un lungo periodo di tempo.
-STR_GENERIC_DC09                                                                :Frutta e verdura
+STR_CARGO_NAME_FRUITS                                                           :Frutta e verdura
 STR_GENERIC_DC08                                                                :{TINYFONT}BM
-STR_GENERIC_DC05                                                                :Materiali per edilizia
+STR_CARGO_NAME_BUILDINGMATERIALS                                                :Materiali per edilizia
 STR_GENERIC_DC04                                                                :{TINYFONT}SB
-STR_GENERIC_DC07                                                                :\UE09A\0D di materiali per edilizia
-STR_GENERIC_DC7C                                                                :Allevamento di bovini
-STR_GENERIC_DC01                                                                :Barbabietole da zucchero
+STR_CARGO_UNIT_BUILDINGMATERIALS                                                :\UE09A\0D di materiali per edilizia
+STR_IND_DAIRYFARM                                                               :Allevamento di bovini
+STR_CARGO_NAME_SUGARCANE                                                        :Barbabietole da zucchero
 STR_PARAM_2_NAME                                                                :Permetti la chiusura delle industrie primarie
 STR_GENERIC_DC7F                                                                :Fabbrica tessile
 STR_GENERIC_D022                                                                :{BLACK}Produzione di merci:{}  3t ogni 8t di forniture industriali consegnate{}  5t ogni 8t di grano consegnate{}{}Aumenta fino a 8t ogni 8t se entrambe le merci sono consegnate entro un intervallo inferiore a un mese.
@@ -50,7 +50,7 @@ STR_GENERIC_D023                                                                
 STR_PARAM_4_NAME                                                                :Impedisci la costruzione di industrie (non ancora finito)
 STR_GENERIC_D025                                                                :{BLACK}Produzione di merci:{}  3t ogni 8t di forniture industriali consegnate{}  5t ogni 8t di bestiame consegnate{}{}Aumenta fino a 8t ogni 8t se entrambe le merci sono consegnate entro un intervallo inferiore a un mese.
 STR_GENERIC_D026                                                                :{BLACK}Costruisce e ripara macchinari.{}{}8t di produzione ogni 8t consegnate.
-STR_GENERIC_DC93                                                                :Zona di pesca
+STR_IND_FISHING_GROUND                                                          :Zona di pesca
 STR_GENERIC_D028                                                                :{BLACK}Produce fertilizzanti dai prodotti chimici.{}{}8t di produzione ogni 8t consegnate.
 STR_GENERIC_D029                                                                :{BLACK}Costruisce oggetti come palizzate, steccati o pali.{}{}{BLACK}Produzione di merci:{}  2t ogni 8t di prodotti chimici consegnate{}  6t ogni 8t di prodotti in legno consegnate{}{}Aumenta fino a 8t ogni 8t se entrambe le merci sono consegnate entro un intervallo inferiore a un mese.
 STR_GENERIC_DC84                                                                :Fonderia
@@ -60,8 +60,8 @@ STR_GENERIC_DC80                                                                
 STR_GENERIC_DC83                                                                :Segheria
 STR_GENERIC_DC82                                                                :Fabbrica di macchinari
 STR_GENERIC_D0A0                                                                :
-STR_PARAM_1_NAME                                                                :Permetti la diminuzione della produzione delle industrie primarie
-STR_GENERIC_DC89                                                                :Deposito di rottami
+STR_PARAM_NAME_PRIMARY_PRODUCTION                                               :Permetti la diminuzione della produzione delle industrie primarie
+STR_IND_JUNKYARD                                                                :Deposito di rottami
 STR_GENERIC_DC88                                                                :Allevamento di ovini
 STR_PARAM_4_DESC                                                                :{SILVER}Questo non fa ancora niente. {BLACK}Quando funzionerà, sar‡ utile per creare scenari.
 STR_GENERIC_D0A6                                                                :{}{BLACK}Quest'industria potrebbe chiudere se non riceve merci entro:{}{YELLOW}  mesi
@@ -137,7 +137,7 @@ STR_GENERIC_DC44                                                                
 STR_GENERIC_DC46                                                                :Metalli di scarto
 STR_GENERIC_DC49                                                                :{TINYFONT}SM
 STR_GENERIC_DC48                                                                :\UE09A\0D di metalli di scarto
-STR_GENERIC_DC3C                                                                :Metalli
+STR_CARGO_NAME_METAL                                                            :Metalli
 STR_GENERIC_DC76                                                                :Raffineria di biocombustibili
 STR_GENERIC_D0B2                                                                :{BLACK}Le forniture industriali raddoppiano la produzione di altre merci.{}{}{STRING}
 STR_GENERIC_DC3E                                                                :\UE09A\0D di metalli
@@ -154,7 +154,7 @@ STR_GENERIC_DC31                                                                
 STR_GENERIC_DC33                                                                :{WORD_S} casse di forniture meccaniche
 STR_PARAM_0_NAME                                                                :Economia
 STR_GENERIC_DC38                                                                :Bauxite
-STR_GENERIC_DC71                                                                :Cava di pietre
+STR_IND_QUARRY                                                                  :Cava di pietre
 STR_GENERIC_D024                                                                :{BLACK}Produzione di merci:{}  3t ogni 8t di forniture industriali consegnate{}  5t ogni 8t di latte consegnate{}{}Aumenta fino a 8t ogni 8t se entrambe le merci sono consegnate entro un intervallo inferiore a un mese.
 STR_GRF_DESC                                                                    :{ORANGE}FIRS Industry Replacement Set{}{BLACK}Di {SILVER}andythenorth{BLACK} e {SILVER}FooBar{BLACK}.{}{BLACK}'Più di 1,000 realizzazioni...'{BLACK}{}{}Website: {SILVER}www.tt-foundry.com/sets/FIRS{BLACK}.Licenza: {SILVER}GPL v2{BLACK}.Un ringraziamento particolare a {SILVER}Ammler{BLACK}, {SILVER}Core Xii{BLACK}, {SILVER}Irwe{BLACK}, {SILVER}planetmaker{BLACK} and {SILVER}Zephyris{BLACK}.Usa parti dei set {SILVER}eGRVTS{BLACK}, {SILVER}ISR{BLACK} e {SILVER}OpenGFX{BLACK}.
 STR_GENERIC_DC0F                                                                :\UE09A\0D di pesce
