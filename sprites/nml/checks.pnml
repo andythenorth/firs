@@ -119,28 +119,20 @@ if (grf_future_status("MG\08\00", "\FF\FF\FF\00")) {
 	// Sprite 99
 	error(FATAL, string(STR_ERROR_99));
 }
-param[9] = 0;
+
 if (grf_future_status("CACa")) {
-	// Sprite 102
-	param[9] = param["CACa", 1];
-	if ((param[9] != 0)) {
-		// Sprite 104
+	if (param["CACa", 1] != 0) {
 		error(FATAL, string(STR_ERROR_104));
 	}
 }
 if (grf_future_status("CASa")) {
-	// Sprite 106
 	param[9] = param["CASa", 1];
-	if ((param[9] != 0)) {
-		// Sprite 108
+	if (param["CASa", 1] != 0) {
 		error(FATAL, string(STR_ERROR_108));
 	}
 }
 if (grf_future_status("VC\00\01")) {
-	// Sprite 110
-	param[9] = param["VC\00\01", 254];
-	if ((param[9] <= 17)) {
-		// Sprite 112
+	if (param["VC\00\01", 254] <= 17) {
 		error(FATAL, string(STR_ERROR_112));
 	}
 }
