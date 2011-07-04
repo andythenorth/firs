@@ -3176,7 +3176,7 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_8, 8) {
 		prod_increase_msg: 18485;
 		prod_decrease_msg: 18489;
 		new_ind_msg: 18477;
-		name: string(STR_GENERIC_DC81);
+		name: string(STR_IND_ALUMINIUM_PLANT);
 		nearby_station_name: string(STR_GENERIC_DCE7);
 		prod_cargo_types: [9, 255];
 		accept_cargo_types: [27, 23, 20];
@@ -3375,8 +3375,8 @@ switch(FEAT_INDUSTRIES, SELF, action2_2660, waiting_cargo_1) {
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_2661, STORE_TEMP((rotate((LOAD_PERM(15) & 65535), 16) | (LOAD_PERM(14) & 65535)), 261)) {
-	0: return string(STR_GENERIC_D0A3);
-	return string(STR_GENERIC_D0A3);
+	0: return string(STR_INFO_DEBUG_PRODUCTION_CONTRIBUTION);
+	return string(STR_INFO_DEBUG_PRODUCTION_CONTRIBUTION);
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_2662, STORE_TEMP((rotate((LOAD_PERM(13) & 65535), 16) | (LOAD_PERM(12) & 65535)), 260)) {
@@ -3797,7 +3797,7 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_26, 26) {
 		prod_increase_msg: 18488;
 		prod_decrease_msg: 18490;
 		new_ind_msg: 18477;
-		name: string(STR_GENERIC_DC70);
+		name: string(STR_IND_ARABLE_FARM);
 		nearby_station_name: string(STR_GENERIC_DCE0);
 		prod_cargo_types: [6, 12];
 		accept_cargo_types: [21, 255, 255];
@@ -4171,7 +4171,7 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_5, 5) {
 		prod_increase_msg: 18485;
 		prod_decrease_msg: 18489;
 		new_ind_msg: 18477;
-		name: string(STR_GENERIC_DC8B);
+		name: string(STR_IND_BAUXITE_MINE);
 		prod_cargo_types: [27, 255];
 		accept_cargo_types: [24, 255, 255];
 		prod_multiplier: [11, 0];
@@ -4958,7 +4958,7 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_46, 46) {
 		prod_increase_msg: 18485;
 		prod_decrease_msg: 18489;
 		new_ind_msg: 18477;
-		name: string(STR_GENERIC_DC76);
+		name: string(STR_IND_BIOREFINERY);
 		nearby_station_name: string(STR_GENERIC_DCE4);
 		prod_cargo_types: [23, 25];
 		accept_cargo_types: [6, 12, 255];
@@ -5092,8 +5092,8 @@ switch(FEAT_INDUSTRIES, SELF, action2_2875, STORE_PERM(6, 1)) {
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_2876, STORE_TEMP(LOAD_PERM(0), 260)) {
-	0: return string(STR_GENERIC_D0A1);
-	return string(STR_GENERIC_D0A1);
+	0: return string(STR_INFO_DEBUG_PRODUCTION_RATIO);
+	return string(STR_INFO_DEBUG_PRODUCTION_RATIO);
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_2877, STORE_TEMP((rotate((LOAD_PERM(11) & 65535), 16) | (LOAD_PERM(10) & 65535)), 259)) {
@@ -7200,8 +7200,8 @@ switch(FEAT_INDUSTRIES, SELF, action2_3052, waiting_cargo_1) {
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_3053, STORE_TEMP((rotate((LOAD_PERM(15) & 65535), 16) | (LOAD_PERM(14) & 65535)), 261)) {
-	0: return string(STR_GENERIC_D0A3);
-	return string(STR_GENERIC_D0A3);
+	0: return string(STR_INFO_DEBUG_PRODUCTION_CONTRIBUTION);
+	return string(STR_INFO_DEBUG_PRODUCTION_CONTRIBUTION);
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_3054, STORE_TEMP((rotate((LOAD_PERM(13) & 65535), 16) | (LOAD_PERM(12) & 65535)), 260)) {
@@ -8161,8 +8161,8 @@ switch(FEAT_INDUSTRIES, SELF, action2_3161, waiting_cargo_1) {
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_3162, STORE_TEMP((rotate((LOAD_PERM(15) & 65535), 16) | (LOAD_PERM(14) & 65535)), 261)) {
-	0: return string(STR_GENERIC_D0A3);
-	return string(STR_GENERIC_D0A3);
+	0: return string(STR_INFO_DEBUG_PRODUCTION_CONTRIBUTION);
+	return string(STR_INFO_DEBUG_PRODUCTION_CONTRIBUTION);
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_3163, STORE_TEMP((rotate((LOAD_PERM(13) & 65535), 16) | (LOAD_PERM(12) & 65535)), 260)) {
@@ -8602,7 +8602,7 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_63, 63) {
 		prod_increase_msg: 18485;
 		prod_decrease_msg: 18489;
 		new_ind_msg: 18477;
-		name: string(STR_GENERIC_DC72);
+		name: string(STR_IND_BUILDERS_YARD);
 		prod_cargo_types: [255, 255];
 		accept_cargo_types: [28, 255, 255];
 		prod_multiplier: [0, 0];
@@ -10924,7 +10924,7 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_44, 44) {
 		prod_increase_msg: 18485;
 		prod_decrease_msg: 18489;
 		new_ind_msg: 18477;
-		name: string(STR_GENERIC_DC9A);
+		name: string(STR_IND_CLAY_PIT);
 		nearby_station_name: string(STR_GENERIC_DCE8);
 		prod_cargo_types: [16, 255];
 		accept_cargo_types: [24, 255, 255];
@@ -11899,7 +11899,7 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_43, 43) {
 		prod_increase_msg: 18485;
 		prod_decrease_msg: 18489;
 		new_ind_msg: 18477;
-		name: string(STR_GENERIC_DC74);
+		name: string(STR_IND_CEMENT_PLANT);
 		prod_cargo_types: [28, 255];
 		accept_cargo_types: [1, 16, 26];
 		prod_multiplier: [0, 0];
@@ -12107,8 +12107,8 @@ switch(FEAT_INDUSTRIES, SELF, action2_3618, waiting_cargo_1) {
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_3619, STORE_TEMP((rotate((LOAD_PERM(15) & 65535), 16) | (LOAD_PERM(14) & 65535)), 261)) {
-	0: return string(STR_GENERIC_D0A3);
-	return string(STR_GENERIC_D0A3);
+	0: return string(STR_INFO_DEBUG_PRODUCTION_CONTRIBUTION);
+	return string(STR_INFO_DEBUG_PRODUCTION_CONTRIBUTION);
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_3620, STORE_TEMP((rotate((LOAD_PERM(13) & 65535), 16) | (LOAD_PERM(12) & 65535)), 260)) {
@@ -12854,7 +12854,7 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_28, 28) {
 		prod_increase_msg: 18488;
 		prod_decrease_msg: 18489;
 		new_ind_msg: 18477;
-		name: string(STR_GENERIC_DC7C);
+		name: string(STR_IND_DAIRYFARM);
 		nearby_station_name: string(STR_GENERIC_DCE0);
 		prod_cargo_types: [4, 10];
 		accept_cargo_types: [21, 255, 255];
@@ -14583,7 +14583,7 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_36, 36) {
 		prod_increase_msg: 18485;
 		prod_decrease_msg: 18489;
 		new_ind_msg: 18477;
-		name: string(STR_GENERIC_DC7D);
+		name: string(STR_IND_DAIRY);
 		nearby_station_name: string(STR_GENERIC_DCE6);
 		prod_cargo_types: [11, 255];
 		accept_cargo_types: [18, 10, 255];
@@ -14757,8 +14757,8 @@ switch(FEAT_INDUSTRIES, SELF, action2_3914, waiting_cargo_1) {
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_3915, STORE_TEMP((rotate((LOAD_PERM(15) & 65535), 16) | (LOAD_PERM(14) & 65535)), 261)) {
-	0: return string(STR_GENERIC_D0A3);
-	return string(STR_GENERIC_D0A3);
+	0: return string(STR_INFO_DEBUG_PRODUCTION_CONTRIBUTION);
+	return string(STR_INFO_DEBUG_PRODUCTION_CONTRIBUTION);
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_3916, STORE_TEMP((rotate((LOAD_PERM(13) & 65535), 16) | (LOAD_PERM(12) & 65535)), 260)) {
@@ -14974,7 +14974,7 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_20, 20) {
 		prod_increase_msg: 18485;
 		prod_decrease_msg: 18489;
 		new_ind_msg: 18477;
-		name: string(STR_GENERIC_DC8E);
+		name: string(STR_IND_DEDGING_SITE);
 		nearby_station_name: string(STR_GENERIC_DCEA);
 		prod_cargo_types: [17, 26];
 		accept_cargo_types: [24, 255, 255];
@@ -15945,7 +15945,7 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_40, 40) {
 		prod_increase_msg: 18485;
 		prod_decrease_msg: 18489;
 		new_ind_msg: 18477;
-		name: string(STR_GENERIC_DC78);
+		name: string(STR_IND_FERTILIZER_PLANT);
 		prod_cargo_types: [21, 255];
 		accept_cargo_types: [23, 255, 255];
 		prod_multiplier: [0, 0];
@@ -16073,8 +16073,8 @@ switch(FEAT_INDUSTRIES, SELF, action2_4051, STORE_PERM(8, 1)) {
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_4052, STORE_TEMP(LOAD_PERM(0), 260)) {
-	0: return string(STR_GENERIC_D0A1);
-	return string(STR_GENERIC_D0A1);
+	0: return string(STR_INFO_DEBUG_PRODUCTION_RATIO);
+	return string(STR_INFO_DEBUG_PRODUCTION_RATIO);
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_4053, STORE_TEMP((rotate((LOAD_PERM(11) & 65535), 16) | (LOAD_PERM(10) & 65535)), 259)) {
@@ -16570,7 +16570,7 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_32, 32) {
 		prod_increase_msg: 18485;
 		prod_decrease_msg: 18489;
 		new_ind_msg: 18477;
-		name: string(STR_GENERIC_DC93);
+		name: string(STR_IND_FISHING_GROUND);
 		nearby_station_name: string(STR_GENERIC_DCEB);
 		prod_cargo_types: [14, 255];
 		accept_cargo_types: [255, 255, 255];
@@ -17667,7 +17667,7 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_31, 31) {
 		prod_increase_msg: 18485;
 		prod_decrease_msg: 18489;
 		new_ind_msg: 18477;
-		name: string(STR_GENERIC_DC8C);
+		name: string(STR_IND_FISHING_HARBOUR);
 		prod_cargo_types: [11, 255];
 		accept_cargo_types: [18, 14, 255];
 		prod_multiplier: [0, 0];
@@ -17845,8 +17845,8 @@ switch(FEAT_INDUSTRIES, SELF, action2_4207, waiting_cargo_1) {
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_4208, STORE_TEMP((rotate((LOAD_PERM(15) & 65535), 16) | (LOAD_PERM(14) & 65535)), 261)) {
-	0: return string(STR_GENERIC_D0A3);
-	return string(STR_GENERIC_D0A3);
+	0: return string(STR_INFO_DEBUG_PRODUCTION_CONTRIBUTION);
+	return string(STR_INFO_DEBUG_PRODUCTION_CONTRIBUTION);
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_4209, STORE_TEMP((rotate((LOAD_PERM(13) & 65535), 16) | (LOAD_PERM(12) & 65535)), 260)) {
@@ -18106,7 +18106,7 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_59, 59) {
 		prod_increase_msg: 18485;
 		prod_decrease_msg: 18489;
 		new_ind_msg: 18477;
-		name: string(STR_GENERIC_DC8A);
+		name: string(STR_IND_FOOD_MARKET);
 		prod_cargo_types: [255, 255];
 		accept_cargo_types: [11, 13, 29];
 		prod_multiplier: [0, 0];
@@ -24107,7 +24107,7 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_6, 6) {
 		prod_increase_msg: 18485;
 		prod_decrease_msg: 18489;
 		new_ind_msg: 18477;
-		name: string(STR_GENERIC_DC94);
+		name: string(STR_IND_SMITHY_FORGE);
 		nearby_station_name: string(STR_GENERIC_DCEC);
 		prod_cargo_types: [24, 21];
 		accept_cargo_types: [9, 255, 255];
@@ -24236,8 +24236,8 @@ switch(FEAT_INDUSTRIES, SELF, action2_4573, STORE_PERM(5, 1)) {
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_4574, STORE_TEMP(LOAD_PERM(0), 260)) {
-	0: return string(STR_GENERIC_D0A1);
-	return string(STR_GENERIC_D0A1);
+	0: return string(STR_INFO_DEBUG_PRODUCTION_RATIO);
+	return string(STR_INFO_DEBUG_PRODUCTION_RATIO);
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_4575, STORE_TEMP((rotate((LOAD_PERM(11) & 65535), 16) | (LOAD_PERM(10) & 65535)), 259)) {
@@ -30636,7 +30636,7 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_13, 13) {
 		prod_increase_msg: 18485;
 		prod_decrease_msg: 18489;
 		new_ind_msg: 18477;
-		name: string(STR_GENERIC_DC80);
+		name: string(STR_IND_FURNITURE_FACTORY);
 		nearby_station_name: string(STR_GENERIC_DCE6);
 		prod_cargo_types: [5, 255];
 		accept_cargo_types: [18, 19, 255];
@@ -30805,8 +30805,8 @@ switch(FEAT_INDUSTRIES, SELF, action2_4940, waiting_cargo_1) {
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_4941, STORE_TEMP((rotate((LOAD_PERM(15) & 65535), 16) | (LOAD_PERM(14) & 65535)), 261)) {
-	0: return string(STR_GENERIC_D0A3);
-	return string(STR_GENERIC_D0A3);
+	0: return string(STR_INFO_DEBUG_PRODUCTION_CONTRIBUTION);
+	return string(STR_INFO_DEBUG_PRODUCTION_CONTRIBUTION);
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_4942, STORE_TEMP((rotate((LOAD_PERM(13) & 65535), 16) | (LOAD_PERM(12) & 65535)), 260)) {
@@ -31403,7 +31403,7 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_22, 22) {
 		prod_increase_msg: 18485;
 		prod_decrease_msg: 18489;
 		new_ind_msg: 18477;
-		name: string(STR_GENERIC_DC7A);
+		name: string(STR_IND_GLASS_WORKS);
 		nearby_station_name: string(STR_GENERIC_DCE6);
 		prod_cargo_types: [28, 18];
 		accept_cargo_types: [17, 23, 255];
@@ -31602,8 +31602,8 @@ switch(FEAT_INDUSTRIES, SELF, action2_5053, waiting_cargo_1) {
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_5054, STORE_TEMP((rotate((LOAD_PERM(15) & 65535), 16) | (LOAD_PERM(14) & 65535)), 261)) {
-	0: return string(STR_GENERIC_D0A3);
-	return string(STR_GENERIC_D0A3);
+	0: return string(STR_INFO_DEBUG_PRODUCTION_CONTRIBUTION);
+	return string(STR_INFO_DEBUG_PRODUCTION_CONTRIBUTION);
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_5055, STORE_TEMP((rotate((LOAD_PERM(13) & 65535), 16) | (LOAD_PERM(12) & 65535)), 260)) {
@@ -32567,7 +32567,7 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_34, 34) {
 		prod_increase_msg: 18485;
 		prod_decrease_msg: 18489;
 		new_ind_msg: 18477;
-		name: string(STR_GENERIC_DC7E);
+		name: string(STR_IND_GRAIN_MILL);
 		prod_cargo_types: [11, 255];
 		accept_cargo_types: [18, 6, 255];
 		prod_multiplier: [0, 0];
@@ -32755,8 +32755,8 @@ switch(FEAT_INDUSTRIES, SELF, action2_5209, waiting_cargo_1) {
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_5210, STORE_TEMP((rotate((LOAD_PERM(15) & 65535), 16) | (LOAD_PERM(14) & 65535)), 261)) {
-	0: return string(STR_GENERIC_D0A3);
-	return string(STR_GENERIC_D0A3);
+	0: return string(STR_INFO_DEBUG_PRODUCTION_CONTRIBUTION);
+	return string(STR_INFO_DEBUG_PRODUCTION_CONTRIBUTION);
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_5211, STORE_TEMP((rotate((LOAD_PERM(13) & 65535), 16) | (LOAD_PERM(12) & 65535)), 260)) {
@@ -33016,7 +33016,7 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_57, 57) {
 		prod_increase_msg: 18485;
 		prod_decrease_msg: 18489;
 		new_ind_msg: 18477;
-		name: string(STR_GENERIC_DC8F);
+		name: string(STR_IND_HARDWARE_STORE);
 		prod_cargo_types: [255, 255];
 		accept_cargo_types: [5, 28, 255];
 		prod_multiplier: [0, 0];
@@ -33196,7 +33196,7 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_58, 58) {
 		prod_increase_msg: 18485;
 		prod_decrease_msg: 18489;
 		new_ind_msg: 18477;
-		name: string(STR_GENERIC_DC8D);
+		name: string(STR_IND_HOTEL);
 		prod_cargo_types: [0, 255];
 		accept_cargo_types: [11, 29, 0];
 		prod_multiplier: [14, 0];
@@ -35383,7 +35383,7 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_21, 21) {
 		prod_increase_msg: 18485;
 		prod_decrease_msg: 18489;
 		new_ind_msg: 18477;
-		name: string(STR_GENERIC_DC77);
+		name: string(STR_IND_IRON_WORKS);
 		prod_cargo_types: [9, 255];
 		accept_cargo_types: [8, 7, 255];
 		prod_multiplier: [0, 0];
@@ -35586,8 +35586,8 @@ switch(FEAT_INDUSTRIES, SELF, action2_5483, waiting_cargo_1) {
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_5484, STORE_TEMP((rotate((LOAD_PERM(15) & 65535), 16) | (LOAD_PERM(14) & 65535)), 261)) {
-	0: return string(STR_GENERIC_D0A3);
-	return string(STR_GENERIC_D0A3);
+	0: return string(STR_INFO_DEBUG_PRODUCTION_CONTRIBUTION);
+	return string(STR_INFO_DEBUG_PRODUCTION_CONTRIBUTION);
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_5485, STORE_TEMP((rotate((LOAD_PERM(13) & 65535), 16) | (LOAD_PERM(12) & 65535)), 260)) {
@@ -36046,7 +36046,7 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_25, 25) {
 		prod_increase_msg: 18485;
 		prod_decrease_msg: 18489;
 		new_ind_msg: 18477;
-		name: string(STR_GENERIC_DC89);
+		name: string(STR_IND_JUNKYARD);
 		prod_cargo_types: [20, 255];
 		accept_cargo_types: [24, 255, 255];
 		prod_multiplier: [6, 0];
@@ -36849,7 +36849,7 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_1, 1) {
 		prod_increase_msg: 18485;
 		prod_decrease_msg: 18489;
 		new_ind_msg: 18477;
-		name: string(STR_GENERIC_DC9B);
+		name: string(STR_IND_LIME_KILN);
 		prod_cargo_types: [23, 21];
 		accept_cargo_types: [26, 1, 255];
 		prod_multiplier: [0, 0];
@@ -37027,8 +37027,8 @@ switch(FEAT_INDUSTRIES, SELF, action2_5671, waiting_cargo_1) {
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_5672, STORE_TEMP((rotate((LOAD_PERM(15) & 65535), 16) | (LOAD_PERM(14) & 65535)), 261)) {
-	0: return string(STR_GENERIC_D0A3);
-	return string(STR_GENERIC_D0A3);
+	0: return string(STR_INFO_DEBUG_PRODUCTION_CONTRIBUTION);
+	return string(STR_INFO_DEBUG_PRODUCTION_CONTRIBUTION);
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_5673, STORE_TEMP((rotate((LOAD_PERM(13) & 65535), 16) | (LOAD_PERM(12) & 65535)), 260)) {
@@ -37522,7 +37522,7 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_41, 41) {
 		prod_increase_msg: 18485;
 		prod_decrease_msg: 18489;
 		new_ind_msg: 18477;
-		name: string(STR_GENERIC_DC83);
+		name: string(STR_IND_LUMBER_YARD);
 		prod_cargo_types: [24, 28];
 		accept_cargo_types: [19, 23, 255];
 		prod_multiplier: [0, 0];
@@ -37690,8 +37690,8 @@ switch(FEAT_INDUSTRIES, SELF, action2_5763, waiting_cargo_1) {
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_5764, STORE_TEMP((rotate((LOAD_PERM(15) & 65535), 16) | (LOAD_PERM(14) & 65535)), 261)) {
-	0: return string(STR_GENERIC_D0A3);
-	return string(STR_GENERIC_D0A3);
+	0: return string(STR_INFO_DEBUG_PRODUCTION_CONTRIBUTION);
+	return string(STR_INFO_DEBUG_PRODUCTION_CONTRIBUTION);
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_5765, STORE_TEMP((rotate((LOAD_PERM(13) & 65535), 16) | (LOAD_PERM(12) & 65535)), 260)) {
@@ -41255,7 +41255,7 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_38, 38) {
 		prod_increase_msg: 18485;
 		prod_decrease_msg: 18489;
 		new_ind_msg: 18477;
-		name: string(STR_GENERIC_DC82);
+		name: string(STR_IND_MACHINE_SHOP);
 		prod_cargo_types: [21, 24];
 		accept_cargo_types: [9, 25, 255];
 		prod_multiplier: [0, 0];
@@ -41383,8 +41383,8 @@ switch(FEAT_INDUSTRIES, SELF, action2_6048, STORE_PERM(8, 1)) {
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_6049, STORE_TEMP(LOAD_PERM(0), 260)) {
-	0: return string(STR_GENERIC_D0A1);
-	return string(STR_GENERIC_D0A1);
+	0: return string(STR_INFO_DEBUG_PRODUCTION_RATIO);
+	return string(STR_INFO_DEBUG_PRODUCTION_RATIO);
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_6050, STORE_TEMP((rotate((LOAD_PERM(11) & 65535), 16) | (LOAD_PERM(10) & 65535)), 259)) {
@@ -41409,7 +41409,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6053, STORE_TEMP((rotate((LOAD_PERM(2) & 6
 
 switch(FEAT_INDUSTRIES, SELF, action2_6054, show_debug_texts) {
 	1: action2_6053;
-	return string(STR_GENERIC_D026);
+	return string(STR_INFO_PRODUCTION_MACHINE_SHOP);
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_6055, STORE_PERM((65535 / 2), 0)) {
@@ -42331,7 +42331,7 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_37, 37) {
 		prod_increase_msg: 18485;
 		prod_decrease_msg: 18489;
 		new_ind_msg: 18477;
-		name: string(STR_GENERIC_DC7B);
+		name: string(STR_IND_STOCKYARD);
 		nearby_station_name: string(STR_GENERIC_DCE6);
 		prod_cargo_types: [11, 255];
 		accept_cargo_types: [18, 4, 255];
@@ -42515,8 +42515,8 @@ switch(FEAT_INDUSTRIES, SELF, action2_6199, waiting_cargo_1) {
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_6200, STORE_TEMP((rotate((LOAD_PERM(15) & 65535), 16) | (LOAD_PERM(14) & 65535)), 261)) {
-	0: return string(STR_GENERIC_D0A3);
-	return string(STR_GENERIC_D0A3);
+	0: return string(STR_INFO_DEBUG_PRODUCTION_CONTRIBUTION);
+	return string(STR_INFO_DEBUG_PRODUCTION_CONTRIBUTION);
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_6201, STORE_TEMP((rotate((LOAD_PERM(13) & 65535), 16) | (LOAD_PERM(12) & 65535)), 260)) {
@@ -42546,7 +42546,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6205, STORE_TEMP((rotate((LOAD_PERM(2) & 6
 
 switch(FEAT_INDUSTRIES, SELF, action2_6206, show_debug_texts) {
 	1: action2_6205;
-	return string(STR_GENERIC_D025);
+	return string(STR_IND_BREWERY);
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_6207, STORE_PERM((65535 / 2), 0)) {
@@ -44605,7 +44605,7 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_9, 9) {
 		prod_increase_msg: 18485;
 		prod_decrease_msg: 18489;
 		new_ind_msg: 18477;
-		name: string(STR_GENERIC_DC84);
+		name: string(STR_IND_METAL_FOUNDRY);
 		prod_cargo_types: [5, 18];
 		accept_cargo_types: [9, 255, 255];
 		prod_multiplier: [0, 0];
@@ -44733,8 +44733,8 @@ switch(FEAT_INDUSTRIES, SELF, action2_6379, STORE_PERM(8, 1)) {
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_6380, STORE_TEMP(LOAD_PERM(0), 260)) {
-	0: return string(STR_GENERIC_D0A1);
-	return string(STR_GENERIC_D0A1);
+	0: return string(STR_INFO_DEBUG_PRODUCTION_RATIO);
+	return string(STR_INFO_DEBUG_PRODUCTION_RATIO);
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_6381, STORE_TEMP((rotate((LOAD_PERM(11) & 65535), 16) | (LOAD_PERM(10) & 65535)), 259)) {
@@ -45211,7 +45211,7 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_29, 29) {
 		prod_increase_msg: 18488;
 		prod_decrease_msg: 18489;
 		new_ind_msg: 18477;
-		name: string(STR_GENERIC_DC86);
+		name: string(STR_IND_MIXEDFARM);
 		nearby_station_name: string(STR_GENERIC_DCE0);
 		prod_cargo_types: [4, 22];
 		accept_cargo_types: [21, 255, 255];
@@ -45785,8 +45785,8 @@ switch(FEAT_INDUSTRIES, SELF, action2_6533, STORE_PERM(6, 1)) {
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_6534, STORE_TEMP(LOAD_PERM(0), 260)) {
-	0: return string(STR_GENERIC_D0A1);
-	return string(STR_GENERIC_D0A1);
+	0: return string(STR_INFO_DEBUG_PRODUCTION_RATIO);
+	return string(STR_INFO_DEBUG_PRODUCTION_RATIO);
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_6535, STORE_TEMP((rotate((LOAD_PERM(11) & 65535), 16) | (LOAD_PERM(10) & 65535)), 259)) {
@@ -46608,8 +46608,8 @@ switch(FEAT_INDUSTRIES, SELF, action2_6658, waiting_cargo_1) {
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_6659, STORE_TEMP((rotate((LOAD_PERM(15) & 65535), 16) | (LOAD_PERM(14) & 65535)), 261)) {
-	0: return string(STR_GENERIC_D0A3);
-	return string(STR_GENERIC_D0A3);
+	0: return string(STR_INFO_DEBUG_PRODUCTION_CONTRIBUTION);
+	return string(STR_INFO_DEBUG_PRODUCTION_CONTRIBUTION);
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_6660, STORE_TEMP((rotate((LOAD_PERM(13) & 65535), 16) | (LOAD_PERM(12) & 65535)), 260)) {
@@ -47052,7 +47052,7 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_60, 60) {
 		prod_increase_msg: 18485;
 		prod_decrease_msg: 18489;
 		new_ind_msg: 18477;
-		name: string(STR_GENERIC_DC92);
+		name: string(STR_IND_PETROLPUMP);
 		prod_cargo_types: [255, 255];
 		accept_cargo_types: [11, 5, 25];
 		prod_multiplier: [0, 0];
@@ -47837,7 +47837,7 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_18, 18) {
 		prod_increase_msg: 18485;
 		prod_decrease_msg: 18489;
 		new_ind_msg: 18477;
-		name: string(STR_GENERIC_DC79);
+		name: string(STR_IND_PLASTICS_PLANT);
 		nearby_station_name: string(STR_GENERIC_DCE7);
 		prod_cargo_types: [5, 18];
 		accept_cargo_types: [23, 22, 255];
@@ -47971,8 +47971,8 @@ switch(FEAT_INDUSTRIES, SELF, action2_6837, STORE_PERM(6, 1)) {
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_6838, STORE_TEMP(LOAD_PERM(0), 260)) {
-	0: return string(STR_GENERIC_D0A1);
-	return string(STR_GENERIC_D0A1);
+	0: return string(STR_INFO_DEBUG_PRODUCTION_RATIO);
+	return string(STR_INFO_DEBUG_PRODUCTION_RATIO);
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_6839, STORE_TEMP((rotate((LOAD_PERM(11) & 65535), 16) | (LOAD_PERM(10) & 65535)), 259)) {
@@ -50369,7 +50369,7 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_10, 10) {
 		prod_increase_msg: 18485;
 		prod_decrease_msg: 18489;
 		new_ind_msg: 18477;
-		name: string(STR_GENERIC_DC71);
+		name: string(STR_IND_QUARRY);
 		nearby_station_name: string(STR_GENERIC_DCE8);
 		prod_cargo_types: [17, 26];
 		accept_cargo_types: [24, 255, 255];
@@ -50648,7 +50648,7 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_24, 24) {
 		prod_increase_msg: 18485;
 		prod_decrease_msg: 18489;
 		new_ind_msg: 18477;
-		name: string(STR_GENERIC_DC87);
+		name: string(STR_IND_RECYCLING_DEPOT);
 		prod_cargo_types: [31, 255];
 		accept_cargo_types: [255, 255, 255];
 		prod_multiplier: [0, 0];
@@ -50978,7 +50978,7 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_23, 23) {
 		prod_increase_msg: 18485;
 		prod_decrease_msg: 18490;
 		new_ind_msg: 18477;
-		name: string(STR_GENERIC_DC85);
+		name: string(STR_IND_RECYCLING_PLANT);
 		prod_cargo_types: [20, 18];
 		accept_cargo_types: [31, 255, 255];
 		prod_multiplier: [0, 0];
@@ -51124,8 +51124,8 @@ switch(FEAT_INDUSTRIES, SELF, action2_7218, STORE_PERM(6, 1)) {
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_7219, STORE_TEMP(LOAD_PERM(0), 260)) {
-	0: return string(STR_GENERIC_D0A1);
-	return string(STR_GENERIC_D0A1);
+	0: return string(STR_INFO_DEBUG_PRODUCTION_RATIO);
+	return string(STR_INFO_DEBUG_PRODUCTION_RATIO);
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_7220, STORE_TEMP((rotate((LOAD_PERM(11) & 65535), 16) | (LOAD_PERM(10) & 65535)), 259)) {
@@ -51415,8 +51415,8 @@ switch(FEAT_INDUSTRIES, SELF, action2_7266, STORE_PERM(6, 1)) {
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_7267, STORE_TEMP(LOAD_PERM(0), 260)) {
-	0: return string(STR_GENERIC_D0A1);
-	return string(STR_GENERIC_D0A1);
+	0: return string(STR_INFO_DEBUG_PRODUCTION_RATIO);
+	return string(STR_INFO_DEBUG_PRODUCTION_RATIO);
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_7268, STORE_TEMP((rotate((LOAD_PERM(11) & 65535), 16) | (LOAD_PERM(10) & 65535)), 259)) {
@@ -52157,7 +52157,7 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_27, 27) {
 		prod_increase_msg: 18488;
 		prod_decrease_msg: 18489;
 		new_ind_msg: 18477;
-		name: string(STR_GENERIC_DC88);
+		name: string(STR_IND_SHEEPFARM);
 		nearby_station_name: string(STR_GENERIC_DCE0);
 		prod_cargo_types: [4, 15];
 		accept_cargo_types: [21, 255, 255];
@@ -52566,8 +52566,8 @@ switch(FEAT_INDUSTRIES, SELF, action2_7444, waiting_cargo_1) {
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_7445, STORE_TEMP((rotate((LOAD_PERM(15) & 65535), 16) | (LOAD_PERM(14) & 65535)), 261)) {
-	0: return string(STR_GENERIC_D0A3);
-	return string(STR_GENERIC_D0A3);
+	0: return string(STR_INFO_DEBUG_PRODUCTION_CONTRIBUTION);
+	return string(STR_INFO_DEBUG_PRODUCTION_CONTRIBUTION);
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_7446, STORE_TEMP((rotate((LOAD_PERM(13) & 65535), 16) | (LOAD_PERM(12) & 65535)), 260)) {
@@ -53154,8 +53154,8 @@ switch(FEAT_INDUSTRIES, SELF, action2_7532, waiting_cargo_1) {
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_7533, STORE_TEMP((rotate((LOAD_PERM(15) & 65535), 16) | (LOAD_PERM(14) & 65535)), 261)) {
-	0: return string(STR_GENERIC_D0A3);
-	return string(STR_GENERIC_D0A3);
+	0: return string(STR_INFO_DEBUG_PRODUCTION_CONTRIBUTION);
+	return string(STR_INFO_DEBUG_PRODUCTION_CONTRIBUTION);
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_7534, STORE_TEMP((rotate((LOAD_PERM(13) & 65535), 16) | (LOAD_PERM(12) & 65535)), 260)) {
@@ -53185,7 +53185,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_7538, STORE_TEMP((rotate((LOAD_PERM(2) & 6
 
 switch(FEAT_INDUSTRIES, SELF, action2_7539, show_debug_texts) {
 	1: action2_7538;
-	return string(STR_GENERIC_D013);
+	return string(STR_INFO_PRODUCTION_3PER8);
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_7540, STORE_PERM((65535 / 2), 0)) {
@@ -54549,7 +54549,7 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_42, 42) {
 		prod_increase_msg: 18485;
 		prod_decrease_msg: 18489;
 		new_ind_msg: 18477;
-		name: string(STR_GENERIC_DC7F);
+		name: string(STR_IND_TEXTILE_MILL);
 		nearby_station_name: string(STR_GENERIC_DCE2);
 		prod_cargo_types: [5, 255];
 		accept_cargo_types: [18, 15, 22];
@@ -54728,8 +54728,8 @@ switch(FEAT_INDUSTRIES, SELF, action2_7688, waiting_cargo_1) {
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_7689, STORE_TEMP((rotate((LOAD_PERM(15) & 65535), 16) | (LOAD_PERM(14) & 65535)), 261)) {
-	0: return string(STR_GENERIC_D0A3);
-	return string(STR_GENERIC_D0A3);
+	0: return string(STR_INFO_DEBUG_PRODUCTION_CONTRIBUTION);
+	return string(STR_INFO_DEBUG_PRODUCTION_CONTRIBUTION);
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_7690, STORE_TEMP((rotate((LOAD_PERM(13) & 65535), 16) | (LOAD_PERM(12) & 65535)), 260)) {

@@ -9,23 +9,23 @@ STR_GENERIC_DC29                                                                
 STR_CARGO_UNIT_MNSP                                                             :{WORD_S} kratten productiehulpgoederen
 STR_IND_CLAY_PIT                                                                :Kleiwinning
 STR_PARAM_NAME_DEBUG                                                            :Laat debug-informatie zien
-STR_GENERIC_D0A8                                                                :{}{RED}Geen vracht geleverd voor ten minste {POP_WORD}{POP_WORD}{WORD_S} maanden. Deze industrie kan spoedig sluiten. {}
-STR_PARAM_5_DESC                                                                :{SILVER}Maximale afstand tot de kust in tegels voor visgebieden en baggermolens.
-STR_GENERIC_D0C1                                                                :{BLACK} (max 800)
+STR_INFO_NO_CARGO_DELIVERED                                                     :{}{RED}Geen vracht geleverd voor ten minste {POP_WORD}{POP_WORD}{WORD_S} maanden. Deze industrie kan spoedig sluiten. {}
+STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :{SILVER}Maximale afstand tot de kust in tegels voor visgebieden en baggermolens.
+STR_INFO_MAX_STOCKPILE                                                          :{BLACK} (max 800)
 STR_GENERIC_D0C0                                                                :{BLACK} (max 200)
 STR_CARGO_UNIT_SAND                                                             :\UE09A\0D zand
-STR_PARAM_1_DESC                                                                :Standaard kunnen FIRS primaire industrieën hun productie nooit verlagen.{}Als productieverlaging voor primaire industrieën is ingeschakeld is er een kans dat een industrie zijn productie verlaagt als er in een maand geen hulpgoederen zijn geleverd. Bij een hoge productie is de kans op productieverlaging groter.
+STR_PARAM_DESC_PRIMARY_PRODUCTION_DECREASE                                      :Standaard kunnen FIRS primaire industrieën hun productie nooit verlagen.{}Als productieverlaging voor primaire industrieën is ingeschakeld is er een kans dat een industrie zijn productie verlaagt als er in een maand geen hulpgoederen zijn geleverd. Bij een hoge productie is de kans op productieverlaging groter.
 STR_CARGO_UNIT_STONE                                                            :\UE09A\0D grind
 STR_CARGO_NAME_STONE                                                            :Grind
 STR_GENERIC_DC18                                                                :{TINYFONT}KT
 STR_CARGO_NAME_SAND                                                             :Zand
 STR_CARGO_UNIT_WOOL                                                             :\UE09A\0D wol
 STR_GENERIC_DC10                                                                :{TINYFONT}VS
-STR_GENERIC_DC11                                                                :Wol
+STR_CARGO_NAME_WOOL                                                             :Wol
 STR_CARGO_UNIT_FIBRES                                                           :\UE09A\0D katoen
 STR_GENERIC_DC14                                                                :{TINYFONT}WL
 STR_CARGO_NAME_FIBRES                                                           :Katoen
-STR_GENERIC_D0A5                                                                :{BLACK}Beschikbaar: {YELLOW}{DATE_LONG}
+STR_INFO_AVAILABILITY_FROM                                                      :{BLACK}Beschikbaar: {YELLOW}{DATE_LONG}
 STR_IND_PETROLPUMP                                                              :Tankstation
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} chemicaliën
 STR_CARGO_NAME_CHEMICALS                                                        :Chemicaliën
@@ -35,66 +35,66 @@ STR_GENERIC_DC97                                                                
 STR_CARGO_NAME_FMSP                                                             :Landbouwhulpgoederen
 STR_IND_RETAILMARKET                                                            :Detailhandel
 STR_GENERIC_DC99                                                                :Suikerfabriek
-STR_GENERIC_D013                                                                :{BLACK}Productie:{}  3t per 8t geleverde productiehulpgoederen{}  5t per 8t geleverd suikerriet{}{}Verhoogt tot 8t per 8t als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
+STR_INFO_PRODUCTION_3PER8                                                       :{BLACK}Productie:{}  3t per 8t geleverde productiehulpgoederen{}  5t per 8t geleverd suikerriet{}{}Verhoogt tot 8t per 8t als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
 STR_PARAM_3_DESC                                                                :Standaard zullen FIRS primaire industrieën nooit sluiten.{}Als sluiten van secundaire industrieën is ingeschakeld kunnen secundaire industrieën sluiten als voor lange tijd geen vracht is getransporteerd.
 STR_CARGO_NAME_FRUITS                                                           :Fruit en Groente
-STR_GENERIC_DC08                                                                :{TINYFONT}BM
-STR_CARGO_NAME_BUILDINGMATERIALS                                                :Bouwmaterialen
+STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}BM
+STR_CARGO_NAME_BUILDING_MATERIALS                                               :Bouwmaterialen
 STR_GENERIC_DC04                                                                :{TINYFONT}SB
-STR_CARGO_UNIT_BUILDINGMATERIALS                                                :\UE09A\0D bouwmaterialen
+STR_CARGO_UNIT_BUILDING_MATERIALS                                               :\UE09A\0D bouwmaterialen
 STR_IND_DAIRYFARM                                                               :Melkveehouderij
 STR_CARGO_NAME_SUGARCANE                                                        :Suikerbieten
-STR_PARAM_2_NAME                                                                :Primaire industrieën kunnen sluiten
+STR_PARAM_NAME_NEVER_CLOSE                                                      :Primaire industrieën kunnen sluiten
 STR_GENERIC_DC03                                                                :\UE09A\0D suikerbieten
 STR_GENERIC_DCEA                                                                :{STRING} Grindgat
 STR_GENERIC_D022                                                                :{BLACK}Productie:{}  3t per 8t geleverde productiehulpgoederen{}  5t per 8t geleverd graan{}{}Verhoogt tot 8t per 8t als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
 STR_GENERIC_D023                                                                :{BLACK}Productie:{}  3t per 8t geleverde productiehulpgoederen{}  5t per 8t geleverd graan{}  5t per 8t geleverd fruit en groente{}{}Productie verhoogt als productiehulpgoederen binnen een maand van andere vracht worden geleverd.
-STR_PARAM_4_NAME                                                                :Voorkom bouwen van nieuwe industrieën (nog niet af)
-STR_GENERIC_D025                                                                :{BLACK}Productie:{}  3t per 8t geleverde productiehulpgoederen{}  5t per 8t geleverd vee{}{}Verhoogt tot 8t per 8t als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
-STR_GENERIC_D026                                                                :{BLACK}Bouwt en onderhoudt machines.{}{}8t productie voor iedere 8t geleverd.
+STR_PARAM_NAME_NO_OPENINGS                                                      :Voorkom bouwen van nieuwe industrieën (nog niet af)
+STR_IND_BREWERY                                                                 :{BLACK}Productie:{}  3t per 8t geleverde productiehulpgoederen{}  5t per 8t geleverd vee{}{}Verhoogt tot 8t per 8t als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
+STR_INFO_PRODUCTION_MACHINE_SHOP                                                :{BLACK}Bouwt en onderhoudt machines.{}{}8t productie voor iedere 8t geleverd.
 STR_IND_FISHING_GROUND                                                          :Visgebied
 STR_GENERIC_D028                                                                :{BLACK}Verwerkt chemicaliën tot kunstmest voor gebruik door boerderijen.{}{}8t productie voor iedere 8t geleverd.
 STR_GENERIC_D029                                                                :{BLACK}Maakt onder andere houten palen en stijgerplanken..{}{}{BLACK}Productie:{}  2t per 8t geleverde chemicaliën{}  6t per 8t geleverd gezaagd hout{}{}Verhoogt tot 8t per 8t als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
-STR_GENERIC_DC85                                                                :Recyclingfabriek
-STR_GENERIC_DC84                                                                :IJzergieterij
-STR_GENERIC_DC87                                                                :Recycling verzamelpunt
-STR_GENERIC_DC86                                                                :Gemengd boerenbedrijf
-STR_GENERIC_DC81                                                                :Aluminiumfabriek
-STR_GENERIC_DC80                                                                :Meubelfabriek
-STR_GENERIC_DC83                                                                :Houtwerkplaats
-STR_GENERIC_DC82                                                                :Machinewerkplaats
+STR_IND_RECYCLING_PLANT                                                         :Recyclingfabriek
+STR_IND_METAL_FOUNDRY                                                           :IJzergieterij
+STR_IND_RECYCLING_DEPOT                                                         :Recycling verzamelpunt
+STR_IND_MIXEDFARM                                                               :Gemengd boerenbedrijf
+STR_IND_ALUMINIUM_PLANT                                                         :Aluminiumfabriek
+STR_IND_FURNITURE_FACTORY                                                       :Meubelfabriek
+STR_IND_LUMBER_YARD                                                             :Houtwerkplaats
+STR_IND_MACHINE_SHOP                                                            :Machinewerkplaats
 STR_GENERIC_D0A0                                                                :
-STR_PARAM_NAME_PRIMARY_PRODUCTION                                               :Primaire industrieën kunnen productie verlagen
+STR_PARAM_NAME_PRIMARY_PRODUCTION_DECREASE                                      :Primaire industrieën kunnen productie verlagen
 STR_IND_JUNKYARD                                                                :Schroothoop
-STR_GENERIC_DC88                                                                :Schapenhouderij
-STR_PARAM_4_DESC                                                                :{SILVER}Dit doet nog niets. {BLACK}Al het klaar is, zal het een 'zandbak mode' geven om te gebruiken in scenario's.
-STR_GENERIC_D0A6                                                                :{}{BLACK}Deze industrie kan sluiten tenzij vracht wordt geleverd binnen:{}{YELLOW}  {WORD_S} maanden
-STR_GENERIC_DC8E                                                                :Baggermolen
-STR_GENERIC_DC8D                                                                :Hotel
-STR_GENERIC_DC8A                                                                :Kruidenier
-STR_GENERIC_DC94                                                                :Smederij
-STR_GENERIC_DC8C                                                                :Vissershaven
-STR_GENERIC_DC8B                                                                :Bauxietmijn
-STR_GENERIC_D0AA                                                                :{BLACK}Beschikbaar: {YELLOW}1 Jan 1610
-STR_GENERIC_D0AC                                                                :{BLACK}Beschikbaar: {YELLOW}1 Jan 1762
-STR_GENERIC_D0AB                                                                :{BLACK}Beschikbaar: {YELLOW}1 Jan 1730
+STR_IND_SHEEPFARM                                                               :Schapenhouderij
+STR_PARAM_DESC_NO_OPENINGS                                                      :{SILVER}Dit doet nog niets. {BLACK}Al het klaar is, zal het een 'zandbak mode' geven om te gebruiken in scenario's.
+STR_INFO_MIGHT_CLOSE                                                            :{}{BLACK}Deze industrie kan sluiten tenzij vracht wordt geleverd binnen:{}{YELLOW}  {WORD_S} maanden
+STR_IND_DEDGING_SITE                                                            :Baggermolen
+STR_IND_HOTEL                                                                   :Hotel
+STR_IND_FOOD_MARKET                                                             :Kruidenier
+STR_IND_SMITHY_FORGE                                                            :Smederij
+STR_IND_FISHING_HARBOUR                                                         :Vissershaven
+STR_IND_BAUXITE_MINE                                                            :Bauxietmijn
+STR_INFO_AVAILABILITY_FROM_1610                                                 :{BLACK}Beschikbaar: {YELLOW}1 Jan 1610
+STR_INFO_AVAILABILITY_FROM_1762                                                 :{BLACK}Beschikbaar: {YELLOW}1 Jan 1762
+STR_INFO_AVAILABILITY_FROM_1730                                                 :{BLACK}Beschikbaar: {YELLOW}1 Jan 1730
 STR_GENERIC_D02A                                                                :{BLACK}Productie:{}  3t per 8t geleverde productiehulpgoederen{}  5t per 8t geleverd wol{}  5t per 8t geleverd katoen{}{}Productie verhoogt als productiehulpgoederen binnen een maand van andere vracht worden geleverd.
 STR_GENERIC_D02B                                                                :{BLACK}Productie:{}  2t per 8t geleverde kolen{}  2t per 8t geleverd klei{}  4t per 8t geleverd grind{}{}Productie verhoogt als twee of meer vrachtsoorten binnen een maand van elkaar worden geleverd.
 STR_GENERIC_D02D                                                                :{BLACK}Productie:{}  2t per 8t geleverde kolen{}  2t per 8t geleverd zand{}  4t per 8t geleverd klei{}{}Productie verhoogt als twee of meer vrachtsoorten binnen een maand van elkaar worden geleverd.
 STR_GENERIC_D02E                                                                :{BLACK}Verwerkt graan en suiker tot benzine and chemicaliën.{}{}6t productie voor iedere 8t geleverd.
-STR_PARAM_0_DESC                                                                :Uiteindelijk zal FIRS een keuze aan economieën hebben. Goederen en industrieën varieren in elke economie. Betalingen voor goederen verschillen ook in elke economie. {}{}{SILVER}Op dit moment is slechts één economie :)
+STR_PARAM_DESC_ECONOMIES                                                        :Uiteindelijk zal FIRS een keuze aan economieën hebben. Goederen en industrieën varieren in elke economie. Betalingen voor goederen verschillen ook in elke economie. {}{}{SILVER}Op dit moment is slechts één economie :)
 STR_GENERIC_DCEB                                                                :{STRING} Visgebied
 STR_PARAM_3_NAME                                                                :Secundaire industrieën kunnen sluiten
-STR_GENERIC_DC78                                                                :Kunstmestfabriek
-STR_GENERIC_DC79                                                                :Kunststoffabriek
-STR_GENERIC_DC70                                                                :Landbouw boerenbedrijf
-STR_GENERIC_DC0D                                                                :Vis
-STR_GENERIC_DC72                                                                :Aannemeropslagplaats
+STR_IND_FERTILIZER_PLANT                                                        :Kunstmestfabriek
+STR_IND_PLASTICS_PLANT                                                          :Kunststoffabriek
+STR_IND_ARABLE_FARM                                                             :Landbouw boerenbedrijf
+STR_CARGO_NAME_FISH                                                             :Vis
+STR_IND_BUILDERS_YARD                                                           :Aannemeropslagplaats
 STR_GENERIC_DC73                                                                :Brouwerij
-STR_GENERIC_DC74                                                                :Cementfabriek
+STR_IND_CEMENT_PLANT                                                            :Cementfabriek
 STR_GENERIC_DC75                                                                :Steenfabriek
-STR_GENERIC_DC0C                                                                :\UE09A\0D fruit en Groente
-STR_GENERIC_DC77                                                                :Ijzeroven
+STR_CARGO_UNIT_FRUITS                                                           :\UE09A\0D fruit en Groente
+STR_IND_IRON_WORKS                                                              :Ijzeroven
 STR_GENERIC_D0B0                                                                :{BLACK}Constructiehulpgoederen kunnen de productie verhogen.{}{YELLOW}  {DWORD_S} pallets geleverd deze maand
 STR_GENERIC_DCE8                                                                :{STRING} Groeve
 STR_GENERIC_DCE9                                                                :{STRING} Depot
@@ -111,22 +111,20 @@ STR_GENERIC_D007                                                                
 STR_GENERIC_D001                                                                :{BLACK}Productie:{}  4t per 8t geleverd grind{}  4t per 8t geleverde kolen{}{}Verhoogt tot 8t per 8t als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
 STR_GENERIC_D008                                                                :{BLACK}Productie:{}  2t per 8t geleverd bauxiet{}  2t per 8t geleverde chemicaliën{}  4t per 8t geleverd schroot{}{}Productie verhoogt als twee of meer vrachtsoorten binnen een maand van elkaar worden geleverd.
 STR_GENERIC_D009                                                                :{BLACK}Maakt metalen gereedschappen en onderdelen.{}{}8t productie voor iedere 8t geleverd.
-STR_GENERIC_DC7A                                                                :Glasfabriek
-STR_GENERIC_DC7B                                                                :Slachterij
-STR_GENERIC_D0D2                                                                :{}
-STR_GENERIC_D0D3                                                                :{WHITE}Accepteert geen landbouwhulpgoederen{BLACK}{}(limiet bereikt)
-STR_GENERIC_D0D0                                                                :{}
-STR_GENERIC_D0D1                                                                :{WHITE}Accepteert geen constructiehulpgoederen {BLACK}{}(limiet bereikt)
-STR_GENERIC_D0D4                                                                :{}
-STR_GENERIC_D0D5                                                                :{WHITE}Accepteert geen productiehulpgoederen{BLACK}{}(limiet bereikt)
-STR_GENERIC_DC7D                                                                :Zuivelfabriek
-STR_GENERIC_DC7E                                                                :Bakkerij
+STR_IND_GLASS_WORKS                                                             :Glasfabriek
+STR_IND_STOCKYARD                                                               :Slachterij
+STR_INFO_LIMIT_REACHED_FARM_SUPPLIES                                            :{WHITE}Accepteert geen landbouwhulpgoederen{BLACK}{}(limiet bereikt)
+STR_INFO_LIMIT_REACHED_ENGINEERING_SUPPLIES                                     :{WHITE}Accepteert geen constructiehulpgoederen {BLACK}{}(limiet bereikt)
+STR_GENERIC_NEWLINE                                                             :{}
+STR_INFO_LIMIT_REACHED_MANUFACTURING_SUPPLIES                                   :{WHITE}Accepteert geen productiehulpgoederen{BLACK}{}(limiet bereikt)
+STR_IND_DAIRY                                                                   :Zuivelfabriek
+STR_IND_GRAIN_MILL                                                              :Bakkerij
 STR_GENERIC_D00D                                                                :{BLACK}Productie:{}  3t per 8t geleverde productiehulpgoederen{}  5t per 8t geleverd gezaagd hout{}{}Verhoogt tot 8t per 8t als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
 STR_GENERIC_D00E                                                                :{BLACK}Maakt papier en karton uit houtpulp.{}{}{BLACK}Productie:{}  4t per 8t geleverd hout{}  2t per 8t geleverd klei{}  2t per 8t geleverde chemicaliën{}{}Productie verhoogt als twee of meer vrachtsoorten binnen een maand van elkaar worden geleverd.
-STR_GENERIC_DC7F                                                                :Textielfabriek
+STR_IND_TEXTILE_MILL                                                            :Textielfabriek
 STR_GENERIC_DC1C                                                                :{TINYFONT}ZD
-STR_GENERIC_D0A7                                                                :{}{BLACK}Deze industrie kan sluiten tenzij vracht wordt geleverd binnen:{}{WHITE}  {WORD_S} maand
-STR_PARAM_2_DESC                                                                :Standaard zullen FIRS primaire industrieën nooit sluiten.{}Als sluiten van primaire industrieën is ingeschakeld zullen primaire industrieën sluiten zodra de productie tot een laag niveau is gedaald (dit niveau varieert per industrie). {SILVER}'Primaire industrieën kunnen productie verlagen' moet zijn ingeschakeld.
+STR_INFO_CLOSE_IF_NO_DELIVERY                                                   :{}{BLACK}Deze industrie kan sluiten tenzij vracht wordt geleverd binnen:{}{WHITE}  {WORD_S} maand
+STR_PARAM_DESC_NEVER_CLOSE                                                      :Standaard zullen FIRS primaire industrieën nooit sluiten.{}Als sluiten van primaire industrieën is ingeschakeld zullen primaire industrieën sluiten zodra de productie tot een laag niveau is gedaald (dit niveau varieert per industrie). {SILVER}'Primaire industrieën kunnen productie verlagen' moet zijn ingeschakeld.
 STR_GENERIC_D011                                                                :{BLACK}Verwerkt ruwe olie tot benzine en chemicaliën.{}{}6t productie voor iedere 8t geleverd.
 STR_GENERIC_DCEC                                                                :{STRING} Smidse
 STR_GENERIC_D012                                                                :{BLACK}Maakt plasticproducten zoals verpakking en huishoudartikelen.{}{}6t productie voor iedere 8t geleverd.
@@ -134,44 +132,44 @@ STR_GENERIC_D015                                                                
 STR_GENERIC_D017                                                                :{BLACK}Verwerkt afval tot herbruikbare goederen.{}{}6t productie voor iedere 8t geleverd.
 STR_GENERIC_D016                                                                :{BLACK}Maakt glasproducten zoals flessen, potten en vensterglas.{}{}{BLACK}Productie:{}  6t per 8t geleverd zand{}  2t per 8t geleverde chemicaliën{}{}Verhoogt tot 8t per 8t als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
 STR_GENERIC_DCED                                                                :{STRING} Markt
-STR_GENERIC_DC52                                                                :\UE09A\0D herbruikbare goederen
+STR_CARGO_UNIT_RECYCLABLES                                                      :\UE09A\0D herbruikbare goederen
 STR_GENERIC_DC53                                                                :{TINYFONT}RC
 STR_GENERIC_DC50                                                                :{TINYFONT}AL
-STR_GENERIC_DC51                                                                :Herbruikbare goederen
-STR_GENERIC_DC43                                                                :Melk
-STR_GENERIC_DC45                                                                :{TINYFONT}ML
-STR_GENERIC_DC44                                                                :{VOLUME} melk
-STR_GENERIC_DC46                                                                :Schroot
-STR_GENERIC_DC49                                                                :{TINYFONT}ST
-STR_GENERIC_DC48                                                                :\UE09A\0D schroot
+STR_CARGO_NAME_RECYCLABLES                                                      :Herbruikbare goederen
+STR_CARGO_NAME_MILK                                                             :Melk
+STR_CID_MILK                                                                    :{TINYFONT}ML
+STR_CARGO_UNIT_MILK                                                             :{VOLUME} melk
+STR_CARGO_NAME_SCRAP_METAL                                                      :Schroot
+STR_CID_SCRAP_METAL                                                             :{TINYFONT}ST
+STR_CARGO_UNIT_SCRAP_METAL                                                      :\UE09A\0D schroot
 STR_CARGO_NAME_METAL                                                            :Metaal
-STR_GENERIC_DC76                                                                :Bioraffinaderij
+STR_IND_BIOREFINERY                                                             :Bioraffinaderij
 STR_GENERIC_D0B2                                                                :{BLACK}Productiehulpgoederen verdubbelen de productiecapaciteit.{}{}{STRING}
-STR_GENERIC_DC3E                                                                :\UE09A\0D metaal
-STR_GENERIC_DC3F                                                                :{TINYFONT}AL
-STR_GENERIC_DC3A                                                                :\UE09A\0D bauxiet
-STR_GENERIC_DC3B                                                                :{TINYFONT}BX
-STR_PARAM_5_NAME                                                                :Maximale afstand tot de kust in tegels voor zee-industrieën
-STR_GENERIC_DC34                                                                :{TINYFONT}HC
-STR_GENERIC_DC35                                                                :Benzine
+STR_CARGO_UNIT_METAL                                                            :\UE09A\0D metaal
+STR_CID_METAL                                                                   :{TINYFONT}AL
+STR_CARGO_UNIT_BAUXITE                                                          :\UE09A\0D bauxiet
+STR_CID_BAUXITE                                                                 :{TINYFONT}BX
+STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY                                   :Maximale afstand tot de kust in tegels voor zee-industrieën
+STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}HC
+STR_CARGO_NAME_PETROL                                                           :Benzine
 STR_GENERIC_DC36                                                                :{VOLUME} benzine
 STR_GENERIC_DC37                                                                :{TINYFONT}BZ
 STR_GENERIC_DC30                                                                :{TINYFONT}CH
-STR_GENERIC_DC31                                                                :Constructiehulpgoederen
+STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :Constructiehulpgoederen
 STR_GENERIC_DC33                                                                :{WORD_S} kratten constructiehulpgoederen
-STR_PARAM_0_NAME                                                                :Economie
-STR_GENERIC_DC38                                                                :Bauxiet
+STR_PARAM_NAME_ECONOMIES                                                        :Economie
+STR_CARGO_NAME_BAUXITE                                                          :Bauxiet
 STR_IND_QUARRY                                                                  :Zandwinning
 STR_GENERIC_D024                                                                :{BLACK}Productie:{}  3t per 8t geleverde productiehulpgoederen{}  5t per 8t geleverde melk{}{}Verhoogt tot 8t per 8t als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
 STR_GRF_DESC                                                                    :{ORANGE}FIRS Industry Replacement Set{}{BLACK}Door: {SILVER}andythenorth{BLACK} en {SILVER}FooBar{BLACK}.{}{BLACK}'1,000 commits en nog niet klaar...'{BLACK}{}{}Website: {SILVER}www.tt-foundry.com/sets/FIRS{BLACK}.Licentie: {SILVER}GPL v2{}{BLACK}Speciale dank aan {SILVER}Ammler{BLACK}, {SILVER}Core Xii{BLACK}, {SILVER}Irwe{BLACK}, {SILVER}planetmaker{BLACK} en {SILVER}Zephyris{}{BLACK}.Gebruikt onderdelen van: {SILVER}eGRVTS{BLACK}, {SILVER}ISR{BLACK} en {SILVER}OpenGFX{BLACK}.
-STR_GENERIC_DC0F                                                                :\UE09A\0D vis
-STR_PARAM_6_DESC                                                                :Alleen voor ontwikkelaars.
-STR_GENERIC_DC4A                                                                :Klei
+STR_CARGO_UNIT_FISH                                                             :\UE09A\0D vis
+STR_PARAM_DESC_DEBUG                                                            :Alleen voor ontwikkelaars.
+STR_CARGO_NAME_CLAY                                                             :Klei
 STR_GENERIC_D0B1                                                                :{BLACK}Landbouwhulpgoederen kunnen de productie verhogen.{}{YELLOW}  {DWORD_S} pallets geleverd deze maand
-STR_GENERIC_DC4C                                                                :\UE09A\0D klei
+STR_CARGO_UNIT_CLAY                                                             :\UE09A\0D klei
 STR_GENERIC_D0B3                                                                :{BLACK}Maximale productiecapaciteit bereikt.
-STR_GENERIC_DC4E                                                                :Alcohol
+STR_CARGO_NAME_ALCOHOL                                                          :Alcohol
 STR_GENERIC_DC4D                                                                :{TINYFONT}KL
-STR_GENERIC_DC4F                                                                :{VOLUME} alcohol
+STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} alcohol
 STR_PARAM_0_VALUE_0                                                             :Test Economie
 STR_GENERIC_D00C                                                                :{BLACK}Hakt hout.{}{}6t productie voor iedere 8t geleverd.

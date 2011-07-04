@@ -6,8 +6,8 @@ grf {
 	min_compatible_version: 1717;
 	param 0 {
 		economy {
-			name: string(STR_PARAM_0_NAME);
-			desc: string(STR_PARAM_0_DESC);
+			name: string(STR_PARAM_NAME_ECONOMIES);
+			desc: string(STR_PARAM_DESC_ECONOMIES);
 			min_value: 0;
 			max_value: 0;
 			names: {
@@ -17,15 +17,15 @@ grf {
 	}
 	param 1 {
 		allow_primary_production_decrease {
-			name: string(STR_PARAM_1_NAME);
-			desc: string(STR_PARAM_1_DESC);
+			name: string(STR_PARAM_NAME_PRIMARY_PRODUCTION_DECREASE);
+			desc: string(STR_PARAM_DESC_PRIMARY_PRODUCTION_DECREASE);
 			type: bool;
 		}
 	}
 	param 2 {
 		allow_close_primary {
-			name: string(STR_PARAM_2_NAME);
-			desc: string(STR_PARAM_2_DESC);
+			name: string(STR_PARAM_NAME_NEVER_CLOSE);
+			desc: string(STR_PARAM_DESC_NEVER_CLOSE);
 			type: bool;
 			bit: 0;
 		}
@@ -36,16 +36,16 @@ grf {
 			bit: 1;
 		}
 		restrict_open_during_gameplay {
-			name: string(STR_PARAM_4_NAME);
-			desc: string(STR_PARAM_4_DESC);
+			name: string(STR_PARAM_NAME_NO_OPENINGS);
+			desc: string(STR_PARAM_DESC_NO_OPENINGS);
 			type: bool;
 			bit: 2;
 		}
 	}
 	param 4 {
 		marine_industry_max_coastal_distance {
-			name: string(STR_PARAM_5_NAME);
-			desc: string(STR_PARAM_5_DESC);
+			name: string(STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY);
+			desc: string(STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY);
 			type: int;
 			def_value: 0;
 			min_value: 0;
@@ -57,8 +57,8 @@ grf {
 	}
 	param 3 {
 		show_debug_texts {
-			name: string(STR_PARAM_6_NAME);
-			desc: string(STR_PARAM_6_DESC);
+			name: string(STR_PARAM_NAME_DEBUG);
+			desc: string(STR_PARAM_DESC_DEBUG);
 			type: bool;
 		}
 	}

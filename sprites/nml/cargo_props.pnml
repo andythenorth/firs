@@ -191,9 +191,9 @@ item(FEAT_CARGOS, cargo_iron_ore, 8) {
 item(FEAT_CARGOS, cargo_steel, 9) {
 	property {
 		number: 9;
-		type_name: string(STR_GENERIC_DC3C);
-		unit_name: string(STR_GENERIC_DC3C);
-		type_abbreviation: string(STR_GENERIC_DC3F);
+		type_name: string(STR_CARGO_NAME_METAL);
+		unit_name: string(STR_CARGO_NAME_METAL);
+		type_abbreviation: string(STR_CID_METAL);
 		sprite: 65535;
 		weight: 1.0;
 		station_list_colour: 10;
@@ -205,7 +205,7 @@ item(FEAT_CARGOS, cargo_steel, 9) {
 		town_growth_multiplier: 1.0;
 		callback_flags: 0;
 		units_of_cargo: 80;
-		items_of_cargo: string(STR_GENERIC_DC3E);
+		items_of_cargo: string(STR_CARGO_UNIT_METAL);
 	}
 }
 
@@ -233,8 +233,8 @@ item(FEAT_CARGOS, cargo_food, 11) {
 item(FEAT_CARGOS, cargo_alcohol, 29) {
 	property {
 		number: 29;
-		type_name: string(STR_GENERIC_DC4E);
-		unit_name: string(STR_GENERIC_DC4E);
+		type_name: string(STR_CARGO_NAME_ALCOHOL);
+		unit_name: string(STR_CARGO_NAME_ALCOHOL);
 		type_abbreviation: string(STR_GENERIC_DC50);
 		sprite: 65535;
 		weight: 1.0;
@@ -247,16 +247,16 @@ item(FEAT_CARGOS, cargo_alcohol, 29) {
 		town_growth_multiplier: 1.0;
 		callback_flags: 0;
 		units_of_cargo: 82;
-		items_of_cargo: string(STR_GENERIC_DC4F);
+		items_of_cargo: string(STR_CARGO_UNIT_ALCOHOL);
 	}
 }
 
 item(FEAT_CARGOS, cargo_milk, 10) {
 	property {
 		number: 10;
-		type_name: string(STR_GENERIC_DC43);
-		unit_name: string(STR_GENERIC_DC43);
-		type_abbreviation: string(STR_GENERIC_DC45);
+		type_name: string(STR_CARGO_NAME_MILK);
+		unit_name: string(STR_CARGO_NAME_MILK);
+		type_abbreviation: string(STR_CID_MILK);
 		sprite: 65535;
 		weight: 1.0625;
 		station_list_colour: 153;
@@ -268,15 +268,15 @@ item(FEAT_CARGOS, cargo_milk, 10) {
 		town_growth_multiplier: 1.0;
 		callback_flags: 0;
 		units_of_cargo: 82;
-		items_of_cargo: string(STR_GENERIC_DC44);
+		items_of_cargo: string(STR_CARGO_UNIT_MILK);
 	}
 }
 
 item(FEAT_CARGOS, cargo_fruits, 13) {
 	property {
 		number: 13;
-		type_name: string(STR_GENERIC_DC09);
-		unit_name: string(STR_GENERIC_DC09);
+		type_name: string(STR_CARGO_NAME_FRUITS);
+		unit_name: string(STR_CARGO_NAME_FRUITS);
 		type_abbreviation: 156;
 		sprite: 65535;
 		weight: 1.0;
@@ -289,15 +289,15 @@ item(FEAT_CARGOS, cargo_fruits, 13) {
 		town_growth_multiplier: 1.0;
 		callback_flags: 0;
 		units_of_cargo: 80;
-		items_of_cargo: string(STR_GENERIC_DC0C);
+		items_of_cargo: string(STR_CARGO_UNIT_FRUITS);
 	}
 }
 
 item(FEAT_CARGOS, cargo_fish, 14) {
 	property {
 		number: 14;
-		type_name: string(STR_GENERIC_DC0D);
-		unit_name: string(STR_GENERIC_DC0D);
+		type_name: string(STR_CARGO_NAME_FISH);
+		unit_name: string(STR_CARGO_NAME_FISH);
 		type_abbreviation: string(STR_GENERIC_DC10);
 		sprite: 65535;
 		weight: 1.0;
@@ -310,15 +310,15 @@ item(FEAT_CARGOS, cargo_fish, 14) {
 		town_growth_multiplier: 1.0;
 		callback_flags: 0;
 		units_of_cargo: 80;
-		items_of_cargo: string(STR_GENERIC_DC0F);
+		items_of_cargo: string(STR_CARGO_UNIT_FISH);
 	}
 }
 
 item(FEAT_CARGOS, cargo_wool, 15) {
 	property {
 		number: 15;
-		type_name: string(STR_GENERIC_DC11);
-		unit_name: string(STR_GENERIC_DC11);
+		type_name: string(STR_CARGO_NAME_WOOL);
+		unit_name: string(STR_CARGO_NAME_WOOL);
 		type_abbreviation: string(STR_GENERIC_DC14);
 		sprite: 65535;
 		weight: 1.0;
@@ -331,15 +331,15 @@ item(FEAT_CARGOS, cargo_wool, 15) {
 		town_growth_multiplier: 1.0;
 		callback_flags: 0;
 		units_of_cargo: 80;
-		items_of_cargo: string(STR_GENERIC_DC13);
+		items_of_cargo: string(STR_CARGO_UNIT_WOOL);
 	}
 }
 
 item(FEAT_CARGOS, cargo_recyclables, 31) {
 	property {
 		number: 31;
-		type_name: string(STR_GENERIC_DC51);
-		unit_name: string(STR_GENERIC_DC51);
+		type_name: string(STR_CARGO_NAME_RECYCLABLES);
+		unit_name: string(STR_CARGO_NAME_RECYCLABLES);
 		type_abbreviation: string(STR_GENERIC_DC53);
 		sprite: 65535;
 		weight: 1.0;
@@ -352,15 +352,15 @@ item(FEAT_CARGOS, cargo_recyclables, 31) {
 		town_growth_multiplier: 1.0;
 		callback_flags: 0;
 		units_of_cargo: 80;
-		items_of_cargo: string(STR_GENERIC_DC52);
+		items_of_cargo: string(STR_CARGO_UNIT_RECYCLABLES);
 	}
 }
 
 item(FEAT_CARGOS, cargo_plant_fibres, 22) {
 	property {
 		number: 22;
-		type_name: string(STR_GENERIC_DC15);
-		unit_name: string(STR_GENERIC_DC15);
+		type_name: string(STR_CARGO_NAME_FIBRES);
+		unit_name: string(STR_CARGO_NAME_FIBRES);
 		type_abbreviation: string(STR_GENERIC_DC18);
 		sprite: 65535;
 		weight: 1.0;
@@ -373,15 +373,15 @@ item(FEAT_CARGOS, cargo_plant_fibres, 22) {
 		town_growth_multiplier: 1.0;
 		callback_flags: 0;
 		units_of_cargo: 80;
-		items_of_cargo: string(STR_GENERIC_DC17);
+		items_of_cargo: string(STR_CARGO_UNIT_FIBRES);
 	}
 }
 
 item(FEAT_CARGOS, cargo_gravel, 26) {
 	property {
 		number: 26;
-		type_name: string(STR_GENERIC_DC1D);
-		unit_name: string(STR_GENERIC_DC1D);
+		type_name: string(STR_CARGO_NAME_STONE);
+		unit_name: string(STR_CARGO_NAME_STONE);
 		type_abbreviation: string(STR_GENERIC_DC21);
 		sprite: 65535;
 		weight: 1.0;
@@ -394,16 +394,16 @@ item(FEAT_CARGOS, cargo_gravel, 26) {
 		town_growth_multiplier: 1.0;
 		callback_flags: 0;
 		units_of_cargo: 80;
-		items_of_cargo: string(STR_GENERIC_DC1F);
+		items_of_cargo: string(STR_CARGO_UNIT_STONE);
 	}
 }
 
 item(FEAT_CARGOS, cargo_building_materials, 28) {
 	property {
 		number: 28;
-		type_name: string(STR_GENERIC_DC05);
-		unit_name: string(STR_GENERIC_DC05);
-		type_abbreviation: string(STR_GENERIC_DC08);
+		type_name: string(STR_CARGO_NAME_BUILDING_MATERIALS);
+		unit_name: string(STR_CARGO_NAME_BUILDING_MATERIALS);
+		type_abbreviation: string(STR_CID_BUILDING_MATERIALS);
 		sprite: 65535;
 		weight: 1.0;
 		station_list_colour: 184;
@@ -415,15 +415,15 @@ item(FEAT_CARGOS, cargo_building_materials, 28) {
 		town_growth_multiplier: 1.0;
 		callback_flags: 0;
 		units_of_cargo: 80;
-		items_of_cargo: string(STR_GENERIC_DC07);
+		items_of_cargo: string(STR_CARGO_UNIT_BUILDING_MATERIALS);
 	}
 }
 
 item(FEAT_CARGOS, cargo_sand, 17) {
 	property {
 		number: 17;
-		type_name: string(STR_GENERIC_DC19);
-		unit_name: string(STR_GENERIC_DC19);
+		type_name: string(STR_CARGO_NAME_SAND);
+		unit_name: string(STR_CARGO_NAME_SAND);
 		type_abbreviation: string(STR_GENERIC_DC1C);
 		sprite: 65535;
 		weight: 1.0;
@@ -436,15 +436,15 @@ item(FEAT_CARGOS, cargo_sand, 17) {
 		town_growth_multiplier: 1.0;
 		callback_flags: 0;
 		units_of_cargo: 80;
-		items_of_cargo: string(STR_GENERIC_DC1B);
+		items_of_cargo: string(STR_CARGO_UNIT_SAND);
 	}
 }
 
 item(FEAT_CARGOS, cargo_clay, 16) {
 	property {
 		number: 16;
-		type_name: string(STR_GENERIC_DC4A);
-		unit_name: string(STR_GENERIC_DC4A);
+		type_name: string(STR_CARGO_NAME_CLAY);
+		unit_name: string(STR_CARGO_NAME_CLAY);
 		type_abbreviation: string(STR_GENERIC_DC4D);
 		sprite: 65535;
 		weight: 1.0;
@@ -457,16 +457,16 @@ item(FEAT_CARGOS, cargo_clay, 16) {
 		town_growth_multiplier: 1.0;
 		callback_flags: 0;
 		units_of_cargo: 80;
-		items_of_cargo: string(STR_GENERIC_DC4C);
+		items_of_cargo: string(STR_CARGO_UNIT_CLAY);
 	}
 }
 
 item(FEAT_CARGOS, cargo_lumber, 19) {
 	property {
 		number: 19;
-		type_name: string(STR_GENERIC_DC22);
-		unit_name: string(STR_GENERIC_DC22);
-		type_abbreviation: string(STR_GENERIC_DC25);
+		type_name: string(STR_CARGO_NAME_LUMBER);
+		unit_name: string(STR_CARGO_NAME_LUMBER);
+		type_abbreviation: string(STR_CID_LUMBER);
 		sprite: 65535;
 		weight: 1.0;
 		station_list_colour: 58;
@@ -478,16 +478,16 @@ item(FEAT_CARGOS, cargo_lumber, 19) {
 		town_growth_multiplier: 1.0;
 		callback_flags: 0;
 		units_of_cargo: 80;
-		items_of_cargo: string(STR_GENERIC_DC24);
+		items_of_cargo: string(STR_CARGO_NAME_UNIT_LUMBER);
 	}
 }
 
 item(FEAT_CARGOS, cargo_bauxite, 27) {
 	property {
 		number: 27;
-		type_name: string(STR_GENERIC_DC38);
-		unit_name: string(STR_GENERIC_DC38);
-		type_abbreviation: string(STR_GENERIC_DC3B);
+		type_name: string(STR_CARGO_NAME_BAUXITE);
+		unit_name: string(STR_CARGO_NAME_BAUXITE);
+		type_abbreviation: string(STR_CID_BAUXITE);
 		sprite: 65535;
 		weight: 1.0;
 		station_list_colour: 84;
@@ -499,16 +499,16 @@ item(FEAT_CARGOS, cargo_bauxite, 27) {
 		town_growth_multiplier: 1.0;
 		callback_flags: 0;
 		units_of_cargo: 80;
-		items_of_cargo: string(STR_GENERIC_DC3A);
+		items_of_cargo: string(STR_CARGO_UNIT_BAUXITE);
 	}
 }
 
 item(FEAT_CARGOS, cargo_scrap_metal, 20) {
 	property {
 		number: 20;
-		type_name: string(STR_GENERIC_DC46);
-		unit_name: string(STR_GENERIC_DC46);
-		type_abbreviation: string(STR_GENERIC_DC49);
+		type_name: string(STR_CARGO_NAME_SCRAP_METAL);
+		unit_name: string(STR_CARGO_NAME_SCRAP_METAL);
+		type_abbreviation: string(STR_CID_SCRAP_METAL);
 		sprite: 65535;
 		weight: 1.0;
 		station_list_colour: 20;
@@ -520,15 +520,15 @@ item(FEAT_CARGOS, cargo_scrap_metal, 20) {
 		town_growth_multiplier: 1.0;
 		callback_flags: 0;
 		units_of_cargo: 80;
-		items_of_cargo: string(STR_GENERIC_DC48);
+		items_of_cargo: string(STR_CARGO_UNIT_SCRAP_METAL);
 	}
 }
 
 item(FEAT_CARGOS, cargo_sugarcane, 12) {
 	property {
 		number: 12;
-		type_name: string(STR_GENERIC_DC01);
-		unit_name: string(STR_GENERIC_DC01);
+		type_name: string(STR_CARGO_NAME_SUGARCANE);
+		unit_name: string(STR_CARGO_NAME_SUGARCANE);
 		type_abbreviation: string(STR_GENERIC_DC04);
 		sprite: 65535;
 		weight: 1.0;
@@ -548,8 +548,8 @@ item(FEAT_CARGOS, cargo_sugarcane, 12) {
 item(FEAT_CARGOS, cargo_fuel_oil, 25) {
 	property {
 		number: 25;
-		type_name: string(STR_GENERIC_DC35);
-		unit_name: string(STR_GENERIC_DC35);
+		type_name: string(STR_CARGO_NAME_PETROL);
+		unit_name: string(STR_CARGO_NAME_PETROL);
 		type_abbreviation: string(STR_GENERIC_DC37);
 		sprite: 65535;
 		weight: 0.6875;
@@ -569,8 +569,8 @@ item(FEAT_CARGOS, cargo_fuel_oil, 25) {
 item(FEAT_CARGOS, cargo_chemicals, 23) {
 	property {
 		number: 23;
-		type_name: string(STR_GENERIC_DC2E);
-		unit_name: string(STR_GENERIC_DC2E);
+		type_name: string(STR_CARGO_NAME_CHEMICALS);
+		unit_name: string(STR_CARGO_NAME_CHEMICALS);
 		type_abbreviation: string(STR_GENERIC_DC30);
 		sprite: 65535;
 		weight: 0.625;
@@ -583,15 +583,15 @@ item(FEAT_CARGOS, cargo_chemicals, 23) {
 		town_growth_multiplier: 1.0;
 		callback_flags: 0;
 		units_of_cargo: 82;
-		items_of_cargo: string(STR_GENERIC_DC2F);
+		items_of_cargo: string(STR_CARGO_UNIT_CHEMICALS);
 	}
 }
 
 item(FEAT_CARGOS, cargo_manufacturing_supplies, 18) {
 	property {
 		number: 18;
-		type_name: string(STR_GENERIC_DC26);
-		unit_name: string(STR_GENERIC_DC26);
+		type_name: string(STR_CARGO_NAME_MNSP);
+		unit_name: string(STR_CARGO_NAME_MNSP);
 		type_abbreviation: string(STR_GENERIC_DC29);
 		sprite: 65535;
 		weight: 0.3125;
@@ -604,16 +604,16 @@ item(FEAT_CARGOS, cargo_manufacturing_supplies, 18) {
 		town_growth_multiplier: 1.0;
 		callback_flags: 0;
 		units_of_cargo: 84;
-		items_of_cargo: string(STR_GENERIC_DC28);
+		items_of_cargo: string(STR_CARGO_UNIT_MNSP);
 	}
 }
 
 item(FEAT_CARGOS, cargo_engineering_supplies, 24) {
 	property {
 		number: 24;
-		type_name: string(STR_GENERIC_DC31);
-		unit_name: string(STR_GENERIC_DC31);
-		type_abbreviation: string(STR_GENERIC_DC34);
+		type_name: string(STR_CARGO_NAME_ENGINEERING_SUPPLIES);
+		unit_name: string(STR_CARGO_NAME_ENGINEERING_SUPPLIES);
+		type_abbreviation: string(STR_CID_ENGINEERING_SUPPLIES);
 		sprite: 65535;
 		weight: 0.625;
 		station_list_colour: 79;
@@ -632,8 +632,8 @@ item(FEAT_CARGOS, cargo_engineering_supplies, 24) {
 item(FEAT_CARGOS, cargo_farm_supplies, 21) {
 	property {
 		number: 21;
-		type_name: string(STR_GENERIC_DC2A);
-		unit_name: string(STR_GENERIC_DC2A);
+		type_name: string(STR_CARGO_NAME_FMSP);
+		unit_name: string(STR_CARGO_NAME_FMSP);
 		type_abbreviation: string(STR_GENERIC_DC2D);
 		sprite: 65535;
 		weight: 0.5625;
@@ -646,7 +646,7 @@ item(FEAT_CARGOS, cargo_farm_supplies, 21) {
 		town_growth_multiplier: 1.0;
 		callback_flags: 0;
 		units_of_cargo: 84;
-		items_of_cargo: string(STR_GENERIC_DC2C);
+		items_of_cargo: string(STR_CARGO_UNIT_FMSP);
 	}
 }
 

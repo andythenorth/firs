@@ -9,23 +9,23 @@ STR_GENERIC_DC29                                                                
 STR_CARGO_UNIT_MNSP                                                             :{WORD_S} cajas de suministros de manufactura
 STR_IND_CLAY_PIT                                                                :Dragado de Arcilla
 STR_PARAM_NAME_DEBUG                                                            :Mostrar texto de depuración
-STR_GENERIC_D0A8                                                                :{}{RED}No se ha entregado carga durante al menos{POP_WORD}{POP_WORD}meses. Esta industria podría cerrar pronto. {}
-STR_PARAM_5_DESC                                                                :{SILVER}Máxima distancia de las zonas de pesca y  de dragado con la costa (en casillas).
-STR_GENERIC_D0C1                                                                :{BLACK} (max 800)
+STR_INFO_NO_CARGO_DELIVERED                                                     :{}{RED}No se ha entregado carga durante al menos{POP_WORD}{POP_WORD}meses. Esta industria podría cerrar pronto. {}
+STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :{SILVER}Máxima distancia de las zonas de pesca y  de dragado con la costa (en casillas).
+STR_INFO_MAX_STOCKPILE                                                          :{BLACK} (max 800)
 STR_GENERIC_D0C0                                                                :{BLACK} (max 200)
 STR_CARGO_UNIT_SAND                                                             :\UE09A\0D de arena
-STR_PARAM_1_DESC                                                                :Por defecto, la producción de las industrias primarias en FIRS nunca se reduce.{}{}Si esta opción es activada, hay una probabilidad de que la producción se reduzca si no se entregan suministros a la industria durante un mes. Si el nivel de producción es alto, las posibilidades de que la producción se reduzca en este caso son mayores.
+STR_PARAM_DESC_PRIMARY_PRODUCTION_DECREASE                                      :Por defecto, la producción de las industrias primarias en FIRS nunca se reduce.{}{}Si esta opción es activada, hay una probabilidad de que la producción se reduzca si no se entregan suministros a la industria durante un mes. Si el nivel de producción es alto, las posibilidades de que la producción se reduzca en este caso son mayores.
 STR_CARGO_UNIT_STONE                                                            :\UE09A\0D de piedra
 STR_CARGO_NAME_STONE                                                            :Piedra
 STR_GENERIC_DC18                                                                :{TINYFONT}FV
 STR_CARGO_NAME_SAND                                                             :Arena
 STR_CARGO_UNIT_WOOL                                                             :\UE09A\0D de lana
 STR_GENERIC_DC10                                                                :{TINYFONT}PC
-STR_GENERIC_DC11                                                                :Lana
+STR_CARGO_NAME_WOOL                                                             :Lana
 STR_CARGO_UNIT_FIBRES                                                           :\UE09A\0D de fibras vegetales
 STR_GENERIC_DC14                                                                :{TINYFONT}LN
 STR_CARGO_NAME_FIBRES                                                           :Fibras Vegetales
-STR_GENERIC_D0A5                                                                :{BLACK}Disponible: {YELLOW}{DATE_LONG}
+STR_INFO_AVAILABILITY_FROM                                                      :{BLACK}Disponible: {YELLOW}{DATE_LONG}
 STR_IND_PETROLPUMP                                                              :Gasolinera
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} de productos químicos
 STR_CARGO_NAME_CHEMICALS                                                        :Productos Químicos
@@ -35,67 +35,67 @@ STR_GENERIC_DC97                                                                
 STR_CARGO_NAME_FMSP                                                             :Suministros Agrarios
 STR_IND_RETAILMARKET                                                            :Centro Comercial
 STR_GENERIC_DC99                                                                :Refinería de Azúcar
-STR_GENERIC_D013                                                                :{BLACK}Producción:{}  3t por cada 8t de suministros de manufactura entregadas{}  5t por cada 8t de caña de azúcar entregadas{}{}Aumenta a 8t por cada 8t si ambas cargas son entregadas en un intervalo inferior a un mes.
+STR_INFO_PRODUCTION_3PER8                                                       :{BLACK}Producción:{}  3t por cada 8t de suministros de manufactura entregadas{}  5t por cada 8t de caña de azúcar entregadas{}{}Aumenta a 8t por cada 8t si ambas cargas son entregadas en un intervalo inferior a un mes.
 STR_PARAM_3_DESC                                                                :Por defecto, las industrias secundarias nunca cierran en FIRS.{}{}Si esta opción es activada, las industrias secundarias pueden cerrar si no se entrega carga durante largo tiempo.
 STR_CARGO_NAME_FRUITS                                                           :Fruta
-STR_GENERIC_DC08                                                                :{TINYFONT}MC
-STR_CARGO_NAME_BUILDINGMATERIALS                                                :Materiales de Construcción
+STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}MC
+STR_CARGO_NAME_BUILDING_MATERIALS                                               :Materiales de Construcción
 STR_GENERIC_DC04                                                                :{TINYFONT}RA
-STR_CARGO_UNIT_BUILDINGMATERIALS                                                :\UE09A\0D de materiales de construcción
+STR_CARGO_UNIT_BUILDING_MATERIALS                                               :\UE09A\0D de materiales de construcción
 STR_IND_DAIRYFARM                                                               :Granja Lechera
 STR_CARGO_NAME_SUGARCANE                                                        :Remolacha Azucarera
-STR_PARAM_2_NAME                                                                :Permitir cierre de industrias primarias
+STR_PARAM_NAME_NEVER_CLOSE                                                      :Permitir cierre de industrias primarias
 STR_GENERIC_DC03                                                                :\UE09A\0D de remolacha azucarera
 STR_GENERIC_DCEA                                                                :{STRING} Zona de Dragado
 STR_GENERIC_D022                                                                :{BLACK}Producción:{}  3t por cada 8t de suministros de manufactura entregadas{}  5t por cada 8t de grano entregadas{}{}Aumenta a 8t por cada 8t si ambas cargas son entregadas en un intervalo inferior a un mes.
 STR_GENERIC_D023                                                                :{BLACK}Producción:{}  3t por cada 8t de suministros de manufactura entregadas{}  5t por cada 8t de grano entregadas{}  5t por cada 8t de fruta entregadas{}{}La producción aumenta si se entregan suministros de manufactura en un intervalo inferior a un mes desde el envío de una de las otras cargas.
-STR_PARAM_4_NAME                                                                :Prevenir construcción de nuevas industrias (no terminado)
-STR_GENERIC_D025                                                                :{BLACK}Producción:{}  3t por cada 8t de suministros de manufactura entregadas{}  5t por cada 8t de ganado entregadas{}{}Aumenta a 8t por cada 8t si ambas cargas son entregadas en un intervalo inferior a un mes.
-STR_GENERIC_D026                                                                :{BLACK}Construye y repara maquinaria.{}{}8t producidas por cada 8t entregadas.
+STR_PARAM_NAME_NO_OPENINGS                                                      :Prevenir construcción de nuevas industrias (no terminado)
+STR_IND_BREWERY                                                                 :{BLACK}Producción:{}  3t por cada 8t de suministros de manufactura entregadas{}  5t por cada 8t de ganado entregadas{}{}Aumenta a 8t por cada 8t si ambas cargas son entregadas en un intervalo inferior a un mes.
+STR_INFO_PRODUCTION_MACHINE_SHOP                                                :{BLACK}Construye y repara maquinaria.{}{}8t producidas por cada 8t entregadas.
 STR_IND_FISHING_GROUND                                                          :Zona de Pesca
 STR_GENERIC_D028                                                                :{BLACK}Transforma productos químicos en fertilizante para ser usado en granjas.{}{}8t producidas por cada 8t entregadas.
 STR_GENERIC_D029                                                                :{BLACK}Produce objetos tales como mástiles y cercas.{}{}{BLACK}Producción:{}  2t por cada 8t de productos químicos entregadas{}  6t por cada 8t de tablas entregadas{}{}Aumenta a 8t por cada 8t si ambas cargas son entregadas en un intervalo inferior a un mes.
-STR_GENERIC_DC85                                                                :Planta de Reciclado
-STR_GENERIC_DC84                                                                :Fundición
-STR_GENERIC_DC87                                                                :Depósito de Reciclado
-STR_GENERIC_DC86                                                                :Granja Mixta
-STR_GENERIC_DC81                                                                :Planta de Aluminio
-STR_GENERIC_DC80                                                                :Fábrica de Muebles
-STR_GENERIC_DC83                                                                :Planta de Tratamiento de Madera
-STR_GENERIC_DC82                                                                :Fábrica de Maquinaria
+STR_IND_RECYCLING_PLANT                                                         :Planta de Reciclado
+STR_IND_METAL_FOUNDRY                                                           :Fundición
+STR_IND_RECYCLING_DEPOT                                                         :Depósito de Reciclado
+STR_IND_MIXEDFARM                                                               :Granja Mixta
+STR_IND_ALUMINIUM_PLANT                                                         :Planta de Aluminio
+STR_IND_FURNITURE_FACTORY                                                       :Fábrica de Muebles
+STR_IND_LUMBER_YARD                                                             :Planta de Tratamiento de Madera
+STR_IND_MACHINE_SHOP                                                            :Fábrica de Maquinaria
 STR_GENERIC_D0A0                                                                :
-STR_PARAM_NAME_PRIMARY_PRODUCTION                                               :Permitir disminución de la producción de industrias primarias
+STR_PARAM_NAME_PRIMARY_PRODUCTION_DECREASE                                      :Permitir disminución de la producción de industrias primarias
 STR_IND_JUNKYARD                                                                :Desguace
-STR_GENERIC_DC88                                                                :Granja de Ovejas
-STR_PARAM_4_DESC                                                                :{SILVER}Opción no terminada. {BLACK}Cuando esté terminada proporcionará un modo especial para uso con escenarios.
-STR_GENERIC_D0A6                                                                :{}{BLACK}Esta industria podría cerrar a menos que se entregue carga en un plazo de:{}{YELLOW} meses
-STR_GENERIC_DC8E                                                                :Zona de Dragado
-STR_GENERIC_DC8D                                                                :Hotel
-STR_GENERIC_DC8F                                                                :Ferretería
-STR_GENERIC_DC8A                                                                :Tienda de Alimentación
-STR_GENERIC_DC94                                                                :Forja
-STR_GENERIC_DC8C                                                                :Puerto de Pesca
-STR_GENERIC_DC8B                                                                :Mina de Bauxita
-STR_GENERIC_D0AA                                                                :{BLACK}Disponible: {YELLOW}1 de Enero de 1610
-STR_GENERIC_D0AC                                                                :{BLACK}Disponible: {YELLOW}1 de Enero de 1762
-STR_GENERIC_D0AB                                                                :{BLACK}Disponible: {YELLOW}1 de Enero de 1730
+STR_IND_SHEEPFARM                                                               :Granja de Ovejas
+STR_PARAM_DESC_NO_OPENINGS                                                      :{SILVER}Opción no terminada. {BLACK}Cuando esté terminada proporcionará un modo especial para uso con escenarios.
+STR_INFO_MIGHT_CLOSE                                                            :{}{BLACK}Esta industria podría cerrar a menos que se entregue carga en un plazo de:{}{YELLOW} meses
+STR_IND_DEDGING_SITE                                                            :Zona de Dragado
+STR_IND_HOTEL                                                                   :Hotel
+STR_IND_HARDWARE_STORE                                                          :Ferretería
+STR_IND_FOOD_MARKET                                                             :Tienda de Alimentación
+STR_IND_SMITHY_FORGE                                                            :Forja
+STR_IND_FISHING_HARBOUR                                                         :Puerto de Pesca
+STR_IND_BAUXITE_MINE                                                            :Mina de Bauxita
+STR_INFO_AVAILABILITY_FROM_1610                                                 :{BLACK}Disponible: {YELLOW}1 de Enero de 1610
+STR_INFO_AVAILABILITY_FROM_1762                                                 :{BLACK}Disponible: {YELLOW}1 de Enero de 1762
+STR_INFO_AVAILABILITY_FROM_1730                                                 :{BLACK}Disponible: {YELLOW}1 de Enero de 1730
 STR_GENERIC_D02A                                                                :{BLACK}Producción:{}  3t por cada 8t de suministros de manufactura entregadas{}  5t por cada 8t de lana entregadas{}  5t por cada 8t de fibras vegetales entregadas{}{}La producción aumenta si se entregan suministros de manufactura en un intervalo inferior a un mes desde el envío de una de las otras cargas.
 STR_GENERIC_D02B                                                                :{BLACK}Producción:{}  2t por cada 8t de carbón entregadas{}  2t por cada 8t de arcilla entregadas{}  4t por cada 8t de grava entregadas{}{}La producción aumenta si dos o más cargas son entregadas en un intervalo inferior a un mes.
 STR_GENERIC_D02D                                                                :{BLACK}Producción:{}  2t por cada 8t de carbón entregadas{}  2t por cada 8t de arena entregadas{}  4t por cada 8t de arcilla entregadas{}{}La producción aumenta si dos o más cargas son entregadas en un intervalo inferior a un mes.
 STR_GENERIC_D02E                                                                :{BLACK}Procesa grano y azúcar en petróleo y productos químicos.{}{}6t producidas por cada 8t entregadas.
-STR_PARAM_0_DESC                                                                :Cuando esté terminado, FIRS permitirá escoger entre diferentes economías. Las cargas e industrias variarán en cada economía, así como los pagos por carga. {}{}{SILVER}Actualmente solamente hay disponible una economía :)
+STR_PARAM_DESC_ECONOMIES                                                        :Cuando esté terminado, FIRS permitirá escoger entre diferentes economías. Las cargas e industrias variarán en cada economía, así como los pagos por carga. {}{}{SILVER}Actualmente solamente hay disponible una economía :)
 STR_GENERIC_DCEB                                                                :{STRING} Zona de Pesca
 STR_PARAM_3_NAME                                                                :Permitir cierre de industrias secundarias
-STR_GENERIC_DC78                                                                :Fábrica de Fertilizantes
-STR_GENERIC_DC79                                                                :Fábrica de Plásticos
-STR_GENERIC_DC70                                                                :Finca Agrícola
-STR_GENERIC_DC0D                                                                :Pescado
-STR_GENERIC_DC72                                                                :Almacén de Construcción
+STR_IND_FERTILIZER_PLANT                                                        :Fábrica de Fertilizantes
+STR_IND_PLASTICS_PLANT                                                          :Fábrica de Plásticos
+STR_IND_ARABLE_FARM                                                             :Finca Agrícola
+STR_CARGO_NAME_FISH                                                             :Pescado
+STR_IND_BUILDERS_YARD                                                           :Almacén de Construcción
 STR_GENERIC_DC73                                                                :Destilería
-STR_GENERIC_DC74                                                                :Planta de Cemento
+STR_IND_CEMENT_PLANT                                                            :Planta de Cemento
 STR_GENERIC_DC75                                                                :Fábrica de Ladrillo
-STR_GENERIC_DC0C                                                                :\UE09A\0D de fruta
-STR_GENERIC_DC77                                                                :Herrería
+STR_CARGO_UNIT_FRUITS                                                           :\UE09A\0D de fruta
+STR_IND_IRON_WORKS                                                              :Herrería
 STR_GENERIC_D0B0                                                                :{BLACK}La producción puede aumentar con Suministros de Ingeniería.{}{YELLOW}  {DWORD_S} cajas entregadas este mes
 STR_GENERIC_DCE8                                                                :{STRING} Cantera
 STR_GENERIC_DCE9                                                                :{STRING} Depósito
@@ -111,22 +111,20 @@ STR_GENERIC_D007                                                                
 STR_GENERIC_D001                                                                :{BLACK}Producción:{}  4t por cada 8t de grava entregadas{}  4t por cada 8t de carbón entregadas{}{}Aumenta a 8t por cada 8t si ambas cargas son entregadas en un intervalo inferior a un mes.
 STR_GENERIC_D008                                                                :{BLACK}Producción:{}  2t por cada 8t de bauxita entregadas{}  2t por cada 8t de productos químicos entregadas{}  4t por cada 8t de chatarra entregadas{}{}La producción aumenta si dos o más cargas son entregadas en un intervalo inferior a un mes.
 STR_GENERIC_D009                                                                :{BLACK}Fabrica productos metálicos tales como herramientas o piezas.{}{}8t producidas por cada 8t entregadas.
-STR_GENERIC_DC7A                                                                :Cristalería
-STR_GENERIC_DC7B                                                                :Matadero
-STR_GENERIC_D0D2                                                                :{}
-STR_GENERIC_D0D3                                                                :{WHITE}No acepta suministros agrarios{BLACK}{}(Límite alcanzado)
-STR_GENERIC_D0D0                                                                :{}
-STR_GENERIC_D0D1                                                                :{WHITE}No acepta suministros de ingeniería{BLACK}{}(Límite alcanzado)
-STR_GENERIC_D0D4                                                                :{}
-STR_GENERIC_D0D5                                                                :{WHITE}No acepta suministros de manufactura{BLACK}{}(Límite alcanzado)
-STR_GENERIC_DC7D                                                                :Industria Láctea
-STR_GENERIC_DC7E                                                                :Molino de Grano
+STR_IND_GLASS_WORKS                                                             :Cristalería
+STR_IND_STOCKYARD                                                               :Matadero
+STR_INFO_LIMIT_REACHED_FARM_SUPPLIES                                            :{WHITE}No acepta suministros agrarios{BLACK}{}(Límite alcanzado)
+STR_INFO_LIMIT_REACHED_ENGINEERING_SUPPLIES                                     :{WHITE}No acepta suministros de ingeniería{BLACK}{}(Límite alcanzado)
+STR_GENERIC_NEWLINE                                                             :{}
+STR_INFO_LIMIT_REACHED_MANUFACTURING_SUPPLIES                                   :{WHITE}No acepta suministros de manufactura{BLACK}{}(Límite alcanzado)
+STR_IND_DAIRY                                                                   :Industria Láctea
+STR_IND_GRAIN_MILL                                                              :Molino de Grano
 STR_GENERIC_D00D                                                                :{BLACK}Producción:{}  3t por cada 8t de suministros de manufactura entregadas{}  5t por cada 8t de tablas entregadas{}{}Aumenta a 8t por cada 8t si ambas cargas son entregadas en un intervalo inferior a un mes.
 STR_GENERIC_D00E                                                                :{BLACK}Convierte madera en pulpa para hacer papel y cartón.{}{}{BLACK}Producción:{}  4t por cada 8t de madera entregadas{}  2t por cada 8t de arcilla entregadas{}  2t por cada 8t de productos químicos entregadas{}{}La producción aumenta si dos o más cargas son entregadas en un intervalo inferior a un mes.
-STR_GENERIC_DC7F                                                                :Hilatura Textil
+STR_IND_TEXTILE_MILL                                                            :Hilatura Textil
 STR_GENERIC_DC1C                                                                :{TINYFONT}AR
-STR_GENERIC_D0A7                                                                :{}{BLACK}Esta industria podría cerrar a menos que se entregue carga en un plazo de:{}{WHITE} mes
-STR_PARAM_2_DESC                                                                :Por defecto, las industrias primarias nunca cierran en FIRS.{}{}Si esta opción es activada, las industrias primarias cerrarán cuando la producción caiga a niveles bajos (el nivel varía para cada tipo de industria).{SILVER}Requiere activar'Permitir disminución de la producción de industrias primarias'.
+STR_INFO_CLOSE_IF_NO_DELIVERY                                                   :{}{BLACK}Esta industria podría cerrar a menos que se entregue carga en un plazo de:{}{WHITE} mes
+STR_PARAM_DESC_NEVER_CLOSE                                                      :Por defecto, las industrias primarias nunca cierran en FIRS.{}{}Si esta opción es activada, las industrias primarias cerrarán cuando la producción caiga a niveles bajos (el nivel varía para cada tipo de industria).{SILVER}Requiere activar'Permitir disminución de la producción de industrias primarias'.
 STR_GENERIC_D011                                                                :{BLACK}Procesa petróleo crudo en fueloil y productos químicos.{}{}6t producidas por cada 8t entregadas.
 STR_GENERIC_DCEC                                                                :{STRING} Forja
 STR_GENERIC_D012                                                                :{BLACK}Fabrica productos de plástico tales como embalaje o productos del hogar.{}{}6t producidas por cada 8t entregadas.
@@ -134,44 +132,44 @@ STR_GENERIC_D015                                                                
 STR_GENERIC_D017                                                                :{BLACK}Procesa productos reciclables para ser reutilizados en manufacturas.{}{}6t producidas por cada 8t entregadas.
 STR_GENERIC_D016                                                                :{BLACK}Fabrica productos de cristal tales como botellas, jarras o ventanas.{}{}{BLACK}Producción:{}  6t por cada 8t de arena entregadas{}  2t por cada 8t de productos químicos entregadas{}{}Aumenta a 8t por cada 8t si ambas cargas son entregadas en un intervalo inferior a un mes.
 STR_GENERIC_DCED                                                                :{STRING} Mercado
-STR_GENERIC_DC52                                                                :\UE09A\0D de reciclables
+STR_CARGO_UNIT_RECYCLABLES                                                      :\UE09A\0D de reciclables
 STR_GENERIC_DC53                                                                :{TINYFONT}RC
 STR_GENERIC_DC50                                                                :{TINYFONT}AL
-STR_GENERIC_DC51                                                                :Reciclables
-STR_GENERIC_DC43                                                                :Leche
-STR_GENERIC_DC45                                                                :{TINYFONT}LC
-STR_GENERIC_DC44                                                                :{VOLUME} de leche
-STR_GENERIC_DC46                                                                :Chatarra
-STR_GENERIC_DC49                                                                :{TINYFONT}CT
-STR_GENERIC_DC48                                                                :\UE09A\0D de chatarra
+STR_CARGO_NAME_RECYCLABLES                                                      :Reciclables
+STR_CARGO_NAME_MILK                                                             :Leche
+STR_CID_MILK                                                                    :{TINYFONT}LC
+STR_CARGO_UNIT_MILK                                                             :{VOLUME} de leche
+STR_CARGO_NAME_SCRAP_METAL                                                      :Chatarra
+STR_CID_SCRAP_METAL                                                             :{TINYFONT}CT
+STR_CARGO_UNIT_SCRAP_METAL                                                      :\UE09A\0D de chatarra
 STR_CARGO_NAME_METAL                                                            :Metal
-STR_GENERIC_DC76                                                                :Biorrefinería
+STR_IND_BIOREFINERY                                                             :Biorrefinería
 STR_GENERIC_D0B2                                                                :{BLACK}Entregar Suministros de Manufactura duplica la producción del resto de cargas.{}{}{STRING}
-STR_GENERIC_DC3E                                                                :\UE09A\0D de metal
-STR_GENERIC_DC3F                                                                :{TINYFONT}ML
-STR_GENERIC_DC3A                                                                :\UE09A\0D de bauxita
-STR_GENERIC_DC3B                                                                :{TINYFONT}BX
-STR_PARAM_5_NAME                                                                :Máxima distancia con la costa para industrias marítimas (en casillas)
-STR_GENERIC_DC34                                                                :{TINYFONT}SI
-STR_GENERIC_DC35                                                                :Fueloil
+STR_CARGO_UNIT_METAL                                                            :\UE09A\0D de metal
+STR_CID_METAL                                                                   :{TINYFONT}ML
+STR_CARGO_UNIT_BAUXITE                                                          :\UE09A\0D de bauxita
+STR_CID_BAUXITE                                                                 :{TINYFONT}BX
+STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY                                   :Máxima distancia con la costa para industrias marítimas (en casillas)
+STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}SI
+STR_CARGO_NAME_PETROL                                                           :Fueloil
 STR_GENERIC_DC36                                                                :{VOLUME} de fueloil
 STR_GENERIC_DC37                                                                :{TINYFONT}FO
 STR_GENERIC_DC30                                                                :{TINYFONT}PQ
-STR_GENERIC_DC31                                                                :Suministros de Ingeniería
+STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :Suministros de Ingeniería
 STR_GENERIC_DC33                                                                :{WORD_S} cajas de suministros de ingeniería
-STR_PARAM_0_NAME                                                                :Economía
-STR_GENERIC_DC38                                                                :Bauxita
+STR_PARAM_NAME_ECONOMIES                                                        :Economía
+STR_CARGO_NAME_BAUXITE                                                          :Bauxita
 STR_IND_QUARRY                                                                  :Cantera
 STR_GENERIC_D024                                                                :{BLACK}Producción:{}  3t por cada 8t de suministros de manufactura entregadas{}  5t por cada 8t de leche entregadas{}{}Aumenta a 8t por cada 8t si ambas cargas son entregadas en un intervalo inferior a un mes.
 STR_GRF_DESC                                                                    :{ORANGE}FIRS Industry Replacement Set{}{BLACK}Creado por {SILVER}andythenorth{BLACK} y {SILVER}FooBar{BLACK}.{}{BLACK}'1,000 commits y contando...'{BLACK}{}{}Web: {SILVER}www.tt-foundry.com/sets/FIRS{BLACK}.Licencia: {SILVER}GPL v2{BLACK}. Agradecimientos a {SILVER}Ammler{BLACK}, {SILVER}Core Xii{BLACK}, {SILVER}Irwe{BLACK}, {SILVER}planetmaker{BLACK} y {SILVER}Zephyris{BLACK}. Usa partes de {SILVER}eGRVTS{BLACK}, {SILVER}ISR{BLACK} y {SILVER}OpenGFX{BLACK}.
-STR_GENERIC_DC0F                                                                :\UE09A\0D de pescado
-STR_PARAM_6_DESC                                                                :Sólo para desarrolladores
-STR_GENERIC_DC4A                                                                :Arcilla
+STR_CARGO_UNIT_FISH                                                             :\UE09A\0D de pescado
+STR_PARAM_DESC_DEBUG                                                            :Sólo para desarrolladores
+STR_CARGO_NAME_CLAY                                                             :Arcilla
 STR_GENERIC_D0B1                                                                :{BLACK}La producción puede aumentar con Suministros Agrarios.{}{YELLOW}  {DWORD_S} cajas entregadas este mes
-STR_GENERIC_DC4C                                                                :\UE09A\0D de arcilla
+STR_CARGO_UNIT_CLAY                                                             :\UE09A\0D de arcilla
 STR_GENERIC_D0B3                                                                :{BLACK}Producción máxima alcanzada
-STR_GENERIC_DC4E                                                                :Alcohol
+STR_CARGO_NAME_ALCOHOL                                                          :Alcohol
 STR_GENERIC_DC4D                                                                :{TINYFONT}AC
-STR_GENERIC_DC4F                                                                :{VOLUME} de alcohol
+STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} de alcohol
 STR_PARAM_0_VALUE_0                                                             :Economía de prueba
 STR_GENERIC_D00C                                                                :{BLACK}Aserra madera.{}{}6t producidas por cada 8t entregadas.
