@@ -3921,11 +3921,6 @@ switch(FEAT_INDUSTRIES, SELF, action2_2744, [STORE_TEMP(LOAD_PERM(0), 256), var[
 	return string(STR_GENERIC_D0B1);
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_2745, STORE_TEMP(1, 256)) {
-	0: return 68;
-	return 68;
-}
-
 switch(FEAT_INDUSTRIES, SELF, action2_2746, (var[0x23, 0, -1] + 1)) {
 	0: return 1;
 	return 0;
@@ -4277,11 +4272,6 @@ switch(FEAT_INDUSTRIES, SELF, action2_2792, STORE_TEMP(LOAD_PERM(0), 1)) {
 switch(FEAT_INDUSTRIES, SELF, action2_2793, [STORE_TEMP(LOAD_PERM(0), 256), var[0x93, 0, -1]]) {
 	128: return string(STR_GENERIC_D0B3);
 	return string(STR_GENERIC_D0B0);
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_2794, STORE_TEMP(1, 256)) {
-	0: return 68;
-	return 68;
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_2795, (var[0x23, 0, -1] + 1)) {
@@ -11033,11 +11023,6 @@ switch(FEAT_INDUSTRIES, SELF, action2_3511, [STORE_TEMP(LOAD_PERM(0), 256), var[
 	return string(STR_GENERIC_D0B0);
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3512, STORE_TEMP(1, 256)) {
-	0: return 68;
-	return 68;
-}
-
 switch(FEAT_INDUSTRIES, SELF, action2_3513, (var[0x23, 0, -1] + 1)) {
 	0: return 1;
 	return 0;
@@ -12380,11 +12365,6 @@ switch(FEAT_INDUSTRIES, SELF, action2_3663, [STORE_TEMP(LOAD_PERM(0), 256), var[
 	return string(STR_GENERIC_D0B0);
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3664, STORE_TEMP(1, 256)) {
-	0: return 68;
-	return 68;
-}
-
 switch(FEAT_INDUSTRIES, SELF, action2_3665, (var[0x23, 0, -1] + 1)) {
 	0: return 1;
 	return 0;
@@ -12966,11 +12946,6 @@ switch(FEAT_INDUSTRIES, SELF, action2_3741, STORE_TEMP(LOAD_PERM(0), 1)) {
 switch(FEAT_INDUSTRIES, SELF, action2_3742, [STORE_TEMP(LOAD_PERM(0), 256), var[0x93, 0, -1]]) {
 	128: return string(STR_GENERIC_D0B3);
 	return string(STR_GENERIC_D0B1);
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_3743, STORE_TEMP(1, 256)) {
-	0: return 68;
-	return 68;
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_3744, (var[0x23, 0, -1] + 1)) {
@@ -15091,11 +15066,6 @@ switch(FEAT_INDUSTRIES, SELF, action2_3964, STORE_TEMP(LOAD_PERM(0), 1)) {
 switch(FEAT_INDUSTRIES, SELF, action2_3965, [STORE_TEMP(LOAD_PERM(0), 256), var[0x93, 0, -1]]) {
 	128: return string(STR_GENERIC_D0B3);
 	return string(STR_GENERIC_D0B0);
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_3966, STORE_TEMP(1, 256)) {
-	0: return 68;
-	return 68;
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_3967, (var[0x23, 0, -1] + 1)) {
@@ -23730,11 +23700,6 @@ switch(FEAT_INDUSTRIES, SELF, action2_4497, [STORE_TEMP(LOAD_PERM(0), 256), var[
 	return string(STR_GENERIC_D0B1);
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_4498, STORE_TEMP(1, 256)) {
-	0: return 68;
-	return 68;
-}
-
 switch(FEAT_INDUSTRIES, SELF, action2_4499, (var[0x23, 0, -1] + 1)) {
 	0: return 1;
 	return 0;
@@ -29873,11 +29838,6 @@ switch(FEAT_INDUSTRIES, SELF, action2_4825, [STORE_TEMP(LOAD_PERM(0), 256), var[
 	return string(STR_GENERIC_D0B1);
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_4826, STORE_TEMP(1, 256)) {
-	0: return 68;
-	return 68;
-}
-
 switch(FEAT_INDUSTRIES, SELF, action2_4827, (var[0x23, 0, -1] + 1)) {
 	0: return 1;
 	return 0;
@@ -33351,11 +33311,6 @@ switch(FEAT_INDUSTRIES, SELF, action2_5298, [STORE_TEMP(LOAD_PERM(0), 256), var[
 	return string(STR_GENERIC_D0B0);
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_5299, STORE_TEMP(1, 256)) {
-	0: return 68;
-	return 68;
-}
-
 switch(FEAT_INDUSTRIES, SELF, action2_5300, (var[0x23, 0, -1] + 1)) {
 	0: return 1;
 	return 0;
@@ -36143,11 +36098,6 @@ switch(FEAT_INDUSTRIES, SELF, action2_5559, STORE_TEMP(LOAD_PERM(0), 1)) {
 switch(FEAT_INDUSTRIES, SELF, action2_5560, [STORE_TEMP(LOAD_PERM(0), 256), var[0x93, 0, -1]]) {
 	128: return string(STR_GENERIC_D0B3);
 	return string(STR_GENERIC_D0B0);
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5561, STORE_TEMP(1, 256)) {
-	0: return 68;
-	return 68;
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_5562, (var[0x23, 0, -1] + 1)) {
@@ -45330,11 +45280,6 @@ switch(FEAT_INDUSTRIES, SELF, action2_6466, [STORE_TEMP(LOAD_PERM(0), 256), var[
 	return string(STR_GENERIC_D0B1);
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6467, STORE_TEMP(1, 256)) {
-	0: return 68;
-	return 68;
-}
-
 switch(FEAT_INDUSTRIES, SELF, action2_6468, (var[0x23, 0, -1] + 1)) {
 	0: return 1;
 	return 0;
@@ -45521,11 +45466,6 @@ switch(FEAT_INDUSTRIES, SELF, action2_6493, STORE_TEMP(LOAD_PERM(0), 1)) {
 switch(FEAT_INDUSTRIES, SELF, action2_6494, [STORE_TEMP(LOAD_PERM(0), 256), var[0x93, 0, -1]]) {
 	128: return string(STR_GENERIC_D0B3);
 	return string(STR_GENERIC_D0B0);
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6495, STORE_TEMP(1, 256)) {
-	0: return 68;
-	return 68;
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_6496, (var[0x23, 0, -1] + 1)) {
@@ -46315,11 +46255,6 @@ switch(FEAT_INDUSTRIES, SELF, action2_6609, STORE_TEMP(LOAD_PERM(0), 1)) {
 switch(FEAT_INDUSTRIES, SELF, action2_6610, [STORE_TEMP(LOAD_PERM(0), 256), var[0x93, 0, -1]]) {
 	128: return string(STR_GENERIC_D0B3);
 	return string(STR_GENERIC_D0B0);
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6611, STORE_TEMP(1, 256)) {
-	0: return 68;
-	return 68;
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_6612, (var[0x23, 0, -1] + 1)) {
@@ -50483,11 +50418,6 @@ switch(FEAT_INDUSTRIES, SELF, action2_7133, [STORE_TEMP(LOAD_PERM(0), 256), var[
 	return string(STR_GENERIC_D0B0);
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7134, STORE_TEMP(1, 256)) {
-	0: return 68;
-	return 68;
-}
-
 switch(FEAT_INDUSTRIES, SELF, action2_7135, (var[0x23, 0, -1] + 1)) {
 	0: return 1;
 	return 0;
@@ -52269,11 +52199,6 @@ switch(FEAT_INDUSTRIES, SELF, action2_7394, STORE_TEMP(LOAD_PERM(0), 1)) {
 switch(FEAT_INDUSTRIES, SELF, action2_7395, [STORE_TEMP(LOAD_PERM(0), 256), var[0x93, 0, -1]]) {
 	128: return string(STR_GENERIC_D0B3);
 	return string(STR_GENERIC_D0B1);
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7396, STORE_TEMP(1, 256)) {
-	0: return 68;
-	return 68;
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_7397, (var[0x23, 0, -1] + 1)) {
