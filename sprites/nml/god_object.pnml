@@ -5,7 +5,7 @@ disable_item(FEAT_INDUSTRIES, 0, 36);
 item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_224, 224) {
 	property {
 		substitute: 0;
-		accepted_cargos: [[0, 0], [0, 0], [0, 0]];
+		accepted_cargos: [];
 		land_shape_flags: 16;
 	}
 }
@@ -49,7 +49,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_224, 224) {
 item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_225, 225) {
 	property {
 		substitute: 0;
-		accepted_cargos: [[0, 0], [0, 0], [0, 0]];
+  accepted_cargos: [];
 		land_shape_flags: 0;
 	}
 }
@@ -69,7 +69,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_225, 225) {
 item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_226, 226) {
 	property {
 		substitute: 0;
-		accepted_cargos: [[0, 0], [0, 0], [0, 0]];
+  accepted_cargos: [];
 		land_shape_flags: 16;
 	}
 }
@@ -89,7 +89,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_226, 226) {
 item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_227, 227) {
 	property {
 		substitute: 0;
-		accepted_cargos: [[0, 0], [0, 0], [0, 0]];
+  accepted_cargos: [];
 		land_shape_flags: 16;
 		callback_flags: 16;
 	}
@@ -181,7 +181,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_227, 227) {
 item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_228, 228) {
 	property {
 		substitute: 0;
-		accepted_cargos: [[17, 8], [0, 0], [0, 0]];
+		accepted_cargos: [[cargo_sand, 8]];
 		land_shape_flags: 16;
 		callback_flags: 16;
 	}
@@ -190,7 +190,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_228, 228) {
 item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_229, 229) {
 	property {
 		substitute: 0;
-		accepted_cargos: [[17, 8], [0, 0], [0, 0]];
+		accepted_cargos: [[cargo_sand, 8]];
 		land_shape_flags: 16;
 		callback_flags: 16;
 	}
@@ -361,7 +361,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_229, 229) {
 item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_230, 230) {
 	property {
 		substitute: 0;
-		accepted_cargos: [[16, 8], [0, 0], [0, 0]];
+		accepted_cargos: [[cargo_clay, 8]];
 		land_shape_flags: 16;
 		callback_flags: 16;
 	}
@@ -370,7 +370,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_230, 230) {
 item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_231, 231) {
 	property {
 		substitute: 0;
-		accepted_cargos: [[16, 8], [0, 0], [0, 0]];
+		accepted_cargos: [[cargo_clay, 8]];
 		land_shape_flags: 16;
 		callback_flags: 16;
 	}
@@ -541,7 +541,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_231, 231) {
 item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_232, 232) {
 	property {
 		substitute: 0;
-		accepted_cargos: [[16, 8], [0, 0], [0, 0]];
+  accepted_cargos: [[cargo_clay, 8]];
 		land_shape_flags: 16;
 		callback_flags: 16;
 	}
@@ -550,7 +550,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_232, 232) {
 item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_233, 233) {
 	property {
 		substitute: 0;
-		accepted_cargos: [[16, 8], [0, 0], [0, 0]];
+  accepted_cargos: [[cargo_clay, 8]];
 		land_shape_flags: 16;
 		callback_flags: 16;
 	}
@@ -4013,7 +4013,7 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_26, 26) {
 item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_197, 197) {
 	property {
 		substitute: 0;
-		accepted_cargos: [[24, 8], [0, 0], [0, 0]];
+  accepted_cargos: [[cargo_engineering_supplies, 8]];
 		land_shape_flags: 0;
 		callback_flags: 16;
 	}
@@ -8677,7 +8677,7 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_63, 63) {
 item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_189, 189) {
 	property {
 		substitute: 0;
-		accepted_cargos: [[24, 8], [0, 0], [0, 0]];
+  accepted_cargos: [[cargo_engineering_supplies, 8]];
 		land_shape_flags: 16;
 		callback_flags: 16;
 	}
@@ -12473,7 +12473,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_0, 0) {
 	property {
 		substitute: 0;
 		override: 0;
-		accepted_cargos: [[24, 8], [0, 0], [0, 0]];
+  accepted_cargos: [[cargo_engineering_supplies, 8]];
 		callback_flags: 0;
 	}
 }
@@ -12482,7 +12482,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_1, 1) {
 	property {
 		substitute: 1;
 		override: 1;
-		accepted_cargos: [[24, 8], [0, 0], [0, 0]];
+  accepted_cargos: [[cargo_engineering_supplies, 8]];
 		callback_flags: 0;
 	}
 }
@@ -12491,7 +12491,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_2, 2) {
 	property {
 		substitute: 2;
 		override: 2;
-		accepted_cargos: [[24, 8], [0, 0], [0, 0]];
+  accepted_cargos: [[cargo_engineering_supplies, 8]];
 		callback_flags: 0;
 	}
 }
@@ -12500,7 +12500,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_3, 3) {
 	property {
 		substitute: 3;
 		override: 3;
-		accepted_cargos: [[24, 8], [0, 0], [0, 0]];
+  accepted_cargos: [[cargo_engineering_supplies, 8]];
 		callback_flags: 0;
 	}
 }
@@ -12509,7 +12509,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_4, 4) {
 	property {
 		substitute: 4;
 		override: 4;
-		accepted_cargos: [[24, 8], [0, 0], [0, 0]];
+  accepted_cargos: [[cargo_engineering_supplies, 8]];
 		callback_flags: 0;
 	}
 }
@@ -12518,7 +12518,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_5, 5) {
 	property {
 		substitute: 5;
 		override: 5;
-		accepted_cargos: [[24, 8], [0, 0], [0, 0]];
+  accepted_cargos: [[cargo_engineering_supplies, 8]];
 		callback_flags: 0;
 	}
 }
@@ -12527,7 +12527,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_6, 6) {
 	property {
 		substitute: 6;
 		override: 6;
-		accepted_cargos: [[24, 8], [0, 0], [0, 0]];
+  accepted_cargos: [[cargo_engineering_supplies, 8]];
 		callback_flags: 0;
 	}
 }
@@ -14913,7 +14913,7 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_36, 36) {
 item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_198, 198) {
 	property {
 		substitute: 0;
-		accepted_cargos: [[24, 8], [0, 0], [0, 0]];
+  accepted_cargos: [[cargo_engineering_supplies, 8]];
 		land_shape_flags: 16;
 		callback_flags: 0;
 	}
@@ -16224,7 +16224,7 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_40, 40) {
 item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_204, 204) {
 	property {
 		substitute: 0;
-		accepted_cargos: [[0, 0], [0, 0], [0, 0]];
+  accepted_cargos: [];
 		land_shape_flags: 16;
 		callback_flags: 0;
 	}
@@ -33445,7 +33445,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_100, 100) {
 		substitute: 100;
 		override: 100;
 		callback_flags: 0;
-		accepted_cargos: [[24, 8], [0, 0], [0, 0]];
+  accepted_cargos: [[cargo_engineering_supplies, 8]];
 	}
 }
 
@@ -33453,7 +33453,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_101, 101) {
 	property {
 		substitute: 101;
 		override: 101;
-		accepted_cargos: [[24, 8], [0, 0], [0, 0]];
+  accepted_cargos: [[cargo_engineering_supplies, 8]];
 		callback_flags: 0;
 	}
 }
@@ -33462,7 +33462,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_102, 102) {
 	property {
 		substitute: 102;
 		override: 102;
-		accepted_cargos: [[24, 8], [0, 0], [0, 0]];
+  accepted_cargos: [[cargo_engineering_supplies, 8]];
 		callback_flags: 0;
 	}
 }
@@ -33471,7 +33471,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_103, 103) {
 	property {
 		substitute: 103;
 		override: 103;
-		accepted_cargos: [[24, 8], [0, 0], [0, 0]];
+  accepted_cargos: [[cargo_engineering_supplies, 8]];
 		callback_flags: 0;
 	}
 }
@@ -33480,7 +33480,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_104, 104) {
 	property {
 		substitute: 104;
 		override: 104;
-		accepted_cargos: [[24, 8], [0, 0], [0, 0]];
+  accepted_cargos: [[cargo_engineering_supplies, 8]];
 		callback_flags: 0;
 	}
 }
@@ -33489,7 +33489,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_105, 105) {
 	property {
 		substitute: 105;
 		override: 105;
-		accepted_cargos: [[24, 8], [0, 0], [0, 0]];
+  accepted_cargos: [[cargo_engineering_supplies, 8]];
 		callback_flags: 0;
 	}
 }
@@ -33498,7 +33498,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_106, 106) {
 	property {
 		substitute: 106;
 		override: 106;
-		accepted_cargos: [[24, 8], [0, 0], [0, 0]];
+  accepted_cargos: [[cargo_engineering_supplies, 8]];
 		callback_flags: 0;
 	}
 }
@@ -33507,7 +33507,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_107, 107) {
 	property {
 		substitute: 107;
 		override: 107;
-		accepted_cargos: [[24, 8], [0, 0], [0, 0]];
+  accepted_cargos: [[cargo_engineering_supplies, 8]];
 		callback_flags: 0;
 	}
 }
@@ -33516,7 +33516,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_108, 108) {
 	property {
 		substitute: 108;
 		override: 108;
-		accepted_cargos: [[24, 8], [0, 0], [0, 0]];
+  accepted_cargos: [[cargo_engineering_supplies, 8]];
 		callback_flags: 0;
 	}
 }
@@ -33525,7 +33525,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_109, 109) {
 	property {
 		substitute: 109;
 		override: 109;
-		accepted_cargos: [[24, 8], [0, 0], [0, 0]];
+  accepted_cargos: [[cargo_engineering_supplies, 8]];
 		callback_flags: 0;
 	}
 }
@@ -33534,7 +33534,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_110, 110) {
 	property {
 		substitute: 110;
 		override: 110;
-		accepted_cargos: [[24, 8], [0, 0], [0, 0]];
+  accepted_cargos: [[cargo_engineering_supplies, 8]];
 		callback_flags: 0;
 	}
 }
@@ -33543,7 +33543,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_111, 111) {
 	property {
 		substitute: 111;
 		override: 111;
-		accepted_cargos: [[24, 8], [0, 0], [0, 0]];
+  accepted_cargos: [[cargo_engineering_supplies, 8]];
 		callback_flags: 0;
 	}
 }
@@ -33552,7 +33552,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_112, 112) {
 	property {
 		substitute: 112;
 		override: 112;
-		accepted_cargos: [[24, 8], [0, 0], [0, 0]];
+  accepted_cargos: [[cargo_engineering_supplies, 8]];
 		callback_flags: 0;
 	}
 }
@@ -33561,7 +33561,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_113, 113) {
 	property {
 		substitute: 113;
 		override: 113;
-		accepted_cargos: [[24, 8], [0, 0], [0, 0]];
+  accepted_cargos: [[cargo_engineering_supplies, 8]];
 		callback_flags: 0;
 	}
 }
@@ -33570,7 +33570,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_114, 114) {
 	property {
 		substitute: 114;
 		override: 114;
-		accepted_cargos: [[24, 8], [0, 0], [0, 0]];
+  accepted_cargos: [[cargo_engineering_supplies, 8]];
 		callback_flags: 0;
 	}
 }
@@ -33579,7 +33579,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_115, 115) {
 	property {
 		substitute: 115;
 		override: 115;
-		accepted_cargos: [[24, 8], [0, 0], [0, 0]];
+  accepted_cargos: [[cargo_engineering_supplies, 8]];
 		callback_flags: 0;
 	}
 }
@@ -35743,7 +35743,7 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_21, 21) {
 item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_193, 193) {
 	property {
 		substitute: 0;
-		accepted_cargos: [[24, 8], [0, 0], [0, 0]];
+  accepted_cargos: [[cargo_engineering_supplies, 8]];
 		land_shape_flags: 0;
 		callback_flags: 16;
 	}
@@ -45984,7 +45984,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_23, 23) {
 item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_215, 215) {
 	property {
 		substitute: 0;
-		accepted_cargos: [[24, 8], [0, 0], [0, 0]];
+  accepted_cargos: [[cargo_engineering_supplies, 8]];
 		land_shape_flags: 0;
 		callback_flags: 16;
 	}
@@ -46074,7 +46074,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_215, 215) {
 item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_216, 216) {
 	property {
 		substitute: 0;
-		accepted_cargos: [[24, 8], [0, 0], [0, 0]];
+  accepted_cargos: [[cargo_engineering_supplies, 8]];
 		land_shape_flags: 0;
 		callback_flags: 16;
 	}
@@ -48122,7 +48122,7 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_18, 18) {
 item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_177, 177) {
 	property {
 		substitute: 0;
-		accepted_cargos: [[24, 8], [0, 0], [0, 0]];
+  accepted_cargos: [[cargo_engineering_supplies, 8]];
 		land_shape_flags: 16;
 		callback_flags: 16;
 	}
@@ -50575,7 +50575,7 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_10, 10) {
 item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_202, 202) {
 	property {
 		substitute: 0;
-		accepted_cargos: [[0, 0], [0, 0], [0, 0]];
+  accepted_cargos: [];
 		land_shape_flags: 16;
 	}
 }
