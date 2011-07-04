@@ -3404,7 +3404,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_2666, STORE_TEMP((rotate((LOAD_PERM(2) & 6
 	action2_2665;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_2667, var[0x7F, 0, 1, 3]) {
+switch(FEAT_INDUSTRIES, SELF, action2_2667, show_debug_texts) {
 	1: action2_2666;
 	return string(STR_GENERIC_D008);
 }
@@ -5116,7 +5116,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_2880, STORE_TEMP((rotate((LOAD_PERM(2) & 6
 	action2_2879;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_2881, var[0x7F, 0, 1, 3]) {
+switch(FEAT_INDUSTRIES, SELF, action2_2881, show_debug_texts) {
 	1: action2_2880;
 	return string(STR_GENERIC_D02E);
 }
@@ -7229,7 +7229,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3058, STORE_TEMP((rotate((LOAD_PERM(2) & 6
 	action2_3057;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3059, var[0x7F, 0, 1, 3]) {
+switch(FEAT_INDUSTRIES, SELF, action2_3059, show_debug_texts) {
 	1: action2_3058;
 	return string(STR_GENERIC_D023);
 }
@@ -8190,7 +8190,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3167, STORE_TEMP((rotate((LOAD_PERM(2) & 6
 	action2_3166;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3168, var[0x7F, 0, 1, 3]) {
+switch(FEAT_INDUSTRIES, SELF, action2_3168, show_debug_texts) {
 	1: action2_3167;
 	return string(STR_GENERIC_D02D);
 }
@@ -12136,7 +12136,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3624, STORE_TEMP((rotate((LOAD_PERM(2) & 6
 	action2_3623;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3625, var[0x7F, 0, 1, 3]) {
+switch(FEAT_INDUSTRIES, SELF, action2_3625, show_debug_texts) {
 	1: action2_3624;
 	return string(STR_GENERIC_D02B);
 }
@@ -14786,7 +14786,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3920, STORE_TEMP((rotate((LOAD_PERM(2) & 6
 	action2_3919;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3921, var[0x7F, 0, 1, 3]) {
+switch(FEAT_INDUSTRIES, SELF, action2_3921, show_debug_texts) {
 	1: action2_3920;
 	return string(STR_GENERIC_D024);
 }
@@ -16097,7 +16097,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_4056, STORE_TEMP((rotate((LOAD_PERM(2) & 6
 	action2_4055;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_4057, var[0x7F, 0, 1, 3]) {
+switch(FEAT_INDUSTRIES, SELF, action2_4057, show_debug_texts) {
 	1: action2_4056;
 	return string(STR_GENERIC_D028);
 }
@@ -17874,7 +17874,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_4213, STORE_TEMP((rotate((LOAD_PERM(2) & 6
 	action2_4212;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_4214, var[0x7F, 0, 1, 3]) {
+switch(FEAT_INDUSTRIES, SELF, action2_4214, show_debug_texts) {
 	1: action2_4213;
 	return string(STR_GENERIC_D01F);
 }
@@ -24260,7 +24260,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_4578, STORE_TEMP((rotate((LOAD_PERM(2) & 6
 	action2_4577;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_4579, var[0x7F, 0, 1, 3]) {
+switch(FEAT_INDUSTRIES, SELF, action2_4579, show_debug_texts) {
 	1: action2_4578;
 	return string(STR_GENERIC_D006);
 }
@@ -30834,7 +30834,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_4946, STORE_TEMP((rotate((LOAD_PERM(2) & 6
 	action2_4945;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_4947, var[0x7F, 0, 1, 3]) {
+switch(FEAT_INDUSTRIES, SELF, action2_4947, show_debug_texts) {
 	1: action2_4946;
 	return string(STR_GENERIC_D00D);
 }
@@ -31631,7 +31631,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_5059, STORE_TEMP((rotate((LOAD_PERM(2) & 6
 	action2_5058;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_5060, var[0x7F, 0, 1, 3]) {
+switch(FEAT_INDUSTRIES, SELF, action2_5060, show_debug_texts) {
 	1: action2_5059;
 	return string(STR_GENERIC_D016);
 }
@@ -32784,7 +32784,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_5215, STORE_TEMP((rotate((LOAD_PERM(2) & 6
 	action2_5214;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_5216, var[0x7F, 0, 1, 3]) {
+switch(FEAT_INDUSTRIES, SELF, action2_5216, show_debug_texts) {
 	1: action2_5215;
 	return string(STR_GENERIC_D022);
 }
@@ -35615,7 +35615,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_5489, STORE_TEMP((rotate((LOAD_PERM(2) & 6
 	action2_5488;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_5490, var[0x7F, 0, 1, 3]) {
+switch(FEAT_INDUSTRIES, SELF, action2_5490, show_debug_texts) {
 	1: action2_5489;
 	return string(STR_GENERIC_D015);
 }
@@ -37056,7 +37056,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_5677, STORE_TEMP((rotate((LOAD_PERM(2) & 6
 	action2_5676;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_5678, var[0x7F, 0, 1, 3]) {
+switch(FEAT_INDUSTRIES, SELF, action2_5678, show_debug_texts) {
 	1: action2_5677;
 	return string(STR_GENERIC_D001);
 }
@@ -37719,7 +37719,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_5769, STORE_TEMP((rotate((LOAD_PERM(2) & 6
 	action2_5768;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_5770, var[0x7F, 0, 1, 3]) {
+switch(FEAT_INDUSTRIES, SELF, action2_5770, show_debug_texts) {
 	1: action2_5769;
 	return string(STR_GENERIC_D029);
 }
@@ -41407,7 +41407,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6053, STORE_TEMP((rotate((LOAD_PERM(2) & 6
 	action2_6052;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6054, var[0x7F, 0, 1, 3]) {
+switch(FEAT_INDUSTRIES, SELF, action2_6054, show_debug_texts) {
 	1: action2_6053;
 	return string(STR_GENERIC_D026);
 }
@@ -42544,7 +42544,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6205, STORE_TEMP((rotate((LOAD_PERM(2) & 6
 	action2_6204;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6206, var[0x7F, 0, 1, 3]) {
+switch(FEAT_INDUSTRIES, SELF, action2_6206, show_debug_texts) {
 	1: action2_6205;
 	return string(STR_GENERIC_D025);
 }
@@ -44757,7 +44757,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6384, STORE_TEMP((rotate((LOAD_PERM(2) & 6
 	action2_6383;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6385, var[0x7F, 0, 1, 3]) {
+switch(FEAT_INDUSTRIES, SELF, action2_6385, show_debug_texts) {
 	1: action2_6384;
 	return string(STR_GENERIC_D009);
 }
@@ -45809,7 +45809,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6538, STORE_TEMP((rotate((LOAD_PERM(2) & 6
 	action2_6537;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6539, var[0x7F, 0, 1, 3]) {
+switch(FEAT_INDUSTRIES, SELF, action2_6539, show_debug_texts) {
 	1: action2_6538;
 	return string(STR_GENERIC_D011);
 }
@@ -46637,7 +46637,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6664, STORE_TEMP((rotate((LOAD_PERM(2) & 6
 	action2_6663;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6665, var[0x7F, 0, 1, 3]) {
+switch(FEAT_INDUSTRIES, SELF, action2_6665, show_debug_texts) {
 	1: action2_6664;
 	return string(STR_GENERIC_D00E);
 }
@@ -47995,7 +47995,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6842, STORE_TEMP((rotate((LOAD_PERM(2) & 6
 	action2_6841;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6843, var[0x7F, 0, 1, 3]) {
+switch(FEAT_INDUSTRIES, SELF, action2_6843, show_debug_texts) {
 	1: action2_6842;
 	return string(STR_GENERIC_D012);
 }
@@ -51148,7 +51148,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_7223, STORE_TEMP((rotate((LOAD_PERM(2) & 6
 	action2_7222;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7224, var[0x7F, 0, 1, 3]) {
+switch(FEAT_INDUSTRIES, SELF, action2_7224, show_debug_texts) {
 	1: action2_7223;
 	return string(STR_GENERIC_D017);
 }
@@ -51439,7 +51439,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_7271, STORE_TEMP((rotate((LOAD_PERM(2) & 6
 	action2_7270;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7272, var[0x7F, 0, 1, 3]) {
+switch(FEAT_INDUSTRIES, SELF, action2_7272, show_debug_texts) {
 	1: action2_7271;
 	return string(STR_GENERIC_D00C);
 }
@@ -52595,7 +52595,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_7450, STORE_TEMP((rotate((LOAD_PERM(2) & 6
 	action2_7449;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7451, var[0x7F, 0, 1, 3]) {
+switch(FEAT_INDUSTRIES, SELF, action2_7451, show_debug_texts) {
 	1: action2_7450;
 	return string(STR_GENERIC_D007);
 }
@@ -53183,7 +53183,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_7538, STORE_TEMP((rotate((LOAD_PERM(2) & 6
 	action2_7537;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7539, var[0x7F, 0, 1, 3]) {
+switch(FEAT_INDUSTRIES, SELF, action2_7539, show_debug_texts) {
 	1: action2_7538;
 	return string(STR_GENERIC_D013);
 }
@@ -54757,7 +54757,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_7694, STORE_TEMP((rotate((LOAD_PERM(2) & 6
 	action2_7693;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7695, var[0x7F, 0, 1, 3]) {
+switch(FEAT_INDUSTRIES, SELF, action2_7695, show_debug_texts) {
 	1: action2_7694;
 	return string(STR_GENERIC_D02A);
 }

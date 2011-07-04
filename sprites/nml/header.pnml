@@ -56,10 +56,10 @@ grf {
 		}
 	}
 	param 3 {
-		param_6 {
+		show_debug_texts {
 			name: string(STR_PARAM_6_NAME);
 			desc: string(STR_PARAM_6_DESC);
-			type: int;
+			type: bool;
 		}
 	}
 }
