@@ -2,7 +2,7 @@ grf {
 	grfid: "\F1%\00\05";
 	name: string(STR_GRF_NAME);
 	desc: string(STR_GRF_DESC);
-	version: 2102;
+	version: REPO_REVISION;
 	min_compatible_version: 1717;
 	param 0 {
 		economy {
