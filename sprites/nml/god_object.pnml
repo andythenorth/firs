@@ -3896,7 +3896,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_2739, STORE_PERM(var[0x93, 0, -1], 2)) {
 	action2_2738;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_2740, var[0x7F, 0, 255, 1]) {
+switch(FEAT_INDUSTRIES, SELF, action2_2740, allow_primary_production_decrease) {
 	1..255: action2_2739;
 	return 0;
 }
@@ -4254,7 +4254,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_2788, STORE_PERM(var[0x93, 0, -1], 2)) {
 	action2_2787;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_2789, var[0x7F, 0, 255, 1]) {
+switch(FEAT_INDUSTRIES, SELF, action2_2789, allow_primary_production_decrease) {
 	1..255: action2_2788;
 	return 0;
 }
@@ -11008,7 +11008,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3506, STORE_PERM(var[0x93, 0, -1], 2)) {
 	action2_3505;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3507, var[0x7F, 0, 255, 1]) {
+switch(FEAT_INDUSTRIES, SELF, action2_3507, allow_primary_production_decrease) {
 	1..255: action2_3506;
 	return 0;
 }
@@ -12355,7 +12355,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3658, STORE_PERM(var[0x93, 0, -1], 2)) {
 	action2_3657;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3659, var[0x7F, 0, 255, 1]) {
+switch(FEAT_INDUSTRIES, SELF, action2_3659, allow_primary_production_decrease) {
 	1..255: action2_3658;
 	return 0;
 }
@@ -12943,7 +12943,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3737, STORE_PERM(var[0x93, 0, -1], 2)) {
 	action2_3736;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3738, var[0x7F, 0, 255, 1]) {
+switch(FEAT_INDUSTRIES, SELF, action2_3738, allow_primary_production_decrease) {
 	1..255: action2_3737;
 	return 0;
 }
@@ -15068,7 +15068,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3960, STORE_PERM(var[0x93, 0, -1], 2)) {
 	action2_3959;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3961, var[0x7F, 0, 255, 1]) {
+switch(FEAT_INDUSTRIES, SELF, action2_3961, allow_primary_production_decrease) {
 	1..255: action2_3960;
 	return 0;
 }
@@ -23705,7 +23705,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_4492, STORE_PERM(var[0x93, 0, -1], 2)) {
 	action2_4491;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_4493, var[0x7F, 0, 255, 1]) {
+switch(FEAT_INDUSTRIES, SELF, action2_4493, allow_primary_production_decrease) {
 	1..255: action2_4492;
 	return 0;
 }
@@ -29848,7 +29848,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_4820, STORE_PERM(var[0x93, 0, -1], 2)) {
 	action2_4819;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_4821, var[0x7F, 0, 255, 1]) {
+switch(FEAT_INDUSTRIES, SELF, action2_4821, allow_primary_production_decrease) {
 	1..255: action2_4820;
 	return 0;
 }
@@ -33326,7 +33326,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_5293, STORE_PERM(var[0x93, 0, -1], 2)) {
 	action2_5292;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_5294, var[0x7F, 0, 255, 1]) {
+switch(FEAT_INDUSTRIES, SELF, action2_5294, allow_primary_production_decrease) {
 	1..255: action2_5293;
 	return 0;
 }
@@ -36120,7 +36120,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_5555, STORE_PERM(var[0x93, 0, -1], 2)) {
 	action2_5554;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_5556, var[0x7F, 0, 255, 1]) {
+switch(FEAT_INDUSTRIES, SELF, action2_5556, allow_primary_production_decrease) {
 	1..255: action2_5555;
 	return 0;
 }
@@ -45305,7 +45305,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6461, STORE_PERM(var[0x93, 0, -1], 2)) {
 	action2_6460;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6462, var[0x7F, 0, 255, 1]) {
+switch(FEAT_INDUSTRIES, SELF, action2_6462, allow_primary_production_decrease) {
 	1..255: action2_6461;
 	return 0;
 }
@@ -45498,7 +45498,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6489, STORE_PERM(var[0x93, 0, -1], 2)) {
 	action2_6488;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6490, var[0x7F, 0, 255, 1]) {
+switch(FEAT_INDUSTRIES, SELF, action2_6490, allow_primary_production_decrease) {
 	1..255: action2_6489;
 	return 0;
 }
@@ -46292,7 +46292,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6605, STORE_PERM(var[0x93, 0, -1], 2)) {
 	action2_6604;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6606, var[0x7F, 0, 255, 1]) {
+switch(FEAT_INDUSTRIES, SELF, action2_6606, allow_primary_production_decrease) {
 	1..255: action2_6605;
 	return 0;
 }
@@ -50458,7 +50458,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_7128, STORE_PERM(var[0x93, 0, -1], 2)) {
 	action2_7127;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7129, var[0x7F, 0, 255, 1]) {
+switch(FEAT_INDUSTRIES, SELF, action2_7129, allow_primary_production_decrease) {
 	1..255: action2_7128;
 	return 0;
 }
@@ -52246,7 +52246,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_7390, STORE_PERM(var[0x93, 0, -1], 2)) {
 	action2_7389;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7391, var[0x7F, 0, 255, 1]) {
+switch(FEAT_INDUSTRIES, SELF, action2_7391, allow_primary_production_decrease) {
 	1..255: action2_7390;
 	return 0;
 }

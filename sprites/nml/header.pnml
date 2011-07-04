@@ -16,7 +16,7 @@ grf {
 		}
 	}
 	param 1 {
-		param_1 {
+		allow_primary_production_decrease {
 			name: string(STR_PARAM_1_NAME);
 			desc: string(STR_PARAM_1_DESC);
 			type: bool;
