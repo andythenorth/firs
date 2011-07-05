@@ -4,6 +4,12 @@
 
 #include "sprites/nml/checks.pnml"
 
+//disable the default industries
+disable_item(FEAT_INDUSTRIES, 0, 36);
+
+#include "sprites/nml/basetiles.pnml"
+
+#include "sprites/nml/industries/aluminium_plant.pnml"
 #include "sprites/nml/god_object.pnml"
 
 #include "sprites/nml/cargo_props.pnml"

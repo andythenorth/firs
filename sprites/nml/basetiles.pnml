@@ -1,0 +1,717 @@
+item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_224, 224) {
+	property {
+		substitute: 0;
+		accepted_cargos: [];
+		land_shape_flags: 16;
+	}
+}
+
+spriteset(spriteset_2330) {
+	[80, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/groundtiles.png"]
+}
+
+spriteset(spriteset_2331) {
+	[220, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/groundtiles.png"]
+}
+
+spritelayout action2_2332 {
+	ground {
+		sprite: spriteset_2330;
+		recolour_mode: 2;
+		palette: 0;
+	}
+}
+
+spritelayout action2_2333 {
+	ground {
+		sprite: spriteset_2331;
+		recolour_mode: 2;
+		palette: 0;
+	}
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2334, terrain_type) {
+	1: action2_2332;
+	4: action2_2333;
+	action2_2332;
+}
+
+item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_224, 224) {
+	graphics {
+		action2_2334;
+	}
+}
+
+item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_225, 225) {
+	property {
+		substitute: 0;
+  accepted_cargos: [];
+		land_shape_flags: 0;
+	}
+}
+
+spritelayout action2_2337 {
+	ground {
+		sprite: 3924;
+	}
+}
+
+item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_225, 225) {
+	graphics {
+		action2_2337;
+	}
+}
+
+item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_226, 226) {
+	property {
+		substitute: 0;
+  accepted_cargos: [];
+		land_shape_flags: 16;
+	}
+}
+
+spritelayout action2_2340 {
+	ground {
+		sprite: 3924;
+	}
+}
+
+item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_226, 226) {
+	graphics {
+		action2_2340;
+	}
+}
+
+item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_227, 227) {
+	property {
+		substitute: 0;
+  accepted_cargos: [];
+		land_shape_flags: 16;
+		callback_flags: 16;
+	}
+}
+
+spriteset(spriteset_2344) {
+	[10, 10, 64, 54, -31, -23, 9, "sprites/graphics/industries/generictiles.pcx"]
+}
+
+spriteset(spriteset_2345) {
+	[80, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/groundtiles.png"]
+}
+
+spritelayout action2_2346 {
+	ground {
+		sprite: spriteset_2345;
+		recolour_mode: 2;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_2344;
+		recolour_mode: 2;
+		palette: 0;
+		zextent: 32;
+	}
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2347, nearby_tile_class(1, 1)) {
+	8: return 1025;
+	return 1024;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2348, nearby_tile_class(0, 1)) {
+	8: return 1025;
+	action2_2347;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2349, nearby_tile_class(-1, 1)) {
+	8: return 1025;
+	action2_2348;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2350, nearby_tile_class(1, 0)) {
+	8: return 1025;
+	action2_2349;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2351, nearby_tile_class(-1, 0)) {
+	8: return 1025;
+	action2_2350;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2352, nearby_tile_class(1, -1)) {
+	8: return 1025;
+	action2_2351;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2353, nearby_tile_class(0, -1)) {
+	8: return 1025;
+	action2_2352;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2354, nearby_tile_class(-1, -1)) {
+	8: return 1025;
+	action2_2353;
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, action2_2355, founder) {
+	16: action2_2354;
+	return 1024;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2356, var[0x60, 0, 255, 0]) {
+	1..255: return 1025;
+	action2_2355;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2357, (current_callback & 255)) {
+	47: action2_2356;
+	action2_2346;
+}
+
+item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_227, 227) {
+	graphics {
+		action2_2357;
+	}
+}
+
+item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_228, 228) {
+	property {
+		substitute: 0;
+		accepted_cargos: [[cargo_sand, 8]];
+		land_shape_flags: 16;
+		callback_flags: 16;
+	}
+}
+
+item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_229, 229) {
+	property {
+		substitute: 0;
+		accepted_cargos: [[cargo_sand, 8]];
+		land_shape_flags: 16;
+		callback_flags: 16;
+	}
+}
+
+spriteset(spriteset_2362) {
+	[80, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/generictiles.pcx"]
+}
+
+spriteset(spriteset_2363) {
+	[80, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/groundtiles.png"]
+}
+
+spriteset(spriteset_2364) {
+	[150, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/groundtiles.png"]
+}
+
+spritelayout action2_2365 {
+	ground {
+		sprite: spriteset_2363;
+		recolour_mode: 2;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_2362;
+		recolour_mode: 2;
+		palette: 0;
+		zextent: 8;
+	}
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2366, nearby_tile_class(1, 1)) {
+	8: return 1025;
+	return 1024;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2367, nearby_tile_class(0, 1)) {
+	8: return 1025;
+	action2_2366;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2368, nearby_tile_class(-1, 1)) {
+	8: return 1025;
+	action2_2367;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2369, nearby_tile_class(1, 0)) {
+	8: return 1025;
+	action2_2368;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2370, nearby_tile_class(-1, 0)) {
+	8: return 1025;
+	action2_2369;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2371, nearby_tile_class(1, -1)) {
+	8: return 1025;
+	action2_2370;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2372, nearby_tile_class(0, -1)) {
+	8: return 1025;
+	action2_2371;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2373, nearby_tile_class(-1, -1)) {
+	8: return 1025;
+	action2_2372;
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, action2_2374, founder) {
+	16: action2_2373;
+	return 1024;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2375, var[0x60, 0, 255, 0]) {
+	1..255: return 1025;
+	action2_2374;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2376, (current_callback & 255)) {
+	47: action2_2375;
+	action2_2365;
+}
+
+item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_228, 228) {
+	graphics {
+		action2_2376;
+	}
+}
+
+spritelayout action2_2378 {
+	ground {
+		sprite: spriteset_2364;
+		recolour_mode: 2;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_2362;
+		recolour_mode: 2;
+		palette: 0;
+		zextent: 8;
+	}
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2379, nearby_tile_class(1, 1)) {
+	8: return 1025;
+	return 1024;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2380, nearby_tile_class(0, 1)) {
+	8: return 1025;
+	action2_2379;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2381, nearby_tile_class(-1, 1)) {
+	8: return 1025;
+	action2_2380;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2382, nearby_tile_class(1, 0)) {
+	8: return 1025;
+	action2_2381;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2383, nearby_tile_class(-1, 0)) {
+	8: return 1025;
+	action2_2382;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2384, nearby_tile_class(1, -1)) {
+	8: return 1025;
+	action2_2383;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2385, nearby_tile_class(0, -1)) {
+	8: return 1025;
+	action2_2384;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2386, nearby_tile_class(-1, -1)) {
+	8: return 1025;
+	action2_2385;
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, action2_2387, founder) {
+	16: action2_2386;
+	return 1024;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2388, var[0x60, 0, 255, 0]) {
+	1..255: return 1025;
+	action2_2387;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2389, (current_callback & 255)) {
+	47: action2_2388;
+	action2_2378;
+}
+
+item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_229, 229) {
+	graphics {
+		action2_2389;
+	}
+}
+
+item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_230, 230) {
+	property {
+		substitute: 0;
+		accepted_cargos: [[cargo_clay, 8]];
+		land_shape_flags: 16;
+		callback_flags: 16;
+	}
+}
+
+item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_231, 231) {
+	property {
+		substitute: 0;
+		accepted_cargos: [[cargo_clay, 8]];
+		land_shape_flags: 16;
+		callback_flags: 16;
+	}
+}
+
+spriteset(spriteset_2394) {
+	[150, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/generictiles.pcx"]
+}
+
+spriteset(spriteset_2395) {
+	[80, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/groundtiles.png"]
+}
+
+spriteset(spriteset_2396) {
+	[150, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/groundtiles.png"]
+}
+
+spritelayout action2_2397 {
+	ground {
+		sprite: spriteset_2395;
+		recolour_mode: 2;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_2394;
+		recolour_mode: 2;
+		palette: 0;
+		zextent: 8;
+	}
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2398, nearby_tile_class(1, 1)) {
+	8: return 1025;
+	return 1024;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2399, nearby_tile_class(0, 1)) {
+	8: return 1025;
+	action2_2398;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2400, nearby_tile_class(-1, 1)) {
+	8: return 1025;
+	action2_2399;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2401, nearby_tile_class(1, 0)) {
+	8: return 1025;
+	action2_2400;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2402, nearby_tile_class(-1, 0)) {
+	8: return 1025;
+	action2_2401;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2403, nearby_tile_class(1, -1)) {
+	8: return 1025;
+	action2_2402;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2404, nearby_tile_class(0, -1)) {
+	8: return 1025;
+	action2_2403;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2405, nearby_tile_class(-1, -1)) {
+	8: return 1025;
+	action2_2404;
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, action2_2406, founder) {
+	16: action2_2405;
+	return 1024;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2407, var[0x60, 0, 255, 0]) {
+	1..255: return 1025;
+	action2_2406;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2408, (current_callback & 255)) {
+	47: action2_2407;
+	action2_2397;
+}
+
+item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_230, 230) {
+	graphics {
+		action2_2408;
+	}
+}
+
+spritelayout action2_2410 {
+	ground {
+		sprite: spriteset_2396;
+		recolour_mode: 2;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_2394;
+		recolour_mode: 2;
+		palette: 0;
+		zextent: 8;
+	}
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2411, nearby_tile_class(1, 1)) {
+	8: return 1025;
+	return 1024;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2412, nearby_tile_class(0, 1)) {
+	8: return 1025;
+	action2_2411;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2413, nearby_tile_class(-1, 1)) {
+	8: return 1025;
+	action2_2412;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2414, nearby_tile_class(1, 0)) {
+	8: return 1025;
+	action2_2413;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2415, nearby_tile_class(-1, 0)) {
+	8: return 1025;
+	action2_2414;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2416, nearby_tile_class(1, -1)) {
+	8: return 1025;
+	action2_2415;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2417, nearby_tile_class(0, -1)) {
+	8: return 1025;
+	action2_2416;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2418, nearby_tile_class(-1, -1)) {
+	8: return 1025;
+	action2_2417;
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, action2_2419, founder) {
+	16: action2_2418;
+	return 1024;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2420, var[0x60, 0, 255, 0]) {
+	1..255: return 1025;
+	action2_2419;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2421, (current_callback & 255)) {
+	47: action2_2420;
+	action2_2410;
+}
+
+item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_231, 231) {
+	graphics {
+		action2_2421;
+	}
+}
+
+item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_232, 232) {
+	property {
+		substitute: 0;
+  accepted_cargos: [[cargo_clay, 8]];
+		land_shape_flags: 16;
+		callback_flags: 16;
+	}
+}
+
+item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_233, 233) {
+	property {
+		substitute: 0;
+  accepted_cargos: [[cargo_clay, 8]];
+		land_shape_flags: 16;
+		callback_flags: 16;
+	}
+}
+
+spriteset(spriteset_2426) {
+	[220, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/generictiles.pcx"]
+}
+
+spriteset(spriteset_2427) {
+	[80, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/groundtiles.png"]
+}
+
+spriteset(spriteset_2428) {
+	[150, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/groundtiles.png"]
+}
+
+spritelayout action2_2429 {
+	ground {
+		sprite: spriteset_2427;
+		recolour_mode: 2;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_2426;
+		recolour_mode: 2;
+		palette: 0;
+		zextent: 8;
+	}
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2430, nearby_tile_class(1, 1)) {
+	8: return 1025;
+	return 1024;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2431, nearby_tile_class(0, 1)) {
+	8: return 1025;
+	action2_2430;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2432, nearby_tile_class(-1, 1)) {
+	8: return 1025;
+	action2_2431;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2433, nearby_tile_class(1, 0)) {
+	8: return 1025;
+	action2_2432;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2434, nearby_tile_class(-1, 0)) {
+	8: return 1025;
+	action2_2433;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2435, nearby_tile_class(1, -1)) {
+	8: return 1025;
+	action2_2434;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2436, nearby_tile_class(0, -1)) {
+	8: return 1025;
+	action2_2435;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2437, nearby_tile_class(-1, -1)) {
+	8: return 1025;
+	action2_2436;
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, action2_2438, founder) {
+	16: action2_2437;
+	return 1024;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2439, var[0x60, 0, 255, 0]) {
+	1..255: return 1025;
+	action2_2438;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2440, (current_callback & 255)) {
+	47: action2_2439;
+	action2_2429;
+}
+
+item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_232, 232) {
+	graphics {
+		action2_2440;
+	}
+}
+
+spritelayout action2_2442 {
+	ground {
+		sprite: spriteset_2428;
+		recolour_mode: 2;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_2426;
+		recolour_mode: 2;
+		palette: 0;
+		zextent: 8;
+	}
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2443, nearby_tile_class(1, 1)) {
+	8: return 1025;
+	return 1024;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2444, nearby_tile_class(0, 1)) {
+	8: return 1025;
+	action2_2443;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2445, nearby_tile_class(-1, 1)) {
+	8: return 1025;
+	action2_2444;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2446, nearby_tile_class(1, 0)) {
+	8: return 1025;
+	action2_2445;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2447, nearby_tile_class(-1, 0)) {
+	8: return 1025;
+	action2_2446;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2448, nearby_tile_class(1, -1)) {
+	8: return 1025;
+	action2_2447;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2449, nearby_tile_class(0, -1)) {
+	8: return 1025;
+	action2_2448;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2450, nearby_tile_class(-1, -1)) {
+	8: return 1025;
+	action2_2449;
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, action2_2451, founder) {
+	16: action2_2450;
+	return 1024;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2452, var[0x60, 0, 255, 0]) {
+	1..255: return 1025;
+	action2_2451;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2453, (current_callback & 255)) {
+	47: action2_2452;
+	action2_2442;
+}
+
+item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_233, 233) {
+	graphics {
+		action2_2453;
+	}
+}
+
+
