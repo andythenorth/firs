@@ -65,13 +65,11 @@ grf {
 }
 
 basecost {
-	48: 4;
-}
-
-basecost {
-	56: 0;
-}
-
-basecost {
-	59: 0;
+	PR_BUILD_INDUSTRY: 4; // Industries are more expensive
+    
+    /* We don't want to modify these as well, thus we have to set them to 0
+     * as they're new base costs and would be modified by PR_BUILD_INDUSTRY,
+     * if we don't explicitly declare them as 'not changed' */
+	PR_TOWN_ACTION:    0; 
+	PR_BUILD_TOWN:     0;
 }
