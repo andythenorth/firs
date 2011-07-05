@@ -3197,12 +3197,12 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_8, 8) {
 	}
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_2625, var[0x67, 0, 65535, 8]) {
+switch(FEAT_INDUSTRIES, SELF, action2_2625, industry_distance(8)) {
 	0..56: return 1025;
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_2626, var[0x67, 0, 65535, 5]) {
+switch(FEAT_INDUSTRIES, SELF, action2_2626, industry_distance(5)) {
 	0..16: return 4;
 	action2_2625;
 }
@@ -3212,7 +3212,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_2627, founder) {
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_2628, var[0x12, 0, 255]) {
+switch(FEAT_INDUSTRIES, SELF, action2_2628, game_mode) {
 	1: action2_2627;
 	return 1024;
 }
@@ -3818,12 +3818,12 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_26, 26) {
 	}
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_2724, var[0x67, 0, 65535, 26]) {
+switch(FEAT_INDUSTRIES, SELF, action2_2724, industry_distance(26)) {
 	10..36: return 1024;
 	return 4;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_2725, ((var[0x67, 16, -1, 26] / 2) / industry_clusters)) {
+switch(FEAT_INDUSTRIES, SELF, action2_2725, ((industry_count(26) / 2) / industry_clusters)) {
 	0: return 1024;
 	action2_2724;
 }
@@ -3833,22 +3833,22 @@ switch(FEAT_INDUSTRIES, SELF, action2_2726, STORE_TEMP(-1, 256)) {
 	action2_2725;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_2727, var[0x67, 0, 65535, 34]) {
+switch(FEAT_INDUSTRIES, SELF, action2_2727, industry_distance(34)) {
 	0..16: return 4;
 	action2_2726;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_2728, var[0x67, 0, 65535, 35]) {
+switch(FEAT_INDUSTRIES, SELF, action2_2728, industry_distance(35)) {
 	0..16: return 4;
 	action2_2727;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_2729, var[0x67, 0, 65535, 46]) {
+switch(FEAT_INDUSTRIES, SELF, action2_2729, industry_distance(46)) {
 	0..16: return 4;
 	action2_2728;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_2730, var[0x67, 0, 65535, 19]) {
+switch(FEAT_INDUSTRIES, SELF, action2_2730, industry_distance(19)) {
 	0..16: return 4;
 	action2_2729;
 }
@@ -3858,7 +3858,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_2731, founder) {
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_2732, var[0x12, 0, 255]) {
+switch(FEAT_INDUSTRIES, SELF, action2_2732, game_mode) {
 	1: action2_2731;
 	return 1024;
 }
@@ -4186,12 +4186,12 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_5, 5) {
 	}
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_2776, var[0x67, 0, 65535, 5]) {
+switch(FEAT_INDUSTRIES, SELF, action2_2776, industry_distance(5)) {
 	20..70: return 1024;
 	return 4;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_2777, (((var[0x67, 16, -1, 5] * 2) / 3) / industry_clusters)) {
+switch(FEAT_INDUSTRIES, SELF, action2_2777, (((industry_count(5) * 2) / 3) / industry_clusters)) {
 	0: return 1024;
 	action2_2776;
 }
@@ -4201,7 +4201,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_2778, STORE_TEMP(-1, 256)) {
 	action2_2777;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_2779, var[0x67, 0, 65535, 8]) {
+switch(FEAT_INDUSTRIES, SELF, action2_2779, industry_distance(8)) {
 	0..16: return 4;
 	action2_2778;
 }
@@ -4211,7 +4211,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_2780, founder) {
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_2781, var[0x12, 0, 255]) {
+switch(FEAT_INDUSTRIES, SELF, action2_2781, game_mode) {
 	1: action2_2780;
 	return 1024;
 }
@@ -4969,12 +4969,12 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_46, 46) {
 	}
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_2853, var[0x67, 0, 65535, 46]) {
+switch(FEAT_INDUSTRIES, SELF, action2_2853, industry_distance(46)) {
 	0..56: return 1025;
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_2854, var[0x67, 0, 65535, 26]) {
+switch(FEAT_INDUSTRIES, SELF, action2_2854, industry_distance(26)) {
 	0..16: return 4;
 	action2_2853;
 }
@@ -4984,7 +4984,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_2855, founder) {
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_2856, var[0x12, 0, 255]) {
+switch(FEAT_INDUSTRIES, SELF, action2_2856, game_mode) {
 	1: action2_2855;
 	return 1024;
 }
@@ -7027,22 +7027,22 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_35, 35) {
 	}
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3020, var[0x67, 0, 65535, 35]) {
+switch(FEAT_INDUSTRIES, SELF, action2_3020, industry_distance(35)) {
 	0..56: return 1025;
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3021, var[0x67, 0, 65535, 26]) {
+switch(FEAT_INDUSTRIES, SELF, action2_3021, industry_distance(26)) {
 	0..16: return 4;
 	action2_3020;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3022, var[0x67, 0, 65535, 34]) {
+switch(FEAT_INDUSTRIES, SELF, action2_3022, industry_distance(34)) {
 	0..16: return 4;
 	action2_3021;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3023, var[0x66, 0, 65535, 0]) {
+switch(FEAT_INDUSTRIES, SELF, action2_3023, town_euclidean_dist(0, 0)) {
 	0..64: action2_3022;
 	return 1025;
 }
@@ -7052,7 +7052,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3024, founder) {
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3025, var[0x12, 0, 255]) {
+switch(FEAT_INDUSTRIES, SELF, action2_3025, game_mode) {
 	1: action2_3024;
 	return 1024;
 }
@@ -7963,22 +7963,22 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_45, 45) {
 	}
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3124, var[0x67, 0, 65535, 45]) {
+switch(FEAT_INDUSTRIES, SELF, action2_3124, industry_distance(45)) {
 	0..56: return 1025;
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3125, var[0x67, 0, 65535, 0]) {
+switch(FEAT_INDUSTRIES, SELF, action2_3125, industry_distance(0)) {
 	0..16: return 4;
 	action2_3124;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3126, var[0x67, 0, 65535, 10]) {
+switch(FEAT_INDUSTRIES, SELF, action2_3126, industry_distance(10)) {
 	0..16: return 4;
 	action2_3125;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3127, var[0x67, 0, 65535, 44]) {
+switch(FEAT_INDUSTRIES, SELF, action2_3127, industry_distance(44)) {
 	0..16: return 4;
 	action2_3126;
 }
@@ -7988,7 +7988,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3128, founder) {
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3129, var[0x12, 0, 255]) {
+switch(FEAT_INDUSTRIES, SELF, action2_3129, game_mode) {
 	1: action2_3128;
 	return 1024;
 }
@@ -8619,7 +8619,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3230, 1) {
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3231, var[0x66, 0, 65535, 0]) {
+switch(FEAT_INDUSTRIES, SELF, action2_3231, town_euclidean_dist(0, 0)) {
 	0..64: action2_3230;
 	return 1025;
 }
@@ -8629,7 +8629,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3232, founder) {
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3233, var[0x12, 0, 255]) {
+switch(FEAT_INDUSTRIES, SELF, action2_3233, game_mode) {
 	1: action2_3232;
 	return 1024;
 }
@@ -10940,17 +10940,17 @@ switch(FEAT_INDUSTRIES, SELF, action2_3494, 1) {
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3495, var[0x67, 0, 65535, 14]) {
+switch(FEAT_INDUSTRIES, SELF, action2_3495, industry_distance(14)) {
 	0..16: return 4;
 	action2_3494;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3496, var[0x67, 0, 65535, 43]) {
+switch(FEAT_INDUSTRIES, SELF, action2_3496, industry_distance(43)) {
 	0..16: return 4;
 	action2_3495;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3497, var[0x67, 0, 65535, 45]) {
+switch(FEAT_INDUSTRIES, SELF, action2_3497, industry_distance(45)) {
 	0..16: return 4;
 	action2_3496;
 }
@@ -10960,7 +10960,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3498, founder) {
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3499, var[0x12, 0, 255]) {
+switch(FEAT_INDUSTRIES, SELF, action2_3499, game_mode) {
 	1: action2_3498;
 	return 1024;
 }
@@ -11904,22 +11904,22 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_43, 43) {
 	}
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3581, var[0x67, 0, 65535, 43]) {
+switch(FEAT_INDUSTRIES, SELF, action2_3581, industry_distance(43)) {
 	0..56: return 1025;
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3582, var[0x67, 0, 65535, 0]) {
+switch(FEAT_INDUSTRIES, SELF, action2_3582, industry_distance(0)) {
 	0..16: return 4;
 	action2_3581;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3583, var[0x67, 0, 65535, 10]) {
+switch(FEAT_INDUSTRIES, SELF, action2_3583, industry_distance(10)) {
 	0..16: return 4;
 	action2_3582;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3584, var[0x67, 0, 65535, 44]) {
+switch(FEAT_INDUSTRIES, SELF, action2_3584, industry_distance(44)) {
 	0..16: return 4;
 	action2_3583;
 }
@@ -11929,7 +11929,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3585, founder) {
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3586, var[0x12, 0, 255]) {
+switch(FEAT_INDUSTRIES, SELF, action2_3586, game_mode) {
 	1: action2_3585;
 	return 1024;
 }
@@ -12262,12 +12262,12 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_0, 0) {
 	}
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3643, var[0x67, 0, 65535, 0]) {
+switch(FEAT_INDUSTRIES, SELF, action2_3643, industry_distance(0)) {
 	20..70: return 1024;
 	return 4;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3644, (((var[0x67, 16, -1, 0] * 2) / 3) / industry_clusters)) {
+switch(FEAT_INDUSTRIES, SELF, action2_3644, (((industry_count(0) * 2) / 3) / industry_clusters)) {
 	0: return 1024;
 	action2_3643;
 }
@@ -12277,22 +12277,22 @@ switch(FEAT_INDUSTRIES, SELF, action2_3645, STORE_TEMP(-1, 256)) {
 	action2_3644;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3646, var[0x67, 0, 65535, 45]) {
+switch(FEAT_INDUSTRIES, SELF, action2_3646, industry_distance(45)) {
 	0..16: return 4;
 	action2_3645;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3647, var[0x67, 0, 65535, 43]) {
+switch(FEAT_INDUSTRIES, SELF, action2_3647, industry_distance(43)) {
 	0..16: return 4;
 	action2_3646;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3648, var[0x67, 0, 65535, 7]) {
+switch(FEAT_INDUSTRIES, SELF, action2_3648, industry_distance(7)) {
 	0..16: return 4;
 	action2_3647;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3649, var[0x67, 0, 65535, 1]) {
+switch(FEAT_INDUSTRIES, SELF, action2_3649, industry_distance(1)) {
 	0..16: return 4;
 	action2_3648;
 }
@@ -12302,7 +12302,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3650, founder) {
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3651, var[0x12, 0, 255]) {
+switch(FEAT_INDUSTRIES, SELF, action2_3651, game_mode) {
 	1: action2_3650;
 	return 1024;
 }
@@ -12855,12 +12855,12 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_28, 28) {
 	}
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3724, var[0x67, 0, 65535, 28]) {
+switch(FEAT_INDUSTRIES, SELF, action2_3724, industry_distance(28)) {
 	10..36: return 1024;
 	return 4;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3725, ((var[0x67, 16, -1, 28] / 2) / industry_clusters)) {
+switch(FEAT_INDUSTRIES, SELF, action2_3725, ((industry_count(28) / 2) / industry_clusters)) {
 	0: return 1024;
 	action2_3724;
 }
@@ -12870,12 +12870,12 @@ switch(FEAT_INDUSTRIES, SELF, action2_3726, STORE_TEMP(-1, 256)) {
 	action2_3725;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3727, var[0x67, 0, 65535, 36]) {
+switch(FEAT_INDUSTRIES, SELF, action2_3727, industry_distance(36)) {
 	0..16: return 4;
 	action2_3726;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3728, var[0x67, 0, 65535, 37]) {
+switch(FEAT_INDUSTRIES, SELF, action2_3728, industry_distance(37)) {
 	0..16: return 4;
 	action2_3727;
 }
@@ -12885,7 +12885,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3729, founder) {
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3730, var[0x12, 0, 255]) {
+switch(FEAT_INDUSTRIES, SELF, action2_3730, game_mode) {
 	1: action2_3729;
 	return 1024;
 }
@@ -14579,12 +14579,12 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_36, 36) {
 	}
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3884, var[0x67, 0, 65535, 36]) {
+switch(FEAT_INDUSTRIES, SELF, action2_3884, industry_distance(36)) {
 	0..56: return 1025;
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3885, var[0x67, 0, 65535, 28]) {
+switch(FEAT_INDUSTRIES, SELF, action2_3885, industry_distance(28)) {
 	0..16: return 4;
 	action2_3884;
 }
@@ -14594,7 +14594,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3886, founder) {
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3887, var[0x12, 0, 255]) {
+switch(FEAT_INDUSTRIES, SELF, action2_3887, game_mode) {
 	1: action2_3886;
 	return 1024;
 }
@@ -14970,27 +14970,27 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_20, 20) {
 	}
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3946, var[0x67, 0, 65535, 20]) {
+switch(FEAT_INDUSTRIES, SELF, action2_3946, industry_distance(20)) {
 	0..56: return 1025;
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3947, var[0x67, 0, 65535, 1]) {
+switch(FEAT_INDUSTRIES, SELF, action2_3947, industry_distance(1)) {
 	0..16: return 4;
 	action2_3946;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3948, var[0x67, 0, 65535, 22]) {
+switch(FEAT_INDUSTRIES, SELF, action2_3948, industry_distance(22)) {
 	0..16: return 4;
 	action2_3947;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3949, var[0x67, 0, 65535, 43]) {
+switch(FEAT_INDUSTRIES, SELF, action2_3949, industry_distance(43)) {
 	0..16: return 4;
 	action2_3948;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3950, var[0x67, 0, 65535, 45]) {
+switch(FEAT_INDUSTRIES, SELF, action2_3950, industry_distance(45)) {
 	0..16: return 4;
 	action2_3949;
 }
@@ -15005,7 +15005,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3952, founder) {
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3953, var[0x12, 0, 255]) {
+switch(FEAT_INDUSTRIES, SELF, action2_3953, game_mode) {
 	1: action2_3952;
 	return 1024;
 }
@@ -15935,7 +15935,7 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_40, 40) {
 	}
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_4030, var[0x67, 0, 65535, 40]) {
+switch(FEAT_INDUSTRIES, SELF, action2_4030, industry_distance(40)) {
 	0..56: return 1025;
 	return 1024;
 }
@@ -15945,7 +15945,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_4031, founder) {
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_4032, var[0x12, 0, 255]) {
+switch(FEAT_INDUSTRIES, SELF, action2_4032, game_mode) {
 	1: action2_4031;
 	return 1024;
 }
@@ -16561,12 +16561,12 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_32, 32) {
 	}
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_4092, var[0x67, 0, 65535, 31]) {
+switch(FEAT_INDUSTRIES, SELF, action2_4092, industry_distance(31)) {
 	16..60: return 1024;
 	return 4;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_4093, (((var[0x67, 16, -1, 31] * 3) / 4) / industry_clusters)) {
+switch(FEAT_INDUSTRIES, SELF, action2_4093, (((industry_count(31) * 3) / 4) / industry_clusters)) {
 	0: return 1024;
 	action2_4092;
 }
@@ -16586,7 +16586,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_4096, founder) {
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_4097, var[0x12, 0, 255]) {
+switch(FEAT_INDUSTRIES, SELF, action2_4097, game_mode) {
 	1: action2_4096;
 	return 1024;
 }
@@ -17657,12 +17657,12 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_31, 31) {
 	}
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_4176, var[0x67, 0, 65535, 32]) {
+switch(FEAT_INDUSTRIES, SELF, action2_4176, industry_distance(32)) {
 	16..60: return 1024;
 	return 4;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_4177, (((var[0x67, 16, -1, 32] * 5) / 4) / industry_clusters)) {
+switch(FEAT_INDUSTRIES, SELF, action2_4177, (((industry_count(32) * 5) / 4) / industry_clusters)) {
 	0: return 1024;
 	action2_4176;
 }
@@ -17677,7 +17677,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_4179, founder) {
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_4180, var[0x12, 0, 255]) {
+switch(FEAT_INDUSTRIES, SELF, action2_4180, game_mode) {
 	1: action2_4179;
 	return 1024;
 }
@@ -23607,12 +23607,12 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_11, 11) {
 	}
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_4479, var[0x67, 0, 65535, 11]) {
+switch(FEAT_INDUSTRIES, SELF, action2_4479, industry_distance(11)) {
 	15..80: return 1024;
 	return 4;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_4480, (((var[0x67, 16, -1, 11] * 3) / 4) / industry_clusters)) {
+switch(FEAT_INDUSTRIES, SELF, action2_4480, (((industry_count(11) * 3) / 4) / industry_clusters)) {
 	0: return 1024;
 	action2_4479;
 }
@@ -23622,12 +23622,12 @@ switch(FEAT_INDUSTRIES, SELF, action2_4481, STORE_TEMP(-1, 256)) {
 	action2_4480;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_4482, var[0x67, 0, 65535, 12]) {
+switch(FEAT_INDUSTRIES, SELF, action2_4482, industry_distance(12)) {
 	0..16: return 4;
 	action2_4481;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_4483, var[0x67, 0, 65535, 14]) {
+switch(FEAT_INDUSTRIES, SELF, action2_4483, industry_distance(14)) {
 	0..16: return 4;
 	action2_4482;
 }
@@ -23637,7 +23637,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_4484, founder) {
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_4485, var[0x12, 0, 255]) {
+switch(FEAT_INDUSTRIES, SELF, action2_4485, game_mode) {
 	1: action2_4484;
 	return 1024;
 }
@@ -24093,7 +24093,7 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_6, 6) {
 	}
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_4552, var[0x67, 0, 65535, 6]) {
+switch(FEAT_INDUSTRIES, SELF, action2_4552, industry_distance(6)) {
 	0..56: return 1025;
 	return 1024;
 }
@@ -24103,7 +24103,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_4553, founder) {
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_4554, var[0x12, 0, 255]) {
+switch(FEAT_INDUSTRIES, SELF, action2_4554, game_mode) {
 	1: action2_4553;
 	return 1024;
 }
@@ -29750,12 +29750,12 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_30, 30) {
 	}
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_4808, var[0x67, 0, 65535, 30]) {
+switch(FEAT_INDUSTRIES, SELF, action2_4808, industry_distance(30)) {
 	10..36: return 1024;
 	return 4;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_4809, ((var[0x67, 16, -1, 30] / 2) / industry_clusters)) {
+switch(FEAT_INDUSTRIES, SELF, action2_4809, ((industry_count(30) / 2) / industry_clusters)) {
 	0: return 1024;
 	action2_4808;
 }
@@ -29765,7 +29765,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_4810, STORE_TEMP(-1, 256)) {
 	action2_4809;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_4811, var[0x67, 0, 65535, 35]) {
+switch(FEAT_INDUSTRIES, SELF, action2_4811, industry_distance(35)) {
 	0..16: return 4;
 	action2_4810;
 }
@@ -29775,7 +29775,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_4812, founder) {
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_4813, var[0x12, 0, 255]) {
+switch(FEAT_INDUSTRIES, SELF, action2_4813, game_mode) {
 	1: action2_4812;
 	return 1024;
 }
@@ -30617,7 +30617,7 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_13, 13) {
 	}
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_4911, var[0x67, 0, 65535, 13]) {
+switch(FEAT_INDUSTRIES, SELF, action2_4911, industry_distance(13)) {
 	0..56: return 1025;
 	return 1024;
 }
@@ -30627,7 +30627,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_4912, founder) {
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_4913, var[0x12, 0, 255]) {
+switch(FEAT_INDUSTRIES, SELF, action2_4913, game_mode) {
 	1: action2_4912;
 	return 1024;
 }
@@ -31384,12 +31384,12 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_22, 22) {
 	}
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_5018, var[0x67, 0, 65535, 22]) {
+switch(FEAT_INDUSTRIES, SELF, action2_5018, industry_distance(22)) {
 	0..56: return 1025;
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_5019, var[0x67, 0, 65535, 10]) {
+switch(FEAT_INDUSTRIES, SELF, action2_5019, industry_distance(10)) {
 	0..16: return 4;
 	action2_5018;
 }
@@ -31399,7 +31399,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_5020, founder) {
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_5021, var[0x12, 0, 255]) {
+switch(FEAT_INDUSTRIES, SELF, action2_5021, game_mode) {
 	1: action2_5020;
 	return 1024;
 }
@@ -32547,22 +32547,22 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_34, 34) {
 	}
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_5176, var[0x67, 0, 65535, 34]) {
+switch(FEAT_INDUSTRIES, SELF, action2_5176, industry_distance(34)) {
 	0..56: return 1025;
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_5177, var[0x67, 0, 65535, 26]) {
+switch(FEAT_INDUSTRIES, SELF, action2_5177, industry_distance(26)) {
 	0..16: return 4;
 	action2_5176;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_5178, var[0x67, 0, 65535, 35]) {
+switch(FEAT_INDUSTRIES, SELF, action2_5178, industry_distance(35)) {
 	0..16: return 4;
 	action2_5177;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_5179, var[0x66, 0, 65535, 0]) {
+switch(FEAT_INDUSTRIES, SELF, action2_5179, town_euclidean_dist(0, 0)) {
 	0..144: action2_5178;
 	return 1025;
 }
@@ -32572,7 +32572,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_5180, founder) {
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_5181, var[0x12, 0, 255]) {
+switch(FEAT_INDUSTRIES, SELF, action2_5181, game_mode) {
 	1: action2_5180;
 	return 1024;
 }
@@ -33223,12 +33223,12 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_4, 4) {
 	}
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_5281, var[0x67, 0, 65535, 4]) {
+switch(FEAT_INDUSTRIES, SELF, action2_5281, industry_distance(4)) {
 	20..70: return 1024;
 	return 4;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_5282, (((var[0x67, 16, -1, 4] * 2) / 3) / industry_clusters)) {
+switch(FEAT_INDUSTRIES, SELF, action2_5282, (((industry_count(4) * 2) / 3) / industry_clusters)) {
 	0: return 1024;
 	action2_5281;
 }
@@ -33238,7 +33238,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_5283, STORE_TEMP(-1, 256)) {
 	action2_5282;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_5284, var[0x67, 0, 65535, 7]) {
+switch(FEAT_INDUSTRIES, SELF, action2_5284, industry_distance(7)) {
 	0..16: return 4;
 	action2_5283;
 }
@@ -33248,7 +33248,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_5285, founder) {
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_5286, var[0x12, 0, 255]) {
+switch(FEAT_INDUSTRIES, SELF, action2_5286, game_mode) {
 	1: action2_5285;
 	return 1024;
 }
@@ -35358,12 +35358,12 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_21, 21) {
 	}
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_5447, var[0x67, 0, 65535, 4]) {
+switch(FEAT_INDUSTRIES, SELF, action2_5447, industry_distance(4)) {
 	16..60: return 1024;
 	return 4;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_5448, (((var[0x67, 16, -1, 4] * 5) / 4) / industry_clusters)) {
+switch(FEAT_INDUSTRIES, SELF, action2_5448, (((industry_count(4) * 5) / 4) / industry_clusters)) {
 	0: return 1024;
 	action2_5447;
 }
@@ -35378,7 +35378,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_5450, founder) {
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_5451, var[0x12, 0, 255]) {
+switch(FEAT_INDUSTRIES, SELF, action2_5451, game_mode) {
 	1: action2_5450;
 	return 1024;
 }
@@ -36027,7 +36027,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_5545, 1) {
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_5546, var[0x66, 0, 65535, 0]) {
+switch(FEAT_INDUSTRIES, SELF, action2_5546, town_euclidean_dist(0, 0)) {
 	0..144: action2_5545;
 	return 1025;
 }
@@ -36037,7 +36037,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_5547, founder) {
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_5548, var[0x12, 0, 255]) {
+switch(FEAT_INDUSTRIES, SELF, action2_5548, game_mode) {
 	1: action2_5547;
 	return 1024;
 }
@@ -36819,17 +36819,17 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_1, 1) {
 	}
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_5640, var[0x67, 0, 65535, 1]) {
+switch(FEAT_INDUSTRIES, SELF, action2_5640, industry_distance(1)) {
 	0..56: return 1025;
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_5641, var[0x67, 0, 65535, 0]) {
+switch(FEAT_INDUSTRIES, SELF, action2_5641, industry_distance(0)) {
 	0..16: return 4;
 	action2_5640;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_5642, var[0x67, 0, 65535, 10]) {
+switch(FEAT_INDUSTRIES, SELF, action2_5642, industry_distance(10)) {
 	0..16: return 4;
 	action2_5641;
 }
@@ -36839,7 +36839,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_5643, founder) {
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_5644, var[0x12, 0, 255]) {
+switch(FEAT_INDUSTRIES, SELF, action2_5644, game_mode) {
 	1: action2_5643;
 	return 1024;
 }
@@ -37492,7 +37492,7 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_41, 41) {
 	}
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_5734, var[0x67, 0, 65535, 41]) {
+switch(FEAT_INDUSTRIES, SELF, action2_5734, industry_distance(41)) {
 	0..56: return 1025;
 	return 1024;
 }
@@ -37502,7 +37502,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_5735, founder) {
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_5736, var[0x12, 0, 255]) {
+switch(FEAT_INDUSTRIES, SELF, action2_5736, game_mode) {
 	1: action2_5735;
 	return 1024;
 }
@@ -41225,7 +41225,7 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_38, 38) {
 	}
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6027, var[0x67, 0, 65535, 38]) {
+switch(FEAT_INDUSTRIES, SELF, action2_6027, industry_distance(38)) {
 	0..56: return 1025;
 	return 1024;
 }
@@ -41235,7 +41235,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6028, founder) {
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6029, var[0x12, 0, 255]) {
+switch(FEAT_INDUSTRIES, SELF, action2_6029, game_mode) {
 	1: action2_6028;
 	return 1024;
 }
@@ -42302,22 +42302,22 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_37, 37) {
 	}
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6167, var[0x67, 0, 65535, 37]) {
+switch(FEAT_INDUSTRIES, SELF, action2_6167, industry_distance(37)) {
 	0..56: return 1025;
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6168, var[0x67, 0, 65535, 28]) {
+switch(FEAT_INDUSTRIES, SELF, action2_6168, industry_distance(28)) {
 	0..16: return 4;
 	action2_6167;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6169, var[0x67, 0, 65535, 27]) {
+switch(FEAT_INDUSTRIES, SELF, action2_6169, industry_distance(27)) {
 	0..16: return 4;
 	action2_6168;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6170, var[0x67, 0, 65535, 29]) {
+switch(FEAT_INDUSTRIES, SELF, action2_6170, industry_distance(29)) {
 	0..16: return 4;
 	action2_6169;
 }
@@ -42327,7 +42327,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6171, founder) {
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6172, var[0x12, 0, 255]) {
+switch(FEAT_INDUSTRIES, SELF, action2_6172, game_mode) {
 	1: action2_6171;
 	return 1024;
 }
@@ -44575,7 +44575,7 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_9, 9) {
 	}
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6358, var[0x67, 0, 65535, 9]) {
+switch(FEAT_INDUSTRIES, SELF, action2_6358, industry_distance(9)) {
 	0..56: return 1025;
 	return 1024;
 }
@@ -44585,7 +44585,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6359, founder) {
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6360, var[0x12, 0, 255]) {
+switch(FEAT_INDUSTRIES, SELF, action2_6360, game_mode) {
 	1: action2_6359;
 	return 1024;
 }
@@ -45182,12 +45182,12 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_29, 29) {
 	}
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6447, var[0x67, 0, 65535, 29]) {
+switch(FEAT_INDUSTRIES, SELF, action2_6447, industry_distance(29)) {
 	10..36: return 1024;
 	return 4;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6448, ((var[0x67, 16, -1, 29] / 2) / industry_clusters)) {
+switch(FEAT_INDUSTRIES, SELF, action2_6448, ((industry_count(29) / 2) / industry_clusters)) {
 	0: return 1024;
 	action2_6447;
 }
@@ -45197,17 +45197,17 @@ switch(FEAT_INDUSTRIES, SELF, action2_6449, STORE_TEMP(-1, 256)) {
 	action2_6448;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6450, var[0x67, 0, 65535, 37]) {
+switch(FEAT_INDUSTRIES, SELF, action2_6450, industry_distance(37)) {
 	0..16: return 4;
 	action2_6449;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6451, var[0x67, 0, 65535, 42]) {
+switch(FEAT_INDUSTRIES, SELF, action2_6451, industry_distance(42)) {
 	0..16: return 4;
 	action2_6450;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6452, var[0x67, 0, 65535, 18]) {
+switch(FEAT_INDUSTRIES, SELF, action2_6452, industry_distance(18)) {
 	0..16: return 4;
 	action2_6451;
 }
@@ -45217,7 +45217,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6453, founder) {
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6454, var[0x12, 0, 255]) {
+switch(FEAT_INDUSTRIES, SELF, action2_6454, game_mode) {
 	1: action2_6453;
 	return 1024;
 }
@@ -45390,7 +45390,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6478, 1) {
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6479, var[0x67, 0, 65535, 17]) {
+switch(FEAT_INDUSTRIES, SELF, action2_6479, industry_distance(17)) {
 	0..16: return 4;
 	action2_6478;
 }
@@ -45405,7 +45405,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6481, founder) {
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6482, var[0x12, 0, 255]) {
+switch(FEAT_INDUSTRIES, SELF, action2_6482, game_mode) {
 	1: action2_6481;
 	return 1024;
 }
@@ -45607,17 +45607,17 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_17, 17) {
 	}
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6510, var[0x67, 0, 65535, 17]) {
+switch(FEAT_INDUSTRIES, SELF, action2_6510, industry_distance(17)) {
 	0..56: return 1025;
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6511, var[0x67, 0, 65535, 15]) {
+switch(FEAT_INDUSTRIES, SELF, action2_6511, industry_distance(15)) {
 	0..16: return 4;
 	action2_6510;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6512, var[0x67, 0, 65535, 16]) {
+switch(FEAT_INDUSTRIES, SELF, action2_6512, industry_distance(16)) {
 	0..16: return 4;
 	action2_6511;
 }
@@ -45627,7 +45627,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6513, founder) {
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6514, var[0x12, 0, 255]) {
+switch(FEAT_INDUSTRIES, SELF, action2_6514, game_mode) {
 	1: action2_6513;
 	return 1024;
 }
@@ -46184,7 +46184,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6595, 1) {
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6596, var[0x67, 0, 65535, 17]) {
+switch(FEAT_INDUSTRIES, SELF, action2_6596, industry_distance(17)) {
 	0..16: return 4;
 	action2_6595;
 }
@@ -46194,7 +46194,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6597, founder) {
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6598, var[0x12, 0, 255]) {
+switch(FEAT_INDUSTRIES, SELF, action2_6598, game_mode) {
 	1: action2_6597;
 	return 1024;
 }
@@ -46360,17 +46360,17 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_14, 14) {
 	}
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6622, var[0x67, 0, 65535, 14]) {
+switch(FEAT_INDUSTRIES, SELF, action2_6622, industry_distance(14)) {
 	0..56: return 1025;
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6623, var[0x67, 0, 65535, 11]) {
+switch(FEAT_INDUSTRIES, SELF, action2_6623, industry_distance(11)) {
 	0..16: return 4;
 	action2_6622;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6624, var[0x67, 0, 65535, 44]) {
+switch(FEAT_INDUSTRIES, SELF, action2_6624, industry_distance(44)) {
 	0..16: return 4;
 	action2_6623;
 }
@@ -46380,7 +46380,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6625, founder) {
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6626, var[0x12, 0, 255]) {
+switch(FEAT_INDUSTRIES, SELF, action2_6626, game_mode) {
 	1: action2_6625;
 	return 1024;
 }
@@ -47793,12 +47793,12 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_18, 18) {
 	}
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6815, var[0x67, 0, 65535, 18]) {
+switch(FEAT_INDUSTRIES, SELF, action2_6815, industry_distance(18)) {
 	0..56: return 1025;
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6816, var[0x67, 0, 65535, 29]) {
+switch(FEAT_INDUSTRIES, SELF, action2_6816, industry_distance(29)) {
 	0..16: return 4;
 	action2_6815;
 }
@@ -47808,7 +47808,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6817, founder) {
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6818, var[0x12, 0, 255]) {
+switch(FEAT_INDUSTRIES, SELF, action2_6818, game_mode) {
 	1: action2_6817;
 	return 1024;
 }
@@ -50330,22 +50330,22 @@ switch(FEAT_INDUSTRIES, SELF, action2_7115, 1) {
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7116, var[0x67, 0, 65535, 1]) {
+switch(FEAT_INDUSTRIES, SELF, action2_7116, industry_distance(1)) {
 	0..16: return 4;
 	action2_7115;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7117, var[0x67, 0, 65535, 22]) {
+switch(FEAT_INDUSTRIES, SELF, action2_7117, industry_distance(22)) {
 	0..16: return 4;
 	action2_7116;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7118, var[0x67, 0, 65535, 43]) {
+switch(FEAT_INDUSTRIES, SELF, action2_7118, industry_distance(43)) {
 	0..16: return 4;
 	action2_7117;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7119, var[0x67, 0, 65535, 45]) {
+switch(FEAT_INDUSTRIES, SELF, action2_7119, industry_distance(45)) {
 	0..16: return 4;
 	action2_7118;
 }
@@ -50355,7 +50355,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_7120, founder) {
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7121, var[0x12, 0, 255]) {
+switch(FEAT_INDUSTRIES, SELF, action2_7121, game_mode) {
 	1: action2_7120;
 	return 1024;
 }
@@ -50625,7 +50625,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_7160, STORE_TEMP(-1, 256)) {
 	action2_7159;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7161, var[0x66, 0, 65535, 0]) {
+switch(FEAT_INDUSTRIES, SELF, action2_7161, town_euclidean_dist(0, 0)) {
 	0..256: action2_7160;
 	return 1025;
 }
@@ -50928,12 +50928,12 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_23, 23) {
 	}
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7194, var[0x67, 0, 65535, 23]) {
+switch(FEAT_INDUSTRIES, SELF, action2_7194, industry_distance(23)) {
 	0..56: return 1025;
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7195, var[0x67, 0, 65535, 24]) {
+switch(FEAT_INDUSTRIES, SELF, action2_7195, industry_distance(24)) {
 	0..16: return 4;
 	action2_7194;
 }
@@ -50943,7 +50943,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_7196, founder) {
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7197, var[0x12, 0, 255]) {
+switch(FEAT_INDUSTRIES, SELF, action2_7197, game_mode) {
 	1: action2_7196;
 	return 1024;
 }
@@ -51222,12 +51222,12 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_12, 12) {
 	}
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7242, var[0x67, 0, 65535, 11]) {
+switch(FEAT_INDUSTRIES, SELF, action2_7242, industry_distance(11)) {
 	16..60: return 1024;
 	return 4;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7243, (((var[0x67, 16, -1, 11] * 5) / 4) / industry_clusters)) {
+switch(FEAT_INDUSTRIES, SELF, action2_7243, (((industry_count(11) * 5) / 4) / industry_clusters)) {
 	0: return 1024;
 	action2_7242;
 }
@@ -51237,7 +51237,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_7244, STORE_TEMP(-1, 256)) {
 	action2_7243;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7245, var[0x67, 0, 65535, 11]) {
+switch(FEAT_INDUSTRIES, SELF, action2_7245, industry_distance(11)) {
 	0..16: return 4;
 	action2_7244;
 }
@@ -51247,7 +51247,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_7246, founder) {
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7247, var[0x12, 0, 255]) {
+switch(FEAT_INDUSTRIES, SELF, action2_7247, game_mode) {
 	1: action2_7246;
 	return 1024;
 }
@@ -52108,12 +52108,12 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_27, 27) {
 	}
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7377, var[0x67, 0, 65535, 27]) {
+switch(FEAT_INDUSTRIES, SELF, action2_7377, industry_distance(27)) {
 	10..36: return 1024;
 	return 4;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7378, ((var[0x67, 16, -1, 27] / 2) / industry_clusters)) {
+switch(FEAT_INDUSTRIES, SELF, action2_7378, ((industry_count(27) / 2) / industry_clusters)) {
 	0: return 1024;
 	action2_7377;
 }
@@ -52123,12 +52123,12 @@ switch(FEAT_INDUSTRIES, SELF, action2_7379, STORE_TEMP(-1, 256)) {
 	action2_7378;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7380, var[0x67, 0, 65535, 37]) {
+switch(FEAT_INDUSTRIES, SELF, action2_7380, industry_distance(37)) {
 	0..16: return 4;
 	action2_7379;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7381, var[0x67, 0, 65535, 42]) {
+switch(FEAT_INDUSTRIES, SELF, action2_7381, industry_distance(42)) {
 	0..16: return 4;
 	action2_7380;
 }
@@ -52138,7 +52138,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_7382, founder) {
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7383, var[0x12, 0, 255]) {
+switch(FEAT_INDUSTRIES, SELF, action2_7383, game_mode) {
 	1: action2_7382;
 	return 1024;
 }
@@ -52303,22 +52303,22 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_7, 7) {
 	}
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7407, var[0x67, 0, 65535, 7]) {
+switch(FEAT_INDUSTRIES, SELF, action2_7407, industry_distance(7)) {
 	0..56: return 1025;
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7408, var[0x67, 0, 65535, 0]) {
+switch(FEAT_INDUSTRIES, SELF, action2_7408, industry_distance(0)) {
 	0..16: return 4;
 	action2_7407;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7409, var[0x67, 0, 65535, 4]) {
+switch(FEAT_INDUSTRIES, SELF, action2_7409, industry_distance(4)) {
 	0..16: return 4;
 	action2_7408;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7410, var[0x67, 0, 65535, 25]) {
+switch(FEAT_INDUSTRIES, SELF, action2_7410, industry_distance(25)) {
 	0..16: return 4;
 	action2_7409;
 }
@@ -52328,7 +52328,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_7411, founder) {
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7412, var[0x12, 0, 255]) {
+switch(FEAT_INDUSTRIES, SELF, action2_7412, game_mode) {
 	1: action2_7411;
 	return 1024;
 }
@@ -52926,12 +52926,12 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_19, 19) {
 	}
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7502, var[0x67, 0, 65535, 19]) {
+switch(FEAT_INDUSTRIES, SELF, action2_7502, industry_distance(19)) {
 	0..56: return 1025;
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7503, var[0x67, 0, 65535, 26]) {
+switch(FEAT_INDUSTRIES, SELF, action2_7503, industry_distance(26)) {
 	0..16: return 4;
 	action2_7502;
 }
@@ -52941,7 +52941,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_7504, founder) {
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7505, var[0x12, 0, 255]) {
+switch(FEAT_INDUSTRIES, SELF, action2_7505, game_mode) {
 	1: action2_7504;
 	return 1024;
 }
@@ -54495,17 +54495,17 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_42, 42) {
 	}
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7657, var[0x67, 0, 65535, 42]) {
+switch(FEAT_INDUSTRIES, SELF, action2_7657, industry_distance(42)) {
 	0..56: return 1025;
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7658, var[0x67, 0, 65535, 29]) {
+switch(FEAT_INDUSTRIES, SELF, action2_7658, industry_distance(29)) {
 	0..16: return 4;
 	action2_7657;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7659, var[0x67, 0, 65535, 27]) {
+switch(FEAT_INDUSTRIES, SELF, action2_7659, industry_distance(27)) {
 	0..16: return 4;
 	action2_7658;
 }
@@ -54515,7 +54515,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_7660, founder) {
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7661, var[0x12, 0, 255]) {
+switch(FEAT_INDUSTRIES, SELF, action2_7661, game_mode) {
 	1: action2_7660;
 	return 1024;
 }
