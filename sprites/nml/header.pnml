@@ -11,7 +11,7 @@ grf {
 			min_value: 0;
 			max_value: 0;
 			names: {
-				0: string(STR_PARAM_0_VALUE_0);
+				0: string(STR_PARAM_VALUE_ECONOMIES_TEST_ECONOMY);
 			};
 		}
 	}
@@ -30,8 +30,8 @@ grf {
 			bit: 0;
 		}
 		allow_close_secondary {
-			name: string(STR_PARAM_3_NAME);
-			desc: string(STR_PARAM_3_DESC);
+			name: string(STR_PARAM_NAME_SECONDARY_NEVER_CLOSE);
+			desc: string(STR_PARAM_DESC_SECONDARY_NEVER_CLOSE);
 			type: bool;
 			bit: 1;
 		}
@@ -51,7 +51,7 @@ grf {
 			min_value: 0;
 			max_value: 255;
 			names: {
-				0: string(STR_PARAM_5_VALUE_0);
+				0: string(STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0);
 			};
 		}
 	}

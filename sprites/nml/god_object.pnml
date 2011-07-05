@@ -7007,7 +7007,7 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_35, 35) {
 		prod_increase_msg: 18485;
 		prod_decrease_msg: 18489;
 		new_ind_msg: 18477;
-		name: string(STR_GENERIC_DC73);
+		name: string(STR_IND_BREWERY);
 		prod_cargo_types: [29, 255];
 		accept_cargo_types: [18, 13, 6];
 		prod_multiplier: [0, 0];
@@ -7943,7 +7943,7 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_45, 45) {
 		prod_increase_msg: 18485;
 		prod_decrease_msg: 18489;
 		new_ind_msg: 18477;
-		name: string(STR_GENERIC_DC75);
+		name: string(STR_IND_BRICK_WORKS);
 		prod_cargo_types: [28, 255];
 		accept_cargo_types: [1, 17, 16];
 		prod_multiplier: [0, 0];
@@ -8653,8 +8653,8 @@ switch(FEAT_INDUSTRIES, SELF, action2_3236, restrict_open_during_gameplay) {
 switch(FEAT_INDUSTRIES, SELF, action2_3237, current_callback) {
 	34: action2_3236;
 	40: action2_3233;
-	56: return string(STR_GENERIC_D0A0);
-	58: return string(STR_GENERIC_D0A0);
+	56: return string(STR_GENERIC_NEWLINE);
+	58: return string(STR_GENERIC_NEWLINE);
 	action2_3229;
 }
 
@@ -18116,8 +18116,8 @@ switch(FEAT_INDUSTRIES, SELF, action2_4253, restrict_open_during_gameplay) {
 
 switch(FEAT_INDUSTRIES, SELF, action2_4254, current_callback) {
 	34: action2_4253;
-	56: return string(STR_GENERIC_D0A0);
-	58: return string(STR_GENERIC_D0A0);
+	56: return string(STR_GENERIC_NEWLINE);
+	58: return string(STR_GENERIC_NEWLINE);
 	action2_4250;
 }
 
@@ -33016,8 +33016,8 @@ switch(FEAT_INDUSTRIES, SELF, action2_5255, restrict_open_during_gameplay) {
 
 switch(FEAT_INDUSTRIES, SELF, action2_5256, current_callback) {
 	34: action2_5255;
-	56: return string(STR_GENERIC_D0A0);
-	58: return string(STR_GENERIC_D0A0);
+	56: return string(STR_GENERIC_NEWLINE);
+	58: return string(STR_GENERIC_NEWLINE);
 	action2_5252;
 }
 
@@ -33196,8 +33196,8 @@ switch(FEAT_INDUSTRIES, SELF, action2_5277, restrict_open_during_gameplay) {
 
 switch(FEAT_INDUSTRIES, SELF, action2_5278, current_callback) {
 	34: action2_5277;
-	56: return string(STR_GENERIC_D0A0);
-	58: return string(STR_GENERIC_D0A0);
+	56: return string(STR_GENERIC_NEWLINE);
+	58: return string(STR_GENERIC_NEWLINE);
 	action2_5274;
 }
 
@@ -42496,7 +42496,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6205, STORE_TEMP((rotate((LOAD_PERM(2) & 6
 
 switch(FEAT_INDUSTRIES, SELF, action2_6206, show_debug_texts) {
 	1: action2_6205;
-	return string(STR_IND_BREWERY);
+	return string(STR_PRODUCTION_MEAT_PACKER);
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_6207, STORE_PERM((65535 / 2), 0)) {
@@ -47032,7 +47032,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6731, [STORE_TEMP((697248 - 701265), 256),
 switch(FEAT_INDUSTRIES, SELF, action2_6732, current_callback) {
 	34: action2_6730;
 	56: action2_6731;
-	58: return string(STR_GENERIC_D0A0);
+	58: return string(STR_GENERIC_NEWLINE);
 	action2_6727;
 }
 
@@ -50654,7 +50654,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_7166, current_callback) {
 	40: action2_7161;
 	34: action2_7164;
 	56: action2_7165;
-	58: return string(STR_GENERIC_D0A0);
+	58: return string(STR_GENERIC_NEWLINE);
 	action2_7156;
 }
 
@@ -52905,7 +52905,7 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_19, 19) {
 		prod_increase_msg: 18485;
 		prod_decrease_msg: 18489;
 		new_ind_msg: 18477;
-		name: string(STR_GENERIC_DC99);
+		name: string(STR_IND_SUGAR_REFINERY);
 		nearby_station_name: string(STR_GENERIC_DCE4);
 		prod_cargo_types: [11, 255];
 		accept_cargo_types: [18, 12, 255];

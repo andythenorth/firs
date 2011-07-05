@@ -1,168 +1,168 @@
+
 ##grflangid 0x15
-STR_IND_LIME_KILN                                                               :Vápenka
-STR_CARGO_NAME_MNSP                                                             :Výrobní suroviny
-STR_CID_LUMBER                                                                  :{TINYFONT}LU
-STR_CARGO_NAME_UNIT_LUMBER                                                      :\UE09A\0D řeziva
-STR_CARGO_NAME_LUMBER                                                           :Řezivo
-STR_GENERIC_DC21                                                                :{TINYFONT}ST
-STR_GENERIC_DC29                                                                :{TINYFONT}MS
-STR_CARGO_UNIT_MNSP                                                             :{WORD_S} beden výrobních surovin
-STR_IND_CLAY_PIT                                                                :Jílový důl
-STR_PARAM_NAME_DEBUG                                                            :Zobrazit debug texty
-STR_INFO_NO_CARGO_DELIVERED                                                     :{}{RED}Alespoň {POP_WORD}{POP_WORD}{WORD_S} měsíců nebyla doručena žádná dodávka. Průmysl může být brzy uzavřen. {}
-STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :{SILVER}Maximální vzdálenost loviště ryb a těžby podvodních sedimentů od pobřeží.
-STR_INFO_MAX_STOCKPILE                                                          :{BLACK} (max 800)
-STR_GENERIC_D0C0                                                                :{BLACK} (max 200)
-STR_CARGO_UNIT_SAND                                                             :\UE09A\0D písku
-STR_PARAM_DESC_PRIMARY_PRODUCTION_DECREASE                                      :Při základnim nastavení se produkce primárního průmyslu nikdy nesníží.{}{}Pokud je snížení produkce primárního průmyslu zapnuto, je šance, že výroba se sníží pokud žádné suroviny nebudou dodány za poslední měsíc. Při vysoké úrovni výroby bude šance na snížení vyšší.
-STR_CARGO_UNIT_STONE                                                            :\UE09A\0D kamenů
-STR_CARGO_NAME_STONE                                                            :Kámen
-STR_GENERIC_DC18                                                                :{TINYFONT}PF
-STR_CARGO_NAME_SAND                                                             :Písek
-STR_CARGO_UNIT_WOOL                                                             :\UE09A\0D vlny
-STR_GENERIC_DC10                                                                :{TINYFONT}FI
-STR_CARGO_NAME_WOOL                                                             :Vlna
-STR_CARGO_UNIT_FIBRES                                                           :\UE09A\0D rostlinných vláken
-STR_GENERIC_DC14                                                                :{TINYFONT}WL
-STR_CARGO_NAME_FIBRES                                                           :Rostlinná vlákna
-STR_INFO_AVAILABILITY_FROM                                                      :{BLACK}Available: {YELLOW}{DATE_LONG}
-STR_IND_PETROLPUMP                                                              :Benzínová stanice
-STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} chemikálií
-STR_CARGO_NAME_CHEMICALS                                                        :Chemikálie
-STR_GENERIC_DC2D                                                                :{TINYFONT}FS
-STR_CARGO_UNIT_FMSP                                                             :{WORD_S} beden zemědělských potřeb
-STR_GENERIC_DC97                                                                :Supermarket
-STR_CARGO_NAME_FMSP                                                             :Zemědělské potřeby
-STR_IND_RETAILMARKET                                                            :Maloobchod
-STR_GENERIC_DC99                                                                :Cukrovar
-STR_PARAM_3_DESC                                                                :Při základním nastavení sekundární průmysl FIRSu nebude uzavřen..{}{}Pokud je zavírání skundárního průmyslu zapnuto, průmysl může být uzavřen pokud nebyl přepraven žádný náklad po velmi dlouhou dobu.
-STR_CARGO_NAME_FRUITS                                                           :Ovoce a Zelenina
-STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}BM
+STR_CARGO_NAME_ALCOHOL                                                          :Alkohol
+STR_CARGO_NAME_BAUXITE                                                          :Bauxit
 STR_CARGO_NAME_BUILDING_MATERIALS                                               :Stavební materiály
-STR_GENERIC_DC04                                                                :{TINYFONT}SB
-STR_CARGO_UNIT_BUILDING_MATERIALS                                               :\UE09A\0D stavebních materiálů
-STR_IND_DAIRYFARM                                                               :Mléčná farma
+STR_CARGO_NAME_CHEMICALS                                                        :Chemikálie
+STR_CARGO_NAME_CLAY                                                             :Jíl
+STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :Strojírenské potřeby
+STR_CARGO_NAME_FIBRES                                                           :Rostlinná vlákna
+STR_CARGO_NAME_FISH                                                             :Ryby
+STR_CARGO_NAME_FMSP                                                             :Zemědělské potřeby
+STR_CARGO_NAME_FRUITS                                                           :Ovoce a Zelenina
+STR_CARGO_NAME_LUMBER                                                           :Řezivo
+STR_CARGO_NAME_METAL                                                            :Kov
+STR_CARGO_NAME_MILK                                                             :Mléko
+STR_CARGO_NAME_MNSP                                                             :Výrobní suroviny
+STR_CARGO_NAME_PETROL                                                           :Benzín
+STR_CARGO_NAME_SAND                                                             :Písek
+STR_CARGO_NAME_SCRAP_METAL                                                      :Kovový šrot
+STR_CARGO_NAME_STONE                                                            :Kámen
 STR_CARGO_NAME_SUGARCANE                                                        :Cukrová řepa
-STR_PARAM_NAME_NEVER_CLOSE                                                      :Povolit uzavření primárního průmyslu
-STR_IND_TEXTILE_MILL                                                            :Tkalcovna
+STR_CARGO_NAME_UNIT_LUMBER                                                      :\UE09A\0D řeziva
+STR_CARGO_NAME_WOOL                                                             :Vlna
+STR_CARGO_UNITS_PETROL                                                          :{VOLUME} benzínu
+STR_CARGO_UNITS_SUGAR_BEET                                                      :\UE09A\0D cukrové řepy
+STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} alkoholu
+STR_CARGO_UNIT_BAUXITE                                                          :\UE09A\0D bauxitu
+STR_CARGO_UNIT_BUILDING_MATERIALS                                               :\UE09A\0D stavebních materiálů
+STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} chemikálií
+STR_CARGO_UNIT_CLAY                                                             :\UE09A\0D jílu
+STR_CARGO_UNIT_FIBRES                                                           :\UE09A\0D rostlinných vláken
+STR_CARGO_UNIT_FISH                                                             :\UE09A\0D ryb
+STR_CARGO_UNIT_FMSP                                                             :{WORD_S} beden zemědělských potřeb
+STR_CARGO_UNIT_FRUITS                                                           :\UE09A\0D ovoce a zeleniny
+STR_CARGO_UNIT_METAL                                                            :\UE09A\0D kovu
+STR_CARGO_UNIT_MILK                                                             :{VOLUME} mléka
+STR_CARGO_UNIT_MNSP                                                             :{WORD_S} beden výrobních surovin
+STR_CARGO_UNIT_SAND                                                             :\UE09A\0D písku
+STR_CARGO_UNIT_SCRAP_METAL                                                      :\UE09A\0D kovového šrotu
+STR_CARGO_UNIT_STONE                                                            :\UE09A\0D kamenů
+STR_CARGO_UNIT_WOOL                                                             :\UE09A\0D vlny
+STR_CID_BAUXITE                                                                 :{TINYFONT}BX
+STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}BM
+STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}ES
+STR_CID_LUMBER                                                                  :{TINYFONT}LU
+STR_CID_METAL                                                                   :{TINYFONT}ML
+STR_CID_MILK                                                                    :{TINYFONT}MK
+STR_CID_SCRAP_METAL                                                             :{TINYFONT}SM
+STR_GENERIC_D001                                                                :{BLACK}Produkce :{}  4t za 8t dodaného kamene{}  4t za 8t dodaného uhlí{}{}Zvýší se na 8t za každých 8t obou nákladů přivezených během jednoho měsíce od sebe.
+STR_GENERIC_D006                                                                :{BLACK}Vyrábí kované výrobky jako např. brány, nářadí, pluhy, atd.{}{}5t produkce na 8t dodaných.
+STR_GENERIC_D007                                                                :{BLACK}Produkce :{}  2t za 8t dodané železné rudy{}  2t za 8t dodaného uhlí{}  4t za 8t dodaného kovového šrotu{}{}Produkce se zvýší pokud jsou 2 různé suroviny doručeny během jednoho měsíce.
+STR_GENERIC_D008                                                                :{BLACK}Produkce :{}  2t za 8t dodaného bauxitu{}  2t za 8t dodaných chemikálií{}  4t za 8t dodaného kovového šrotu{}{}Produkce se zvýší pokud jsou 2 různé suroviny doručeny během jednoho měsíce.
+STR_GENERIC_D009                                                                :{BLACK}Vyrábí technické vybavení jako např. nářadí a díly.{}{}8t produkce na 8t dodaných.
+STR_GENERIC_D00C                                                                :{BLACK}Zpracovává dřevo.{}{}6t produkce na 8t dodaných.
+STR_GENERIC_D00D                                                                :{BLACK}Produkce :{}  3t za 8t dodaných výrobních surovin{}  5t za 8t dodaného řeziva{}{}Zvýší se na 8t za každých 8t obou nákladů přivezených během jednoho měsíce od sebe.
+STR_GENERIC_D00E                                                                :{BLACK}Drtí dřevo a vyrábí papír a karton.{}{}{BLACK}Produkce :{}  4t za 8t dodaného dřeva{}  2t za 8t dodaného jílu{}  2t za 8t dodaných chemikálií{}{}Produkce se zvýší pokud jsou 2 různé suroviny doručeny během jednoho měsíce.
+STR_GENERIC_D011                                                                :{BLACK}Zpracovává ropu na benzín a chemikálie.{}{}6t produkce na 8t dodaných.
+STR_GENERIC_D012                                                                :{BLACK}Vyrábí plastové věci jako např. obaly a domácí potřeby.{}{}6t produkce na 8t dodaných.
+STR_GENERIC_D015                                                                :{BLACK}Produkce :{}  1t za 8t dodaného dřeva{}  2t za 8t dodané železné rudy{}{}Zvýší se na 3t za každých 8t obou nákladů přivezených během jednoho měsíce od sebe.
+STR_GENERIC_D016                                                                :{BLACK}Vyrábí skleněné výrobky (lahve, vázy, okenní tabulky).{}{}{BLACK}Produkce :{}  6t za 8t dodaného písku{}  2t za 8t dodaných chemikálií{}{}Zvýší se na 8t za každých 8t obou nákladů přivezených během jednoho měsíce od sebe.
+STR_GENERIC_D01F                                                                :{BLACK}Produkce :{}  3t za 8t dodaných výrobních surovin{}  5t za 8t dodaných ryb{}{}Zvýší se na 8t za každých 8t obou nákladů přivezených během jednoho měsíce od sebe.
 STR_GENERIC_D022                                                                :{BLACK}Produkce :{}  3t za 8t dodaných výrobních surovin{}  5t za 8t dodaného zrní{}{}Zvýší se na 8t za každých 8t obou nákladů přivezených během jednoho měsíce od sebe.
 STR_GENERIC_D023                                                                :{BLACK}Produkce :{}  3t za 8t dodaných výrobních surovin{}  5t za 8t dodaného zrní{}  5t za 8t dodaného ovoce a zeleniny{}{}Produkce se zvýší pokud byly výrobní suroviny doručeny během měsíce od ostatních surovin.
-STR_PARAM_NAME_NO_OPENINGS                                                      :Zabránit stavbě průmyslu (nodokončeno)
-STR_IND_BREWERY                                                                 :{BLACK}Produkce :{}  3t za 8t dodaných výrobních surovin{}  5t za 8t dodaného dobytka{}{}Zvýší se na 8t za každých 8t obou nákladů přivezených během jednoho měsíce od sebe.
-STR_INFO_PRODUCTION_MACHINE_SHOP                                                :{BLACK}Staví a opravuje stroje.{}{}8t produkce na 8t dodaných.
-STR_IND_FISHING_GROUND                                                          :Loviště ryb
+STR_GENERIC_D024                                                                :{BLACK}Produkce :{}  3t za 8t dodaných výrobních surovin{}  5t za 8t dodaného mléka{}{}Zvýší se na 8t za každých 8t obou nákladů přivezených během jednoho měsíce od sebe.
 STR_GENERIC_D028                                                                :{BLACK}Zpracovává chemikálie na zemědělská hnojiva.{}{}8t produkce na 8t dodaných.
 STR_GENERIC_D029                                                                :{BLACK}Zpracovává dřevo pro stavební účely.{}{}{BLACK}Produkce :{}  2t za 8t dodaných chemikálií{}  6t za 8t dodaného řeziva{}{}Zvýší se na 8t za každých 8t obou nákladů přivezených během jednoho měsíce od sebe.
-STR_IND_METAL_FOUNDRY                                                           :Slévárna
-STR_IND_MIXEDFARM                                                               :Smíšená farma
-STR_IND_ALUMINIUM_PLANT                                                         :Hliníková huť
-STR_IND_FURNITURE_FACTORY                                                       :Truhlářství
-STR_IND_LUMBER_YARD                                                             :Řezárna
-STR_IND_MACHINE_SHOP                                                            :Obchod se stroji
-STR_GENERIC_D0A0                                                                :
-STR_PARAM_NAME_PRIMARY_PRODUCTION_DECREASE                                      :Povolit snížení primární produkce
-STR_IND_JUNKYARD                                                                :Smetiště
-STR_IND_SHEEPFARM                                                               :Ovčí farma
-STR_PARAM_DESC_NO_OPENINGS                                                      :{SILVER}Prozatím nema efekt. {BLACK}Po dokončení přinese 'Sandbox mód' pro scénáře.
-STR_INFO_MIGHT_CLOSE                                                            :{}{BLACK}Pokud nebude žádná dodávka doručena během:{}{YELLOW}  {WORD_S} měsíců, průmysl může být uzavřen.
-STR_IND_DEDGING_SITE                                                            :Těžba podvodních sedimentů
-STR_IND_FOOD_MARKET                                                             :Obchod
-STR_IND_SMITHY_FORGE                                                            :Kovárna
-STR_IND_FISHING_HARBOUR                                                         :Rybí trh
-STR_IND_BAUXITE_MINE                                                            :Bauxitový důl
-STR_INFO_AVAILABILITY_FROM_1610                                                 :{BLACK}Available: {YELLOW}1. Led 1610
-STR_INFO_AVAILABILITY_FROM_1762                                                 :{BLACK}Available: {YELLOW}1. Led 1762
-STR_INFO_AVAILABILITY_FROM_1730                                                 :{BLACK}Available: {YELLOW}1. Led 1730
 STR_GENERIC_D02A                                                                :{BLACK}Produkce :{}  3t za 8t dodaných výrobních surovin{}  5t za 8t dodané vlny{}  5t za 8t dodaných rostliných vláken{}{}Produkce se zvýší pokud byly výrobní suroviny doručeny během měsíce od ostatních surovin.
 STR_GENERIC_D02B                                                                :{BLACK}Produkce :{}  2t za 8t dodaného uhlí{}  2t za 8t dodaného jílu{}  4t za 8t dodaného kamene{}{}Produkce se zvýší pokud jsou 2 různé suroviny doručeny během jednoho měsíce.
 STR_GENERIC_D02D                                                                :{BLACK}Produkce :{}  2t za 8t dodaného uhlí{}  2t za 8t dodaného písku{}  4t za 8t dodaného jílu{}{}Produkce se zvýší pokud jsou 2 různé suroviny doručeny během jednoho měsíce.
 STR_GENERIC_D02E                                                                :{BLACK}Zpracovává zrní a cukr na benzín a chemikálie.{}{}6t produkce na 8t dodaných.
-STR_PARAM_DESC_ECONOMIES                                                        :Po dokončení FIRS umožní výběr ekonomik. Náklady a průmysly se liší v různých ekonomikách. Ceny za přepravu se rovněž liší v různých ekonomikách. {}{}{SILVER} V současnosti je pouze jedna ekonomika dostupná :)
-STR_GENERIC_DCEC                                                                :{STRING} Kovárna
-STR_IND_FERTILIZER_PLANT                                                        :Továrna na hnojivo
-STR_IND_PLASTICS_PLANT                                                          :Továrna na plasty
-STR_IND_ARABLE_FARM                                                             :Rostlinná farma
-STR_CARGO_NAME_FISH                                                             :Ryby
-STR_IND_BUILDERS_YARD                                                           :Stavebniny
-STR_GENERIC_DC73                                                                :Pivovar
-STR_IND_CEMENT_PLANT                                                            :Cementárna
-STR_GENERIC_DC75                                                                :Cihelna
-STR_CARGO_UNIT_FRUITS                                                           :\UE09A\0D ovoce a zeleniny
-STR_IND_IRON_WORKS                                                              :Železárna
 STR_GENERIC_D0B0                                                                :{BLACK}Strojírenské potřeby mohou zvýšit produkci.{}{YELLOW}  {DWORD_S} beden doručeno tento měsíc
-STR_GENERIC_DCE8                                                                :{STRING} Lom
-STR_GENERIC_DCE9                                                                :{STRING} Depo
-STR_GENERIC_DCE6                                                                :{STRING} Továrna
-STR_GENERIC_DCE7                                                                :{STRING} Závod
-STR_GENERIC_DCE4                                                                :{STRING} Rafinérie
-STR_PARAM_5_VALUE_0                                                             :Bez limitu
+STR_GENERIC_D0B1                                                                :{BLACK}Zemědělské potřeby mohou zvýšit produkci.{}{YELLOW}  {DWORD_S} beden doručeno tento měsíc
+STR_GENERIC_D0B2                                                                :{BLACK}Výrobní suroviny zdvojnásobí produkci ostatních produktů.{}{}{STRING}
+STR_GENERIC_D0B3                                                                :{BLACK}Maximální produkce dosažena
+STR_GENERIC_D0C0                                                                :{BLACK} (max 200)
+STR_GENERIC_DC04                                                                :{TINYFONT}SB
+STR_GENERIC_DC10                                                                :{TINYFONT}FI
+STR_GENERIC_DC14                                                                :{TINYFONT}WL
+STR_GENERIC_DC18                                                                :{TINYFONT}PF
+STR_GENERIC_DC1C                                                                :{TINYFONT}SA
+STR_GENERIC_DC21                                                                :{TINYFONT}ST
+STR_GENERIC_DC29                                                                :{TINYFONT}MS
+STR_GENERIC_DC2D                                                                :{TINYFONT}FS
+STR_GENERIC_DC30                                                                :{TINYFONT}CH
+STR_GENERIC_DC33                                                                :{WORD_S} beden strojírenských potřeb
+STR_GENERIC_DC37                                                                :{TINYFONT}PT
+STR_GENERIC_DC4D                                                                :{TINYFONT}CL
+STR_GENERIC_DC50                                                                :{TINYFONT}AL
+STR_GENERIC_DCE0                                                                :{STRING} Farma
 STR_GENERIC_DCE2                                                                :{STRING} Pila
 STR_GENERIC_DCE3                                                                :{STRING} Prameny
-STR_GENERIC_DCE0                                                                :{STRING} Farma
-STR_GENERIC_D01F                                                                :{BLACK}Produkce :{}  3t za 8t dodaných výrobních surovin{}  5t za 8t dodaných ryb{}{}Zvýší se na 8t za každých 8t obou nákladů přivezených během jednoho měsíce od sebe.
-STR_GENERIC_D006                                                                :{BLACK}Vyrábí kované výrobky jako např. brány, nářadí, pluhy, atd.{}{}5t produkce na 8t dodaných.
-STR_GENERIC_D007                                                                :{BLACK}Produkce :{}  2t za 8t dodané železné rudy{}  2t za 8t dodaného uhlí{}  4t za 8t dodaného kovového šrotu{}{}Produkce se zvýší pokud jsou 2 různé suroviny doručeny během jednoho měsíce.
-STR_GENERIC_D001                                                                :{BLACK}Produkce :{}  4t za 8t dodaného kamene{}  4t za 8t dodaného uhlí{}{}Zvýší se na 8t za každých 8t obou nákladů přivezených během jednoho měsíce od sebe.
-STR_GENERIC_D008                                                                :{BLACK}Produkce :{}  2t za 8t dodaného bauxitu{}  2t za 8t dodaných chemikálií{}  4t za 8t dodaného kovového šrotu{}{}Produkce se zvýší pokud jsou 2 různé suroviny doručeny během jednoho měsíce.
-STR_GENERIC_D009                                                                :{BLACK}Vyrábí technické vybavení jako např. nářadí a díly.{}{}8t produkce na 8t dodaných.
-STR_IND_GLASS_WORKS                                                             :Sklárna
-STR_IND_STOCKYARD                                                               :Masokombinát
-STR_INFO_LIMIT_REACHED_FARM_SUPPLIES                                            :{WHITE}Nepřijímá zemědělské potřeby{BLACK}{}(Limit Reached)
-STR_INFO_LIMIT_REACHED_ENGINEERING_SUPPLIES                                     :{WHITE}Nepřijímá strojírenské potřeby{BLACK}{}(Limit Reached)
-STR_GENERIC_NEWLINE                                                             :{}
-STR_INFO_LIMIT_REACHED_MANUFACTURING_SUPPLIES                                   :{WHITE}Nepřijímá výrobní suroviny{BLACK}{}(Limit Reached)
-STR_IND_DAIRY                                                                   :Mlékárna
-STR_IND_GRAIN_MILL                                                              :Mlýn
-STR_GENERIC_D00D                                                                :{BLACK}Produkce :{}  3t za 8t dodaných výrobních surovin{}  5t za 8t dodaného řeziva{}{}Zvýší se na 8t za každých 8t obou nákladů přivezených během jednoho měsíce od sebe.
-STR_GENERIC_D00E                                                                :{BLACK}Drtí dřevo a vyrábí papír a karton.{}{}{BLACK}Produkce :{}  4t za 8t dodaného dřeva{}  2t za 8t dodaného jílu{}  2t za 8t dodaných chemikálií{}{}Produkce se zvýší pokud jsou 2 různé suroviny doručeny během jednoho měsíce.
-STR_GENERIC_DC03                                                                :\UE09A\0D cukrové řepy
-STR_GENERIC_DC1C                                                                :{TINYFONT}SA
-STR_INFO_CLOSE_IF_NO_DELIVERY                                                   :{}{BLACK}Pokud nebude žádná dodávka doručena během:{}{WHITE}  {WORD_S} měsíce, průmysl může být uzavřen.
-STR_PARAM_DESC_NEVER_CLOSE                                                      :Při základním nastavení primární průmysl FIRSu nebude uzavřen.{}{}Pokud je zavírání primárního průmyslu zapnuto, průmysl bude uzavřen pokud se produkce sníží na nízkou úroveň (úroveň se liší podle průmyslu). {SILVER}Vyžaduje 'snížení produkce primárního průmyslu' zapnuté.
-STR_GENERIC_D011                                                                :{BLACK}Zpracovává ropu na benzín a chemikálie.{}{}6t produkce na 8t dodaných.
-STR_INFO_PRODUCTION_3PER8                                                       :{BLACK}Produkce :{}  3t za 8t dodaných výrobních surovin{}  5t za 8t dodaného cukru{}{}Zvýší se na 8t za každých 8t obou nákladů přivezených během jednoho měsíce od sebe.
-STR_GENERIC_D012                                                                :{BLACK}Vyrábí plastové věci jako např. obaly a domácí potřeby.{}{}6t produkce na 8t dodaných.
-STR_GENERIC_D015                                                                :{BLACK}Produkce :{}  1t za 8t dodaného dřeva{}  2t za 8t dodané železné rudy{}{}Zvýší se na 3t za každých 8t obou nákladů přivezených během jednoho měsíce od sebe.
-STR_GENERIC_D016                                                                :{BLACK}Vyrábí skleněné výrobky (lahve, vázy, okenní tabulky).{}{}{BLACK}Produkce :{}  6t za 8t dodaného písku{}  2t za 8t dodaných chemikálií{}{}Zvýší se na 8t za každých 8t obou nákladů přivezených během jednoho měsíce od sebe.
-STR_GENERIC_DCED                                                                :{STRING} Tržnice
-STR_GENERIC_DCEB                                                                :{STRING} Rybolov
-STR_PARAM_3_NAME                                                                :Povolit uzavření sekundárního průmyslu
-STR_GENERIC_DC50                                                                :{TINYFONT}AL
+STR_GENERIC_DCE4                                                                :{STRING} Rafinérie
+STR_GENERIC_DCE6                                                                :{STRING} Továrna
+STR_GENERIC_DCE7                                                                :{STRING} Závod
+STR_GENERIC_DCE8                                                                :{STRING} Lom
+STR_GENERIC_DCE9                                                                :{STRING} Depo
 STR_GENERIC_DCEA                                                                :{STRING} Sedimenty
-STR_CARGO_NAME_MILK                                                             :Mléko
-STR_CID_MILK                                                                    :{TINYFONT}MK
-STR_CARGO_UNIT_MILK                                                             :{VOLUME} mléka
-STR_CARGO_NAME_SCRAP_METAL                                                      :Kovový šrot
-STR_CID_SCRAP_METAL                                                             :{TINYFONT}SM
-STR_CARGO_UNIT_SCRAP_METAL                                                      :\UE09A\0D kovového šrotu
-STR_CARGO_NAME_METAL                                                            :Kov
-STR_IND_BIOREFINERY                                                             :Biorafinerie
-STR_GENERIC_D0B2                                                                :{BLACK}Výrobní suroviny zdvojnásobí produkci ostatních produktů.{}{}{STRING}
-STR_CARGO_UNIT_METAL                                                            :\UE09A\0D kovu
-STR_CID_METAL                                                                   :{TINYFONT}ML
-STR_CARGO_UNIT_BAUXITE                                                          :\UE09A\0D bauxitu
-STR_CID_BAUXITE                                                                 :{TINYFONT}BX
-STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY                                   :Maximální vzdálenost vodního průmyslu
-STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}ES
-STR_CARGO_NAME_PETROL                                                           :Benzín
-STR_GENERIC_DC36                                                                :{VOLUME} benzínu
-STR_GENERIC_DC37                                                                :{TINYFONT}PT
-STR_GENERIC_DC30                                                                :{TINYFONT}CH
-STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :Strojírenské potřeby
-STR_GENERIC_DC33                                                                :{WORD_S} beden strojírenských potřeb
-STR_PARAM_NAME_ECONOMIES                                                        :Ekonomika
-STR_CARGO_NAME_BAUXITE                                                          :Bauxit
-STR_IND_QUARRY                                                                  :Kamenolom
-STR_GENERIC_D024                                                                :{BLACK}Produkce :{}  3t za 8t dodaných výrobních surovin{}  5t za 8t dodaného mléka{}{}Zvýší se na 8t za každých 8t obou nákladů přivezených během jednoho měsíce od sebe.
+STR_GENERIC_DCEB                                                                :{STRING} Rybolov
+STR_GENERIC_DCEC                                                                :{STRING} Kovárna
+STR_GENERIC_DCED                                                                :{STRING} Tržnice
+STR_GENERIC_NEWLINE                                                             :{}
 STR_GRF_DESC                                                                    :{ORANGE}FIRS Industry Replacement Set{}{BLACK}By {SILVER}andythenorth{BLACK} and {SILVER}FooBar{BLACK}.{}{BLACK}'1,000 commits and counting...'{BLACK}{}{}Website: {SILVER}www.tt-foundry.com/sets/FIRS{BLACK}.License: {SILVER}GPL v2{BLACK}.Special thanks to {SILVER}Ammler{BLACK}, {SILVER}Core Xii{BLACK}, {SILVER}Irwe{BLACK}, {SILVER}planetmaker{BLACK} and {SILVER}Zephyris{BLACK}.Uses parts of {SILVER}eGRVTS{BLACK}, {SILVER}ISR{BLACK} and {SILVER}OpenGFX{BLACK}.
-STR_CARGO_UNIT_FISH                                                             :\UE09A\0D ryb
+STR_IND_ALUMINIUM_PLANT                                                         :Hliníková huť
+STR_IND_ARABLE_FARM                                                             :Rostlinná farma
+STR_IND_BAUXITE_MINE                                                            :Bauxitový důl
+STR_IND_BIOREFINERY                                                             :Biorafinerie
+STR_IND_BREWERY                                                                 :Pivovar
+STR_PRODUCTION_MEAT_PACKER                                                      :{BLACK}Produkce :{}  3t za 8t dodaných výrobních surovin{}  5t za 8t dodaného dobytka{}{}Zvýší se na 8t za každých 8t obou nákladů přivezených během jednoho měsíce od sebe.
+STR_IND_BRICK_WORKS                                                             :Cihelna
+STR_IND_BUILDERS_YARD                                                           :Stavebniny
+STR_IND_CEMENT_PLANT                                                            :Cementárna
+STR_IND_CLAY_PIT                                                                :Jílový důl
+STR_IND_DAIRY                                                                   :Mlékárna
+STR_IND_DAIRYFARM                                                               :Mléčná farma
+STR_IND_DEDGING_SITE                                                            :Těžba podvodních sedimentů
+STR_IND_FERTILIZER_PLANT                                                        :Továrna na hnojivo
+STR_IND_FISHING_GROUND                                                          :Loviště ryb
+STR_IND_FISHING_HARBOUR                                                         :Rybí trh
+STR_IND_FOOD_MARKET                                                             :Obchod
+STR_IND_FURNITURE_FACTORY                                                       :Truhlářství
+STR_IND_GLASS_WORKS                                                             :Sklárna
+STR_IND_GRAIN_MILL                                                              :Mlýn
+STR_IND_IRON_WORKS                                                              :Železárna
+STR_IND_JUNKYARD                                                                :Smetiště
+STR_IND_LIME_KILN                                                               :Vápenka
+STR_IND_LUMBER_YARD                                                             :Řezárna
+STR_IND_MACHINE_SHOP                                                            :Obchod se stroji
+STR_IND_METAL_FOUNDRY                                                           :Slévárna
+STR_IND_MIXEDFARM                                                               :Smíšená farma
+STR_IND_PETROLPUMP                                                              :Benzínová stanice
+STR_IND_PLASTICS_PLANT                                                          :Továrna na plasty
+STR_IND_QUARRY                                                                  :Kamenolom
+STR_IND_RETAILMARKET                                                            :Maloobchod
+STR_IND_SHEEPFARM                                                               :Ovčí farma
+STR_IND_SMITHY_FORGE                                                            :Kovárna
+STR_IND_STOCKYARD                                                               :Masokombinát
+STR_IND_SUGAR_REFINERY                                                          :Cukrovar
+STR_IND_SUPERMARKET                                                             :Supermarket
+STR_IND_TEXTILE_MILL                                                            :Tkalcovna
+STR_INFO_AVAILABILITY_FROM                                                      :{BLACK}Available: {YELLOW}{DATE_LONG}
+STR_INFO_AVAILABILITY_FROM_1610                                                 :{BLACK}Available: {YELLOW}1. Led 1610
+STR_INFO_AVAILABILITY_FROM_1730                                                 :{BLACK}Available: {YELLOW}1. Led 1730
+STR_INFO_AVAILABILITY_FROM_1762                                                 :{BLACK}Available: {YELLOW}1. Led 1762
+STR_INFO_CLOSE_IF_NO_DELIVERY                                                   :{}{BLACK}Pokud nebude žádná dodávka doručena během:{}{WHITE}  {WORD_S} měsíce, průmysl může být uzavřen.
+STR_INFO_LIMIT_REACHED_ENGINEERING_SUPPLIES                                     :{WHITE}Nepřijímá strojírenské potřeby{BLACK}{}(Limit Reached)
+STR_INFO_LIMIT_REACHED_FARM_SUPPLIES                                            :{WHITE}Nepřijímá zemědělské potřeby{BLACK}{}(Limit Reached)
+STR_INFO_LIMIT_REACHED_MANUFACTURING_SUPPLIES                                   :{WHITE}Nepřijímá výrobní suroviny{BLACK}{}(Limit Reached)
+STR_INFO_MAX_STOCKPILE                                                          :{BLACK} (max 800)
+STR_INFO_MIGHT_CLOSE                                                            :{}{BLACK}Pokud nebude žádná dodávka doručena během:{}{YELLOW}  {WORD_S} měsíců, průmysl může být uzavřen.
+STR_INFO_NO_CARGO_DELIVERED                                                     :{}{RED}Alespoň {POP_WORD}{POP_WORD}{WORD_S} měsíců nebyla doručena žádná dodávka. Průmysl může být brzy uzavřen. {}
+STR_INFO_PRODUCTION_3PER8                                                       :{BLACK}Produkce :{}  3t za 8t dodaných výrobních surovin{}  5t za 8t dodaného cukru{}{}Zvýší se na 8t za každých 8t obou nákladů přivezených během jednoho měsíce od sebe.
+STR_INFO_PRODUCTION_MACHINE_SHOP                                                :{BLACK}Staví a opravuje stroje.{}{}8t produkce na 8t dodaných.
+STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :{SILVER}Maximální vzdálenost loviště ryb a těžby podvodních sedimentů od pobřeží.
 STR_PARAM_DESC_DEBUG                                                            :Pouze pro vývojáře
-STR_CARGO_NAME_CLAY                                                             :Jíl
-STR_GENERIC_D0B1                                                                :{BLACK}Zemědělské potřeby mohou zvýšit produkci.{}{YELLOW}  {DWORD_S} beden doručeno tento měsíc
-STR_CARGO_UNIT_CLAY                                                             :\UE09A\0D jílu
-STR_GENERIC_D0B3                                                                :{BLACK}Maximální produkce dosažena
-STR_CARGO_NAME_ALCOHOL                                                          :Alkohol
-STR_GENERIC_DC4D                                                                :{TINYFONT}CL
-STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} alkoholu
-STR_PARAM_0_VALUE_0                                                             :Testovací ekonomika
-STR_GENERIC_D00C                                                                :{BLACK}Zpracovává dřevo.{}{}6t produkce na 8t dodaných.
+STR_PARAM_DESC_ECONOMIES                                                        :Po dokončení FIRS umožní výběr ekonomik. Náklady a průmysly se liší v různých ekonomikách. Ceny za přepravu se rovněž liší v různých ekonomikách. {}{}{SILVER} V současnosti je pouze jedna ekonomika dostupná :)
+STR_PARAM_DESC_NEVER_CLOSE                                                      :Při základním nastavení primární průmysl FIRSu nebude uzavřen.{}{}Pokud je zavírání primárního průmyslu zapnuto, průmysl bude uzavřen pokud se produkce sníží na nízkou úroveň (úroveň se liší podle průmyslu). {SILVER}Vyžaduje 'snížení produkce primárního průmyslu' zapnuté.
+STR_PARAM_DESC_NO_OPENINGS                                                      :{SILVER}Prozatím nema efekt. {BLACK}Po dokončení přinese 'Sandbox mód' pro scénáře.
+STR_PARAM_DESC_PRIMARY_PRODUCTION_DECREASE                                      :Při základnim nastavení se produkce primárního průmyslu nikdy nesníží.{}{}Pokud je snížení produkce primárního průmyslu zapnuto, je šance, že výroba se sníží pokud žádné suroviny nebudou dodány za poslední měsíc. Při vysoké úrovni výroby bude šance na snížení vyšší.
+STR_PARAM_DESC_SECONDARY_NEVER_CLOSE                                            :Při základním nastavení sekundární průmysl FIRSu nebude uzavřen..{}{}Pokud je zavírání skundárního průmyslu zapnuto, průmysl může být uzavřen pokud nebyl přepraven žádný náklad po velmi dlouhou dobu.
+STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY                                   :Maximální vzdálenost vodního průmyslu
+STR_PARAM_NAME_DEBUG                                                            :Zobrazit debug texty
+STR_PARAM_NAME_ECONOMIES                                                        :Ekonomika
+STR_PARAM_NAME_NEVER_CLOSE                                                      :Povolit uzavření primárního průmyslu
+STR_PARAM_NAME_NO_OPENINGS                                                      :Zabránit stavbě průmyslu (nodokončeno)
+STR_PARAM_NAME_PRIMARY_PRODUCTION_DECREASE                                      :Povolit snížení primární produkce
+STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            :Povolit uzavření sekundárního průmyslu
+STR_PARAM_VALUE_ECONOMIES_TEST_ECONOMY                                          :Testovací ekonomika
+STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0                                         :Bez limitu

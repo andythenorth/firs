@@ -1,140 +1,140 @@
+
 ##grflangid 0x03
-STR_IND_LIME_KILN                                                               :Four à chaux
-STR_CARGO_NAME_MNSP                                                             :Fourniture industrielle
-STR_CID_LUMBER                                                                  :{TINYFONT}LU
-STR_IND_CLAY_PIT                                                                :Carrière d'Argile
-STR_CARGO_NAME_LUMBER                                                           :Planches
-STR_GENERIC_DC21                                                                :{TINYFONT}GV
-STR_GENERIC_DC29                                                                :{TINYFONT}MS
-STR_PARAM_NAME_DEBUG                                                            :Affiche les textes de débogage
-STR_INFO_NO_CARGO_DELIVERED                                                     :{}{RED}Aucune marchandise n'a été livrée depuis {POP_WORD}{POP_WORD}{WORD_S} mois. Cette industrie va bientôt fermer. {}
-STR_INFO_MAX_STOCKPILE                                                          :{BLACK} (max 800)
-STR_GENERIC_D0C0                                                                :{BLACK} (max 200)
-STR_PARAM_DESC_PRIMARY_PRODUCTION_DECREASE                                      :Par défaut, la production des industries primaires ne diminue jamais.{}{}Si ce paramètre est activé, il y a un chance que la production diminuera si du matériel n'est pas livré dans le mois en cours. Plus le niveau de production est élevé, plus il y a de chance de voir la production diminuer.
-STR_CARGO_NAME_STONE                                                            :Gravier
-STR_GENERIC_DC18                                                                :{TINYFONT}CT
-STR_CARGO_NAME_SAND                                                             :Sable
-STR_GENERIC_DC10                                                                :{TINYFONT}FI
-STR_CARGO_NAME_WOOL                                                             :Laine
-STR_GENERIC_DC14                                                                :{TINYFONT}WL
-STR_CARGO_NAME_FIBRES                                                           :Fibres végétales
-STR_INFO_AVAILABILITY_FROM                                                      :{BLACK}Disponible: {YELLOW}{DATE_LONG}
-STR_IND_PETROLPUMP                                                              :Station essence
-STR_IND_FISHING_GROUND                                                          :Zone de pêche
-STR_CARGO_NAME_CHEMICALS                                                        :Produits chimiques
-STR_GENERIC_DC2D                                                                :{TINYFONT}FS
-STR_GENERIC_DC97                                                                :Supermarché
-STR_IND_SMITHY_FORGE                                                            :Forge
-STR_IND_RETAILMARKET                                                            :Marché
-STR_GENERIC_DC99                                                                :Raffinerie de sucre
-STR_PARAM_3_DESC                                                                :Par défaut, les industries secondaires ne ferment jamais.{}{}Si ce paramètre est activé, les industries secondaires peuvent fermer si aucune marchandises n'est transportée pendant un grand moment.
-STR_CARGO_NAME_FRUITS                                                           :Fruits et légumes
-STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}BM
+STR_CARGO_NAME_BAUXITE                                                          :Bauxite
 STR_CARGO_NAME_BUILDING_MATERIALS                                               :Matériaux de construction
-STR_GENERIC_DC04                                                                :{TINYFONT}SB
-STR_IND_STOCKYARD                                                               :Abattoir
-STR_IND_DAIRYFARM                                                               :Ferme laitière
+STR_CARGO_NAME_CHEMICALS                                                        :Produits chimiques
+STR_CARGO_NAME_CLAY                                                             :Argile
+STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :Matériel d'ingénierie
+STR_CARGO_NAME_FIBRES                                                           :Fibres végétales
+STR_CARGO_NAME_FISH                                                             :Poisson
+STR_CARGO_NAME_FMSP                                                             :Matériel agricole
+STR_CARGO_NAME_FRUITS                                                           :Fruits et légumes
+STR_CARGO_NAME_LUMBER                                                           :Planches
+STR_CARGO_NAME_METAL                                                            :Métal
+STR_CARGO_NAME_MILK                                                             :Lait
+STR_CARGO_NAME_MNSP                                                             :Fourniture industrielle
+STR_CARGO_NAME_PETROL                                                           :Essence
+STR_CARGO_NAME_SAND                                                             :Sable
+STR_CARGO_NAME_SCRAP_METAL                                                      :Ferraille
+STR_CARGO_NAME_STONE                                                            :Gravier
 STR_CARGO_NAME_SUGARCANE                                                        :Betterave sucrière
-STR_IND_GRAIN_MILL                                                              :Moulin
-STR_IND_TEXTILE_MILL                                                            :Usine Textile
+STR_CARGO_NAME_WOOL                                                             :Laine
+STR_CID_BAUXITE                                                                 :{TINYFONT}BX
+STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}BM
+STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}ES
+STR_CID_LUMBER                                                                  :{TINYFONT}LU
+STR_CID_METAL                                                                   :{TINYFONT}ML
+STR_CID_MILK                                                                    :{TINYFONT}MK
+STR_CID_SCRAP_METAL                                                             :{TINYFONT}SM
+STR_GENERIC_D001                                                                :{BLACK}Marchandises produites:{}  4t pour 8t de gravier livrées{}  4t pour 8t de charbon livrées{}{}Augmente par tranche de 8t lorsque les deux marchandises sont livrées à un mois d'intervalle.
+STR_GENERIC_D007                                                                :{BLACK}Marchandises produites:{}  2t pour 8t de minerai de fer livrées{}  2t pour 8t de charbon livrées{}  4t pour 8t de ferraille livrées{}{}Il faut au moins 2 type de marchandises livrées dans le meme mois pour que la production augmente.
+STR_GENERIC_D008                                                                :{BLACK}Marchandises produites:{}  2t pour 8t de bauxite livrées{}  2t pour 8t de produits chimiques livrées{}  4t pour 8t de ferraille livrées{}{}Il faut au moins 2 type de marchandises livrées dans le meme mois pour que la production augmente.
+STR_GENERIC_D009                                                                :{BLACK}Produit des pièces de métal comme les outils.{}{}8t produites pour 8t livrées.
+STR_GENERIC_D00C                                                                :{BLACK}Coupe du bois.{}{}6t produites pour 8t livrées.
+STR_GENERIC_D00D                                                                :{BLACK}Marchandises produites:{}  3t pour 8t de fournitures industrielle livrées{}  5t pour 8t de planches livrées{}{}Augmente par tranche de 8t lorsque les deux marchandises sont livrées à un mois d'intervalle.
+STR_GENERIC_D00E                                                                :{BLACK}Transforme le bois en pâte pour produire du papier et du carton.{}{}{BLACK}Marchandises produites:{}  4t pour 8t de bois livrées{}  2t pour 8t d'argile livrées{}  2t pour 8t de produits chimiques livrées{}{}Il faut au moins 2 type de marchandises livrées dans le meme mois pour que la production augmente.
+STR_GENERIC_D011                                                                :{BLACK}Transforme le pétrole en essence et produits chimiques.{}{}6t produites pour 8t livrées.
+STR_GENERIC_D012                                                                :{BLACK}Produit des objets en platiques comme les emballages et les articles ménagers.{}{}6t produites pour 8t livrées.
+STR_GENERIC_D016                                                                :{BLACK}Produit des objets en verre comme les bouteilles, les bocaux et les vitres.{}{}{BLACK}Marchandises produites:{}  6t pour 8t de sable livrées{}  2t pour 8t de produits chimiques livrées{}{}Augmente par tranche de 8t lorsque les deux marchandises sont livrées à un mois d'intervalle.
+STR_GENERIC_D01F                                                                :{BLACK}Marchandises produites:{}  3t pour 8t de fournitures industrielle livrées{}  5t pour 8t de poisson livrées{}{}Augmente par tranche de 8t lorsque les deux marchandises sont livrées à un mois d'intervalle.
 STR_GENERIC_D022                                                                :{BLACK}Marchandises produites:{}  3t pour 8t de fournitures industrielle livrées{}  5t pour 8t de céréales livrées{}{}Augmente par tranche de 8t lorsque les deux marchandises sont livrées à un mois d'intervalle.
 STR_GENERIC_D023                                                                :{BLACK}Marchandises produites:{}  3t pour 8t de fournitures industrielle livrées{}  5t pour 8t de céréales livrées{}  5t pour 8t de fruits et légumes livrées{}{}La production augmente si des fournitures industrielles sont livrées à un mois d'intervalle avec les autres marchandises.
-STR_PARAM_NAME_NO_OPENINGS                                                      :Empêcher la construction des industries (pas encore fini)
-STR_IND_BREWERY                                                                 :{BLACK}Marchandises produites:{}  3t pour 8t de fournitures industrielle livrées{}  5t pour 8t de bétail livrées{}{}Augmente par tranche de 8t lorsque les deux marchandises sont livrées à un mois d'intervalle.
-STR_INFO_PRODUCTION_MACHINE_SHOP                                                :{BLACK}Construit et entretien des machines{}{}8t produites pour 8t livrées.
+STR_GENERIC_D024                                                                :{BLACK}Marchandises produites:{}  3t pour 8t de fournitures industrielle livrées{}  5t pour 8t de lait livrées{}{}Augmente par tranche de 8t lorsque les deux marchandises sont livrées à un mois d'intervalle.
 STR_GENERIC_D028                                                                :{BLACK}Transforme les produits chimiques en engrais pour les exploitations agricoles.{}{}8t produites pour 8t livrées.
 STR_GENERIC_D029                                                                :{BLACK}Produit des objets comme les poteaux et les piquets de clôture.{}{}{BLACK}Marchandises produites:{}  2t pour 8t de produits chimiques livrées{}  6t pour 8t de planches livrées{}{}Augmente par tranche de 8t lorsque les deux marchandises sont livrées à un mois d'intervalle.
-STR_IND_METAL_FOUNDRY                                                           :Fonderie
-STR_IND_MIXEDFARM                                                               :Exploitation agricole
-STR_IND_ALUMINIUM_PLANT                                                         :Usine d'aluminium
-STR_IND_FURNITURE_FACTORY                                                       :Usine de meuble
-STR_IND_LUMBER_YARD                                                             :Scierie
-STR_IND_MACHINE_SHOP                                                            :Constructeur de machine
-STR_GENERIC_D0A0                                                                :
-STR_PARAM_NAME_PRIMARY_PRODUCTION_DECREASE                                      :Permettre la baisse de production des industries primaires
-STR_IND_JUNKYARD                                                                :Casse automobile
-STR_IND_SHEEPFARM                                                               :Élevage ovin
-STR_PARAM_DESC_NO_OPENINGS                                                      :{SILVER}Ce paramètre n'est pas encore implémenté. {BLACK}Lorsqu'il sera fini il fournira un mode 'Bac à sable' pour l'utiliser avec les scenarios.
-STR_INFO_MIGHT_CLOSE                                                            :{}{BLACK}Cette industrie va fermer si aucune marchandise n'est livrée avant:{}{YELLOW}  {WORD_S} mois
-STR_IND_DEDGING_SITE                                                            :Site de dragage
-STR_IND_FOOD_MARKET                                                             :Magasin
-STR_CARGO_NAME_FMSP                                                             :Matériel agricole
-STR_IND_FISHING_HARBOUR                                                         :Port de pêche
-STR_IND_BAUXITE_MINE                                                            :Mine de Bauxite
-STR_INFO_AVAILABILITY_FROM_1610                                                 :{BLACK}Disponible: {YELLOW}1er Jan 1610
-STR_INFO_AVAILABILITY_FROM_1762                                                 :{BLACK}Disponible: {YELLOW}1er Jan 1762
-STR_INFO_AVAILABILITY_FROM_1730                                                 :{BLACK}Disponible: {YELLOW}1er Jan 1730
 STR_GENERIC_D02A                                                                :{BLACK}Marchandises produites:{}  3t pour 8t de fournitures industrielle livrées{}  5t pour 8t de laine livrées{}  5t pour 8t de fibres végétales livrées{}{}La production augmente si des fournitures industrielles sont livrées à un mois d'intervalle avec les autres marchandises.
 STR_GENERIC_D02B                                                                :{BLACK}Marchandises produites:{}  2t pour 8t de charbon livrées{}  2t pour 8t d'argile livrées{}  4t pour 8t de gravier livrées{}{}Il faut au moins 2 type de marchandises livrées dans le meme mois pour que la production augmente.
 STR_GENERIC_D02D                                                                :{BLACK}Marchandises produites:{}  2t pour 8t de charbon livrées{}  2t pour 8t de sable livrées{}  4t pour 8t d'argile livrées{}{}Il faut au moins 2 type de marchandises livrées dans le meme mois pour que la production augmente.
 STR_GENERIC_D02E                                                                :{BLACK}Transforme les céréales et le sucre en essence et produits chimiques.{}{}6t produites pour 8t livrées.
-STR_PARAM_DESC_ECONOMIES                                                        :Lorsque ce sera terminé, FIRS permettra de choisir son économie. Les marchandises et les industries varient en fonction de l'économie choisie. Le paiement du transport est aussi différent dans chaque économie {}{}{SILVER}Actuellement une seule économie est disponible :)
-STR_GENERIC_DCEC                                                                :{STRING} Forge
-STR_IND_FERTILIZER_PLANT                                                        :Usine d'engrais chimiques
-STR_IND_PLASTICS_PLANT                                                          :Usine plastique
-STR_IND_ARABLE_FARM                                                             :Ferme céréalière
-STR_IND_QUARRY                                                                  :Carrière
-STR_IND_BUILDERS_YARD                                                           :Chantier de construction
-STR_GENERIC_DC73                                                                :Brasserie
-STR_IND_CEMENT_PLANT                                                            :Cimenterie
-STR_GENERIC_DC75                                                                :Usine de brique
-STR_IND_BIOREFINERY                                                             :Bioraffinerie
-STR_GENERIC_DCE8                                                                :{STRING} Carrière
-STR_GENERIC_DCE9                                                                :{STRING} Dépot
-STR_GENERIC_DCE6                                                                :{STRING} Fabrique
-STR_GENERIC_DCE7                                                                :{STRING} Manufacture
-STR_GENERIC_DCE4                                                                :{STRING} Raffinerie
-STR_GENERIC_DCE2                                                                :{STRING} Usine
-STR_GENERIC_DCE3                                                                :{STRING} Puits
-STR_GENERIC_DCE0                                                                :{STRING} Ferme
-STR_GENERIC_D01F                                                                :{BLACK}Marchandises produites:{}  3t pour 8t de fournitures industrielle livrées{}  5t pour 8t de poisson livrées{}{}Augmente par tranche de 8t lorsque les deux marchandises sont livrées à un mois d'intervalle.
-STR_GENERIC_D007                                                                :{BLACK}Marchandises produites:{}  2t pour 8t de minerai de fer livrées{}  2t pour 8t de charbon livrées{}  4t pour 8t de ferraille livrées{}{}Il faut au moins 2 type de marchandises livrées dans le meme mois pour que la production augmente.
-STR_GENERIC_D001                                                                :{BLACK}Marchandises produites:{}  4t pour 8t de gravier livrées{}  4t pour 8t de charbon livrées{}{}Augmente par tranche de 8t lorsque les deux marchandises sont livrées à un mois d'intervalle.
-STR_GENERIC_D008                                                                :{BLACK}Marchandises produites:{}  2t pour 8t de bauxite livrées{}  2t pour 8t de produits chimiques livrées{}  4t pour 8t de ferraille livrées{}{}Il faut au moins 2 type de marchandises livrées dans le meme mois pour que la production augmente.
-STR_GENERIC_D009                                                                :{BLACK}Produit des pièces de métal comme les outils.{}{}8t produites pour 8t livrées.
-STR_IND_GLASS_WORKS                                                             :Verrerie
-STR_INFO_LIMIT_REACHED_FARM_SUPPLIES                                            :{WHITE}N'accepte plus de matériel agricole{BLACK}{}(Limite Atteinte)
-STR_INFO_LIMIT_REACHED_ENGINEERING_SUPPLIES                                     :{WHITE}N'accepte plus de matériel d'ingénierie{BLACK}{}(Limite Atteinte)
-STR_GENERIC_NEWLINE                                                             :{}
-STR_INFO_LIMIT_REACHED_MANUFACTURING_SUPPLIES                                   :{WHITE}N'accepte plus de fourniture industrielle{BLACK}{}(Limite Atteinte)
-STR_IND_DAIRY                                                                   :Laiterie
-STR_GENERIC_D00D                                                                :{BLACK}Marchandises produites:{}  3t pour 8t de fournitures industrielle livrées{}  5t pour 8t de planches livrées{}{}Augmente par tranche de 8t lorsque les deux marchandises sont livrées à un mois d'intervalle.
-STR_GENERIC_D00E                                                                :{BLACK}Transforme le bois en pâte pour produire du papier et du carton.{}{}{BLACK}Marchandises produites:{}  4t pour 8t de bois livrées{}  2t pour 8t d'argile livrées{}  2t pour 8t de produits chimiques livrées{}{}Il faut au moins 2 type de marchandises livrées dans le meme mois pour que la production augmente.
-STR_GENERIC_D00C                                                                :{BLACK}Coupe du bois.{}{}6t produites pour 8t livrées.
-STR_GENERIC_DC1C                                                                :{TINYFONT}SA
-STR_INFO_CLOSE_IF_NO_DELIVERY                                                   :{}{BLACK}Cette industrie va fermer si aucune marchandise n'est livrée avant:{}{WHITE}  {WORD_S} mois
-STR_PARAM_DESC_NEVER_CLOSE                                                      :Par défaut, les industries primaires ne ferment jamais.{}{}Si ce paramètre est activé, les industries primaires fermeront quand leur production tombe à un niveau faible (le niveau varie pour chaque type d'industrie). {SILVER}Necessite 'Permettre la baisse de production des industries primaires' activé.
-STR_GENERIC_D011                                                                :{BLACK}Transforme le pétrole en essence et produits chimiques.{}{}6t produites pour 8t livrées.
-STR_INFO_PRODUCTION_3PER8                                                       :{BLACK}Marchandises produites:{}  3t pour 8t de fournitures industrielle livrées{}  5t pour 8t de sucre livrées{}{}Augmente par tranche de 8t lorsque les deux marchandises sont livrées à un mois d'intervalle.
-STR_GENERIC_D012                                                                :{BLACK}Produit des objets en platiques comme les emballages et les articles ménagers.{}{}6t produites pour 8t livrées.
-STR_GENERIC_D016                                                                :{BLACK}Produit des objets en verre comme les bouteilles, les bocaux et les vitres.{}{}{BLACK}Marchandises produites:{}  6t pour 8t de sable livrées{}  2t pour 8t de produits chimiques livrées{}{}Augmente par tranche de 8t lorsque les deux marchandises sont livrées à un mois d'intervalle.
-STR_GENERIC_DCED                                                                :{STRING} Marché
-STR_GENERIC_DCEB                                                                :{STRING} Zone de pêche
-STR_PARAM_3_NAME                                                                :Permettre aux industries secondaire de fermer
-STR_GENERIC_DCEA                                                                :{STRING} Dragage
-STR_CARGO_NAME_MILK                                                             :Lait
-STR_CID_MILK                                                                    :{TINYFONT}MK
-STR_CARGO_NAME_SCRAP_METAL                                                      :Ferraille
-STR_CID_SCRAP_METAL                                                             :{TINYFONT}SM
 STR_GENERIC_D0B0                                                                :{BLACK}Le matériel d'ingénierie peut augmenter la production.{}{YELLOW}  {DWORD_S} caisses livrées ce mois
-STR_CID_METAL                                                                   :{TINYFONT}ML
-STR_CID_BAUXITE                                                                 :{TINYFONT}BX
-STR_CARGO_NAME_METAL                                                            :Métal
-STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}ES
-STR_CARGO_NAME_PETROL                                                           :Essence
-STR_PARAM_NAME_NEVER_CLOSE                                                      :Permettre aux industries primaires de fermer
-STR_GENERIC_DC37                                                                :{TINYFONT}PT
-STR_GENERIC_DC30                                                                :{TINYFONT}CH
-STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :Matériel d'ingénierie
-STR_PARAM_NAME_ECONOMIES                                                        :Economie
-STR_CARGO_NAME_BAUXITE                                                          :Bauxite
-STR_CARGO_NAME_FISH                                                             :Poisson
-STR_GENERIC_D024                                                                :{BLACK}Marchandises produites:{}  3t pour 8t de fournitures industrielle livrées{}  5t pour 8t de lait livrées{}{}Augmente par tranche de 8t lorsque les deux marchandises sont livrées à un mois d'intervalle.
-STR_GRF_DESC                                                                    :{ORANGE}FIRS Industry Replacement Set{}{BLACK}By {SILVER}andythenorth{BLACK} and {SILVER}FooBar{BLACK}.{}{BLACK}'1,000 commits and counting...'{BLACK}{}{}Website: {SILVER}www.tt-foundry.com/sets/FIRS{BLACK}.License: {SILVER}GPL v2{BLACK}.Special thanks to {SILVER}Ammler{BLACK}, {SILVER}Core Xii{BLACK}, {SILVER}Irwe{BLACK}, {SILVER}planetmaker{BLACK} and {SILVER}Zephyris{BLACK}.Uses parts of {SILVER}eGRVTS{BLACK}, {SILVER}ISR{BLACK} and {SILVER}OpenGFX{BLACK}.
-STR_PARAM_DESC_DEBUG                                                            :Seulement pour les développeurs
-STR_CARGO_NAME_CLAY                                                             :Argile
 STR_GENERIC_D0B1                                                                :{BLACK}Le matériel agricole peut augmenter la production.{}{YELLOW}  {DWORD_S} caisses livrées ce mois
 STR_GENERIC_D0B2                                                                :{BLACK}Les fournitures industrielle doublent la production des autres marchandises.{}{}{STRING}
 STR_GENERIC_D0B3                                                                :{BLACK}Production maximum atteinte
+STR_GENERIC_D0C0                                                                :{BLACK} (max 200)
+STR_GENERIC_DC04                                                                :{TINYFONT}SB
+STR_GENERIC_DC10                                                                :{TINYFONT}FI
+STR_GENERIC_DC14                                                                :{TINYFONT}WL
+STR_GENERIC_DC18                                                                :{TINYFONT}CT
+STR_GENERIC_DC1C                                                                :{TINYFONT}SA
+STR_GENERIC_DC21                                                                :{TINYFONT}GV
+STR_GENERIC_DC29                                                                :{TINYFONT}MS
+STR_GENERIC_DC2D                                                                :{TINYFONT}FS
+STR_GENERIC_DC30                                                                :{TINYFONT}CH
+STR_GENERIC_DC37                                                                :{TINYFONT}PT
 STR_GENERIC_DC4D                                                                :{TINYFONT}CL
-STR_PARAM_0_VALUE_0                                                             :Economie de test
+STR_GENERIC_DCE0                                                                :{STRING} Ferme
+STR_GENERIC_DCE2                                                                :{STRING} Usine
+STR_GENERIC_DCE3                                                                :{STRING} Puits
+STR_GENERIC_DCE4                                                                :{STRING} Raffinerie
+STR_GENERIC_DCE6                                                                :{STRING} Fabrique
+STR_GENERIC_DCE7                                                                :{STRING} Manufacture
+STR_GENERIC_DCE8                                                                :{STRING} Carrière
+STR_GENERIC_DCE9                                                                :{STRING} Dépot
+STR_GENERIC_DCEA                                                                :{STRING} Dragage
+STR_GENERIC_DCEB                                                                :{STRING} Zone de pêche
+STR_GENERIC_DCEC                                                                :{STRING} Forge
+STR_GENERIC_DCED                                                                :{STRING} Marché
+STR_GENERIC_NEWLINE                                                             :{}
+STR_GRF_DESC                                                                    :{ORANGE}FIRS Industry Replacement Set{}{BLACK}By {SILVER}andythenorth{BLACK} and {SILVER}FooBar{BLACK}.{}{BLACK}'1,000 commits and counting...'{BLACK}{}{}Website: {SILVER}www.tt-foundry.com/sets/FIRS{BLACK}.License: {SILVER}GPL v2{BLACK}.Special thanks to {SILVER}Ammler{BLACK}, {SILVER}Core Xii{BLACK}, {SILVER}Irwe{BLACK}, {SILVER}planetmaker{BLACK} and {SILVER}Zephyris{BLACK}.Uses parts of {SILVER}eGRVTS{BLACK}, {SILVER}ISR{BLACK} and {SILVER}OpenGFX{BLACK}.
+STR_IND_ALUMINIUM_PLANT                                                         :Usine d'aluminium
+STR_IND_ARABLE_FARM                                                             :Ferme céréalière
+STR_IND_BAUXITE_MINE                                                            :Mine de Bauxite
+STR_IND_BIOREFINERY                                                             :Bioraffinerie
+STR_IND_BREWERY                                                                 :Brasserie
+STR_PRODUCTION_MEAT_PACKER                                                      :{BLACK}Marchandises produites:{}  3t pour 8t de fournitures industrielle livrées{}  5t pour 8t de bétail livrées{}{}Augmente par tranche de 8t lorsque les deux marchandises sont livrées à un mois d'intervalle.
+STR_IND_BRICK_WORKS                                                             :Usine de brique
+STR_IND_BUILDERS_YARD                                                           :Chantier de construction
+STR_IND_CEMENT_PLANT                                                            :Cimenterie
+STR_IND_CLAY_PIT                                                                :Carrière d'Argile
+STR_IND_DAIRY                                                                   :Laiterie
+STR_IND_DAIRYFARM                                                               :Ferme laitière
+STR_IND_DEDGING_SITE                                                            :Site de dragage
+STR_IND_FERTILIZER_PLANT                                                        :Usine d'engrais chimiques
+STR_IND_FISHING_GROUND                                                          :Zone de pêche
+STR_IND_FISHING_HARBOUR                                                         :Port de pêche
+STR_IND_FOOD_MARKET                                                             :Magasin
+STR_IND_FURNITURE_FACTORY                                                       :Usine de meuble
+STR_IND_GLASS_WORKS                                                             :Verrerie
+STR_IND_GRAIN_MILL                                                              :Moulin
+STR_IND_JUNKYARD                                                                :Casse automobile
+STR_IND_LIME_KILN                                                               :Four à chaux
+STR_IND_LUMBER_YARD                                                             :Scierie
+STR_IND_MACHINE_SHOP                                                            :Constructeur de machine
+STR_IND_METAL_FOUNDRY                                                           :Fonderie
+STR_IND_MIXEDFARM                                                               :Exploitation agricole
+STR_IND_PETROLPUMP                                                              :Station essence
+STR_IND_PLASTICS_PLANT                                                          :Usine plastique
+STR_IND_QUARRY                                                                  :Carrière
+STR_IND_RETAILMARKET                                                            :Marché
+STR_IND_SHEEPFARM                                                               :Élevage ovin
+STR_IND_SMITHY_FORGE                                                            :Forge
+STR_IND_STOCKYARD                                                               :Abattoir
+STR_IND_SUGAR_REFINERY                                                          :Raffinerie de sucre
+STR_IND_SUPERMARKET                                                             :Supermarché
+STR_IND_TEXTILE_MILL                                                            :Usine Textile
+STR_INFO_AVAILABILITY_FROM                                                      :{BLACK}Disponible: {YELLOW}{DATE_LONG}
+STR_INFO_AVAILABILITY_FROM_1610                                                 :{BLACK}Disponible: {YELLOW}1er Jan 1610
+STR_INFO_AVAILABILITY_FROM_1730                                                 :{BLACK}Disponible: {YELLOW}1er Jan 1730
+STR_INFO_AVAILABILITY_FROM_1762                                                 :{BLACK}Disponible: {YELLOW}1er Jan 1762
+STR_INFO_CLOSE_IF_NO_DELIVERY                                                   :{}{BLACK}Cette industrie va fermer si aucune marchandise n'est livrée avant:{}{WHITE}  {WORD_S} mois
+STR_INFO_LIMIT_REACHED_ENGINEERING_SUPPLIES                                     :{WHITE}N'accepte plus de matériel d'ingénierie{BLACK}{}(Limite Atteinte)
+STR_INFO_LIMIT_REACHED_FARM_SUPPLIES                                            :{WHITE}N'accepte plus de matériel agricole{BLACK}{}(Limite Atteinte)
+STR_INFO_LIMIT_REACHED_MANUFACTURING_SUPPLIES                                   :{WHITE}N'accepte plus de fourniture industrielle{BLACK}{}(Limite Atteinte)
+STR_INFO_MAX_STOCKPILE                                                          :{BLACK} (max 800)
+STR_INFO_MIGHT_CLOSE                                                            :{}{BLACK}Cette industrie va fermer si aucune marchandise n'est livrée avant:{}{YELLOW}  {WORD_S} mois
+STR_INFO_NO_CARGO_DELIVERED                                                     :{}{RED}Aucune marchandise n'a été livrée depuis {POP_WORD}{POP_WORD}{WORD_S} mois. Cette industrie va bientôt fermer. {}
+STR_INFO_PRODUCTION_3PER8                                                       :{BLACK}Marchandises produites:{}  3t pour 8t de fournitures industrielle livrées{}  5t pour 8t de sucre livrées{}{}Augmente par tranche de 8t lorsque les deux marchandises sont livrées à un mois d'intervalle.
+STR_INFO_PRODUCTION_MACHINE_SHOP                                                :{BLACK}Construit et entretien des machines{}{}8t produites pour 8t livrées.
+STR_PARAM_DESC_DEBUG                                                            :Seulement pour les développeurs
+STR_PARAM_DESC_ECONOMIES                                                        :Lorsque ce sera terminé, FIRS permettra de choisir son économie. Les marchandises et les industries varient en fonction de l'économie choisie. Le paiement du transport est aussi différent dans chaque économie {}{}{SILVER}Actuellement une seule économie est disponible :)
+STR_PARAM_DESC_NEVER_CLOSE                                                      :Par défaut, les industries primaires ne ferment jamais.{}{}Si ce paramètre est activé, les industries primaires fermeront quand leur production tombe à un niveau faible (le niveau varie pour chaque type d'industrie). {SILVER}Necessite 'Permettre la baisse de production des industries primaires' activé.
+STR_PARAM_DESC_NO_OPENINGS                                                      :{SILVER}Ce paramètre n'est pas encore implémenté. {BLACK}Lorsqu'il sera fini il fournira un mode 'Bac à sable' pour l'utiliser avec les scenarios.
+STR_PARAM_DESC_PRIMARY_PRODUCTION_DECREASE                                      :Par défaut, la production des industries primaires ne diminue jamais.{}{}Si ce paramètre est activé, il y a un chance que la production diminuera si du matériel n'est pas livré dans le mois en cours. Plus le niveau de production est élevé, plus il y a de chance de voir la production diminuer.
+STR_PARAM_DESC_SECONDARY_NEVER_CLOSE                                            :Par défaut, les industries secondaires ne ferment jamais.{}{}Si ce paramètre est activé, les industries secondaires peuvent fermer si aucune marchandises n'est transportée pendant un grand moment.
+STR_PARAM_NAME_DEBUG                                                            :Affiche les textes de débogage
+STR_PARAM_NAME_ECONOMIES                                                        :Economie
+STR_PARAM_NAME_NEVER_CLOSE                                                      :Permettre aux industries primaires de fermer
+STR_PARAM_NAME_NO_OPENINGS                                                      :Empêcher la construction des industries (pas encore fini)
+STR_PARAM_NAME_PRIMARY_PRODUCTION_DECREASE                                      :Permettre la baisse de production des industries primaires
+STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            :Permettre aux industries secondaire de fermer
+STR_PARAM_VALUE_ECONOMIES_TEST_ECONOMY                                          :Economie de test

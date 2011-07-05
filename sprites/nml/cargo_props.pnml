@@ -541,7 +541,7 @@ item(FEAT_CARGOS, cargo_sugarcane, 12) {
 		town_growth_multiplier: 1.0;
 		callback_flags: 0;
 		units_of_cargo: 80;
-		items_of_cargo: string(STR_GENERIC_DC03);
+		items_of_cargo: string(STR_CARGO_UNITS_SUGAR_BEET);
 	}
 }
 
@@ -562,7 +562,7 @@ item(FEAT_CARGOS, cargo_fuel_oil, 25) {
 		town_growth_multiplier: 1.0;
 		callback_flags: 0;
 		units_of_cargo: 82;
-		items_of_cargo: string(STR_GENERIC_DC36);
+		items_of_cargo: string(STR_CARGO_UNITS_PETROL);
 	}
 }
 
