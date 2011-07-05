@@ -3167,7 +3167,7 @@ tilelayout tilelayout_2624_2 {
 	9, 1: item_FEAT_INDUSTRYTILES_185;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_8, 8) {
+item(FEAT_INDUSTRIES, aluminum_plant, 8) {
 	property {
 		substitute: 0;
 		layouts: [tilelayout_2624_0, tilelayout_2624_1, tilelayout_2624_2];
@@ -3522,7 +3522,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_2682, current_callback) {
 	action2_2630;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_8, 8) {
+item(FEAT_INDUSTRIES, aluminum_plant, 8) {
 	graphics {
 		action2_2682;
 	}
@@ -3788,7 +3788,7 @@ tilelayout tilelayout_2723_2 {
 	2, 1: item_FEAT_INDUSTRYTILES_160;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_26, 26) {
+item(FEAT_INDUSTRIES, arable_farm, 26) {
 	property {
 		substitute: 0;
 		layouts: [tilelayout_2723_0, tilelayout_2723_1, tilelayout_2723_2];
@@ -3999,7 +3999,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_2753, current_callback) {
 	action2_2733;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_26, 26) {
+item(FEAT_INDUSTRIES, arable_farm, 26) {
 	graphics {
 		action2_2753;
 	}
@@ -4157,7 +4157,7 @@ tilelayout tilelayout_2775_0 {
 	3, 2: item_FEAT_INDUSTRYTILES_197;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_5, 5) {
+item(FEAT_INDUSTRIES, bauxite_mine, 5) {
 	property {
 		substitute: 0;
 		layouts: [tilelayout_2775_0];
@@ -4352,7 +4352,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_2802, current_callback) {
 	action2_2782;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_5, 5) {
+item(FEAT_INDUSTRIES, bauxite_mine, 5) {
 	graphics {
 		action2_2802;
 	}
@@ -4939,7 +4939,7 @@ tilelayout tilelayout_2852_3 {
 	4, 2: item_FEAT_INDUSTRYTILES_166;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_46, 46) {
+item(FEAT_INDUSTRIES, biorefinery, 46) {
 	property {
 		substitute: 0;
 		layouts: [tilelayout_2852_0, tilelayout_2852_1, tilelayout_2852_2, tilelayout_2852_3];
@@ -5224,7 +5224,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_2896, current_callback) {
 	action2_2858;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_46, 46) {
+item(FEAT_INDUSTRIES, biorefinery, 46) {
 	graphics {
 		action2_2896;
 	}
@@ -6998,7 +6998,7 @@ tilelayout tilelayout_3019_4 {
 	2, 0: item_FEAT_INDUSTRYTILES_161;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_35, 35) {
+item(FEAT_INDUSTRIES, brewery, 35) {
 	property {
 		substitute: 0;
 		layouts: [tilelayout_3019_0, tilelayout_3019_1, tilelayout_3019_2, tilelayout_3019_3, tilelayout_3019_4];
@@ -7337,7 +7337,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3074, current_callback) {
 	action2_3027;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_35, 35) {
+item(FEAT_INDUSTRIES, brewery, 35) {
 	graphics {
 		action2_3074;
 	}
@@ -7934,7 +7934,7 @@ tilelayout tilelayout_3123_2 {
 	1, 3: item_FEAT_INDUSTRYTILES_229;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_45, 45) {
+item(FEAT_INDUSTRIES, brick_works, 45) {
 	property {
 		substitute: 0;
 		layouts: [tilelayout_3123_0, tilelayout_3123_1, tilelayout_3123_2];
@@ -8298,7 +8298,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3183, current_callback) {
 	action2_3131;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_45, 45) {
+item(FEAT_INDUSTRIES, brick_works, 45) {
 	graphics {
 		action2_3183;
 	}
@@ -8583,7 +8583,7 @@ tilelayout tilelayout_3228_1 {
 	1, 0: item_FEAT_INDUSTRYTILES_164;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_63, 63) {
+item(FEAT_INDUSTRIES, builders_yard, 63) {
 	property {
 		substitute: 0;
 		layouts: [tilelayout_3228_0, tilelayout_3228_1];
@@ -8658,7 +8658,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3237, current_callback) {
 	action2_3229;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_63, 63) {
+item(FEAT_INDUSTRIES, builders_yard, 63) {
 	graphics {
 		action2_3237;
 	}
@@ -10905,7 +10905,7 @@ tilelayout tilelayout_3493_1 {
 	6, 4: item_FEAT_INDUSTRYTILES_189;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_44, 44) {
+item(FEAT_INDUSTRIES, clay_pit, 44) {
 	property {
 		substitute: 0;
 		layouts: [tilelayout_3493_0, tilelayout_3493_1];
@@ -11101,7 +11101,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3520, current_callback) {
 	action2_3500;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_44, 44) {
+item(FEAT_INDUSTRIES, clay_pit, 44) {
 	graphics {
 		action2_3520;
 	}
@@ -11875,7 +11875,7 @@ tilelayout tilelayout_3580_4 {
 	6, 2: item_FEAT_INDUSTRYTILES_230;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_43, 43) {
+item(FEAT_INDUSTRIES, cement_plant, 43) {
 	property {
 		substitute: 0;
 		layouts: [tilelayout_3580_0, tilelayout_3580_1, tilelayout_3580_2, tilelayout_3580_3, tilelayout_3580_4];
@@ -12239,13 +12239,13 @@ switch(FEAT_INDUSTRIES, SELF, action2_3640, current_callback) {
 	action2_3588;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_43, 43) {
+item(FEAT_INDUSTRIES, cement_plant, 43) {
 	graphics {
 		action2_3640;
 	}
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_0, 0) {
+item(FEAT_INDUSTRIES, coal_mine, 0) {
 	property {
 		substitute: 0;
 		override: 0;
@@ -12443,7 +12443,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3672, current_callback) {
 	action2_3652;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_0, 0) {
+item(FEAT_INDUSTRIES, coal_mine, 0) {
 	graphics {
 		action2_3672;
 	}
@@ -12825,7 +12825,7 @@ tilelayout tilelayout_3723_2 {
 	2, 3: item_FEAT_INDUSTRYTILES_180;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_28, 28) {
+item(FEAT_INDUSTRIES, diary_farm, 28) {
 	property {
 		substitute: 0;
 		layouts: [tilelayout_3723_0, tilelayout_3723_1, tilelayout_3723_2];
@@ -13026,7 +13026,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3751, current_callback) {
 	action2_3731;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_28, 28) {
+item(FEAT_INDUSTRIES, diary_farm, 28) {
 	graphics {
 		action2_3751;
 	}
@@ -14549,7 +14549,7 @@ tilelayout tilelayout_3883_6 {
 	3, 1: item_FEAT_INDUSTRYTILES_181;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_36, 36) {
+item(FEAT_INDUSTRIES, diary, 36) {
 	property {
 		substitute: 0;
 		layouts: [tilelayout_3883_0, tilelayout_3883_1, tilelayout_3883_2, tilelayout_3883_3, tilelayout_3883_4, tilelayout_3883_5, tilelayout_3883_6];
@@ -14879,7 +14879,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3936, current_callback) {
 	action2_3889;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_36, 36) {
+item(FEAT_INDUSTRIES, diary, 36) {
 	graphics {
 		action2_3936;
 	}
@@ -14940,7 +14940,7 @@ tilelayout tilelayout_3945_0 {
 	2, 4: 255;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_20, 20) {
+item(FEAT_INDUSTRIES, dredging_site, 20) {
 	property {
 		substitute: 0;
 		layouts: [tilelayout_3945_0];
@@ -15146,7 +15146,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3974, current_callback) {
 	action2_3954;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_20, 20) {
+item(FEAT_INDUSTRIES, dredging_site, 20) {
 	graphics {
 		action2_3974;
 	}
@@ -15906,7 +15906,7 @@ tilelayout tilelayout_4029_6 {
 	5, 6: item_FEAT_INDUSTRYTILES_163;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_40, 40) {
+item(FEAT_INDUSTRIES, fertilizer_plant, 40) {
 	property {
 		substitute: 0;
 		layouts: [tilelayout_4029_0, tilelayout_4029_1, tilelayout_4029_2, tilelayout_4029_3, tilelayout_4029_4, tilelayout_4029_5, tilelayout_4029_6];
@@ -16185,7 +16185,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_4072, current_callback) {
 	action2_4034;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_40, 40) {
+item(FEAT_INDUSTRIES, fertilizer_plant, 40) {
 	graphics {
 		action2_4072;
 	}
@@ -16531,7 +16531,7 @@ tilelayout tilelayout_4091_3 {
 	5, 7: 255;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_32, 32) {
+item(FEAT_INDUSTRIES, fishing_grounds, 32) {
 	property {
 		substitute: 5;
 		layouts: [tilelayout_4091_0, tilelayout_4091_1, tilelayout_4091_2, tilelayout_4091_3];
@@ -16623,7 +16623,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_4103, current_callback) {
 	action2_4098;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_32, 32) {
+item(FEAT_INDUSTRIES, fishing_grounds, 32) {
 	graphics {
 		action2_4103;
 	}
@@ -17628,7 +17628,7 @@ tilelayout tilelayout_4175_4 {
 	5, 3: 255;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_31, 31) {
+item(FEAT_INDUSTRIES, fishing_harbour, 31) {
 	property {
 		substitute: 0;
 		layouts: [tilelayout_4175_0, tilelayout_4175_1, tilelayout_4175_2, tilelayout_4175_3, tilelayout_4175_4];
@@ -17962,7 +17962,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_4229, current_callback) {
 	action2_4182;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_31, 31) {
+item(FEAT_INDUSTRIES, fishing_harbour, 31) {
 	graphics {
 		action2_4229;
 	}
@@ -18067,7 +18067,7 @@ tilelayout tilelayout_4249_0 {
 	0, 0: item_FEAT_INDUSTRYTILES_194;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_59, 59) {
+item(FEAT_INDUSTRIES, food_market, 59) {
 	property {
 		substitute: 0;
 		layouts: [tilelayout_4249_0];
@@ -18121,7 +18121,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_4254, current_callback) {
 	action2_4250;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_59, 59) {
+item(FEAT_INDUSTRIES, food_market, 59) {
 	graphics {
 		action2_4254;
 	}
@@ -23584,7 +23584,7 @@ tilelayout tilelayout_4478_2 {
 	5, 2: item_FEAT_INDUSTRYTILES_205;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_11, 11) {
+item(FEAT_INDUSTRIES, oil_wells, 11) {
 	property {
 		substitute: 0;
 		layouts: [tilelayout_4478_0, tilelayout_4478_1, tilelayout_4478_2];
@@ -23778,7 +23778,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_4506, current_callback) {
 	action2_4486;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_11, 11) {
+item(FEAT_INDUSTRIES, oil_wells, 11) {
 	graphics {
 		action2_4506;
 	}
@@ -24063,7 +24063,7 @@ tilelayout tilelayout_4551_0 {
 	1, 0: item_FEAT_INDUSTRYTILES_209;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_6, 6) {
+item(FEAT_INDUSTRIES, smithy_forge, 6) {
 	property {
 		substitute: 0;
 		layouts: [tilelayout_4551_0];
@@ -24344,7 +24344,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_4594, current_callback) {
 	action2_4556;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_6, 6) {
+item(FEAT_INDUSTRIES, smithy_forge, 6) {
 	graphics {
 		action2_4594;
 	}
@@ -30587,7 +30587,7 @@ tilelayout tilelayout_4910_4 {
 	2, 2: item_FEAT_INDUSTRYTILES_184;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_13, 13) {
+item(FEAT_INDUSTRIES, furniture_factory, 13) {
 	property {
 		substitute: 0;
 		layouts: [tilelayout_4910_0, tilelayout_4910_1, tilelayout_4910_2, tilelayout_4910_3, tilelayout_4910_4];
@@ -30912,7 +30912,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_4962, current_callback) {
 	action2_4915;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_13, 13) {
+item(FEAT_INDUSTRIES, furniture_factory, 13) {
 	graphics {
 		action2_4962;
 	}
@@ -31354,7 +31354,7 @@ tilelayout tilelayout_5017_2 {
 	3, 2: item_FEAT_INDUSTRYTILES_178;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_22, 22) {
+item(FEAT_INDUSTRIES, glass_works, 22) {
 	property {
 		substitute: 0;
 		layouts: [tilelayout_5017_0, tilelayout_5017_1, tilelayout_5017_2];
@@ -31709,7 +31709,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_5075, current_callback) {
 	action2_5023;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_22, 22) {
+item(FEAT_INDUSTRIES, glass_works, 22) {
 	graphics {
 		action2_5075;
 	}
@@ -32518,7 +32518,7 @@ tilelayout tilelayout_5175_5 {
 	0, 0: item_FEAT_INDUSTRYTILES_182;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_34, 34) {
+item(FEAT_INDUSTRIES, grain_mill, 34) {
 	property {
 		substitute: 0;
 		layouts: [tilelayout_5175_0, tilelayout_5175_1, tilelayout_5175_2, tilelayout_5175_3, tilelayout_5175_4, tilelayout_5175_5];
@@ -32862,7 +32862,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_5231, current_callback) {
 	action2_5184;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_34, 34) {
+item(FEAT_INDUSTRIES, grain_mill, 34) {
 	graphics {
 		action2_5231;
 	}
@@ -32967,7 +32967,7 @@ tilelayout tilelayout_5251_0 {
 	0, 0: item_FEAT_INDUSTRYTILES_218;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_57, 57) {
+item(FEAT_INDUSTRIES, hardware_store, 57) {
 	property {
 		substitute: 0;
 		layouts: [tilelayout_5251_0];
@@ -33021,7 +33021,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_5256, current_callback) {
 	action2_5252;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_57, 57) {
+item(FEAT_INDUSTRIES, hardware_store, 57) {
 	graphics {
 		action2_5256;
 	}
@@ -33147,7 +33147,7 @@ tilelayout tilelayout_5273_0 {
 	1, 1: item_FEAT_INDUSTRYTILES_217;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_58, 58) {
+item(FEAT_INDUSTRIES, hotel, 58) {
 	property {
 		substitute: 0;
 		layouts: [tilelayout_5273_0];
@@ -33201,13 +33201,13 @@ switch(FEAT_INDUSTRIES, SELF, action2_5278, current_callback) {
 	action2_5274;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_58, 58) {
+item(FEAT_INDUSTRIES, hotel, 58) {
 	graphics {
 		action2_5278;
 	}
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_4, 4) {
+item(FEAT_INDUSTRIES, oil_refinery, 4) {
 	property {
 		substitute: 18;
 		override: 18;
@@ -33389,7 +33389,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_5307, current_callback) {
 	action2_5287;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_4, 4) {
+item(FEAT_INDUSTRIES, oil_refinery, 4) {
 	graphics {
 		action2_5307;
 	}
@@ -35329,7 +35329,7 @@ tilelayout tilelayout_5446_0 {
 	2, 2: item_FEAT_INDUSTRYTILES_199;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_21, 21) {
+item(FEAT_INDUSTRIES, iron_works, 21) {
 	property {
 		substitute: 0;
 		layouts: [tilelayout_5446_0];
@@ -35689,7 +35689,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_5505, current_callback) {
 	action2_5453;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_21, 21) {
+item(FEAT_INDUSTRIES, iron_works, 21) {
 	graphics {
 		action2_5505;
 	}
@@ -35992,7 +35992,7 @@ tilelayout tilelayout_5544_2 {
 	4, 3: item_FEAT_INDUSTRYTILES_193;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_25, 25) {
+item(FEAT_INDUSTRIES, junkyard, 25) {
 	property {
 		substitute: 0;
 		layouts: [tilelayout_5544_0, tilelayout_5544_1, tilelayout_5544_2];
@@ -36178,7 +36178,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_5569, current_callback) {
 	action2_5549;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_25, 25) {
+item(FEAT_INDUSTRIES, junkyard, 25) {
 	graphics {
 		action2_5569;
 	}
@@ -36790,7 +36790,7 @@ tilelayout tilelayout_5639_2 {
 	1, 3: item_FEAT_INDUSTRYTILES_191;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_1, 1) {
+item(FEAT_INDUSTRIES, lime_kiln, 1) {
 	property {
 		substitute: 0;
 		layouts: [tilelayout_5639_0, tilelayout_5639_1, tilelayout_5639_2];
@@ -37124,7 +37124,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_5693, current_callback) {
 	action2_5646;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_1, 1) {
+item(FEAT_INDUSTRIES, lime_kiln, 1) {
 	graphics {
 		action2_5693;
 	}
@@ -37463,7 +37463,7 @@ tilelayout tilelayout_5733_3 {
 	4, 1: item_FEAT_INDUSTRYTILES_187;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_41, 41) {
+item(FEAT_INDUSTRIES, lumber_yard, 41) {
 	property {
 		substitute: 0;
 		layouts: [tilelayout_5733_0, tilelayout_5733_1, tilelayout_5733_2, tilelayout_5733_3];
@@ -37787,7 +37787,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_5785, current_callback) {
 	action2_5738;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_41, 41) {
+item(FEAT_INDUSTRIES, lumber_yard, 41) {
 	graphics {
 		action2_5785;
 	}
@@ -41196,7 +41196,7 @@ tilelayout tilelayout_6026_4 {
 	2, 5: item_FEAT_INDUSTRYTILES_186;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_38, 38) {
+item(FEAT_INDUSTRIES, machine_shop, 38) {
 	property {
 		substitute: 0;
 		layouts: [tilelayout_6026_0, tilelayout_6026_1, tilelayout_6026_2, tilelayout_6026_3, tilelayout_6026_4];
@@ -41475,7 +41475,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6069, current_callback) {
 	action2_6031;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_38, 38) {
+item(FEAT_INDUSTRIES, machine_shop, 38) {
 	graphics {
 		action2_6069;
 	}
@@ -42272,7 +42272,7 @@ tilelayout tilelayout_6166_0 {
 	1, 0: item_FEAT_INDUSTRYTILES_224;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_37, 37) {
+item(FEAT_INDUSTRIES, stockyard, 37) {
 	property {
 		substitute: 0;
 		layouts: [tilelayout_6166_0];
@@ -42612,7 +42612,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6221, current_callback) {
 	action2_6174;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_37, 37) {
+item(FEAT_INDUSTRIES, stockyard, 37) {
 	graphics {
 		action2_6221;
 	}
@@ -44546,7 +44546,7 @@ tilelayout tilelayout_6357_1 {
 	2, 2: item_FEAT_INDUSTRYTILES_188;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_9, 9) {
+item(FEAT_INDUSTRIES, metal_foundry, 9) {
 	property {
 		substitute: 0;
 		layouts: [tilelayout_6357_0, tilelayout_6357_1];
@@ -44825,7 +44825,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6400, current_callback) {
 	action2_6362;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_9, 9) {
+item(FEAT_INDUSTRIES, metal_foundry, 9) {
 	graphics {
 		action2_6400;
 	}
@@ -45152,7 +45152,7 @@ tilelayout tilelayout_6446_2 {
 	3, 2: item_FEAT_INDUSTRYTILES_190;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_29, 29) {
+item(FEAT_INDUSTRIES, mixed_farm, 29) {
 	property {
 		substitute: 0;
 		layouts: [tilelayout_6446_0, tilelayout_6446_1, tilelayout_6446_2];
@@ -45358,13 +45358,13 @@ switch(FEAT_INDUSTRIES, SELF, action2_6475, current_callback) {
 	action2_6455;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_29, 29) {
+item(FEAT_INDUSTRIES, mixed_farm, 29) {
 	graphics {
 		action2_6475;
 	}
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_16, 16) {
+item(FEAT_INDUSTRIES, lime_kiln6, 16) {
 	property {
 		substitute: 5;
 		override: 5;
@@ -45546,7 +45546,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6503, current_callback) {
 	action2_6483;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_16, 16) {
+item(FEAT_INDUSTRIES, lime_kiln6, 16) {
 	graphics {
 		action2_6503;
 	}
@@ -45588,7 +45588,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_28, 28) {
 	}
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_17, 17) {
+item(FEAT_INDUSTRIES, lime_kiln7, 17) {
 	property {
 		substitute: 4;
 		override: 4;
@@ -45867,7 +45867,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6554, current_callback) {
 	action2_6516;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_17, 17) {
+item(FEAT_INDUSTRIES, lime_kiln7, 17) {
 	graphics {
 		action2_6554;
 	}
@@ -46154,7 +46154,7 @@ tilelayout tilelayout_6594_3 {
 	6, 0: item_FEAT_INDUSTRYTILES_215;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_15, 15) {
+item(FEAT_INDUSTRIES, lime_kiln5, 15) {
 	property {
 		substitute: 0;
 		layouts: [tilelayout_6594_0, tilelayout_6594_1, tilelayout_6594_2, tilelayout_6594_3];
@@ -46335,13 +46335,13 @@ switch(FEAT_INDUSTRIES, SELF, action2_6619, current_callback) {
 	action2_6599;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_15, 15) {
+item(FEAT_INDUSTRIES, lime_kiln5, 15) {
 	graphics {
 		action2_6619;
 	}
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_14, 14) {
+item(FEAT_INDUSTRIES, lime_kiln4, 14) {
 	property {
 		substitute: 14;
 		override: 14;
@@ -46690,7 +46690,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6680, current_callback) {
 	action2_6628;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_14, 14) {
+item(FEAT_INDUSTRIES, lime_kiln4, 14) {
 	graphics {
 		action2_6680;
 	}
@@ -46978,7 +46978,7 @@ tilelayout tilelayout_6726_1 {
 	1, 0: item_FEAT_INDUSTRYTILES_203;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_60, 60) {
+item(FEAT_INDUSTRIES, petrol_pump, 60) {
 	property {
 		substitute: 0;
 		layouts: [tilelayout_6726_0, tilelayout_6726_1];
@@ -47036,7 +47036,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6732, current_callback) {
 	action2_6727;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_60, 60) {
+item(FEAT_INDUSTRIES, petrol_pump, 60) {
 	graphics {
 		action2_6732;
 	}
@@ -47763,7 +47763,7 @@ tilelayout tilelayout_6814_2 {
 	2, 4: item_FEAT_INDUSTRYTILES_176;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_18, 18) {
+item(FEAT_INDUSTRIES, plastics_plant, 18) {
 	property {
 		substitute: 0;
 		layouts: [tilelayout_6814_0, tilelayout_6814_1, tilelayout_6814_2];
@@ -48048,7 +48048,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6858, current_callback) {
 	action2_6820;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_18, 18) {
+item(FEAT_INDUSTRIES, plastics_plant, 18) {
 	graphics {
 		action2_6858;
 	}
@@ -50295,7 +50295,7 @@ tilelayout tilelayout_7114_1 {
 	6, 4: item_FEAT_INDUSTRYTILES_177;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_10, 10) {
+item(FEAT_INDUSTRIES, quarry, 10) {
 	property {
 		substitute: 0;
 		layouts: [tilelayout_7114_0, tilelayout_7114_1];
@@ -50496,7 +50496,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_7142, current_callback) {
 	action2_7122;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_10, 10) {
+item(FEAT_INDUSTRIES, quarry, 10) {
 	graphics {
 		action2_7142;
 	}
@@ -50569,7 +50569,7 @@ tilelayout tilelayout_7154_0 {
 	1, 1: item_FEAT_INDUSTRYTILES_202;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_24, 24) {
+item(FEAT_INDUSTRIES, recycling_depot, 24) {
 	property {
 		substitute: 0;
 		layouts: [tilelayout_7154_0];
@@ -50658,7 +50658,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_7166, current_callback) {
 	action2_7156;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_24, 24) {
+item(FEAT_INDUSTRIES, recycling_depot, 24) {
 	graphics {
 		action2_7166;
 	}
@@ -50899,7 +50899,7 @@ tilelayout tilelayout_7193_0 {
 	4, 4: item_FEAT_INDUSTRYTILES_201;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_23, 23) {
+item(FEAT_INDUSTRIES, recycling_plant, 23) {
 	property {
 		substitute: 0;
 		layouts: [tilelayout_7193_0];
@@ -51197,13 +51197,13 @@ switch(FEAT_INDUSTRIES, SELF, action2_7239, current_callback) {
 	action2_7201;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_23, 23) {
+item(FEAT_INDUSTRIES, recycling_plant, 23) {
 	graphics {
 		action2_7239;
 	}
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_12, 12) {
+item(FEAT_INDUSTRIES, lime_kiln2, 12) {
 	property {
 		substitute: 2;
 		override: 2;
@@ -51488,7 +51488,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_7287, current_callback) {
 	action2_7249;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_12, 12) {
+item(FEAT_INDUSTRIES, lime_kiln2, 12) {
 	graphics {
 		action2_7287;
 	}
@@ -52078,7 +52078,7 @@ tilelayout tilelayout_7376_1 {
 	2, 2: item_FEAT_INDUSTRYTILES_192;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_27, 27) {
+item(FEAT_INDUSTRIES, sheep_farm, 27) {
 	property {
 		substitute: 0;
 		layouts: [tilelayout_7376_0, tilelayout_7376_1];
@@ -52279,7 +52279,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_7404, current_callback) {
 	action2_7384;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_27, 27) {
+item(FEAT_INDUSTRIES, sheep_farm, 27) {
 	graphics {
 		action2_7404;
 	}
@@ -52896,7 +52896,7 @@ tilelayout tilelayout_7501_1 {
 	1, 2: item_FEAT_INDUSTRYTILES_214;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_19, 19) {
+item(FEAT_INDUSTRIES, sugar_refinery, 19) {
 	property {
 		substitute: 0;
 		layouts: [tilelayout_7501_0, tilelayout_7501_1];
@@ -53226,7 +53226,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_7554, current_callback) {
 	action2_7507;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_19, 19) {
+item(FEAT_INDUSTRIES, sugar_refinery, 19) {
 	graphics {
 		action2_7554;
 	}
@@ -54465,7 +54465,7 @@ tilelayout tilelayout_7656_5 {
 	2, 2: item_FEAT_INDUSTRYTILES_183;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_42, 42) {
+item(FEAT_INDUSTRIES, textile_mill, 42) {
 	property {
 		substitute: 0;
 		layouts: [tilelayout_7656_0, tilelayout_7656_1, tilelayout_7656_2, tilelayout_7656_3, tilelayout_7656_4, tilelayout_7656_5];
@@ -54800,7 +54800,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_7710, current_callback) {
 	action2_7663;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_42, 42) {
+item(FEAT_INDUSTRIES, textile_mill, 42) {
 	graphics {
 		action2_7710;
 	}
