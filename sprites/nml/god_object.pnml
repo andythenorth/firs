@@ -117,42 +117,42 @@ spritelayout action2_2346 {
 	}
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2347, var[0x60, 24, 15, 17]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2347, nearby_tile_class(1, 1)) {
 	8: return 1025;
 	return 1024;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2348, var[0x60, 24, 15, 16]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2348, nearby_tile_class(0, 1)) {
 	8: return 1025;
 	action2_2347;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2349, var[0x60, 24, 15, 31]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2349, nearby_tile_class(-1, 1)) {
 	8: return 1025;
 	action2_2348;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2350, var[0x60, 24, 15, 1]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2350, nearby_tile_class(1, 0)) {
 	8: return 1025;
 	action2_2349;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2351, var[0x60, 24, 15, 15]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2351, nearby_tile_class(-1, 0)) {
 	8: return 1025;
 	action2_2350;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2352, var[0x60, 24, 15, 241]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2352, nearby_tile_class(1, -1)) {
 	8: return 1025;
 	action2_2351;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2353, var[0x60, 24, 15, 240]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2353, nearby_tile_class(0, -1)) {
 	8: return 1025;
 	action2_2352;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2354, var[0x60, 24, 15, 255]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2354, nearby_tile_class(-1, -1)) {
 	8: return 1025;
 	action2_2353;
 }
@@ -222,42 +222,42 @@ spritelayout action2_2365 {
 	}
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2366, var[0x60, 24, 15, 17]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2366, nearby_tile_class(1, 1)) {
 	8: return 1025;
 	return 1024;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2367, var[0x60, 24, 15, 16]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2367, nearby_tile_class(0, 1)) {
 	8: return 1025;
 	action2_2366;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2368, var[0x60, 24, 15, 31]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2368, nearby_tile_class(-1, 1)) {
 	8: return 1025;
 	action2_2367;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2369, var[0x60, 24, 15, 1]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2369, nearby_tile_class(1, 0)) {
 	8: return 1025;
 	action2_2368;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2370, var[0x60, 24, 15, 15]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2370, nearby_tile_class(-1, 0)) {
 	8: return 1025;
 	action2_2369;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2371, var[0x60, 24, 15, 241]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2371, nearby_tile_class(1, -1)) {
 	8: return 1025;
 	action2_2370;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2372, var[0x60, 24, 15, 240]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2372, nearby_tile_class(0, -1)) {
 	8: return 1025;
 	action2_2371;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2373, var[0x60, 24, 15, 255]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2373, nearby_tile_class(-1, -1)) {
 	8: return 1025;
 	action2_2372;
 }
@@ -297,42 +297,42 @@ spritelayout action2_2378 {
 	}
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2379, var[0x60, 24, 15, 17]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2379, nearby_tile_class(1, 1)) {
 	8: return 1025;
 	return 1024;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2380, var[0x60, 24, 15, 16]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2380, nearby_tile_class(0, 1)) {
 	8: return 1025;
 	action2_2379;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2381, var[0x60, 24, 15, 31]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2381, nearby_tile_class(-1, 1)) {
 	8: return 1025;
 	action2_2380;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2382, var[0x60, 24, 15, 1]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2382, nearby_tile_class(1, 0)) {
 	8: return 1025;
 	action2_2381;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2383, var[0x60, 24, 15, 15]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2383, nearby_tile_class(-1, 0)) {
 	8: return 1025;
 	action2_2382;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2384, var[0x60, 24, 15, 241]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2384, nearby_tile_class(1, -1)) {
 	8: return 1025;
 	action2_2383;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2385, var[0x60, 24, 15, 240]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2385, nearby_tile_class(0, -1)) {
 	8: return 1025;
 	action2_2384;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2386, var[0x60, 24, 15, 255]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2386, nearby_tile_class(-1, -1)) {
 	8: return 1025;
 	action2_2385;
 }
@@ -402,42 +402,42 @@ spritelayout action2_2397 {
 	}
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2398, var[0x60, 24, 15, 17]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2398, nearby_tile_class(1, 1)) {
 	8: return 1025;
 	return 1024;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2399, var[0x60, 24, 15, 16]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2399, nearby_tile_class(0, 1)) {
 	8: return 1025;
 	action2_2398;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2400, var[0x60, 24, 15, 31]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2400, nearby_tile_class(-1, 1)) {
 	8: return 1025;
 	action2_2399;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2401, var[0x60, 24, 15, 1]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2401, nearby_tile_class(1, 0)) {
 	8: return 1025;
 	action2_2400;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2402, var[0x60, 24, 15, 15]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2402, nearby_tile_class(-1, 0)) {
 	8: return 1025;
 	action2_2401;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2403, var[0x60, 24, 15, 241]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2403, nearby_tile_class(1, -1)) {
 	8: return 1025;
 	action2_2402;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2404, var[0x60, 24, 15, 240]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2404, nearby_tile_class(0, -1)) {
 	8: return 1025;
 	action2_2403;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2405, var[0x60, 24, 15, 255]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2405, nearby_tile_class(-1, -1)) {
 	8: return 1025;
 	action2_2404;
 }
@@ -477,42 +477,42 @@ spritelayout action2_2410 {
 	}
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2411, var[0x60, 24, 15, 17]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2411, nearby_tile_class(1, 1)) {
 	8: return 1025;
 	return 1024;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2412, var[0x60, 24, 15, 16]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2412, nearby_tile_class(0, 1)) {
 	8: return 1025;
 	action2_2411;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2413, var[0x60, 24, 15, 31]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2413, nearby_tile_class(-1, 1)) {
 	8: return 1025;
 	action2_2412;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2414, var[0x60, 24, 15, 1]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2414, nearby_tile_class(1, 0)) {
 	8: return 1025;
 	action2_2413;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2415, var[0x60, 24, 15, 15]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2415, nearby_tile_class(-1, 0)) {
 	8: return 1025;
 	action2_2414;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2416, var[0x60, 24, 15, 241]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2416, nearby_tile_class(1, -1)) {
 	8: return 1025;
 	action2_2415;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2417, var[0x60, 24, 15, 240]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2417, nearby_tile_class(0, -1)) {
 	8: return 1025;
 	action2_2416;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2418, var[0x60, 24, 15, 255]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2418, nearby_tile_class(-1, -1)) {
 	8: return 1025;
 	action2_2417;
 }
@@ -582,42 +582,42 @@ spritelayout action2_2429 {
 	}
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2430, var[0x60, 24, 15, 17]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2430, nearby_tile_class(1, 1)) {
 	8: return 1025;
 	return 1024;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2431, var[0x60, 24, 15, 16]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2431, nearby_tile_class(0, 1)) {
 	8: return 1025;
 	action2_2430;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2432, var[0x60, 24, 15, 31]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2432, nearby_tile_class(-1, 1)) {
 	8: return 1025;
 	action2_2431;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2433, var[0x60, 24, 15, 1]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2433, nearby_tile_class(1, 0)) {
 	8: return 1025;
 	action2_2432;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2434, var[0x60, 24, 15, 15]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2434, nearby_tile_class(-1, 0)) {
 	8: return 1025;
 	action2_2433;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2435, var[0x60, 24, 15, 241]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2435, nearby_tile_class(1, -1)) {
 	8: return 1025;
 	action2_2434;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2436, var[0x60, 24, 15, 240]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2436, nearby_tile_class(0, -1)) {
 	8: return 1025;
 	action2_2435;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2437, var[0x60, 24, 15, 255]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2437, nearby_tile_class(-1, -1)) {
 	8: return 1025;
 	action2_2436;
 }
@@ -657,42 +657,42 @@ spritelayout action2_2442 {
 	}
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2443, var[0x60, 24, 15, 17]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2443, nearby_tile_class(1, 1)) {
 	8: return 1025;
 	return 1024;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2444, var[0x60, 24, 15, 16]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2444, nearby_tile_class(0, 1)) {
 	8: return 1025;
 	action2_2443;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2445, var[0x60, 24, 15, 31]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2445, nearby_tile_class(-1, 1)) {
 	8: return 1025;
 	action2_2444;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2446, var[0x60, 24, 15, 1]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2446, nearby_tile_class(1, 0)) {
 	8: return 1025;
 	action2_2445;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2447, var[0x60, 24, 15, 15]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2447, nearby_tile_class(-1, 0)) {
 	8: return 1025;
 	action2_2446;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2448, var[0x60, 24, 15, 241]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2448, nearby_tile_class(1, -1)) {
 	8: return 1025;
 	action2_2447;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2449, var[0x60, 24, 15, 240]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2449, nearby_tile_class(0, -1)) {
 	8: return 1025;
 	action2_2448;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2450, var[0x60, 24, 15, 255]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2450, nearby_tile_class(-1, -1)) {
 	8: return 1025;
 	action2_2449;
 }
@@ -3010,42 +3010,42 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_2609, terrain_type) {
 	action2_2506;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2610, var[0x60, 24, 15, 17]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2610, nearby_tile_class(1, 1)) {
 	8: return 1025;
 	return 1024;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2611, var[0x60, 24, 15, 16]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2611, nearby_tile_class(0, 1)) {
 	8: return 1025;
 	action2_2610;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2612, var[0x60, 24, 15, 31]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2612, nearby_tile_class(-1, 1)) {
 	8: return 1025;
 	action2_2611;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2613, var[0x60, 24, 15, 1]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2613, nearby_tile_class(1, 0)) {
 	8: return 1025;
 	action2_2612;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2614, var[0x60, 24, 15, 15]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2614, nearby_tile_class(-1, 0)) {
 	8: return 1025;
 	action2_2613;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2615, var[0x60, 24, 15, 241]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2615, nearby_tile_class(1, -1)) {
 	8: return 1025;
 	action2_2614;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2616, var[0x60, 24, 15, 240]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2616, nearby_tile_class(0, -1)) {
 	8: return 1025;
 	action2_2615;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2617, var[0x60, 24, 15, 255]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2617, nearby_tile_class(-1, -1)) {
 	8: return 1025;
 	action2_2616;
 }
@@ -3414,7 +3414,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_2668, STORE_PERM((65535 / 2), 0)) {
 	action2_2660;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_2669, (var[0x23, 0, -1] + 1)) {
+switch(FEAT_INDUSTRIES, SELF, action2_2669, (current_date + 1)) {
 	0..702361: return 1;
 	return 0;
 }
@@ -3648,42 +3648,42 @@ switch(FEAT_INDUSTRYTILES, PARENT, action2_2699, layout_num) {
 	action2_2691;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2700, var[0x60, 24, 15, 17]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2700, nearby_tile_class(1, 1)) {
 	8: return 1025;
 	return 1024;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2701, var[0x60, 24, 15, 16]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2701, nearby_tile_class(0, 1)) {
 	8: return 1025;
 	action2_2700;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2702, var[0x60, 24, 15, 31]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2702, nearby_tile_class(-1, 1)) {
 	8: return 1025;
 	action2_2701;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2703, var[0x60, 24, 15, 1]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2703, nearby_tile_class(1, 0)) {
 	8: return 1025;
 	action2_2702;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2704, var[0x60, 24, 15, 15]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2704, nearby_tile_class(-1, 0)) {
 	8: return 1025;
 	action2_2703;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2705, var[0x60, 24, 15, 241]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2705, nearby_tile_class(1, -1)) {
 	8: return 1025;
 	action2_2704;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2706, var[0x60, 24, 15, 240]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2706, nearby_tile_class(0, -1)) {
 	8: return 1025;
 	action2_2705;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2707, var[0x60, 24, 15, 255]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2707, nearby_tile_class(-1, -1)) {
 	8: return 1025;
 	action2_2706;
 }
@@ -3921,7 +3921,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_2744, [STORE_TEMP(LOAD_PERM(0), 256), var[
 	return string(STR_GENERIC_D0B1);
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_2746, (var[0x23, 0, -1] + 1)) {
+switch(FEAT_INDUSTRIES, SELF, action2_2746, (current_date + 1)) {
 	0: return 1;
 	return 0;
 }
@@ -4083,42 +4083,42 @@ switch(FEAT_INDUSTRYTILES, PARENT, action2_2762, layout_num) {
 	action2_2756;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2763, var[0x60, 24, 15, 17]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2763, nearby_tile_class(1, 1)) {
 	8: return 1025;
 	return 1024;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2764, var[0x60, 24, 15, 16]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2764, nearby_tile_class(0, 1)) {
 	8: return 1025;
 	action2_2763;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2765, var[0x60, 24, 15, 31]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2765, nearby_tile_class(-1, 1)) {
 	8: return 1025;
 	action2_2764;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2766, var[0x60, 24, 15, 1]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2766, nearby_tile_class(1, 0)) {
 	8: return 1025;
 	action2_2765;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2767, var[0x60, 24, 15, 15]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2767, nearby_tile_class(-1, 0)) {
 	8: return 1025;
 	action2_2766;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2768, var[0x60, 24, 15, 241]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2768, nearby_tile_class(1, -1)) {
 	8: return 1025;
 	action2_2767;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2769, var[0x60, 24, 15, 240]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2769, nearby_tile_class(0, -1)) {
 	8: return 1025;
 	action2_2768;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2770, var[0x60, 24, 15, 255]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2770, nearby_tile_class(-1, -1)) {
 	8: return 1025;
 	action2_2769;
 }
@@ -4274,7 +4274,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_2793, [STORE_TEMP(LOAD_PERM(0), 256), var[
 	return string(STR_GENERIC_D0B0);
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_2795, (var[0x23, 0, -1] + 1)) {
+switch(FEAT_INDUSTRIES, SELF, action2_2795, (current_date + 1)) {
 	0..702361: return 1;
 	return 0;
 }
@@ -4793,42 +4793,42 @@ switch(FEAT_INDUSTRYTILES, PARENT, action2_2837, layout_num) {
 	action2_2815;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2838, var[0x60, 24, 15, 17]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2838, nearby_tile_class(1, 1)) {
 	8: return 1025;
 	return 1024;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2839, var[0x60, 24, 15, 16]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2839, nearby_tile_class(0, 1)) {
 	8: return 1025;
 	action2_2838;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2840, var[0x60, 24, 15, 31]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2840, nearby_tile_class(-1, 1)) {
 	8: return 1025;
 	action2_2839;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2841, var[0x60, 24, 15, 1]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2841, nearby_tile_class(1, 0)) {
 	8: return 1025;
 	action2_2840;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2842, var[0x60, 24, 15, 15]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2842, nearby_tile_class(-1, 0)) {
 	8: return 1025;
 	action2_2841;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2843, var[0x60, 24, 15, 241]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2843, nearby_tile_class(1, -1)) {
 	8: return 1025;
 	action2_2842;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2844, var[0x60, 24, 15, 240]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2844, nearby_tile_class(0, -1)) {
 	8: return 1025;
 	action2_2843;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2845, var[0x60, 24, 15, 255]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_2845, nearby_tile_class(-1, -1)) {
 	8: return 1025;
 	action2_2844;
 }
@@ -5116,7 +5116,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_2882, STORE_PERM((65535 / 2), 0)) {
 	action2_2875;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_2883, (var[0x23, 0, -1] + 1)) {
+switch(FEAT_INDUSTRIES, SELF, action2_2883, (current_date + 1)) {
 	0..729390: return 1;
 	return 0;
 }
@@ -6883,42 +6883,42 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_3004, terrain_type) {
 	action2_2933;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_3005, var[0x60, 24, 15, 17]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_3005, nearby_tile_class(1, 1)) {
 	8: return 1025;
 	return 1024;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_3006, var[0x60, 24, 15, 16]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_3006, nearby_tile_class(0, 1)) {
 	8: return 1025;
 	action2_3005;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_3007, var[0x60, 24, 15, 31]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_3007, nearby_tile_class(-1, 1)) {
 	8: return 1025;
 	action2_3006;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_3008, var[0x60, 24, 15, 1]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_3008, nearby_tile_class(1, 0)) {
 	8: return 1025;
 	action2_3007;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_3009, var[0x60, 24, 15, 15]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_3009, nearby_tile_class(-1, 0)) {
 	8: return 1025;
 	action2_3008;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_3010, var[0x60, 24, 15, 241]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_3010, nearby_tile_class(1, -1)) {
 	8: return 1025;
 	action2_3009;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_3011, var[0x60, 24, 15, 240]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_3011, nearby_tile_class(0, -1)) {
 	8: return 1025;
 	action2_3010;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_3012, var[0x60, 24, 15, 255]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_3012, nearby_tile_class(-1, -1)) {
 	8: return 1025;
 	action2_3011;
 }
@@ -7229,7 +7229,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3060, STORE_PERM((65535 / 3), 0)) {
 	action2_3052;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3061, (var[0x23, 0, -1] + 1)) {
+switch(FEAT_INDUSTRIES, SELF, action2_3061, (current_date + 1)) {
 	0: return 1;
 	return 0;
 }
@@ -7822,42 +7822,42 @@ switch(FEAT_INDUSTRYTILES, PARENT, action2_3108, layout_num) {
 	action2_3105;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_3109, var[0x60, 24, 15, 17]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_3109, nearby_tile_class(1, 1)) {
 	8: return 1025;
 	return 1024;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_3110, var[0x60, 24, 15, 16]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_3110, nearby_tile_class(0, 1)) {
 	8: return 1025;
 	action2_3109;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_3111, var[0x60, 24, 15, 31]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_3111, nearby_tile_class(-1, 1)) {
 	8: return 1025;
 	action2_3110;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_3112, var[0x60, 24, 15, 1]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_3112, nearby_tile_class(1, 0)) {
 	8: return 1025;
 	action2_3111;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_3113, var[0x60, 24, 15, 15]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_3113, nearby_tile_class(-1, 0)) {
 	8: return 1025;
 	action2_3112;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_3114, var[0x60, 24, 15, 241]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_3114, nearby_tile_class(1, -1)) {
 	8: return 1025;
 	action2_3113;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_3115, var[0x60, 24, 15, 240]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_3115, nearby_tile_class(0, -1)) {
 	8: return 1025;
 	action2_3114;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_3116, var[0x60, 24, 15, 255]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_3116, nearby_tile_class(-1, -1)) {
 	8: return 1025;
 	action2_3115;
 }
@@ -8190,7 +8190,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3169, STORE_PERM((65535 / 3), 0)) {
 	action2_3161;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3170, (var[0x23, 0, -1] + 1)) {
+switch(FEAT_INDUSTRIES, SELF, action2_3170, (current_date + 1)) {
 	0: return 1;
 	return 0;
 }
@@ -8517,42 +8517,42 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_3216, terrain_type) {
 	action2_3195;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_3217, var[0x60, 24, 15, 17]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_3217, nearby_tile_class(1, 1)) {
 	8: return 1025;
 	return 1024;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_3218, var[0x60, 24, 15, 16]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_3218, nearby_tile_class(0, 1)) {
 	8: return 1025;
 	action2_3217;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_3219, var[0x60, 24, 15, 31]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_3219, nearby_tile_class(-1, 1)) {
 	8: return 1025;
 	action2_3218;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_3220, var[0x60, 24, 15, 1]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_3220, nearby_tile_class(1, 0)) {
 	8: return 1025;
 	action2_3219;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_3221, var[0x60, 24, 15, 15]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_3221, nearby_tile_class(-1, 0)) {
 	8: return 1025;
 	action2_3220;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_3222, var[0x60, 24, 15, 241]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_3222, nearby_tile_class(1, -1)) {
 	8: return 1025;
 	action2_3221;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_3223, var[0x60, 24, 15, 240]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_3223, nearby_tile_class(0, -1)) {
 	8: return 1025;
 	action2_3222;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_3224, var[0x60, 24, 15, 255]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_3224, nearby_tile_class(-1, -1)) {
 	8: return 1025;
 	action2_3223;
 }
@@ -8634,7 +8634,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3233, var[0x12, 0, 255]) {
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3234, (var[0x23, 0, -1] + 1)) {
+switch(FEAT_INDUSTRIES, SELF, action2_3234, (current_date + 1)) {
 	0: return 1;
 	return 0;
 }
@@ -10733,42 +10733,42 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_3472, terrain_type) {
 	action2_3335;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_3473, var[0x60, 24, 15, 17]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_3473, nearby_tile_class(1, 1)) {
 	8: return 1025;
 	return 1024;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_3474, var[0x60, 24, 15, 16]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_3474, nearby_tile_class(0, 1)) {
 	8: return 1025;
 	action2_3473;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_3475, var[0x60, 24, 15, 31]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_3475, nearby_tile_class(-1, 1)) {
 	8: return 1025;
 	action2_3474;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_3476, var[0x60, 24, 15, 1]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_3476, nearby_tile_class(1, 0)) {
 	8: return 1025;
 	action2_3475;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_3477, var[0x60, 24, 15, 15]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_3477, nearby_tile_class(-1, 0)) {
 	8: return 1025;
 	action2_3476;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_3478, var[0x60, 24, 15, 241]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_3478, nearby_tile_class(1, -1)) {
 	8: return 1025;
 	action2_3477;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_3479, var[0x60, 24, 15, 240]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_3479, nearby_tile_class(0, -1)) {
 	8: return 1025;
 	action2_3478;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_3480, var[0x60, 24, 15, 255]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_3480, nearby_tile_class(-1, -1)) {
 	8: return 1025;
 	action2_3479;
 }
@@ -11023,7 +11023,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3511, [STORE_TEMP(LOAD_PERM(0), 256), var[
 	return string(STR_GENERIC_D0B0);
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3513, (var[0x23, 0, -1] + 1)) {
+switch(FEAT_INDUSTRIES, SELF, action2_3513, (current_date + 1)) {
 	0: return 1;
 	return 0;
 }
@@ -11698,42 +11698,42 @@ switch(FEAT_INDUSTRYTILES, PARENT, action2_3565, layout_num) {
 	action2_3538;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_3566, var[0x60, 24, 15, 17]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_3566, nearby_tile_class(1, 1)) {
 	8: return 1025;
 	return 1024;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_3567, var[0x60, 24, 15, 16]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_3567, nearby_tile_class(0, 1)) {
 	8: return 1025;
 	action2_3566;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_3568, var[0x60, 24, 15, 31]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_3568, nearby_tile_class(-1, 1)) {
 	8: return 1025;
 	action2_3567;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_3569, var[0x60, 24, 15, 1]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_3569, nearby_tile_class(1, 0)) {
 	8: return 1025;
 	action2_3568;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_3570, var[0x60, 24, 15, 15]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_3570, nearby_tile_class(-1, 0)) {
 	8: return 1025;
 	action2_3569;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_3571, var[0x60, 24, 15, 241]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_3571, nearby_tile_class(1, -1)) {
 	8: return 1025;
 	action2_3570;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_3572, var[0x60, 24, 15, 240]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_3572, nearby_tile_class(0, -1)) {
 	8: return 1025;
 	action2_3571;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_3573, var[0x60, 24, 15, 255]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_3573, nearby_tile_class(-1, -1)) {
 	8: return 1025;
 	action2_3572;
 }
@@ -12131,7 +12131,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3626, STORE_PERM((65535 / 3), 0)) {
 	action2_3618;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3627, (var[0x23, 0, -1] + 1)) {
+switch(FEAT_INDUSTRIES, SELF, action2_3627, (current_date + 1)) {
 	0..694691: return 1;
 	return 0;
 }
@@ -12365,7 +12365,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3663, [STORE_TEMP(LOAD_PERM(0), 256), var[
 	return string(STR_GENERIC_D0B0);
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3665, (var[0x23, 0, -1] + 1)) {
+switch(FEAT_INDUSTRIES, SELF, action2_3665, (current_date + 1)) {
 	0: return 1;
 	return 0;
 }
@@ -12681,42 +12681,42 @@ switch(FEAT_INDUSTRYTILES, PARENT, action2_3700, layout_num) {
 	action2_3689;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_3701, var[0x60, 24, 15, 17]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_3701, nearby_tile_class(1, 1)) {
 	8: return 1025;
 	return 1024;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_3702, var[0x60, 24, 15, 16]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_3702, nearby_tile_class(0, 1)) {
 	8: return 1025;
 	action2_3701;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_3703, var[0x60, 24, 15, 31]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_3703, nearby_tile_class(-1, 1)) {
 	8: return 1025;
 	action2_3702;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_3704, var[0x60, 24, 15, 1]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_3704, nearby_tile_class(1, 0)) {
 	8: return 1025;
 	action2_3703;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_3705, var[0x60, 24, 15, 15]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_3705, nearby_tile_class(-1, 0)) {
 	8: return 1025;
 	action2_3704;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_3706, var[0x60, 24, 15, 241]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_3706, nearby_tile_class(1, -1)) {
 	8: return 1025;
 	action2_3705;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_3707, var[0x60, 24, 15, 240]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_3707, nearby_tile_class(0, -1)) {
 	8: return 1025;
 	action2_3706;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_3708, var[0x60, 24, 15, 255]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_3708, nearby_tile_class(-1, -1)) {
 	8: return 1025;
 	action2_3707;
 }
@@ -12948,7 +12948,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3742, [STORE_TEMP(LOAD_PERM(0), 256), var[
 	return string(STR_GENERIC_D0B1);
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3744, (var[0x23, 0, -1] + 1)) {
+switch(FEAT_INDUSTRIES, SELF, action2_3744, (current_date + 1)) {
 	0: return 1;
 	return 0;
 }
@@ -14379,42 +14379,42 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_3868, terrain_type) {
 	action2_3791;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_3869, var[0x60, 24, 15, 17]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_3869, nearby_tile_class(1, 1)) {
 	8: return 1025;
 	return 1024;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_3870, var[0x60, 24, 15, 16]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_3870, nearby_tile_class(0, 1)) {
 	8: return 1025;
 	action2_3869;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_3871, var[0x60, 24, 15, 31]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_3871, nearby_tile_class(-1, 1)) {
 	8: return 1025;
 	action2_3870;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_3872, var[0x60, 24, 15, 1]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_3872, nearby_tile_class(1, 0)) {
 	8: return 1025;
 	action2_3871;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_3873, var[0x60, 24, 15, 15]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_3873, nearby_tile_class(-1, 0)) {
 	8: return 1025;
 	action2_3872;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_3874, var[0x60, 24, 15, 241]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_3874, nearby_tile_class(1, -1)) {
 	8: return 1025;
 	action2_3873;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_3875, var[0x60, 24, 15, 240]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_3875, nearby_tile_class(0, -1)) {
 	8: return 1025;
 	action2_3874;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_3876, var[0x60, 24, 15, 255]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_3876, nearby_tile_class(-1, -1)) {
 	8: return 1025;
 	action2_3875;
 }
@@ -14771,7 +14771,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3922, STORE_PERM((65535 / 2), 0)) {
 	action2_3914;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3923, (var[0x23, 0, -1] + 1)) {
+switch(FEAT_INDUSTRIES, SELF, action2_3923, (current_date + 1)) {
 	0..691039: return 1;
 	return 0;
 }
@@ -15068,7 +15068,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3965, [STORE_TEMP(LOAD_PERM(0), 256), var[
 	return string(STR_GENERIC_D0B0);
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3967, (var[0x23, 0, -1] + 1)) {
+switch(FEAT_INDUSTRIES, SELF, action2_3967, (current_date + 1)) {
 	0..676429: return 1;
 	return 0;
 }
@@ -15715,42 +15715,42 @@ switch(FEAT_INDUSTRYTILES, PARENT, action2_4014, layout_num) {
 	action2_4007;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4015, var[0x60, 24, 15, 17]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_4015, nearby_tile_class(1, 1)) {
 	8: return 1025;
 	return 1024;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4016, var[0x60, 24, 15, 16]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_4016, nearby_tile_class(0, 1)) {
 	8: return 1025;
 	action2_4015;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4017, var[0x60, 24, 15, 31]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_4017, nearby_tile_class(-1, 1)) {
 	8: return 1025;
 	action2_4016;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4018, var[0x60, 24, 15, 1]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_4018, nearby_tile_class(1, 0)) {
 	8: return 1025;
 	action2_4017;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4019, var[0x60, 24, 15, 15]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_4019, nearby_tile_class(-1, 0)) {
 	8: return 1025;
 	action2_4018;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4020, var[0x60, 24, 15, 241]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_4020, nearby_tile_class(1, -1)) {
 	8: return 1025;
 	action2_4019;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4021, var[0x60, 24, 15, 240]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_4021, nearby_tile_class(0, -1)) {
 	8: return 1025;
 	action2_4020;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4022, var[0x60, 24, 15, 255]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_4022, nearby_tile_class(-1, -1)) {
 	8: return 1025;
 	action2_4021;
 }
@@ -16077,7 +16077,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_4058, STORE_PERM((65535 / 1), 0)) {
 	action2_4051;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_4059, (var[0x23, 0, -1] + 1)) {
+switch(FEAT_INDUSTRIES, SELF, action2_4059, (current_date + 1)) {
 	0..703822: return 1;
 	return 0;
 }
@@ -16593,7 +16593,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_4097, var[0x12, 0, 255]) {
 
 produce(action2_4098, 9999, 0, 0, 0, 0, 0);
 
-switch(FEAT_INDUSTRIES, SELF, action2_4099, (var[0x23, 0, -1] + 1)) {
+switch(FEAT_INDUSTRIES, SELF, action2_4099, (current_date + 1)) {
 	0: return 1;
 	return 0;
 }
@@ -17854,7 +17854,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_4215, STORE_PERM((65535 / 2), 0)) {
 	action2_4207;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_4216, (var[0x23, 0, -1] + 1)) {
+switch(FEAT_INDUSTRIES, SELF, action2_4216, (current_date + 1)) {
 	0: return 1;
 	return 0;
 }
@@ -18098,7 +18098,7 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_59, 59) {
 
 produce(action2_4250, 9999, 9999, 0, 0, 0, 0);
 
-switch(FEAT_INDUSTRIES, SELF, action2_4251, (var[0x23, 0, -1] + 1)) {
+switch(FEAT_INDUSTRIES, SELF, action2_4251, (current_date + 1)) {
 	0: return 1;
 	return 0;
 }
@@ -23289,42 +23289,42 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_4436, var[0x03, 0, 255]) {
 	action2_4279;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4437, var[0x60, 24, 15, 17]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_4437, nearby_tile_class(1, 1)) {
 	8: return 1025;
 	return 1024;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4438, var[0x60, 24, 15, 16]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_4438, nearby_tile_class(0, 1)) {
 	8: return 1025;
 	action2_4437;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4439, var[0x60, 24, 15, 31]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_4439, nearby_tile_class(-1, 1)) {
 	8: return 1025;
 	action2_4438;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4440, var[0x60, 24, 15, 1]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_4440, nearby_tile_class(1, 0)) {
 	8: return 1025;
 	action2_4439;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4441, var[0x60, 24, 15, 15]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_4441, nearby_tile_class(-1, 0)) {
 	8: return 1025;
 	action2_4440;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4442, var[0x60, 24, 15, 241]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_4442, nearby_tile_class(1, -1)) {
 	8: return 1025;
 	action2_4441;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4443, var[0x60, 24, 15, 240]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_4443, nearby_tile_class(0, -1)) {
 	8: return 1025;
 	action2_4442;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4444, var[0x60, 24, 15, 255]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_4444, nearby_tile_class(-1, -1)) {
 	8: return 1025;
 	action2_4443;
 }
@@ -23459,42 +23459,42 @@ spritelayout action2_4463 {
 	}
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4464, var[0x60, 24, 15, 17]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_4464, nearby_tile_class(1, 1)) {
 	8: return 1025;
 	return 1024;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4465, var[0x60, 24, 15, 16]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_4465, nearby_tile_class(0, 1)) {
 	8: return 1025;
 	action2_4464;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4466, var[0x60, 24, 15, 31]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_4466, nearby_tile_class(-1, 1)) {
 	8: return 1025;
 	action2_4465;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4467, var[0x60, 24, 15, 1]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_4467, nearby_tile_class(1, 0)) {
 	8: return 1025;
 	action2_4466;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4468, var[0x60, 24, 15, 15]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_4468, nearby_tile_class(-1, 0)) {
 	8: return 1025;
 	action2_4467;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4469, var[0x60, 24, 15, 241]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_4469, nearby_tile_class(1, -1)) {
 	8: return 1025;
 	action2_4468;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4470, var[0x60, 24, 15, 240]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_4470, nearby_tile_class(0, -1)) {
 	8: return 1025;
 	action2_4469;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4471, var[0x60, 24, 15, 255]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_4471, nearby_tile_class(-1, -1)) {
 	8: return 1025;
 	action2_4470;
 }
@@ -23700,7 +23700,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_4497, [STORE_TEMP(LOAD_PERM(0), 256), var[
 	return string(STR_GENERIC_D0B1);
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_4499, (var[0x23, 0, -1] + 1)) {
+switch(FEAT_INDUSTRIES, SELF, action2_4499, (current_date + 1)) {
 	0: return 1;
 	return 0;
 }
@@ -23997,42 +23997,42 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_4538, terrain_type) {
 	action2_4517;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4539, var[0x60, 24, 15, 17]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_4539, nearby_tile_class(1, 1)) {
 	8: return 1025;
 	return 1024;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4540, var[0x60, 24, 15, 16]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_4540, nearby_tile_class(0, 1)) {
 	8: return 1025;
 	action2_4539;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4541, var[0x60, 24, 15, 31]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_4541, nearby_tile_class(-1, 1)) {
 	8: return 1025;
 	action2_4540;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4542, var[0x60, 24, 15, 1]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_4542, nearby_tile_class(1, 0)) {
 	8: return 1025;
 	action2_4541;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4543, var[0x60, 24, 15, 15]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_4543, nearby_tile_class(-1, 0)) {
 	8: return 1025;
 	action2_4542;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4544, var[0x60, 24, 15, 241]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_4544, nearby_tile_class(1, -1)) {
 	8: return 1025;
 	action2_4543;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4545, var[0x60, 24, 15, 240]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_4545, nearby_tile_class(0, -1)) {
 	8: return 1025;
 	action2_4544;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4546, var[0x60, 24, 15, 255]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_4546, nearby_tile_class(-1, -1)) {
 	8: return 1025;
 	action2_4545;
 }
@@ -24235,7 +24235,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_4580, STORE_PERM((65535 / 1), 0)) {
 	action2_4573;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_4581, (var[0x23, 0, -1] + 1)) {
+switch(FEAT_INDUSTRIES, SELF, action2_4581, (current_date + 1)) {
 	712223..-1: return 1;
 	0: return 1;
 	return 0;
@@ -29512,42 +29512,42 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_4776, var[0x03, 0, 255]) {
 	action2_4619;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4777, var[0x60, 24, 15, 17]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_4777, nearby_tile_class(1, 1)) {
 	8: return 1025;
 	return 1024;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4778, var[0x60, 24, 15, 16]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_4778, nearby_tile_class(0, 1)) {
 	8: return 1025;
 	action2_4777;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4779, var[0x60, 24, 15, 31]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_4779, nearby_tile_class(-1, 1)) {
 	8: return 1025;
 	action2_4778;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4780, var[0x60, 24, 15, 1]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_4780, nearby_tile_class(1, 0)) {
 	8: return 1025;
 	action2_4779;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4781, var[0x60, 24, 15, 15]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_4781, nearby_tile_class(-1, 0)) {
 	8: return 1025;
 	action2_4780;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4782, var[0x60, 24, 15, 241]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_4782, nearby_tile_class(1, -1)) {
 	8: return 1025;
 	action2_4781;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4783, var[0x60, 24, 15, 240]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_4783, nearby_tile_class(0, -1)) {
 	8: return 1025;
 	action2_4782;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4784, var[0x60, 24, 15, 255]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_4784, nearby_tile_class(-1, -1)) {
 	8: return 1025;
 	action2_4783;
 }
@@ -29607,42 +29607,42 @@ spritelayout action2_4793 {
 	}
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4794, var[0x60, 24, 15, 17]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_4794, nearby_tile_class(1, 1)) {
 	8: return 1025;
 	return 1024;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4795, var[0x60, 24, 15, 16]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_4795, nearby_tile_class(0, 1)) {
 	8: return 1025;
 	action2_4794;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4796, var[0x60, 24, 15, 31]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_4796, nearby_tile_class(-1, 1)) {
 	8: return 1025;
 	action2_4795;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4797, var[0x60, 24, 15, 1]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_4797, nearby_tile_class(1, 0)) {
 	8: return 1025;
 	action2_4796;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4798, var[0x60, 24, 15, 15]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_4798, nearby_tile_class(-1, 0)) {
 	8: return 1025;
 	action2_4797;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4799, var[0x60, 24, 15, 241]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_4799, nearby_tile_class(1, -1)) {
 	8: return 1025;
 	action2_4798;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4800, var[0x60, 24, 15, 240]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_4800, nearby_tile_class(0, -1)) {
 	8: return 1025;
 	action2_4799;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4801, var[0x60, 24, 15, 255]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_4801, nearby_tile_class(-1, -1)) {
 	8: return 1025;
 	action2_4800;
 }
@@ -29838,7 +29838,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_4825, [STORE_TEMP(LOAD_PERM(0), 256), var[
 	return string(STR_GENERIC_D0B1);
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_4827, (var[0x23, 0, -1] + 1)) {
+switch(FEAT_INDUSTRIES, SELF, action2_4827, (current_date + 1)) {
 	0: return 1;
 	return 0;
 }
@@ -30471,42 +30471,42 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_4897, terrain_type) {
 	action2_4856;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4898, var[0x60, 24, 15, 17]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_4898, nearby_tile_class(1, 1)) {
 	8: return 1025;
 	return 1024;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4899, var[0x60, 24, 15, 16]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_4899, nearby_tile_class(0, 1)) {
 	8: return 1025;
 	action2_4898;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4900, var[0x60, 24, 15, 31]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_4900, nearby_tile_class(-1, 1)) {
 	8: return 1025;
 	action2_4899;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4901, var[0x60, 24, 15, 1]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_4901, nearby_tile_class(1, 0)) {
 	8: return 1025;
 	action2_4900;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4902, var[0x60, 24, 15, 15]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_4902, nearby_tile_class(-1, 0)) {
 	8: return 1025;
 	action2_4901;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4903, var[0x60, 24, 15, 241]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_4903, nearby_tile_class(1, -1)) {
 	8: return 1025;
 	action2_4902;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4904, var[0x60, 24, 15, 240]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_4904, nearby_tile_class(0, -1)) {
 	8: return 1025;
 	action2_4903;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4905, var[0x60, 24, 15, 255]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_4905, nearby_tile_class(-1, -1)) {
 	8: return 1025;
 	action2_4904;
 }
@@ -30804,7 +30804,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_4948, STORE_PERM((65535 / 2), 0)) {
 	action2_4940;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_4949, (var[0x23, 0, -1] + 1)) {
+switch(FEAT_INDUSTRIES, SELF, action2_4949, (current_date + 1)) {
 	0..672046: return 1;
 	return 0;
 }
@@ -31260,42 +31260,42 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_5004, terrain_type) {
 	action2_4977;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_5005, var[0x60, 24, 15, 17]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_5005, nearby_tile_class(1, 1)) {
 	8: return 1025;
 	return 1024;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_5006, var[0x60, 24, 15, 16]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_5006, nearby_tile_class(0, 1)) {
 	8: return 1025;
 	action2_5005;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_5007, var[0x60, 24, 15, 31]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_5007, nearby_tile_class(-1, 1)) {
 	8: return 1025;
 	action2_5006;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_5008, var[0x60, 24, 15, 1]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_5008, nearby_tile_class(1, 0)) {
 	8: return 1025;
 	action2_5007;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_5009, var[0x60, 24, 15, 15]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_5009, nearby_tile_class(-1, 0)) {
 	8: return 1025;
 	action2_5008;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_5010, var[0x60, 24, 15, 241]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_5010, nearby_tile_class(1, -1)) {
 	8: return 1025;
 	action2_5009;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_5011, var[0x60, 24, 15, 240]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_5011, nearby_tile_class(0, -1)) {
 	8: return 1025;
 	action2_5010;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_5012, var[0x60, 24, 15, 255]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_5012, nearby_tile_class(-1, -1)) {
 	8: return 1025;
 	action2_5011;
 }
@@ -31601,7 +31601,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_5061, STORE_PERM((65535 / 2), 0)) {
 	action2_5053;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_5062, (var[0x23, 0, -1] + 1)) {
+switch(FEAT_INDUSTRIES, SELF, action2_5062, (current_date + 1)) {
 	0: return 1;
 	return 0;
 }
@@ -32410,42 +32410,42 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_5162, terrain_type) {
 	action2_5105;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_5163, var[0x60, 24, 15, 17]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_5163, nearby_tile_class(1, 1)) {
 	8: return 1025;
 	return 1024;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_5164, var[0x60, 24, 15, 16]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_5164, nearby_tile_class(0, 1)) {
 	8: return 1025;
 	action2_5163;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_5165, var[0x60, 24, 15, 31]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_5165, nearby_tile_class(-1, 1)) {
 	8: return 1025;
 	action2_5164;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_5166, var[0x60, 24, 15, 1]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_5166, nearby_tile_class(1, 0)) {
 	8: return 1025;
 	action2_5165;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_5167, var[0x60, 24, 15, 15]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_5167, nearby_tile_class(-1, 0)) {
 	8: return 1025;
 	action2_5166;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_5168, var[0x60, 24, 15, 241]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_5168, nearby_tile_class(1, -1)) {
 	8: return 1025;
 	action2_5167;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_5169, var[0x60, 24, 15, 240]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_5169, nearby_tile_class(0, -1)) {
 	8: return 1025;
 	action2_5168;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_5170, var[0x60, 24, 15, 255]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_5170, nearby_tile_class(-1, -1)) {
 	8: return 1025;
 	action2_5169;
 }
@@ -32754,7 +32754,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_5217, STORE_PERM((65535 / 2), 0)) {
 	action2_5209;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_5218, (var[0x23, 0, -1] + 1)) {
+switch(FEAT_INDUSTRIES, SELF, action2_5218, (current_date + 1)) {
 	0: return 1;
 	return 0;
 }
@@ -32998,7 +32998,7 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_57, 57) {
 
 produce(action2_5252, 9999, 9999, 0, 0, 0, 0);
 
-switch(FEAT_INDUSTRIES, SELF, action2_5253, (var[0x23, 0, -1] + 1)) {
+switch(FEAT_INDUSTRIES, SELF, action2_5253, (current_date + 1)) {
 	0: return 1;
 	return 0;
 }
@@ -33178,7 +33178,7 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_58, 58) {
 
 produce(action2_5274, 9999, 9999, 0, 0, 0, 0);
 
-switch(FEAT_INDUSTRIES, SELF, action2_5275, (var[0x23, 0, -1] + 1)) {
+switch(FEAT_INDUSTRIES, SELF, action2_5275, (current_date + 1)) {
 	0: return 1;
 	return 0;
 }
@@ -33311,7 +33311,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_5298, [STORE_TEMP(LOAD_PERM(0), 256), var[
 	return string(STR_GENERIC_D0B0);
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_5300, (var[0x23, 0, -1] + 1)) {
+switch(FEAT_INDUSTRIES, SELF, action2_5300, (current_date + 1)) {
 	0: return 1;
 	return 0;
 }
@@ -35234,42 +35234,42 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_5431, terrain_type) {
 	action2_5360;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_5432, var[0x60, 24, 15, 17]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_5432, nearby_tile_class(1, 1)) {
 	8: return 1025;
 	return 1024;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_5433, var[0x60, 24, 15, 16]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_5433, nearby_tile_class(0, 1)) {
 	8: return 1025;
 	action2_5432;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_5434, var[0x60, 24, 15, 31]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_5434, nearby_tile_class(-1, 1)) {
 	8: return 1025;
 	action2_5433;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_5435, var[0x60, 24, 15, 1]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_5435, nearby_tile_class(1, 0)) {
 	8: return 1025;
 	action2_5434;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_5436, var[0x60, 24, 15, 15]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_5436, nearby_tile_class(-1, 0)) {
 	8: return 1025;
 	action2_5435;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_5437, var[0x60, 24, 15, 241]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_5437, nearby_tile_class(1, -1)) {
 	8: return 1025;
 	action2_5436;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_5438, var[0x60, 24, 15, 240]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_5438, nearby_tile_class(0, -1)) {
 	8: return 1025;
 	action2_5437;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_5439, var[0x60, 24, 15, 255]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_5439, nearby_tile_class(-1, -1)) {
 	8: return 1025;
 	action2_5438;
 }
@@ -35580,7 +35580,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_5491, STORE_PERM((65535 / 2), 0)) {
 	action2_5483;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_5492, (var[0x23, 0, -1] + 1)) {
+switch(FEAT_INDUSTRIES, SELF, action2_5492, (current_date + 1)) {
 	693961..-1: return 1;
 	0: return 1;
 	return 0;
@@ -35896,42 +35896,42 @@ switch(FEAT_INDUSTRYTILES, PARENT, action2_5531, layout_num) {
 	action2_5519;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_5532, var[0x60, 24, 15, 17]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_5532, nearby_tile_class(1, 1)) {
 	8: return 1025;
 	return 1024;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_5533, var[0x60, 24, 15, 16]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_5533, nearby_tile_class(0, 1)) {
 	8: return 1025;
 	action2_5532;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_5534, var[0x60, 24, 15, 31]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_5534, nearby_tile_class(-1, 1)) {
 	8: return 1025;
 	action2_5533;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_5535, var[0x60, 24, 15, 1]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_5535, nearby_tile_class(1, 0)) {
 	8: return 1025;
 	action2_5534;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_5536, var[0x60, 24, 15, 15]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_5536, nearby_tile_class(-1, 0)) {
 	8: return 1025;
 	action2_5535;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_5537, var[0x60, 24, 15, 241]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_5537, nearby_tile_class(1, -1)) {
 	8: return 1025;
 	action2_5536;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_5538, var[0x60, 24, 15, 240]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_5538, nearby_tile_class(0, -1)) {
 	8: return 1025;
 	action2_5537;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_5539, var[0x60, 24, 15, 255]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_5539, nearby_tile_class(-1, -1)) {
 	8: return 1025;
 	action2_5538;
 }
@@ -36100,7 +36100,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_5560, [STORE_TEMP(LOAD_PERM(0), 256), var[
 	return string(STR_GENERIC_D0B0);
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_5562, (var[0x23, 0, -1] + 1)) {
+switch(FEAT_INDUSTRIES, SELF, action2_5562, (current_date + 1)) {
 	0..685926: return 1;
 	return 0;
 }
@@ -36700,42 +36700,42 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_5626, terrain_type) {
 	action2_5589;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_5627, var[0x60, 24, 15, 17]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_5627, nearby_tile_class(1, 1)) {
 	8: return 1025;
 	return 1024;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_5628, var[0x60, 24, 15, 16]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_5628, nearby_tile_class(0, 1)) {
 	8: return 1025;
 	action2_5627;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_5629, var[0x60, 24, 15, 31]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_5629, nearby_tile_class(-1, 1)) {
 	8: return 1025;
 	action2_5628;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_5630, var[0x60, 24, 15, 1]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_5630, nearby_tile_class(1, 0)) {
 	8: return 1025;
 	action2_5629;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_5631, var[0x60, 24, 15, 15]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_5631, nearby_tile_class(-1, 0)) {
 	8: return 1025;
 	action2_5630;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_5632, var[0x60, 24, 15, 241]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_5632, nearby_tile_class(1, -1)) {
 	8: return 1025;
 	action2_5631;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_5633, var[0x60, 24, 15, 240]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_5633, nearby_tile_class(0, -1)) {
 	8: return 1025;
 	action2_5632;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_5634, var[0x60, 24, 15, 255]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_5634, nearby_tile_class(-1, -1)) {
 	8: return 1025;
 	action2_5633;
 }
@@ -37016,7 +37016,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_5679, STORE_PERM((65535 / 2), 0)) {
 	action2_5671;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_5680, (var[0x23, 0, -1] + 1)) {
+switch(FEAT_INDUSTRIES, SELF, action2_5680, (current_date + 1)) {
 	0: return 1;
 	return 0;
 }
@@ -37346,42 +37346,42 @@ switch(FEAT_INDUSTRYTILES, PARENT, action2_5720, layout_num) {
 	action2_5707;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_5721, var[0x60, 24, 15, 17]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_5721, nearby_tile_class(1, 1)) {
 	8: return 1025;
 	return 1024;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_5722, var[0x60, 24, 15, 16]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_5722, nearby_tile_class(0, 1)) {
 	8: return 1025;
 	action2_5721;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_5723, var[0x60, 24, 15, 31]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_5723, nearby_tile_class(-1, 1)) {
 	8: return 1025;
 	action2_5722;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_5724, var[0x60, 24, 15, 1]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_5724, nearby_tile_class(1, 0)) {
 	8: return 1025;
 	action2_5723;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_5725, var[0x60, 24, 15, 15]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_5725, nearby_tile_class(-1, 0)) {
 	8: return 1025;
 	action2_5724;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_5726, var[0x60, 24, 15, 241]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_5726, nearby_tile_class(1, -1)) {
 	8: return 1025;
 	action2_5725;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_5727, var[0x60, 24, 15, 240]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_5727, nearby_tile_class(0, -1)) {
 	8: return 1025;
 	action2_5726;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_5728, var[0x60, 24, 15, 255]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_5728, nearby_tile_class(-1, -1)) {
 	8: return 1025;
 	action2_5727;
 }
@@ -37679,7 +37679,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_5771, STORE_PERM((65535 / 2), 0)) {
 	action2_5763;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_5772, (var[0x23, 0, -1] + 1)) {
+switch(FEAT_INDUSTRIES, SELF, action2_5772, (current_date + 1)) {
 	0: return 1;
 	return 0;
 }
@@ -41002,42 +41002,42 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_6011, terrain_type) {
 	action2_5898;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_6012, var[0x60, 24, 15, 17]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_6012, nearby_tile_class(1, 1)) {
 	8: return 1025;
 	return 1024;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_6013, var[0x60, 24, 15, 16]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_6013, nearby_tile_class(0, 1)) {
 	8: return 1025;
 	action2_6012;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_6014, var[0x60, 24, 15, 31]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_6014, nearby_tile_class(-1, 1)) {
 	8: return 1025;
 	action2_6013;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_6015, var[0x60, 24, 15, 1]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_6015, nearby_tile_class(1, 0)) {
 	8: return 1025;
 	action2_6014;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_6016, var[0x60, 24, 15, 15]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_6016, nearby_tile_class(-1, 0)) {
 	8: return 1025;
 	action2_6015;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_6017, var[0x60, 24, 15, 241]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_6017, nearby_tile_class(1, -1)) {
 	8: return 1025;
 	action2_6016;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_6018, var[0x60, 24, 15, 240]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_6018, nearby_tile_class(0, -1)) {
 	8: return 1025;
 	action2_6017;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_6019, var[0x60, 24, 15, 255]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_6019, nearby_tile_class(-1, -1)) {
 	8: return 1025;
 	action2_6018;
 }
@@ -41367,7 +41367,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6055, STORE_PERM((65535 / 2), 0)) {
 	action2_6048;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6056, (var[0x23, 0, -1] + 1)) {
+switch(FEAT_INDUSTRIES, SELF, action2_6056, (current_date + 1)) {
 	0..683004: return 1;
 	return 0;
 }
@@ -42192,42 +42192,42 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_6153, terrain_type) {
 	action2_6098;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_6154, var[0x60, 24, 15, 17]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_6154, nearby_tile_class(1, 1)) {
 	8: return 1025;
 	return 1024;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_6155, var[0x60, 24, 15, 16]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_6155, nearby_tile_class(0, 1)) {
 	8: return 1025;
 	action2_6154;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_6156, var[0x60, 24, 15, 31]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_6156, nearby_tile_class(-1, 1)) {
 	8: return 1025;
 	action2_6155;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_6157, var[0x60, 24, 15, 1]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_6157, nearby_tile_class(1, 0)) {
 	8: return 1025;
 	action2_6156;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_6158, var[0x60, 24, 15, 15]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_6158, nearby_tile_class(-1, 0)) {
 	8: return 1025;
 	action2_6157;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_6159, var[0x60, 24, 15, 241]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_6159, nearby_tile_class(1, -1)) {
 	8: return 1025;
 	action2_6158;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_6160, var[0x60, 24, 15, 240]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_6160, nearby_tile_class(0, -1)) {
 	8: return 1025;
 	action2_6159;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_6161, var[0x60, 24, 15, 255]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_6161, nearby_tile_class(-1, -1)) {
 	8: return 1025;
 	action2_6160;
 }
@@ -42504,7 +42504,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6207, STORE_PERM((65535 / 2), 0)) {
 	action2_6199;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6208, (var[0x23, 0, -1] + 1)) {
+switch(FEAT_INDUSTRIES, SELF, action2_6208, (current_date + 1)) {
 	0: return 1;
 	return 0;
 }
@@ -44450,42 +44450,42 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_6344, terrain_type) {
 	action2_6263;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_6345, var[0x60, 24, 15, 17]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_6345, nearby_tile_class(1, 1)) {
 	8: return 1025;
 	return 1024;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_6346, var[0x60, 24, 15, 16]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_6346, nearby_tile_class(0, 1)) {
 	8: return 1025;
 	action2_6345;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_6347, var[0x60, 24, 15, 31]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_6347, nearby_tile_class(-1, 1)) {
 	8: return 1025;
 	action2_6346;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_6348, var[0x60, 24, 15, 1]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_6348, nearby_tile_class(1, 0)) {
 	8: return 1025;
 	action2_6347;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_6349, var[0x60, 24, 15, 15]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_6349, nearby_tile_class(-1, 0)) {
 	8: return 1025;
 	action2_6348;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_6350, var[0x60, 24, 15, 241]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_6350, nearby_tile_class(1, -1)) {
 	8: return 1025;
 	action2_6349;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_6351, var[0x60, 24, 15, 240]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_6351, nearby_tile_class(0, -1)) {
 	8: return 1025;
 	action2_6350;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_6352, var[0x60, 24, 15, 255]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_6352, nearby_tile_class(-1, -1)) {
 	8: return 1025;
 	action2_6351;
 }
@@ -44717,7 +44717,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6386, STORE_PERM((65535 / 1), 0)) {
 	action2_6379;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6387, (var[0x23, 0, -1] + 1)) {
+switch(FEAT_INDUSTRIES, SELF, action2_6387, (current_date + 1)) {
 	0..643558: return 1;
 	return 0;
 }
@@ -45008,42 +45008,42 @@ switch(FEAT_INDUSTRYTILES, PARENT, action2_6423, layout_num) {
 	action2_6412;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_6424, var[0x60, 24, 15, 17]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_6424, nearby_tile_class(1, 1)) {
 	8: return 1025;
 	return 1024;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_6425, var[0x60, 24, 15, 16]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_6425, nearby_tile_class(0, 1)) {
 	8: return 1025;
 	action2_6424;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_6426, var[0x60, 24, 15, 31]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_6426, nearby_tile_class(-1, 1)) {
 	8: return 1025;
 	action2_6425;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_6427, var[0x60, 24, 15, 1]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_6427, nearby_tile_class(1, 0)) {
 	8: return 1025;
 	action2_6426;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_6428, var[0x60, 24, 15, 15]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_6428, nearby_tile_class(-1, 0)) {
 	8: return 1025;
 	action2_6427;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_6429, var[0x60, 24, 15, 241]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_6429, nearby_tile_class(1, -1)) {
 	8: return 1025;
 	action2_6428;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_6430, var[0x60, 24, 15, 240]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_6430, nearby_tile_class(0, -1)) {
 	8: return 1025;
 	action2_6429;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_6431, var[0x60, 24, 15, 255]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_6431, nearby_tile_class(-1, -1)) {
 	8: return 1025;
 	action2_6430;
 }
@@ -45280,7 +45280,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6466, [STORE_TEMP(LOAD_PERM(0), 256), var[
 	return string(STR_GENERIC_D0B1);
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6468, (var[0x23, 0, -1] + 1)) {
+switch(FEAT_INDUSTRIES, SELF, action2_6468, (current_date + 1)) {
 	0: return 1;
 	return 0;
 }
@@ -45468,7 +45468,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6494, [STORE_TEMP(LOAD_PERM(0), 256), var[
 	return string(STR_GENERIC_D0B0);
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6496, (var[0x23, 0, -1] + 1)) {
+switch(FEAT_INDUSTRIES, SELF, action2_6496, (current_date + 1)) {
 	0..718432: return 1;
 	return 0;
 }
@@ -45759,7 +45759,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6540, STORE_PERM((65535 / 1), 0)) {
 	action2_6533;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6541, (var[0x23, 0, -1] + 1)) {
+switch(FEAT_INDUSTRIES, SELF, action2_6541, (current_date + 1)) {
 	0..688117: return 1;
 	return 0;
 }
@@ -45950,42 +45950,42 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_6564, var[0x03, 0, 255]) {
 	action2_6563;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_6565, var[0x60, 24, 15, 17]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_6565, nearby_tile_class(1, 1)) {
 	8: return 1025;
 	return 1024;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_6566, var[0x60, 24, 15, 16]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_6566, nearby_tile_class(0, 1)) {
 	8: return 1025;
 	action2_6565;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_6567, var[0x60, 24, 15, 31]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_6567, nearby_tile_class(-1, 1)) {
 	8: return 1025;
 	action2_6566;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_6568, var[0x60, 24, 15, 1]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_6568, nearby_tile_class(1, 0)) {
 	8: return 1025;
 	action2_6567;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_6569, var[0x60, 24, 15, 15]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_6569, nearby_tile_class(-1, 0)) {
 	8: return 1025;
 	action2_6568;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_6570, var[0x60, 24, 15, 241]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_6570, nearby_tile_class(1, -1)) {
 	8: return 1025;
 	action2_6569;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_6571, var[0x60, 24, 15, 240]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_6571, nearby_tile_class(0, -1)) {
 	8: return 1025;
 	action2_6570;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_6572, var[0x60, 24, 15, 255]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_6572, nearby_tile_class(-1, -1)) {
 	8: return 1025;
 	action2_6571;
 }
@@ -46046,42 +46046,42 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_6581, var[0x03, 0, 255]) {
 	action2_6580;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_6582, var[0x60, 24, 15, 17]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_6582, nearby_tile_class(1, 1)) {
 	8: return 1025;
 	return 1024;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_6583, var[0x60, 24, 15, 16]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_6583, nearby_tile_class(0, 1)) {
 	8: return 1025;
 	action2_6582;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_6584, var[0x60, 24, 15, 31]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_6584, nearby_tile_class(-1, 1)) {
 	8: return 1025;
 	action2_6583;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_6585, var[0x60, 24, 15, 1]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_6585, nearby_tile_class(1, 0)) {
 	8: return 1025;
 	action2_6584;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_6586, var[0x60, 24, 15, 15]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_6586, nearby_tile_class(-1, 0)) {
 	8: return 1025;
 	action2_6585;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_6587, var[0x60, 24, 15, 241]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_6587, nearby_tile_class(1, -1)) {
 	8: return 1025;
 	action2_6586;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_6588, var[0x60, 24, 15, 240]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_6588, nearby_tile_class(0, -1)) {
 	8: return 1025;
 	action2_6587;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_6589, var[0x60, 24, 15, 255]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_6589, nearby_tile_class(-1, -1)) {
 	8: return 1025;
 	action2_6588;
 }
@@ -46257,7 +46257,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6610, [STORE_TEMP(LOAD_PERM(0), 256), var[
 	return string(STR_GENERIC_D0B0);
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6612, (var[0x23, 0, -1] + 1)) {
+switch(FEAT_INDUSTRIES, SELF, action2_6612, (current_date + 1)) {
 	0..688117: return 1;
 	return 0;
 }
@@ -46582,7 +46582,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6666, STORE_PERM((65535 / 3), 0)) {
 	action2_6658;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6667, (var[0x23, 0, -1] + 1)) {
+switch(FEAT_INDUSTRIES, SELF, action2_6667, (current_date + 1)) {
 	0..588041: return 1;
 	return 0;
 }
@@ -46931,12 +46931,12 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_6718, terrain_type) {
 	action2_6699;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_6719, [STORE_TEMP(0, 0), STORE_TEMP((CMP(var[0x60, 24, 15, 240], 2) | (LOAD_TEMP(0) & 255)), 0), STORE_TEMP((CMP(var[0x60, 24, 15, 32], 2) | (LOAD_TEMP(0) & 255)), 0), STORE_TEMP((CMP(var[0x60, 24, 15, 15], 2) | (LOAD_TEMP(0) & 255)), 0), STORE_TEMP((CMP(var[0x60, 24, 15, 31], 2) | (LOAD_TEMP(0) & 255)), 0), STORE_TEMP((CMP(var[0x60, 24, 15, 1], 2) | (LOAD_TEMP(0) & 255)), 0), ((CMP(var[0x60, 24, 15, 17], 2) | (LOAD_TEMP(0) & 255)) & 1)]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_6719, [STORE_TEMP(0, 0), STORE_TEMP((CMP(nearby_tile_class(0, -1), 2) | (LOAD_TEMP(0) & 255)), 0), STORE_TEMP((CMP(var[0x60, 24, 15, 32], 2) | (LOAD_TEMP(0) & 255)), 0), STORE_TEMP((CMP(nearby_tile_class(-1, 0), 2) | (LOAD_TEMP(0) & 255)), 0), STORE_TEMP((CMP(nearby_tile_class(-1, 1), 2) | (LOAD_TEMP(0) & 255)), 0), STORE_TEMP((CMP(nearby_tile_class(1, 0), 2) | (LOAD_TEMP(0) & 255)), 0), ((CMP(nearby_tile_class(1, 1), 2) | (LOAD_TEMP(0) & 255)) & 1)]) {
 	1: return 1024;
 	return 1025;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_6720, [STORE_TEMP(0, 0), STORE_TEMP((CMP(var[0x60, 24, 15, 240], 2) | (LOAD_TEMP(0) & 255)), 0), STORE_TEMP((CMP(var[0x60, 24, 15, 16], 2) | (LOAD_TEMP(0) & 255)), 0), STORE_TEMP((CMP(var[0x60, 24, 15, 241], 2) | (LOAD_TEMP(0) & 255)), 0), STORE_TEMP((CMP(var[0x60, 24, 15, 17], 2) | (LOAD_TEMP(0) & 255)), 0), STORE_TEMP((CMP(var[0x60, 24, 15, 15], 2) | (LOAD_TEMP(0) & 255)), 0), ((CMP(var[0x60, 24, 15, 2], 2) | (LOAD_TEMP(0) & 255)) & 1)]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_6720, [STORE_TEMP(0, 0), STORE_TEMP((CMP(nearby_tile_class(0, -1), 2) | (LOAD_TEMP(0) & 255)), 0), STORE_TEMP((CMP(nearby_tile_class(0, 1), 2) | (LOAD_TEMP(0) & 255)), 0), STORE_TEMP((CMP(nearby_tile_class(1, -1), 2) | (LOAD_TEMP(0) & 255)), 0), STORE_TEMP((CMP(nearby_tile_class(1, 1), 2) | (LOAD_TEMP(0) & 255)), 0), STORE_TEMP((CMP(nearby_tile_class(-1, 0), 2) | (LOAD_TEMP(0) & 255)), 0), ((CMP(var[0x60, 24, 15, 2], 2) | (LOAD_TEMP(0) & 255)) & 1)]) {
 	1: return 1024;
 	return 1025;
 }
@@ -47009,7 +47009,7 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_60, 60) {
 
 produce(action2_6727, 9999, 9999, 0, 0, 0, 0);
 
-switch(FEAT_INDUSTRIES, SELF, action2_6728, (var[0x23, 0, -1] + 1)) {
+switch(FEAT_INDUSTRIES, SELF, action2_6728, (current_date + 1)) {
 	0..697248: return 1;
 	return 0;
 }
@@ -47651,42 +47651,42 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_6801, terrain_type) {
 	action2_6756;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_6802, var[0x60, 24, 15, 17]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_6802, nearby_tile_class(1, 1)) {
 	8: return 1025;
 	return 1024;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_6803, var[0x60, 24, 15, 16]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_6803, nearby_tile_class(0, 1)) {
 	8: return 1025;
 	action2_6802;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_6804, var[0x60, 24, 15, 31]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_6804, nearby_tile_class(-1, 1)) {
 	8: return 1025;
 	action2_6803;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_6805, var[0x60, 24, 15, 1]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_6805, nearby_tile_class(1, 0)) {
 	8: return 1025;
 	action2_6804;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_6806, var[0x60, 24, 15, 15]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_6806, nearby_tile_class(-1, 0)) {
 	8: return 1025;
 	action2_6805;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_6807, var[0x60, 24, 15, 241]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_6807, nearby_tile_class(1, -1)) {
 	8: return 1025;
 	action2_6806;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_6808, var[0x60, 24, 15, 240]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_6808, nearby_tile_class(0, -1)) {
 	8: return 1025;
 	action2_6807;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_6809, var[0x60, 24, 15, 255]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_6809, nearby_tile_class(-1, -1)) {
 	8: return 1025;
 	action2_6808;
 }
@@ -47940,7 +47940,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6844, STORE_PERM((65535 / 1), 0)) {
 	action2_6837;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6845, (var[0x23, 0, -1] + 1)) {
+switch(FEAT_INDUSTRIES, SELF, action2_6845, (current_date + 1)) {
 	0..705283: return 1;
 	return 0;
 }
@@ -50123,42 +50123,42 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_7093, terrain_type) {
 	action2_6956;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_7094, var[0x60, 24, 15, 17]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_7094, nearby_tile_class(1, 1)) {
 	8: return 1025;
 	return 1024;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_7095, var[0x60, 24, 15, 16]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_7095, nearby_tile_class(0, 1)) {
 	8: return 1025;
 	action2_7094;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_7096, var[0x60, 24, 15, 31]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_7096, nearby_tile_class(-1, 1)) {
 	8: return 1025;
 	action2_7095;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_7097, var[0x60, 24, 15, 1]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_7097, nearby_tile_class(1, 0)) {
 	8: return 1025;
 	action2_7096;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_7098, var[0x60, 24, 15, 15]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_7098, nearby_tile_class(-1, 0)) {
 	8: return 1025;
 	action2_7097;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_7099, var[0x60, 24, 15, 241]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_7099, nearby_tile_class(1, -1)) {
 	8: return 1025;
 	action2_7098;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_7100, var[0x60, 24, 15, 240]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_7100, nearby_tile_class(0, -1)) {
 	8: return 1025;
 	action2_7099;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_7101, var[0x60, 24, 15, 255]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_7101, nearby_tile_class(-1, -1)) {
 	8: return 1025;
 	action2_7100;
 }
@@ -50418,7 +50418,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_7133, [STORE_TEMP(LOAD_PERM(0), 256), var[
 	return string(STR_GENERIC_D0B0);
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7135, (var[0x23, 0, -1] + 1)) {
+switch(FEAT_INDUSTRIES, SELF, action2_7135, (current_date + 1)) {
 	0: return 1;
 	return 0;
 }
@@ -50630,7 +50630,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_7161, var[0x66, 0, 65535, 0]) {
 	return 1025;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7162, (var[0x23, 0, -1] + 1)) {
+switch(FEAT_INDUSTRIES, SELF, action2_7162, (current_date + 1)) {
 	0..729390: return 1;
 	return 0;
 }
@@ -51088,7 +51088,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_7225, STORE_PERM((65535 / 1), 0)) {
 	action2_7218;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7226, (var[0x23, 0, -1] + 1)) {
+switch(FEAT_INDUSTRIES, SELF, action2_7226, (current_date + 1)) {
 	0..729390: return 1;
 	return 0;
 }
@@ -51379,7 +51379,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_7273, STORE_PERM((65535 / 1), 0)) {
 	action2_7266;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7274, (var[0x23, 0, -1] + 1)) {
+switch(FEAT_INDUSTRIES, SELF, action2_7274, (current_date + 1)) {
 	0: return 1;
 	return 0;
 }
@@ -51544,42 +51544,42 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_15, 15) {
 	}
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_7294, var[0x60, 24, 15, 17]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_7294, nearby_tile_class(1, 1)) {
 	8: return 1025;
 	return 1024;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_7295, var[0x60, 24, 15, 16]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_7295, nearby_tile_class(0, 1)) {
 	8: return 1025;
 	action2_7294;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_7296, var[0x60, 24, 15, 31]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_7296, nearby_tile_class(-1, 1)) {
 	8: return 1025;
 	action2_7295;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_7297, var[0x60, 24, 15, 1]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_7297, nearby_tile_class(1, 0)) {
 	8: return 1025;
 	action2_7296;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_7298, var[0x60, 24, 15, 15]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_7298, nearby_tile_class(-1, 0)) {
 	8: return 1025;
 	action2_7297;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_7299, var[0x60, 24, 15, 241]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_7299, nearby_tile_class(1, -1)) {
 	8: return 1025;
 	action2_7298;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_7300, var[0x60, 24, 15, 240]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_7300, nearby_tile_class(0, -1)) {
 	8: return 1025;
 	action2_7299;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_7301, var[0x60, 24, 15, 255]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_7301, nearby_tile_class(-1, -1)) {
 	8: return 1025;
 	action2_7300;
 }
@@ -51961,42 +51961,42 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_7355, STORE_TEMP((var[0x7E, 0, 255, 161
 	action2_7353;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_7356, var[0x60, 24, 15, 17]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_7356, nearby_tile_class(1, 1)) {
 	8: return 1025;
 	return 1024;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_7357, var[0x60, 24, 15, 16]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_7357, nearby_tile_class(0, 1)) {
 	8: return 1025;
 	action2_7356;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_7358, var[0x60, 24, 15, 31]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_7358, nearby_tile_class(-1, 1)) {
 	8: return 1025;
 	action2_7357;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_7359, var[0x60, 24, 15, 1]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_7359, nearby_tile_class(1, 0)) {
 	8: return 1025;
 	action2_7358;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_7360, var[0x60, 24, 15, 15]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_7360, nearby_tile_class(-1, 0)) {
 	8: return 1025;
 	action2_7359;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_7361, var[0x60, 24, 15, 241]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_7361, nearby_tile_class(1, -1)) {
 	8: return 1025;
 	action2_7360;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_7362, var[0x60, 24, 15, 240]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_7362, nearby_tile_class(0, -1)) {
 	8: return 1025;
 	action2_7361;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_7363, var[0x60, 24, 15, 255]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_7363, nearby_tile_class(-1, -1)) {
 	8: return 1025;
 	action2_7362;
 }
@@ -52201,7 +52201,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_7395, [STORE_TEMP(LOAD_PERM(0), 256), var[
 	return string(STR_GENERIC_D0B1);
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7397, (var[0x23, 0, -1] + 1)) {
+switch(FEAT_INDUSTRIES, SELF, action2_7397, (current_date + 1)) {
 	0: return 1;
 	return 0;
 }
@@ -52530,7 +52530,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_7452, STORE_PERM((65535 / 3), 0)) {
 	action2_7444;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7453, (var[0x23, 0, -1] + 1)) {
+switch(FEAT_INDUSTRIES, SELF, action2_7453, (current_date + 1)) {
 	0..684100: return 1;
 	return 0;
 }
@@ -52817,42 +52817,42 @@ switch(FEAT_INDUSTRYTILES, PARENT, action2_7488, layout_num) {
 	action2_7481;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_7489, var[0x60, 24, 15, 17]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_7489, nearby_tile_class(1, 1)) {
 	8: return 1025;
 	return 1024;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_7490, var[0x60, 24, 15, 16]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_7490, nearby_tile_class(0, 1)) {
 	8: return 1025;
 	action2_7489;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_7491, var[0x60, 24, 15, 31]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_7491, nearby_tile_class(-1, 1)) {
 	8: return 1025;
 	action2_7490;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_7492, var[0x60, 24, 15, 1]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_7492, nearby_tile_class(1, 0)) {
 	8: return 1025;
 	action2_7491;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_7493, var[0x60, 24, 15, 15]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_7493, nearby_tile_class(-1, 0)) {
 	8: return 1025;
 	action2_7492;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_7494, var[0x60, 24, 15, 241]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_7494, nearby_tile_class(1, -1)) {
 	8: return 1025;
 	action2_7493;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_7495, var[0x60, 24, 15, 240]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_7495, nearby_tile_class(0, -1)) {
 	8: return 1025;
 	action2_7494;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_7496, var[0x60, 24, 15, 255]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_7496, nearby_tile_class(-1, -1)) {
 	8: return 1025;
 	action2_7495;
 }
@@ -53118,7 +53118,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_7540, STORE_PERM((65535 / 2), 0)) {
 	action2_7532;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7541, (var[0x23, 0, -1] + 1)) {
+switch(FEAT_INDUSTRIES, SELF, action2_7541, (current_date + 1)) {
 	0..631870: return 1;
 	return 0;
 }
@@ -54318,42 +54318,42 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_7641, terrain_type) {
 	action2_7584;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_7642, var[0x60, 24, 15, 17]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_7642, nearby_tile_class(1, 1)) {
 	8: return 1025;
 	return 1024;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_7643, var[0x60, 24, 15, 16]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_7643, nearby_tile_class(0, 1)) {
 	8: return 1025;
 	action2_7642;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_7644, var[0x60, 24, 15, 31]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_7644, nearby_tile_class(-1, 1)) {
 	8: return 1025;
 	action2_7643;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_7645, var[0x60, 24, 15, 1]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_7645, nearby_tile_class(1, 0)) {
 	8: return 1025;
 	action2_7644;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_7646, var[0x60, 24, 15, 15]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_7646, nearby_tile_class(-1, 0)) {
 	8: return 1025;
 	action2_7645;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_7647, var[0x60, 24, 15, 241]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_7647, nearby_tile_class(1, -1)) {
 	8: return 1025;
 	action2_7646;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_7648, var[0x60, 24, 15, 240]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_7648, nearby_tile_class(0, -1)) {
 	8: return 1025;
 	action2_7647;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_7649, var[0x60, 24, 15, 255]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_7649, nearby_tile_class(-1, -1)) {
 	8: return 1025;
 	action2_7648;
 }
@@ -54692,7 +54692,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_7696, STORE_PERM((65535 / 3), 0)) {
 	action2_7688;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7697, (var[0x23, 0, -1] + 1)) {
+switch(FEAT_INDUSTRIES, SELF, action2_7697, (current_date + 1)) {
 	0..643558: return 1;
 	return 0;
 }
