@@ -1,0 +1,477 @@
+
+item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_160, 160) {
+	property {
+		substitute: 0;
+		accepted_cargos: [[21, 8], [0, 0], [0, 0]];
+		land_shape_flags: 16;
+		callback_flags: 16;
+	}
+}
+
+spriteset(spriteset_2686) {
+	[10, 10, 64, 59, -31, -28, 9, "sprites/graphics/industries/arablefarm.pcx"]
+}
+
+spriteset(spriteset_2687) {
+	[80, 10, 64, 59, -31, -28, 9, "sprites/graphics/industries/arablefarm.pcx"]
+}
+
+spriteset(spriteset_2688) {
+	[150, 10, 64, 59, -31, -28, 9, "sprites/graphics/industries/arablefarm.pcx"]
+}
+
+spriteset(spriteset_2689) {
+	[220, 10, 64, 59, -31, -28, 9, "sprites/graphics/industries/arablefarm.pcx"]
+}
+
+spriteset(spriteset_2690) {
+	[290, 10, 64, 59, -31, -28, 9, "sprites/graphics/industries/arablefarm.pcx"]
+}
+
+spritelayout action2_2691 {
+	ground {
+		sprite: 2022;
+	}
+	building {
+		sprite: spriteset_2686;
+		recolour_mode: 2;
+		palette: 0;
+		zextent: 32;
+	}
+}
+
+spritelayout action2_2692 {
+	ground {
+		sprite: 3981;
+	}
+	building {
+		sprite: spriteset_2687;
+		recolour_mode: 2;
+		palette: 0;
+		zextent: 32;
+	}
+}
+
+spritelayout action2_2693 {
+	ground {
+		sprite: 3981;
+	}
+	building {
+		sprite: spriteset_2688;
+		recolour_mode: 2;
+		palette: 0;
+		zextent: 32;
+	}
+}
+
+spritelayout action2_2694 {
+	ground {
+		sprite: 2022;
+	}
+	building {
+		sprite: spriteset_2689;
+		recolour_mode: 2;
+		palette: 0;
+		zextent: 32;
+	}
+}
+
+spritelayout action2_2695 {
+	ground {
+		sprite: 2022;
+	}
+	building {
+		sprite: spriteset_2690;
+		recolour_mode: 2;
+		palette: 0;
+		zextent: 32;
+	}
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2696, relative_pos) {
+	1: action2_2691;
+	257: action2_2692;
+	512: action2_2693;
+	258: action2_2694;
+	action2_2695;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2697, relative_pos) {
+	0: action2_2695;
+	256: action2_2694;
+	1: action2_2691;
+	257: action2_2692;
+	action2_2693;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2698, relative_pos) {
+	0: action2_2691;
+	256: action2_2692;
+	1: action2_2695;
+	2: action2_2694;
+	action2_2693;
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, action2_2699, layout_num) {
+	1: action2_2696;
+	2: action2_2697;
+	3: action2_2698;
+	action2_2691;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2700, nearby_tile_class(1, 1)) {
+	8: return 1025;
+	return 1024;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2701, nearby_tile_class(0, 1)) {
+	8: return 1025;
+	action2_2700;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2702, nearby_tile_class(-1, 1)) {
+	8: return 1025;
+	action2_2701;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2703, nearby_tile_class(1, 0)) {
+	8: return 1025;
+	action2_2702;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2704, nearby_tile_class(-1, 0)) {
+	8: return 1025;
+	action2_2703;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2705, nearby_tile_class(1, -1)) {
+	8: return 1025;
+	action2_2704;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2706, nearby_tile_class(0, -1)) {
+	8: return 1025;
+	action2_2705;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2707, nearby_tile_class(-1, -1)) {
+	8: return 1025;
+	action2_2706;
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, action2_2708, founder) {
+	16: action2_2707;
+	return 1024;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2709, var[0x60, 0, 255, 0]) {
+	1..255: return 1025;
+	action2_2708;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2710, (current_callback & 255)) {
+	47: action2_2709;
+	action2_2699;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2711, var[0x60, 0, 255, 0]) {
+	1..255: return 1025;
+	action2_2709;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2712, var[0x60, 10, 1, 17]) {
+	1: return 1025;
+	action2_2711;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2713, var[0x60, 10, 1, 16]) {
+	1: action2_2712;
+	action2_2711;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2714, var[0x60, 10, 1, 31]) {
+	1: action2_2713;
+	action2_2711;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2715, var[0x60, 10, 1, 1]) {
+	1: action2_2714;
+	action2_2711;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2716, var[0x60, 10, 1, 15]) {
+	1: action2_2715;
+	action2_2711;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2717, var[0x60, 10, 1, 241]) {
+	1: action2_2716;
+	action2_2711;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2718, var[0x60, 10, 1, 240]) {
+	1: action2_2717;
+	action2_2711;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2719, var[0x60, 10, 1, 255]) {
+	1: action2_2718;
+	action2_2711;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2720, ((var[0x60, 16, 255, 0] - snowline_height) + 8)) {
+	8..127: return 1025;
+	action2_2719;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_2721, (current_callback & 255)) {
+	47: action2_2720;
+	action2_2699;
+}
+
+item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_160, 160) {
+	graphics {
+		action2_2721;
+	}
+}
+
+tilelayout tilelayout_2723_0 {
+	1, 0: item_FEAT_INDUSTRYTILES_160;
+	1, 1: item_FEAT_INDUSTRYTILES_160;
+	0, 2: item_FEAT_INDUSTRYTILES_160;
+	2, 1: item_FEAT_INDUSTRYTILES_160;
+	0, 1: item_FEAT_INDUSTRYTILES_160;
+}
+
+tilelayout tilelayout_2723_1 {
+	0, 0: item_FEAT_INDUSTRYTILES_160;
+	0, 1: item_FEAT_INDUSTRYTILES_160;
+	1, 0: item_FEAT_INDUSTRYTILES_160;
+	1, 1: item_FEAT_INDUSTRYTILES_160;
+	2, 0: item_FEAT_INDUSTRYTILES_160;
+}
+
+tilelayout tilelayout_2723_2 {
+	0, 0: item_FEAT_INDUSTRYTILES_160;
+	0, 1: item_FEAT_INDUSTRYTILES_160;
+	1, 0: item_FEAT_INDUSTRYTILES_160;
+	2, 0: item_FEAT_INDUSTRYTILES_160;
+	2, 1: item_FEAT_INDUSTRYTILES_160;
+}
+
+item(FEAT_INDUSTRIES, arable_farm, 26) {
+	property {
+		substitute: 0;
+		layouts: [tilelayout_2723_0, tilelayout_2723_1, tilelayout_2723_2];
+		life_type: 2;
+		closure_msg: 18483;
+		prod_increase_msg: 18488;
+		prod_decrease_msg: 18490;
+		new_ind_msg: 18477;
+		name: string(STR_IND_ARABLE_FARM);
+		nearby_station_name: string(STR_GENERIC_DCE0);
+		prod_cargo_types: [6, 12];
+		accept_cargo_types: [21, 255, 255];
+		prod_multiplier: [2, 2];
+		input_multiplier_1: [0, 0];
+		input_multiplier_2: [0, 0];
+		input_multiplier_3: [0, 0];
+		min_cargo_distr: 1;
+		conflicting_ind_types: [];
+		prob_random: 18;
+		prob_in_game: 4;
+		prospect_chance: 0.749999999942;
+		fund_cost_multiplier: 55;
+		map_colour: 208;
+		remove_cost_multiplier: 0;
+		spec_flags: 65;
+		callback_flags: 1339;
+	}
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_2724, industry_distance(26)) {
+	10..36: return 1024;
+	return 4;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_2725, ((industry_count(26) / 2) / industry_clusters)) {
+	0: return 1024;
+	action2_2724;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_2726, STORE_TEMP(-1, 256)) {
+	0: action2_2725;
+	action2_2725;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_2727, industry_distance(34)) {
+	0..16: return 4;
+	action2_2726;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_2728, industry_distance(35)) {
+	0..16: return 4;
+	action2_2727;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_2729, industry_distance(46)) {
+	0..16: return 4;
+	action2_2728;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_2730, industry_distance(19)) {
+	0..16: return 4;
+	action2_2729;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_2731, founder) {
+	16: action2_2730;
+	return 1024;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_2732, game_mode) {
+	1: action2_2731;
+	return 1024;
+}
+
+produce(action2_2733, 9999, 0, 0, 0, 0, 0);
+
+switch(FEAT_INDUSTRIES, SELF, action2_2734, STORE_PERM((var[0x40, 0, -1] + LOAD_PERM(0)), 0)) {
+	0: action2_2733;
+	action2_2733;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_2735, var[0x93, 0, -1]) {
+	0..4: return 3;
+	return 0;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_2736, allow_close_primary) {
+	1..255: action2_2735;
+	return 0;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_2737, (extra_callback_info2 & 31)) {
+	0: return 13;
+	return 0;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_2738, (extra_callback_info2 & 3)) {
+	0: return 13;
+	return 0;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_2739, STORE_PERM(var[0x93, 0, -1], 2)) {
+	0..4: return 0;
+	5..32: action2_2737;
+	action2_2738;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_2740, allow_primary_production_decrease) {
+	1..255: action2_2739;
+	return 0;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_2741, (extra_callback_info2 & 3)) {
+	0: return 14;
+	return 0;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_2742, [STORE_PERM(0, 0), LOAD_TEMP(1)]) {
+	1..-1: action2_2741;
+	action2_2740;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_2743, STORE_TEMP(LOAD_PERM(0), 1)) {
+	0: action2_2742;
+	action2_2742;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_2744, [STORE_TEMP(LOAD_PERM(0), 256), var[0x93, 0, -1]]) {
+	128: return string(STR_GENERIC_D0B3);
+	return string(STR_GENERIC_D0B1);
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_2746, (current_date + 1)) {
+	0: return 1;
+	return 0;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_2747, (extra_callback_info2 & 255)) {
+	1: return 1;
+	2: return 1;
+	action2_2746;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_2748, restrict_open_during_gameplay) {
+	1..255: action2_2747;
+	action2_2746;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_2749, [STORE_TEMP(-701265, 256), 32928]) {
+	return;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_2750, colour) {
+	0: return 0;
+	1: return 1;
+	2: return 2;
+	3: return 13;
+	4: return 2;
+	5: return 5;
+	6: return 1;
+	7: return 1;
+	8: return 0;
+	9: return 14;
+	10: return 10;
+	11: return 11;
+	12: return 13;
+	13: return 13;
+	14: return 14;
+	15: return 14;
+	return 0;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_2751, colour) {
+	0: return 5;
+	1: return 1;
+	2: return 2;
+	3: return 3;
+	4: return 2;
+	5: return 5;
+	6: return 1;
+	7: return 7;
+	8: return 5;
+	9: return 14;
+	10: return 10;
+	11: return 10;
+	12: return 3;
+	13: return 13;
+	14: return 14;
+	15: return 15;
+	return 0;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_2752, 1) {
+	1: action2_2750;
+	2: action2_2751;
+	action2_2750;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_2753, current_callback) {
+	0: action2_2734;
+	40: action2_2732;
+	34: action2_2748;
+	330: action2_2752;
+	56: action2_2749;
+	41: action2_2736;
+	53: action2_2743;
+	58: action2_2744;
+	action2_2733;
+}
+
+item(FEAT_INDUSTRIES, arable_farm, 26) {
+	graphics {
+		action2_2753;
+	}
+}
