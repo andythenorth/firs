@@ -856,13 +856,13 @@ switch(FEAT_INDUSTRIES, SELF, action2_2895, allow_close_secondary) {
 
 switch(FEAT_INDUSTRIES, SELF, action2_2896, current_callback) {
 	0: action2_2882;
-	40: action2_2856;
-	34: action2_2885;
-	330: action2_2889;
-	56: action2_2886;
-	41: action2_2895;
-	53: action2_2892;
-	58: action2_2881;
+	IND_CB_LOCATION_CHECK: action2_2856;
+	IND_CB_AVAILABILITY: action2_2885;
+	IND_CB_COLOUR: action2_2889;
+	IND_CB_EXTRA_TEXT_FUND: action2_2886;
+	IND_CB_RANDOM_PROD_CHANGE: action2_2895;
+	IND_CB_MONTHLY_PROD_CHANGE: action2_2892;
+	IND_CB_EXTRA_TEXT_INDUSTRY: action2_2881;
 	action2_2858;
 }
 

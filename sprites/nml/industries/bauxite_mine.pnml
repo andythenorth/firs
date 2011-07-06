@@ -335,13 +335,13 @@ switch(FEAT_INDUSTRIES, SELF, action2_2801, 1) {
 
 switch(FEAT_INDUSTRIES, SELF, action2_2802, current_callback) {
 	0: action2_2783;
-	40: action2_2781;
-	34: action2_2797;
-	330: action2_2801;
-	56: action2_2798;
-	41: action2_2785;
-	53: action2_2792;
-	58: action2_2793;
+	IND_CB_LOCATION_CHECK: action2_2781;
+	IND_CB_AVAILABILITY: action2_2797;
+	IND_CB_COLOUR: action2_2801;
+	IND_CB_EXTRA_TEXT_FUND: action2_2798;
+	IND_CB_RANDOM_PROD_CHANGE: action2_2785;
+	IND_CB_MONTHLY_PROD_CHANGE: action2_2792;
+	IND_CB_EXTRA_TEXT_INDUSTRY: action2_2793;
 	action2_2782;
 }
 

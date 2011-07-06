@@ -2097,13 +2097,13 @@ switch(FEAT_INDUSTRIES, SELF, action2_3073, allow_close_secondary) {
 
 switch(FEAT_INDUSTRIES, SELF, action2_3074, current_callback) {
 	0: action2_3060;
-	40: action2_3025;
-	34: action2_3063;
-	330: action2_3067;
-	56: action2_3064;
-	41: action2_3073;
-	53: action2_3070;
-	58: action2_3059;
+	IND_CB_LOCATION_CHECK: action2_3025;
+	IND_CB_AVAILABILITY: action2_3063;
+	IND_CB_COLOUR: action2_3067;
+	IND_CB_EXTRA_TEXT_FUND: action2_3064;
+	IND_CB_RANDOM_PROD_CHANGE: action2_3073;
+	IND_CB_MONTHLY_PROD_CHANGE: action2_3070;
+	IND_CB_EXTRA_TEXT_INDUSTRY: action2_3059;
 	action2_3027;
 }
 
@@ -3058,13 +3058,13 @@ switch(FEAT_INDUSTRIES, SELF, action2_3182, allow_close_secondary) {
 
 switch(FEAT_INDUSTRIES, SELF, action2_3183, current_callback) {
 	0: action2_3169;
-	40: action2_3129;
-	34: action2_3172;
-	330: action2_3176;
-	56: action2_3173;
-	41: action2_3182;
-	53: action2_3179;
-	58: action2_3168;
+	IND_CB_LOCATION_CHECK: action2_3129;
+	IND_CB_AVAILABILITY: action2_3172;
+	IND_CB_COLOUR: action2_3176;
+	IND_CB_EXTRA_TEXT_FUND: action2_3173;
+	IND_CB_RANDOM_PROD_CHANGE: action2_3182;
+	IND_CB_MONTHLY_PROD_CHANGE: action2_3179;
+	IND_CB_EXTRA_TEXT_INDUSTRY: action2_3168;
 	action2_3131;
 }
 
@@ -3421,10 +3421,10 @@ switch(FEAT_INDUSTRIES, SELF, action2_3236, restrict_open_during_gameplay) {
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_3237, current_callback) {
-	34: action2_3236;
-	40: action2_3233;
-	56: return string(STR_GENERIC_NEWLINE);
-	58: return string(STR_GENERIC_NEWLINE);
+	IND_CB_AVAILABILITY: action2_3236;
+	IND_CB_LOCATION_CHECK: action2_3233;
+	IND_CB_EXTRA_TEXT_FUND: return string(STR_GENERIC_NEWLINE);
+	IND_CB_EXTRA_TEXT_INDUSTRY: return string(STR_GENERIC_NEWLINE);
 	action2_3229;
 }
 
@@ -5861,13 +5861,13 @@ switch(FEAT_INDUSTRIES, SELF, action2_3519, 1) {
 
 switch(FEAT_INDUSTRIES, SELF, action2_3520, current_callback) {
 	0: action2_3501;
-	40: action2_3499;
-	34: action2_3515;
-	330: action2_3519;
-	56: action2_3516;
-	41: action2_3503;
-	53: action2_3510;
-	58: action2_3511;
+	IND_CB_LOCATION_CHECK: action2_3499;
+	IND_CB_AVAILABILITY: action2_3515;
+	IND_CB_COLOUR: action2_3519;
+	IND_CB_EXTRA_TEXT_FUND: action2_3516;
+	IND_CB_RANDOM_PROD_CHANGE: action2_3503;
+	IND_CB_MONTHLY_PROD_CHANGE: action2_3510;
+	IND_CB_EXTRA_TEXT_INDUSTRY: action2_3511;
 	action2_3500;
 }
 
@@ -6999,13 +6999,13 @@ switch(FEAT_INDUSTRIES, SELF, action2_3639, allow_close_secondary) {
 
 switch(FEAT_INDUSTRIES, SELF, action2_3640, current_callback) {
 	0: action2_3626;
-	40: action2_3586;
-	34: action2_3629;
-	330: action2_3633;
-	56: action2_3630;
-	41: action2_3639;
-	53: action2_3636;
-	58: action2_3625;
+	IND_CB_LOCATION_CHECK: action2_3586;
+	IND_CB_AVAILABILITY: action2_3629;
+	IND_CB_COLOUR: action2_3633;
+	IND_CB_EXTRA_TEXT_FUND: action2_3630;
+	IND_CB_RANDOM_PROD_CHANGE: action2_3639;
+	IND_CB_MONTHLY_PROD_CHANGE: action2_3636;
+	IND_CB_EXTRA_TEXT_INDUSTRY: action2_3625;
 	action2_3588;
 }
 
@@ -7203,13 +7203,13 @@ switch(FEAT_INDUSTRIES, SELF, action2_3671, 1) {
 
 switch(FEAT_INDUSTRIES, SELF, action2_3672, current_callback) {
 	0: action2_3653;
-	40: action2_3651;
-	34: action2_3667;
-	330: action2_3671;
-	56: action2_3668;
-	41: action2_3655;
-	53: action2_3662;
-	58: action2_3663;
+	IND_CB_LOCATION_CHECK: action2_3651;
+	IND_CB_AVAILABILITY: action2_3667;
+	IND_CB_COLOUR: action2_3671;
+	IND_CB_EXTRA_TEXT_FUND: action2_3668;
+	IND_CB_RANDOM_PROD_CHANGE: action2_3655;
+	IND_CB_MONTHLY_PROD_CHANGE: action2_3662;
+	IND_CB_EXTRA_TEXT_INDUSTRY: action2_3663;
 	action2_3652;
 }
 
@@ -7786,13 +7786,13 @@ switch(FEAT_INDUSTRIES, SELF, action2_3750, 1) {
 
 switch(FEAT_INDUSTRIES, SELF, action2_3751, current_callback) {
 	0: action2_3732;
-	40: action2_3730;
-	34: action2_3746;
-	330: action2_3750;
-	56: action2_3747;
-	41: action2_3734;
-	53: action2_3741;
-	58: action2_3742;
+	IND_CB_LOCATION_CHECK: action2_3730;
+	IND_CB_AVAILABILITY: action2_3746;
+	IND_CB_COLOUR: action2_3750;
+	IND_CB_EXTRA_TEXT_FUND: action2_3747;
+	IND_CB_RANDOM_PROD_CHANGE: action2_3734;
+	IND_CB_MONTHLY_PROD_CHANGE: action2_3741;
+	IND_CB_EXTRA_TEXT_INDUSTRY: action2_3742;
 	action2_3731;
 }
 
@@ -9639,13 +9639,13 @@ switch(FEAT_INDUSTRIES, SELF, action2_3935, allow_close_secondary) {
 
 switch(FEAT_INDUSTRIES, SELF, action2_3936, current_callback) {
 	0: action2_3922;
-	40: action2_3887;
-	34: action2_3925;
-	330: action2_3929;
-	56: action2_3926;
-	41: action2_3935;
-	53: action2_3932;
-	58: action2_3921;
+	IND_CB_LOCATION_CHECK: action2_3887;
+	IND_CB_AVAILABILITY: action2_3925;
+	IND_CB_COLOUR: action2_3929;
+	IND_CB_EXTRA_TEXT_FUND: action2_3926;
+	IND_CB_RANDOM_PROD_CHANGE: action2_3935;
+	IND_CB_MONTHLY_PROD_CHANGE: action2_3932;
+	IND_CB_EXTRA_TEXT_INDUSTRY: action2_3921;
 	action2_3889;
 }
 
@@ -9906,13 +9906,13 @@ switch(FEAT_INDUSTRIES, SELF, action2_3973, 1) {
 
 switch(FEAT_INDUSTRIES, SELF, action2_3974, current_callback) {
 	0: action2_3955;
-	40: action2_3953;
-	34: action2_3969;
-	330: action2_3973;
-	56: action2_3970;
-	41: action2_3957;
-	53: action2_3964;
-	58: action2_3965;
+	IND_CB_LOCATION_CHECK: action2_3953;
+	IND_CB_AVAILABILITY: action2_3969;
+	IND_CB_COLOUR: action2_3973;
+	IND_CB_EXTRA_TEXT_FUND: action2_3970;
+	IND_CB_RANDOM_PROD_CHANGE: action2_3957;
+	IND_CB_MONTHLY_PROD_CHANGE: action2_3964;
+	IND_CB_EXTRA_TEXT_INDUSTRY: action2_3965;
 	action2_3954;
 }
 
@@ -10945,13 +10945,13 @@ switch(FEAT_INDUSTRIES, SELF, action2_4071, allow_close_secondary) {
 
 switch(FEAT_INDUSTRIES, SELF, action2_4072, current_callback) {
 	0: action2_4058;
-	40: action2_4032;
-	34: action2_4061;
-	330: action2_4065;
-	56: action2_4062;
-	41: action2_4071;
-	53: action2_4068;
-	58: action2_4057;
+	IND_CB_LOCATION_CHECK: action2_4032;
+	IND_CB_AVAILABILITY: action2_4061;
+	IND_CB_COLOUR: action2_4065;
+	IND_CB_EXTRA_TEXT_FUND: action2_4062;
+	IND_CB_RANDOM_PROD_CHANGE: action2_4071;
+	IND_CB_MONTHLY_PROD_CHANGE: action2_4068;
+	IND_CB_EXTRA_TEXT_INDUSTRY: action2_4057;
 	action2_4034;
 }
 
@@ -11385,9 +11385,9 @@ switch(FEAT_INDUSTRIES, SELF, action2_4102, [STORE_TEMP(-701265, 256), 32928]) {
 
 switch(FEAT_INDUSTRIES, SELF, action2_4103, current_callback) {
 	0: action2_4098;
-	40: action2_4097;
-	34: action2_4101;
-	56: action2_4102;
+	IND_CB_LOCATION_CHECK: action2_4097;
+	IND_CB_AVAILABILITY: action2_4101;
+	IND_CB_EXTRA_TEXT_FUND: action2_4102;
 	41: return 0;
 	53: return 0;
 	action2_4098;
@@ -12722,13 +12722,13 @@ switch(FEAT_INDUSTRIES, SELF, action2_4228, allow_close_secondary) {
 
 switch(FEAT_INDUSTRIES, SELF, action2_4229, current_callback) {
 	0: action2_4215;
-	40: action2_4180;
-	34: action2_4218;
-	330: action2_4222;
-	56: action2_4219;
-	41: action2_4228;
-	53: action2_4225;
-	58: action2_4214;
+	IND_CB_LOCATION_CHECK: action2_4180;
+	IND_CB_AVAILABILITY: action2_4218;
+	IND_CB_COLOUR: action2_4222;
+	IND_CB_EXTRA_TEXT_FUND: action2_4219;
+	IND_CB_RANDOM_PROD_CHANGE: action2_4228;
+	IND_CB_MONTHLY_PROD_CHANGE: action2_4225;
+	IND_CB_EXTRA_TEXT_INDUSTRY: action2_4214;
 	action2_4182;
 }
 
@@ -12885,9 +12885,9 @@ switch(FEAT_INDUSTRIES, SELF, action2_4253, restrict_open_during_gameplay) {
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_4254, current_callback) {
-	34: action2_4253;
-	56: return string(STR_GENERIC_NEWLINE);
-	58: return string(STR_GENERIC_NEWLINE);
+	IND_CB_AVAILABILITY: action2_4253;
+	IND_CB_EXTRA_TEXT_FUND: return string(STR_GENERIC_NEWLINE);
+	IND_CB_EXTRA_TEXT_INDUSTRY: return string(STR_GENERIC_NEWLINE);
 	action2_4250;
 }
 
@@ -18538,13 +18538,13 @@ switch(FEAT_INDUSTRIES, SELF, action2_4505, 1) {
 
 switch(FEAT_INDUSTRIES, SELF, action2_4506, current_callback) {
 	0: action2_4487;
-	40: action2_4485;
-	34: action2_4501;
-	330: action2_4505;
-	56: action2_4502;
-	41: action2_4489;
-	53: action2_4496;
-	58: action2_4497;
+	IND_CB_LOCATION_CHECK: action2_4485;
+	IND_CB_AVAILABILITY: action2_4501;
+	IND_CB_COLOUR: action2_4505;
+	IND_CB_EXTRA_TEXT_FUND: action2_4502;
+	IND_CB_RANDOM_PROD_CHANGE: action2_4489;
+	IND_CB_MONTHLY_PROD_CHANGE: action2_4496;
+	IND_CB_EXTRA_TEXT_INDUSTRY: action2_4497;
 	action2_4486;
 }
 
@@ -19104,13 +19104,13 @@ switch(FEAT_INDUSTRIES, SELF, action2_4593, allow_close_secondary) {
 
 switch(FEAT_INDUSTRIES, SELF, action2_4594, current_callback) {
 	0: action2_4580;
-	40: action2_4554;
-	34: action2_4583;
-	330: action2_4587;
-	56: action2_4584;
-	41: action2_4593;
-	53: action2_4590;
-	58: action2_4579;
+	IND_CB_LOCATION_CHECK: action2_4554;
+	IND_CB_AVAILABILITY: action2_4583;
+	IND_CB_COLOUR: action2_4587;
+	IND_CB_EXTRA_TEXT_FUND: action2_4584;
+	IND_CB_RANDOM_PROD_CHANGE: action2_4593;
+	IND_CB_MONTHLY_PROD_CHANGE: action2_4590;
+	IND_CB_EXTRA_TEXT_INDUSTRY: action2_4579;
 	action2_4556;
 }
 
@@ -24676,13 +24676,13 @@ switch(FEAT_INDUSTRIES, SELF, action2_4833, 1) {
 
 switch(FEAT_INDUSTRIES, SELF, action2_4834, current_callback) {
 	0: action2_4815;
-	40: action2_4813;
-	34: action2_4829;
-	330: action2_4833;
-	56: action2_4830;
-	41: action2_4817;
-	53: action2_4824;
-	58: action2_4825;
+	IND_CB_LOCATION_CHECK: action2_4813;
+	IND_CB_AVAILABILITY: action2_4829;
+	IND_CB_COLOUR: action2_4833;
+	IND_CB_EXTRA_TEXT_FUND: action2_4830;
+	IND_CB_RANDOM_PROD_CHANGE: action2_4817;
+	IND_CB_MONTHLY_PROD_CHANGE: action2_4824;
+	IND_CB_EXTRA_TEXT_INDUSTRY: action2_4825;
 	action2_4814;
 }
 
@@ -25672,13 +25672,13 @@ switch(FEAT_INDUSTRIES, SELF, action2_4961, allow_close_secondary) {
 
 switch(FEAT_INDUSTRIES, SELF, action2_4962, current_callback) {
 	0: action2_4948;
-	40: action2_4913;
-	34: action2_4951;
-	330: action2_4955;
-	56: action2_4952;
-	41: action2_4961;
-	53: action2_4958;
-	58: action2_4947;
+	IND_CB_LOCATION_CHECK: action2_4913;
+	IND_CB_AVAILABILITY: action2_4951;
+	IND_CB_COLOUR: action2_4955;
+	IND_CB_EXTRA_TEXT_FUND: action2_4952;
+	IND_CB_RANDOM_PROD_CHANGE: action2_4961;
+	IND_CB_MONTHLY_PROD_CHANGE: action2_4958;
+	IND_CB_EXTRA_TEXT_INDUSTRY: action2_4947;
 	action2_4915;
 }
 
@@ -26469,13 +26469,13 @@ switch(FEAT_INDUSTRIES, SELF, action2_5074, allow_close_secondary) {
 
 switch(FEAT_INDUSTRIES, SELF, action2_5075, current_callback) {
 	0: action2_5061;
-	40: action2_5021;
-	34: action2_5064;
-	330: action2_5068;
-	56: action2_5065;
-	41: action2_5074;
-	53: action2_5071;
-	58: action2_5060;
+	IND_CB_LOCATION_CHECK: action2_5021;
+	IND_CB_AVAILABILITY: action2_5064;
+	IND_CB_COLOUR: action2_5068;
+	IND_CB_EXTRA_TEXT_FUND: action2_5065;
+	IND_CB_RANDOM_PROD_CHANGE: action2_5074;
+	IND_CB_MONTHLY_PROD_CHANGE: action2_5071;
+	IND_CB_EXTRA_TEXT_INDUSTRY: action2_5060;
 	action2_5023;
 }
 
@@ -27622,13 +27622,13 @@ switch(FEAT_INDUSTRIES, SELF, action2_5230, allow_close_secondary) {
 
 switch(FEAT_INDUSTRIES, SELF, action2_5231, current_callback) {
 	0: action2_5217;
-	40: action2_5182;
-	34: action2_5220;
-	330: action2_5224;
-	56: action2_5221;
-	41: action2_5230;
-	53: action2_5227;
-	58: action2_5216;
+	IND_CB_LOCATION_CHECK: action2_5182;
+	IND_CB_AVAILABILITY: action2_5220;
+	IND_CB_COLOUR: action2_5224;
+	IND_CB_EXTRA_TEXT_FUND: action2_5221;
+	IND_CB_RANDOM_PROD_CHANGE: action2_5230;
+	IND_CB_MONTHLY_PROD_CHANGE: action2_5227;
+	IND_CB_EXTRA_TEXT_INDUSTRY: action2_5216;
 	action2_5184;
 }
 
@@ -27785,9 +27785,9 @@ switch(FEAT_INDUSTRIES, SELF, action2_5255, restrict_open_during_gameplay) {
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_5256, current_callback) {
-	34: action2_5255;
-	56: return string(STR_GENERIC_NEWLINE);
-	58: return string(STR_GENERIC_NEWLINE);
+	IND_CB_AVAILABILITY: action2_5255;
+	IND_CB_EXTRA_TEXT_FUND: return string(STR_GENERIC_NEWLINE);
+	IND_CB_EXTRA_TEXT_INDUSTRY: return string(STR_GENERIC_NEWLINE);
 	action2_5252;
 }
 
@@ -27965,9 +27965,9 @@ switch(FEAT_INDUSTRIES, SELF, action2_5277, restrict_open_during_gameplay) {
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_5278, current_callback) {
-	34: action2_5277;
-	56: return string(STR_GENERIC_NEWLINE);
-	58: return string(STR_GENERIC_NEWLINE);
+	IND_CB_AVAILABILITY: action2_5277;
+	IND_CB_EXTRA_TEXT_FUND: return string(STR_GENERIC_NEWLINE);
+	IND_CB_EXTRA_TEXT_INDUSTRY: return string(STR_GENERIC_NEWLINE);
 	action2_5274;
 }
 
@@ -28149,13 +28149,13 @@ switch(FEAT_INDUSTRIES, SELF, action2_5306, 1) {
 
 switch(FEAT_INDUSTRIES, SELF, action2_5307, current_callback) {
 	0: action2_5288;
-	40: action2_5286;
-	34: action2_5302;
-	330: action2_5306;
-	56: action2_5303;
-	41: action2_5290;
-	53: action2_5297;
-	58: action2_5298;
+	IND_CB_LOCATION_CHECK: action2_5286;
+	IND_CB_AVAILABILITY: action2_5302;
+	IND_CB_COLOUR: action2_5306;
+	IND_CB_EXTRA_TEXT_FUND: action2_5303;
+	IND_CB_RANDOM_PROD_CHANGE: action2_5290;
+	IND_CB_MONTHLY_PROD_CHANGE: action2_5297;
+	IND_CB_EXTRA_TEXT_INDUSTRY: action2_5298;
 	action2_5287;
 }
 
@@ -30449,13 +30449,13 @@ switch(FEAT_INDUSTRIES, SELF, action2_5504, allow_close_secondary) {
 
 switch(FEAT_INDUSTRIES, SELF, action2_5505, current_callback) {
 	0: action2_5491;
-	40: action2_5451;
-	34: action2_5494;
-	330: action2_5498;
-	56: action2_5495;
-	41: action2_5504;
-	53: action2_5501;
-	58: action2_5490;
+	IND_CB_LOCATION_CHECK: action2_5451;
+	IND_CB_AVAILABILITY: action2_5494;
+	IND_CB_COLOUR: action2_5498;
+	IND_CB_EXTRA_TEXT_FUND: action2_5495;
+	IND_CB_RANDOM_PROD_CHANGE: action2_5504;
+	IND_CB_MONTHLY_PROD_CHANGE: action2_5501;
+	IND_CB_EXTRA_TEXT_INDUSTRY: action2_5490;
 	action2_5453;
 }
 
@@ -30938,13 +30938,13 @@ switch(FEAT_INDUSTRIES, SELF, action2_5568, 1) {
 
 switch(FEAT_INDUSTRIES, SELF, action2_5569, current_callback) {
 	0: action2_5550;
-	40: action2_5548;
-	34: action2_5564;
-	330: action2_5568;
-	56: action2_5565;
-	41: action2_5552;
-	53: action2_5559;
-	58: action2_5560;
+	IND_CB_LOCATION_CHECK: action2_5548;
+	IND_CB_AVAILABILITY: action2_5564;
+	IND_CB_COLOUR: action2_5568;
+	IND_CB_EXTRA_TEXT_FUND: action2_5565;
+	IND_CB_RANDOM_PROD_CHANGE: action2_5552;
+	IND_CB_MONTHLY_PROD_CHANGE: action2_5559;
+	IND_CB_EXTRA_TEXT_INDUSTRY: action2_5560;
 	action2_5549;
 }
 
@@ -31884,13 +31884,13 @@ switch(FEAT_INDUSTRIES, SELF, action2_5692, allow_close_secondary) {
 
 switch(FEAT_INDUSTRIES, SELF, action2_5693, current_callback) {
 	0: action2_5679;
-	40: action2_5644;
-	34: action2_5682;
-	330: action2_5686;
-	56: action2_5683;
-	41: action2_5692;
-	53: action2_5689;
-	58: action2_5678;
+	IND_CB_LOCATION_CHECK: action2_5644;
+	IND_CB_AVAILABILITY: action2_5682;
+	IND_CB_COLOUR: action2_5686;
+	IND_CB_EXTRA_TEXT_FUND: action2_5683;
+	IND_CB_RANDOM_PROD_CHANGE: action2_5692;
+	IND_CB_MONTHLY_PROD_CHANGE: action2_5689;
+	IND_CB_EXTRA_TEXT_INDUSTRY: action2_5678;
 	action2_5646;
 }
 
@@ -32547,13 +32547,13 @@ switch(FEAT_INDUSTRIES, SELF, action2_5784, allow_close_secondary) {
 
 switch(FEAT_INDUSTRIES, SELF, action2_5785, current_callback) {
 	0: action2_5771;
-	40: action2_5736;
-	34: action2_5774;
-	330: action2_5778;
-	56: action2_5775;
-	41: action2_5784;
-	53: action2_5781;
-	58: action2_5770;
+	IND_CB_LOCATION_CHECK: action2_5736;
+	IND_CB_AVAILABILITY: action2_5774;
+	IND_CB_COLOUR: action2_5778;
+	IND_CB_EXTRA_TEXT_FUND: action2_5775;
+	IND_CB_RANDOM_PROD_CHANGE: action2_5784;
+	IND_CB_MONTHLY_PROD_CHANGE: action2_5781;
+	IND_CB_EXTRA_TEXT_INDUSTRY: action2_5770;
 	action2_5738;
 }
 
@@ -36235,13 +36235,13 @@ switch(FEAT_INDUSTRIES, SELF, action2_6068, allow_close_secondary) {
 
 switch(FEAT_INDUSTRIES, SELF, action2_6069, current_callback) {
 	0: action2_6055;
-	40: action2_6029;
-	34: action2_6058;
-	330: action2_6062;
-	56: action2_6059;
-	41: action2_6068;
-	53: action2_6065;
-	58: action2_6054;
+	IND_CB_LOCATION_CHECK: action2_6029;
+	IND_CB_AVAILABILITY: action2_6058;
+	IND_CB_COLOUR: action2_6062;
+	IND_CB_EXTRA_TEXT_FUND: action2_6059;
+	IND_CB_RANDOM_PROD_CHANGE: action2_6068;
+	IND_CB_MONTHLY_PROD_CHANGE: action2_6065;
+	IND_CB_EXTRA_TEXT_INDUSTRY: action2_6054;
 	action2_6031;
 }
 
@@ -37372,13 +37372,13 @@ switch(FEAT_INDUSTRIES, SELF, action2_6220, allow_close_secondary) {
 
 switch(FEAT_INDUSTRIES, SELF, action2_6221, current_callback) {
 	0: action2_6207;
-	40: action2_6172;
-	34: action2_6210;
-	330: action2_6214;
-	56: action2_6211;
-	41: action2_6220;
-	53: action2_6217;
-	58: action2_6206;
+	IND_CB_LOCATION_CHECK: action2_6172;
+	IND_CB_AVAILABILITY: action2_6210;
+	IND_CB_COLOUR: action2_6214;
+	IND_CB_EXTRA_TEXT_FUND: action2_6211;
+	IND_CB_RANDOM_PROD_CHANGE: action2_6220;
+	IND_CB_MONTHLY_PROD_CHANGE: action2_6217;
+	IND_CB_EXTRA_TEXT_INDUSTRY: action2_6206;
 	action2_6174;
 }
 
@@ -39585,13 +39585,13 @@ switch(FEAT_INDUSTRIES, SELF, action2_6399, allow_close_secondary) {
 
 switch(FEAT_INDUSTRIES, SELF, action2_6400, current_callback) {
 	0: action2_6386;
-	40: action2_6360;
-	34: action2_6389;
-	330: action2_6393;
-	56: action2_6390;
-	41: action2_6399;
-	53: action2_6396;
-	58: action2_6385;
+	IND_CB_LOCATION_CHECK: action2_6360;
+	IND_CB_AVAILABILITY: action2_6389;
+	IND_CB_COLOUR: action2_6393;
+	IND_CB_EXTRA_TEXT_FUND: action2_6390;
+	IND_CB_RANDOM_PROD_CHANGE: action2_6399;
+	IND_CB_MONTHLY_PROD_CHANGE: action2_6396;
+	IND_CB_EXTRA_TEXT_INDUSTRY: action2_6385;
 	action2_6362;
 }
 
@@ -40118,13 +40118,13 @@ switch(FEAT_INDUSTRIES, SELF, action2_6474, 1) {
 
 switch(FEAT_INDUSTRIES, SELF, action2_6475, current_callback) {
 	0: action2_6456;
-	40: action2_6454;
-	34: action2_6470;
-	330: action2_6474;
-	56: action2_6471;
-	41: action2_6458;
-	53: action2_6465;
-	58: action2_6466;
+	IND_CB_LOCATION_CHECK: action2_6454;
+	IND_CB_AVAILABILITY: action2_6470;
+	IND_CB_COLOUR: action2_6474;
+	IND_CB_EXTRA_TEXT_FUND: action2_6471;
+	IND_CB_RANDOM_PROD_CHANGE: action2_6458;
+	IND_CB_MONTHLY_PROD_CHANGE: action2_6465;
+	IND_CB_EXTRA_TEXT_INDUSTRY: action2_6466;
 	action2_6455;
 }
 
@@ -40306,13 +40306,13 @@ switch(FEAT_INDUSTRIES, SELF, action2_6502, 1) {
 
 switch(FEAT_INDUSTRIES, SELF, action2_6503, current_callback) {
 	0: action2_6484;
-	40: action2_6482;
-	34: action2_6498;
-	330: action2_6502;
-	56: action2_6499;
-	41: action2_6486;
-	53: action2_6493;
-	58: action2_6494;
+	IND_CB_LOCATION_CHECK: action2_6482;
+	IND_CB_AVAILABILITY: action2_6498;
+	IND_CB_COLOUR: action2_6502;
+	IND_CB_EXTRA_TEXT_FUND: action2_6499;
+	IND_CB_RANDOM_PROD_CHANGE: action2_6486;
+	IND_CB_MONTHLY_PROD_CHANGE: action2_6493;
+	IND_CB_EXTRA_TEXT_INDUSTRY: action2_6494;
 	action2_6483;
 }
 
@@ -40627,13 +40627,13 @@ switch(FEAT_INDUSTRIES, SELF, action2_6553, allow_close_secondary) {
 
 switch(FEAT_INDUSTRIES, SELF, action2_6554, current_callback) {
 	0: action2_6540;
-	40: action2_6514;
-	34: action2_6543;
-	330: action2_6547;
-	56: action2_6544;
-	41: action2_6553;
-	53: action2_6550;
-	58: action2_6539;
+	IND_CB_LOCATION_CHECK: action2_6514;
+	IND_CB_AVAILABILITY: action2_6543;
+	IND_CB_COLOUR: action2_6547;
+	IND_CB_EXTRA_TEXT_FUND: action2_6544;
+	IND_CB_RANDOM_PROD_CHANGE: action2_6553;
+	IND_CB_MONTHLY_PROD_CHANGE: action2_6550;
+	IND_CB_EXTRA_TEXT_INDUSTRY: action2_6539;
 	action2_6516;
 }
 
@@ -41095,13 +41095,13 @@ switch(FEAT_INDUSTRIES, SELF, action2_6618, 1) {
 
 switch(FEAT_INDUSTRIES, SELF, action2_6619, current_callback) {
 	0: action2_6600;
-	40: action2_6598;
-	34: action2_6614;
-	330: action2_6618;
-	56: action2_6615;
-	41: action2_6602;
-	53: action2_6609;
-	58: action2_6610;
+	IND_CB_LOCATION_CHECK: action2_6598;
+	IND_CB_AVAILABILITY: action2_6614;
+	IND_CB_COLOUR: action2_6618;
+	IND_CB_EXTRA_TEXT_FUND: action2_6615;
+	IND_CB_RANDOM_PROD_CHANGE: action2_6602;
+	IND_CB_MONTHLY_PROD_CHANGE: action2_6609;
+	IND_CB_EXTRA_TEXT_INDUSTRY: action2_6610;
 	action2_6599;
 }
 
@@ -41450,13 +41450,13 @@ switch(FEAT_INDUSTRIES, SELF, action2_6679, allow_close_secondary) {
 
 switch(FEAT_INDUSTRIES, SELF, action2_6680, current_callback) {
 	0: action2_6666;
-	40: action2_6626;
-	34: action2_6669;
-	330: action2_6673;
-	56: action2_6670;
-	41: action2_6679;
-	53: action2_6676;
-	58: action2_6665;
+	IND_CB_LOCATION_CHECK: action2_6626;
+	IND_CB_AVAILABILITY: action2_6669;
+	IND_CB_COLOUR: action2_6673;
+	IND_CB_EXTRA_TEXT_FUND: action2_6670;
+	IND_CB_RANDOM_PROD_CHANGE: action2_6679;
+	IND_CB_MONTHLY_PROD_CHANGE: action2_6676;
+	IND_CB_EXTRA_TEXT_INDUSTRY: action2_6665;
 	action2_6628;
 }
 
@@ -41800,9 +41800,9 @@ switch(FEAT_INDUSTRIES, SELF, action2_6731, [STORE_TEMP((697248 - 701265), 256),
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_6732, current_callback) {
-	34: action2_6730;
-	56: action2_6731;
-	58: return string(STR_GENERIC_NEWLINE);
+	IND_CB_AVAILABILITY: action2_6730;
+	IND_CB_EXTRA_TEXT_FUND: action2_6731;
+	IND_CB_EXTRA_TEXT_INDUSTRY: return string(STR_GENERIC_NEWLINE);
 	action2_6727;
 }
 
@@ -42808,13 +42808,13 @@ switch(FEAT_INDUSTRIES, SELF, action2_6857, allow_close_secondary) {
 
 switch(FEAT_INDUSTRIES, SELF, action2_6858, current_callback) {
 	0: action2_6844;
-	40: action2_6818;
-	34: action2_6847;
-	330: action2_6851;
-	56: action2_6848;
-	41: action2_6857;
-	53: action2_6854;
-	58: action2_6843;
+	IND_CB_LOCATION_CHECK: action2_6818;
+	IND_CB_AVAILABILITY: action2_6847;
+	IND_CB_COLOUR: action2_6851;
+	IND_CB_EXTRA_TEXT_FUND: action2_6848;
+	IND_CB_RANDOM_PROD_CHANGE: action2_6857;
+	IND_CB_MONTHLY_PROD_CHANGE: action2_6854;
+	IND_CB_EXTRA_TEXT_INDUSTRY: action2_6843;
 	action2_6820;
 }
 
@@ -45256,13 +45256,13 @@ switch(FEAT_INDUSTRIES, SELF, action2_7141, 1) {
 
 switch(FEAT_INDUSTRIES, SELF, action2_7142, current_callback) {
 	0: action2_7123;
-	40: action2_7121;
-	34: action2_7137;
-	330: action2_7141;
-	56: action2_7138;
-	41: action2_7125;
-	53: action2_7132;
-	58: action2_7133;
+	IND_CB_LOCATION_CHECK: action2_7121;
+	IND_CB_AVAILABILITY: action2_7137;
+	IND_CB_COLOUR: action2_7141;
+	IND_CB_EXTRA_TEXT_FUND: action2_7138;
+	IND_CB_RANDOM_PROD_CHANGE: action2_7125;
+	IND_CB_MONTHLY_PROD_CHANGE: action2_7132;
+	IND_CB_EXTRA_TEXT_INDUSTRY: action2_7133;
 	action2_7122;
 }
 
@@ -45421,10 +45421,10 @@ switch(FEAT_INDUSTRIES, SELF, action2_7165, [STORE_TEMP((729390 - 701265), 256),
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_7166, current_callback) {
-	40: action2_7161;
-	34: action2_7164;
-	56: action2_7165;
-	58: return string(STR_GENERIC_NEWLINE);
+	IND_CB_LOCATION_CHECK: action2_7161;
+	IND_CB_AVAILABILITY: action2_7164;
+	IND_CB_EXTRA_TEXT_FUND: action2_7165;
+	IND_CB_EXTRA_TEXT_INDUSTRY: return string(STR_GENERIC_NEWLINE);
 	action2_7156;
 }
 
@@ -45956,14 +45956,14 @@ switch(FEAT_INDUSTRIES, SELF, action2_7238, allow_close_secondary) {
 
 switch(FEAT_INDUSTRIES, SELF, action2_7239, current_callback) {
 	0: action2_7225;
-	40: action2_7197;
-	34: action2_7228;
-	330: action2_7232;
-	332: action2_7199;
-	56: action2_7229;
-	41: action2_7238;
-	53: action2_7235;
-	58: action2_7224;
+	IND_CB_LOCATION_CHECK: action2_7197;
+	IND_CB_AVAILABILITY: action2_7228;
+	IND_CB_COLOUR: action2_7232;
+	IND_CB_CARGO_OUTPUT: action2_7199;
+	IND_CB_EXTRA_TEXT_FUND: action2_7229;
+	IND_CB_RANDOM_PROD_CHANGE: action2_7238;
+	IND_CB_MONTHLY_PROD_CHANGE: action2_7235;
+	IND_CB_EXTRA_TEXT_INDUSTRY: action2_7224;
 	action2_7201;
 }
 
@@ -46247,14 +46247,14 @@ switch(FEAT_INDUSTRIES, SELF, action2_7286, allow_close_secondary) {
 
 switch(FEAT_INDUSTRIES, SELF, action2_7287, current_callback) {
 	0: action2_7273;
-	40: action2_7247;
-	34: action2_7276;
-	330: action2_7280;
-	332: action2_7199;
-	56: action2_7277;
-	41: action2_7286;
-	53: action2_7283;
-	58: action2_7272;
+	IND_CB_LOCATION_CHECK: action2_7247;
+	IND_CB_AVAILABILITY: action2_7276;
+	IND_CB_COLOUR: action2_7280;
+	IND_CB_CARGO_OUTPUT: action2_7199;
+	IND_CB_EXTRA_TEXT_FUND: action2_7277;
+	IND_CB_RANDOM_PROD_CHANGE: action2_7286;
+	IND_CB_MONTHLY_PROD_CHANGE: action2_7283;
+	IND_CB_EXTRA_TEXT_INDUSTRY: action2_7272;
 	action2_7249;
 }
 
@@ -47039,13 +47039,13 @@ switch(FEAT_INDUSTRIES, SELF, action2_7403, 1) {
 
 switch(FEAT_INDUSTRIES, SELF, action2_7404, current_callback) {
 	0: action2_7385;
-	40: action2_7383;
-	34: action2_7399;
-	330: action2_7403;
-	56: action2_7400;
-	41: action2_7387;
-	53: action2_7394;
-	58: action2_7395;
+	IND_CB_LOCATION_CHECK: action2_7383;
+	IND_CB_AVAILABILITY: action2_7399;
+	IND_CB_COLOUR: action2_7403;
+	IND_CB_EXTRA_TEXT_FUND: action2_7400;
+	IND_CB_RANDOM_PROD_CHANGE: action2_7387;
+	IND_CB_MONTHLY_PROD_CHANGE: action2_7394;
+	IND_CB_EXTRA_TEXT_INDUSTRY: action2_7395;
 	action2_7384;
 }
 
@@ -47398,13 +47398,13 @@ switch(FEAT_INDUSTRIES, SELF, action2_7465, allow_close_secondary) {
 
 switch(FEAT_INDUSTRIES, SELF, action2_7466, current_callback) {
 	0: action2_7452;
-	40: action2_7412;
-	34: action2_7455;
-	330: action2_7459;
-	56: action2_7456;
-	41: action2_7465;
-	53: action2_7462;
-	58: action2_7451;
+	IND_CB_LOCATION_CHECK: action2_7412;
+	IND_CB_AVAILABILITY: action2_7455;
+	IND_CB_COLOUR: action2_7459;
+	IND_CB_EXTRA_TEXT_FUND: action2_7456;
+	IND_CB_RANDOM_PROD_CHANGE: action2_7465;
+	IND_CB_MONTHLY_PROD_CHANGE: action2_7462;
+	IND_CB_EXTRA_TEXT_INDUSTRY: action2_7451;
 	action2_7414;
 }
 
@@ -47986,13 +47986,13 @@ switch(FEAT_INDUSTRIES, SELF, action2_7553, allow_close_secondary) {
 
 switch(FEAT_INDUSTRIES, SELF, action2_7554, current_callback) {
 	0: action2_7540;
-	40: action2_7505;
-	34: action2_7543;
-	330: action2_7547;
-	56: action2_7544;
-	41: action2_7553;
-	53: action2_7550;
-	58: action2_7539;
+	IND_CB_LOCATION_CHECK: action2_7505;
+	IND_CB_AVAILABILITY: action2_7543;
+	IND_CB_COLOUR: action2_7547;
+	IND_CB_EXTRA_TEXT_FUND: action2_7544;
+	IND_CB_RANDOM_PROD_CHANGE: action2_7553;
+	IND_CB_MONTHLY_PROD_CHANGE: action2_7550;
+	IND_CB_EXTRA_TEXT_INDUSTRY: action2_7539;
 	action2_7507;
 }
 
@@ -49560,13 +49560,13 @@ switch(FEAT_INDUSTRIES, SELF, action2_7709, allow_close_secondary) {
 
 switch(FEAT_INDUSTRIES, SELF, action2_7710, current_callback) {
 	0: action2_7696;
-	40: action2_7661;
-	34: action2_7699;
-	330: action2_7703;
-	56: action2_7700;
-	41: action2_7709;
-	53: action2_7706;
-	58: action2_7695;
+	IND_CB_LOCATION_CHECK: action2_7661;
+	IND_CB_AVAILABILITY: action2_7699;
+	IND_CB_COLOUR: action2_7703;
+	IND_CB_EXTRA_TEXT_FUND: action2_7700;
+	IND_CB_RANDOM_PROD_CHANGE: action2_7709;
+	IND_CB_MONTHLY_PROD_CHANGE: action2_7706;
+	IND_CB_EXTRA_TEXT_INDUSTRY: action2_7695;
 	action2_7663;
 }
 
