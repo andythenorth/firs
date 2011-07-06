@@ -2,7 +2,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_224, 224) {
 	property {
 		substitute: 0;
 		accepted_cargos: [];
-		land_shape_flags: 16;
+		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
 	}
 }
 
@@ -66,7 +66,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_226, 226) {
 	property {
 		substitute: 0;
   accepted_cargos: [];
-		land_shape_flags: 16;
+		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
 	}
 }
 
@@ -86,7 +86,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_227, 227) {
 	property {
 		substitute: 0;
   accepted_cargos: [];
-		land_shape_flags: 16;
+		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
 		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
 }
@@ -178,7 +178,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_228, 228) {
 	property {
 		substitute: 0;
 		accepted_cargos: [[cargo_sand, 8]];
-		land_shape_flags: 16;
+		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
 		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
 }
@@ -187,7 +187,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_229, 229) {
 	property {
 		substitute: 0;
 		accepted_cargos: [[cargo_sand, 8]];
-		land_shape_flags: 16;
+		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
 		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
 }
@@ -358,7 +358,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_230, 230) {
 	property {
 		substitute: 0;
 		accepted_cargos: [[cargo_clay, 8]];
-		land_shape_flags: 16;
+		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
 		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
 }
@@ -367,7 +367,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_231, 231) {
 	property {
 		substitute: 0;
 		accepted_cargos: [[cargo_clay, 8]];
-		land_shape_flags: 16;
+		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
 		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
 }
@@ -538,7 +538,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_232, 232) {
 	property {
 		substitute: 0;
   accepted_cargos: [[cargo_clay, 8]];
-		land_shape_flags: 16;
+		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
 		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
 }
@@ -547,7 +547,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_233, 233) {
 	property {
 		substitute: 0;
   accepted_cargos: [[cargo_clay, 8]];
-		land_shape_flags: 16;
+		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
 		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
 }
