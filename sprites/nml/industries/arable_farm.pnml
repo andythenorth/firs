@@ -269,7 +269,7 @@ item(FEAT_INDUSTRIES, arable_farm, 26) {
 		prod_decrease_msg: 18490;
 		new_ind_msg: 18477;
 		name: string(STR_IND_ARABLE_FARM);
-		nearby_station_name: string(STR_GENERIC_DCE0);
+		nearby_station_name: string(STR_STATIONNAME_FARMS);
 		prod_cargo_types: [6, 12];
 		accept_cargo_types: [21, 255, 255];
 		prod_multiplier: [2, 2];

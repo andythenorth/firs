@@ -5685,7 +5685,7 @@ item(FEAT_INDUSTRIES, clay_pit, 44) {
 		prod_decrease_msg: 18489;
 		new_ind_msg: 18477;
 		name: string(STR_IND_CLAY_PIT);
-		nearby_station_name: string(STR_GENERIC_DCE8);
+		nearby_station_name: string(STR_STATIONNAME_PITS);
 		prod_cargo_types: [16, 255];
 		accept_cargo_types: [24, 255, 255];
 		prod_multiplier: [10, 200];
@@ -7605,7 +7605,7 @@ item(FEAT_INDUSTRIES, diary_farm, 28) {
 		prod_decrease_msg: 18489;
 		new_ind_msg: 18477;
 		name: string(STR_IND_DAIRYFARM);
-		nearby_station_name: string(STR_GENERIC_DCE0);
+		nearby_station_name: string(STR_STATIONNAME_FARMS);
 		prod_cargo_types: [4, 10];
 		accept_cargo_types: [21, 255, 255];
 		prod_multiplier: [2, 2];
@@ -9329,7 +9329,7 @@ item(FEAT_INDUSTRIES, diary, 36) {
 		prod_decrease_msg: 18489;
 		new_ind_msg: 18477;
 		name: string(STR_IND_DAIRY);
-		nearby_station_name: string(STR_GENERIC_DCE6);
+		nearby_station_name: string(STR_STATIONNAME_FACTORIES);
 		prod_cargo_types: [11, 255];
 		accept_cargo_types: [18, 10, 255];
 		prod_multiplier: [0, 0];
@@ -9720,7 +9720,7 @@ item(FEAT_INDUSTRIES, dredging_site, 20) {
 		prod_decrease_msg: 18489;
 		new_ind_msg: 18477;
 		name: string(STR_IND_DEDGING_SITE);
-		nearby_station_name: string(STR_GENERIC_DCEA);
+		nearby_station_name: string(STR_STATIONNAME_DREDGING_SITE);
 		prod_cargo_types: [17, 26];
 		accept_cargo_types: [24, 255, 255];
 		prod_multiplier: [8, 8];
@@ -11311,7 +11311,7 @@ item(FEAT_INDUSTRIES, fishing_grounds, 32) {
 		prod_decrease_msg: 18489;
 		new_ind_msg: 18477;
 		name: string(STR_IND_FISHING_GROUND);
-		nearby_station_name: string(STR_GENERIC_DCEB);
+		nearby_station_name: string(STR_STATIONNAME_FISHING_GROUNDS);
 		prod_cargo_types: [14, 255];
 		accept_cargo_types: [255, 255, 255];
 		prod_multiplier: [5, 0];
@@ -18843,7 +18843,7 @@ item(FEAT_INDUSTRIES, smithy_forge, 6) {
 		prod_decrease_msg: 18489;
 		new_ind_msg: 18477;
 		name: string(STR_IND_SMITHY_FORGE);
-		nearby_station_name: string(STR_GENERIC_DCEC);
+		nearby_station_name: string(STR_STATIONNAME_SMITHY_FORGE);
 		prod_cargo_types: [24, 21];
 		accept_cargo_types: [9, 255, 255];
 		prod_multiplier: [0, 0];
@@ -25367,7 +25367,7 @@ item(FEAT_INDUSTRIES, furniture_factory, 13) {
 		prod_decrease_msg: 18489;
 		new_ind_msg: 18477;
 		name: string(STR_IND_FURNITURE_FACTORY);
-		nearby_station_name: string(STR_GENERIC_DCE6);
+		nearby_station_name: string(STR_STATIONNAME_FACTORIES);
 		prod_cargo_types: [5, 255];
 		accept_cargo_types: [18, 19, 255];
 		prod_multiplier: [0, 0];
@@ -26134,7 +26134,7 @@ item(FEAT_INDUSTRIES, glass_works, 22) {
 		prod_decrease_msg: 18489;
 		new_ind_msg: 18477;
 		name: string(STR_IND_GLASS_WORKS);
-		nearby_station_name: string(STR_GENERIC_DCE6);
+		nearby_station_name: string(STR_STATIONNAME_FACTORIES);
 		prod_cargo_types: [28, 18];
 		accept_cargo_types: [17, 23, 255];
 		prod_multiplier: [0, 0];
@@ -37052,7 +37052,7 @@ item(FEAT_INDUSTRIES, stockyard, 37) {
 		prod_decrease_msg: 18489;
 		new_ind_msg: 18477;
 		name: string(STR_IND_STOCKYARD);
-		nearby_station_name: string(STR_GENERIC_DCE6);
+		nearby_station_name: string(STR_STATIONNAME_FACTORIES);
 		prod_cargo_types: [11, 255];
 		accept_cargo_types: [18, 4, 255];
 		prod_multiplier: [0, 0];
@@ -39932,7 +39932,7 @@ item(FEAT_INDUSTRIES, mixed_farm, 29) {
 		prod_decrease_msg: 18489;
 		new_ind_msg: 18477;
 		name: string(STR_IND_MIXEDFARM);
-		nearby_station_name: string(STR_GENERIC_DCE0);
+		nearby_station_name: string(STR_STATIONNAME_FARMS);
 		prod_cargo_types: [4, 22];
 		accept_cargo_types: [21, 255, 255];
 		prod_multiplier: [2, 2];
@@ -40362,7 +40362,7 @@ item(FEAT_INDUSTRIES, lime_kiln7, 17) {
 	property {
 		substitute: 4;
 		override: 4;
-		nearby_station_name: string(STR_GENERIC_DCE4);
+		nearby_station_name: string(STR_STATIONNAME_CHEMICALS);
 		prod_cargo_types: [23, 25];
 		accept_cargo_types: [3, 255, 255];
 		input_multiplier_1: [0, 0];
@@ -41115,7 +41115,7 @@ item(FEAT_INDUSTRIES, lime_kiln4, 14) {
 	property {
 		substitute: 14;
 		override: 14;
-		nearby_station_name: string(STR_GENERIC_DCE2);
+		nearby_station_name: string(STR_STATIONNAME_MILLS);
 		prod_cargo_types: [5, 18];
 		accept_cargo_types: [16, 7, 23];
 		input_multiplier_1: [0, 0];
@@ -42543,7 +42543,7 @@ item(FEAT_INDUSTRIES, plastics_plant, 18) {
 		prod_decrease_msg: 18489;
 		new_ind_msg: 18477;
 		name: string(STR_IND_PLASTICS_PLANT);
-		nearby_station_name: string(STR_GENERIC_DCE7);
+		nearby_station_name: string(STR_STATIONNAME_PLANTS);
 		prod_cargo_types: [5, 18];
 		accept_cargo_types: [23, 22, 255];
 		prod_multiplier: [0, 0];
@@ -45075,7 +45075,7 @@ item(FEAT_INDUSTRIES, quarry, 10) {
 		prod_decrease_msg: 18489;
 		new_ind_msg: 18477;
 		name: string(STR_IND_QUARRY);
-		nearby_station_name: string(STR_GENERIC_DCE8);
+		nearby_station_name: string(STR_STATIONNAME_PITS);
 		prod_cargo_types: [17, 26];
 		accept_cargo_types: [24, 255, 255];
 		prod_multiplier: [10, 10];
@@ -45977,7 +45977,7 @@ item(FEAT_INDUSTRIES, lime_kiln2, 12) {
 	property {
 		substitute: 2;
 		override: 2;
-		nearby_station_name: string(STR_GENERIC_DCE2);
+		nearby_station_name: string(STR_STATIONNAME_MILLS);
 		prod_cargo_types: [19, 255];
 		accept_cargo_types: [7, 255, 255];
 		input_multiplier_1: [0, 0];
@@ -46858,7 +46858,7 @@ item(FEAT_INDUSTRIES, sheep_farm, 27) {
 		prod_decrease_msg: 18489;
 		new_ind_msg: 18477;
 		name: string(STR_IND_SHEEPFARM);
-		nearby_station_name: string(STR_GENERIC_DCE0);
+		nearby_station_name: string(STR_STATIONNAME_FARMS);
 		prod_cargo_types: [4, 15];
 		accept_cargo_types: [21, 255, 255];
 		prod_multiplier: [2, 2];
@@ -47059,7 +47059,7 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_7, 7) {
 	property {
 		substitute: 8;
 		override: 8;
-		nearby_station_name: string(STR_GENERIC_DCE2);
+		nearby_station_name: string(STR_STATIONNAME_MILLS);
 		accept_cargo_types: [8, 1, 20];
 		input_multiplier_1: [0, 0];
 		input_multiplier_2: [0, 0];
@@ -47676,7 +47676,7 @@ item(FEAT_INDUSTRIES, sugar_refinery, 19) {
 		prod_decrease_msg: 18489;
 		new_ind_msg: 18477;
 		name: string(STR_IND_SUGAR_REFINERY);
-		nearby_station_name: string(STR_GENERIC_DCE4);
+		nearby_station_name: string(STR_STATIONNAME_CHEMICALS);
 		prod_cargo_types: [11, 255];
 		accept_cargo_types: [18, 12, 255];
 		prod_multiplier: [0, 0];
@@ -49245,7 +49245,7 @@ item(FEAT_INDUSTRIES, textile_mill, 42) {
 		prod_decrease_msg: 18489;
 		new_ind_msg: 18477;
 		name: string(STR_IND_TEXTILE_MILL);
-		nearby_station_name: string(STR_GENERIC_DCE2);
+		nearby_station_name: string(STR_STATIONNAME_MILLS);
 		prod_cargo_types: [5, 255];
 		accept_cargo_types: [18, 15, 22];
 		prod_multiplier: [0, 0];

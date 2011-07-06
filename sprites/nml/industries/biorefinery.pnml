@@ -591,7 +591,7 @@ item(FEAT_INDUSTRIES, biorefinery, 46) {
 		prod_decrease_msg: 18489;
 		new_ind_msg: 18477;
 		name: string(STR_IND_BIOREFINERY);
-		nearby_station_name: string(STR_GENERIC_DCE4);
+		nearby_station_name: string(STR_STATIONNAME_CHEMICALS);
 		prod_cargo_types: [23, 25];
 		accept_cargo_types: [6, 12, 255];
 		prod_multiplier: [0, 0];

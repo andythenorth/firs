@@ -2457,7 +2457,7 @@ item(FEAT_INDUSTRIES, aluminum_plant, 8) {
 		prod_decrease_msg: 18489;
 		new_ind_msg: 18477;
 		name: string(STR_IND_ALUMINIUM_PLANT);
-		nearby_station_name: string(STR_GENERIC_DCE7);
+		nearby_station_name: string(STR_STATIONNAME_PLANTS);
 		prod_cargo_types: [9, 255];
 		accept_cargo_types: [27, 23, 20];
 		prod_multiplier: [0, 0];
