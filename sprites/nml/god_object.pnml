@@ -5,7 +5,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_161, 161) {
 		substitute: 0;
 		accepted_cargos: [[13, 8], [6, 8], [18, 8]];
 		land_shape_flags: 16;
-		callback_flags: 16;
+		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 		animation_info: [1, 71];
 		animation_speed: 2;
 		animation_triggers: 1;
@@ -2118,7 +2118,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_165, 165) {
 		substitute: 0;
 		accepted_cargos: [[1, 8], [16, 8], [17, 8]];
 		land_shape_flags: 16;
-		callback_flags: 16;
+		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 		animation_info: [1, 7];
 		animation_speed: 3;
 		animation_triggers: 1;
@@ -3079,7 +3079,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_164, 164) {
 		substitute: 0;
 		accepted_cargos: [[28, 8], [0, 0], [0, 0]];
 		land_shape_flags: 0;
-		callback_flags: 16;
+		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
 }
 
@@ -3439,7 +3439,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_189, 189) {
 		substitute: 0;
   accepted_cargos: [[cargo_engineering_supplies, 8]];
 		land_shape_flags: 16;
-		callback_flags: 16;
+		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
 }
 
@@ -5882,7 +5882,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_162, 162) {
 		substitute: 0;
 		accepted_cargos: [[1, 8], [16, 8], [26, 8]];
 		land_shape_flags: 16;
-		callback_flags: 16;
+		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 		animation_info: [1, 7];
 		animation_speed: 3;
 		animation_triggers: 1;
@@ -7287,7 +7287,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_180, 180) {
 		substitute: 0;
 		accepted_cargos: [[21, 8], [0, 0], [0, 0]];
 		land_shape_flags: 0;
-		callback_flags: 16;
+		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
 }
 
@@ -7807,7 +7807,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_181, 181) {
 		substitute: 0;
 		accepted_cargos: [[18, 8], [10, 8], [0, 0]];
 		land_shape_flags: 16;
-		callback_flags: 16;
+		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 		animation_info: [1, 7];
 		animation_speed: 3;
 		animation_triggers: 1;
@@ -9927,7 +9927,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_163, 163) {
 		substitute: 0;
 		accepted_cargos: [[23, 8], [0, 0], [0, 0]];
 		land_shape_flags: 16;
-		callback_flags: 16;
+		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 		animation_info: [1, 7];
 		animation_speed: 3;
 		animation_triggers: 1;
@@ -18167,7 +18167,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_206, 206) {
 		substitute: 0;
 		accepted_cargos: [[21, 8], [0, 0], [0, 0]];
 		land_shape_flags: 0;
-		callback_flags: 16;
+		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
 }
 
@@ -18559,7 +18559,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_209, 209) {
 		substitute: 0;
 		accepted_cargos: [[9, 8], [0, 0], [0, 0]];
 		land_shape_flags: 16;
-		callback_flags: 16;
+		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
 }
 
@@ -18628,7 +18628,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_209, 209) {
 		substitute: 0;
 		accepted_cargos: [[9, 8], [0, 0], [0, 0]];
 		land_shape_flags: 16;
-		callback_flags: 16;
+		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
 }
 
@@ -18697,7 +18697,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_209, 209) {
 		substitute: 0;
 		accepted_cargos: [[9, 8], [0, 0], [0, 0]];
 		land_shape_flags: 16;
-		callback_flags: 16;
+		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
 }
 
@@ -24355,7 +24355,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_208, 208) {
 		substitute: 0;
 		accepted_cargos: [[21, 8], [0, 0], [0, 0]];
 		land_shape_flags: 0;
-		callback_flags: 16;
+		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
 }
 
@@ -24697,7 +24697,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_184, 184) {
 		substitute: 0;
 		accepted_cargos: [[19, 8], [18, 8], [0, 0]];
 		land_shape_flags: 16;
-		callback_flags: 16;
+		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
 }
 
@@ -25693,7 +25693,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_178, 178) {
 		substitute: 0;
 		accepted_cargos: [[17, 8], [23, 8], [0, 0]];
 		land_shape_flags: 16;
-		callback_flags: 16;
+		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
 }
 
@@ -26490,7 +26490,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_182, 182) {
 		substitute: 0;
 		accepted_cargos: [[6, 8], [18, 8], [0, 0]];
 		land_shape_flags: 16;
-		callback_flags: 16;
+		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 		animation_info: [1, 5];
 		animation_speed: 3;
 	}
@@ -28314,7 +28314,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_199, 199) {
 		substitute: 0;
 		accepted_cargos: [[8, 8], [7, 8], [0, 0]];
 		land_shape_flags: 16;
-		callback_flags: 16;
+		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 		animation_info: [1, 47];
 		animation_speed: 2;
 		animation_triggers: 1;
@@ -30470,7 +30470,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_193, 193) {
 		substitute: 0;
   accepted_cargos: [[cargo_engineering_supplies, 8]];
 		land_shape_flags: 0;
-		callback_flags: 16;
+		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
 }
 
@@ -30959,7 +30959,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_191, 191) {
 		substitute: 0;
 		accepted_cargos: [[26, 8], [1, 8], [0, 0]];
 		land_shape_flags: 16;
-		callback_flags: 16;
+		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
 }
 
@@ -31905,7 +31905,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_187, 187) {
 		substitute: 0;
 		accepted_cargos: [[19, 8], [23, 8], [0, 0]];
 		land_shape_flags: 16;
-		callback_flags: 16;
+		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
 }
 
@@ -32568,7 +32568,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_186, 186) {
 		substitute: 0;
 		accepted_cargos: [[9, 8], [25, 8], [0, 0]];
 		land_shape_flags: 16;
-		callback_flags: 16;
+		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 		animation_info: [1, 47];
 		animation_speed: 2;
 		animation_triggers: 1;
@@ -36256,7 +36256,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_179, 179) {
 		substitute: 0;
 		accepted_cargos: [[4, 8], [18, 8], [0, 0]];
 		land_shape_flags: 16;
-		callback_flags: 16;
+		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
 }
 
@@ -37393,7 +37393,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_188, 188) {
 		substitute: 0;
 		accepted_cargos: [[9, 8], [0, 0], [0, 0]];
 		land_shape_flags: 16;
-		callback_flags: 16;
+		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 		animation_info: [1, 47];
 		animation_speed: 2;
 	}
@@ -39606,7 +39606,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_190, 190) {
 		substitute: 0;
 		accepted_cargos: [[21, 8], [0, 0], [0, 0]];
 		land_shape_flags: 0;
-		callback_flags: 16;
+		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
 }
 
@@ -40696,7 +40696,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_215, 215) {
 		substitute: 0;
   accepted_cargos: [[cargo_engineering_supplies, 8]];
 		land_shape_flags: 0;
-		callback_flags: 16;
+		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
 }
 
@@ -40786,7 +40786,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_216, 216) {
 		substitute: 0;
   accepted_cargos: [[cargo_engineering_supplies, 8]];
 		land_shape_flags: 0;
-		callback_flags: 16;
+		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
 }
 
@@ -41535,7 +41535,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_203, 203) {
 		substitute: 0;
 		accepted_cargos: [[11, 8], [5, 8], [25, 8]];
 		land_shape_flags: 16;
-		callback_flags: 16;
+		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
 }
 
@@ -41817,7 +41817,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_176, 176) {
 		substitute: 0;
 		accepted_cargos: [[23, 8], [22, 8], [0, 0]];
 		land_shape_flags: 16;
-		callback_flags: 16;
+		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
 }
 
@@ -42829,7 +42829,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_177, 177) {
 		substitute: 0;
   accepted_cargos: [[cargo_engineering_supplies, 8]];
 		land_shape_flags: 16;
-		callback_flags: 16;
+		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
 }
 
@@ -46270,7 +46270,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_11, 11) {
 		override: 11;
 		accepted_cargos: [[7, 8], [0, 0], [0, 0]];
 		land_shape_flags: 0;
-		callback_flags: 16;
+		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
 }
 
@@ -46280,7 +46280,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_12, 12) {
 		override: 12;
 		accepted_cargos: [[7, 8], [0, 0], [0, 0]];
 		land_shape_flags: 0;
-		callback_flags: 16;
+		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
 }
 
@@ -46290,7 +46290,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_13, 13) {
 		override: 13;
 		accepted_cargos: [[7, 8], [0, 0], [0, 0]];
 		land_shape_flags: 0;
-		callback_flags: 16;
+		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
 }
 
@@ -46300,7 +46300,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_14, 14) {
 		override: 14;
 		accepted_cargos: [[7, 8], [0, 0], [0, 0]];
 		land_shape_flags: 0;
-		callback_flags: 16;
+		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
 }
 
@@ -46310,7 +46310,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_15, 15) {
 		override: 15;
 		accepted_cargos: [[7, 8], [0, 0], [0, 0]];
 		land_shape_flags: 0;
-		callback_flags: 16;
+		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
 }
 
@@ -46404,7 +46404,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_192, 192) {
 		substitute: 0;
 		accepted_cargos: [[21, 8], [0, 0], [0, 0]];
 		land_shape_flags: 0;
-		callback_flags: 16;
+		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
 }
 
@@ -47467,7 +47467,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_214, 214) {
 		substitute: 0;
 		accepted_cargos: [[12, 8], [18, 8], [0, 0]];
 		land_shape_flags: 16;
-		callback_flags: 16;
+		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
 }
 
@@ -48007,7 +48007,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_183, 183) {
 		substitute: 0;
 		accepted_cargos: [[18, 8], [15, 8], [22, 8]];
 		land_shape_flags: 16;
-		callback_flags: 16;
+		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 		animation_info: [1, 7];
 		animation_speed: 3;
 		animation_triggers: 1;

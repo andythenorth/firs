@@ -3,7 +3,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_185, 185) {
 		substitute: 0;
 		accepted_cargos: [[27, 8], [23, 8], [20, 8]];
 		land_shape_flags: 16;
-		callback_flags: 16;
+		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 		animation_info: [1, 47];
 		animation_speed: 2;
 		animation_triggers: 1;

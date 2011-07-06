@@ -3,7 +3,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_197, 197) {
 		substitute: 0;
   accepted_cargos: [[cargo_engineering_supplies, 8]];
 		land_shape_flags: 0;
-		callback_flags: 16;
+		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
 }
 

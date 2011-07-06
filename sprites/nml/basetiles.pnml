@@ -87,7 +87,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_227, 227) {
 		substitute: 0;
   accepted_cargos: [];
 		land_shape_flags: 16;
-		callback_flags: 16;
+		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
 }
 
@@ -179,7 +179,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_228, 228) {
 		substitute: 0;
 		accepted_cargos: [[cargo_sand, 8]];
 		land_shape_flags: 16;
-		callback_flags: 16;
+		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
 }
 
@@ -188,7 +188,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_229, 229) {
 		substitute: 0;
 		accepted_cargos: [[cargo_sand, 8]];
 		land_shape_flags: 16;
-		callback_flags: 16;
+		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
 }
 
@@ -359,7 +359,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_230, 230) {
 		substitute: 0;
 		accepted_cargos: [[cargo_clay, 8]];
 		land_shape_flags: 16;
-		callback_flags: 16;
+		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
 }
 
@@ -368,7 +368,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_231, 231) {
 		substitute: 0;
 		accepted_cargos: [[cargo_clay, 8]];
 		land_shape_flags: 16;
-		callback_flags: 16;
+		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
 }
 
@@ -539,7 +539,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_232, 232) {
 		substitute: 0;
   accepted_cargos: [[cargo_clay, 8]];
 		land_shape_flags: 16;
-		callback_flags: 16;
+		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
 }
 
@@ -548,7 +548,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_233, 233) {
 		substitute: 0;
   accepted_cargos: [[cargo_clay, 8]];
 		land_shape_flags: 16;
-		callback_flags: 16;
+		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
 }
 

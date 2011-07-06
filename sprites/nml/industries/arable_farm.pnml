@@ -4,7 +4,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_160, 160) {
 		substitute: 0;
 		accepted_cargos: [[21, 8], [0, 0], [0, 0]];
 		land_shape_flags: 16;
-		callback_flags: 16;
+		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
 }
 

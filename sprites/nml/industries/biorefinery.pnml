@@ -5,7 +5,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_166, 166) {
 		substitute: 0;
 		accepted_cargos: [[6, 8], [12, 8], [0, 0]];
 		land_shape_flags: 16;
-		callback_flags: 16;
+		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 		animation_info: [1, 7];
 		animation_speed: 3;
 		animation_triggers: 1;
