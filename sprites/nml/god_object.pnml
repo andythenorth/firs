@@ -1736,31 +1736,31 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_161, 161) {
 	}
 }
 
-tilelayout tilelayout_3019_0 {
+tilelayout tilelayout_brewery_0 {
 	0, 2: item_FEAT_INDUSTRYTILES_161;
 	1, 0: item_FEAT_INDUSTRYTILES_161;
 	1, 2: item_FEAT_INDUSTRYTILES_161;
 }
 
-tilelayout tilelayout_3019_1 {
+tilelayout tilelayout_brewery_1 {
 	0, 0: item_FEAT_INDUSTRYTILES_161;
 	1, 0: item_FEAT_INDUSTRYTILES_161;
 	2, 0: item_FEAT_INDUSTRYTILES_161;
 }
 
-tilelayout tilelayout_3019_2 {
+tilelayout tilelayout_brewery_2 {
 	0, 1: item_FEAT_INDUSTRYTILES_161;
 	1, 0: item_FEAT_INDUSTRYTILES_161;
 	1, 1: item_FEAT_INDUSTRYTILES_161;
 }
 
-tilelayout tilelayout_3019_3 {
+tilelayout tilelayout_brewery_3 {
 	0, 0: item_FEAT_INDUSTRYTILES_161;
 	1, 0: item_FEAT_INDUSTRYTILES_161;
 	2, 0: item_FEAT_INDUSTRYTILES_161;
 }
 
-tilelayout tilelayout_3019_4 {
+tilelayout tilelayout_brewery_4 {
 	0, 0: item_FEAT_INDUSTRYTILES_161;
 	0, 1: item_FEAT_INDUSTRYTILES_161;
 	1, 0: item_FEAT_INDUSTRYTILES_161;
@@ -1771,7 +1771,7 @@ tilelayout tilelayout_3019_4 {
 item(FEAT_INDUSTRIES, brewery, 35) {
 	property {
 		substitute: 0;
-		layouts: [tilelayout_3019_0, tilelayout_3019_1, tilelayout_3019_2, tilelayout_3019_3, tilelayout_3019_4];
+		layouts: [tilelayout_brewery_0, tilelayout_brewery_1, tilelayout_brewery_2, tilelayout_brewery_3, tilelayout_brewery_4];
 		life_type: 4;
 		closure_msg: 18483;
 		prod_increase_msg: 18485;
@@ -2669,7 +2669,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_165, 165) {
 	}
 }
 
-tilelayout tilelayout_3123_0 {
+tilelayout tilelayout_brick_works_0 {
 	0, 0: item_FEAT_INDUSTRYTILES_165;
 	0, 1: item_FEAT_INDUSTRYTILES_165;
 	1, 0: item_FEAT_INDUSTRYTILES_165;
@@ -2682,7 +2682,7 @@ tilelayout tilelayout_3123_0 {
 	4, 1: item_FEAT_INDUSTRYTILES_165;
 }
 
-tilelayout tilelayout_3123_1 {
+tilelayout tilelayout_brick_works_1 {
 	0, 0: item_FEAT_INDUSTRYTILES_165;
 	0, 1: item_FEAT_INDUSTRYTILES_165;
 	1, 0: item_FEAT_INDUSTRYTILES_165;
@@ -2693,7 +2693,7 @@ tilelayout tilelayout_3123_1 {
 	3, 1: item_FEAT_INDUSTRYTILES_229;
 }
 
-tilelayout tilelayout_3123_2 {
+tilelayout tilelayout_brick_works_2 {
 	0, 0: item_FEAT_INDUSTRYTILES_165;
 	0, 1: item_FEAT_INDUSTRYTILES_165;
 	0, 2: item_FEAT_INDUSTRYTILES_165;
@@ -2707,7 +2707,7 @@ tilelayout tilelayout_3123_2 {
 item(FEAT_INDUSTRIES, brick_works, 45) {
 	property {
 		substitute: 0;
-		layouts: [tilelayout_3123_0, tilelayout_3123_1, tilelayout_3123_2];
+		layouts: [tilelayout_brick_works_0, tilelayout_brick_works_1, tilelayout_brick_works_2];
 		life_type: 4;
 		closure_msg: 18483;
 		prod_increase_msg: 18485;
@@ -3343,12 +3343,12 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_164, 164) {
 	}
 }
 
-tilelayout tilelayout_3228_0 {
+tilelayout tilelayout_builders_yard_0 {
 	0, 0: item_FEAT_INDUSTRYTILES_164;
 	0, 1: item_FEAT_INDUSTRYTILES_164;
 }
 
-tilelayout tilelayout_3228_1 {
+tilelayout tilelayout_builders_yard_1 {
 	0, 0: item_FEAT_INDUSTRYTILES_164;
 	1, 0: item_FEAT_INDUSTRYTILES_164;
 }
@@ -3356,7 +3356,7 @@ tilelayout tilelayout_3228_1 {
 item(FEAT_INDUSTRIES, builders_yard, 63) {
 	property {
 		substitute: 0;
-		layouts: [tilelayout_3228_0, tilelayout_3228_1];
+		layouts: [tilelayout_builders_yard_0, tilelayout_builders_yard_1];
 		life_type: 0;
 		closure_msg: 18483;
 		prod_increase_msg: 18485;
@@ -5606,7 +5606,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_189, 189) {
 	}
 }
 
-tilelayout tilelayout_3493_0 {
+tilelayout tilelayout_clay_pit_0 {
 	0, 0: item_FEAT_INDUSTRYTILES_189;
 	1, 0: item_FEAT_INDUSTRYTILES_189;
 	2, 0: item_FEAT_INDUSTRYTILES_189;
@@ -5643,7 +5643,7 @@ tilelayout tilelayout_3493_0 {
 	6, 3: item_FEAT_INDUSTRYTILES_189;
 }
 
-tilelayout tilelayout_3493_1 {
+tilelayout tilelayout_clay_pit_1 {
 	6, 0: item_FEAT_INDUSTRYTILES_189;
 	0, 1: item_FEAT_INDUSTRYTILES_189;
 	1, 1: item_FEAT_INDUSTRYTILES_189;
@@ -5678,7 +5678,7 @@ tilelayout tilelayout_3493_1 {
 item(FEAT_INDUSTRIES, clay_pit, 44) {
 	property {
 		substitute: 0;
-		layouts: [tilelayout_3493_0, tilelayout_3493_1];
+		layouts: [tilelayout_clay_pit_0, tilelayout_clay_pit_1];
 		life_type: 1;
 		closure_msg: 18483;
 		prod_increase_msg: 18485;
@@ -6545,7 +6545,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_162, 162) {
 	}
 }
 
-tilelayout tilelayout_3580_0 {
+tilelayout tilelayout_cement_plant_0 {
 	0, 1: item_FEAT_INDUSTRYTILES_162;
 	0, 2: item_FEAT_INDUSTRYTILES_162;
 	1, 1: item_FEAT_INDUSTRYTILES_162;
@@ -6561,7 +6561,7 @@ tilelayout tilelayout_3580_0 {
 	5, 2: item_FEAT_INDUSTRYTILES_162;
 }
 
-tilelayout tilelayout_3580_1 {
+tilelayout tilelayout_cement_plant_1 {
 	0, 0: item_FEAT_INDUSTRYTILES_162;
 	0, 1: item_FEAT_INDUSTRYTILES_162;
 	0, 2: item_FEAT_INDUSTRYTILES_162;
@@ -6579,7 +6579,7 @@ tilelayout tilelayout_3580_1 {
 	3, 4: item_FEAT_INDUSTRYTILES_232;
 }
 
-tilelayout tilelayout_3580_2 {
+tilelayout tilelayout_cement_plant_2 {
 	0, 0: item_FEAT_INDUSTRYTILES_162;
 	0, 1: item_FEAT_INDUSTRYTILES_162;
 	0, 2: item_FEAT_INDUSTRYTILES_162;
@@ -6601,7 +6601,7 @@ tilelayout tilelayout_3580_2 {
 	2, 5: item_FEAT_INDUSTRYTILES_162;
 }
 
-tilelayout tilelayout_3580_3 {
+tilelayout tilelayout_cement_plant_3 {
 	0, 0: item_FEAT_INDUSTRYTILES_162;
 	0, 1: item_FEAT_INDUSTRYTILES_162;
 	0, 2: item_FEAT_INDUSTRYTILES_162;
@@ -6625,7 +6625,7 @@ tilelayout tilelayout_3580_3 {
 	5, 2: item_FEAT_INDUSTRYTILES_162;
 }
 
-tilelayout tilelayout_3580_4 {
+tilelayout tilelayout_cement_plant_4 {
 	0, 0: item_FEAT_INDUSTRYTILES_162;
 	0, 1: item_FEAT_INDUSTRYTILES_162;
 	1, 0: item_FEAT_INDUSTRYTILES_162;
@@ -6648,7 +6648,7 @@ tilelayout tilelayout_3580_4 {
 item(FEAT_INDUSTRIES, cement_plant, 43) {
 	property {
 		substitute: 0;
-		layouts: [tilelayout_3580_0, tilelayout_3580_1, tilelayout_3580_2, tilelayout_3580_3, tilelayout_3580_4];
+		layouts: [tilelayout_cement_plant_0, tilelayout_cement_plant_1, tilelayout_cement_plant_2, tilelayout_cement_plant_3, tilelayout_cement_plant_4];
 		life_type: 4;
 		closure_msg: 18483;
 		prod_increase_msg: 18485;
@@ -7562,7 +7562,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_180, 180) {
 	}
 }
 
-tilelayout tilelayout_3723_0 {
+tilelayout tilelayout_diary_farm_0 {
 	0, 0: item_FEAT_INDUSTRYTILES_180;
 	0, 1: item_FEAT_INDUSTRYTILES_180;
 	0, 2: item_FEAT_INDUSTRYTILES_180;
@@ -7573,7 +7573,7 @@ tilelayout tilelayout_3723_0 {
 	3, 2: item_FEAT_INDUSTRYTILES_180;
 }
 
-tilelayout tilelayout_3723_1 {
+tilelayout tilelayout_diary_farm_1 {
 	0, 0: item_FEAT_INDUSTRYTILES_180;
 	0, 1: item_FEAT_INDUSTRYTILES_180;
 	0, 2: item_FEAT_INDUSTRYTILES_180;
@@ -7584,7 +7584,7 @@ tilelayout tilelayout_3723_1 {
 	2, 2: item_FEAT_INDUSTRYTILES_180;
 }
 
-tilelayout tilelayout_3723_2 {
+tilelayout tilelayout_diary_farm_2 {
 	0, 1: item_FEAT_INDUSTRYTILES_180;
 	0, 3: item_FEAT_INDUSTRYTILES_180;
 	1, 0: item_FEAT_INDUSTRYTILES_180;
@@ -7598,7 +7598,7 @@ tilelayout tilelayout_3723_2 {
 item(FEAT_INDUSTRIES, diary_farm, 28) {
 	property {
 		substitute: 0;
-		layouts: [tilelayout_3723_0, tilelayout_3723_1, tilelayout_3723_2];
+		layouts: [tilelayout_diary_farm_0, tilelayout_diary_farm_1, tilelayout_diary_farm_2];
 		life_type: 2;
 		closure_msg: 18483;
 		prod_increase_msg: 18488;
@@ -9226,7 +9226,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_181, 181) {
 	}
 }
 
-tilelayout tilelayout_3883_0 {
+tilelayout tilelayout_diary_0 {
 	0, 0: item_FEAT_INDUSTRYTILES_181;
 	0, 1: item_FEAT_INDUSTRYTILES_181;
 	1, 0: item_FEAT_INDUSTRYTILES_181;
@@ -9237,7 +9237,7 @@ tilelayout tilelayout_3883_0 {
 	3, 1: item_FEAT_INDUSTRYTILES_181;
 }
 
-tilelayout tilelayout_3883_1 {
+tilelayout tilelayout_diary_1 {
 	0, 1: item_FEAT_INDUSTRYTILES_181;
 	0, 2: item_FEAT_INDUSTRYTILES_181;
 	1, 1: item_FEAT_INDUSTRYTILES_181;
@@ -9250,7 +9250,7 @@ tilelayout tilelayout_3883_1 {
 	3, 2: item_FEAT_INDUSTRYTILES_181;
 }
 
-tilelayout tilelayout_3883_2 {
+tilelayout tilelayout_diary_2 {
 	0, 0: item_FEAT_INDUSTRYTILES_181;
 	0, 1: item_FEAT_INDUSTRYTILES_181;
 	0, 2: item_FEAT_INDUSTRYTILES_181;
@@ -9263,7 +9263,7 @@ tilelayout tilelayout_3883_2 {
 	3, 2: item_FEAT_INDUSTRYTILES_181;
 }
 
-tilelayout tilelayout_3883_3 {
+tilelayout tilelayout_diary_3 {
 	0, 0: item_FEAT_INDUSTRYTILES_181;
 	0, 1: item_FEAT_INDUSTRYTILES_181;
 	0, 2: item_FEAT_INDUSTRYTILES_181;
@@ -9280,7 +9280,7 @@ tilelayout tilelayout_3883_3 {
 	3, 2: item_FEAT_INDUSTRYTILES_181;
 }
 
-tilelayout tilelayout_3883_4 {
+tilelayout tilelayout_diary_4 {
 	0, 0: item_FEAT_INDUSTRYTILES_181;
 	0, 1: item_FEAT_INDUSTRYTILES_181;
 	0, 2: item_FEAT_INDUSTRYTILES_181;
@@ -9291,7 +9291,7 @@ tilelayout tilelayout_3883_4 {
 	1, 3: item_FEAT_INDUSTRYTILES_181;
 }
 
-tilelayout tilelayout_3883_5 {
+tilelayout tilelayout_diary_5 {
 	0, 0: item_FEAT_INDUSTRYTILES_181;
 	0, 1: item_FEAT_INDUSTRYTILES_181;
 	1, 0: item_FEAT_INDUSTRYTILES_181;
@@ -9302,7 +9302,7 @@ tilelayout tilelayout_3883_5 {
 	4, 1: item_FEAT_INDUSTRYTILES_181;
 }
 
-tilelayout tilelayout_3883_6 {
+tilelayout tilelayout_diary_6 {
 	0, 0: item_FEAT_INDUSTRYTILES_181;
 	0, 1: item_FEAT_INDUSTRYTILES_181;
 	0, 3: item_FEAT_INDUSTRYTILES_181;
@@ -9322,7 +9322,7 @@ tilelayout tilelayout_3883_6 {
 item(FEAT_INDUSTRIES, diary, 36) {
 	property {
 		substitute: 0;
-		layouts: [tilelayout_3883_0, tilelayout_3883_1, tilelayout_3883_2, tilelayout_3883_3, tilelayout_3883_4, tilelayout_3883_5, tilelayout_3883_6];
+		layouts: [tilelayout_diary_0, tilelayout_diary_1, tilelayout_diary_2, tilelayout_diary_3, tilelayout_diary_4, tilelayout_diary_5, tilelayout_diary_6];
 		life_type: 4;
 		closure_msg: 18483;
 		prod_increase_msg: 18485;
@@ -9697,7 +9697,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_198, 198) {
 	}
 }
 
-tilelayout tilelayout_3945_0 {
+tilelayout tilelayout_dredging_site_0 {
 	0, 0: 255;
 	0, 1: 24;
 	0, 2: 24;
@@ -9713,7 +9713,7 @@ tilelayout tilelayout_3945_0 {
 item(FEAT_INDUSTRIES, dredging_site, 20) {
 	property {
 		substitute: 0;
-		layouts: [tilelayout_3945_0];
+		layouts: [tilelayout_dredging_site_0];
 		life_type: 1;
 		closure_msg: 18483;
 		prod_increase_msg: 18485;
@@ -10562,7 +10562,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_163, 163) {
 	}
 }
 
-tilelayout tilelayout_4029_0 {
+tilelayout tilelayout_fertilizer_plant_0 {
 	0, 0: item_FEAT_INDUSTRYTILES_163;
 	0, 1: item_FEAT_INDUSTRYTILES_163;
 	0, 2: item_FEAT_INDUSTRYTILES_163;
@@ -10577,7 +10577,7 @@ tilelayout tilelayout_4029_0 {
 	3, 2: item_FEAT_INDUSTRYTILES_163;
 }
 
-tilelayout tilelayout_4029_1 {
+tilelayout tilelayout_fertilizer_plant_1 {
 	0, 0: item_FEAT_INDUSTRYTILES_163;
 	0, 1: item_FEAT_INDUSTRYTILES_163;
 	1, 0: item_FEAT_INDUSTRYTILES_163;
@@ -10590,7 +10590,7 @@ tilelayout tilelayout_4029_1 {
 	4, 1: item_FEAT_INDUSTRYTILES_163;
 }
 
-tilelayout tilelayout_4029_2 {
+tilelayout tilelayout_fertilizer_plant_2 {
 	0, 1: item_FEAT_INDUSTRYTILES_163;
 	1, 0: item_FEAT_INDUSTRYTILES_163;
 	1, 1: item_FEAT_INDUSTRYTILES_163;
@@ -10602,7 +10602,7 @@ tilelayout tilelayout_4029_2 {
 	2, 3: item_FEAT_INDUSTRYTILES_163;
 }
 
-tilelayout tilelayout_4029_3 {
+tilelayout tilelayout_fertilizer_plant_3 {
 	0, 1: item_FEAT_INDUSTRYTILES_163;
 	1, 0: item_FEAT_INDUSTRYTILES_163;
 	1, 1: item_FEAT_INDUSTRYTILES_163;
@@ -10614,7 +10614,7 @@ tilelayout tilelayout_4029_3 {
 	2, 3: item_FEAT_INDUSTRYTILES_163;
 }
 
-tilelayout tilelayout_4029_4 {
+tilelayout tilelayout_fertilizer_plant_4 {
 	0, 0: item_FEAT_INDUSTRYTILES_163;
 	0, 2: item_FEAT_INDUSTRYTILES_163;
 	1, 0: item_FEAT_INDUSTRYTILES_163;
@@ -10631,7 +10631,7 @@ tilelayout tilelayout_4029_4 {
 	6, 2: item_FEAT_INDUSTRYTILES_163;
 }
 
-tilelayout tilelayout_4029_5 {
+tilelayout tilelayout_fertilizer_plant_5 {
 	0, 0: item_FEAT_INDUSTRYTILES_163;
 	0, 2: item_FEAT_INDUSTRYTILES_163;
 	0, 3: item_FEAT_INDUSTRYTILES_163;
@@ -10649,7 +10649,7 @@ tilelayout tilelayout_4029_5 {
 	4, 3: item_FEAT_INDUSTRYTILES_163;
 }
 
-tilelayout tilelayout_4029_6 {
+tilelayout tilelayout_fertilizer_plant_6 {
 	0, 0: item_FEAT_INDUSTRYTILES_163;
 	0, 1: item_FEAT_INDUSTRYTILES_163;
 	0, 2: item_FEAT_INDUSTRYTILES_163;
@@ -10679,7 +10679,7 @@ tilelayout tilelayout_4029_6 {
 item(FEAT_INDUSTRIES, fertilizer_plant, 40) {
 	property {
 		substitute: 0;
-		layouts: [tilelayout_4029_0, tilelayout_4029_1, tilelayout_4029_2, tilelayout_4029_3, tilelayout_4029_4, tilelayout_4029_5, tilelayout_4029_6];
+		layouts: [tilelayout_fertilizer_plant_0, tilelayout_fertilizer_plant_1, tilelayout_fertilizer_plant_2, tilelayout_fertilizer_plant_3, tilelayout_fertilizer_plant_4, tilelayout_fertilizer_plant_5, tilelayout_fertilizer_plant_6];
 		life_type: 4;
 		closure_msg: 18483;
 		prod_increase_msg: 18485;
@@ -11080,7 +11080,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_204, 204) {
 	}
 }
 
-tilelayout tilelayout_4091_0 {
+tilelayout tilelayout_fishing_grounds_0 {
 	0, 0: 255;
 	0, 1: 255;
 	0, 2: 255;
@@ -11132,7 +11132,7 @@ tilelayout tilelayout_4091_0 {
 	6, 6: 255;
 }
 
-tilelayout tilelayout_4091_1 {
+tilelayout tilelayout_fishing_grounds_1 {
 	0, 0: 255;
 	0, 1: 255;
 	0, 2: 255;
@@ -11191,7 +11191,7 @@ tilelayout tilelayout_4091_1 {
 	7, 6: 255;
 }
 
-tilelayout tilelayout_4091_2 {
+tilelayout tilelayout_fishing_grounds_2 {
 	0, 0: 255;
 	0, 1: 255;
 	0, 2: 255;
@@ -11250,7 +11250,7 @@ tilelayout tilelayout_4091_2 {
 	7, 6: 255;
 }
 
-tilelayout tilelayout_4091_3 {
+tilelayout tilelayout_fishing_grounds_3 {
 	0, 0: 255;
 	0, 1: 255;
 	0, 2: 255;
@@ -11304,7 +11304,7 @@ tilelayout tilelayout_4091_3 {
 item(FEAT_INDUSTRIES, fishing_grounds, 32) {
 	property {
 		substitute: 5;
-		layouts: [tilelayout_4091_0, tilelayout_4091_1, tilelayout_4091_2, tilelayout_4091_3];
+		layouts: [tilelayout_fishing_grounds_0, tilelayout_fishing_grounds_1, tilelayout_fishing_grounds_2, tilelayout_fishing_grounds_3];
 		life_type: 1;
 		closure_msg: 18483;
 		prod_increase_msg: 18485;
@@ -12316,7 +12316,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_196, 196) {
 	}
 }
 
-tilelayout tilelayout_4175_0 {
+tilelayout tilelayout_fishing_harbour_0 {
 	0, 3: item_FEAT_INDUSTRYTILES_195;
 	0, 4: item_FEAT_INDUSTRYTILES_196;
 	1, 0: 255;
@@ -12328,7 +12328,7 @@ tilelayout tilelayout_4175_0 {
 	2, 2: item_FEAT_INDUSTRYTILES_195;
 }
 
-tilelayout tilelayout_4175_1 {
+tilelayout tilelayout_fishing_harbour_1 {
 	1, 255: 255;
 	2, 255: 255;
 	0, 0: 255;
@@ -12343,7 +12343,7 @@ tilelayout tilelayout_4175_1 {
 	3, 2: item_FEAT_INDUSTRYTILES_196;
 }
 
-tilelayout tilelayout_4175_2 {
+tilelayout tilelayout_fishing_harbour_2 {
 	0, 0: item_FEAT_INDUSTRYTILES_196;
 	0, 1: item_FEAT_INDUSTRYTILES_196;
 	0, 2: item_FEAT_INDUSTRYTILES_196;
@@ -12357,7 +12357,7 @@ tilelayout tilelayout_4175_2 {
 	3, 3: 255;
 }
 
-tilelayout tilelayout_4175_3 {
+tilelayout tilelayout_fishing_harbour_3 {
 	0, 0: item_FEAT_INDUSTRYTILES_196;
 	0, 1: item_FEAT_INDUSTRYTILES_195;
 	0, 2: item_FEAT_INDUSTRYTILES_195;
@@ -12374,7 +12374,7 @@ tilelayout tilelayout_4175_3 {
 	2, 5: 255;
 }
 
-tilelayout tilelayout_4175_4 {
+tilelayout tilelayout_fishing_harbour_4 {
 	0, 0: item_FEAT_INDUSTRYTILES_196;
 	1, 0: item_FEAT_INDUSTRYTILES_195;
 	1, 2: 255;
@@ -12401,7 +12401,7 @@ tilelayout tilelayout_4175_4 {
 item(FEAT_INDUSTRIES, fishing_harbour, 31) {
 	property {
 		substitute: 0;
-		layouts: [tilelayout_4175_0, tilelayout_4175_1, tilelayout_4175_2, tilelayout_4175_3, tilelayout_4175_4];
+		layouts: [tilelayout_fishing_harbour_0, tilelayout_fishing_harbour_1, tilelayout_fishing_harbour_2, tilelayout_fishing_harbour_3, tilelayout_fishing_harbour_4];
 		life_type: 4;
 		closure_msg: 18483;
 		prod_increase_msg: 18485;
@@ -12833,14 +12833,14 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_194, 194) {
 	}
 }
 
-tilelayout tilelayout_4249_0 {
+tilelayout tilelayout_food_market_0 {
 	0, 0: item_FEAT_INDUSTRYTILES_194;
 }
 
 item(FEAT_INDUSTRIES, food_market, 59) {
 	property {
 		substitute: 0;
-		layouts: [tilelayout_4249_0];
+		layouts: [tilelayout_food_market_0];
 		life_type: 0;
 		closure_msg: 18483;
 		prod_increase_msg: 18485;
@@ -18305,7 +18305,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_206, 206) {
 	}
 }
 
-tilelayout tilelayout_4478_0 {
+tilelayout tilelayout_oil_wells_0 {
 	0, 0: item_FEAT_INDUSTRYTILES_205;
 	0, 1: item_FEAT_INDUSTRYTILES_205;
 	0, 2: item_FEAT_INDUSTRYTILES_205;
@@ -18316,7 +18316,7 @@ tilelayout tilelayout_4478_0 {
 	2, 2: item_FEAT_INDUSTRYTILES_206;
 }
 
-tilelayout tilelayout_4478_1 {
+tilelayout tilelayout_oil_wells_1 {
 	0, 0: item_FEAT_INDUSTRYTILES_205;
 	0, 1: item_FEAT_INDUSTRYTILES_205;
 	0, 2: item_FEAT_INDUSTRYTILES_205;
@@ -18331,7 +18331,7 @@ tilelayout tilelayout_4478_1 {
 	4, 2: item_FEAT_INDUSTRYTILES_205;
 }
 
-tilelayout tilelayout_4478_2 {
+tilelayout tilelayout_oil_wells_2 {
 	0, 1: item_FEAT_INDUSTRYTILES_205;
 	0, 2: item_FEAT_INDUSTRYTILES_205;
 	0, 3: item_FEAT_INDUSTRYTILES_205;
@@ -18357,7 +18357,7 @@ tilelayout tilelayout_4478_2 {
 item(FEAT_INDUSTRIES, oil_wells, 11) {
 	property {
 		substitute: 0;
-		layouts: [tilelayout_4478_0, tilelayout_4478_1, tilelayout_4478_2];
+		layouts: [tilelayout_oil_wells_0, tilelayout_oil_wells_1, tilelayout_oil_wells_2];
 		life_type: 2;
 		closure_msg: 18483;
 		prod_increase_msg: 18485;
@@ -18828,7 +18828,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_209, 209) {
 	}
 }
 
-tilelayout tilelayout_4551_0 {
+tilelayout tilelayout_smithy_forge_0 {
 	0, 0: item_FEAT_INDUSTRYTILES_209;
 	1, 0: item_FEAT_INDUSTRYTILES_209;
 }
@@ -18836,7 +18836,7 @@ tilelayout tilelayout_4551_0 {
 item(FEAT_INDUSTRIES, smithy_forge, 6) {
 	property {
 		substitute: 0;
-		layouts: [tilelayout_4551_0];
+		layouts: [tilelayout_smithy_forge_0];
 		life_type: 4;
 		closure_msg: 18483;
 		prod_increase_msg: 18485;
@@ -25302,7 +25302,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_184, 184) {
 	}
 }
 
-tilelayout tilelayout_4910_0 {
+tilelayout tilelayout_furniture_factory_0 {
 	0, 1: item_FEAT_INDUSTRYTILES_184;
 	1, 0: item_FEAT_INDUSTRYTILES_184;
 	1, 1: item_FEAT_INDUSTRYTILES_184;
@@ -25310,7 +25310,7 @@ tilelayout tilelayout_4910_0 {
 	2, 1: item_FEAT_INDUSTRYTILES_184;
 }
 
-tilelayout tilelayout_4910_1 {
+tilelayout tilelayout_furniture_factory_1 {
 	0, 0: item_FEAT_INDUSTRYTILES_184;
 	0, 1: item_FEAT_INDUSTRYTILES_184;
 	1, 0: item_FEAT_INDUSTRYTILES_184;
@@ -25319,20 +25319,7 @@ tilelayout tilelayout_4910_1 {
 	2, 1: item_FEAT_INDUSTRYTILES_184;
 }
 
-tilelayout tilelayout_4910_2 {
-	0, 0: item_FEAT_INDUSTRYTILES_184;
-	0, 1: item_FEAT_INDUSTRYTILES_184;
-	1, 0: item_FEAT_INDUSTRYTILES_184;
-	1, 1: item_FEAT_INDUSTRYTILES_184;
-	2, 0: item_FEAT_INDUSTRYTILES_184;
-	2, 1: item_FEAT_INDUSTRYTILES_184;
-	3, 0: item_FEAT_INDUSTRYTILES_184;
-	3, 1: item_FEAT_INDUSTRYTILES_184;
-	4, 0: item_FEAT_INDUSTRYTILES_184;
-	4, 1: item_FEAT_INDUSTRYTILES_184;
-}
-
-tilelayout tilelayout_4910_3 {
+tilelayout tilelayout_furniture_factory_2 {
 	0, 0: item_FEAT_INDUSTRYTILES_184;
 	0, 1: item_FEAT_INDUSTRYTILES_184;
 	1, 0: item_FEAT_INDUSTRYTILES_184;
@@ -25345,7 +25332,20 @@ tilelayout tilelayout_4910_3 {
 	4, 1: item_FEAT_INDUSTRYTILES_184;
 }
 
-tilelayout tilelayout_4910_4 {
+tilelayout tilelayout_furniture_factory_3 {
+	0, 0: item_FEAT_INDUSTRYTILES_184;
+	0, 1: item_FEAT_INDUSTRYTILES_184;
+	1, 0: item_FEAT_INDUSTRYTILES_184;
+	1, 1: item_FEAT_INDUSTRYTILES_184;
+	2, 0: item_FEAT_INDUSTRYTILES_184;
+	2, 1: item_FEAT_INDUSTRYTILES_184;
+	3, 0: item_FEAT_INDUSTRYTILES_184;
+	3, 1: item_FEAT_INDUSTRYTILES_184;
+	4, 0: item_FEAT_INDUSTRYTILES_184;
+	4, 1: item_FEAT_INDUSTRYTILES_184;
+}
+
+tilelayout tilelayout_furniture_factory_4 {
 	0, 0: item_FEAT_INDUSTRYTILES_184;
 	0, 1: item_FEAT_INDUSTRYTILES_184;
 	0, 2: item_FEAT_INDUSTRYTILES_184;
@@ -25360,7 +25360,7 @@ tilelayout tilelayout_4910_4 {
 item(FEAT_INDUSTRIES, furniture_factory, 13) {
 	property {
 		substitute: 0;
-		layouts: [tilelayout_4910_0, tilelayout_4910_1, tilelayout_4910_2, tilelayout_4910_3, tilelayout_4910_4];
+		layouts: [tilelayout_furniture_factory_0, tilelayout_furniture_factory_1, tilelayout_furniture_factory_2, tilelayout_furniture_factory_3, tilelayout_furniture_factory_4];
 		life_type: 4;
 		closure_msg: 18483;
 		prod_increase_msg: 18485;
@@ -26091,14 +26091,14 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_178, 178) {
 	}
 }
 
-tilelayout tilelayout_5017_0 {
+tilelayout tilelayout_glass_works_0 {
 	0, 0: item_FEAT_INDUSTRYTILES_178;
 	0, 1: item_FEAT_INDUSTRYTILES_178;
 	1, 0: item_FEAT_INDUSTRYTILES_178;
 	1, 1: item_FEAT_INDUSTRYTILES_178;
 }
 
-tilelayout tilelayout_5017_1 {
+tilelayout tilelayout_glass_works_1 {
 	0, 0: item_FEAT_INDUSTRYTILES_178;
 	0, 1: item_FEAT_INDUSTRYTILES_178;
 	1, 0: item_FEAT_INDUSTRYTILES_178;
@@ -26109,7 +26109,7 @@ tilelayout tilelayout_5017_1 {
 	3, 1: item_FEAT_INDUSTRYTILES_178;
 }
 
-tilelayout tilelayout_5017_2 {
+tilelayout tilelayout_glass_works_2 {
 	0, 0: item_FEAT_INDUSTRYTILES_178;
 	0, 1: item_FEAT_INDUSTRYTILES_178;
 	0, 2: item_FEAT_INDUSTRYTILES_178;
@@ -26127,7 +26127,7 @@ tilelayout tilelayout_5017_2 {
 item(FEAT_INDUSTRIES, glass_works, 22) {
 	property {
 		substitute: 0;
-		layouts: [tilelayout_5017_0, tilelayout_5017_1, tilelayout_5017_2];
+		layouts: [tilelayout_glass_works_0, tilelayout_glass_works_1, tilelayout_glass_works_2];
 		life_type: 4;
 		closure_msg: 18483;
 		prod_increase_msg: 18485;
@@ -27241,30 +27241,21 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_182, 182) {
 	}
 }
 
-tilelayout tilelayout_5175_0 {
+tilelayout tilelayout_grain_mill_0 {
 	0, 0: item_FEAT_INDUSTRYTILES_182;
 	0, 1: item_FEAT_INDUSTRYTILES_182;
 	1, 0: item_FEAT_INDUSTRYTILES_182;
 	1, 1: item_FEAT_INDUSTRYTILES_182;
 }
 
-tilelayout tilelayout_5175_1 {
+tilelayout tilelayout_grain_mill_1 {
 	0, 0: item_FEAT_INDUSTRYTILES_182;
 	0, 1: item_FEAT_INDUSTRYTILES_182;
 	1, 0: item_FEAT_INDUSTRYTILES_182;
 	1, 1: item_FEAT_INDUSTRYTILES_182;
 }
 
-tilelayout tilelayout_5175_2 {
-	0, 0: item_FEAT_INDUSTRYTILES_182;
-	0, 1: item_FEAT_INDUSTRYTILES_182;
-	1, 0: item_FEAT_INDUSTRYTILES_182;
-	1, 1: item_FEAT_INDUSTRYTILES_182;
-	2, 0: item_FEAT_INDUSTRYTILES_182;
-	2, 1: item_FEAT_INDUSTRYTILES_182;
-}
-
-tilelayout tilelayout_5175_3 {
+tilelayout tilelayout_grain_mill_2 {
 	0, 0: item_FEAT_INDUSTRYTILES_182;
 	0, 1: item_FEAT_INDUSTRYTILES_182;
 	1, 0: item_FEAT_INDUSTRYTILES_182;
@@ -27273,7 +27264,16 @@ tilelayout tilelayout_5175_3 {
 	2, 1: item_FEAT_INDUSTRYTILES_182;
 }
 
-tilelayout tilelayout_5175_4 {
+tilelayout tilelayout_grain_mill_3 {
+	0, 0: item_FEAT_INDUSTRYTILES_182;
+	0, 1: item_FEAT_INDUSTRYTILES_182;
+	1, 0: item_FEAT_INDUSTRYTILES_182;
+	1, 1: item_FEAT_INDUSTRYTILES_182;
+	2, 0: item_FEAT_INDUSTRYTILES_182;
+	2, 1: item_FEAT_INDUSTRYTILES_182;
+}
+
+tilelayout tilelayout_grain_mill_4 {
 	0, 0: item_FEAT_INDUSTRYTILES_182;
 	0, 1: item_FEAT_INDUSTRYTILES_182;
 	0, 2: item_FEAT_INDUSTRYTILES_182;
@@ -27284,14 +27284,14 @@ tilelayout tilelayout_5175_4 {
 	1, 3: item_FEAT_INDUSTRYTILES_182;
 }
 
-tilelayout tilelayout_5175_5 {
+tilelayout tilelayout_grain_mill_5 {
 	0, 0: item_FEAT_INDUSTRYTILES_182;
 }
 
 item(FEAT_INDUSTRIES, grain_mill, 34) {
 	property {
 		substitute: 0;
-		layouts: [tilelayout_5175_0, tilelayout_5175_1, tilelayout_5175_2, tilelayout_5175_3, tilelayout_5175_4, tilelayout_5175_5];
+		layouts: [tilelayout_grain_mill_0, tilelayout_grain_mill_1, tilelayout_grain_mill_2, tilelayout_grain_mill_3, tilelayout_grain_mill_4, tilelayout_grain_mill_5];
 		life_type: 4;
 		closure_msg: 18483;
 		prod_increase_msg: 18485;
@@ -27733,14 +27733,14 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_218, 218) {
 	}
 }
 
-tilelayout tilelayout_5251_0 {
+tilelayout tilelayout_hardware_store_0 {
 	0, 0: item_FEAT_INDUSTRYTILES_218;
 }
 
 item(FEAT_INDUSTRIES, hardware_store, 57) {
 	property {
 		substitute: 0;
-		layouts: [tilelayout_5251_0];
+		layouts: [tilelayout_hardware_store_0];
 		life_type: 0;
 		closure_msg: 18483;
 		prod_increase_msg: 18485;
@@ -27910,7 +27910,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_217, 217) {
 	}
 }
 
-tilelayout tilelayout_5273_0 {
+tilelayout tilelayout_hotel_0 {
 	0, 0: item_FEAT_INDUSTRYTILES_217;
 	0, 1: item_FEAT_INDUSTRYTILES_217;
 	1, 0: item_FEAT_INDUSTRYTILES_217;
@@ -27920,7 +27920,7 @@ tilelayout tilelayout_5273_0 {
 item(FEAT_INDUSTRIES, hotel, 58) {
 	property {
 		substitute: 0;
-		layouts: [tilelayout_5273_0];
+		layouts: [tilelayout_hotel_0];
 		life_type: 0;
 		closure_msg: 18483;
 		prod_increase_msg: 18485;
@@ -30087,7 +30087,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_199, 199) {
 	}
 }
 
-tilelayout tilelayout_5446_0 {
+tilelayout tilelayout_iron_works_0 {
 	0, 0: item_FEAT_INDUSTRYTILES_199;
 	0, 1: item_FEAT_INDUSTRYTILES_199;
 	0, 2: item_FEAT_INDUSTRYTILES_199;
@@ -30102,7 +30102,7 @@ tilelayout tilelayout_5446_0 {
 item(FEAT_INDUSTRIES, iron_works, 21) {
 	property {
 		substitute: 0;
-		layouts: [tilelayout_5446_0];
+		layouts: [tilelayout_iron_works_0];
 		life_type: 4;
 		closure_msg: 18483;
 		prod_increase_msg: 18485;
@@ -30727,7 +30727,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_193, 193) {
 	}
 }
 
-tilelayout tilelayout_5544_0 {
+tilelayout tilelayout_junkyard_0 {
 	0, 2: item_FEAT_INDUSTRYTILES_193;
 	1, 1: item_FEAT_INDUSTRYTILES_193;
 	1, 2: item_FEAT_INDUSTRYTILES_193;
@@ -30740,7 +30740,7 @@ tilelayout tilelayout_5544_0 {
 	4, 2: item_FEAT_INDUSTRYTILES_193;
 }
 
-tilelayout tilelayout_5544_1 {
+tilelayout tilelayout_junkyard_1 {
 	0, 1: item_FEAT_INDUSTRYTILES_193;
 	1, 1: item_FEAT_INDUSTRYTILES_193;
 	1, 2: item_FEAT_INDUSTRYTILES_193;
@@ -30749,7 +30749,7 @@ tilelayout tilelayout_5544_1 {
 	2, 2: item_FEAT_INDUSTRYTILES_193;
 }
 
-tilelayout tilelayout_5544_2 {
+tilelayout tilelayout_junkyard_2 {
 	0, 3: item_FEAT_INDUSTRYTILES_193;
 	1, 1: item_FEAT_INDUSTRYTILES_193;
 	1, 3: item_FEAT_INDUSTRYTILES_193;
@@ -30765,7 +30765,7 @@ tilelayout tilelayout_5544_2 {
 item(FEAT_INDUSTRIES, junkyard, 25) {
 	property {
 		substitute: 0;
-		layouts: [tilelayout_5544_0, tilelayout_5544_1, tilelayout_5544_2];
+		layouts: [tilelayout_junkyard_0, tilelayout_junkyard_1, tilelayout_junkyard_2];
 		life_type: 1;
 		closure_msg: 18483;
 		prod_increase_msg: 18485;
@@ -31531,7 +31531,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_191, 191) {
 	}
 }
 
-tilelayout tilelayout_5639_0 {
+tilelayout tilelayout_lime_kiln_0 {
 	0, 0: item_FEAT_INDUSTRYTILES_191;
 	0, 1: item_FEAT_INDUSTRYTILES_191;
 	0, 2: item_FEAT_INDUSTRYTILES_191;
@@ -31540,7 +31540,7 @@ tilelayout tilelayout_5639_0 {
 	1, 2: item_FEAT_INDUSTRYTILES_191;
 }
 
-tilelayout tilelayout_5639_1 {
+tilelayout tilelayout_lime_kiln_1 {
 	0, 0: item_FEAT_INDUSTRYTILES_191;
 	0, 1: item_FEAT_INDUSTRYTILES_191;
 	1, 0: item_FEAT_INDUSTRYTILES_191;
@@ -31549,7 +31549,7 @@ tilelayout tilelayout_5639_1 {
 	2, 1: item_FEAT_INDUSTRYTILES_191;
 }
 
-tilelayout tilelayout_5639_2 {
+tilelayout tilelayout_lime_kiln_2 {
 	0, 0: item_FEAT_INDUSTRYTILES_191;
 	0, 1: item_FEAT_INDUSTRYTILES_191;
 	0, 2: item_FEAT_INDUSTRYTILES_191;
@@ -31563,7 +31563,7 @@ tilelayout tilelayout_5639_2 {
 item(FEAT_INDUSTRIES, lime_kiln, 1) {
 	property {
 		substitute: 0;
-		layouts: [tilelayout_5639_0, tilelayout_5639_1, tilelayout_5639_2];
+		layouts: [tilelayout_lime_kiln_0, tilelayout_lime_kiln_1, tilelayout_lime_kiln_2];
 		life_type: 4;
 		closure_msg: 18483;
 		prod_increase_msg: 18485;
@@ -32177,7 +32177,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_187, 187) {
 	}
 }
 
-tilelayout tilelayout_5733_0 {
+tilelayout tilelayout_lumber_yard_0 {
 	0, 0: item_FEAT_INDUSTRYTILES_187;
 	0, 1: item_FEAT_INDUSTRYTILES_187;
 	0, 2: item_FEAT_INDUSTRYTILES_187;
@@ -32192,7 +32192,7 @@ tilelayout tilelayout_5733_0 {
 	3, 2: item_FEAT_INDUSTRYTILES_187;
 }
 
-tilelayout tilelayout_5733_1 {
+tilelayout tilelayout_lumber_yard_1 {
 	0, 0: item_FEAT_INDUSTRYTILES_187;
 	0, 1: item_FEAT_INDUSTRYTILES_187;
 	0, 2: item_FEAT_INDUSTRYTILES_187;
@@ -32207,7 +32207,7 @@ tilelayout tilelayout_5733_1 {
 	2, 3: item_FEAT_INDUSTRYTILES_187;
 }
 
-tilelayout tilelayout_5733_2 {
+tilelayout tilelayout_lumber_yard_2 {
 	0, 0: item_FEAT_INDUSTRYTILES_187;
 	0, 1: item_FEAT_INDUSTRYTILES_187;
 	0, 2: item_FEAT_INDUSTRYTILES_187;
@@ -32220,7 +32220,7 @@ tilelayout tilelayout_5733_2 {
 	1, 4: item_FEAT_INDUSTRYTILES_187;
 }
 
-tilelayout tilelayout_5733_3 {
+tilelayout tilelayout_lumber_yard_3 {
 	0, 0: item_FEAT_INDUSTRYTILES_187;
 	0, 1: item_FEAT_INDUSTRYTILES_187;
 	1, 0: item_FEAT_INDUSTRYTILES_187;
@@ -32236,7 +32236,7 @@ tilelayout tilelayout_5733_3 {
 item(FEAT_INDUSTRIES, lumber_yard, 41) {
 	property {
 		substitute: 0;
-		layouts: [tilelayout_5733_0, tilelayout_5733_1, tilelayout_5733_2, tilelayout_5733_3];
+		layouts: [tilelayout_lumber_yard_0, tilelayout_lumber_yard_1, tilelayout_lumber_yard_2, tilelayout_lumber_yard_3];
 		life_type: 4;
 		closure_msg: 18483;
 		prod_increase_msg: 18485;
@@ -35855,7 +35855,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_186, 186) {
 	}
 }
 
-tilelayout tilelayout_6026_0 {
+tilelayout tilelayout_machine_shop_0 {
 	0, 0: item_FEAT_INDUSTRYTILES_186;
 	0, 1: item_FEAT_INDUSTRYTILES_186;
 	0, 2: item_FEAT_INDUSTRYTILES_186;
@@ -35876,7 +35876,7 @@ tilelayout tilelayout_6026_0 {
 	5, 2: item_FEAT_INDUSTRYTILES_186;
 }
 
-tilelayout tilelayout_6026_1 {
+tilelayout tilelayout_machine_shop_1 {
 	0, 0: item_FEAT_INDUSTRYTILES_186;
 	0, 1: item_FEAT_INDUSTRYTILES_186;
 	0, 2: item_FEAT_INDUSTRYTILES_186;
@@ -35899,7 +35899,7 @@ tilelayout tilelayout_6026_1 {
 	3, 4: item_FEAT_INDUSTRYTILES_186;
 }
 
-tilelayout tilelayout_6026_2 {
+tilelayout tilelayout_machine_shop_2 {
 	0, 0: item_FEAT_INDUSTRYTILES_186;
 	0, 1: item_FEAT_INDUSTRYTILES_186;
 	0, 2: item_FEAT_INDUSTRYTILES_186;
@@ -35922,7 +35922,7 @@ tilelayout tilelayout_6026_2 {
 	3, 4: item_FEAT_INDUSTRYTILES_186;
 }
 
-tilelayout tilelayout_6026_3 {
+tilelayout tilelayout_machine_shop_3 {
 	0, 0: item_FEAT_INDUSTRYTILES_186;
 	0, 1: item_FEAT_INDUSTRYTILES_186;
 	0, 2: item_FEAT_INDUSTRYTILES_186;
@@ -35945,7 +35945,7 @@ tilelayout tilelayout_6026_3 {
 	3, 4: item_FEAT_INDUSTRYTILES_186;
 }
 
-tilelayout tilelayout_6026_4 {
+tilelayout tilelayout_machine_shop_4 {
 	0, 0: item_FEAT_INDUSTRYTILES_186;
 	0, 1: item_FEAT_INDUSTRYTILES_186;
 	0, 2: item_FEAT_INDUSTRYTILES_186;
@@ -35969,7 +35969,7 @@ tilelayout tilelayout_6026_4 {
 item(FEAT_INDUSTRIES, machine_shop, 38) {
 	property {
 		substitute: 0;
-		layouts: [tilelayout_6026_0, tilelayout_6026_1, tilelayout_6026_2, tilelayout_6026_3, tilelayout_6026_4];
+		layouts: [tilelayout_machine_shop_0, tilelayout_machine_shop_1, tilelayout_machine_shop_2, tilelayout_machine_shop_3, tilelayout_machine_shop_4];
 		life_type: 4;
 		closure_msg: 18483;
 		prod_increase_msg: 18485;
@@ -37023,7 +37023,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_179, 179) {
 	}
 }
 
-tilelayout tilelayout_6166_0 {
+tilelayout tilelayout_stockyard_0 {
 	0, 1: item_FEAT_INDUSTRYTILES_179;
 	0, 2: item_FEAT_INDUSTRYTILES_179;
 	0, 3: item_FEAT_INDUSTRYTILES_179;
@@ -37045,7 +37045,7 @@ tilelayout tilelayout_6166_0 {
 item(FEAT_INDUSTRIES, stockyard, 37) {
 	property {
 		substitute: 0;
-		layouts: [tilelayout_6166_0];
+		layouts: [tilelayout_stockyard_0];
 		life_type: 4;
 		closure_msg: 18483;
 		prod_increase_msg: 18485;
@@ -39281,7 +39281,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_188, 188) {
 	}
 }
 
-tilelayout tilelayout_6357_0 {
+tilelayout tilelayout_metal_foundry_0 {
 	0, 0: item_FEAT_INDUSTRYTILES_188;
 	0, 1: item_FEAT_INDUSTRYTILES_188;
 	0, 2: item_FEAT_INDUSTRYTILES_188;
@@ -39299,7 +39299,7 @@ tilelayout tilelayout_6357_0 {
 	2, 4: item_FEAT_INDUSTRYTILES_188;
 }
 
-tilelayout tilelayout_6357_1 {
+tilelayout tilelayout_metal_foundry_1 {
 	0, 2: item_FEAT_INDUSTRYTILES_188;
 	0, 3: item_FEAT_INDUSTRYTILES_188;
 	1, 0: item_FEAT_INDUSTRYTILES_188;
@@ -39319,7 +39319,7 @@ tilelayout tilelayout_6357_1 {
 item(FEAT_INDUSTRIES, metal_foundry, 9) {
 	property {
 		substitute: 0;
-		layouts: [tilelayout_6357_0, tilelayout_6357_1];
+		layouts: [tilelayout_metal_foundry_0, tilelayout_metal_foundry_1];
 		life_type: 4;
 		closure_msg: 18483;
 		prod_increase_msg: 18485;
@@ -39889,7 +39889,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_190, 190) {
 	}
 }
 
-tilelayout tilelayout_6446_0 {
+tilelayout tilelayout_mixed_farm_0 {
 	0, 2: item_FEAT_INDUSTRYTILES_190;
 	0, 3: item_FEAT_INDUSTRYTILES_190;
 	1, 0: item_FEAT_INDUSTRYTILES_190;
@@ -39900,7 +39900,7 @@ tilelayout tilelayout_6446_0 {
 	3, 3: item_FEAT_INDUSTRYTILES_190;
 }
 
-tilelayout tilelayout_6446_1 {
+tilelayout tilelayout_mixed_farm_1 {
 	0, 0: item_FEAT_INDUSTRYTILES_190;
 	0, 2: item_FEAT_INDUSTRYTILES_190;
 	0, 3: item_FEAT_INDUSTRYTILES_190;
@@ -39911,7 +39911,7 @@ tilelayout tilelayout_6446_1 {
 	2, 2: item_FEAT_INDUSTRYTILES_190;
 }
 
-tilelayout tilelayout_6446_2 {
+tilelayout tilelayout_mixed_farm_2 {
 	0, 0: item_FEAT_INDUSTRYTILES_190;
 	0, 1: item_FEAT_INDUSTRYTILES_190;
 	0, 2: item_FEAT_INDUSTRYTILES_190;
@@ -39925,7 +39925,7 @@ tilelayout tilelayout_6446_2 {
 item(FEAT_INDUSTRIES, mixed_farm, 29) {
 	property {
 		substitute: 0;
-		layouts: [tilelayout_6446_0, tilelayout_6446_1, tilelayout_6446_2];
+		layouts: [tilelayout_mixed_farm_0, tilelayout_mixed_farm_1, tilelayout_mixed_farm_2];
 		life_type: 2;
 		closure_msg: 18483;
 		prod_increase_msg: 18488;
@@ -41738,12 +41738,12 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_203, 203) {
 	}
 }
 
-tilelayout tilelayout_6726_0 {
+tilelayout tilelayout_petrol_pump_0 {
 	0, 0: item_FEAT_INDUSTRYTILES_203;
 	0, 1: item_FEAT_INDUSTRYTILES_203;
 }
 
-tilelayout tilelayout_6726_1 {
+tilelayout tilelayout_petrol_pump_1 {
 	0, 0: item_FEAT_INDUSTRYTILES_203;
 	1, 0: item_FEAT_INDUSTRYTILES_203;
 }
@@ -41751,7 +41751,7 @@ tilelayout tilelayout_6726_1 {
 item(FEAT_INDUSTRIES, petrol_pump, 60) {
 	property {
 		substitute: 0;
-		layouts: [tilelayout_6726_0, tilelayout_6726_1];
+		layouts: [tilelayout_petrol_pump_0, tilelayout_petrol_pump_1];
 		life_type: 0;
 		closure_msg: 18483;
 		prod_increase_msg: 18485;
@@ -42482,7 +42482,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_176, 176) {
 	}
 }
 
-tilelayout tilelayout_6814_0 {
+tilelayout tilelayout_plastics_plant_0 {
 	0, 0: item_FEAT_INDUSTRYTILES_176;
 	0, 1: item_FEAT_INDUSTRYTILES_176;
 	0, 2: item_FEAT_INDUSTRYTILES_224;
@@ -42500,7 +42500,7 @@ tilelayout tilelayout_6814_0 {
 	4, 2: item_FEAT_INDUSTRYTILES_176;
 }
 
-tilelayout tilelayout_6814_1 {
+tilelayout tilelayout_plastics_plant_1 {
 	0, 0: item_FEAT_INDUSTRYTILES_176;
 	0, 1: item_FEAT_INDUSTRYTILES_176;
 	0, 2: item_FEAT_INDUSTRYTILES_227;
@@ -42515,7 +42515,7 @@ tilelayout tilelayout_6814_1 {
 	3, 2: item_FEAT_INDUSTRYTILES_224;
 }
 
-tilelayout tilelayout_6814_2 {
+tilelayout tilelayout_plastics_plant_2 {
 	0, 0: item_FEAT_INDUSTRYTILES_176;
 	0, 1: item_FEAT_INDUSTRYTILES_176;
 	0, 2: item_FEAT_INDUSTRYTILES_224;
@@ -42536,7 +42536,7 @@ tilelayout tilelayout_6814_2 {
 item(FEAT_INDUSTRIES, plastics_plant, 18) {
 	property {
 		substitute: 0;
-		layouts: [tilelayout_6814_0, tilelayout_6814_1, tilelayout_6814_2];
+		layouts: [tilelayout_plastics_plant_0, tilelayout_plastics_plant_1, tilelayout_plastics_plant_2];
 		life_type: 4;
 		closure_msg: 18483;
 		prod_increase_msg: 18485;
@@ -44996,7 +44996,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_177, 177) {
 	}
 }
 
-tilelayout tilelayout_7114_0 {
+tilelayout tilelayout_quarry_0 {
 	0, 0: item_FEAT_INDUSTRYTILES_177;
 	1, 0: item_FEAT_INDUSTRYTILES_177;
 	2, 0: item_FEAT_INDUSTRYTILES_177;
@@ -45033,7 +45033,7 @@ tilelayout tilelayout_7114_0 {
 	6, 3: item_FEAT_INDUSTRYTILES_177;
 }
 
-tilelayout tilelayout_7114_1 {
+tilelayout tilelayout_quarry_1 {
 	6, 0: item_FEAT_INDUSTRYTILES_177;
 	0, 1: item_FEAT_INDUSTRYTILES_177;
 	1, 1: item_FEAT_INDUSTRYTILES_177;
@@ -45068,7 +45068,7 @@ tilelayout tilelayout_7114_1 {
 item(FEAT_INDUSTRIES, quarry, 10) {
 	property {
 		substitute: 0;
-		layouts: [tilelayout_7114_0, tilelayout_7114_1];
+		layouts: [tilelayout_quarry_0, tilelayout_quarry_1];
 		life_type: 1;
 		closure_msg: 18483;
 		prod_increase_msg: 18485;
@@ -45332,7 +45332,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_202, 202) {
 	}
 }
 
-tilelayout tilelayout_7154_0 {
+tilelayout tilelayout_recycling_depot_0 {
 	0, 0: item_FEAT_INDUSTRYTILES_202;
 	0, 1: item_FEAT_INDUSTRYTILES_202;
 	1, 0: item_FEAT_INDUSTRYTILES_202;
@@ -45342,7 +45342,7 @@ tilelayout tilelayout_7154_0 {
 item(FEAT_INDUSTRIES, recycling_depot, 24) {
 	property {
 		substitute: 0;
-		layouts: [tilelayout_7154_0];
+		layouts: [tilelayout_recycling_depot_0];
 		life_type: 1;
 		closure_msg: 18483;
 		prod_increase_msg: 18485;
@@ -45648,7 +45648,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_201, 201) {
 	}
 }
 
-tilelayout tilelayout_7193_0 {
+tilelayout tilelayout_recycling_plant_0 {
 	2, 4: item_FEAT_INDUSTRYTILES_201;
 	3, 4: item_FEAT_INDUSTRYTILES_201;
 	4, 3: item_FEAT_INDUSTRYTILES_201;
@@ -45672,7 +45672,7 @@ tilelayout tilelayout_7193_0 {
 item(FEAT_INDUSTRIES, recycling_plant, 23) {
 	property {
 		substitute: 0;
-		layouts: [tilelayout_7193_0];
+		layouts: [tilelayout_recycling_plant_0];
 		life_type: 4;
 		closure_msg: 18483;
 		prod_increase_msg: 18485;
@@ -46832,7 +46832,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_192, 192) {
 	}
 }
 
-tilelayout tilelayout_7376_0 {
+tilelayout tilelayout_sheep_farm_0 {
 	0, 0: item_FEAT_INDUSTRYTILES_192;
 	1, 0: item_FEAT_INDUSTRYTILES_192;
 	3, 0: item_FEAT_INDUSTRYTILES_192;
@@ -46840,7 +46840,7 @@ tilelayout tilelayout_7376_0 {
 	1, 2: item_FEAT_INDUSTRYTILES_192;
 }
 
-tilelayout tilelayout_7376_1 {
+tilelayout tilelayout_sheep_farm_1 {
 	0, 0: item_FEAT_INDUSTRYTILES_192;
 	0, 1: item_FEAT_INDUSTRYTILES_192;
 	0, 2: item_FEAT_INDUSTRYTILES_192;
@@ -46851,7 +46851,7 @@ tilelayout tilelayout_7376_1 {
 item(FEAT_INDUSTRIES, sheep_farm, 27) {
 	property {
 		substitute: 0;
-		layouts: [tilelayout_7376_0, tilelayout_7376_1];
+		layouts: [tilelayout_sheep_farm_0, tilelayout_sheep_farm_1];
 		life_type: 2;
 		closure_msg: 18483;
 		prod_increase_msg: 18488;
@@ -47648,7 +47648,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_214, 214) {
 	}
 }
 
-tilelayout tilelayout_7501_0 {
+tilelayout tilelayout_sugar_refinery_0 {
 	0, 0: item_FEAT_INDUSTRYTILES_214;
 	0, 1: item_FEAT_INDUSTRYTILES_214;
 	1, 0: item_FEAT_INDUSTRYTILES_214;
@@ -47657,7 +47657,7 @@ tilelayout tilelayout_7501_0 {
 	2, 1: item_FEAT_INDUSTRYTILES_214;
 }
 
-tilelayout tilelayout_7501_1 {
+tilelayout tilelayout_sugar_refinery_1 {
 	0, 0: item_FEAT_INDUSTRYTILES_214;
 	0, 1: item_FEAT_INDUSTRYTILES_214;
 	0, 2: item_FEAT_INDUSTRYTILES_214;
@@ -47669,7 +47669,7 @@ tilelayout tilelayout_7501_1 {
 item(FEAT_INDUSTRIES, sugar_refinery, 19) {
 	property {
 		substitute: 0;
-		layouts: [tilelayout_7501_0, tilelayout_7501_1];
+		layouts: [tilelayout_sugar_refinery_0, tilelayout_sugar_refinery_1];
 		life_type: 4;
 		closure_msg: 18483;
 		prod_increase_msg: 18485;
@@ -49165,7 +49165,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_183, 183) {
 	}
 }
 
-tilelayout tilelayout_7656_0 {
+tilelayout tilelayout_textile_mill_0 {
 	0, 0: item_FEAT_INDUSTRYTILES_183;
 	0, 1: item_FEAT_INDUSTRYTILES_183;
 	1, 0: item_FEAT_INDUSTRYTILES_183;
@@ -49178,7 +49178,7 @@ tilelayout tilelayout_7656_0 {
 	4, 1: item_FEAT_INDUSTRYTILES_183;
 }
 
-tilelayout tilelayout_7656_1 {
+tilelayout tilelayout_textile_mill_1 {
 	0, 0: item_FEAT_INDUSTRYTILES_183;
 	0, 1: item_FEAT_INDUSTRYTILES_183;
 	0, 2: item_FEAT_INDUSTRYTILES_183;
@@ -49190,7 +49190,7 @@ tilelayout tilelayout_7656_1 {
 	2, 2: item_FEAT_INDUSTRYTILES_183;
 }
 
-tilelayout tilelayout_7656_2 {
+tilelayout tilelayout_textile_mill_2 {
 	0, 0: item_FEAT_INDUSTRYTILES_183;
 	0, 1: item_FEAT_INDUSTRYTILES_183;
 	1, 0: item_FEAT_INDUSTRYTILES_183;
@@ -49199,7 +49199,7 @@ tilelayout tilelayout_7656_2 {
 	2, 1: item_FEAT_INDUSTRYTILES_183;
 }
 
-tilelayout tilelayout_7656_3 {
+tilelayout tilelayout_textile_mill_3 {
 	0, 0: item_FEAT_INDUSTRYTILES_183;
 	0, 1: item_FEAT_INDUSTRYTILES_183;
 	1, 0: item_FEAT_INDUSTRYTILES_183;
@@ -49212,7 +49212,7 @@ tilelayout tilelayout_7656_3 {
 	4, 1: item_FEAT_INDUSTRYTILES_183;
 }
 
-tilelayout tilelayout_7656_4 {
+tilelayout tilelayout_textile_mill_4 {
 	0, 0: item_FEAT_INDUSTRYTILES_183;
 	0, 1: item_FEAT_INDUSTRYTILES_183;
 	0, 2: item_FEAT_INDUSTRYTILES_183;
@@ -49223,7 +49223,7 @@ tilelayout tilelayout_7656_4 {
 	1, 3: item_FEAT_INDUSTRYTILES_183;
 }
 
-tilelayout tilelayout_7656_5 {
+tilelayout tilelayout_textile_mill_5 {
 	0, 0: item_FEAT_INDUSTRYTILES_183;
 	0, 1: item_FEAT_INDUSTRYTILES_183;
 	0, 2: item_FEAT_INDUSTRYTILES_183;
@@ -49238,7 +49238,7 @@ tilelayout tilelayout_7656_5 {
 item(FEAT_INDUSTRIES, textile_mill, 42) {
 	property {
 		substitute: 0;
-		layouts: [tilelayout_7656_0, tilelayout_7656_1, tilelayout_7656_2, tilelayout_7656_3, tilelayout_7656_4, tilelayout_7656_5];
+		layouts: [tilelayout_textile_mill_0, tilelayout_textile_mill_1, tilelayout_textile_mill_2, tilelayout_textile_mill_3, tilelayout_textile_mill_4, tilelayout_textile_mill_5];
 		life_type: 4;
 		closure_msg: 18483;
 		prod_increase_msg: 18485;

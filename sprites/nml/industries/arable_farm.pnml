@@ -235,7 +235,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_160, 160) {
 	}
 }
 
-tilelayout tilelayout_2723_0 {
+tilelayout tilelayout_arable_farm_0 {
 	1, 0: item_FEAT_INDUSTRYTILES_160;
 	1, 1: item_FEAT_INDUSTRYTILES_160;
 	0, 2: item_FEAT_INDUSTRYTILES_160;
@@ -243,7 +243,7 @@ tilelayout tilelayout_2723_0 {
 	0, 1: item_FEAT_INDUSTRYTILES_160;
 }
 
-tilelayout tilelayout_2723_1 {
+tilelayout tilelayout_arable_farm_1 {
 	0, 0: item_FEAT_INDUSTRYTILES_160;
 	0, 1: item_FEAT_INDUSTRYTILES_160;
 	1, 0: item_FEAT_INDUSTRYTILES_160;
@@ -251,7 +251,7 @@ tilelayout tilelayout_2723_1 {
 	2, 0: item_FEAT_INDUSTRYTILES_160;
 }
 
-tilelayout tilelayout_2723_2 {
+tilelayout tilelayout_arable_farm_2 {
 	0, 0: item_FEAT_INDUSTRYTILES_160;
 	0, 1: item_FEAT_INDUSTRYTILES_160;
 	1, 0: item_FEAT_INDUSTRYTILES_160;
@@ -262,7 +262,7 @@ tilelayout tilelayout_2723_2 {
 item(FEAT_INDUSTRIES, arable_farm, 26) {
 	property {
 		substitute: 0;
-		layouts: [tilelayout_2723_0, tilelayout_2723_1, tilelayout_2723_2];
+		layouts: [tilelayout_arable_farm_0, tilelayout_arable_farm_1, tilelayout_arable_farm_2];
 		life_type: 2;
 		closure_msg: 18483;
 		prod_increase_msg: 18488;
