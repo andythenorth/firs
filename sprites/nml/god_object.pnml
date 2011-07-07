@@ -2095,7 +2095,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3073, allow_close_secondary) {
 	return 0;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3074, current_callback) {
+switch(FEAT_INDUSTRIES, SELF, switch_main_brewery, current_callback) {
 	0: action2_3060;
 	IND_CB_LOCATION_CHECK: action2_3025;
 	IND_CB_AVAILABILITY: action2_3063;
@@ -2109,7 +2109,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3074, current_callback) {
 
 item(FEAT_INDUSTRIES, brewery, 35) {
 	graphics {
-		action2_3074;
+		switch_main_brewery;
 	}
 }
 
@@ -3056,7 +3056,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3182, allow_close_secondary) {
 	return 0;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3183, current_callback) {
+switch(FEAT_INDUSTRIES, SELF, switch_main_brick_works, current_callback) {
 	0: action2_3169;
 	IND_CB_LOCATION_CHECK: action2_3129;
 	IND_CB_AVAILABILITY: action2_3172;
@@ -3070,7 +3070,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3183, current_callback) {
 
 item(FEAT_INDUSTRIES, brick_works, 45) {
 	graphics {
-		action2_3183;
+		switch_main_brick_works;
 	}
 }
 
@@ -3420,7 +3420,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3236, restrict_open_during_gameplay) {
 	action2_3234;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3237, current_callback) {
+switch(FEAT_INDUSTRIES, SELF, switch_main_builders_yard, current_callback) {
 	IND_CB_AVAILABILITY: action2_3236;
 	IND_CB_LOCATION_CHECK: action2_3233;
 	IND_CB_EXTRA_TEXT_FUND: return string(STR_GENERIC_NEWLINE);
@@ -3430,7 +3430,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3237, current_callback) {
 
 item(FEAT_INDUSTRIES, builders_yard, 63) {
 	graphics {
-		action2_3237;
+		switch_main_builders_yard;
 	}
 }
 
@@ -5859,7 +5859,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3519, 1) {
 	action2_3517;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3520, current_callback) {
+switch(FEAT_INDUSTRIES, SELF, switch_main_clay_pit, current_callback) {
 	0: action2_3501;
 	IND_CB_LOCATION_CHECK: action2_3499;
 	IND_CB_AVAILABILITY: action2_3515;
@@ -5873,7 +5873,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3520, current_callback) {
 
 item(FEAT_INDUSTRIES, clay_pit, 44) {
 	graphics {
-		action2_3520;
+		switch_main_clay_pit;
 	}
 }
 
@@ -6997,7 +6997,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3639, allow_close_secondary) {
 	return 0;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3640, current_callback) {
+switch(FEAT_INDUSTRIES, SELF, switch_main_cement_plant, current_callback) {
 	0: action2_3626;
 	IND_CB_LOCATION_CHECK: action2_3586;
 	IND_CB_AVAILABILITY: action2_3629;
@@ -7011,7 +7011,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3640, current_callback) {
 
 item(FEAT_INDUSTRIES, cement_plant, 43) {
 	graphics {
-		action2_3640;
+		switch_main_cement_plant;
 	}
 }
 
@@ -7201,7 +7201,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3671, 1) {
 	action2_3669;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3672, current_callback) {
+switch(FEAT_INDUSTRIES, SELF, switch_main_coal_mine, current_callback) {
 	0: action2_3653;
 	IND_CB_LOCATION_CHECK: action2_3651;
 	IND_CB_AVAILABILITY: action2_3667;
@@ -7215,7 +7215,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3672, current_callback) {
 
 item(FEAT_INDUSTRIES, coal_mine, 0) {
 	graphics {
-		action2_3672;
+		switch_main_coal_mine;
 	}
 }
 
@@ -7784,7 +7784,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3750, 1) {
 	action2_3748;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3751, current_callback) {
+switch(FEAT_INDUSTRIES, SELF, switch_main_diary_farm, current_callback) {
 	0: action2_3732;
 	IND_CB_LOCATION_CHECK: action2_3730;
 	IND_CB_AVAILABILITY: action2_3746;
@@ -7798,7 +7798,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3751, current_callback) {
 
 item(FEAT_INDUSTRIES, diary_farm, 28) {
 	graphics {
-		action2_3751;
+		switch_main_diary_farm;
 	}
 }
 
@@ -9637,7 +9637,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3935, allow_close_secondary) {
 	return 0;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3936, current_callback) {
+switch(FEAT_INDUSTRIES, SELF, switch_main_diary, current_callback) {
 	0: action2_3922;
 	IND_CB_LOCATION_CHECK: action2_3887;
 	IND_CB_AVAILABILITY: action2_3925;
@@ -9651,7 +9651,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3936, current_callback) {
 
 item(FEAT_INDUSTRIES, diary, 36) {
 	graphics {
-		action2_3936;
+		switch_main_diary;
 	}
 }
 
@@ -9904,7 +9904,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3973, 1) {
 	action2_3971;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3974, current_callback) {
+switch(FEAT_INDUSTRIES, SELF, switch_main_dredging_site, current_callback) {
 	0: action2_3955;
 	IND_CB_LOCATION_CHECK: action2_3953;
 	IND_CB_AVAILABILITY: action2_3969;
@@ -9918,7 +9918,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3974, current_callback) {
 
 item(FEAT_INDUSTRIES, dredging_site, 20) {
 	graphics {
-		action2_3974;
+		switch_main_dredging_site;
 	}
 }
 
@@ -10943,7 +10943,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_4071, allow_close_secondary) {
 	return 0;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_4072, current_callback) {
+switch(FEAT_INDUSTRIES, SELF, switch_main_fertilizer_plant, current_callback) {
 	0: action2_4058;
 	IND_CB_LOCATION_CHECK: action2_4032;
 	IND_CB_AVAILABILITY: action2_4061;
@@ -10957,7 +10957,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_4072, current_callback) {
 
 item(FEAT_INDUSTRIES, fertilizer_plant, 40) {
 	graphics {
-		action2_4072;
+		switch_main_fertilizer_plant;
 	}
 }
 
@@ -11383,7 +11383,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_4102, [STORE_TEMP(-701265, 256), 32928]) {
 	return;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_4103, current_callback) {
+switch(FEAT_INDUSTRIES, SELF, switch_main_fishing_grounds, current_callback) {
 	0: action2_4098;
 	IND_CB_LOCATION_CHECK: action2_4097;
 	IND_CB_AVAILABILITY: action2_4101;
@@ -11395,7 +11395,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_4103, current_callback) {
 
 item(FEAT_INDUSTRIES, fishing_grounds, 32) {
 	graphics {
-		action2_4103;
+		switch_main_fishing_grounds;
 	}
 }
 
@@ -12720,7 +12720,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_4228, allow_close_secondary) {
 	return 0;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_4229, current_callback) {
+switch(FEAT_INDUSTRIES, SELF, switch_main_fishing_harbour, current_callback) {
 	0: action2_4215;
 	IND_CB_LOCATION_CHECK: action2_4180;
 	IND_CB_AVAILABILITY: action2_4218;
@@ -12734,7 +12734,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_4229, current_callback) {
 
 item(FEAT_INDUSTRIES, fishing_harbour, 31) {
 	graphics {
-		action2_4229;
+		switch_main_fishing_harbour;
 	}
 }
 
@@ -12884,7 +12884,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_4253, restrict_open_during_gameplay) {
 	action2_4251;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_4254, current_callback) {
+switch(FEAT_INDUSTRIES, SELF, switch_main_food_market, current_callback) {
 	IND_CB_AVAILABILITY: action2_4253;
 	IND_CB_EXTRA_TEXT_FUND: return string(STR_GENERIC_NEWLINE);
 	IND_CB_EXTRA_TEXT_INDUSTRY: return string(STR_GENERIC_NEWLINE);
@@ -12893,7 +12893,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_4254, current_callback) {
 
 item(FEAT_INDUSTRIES, food_market, 59) {
 	graphics {
-		action2_4254;
+		switch_main_food_market;
 	}
 }
 
@@ -18536,7 +18536,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_4505, 1) {
 	action2_4503;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_4506, current_callback) {
+switch(FEAT_INDUSTRIES, SELF, switch_main_oil_wells, current_callback) {
 	0: action2_4487;
 	IND_CB_LOCATION_CHECK: action2_4485;
 	IND_CB_AVAILABILITY: action2_4501;
@@ -18550,7 +18550,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_4506, current_callback) {
 
 item(FEAT_INDUSTRIES, oil_wells, 11) {
 	graphics {
-		action2_4506;
+		switch_main_oil_wells;
 	}
 }
 
@@ -19102,7 +19102,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_4593, allow_close_secondary) {
 	return 0;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_4594, current_callback) {
+switch(FEAT_INDUSTRIES, SELF, switch_main_smithy_forge, current_callback) {
 	0: action2_4580;
 	IND_CB_LOCATION_CHECK: action2_4554;
 	IND_CB_AVAILABILITY: action2_4583;
@@ -19116,7 +19116,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_4594, current_callback) {
 
 item(FEAT_INDUSTRIES, smithy_forge, 6) {
 	graphics {
-		action2_4594;
+		switch_main_smithy_forge;
 	}
 }
 
@@ -25670,7 +25670,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_4961, allow_close_secondary) {
 	return 0;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_4962, current_callback) {
+switch(FEAT_INDUSTRIES, SELF, switch_main_furniture_factory, current_callback) {
 	0: action2_4948;
 	IND_CB_LOCATION_CHECK: action2_4913;
 	IND_CB_AVAILABILITY: action2_4951;
@@ -25684,7 +25684,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_4962, current_callback) {
 
 item(FEAT_INDUSTRIES, furniture_factory, 13) {
 	graphics {
-		action2_4962;
+		switch_main_furniture_factory;
 	}
 }
 
@@ -26467,7 +26467,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_5074, allow_close_secondary) {
 	return 0;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_5075, current_callback) {
+switch(FEAT_INDUSTRIES, SELF, switch_main_glass_works, current_callback) {
 	0: action2_5061;
 	IND_CB_LOCATION_CHECK: action2_5021;
 	IND_CB_AVAILABILITY: action2_5064;
@@ -26481,7 +26481,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_5075, current_callback) {
 
 item(FEAT_INDUSTRIES, glass_works, 22) {
 	graphics {
-		action2_5075;
+		switch_main_glass_works;
 	}
 }
 
@@ -27620,7 +27620,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_5230, allow_close_secondary) {
 	return 0;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_5231, current_callback) {
+switch(FEAT_INDUSTRIES, SELF, switch_main_grain_mill, current_callback) {
 	0: action2_5217;
 	IND_CB_LOCATION_CHECK: action2_5182;
 	IND_CB_AVAILABILITY: action2_5220;
@@ -27634,7 +27634,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_5231, current_callback) {
 
 item(FEAT_INDUSTRIES, grain_mill, 34) {
 	graphics {
-		action2_5231;
+		switch_main_grain_mill;
 	}
 }
 
@@ -27784,7 +27784,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_5255, restrict_open_during_gameplay) {
 	action2_5253;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_5256, current_callback) {
+switch(FEAT_INDUSTRIES, SELF, switch_main_hardware_store, current_callback) {
 	IND_CB_AVAILABILITY: action2_5255;
 	IND_CB_EXTRA_TEXT_FUND: return string(STR_GENERIC_NEWLINE);
 	IND_CB_EXTRA_TEXT_INDUSTRY: return string(STR_GENERIC_NEWLINE);
@@ -27793,7 +27793,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_5256, current_callback) {
 
 item(FEAT_INDUSTRIES, hardware_store, 57) {
 	graphics {
-		action2_5256;
+		switch_main_hardware_store;
 	}
 }
 
@@ -27964,7 +27964,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_5277, restrict_open_during_gameplay) {
 	action2_5275;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_5278, current_callback) {
+switch(FEAT_INDUSTRIES, SELF, switch_main_hotel, current_callback) {
 	IND_CB_AVAILABILITY: action2_5277;
 	IND_CB_EXTRA_TEXT_FUND: return string(STR_GENERIC_NEWLINE);
 	IND_CB_EXTRA_TEXT_INDUSTRY: return string(STR_GENERIC_NEWLINE);
@@ -27973,7 +27973,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_5278, current_callback) {
 
 item(FEAT_INDUSTRIES, hotel, 58) {
 	graphics {
-		action2_5278;
+		switch_main_hotel;
 	}
 }
 
@@ -28147,7 +28147,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_5306, 1) {
 	action2_5304;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_5307, current_callback) {
+switch(FEAT_INDUSTRIES, SELF, switch_main_oil_refinery, current_callback) {
 	0: action2_5288;
 	IND_CB_LOCATION_CHECK: action2_5286;
 	IND_CB_AVAILABILITY: action2_5302;
@@ -28161,7 +28161,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_5307, current_callback) {
 
 item(FEAT_INDUSTRIES, oil_refinery, 4) {
 	graphics {
-		action2_5307;
+		switch_main_oil_refinery;
 	}
 }
 
@@ -30447,7 +30447,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_5504, allow_close_secondary) {
 	return 0;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_5505, current_callback) {
+switch(FEAT_INDUSTRIES, SELF, switch_main_iron_works, current_callback) {
 	0: action2_5491;
 	IND_CB_LOCATION_CHECK: action2_5451;
 	IND_CB_AVAILABILITY: action2_5494;
@@ -30461,7 +30461,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_5505, current_callback) {
 
 item(FEAT_INDUSTRIES, iron_works, 21) {
 	graphics {
-		action2_5505;
+		switch_main_iron_works;
 	}
 }
 
@@ -30936,7 +30936,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_5568, 1) {
 	action2_5566;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_5569, current_callback) {
+switch(FEAT_INDUSTRIES, SELF, switch_main_junkyard, current_callback) {
 	0: action2_5550;
 	IND_CB_LOCATION_CHECK: action2_5548;
 	IND_CB_AVAILABILITY: action2_5564;
@@ -30950,7 +30950,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_5569, current_callback) {
 
 item(FEAT_INDUSTRIES, junkyard, 25) {
 	graphics {
-		action2_5569;
+		switch_main_junkyard;
 	}
 }
 
@@ -31882,7 +31882,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_5692, allow_close_secondary) {
 	return 0;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_5693, current_callback) {
+switch(FEAT_INDUSTRIES, SELF, switch_main_lime_kiln, current_callback) {
 	0: action2_5679;
 	IND_CB_LOCATION_CHECK: action2_5644;
 	IND_CB_AVAILABILITY: action2_5682;
@@ -31896,7 +31896,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_5693, current_callback) {
 
 item(FEAT_INDUSTRIES, lime_kiln, 1) {
 	graphics {
-		action2_5693;
+		switch_main_lime_kiln;
 	}
 }
 
@@ -32545,7 +32545,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_5784, allow_close_secondary) {
 	return 0;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_5785, current_callback) {
+switch(FEAT_INDUSTRIES, SELF, switch_main_lumber_yard, current_callback) {
 	0: action2_5771;
 	IND_CB_LOCATION_CHECK: action2_5736;
 	IND_CB_AVAILABILITY: action2_5774;
@@ -32559,7 +32559,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_5785, current_callback) {
 
 item(FEAT_INDUSTRIES, lumber_yard, 41) {
 	graphics {
-		action2_5785;
+		switch_main_lumber_yard;
 	}
 }
 
@@ -36233,7 +36233,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6068, allow_close_secondary) {
 	return 0;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6069, current_callback) {
+switch(FEAT_INDUSTRIES, SELF, switch_main_machine_shop, current_callback) {
 	0: action2_6055;
 	IND_CB_LOCATION_CHECK: action2_6029;
 	IND_CB_AVAILABILITY: action2_6058;
@@ -36247,7 +36247,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6069, current_callback) {
 
 item(FEAT_INDUSTRIES, machine_shop, 38) {
 	graphics {
-		action2_6069;
+		switch_main_machine_shop;
 	}
 }
 
@@ -37370,7 +37370,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6220, allow_close_secondary) {
 	return 0;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6221, current_callback) {
+switch(FEAT_INDUSTRIES, SELF, switch_main_stockyard, current_callback) {
 	0: action2_6207;
 	IND_CB_LOCATION_CHECK: action2_6172;
 	IND_CB_AVAILABILITY: action2_6210;
@@ -37384,7 +37384,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6221, current_callback) {
 
 item(FEAT_INDUSTRIES, stockyard, 37) {
 	graphics {
-		action2_6221;
+		switch_main_stockyard;
 	}
 }
 
@@ -39583,7 +39583,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6399, allow_close_secondary) {
 	return 0;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6400, current_callback) {
+switch(FEAT_INDUSTRIES, SELF, switch_main_metal_foundry, current_callback) {
 	0: action2_6386;
 	IND_CB_LOCATION_CHECK: action2_6360;
 	IND_CB_AVAILABILITY: action2_6389;
@@ -39597,7 +39597,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6400, current_callback) {
 
 item(FEAT_INDUSTRIES, metal_foundry, 9) {
 	graphics {
-		action2_6400;
+		switch_main_metal_foundry;
 	}
 }
 
@@ -40116,7 +40116,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6474, 1) {
 	action2_6472;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6475, current_callback) {
+switch(FEAT_INDUSTRIES, SELF, switch_main_mixed_farm, current_callback) {
 	0: action2_6456;
 	IND_CB_LOCATION_CHECK: action2_6454;
 	IND_CB_AVAILABILITY: action2_6470;
@@ -40130,7 +40130,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6475, current_callback) {
 
 item(FEAT_INDUSTRIES, mixed_farm, 29) {
 	graphics {
-		action2_6475;
+		switch_main_mixed_farm;
 	}
 }
 
@@ -41799,7 +41799,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6731, [STORE_TEMP((697248 - 701265), 256),
 	return;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6732, current_callback) {
+switch(FEAT_INDUSTRIES, SELF, switch_main_petrol_pump, current_callback) {
 	IND_CB_AVAILABILITY: action2_6730;
 	IND_CB_EXTRA_TEXT_FUND: action2_6731;
 	IND_CB_EXTRA_TEXT_INDUSTRY: return string(STR_GENERIC_NEWLINE);
@@ -41808,7 +41808,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6732, current_callback) {
 
 item(FEAT_INDUSTRIES, petrol_pump, 60) {
 	graphics {
-		action2_6732;
+		switch_main_petrol_pump;
 	}
 }
 
@@ -42806,7 +42806,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6857, allow_close_secondary) {
 	return 0;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6858, current_callback) {
+switch(FEAT_INDUSTRIES, SELF, switch_main_plastics_plant, current_callback) {
 	0: action2_6844;
 	IND_CB_LOCATION_CHECK: action2_6818;
 	IND_CB_AVAILABILITY: action2_6847;
@@ -42820,7 +42820,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6858, current_callback) {
 
 item(FEAT_INDUSTRIES, plastics_plant, 18) {
 	graphics {
-		action2_6858;
+		switch_main_plastics_plant;
 	}
 }
 
@@ -45254,7 +45254,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_7141, 1) {
 	action2_7139;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7142, current_callback) {
+switch(FEAT_INDUSTRIES, SELF, switch_main_quarry, current_callback) {
 	0: action2_7123;
 	IND_CB_LOCATION_CHECK: action2_7121;
 	IND_CB_AVAILABILITY: action2_7137;
@@ -45268,7 +45268,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_7142, current_callback) {
 
 item(FEAT_INDUSTRIES, quarry, 10) {
 	graphics {
-		action2_7142;
+		switch_main_quarry;
 	}
 }
 
@@ -45420,7 +45420,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_7165, [STORE_TEMP((729390 - 701265), 256),
 	return;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7166, current_callback) {
+switch(FEAT_INDUSTRIES, SELF, switch_main_recycling_depot, current_callback) {
 	IND_CB_LOCATION_CHECK: action2_7161;
 	IND_CB_AVAILABILITY: action2_7164;
 	IND_CB_EXTRA_TEXT_FUND: action2_7165;
@@ -45430,7 +45430,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_7166, current_callback) {
 
 item(FEAT_INDUSTRIES, recycling_depot, 24) {
 	graphics {
-		action2_7166;
+		switch_main_recycling_depot;
 	}
 }
 
@@ -45954,7 +45954,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_7238, allow_close_secondary) {
 	return 0;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7239, current_callback) {
+switch(FEAT_INDUSTRIES, SELF, switch_main_recycling_plant, current_callback) {
 	0: action2_7225;
 	IND_CB_LOCATION_CHECK: action2_7197;
 	IND_CB_AVAILABILITY: action2_7228;
@@ -45969,7 +45969,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_7239, current_callback) {
 
 item(FEAT_INDUSTRIES, recycling_plant, 23) {
 	graphics {
-		action2_7239;
+		switch_main_recycling_plant;
 	}
 }
 
@@ -47037,7 +47037,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_7403, 1) {
 	action2_7401;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7404, current_callback) {
+switch(FEAT_INDUSTRIES, SELF, switch_main_sheep_farm, current_callback) {
 	0: action2_7385;
 	IND_CB_LOCATION_CHECK: action2_7383;
 	IND_CB_AVAILABILITY: action2_7399;
@@ -47051,7 +47051,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_7404, current_callback) {
 
 item(FEAT_INDUSTRIES, sheep_farm, 27) {
 	graphics {
-		action2_7404;
+		switch_main_sheep_farm;
 	}
 }
 
@@ -47984,7 +47984,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_7553, allow_close_secondary) {
 	return 0;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7554, current_callback) {
+switch(FEAT_INDUSTRIES, SELF, switch_main_sugar_refinery, current_callback) {
 	0: action2_7540;
 	IND_CB_LOCATION_CHECK: action2_7505;
 	IND_CB_AVAILABILITY: action2_7543;
@@ -47998,7 +47998,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_7554, current_callback) {
 
 item(FEAT_INDUSTRIES, sugar_refinery, 19) {
 	graphics {
-		action2_7554;
+		switch_main_sugar_refinery;
 	}
 }
 
@@ -49558,7 +49558,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_7709, allow_close_secondary) {
 	return 0;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7710, current_callback) {
+switch(FEAT_INDUSTRIES, SELF, switch_main_textile_mill, current_callback) {
 	0: action2_7696;
 	IND_CB_LOCATION_CHECK: action2_7661;
 	IND_CB_AVAILABILITY: action2_7699;
@@ -49572,7 +49572,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_7710, current_callback) {
 
 item(FEAT_INDUSTRIES, textile_mill, 42) {
 	graphics {
-		action2_7710;
+		switch_main_textile_mill;
 	}
 }
 

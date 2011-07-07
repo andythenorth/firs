@@ -2790,7 +2790,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_2681, allow_close_secondary) {
 	return 0;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_2682, current_callback) {
+switch(FEAT_INDUSTRIES, SELF, switch_main_aluminium_plant, current_callback) {
 	0: action2_2668;
 	IND_CB_LOCATION_CHECK: action2_2628;
 	IND_CB_AVAILABILITY: action2_2671;
@@ -2804,6 +2804,6 @@ switch(FEAT_INDUSTRIES, SELF, action2_2682, current_callback) {
 
 item(FEAT_INDUSTRIES, aluminum_plant, 8) {
 	graphics {
-		action2_2682;
+		switch_main_aluminium_plant;
 	}
 }

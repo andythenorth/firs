@@ -854,7 +854,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_2895, allow_close_secondary) {
 	return 0;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_2896, current_callback) {
+switch(FEAT_INDUSTRIES, SELF, switch_main_biorefinery, current_callback) {
 	0: action2_2882;
 	IND_CB_LOCATION_CHECK: action2_2856;
 	IND_CB_AVAILABILITY: action2_2885;
@@ -868,6 +868,6 @@ switch(FEAT_INDUSTRIES, SELF, action2_2896, current_callback) {
 
 item(FEAT_INDUSTRIES, biorefinery, 46) {
 	graphics {
-		action2_2896;
+		switch_main_biorefinery;
 	}
 }

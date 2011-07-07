@@ -333,7 +333,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_2801, 1) {
 	action2_2799;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_2802, current_callback) {
+switch(FEAT_INDUSTRIES, SELF, switch_main_bauxite_mine, current_callback) {
 	0: action2_2783;
 	IND_CB_LOCATION_CHECK: action2_2781;
 	IND_CB_AVAILABILITY: action2_2797;
@@ -347,6 +347,6 @@ switch(FEAT_INDUSTRIES, SELF, action2_2802, current_callback) {
 
 item(FEAT_INDUSTRIES, bauxite_mine, 5) {
 	graphics {
-		action2_2802;
+		switch_main_bauxite_mine;
 	}
 }

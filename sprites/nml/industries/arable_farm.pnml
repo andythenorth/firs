@@ -458,7 +458,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_2752, 1) {
 	action2_2750;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_2753, current_callback) {
+switch(FEAT_INDUSTRIES, SELF, switch_main_arable_farm, current_callback) {
 	0: action2_2734;
 	IND_CB_LOCATION_CHECK: action2_2732;
 	IND_CB_AVAILABILITY: action2_2748;
@@ -472,6 +472,6 @@ switch(FEAT_INDUSTRIES, SELF, action2_2753, current_callback) {
 
 item(FEAT_INDUSTRIES, arable_farm, 26) {
 	graphics {
-		action2_2753;
+		switch_main_arable_farm;
 	}
 }
