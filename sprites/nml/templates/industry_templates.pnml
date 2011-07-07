@@ -1,16 +1,46 @@
+/*
+ * This file is part of FIRS Industry Set for OpenTTD.
+ * FIRS is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 2.
+ * FIRS is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/*
+ * The opening behaviour of industries opened randomly by the game
+ * can be controlled by a NewGRF parameter
+ */
 #define ALLOW_OPENING_SWITCH(switchname, minyear, maxyear) \
 switch(FEAT_INDUSTRIES, SELF, switchname ## _year_check, (current_date + 1)) { \
-	date(minyear, 1, 1) .. date(maxyear, 1, 1): return 0; \
-	return 1; \
+	date(minyear, 1, 1) .. date(maxyear, 1, 1): return CB_RESULT_IND_ALLOW; \
+	return CB_RESULT_IND_DISALLOW; \
 } \
  \
 switch(FEAT_INDUSTRIES, SELF, switchname ## _founder_check, (extra_callback_info2 & 255)) { \
-	1: return 1; \
-	2: return 1; \
+	1: return CB_RESULT_IND_DISALLOW; \
+	2: return CB_RESULT_IND_DISALLOW; \
 	switchname ## _year_check; \
 } \
  \
 switch(FEAT_INDUSTRIES, SELF, switchname, restrict_open_during_gameplay) { \
 	1..255: switchname ## _founder_check; \
 	switchname ## _year_check; \
+}
+
+
+/*
+ * The closure behaviour of secondary industries
+ * can be controlled by a NewGRF parameter
+ */
+#define CHECK_CLOSE_SECONDARY(switchname) \
+switch(FEAT_INDUSTRIES, SELF, switchname ## _founder, (extra_callback_info2 & 1)) { \
+	0: return CB_RESULT_IND_PROD_CLOSE; \
+	return CB_RESULT_IND_PROD_NO_CHANGE; \
+} \
+switch(FEAT_INDUSTRIES, SELF, switchname ## _had_produced_check, LOAD_PERM(15)) { \
+	0..18: return CB_RESULT_IND_PROD_NO_CHANGE; \
+	switchname ## _founder; \
+} \
+switch(FEAT_INDUSTRIES, SELF, switchname, allow_close_secondary) { \
+	1..255: switchname ## _had_produced_check; \
+	return CB_RESULT_IND_PROD_NO_CHANGE; \
 }

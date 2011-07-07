@@ -2761,20 +2761,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_2678, produced_last_month_1) {
 	action2_2677;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_2679, (extra_callback_info2 & 1)) {
-	0: return 3;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_2680, LOAD_PERM(15)) {
-	0..18: return 0;
-	action2_2679;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_2681, allow_close_secondary) {
-	1..255: action2_2680;
-	return 0;
-}
+CHECK_CLOSE_SECONDARY(action2_2681) 
 
 switch(FEAT_INDUSTRIES, SELF, switch_main_aluminium_plant, current_callback) {
 	0: action2_2668;

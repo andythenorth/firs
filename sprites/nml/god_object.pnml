@@ -2066,20 +2066,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3070, produced_last_month_1) {
 	action2_3069;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3071, (extra_callback_info2 & 1)) {
-	0: return 3;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_3072, LOAD_PERM(15)) {
-	0..18: return 0;
-	action2_3071;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_3073, allow_close_secondary) {
-	1..255: action2_3072;
-	return 0;
-}
+CHECK_CLOSE_SECONDARY(action2_3073)
 
 switch(FEAT_INDUSTRIES, SELF, switch_main_brewery, current_callback) {
 	0: action2_3060;
@@ -3013,20 +3000,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3179, produced_last_month_1) {
 	action2_3178;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3180, (extra_callback_info2 & 1)) {
-	0: return 3;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_3181, LOAD_PERM(15)) {
-	0..18: return 0;
-	action2_3180;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_3182, allow_close_secondary) {
-	1..255: action2_3181;
-	return 0;
-}
+CHECK_CLOSE_SECONDARY(action2_3182)
 
 switch(FEAT_INDUSTRIES, SELF, switch_main_brick_works, current_callback) {
 	0: action2_3169;
@@ -6912,20 +6886,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3636, produced_last_month_1) {
 	action2_3635;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3637, (extra_callback_info2 & 1)) {
-	0: return 3;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_3638, LOAD_PERM(15)) {
-	0..18: return 0;
-	action2_3637;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_3639, allow_close_secondary) {
-	1..255: action2_3638;
-	return 0;
-}
+CHECK_CLOSE_SECONDARY(action2_3639)
 
 switch(FEAT_INDUSTRIES, SELF, switch_main_cement_plant, current_callback) {
 	0: action2_3626;
@@ -9510,20 +9471,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3932, produced_last_month_1) {
 	action2_3931;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3933, (extra_callback_info2 & 1)) {
-	0: return 3;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_3934, LOAD_PERM(15)) {
-	0..18: return 0;
-	action2_3933;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_3935, allow_close_secondary) {
-	1..255: action2_3934;
-	return 0;
-}
+CHECK_CLOSE_SECONDARY(action2_3935)
 
 switch(FEAT_INDUSTRIES, SELF, switch_main_diary, current_callback) {
 	0: action2_3922;
@@ -10802,20 +10750,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_4068, produced_last_month_1) {
 	action2_4067;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_4069, (extra_callback_info2 & 1)) {
-	0: return 3;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4070, LOAD_PERM(15)) {
-	0..18: return 0;
-	action2_4069;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4071, allow_close_secondary) {
-	1..255: action2_4070;
-	return 0;
-}
+CHECK_CLOSE_SECONDARY(action2_4071)
 
 switch(FEAT_INDUSTRIES, SELF, switch_main_fertilizer_plant, current_callback) {
 	0: action2_4058;
@@ -12579,20 +12514,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_4225, produced_last_month_1) {
 	action2_4224;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_4226, (extra_callback_info2 & 1)) {
-	0: return 3;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4227, LOAD_PERM(15)) {
-	0..18: return 0;
-	action2_4226;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4228, allow_close_secondary) {
-	1..255: action2_4227;
-	return 0;
-}
+CHECK_CLOSE_SECONDARY(action2_4228)
 
 switch(FEAT_INDUSTRIES, SELF, switch_main_fishing_harbour, current_callback) {
 	0: action2_4215;
@@ -18946,20 +18868,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_4590, produced_last_month_1) {
 	action2_4589;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_4591, (extra_callback_info2 & 1)) {
-	0: return 3;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4592, LOAD_PERM(15)) {
-	0..18: return 0;
-	action2_4591;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4593, allow_close_secondary) {
-	1..255: action2_4592;
-	return 0;
-}
+CHECK_CLOSE_SECONDARY(action2_4593)
 
 switch(FEAT_INDUSTRIES, SELF, switch_main_smithy_forge, current_callback) {
 	0: action2_4580;
@@ -25486,20 +25395,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_4958, produced_last_month_1) {
 	action2_4957;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_4959, (extra_callback_info2 & 1)) {
-	0: return 3;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4960, LOAD_PERM(15)) {
-	0..18: return 0;
-	action2_4959;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4961, allow_close_secondary) {
-	1..255: action2_4960;
-	return 0;
-}
+CHECK_CLOSE_SECONDARY(action2_4961)
 
 switch(FEAT_INDUSTRIES, SELF, switch_main_furniture_factory, current_callback) {
 	0: action2_4948;
@@ -26269,20 +26165,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_5071, produced_last_month_1) {
 	action2_5070;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_5072, (extra_callback_info2 & 1)) {
-	0: return 3;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5073, LOAD_PERM(15)) {
-	0..18: return 0;
-	action2_5072;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5074, allow_close_secondary) {
-	1..255: action2_5073;
-	return 0;
-}
+CHECK_CLOSE_SECONDARY(action2_5074)
 
 switch(FEAT_INDUSTRIES, SELF, switch_main_glass_works, current_callback) {
 	0: action2_5061;
@@ -27408,20 +27291,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_5227, produced_last_month_1) {
 	action2_5226;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_5228, (extra_callback_info2 & 1)) {
-	0: return 3;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5229, LOAD_PERM(15)) {
-	0..18: return 0;
-	action2_5228;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5230, allow_close_secondary) {
-	1..255: action2_5229;
-	return 0;
-}
+CHECK_CLOSE_SECONDARY(action2_5230)
 
 switch(FEAT_INDUSTRIES, SELF, switch_main_grain_mill, current_callback) {
 	0: action2_5217;
@@ -30180,20 +30050,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_5501, produced_last_month_1) {
 	action2_5500;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_5502, (extra_callback_info2 & 1)) {
-	0: return 3;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5503, LOAD_PERM(15)) {
-	0..18: return 0;
-	action2_5502;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5504, allow_close_secondary) {
-	1..255: action2_5503;
-	return 0;
-}
+CHECK_CLOSE_SECONDARY(action2_5504)
 
 switch(FEAT_INDUSTRIES, SELF, switch_main_iron_works, current_callback) {
 	0: action2_5491;
@@ -31587,20 +31444,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_5689, produced_last_month_1) {
 	action2_5688;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_5690, (extra_callback_info2 & 1)) {
-	0: return 3;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5691, LOAD_PERM(15)) {
-	0..18: return 0;
-	action2_5690;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5692, allow_close_secondary) {
-	1..255: action2_5691;
-	return 0;
-}
+CHECK_CLOSE_SECONDARY(action2_5692)
 
 switch(FEAT_INDUSTRIES, SELF, switch_main_lime_kiln, current_callback) {
 	0: action2_5679;
@@ -32236,20 +32080,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_5781, produced_last_month_1) {
 	action2_5780;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_5782, (extra_callback_info2 & 1)) {
-	0: return 3;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5783, LOAD_PERM(15)) {
-	0..18: return 0;
-	action2_5782;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5784, allow_close_secondary) {
-	1..255: action2_5783;
-	return 0;
-}
+CHECK_CLOSE_SECONDARY(action2_5784)
 
 switch(FEAT_INDUSTRIES, SELF, switch_main_lumber_yard, current_callback) {
 	0: action2_5771;
@@ -35910,20 +35741,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6065, produced_last_month_1) {
 	action2_6064;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6066, (extra_callback_info2 & 1)) {
-	0: return 3;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6067, LOAD_PERM(15)) {
-	0..18: return 0;
-	action2_6066;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6068, allow_close_secondary) {
-	1..255: action2_6067;
-	return 0;
-}
+CHECK_CLOSE_SECONDARY(action2_6068)
 
 switch(FEAT_INDUSTRIES, SELF, switch_main_machine_shop, current_callback) {
 	0: action2_6055;
@@ -37033,20 +36851,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6217, produced_last_month_1) {
 	action2_6216;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6218, (extra_callback_info2 & 1)) {
-	0: return 3;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6219, LOAD_PERM(15)) {
-	0..18: return 0;
-	action2_6218;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6220, allow_close_secondary) {
-	1..255: action2_6219;
-	return 0;
-}
+CHECK_CLOSE_SECONDARY(action2_6220)
 
 switch(FEAT_INDUSTRIES, SELF, switch_main_stockyard, current_callback) {
 	0: action2_6207;
@@ -39232,20 +39037,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6396, produced_last_month_1) {
 	action2_6395;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6397, (extra_callback_info2 & 1)) {
-	0: return 3;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6398, LOAD_PERM(15)) {
-	0..18: return 0;
-	action2_6397;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6399, allow_close_secondary) {
-	1..255: action2_6398;
-	return 0;
-}
+CHECK_CLOSE_SECONDARY(action2_6399)
 
 switch(FEAT_INDUSTRIES, SELF, switch_main_metal_foundry, current_callback) {
 	0: action2_6386;
@@ -40232,20 +40024,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6550, produced_last_month_1) {
 	action2_6549;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6551, (extra_callback_info2 & 1)) {
-	0: return 3;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6552, LOAD_PERM(15)) {
-	0..18: return 0;
-	action2_6551;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6553, allow_close_secondary) {
-	1..255: action2_6552;
-	return 0;
-}
+CHECK_CLOSE_SECONDARY(action2_6553)
 
 switch(FEAT_INDUSTRIES, SELF, action2_6554, current_callback) {
 	0: action2_6540;
@@ -41027,20 +40806,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6676, produced_last_month_1) {
 	action2_6675;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6677, (extra_callback_info2 & 1)) {
-	0: return 3;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6678, LOAD_PERM(15)) {
-	0..18: return 0;
-	action2_6677;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6679, allow_close_secondary) {
-	1..255: action2_6678;
-	return 0;
-}
+CHECK_CLOSE_SECONDARY(action2_6679)
 
 switch(FEAT_INDUSTRIES, SELF, action2_6680, current_callback) {
 	0: action2_6666;
@@ -42357,20 +42123,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6854, produced_last_month_1) {
 	action2_6853;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6855, (extra_callback_info2 & 1)) {
-	0: return 3;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6856, LOAD_PERM(15)) {
-	0..18: return 0;
-	action2_6855;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6857, allow_close_secondary) {
-	1..255: action2_6856;
-	return 0;
-}
+CHECK_CLOSE_SECONDARY(action2_6857) 
 
 switch(FEAT_INDUSTRIES, SELF, switch_main_plastics_plant, current_callback) {
 	0: action2_6844;
@@ -45463,20 +45216,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_7235, produced_last_month_1) {
 	action2_7234;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7236, (extra_callback_info2 & 1)) {
-	0: return 3;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7237, LOAD_PERM(15)) {
-	0..18: return 0;
-	action2_7236;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7238, allow_close_secondary) {
-	1..255: action2_7237;
-	return 0;
-}
+CHECK_CLOSE_SECONDARY(action2_7238)
 
 switch(FEAT_INDUSTRIES, SELF, switch_main_recycling_plant, current_callback) {
 	0: action2_7225;
@@ -45740,20 +45480,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_7283, produced_last_month_1) {
 	action2_7282;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7284, (extra_callback_info2 & 1)) {
-	0: return 3;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7285, LOAD_PERM(15)) {
-	0..18: return 0;
-	action2_7284;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7286, allow_close_secondary) {
-	1..255: action2_7285;
-	return 0;
-}
+CHECK_CLOSE_SECONDARY(action2_7286)
 
 switch(FEAT_INDUSTRIES, SELF, action2_7287, current_callback) {
 	0: action2_7273;
@@ -46863,20 +46590,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_7462, produced_last_month_1) {
 	action2_7461;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7463, (extra_callback_info2 & 1)) {
-	0: return 3;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7464, LOAD_PERM(15)) {
-	0..18: return 0;
-	action2_7463;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7465, allow_close_secondary) {
-	1..255: action2_7464;
-	return 0;
-}
+CHECK_CLOSE_SECONDARY(action2_7465)
 
 switch(FEAT_INDUSTRIES, SELF, action2_7466, current_callback) {
 	0: action2_7452;
@@ -47437,20 +47151,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_7550, produced_last_month_1) {
 	action2_7549;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7551, (extra_callback_info2 & 1)) {
-	0: return 3;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7552, LOAD_PERM(15)) {
-	0..18: return 0;
-	action2_7551;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7553, allow_close_secondary) {
-	1..255: action2_7552;
-	return 0;
-}
+CHECK_CLOSE_SECONDARY(action2_7553)
 
 switch(FEAT_INDUSTRIES, SELF, switch_main_sugar_refinery, current_callback) {
 	0: action2_7540;
@@ -48997,20 +48698,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_7706, produced_last_month_1) {
 	action2_7705;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7707, (extra_callback_info2 & 1)) {
-	0: return 3;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7708, LOAD_PERM(15)) {
-	0..18: return 0;
-	action2_7707;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7709, allow_close_secondary) {
-	1..255: action2_7708;
-	return 0;
-}
+CHECK_CLOSE_SECONDARY(action2_7709)
 
 switch(FEAT_INDUSTRIES, SELF, switch_main_textile_mill, current_callback) {
 	0: action2_7696;

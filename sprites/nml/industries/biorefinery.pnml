@@ -825,20 +825,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_2892, produced_last_month_1) {
 	action2_2891;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_2893, (extra_callback_info2 & 1)) {
-	0: return 3;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_2894, LOAD_PERM(15)) {
-	0..18: return 0;
-	action2_2893;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_2895, allow_close_secondary) {
-	1..255: action2_2894;
-	return 0;
-}
+CHECK_CLOSE_SECONDARY(action2_2895) 
 
 switch(FEAT_INDUSTRIES, SELF, switch_main_biorefinery, current_callback) {
 	0: action2_2882;
