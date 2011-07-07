@@ -1,6 +1,6 @@
 
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_161, 161) {
+item(FEAT_INDUSTRYTILES, tile_brewery, 161) {
 	property {
 		substitute: 0;
 		accepted_cargos: [[13, 8], [6, 8], [18, 8]];
@@ -1730,42 +1730,42 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_3017, (current_callback & 255)) {
 	action2_3015;
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_161, 161) {
+item(FEAT_INDUSTRYTILES, tile_brewery, 161) {
 	graphics {
 		action2_3017;
 	}
 }
 
 tilelayout tilelayout_brewery_1 {
-	0, 2: item_FEAT_INDUSTRYTILES_161;
-	1, 0: item_FEAT_INDUSTRYTILES_161;
-	1, 2: item_FEAT_INDUSTRYTILES_161;
+	0, 2: tile_brewery;
+	1, 0: tile_brewery;
+	1, 2: tile_brewery;
 }
 
 tilelayout tilelayout_brewery_2 {
-	0, 0: item_FEAT_INDUSTRYTILES_161;
-	1, 0: item_FEAT_INDUSTRYTILES_161;
-	2, 0: item_FEAT_INDUSTRYTILES_161;
+	0, 0: tile_brewery;
+	1, 0: tile_brewery;
+	2, 0: tile_brewery;
 }
 
 tilelayout tilelayout_brewery_3 {
-	0, 1: item_FEAT_INDUSTRYTILES_161;
-	1, 0: item_FEAT_INDUSTRYTILES_161;
-	1, 1: item_FEAT_INDUSTRYTILES_161;
+	0, 1: tile_brewery;
+	1, 0: tile_brewery;
+	1, 1: tile_brewery;
 }
 
 tilelayout tilelayout_brewery_4 {
-	0, 0: item_FEAT_INDUSTRYTILES_161;
-	1, 0: item_FEAT_INDUSTRYTILES_161;
-	2, 0: item_FEAT_INDUSTRYTILES_161;
+	0, 0: tile_brewery;
+	1, 0: tile_brewery;
+	2, 0: tile_brewery;
 }
 
 tilelayout tilelayout_brewery_5 {
-	0, 0: item_FEAT_INDUSTRYTILES_161;
-	0, 1: item_FEAT_INDUSTRYTILES_161;
-	1, 0: item_FEAT_INDUSTRYTILES_161;
-	1, 1: item_FEAT_INDUSTRYTILES_161;
-	2, 0: item_FEAT_INDUSTRYTILES_161;
+	0, 0: tile_brewery;
+	0, 1: tile_brewery;
+	1, 0: tile_brewery;
+	1, 1: tile_brewery;
+	2, 0: tile_brewery;
 }
 
 item(FEAT_INDUSTRIES, brewery, 35) {
@@ -2086,7 +2086,7 @@ item(FEAT_INDUSTRIES, brewery, 35) {
 	}
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_165, 165) {
+item(FEAT_INDUSTRYTILES, tile_brick_works, 165) {
 	property {
 		substitute: 0;
 		accepted_cargos: [[1, 8], [16, 8], [17, 8]];
@@ -2636,44 +2636,44 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_3121, (current_callback & 255)) {
 	action2_3119;
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_165, 165) {
+item(FEAT_INDUSTRYTILES, tile_brick_works, 165) {
 	graphics {
 		action2_3121;
 	}
 }
 
 tilelayout tilelayout_brick_works_1 {
-	0, 0: item_FEAT_INDUSTRYTILES_165;
-	0, 1: item_FEAT_INDUSTRYTILES_165;
-	1, 0: item_FEAT_INDUSTRYTILES_165;
-	1, 1: item_FEAT_INDUSTRYTILES_165;
-	2, 0: item_FEAT_INDUSTRYTILES_165;
-	2, 1: item_FEAT_INDUSTRYTILES_165;
+	0, 0: tile_brick_works;
+	0, 1: tile_brick_works;
+	1, 0: tile_brick_works;
+	1, 1: tile_brick_works;
+	2, 0: tile_brick_works;
+	2, 1: tile_brick_works;
 	3, 0: item_FEAT_INDUSTRYTILES_231;
-	3, 1: item_FEAT_INDUSTRYTILES_165;
+	3, 1: tile_brick_works;
 	4, 0: item_FEAT_INDUSTRYTILES_229;
-	4, 1: item_FEAT_INDUSTRYTILES_165;
+	4, 1: tile_brick_works;
 }
 
 tilelayout tilelayout_brick_works_2 {
-	0, 0: item_FEAT_INDUSTRYTILES_165;
-	0, 1: item_FEAT_INDUSTRYTILES_165;
-	1, 0: item_FEAT_INDUSTRYTILES_165;
-	1, 1: item_FEAT_INDUSTRYTILES_165;
-	2, 0: item_FEAT_INDUSTRYTILES_165;
+	0, 0: tile_brick_works;
+	0, 1: tile_brick_works;
+	1, 0: tile_brick_works;
+	1, 1: tile_brick_works;
+	2, 0: tile_brick_works;
 	2, 1: item_FEAT_INDUSTRYTILES_231;
-	3, 0: item_FEAT_INDUSTRYTILES_165;
+	3, 0: tile_brick_works;
 	3, 1: item_FEAT_INDUSTRYTILES_229;
 }
 
 tilelayout tilelayout_brick_works_3 {
-	0, 0: item_FEAT_INDUSTRYTILES_165;
-	0, 1: item_FEAT_INDUSTRYTILES_165;
-	0, 2: item_FEAT_INDUSTRYTILES_165;
+	0, 0: tile_brick_works;
+	0, 1: tile_brick_works;
+	0, 2: tile_brick_works;
 	0, 3: item_FEAT_INDUSTRYTILES_231;
-	1, 0: item_FEAT_INDUSTRYTILES_165;
-	1, 1: item_FEAT_INDUSTRYTILES_165;
-	1, 2: item_FEAT_INDUSTRYTILES_165;
+	1, 0: tile_brick_works;
+	1, 1: tile_brick_works;
+	1, 2: tile_brick_works;
 	1, 3: item_FEAT_INDUSTRYTILES_229;
 }
 
@@ -3020,7 +3020,7 @@ item(FEAT_INDUSTRIES, brick_works, 45) {
 	}
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_164, 164) {
+item(FEAT_INDUSTRYTILES, tile_builders_yard, 164) {
 	property {
 		substitute: 0;
 		accepted_cargos: [[28, 8], [0, 0], [0, 0]];
@@ -3283,20 +3283,20 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_3226, (current_callback & 255)) {
 	action2_3216;
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_164, 164) {
+item(FEAT_INDUSTRYTILES, tile_builders_yard, 164) {
 	graphics {
 		action2_3226;
 	}
 }
 
 tilelayout tilelayout_builders_yard_1 {
-	0, 0: item_FEAT_INDUSTRYTILES_164;
-	0, 1: item_FEAT_INDUSTRYTILES_164;
+	0, 0: tile_builders_yard;
+	0, 1: tile_builders_yard;
 }
 
 tilelayout tilelayout_builders_yard_2 {
-	0, 0: item_FEAT_INDUSTRYTILES_164;
-	1, 0: item_FEAT_INDUSTRYTILES_164;
+	0, 0: tile_builders_yard;
+	1, 0: tile_builders_yard;
 }
 
 item(FEAT_INDUSTRIES, builders_yard, 63) {
@@ -3366,7 +3366,7 @@ item(FEAT_INDUSTRIES, builders_yard, 63) {
 	}
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_189, 189) {
+item(FEAT_INDUSTRYTILES, tile_clay_pit, 189) {
 	property {
 		substitute: 0;
 		accepted_cargos: [[cargo_engineering_supplies, 8]];
@@ -5532,79 +5532,79 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_3491, (current_callback & 255)) {
 	action2_3472;
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_189, 189) {
+item(FEAT_INDUSTRYTILES, tile_clay_pit, 189) {
 	graphics {
 		action2_3491;
 	}
 }
 
 tilelayout tilelayout_clay_pit_1 {
-	0, 0: item_FEAT_INDUSTRYTILES_189;
-	1, 0: item_FEAT_INDUSTRYTILES_189;
-	2, 0: item_FEAT_INDUSTRYTILES_189;
-	3, 0: item_FEAT_INDUSTRYTILES_189;
-	4, 0: item_FEAT_INDUSTRYTILES_189;
-	5, 0: item_FEAT_INDUSTRYTILES_189;
-	6, 0: item_FEAT_INDUSTRYTILES_189;
-	7, 0: item_FEAT_INDUSTRYTILES_189;
-	8, 0: item_FEAT_INDUSTRYTILES_189;
-	0, 1: item_FEAT_INDUSTRYTILES_189;
-	1, 1: item_FEAT_INDUSTRYTILES_189;
-	2, 1: item_FEAT_INDUSTRYTILES_189;
-	3, 1: item_FEAT_INDUSTRYTILES_189;
-	4, 1: item_FEAT_INDUSTRYTILES_189;
-	5, 1: item_FEAT_INDUSTRYTILES_189;
-	6, 1: item_FEAT_INDUSTRYTILES_189;
-	7, 1: item_FEAT_INDUSTRYTILES_189;
-	8, 1: item_FEAT_INDUSTRYTILES_189;
-	0, 2: item_FEAT_INDUSTRYTILES_189;
-	1, 2: item_FEAT_INDUSTRYTILES_189;
-	2, 2: item_FEAT_INDUSTRYTILES_189;
-	3, 2: item_FEAT_INDUSTRYTILES_189;
-	4, 2: item_FEAT_INDUSTRYTILES_189;
-	5, 2: item_FEAT_INDUSTRYTILES_189;
-	6, 2: item_FEAT_INDUSTRYTILES_189;
-	7, 2: item_FEAT_INDUSTRYTILES_189;
-	8, 2: item_FEAT_INDUSTRYTILES_189;
-	0, 3: item_FEAT_INDUSTRYTILES_189;
-	1, 3: item_FEAT_INDUSTRYTILES_189;
-	2, 3: item_FEAT_INDUSTRYTILES_189;
-	3, 3: item_FEAT_INDUSTRYTILES_189;
-	4, 3: item_FEAT_INDUSTRYTILES_189;
-	5, 3: item_FEAT_INDUSTRYTILES_189;
-	6, 3: item_FEAT_INDUSTRYTILES_189;
+	0, 0: tile_clay_pit;
+	1, 0: tile_clay_pit;
+	2, 0: tile_clay_pit;
+	3, 0: tile_clay_pit;
+	4, 0: tile_clay_pit;
+	5, 0: tile_clay_pit;
+	6, 0: tile_clay_pit;
+	7, 0: tile_clay_pit;
+	8, 0: tile_clay_pit;
+	0, 1: tile_clay_pit;
+	1, 1: tile_clay_pit;
+	2, 1: tile_clay_pit;
+	3, 1: tile_clay_pit;
+	4, 1: tile_clay_pit;
+	5, 1: tile_clay_pit;
+	6, 1: tile_clay_pit;
+	7, 1: tile_clay_pit;
+	8, 1: tile_clay_pit;
+	0, 2: tile_clay_pit;
+	1, 2: tile_clay_pit;
+	2, 2: tile_clay_pit;
+	3, 2: tile_clay_pit;
+	4, 2: tile_clay_pit;
+	5, 2: tile_clay_pit;
+	6, 2: tile_clay_pit;
+	7, 2: tile_clay_pit;
+	8, 2: tile_clay_pit;
+	0, 3: tile_clay_pit;
+	1, 3: tile_clay_pit;
+	2, 3: tile_clay_pit;
+	3, 3: tile_clay_pit;
+	4, 3: tile_clay_pit;
+	5, 3: tile_clay_pit;
+	6, 3: tile_clay_pit;
 }
 
 tilelayout tilelayout_clay_pit_2 {
-	6, 0: item_FEAT_INDUSTRYTILES_189;
-	0, 1: item_FEAT_INDUSTRYTILES_189;
-	1, 1: item_FEAT_INDUSTRYTILES_189;
-	2, 1: item_FEAT_INDUSTRYTILES_189;
-	3, 1: item_FEAT_INDUSTRYTILES_189;
-	4, 1: item_FEAT_INDUSTRYTILES_189;
-	5, 1: item_FEAT_INDUSTRYTILES_189;
-	6, 1: item_FEAT_INDUSTRYTILES_189;
-	0, 2: item_FEAT_INDUSTRYTILES_189;
-	1, 2: item_FEAT_INDUSTRYTILES_189;
-	2, 2: item_FEAT_INDUSTRYTILES_189;
-	3, 2: item_FEAT_INDUSTRYTILES_189;
-	4, 2: item_FEAT_INDUSTRYTILES_189;
-	5, 2: item_FEAT_INDUSTRYTILES_189;
-	6, 2: item_FEAT_INDUSTRYTILES_189;
-	0, 3: item_FEAT_INDUSTRYTILES_189;
-	1, 3: item_FEAT_INDUSTRYTILES_189;
-	2, 3: item_FEAT_INDUSTRYTILES_189;
-	3, 3: item_FEAT_INDUSTRYTILES_189;
-	4, 3: item_FEAT_INDUSTRYTILES_189;
-	5, 3: item_FEAT_INDUSTRYTILES_189;
-	6, 3: item_FEAT_INDUSTRYTILES_189;
-	0, 4: item_FEAT_INDUSTRYTILES_189;
-	1, 4: item_FEAT_INDUSTRYTILES_189;
-	2, 4: item_FEAT_INDUSTRYTILES_189;
-	3, 4: item_FEAT_INDUSTRYTILES_189;
-	4, 4: item_FEAT_INDUSTRYTILES_189;
-	5, 4: item_FEAT_INDUSTRYTILES_189;
-	6, 4: item_FEAT_INDUSTRYTILES_189;
+	6, 0: tile_clay_pit;
+	0, 1: tile_clay_pit;
+	1, 1: tile_clay_pit;
+	2, 1: tile_clay_pit;
+	3, 1: tile_clay_pit;
+	4, 1: tile_clay_pit;
+	5, 1: tile_clay_pit;
+	6, 1: tile_clay_pit;
+	0, 2: tile_clay_pit;
+	1, 2: tile_clay_pit;
+	2, 2: tile_clay_pit;
+	3, 2: tile_clay_pit;
+	4, 2: tile_clay_pit;
+	5, 2: tile_clay_pit;
+	6, 2: tile_clay_pit;
+	0, 3: tile_clay_pit;
+	1, 3: tile_clay_pit;
+	2, 3: tile_clay_pit;
+	3, 3: tile_clay_pit;
+	4, 3: tile_clay_pit;
+	5, 3: tile_clay_pit;
+	6, 3: tile_clay_pit;
+	0, 4: tile_clay_pit;
+	1, 4: tile_clay_pit;
+	2, 4: tile_clay_pit;
+	3, 4: tile_clay_pit;
+	4, 4: tile_clay_pit;
+	5, 4: tile_clay_pit;
+	6, 4: tile_clay_pit;
 }
 
 item(FEAT_INDUSTRIES, clay_pit, 44) {
@@ -5795,7 +5795,7 @@ item(FEAT_INDUSTRIES, clay_pit, 44) {
 	}
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_162, 162) {
+item(FEAT_INDUSTRYTILES, tile_cement_plant, 162) {
 	property {
 		substitute: 0;
 		accepted_cargos: [[1, 8], [16, 8], [26, 8]];
@@ -6457,109 +6457,109 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_3578, (current_callback & 255)) {
 	action2_3576;
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_162, 162) {
+item(FEAT_INDUSTRYTILES, tile_cement_plant, 162) {
 	graphics {
 		action2_3578;
 	}
 }
 
 tilelayout tilelayout_cement_plant_1 {
-	0, 1: item_FEAT_INDUSTRYTILES_162;
-	0, 2: item_FEAT_INDUSTRYTILES_162;
-	1, 1: item_FEAT_INDUSTRYTILES_162;
-	1, 2: item_FEAT_INDUSTRYTILES_162;
-	2, 2: item_FEAT_INDUSTRYTILES_162;
-	3, 2: item_FEAT_INDUSTRYTILES_162;
+	0, 1: tile_cement_plant;
+	0, 2: tile_cement_plant;
+	1, 1: tile_cement_plant;
+	1, 2: tile_cement_plant;
+	2, 2: tile_cement_plant;
+	3, 2: tile_cement_plant;
 	4, 0: item_FEAT_INDUSTRYTILES_232;
-	4, 1: item_FEAT_INDUSTRYTILES_162;
-	4, 2: item_FEAT_INDUSTRYTILES_162;
-	4, 3: item_FEAT_INDUSTRYTILES_162;
+	4, 1: tile_cement_plant;
+	4, 2: tile_cement_plant;
+	4, 3: tile_cement_plant;
 	5, 0: item_FEAT_INDUSTRYTILES_230;
-	5, 1: item_FEAT_INDUSTRYTILES_162;
-	5, 2: item_FEAT_INDUSTRYTILES_162;
+	5, 1: tile_cement_plant;
+	5, 2: tile_cement_plant;
 }
 
 tilelayout tilelayout_cement_plant_2 {
-	0, 0: item_FEAT_INDUSTRYTILES_162;
-	0, 1: item_FEAT_INDUSTRYTILES_162;
-	0, 2: item_FEAT_INDUSTRYTILES_162;
-	1, 0: item_FEAT_INDUSTRYTILES_162;
-	1, 1: item_FEAT_INDUSTRYTILES_162;
-	2, 0: item_FEAT_INDUSTRYTILES_162;
-	2, 1: item_FEAT_INDUSTRYTILES_162;
-	2, 2: item_FEAT_INDUSTRYTILES_162;
-	2, 3: item_FEAT_INDUSTRYTILES_162;
-	2, 4: item_FEAT_INDUSTRYTILES_162;
-	3, 0: item_FEAT_INDUSTRYTILES_162;
-	3, 1: item_FEAT_INDUSTRYTILES_162;
-	3, 2: item_FEAT_INDUSTRYTILES_162;
-	3, 3: item_FEAT_INDUSTRYTILES_162;
+	0, 0: tile_cement_plant;
+	0, 1: tile_cement_plant;
+	0, 2: tile_cement_plant;
+	1, 0: tile_cement_plant;
+	1, 1: tile_cement_plant;
+	2, 0: tile_cement_plant;
+	2, 1: tile_cement_plant;
+	2, 2: tile_cement_plant;
+	2, 3: tile_cement_plant;
+	2, 4: tile_cement_plant;
+	3, 0: tile_cement_plant;
+	3, 1: tile_cement_plant;
+	3, 2: tile_cement_plant;
+	3, 3: tile_cement_plant;
 	3, 4: item_FEAT_INDUSTRYTILES_232;
 }
 
 tilelayout tilelayout_cement_plant_3 {
-	0, 0: item_FEAT_INDUSTRYTILES_162;
-	0, 1: item_FEAT_INDUSTRYTILES_162;
-	0, 2: item_FEAT_INDUSTRYTILES_162;
-	0, 3: item_FEAT_INDUSTRYTILES_162;
+	0, 0: tile_cement_plant;
+	0, 1: tile_cement_plant;
+	0, 2: tile_cement_plant;
+	0, 3: tile_cement_plant;
 	0, 4: item_FEAT_INDUSTRYTILES_232;
 	0, 5: item_FEAT_INDUSTRYTILES_230;
-	1, 0: item_FEAT_INDUSTRYTILES_162;
-	1, 1: item_FEAT_INDUSTRYTILES_162;
-	1, 2: item_FEAT_INDUSTRYTILES_162;
-	1, 3: item_FEAT_INDUSTRYTILES_162;
-	1, 4: item_FEAT_INDUSTRYTILES_162;
-	1, 5: item_FEAT_INDUSTRYTILES_162;
-	1, 6: item_FEAT_INDUSTRYTILES_162;
-	2, 0: item_FEAT_INDUSTRYTILES_162;
-	2, 1: item_FEAT_INDUSTRYTILES_162;
-	2, 2: item_FEAT_INDUSTRYTILES_162;
-	2, 3: item_FEAT_INDUSTRYTILES_162;
-	2, 4: item_FEAT_INDUSTRYTILES_162;
-	2, 5: item_FEAT_INDUSTRYTILES_162;
+	1, 0: tile_cement_plant;
+	1, 1: tile_cement_plant;
+	1, 2: tile_cement_plant;
+	1, 3: tile_cement_plant;
+	1, 4: tile_cement_plant;
+	1, 5: tile_cement_plant;
+	1, 6: tile_cement_plant;
+	2, 0: tile_cement_plant;
+	2, 1: tile_cement_plant;
+	2, 2: tile_cement_plant;
+	2, 3: tile_cement_plant;
+	2, 4: tile_cement_plant;
+	2, 5: tile_cement_plant;
 }
 
 tilelayout tilelayout_cement_plant_4 {
-	0, 0: item_FEAT_INDUSTRYTILES_162;
-	0, 1: item_FEAT_INDUSTRYTILES_162;
-	0, 2: item_FEAT_INDUSTRYTILES_162;
-	0, 3: item_FEAT_INDUSTRYTILES_162;
-	1, 0: item_FEAT_INDUSTRYTILES_162;
-	1, 1: item_FEAT_INDUSTRYTILES_162;
-	1, 2: item_FEAT_INDUSTRYTILES_162;
-	1, 3: item_FEAT_INDUSTRYTILES_162;
-	2, 0: item_FEAT_INDUSTRYTILES_162;
-	2, 1: item_FEAT_INDUSTRYTILES_162;
-	2, 2: item_FEAT_INDUSTRYTILES_162;
-	3, 0: item_FEAT_INDUSTRYTILES_162;
-	3, 1: item_FEAT_INDUSTRYTILES_162;
-	3, 2: item_FEAT_INDUSTRYTILES_162;
+	0, 0: tile_cement_plant;
+	0, 1: tile_cement_plant;
+	0, 2: tile_cement_plant;
+	0, 3: tile_cement_plant;
+	1, 0: tile_cement_plant;
+	1, 1: tile_cement_plant;
+	1, 2: tile_cement_plant;
+	1, 3: tile_cement_plant;
+	2, 0: tile_cement_plant;
+	2, 1: tile_cement_plant;
+	2, 2: tile_cement_plant;
+	3, 0: tile_cement_plant;
+	3, 1: tile_cement_plant;
+	3, 2: tile_cement_plant;
 	4, 0: item_FEAT_INDUSTRYTILES_232;
-	4, 1: item_FEAT_INDUSTRYTILES_162;
-	4, 2: item_FEAT_INDUSTRYTILES_162;
-	4, 3: item_FEAT_INDUSTRYTILES_162;
+	4, 1: tile_cement_plant;
+	4, 2: tile_cement_plant;
+	4, 3: tile_cement_plant;
 	5, 0: item_FEAT_INDUSTRYTILES_230;
-	5, 1: item_FEAT_INDUSTRYTILES_162;
-	5, 2: item_FEAT_INDUSTRYTILES_162;
+	5, 1: tile_cement_plant;
+	5, 2: tile_cement_plant;
 }
 
 tilelayout tilelayout_cement_plant_5 {
-	0, 0: item_FEAT_INDUSTRYTILES_162;
-	0, 1: item_FEAT_INDUSTRYTILES_162;
-	1, 0: item_FEAT_INDUSTRYTILES_162;
-	1, 1: item_FEAT_INDUSTRYTILES_162;
-	2, 0: item_FEAT_INDUSTRYTILES_162;
-	2, 1: item_FEAT_INDUSTRYTILES_162;
-	3, 0: item_FEAT_INDUSTRYTILES_162;
-	3, 1: item_FEAT_INDUSTRYTILES_162;
-	4, 0: item_FEAT_INDUSTRYTILES_162;
-	4, 1: item_FEAT_INDUSTRYTILES_162;
+	0, 0: tile_cement_plant;
+	0, 1: tile_cement_plant;
+	1, 0: tile_cement_plant;
+	1, 1: tile_cement_plant;
+	2, 0: tile_cement_plant;
+	2, 1: tile_cement_plant;
+	3, 0: tile_cement_plant;
+	3, 1: tile_cement_plant;
+	4, 0: tile_cement_plant;
+	4, 1: tile_cement_plant;
 	4, 2: item_FEAT_INDUSTRYTILES_232;
-	5, 0: item_FEAT_INDUSTRYTILES_162;
-	5, 1: item_FEAT_INDUSTRYTILES_162;
-	5, 2: item_FEAT_INDUSTRYTILES_162;
-	6, 0: item_FEAT_INDUSTRYTILES_162;
-	6, 1: item_FEAT_INDUSTRYTILES_162;
+	5, 0: tile_cement_plant;
+	5, 1: tile_cement_plant;
+	5, 2: tile_cement_plant;
+	6, 0: tile_cement_plant;
+	6, 1: tile_cement_plant;
 	6, 2: item_FEAT_INDUSTRYTILES_230;
 }
 
@@ -7096,7 +7096,7 @@ item(FEAT_INDUSTRIES, coal_mine, 0) {
 	}
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_0, 0) {
+item(FEAT_INDUSTRYTILES, tile_coal_mine1, 0) {
 	property {
 		substitute: 0;
 		override: 0;
@@ -7105,7 +7105,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_0, 0) {
 	}
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_1, 1) {
+item(FEAT_INDUSTRYTILES, tile_coal_mine2, 1) {
 	property {
 		substitute: 1;
 		override: 1;
@@ -7114,7 +7114,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_1, 1) {
 	}
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_2, 2) {
+item(FEAT_INDUSTRYTILES, tile_coal_mine3, 2) {
 	property {
 		substitute: 2;
 		override: 2;
@@ -7123,7 +7123,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_2, 2) {
 	}
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_3, 3) {
+item(FEAT_INDUSTRYTILES, tile_coal_mine4, 3) {
 	property {
 		substitute: 3;
 		override: 3;
@@ -7132,7 +7132,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_3, 3) {
 	}
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_4, 4) {
+item(FEAT_INDUSTRYTILES, tile_coal_mine5, 4) {
 	property {
 		substitute: 4;
 		override: 4;
@@ -7141,7 +7141,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_4, 4) {
 	}
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_5, 5) {
+item(FEAT_INDUSTRYTILES, tile_coal_mine6, 5) {
 	property {
 		substitute: 5;
 		override: 5;
@@ -7150,7 +7150,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_5, 5) {
 	}
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_6, 6) {
+item(FEAT_INDUSTRYTILES, tile_coal_mine7, 6) {
 	property {
 		substitute: 6;
 		override: 6;
@@ -7159,7 +7159,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_6, 6) {
 	}
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_180, 180) {
+item(FEAT_INDUSTRYTILES, tile_diary_farm, 180) {
 	property {
 		substitute: 0;
 		accepted_cargos: [[21, 8], [0, 0], [0, 0]];
@@ -7433,43 +7433,43 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_3721, (current_callback & 255)) {
 	action2_3700;
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_180, 180) {
+item(FEAT_INDUSTRYTILES, tile_diary_farm, 180) {
 	graphics {
 		action2_3721;
 	}
 }
 
 tilelayout tilelayout_diary_farm_1 {
-	0, 0: item_FEAT_INDUSTRYTILES_180;
-	0, 1: item_FEAT_INDUSTRYTILES_180;
-	0, 2: item_FEAT_INDUSTRYTILES_180;
-	2, 0: item_FEAT_INDUSTRYTILES_180;
-	2, 1: item_FEAT_INDUSTRYTILES_180;
-	3, 0: item_FEAT_INDUSTRYTILES_180;
-	3, 1: item_FEAT_INDUSTRYTILES_180;
-	3, 2: item_FEAT_INDUSTRYTILES_180;
+	0, 0: tile_diary_farm;
+	0, 1: tile_diary_farm;
+	0, 2: tile_diary_farm;
+	2, 0: tile_diary_farm;
+	2, 1: tile_diary_farm;
+	3, 0: tile_diary_farm;
+	3, 1: tile_diary_farm;
+	3, 2: tile_diary_farm;
 }
 
 tilelayout tilelayout_diary_farm_2 {
-	0, 0: item_FEAT_INDUSTRYTILES_180;
-	0, 1: item_FEAT_INDUSTRYTILES_180;
-	0, 2: item_FEAT_INDUSTRYTILES_180;
-	1, 1: item_FEAT_INDUSTRYTILES_180;
-	1, 2: item_FEAT_INDUSTRYTILES_180;
-	2, 0: item_FEAT_INDUSTRYTILES_180;
-	2, 1: item_FEAT_INDUSTRYTILES_180;
-	2, 2: item_FEAT_INDUSTRYTILES_180;
+	0, 0: tile_diary_farm;
+	0, 1: tile_diary_farm;
+	0, 2: tile_diary_farm;
+	1, 1: tile_diary_farm;
+	1, 2: tile_diary_farm;
+	2, 0: tile_diary_farm;
+	2, 1: tile_diary_farm;
+	2, 2: tile_diary_farm;
 }
 
 tilelayout tilelayout_diary_farm_3 {
-	0, 1: item_FEAT_INDUSTRYTILES_180;
-	0, 3: item_FEAT_INDUSTRYTILES_180;
-	1, 0: item_FEAT_INDUSTRYTILES_180;
-	1, 1: item_FEAT_INDUSTRYTILES_180;
-	1, 3: item_FEAT_INDUSTRYTILES_180;
-	2, 0: item_FEAT_INDUSTRYTILES_180;
-	2, 1: item_FEAT_INDUSTRYTILES_180;
-	2, 3: item_FEAT_INDUSTRYTILES_180;
+	0, 1: tile_diary_farm;
+	0, 3: tile_diary_farm;
+	1, 0: tile_diary_farm;
+	1, 1: tile_diary_farm;
+	1, 3: tile_diary_farm;
+	2, 0: tile_diary_farm;
+	2, 1: tile_diary_farm;
+	2, 3: tile_diary_farm;
 }
 
 item(FEAT_INDUSTRIES, diary_farm, 28) {
@@ -7665,7 +7665,7 @@ item(FEAT_INDUSTRIES, diary_farm, 28) {
 	}
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_181, 181) {
+item(FEAT_INDUSTRYTILES, tile_diary, 181) {
 	property {
 		substitute: 0;
 		accepted_cargos: [[18, 8], [10, 8], [0, 0]];
@@ -9083,103 +9083,103 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_3881, (current_callback & 255)) {
 	action2_3879;
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_181, 181) {
+item(FEAT_INDUSTRYTILES, tile_diary, 181) {
 	graphics {
 		action2_3881;
 	}
 }
 
 tilelayout tilelayout_diary_1 {
-	0, 0: item_FEAT_INDUSTRYTILES_181;
-	0, 1: item_FEAT_INDUSTRYTILES_181;
-	1, 0: item_FEAT_INDUSTRYTILES_181;
-	1, 1: item_FEAT_INDUSTRYTILES_181;
-	2, 0: item_FEAT_INDUSTRYTILES_181;
-	2, 1: item_FEAT_INDUSTRYTILES_181;
-	3, 0: item_FEAT_INDUSTRYTILES_181;
-	3, 1: item_FEAT_INDUSTRYTILES_181;
+	0, 0: tile_diary;
+	0, 1: tile_diary;
+	1, 0: tile_diary;
+	1, 1: tile_diary;
+	2, 0: tile_diary;
+	2, 1: tile_diary;
+	3, 0: tile_diary;
+	3, 1: tile_diary;
 }
 
 tilelayout tilelayout_diary_2 {
-	0, 1: item_FEAT_INDUSTRYTILES_181;
-	0, 2: item_FEAT_INDUSTRYTILES_181;
-	1, 1: item_FEAT_INDUSTRYTILES_181;
-	1, 2: item_FEAT_INDUSTRYTILES_181;
-	2, 0: item_FEAT_INDUSTRYTILES_181;
-	2, 1: item_FEAT_INDUSTRYTILES_181;
-	2, 2: item_FEAT_INDUSTRYTILES_181;
-	3, 0: item_FEAT_INDUSTRYTILES_181;
-	3, 1: item_FEAT_INDUSTRYTILES_181;
-	3, 2: item_FEAT_INDUSTRYTILES_181;
+	0, 1: tile_diary;
+	0, 2: tile_diary;
+	1, 1: tile_diary;
+	1, 2: tile_diary;
+	2, 0: tile_diary;
+	2, 1: tile_diary;
+	2, 2: tile_diary;
+	3, 0: tile_diary;
+	3, 1: tile_diary;
+	3, 2: tile_diary;
 }
 
 tilelayout tilelayout_diary_3 {
-	0, 0: item_FEAT_INDUSTRYTILES_181;
-	0, 1: item_FEAT_INDUSTRYTILES_181;
-	0, 2: item_FEAT_INDUSTRYTILES_181;
-	1, 0: item_FEAT_INDUSTRYTILES_181;
-	1, 1: item_FEAT_INDUSTRYTILES_181;
-	1, 2: item_FEAT_INDUSTRYTILES_181;
-	2, 1: item_FEAT_INDUSTRYTILES_181;
-	2, 2: item_FEAT_INDUSTRYTILES_181;
-	3, 1: item_FEAT_INDUSTRYTILES_181;
-	3, 2: item_FEAT_INDUSTRYTILES_181;
+	0, 0: tile_diary;
+	0, 1: tile_diary;
+	0, 2: tile_diary;
+	1, 0: tile_diary;
+	1, 1: tile_diary;
+	1, 2: tile_diary;
+	2, 1: tile_diary;
+	2, 2: tile_diary;
+	3, 1: tile_diary;
+	3, 2: tile_diary;
 }
 
 tilelayout tilelayout_diary_4 {
-	0, 0: item_FEAT_INDUSTRYTILES_181;
-	0, 1: item_FEAT_INDUSTRYTILES_181;
-	0, 2: item_FEAT_INDUSTRYTILES_181;
-	0, 3: item_FEAT_INDUSTRYTILES_181;
-	1, 0: item_FEAT_INDUSTRYTILES_181;
-	1, 1: item_FEAT_INDUSTRYTILES_181;
-	1, 2: item_FEAT_INDUSTRYTILES_181;
-	1, 3: item_FEAT_INDUSTRYTILES_181;
-	2, 0: item_FEAT_INDUSTRYTILES_181;
-	2, 1: item_FEAT_INDUSTRYTILES_181;
-	2, 2: item_FEAT_INDUSTRYTILES_181;
-	2, 3: item_FEAT_INDUSTRYTILES_181;
-	3, 1: item_FEAT_INDUSTRYTILES_181;
-	3, 2: item_FEAT_INDUSTRYTILES_181;
+	0, 0: tile_diary;
+	0, 1: tile_diary;
+	0, 2: tile_diary;
+	0, 3: tile_diary;
+	1, 0: tile_diary;
+	1, 1: tile_diary;
+	1, 2: tile_diary;
+	1, 3: tile_diary;
+	2, 0: tile_diary;
+	2, 1: tile_diary;
+	2, 2: tile_diary;
+	2, 3: tile_diary;
+	3, 1: tile_diary;
+	3, 2: tile_diary;
 }
 
 tilelayout tilelayout_diary_5 {
-	0, 0: item_FEAT_INDUSTRYTILES_181;
-	0, 1: item_FEAT_INDUSTRYTILES_181;
-	0, 2: item_FEAT_INDUSTRYTILES_181;
-	0, 3: item_FEAT_INDUSTRYTILES_181;
-	1, 0: item_FEAT_INDUSTRYTILES_181;
-	1, 1: item_FEAT_INDUSTRYTILES_181;
-	1, 2: item_FEAT_INDUSTRYTILES_181;
-	1, 3: item_FEAT_INDUSTRYTILES_181;
+	0, 0: tile_diary;
+	0, 1: tile_diary;
+	0, 2: tile_diary;
+	0, 3: tile_diary;
+	1, 0: tile_diary;
+	1, 1: tile_diary;
+	1, 2: tile_diary;
+	1, 3: tile_diary;
 }
 
 tilelayout tilelayout_diary_6 {
-	0, 0: item_FEAT_INDUSTRYTILES_181;
-	0, 1: item_FEAT_INDUSTRYTILES_181;
-	1, 0: item_FEAT_INDUSTRYTILES_181;
-	1, 1: item_FEAT_INDUSTRYTILES_181;
-	3, 0: item_FEAT_INDUSTRYTILES_181;
-	3, 1: item_FEAT_INDUSTRYTILES_181;
-	4, 0: item_FEAT_INDUSTRYTILES_181;
-	4, 1: item_FEAT_INDUSTRYTILES_181;
+	0, 0: tile_diary;
+	0, 1: tile_diary;
+	1, 0: tile_diary;
+	1, 1: tile_diary;
+	3, 0: tile_diary;
+	3, 1: tile_diary;
+	4, 0: tile_diary;
+	4, 1: tile_diary;
 }
 
 tilelayout tilelayout_diary_7 {
-	0, 0: item_FEAT_INDUSTRYTILES_181;
-	0, 1: item_FEAT_INDUSTRYTILES_181;
-	0, 3: item_FEAT_INDUSTRYTILES_181;
-	0, 4: item_FEAT_INDUSTRYTILES_181;
-	1, 0: item_FEAT_INDUSTRYTILES_181;
-	1, 1: item_FEAT_INDUSTRYTILES_181;
-	1, 3: item_FEAT_INDUSTRYTILES_181;
-	1, 4: item_FEAT_INDUSTRYTILES_181;
-	2, 0: item_FEAT_INDUSTRYTILES_181;
-	2, 1: item_FEAT_INDUSTRYTILES_181;
-	2, 3: item_FEAT_INDUSTRYTILES_181;
-	2, 4: item_FEAT_INDUSTRYTILES_181;
-	3, 0: item_FEAT_INDUSTRYTILES_181;
-	3, 1: item_FEAT_INDUSTRYTILES_181;
+	0, 0: tile_diary;
+	0, 1: tile_diary;
+	0, 3: tile_diary;
+	0, 4: tile_diary;
+	1, 0: tile_diary;
+	1, 1: tile_diary;
+	1, 3: tile_diary;
+	1, 4: tile_diary;
+	2, 0: tile_diary;
+	2, 1: tile_diary;
+	2, 3: tile_diary;
+	2, 4: tile_diary;
+	3, 0: tile_diary;
+	3, 1: tile_diary;
 }
 
 item(FEAT_INDUSTRIES, diary, 36) {
@@ -9744,7 +9744,7 @@ item(FEAT_INDUSTRIES, dredging_site, 20) {
 	}
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_163, 163) {
+item(FEAT_INDUSTRYTILES, tile_fertilizer_plant, 163) {
 	property {
 		substitute: 0;
 		accepted_cargos: [[23, 8], [0, 0], [0, 0]];
@@ -10378,124 +10378,124 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_4027, (current_callback & 255)) {
 	action2_4025;
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_163, 163) {
+item(FEAT_INDUSTRYTILES, tile_fertilizer_plant, 163) {
 	graphics {
 		action2_4027;
 	}
 }
 
 tilelayout tilelayout_fertilizer_plant_1 {
-	0, 0: item_FEAT_INDUSTRYTILES_163;
-	0, 1: item_FEAT_INDUSTRYTILES_163;
-	0, 2: item_FEAT_INDUSTRYTILES_163;
-	1, 0: item_FEAT_INDUSTRYTILES_163;
-	1, 1: item_FEAT_INDUSTRYTILES_163;
-	1, 2: item_FEAT_INDUSTRYTILES_163;
-	2, 0: item_FEAT_INDUSTRYTILES_163;
-	2, 1: item_FEAT_INDUSTRYTILES_163;
-	2, 2: item_FEAT_INDUSTRYTILES_163;
-	3, 0: item_FEAT_INDUSTRYTILES_163;
+	0, 0: tile_fertilizer_plant;
+	0, 1: tile_fertilizer_plant;
+	0, 2: tile_fertilizer_plant;
+	1, 0: tile_fertilizer_plant;
+	1, 1: tile_fertilizer_plant;
+	1, 2: tile_fertilizer_plant;
+	2, 0: tile_fertilizer_plant;
+	2, 1: tile_fertilizer_plant;
+	2, 2: tile_fertilizer_plant;
+	3, 0: tile_fertilizer_plant;
 	3, 1: item_FEAT_INDUSTRYTILES_224;
-	3, 2: item_FEAT_INDUSTRYTILES_163;
+	3, 2: tile_fertilizer_plant;
 }
 
 tilelayout tilelayout_fertilizer_plant_2 {
-	0, 0: item_FEAT_INDUSTRYTILES_163;
-	0, 1: item_FEAT_INDUSTRYTILES_163;
-	1, 0: item_FEAT_INDUSTRYTILES_163;
-	1, 1: item_FEAT_INDUSTRYTILES_163;
-	2, 0: item_FEAT_INDUSTRYTILES_163;
-	2, 1: item_FEAT_INDUSTRYTILES_163;
-	3, 0: item_FEAT_INDUSTRYTILES_163;
-	3, 1: item_FEAT_INDUSTRYTILES_163;
-	4, 0: item_FEAT_INDUSTRYTILES_163;
-	4, 1: item_FEAT_INDUSTRYTILES_163;
+	0, 0: tile_fertilizer_plant;
+	0, 1: tile_fertilizer_plant;
+	1, 0: tile_fertilizer_plant;
+	1, 1: tile_fertilizer_plant;
+	2, 0: tile_fertilizer_plant;
+	2, 1: tile_fertilizer_plant;
+	3, 0: tile_fertilizer_plant;
+	3, 1: tile_fertilizer_plant;
+	4, 0: tile_fertilizer_plant;
+	4, 1: tile_fertilizer_plant;
 }
 
 tilelayout tilelayout_fertilizer_plant_3 {
-	0, 1: item_FEAT_INDUSTRYTILES_163;
-	1, 0: item_FEAT_INDUSTRYTILES_163;
-	1, 1: item_FEAT_INDUSTRYTILES_163;
-	1, 2: item_FEAT_INDUSTRYTILES_163;
-	1, 3: item_FEAT_INDUSTRYTILES_163;
-	2, 0: item_FEAT_INDUSTRYTILES_163;
-	2, 1: item_FEAT_INDUSTRYTILES_163;
-	2, 2: item_FEAT_INDUSTRYTILES_163;
-	2, 3: item_FEAT_INDUSTRYTILES_163;
+	0, 1: tile_fertilizer_plant;
+	1, 0: tile_fertilizer_plant;
+	1, 1: tile_fertilizer_plant;
+	1, 2: tile_fertilizer_plant;
+	1, 3: tile_fertilizer_plant;
+	2, 0: tile_fertilizer_plant;
+	2, 1: tile_fertilizer_plant;
+	2, 2: tile_fertilizer_plant;
+	2, 3: tile_fertilizer_plant;
 }
 
 tilelayout tilelayout_fertilizer_plant_4 {
-	0, 1: item_FEAT_INDUSTRYTILES_163;
-	1, 0: item_FEAT_INDUSTRYTILES_163;
-	1, 1: item_FEAT_INDUSTRYTILES_163;
-	1, 2: item_FEAT_INDUSTRYTILES_163;
-	1, 3: item_FEAT_INDUSTRYTILES_163;
-	2, 0: item_FEAT_INDUSTRYTILES_163;
-	2, 1: item_FEAT_INDUSTRYTILES_163;
-	2, 2: item_FEAT_INDUSTRYTILES_163;
-	2, 3: item_FEAT_INDUSTRYTILES_163;
+	0, 1: tile_fertilizer_plant;
+	1, 0: tile_fertilizer_plant;
+	1, 1: tile_fertilizer_plant;
+	1, 2: tile_fertilizer_plant;
+	1, 3: tile_fertilizer_plant;
+	2, 0: tile_fertilizer_plant;
+	2, 1: tile_fertilizer_plant;
+	2, 2: tile_fertilizer_plant;
+	2, 3: tile_fertilizer_plant;
 }
 
 tilelayout tilelayout_fertilizer_plant_5 {
-	0, 0: item_FEAT_INDUSTRYTILES_163;
-	0, 2: item_FEAT_INDUSTRYTILES_163;
-	1, 0: item_FEAT_INDUSTRYTILES_163;
-	1, 2: item_FEAT_INDUSTRYTILES_163;
-	2, 0: item_FEAT_INDUSTRYTILES_163;
-	2, 2: item_FEAT_INDUSTRYTILES_163;
-	3, 0: item_FEAT_INDUSTRYTILES_163;
-	3, 2: item_FEAT_INDUSTRYTILES_163;
-	4, 0: item_FEAT_INDUSTRYTILES_163;
-	4, 2: item_FEAT_INDUSTRYTILES_163;
-	5, 0: item_FEAT_INDUSTRYTILES_163;
-	5, 2: item_FEAT_INDUSTRYTILES_163;
-	6, 0: item_FEAT_INDUSTRYTILES_163;
-	6, 2: item_FEAT_INDUSTRYTILES_163;
+	0, 0: tile_fertilizer_plant;
+	0, 2: tile_fertilizer_plant;
+	1, 0: tile_fertilizer_plant;
+	1, 2: tile_fertilizer_plant;
+	2, 0: tile_fertilizer_plant;
+	2, 2: tile_fertilizer_plant;
+	3, 0: tile_fertilizer_plant;
+	3, 2: tile_fertilizer_plant;
+	4, 0: tile_fertilizer_plant;
+	4, 2: tile_fertilizer_plant;
+	5, 0: tile_fertilizer_plant;
+	5, 2: tile_fertilizer_plant;
+	6, 0: tile_fertilizer_plant;
+	6, 2: tile_fertilizer_plant;
 }
 
 tilelayout tilelayout_fertilizer_plant_6 {
-	0, 0: item_FEAT_INDUSTRYTILES_163;
-	0, 2: item_FEAT_INDUSTRYTILES_163;
-	0, 3: item_FEAT_INDUSTRYTILES_163;
-	1, 0: item_FEAT_INDUSTRYTILES_163;
-	1, 2: item_FEAT_INDUSTRYTILES_163;
-	1, 3: item_FEAT_INDUSTRYTILES_163;
-	2, 0: item_FEAT_INDUSTRYTILES_163;
-	2, 2: item_FEAT_INDUSTRYTILES_163;
-	2, 3: item_FEAT_INDUSTRYTILES_163;
-	3, 0: item_FEAT_INDUSTRYTILES_163;
-	3, 2: item_FEAT_INDUSTRYTILES_163;
+	0, 0: tile_fertilizer_plant;
+	0, 2: tile_fertilizer_plant;
+	0, 3: tile_fertilizer_plant;
+	1, 0: tile_fertilizer_plant;
+	1, 2: tile_fertilizer_plant;
+	1, 3: tile_fertilizer_plant;
+	2, 0: tile_fertilizer_plant;
+	2, 2: tile_fertilizer_plant;
+	2, 3: tile_fertilizer_plant;
+	3, 0: tile_fertilizer_plant;
+	3, 2: tile_fertilizer_plant;
 	3, 3: item_FEAT_INDUSTRYTILES_224;
-	4, 0: item_FEAT_INDUSTRYTILES_163;
-	4, 2: item_FEAT_INDUSTRYTILES_163;
-	4, 3: item_FEAT_INDUSTRYTILES_163;
+	4, 0: tile_fertilizer_plant;
+	4, 2: tile_fertilizer_plant;
+	4, 3: tile_fertilizer_plant;
 }
 
 tilelayout tilelayout_fertilizer_plant_7 {
-	0, 0: item_FEAT_INDUSTRYTILES_163;
-	0, 1: item_FEAT_INDUSTRYTILES_163;
-	0, 2: item_FEAT_INDUSTRYTILES_163;
-	0, 5: item_FEAT_INDUSTRYTILES_163;
-	0, 6: item_FEAT_INDUSTRYTILES_163;
-	1, 0: item_FEAT_INDUSTRYTILES_163;
-	1, 1: item_FEAT_INDUSTRYTILES_163;
-	1, 2: item_FEAT_INDUSTRYTILES_163;
-	1, 5: item_FEAT_INDUSTRYTILES_163;
-	1, 6: item_FEAT_INDUSTRYTILES_163;
-	2, 0: item_FEAT_INDUSTRYTILES_163;
+	0, 0: tile_fertilizer_plant;
+	0, 1: tile_fertilizer_plant;
+	0, 2: tile_fertilizer_plant;
+	0, 5: tile_fertilizer_plant;
+	0, 6: tile_fertilizer_plant;
+	1, 0: tile_fertilizer_plant;
+	1, 1: tile_fertilizer_plant;
+	1, 2: tile_fertilizer_plant;
+	1, 5: tile_fertilizer_plant;
+	1, 6: tile_fertilizer_plant;
+	2, 0: tile_fertilizer_plant;
 	2, 1: item_FEAT_INDUSTRYTILES_224;
-	2, 2: item_FEAT_INDUSTRYTILES_163;
-	2, 5: item_FEAT_INDUSTRYTILES_163;
-	2, 6: item_FEAT_INDUSTRYTILES_163;
-	4, 0: item_FEAT_INDUSTRYTILES_163;
-	4, 1: item_FEAT_INDUSTRYTILES_163;
-	4, 2: item_FEAT_INDUSTRYTILES_163;
-	4, 5: item_FEAT_INDUSTRYTILES_163;
-	4, 6: item_FEAT_INDUSTRYTILES_163;
-	5, 1: item_FEAT_INDUSTRYTILES_163;
-	5, 2: item_FEAT_INDUSTRYTILES_163;
-	5, 5: item_FEAT_INDUSTRYTILES_163;
-	5, 6: item_FEAT_INDUSTRYTILES_163;
+	2, 2: tile_fertilizer_plant;
+	2, 5: tile_fertilizer_plant;
+	2, 6: tile_fertilizer_plant;
+	4, 0: tile_fertilizer_plant;
+	4, 1: tile_fertilizer_plant;
+	4, 2: tile_fertilizer_plant;
+	4, 5: tile_fertilizer_plant;
+	4, 6: tile_fertilizer_plant;
+	5, 1: tile_fertilizer_plant;
+	5, 2: tile_fertilizer_plant;
+	5, 5: tile_fertilizer_plant;
+	5, 6: tile_fertilizer_plant;
 }
 
 item(FEAT_INDUSTRIES, fertilizer_plant, 40) {
@@ -10770,7 +10770,7 @@ item(FEAT_INDUSTRIES, fertilizer_plant, 40) {
 	}
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_204, 204) {
+item(FEAT_INDUSTRYTILES, tile_fishing_grounds, 204) {
 	property {
 		substitute: 0;
 		accepted_cargos: [];
@@ -10883,7 +10883,7 @@ switch(FEAT_INDUSTRYTILES, PARENT, action2_4089, layout_num) {
 	action2_4081;
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_204, 204) {
+item(FEAT_INDUSTRYTILES, tile_fishing_grounds, 204) {
 	graphics {
 		action2_4089;
 	}
@@ -10913,15 +10913,15 @@ tilelayout tilelayout_fishing_grounds_1 {
 	2, 6: 255;
 	3, 0: 255;
 	3, 1: 255;
-	3, 2: item_FEAT_INDUSTRYTILES_204;
-	3, 3: item_FEAT_INDUSTRYTILES_204;
-	3, 4: item_FEAT_INDUSTRYTILES_204;
+	3, 2: tile_fishing_grounds;
+	3, 3: tile_fishing_grounds;
+	3, 4: tile_fishing_grounds;
 	3, 5: 255;
 	3, 6: 255;
 	4, 0: 255;
 	4, 1: 255;
 	4, 2: 255;
-	4, 3: item_FEAT_INDUSTRYTILES_204;
+	4, 3: tile_fishing_grounds;
 	4, 4: 255;
 	4, 5: 255;
 	4, 6: 255;
@@ -10965,23 +10965,23 @@ tilelayout tilelayout_fishing_grounds_2 {
 	2, 6: 255;
 	3, 0: 255;
 	3, 1: 255;
-	3, 2: item_FEAT_INDUSTRYTILES_204;
-	3, 3: item_FEAT_INDUSTRYTILES_204;
-	3, 4: item_FEAT_INDUSTRYTILES_204;
+	3, 2: tile_fishing_grounds;
+	3, 3: tile_fishing_grounds;
+	3, 4: tile_fishing_grounds;
 	3, 5: 255;
 	3, 6: 255;
 	4, 0: 255;
 	4, 1: 255;
 	4, 2: 255;
 	4, 3: 255;
-	4, 4: item_FEAT_INDUSTRYTILES_204;
+	4, 4: tile_fishing_grounds;
 	4, 5: 255;
 	4, 6: 255;
 	5, 0: 255;
 	5, 1: 255;
 	5, 2: 255;
 	5, 3: 255;
-	5, 4: item_FEAT_INDUSTRYTILES_204;
+	5, 4: tile_fishing_grounds;
 	5, 5: 255;
 	5, 6: 255;
 	6, 0: 255;
@@ -11018,7 +11018,7 @@ tilelayout tilelayout_fishing_grounds_3 {
 	2, 0: 255;
 	2, 1: 255;
 	2, 2: 255;
-	2, 3: item_FEAT_INDUSTRYTILES_204;
+	2, 3: tile_fishing_grounds;
 	2, 4: 255;
 	2, 5: 255;
 	2, 6: 255;
@@ -11038,9 +11038,9 @@ tilelayout tilelayout_fishing_grounds_3 {
 	4, 6: 255;
 	5, 0: 255;
 	5, 1: 255;
-	5, 2: item_FEAT_INDUSTRYTILES_204;
-	5, 3: item_FEAT_INDUSTRYTILES_204;
-	5, 4: item_FEAT_INDUSTRYTILES_204;
+	5, 2: tile_fishing_grounds;
+	5, 3: tile_fishing_grounds;
+	5, 4: tile_fishing_grounds;
 	5, 5: 255;
 	5, 6: 255;
 	6, 0: 255;
@@ -11081,15 +11081,15 @@ tilelayout tilelayout_fishing_grounds_4 {
 	2, 2: 24;
 	2, 3: 24;
 	2, 4: 255;
-	2, 5: item_FEAT_INDUSTRYTILES_204;
+	2, 5: tile_fishing_grounds;
 	2, 6: 255;
 	2, 7: 255;
 	3, 0: 255;
 	3, 1: 255;
-	3, 2: item_FEAT_INDUSTRYTILES_204;
-	3, 3: item_FEAT_INDUSTRYTILES_204;
-	3, 4: item_FEAT_INDUSTRYTILES_204;
-	3, 5: item_FEAT_INDUSTRYTILES_204;
+	3, 2: tile_fishing_grounds;
+	3, 3: tile_fishing_grounds;
+	3, 4: tile_fishing_grounds;
+	3, 5: tile_fishing_grounds;
 	3, 6: 255;
 	3, 7: 255;
 	4, 0: 255;
@@ -11208,7 +11208,7 @@ item(FEAT_INDUSTRIES, fishing_grounds, 32) {
 	}
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_195, 195) {
+item(FEAT_INDUSTRYTILES, tile_fishing_harbour1, 195) {
 	property {
 		substitute: 0;
 		accepted_cargos: [[18, 8], [14, 8], [0, 0]];
@@ -11216,7 +11216,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_195, 195) {
 	}
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_196, 196) {
+item(FEAT_INDUSTRYTILES, tile_fishing_harbour2, 196) {
 	property {
 		substitute: 0;
 		accepted_cargos: [[18, 8], [14, 8], [0, 0]];
@@ -12113,28 +12113,28 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_4172, (current_callback & 255)) {
 	action2_4170;
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_195, 195) {
+item(FEAT_INDUSTRYTILES, tile_fishing_harbour1, 195) {
 	graphics {
 		action2_4172;
 	}
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_196, 196) {
+item(FEAT_INDUSTRYTILES, tile_fishing_harbour2, 196) {
 	graphics {
 		action2_4172;
 	}
 }
 
 tilelayout tilelayout_fishing_harbour_1 {
-	0, 3: item_FEAT_INDUSTRYTILES_195;
-	0, 4: item_FEAT_INDUSTRYTILES_196;
+	0, 3: tile_fishing_harbour1;
+	0, 4: tile_fishing_harbour2;
 	1, 0: 255;
-	1, 1: item_FEAT_INDUSTRYTILES_195;
-	1, 2: item_FEAT_INDUSTRYTILES_195;
-	1, 3: item_FEAT_INDUSTRYTILES_195;
-	1, 4: item_FEAT_INDUSTRYTILES_196;
-	2, 1: item_FEAT_INDUSTRYTILES_195;
-	2, 2: item_FEAT_INDUSTRYTILES_195;
+	1, 1: tile_fishing_harbour1;
+	1, 2: tile_fishing_harbour1;
+	1, 3: tile_fishing_harbour1;
+	1, 4: tile_fishing_harbour2;
+	2, 1: tile_fishing_harbour1;
+	2, 2: tile_fishing_harbour1;
 }
 
 tilelayout tilelayout_fishing_harbour_2 {
@@ -12143,40 +12143,40 @@ tilelayout tilelayout_fishing_harbour_2 {
 	0, 0: 255;
 	0, 1: 255;
 	0, 2: 255;
-	1, 0: item_FEAT_INDUSTRYTILES_195;
-	1, 1: item_FEAT_INDUSTRYTILES_195;
-	2, 0: item_FEAT_INDUSTRYTILES_195;
-	2, 1: item_FEAT_INDUSTRYTILES_195;
-	2, 2: item_FEAT_INDUSTRYTILES_195;
-	3, 1: item_FEAT_INDUSTRYTILES_196;
-	3, 2: item_FEAT_INDUSTRYTILES_196;
+	1, 0: tile_fishing_harbour1;
+	1, 1: tile_fishing_harbour1;
+	2, 0: tile_fishing_harbour1;
+	2, 1: tile_fishing_harbour1;
+	2, 2: tile_fishing_harbour1;
+	3, 1: tile_fishing_harbour2;
+	3, 2: tile_fishing_harbour2;
 }
 
 tilelayout tilelayout_fishing_harbour_3 {
-	0, 0: item_FEAT_INDUSTRYTILES_196;
-	0, 1: item_FEAT_INDUSTRYTILES_196;
-	0, 2: item_FEAT_INDUSTRYTILES_196;
-	1, 0: item_FEAT_INDUSTRYTILES_195;
-	1, 2: item_FEAT_INDUSTRYTILES_195;
-	2, 1: item_FEAT_INDUSTRYTILES_195;
-	2, 2: item_FEAT_INDUSTRYTILES_195;
-	2, 3: item_FEAT_INDUSTRYTILES_195;
+	0, 0: tile_fishing_harbour2;
+	0, 1: tile_fishing_harbour2;
+	0, 2: tile_fishing_harbour2;
+	1, 0: tile_fishing_harbour1;
+	1, 2: tile_fishing_harbour1;
+	2, 1: tile_fishing_harbour1;
+	2, 2: tile_fishing_harbour1;
+	2, 3: tile_fishing_harbour1;
 	2, 4: 255;
 	3, 2: 255;
 	3, 3: 255;
 }
 
 tilelayout tilelayout_fishing_harbour_4 {
-	0, 0: item_FEAT_INDUSTRYTILES_196;
-	0, 1: item_FEAT_INDUSTRYTILES_195;
-	0, 2: item_FEAT_INDUSTRYTILES_195;
-	0, 3: item_FEAT_INDUSTRYTILES_195;
-	0, 4: item_FEAT_INDUSTRYTILES_195;
+	0, 0: tile_fishing_harbour2;
+	0, 1: tile_fishing_harbour1;
+	0, 2: tile_fishing_harbour1;
+	0, 3: tile_fishing_harbour1;
+	0, 4: tile_fishing_harbour1;
 	0, 5: 255;
-	1, 0: item_FEAT_INDUSTRYTILES_196;
-	1, 1: item_FEAT_INDUSTRYTILES_195;
-	1, 2: item_FEAT_INDUSTRYTILES_195;
-	1, 4: item_FEAT_INDUSTRYTILES_195;
+	1, 0: tile_fishing_harbour2;
+	1, 1: tile_fishing_harbour1;
+	1, 2: tile_fishing_harbour1;
+	1, 4: tile_fishing_harbour1;
 	1, 5: 255;
 	2, 3: 255;
 	2, 4: 255;
@@ -12184,21 +12184,21 @@ tilelayout tilelayout_fishing_harbour_4 {
 }
 
 tilelayout tilelayout_fishing_harbour_5 {
-	0, 0: item_FEAT_INDUSTRYTILES_196;
-	1, 0: item_FEAT_INDUSTRYTILES_195;
+	0, 0: tile_fishing_harbour2;
+	1, 0: tile_fishing_harbour1;
 	1, 2: 255;
-	2, 0: item_FEAT_INDUSTRYTILES_195;
-	2, 1: item_FEAT_INDUSTRYTILES_195;
-	2, 2: item_FEAT_INDUSTRYTILES_195;
+	2, 0: tile_fishing_harbour1;
+	2, 1: tile_fishing_harbour1;
+	2, 2: tile_fishing_harbour1;
 	2, 3: 255;
-	3, 0: item_FEAT_INDUSTRYTILES_195;
-	3, 1: item_FEAT_INDUSTRYTILES_195;
-	3, 2: item_FEAT_INDUSTRYTILES_195;
+	3, 0: tile_fishing_harbour1;
+	3, 1: tile_fishing_harbour1;
+	3, 2: tile_fishing_harbour1;
 	3, 3: 255;
 	4, 255: 255;
-	4, 0: item_FEAT_INDUSTRYTILES_195;
-	4, 1: item_FEAT_INDUSTRYTILES_195;
-	4, 2: item_FEAT_INDUSTRYTILES_195;
+	4, 0: tile_fishing_harbour1;
+	4, 1: tile_fishing_harbour1;
+	4, 2: tile_fishing_harbour1;
 	4, 3: 255;
 	5, 255: 255;
 	5, 0: 255;
@@ -12534,7 +12534,7 @@ item(FEAT_INDUSTRIES, fishing_harbour, 31) {
 	}
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_194, 194) {
+item(FEAT_INDUSTRYTILES, tile_food_market, 194) {
 	property {
 		substitute: 0;
 		accepted_cargos: [[11, 8], [13, 8], [29, 8]];
@@ -12623,14 +12623,14 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_4247, terrain_type) {
 	action2_4236;
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_194, 194) {
+item(FEAT_INDUSTRYTILES, tile_food_market, 194) {
 	graphics {
 		action2_4247;
 	}
 }
 
 tilelayout tilelayout_food_market_1 {
-	0, 0: item_FEAT_INDUSTRYTILES_194;
+	0, 0: tile_food_market;
 }
 
 item(FEAT_INDUSTRIES, food_market, 59) {
@@ -12693,7 +12693,7 @@ item(FEAT_INDUSTRIES, food_market, 59) {
 	}
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_205, 205) {
+item(FEAT_INDUSTRYTILES, tile_oil_wells, 205) {
 	property {
 		substitute: 0;
 		accepted_cargos: [[21, 8], [0, 0], [0, 0]];
@@ -17952,7 +17952,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_4455, (current_callback & 255)) {
 	action2_4436;
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_205, 205) {
+item(FEAT_INDUSTRYTILES, tile_oil_wells, 205) {
 	graphics {
 		action2_4455;
 	}
@@ -18102,52 +18102,52 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_206, 206) {
 }
 
 tilelayout tilelayout_oil_wells_1 {
-	0, 0: item_FEAT_INDUSTRYTILES_205;
-	0, 1: item_FEAT_INDUSTRYTILES_205;
-	0, 2: item_FEAT_INDUSTRYTILES_205;
-	1, 0: item_FEAT_INDUSTRYTILES_205;
-	1, 1: item_FEAT_INDUSTRYTILES_205;
-	1, 2: item_FEAT_INDUSTRYTILES_205;
-	2, 1: item_FEAT_INDUSTRYTILES_205;
+	0, 0: tile_oil_wells;
+	0, 1: tile_oil_wells;
+	0, 2: tile_oil_wells;
+	1, 0: tile_oil_wells;
+	1, 1: tile_oil_wells;
+	1, 2: tile_oil_wells;
+	2, 1: tile_oil_wells;
 	2, 2: item_FEAT_INDUSTRYTILES_206;
 }
 
 tilelayout tilelayout_oil_wells_2 {
-	0, 0: item_FEAT_INDUSTRYTILES_205;
-	0, 1: item_FEAT_INDUSTRYTILES_205;
-	0, 2: item_FEAT_INDUSTRYTILES_205;
-	1, 0: item_FEAT_INDUSTRYTILES_205;
-	1, 1: item_FEAT_INDUSTRYTILES_205;
-	1, 2: item_FEAT_INDUSTRYTILES_205;
-	3, 0: item_FEAT_INDUSTRYTILES_205;
-	3, 1: item_FEAT_INDUSTRYTILES_205;
+	0, 0: tile_oil_wells;
+	0, 1: tile_oil_wells;
+	0, 2: tile_oil_wells;
+	1, 0: tile_oil_wells;
+	1, 1: tile_oil_wells;
+	1, 2: tile_oil_wells;
+	3, 0: tile_oil_wells;
+	3, 1: tile_oil_wells;
 	3, 2: item_FEAT_INDUSTRYTILES_206;
-	4, 0: item_FEAT_INDUSTRYTILES_205;
-	4, 1: item_FEAT_INDUSTRYTILES_205;
-	4, 2: item_FEAT_INDUSTRYTILES_205;
+	4, 0: tile_oil_wells;
+	4, 1: tile_oil_wells;
+	4, 2: tile_oil_wells;
 }
 
 tilelayout tilelayout_oil_wells_3 {
-	0, 1: item_FEAT_INDUSTRYTILES_205;
-	0, 2: item_FEAT_INDUSTRYTILES_205;
-	0, 3: item_FEAT_INDUSTRYTILES_205;
-	1, 0: item_FEAT_INDUSTRYTILES_205;
-	1, 1: item_FEAT_INDUSTRYTILES_205;
-	1, 2: item_FEAT_INDUSTRYTILES_205;
-	1, 3: item_FEAT_INDUSTRYTILES_205;
-	1, 4: item_FEAT_INDUSTRYTILES_205;
-	2, 0: item_FEAT_INDUSTRYTILES_205;
-	2, 1: item_FEAT_INDUSTRYTILES_205;
-	2, 2: item_FEAT_INDUSTRYTILES_205;
-	2, 3: item_FEAT_INDUSTRYTILES_205;
-	3, 0: item_FEAT_INDUSTRYTILES_205;
-	3, 1: item_FEAT_INDUSTRYTILES_205;
+	0, 1: tile_oil_wells;
+	0, 2: tile_oil_wells;
+	0, 3: tile_oil_wells;
+	1, 0: tile_oil_wells;
+	1, 1: tile_oil_wells;
+	1, 2: tile_oil_wells;
+	1, 3: tile_oil_wells;
+	1, 4: tile_oil_wells;
+	2, 0: tile_oil_wells;
+	2, 1: tile_oil_wells;
+	2, 2: tile_oil_wells;
+	2, 3: tile_oil_wells;
+	3, 0: tile_oil_wells;
+	3, 1: tile_oil_wells;
 	3, 2: item_FEAT_INDUSTRYTILES_206;
-	4, 0: item_FEAT_INDUSTRYTILES_205;
-	4, 1: item_FEAT_INDUSTRYTILES_205;
-	5, 0: item_FEAT_INDUSTRYTILES_205;
-	5, 1: item_FEAT_INDUSTRYTILES_205;
-	5, 2: item_FEAT_INDUSTRYTILES_205;
+	4, 0: tile_oil_wells;
+	4, 1: tile_oil_wells;
+	5, 0: tile_oil_wells;
+	5, 1: tile_oil_wells;
+	5, 2: tile_oil_wells;
 }
 
 item(FEAT_INDUSTRIES, oil_wells, 11) {
@@ -18350,7 +18350,7 @@ item(FEAT_INDUSTRIES, oil_wells, 11) {
 	}
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_209, 209) {
+item(FEAT_INDUSTRYTILES, tile_smithy_forge, 209) {
 	property {
 		substitute: 0;
 		accepted_cargos: [[9, 8], [0, 0], [0, 0]];
@@ -18419,7 +18419,7 @@ switch(FEAT_INDUSTRYTILES, PARENT, action2_4517, layout_num) {
 	action2_4514;
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_209, 209) {
+item(FEAT_INDUSTRYTILES, tile_smithy_forge, 209) {
 	property {
 		substitute: 0;
 		accepted_cargos: [[9, 8], [0, 0], [0, 0]];
@@ -18488,7 +18488,7 @@ switch(FEAT_INDUSTRYTILES, PARENT, action2_4527, layout_num) {
 	action2_4524;
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_209, 209) {
+item(FEAT_INDUSTRYTILES, tile_smithy_forge, 209) {
 	property {
 		substitute: 0;
 		accepted_cargos: [[9, 8], [0, 0], [0, 0]];
@@ -18618,15 +18618,15 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_4549, (current_callback & 255)) {
 	action2_4538;
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_209, 209) {
+item(FEAT_INDUSTRYTILES, tile_smithy_forge, 209) {
 	graphics {
 		action2_4549;
 	}
 }
 
 tilelayout tilelayout_smithy_forge_1 {
-	0, 0: item_FEAT_INDUSTRYTILES_209;
-	1, 0: item_FEAT_INDUSTRYTILES_209;
+	0, 0: tile_smithy_forge;
+	1, 0: tile_smithy_forge;
 }
 
 item(FEAT_INDUSTRIES, smithy_forge, 6) {
@@ -24446,7 +24446,7 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_30, 30) {
 	}
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_184, 184) {
+item(FEAT_INDUSTRYTILES, tile_furniture_factory, 184) {
 	property {
 		substitute: 0;
 		accepted_cargos: [[19, 8], [18, 8], [0, 0]];
@@ -25050,65 +25050,65 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_4908, (current_callback & 255)) {
 	action2_4897;
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_184, 184) {
+item(FEAT_INDUSTRYTILES, tile_furniture_factory, 184) {
 	graphics {
 		action2_4908;
 	}
 }
 
 tilelayout tilelayout_furniture_factory_1 {
-	0, 1: item_FEAT_INDUSTRYTILES_184;
-	1, 0: item_FEAT_INDUSTRYTILES_184;
-	1, 1: item_FEAT_INDUSTRYTILES_184;
-	2, 0: item_FEAT_INDUSTRYTILES_184;
-	2, 1: item_FEAT_INDUSTRYTILES_184;
+	0, 1: tile_furniture_factory;
+	1, 0: tile_furniture_factory;
+	1, 1: tile_furniture_factory;
+	2, 0: tile_furniture_factory;
+	2, 1: tile_furniture_factory;
 }
 
 tilelayout tilelayout_furniture_factory_2 {
-	0, 0: item_FEAT_INDUSTRYTILES_184;
-	0, 1: item_FEAT_INDUSTRYTILES_184;
-	1, 0: item_FEAT_INDUSTRYTILES_184;
-	1, 1: item_FEAT_INDUSTRYTILES_184;
-	2, 0: item_FEAT_INDUSTRYTILES_184;
-	2, 1: item_FEAT_INDUSTRYTILES_184;
+	0, 0: tile_furniture_factory;
+	0, 1: tile_furniture_factory;
+	1, 0: tile_furniture_factory;
+	1, 1: tile_furniture_factory;
+	2, 0: tile_furniture_factory;
+	2, 1: tile_furniture_factory;
 }
 
 tilelayout tilelayout_furniture_factory_3 {
-	0, 0: item_FEAT_INDUSTRYTILES_184;
-	0, 1: item_FEAT_INDUSTRYTILES_184;
-	1, 0: item_FEAT_INDUSTRYTILES_184;
-	1, 1: item_FEAT_INDUSTRYTILES_184;
-	2, 0: item_FEAT_INDUSTRYTILES_184;
-	2, 1: item_FEAT_INDUSTRYTILES_184;
-	3, 0: item_FEAT_INDUSTRYTILES_184;
-	3, 1: item_FEAT_INDUSTRYTILES_184;
-	4, 0: item_FEAT_INDUSTRYTILES_184;
-	4, 1: item_FEAT_INDUSTRYTILES_184;
+	0, 0: tile_furniture_factory;
+	0, 1: tile_furniture_factory;
+	1, 0: tile_furniture_factory;
+	1, 1: tile_furniture_factory;
+	2, 0: tile_furniture_factory;
+	2, 1: tile_furniture_factory;
+	3, 0: tile_furniture_factory;
+	3, 1: tile_furniture_factory;
+	4, 0: tile_furniture_factory;
+	4, 1: tile_furniture_factory;
 }
 
 tilelayout tilelayout_furniture_factory_4 {
-	0, 0: item_FEAT_INDUSTRYTILES_184;
-	0, 1: item_FEAT_INDUSTRYTILES_184;
-	1, 0: item_FEAT_INDUSTRYTILES_184;
-	1, 1: item_FEAT_INDUSTRYTILES_184;
-	2, 0: item_FEAT_INDUSTRYTILES_184;
-	2, 1: item_FEAT_INDUSTRYTILES_184;
-	3, 0: item_FEAT_INDUSTRYTILES_184;
-	3, 1: item_FEAT_INDUSTRYTILES_184;
-	4, 0: item_FEAT_INDUSTRYTILES_184;
-	4, 1: item_FEAT_INDUSTRYTILES_184;
+	0, 0: tile_furniture_factory;
+	0, 1: tile_furniture_factory;
+	1, 0: tile_furniture_factory;
+	1, 1: tile_furniture_factory;
+	2, 0: tile_furniture_factory;
+	2, 1: tile_furniture_factory;
+	3, 0: tile_furniture_factory;
+	3, 1: tile_furniture_factory;
+	4, 0: tile_furniture_factory;
+	4, 1: tile_furniture_factory;
 }
 
 tilelayout tilelayout_furniture_factory_5 {
-	0, 0: item_FEAT_INDUSTRYTILES_184;
-	0, 1: item_FEAT_INDUSTRYTILES_184;
-	0, 2: item_FEAT_INDUSTRYTILES_184;
-	1, 0: item_FEAT_INDUSTRYTILES_184;
-	1, 1: item_FEAT_INDUSTRYTILES_184;
-	1, 2: item_FEAT_INDUSTRYTILES_184;
-	2, 0: item_FEAT_INDUSTRYTILES_184;
-	2, 1: item_FEAT_INDUSTRYTILES_184;
-	2, 2: item_FEAT_INDUSTRYTILES_184;
+	0, 0: tile_furniture_factory;
+	0, 1: tile_furniture_factory;
+	0, 2: tile_furniture_factory;
+	1, 0: tile_furniture_factory;
+	1, 1: tile_furniture_factory;
+	1, 2: tile_furniture_factory;
+	2, 0: tile_furniture_factory;
+	2, 1: tile_furniture_factory;
+	2, 2: tile_furniture_factory;
 }
 
 item(FEAT_INDUSTRIES, furniture_factory, 13) {
@@ -25415,7 +25415,7 @@ item(FEAT_INDUSTRIES, furniture_factory, 13) {
 	}
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_178, 178) {
+item(FEAT_INDUSTRYTILES, tile_glass_works, 178) {
 	property {
 		substitute: 0;
 		accepted_cargos: [[17, 8], [23, 8], [0, 0]];
@@ -25812,43 +25812,43 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_5015, (current_callback & 255)) {
 	action2_5004;
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_178, 178) {
+item(FEAT_INDUSTRYTILES, tile_glass_works, 178) {
 	graphics {
 		action2_5015;
 	}
 }
 
 tilelayout tilelayout_glass_works_1 {
-	0, 0: item_FEAT_INDUSTRYTILES_178;
-	0, 1: item_FEAT_INDUSTRYTILES_178;
-	1, 0: item_FEAT_INDUSTRYTILES_178;
-	1, 1: item_FEAT_INDUSTRYTILES_178;
+	0, 0: tile_glass_works;
+	0, 1: tile_glass_works;
+	1, 0: tile_glass_works;
+	1, 1: tile_glass_works;
 }
 
 tilelayout tilelayout_glass_works_2 {
-	0, 0: item_FEAT_INDUSTRYTILES_178;
-	0, 1: item_FEAT_INDUSTRYTILES_178;
-	1, 0: item_FEAT_INDUSTRYTILES_178;
-	1, 1: item_FEAT_INDUSTRYTILES_178;
-	2, 0: item_FEAT_INDUSTRYTILES_178;
-	2, 1: item_FEAT_INDUSTRYTILES_178;
-	3, 0: item_FEAT_INDUSTRYTILES_178;
-	3, 1: item_FEAT_INDUSTRYTILES_178;
+	0, 0: tile_glass_works;
+	0, 1: tile_glass_works;
+	1, 0: tile_glass_works;
+	1, 1: tile_glass_works;
+	2, 0: tile_glass_works;
+	2, 1: tile_glass_works;
+	3, 0: tile_glass_works;
+	3, 1: tile_glass_works;
 }
 
 tilelayout tilelayout_glass_works_3 {
-	0, 0: item_FEAT_INDUSTRYTILES_178;
-	0, 1: item_FEAT_INDUSTRYTILES_178;
-	0, 2: item_FEAT_INDUSTRYTILES_178;
-	0, 3: item_FEAT_INDUSTRYTILES_178;
-	1, 0: item_FEAT_INDUSTRYTILES_178;
-	1, 1: item_FEAT_INDUSTRYTILES_178;
-	1, 2: item_FEAT_INDUSTRYTILES_178;
-	1, 3: item_FEAT_INDUSTRYTILES_178;
-	2, 1: item_FEAT_INDUSTRYTILES_178;
-	2, 2: item_FEAT_INDUSTRYTILES_178;
-	3, 1: item_FEAT_INDUSTRYTILES_178;
-	3, 2: item_FEAT_INDUSTRYTILES_178;
+	0, 0: tile_glass_works;
+	0, 1: tile_glass_works;
+	0, 2: tile_glass_works;
+	0, 3: tile_glass_works;
+	1, 0: tile_glass_works;
+	1, 1: tile_glass_works;
+	1, 2: tile_glass_works;
+	1, 3: tile_glass_works;
+	2, 1: tile_glass_works;
+	2, 2: tile_glass_works;
+	3, 1: tile_glass_works;
+	3, 2: tile_glass_works;
 }
 
 item(FEAT_INDUSTRIES, glass_works, 22) {
@@ -26185,7 +26185,7 @@ item(FEAT_INDUSTRIES, glass_works, 22) {
 	}
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_182, 182) {
+item(FEAT_INDUSTRYTILES, tile_grain_mill, 182) {
 	property {
 		substitute: 0;
 		accepted_cargos: [[6, 8], [18, 8], [0, 0]];
@@ -26935,57 +26935,57 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_5173, (current_callback & 255)) {
 	action2_5162;
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_182, 182) {
+item(FEAT_INDUSTRYTILES, tile_grain_mill, 182) {
 	graphics {
 		action2_5173;
 	}
 }
 
 tilelayout tilelayout_grain_mill_1 {
-	0, 0: item_FEAT_INDUSTRYTILES_182;
-	0, 1: item_FEAT_INDUSTRYTILES_182;
-	1, 0: item_FEAT_INDUSTRYTILES_182;
-	1, 1: item_FEAT_INDUSTRYTILES_182;
+	0, 0: tile_grain_mill;
+	0, 1: tile_grain_mill;
+	1, 0: tile_grain_mill;
+	1, 1: tile_grain_mill;
 }
 
 tilelayout tilelayout_grain_mill_2 {
-	0, 0: item_FEAT_INDUSTRYTILES_182;
-	0, 1: item_FEAT_INDUSTRYTILES_182;
-	1, 0: item_FEAT_INDUSTRYTILES_182;
-	1, 1: item_FEAT_INDUSTRYTILES_182;
+	0, 0: tile_grain_mill;
+	0, 1: tile_grain_mill;
+	1, 0: tile_grain_mill;
+	1, 1: tile_grain_mill;
 }
 
 tilelayout tilelayout_grain_mill_3 {
-	0, 0: item_FEAT_INDUSTRYTILES_182;
-	0, 1: item_FEAT_INDUSTRYTILES_182;
-	1, 0: item_FEAT_INDUSTRYTILES_182;
-	1, 1: item_FEAT_INDUSTRYTILES_182;
-	2, 0: item_FEAT_INDUSTRYTILES_182;
-	2, 1: item_FEAT_INDUSTRYTILES_182;
+	0, 0: tile_grain_mill;
+	0, 1: tile_grain_mill;
+	1, 0: tile_grain_mill;
+	1, 1: tile_grain_mill;
+	2, 0: tile_grain_mill;
+	2, 1: tile_grain_mill;
 }
 
 tilelayout tilelayout_grain_mill_4 {
-	0, 0: item_FEAT_INDUSTRYTILES_182;
-	0, 1: item_FEAT_INDUSTRYTILES_182;
-	1, 0: item_FEAT_INDUSTRYTILES_182;
-	1, 1: item_FEAT_INDUSTRYTILES_182;
-	2, 0: item_FEAT_INDUSTRYTILES_182;
-	2, 1: item_FEAT_INDUSTRYTILES_182;
+	0, 0: tile_grain_mill;
+	0, 1: tile_grain_mill;
+	1, 0: tile_grain_mill;
+	1, 1: tile_grain_mill;
+	2, 0: tile_grain_mill;
+	2, 1: tile_grain_mill;
 }
 
 tilelayout tilelayout_grain_mill_5 {
-	0, 0: item_FEAT_INDUSTRYTILES_182;
-	0, 1: item_FEAT_INDUSTRYTILES_182;
-	0, 2: item_FEAT_INDUSTRYTILES_182;
-	0, 3: item_FEAT_INDUSTRYTILES_182;
-	1, 0: item_FEAT_INDUSTRYTILES_182;
-	1, 1: item_FEAT_INDUSTRYTILES_182;
-	1, 2: item_FEAT_INDUSTRYTILES_182;
-	1, 3: item_FEAT_INDUSTRYTILES_182;
+	0, 0: tile_grain_mill;
+	0, 1: tile_grain_mill;
+	0, 2: tile_grain_mill;
+	0, 3: tile_grain_mill;
+	1, 0: tile_grain_mill;
+	1, 1: tile_grain_mill;
+	1, 2: tile_grain_mill;
+	1, 3: tile_grain_mill;
 }
 
 tilelayout tilelayout_grain_mill_6 {
-	0, 0: item_FEAT_INDUSTRYTILES_182;
+	0, 0: tile_grain_mill;
 }
 
 item(FEAT_INDUSTRIES, grain_mill, 34) {
@@ -27311,7 +27311,7 @@ item(FEAT_INDUSTRIES, grain_mill, 34) {
 	}
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_218, 218) {
+item(FEAT_INDUSTRYTILES, tile_hardware_store, 218) {
 	property {
 		substitute: 0;
 		accepted_cargos: [[5, 8], [28, 8], [0, 0]];
@@ -27400,14 +27400,14 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_5249, terrain_type) {
 	action2_5238;
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_218, 218) {
+item(FEAT_INDUSTRYTILES, tile_hardware_store, 218) {
 	graphics {
 		action2_5249;
 	}
 }
 
 tilelayout tilelayout_hardware_store_1 {
-	0, 0: item_FEAT_INDUSTRYTILES_218;
+	0, 0: tile_hardware_store;
 }
 
 item(FEAT_INDUSTRIES, hardware_store, 57) {
@@ -27456,7 +27456,7 @@ item(FEAT_INDUSTRIES, hardware_store, 57) {
 	}
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_217, 217) {
+item(FEAT_INDUSTRYTILES, tile_hotel, 217) {
 	property {
 		substitute: 0;
 		accepted_cargos: [[11, 8], [29, 8], [0, 8]];
@@ -27563,17 +27563,17 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_5271, terrain_type) {
 	action2_5262;
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_217, 217) {
+item(FEAT_INDUSTRYTILES, tile_hotel, 217) {
 	graphics {
 		action2_5271;
 	}
 }
 
 tilelayout tilelayout_hotel_1 {
-	0, 0: item_FEAT_INDUSTRYTILES_217;
-	0, 1: item_FEAT_INDUSTRYTILES_217;
-	1, 0: item_FEAT_INDUSTRYTILES_217;
-	1, 1: item_FEAT_INDUSTRYTILES_217;
+	0, 0: tile_hotel;
+	0, 1: tile_hotel;
+	1, 0: tile_hotel;
+	1, 1: tile_hotel;
 }
 
 item(FEAT_INDUSTRIES, hotel, 58) {
@@ -27942,7 +27942,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_115, 115) {
 	}
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_199, 199) {
+item(FEAT_INDUSTRYTILES, tile_iron_works, 199) {
 	property {
 		substitute: 0;
 		accepted_cargos: [[8, 8], [7, 8], [0, 0]];
@@ -29714,22 +29714,22 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_5444, (current_callback & 255)) {
 	action2_5442;
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_199, 199) {
+item(FEAT_INDUSTRYTILES, tile_iron_works, 199) {
 	graphics {
 		action2_5444;
 	}
 }
 
 tilelayout tilelayout_iron_works_1 {
-	0, 0: item_FEAT_INDUSTRYTILES_199;
-	0, 1: item_FEAT_INDUSTRYTILES_199;
-	0, 2: item_FEAT_INDUSTRYTILES_199;
-	1, 0: item_FEAT_INDUSTRYTILES_199;
-	1, 1: item_FEAT_INDUSTRYTILES_199;
-	1, 2: item_FEAT_INDUSTRYTILES_199;
-	2, 0: item_FEAT_INDUSTRYTILES_199;
-	2, 1: item_FEAT_INDUSTRYTILES_199;
-	2, 2: item_FEAT_INDUSTRYTILES_199;
+	0, 0: tile_iron_works;
+	0, 1: tile_iron_works;
+	0, 2: tile_iron_works;
+	1, 0: tile_iron_works;
+	1, 1: tile_iron_works;
+	1, 2: tile_iron_works;
+	2, 0: tile_iron_works;
+	2, 1: tile_iron_works;
+	2, 2: tile_iron_works;
 }
 
 item(FEAT_INDUSTRIES, iron_works, 21) {
@@ -30070,7 +30070,7 @@ item(FEAT_INDUSTRIES, iron_works, 21) {
 	}
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_193, 193) {
+item(FEAT_INDUSTRYTILES, tile_junkyard, 193) {
 	property {
 		substitute: 0;
 		accepted_cargos: [[cargo_engineering_supplies, 8]];
@@ -30326,45 +30326,45 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_5542, (current_callback & 255)) {
 	action2_5531;
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_193, 193) {
+item(FEAT_INDUSTRYTILES, tile_junkyard, 193) {
 	graphics {
 		action2_5542;
 	}
 }
 
 tilelayout tilelayout_junkyard_1 {
-	0, 2: item_FEAT_INDUSTRYTILES_193;
-	1, 1: item_FEAT_INDUSTRYTILES_193;
-	1, 2: item_FEAT_INDUSTRYTILES_193;
-	2, 1: item_FEAT_INDUSTRYTILES_193;
-	2, 2: item_FEAT_INDUSTRYTILES_193;
-	3, 1: item_FEAT_INDUSTRYTILES_193;
-	3, 2: item_FEAT_INDUSTRYTILES_193;
-	4, 0: item_FEAT_INDUSTRYTILES_193;
-	4, 1: item_FEAT_INDUSTRYTILES_193;
-	4, 2: item_FEAT_INDUSTRYTILES_193;
+	0, 2: tile_junkyard;
+	1, 1: tile_junkyard;
+	1, 2: tile_junkyard;
+	2, 1: tile_junkyard;
+	2, 2: tile_junkyard;
+	3, 1: tile_junkyard;
+	3, 2: tile_junkyard;
+	4, 0: tile_junkyard;
+	4, 1: tile_junkyard;
+	4, 2: tile_junkyard;
 }
 
 tilelayout tilelayout_junkyard_2 {
-	0, 1: item_FEAT_INDUSTRYTILES_193;
-	1, 1: item_FEAT_INDUSTRYTILES_193;
-	1, 2: item_FEAT_INDUSTRYTILES_193;
-	2, 0: item_FEAT_INDUSTRYTILES_193;
-	2, 1: item_FEAT_INDUSTRYTILES_193;
-	2, 2: item_FEAT_INDUSTRYTILES_193;
+	0, 1: tile_junkyard;
+	1, 1: tile_junkyard;
+	1, 2: tile_junkyard;
+	2, 0: tile_junkyard;
+	2, 1: tile_junkyard;
+	2, 2: tile_junkyard;
 }
 
 tilelayout tilelayout_junkyard_3 {
-	0, 3: item_FEAT_INDUSTRYTILES_193;
-	1, 1: item_FEAT_INDUSTRYTILES_193;
-	1, 3: item_FEAT_INDUSTRYTILES_193;
-	2, 1: item_FEAT_INDUSTRYTILES_193;
-	2, 3: item_FEAT_INDUSTRYTILES_193;
-	3, 1: item_FEAT_INDUSTRYTILES_193;
-	3, 3: item_FEAT_INDUSTRYTILES_193;
-	4, 0: item_FEAT_INDUSTRYTILES_193;
-	4, 1: item_FEAT_INDUSTRYTILES_193;
-	4, 3: item_FEAT_INDUSTRYTILES_193;
+	0, 3: tile_junkyard;
+	1, 1: tile_junkyard;
+	1, 3: tile_junkyard;
+	2, 1: tile_junkyard;
+	2, 3: tile_junkyard;
+	3, 1: tile_junkyard;
+	3, 3: tile_junkyard;
+	4, 0: tile_junkyard;
+	4, 1: tile_junkyard;
+	4, 3: tile_junkyard;
 }
 
 item(FEAT_INDUSTRIES, junkyard, 25) {
@@ -30545,7 +30545,7 @@ item(FEAT_INDUSTRIES, junkyard, 25) {
 	}
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_191, 191) {
+item(FEAT_INDUSTRYTILES, tile_lime_kiln, 191) {
 	property {
 		substitute: 0;
 		accepted_cargos: [[26, 8], [1, 8], [0, 0]];
@@ -31116,39 +31116,39 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_5637, (current_callback & 255)) {
 	action2_5626;
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_191, 191) {
+item(FEAT_INDUSTRYTILES, tile_lime_kiln, 191) {
 	graphics {
 		action2_5637;
 	}
 }
 
 tilelayout tilelayout_lime_kiln_1 {
-	0, 0: item_FEAT_INDUSTRYTILES_191;
-	0, 1: item_FEAT_INDUSTRYTILES_191;
-	0, 2: item_FEAT_INDUSTRYTILES_191;
-	1, 0: item_FEAT_INDUSTRYTILES_191;
-	1, 1: item_FEAT_INDUSTRYTILES_191;
-	1, 2: item_FEAT_INDUSTRYTILES_191;
+	0, 0: tile_lime_kiln;
+	0, 1: tile_lime_kiln;
+	0, 2: tile_lime_kiln;
+	1, 0: tile_lime_kiln;
+	1, 1: tile_lime_kiln;
+	1, 2: tile_lime_kiln;
 }
 
 tilelayout tilelayout_lime_kiln_2 {
-	0, 0: item_FEAT_INDUSTRYTILES_191;
-	0, 1: item_FEAT_INDUSTRYTILES_191;
-	1, 0: item_FEAT_INDUSTRYTILES_191;
-	1, 1: item_FEAT_INDUSTRYTILES_191;
-	2, 0: item_FEAT_INDUSTRYTILES_191;
-	2, 1: item_FEAT_INDUSTRYTILES_191;
+	0, 0: tile_lime_kiln;
+	0, 1: tile_lime_kiln;
+	1, 0: tile_lime_kiln;
+	1, 1: tile_lime_kiln;
+	2, 0: tile_lime_kiln;
+	2, 1: tile_lime_kiln;
 }
 
 tilelayout tilelayout_lime_kiln_3 {
-	0, 0: item_FEAT_INDUSTRYTILES_191;
-	0, 1: item_FEAT_INDUSTRYTILES_191;
-	0, 2: item_FEAT_INDUSTRYTILES_191;
-	0, 3: item_FEAT_INDUSTRYTILES_191;
-	1, 0: item_FEAT_INDUSTRYTILES_191;
-	1, 1: item_FEAT_INDUSTRYTILES_191;
-	1, 2: item_FEAT_INDUSTRYTILES_191;
-	1, 3: item_FEAT_INDUSTRYTILES_191;
+	0, 0: tile_lime_kiln;
+	0, 1: tile_lime_kiln;
+	0, 2: tile_lime_kiln;
+	0, 3: tile_lime_kiln;
+	1, 0: tile_lime_kiln;
+	1, 1: tile_lime_kiln;
+	1, 2: tile_lime_kiln;
+	1, 3: tile_lime_kiln;
 }
 
 item(FEAT_INDUSTRIES, lime_kiln, 1) {
@@ -31464,7 +31464,7 @@ item(FEAT_INDUSTRIES, lime_kiln, 1) {
 	}
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_187, 187) {
+item(FEAT_INDUSTRYTILES, tile_lumber_yard, 187) {
 	property {
 		substitute: 0;
 		accepted_cargos: [[19, 8], [23, 8], [0, 0]];
@@ -31735,66 +31735,66 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_5731, (current_callback & 255)) {
 	action2_5720;
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_187, 187) {
+item(FEAT_INDUSTRYTILES, tile_lumber_yard, 187) {
 	graphics {
 		action2_5731;
 	}
 }
 
 tilelayout tilelayout_lumber_yard_1 {
-	0, 0: item_FEAT_INDUSTRYTILES_187;
-	0, 1: item_FEAT_INDUSTRYTILES_187;
-	0, 2: item_FEAT_INDUSTRYTILES_187;
-	1, 0: item_FEAT_INDUSTRYTILES_187;
-	1, 1: item_FEAT_INDUSTRYTILES_187;
-	1, 2: item_FEAT_INDUSTRYTILES_187;
-	2, 0: item_FEAT_INDUSTRYTILES_187;
-	2, 1: item_FEAT_INDUSTRYTILES_187;
-	2, 2: item_FEAT_INDUSTRYTILES_187;
-	3, 0: item_FEAT_INDUSTRYTILES_187;
-	3, 1: item_FEAT_INDUSTRYTILES_187;
-	3, 2: item_FEAT_INDUSTRYTILES_187;
+	0, 0: tile_lumber_yard;
+	0, 1: tile_lumber_yard;
+	0, 2: tile_lumber_yard;
+	1, 0: tile_lumber_yard;
+	1, 1: tile_lumber_yard;
+	1, 2: tile_lumber_yard;
+	2, 0: tile_lumber_yard;
+	2, 1: tile_lumber_yard;
+	2, 2: tile_lumber_yard;
+	3, 0: tile_lumber_yard;
+	3, 1: tile_lumber_yard;
+	3, 2: tile_lumber_yard;
 }
 
 tilelayout tilelayout_lumber_yard_2 {
-	0, 0: item_FEAT_INDUSTRYTILES_187;
-	0, 1: item_FEAT_INDUSTRYTILES_187;
-	0, 2: item_FEAT_INDUSTRYTILES_187;
-	0, 3: item_FEAT_INDUSTRYTILES_187;
-	1, 0: item_FEAT_INDUSTRYTILES_187;
-	1, 1: item_FEAT_INDUSTRYTILES_187;
-	1, 2: item_FEAT_INDUSTRYTILES_187;
-	1, 3: item_FEAT_INDUSTRYTILES_187;
-	2, 0: item_FEAT_INDUSTRYTILES_187;
-	2, 1: item_FEAT_INDUSTRYTILES_187;
-	2, 2: item_FEAT_INDUSTRYTILES_187;
-	2, 3: item_FEAT_INDUSTRYTILES_187;
+	0, 0: tile_lumber_yard;
+	0, 1: tile_lumber_yard;
+	0, 2: tile_lumber_yard;
+	0, 3: tile_lumber_yard;
+	1, 0: tile_lumber_yard;
+	1, 1: tile_lumber_yard;
+	1, 2: tile_lumber_yard;
+	1, 3: tile_lumber_yard;
+	2, 0: tile_lumber_yard;
+	2, 1: tile_lumber_yard;
+	2, 2: tile_lumber_yard;
+	2, 3: tile_lumber_yard;
 }
 
 tilelayout tilelayout_lumber_yard_3 {
-	0, 0: item_FEAT_INDUSTRYTILES_187;
-	0, 1: item_FEAT_INDUSTRYTILES_187;
-	0, 2: item_FEAT_INDUSTRYTILES_187;
-	0, 3: item_FEAT_INDUSTRYTILES_187;
-	0, 4: item_FEAT_INDUSTRYTILES_187;
-	1, 0: item_FEAT_INDUSTRYTILES_187;
-	1, 1: item_FEAT_INDUSTRYTILES_187;
-	1, 2: item_FEAT_INDUSTRYTILES_187;
-	1, 3: item_FEAT_INDUSTRYTILES_187;
-	1, 4: item_FEAT_INDUSTRYTILES_187;
+	0, 0: tile_lumber_yard;
+	0, 1: tile_lumber_yard;
+	0, 2: tile_lumber_yard;
+	0, 3: tile_lumber_yard;
+	0, 4: tile_lumber_yard;
+	1, 0: tile_lumber_yard;
+	1, 1: tile_lumber_yard;
+	1, 2: tile_lumber_yard;
+	1, 3: tile_lumber_yard;
+	1, 4: tile_lumber_yard;
 }
 
 tilelayout tilelayout_lumber_yard_4 {
-	0, 0: item_FEAT_INDUSTRYTILES_187;
-	0, 1: item_FEAT_INDUSTRYTILES_187;
-	1, 0: item_FEAT_INDUSTRYTILES_187;
-	1, 1: item_FEAT_INDUSTRYTILES_187;
-	2, 0: item_FEAT_INDUSTRYTILES_187;
-	2, 1: item_FEAT_INDUSTRYTILES_187;
-	3, 0: item_FEAT_INDUSTRYTILES_187;
-	3, 1: item_FEAT_INDUSTRYTILES_187;
-	4, 0: item_FEAT_INDUSTRYTILES_187;
-	4, 1: item_FEAT_INDUSTRYTILES_187;
+	0, 0: tile_lumber_yard;
+	0, 1: tile_lumber_yard;
+	1, 0: tile_lumber_yard;
+	1, 1: tile_lumber_yard;
+	2, 0: tile_lumber_yard;
+	2, 1: tile_lumber_yard;
+	3, 0: tile_lumber_yard;
+	3, 1: tile_lumber_yard;
+	4, 0: tile_lumber_yard;
+	4, 1: tile_lumber_yard;
 }
 
 item(FEAT_INDUSTRIES, lumber_yard, 41) {
@@ -32100,7 +32100,7 @@ item(FEAT_INDUSTRIES, lumber_yard, 41) {
 	}
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_186, 186) {
+item(FEAT_INDUSTRYTILES, tile_machine_shop, 186) {
 	property {
 		substitute: 0;
 		accepted_cargos: [[9, 8], [25, 8], [0, 0]];
@@ -35386,121 +35386,121 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_6024, (current_callback & 255)) {
 	action2_6022;
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_186, 186) {
+item(FEAT_INDUSTRYTILES, tile_machine_shop, 186) {
 	graphics {
 		action2_6024;
 	}
 }
 
 tilelayout tilelayout_machine_shop_1 {
-	0, 0: item_FEAT_INDUSTRYTILES_186;
-	0, 1: item_FEAT_INDUSTRYTILES_186;
-	0, 2: item_FEAT_INDUSTRYTILES_186;
-	1, 0: item_FEAT_INDUSTRYTILES_186;
-	1, 1: item_FEAT_INDUSTRYTILES_186;
-	1, 2: item_FEAT_INDUSTRYTILES_186;
-	2, 0: item_FEAT_INDUSTRYTILES_186;
-	2, 1: item_FEAT_INDUSTRYTILES_186;
-	2, 2: item_FEAT_INDUSTRYTILES_186;
-	3, 0: item_FEAT_INDUSTRYTILES_186;
-	3, 1: item_FEAT_INDUSTRYTILES_186;
-	3, 2: item_FEAT_INDUSTRYTILES_186;
-	4, 0: item_FEAT_INDUSTRYTILES_186;
-	4, 1: item_FEAT_INDUSTRYTILES_186;
-	4, 2: item_FEAT_INDUSTRYTILES_186;
-	5, 0: item_FEAT_INDUSTRYTILES_186;
-	5, 1: item_FEAT_INDUSTRYTILES_186;
-	5, 2: item_FEAT_INDUSTRYTILES_186;
+	0, 0: tile_machine_shop;
+	0, 1: tile_machine_shop;
+	0, 2: tile_machine_shop;
+	1, 0: tile_machine_shop;
+	1, 1: tile_machine_shop;
+	1, 2: tile_machine_shop;
+	2, 0: tile_machine_shop;
+	2, 1: tile_machine_shop;
+	2, 2: tile_machine_shop;
+	3, 0: tile_machine_shop;
+	3, 1: tile_machine_shop;
+	3, 2: tile_machine_shop;
+	4, 0: tile_machine_shop;
+	4, 1: tile_machine_shop;
+	4, 2: tile_machine_shop;
+	5, 0: tile_machine_shop;
+	5, 1: tile_machine_shop;
+	5, 2: tile_machine_shop;
 }
 
 tilelayout tilelayout_machine_shop_2 {
-	0, 0: item_FEAT_INDUSTRYTILES_186;
-	0, 1: item_FEAT_INDUSTRYTILES_186;
-	0, 2: item_FEAT_INDUSTRYTILES_186;
-	0, 3: item_FEAT_INDUSTRYTILES_186;
-	0, 4: item_FEAT_INDUSTRYTILES_186;
-	1, 0: item_FEAT_INDUSTRYTILES_186;
-	1, 1: item_FEAT_INDUSTRYTILES_186;
-	1, 2: item_FEAT_INDUSTRYTILES_186;
-	1, 3: item_FEAT_INDUSTRYTILES_186;
-	1, 4: item_FEAT_INDUSTRYTILES_186;
-	2, 0: item_FEAT_INDUSTRYTILES_186;
-	2, 1: item_FEAT_INDUSTRYTILES_186;
-	2, 2: item_FEAT_INDUSTRYTILES_186;
-	2, 3: item_FEAT_INDUSTRYTILES_186;
-	2, 4: item_FEAT_INDUSTRYTILES_186;
-	3, 0: item_FEAT_INDUSTRYTILES_186;
-	3, 1: item_FEAT_INDUSTRYTILES_186;
-	3, 2: item_FEAT_INDUSTRYTILES_186;
-	3, 3: item_FEAT_INDUSTRYTILES_186;
-	3, 4: item_FEAT_INDUSTRYTILES_186;
+	0, 0: tile_machine_shop;
+	0, 1: tile_machine_shop;
+	0, 2: tile_machine_shop;
+	0, 3: tile_machine_shop;
+	0, 4: tile_machine_shop;
+	1, 0: tile_machine_shop;
+	1, 1: tile_machine_shop;
+	1, 2: tile_machine_shop;
+	1, 3: tile_machine_shop;
+	1, 4: tile_machine_shop;
+	2, 0: tile_machine_shop;
+	2, 1: tile_machine_shop;
+	2, 2: tile_machine_shop;
+	2, 3: tile_machine_shop;
+	2, 4: tile_machine_shop;
+	3, 0: tile_machine_shop;
+	3, 1: tile_machine_shop;
+	3, 2: tile_machine_shop;
+	3, 3: tile_machine_shop;
+	3, 4: tile_machine_shop;
 }
 
 tilelayout tilelayout_machine_shop_3 {
-	0, 0: item_FEAT_INDUSTRYTILES_186;
-	0, 1: item_FEAT_INDUSTRYTILES_186;
-	0, 2: item_FEAT_INDUSTRYTILES_186;
-	0, 3: item_FEAT_INDUSTRYTILES_186;
-	0, 4: item_FEAT_INDUSTRYTILES_186;
-	1, 0: item_FEAT_INDUSTRYTILES_186;
-	1, 1: item_FEAT_INDUSTRYTILES_186;
-	1, 2: item_FEAT_INDUSTRYTILES_186;
-	1, 3: item_FEAT_INDUSTRYTILES_186;
-	1, 4: item_FEAT_INDUSTRYTILES_186;
-	2, 0: item_FEAT_INDUSTRYTILES_186;
-	2, 1: item_FEAT_INDUSTRYTILES_186;
-	2, 2: item_FEAT_INDUSTRYTILES_186;
-	2, 3: item_FEAT_INDUSTRYTILES_186;
-	2, 4: item_FEAT_INDUSTRYTILES_186;
-	3, 0: item_FEAT_INDUSTRYTILES_186;
-	3, 1: item_FEAT_INDUSTRYTILES_186;
-	3, 2: item_FEAT_INDUSTRYTILES_186;
-	3, 3: item_FEAT_INDUSTRYTILES_186;
-	3, 4: item_FEAT_INDUSTRYTILES_186;
+	0, 0: tile_machine_shop;
+	0, 1: tile_machine_shop;
+	0, 2: tile_machine_shop;
+	0, 3: tile_machine_shop;
+	0, 4: tile_machine_shop;
+	1, 0: tile_machine_shop;
+	1, 1: tile_machine_shop;
+	1, 2: tile_machine_shop;
+	1, 3: tile_machine_shop;
+	1, 4: tile_machine_shop;
+	2, 0: tile_machine_shop;
+	2, 1: tile_machine_shop;
+	2, 2: tile_machine_shop;
+	2, 3: tile_machine_shop;
+	2, 4: tile_machine_shop;
+	3, 0: tile_machine_shop;
+	3, 1: tile_machine_shop;
+	3, 2: tile_machine_shop;
+	3, 3: tile_machine_shop;
+	3, 4: tile_machine_shop;
 }
 
 tilelayout tilelayout_machine_shop_4 {
-	0, 0: item_FEAT_INDUSTRYTILES_186;
-	0, 1: item_FEAT_INDUSTRYTILES_186;
-	0, 2: item_FEAT_INDUSTRYTILES_186;
-	0, 3: item_FEAT_INDUSTRYTILES_186;
-	0, 4: item_FEAT_INDUSTRYTILES_186;
-	1, 0: item_FEAT_INDUSTRYTILES_186;
-	1, 1: item_FEAT_INDUSTRYTILES_186;
-	1, 2: item_FEAT_INDUSTRYTILES_186;
-	1, 3: item_FEAT_INDUSTRYTILES_186;
-	1, 4: item_FEAT_INDUSTRYTILES_186;
-	2, 0: item_FEAT_INDUSTRYTILES_186;
-	2, 1: item_FEAT_INDUSTRYTILES_186;
-	2, 2: item_FEAT_INDUSTRYTILES_186;
-	2, 3: item_FEAT_INDUSTRYTILES_186;
-	2, 4: item_FEAT_INDUSTRYTILES_186;
-	3, 0: item_FEAT_INDUSTRYTILES_186;
-	3, 1: item_FEAT_INDUSTRYTILES_186;
-	3, 2: item_FEAT_INDUSTRYTILES_186;
-	3, 3: item_FEAT_INDUSTRYTILES_186;
-	3, 4: item_FEAT_INDUSTRYTILES_186;
+	0, 0: tile_machine_shop;
+	0, 1: tile_machine_shop;
+	0, 2: tile_machine_shop;
+	0, 3: tile_machine_shop;
+	0, 4: tile_machine_shop;
+	1, 0: tile_machine_shop;
+	1, 1: tile_machine_shop;
+	1, 2: tile_machine_shop;
+	1, 3: tile_machine_shop;
+	1, 4: tile_machine_shop;
+	2, 0: tile_machine_shop;
+	2, 1: tile_machine_shop;
+	2, 2: tile_machine_shop;
+	2, 3: tile_machine_shop;
+	2, 4: tile_machine_shop;
+	3, 0: tile_machine_shop;
+	3, 1: tile_machine_shop;
+	3, 2: tile_machine_shop;
+	3, 3: tile_machine_shop;
+	3, 4: tile_machine_shop;
 }
 
 tilelayout tilelayout_machine_shop_5 {
-	0, 0: item_FEAT_INDUSTRYTILES_186;
-	0, 1: item_FEAT_INDUSTRYTILES_186;
-	0, 2: item_FEAT_INDUSTRYTILES_186;
-	0, 3: item_FEAT_INDUSTRYTILES_186;
-	0, 4: item_FEAT_INDUSTRYTILES_186;
-	0, 5: item_FEAT_INDUSTRYTILES_186;
-	1, 0: item_FEAT_INDUSTRYTILES_186;
-	1, 1: item_FEAT_INDUSTRYTILES_186;
-	1, 2: item_FEAT_INDUSTRYTILES_186;
-	1, 3: item_FEAT_INDUSTRYTILES_186;
-	1, 4: item_FEAT_INDUSTRYTILES_186;
-	1, 5: item_FEAT_INDUSTRYTILES_186;
-	2, 0: item_FEAT_INDUSTRYTILES_186;
-	2, 1: item_FEAT_INDUSTRYTILES_186;
-	2, 2: item_FEAT_INDUSTRYTILES_186;
-	2, 3: item_FEAT_INDUSTRYTILES_186;
-	2, 4: item_FEAT_INDUSTRYTILES_186;
-	2, 5: item_FEAT_INDUSTRYTILES_186;
+	0, 0: tile_machine_shop;
+	0, 1: tile_machine_shop;
+	0, 2: tile_machine_shop;
+	0, 3: tile_machine_shop;
+	0, 4: tile_machine_shop;
+	0, 5: tile_machine_shop;
+	1, 0: tile_machine_shop;
+	1, 1: tile_machine_shop;
+	1, 2: tile_machine_shop;
+	1, 3: tile_machine_shop;
+	1, 4: tile_machine_shop;
+	1, 5: tile_machine_shop;
+	2, 0: tile_machine_shop;
+	2, 1: tile_machine_shop;
+	2, 2: tile_machine_shop;
+	2, 3: tile_machine_shop;
+	2, 4: tile_machine_shop;
+	2, 5: tile_machine_shop;
 }
 
 item(FEAT_INDUSTRIES, machine_shop, 38) {
@@ -35761,7 +35761,7 @@ item(FEAT_INDUSTRIES, machine_shop, 38) {
 	}
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_179, 179) {
+item(FEAT_INDUSTRYTILES, tile_stockyard, 179) {
 	property {
 		substitute: 0;
 		accepted_cargos: [[4, 8], [18, 8], [0, 0]];
@@ -36527,27 +36527,27 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_6164, (current_callback & 255)) {
 	action2_6153;
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_179, 179) {
+item(FEAT_INDUSTRYTILES, tile_stockyard, 179) {
 	graphics {
 		action2_6164;
 	}
 }
 
 tilelayout tilelayout_stockyard_1 {
-	0, 1: item_FEAT_INDUSTRYTILES_179;
-	0, 2: item_FEAT_INDUSTRYTILES_179;
-	0, 3: item_FEAT_INDUSTRYTILES_179;
-	1, 1: item_FEAT_INDUSTRYTILES_179;
-	1, 2: item_FEAT_INDUSTRYTILES_179;
-	1, 3: item_FEAT_INDUSTRYTILES_179;
-	3, 0: item_FEAT_INDUSTRYTILES_179;
-	3, 1: item_FEAT_INDUSTRYTILES_179;
-	3, 2: item_FEAT_INDUSTRYTILES_179;
-	3, 3: item_FEAT_INDUSTRYTILES_179;
-	4, 0: item_FEAT_INDUSTRYTILES_179;
-	4, 1: item_FEAT_INDUSTRYTILES_179;
-	4, 2: item_FEAT_INDUSTRYTILES_179;
-	4, 3: item_FEAT_INDUSTRYTILES_179;
+	0, 1: tile_stockyard;
+	0, 2: tile_stockyard;
+	0, 3: tile_stockyard;
+	1, 1: tile_stockyard;
+	1, 2: tile_stockyard;
+	1, 3: tile_stockyard;
+	3, 0: tile_stockyard;
+	3, 1: tile_stockyard;
+	3, 2: tile_stockyard;
+	3, 3: tile_stockyard;
+	4, 0: tile_stockyard;
+	4, 1: tile_stockyard;
+	4, 2: tile_stockyard;
+	4, 3: tile_stockyard;
 	0, 0: item_FEAT_INDUSTRYTILES_224;
 	1, 0: item_FEAT_INDUSTRYTILES_224;
 }
@@ -36871,7 +36871,7 @@ item(FEAT_INDUSTRIES, stockyard, 37) {
 	}
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_188, 188) {
+item(FEAT_INDUSTRYTILES, tile_metal_foundry, 188) {
 	property {
 		substitute: 0;
 		accepted_cargos: [[9, 8], [0, 0], [0, 0]];
@@ -38758,45 +38758,45 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_6355, (current_callback & 255)) {
 	action2_6344;
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_188, 188) {
+item(FEAT_INDUSTRYTILES, tile_metal_foundry, 188) {
 	graphics {
 		action2_6355;
 	}
 }
 
 tilelayout tilelayout_metal_foundry_1 {
-	0, 0: item_FEAT_INDUSTRYTILES_188;
-	0, 1: item_FEAT_INDUSTRYTILES_188;
-	0, 2: item_FEAT_INDUSTRYTILES_188;
-	0, 3: item_FEAT_INDUSTRYTILES_188;
-	0, 4: item_FEAT_INDUSTRYTILES_188;
-	1, 0: item_FEAT_INDUSTRYTILES_188;
-	1, 1: item_FEAT_INDUSTRYTILES_188;
-	1, 2: item_FEAT_INDUSTRYTILES_188;
-	1, 3: item_FEAT_INDUSTRYTILES_188;
-	2, 0: item_FEAT_INDUSTRYTILES_188;
-	2, 1: item_FEAT_INDUSTRYTILES_188;
-	2, 2: item_FEAT_INDUSTRYTILES_188;
-	1, 4: item_FEAT_INDUSTRYTILES_188;
-	2, 3: item_FEAT_INDUSTRYTILES_188;
-	2, 4: item_FEAT_INDUSTRYTILES_188;
+	0, 0: tile_metal_foundry;
+	0, 1: tile_metal_foundry;
+	0, 2: tile_metal_foundry;
+	0, 3: tile_metal_foundry;
+	0, 4: tile_metal_foundry;
+	1, 0: tile_metal_foundry;
+	1, 1: tile_metal_foundry;
+	1, 2: tile_metal_foundry;
+	1, 3: tile_metal_foundry;
+	2, 0: tile_metal_foundry;
+	2, 1: tile_metal_foundry;
+	2, 2: tile_metal_foundry;
+	1, 4: tile_metal_foundry;
+	2, 3: tile_metal_foundry;
+	2, 4: tile_metal_foundry;
 }
 
 tilelayout tilelayout_metal_foundry_2 {
-	0, 2: item_FEAT_INDUSTRYTILES_188;
-	0, 3: item_FEAT_INDUSTRYTILES_188;
-	1, 0: item_FEAT_INDUSTRYTILES_188;
-	1, 1: item_FEAT_INDUSTRYTILES_188;
-	1, 2: item_FEAT_INDUSTRYTILES_188;
-	1, 3: item_FEAT_INDUSTRYTILES_188;
-	2, 0: item_FEAT_INDUSTRYTILES_188;
-	2, 3: item_FEAT_INDUSTRYTILES_188;
-	3, 0: item_FEAT_INDUSTRYTILES_188;
-	3, 1: item_FEAT_INDUSTRYTILES_188;
-	3, 2: item_FEAT_INDUSTRYTILES_188;
-	3, 3: item_FEAT_INDUSTRYTILES_188;
-	2, 1: item_FEAT_INDUSTRYTILES_188;
-	2, 2: item_FEAT_INDUSTRYTILES_188;
+	0, 2: tile_metal_foundry;
+	0, 3: tile_metal_foundry;
+	1, 0: tile_metal_foundry;
+	1, 1: tile_metal_foundry;
+	1, 2: tile_metal_foundry;
+	1, 3: tile_metal_foundry;
+	2, 0: tile_metal_foundry;
+	2, 3: tile_metal_foundry;
+	3, 0: tile_metal_foundry;
+	3, 1: tile_metal_foundry;
+	3, 2: tile_metal_foundry;
+	3, 3: tile_metal_foundry;
+	2, 1: tile_metal_foundry;
+	2, 2: tile_metal_foundry;
 }
 
 item(FEAT_INDUSTRIES, metal_foundry, 9) {
@@ -39057,7 +39057,7 @@ item(FEAT_INDUSTRIES, metal_foundry, 9) {
 	}
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_190, 190) {
+item(FEAT_INDUSTRYTILES, tile_mixed_farm, 190) {
 	property {
 		substitute: 0;
 		accepted_cargos: [[21, 8], [0, 0], [0, 0]];
@@ -39339,43 +39339,43 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_6444, (current_callback & 255)) {
 	action2_6423;
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_190, 190) {
+item(FEAT_INDUSTRYTILES, tile_mixed_farm, 190) {
 	graphics {
 		action2_6444;
 	}
 }
 
 tilelayout tilelayout_mixed_farm_1 {
-	0, 2: item_FEAT_INDUSTRYTILES_190;
-	0, 3: item_FEAT_INDUSTRYTILES_190;
-	1, 0: item_FEAT_INDUSTRYTILES_190;
-	2, 0: item_FEAT_INDUSTRYTILES_190;
-	2, 2: item_FEAT_INDUSTRYTILES_190;
-	2, 3: item_FEAT_INDUSTRYTILES_190;
-	3, 2: item_FEAT_INDUSTRYTILES_190;
-	3, 3: item_FEAT_INDUSTRYTILES_190;
+	0, 2: tile_mixed_farm;
+	0, 3: tile_mixed_farm;
+	1, 0: tile_mixed_farm;
+	2, 0: tile_mixed_farm;
+	2, 2: tile_mixed_farm;
+	2, 3: tile_mixed_farm;
+	3, 2: tile_mixed_farm;
+	3, 3: tile_mixed_farm;
 }
 
 tilelayout tilelayout_mixed_farm_2 {
-	0, 0: item_FEAT_INDUSTRYTILES_190;
-	0, 2: item_FEAT_INDUSTRYTILES_190;
-	0, 3: item_FEAT_INDUSTRYTILES_190;
-	1, 0: item_FEAT_INDUSTRYTILES_190;
-	1, 3: item_FEAT_INDUSTRYTILES_190;
-	2, 0: item_FEAT_INDUSTRYTILES_190;
-	2, 1: item_FEAT_INDUSTRYTILES_190;
-	2, 2: item_FEAT_INDUSTRYTILES_190;
+	0, 0: tile_mixed_farm;
+	0, 2: tile_mixed_farm;
+	0, 3: tile_mixed_farm;
+	1, 0: tile_mixed_farm;
+	1, 3: tile_mixed_farm;
+	2, 0: tile_mixed_farm;
+	2, 1: tile_mixed_farm;
+	2, 2: tile_mixed_farm;
 }
 
 tilelayout tilelayout_mixed_farm_3 {
-	0, 0: item_FEAT_INDUSTRYTILES_190;
-	0, 1: item_FEAT_INDUSTRYTILES_190;
-	0, 2: item_FEAT_INDUSTRYTILES_190;
-	1, 0: item_FEAT_INDUSTRYTILES_190;
-	1, 2: item_FEAT_INDUSTRYTILES_190;
-	2, 0: item_FEAT_INDUSTRYTILES_190;
-	3, 0: item_FEAT_INDUSTRYTILES_190;
-	3, 2: item_FEAT_INDUSTRYTILES_190;
+	0, 0: tile_mixed_farm;
+	0, 1: tile_mixed_farm;
+	0, 2: tile_mixed_farm;
+	1, 0: tile_mixed_farm;
+	1, 2: tile_mixed_farm;
+	2, 0: tile_mixed_farm;
+	3, 0: tile_mixed_farm;
+	3, 2: tile_mixed_farm;
 }
 
 item(FEAT_INDUSTRIES, mixed_farm, 29) {
@@ -40890,7 +40890,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_71, 71) {
 	}
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_203, 203) {
+item(FEAT_INDUSTRYTILES, tile_petrol_pump, 203) {
 	property {
 		substitute: 0;
 		accepted_cargos: [[11, 8], [5, 8], [25, 8]];
@@ -41092,20 +41092,20 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_6724, (current_callback & 255)) {
 	action2_6718;
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_203, 203) {
+item(FEAT_INDUSTRYTILES, tile_petrol_pump, 203) {
 	graphics {
 		action2_6724;
 	}
 }
 
 tilelayout tilelayout_petrol_pump_1 {
-	0, 0: item_FEAT_INDUSTRYTILES_203;
-	0, 1: item_FEAT_INDUSTRYTILES_203;
+	0, 0: tile_petrol_pump;
+	0, 1: tile_petrol_pump;
 }
 
 tilelayout tilelayout_petrol_pump_2 {
-	0, 0: item_FEAT_INDUSTRYTILES_203;
-	1, 0: item_FEAT_INDUSTRYTILES_203;
+	0, 0: tile_petrol_pump;
+	1, 0: tile_petrol_pump;
 }
 
 item(FEAT_INDUSTRIES, petrol_pump, 60) {
@@ -41158,7 +41158,7 @@ item(FEAT_INDUSTRIES, petrol_pump, 60) {
 	}
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_176, 176) {
+item(FEAT_INDUSTRYTILES, tile_plastics_plant, 176) {
 	property {
 		substitute: 0;
 		accepted_cargos: [[23, 8], [22, 8], [0, 0]];
@@ -41822,61 +41822,61 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_6812, (current_callback & 255)) {
 	action2_6801;
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_176, 176) {
+item(FEAT_INDUSTRYTILES, tile_plastics_plant, 176) {
 	graphics {
 		action2_6812;
 	}
 }
 
 tilelayout tilelayout_plastics_plant_1 {
-	0, 0: item_FEAT_INDUSTRYTILES_176;
-	0, 1: item_FEAT_INDUSTRYTILES_176;
+	0, 0: tile_plastics_plant;
+	0, 1: tile_plastics_plant;
 	0, 2: item_FEAT_INDUSTRYTILES_224;
-	1, 0: item_FEAT_INDUSTRYTILES_176;
-	1, 1: item_FEAT_INDUSTRYTILES_176;
+	1, 0: tile_plastics_plant;
+	1, 1: tile_plastics_plant;
 	1, 2: item_FEAT_INDUSTRYTILES_224;
 	2, 0: item_FEAT_INDUSTRYTILES_224;
-	2, 1: item_FEAT_INDUSTRYTILES_176;
+	2, 1: tile_plastics_plant;
 	2, 2: item_FEAT_INDUSTRYTILES_227;
-	3, 0: item_FEAT_INDUSTRYTILES_176;
-	3, 1: item_FEAT_INDUSTRYTILES_176;
+	3, 0: tile_plastics_plant;
+	3, 1: tile_plastics_plant;
 	3, 2: item_FEAT_INDUSTRYTILES_224;
-	4, 0: item_FEAT_INDUSTRYTILES_176;
-	4, 1: item_FEAT_INDUSTRYTILES_176;
-	4, 2: item_FEAT_INDUSTRYTILES_176;
+	4, 0: tile_plastics_plant;
+	4, 1: tile_plastics_plant;
+	4, 2: tile_plastics_plant;
 }
 
 tilelayout tilelayout_plastics_plant_2 {
-	0, 0: item_FEAT_INDUSTRYTILES_176;
-	0, 1: item_FEAT_INDUSTRYTILES_176;
+	0, 0: tile_plastics_plant;
+	0, 1: tile_plastics_plant;
 	0, 2: item_FEAT_INDUSTRYTILES_227;
-	1, 0: item_FEAT_INDUSTRYTILES_176;
-	1, 1: item_FEAT_INDUSTRYTILES_176;
+	1, 0: tile_plastics_plant;
+	1, 1: tile_plastics_plant;
 	1, 2: item_FEAT_INDUSTRYTILES_224;
-	2, 0: item_FEAT_INDUSTRYTILES_176;
-	2, 1: item_FEAT_INDUSTRYTILES_176;
-	2, 2: item_FEAT_INDUSTRYTILES_176;
-	3, 0: item_FEAT_INDUSTRYTILES_176;
-	3, 1: item_FEAT_INDUSTRYTILES_176;
+	2, 0: tile_plastics_plant;
+	2, 1: tile_plastics_plant;
+	2, 2: tile_plastics_plant;
+	3, 0: tile_plastics_plant;
+	3, 1: tile_plastics_plant;
 	3, 2: item_FEAT_INDUSTRYTILES_224;
 }
 
 tilelayout tilelayout_plastics_plant_3 {
-	0, 0: item_FEAT_INDUSTRYTILES_176;
-	0, 1: item_FEAT_INDUSTRYTILES_176;
+	0, 0: tile_plastics_plant;
+	0, 1: tile_plastics_plant;
 	0, 2: item_FEAT_INDUSTRYTILES_224;
-	0, 3: item_FEAT_INDUSTRYTILES_176;
+	0, 3: tile_plastics_plant;
 	0, 4: item_FEAT_INDUSTRYTILES_227;
-	1, 0: item_FEAT_INDUSTRYTILES_176;
-	1, 1: item_FEAT_INDUSTRYTILES_176;
-	1, 2: item_FEAT_INDUSTRYTILES_176;
-	1, 3: item_FEAT_INDUSTRYTILES_176;
+	1, 0: tile_plastics_plant;
+	1, 1: tile_plastics_plant;
+	1, 2: tile_plastics_plant;
+	1, 3: tile_plastics_plant;
 	1, 4: item_FEAT_INDUSTRYTILES_224;
-	2, 0: item_FEAT_INDUSTRYTILES_176;
-	2, 1: item_FEAT_INDUSTRYTILES_176;
-	2, 2: item_FEAT_INDUSTRYTILES_176;
-	2, 3: item_FEAT_INDUSTRYTILES_176;
-	2, 4: item_FEAT_INDUSTRYTILES_176;
+	2, 0: tile_plastics_plant;
+	2, 1: tile_plastics_plant;
+	2, 2: tile_plastics_plant;
+	2, 3: tile_plastics_plant;
+	2, 4: tile_plastics_plant;
 }
 
 item(FEAT_INDUSTRIES, plastics_plant, 18) {
@@ -42143,7 +42143,7 @@ item(FEAT_INDUSTRIES, plastics_plant, 18) {
 	}
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_177, 177) {
+item(FEAT_INDUSTRYTILES, tile_quarry, 177) {
 	property {
 		substitute: 0;
 		accepted_cargos: [[cargo_engineering_supplies, 8]];
@@ -44309,79 +44309,79 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_7112, (current_callback & 255)) {
 	action2_7093;
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_177, 177) {
+item(FEAT_INDUSTRYTILES, tile_quarry, 177) {
 	graphics {
 		action2_7112;
 	}
 }
 
 tilelayout tilelayout_quarry_1 {
-	0, 0: item_FEAT_INDUSTRYTILES_177;
-	1, 0: item_FEAT_INDUSTRYTILES_177;
-	2, 0: item_FEAT_INDUSTRYTILES_177;
-	3, 0: item_FEAT_INDUSTRYTILES_177;
-	4, 0: item_FEAT_INDUSTRYTILES_177;
-	5, 0: item_FEAT_INDUSTRYTILES_177;
-	6, 0: item_FEAT_INDUSTRYTILES_177;
-	7, 0: item_FEAT_INDUSTRYTILES_177;
-	8, 0: item_FEAT_INDUSTRYTILES_177;
-	0, 1: item_FEAT_INDUSTRYTILES_177;
-	1, 1: item_FEAT_INDUSTRYTILES_177;
-	2, 1: item_FEAT_INDUSTRYTILES_177;
-	3, 1: item_FEAT_INDUSTRYTILES_177;
-	4, 1: item_FEAT_INDUSTRYTILES_177;
-	5, 1: item_FEAT_INDUSTRYTILES_177;
-	6, 1: item_FEAT_INDUSTRYTILES_177;
-	7, 1: item_FEAT_INDUSTRYTILES_177;
-	8, 1: item_FEAT_INDUSTRYTILES_177;
-	0, 2: item_FEAT_INDUSTRYTILES_177;
-	1, 2: item_FEAT_INDUSTRYTILES_177;
-	2, 2: item_FEAT_INDUSTRYTILES_177;
-	3, 2: item_FEAT_INDUSTRYTILES_177;
-	4, 2: item_FEAT_INDUSTRYTILES_177;
-	5, 2: item_FEAT_INDUSTRYTILES_177;
-	6, 2: item_FEAT_INDUSTRYTILES_177;
-	7, 2: item_FEAT_INDUSTRYTILES_177;
-	8, 2: item_FEAT_INDUSTRYTILES_177;
-	0, 3: item_FEAT_INDUSTRYTILES_177;
-	1, 3: item_FEAT_INDUSTRYTILES_177;
-	2, 3: item_FEAT_INDUSTRYTILES_177;
-	3, 3: item_FEAT_INDUSTRYTILES_177;
-	4, 3: item_FEAT_INDUSTRYTILES_177;
-	5, 3: item_FEAT_INDUSTRYTILES_177;
-	6, 3: item_FEAT_INDUSTRYTILES_177;
+	0, 0: tile_quarry;
+	1, 0: tile_quarry;
+	2, 0: tile_quarry;
+	3, 0: tile_quarry;
+	4, 0: tile_quarry;
+	5, 0: tile_quarry;
+	6, 0: tile_quarry;
+	7, 0: tile_quarry;
+	8, 0: tile_quarry;
+	0, 1: tile_quarry;
+	1, 1: tile_quarry;
+	2, 1: tile_quarry;
+	3, 1: tile_quarry;
+	4, 1: tile_quarry;
+	5, 1: tile_quarry;
+	6, 1: tile_quarry;
+	7, 1: tile_quarry;
+	8, 1: tile_quarry;
+	0, 2: tile_quarry;
+	1, 2: tile_quarry;
+	2, 2: tile_quarry;
+	3, 2: tile_quarry;
+	4, 2: tile_quarry;
+	5, 2: tile_quarry;
+	6, 2: tile_quarry;
+	7, 2: tile_quarry;
+	8, 2: tile_quarry;
+	0, 3: tile_quarry;
+	1, 3: tile_quarry;
+	2, 3: tile_quarry;
+	3, 3: tile_quarry;
+	4, 3: tile_quarry;
+	5, 3: tile_quarry;
+	6, 3: tile_quarry;
 }
 
 tilelayout tilelayout_quarry_2 {
-	6, 0: item_FEAT_INDUSTRYTILES_177;
-	0, 1: item_FEAT_INDUSTRYTILES_177;
-	1, 1: item_FEAT_INDUSTRYTILES_177;
-	2, 1: item_FEAT_INDUSTRYTILES_177;
-	3, 1: item_FEAT_INDUSTRYTILES_177;
-	4, 1: item_FEAT_INDUSTRYTILES_177;
-	5, 1: item_FEAT_INDUSTRYTILES_177;
-	6, 1: item_FEAT_INDUSTRYTILES_177;
-	0, 2: item_FEAT_INDUSTRYTILES_177;
-	1, 2: item_FEAT_INDUSTRYTILES_177;
-	2, 2: item_FEAT_INDUSTRYTILES_177;
-	3, 2: item_FEAT_INDUSTRYTILES_177;
-	4, 2: item_FEAT_INDUSTRYTILES_177;
-	5, 2: item_FEAT_INDUSTRYTILES_177;
-	6, 2: item_FEAT_INDUSTRYTILES_177;
-	0, 3: item_FEAT_INDUSTRYTILES_177;
-	1, 3: item_FEAT_INDUSTRYTILES_177;
-	2, 3: item_FEAT_INDUSTRYTILES_177;
-	3, 3: item_FEAT_INDUSTRYTILES_177;
-	4, 3: item_FEAT_INDUSTRYTILES_177;
-	5, 3: item_FEAT_INDUSTRYTILES_177;
-	6, 3: item_FEAT_INDUSTRYTILES_177;
-	0, 4: item_FEAT_INDUSTRYTILES_177;
-	1, 4: item_FEAT_INDUSTRYTILES_177;
-	2, 4: item_FEAT_INDUSTRYTILES_177;
-	3, 4: item_FEAT_INDUSTRYTILES_177;
-	4, 4: item_FEAT_INDUSTRYTILES_177;
-	5, 4: item_FEAT_INDUSTRYTILES_177;
-	6, 4: item_FEAT_INDUSTRYTILES_177;
+	6, 0: tile_quarry;
+	0, 1: tile_quarry;
+	1, 1: tile_quarry;
+	2, 1: tile_quarry;
+	3, 1: tile_quarry;
+	4, 1: tile_quarry;
+	5, 1: tile_quarry;
+	6, 1: tile_quarry;
+	0, 2: tile_quarry;
+	1, 2: tile_quarry;
+	2, 2: tile_quarry;
+	3, 2: tile_quarry;
+	4, 2: tile_quarry;
+	5, 2: tile_quarry;
+	6, 2: tile_quarry;
+	0, 3: tile_quarry;
+	1, 3: tile_quarry;
+	2, 3: tile_quarry;
+	3, 3: tile_quarry;
+	4, 3: tile_quarry;
+	5, 3: tile_quarry;
+	6, 3: tile_quarry;
+	0, 4: tile_quarry;
+	1, 4: tile_quarry;
+	2, 4: tile_quarry;
+	3, 4: tile_quarry;
+	4, 4: tile_quarry;
+	5, 4: tile_quarry;
+	6, 4: tile_quarry;
 }
 
 item(FEAT_INDUSTRIES, quarry, 10) {
@@ -44577,7 +44577,7 @@ item(FEAT_INDUSTRIES, quarry, 10) {
 	}
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_202, 202) {
+item(FEAT_INDUSTRYTILES, tile_recycling_depot, 202) {
 	property {
 		substitute: 0;
 		accepted_cargos: [];
@@ -44631,17 +44631,17 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_7152, terrain_type) {
 	action2_7151;
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_202, 202) {
+item(FEAT_INDUSTRYTILES, tile_recycling_depot, 202) {
 	graphics {
 		action2_7152;
 	}
 }
 
 tilelayout tilelayout_recycling_depot_1 {
-	0, 0: item_FEAT_INDUSTRYTILES_202;
-	0, 1: item_FEAT_INDUSTRYTILES_202;
-	1, 0: item_FEAT_INDUSTRYTILES_202;
-	1, 1: item_FEAT_INDUSTRYTILES_202;
+	0, 0: tile_recycling_depot;
+	0, 1: tile_recycling_depot;
+	1, 0: tile_recycling_depot;
+	1, 1: tile_recycling_depot;
 }
 
 item(FEAT_INDUSTRIES, recycling_depot, 24) {
@@ -44725,7 +44725,7 @@ item(FEAT_INDUSTRIES, recycling_depot, 24) {
 	}
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_201, 201) {
+item(FEAT_INDUSTRYTILES, tile_recycling_plant, 201) {
 	property {
 		substitute: 0;
 		accepted_cargos: [[31, 8], [0, 0], [0, 0]];
@@ -44933,31 +44933,31 @@ switch(FEAT_INDUSTRYTILES, PARENT, action2_7191, layout_num) {
 	action2_7180;
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_201, 201) {
+item(FEAT_INDUSTRYTILES, tile_recycling_plant, 201) {
 	graphics {
 		action2_7191;
 	}
 }
 
 tilelayout tilelayout_recycling_plant_1 {
-	2, 4: item_FEAT_INDUSTRYTILES_201;
-	3, 4: item_FEAT_INDUSTRYTILES_201;
-	4, 3: item_FEAT_INDUSTRYTILES_201;
-	3, 0: item_FEAT_INDUSTRYTILES_201;
-	3, 1: item_FEAT_INDUSTRYTILES_201;
-	2, 3: item_FEAT_INDUSTRYTILES_201;
-	2, 0: item_FEAT_INDUSTRYTILES_201;
-	2, 1: item_FEAT_INDUSTRYTILES_201;
-	1, 3: item_FEAT_INDUSTRYTILES_201;
-	1, 0: item_FEAT_INDUSTRYTILES_201;
-	1, 1: item_FEAT_INDUSTRYTILES_201;
-	0, 3: item_FEAT_INDUSTRYTILES_201;
-	1, 5: item_FEAT_INDUSTRYTILES_201;
-	1, 4: item_FEAT_INDUSTRYTILES_201;
-	4, 1: item_FEAT_INDUSTRYTILES_201;
-	4, 0: item_FEAT_INDUSTRYTILES_201;
-	3, 3: item_FEAT_INDUSTRYTILES_201;
-	4, 4: item_FEAT_INDUSTRYTILES_201;
+	2, 4: tile_recycling_plant;
+	3, 4: tile_recycling_plant;
+	4, 3: tile_recycling_plant;
+	3, 0: tile_recycling_plant;
+	3, 1: tile_recycling_plant;
+	2, 3: tile_recycling_plant;
+	2, 0: tile_recycling_plant;
+	2, 1: tile_recycling_plant;
+	1, 3: tile_recycling_plant;
+	1, 0: tile_recycling_plant;
+	1, 1: tile_recycling_plant;
+	0, 3: tile_recycling_plant;
+	1, 5: tile_recycling_plant;
+	1, 4: tile_recycling_plant;
+	4, 1: tile_recycling_plant;
+	4, 0: tile_recycling_plant;
+	3, 3: tile_recycling_plant;
+	4, 4: tile_recycling_plant;
 }
 
 item(FEAT_INDUSTRIES, recycling_plant, 23) {
@@ -45636,7 +45636,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_15, 15) {
 	}
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_192, 192) {
+item(FEAT_INDUSTRYTILES, tile_sheep_farm, 192) {
 	property {
 		substitute: 0;
 		accepted_cargos: [[21, 8], [0, 0], [0, 0]];
@@ -46063,26 +46063,26 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_7374, (current_callback & 255)) {
 	action2_7355;
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_192, 192) {
+item(FEAT_INDUSTRYTILES, tile_sheep_farm, 192) {
 	graphics {
 		action2_7374;
 	}
 }
 
 tilelayout tilelayout_sheep_farm_1 {
-	0, 0: item_FEAT_INDUSTRYTILES_192;
-	1, 0: item_FEAT_INDUSTRYTILES_192;
-	3, 0: item_FEAT_INDUSTRYTILES_192;
-	3, 1: item_FEAT_INDUSTRYTILES_192;
-	1, 2: item_FEAT_INDUSTRYTILES_192;
+	0, 0: tile_sheep_farm;
+	1, 0: tile_sheep_farm;
+	3, 0: tile_sheep_farm;
+	3, 1: tile_sheep_farm;
+	1, 2: tile_sheep_farm;
 }
 
 tilelayout tilelayout_sheep_farm_2 {
-	0, 0: item_FEAT_INDUSTRYTILES_192;
-	0, 1: item_FEAT_INDUSTRYTILES_192;
-	0, 2: item_FEAT_INDUSTRYTILES_192;
-	2, 0: item_FEAT_INDUSTRYTILES_192;
-	2, 2: item_FEAT_INDUSTRYTILES_192;
+	0, 0: tile_sheep_farm;
+	0, 1: tile_sheep_farm;
+	0, 2: tile_sheep_farm;
+	2, 0: tile_sheep_farm;
+	2, 2: tile_sheep_farm;
 }
 
 item(FEAT_INDUSTRIES, sheep_farm, 27) {
@@ -46658,7 +46658,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_57, 57) {
 	}
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_214, 214) {
+item(FEAT_INDUSTRYTILES, tile_sugar_refinery, 214) {
 	property {
 		substitute: 0;
 		accepted_cargos: [[12, 8], [18, 8], [0, 0]];
@@ -46838,28 +46838,28 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_7499, (current_callback & 255)) {
 	action2_7488;
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_214, 214) {
+item(FEAT_INDUSTRYTILES, tile_sugar_refinery, 214) {
 	graphics {
 		action2_7499;
 	}
 }
 
 tilelayout tilelayout_sugar_refinery_1 {
-	0, 0: item_FEAT_INDUSTRYTILES_214;
-	0, 1: item_FEAT_INDUSTRYTILES_214;
-	1, 0: item_FEAT_INDUSTRYTILES_214;
-	1, 1: item_FEAT_INDUSTRYTILES_214;
-	2, 0: item_FEAT_INDUSTRYTILES_214;
-	2, 1: item_FEAT_INDUSTRYTILES_214;
+	0, 0: tile_sugar_refinery;
+	0, 1: tile_sugar_refinery;
+	1, 0: tile_sugar_refinery;
+	1, 1: tile_sugar_refinery;
+	2, 0: tile_sugar_refinery;
+	2, 1: tile_sugar_refinery;
 }
 
 tilelayout tilelayout_sugar_refinery_2 {
-	0, 0: item_FEAT_INDUSTRYTILES_214;
-	0, 1: item_FEAT_INDUSTRYTILES_214;
-	0, 2: item_FEAT_INDUSTRYTILES_214;
-	1, 0: item_FEAT_INDUSTRYTILES_214;
-	1, 1: item_FEAT_INDUSTRYTILES_214;
-	1, 2: item_FEAT_INDUSTRYTILES_214;
+	0, 0: tile_sugar_refinery;
+	0, 1: tile_sugar_refinery;
+	0, 2: tile_sugar_refinery;
+	1, 0: tile_sugar_refinery;
+	1, 1: tile_sugar_refinery;
+	1, 2: tile_sugar_refinery;
 }
 
 item(FEAT_INDUSTRIES, sugar_refinery, 19) {
@@ -47171,7 +47171,7 @@ item(FEAT_INDUSTRIES, sugar_refinery, 19) {
 	}
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_183, 183) {
+item(FEAT_INDUSTRYTILES, tile_textile_mill, 183) {
 	property {
 		substitute: 0;
 		accepted_cargos: [[18, 8], [15, 8], [22, 8]];
@@ -48328,80 +48328,80 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_7654, (current_callback & 255)) {
 	action2_7652;
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_183, 183) {
+item(FEAT_INDUSTRYTILES, tile_textile_mill, 183) {
 	graphics {
 		action2_7654;
 	}
 }
 
 tilelayout tilelayout_textile_mill_1 {
-	0, 0: item_FEAT_INDUSTRYTILES_183;
-	0, 1: item_FEAT_INDUSTRYTILES_183;
-	1, 0: item_FEAT_INDUSTRYTILES_183;
-	1, 1: item_FEAT_INDUSTRYTILES_183;
-	2, 0: item_FEAT_INDUSTRYTILES_183;
-	2, 1: item_FEAT_INDUSTRYTILES_183;
-	3, 0: item_FEAT_INDUSTRYTILES_183;
-	3, 1: item_FEAT_INDUSTRYTILES_183;
-	4, 0: item_FEAT_INDUSTRYTILES_183;
-	4, 1: item_FEAT_INDUSTRYTILES_183;
+	0, 0: tile_textile_mill;
+	0, 1: tile_textile_mill;
+	1, 0: tile_textile_mill;
+	1, 1: tile_textile_mill;
+	2, 0: tile_textile_mill;
+	2, 1: tile_textile_mill;
+	3, 0: tile_textile_mill;
+	3, 1: tile_textile_mill;
+	4, 0: tile_textile_mill;
+	4, 1: tile_textile_mill;
 }
 
 tilelayout tilelayout_textile_mill_2 {
-	0, 0: item_FEAT_INDUSTRYTILES_183;
-	0, 1: item_FEAT_INDUSTRYTILES_183;
-	0, 2: item_FEAT_INDUSTRYTILES_183;
-	1, 0: item_FEAT_INDUSTRYTILES_183;
-	1, 1: item_FEAT_INDUSTRYTILES_183;
-	1, 2: item_FEAT_INDUSTRYTILES_183;
-	2, 0: item_FEAT_INDUSTRYTILES_183;
-	2, 1: item_FEAT_INDUSTRYTILES_183;
-	2, 2: item_FEAT_INDUSTRYTILES_183;
+	0, 0: tile_textile_mill;
+	0, 1: tile_textile_mill;
+	0, 2: tile_textile_mill;
+	1, 0: tile_textile_mill;
+	1, 1: tile_textile_mill;
+	1, 2: tile_textile_mill;
+	2, 0: tile_textile_mill;
+	2, 1: tile_textile_mill;
+	2, 2: tile_textile_mill;
 }
 
 tilelayout tilelayout_textile_mill_3 {
-	0, 0: item_FEAT_INDUSTRYTILES_183;
-	0, 1: item_FEAT_INDUSTRYTILES_183;
-	1, 0: item_FEAT_INDUSTRYTILES_183;
-	1, 1: item_FEAT_INDUSTRYTILES_183;
-	2, 0: item_FEAT_INDUSTRYTILES_183;
-	2, 1: item_FEAT_INDUSTRYTILES_183;
+	0, 0: tile_textile_mill;
+	0, 1: tile_textile_mill;
+	1, 0: tile_textile_mill;
+	1, 1: tile_textile_mill;
+	2, 0: tile_textile_mill;
+	2, 1: tile_textile_mill;
 }
 
 tilelayout tilelayout_textile_mill_4 {
-	0, 0: item_FEAT_INDUSTRYTILES_183;
-	0, 1: item_FEAT_INDUSTRYTILES_183;
-	1, 0: item_FEAT_INDUSTRYTILES_183;
-	1, 1: item_FEAT_INDUSTRYTILES_183;
-	2, 0: item_FEAT_INDUSTRYTILES_183;
-	2, 1: item_FEAT_INDUSTRYTILES_183;
-	3, 0: item_FEAT_INDUSTRYTILES_183;
-	3, 1: item_FEAT_INDUSTRYTILES_183;
-	4, 0: item_FEAT_INDUSTRYTILES_183;
-	4, 1: item_FEAT_INDUSTRYTILES_183;
+	0, 0: tile_textile_mill;
+	0, 1: tile_textile_mill;
+	1, 0: tile_textile_mill;
+	1, 1: tile_textile_mill;
+	2, 0: tile_textile_mill;
+	2, 1: tile_textile_mill;
+	3, 0: tile_textile_mill;
+	3, 1: tile_textile_mill;
+	4, 0: tile_textile_mill;
+	4, 1: tile_textile_mill;
 }
 
 tilelayout tilelayout_textile_mill_5 {
-	0, 0: item_FEAT_INDUSTRYTILES_183;
-	0, 1: item_FEAT_INDUSTRYTILES_183;
-	0, 2: item_FEAT_INDUSTRYTILES_183;
-	0, 3: item_FEAT_INDUSTRYTILES_183;
-	1, 0: item_FEAT_INDUSTRYTILES_183;
-	1, 1: item_FEAT_INDUSTRYTILES_183;
-	1, 2: item_FEAT_INDUSTRYTILES_183;
-	1, 3: item_FEAT_INDUSTRYTILES_183;
+	0, 0: tile_textile_mill;
+	0, 1: tile_textile_mill;
+	0, 2: tile_textile_mill;
+	0, 3: tile_textile_mill;
+	1, 0: tile_textile_mill;
+	1, 1: tile_textile_mill;
+	1, 2: tile_textile_mill;
+	1, 3: tile_textile_mill;
 }
 
 tilelayout tilelayout_textile_mill_6 {
-	0, 0: item_FEAT_INDUSTRYTILES_183;
-	0, 1: item_FEAT_INDUSTRYTILES_183;
-	0, 2: item_FEAT_INDUSTRYTILES_183;
-	1, 0: item_FEAT_INDUSTRYTILES_183;
-	1, 1: item_FEAT_INDUSTRYTILES_183;
-	1, 2: item_FEAT_INDUSTRYTILES_183;
-	2, 0: item_FEAT_INDUSTRYTILES_183;
-	2, 1: item_FEAT_INDUSTRYTILES_183;
-	2, 2: item_FEAT_INDUSTRYTILES_183;
+	0, 0: tile_textile_mill;
+	0, 1: tile_textile_mill;
+	0, 2: tile_textile_mill;
+	1, 0: tile_textile_mill;
+	1, 1: tile_textile_mill;
+	1, 2: tile_textile_mill;
+	2, 0: tile_textile_mill;
+	2, 1: tile_textile_mill;
+	2, 2: tile_textile_mill;
 }
 
 item(FEAT_INDUSTRIES, textile_mill, 42) {
