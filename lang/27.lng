@@ -8,12 +8,12 @@ STR_CARGO_NAME_CLAY                                                             
 STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :Forniture meccaniche
 STR_CARGO_NAME_FIBRES                                                           :Fibre tessili
 STR_CARGO_NAME_FISH                                                             :Pesce
-STR_CARGO_NAME_FMSP                                                             :Forniture agricole
+STR_CARGO_NAME_FARM_SUPPLIES                                                    :Forniture agricole
 STR_CARGO_NAME_FRUITS                                                           :Frutta e verdura
 STR_CARGO_NAME_LUMBER                                                           :Prodotti in legno
 STR_CARGO_NAME_METAL                                                            :Metalli
 STR_CARGO_NAME_MILK                                                             :Latte
-STR_CARGO_NAME_MNSP                                                             :Forniture industriali
+STR_CARGO_NAME_MANUFACTURING_SUPPLIES                                           :Forniture industriali
 STR_CARGO_NAME_PETROL                                                           :Benzina
 STR_CARGO_NAME_SAND                                                             :Sabbia
 STR_CARGO_NAME_SCRAP_METAL                                                      :Metalli di scarto
@@ -73,19 +73,19 @@ STR_GENERIC_D0B1                                                                
 STR_GENERIC_D0B2                                                                :{BLACK}Le forniture industriali raddoppiano la produzione di altre merci.{}{}{STRING}
 STR_GENERIC_D0B3                                                                :{BLACK}Massimo livello di produzione raggiunto
 STR_GENERIC_D0C0                                                                :{BLACK} (max 200)
-STR_GENERIC_DC04                                                                :{TINYFONT}SB
-STR_GENERIC_DC10                                                                :{TINYFONT}FI
-STR_GENERIC_DC14                                                                :{TINYFONT}WL
-STR_GENERIC_DC18                                                                :{TINYFONT}PF
-STR_GENERIC_DC1C                                                                :{TINYFONT}SA
-STR_GENERIC_DC21                                                                :{TINYFONT}ST
-STR_GENERIC_DC29                                                                :{TINYFONT}MS
-STR_GENERIC_DC2D                                                                :{TINYFONT}FS
-STR_GENERIC_DC30                                                                :{TINYFONT}CH
+STR_CID_SUGARCANE                                                               :{TINYFONT}SB
+STR_CID_FISH                                                                    :{TINYFONT}FI
+STR_CID_WOOL                                                                    :{TINYFONT}WL
+STR_CID_FIBRES                                                                  :{TINYFONT}PF
+STR_CID_SAND                                                                    :{TINYFONT}SA
+STR_CID_STONE                                                                   :{TINYFONT}ST
+STR_CID_MANUFACTURING_SUPPLIEs                                                  :{TINYFONT}MS
+STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}FS
+STR_CID_CHEMICALS                                                               :{TINYFONT}CH
 STR_GENERIC_DC33                                                                :{WORD_S} casse di forniture meccaniche
-STR_GENERIC_DC37                                                                :{TINYFONT}PT
-STR_GENERIC_DC4D                                                                :{TINYFONT}CL
-STR_GENERIC_DC50                                                                :{TINYFONT}AL
+STR_CID_PETROL                                                                  :{TINYFONT}PT
+STR_CID_CLAY                                                                    :{TINYFONT}CL
+STR_CID_ALCOHOL                                                                 :{TINYFONT}AL
 STR_STATIONNAME_FARMS                                                           :Fattorie di {STRING}
 STR_STATIONNAME_MILLS                                                           :Mulini di {STRING}
 STR_GENERIC_DCE3                                                                :Pozzi di {STRING}

@@ -9,12 +9,12 @@ STR_CARGO_NAME_CLAY                                                             
 STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :{G=p}Ersatzteile
 STR_CARGO_NAME_FIBRES                                                           :{G=p}Pflanzenfasern
 STR_CARGO_NAME_FISH                                                             :{G=m}Fisch
-STR_CARGO_NAME_FMSP                                                             :{G=p}landw. Betriebsmittel
+STR_CARGO_NAME_FARM_SUPPLIES                                                    :{G=p}landw. Betriebsmittel
 STR_CARGO_NAME_FRUITS                                                           :{G=p}Früchte und Gemüse
 STR_CARGO_NAME_LUMBER                                                           :{G=n}Bauholz
 STR_CARGO_NAME_METAL                                                            :{G=n}Metall
 STR_CARGO_NAME_MILK                                                             :{G=w}Milch
-STR_CARGO_NAME_MNSP                                                             :{G=p}Produktionsgüter
+STR_CARGO_NAME_MANUFACTURING_SUPPLIES                                           :{G=p}Produktionsgüter
 STR_CARGO_NAME_PETROL                                                           :{G=m}Treibstoff
 STR_CARGO_NAME_RECYCLABLES                                                      :{G=p}Wertstoffe
 STR_CARGO_NAME_SAND                                                             :{G=m}Sand
@@ -77,20 +77,20 @@ STR_GENERIC_D0B1                                                                
 STR_GENERIC_D0B2                                                                :{BLACK}Produktionsgüter verdoppeln die Produktionseffizienz.{}{}{STRING}
 STR_GENERIC_D0B3                                                                :{BLACK}Maximale Produktion erreicht
 STR_GENERIC_D0C0                                                                :{BLACK} (max 200)
-STR_GENERIC_DC04                                                                :{TINYFONT}ZR
-STR_GENERIC_DC10                                                                :{TINYFONT}FI
-STR_GENERIC_DC14                                                                :{TINYFONT}WL
-STR_GENERIC_DC18                                                                :{TINYFONT}PF
-STR_GENERIC_DC1C                                                                :{TINYFONT}SD
-STR_GENERIC_DC21                                                                :{TINYFONT}ST
-STR_GENERIC_DC29                                                                :{TINYFONT}PG
-STR_GENERIC_DC2D                                                                :{TINYFONT}LB
-STR_GENERIC_DC30                                                                :{TINYFONT}CH
+STR_CID_SUGARCANE                                                               :{TINYFONT}ZR
+STR_CID_FISH                                                                    :{TINYFONT}FI
+STR_CID_WOOL                                                                    :{TINYFONT}WL
+STR_CID_FIBRES                                                                  :{TINYFONT}PF
+STR_CID_SAND                                                                    :{TINYFONT}SD
+STR_CID_STONE                                                                   :{TINYFONT}ST
+STR_CID_MANUFACTURING_SUPPLIEs                                                  :{TINYFONT}PG
+STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}LB
+STR_CID_CHEMICALS                                                               :{TINYFONT}CH
 STR_GENERIC_DC33                                                                :{WORD_S} Kisten Ersatzteile
-STR_GENERIC_DC37                                                                :{TINYFONT}TS
-STR_GENERIC_DC4D                                                                :{TINYFONT}TM
-STR_GENERIC_DC50                                                                :{TINYFONT}AL
-STR_GENERIC_DC53                                                                :{TINYFONT}WS
+STR_CID_PETROL                                                                  :{TINYFONT}TS
+STR_CID_CLAY                                                                    :{TINYFONT}TM
+STR_CID_ALCOHOL                                                                 :{TINYFONT}AL
+STR_CID_RECYCLABLES                                                             :{TINYFONT}WS
 STR_STATIONNAME_FARMS                                                           :{STRING} Hof
 STR_STATIONNAME_MILLS                                                           :{STRING} Mühle
 STR_GENERIC_DCE3                                                                :{STRING} Quelle

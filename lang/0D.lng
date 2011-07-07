@@ -9,12 +9,12 @@ STR_CARGO_NAME_CLAY                                                             
 STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :{G=ženski}tehnička oprema
 STR_CARGO_NAME_FIBRES                                                           :{G=srednji}biljna vlakna
 STR_CARGO_NAME_FISH                                                             :{G=ženski}riba
-STR_CARGO_NAME_FMSP                                                             :{G=ženski}poljoprivredna oprema
+STR_CARGO_NAME_FARM_SUPPLIES                                                    :{G=ženski}poljoprivredna oprema
 STR_CARGO_NAME_FRUITS                                                           :{G=srednji}voće i povrće
 STR_CARGO_NAME_LUMBER                                                           :{G=ženski}drvne grede
 STR_CARGO_NAME_METAL                                                            :{G=muški}metali
 STR_CARGO_NAME_MILK                                                             :{G=srednji}mleko
-STR_CARGO_NAME_MNSP                                                             :{G=muški}proizvodni materijali
+STR_CARGO_NAME_MANUFACTURING_SUPPLIES                                           :{G=muški}proizvodni materijali
 STR_CARGO_NAME_PETROL                                                           :{G=muški}benzin
 STR_CARGO_NAME_RECYCLABLES                                                      :{G=muški}reciklažni materijal
 STR_CARGO_NAME_SAND                                                             :{G=muški}pesak
@@ -77,20 +77,20 @@ STR_GENERIC_D0B1                                                                
 STR_GENERIC_D0B2                                                                :{BLACK}Proizvodni materijal udvostručuje proizvodnju od drugog potrebnog tovara.{}{}{STRING}
 STR_GENERIC_D0B3                                                                :{BLACK}Dostignut je najviši nivo proizvodnje
 STR_GENERIC_D0C0                                                                :{BLACK} (najviše 200)
-STR_GENERIC_DC04                                                                :{TINYFONT}SB
-STR_GENERIC_DC10                                                                :{TINYFONT}FI
-STR_GENERIC_DC14                                                                :{TINYFONT}WL
-STR_GENERIC_DC18                                                                :{TINYFONT}PF
-STR_GENERIC_DC1C                                                                :{TINYFONT}SA
-STR_GENERIC_DC21                                                                :{TINYFONT}ST
-STR_GENERIC_DC29                                                                :{TINYFONT}MS
-STR_GENERIC_DC2D                                                                :{TINYFONT}FS
-STR_GENERIC_DC30                                                                :{TINYFONT}CH
+STR_CID_SUGARCANE                                                               :{TINYFONT}SB
+STR_CID_FISH                                                                    :{TINYFONT}FI
+STR_CID_WOOL                                                                    :{TINYFONT}WL
+STR_CID_FIBRES                                                                  :{TINYFONT}PF
+STR_CID_SAND                                                                    :{TINYFONT}SA
+STR_CID_STONE                                                                   :{TINYFONT}ST
+STR_CID_MANUFACTURING_SUPPLIEs                                                  :{TINYFONT}MS
+STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}FS
+STR_CID_CHEMICALS                                                               :{TINYFONT}CH
 STR_GENERIC_DC33                                                                :{WORD_S} sanduka tehničke opreme
-STR_GENERIC_DC37                                                                :{TINYFONT}PT
-STR_GENERIC_DC4D                                                                :{TINYFONT}CL
-STR_GENERIC_DC50                                                                :{TINYFONT}AL
-STR_GENERIC_DC53                                                                :{TINYFONT}RC
+STR_CID_PETROL                                                                  :{TINYFONT}PT
+STR_CID_CLAY                                                                    :{TINYFONT}CL
+STR_CID_ALCOHOL                                                                 :{TINYFONT}AL
+STR_CID_RECYCLABLES                                                             :{TINYFONT}RC
 STR_STATIONNAME_FARMS                                                           :{STRING} Farma
 STR_STATIONNAME_MILLS                                                           :{STRING} Mlinovi
 STR_GENERIC_DCE3                                                                :{STRING} Bušotine

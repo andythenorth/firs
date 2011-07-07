@@ -235,7 +235,7 @@ item(FEAT_CARGOS, cargo_alcohol, 29) {
 		number: 29;
 		type_name: string(STR_CARGO_NAME_ALCOHOL);
 		unit_name: string(STR_CARGO_NAME_ALCOHOL);
-		type_abbreviation: string(STR_GENERIC_DC50);
+		type_abbreviation: string(STR_CID_ALCOHOL);
 		sprite: 65535;
 		weight: 1.0;
 		station_list_colour: 180;
@@ -298,7 +298,7 @@ item(FEAT_CARGOS, cargo_fish, 14) {
 		number: 14;
 		type_name: string(STR_CARGO_NAME_FISH);
 		unit_name: string(STR_CARGO_NAME_FISH);
-		type_abbreviation: string(STR_GENERIC_DC10);
+		type_abbreviation: string(STR_CID_FISH);
 		sprite: 65535;
 		weight: 1.0;
 		station_list_colour: 149;
@@ -319,7 +319,7 @@ item(FEAT_CARGOS, cargo_wool, 15) {
 		number: 15;
 		type_name: string(STR_CARGO_NAME_WOOL);
 		unit_name: string(STR_CARGO_NAME_WOOL);
-		type_abbreviation: string(STR_GENERIC_DC14);
+		type_abbreviation: string(STR_CID_WOOL);
 		sprite: 65535;
 		weight: 1.0;
 		station_list_colour: 134;
@@ -340,7 +340,7 @@ item(FEAT_CARGOS, cargo_recyclables, 31) {
 		number: 31;
 		type_name: string(STR_CARGO_NAME_RECYCLABLES);
 		unit_name: string(STR_CARGO_NAME_RECYCLABLES);
-		type_abbreviation: string(STR_GENERIC_DC53);
+		type_abbreviation: string(STR_CID_RECYCLABLES);
 		sprite: 65535;
 		weight: 1.0;
 		station_list_colour: 181;
@@ -361,7 +361,7 @@ item(FEAT_CARGOS, cargo_plant_fibres, 22) {
 		number: 22;
 		type_name: string(STR_CARGO_NAME_FIBRES);
 		unit_name: string(STR_CARGO_NAME_FIBRES);
-		type_abbreviation: string(STR_GENERIC_DC18);
+		type_abbreviation: string(STR_CID_FIBRES);
 		sprite: 65535;
 		weight: 1.0;
 		station_list_colour: 13;
@@ -382,7 +382,7 @@ item(FEAT_CARGOS, cargo_gravel, 26) {
 		number: 26;
 		type_name: string(STR_CARGO_NAME_STONE);
 		unit_name: string(STR_CARGO_NAME_STONE);
-		type_abbreviation: string(STR_GENERIC_DC21);
+		type_abbreviation: string(STR_CID_STONE);
 		sprite: 65535;
 		weight: 1.0;
 		station_list_colour: 16;
@@ -424,7 +424,7 @@ item(FEAT_CARGOS, cargo_sand, 17) {
 		number: 17;
 		type_name: string(STR_CARGO_NAME_SAND);
 		unit_name: string(STR_CARGO_NAME_SAND);
-		type_abbreviation: string(STR_GENERIC_DC1C);
+		type_abbreviation: string(STR_CID_SAND);
 		sprite: 65535;
 		weight: 1.0;
 		station_list_colour: 190;
@@ -445,7 +445,7 @@ item(FEAT_CARGOS, cargo_clay, 16) {
 		number: 16;
 		type_name: string(STR_CARGO_NAME_CLAY);
 		unit_name: string(STR_CARGO_NAME_CLAY);
-		type_abbreviation: string(STR_GENERIC_DC4D);
+		type_abbreviation: string(STR_CID_CLAY);
 		sprite: 65535;
 		weight: 1.0;
 		station_list_colour: 44;
@@ -529,7 +529,7 @@ item(FEAT_CARGOS, cargo_sugarcane, 12) {
 		number: 12;
 		type_name: string(STR_CARGO_NAME_SUGARCANE);
 		unit_name: string(STR_CARGO_NAME_SUGARCANE);
-		type_abbreviation: string(STR_GENERIC_DC04);
+		type_abbreviation: string(STR_CID_SUGARCANE);
 		sprite: 65535;
 		weight: 1.0;
 		station_list_colour: 182;
@@ -550,7 +550,7 @@ item(FEAT_CARGOS, cargo_fuel_oil, 25) {
 		number: 25;
 		type_name: string(STR_CARGO_NAME_PETROL);
 		unit_name: string(STR_CARGO_NAME_PETROL);
-		type_abbreviation: string(STR_GENERIC_DC37);
+		type_abbreviation: string(STR_CID_PETROL);
 		sprite: 65535;
 		weight: 0.6875;
 		station_list_colour: 175;
@@ -571,7 +571,7 @@ item(FEAT_CARGOS, cargo_chemicals, 23) {
 		number: 23;
 		type_name: string(STR_CARGO_NAME_CHEMICALS);
 		unit_name: string(STR_CARGO_NAME_CHEMICALS);
-		type_abbreviation: string(STR_GENERIC_DC30);
+		type_abbreviation: string(STR_CID_CHEMICALS);
 		sprite: 65535;
 		weight: 0.625;
 		station_list_colour: 177;
@@ -590,9 +590,9 @@ item(FEAT_CARGOS, cargo_chemicals, 23) {
 item(FEAT_CARGOS, cargo_manufacturing_supplies, 18) {
 	property {
 		number: 18;
-		type_name: string(STR_CARGO_NAME_MNSP);
-		unit_name: string(STR_CARGO_NAME_MNSP);
-		type_abbreviation: string(STR_GENERIC_DC29);
+		type_name: string(STR_CARGO_NAME_MANUFACTURING_SUPPLIES);
+		unit_name: string(STR_CARGO_NAME_MANUFACTURING_SUPPLIES);
+		type_abbreviation: string(STR_CID_MANUFACTURING_SUPPLIEs);
 		sprite: 65535;
 		weight: 0.3125;
 		station_list_colour: 146;
@@ -632,9 +632,9 @@ item(FEAT_CARGOS, cargo_engineering_supplies, 24) {
 item(FEAT_CARGOS, cargo_farm_supplies, 21) {
 	property {
 		number: 21;
-		type_name: string(STR_CARGO_NAME_FMSP);
-		unit_name: string(STR_CARGO_NAME_FMSP);
-		type_abbreviation: string(STR_GENERIC_DC2D);
+		type_name: string(STR_CARGO_NAME_FARM_SUPPLIES);
+		unit_name: string(STR_CARGO_NAME_FARM_SUPPLIES);
+		type_abbreviation: string(STR_CID_FARM_SUPPLIES);
 		sprite: 65535;
 		weight: 0.5625;
 		station_list_colour: 75;
