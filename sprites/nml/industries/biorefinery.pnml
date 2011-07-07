@@ -758,21 +758,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_2882, STORE_PERM((65535 / 2), 0)) {
 	action2_2875;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_2883, (current_date + 1)) {
-	0..729390: return 1;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_2884, (extra_callback_info2 & 255)) {
-	1: return 1;
-	2: return 1;
-	action2_2883;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_2885, restrict_open_during_gameplay) {
-	1..255: action2_2884;
-	action2_2883;
-}
+ALLOW_OPENING_SWITCH(action2_2885, 1998, -1)
 
 switch(FEAT_INDUSTRIES, SELF, action2_2886, [STORE_TEMP((729390 - 701265), 256), 32933]) {
 	return;

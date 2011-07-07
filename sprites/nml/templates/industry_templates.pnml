@@ -1,0 +1,16 @@
+#define ALLOW_OPENING_SWITCH(switchname, minyear, maxyear) \
+switch(FEAT_INDUSTRIES, SELF, switchname ## _year_check, (current_date + 1)) { \
+	date(minyear, 1, 1) .. date(maxyear, 1, 1): return 0; \
+	return 1; \
+} \
+ \
+switch(FEAT_INDUSTRIES, SELF, switchname ## _founder_check, (extra_callback_info2 & 255)) { \
+	1: return 1; \
+	2: return 1; \
+	switchname ## _year_check; \
+} \
+ \
+switch(FEAT_INDUSTRIES, SELF, switchname, restrict_open_during_gameplay) { \
+	1..255: switchname ## _founder_check; \
+	switchname ## _year_check; \
+}
