@@ -392,7 +392,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_2744, [STORE_TEMP(LOAD_PERM(0), 256), var[
 	return string(STR_GENERIC_D0B1);
 }
 
-ALLOW_OPENING_SWITCH(action2_2748, 0, -1)
+CHECK_OPENING(action2_2748, 0, -1)
 
 switch(FEAT_INDUSTRIES, SELF, action2_2749, [STORE_TEMP(-701265, 256), 32928]) {
 	return;

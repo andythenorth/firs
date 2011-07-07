@@ -1999,7 +1999,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3060, STORE_PERM((65535 / 3), 0)) {
 	action2_3052;
 }
 
-ALLOW_OPENING_SWITCH(action2_3063, 0, -1)
+CHECK_OPENING(action2_3063, 0, -1)
 
 switch(FEAT_INDUSTRIES, SELF, action2_3064, [STORE_TEMP(-701265, 256), 32928]) {
 	return;
@@ -2933,7 +2933,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3169, STORE_PERM((65535 / 3), 0)) {
 	action2_3161;
 }
 
-ALLOW_OPENING_SWITCH(action2_3172, 0, -1)
+CHECK_OPENING(action2_3172, 0, -1)
 
 switch(FEAT_INDUSTRIES, SELF, action2_3173, [STORE_TEMP(-701265, 256), 32933]) {
 	return;
@@ -3350,7 +3350,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3233, game_mode) {
 	return 1024;
 }
 
-ALLOW_OPENING_SWITCH(action2_3236, 0, -1)
+CHECK_OPENING(action2_3236, 0, -1)
 
 switch(FEAT_INDUSTRIES, SELF, switch_main_builders_yard, current_callback) {
 	IND_CB_AVAILABILITY: action2_3236;
@@ -5725,7 +5725,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3511, [STORE_TEMP(LOAD_PERM(0), 256), var[
 	return string(STR_GENERIC_D0B0);
 }
 
-ALLOW_OPENING_SWITCH(action2_3515, 0, -1)
+CHECK_OPENING(action2_3515, 0, -1)
 
 switch(FEAT_INDUSTRIES, SELF, action2_3516, [STORE_TEMP(-701265, 256), 32928]) {
 	return;
@@ -6819,7 +6819,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3626, STORE_PERM((65535 / 3), 0)) {
 	action2_3618;
 }
 
-ALLOW_OPENING_SWITCH(action2_3629, 1903, -1)
+CHECK_OPENING(action2_3629, 1903, -1)
 
 switch(FEAT_INDUSTRIES, SELF, action2_3630, [STORE_TEMP((694691 - 701265), 256), 32933]) {
 	return;
@@ -7026,7 +7026,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3663, [STORE_TEMP(LOAD_PERM(0), 256), var[
 	return string(STR_GENERIC_D0B0);
 }
 
-ALLOW_OPENING_SWITCH(action2_3667, 0, -1)
+CHECK_OPENING(action2_3667, 0, -1)
 
 switch(FEAT_INDUSTRIES, SELF, action2_3668, [STORE_TEMP(-701265, 256), 32928]) {
 	return;
@@ -7595,7 +7595,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3742, [STORE_TEMP(LOAD_PERM(0), 256), var[
 	return string(STR_GENERIC_D0B1);
 }
 
-ALLOW_OPENING_SWITCH(action2_3746, 0, -1)
+CHECK_OPENING(action2_3746, 0, -1)
 
 switch(FEAT_INDUSTRIES, SELF, action2_3747, [STORE_TEMP(-701265, 256), 32928]) {
 	return;
@@ -9404,7 +9404,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3922, STORE_PERM((65535 / 2), 0)) {
 	action2_3914;
 }
 
-ALLOW_OPENING_SWITCH(action2_3925, 1892, -1)
+CHECK_OPENING(action2_3925, 1892, -1)
 
 switch(FEAT_INDUSTRIES, SELF, action2_3926, [STORE_TEMP((691039 - 701265), 256), 32933]) {
 	return;
@@ -9674,7 +9674,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3965, [STORE_TEMP(LOAD_PERM(0), 256), var[
 	return string(STR_GENERIC_D0B0);
 }
 
-ALLOW_OPENING_SWITCH(action2_3969, 1852, -1)
+CHECK_OPENING(action2_3969, 1852, -1)
 
 switch(FEAT_INDUSTRIES, SELF, action2_3970, [STORE_TEMP((676429 - 701265), 256), 32933]) {
 	return;
@@ -18801,7 +18801,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_4580, STORE_PERM((65535 / 1), 0)) {
 	action2_4573;
 }
 
-ALLOW_OPENING_SWITCH(action2_4583, 0, 1951)
+CHECK_OPENING(action2_4583, 0, 1951)
 
 switch(FEAT_INDUSTRIES, SELF, action2_4584, [STORE_TEMP(-701265, 256), 32928]) {
 	return;
@@ -24376,7 +24376,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_4825, [STORE_TEMP(LOAD_PERM(0), 256), var[
 	return string(STR_GENERIC_D0B1);
 }
 
-ALLOW_OPENING_SWITCH(action2_4829, 0, -1)
+CHECK_OPENING(action2_4829, 0, -1)
 
 switch(FEAT_INDUSTRIES, SELF, action2_4830, [STORE_TEMP(-701265, 256), 32928]) {
 	return;
@@ -25328,7 +25328,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_4948, STORE_PERM((65535 / 2), 0)) {
 	action2_4940;
 }
 
-ALLOW_OPENING_SWITCH(action2_4951, 1841, -1)
+CHECK_OPENING(action2_4951, 1841, -1)
 
 switch(FEAT_INDUSTRIES, SELF, action2_4952, [STORE_TEMP((672046 - 701265), 256), 32933]) {
 	return;
@@ -26098,7 +26098,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_5061, STORE_PERM((65535 / 2), 0)) {
 	action2_5053;
 }
 
-ALLOW_OPENING_SWITCH(action2_5064, 0, -1)
+CHECK_OPENING(action2_5064, 0, -1)
 
 switch(FEAT_INDUSTRIES, SELF, action2_5065, [STORE_TEMP(-701265, 256), 32928]) {
 	return;
@@ -27224,7 +27224,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_5217, STORE_PERM((65535 / 2), 0)) {
 	action2_5209;
 }
 
-ALLOW_OPENING_SWITCH(action2_5220, 0, -1)
+CHECK_OPENING(action2_5220, 0, -1)
 
 switch(FEAT_INDUSTRIES, SELF, action2_5221, [STORE_TEMP(-701265, 256), 32933]) {
 	return;
@@ -27441,7 +27441,7 @@ item(FEAT_INDUSTRIES, hardware_store, 57) {
 
 produce(action2_5252, 9999, 9999, 0, 0, 0, 0);
 
-ALLOW_OPENING_SWITCH(action2_5255, 0, -1)
+CHECK_OPENING(action2_5255, 0, -1)
 
 switch(FEAT_INDUSTRIES, SELF, switch_main_hardware_store, current_callback) {
 	IND_CB_AVAILABILITY: action2_5255;
@@ -27607,7 +27607,7 @@ item(FEAT_INDUSTRIES, hotel, 58) {
 
 produce(action2_5274, 9999, 9999, 0, 0, 0, 0);
 
-ALLOW_OPENING_SWITCH(action2_5277, 0, -1)
+CHECK_OPENING(action2_5277, 0, -1)
 
 
 switch(FEAT_INDUSTRIES, SELF, switch_main_hotel, current_callback) {
@@ -27727,7 +27727,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_5298, [STORE_TEMP(LOAD_PERM(0), 256), var[
 	return string(STR_GENERIC_D0B0);
 }
 
-ALLOW_OPENING_SWITCH(action2_5302, 0, -1)
+CHECK_OPENING(action2_5302, 0, -1)
 
 
 switch(FEAT_INDUSTRIES, SELF, action2_5303, [STORE_TEMP(-701265, 256), 32928]) {
@@ -29983,7 +29983,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_5491, STORE_PERM((65535 / 2), 0)) {
 	action2_5483;
 }
 
-ALLOW_OPENING_SWITCH(action2_5494, 0, 1901)
+CHECK_OPENING(action2_5494, 0, 1901)
 
 switch(FEAT_INDUSTRIES, SELF, action2_5495, [STORE_TEMP(-701265, 256), 32928]) {
 	return;
@@ -30475,7 +30475,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_5560, [STORE_TEMP(LOAD_PERM(0), 256), var[
 	return string(STR_GENERIC_D0B0);
 }
 
-ALLOW_OPENING_SWITCH(action2_5564, 1879, -1)
+CHECK_OPENING(action2_5564, 1879, -1)
 
 switch(FEAT_INDUSTRIES, SELF, action2_5565, [STORE_TEMP((685926 - 701265), 256), 32933]) {
 	return;
@@ -31377,7 +31377,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_5679, STORE_PERM((65535 / 2), 0)) {
 	action2_5671;
 }
 
-ALLOW_OPENING_SWITCH(action2_5682, 0, -1)
+CHECK_OPENING(action2_5682, 0, -1)
 
 switch(FEAT_INDUSTRIES, SELF, action2_5683, [STORE_TEMP(-701265, 256), 32928]) {
 	return;
@@ -32013,7 +32013,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_5771, STORE_PERM((65535 / 2), 0)) {
 	action2_5763;
 }
 
-ALLOW_OPENING_SWITCH(action2_5774, 0, -1)
+CHECK_OPENING(action2_5774, 0, -1)
 
 switch(FEAT_INDUSTRIES, SELF, action2_5775, [STORE_TEMP(-701265, 256), 32933]) {
 	return;
@@ -35674,7 +35674,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6055, STORE_PERM((65535 / 2), 0)) {
 	action2_6048;
 }
 
-ALLOW_OPENING_SWITCH(action2_6058, 1871, -1)
+CHECK_OPENING(action2_6058, 1871, -1)
 
 switch(FEAT_INDUSTRIES, SELF, action2_6059, [STORE_TEMP((683004 - 701265), 256), 32933]) {
 	return;
@@ -36784,7 +36784,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6207, STORE_PERM((65535 / 2), 0)) {
 	action2_6199;
 }
 
-ALLOW_OPENING_SWITCH(action2_6210, 0, -1)
+CHECK_OPENING(action2_6210, 0, -1)
 
 switch(FEAT_INDUSTRIES, SELF, action2_6211, [STORE_TEMP(-701265, 256), 32933]) {
 	return;
@@ -38970,7 +38970,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6386, STORE_PERM((65535 / 1), 0)) {
 	action2_6379;
 }
 
-ALLOW_OPENING_SWITCH(action2_6389, 1763, -1)
+CHECK_OPENING(action2_6389, 1763, -1)
 
 switch(FEAT_INDUSTRIES, SELF, action2_6390, [STORE_TEMP((643558 - 701265), 256), 32940]) {
 	return;
@@ -39506,7 +39506,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6466, [STORE_TEMP(LOAD_PERM(0), 256), var[
 	return string(STR_GENERIC_D0B1);
 }
 
-ALLOW_OPENING_SWITCH(action2_6470, 0, -1)
+CHECK_OPENING(action2_6470, 0, -1)
 
 switch(FEAT_INDUSTRIES, SELF, action2_6471, [STORE_TEMP(-701265, 256), 32928]) {
 	return;
@@ -39680,7 +39680,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6494, [STORE_TEMP(LOAD_PERM(0), 256), var[
 	return string(STR_GENERIC_D0B0);
 }
 
-ALLOW_OPENING_SWITCH(action2_6498, 1968, -1)
+CHECK_OPENING(action2_6498, 1968, -1)
 
 switch(FEAT_INDUSTRIES, SELF, action2_6499, [STORE_TEMP((718432 - 701265), 256), 32933]) {
 	return;
@@ -39957,7 +39957,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6540, STORE_PERM((65535 / 1), 0)) {
 	action2_6533;
 }
 
-ALLOW_OPENING_SWITCH(action2_6543, 1885, -1)
+CHECK_OPENING(action2_6543, 1885, -1)
 
 switch(FEAT_INDUSTRIES, SELF, action2_6544, [STORE_TEMP((688117 - 701265), 256), 32933]) {
 	return;
@@ -40428,7 +40428,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6610, [STORE_TEMP(LOAD_PERM(0), 256), var[
 	return string(STR_GENERIC_D0B0);
 }
 
-ALLOW_OPENING_SWITCH(action2_6614, 1885, -1)
+CHECK_OPENING(action2_6614, 1885, -1)
 
 switch(FEAT_INDUSTRIES, SELF, action2_6615, [STORE_TEMP((688117 - 701265), 256), 32933]) {
 	return;
@@ -40739,7 +40739,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6666, STORE_PERM((65535 / 3), 0)) {
 	action2_6658;
 }
 
-ALLOW_OPENING_SWITCH(action2_6669, 1611, -1)
+CHECK_OPENING(action2_6669, 1611, -1)
 
 switch(FEAT_INDUSTRIES, SELF, action2_6670, [STORE_TEMP((588041 - 701265), 256), 32938]) {
 	return;
@@ -41139,7 +41139,7 @@ item(FEAT_INDUSTRIES, petrol_pump, 60) {
 
 produce(action2_6727, 9999, 9999, 0, 0, 0, 0);
 
-ALLOW_OPENING_SWITCH(action2_6730, 1910, -1)
+CHECK_OPENING(action2_6730, 1910, -1)
 
 switch(FEAT_INDUSTRIES, SELF, action2_6731, [STORE_TEMP((697248 - 701265), 256), 32933]) {
 	return;
@@ -42056,7 +42056,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6844, STORE_PERM((65535 / 1), 0)) {
 	action2_6837;
 }
 
-ALLOW_OPENING_SWITCH(action2_6847, 1932, -1)
+CHECK_OPENING(action2_6847, 1932, -1)
 
 switch(FEAT_INDUSTRIES, SELF, action2_6848, [STORE_TEMP((705283 - 701265), 256), 32933]) {
 	return;
@@ -44507,7 +44507,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_7133, [STORE_TEMP(LOAD_PERM(0), 256), var[
 	return string(STR_GENERIC_D0B0);
 }
 
-ALLOW_OPENING_SWITCH(action2_7137, 0, -1)
+CHECK_OPENING(action2_7137, 0, -1)
 
 switch(FEAT_INDUSTRIES, SELF, action2_7138, [STORE_TEMP(-701265, 256), 32928]) {
 	return;
@@ -44705,7 +44705,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_7161, town_euclidean_dist(0, 0)) {
 	return 1025;
 }
 
-ALLOW_OPENING_SWITCH(action2_7164, 1998, -1)
+CHECK_OPENING(action2_7164, 1998, -1)
 
 switch(FEAT_INDUSTRIES, SELF, action2_7165, [STORE_TEMP((729390 - 701265), 256), 32941]) {
 	return;
@@ -45149,7 +45149,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_7225, STORE_PERM((65535 / 1), 0)) {
 	action2_7218;
 }
 
-ALLOW_OPENING_SWITCH(action2_7228, 1998, -1)
+CHECK_OPENING(action2_7228, 1998, -1)
 
 switch(FEAT_INDUSTRIES, SELF, action2_7229, [STORE_TEMP((729390 - 701265), 256), 32933]) {
 	return;
@@ -45413,7 +45413,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_7273, STORE_PERM((65535 / 1), 0)) {
 	action2_7266;
 }
 
-ALLOW_OPENING_SWITCH(action2_7276, 0, -1)
+CHECK_OPENING(action2_7276, 0, -1)
 
 switch(FEAT_INDUSTRIES, SELF, action2_7277, [STORE_TEMP(-701265, 256), 32928]) {
 	return;
@@ -46208,7 +46208,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_7395, [STORE_TEMP(LOAD_PERM(0), 256), var[
 	return string(STR_GENERIC_D0B1);
 }
 
-ALLOW_OPENING_SWITCH(action2_7399, 0, -1)
+CHECK_OPENING(action2_7399, 0, -1)
 
 switch(FEAT_INDUSTRIES, SELF, action2_7400, [STORE_TEMP(-701265, 256), 32928]) {
 	return;
@@ -46523,7 +46523,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_7452, STORE_PERM((65535 / 3), 0)) {
 	action2_7444;
 }
 
-ALLOW_OPENING_SWITCH(action2_7455, 1874, -1)
+CHECK_OPENING(action2_7455, 1874, -1)
 
 switch(FEAT_INDUSTRIES, SELF, action2_7456, [STORE_TEMP((684100 - 701265), 256), 32933]) {
 	return;
@@ -47084,7 +47084,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_7540, STORE_PERM((65535 / 2), 0)) {
 	action2_7532;
 }
 
-ALLOW_OPENING_SWITCH(action2_7543, 1731, -1)
+CHECK_OPENING(action2_7543, 1731, -1)
 
 switch(FEAT_INDUSTRIES, SELF, action2_7544, [STORE_TEMP((631870 - 701265), 256), 32939]) {
 	return;
@@ -48631,7 +48631,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_7696, STORE_PERM((65535 / 3), 0)) {
 	action2_7688;
 }
 
-ALLOW_OPENING_SWITCH(action2_7699, 1763, -1)
+CHECK_OPENING(action2_7699, 1763, -1)
 
 switch(FEAT_INDUSTRIES, SELF, action2_7700, [STORE_TEMP((643558 - 701265), 256), 32940]) {
 	return;

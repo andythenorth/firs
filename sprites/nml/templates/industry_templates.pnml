@@ -9,7 +9,7 @@
  * The opening behaviour of industries opened randomly by the game
  * can be controlled by a NewGRF parameter
  */
-#define ALLOW_OPENING_SWITCH(switchname, minyear, maxyear) \
+#define CHECK_OPENING(switchname, minyear, maxyear) \
 switch(FEAT_INDUSTRIES, SELF, switchname ## _year_check, (current_date + 1)) { \
 	date(minyear, 1, 1) .. date(maxyear, 1, 1): return CB_RESULT_IND_ALLOW; \
 	return CB_RESULT_IND_DISALLOW; \
