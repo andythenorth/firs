@@ -137,7 +137,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_197, 197) {
 	}
 }
 
-tilelayout tilelayout_bauxite_mine_0 {
+tilelayout tilelayout_bauxite_mine_1 {
 	0, 0: item_FEAT_INDUSTRYTILES_197;
 	2, 0: item_FEAT_INDUSTRYTILES_197;
 	3, 0: item_FEAT_INDUSTRYTILES_197;
@@ -153,7 +153,7 @@ tilelayout tilelayout_bauxite_mine_0 {
 item(FEAT_INDUSTRIES, bauxite_mine, 5) {
 	property {
 		substitute: 0;
-		layouts: [tilelayout_bauxite_mine_0];
+		layouts: [tilelayout_bauxite_mine_1];
 		life_type: 1;
 		closure_msg: 18483;
 		prod_increase_msg: 18485;

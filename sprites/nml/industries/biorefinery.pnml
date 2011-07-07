@@ -512,7 +512,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_166, 166) {
 	}
 }
 
-tilelayout tilelayout_biorefinery_0 {
+tilelayout tilelayout_biorefinery_1 {
 	0, 0: item_FEAT_INDUSTRYTILES_166;
 	0, 2: item_FEAT_INDUSTRYTILES_166;
 	0, 3: item_FEAT_INDUSTRYTILES_166;
@@ -527,7 +527,7 @@ tilelayout tilelayout_biorefinery_0 {
 	2, 4: item_FEAT_INDUSTRYTILES_166;
 }
 
-tilelayout tilelayout_biorefinery_1 {
+tilelayout tilelayout_biorefinery_2 {
 	0, 0: item_FEAT_INDUSTRYTILES_166;
 	0, 1: item_FEAT_INDUSTRYTILES_166;
 	0, 2: item_FEAT_INDUSTRYTILES_166;
@@ -545,7 +545,7 @@ tilelayout tilelayout_biorefinery_1 {
 	2, 4: item_FEAT_INDUSTRYTILES_166;
 }
 
-tilelayout tilelayout_biorefinery_2 {
+tilelayout tilelayout_biorefinery_3 {
 	0, 0: item_FEAT_INDUSTRYTILES_166;
 	0, 2: item_FEAT_INDUSTRYTILES_166;
 	0, 3: item_FEAT_INDUSTRYTILES_166;
@@ -563,7 +563,7 @@ tilelayout tilelayout_biorefinery_2 {
 	4, 3: item_FEAT_INDUSTRYTILES_166;
 }
 
-tilelayout tilelayout_biorefinery_3 {
+tilelayout tilelayout_biorefinery_4 {
 	0, 0: item_FEAT_INDUSTRYTILES_166;
 	0, 1: item_FEAT_INDUSTRYTILES_166;
 	0, 2: item_FEAT_INDUSTRYTILES_166;
@@ -584,7 +584,7 @@ tilelayout tilelayout_biorefinery_3 {
 item(FEAT_INDUSTRIES, biorefinery, 46) {
 	property {
 		substitute: 0;
-		layouts: [tilelayout_biorefinery_0, tilelayout_biorefinery_1, tilelayout_biorefinery_2, tilelayout_biorefinery_3];
+		layouts: [tilelayout_biorefinery_1, tilelayout_biorefinery_2, tilelayout_biorefinery_3, tilelayout_biorefinery_4];
 		life_type: 4;
 		closure_msg: 18483;
 		prod_increase_msg: 18485;

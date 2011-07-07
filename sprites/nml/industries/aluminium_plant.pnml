@@ -2373,7 +2373,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_185, 185) {
 	}
 }
 
-tilelayout tilelayout_aluminium_plant_0 {
+tilelayout tilelayout_aluminium_plant_1 {
 	0, 2: item_FEAT_INDUSTRYTILES_224;
 	0, 3: item_FEAT_INDUSTRYTILES_185;
 	1, 2: item_FEAT_INDUSTRYTILES_185;
@@ -2397,7 +2397,7 @@ tilelayout tilelayout_aluminium_plant_0 {
 	7, 1: item_FEAT_INDUSTRYTILES_185;
 }
 
-tilelayout tilelayout_aluminium_plant_1 {
+tilelayout tilelayout_aluminium_plant_2 {
 	0, 0: item_FEAT_INDUSTRYTILES_185;
 	0, 1: item_FEAT_INDUSTRYTILES_224;
 	0, 2: item_FEAT_INDUSTRYTILES_185;
@@ -2425,7 +2425,7 @@ tilelayout tilelayout_aluminium_plant_1 {
 	4, 4: item_FEAT_INDUSTRYTILES_185;
 }
 
-tilelayout tilelayout_aluminium_plant_2 {
+tilelayout tilelayout_aluminium_plant_3 {
 	0, 0: item_FEAT_INDUSTRYTILES_185;
 	1, 0: item_FEAT_INDUSTRYTILES_185;
 	1, 1: item_FEAT_INDUSTRYTILES_185;
@@ -2450,7 +2450,7 @@ tilelayout tilelayout_aluminium_plant_2 {
 item(FEAT_INDUSTRIES, aluminum_plant, 8) {
 	property {
 		substitute: 0;
-		layouts: [tilelayout_aluminium_plant_0, tilelayout_aluminium_plant_1, tilelayout_aluminium_plant_2];
+		layouts: [tilelayout_aluminium_plant_1, tilelayout_aluminium_plant_2, tilelayout_aluminium_plant_3];
 		life_type: 4;
 		closure_msg: 18483;
 		prod_increase_msg: 18485;
