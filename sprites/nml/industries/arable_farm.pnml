@@ -261,12 +261,12 @@ switch(FEAT_INDUSTRIES, SELF, action2_2726, STORE_TEMP(-1, 256)) {
 	action2_2725;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_2727, industry_distance(34)) {
+switch(FEAT_INDUSTRIES, SELF, action2_2727, industry_distance(grain_mill)) {
 	0..16: return 4;
 	action2_2726;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_2728, industry_distance(35)) {
+switch(FEAT_INDUSTRIES, SELF, action2_2728, industry_distance(brewery)) {
 	0..16: return 4;
 	action2_2727;
 }
@@ -276,7 +276,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_2729, industry_distance(46)) {
 	action2_2728;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_2730, industry_distance(19)) {
+switch(FEAT_INDUSTRIES, SELF, action2_2730, industry_distance(sugar_refinery)) {
 	0..16: return 4;
 	action2_2729;
 }

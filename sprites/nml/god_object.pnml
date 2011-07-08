@@ -1755,7 +1755,7 @@ item(FEAT_INDUSTRIES, brewery, 35) {
 	}
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3020, industry_distance(35)) {
+switch(FEAT_INDUSTRIES, SELF, action2_3020, industry_distance(brewery)) {
 	0..56: return 1025;
 	return 1024;
 }
@@ -1765,7 +1765,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3021, industry_distance(26)) {
 	action2_3020;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3022, industry_distance(34)) {
+switch(FEAT_INDUSTRIES, SELF, action2_3022, industry_distance(grain_mill)) {
 	0..16: return 4;
 	action2_3021;
 }
@@ -2555,22 +2555,22 @@ item(FEAT_INDUSTRIES, brick_works, 45) {
 	}
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3124, industry_distance(45)) {
+switch(FEAT_INDUSTRIES, SELF, action2_3124, industry_distance(brick_works)) {
 	0..56: return 1025;
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3125, industry_distance(0)) {
+switch(FEAT_INDUSTRIES, SELF, action2_3125, industry_distance(coal_mine)) {
 	0..16: return 4;
 	action2_3124;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3126, industry_distance(10)) {
+switch(FEAT_INDUSTRIES, SELF, action2_3126, industry_distance(quarry)) {
 	0..16: return 4;
 	action2_3125;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3127, industry_distance(44)) {
+switch(FEAT_INDUSTRIES, SELF, action2_3127, industry_distance(clay_pit)) {
 	0..16: return 4;
 	action2_3126;
 }
@@ -5350,17 +5350,17 @@ switch(FEAT_INDUSTRIES, SELF, action2_3494, 1) {
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3495, industry_distance(14)) {
+switch(FEAT_INDUSTRIES, SELF, action2_3495, industry_distance(lime_kiln4)) {
 	0..16: return 4;
 	action2_3494;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3496, industry_distance(43)) {
+switch(FEAT_INDUSTRIES, SELF, action2_3496, industry_distance(cement_plant)) {
 	0..16: return 4;
 	action2_3495;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3497, industry_distance(45)) {
+switch(FEAT_INDUSTRIES, SELF, action2_3497, industry_distance(brick_works)) {
 	0..16: return 4;
 	action2_3496;
 }
@@ -6218,22 +6218,22 @@ item(FEAT_INDUSTRIES, cement_plant, 43) {
 	}
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3581, industry_distance(43)) {
+switch(FEAT_INDUSTRIES, SELF, action2_3581, industry_distance(cement_plant)) {
 	0..56: return 1025;
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3582, industry_distance(0)) {
+switch(FEAT_INDUSTRIES, SELF, action2_3582, industry_distance(coal_mine)) {
 	0..16: return 4;
 	action2_3581;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3583, industry_distance(10)) {
+switch(FEAT_INDUSTRIES, SELF, action2_3583, industry_distance(quarry)) {
 	0..16: return 4;
 	action2_3582;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3584, industry_distance(44)) {
+switch(FEAT_INDUSTRIES, SELF, action2_3584, industry_distance(clay_pit)) {
 	0..16: return 4;
 	action2_3583;
 }
@@ -6492,7 +6492,7 @@ item(FEAT_INDUSTRIES, coal_mine, 0) {
 	}
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3643, industry_distance(0)) {
+switch(FEAT_INDUSTRIES, SELF, action2_3643, industry_distance(coal_mine)) {
 	20..70: return 1024;
 	return 4;
 }
@@ -6507,22 +6507,22 @@ switch(FEAT_INDUSTRIES, SELF, action2_3645, STORE_TEMP(-1, 256)) {
 	action2_3644;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3646, industry_distance(45)) {
+switch(FEAT_INDUSTRIES, SELF, action2_3646, industry_distance(brick_works)) {
 	0..16: return 4;
 	action2_3645;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3647, industry_distance(43)) {
+switch(FEAT_INDUSTRIES, SELF, action2_3647, industry_distance(cement_plant)) {
 	0..16: return 4;
 	action2_3646;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3648, industry_distance(7)) {
+switch(FEAT_INDUSTRIES, SELF, action2_3648, industry_distance(item_FEAT_INDUSTRIES_7)) {
 	0..16: return 4;
 	action2_3647;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3649, industry_distance(1)) {
+switch(FEAT_INDUSTRIES, SELF, action2_3649, industry_distance(lime_kiln)) {
 	0..16: return 4;
 	action2_3648;
 }
@@ -6989,7 +6989,7 @@ item(FEAT_INDUSTRIES, diary_farm, 28) {
 	}
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3724, industry_distance(28)) {
+switch(FEAT_INDUSTRIES, SELF, action2_3724, industry_distance(diary_farm)) {
 	10..36: return 1024;
 	return 4;
 }
@@ -7004,12 +7004,12 @@ switch(FEAT_INDUSTRIES, SELF, action2_3726, STORE_TEMP(-1, 256)) {
 	action2_3725;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3727, industry_distance(36)) {
+switch(FEAT_INDUSTRIES, SELF, action2_3727, industry_distance(diary)) {
 	0..16: return 4;
 	action2_3726;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3728, industry_distance(37)) {
+switch(FEAT_INDUSTRIES, SELF, action2_3728, industry_distance(stockyard)) {
 	0..16: return 4;
 	action2_3727;
 }
@@ -8613,12 +8613,12 @@ item(FEAT_INDUSTRIES, diary, 36) {
 	}
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3884, industry_distance(36)) {
+switch(FEAT_INDUSTRIES, SELF, action2_3884, industry_distance(diary)) {
 	0..56: return 1025;
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3885, industry_distance(28)) {
+switch(FEAT_INDUSTRIES, SELF, action2_3885, industry_distance(diary_farm)) {
 	0..16: return 4;
 	action2_3884;
 }
@@ -8920,27 +8920,27 @@ item(FEAT_INDUSTRIES, dredging_site, 20) {
 	}
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3946, industry_distance(20)) {
+switch(FEAT_INDUSTRIES, SELF, action2_3946, industry_distance(dredging_site)) {
 	0..56: return 1025;
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3947, industry_distance(1)) {
+switch(FEAT_INDUSTRIES, SELF, action2_3947, industry_distance(lime_kiln)) {
 	0..16: return 4;
 	action2_3946;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3948, industry_distance(22)) {
+switch(FEAT_INDUSTRIES, SELF, action2_3948, industry_distance(glass_works)) {
 	0..16: return 4;
 	action2_3947;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3949, industry_distance(43)) {
+switch(FEAT_INDUSTRIES, SELF, action2_3949, industry_distance(cement_plant)) {
 	0..16: return 4;
 	action2_3948;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3950, industry_distance(45)) {
+switch(FEAT_INDUSTRIES, SELF, action2_3950, industry_distance(brick_works)) {
 	0..16: return 4;
 	action2_3949;
 }
@@ -9789,7 +9789,7 @@ item(FEAT_INDUSTRIES, fertilizer_plant, 40) {
 	}
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_4030, industry_distance(40)) {
+switch(FEAT_INDUSTRIES, SELF, action2_4030, industry_distance(fertilizer_plant)) {
 	0..56: return 1025;
 	return 1024;
 }
@@ -10345,7 +10345,7 @@ item(FEAT_INDUSTRIES, fishing_grounds, 32) {
 	}
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_4092, industry_distance(31)) {
+switch(FEAT_INDUSTRIES, SELF, action2_4092, industry_distance(fishing_harbour)) {
 	16..60: return 1024;
 	return 4;
 }
@@ -11441,7 +11441,7 @@ item(FEAT_INDUSTRIES, fishing_harbour, 31) {
 	}
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_4176, industry_distance(32)) {
+switch(FEAT_INDUSTRIES, SELF, action2_4176, industry_distance(fishing_grounds)) {
 	16..60: return 1024;
 	return 4;
 }
@@ -17241,7 +17241,7 @@ item(FEAT_INDUSTRIES, oil_wells, 11) {
 	}
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_4479, industry_distance(11)) {
+switch(FEAT_INDUSTRIES, SELF, action2_4479, industry_distance(oil_wells)) {
 	15..80: return 1024;
 	return 4;
 }
@@ -17256,12 +17256,12 @@ switch(FEAT_INDUSTRIES, SELF, action2_4481, STORE_TEMP(-1, 256)) {
 	action2_4480;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_4482, industry_distance(12)) {
+switch(FEAT_INDUSTRIES, SELF, action2_4482, industry_distance(lime_kiln2)) {
 	0..16: return 4;
 	action2_4481;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_4483, industry_distance(14)) {
+switch(FEAT_INDUSTRIES, SELF, action2_4483, industry_distance(lime_kiln4)) {
 	0..16: return 4;
 	action2_4482;
 }
@@ -17645,7 +17645,7 @@ item(FEAT_INDUSTRIES, smithy_forge, 6) {
 	}
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_4552, industry_distance(6)) {
+switch(FEAT_INDUSTRIES, SELF, action2_4552, industry_distance(smithy_forge)) {
 	0..56: return 1025;
 	return 1024;
 }
@@ -23141,7 +23141,7 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_30, 30) {
 	}
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_4808, industry_distance(30)) {
+switch(FEAT_INDUSTRIES, SELF, action2_4808, industry_distance(item_FEAT_INDUSTRIES_30)) {
 	10..36: return 1024;
 	return 4;
 }
@@ -23156,7 +23156,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_4810, STORE_TEMP(-1, 256)) {
 	action2_4809;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_4811, industry_distance(35)) {
+switch(FEAT_INDUSTRIES, SELF, action2_4811, industry_distance(brewery)) {
 	0..16: return 4;
 	action2_4810;
 }
@@ -23912,7 +23912,7 @@ item(FEAT_INDUSTRIES, furniture_factory, 13) {
 	}
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_4911, industry_distance(13)) {
+switch(FEAT_INDUSTRIES, SELF, action2_4911, industry_distance(furniture_factory)) {
 	0..56: return 1025;
 	return 1024;
 }
@@ -24557,12 +24557,12 @@ item(FEAT_INDUSTRIES, glass_works, 22) {
 	}
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_5018, industry_distance(22)) {
+switch(FEAT_INDUSTRIES, SELF, action2_5018, industry_distance(glass_works)) {
 	0..56: return 1025;
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_5019, industry_distance(10)) {
+switch(FEAT_INDUSTRIES, SELF, action2_5019, industry_distance(quarry)) {
 	0..16: return 4;
 	action2_5018;
 }
@@ -25598,7 +25598,7 @@ item(FEAT_INDUSTRIES, grain_mill, 34) {
 	}
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_5176, industry_distance(34)) {
+switch(FEAT_INDUSTRIES, SELF, action2_5176, industry_distance(grain_mill)) {
 	0..56: return 1025;
 	return 1024;
 }
@@ -25608,7 +25608,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_5177, industry_distance(26)) {
 	action2_5176;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_5178, industry_distance(35)) {
+switch(FEAT_INDUSTRIES, SELF, action2_5178, industry_distance(brewery)) {
 	0..16: return 4;
 	action2_5177;
 }
@@ -26163,7 +26163,7 @@ item(FEAT_INDUSTRIES, oil_refinery, 4) {
 	}
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_5281, industry_distance(4)) {
+switch(FEAT_INDUSTRIES, SELF, action2_5281, industry_distance(oil_refinery)) {
 	20..70: return 1024;
 	return 4;
 }
@@ -26178,7 +26178,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_5283, STORE_TEMP(-1, 256)) {
 	action2_5282;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_5284, industry_distance(7)) {
+switch(FEAT_INDUSTRIES, SELF, action2_5284, industry_distance(item_FEAT_INDUSTRIES_7)) {
 	0..16: return 4;
 	action2_5283;
 }
@@ -28203,7 +28203,7 @@ item(FEAT_INDUSTRIES, iron_works, 21) {
 	}
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_5447, industry_distance(4)) {
+switch(FEAT_INDUSTRIES, SELF, action2_5447, industry_distance(oil_refinery)) {
 	16..60: return 1024;
 	return 4;
 }
@@ -29379,17 +29379,17 @@ item(FEAT_INDUSTRIES, lime_kiln, 1) {
 	}
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_5640, industry_distance(1)) {
+switch(FEAT_INDUSTRIES, SELF, action2_5640, industry_distance(lime_kiln)) {
 	0..56: return 1025;
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_5641, industry_distance(0)) {
+switch(FEAT_INDUSTRIES, SELF, action2_5641, industry_distance(coal_mine)) {
 	0..16: return 4;
 	action2_5640;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_5642, industry_distance(10)) {
+switch(FEAT_INDUSTRIES, SELF, action2_5642, industry_distance(quarry)) {
 	0..16: return 4;
 	action2_5641;
 }
@@ -29930,7 +29930,7 @@ item(FEAT_INDUSTRIES, lumber_yard, 41) {
 	}
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_5734, industry_distance(41)) {
+switch(FEAT_INDUSTRIES, SELF, action2_5734, industry_distance(lumber_yard)) {
 	0..56: return 1025;
 	return 1024;
 }
@@ -32809,7 +32809,7 @@ item(FEAT_INDUSTRIES, machine_shop, 38) {
 	}
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6027, industry_distance(38)) {
+switch(FEAT_INDUSTRIES, SELF, action2_6027, industry_distance(machine_shop)) {
 	0..56: return 1025;
 	return 1024;
 }
@@ -33764,22 +33764,22 @@ item(FEAT_INDUSTRIES, stockyard, 37) {
 	}
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6167, industry_distance(37)) {
+switch(FEAT_INDUSTRIES, SELF, action2_6167, industry_distance(stockyard)) {
 	0..56: return 1025;
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6168, industry_distance(28)) {
+switch(FEAT_INDUSTRIES, SELF, action2_6168, industry_distance(diary_farm)) {
 	0..16: return 4;
 	action2_6167;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6169, industry_distance(27)) {
+switch(FEAT_INDUSTRIES, SELF, action2_6169, industry_distance(sheep_farm)) {
 	0..16: return 4;
 	action2_6168;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6170, industry_distance(29)) {
+switch(FEAT_INDUSTRIES, SELF, action2_6170, industry_distance(mixed_farm)) {
 	0..16: return 4;
 	action2_6169;
 }
@@ -35915,7 +35915,7 @@ item(FEAT_INDUSTRIES, metal_foundry, 9) {
 	}
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6358, industry_distance(9)) {
+switch(FEAT_INDUSTRIES, SELF, action2_6358, industry_distance(metal_foundry)) {
 	0..56: return 1025;
 	return 1024;
 }
@@ -36400,7 +36400,7 @@ item(FEAT_INDUSTRIES, mixed_farm, 29) {
 	}
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6447, industry_distance(29)) {
+switch(FEAT_INDUSTRIES, SELF, action2_6447, industry_distance(mixed_farm)) {
 	10..36: return 1024;
 	return 4;
 }
@@ -36415,17 +36415,17 @@ switch(FEAT_INDUSTRIES, SELF, action2_6449, STORE_TEMP(-1, 256)) {
 	action2_6448;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6450, industry_distance(37)) {
+switch(FEAT_INDUSTRIES, SELF, action2_6450, industry_distance(stockyard)) {
 	0..16: return 4;
 	action2_6449;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6451, industry_distance(42)) {
+switch(FEAT_INDUSTRIES, SELF, action2_6451, industry_distance(textile_mill)) {
 	0..16: return 4;
 	action2_6450;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6452, industry_distance(18)) {
+switch(FEAT_INDUSTRIES, SELF, action2_6452, industry_distance(plastics_plant)) {
 	0..16: return 4;
 	action2_6451;
 }
@@ -36550,7 +36550,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6478, 1) {
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6479, industry_distance(17)) {
+switch(FEAT_INDUSTRIES, SELF, action2_6479, industry_distance(lime_kiln7)) {
 	0..16: return 4;
 	action2_6478;
 }
@@ -36709,17 +36709,17 @@ item(FEAT_INDUSTRIES, lime_kiln7, 17) {
 	}
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6510, industry_distance(17)) {
+switch(FEAT_INDUSTRIES, SELF, action2_6510, industry_distance(lime_kiln7)) {
 	0..56: return 1025;
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6511, industry_distance(15)) {
+switch(FEAT_INDUSTRIES, SELF, action2_6511, industry_distance(lime_kiln5)) {
 	0..16: return 4;
 	action2_6510;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6512, industry_distance(16)) {
+switch(FEAT_INDUSTRIES, SELF, action2_6512, industry_distance(lime_kiln6)) {
 	0..16: return 4;
 	action2_6511;
 }
@@ -37126,7 +37126,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6595, 1) {
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6596, industry_distance(17)) {
+switch(FEAT_INDUSTRIES, SELF, action2_6596, industry_distance(lime_kiln7)) {
 	0..16: return 4;
 	action2_6595;
 }
@@ -37244,17 +37244,17 @@ item(FEAT_INDUSTRIES, lime_kiln4, 14) {
 	}
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6622, industry_distance(14)) {
+switch(FEAT_INDUSTRIES, SELF, action2_6622, industry_distance(lime_kiln4)) {
 	0..56: return 1025;
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6623, industry_distance(11)) {
+switch(FEAT_INDUSTRIES, SELF, action2_6623, industry_distance(oil_wells)) {
 	0..16: return 4;
 	action2_6622;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6624, industry_distance(44)) {
+switch(FEAT_INDUSTRIES, SELF, action2_6624, industry_distance(clay_pit)) {
 	0..16: return 4;
 	action2_6623;
 }
@@ -38541,12 +38541,12 @@ item(FEAT_INDUSTRIES, plastics_plant, 18) {
 	}
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6815, industry_distance(18)) {
+switch(FEAT_INDUSTRIES, SELF, action2_6815, industry_distance(plastics_plant)) {
 	0..56: return 1025;
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6816, industry_distance(29)) {
+switch(FEAT_INDUSTRIES, SELF, action2_6816, industry_distance(mixed_farm)) {
 	0..16: return 4;
 	action2_6815;
 }
@@ -40956,22 +40956,22 @@ switch(FEAT_INDUSTRIES, SELF, action2_7115, 1) {
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7116, industry_distance(1)) {
+switch(FEAT_INDUSTRIES, SELF, action2_7116, industry_distance(lime_kiln)) {
 	0..16: return 4;
 	action2_7115;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7117, industry_distance(22)) {
+switch(FEAT_INDUSTRIES, SELF, action2_7117, industry_distance(glass_works)) {
 	0..16: return 4;
 	action2_7116;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7118, industry_distance(43)) {
+switch(FEAT_INDUSTRIES, SELF, action2_7118, industry_distance(cement_plant)) {
 	0..16: return 4;
 	action2_7117;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7119, industry_distance(45)) {
+switch(FEAT_INDUSTRIES, SELF, action2_7119, industry_distance(brick_works)) {
 	0..16: return 4;
 	action2_7118;
 }
@@ -41482,12 +41482,12 @@ item(FEAT_INDUSTRIES, recycling_plant, 23) {
 	}
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7194, industry_distance(23)) {
+switch(FEAT_INDUSTRIES, SELF, action2_7194, industry_distance(recycling_plant)) {
 	0..56: return 1025;
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7195, industry_distance(24)) {
+switch(FEAT_INDUSTRIES, SELF, action2_7195, industry_distance(recycling_depot)) {
 	0..16: return 4;
 	action2_7194;
 }
@@ -41692,7 +41692,7 @@ item(FEAT_INDUSTRIES, lime_kiln2, 12) {
 	}
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7242, industry_distance(11)) {
+switch(FEAT_INDUSTRIES, SELF, action2_7242, industry_distance(oil_wells)) {
 	16..60: return 1024;
 	return 4;
 }
@@ -41707,7 +41707,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_7244, STORE_TEMP(-1, 256)) {
 	action2_7243;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7245, industry_distance(11)) {
+switch(FEAT_INDUSTRIES, SELF, action2_7245, industry_distance(oil_wells)) {
 	0..16: return 4;
 	action2_7244;
 }
@@ -42412,7 +42412,7 @@ item(FEAT_INDUSTRIES, sheep_farm, 27) {
 	}
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7377, industry_distance(27)) {
+switch(FEAT_INDUSTRIES, SELF, action2_7377, industry_distance(sheep_farm)) {
 	10..36: return 1024;
 	return 4;
 }
@@ -42427,12 +42427,12 @@ switch(FEAT_INDUSTRIES, SELF, action2_7379, STORE_TEMP(-1, 256)) {
 	action2_7378;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7380, industry_distance(37)) {
+switch(FEAT_INDUSTRIES, SELF, action2_7380, industry_distance(stockyard)) {
 	0..16: return 4;
 	action2_7379;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7381, industry_distance(42)) {
+switch(FEAT_INDUSTRIES, SELF, action2_7381, industry_distance(textile_mill)) {
 	0..16: return 4;
 	action2_7380;
 }
@@ -42549,22 +42549,22 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_7, 7) {
 	}
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7407, industry_distance(7)) {
+switch(FEAT_INDUSTRIES, SELF, action2_7407, industry_distance(item_FEAT_INDUSTRIES_7)) {
 	0..56: return 1025;
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7408, industry_distance(0)) {
+switch(FEAT_INDUSTRIES, SELF, action2_7408, industry_distance(coal_mine)) {
 	0..16: return 4;
 	action2_7407;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7409, industry_distance(4)) {
+switch(FEAT_INDUSTRIES, SELF, action2_7409, industry_distance(oil_refinery)) {
 	0..16: return 4;
 	action2_7408;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7410, industry_distance(25)) {
+switch(FEAT_INDUSTRIES, SELF, action2_7410, industry_distance(junkyard)) {
 	0..16: return 4;
 	action2_7409;
 }
@@ -43050,7 +43050,7 @@ item(FEAT_INDUSTRIES, sugar_refinery, 19) {
 	}
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7502, industry_distance(19)) {
+switch(FEAT_INDUSTRIES, SELF, action2_7502, industry_distance(sugar_refinery)) {
 	0..56: return 1025;
 	return 1024;
 }
@@ -44497,17 +44497,17 @@ item(FEAT_INDUSTRIES, textile_mill, 42) {
 	}
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7657, industry_distance(42)) {
+switch(FEAT_INDUSTRIES, SELF, action2_7657, industry_distance(textile_mill)) {
 	0..56: return 1025;
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7658, industry_distance(29)) {
+switch(FEAT_INDUSTRIES, SELF, action2_7658, industry_distance(mixed_farm)) {
 	0..16: return 4;
 	action2_7657;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7659, industry_distance(27)) {
+switch(FEAT_INDUSTRIES, SELF, action2_7659, industry_distance(sheep_farm)) {
 	0..16: return 4;
 	action2_7658;
 }
