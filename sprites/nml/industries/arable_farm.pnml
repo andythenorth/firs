@@ -1,5 +1,5 @@
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_160, 160) {
+item(FEAT_INDUSTRYTILES, tile_arable_farm, 160) {
 	property {
 		substitute: 0;
 		accepted_cargos: [[21, 8], [0, 0], [0, 0]];
@@ -224,34 +224,34 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_2721, (current_callback & 255)) {
 	action2_2699;
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_160, 160) {
+item(FEAT_INDUSTRYTILES, tile_arable_farm, 160) {
 	graphics {
 		action2_2721;
 	}
 }
 
 tilelayout tilelayout_arable_farm_1 {
-	1, 0: item_FEAT_INDUSTRYTILES_160;
-	1, 1: item_FEAT_INDUSTRYTILES_160;
-	0, 2: item_FEAT_INDUSTRYTILES_160;
-	2, 1: item_FEAT_INDUSTRYTILES_160;
-	0, 1: item_FEAT_INDUSTRYTILES_160;
+	1, 0: tile_arable_farm;
+	1, 1: tile_arable_farm;
+	0, 2: tile_arable_farm;
+	2, 1: tile_arable_farm;
+	0, 1: tile_arable_farm;
 }
 
 tilelayout tilelayout_arable_farm_2 {
-	0, 0: item_FEAT_INDUSTRYTILES_160;
-	0, 1: item_FEAT_INDUSTRYTILES_160;
-	1, 0: item_FEAT_INDUSTRYTILES_160;
-	1, 1: item_FEAT_INDUSTRYTILES_160;
-	2, 0: item_FEAT_INDUSTRYTILES_160;
+	0, 0: tile_arable_farm;
+	0, 1: tile_arable_farm;
+	1, 0: tile_arable_farm;
+	1, 1: tile_arable_farm;
+	2, 0: tile_arable_farm;
 }
 
 tilelayout tilelayout_arable_farm_3 {
-	0, 0: item_FEAT_INDUSTRYTILES_160;
-	0, 1: item_FEAT_INDUSTRYTILES_160;
-	1, 0: item_FEAT_INDUSTRYTILES_160;
-	2, 0: item_FEAT_INDUSTRYTILES_160;
-	2, 1: item_FEAT_INDUSTRYTILES_160;
+	0, 0: tile_arable_farm;
+	0, 1: tile_arable_farm;
+	1, 0: tile_arable_farm;
+	2, 0: tile_arable_farm;
+	2, 1: tile_arable_farm;
 }
 
 item(FEAT_INDUSTRIES, arable_farm, 26) {
@@ -324,16 +324,16 @@ switch(FEAT_INDUSTRIES, SELF, action2_2731, founder) {
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_2732, game_mode) {
+switch(FEAT_INDUSTRIES, SELF, switch_arable_farm_cb_location_check, game_mode) {
 	1: action2_2731;
 	return 1024;
 }
 
-produce(action2_2733, 9999, 0, 0, 0, 0, 0);
+produce(switch_arable_farm_production, 9999, 0, 0, 0, 0, 0);
 
-switch(FEAT_INDUSTRIES, SELF, action2_2734, STORE_PERM((var[0x40, 0, -1] + LOAD_PERM(0)), 0)) {
-	0: action2_2733;
-	action2_2733;
+switch(FEAT_INDUSTRIES, SELF, switch_arable_farm_cb_production, STORE_PERM((var[0x40, 0, -1] + LOAD_PERM(0)), 0)) {
+	0: switch_arable_farm_production;
+	switch_arable_farm_production;
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_2735, var[0x93, 0, -1]) {
@@ -341,7 +341,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_2735, var[0x93, 0, -1]) {
 	return 0;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_2736, allow_close_primary) {
+switch(FEAT_INDUSTRIES, SELF, switch_arable_farm_cb_random_production, allow_close_primary) {
 	1..255: action2_2735;
 	return 0;
 }
@@ -377,78 +377,34 @@ switch(FEAT_INDUSTRIES, SELF, action2_2742, [STORE_PERM(0, 0), LOAD_TEMP(1)]) {
 	action2_2740;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_2743, STORE_TEMP(LOAD_PERM(0), 1)) {
+switch(FEAT_INDUSTRIES, SELF, switch_arable_farm_cb_monthly_production, STORE_TEMP(LOAD_PERM(0), 1)) {
 	0: action2_2742;
 	action2_2742;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_2744, [STORE_TEMP(LOAD_PERM(0), 256), var[0x93, 0, -1]]) {
+switch(FEAT_INDUSTRIES, SELF, switch_arable_farm_cb_text_industry, [STORE_TEMP(LOAD_PERM(0), 256), var[0x93, 0, -1]]) {
 	128: return string(STR_GENERIC_D0B3);
 	return string(STR_GENERIC_D0B1);
 }
 
-CHECK_OPENING(action2_2748, 0, -1)
+CHECK_OPENING(switch_arable_farm_cb_availability, 0, -1)
 
-switch(FEAT_INDUSTRIES, SELF, action2_2749, [STORE_TEMP(-701265, 256), 32928]) {
+switch(FEAT_INDUSTRIES, SELF, switch_arable_farm_cb_text_fund, [STORE_TEMP(-701265, 256), 32928]) {
 	return;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_2750, colour) {
-	0: return 0;
-	1: return 1;
-	2: return 2;
-	3: return 13;
-	4: return 2;
-	5: return 5;
-	6: return 1;
-	7: return 1;
-	8: return 0;
-	9: return 14;
-	10: return 10;
-	11: return 11;
-	12: return 13;
-	13: return 13;
-	14: return 14;
-	15: return 14;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_2751, colour) {
-	0: return 5;
-	1: return 1;
-	2: return 2;
-	3: return 3;
-	4: return 2;
-	5: return 5;
-	6: return 1;
-	7: return 7;
-	8: return 5;
-	9: return 14;
-	10: return 10;
-	11: return 10;
-	12: return 3;
-	13: return 13;
-	14: return 14;
-	15: return 15;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_2752, 1) {
-	1: action2_2750;
-	2: action2_2751;
-	action2_2750;
-}
+COLOUR_SCHEME1(switch_arable_farm_cb_colour)
 
 switch(FEAT_INDUSTRIES, SELF, switch_main_arable_farm, current_callback) {
-	0: action2_2734;
-	IND_CB_LOCATION_CHECK: action2_2732;
-	IND_CB_AVAILABILITY: action2_2748;
-	IND_CB_COLOUR: action2_2752;
-	IND_CB_EXTRA_TEXT_FUND: action2_2749;
-	IND_CB_RANDOM_PROD_CHANGE: action2_2736;
-	IND_CB_MONTHLY_PROD_CHANGE: action2_2743;
-	IND_CB_EXTRA_TEXT_INDUSTRY: action2_2744;
-	action2_2733;
+	0: switch_arable_farm_cb_production;
+	IND_CB_LOCATION_CHECK: switch_arable_farm_cb_location_check;
+	IND_CB_AVAILABILITY: switch_arable_farm_cb_availability;
+	IND_CB_COLOUR: switch_arable_farm_cb_colour;
+	IND_CB_EXTRA_TEXT_FUND: switch_arable_farm_cb_text_fund;
+	IND_CB_RANDOM_PROD_CHANGE: switch_arable_farm_cb_random_production;
+	IND_CB_MONTHLY_PROD_CHANGE: switch_arable_farm_cb_monthly_production;
+	IND_CB_EXTRA_TEXT_INDUSTRY: switch_arable_farm_cb_text_industry;
+	switch_arable_farm_production;
 }
 
 item(FEAT_INDUSTRIES, arable_farm, 26) {
