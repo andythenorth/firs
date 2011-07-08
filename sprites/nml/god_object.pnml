@@ -548,7 +548,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_2932, relative_pos) {
 	action2_2905;
 }
 
-switch(FEAT_INDUSTRYTILES, PARENT, action2_2933, layout_num) {
+switch(FEAT_INDUSTRYTILES, PARENT, switch_brewery_default_layout, layout_num) {
 	1: action2_2928;
 	2: action2_2929;
 	3: action2_2930;
@@ -1093,7 +1093,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_2967, relative_pos) {
 	action2_2940;
 }
 
-switch(FEAT_INDUSTRYTILES, PARENT, action2_2968, layout_num) {
+switch(FEAT_INDUSTRYTILES, PARENT, switch_brewery_desert_layout, layout_num) {
 	1: action2_2963;
 	2: action2_2964;
 	3: action2_2965;
@@ -1638,7 +1638,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_3002, relative_pos) {
 	action2_2975;
 }
 
-switch(FEAT_INDUSTRYTILES, PARENT, action2_3003, layout_num) {
+switch(FEAT_INDUSTRYTILES, PARENT, switch_brewery_snow_layout, layout_num) {
 	1: action2_2998;
 	2: action2_2999;
 	3: action2_3000;
@@ -1647,11 +1647,7 @@ switch(FEAT_INDUSTRYTILES, PARENT, action2_3003, layout_num) {
 	action2_2998;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_3004, terrain_type) {
-	1: action2_2968;
-	4: action2_3003;
-	action2_2933;
-}
+SWITCH_TERRAIN_NORMAL_DESERT_SNOW(brewery, layout)
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_3005, nearby_tile_class(1, 1)) {
 	8: return 1025;
@@ -1705,7 +1701,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_3014, var[0x60, 0, 255, 0]) {
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_3015, (current_callback & 255)) {
 	47: action2_3014;
-	action2_3004;
+	switch_brewery_terrain;
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_3016, (extra_callback_info1 & 14)) {
@@ -3089,7 +3085,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_3194, relative_pos) {
 	action2_3191;
 }
 
-switch(FEAT_INDUSTRYTILES, PARENT, action2_3195, layout_num) {
+switch(FEAT_INDUSTRYTILES, PARENT, switch_builders_yard_default_layout, layout_num) {
 	1: action2_3193;
 	2: action2_3194;
 	action2_3193;
@@ -3155,7 +3151,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_3204, relative_pos) {
 	action2_3201;
 }
 
-switch(FEAT_INDUSTRYTILES, PARENT, action2_3205, layout_num) {
+switch(FEAT_INDUSTRYTILES, PARENT, switch_builders_yard_desert_layout, layout_num) {
 	1: action2_3203;
 	2: action2_3204;
 	action2_3203;
@@ -3221,17 +3217,13 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_3214, relative_pos) {
 	action2_3211;
 }
 
-switch(FEAT_INDUSTRYTILES, PARENT, action2_3215, layout_num) {
+switch(FEAT_INDUSTRYTILES, PARENT, switch_builders_yard_snow_layout, layout_num) {
 	1: action2_3213;
 	2: action2_3214;
 	action2_3213;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_3216, terrain_type) {
-	1: action2_3205;
-	4: action2_3215;
-	action2_3195;
-}
+SWITCH_TERRAIN_NORMAL_DESERT_SNOW(builders_yard, layout)
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_3217, nearby_tile_class(1, 1)) {
 	8: return 1025;
@@ -3280,7 +3272,7 @@ switch(FEAT_INDUSTRYTILES, PARENT, action2_3225, founder) {
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_3226, (current_callback & 255)) {
 	47: action2_3225;
-	action2_3216;
+	switch_builders_yard_terrain;
 }
 
 item(FEAT_INDUSTRYTILES, tile_builders_yard, 164) {
@@ -4127,7 +4119,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_3334, relative_pos) {
 	action2_3331;
 }
 
-switch(FEAT_INDUSTRYTILES, PARENT, action2_3335, layout_num) {
+switch(FEAT_INDUSTRYTILES, PARENT, switch_clay_pit_default_layout, layout_num) {
 	1: action2_3333;
 	2: action2_3334;
 	action2_3296;
@@ -4665,7 +4657,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_3374, relative_pos) {
 	action2_3371;
 }
 
-switch(FEAT_INDUSTRYTILES, PARENT, action2_3375, layout_num) {
+switch(FEAT_INDUSTRYTILES, PARENT, switch_clay_pit_desert_layout, layout_num) {
 	1: action2_3373;
 	2: action2_3374;
 	action2_3336;
@@ -5423,17 +5415,13 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_3470, relative_pos) {
 	action2_3467;
 }
 
-switch(FEAT_INDUSTRYTILES, PARENT, action2_3471, layout_num) {
+switch(FEAT_INDUSTRYTILES, PARENT, switch_clay_pit_snow_layout, layout_num) {
 	1: action2_3469;
 	2: action2_3470;
 	action2_3432;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_3472, terrain_type) {
-	1: action2_3375;
-	4: action2_3471;
-	action2_3335;
-}
+SWITCH_TERRAIN_NORMAL_DESERT_SNOW(clay_pit, layout)
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_3473, nearby_tile_class(1, 1)) {
 	8: return 1025;
@@ -5529,7 +5517,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_3491, (current_callback & 255)) {
 	47: action2_3490;
 	48: return 0;
 	60: return 255;
-	action2_3472;
+	switch_clay_pit_terrain;
 }
 
 item(FEAT_INDUSTRYTILES, tile_clay_pit, 189) {
@@ -8109,7 +8097,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_3790, relative_pos) {
 	action2_3783;
 }
 
-switch(FEAT_INDUSTRYTILES, PARENT, action2_3791, layout_num) {
+switch(FEAT_INDUSTRYTILES, PARENT, switch_diary_default_layout, layout_num) {
 	1: action2_3784;
 	2: action2_3785;
 	3: action2_3786;
@@ -8552,7 +8540,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_3828, relative_pos) {
 	action2_3821;
 }
 
-switch(FEAT_INDUSTRYTILES, PARENT, action2_3829, layout_num) {
+switch(FEAT_INDUSTRYTILES, PARENT, switch_diary_desert_layout, layout_num) {
 	1: action2_3822;
 	2: action2_3823;
 	3: action2_3824;
@@ -8995,7 +8983,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_3866, relative_pos) {
 	action2_3859;
 }
 
-switch(FEAT_INDUSTRYTILES, PARENT, action2_3867, layout_num) {
+switch(FEAT_INDUSTRYTILES, PARENT, switch_diary_snow_layout, layout_num) {
 	1: action2_3860;
 	2: action2_3861;
 	3: action2_3862;
@@ -9006,11 +8994,7 @@ switch(FEAT_INDUSTRYTILES, PARENT, action2_3867, layout_num) {
 	action2_3860;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_3868, terrain_type) {
-	1: action2_3829;
-	4: action2_3867;
-	action2_3791;
-}
+SWITCH_TERRAIN_NORMAL_DESERT_SNOW(diary, layout)
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_3869, nearby_tile_class(1, 1)) {
 	8: return 1025;
@@ -9064,7 +9048,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_3878, var[0x60, 0, 255, 0]) {
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_3879, (current_callback & 255)) {
 	47: action2_3878;
-	action2_3868;
+	switch_diary_terrain;
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_3880, (extra_callback_info1 & 7)) {
@@ -12562,7 +12546,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_4235, relative_pos) {
 	action2_4234;
 }
 
-switch(FEAT_INDUSTRYTILES, PARENT, action2_4236, layout_num) {
+switch(FEAT_INDUSTRYTILES, PARENT, switch_food_market_default_layout, layout_num) {
 	1: action2_4235;
 	action2_4234;
 }
@@ -12587,7 +12571,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_4240, relative_pos) {
 	action2_4239;
 }
 
-switch(FEAT_INDUSTRYTILES, PARENT, action2_4241, layout_num) {
+switch(FEAT_INDUSTRYTILES, PARENT, switch_food_market_desert_layout, layout_num) {
 	1: action2_4240;
 	action2_4239;
 }
@@ -12612,20 +12596,16 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_4245, relative_pos) {
 	action2_4244;
 }
 
-switch(FEAT_INDUSTRYTILES, PARENT, action2_4246, layout_num) {
+switch(FEAT_INDUSTRYTILES, PARENT, switch_food_market_snow_layout, layout_num) {
 	1: action2_4245;
 	action2_4244;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4247, terrain_type) {
-	1: action2_4241;
-	4: action2_4246;
-	action2_4236;
-}
+SWITCH_TERRAIN_NORMAL_DESERT_SNOW(food_market, layout)
 
 item(FEAT_INDUSTRYTILES, tile_food_market, 194) {
 	graphics {
-		action2_4247;
+		switch_food_market_terrain;
 	}
 }
 
@@ -17197,7 +17177,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_4411, relative_pos) {
 	action2_4410;
 }
 
-switch(FEAT_INDUSTRYTILES, PARENT, action2_4412, layout_num) {
+switch(FEAT_INDUSTRYTILES, PARENT, switch_oil_wells_default_layout, layout_num) {
 	1: action2_4411;
 	action2_4411;
 }
@@ -17838,20 +17818,20 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_4433, relative_pos) {
 	action2_4432;
 }
 
-switch(FEAT_INDUSTRYTILES, PARENT, action2_4434, layout_num) {
+switch(FEAT_INDUSTRYTILES, PARENT, switch_oil_wells_desert_layout, layout_num) {
 	1: action2_4433;
 	action2_4433;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4435, terrain_type) {
-	1: action2_4434;
-	action2_4412;
+switch(FEAT_INDUSTRYTILES, SELF, switch_oil_wells_terrain, terrain_type) {
+	1: switch_oil_wells_desert_layout;
+	switch_oil_wells_default_layout;
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_4436, var[0x03, 0, 255]) {
 	0: action2_4279;
 	1: action2_4390;
-	2: action2_4435;
+	2: switch_oil_wells_terrain;
 	action2_4279;
 }
 
@@ -18414,7 +18394,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_4516, relative_pos) {
 	action2_4514;
 }
 
-switch(FEAT_INDUSTRYTILES, PARENT, action2_4517, layout_num) {
+switch(FEAT_INDUSTRYTILES, PARENT, switch_smithy_forge_default_layout, layout_num) {
 	1: action2_4516;
 	action2_4514;
 }
@@ -18483,7 +18463,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_4526, relative_pos) {
 	action2_4524;
 }
 
-switch(FEAT_INDUSTRYTILES, PARENT, action2_4527, layout_num) {
+switch(FEAT_INDUSTRYTILES, PARENT, switch_smithy_forge_desert_layout, layout_num) {
 	1: action2_4526;
 	action2_4524;
 }
@@ -18552,15 +18532,15 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_4536, relative_pos) {
 	action2_4534;
 }
 
-switch(FEAT_INDUSTRYTILES, PARENT, action2_4537, layout_num) {
+switch(FEAT_INDUSTRYTILES, PARENT, switch_smithy_forge_snow_layout, layout_num) {
 	1: action2_4536;
 	action2_4534;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4538, terrain_type) {
-	1: action2_4527;
-	4: action2_4537;
-	action2_4517;
+switch(FEAT_INDUSTRYTILES, SELF, switch_smithy_forge_terrain, terrain_type) {
+	1: switch_smithy_forge_desert_layout;
+	4: switch_smithy_forge_snow_layout;
+	switch_smithy_forge_default_layout;
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_4539, nearby_tile_class(1, 1)) {
@@ -18615,7 +18595,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_4548, var[0x60, 0, 255, 0]) {
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_4549, (current_callback & 255)) {
 	47: action2_4548;
-	action2_4538;
+	switch_smithy_forge_terrain;
 }
 
 item(FEAT_INDUSTRYTILES, tile_smithy_forge, 209) {
