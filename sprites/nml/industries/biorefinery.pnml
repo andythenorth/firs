@@ -752,20 +752,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_2886, [STORE_TEMP((729390 - 701265), 256),
 
 SWITCH_COLOUR_SCHEME1(action2_2889)
 
-switch(FEAT_INDUSTRIES, SELF, action2_2890, STORE_PERM((1 + LOAD_PERM(15)), 15)) {
-	0: return 0;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_2891, [STORE_PERM(0, 15), 1]) {
-	0: return 0;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_2892, produced_last_month_1) {
-	0: action2_2890;
-	action2_2891;
-}
+SET_PRODUCTION_COUNTER_PRODUCED(action2_2892)
 
 CHECK_CLOSE_SECONDARY(action2_2895) 
 

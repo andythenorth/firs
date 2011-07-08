@@ -2003,20 +2003,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3064, [STORE_TEMP(-701265, 256), 32928]) {
 
 SWITCH_COLOUR_SCHEME1(action2_3067)
 
-switch(FEAT_INDUSTRIES, SELF, action2_3068, STORE_PERM((1 + LOAD_PERM(15)), 15)) {
-	0: return 0;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_3069, [STORE_PERM(0, 15), 1]) {
-	0: return 0;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_3070, produced_last_month_1) {
-	0: action2_3068;
-	action2_3069;
-}
+SET_PRODUCTION_COUNTER_PRODUCED(action2_3070)
 
 CHECK_CLOSE_SECONDARY(action2_3073)
 
@@ -2879,20 +2866,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3173, [STORE_TEMP(-701265, 256), 32933]) {
 
 SWITCH_COLOUR_SCHEME1(action2_3176)
 
-switch(FEAT_INDUSTRIES, SELF, action2_3177, STORE_PERM((1 + LOAD_PERM(15)), 15)) {
-	0: return 0;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_3178, [STORE_PERM(0, 15), 1]) {
-	0: return 0;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_3179, produced_last_month_1) {
-	0: action2_3177;
-	action2_3178;
-}
+SET_PRODUCTION_COUNTER_PRODUCED(action2_3179)
 
 CHECK_CLOSE_SECONDARY(action2_3182)
 
@@ -6669,20 +6643,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3630, [STORE_TEMP((694691 - 701265), 256),
 
 SWITCH_COLOUR_SCHEME1(action2_3633)
 
-switch(FEAT_INDUSTRIES, SELF, action2_3634, STORE_PERM((1 + LOAD_PERM(15)), 15)) {
-	0: return 0;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_3635, [STORE_PERM(0, 15), 1]) {
-	0: return 0;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_3636, produced_last_month_1) {
-	0: action2_3634;
-	action2_3635;
-}
+SET_PRODUCTION_COUNTER_PRODUCED(action2_3636)
 
 CHECK_CLOSE_SECONDARY(action2_3639)
 
@@ -9118,20 +9079,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3926, [STORE_TEMP((691039 - 701265), 256),
 
 SWITCH_COLOUR_SCHEME1(action2_3929)
 
-switch(FEAT_INDUSTRIES, SELF, action2_3930, STORE_PERM((1 + LOAD_PERM(15)), 15)) {
-	0: return 0;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_3931, [STORE_PERM(0, 15), 1]) {
-	0: return 0;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_3932, produced_last_month_1) {
-	0: action2_3930;
-	action2_3931;
-}
+SET_PRODUCTION_COUNTER_PRODUCED(action2_3932)
 
 CHECK_CLOSE_SECONDARY(action2_3935)
 
@@ -10309,20 +10257,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_4062, [STORE_TEMP((703822 - 701265), 256),
 
 SWITCH_COLOUR_SCHEME1(action2_4065)
 
-switch(FEAT_INDUSTRIES, SELF, action2_4066, STORE_PERM((1 + LOAD_PERM(15)), 15)) {
-	0: return 0;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4067, [STORE_PERM(0, 15), 1]) {
-	0: return 0;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4068, produced_last_month_1) {
-	0: action2_4066;
-	action2_4067;
-}
+SET_PRODUCTION_COUNTER_PRODUCED(action2_4068)
 
 CHECK_CLOSE_SECONDARY(action2_4071)
 
@@ -12029,20 +11964,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_4219, [STORE_TEMP(-701265, 256), 32928]) {
 
 SWITCH_COLOUR_SCHEME1(action2_4222)
 
-switch(FEAT_INDUSTRIES, SELF, action2_4223, STORE_PERM((1 + LOAD_PERM(15)), 15)) {
-	0: return 0;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4224, [STORE_PERM(0, 15), 1]) {
-	0: return 0;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4225, produced_last_month_1) {
-	0: action2_4223;
-	action2_4224;
-}
+SET_PRODUCTION_COUNTER_PRODUCED(action2_4225)
 
 CHECK_CLOSE_SECONDARY(action2_4228)
 
@@ -18291,20 +18213,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_4584, [STORE_TEMP(-701265, 256), 32928]) {
 
 SWITCH_COLOUR_SCHEME1(action2_4587)
 
-switch(FEAT_INDUSTRIES, SELF, action2_4588, STORE_PERM((1 + LOAD_PERM(15)), 15)) {
-	0: return 0;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4589, [STORE_PERM(0, 15), 1]) {
-	0: return 0;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4590, produced_last_month_1) {
-	0: action2_4588;
-	action2_4589;
-}
+SET_PRODUCTION_COUNTER_PRODUCED(action2_4590)
 
 CHECK_CLOSE_SECONDARY(action2_4593)
 
@@ -24730,20 +24639,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_4952, [STORE_TEMP((672046 - 701265), 256),
 
 SWITCH_COLOUR_SCHEME1(action2_4955)
 
-switch(FEAT_INDUSTRIES, SELF, action2_4956, STORE_PERM((1 + LOAD_PERM(15)), 15)) {
-	0: return 0;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4957, [STORE_PERM(0, 15), 1]) {
-	0: return 0;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4958, produced_last_month_1) {
-	0: action2_4956;
-	action2_4957;
-}
+SET_PRODUCTION_COUNTER_PRODUCED(action2_4958)
 
 CHECK_CLOSE_SECONDARY(action2_4961)
 
@@ -25456,20 +25352,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_5065, [STORE_TEMP(-701265, 256), 32928]) {
 
 SWITCH_COLOUR_SCHEME1(action2_5068)
 
-switch(FEAT_INDUSTRIES, SELF, action2_5069, STORE_PERM((1 + LOAD_PERM(15)), 15)) {
-	0: return 0;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5070, [STORE_PERM(0, 15), 1]) {
-	0: return 0;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5071, produced_last_month_1) {
-	0: action2_5069;
-	action2_5070;
-}
+SET_PRODUCTION_COUNTER_PRODUCED(action2_5071)
 
 CHECK_CLOSE_SECONDARY(action2_5074)
 
@@ -26538,20 +26421,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_5221, [STORE_TEMP(-701265, 256), 32933]) {
 
 SWITCH_COLOUR_SCHEME1(action2_5224)
 
-switch(FEAT_INDUSTRIES, SELF, action2_5225, STORE_PERM((1 + LOAD_PERM(15)), 15)) {
-	0: return 0;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5226, [STORE_PERM(0, 15), 1]) {
-	0: return 0;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5227, produced_last_month_1) {
-	0: action2_5225;
-	action2_5226;
-}
+SET_PRODUCTION_COUNTER_PRODUCED(action2_5227)
 
 CHECK_CLOSE_SECONDARY(action2_5230)
 
@@ -29209,20 +29079,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_5495, [STORE_TEMP(-701265, 256), 32928]) {
 
 SWITCH_COLOUR_SCHEME1(action2_5498)
 
-switch(FEAT_INDUSTRIES, SELF, action2_5499, STORE_PERM((1 + LOAD_PERM(15)), 15)) {
-	0: return 0;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5500, [STORE_PERM(0, 15), 1]) {
-	0: return 0;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5501, produced_last_month_1) {
-	0: action2_5499;
-	action2_5500;
-}
+SET_PRODUCTION_COUNTER_PRODUCED(action2_5501)
 
 CHECK_CLOSE_SECONDARY(action2_5504)
 
@@ -30449,20 +30306,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_5683, [STORE_TEMP(-701265, 256), 32928]) {
 
 SWITCH_COLOUR_SCHEME1(action2_5686)
 
-switch(FEAT_INDUSTRIES, SELF, action2_5687, STORE_PERM((1 + LOAD_PERM(15)), 15)) {
-	0: return 0;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5688, [STORE_PERM(0, 15), 1]) {
-	0: return 0;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5689, produced_last_month_1) {
-	0: action2_5687;
-	action2_5688;
-}
+SET_PRODUCTION_COUNTER_PRODUCED(action2_5689)
 
 CHECK_CLOSE_SECONDARY(action2_5692)
 
@@ -31041,20 +30885,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_5775, [STORE_TEMP(-701265, 256), 32933]) {
 
 SWITCH_COLOUR_SCHEME1(action2_5778)
 
-switch(FEAT_INDUSTRIES, SELF, action2_5779, STORE_PERM((1 + LOAD_PERM(15)), 15)) {
-	0: return 0;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5780, [STORE_PERM(0, 15), 1]) {
-	0: return 0;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5781, produced_last_month_1) {
-	0: action2_5779;
-	action2_5780;
-}
+SET_PRODUCTION_COUNTER_PRODUCED(action2_5781)
 
 CHECK_CLOSE_SECONDARY(action2_5784)
 
@@ -33926,20 +33757,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6059, [STORE_TEMP((683004 - 701265), 256),
 
 SWITCH_COLOUR_SCHEME1(action2_6062)
 
-switch(FEAT_INDUSTRIES, SELF, action2_6063, STORE_PERM((1 + LOAD_PERM(15)), 15)) {
-	0: return 0;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6064, [STORE_PERM(0, 15), 1]) {
-	0: return 0;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6065, produced_last_month_1) {
-	0: action2_6063;
-	action2_6064;
-}
+SET_PRODUCTION_COUNTER_PRODUCED(action2_6065)
 
 CHECK_CLOSE_SECONDARY(action2_6068)
 
@@ -34992,20 +34810,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6211, [STORE_TEMP(-701265, 256), 32933]) {
 
 SWITCH_COLOUR_SCHEME1(action2_6214)
 
-switch(FEAT_INDUSTRIES, SELF, action2_6215, STORE_PERM((1 + LOAD_PERM(15)), 15)) {
-	0: return 0;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6216, [STORE_PERM(0, 15), 1]) {
-	0: return 0;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6217, produced_last_month_1) {
-	0: action2_6215;
-	action2_6216;
-}
+SET_PRODUCTION_COUNTER_PRODUCED(action2_6217)
 
 CHECK_CLOSE_SECONDARY(action2_6220)
 
@@ -37134,20 +36939,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6390, [STORE_TEMP((643558 - 701265), 256),
 
 SWITCH_COLOUR_SCHEME1(action2_6393)
 
-switch(FEAT_INDUSTRIES, SELF, action2_6394, STORE_PERM((1 + LOAD_PERM(15)), 15)) {
-	0: return 0;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6395, [STORE_PERM(0, 15), 1]) {
-	0: return 0;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6396, produced_last_month_1) {
-	0: action2_6394;
-	action2_6395;
-}
+SET_PRODUCTION_COUNTER_PRODUCED(action2_6396)
 
 CHECK_CLOSE_SECONDARY(action2_6399)
 
@@ -37989,20 +37781,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6544, [STORE_TEMP((688117 - 701265), 256),
 
 SWITCH_COLOUR_SCHEME1(action2_6547)
 
-switch(FEAT_INDUSTRIES, SELF, action2_6548, STORE_PERM((1 + LOAD_PERM(15)), 15)) {
-	0: return 0;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6549, [STORE_PERM(0, 15), 1]) {
-	0: return 0;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6550, produced_last_month_1) {
-	0: action2_6548;
-	action2_6549;
-}
+SET_PRODUCTION_COUNTER_PRODUCED(action2_6550)
 
 CHECK_CLOSE_SECONDARY(action2_6553)
 
@@ -38683,20 +38462,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6670, [STORE_TEMP((588041 - 701265), 256),
 
 SWITCH_COLOUR_SCHEME1(action2_6673)
 
-switch(FEAT_INDUSTRIES, SELF, action2_6674, STORE_PERM((1 + LOAD_PERM(15)), 15)) {
-	0: return 0;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6675, [STORE_PERM(0, 15), 1]) {
-	0: return 0;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6676, produced_last_month_1) {
-	0: action2_6674;
-	action2_6675;
-}
+SET_PRODUCTION_COUNTER_PRODUCED(action2_6676)
 
 CHECK_CLOSE_SECONDARY(action2_6679)
 
@@ -39956,20 +39722,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6848, [STORE_TEMP((705283 - 701265), 256),
 
 SWITCH_COLOUR_SCHEME2(action2_6851)
 
-switch(FEAT_INDUSTRIES, SELF, action2_6852, STORE_PERM((1 + LOAD_PERM(15)), 15)) {
-	0: return 0;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6853, [STORE_PERM(0, 15), 1]) {
-	0: return 0;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6854, produced_last_month_1) {
-	0: action2_6852;
-	action2_6853;
-}
+SET_PRODUCTION_COUNTER_PRODUCED(action2_6854)
 
 CHECK_CLOSE_SECONDARY(action2_6857) 
 
@@ -42961,20 +42714,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_7229, [STORE_TEMP((729390 - 701265), 256),
 
 SWITCH_COLOUR_SCHEME1(action2_7232)
 
-switch(FEAT_INDUSTRIES, SELF, action2_7233, STORE_PERM((1 + LOAD_PERM(15)), 15)) {
-	0: return 0;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7234, [STORE_PERM(0, 15), 1]) {
-	0: return 0;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7235, produced_last_month_1) {
-	0: action2_7233;
-	action2_7234;
-}
+SET_PRODUCTION_COUNTER_PRODUCED(action2_7235)
 
 CHECK_CLOSE_SECONDARY(action2_7238)
 
@@ -43181,20 +42921,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_7277, [STORE_TEMP(-701265, 256), 32928]) {
 
 SWITCH_COLOUR_SCHEME1(action2_7280)
 
-switch(FEAT_INDUSTRIES, SELF, action2_7281, STORE_PERM((1 + LOAD_PERM(15)), 15)) {
-	0: return 0;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7282, [STORE_PERM(0, 15), 1]) {
-	0: return 0;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7283, produced_last_month_1) {
-	0: action2_7281;
-	action2_7282;
-}
+SET_PRODUCTION_COUNTER_PRODUCED(action2_7283)
 
 CHECK_CLOSE_SECONDARY(action2_7286)
 
@@ -44197,20 +43924,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_7456, [STORE_TEMP((684100 - 701265), 256),
 
 SWITCH_COLOUR_SCHEME1(action2_7459)
 
-switch(FEAT_INDUSTRIES, SELF, action2_7460, STORE_PERM((1 + LOAD_PERM(15)), 15)) {
-	0: return 0;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7461, [STORE_PERM(0, 15), 1]) {
-	0: return 0;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7462, produced_last_month_1) {
-	0: action2_7460;
-	action2_7461;
-}
+SET_PRODUCTION_COUNTER_PRODUCED(action2_7462)
 
 CHECK_CLOSE_SECONDARY(action2_7465)
 
@@ -44714,20 +44428,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_7544, [STORE_TEMP((631870 - 701265), 256),
 
 SWITCH_COLOUR_SCHEME1(action2_7547)
 
-switch(FEAT_INDUSTRIES, SELF, action2_7548, STORE_PERM((1 + LOAD_PERM(15)), 15)) {
-	0: return 0;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7549, [STORE_PERM(0, 15), 1]) {
-	0: return 0;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7550, produced_last_month_1) {
-	0: action2_7548;
-	action2_7549;
-}
+SET_PRODUCTION_COUNTER_PRODUCED(action2_7550)
 
 CHECK_CLOSE_SECONDARY(action2_7553)
 
@@ -46217,20 +45918,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_7700, [STORE_TEMP((643558 - 701265), 256),
 
 SWITCH_COLOUR_SCHEME1(action2_7703)
 
-switch(FEAT_INDUSTRIES, SELF, action2_7704, STORE_PERM((1 + LOAD_PERM(15)), 15)) {
-	0: return 0;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7705, [STORE_PERM(0, 15), 1]) {
-	0: return 0;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7706, produced_last_month_1) {
-	0: action2_7704;
-	action2_7705;
-}
+SET_PRODUCTION_COUNTER_PRODUCED(action2_7706)
 
 CHECK_CLOSE_SECONDARY(action2_7709)
 
