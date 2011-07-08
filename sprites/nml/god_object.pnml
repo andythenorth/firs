@@ -30674,28 +30674,6 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_5586, relative_pos) {
 	action2_5582;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_5587, relative_pos) {
-	0: action2_5581;
-	256: action2_5580;
-	1: action2_5583;
-	257: action2_5582;
-	2: action2_5584;
-	258: action2_5585;
-	action2_5582;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_5588, relative_pos) {
-	0: action2_5581;
-	256: action2_5580;
-	512: action2_5583;
-	768: action2_5584;
-	1: action2_5581;
-	257: action2_5580;
-	513: action2_5585;
-	769: action2_5582;
-	action2_5582;
-}
-
 switch(FEAT_INDUSTRYTILES, PARENT, action2_5589, layout_num) {
 	1: action2_5586;
 	action2_5586;
@@ -30841,28 +30819,6 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_5604, relative_pos) {
 	action2_5600;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_5605, relative_pos) {
-	0: action2_5599;
-	256: action2_5598;
-	1: action2_5601;
-	257: action2_5600;
-	2: action2_5602;
-	258: action2_5603;
-	action2_5600;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_5606, relative_pos) {
-	0: action2_5599;
-	256: action2_5598;
-	512: action2_5601;
-	768: action2_5602;
-	1: action2_5599;
-	257: action2_5598;
-	513: action2_5603;
-	769: action2_5600;
-	action2_5600;
-}
-
 switch(FEAT_INDUSTRYTILES, PARENT, action2_5607, layout_num) {
 	1: action2_5604;
 	action2_5604;
@@ -31005,28 +30961,6 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_5622, relative_pos) {
 	1: action2_5620;
 	257: action2_5621;
 	513: action2_5619;
-	action2_5618;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_5623, relative_pos) {
-	0: action2_5617;
-	256: action2_5616;
-	1: action2_5619;
-	257: action2_5618;
-	2: action2_5620;
-	258: action2_5621;
-	action2_5618;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_5624, relative_pos) {
-	0: action2_5617;
-	256: action2_5616;
-	512: action2_5619;
-	768: action2_5620;
-	1: action2_5617;
-	257: action2_5616;
-	513: action2_5621;
-	769: action2_5618;
 	action2_5618;
 }
 
