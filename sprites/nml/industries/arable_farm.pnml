@@ -169,11 +169,6 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_2709, var[0x60, 0, 255, 0]) {
 	action2_2708;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2710, (current_callback & 255)) {
-	47: action2_2709;
-	action2_2699;
-}
-
 switch(FEAT_INDUSTRYTILES, SELF, action2_2711, var[0x60, 0, 255, 0]) {
 	1..255: return 1025;
 	action2_2709;
