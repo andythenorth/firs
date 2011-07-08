@@ -421,48 +421,10 @@ switch(FEAT_INDUSTRYTILES, PARENT, action2_2837, layout_num) {
 	action2_2815;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2838, nearby_tile_class(1, 1)) {
-	8: return 1025;
-	return 1024;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_2839, nearby_tile_class(0, 1)) {
-	8: return 1025;
-	action2_2838;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_2840, nearby_tile_class(-1, 1)) {
-	8: return 1025;
-	action2_2839;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_2841, nearby_tile_class(1, 0)) {
-	8: return 1025;
-	action2_2840;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_2842, nearby_tile_class(-1, 0)) {
-	8: return 1025;
-	action2_2841;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_2843, nearby_tile_class(1, -1)) {
-	8: return 1025;
-	action2_2842;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_2844, nearby_tile_class(0, -1)) {
-	8: return 1025;
-	action2_2843;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_2845, nearby_tile_class(-1, -1)) {
-	8: return 1025;
-	action2_2844;
-}
+CHECK_NEARBY_TILE_CLASS(switch_biorefinery_cb_nearby_check)
 
 switch(FEAT_INDUSTRYTILES, PARENT, action2_2846, founder) {
-	16: action2_2845;
+	16: switch_biorefinery_cb_nearby_check;
 	return 1024;
 }
 

@@ -76,48 +76,10 @@ switch(FEAT_INDUSTRYTILES, PARENT, action2_2762, layout_num) {
 	action2_2756;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2763, nearby_tile_class(1, 1)) {
-	8: return 1025;
-	return 1024;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_2764, nearby_tile_class(0, 1)) {
-	8: return 1025;
-	action2_2763;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_2765, nearby_tile_class(-1, 1)) {
-	8: return 1025;
-	action2_2764;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_2766, nearby_tile_class(1, 0)) {
-	8: return 1025;
-	action2_2765;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_2767, nearby_tile_class(-1, 0)) {
-	8: return 1025;
-	action2_2766;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_2768, nearby_tile_class(1, -1)) {
-	8: return 1025;
-	action2_2767;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_2769, nearby_tile_class(0, -1)) {
-	8: return 1025;
-	action2_2768;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_2770, nearby_tile_class(-1, -1)) {
-	8: return 1025;
-	action2_2769;
-}
+CHECK_NEARBY_TILE_CLASS(switch_bauxite_mine_cb_nearby_check)
 
 switch(FEAT_INDUSTRYTILES, PARENT, action2_2771, founder) {
-	16: action2_2770;
+	16: switch_bauxite_mine_cb_nearby_check;
 	return 1024;
 }
 

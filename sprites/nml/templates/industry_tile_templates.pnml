@@ -28,3 +28,18 @@ switch(FEAT_INDUSTRYTILES, SELF, switch_ ## name ## _terrain, terrain_type) { \
 switch(FEAT_INDUSTRYTILES, SELF, switch_ ## name ## _terrain, terrain_type) { \
 	switch_ ## name ## _default_ ## next; \
 }
+
+#define CHECK_NEARBY_TILE_CLASS(name) \
+switch(FEAT_INDUSTRYTILES, SELF, name, \
+    (nearby_tile_class(1, 1)   == TILE_CLASS_INDUSTRY) | \
+    (nearby_tile_class(1, 0)   == TILE_CLASS_INDUSTRY) | \
+    (nearby_tile_class(1, -1)  == TILE_CLASS_INDUSTRY) | \
+    (nearby_tile_class(0, -1)  == TILE_CLASS_INDUSTRY) | \
+    (nearby_tile_class(-1, -1) == TILE_CLASS_INDUSTRY) | \
+    (nearby_tile_class(-1, 0)  == TILE_CLASS_INDUSTRY) | \
+    (nearby_tile_class(-1, 1)  == TILE_CLASS_INDUSTRY) | \
+    (nearby_tile_class(0, 1)   == TILE_CLASS_INDUSTRY)) { \
+    1: return 1025; \
+    return 1024; \
+}
+    

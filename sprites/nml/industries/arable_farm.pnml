@@ -119,48 +119,10 @@ switch(FEAT_INDUSTRYTILES, PARENT, action2_2699, layout_num) {
 	action2_2691;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2700, nearby_tile_class(1, 1)) {
-	8: return 1025;
-	return 1024;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_2701, nearby_tile_class(0, 1)) {
-	8: return 1025;
-	action2_2700;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_2702, nearby_tile_class(-1, 1)) {
-	8: return 1025;
-	action2_2701;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_2703, nearby_tile_class(1, 0)) {
-	8: return 1025;
-	action2_2702;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_2704, nearby_tile_class(-1, 0)) {
-	8: return 1025;
-	action2_2703;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_2705, nearby_tile_class(1, -1)) {
-	8: return 1025;
-	action2_2704;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_2706, nearby_tile_class(0, -1)) {
-	8: return 1025;
-	action2_2705;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_2707, nearby_tile_class(-1, -1)) {
-	8: return 1025;
-	action2_2706;
-}
+CHECK_NEARBY_TILE_CLASS(switch_arable_farm_cb_nearby_check)
 
 switch(FEAT_INDUSTRYTILES, PARENT, action2_2708, founder) {
-	16: action2_2707;
+	16: switch_arable_farm_cb_nearby_check;
 	return 1024;
 }
 

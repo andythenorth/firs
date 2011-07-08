@@ -1649,45 +1649,7 @@ switch(FEAT_INDUSTRYTILES, PARENT, switch_brewery_snow_layout, layout_num) {
 
 SWITCH_TERRAIN_NORMAL_DESERT_SNOW(brewery, layout)
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_3005, nearby_tile_class(1, 1)) {
-	8: return 1025;
-	return 1024;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_3006, nearby_tile_class(0, 1)) {
-	8: return 1025;
-	action2_3005;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_3007, nearby_tile_class(-1, 1)) {
-	8: return 1025;
-	action2_3006;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_3008, nearby_tile_class(1, 0)) {
-	8: return 1025;
-	action2_3007;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_3009, nearby_tile_class(-1, 0)) {
-	8: return 1025;
-	action2_3008;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_3010, nearby_tile_class(1, -1)) {
-	8: return 1025;
-	action2_3009;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_3011, nearby_tile_class(0, -1)) {
-	8: return 1025;
-	action2_3010;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_3012, nearby_tile_class(-1, -1)) {
-	8: return 1025;
-	action2_3011;
-}
+CHECK_NEARBY_TILE_CLASS(action2_3012)
 
 switch(FEAT_INDUSTRYTILES, PARENT, action2_3013, founder) {
 	16: action2_3012;
@@ -2490,45 +2452,7 @@ switch(FEAT_INDUSTRYTILES, PARENT, action2_3108, layout_num) {
 	action2_3105;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_3109, nearby_tile_class(1, 1)) {
-	8: return 1025;
-	return 1024;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_3110, nearby_tile_class(0, 1)) {
-	8: return 1025;
-	action2_3109;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_3111, nearby_tile_class(-1, 1)) {
-	8: return 1025;
-	action2_3110;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_3112, nearby_tile_class(1, 0)) {
-	8: return 1025;
-	action2_3111;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_3113, nearby_tile_class(-1, 0)) {
-	8: return 1025;
-	action2_3112;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_3114, nearby_tile_class(1, -1)) {
-	8: return 1025;
-	action2_3113;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_3115, nearby_tile_class(0, -1)) {
-	8: return 1025;
-	action2_3114;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_3116, nearby_tile_class(-1, -1)) {
-	8: return 1025;
-	action2_3115;
-}
+CHECK_NEARBY_TILE_CLASS(action2_3116)
 
 switch(FEAT_INDUSTRYTILES, PARENT, action2_3117, founder) {
 	16: action2_3116;
@@ -3097,45 +3021,7 @@ switch(FEAT_INDUSTRYTILES, PARENT, switch_builders_yard_snow_layout, layout_num)
 
 SWITCH_TERRAIN_NORMAL_DESERT_SNOW(builders_yard, layout)
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_3217, nearby_tile_class(1, 1)) {
-	8: return 1025;
-	return 1024;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_3218, nearby_tile_class(0, 1)) {
-	8: return 1025;
-	action2_3217;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_3219, nearby_tile_class(-1, 1)) {
-	8: return 1025;
-	action2_3218;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_3220, nearby_tile_class(1, 0)) {
-	8: return 1025;
-	action2_3219;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_3221, nearby_tile_class(-1, 0)) {
-	8: return 1025;
-	action2_3220;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_3222, nearby_tile_class(1, -1)) {
-	8: return 1025;
-	action2_3221;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_3223, nearby_tile_class(0, -1)) {
-	8: return 1025;
-	action2_3222;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_3224, nearby_tile_class(-1, -1)) {
-	8: return 1025;
-	action2_3223;
-}
+CHECK_NEARBY_TILE_CLASS(action2_3224)
 
 switch(FEAT_INDUSTRYTILES, PARENT, action2_3225, founder) {
 	16: action2_3224;
@@ -5295,45 +5181,7 @@ switch(FEAT_INDUSTRYTILES, PARENT, switch_clay_pit_snow_layout, layout_num) {
 
 SWITCH_TERRAIN_NORMAL_DESERT_SNOW(clay_pit, layout)
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_3473, nearby_tile_class(1, 1)) {
-	8: return 1025;
-	return 1024;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_3474, nearby_tile_class(0, 1)) {
-	8: return 1025;
-	action2_3473;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_3475, nearby_tile_class(-1, 1)) {
-	8: return 1025;
-	action2_3474;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_3476, nearby_tile_class(1, 0)) {
-	8: return 1025;
-	action2_3475;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_3477, nearby_tile_class(-1, 0)) {
-	8: return 1025;
-	action2_3476;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_3478, nearby_tile_class(1, -1)) {
-	8: return 1025;
-	action2_3477;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_3479, nearby_tile_class(0, -1)) {
-	8: return 1025;
-	action2_3478;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_3480, nearby_tile_class(-1, -1)) {
-	8: return 1025;
-	action2_3479;
-}
+CHECK_NEARBY_TILE_CLASS(action2_3480)
 
 switch(FEAT_INDUSTRYTILES, PARENT, action2_3481, founder) {
 	16: action2_3480;
@@ -6202,45 +6050,7 @@ switch(FEAT_INDUSTRYTILES, PARENT, action2_3565, layout_num) {
 	action2_3538;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_3566, nearby_tile_class(1, 1)) {
-	8: return 1025;
-	return 1024;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_3567, nearby_tile_class(0, 1)) {
-	8: return 1025;
-	action2_3566;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_3568, nearby_tile_class(-1, 1)) {
-	8: return 1025;
-	action2_3567;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_3569, nearby_tile_class(1, 0)) {
-	8: return 1025;
-	action2_3568;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_3570, nearby_tile_class(-1, 0)) {
-	8: return 1025;
-	action2_3569;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_3571, nearby_tile_class(1, -1)) {
-	8: return 1025;
-	action2_3570;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_3572, nearby_tile_class(0, -1)) {
-	8: return 1025;
-	action2_3571;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_3573, nearby_tile_class(-1, -1)) {
-	8: return 1025;
-	action2_3572;
-}
+CHECK_NEARBY_TILE_CLASS(action2_3573)
 
 switch(FEAT_INDUSTRYTILES, PARENT, action2_3574, founder) {
 	16: action2_3573;
@@ -7043,45 +6853,7 @@ switch(FEAT_INDUSTRYTILES, PARENT, action2_3700, layout_num) {
 	action2_3689;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_3701, nearby_tile_class(1, 1)) {
-	8: return 1025;
-	return 1024;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_3702, nearby_tile_class(0, 1)) {
-	8: return 1025;
-	action2_3701;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_3703, nearby_tile_class(-1, 1)) {
-	8: return 1025;
-	action2_3702;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_3704, nearby_tile_class(1, 0)) {
-	8: return 1025;
-	action2_3703;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_3705, nearby_tile_class(-1, 0)) {
-	8: return 1025;
-	action2_3704;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_3706, nearby_tile_class(1, -1)) {
-	8: return 1025;
-	action2_3705;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_3707, nearby_tile_class(0, -1)) {
-	8: return 1025;
-	action2_3706;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_3708, nearby_tile_class(-1, -1)) {
-	8: return 1025;
-	action2_3707;
-}
+CHECK_NEARBY_TILE_CLASS(action2_3708)
 
 switch(FEAT_INDUSTRYTILES, PARENT, action2_3709, founder) {
 	16: action2_3708;
@@ -8679,45 +8451,7 @@ switch(FEAT_INDUSTRYTILES, PARENT, switch_diary_snow_layout, layout_num) {
 
 SWITCH_TERRAIN_NORMAL_DESERT_SNOW(diary, layout)
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_3869, nearby_tile_class(1, 1)) {
-	8: return 1025;
-	return 1024;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_3870, nearby_tile_class(0, 1)) {
-	8: return 1025;
-	action2_3869;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_3871, nearby_tile_class(-1, 1)) {
-	8: return 1025;
-	action2_3870;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_3872, nearby_tile_class(1, 0)) {
-	8: return 1025;
-	action2_3871;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_3873, nearby_tile_class(-1, 0)) {
-	8: return 1025;
-	action2_3872;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_3874, nearby_tile_class(1, -1)) {
-	8: return 1025;
-	action2_3873;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_3875, nearby_tile_class(0, -1)) {
-	8: return 1025;
-	action2_3874;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_3876, nearby_tile_class(-1, -1)) {
-	8: return 1025;
-	action2_3875;
-}
+CHECK_NEARBY_TILE_CLASS(action2_3876)
 
 switch(FEAT_INDUSTRYTILES, PARENT, action2_3877, founder) {
 	16: action2_3876;
@@ -9873,45 +9607,7 @@ switch(FEAT_INDUSTRYTILES, PARENT, action2_4014, layout_num) {
 	action2_4007;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4015, nearby_tile_class(1, 1)) {
-	8: return 1025;
-	return 1024;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_4016, nearby_tile_class(0, 1)) {
-	8: return 1025;
-	action2_4015;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_4017, nearby_tile_class(-1, 1)) {
-	8: return 1025;
-	action2_4016;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_4018, nearby_tile_class(1, 0)) {
-	8: return 1025;
-	action2_4017;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_4019, nearby_tile_class(-1, 0)) {
-	8: return 1025;
-	action2_4018;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_4020, nearby_tile_class(1, -1)) {
-	8: return 1025;
-	action2_4019;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_4021, nearby_tile_class(0, -1)) {
-	8: return 1025;
-	action2_4020;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_4022, nearby_tile_class(-1, -1)) {
-	8: return 1025;
-	action2_4021;
-}
+CHECK_NEARBY_TILE_CLASS(action2_4022)
 
 switch(FEAT_INDUSTRYTILES, PARENT, action2_4023, founder) {
 	16: action2_4022;
@@ -17303,45 +16999,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_4436, var[0x03, 0, 255]) {
 	action2_4279;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4437, nearby_tile_class(1, 1)) {
-	8: return 1025;
-	return 1024;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_4438, nearby_tile_class(0, 1)) {
-	8: return 1025;
-	action2_4437;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_4439, nearby_tile_class(-1, 1)) {
-	8: return 1025;
-	action2_4438;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_4440, nearby_tile_class(1, 0)) {
-	8: return 1025;
-	action2_4439;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_4441, nearby_tile_class(-1, 0)) {
-	8: return 1025;
-	action2_4440;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_4442, nearby_tile_class(1, -1)) {
-	8: return 1025;
-	action2_4441;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_4443, nearby_tile_class(0, -1)) {
-	8: return 1025;
-	action2_4442;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_4444, nearby_tile_class(-1, -1)) {
-	8: return 1025;
-	action2_4443;
-}
+CHECK_NEARBY_TILE_CLASS(action2_4444)
 
 switch(FEAT_INDUSTRYTILES, PARENT, action2_4445, founder) {
 	16: action2_4444;
@@ -17473,45 +17131,7 @@ spritelayout action2_4463 {
 	}
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4464, nearby_tile_class(1, 1)) {
-	8: return 1025;
-	return 1024;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_4465, nearby_tile_class(0, 1)) {
-	8: return 1025;
-	action2_4464;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_4466, nearby_tile_class(-1, 1)) {
-	8: return 1025;
-	action2_4465;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_4467, nearby_tile_class(1, 0)) {
-	8: return 1025;
-	action2_4466;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_4468, nearby_tile_class(-1, 0)) {
-	8: return 1025;
-	action2_4467;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_4469, nearby_tile_class(1, -1)) {
-	8: return 1025;
-	action2_4468;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_4470, nearby_tile_class(0, -1)) {
-	8: return 1025;
-	action2_4469;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_4471, nearby_tile_class(-1, -1)) {
-	8: return 1025;
-	action2_4470;
-}
+CHECK_NEARBY_TILE_CLASS(action2_4471)
 
 switch(FEAT_INDUSTRYTILES, PARENT, action2_4472, founder) {
 	16: action2_4471;
@@ -17967,45 +17587,7 @@ switch(FEAT_INDUSTRYTILES, SELF, switch_smithy_forge_terrain, terrain_type) {
 	switch_smithy_forge_default_layout;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4539, nearby_tile_class(1, 1)) {
-	8: return 1025;
-	return 1024;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_4540, nearby_tile_class(0, 1)) {
-	8: return 1025;
-	action2_4539;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_4541, nearby_tile_class(-1, 1)) {
-	8: return 1025;
-	action2_4540;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_4542, nearby_tile_class(1, 0)) {
-	8: return 1025;
-	action2_4541;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_4543, nearby_tile_class(-1, 0)) {
-	8: return 1025;
-	action2_4542;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_4544, nearby_tile_class(1, -1)) {
-	8: return 1025;
-	action2_4543;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_4545, nearby_tile_class(0, -1)) {
-	8: return 1025;
-	action2_4544;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_4546, nearby_tile_class(-1, -1)) {
-	8: return 1025;
-	action2_4545;
-}
+CHECK_NEARBY_TILE_CLASS(action2_4546)
 
 switch(FEAT_INDUSTRYTILES, PARENT, action2_4547, founder) {
 	16: action2_4546;
@@ -23397,45 +22979,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_4776, var[0x03, 0, 255]) {
 	action2_4619;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4777, nearby_tile_class(1, 1)) {
-	8: return 1025;
-	return 1024;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_4778, nearby_tile_class(0, 1)) {
-	8: return 1025;
-	action2_4777;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_4779, nearby_tile_class(-1, 1)) {
-	8: return 1025;
-	action2_4778;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_4780, nearby_tile_class(1, 0)) {
-	8: return 1025;
-	action2_4779;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_4781, nearby_tile_class(-1, 0)) {
-	8: return 1025;
-	action2_4780;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_4782, nearby_tile_class(1, -1)) {
-	8: return 1025;
-	action2_4781;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_4783, nearby_tile_class(0, -1)) {
-	8: return 1025;
-	action2_4782;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_4784, nearby_tile_class(-1, -1)) {
-	8: return 1025;
-	action2_4783;
-}
+CHECK_NEARBY_TILE_CLASS(action2_4784)
 
 switch(FEAT_INDUSTRYTILES, PARENT, action2_4785, founder) {
 	16: action2_4784;
@@ -23492,45 +23036,7 @@ spritelayout action2_4793 {
 	}
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4794, nearby_tile_class(1, 1)) {
-	8: return 1025;
-	return 1024;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_4795, nearby_tile_class(0, 1)) {
-	8: return 1025;
-	action2_4794;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_4796, nearby_tile_class(-1, 1)) {
-	8: return 1025;
-	action2_4795;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_4797, nearby_tile_class(1, 0)) {
-	8: return 1025;
-	action2_4796;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_4798, nearby_tile_class(-1, 0)) {
-	8: return 1025;
-	action2_4797;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_4799, nearby_tile_class(1, -1)) {
-	8: return 1025;
-	action2_4798;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_4800, nearby_tile_class(0, -1)) {
-	8: return 1025;
-	action2_4799;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_4801, nearby_tile_class(-1, -1)) {
-	8: return 1025;
-	action2_4800;
-}
+CHECK_NEARBY_TILE_CLASS(action2_4801)
 
 switch(FEAT_INDUSTRYTILES, PARENT, action2_4802, founder) {
 	16: action2_4801;
@@ -24298,45 +23804,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_4897, terrain_type) {
 	action2_4856;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4898, nearby_tile_class(1, 1)) {
-	8: return 1025;
-	return 1024;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_4899, nearby_tile_class(0, 1)) {
-	8: return 1025;
-	action2_4898;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_4900, nearby_tile_class(-1, 1)) {
-	8: return 1025;
-	action2_4899;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_4901, nearby_tile_class(1, 0)) {
-	8: return 1025;
-	action2_4900;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_4902, nearby_tile_class(-1, 0)) {
-	8: return 1025;
-	action2_4901;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_4903, nearby_tile_class(1, -1)) {
-	8: return 1025;
-	action2_4902;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_4904, nearby_tile_class(0, -1)) {
-	8: return 1025;
-	action2_4903;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_4905, nearby_tile_class(-1, -1)) {
-	8: return 1025;
-	action2_4904;
-}
+CHECK_NEARBY_TILE_CLASS(action2_4905)
 
 switch(FEAT_INDUSTRYTILES, PARENT, action2_4906, founder) {
 	16: action2_4905;
@@ -25003,45 +24471,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_5004, terrain_type) {
 	action2_4977;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_5005, nearby_tile_class(1, 1)) {
-	8: return 1025;
-	return 1024;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_5006, nearby_tile_class(0, 1)) {
-	8: return 1025;
-	action2_5005;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_5007, nearby_tile_class(-1, 1)) {
-	8: return 1025;
-	action2_5006;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_5008, nearby_tile_class(1, 0)) {
-	8: return 1025;
-	action2_5007;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_5009, nearby_tile_class(-1, 0)) {
-	8: return 1025;
-	action2_5008;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_5010, nearby_tile_class(1, -1)) {
-	8: return 1025;
-	action2_5009;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_5011, nearby_tile_class(0, -1)) {
-	8: return 1025;
-	action2_5010;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_5012, nearby_tile_class(-1, -1)) {
-	8: return 1025;
-	action2_5011;
-}
+CHECK_NEARBY_TILE_CLASS(action2_5012)
 
 switch(FEAT_INDUSTRYTILES, PARENT, action2_5013, founder) {
 	16: action2_5012;
@@ -26069,45 +25499,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_5162, terrain_type) {
 	action2_5105;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_5163, nearby_tile_class(1, 1)) {
-	8: return 1025;
-	return 1024;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_5164, nearby_tile_class(0, 1)) {
-	8: return 1025;
-	action2_5163;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_5165, nearby_tile_class(-1, 1)) {
-	8: return 1025;
-	action2_5164;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_5166, nearby_tile_class(1, 0)) {
-	8: return 1025;
-	action2_5165;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_5167, nearby_tile_class(-1, 0)) {
-	8: return 1025;
-	action2_5166;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_5168, nearby_tile_class(1, -1)) {
-	8: return 1025;
-	action2_5167;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_5169, nearby_tile_class(0, -1)) {
-	8: return 1025;
-	action2_5168;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_5170, nearby_tile_class(-1, -1)) {
-	8: return 1025;
-	action2_5169;
-}
+CHECK_NEARBY_TILE_CLASS(action2_5170)
 
 switch(FEAT_INDUSTRYTILES, PARENT, action2_5171, founder) {
 	16: action2_5170;
@@ -28725,45 +28117,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_5431, terrain_type) {
 	action2_5360;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_5432, nearby_tile_class(1, 1)) {
-	8: return 1025;
-	return 1024;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_5433, nearby_tile_class(0, 1)) {
-	8: return 1025;
-	action2_5432;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_5434, nearby_tile_class(-1, 1)) {
-	8: return 1025;
-	action2_5433;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_5435, nearby_tile_class(1, 0)) {
-	8: return 1025;
-	action2_5434;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_5436, nearby_tile_class(-1, 0)) {
-	8: return 1025;
-	action2_5435;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_5437, nearby_tile_class(1, -1)) {
-	8: return 1025;
-	action2_5436;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_5438, nearby_tile_class(0, -1)) {
-	8: return 1025;
-	action2_5437;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_5439, nearby_tile_class(-1, -1)) {
-	8: return 1025;
-	action2_5438;
-}
+CHECK_NEARBY_TILE_CLASS(action2_5439)
 
 switch(FEAT_INDUSTRYTILES, PARENT, action2_5440, founder) {
 	16: action2_5439;
@@ -29302,45 +28656,7 @@ switch(FEAT_INDUSTRYTILES, PARENT, action2_5531, layout_num) {
 	action2_5519;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_5532, nearby_tile_class(1, 1)) {
-	8: return 1025;
-	return 1024;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_5533, nearby_tile_class(0, 1)) {
-	8: return 1025;
-	action2_5532;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_5534, nearby_tile_class(-1, 1)) {
-	8: return 1025;
-	action2_5533;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_5535, nearby_tile_class(1, 0)) {
-	8: return 1025;
-	action2_5534;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_5536, nearby_tile_class(-1, 0)) {
-	8: return 1025;
-	action2_5535;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_5537, nearby_tile_class(1, -1)) {
-	8: return 1025;
-	action2_5536;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_5538, nearby_tile_class(0, -1)) {
-	8: return 1025;
-	action2_5537;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_5539, nearby_tile_class(-1, -1)) {
-	8: return 1025;
-	action2_5538;
-}
+CHECK_NEARBY_TILE_CLASS(action2_5539)
 
 switch(FEAT_INDUSTRYTILES, PARENT, action2_5540, founder) {
 	16: action2_5539;
@@ -29982,45 +29298,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_5626, terrain_type) {
 	action2_5589;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_5627, nearby_tile_class(1, 1)) {
-	8: return 1025;
-	return 1024;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_5628, nearby_tile_class(0, 1)) {
-	8: return 1025;
-	action2_5627;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_5629, nearby_tile_class(-1, 1)) {
-	8: return 1025;
-	action2_5628;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_5630, nearby_tile_class(1, 0)) {
-	8: return 1025;
-	action2_5629;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_5631, nearby_tile_class(-1, 0)) {
-	8: return 1025;
-	action2_5630;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_5632, nearby_tile_class(1, -1)) {
-	8: return 1025;
-	action2_5631;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_5633, nearby_tile_class(0, -1)) {
-	8: return 1025;
-	action2_5632;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_5634, nearby_tile_class(-1, -1)) {
-	8: return 1025;
-	action2_5633;
-}
+CHECK_NEARBY_TILE_CLASS(action2_5634)
 
 switch(FEAT_INDUSTRYTILES, PARENT, action2_5635, founder) {
 	16: action2_5634;
@@ -30544,45 +29822,7 @@ switch(FEAT_INDUSTRYTILES, PARENT, action2_5720, layout_num) {
 	action2_5707;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_5721, nearby_tile_class(1, 1)) {
-	8: return 1025;
-	return 1024;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_5722, nearby_tile_class(0, 1)) {
-	8: return 1025;
-	action2_5721;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_5723, nearby_tile_class(-1, 1)) {
-	8: return 1025;
-	action2_5722;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_5724, nearby_tile_class(1, 0)) {
-	8: return 1025;
-	action2_5723;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_5725, nearby_tile_class(-1, 0)) {
-	8: return 1025;
-	action2_5724;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_5726, nearby_tile_class(1, -1)) {
-	8: return 1025;
-	action2_5725;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_5727, nearby_tile_class(0, -1)) {
-	8: return 1025;
-	action2_5726;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_5728, nearby_tile_class(-1, -1)) {
-	8: return 1025;
-	action2_5727;
-}
+CHECK_NEARBY_TILE_CLASS(action2_5728)
 
 switch(FEAT_INDUSTRYTILES, PARENT, action2_5729, founder) {
 	16: action2_5728;
@@ -33384,45 +32624,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_6011, terrain_type) {
 	action2_5898;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_6012, nearby_tile_class(1, 1)) {
-	8: return 1025;
-	return 1024;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_6013, nearby_tile_class(0, 1)) {
-	8: return 1025;
-	action2_6012;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_6014, nearby_tile_class(-1, 1)) {
-	8: return 1025;
-	action2_6013;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_6015, nearby_tile_class(1, 0)) {
-	8: return 1025;
-	action2_6014;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_6016, nearby_tile_class(-1, 0)) {
-	8: return 1025;
-	action2_6015;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_6017, nearby_tile_class(1, -1)) {
-	8: return 1025;
-	action2_6016;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_6018, nearby_tile_class(0, -1)) {
-	8: return 1025;
-	action2_6017;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_6019, nearby_tile_class(-1, -1)) {
-	8: return 1025;
-	action2_6018;
-}
+CHECK_NEARBY_TILE_CLASS(action2_6019)
 
 switch(FEAT_INDUSTRYTILES, PARENT, action2_6020, founder) {
 	16: action2_6019;
@@ -34490,45 +33692,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_6153, terrain_type) {
 	action2_6098;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_6154, nearby_tile_class(1, 1)) {
-	8: return 1025;
-	return 1024;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_6155, nearby_tile_class(0, 1)) {
-	8: return 1025;
-	action2_6154;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_6156, nearby_tile_class(-1, 1)) {
-	8: return 1025;
-	action2_6155;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_6157, nearby_tile_class(1, 0)) {
-	8: return 1025;
-	action2_6156;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_6158, nearby_tile_class(-1, 0)) {
-	8: return 1025;
-	action2_6157;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_6159, nearby_tile_class(1, -1)) {
-	8: return 1025;
-	action2_6158;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_6160, nearby_tile_class(0, -1)) {
-	8: return 1025;
-	action2_6159;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_6161, nearby_tile_class(-1, -1)) {
-	8: return 1025;
-	action2_6160;
-}
+CHECK_NEARBY_TILE_CLASS(action2_6161)
 
 switch(FEAT_INDUSTRYTILES, PARENT, action2_6162, founder) {
 	16: action2_6161;
@@ -36664,48 +35828,10 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_6344, terrain_type) {
 	action2_6263;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_6345, nearby_tile_class(1, 1)) {
-	8: return 1025;
-	return 1024;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_6346, nearby_tile_class(0, 1)) {
-	8: return 1025;
-	action2_6345;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_6347, nearby_tile_class(-1, 1)) {
-	8: return 1025;
-	action2_6346;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_6348, nearby_tile_class(1, 0)) {
-	8: return 1025;
-	action2_6347;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_6349, nearby_tile_class(-1, 0)) {
-	8: return 1025;
-	action2_6348;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_6350, nearby_tile_class(1, -1)) {
-	8: return 1025;
-	action2_6349;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_6351, nearby_tile_class(0, -1)) {
-	8: return 1025;
-	action2_6350;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_6352, nearby_tile_class(-1, -1)) {
-	8: return 1025;
-	action2_6351;
-}
+CHECK_NEARBY_TILE_CLASS(switch_metal_foundry_cb_nearby_check)
 
 switch(FEAT_INDUSTRYTILES, PARENT, action2_6353, founder) {
-	16: action2_6352;
+	16: switch_metal_foundry_cb_nearby_check;
 	return 1024;
 }
 
@@ -37138,45 +36264,7 @@ switch(FEAT_INDUSTRYTILES, PARENT, action2_6423, layout_num) {
 	action2_6412;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_6424, nearby_tile_class(1, 1)) {
-	8: return 1025;
-	return 1024;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_6425, nearby_tile_class(0, 1)) {
-	8: return 1025;
-	action2_6424;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_6426, nearby_tile_class(-1, 1)) {
-	8: return 1025;
-	action2_6425;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_6427, nearby_tile_class(1, 0)) {
-	8: return 1025;
-	action2_6426;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_6428, nearby_tile_class(-1, 0)) {
-	8: return 1025;
-	action2_6427;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_6429, nearby_tile_class(1, -1)) {
-	8: return 1025;
-	action2_6428;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_6430, nearby_tile_class(0, -1)) {
-	8: return 1025;
-	action2_6429;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_6431, nearby_tile_class(-1, -1)) {
-	8: return 1025;
-	action2_6430;
-}
+CHECK_NEARBY_TILE_CLASS(action2_6431)
 
 switch(FEAT_INDUSTRYTILES, PARENT, action2_6432, founder) {
 	16: action2_6431;
@@ -37880,45 +36968,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_6564, var[0x03, 0, 255]) {
 	action2_6563;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_6565, nearby_tile_class(1, 1)) {
-	8: return 1025;
-	return 1024;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_6566, nearby_tile_class(0, 1)) {
-	8: return 1025;
-	action2_6565;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_6567, nearby_tile_class(-1, 1)) {
-	8: return 1025;
-	action2_6566;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_6568, nearby_tile_class(1, 0)) {
-	8: return 1025;
-	action2_6567;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_6569, nearby_tile_class(-1, 0)) {
-	8: return 1025;
-	action2_6568;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_6570, nearby_tile_class(1, -1)) {
-	8: return 1025;
-	action2_6569;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_6571, nearby_tile_class(0, -1)) {
-	8: return 1025;
-	action2_6570;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_6572, nearby_tile_class(-1, -1)) {
-	8: return 1025;
-	action2_6571;
-}
+CHECK_NEARBY_TILE_CLASS(action2_6572)
 
 switch(FEAT_INDUSTRYTILES, PARENT, action2_6573, founder) {
 	16: action2_6572;
@@ -37976,45 +37026,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_6581, var[0x03, 0, 255]) {
 	action2_6580;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_6582, nearby_tile_class(1, 1)) {
-	8: return 1025;
-	return 1024;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_6583, nearby_tile_class(0, 1)) {
-	8: return 1025;
-	action2_6582;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_6584, nearby_tile_class(-1, 1)) {
-	8: return 1025;
-	action2_6583;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_6585, nearby_tile_class(1, 0)) {
-	8: return 1025;
-	action2_6584;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_6586, nearby_tile_class(-1, 0)) {
-	8: return 1025;
-	action2_6585;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_6587, nearby_tile_class(1, -1)) {
-	8: return 1025;
-	action2_6586;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_6588, nearby_tile_class(0, -1)) {
-	8: return 1025;
-	action2_6587;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_6589, nearby_tile_class(-1, -1)) {
-	8: return 1025;
-	action2_6588;
-}
+CHECK_NEARBY_TILE_CLASS(action2_6589)
 
 switch(FEAT_INDUSTRYTILES, PARENT, action2_6590, founder) {
 	16: action2_6589;
@@ -39425,45 +38437,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_6801, terrain_type) {
 	action2_6756;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_6802, nearby_tile_class(1, 1)) {
-	8: return 1025;
-	return 1024;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_6803, nearby_tile_class(0, 1)) {
-	8: return 1025;
-	action2_6802;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_6804, nearby_tile_class(-1, 1)) {
-	8: return 1025;
-	action2_6803;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_6805, nearby_tile_class(1, 0)) {
-	8: return 1025;
-	action2_6804;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_6806, nearby_tile_class(-1, 0)) {
-	8: return 1025;
-	action2_6805;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_6807, nearby_tile_class(1, -1)) {
-	8: return 1025;
-	action2_6806;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_6808, nearby_tile_class(0, -1)) {
-	8: return 1025;
-	action2_6807;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_6809, nearby_tile_class(-1, -1)) {
-	8: return 1025;
-	action2_6808;
-}
+CHECK_NEARBY_TILE_CLASS(action2_6809)
 
 switch(FEAT_INDUSTRYTILES, PARENT, action2_6810, founder) {
 	16: action2_6809;
@@ -41813,45 +40787,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_7093, terrain_type) {
 	action2_6956;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_7094, nearby_tile_class(1, 1)) {
-	8: return 1025;
-	return 1024;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_7095, nearby_tile_class(0, 1)) {
-	8: return 1025;
-	action2_7094;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_7096, nearby_tile_class(-1, 1)) {
-	8: return 1025;
-	action2_7095;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_7097, nearby_tile_class(1, 0)) {
-	8: return 1025;
-	action2_7096;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_7098, nearby_tile_class(-1, 0)) {
-	8: return 1025;
-	action2_7097;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_7099, nearby_tile_class(1, -1)) {
-	8: return 1025;
-	action2_7098;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_7100, nearby_tile_class(0, -1)) {
-	8: return 1025;
-	action2_7099;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_7101, nearby_tile_class(-1, -1)) {
-	8: return 1025;
-	action2_7100;
-}
+CHECK_NEARBY_TILE_CLASS(action2_7101)
 
 switch(FEAT_INDUSTRYTILES, PARENT, action2_7102, founder) {
 	16: action2_7101;
@@ -42994,45 +41930,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_15, 15) {
 	}
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_7294, nearby_tile_class(1, 1)) {
-	8: return 1025;
-	return 1024;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_7295, nearby_tile_class(0, 1)) {
-	8: return 1025;
-	action2_7294;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_7296, nearby_tile_class(-1, 1)) {
-	8: return 1025;
-	action2_7295;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_7297, nearby_tile_class(1, 0)) {
-	8: return 1025;
-	action2_7296;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_7298, nearby_tile_class(-1, 0)) {
-	8: return 1025;
-	action2_7297;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_7299, nearby_tile_class(1, -1)) {
-	8: return 1025;
-	action2_7298;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_7300, nearby_tile_class(0, -1)) {
-	8: return 1025;
-	action2_7299;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_7301, nearby_tile_class(-1, -1)) {
-	8: return 1025;
-	action2_7300;
-}
+CHECK_NEARBY_TILE_CLASS(action2_7301)
 
 switch(FEAT_INDUSTRYTILES, PARENT, action2_7302, founder) {
 	16: action2_7301;
@@ -43405,45 +42303,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_7355, STORE_TEMP((var[0x7E, 0, 255, 161
 	action2_7353;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_7356, nearby_tile_class(1, 1)) {
-	8: return 1025;
-	return 1024;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_7357, nearby_tile_class(0, 1)) {
-	8: return 1025;
-	action2_7356;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_7358, nearby_tile_class(-1, 1)) {
-	8: return 1025;
-	action2_7357;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_7359, nearby_tile_class(1, 0)) {
-	8: return 1025;
-	action2_7358;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_7360, nearby_tile_class(-1, 0)) {
-	8: return 1025;
-	action2_7359;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_7361, nearby_tile_class(1, -1)) {
-	8: return 1025;
-	action2_7360;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_7362, nearby_tile_class(0, -1)) {
-	8: return 1025;
-	action2_7361;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_7363, nearby_tile_class(-1, -1)) {
-	8: return 1025;
-	action2_7362;
-}
+CHECK_NEARBY_TILE_CLASS(action2_7363)
 
 switch(FEAT_INDUSTRYTILES, PARENT, action2_7364, founder) {
 	16: action2_7363;
@@ -44119,45 +42979,7 @@ switch(FEAT_INDUSTRYTILES, PARENT, action2_7488, layout_num) {
 	action2_7481;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_7489, nearby_tile_class(1, 1)) {
-	8: return 1025;
-	return 1024;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_7490, nearby_tile_class(0, 1)) {
-	8: return 1025;
-	action2_7489;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_7491, nearby_tile_class(-1, 1)) {
-	8: return 1025;
-	action2_7490;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_7492, nearby_tile_class(1, 0)) {
-	8: return 1025;
-	action2_7491;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_7493, nearby_tile_class(-1, 0)) {
-	8: return 1025;
-	action2_7492;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_7494, nearby_tile_class(1, -1)) {
-	8: return 1025;
-	action2_7493;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_7495, nearby_tile_class(0, -1)) {
-	8: return 1025;
-	action2_7494;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_7496, nearby_tile_class(-1, -1)) {
-	8: return 1025;
-	action2_7495;
-}
+CHECK_NEARBY_TILE_CLASS(action2_7496)
 
 switch(FEAT_INDUSTRYTILES, PARENT, action2_7497, founder) {
 	16: action2_7496;
@@ -45536,45 +44358,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_7641, terrain_type) {
 	action2_7584;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_7642, nearby_tile_class(1, 1)) {
-	8: return 1025;
-	return 1024;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_7643, nearby_tile_class(0, 1)) {
-	8: return 1025;
-	action2_7642;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_7644, nearby_tile_class(-1, 1)) {
-	8: return 1025;
-	action2_7643;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_7645, nearby_tile_class(1, 0)) {
-	8: return 1025;
-	action2_7644;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_7646, nearby_tile_class(-1, 0)) {
-	8: return 1025;
-	action2_7645;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_7647, nearby_tile_class(1, -1)) {
-	8: return 1025;
-	action2_7646;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_7648, nearby_tile_class(0, -1)) {
-	8: return 1025;
-	action2_7647;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_7649, nearby_tile_class(-1, -1)) {
-	8: return 1025;
-	action2_7648;
-}
+CHECK_NEARBY_TILE_CLASS(action2_7649)
 
 switch(FEAT_INDUSTRYTILES, PARENT, action2_7650, founder) {
 	16: action2_7649;
