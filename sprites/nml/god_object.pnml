@@ -2001,51 +2001,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3064, [STORE_TEMP(-701265, 256), 32928]) {
 	return;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3065, colour) {
-	0: return 0;
-	1: return 1;
-	2: return 2;
-	3: return 13;
-	4: return 2;
-	5: return 5;
-	6: return 1;
-	7: return 1;
-	8: return 0;
-	9: return 14;
-	10: return 10;
-	11: return 11;
-	12: return 13;
-	13: return 13;
-	14: return 14;
-	15: return 14;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_3066, colour) {
-	0: return 5;
-	1: return 1;
-	2: return 2;
-	3: return 3;
-	4: return 2;
-	5: return 5;
-	6: return 1;
-	7: return 7;
-	8: return 5;
-	9: return 14;
-	10: return 10;
-	11: return 10;
-	12: return 3;
-	13: return 13;
-	14: return 14;
-	15: return 15;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_3067, 1) {
-	1: action2_3065;
-	2: action2_3066;
-	action2_3065;
-}
+SWITCH_COLOUR_SCHEME1(action2_3067)
 
 switch(FEAT_INDUSTRIES, SELF, action2_3068, STORE_PERM((1 + LOAD_PERM(15)), 15)) {
 	0: return 0;
@@ -2921,51 +2877,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3173, [STORE_TEMP(-701265, 256), 32933]) {
 	return;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3174, colour) {
-	0: return 0;
-	1: return 1;
-	2: return 2;
-	3: return 13;
-	4: return 2;
-	5: return 5;
-	6: return 1;
-	7: return 1;
-	8: return 0;
-	9: return 14;
-	10: return 10;
-	11: return 11;
-	12: return 13;
-	13: return 13;
-	14: return 14;
-	15: return 14;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_3175, colour) {
-	0: return 5;
-	1: return 1;
-	2: return 2;
-	3: return 3;
-	4: return 2;
-	5: return 5;
-	6: return 1;
-	7: return 7;
-	8: return 5;
-	9: return 14;
-	10: return 10;
-	11: return 10;
-	12: return 3;
-	13: return 13;
-	14: return 14;
-	15: return 15;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_3176, 1) {
-	1: action2_3174;
-	2: action2_3175;
-	action2_3174;
-}
+SWITCH_COLOUR_SCHEME1(action2_3176)
 
 switch(FEAT_INDUSTRIES, SELF, action2_3177, STORE_PERM((1 + LOAD_PERM(15)), 15)) {
 	0: return 0;
@@ -5705,51 +5617,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3516, [STORE_TEMP(-701265, 256), 32928]) {
 	return;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3517, colour) {
-	0: return 0;
-	1: return 1;
-	2: return 2;
-	3: return 13;
-	4: return 2;
-	5: return 5;
-	6: return 1;
-	7: return 1;
-	8: return 0;
-	9: return 14;
-	10: return 10;
-	11: return 11;
-	12: return 13;
-	13: return 13;
-	14: return 14;
-	15: return 14;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_3518, colour) {
-	0: return 5;
-	1: return 1;
-	2: return 2;
-	3: return 3;
-	4: return 2;
-	5: return 5;
-	6: return 1;
-	7: return 7;
-	8: return 5;
-	9: return 14;
-	10: return 10;
-	11: return 10;
-	12: return 3;
-	13: return 13;
-	14: return 14;
-	15: return 15;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_3519, 1) {
-	1: action2_3517;
-	2: action2_3518;
-	action2_3517;
-}
+SWITCH_COLOUR_SCHEME1(action2_3519)
 
 switch(FEAT_INDUSTRIES, SELF, switch_main_clay_pit, current_callback) {
 	0: action2_3501;
@@ -6799,51 +6667,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3630, [STORE_TEMP((694691 - 701265), 256),
 	return;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3631, colour) {
-	0: return 0;
-	1: return 1;
-	2: return 2;
-	3: return 13;
-	4: return 2;
-	5: return 5;
-	6: return 1;
-	7: return 1;
-	8: return 0;
-	9: return 14;
-	10: return 10;
-	11: return 11;
-	12: return 13;
-	13: return 13;
-	14: return 14;
-	15: return 14;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_3632, colour) {
-	0: return 5;
-	1: return 1;
-	2: return 2;
-	3: return 3;
-	4: return 2;
-	5: return 5;
-	6: return 1;
-	7: return 7;
-	8: return 5;
-	9: return 14;
-	10: return 10;
-	11: return 10;
-	12: return 3;
-	13: return 13;
-	14: return 14;
-	15: return 15;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_3633, 1) {
-	1: action2_3631;
-	2: action2_3632;
-	action2_3631;
-}
+SWITCH_COLOUR_SCHEME1(action2_3633)
 
 switch(FEAT_INDUSTRIES, SELF, action2_3634, STORE_PERM((1 + LOAD_PERM(15)), 15)) {
 	0: return 0;
@@ -7006,51 +6830,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3668, [STORE_TEMP(-701265, 256), 32928]) {
 	return;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3669, colour) {
-	0: return 0;
-	1: return 1;
-	2: return 2;
-	3: return 13;
-	4: return 2;
-	5: return 5;
-	6: return 1;
-	7: return 1;
-	8: return 0;
-	9: return 14;
-	10: return 10;
-	11: return 11;
-	12: return 13;
-	13: return 13;
-	14: return 14;
-	15: return 14;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_3670, colour) {
-	0: return 5;
-	1: return 1;
-	2: return 2;
-	3: return 3;
-	4: return 2;
-	5: return 5;
-	6: return 1;
-	7: return 7;
-	8: return 5;
-	9: return 14;
-	10: return 10;
-	11: return 10;
-	12: return 3;
-	13: return 13;
-	14: return 14;
-	15: return 15;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_3671, 1) {
-	1: action2_3669;
-	2: action2_3670;
-	action2_3669;
-}
+SWITCH_COLOUR_SCHEME1(action2_3671)
 
 switch(FEAT_INDUSTRIES, SELF, switch_main_coal_mine, current_callback) {
 	0: action2_3653;
@@ -7575,51 +7355,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3747, [STORE_TEMP(-701265, 256), 32928]) {
 	return;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3748, colour) {
-	0: return 0;
-	1: return 1;
-	2: return 2;
-	3: return 13;
-	4: return 2;
-	5: return 5;
-	6: return 1;
-	7: return 1;
-	8: return 0;
-	9: return 14;
-	10: return 10;
-	11: return 11;
-	12: return 13;
-	13: return 13;
-	14: return 14;
-	15: return 14;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_3749, colour) {
-	0: return 5;
-	1: return 1;
-	2: return 2;
-	3: return 3;
-	4: return 2;
-	5: return 5;
-	6: return 1;
-	7: return 7;
-	8: return 5;
-	9: return 14;
-	10: return 10;
-	11: return 10;
-	12: return 3;
-	13: return 13;
-	14: return 14;
-	15: return 15;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_3750, 1) {
-	1: action2_3748;
-	2: action2_3749;
-	action2_3748;
-}
+SWITCH_COLOUR_SCHEME1(action2_3750)
 
 switch(FEAT_INDUSTRIES, SELF, switch_main_diary_farm, current_callback) {
 	0: action2_3732;
@@ -9380,51 +9116,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3926, [STORE_TEMP((691039 - 701265), 256),
 	return;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3927, colour) {
-	0: return 0;
-	1: return 1;
-	2: return 2;
-	3: return 13;
-	4: return 2;
-	5: return 5;
-	6: return 1;
-	7: return 1;
-	8: return 0;
-	9: return 14;
-	10: return 10;
-	11: return 11;
-	12: return 13;
-	13: return 13;
-	14: return 14;
-	15: return 14;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_3928, colour) {
-	0: return 5;
-	1: return 1;
-	2: return 2;
-	3: return 3;
-	4: return 2;
-	5: return 5;
-	6: return 1;
-	7: return 7;
-	8: return 5;
-	9: return 14;
-	10: return 10;
-	11: return 10;
-	12: return 3;
-	13: return 13;
-	14: return 14;
-	15: return 15;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_3929, 1) {
-	1: action2_3927;
-	2: action2_3928;
-	action2_3927;
-}
+SWITCH_COLOUR_SCHEME1(action2_3929)
 
 switch(FEAT_INDUSTRIES, SELF, action2_3930, STORE_PERM((1 + LOAD_PERM(15)), 15)) {
 	0: return 0;
@@ -9650,51 +9342,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3970, [STORE_TEMP((676429 - 701265), 256),
 	return;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3971, colour) {
-	0: return 0;
-	1: return 1;
-	2: return 2;
-	3: return 13;
-	4: return 2;
-	5: return 5;
-	6: return 1;
-	7: return 1;
-	8: return 0;
-	9: return 14;
-	10: return 10;
-	11: return 11;
-	12: return 13;
-	13: return 13;
-	14: return 14;
-	15: return 14;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_3972, colour) {
-	0: return 5;
-	1: return 1;
-	2: return 2;
-	3: return 3;
-	4: return 2;
-	5: return 5;
-	6: return 1;
-	7: return 7;
-	8: return 5;
-	9: return 14;
-	10: return 10;
-	11: return 10;
-	12: return 3;
-	13: return 13;
-	14: return 14;
-	15: return 15;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_3973, 1) {
-	1: action2_3971;
-	2: action2_3972;
-	action2_3971;
-}
+SWITCH_COLOUR_SCHEME1(action2_3973)
 
 switch(FEAT_INDUSTRIES, SELF, switch_main_dredging_site, current_callback) {
 	0: action2_3955;
@@ -10659,51 +10307,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_4062, [STORE_TEMP((703822 - 701265), 256),
 	return;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_4063, colour) {
-	0: return 0;
-	1: return 1;
-	2: return 2;
-	3: return 13;
-	4: return 2;
-	5: return 5;
-	6: return 1;
-	7: return 1;
-	8: return 0;
-	9: return 14;
-	10: return 10;
-	11: return 11;
-	12: return 13;
-	13: return 13;
-	14: return 14;
-	15: return 14;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4064, colour) {
-	0: return 5;
-	1: return 1;
-	2: return 2;
-	3: return 3;
-	4: return 2;
-	5: return 5;
-	6: return 1;
-	7: return 7;
-	8: return 5;
-	9: return 14;
-	10: return 10;
-	11: return 10;
-	12: return 3;
-	13: return 13;
-	14: return 14;
-	15: return 15;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4065, 1) {
-	1: action2_4063;
-	2: action2_4064;
-	action2_4063;
-}
+SWITCH_COLOUR_SCHEME1(action2_4065)
 
 switch(FEAT_INDUSTRIES, SELF, action2_4066, STORE_PERM((1 + LOAD_PERM(15)), 15)) {
 	0: return 0;
@@ -12423,51 +12027,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_4219, [STORE_TEMP(-701265, 256), 32928]) {
 	return;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_4220, colour) {
-	0: return 0;
-	1: return 1;
-	2: return 2;
-	3: return 13;
-	4: return 2;
-	5: return 5;
-	6: return 1;
-	7: return 1;
-	8: return 0;
-	9: return 14;
-	10: return 10;
-	11: return 11;
-	12: return 13;
-	13: return 13;
-	14: return 14;
-	15: return 14;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4221, colour) {
-	0: return 5;
-	1: return 1;
-	2: return 2;
-	3: return 3;
-	4: return 2;
-	5: return 5;
-	6: return 1;
-	7: return 7;
-	8: return 5;
-	9: return 14;
-	10: return 10;
-	11: return 10;
-	12: return 3;
-	13: return 13;
-	14: return 14;
-	15: return 15;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4222, 1) {
-	1: action2_4220;
-	2: action2_4221;
-	action2_4220;
-}
+SWITCH_COLOUR_SCHEME1(action2_4222)
 
 switch(FEAT_INDUSTRIES, SELF, action2_4223, STORE_PERM((1 + LOAD_PERM(15)), 15)) {
 	0: return 0;
@@ -18252,51 +17812,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_4502, [STORE_TEMP(-701265, 256), 32928]) {
 	return;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_4503, colour) {
-	0: return 0;
-	1: return 1;
-	2: return 2;
-	3: return 13;
-	4: return 2;
-	5: return 5;
-	6: return 1;
-	7: return 1;
-	8: return 0;
-	9: return 14;
-	10: return 10;
-	11: return 11;
-	12: return 13;
-	13: return 13;
-	14: return 14;
-	15: return 14;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4504, colour) {
-	0: return 5;
-	1: return 1;
-	2: return 2;
-	3: return 3;
-	4: return 2;
-	5: return 5;
-	6: return 1;
-	7: return 7;
-	8: return 5;
-	9: return 14;
-	10: return 10;
-	11: return 10;
-	12: return 3;
-	13: return 13;
-	14: return 14;
-	15: return 15;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4505, 1) {
-	1: action2_4503;
-	2: action2_4504;
-	action2_4503;
-}
+SWITCH_COLOUR_SCHEME1(action2_4505)
 
 switch(FEAT_INDUSTRIES, SELF, switch_main_oil_wells, current_callback) {
 	0: action2_4487;
@@ -18773,51 +18289,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_4584, [STORE_TEMP(-701265, 256), 32928]) {
 	return;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_4585, colour) {
-	0: return 0;
-	1: return 1;
-	2: return 2;
-	3: return 13;
-	4: return 2;
-	5: return 5;
-	6: return 1;
-	7: return 1;
-	8: return 0;
-	9: return 14;
-	10: return 10;
-	11: return 11;
-	12: return 13;
-	13: return 13;
-	14: return 14;
-	15: return 14;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4586, colour) {
-	0: return 5;
-	1: return 1;
-	2: return 2;
-	3: return 3;
-	4: return 2;
-	5: return 5;
-	6: return 1;
-	7: return 7;
-	8: return 5;
-	9: return 14;
-	10: return 10;
-	11: return 10;
-	12: return 3;
-	13: return 13;
-	14: return 14;
-	15: return 15;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4587, 1) {
-	1: action2_4585;
-	2: action2_4586;
-	action2_4585;
-}
+SWITCH_COLOUR_SCHEME1(action2_4587)
 
 switch(FEAT_INDUSTRIES, SELF, action2_4588, STORE_PERM((1 + LOAD_PERM(15)), 15)) {
 	0: return 0;
@@ -24348,51 +23820,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_4830, [STORE_TEMP(-701265, 256), 32928]) {
 	return;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_4831, colour) {
-	0: return 0;
-	1: return 1;
-	2: return 2;
-	3: return 13;
-	4: return 2;
-	5: return 5;
-	6: return 1;
-	7: return 1;
-	8: return 0;
-	9: return 14;
-	10: return 10;
-	11: return 11;
-	12: return 13;
-	13: return 13;
-	14: return 14;
-	15: return 14;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4832, colour) {
-	0: return 5;
-	1: return 1;
-	2: return 2;
-	3: return 3;
-	4: return 2;
-	5: return 5;
-	6: return 1;
-	7: return 7;
-	8: return 5;
-	9: return 14;
-	10: return 10;
-	11: return 10;
-	12: return 3;
-	13: return 13;
-	14: return 14;
-	15: return 15;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4833, 1) {
-	1: action2_4831;
-	2: action2_4832;
-	action2_4831;
-}
+SWITCH_COLOUR_SCHEME1(action2_4833)
 
 switch(FEAT_INDUSTRIES, SELF, action2_4834, current_callback) {
 	0: action2_4815;
@@ -25300,51 +24728,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_4952, [STORE_TEMP((672046 - 701265), 256),
 	return;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_4953, colour) {
-	0: return 0;
-	1: return 1;
-	2: return 2;
-	3: return 13;
-	4: return 2;
-	5: return 5;
-	6: return 1;
-	7: return 1;
-	8: return 0;
-	9: return 14;
-	10: return 10;
-	11: return 11;
-	12: return 13;
-	13: return 13;
-	14: return 14;
-	15: return 14;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4954, colour) {
-	0: return 5;
-	1: return 1;
-	2: return 2;
-	3: return 3;
-	4: return 2;
-	5: return 5;
-	6: return 1;
-	7: return 7;
-	8: return 5;
-	9: return 14;
-	10: return 10;
-	11: return 10;
-	12: return 3;
-	13: return 13;
-	14: return 14;
-	15: return 15;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4955, 1) {
-	1: action2_4953;
-	2: action2_4954;
-	action2_4953;
-}
+SWITCH_COLOUR_SCHEME1(action2_4955)
 
 switch(FEAT_INDUSTRIES, SELF, action2_4956, STORE_PERM((1 + LOAD_PERM(15)), 15)) {
 	0: return 0;
@@ -26070,51 +25454,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_5065, [STORE_TEMP(-701265, 256), 32928]) {
 	return;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_5066, colour) {
-	0: return 0;
-	1: return 1;
-	2: return 2;
-	3: return 13;
-	4: return 2;
-	5: return 5;
-	6: return 1;
-	7: return 1;
-	8: return 0;
-	9: return 14;
-	10: return 10;
-	11: return 11;
-	12: return 13;
-	13: return 13;
-	14: return 14;
-	15: return 14;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5067, colour) {
-	0: return 5;
-	1: return 1;
-	2: return 2;
-	3: return 3;
-	4: return 2;
-	5: return 5;
-	6: return 1;
-	7: return 7;
-	8: return 5;
-	9: return 14;
-	10: return 10;
-	11: return 10;
-	12: return 3;
-	13: return 13;
-	14: return 14;
-	15: return 15;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5068, 1) {
-	1: action2_5066;
-	2: action2_5067;
-	action2_5066;
-}
+SWITCH_COLOUR_SCHEME1(action2_5068)
 
 switch(FEAT_INDUSTRIES, SELF, action2_5069, STORE_PERM((1 + LOAD_PERM(15)), 15)) {
 	0: return 0;
@@ -27196,51 +26536,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_5221, [STORE_TEMP(-701265, 256), 32933]) {
 	return;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_5222, colour) {
-	0: return 0;
-	1: return 1;
-	2: return 2;
-	3: return 13;
-	4: return 2;
-	5: return 5;
-	6: return 1;
-	7: return 1;
-	8: return 0;
-	9: return 14;
-	10: return 10;
-	11: return 11;
-	12: return 13;
-	13: return 13;
-	14: return 14;
-	15: return 14;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5223, colour) {
-	0: return 5;
-	1: return 1;
-	2: return 2;
-	3: return 3;
-	4: return 2;
-	5: return 5;
-	6: return 1;
-	7: return 7;
-	8: return 5;
-	9: return 14;
-	10: return 10;
-	11: return 10;
-	12: return 3;
-	13: return 13;
-	14: return 14;
-	15: return 15;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5224, 1) {
-	1: action2_5222;
-	2: action2_5223;
-	action2_5222;
-}
+SWITCH_COLOUR_SCHEME1(action2_5224)
 
 switch(FEAT_INDUSTRIES, SELF, action2_5225, STORE_PERM((1 + LOAD_PERM(15)), 15)) {
 	0: return 0;
@@ -27700,51 +26996,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_5303, [STORE_TEMP(-701265, 256), 32928]) {
 	return;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_5304, colour) {
-	0: return 0;
-	1: return 1;
-	2: return 2;
-	3: return 13;
-	4: return 2;
-	5: return 5;
-	6: return 1;
-	7: return 1;
-	8: return 0;
-	9: return 14;
-	10: return 10;
-	11: return 11;
-	12: return 13;
-	13: return 13;
-	14: return 14;
-	15: return 14;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5305, colour) {
-	0: return 5;
-	1: return 1;
-	2: return 2;
-	3: return 3;
-	4: return 2;
-	5: return 5;
-	6: return 1;
-	7: return 7;
-	8: return 5;
-	9: return 14;
-	10: return 10;
-	11: return 10;
-	12: return 3;
-	13: return 13;
-	14: return 14;
-	15: return 15;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5306, 1) {
-	1: action2_5304;
-	2: action2_5305;
-	action2_5304;
-}
+SWITCH_COLOUR_SCHEME1(action2_5306)
 
 switch(FEAT_INDUSTRIES, SELF, switch_main_oil_refinery, current_callback) {
 	0: action2_5288;
@@ -29955,51 +29207,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_5495, [STORE_TEMP(-701265, 256), 32928]) {
 	return;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_5496, colour) {
-	0: return 0;
-	1: return 1;
-	2: return 2;
-	3: return 13;
-	4: return 2;
-	5: return 5;
-	6: return 1;
-	7: return 1;
-	8: return 0;
-	9: return 14;
-	10: return 10;
-	11: return 11;
-	12: return 13;
-	13: return 13;
-	14: return 14;
-	15: return 14;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5497, colour) {
-	0: return 5;
-	1: return 1;
-	2: return 2;
-	3: return 3;
-	4: return 2;
-	5: return 5;
-	6: return 1;
-	7: return 7;
-	8: return 5;
-	9: return 14;
-	10: return 10;
-	11: return 10;
-	12: return 3;
-	13: return 13;
-	14: return 14;
-	15: return 15;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5498, 1) {
-	1: action2_5496;
-	2: action2_5497;
-	action2_5496;
-}
+SWITCH_COLOUR_SCHEME1(action2_5498)
 
 switch(FEAT_INDUSTRIES, SELF, action2_5499, STORE_PERM((1 + LOAD_PERM(15)), 15)) {
 	0: return 0;
@@ -30447,51 +29655,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_5565, [STORE_TEMP((685926 - 701265), 256),
 	return;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_5566, colour) {
-	0: return 0;
-	1: return 1;
-	2: return 2;
-	3: return 13;
-	4: return 2;
-	5: return 5;
-	6: return 1;
-	7: return 1;
-	8: return 0;
-	9: return 14;
-	10: return 10;
-	11: return 11;
-	12: return 13;
-	13: return 13;
-	14: return 14;
-	15: return 14;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5567, colour) {
-	0: return 5;
-	1: return 1;
-	2: return 2;
-	3: return 3;
-	4: return 2;
-	5: return 5;
-	6: return 1;
-	7: return 7;
-	8: return 5;
-	9: return 14;
-	10: return 10;
-	11: return 10;
-	12: return 3;
-	13: return 13;
-	14: return 14;
-	15: return 15;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5568, 1) {
-	1: action2_5566;
-	2: action2_5567;
-	action2_5566;
-}
+SWITCH_COLOUR_SCHEME1(action2_5568)
 
 switch(FEAT_INDUSTRIES, SELF, switch_main_junkyard, current_callback) {
 	0: action2_5550;
@@ -31283,51 +30447,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_5683, [STORE_TEMP(-701265, 256), 32928]) {
 	return;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_5684, colour) {
-	0: return 0;
-	1: return 1;
-	2: return 2;
-	3: return 13;
-	4: return 2;
-	5: return 5;
-	6: return 1;
-	7: return 1;
-	8: return 0;
-	9: return 14;
-	10: return 10;
-	11: return 11;
-	12: return 13;
-	13: return 13;
-	14: return 14;
-	15: return 14;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5685, colour) {
-	0: return 5;
-	1: return 1;
-	2: return 2;
-	3: return 3;
-	4: return 2;
-	5: return 5;
-	6: return 1;
-	7: return 7;
-	8: return 5;
-	9: return 14;
-	10: return 10;
-	11: return 10;
-	12: return 3;
-	13: return 13;
-	14: return 14;
-	15: return 15;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5686, 1) {
-	1: action2_5684;
-	2: action2_5685;
-	action2_5684;
-}
+SWITCH_COLOUR_SCHEME1(action2_5686)
 
 switch(FEAT_INDUSTRIES, SELF, action2_5687, STORE_PERM((1 + LOAD_PERM(15)), 15)) {
 	0: return 0;
@@ -31919,51 +31039,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_5775, [STORE_TEMP(-701265, 256), 32933]) {
 	return;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_5776, colour) {
-	0: return 0;
-	1: return 1;
-	2: return 2;
-	3: return 13;
-	4: return 2;
-	5: return 5;
-	6: return 1;
-	7: return 1;
-	8: return 0;
-	9: return 14;
-	10: return 10;
-	11: return 11;
-	12: return 13;
-	13: return 13;
-	14: return 14;
-	15: return 14;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5777, colour) {
-	0: return 5;
-	1: return 1;
-	2: return 2;
-	3: return 3;
-	4: return 2;
-	5: return 5;
-	6: return 1;
-	7: return 7;
-	8: return 5;
-	9: return 14;
-	10: return 10;
-	11: return 10;
-	12: return 3;
-	13: return 13;
-	14: return 14;
-	15: return 15;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5778, 1) {
-	1: action2_5776;
-	2: action2_5777;
-	action2_5776;
-}
+SWITCH_COLOUR_SCHEME1(action2_5778)
 
 switch(FEAT_INDUSTRIES, SELF, action2_5779, STORE_PERM((1 + LOAD_PERM(15)), 15)) {
 	0: return 0;
@@ -34848,51 +33924,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6059, [STORE_TEMP((683004 - 701265), 256),
 	return;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6060, colour) {
-	0: return 0;
-	1: return 1;
-	2: return 2;
-	3: return 13;
-	4: return 2;
-	5: return 5;
-	6: return 1;
-	7: return 1;
-	8: return 0;
-	9: return 14;
-	10: return 10;
-	11: return 11;
-	12: return 13;
-	13: return 13;
-	14: return 14;
-	15: return 14;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6061, colour) {
-	0: return 5;
-	1: return 1;
-	2: return 2;
-	3: return 3;
-	4: return 2;
-	5: return 5;
-	6: return 1;
-	7: return 7;
-	8: return 5;
-	9: return 14;
-	10: return 10;
-	11: return 10;
-	12: return 3;
-	13: return 13;
-	14: return 14;
-	15: return 15;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6062, 1) {
-	1: action2_6060;
-	2: action2_6061;
-	action2_6060;
-}
+SWITCH_COLOUR_SCHEME1(action2_6062)
 
 switch(FEAT_INDUSTRIES, SELF, action2_6063, STORE_PERM((1 + LOAD_PERM(15)), 15)) {
 	0: return 0;
@@ -35958,51 +34990,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6211, [STORE_TEMP(-701265, 256), 32933]) {
 	return;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6212, colour) {
-	0: return 0;
-	1: return 1;
-	2: return 2;
-	3: return 13;
-	4: return 2;
-	5: return 5;
-	6: return 1;
-	7: return 1;
-	8: return 0;
-	9: return 14;
-	10: return 10;
-	11: return 11;
-	12: return 13;
-	13: return 13;
-	14: return 14;
-	15: return 14;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6213, colour) {
-	0: return 5;
-	1: return 1;
-	2: return 2;
-	3: return 3;
-	4: return 2;
-	5: return 5;
-	6: return 1;
-	7: return 7;
-	8: return 5;
-	9: return 14;
-	10: return 10;
-	11: return 10;
-	12: return 3;
-	13: return 13;
-	14: return 14;
-	15: return 15;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6214, 1) {
-	1: action2_6212;
-	2: action2_6213;
-	action2_6212;
-}
+SWITCH_COLOUR_SCHEME1(action2_6214)
 
 switch(FEAT_INDUSTRIES, SELF, action2_6215, STORE_PERM((1 + LOAD_PERM(15)), 15)) {
 	0: return 0;
@@ -38144,51 +37132,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6390, [STORE_TEMP((643558 - 701265), 256),
 	return;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6391, colour) {
-	0: return 0;
-	1: return 1;
-	2: return 2;
-	3: return 13;
-	4: return 2;
-	5: return 5;
-	6: return 1;
-	7: return 1;
-	8: return 0;
-	9: return 14;
-	10: return 10;
-	11: return 11;
-	12: return 13;
-	13: return 13;
-	14: return 14;
-	15: return 14;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6392, colour) {
-	0: return 5;
-	1: return 1;
-	2: return 2;
-	3: return 3;
-	4: return 2;
-	5: return 5;
-	6: return 1;
-	7: return 7;
-	8: return 5;
-	9: return 14;
-	10: return 10;
-	11: return 10;
-	12: return 3;
-	13: return 13;
-	14: return 14;
-	15: return 15;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6393, 1) {
-	1: action2_6391;
-	2: action2_6392;
-	action2_6391;
-}
+SWITCH_COLOUR_SCHEME1(action2_6393)
 
 switch(FEAT_INDUSTRIES, SELF, action2_6394, STORE_PERM((1 + LOAD_PERM(15)), 15)) {
 	0: return 0;
@@ -38680,51 +37624,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6471, [STORE_TEMP(-701265, 256), 32928]) {
 	return;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6472, colour) {
-	0: return 0;
-	1: return 1;
-	2: return 2;
-	3: return 13;
-	4: return 2;
-	5: return 5;
-	6: return 1;
-	7: return 1;
-	8: return 0;
-	9: return 14;
-	10: return 10;
-	11: return 11;
-	12: return 13;
-	13: return 13;
-	14: return 14;
-	15: return 14;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6473, colour) {
-	0: return 5;
-	1: return 1;
-	2: return 2;
-	3: return 3;
-	4: return 2;
-	5: return 5;
-	6: return 1;
-	7: return 7;
-	8: return 5;
-	9: return 14;
-	10: return 10;
-	11: return 10;
-	12: return 3;
-	13: return 13;
-	14: return 14;
-	15: return 15;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6474, 1) {
-	1: action2_6472;
-	2: action2_6473;
-	action2_6472;
-}
+SWITCH_COLOUR_SCHEME1(action2_6474)
 
 switch(FEAT_INDUSTRIES, SELF, switch_main_mixed_farm, current_callback) {
 	0: action2_6456;
@@ -38854,51 +37754,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6499, [STORE_TEMP((718432 - 701265), 256),
 	return;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6500, colour) {
-	0: return 0;
-	1: return 1;
-	2: return 2;
-	3: return 13;
-	4: return 2;
-	5: return 5;
-	6: return 1;
-	7: return 1;
-	8: return 0;
-	9: return 14;
-	10: return 10;
-	11: return 11;
-	12: return 13;
-	13: return 13;
-	14: return 14;
-	15: return 14;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6501, colour) {
-	0: return 5;
-	1: return 1;
-	2: return 2;
-	3: return 3;
-	4: return 2;
-	5: return 5;
-	6: return 1;
-	7: return 7;
-	8: return 5;
-	9: return 14;
-	10: return 10;
-	11: return 10;
-	12: return 3;
-	13: return 13;
-	14: return 14;
-	15: return 15;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6502, 1) {
-	1: action2_6500;
-	2: action2_6501;
-	action2_6500;
-}
+SWITCH_COLOUR_SCHEME1(action2_6502)
 
 switch(FEAT_INDUSTRIES, SELF, action2_6503, current_callback) {
 	0: action2_6484;
@@ -39131,51 +37987,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6544, [STORE_TEMP((688117 - 701265), 256),
 	return;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6545, colour) {
-	0: return 0;
-	1: return 1;
-	2: return 2;
-	3: return 13;
-	4: return 2;
-	5: return 5;
-	6: return 1;
-	7: return 1;
-	8: return 0;
-	9: return 14;
-	10: return 10;
-	11: return 11;
-	12: return 13;
-	13: return 13;
-	14: return 14;
-	15: return 14;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6546, colour) {
-	0: return 5;
-	1: return 1;
-	2: return 2;
-	3: return 3;
-	4: return 2;
-	5: return 5;
-	6: return 1;
-	7: return 7;
-	8: return 5;
-	9: return 14;
-	10: return 10;
-	11: return 10;
-	12: return 3;
-	13: return 13;
-	14: return 14;
-	15: return 15;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6547, 1) {
-	1: action2_6545;
-	2: action2_6546;
-	action2_6545;
-}
+SWITCH_COLOUR_SCHEME1(action2_6547)
 
 switch(FEAT_INDUSTRIES, SELF, action2_6548, STORE_PERM((1 + LOAD_PERM(15)), 15)) {
 	0: return 0;
@@ -39602,51 +38414,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6615, [STORE_TEMP((688117 - 701265), 256),
 	return;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6616, colour) {
-	0: return 0;
-	1: return 1;
-	2: return 2;
-	3: return 13;
-	4: return 2;
-	5: return 5;
-	6: return 1;
-	7: return 1;
-	8: return 0;
-	9: return 14;
-	10: return 10;
-	11: return 11;
-	12: return 13;
-	13: return 13;
-	14: return 14;
-	15: return 14;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6617, colour) {
-	0: return 5;
-	1: return 1;
-	2: return 2;
-	3: return 3;
-	4: return 2;
-	5: return 5;
-	6: return 1;
-	7: return 7;
-	8: return 5;
-	9: return 14;
-	10: return 10;
-	11: return 10;
-	12: return 3;
-	13: return 13;
-	14: return 14;
-	15: return 15;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6618, 1) {
-	1: action2_6616;
-	2: action2_6617;
-	action2_6616;
-}
+SWITCH_COLOUR_SCHEME1(action2_6618)
 
 switch(FEAT_INDUSTRIES, SELF, action2_6619, current_callback) {
 	0: action2_6600;
@@ -39913,51 +38681,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6670, [STORE_TEMP((588041 - 701265), 256),
 	return;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6671, colour) {
-	0: return 0;
-	1: return 1;
-	2: return 2;
-	3: return 13;
-	4: return 2;
-	5: return 5;
-	6: return 1;
-	7: return 1;
-	8: return 0;
-	9: return 14;
-	10: return 10;
-	11: return 11;
-	12: return 13;
-	13: return 13;
-	14: return 14;
-	15: return 14;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6672, colour) {
-	0: return 5;
-	1: return 1;
-	2: return 2;
-	3: return 3;
-	4: return 2;
-	5: return 5;
-	6: return 1;
-	7: return 7;
-	8: return 5;
-	9: return 14;
-	10: return 10;
-	11: return 10;
-	12: return 3;
-	13: return 13;
-	14: return 14;
-	15: return 15;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6673, 1) {
-	1: action2_6671;
-	2: action2_6672;
-	action2_6671;
-}
+SWITCH_COLOUR_SCHEME1(action2_6673)
 
 switch(FEAT_INDUSTRIES, SELF, action2_6674, STORE_PERM((1 + LOAD_PERM(15)), 15)) {
 	0: return 0;
@@ -41230,51 +39954,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6848, [STORE_TEMP((705283 - 701265), 256),
 	return;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6849, colour) {
-	0: return 0;
-	1: return 1;
-	2: return 2;
-	3: return 13;
-	4: return 2;
-	5: return 5;
-	6: return 1;
-	7: return 1;
-	8: return 0;
-	9: return 14;
-	10: return 10;
-	11: return 11;
-	12: return 13;
-	13: return 13;
-	14: return 14;
-	15: return 14;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6850, colour) {
-	0: return 5;
-	1: return 1;
-	2: return 2;
-	3: return 3;
-	4: return 2;
-	5: return 5;
-	6: return 1;
-	7: return 7;
-	8: return 5;
-	9: return 14;
-	10: return 10;
-	11: return 10;
-	12: return 3;
-	13: return 13;
-	14: return 14;
-	15: return 15;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6851, 2) {
-	1: action2_6849;
-	2: action2_6850;
-	action2_6849;
-}
+SWITCH_COLOUR_SCHEME2(action2_6851)
 
 switch(FEAT_INDUSTRIES, SELF, action2_6852, STORE_PERM((1 + LOAD_PERM(15)), 15)) {
 	0: return 0;
@@ -43681,51 +42361,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_7138, [STORE_TEMP(-701265, 256), 32928]) {
 	return;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7139, colour) {
-	0: return 0;
-	1: return 1;
-	2: return 2;
-	3: return 13;
-	4: return 2;
-	5: return 5;
-	6: return 1;
-	7: return 1;
-	8: return 0;
-	9: return 14;
-	10: return 10;
-	11: return 11;
-	12: return 13;
-	13: return 13;
-	14: return 14;
-	15: return 14;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7140, colour) {
-	0: return 5;
-	1: return 1;
-	2: return 2;
-	3: return 3;
-	4: return 2;
-	5: return 5;
-	6: return 1;
-	7: return 7;
-	8: return 5;
-	9: return 14;
-	10: return 10;
-	11: return 10;
-	12: return 3;
-	13: return 13;
-	14: return 14;
-	15: return 15;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7141, 1) {
-	1: action2_7139;
-	2: action2_7140;
-	action2_7139;
-}
+SWITCH_COLOUR_SCHEME1(action2_7141)
 
 switch(FEAT_INDUSTRIES, SELF, switch_main_quarry, current_callback) {
 	0: action2_7123;
@@ -44323,51 +42959,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_7229, [STORE_TEMP((729390 - 701265), 256),
 	return;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7230, colour) {
-	0: return 0;
-	1: return 1;
-	2: return 2;
-	3: return 13;
-	4: return 2;
-	5: return 5;
-	6: return 1;
-	7: return 1;
-	8: return 0;
-	9: return 14;
-	10: return 10;
-	11: return 11;
-	12: return 13;
-	13: return 13;
-	14: return 14;
-	15: return 14;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7231, colour) {
-	0: return 5;
-	1: return 1;
-	2: return 2;
-	3: return 3;
-	4: return 2;
-	5: return 5;
-	6: return 1;
-	7: return 7;
-	8: return 5;
-	9: return 14;
-	10: return 10;
-	11: return 10;
-	12: return 3;
-	13: return 13;
-	14: return 14;
-	15: return 15;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7232, 1) {
-	1: action2_7230;
-	2: action2_7231;
-	action2_7230;
-}
+SWITCH_COLOUR_SCHEME1(action2_7232)
 
 switch(FEAT_INDUSTRIES, SELF, action2_7233, STORE_PERM((1 + LOAD_PERM(15)), 15)) {
 	0: return 0;
@@ -44587,51 +43179,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_7277, [STORE_TEMP(-701265, 256), 32928]) {
 	return;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7278, colour) {
-	0: return 0;
-	1: return 1;
-	2: return 2;
-	3: return 13;
-	4: return 2;
-	5: return 5;
-	6: return 1;
-	7: return 1;
-	8: return 0;
-	9: return 14;
-	10: return 10;
-	11: return 11;
-	12: return 13;
-	13: return 13;
-	14: return 14;
-	15: return 14;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7279, colour) {
-	0: return 5;
-	1: return 1;
-	2: return 2;
-	3: return 3;
-	4: return 2;
-	5: return 5;
-	6: return 1;
-	7: return 7;
-	8: return 5;
-	9: return 14;
-	10: return 10;
-	11: return 10;
-	12: return 3;
-	13: return 13;
-	14: return 14;
-	15: return 15;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7280, 1) {
-	1: action2_7278;
-	2: action2_7279;
-	action2_7278;
-}
+SWITCH_COLOUR_SCHEME1(action2_7280)
 
 switch(FEAT_INDUSTRIES, SELF, action2_7281, STORE_PERM((1 + LOAD_PERM(15)), 15)) {
 	0: return 0;
@@ -45376,51 +43924,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_7400, [STORE_TEMP(-701265, 256), 32928]) {
 	return;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7401, colour) {
-	0: return 0;
-	1: return 1;
-	2: return 2;
-	3: return 13;
-	4: return 2;
-	5: return 5;
-	6: return 1;
-	7: return 1;
-	8: return 0;
-	9: return 14;
-	10: return 10;
-	11: return 11;
-	12: return 13;
-	13: return 13;
-	14: return 14;
-	15: return 14;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7402, colour) {
-	0: return 5;
-	1: return 1;
-	2: return 2;
-	3: return 3;
-	4: return 2;
-	5: return 5;
-	6: return 1;
-	7: return 7;
-	8: return 5;
-	9: return 14;
-	10: return 10;
-	11: return 10;
-	12: return 3;
-	13: return 13;
-	14: return 14;
-	15: return 15;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7403, 1) {
-	1: action2_7401;
-	2: action2_7402;
-	action2_7401;
-}
+SWITCH_COLOUR_SCHEME1(action2_7403)
 
 switch(FEAT_INDUSTRIES, SELF, switch_main_sheep_farm, current_callback) {
 	0: action2_7385;
@@ -45691,51 +44195,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_7456, [STORE_TEMP((684100 - 701265), 256),
 	return;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7457, colour) {
-	0: return 0;
-	1: return 1;
-	2: return 2;
-	3: return 13;
-	4: return 2;
-	5: return 5;
-	6: return 1;
-	7: return 1;
-	8: return 0;
-	9: return 14;
-	10: return 10;
-	11: return 11;
-	12: return 13;
-	13: return 13;
-	14: return 14;
-	15: return 14;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7458, colour) {
-	0: return 5;
-	1: return 1;
-	2: return 2;
-	3: return 3;
-	4: return 2;
-	5: return 5;
-	6: return 1;
-	7: return 7;
-	8: return 5;
-	9: return 14;
-	10: return 10;
-	11: return 10;
-	12: return 3;
-	13: return 13;
-	14: return 14;
-	15: return 15;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7459, 1) {
-	1: action2_7457;
-	2: action2_7458;
-	action2_7457;
-}
+SWITCH_COLOUR_SCHEME1(action2_7459)
 
 switch(FEAT_INDUSTRIES, SELF, action2_7460, STORE_PERM((1 + LOAD_PERM(15)), 15)) {
 	0: return 0;
@@ -46252,51 +44712,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_7544, [STORE_TEMP((631870 - 701265), 256),
 	return;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7545, colour) {
-	0: return 0;
-	1: return 1;
-	2: return 2;
-	3: return 13;
-	4: return 2;
-	5: return 5;
-	6: return 1;
-	7: return 1;
-	8: return 0;
-	9: return 14;
-	10: return 10;
-	11: return 11;
-	12: return 13;
-	13: return 13;
-	14: return 14;
-	15: return 14;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7546, colour) {
-	0: return 5;
-	1: return 1;
-	2: return 2;
-	3: return 3;
-	4: return 2;
-	5: return 5;
-	6: return 1;
-	7: return 7;
-	8: return 5;
-	9: return 14;
-	10: return 10;
-	11: return 10;
-	12: return 3;
-	13: return 13;
-	14: return 14;
-	15: return 15;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7547, 1) {
-	1: action2_7545;
-	2: action2_7546;
-	action2_7545;
-}
+SWITCH_COLOUR_SCHEME1(action2_7547)
 
 switch(FEAT_INDUSTRIES, SELF, action2_7548, STORE_PERM((1 + LOAD_PERM(15)), 15)) {
 	0: return 0;
@@ -47799,51 +46215,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_7700, [STORE_TEMP((643558 - 701265), 256),
 	return;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7701, colour) {
-	0: return 0;
-	1: return 1;
-	2: return 2;
-	3: return 13;
-	4: return 2;
-	5: return 5;
-	6: return 1;
-	7: return 1;
-	8: return 0;
-	9: return 14;
-	10: return 10;
-	11: return 11;
-	12: return 13;
-	13: return 13;
-	14: return 14;
-	15: return 14;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7702, colour) {
-	0: return 5;
-	1: return 1;
-	2: return 2;
-	3: return 3;
-	4: return 2;
-	5: return 5;
-	6: return 1;
-	7: return 7;
-	8: return 5;
-	9: return 14;
-	10: return 10;
-	11: return 10;
-	12: return 3;
-	13: return 13;
-	14: return 14;
-	15: return 15;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7703, 1) {
-	1: action2_7701;
-	2: action2_7702;
-	action2_7701;
-}
+SWITCH_COLOUR_SCHEME1(action2_7703)
 
 switch(FEAT_INDUSTRIES, SELF, action2_7704, STORE_PERM((1 + LOAD_PERM(15)), 15)) {
 	0: return 0;

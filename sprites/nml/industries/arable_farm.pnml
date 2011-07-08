@@ -393,7 +393,7 @@ switch(FEAT_INDUSTRIES, SELF, switch_arable_farm_cb_text_fund, [STORE_TEMP(-7012
 	return;
 }
 
-COLOUR_SCHEME1(switch_arable_farm_cb_colour)
+SWITCH_COLOUR_SCHEME1(switch_arable_farm_cb_colour)
 
 switch(FEAT_INDUSTRIES, SELF, switch_main_arable_farm, current_callback) {
 	0: switch_arable_farm_cb_production;
