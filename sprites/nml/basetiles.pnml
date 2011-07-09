@@ -39,7 +39,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_224, 224) {
 item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_225, 225) {
 	property {
 		substitute: 0;
-  accepted_cargos: [];
+		accepted_cargos: [];
 		land_shape_flags: 0;
 	}
 }
@@ -59,7 +59,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_225, 225) {
 item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_226, 226) {
 	property {
 		substitute: 0;
-  accepted_cargos: [];
+		accepted_cargos: [];
 		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
 	}
 }
@@ -79,7 +79,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_226, 226) {
 item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_227, 227) {
 	property {
 		substitute: 0;
-  accepted_cargos: [];
+		accepted_cargos: [];
 		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
 		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
