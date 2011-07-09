@@ -167,7 +167,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_2720, ((var[0x60, 16, 255, 0] - snowlin
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_2721, (current_callback & 255)) {
-	47: action2_2720;
+	INDTILE_CB_SLOPE_IS_SUITABLE: action2_2720;
 	action2_2699;
 }
 

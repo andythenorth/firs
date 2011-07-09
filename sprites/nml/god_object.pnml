@@ -1626,7 +1626,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_3014, var[0x60, 0, 255, 0]) {
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_3015, (current_callback & 255)) {
-	47: action2_3014;
+	INDTILE_CB_SLOPE_IS_SUITABLE: action2_3014;
 	switch_brewery_terrain;
 }
 
@@ -2414,7 +2414,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_3118, var[0x60, 0, 255, 0]) {
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_3119, (current_callback & 255)) {
-	47: action2_3118;
+	INDTILE_CB_SLOPE_IS_SUITABLE: action2_3118;
 	action2_3108;
 }
 
@@ -2942,7 +2942,7 @@ switch(FEAT_INDUSTRYTILES, PARENT, action2_3225, founder) {
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_3226, (current_callback & 255)) {
-	47: action2_3225;
+	INDTILE_CB_SLOPE_IS_SUITABLE: action2_3225;
 	switch_builders_yard_terrain;
 }
 
@@ -4817,9 +4817,9 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_3490, var[0x60, 0, 255, 0]) {
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_3491, (current_callback & 255)) {
-	47: action2_3490;
-	48: return 0;
-	60: return 255;
+	INDTILE_CB_SLOPE_IS_SUITABLE: action2_3490;
+	INDTILE_CB_FOUNDATIONS: return 0;
+	INDTILE_CB_AUTOSLOPE: return 255;
 	switch_clay_pit_terrain;
 }
 
@@ -5604,7 +5604,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_3575, var[0x60, 0, 255, 0]) {
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_3576, (current_callback & 255)) {
-	47: action2_3575;
+	INDTILE_CB_SLOPE_IS_SUITABLE: action2_3575;
 	action2_3565;
 }
 
@@ -6439,7 +6439,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_3720, var[0x60, 9, 1, 0]) {
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_3721, (current_callback & 255)) {
-	47: action2_3720;
+	INDTILE_CB_SLOPE_IS_SUITABLE: action2_3720;
 	action2_3700;
 }
 
@@ -7870,7 +7870,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_3878, var[0x60, 0, 255, 0]) {
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_3879, (current_callback & 255)) {
-	47: action2_3878;
+	INDTILE_CB_SLOPE_IS_SUITABLE: action2_3878;
 	switch_diary_terrain;
 }
 
@@ -8990,7 +8990,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_4024, var[0x60, 0, 255, 0]) {
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_4025, (current_callback & 255)) {
-	47: action2_4024;
+	INDTILE_CB_SLOPE_IS_SUITABLE: action2_4024;
 	action2_4014;
 }
 
@@ -10611,8 +10611,8 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_4171, var[0x60, 0, 543, 0]) {
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_4172, (current_callback & 255)) {
-	47: action2_4171;
-	48: return 0;
+	INDTILE_CB_SLOPE_IS_SUITABLE: action2_4171;
+	INDTILE_CB_FOUNDATIONS: return 0;
 	action2_4170;
 }
 
@@ -16341,9 +16341,9 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_4454, var[0x60, 9, 1, 0]) {
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_4455, (current_callback & 255)) {
-	47: action2_4454;
-	48: return 0;
-	60: return 255;
+	INDTILE_CB_SLOPE_IS_SUITABLE: action2_4454;
+	INDTILE_CB_FOUNDATIONS: return 0;
+	INDTILE_CB_AUTOSLOPE: return 255;
 	action2_4436;
 }
 
@@ -16439,7 +16439,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_4475, var[0x03, 0, 255]) {
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_4476, (current_callback & 255)) {
-	47: action2_4473;
+	INDTILE_CB_SLOPE_IS_SUITABLE: action2_4473;
 	action2_4475;
 }
 
@@ -16844,7 +16844,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_4548, var[0x60, 0, 255, 0]) {
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_4549, (current_callback & 255)) {
-	47: action2_4548;
+	INDTILE_CB_SLOPE_IS_SUITABLE: action2_4548;
 	switch_smithy_forge_terrain;
 }
 
@@ -22241,9 +22241,9 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_4787, var[0x60, 9, 1, 0]) {
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_4788, (current_callback & 255)) {
-	47: action2_4787;
-	48: return 0;
-	60: return 255;
+	INDTILE_CB_SLOPE_IS_SUITABLE: action2_4787;
+	INDTILE_CB_FOUNDATIONS: return 0;
+	INDTILE_CB_AUTOSLOPE: return 255;
 	action2_4776;
 }
 
@@ -22295,8 +22295,8 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_4804, var[0x60, 9, 1, 0]) {
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_4805, (current_callback & 255)) {
-	47: action2_4804;
-	60: return 255;
+	INDTILE_CB_SLOPE_IS_SUITABLE: action2_4804;
+	INDTILE_CB_AUTOSLOPE: return 255;
 	action2_4793;
 }
 
@@ -22995,7 +22995,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_4907, var[0x60, 0, 255, 0]) {
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_4908, (current_callback & 255)) {
-	47: action2_4907;
+	INDTILE_CB_SLOPE_IS_SUITABLE: action2_4907;
 	action2_4897;
 }
 
@@ -23626,7 +23626,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_5014, var[0x60, 0, 255, 0]) {
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_5015, (current_callback & 255)) {
-	47: action2_5014;
+	INDTILE_CB_SLOPE_IS_SUITABLE: action2_5014;
 	action2_5004;
 }
 
@@ -24555,7 +24555,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_5172, var[0x60, 0, 255, 0]) {
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_5173, (current_callback & 255)) {
-	47: action2_5172;
+	INDTILE_CB_SLOPE_IS_SUITABLE: action2_5172;
 	action2_5162;
 }
 
@@ -27119,7 +27119,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_5441, var[0x60, 0, 255, 0]) {
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_5442, (current_callback & 255)) {
-	47: action2_5441;
+	INDTILE_CB_SLOPE_IS_SUITABLE: action2_5441;
 	action2_5431;
 }
 
@@ -27628,7 +27628,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_5541, var[0x60, 4, 1, 0]) {
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_5542, (current_callback & 255)) {
-	47: action2_5541;
+	INDTILE_CB_SLOPE_IS_SUITABLE: action2_5541;
 	action2_5531;
 }
 
@@ -28207,7 +28207,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_5636, var[0x60, 0, 255, 0]) {
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_5637, (current_callback & 255)) {
-	47: action2_5636;
+	INDTILE_CB_SLOPE_IS_SUITABLE: action2_5636;
 	action2_5626;
 }
 
@@ -28701,7 +28701,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_5730, var[0x60, 0, 255, 0]) {
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_5731, (current_callback & 255)) {
-	47: action2_5730;
+	INDTILE_CB_SLOPE_IS_SUITABLE: action2_5730;
 	action2_5720;
 }
 
@@ -31335,7 +31335,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_6021, var[0x60, 0, 255, 0]) {
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_6022, (current_callback & 255)) {
-	47: action2_6021;
+	INDTILE_CB_SLOPE_IS_SUITABLE: action2_6021;
 	action2_6011;
 }
 
@@ -32295,7 +32295,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_6163, var[0x60, 0, 255, 0]) {
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_6164, (current_callback & 255)) {
-	47: action2_6163;
+	INDTILE_CB_SLOPE_IS_SUITABLE: action2_6163;
 	action2_6153;
 }
 
@@ -34359,7 +34359,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_6354, var[0x60, 0, 255, 0]) {
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_6355, (current_callback & 255)) {
-	47: action2_6354;
+	INDTILE_CB_SLOPE_IS_SUITABLE: action2_6354;
 	action2_6344;
 }
 
@@ -34821,7 +34821,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_6443, var[0x60, 9, 1, 0]) {
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_6444, (current_callback & 255)) {
-	47: action2_6443;
+	INDTILE_CB_SLOPE_IS_SUITABLE: action2_6443;
 	action2_6423;
 }
 
@@ -35475,7 +35475,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_6574, var[0x60, 4, 1, 0]) {
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_6575, (current_callback & 255)) {
-	47: action2_6574;
+	INDTILE_CB_SLOPE_IS_SUITABLE: action2_6574;
 	action2_6564;
 }
 
@@ -35530,7 +35530,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_6591, var[0x60, 4, 1, 0]) {
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_6592, (current_callback & 255)) {
-	47: action2_6591;
+	INDTILE_CB_SLOPE_IS_SUITABLE: action2_6591;
 	action2_6581;
 }
 
@@ -36222,7 +36222,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_6723, var[0x60, 0, 255, 0]) {
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_6724, (current_callback & 255)) {
-	47: action2_6723;
+	INDTILE_CB_SLOPE_IS_SUITABLE: action2_6723;
 	action2_6718;
 }
 
@@ -36833,7 +36833,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_6811, var[0x60, 0, 255, 0]) {
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_6812, (current_callback & 255)) {
-	47: action2_6811;
+	INDTILE_CB_SLOPE_IS_SUITABLE: action2_6811;
 	action2_6801;
 }
 
@@ -38893,9 +38893,9 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_7111, var[0x60, 0, 255, 0]) {
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_7112, (current_callback & 255)) {
-	47: action2_7111;
-	48: return 0;
-	60: return 255;
+	INDTILE_CB_SLOPE_IS_SUITABLE: action2_7111;
+	INDTILE_CB_FOUNDATIONS: return 0;
+	INDTILE_CB_AUTOSLOPE: return 255;
 	action2_7093;
 }
 
@@ -39960,7 +39960,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_7303, var[0x60, 4, 1, 0]) {
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_7304, (current_callback & 255)) {
-	47: action2_7303;
+	INDTILE_CB_SLOPE_IS_SUITABLE: action2_7303;
 	CB_FAILED;
 }
 
@@ -40328,7 +40328,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_7373, var[0x60, 9, 1, 0]) {
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_7374, (current_callback & 255)) {
-	47: action2_7373;
+	INDTILE_CB_SLOPE_IS_SUITABLE: action2_7373;
 	action2_7355;
 }
 
@@ -40949,7 +40949,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_7498, var[0x60, 0, 255, 0]) {
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_7499, (current_callback & 255)) {
-	47: action2_7498;
+	INDTILE_CB_SLOPE_IS_SUITABLE: action2_7498;
 	action2_7488;
 }
 
@@ -42274,7 +42274,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_7651, var[0x60, 0, 255, 0]) {
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_7652, (current_callback & 255)) {
-	47: action2_7651;
+	INDTILE_CB_SLOPE_IS_SUITABLE: action2_7651;
 	action2_7641;
 }
 

@@ -115,7 +115,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_2356, var[0x60, 0, 255, 0]) {
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_2357, (current_callback & 255)) {
-	47: action2_2356;
+	INDTILE_CB_SLOPE_IS_SUITABLE: action2_2356;
 	action2_2346;
 }
 
@@ -174,7 +174,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_2375, var[0x60, 0, 255, 0]) {
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_2376, (current_callback & 255)) {
-	47: action2_2375;
+	INDTILE_CB_SLOPE_IS_SUITABLE: action2_2375;
 	action2_2365;
 }
 
@@ -211,7 +211,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_2388, var[0x60, 0, 255, 0]) {
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_2389, (current_callback & 255)) {
-	47: action2_2388;
+	INDTILE_CB_SLOPE_IS_SUITABLE: action2_2388;
 	action2_2378;
 }
 
@@ -269,7 +269,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_2407, var[0x60, 0, 255, 0]) {
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_2408, (current_callback & 255)) {
-	47: action2_2407;
+	INDTILE_CB_SLOPE_IS_SUITABLE: action2_2407;
 	action2_2397;
 }
 
@@ -306,7 +306,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_2420, var[0x60, 0, 255, 0]) {
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_2421, (current_callback & 255)) {
-	47: action2_2420;
+	INDTILE_CB_SLOPE_IS_SUITABLE: action2_2420;
 	action2_2410;
 }
 
@@ -364,7 +364,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_2439, var[0x60, 0, 255, 0]) {
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_2440, (current_callback & 255)) {
-	47: action2_2439;
+	INDTILE_CB_SLOPE_IS_SUITABLE: action2_2439;
 	action2_2429;
 }
 
@@ -401,7 +401,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_2452, var[0x60, 0, 255, 0]) {
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_2453, (current_callback & 255)) {
-	47: action2_2452;
+	INDTILE_CB_SLOPE_IS_SUITABLE: action2_2452;
 	action2_2442;
 }
 
