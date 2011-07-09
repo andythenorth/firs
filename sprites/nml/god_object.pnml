@@ -3,7 +3,7 @@
 item(FEAT_INDUSTRYTILES, tile_brewery, 161) {
 	property {
 		substitute: 0;
-		accepted_cargos: [[13, 8], [6, 8], [18, 8]];
+		accepted_cargos: [[cargo_fruits, 8], [cargo_grain, 8], [cargo_manufacturing_supplies, 8]];
 		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
 		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 		animation_info: [1, 71];
@@ -1736,8 +1736,8 @@ item(FEAT_INDUSTRIES, brewery, 35) {
 		prod_decrease_msg: 18489;
 		new_ind_msg: 18477;
 		name: string(STR_IND_BREWERY);
-		prod_cargo_types: [29, 255];
-		accept_cargo_types: [18, 13, 6];
+		prod_cargo_types: [cargo_alcohol];
+		accept_cargo_types: [cargo_manufacturing_supplies, cargo_fruits, cargo_grain];
 		prod_multiplier: [0, 0];
 		input_multiplier_1: [0, 0];
 		input_multiplier_2: [0, 0];
@@ -1990,7 +1990,7 @@ item(FEAT_INDUSTRIES, brewery, 35) {
 item(FEAT_INDUSTRYTILES, tile_brick_works, 165) {
 	property {
 		substitute: 0;
-		accepted_cargos: [[1, 8], [16, 8], [17, 8]];
+		accepted_cargos: [[cargo_coal, 8], [cargo_clay, 8], [cargo_sand, 8]];
 		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
 		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 		animation_info: [1, 7];
@@ -2536,8 +2536,8 @@ item(FEAT_INDUSTRIES, brick_works, 45) {
 		prod_decrease_msg: 18489;
 		new_ind_msg: 18477;
 		name: string(STR_IND_BRICK_WORKS);
-		prod_cargo_types: [28, 255];
-		accept_cargo_types: [1, 17, 16];
+		prod_cargo_types: [cargo_building_materials];
+		accept_cargo_types: [cargo_coal, cargo_sand, cargo_clay];
 		prod_multiplier: [0, 0];
 		input_multiplier_1: [0, 0];
 		input_multiplier_2: [0, 0];
@@ -2815,7 +2815,7 @@ item(FEAT_INDUSTRIES, brick_works, 45) {
 item(FEAT_INDUSTRYTILES, tile_builders_yard, 164) {
 	property {
 		substitute: 0;
-		accepted_cargos: [[28, 8], [0, 0], [0, 0]];
+		accepted_cargos: [[cargo_building_materials, 8], [0, 0], [0, 0]];
 		land_shape_flags: 0;
 		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
@@ -3059,8 +3059,8 @@ item(FEAT_INDUSTRIES, builders_yard, 63) {
 		prod_decrease_msg: 18489;
 		new_ind_msg: 18477;
 		name: string(STR_IND_BUILDERS_YARD);
-		prod_cargo_types: [255, 255];
-		accept_cargo_types: [28, 255, 255];
+		prod_cargo_types: [];
+		accept_cargo_types: [cargo_building_materials];
 		prod_multiplier: [0, 0];
 		spec_flags: 32;
 		input_multiplier_1: [0, 0];
@@ -5326,8 +5326,8 @@ item(FEAT_INDUSTRIES, clay_pit, 44) {
 		new_ind_msg: 18477;
 		name: string(STR_IND_CLAY_PIT);
 		nearby_station_name: string(STR_STATIONNAME_PITS);
-		prod_cargo_types: [16, 255];
-		accept_cargo_types: [24, 255, 255];
+		prod_cargo_types: [cargo_clay];
+		accept_cargo_types: [cargo_engineering_supplies];
 		prod_multiplier: [10, 200];
 		input_multiplier_1: [0, 0];
 		input_multiplier_2: [0, 0];
@@ -5462,7 +5462,7 @@ item(FEAT_INDUSTRIES, clay_pit, 44) {
 item(FEAT_INDUSTRYTILES, tile_cement_plant, 162) {
 	property {
 		substitute: 0;
-		accepted_cargos: [[1, 8], [16, 8], [26, 8]];
+		accepted_cargos: [[cargo_coal, 8], [cargo_clay, 8], [cargo_gravel, 8]];
 		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
 		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 		animation_info: [1, 7];
@@ -6199,8 +6199,8 @@ item(FEAT_INDUSTRIES, cement_plant, 43) {
 		prod_decrease_msg: 18489;
 		new_ind_msg: 18477;
 		name: string(STR_IND_CEMENT_PLANT);
-		prod_cargo_types: [28, 255];
-		accept_cargo_types: [1, 16, 26];
+		prod_cargo_types: [cargo_building_materials];
+		accept_cargo_types: [cargo_coal, cargo_clay, cargo_gravel];
 		prod_multiplier: [0, 0];
 		input_multiplier_1: [0, 0];
 		input_multiplier_2: [0, 0];
@@ -6479,7 +6479,7 @@ item(FEAT_INDUSTRIES, coal_mine, 0) {
 	property {
 		substitute: 0;
 		override: 0;
-		accept_cargo_types: [24, 255, 255];
+		accept_cargo_types: [cargo_engineering_supplies, 255, 255];
 		prod_multiplier: [14, 0];
 		input_multiplier_1: [0, 0];
 		conflicting_ind_types: [];
@@ -6687,7 +6687,7 @@ item(FEAT_INDUSTRYTILES, tile_coal_mine7, 6) {
 item(FEAT_INDUSTRYTILES, tile_diary_farm, 180) {
 	property {
 		substitute: 0;
-		accepted_cargos: [[21, 8], [0, 0], [0, 0]];
+		accepted_cargos: [[cargo_farm_supplies, 8], [0, 0], [0, 0]];
 		land_shape_flags: 0;
 		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
@@ -6970,8 +6970,8 @@ item(FEAT_INDUSTRIES, diary_farm, 28) {
 		new_ind_msg: 18477;
 		name: string(STR_IND_DAIRYFARM);
 		nearby_station_name: string(STR_STATIONNAME_FARMS);
-		prod_cargo_types: [4, 10];
-		accept_cargo_types: [21, 255, 255];
+		prod_cargo_types: [cargo_livestock, cargo_milk];
+		accept_cargo_types: [cargo_farm_supplies];
 		prod_multiplier: [2, 2];
 		input_multiplier_1: [0, 0];
 		input_multiplier_2: [0, 0];
@@ -7111,7 +7111,7 @@ item(FEAT_INDUSTRIES, diary_farm, 28) {
 item(FEAT_INDUSTRYTILES, tile_diary, 181) {
 	property {
 		substitute: 0;
-		accepted_cargos: [[18, 8], [10, 8], [0, 0]];
+		accepted_cargos: [[cargo_manufacturing_supplies, 8], [10, 8], [0, 0]];
 		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
 		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 		animation_info: [1, 7];
@@ -8594,8 +8594,8 @@ item(FEAT_INDUSTRIES, diary, 36) {
 		new_ind_msg: 18477;
 		name: string(STR_IND_DAIRY);
 		nearby_station_name: string(STR_STATIONNAME_FACTORIES);
-		prod_cargo_types: [11, 255];
-		accept_cargo_types: [18, 10, 255];
+		prod_cargo_types: [cargo_food];
+		accept_cargo_types: [cargo_manufacturing_supplies, cargo_milk];
 		prod_multiplier: [0, 0];
 		input_multiplier_1: [0, 0];
 		input_multiplier_2: [0, 0];
@@ -8901,8 +8901,8 @@ item(FEAT_INDUSTRIES, dredging_site, 20) {
 		new_ind_msg: 18477;
 		name: string(STR_IND_DEDGING_SITE);
 		nearby_station_name: string(STR_STATIONNAME_DREDGING_SITE);
-		prod_cargo_types: [17, 26];
-		accept_cargo_types: [24, 255, 255];
+		prod_cargo_types: [cargo_sand, cargo_gravel];
+		accept_cargo_types: [cargo_engineering_supplies];
 		prod_multiplier: [8, 8];
 		input_multiplier_1: [0, 0];
 		input_multiplier_2: [0, 0];
@@ -9047,7 +9047,7 @@ item(FEAT_INDUSTRIES, dredging_site, 20) {
 item(FEAT_INDUSTRYTILES, tile_fertilizer_plant, 163) {
 	property {
 		substitute: 0;
-		accepted_cargos: [[23, 8], [0, 0], [0, 0]];
+		accepted_cargos: [[cargo_chemicals, 8], [0, 0], [0, 0]];
 		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
 		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 		animation_info: [1, 7];
@@ -9770,8 +9770,8 @@ item(FEAT_INDUSTRIES, fertilizer_plant, 40) {
 		prod_decrease_msg: 18489;
 		new_ind_msg: 18477;
 		name: string(STR_IND_FERTILIZER_PLANT);
-		prod_cargo_types: [21, 255];
-		accept_cargo_types: [23, 255, 255];
+		prod_cargo_types: [cargo_farm_supplies];
+		accept_cargo_types: [cargo_chemicals];
 		prod_multiplier: [0, 0];
 		input_multiplier_1: [0, 0];
 		input_multiplier_2: [0, 0];
@@ -10326,8 +10326,8 @@ item(FEAT_INDUSTRIES, fishing_grounds, 32) {
 		new_ind_msg: 18477;
 		name: string(STR_IND_FISHING_GROUND);
 		nearby_station_name: string(STR_STATIONNAME_FISHING_GROUNDS);
-		prod_cargo_types: [14, 255];
-		accept_cargo_types: [255, 255, 255];
+		prod_cargo_types: [cargo_fish];
+		accept_cargo_types: [];
 		prod_multiplier: [5, 0];
 		input_multiplier_1: [0, 0];
 		input_multiplier_2: [0, 0];
@@ -10416,7 +10416,7 @@ item(FEAT_INDUSTRIES, fishing_grounds, 32) {
 item(FEAT_INDUSTRYTILES, tile_fishing_harbour1, 195) {
 	property {
 		substitute: 0;
-		accepted_cargos: [[18, 8], [14, 8], [0, 0]];
+		accepted_cargos: [[cargo_manufacturing_supplies, 8], [cargo_fish, 8], [0, 0]];
 		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
 	}
 }
@@ -10424,7 +10424,7 @@ item(FEAT_INDUSTRYTILES, tile_fishing_harbour1, 195) {
 item(FEAT_INDUSTRYTILES, tile_fishing_harbour2, 196) {
 	property {
 		substitute: 0;
-		accepted_cargos: [[18, 8], [14, 8], [0, 0]];
+		accepted_cargos: [[cargo_manufacturing_supplies, 8], [cargo_fish, 8], [0, 0]];
 		land_shape_flags: 32;
 		callback_flags: 48;
 	}
@@ -11422,8 +11422,8 @@ item(FEAT_INDUSTRIES, fishing_harbour, 31) {
 		prod_decrease_msg: 18489;
 		new_ind_msg: 18477;
 		name: string(STR_IND_FISHING_HARBOUR);
-		prod_cargo_types: [11, 255];
-		accept_cargo_types: [18, 14, 255];
+		prod_cargo_types: [cargo_food];
+		accept_cargo_types: [cargo_manufacturing_supplies, cargo_fish];
 		prod_multiplier: [0, 0];
 		input_multiplier_1: [0, 0];
 		input_multiplier_2: [0, 0];
@@ -11685,7 +11685,7 @@ item(FEAT_INDUSTRIES, fishing_harbour, 31) {
 item(FEAT_INDUSTRYTILES, tile_food_market, 194) {
 	property {
 		substitute: 0;
-		accepted_cargos: [[11, 8], [13, 8], [29, 8]];
+		accepted_cargos: [[cargo_food, 8], [cargo_fruits, 8], [cargo_alcohol, 8]];
 		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
 	}
 }
@@ -11787,8 +11787,8 @@ item(FEAT_INDUSTRIES, food_market, 59) {
 		prod_decrease_msg: 18489;
 		new_ind_msg: 18477;
 		name: string(STR_IND_FOOD_MARKET);
-		prod_cargo_types: [255, 255];
-		accept_cargo_types: [11, 13, 29];
+		prod_cargo_types: [];
+		accept_cargo_types: [cargo_food, cargo_fruits, cargo_alcohol];
 		prod_multiplier: [0, 0];
 		input_multiplier_1: [0, 0];
 		input_multiplier_2: [0, 0];
@@ -11840,7 +11840,7 @@ item(FEAT_INDUSTRIES, food_market, 59) {
 item(FEAT_INDUSTRYTILES, tile_forest, 205) {
 	property {
 		substitute: 0;
-		accepted_cargos: [[21, 8], [0, 0], [0, 0]];
+		accepted_cargos: [[cargo_farm_supplies, 8], [0, 0], [0, 0]];
 		land_shape_flags: 0;
 		callback_flags: 112;
 	}
@@ -17067,7 +17067,7 @@ item(FEAT_INDUSTRYTILES, tile_forest, 205) {
 item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_206, 206) {
 	property {
 		substitute: 0;
-		accepted_cargos: [[21, 8], [0, 0], [0, 0]];
+		accepted_cargos: [[cargo_farm_supplies, 8], [0, 0], [0, 0]];
 		land_shape_flags: 0;
 		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
@@ -17228,8 +17228,8 @@ item(FEAT_INDUSTRIES, forest, 11) {
 		prod_decrease_msg: 18489;
 		new_ind_msg: 18477;
 		name: 18437;
-		prod_cargo_types: [cargotype("WOOD")];
-		accept_cargo_types: [cargotype("FMSP")];
+		prod_cargo_types: [cargo_wood];
+		accept_cargo_types: [cargo_farm_supplies];
 		prod_multiplier: [12];
 		conflicting_ind_types: [];
 		prob_random: 8;
@@ -17377,7 +17377,7 @@ item(FEAT_INDUSTRIES, forest, 11) {
 item(FEAT_INDUSTRYTILES, tile_smithy_forge, 209) {
 	property {
 		substitute: 0;
-		accepted_cargos: [[9, 8], [0, 0], [0, 0]];
+		accepted_cargos: [[cargo_steel, 8], [0, 0], [0, 0]];
 		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
 		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
@@ -17446,7 +17446,7 @@ switch(FEAT_INDUSTRYTILES, PARENT, switch_smithy_forge_default_layout, layout_nu
 item(FEAT_INDUSTRYTILES, tile_smithy_forge, 209) {
 	property {
 		substitute: 0;
-		accepted_cargos: [[9, 8], [0, 0], [0, 0]];
+		accepted_cargos: [[cargo_steel, 8], [0, 0], [0, 0]];
 		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
 		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
@@ -17515,7 +17515,7 @@ switch(FEAT_INDUSTRYTILES, PARENT, switch_smithy_forge_desert_layout, layout_num
 item(FEAT_INDUSTRYTILES, tile_smithy_forge, 209) {
 	property {
 		substitute: 0;
-		accepted_cargos: [[9, 8], [0, 0], [0, 0]];
+		accepted_cargos: [[cargo_steel, 8], [0, 0], [0, 0]];
 		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
 		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
@@ -17626,8 +17626,8 @@ item(FEAT_INDUSTRIES, smithy_forge, 6) {
 		new_ind_msg: 18477;
 		name: string(STR_IND_SMITHY_FORGE);
 		nearby_station_name: string(STR_STATIONNAME_SMITHY_FORGE);
-		prod_cargo_types: [24, 21];
-		accept_cargo_types: [9, 255, 255];
+		prod_cargo_types: [cargo_engineering_supplies, cargo_farm_supplies];
+		accept_cargo_types: [cargo_steel];
 		prod_multiplier: [0, 0];
 		input_multiplier_1: [0, 0];
 		input_multiplier_2: [0, 0];
@@ -17820,7 +17820,7 @@ item(FEAT_INDUSTRIES, smithy_forge, 6) {
 item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_207, 207) {
 	property {
 		substitute: 0;
-		accepted_cargos: [[21, 8], [0, 0], [0, 0]];
+		accepted_cargos: [[cargo_farm_supplies, 8], [0, 0], [0, 0]];
 		land_shape_flags: 0;
 		callback_flags: 112;
 	}
@@ -23012,7 +23012,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_207, 207) {
 item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_208, 208) {
 	property {
 		substitute: 0;
-		accepted_cargos: [[21, 8], [0, 0], [0, 0]];
+		accepted_cargos: [[cargo_farm_supplies, 8], [0, 0], [0, 0]];
 		land_shape_flags: 0;
 		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
@@ -23117,7 +23117,7 @@ tilelayout tilelayout_5807_4 {
 	4, 4: item_FEAT_INDUSTRYTILES_207;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_30, 30) {
+item(FEAT_INDUSTRIES, fruit_plantation, 30) {
 	property {
 		substitute: 0;
 		layouts: [tilelayout_5807_1, tilelayout_5807_2, tilelayout_5807_3, tilelayout_5807_4];
@@ -23127,8 +23127,8 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_30, 30) {
 		prod_decrease_msg: 18489;
 		new_ind_msg: 18477;
 		name: 18453;
-		prod_cargo_types: [13, 255];
-		accept_cargo_types: [21, 255, 255];
+		prod_cargo_types: [cargo_fruits];
+		accept_cargo_types: [cargo_farm_supplies];
 		prod_multiplier: [2];
 		conflicting_ind_types: [];
 		prob_random: 8;
@@ -23141,7 +23141,7 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_30, 30) {
 	}
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_4808, industry_distance(item_FEAT_INDUSTRIES_30)) {
+switch(FEAT_INDUSTRIES, SELF, action2_4808, industry_distance(fruit_plantation)) {
 	10..36: return 1024;
 	return 4;
 }
@@ -23249,7 +23249,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_4834, current_callback) {
 	action2_4814;
 }
 
-item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_30, 30) {
+item(FEAT_INDUSTRIES, fruit_plantation, 30) {
 	graphics {
 		action2_4834;
 	}
@@ -23258,7 +23258,7 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_30, 30) {
 item(FEAT_INDUSTRYTILES, tile_furniture_factory, 184) {
 	property {
 		substitute: 0;
-		accepted_cargos: [[19, 8], [18, 8], [0, 0]];
+		accepted_cargos: [[cargo_lumber, 8], [cargo_manufacturing_supplies, 8], [0, 0]];
 		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
 		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
@@ -23893,8 +23893,8 @@ item(FEAT_INDUSTRIES, furniture_factory, 13) {
 		new_ind_msg: 18477;
 		name: string(STR_IND_FURNITURE_FACTORY);
 		nearby_station_name: string(STR_STATIONNAME_FACTORIES);
-		prod_cargo_types: [5, 255];
-		accept_cargo_types: [18, 19, 255];
+		prod_cargo_types: [cargo_goods];
+		accept_cargo_types: [cargo_manufacturing_supplies, cargo_lumber];
 		prod_multiplier: [0, 0];
 		input_multiplier_1: [0, 0];
 		input_multiplier_2: [0, 0];
@@ -24132,7 +24132,7 @@ item(FEAT_INDUSTRIES, furniture_factory, 13) {
 item(FEAT_INDUSTRYTILES, tile_glass_works, 178) {
 	property {
 		substitute: 0;
-		accepted_cargos: [[17, 8], [23, 8], [0, 0]];
+		accepted_cargos: [[cargo_sand, 8], [cargo_chemicals, 8], [0, 0]];
 		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
 		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
@@ -24538,8 +24538,8 @@ item(FEAT_INDUSTRIES, glass_works, 22) {
 		new_ind_msg: 18477;
 		name: string(STR_IND_GLASS_WORKS);
 		nearby_station_name: string(STR_STATIONNAME_FACTORIES);
-		prod_cargo_types: [28, 18];
-		accept_cargo_types: [17, 23, 255];
+		prod_cargo_types: [cargo_building_materials, cargo_manufacturing_supplies];
+		accept_cargo_types: [cargo_sand, cargo_chemicals];
 		prod_multiplier: [0, 0];
 		input_multiplier_1: [0, 0];
 		input_multiplier_2: [0, 0];
@@ -24807,7 +24807,7 @@ item(FEAT_INDUSTRIES, glass_works, 22) {
 item(FEAT_INDUSTRYTILES, tile_grain_mill, 182) {
 	property {
 		substitute: 0;
-		accepted_cargos: [[6, 8], [18, 8], [0, 0]];
+		accepted_cargos: [[cargo_grain, 8], [cargo_manufacturing_supplies, 8], [0, 0]];
 		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
 		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 		animation_info: [1, 5];
@@ -25579,8 +25579,8 @@ item(FEAT_INDUSTRIES, grain_mill, 34) {
 		prod_decrease_msg: 18489;
 		new_ind_msg: 18477;
 		name: string(STR_IND_GRAIN_MILL);
-		prod_cargo_types: [11, 255];
-		accept_cargo_types: [18, 6, 255];
+		prod_cargo_types: [cargo_food];
+		accept_cargo_types: [cargo_manufacturing_supplies, cargo_grain];
 		prod_multiplier: [0, 0];
 		input_multiplier_1: [0, 0];
 		input_multiplier_2: [0, 0];
@@ -25838,7 +25838,7 @@ item(FEAT_INDUSTRIES, grain_mill, 34) {
 item(FEAT_INDUSTRYTILES, tile_hardware_store, 218) {
 	property {
 		substitute: 0;
-		accepted_cargos: [[5, 8], [28, 8], [0, 0]];
+		accepted_cargos: [[cargo_goods, 8], [cargo_building_materials, 8], [0, 0]];
 		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
 	}
 }
@@ -25944,8 +25944,8 @@ item(FEAT_INDUSTRIES, hardware_store, 57) {
 		prod_decrease_msg: 18489;
 		new_ind_msg: 18477;
 		name: string(STR_IND_HARDWARE_STORE);
-		prod_cargo_types: [255, 255];
-		accept_cargo_types: [5, 28, 255];
+		prod_cargo_types: [];
+		accept_cargo_types: [cargo_grain, cargo_building_materials];
 		prod_multiplier: [0, 0];
 		input_multiplier_1: [0, 0];
 		input_multiplier_2: [0, 0];
@@ -25983,7 +25983,7 @@ item(FEAT_INDUSTRIES, hardware_store, 57) {
 item(FEAT_INDUSTRYTILES, tile_hotel, 217) {
 	property {
 		substitute: 0;
-		accepted_cargos: [[11, 8], [29, 8], [0, 8]];
+		accepted_cargos: [[cargo_food, 8], [cargo_alcohol, 8], [0, 8]];
 		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
 	}
 }
@@ -26110,8 +26110,8 @@ item(FEAT_INDUSTRIES, hotel, 58) {
 		prod_decrease_msg: 18489;
 		new_ind_msg: 18477;
 		name: string(STR_IND_HOTEL);
-		prod_cargo_types: [0, 255];
-		accept_cargo_types: [11, 29, 0];
+		prod_cargo_types: [cargo_passengers];
+		accept_cargo_types: [cargo_food, cargo_alcohol, cargo_passengers];
 		prod_multiplier: [14, 0];
 		input_multiplier_1: [0, 0];
 		input_multiplier_2: [0, 0];
@@ -26151,7 +26151,7 @@ item(FEAT_INDUSTRIES, oil_refinery, 4) {
 	property {
 		substitute: 18;
 		override: 18;
-		accept_cargo_types: [24, 255, 255];
+		accept_cargo_types: [cargo_engineering_supplies, 255, 255];
 		prod_multiplier: [12];
 		conflicting_ind_types: [];
 		prob_random: 7;
@@ -26425,7 +26425,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_115, 115) {
 item(FEAT_INDUSTRYTILES, tile_iron_works, 199) {
 	property {
 		substitute: 0;
-		accepted_cargos: [[8, 8], [7, 8], [0, 0]];
+		accepted_cargos: [[cargo_iron_ore, 8], [cargo_wood, 8], [0, 0]];
 		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
 		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 		animation_info: [1, 47];
@@ -28184,8 +28184,8 @@ item(FEAT_INDUSTRIES, iron_works, 21) {
 		prod_decrease_msg: 18489;
 		new_ind_msg: 18477;
 		name: string(STR_IND_IRON_WORKS);
-		prod_cargo_types: [9, 255];
-		accept_cargo_types: [8, 7, 255];
+		prod_cargo_types: [cargo_steel];
+		accept_cargo_types: [cargo_iron_ore, cargo_wood];
 		prod_multiplier: [0, 0];
 		input_multiplier_1: [0, 0];
 		input_multiplier_2: [0, 0];
@@ -28724,8 +28724,8 @@ item(FEAT_INDUSTRIES, junkyard, 25) {
 		prod_decrease_msg: 18489;
 		new_ind_msg: 18477;
 		name: string(STR_IND_JUNKYARD);
-		prod_cargo_types: [20, 255];
-		accept_cargo_types: [24, 255, 255];
+		prod_cargo_types: [cargo_scrap_metal];
+		accept_cargo_types: [cargo_engineering_supplies];
 		prod_multiplier: [6, 0];
 		input_multiplier_1: [0, 0];
 		input_multiplier_2: [0, 0];
@@ -28851,7 +28851,7 @@ item(FEAT_INDUSTRIES, junkyard, 25) {
 item(FEAT_INDUSTRYTILES, tile_lime_kiln, 191) {
 	property {
 		substitute: 0;
-		accepted_cargos: [[26, 8], [1, 8], [0, 0]];
+		accepted_cargos: [[cargo_gravel, 8], [cargo_coal, 8], [0, 0]];
 		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
 		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
@@ -29360,8 +29360,8 @@ item(FEAT_INDUSTRIES, lime_kiln, 1) {
 		prod_decrease_msg: 18489;
 		new_ind_msg: 18477;
 		name: string(STR_IND_LIME_KILN);
-		prod_cargo_types: [23, 21];
-		accept_cargo_types: [26, 1, 255];
+		prod_cargo_types: [cargo_chemicals, cargo_farm_supplies];
+		accept_cargo_types: [cargo_gravel, cargo_coal];
 		prod_multiplier: [0, 0];
 		input_multiplier_1: [0, 0];
 		input_multiplier_2: [0, 0];
@@ -29609,7 +29609,7 @@ item(FEAT_INDUSTRIES, lime_kiln, 1) {
 item(FEAT_INDUSTRYTILES, tile_lumber_yard, 187) {
 	property {
 		substitute: 0;
-		accepted_cargos: [[19, 8], [23, 8], [0, 0]];
+		accepted_cargos: [[cargo_lumber, 8], [cargo_chemicals, 8], [0, 0]];
 		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
 		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
@@ -29911,8 +29911,8 @@ item(FEAT_INDUSTRIES, lumber_yard, 41) {
 		prod_decrease_msg: 18489;
 		new_ind_msg: 18477;
 		name: string(STR_IND_LUMBER_YARD);
-		prod_cargo_types: [24, 28];
-		accept_cargo_types: [19, 23, 255];
+		prod_cargo_types: [cargo_engineering_supplies, cargo_building_materials];
+		accept_cargo_types: [cargo_lumber, cargo_chemicals];
 		prod_multiplier: [0, 0];
 		input_multiplier_1: [0, 0];
 		input_multiplier_2: [0, 0];
@@ -30150,7 +30150,7 @@ item(FEAT_INDUSTRIES, lumber_yard, 41) {
 item(FEAT_INDUSTRYTILES, tile_machine_shop, 186) {
 	property {
 		substitute: 0;
-		accepted_cargos: [[9, 8], [25, 8], [0, 0]];
+		accepted_cargos: [[cargo_steel, 8], [cargo_fuel_oil, 8], [0, 0]];
 		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
 		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 		animation_info: [1, 47];
@@ -32790,8 +32790,8 @@ item(FEAT_INDUSTRIES, machine_shop, 38) {
 		prod_decrease_msg: 18489;
 		new_ind_msg: 18477;
 		name: string(STR_IND_MACHINE_SHOP);
-		prod_cargo_types: [21, 24];
-		accept_cargo_types: [9, 25, 255];
+		prod_cargo_types: [cargo_farm_supplies, cargo_engineering_supplies];
+		accept_cargo_types: [cargo_steel, cargo_fuel_oil];
 		prod_multiplier: [0, 0];
 		input_multiplier_1: [0, 0];
 		input_multiplier_2: [0, 0];
@@ -32984,7 +32984,7 @@ item(FEAT_INDUSTRIES, machine_shop, 38) {
 item(FEAT_INDUSTRYTILES, tile_stockyard, 179) {
 	property {
 		substitute: 0;
-		accepted_cargos: [[4, 8], [18, 8], [0, 0]];
+		accepted_cargos: [[cargo_livestock, 8], [cargo_manufacturing_supplies, 8], [0, 0]];
 		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
 		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
@@ -33745,8 +33745,8 @@ item(FEAT_INDUSTRIES, stockyard, 37) {
 		new_ind_msg: 18477;
 		name: string(STR_IND_STOCKYARD);
 		nearby_station_name: string(STR_STATIONNAME_FACTORIES);
-		prod_cargo_types: [11, 255];
-		accept_cargo_types: [18, 4, 255];
+		prod_cargo_types: [cargo_food];
+		accept_cargo_types: [cargo_manufacturing_supplies, cargo_livestock];
 		prod_multiplier: [0, 0];
 		input_multiplier_1: [0, 0];
 		input_multiplier_2: [0, 0];
@@ -33999,7 +33999,7 @@ item(FEAT_INDUSTRIES, stockyard, 37) {
 item(FEAT_INDUSTRYTILES, tile_metal_foundry, 188) {
 	property {
 		substitute: 0;
-		accepted_cargos: [[9, 8], [0, 0], [0, 0]];
+		accepted_cargos: [[cargo_steel, 8], [0, 0], [0, 0]];
 		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
 		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 		animation_info: [1, 47];
@@ -35896,8 +35896,8 @@ item(FEAT_INDUSTRIES, metal_foundry, 9) {
 		prod_decrease_msg: 18489;
 		new_ind_msg: 18477;
 		name: string(STR_IND_METAL_FOUNDRY);
-		prod_cargo_types: [cargotype("GOOD"), cargotype("MNSP")];
-		accept_cargo_types: [cargotype("STEL")];
+		prod_cargo_types: [cargo_goods, cargo_manufacturing_supplies];
+		accept_cargo_types: [cargo_steel];
 		prod_multiplier: [0, 0];
 		input_multiplier_1: [0, 0];
 		input_multiplier_2: [0, 0];
@@ -36090,7 +36090,7 @@ item(FEAT_INDUSTRIES, metal_foundry, 9) {
 item(FEAT_INDUSTRYTILES, tile_mixed_farm, 190) {
 	property {
 		substitute: 0;
-		accepted_cargos: [[21, 8], [0, 0], [0, 0]];
+		accepted_cargos: [[cargo_farm_supplies, 8], [0, 0], [0, 0]];
 		land_shape_flags: 0;
 		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
@@ -36381,8 +36381,8 @@ item(FEAT_INDUSTRIES, mixed_farm, 29) {
 		new_ind_msg: 18477;
 		name: string(STR_IND_MIXEDFARM);
 		nearby_station_name: string(STR_STATIONNAME_FARMS);
-		prod_cargo_types: [cargotype("LVST"), cargotype("FICR")];
-		accept_cargo_types: [21, 255, 255];
+		prod_cargo_types: [cargo_livestock, cargo_plant_fibres];
+		accept_cargo_types: [cargo_farm_supplies];
 		prod_multiplier: [2, 2];
 		input_multiplier_1: [0, 0];
 		input_multiplier_2: [0, 0];
@@ -36529,8 +36529,8 @@ item(FEAT_INDUSTRIES, oil_rig, 16) {
 		substitute: 5;
 		override: 5;
 		name: 18439;
-		prod_cargo_types: [cargotype("OIL_"), cargotype("PASS")];
-		accept_cargo_types: [cargotype("ENSP")];
+		prod_cargo_types: [cargo_oil, cargo_passengers];
+		accept_cargo_types: [cargo_engineering_supplies];
 		prod_multiplier: [20, 2];
 		input_multiplier_1: [0, 0];
 		input_multiplier_2: [0, 0];
@@ -36658,7 +36658,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_25, 25) {
 	property {
 		substitute: 25;
 		override: 25;
-		accepted_cargos: [[24, 8], [0, 8], [0, 0]];
+		accepted_cargos: [[cargo_engineering_supplies, 8], [0, 8], [0, 0]];
 		callback_flags: 0;
 	}
 }
@@ -36667,7 +36667,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_26, 26) {
 	property {
 		substitute: 26;
 		override: 26;
-		accepted_cargos: [[24, 8], [0, 8], [0, 0]];
+		accepted_cargos: [[cargo_engineering_supplies, 8], [0, 8], [0, 0]];
 		callback_flags: 0;
 	}
 }
@@ -36676,7 +36676,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_27, 27) {
 	property {
 		substitute: 27;
 		override: 27;
-		accepted_cargos: [[24, 8], [0, 8], [0, 0]];
+		accepted_cargos: [[cargo_engineering_supplies, 8], [0, 8], [0, 0]];
 		callback_flags: 0;
 	}
 }
@@ -36685,7 +36685,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_28, 28) {
 	property {
 		substitute: 28;
 		override: 28;
-		accepted_cargos: [[24, 8], [0, 8], [0, 0]];
+		accepted_cargos: [[cargo_engineering_supplies, 8], [0, 8], [0, 0]];
 		callback_flags: 0;
 	}
 }
@@ -36695,8 +36695,8 @@ item(FEAT_INDUSTRIES, refinery, 17) {
 		substitute: 4;
 		override: 4;
 		nearby_station_name: string(STR_STATIONNAME_CHEMICALS);
-		prod_cargo_types: [cargotype("RFPR"), cargotype("PETR")];
-		accept_cargo_types: [cargotype("OIL_")];
+		prod_cargo_types: [cargo_chemicals, cargo_fuel_oil];
+		accept_cargo_types: [cargo_oil];
 		input_multiplier_1: [0, 0];
 		input_multiplier_2: [0, 0];
 		input_multiplier_3: [0, 0];
@@ -36895,7 +36895,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_18, 18) {
 	property {
 		substitute: 18;
 		override: 18;
-		accepted_cargos: [[3, 8], [0, 0], [0, 0]];
+		accepted_cargos: [[cargo_oil, 8], [0, 0], [0, 0]];
 	}
 }
 
@@ -36903,7 +36903,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_19, 19) {
 	property {
 		substitute: 19;
 		override: 19;
-		accepted_cargos: [[3, 8], [0, 0], [0, 0]];
+		accepted_cargos: [[cargo_oil, 8], [0, 0], [0, 0]];
 	}
 }
 
@@ -36911,7 +36911,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_20, 20) {
 	property {
 		substitute: 20;
 		override: 20;
-		accepted_cargos: [[3, 8], [0, 0], [0, 0]];
+		accepted_cargos: [[cargo_oil, 8], [0, 0], [0, 0]];
 	}
 }
 
@@ -36919,7 +36919,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_21, 21) {
 	property {
 		substitute: 21;
 		override: 21;
-		accepted_cargos: [[3, 8], [0, 0], [0, 0]];
+		accepted_cargos: [[cargo_oil, 8], [0, 0], [0, 0]];
 	}
 }
 
@@ -36927,7 +36927,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_22, 22) {
 	property {
 		substitute: 22;
 		override: 22;
-		accepted_cargos: [[3, 8], [0, 0], [0, 0]];
+		accepted_cargos: [[cargo_oil, 8], [0, 0], [0, 0]];
 	}
 }
 
@@ -36935,7 +36935,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_23, 23) {
 	property {
 		substitute: 23;
 		override: 23;
-		accepted_cargos: [[3, 8], [0, 0], [0, 0]];
+		accepted_cargos: [[cargo_oil, 8], [0, 0], [0, 0]];
 	}
 }
 
@@ -37106,8 +37106,8 @@ item(FEAT_INDUSTRIES, oil_wells, 15) {
 		prod_decrease_msg: 18489;
 		new_ind_msg: 18477;
 		name: 18445;
-		prod_cargo_types: [cargotype("OIL_")];
-		accept_cargo_types: [cargotype("ENSP")];
+		prod_cargo_types: [cargo_oil];
+		accept_cargo_types: [cargo_engineering_supplies];
 		prod_multiplier: [19];
 		conflicting_ind_types: [];
 		prob_random: 5;
@@ -37230,8 +37230,8 @@ item(FEAT_INDUSTRIES, paper_mill, 14) {
 		substitute: 14;
 		override: 14;
 		nearby_station_name: string(STR_STATIONNAME_MILLS);
-		prod_cargo_types: [cargotype("GOOD"), cargotype("MNSP")];
-		accept_cargo_types: [cargotype("CLAY"), cargotype("WOOD"), cargotype("RFPR")];
+		prod_cargo_types: [cargo_goods, cargo_manufacturing_supplies];
+		accept_cargo_types: [cargo_clay, cargo_wood, cargo_chemicals];
 		input_multiplier_1: [0, 0];
 		input_multiplier_2: [0, 0];
 		input_multiplier_3: [0, 0];
@@ -37500,7 +37500,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_64, 64) {
 	property {
 		substitute: 64;
 		override: 64;
-		accepted_cargos: [[7, 8], [16, 8], [23, 8]];
+		accepted_cargos: [[cargo_wood, 8], [cargo_clay, 8], [cargo_chemicals, 8]];
 	}
 }
 
@@ -37508,7 +37508,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_65, 65) {
 	property {
 		substitute: 65;
 		override: 65;
-		accepted_cargos: [[7, 8], [16, 8], [23, 8]];
+		accepted_cargos: [[cargo_wood, 8], [cargo_clay, 8], [cargo_chemicals, 8]];
 	}
 }
 
@@ -37516,7 +37516,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_66, 66) {
 	property {
 		substitute: 66;
 		override: 66;
-		accepted_cargos: [[7, 8], [16, 8], [23, 8]];
+		accepted_cargos: [[cargo_wood, 8], [cargo_clay, 8], [cargo_chemicals, 8]];
 	}
 }
 
@@ -37524,7 +37524,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_67, 67) {
 	property {
 		substitute: 67;
 		override: 67;
-		accepted_cargos: [[7, 8], [16, 8], [23, 8]];
+		accepted_cargos: [[cargo_wood, 8], [cargo_clay, 8], [cargo_chemicals, 8]];
 	}
 }
 
@@ -37532,7 +37532,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_68, 68) {
 	property {
 		substitute: 68;
 		override: 68;
-		accepted_cargos: [[7, 8], [16, 8], [23, 8]];
+		accepted_cargos: [[cargo_wood, 8], [cargo_clay, 8], [cargo_chemicals, 8]];
 	}
 }
 
@@ -37540,7 +37540,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_69, 69) {
 	property {
 		substitute: 69;
 		override: 69;
-		accepted_cargos: [[7, 8], [16, 8], [23, 8]];
+		accepted_cargos: [[cargo_wood, 8], [cargo_clay, 8], [cargo_chemicals, 8]];
 	}
 }
 
@@ -37548,7 +37548,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_70, 70) {
 	property {
 		substitute: 70;
 		override: 70;
-		accepted_cargos: [[7, 8], [16, 8], [23, 8]];
+		accepted_cargos: [[cargo_wood, 8], [cargo_clay, 8], [cargo_chemicals, 8]];
 	}
 }
 
@@ -37556,14 +37556,14 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_71, 71) {
 	property {
 		substitute: 71;
 		override: 71;
-		accepted_cargos: [[7, 8], [16, 8], [23, 8]];
+		accepted_cargos: [[cargo_wood, 8], [cargo_clay, 8], [cargo_chemicals, 8]];
 	}
 }
 
 item(FEAT_INDUSTRYTILES, tile_petrol_pump, 203) {
 	property {
 		substitute: 0;
-		accepted_cargos: [[11, 8], [5, 8], [25, 8]];
+		accepted_cargos: [[cargo_food, 8], [cargo_goods, 8], [cargo_fuel_oil, 8]];
 		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
 		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
@@ -37788,8 +37788,8 @@ item(FEAT_INDUSTRIES, petrol_pump, 60) {
 		prod_decrease_msg: 18489;
 		new_ind_msg: 18477;
 		name: string(STR_IND_PETROLPUMP);
-		prod_cargo_types: [255, 255];
-		accept_cargo_types: [11, 5, 25];
+		prod_cargo_types: [];
+		accept_cargo_types: [cargo_food, cargo_goods, cargo_fuel_oil];
 		prod_multiplier: [0, 0];
 		input_multiplier_1: [0, 0];
 		input_multiplier_2: [0, 0];
@@ -37831,7 +37831,7 @@ item(FEAT_INDUSTRIES, petrol_pump, 60) {
 item(FEAT_INDUSTRYTILES, tile_plastics_plant, 176) {
 	property {
 		substitute: 0;
-		accepted_cargos: [[23, 8], [22, 8], [0, 0]];
+		accepted_cargos: [[cargo_chemicals, 8], [cargo_plant_fibres, 8], [0, 0]];
 		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
 		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
@@ -38522,8 +38522,8 @@ item(FEAT_INDUSTRIES, plastics_plant, 18) {
 		new_ind_msg: 18477;
 		name: string(STR_IND_PLASTICS_PLANT);
 		nearby_station_name: string(STR_STATIONNAME_PLANTS);
-		prod_cargo_types: [5, 18];
-		accept_cargo_types: [23, 22, 255];
+		prod_cargo_types: [cargo_goods, cargo_manufacturing_supplies];
+		accept_cargo_types: [cargo_chemicals, cargo_plant_fibres];
 		prod_multiplier: [0, 0];
 		input_multiplier_1: [0, 0];
 		input_multiplier_2: [0, 0];
@@ -40932,8 +40932,8 @@ item(FEAT_INDUSTRIES, quarry, 10) {
 		new_ind_msg: 18477;
 		name: string(STR_IND_QUARRY);
 		nearby_station_name: string(STR_STATIONNAME_PITS);
-		prod_cargo_types: [17, 26];
-		accept_cargo_types: [24, 255, 255];
+		prod_cargo_types: [cargo_sand, cargo_gravel];
+		accept_cargo_types: [cargo_engineering_supplies];
 		prod_multiplier: [10, 10];
 		input_multiplier_1: [0, 0];
 		input_multiplier_2: [0, 0];
@@ -41147,8 +41147,8 @@ item(FEAT_INDUSTRIES, recycling_depot, 24) {
 		prod_decrease_msg: 18489;
 		new_ind_msg: 18477;
 		name: string(STR_IND_RECYCLING_DEPOT);
-		prod_cargo_types: [31, 255];
-		accept_cargo_types: [255, 255, 255];
+		prod_cargo_types: [cargo_recyclables];
+		accept_cargo_types: [];
 		prod_multiplier: [0, 0];
 		input_multiplier_1: [0, 0];
 		input_multiplier_2: [0, 0];
@@ -41221,7 +41221,7 @@ item(FEAT_INDUSTRIES, recycling_depot, 24) {
 item(FEAT_INDUSTRYTILES, tile_recycling_plant, 201) {
 	property {
 		substitute: 0;
-		accepted_cargos: [[31, 8], [0, 0], [0, 0]];
+		accepted_cargos: [[cargo_recyclables, 8], [0, 0], [0, 0]];
 		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
 	}
 }
@@ -41463,8 +41463,8 @@ item(FEAT_INDUSTRIES, recycling_plant, 23) {
 		prod_decrease_msg: 18490;
 		new_ind_msg: 18477;
 		name: string(STR_IND_RECYCLING_PLANT);
-		prod_cargo_types: [20, 18];
-		accept_cargo_types: [31, 255, 255];
+		prod_cargo_types: [cargo_scrap_metal, cargo_manufacturing_supplies];
+		accept_cargo_types: [cargo_recyclables];
 		prod_multiplier: [0, 0];
 		input_multiplier_1: [0, 0];
 		input_multiplier_2: [0, 0];
@@ -41678,8 +41678,8 @@ item(FEAT_INDUSTRIES, sawmill, 12) {
 		substitute: 2;
 		override: 2;
 		nearby_station_name: string(STR_STATIONNAME_MILLS);
-		prod_cargo_types: [cargotype("WDPR")];
-		accept_cargo_types: [cargotype("WOOD")];
+		prod_cargo_types: [cargo_lumber];
+		accept_cargo_types: [cargo_wood];
 		input_multiplier_1: [0, 0];
 		input_multiplier_2: [0, 0];
 		input_multiplier_3: [0, 0];
@@ -41884,7 +41884,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_11, 11) {
 	property {
 		substitute: 11;
 		override: 11;
-		accepted_cargos: [[7, 8], [0, 0], [0, 0]];
+		accepted_cargos: [[cargo_wood, 8], [0, 0], [0, 0]];
 		land_shape_flags: 0;
 		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
@@ -41894,7 +41894,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_12, 12) {
 	property {
 		substitute: 12;
 		override: 12;
-		accepted_cargos: [[7, 8], [0, 0], [0, 0]];
+		accepted_cargos: [[cargo_wood, 8], [0, 0], [0, 0]];
 		land_shape_flags: 0;
 		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
@@ -41904,7 +41904,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_13, 13) {
 	property {
 		substitute: 13;
 		override: 13;
-		accepted_cargos: [[7, 8], [0, 0], [0, 0]];
+		accepted_cargos: [[cargo_wood, 8], [0, 0], [0, 0]];
 		land_shape_flags: 0;
 		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
@@ -41914,7 +41914,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_14, 14) {
 	property {
 		substitute: 14;
 		override: 14;
-		accepted_cargos: [[7, 8], [0, 0], [0, 0]];
+		accepted_cargos: [[cargo_wood, 8], [0, 0], [0, 0]];
 		land_shape_flags: 0;
 		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
@@ -41924,7 +41924,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_15, 15) {
 	property {
 		substitute: 15;
 		override: 15;
-		accepted_cargos: [[7, 8], [0, 0], [0, 0]];
+		accepted_cargos: [[cargo_wood, 8], [0, 0], [0, 0]];
 		land_shape_flags: 0;
 		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
@@ -41980,7 +41980,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_15, 15) {
 item(FEAT_INDUSTRYTILES, tile_sheep_farm, 192) {
 	property {
 		substitute: 0;
-		accepted_cargos: [[21, 8], [0, 0], [0, 0]];
+		accepted_cargos: [[cargo_farm_supplies, 8], [0, 0], [0, 0]];
 		land_shape_flags: 0;
 		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
@@ -42393,8 +42393,8 @@ item(FEAT_INDUSTRIES, sheep_farm, 27) {
 		new_ind_msg: 18477;
 		name: string(STR_IND_SHEEPFARM);
 		nearby_station_name: string(STR_STATIONNAME_FARMS);
-		prod_cargo_types: [4, 15];
-		accept_cargo_types: [21, 255, 255];
+		prod_cargo_types: [cargo_livestock, cargo_wool];
+		accept_cargo_types: [cargo_farm_supplies];
 		prod_multiplier: [2, 2];
 		input_multiplier_1: [0, 0];
 		input_multiplier_2: [0, 0];
@@ -42536,7 +42536,7 @@ item(FEAT_INDUSTRIES, item_FEAT_INDUSTRIES_7, 7) {
 		substitute: 8;
 		override: 8;
 		nearby_station_name: string(STR_STATIONNAME_MILLS);
-		accept_cargo_types: [8, 1, 20];
+		accept_cargo_types: [cargo_iron_ore, 1, 20];
 		input_multiplier_1: [0, 0];
 		input_multiplier_2: [0, 0];
 		input_multiplier_3: [0, 0];
@@ -42810,7 +42810,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_52, 52) {
 	property {
 		substitute: 52;
 		override: 52;
-		accepted_cargos: [[8, 8], [20, 8], [1, 8]];
+		accepted_cargos: [[cargo_iron_ore, 8], [cargo_scrap_metal, 8], [cargo_coal, 8]];
 	}
 }
 
@@ -42818,7 +42818,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_53, 53) {
 	property {
 		substitute: 53;
 		override: 53;
-		accepted_cargos: [[8, 8], [20, 8], [1, 8]];
+		accepted_cargos: [[cargo_iron_ore, 8], [cargo_scrap_metal, 8], [cargo_coal, 8]];
 	}
 }
 
@@ -42826,7 +42826,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_54, 54) {
 	property {
 		substitute: 54;
 		override: 54;
-		accepted_cargos: [[8, 8], [20, 8], [1, 8]];
+		accepted_cargos: [[cargo_iron_ore, 8], [cargo_scrap_metal, 8], [cargo_coal, 8]];
 	}
 }
 
@@ -42834,7 +42834,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_55, 55) {
 	property {
 		substitute: 55;
 		override: 55;
-		accepted_cargos: [[8, 8], [20, 8], [1, 8]];
+		accepted_cargos: [[cargo_iron_ore, 8], [cargo_scrap_metal, 8], [cargo_coal, 8]];
 	}
 }
 
@@ -42842,7 +42842,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_56, 56) {
 	property {
 		substitute: 56;
 		override: 56;
-		accepted_cargos: [[8, 8], [20, 8], [1, 8]];
+		accepted_cargos: [[cargo_iron_ore, 8], [cargo_scrap_metal, 8], [cargo_coal, 8]];
 	}
 }
 
@@ -42850,14 +42850,14 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_57, 57) {
 	property {
 		substitute: 57;
 		override: 57;
-		accepted_cargos: [[8, 8], [20, 8], [1, 8]];
+		accepted_cargos: [[cargo_iron_ore, 8], [cargo_scrap_metal, 8], [cargo_coal, 8]];
 	}
 }
 
 item(FEAT_INDUSTRYTILES, tile_sugar_refinery, 214) {
 	property {
 		substitute: 0;
-		accepted_cargos: [[12, 8], [18, 8], [0, 0]];
+		accepted_cargos: [[cargo_sugarcane, 8], [cargo_manufacturing_supplies, 8], [0, 0]];
 		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
 		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
@@ -43031,8 +43031,8 @@ item(FEAT_INDUSTRIES, sugar_refinery, 19) {
 		new_ind_msg: 18477;
 		name: string(STR_IND_SUGAR_REFINERY);
 		nearby_station_name: string(STR_STATIONNAME_CHEMICALS);
-		prod_cargo_types: [11, 255];
-		accept_cargo_types: [18, 12, 255];
+		prod_cargo_types: [cargo_food];
+		accept_cargo_types: [cargo_manufacturing_supplies, cargo_sugarcane];
 		prod_multiplier: [0, 0];
 		input_multiplier_1: [0, 0];
 		input_multiplier_2: [0, 0];
@@ -43275,7 +43275,7 @@ item(FEAT_INDUSTRIES, sugar_refinery, 19) {
 item(FEAT_INDUSTRYTILES, tile_textile_mill, 183) {
 	property {
 		substitute: 0;
-		accepted_cargos: [[18, 8], [15, 8], [22, 8]];
+		accepted_cargos: [[cargo_manufacturing_supplies, 8], [cargo_wool, 8], [cargo_plant_fibres, 8]];
 		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
 		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 		animation_info: [1, 7];
@@ -44478,8 +44478,8 @@ item(FEAT_INDUSTRIES, textile_mill, 42) {
 		new_ind_msg: 18477;
 		name: string(STR_IND_TEXTILE_MILL);
 		nearby_station_name: string(STR_STATIONNAME_MILLS);
-		prod_cargo_types: [5, 255];
-		accept_cargo_types: [18, 15, 22];
+		prod_cargo_types: [cargo_goods];
+		accept_cargo_types: [cargo_manufacturing_supplies, cargo_wool, cargo_plant_fibres];
 		prod_multiplier: [0, 0];
 		input_multiplier_1: [0, 0];
 		input_multiplier_2: [0, 0];
