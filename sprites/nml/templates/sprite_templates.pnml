@@ -5,6 +5,15 @@
  * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
  */
 
+/* Plain ground sprite without any frills */
 template tmpl_ground_tile(x, y) {
 	[x, y, 64, 31, -31, 0, 9]
 }
+
+/*
+ * Normal building sprite of 64px width and arbitrary width
+ * and normal alignment to the edges of the tile
+ */
+template tmpl_building_sprite(x, y, h, dy) {
+    [x, y, 64, h, -31, dy, 9]
+}    

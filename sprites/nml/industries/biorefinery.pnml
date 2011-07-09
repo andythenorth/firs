@@ -13,14 +13,14 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_166, 166) {
 }
 
 spriteset(spriteset_2806, "sprites/graphics/industries/groundtiles.png") { tmpl_ground_tile(80, 10) } 
-spriteset(spriteset_2807) { 	[500, 10, 64, 66, -31, -35, 9, "sprites/graphics/industries/biorefinery.pcx"] } 
-spriteset(spriteset_2808) { 	[570, 10, 64, 66, -31, -35, 9, "sprites/graphics/industries/biorefinery.pcx"] } 
-spriteset(spriteset_2809) { 	[710, 10, 64, 66, -31, -35, 9, "sprites/graphics/industries/biorefinery.pcx"] } 
-spriteset(spriteset_2810) { 	[80, 10, 64, 88, -31, -58, 9, "sprites/graphics/industries/biorefinery.pcx"] } 
-spriteset(spriteset_2811) { 	[150, 10, 64, 88, -31, -60, 9, "sprites/graphics/industries/biorefinery.pcx"] } 
-spriteset(spriteset_2812) { 	[220, 10, 64, 88, -31, -64, 9, "sprites/graphics/industries/biorefinery.pcx"] } 
-spriteset(spriteset_2813) { 	[360, 10, 64, 73, -31, -45, 9, "sprites/graphics/industries/biorefinery.pcx"] } 
-spriteset(spriteset_2814) { 	[430, 10, 64, 66, -31, -38, 9, "sprites/graphics/industries/biorefinery.pcx"] } 
+spriteset(spriteset_2807, "sprites/graphics/industries/biorefinery.pcx") { tmpl_building_sprite(500, 10, 66, -35) } 
+spriteset(spriteset_2808, "sprites/graphics/industries/biorefinery.pcx") { tmpl_building_sprite(570, 10, 66, -35) } 
+spriteset(spriteset_2809, "sprites/graphics/industries/biorefinery.pcx") { tmpl_building_sprite(710, 10, 66, -35) } 
+spriteset(spriteset_2810, "sprites/graphics/industries/biorefinery.pcx") { tmpl_building_sprite(80, 10, 88, -58) } 
+spriteset(spriteset_2811, "sprites/graphics/industries/biorefinery.pcx") { tmpl_building_sprite(150, 10, 88, -60) } 
+spriteset(spriteset_2812, "sprites/graphics/industries/biorefinery.pcx") { tmpl_building_sprite(220, 10, 88, -64) } 
+spriteset(spriteset_2813, "sprites/graphics/industries/biorefinery.pcx") { tmpl_building_sprite(360, 10, 73, -45) } 
+spriteset(spriteset_2814, "sprites/graphics/industries/biorefinery.pcx") { tmpl_building_sprite(430, 10, 66, -38) } 
 spritelayout action2_2815 {
 	ground {
 		sprite: spriteset_2806;

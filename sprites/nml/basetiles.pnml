@@ -85,7 +85,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_227, 227) {
 	}
 }
 
-spriteset(spriteset_2344) { 	[10, 10, 64, 54, -31, -23, 9, "sprites/graphics/industries/generictiles.pcx"] } 
+spriteset(spriteset_2344, "sprites/graphics/industries/generictiles.pcx") { tmpl_building_sprite(10, 10, 54, -23) } 
 spriteset(spriteset_2345, "sprites/graphics/industries/groundtiles.png") { tmpl_ground_tile(80, 10) } 
 spritelayout action2_2346 {
 	ground {
