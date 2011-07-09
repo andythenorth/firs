@@ -319,7 +319,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_231, 231) {
 item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_232, 232) {
 	property {
 		substitute: 0;
-  accepted_cargos: [[cargo_clay, 8]];
+		accepted_cargos: [[cargo_clay, 8]];
 		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
 		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
@@ -328,7 +328,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_232, 232) {
 item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_233, 233) {
 	property {
 		substitute: 0;
-  accepted_cargos: [[cargo_clay, 8]];
+		accepted_cargos: [[cargo_clay, 8]];
 		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
 		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
