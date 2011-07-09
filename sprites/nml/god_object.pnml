@@ -5350,7 +5350,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3494, 1) {
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3495, industry_distance(lime_kiln4)) {
+switch(FEAT_INDUSTRIES, SELF, action2_3495, industry_distance(paper_mill)) {
 	0..16: return 4;
 	action2_3494;
 }
@@ -11837,7 +11837,7 @@ item(FEAT_INDUSTRIES, food_market, 59) {
 	}
 }
 
-item(FEAT_INDUSTRYTILES, tile_oil_wells, 205) {
+item(FEAT_INDUSTRYTILES, tile_forest, 205) {
 	property {
 		substitute: 0;
 		accepted_cargos: [[21, 8], [0, 0], [0, 0]];
@@ -16341,7 +16341,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_4411, relative_pos) {
 	action2_4410;
 }
 
-switch(FEAT_INDUSTRYTILES, PARENT, switch_oil_wells_default_layout, layout_num) {
+switch(FEAT_INDUSTRYTILES, PARENT, switch_forest_default_layout, layout_num) {
 	1: action2_4411;
 	action2_4411;
 }
@@ -16982,20 +16982,20 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_4433, relative_pos) {
 	action2_4432;
 }
 
-switch(FEAT_INDUSTRYTILES, PARENT, switch_oil_wells_desert_layout, layout_num) {
+switch(FEAT_INDUSTRYTILES, PARENT, switch_forest_desert_layout, layout_num) {
 	1: action2_4433;
 	action2_4433;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, switch_oil_wells_terrain, terrain_type) {
-	1: switch_oil_wells_desert_layout;
-	switch_oil_wells_default_layout;
+switch(FEAT_INDUSTRYTILES, SELF, switch_forest_terrain, terrain_type) {
+	1: switch_forest_desert_layout;
+	switch_forest_default_layout;
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_4436, var[0x03, 0, 255]) {
 	0: action2_4279;
 	1: action2_4390;
-	2: switch_oil_wells_terrain;
+	2: switch_forest_terrain;
 	action2_4279;
 }
 
@@ -17058,7 +17058,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_4455, (current_callback & 255)) {
 	action2_4436;
 }
 
-item(FEAT_INDUSTRYTILES, tile_oil_wells, 205) {
+item(FEAT_INDUSTRYTILES, tile_forest, 205) {
 	graphics {
 		action2_4455;
 	}
@@ -17169,67 +17169,67 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_206, 206) {
 	}
 }
 
-tilelayout tilelayout_oil_wells_1 {
-	0, 0: tile_oil_wells;
-	0, 1: tile_oil_wells;
-	0, 2: tile_oil_wells;
-	1, 0: tile_oil_wells;
-	1, 1: tile_oil_wells;
-	1, 2: tile_oil_wells;
-	2, 1: tile_oil_wells;
+tilelayout tilelayout_forest_1 {
+	0, 0: tile_forest;
+	0, 1: tile_forest;
+	0, 2: tile_forest;
+	1, 0: tile_forest;
+	1, 1: tile_forest;
+	1, 2: tile_forest;
+	2, 1: tile_forest;
 	2, 2: item_FEAT_INDUSTRYTILES_206;
 }
 
-tilelayout tilelayout_oil_wells_2 {
-	0, 0: tile_oil_wells;
-	0, 1: tile_oil_wells;
-	0, 2: tile_oil_wells;
-	1, 0: tile_oil_wells;
-	1, 1: tile_oil_wells;
-	1, 2: tile_oil_wells;
-	3, 0: tile_oil_wells;
-	3, 1: tile_oil_wells;
+tilelayout tilelayout_forest_2 {
+	0, 0: tile_forest;
+	0, 1: tile_forest;
+	0, 2: tile_forest;
+	1, 0: tile_forest;
+	1, 1: tile_forest;
+	1, 2: tile_forest;
+	3, 0: tile_forest;
+	3, 1: tile_forest;
 	3, 2: item_FEAT_INDUSTRYTILES_206;
-	4, 0: tile_oil_wells;
-	4, 1: tile_oil_wells;
-	4, 2: tile_oil_wells;
+	4, 0: tile_forest;
+	4, 1: tile_forest;
+	4, 2: tile_forest;
 }
 
-tilelayout tilelayout_oil_wells_3 {
-	0, 1: tile_oil_wells;
-	0, 2: tile_oil_wells;
-	0, 3: tile_oil_wells;
-	1, 0: tile_oil_wells;
-	1, 1: tile_oil_wells;
-	1, 2: tile_oil_wells;
-	1, 3: tile_oil_wells;
-	1, 4: tile_oil_wells;
-	2, 0: tile_oil_wells;
-	2, 1: tile_oil_wells;
-	2, 2: tile_oil_wells;
-	2, 3: tile_oil_wells;
-	3, 0: tile_oil_wells;
-	3, 1: tile_oil_wells;
+tilelayout tilelayout_forest_3 {
+	0, 1: tile_forest;
+	0, 2: tile_forest;
+	0, 3: tile_forest;
+	1, 0: tile_forest;
+	1, 1: tile_forest;
+	1, 2: tile_forest;
+	1, 3: tile_forest;
+	1, 4: tile_forest;
+	2, 0: tile_forest;
+	2, 1: tile_forest;
+	2, 2: tile_forest;
+	2, 3: tile_forest;
+	3, 0: tile_forest;
+	3, 1: tile_forest;
 	3, 2: item_FEAT_INDUSTRYTILES_206;
-	4, 0: tile_oil_wells;
-	4, 1: tile_oil_wells;
-	5, 0: tile_oil_wells;
-	5, 1: tile_oil_wells;
-	5, 2: tile_oil_wells;
+	4, 0: tile_forest;
+	4, 1: tile_forest;
+	5, 0: tile_forest;
+	5, 1: tile_forest;
+	5, 2: tile_forest;
 }
 
-item(FEAT_INDUSTRIES, oil_wells, 11) {
+item(FEAT_INDUSTRIES, forest, 11) {
 	property {
 		substitute: 0;
-		layouts: [tilelayout_oil_wells_1, tilelayout_oil_wells_2, tilelayout_oil_wells_3];
+		layouts: [tilelayout_forest_1, tilelayout_forest_2, tilelayout_forest_3];
 		life_type: 2;
 		closure_msg: 18483;
 		prod_increase_msg: 18485;
 		prod_decrease_msg: 18489;
 		new_ind_msg: 18477;
 		name: 18437;
-		prod_cargo_types: [7, 255];
-		accept_cargo_types: [21, 255, 255];
+		prod_cargo_types: [cargotype("WOOD")];
+		accept_cargo_types: [cargotype("FMSP")];
 		prod_multiplier: [12];
 		conflicting_ind_types: [];
 		prob_random: 8;
@@ -17241,7 +17241,7 @@ item(FEAT_INDUSTRIES, oil_wells, 11) {
 	}
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_4479, industry_distance(oil_wells)) {
+switch(FEAT_INDUSTRIES, SELF, action2_4479, industry_distance(forest)) {
 	15..80: return 1024;
 	return 4;
 }
@@ -17256,12 +17256,12 @@ switch(FEAT_INDUSTRIES, SELF, action2_4481, STORE_TEMP(-1, 256)) {
 	action2_4480;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_4482, industry_distance(lime_kiln2)) {
+switch(FEAT_INDUSTRIES, SELF, action2_4482, industry_distance(sawmill)) {
 	0..16: return 4;
 	action2_4481;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_4483, industry_distance(lime_kiln4)) {
+switch(FEAT_INDUSTRIES, SELF, action2_4483, industry_distance(paper_mill)) {
 	0..16: return 4;
 	action2_4482;
 }
@@ -17356,7 +17356,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_4502, [STORE_TEMP(-701265, 256), 32928]) {
 
 SWITCH_COLOUR_SCHEME1(action2_4505)
 
-switch(FEAT_INDUSTRIES, SELF, switch_main_oil_wells, current_callback) {
+switch(FEAT_INDUSTRIES, SELF, switch_main_forest, current_callback) {
 	0: action2_4487;
 	IND_CB_LOCATION_CHECK: action2_4485;
 	IND_CB_AVAILABILITY: action2_4501;
@@ -17368,9 +17368,9 @@ switch(FEAT_INDUSTRIES, SELF, switch_main_oil_wells, current_callback) {
 	action2_4486;
 }
 
-item(FEAT_INDUSTRIES, oil_wells, 11) {
+item(FEAT_INDUSTRIES, forest, 11) {
 	graphics {
-		switch_main_oil_wells;
+		switch_main_forest;
 	}
 }
 
@@ -35896,8 +35896,8 @@ item(FEAT_INDUSTRIES, metal_foundry, 9) {
 		prod_decrease_msg: 18489;
 		new_ind_msg: 18477;
 		name: string(STR_IND_METAL_FOUNDRY);
-		prod_cargo_types: [5, 18];
-		accept_cargo_types: [9, 255, 255];
+		prod_cargo_types: [cargotype("GOOD"), cargotype("MNSP")];
+		accept_cargo_types: [cargotype("STEL")];
 		prod_multiplier: [0, 0];
 		input_multiplier_1: [0, 0];
 		input_multiplier_2: [0, 0];
@@ -36381,7 +36381,7 @@ item(FEAT_INDUSTRIES, mixed_farm, 29) {
 		new_ind_msg: 18477;
 		name: string(STR_IND_MIXEDFARM);
 		nearby_station_name: string(STR_STATIONNAME_FARMS);
-		prod_cargo_types: [4, 22];
+		prod_cargo_types: [cargotype("LVST"), cargotype("FICR")];
 		accept_cargo_types: [21, 255, 255];
 		prod_multiplier: [2, 2];
 		input_multiplier_1: [0, 0];
@@ -36524,13 +36524,13 @@ item(FEAT_INDUSTRIES, mixed_farm, 29) {
 	}
 }
 
-item(FEAT_INDUSTRIES, lime_kiln6, 16) {
+item(FEAT_INDUSTRIES, oil_rig, 16) {
 	property {
 		substitute: 5;
 		override: 5;
 		name: 18439;
-		prod_cargo_types: [3, 0];
-		accept_cargo_types: [24, 255, 255];
+		prod_cargo_types: [cargotype("OIL_"), cargotype("PASS")];
+		accept_cargo_types: [cargotype("ENSP")];
 		prod_multiplier: [20, 2];
 		input_multiplier_1: [0, 0];
 		input_multiplier_2: [0, 0];
@@ -36550,7 +36550,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6478, 1) {
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6479, industry_distance(lime_kiln7)) {
+switch(FEAT_INDUSTRIES, SELF, action2_6479, industry_distance(refinery)) {
 	0..16: return 4;
 	action2_6478;
 }
@@ -36648,7 +36648,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6503, current_callback) {
 	action2_6483;
 }
 
-item(FEAT_INDUSTRIES, lime_kiln6, 16) {
+item(FEAT_INDUSTRIES, oil_rig, 16) {
 	graphics {
 		action2_6503;
 	}
@@ -36690,13 +36690,13 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_28, 28) {
 	}
 }
 
-item(FEAT_INDUSTRIES, lime_kiln7, 17) {
+item(FEAT_INDUSTRIES, refinery, 17) {
 	property {
 		substitute: 4;
 		override: 4;
 		nearby_station_name: string(STR_STATIONNAME_CHEMICALS);
-		prod_cargo_types: [23, 25];
-		accept_cargo_types: [3, 255, 255];
+		prod_cargo_types: [cargotype("RFPR"), cargotype("PETR")];
+		accept_cargo_types: [cargotype("OIL_")];
 		input_multiplier_1: [0, 0];
 		input_multiplier_2: [0, 0];
 		input_multiplier_3: [0, 0];
@@ -36709,17 +36709,17 @@ item(FEAT_INDUSTRIES, lime_kiln7, 17) {
 	}
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6510, industry_distance(lime_kiln7)) {
+switch(FEAT_INDUSTRIES, SELF, action2_6510, industry_distance(refinery)) {
 	0..56: return 1025;
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6511, industry_distance(lime_kiln5)) {
+switch(FEAT_INDUSTRIES, SELF, action2_6511, industry_distance(oil_wells)) {
 	0..16: return 4;
 	action2_6510;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6512, industry_distance(lime_kiln6)) {
+switch(FEAT_INDUSTRIES, SELF, action2_6512, industry_distance(oil_rig)) {
 	0..16: return 4;
 	action2_6511;
 }
@@ -36885,7 +36885,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6554, current_callback) {
 	action2_6516;
 }
 
-item(FEAT_INDUSTRIES, lime_kiln7, 17) {
+item(FEAT_INDUSTRIES, refinery, 17) {
 	graphics {
 		action2_6554;
 	}
@@ -37096,7 +37096,7 @@ tilelayout tilelayout_7594_4 {
 	6, 0: item_FEAT_INDUSTRYTILES_215;
 }
 
-item(FEAT_INDUSTRIES, lime_kiln5, 15) {
+item(FEAT_INDUSTRIES, oil_wells, 15) {
 	property {
 		substitute: 0;
 		layouts: [tilelayout_7594_1, tilelayout_7594_2, tilelayout_7594_3, tilelayout_7594_4];
@@ -37106,8 +37106,8 @@ item(FEAT_INDUSTRIES, lime_kiln5, 15) {
 		prod_decrease_msg: 18489;
 		new_ind_msg: 18477;
 		name: 18445;
-		prod_cargo_types: [3, 255];
-		accept_cargo_types: [24, 255, 255];
+		prod_cargo_types: [cargotype("OIL_")];
+		accept_cargo_types: [cargotype("ENSP")];
 		prod_multiplier: [19];
 		conflicting_ind_types: [];
 		prob_random: 5;
@@ -37126,7 +37126,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6595, 1) {
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6596, industry_distance(lime_kiln7)) {
+switch(FEAT_INDUSTRIES, SELF, action2_6596, industry_distance(refinery)) {
 	0..16: return 4;
 	action2_6595;
 }
@@ -37219,19 +37219,19 @@ switch(FEAT_INDUSTRIES, SELF, action2_6619, current_callback) {
 	action2_6599;
 }
 
-item(FEAT_INDUSTRIES, lime_kiln5, 15) {
+item(FEAT_INDUSTRIES, oil_wells, 15) {
 	graphics {
 		action2_6619;
 	}
 }
 
-item(FEAT_INDUSTRIES, lime_kiln4, 14) {
+item(FEAT_INDUSTRIES, paper_mill, 14) {
 	property {
 		substitute: 14;
 		override: 14;
 		nearby_station_name: string(STR_STATIONNAME_MILLS);
-		prod_cargo_types: [5, 18];
-		accept_cargo_types: [16, 7, 23];
+		prod_cargo_types: [cargotype("GOOD"), cargotype("MNSP")];
+		accept_cargo_types: [cargotype("CLAY"), cargotype("WOOD"), cargotype("RFPR")];
 		input_multiplier_1: [0, 0];
 		input_multiplier_2: [0, 0];
 		input_multiplier_3: [0, 0];
@@ -37244,12 +37244,12 @@ item(FEAT_INDUSTRIES, lime_kiln4, 14) {
 	}
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6622, industry_distance(lime_kiln4)) {
+switch(FEAT_INDUSTRIES, SELF, action2_6622, industry_distance(paper_mill)) {
 	0..56: return 1025;
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6623, industry_distance(oil_wells)) {
+switch(FEAT_INDUSTRIES, SELF, action2_6623, industry_distance(forest)) {
 	0..16: return 4;
 	action2_6622;
 }
@@ -37490,7 +37490,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6680, current_callback) {
 	action2_6628;
 }
 
-item(FEAT_INDUSTRIES, lime_kiln4, 14) {
+item(FEAT_INDUSTRIES, paper_mill, 14) {
 	graphics {
 		action2_6680;
 	}
@@ -41673,13 +41673,13 @@ item(FEAT_INDUSTRIES, recycling_plant, 23) {
 	}
 }
 
-item(FEAT_INDUSTRIES, lime_kiln2, 12) {
+item(FEAT_INDUSTRIES, sawmill, 12) {
 	property {
 		substitute: 2;
 		override: 2;
 		nearby_station_name: string(STR_STATIONNAME_MILLS);
-		prod_cargo_types: [19, 255];
-		accept_cargo_types: [7, 255, 255];
+		prod_cargo_types: [cargotype("WDPR")];
+		accept_cargo_types: [cargotype("WOOD")];
 		input_multiplier_1: [0, 0];
 		input_multiplier_2: [0, 0];
 		input_multiplier_3: [0, 0];
@@ -41692,7 +41692,7 @@ item(FEAT_INDUSTRIES, lime_kiln2, 12) {
 	}
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7242, industry_distance(oil_wells)) {
+switch(FEAT_INDUSTRIES, SELF, action2_7242, industry_distance(forest)) {
 	16..60: return 1024;
 	return 4;
 }
@@ -41707,7 +41707,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_7244, STORE_TEMP(-1, 256)) {
 	action2_7243;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7245, industry_distance(oil_wells)) {
+switch(FEAT_INDUSTRIES, SELF, action2_7245, industry_distance(forest)) {
 	0..16: return 4;
 	action2_7244;
 }
@@ -41874,7 +41874,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_7287, current_callback) {
 	action2_7249;
 }
 
-item(FEAT_INDUSTRIES, lime_kiln2, 12) {
+item(FEAT_INDUSTRIES, sawmill, 12) {
 	graphics {
 		action2_7287;
 	}
