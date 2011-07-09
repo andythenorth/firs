@@ -10,58 +10,19 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_185, 185) {
 	}
 }
 
-spriteset(spriteset_2457) {
-	[80, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/groundtiles.png"]
-}
-
-spriteset(spriteset_2458) {
-	[10, 10, 64, 57, -31, -26, 9, "sprites/graphics/industries/aluminiumplant.png"]
-}
-
-spriteset(spriteset_2459) {
-	[80, 10, 64, 66, -31, -26, 9, "sprites/graphics/industries/aluminiumplant.png"]
-}
-
-spriteset(spriteset_2460) {
-	[150, 10, 64, 92, -31, -61, 9, "sprites/graphics/industries/aluminiumplant.png"]
-}
-
-spriteset(spriteset_2461) {
-	[220, 10, 64, 90, -31, -61, 9, "sprites/graphics/industries/aluminiumplant.png"]
-}
-
-spriteset(spriteset_2462) {
-	[290, 10, 64, 100, -31, -61, 9, "sprites/graphics/industries/aluminiumplant.png"]
-}
-
-spriteset(spriteset_2463) {
-	[360, 10, 64, 100, -31, -61, 9, "sprites/graphics/industries/aluminiumplant.png"]
-}
-
-spriteset(spriteset_2464) {
-	[430, 10, 64, 56, -31, -26, 9, "sprites/graphics/industries/aluminiumplant.png"]
-}
-
-spriteset(spriteset_2465) {
-	[500, 10, 64, 56, -31, -26, 9, "sprites/graphics/industries/aluminiumplant.png"]
-}
-
-spriteset(spriteset_2466) {
-	[570, 10, 64, 110, -31, -61, 9, "sprites/graphics/industries/aluminiumplant.png"]
-}
-
-spriteset(spriteset_2467) {
-	[640, 10, 64, 110, -31, -61, 9, "sprites/graphics/industries/aluminiumplant.png"]
-}
-
-spriteset(spriteset_2468) {
-	[710, 10, 64, 110, -31, -61, 9, "sprites/graphics/industries/aluminiumplant.png"]
-}
-
-spriteset(spriteset_2469) {
-	[780, 10, 64, 56, -31, -25, 9, "sprites/graphics/industries/aluminiumplant.png"]
-}
-
+spriteset(spriteset_2457, "sprites/graphics/industries/groundtiles.png") { tmpl_ground_tile(80, 10) } 
+spriteset(spriteset_2458) { 	[10, 10, 64, 57, -31, -26, 9, "sprites/graphics/industries/aluminiumplant.png"] } 
+spriteset(spriteset_2459) { 	[80, 10, 64, 66, -31, -26, 9, "sprites/graphics/industries/aluminiumplant.png"] } 
+spriteset(spriteset_2460) { 	[150, 10, 64, 92, -31, -61, 9, "sprites/graphics/industries/aluminiumplant.png"] } 
+spriteset(spriteset_2461) { 	[220, 10, 64, 90, -31, -61, 9, "sprites/graphics/industries/aluminiumplant.png"] } 
+spriteset(spriteset_2462) { 	[290, 10, 64, 100, -31, -61, 9, "sprites/graphics/industries/aluminiumplant.png"] } 
+spriteset(spriteset_2463) { 	[360, 10, 64, 100, -31, -61, 9, "sprites/graphics/industries/aluminiumplant.png"] } 
+spriteset(spriteset_2464) { 	[430, 10, 64, 56, -31, -26, 9, "sprites/graphics/industries/aluminiumplant.png"] } 
+spriteset(spriteset_2465) { 	[500, 10, 64, 56, -31, -26, 9, "sprites/graphics/industries/aluminiumplant.png"] } 
+spriteset(spriteset_2466) { 	[570, 10, 64, 110, -31, -61, 9, "sprites/graphics/industries/aluminiumplant.png"] } 
+spriteset(spriteset_2467) { 	[640, 10, 64, 110, -31, -61, 9, "sprites/graphics/industries/aluminiumplant.png"] } 
+spriteset(spriteset_2468) { 	[710, 10, 64, 110, -31, -61, 9, "sprites/graphics/industries/aluminiumplant.png"] } 
+spriteset(spriteset_2469) { 	[780, 10, 64, 56, -31, -25, 9, "sprites/graphics/industries/aluminiumplant.png"] } 
 spritelayout action2_2470 {
 	ground {
 		sprite: spriteset_2457;
@@ -768,58 +729,19 @@ switch(FEAT_INDUSTRYTILES, PARENT, action2_2506, layout_num) {
 	action2_2503;
 }
 
-spriteset(spriteset_2508) {
-	[80, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/groundtiles.png"]
-}
-
-spriteset(spriteset_2509) {
-	[10, 10, 64, 57, -31, -26, 9, "sprites/graphics/industries/aluminiumplant.png"]
-}
-
-spriteset(spriteset_2510) {
-	[80, 10, 64, 66, -31, -26, 9, "sprites/graphics/industries/aluminiumplant.png"]
-}
-
-spriteset(spriteset_2511) {
-	[150, 10, 64, 92, -31, -61, 9, "sprites/graphics/industries/aluminiumplant.png"]
-}
-
-spriteset(spriteset_2512) {
-	[220, 10, 64, 90, -31, -61, 9, "sprites/graphics/industries/aluminiumplant.png"]
-}
-
-spriteset(spriteset_2513) {
-	[290, 10, 64, 100, -31, -61, 9, "sprites/graphics/industries/aluminiumplant.png"]
-}
-
-spriteset(spriteset_2514) {
-	[360, 10, 64, 100, -31, -61, 9, "sprites/graphics/industries/aluminiumplant.png"]
-}
-
-spriteset(spriteset_2515) {
-	[430, 10, 64, 56, -31, -26, 9, "sprites/graphics/industries/aluminiumplant.png"]
-}
-
-spriteset(spriteset_2516) {
-	[500, 10, 64, 56, -31, -26, 9, "sprites/graphics/industries/aluminiumplant.png"]
-}
-
-spriteset(spriteset_2517) {
-	[570, 10, 64, 110, -31, -61, 9, "sprites/graphics/industries/aluminiumplant.png"]
-}
-
-spriteset(spriteset_2518) {
-	[640, 10, 64, 110, -31, -61, 9, "sprites/graphics/industries/aluminiumplant.png"]
-}
-
-spriteset(spriteset_2519) {
-	[710, 10, 64, 110, -31, -61, 9, "sprites/graphics/industries/aluminiumplant.png"]
-}
-
-spriteset(spriteset_2520) {
-	[780, 10, 64, 56, -31, -25, 9, "sprites/graphics/industries/aluminiumplant.png"]
-}
-
+spriteset(spriteset_2508, "sprites/graphics/industries/groundtiles.png") { tmpl_ground_tile(80, 10) } 
+spriteset(spriteset_2509) { 	[10, 10, 64, 57, -31, -26, 9, "sprites/graphics/industries/aluminiumplant.png"] } 
+spriteset(spriteset_2510) { 	[80, 10, 64, 66, -31, -26, 9, "sprites/graphics/industries/aluminiumplant.png"] } 
+spriteset(spriteset_2511) { 	[150, 10, 64, 92, -31, -61, 9, "sprites/graphics/industries/aluminiumplant.png"] } 
+spriteset(spriteset_2512) { 	[220, 10, 64, 90, -31, -61, 9, "sprites/graphics/industries/aluminiumplant.png"] } 
+spriteset(spriteset_2513) { 	[290, 10, 64, 100, -31, -61, 9, "sprites/graphics/industries/aluminiumplant.png"] } 
+spriteset(spriteset_2514) { 	[360, 10, 64, 100, -31, -61, 9, "sprites/graphics/industries/aluminiumplant.png"] } 
+spriteset(spriteset_2515) { 	[430, 10, 64, 56, -31, -26, 9, "sprites/graphics/industries/aluminiumplant.png"] } 
+spriteset(spriteset_2516) { 	[500, 10, 64, 56, -31, -26, 9, "sprites/graphics/industries/aluminiumplant.png"] } 
+spriteset(spriteset_2517) { 	[570, 10, 64, 110, -31, -61, 9, "sprites/graphics/industries/aluminiumplant.png"] } 
+spriteset(spriteset_2518) { 	[640, 10, 64, 110, -31, -61, 9, "sprites/graphics/industries/aluminiumplant.png"] } 
+spriteset(spriteset_2519) { 	[710, 10, 64, 110, -31, -61, 9, "sprites/graphics/industries/aluminiumplant.png"] } 
+spriteset(spriteset_2520) { 	[780, 10, 64, 56, -31, -25, 9, "sprites/graphics/industries/aluminiumplant.png"] } 
 spritelayout action2_2521 {
 	ground {
 		sprite: spriteset_2508;
@@ -1526,58 +1448,19 @@ switch(FEAT_INDUSTRYTILES, PARENT, action2_2557, layout_num) {
 	action2_2554;
 }
 
-spriteset(spriteset_2559) {
-	[80, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/groundtiles.png"]
-}
-
-spriteset(spriteset_2560) {
-	[10, 10, 64, 57, -31, -26, 9, "sprites/graphics/industries/aluminiumplant_snow.png"]
-}
-
-spriteset(spriteset_2561) {
-	[80, 10, 64, 66, -31, -26, 9, "sprites/graphics/industries/aluminiumplant_snow.png"]
-}
-
-spriteset(spriteset_2562) {
-	[150, 10, 64, 92, -31, -61, 9, "sprites/graphics/industries/aluminiumplant_snow.png"]
-}
-
-spriteset(spriteset_2563) {
-	[220, 10, 64, 90, -31, -61, 9, "sprites/graphics/industries/aluminiumplant_snow.png"]
-}
-
-spriteset(spriteset_2564) {
-	[290, 10, 64, 100, -31, -61, 9, "sprites/graphics/industries/aluminiumplant_snow.png"]
-}
-
-spriteset(spriteset_2565) {
-	[360, 10, 64, 100, -31, -61, 9, "sprites/graphics/industries/aluminiumplant_snow.png"]
-}
-
-spriteset(spriteset_2566) {
-	[430, 10, 64, 56, -31, -26, 9, "sprites/graphics/industries/aluminiumplant_snow.png"]
-}
-
-spriteset(spriteset_2567) {
-	[500, 10, 64, 56, -31, -26, 9, "sprites/graphics/industries/aluminiumplant_snow.png"]
-}
-
-spriteset(spriteset_2568) {
-	[570, 10, 64, 110, -31, -61, 9, "sprites/graphics/industries/aluminiumplant_snow.png"]
-}
-
-spriteset(spriteset_2569) {
-	[640, 10, 64, 110, -31, -61, 9, "sprites/graphics/industries/aluminiumplant_snow.png"]
-}
-
-spriteset(spriteset_2570) {
-	[710, 10, 64, 110, -31, -61, 9, "sprites/graphics/industries/aluminiumplant_snow.png"]
-}
-
-spriteset(spriteset_2571) {
-	[780, 10, 64, 56, -31, -25, 9, "sprites/graphics/industries/aluminiumplant_snow.png"]
-}
-
+spriteset(spriteset_2559, "sprites/graphics/industries/groundtiles.png") { tmpl_ground_tile(80, 10) } 
+spriteset(spriteset_2560) { 	[10, 10, 64, 57, -31, -26, 9, "sprites/graphics/industries/aluminiumplant_snow.png"] } 
+spriteset(spriteset_2561) { 	[80, 10, 64, 66, -31, -26, 9, "sprites/graphics/industries/aluminiumplant_snow.png"] } 
+spriteset(spriteset_2562) { 	[150, 10, 64, 92, -31, -61, 9, "sprites/graphics/industries/aluminiumplant_snow.png"] } 
+spriteset(spriteset_2563) { 	[220, 10, 64, 90, -31, -61, 9, "sprites/graphics/industries/aluminiumplant_snow.png"] } 
+spriteset(spriteset_2564) { 	[290, 10, 64, 100, -31, -61, 9, "sprites/graphics/industries/aluminiumplant_snow.png"] } 
+spriteset(spriteset_2565) { 	[360, 10, 64, 100, -31, -61, 9, "sprites/graphics/industries/aluminiumplant_snow.png"] } 
+spriteset(spriteset_2566) { 	[430, 10, 64, 56, -31, -26, 9, "sprites/graphics/industries/aluminiumplant_snow.png"] } 
+spriteset(spriteset_2567) { 	[500, 10, 64, 56, -31, -26, 9, "sprites/graphics/industries/aluminiumplant_snow.png"] } 
+spriteset(spriteset_2568) { 	[570, 10, 64, 110, -31, -61, 9, "sprites/graphics/industries/aluminiumplant_snow.png"] } 
+spriteset(spriteset_2569) { 	[640, 10, 64, 110, -31, -61, 9, "sprites/graphics/industries/aluminiumplant_snow.png"] } 
+spriteset(spriteset_2570) { 	[710, 10, 64, 110, -31, -61, 9, "sprites/graphics/industries/aluminiumplant_snow.png"] } 
+spriteset(spriteset_2571) { 	[780, 10, 64, 56, -31, -25, 9, "sprites/graphics/industries/aluminiumplant_snow.png"] } 
 spritelayout action2_2572 {
 	ground {
 		sprite: spriteset_2559;

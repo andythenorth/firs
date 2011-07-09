@@ -8,26 +8,11 @@ item(FEAT_INDUSTRYTILES, tile_arable_farm, 160) {
 	}
 }
 
-spriteset(spriteset_2686) {
-	[10, 10, 64, 59, -31, -28, 9, "sprites/graphics/industries/arablefarm.pcx"]
-}
-
-spriteset(spriteset_2687) {
-	[80, 10, 64, 59, -31, -28, 9, "sprites/graphics/industries/arablefarm.pcx"]
-}
-
-spriteset(spriteset_2688) {
-	[150, 10, 64, 59, -31, -28, 9, "sprites/graphics/industries/arablefarm.pcx"]
-}
-
-spriteset(spriteset_2689) {
-	[220, 10, 64, 59, -31, -28, 9, "sprites/graphics/industries/arablefarm.pcx"]
-}
-
-spriteset(spriteset_2690) {
-	[290, 10, 64, 59, -31, -28, 9, "sprites/graphics/industries/arablefarm.pcx"]
-}
-
+spriteset(spriteset_2686) { 	[10, 10, 64, 59, -31, -28, 9, "sprites/graphics/industries/arablefarm.pcx"] } 
+spriteset(spriteset_2687) { 	[80, 10, 64, 59, -31, -28, 9, "sprites/graphics/industries/arablefarm.pcx"] } 
+spriteset(spriteset_2688) { 	[150, 10, 64, 59, -31, -28, 9, "sprites/graphics/industries/arablefarm.pcx"] } 
+spriteset(spriteset_2689) { 	[220, 10, 64, 59, -31, -28, 9, "sprites/graphics/industries/arablefarm.pcx"] } 
+spriteset(spriteset_2690) { 	[290, 10, 64, 59, -31, -28, 9, "sprites/graphics/industries/arablefarm.pcx"] } 
 spritelayout action2_2691 {
 	ground {
 		sprite: 2022;

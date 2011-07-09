@@ -6,14 +6,8 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_224, 224) {
 	}
 }
 
-spriteset(spriteset_2330) {
-	[80, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/groundtiles.png"]
-}
-
-spriteset(spriteset_2331) {
-	[220, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/groundtiles.png"]
-}
-
+spriteset(spriteset_2330, "sprites/graphics/industries/groundtiles.png") { tmpl_ground_tile(80, 10) } 
+spriteset(spriteset_2331, "sprites/graphics/industries/groundtiles.png") { tmpl_ground_tile(220, 10) } 
 spritelayout action2_2332 {
 	ground {
 		sprite: spriteset_2330;
@@ -91,14 +85,8 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_227, 227) {
 	}
 }
 
-spriteset(spriteset_2344) {
-	[10, 10, 64, 54, -31, -23, 9, "sprites/graphics/industries/generictiles.pcx"]
-}
-
-spriteset(spriteset_2345) {
-	[80, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/groundtiles.png"]
-}
-
+spriteset(spriteset_2344) { 	[10, 10, 64, 54, -31, -23, 9, "sprites/graphics/industries/generictiles.pcx"] } 
+spriteset(spriteset_2345, "sprites/graphics/industries/groundtiles.png") { tmpl_ground_tile(80, 10) } 
 spritelayout action2_2346 {
 	ground {
 		sprite: spriteset_2345;
@@ -192,18 +180,9 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_229, 229) {
 	}
 }
 
-spriteset(spriteset_2362) {
-	[80, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/generictiles.pcx"]
-}
-
-spriteset(spriteset_2363) {
-	[80, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/groundtiles.png"]
-}
-
-spriteset(spriteset_2364) {
-	[150, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/groundtiles.png"]
-}
-
+spriteset(spriteset_2362, "sprites/graphics/industries/generictiles.pcx") { tmpl_ground_tile(80, 10) } 
+spriteset(spriteset_2363, "sprites/graphics/industries/groundtiles.png") { tmpl_ground_tile(80, 10) } 
+spriteset(spriteset_2364, "sprites/graphics/industries/groundtiles.png") { tmpl_ground_tile(150, 10) } 
 spritelayout action2_2365 {
 	ground {
 		sprite: spriteset_2363;
@@ -372,18 +351,9 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_231, 231) {
 	}
 }
 
-spriteset(spriteset_2394) {
-	[150, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/generictiles.pcx"]
-}
-
-spriteset(spriteset_2395) {
-	[80, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/groundtiles.png"]
-}
-
-spriteset(spriteset_2396) {
-	[150, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/groundtiles.png"]
-}
-
+spriteset(spriteset_2394, "sprites/graphics/industries/generictiles.pcx") { tmpl_ground_tile(150, 10) } 
+spriteset(spriteset_2395, "sprites/graphics/industries/groundtiles.png") { tmpl_ground_tile(80, 10) } 
+spriteset(spriteset_2396, "sprites/graphics/industries/groundtiles.png") { tmpl_ground_tile(150, 10) } 
 spritelayout action2_2397 {
 	ground {
 		sprite: spriteset_2395;
@@ -552,18 +522,9 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_233, 233) {
 	}
 }
 
-spriteset(spriteset_2426) {
-	[220, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/generictiles.pcx"]
-}
-
-spriteset(spriteset_2427) {
-	[80, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/groundtiles.png"]
-}
-
-spriteset(spriteset_2428) {
-	[150, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/groundtiles.png"]
-}
-
+spriteset(spriteset_2426, "sprites/graphics/industries/generictiles.pcx") { tmpl_ground_tile(220, 10) } 
+spriteset(spriteset_2427, "sprites/graphics/industries/groundtiles.png") { tmpl_ground_tile(80, 10) } 
+spriteset(spriteset_2428, "sprites/graphics/industries/groundtiles.png") { tmpl_ground_tile(150, 10) } 
 spritelayout action2_2429 {
 	ground {
 		sprite: spriteset_2427;
