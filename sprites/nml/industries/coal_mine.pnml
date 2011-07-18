@@ -1,0 +1,209 @@
+item(FEAT_INDUSTRIES, coal_mine, 0) {
+	property {
+		substitute: 0;
+		override: 0;
+		accept_cargo_types: [ENSP, 255, 255];
+		prod_multiplier: [14, 0];
+		input_multiplier_1: [0, 0];
+		conflicting_ind_types: [];
+		prob_random: 8;
+		prob_in_game: 3;
+		prospect_chance: 0.749999999942;
+		fund_cost_multiplier: 252;
+		map_colour: 1;
+		callback_flags: 1339;
+	}
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_3643, industry_distance(coal_mine)) {
+	20..70: return 1024;
+	return 4;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_3644, (((industry_count(0) * 2) / 3) / industry_clusters)) {
+	0: return 1024;
+	action2_3643;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_3645, STORE_TEMP(-1, 256)) {
+	0: action2_3644;
+	action2_3644;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_3646, industry_distance(brick_works)) {
+	0..16: return 4;
+	action2_3645;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_3647, industry_distance(cement_plant)) {
+	0..16: return 4;
+	action2_3646;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_3648, industry_distance(item_FEAT_INDUSTRIES_7)) {
+	0..16: return 4;
+	action2_3647;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_3649, industry_distance(lime_kiln)) {
+	0..16: return 4;
+	action2_3648;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_3650, founder) {
+	16: action2_3649;
+	return 1024;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_3651, game_mode) {
+	1: action2_3650;
+	return 1024;
+}
+
+produce(action2_3652, 9999, 0, 0, 0, 0, 0);
+
+switch(FEAT_INDUSTRIES, SELF, action2_3653, STORE_PERM((var[0x40, 0, -1] + LOAD_PERM(0)), 0)) {
+	0: action2_3652;
+	action2_3652;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_3654, var[0x93, 0, -1]) {
+	0..4: return 3;
+	return 0;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_3655, allow_close_primary) {
+	1..255: action2_3654;
+	return 0;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_3656, (extra_callback_info2 & 31)) {
+	0: return 13;
+	return 0;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_3657, (extra_callback_info2 & 3)) {
+	0: return 13;
+	return 0;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_3658, STORE_PERM(var[0x93, 0, -1], 2)) {
+	0..4: return 0;
+	5..32: action2_3656;
+	action2_3657;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_3659, allow_primary_production_decrease) {
+	1..255: action2_3658;
+	return 0;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_3660, (extra_callback_info2 & 3)) {
+	0: return 14;
+	return 0;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_3661, [STORE_PERM(0, 0), LOAD_TEMP(1)]) {
+	1..-1: action2_3660;
+	action2_3659;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_3662, STORE_TEMP(LOAD_PERM(0), 1)) {
+	0: action2_3661;
+	action2_3661;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_3663, [STORE_TEMP(LOAD_PERM(0), 256), var[0x93, 0, -1]]) {
+	128: return string(STR_GENERIC_D0B3);
+	return string(STR_GENERIC_D0B0);
+}
+
+CHECK_OPENING(action2_3667, 0, -1)
+
+switch(FEAT_INDUSTRIES, SELF, action2_3668, [STORE_TEMP(-701265, 256), 32928]) {
+	return;
+}
+
+SWITCH_COLOUR_SCHEME1(action2_3671)
+
+switch(FEAT_INDUSTRIES, SELF, switch_main_coal_mine, current_callback) {
+	0: action2_3653;
+	IND_CB_LOCATION_CHECK: action2_3651;
+	IND_CB_AVAILABILITY: action2_3667;
+	IND_CB_COLOUR: action2_3671;
+	IND_CB_EXTRA_TEXT_FUND: action2_3668;
+	IND_CB_RANDOM_PROD_CHANGE: action2_3655;
+	IND_CB_MONTHLY_PROD_CHANGE: action2_3662;
+	IND_CB_EXTRA_TEXT_INDUSTRY: action2_3663;
+	action2_3652;
+}
+
+item(FEAT_INDUSTRIES, coal_mine, 0) {
+	graphics {
+		switch_main_coal_mine;
+	}
+}
+
+item(FEAT_INDUSTRYTILES, tile_coal_mine1, 0) {
+	property {
+		substitute: 0;
+		override: 0;
+		accepted_cargos: [[ENSP, 8]];
+		callback_flags: 0;
+	}
+}
+
+item(FEAT_INDUSTRYTILES, tile_coal_mine2, 1) {
+	property {
+		substitute: 1;
+		override: 1;
+		accepted_cargos: [[ENSP, 8]];
+		callback_flags: 0;
+	}
+}
+
+item(FEAT_INDUSTRYTILES, tile_coal_mine3, 2) {
+	property {
+		substitute: 2;
+		override: 2;
+		accepted_cargos: [[ENSP, 8]];
+		callback_flags: 0;
+	}
+}
+
+item(FEAT_INDUSTRYTILES, tile_coal_mine4, 3) {
+	property {
+		substitute: 3;
+		override: 3;
+		accepted_cargos: [[ENSP, 8]];
+		callback_flags: 0;
+	}
+}
+
+item(FEAT_INDUSTRYTILES, tile_coal_mine5, 4) {
+	property {
+		substitute: 4;
+		override: 4;
+		accepted_cargos: [[ENSP, 8]];
+		callback_flags: 0;
+	}
+}
+
+item(FEAT_INDUSTRYTILES, tile_coal_mine6, 5) {
+	property {
+		substitute: 5;
+		override: 5;
+		accepted_cargos: [[ENSP, 8]];
+		callback_flags: 0;
+	}
+}
+
+item(FEAT_INDUSTRYTILES, tile_coal_mine7, 6) {
+	property {
+		substitute: 6;
+		override: 6;
+		accepted_cargos: [[ENSP, 8]];
+		callback_flags: 0;
+	}
+}
+

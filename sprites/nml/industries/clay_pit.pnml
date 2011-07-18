@@ -1,0 +1,2013 @@
+item(FEAT_INDUSTRYTILES, tile_clay_pit, 189) {
+	property {
+		substitute: 0;
+		accepted_cargos: [[ENSP, 8]];
+		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
+		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
+	}
+}
+
+spriteset(spriteset_3241, "sprites/graphics/industries/claypit.pcx") { tmpl_ground_tile(10, 10) } 
+spriteset(spriteset_3242, "sprites/graphics/industries/claypit.pcx") { tmpl_ground_tile(80, 10) } 
+spriteset(spriteset_3243, "sprites/graphics/industries/claypit.pcx") { tmpl_ground_tile(150, 10) } 
+spriteset(spriteset_3244, "sprites/graphics/industries/claypit.pcx") { tmpl_ground_tile(220, 10) } 
+spriteset(spriteset_3245, "sprites/graphics/industries/claypit.pcx") { tmpl_ground_tile(290, 10) } 
+spriteset(spriteset_3246, "sprites/graphics/industries/claypit.pcx") { tmpl_ground_tile(360, 10) } 
+spriteset(spriteset_3247, "sprites/graphics/industries/claypit.pcx") { tmpl_ground_tile(10, 50) } 
+spriteset(spriteset_3248, "sprites/graphics/industries/claypit.pcx") { tmpl_ground_tile(80, 50) } 
+spriteset(spriteset_3249, "sprites/graphics/industries/claypit.pcx") { tmpl_ground_tile(150, 50) } 
+spriteset(spriteset_3250, "sprites/graphics/industries/claypit.pcx") { tmpl_ground_tile(220, 50) } 
+spriteset(spriteset_3251, "sprites/graphics/industries/claypit.pcx") { tmpl_ground_tile(290, 50) } 
+spriteset(spriteset_3252, "sprites/graphics/industries/claypit.pcx") { tmpl_ground_tile(360, 50) } 
+spriteset(spriteset_3253, "sprites/graphics/industries/claypit.pcx") { tmpl_ground_tile(10, 90) } 
+spriteset(spriteset_3254, "sprites/graphics/industries/claypit.pcx") { tmpl_ground_tile(80, 90) } 
+spriteset(spriteset_3255, "sprites/graphics/industries/claypit.pcx") { tmpl_ground_tile(150, 90) } 
+spriteset(spriteset_3256, "sprites/graphics/industries/claypit.pcx") { tmpl_ground_tile(220, 90) } 
+spriteset(spriteset_3257, "sprites/graphics/industries/claypit.pcx") { tmpl_ground_tile(290, 90) } 
+spriteset(spriteset_3258, "sprites/graphics/industries/claypit.pcx") { tmpl_ground_tile(360, 90) } 
+spriteset(spriteset_3259, "sprites/graphics/industries/claypit.pcx") { tmpl_ground_tile(10, 130) } 
+spriteset(spriteset_3260, "sprites/graphics/industries/claypit.pcx") { tmpl_ground_tile(80, 130) } 
+spriteset(spriteset_3261, "sprites/graphics/industries/claypit.pcx") { tmpl_ground_tile(150, 130) } 
+spriteset(spriteset_3262, "sprites/graphics/industries/claypit.pcx") { tmpl_ground_tile(220, 130) } 
+spriteset(spriteset_3263, "sprites/graphics/industries/claypit.pcx") { tmpl_ground_tile(290, 130) } 
+spriteset(spriteset_3264, "sprites/graphics/industries/claypit.pcx") { tmpl_ground_tile(360, 130) } 
+spriteset(spriteset_3265, "sprites/graphics/industries/claypit.pcx") { tmpl_ground_tile(440, 10) } 
+spriteset(spriteset_3266, "sprites/graphics/industries/claypit.pcx") { tmpl_ground_tile(510, 10) } 
+spriteset(spriteset_3267, "sprites/graphics/industries/claypit.pcx") { tmpl_ground_tile(580, 10) } 
+spriteset(spriteset_3268, "sprites/graphics/industries/claypit.pcx") { tmpl_ground_tile(650, 10) } 
+spriteset(spriteset_3269, "sprites/graphics/industries/claypit.pcx") { tmpl_ground_tile(440, 50) } 
+spriteset(spriteset_3270, "sprites/graphics/industries/claypit.pcx") { tmpl_ground_tile(510, 50) } 
+spriteset(spriteset_3271, "sprites/graphics/industries/claypit.pcx") { tmpl_ground_tile(580, 50) } 
+spriteset(spriteset_3272, "sprites/graphics/industries/claypit.pcx") { tmpl_ground_tile(650, 50) } 
+spriteset(spriteset_3273, "sprites/graphics/industries/claypit.pcx") { tmpl_ground_tile(580, 90) } 
+spriteset(spriteset_3274, "sprites/graphics/industries/claypit.pcx") { tmpl_ground_tile(650, 90) } 
+spriteset(spriteset_3275, "sprites/graphics/industries/claypit.pcx") { tmpl_ground_tile(730, 10) } 
+spriteset(spriteset_3276, "sprites/graphics/industries/claypit.pcx") { tmpl_ground_tile(800, 10) } 
+spriteset(spriteset_3277, "sprites/graphics/industries/claypit.pcx") { tmpl_ground_tile(870, 10) } 
+spriteset(spriteset_3278, "sprites/graphics/industries/claypit.pcx") { tmpl_ground_tile(940, 10) } 
+spriteset(spriteset_3279, "sprites/graphics/industries/claypit.pcx") { tmpl_ground_tile(1010, 10) } 
+spriteset(spriteset_3280, "sprites/graphics/industries/claypit.pcx") { tmpl_ground_tile(1080, 10) } 
+spriteset(spriteset_3281, "sprites/graphics/industries/claypit.pcx") { tmpl_building_sprite(1150, 10, 34, -3) } 
+spriteset(spriteset_3282, "sprites/graphics/industries/claypit.pcx") { tmpl_building_sprite(1220, 10, 33, -2) } 
+spriteset(spriteset_3283, "sprites/graphics/industries/claypit.pcx") { tmpl_building_sprite(1290, 10, 34, -3) } 
+spriteset(spriteset_3284, "sprites/graphics/industries/claypit.pcx") { tmpl_ground_tile(1360, 10) } 
+spriteset(spriteset_3285, "sprites/graphics/industries/claypit.pcx") { tmpl_ground_tile(800, 50) } 
+spriteset(spriteset_3286, "sprites/graphics/industries/claypit.pcx") { tmpl_building_sprite(870, 50, 51, -20) } 
+spriteset(spriteset_3287, "sprites/graphics/industries/claypit.pcx") { tmpl_building_sprite(1010, 50, 64, -33) } 
+spriteset(spriteset_3288, "sprites/graphics/industries/claypit.pcx") { tmpl_building_sprite(1080, 50, 49, -18) } 
+spriteset(spriteset_3289, "sprites/graphics/industries/claypit.pcx") { tmpl_building_sprite(1150, 50, 55, -24) } 
+spriteset(spriteset_3290, "sprites/graphics/industries/claypit.pcx") { tmpl_ground_tile(730, 140) } 
+spriteset(spriteset_3291, "sprites/graphics/industries/claypit.pcx") { tmpl_ground_tile(800, 140) } 
+spriteset(spriteset_3292, "sprites/graphics/industries/claypit.pcx") { tmpl_ground_tile(940, 140) } 
+spriteset(spriteset_3293, "sprites/graphics/industries/claypit.pcx") { tmpl_building_sprite(730, 80, 51, -20) } 
+spriteset(spriteset_3294, "sprites/graphics/industries/claypit.pcx") { tmpl_ground_tile(800, 100) } 
+spriteset(spriteset_3295, "sprites/graphics/industries/claypit.pcx") { tmpl_building_sprite(940, 90, 47, -16) } 
+spritelayout action2_3296 {
+	ground {
+		sprite: GROUNDSPRITE_NORMAL;
+	}
+	building {
+		sprite: spriteset_3241;
+		always_draw: 1;
+		xextent: 8;
+		yextent: 8;
+		zextent: 12;
+	}
+	building {
+		sprite: spriteset_3265;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 12;
+	}
+}
+
+spritelayout action2_3297 {
+	ground {
+		sprite: GROUNDSPRITE_NORMAL;
+	}
+	building {
+		sprite: spriteset_3242;
+		always_draw: 1;
+		xextent: 8;
+		yextent: 8;
+		zextent: 12;
+	}
+	building {
+		sprite: spriteset_3266;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 12;
+	}
+}
+
+spritelayout action2_3298 {
+	ground {
+		sprite: GROUNDSPRITE_NORMAL;
+	}
+	building {
+		sprite: spriteset_3243;
+		always_draw: 1;
+		xextent: 8;
+		yextent: 8;
+		zextent: 12;
+	}
+	building {
+		sprite: spriteset_3267;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 12;
+	}
+}
+
+spritelayout action2_3299 {
+	ground {
+		sprite: GROUNDSPRITE_NORMAL;
+	}
+	building {
+		sprite: spriteset_3244;
+		always_draw: 1;
+		xextent: 8;
+		yextent: 8;
+		zextent: 12;
+	}
+	building {
+		sprite: spriteset_3268;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		xextent: 11;
+		zextent: 42;
+	}
+}
+
+spritelayout action2_3300 {
+	ground {
+		sprite: GROUNDSPRITE_NORMAL;
+	}
+	building {
+		sprite: spriteset_3245;
+		always_draw: 1;
+		zextent: 4;
+	}
+}
+
+spritelayout action2_3301 {
+	ground {
+		sprite: GROUNDSPRITE_NORMAL;
+	}
+	building {
+		sprite: spriteset_3246;
+		always_draw: 1;
+		zextent: 4;
+	}
+}
+
+spritelayout action2_3302 {
+	ground {
+		sprite: GROUNDSPRITE_NORMAL;
+	}
+	building {
+		sprite: spriteset_3247;
+		always_draw: 1;
+		zextent: 32;
+	}
+	building {
+		sprite: spriteset_3269;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 32;
+	}
+}
+
+spritelayout action2_3303 {
+	ground {
+		sprite: GROUNDSPRITE_NORMAL;
+	}
+	building {
+		sprite: spriteset_3248;
+		always_draw: 1;
+		xextent: 8;
+		yextent: 8;
+		zextent: 12;
+	}
+	building {
+		sprite: spriteset_3270;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 32;
+	}
+}
+
+spritelayout action2_3304 {
+	ground {
+		sprite: GROUNDSPRITE_NORMAL;
+	}
+	building {
+		sprite: spriteset_3249;
+		always_draw: 1;
+		zextent: 6;
+	}
+}
+
+spritelayout action2_3305 {
+	ground {
+		sprite: spriteset_3250;
+	}
+	building {
+		sprite: spriteset_3271;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 32;
+	}
+}
+
+spritelayout action2_3306 {
+	ground {
+		sprite: spriteset_3251;
+	}
+	building {
+		sprite: spriteset_3272;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 32;
+	}
+}
+
+spritelayout action2_3307 {
+	ground {
+		sprite: GROUNDSPRITE_NORMAL;
+	}
+	building {
+		sprite: spriteset_3252;
+		always_draw: 1;
+		zextent: 6;
+	}
+}
+
+spritelayout action2_3308 {
+	ground {
+		sprite: GROUNDSPRITE_NORMAL;
+	}
+	building {
+		sprite: spriteset_3253;
+		always_draw: 1;
+		zextent: 6;
+	}
+}
+
+spritelayout action2_3309 {
+	ground {
+		sprite: GROUNDSPRITE_NORMAL;
+	}
+	building {
+		sprite: spriteset_3254;
+		always_draw: 1;
+		zextent: 6;
+	}
+}
+
+spritelayout action2_3310 {
+	ground {
+		sprite: GROUNDSPRITE_NORMAL;
+	}
+	building {
+		sprite: spriteset_3255;
+		always_draw: 1;
+		zextent: 6;
+	}
+}
+
+spritelayout action2_3311 {
+	ground {
+		sprite: spriteset_3256;
+	}
+	building {
+		sprite: spriteset_3273;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 32;
+	}
+}
+
+spritelayout action2_3312 {
+	ground {
+		sprite: spriteset_3257;
+	}
+	building {
+		sprite: spriteset_3274;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 32;
+	}
+}
+
+spritelayout action2_3313 {
+	ground {
+		sprite: GROUNDSPRITE_NORMAL;
+	}
+	building {
+		sprite: spriteset_3258;
+		always_draw: 1;
+		zextent: 6;
+	}
+}
+
+spritelayout action2_3314 {
+	ground {
+		sprite: GROUNDSPRITE_NORMAL;
+	}
+	building {
+		sprite: spriteset_3259;
+		always_draw: 1;
+		zextent: 6;
+	}
+}
+
+spritelayout action2_3315 {
+	ground {
+		sprite: GROUNDSPRITE_NORMAL;
+	}
+	building {
+		sprite: spriteset_3260;
+		always_draw: 1;
+		zextent: 6;
+	}
+}
+
+spritelayout action2_3316 {
+	ground {
+		sprite: GROUNDSPRITE_NORMAL;
+	}
+	building {
+		sprite: spriteset_3261;
+		always_draw: 1;
+		zextent: 6;
+	}
+}
+
+spritelayout action2_3317 {
+	ground {
+		sprite: GROUNDSPRITE_NORMAL;
+	}
+	building {
+		sprite: spriteset_3262;
+		always_draw: 1;
+		zextent: 6;
+	}
+}
+
+spritelayout action2_3318 {
+	ground {
+		sprite: GROUNDSPRITE_NORMAL;
+	}
+	building {
+		sprite: spriteset_3263;
+		always_draw: 1;
+		zextent: 6;
+	}
+}
+
+spritelayout action2_3319 {
+	ground {
+		sprite: GROUNDSPRITE_NORMAL;
+	}
+	building {
+		sprite: spriteset_3264;
+		always_draw: 1;
+		zextent: 6;
+	}
+}
+
+spritelayout action2_3320 {
+	ground {
+		sprite: spriteset_3275;
+	}
+}
+
+spritelayout action2_3321 {
+	ground {
+		sprite: spriteset_3276;
+	}
+	building {
+		sprite: spriteset_3285;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+}
+
+spritelayout action2_3322 {
+	ground {
+		sprite: spriteset_3277;
+	}
+	building {
+		sprite: spriteset_3286;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 32;
+	}
+}
+
+spritelayout action2_3323 {
+	ground {
+		sprite: GROUNDSPRITE_NORMAL;
+	}
+	building {
+		sprite: spriteset_3278;
+		always_draw: 1;
+		zextent: 4;
+	}
+}
+
+spritelayout action2_3324 {
+	ground {
+		sprite: spriteset_3279;
+	}
+	building {
+		sprite: spriteset_3287;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 48;
+	}
+}
+
+spritelayout action2_3325 {
+	ground {
+		sprite: spriteset_3280;
+	}
+	building {
+		sprite: spriteset_3288;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 32;
+	}
+}
+
+spritelayout action2_3326 {
+	ground {
+		sprite: spriteset_3281;
+	}
+	building {
+		sprite: spriteset_3289;
+		zextent: 48;
+	}
+}
+
+spritelayout action2_3327 {
+	ground {
+		sprite: GROUNDSPRITE_NORMAL;
+	}
+	building {
+		sprite: spriteset_3282;
+		always_draw: 1;
+		zextent: 4;
+	}
+}
+
+spritelayout action2_3328 {
+	ground {
+		sprite: GROUNDSPRITE_NORMAL;
+	}
+	building {
+		sprite: spriteset_3283;
+		always_draw: 1;
+		zextent: 4;
+	}
+}
+
+spritelayout action2_3329 {
+	ground {
+		sprite: GROUNDSPRITE_NORMAL;
+	}
+	building {
+		sprite: spriteset_3284;
+		always_draw: 1;
+		zextent: 4;
+	}
+}
+
+spritelayout action2_3330 {
+	ground {
+		sprite: spriteset_3290;
+	}
+	building {
+		sprite: spriteset_3293;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 32;
+	}
+}
+
+spritelayout action2_3331 {
+	ground {
+		sprite: GROUNDSPRITE_NORMAL;
+	}
+	building {
+		sprite: spriteset_3291;
+		always_draw: 1;
+		zextent: 8;
+	}
+	building {
+		sprite: spriteset_3294;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 8;
+	}
+}
+
+spritelayout action2_3332 {
+	ground {
+		sprite: spriteset_3292;
+	}
+	building {
+		sprite: spriteset_3295;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 32;
+	}
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_3333, relative_pos) {
+	773: action2_3296;
+	772: action2_3297;
+	771: action2_3298;
+	770: action2_3299;
+	769: action2_3300;
+	768: action2_3301;
+	517: action2_3302;
+	516: action2_3303;
+	515: action2_3304;
+	514: action2_3305;
+	513: action2_3306;
+	512: action2_3307;
+	261: action2_3308;
+	260: action2_3309;
+	259: action2_3310;
+	258: action2_3311;
+	257: action2_3312;
+	256: action2_3313;
+	5: action2_3314;
+	4: action2_3315;
+	3: action2_3316;
+	2: action2_3317;
+	1: action2_3318;
+	0: action2_3319;
+	520: action2_3320;
+	519: action2_3321;
+	518: action2_3322;
+	774: action2_3323;
+	264: action2_3324;
+	263: action2_3325;
+	262: action2_3326;
+	7: action2_3327;
+	8: action2_3328;
+	action2_3329;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_3334, relative_pos) {
+	1029: action2_3296;
+	1028: action2_3297;
+	1027: action2_3298;
+	1026: action2_3299;
+	1025: action2_3300;
+	1024: action2_3301;
+	773: action2_3302;
+	772: action2_3303;
+	771: action2_3304;
+	770: action2_3305;
+	769: action2_3306;
+	768: action2_3307;
+	517: action2_3308;
+	516: action2_3309;
+	515: action2_3310;
+	514: action2_3311;
+	513: action2_3312;
+	512: action2_3313;
+	261: action2_3314;
+	260: action2_3315;
+	259: action2_3316;
+	258: action2_3317;
+	257: action2_3318;
+	256: action2_3319;
+	6: action2_3324;
+	262: action2_3332;
+	518: action2_3326;
+	774: action2_3330;
+	action2_3331;
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, switch_clay_pit_default_layout, layout_num) {
+	1: action2_3333;
+	2: action2_3334;
+	action2_3296;
+}
+
+spritelayout action2_3336 {
+	ground {
+		sprite: GROUNDSPRITE_SNOW;
+	}
+	building {
+		sprite: spriteset_3241;
+		always_draw: 1;
+		xextent: 8;
+		yextent: 8;
+		zextent: 12;
+	}
+	building {
+		sprite: spriteset_3265;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 12;
+	}
+}
+
+spritelayout action2_3337 {
+	ground {
+		sprite: GROUNDSPRITE_SNOW;
+	}
+	building {
+		sprite: spriteset_3242;
+		always_draw: 1;
+		xextent: 8;
+		yextent: 8;
+		zextent: 12;
+	}
+	building {
+		sprite: spriteset_3266;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 12;
+	}
+}
+
+spritelayout action2_3338 {
+	ground {
+		sprite: GROUNDSPRITE_SNOW;
+	}
+	building {
+		sprite: spriteset_3243;
+		always_draw: 1;
+		xextent: 8;
+		yextent: 8;
+		zextent: 12;
+	}
+	building {
+		sprite: spriteset_3267;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 12;
+	}
+}
+
+spritelayout action2_3339 {
+	ground {
+		sprite: GROUNDSPRITE_SNOW;
+	}
+	building {
+		sprite: spriteset_3244;
+		always_draw: 1;
+		xextent: 8;
+		yextent: 8;
+		zextent: 12;
+	}
+	building {
+		sprite: spriteset_3268;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		xextent: 11;
+		zextent: 42;
+	}
+}
+
+spritelayout action2_3340 {
+	ground {
+		sprite: GROUNDSPRITE_SNOW;
+	}
+	building {
+		sprite: spriteset_3245;
+		always_draw: 1;
+		zextent: 4;
+	}
+}
+
+spritelayout action2_3341 {
+	ground {
+		sprite: GROUNDSPRITE_SNOW;
+	}
+	building {
+		sprite: spriteset_3246;
+		always_draw: 1;
+		zextent: 4;
+	}
+}
+
+spritelayout action2_3342 {
+	ground {
+		sprite: GROUNDSPRITE_SNOW;
+	}
+	building {
+		sprite: spriteset_3247;
+		always_draw: 1;
+		zextent: 32;
+	}
+	building {
+		sprite: spriteset_3269;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 32;
+	}
+}
+
+spritelayout action2_3343 {
+	ground {
+		sprite: GROUNDSPRITE_SNOW;
+	}
+	building {
+		sprite: spriteset_3248;
+		always_draw: 1;
+		xextent: 8;
+		yextent: 8;
+		zextent: 12;
+	}
+	building {
+		sprite: spriteset_3270;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 32;
+	}
+}
+
+spritelayout action2_3344 {
+	ground {
+		sprite: GROUNDSPRITE_SNOW;
+	}
+	building {
+		sprite: spriteset_3249;
+		always_draw: 1;
+		zextent: 6;
+	}
+}
+
+spritelayout action2_3345 {
+	ground {
+		sprite: spriteset_3250;
+	}
+	building {
+		sprite: spriteset_3271;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 32;
+	}
+}
+
+spritelayout action2_3346 {
+	ground {
+		sprite: spriteset_3251;
+	}
+	building {
+		sprite: spriteset_3272;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 32;
+	}
+}
+
+spritelayout action2_3347 {
+	ground {
+		sprite: GROUNDSPRITE_SNOW;
+	}
+	building {
+		sprite: spriteset_3252;
+		always_draw: 1;
+		zextent: 6;
+	}
+}
+
+spritelayout action2_3348 {
+	ground {
+		sprite: GROUNDSPRITE_SNOW;
+	}
+	building {
+		sprite: spriteset_3253;
+		always_draw: 1;
+		zextent: 6;
+	}
+}
+
+spritelayout action2_3349 {
+	ground {
+		sprite: GROUNDSPRITE_SNOW;
+	}
+	building {
+		sprite: spriteset_3254;
+		always_draw: 1;
+		zextent: 6;
+	}
+}
+
+spritelayout action2_3350 {
+	ground {
+		sprite: GROUNDSPRITE_SNOW;
+	}
+	building {
+		sprite: spriteset_3255;
+		always_draw: 1;
+		zextent: 6;
+	}
+}
+
+spritelayout action2_3351 {
+	ground {
+		sprite: spriteset_3256;
+	}
+	building {
+		sprite: spriteset_3273;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 32;
+	}
+}
+
+spritelayout action2_3352 {
+	ground {
+		sprite: spriteset_3257;
+	}
+	building {
+		sprite: spriteset_3274;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 32;
+	}
+}
+
+spritelayout action2_3353 {
+	ground {
+		sprite: GROUNDSPRITE_SNOW;
+	}
+	building {
+		sprite: spriteset_3258;
+		always_draw: 1;
+		zextent: 6;
+	}
+}
+
+spritelayout action2_3354 {
+	ground {
+		sprite: GROUNDSPRITE_SNOW;
+	}
+	building {
+		sprite: spriteset_3259;
+		always_draw: 1;
+		zextent: 6;
+	}
+}
+
+spritelayout action2_3355 {
+	ground {
+		sprite: GROUNDSPRITE_SNOW;
+	}
+	building {
+		sprite: spriteset_3260;
+		always_draw: 1;
+		zextent: 6;
+	}
+}
+
+spritelayout action2_3356 {
+	ground {
+		sprite: GROUNDSPRITE_SNOW;
+	}
+	building {
+		sprite: spriteset_3261;
+		always_draw: 1;
+		zextent: 6;
+	}
+}
+
+spritelayout action2_3357 {
+	ground {
+		sprite: GROUNDSPRITE_SNOW;
+	}
+	building {
+		sprite: spriteset_3262;
+		always_draw: 1;
+		zextent: 6;
+	}
+}
+
+spritelayout action2_3358 {
+	ground {
+		sprite: GROUNDSPRITE_SNOW;
+	}
+	building {
+		sprite: spriteset_3263;
+		always_draw: 1;
+		zextent: 6;
+	}
+}
+
+spritelayout action2_3359 {
+	ground {
+		sprite: GROUNDSPRITE_SNOW;
+	}
+	building {
+		sprite: spriteset_3264;
+		always_draw: 1;
+		zextent: 6;
+	}
+}
+
+spritelayout action2_3360 {
+	ground {
+		sprite: spriteset_3275;
+	}
+}
+
+spritelayout action2_3361 {
+	ground {
+		sprite: spriteset_3276;
+	}
+	building {
+		sprite: spriteset_3285;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+}
+
+spritelayout action2_3362 {
+	ground {
+		sprite: spriteset_3277;
+	}
+	building {
+		sprite: spriteset_3286;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 32;
+	}
+}
+
+spritelayout action2_3363 {
+	ground {
+		sprite: GROUNDSPRITE_SNOW;
+	}
+	building {
+		sprite: spriteset_3278;
+		always_draw: 1;
+		zextent: 4;
+	}
+}
+
+spritelayout action2_3364 {
+	ground {
+		sprite: spriteset_3279;
+	}
+	building {
+		sprite: spriteset_3287;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 48;
+	}
+}
+
+spritelayout action2_3365 {
+	ground {
+		sprite: spriteset_3280;
+	}
+	building {
+		sprite: spriteset_3288;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 32;
+	}
+}
+
+spritelayout action2_3366 {
+	ground {
+		sprite: spriteset_3281;
+	}
+	building {
+		sprite: spriteset_3289;
+		zextent: 48;
+	}
+}
+
+spritelayout action2_3367 {
+	ground {
+		sprite: GROUNDSPRITE_SNOW;
+	}
+	building {
+		sprite: spriteset_3282;
+		always_draw: 1;
+		zextent: 4;
+	}
+}
+
+spritelayout action2_3368 {
+	ground {
+		sprite: GROUNDSPRITE_SNOW;
+	}
+	building {
+		sprite: spriteset_3283;
+		always_draw: 1;
+		zextent: 4;
+	}
+}
+
+spritelayout action2_3369 {
+	ground {
+		sprite: GROUNDSPRITE_SNOW;
+	}
+	building {
+		sprite: spriteset_3284;
+		always_draw: 1;
+		zextent: 4;
+	}
+}
+
+spritelayout action2_3370 {
+	ground {
+		sprite: spriteset_3290;
+	}
+	building {
+		sprite: spriteset_3293;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 32;
+	}
+}
+
+spritelayout action2_3371 {
+	ground {
+		sprite: GROUNDSPRITE_SNOW;
+	}
+	building {
+		sprite: spriteset_3291;
+		always_draw: 1;
+		zextent: 8;
+	}
+	building {
+		sprite: spriteset_3294;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 8;
+	}
+}
+
+spritelayout action2_3372 {
+	ground {
+		sprite: spriteset_3292;
+	}
+	building {
+		sprite: spriteset_3295;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 32;
+	}
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_3373, relative_pos) {
+	773: action2_3336;
+	772: action2_3337;
+	771: action2_3338;
+	770: action2_3339;
+	769: action2_3340;
+	768: action2_3341;
+	517: action2_3342;
+	516: action2_3343;
+	515: action2_3344;
+	514: action2_3345;
+	513: action2_3346;
+	512: action2_3347;
+	261: action2_3348;
+	260: action2_3349;
+	259: action2_3350;
+	258: action2_3351;
+	257: action2_3352;
+	256: action2_3353;
+	5: action2_3354;
+	4: action2_3355;
+	3: action2_3356;
+	2: action2_3357;
+	1: action2_3358;
+	0: action2_3359;
+	520: action2_3360;
+	519: action2_3361;
+	518: action2_3362;
+	774: action2_3363;
+	264: action2_3364;
+	263: action2_3365;
+	262: action2_3366;
+	7: action2_3367;
+	8: action2_3368;
+	action2_3369;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_3374, relative_pos) {
+	1029: action2_3336;
+	1028: action2_3337;
+	1027: action2_3338;
+	1026: action2_3339;
+	1025: action2_3340;
+	1024: action2_3341;
+	773: action2_3342;
+	772: action2_3343;
+	771: action2_3344;
+	770: action2_3345;
+	769: action2_3346;
+	768: action2_3347;
+	517: action2_3348;
+	516: action2_3349;
+	515: action2_3350;
+	514: action2_3351;
+	513: action2_3352;
+	512: action2_3353;
+	261: action2_3354;
+	260: action2_3355;
+	259: action2_3356;
+	258: action2_3357;
+	257: action2_3358;
+	256: action2_3359;
+	6: action2_3364;
+	262: action2_3372;
+	518: action2_3366;
+	774: action2_3370;
+	action2_3371;
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, switch_clay_pit_desert_layout, layout_num) {
+	1: action2_3373;
+	2: action2_3374;
+	action2_3336;
+}
+
+spriteset(spriteset_3377) { 	[10, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/claypit_snow.pcx"] } 
+spriteset(spriteset_3378) { 	[80, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/claypit_snow.pcx"] } 
+spriteset(spriteset_3379) { 	[150, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/claypit_snow.pcx"] } 
+spriteset(spriteset_3380) { 	[220, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/claypit_snow.pcx"] } 
+spriteset(spriteset_3381) { 	[290, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/claypit_snow.pcx"] } 
+spriteset(spriteset_3382) { 	[360, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/claypit_snow.pcx"] } 
+spriteset(spriteset_3383) { 	[10, 50, 64, 31, -31, 0, 9, "sprites/graphics/industries/claypit_snow.pcx"] } 
+spriteset(spriteset_3384) { 	[80, 50, 64, 31, -31, 0, 9, "sprites/graphics/industries/claypit_snow.pcx"] } 
+spriteset(spriteset_3385) { 	[150, 50, 64, 31, -31, 0, 9, "sprites/graphics/industries/claypit_snow.pcx"] } 
+spriteset(spriteset_3386) { 	[220, 50, 64, 31, -31, 0, 9, "sprites/graphics/industries/claypit_snow.pcx"] } 
+spriteset(spriteset_3387) { 	[290, 50, 64, 31, -31, 0, 9, "sprites/graphics/industries/claypit_snow.pcx"] } 
+spriteset(spriteset_3388) { 	[360, 50, 64, 31, -31, 0, 9, "sprites/graphics/industries/claypit_snow.pcx"] } 
+spriteset(spriteset_3389) { 	[10, 90, 64, 31, -31, 0, 9, "sprites/graphics/industries/claypit_snow.pcx"] } 
+spriteset(spriteset_3390) { 	[80, 90, 64, 31, -31, 0, 9, "sprites/graphics/industries/claypit_snow.pcx"] } 
+spriteset(spriteset_3391) { 	[150, 90, 64, 31, -31, 0, 9, "sprites/graphics/industries/claypit_snow.pcx"] } 
+spriteset(spriteset_3392) { 	[220, 90, 64, 31, -31, 0, 9, "sprites/graphics/industries/claypit_snow.pcx"] } 
+spriteset(spriteset_3393) { 	[290, 90, 64, 31, -31, 0, 9, "sprites/graphics/industries/claypit_snow.pcx"] } 
+spriteset(spriteset_3394) { 	[360, 90, 64, 31, -31, 0, 9, "sprites/graphics/industries/claypit_snow.pcx"] } 
+spriteset(spriteset_3395) { 	[10, 130, 64, 31, -31, 0, 9, "sprites/graphics/industries/claypit_snow.pcx"] } 
+spriteset(spriteset_3396) { 	[80, 130, 64, 31, -31, 0, 9, "sprites/graphics/industries/claypit_snow.pcx"] } 
+spriteset(spriteset_3397) { 	[150, 130, 64, 31, -31, 0, 9, "sprites/graphics/industries/claypit_snow.pcx"] } 
+spriteset(spriteset_3398) { 	[220, 130, 64, 31, -31, 0, 9, "sprites/graphics/industries/claypit_snow.pcx"] } 
+spriteset(spriteset_3399) { 	[290, 130, 64, 31, -31, 0, 9, "sprites/graphics/industries/claypit_snow.pcx"] } 
+spriteset(spriteset_3400) { 	[360, 130, 64, 31, -31, 0, 9, "sprites/graphics/industries/claypit_snow.pcx"] } 
+spriteset(spriteset_3401) { 	[440, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/claypit_snow.pcx"] } 
+spriteset(spriteset_3402) { 	[510, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/claypit_snow.pcx"] } 
+spriteset(spriteset_3403) { 	[580, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/claypit_snow.pcx"] } 
+spriteset(spriteset_3404) { 	[650, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/claypit_snow.pcx"] } 
+spriteset(spriteset_3405) { 	[440, 50, 64, 31, -31, 0, 9, "sprites/graphics/industries/claypit_snow.pcx"] } 
+spriteset(spriteset_3406) { 	[510, 50, 64, 31, -31, 0, 9, "sprites/graphics/industries/claypit_snow.pcx"] } 
+spriteset(spriteset_3407) { 	[580, 50, 64, 31, -31, 0, 9, "sprites/graphics/industries/claypit_snow.pcx"] } 
+spriteset(spriteset_3408) { 	[650, 50, 64, 31, -31, 0, 9, "sprites/graphics/industries/claypit_snow.pcx"] } 
+spriteset(spriteset_3409) { 	[580, 90, 64, 31, -31, 0, 9, "sprites/graphics/industries/claypit_snow.pcx"] } 
+spriteset(spriteset_3410) { 	[650, 90, 64, 31, -31, 0, 9, "sprites/graphics/industries/claypit_snow.pcx"] } 
+spriteset(spriteset_3411) { 	[730, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/claypit_snow.pcx"] } 
+spriteset(spriteset_3412) { 	[800, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/claypit_snow.pcx"] } 
+spriteset(spriteset_3413) { 	[870, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/claypit_snow.pcx"] } 
+spriteset(spriteset_3414) { 	[940, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/claypit_snow.pcx"] } 
+spriteset(spriteset_3415) { 	[1010, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/claypit_snow.pcx"] } 
+spriteset(spriteset_3416) { 	[1080, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/claypit_snow.pcx"] } 
+spriteset(spriteset_3417) { 	[1150, 10, 64, 34, -31, -3, 9, "sprites/graphics/industries/claypit_snow.pcx"] } 
+spriteset(spriteset_3418) { 	[1220, 10, 64, 33, -31, -2, 9, "sprites/graphics/industries/claypit_snow.pcx"] } 
+spriteset(spriteset_3419) { 	[1290, 10, 64, 34, -31, -3, 9, "sprites/graphics/industries/claypit_snow.pcx"] } 
+spriteset(spriteset_3420) { 	[1360, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/claypit_snow.pcx"] } 
+spriteset(spriteset_3421) { 	[800, 50, 64, 31, -31, 0, 9, "sprites/graphics/industries/claypit_snow.pcx"] } 
+spriteset(spriteset_3422) { 	[870, 50, 64, 51, -31, -20, 9, "sprites/graphics/industries/claypit_snow.pcx"] } 
+spriteset(spriteset_3423) { 	[1010, 50, 64, 64, -31, -33, 9, "sprites/graphics/industries/claypit_snow.pcx"] } 
+spriteset(spriteset_3424) { 	[1080, 50, 64, 49, -31, -18, 9, "sprites/graphics/industries/claypit_snow.pcx"] } 
+spriteset(spriteset_3425) { 	[1150, 50, 64, 55, -31, -24, 9, "sprites/graphics/industries/claypit_snow.pcx"] } 
+spriteset(spriteset_3426) { 	[730, 140, 64, 31, -31, 0, 9, "sprites/graphics/industries/claypit_snow.pcx"] } 
+spriteset(spriteset_3427) { 	[800, 140, 64, 31, -31, 0, 9, "sprites/graphics/industries/claypit_snow.pcx"] } 
+spriteset(spriteset_3428) { 	[940, 140, 64, 31, -31, 0, 9, "sprites/graphics/industries/claypit_snow.pcx"] } 
+spriteset(spriteset_3429) { 	[730, 80, 64, 51, -31, -20, 9, "sprites/graphics/industries/claypit_snow.pcx"] } 
+spriteset(spriteset_3430) { 	[800, 100, 64, 31, -31, 0, 9, "sprites/graphics/industries/claypit_snow.pcx"] } 
+spriteset(spriteset_3431) { 	[940, 90, 64, 47, -31, -16, 9, "sprites/graphics/industries/claypit_snow.pcx"] } 
+spritelayout action2_3432 {
+	ground {
+		sprite: GROUNDSPRITE_SNOW;
+	}
+	building {
+		sprite: spriteset_3377;
+		always_draw: 1;
+		xextent: 8;
+		yextent: 8;
+		zextent: 12;
+	}
+	building {
+		sprite: spriteset_3401;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 12;
+	}
+}
+
+spritelayout action2_3433 {
+	ground {
+		sprite: GROUNDSPRITE_SNOW;
+	}
+	building {
+		sprite: spriteset_3378;
+		always_draw: 1;
+		xextent: 8;
+		yextent: 8;
+		zextent: 12;
+	}
+	building {
+		sprite: spriteset_3402;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 12;
+	}
+}
+
+spritelayout action2_3434 {
+	ground {
+		sprite: GROUNDSPRITE_SNOW;
+	}
+	building {
+		sprite: spriteset_3379;
+		always_draw: 1;
+		xextent: 8;
+		yextent: 8;
+		zextent: 12;
+	}
+	building {
+		sprite: spriteset_3403;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 12;
+	}
+}
+
+spritelayout action2_3435 {
+	ground {
+		sprite: GROUNDSPRITE_SNOW;
+	}
+	building {
+		sprite: spriteset_3380;
+		always_draw: 1;
+		xextent: 8;
+		yextent: 8;
+		zextent: 12;
+	}
+	building {
+		sprite: spriteset_3404;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		xextent: 11;
+		zextent: 42;
+	}
+}
+
+spritelayout action2_3436 {
+	ground {
+		sprite: GROUNDSPRITE_SNOW;
+	}
+	building {
+		sprite: spriteset_3381;
+		always_draw: 1;
+		zextent: 4;
+	}
+}
+
+spritelayout action2_3437 {
+	ground {
+		sprite: GROUNDSPRITE_SNOW;
+	}
+	building {
+		sprite: spriteset_3382;
+		always_draw: 1;
+		zextent: 4;
+	}
+}
+
+spritelayout action2_3438 {
+	ground {
+		sprite: GROUNDSPRITE_SNOW;
+	}
+	building {
+		sprite: spriteset_3383;
+		always_draw: 1;
+		zextent: 32;
+	}
+	building {
+		sprite: spriteset_3405;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 32;
+	}
+}
+
+spritelayout action2_3439 {
+	ground {
+		sprite: GROUNDSPRITE_SNOW;
+	}
+	building {
+		sprite: spriteset_3384;
+		always_draw: 1;
+		xextent: 8;
+		yextent: 8;
+		zextent: 12;
+	}
+	building {
+		sprite: spriteset_3406;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 32;
+	}
+}
+
+spritelayout action2_3440 {
+	ground {
+		sprite: GROUNDSPRITE_SNOW;
+	}
+	building {
+		sprite: spriteset_3385;
+		always_draw: 1;
+		zextent: 6;
+	}
+}
+
+spritelayout action2_3441 {
+	ground {
+		sprite: spriteset_3386;
+	}
+	building {
+		sprite: spriteset_3407;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 32;
+	}
+}
+
+spritelayout action2_3442 {
+	ground {
+		sprite: spriteset_3387;
+	}
+	building {
+		sprite: spriteset_3408;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 32;
+	}
+}
+
+spritelayout action2_3443 {
+	ground {
+		sprite: GROUNDSPRITE_SNOW;
+	}
+	building {
+		sprite: spriteset_3388;
+		always_draw: 1;
+		zextent: 6;
+	}
+}
+
+spritelayout action2_3444 {
+	ground {
+		sprite: GROUNDSPRITE_SNOW;
+	}
+	building {
+		sprite: spriteset_3389;
+		always_draw: 1;
+		zextent: 6;
+	}
+}
+
+spritelayout action2_3445 {
+	ground {
+		sprite: GROUNDSPRITE_SNOW;
+	}
+	building {
+		sprite: spriteset_3390;
+		always_draw: 1;
+		zextent: 6;
+	}
+}
+
+spritelayout action2_3446 {
+	ground {
+		sprite: GROUNDSPRITE_SNOW;
+	}
+	building {
+		sprite: spriteset_3391;
+		always_draw: 1;
+		zextent: 6;
+	}
+}
+
+spritelayout action2_3447 {
+	ground {
+		sprite: spriteset_3392;
+	}
+	building {
+		sprite: spriteset_3409;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 32;
+	}
+}
+
+spritelayout action2_3448 {
+	ground {
+		sprite: spriteset_3393;
+	}
+	building {
+		sprite: spriteset_3410;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 32;
+	}
+}
+
+spritelayout action2_3449 {
+	ground {
+		sprite: GROUNDSPRITE_SNOW;
+	}
+	building {
+		sprite: spriteset_3394;
+		always_draw: 1;
+		zextent: 6;
+	}
+}
+
+spritelayout action2_3450 {
+	ground {
+		sprite: GROUNDSPRITE_SNOW;
+	}
+	building {
+		sprite: spriteset_3395;
+		always_draw: 1;
+		zextent: 6;
+	}
+}
+
+spritelayout action2_3451 {
+	ground {
+		sprite: GROUNDSPRITE_SNOW;
+	}
+	building {
+		sprite: spriteset_3396;
+		always_draw: 1;
+		zextent: 6;
+	}
+}
+
+spritelayout action2_3452 {
+	ground {
+		sprite: GROUNDSPRITE_SNOW;
+	}
+	building {
+		sprite: spriteset_3397;
+		always_draw: 1;
+		zextent: 6;
+	}
+}
+
+spritelayout action2_3453 {
+	ground {
+		sprite: GROUNDSPRITE_SNOW;
+	}
+	building {
+		sprite: spriteset_3398;
+		always_draw: 1;
+		zextent: 6;
+	}
+}
+
+spritelayout action2_3454 {
+	ground {
+		sprite: GROUNDSPRITE_SNOW;
+	}
+	building {
+		sprite: spriteset_3399;
+		always_draw: 1;
+		zextent: 6;
+	}
+}
+
+spritelayout action2_3455 {
+	ground {
+		sprite: GROUNDSPRITE_SNOW;
+	}
+	building {
+		sprite: spriteset_3400;
+		always_draw: 1;
+		zextent: 6;
+	}
+}
+
+spritelayout action2_3456 {
+	ground {
+		sprite: spriteset_3411;
+	}
+}
+
+spritelayout action2_3457 {
+	ground {
+		sprite: spriteset_3412;
+	}
+	building {
+		sprite: spriteset_3421;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+}
+
+spritelayout action2_3458 {
+	ground {
+		sprite: spriteset_3413;
+	}
+	building {
+		sprite: spriteset_3422;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 32;
+	}
+}
+
+spritelayout action2_3459 {
+	ground {
+		sprite: GROUNDSPRITE_SNOW;
+	}
+	building {
+		sprite: spriteset_3414;
+		always_draw: 1;
+		zextent: 4;
+	}
+}
+
+spritelayout action2_3460 {
+	ground {
+		sprite: spriteset_3415;
+	}
+	building {
+		sprite: spriteset_3423;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 48;
+	}
+}
+
+spritelayout action2_3461 {
+	ground {
+		sprite: spriteset_3416;
+	}
+	building {
+		sprite: spriteset_3424;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 32;
+	}
+}
+
+spritelayout action2_3462 {
+	ground {
+		sprite: spriteset_3417;
+	}
+	building {
+		sprite: spriteset_3425;
+		zextent: 48;
+	}
+}
+
+spritelayout action2_3463 {
+	ground {
+		sprite: GROUNDSPRITE_SNOW;
+	}
+	building {
+		sprite: spriteset_3418;
+		always_draw: 1;
+		zextent: 4;
+	}
+}
+
+spritelayout action2_3464 {
+	ground {
+		sprite: GROUNDSPRITE_SNOW;
+	}
+	building {
+		sprite: spriteset_3419;
+		always_draw: 1;
+		zextent: 4;
+	}
+}
+
+spritelayout action2_3465 {
+	ground {
+		sprite: GROUNDSPRITE_SNOW;
+	}
+	building {
+		sprite: spriteset_3420;
+		always_draw: 1;
+		zextent: 4;
+	}
+}
+
+spritelayout action2_3466 {
+	ground {
+		sprite: spriteset_3426;
+	}
+	building {
+		sprite: spriteset_3429;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 32;
+	}
+}
+
+spritelayout action2_3467 {
+	ground {
+		sprite: GROUNDSPRITE_SNOW;
+	}
+	building {
+		sprite: spriteset_3427;
+		always_draw: 1;
+		zextent: 8;
+	}
+	building {
+		sprite: spriteset_3430;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 8;
+	}
+}
+
+spritelayout action2_3468 {
+	ground {
+		sprite: spriteset_3428;
+	}
+	building {
+		sprite: spriteset_3431;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 32;
+	}
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_3469, relative_pos) {
+	773: action2_3432;
+	772: action2_3433;
+	771: action2_3434;
+	770: action2_3435;
+	769: action2_3436;
+	768: action2_3437;
+	517: action2_3438;
+	516: action2_3439;
+	515: action2_3440;
+	514: action2_3441;
+	513: action2_3442;
+	512: action2_3443;
+	261: action2_3444;
+	260: action2_3445;
+	259: action2_3446;
+	258: action2_3447;
+	257: action2_3448;
+	256: action2_3449;
+	5: action2_3450;
+	4: action2_3451;
+	3: action2_3452;
+	2: action2_3453;
+	1: action2_3454;
+	0: action2_3455;
+	520: action2_3456;
+	519: action2_3457;
+	518: action2_3458;
+	774: action2_3459;
+	264: action2_3460;
+	263: action2_3461;
+	262: action2_3462;
+	7: action2_3463;
+	8: action2_3464;
+	action2_3465;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_3470, relative_pos) {
+	1029: action2_3432;
+	1028: action2_3433;
+	1027: action2_3434;
+	1026: action2_3435;
+	1025: action2_3436;
+	1024: action2_3437;
+	773: action2_3438;
+	772: action2_3439;
+	771: action2_3440;
+	770: action2_3441;
+	769: action2_3442;
+	768: action2_3443;
+	517: action2_3444;
+	516: action2_3445;
+	515: action2_3446;
+	514: action2_3447;
+	513: action2_3448;
+	512: action2_3449;
+	261: action2_3450;
+	260: action2_3451;
+	259: action2_3452;
+	258: action2_3453;
+	257: action2_3454;
+	256: action2_3455;
+	6: action2_3460;
+	262: action2_3468;
+	518: action2_3462;
+	774: action2_3466;
+	action2_3467;
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, switch_clay_pit_snow_layout, layout_num) {
+	1: action2_3469;
+	2: action2_3470;
+	action2_3432;
+}
+
+SWITCH_TERRAIN_NORMAL_DESERT_SNOW(clay_pit, layout)
+
+CHECK_NEARBY_TILE_CLASS(action2_3480)
+
+switch(FEAT_INDUSTRYTILES, PARENT, action2_3481, founder) {
+	16: action2_3480;
+	return 1024;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_3482, var[0x60, 10, 1, 17]) {
+	1: return 1025;
+	action2_3481;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_3483, var[0x60, 10, 1, 16]) {
+	1: action2_3482;
+	action2_3481;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_3484, var[0x60, 10, 1, 31]) {
+	1: action2_3483;
+	action2_3481;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_3485, var[0x60, 10, 1, 1]) {
+	1: action2_3484;
+	action2_3481;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_3486, var[0x60, 10, 1, 15]) {
+	1: action2_3485;
+	action2_3481;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_3487, var[0x60, 10, 1, 241]) {
+	1: action2_3486;
+	action2_3481;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_3488, var[0x60, 10, 1, 240]) {
+	1: action2_3487;
+	action2_3481;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_3489, var[0x60, 10, 1, 255]) {
+	1: action2_3488;
+	action2_3481;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_3490, var[0x60, 0, 255, 0]) {
+	1..255: return 1025;
+	action2_3489;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_3491, (current_callback & 255)) {
+	INDTILE_CB_SLOPE_IS_SUITABLE: action2_3490;
+	INDTILE_CB_FOUNDATIONS: return 0;
+	INDTILE_CB_AUTOSLOPE: return 255;
+	switch_clay_pit_terrain;
+}
+
+item(FEAT_INDUSTRYTILES, tile_clay_pit, 189) {
+	graphics {
+		action2_3491;
+	}
+}
+
+tilelayout tilelayout_clay_pit_1 {
+	0, 0: tile_clay_pit;
+	1, 0: tile_clay_pit;
+	2, 0: tile_clay_pit;
+	3, 0: tile_clay_pit;
+	4, 0: tile_clay_pit;
+	5, 0: tile_clay_pit;
+	6, 0: tile_clay_pit;
+	7, 0: tile_clay_pit;
+	8, 0: tile_clay_pit;
+	0, 1: tile_clay_pit;
+	1, 1: tile_clay_pit;
+	2, 1: tile_clay_pit;
+	3, 1: tile_clay_pit;
+	4, 1: tile_clay_pit;
+	5, 1: tile_clay_pit;
+	6, 1: tile_clay_pit;
+	7, 1: tile_clay_pit;
+	8, 1: tile_clay_pit;
+	0, 2: tile_clay_pit;
+	1, 2: tile_clay_pit;
+	2, 2: tile_clay_pit;
+	3, 2: tile_clay_pit;
+	4, 2: tile_clay_pit;
+	5, 2: tile_clay_pit;
+	6, 2: tile_clay_pit;
+	7, 2: tile_clay_pit;
+	8, 2: tile_clay_pit;
+	0, 3: tile_clay_pit;
+	1, 3: tile_clay_pit;
+	2, 3: tile_clay_pit;
+	3, 3: tile_clay_pit;
+	4, 3: tile_clay_pit;
+	5, 3: tile_clay_pit;
+	6, 3: tile_clay_pit;
+}
+
+tilelayout tilelayout_clay_pit_2 {
+	6, 0: tile_clay_pit;
+	0, 1: tile_clay_pit;
+	1, 1: tile_clay_pit;
+	2, 1: tile_clay_pit;
+	3, 1: tile_clay_pit;
+	4, 1: tile_clay_pit;
+	5, 1: tile_clay_pit;
+	6, 1: tile_clay_pit;
+	0, 2: tile_clay_pit;
+	1, 2: tile_clay_pit;
+	2, 2: tile_clay_pit;
+	3, 2: tile_clay_pit;
+	4, 2: tile_clay_pit;
+	5, 2: tile_clay_pit;
+	6, 2: tile_clay_pit;
+	0, 3: tile_clay_pit;
+	1, 3: tile_clay_pit;
+	2, 3: tile_clay_pit;
+	3, 3: tile_clay_pit;
+	4, 3: tile_clay_pit;
+	5, 3: tile_clay_pit;
+	6, 3: tile_clay_pit;
+	0, 4: tile_clay_pit;
+	1, 4: tile_clay_pit;
+	2, 4: tile_clay_pit;
+	3, 4: tile_clay_pit;
+	4, 4: tile_clay_pit;
+	5, 4: tile_clay_pit;
+	6, 4: tile_clay_pit;
+}
+
+item(FEAT_INDUSTRIES, clay_pit, 44) {
+	property {
+		substitute: 0;
+		layouts: [tilelayout_clay_pit_1, tilelayout_clay_pit_2];
+		life_type: 1;
+		closure_msg: 18483;
+		prod_increase_msg: 18485;
+		prod_decrease_msg: 18489;
+		new_ind_msg: 18477;
+		name: string(STR_IND_CLAY_PIT);
+		nearby_station_name: string(STR_STATIONNAME_PITS);
+		prod_cargo_types: [CLAY];
+		accept_cargo_types: [ENSP];
+		prod_multiplier: [10, 200];
+		input_multiplier_1: [0, 0];
+		input_multiplier_2: [0, 0];
+		input_multiplier_3: [0, 0];
+		min_cargo_distr: 5;
+		conflicting_ind_types: [];
+		prob_random: 5;
+		prob_in_game: 3;
+		prospect_chance: 0.749999999942;
+		fund_cost_multiplier: 200;
+		map_colour: 46;
+		remove_cost_multiplier: 0;
+		spec_flags: 0;
+		callback_flags: 1339;
+	}
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_3494, 1) {
+	1: return 1024;
+	return 1024;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_3495, industry_distance(paper_mill)) {
+	0..16: return 4;
+	action2_3494;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_3496, industry_distance(cement_plant)) {
+	0..16: return 4;
+	action2_3495;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_3497, industry_distance(brick_works)) {
+	0..16: return 4;
+	action2_3496;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_3498, founder) {
+	16: action2_3497;
+	return 1024;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_3499, game_mode) {
+	1: action2_3498;
+	return 1024;
+}
+
+produce(action2_3500, 9999, 0, 0, 0, 0, 0);
+
+switch(FEAT_INDUSTRIES, SELF, action2_3501, STORE_PERM((var[0x40, 0, -1] + LOAD_PERM(0)), 0)) {
+	0: action2_3500;
+	action2_3500;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_3502, var[0x93, 0, -1]) {
+	0..4: return 3;
+	return 0;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_3503, allow_close_primary) {
+	1..255: action2_3502;
+	return 0;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_3504, (extra_callback_info2 & 31)) {
+	0: return 13;
+	return 0;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_3505, (extra_callback_info2 & 3)) {
+	0: return 13;
+	return 0;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_3506, STORE_PERM(var[0x93, 0, -1], 2)) {
+	0..4: return 0;
+	5..32: action2_3504;
+	action2_3505;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_3507, allow_primary_production_decrease) {
+	1..255: action2_3506;
+	return 0;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_3508, (extra_callback_info2 & 3)) {
+	0: return 14;
+	return 0;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_3509, [STORE_PERM(0, 0), LOAD_TEMP(1)]) {
+	1..-1: action2_3508;
+	action2_3507;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_3510, STORE_TEMP(LOAD_PERM(0), 1)) {
+	0: action2_3509;
+	action2_3509;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_3511, [STORE_TEMP(LOAD_PERM(0), 256), var[0x93, 0, -1]]) {
+	128: return string(STR_GENERIC_D0B3);
+	return string(STR_GENERIC_D0B0);
+}
+
+CHECK_OPENING(action2_3515, 0, -1)
+
+switch(FEAT_INDUSTRIES, SELF, action2_3516, [STORE_TEMP(-701265, 256), 32928]) {
+	return;
+}
+
+SWITCH_COLOUR_SCHEME1(action2_3519)
+
+switch(FEAT_INDUSTRIES, SELF, switch_main_clay_pit, current_callback) {
+	0: action2_3501;
+	IND_CB_LOCATION_CHECK: action2_3499;
+	IND_CB_AVAILABILITY: action2_3515;
+	IND_CB_COLOUR: action2_3519;
+	IND_CB_EXTRA_TEXT_FUND: action2_3516;
+	IND_CB_RANDOM_PROD_CHANGE: action2_3503;
+	IND_CB_MONTHLY_PROD_CHANGE: action2_3510;
+	IND_CB_EXTRA_TEXT_INDUSTRY: action2_3511;
+	action2_3500;
+}
+
+item(FEAT_INDUSTRIES, clay_pit, 44) {
+	graphics {
+		switch_main_clay_pit;
+	}
+}
+

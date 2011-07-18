@@ -1,0 +1,268 @@
+item(FEAT_INDUSTRYTILES, tile_builders_yard, 164) {
+	property {
+		substitute: 0;
+		accepted_cargos: [[BDMT, 8], [0, 0], [0, 0]];
+		land_shape_flags: 0;
+		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
+	}
+}
+
+spriteset(spriteset_3187, "sprites/graphics/industries/groundtiles.png") { tmpl_ground_tile(10, 10) } 
+spriteset(spriteset_3188, "sprites/graphics/industries/buildersyard.png") { tmpl_building_sprite(10, 10, 51, -13) } 
+spriteset(spriteset_3189, "sprites/graphics/industries/buildersyard.png") { tmpl_building_sprite(80, 10, 51, -13) } 
+spriteset(spriteset_3190, "sprites/graphics/industries/buildersyard.png") { tmpl_building_sprite(150, 10, 43, -13) } 
+spritelayout action2_3191 {
+	ground {
+		sprite: 2022;
+	}
+	building {
+		sprite: spriteset_3190;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_3188;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+}
+
+spritelayout action2_3192 {
+	ground {
+		sprite: 2022;
+	}
+	building {
+		sprite: spriteset_3190;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_3189;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_3193, relative_pos) {
+	0: action2_3191;
+	256: action2_3192;
+	action2_3191;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_3194, relative_pos) {
+	0: action2_3191;
+	1: action2_3192;
+	action2_3191;
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, switch_builders_yard_default_layout, layout_num) {
+	1: action2_3193;
+	2: action2_3194;
+	action2_3193;
+}
+
+spriteset(spriteset_3197, "sprites/graphics/industries/groundtiles.png") { tmpl_ground_tile(10, 10) } 
+spriteset(spriteset_3198, "sprites/graphics/industries/buildersyard.png") { tmpl_building_sprite(10, 10, 51, -13) } 
+spriteset(spriteset_3199, "sprites/graphics/industries/buildersyard.png") { tmpl_building_sprite(80, 10, 51, -13) } 
+spriteset(spriteset_3200, "sprites/graphics/industries/buildersyard.png") { tmpl_building_sprite(150, 10, 43, -13) } 
+spritelayout action2_3201 {
+	ground {
+		sprite: 2022;
+	}
+	building {
+		sprite: spriteset_3200;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_3198;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+}
+
+spritelayout action2_3202 {
+	ground {
+		sprite: 2022;
+	}
+	building {
+		sprite: spriteset_3200;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_3199;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_3203, relative_pos) {
+	0: action2_3201;
+	256: action2_3202;
+	action2_3201;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_3204, relative_pos) {
+	0: action2_3201;
+	1: action2_3202;
+	action2_3201;
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, switch_builders_yard_desert_layout, layout_num) {
+	1: action2_3203;
+	2: action2_3204;
+	action2_3203;
+}
+
+spriteset(spriteset_3207, "sprites/graphics/industries/groundtiles.png") { tmpl_ground_tile(10, 10) } 
+spriteset(spriteset_3208) { 	[10, 10, 64, 51, -31, -13, 9, "sprites/graphics/industries/buildersyard_snow.png"] } 
+spriteset(spriteset_3209) { 	[80, 10, 64, 51, -31, -13, 9, "sprites/graphics/industries/buildersyard_snow.png"] } 
+spriteset(spriteset_3210) { 	[150, 10, 64, 43, -31, -13, 9, "sprites/graphics/industries/buildersyard_snow.png"] } 
+spritelayout action2_3211 {
+	ground {
+		sprite: 2022;
+	}
+	building {
+		sprite: spriteset_3210;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_3208;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+}
+
+spritelayout action2_3212 {
+	ground {
+		sprite: 2022;
+	}
+	building {
+		sprite: spriteset_3210;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_3209;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_3213, relative_pos) {
+	0: action2_3211;
+	256: action2_3212;
+	action2_3211;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_3214, relative_pos) {
+	0: action2_3211;
+	1: action2_3212;
+	action2_3211;
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, switch_builders_yard_snow_layout, layout_num) {
+	1: action2_3213;
+	2: action2_3214;
+	action2_3213;
+}
+
+SWITCH_TERRAIN_NORMAL_DESERT_SNOW(builders_yard, layout)
+
+CHECK_NEARBY_TILE_CLASS(action2_3224)
+
+switch(FEAT_INDUSTRYTILES, PARENT, action2_3225, founder) {
+	16: action2_3224;
+	return 1024;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_3226, (current_callback & 255)) {
+	INDTILE_CB_SLOPE_IS_SUITABLE: action2_3225;
+	switch_builders_yard_terrain;
+}
+
+item(FEAT_INDUSTRYTILES, tile_builders_yard, 164) {
+	graphics {
+		action2_3226;
+	}
+}
+
+tilelayout tilelayout_builders_yard_1 {
+	0, 0: tile_builders_yard;
+	0, 1: tile_builders_yard;
+}
+
+tilelayout tilelayout_builders_yard_2 {
+	0, 0: tile_builders_yard;
+	1, 0: tile_builders_yard;
+}
+
+item(FEAT_INDUSTRIES, builders_yard, 63) {
+	property {
+		substitute: 0;
+		layouts: [tilelayout_builders_yard_1, tilelayout_builders_yard_2];
+		life_type: 0;
+		closure_msg: 18483;
+		prod_increase_msg: 18485;
+		prod_decrease_msg: 18489;
+		new_ind_msg: 18477;
+		name: string(STR_IND_BUILDERS_YARD);
+		prod_cargo_types: [];
+		accept_cargo_types: [BDMT];
+		prod_multiplier: [0, 0];
+		spec_flags: 32;
+		input_multiplier_1: [0, 0];
+		input_multiplier_2: [0, 0];
+		input_multiplier_3: [0, 0];
+		min_cargo_distr: 0;
+		conflicting_ind_types: [industry_type(IND_TYPE_NEW, 63)];
+		prob_random: 18;
+		prob_in_game: 12;
+		prospect_chance: 0.749999999942;
+		fund_cost_multiplier: 8;
+		map_colour: 15;
+		remove_cost_multiplier: 0;
+		callback_flags: 265;
+	}
+}
+
+produce(action2_3229, 9999, 9999, 0, 0, 0, 0);
+
+switch(FEAT_INDUSTRIES, SELF, action2_3230, 1) {
+	1: return 1024;
+	return 1024;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_3231, town_euclidean_dist(0, 0)) {
+	0..64: action2_3230;
+	return 1025;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_3232, founder) {
+	16: action2_3231;
+	return 1024;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_3233, game_mode) {
+	1: action2_3232;
+	return 1024;
+}
+
+CHECK_OPENING(action2_3236, 0, -1)
+
+switch(FEAT_INDUSTRIES, SELF, switch_main_builders_yard, current_callback) {
+	IND_CB_AVAILABILITY: action2_3236;
+	IND_CB_LOCATION_CHECK: action2_3233;
+	IND_CB_EXTRA_TEXT_FUND: return string(STR_GENERIC_NEWLINE);
+	IND_CB_EXTRA_TEXT_INDUSTRY: return string(STR_GENERIC_NEWLINE);
+	action2_3229;
+}
+
+item(FEAT_INDUSTRIES, builders_yard, 63) {
+	graphics {
+		switch_main_builders_yard;
+	}
+}
+

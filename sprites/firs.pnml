@@ -5,6 +5,9 @@
 #include "sprites/nml/defines.pnml"
 #include "sprites/nml/checks.pnml"
 
+#include "sprites/nml/cargo_props.pnml"
+#include "sprites/nml/cargo_graphics.pnml"
+
 //disable the default industries
 disable_item(FEAT_INDUSTRIES, 0, 36);
 
@@ -18,7 +21,14 @@ disable_item(FEAT_INDUSTRIES, 0, 36);
 #include "sprites/nml/industries/arable_farm.pnml"
 #include "sprites/nml/industries/bauxite_mine.pnml"
 #include "sprites/nml/industries/biorefinery.pnml"
+#include "sprites/nml/industries/brewery.pnml"
+
+#include "sprites/nml/industries/brickworks.pnml"
+#include "sprites/nml/industries/builders_yard.pnml"
+#include "sprites/nml/industries/cement_plant.pnml"
+#include "sprites/nml/industries/clay_pit.pnml"
+#include "sprites/nml/industries/coal_mine.pnml"
+
+
 #include "sprites/nml/god_object.pnml"
 
-#include "sprites/nml/cargo_props.pnml"
-#include "sprites/nml/cargo_graphics.pnml"

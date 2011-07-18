@@ -212,8 +212,8 @@ item(FEAT_INDUSTRIES, arable_farm, 26) {
 		new_ind_msg: 18477;
 		name: string(STR_IND_ARABLE_FARM);
 		nearby_station_name: string(STR_STATIONNAME_FARMS);
-		prod_cargo_types: [6, 12];
-		accept_cargo_types: [21, 255, 255];
+		prod_cargo_types: [GRAI, RSGR];
+		accept_cargo_types: [FMSP, 255, 255];
 		prod_multiplier: [2, 2];
 		input_multiplier_1: [0, 0];
 		input_multiplier_2: [0, 0];
