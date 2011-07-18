@@ -1,0 +1,412 @@
+item(FEAT_INDUSTRYTILES, tile_mixed_farm, 190) {
+	property {
+		substitute: 0;
+		accepted_cargos: [[FMSP, 8], [0, 0], [0, 0]];
+		land_shape_flags: 0;
+		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
+	}
+}
+
+spriteset(spriteset_6404, "sprites/graphics/industries/mixedfarm.pcx") { tmpl_building_sprite(10, 10, 52, -21) } 
+spriteset(spriteset_6405, "sprites/graphics/industries/mixedfarm.pcx") { tmpl_building_sprite(80, 10, 52, -21) } 
+spriteset(spriteset_6406, "sprites/graphics/industries/mixedfarm.pcx") { tmpl_building_sprite(150, 10, 52, -21) } 
+spriteset(spriteset_6407, "sprites/graphics/industries/mixedfarm.pcx") { tmpl_building_sprite(220, 10, 52, -21) } 
+spriteset(spriteset_6408, "sprites/graphics/industries/mixedfarm.pcx") { tmpl_building_sprite(290, 10, 52, -21) } 
+spriteset(spriteset_6409, "sprites/graphics/industries/mixedfarm.pcx") { tmpl_building_sprite(360, 10, 52, -21) } 
+spriteset(spriteset_6410, "sprites/graphics/industries/mixedfarm.pcx") { tmpl_building_sprite(430, 10, 52, -21) } 
+spriteset(spriteset_6411, "sprites/graphics/industries/mixedfarm.pcx") { tmpl_building_sprite(500, 10, 52, -21) } 
+spritelayout action2_6412 {
+	ground {
+		sprite: GROUNDSPRITE_CLEARED;
+	}
+	building {
+		sprite: spriteset_6404;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 64;
+	}
+}
+
+spritelayout action2_6413 {
+	ground {
+		sprite: GROUNDSPRITE_CLEARED;
+	}
+	building {
+		sprite: spriteset_6405;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 32;
+	}
+}
+
+spritelayout action2_6414 {
+	ground {
+		sprite: GROUNDSPRITE_CLEARED;
+	}
+	building {
+		sprite: spriteset_6406;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 32;
+	}
+}
+
+spritelayout action2_6415 {
+	ground {
+		sprite: GROUNDSPRITE_NORMAL;
+	}
+	building {
+		sprite: spriteset_6407;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 32;
+	}
+}
+
+spritelayout action2_6416 {
+	ground {
+		sprite: GROUNDSPRITE_NORMAL;
+	}
+	building {
+		sprite: spriteset_6408;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 32;
+	}
+}
+
+spritelayout action2_6417 {
+	ground {
+		sprite: GROUNDSPRITE_NORMAL;
+	}
+	building {
+		sprite: spriteset_6409;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 32;
+	}
+}
+
+spritelayout action2_6418 {
+	ground {
+		sprite: GROUNDSPRITE_NORMAL;
+	}
+	building {
+		sprite: spriteset_6410;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 32;
+	}
+}
+
+spritelayout action2_6419 {
+	ground {
+		sprite: GROUNDSPRITE_CLEARED;
+	}
+	building {
+		sprite: spriteset_6411;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 32;
+	}
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_6420, relative_pos) {
+	2: action2_6412;
+	1: action2_6413;
+	768: action2_6414;
+	771: action2_6415;
+	514: action2_6416;
+	515: action2_6417;
+	770: action2_6418;
+	action2_6419;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_6421, relative_pos) {
+	769: action2_6412;
+	514: action2_6413;
+	258: action2_6414;
+	0: action2_6415;
+	1: action2_6416;
+	768: action2_6417;
+	512: action2_6418;
+	action2_6419;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_6422, relative_pos) {
+	256: action2_6412;
+	513: action2_6413;
+	1: action2_6414;
+	3: action2_6415;
+	512: action2_6416;
+	515: action2_6417;
+	2: action2_6418;
+	action2_6419;
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, action2_6423, layout_num) {
+	1: action2_6420;
+	2: action2_6421;
+	3: action2_6422;
+	action2_6412;
+}
+
+CHECK_NEARBY_TILE_CLASS(action2_6431)
+
+switch(FEAT_INDUSTRYTILES, PARENT, action2_6432, founder) {
+	16: action2_6431;
+	return 1024;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_6433, ((var[0x60, 16, 255, 0] - snowline_height) + 8)) {
+	8..127: return 1025;
+	action2_6432;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_6434, var[0x60, 10, 1, 17]) {
+	1: return 1025;
+	action2_6433;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_6435, var[0x60, 10, 1, 16]) {
+	1: action2_6434;
+	action2_6433;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_6436, var[0x60, 10, 1, 31]) {
+	1: action2_6435;
+	action2_6433;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_6437, var[0x60, 10, 1, 1]) {
+	1: action2_6436;
+	action2_6433;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_6438, var[0x60, 10, 1, 15]) {
+	1: action2_6437;
+	action2_6433;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_6439, var[0x60, 10, 1, 241]) {
+	1: action2_6438;
+	action2_6433;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_6440, var[0x60, 10, 1, 240]) {
+	1: action2_6439;
+	action2_6433;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_6441, var[0x60, 10, 1, 255]) {
+	1: action2_6440;
+	action2_6433;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_6442, var[0x60, 4, 1, 0]) {
+	1: return 1025;
+	action2_6441;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_6443, var[0x60, 9, 1, 0]) {
+	1: return 1025;
+	action2_6442;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_6444, (current_callback & 255)) {
+	INDTILE_CB_SLOPE_IS_SUITABLE: action2_6443;
+	action2_6423;
+}
+
+item(FEAT_INDUSTRYTILES, tile_mixed_farm, 190) {
+	graphics {
+		action2_6444;
+	}
+}
+
+tilelayout tilelayout_mixed_farm_1 {
+	0, 2: tile_mixed_farm;
+	0, 3: tile_mixed_farm;
+	1, 0: tile_mixed_farm;
+	2, 0: tile_mixed_farm;
+	2, 2: tile_mixed_farm;
+	2, 3: tile_mixed_farm;
+	3, 2: tile_mixed_farm;
+	3, 3: tile_mixed_farm;
+}
+
+tilelayout tilelayout_mixed_farm_2 {
+	0, 0: tile_mixed_farm;
+	0, 2: tile_mixed_farm;
+	0, 3: tile_mixed_farm;
+	1, 0: tile_mixed_farm;
+	1, 3: tile_mixed_farm;
+	2, 0: tile_mixed_farm;
+	2, 1: tile_mixed_farm;
+	2, 2: tile_mixed_farm;
+}
+
+tilelayout tilelayout_mixed_farm_3 {
+	0, 0: tile_mixed_farm;
+	0, 1: tile_mixed_farm;
+	0, 2: tile_mixed_farm;
+	1, 0: tile_mixed_farm;
+	1, 2: tile_mixed_farm;
+	2, 0: tile_mixed_farm;
+	3, 0: tile_mixed_farm;
+	3, 2: tile_mixed_farm;
+}
+
+item(FEAT_INDUSTRIES, mixed_farm, 29) {
+	property {
+		substitute: 0;
+		layouts: [tilelayout_mixed_farm_1, tilelayout_mixed_farm_2, tilelayout_mixed_farm_3];
+		life_type: 2;
+		closure_msg: 18483;
+		prod_increase_msg: 18488;
+		prod_decrease_msg: 18489;
+		new_ind_msg: 18477;
+		name: string(STR_IND_MIXEDFARM);
+		nearby_station_name: string(STR_STATIONNAME_FARMS);
+		prod_cargo_types: [FMSP, FICR];
+		accept_cargo_types: [FMSP];
+		prod_multiplier: [2, 2];
+		input_multiplier_1: [0, 0];
+		input_multiplier_2: [0, 0];
+		input_multiplier_3: [0, 0];
+		min_cargo_distr: 1;
+		conflicting_ind_types: [];
+		prob_random: 18;
+		prob_in_game: 3;
+		prospect_chance: 0.749999999942;
+		fund_cost_multiplier: 49;
+		map_colour: 7;
+		remove_cost_multiplier: 0;
+		spec_flags: 65;
+		callback_flags: 1339;
+	}
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6447, industry_distance(mixed_farm)) {
+	10..36: return 1024;
+	return 4;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6448, ((industry_count(29) / 2) / industry_clusters)) {
+	0: return 1024;
+	action2_6447;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6449, STORE_TEMP(-1, 256)) {
+	0: action2_6448;
+	action2_6448;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6450, industry_distance(stockyard)) {
+	0..16: return 4;
+	action2_6449;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6451, industry_distance(textile_mill)) {
+	0..16: return 4;
+	action2_6450;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6452, industry_distance(plastics_plant)) {
+	0..16: return 4;
+	action2_6451;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6453, founder) {
+	16: action2_6452;
+	return 1024;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6454, game_mode) {
+	1: action2_6453;
+	return 1024;
+}
+
+produce(action2_6455, 9999, 0, 0, 0, 0, 0);
+
+switch(FEAT_INDUSTRIES, SELF, action2_6456, STORE_PERM((var[0x40, 0, -1] + LOAD_PERM(0)), 0)) {
+	0: action2_6455;
+	action2_6455;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6457, var[0x93, 0, -1]) {
+	0..4: return 3;
+	return 0;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6458, allow_close_primary) {
+	1..255: action2_6457;
+	return 0;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6459, (extra_callback_info2 & 31)) {
+	0: return 13;
+	return 0;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6460, (extra_callback_info2 & 3)) {
+	0: return 13;
+	return 0;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6461, STORE_PERM(var[0x93, 0, -1], 2)) {
+	0..4: return 0;
+	5..32: action2_6459;
+	action2_6460;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6462, allow_primary_production_decrease) {
+	1..255: action2_6461;
+	return 0;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6463, (extra_callback_info2 & 3)) {
+	0: return 14;
+	return 0;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6464, [STORE_PERM(0, 0), LOAD_TEMP(1)]) {
+	1..-1: action2_6463;
+	action2_6462;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6465, STORE_TEMP(LOAD_PERM(0), 1)) {
+	0: action2_6464;
+	action2_6464;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6466, [STORE_TEMP(LOAD_PERM(0), 256), var[0x93, 0, -1]]) {
+	128: return string(STR_GENERIC_D0B3);
+	return string(STR_GENERIC_D0B1);
+}
+
+CHECK_OPENING(action2_6470, 0, -1)
+
+switch(FEAT_INDUSTRIES, SELF, action2_6471, [STORE_TEMP(-701265, 256), 32928]) {
+	return;
+}
+
+SWITCH_COLOUR_SCHEME1(action2_6474)
+
+switch(FEAT_INDUSTRIES, SELF, switch_main_mixed_farm, current_callback) {
+	0: action2_6456;
+	IND_CB_LOCATION_CHECK: action2_6454;
+	IND_CB_AVAILABILITY: action2_6470;
+	IND_CB_COLOUR: action2_6474;
+	IND_CB_EXTRA_TEXT_FUND: action2_6471;
+	IND_CB_RANDOM_PROD_CHANGE: action2_6458;
+	IND_CB_MONTHLY_PROD_CHANGE: action2_6465;
+	IND_CB_EXTRA_TEXT_INDUSTRY: action2_6466;
+	action2_6455;
+}
+
+item(FEAT_INDUSTRIES, mixed_farm, 29) {
+	graphics {
+		switch_main_mixed_farm;
+	}
+}

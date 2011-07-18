@@ -1,0 +1,907 @@
+
+item(FEAT_INDUSTRYTILES, tile_stockyard, 179) {
+	property {
+		substitute: 0;
+		accepted_cargos: [[FMSP, 8], [MNSP, 8], [0, 0]];
+		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
+		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
+	}
+}
+
+spriteset(spriteset_6073, "sprites/graphics/industries/meatpacker.pcx") { tmpl_building_sprite(10, 10, 44, -13) } 
+spriteset(spriteset_6074, "sprites/graphics/industries/meatpacker.pcx") { tmpl_building_sprite(80, 10, 74, -43) } 
+spriteset(spriteset_6075, "sprites/graphics/industries/meatpacker.pcx") { tmpl_building_sprite(150, 10, 88, -57) } 
+spriteset(spriteset_6076, "sprites/graphics/industries/meatpacker.pcx") { tmpl_building_sprite(220, 10, 85, -54) } 
+spriteset(spriteset_6077, "sprites/graphics/industries/meatpacker.pcx") { tmpl_building_sprite(290, 10, 104, -73) } 
+spriteset(spriteset_6078, "sprites/graphics/industries/meatpacker.pcx") { tmpl_building_sprite(360, 10, 91, -60) } 
+spriteset(spriteset_6079, "sprites/graphics/industries/meatpacker2.pcx") { tmpl_building_sprite(10, 10, 98, -67) } 
+spriteset(spriteset_6080, "sprites/graphics/industries/meatpacker2.pcx") { tmpl_building_sprite(80, 10, 54, -23) } 
+spriteset(spriteset_6081, "sprites/graphics/industries/meatpacker2.pcx") { tmpl_building_sprite(150, 10, 76, -45) } 
+spriteset(spriteset_6082, "sprites/graphics/industries/meatpacker.pcx") { tmpl_building_sprite(640, 10, 32, -1) } 
+spriteset(spriteset_6083, "sprites/graphics/industries/meatpacker.pcx") { tmpl_building_sprite(710, 10, 49, -18) } 
+spriteset(spriteset_6084, "sprites/graphics/industries/groundtiles.png") { tmpl_ground_tile(80, 10) } 
+spritelayout action2_6085 {
+	ground {
+		sprite: spriteset_6084;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_6073;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 32;
+	}
+}
+
+spritelayout action2_6086 {
+	ground {
+		sprite: spriteset_6084;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_6074;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 32;
+	}
+}
+
+spritelayout action2_6087 {
+	ground {
+		sprite: spriteset_6084;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_6075;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 32;
+	}
+}
+
+spritelayout action2_6088 {
+	ground {
+		sprite: spriteset_6084;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_6076;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 32;
+	}
+}
+
+spritelayout action2_6089 {
+	ground {
+		sprite: spriteset_6084;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_6077;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 96;
+	}
+}
+
+spritelayout action2_6090 {
+	ground {
+		sprite: spriteset_6084;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_6078;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 64;
+	}
+}
+
+spritelayout action2_6091 {
+	ground {
+		sprite: spriteset_6084;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_6079;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 64;
+	}
+}
+
+spritelayout action2_6092 {
+	ground {
+		sprite: spriteset_6084;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_6080;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 48;
+	}
+}
+
+spritelayout action2_6093 {
+	ground {
+		sprite: spriteset_6084;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_6081;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 48;
+	}
+}
+
+spritelayout action2_6094 {
+	ground {
+		sprite: spriteset_6084;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_6082;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 48;
+	}
+}
+
+spritelayout action2_6095 {
+	ground {
+		sprite: spriteset_6084;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_6083;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 8;
+	}
+}
+
+spritelayout action2_6096 {
+	ground {
+		sprite: spriteset_6084;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_6097, relative_pos) {
+	4: action2_6085;
+	260: action2_6086;
+	516: action2_6087;
+	772: action2_6088;
+	259: action2_6089;
+	515: action2_6090;
+	771: action2_6091;
+	257: action2_6092;
+	513: action2_6093;
+	769: action2_6094;
+	3: action2_6096;
+	256: action2_6096;
+	768: action2_6096;
+	action2_6095;
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, action2_6098, layout_num) {
+	1: action2_6097;
+	action2_6085;
+}
+
+spriteset(spriteset_6100, "sprites/graphics/industries/meatpacker.pcx") { tmpl_building_sprite(10, 10, 44, -13) } 
+spriteset(spriteset_6101, "sprites/graphics/industries/meatpacker.pcx") { tmpl_building_sprite(80, 10, 74, -43) } 
+spriteset(spriteset_6102, "sprites/graphics/industries/meatpacker.pcx") { tmpl_building_sprite(150, 10, 88, -57) } 
+spriteset(spriteset_6103, "sprites/graphics/industries/meatpacker.pcx") { tmpl_building_sprite(220, 10, 85, -54) } 
+spriteset(spriteset_6104, "sprites/graphics/industries/meatpacker.pcx") { tmpl_building_sprite(290, 10, 104, -73) } 
+spriteset(spriteset_6105, "sprites/graphics/industries/meatpacker.pcx") { tmpl_building_sprite(360, 10, 91, -60) } 
+spriteset(spriteset_6106, "sprites/graphics/industries/meatpacker2.pcx") { tmpl_building_sprite(10, 10, 98, -67) } 
+spriteset(spriteset_6107, "sprites/graphics/industries/meatpacker2.pcx") { tmpl_building_sprite(80, 10, 54, -23) } 
+spriteset(spriteset_6108, "sprites/graphics/industries/meatpacker2.pcx") { tmpl_building_sprite(150, 10, 76, -45) } 
+spriteset(spriteset_6109, "sprites/graphics/industries/meatpacker.pcx") { tmpl_building_sprite(640, 10, 32, -1) } 
+spriteset(spriteset_6110, "sprites/graphics/industries/meatpacker.pcx") { tmpl_building_sprite(710, 10, 49, -18) } 
+spriteset(spriteset_6111, "sprites/graphics/industries/groundtiles.png") { tmpl_ground_tile(80, 10) } 
+spritelayout action2_6112 {
+	ground {
+		sprite: spriteset_6111;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_6100;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 32;
+	}
+}
+
+spritelayout action2_6113 {
+	ground {
+		sprite: spriteset_6111;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_6101;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 32;
+	}
+}
+
+spritelayout action2_6114 {
+	ground {
+		sprite: spriteset_6111;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_6102;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 32;
+	}
+}
+
+spritelayout action2_6115 {
+	ground {
+		sprite: spriteset_6111;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_6103;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 32;
+	}
+}
+
+spritelayout action2_6116 {
+	ground {
+		sprite: spriteset_6111;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_6104;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 96;
+	}
+}
+
+spritelayout action2_6117 {
+	ground {
+		sprite: spriteset_6111;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_6105;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 64;
+	}
+}
+
+spritelayout action2_6118 {
+	ground {
+		sprite: spriteset_6111;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_6106;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 64;
+	}
+}
+
+spritelayout action2_6119 {
+	ground {
+		sprite: spriteset_6111;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_6107;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 48;
+	}
+}
+
+spritelayout action2_6120 {
+	ground {
+		sprite: spriteset_6111;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_6108;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 48;
+	}
+}
+
+spritelayout action2_6121 {
+	ground {
+		sprite: spriteset_6111;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_6109;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 48;
+	}
+}
+
+spritelayout action2_6122 {
+	ground {
+		sprite: spriteset_6111;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_6110;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 8;
+	}
+}
+
+spritelayout action2_6123 {
+	ground {
+		sprite: spriteset_6111;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_6124, relative_pos) {
+	4: action2_6112;
+	260: action2_6113;
+	516: action2_6114;
+	772: action2_6115;
+	259: action2_6116;
+	515: action2_6117;
+	771: action2_6118;
+	257: action2_6119;
+	513: action2_6120;
+	769: action2_6121;
+	3: action2_6123;
+	256: action2_6123;
+	768: action2_6123;
+	action2_6122;
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, action2_6125, layout_num) {
+	1: action2_6124;
+	action2_6112;
+}
+
+spriteset(spriteset_6127) { 	[10, 10, 64, 44, -31, -13, 9, "sprites/graphics/industries/meatpacker_snow.pcx"] } 
+spriteset(spriteset_6128) { 	[80, 10, 64, 74, -31, -43, 9, "sprites/graphics/industries/meatpacker_snow.pcx"] } 
+spriteset(spriteset_6129) { 	[150, 10, 64, 88, -31, -57, 9, "sprites/graphics/industries/meatpacker_snow.pcx"] } 
+spriteset(spriteset_6130) { 	[220, 10, 64, 85, -31, -54, 9, "sprites/graphics/industries/meatpacker_snow.pcx"] } 
+spriteset(spriteset_6131) { 	[290, 10, 64, 104, -31, -73, 9, "sprites/graphics/industries/meatpacker_snow.pcx"] } 
+spriteset(spriteset_6132) { 	[360, 10, 64, 91, -31, -60, 9, "sprites/graphics/industries/meatpacker_snow.pcx"] } 
+spriteset(spriteset_6133) { 	[10, 10, 64, 98, -31, -67, 9, "sprites/graphics/industries/meatpacker_snow2.pcx"] } 
+spriteset(spriteset_6134) { 	[80, 10, 64, 54, -31, -23, 9, "sprites/graphics/industries/meatpacker_snow2.pcx"] } 
+spriteset(spriteset_6135) { 	[150, 10, 64, 76, -31, -45, 9, "sprites/graphics/industries/meatpacker_snow2.pcx"] } 
+spriteset(spriteset_6136) { 	[640, 10, 64, 32, -31, -1, 9, "sprites/graphics/industries/meatpacker_snow.pcx"] } 
+spriteset(spriteset_6137) { 	[710, 10, 64, 49, -31, -18, 9, "sprites/graphics/industries/meatpacker_snow.pcx"] } 
+spriteset(spriteset_6138, "sprites/graphics/industries/groundtiles.png") { tmpl_ground_tile(80, 10) } 
+spritelayout action2_6139 {
+	ground {
+		sprite: spriteset_6138;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_6127;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 32;
+	}
+}
+
+spritelayout action2_6140 {
+	ground {
+		sprite: spriteset_6138;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_6128;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 32;
+	}
+}
+
+spritelayout action2_6141 {
+	ground {
+		sprite: spriteset_6138;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_6129;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 32;
+	}
+}
+
+spritelayout action2_6142 {
+	ground {
+		sprite: spriteset_6138;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_6130;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 32;
+	}
+}
+
+spritelayout action2_6143 {
+	ground {
+		sprite: spriteset_6138;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_6131;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 96;
+	}
+}
+
+spritelayout action2_6144 {
+	ground {
+		sprite: spriteset_6138;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_6132;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 64;
+	}
+}
+
+spritelayout action2_6145 {
+	ground {
+		sprite: spriteset_6138;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_6133;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 64;
+	}
+}
+
+spritelayout action2_6146 {
+	ground {
+		sprite: spriteset_6138;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_6134;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 48;
+	}
+}
+
+spritelayout action2_6147 {
+	ground {
+		sprite: spriteset_6138;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_6135;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 48;
+	}
+}
+
+spritelayout action2_6148 {
+	ground {
+		sprite: spriteset_6138;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_6136;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 48;
+	}
+}
+
+spritelayout action2_6149 {
+	ground {
+		sprite: spriteset_6138;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_6137;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 8;
+	}
+}
+
+spritelayout action2_6150 {
+	ground {
+		sprite: spriteset_6138;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_6151, relative_pos) {
+	4: action2_6139;
+	260: action2_6140;
+	516: action2_6141;
+	772: action2_6142;
+	259: action2_6143;
+	515: action2_6144;
+	771: action2_6145;
+	257: action2_6146;
+	513: action2_6147;
+	769: action2_6148;
+	3: action2_6150;
+	256: action2_6150;
+	768: action2_6150;
+	action2_6149;
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, action2_6152, layout_num) {
+	1: action2_6151;
+	action2_6139;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_6153, terrain_type) {
+	1: action2_6125;
+	4: action2_6152;
+	action2_6098;
+}
+
+CHECK_NEARBY_TILE_CLASS(action2_6161)
+
+switch(FEAT_INDUSTRYTILES, PARENT, action2_6162, founder) {
+	16: action2_6161;
+	return 1024;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_6163, var[0x60, 0, 255, 0]) {
+	1..255: return 1025;
+	action2_6162;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_6164, (current_callback & 255)) {
+	INDTILE_CB_SLOPE_IS_SUITABLE: action2_6163;
+	action2_6153;
+}
+
+item(FEAT_INDUSTRYTILES, tile_stockyard, 179) {
+	graphics {
+		action2_6164;
+	}
+}
+
+tilelayout tilelayout_stockyard_1 {
+	0, 1: tile_stockyard;
+	0, 2: tile_stockyard;
+	0, 3: tile_stockyard;
+	1, 1: tile_stockyard;
+	1, 2: tile_stockyard;
+	1, 3: tile_stockyard;
+	3, 0: tile_stockyard;
+	3, 1: tile_stockyard;
+	3, 2: tile_stockyard;
+	3, 3: tile_stockyard;
+	4, 0: tile_stockyard;
+	4, 1: tile_stockyard;
+	4, 2: tile_stockyard;
+	4, 3: tile_stockyard;
+	0, 0: item_FEAT_INDUSTRYTILES_224;
+	1, 0: item_FEAT_INDUSTRYTILES_224;
+}
+
+item(FEAT_INDUSTRIES, stockyard, 37) {
+	property {
+		substitute: 0;
+		layouts: [tilelayout_stockyard_1];
+		life_type: 4;
+		closure_msg: 18483;
+		prod_increase_msg: 18485;
+		prod_decrease_msg: 18489;
+		new_ind_msg: 18477;
+		name: string(STR_IND_STOCKYARD);
+		nearby_station_name: string(STR_STATIONNAME_FACTORIES);
+		prod_cargo_types: [FOOD];
+		accept_cargo_types: [MNSP, FMSP];
+		prod_multiplier: [0, 0];
+		input_multiplier_1: [0, 0];
+		input_multiplier_2: [0, 0];
+		input_multiplier_3: [0, 0];
+		min_cargo_distr: 5;
+		conflicting_ind_types: [];
+		prob_random: 5;
+		prob_in_game: 3;
+		prospect_chance: 0.749999999942;
+		fund_cost_multiplier: 145;
+		map_colour: 176;
+		remove_cost_multiplier: 0;
+		spec_flags: 4096;
+		callback_flags: 317;
+	}
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6167, industry_distance(stockyard)) {
+	0..56: return 1025;
+	return 1024;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6168, industry_distance(diary_farm)) {
+	0..16: return 4;
+	action2_6167;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6169, industry_distance(sheep_farm)) {
+	0..16: return 4;
+	action2_6168;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6170, industry_distance(mixed_farm)) {
+	0..16: return 4;
+	action2_6169;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6171, founder) {
+	16: action2_6170;
+	return 1024;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6172, game_mode) {
+	1: action2_6171;
+	return 1024;
+}
+
+produce(action2_6173, LOAD_TEMP(7), LOAD_TEMP(8), LOAD_TEMP(9), LOAD_TEMP(10), LOAD_TEMP(11), LOAD_TEMP(0));
+
+switch(FEAT_INDUSTRIES, SELF, action2_6174, [STORE_TEMP(0, 0), 1]) {
+	0: action2_6173;
+	action2_6173;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6175, [STORE_TEMP(STORE_PERM(STORE_TEMP(STORE_PERM(0, 11), 11), 10), 10), 1]) {
+	0: action2_6174;
+	action2_6174;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6176, [STORE_TEMP(STORE_PERM(0, 11), 11), STORE_TEMP(STORE_PERM(LOAD_TEMP(10), 10), 10)]) {
+	0: action2_6174;
+	action2_6174;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6177, STORE_TEMP(STORE_PERM(STORE_TEMP(STORE_PERM(max((LOAD_TEMP(10) / 1), 1), 10), 10), 11), 11)) {
+	0: action2_6174;
+	action2_6174;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6178, 1) {
+	2: action2_6177;
+	action2_6176;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6179, STORE_TEMP(((LOAD_PERM(4) + LOAD_PERM(5)) + LOAD_PERM(6)), 10)) {
+	0: action2_6175;
+	action2_6178;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6180, [STORE_TEMP(((LOAD_PERM(6) / LOAD_PERM(12)) * 8), 9), STORE_TEMP(STORE_PERM(((var[0x42, 0, -1] - LOAD_TEMP(9)) + LOAD_TEMP(9)), 9), 9)]) {
+	0: action2_6179;
+	action2_6179;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6181, [STORE_TEMP(((LOAD_PERM(5) / LOAD_PERM(12)) * 8), 8), STORE_TEMP(STORE_PERM(((var[0x41, 0, -1] - LOAD_TEMP(8)) + LOAD_TEMP(8)), 8), 8)]) {
+	0: action2_6180;
+	action2_6180;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6182, [STORE_TEMP(((LOAD_PERM(4) / LOAD_PERM(12)) * 8), 7), STORE_TEMP(STORE_PERM(((var[0x40, 0, -1] - LOAD_TEMP(7)) + LOAD_TEMP(7)), 7), 7)]) {
+	0: action2_6181;
+	action2_6181;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6183, STORE_PERM(max(min(((var[0x42, 0, -1] / 8) * LOAD_PERM(12)), LOAD_PERM(0)), 1), 6)) {
+	0: action2_6182;
+	action2_6182;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6184, [STORE_PERM(0, 6), var[0x42, 0, -1]]) {
+	0: action2_6182;
+	action2_6183;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6185, STORE_PERM(max(min(((var[0x41, 0, -1] / 8) * LOAD_PERM(12)), LOAD_PERM(0)), 1), 5)) {
+	0: action2_6184;
+	action2_6184;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6186, [STORE_PERM(0, 5), var[0x41, 0, -1]]) {
+	0: action2_6184;
+	action2_6185;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6187, STORE_PERM(max(min(((var[0x40, 0, -1] / 8) * LOAD_PERM(12)), LOAD_PERM(0)), 1), 4)) {
+	0: action2_6186;
+	action2_6186;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6188, [STORE_PERM(0, 4), var[0x40, 0, -1]]) {
+	0: action2_6186;
+	action2_6187;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6189, STORE_PERM(((0 + LOAD_PERM(1)) + LOAD_PERM(2)), 12)) {
+	0: action2_6188;
+	action2_6188;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6190, [STORE_PERM(0, 2), 1]) {
+	0: action2_6189;
+	action2_6189;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6191, [STORE_PERM(5, 2), STORE_PERM((1 + LOAD_PERM(14)), 14)]) {
+	0: action2_6189;
+	action2_6189;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6192, LOAD_PERM(14)) {
+	0..7: action2_6191;
+	action2_6190;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6193, [STORE_PERM(0, 14), 1]) {
+	0: action2_6191;
+	action2_6191;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6194, (waiting_cargo_2 + waiting_cargo_3)) {
+	0: action2_6192;
+	action2_6193;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6195, [STORE_PERM(0, 1), 1]) {
+	0: action2_6194;
+	action2_6194;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6196, [STORE_PERM(3, 1), STORE_PERM((1 + LOAD_PERM(13)), 13)]) {
+	0: action2_6194;
+	action2_6194;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6197, LOAD_PERM(13)) {
+	0..7: action2_6196;
+	action2_6195;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6198, [STORE_PERM(0, 13), 1]) {
+	0: action2_6196;
+	action2_6196;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6199, waiting_cargo_1) {
+	0: action2_6197;
+	action2_6198;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6200, STORE_TEMP((rotate((LOAD_PERM(15) & 65535), 16) | (LOAD_PERM(14) & 65535)), 261)) {
+	0: return string(STR_INFO_DEBUG_PRODUCTION_CONTRIBUTION);
+	return string(STR_INFO_DEBUG_PRODUCTION_CONTRIBUTION);
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6201, STORE_TEMP((rotate((LOAD_PERM(13) & 65535), 16) | (LOAD_PERM(12) & 65535)), 260)) {
+	0: action2_6200;
+	action2_6200;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6202, STORE_TEMP((rotate((LOAD_PERM(11) & 65535), 16) | (LOAD_PERM(10) & 65535)), 259)) {
+	0: action2_6201;
+	action2_6201;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6203, STORE_TEMP((rotate((LOAD_PERM(9) & 65535), 16) | (LOAD_PERM(8) & 65535)), 258)) {
+	0: action2_6202;
+	action2_6202;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6204, STORE_TEMP((rotate((LOAD_PERM(7) & 65535), 16) | (LOAD_PERM(3) & 65535)), 257)) {
+	0: action2_6203;
+	action2_6203;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6205, STORE_TEMP((rotate((LOAD_PERM(2) & 65535), 16) | (LOAD_PERM(1) & 65535)), 256)) {
+	0: action2_6204;
+	action2_6204;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6206, show_debug_texts) {
+	1: action2_6205;
+	return string(STR_PRODUCTION_MEAT_PACKER);
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6207, STORE_PERM((65535 / 2), 0)) {
+	0: action2_6199;
+	action2_6199;
+}
+
+CHECK_OPENING(action2_6210, 0, -1)
+
+switch(FEAT_INDUSTRIES, SELF, action2_6211, [STORE_TEMP(-701265, 256), 32933]) {
+	return;
+}
+
+SWITCH_COLOUR_SCHEME1(action2_6214)
+
+SET_PRODUCTION_COUNTER_PRODUCED(action2_6217)
+
+CHECK_CLOSE_SECONDARY(action2_6220)
+
+switch(FEAT_INDUSTRIES, SELF, switch_main_stockyard, current_callback) {
+	0: action2_6207;
+	IND_CB_LOCATION_CHECK: action2_6172;
+	IND_CB_AVAILABILITY: action2_6210;
+	IND_CB_COLOUR: action2_6214;
+	IND_CB_EXTRA_TEXT_FUND: action2_6211;
+	IND_CB_RANDOM_PROD_CHANGE: action2_6220;
+	IND_CB_MONTHLY_PROD_CHANGE: action2_6217;
+	IND_CB_EXTRA_TEXT_INDUSTRY: action2_6206;
+	action2_6174;
+}
+
+item(FEAT_INDUSTRIES, stockyard, 37) {
+	graphics {
+		switch_main_stockyard;
+	}
+}
