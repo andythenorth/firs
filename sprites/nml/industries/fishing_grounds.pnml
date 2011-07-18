@@ -1,0 +1,423 @@
+item(FEAT_INDUSTRYTILES, tile_fishing_grounds, 204) {
+	property {
+		substitute: 0;
+		accepted_cargos: [];
+		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
+		callback_flags: 0;
+	}
+}
+
+spriteset(spriteset_4076, "sprites/graphics/industries/fishinggrounds.pcx") { tmpl_ground_tile(10, 10) } 
+spriteset(spriteset_4077, "sprites/graphics/industries/fishinggrounds.pcx") { tmpl_ground_tile(80, 10) } 
+spriteset(spriteset_4078, "sprites/graphics/industries/fishinggrounds.pcx") { tmpl_ground_tile(150, 10) } 
+spriteset(spriteset_4079, "sprites/graphics/industries/fishinggrounds.pcx") { tmpl_ground_tile(220, 10) } 
+spriteset(spriteset_4080, "sprites/graphics/industries/fishinggrounds.pcx") { tmpl_building_sprite(290, 10, 31, -32) } 
+spritelayout action2_4081 {
+	ground {
+		sprite: GROUNDSPRITE_WATER;
+	}
+	building {
+		sprite: spriteset_4076;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+}
+
+spritelayout action2_4082 {
+	ground {
+		sprite: GROUNDSPRITE_WATER;
+	}
+	building {
+		sprite: spriteset_4077;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+}
+
+spritelayout action2_4083 {
+	ground {
+		sprite: GROUNDSPRITE_WATER;
+	}
+	building {
+		sprite: spriteset_4078;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+}
+
+spritelayout action2_4084 {
+	ground {
+		sprite: GROUNDSPRITE_WATER;
+	}
+	childsprite {
+		sprite: spriteset_4080;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_4079;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_4085, relative_pos) {
+	515: action2_4081;
+	771: action2_4084;
+	1027: action2_4082;
+	action2_4083;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_4086, relative_pos) {
+	515: action2_4081;
+	771: action2_4082;
+	1027: action2_4084;
+	action2_4083;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_4087, relative_pos) {
+	770: action2_4083;
+	773: action2_4084;
+	action2_4082;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_4088, relative_pos) {
+	1283: action2_4081;
+	771: action2_4084;
+	515..1027: action2_4082;
+	action2_4083;
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, action2_4089, layout_num) {
+	1: action2_4085;
+	2: action2_4086;
+	3: action2_4087;
+	4: action2_4088;
+	action2_4081;
+}
+
+item(FEAT_INDUSTRYTILES, tile_fishing_grounds, 204) {
+	graphics {
+		action2_4089;
+	}
+}
+
+tilelayout tilelayout_fishing_grounds_1 {
+	0, 0: 255;
+	0, 1: 255;
+	0, 2: 255;
+	0, 3: 255;
+	0, 4: 255;
+	0, 5: 255;
+	0, 6: 255;
+	1, 0: 255;
+	1, 1: 255;
+	1, 2: 255;
+	1, 3: 255;
+	1, 4: 255;
+	1, 5: 255;
+	1, 6: 255;
+	2, 0: 255;
+	2, 1: 255;
+	2, 2: 24;
+	2, 3: 24;
+	2, 4: 255;
+	2, 5: 255;
+	2, 6: 255;
+	3, 0: 255;
+	3, 1: 255;
+	3, 2: tile_fishing_grounds;
+	3, 3: tile_fishing_grounds;
+	3, 4: tile_fishing_grounds;
+	3, 5: 255;
+	3, 6: 255;
+	4, 0: 255;
+	4, 1: 255;
+	4, 2: 255;
+	4, 3: tile_fishing_grounds;
+	4, 4: 255;
+	4, 5: 255;
+	4, 6: 255;
+	5, 0: 255;
+	5, 1: 255;
+	5, 2: 255;
+	5, 3: 255;
+	5, 4: 255;
+	5, 5: 255;
+	5, 6: 255;
+	6, 0: 255;
+	6, 1: 255;
+	6, 2: 255;
+	6, 3: 255;
+	6, 4: 255;
+	6, 5: 255;
+	6, 6: 255;
+}
+
+tilelayout tilelayout_fishing_grounds_2 {
+	0, 0: 255;
+	0, 1: 255;
+	0, 2: 255;
+	0, 3: 255;
+	0, 4: 255;
+	0, 5: 255;
+	0, 6: 255;
+	1, 0: 255;
+	1, 1: 255;
+	1, 2: 255;
+	1, 3: 255;
+	1, 4: 255;
+	1, 5: 255;
+	1, 6: 255;
+	2, 0: 255;
+	2, 1: 255;
+	2, 2: 255;
+	2, 3: 24;
+	2, 4: 24;
+	2, 5: 255;
+	2, 6: 255;
+	3, 0: 255;
+	3, 1: 255;
+	3, 2: tile_fishing_grounds;
+	3, 3: tile_fishing_grounds;
+	3, 4: tile_fishing_grounds;
+	3, 5: 255;
+	3, 6: 255;
+	4, 0: 255;
+	4, 1: 255;
+	4, 2: 255;
+	4, 3: 255;
+	4, 4: tile_fishing_grounds;
+	4, 5: 255;
+	4, 6: 255;
+	5, 0: 255;
+	5, 1: 255;
+	5, 2: 255;
+	5, 3: 255;
+	5, 4: tile_fishing_grounds;
+	5, 5: 255;
+	5, 6: 255;
+	6, 0: 255;
+	6, 1: 255;
+	6, 2: 255;
+	6, 3: 255;
+	6, 4: 255;
+	6, 5: 255;
+	6, 6: 255;
+	7, 0: 255;
+	7, 1: 255;
+	7, 2: 255;
+	7, 3: 255;
+	7, 4: 255;
+	7, 5: 255;
+	7, 6: 255;
+}
+
+tilelayout tilelayout_fishing_grounds_3 {
+	0, 0: 255;
+	0, 1: 255;
+	0, 2: 255;
+	0, 3: 255;
+	0, 4: 255;
+	0, 5: 255;
+	0, 6: 255;
+	1, 0: 255;
+	1, 1: 255;
+	1, 2: 255;
+	1, 3: 255;
+	1, 4: 255;
+	1, 5: 255;
+	1, 6: 255;
+	2, 0: 255;
+	2, 1: 255;
+	2, 2: 255;
+	2, 3: tile_fishing_grounds;
+	2, 4: 255;
+	2, 5: 255;
+	2, 6: 255;
+	3, 0: 255;
+	3, 1: 255;
+	3, 2: 255;
+	3, 3: 255;
+	3, 4: 255;
+	3, 5: 255;
+	3, 6: 255;
+	4, 0: 255;
+	4, 1: 255;
+	4, 2: 24;
+	4, 3: 24;
+	4, 4: 255;
+	4, 5: 255;
+	4, 6: 255;
+	5, 0: 255;
+	5, 1: 255;
+	5, 2: tile_fishing_grounds;
+	5, 3: tile_fishing_grounds;
+	5, 4: tile_fishing_grounds;
+	5, 5: 255;
+	5, 6: 255;
+	6, 0: 255;
+	6, 1: 255;
+	6, 2: 255;
+	6, 3: 255;
+	6, 4: 255;
+	6, 5: 255;
+	6, 6: 255;
+	7, 0: 255;
+	7, 1: 255;
+	7, 2: 255;
+	7, 3: 255;
+	7, 4: 255;
+	7, 5: 255;
+	7, 6: 255;
+}
+
+tilelayout tilelayout_fishing_grounds_4 {
+	0, 0: 255;
+	0, 1: 255;
+	0, 2: 255;
+	0, 3: 255;
+	0, 4: 255;
+	0, 5: 255;
+	0, 6: 255;
+	0, 7: 255;
+	1, 0: 255;
+	1, 1: 255;
+	1, 2: 255;
+	1, 3: 255;
+	1, 4: 255;
+	1, 5: 255;
+	1, 6: 255;
+	1, 7: 255;
+	2, 0: 255;
+	2, 1: 255;
+	2, 2: 24;
+	2, 3: 24;
+	2, 4: 255;
+	2, 5: tile_fishing_grounds;
+	2, 6: 255;
+	2, 7: 255;
+	3, 0: 255;
+	3, 1: 255;
+	3, 2: tile_fishing_grounds;
+	3, 3: tile_fishing_grounds;
+	3, 4: tile_fishing_grounds;
+	3, 5: tile_fishing_grounds;
+	3, 6: 255;
+	3, 7: 255;
+	4, 0: 255;
+	4, 1: 255;
+	4, 2: 255;
+	4, 3: 255;
+	4, 4: 255;
+	4, 5: 255;
+	4, 6: 255;
+	4, 7: 255;
+	5, 0: 255;
+	5, 1: 255;
+	5, 2: 255;
+	5, 3: 255;
+	5, 4: 255;
+	5, 5: 255;
+	5, 6: 255;
+	5, 7: 255;
+}
+
+item(FEAT_INDUSTRIES, fishing_grounds, 32) {
+	property {
+		substitute: 5;
+		layouts: [tilelayout_fishing_grounds_1, tilelayout_fishing_grounds_2, tilelayout_fishing_grounds_3, tilelayout_fishing_grounds_4];
+		life_type: 1;
+		closure_msg: 18483;
+		prod_increase_msg: 18485;
+		prod_decrease_msg: 18489;
+		new_ind_msg: 18477;
+		name: string(STR_IND_FISHING_GROUND);
+		nearby_station_name: string(STR_STATIONNAME_FISHING_GROUNDS);
+		prod_cargo_types: [FISH];
+		accept_cargo_types: [];
+		prod_multiplier: [5, 0];
+		input_multiplier_1: [0, 0];
+		input_multiplier_2: [0, 0];
+		input_multiplier_3: [0, 0];
+		min_cargo_distr: 2;
+		conflicting_ind_types: [];
+		prob_random: 20;
+		prob_in_game: 20;
+		prospect_chance: 0.749999999942;
+		fund_cost_multiplier: 88;
+		map_colour: 158;
+		remove_cost_multiplier: 0;
+		spec_flags: 1156;
+		callback_flags: 1081;
+	}
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_4092, industry_distance(fishing_harbour)) {
+	16..60: return 1024;
+	return 4;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_4093, (((industry_count(31) * 3) / 4) / industry_clusters)) {
+	0: return 1024;
+	action2_4092;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_4094, STORE_TEMP(-1, 256)) {
+	0: action2_4093;
+	action2_4093;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_4095, UCMP(var[0x8B, 0, 65535], param_max_coastal_distance)) {
+	2: return 4;
+	action2_4094;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_4096, founder) {
+	16: action2_4095;
+	return 1024;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_4097, game_mode) {
+	1: action2_4096;
+	return 1024;
+}
+
+produce(action2_4098, 9999, 0, 0, 0, 0, 0);
+
+switch(FEAT_INDUSTRIES, SELF, action2_4099, (current_date + 1)) {
+	0: return 1;
+	return 0;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_4100, (extra_callback_info2 & 255)) {
+	1: return 1;
+	2: return 1;
+	action2_4099;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_4101, restrict_open_during_gameplay) {
+	1..255: action2_4100;
+	action2_4099;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_4102, [STORE_TEMP(-701265, 256), 32928]) {
+	return;
+}
+
+switch(FEAT_INDUSTRIES, SELF, switch_main_fishing_grounds, current_callback) {
+	0: action2_4098;
+	IND_CB_LOCATION_CHECK: action2_4097;
+	IND_CB_AVAILABILITY: action2_4101;
+	IND_CB_EXTRA_TEXT_FUND: action2_4102;
+	41: return 0;
+	53: return 0;
+	action2_4098;
+}
+
+item(FEAT_INDUSTRIES, fishing_grounds, 32) {
+	graphics {
+		switch_main_fishing_grounds;
+	}
+}
+

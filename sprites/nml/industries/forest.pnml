@@ -1,0 +1,5528 @@
+item(FEAT_INDUSTRYTILES, tile_forest, 205) {
+	property {
+		substitute: 0;
+		accepted_cargos: [[FMSP, 8], [0, 0], [0, 0]];
+		land_shape_flags: 0;
+		callback_flags: 112;
+	}
+}
+
+spritelayout action2_4257 {
+	ground {
+		sprite: 3962;
+	}
+	building {
+		sprite: SPRITE_TREE2;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: SPRITE_TREE2;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4258 {
+	ground {
+		sprite: 3963;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: SPRITE_TREE2;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4259 {
+	ground {
+		sprite: 3964;
+	}
+	building {
+		sprite: SPRITE_TREE2;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: SPRITE_TREE2;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4260 {
+	ground {
+		sprite: 3965;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: SPRITE_TREE2;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4261 {
+	ground {
+		sprite: 3966;
+	}
+	building {
+		sprite: SPRITE_TREE2;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: SPRITE_TREE2;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4262 {
+	ground {
+		sprite: 3967;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: SPRITE_TREE2;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4263 {
+	ground {
+		sprite: 3968;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: SPRITE_TREE2;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: SPRITE_TREE2;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4264 {
+	ground {
+		sprite: 3969;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: SPRITE_TREE2;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4265 {
+	ground {
+		sprite: 3970;
+	}
+	building {
+		sprite: SPRITE_TREE2;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4266 {
+	ground {
+		sprite: 3971;
+	}
+	building {
+		sprite: SPRITE_TREE2;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4267 {
+	ground {
+		sprite: 3972;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: SPRITE_TREE2;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4268 {
+	ground {
+		sprite: 3973;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4269 {
+	ground {
+		sprite: 3974;
+	}
+	building {
+		sprite: SPRITE_TREE2;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4270 {
+	ground {
+		sprite: 3975;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: SPRITE_TREE2;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4271 {
+	ground {
+		sprite: 3976;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: SPRITE_TREE2;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4272 {
+	ground {
+		sprite: 3977;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: SPRITE_TREE2;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: SPRITE_TREE2;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4273 {
+	ground {
+		sprite: 3978;
+	}
+	building {
+		sprite: SPRITE_TREE2;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4274 {
+	ground {
+		sprite: 3979;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: SPRITE_TREE2;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4275 {
+	ground {
+		sprite: 3980;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: SPRITE_TREE2;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_4276, var[0x60, 0, 31, 0]) {
+	0: action2_4257;
+	1: action2_4258;
+	2: action2_4259;
+	3: action2_4260;
+	4: action2_4261;
+	5: action2_4262;
+	6: action2_4263;
+	7: action2_4264;
+	8: action2_4265;
+	9: action2_4266;
+	10: action2_4267;
+	11: action2_4268;
+	12: action2_4269;
+	13: action2_4270;
+	14: action2_4271;
+	29: action2_4272;
+	23: action2_4273;
+	27: action2_4274;
+	30: action2_4275;
+	action2_4257;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_4277, relative_pos) {
+	512: action2_4276;
+	action2_4276;
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, action2_4278, layout_num) {
+	1: action2_4277;
+	action2_4277;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_4279, terrain_type) {
+	0: action2_4278;
+	action2_4278;
+}
+
+spritelayout action2_4280 {
+	ground {
+		sprite: 3962;
+	}
+	building {
+		sprite: 1733;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1711;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1733;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4281 {
+	ground {
+		sprite: 3963;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1711;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1733;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4282 {
+	ground {
+		sprite: 3964;
+	}
+	building {
+		sprite: 1733;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1733;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1711;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4283 {
+	ground {
+		sprite: 3965;
+	}
+	building {
+		sprite: 1711;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1733;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4284 {
+	ground {
+		sprite: 3966;
+	}
+	building {
+		sprite: 1733;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1733;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1711;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4285 {
+	ground {
+		sprite: 3967;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1733;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1711;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4286 {
+	ground {
+		sprite: 3968;
+	}
+	building {
+		sprite: 1711;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1733;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1733;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4287 {
+	ground {
+		sprite: 3969;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1711;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1733;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4288 {
+	ground {
+		sprite: 3970;
+	}
+	building {
+		sprite: 1733;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1711;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4289 {
+	ground {
+		sprite: 3971;
+	}
+	building {
+		sprite: 1733;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1711;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4290 {
+	ground {
+		sprite: 3972;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1711;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1733;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4291 {
+	ground {
+		sprite: 3973;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1711;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4292 {
+	ground {
+		sprite: 3974;
+	}
+	building {
+		sprite: 1733;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1711;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4293 {
+	ground {
+		sprite: 3975;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1711;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1733;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4294 {
+	ground {
+		sprite: 3976;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1711;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1733;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4295 {
+	ground {
+		sprite: 3977;
+	}
+	building {
+		sprite: 1711;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1733;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1733;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4296 {
+	ground {
+		sprite: 3978;
+	}
+	building {
+		sprite: 1733;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1711;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4297 {
+	ground {
+		sprite: 3979;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1733;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1711;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4298 {
+	ground {
+		sprite: 3980;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: SPRITE_TREE;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1733;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1711;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_4299, var[0x60, 0, 31, 0]) {
+	0: action2_4280;
+	1: action2_4281;
+	2: action2_4282;
+	3: action2_4283;
+	4: action2_4284;
+	5: action2_4285;
+	6: action2_4286;
+	7: action2_4287;
+	8: action2_4288;
+	9: action2_4289;
+	10: action2_4290;
+	11: action2_4291;
+	12: action2_4292;
+	13: action2_4293;
+	14: action2_4294;
+	29: action2_4295;
+	23: action2_4296;
+	27: action2_4297;
+	30: action2_4298;
+	action2_4280;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_4300, relative_pos) {
+	512: action2_4299;
+	action2_4299;
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, action2_4301, layout_num) {
+	1: action2_4300;
+	action2_4300;
+}
+
+spritelayout action2_4302 {
+	ground {
+		sprite: 4493;
+	}
+	building {
+		sprite: 1733;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1711;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1810;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1733;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4303 {
+	ground {
+		sprite: 4494;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1711;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1733;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4304 {
+	ground {
+		sprite: 4495;
+	}
+	building {
+		sprite: 1733;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1733;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1810;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1711;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4305 {
+	ground {
+		sprite: 4496;
+	}
+	building {
+		sprite: 1711;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1733;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4306 {
+	ground {
+		sprite: 4497;
+	}
+	building {
+		sprite: 1733;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1733;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1711;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4307 {
+	ground {
+		sprite: 4498;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1733;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1711;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4308 {
+	ground {
+		sprite: 4499;
+	}
+	building {
+		sprite: 1711;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1733;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1733;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4309 {
+	ground {
+		sprite: 4500;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1711;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1810;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1733;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4310 {
+	ground {
+		sprite: 4501;
+	}
+	building {
+		sprite: 1733;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1711;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4311 {
+	ground {
+		sprite: 4502;
+	}
+	building {
+		sprite: 1733;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1810;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1711;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4312 {
+	ground {
+		sprite: 4503;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1711;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1733;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4313 {
+	ground {
+		sprite: 4504;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1810;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1711;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4314 {
+	ground {
+		sprite: 4505;
+	}
+	building {
+		sprite: 1733;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1810;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1711;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4315 {
+	ground {
+		sprite: 4506;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1711;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1733;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4316 {
+	ground {
+		sprite: 4507;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1711;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1733;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4317 {
+	ground {
+		sprite: 4508;
+	}
+	building {
+		sprite: 1711;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1733;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1810;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1733;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4318 {
+	ground {
+		sprite: 4509;
+	}
+	building {
+		sprite: 1733;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1711;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1810;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4319 {
+	ground {
+		sprite: 4510;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1733;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1810;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1711;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4320 {
+	ground {
+		sprite: 4511;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1733;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1711;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_4321, var[0x60, 0, 31, 0]) {
+	0: action2_4302;
+	1: action2_4303;
+	2: action2_4304;
+	3: action2_4305;
+	4: action2_4306;
+	5: action2_4307;
+	6: action2_4308;
+	7: action2_4309;
+	8: action2_4310;
+	9: action2_4311;
+	10: action2_4312;
+	11: action2_4313;
+	12: action2_4314;
+	13: action2_4315;
+	14: action2_4316;
+	29: action2_4317;
+	23: action2_4318;
+	27: action2_4319;
+	30: action2_4320;
+	action2_4302;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_4322, relative_pos) {
+	512: action2_4321;
+	action2_4321;
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, action2_4323, layout_num) {
+	1: action2_4322;
+	action2_4322;
+}
+
+spritelayout action2_4324 {
+	ground {
+		sprite: 4512;
+	}
+	building {
+		sprite: 1789;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1768;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1810;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1789;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4325 {
+	ground {
+		sprite: 4513;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1768;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1789;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4326 {
+	ground {
+		sprite: 4514;
+	}
+	building {
+		sprite: 1789;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1789;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1810;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1768;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4327 {
+	ground {
+		sprite: 4515;
+	}
+	building {
+		sprite: 1768;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1789;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4328 {
+	ground {
+		sprite: 4516;
+	}
+	building {
+		sprite: 1789;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1789;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1768;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4329 {
+	ground {
+		sprite: 4517;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1789;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1768;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4330 {
+	ground {
+		sprite: 4518;
+	}
+	building {
+		sprite: 1768;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1789;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1789;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4331 {
+	ground {
+		sprite: 4519;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1768;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1810;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1789;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4332 {
+	ground {
+		sprite: 4520;
+	}
+	building {
+		sprite: 1789;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1768;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4333 {
+	ground {
+		sprite: 4521;
+	}
+	building {
+		sprite: 1789;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1810;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1768;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4334 {
+	ground {
+		sprite: 4522;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1768;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1789;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4335 {
+	ground {
+		sprite: 4523;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1810;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1768;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4336 {
+	ground {
+		sprite: 4524;
+	}
+	building {
+		sprite: 1789;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1810;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1768;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4337 {
+	ground {
+		sprite: 4525;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1768;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1789;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4338 {
+	ground {
+		sprite: 4526;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1768;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1789;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4339 {
+	ground {
+		sprite: 4527;
+	}
+	building {
+		sprite: 1768;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1789;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1810;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1789;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4340 {
+	ground {
+		sprite: 4528;
+	}
+	building {
+		sprite: 1789;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1768;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1810;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4341 {
+	ground {
+		sprite: 4529;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1789;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1810;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1768;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4342 {
+	ground {
+		sprite: 4530;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1789;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1768;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_4343, var[0x60, 0, 31, 0]) {
+	0: action2_4324;
+	1: action2_4325;
+	2: action2_4326;
+	3: action2_4327;
+	4: action2_4328;
+	5: action2_4329;
+	6: action2_4330;
+	7: action2_4331;
+	8: action2_4332;
+	9: action2_4333;
+	10: action2_4334;
+	11: action2_4335;
+	12: action2_4336;
+	13: action2_4337;
+	14: action2_4338;
+	29: action2_4339;
+	23: action2_4340;
+	27: action2_4341;
+	30: action2_4342;
+	action2_4324;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_4344, relative_pos) {
+	512: action2_4343;
+	action2_4343;
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, action2_4345, layout_num) {
+	1: action2_4344;
+	action2_4344;
+}
+
+spritelayout action2_4346 {
+	ground {
+		sprite: 4531;
+	}
+	building {
+		sprite: 1789;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1768;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1810;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1789;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4347 {
+	ground {
+		sprite: 4532;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1768;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1789;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4348 {
+	ground {
+		sprite: 4533;
+	}
+	building {
+		sprite: 1789;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1789;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1810;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1768;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4349 {
+	ground {
+		sprite: 4534;
+	}
+	building {
+		sprite: 1768;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1789;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4350 {
+	ground {
+		sprite: 4535;
+	}
+	building {
+		sprite: 1789;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1789;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1768;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4351 {
+	ground {
+		sprite: 4536;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1789;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1768;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4352 {
+	ground {
+		sprite: 4537;
+	}
+	building {
+		sprite: 1768;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1789;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1789;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4353 {
+	ground {
+		sprite: 4538;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1768;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1810;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1789;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4354 {
+	ground {
+		sprite: 4539;
+	}
+	building {
+		sprite: 1789;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1768;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4355 {
+	ground {
+		sprite: 4540;
+	}
+	building {
+		sprite: 1789;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1810;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1768;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4356 {
+	ground {
+		sprite: 4541;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1768;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1789;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4357 {
+	ground {
+		sprite: 4542;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1810;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1768;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4358 {
+	ground {
+		sprite: 4543;
+	}
+	building {
+		sprite: 1789;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1810;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1768;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4359 {
+	ground {
+		sprite: 4544;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1768;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1789;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4360 {
+	ground {
+		sprite: 4545;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1768;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1789;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4361 {
+	ground {
+		sprite: 4546;
+	}
+	building {
+		sprite: 1768;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1789;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1810;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1789;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4362 {
+	ground {
+		sprite: 4547;
+	}
+	building {
+		sprite: 1789;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1768;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1810;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4363 {
+	ground {
+		sprite: 4548;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1789;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1810;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1768;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4364 {
+	ground {
+		sprite: 4549;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1789;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1768;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_4365, var[0x60, 0, 31, 0]) {
+	0: action2_4346;
+	1: action2_4347;
+	2: action2_4348;
+	3: action2_4349;
+	4: action2_4350;
+	5: action2_4351;
+	6: action2_4352;
+	7: action2_4353;
+	8: action2_4354;
+	9: action2_4355;
+	10: action2_4356;
+	11: action2_4357;
+	12: action2_4358;
+	13: action2_4359;
+	14: action2_4360;
+	29: action2_4361;
+	23: action2_4362;
+	27: action2_4363;
+	30: action2_4364;
+	action2_4346;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_4366, relative_pos) {
+	512: action2_4365;
+	action2_4365;
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, action2_4367, layout_num) {
+	1: action2_4366;
+	action2_4366;
+}
+
+spritelayout action2_4368 {
+	ground {
+		sprite: GROUNDSPRITE_SNOW;
+	}
+	building {
+		sprite: 1789;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1768;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1810;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1789;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4369 {
+	ground {
+		sprite: 4551;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1768;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1789;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4370 {
+	ground {
+		sprite: 4552;
+	}
+	building {
+		sprite: 1789;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1789;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1810;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1768;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4371 {
+	ground {
+		sprite: 4553;
+	}
+	building {
+		sprite: 1768;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1789;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4372 {
+	ground {
+		sprite: 4554;
+	}
+	building {
+		sprite: 1789;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1789;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1768;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4373 {
+	ground {
+		sprite: 4555;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1789;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1768;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4374 {
+	ground {
+		sprite: 4556;
+	}
+	building {
+		sprite: 1768;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1789;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1789;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4375 {
+	ground {
+		sprite: 4557;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1768;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1810;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1789;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4376 {
+	ground {
+		sprite: 4558;
+	}
+	building {
+		sprite: 1789;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1768;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4377 {
+	ground {
+		sprite: 4559;
+	}
+	building {
+		sprite: 1789;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1810;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1768;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4378 {
+	ground {
+		sprite: 4560;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1768;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1789;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4379 {
+	ground {
+		sprite: 4561;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1810;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1768;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4380 {
+	ground {
+		sprite: 4562;
+	}
+	building {
+		sprite: 1789;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1810;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1768;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4381 {
+	ground {
+		sprite: 4563;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1768;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1789;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4382 {
+	ground {
+		sprite: 4564;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1768;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1789;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4383 {
+	ground {
+		sprite: 4565;
+	}
+	building {
+		sprite: 1768;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1789;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1810;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1789;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4384 {
+	ground {
+		sprite: 4566;
+	}
+	building {
+		sprite: 1789;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1768;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1810;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4385 {
+	ground {
+		sprite: 4567;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1789;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1810;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1768;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4386 {
+	ground {
+		sprite: 4568;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1810;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1789;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1768;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_4387, var[0x60, 0, 31, 0]) {
+	0: action2_4368;
+	1: action2_4369;
+	2: action2_4370;
+	3: action2_4371;
+	4: action2_4372;
+	5: action2_4373;
+	6: action2_4374;
+	7: action2_4375;
+	8: action2_4376;
+	9: action2_4377;
+	10: action2_4378;
+	11: action2_4379;
+	12: action2_4380;
+	13: action2_4381;
+	14: action2_4382;
+	29: action2_4383;
+	23: action2_4384;
+	27: action2_4385;
+	30: action2_4386;
+	action2_4368;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_4388, relative_pos) {
+	512: action2_4387;
+	action2_4387;
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, action2_4389, layout_num) {
+	1: action2_4388;
+	action2_4388;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_4390, ((var[0x60, 16, 255, 0] - snowline_height) + 8)) {
+	0..7: action2_4323;
+	8..15: action2_4345;
+	16..23: action2_4367;
+	24..127: action2_4389;
+	action2_4301;
+}
+
+spritelayout action2_4391 {
+	ground {
+		sprite: 3962;
+	}
+	building {
+		sprite: 1872;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1871;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1901;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1872;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4392 {
+	ground {
+		sprite: 3963;
+	}
+	building {
+		sprite: 1901;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1871;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1872;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1901;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4393 {
+	ground {
+		sprite: 3964;
+	}
+	building {
+		sprite: 1872;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1872;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1901;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1871;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4394 {
+	ground {
+		sprite: 3965;
+	}
+	building {
+		sprite: 1871;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1901;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1872;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1901;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4395 {
+	ground {
+		sprite: 3966;
+	}
+	building {
+		sprite: 1872;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1901;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1872;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1871;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4396 {
+	ground {
+		sprite: 3967;
+	}
+	building {
+		sprite: 1901;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1872;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1871;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1901;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4397 {
+	ground {
+		sprite: 3968;
+	}
+	building {
+		sprite: 1871;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1901;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1872;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1872;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4398 {
+	ground {
+		sprite: 3969;
+	}
+	building {
+		sprite: 1901;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1871;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1901;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1872;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4399 {
+	ground {
+		sprite: 3970;
+	}
+	building {
+		sprite: 1872;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1901;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1871;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1901;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4400 {
+	ground {
+		sprite: 3971;
+	}
+	building {
+		sprite: 1872;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1901;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1901;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1871;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4401 {
+	ground {
+		sprite: 3972;
+	}
+	building {
+		sprite: 1901;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1871;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1872;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1901;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4402 {
+	ground {
+		sprite: 3973;
+	}
+	building {
+		sprite: 1901;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1901;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1901;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1871;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4403 {
+	ground {
+		sprite: 3974;
+	}
+	building {
+		sprite: 1872;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1901;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1901;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1871;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4404 {
+	ground {
+		sprite: 3975;
+	}
+	building {
+		sprite: 1901;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1871;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1872;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1901;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4405 {
+	ground {
+		sprite: 3976;
+	}
+	building {
+		sprite: 1901;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1871;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1872;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1901;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4406 {
+	ground {
+		sprite: 3977;
+	}
+	building {
+		sprite: 1871;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1872;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1901;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1872;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4407 {
+	ground {
+		sprite: 3978;
+	}
+	building {
+		sprite: 1872;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1871;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1901;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1901;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4408 {
+	ground {
+		sprite: 3979;
+	}
+	building {
+		sprite: 1901;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1872;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1901;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1871;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4409 {
+	ground {
+		sprite: 3980;
+	}
+	building {
+		sprite: 1901;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1901;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1872;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1871;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_4410, var[0x60, 0, 31, 0]) {
+	0: action2_4391;
+	1: action2_4392;
+	2: action2_4393;
+	3: action2_4394;
+	4: action2_4395;
+	5: action2_4396;
+	6: action2_4397;
+	7: action2_4398;
+	8: action2_4399;
+	9: action2_4400;
+	10: action2_4401;
+	11: action2_4402;
+	12: action2_4403;
+	13: action2_4404;
+	14: action2_4405;
+	29: action2_4406;
+	23: action2_4407;
+	27: action2_4408;
+	30: action2_4409;
+	action2_4391;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_4411, relative_pos) {
+	512: action2_4410;
+	action2_4410;
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, switch_forest_default_layout, layout_num) {
+	1: action2_4411;
+	action2_4411;
+}
+
+spritelayout action2_4413 {
+	ground {
+		sprite: 3943;
+	}
+	building {
+		sprite: 1899;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1915;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1900;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1899;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4414 {
+	ground {
+		sprite: 3944;
+	}
+	building {
+		sprite: 1900;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1915;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1899;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1900;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4415 {
+	ground {
+		sprite: 3945;
+	}
+	building {
+		sprite: 1899;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1899;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1900;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1915;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4416 {
+	ground {
+		sprite: 3946;
+	}
+	building {
+		sprite: 1915;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1900;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1899;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1900;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4417 {
+	ground {
+		sprite: 3947;
+	}
+	building {
+		sprite: 1899;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1900;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1899;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1915;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4418 {
+	ground {
+		sprite: 3948;
+	}
+	building {
+		sprite: 1900;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1899;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1915;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1900;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4419 {
+	ground {
+		sprite: 3949;
+	}
+	building {
+		sprite: 1915;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1900;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1899;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1899;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4420 {
+	ground {
+		sprite: 3950;
+	}
+	building {
+		sprite: 1900;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1915;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1900;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1899;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4421 {
+	ground {
+		sprite: 3951;
+	}
+	building {
+		sprite: 1899;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1900;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1915;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1900;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4422 {
+	ground {
+		sprite: 3952;
+	}
+	building {
+		sprite: 1899;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1900;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1900;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1915;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4423 {
+	ground {
+		sprite: 3953;
+	}
+	building {
+		sprite: 1900;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1915;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1899;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1900;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4424 {
+	ground {
+		sprite: 3954;
+	}
+	building {
+		sprite: 1900;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1900;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1900;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1915;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4425 {
+	ground {
+		sprite: 3955;
+	}
+	building {
+		sprite: 1899;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1900;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1900;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1915;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4426 {
+	ground {
+		sprite: 3956;
+	}
+	building {
+		sprite: 1900;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1915;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1899;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1900;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4427 {
+	ground {
+		sprite: 3957;
+	}
+	building {
+		sprite: 1900;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1915;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1899;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1900;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4428 {
+	ground {
+		sprite: 3958;
+	}
+	building {
+		sprite: 1915;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1899;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1900;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1899;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4429 {
+	ground {
+		sprite: 3959;
+	}
+	building {
+		sprite: 1899;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1915;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1900;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1900;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4430 {
+	ground {
+		sprite: 3960;
+	}
+	building {
+		sprite: 1900;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1899;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1900;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1915;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+spritelayout action2_4431 {
+	ground {
+		sprite: 3961;
+	}
+	building {
+		sprite: 1900;
+		xoffset: 2;
+		yoffset: 2;
+		xextent: 13;
+		yextent: 13;
+	}
+	building {
+		sprite: 1900;
+		xoffset: 8;
+		yoffset: 2;
+		xextent: 7;
+		yextent: 13;
+	}
+	building {
+		sprite: 1899;
+		yoffset: 7;
+		yextent: 8;
+	}
+	building {
+		sprite: 1915;
+		xoffset: 8;
+		yoffset: 7;
+		xextent: 7;
+		yextent: 8;
+	}
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_4432, var[0x60, 0, 31, 0]) {
+	0: action2_4413;
+	1: action2_4414;
+	2: action2_4415;
+	3: action2_4416;
+	4: action2_4417;
+	5: action2_4418;
+	6: action2_4419;
+	7: action2_4420;
+	8: action2_4421;
+	9: action2_4422;
+	10: action2_4423;
+	11: action2_4424;
+	12: action2_4425;
+	13: action2_4426;
+	14: action2_4427;
+	29: action2_4428;
+	23: action2_4429;
+	27: action2_4430;
+	30: action2_4431;
+	action2_4413;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_4433, relative_pos) {
+	512: action2_4432;
+	action2_4432;
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, switch_forest_desert_layout, layout_num) {
+	1: action2_4433;
+	action2_4433;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, switch_forest_terrain, terrain_type) {
+	1: switch_forest_desert_layout;
+	switch_forest_default_layout;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_4436, var[0x03, 0, 255]) {
+	0: action2_4279;
+	1: action2_4390;
+	2: switch_forest_terrain;
+	action2_4279;
+}
+
+CHECK_NEARBY_TILE_CLASS(action2_4444)
+
+switch(FEAT_INDUSTRYTILES, PARENT, action2_4445, founder) {
+	16: action2_4444;
+	return 1024;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_4446, var[0x60, 10, 1, 17]) {
+	1: return 1025;
+	action2_4445;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_4447, var[0x60, 10, 1, 16]) {
+	1: action2_4446;
+	action2_4445;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_4448, var[0x60, 10, 1, 31]) {
+	1: action2_4447;
+	action2_4445;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_4449, var[0x60, 10, 1, 1]) {
+	1: action2_4448;
+	action2_4445;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_4450, var[0x60, 10, 1, 15]) {
+	1: action2_4449;
+	action2_4445;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_4451, var[0x60, 10, 1, 241]) {
+	1: action2_4450;
+	action2_4445;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_4452, var[0x60, 10, 1, 240]) {
+	1: action2_4451;
+	action2_4445;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_4453, var[0x60, 10, 1, 255]) {
+	1: action2_4452;
+	action2_4445;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_4454, var[0x60, 9, 1, 0]) {
+	1: return 1025;
+	action2_4453;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_4455, (current_callback & 255)) {
+	INDTILE_CB_SLOPE_IS_SUITABLE: action2_4454;
+	INDTILE_CB_FOUNDATIONS: return 0;
+	INDTILE_CB_AUTOSLOPE: return 255;
+	action2_4436;
+}
+
+item(FEAT_INDUSTRYTILES, tile_forest, 205) {
+	graphics {
+		action2_4455;
+	}
+}
+
+item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_206, 206) {
+	property {
+		substitute: 0;
+		accepted_cargos: [[FMSP, 8], [0, 0], [0, 0]];
+		land_shape_flags: 0;
+		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
+	}
+}
+
+spriteset(spriteset_4459, "sprites/graphics/industries/forest.png") { tmpl_building_sprite(10, 10, 78, -45) } 
+spriteset(spriteset_4460, "sprites/graphics/industries/forest.png") { tmpl_building_sprite(80, 10, 78, -45) } 
+spriteset(spriteset_4461, "sprites/graphics/industries/forest.png") { tmpl_building_sprite(220, 10, 78, -45) } 
+spritelayout action2_4462 {
+	ground {
+		sprite: 2022;
+	}
+	building {
+		sprite: spriteset_4459;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		xextent: 7;
+		yextent: 7;
+		zextent: 7;
+	}
+	building {
+		sprite: spriteset_4460;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		xextent: 7;
+		yextent: 7;
+		zextent: 7;
+	}
+}
+
+spritelayout action2_4463 {
+	ground {
+		sprite: spriteset_4461;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_4459;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		xextent: 7;
+		yextent: 7;
+		zextent: 7;
+	}
+	building {
+		sprite: spriteset_4460;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		xextent: 7;
+		yextent: 7;
+		zextent: 7;
+	}
+}
+
+CHECK_NEARBY_TILE_CLASS(action2_4471)
+
+switch(FEAT_INDUSTRYTILES, PARENT, action2_4472, founder) {
+	16: action2_4471;
+	return 1024;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_4473, var[0x60, 9, 1, 0]) {
+	1: return 1025;
+	action2_4472;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_4474, ((var[0x60, 16, 255, 0] - snowline_height) + 8)) {
+	0..7: action2_4462;
+	8..15: action2_4462;
+	16..23: action2_4463;
+	24..127: action2_4463;
+	action2_4462;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_4475, var[0x03, 0, 255]) {
+	0: action2_4462;
+	1: action2_4474;
+	2: action2_4462;
+	action2_4462;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_4476, (current_callback & 255)) {
+	INDTILE_CB_SLOPE_IS_SUITABLE: action2_4473;
+	action2_4475;
+}
+
+item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_206, 206) {
+	graphics {
+		action2_4476;
+	}
+}
+
+tilelayout tilelayout_forest_1 {
+	0, 0: tile_forest;
+	0, 1: tile_forest;
+	0, 2: tile_forest;
+	1, 0: tile_forest;
+	1, 1: tile_forest;
+	1, 2: tile_forest;
+	2, 1: tile_forest;
+	2, 2: item_FEAT_INDUSTRYTILES_206;
+}
+
+tilelayout tilelayout_forest_2 {
+	0, 0: tile_forest;
+	0, 1: tile_forest;
+	0, 2: tile_forest;
+	1, 0: tile_forest;
+	1, 1: tile_forest;
+	1, 2: tile_forest;
+	3, 0: tile_forest;
+	3, 1: tile_forest;
+	3, 2: item_FEAT_INDUSTRYTILES_206;
+	4, 0: tile_forest;
+	4, 1: tile_forest;
+	4, 2: tile_forest;
+}
+
+tilelayout tilelayout_forest_3 {
+	0, 1: tile_forest;
+	0, 2: tile_forest;
+	0, 3: tile_forest;
+	1, 0: tile_forest;
+	1, 1: tile_forest;
+	1, 2: tile_forest;
+	1, 3: tile_forest;
+	1, 4: tile_forest;
+	2, 0: tile_forest;
+	2, 1: tile_forest;
+	2, 2: tile_forest;
+	2, 3: tile_forest;
+	3, 0: tile_forest;
+	3, 1: tile_forest;
+	3, 2: item_FEAT_INDUSTRYTILES_206;
+	4, 0: tile_forest;
+	4, 1: tile_forest;
+	5, 0: tile_forest;
+	5, 1: tile_forest;
+	5, 2: tile_forest;
+}
+
+item(FEAT_INDUSTRIES, forest, 11) {
+	property {
+		substitute: 0;
+		layouts: [tilelayout_forest_1, tilelayout_forest_2, tilelayout_forest_3];
+		life_type: 2;
+		closure_msg: 18483;
+		prod_increase_msg: 18485;
+		prod_decrease_msg: 18489;
+		new_ind_msg: 18477;
+		name: 18437;
+		prod_cargo_types: [WOOD];
+		accept_cargo_types: [FMSP];
+		prod_multiplier: [12];
+		conflicting_ind_types: [];
+		prob_random: 8;
+		prob_in_game: 3;
+		prospect_chance: 0.749999999942;
+		fund_cost_multiplier: 95;
+		map_colour: 81;
+		callback_flags: 2363;
+	}
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_4479, industry_distance(forest)) {
+	15..80: return 1024;
+	return 4;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_4480, (((industry_count(11) * 3) / 4) / industry_clusters)) {
+	0: return 1024;
+	action2_4479;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_4481, STORE_TEMP(-1, 256)) {
+	0: action2_4480;
+	action2_4480;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_4482, industry_distance(sawmill)) {
+	0..16: return 4;
+	action2_4481;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_4483, industry_distance(paper_mill)) {
+	0..16: return 4;
+	action2_4482;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_4484, founder) {
+	16: action2_4483;
+	return 1024;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_4485, game_mode) {
+	1: action2_4484;
+	return 1024;
+}
+
+produce(action2_4486, 9999, 0, 0, 0, 0, 0);
+
+switch(FEAT_INDUSTRIES, SELF, action2_4487, STORE_PERM((var[0x40, 0, -1] + LOAD_PERM(0)), 0)) {
+	0: action2_4486;
+	action2_4486;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_4488, var[0x93, 0, -1]) {
+	0..4: return 3;
+	return 0;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_4489, allow_close_primary) {
+	1..255: action2_4488;
+	return 0;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_4490, (extra_callback_info2 & 31)) {
+	0: return 13;
+	return 0;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_4491, (extra_callback_info2 & 3)) {
+	0: return 13;
+	return 0;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_4492, STORE_PERM(var[0x93, 0, -1], 2)) {
+	0..4: return 0;
+	5..32: action2_4490;
+	action2_4491;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_4493, allow_primary_production_decrease) {
+	1..255: action2_4492;
+	return 0;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_4494, (extra_callback_info2 & 3)) {
+	0: return 14;
+	return 0;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_4495, [STORE_PERM(0, 0), LOAD_TEMP(1)]) {
+	1..-1: action2_4494;
+	action2_4493;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_4496, STORE_TEMP(LOAD_PERM(0), 1)) {
+	0: action2_4495;
+	action2_4495;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_4497, [STORE_TEMP(LOAD_PERM(0), 256), var[0x93, 0, -1]]) {
+	128: return string(STR_GENERIC_D0B3);
+	return string(STR_GENERIC_D0B1);
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_4499, (current_date + 1)) {
+	0: return 1;
+	return 0;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_4500, (extra_callback_info2 & 255)) {
+	1: return 1;
+	2: return 1;
+	action2_4499;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_4501, restrict_open_during_gameplay) {
+	1..255: action2_4500;
+	action2_4499;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_4502, [STORE_TEMP(-701265, 256), 32928]) {
+	return;
+}
+
+SWITCH_COLOUR_SCHEME1(action2_4505)
+
+switch(FEAT_INDUSTRIES, SELF, switch_main_forest, current_callback) {
+	0: action2_4487;
+	IND_CB_LOCATION_CHECK: action2_4485;
+	IND_CB_AVAILABILITY: action2_4501;
+	IND_CB_COLOUR: action2_4505;
+	IND_CB_EXTRA_TEXT_FUND: action2_4502;
+	IND_CB_RANDOM_PROD_CHANGE: action2_4489;
+	IND_CB_MONTHLY_PROD_CHANGE: action2_4496;
+	IND_CB_EXTRA_TEXT_INDUSTRY: action2_4497;
+	action2_4486;
+}
+
+item(FEAT_INDUSTRIES, forest, 11) {
+	graphics {
+		switch_main_forest;
+	}
+}
+

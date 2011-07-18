@@ -1,0 +1,146 @@
+item(FEAT_INDUSTRYTILES, tile_food_market, 194) {
+	property {
+		substitute: 0;
+		accepted_cargos: [[FOOD, 8], [FRVG, 8], [BEER, 8]];
+		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
+	}
+}
+
+spriteset(spriteset_4233, "sprites/graphics/industries/foodmarket.png") { tmpl_building_sprite(0, 0, 36, -4) } 
+spritelayout action2_4234 {
+	ground {
+		sprite: GROUNDSPRITE_CONCRETE;
+	}
+	building {
+		sprite: spriteset_4233;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_4235, relative_pos) {
+	0: action2_4234;
+	action2_4234;
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, switch_food_market_default_layout, layout_num) {
+	1: action2_4235;
+	action2_4234;
+}
+
+spriteset(spriteset_4238, "sprites/graphics/industries/foodmarket.png") { tmpl_building_sprite(0, 0, 36, -4) } 
+spritelayout action2_4239 {
+	ground {
+		sprite: GROUNDSPRITE_CONCRETE;
+	}
+	building {
+		sprite: spriteset_4238;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_4240, relative_pos) {
+	0: action2_4239;
+	action2_4239;
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, switch_food_market_desert_layout, layout_num) {
+	1: action2_4240;
+	action2_4239;
+}
+
+spriteset(spriteset_4243) { 	[0, 0, 64, 36, -31, -4, 9, "sprites/graphics/industries/foodmarket_snow.png"] } 
+spritelayout action2_4244 {
+	ground {
+		sprite: GROUNDSPRITE_CONCRETE;
+	}
+	building {
+		sprite: spriteset_4243;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_4245, relative_pos) {
+	0: action2_4244;
+	action2_4244;
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, switch_food_market_snow_layout, layout_num) {
+	1: action2_4245;
+	action2_4244;
+}
+
+SWITCH_TERRAIN_NORMAL_DESERT_SNOW(food_market, layout)
+
+item(FEAT_INDUSTRYTILES, tile_food_market, 194) {
+	graphics {
+		switch_food_market_terrain;
+	}
+}
+
+tilelayout tilelayout_food_market_1 {
+	0, 0: tile_food_market;
+}
+
+item(FEAT_INDUSTRIES, food_market, 59) {
+	property {
+		substitute: 0;
+		layouts: [tilelayout_food_market_1];
+		life_type: 0;
+		closure_msg: 18483;
+		prod_increase_msg: 18485;
+		prod_decrease_msg: 18489;
+		new_ind_msg: 18477;
+		name: string(STR_IND_FOOD_MARKET);
+		prod_cargo_types: [];
+		accept_cargo_types: [FOOD, FRVG, BEER];
+		prod_multiplier: [0, 0];
+		input_multiplier_1: [0, 0];
+		input_multiplier_2: [0, 0];
+		input_multiplier_3: [0, 0];
+		min_cargo_distr: 2;
+		conflicting_ind_types: [industry_type(IND_TYPE_NEW, 59)];
+		prob_random: 24;
+		prob_in_game: 12;
+		prospect_chance: 0.749999999942;
+		fund_cost_multiplier: 6;
+		map_colour: 191;
+		remove_cost_multiplier: 0;
+		spec_flags: 16;
+		callback_flags: 385;
+	}
+}
+
+produce(action2_4250, 9999, 9999, 0, 0, 0, 0);
+
+switch(FEAT_INDUSTRIES, SELF, action2_4251, (current_date + 1)) {
+	0: return 1;
+	return 0;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_4252, (extra_callback_info2 & 255)) {
+	1: return 1;
+	2: return 1;
+	action2_4251;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_4253, restrict_open_during_gameplay) {
+	1..255: action2_4252;
+	action2_4251;
+}
+
+switch(FEAT_INDUSTRIES, SELF, switch_main_food_market, current_callback) {
+	IND_CB_AVAILABILITY: action2_4253;
+	IND_CB_EXTRA_TEXT_FUND: return string(STR_GENERIC_NEWLINE);
+	IND_CB_EXTRA_TEXT_INDUSTRY: return string(STR_GENERIC_NEWLINE);
+	action2_4250;
+}
+
+item(FEAT_INDUSTRIES, food_market, 59) {
+	graphics {
+		switch_main_food_market;
+	}
+}
+
