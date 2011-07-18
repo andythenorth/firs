@@ -1,0 +1,403 @@
+
+item(FEAT_INDUSTRYTILES, tile_sugar_refinery, 214) {
+	property {
+		substitute: 0;
+		accepted_cargos: [[cargo_sugarcane, 8], [MNSP, 8], [0, 0]];
+		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
+		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
+	}
+}
+
+spriteset(spriteset_7476, "sprites/graphics/industries/groundtiles.png") { tmpl_ground_tile(80, 10) } 
+spriteset(spriteset_7477, "sprites/graphics/industries/sugarrefinery.pcx") { tmpl_building_sprite(10, 10, 50, -23) } 
+spriteset(spriteset_7478, "sprites/graphics/industries/sugarrefinery.pcx") { tmpl_building_sprite(80, 10, 50, -25) } 
+spriteset(spriteset_7479, "sprites/graphics/industries/sugarrefinery.pcx") { tmpl_building_sprite(150, 10, 88, -56) } 
+spriteset(spriteset_7480, "sprites/graphics/industries/sugarrefinery.pcx") { tmpl_building_sprite(220, 10, 88, -58) } 
+spritelayout action2_7481 {
+	ground {
+		sprite: spriteset_7476;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_7476;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 48;
+	}
+}
+
+spritelayout action2_7482 {
+	ground {
+		sprite: spriteset_7476;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_7477;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 48;
+	}
+}
+
+spritelayout action2_7483 {
+	ground {
+		sprite: spriteset_7476;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_7478;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 48;
+	}
+}
+
+spritelayout action2_7484 {
+	ground {
+		sprite: spriteset_7476;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_7479;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 48;
+	}
+}
+
+spritelayout action2_7485 {
+	ground {
+		sprite: spriteset_7476;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_7480;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 48;
+	}
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_7486, relative_pos) {
+	0: action2_7485;
+	256: action2_7484;
+	1: action2_7485;
+	257: action2_7483;
+	2: action2_7485;
+	258: action2_7482;
+	action2_7481;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_7487, relative_pos) {
+	0: action2_7485;
+	256: action2_7485;
+	512: action2_7485;
+	1: action2_7484;
+	257: action2_7483;
+	513: action2_7482;
+	action2_7481;
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, action2_7488, layout_num) {
+	1: action2_7486;
+	2: action2_7487;
+	action2_7481;
+}
+
+CHECK_NEARBY_TILE_CLASS(action2_7496)
+
+switch(FEAT_INDUSTRYTILES, PARENT, action2_7497, founder) {
+	16: action2_7496;
+	return 1024;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_7498, var[0x60, 0, 255, 0]) {
+	1..255: return 1025;
+	action2_7497;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_7499, (current_callback & 255)) {
+	INDTILE_CB_SLOPE_IS_SUITABLE: action2_7498;
+	action2_7488;
+}
+
+item(FEAT_INDUSTRYTILES, tile_sugar_refinery, 214) {
+	graphics {
+		action2_7499;
+	}
+}
+
+tilelayout tilelayout_sugar_refinery_1 {
+	0, 0: tile_sugar_refinery;
+	0, 1: tile_sugar_refinery;
+	1, 0: tile_sugar_refinery;
+	1, 1: tile_sugar_refinery;
+	2, 0: tile_sugar_refinery;
+	2, 1: tile_sugar_refinery;
+}
+
+tilelayout tilelayout_sugar_refinery_2 {
+	0, 0: tile_sugar_refinery;
+	0, 1: tile_sugar_refinery;
+	0, 2: tile_sugar_refinery;
+	1, 0: tile_sugar_refinery;
+	1, 1: tile_sugar_refinery;
+	1, 2: tile_sugar_refinery;
+}
+
+item(FEAT_INDUSTRIES, sugar_refinery, 19) {
+	property {
+		substitute: 0;
+		layouts: [tilelayout_sugar_refinery_1, tilelayout_sugar_refinery_2];
+		life_type: 4;
+		closure_msg: 18483;
+		prod_increase_msg: 18485;
+		prod_decrease_msg: 18489;
+		new_ind_msg: 18477;
+		name: string(STR_IND_SUGAR_REFINERY);
+		nearby_station_name: string(STR_STATIONNAME_CHEMICALS);
+		prod_cargo_types: [FOOD];
+		accept_cargo_types: [MNSP, cargo_sugarcane];
+		prod_multiplier: [0, 0];
+		input_multiplier_1: [0, 0];
+		input_multiplier_2: [0, 0];
+		input_multiplier_3: [0, 0];
+		min_cargo_distr: 5;
+		conflicting_ind_types: [];
+		prob_random: 5;
+		prob_in_game: 3;
+		prospect_chance: 0.749999999942;
+		fund_cost_multiplier: 140;
+		map_colour: 83;
+		remove_cost_multiplier: 0;
+		spec_flags: 2048;
+		callback_flags: 445;
+	}
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7502, industry_distance(sugar_refinery)) {
+	0..56: return 1025;
+	return 1024;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7503, industry_distance(26)) {
+	0..16: return 4;
+	action2_7502;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7504, founder) {
+	16: action2_7503;
+	return 1024;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7505, game_mode) {
+	1: action2_7504;
+	return 1024;
+}
+
+produce(action2_7506, LOAD_TEMP(7), LOAD_TEMP(8), LOAD_TEMP(9), LOAD_TEMP(10), LOAD_TEMP(11), LOAD_TEMP(0));
+
+switch(FEAT_INDUSTRIES, SELF, action2_7507, [STORE_TEMP(0, 0), 1]) {
+	0: action2_7506;
+	action2_7506;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7508, [STORE_TEMP(STORE_PERM(STORE_TEMP(STORE_PERM(0, 11), 11), 10), 10), 1]) {
+	0: action2_7507;
+	action2_7507;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7509, [STORE_TEMP(STORE_PERM(0, 11), 11), STORE_TEMP(STORE_PERM(LOAD_TEMP(10), 10), 10)]) {
+	0: action2_7507;
+	action2_7507;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7510, STORE_TEMP(STORE_PERM(STORE_TEMP(STORE_PERM(max((LOAD_TEMP(10) / 1), 1), 10), 10), 11), 11)) {
+	0: action2_7507;
+	action2_7507;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7511, 1) {
+	2: action2_7510;
+	action2_7509;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7512, STORE_TEMP(((LOAD_PERM(4) + LOAD_PERM(5)) + LOAD_PERM(6)), 10)) {
+	0: action2_7508;
+	action2_7511;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7513, [STORE_TEMP(((LOAD_PERM(6) / LOAD_PERM(12)) * 8), 9), STORE_TEMP(STORE_PERM(((var[0x42, 0, -1] - LOAD_TEMP(9)) + LOAD_TEMP(9)), 9), 9)]) {
+	0: action2_7512;
+	action2_7512;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7514, [STORE_TEMP(((LOAD_PERM(5) / LOAD_PERM(12)) * 8), 8), STORE_TEMP(STORE_PERM(((var[0x41, 0, -1] - LOAD_TEMP(8)) + LOAD_TEMP(8)), 8), 8)]) {
+	0: action2_7513;
+	action2_7513;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7515, [STORE_TEMP(((LOAD_PERM(4) / LOAD_PERM(12)) * 8), 7), STORE_TEMP(STORE_PERM(((var[0x40, 0, -1] - LOAD_TEMP(7)) + LOAD_TEMP(7)), 7), 7)]) {
+	0: action2_7514;
+	action2_7514;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7516, STORE_PERM(max(min(((var[0x42, 0, -1] / 8) * LOAD_PERM(12)), LOAD_PERM(0)), 1), 6)) {
+	0: action2_7515;
+	action2_7515;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7517, [STORE_PERM(0, 6), var[0x42, 0, -1]]) {
+	0: action2_7515;
+	action2_7516;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7518, STORE_PERM(max(min(((var[0x41, 0, -1] / 8) * LOAD_PERM(12)), LOAD_PERM(0)), 1), 5)) {
+	0: action2_7517;
+	action2_7517;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7519, [STORE_PERM(0, 5), var[0x41, 0, -1]]) {
+	0: action2_7517;
+	action2_7518;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7520, STORE_PERM(max(min(((var[0x40, 0, -1] / 8) * LOAD_PERM(12)), LOAD_PERM(0)), 1), 4)) {
+	0: action2_7519;
+	action2_7519;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7521, [STORE_PERM(0, 4), var[0x40, 0, -1]]) {
+	0: action2_7519;
+	action2_7520;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7522, STORE_PERM(((0 + LOAD_PERM(1)) + LOAD_PERM(2)), 12)) {
+	0: action2_7521;
+	action2_7521;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7523, [STORE_PERM(0, 2), 1]) {
+	0: action2_7522;
+	action2_7522;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7524, [STORE_PERM(5, 2), STORE_PERM((1 + LOAD_PERM(14)), 14)]) {
+	0: action2_7522;
+	action2_7522;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7525, LOAD_PERM(14)) {
+	0..7: action2_7524;
+	action2_7523;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7526, [STORE_PERM(0, 14), 1]) {
+	0: action2_7524;
+	action2_7524;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7527, (waiting_cargo_2 + waiting_cargo_3)) {
+	0: action2_7525;
+	action2_7526;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7528, [STORE_PERM(0, 1), 1]) {
+	0: action2_7527;
+	action2_7527;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7529, [STORE_PERM(3, 1), STORE_PERM((1 + LOAD_PERM(13)), 13)]) {
+	0: action2_7527;
+	action2_7527;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7530, LOAD_PERM(13)) {
+	0..7: action2_7529;
+	action2_7528;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7531, [STORE_PERM(0, 13), 1]) {
+	0: action2_7529;
+	action2_7529;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7532, waiting_cargo_1) {
+	0: action2_7530;
+	action2_7531;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7533, STORE_TEMP((rotate((LOAD_PERM(15) & 65535), 16) | (LOAD_PERM(14) & 65535)), 261)) {
+	0: return string(STR_INFO_DEBUG_PRODUCTION_CONTRIBUTION);
+	return string(STR_INFO_DEBUG_PRODUCTION_CONTRIBUTION);
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7534, STORE_TEMP((rotate((LOAD_PERM(13) & 65535), 16) | (LOAD_PERM(12) & 65535)), 260)) {
+	0: action2_7533;
+	action2_7533;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7535, STORE_TEMP((rotate((LOAD_PERM(11) & 65535), 16) | (LOAD_PERM(10) & 65535)), 259)) {
+	0: action2_7534;
+	action2_7534;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7536, STORE_TEMP((rotate((LOAD_PERM(9) & 65535), 16) | (LOAD_PERM(8) & 65535)), 258)) {
+	0: action2_7535;
+	action2_7535;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7537, STORE_TEMP((rotate((LOAD_PERM(7) & 65535), 16) | (LOAD_PERM(3) & 65535)), 257)) {
+	0: action2_7536;
+	action2_7536;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7538, STORE_TEMP((rotate((LOAD_PERM(2) & 65535), 16) | (LOAD_PERM(1) & 65535)), 256)) {
+	0: action2_7537;
+	action2_7537;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7539, show_debug_texts) {
+	1: action2_7538;
+	return string(STR_INFO_PRODUCTION_3PER8);
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7540, STORE_PERM((65535 / 2), 0)) {
+	0: action2_7532;
+	action2_7532;
+}
+
+CHECK_OPENING(action2_7543, 1731, -1)
+
+switch(FEAT_INDUSTRIES, SELF, action2_7544, [STORE_TEMP((631870 - 701265), 256), 32939]) {
+	return;
+}
+
+SWITCH_COLOUR_SCHEME1(action2_7547)
+
+SET_PRODUCTION_COUNTER_PRODUCED(action2_7550)
+
+CHECK_CLOSE_SECONDARY(action2_7553)
+
+switch(FEAT_INDUSTRIES, SELF, switch_main_sugar_refinery, current_callback) {
+	0: action2_7540;
+	IND_CB_LOCATION_CHECK: action2_7505;
+	IND_CB_AVAILABILITY: action2_7543;
+	IND_CB_COLOUR: action2_7547;
+	IND_CB_EXTRA_TEXT_FUND: action2_7544;
+	IND_CB_RANDOM_PROD_CHANGE: action2_7553;
+	IND_CB_MONTHLY_PROD_CHANGE: action2_7550;
+	IND_CB_EXTRA_TEXT_INDUSTRY: action2_7539;
+	action2_7507;
+}
+
+item(FEAT_INDUSTRIES, sugar_refinery, 19) {
+	graphics {
+		switch_main_sugar_refinery;
+	}
+}

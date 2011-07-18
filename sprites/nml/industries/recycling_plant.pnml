@@ -1,0 +1,566 @@
+item(FEAT_INDUSTRYTILES, tile_recycling_depot, 202) {
+	property {
+		substitute: 0;
+		accepted_cargos: [];
+		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
+	}
+}
+
+spriteset(spriteset_7146, "sprites/graphics/industries/recyclingdepot.pcx") { tmpl_ground_tile(10, 10) } 
+spriteset(spriteset_7147, "sprites/graphics/industries/recyclingdepot.pcx") { tmpl_ground_tile(80, 10) } 
+spritelayout action2_7148 {
+	ground {
+		sprite: GROUNDSPRITE_CONCRETE;
+	}
+	building {
+		sprite: spriteset_7146;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+}
+
+spritelayout action2_7149 {
+	ground {
+		sprite: GROUNDSPRITE_CONCRETE;
+	}
+	building {
+		sprite: spriteset_7147;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_7150, relative_pos) {
+	0: action2_7148;
+	action2_7149;
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, action2_7151, layout_num) {
+	1: action2_7150;
+	action2_7150;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_7152, terrain_type) {
+	1: action2_7151;
+	4: action2_7151;
+	action2_7151;
+}
+
+item(FEAT_INDUSTRYTILES, tile_recycling_depot, 202) {
+	graphics {
+		action2_7152;
+	}
+}
+
+tilelayout tilelayout_recycling_depot_1 {
+	0, 0: tile_recycling_depot;
+	0, 1: tile_recycling_depot;
+	1, 0: tile_recycling_depot;
+	1, 1: tile_recycling_depot;
+}
+
+item(FEAT_INDUSTRIES, recycling_depot, 24) {
+	property {
+		substitute: 0;
+		layouts: [tilelayout_recycling_depot_1];
+		life_type: 1;
+		closure_msg: 18483;
+		prod_increase_msg: 18485;
+		prod_decrease_msg: 18489;
+		new_ind_msg: 18477;
+		name: string(STR_IND_RECYCLING_DEPOT);
+		prod_cargo_types: [RCYC];
+		accept_cargo_types: [];
+		prod_multiplier: [0, 0];
+		input_multiplier_1: [0, 0];
+		input_multiplier_2: [0, 0];
+		input_multiplier_3: [0, 0];
+		min_cargo_distr: 2;
+		conflicting_ind_types: [];
+		prob_random: 20;
+		prob_in_game: 20;
+		prospect_chance: 0.749999999942;
+		fund_cost_multiplier: 118;
+		map_colour: 191;
+		remove_cost_multiplier: 0;
+		spec_flags: 0;
+		callback_flags: 397;
+	}
+}
+
+produce(action2_7155, LOAD_TEMP(0), LOAD_TEMP(0), LOAD_TEMP(0), LOAD_TEMP(1), LOAD_TEMP(0), LOAD_TEMP(0));
+
+switch(FEAT_INDUSTRIES, PARENT, action2_7156, [STORE_TEMP(0, 0), STORE_TEMP(((var[0x82, 3, 8191] + 11) / 12), 1)]) {
+	0: action2_7155;
+	action2_7155;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7157, 1) {
+	1: return 1024;
+	return 1024;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7158, var[0x68, 16, 255, 24]) {
+	0: action2_7157;
+	return 1025;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7159, STORE_TEMP(256, 257)) {
+	0: action2_7158;
+	action2_7158;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7160, STORE_TEMP(-1, 256)) {
+	0: action2_7159;
+	action2_7159;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7161, town_euclidean_dist(0, 0)) {
+	0..256: action2_7160;
+	return 1025;
+}
+
+CHECK_OPENING(action2_7164, 1998, -1)
+
+switch(FEAT_INDUSTRIES, SELF, action2_7165, [STORE_TEMP((729390 - 701265), 256), 32941]) {
+	return;
+}
+
+switch(FEAT_INDUSTRIES, SELF, switch_main_recycling_depot, current_callback) {
+	IND_CB_LOCATION_CHECK: action2_7161;
+	IND_CB_AVAILABILITY: action2_7164;
+	IND_CB_EXTRA_TEXT_FUND: action2_7165;
+	IND_CB_EXTRA_TEXT_INDUSTRY: return string(STR_GENERIC_NEWLINE);
+	action2_7156;
+}
+
+item(FEAT_INDUSTRIES, recycling_depot, 24) {
+	graphics {
+		switch_main_recycling_depot;
+	}
+}
+
+item(FEAT_INDUSTRYTILES, tile_recycling_plant, 201) {
+	property {
+		substitute: 0;
+		accepted_cargos: [[RCYC, 8], [0, 0], [0, 0]];
+		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
+	}
+}
+
+spriteset(spriteset_7170, "sprites/graphics/industries/recyclingplant.pcx") { tmpl_building_sprite(10, 10, 76, -45) } 
+spriteset(spriteset_7171, "sprites/graphics/industries/recyclingplant.pcx") { tmpl_building_sprite(80, 10, 76, -45) } 
+spriteset(spriteset_7172, "sprites/graphics/industries/recyclingplant.pcx") { tmpl_building_sprite(150, 10, 76, -45) } 
+spriteset(spriteset_7173, "sprites/graphics/industries/recyclingplant.pcx") { tmpl_building_sprite(220, 10, 63, -32) } 
+spriteset(spriteset_7174) { 	[290, 10, 64, 63, -34, -32, 9, "sprites/graphics/industries/recyclingplant.pcx"] } 
+spriteset(spriteset_7175, "sprites/graphics/industries/recyclingplant.pcx") { tmpl_building_sprite(360, 10, 39, -8) } 
+spriteset(spriteset_7176, "sprites/graphics/industries/recyclingplant.pcx") { tmpl_building_sprite(430, 10, 39, -8) } 
+spriteset(spriteset_7177, "sprites/graphics/industries/recyclingplant.pcx") { tmpl_building_sprite(500, 10, 39, -8) } 
+spriteset(spriteset_7178, "sprites/graphics/industries/recyclingplant.pcx") { tmpl_building_sprite(570, 10, 43, -12) } 
+spriteset(spriteset_7179, "sprites/graphics/industries/groundtiles.png") { tmpl_ground_tile(80, 10) } 
+spritelayout action2_7180 {
+	ground {
+		sprite: spriteset_7179;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_7170;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 48;
+	}
+}
+
+spritelayout action2_7181 {
+	ground {
+		sprite: spriteset_7179;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_7171;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 48;
+	}
+}
+
+spritelayout action2_7182 {
+	ground {
+		sprite: spriteset_7179;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_7172;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 48;
+	}
+}
+
+spritelayout action2_7183 {
+	ground {
+		sprite: spriteset_7179;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_7173;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 48;
+	}
+}
+
+spritelayout action2_7184 {
+	ground {
+		sprite: spriteset_7179;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_7174;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 48;
+	}
+}
+
+spritelayout action2_7185 {
+	ground {
+		sprite: spriteset_7179;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_7175;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 48;
+	}
+}
+
+spritelayout action2_7186 {
+	ground {
+		sprite: spriteset_7179;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_7176;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 48;
+	}
+}
+
+spritelayout action2_7187 {
+	ground {
+		sprite: spriteset_7179;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_7177;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 48;
+	}
+}
+
+spritelayout action2_7188 {
+	ground {
+		sprite: spriteset_7179;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_7178;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 48;
+	}
+}
+
+spritelayout action2_7189 {
+	ground {
+		sprite: spriteset_7179;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_7190, relative_pos) {
+	3: action2_7180;
+	259: action2_7180;
+	770: action2_7180;
+	2: action2_7181;
+	258: action2_7181;
+	769: action2_7181;
+	1: action2_7182;
+	257: action2_7182;
+	768: action2_7182;
+	1281: action2_7183;
+	1025: action2_7184;
+	260: action2_7185;
+	4: action2_7186;
+	771: action2_7187;
+	1026: action2_7189;
+	1027: action2_7189;
+	1028: action2_7189;
+	action2_7188;
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, action2_7191, layout_num) {
+	1: action2_7190;
+	action2_7180;
+}
+
+item(FEAT_INDUSTRYTILES, tile_recycling_plant, 201) {
+	graphics {
+		action2_7191;
+	}
+}
+
+tilelayout tilelayout_recycling_plant_1 {
+	2, 4: tile_recycling_plant;
+	3, 4: tile_recycling_plant;
+	4, 3: tile_recycling_plant;
+	3, 0: tile_recycling_plant;
+	3, 1: tile_recycling_plant;
+	2, 3: tile_recycling_plant;
+	2, 0: tile_recycling_plant;
+	2, 1: tile_recycling_plant;
+	1, 3: tile_recycling_plant;
+	1, 0: tile_recycling_plant;
+	1, 1: tile_recycling_plant;
+	0, 3: tile_recycling_plant;
+	1, 5: tile_recycling_plant;
+	1, 4: tile_recycling_plant;
+	4, 1: tile_recycling_plant;
+	4, 0: tile_recycling_plant;
+	3, 3: tile_recycling_plant;
+	4, 4: tile_recycling_plant;
+}
+
+item(FEAT_INDUSTRIES, recycling_plant, 23) {
+	property {
+		substitute: 0;
+		layouts: [tilelayout_recycling_plant_1];
+		life_type: 4;
+		closure_msg: 18483;
+		prod_increase_msg: 18485;
+		prod_decrease_msg: 18490;
+		new_ind_msg: 18477;
+		name: string(STR_IND_RECYCLING_PLANT);
+		prod_cargo_types: [SCRP, MNSP];
+		accept_cargo_types: [RCYC];
+		prod_multiplier: [0, 0];
+		input_multiplier_1: [0, 0];
+		input_multiplier_2: [0, 0];
+		input_multiplier_3: [0, 0];
+		min_cargo_distr: 5;
+		conflicting_ind_types: [];
+		prob_random: 7;
+		prob_in_game: 7;
+		prospect_chance: 0.749999999942;
+		fund_cost_multiplier: 118;
+		map_colour: 164;
+		remove_cost_multiplier: 0;
+		spec_flags: 0;
+		callback_flags: 8637;
+	}
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7194, industry_distance(recycling_plant)) {
+	0..56: return 1025;
+	return 1024;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7195, industry_distance(recycling_depot)) {
+	0..16: return 4;
+	action2_7194;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7196, founder) {
+	16: action2_7195;
+	return 1024;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7197, game_mode) {
+	1: action2_7196;
+	return 1024;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7198, var[0x5F, 8, 3]) {
+	0: return 20;
+	1: return 2327;
+	2: return 2332;
+	return 21;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7199, (extra_callback_info1 & 255)) {
+	1: action2_7198;
+	0: return 18;
+	return 255;
+}
+
+produce(action2_7200, LOAD_TEMP(7), LOAD_TEMP(8), LOAD_TEMP(9), LOAD_TEMP(10), LOAD_TEMP(11), LOAD_TEMP(0));
+
+switch(FEAT_INDUSTRIES, SELF, action2_7201, [STORE_TEMP(0, 0), 1]) {
+	0: action2_7200;
+	action2_7200;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7202, [STORE_TEMP(STORE_PERM(STORE_TEMP(STORE_PERM(0, 11), 11), 10), 10), 1]) {
+	0: action2_7201;
+	action2_7201;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7203, [STORE_TEMP(STORE_PERM(0, 11), 11), STORE_TEMP(STORE_PERM(LOAD_TEMP(10), 10), 10)]) {
+	0: action2_7201;
+	action2_7201;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7204, STORE_TEMP(STORE_PERM(STORE_TEMP(STORE_PERM(max((LOAD_TEMP(10) / 2), 1), 10), 10), 11), 11)) {
+	0: action2_7201;
+	action2_7201;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7205, 2) {
+	2: action2_7204;
+	action2_7203;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7206, STORE_TEMP(((LOAD_PERM(4) + LOAD_PERM(5)) + LOAD_PERM(6)), 10)) {
+	0: action2_7202;
+	action2_7205;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7207, [STORE_TEMP(((LOAD_PERM(6) / LOAD_PERM(12)) * 8), 9), STORE_TEMP(STORE_PERM(((var[0x42, 0, -1] - LOAD_TEMP(9)) + LOAD_TEMP(9)), 9), 9)]) {
+	0: action2_7206;
+	action2_7206;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7208, [STORE_TEMP(((LOAD_PERM(5) / LOAD_PERM(12)) * 8), 8), STORE_TEMP(STORE_PERM(((var[0x41, 0, -1] - LOAD_TEMP(8)) + LOAD_TEMP(8)), 8), 8)]) {
+	0: action2_7207;
+	action2_7207;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7209, [STORE_TEMP(((LOAD_PERM(4) / LOAD_PERM(12)) * 8), 7), STORE_TEMP(STORE_PERM(((var[0x40, 0, -1] - LOAD_TEMP(7)) + LOAD_TEMP(7)), 7), 7)]) {
+	0: action2_7208;
+	action2_7208;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7210, STORE_PERM(max(min(((var[0x42, 0, -1] / 8) * LOAD_PERM(3)), LOAD_PERM(0)), 1), 6)) {
+	0: action2_7209;
+	action2_7209;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7211, [STORE_PERM(0, 6), var[0x42, 0, -1]]) {
+	0: action2_7209;
+	action2_7210;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7212, STORE_PERM(max(min(((var[0x41, 0, -1] / 8) * LOAD_PERM(2)), LOAD_PERM(0)), 1), 5)) {
+	0: action2_7211;
+	action2_7211;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7213, [STORE_PERM(0, 5), var[0x41, 0, -1]]) {
+	0: action2_7211;
+	action2_7212;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7214, STORE_PERM(max(min(((var[0x40, 0, -1] / 8) * LOAD_PERM(1)), LOAD_PERM(0)), 1), 4)) {
+	0: action2_7213;
+	action2_7213;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7215, [STORE_PERM(0, 4), var[0x40, 0, -1]]) {
+	0: action2_7213;
+	action2_7214;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7216, STORE_PERM(1, 3)) {
+	0: action2_7215;
+	action2_7215;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7217, STORE_PERM(1, 2)) {
+	0: action2_7216;
+	action2_7216;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7218, STORE_PERM(6, 1)) {
+	0: action2_7217;
+	action2_7217;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7219, STORE_TEMP(LOAD_PERM(0), 260)) {
+	0: return string(STR_INFO_DEBUG_PRODUCTION_RATIO);
+	return string(STR_INFO_DEBUG_PRODUCTION_RATIO);
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7220, STORE_TEMP((rotate((LOAD_PERM(11) & 65535), 16) | (LOAD_PERM(10) & 65535)), 259)) {
+	0: action2_7219;
+	action2_7219;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7221, STORE_TEMP((rotate((LOAD_PERM(9) & 65535), 16) | (LOAD_PERM(8) & 65535)), 258)) {
+	0: action2_7220;
+	action2_7220;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7222, STORE_TEMP((rotate((LOAD_PERM(7) & 65535), 16) | (LOAD_PERM(3) & 65535)), 257)) {
+	0: action2_7221;
+	action2_7221;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7223, STORE_TEMP((rotate((LOAD_PERM(2) & 65535), 16) | (LOAD_PERM(1) & 65535)), 256)) {
+	0: action2_7222;
+	action2_7222;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7224, show_debug_texts) {
+	1: action2_7223;
+	return string(STR_GENERIC_D017);
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7225, STORE_PERM((65535 / 1), 0)) {
+	0: action2_7218;
+	action2_7218;
+}
+
+CHECK_OPENING(action2_7228, 1998, -1)
+
+switch(FEAT_INDUSTRIES, SELF, action2_7229, [STORE_TEMP((729390 - 701265), 256), 32933]) {
+	return;
+}
+
+SWITCH_COLOUR_SCHEME1(action2_7232)
+
+SET_PRODUCTION_COUNTER_PRODUCED(action2_7235)
+
+CHECK_CLOSE_SECONDARY(action2_7238)
+
+switch(FEAT_INDUSTRIES, SELF, switch_main_recycling_plant, current_callback) {
+	0: action2_7225;
+	IND_CB_LOCATION_CHECK: action2_7197;
+	IND_CB_AVAILABILITY: action2_7228;
+	IND_CB_COLOUR: action2_7232;
+	IND_CB_CARGO_OUTPUT: action2_7199;
+	IND_CB_EXTRA_TEXT_FUND: action2_7229;
+	IND_CB_RANDOM_PROD_CHANGE: action2_7238;
+	IND_CB_MONTHLY_PROD_CHANGE: action2_7235;
+	IND_CB_EXTRA_TEXT_INDUSTRY: action2_7224;
+	action2_7201;
+}
+
+item(FEAT_INDUSTRIES, recycling_plant, 23) {
+	graphics {
+		switch_main_recycling_plant;
+	}
+}

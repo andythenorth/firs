@@ -1,0 +1,511 @@
+
+item(FEAT_INDUSTRYTILES, tile_sheep_farm, 192) {
+	property {
+		substitute: 0;
+		accepted_cargos: [[FMSP, 8], [0, 0], [0, 0]];
+		land_shape_flags: 0;
+		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
+	}
+}
+
+spriteset(spriteset_7312, "sprites/graphics/industries/sheepfarm.png") { tmpl_building_sprite(10, 10, 52, -21) } 
+spriteset(spriteset_7313, "sprites/graphics/industries/sheepfarm.png") { tmpl_building_sprite(80, 10, 52, -19) } 
+spriteset(spriteset_7314, "sprites/graphics/industries/sheepfarm.png") { tmpl_building_sprite(150, 10, 52, -21) } 
+spriteset(spriteset_7315, "sprites/graphics/industries/sheepfarm.png") { tmpl_building_sprite(220, 10, 52, -21) } 
+spriteset(spriteset_7316, "sprites/graphics/industries/sheepfarm.png") { tmpl_building_sprite(290, 10, 52, -21) } 
+spritelayout action2_7317 {
+	ground {
+		sprite: GROUNDSPRITE_NORMAL;
+	}
+	building {
+		sprite: spriteset_7312;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 24;
+	}
+}
+
+spritelayout action2_7318 {
+	ground {
+		sprite: GROUNDSPRITE_NORMAL;
+	}
+	building {
+		sprite: spriteset_7313;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 24;
+	}
+}
+
+spritelayout action2_7319 {
+	ground {
+		sprite: GROUNDSPRITE_NORMAL;
+	}
+	building {
+		sprite: spriteset_7314;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 24;
+	}
+}
+
+spritelayout action2_7320 {
+	ground {
+		sprite: GROUNDSPRITE_NORMAL;
+	}
+	building {
+		sprite: spriteset_7315;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 8;
+	}
+}
+
+spritelayout action2_7321 {
+	ground {
+		sprite: GROUNDSPRITE_NORMAL;
+	}
+	building {
+		sprite: spriteset_7316;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 8;
+	}
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_7322, relative_pos) {
+	0: action2_7319;
+	1: action2_7318;
+	513: action2_7320;
+	3: action2_7317;
+	action2_7321;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_7323, relative_pos) {
+	0: action2_7318;
+	256: action2_7317;
+	512: action2_7320;
+	2: action2_7319;
+	action2_7321;
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, action2_7324, layout_num) {
+	1: action2_7322;
+	2: action2_7323;
+	action2_7322;
+}
+
+spriteset(spriteset_7326, "sprites/graphics/industries/sheepfarm.png") { tmpl_building_sprite(10, 10, 52, -21) } 
+spriteset(spriteset_7327, "sprites/graphics/industries/sheepfarm.png") { tmpl_building_sprite(80, 10, 52, -19) } 
+spriteset(spriteset_7328, "sprites/graphics/industries/sheepfarm.png") { tmpl_building_sprite(150, 10, 52, -21) } 
+spriteset(spriteset_7329, "sprites/graphics/industries/sheepfarm.png") { tmpl_building_sprite(220, 10, 52, -21) } 
+spriteset(spriteset_7330, "sprites/graphics/industries/sheepfarm.png") { tmpl_building_sprite(290, 10, 52, -21) } 
+spritelayout action2_7331 {
+	ground {
+		sprite: GROUNDSPRITE_NORMAL;
+	}
+	building {
+		sprite: spriteset_7326;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 24;
+	}
+}
+
+spritelayout action2_7332 {
+	ground {
+		sprite: GROUNDSPRITE_NORMAL;
+	}
+	building {
+		sprite: spriteset_7327;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 24;
+	}
+}
+
+spritelayout action2_7333 {
+	ground {
+		sprite: GROUNDSPRITE_NORMAL;
+	}
+	building {
+		sprite: spriteset_7328;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 24;
+	}
+}
+
+spritelayout action2_7334 {
+	ground {
+		sprite: GROUNDSPRITE_NORMAL;
+	}
+	building {
+		sprite: spriteset_7329;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 8;
+	}
+}
+
+spritelayout action2_7335 {
+	ground {
+		sprite: GROUNDSPRITE_NORMAL;
+	}
+	building {
+		sprite: spriteset_7330;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 8;
+	}
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_7336, relative_pos) {
+	0: action2_7333;
+	1: action2_7332;
+	513: action2_7334;
+	3: action2_7331;
+	action2_7335;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_7337, relative_pos) {
+	0: action2_7332;
+	256: action2_7331;
+	512: action2_7334;
+	2: action2_7333;
+	action2_7335;
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, action2_7338, layout_num) {
+	1: action2_7336;
+	2: action2_7337;
+	action2_7336;
+}
+
+spriteset(spriteset_7340) { 	[10, 10, 64, 52, -31, -21, 9, "sprites/graphics/industries/sheepfarm_snow.png"] } 
+spriteset(spriteset_7341) { 	[80, 10, 64, 52, -31, -19, 9, "sprites/graphics/industries/sheepfarm_snow.png"] } 
+spriteset(spriteset_7342) { 	[150, 10, 64, 52, -31, -21, 9, "sprites/graphics/industries/sheepfarm_snow.png"] } 
+spriteset(spriteset_7343) { 	[220, 10, 64, 52, -31, -21, 9, "sprites/graphics/industries/sheepfarm_snow.png"] } 
+spriteset(spriteset_7344) { 	[290, 10, 64, 52, -31, -21, 9, "sprites/graphics/industries/sheepfarm_snow.png"] } 
+spritelayout action2_7345 {
+	ground {
+		sprite: GROUNDSPRITE_NORMAL;
+	}
+	building {
+		sprite: spriteset_7340;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 24;
+	}
+}
+
+spritelayout action2_7346 {
+	ground {
+		sprite: GROUNDSPRITE_NORMAL;
+	}
+	building {
+		sprite: spriteset_7341;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 24;
+	}
+}
+
+spritelayout action2_7347 {
+	ground {
+		sprite: GROUNDSPRITE_NORMAL;
+	}
+	building {
+		sprite: spriteset_7342;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 24;
+	}
+}
+
+spritelayout action2_7348 {
+	ground {
+		sprite: GROUNDSPRITE_NORMAL;
+	}
+	building {
+		sprite: spriteset_7343;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 8;
+	}
+}
+
+spritelayout action2_7349 {
+	ground {
+		sprite: GROUNDSPRITE_NORMAL;
+	}
+	building {
+		sprite: spriteset_7344;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 8;
+	}
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_7350, relative_pos) {
+	0: action2_7347;
+	1: action2_7346;
+	513: action2_7348;
+	3: action2_7345;
+	action2_7349;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_7351, relative_pos) {
+	0: action2_7346;
+	256: action2_7345;
+	512: action2_7348;
+	2: action2_7347;
+	action2_7349;
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, action2_7352, layout_num) {
+	1: action2_7350;
+	2: action2_7351;
+	action2_7350;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_7353, terrain_type) {
+	1: action2_7338;
+	4: action2_7352;
+	action2_7324;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_7355, STORE_TEMP((var[0x7E, 0, 255, 161] + var[0x7E, 0, 255, 65]), 16)) {
+	0: action2_7353;
+	action2_7353;
+}
+
+CHECK_NEARBY_TILE_CLASS(action2_7363)
+
+switch(FEAT_INDUSTRYTILES, PARENT, action2_7364, founder) {
+	16: action2_7363;
+	return 1024;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_7365, var[0x60, 10, 1, 17]) {
+	1: return 1025;
+	action2_7364;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_7366, var[0x60, 10, 1, 16]) {
+	1: action2_7365;
+	action2_7364;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_7367, var[0x60, 10, 1, 31]) {
+	1: action2_7366;
+	action2_7364;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_7368, var[0x60, 10, 1, 1]) {
+	1: action2_7367;
+	action2_7364;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_7369, var[0x60, 10, 1, 15]) {
+	1: action2_7368;
+	action2_7364;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_7370, var[0x60, 10, 1, 241]) {
+	1: action2_7369;
+	action2_7364;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_7371, var[0x60, 10, 1, 240]) {
+	1: action2_7370;
+	action2_7364;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_7372, var[0x60, 10, 1, 255]) {
+	1: action2_7371;
+	action2_7364;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_7373, var[0x60, 9, 1, 0]) {
+	1: return 1025;
+	action2_7372;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_7374, (current_callback & 255)) {
+	INDTILE_CB_SLOPE_IS_SUITABLE: action2_7373;
+	action2_7355;
+}
+
+item(FEAT_INDUSTRYTILES, tile_sheep_farm, 192) {
+	graphics {
+		action2_7374;
+	}
+}
+
+tilelayout tilelayout_sheep_farm_1 {
+	0, 0: tile_sheep_farm;
+	1, 0: tile_sheep_farm;
+	3, 0: tile_sheep_farm;
+	3, 1: tile_sheep_farm;
+	1, 2: tile_sheep_farm;
+}
+
+tilelayout tilelayout_sheep_farm_2 {
+	0, 0: tile_sheep_farm;
+	0, 1: tile_sheep_farm;
+	0, 2: tile_sheep_farm;
+	2, 0: tile_sheep_farm;
+	2, 2: tile_sheep_farm;
+}
+
+item(FEAT_INDUSTRIES, sheep_farm, 27) {
+	property {
+		substitute: 0;
+		layouts: [tilelayout_sheep_farm_1, tilelayout_sheep_farm_2];
+		life_type: 2;
+		closure_msg: 18483;
+		prod_increase_msg: 18488;
+		prod_decrease_msg: 18489;
+		new_ind_msg: 18477;
+		name: string(STR_IND_SHEEPFARM);
+		nearby_station_name: string(STR_STATIONNAME_FARMS);
+		prod_cargo_types: [LVST, WOOL];
+		accept_cargo_types: [FMSP];
+		prod_multiplier: [2, 2];
+		input_multiplier_1: [0, 0];
+		input_multiplier_2: [0, 0];
+		input_multiplier_3: [0, 0];
+		min_cargo_distr: 1;
+		conflicting_ind_types: [];
+		prob_random: 6;
+		prob_in_game: 3;
+		prospect_chance: 0.749999999942;
+		fund_cost_multiplier: 45;
+		map_colour: 14;
+		remove_cost_multiplier: 0;
+		spec_flags: 0;
+		callback_flags: 1339;
+	}
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7377, industry_distance(sheep_farm)) {
+	10..36: return 1024;
+	return 4;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7378, ((industry_count(27) / 2) / industry_clusters)) {
+	0: return 1024;
+	action2_7377;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7379, STORE_TEMP(-1, 256)) {
+	0: action2_7378;
+	action2_7378;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7380, industry_distance(stockyard)) {
+	0..16: return 4;
+	action2_7379;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7381, industry_distance(textile_mill)) {
+	0..16: return 4;
+	action2_7380;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7382, founder) {
+	16: action2_7381;
+	return 1024;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7383, game_mode) {
+	1: action2_7382;
+	return 1024;
+}
+
+produce(action2_7384, 9999, 0, 0, 0, 0, 0);
+
+switch(FEAT_INDUSTRIES, SELF, action2_7385, STORE_PERM((var[0x40, 0, -1] + LOAD_PERM(0)), 0)) {
+	0: action2_7384;
+	action2_7384;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7386, var[0x93, 0, -1]) {
+	0..4: return 3;
+	return 0;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7387, allow_close_primary) {
+	1..255: action2_7386;
+	return 0;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7388, (extra_callback_info2 & 31)) {
+	0: return 13;
+	return 0;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7389, (extra_callback_info2 & 3)) {
+	0: return 13;
+	return 0;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7390, STORE_PERM(var[0x93, 0, -1], 2)) {
+	0..4: return 0;
+	5..32: action2_7388;
+	action2_7389;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7391, allow_primary_production_decrease) {
+	1..255: action2_7390;
+	return 0;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7392, (extra_callback_info2 & 3)) {
+	0: return 14;
+	return 0;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7393, [STORE_PERM(0, 0), LOAD_TEMP(1)]) {
+	1..-1: action2_7392;
+	action2_7391;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7394, STORE_TEMP(LOAD_PERM(0), 1)) {
+	0: action2_7393;
+	action2_7393;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7395, [STORE_TEMP(LOAD_PERM(0), 256), var[0x93, 0, -1]]) {
+	128: return string(STR_GENERIC_D0B3);
+	return string(STR_GENERIC_D0B1);
+}
+
+CHECK_OPENING(action2_7399, 0, -1)
+
+switch(FEAT_INDUSTRIES, SELF, action2_7400, [STORE_TEMP(-701265, 256), 32928]) {
+	return;
+}
+
+SWITCH_COLOUR_SCHEME1(action2_7403)
+
+switch(FEAT_INDUSTRIES, SELF, switch_main_sheep_farm, current_callback) {
+	0: action2_7385;
+	IND_CB_LOCATION_CHECK: action2_7383;
+	IND_CB_AVAILABILITY: action2_7399;
+	IND_CB_COLOUR: action2_7403;
+	IND_CB_EXTRA_TEXT_FUND: action2_7400;
+	IND_CB_RANDOM_PROD_CHANGE: action2_7387;
+	IND_CB_MONTHLY_PROD_CHANGE: action2_7394;
+	IND_CB_EXTRA_TEXT_INDUSTRY: action2_7395;
+	action2_7384;
+}
+
+item(FEAT_INDUSTRIES, sheep_farm, 27) {
+	graphics {
+		switch_main_sheep_farm;
+	}
+}
+
+

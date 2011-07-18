@@ -1,0 +1,241 @@
+
+item(FEAT_INDUSTRYTILES, tile_petrol_pump, 203) {
+	property {
+		substitute: 0;
+		accepted_cargos: [[FOOD, 8], [GOOD, 8], [PETR, 8]];
+		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
+		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
+	}
+}
+
+spriteset(spriteset_6692, "sprites/graphics/industries/groundtiles.png") { tmpl_ground_tile(80, 10) } 
+spriteset(spriteset_6693, "sprites/graphics/industries/petrolpump.png") { tmpl_building_sprite(10, 10, 59, -28) } 
+spriteset(spriteset_6694, "sprites/graphics/industries/petrolpump.png") { tmpl_building_sprite(80, 10, 59, -28) } 
+spritelayout action2_6695 {
+	ground {
+		sprite: GROUNDSPRITE_CONCRETE;
+	}
+	building {
+		sprite: spriteset_6693;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+}
+
+spritelayout action2_6696 {
+	ground {
+		sprite: GROUNDSPRITE_CONCRETE;
+	}
+	building {
+		sprite: spriteset_6694;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_6697, relative_pos) {
+	0: action2_6695;
+	256: action2_6696;
+	action2_6695;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_6698, relative_pos) {
+	0: action2_6695;
+	1: action2_6696;
+	action2_6695;
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, action2_6699, layout_num) {
+	1: action2_6697;
+	2: action2_6698;
+	action2_6695;
+}
+
+spriteset(spriteset_6701, "sprites/graphics/industries/groundtiles.png") { tmpl_ground_tile(80, 10) } 
+spriteset(spriteset_6702, "sprites/graphics/industries/petrolpump.png") { tmpl_building_sprite(10, 10, 59, -28) } 
+spriteset(spriteset_6703, "sprites/graphics/industries/petrolpump.png") { tmpl_building_sprite(80, 10, 59, -28) } 
+spritelayout action2_6704 {
+	ground {
+		sprite: GROUNDSPRITE_CONCRETE;
+	}
+	building {
+		sprite: spriteset_6702;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+}
+
+spritelayout action2_6705 {
+	ground {
+		sprite: GROUNDSPRITE_CONCRETE;
+	}
+	building {
+		sprite: spriteset_6703;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_6706, relative_pos) {
+	0: action2_6704;
+	256: action2_6705;
+	action2_6704;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_6707, relative_pos) {
+	0: action2_6704;
+	1: action2_6705;
+	action2_6704;
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, action2_6708, layout_num) {
+	1: action2_6706;
+	2: action2_6707;
+	action2_6704;
+}
+
+spriteset(spriteset_6710, "sprites/graphics/industries/groundtiles.png") { tmpl_ground_tile(80, 10) } 
+spriteset(spriteset_6711) { 	[10, 10, 64, 59, -31, -28, 9, "sprites/graphics/industries/petrolpump_snow.png"] } 
+spriteset(spriteset_6712) { 	[80, 10, 64, 59, -31, -28, 9, "sprites/graphics/industries/petrolpump_snow.png"] } 
+spritelayout action2_6713 {
+	ground {
+		sprite: GROUNDSPRITE_CONCRETE;
+	}
+	building {
+		sprite: spriteset_6711;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+}
+
+spritelayout action2_6714 {
+	ground {
+		sprite: GROUNDSPRITE_CONCRETE;
+	}
+	building {
+		sprite: spriteset_6712;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_6715, relative_pos) {
+	0: action2_6713;
+	256: action2_6714;
+	action2_6713;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_6716, relative_pos) {
+	0: action2_6713;
+	1: action2_6714;
+	action2_6713;
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, action2_6717, layout_num) {
+	1: action2_6715;
+	2: action2_6716;
+	action2_6713;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_6718, terrain_type) {
+	1: action2_6708;
+	4: action2_6717;
+	action2_6699;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_6719, [STORE_TEMP(0, 0), STORE_TEMP((CMP(nearby_tile_class(0, -1), 2) | (LOAD_TEMP(0) & 255)), 0), STORE_TEMP((CMP(var[0x60, 24, 15, 32], 2) | (LOAD_TEMP(0) & 255)), 0), STORE_TEMP((CMP(nearby_tile_class(-1, 0), 2) | (LOAD_TEMP(0) & 255)), 0), STORE_TEMP((CMP(nearby_tile_class(-1, 1), 2) | (LOAD_TEMP(0) & 255)), 0), STORE_TEMP((CMP(nearby_tile_class(1, 0), 2) | (LOAD_TEMP(0) & 255)), 0), ((CMP(nearby_tile_class(1, 1), 2) | (LOAD_TEMP(0) & 255)) & 1)]) {
+	1: return 1024;
+	return 1025;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_6720, [STORE_TEMP(0, 0), STORE_TEMP((CMP(nearby_tile_class(0, -1), 2) | (LOAD_TEMP(0) & 255)), 0), STORE_TEMP((CMP(nearby_tile_class(0, 1), 2) | (LOAD_TEMP(0) & 255)), 0), STORE_TEMP((CMP(nearby_tile_class(1, -1), 2) | (LOAD_TEMP(0) & 255)), 0), STORE_TEMP((CMP(nearby_tile_class(1, 1), 2) | (LOAD_TEMP(0) & 255)), 0), STORE_TEMP((CMP(nearby_tile_class(-1, 0), 2) | (LOAD_TEMP(0) & 255)), 0), ((CMP(var[0x60, 24, 15, 2], 2) | (LOAD_TEMP(0) & 255)) & 1)]) {
+	1: return 1024;
+	return 1025;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_6721, (extra_callback_info2 & 255)) {
+	0: action2_6719;
+	1: action2_6720;
+	return 1025;
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, action2_6722, founder) {
+	16: action2_6721;
+	return 1024;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_6723, var[0x60, 0, 255, 0]) {
+	1..255: return 1025;
+	action2_6722;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_6724, (current_callback & 255)) {
+	INDTILE_CB_SLOPE_IS_SUITABLE: action2_6723;
+	action2_6718;
+}
+
+item(FEAT_INDUSTRYTILES, tile_petrol_pump, 203) {
+	graphics {
+		action2_6724;
+	}
+}
+
+tilelayout tilelayout_petrol_pump_1 {
+	0, 0: tile_petrol_pump;
+	0, 1: tile_petrol_pump;
+}
+
+tilelayout tilelayout_petrol_pump_2 {
+	0, 0: tile_petrol_pump;
+	1, 0: tile_petrol_pump;
+}
+
+item(FEAT_INDUSTRIES, petrol_pump, 60) {
+	property {
+		substitute: 0;
+		layouts: [tilelayout_petrol_pump_1, tilelayout_petrol_pump_2];
+		life_type: 0;
+		closure_msg: 18483;
+		prod_increase_msg: 18485;
+		prod_decrease_msg: 18489;
+		new_ind_msg: 18477;
+		name: string(STR_IND_PETROLPUMP);
+		prod_cargo_types: [];
+		accept_cargo_types: [FOOD, GOOD, PETR];
+		prod_multiplier: [0, 0];
+		input_multiplier_1: [0, 0];
+		input_multiplier_2: [0, 0];
+		input_multiplier_3: [0, 0];
+		min_cargo_distr: 2;
+		conflicting_ind_types: [];
+		prob_random: 14;
+		prob_in_game: 14;
+		prospect_chance: 0.749999999942;
+		fund_cost_multiplier: 8;
+		map_colour: 15;
+		remove_cost_multiplier: 0;
+		spec_flags: 0;
+		callback_flags: 385;
+	}
+}
+
+produce(action2_6727, 9999, 9999, 0, 0, 0, 0);
+
+CHECK_OPENING(action2_6730, 1910, -1)
+
+switch(FEAT_INDUSTRIES, SELF, action2_6731, [STORE_TEMP((697248 - 701265), 256), 32933]) {
+	return;
+}
+
+switch(FEAT_INDUSTRIES, SELF, switch_main_petrol_pump, current_callback) {
+	IND_CB_AVAILABILITY: action2_6730;
+	IND_CB_EXTRA_TEXT_FUND: action2_6731;
+	IND_CB_EXTRA_TEXT_INDUSTRY: return string(STR_GENERIC_NEWLINE);
+	action2_6727;
+}
+
+item(FEAT_INDUSTRIES, petrol_pump, 60) {
+	graphics {
+		switch_main_petrol_pump;
+	}
+}
