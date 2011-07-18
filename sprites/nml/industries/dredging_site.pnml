@@ -1,0 +1,206 @@
+item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_198, 198) {
+	property {
+		substitute: 0;
+		accepted_cargos: [[ENSP, 8]];
+		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
+		callback_flags: 0;
+	}
+}
+
+spriteset(spriteset_3940, "sprites/graphics/industries/dredgingsite.pcx") { tmpl_building_sprite(10, 10, 100, -65) } 
+spritelayout action2_3941 {
+	ground {
+		sprite: GROUNDSPRITE_WATER;
+	}
+	building {
+		sprite: spriteset_3940;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		always_draw: 1;
+		zextent: 74;
+	}
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_3942, relative_pos) {
+	257: action2_3941;
+	action2_3941;
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, action2_3943, layout_num) {
+	1: action2_3942;
+	action2_3941;
+}
+
+item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_198, 198) {
+	graphics {
+		action2_3943;
+	}
+}
+
+tilelayout tilelayout_dredging_site_1 {
+	0, 0: 255;
+	0, 1: 24;
+	0, 2: 24;
+	0, 4: 255;
+	1, 0: 255;
+	1, 4: 255;
+	2, 0: 255;
+	2, 2: 255;
+	2, 3: item_FEAT_INDUSTRYTILES_198;
+	2, 4: 255;
+}
+
+item(FEAT_INDUSTRIES, dredging_site, 20) {
+	property {
+		substitute: 0;
+		layouts: [tilelayout_dredging_site_1];
+		life_type: 1;
+		closure_msg: 18483;
+		prod_increase_msg: 18485;
+		prod_decrease_msg: 18489;
+		new_ind_msg: 18477;
+		name: string(STR_IND_DEDGING_SITE);
+		nearby_station_name: string(STR_STATIONNAME_DREDGING_SITE);
+		prod_cargo_types: [SAND, GRVL];
+		accept_cargo_types: [ENSP];
+		prod_multiplier: [8, 8];
+		input_multiplier_1: [0, 0];
+		input_multiplier_2: [0, 0];
+		input_multiplier_3: [0, 0];
+		min_cargo_distr: 5;
+		conflicting_ind_types: [];
+		prob_random: 5;
+		prob_in_game: 3;
+		prospect_chance: 0.749999999942;
+		fund_cost_multiplier: 180;
+		map_colour: 195;
+		remove_cost_multiplier: 0;
+		spec_flags: 4;
+		callback_flags: 1469;
+	}
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_3946, industry_distance(dredging_site)) {
+	0..56: return 1025;
+	return 1024;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_3947, industry_distance(lime_kiln)) {
+	0..16: return 4;
+	action2_3946;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_3948, industry_distance(glass_works)) {
+	0..16: return 4;
+	action2_3947;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_3949, industry_distance(cement_plant)) {
+	0..16: return 4;
+	action2_3948;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_3950, industry_distance(brick_works)) {
+	0..16: return 4;
+	action2_3949;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_3951, UCMP(var[0x8B, 0, 65535], param_max_coastal_distance)) {
+	2: return 4;
+	action2_3950;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_3952, founder) {
+	16: action2_3951;
+	return 1024;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_3953, game_mode) {
+	1: action2_3952;
+	return 1024;
+}
+
+produce(action2_3954, 9999, 0, 0, 0, 0, 0);
+
+switch(FEAT_INDUSTRIES, SELF, action2_3955, STORE_PERM((var[0x40, 0, -1] + LOAD_PERM(0)), 0)) {
+	0: action2_3954;
+	action2_3954;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_3956, var[0x93, 0, -1]) {
+	0..4: return 3;
+	return 0;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_3957, allow_close_primary) {
+	1..255: action2_3956;
+	return 0;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_3958, (extra_callback_info2 & 31)) {
+	0: return 13;
+	return 0;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_3959, (extra_callback_info2 & 3)) {
+	0: return 13;
+	return 0;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_3960, STORE_PERM(var[0x93, 0, -1], 2)) {
+	0..4: return 0;
+	5..32: action2_3958;
+	action2_3959;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_3961, allow_primary_production_decrease) {
+	1..255: action2_3960;
+	return 0;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_3962, (extra_callback_info2 & 3)) {
+	0: return 14;
+	return 0;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_3963, [STORE_PERM(0, 0), LOAD_TEMP(1)]) {
+	1..-1: action2_3962;
+	action2_3961;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_3964, STORE_TEMP(LOAD_PERM(0), 1)) {
+	0: action2_3963;
+	action2_3963;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_3965, [STORE_TEMP(LOAD_PERM(0), 256), var[0x93, 0, -1]]) {
+	128: return string(STR_GENERIC_D0B3);
+	return string(STR_GENERIC_D0B0);
+}
+
+CHECK_OPENING(action2_3969, 1852, -1)
+
+switch(FEAT_INDUSTRIES, SELF, action2_3970, [STORE_TEMP((676429 - 701265), 256), 32933]) {
+	return;
+}
+
+SWITCH_COLOUR_SCHEME1(action2_3973)
+
+switch(FEAT_INDUSTRIES, SELF, switch_main_dredging_site, current_callback) {
+	0: action2_3955;
+	IND_CB_LOCATION_CHECK: action2_3953;
+	IND_CB_AVAILABILITY: action2_3969;
+	IND_CB_COLOUR: action2_3973;
+	IND_CB_EXTRA_TEXT_FUND: action2_3970;
+	IND_CB_RANDOM_PROD_CHANGE: action2_3957;
+	IND_CB_MONTHLY_PROD_CHANGE: action2_3964;
+	IND_CB_EXTRA_TEXT_INDUSTRY: action2_3965;
+	action2_3954;
+}
+
+item(FEAT_INDUSTRIES, dredging_site, 20) {
+	graphics {
+		switch_main_dredging_site;
+	}
+}
+

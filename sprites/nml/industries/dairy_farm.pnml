@@ -1,0 +1,406 @@
+item(FEAT_INDUSTRYTILES, tile_diary_farm, 180) {
+	property {
+		substitute: 0;
+		accepted_cargos: [[FMSP, 8], [0, 0], [0, 0]];
+		land_shape_flags: 0;
+		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
+	}
+}
+
+spriteset(spriteset_3683, "sprites/graphics/industries/dairyfarm.pcx") { tmpl_building_sprite(10, 10, 52, -21) } 
+spriteset(spriteset_3684, "sprites/graphics/industries/dairyfarm.pcx") { tmpl_building_sprite(80, 10, 52, -21) } 
+spriteset(spriteset_3685, "sprites/graphics/industries/dairyfarm.pcx") { tmpl_building_sprite(150, 10, 52, -21) } 
+spriteset(spriteset_3686, "sprites/graphics/industries/dairyfarm.pcx") { tmpl_building_sprite(220, 10, 52, -21) } 
+spriteset(spriteset_3687, "sprites/graphics/industries/dairyfarm.pcx") { tmpl_building_sprite(290, 10, 52, -21) } 
+spriteset(spriteset_3688, "sprites/graphics/industries/dairyfarm.pcx") { tmpl_building_sprite(360, 10, 52, -21) } 
+spritelayout action2_3689 {
+	ground {
+		sprite: 2022;
+	}
+	building {
+		sprite: spriteset_3683;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 24;
+	}
+}
+
+spritelayout action2_3690 {
+	ground {
+		sprite: 2022;
+	}
+	building {
+		sprite: spriteset_3684;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 48;
+	}
+}
+
+spritelayout action2_3691 {
+	ground {
+		sprite: 2022;
+	}
+	building {
+		sprite: spriteset_3685;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 24;
+	}
+}
+
+spritelayout action2_3692 {
+	ground {
+		sprite: GROUNDSPRITE_NORMAL;
+	}
+	building {
+		sprite: spriteset_3686;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 24;
+	}
+}
+
+spritelayout action2_3693 {
+	ground {
+		sprite: GROUNDSPRITE_NORMAL;
+	}
+	building {
+		sprite: spriteset_3687;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 8;
+	}
+}
+
+spritelayout action2_3694 {
+	ground {
+		sprite: GROUNDSPRITE_NORMAL;
+	}
+	building {
+		sprite: spriteset_3688;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 8;
+	}
+}
+
+spritelayout action2_3695 {
+	ground {
+		sprite: 2022;
+	}
+	building {
+		sprite: spriteset_3687;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 8;
+	}
+}
+
+spritelayout action2_3696 {
+	ground {
+		sprite: 2022;
+	}
+	building {
+		sprite: spriteset_3688;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 8;
+	}
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_3697, relative_pos) {
+	3: action2_3689;
+	2: action2_3690;
+	515: action2_3691;
+	512: action2_3692;
+	256: action2_3693;
+	0: action2_3694;
+	258: action2_3695;
+	action2_3696;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_3698, relative_pos) {
+	512: action2_3689;
+	513: action2_3690;
+	257: action2_3691;
+	514: action2_3692;
+	2: action2_3693;
+	258: action2_3694;
+	256: action2_3695;
+	action2_3696;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_3699, relative_pos) {
+	256: action2_3689;
+	2: action2_3690;
+	1: action2_3691;
+	768: action2_3692;
+	769: action2_3693;
+	770: action2_3694;
+	258: action2_3695;
+	action2_3696;
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, action2_3700, layout_num) {
+	1: action2_3697;
+	2: action2_3698;
+	3: action2_3699;
+	action2_3689;
+}
+
+CHECK_NEARBY_TILE_CLASS(action2_3708)
+
+switch(FEAT_INDUSTRYTILES, PARENT, action2_3709, founder) {
+	16: action2_3708;
+	return 1024;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_3710, ((var[0x60, 16, 255, 0] - snowline_height) + 8)) {
+	8..127: return 1025;
+	action2_3709;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_3711, var[0x60, 10, 1, 17]) {
+	1: return 1025;
+	action2_3710;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_3712, var[0x60, 10, 1, 16]) {
+	1: action2_3711;
+	action2_3710;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_3713, var[0x60, 10, 1, 31]) {
+	1: action2_3712;
+	action2_3710;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_3714, var[0x60, 10, 1, 1]) {
+	1: action2_3713;
+	action2_3710;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_3715, var[0x60, 10, 1, 15]) {
+	1: action2_3714;
+	action2_3710;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_3716, var[0x60, 10, 1, 241]) {
+	1: action2_3715;
+	action2_3710;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_3717, var[0x60, 10, 1, 240]) {
+	1: action2_3716;
+	action2_3710;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_3718, var[0x60, 10, 1, 255]) {
+	1: action2_3717;
+	action2_3710;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_3719, var[0x60, 4, 1, 0]) {
+	1: return 1025;
+	action2_3718;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_3720, var[0x60, 9, 1, 0]) {
+	1: return 1025;
+	action2_3719;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_3721, (current_callback & 255)) {
+	INDTILE_CB_SLOPE_IS_SUITABLE: action2_3720;
+	action2_3700;
+}
+
+item(FEAT_INDUSTRYTILES, tile_diary_farm, 180) {
+	graphics {
+		action2_3721;
+	}
+}
+
+tilelayout tilelayout_diary_farm_1 {
+	0, 0: tile_diary_farm;
+	0, 1: tile_diary_farm;
+	0, 2: tile_diary_farm;
+	2, 0: tile_diary_farm;
+	2, 1: tile_diary_farm;
+	3, 0: tile_diary_farm;
+	3, 1: tile_diary_farm;
+	3, 2: tile_diary_farm;
+}
+
+tilelayout tilelayout_diary_farm_2 {
+	0, 0: tile_diary_farm;
+	0, 1: tile_diary_farm;
+	0, 2: tile_diary_farm;
+	1, 1: tile_diary_farm;
+	1, 2: tile_diary_farm;
+	2, 0: tile_diary_farm;
+	2, 1: tile_diary_farm;
+	2, 2: tile_diary_farm;
+}
+
+tilelayout tilelayout_diary_farm_3 {
+	0, 1: tile_diary_farm;
+	0, 3: tile_diary_farm;
+	1, 0: tile_diary_farm;
+	1, 1: tile_diary_farm;
+	1, 3: tile_diary_farm;
+	2, 0: tile_diary_farm;
+	2, 1: tile_diary_farm;
+	2, 3: tile_diary_farm;
+}
+
+item(FEAT_INDUSTRIES, diary_farm, 28) {
+	property {
+		substitute: 0;
+		layouts: [tilelayout_diary_farm_1, tilelayout_diary_farm_2, tilelayout_diary_farm_3];
+		life_type: 2;
+		closure_msg: 18483;
+		prod_increase_msg: 18488;
+		prod_decrease_msg: 18489;
+		new_ind_msg: 18477;
+		name: string(STR_IND_DAIRYFARM);
+		nearby_station_name: string(STR_STATIONNAME_FARMS);
+		prod_cargo_types: [FMSP, MILK];
+		accept_cargo_types: [FMSP];
+		prod_multiplier: [2, 2];
+		input_multiplier_1: [0, 0];
+		input_multiplier_2: [0, 0];
+		input_multiplier_3: [0, 0];
+		min_cargo_distr: 1;
+		conflicting_ind_types: [];
+		prob_random: 18;
+		prob_in_game: 3;
+		prospect_chance: 0.749999999942;
+		fund_cost_multiplier: 60;
+		map_colour: 164;
+		remove_cost_multiplier: 0;
+		spec_flags: 0;
+		callback_flags: 1339;
+	}
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_3724, industry_distance(diary_farm)) {
+	10..36: return 1024;
+	return 4;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_3725, ((industry_count(28) / 2) / industry_clusters)) {
+	0: return 1024;
+	action2_3724;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_3726, STORE_TEMP(-1, 256)) {
+	0: action2_3725;
+	action2_3725;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_3727, industry_distance(diary)) {
+	0..16: return 4;
+	action2_3726;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_3728, industry_distance(stockyard)) {
+	0..16: return 4;
+	action2_3727;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_3729, founder) {
+	16: action2_3728;
+	return 1024;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_3730, game_mode) {
+	1: action2_3729;
+	return 1024;
+}
+
+produce(action2_3731, 9999, 0, 0, 0, 0, 0);
+
+switch(FEAT_INDUSTRIES, SELF, action2_3732, STORE_PERM((var[0x40, 0, -1] + LOAD_PERM(0)), 0)) {
+	0: action2_3731;
+	action2_3731;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_3733, var[0x93, 0, -1]) {
+	0..4: return 3;
+	return 0;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_3734, allow_close_primary) {
+	1..255: action2_3733;
+	return 0;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_3735, (extra_callback_info2 & 31)) {
+	0: return 13;
+	return 0;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_3736, (extra_callback_info2 & 3)) {
+	0: return 13;
+	return 0;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_3737, STORE_PERM(var[0x93, 0, -1], 2)) {
+	0..4: return 0;
+	5..32: action2_3735;
+	action2_3736;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_3738, allow_primary_production_decrease) {
+	1..255: action2_3737;
+	return 0;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_3739, (extra_callback_info2 & 3)) {
+	0: return 14;
+	return 0;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_3740, [STORE_PERM(0, 0), LOAD_TEMP(1)]) {
+	1..-1: action2_3739;
+	action2_3738;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_3741, STORE_TEMP(LOAD_PERM(0), 1)) {
+	0: action2_3740;
+	action2_3740;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_3742, [STORE_TEMP(LOAD_PERM(0), 256), var[0x93, 0, -1]]) {
+	128: return string(STR_GENERIC_D0B3);
+	return string(STR_GENERIC_D0B1);
+}
+
+CHECK_OPENING(action2_3746, 0, -1)
+
+switch(FEAT_INDUSTRIES, SELF, action2_3747, [STORE_TEMP(-701265, 256), 32928]) {
+	return;
+}
+
+SWITCH_COLOUR_SCHEME1(action2_3750)
+
+switch(FEAT_INDUSTRIES, SELF, switch_main_diary_farm, current_callback) {
+	0: action2_3732;
+	IND_CB_LOCATION_CHECK: action2_3730;
+	IND_CB_AVAILABILITY: action2_3746;
+	IND_CB_COLOUR: action2_3750;
+	IND_CB_EXTRA_TEXT_FUND: action2_3747;
+	IND_CB_RANDOM_PROD_CHANGE: action2_3734;
+	IND_CB_MONTHLY_PROD_CHANGE: action2_3741;
+	IND_CB_EXTRA_TEXT_INDUSTRY: action2_3742;
+	action2_3731;
+}
+
+item(FEAT_INDUSTRIES, diary_farm, 28) {
+	graphics {
+		switch_main_diary_farm;
+	}
+}
+
