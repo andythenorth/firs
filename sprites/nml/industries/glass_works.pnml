@@ -1,0 +1,638 @@
+item(FEAT_INDUSTRYTILES, tile_glass_works, 178) {
+	property {
+		substitute: 0;
+		accepted_cargos: [[SAND, 8], [RFPR, 8], [0, 0]];
+		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
+		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
+	}
+}
+
+spriteset(spriteset_4966, "sprites/graphics/industries/glassworks.png") { tmpl_building_sprite(10, 10, 90, -59) } 
+spriteset(spriteset_4967, "sprites/graphics/industries/glassworks.png") { tmpl_building_sprite(80, 10, 90, -71) } 
+spriteset(spriteset_4968, "sprites/graphics/industries/glassworks.png") { tmpl_building_sprite(150, 10, 90, -59) } 
+spriteset(spriteset_4969, "sprites/graphics/industries/groundtiles.png") { tmpl_ground_tile(150, 10) } 
+spritelayout action2_4970 {
+	ground {
+		sprite: spriteset_4969;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_4966;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 12;
+	}
+}
+
+spritelayout action2_4971 {
+	ground {
+		sprite: spriteset_4969;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_4967;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 12;
+	}
+}
+
+spritelayout action2_4972 {
+	ground {
+		sprite: spriteset_4969;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_4968;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 12;
+	}
+}
+
+spritelayout action2_4973 {
+	ground {
+		sprite: spriteset_4969;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_4974, relative_pos) {
+	0: action2_4973;
+	256: action2_4972;
+	1: action2_4970;
+	257: action2_4971;
+	action2_4973;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_4975, relative_pos) {
+	0: action2_4973;
+	256: action2_4972;
+	1: action2_4970;
+	257: action2_4971;
+	2: action2_4973;
+	258: action2_4972;
+	3: action2_4970;
+	259: action2_4971;
+	action2_4973;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_4976, relative_pos) {
+	0: action2_4973;
+	256: action2_4972;
+	512: action2_4973;
+	768: action2_4972;
+	1: action2_4970;
+	257: action2_4971;
+	513: action2_4970;
+	769: action2_4971;
+	258: action2_4973;
+	514: action2_4972;
+	259: action2_4970;
+	515: action2_4971;
+	action2_4973;
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, action2_4977, layout_num) {
+	1: action2_4974;
+	2: action2_4975;
+	3: action2_4976;
+	action2_4970;
+}
+
+spriteset(spriteset_4979, "sprites/graphics/industries/glassworks.png") { tmpl_building_sprite(10, 10, 90, -59) } 
+spriteset(spriteset_4980, "sprites/graphics/industries/glassworks.png") { tmpl_building_sprite(80, 10, 90, -71) } 
+spriteset(spriteset_4981, "sprites/graphics/industries/glassworks.png") { tmpl_building_sprite(150, 10, 90, -59) } 
+spriteset(spriteset_4982, "sprites/graphics/industries/groundtiles.png") { tmpl_ground_tile(150, 10) } 
+spritelayout action2_4983 {
+	ground {
+		sprite: spriteset_4982;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_4979;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 12;
+	}
+}
+
+spritelayout action2_4984 {
+	ground {
+		sprite: spriteset_4982;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_4980;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 12;
+	}
+}
+
+spritelayout action2_4985 {
+	ground {
+		sprite: spriteset_4982;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_4981;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 12;
+	}
+}
+
+spritelayout action2_4986 {
+	ground {
+		sprite: spriteset_4982;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_4987, relative_pos) {
+	0: action2_4986;
+	256: action2_4985;
+	1: action2_4983;
+	257: action2_4984;
+	action2_4986;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_4988, relative_pos) {
+	0: action2_4986;
+	256: action2_4985;
+	1: action2_4983;
+	257: action2_4984;
+	2: action2_4986;
+	258: action2_4985;
+	3: action2_4983;
+	259: action2_4984;
+	action2_4986;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_4989, relative_pos) {
+	0: action2_4986;
+	256: action2_4985;
+	512: action2_4986;
+	768: action2_4985;
+	1: action2_4983;
+	257: action2_4984;
+	513: action2_4983;
+	769: action2_4984;
+	258: action2_4986;
+	514: action2_4985;
+	259: action2_4983;
+	515: action2_4984;
+	action2_4986;
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, action2_4990, layout_num) {
+	1: action2_4987;
+	2: action2_4988;
+	3: action2_4989;
+	action2_4983;
+}
+
+spriteset(spriteset_4992) { 	[10, 10, 64, 90, -31, -59, 9, "sprites/graphics/industries/glassworks_snow.png"] } 
+spriteset(spriteset_4993) { 	[80, 10, 64, 90, -31, -71, 9, "sprites/graphics/industries/glassworks_snow.png"] } 
+spriteset(spriteset_4994) { 	[150, 10, 64, 90, -31, -59, 9, "sprites/graphics/industries/glassworks_snow.png"] } 
+spriteset(spriteset_4995, "sprites/graphics/industries/groundtiles.png") { tmpl_ground_tile(150, 10) } 
+spritelayout action2_4996 {
+	ground {
+		sprite: spriteset_4995;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_4992;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 12;
+	}
+}
+
+spritelayout action2_4997 {
+	ground {
+		sprite: spriteset_4995;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_4993;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 12;
+	}
+}
+
+spritelayout action2_4998 {
+	ground {
+		sprite: spriteset_4995;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_4994;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 12;
+	}
+}
+
+spritelayout action2_4999 {
+	ground {
+		sprite: spriteset_4995;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_5000, relative_pos) {
+	0: action2_4999;
+	256: action2_4998;
+	1: action2_4996;
+	257: action2_4997;
+	action2_4999;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_5001, relative_pos) {
+	0: action2_4999;
+	256: action2_4998;
+	1: action2_4996;
+	257: action2_4997;
+	2: action2_4999;
+	258: action2_4998;
+	3: action2_4996;
+	259: action2_4997;
+	action2_4999;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_5002, relative_pos) {
+	0: action2_4999;
+	256: action2_4998;
+	512: action2_4999;
+	768: action2_4998;
+	1: action2_4996;
+	257: action2_4997;
+	513: action2_4996;
+	769: action2_4997;
+	258: action2_4999;
+	514: action2_4998;
+	259: action2_4996;
+	515: action2_4997;
+	action2_4999;
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, action2_5003, layout_num) {
+	1: action2_5000;
+	2: action2_5001;
+	3: action2_5002;
+	action2_4996;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_5004, terrain_type) {
+	1: action2_4990;
+	4: action2_5003;
+	action2_4977;
+}
+
+CHECK_NEARBY_TILE_CLASS(action2_5012)
+
+switch(FEAT_INDUSTRYTILES, PARENT, action2_5013, founder) {
+	16: action2_5012;
+	return 1024;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_5014, var[0x60, 0, 255, 0]) {
+	1..255: return 1025;
+	action2_5013;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_5015, (current_callback & 255)) {
+	INDTILE_CB_SLOPE_IS_SUITABLE: action2_5014;
+	action2_5004;
+}
+
+item(FEAT_INDUSTRYTILES, tile_glass_works, 178) {
+	graphics {
+		action2_5015;
+	}
+}
+
+tilelayout tilelayout_glass_works_1 {
+	0, 0: tile_glass_works;
+	0, 1: tile_glass_works;
+	1, 0: tile_glass_works;
+	1, 1: tile_glass_works;
+}
+
+tilelayout tilelayout_glass_works_2 {
+	0, 0: tile_glass_works;
+	0, 1: tile_glass_works;
+	1, 0: tile_glass_works;
+	1, 1: tile_glass_works;
+	2, 0: tile_glass_works;
+	2, 1: tile_glass_works;
+	3, 0: tile_glass_works;
+	3, 1: tile_glass_works;
+}
+
+tilelayout tilelayout_glass_works_3 {
+	0, 0: tile_glass_works;
+	0, 1: tile_glass_works;
+	0, 2: tile_glass_works;
+	0, 3: tile_glass_works;
+	1, 0: tile_glass_works;
+	1, 1: tile_glass_works;
+	1, 2: tile_glass_works;
+	1, 3: tile_glass_works;
+	2, 1: tile_glass_works;
+	2, 2: tile_glass_works;
+	3, 1: tile_glass_works;
+	3, 2: tile_glass_works;
+}
+
+item(FEAT_INDUSTRIES, glass_works, 22) {
+	property {
+		substitute: 0;
+		layouts: [tilelayout_glass_works_1, tilelayout_glass_works_2, tilelayout_glass_works_3];
+		life_type: 4;
+		closure_msg: 18483;
+		prod_increase_msg: 18485;
+		prod_decrease_msg: 18489;
+		new_ind_msg: 18477;
+		name: string(STR_IND_GLASS_WORKS);
+		nearby_station_name: string(STR_STATIONNAME_FACTORIES);
+		prod_cargo_types: [BDMT, MNSP];
+		accept_cargo_types: [SAND, RFPR];
+		prod_multiplier: [0, 0];
+		input_multiplier_1: [0, 0];
+		input_multiplier_2: [0, 0];
+		input_multiplier_3: [0, 0];
+		min_cargo_distr: 5;
+		conflicting_ind_types: [];
+		prob_random: 5;
+		prob_in_game: 3;
+		prospect_chance: 0.749999999942;
+		fund_cost_multiplier: 95;
+		map_colour: 146;
+		remove_cost_multiplier: 0;
+		spec_flags: 4096;
+		callback_flags: 2365;
+	}
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5018, industry_distance(glass_works)) {
+	0..56: return 1025;
+	return 1024;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5019, industry_distance(quarry)) {
+	0..16: return 4;
+	action2_5018;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5020, founder) {
+	16: action2_5019;
+	return 1024;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5021, game_mode) {
+	1: action2_5020;
+	return 1024;
+}
+
+produce(action2_5022, LOAD_TEMP(7), LOAD_TEMP(8), LOAD_TEMP(9), LOAD_TEMP(10), LOAD_TEMP(11), LOAD_TEMP(0));
+
+switch(FEAT_INDUSTRIES, SELF, action2_5023, [STORE_TEMP(0, 0), 1]) {
+	0: action2_5022;
+	action2_5022;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5024, [STORE_TEMP(STORE_PERM(STORE_TEMP(STORE_PERM(0, 11), 11), 10), 10), 1]) {
+	0: action2_5023;
+	action2_5023;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5025, [STORE_TEMP(STORE_PERM(0, 11), 11), STORE_TEMP(STORE_PERM(LOAD_TEMP(10), 10), 10)]) {
+	0: action2_5023;
+	action2_5023;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5026, STORE_TEMP(STORE_PERM(STORE_TEMP(STORE_PERM(max((LOAD_TEMP(10) / 2), 1), 10), 10), 11), 11)) {
+	0: action2_5023;
+	action2_5023;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5027, 2) {
+	2: action2_5026;
+	action2_5025;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5028, STORE_TEMP(((LOAD_PERM(4) + LOAD_PERM(5)) + LOAD_PERM(6)), 10)) {
+	0: action2_5024;
+	action2_5027;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5029, [STORE_TEMP(((LOAD_PERM(6) / LOAD_PERM(12)) * 8), 9), STORE_TEMP(STORE_PERM(((var[0x42, 0, -1] - LOAD_TEMP(9)) + LOAD_TEMP(9)), 9), 9)]) {
+	0: action2_5028;
+	action2_5028;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5030, [STORE_TEMP(((LOAD_PERM(5) / LOAD_PERM(12)) * 8), 8), STORE_TEMP(STORE_PERM(((var[0x41, 0, -1] - LOAD_TEMP(8)) + LOAD_TEMP(8)), 8), 8)]) {
+	0: action2_5029;
+	action2_5029;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5031, [STORE_TEMP(((LOAD_PERM(4) / LOAD_PERM(12)) * 8), 7), STORE_TEMP(STORE_PERM(((var[0x40, 0, -1] - LOAD_TEMP(7)) + LOAD_TEMP(7)), 7), 7)]) {
+	0: action2_5030;
+	action2_5030;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5032, STORE_PERM(max(min(((var[0x42, 0, -1] / 8) * LOAD_PERM(12)), LOAD_PERM(0)), 1), 6)) {
+	0: action2_5031;
+	action2_5031;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5033, [STORE_PERM(0, 6), var[0x42, 0, -1]]) {
+	0: action2_5031;
+	action2_5032;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5034, STORE_PERM(max(min(((var[0x41, 0, -1] / 8) * LOAD_PERM(12)), LOAD_PERM(0)), 1), 5)) {
+	0: action2_5033;
+	action2_5033;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5035, [STORE_PERM(0, 5), var[0x41, 0, -1]]) {
+	0: action2_5033;
+	action2_5034;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5036, STORE_PERM(max(min(((var[0x40, 0, -1] / 8) * LOAD_PERM(12)), LOAD_PERM(0)), 1), 4)) {
+	0: action2_5035;
+	action2_5035;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5037, [STORE_PERM(0, 4), var[0x40, 0, -1]]) {
+	0: action2_5035;
+	action2_5036;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5038, STORE_PERM((((0 + LOAD_PERM(1)) + LOAD_PERM(2)) + LOAD_PERM(3)), 12)) {
+	0: action2_5037;
+	action2_5037;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5039, [STORE_PERM(0, 3), 1]) {
+	0: action2_5038;
+	action2_5038;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5040, [STORE_PERM(1, 3), STORE_PERM((1 + LOAD_PERM(15)), 15)]) {
+	0: action2_5038;
+	action2_5038;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5041, LOAD_PERM(15)) {
+	0..7: action2_5040;
+	action2_5039;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5042, [STORE_PERM(0, 15), 1]) {
+	0: action2_5040;
+	action2_5040;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5043, waiting_cargo_3) {
+	0: action2_5041;
+	action2_5042;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5044, [STORE_PERM(0, 2), 1]) {
+	0: action2_5043;
+	action2_5043;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5045, [STORE_PERM(2, 2), STORE_PERM((1 + LOAD_PERM(14)), 14)]) {
+	0: action2_5043;
+	action2_5043;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5046, LOAD_PERM(14)) {
+	0..7: action2_5045;
+	action2_5044;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5047, [STORE_PERM(0, 14), 1]) {
+	0: action2_5045;
+	action2_5045;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5048, waiting_cargo_2) {
+	0: action2_5046;
+	action2_5047;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5049, [STORE_PERM(0, 1), 1]) {
+	0: action2_5048;
+	action2_5048;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5050, [STORE_PERM(6, 1), STORE_PERM((1 + LOAD_PERM(13)), 13)]) {
+	0: action2_5048;
+	action2_5048;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5051, LOAD_PERM(13)) {
+	0..7: action2_5050;
+	action2_5049;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5052, [STORE_PERM(0, 13), 1]) {
+	0: action2_5050;
+	action2_5050;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5053, waiting_cargo_1) {
+	0: action2_5051;
+	action2_5052;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5054, STORE_TEMP((rotate((LOAD_PERM(15) & 65535), 16) | (LOAD_PERM(14) & 65535)), 261)) {
+	0: return string(STR_INFO_DEBUG_PRODUCTION_CONTRIBUTION);
+	return string(STR_INFO_DEBUG_PRODUCTION_CONTRIBUTION);
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5055, STORE_TEMP((rotate((LOAD_PERM(13) & 65535), 16) | (LOAD_PERM(12) & 65535)), 260)) {
+	0: action2_5054;
+	action2_5054;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5056, STORE_TEMP((rotate((LOAD_PERM(11) & 65535), 16) | (LOAD_PERM(10) & 65535)), 259)) {
+	0: action2_5055;
+	action2_5055;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5057, STORE_TEMP((rotate((LOAD_PERM(9) & 65535), 16) | (LOAD_PERM(8) & 65535)), 258)) {
+	0: action2_5056;
+	action2_5056;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5058, STORE_TEMP((rotate((LOAD_PERM(7) & 65535), 16) | (LOAD_PERM(3) & 65535)), 257)) {
+	0: action2_5057;
+	action2_5057;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5059, STORE_TEMP((rotate((LOAD_PERM(2) & 65535), 16) | (LOAD_PERM(1) & 65535)), 256)) {
+	0: action2_5058;
+	action2_5058;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5060, show_debug_texts) {
+	1: action2_5059;
+	return string(STR_GENERIC_D016);
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5061, STORE_PERM((65535 / 2), 0)) {
+	0: action2_5053;
+	action2_5053;
+}
+
+CHECK_OPENING(action2_5064, 0, -1)
+
+switch(FEAT_INDUSTRIES, SELF, action2_5065, [STORE_TEMP(-701265, 256), 32928]) {
+	return;
+}
+
+SWITCH_COLOUR_SCHEME1(action2_5068)
+
+SET_PRODUCTION_COUNTER_PRODUCED(action2_5071)
+
+CHECK_CLOSE_SECONDARY(action2_5074)
+
+switch(FEAT_INDUSTRIES, SELF, switch_main_glass_works, current_callback) {
+	0: action2_5061;
+	IND_CB_LOCATION_CHECK: action2_5021;
+	IND_CB_AVAILABILITY: action2_5064;
+	IND_CB_COLOUR: action2_5068;
+	IND_CB_EXTRA_TEXT_FUND: action2_5065;
+	IND_CB_RANDOM_PROD_CHANGE: action2_5074;
+	IND_CB_MONTHLY_PROD_CHANGE: action2_5071;
+	IND_CB_EXTRA_TEXT_INDUSTRY: action2_5060;
+	action2_5023;
+}
+
+item(FEAT_INDUSTRIES, glass_works, 22) {
+	graphics {
+		switch_main_glass_works;
+	}
+}
