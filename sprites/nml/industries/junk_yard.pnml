@@ -1,0 +1,363 @@
+
+item(FEAT_INDUSTRYTILES, tile_junkyard, 193) {
+	property {
+		substitute: 0;
+		accepted_cargos: [[ENSP, 8]];
+		land_shape_flags: 0;
+		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
+	}
+}
+
+spriteset(spriteset_5509, "sprites/graphics/industries/groundtiles.png") { tmpl_ground_tile(10, 10) } 
+spriteset(spriteset_5510, "sprites/graphics/industries/junkyard.pcx") { tmpl_building_sprite(10, 10, 55, -24) } 
+spriteset(spriteset_5511, "sprites/graphics/industries/junkyard.pcx") { tmpl_building_sprite(80, 10, 55, -24) } 
+spriteset(spriteset_5512, "sprites/graphics/industries/junkyard.pcx") { tmpl_building_sprite(150, 10, 55, -24) } 
+spriteset(spriteset_5513, "sprites/graphics/industries/junkyard.pcx") { tmpl_building_sprite(220, 10, 55, -24) } 
+spriteset(spriteset_5514, "sprites/graphics/industries/junkyard.pcx") { tmpl_building_sprite(290, 10, 55, -24) } 
+spriteset(spriteset_5515, "sprites/graphics/industries/junkyard.pcx") { tmpl_building_sprite(360, 10, 55, -24) } 
+spriteset(spriteset_5516, "sprites/graphics/industries/junkyard.pcx") { tmpl_building_sprite(430, 10, 55, -24) } 
+spriteset(spriteset_5517, "sprites/graphics/industries/junkyard.pcx") { tmpl_building_sprite(500, 10, 55, -24) } 
+spriteset(spriteset_5518, "sprites/graphics/industries/junkyard.pcx") { tmpl_building_sprite(570, 10, 55, -24) } 
+spritelayout action2_5519 {
+	ground {
+		sprite: 2022;
+	}
+	building {
+		sprite: spriteset_5510;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 32;
+	}
+}
+
+spritelayout action2_5520 {
+	ground {
+		sprite: 2022;
+	}
+	building {
+		sprite: spriteset_5511;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 32;
+	}
+}
+
+spritelayout action2_5521 {
+	ground {
+		sprite: 2022;
+	}
+	building {
+		sprite: spriteset_5512;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 32;
+	}
+}
+
+spritelayout action2_5522 {
+	ground {
+		sprite: 2022;
+	}
+	building {
+		sprite: spriteset_5513;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 32;
+	}
+}
+
+spritelayout action2_5523 {
+	ground {
+		sprite: 2022;
+	}
+	building {
+		sprite: spriteset_5514;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 32;
+	}
+}
+
+spritelayout action2_5524 {
+	ground {
+		sprite: 2022;
+	}
+	building {
+		sprite: spriteset_5515;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 32;
+	}
+}
+
+spritelayout action2_5525 {
+	ground {
+		sprite: 2022;
+	}
+	building {
+		sprite: spriteset_5516;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 32;
+	}
+}
+
+spritelayout action2_5526 {
+	ground {
+		sprite: 2022;
+	}
+	building {
+		sprite: spriteset_5517;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 32;
+	}
+}
+
+spritelayout action2_5527 {
+	ground {
+		sprite: 2022;
+	}
+	building {
+		sprite: spriteset_5518;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 32;
+	}
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_5528, relative_pos) {
+	512: action2_5520;
+	257: action2_5520;
+	258: action2_5519;
+	514: action2_5526;
+	259: action2_5522;
+	515: action2_5525;
+	4: action2_5523;
+	260: action2_5521;
+	516: action2_5524;
+	action2_5527;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_5529, relative_pos) {
+	256: action2_5525;
+	257: action2_5519;
+	513: action2_5526;
+	2: action2_5523;
+	258: action2_5521;
+	514: action2_5524;
+	action2_5527;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_5530, relative_pos) {
+	768: action2_5520;
+	257: action2_5520;
+	769: action2_5527;
+	258: action2_5519;
+	770: action2_5526;
+	259: action2_5522;
+	771: action2_5525;
+	4: action2_5523;
+	260: action2_5521;
+	772: action2_5524;
+	action2_5527;
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, action2_5531, layout_num) {
+	1: action2_5528;
+	2: action2_5529;
+	3: action2_5530;
+	action2_5519;
+}
+
+CHECK_NEARBY_TILE_CLASS(action2_5539)
+
+switch(FEAT_INDUSTRYTILES, PARENT, action2_5540, founder) {
+	16: action2_5539;
+	return 1024;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_5541, var[0x60, 4, 1, 0]) {
+	1: return 1025;
+	action2_5540;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_5542, (current_callback & 255)) {
+	INDTILE_CB_SLOPE_IS_SUITABLE: action2_5541;
+	action2_5531;
+}
+
+item(FEAT_INDUSTRYTILES, tile_junkyard, 193) {
+	graphics {
+		action2_5542;
+	}
+}
+
+tilelayout tilelayout_junkyard_1 {
+	0, 2: tile_junkyard;
+	1, 1: tile_junkyard;
+	1, 2: tile_junkyard;
+	2, 1: tile_junkyard;
+	2, 2: tile_junkyard;
+	3, 1: tile_junkyard;
+	3, 2: tile_junkyard;
+	4, 0: tile_junkyard;
+	4, 1: tile_junkyard;
+	4, 2: tile_junkyard;
+}
+
+tilelayout tilelayout_junkyard_2 {
+	0, 1: tile_junkyard;
+	1, 1: tile_junkyard;
+	1, 2: tile_junkyard;
+	2, 0: tile_junkyard;
+	2, 1: tile_junkyard;
+	2, 2: tile_junkyard;
+}
+
+tilelayout tilelayout_junkyard_3 {
+	0, 3: tile_junkyard;
+	1, 1: tile_junkyard;
+	1, 3: tile_junkyard;
+	2, 1: tile_junkyard;
+	2, 3: tile_junkyard;
+	3, 1: tile_junkyard;
+	3, 3: tile_junkyard;
+	4, 0: tile_junkyard;
+	4, 1: tile_junkyard;
+	4, 3: tile_junkyard;
+}
+
+item(FEAT_INDUSTRIES, junkyard, 25) {
+	property {
+		substitute: 0;
+		layouts: [tilelayout_junkyard_1, tilelayout_junkyard_2, tilelayout_junkyard_3];
+		life_type: 1;
+		closure_msg: 18483;
+		prod_increase_msg: 18485;
+		prod_decrease_msg: 18489;
+		new_ind_msg: 18477;
+		name: string(STR_IND_JUNKYARD);
+		prod_cargo_types: [SCRP];
+		accept_cargo_types: [ENSP];
+		prod_multiplier: [6, 0];
+		input_multiplier_1: [0, 0];
+		input_multiplier_2: [0, 0];
+		input_multiplier_3: [0, 0];
+		min_cargo_distr: 5;
+		conflicting_ind_types: [];
+		prob_random: 7;
+		prob_in_game: 3;
+		prospect_chance: 0.749999999942;
+		fund_cost_multiplier: 101;
+		map_colour: 36;
+		remove_cost_multiplier: 0;
+		spec_flags: 0;
+		callback_flags: 1467;
+		nearby_station_name: 0;
+	}
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5545, 1) {
+	1: return 1024;
+	return 1024;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5546, town_euclidean_dist(0, 0)) {
+	0..144: action2_5545;
+	return 1025;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5547, founder) {
+	16: action2_5546;
+	return 1024;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5548, game_mode) {
+	1: action2_5547;
+	return 1024;
+}
+
+produce(action2_5549, 9999, 0, 0, 0, 0, 0);
+
+switch(FEAT_INDUSTRIES, SELF, action2_5550, STORE_PERM((var[0x40, 0, -1] + LOAD_PERM(0)), 0)) {
+	0: action2_5549;
+	action2_5549;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5551, var[0x93, 0, -1]) {
+	0..4: return 3;
+	return 0;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5552, allow_close_primary) {
+	1..255: action2_5551;
+	return 0;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5553, (extra_callback_info2 & 31)) {
+	0: return 13;
+	return 0;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5554, (extra_callback_info2 & 3)) {
+	0: return 13;
+	return 0;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5555, STORE_PERM(var[0x93, 0, -1], 2)) {
+	0..4: return 0;
+	5..32: action2_5553;
+	action2_5554;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5556, allow_primary_production_decrease) {
+	1..255: action2_5555;
+	return 0;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5557, (extra_callback_info2 & 3)) {
+	0: return 14;
+	return 0;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5558, [STORE_PERM(0, 0), LOAD_TEMP(1)]) {
+	1..-1: action2_5557;
+	action2_5556;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5559, STORE_TEMP(LOAD_PERM(0), 1)) {
+	0: action2_5558;
+	action2_5558;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5560, [STORE_TEMP(LOAD_PERM(0), 256), var[0x93, 0, -1]]) {
+	128: return string(STR_GENERIC_D0B3);
+	return string(STR_GENERIC_D0B0);
+}
+
+CHECK_OPENING(action2_5564, 1879, -1)
+
+switch(FEAT_INDUSTRIES, SELF, action2_5565, [STORE_TEMP((685926 - 701265), 256), 32933]) {
+	return;
+}
+
+SWITCH_COLOUR_SCHEME1(action2_5568)
+
+switch(FEAT_INDUSTRIES, SELF, switch_main_junkyard, current_callback) {
+	0: action2_5550;
+	IND_CB_LOCATION_CHECK: action2_5548;
+	IND_CB_AVAILABILITY: action2_5564;
+	IND_CB_COLOUR: action2_5568;
+	IND_CB_EXTRA_TEXT_FUND: action2_5565;
+	IND_CB_RANDOM_PROD_CHANGE: action2_5552;
+	IND_CB_MONTHLY_PROD_CHANGE: action2_5559;
+	IND_CB_EXTRA_TEXT_INDUSTRY: action2_5560;
+	action2_5549;
+}
+
+item(FEAT_INDUSTRIES, junkyard, 25) {
+	graphics {
+		switch_main_junkyard;
+	}
+}

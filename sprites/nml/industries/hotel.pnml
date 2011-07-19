@@ -1,0 +1,167 @@
+
+item(FEAT_INDUSTRYTILES, tile_hotel, 217) {
+	property {
+		substitute: 0;
+		accepted_cargos: [[FOOD, 8], [BEER, 8], [0, 8]];
+		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
+	}
+}
+
+spritelayout action2_5259 {
+	ground {
+		sprite: GROUNDSPRITE_CLEARED;
+	}
+	building {
+		sprite: 4475;
+	}
+}
+
+spritelayout action2_5260 {
+	ground {
+		sprite: GROUNDSPRITE_CLEARED;
+	}
+	building {
+		sprite: 4476;
+	}
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_5261, relative_pos) {
+	0: action2_5259;
+	256: action2_5260;
+	1: action2_5259;
+	257: action2_5260;
+	action2_5259;
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, action2_5262, layout_num) {
+	1: action2_5261;
+	action2_5259;
+}
+
+spritelayout action2_5263 {
+	ground {
+		sprite: GROUNDSPRITE_CLEARED;
+	}
+	building {
+		sprite: 4475;
+	}
+}
+
+spritelayout action2_5264 {
+	ground {
+		sprite: GROUNDSPRITE_CLEARED;
+	}
+	building {
+		sprite: 4476;
+	}
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_5265, relative_pos) {
+	0: action2_5263;
+	256: action2_5264;
+	1: action2_5263;
+	257: action2_5264;
+	action2_5263;
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, action2_5266, layout_num) {
+	1: action2_5265;
+	action2_5263;
+}
+
+spritelayout action2_5267 {
+	ground {
+		sprite: GROUNDSPRITE_CLEARED;
+	}
+	building {
+		sprite: 4583;
+	}
+}
+
+spritelayout action2_5268 {
+	ground {
+		sprite: GROUNDSPRITE_CLEARED;
+	}
+	building {
+		sprite: 4584;
+	}
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_5269, relative_pos) {
+	0: action2_5267;
+	256: action2_5268;
+	1: action2_5267;
+	257: action2_5268;
+	action2_5267;
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, action2_5270, layout_num) {
+	1: action2_5269;
+	action2_5267;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_5271, terrain_type) {
+	1: action2_5266;
+	4: action2_5270;
+	action2_5262;
+}
+
+item(FEAT_INDUSTRYTILES, tile_hotel, 217) {
+	graphics {
+		action2_5271;
+	}
+}
+
+tilelayout tilelayout_hotel_1 {
+	0, 0: tile_hotel;
+	0, 1: tile_hotel;
+	1, 0: tile_hotel;
+	1, 1: tile_hotel;
+}
+
+item(FEAT_INDUSTRIES, hotel, 58) {
+	property {
+		substitute: 0;
+		layouts: [tilelayout_hotel_1];
+		life_type: 0;
+		closure_msg: 18483;
+		prod_increase_msg: 18485;
+		prod_decrease_msg: 18489;
+		new_ind_msg: 18477;
+		name: string(STR_IND_HOTEL);
+		prod_cargo_types: [PASS];
+		accept_cargo_types: [FOOD, BEER, PASS];
+		prod_multiplier: [14, 0];
+		input_multiplier_1: [0, 0];
+		input_multiplier_2: [0, 0];
+		input_multiplier_3: [0, 0];
+		min_cargo_distr: 2;
+		conflicting_ind_types: [industry_type(IND_TYPE_NEW, 58)];
+		prob_random: 10;
+		prob_in_game: 20;
+		prospect_chance: 0.749999999942;
+		fund_cost_multiplier: 6;
+		map_colour: 190;
+		remove_cost_multiplier: 0;
+		spec_flags: 16;
+		callback_flags: 385;
+	}
+}
+
+produce(action2_5274, 9999, 9999, 0, 0, 0, 0);
+
+CHECK_OPENING(action2_5277, 0, -1)
+
+
+switch(FEAT_INDUSTRIES, SELF, switch_main_hotel, current_callback) {
+	IND_CB_AVAILABILITY: action2_5277;
+	IND_CB_EXTRA_TEXT_FUND: return string(STR_GENERIC_NEWLINE);
+	IND_CB_EXTRA_TEXT_INDUSTRY: return string(STR_GENERIC_NEWLINE);
+	action2_5274;
+}
+
+item(FEAT_INDUSTRIES, hotel, 58) {
+	graphics {
+		switch_main_hotel;
+	}
+}

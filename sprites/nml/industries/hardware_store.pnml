@@ -1,0 +1,136 @@
+
+item(FEAT_INDUSTRYTILES, tile_hardware_store, 218) {
+	property {
+		substitute: 0;
+		accepted_cargos: [[GOOD, 8], [BDMT, 8], [0, 0]];
+		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
+	}
+}
+
+spriteset(spriteset_5235, "sprites/graphics/industries/hardwarestore.png") { tmpl_building_sprite(0, 0, 64, -33) } 
+spritelayout action2_5236 {
+	ground {
+		sprite: GROUNDSPRITE_CONCRETE;
+	}
+	building {
+		sprite: spriteset_5235;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_5237, relative_pos) {
+	0: action2_5236;
+	action2_5236;
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, action2_5238, layout_num) {
+	1: action2_5237;
+	action2_5236;
+}
+
+spriteset(spriteset_5240, "sprites/graphics/industries/hardwarestore.png") { tmpl_building_sprite(0, 0, 64, -33) } 
+spritelayout action2_5241 {
+	ground {
+		sprite: GROUNDSPRITE_CONCRETE;
+	}
+	building {
+		sprite: spriteset_5240;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_5242, relative_pos) {
+	0: action2_5241;
+	action2_5241;
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, action2_5243, layout_num) {
+	1: action2_5242;
+	action2_5241;
+}
+
+spriteset(spriteset_5245) { 	[0, 0, 64, 64, -31, -33, 9, "sprites/graphics/industries/hardwarestore_snow.png"] } 
+spritelayout action2_5246 {
+	ground {
+		sprite: GROUNDSPRITE_CONCRETE;
+	}
+	building {
+		sprite: spriteset_5245;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_5247, relative_pos) {
+	0: action2_5246;
+	action2_5246;
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, action2_5248, layout_num) {
+	1: action2_5247;
+	action2_5246;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_5249, terrain_type) {
+	1: action2_5243;
+	4: action2_5248;
+	action2_5238;
+}
+
+item(FEAT_INDUSTRYTILES, tile_hardware_store, 218) {
+	graphics {
+		action2_5249;
+	}
+}
+
+tilelayout tilelayout_hardware_store_1 {
+	0, 0: tile_hardware_store;
+}
+
+item(FEAT_INDUSTRIES, hardware_store, 57) {
+	property {
+		substitute: 0;
+		layouts: [tilelayout_hardware_store_1];
+		life_type: 0;
+		closure_msg: 18483;
+		prod_increase_msg: 18485;
+		prod_decrease_msg: 18489;
+		new_ind_msg: 18477;
+		name: string(STR_IND_HARDWARE_STORE);
+		prod_cargo_types: [];
+		accept_cargo_types: [GRAI, BDMT];
+		prod_multiplier: [0, 0];
+		input_multiplier_1: [0, 0];
+		input_multiplier_2: [0, 0];
+		input_multiplier_3: [0, 0];
+		min_cargo_distr: 2;
+		conflicting_ind_types: [industry_type(IND_TYPE_NEW, 57)];
+		prob_random: 24;
+		prob_in_game: 12;
+		prospect_chance: 0.749999999942;
+		fund_cost_multiplier: 6;
+		map_colour: 15;
+		remove_cost_multiplier: 0;
+		spec_flags: 16;
+		callback_flags: 385;
+	}
+}
+
+produce(action2_5252, 9999, 9999, 0, 0, 0, 0);
+
+CHECK_OPENING(action2_5255, 0, -1)
+
+switch(FEAT_INDUSTRIES, SELF, switch_main_hardware_store, current_callback) {
+	IND_CB_AVAILABILITY: action2_5255;
+	IND_CB_EXTRA_TEXT_FUND: return string(STR_GENERIC_NEWLINE);
+	IND_CB_EXTRA_TEXT_INDUSTRY: return string(STR_GENERIC_NEWLINE);
+	action2_5252;
+}
+
+item(FEAT_INDUSTRIES, hardware_store, 57) {
+	graphics {
+		switch_main_hardware_store;
+	}
+}

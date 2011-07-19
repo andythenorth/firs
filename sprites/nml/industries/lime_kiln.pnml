@@ -1,0 +1,695 @@
+
+item(FEAT_INDUSTRYTILES, tile_lime_kiln, 191) {
+	property {
+		substitute: 0;
+		accepted_cargos: [[GRVL, 8], [COAL, 8], [0, 0]];
+		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
+		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
+	}
+}
+
+spriteset(spriteset_5573, "sprites/graphics/industries/groundtiles.png") { tmpl_ground_tile(80, 10) } 
+spriteset(spriteset_5574, "sprites/graphics/industries/limekiln.png") { tmpl_building_sprite(10, 10, 110, -70) } 
+spriteset(spriteset_5575, "sprites/graphics/industries/limekiln.png") { tmpl_building_sprite(80, 10, 110, -70) } 
+spriteset(spriteset_5576, "sprites/graphics/industries/limekiln.png") { tmpl_building_sprite(150, 10, 64, -31) } 
+spriteset(spriteset_5577, "sprites/graphics/industries/limekiln.png") { tmpl_building_sprite(220, 10, 92, -60) } 
+spriteset(spriteset_5578, "sprites/graphics/industries/limekiln.png") { tmpl_building_sprite(290, 10, 64, -31) } 
+spriteset(spriteset_5579, "sprites/graphics/industries/limekiln.png") { tmpl_building_sprite(360, 10, 64, -33) } 
+spritelayout action2_5580 {
+	ground {
+		sprite: 2022;
+	}
+	building {
+		sprite: spriteset_5579;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_5574;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 48;
+	}
+}
+
+spritelayout action2_5581 {
+	ground {
+		sprite: 2022;
+	}
+	building {
+		sprite: spriteset_5579;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_5575;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 48;
+	}
+}
+
+spritelayout action2_5582 {
+	ground {
+		sprite: 2022;
+	}
+	building {
+		sprite: spriteset_5579;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_5579;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 48;
+	}
+}
+
+spritelayout action2_5583 {
+	ground {
+		sprite: 2022;
+	}
+	building {
+		sprite: spriteset_5579;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_5576;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 48;
+	}
+}
+
+spritelayout action2_5584 {
+	ground {
+		sprite: 2022;
+	}
+	building {
+		sprite: spriteset_5579;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_5577;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 48;
+	}
+}
+
+spritelayout action2_5585 {
+	ground {
+		sprite: 2022;
+	}
+	building {
+		sprite: spriteset_5579;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_5578;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 48;
+	}
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_5586, relative_pos) {
+	0: action2_5581;
+	256: action2_5580;
+	512: action2_5582;
+	1: action2_5584;
+	257: action2_5585;
+	513: action2_5583;
+	action2_5582;
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, action2_5589, layout_num) {
+	1: action2_5586;
+	action2_5586;
+}
+
+spriteset(spriteset_5591, "sprites/graphics/industries/groundtiles.png") { tmpl_ground_tile(80, 10) } 
+spriteset(spriteset_5592, "sprites/graphics/industries/limekiln.png") { tmpl_building_sprite(10, 10, 110, -70) } 
+spriteset(spriteset_5593, "sprites/graphics/industries/limekiln.png") { tmpl_building_sprite(80, 10, 110, -70) } 
+spriteset(spriteset_5594, "sprites/graphics/industries/limekiln.png") { tmpl_building_sprite(150, 10, 64, -31) } 
+spriteset(spriteset_5595, "sprites/graphics/industries/limekiln.png") { tmpl_building_sprite(220, 10, 92, -60) } 
+spriteset(spriteset_5596, "sprites/graphics/industries/limekiln.png") { tmpl_building_sprite(290, 10, 64, -31) } 
+spriteset(spriteset_5597, "sprites/graphics/industries/limekiln.png") { tmpl_building_sprite(360, 10, 64, -33) } 
+spritelayout action2_5598 {
+	ground {
+		sprite: 2022;
+	}
+	building {
+		sprite: spriteset_5597;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_5592;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 48;
+	}
+}
+
+spritelayout action2_5599 {
+	ground {
+		sprite: 2022;
+	}
+	building {
+		sprite: spriteset_5597;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_5593;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 48;
+	}
+}
+
+spritelayout action2_5600 {
+	ground {
+		sprite: 2022;
+	}
+	building {
+		sprite: spriteset_5597;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_5597;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 48;
+	}
+}
+
+spritelayout action2_5601 {
+	ground {
+		sprite: 2022;
+	}
+	building {
+		sprite: spriteset_5597;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_5594;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 48;
+	}
+}
+
+spritelayout action2_5602 {
+	ground {
+		sprite: 2022;
+	}
+	building {
+		sprite: spriteset_5597;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_5595;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 48;
+	}
+}
+
+spritelayout action2_5603 {
+	ground {
+		sprite: 2022;
+	}
+	building {
+		sprite: spriteset_5597;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_5596;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 48;
+	}
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_5604, relative_pos) {
+	0: action2_5599;
+	256: action2_5598;
+	512: action2_5600;
+	1: action2_5602;
+	257: action2_5603;
+	513: action2_5601;
+	action2_5600;
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, action2_5607, layout_num) {
+	1: action2_5604;
+	action2_5604;
+}
+
+spriteset(spriteset_5609, "sprites/graphics/industries/groundtiles.png") { tmpl_ground_tile(80, 10) } 
+spriteset(spriteset_5610) { 	[10, 10, 64, 110, -31, -70, 9, "sprites/graphics/industries/limekiln_snow.png"] } 
+spriteset(spriteset_5611) { 	[80, 10, 64, 110, -31, -70, 9, "sprites/graphics/industries/limekiln_snow.png"] } 
+spriteset(spriteset_5612) { 	[150, 10, 64, 64, -31, -31, 9, "sprites/graphics/industries/limekiln_snow.png"] } 
+spriteset(spriteset_5613) { 	[220, 10, 64, 92, -31, -60, 9, "sprites/graphics/industries/limekiln_snow.png"] } 
+spriteset(spriteset_5614) { 	[290, 10, 64, 64, -31, -31, 9, "sprites/graphics/industries/limekiln_snow.png"] } 
+spriteset(spriteset_5615) { 	[360, 10, 64, 64, -31, -33, 9, "sprites/graphics/industries/limekiln_snow.png"] } 
+spritelayout action2_5616 {
+	ground {
+		sprite: 2022;
+	}
+	building {
+		sprite: spriteset_5615;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_5610;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 48;
+	}
+}
+
+spritelayout action2_5617 {
+	ground {
+		sprite: 2022;
+	}
+	building {
+		sprite: spriteset_5615;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_5611;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 48;
+	}
+}
+
+spritelayout action2_5618 {
+	ground {
+		sprite: 2022;
+	}
+	building {
+		sprite: spriteset_5615;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_5615;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 48;
+	}
+}
+
+spritelayout action2_5619 {
+	ground {
+		sprite: 2022;
+	}
+	building {
+		sprite: spriteset_5615;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_5612;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 48;
+	}
+}
+
+spritelayout action2_5620 {
+	ground {
+		sprite: 2022;
+	}
+	building {
+		sprite: spriteset_5615;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_5613;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 48;
+	}
+}
+
+spritelayout action2_5621 {
+	ground {
+		sprite: 2022;
+	}
+	building {
+		sprite: spriteset_5615;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+	building {
+		sprite: spriteset_5614;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		zextent: 48;
+	}
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_5622, relative_pos) {
+	0: action2_5617;
+	256: action2_5616;
+	512: action2_5618;
+	1: action2_5620;
+	257: action2_5621;
+	513: action2_5619;
+	action2_5618;
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, action2_5625, layout_num) {
+	1: action2_5622;
+	action2_5622;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_5626, terrain_type) {
+	1: action2_5607;
+	4: action2_5625;
+	action2_5589;
+}
+
+CHECK_NEARBY_TILE_CLASS(action2_5634)
+
+switch(FEAT_INDUSTRYTILES, PARENT, action2_5635, founder) {
+	16: action2_5634;
+	return 1024;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_5636, var[0x60, 0, 255, 0]) {
+	1..255: return 1025;
+	action2_5635;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_5637, (current_callback & 255)) {
+	INDTILE_CB_SLOPE_IS_SUITABLE: action2_5636;
+	action2_5626;
+}
+
+item(FEAT_INDUSTRYTILES, tile_lime_kiln, 191) {
+	graphics {
+		action2_5637;
+	}
+}
+
+tilelayout tilelayout_lime_kiln_1 {
+	0, 0: tile_lime_kiln;
+	0, 1: tile_lime_kiln;
+	0, 2: tile_lime_kiln;
+	1, 0: tile_lime_kiln;
+	1, 1: tile_lime_kiln;
+	1, 2: tile_lime_kiln;
+}
+
+tilelayout tilelayout_lime_kiln_2 {
+	0, 0: tile_lime_kiln;
+	0, 1: tile_lime_kiln;
+	1, 0: tile_lime_kiln;
+	1, 1: tile_lime_kiln;
+	2, 0: tile_lime_kiln;
+	2, 1: tile_lime_kiln;
+}
+
+tilelayout tilelayout_lime_kiln_3 {
+	0, 0: tile_lime_kiln;
+	0, 1: tile_lime_kiln;
+	0, 2: tile_lime_kiln;
+	0, 3: tile_lime_kiln;
+	1, 0: tile_lime_kiln;
+	1, 1: tile_lime_kiln;
+	1, 2: tile_lime_kiln;
+	1, 3: tile_lime_kiln;
+}
+
+item(FEAT_INDUSTRIES, lime_kiln, 1) {
+	property {
+		substitute: 0;
+		layouts: [tilelayout_lime_kiln_1, tilelayout_lime_kiln_2, tilelayout_lime_kiln_3];
+		life_type: 4;
+		closure_msg: 18483;
+		prod_increase_msg: 18485;
+		prod_decrease_msg: 18489;
+		new_ind_msg: 18477;
+		name: string(STR_IND_LIME_KILN);
+		prod_cargo_types: [RFPR, FMSP];
+		accept_cargo_types: [GRVL, COAL];
+		prod_multiplier: [0, 0];
+		input_multiplier_1: [0, 0];
+		input_multiplier_2: [0, 0];
+		input_multiplier_3: [0, 0];
+		min_cargo_distr: 5;
+		conflicting_ind_types: [];
+		prob_random: 7;
+		prob_in_game: 6;
+		prospect_chance: 0.749999999942;
+		fund_cost_multiplier: 45;
+		map_colour: 209;
+		remove_cost_multiplier: 0;
+		spec_flags: 0;
+		callback_flags: 2365;
+	}
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5640, industry_distance(lime_kiln)) {
+	0..56: return 1025;
+	return 1024;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5641, industry_distance(coal_mine)) {
+	0..16: return 4;
+	action2_5640;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5642, industry_distance(quarry)) {
+	0..16: return 4;
+	action2_5641;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5643, founder) {
+	16: action2_5642;
+	return 1024;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5644, game_mode) {
+	1: action2_5643;
+	return 1024;
+}
+
+produce(action2_5645, LOAD_TEMP(7), LOAD_TEMP(8), LOAD_TEMP(9), LOAD_TEMP(10), LOAD_TEMP(11), LOAD_TEMP(0));
+
+switch(FEAT_INDUSTRIES, SELF, action2_5646, [STORE_TEMP(0, 0), 1]) {
+	0: action2_5645;
+	action2_5645;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5647, [STORE_TEMP(STORE_PERM(STORE_TEMP(STORE_PERM(0, 11), 11), 10), 10), 1]) {
+	0: action2_5646;
+	action2_5646;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5648, [STORE_TEMP(STORE_PERM(0, 11), 11), STORE_TEMP(STORE_PERM(LOAD_TEMP(10), 10), 10)]) {
+	0: action2_5646;
+	action2_5646;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5649, STORE_TEMP(STORE_PERM(STORE_TEMP(STORE_PERM(max((LOAD_TEMP(10) / 2), 1), 10), 10), 11), 11)) {
+	0: action2_5646;
+	action2_5646;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5650, 2) {
+	2: action2_5649;
+	action2_5648;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5651, STORE_TEMP(((LOAD_PERM(4) + LOAD_PERM(5)) + LOAD_PERM(6)), 10)) {
+	0: action2_5647;
+	action2_5650;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5652, [STORE_TEMP(((LOAD_PERM(6) / LOAD_PERM(12)) * 8), 9), STORE_TEMP(STORE_PERM(((var[0x42, 0, -1] - LOAD_TEMP(9)) + LOAD_TEMP(9)), 9), 9)]) {
+	0: action2_5651;
+	action2_5651;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5653, [STORE_TEMP(((LOAD_PERM(5) / LOAD_PERM(12)) * 8), 8), STORE_TEMP(STORE_PERM(((var[0x41, 0, -1] - LOAD_TEMP(8)) + LOAD_TEMP(8)), 8), 8)]) {
+	0: action2_5652;
+	action2_5652;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5654, [STORE_TEMP(((LOAD_PERM(4) / LOAD_PERM(12)) * 8), 7), STORE_TEMP(STORE_PERM(((var[0x40, 0, -1] - LOAD_TEMP(7)) + LOAD_TEMP(7)), 7), 7)]) {
+	0: action2_5653;
+	action2_5653;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5655, STORE_PERM(max(min(((var[0x42, 0, -1] / 8) * LOAD_PERM(12)), LOAD_PERM(0)), 1), 6)) {
+	0: action2_5654;
+	action2_5654;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5656, [STORE_PERM(0, 6), var[0x42, 0, -1]]) {
+	0: action2_5654;
+	action2_5655;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5657, STORE_PERM(max(min(((var[0x41, 0, -1] / 8) * LOAD_PERM(12)), LOAD_PERM(0)), 1), 5)) {
+	0: action2_5656;
+	action2_5656;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5658, [STORE_PERM(0, 5), var[0x41, 0, -1]]) {
+	0: action2_5656;
+	action2_5657;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5659, STORE_PERM(max(min(((var[0x40, 0, -1] / 8) * LOAD_PERM(12)), LOAD_PERM(0)), 1), 4)) {
+	0: action2_5658;
+	action2_5658;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5660, [STORE_PERM(0, 4), var[0x40, 0, -1]]) {
+	0: action2_5658;
+	action2_5659;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5661, STORE_PERM(((0 + LOAD_PERM(1)) + LOAD_PERM(2)), 12)) {
+	0: action2_5660;
+	action2_5660;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5662, [STORE_PERM(0, 2), 1]) {
+	0: action2_5661;
+	action2_5661;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5663, [STORE_PERM(4, 2), STORE_PERM((1 + LOAD_PERM(14)), 14)]) {
+	0: action2_5661;
+	action2_5661;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5664, LOAD_PERM(14)) {
+	0..7: action2_5663;
+	action2_5662;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5665, [STORE_PERM(0, 14), 1]) {
+	0: action2_5663;
+	action2_5663;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5666, (waiting_cargo_2 + waiting_cargo_3)) {
+	0: action2_5664;
+	action2_5665;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5667, [STORE_PERM(0, 1), 1]) {
+	0: action2_5666;
+	action2_5666;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5668, [STORE_PERM(4, 1), STORE_PERM((1 + LOAD_PERM(13)), 13)]) {
+	0: action2_5666;
+	action2_5666;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5669, LOAD_PERM(13)) {
+	0..7: action2_5668;
+	action2_5667;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5670, [STORE_PERM(0, 13), 1]) {
+	0: action2_5668;
+	action2_5668;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5671, waiting_cargo_1) {
+	0: action2_5669;
+	action2_5670;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5672, STORE_TEMP((rotate((LOAD_PERM(15) & 65535), 16) | (LOAD_PERM(14) & 65535)), 261)) {
+	0: return string(STR_INFO_DEBUG_PRODUCTION_CONTRIBUTION);
+	return string(STR_INFO_DEBUG_PRODUCTION_CONTRIBUTION);
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5673, STORE_TEMP((rotate((LOAD_PERM(13) & 65535), 16) | (LOAD_PERM(12) & 65535)), 260)) {
+	0: action2_5672;
+	action2_5672;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5674, STORE_TEMP((rotate((LOAD_PERM(11) & 65535), 16) | (LOAD_PERM(10) & 65535)), 259)) {
+	0: action2_5673;
+	action2_5673;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5675, STORE_TEMP((rotate((LOAD_PERM(9) & 65535), 16) | (LOAD_PERM(8) & 65535)), 258)) {
+	0: action2_5674;
+	action2_5674;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5676, STORE_TEMP((rotate((LOAD_PERM(7) & 65535), 16) | (LOAD_PERM(3) & 65535)), 257)) {
+	0: action2_5675;
+	action2_5675;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5677, STORE_TEMP((rotate((LOAD_PERM(2) & 65535), 16) | (LOAD_PERM(1) & 65535)), 256)) {
+	0: action2_5676;
+	action2_5676;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5678, show_debug_texts) {
+	1: action2_5677;
+	return string(STR_GENERIC_D001);
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5679, STORE_PERM((65535 / 2), 0)) {
+	0: action2_5671;
+	action2_5671;
+}
+
+CHECK_OPENING(action2_5682, 0, -1)
+
+switch(FEAT_INDUSTRIES, SELF, action2_5683, [STORE_TEMP(-701265, 256), 32928]) {
+	return;
+}
+
+SWITCH_COLOUR_SCHEME1(action2_5686)
+
+SET_PRODUCTION_COUNTER_PRODUCED(action2_5689)
+
+CHECK_CLOSE_SECONDARY(action2_5692)
+
+switch(FEAT_INDUSTRIES, SELF, switch_main_lime_kiln, current_callback) {
+	0: action2_5679;
+	IND_CB_LOCATION_CHECK: action2_5644;
+	IND_CB_AVAILABILITY: action2_5682;
+	IND_CB_COLOUR: action2_5686;
+	IND_CB_EXTRA_TEXT_FUND: action2_5683;
+	IND_CB_RANDOM_PROD_CHANGE: action2_5692;
+	IND_CB_MONTHLY_PROD_CHANGE: action2_5689;
+	IND_CB_EXTRA_TEXT_INDUSTRY: action2_5678;
+	action2_5646;
+}
+
+item(FEAT_INDUSTRIES, lime_kiln, 1) {
+	graphics {
+		switch_main_lime_kiln;
+	}
+}
