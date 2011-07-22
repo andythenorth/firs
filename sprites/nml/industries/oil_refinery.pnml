@@ -1,0 +1,275 @@
+
+item(FEAT_INDUSTRIES, oil_refinery, 4) {
+	property {
+		substitute: 18;
+		override: 18;
+		accept_cargo_types: [ENSP, 255, 255];
+		prod_multiplier: [12];
+		conflicting_ind_types: [];
+		prob_random: 7;
+		prob_in_game: 3;
+		prospect_chance: 0.749999999942;
+		fund_cost_multiplier: 232;
+		map_colour: 55;
+		callback_flags: 1339;
+	}
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5281, industry_distance(oil_refinery)) {
+	20..70: return 1024;
+	return 4;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5282, (((industry_count(4) * 2) / 3) / industry_clusters)) {
+	0: return 1024;
+	action2_5281;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5283, STORE_TEMP(-1, 256)) {
+	0: action2_5282;
+	action2_5282;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5284, industry_distance(item_FEAT_INDUSTRIES_7)) {
+	0..16: return 4;
+	action2_5283;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5285, founder) {
+	16: action2_5284;
+	return 1024;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5286, game_mode) {
+	1: action2_5285;
+	return 1024;
+}
+
+produce(action2_5287, 9999, 0, 0, 0, 0, 0);
+
+switch(FEAT_INDUSTRIES, SELF, action2_5288, STORE_PERM((var[0x40, 0, -1] + LOAD_PERM(0)), 0)) {
+	0: action2_5287;
+	action2_5287;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5289, var[0x93, 0, -1]) {
+	0..4: return 3;
+	return 0;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5290, allow_close_primary) {
+	1..255: action2_5289;
+	return 0;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5291, (extra_callback_info2 & 31)) {
+	0: return 13;
+	return 0;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5292, (extra_callback_info2 & 3)) {
+	0: return 13;
+	return 0;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5293, STORE_PERM(var[0x93, 0, -1], 2)) {
+	0..4: return 0;
+	5..32: action2_5291;
+	action2_5292;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5294, allow_primary_production_decrease) {
+	1..255: action2_5293;
+	return 0;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5295, (extra_callback_info2 & 3)) {
+	0: return 14;
+	return 0;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5296, [STORE_PERM(0, 0), LOAD_TEMP(1)]) {
+	1..-1: action2_5295;
+	action2_5294;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5297, STORE_TEMP(LOAD_PERM(0), 1)) {
+	0: action2_5296;
+	action2_5296;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_5298, [STORE_TEMP(LOAD_PERM(0), 256), var[0x93, 0, -1]]) {
+	128: return string(STR_GENERIC_D0B3);
+	return string(STR_GENERIC_D0B0);
+}
+
+CHECK_OPENING(action2_5302, 0, -1)
+
+
+switch(FEAT_INDUSTRIES, SELF, action2_5303, [STORE_TEMP(-701265, 256), 32928]) {
+	return;
+}
+
+SWITCH_COLOUR_SCHEME1(action2_5306)
+
+switch(FEAT_INDUSTRIES, SELF, switch_main_oil_refinery, current_callback) {
+	0: action2_5288;
+	IND_CB_LOCATION_CHECK: action2_5286;
+	IND_CB_AVAILABILITY: action2_5302;
+	IND_CB_COLOUR: action2_5306;
+	IND_CB_EXTRA_TEXT_FUND: action2_5303;
+	IND_CB_RANDOM_PROD_CHANGE: action2_5290;
+	IND_CB_MONTHLY_PROD_CHANGE: action2_5297;
+	IND_CB_EXTRA_TEXT_INDUSTRY: action2_5298;
+	action2_5287;
+}
+
+item(FEAT_INDUSTRIES, oil_refinery, 4) {
+	graphics {
+		switch_main_oil_refinery;
+	}
+}
+
+item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_100, 100) {
+	property {
+		substitute: 100;
+		override: 100;
+		callback_flags: 0;
+		accepted_cargos: [[ENSP, 8]];
+	}
+}
+
+item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_101, 101) {
+	property {
+		substitute: 101;
+		override: 101;
+		accepted_cargos: [[ENSP, 8]];
+		callback_flags: 0;
+	}
+}
+
+item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_102, 102) {
+	property {
+		substitute: 102;
+		override: 102;
+		accepted_cargos: [[ENSP, 8]];
+		callback_flags: 0;
+	}
+}
+
+item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_103, 103) {
+	property {
+		substitute: 103;
+		override: 103;
+		accepted_cargos: [[ENSP, 8]];
+		callback_flags: 0;
+	}
+}
+
+item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_104, 104) {
+	property {
+		substitute: 104;
+		override: 104;
+		accepted_cargos: [[ENSP, 8]];
+		callback_flags: 0;
+	}
+}
+
+item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_105, 105) {
+	property {
+		substitute: 105;
+		override: 105;
+		accepted_cargos: [[ENSP, 8]];
+		callback_flags: 0;
+	}
+}
+
+item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_106, 106) {
+	property {
+		substitute: 106;
+		override: 106;
+		accepted_cargos: [[ENSP, 8]];
+		callback_flags: 0;
+	}
+}
+
+item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_107, 107) {
+	property {
+		substitute: 107;
+		override: 107;
+		accepted_cargos: [[ENSP, 8]];
+		callback_flags: 0;
+	}
+}
+
+item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_108, 108) {
+	property {
+		substitute: 108;
+		override: 108;
+		accepted_cargos: [[ENSP, 8]];
+		callback_flags: 0;
+	}
+}
+
+item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_109, 109) {
+	property {
+		substitute: 109;
+		override: 109;
+		accepted_cargos: [[ENSP, 8]];
+		callback_flags: 0;
+	}
+}
+
+item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_110, 110) {
+	property {
+		substitute: 110;
+		override: 110;
+		accepted_cargos: [[ENSP, 8]];
+		callback_flags: 0;
+	}
+}
+
+item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_111, 111) {
+	property {
+		substitute: 111;
+		override: 111;
+		accepted_cargos: [[ENSP, 8]];
+		callback_flags: 0;
+	}
+}
+
+item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_112, 112) {
+	property {
+		substitute: 112;
+		override: 112;
+		accepted_cargos: [[ENSP, 8]];
+		callback_flags: 0;
+	}
+}
+
+item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_113, 113) {
+	property {
+		substitute: 113;
+		override: 113;
+		accepted_cargos: [[ENSP, 8]];
+		callback_flags: 0;
+	}
+}
+
+item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_114, 114) {
+	property {
+		substitute: 114;
+		override: 114;
+		accepted_cargos: [[ENSP, 8]];
+		callback_flags: 0;
+	}
+}
+
+item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_115, 115) {
+	property {
+		substitute: 115;
+		override: 115;
+		accepted_cargos: [[ENSP, 8]];
+		callback_flags: 0;
+	}
+}
