@@ -40,7 +40,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3647, industry_distance(cement_plant)) {
 	action2_3646;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3648, industry_distance(item_FEAT_INDUSTRIES_7)) {
+switch(FEAT_INDUSTRIES, SELF, action2_3648, industry_distance(steelmill)) {
 	0..16: return 4;
 	action2_3647;
 }

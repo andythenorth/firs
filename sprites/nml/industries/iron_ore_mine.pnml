@@ -30,7 +30,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_5283, STORE_TEMP(-1, 256)) {
 	action2_5282;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_5284, industry_distance(item_FEAT_INDUSTRIES_7)) {
+switch(FEAT_INDUSTRIES, SELF, action2_5284, industry_distance(steelmill)) {
 	0..16: return 4;
 	action2_5283;
 }

@@ -1,0 +1,330 @@
+/*
+ * This file is part of FIRS industry set.
+ * FIRS industry set is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 2.
+ * FIRS industry set is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS industry set. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+
+item(FEAT_INDUSTRIES, steelmill, 7) {
+	property {
+		substitute: 8;
+		override: 8;
+		nearby_station_name: string(STR_STATIONNAME_MILLS);
+		accept_cargo_types: [IORE, 1, 20];
+		input_multiplier_1: [0, 0];
+		input_multiplier_2: [0, 0];
+		input_multiplier_3: [0, 0];
+		conflicting_ind_types: [];
+		prob_random: 5;
+		prob_in_game: 2;
+		fund_cost_multiplier: 200;
+		map_colour: 9;
+		callback_flags: 445;
+	}
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7407, industry_distance(steelmill)) {
+	0..56: return 1025;
+	return 1024;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7408, industry_distance(coal_mine)) {
+	0..16: return 4;
+	action2_7407;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7409, industry_distance(iron_ore_mine)) {
+	0..16: return 4;
+	action2_7408;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7410, industry_distance(junkyard)) {
+	0..16: return 4;
+	action2_7409;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7411, founder) {
+	16: action2_7410;
+	return 1024;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7412, game_mode) {
+	1: action2_7411;
+	return 1024;
+}
+
+produce(action2_7413, LOAD_TEMP(7), LOAD_TEMP(8), LOAD_TEMP(9), LOAD_TEMP(10), LOAD_TEMP(11), LOAD_TEMP(0));
+
+switch(FEAT_INDUSTRIES, SELF, action2_7414, [STORE_TEMP(0, 0), 1]) {
+	0: action2_7413;
+	action2_7413;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7415, [STORE_TEMP(STORE_PERM(STORE_TEMP(STORE_PERM(0, 11), 11), 10), 10), 1]) {
+	0: action2_7414;
+	action2_7414;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7416, [STORE_TEMP(STORE_PERM(0, 11), 11), STORE_TEMP(STORE_PERM(LOAD_TEMP(10), 10), 10)]) {
+	0: action2_7414;
+	action2_7414;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7417, STORE_TEMP(STORE_PERM(STORE_TEMP(STORE_PERM(max((LOAD_TEMP(10) / 1), 1), 10), 10), 11), 11)) {
+	0: action2_7414;
+	action2_7414;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7418, 1) {
+	2: action2_7417;
+	action2_7416;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7419, STORE_TEMP(((LOAD_PERM(4) + LOAD_PERM(5)) + LOAD_PERM(6)), 10)) {
+	0: action2_7415;
+	action2_7418;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7420, [STORE_TEMP(((LOAD_PERM(6) / LOAD_PERM(12)) * 8), 9), STORE_TEMP(STORE_PERM(((var[0x42, 0, -1] - LOAD_TEMP(9)) + LOAD_TEMP(9)), 9), 9)]) {
+	0: action2_7419;
+	action2_7419;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7421, [STORE_TEMP(((LOAD_PERM(5) / LOAD_PERM(12)) * 8), 8), STORE_TEMP(STORE_PERM(((var[0x41, 0, -1] - LOAD_TEMP(8)) + LOAD_TEMP(8)), 8), 8)]) {
+	0: action2_7420;
+	action2_7420;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7422, [STORE_TEMP(((LOAD_PERM(4) / LOAD_PERM(12)) * 8), 7), STORE_TEMP(STORE_PERM(((var[0x40, 0, -1] - LOAD_TEMP(7)) + LOAD_TEMP(7)), 7), 7)]) {
+	0: action2_7421;
+	action2_7421;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7423, STORE_PERM(max(min(((var[0x42, 0, -1] / 8) * LOAD_PERM(12)), LOAD_PERM(0)), 1), 6)) {
+	0: action2_7422;
+	action2_7422;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7424, [STORE_PERM(0, 6), var[0x42, 0, -1]]) {
+	0: action2_7422;
+	action2_7423;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7425, STORE_PERM(max(min(((var[0x41, 0, -1] / 8) * LOAD_PERM(12)), LOAD_PERM(0)), 1), 5)) {
+	0: action2_7424;
+	action2_7424;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7426, [STORE_PERM(0, 5), var[0x41, 0, -1]]) {
+	0: action2_7424;
+	action2_7425;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7427, STORE_PERM(max(min(((var[0x40, 0, -1] / 8) * LOAD_PERM(12)), LOAD_PERM(0)), 1), 4)) {
+	0: action2_7426;
+	action2_7426;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7428, [STORE_PERM(0, 4), var[0x40, 0, -1]]) {
+	0: action2_7426;
+	action2_7427;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7429, STORE_PERM((((0 + LOAD_PERM(1)) + LOAD_PERM(2)) + LOAD_PERM(3)), 12)) {
+	0: action2_7428;
+	action2_7428;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7430, [STORE_PERM(0, 3), 1]) {
+	0: action2_7429;
+	action2_7429;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7431, [STORE_PERM(2, 3), STORE_PERM((1 + LOAD_PERM(15)), 15)]) {
+	0: action2_7429;
+	action2_7429;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7432, LOAD_PERM(15)) {
+	0..7: action2_7431;
+	action2_7430;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7433, [STORE_PERM(0, 15), 1]) {
+	0: action2_7431;
+	action2_7431;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7434, waiting_cargo_3) {
+	0: action2_7432;
+	action2_7433;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7435, [STORE_PERM(0, 2), 1]) {
+	0: action2_7434;
+	action2_7434;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7436, [STORE_PERM(4, 2), STORE_PERM((1 + LOAD_PERM(14)), 14)]) {
+	0: action2_7434;
+	action2_7434;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7437, LOAD_PERM(14)) {
+	0..7: action2_7436;
+	action2_7435;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7438, [STORE_PERM(0, 14), 1]) {
+	0: action2_7436;
+	action2_7436;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7439, waiting_cargo_2) {
+	0: action2_7437;
+	action2_7438;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7440, [STORE_PERM(0, 1), 1]) {
+	0: action2_7439;
+	action2_7439;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7441, [STORE_PERM(2, 1), STORE_PERM((1 + LOAD_PERM(13)), 13)]) {
+	0: action2_7439;
+	action2_7439;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7442, LOAD_PERM(13)) {
+	0..7: action2_7441;
+	action2_7440;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7443, [STORE_PERM(0, 13), 1]) {
+	0: action2_7441;
+	action2_7441;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7444, waiting_cargo_1) {
+	0: action2_7442;
+	action2_7443;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7445, STORE_TEMP((rotate((LOAD_PERM(15) & 65535), 16) | (LOAD_PERM(14) & 65535)), 261)) {
+	0: return string(STR_INFO_DEBUG_PRODUCTION_CONTRIBUTION);
+	return string(STR_INFO_DEBUG_PRODUCTION_CONTRIBUTION);
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7446, STORE_TEMP((rotate((LOAD_PERM(13) & 65535), 16) | (LOAD_PERM(12) & 65535)), 260)) {
+	0: action2_7445;
+	action2_7445;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7447, STORE_TEMP((rotate((LOAD_PERM(11) & 65535), 16) | (LOAD_PERM(10) & 65535)), 259)) {
+	0: action2_7446;
+	action2_7446;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7448, STORE_TEMP((rotate((LOAD_PERM(9) & 65535), 16) | (LOAD_PERM(8) & 65535)), 258)) {
+	0: action2_7447;
+	action2_7447;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7449, STORE_TEMP((rotate((LOAD_PERM(7) & 65535), 16) | (LOAD_PERM(3) & 65535)), 257)) {
+	0: action2_7448;
+	action2_7448;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7450, STORE_TEMP((rotate((LOAD_PERM(2) & 65535), 16) | (LOAD_PERM(1) & 65535)), 256)) {
+	0: action2_7449;
+	action2_7449;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7451, show_debug_texts) {
+	1: action2_7450;
+	return string(STR_GENERIC_D007);
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_7452, STORE_PERM((65535 / 3), 0)) {
+	0: action2_7444;
+	action2_7444;
+}
+
+CHECK_OPENING(action2_7455, 1874, -1)
+
+switch(FEAT_INDUSTRIES, SELF, action2_7456, [STORE_TEMP((684100 - 701265), 256), 32933]) {
+	return;
+}
+
+SWITCH_COLOUR_SCHEME1(action2_7459)
+
+SET_PRODUCTION_COUNTER_PRODUCED(action2_7462)
+
+CHECK_CLOSE_SECONDARY(action2_7465)
+
+switch(FEAT_INDUSTRIES, SELF, action2_7466, current_callback) {
+	0: action2_7452;
+	IND_CB_LOCATION_CHECK: action2_7412;
+	IND_CB_AVAILABILITY: action2_7455;
+	IND_CB_COLOUR: action2_7459;
+	IND_CB_EXTRA_TEXT_FUND: action2_7456;
+	IND_CB_RANDOM_PROD_CHANGE: action2_7465;
+	IND_CB_MONTHLY_PROD_CHANGE: action2_7462;
+	IND_CB_EXTRA_TEXT_INDUSTRY: action2_7451;
+	action2_7414;
+}
+
+item(FEAT_INDUSTRIES, steelmill, 7) {
+	graphics {
+		action2_7466;
+	}
+}
+
+item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_52, 52) {
+	property {
+		substitute: 52;
+		override: 52;
+		accepted_cargos: [[IORE, 8], [SCRP, 8], [COAL, 8]];
+	}
+}
+
+item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_53, 53) {
+	property {
+		substitute: 53;
+		override: 53;
+		accepted_cargos: [[IORE, 8], [SCRP, 8], [COAL, 8]];
+	}
+}
+
+item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_54, 54) {
+	property {
+		substitute: 54;
+		override: 54;
+		accepted_cargos: [[IORE, 8], [SCRP, 8], [COAL, 8]];
+	}
+}
+
+item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_55, 55) {
+	property {
+		substitute: 55;
+		override: 55;
+		accepted_cargos: [[IORE, 8], [SCRP, 8], [COAL, 8]];
+	}
+}
+
+item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_56, 56) {
+	property {
+		substitute: 56;
+		override: 56;
+		accepted_cargos: [[IORE, 8], [SCRP, 8], [COAL, 8]];
+	}
+}
+
+item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_57, 57) {
+	property {
+		substitute: 57;
+		override: 57;
+		accepted_cargos: [[IORE, 8], [SCRP, 8], [COAL, 8]];
+	}
+}
