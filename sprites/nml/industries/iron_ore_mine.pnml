@@ -1,5 +1,5 @@
 
-item(FEAT_INDUSTRIES, oil_refinery, 4) {
+item(FEAT_INDUSTRIES, iron_ore_mine, 4) {
 	property {
 		substitute: 18;
 		override: 18;
@@ -15,7 +15,7 @@ item(FEAT_INDUSTRIES, oil_refinery, 4) {
 	}
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_5281, industry_distance(oil_refinery)) {
+switch(FEAT_INDUSTRIES, SELF, action2_5281, industry_distance(iron_ore_mine)) {
 	20..70: return 1024;
 	return 4;
 }
@@ -112,7 +112,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_5303, [STORE_TEMP(-701265, 256), 32928]) {
 
 SWITCH_COLOUR_SCHEME1(action2_5306)
 
-switch(FEAT_INDUSTRIES, SELF, switch_main_oil_refinery, current_callback) {
+switch(FEAT_INDUSTRIES, SELF, switch_main_iron_ore_mine, current_callback) {
 	0: action2_5288;
 	IND_CB_LOCATION_CHECK: action2_5286;
 	IND_CB_AVAILABILITY: action2_5302;
@@ -124,9 +124,9 @@ switch(FEAT_INDUSTRIES, SELF, switch_main_oil_refinery, current_callback) {
 	action2_5287;
 }
 
-item(FEAT_INDUSTRIES, oil_refinery, 4) {
+item(FEAT_INDUSTRIES, iron_ore_mine, 4) {
 	graphics {
-		switch_main_oil_refinery;
+		switch_main_iron_ore_mine;
 	}
 }
 

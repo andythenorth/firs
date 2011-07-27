@@ -1736,7 +1736,7 @@ item(FEAT_INDUSTRIES, iron_works, 21) {
 	}
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_5447, industry_distance(oil_refinery)) {
+switch(FEAT_INDUSTRIES, SELF, action2_5447, industry_distance(iron_ore_mine)) {
 	16..60: return 1024;
 	return 4;
 }

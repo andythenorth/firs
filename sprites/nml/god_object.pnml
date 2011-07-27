@@ -916,7 +916,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_7408, industry_distance(coal_mine)) {
 	action2_7407;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7409, industry_distance(oil_refinery)) {
+switch(FEAT_INDUSTRIES, SELF, action2_7409, industry_distance(iron_ore_mine)) {
 	0..16: return 4;
 	action2_7408;
 }
