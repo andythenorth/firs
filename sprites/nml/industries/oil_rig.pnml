@@ -31,7 +31,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6478, 1) {
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6479, industry_distance(refinery)) {
+switch(FEAT_INDUSTRIES, SELF, action2_6479, industry_distance(oil_refinery)) {
 	0..16: return 4;
 	action2_6478;
 }

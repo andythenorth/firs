@@ -1,0 +1,257 @@
+/*
+ * This file is part of FIRS industry set.
+ * FIRS industry set is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 2.
+ * FIRS industry set is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS industry set. If not, see <http://www.gnu.org/licenses/>.
+ */
+ 
+
+item(FEAT_INDUSTRIES, oil_refinery, 17) {
+	property {
+		substitute: 4;
+		override: 4;
+		nearby_station_name: string(STR_STATIONNAME_CHEMICALS);
+		prod_cargo_types: [RFPR, PETR];
+		accept_cargo_types: [OIL_];
+		input_multiplier_1: [0, 0];
+		input_multiplier_2: [0, 0];
+		input_multiplier_3: [0, 0];
+		conflicting_ind_types: [];
+		prob_random: 4;
+		prob_in_game: 2;
+		fund_cost_multiplier: 200;
+		map_colour: 191;
+		callback_flags: 445;
+	}
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6510, industry_distance(oil_refinery)) {
+	0..56: return 1025;
+	return 1024;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6511, industry_distance(oil_wells)) {
+	0..16: return 4;
+	action2_6510;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6512, industry_distance(oil_rig)) {
+	0..16: return 4;
+	action2_6511;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6513, founder) {
+	16: action2_6512;
+	return 1024;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6514, game_mode) {
+	1: action2_6513;
+	return 1024;
+}
+
+produce(action2_6515, LOAD_TEMP(7), LOAD_TEMP(8), LOAD_TEMP(9), LOAD_TEMP(10), LOAD_TEMP(11), LOAD_TEMP(0));
+
+switch(FEAT_INDUSTRIES, SELF, action2_6516, [STORE_TEMP(0, 0), 1]) {
+	0: action2_6515;
+	action2_6515;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6517, [STORE_TEMP(STORE_PERM(STORE_TEMP(STORE_PERM(0, 11), 11), 10), 10), 1]) {
+	0: action2_6516;
+	action2_6516;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6518, [STORE_TEMP(STORE_PERM(0, 11), 11), STORE_TEMP(STORE_PERM(LOAD_TEMP(10), 10), 10)]) {
+	0: action2_6516;
+	action2_6516;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6519, STORE_TEMP(STORE_PERM(STORE_TEMP(STORE_PERM(max((LOAD_TEMP(10) / 2), 1), 10), 10), 11), 11)) {
+	0: action2_6516;
+	action2_6516;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6520, 2) {
+	2: action2_6519;
+	action2_6518;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6521, STORE_TEMP(((LOAD_PERM(4) + LOAD_PERM(5)) + LOAD_PERM(6)), 10)) {
+	0: action2_6517;
+	action2_6520;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6522, [STORE_TEMP(((LOAD_PERM(6) / LOAD_PERM(12)) * 8), 9), STORE_TEMP(STORE_PERM(((var[0x42, 0, -1] - LOAD_TEMP(9)) + LOAD_TEMP(9)), 9), 9)]) {
+	0: action2_6521;
+	action2_6521;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6523, [STORE_TEMP(((LOAD_PERM(5) / LOAD_PERM(12)) * 8), 8), STORE_TEMP(STORE_PERM(((var[0x41, 0, -1] - LOAD_TEMP(8)) + LOAD_TEMP(8)), 8), 8)]) {
+	0: action2_6522;
+	action2_6522;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6524, [STORE_TEMP(((LOAD_PERM(4) / LOAD_PERM(12)) * 8), 7), STORE_TEMP(STORE_PERM(((var[0x40, 0, -1] - LOAD_TEMP(7)) + LOAD_TEMP(7)), 7), 7)]) {
+	0: action2_6523;
+	action2_6523;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6525, STORE_PERM(max(min(((var[0x42, 0, -1] / 8) * LOAD_PERM(3)), LOAD_PERM(0)), 1), 6)) {
+	0: action2_6524;
+	action2_6524;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6526, [STORE_PERM(0, 6), var[0x42, 0, -1]]) {
+	0: action2_6524;
+	action2_6525;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6527, STORE_PERM(max(min(((var[0x41, 0, -1] / 8) * LOAD_PERM(2)), LOAD_PERM(0)), 1), 5)) {
+	0: action2_6526;
+	action2_6526;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6528, [STORE_PERM(0, 5), var[0x41, 0, -1]]) {
+	0: action2_6526;
+	action2_6527;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6529, STORE_PERM(max(min(((var[0x40, 0, -1] / 8) * LOAD_PERM(1)), LOAD_PERM(0)), 1), 4)) {
+	0: action2_6528;
+	action2_6528;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6530, [STORE_PERM(0, 4), var[0x40, 0, -1]]) {
+	0: action2_6528;
+	action2_6529;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6531, STORE_PERM(1, 3)) {
+	0: action2_6530;
+	action2_6530;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6532, STORE_PERM(1, 2)) {
+	0: action2_6531;
+	action2_6531;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6533, STORE_PERM(6, 1)) {
+	0: action2_6532;
+	action2_6532;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6534, STORE_TEMP(LOAD_PERM(0), 260)) {
+	0: return string(STR_INFO_DEBUG_PRODUCTION_RATIO);
+	return string(STR_INFO_DEBUG_PRODUCTION_RATIO);
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6535, STORE_TEMP((rotate((LOAD_PERM(11) & 65535), 16) | (LOAD_PERM(10) & 65535)), 259)) {
+	0: action2_6534;
+	action2_6534;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6536, STORE_TEMP((rotate((LOAD_PERM(9) & 65535), 16) | (LOAD_PERM(8) & 65535)), 258)) {
+	0: action2_6535;
+	action2_6535;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6537, STORE_TEMP((rotate((LOAD_PERM(7) & 65535), 16) | (LOAD_PERM(3) & 65535)), 257)) {
+	0: action2_6536;
+	action2_6536;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6538, STORE_TEMP((rotate((LOAD_PERM(2) & 65535), 16) | (LOAD_PERM(1) & 65535)), 256)) {
+	0: action2_6537;
+	action2_6537;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6539, show_debug_texts) {
+	1: action2_6538;
+	return string(STR_GENERIC_D011);
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6540, STORE_PERM((65535 / 1), 0)) {
+	0: action2_6533;
+	action2_6533;
+}
+
+CHECK_OPENING(action2_6543, 1885, -1)
+
+switch(FEAT_INDUSTRIES, SELF, action2_6544, [STORE_TEMP((688117 - 701265), 256), 32933]) {
+	return;
+}
+
+SWITCH_COLOUR_SCHEME1(action2_6547)
+
+SET_PRODUCTION_COUNTER_PRODUCED(action2_6550)
+
+CHECK_CLOSE_SECONDARY(action2_6553)
+
+switch(FEAT_INDUSTRIES, SELF, action2_6554, current_callback) {
+	0: action2_6540;
+	IND_CB_LOCATION_CHECK: action2_6514;
+	IND_CB_AVAILABILITY: action2_6543;
+	IND_CB_COLOUR: action2_6547;
+	IND_CB_EXTRA_TEXT_FUND: action2_6544;
+	IND_CB_RANDOM_PROD_CHANGE: action2_6553;
+	IND_CB_MONTHLY_PROD_CHANGE: action2_6550;
+	IND_CB_EXTRA_TEXT_INDUSTRY: action2_6539;
+	action2_6516;
+}
+
+item(FEAT_INDUSTRIES, oil_refinery, 17) {
+	graphics {
+		action2_6554;
+	}
+}
+
+item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_18, 18) {
+	property {
+		substitute: 18;
+		override: 18;
+		accepted_cargos: [[OIL_, 8], [0, 0], [0, 0]];
+	}
+}
+
+item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_19, 19) {
+	property {
+		substitute: 19;
+		override: 19;
+		accepted_cargos: [[OIL_, 8], [0, 0], [0, 0]];
+	}
+}
+
+item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_20, 20) {
+	property {
+		substitute: 20;
+		override: 20;
+		accepted_cargos: [[OIL_, 8], [0, 0], [0, 0]];
+	}
+}
+
+item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_21, 21) {
+	property {
+		substitute: 21;
+		override: 21;
+		accepted_cargos: [[OIL_, 8], [0, 0], [0, 0]];
+	}
+}
+
+item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_22, 22) {
+	property {
+		substitute: 22;
+		override: 22;
+		accepted_cargos: [[OIL_, 8], [0, 0], [0, 0]];
+	}
+}
+
+item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_23, 23) {
+	property {
+		substitute: 23;
+		override: 23;
+		accepted_cargos: [[OIL_, 8], [0, 0], [0, 0]];
+	}
+}
+
