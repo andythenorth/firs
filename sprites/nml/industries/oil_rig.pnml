@@ -1,0 +1,136 @@
+/*
+ * This file is part of FIRS industry set.
+ * FIRS industry set is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 2.
+ * FIRS industry set is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS industry set. If not, see <http://www.gnu.org/licenses/>.
+ */
+ 
+item(FEAT_INDUSTRIES, oil_rig, 16) {
+	property {
+		substitute: 5;
+		override: 5;
+		name: 18439;
+		prod_cargo_types: [OIL_, PASS];
+		accept_cargo_types: [ENSP];
+		prod_multiplier: [20, 2];
+		input_multiplier_1: [0, 0];
+		input_multiplier_2: [0, 0];
+		input_multiplier_3: [0, 0];
+		conflicting_ind_types: [];
+		prob_random: 6;
+		prob_in_game: 6;
+		prospect_chance: 0.749999999942;
+		fund_cost_multiplier: 255;
+		map_colour: 152;
+		callback_flags: 1467;
+	}
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6478, 1) {
+	1: return 1024;
+	return 1024;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6479, industry_distance(refinery)) {
+	0..16: return 4;
+	action2_6478;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6480, UCMP(var[0x8B, 0, 65535], param_max_coastal_distance)) {
+	2: return 4;
+	action2_6479;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6481, founder) {
+	16: action2_6480;
+	return 1024;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6482, game_mode) {
+	1: action2_6481;
+	return 1024;
+}
+
+produce(action2_6483, 9999, 0, 0, 0, 0, 0);
+
+switch(FEAT_INDUSTRIES, SELF, action2_6484, STORE_PERM((var[0x40, 0, -1] + LOAD_PERM(0)), 0)) {
+	0: action2_6483;
+	action2_6483;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6485, var[0x93, 0, -1]) {
+	0..4: return 3;
+	return 0;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6486, allow_close_primary) {
+	1..255: action2_6485;
+	return 0;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6487, (extra_callback_info2 & 31)) {
+	0: return 13;
+	return 0;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6488, (extra_callback_info2 & 3)) {
+	0: return 13;
+	return 0;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6489, STORE_PERM(var[0x93, 0, -1], 2)) {
+	0..4: return 0;
+	5..32: action2_6487;
+	action2_6488;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6490, allow_primary_production_decrease) {
+	1..255: action2_6489;
+	return 0;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6491, (extra_callback_info2 & 3)) {
+	0: return 14;
+	return 0;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6492, [STORE_PERM(0, 0), LOAD_TEMP(1)]) {
+	1..-1: action2_6491;
+	action2_6490;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6493, STORE_TEMP(LOAD_PERM(0), 1)) {
+	0: action2_6492;
+	action2_6492;
+}
+
+switch(FEAT_INDUSTRIES, SELF, action2_6494, [STORE_TEMP(LOAD_PERM(0), 256), var[0x93, 0, -1]]) {
+	128: return string(STR_GENERIC_D0B3);
+	return string(STR_GENERIC_D0B0);
+}
+
+CHECK_OPENING(action2_6498, 1968, -1)
+
+switch(FEAT_INDUSTRIES, SELF, action2_6499, [STORE_TEMP((718432 - 701265), 256), 32933]) {
+	return;
+}
+
+SWITCH_COLOUR_SCHEME1(action2_6502)
+
+switch(FEAT_INDUSTRIES, SELF, action2_6503, current_callback) {
+	0: action2_6484;
+	IND_CB_LOCATION_CHECK: action2_6482;
+	IND_CB_AVAILABILITY: action2_6498;
+	IND_CB_COLOUR: action2_6502;
+	IND_CB_EXTRA_TEXT_FUND: action2_6499;
+	IND_CB_RANDOM_PROD_CHANGE: action2_6486;
+	IND_CB_MONTHLY_PROD_CHANGE: action2_6493;
+	IND_CB_EXTRA_TEXT_INDUSTRY: action2_6494;
+	action2_6483;
+}
+
+item(FEAT_INDUSTRIES, oil_rig, 16) {
+	graphics {
+		action2_6503;
+	}
+}
