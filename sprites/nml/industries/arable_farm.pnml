@@ -1,3 +1,11 @@
+/*
+ * This file is part of FIRS industry set.
+ * FIRS industry set is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 2.
+ * FIRS industry set is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS industry set. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+#define IND_ID(...) arable_farm ## __VA_ARGS__
 
 item(FEAT_INDUSTRYTILES, tile_arable_farm, 160) {
 	property {
@@ -276,12 +284,7 @@ switch(FEAT_INDUSTRIES, SELF, switch_arable_farm_cb_location_check, game_mode) {
 	return 1024;
 }
 
-produce(switch_arable_farm_production, 9999, 0, 0, 0, 0, 0);
-
-switch(FEAT_INDUSTRIES, SELF, switch_arable_farm_cb_production, STORE_PERM((var[0x40, 0, -1] + LOAD_PERM(0)), 0)) {
-	0: switch_arable_farm_production;
-	switch_arable_farm_production;
-}
+#include "../templates/produce_primary.pnml"
 
 switch(FEAT_INDUSTRIES, SELF, action2_2735, var[0x93, 0, -1]) {
 	0..4: return 3;
@@ -343,7 +346,7 @@ switch(FEAT_INDUSTRIES, SELF, switch_arable_farm_cb_text_fund, [STORE_TEMP(-7012
 SWITCH_COLOUR_SCHEME1(switch_arable_farm_cb_colour)
 
 switch(FEAT_INDUSTRIES, SELF, switch_main_arable_farm, current_callback) {
-	0: switch_arable_farm_cb_production;
+	0: IND_ID(produce);
 	IND_CB_LOCATION_CHECK: switch_arable_farm_cb_location_check;
 	IND_CB_AVAILABILITY: switch_arable_farm_cb_availability;
 	IND_CB_COLOUR: switch_arable_farm_cb_colour;
@@ -351,7 +354,7 @@ switch(FEAT_INDUSTRIES, SELF, switch_main_arable_farm, current_callback) {
 	IND_CB_RANDOM_PROD_CHANGE: switch_arable_farm_cb_random_production;
 	IND_CB_MONTHLY_PROD_CHANGE: switch_arable_farm_cb_monthly_production;
 	IND_CB_EXTRA_TEXT_INDUSTRY: switch_arable_farm_cb_text_industry;
-	switch_arable_farm_production;
+	IND_ID(produce);
 }
 
 item(FEAT_INDUSTRIES, arable_farm, 26) {
@@ -359,3 +362,5 @@ item(FEAT_INDUSTRIES, arable_farm, 26) {
 		switch_main_arable_farm;
 	}
 }
+
+#include "../templates/undefs.pnml"
