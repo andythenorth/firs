@@ -1,11 +1,10 @@
 // parameters also referenced by action 14 stuff - likely to be found in header.pnml, unless it got moved
 
-//map_size is log2 of the length of both map sides
-//We compute the number of tiles on the map divided
-//by the number of tiles on a 512*512 map.
-param[11] = (1 << map_size) / (512 * 512);
-
-industry_clusters = (param[11] * 2) + 1;
+// map_size is total number of tiles on the map
+// compute relative size of the map, compared to 256*256
+relative_map_size = map_size / (256 * 256);
+// number of industry closures is proportional to map size
+industry_clusters = (relative_map_size / 2) + 1;
 
 
 param_max_coastal_distance = marine_industry_max_coastal_distance;
