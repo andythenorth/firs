@@ -1,5 +1,6 @@
+#define IND_ID(...) iron_ore_mine ## __VA_ARGS__
 
-item(FEAT_INDUSTRIES, iron_ore_mine, 4) {
+item(FEAT_INDUSTRIES, IND_ID(), 4) {
 	property {
 		substitute: 18;
 		override: 18;
@@ -15,7 +16,7 @@ item(FEAT_INDUSTRIES, iron_ore_mine, 4) {
 	}
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_5281, industry_distance(iron_ore_mine)) {
+switch(FEAT_INDUSTRIES, SELF, action2_5281, industry_distance(IND_ID())) {
 	20..70: return 1024;
 	return 4;
 }
@@ -45,12 +46,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_5286, game_mode) {
 	return 1024;
 }
 
-produce(action2_5287, 9999, 0, 0, 0, 0, 0);
-
-switch(FEAT_INDUSTRIES, SELF, action2_5288, STORE_PERM((var[0x40, 0, -1] + LOAD_PERM(0)), 0)) {
-	0: action2_5287;
-	action2_5287;
-}
+#include "../templates/produce_primary.pnml"
 
 switch(FEAT_INDUSTRIES, SELF, action2_5289, var[0x93, 0, -1]) {
 	0..4: return 3;
@@ -113,7 +109,6 @@ switch(FEAT_INDUSTRIES, SELF, action2_5303, [STORE_TEMP(-701265, 256), 32928]) {
 SWITCH_COLOUR_SCHEME1(action2_5306)
 
 switch(FEAT_INDUSTRIES, SELF, switch_main_iron_ore_mine, current_callback) {
-	0: action2_5288;
 	IND_CB_LOCATION_CHECK: action2_5286;
 	IND_CB_AVAILABILITY: action2_5302;
 	IND_CB_COLOUR: action2_5306;
@@ -121,7 +116,7 @@ switch(FEAT_INDUSTRIES, SELF, switch_main_iron_ore_mine, current_callback) {
 	IND_CB_RANDOM_PROD_CHANGE: action2_5290;
 	IND_CB_MONTHLY_PROD_CHANGE: action2_5297;
 	IND_CB_EXTRA_TEXT_INDUSTRY: action2_5298;
-	action2_5287;
+	IND_ID(produce);
 }
 
 item(FEAT_INDUSTRIES, iron_ore_mine, 4) {
@@ -273,3 +268,5 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_115, 115) {
 		callback_flags: 0;
 	}
 }
+
+#undef IND_ID
