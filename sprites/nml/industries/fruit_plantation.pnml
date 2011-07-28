@@ -1,3 +1,12 @@
+/*
+ * This file is part of FIRS industry set.
+ * FIRS industry set is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 2.
+ * FIRS industry set is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS industry set. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+#define IND_ID(...) fruit_plantation ## __VA_ARGS__
+
 item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_207, 207) {
 	property {
 		substitute: 0;
@@ -5349,12 +5358,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_4813, game_mode) {
 	return 1024;
 }
 
-produce(action2_4814, 9999, 0, 0, 0, 0, 0);
-
-switch(FEAT_INDUSTRIES, SELF, action2_4815, STORE_PERM((var[0x40, 0, -1] + LOAD_PERM(0)), 0)) {
-	0: action2_4814;
-	action2_4814;
-}
+#include "../templates/produce_primary.pnml"
 
 switch(FEAT_INDUSTRIES, SELF, action2_4816, var[0x93, 0, -1]) {
 	0..4: return 3;
@@ -5416,7 +5420,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_4830, [STORE_TEMP(-701265, 256), 32928]) {
 SWITCH_COLOUR_SCHEME1(action2_4833)
 
 switch(FEAT_INDUSTRIES, SELF, action2_4834, current_callback) {
-	0: action2_4815;
+	0: IND_ID(produce);
 	IND_CB_LOCATION_CHECK: action2_4813;
 	IND_CB_AVAILABILITY: action2_4829;
 	IND_CB_COLOUR: action2_4833;
@@ -5424,7 +5428,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_4834, current_callback) {
 	IND_CB_RANDOM_PROD_CHANGE: action2_4817;
 	IND_CB_MONTHLY_PROD_CHANGE: action2_4824;
 	IND_CB_EXTRA_TEXT_INDUSTRY: action2_4825;
-	action2_4814;
+	IND_ID(produce);
 }
 
 item(FEAT_INDUSTRIES, fruit_plantation, 30) {
@@ -5432,3 +5436,4 @@ item(FEAT_INDUSTRIES, fruit_plantation, 30) {
 		action2_4834;
 	}
 }
+#include "../templates/undefs.pnml"

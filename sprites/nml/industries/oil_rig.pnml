@@ -4,7 +4,10 @@
  * FIRS industry set is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS industry set. If not, see <http://www.gnu.org/licenses/>.
  */
- 
+
+#define IND_ID(...) oil_rig ## __VA_ARGS__
+
+
 item(FEAT_INDUSTRIES, oil_rig, 16) {
 	property {
 		substitute: 5;
@@ -51,12 +54,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6482, game_mode) {
 	return 1024;
 }
 
-produce(action2_6483, 9999, 0, 0, 0, 0, 0);
-
-switch(FEAT_INDUSTRIES, SELF, action2_6484, STORE_PERM((var[0x40, 0, -1] + LOAD_PERM(0)), 0)) {
-	0: action2_6483;
-	action2_6483;
-}
+#include "../templates/produce_primary.pnml"
 
 switch(FEAT_INDUSTRIES, SELF, action2_6485, var[0x93, 0, -1]) {
 	0..4: return 3;
@@ -118,7 +116,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6499, [STORE_TEMP((718432 - 701265), 256),
 SWITCH_COLOUR_SCHEME1(action2_6502)
 
 switch(FEAT_INDUSTRIES, SELF, action2_6503, current_callback) {
-	0: action2_6484;
+	0: IND_ID(produce);
 	IND_CB_LOCATION_CHECK: action2_6482;
 	IND_CB_AVAILABILITY: action2_6498;
 	IND_CB_COLOUR: action2_6502;
@@ -126,7 +124,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6503, current_callback) {
 	IND_CB_RANDOM_PROD_CHANGE: action2_6486;
 	IND_CB_MONTHLY_PROD_CHANGE: action2_6493;
 	IND_CB_EXTRA_TEXT_INDUSTRY: action2_6494;
-	action2_6483;
+	IND_ID(produce);
 }
 
 item(FEAT_INDUSTRIES, oil_rig, 16) {
@@ -171,4 +169,5 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_28, 28) {
 		callback_flags: 0;
 	}
 }
+#include "../templates/undefs.pnml"
 

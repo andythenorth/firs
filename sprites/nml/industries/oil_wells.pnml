@@ -5,6 +5,9 @@
  * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS industry set. If not, see <http://www.gnu.org/licenses/>.
  */
 
+#define IND_ID(...) oil_wells ## __VA_ARGS__
+
+
 item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_215, 215) {
 	property {
 		substitute: 0;
@@ -206,12 +209,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6598, game_mode) {
 	return 1024;
 }
 
-produce(action2_6599, 9999, 0, 0, 0, 0, 0);
-
-switch(FEAT_INDUSTRIES, SELF, action2_6600, STORE_PERM((var[0x40, 0, -1] + LOAD_PERM(0)), 0)) {
-	0: action2_6599;
-	action2_6599;
-}
+#include "../templates/produce_primary.pnml"
 
 switch(FEAT_INDUSTRIES, SELF, action2_6601, var[0x93, 0, -1]) {
 	0..4: return 3;
@@ -273,7 +271,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6615, [STORE_TEMP((688117 - 701265), 256),
 SWITCH_COLOUR_SCHEME1(action2_6618)
 
 switch(FEAT_INDUSTRIES, SELF, action2_6619, current_callback) {
-	0: action2_6600;
+	0: IND_ID(produce);
 	IND_CB_LOCATION_CHECK: action2_6598;
 	IND_CB_AVAILABILITY: action2_6614;
 	IND_CB_COLOUR: action2_6618;
@@ -281,7 +279,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6619, current_callback) {
 	IND_CB_RANDOM_PROD_CHANGE: action2_6602;
 	IND_CB_MONTHLY_PROD_CHANGE: action2_6609;
 	IND_CB_EXTRA_TEXT_INDUSTRY: action2_6610;
-	action2_6599;
+	IND_ID(produce);
 }
 
 item(FEAT_INDUSTRIES, oil_wells, 15) {
@@ -289,3 +287,4 @@ item(FEAT_INDUSTRIES, oil_wells, 15) {
 		action2_6619;
 	}
 }
+#include "../templates/undefs.pnml"
