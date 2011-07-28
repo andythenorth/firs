@@ -1,347 +1,229 @@
-spriteset(spriteset_2194) { 	[10, 10, 10, 10, 0, 0, 9, "sprites/graphics/other/cargoicons.png"] } 
-spriteset(spriteset_2195) { 	[30, 10, 10, 10, 0, 0, 9, "sprites/graphics/other/cargoicons.png"] } 
-spriteset(spriteset_2196) { 	[50, 10, 10, 10, 0, 0, 9, "sprites/graphics/other/cargoicons.png"] } 
-spriteset(spriteset_2197) { 	[70, 10, 10, 10, 0, 0, 9, "sprites/graphics/other/cargoicons.png"] } 
-spriteset(spriteset_2198) { 	[90, 10, 10, 10, 0, 0, 9, "sprites/graphics/other/cargoicons.png"] } 
-spriteset(spriteset_2199) { 	[110, 10, 10, 10, 0, 0, 9, "sprites/graphics/other/cargoicons.png"] } 
-spriteset(spriteset_2200) { 	[130, 10, 10, 10, 0, 0, 9, "sprites/graphics/other/cargoicons.png"] } 
-spriteset(spriteset_2201) { 	[150, 10, 10, 10, 0, 0, 9, "sprites/graphics/other/cargoicons.png"] } 
-spriteset(spriteset_2202) { 	[170, 10, 10, 10, 0, 0, 9, "sprites/graphics/other/cargoicons.png"] } 
-spriteset(spriteset_2203) { 	[190, 10, 10, 10, 0, 0, 9, "sprites/graphics/other/cargoicons.png"] } 
-spriteset(spriteset_2204) { 	[210, 10, 10, 10, 0, 0, 9, "sprites/graphics/other/cargoicons.png"] } 
-spriteset(spriteset_2205) { 	[230, 10, 10, 10, 0, 0, 9, "sprites/graphics/other/cargoicons.png"] } 
-spriteset(spriteset_2206) { 	[250, 10, 10, 10, 0, 0, 9, "sprites/graphics/other/cargoicons.png"] } 
-spriteset(spriteset_2207) { 	[270, 10, 10, 10, 0, 0, 9, "sprites/graphics/other/cargoicons.png"] } 
-spriteset(spriteset_2208) { 	[290, 10, 10, 10, 0, 0, 9, "sprites/graphics/other/cargoicons.png"] } 
-spriteset(spriteset_2209) { 	[310, 10, 10, 10, 0, 0, 9, "sprites/graphics/other/cargoicons.png"] } 
-spriteset(spriteset_2210) { 	[10, 30, 10, 10, 0, 0, 9, "sprites/graphics/other/cargoicons.png"] } 
-spriteset(spriteset_2211) { 	[30, 30, 10, 10, 0, 0, 9, "sprites/graphics/other/cargoicons.png"] } 
-spriteset(spriteset_2212) { 	[50, 30, 10, 10, 0, 0, 9, "sprites/graphics/other/cargoicons.png"] } 
-spriteset(spriteset_2213) { 	[70, 30, 10, 10, 0, 0, 9, "sprites/graphics/other/cargoicons.png"] } 
-spriteset(spriteset_2214) { 	[90, 30, 10, 10, 0, 0, 9, "sprites/graphics/other/cargoicons.png"] } 
-spriteset(spriteset_2215) { 	[110, 30, 10, 10, 0, 0, 9, "sprites/graphics/other/cargoicons.png"] } 
-spriteset(spriteset_2216) { 	[130, 30, 10, 10, 0, 0, 9, "sprites/graphics/other/cargoicons.png"] } 
-spriteset(spriteset_2217) { 	[150, 30, 10, 10, 0, 0, 9, "sprites/graphics/other/cargoicons.png"] } 
-spriteset(spriteset_2218) { 	[170, 30, 10, 10, 0, 0, 9, "sprites/graphics/other/cargoicons.png"] } 
-spriteset(spriteset_2219) { 	[190, 30, 10, 10, 0, 0, 9, "sprites/graphics/other/cargoicons.png"] } 
-spriteset(spriteset_2220) { 	[210, 30, 10, 10, 0, 0, 9, "sprites/graphics/other/cargoicons.png"] } 
-spriteset(spriteset_2221) { 	[230, 30, 10, 10, 0, 0, 9, "sprites/graphics/other/cargoicons.png"] } 
-spriteset(spriteset_2222) { 	[250, 30, 10, 10, 0, 0, 9, "sprites/graphics/other/cargoicons.png"] } 
-spriteset(spriteset_2223) { 	[270, 30, 10, 10, 0, 0, 9, "sprites/graphics/other/cargoicons.png"] } 
-spriteset(spriteset_2224) { 	[290, 30, 10, 10, 0, 0, 9, "sprites/graphics/other/cargoicons.png"] } 
-spriteset(spriteset_2225) { 	[310, 30, 10, 10, 0, 0, 9, "sprites/graphics/other/cargoicons.png"] } 
-spritegroup action2_2226 {
-	default: [spriteset_2194];
-}
+/* template for cargo icons
+ * cargoicon_id is the ID of the spriteset.
+ * x and y indices are zero-based indices in the cargo icons png file.
+ */
+#define cargo_icon_template(cargoicon_id, x_index, y_index) \
+spriteset(cargoicon_id) { [10 + 20 * x_index, 10 + 20 * y_index, 10, 10, 0, 0, TILE, "sprites/graphics/other/cargoicons.png"] }
 
-spritegroup action2_2227 {
-	default: [spriteset_2195];
-}
+cargo_icon_template(cargoicon_passenger,               0, 0)
+cargo_icon_template(cargoicon_coal,                    1, 0)
+cargo_icon_template(cargoicon_mail,                    2, 0)
+cargo_icon_template(cargoicon_oil,                     3, 0)
+cargo_icon_template(cargoicon_livestock,               4, 0)
+cargo_icon_template(cargoicon_goods,                   5, 0)
+cargo_icon_template(cargoicon_grain,                   6, 0)
+cargo_icon_template(cargoicon_alcohol,                 7, 0)
+cargo_icon_template(cargoicon_wood,                    8, 0)
+cargo_icon_template(cargoicon_iron_ore,                9, 0)
+cargo_icon_template(cargoicon_steel,                  10, 0)
+//cargo_icon_template(cargoicon_waste,                  11, 0)
+cargo_icon_template(cargoicon_food,                   12, 0)
+cargo_icon_template(cargoicon_milk,                   13, 0)
+cargo_icon_template(cargoicon_fruits,                 14, 0)
+cargo_icon_template(cargoicon_fish,                   15, 0)
 
-spritegroup action2_2228 {
-	default: [spriteset_2196];
-}
-
-spritegroup action2_2229 {
-	default: [spriteset_2197];
-}
-
-spritegroup action2_2230 {
-	default: [spriteset_2198];
-}
-
-spritegroup action2_2231 {
-	default: [spriteset_2199];
-}
-
-spritegroup action2_2232 {
-	default: [spriteset_2200];
-}
-
-spritegroup action2_2233 {
-	default: [spriteset_2201];
-}
-
-spritegroup action2_2234 {
-	default: [spriteset_2202];
-}
-
-spritegroup action2_2235 {
-	default: [spriteset_2203];
-}
-
-spritegroup action2_2236 {
-	default: [spriteset_2204];
-}
-
-spritegroup action2_2238 {
-	default: [spriteset_2206];
-}
-
-spritegroup action2_2239 {
-	default: [spriteset_2207];
-}
-
-spritegroup action2_2240 {
-	default: [spriteset_2208];
-}
-
-spritegroup action2_2241 {
-	default: [spriteset_2209];
-}
-
-spritegroup action2_2242 {
-	default: [spriteset_2210];
-}
-
-spritegroup action2_2243 {
-	default: [spriteset_2211];
-}
-
-spritegroup action2_2244 {
-	default: [spriteset_2212];
-}
-
-spritegroup action2_2245 {
-	default: [spriteset_2213];
-}
-
-spritegroup action2_2246 {
-	default: [spriteset_2214];
-}
-
-spritegroup action2_2247 {
-	default: [spriteset_2215];
-}
-
-spritegroup action2_2248 {
-	default: [spriteset_2216];
-}
-
-spritegroup action2_2249 {
-	default: [spriteset_2217];
-}
-
-spritegroup action2_2250 {
-	default: [spriteset_2218];
-}
-
-spritegroup action2_2251 {
-	default: [spriteset_2219];
-}
-
-spritegroup action2_2252 {
-	default: [spriteset_2220];
-}
-
-spritegroup action2_2253 {
-	default: [spriteset_2221];
-}
-
-spritegroup action2_2254 {
-	default: [spriteset_2222];
-}
-
-spritegroup action2_2255 {
-	default: [spriteset_2223];
-}
-
-spritegroup action2_2256 {
-	default: [spriteset_2224];
-}
-
-spritegroup action2_2257 {
-	default: [spriteset_2225];
-}
+cargo_icon_template(cargoicon_sand,                    0, 1)
+cargo_icon_template(cargoicon_building_materials,      1, 1)
+cargo_icon_template(cargoicon_scrap_metal,             2, 1)
+cargo_icon_template(cargoicon_plant_fibres,            3, 1)
+cargo_icon_template(cargoicon_wool,                    4, 1)
+cargo_icon_template(cargoicon_gravel,                  5, 1)
+cargo_icon_template(cargoicon_lumber,                  6, 1)
+cargo_icon_template(cargoicon_manufacturing_supplies,  7, 1)
+cargo_icon_template(cargoicon_farm_supplies,           8, 1)
+cargo_icon_template(cargoicon_clay,                    9, 1)
+cargo_icon_template(cargoicon_chemicals,              10, 1)
+cargo_icon_template(cargoicon_engineering_supplies,   11, 1)
+cargo_icon_template(cargoicon_fuel_oil,               12, 1)
+cargo_icon_template(cargoicon_bauxite,                13, 1)
+cargo_icon_template(cargoicon_sugarbeet,              14, 1)
+cargo_icon_template(cargoicon_sugarcane,              15, 1)
+ 
 
 item(FEAT_CARGOS, cargo_passengers, 0) {
 	graphics {
-		action2_2226;
+		cargoicon_passenger;
 	}
 }
 
 item(FEAT_CARGOS, cargo_coal, 1) {
 	graphics {
-		action2_2227;
+		cargoicon_coal;
 	}
 }
 
 item(FEAT_CARGOS, cargo_mail, 2) {
 	graphics {
-		action2_2228;
+		cargoicon_mail;
 	}
 }
 
 item(FEAT_CARGOS, cargo_oil, 3) {
 	graphics {
-		action2_2229;
+		cargoicon_oil;
 	}
 }
 
 item(FEAT_CARGOS, cargo_livestock, 4) {
 	graphics {
-		action2_2230;
+		cargoicon_livestock;
 	}
 }
 
 item(FEAT_CARGOS, cargo_goods, 5) {
 	graphics {
-		action2_2231;
+		cargoicon_goods;
 	}
 }
 
 item(FEAT_CARGOS, cargo_grain, 6) {
 	graphics {
-		action2_2232;
+		cargoicon_grain;
 	}
 }
 
 item(FEAT_CARGOS, cargo_alcohol, 29) {
 	graphics {
-		action2_2233;
+		cargoicon_alcohol;
 	}
 }
 
 item(FEAT_CARGOS, cargo_wood, 7) {
 	graphics {
-		action2_2234;
+		cargoicon_wood;
 	}
 }
 
 item(FEAT_CARGOS, cargo_iron_ore, 8) {
 	graphics {
-		action2_2235;
+		cargoicon_iron_ore;
 	}
 }
 
 item(FEAT_CARGOS, cargo_steel, 9) {
 	graphics {
-		action2_2236;
+		cargoicon_steel;
 	}
 }
 
 item(FEAT_CARGOS, cargo_food, 11) {
 	graphics {
-		action2_2238;
+		cargoicon_food;
 	}
 }
 
 item(FEAT_CARGOS, cargo_milk, 10) {
 	graphics {
-		action2_2239;
+		cargoicon_milk;
 	}
 }
 
 item(FEAT_CARGOS, cargo_fruits, 13) {
 	graphics {
-		action2_2240;
+		cargoicon_fruits;
 	}
 }
 
 item(FEAT_CARGOS, cargo_fish, 14) {
 	graphics {
-		action2_2241;
+		cargoicon_fish;
 	}
 }
 
 item(FEAT_CARGOS, cargo_sand, 17) {
 	graphics {
-		action2_2242;
+		cargoicon_sand;
 	}
 }
 
 item(FEAT_CARGOS, cargo_building_materials, 28) {
 	graphics {
-		action2_2243;
+		cargoicon_building_materials;
 	}
 }
 
 item(FEAT_CARGOS, cargo_scrap_metal, 20) {
 	graphics {
-		action2_2244;
+		cargoicon_scrap_metal;
 	}
 }
 
 item(FEAT_CARGOS, cargo_plant_fibres, 22) {
 	graphics {
-		action2_2245;
+		cargoicon_plant_fibres;
 	}
 }
 
 item(FEAT_CARGOS, cargo_wool, 15) {
 	graphics {
-		action2_2246;
+		cargoicon_wool;
 	}
 }
 
 item(FEAT_CARGOS, cargo_gravel, 26) {
 	graphics {
-		action2_2247;
+		cargoicon_gravel;
 	}
 }
 
 item(FEAT_CARGOS, cargo_lumber, 19) {
 	graphics {
-		action2_2248;
+		cargoicon_lumber;
 	}
 }
 
 item(FEAT_CARGOS, cargo_manufacturing_supplies, 18) {
 	graphics {
-		action2_2249;
+		cargoicon_manufacturing_supplies;
 	}
 }
 
 item(FEAT_CARGOS, cargo_farm_supplies, 21) {
 	graphics {
-		action2_2250;
+		cargoicon_farm_supplies;
 	}
 }
 
 item(FEAT_CARGOS, cargo_clay, 16) {
 	graphics {
-		action2_2251;
+		cargoicon_clay;
 	}
 }
 
 item(FEAT_CARGOS, cargo_chemicals, 23) {
 	graphics {
-		action2_2252;
+		cargoicon_chemicals;
 	}
 }
 
 item(FEAT_CARGOS, cargo_engineering_supplies, 24) {
 	graphics {
-		action2_2253;
+		cargoicon_engineering_supplies;
 	}
 }
 
 item(FEAT_CARGOS, cargo_fuel_oil, 25) {
 	graphics {
-		action2_2254;
+		cargoicon_fuel_oil;
 	}
 }
 
 item(FEAT_CARGOS, cargo_bauxite, 27) {
 	graphics {
-		action2_2255;
+		cargoicon_bauxite;
 	}
 }
 
-if ((climate != 2)) {
-	// Sprite 2288
+if ((climate != CLIMATE_TROPICAL)) {
 	item(FEAT_CARGOS, cargo_sugarcane, 12) {
 		graphics {
-			action2_2256;
+			cargoicon_sugarbeet;
 		}
 	}
-}
-
-if ((climate == 2)) {
-	// Sprite 2290
+} else {
 	item(FEAT_CARGOS, cargo_sugarcane, 12) {
 		graphics {
-			action2_2257;
+			cargoicon_sugarcane;
 		}
 	}
 }
