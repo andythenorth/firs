@@ -1,3 +1,27 @@
+/*
+ * This file is part of FIRS industry set.
+ * FIRS industry set is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 2.
+ * FIRS industry set is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS industry set. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+#define THIS_ID(...) paper_mill ## __VA_ARGS__
+
+/* for secondary production template */
+#define THIS_NUM_OUTPUT_CARGOS    2
+#define THIS_PROD_RATIO_CARGO1    2
+#define THIS_PROD_RATIO_CARGO2    4
+#define THIS_PROD_RATIO_CARGO3    2
+#define THIS_BOOST_12             2
+#define THIS_BOOST_13             1
+#define THIS_BOOST_21             2
+#define THIS_BOOST_23             2
+#define THIS_BOOST_31             1
+#define THIS_BOOST_32             2
+#define THIS_PRODUCTION_SPAN      30
+/* extra text template */
+#define THIS_STR_EXTRA_TEXT       STR_EXTRA_PAPER_MILL
+#define THIS_STR_DEBUG_TEXT       STR_EXTRA_TEXT_DEBUG_SECONDARY
 
 item(FEAT_INDUSTRIES, paper_mill, 14) {
 	property {
@@ -43,202 +67,8 @@ switch(FEAT_INDUSTRIES, SELF, action2_6626, game_mode) {
 	return 1024;
 }
 
-produce(action2_6627, LOAD_TEMP(7), LOAD_TEMP(8), LOAD_TEMP(9), LOAD_TEMP(10), LOAD_TEMP(11), LOAD_TEMP(0));
-
-switch(FEAT_INDUSTRIES, SELF, action2_6628, [STORE_TEMP(0, 0), 1]) {
-	0: action2_6627;
-	action2_6627;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6629, [STORE_TEMP(STORE_PERM(STORE_TEMP(STORE_PERM(0, 11), 11), 10), 10), 1]) {
-	0: action2_6628;
-	action2_6628;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6630, [STORE_TEMP(STORE_PERM(0, 11), 11), STORE_TEMP(STORE_PERM(LOAD_TEMP(10), 10), 10)]) {
-	0: action2_6628;
-	action2_6628;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6631, STORE_TEMP(STORE_PERM(STORE_TEMP(STORE_PERM(max((LOAD_TEMP(10) / 2), 1), 10), 10), 11), 11)) {
-	0: action2_6628;
-	action2_6628;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6632, 2) {
-	2: action2_6631;
-	action2_6630;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6633, STORE_TEMP(((LOAD_PERM(4) + LOAD_PERM(5)) + LOAD_PERM(6)), 10)) {
-	0: action2_6629;
-	action2_6632;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6634, [STORE_TEMP(((LOAD_PERM(6) / LOAD_PERM(12)) * 8), 9), STORE_TEMP(STORE_PERM(((var[0x42, 0, -1] - LOAD_TEMP(9)) + LOAD_TEMP(9)), 9), 9)]) {
-	0: action2_6633;
-	action2_6633;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6635, [STORE_TEMP(((LOAD_PERM(5) / LOAD_PERM(12)) * 8), 8), STORE_TEMP(STORE_PERM(((var[0x41, 0, -1] - LOAD_TEMP(8)) + LOAD_TEMP(8)), 8), 8)]) {
-	0: action2_6634;
-	action2_6634;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6636, [STORE_TEMP(((LOAD_PERM(4) / LOAD_PERM(12)) * 8), 7), STORE_TEMP(STORE_PERM(((var[0x40, 0, -1] - LOAD_TEMP(7)) + LOAD_TEMP(7)), 7), 7)]) {
-	0: action2_6635;
-	action2_6635;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6637, STORE_PERM(max(min(((var[0x42, 0, -1] / 8) * LOAD_PERM(12)), LOAD_PERM(0)), 1), 6)) {
-	0: action2_6636;
-	action2_6636;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6638, [STORE_PERM(0, 6), var[0x42, 0, -1]]) {
-	0: action2_6636;
-	action2_6637;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6639, STORE_PERM(max(min(((var[0x41, 0, -1] / 8) * LOAD_PERM(12)), LOAD_PERM(0)), 1), 5)) {
-	0: action2_6638;
-	action2_6638;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6640, [STORE_PERM(0, 5), var[0x41, 0, -1]]) {
-	0: action2_6638;
-	action2_6639;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6641, STORE_PERM(max(min(((var[0x40, 0, -1] / 8) * LOAD_PERM(12)), LOAD_PERM(0)), 1), 4)) {
-	0: action2_6640;
-	action2_6640;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6642, [STORE_PERM(0, 4), var[0x40, 0, -1]]) {
-	0: action2_6640;
-	action2_6641;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6643, STORE_PERM((((0 + LOAD_PERM(1)) + LOAD_PERM(2)) + LOAD_PERM(3)), 12)) {
-	0: action2_6642;
-	action2_6642;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6644, [STORE_PERM(0, 3), 1]) {
-	0: action2_6643;
-	action2_6643;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6645, [STORE_PERM(2, 3), STORE_PERM((1 + LOAD_PERM(15)), 15)]) {
-	0: action2_6643;
-	action2_6643;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6646, LOAD_PERM(15)) {
-	0..7: action2_6645;
-	action2_6644;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6647, [STORE_PERM(0, 15), 1]) {
-	0: action2_6645;
-	action2_6645;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6648, waiting_cargo_3) {
-	0: action2_6646;
-	action2_6647;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6649, [STORE_PERM(0, 2), 1]) {
-	0: action2_6648;
-	action2_6648;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6650, [STORE_PERM(2, 2), STORE_PERM((1 + LOAD_PERM(14)), 14)]) {
-	0: action2_6648;
-	action2_6648;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6651, LOAD_PERM(14)) {
-	0..7: action2_6650;
-	action2_6649;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6652, [STORE_PERM(0, 14), 1]) {
-	0: action2_6650;
-	action2_6650;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6653, waiting_cargo_2) {
-	0: action2_6651;
-	action2_6652;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6654, [STORE_PERM(0, 1), 1]) {
-	0: action2_6653;
-	action2_6653;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6655, [STORE_PERM(4, 1), STORE_PERM((1 + LOAD_PERM(13)), 13)]) {
-	0: action2_6653;
-	action2_6653;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6656, LOAD_PERM(13)) {
-	0..7: action2_6655;
-	action2_6654;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6657, [STORE_PERM(0, 13), 1]) {
-	0: action2_6655;
-	action2_6655;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6658, waiting_cargo_1) {
-	0: action2_6656;
-	action2_6657;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6659, STORE_TEMP((rotate((LOAD_PERM(15) & 65535), 16) | (LOAD_PERM(14) & 65535)), 261)) {
-	0: return string(STR_INFO_DEBUG_PRODUCTION_CONTRIBUTION);
-	return string(STR_INFO_DEBUG_PRODUCTION_CONTRIBUTION);
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6660, STORE_TEMP((rotate((LOAD_PERM(13) & 65535), 16) | (LOAD_PERM(12) & 65535)), 260)) {
-	0: action2_6659;
-	action2_6659;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6661, STORE_TEMP((rotate((LOAD_PERM(11) & 65535), 16) | (LOAD_PERM(10) & 65535)), 259)) {
-	0: action2_6660;
-	action2_6660;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6662, STORE_TEMP((rotate((LOAD_PERM(9) & 65535), 16) | (LOAD_PERM(8) & 65535)), 258)) {
-	0: action2_6661;
-	action2_6661;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6663, STORE_TEMP((rotate((LOAD_PERM(7) & 65535), 16) | (LOAD_PERM(3) & 65535)), 257)) {
-	0: action2_6662;
-	action2_6662;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6664, STORE_TEMP((rotate((LOAD_PERM(2) & 65535), 16) | (LOAD_PERM(1) & 65535)), 256)) {
-	0: action2_6663;
-	action2_6663;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6665, show_debug_texts) {
-	1: action2_6664;
-	return string(STR_EXTRA_PAPER_MILL);
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6666, STORE_PERM((65535 / 3), 0)) {
-	0: action2_6658;
-	action2_6658;
-}
+#include "../templates/produce_secondary.pnml"
+#include "../templates/extra_text_secondary.pnml"
 
 CHECK_OPENING(action2_6669, 1611, -1)
 
@@ -253,15 +83,15 @@ SET_PRODUCTION_COUNTER_PRODUCED(action2_6676)
 CHECK_CLOSE_SECONDARY(action2_6679)
 
 switch(FEAT_INDUSTRIES, SELF, action2_6680, current_callback) {
-	0: action2_6666;
+	0: THIS_ID(produce);
 	IND_CB_LOCATION_CHECK: action2_6626;
 	IND_CB_AVAILABILITY: action2_6669;
 	IND_CB_COLOUR: action2_6673;
 	IND_CB_EXTRA_TEXT_FUND: action2_6670;
 	IND_CB_RANDOM_PROD_CHANGE: action2_6679;
 	IND_CB_MONTHLY_PROD_CHANGE: action2_6676;
-	IND_CB_EXTRA_TEXT_INDUSTRY: action2_6665;
-	action2_6628;
+	IND_CB_EXTRA_TEXT_INDUSTRY: THIS_ID(extra_text);
+	THIS_ID(produce);
 }
 
 item(FEAT_INDUSTRIES, paper_mill, 14) {
@@ -333,3 +163,5 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_71, 71) {
 		accepted_cargos: [[WOOD, 8], [CLAY, 8], [RFPR, 8]];
 	}
 }
+
+#include "../templates/undefs.pnml"
