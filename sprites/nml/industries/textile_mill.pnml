@@ -1203,7 +1203,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_7661, game_mode) {
 	return 1024;
 }
 
-#include "../templates/produce_secondary_A.pnml"
+#include "../templates/produce_secondary_C.pnml"
 
 switch(FEAT_INDUSTRIES, SELF, action2_7689, STORE_TEMP((rotate((LOAD_PERM(15) & 65535), 16) | (LOAD_PERM(14) & 65535)), 261)) {
 	0: return string(STR_INFO_DEBUG_PRODUCTION_CONTRIBUTION);
