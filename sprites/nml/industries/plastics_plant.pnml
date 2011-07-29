@@ -1,3 +1,28 @@
+/*
+ * This file is part of FIRS industry set.
+ * FIRS industry set is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 2.
+ * FIRS industry set is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS industry set. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+#define THIS_ID(...) plastics_plant ## __VA_ARGS__
+
+/* for secondary production template */
+#define THIS_NUM_OUTPUT_CARGOS    2
+#define THIS_PROD_RATIO_CARGO1    6
+#define THIS_PROD_RATIO_CARGO2    6
+#define THIS_PROD_RATIO_CARGO3    0
+#define THIS_BOOST_12             0
+#define THIS_BOOST_13             0
+#define THIS_BOOST_21             0
+#define THIS_BOOST_23             0
+#define THIS_BOOST_31             0
+#define THIS_BOOST_32             0
+#define THIS_PRODUCTION_SPAN      30
+
+/* extra text template */
+#define THIS_STR_EXTRA_TEXT       STR_EXTRA_PLASTICS_PLANT
+#define THIS_STR_DEBUG_TEXT       STR_EXTRA_TEXT_DEBUG_SECONDARY
 
 item(FEAT_INDUSTRYTILES, tile_plastics_plant, 176) {
 	property {
@@ -601,7 +626,7 @@ tilelayout tilelayout_plastics_plant_3 {
 	2, 4: tile_plastics_plant;
 }
 
-item(FEAT_INDUSTRIES, plastics_plant, 18) {
+item(FEAT_INDUSTRIES, THIS_ID(), 18) {
 	property {
 		substitute: 0;
 		layouts: [tilelayout_plastics_plant_1, tilelayout_plastics_plant_2, tilelayout_plastics_plant_3];
@@ -651,132 +676,8 @@ switch(FEAT_INDUSTRIES, SELF, action2_6818, game_mode) {
 	return 1024;
 }
 
-produce(action2_6819, LOAD_TEMP(7), LOAD_TEMP(8), LOAD_TEMP(9), LOAD_TEMP(10), LOAD_TEMP(11), LOAD_TEMP(0));
-
-switch(FEAT_INDUSTRIES, SELF, action2_6820, [STORE_TEMP(0, 0), 1]) {
-	0: action2_6819;
-	action2_6819;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6821, [STORE_TEMP(STORE_PERM(STORE_TEMP(STORE_PERM(0, 11), 11), 10), 10), 1]) {
-	0: action2_6820;
-	action2_6820;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6822, [STORE_TEMP(STORE_PERM(0, 11), 11), STORE_TEMP(STORE_PERM(LOAD_TEMP(10), 10), 10)]) {
-	0: action2_6820;
-	action2_6820;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6823, STORE_TEMP(STORE_PERM(STORE_TEMP(STORE_PERM(max((LOAD_TEMP(10) / 2), 1), 10), 10), 11), 11)) {
-	0: action2_6820;
-	action2_6820;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6824, 2) {
-	2: action2_6823;
-	action2_6822;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6825, STORE_TEMP(((LOAD_PERM(4) + LOAD_PERM(5)) + LOAD_PERM(6)), 10)) {
-	0: action2_6821;
-	action2_6824;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6826, [STORE_TEMP(((LOAD_PERM(6) / LOAD_PERM(12)) * 8), 9), STORE_TEMP(STORE_PERM(((var[0x42, 0, -1] - LOAD_TEMP(9)) + LOAD_TEMP(9)), 9), 9)]) {
-	0: action2_6825;
-	action2_6825;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6827, [STORE_TEMP(((LOAD_PERM(5) / LOAD_PERM(12)) * 8), 8), STORE_TEMP(STORE_PERM(((var[0x41, 0, -1] - LOAD_TEMP(8)) + LOAD_TEMP(8)), 8), 8)]) {
-	0: action2_6826;
-	action2_6826;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6828, [STORE_TEMP(((LOAD_PERM(4) / LOAD_PERM(12)) * 8), 7), STORE_TEMP(STORE_PERM(((var[0x40, 0, -1] - LOAD_TEMP(7)) + LOAD_TEMP(7)), 7), 7)]) {
-	0: action2_6827;
-	action2_6827;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6829, STORE_PERM(max(min(((var[0x42, 0, -1] / 8) * LOAD_PERM(3)), LOAD_PERM(0)), 1), 6)) {
-	0: action2_6828;
-	action2_6828;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6830, [STORE_PERM(0, 6), var[0x42, 0, -1]]) {
-	0: action2_6828;
-	action2_6829;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6831, STORE_PERM(max(min(((var[0x41, 0, -1] / 8) * LOAD_PERM(2)), LOAD_PERM(0)), 1), 5)) {
-	0: action2_6830;
-	action2_6830;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6832, [STORE_PERM(0, 5), var[0x41, 0, -1]]) {
-	0: action2_6830;
-	action2_6831;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6833, STORE_PERM(max(min(((var[0x40, 0, -1] / 8) * LOAD_PERM(1)), LOAD_PERM(0)), 1), 4)) {
-	0: action2_6832;
-	action2_6832;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6834, [STORE_PERM(0, 4), var[0x40, 0, -1]]) {
-	0: action2_6832;
-	action2_6833;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6835, STORE_PERM(1, 3)) {
-	0: action2_6834;
-	action2_6834;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6836, STORE_PERM(6, 2)) {
-	0: action2_6835;
-	action2_6835;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6837, STORE_PERM(6, 1)) {
-	0: action2_6836;
-	action2_6836;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6838, STORE_TEMP(LOAD_PERM(0), 260)) {
-	0: return string(STR_INFO_DEBUG_PRODUCTION_RATIO);
-	return string(STR_INFO_DEBUG_PRODUCTION_RATIO);
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6839, STORE_TEMP((rotate((LOAD_PERM(11) & 65535), 16) | (LOAD_PERM(10) & 65535)), 259)) {
-	0: action2_6838;
-	action2_6838;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6840, STORE_TEMP((rotate((LOAD_PERM(9) & 65535), 16) | (LOAD_PERM(8) & 65535)), 258)) {
-	0: action2_6839;
-	action2_6839;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6841, STORE_TEMP((rotate((LOAD_PERM(7) & 65535), 16) | (LOAD_PERM(3) & 65535)), 257)) {
-	0: action2_6840;
-	action2_6840;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6842, STORE_TEMP((rotate((LOAD_PERM(2) & 65535), 16) | (LOAD_PERM(1) & 65535)), 256)) {
-	0: action2_6841;
-	action2_6841;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6843, show_debug_texts) {
-	1: action2_6842;
-	return string(STR_EXTRA_PLASTICS_PLANT);
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6844, STORE_PERM((65535 / 1), 0)) {
-	0: action2_6837;
-	action2_6837;
-}
+#include "../templates/produce_secondary.pnml"
+#include "../templates/extra_text_secondary.pnml"
 
 CHECK_OPENING(action2_6847, 1932, -1)
 
@@ -791,19 +692,21 @@ SET_PRODUCTION_COUNTER_PRODUCED(action2_6854)
 CHECK_CLOSE_SECONDARY(action2_6857) 
 
 switch(FEAT_INDUSTRIES, SELF, switch_main_plastics_plant, current_callback) {
-	0: action2_6844;
+	0: THIS_ID(produce);
 	IND_CB_LOCATION_CHECK: action2_6818;
 	IND_CB_AVAILABILITY: action2_6847;
 	IND_CB_COLOUR: action2_6851;
 	IND_CB_EXTRA_TEXT_FUND: action2_6848;
 	IND_CB_RANDOM_PROD_CHANGE: action2_6857;
 	IND_CB_MONTHLY_PROD_CHANGE: action2_6854;
-	IND_CB_EXTRA_TEXT_INDUSTRY: action2_6843;
-	action2_6820;
+	IND_CB_EXTRA_TEXT_INDUSTRY: THIS_ID(extra_text);
+	THIS_ID(simple_produce);
 }
 
-item(FEAT_INDUSTRIES, plastics_plant, 18) {
+item(FEAT_INDUSTRIES, THIS_ID(), 18) {
 	graphics {
 		switch_main_plastics_plant;
 	}
 }
+
+#include "../templates/undefs.pnml"
