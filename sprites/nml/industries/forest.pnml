@@ -647,21 +647,6 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_4276, var[0x60, 0, 31, 0]) {
 	action2_4257;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4277, relative_pos) {
-	512: action2_4276;
-	action2_4276;
-}
-
-switch(FEAT_INDUSTRYTILES, PARENT, action2_4278, layout_num) {
-	1: action2_4277;
-	action2_4277;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_4279, terrain_type) {
-	0: action2_4278;
-	action2_4278;
-}
-
 spritelayout action2_4280 {
 	ground {
 		sprite: 3962;
@@ -1291,16 +1276,6 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_4299, var[0x60, 0, 31, 0]) {
 	27: action2_4297;
 	30: action2_4298;
 	action2_4280;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_4300, relative_pos) {
-	512: action2_4299;
-	action2_4299;
-}
-
-switch(FEAT_INDUSTRYTILES, PARENT, action2_4301, layout_num) {
-	1: action2_4300;
-	action2_4300;
 }
 
 spritelayout action2_4302 {
@@ -1934,16 +1909,6 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_4321, var[0x60, 0, 31, 0]) {
 	action2_4302;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4322, relative_pos) {
-	512: action2_4321;
-	action2_4321;
-}
-
-switch(FEAT_INDUSTRYTILES, PARENT, action2_4323, layout_num) {
-	1: action2_4322;
-	action2_4322;
-}
-
 spritelayout action2_4324 {
 	ground {
 		sprite: 4512;
@@ -2573,16 +2538,6 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_4343, var[0x60, 0, 31, 0]) {
 	27: action2_4341;
 	30: action2_4342;
 	action2_4324;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_4344, relative_pos) {
-	512: action2_4343;
-	action2_4343;
-}
-
-switch(FEAT_INDUSTRYTILES, PARENT, action2_4345, layout_num) {
-	1: action2_4344;
-	action2_4344;
 }
 
 spritelayout action2_4346 {
@@ -3216,16 +3171,6 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_4365, var[0x60, 0, 31, 0]) {
 	action2_4346;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4366, relative_pos) {
-	512: action2_4365;
-	action2_4365;
-}
-
-switch(FEAT_INDUSTRYTILES, PARENT, action2_4367, layout_num) {
-	1: action2_4366;
-	action2_4366;
-}
-
 spritelayout action2_4368 {
 	ground {
 		sprite: GROUNDSPRITE_SNOW;
@@ -3857,22 +3802,12 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_4387, var[0x60, 0, 31, 0]) {
 	action2_4368;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4388, relative_pos) {
-	512: action2_4387;
-	action2_4387;
-}
-
-switch(FEAT_INDUSTRYTILES, PARENT, action2_4389, layout_num) {
-	1: action2_4388;
-	action2_4388;
-}
-
 switch(FEAT_INDUSTRYTILES, SELF, action2_4390, ((var[0x60, 16, 255, 0] - snowline_height) + 8)) {
-	0..7: action2_4323;
-	8..15: action2_4345;
-	16..23: action2_4367;
-	24..127: action2_4389;
-	action2_4301;
+	0..7: action2_4321;
+	8..15: action2_4343;
+	16..23: action2_4365;
+	24..127: action2_4387;
+	action2_4299;
 }
 
 spritelayout action2_4391 {
@@ -4483,7 +4418,7 @@ spritelayout action2_4409 {
 	}
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4410, var[0x60, 0, 31, 0]) {
+switch(FEAT_INDUSTRYTILES, SELF, switch_forest_default_layout, var[0x60, 0, 31, 0]) {
 	0: action2_4391;
 	1: action2_4392;
 	2: action2_4393;
@@ -4504,16 +4439,6 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_4410, var[0x60, 0, 31, 0]) {
 	27: action2_4408;
 	30: action2_4409;
 	action2_4391;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_4411, relative_pos) {
-	512: action2_4410;
-	action2_4410;
-}
-
-switch(FEAT_INDUSTRYTILES, PARENT, switch_forest_default_layout, layout_num) {
-	1: action2_4411;
-	action2_4411;
 }
 
 spritelayout action2_4413 {
@@ -5124,7 +5049,7 @@ spritelayout action2_4431 {
 	}
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4432, var[0x60, 0, 31, 0]) {
+switch(FEAT_INDUSTRYTILES, SELF, switch_forest_desert_layout, var[0x60, 0, 31, 0]) {
 	0: action2_4413;
 	1: action2_4414;
 	2: action2_4415;
@@ -5147,26 +5072,15 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_4432, var[0x60, 0, 31, 0]) {
 	action2_4413;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4433, relative_pos) {
-	512: action2_4432;
-	action2_4432;
-}
-
-switch(FEAT_INDUSTRYTILES, PARENT, switch_forest_desert_layout, layout_num) {
-	1: action2_4433;
-	action2_4433;
-}
-
 switch(FEAT_INDUSTRYTILES, SELF, switch_forest_terrain, terrain_type) {
 	1: switch_forest_desert_layout;
 	switch_forest_default_layout;
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_4436, var[0x03, 0, 255]) {
-	0: action2_4279;
 	1: action2_4390;
 	2: switch_forest_terrain;
-	action2_4279;
+	action2_4276;
 }
 
 CHECK_NEARBY_TILE_CLASS(action2_4444)
