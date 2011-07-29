@@ -5,7 +5,7 @@
  * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS industry set. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#define IND_ID(...) textile_mill ## __VA_ARGS__
+#define THIS_ID(...) textile_mill ## __VA_ARGS__
 
 item(FEAT_INDUSTRYTILES, tile_textile_mill, 183) {
 	property {
@@ -1253,7 +1253,7 @@ SET_PRODUCTION_COUNTER_PRODUCED(action2_7706)
 CHECK_CLOSE_SECONDARY(action2_7709)
 
 switch(FEAT_INDUSTRIES, SELF, switch_main_textile_mill, current_callback) {
-	0: IND_ID(simple_produce);
+	0: THIS_ID(simple_produce);
 	IND_CB_LOCATION_CHECK: action2_7661;
 	IND_CB_AVAILABILITY: action2_7699;
 	IND_CB_COLOUR: action2_7703;
@@ -1261,7 +1261,7 @@ switch(FEAT_INDUSTRIES, SELF, switch_main_textile_mill, current_callback) {
 	IND_CB_RANDOM_PROD_CHANGE: action2_7709;
 	IND_CB_MONTHLY_PROD_CHANGE: action2_7706;
 	IND_CB_EXTRA_TEXT_INDUSTRY: action2_7695;
-	IND_ID(produce);
+	THIS_ID(produce);
 }
 
 item(FEAT_INDUSTRIES, textile_mill, 42) {
@@ -1269,3 +1269,5 @@ item(FEAT_INDUSTRIES, textile_mill, 42) {
 		switch_main_textile_mill;
 	}
 }
+
+#include "../templates/undefs.pnml"

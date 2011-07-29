@@ -5,7 +5,7 @@
  * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS industry set. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#define IND_ID(...) diary_farm ## __VA_ARGS__
+#define THIS_ID(...) diary_farm ## __VA_ARGS__
 
 item(FEAT_INDUSTRYTILES, tile_diary_farm, 180) {
 	property {
@@ -391,7 +391,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3747, [STORE_TEMP(-701265, 256), 32928]) {
 SWITCH_COLOUR_SCHEME1(action2_3750)
 
 switch(FEAT_INDUSTRIES, SELF, switch_main_diary_farm, current_callback) {
-	0: IND_ID(produce);
+	0: THIS_ID(produce);
 	IND_CB_LOCATION_CHECK: action2_3730;
 	IND_CB_AVAILABILITY: action2_3746;
 	IND_CB_COLOUR: action2_3750;
@@ -399,7 +399,7 @@ switch(FEAT_INDUSTRIES, SELF, switch_main_diary_farm, current_callback) {
 	IND_CB_RANDOM_PROD_CHANGE: action2_3734;
 	IND_CB_MONTHLY_PROD_CHANGE: action2_3741;
 	IND_CB_EXTRA_TEXT_INDUSTRY: action2_3742;
-	IND_ID(produce);
+	THIS_ID(produce);
 }
 
 item(FEAT_INDUSTRIES, diary_farm, 28) {

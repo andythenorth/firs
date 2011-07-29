@@ -5,7 +5,7 @@
  * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS industry set. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#define IND_ID(...) arable_farm ## __VA_ARGS__
+#define THIS_ID(...) arable_farm ## __VA_ARGS__
 
 item(FEAT_INDUSTRYTILES, tile_arable_farm, 160) {
 	property {
@@ -346,7 +346,7 @@ switch(FEAT_INDUSTRIES, SELF, switch_arable_farm_cb_text_fund, [STORE_TEMP(-7012
 SWITCH_COLOUR_SCHEME1(switch_arable_farm_cb_colour)
 
 switch(FEAT_INDUSTRIES, SELF, switch_main_arable_farm, current_callback) {
-	0: IND_ID(produce);
+	0: THIS_ID(produce);
 	IND_CB_LOCATION_CHECK: switch_arable_farm_cb_location_check;
 	IND_CB_AVAILABILITY: switch_arable_farm_cb_availability;
 	IND_CB_COLOUR: switch_arable_farm_cb_colour;
@@ -354,7 +354,7 @@ switch(FEAT_INDUSTRIES, SELF, switch_main_arable_farm, current_callback) {
 	IND_CB_RANDOM_PROD_CHANGE: switch_arable_farm_cb_random_production;
 	IND_CB_MONTHLY_PROD_CHANGE: switch_arable_farm_cb_monthly_production;
 	IND_CB_EXTRA_TEXT_INDUSTRY: switch_arable_farm_cb_text_industry;
-	IND_ID(produce);
+	THIS_ID(produce);
 }
 
 item(FEAT_INDUSTRIES, arable_farm, 26) {

@@ -5,7 +5,7 @@
  * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS industry set. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#define IND_ID(...) oil_rig ## __VA_ARGS__
+#define THIS_ID(...) oil_rig ## __VA_ARGS__
 
 
 item(FEAT_INDUSTRIES, oil_rig, 16) {
@@ -116,7 +116,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6499, [STORE_TEMP((718432 - 701265), 256),
 SWITCH_COLOUR_SCHEME1(action2_6502)
 
 switch(FEAT_INDUSTRIES, SELF, action2_6503, current_callback) {
-	0: IND_ID(produce);
+	0: THIS_ID(produce);
 	IND_CB_LOCATION_CHECK: action2_6482;
 	IND_CB_AVAILABILITY: action2_6498;
 	IND_CB_COLOUR: action2_6502;
@@ -124,7 +124,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6503, current_callback) {
 	IND_CB_RANDOM_PROD_CHANGE: action2_6486;
 	IND_CB_MONTHLY_PROD_CHANGE: action2_6493;
 	IND_CB_EXTRA_TEXT_INDUSTRY: action2_6494;
-	IND_ID(produce);
+	THIS_ID(produce);
 }
 
 item(FEAT_INDUSTRIES, oil_rig, 16) {

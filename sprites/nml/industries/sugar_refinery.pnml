@@ -5,7 +5,7 @@
  * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS industry set. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#define IND_ID(...) sugar_refinery ## __VA_ARGS__
+#define THIS_ID(...) sugar_refinery ## __VA_ARGS__
 
 item(FEAT_INDUSTRYTILES, tile_sugar_refinery, 214) {
 	property {
@@ -258,7 +258,7 @@ SET_PRODUCTION_COUNTER_PRODUCED(action2_7550)
 CHECK_CLOSE_SECONDARY(action2_7553)
 
 switch(FEAT_INDUSTRIES, SELF, switch_main_sugar_refinery, current_callback) {
-	0: IND_ID(produce);
+	0: THIS_ID(produce);
 	IND_CB_LOCATION_CHECK: action2_7505;
 	IND_CB_AVAILABILITY: action2_7543;
 	IND_CB_COLOUR: action2_7547;
@@ -266,7 +266,7 @@ switch(FEAT_INDUSTRIES, SELF, switch_main_sugar_refinery, current_callback) {
 	IND_CB_RANDOM_PROD_CHANGE: action2_7553;
 	IND_CB_MONTHLY_PROD_CHANGE: action2_7550;
 	IND_CB_EXTRA_TEXT_INDUSTRY: action2_7539;
-	IND_ID(simple_produce);
+	THIS_ID(simple_produce);
 }
 
 item(FEAT_INDUSTRIES, sugar_refinery, 19) {

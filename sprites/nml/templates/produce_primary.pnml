@@ -5,9 +5,9 @@
  * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS industry set. If not, see <http://www.gnu.org/licenses/>.
  */
 
-produce(IND_ID(production), 9999, 0, 0, 0, 0, 0);
+produce(THIS_ID(production), 9999, 0, 0, 0, 0, 0);
 
-switch(FEAT_INDUSTRIES, SELF, IND_ID(produce), STORE_PERM(waiting_cargo_1 + LOAD_PERM(store_produced_1), store_produced_1)) {
-	0: IND_ID(production);
-	IND_ID(production);
+switch(FEAT_INDUSTRIES, SELF, THIS_ID(produce), STORE_PERM(waiting_cargo_1 + LOAD_PERM(store_produced_1), store_produced_1)) {
+	0: THIS_ID(production);
+	THIS_ID(production);
 }
