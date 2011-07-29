@@ -1,0 +1,147 @@
+/*
+ * This file is part of FIRS industry set.
+ * FIRS industry set is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 2.
+ * FIRS industry set is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS industry set. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/* Production template for secondary industries with equal output to all output cargos
+ *
+ * Delivery period to consider a cargo for production ratios is the the last var_production_span days
+ * 
+ * It accepts up to three input cargos and produes up to two output cargos
+ * It uses the following permanent storages:
+ *
+ * var_date_received_1, var_date_received_2, var_date_received_3
+ * var_input_cargo_1, var_input_cargo_2, var_input_cargo_3
+ * var_ratio_cargo_1, var_ratio_cargo_2, var_ratio_cargo_3
+ * var_production_by_cargo_1, var_production_by_cargo_2, var_production_by_cargo_3
+ * var_production_span
+ *
+ * Needed defines in the industry's pnml which uses this template.
+ * THIS_NUM_OUTPUT_CARGOS             number of output cargos
+ *
+ * The sum of the following should not exceed MAX_SUM_PROD_RATIO (see below):
+ * THIS_PROD_RATIO_CARGO1         output per MAX_SUM_PROD_RATIO units input
+ * THIS_PROD_RATIO_CARGO2         output per MAX_SUM_PROD_RATIO units input
+ * THIS_PROD_RATIO_CARGO3         output per MAX_SUM_PROD_RATIO units input
+ *
+ * How cargos boost eachother (give in units of 1/MAX_SUM_PROD_RATIO)
+ * It should be noted that THIS_PROD_RATIO_CARGO1 + THIS_BOOST_21 + THIS_BOOST_31 never should exceed MAX_SUM_PROD_RATIO
+ * and similar for the other two cargos
+ * THIS_BOOST_12
+ * THIS_BOOST_13
+ * THIS_BOOST_21
+ * THIS_BOOST_23
+ * THIS_BOOST_31
+ * THIS_BOOST_32
+ *
+ * THIS_PRODUCTION_SPAN           time span which is considered for production ratios
+ *
+ */
+
+/* granularity of production. That amount of input (per cargo) is needed in order to be processed */
+#define MAX_SUM_PROD_RATIO 8
+
+/* Temporary variables used within this template */
+#define var_received_timely_1       0
+#define var_received_timely_2       1
+#define var_received_timely_3       2
+#define var_amount_input_cargo_1    4
+#define var_amount_input_cargo_2    5
+#define var_amount_input_cargo_3    6
+#define var_production_by_cargo_1   7
+#define var_production_by_cargo_2   8
+#define var_production_by_cargo_3   9
+#define var_output_cargo_1          10
+#define var_output_cargo_2          11
+
+produce (THIS_ID(simple_produce), waiting_cargo_1, waiting_cargo_2, waiting_cargo_3, LOAD_TEMP(var_output_cargo_1), LOAD_TEMP(var_output_cargo_2));
+
+switch (FEAT_INDUSTRIES, SELF, THIS_ID(produce),
+			[
+			/* Update the 'last delivery date' for the three input cargos */
+			STORE_PERM( max(LOAD_PERM(var_date_received_1),(waiting_cargo_1 > 0) * current_date), var_date_received_1),
+			STORE_PERM( max(LOAD_PERM(var_date_received_2),(waiting_cargo_2 > 0) * current_date), var_date_received_2),
+			STORE_PERM( max(LOAD_PERM(var_date_received_3),(waiting_cargo_3 > 0) * current_date), var_date_received_3),
+
+			/* Store the delivered cargo permanently (for debugging purposes only */
+			STORE_PERM( waiting_cargo_1, var_input_cargo_1),
+			STORE_PERM( waiting_cargo_2, var_input_cargo_2),
+			STORE_PERM( waiting_cargo_3, var_input_cargo_3),
+
+			/* Check whether the cargos were delivered within the time frame to be considered delivered concurrently */
+			STORE_TEMP( (current_date - LOAD_PERM(var_date_received_1)) <= THIS_PRODUCTION_SPAN, var_received_timely_1),
+			STORE_TEMP( (current_date - LOAD_PERM(var_date_received_2)) <= THIS_PRODUCTION_SPAN, var_received_timely_2),
+			STORE_TEMP( (current_date - LOAD_PERM(var_date_received_3)) <= THIS_PRODUCTION_SPAN, var_received_timely_3),
+
+			/* Calculate production ratios for the individual cargos */
+			STORE_PERM( THIS_PROD_RATIO_CARGO1 + 
+			            LOAD_TEMP(var_received_timely_2) * THIS_BOOST_21 +
+			            LOAD_TEMP(var_received_timely_3) * THIS_BOOST_31,
+			    var_ratio_cargo_1
+			),
+			STORE_PERM( THIS_PROD_RATIO_CARGO2 + 
+			            LOAD_TEMP(var_received_timely_1) * THIS_BOOST_12 +
+			            LOAD_TEMP(var_received_timely_3) * THIS_BOOST_32,
+			    var_ratio_cargo_2
+			),
+			STORE_PERM( THIS_PROD_RATIO_CARGO3 + 
+			            LOAD_TEMP(var_received_timely_1) * THIS_BOOST_13 +
+			            LOAD_TEMP(var_received_timely_2) * THIS_BOOST_23,
+			    var_ratio_cargo_3
+			),
+
+			/* Load the leftover cargo units which could not be processed during the last run and add current input cargo amounts */
+			STORE_TEMP( waiting_cargo_1 + LOAD_PERM(var_leftover_cargo_1), var_amount_input_cargo_1),
+			STORE_TEMP( waiting_cargo_2 + LOAD_PERM(var_leftover_cargo_1), var_amount_input_cargo_3),
+			STORE_TEMP( waiting_cargo_3 + LOAD_PERM(var_leftover_cargo_1), var_amount_input_cargo_3),
+			
+			/* Calculate the production for input cargo 1 and store the remainder */
+			STORE_TEMP( LOAD_TEMP(var_amount_input_cargo_1) * LOAD_PERM(var_ratio_cargo_1) / (MAX_SUM_PROD_RATIO * THIS_NUM_OUTPUT_CARGOS),
+			    var_production_by_cargo_1
+			),
+			STORE_PERM( LOAD_TEMP(var_amount_input_cargo_1) * LOAD_PERM(var_ratio_cargo_1) % (MAX_SUM_PROD_RATIO * THIS_NUM_OUTPUT_CARGOS),
+			    var_leftover_cargo_1
+			),
+			/* Calculate the production for input cargo 2 and store the remainder */
+			STORE_TEMP( LOAD_TEMP(var_amount_input_cargo_2) * LOAD_PERM(var_ratio_cargo_2) / (MAX_SUM_PROD_RATIO * THIS_NUM_OUTPUT_CARGOS),
+			    var_production_by_cargo_2
+			),
+			STORE_PERM( LOAD_TEMP(var_amount_input_cargo_2) * LOAD_PERM(var_ratio_cargo_2) % (MAX_SUM_PROD_RATIO * THIS_NUM_OUTPUT_CARGOS),
+			    var_leftover_cargo_2
+			),
+			/* Calculate the production for input cargo 3 and store the remainder */
+			STORE_TEMP( LOAD_TEMP(var_amount_input_cargo_3) * LOAD_PERM(var_ratio_cargo_3) / (MAX_SUM_PROD_RATIO * THIS_NUM_OUTPUT_CARGOS),
+			    var_production_by_cargo_3
+			),
+			STORE_PERM( LOAD_TEMP(var_amount_input_cargo_3) * LOAD_PERM(var_ratio_cargo_3) % (MAX_SUM_PROD_RATIO * THIS_NUM_OUTPUT_CARGOS),
+			    var_leftover_cargo_3
+			),
+			
+			/* Calculate the production for output cargo 1 */
+			STORE_TEMP( LOAD_TEMP(var_production_by_cargo_1) +
+			            LOAD_TEMP(var_production_by_cargo_2) +
+			            LOAD_TEMP(var_production_by_cargo_3),
+			    var_output_cargo_1
+			),
+			/* If there's a 2nd output cargo, it is produced in equal amounts as the 1st output cargo */
+			STORE_TEMP( LOAD_TEMP(var_output_cargo_1) * (THIS_NUM_OUTPUT_CARGOS > 1), var_output_cargo_2),
+
+			1
+			]) {
+	THIS_ID(simple_produce);
+}
+
+#undef MAX_SUM_PROD_RATIO
+#undef var_received_timely_1
+#undef var_received_timely_2
+#undef var_received_timely_3
+#undef var_amount_input_cargo_1
+#undef var_amount_input_cargo_2
+#undef var_amount_input_cargo_3
+#undef var_production_by_cargo_1
+#undef var_production_by_cargo_2
+#undef var_production_by_cargo_3
+#undef var_output_cargo_1
+#undef var_output_cargo_2

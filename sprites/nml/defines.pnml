@@ -1,3 +1,10 @@
+/*
+ * This file is part of FIRS industry set.
+ * FIRS industry set is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 2.
+ * FIRS industry set is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS industry set. If not, see <http://www.gnu.org/licenses/>.
+ */
+
 #define SPRITE_TREE 1593
 #define SPRITE_TREE_DEAD 1596
 
@@ -8,7 +15,32 @@
 /* Persistant storage for industries */
 #define store_produced_1      0
 
+/* persistant storage for secondary industries (template produce_secondary_C) */
 #define var_waiting_cargo_1   13
 #define var_waiting_cargo_2   14
 
-#define store_closure_counter 15
+/* persistant storage for secondary industries (template produce_secondary) */
+//                                  0 // unused
+
+#define var_ratio_cargo_1           1 // output per 8 units input of cargo 1; can be made temporary
+#define var_ratio_cargo_2           2 // output per 8 units input of cargo 2; can be made temporary
+#define var_ratio_cargo_3           3 // output per 8 units input of cargo 3; can be made temporary
+
+#define var_leftover_cargo_1        4 // non-processed cargo 1
+#define var_leftover_cargo_2        5 // non-processed cargo 2
+#define var_leftover_cargo_3        6 // non-processed cargo 3
+
+#define var_input_cargo_1           7 // stores only last processed input; for debugging only
+#define var_input_cargo_2           8 // stores only last processed input; for debugging only
+#define var_input_cargo_3           9 // stores only last processed input; for debugging only
+
+#define var_date_received_1        10 // date of last cargo 1 delivered
+#define var_date_received_2        11 // date of last cargo 2 delivered
+#define var_date_received_3        12 // date of last cargo 3 delivered
+#define var_production_span        13 // time to consider a cargo usable for production boost (not yet used)
+
+//                                 14 // unused
+
+// for all industries (?)
+
+#define store_closure_counter      15 
