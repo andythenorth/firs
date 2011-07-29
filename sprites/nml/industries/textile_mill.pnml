@@ -1237,7 +1237,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_7694, STORE_TEMP((rotate((LOAD_PERM(2) & 6
 
 switch(FEAT_INDUSTRIES, SELF, action2_7695, show_debug_texts) {
 	1: action2_7694;
-	return string(STR_GENERIC_D02A);
+	return string(STR_EXTRA_TEXTILE_MILL);
 }
 
 CHECK_OPENING(action2_7699, 1763, -1)

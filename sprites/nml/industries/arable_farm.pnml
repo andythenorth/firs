@@ -333,8 +333,8 @@ switch(FEAT_INDUSTRIES, SELF, switch_arable_farm_cb_monthly_production, STORE_TE
 }
 
 switch(FEAT_INDUSTRIES, SELF, switch_arable_farm_cb_text_industry, [STORE_TEMP(LOAD_PERM(0), 256), var[0x93, 0, -1]]) {
-	128: return string(STR_GENERIC_D0B3);
-	return string(STR_GENERIC_D0B1);
+	128: return string(STR_EXTRA_MAX_PRODUCTION);
+	return string(STR_EXTRA_FARM_SUPPLIES);
 }
 
 CHECK_OPENING(switch_arable_farm_cb_availability, 0, -1)

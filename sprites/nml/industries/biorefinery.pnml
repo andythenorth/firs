@@ -671,7 +671,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_2880, STORE_TEMP((rotate((LOAD_PERM(2) & 6
 
 switch(FEAT_INDUSTRIES, SELF, action2_2881, show_debug_texts) {
 	1: action2_2880;
-	return string(STR_GENERIC_D02E);
+	return string(STR_EXTRA_BIOREFINERY);
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_2882, STORE_PERM((65535 / 2), 0)) {

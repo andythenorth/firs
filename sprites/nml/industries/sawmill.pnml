@@ -174,7 +174,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_7271, STORE_TEMP((rotate((LOAD_PERM(2) & 6
 
 switch(FEAT_INDUSTRIES, SELF, action2_7272, show_debug_texts) {
 	1: action2_7271;
-	return string(STR_GENERIC_D00C);
+	return string(STR_EXTRA_SAWMILL);
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_7273, STORE_PERM((65535 / 1), 0)) {

@@ -5486,8 +5486,8 @@ switch(FEAT_INDUSTRIES, SELF, action2_4496, STORE_TEMP(LOAD_PERM(0), 1)) {
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_4497, [STORE_TEMP(LOAD_PERM(0), 256), var[0x93, 0, -1]]) {
-	128: return string(STR_GENERIC_D0B3);
-	return string(STR_GENERIC_D0B1);
+	128: return string(STR_EXTRA_MAX_PRODUCTION);
+	return string(STR_EXTRA_FARM_SUPPLIES);
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_4499, (current_date + 1)) {

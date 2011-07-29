@@ -472,7 +472,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_5769, STORE_TEMP((rotate((LOAD_PERM(2) & 6
 
 switch(FEAT_INDUSTRIES, SELF, action2_5770, show_debug_texts) {
 	1: action2_5769;
-	return string(STR_GENERIC_D029);
+	return string(STR_EXTRA_LUMBER_YARD);
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_5771, STORE_PERM((65535 / 2), 0)) {

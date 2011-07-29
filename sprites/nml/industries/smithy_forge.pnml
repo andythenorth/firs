@@ -367,7 +367,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_4578, STORE_TEMP((rotate((LOAD_PERM(2) & 6
 
 switch(FEAT_INDUSTRIES, SELF, action2_4579, show_debug_texts) {
 	1: action2_4578;
-	return string(STR_GENERIC_D006);
+	return string(STR_EXTRA_SMITHY_FORGE);
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_4580, STORE_PERM((65535 / 1), 0)) {

@@ -1158,7 +1158,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_4213, STORE_TEMP((rotate((LOAD_PERM(2) & 6
 
 switch(FEAT_INDUSTRIES, SELF, action2_4214, show_debug_texts) {
 	1: action2_4213;
-	return string(STR_GENERIC_D01F);
+	return string(STR_EXTRA_FISHING_HARBOUR);
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_4215, STORE_PERM((65535 / 2), 0)) {

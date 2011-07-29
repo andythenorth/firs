@@ -1570,7 +1570,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3920, STORE_TEMP((rotate((LOAD_PERM(2) & 6
 
 switch(FEAT_INDUSTRIES, SELF, action2_3921, show_debug_texts) {
 	1: action2_3920;
-	return string(STR_GENERIC_D024);
+	return string(STR_EXTRA_DAIRY);
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_3922, STORE_PERM((65535 / 2), 0)) {

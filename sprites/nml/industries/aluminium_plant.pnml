@@ -2569,7 +2569,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_2666, STORE_TEMP((rotate((LOAD_PERM(2) & 6
 
 switch(FEAT_INDUSTRIES, SELF, action2_2667, show_debug_texts) {
 	1: action2_2666;
-	return string(STR_GENERIC_D008);
+	return string(STR_EXTRA_ALUMINUM_PLANT);
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_2668, STORE_PERM((65535 / 2), 0)) {

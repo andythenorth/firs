@@ -232,7 +232,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6664, STORE_TEMP((rotate((LOAD_PERM(2) & 6
 
 switch(FEAT_INDUSTRIES, SELF, action2_6665, show_debug_texts) {
 	1: action2_6664;
-	return string(STR_GENERIC_D00E);
+	return string(STR_EXTRA_PAPER_MILL);
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_6666, STORE_PERM((65535 / 3), 0)) {

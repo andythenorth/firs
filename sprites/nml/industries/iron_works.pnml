@@ -1950,7 +1950,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_5489, STORE_TEMP((rotate((LOAD_PERM(2) & 6
 
 switch(FEAT_INDUSTRIES, SELF, action2_5490, show_debug_texts) {
 	1: action2_5489;
-	return string(STR_GENERIC_D015);
+	return string(STR_EXTRA_IRON_WORKS);
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_5491, STORE_PERM((65535 / 2), 0)) {

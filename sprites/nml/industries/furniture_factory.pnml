@@ -772,7 +772,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_4946, STORE_TEMP((rotate((LOAD_PERM(2) & 6
 
 switch(FEAT_INDUSTRIES, SELF, action2_4947, show_debug_texts) {
 	1: action2_4946;
-	return string(STR_GENERIC_D00D);
+	return string(STR_EXTRA_FURNITURE_FACTORY);
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_4948, STORE_PERM((65535 / 2), 0)) {

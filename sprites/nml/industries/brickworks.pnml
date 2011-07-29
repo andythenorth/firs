@@ -770,7 +770,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3167, STORE_TEMP((rotate((LOAD_PERM(2) & 6
 
 switch(FEAT_INDUSTRIES, SELF, action2_3168, show_debug_texts) {
 	1: action2_3167;
-	return string(STR_GENERIC_D02D);
+	return string(STR_EXTRA_BRICKWORKS);
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_3169, STORE_PERM((65535 / 3), 0)) {

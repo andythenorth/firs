@@ -893,7 +893,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_5215, STORE_TEMP((rotate((LOAD_PERM(2) & 6
 
 switch(FEAT_INDUSTRIES, SELF, action2_5216, show_debug_texts) {
 	1: action2_5215;
-	return string(STR_GENERIC_D022);
+	return string(STR_EXTRA_GRAIN_MILL);
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_5217, STORE_PERM((65535 / 2), 0)) {

@@ -102,8 +102,8 @@ switch(FEAT_INDUSTRIES, SELF, action2_5297, STORE_TEMP(LOAD_PERM(0), 1)) {
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_5298, [STORE_TEMP(LOAD_PERM(0), 256), var[0x93, 0, -1]]) {
-	128: return string(STR_GENERIC_D0B3);
-	return string(STR_GENERIC_D0B0);
+	128: return string(STR_EXTRA_MAX_PRODUCTION);
+	return string(STR_EXTRA_ENGINEERING_SUPPLIES);
 }
 
 CHECK_OPENING(action2_5302, 0, -1)

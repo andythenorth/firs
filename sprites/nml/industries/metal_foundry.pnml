@@ -1980,7 +1980,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6384, STORE_TEMP((rotate((LOAD_PERM(2) & 6
 
 switch(FEAT_INDUSTRIES, SELF, action2_6385, show_debug_texts) {
 	1: action2_6384;
-	return string(STR_GENERIC_D009);
+	return string(STR_EXTRA_METAL_FOUNDRY);
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_6386, STORE_PERM((65535 / 1), 0)) {

@@ -770,7 +770,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6842, STORE_TEMP((rotate((LOAD_PERM(2) & 6
 
 switch(FEAT_INDUSTRIES, SELF, action2_6843, show_debug_texts) {
 	1: action2_6842;
-	return string(STR_GENERIC_D012);
+	return string(STR_EXTRA_PLASTICS_PLANT);
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_6844, STORE_PERM((65535 / 1), 0)) {

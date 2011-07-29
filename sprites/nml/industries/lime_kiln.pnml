@@ -656,7 +656,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_5677, STORE_TEMP((rotate((LOAD_PERM(2) & 6
 
 switch(FEAT_INDUSTRIES, SELF, action2_5678, show_debug_texts) {
 	1: action2_5677;
-	return string(STR_GENERIC_D001);
+	return string(STR_EXTRA_LIME_KILN);
 }
 
 switch(FEAT_INDUSTRIES, SELF, action2_5679, STORE_PERM((65535 / 2), 0)) {
