@@ -7,6 +7,22 @@
 
 #define THIS_ID(...) sugar_refinery ## __VA_ARGS__
 
+/* for secondary production template */
+#define THIS_NUM_OUTPUT_CARGOS    1
+#define THIS_PROD_RATIO_CARGO1    3
+#define THIS_PROD_RATIO_CARGO2    5
+#define THIS_PROD_RATIO_CARGO3    5
+#define THIS_BOOST_12             2
+#define THIS_BOOST_13             1
+#define THIS_BOOST_21             2
+#define THIS_BOOST_23             1
+#define THIS_BOOST_31             2
+#define THIS_BOOST_32             2
+#define THIS_PRODUCTION_SPAN      30
+/* extra text template */
+#define THIS_STR_EXTRA_TEXT       STR_INFO_PRODUCTION_3PER8
+#define THIS_STR_DEBUG_TEXT       STR_EXTRA_TEXT_DEBUG_SECONDARY
+
 item(FEAT_INDUSTRYTILES, tile_sugar_refinery, 214) {
 	property {
 		substitute: 0;
@@ -208,42 +224,8 @@ switch(FEAT_INDUSTRIES, SELF, action2_7505, game_mode) {
 	return 1024;
 }
 
-#include "../templates/produce_secondary_C.pnml"
-
-switch(FEAT_INDUSTRIES, SELF, action2_7533, STORE_TEMP((rotate((LOAD_PERM(15) & 65535), 16) | (LOAD_PERM(14) & 65535)), 261)) {
-	0: return string(STR_INFO_DEBUG_PRODUCTION_CONTRIBUTION);
-	return string(STR_INFO_DEBUG_PRODUCTION_CONTRIBUTION);
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7534, STORE_TEMP((rotate((LOAD_PERM(13) & 65535), 16) | (LOAD_PERM(12) & 65535)), 260)) {
-	0: action2_7533;
-	action2_7533;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7535, STORE_TEMP((rotate((LOAD_PERM(11) & 65535), 16) | (LOAD_PERM(10) & 65535)), 259)) {
-	0: action2_7534;
-	action2_7534;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7536, STORE_TEMP((rotate((LOAD_PERM(9) & 65535), 16) | (LOAD_PERM(8) & 65535)), 258)) {
-	0: action2_7535;
-	action2_7535;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7537, STORE_TEMP((rotate((LOAD_PERM(7) & 65535), 16) | (LOAD_PERM(3) & 65535)), 257)) {
-	0: action2_7536;
-	action2_7536;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7538, STORE_TEMP((rotate((LOAD_PERM(2) & 65535), 16) | (LOAD_PERM(1) & 65535)), 256)) {
-	0: action2_7537;
-	action2_7537;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7539, show_debug_texts) {
-	1: action2_7538;
-	return string(STR_INFO_PRODUCTION_3PER8);
-}
+#include "../templates/produce_secondary.pnml"
+#include "../templates/extra_text_secondary.pnml"
 
 CHECK_OPENING(action2_7543, 1731, -1)
 
@@ -265,11 +247,11 @@ switch(FEAT_INDUSTRIES, SELF, switch_main_sugar_refinery, current_callback) {
 	IND_CB_EXTRA_TEXT_FUND: action2_7544;
 	IND_CB_RANDOM_PROD_CHANGE: action2_7553;
 	IND_CB_MONTHLY_PROD_CHANGE: action2_7550;
-	IND_CB_EXTRA_TEXT_INDUSTRY: action2_7539;
-	THIS_ID(simple_produce);
+	IND_CB_EXTRA_TEXT_INDUSTRY: THIS_ID(extra_text);
+	THIS_ID(produce);
 }
 
-item(FEAT_INDUSTRIES, sugar_refinery, 19) {
+item(FEAT_INDUSTRIES, THIS_ID(), 19) {
 	graphics {
 		switch_main_sugar_refinery;
 	}
