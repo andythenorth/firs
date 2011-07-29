@@ -7,6 +7,22 @@
 
 #define THIS_ID(...) textile_mill ## __VA_ARGS__
 
+/* for secondary production template */
+#define THIS_NUM_OUTPUT_CARGOS    1
+#define THIS_PROD_RATIO_CARGO1    3
+#define THIS_PROD_RATIO_CARGO2    5
+#define THIS_PROD_RATIO_CARGO3    5
+#define THIS_BOOST_12             3
+#define THIS_BOOST_13             3
+#define THIS_BOOST_21             2
+#define THIS_BOOST_23             0
+#define THIS_BOOST_31             2
+#define THIS_BOOST_32             0
+#define THIS_PRODUCTION_SPAN      30
+/* extra text template */
+#define THIS_STR_EXTRA_TEXT       STR_EXTRA_TEXTILE_MILL
+#define THIS_STR_DEBUG_TEXT       STR_EXTRA_TEXT_DEBUG_SECONDARY
+
 item(FEAT_INDUSTRYTILES, tile_textile_mill, 183) {
 	property {
 		substitute: 0;
@@ -1203,42 +1219,8 @@ switch(FEAT_INDUSTRIES, SELF, action2_7661, game_mode) {
 	return 1024;
 }
 
-#include "../templates/produce_secondary_C.pnml"
-
-switch(FEAT_INDUSTRIES, SELF, action2_7689, STORE_TEMP((rotate((LOAD_PERM(15) & 65535), 16) | (LOAD_PERM(14) & 65535)), 261)) {
-	0: return string(STR_INFO_DEBUG_PRODUCTION_CONTRIBUTION);
-	return string(STR_INFO_DEBUG_PRODUCTION_CONTRIBUTION);
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7690, STORE_TEMP((rotate((LOAD_PERM(13) & 65535), 16) | (LOAD_PERM(12) & 65535)), 260)) {
-	0: action2_7689;
-	action2_7689;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7691, STORE_TEMP((rotate((LOAD_PERM(11) & 65535), 16) | (LOAD_PERM(10) & 65535)), 259)) {
-	0: action2_7690;
-	action2_7690;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7692, STORE_TEMP((rotate((LOAD_PERM(9) & 65535), 16) | (LOAD_PERM(8) & 65535)), 258)) {
-	0: action2_7691;
-	action2_7691;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7693, STORE_TEMP((rotate((LOAD_PERM(7) & 65535), 16) | (LOAD_PERM(3) & 65535)), 257)) {
-	0: action2_7692;
-	action2_7692;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7694, STORE_TEMP((rotate((LOAD_PERM(2) & 65535), 16) | (LOAD_PERM(1) & 65535)), 256)) {
-	0: action2_7693;
-	action2_7693;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7695, show_debug_texts) {
-	1: action2_7694;
-	return string(STR_EXTRA_TEXTILE_MILL);
-}
+#include "../templates/produce_secondary.pnml"
+#include "../templates/extra_text_secondary.pnml"
 
 CHECK_OPENING(action2_7699, 1763, -1)
 
@@ -1253,14 +1235,14 @@ SET_PRODUCTION_COUNTER_PRODUCED(action2_7706)
 CHECK_CLOSE_SECONDARY(action2_7709)
 
 switch(FEAT_INDUSTRIES, SELF, switch_main_textile_mill, current_callback) {
-	0: THIS_ID(simple_produce);
+	0: THIS_ID(produce);
 	IND_CB_LOCATION_CHECK: action2_7661;
 	IND_CB_AVAILABILITY: action2_7699;
 	IND_CB_COLOUR: action2_7703;
 	IND_CB_EXTRA_TEXT_FUND: action2_7700;
 	IND_CB_RANDOM_PROD_CHANGE: action2_7709;
 	IND_CB_MONTHLY_PROD_CHANGE: action2_7706;
-	IND_CB_EXTRA_TEXT_INDUSTRY: action2_7695;
+	IND_CB_EXTRA_TEXT_INDUSTRY: THIS_ID(extra_text);
 	THIS_ID(produce);
 }
 
