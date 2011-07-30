@@ -7,6 +7,8 @@
 
 #define THIS_ID(...) sheep_farm ## __VA_ARGS__
 
+#define THIS_STR_EXTRA_SUPPLIES        STR_EXTRA_FARM_SUPPLIES
+
 
 item(FEAT_INDUSTRYTILES, tile_sheep_farm, 192) {
 	property {
@@ -481,16 +483,9 @@ switch(FEAT_INDUSTRIES, SELF, action2_7394, STORE_TEMP(LOAD_PERM(0), 1)) {
 	action2_7393;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7395, [STORE_TEMP(LOAD_PERM(0), 256), var[0x93, 0, -1]]) {
-	128: return string(STR_EXTRA_MAX_PRODUCTION);
-	return string(STR_EXTRA_FARM_SUPPLIES);
-}
+#include "../templates/extra_text_primary.pnml"
 
 CHECK_OPENING(action2_7399, 0, -1)
-
-switch(FEAT_INDUSTRIES, SELF, action2_7400, [STORE_TEMP(-701265, 256), 32928]) {
-	return;
-}
 
 SWITCH_COLOUR_SCHEME1(action2_7403)
 
@@ -499,10 +494,10 @@ switch(FEAT_INDUSTRIES, SELF, switch_main_sheep_farm, current_callback) {
 	IND_CB_LOCATION_CHECK: action2_7383;
 	IND_CB_AVAILABILITY: action2_7399;
 	IND_CB_COLOUR: action2_7403;
-	IND_CB_EXTRA_TEXT_FUND: action2_7400;
+	IND_CB_EXTRA_TEXT_FUND: return;
 	IND_CB_RANDOM_PROD_CHANGE: action2_7387;
 	IND_CB_MONTHLY_PROD_CHANGE: action2_7394;
-	IND_CB_EXTRA_TEXT_INDUSTRY: action2_7395;
+	IND_CB_EXTRA_TEXT_INDUSTRY: THIS_ID(extra_text);
 	THIS_ID(produce);
 }
 
