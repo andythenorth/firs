@@ -7,6 +7,8 @@
 
 #define THIS_ID(...) forest ## __VA_ARGS__
 
+#define THIS_STR_EXTRA_SUPPLIES        STR_EXTRA_FARM_SUPPLIES
+
 item(FEAT_INDUSTRYTILES, tile_forest, 205) {
 	property {
 		substitute: 0;
@@ -5352,57 +5354,9 @@ switch(FEAT_INDUSTRIES, SELF, action2_4485, game_mode) {
 }
 
 #include "../templates/produce_primary.pnml"
+#include "../templates/change_production_level_primary.pnml"
+#include "../templates/extra_text_primary.pnml"
 
-switch(FEAT_INDUSTRIES, SELF, action2_4488, var[0x93, 0, -1]) {
-	0..4: return 3;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4489, allow_close_primary) {
-	1..255: action2_4488;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4490, (extra_callback_info2 & 31)) {
-	0: return 13;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4491, (extra_callback_info2 & 3)) {
-	0: return 13;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4492, STORE_PERM(var[0x93, 0, -1], 2)) {
-	0..4: return 0;
-	5..32: action2_4490;
-	action2_4491;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4493, allow_primary_production_decrease) {
-	1..255: action2_4492;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4494, (extra_callback_info2 & 3)) {
-	0: return 14;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4495, [STORE_PERM(0, 0), LOAD_TEMP(1)]) {
-	1..-1: action2_4494;
-	action2_4493;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4496, STORE_TEMP(LOAD_PERM(0), 1)) {
-	0: action2_4495;
-	action2_4495;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4497, [STORE_TEMP(LOAD_PERM(0), 256), var[0x93, 0, -1]]) {
-	128: return string(STR_EXTRA_MAX_PRODUCTION);
-	return string(STR_EXTRA_FARM_SUPPLIES);
-}
 
 switch(FEAT_INDUSTRIES, SELF, action2_4499, (current_date + 1)) {
 	0: return 1;
@@ -5420,10 +5374,6 @@ switch(FEAT_INDUSTRIES, SELF, action2_4501, restrict_open_during_gameplay) {
 	action2_4499;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_4502, [STORE_TEMP(-701265, 256), 32928]) {
-	return;
-}
-
 SWITCH_COLOUR_SCHEME1(action2_4505)
 
 switch(FEAT_INDUSTRIES, SELF, switch_main_forest, current_callback) {
@@ -5431,10 +5381,10 @@ switch(FEAT_INDUSTRIES, SELF, switch_main_forest, current_callback) {
 	IND_CB_LOCATION_CHECK: action2_4485;
 	IND_CB_AVAILABILITY: action2_4501;
 	IND_CB_COLOUR: action2_4505;
-	IND_CB_EXTRA_TEXT_FUND: action2_4502;
-	IND_CB_RANDOM_PROD_CHANGE: action2_4489;
-	IND_CB_MONTHLY_PROD_CHANGE: action2_4496;
-	IND_CB_EXTRA_TEXT_INDUSTRY: action2_4497;
+	IND_CB_EXTRA_TEXT_FUND:     return;
+	IND_CB_RANDOM_PROD_CHANGE:  THIS_ID(check_close);
+	IND_CB_MONTHLY_PROD_CHANGE: THIS_ID(check_production_change);
+	IND_CB_EXTRA_TEXT_INDUSTRY: THIS_ID(extra_text);
 	THIS_ID(produce);
 }
 
