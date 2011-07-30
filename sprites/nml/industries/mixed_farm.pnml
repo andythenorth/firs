@@ -7,6 +7,8 @@
 
 #define THIS_ID(...) mixed_farm ## __VA_ARGS__
 
+#define THIS_STR_EXTRA_SUPPLIES        STR_EXTRA_FARM_SUPPLIES
+
 item(FEAT_INDUSTRYTILES, tile_mixed_farm, 190) {
 	property {
 		substitute: 0;
@@ -337,63 +339,10 @@ switch(FEAT_INDUSTRIES, SELF, action2_6454, game_mode) {
 }
 
 #include "../templates/produce_primary.pnml"
-
-switch(FEAT_INDUSTRIES, SELF, action2_6457, var[0x93, 0, -1]) {
-	0..4: return 3;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6458, allow_close_primary) {
-	1..255: action2_6457;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6459, (extra_callback_info2 & 31)) {
-	0: return 13;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6460, (extra_callback_info2 & 3)) {
-	0: return 13;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6461, STORE_PERM(var[0x93, 0, -1], 2)) {
-	0..4: return 0;
-	5..32: action2_6459;
-	action2_6460;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6462, allow_primary_production_decrease) {
-	1..255: action2_6461;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6463, (extra_callback_info2 & 3)) {
-	0: return 14;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6464, [STORE_PERM(0, 0), LOAD_TEMP(1)]) {
-	1..-1: action2_6463;
-	action2_6462;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6465, STORE_TEMP(LOAD_PERM(0), 1)) {
-	0: action2_6464;
-	action2_6464;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6466, [STORE_TEMP(LOAD_PERM(0), 256), var[0x93, 0, -1]]) {
-	128: return string(STR_EXTRA_MAX_PRODUCTION);
-	return string(STR_EXTRA_FARM_SUPPLIES);
-}
+#include "../templates/change_production_level_primary.pnml"
+#include "../templates/extra_text_primary.pnml"
 
 CHECK_OPENING(action2_6470, 0, -1)
-
-switch(FEAT_INDUSTRIES, SELF, action2_6471, [STORE_TEMP(-701265, 256), 32928]) {
-	return;
-}
 
 SWITCH_COLOUR_SCHEME1(action2_6474)
 
@@ -402,10 +351,10 @@ switch(FEAT_INDUSTRIES, SELF, switch_main_mixed_farm, current_callback) {
 	IND_CB_LOCATION_CHECK: action2_6454;
 	IND_CB_AVAILABILITY: action2_6470;
 	IND_CB_COLOUR: action2_6474;
-	IND_CB_EXTRA_TEXT_FUND: action2_6471;
-	IND_CB_RANDOM_PROD_CHANGE: action2_6458;
-	IND_CB_MONTHLY_PROD_CHANGE: action2_6465;
-	IND_CB_EXTRA_TEXT_INDUSTRY: action2_6466;
+	IND_CB_EXTRA_TEXT_FUND:     return;
+	IND_CB_RANDOM_PROD_CHANGE:  THIS_ID(check_close);
+	IND_CB_MONTHLY_PROD_CHANGE: THIS_ID(check_production_change);
+	IND_CB_EXTRA_TEXT_INDUSTRY: THIS_ID(extra_text);
 	THIS_ID(produce);
 }
 
