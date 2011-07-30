@@ -1,0 +1,53 @@
+/*
+ * This file is part of FIRS industry set.
+ * FIRS industry set is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 2.
+ * FIRS industry set is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS industry set. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/*
+ * Template which checks availability of an industry for building
+ * - Always allow in SE
+ * - Never allow when NewGRF parameter forbids building
+ * - Allow in THIS_MIN_YEAR ... THIS_MAX_YEAR
+ *
+ * Optionally an industry may define in its pnml file
+ * THIS_MAX_YEAR      last availability year
+ * THIS_MIN_YEAR      first availability year
+ */
+
+
+
+#ifdef THIS_MAX_YEAR
+switch(FEAT_INDUSTRIES, SELF, THIS_ID(check_availability_max_year), (current_date + 1) > date(THIS_MAX_YEAR, 12, 31)) {
+	1: return CB_RESULT_IND_DISALLOW;
+#else
+switch(FEAT_INDUSTRIES, SELF, THIS_ID(check_availability_max_year), 1) {
+#endif
+	return CB_RESULT_IND_ALLOW
+}
+
+switch(FEAT_INDUSTRIES, SELF, THIS_ID(check_availability_min_year), (current_date + 1)) {
+#ifdef THIS_MIN_YEAR
+	0 .. date(THIS_MIN_YEAR, 1, 1): return CB_RESULT_IND_DISALLOW;
+#endif
+	THIS_ID(check_availability_max_year);
+}
+
+/* Disallow outside map generation, if restriction is in place */
+switch(FEAT_INDUSTRIES, SELF, THIS_ID(check_availability_build_type), (extra_callback_info2 & 255)) {
+	1: return CB_RESULT_IND_DISALLOW;
+	2: return CB_RESULT_IND_DISALLOW;
+	THIS_ID(check_availability_min_year);             // we're generating a map. Check availability years
+}
+
+/* Check for restriction via parameter */
+switch(FEAT_INDUSTRIES, SELF, THIS_ID(check_availability_param), restrict_open_during_gameplay) {
+	1..255: THIS_ID(check_availability_min_year);   // if allowed: check availability years
+	THIS_ID(check_availability_build_type);           // if not allowed: check whether we're just generating a map
+}
+
+switch (FEAT_INDUSTRIES, SELF, THIS_ID(check_availability), game_mode != GAMEMODE_GAME) {
+	1: return CB_RESULT_IND_ALLOW;
+	THIS_ID(check_availability_param)
+}
