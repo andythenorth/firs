@@ -1,0 +1,76 @@
+/*
+ * This file is part of FIRS industry set.
+ * FIRS industry set is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 2.
+ * FIRS industry set is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS industry set. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/*
+ * This template is for use with primary industries which support supply usage
+ * - Production will increase in 1/4 when supplies are delivered
+ * - Production will decrease in 1/32 when no supplies are delivered and prod. level <= 32
+ * - Production will decrease in 1/4 when no supplies are delivered and prod. level > 32
+ *
+ * Used permanent storage: var_num_supplies_delivered
+ *
+ * Usage in the industry's pnml:
+ * random callback:  THIS_ID(check_close)
+ * monthly callback: THIS_ID(check_production_change)
+ *
+ */
+
+/* Needed temporary variable */
+#define var_supplies_delivered   0
+
+/* =================================== */
+/* Closure check for random callback   */
+/* =================================== */
+switch(FEAT_INDUSTRIES, SELF, THIS_ID(check_close), (production_level <= 4) * (allow_close_primary > 0)) {
+	1: return CB_RESULT_IND_PROD_CLOSE;
+	return CB_RESULT_IND_PROD_NO_CHANGE;
+}
+
+/* =================================== */
+/* Production change evaluated monthly */
+/* =================================== */
+
+/* Decrease production in one of 32 cases */
+switch(FEAT_INDUSTRIES, SELF, THIS_ID(random_slow_decrease), (extra_callback_info2 & 31)) {
+	0: return CB_RESULT_IND_PROD_DECREMENT_BY_1;
+	return CB_RESULT_IND_PROD_NO_CHANGE;
+}
+
+/* decrease production in one of four cases */
+switch(FEAT_INDUSTRIES, SELF, THIS_ID(random_decrease), (extra_callback_info2 & 3)) {
+	0: return CB_RESULT_IND_PROD_DECREMENT_BY_1;
+	return CB_RESULT_IND_PROD_NO_CHANGE;
+}
+
+switch(FEAT_INDUSTRIES, SELF, THIS_ID(decrease_production), production_level) {
+	0..4: return CB_RESULT_IND_PROD_NO_CHANGE;  // if we're here, we close in the random production change CB
+	5..32: THIS_ID(random_slow_decrease);
+	THIS_ID(random_decrease);
+}
+
+/* Don't even consider to decrease production, if turned off */
+switch(FEAT_INDUSTRIES, SELF, THIS_ID(check_decrease_production), allow_primary_production_decrease) {
+	1..255: THIS_ID(decrease_production);
+	return CB_RESULT_IND_PROD_NO_CHANGE;
+}
+
+/* increase production in one of four cases */
+switch(FEAT_INDUSTRIES, SELF, THIS_ID(random_increase), (extra_callback_info2 & 3)) {
+	0: return CB_RESULT_IND_PROD_INCREMENT_BY_1;
+	return CB_RESULT_IND_PROD_NO_CHANGE;
+}
+
+switch(FEAT_INDUSTRIES, SELF, THIS_ID(check_production_change), [
+			STORE_TEMP(LOAD_PERM(var_num_supplies_delivered), var_supplies_delivered),
+			STORE_PERM(0, var_num_supplies_delivered),
+			LOAD_TEMP(var_supplies_delivered) > 0
+			]) {
+	1: THIS_ID(random_increase);
+	THIS_ID(check_decrease_production);
+}
+
+#undef var_supplies_delivered
