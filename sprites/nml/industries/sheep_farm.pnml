@@ -436,53 +436,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_7383, game_mode) {
 }
 
 #include "../templates/produce_primary.pnml"
-
-switch(FEAT_INDUSTRIES, SELF, action2_7386, var[0x93, 0, -1]) {
-	0..4: return 3;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7387, allow_close_primary) {
-	1..255: action2_7386;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7388, (extra_callback_info2 & 31)) {
-	0: return 13;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7389, (extra_callback_info2 & 3)) {
-	0: return 13;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7390, STORE_PERM(var[0x93, 0, -1], 2)) {
-	0..4: return 0;
-	5..32: action2_7388;
-	action2_7389;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7391, allow_primary_production_decrease) {
-	1..255: action2_7390;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7392, (extra_callback_info2 & 3)) {
-	0: return 14;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7393, [STORE_PERM(0, 0), LOAD_TEMP(1)]) {
-	1..-1: action2_7392;
-	action2_7391;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7394, STORE_TEMP(LOAD_PERM(0), 1)) {
-	0: action2_7393;
-	action2_7393;
-}
-
+#include "../templates/change_production_level_primary.pnml"
 #include "../templates/extra_text_primary.pnml"
 
 CHECK_OPENING(action2_7399, 0, -1)
@@ -495,8 +449,8 @@ switch(FEAT_INDUSTRIES, SELF, switch_main_sheep_farm, current_callback) {
 	IND_CB_AVAILABILITY: action2_7399;
 	IND_CB_COLOUR: action2_7403;
 	IND_CB_EXTRA_TEXT_FUND: return;
-	IND_CB_RANDOM_PROD_CHANGE: action2_7387;
-	IND_CB_MONTHLY_PROD_CHANGE: action2_7394;
+	IND_CB_RANDOM_PROD_CHANGE:  THIS_ID(check_close);
+	IND_CB_MONTHLY_PROD_CHANGE: THIS_ID(check_production_change);
 	IND_CB_EXTRA_TEXT_INDUSTRY: THIS_ID(extra_text);
 	THIS_ID(produce);
 }
