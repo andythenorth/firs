@@ -7,6 +7,8 @@
 
 #define THIS_ID(...) fruit_plantation ## __VA_ARGS__
 
+#define THIS_STR_EXTRA_SUPPLIES        STR_EXTRA_FARM_SUPPLIES
+
 item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_207, 207) {
 	property {
 		substitute: 0;
@@ -5274,57 +5276,8 @@ switch(FEAT_INDUSTRIES, SELF, action2_4813, game_mode) {
 }
 
 #include "../templates/produce_primary.pnml"
-
-switch(FEAT_INDUSTRIES, SELF, action2_4816, var[0x93, 0, -1]) {
-	0..4: return 3;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4817, allow_close_primary) {
-	1..255: action2_4816;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4818, (extra_callback_info2 & 31)) {
-	0: return 13;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4819, (extra_callback_info2 & 3)) {
-	0: return 13;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4820, STORE_PERM(var[0x93, 0, -1], 2)) {
-	0..4: return 0;
-	5..32: action2_4818;
-	action2_4819;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4821, allow_primary_production_decrease) {
-	1..255: action2_4820;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4822, (extra_callback_info2 & 3)) {
-	0: return 14;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4823, [STORE_PERM(0, 0), LOAD_TEMP(1)]) {
-	1..-1: action2_4822;
-	action2_4821;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4824, STORE_TEMP(LOAD_PERM(0), 1)) {
-	0: action2_4823;
-	action2_4823;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4825, [STORE_TEMP(LOAD_PERM(0), 256), var[0x93, 0, -1]]) {
-	128: return string(STR_EXTRA_MAX_PRODUCTION);
-	return string(STR_EXTRA_FARM_SUPPLIES);
-}
+#include "../templates/change_production_level_primary.pnml"
+#include "../templates/extra_text_primary.pnml"
 
 CHECK_OPENING(action2_4829, 0, -1)
 
@@ -5340,9 +5293,9 @@ switch(FEAT_INDUSTRIES, SELF, action2_4834, current_callback) {
 	IND_CB_AVAILABILITY: action2_4829;
 	IND_CB_COLOUR: action2_4833;
 	IND_CB_EXTRA_TEXT_FUND: action2_4830;
-	IND_CB_RANDOM_PROD_CHANGE: action2_4817;
-	IND_CB_MONTHLY_PROD_CHANGE: action2_4824;
-	IND_CB_EXTRA_TEXT_INDUSTRY: action2_4825;
+	IND_CB_RANDOM_PROD_CHANGE:  THIS_ID(check_close);
+	IND_CB_MONTHLY_PROD_CHANGE: THIS_ID(check_production_change);
+	IND_CB_EXTRA_TEXT_INDUSTRY: THIS_ID(extra_text);
 	THIS_ID(produce);
 }
 
