@@ -7,6 +7,7 @@
 
 #define THIS_ID(...) oil_wells ## __VA_ARGS__
 
+#define THIS_STR_EXTRA_SUPPLIES        STR_EXTRA_ENGINEERING_SUPPLIES
 
 item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_215, 215) {
 	property {
@@ -210,63 +211,10 @@ switch(FEAT_INDUSTRIES, SELF, action2_6598, game_mode) {
 }
 
 #include "../templates/produce_primary.pnml"
-
-switch(FEAT_INDUSTRIES, SELF, action2_6601, var[0x93, 0, -1]) {
-	0..4: return 3;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6602, allow_close_primary) {
-	1..255: action2_6601;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6603, (extra_callback_info2 & 31)) {
-	0: return 13;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6604, (extra_callback_info2 & 3)) {
-	0: return 13;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6605, STORE_PERM(var[0x93, 0, -1], 2)) {
-	0..4: return 0;
-	5..32: action2_6603;
-	action2_6604;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6606, allow_primary_production_decrease) {
-	1..255: action2_6605;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6607, (extra_callback_info2 & 3)) {
-	0: return 14;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6608, [STORE_PERM(0, 0), LOAD_TEMP(1)]) {
-	1..-1: action2_6607;
-	action2_6606;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6609, STORE_TEMP(LOAD_PERM(0), 1)) {
-	0: action2_6608;
-	action2_6608;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6610, [STORE_TEMP(LOAD_PERM(0), 256), var[0x93, 0, -1]]) {
-	128: return string(STR_EXTRA_MAX_PRODUCTION);
-	return string(STR_EXTRA_ENGINEERING_SUPPLIES);
-}
+#include "../templates/change_production_level_primary.pnml"
+#include "../templates/extra_text_primary.pnml"
 
 CHECK_OPENING(action2_6614, 1885, -1)
-
-switch(FEAT_INDUSTRIES, SELF, action2_6615, [STORE_TEMP((688117 - 701265), 256), 32933]) {
-	return;
-}
 
 SWITCH_COLOUR_SCHEME1(action2_6618)
 
@@ -275,10 +223,10 @@ switch(FEAT_INDUSTRIES, SELF, action2_6619, current_callback) {
 	IND_CB_LOCATION_CHECK: action2_6598;
 	IND_CB_AVAILABILITY: action2_6614;
 	IND_CB_COLOUR: action2_6618;
-	IND_CB_EXTRA_TEXT_FUND: action2_6615;
-	IND_CB_RANDOM_PROD_CHANGE: action2_6602;
-	IND_CB_MONTHLY_PROD_CHANGE: action2_6609;
-	IND_CB_EXTRA_TEXT_INDUSTRY: action2_6610;
+	IND_CB_EXTRA_TEXT_FUND:     return;
+	IND_CB_RANDOM_PROD_CHANGE:  THIS_ID(check_close);
+	IND_CB_MONTHLY_PROD_CHANGE: THIS_ID(check_production_change);
+	IND_CB_EXTRA_TEXT_INDUSTRY: THIS_ID(extra_text);
 	THIS_ID(produce);
 }
 
