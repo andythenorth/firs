@@ -1944,10 +1944,6 @@ switch(FEAT_INDUSTRIES, SELF, action2_3499, game_mode) {
 
 CHECK_OPENING(action2_3515, 0, -1)
 
-switch(FEAT_INDUSTRIES, SELF, action2_3516, [STORE_TEMP(-701265, 256), 32928]) {
-	return;
-}
-
 SWITCH_COLOUR_SCHEME1(action2_3519)
 
 switch(FEAT_INDUSTRIES, SELF, switch_main_clay_pit, current_callback) {
