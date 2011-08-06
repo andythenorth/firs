@@ -679,7 +679,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6167, industry_distance(stockyard)) {
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_6168, industry_distance(diary_farm)) {
+switch(FEAT_INDUSTRIES, SELF, action2_6168, industry_distance(dairy_farm)) {
 	0..16: return 4;
 	action2_6167;
 }

@@ -1,4 +1,4 @@
-item(FEAT_INDUSTRYTILES, tile_diary, 181) {
+item(FEAT_INDUSTRYTILES, tile_dairy, 181) {
 	property {
 		substitute: 0;
 		accepted_cargos: [[MNSP, 8], [10, 8], [0, 0]];
@@ -403,7 +403,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_3790, relative_pos) {
 	action2_3783;
 }
 
-switch(FEAT_INDUSTRYTILES, PARENT, switch_diary_default_layout, layout_num) {
+switch(FEAT_INDUSTRYTILES, PARENT, switch_dairy_default_layout, layout_num) {
 	1: action2_3784;
 	2: action2_3785;
 	3: action2_3786;
@@ -807,7 +807,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_3828, relative_pos) {
 	action2_3821;
 }
 
-switch(FEAT_INDUSTRYTILES, PARENT, switch_diary_desert_layout, layout_num) {
+switch(FEAT_INDUSTRYTILES, PARENT, switch_dairy_desert_layout, layout_num) {
 	1: action2_3822;
 	2: action2_3823;
 	3: action2_3824;
@@ -1211,7 +1211,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_3866, relative_pos) {
 	action2_3859;
 }
 
-switch(FEAT_INDUSTRYTILES, PARENT, switch_diary_snow_layout, layout_num) {
+switch(FEAT_INDUSTRYTILES, PARENT, switch_dairy_snow_layout, layout_num) {
 	1: action2_3860;
 	2: action2_3861;
 	3: action2_3862;
@@ -1222,7 +1222,7 @@ switch(FEAT_INDUSTRYTILES, PARENT, switch_diary_snow_layout, layout_num) {
 	action2_3860;
 }
 
-SWITCH_TERRAIN_NORMAL_DESERT_SNOW(diary, layout)
+SWITCH_TERRAIN_NORMAL_DESERT_SNOW(dairy, layout)
 
 CHECK_NEARBY_TILE_CLASS(action2_3876)
 
@@ -1238,7 +1238,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_3878, var[0x60, 0, 255, 0]) {
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_3879, (current_callback & 255)) {
 	INDTILE_CB_SLOPE_IS_SUITABLE: action2_3878;
-	switch_diary_terrain;
+	switch_dairy_terrain;
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_3880, (extra_callback_info1 & 7)) {
@@ -1257,109 +1257,109 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_3881, (current_callback & 255)) {
 	action2_3879;
 }
 
-item(FEAT_INDUSTRYTILES, tile_diary, 181) {
+item(FEAT_INDUSTRYTILES, tile_dairy, 181) {
 	graphics {
 		action2_3881;
 	}
 }
 
-tilelayout tilelayout_diary_1 {
-	0, 0: tile_diary;
-	0, 1: tile_diary;
-	1, 0: tile_diary;
-	1, 1: tile_diary;
-	2, 0: tile_diary;
-	2, 1: tile_diary;
-	3, 0: tile_diary;
-	3, 1: tile_diary;
+tilelayout tilelayout_dairy_1 {
+	0, 0: tile_dairy;
+	0, 1: tile_dairy;
+	1, 0: tile_dairy;
+	1, 1: tile_dairy;
+	2, 0: tile_dairy;
+	2, 1: tile_dairy;
+	3, 0: tile_dairy;
+	3, 1: tile_dairy;
 }
 
-tilelayout tilelayout_diary_2 {
-	0, 1: tile_diary;
-	0, 2: tile_diary;
-	1, 1: tile_diary;
-	1, 2: tile_diary;
-	2, 0: tile_diary;
-	2, 1: tile_diary;
-	2, 2: tile_diary;
-	3, 0: tile_diary;
-	3, 1: tile_diary;
-	3, 2: tile_diary;
+tilelayout tilelayout_dairy_2 {
+	0, 1: tile_dairy;
+	0, 2: tile_dairy;
+	1, 1: tile_dairy;
+	1, 2: tile_dairy;
+	2, 0: tile_dairy;
+	2, 1: tile_dairy;
+	2, 2: tile_dairy;
+	3, 0: tile_dairy;
+	3, 1: tile_dairy;
+	3, 2: tile_dairy;
 }
 
-tilelayout tilelayout_diary_3 {
-	0, 0: tile_diary;
-	0, 1: tile_diary;
-	0, 2: tile_diary;
-	1, 0: tile_diary;
-	1, 1: tile_diary;
-	1, 2: tile_diary;
-	2, 1: tile_diary;
-	2, 2: tile_diary;
-	3, 1: tile_diary;
-	3, 2: tile_diary;
+tilelayout tilelayout_dairy_3 {
+	0, 0: tile_dairy;
+	0, 1: tile_dairy;
+	0, 2: tile_dairy;
+	1, 0: tile_dairy;
+	1, 1: tile_dairy;
+	1, 2: tile_dairy;
+	2, 1: tile_dairy;
+	2, 2: tile_dairy;
+	3, 1: tile_dairy;
+	3, 2: tile_dairy;
 }
 
-tilelayout tilelayout_diary_4 {
-	0, 0: tile_diary;
-	0, 1: tile_diary;
-	0, 2: tile_diary;
-	0, 3: tile_diary;
-	1, 0: tile_diary;
-	1, 1: tile_diary;
-	1, 2: tile_diary;
-	1, 3: tile_diary;
-	2, 0: tile_diary;
-	2, 1: tile_diary;
-	2, 2: tile_diary;
-	2, 3: tile_diary;
-	3, 1: tile_diary;
-	3, 2: tile_diary;
+tilelayout tilelayout_dairy_4 {
+	0, 0: tile_dairy;
+	0, 1: tile_dairy;
+	0, 2: tile_dairy;
+	0, 3: tile_dairy;
+	1, 0: tile_dairy;
+	1, 1: tile_dairy;
+	1, 2: tile_dairy;
+	1, 3: tile_dairy;
+	2, 0: tile_dairy;
+	2, 1: tile_dairy;
+	2, 2: tile_dairy;
+	2, 3: tile_dairy;
+	3, 1: tile_dairy;
+	3, 2: tile_dairy;
 }
 
-tilelayout tilelayout_diary_5 {
-	0, 0: tile_diary;
-	0, 1: tile_diary;
-	0, 2: tile_diary;
-	0, 3: tile_diary;
-	1, 0: tile_diary;
-	1, 1: tile_diary;
-	1, 2: tile_diary;
-	1, 3: tile_diary;
+tilelayout tilelayout_dairy_5 {
+	0, 0: tile_dairy;
+	0, 1: tile_dairy;
+	0, 2: tile_dairy;
+	0, 3: tile_dairy;
+	1, 0: tile_dairy;
+	1, 1: tile_dairy;
+	1, 2: tile_dairy;
+	1, 3: tile_dairy;
 }
 
-tilelayout tilelayout_diary_6 {
-	0, 0: tile_diary;
-	0, 1: tile_diary;
-	1, 0: tile_diary;
-	1, 1: tile_diary;
-	3, 0: tile_diary;
-	3, 1: tile_diary;
-	4, 0: tile_diary;
-	4, 1: tile_diary;
+tilelayout tilelayout_dairy_6 {
+	0, 0: tile_dairy;
+	0, 1: tile_dairy;
+	1, 0: tile_dairy;
+	1, 1: tile_dairy;
+	3, 0: tile_dairy;
+	3, 1: tile_dairy;
+	4, 0: tile_dairy;
+	4, 1: tile_dairy;
 }
 
-tilelayout tilelayout_diary_7 {
-	0, 0: tile_diary;
-	0, 1: tile_diary;
-	0, 3: tile_diary;
-	0, 4: tile_diary;
-	1, 0: tile_diary;
-	1, 1: tile_diary;
-	1, 3: tile_diary;
-	1, 4: tile_diary;
-	2, 0: tile_diary;
-	2, 1: tile_diary;
-	2, 3: tile_diary;
-	2, 4: tile_diary;
-	3, 0: tile_diary;
-	3, 1: tile_diary;
+tilelayout tilelayout_dairy_7 {
+	0, 0: tile_dairy;
+	0, 1: tile_dairy;
+	0, 3: tile_dairy;
+	0, 4: tile_dairy;
+	1, 0: tile_dairy;
+	1, 1: tile_dairy;
+	1, 3: tile_dairy;
+	1, 4: tile_dairy;
+	2, 0: tile_dairy;
+	2, 1: tile_dairy;
+	2, 3: tile_dairy;
+	2, 4: tile_dairy;
+	3, 0: tile_dairy;
+	3, 1: tile_dairy;
 }
 
-item(FEAT_INDUSTRIES, diary, 36) {
+item(FEAT_INDUSTRIES, dairy, 36) {
 	property {
 		substitute: 0;
-		layouts: [tilelayout_diary_1, tilelayout_diary_2, tilelayout_diary_3, tilelayout_diary_4, tilelayout_diary_5, tilelayout_diary_6, tilelayout_diary_7];
+		layouts: [tilelayout_dairy_1, tilelayout_dairy_2, tilelayout_dairy_3, tilelayout_dairy_4, tilelayout_dairy_5, tilelayout_dairy_6, tilelayout_dairy_7];
 		life_type: 4;
 		closure_msg: 18483;
 		prod_increase_msg: 18485;
@@ -1386,12 +1386,12 @@ item(FEAT_INDUSTRIES, diary, 36) {
 	}
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3884, industry_distance(diary)) {
+switch(FEAT_INDUSTRIES, SELF, action2_3884, industry_distance(dairy)) {
 	0..56: return 1025;
 	return 1024;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3885, industry_distance(diary_farm)) {
+switch(FEAT_INDUSTRIES, SELF, action2_3885, industry_distance(dairy_farm)) {
 	0..16: return 4;
 	action2_3884;
 }
@@ -1590,7 +1590,7 @@ SET_PRODUCTION_COUNTER_PRODUCED(action2_3932)
 
 CHECK_CLOSE_SECONDARY(action2_3935)
 
-switch(FEAT_INDUSTRIES, SELF, switch_main_diary, current_callback) {
+switch(FEAT_INDUSTRIES, SELF, switch_main_dairy, current_callback) {
 	0: action2_3922;
 	IND_CB_LOCATION_CHECK: action2_3887;
 	IND_CB_AVAILABILITY: action2_3925;
@@ -1602,9 +1602,9 @@ switch(FEAT_INDUSTRIES, SELF, switch_main_diary, current_callback) {
 	action2_3889;
 }
 
-item(FEAT_INDUSTRIES, diary, 36) {
+item(FEAT_INDUSTRIES, dairy, 36) {
 	graphics {
-		switch_main_diary;
+		switch_main_dairy;
 	}
 }
 

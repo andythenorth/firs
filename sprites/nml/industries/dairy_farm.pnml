@@ -5,11 +5,11 @@
  * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS industry set. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#define THIS_ID(...) diary_farm ## __VA_ARGS__
+#define THIS_ID(...) dairy_farm ## __VA_ARGS__
 
 #define THIS_STR_EXTRA_SUPPLIES        STR_EXTRA_FARM_SUPPLIES
 
-item(FEAT_INDUSTRYTILES, tile_diary_farm, 180) {
+item(FEAT_INDUSTRYTILES, tile_dairy_farm, 180) {
 	property {
 		substitute: 0;
 		accepted_cargos: [[FMSP, 8], [0, 0], [0, 0]];
@@ -227,49 +227,49 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_3721, (current_callback & 255)) {
 	action2_3700;
 }
 
-item(FEAT_INDUSTRYTILES, tile_diary_farm, 180) {
+item(FEAT_INDUSTRYTILES, tile_dairy_farm, 180) {
 	graphics {
 		action2_3721;
 	}
 }
 
-tilelayout tilelayout_diary_farm_1 {
-	0, 0: tile_diary_farm;
-	0, 1: tile_diary_farm;
-	0, 2: tile_diary_farm;
-	2, 0: tile_diary_farm;
-	2, 1: tile_diary_farm;
-	3, 0: tile_diary_farm;
-	3, 1: tile_diary_farm;
-	3, 2: tile_diary_farm;
+tilelayout tilelayout_dairy_farm_1 {
+	0, 0: tile_dairy_farm;
+	0, 1: tile_dairy_farm;
+	0, 2: tile_dairy_farm;
+	2, 0: tile_dairy_farm;
+	2, 1: tile_dairy_farm;
+	3, 0: tile_dairy_farm;
+	3, 1: tile_dairy_farm;
+	3, 2: tile_dairy_farm;
 }
 
-tilelayout tilelayout_diary_farm_2 {
-	0, 0: tile_diary_farm;
-	0, 1: tile_diary_farm;
-	0, 2: tile_diary_farm;
-	1, 1: tile_diary_farm;
-	1, 2: tile_diary_farm;
-	2, 0: tile_diary_farm;
-	2, 1: tile_diary_farm;
-	2, 2: tile_diary_farm;
+tilelayout tilelayout_dairy_farm_2 {
+	0, 0: tile_dairy_farm;
+	0, 1: tile_dairy_farm;
+	0, 2: tile_dairy_farm;
+	1, 1: tile_dairy_farm;
+	1, 2: tile_dairy_farm;
+	2, 0: tile_dairy_farm;
+	2, 1: tile_dairy_farm;
+	2, 2: tile_dairy_farm;
 }
 
-tilelayout tilelayout_diary_farm_3 {
-	0, 1: tile_diary_farm;
-	0, 3: tile_diary_farm;
-	1, 0: tile_diary_farm;
-	1, 1: tile_diary_farm;
-	1, 3: tile_diary_farm;
-	2, 0: tile_diary_farm;
-	2, 1: tile_diary_farm;
-	2, 3: tile_diary_farm;
+tilelayout tilelayout_dairy_farm_3 {
+	0, 1: tile_dairy_farm;
+	0, 3: tile_dairy_farm;
+	1, 0: tile_dairy_farm;
+	1, 1: tile_dairy_farm;
+	1, 3: tile_dairy_farm;
+	2, 0: tile_dairy_farm;
+	2, 1: tile_dairy_farm;
+	2, 3: tile_dairy_farm;
 }
 
-item(FEAT_INDUSTRIES, diary_farm, 28) {
+item(FEAT_INDUSTRIES, dairy_farm, 28) {
 	property {
 		substitute: 0;
-		layouts: [tilelayout_diary_farm_1, tilelayout_diary_farm_2, tilelayout_diary_farm_3];
+		layouts: [tilelayout_dairy_farm_1, tilelayout_dairy_farm_2, tilelayout_dairy_farm_3];
 		life_type: 2;
 		closure_msg: 18483;
 		prod_increase_msg: 18488;
@@ -296,7 +296,7 @@ item(FEAT_INDUSTRIES, diary_farm, 28) {
 	}
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3724, industry_distance(diary_farm)) {
+switch(FEAT_INDUSTRIES, SELF, action2_3724, industry_distance(dairy_farm)) {
 	10..36: return 1024;
 	return 4;
 }
@@ -311,7 +311,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3726, STORE_TEMP(-1, 256)) {
 	action2_3725;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_3727, industry_distance(diary)) {
+switch(FEAT_INDUSTRIES, SELF, action2_3727, industry_distance(dairy)) {
 	0..16: return 4;
 	action2_3726;
 }
@@ -339,7 +339,7 @@ CHECK_OPENING(action2_3746, 0, -1)
 
 SWITCH_COLOUR_SCHEME1(action2_3750)
 
-switch(FEAT_INDUSTRIES, SELF, switch_main_diary_farm, current_callback) {
+switch(FEAT_INDUSTRIES, SELF, switch_main_dairy_farm, current_callback) {
 	0: THIS_ID(produce);
 	IND_CB_LOCATION_CHECK: action2_3730;
 	IND_CB_AVAILABILITY: action2_3746;
@@ -351,9 +351,9 @@ switch(FEAT_INDUSTRIES, SELF, switch_main_diary_farm, current_callback) {
 	THIS_ID(produce);
 }
 
-item(FEAT_INDUSTRIES, diary_farm, 28) {
+item(FEAT_INDUSTRIES, dairy_farm, 28) {
 	graphics {
-		switch_main_diary_farm;
+		switch_main_dairy_farm;
 	}
 }
 #include "../templates/undefs.pnml"
