@@ -85,23 +85,22 @@ spritelayout action2_7321 {
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_7322, relative_pos) {
-	0: action2_7319;
-	1: action2_7318;
-	513: action2_7320;
-	3: action2_7317;
+	relative_coord(0, 0): action2_7319;
+	relative_coord(1, 0): action2_7318;
+	relative_coord(1, 2): action2_7320;
+	relative_coord(3, 0): action2_7317;
 	action2_7321;
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_7323, relative_pos) {
-	0: action2_7318;
-	256: action2_7317;
-	512: action2_7320;
-	2: action2_7319;
+	relative_coord(0, 0): action2_7318;
+	relative_coord(0, 1): action2_7317;
+	relative_coord(0, 2): action2_7320;
+	relative_coord(2, 0): action2_7319;
 	action2_7321;
 }
 
 switch(FEAT_INDUSTRYTILES, PARENT, action2_7324, layout_num) {
-	1: action2_7322;
 	2: action2_7323;
 	action2_7322;
 }
@@ -172,23 +171,22 @@ spritelayout action2_7335 {
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_7336, relative_pos) {
-	0: action2_7333;
-	1: action2_7332;
-	513: action2_7334;
-	3: action2_7331;
+	relative_coord(0, 0): action2_7333;
+	relative_coord(1, 0): action2_7332;
+	relative_coord(1, 2): action2_7334;
+	relative_coord(3, 0): action2_7331;
 	action2_7335;
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_7337, relative_pos) {
-	0: action2_7332;
-	256: action2_7331;
-	512: action2_7334;
-	2: action2_7333;
+	relative_coord(0, 0): action2_7332;
+	relative_coord(0, 1): action2_7331;
+	relative_coord(0, 2): action2_7334;
+	relative_coord(2, 0): action2_7333;
 	action2_7335;
 }
 
 switch(FEAT_INDUSTRYTILES, PARENT, action2_7338, layout_num) {
-	1: action2_7336;
 	2: action2_7337;
 	action2_7336;
 }
@@ -259,23 +257,22 @@ spritelayout action2_7349 {
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_7350, relative_pos) {
-	0: action2_7347;
-	1: action2_7346;
-	513: action2_7348;
-	3: action2_7345;
+	relative_coord(0, 0): action2_7347;
+	relative_coord(1, 0): action2_7346;
+	relative_coord(1, 2): action2_7348;
+	relative_coord(3, 0): action2_7345;
 	action2_7349;
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_7351, relative_pos) {
-	0: action2_7346;
-	256: action2_7345;
-	512: action2_7348;
-	2: action2_7347;
+	relative_coord(0, 0): action2_7346;
+	relative_coord(0, 1): action2_7345;
+	relative_coord(0, 2): action2_7348;
+	relative_coord(2, 0): action2_7347;
 	action2_7349;
 }
 
 switch(FEAT_INDUSTRYTILES, PARENT, action2_7352, layout_num) {
-	1: action2_7350;
 	2: action2_7351;
 	action2_7350;
 }

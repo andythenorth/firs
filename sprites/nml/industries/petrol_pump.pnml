@@ -34,14 +34,12 @@ spritelayout action2_6696 {
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_6697, relative_pos) {
-	0: action2_6695;
-	256: action2_6696;
+	relative_coord(0, 1): action2_6696;
 	action2_6695;
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_6698, relative_pos) {
-	0: action2_6695;
-	1: action2_6696;
+	relative_coord(1, 0): action2_6696;
 	action2_6695;
 }
 
@@ -77,14 +75,12 @@ spritelayout action2_6705 {
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_6706, relative_pos) {
-	0: action2_6704;
-	256: action2_6705;
+	relative_coord(0, 1): action2_6705;
 	action2_6704;
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_6707, relative_pos) {
-	0: action2_6704;
-	1: action2_6705;
+	relative_coord(1, 0): action2_6705;
 	action2_6704;
 }
 
@@ -120,14 +116,12 @@ spritelayout action2_6714 {
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_6715, relative_pos) {
-	0: action2_6713;
-	256: action2_6714;
+	relative_coord(0, 1): action2_6714;
 	action2_6713;
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_6716, relative_pos) {
-	0: action2_6713;
-	1: action2_6714;
+	relative_coord(1, 0): action2_6714;
 	action2_6713;
 }
 

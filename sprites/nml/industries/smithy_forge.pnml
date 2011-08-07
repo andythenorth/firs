@@ -46,7 +46,7 @@ spritelayout action2_4515 {
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_4516, relative_pos) {
-	0: action2_4515;
+	relative_coord(0, 0): action2_4515;
 	action2_4514;
 }
 
@@ -103,7 +103,7 @@ spritelayout action2_4525 {
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_4526, relative_pos) {
-	0: action2_4525;
+	relative_coord(0, 0): action2_4525;
 	action2_4524;
 }
 
@@ -160,7 +160,7 @@ spritelayout action2_4535 {
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_4536, relative_pos) {
-	0: action2_4535;
+	relative_coord(0, 0): action2_4535;
 	action2_4534;
 }
 

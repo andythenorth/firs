@@ -183,19 +183,19 @@ spritelayout action2_6096 {
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_6097, relative_pos) {
-	4: action2_6085;
-	260: action2_6086;
-	516: action2_6087;
-	772: action2_6088;
-	259: action2_6089;
-	515: action2_6090;
-	771: action2_6091;
-	257: action2_6092;
-	513: action2_6093;
-	769: action2_6094;
-	3: action2_6096;
-	256: action2_6096;
-	768: action2_6096;
+	relative_coord(4, 0): action2_6085;
+	relative_coord(4, 1): action2_6086;
+	relative_coord(4, 2): action2_6087;
+	relative_coord(4, 3): action2_6088;
+	relative_coord(3, 1): action2_6089;
+	relative_coord(3, 2): action2_6090;
+	relative_coord(3, 3): action2_6091;
+	relative_coord(1, 1): action2_6092;
+	relative_coord(1, 2): action2_6093;
+	relative_coord(1, 3): action2_6094;
+	relative_coord(3, 0): action2_6096;
+	relative_coord(0, 1): action2_6096;
+	relative_coord(0, 3): action2_6096;
 	action2_6095;
 }
 
@@ -379,19 +379,19 @@ spritelayout action2_6123 {
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_6124, relative_pos) {
-	4: action2_6112;
-	260: action2_6113;
-	516: action2_6114;
-	772: action2_6115;
-	259: action2_6116;
-	515: action2_6117;
-	771: action2_6118;
-	257: action2_6119;
-	513: action2_6120;
-	769: action2_6121;
-	3: action2_6123;
-	256: action2_6123;
-	768: action2_6123;
+	relative_coord(4, 0): action2_6112;
+	relative_coord(4, 1): action2_6113;
+	relative_coord(4, 2): action2_6114;
+	relative_coord(4, 3): action2_6115;
+	relative_coord(3, 1): action2_6116;
+	relative_coord(3, 2): action2_6117;
+	relative_coord(3, 3): action2_6118;
+	relative_coord(1, 1): action2_6119;
+	relative_coord(1, 2): action2_6120;
+	relative_coord(1, 3): action2_6121;
+	relative_coord(3, 0): action2_6123;
+	relative_coord(0, 1): action2_6123;
+	relative_coord(0, 3): action2_6123;
 	action2_6122;
 }
 
@@ -575,19 +575,19 @@ spritelayout action2_6150 {
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_6151, relative_pos) {
-	4: action2_6139;
-	260: action2_6140;
-	516: action2_6141;
-	772: action2_6142;
-	259: action2_6143;
-	515: action2_6144;
-	771: action2_6145;
-	257: action2_6146;
-	513: action2_6147;
-	769: action2_6148;
-	3: action2_6150;
-	256: action2_6150;
-	768: action2_6150;
+	relative_coord(4, 0): action2_6139;
+	relative_coord(4, 1): action2_6140;
+	relative_coord(4, 2): action2_6141;
+	relative_coord(4, 3): action2_6142;
+	relative_coord(3, 1): action2_6143;
+	relative_coord(3, 2): action2_6144;
+	relative_coord(3, 3): action2_6145;
+	relative_coord(1, 1): action2_6146;
+	relative_coord(1, 2): action2_6147;
+	relative_coord(1, 3): action2_6148;
+	relative_coord(3, 0): action2_6150;
+	relative_coord(0, 1): action2_6150;
+	relative_coord(0, 3): action2_6150;
 	action2_6149;
 }
 

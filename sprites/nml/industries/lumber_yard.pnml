@@ -118,62 +118,62 @@ spritelayout action2_5715 {
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_5716, relative_pos) {
-	0: action2_5709;
-	256: action2_5708;
-	512: action2_5712;
-	1: action2_5713;
-	257: action2_5710;
-	2: action2_5715;
-	258: action2_5711;
-	513: action2_5715;
-	514: action2_5714;
-	3: action2_5713;
-	259: action2_5712;
-	515: action2_5713;
+	relative_coord(0, 0): action2_5709;
+	relative_coord(0, 1): action2_5708;
+	relative_coord(0, 2): action2_5712;
+	relative_coord(1, 0): action2_5713;
+	relative_coord(1, 1): action2_5710;
+	relative_coord(2, 0): action2_5715;
+	relative_coord(2, 1): action2_5711;
+	relative_coord(1, 2): action2_5715;
+	relative_coord(2, 2): action2_5714;
+	relative_coord(3, 0): action2_5713;
+	relative_coord(3, 1): action2_5712;
+	relative_coord(3, 2): action2_5713;
 	action2_5707;
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_5717, relative_pos) {
-	0: action2_5709;
-	256: action2_5708;
-	512: action2_5712;
-	768: action2_5713;
-	1: action2_5715;
-	257: action2_5715;
-	513: action2_5710;
-	769: action2_5713;
-	2: action2_5712;
-	258: action2_5713;
-	514: action2_5711;
-	770: action2_5714;
+	relative_coord(0, 0): action2_5709;
+	relative_coord(0, 1): action2_5708;
+	relative_coord(0, 2): action2_5712;
+	relative_coord(0, 3): action2_5713;
+	relative_coord(1, 0): action2_5715;
+	relative_coord(1, 1): action2_5715;
+	relative_coord(1, 2): action2_5710;
+	relative_coord(1, 3): action2_5713;
+	relative_coord(2, 0): action2_5712;
+	relative_coord(2, 1): action2_5713;
+	relative_coord(2, 2): action2_5711;
+	relative_coord(2, 3): action2_5714;
 	action2_5707;
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_5718, relative_pos) {
-	0: action2_5713;
-	256: action2_5710;
-	512: action2_5709;
-	768: action2_5708;
-	1024: action2_5715;
-	1: action2_5715;
-	257: action2_5711;
-	513: action2_5713;
-	769: action2_5712;
-	1025: action2_5714;
+	relative_coord(0, 0): action2_5713;
+	relative_coord(0, 1): action2_5710;
+	relative_coord(0, 2): action2_5709;
+	relative_coord(0, 3): action2_5708;
+	relative_coord(0, 4): action2_5715;
+	relative_coord(1, 0): action2_5715;
+	relative_coord(1, 1): action2_5711;
+	relative_coord(1, 2): action2_5713;
+	relative_coord(1, 3): action2_5712;
+	relative_coord(1, 4): action2_5714;
 	action2_5707;
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_5719, relative_pos) {
-	0: action2_5710;
-	256: action2_5714;
-	1: action2_5711;
-	257: action2_5713;
-	2: action2_5709;
-	258: action2_5708;
-	3: action2_5715;
-	259: action2_5713;
-	4: action2_5712;
-	260: action2_5713;
+	relative_coord(0, 0): action2_5710;
+	relative_coord(0, 1): action2_5714;
+	relative_coord(1, 0): action2_5711;
+	relative_coord(1, 1): action2_5713;
+	relative_coord(2, 0): action2_5709;
+	relative_coord(2, 1): action2_5708;
+	relative_coord(3, 0): action2_5715;
+	relative_coord(3, 1): action2_5713;
+	relative_coord(4, 0): action2_5712;
+	relative_coord(4, 1): action2_5713;
 	action2_5707;
 }
 

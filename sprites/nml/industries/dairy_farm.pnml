@@ -121,35 +121,35 @@ spritelayout action2_3696 {
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_3697, relative_pos) {
-	3: action2_3689;
-	2: action2_3690;
-	515: action2_3691;
-	512: action2_3692;
-	256: action2_3693;
-	0: action2_3694;
-	258: action2_3695;
+	relative_coord(3, 0): action2_3689;
+	relative_coord(2, 0): action2_3690;
+	relative_coord(3, 2): action2_3691;
+	relative_coord(0, 2): action2_3692;
+	relative_coord(0, 1): action2_3693;
+	relative_coord(0, 0): action2_3694;
+	relative_coord(2, 1): action2_3695;
 	action2_3696;
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_3698, relative_pos) {
-	512: action2_3689;
-	513: action2_3690;
-	257: action2_3691;
-	514: action2_3692;
-	2: action2_3693;
-	258: action2_3694;
-	256: action2_3695;
+	relative_coord(0, 2): action2_3689;
+	relative_coord(1, 2): action2_3690;
+	relative_coord(1, 1): action2_3691;
+	relative_coord(2, 2): action2_3692;
+	relative_coord(2, 0): action2_3693;
+	relative_coord(2, 1): action2_3694;
+	relative_coord(0, 1): action2_3695;
 	action2_3696;
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_3699, relative_pos) {
-	256: action2_3689;
-	2: action2_3690;
-	1: action2_3691;
-	768: action2_3692;
-	769: action2_3693;
-	770: action2_3694;
-	258: action2_3695;
+	relative_coord(0, 1): action2_3689;
+	relative_coord(2, 0): action2_3690;
+	relative_coord(1, 0): action2_3691;
+	relative_coord(0, 3): action2_3692;
+	relative_coord(1, 3): action2_3693;
+	relative_coord(2, 3): action2_3694;
+	relative_coord(2, 1): action2_3695;
 	action2_3696;
 }
 

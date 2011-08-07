@@ -19,16 +19,6 @@ spritelayout action2_5236 {
 	}
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_5237, relative_pos) {
-	0: action2_5236;
-	action2_5236;
-}
-
-switch(FEAT_INDUSTRYTILES, PARENT, action2_5238, layout_num) {
-	1: action2_5237;
-	action2_5236;
-}
-
 spriteset(spriteset_5240, "sprites/graphics/industries/hardwarestore.png") { tmpl_building_sprite(0, 0, 64, -33) } 
 spritelayout action2_5241 {
 	ground {
@@ -39,16 +29,6 @@ spritelayout action2_5241 {
 		recolour_mode: RECOLOUR_REMAP;
 		palette: 0;
 	}
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_5242, relative_pos) {
-	0: action2_5241;
-	action2_5241;
-}
-
-switch(FEAT_INDUSTRYTILES, PARENT, action2_5243, layout_num) {
-	1: action2_5242;
-	action2_5241;
 }
 
 spriteset(spriteset_5245) { 	[0, 0, 64, 64, -31, -33, 9, "sprites/graphics/industries/hardwarestore_snow.png"] } 
@@ -63,20 +43,10 @@ spritelayout action2_5246 {
 	}
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_5247, relative_pos) {
-	0: action2_5246;
-	action2_5246;
-}
-
-switch(FEAT_INDUSTRYTILES, PARENT, action2_5248, layout_num) {
-	1: action2_5247;
-	action2_5246;
-}
-
 switch(FEAT_INDUSTRYTILES, SELF, action2_5249, terrain_type) {
-	1: action2_5243;
-	4: action2_5248;
-	action2_5238;
+	1: action2_5241;
+	4: action2_5246;
+	action2_5236;
 }
 
 item(FEAT_INDUSTRYTILES, tile_hardware_store, 218) {

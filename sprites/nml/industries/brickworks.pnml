@@ -412,32 +412,32 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_3104, animation_frame) {
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_3105, relative_pos) {
-	0: action2_3085;
-	256: action2_3085;
-	1: action2_3103;
-	257: action2_3103;
-	2: action2_3083;
-	258: action2_3104;
+	relative_coord(0, 0): action2_3085;
+	relative_coord(0, 1): action2_3085;
+	relative_coord(1, 0): action2_3103;
+	relative_coord(1, 1): action2_3103;
+	relative_coord(2, 0): action2_3083;
+	relative_coord(2, 1): action2_3104;
 	action2_3086;
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_3106, relative_pos) {
-	0: action2_3085;
-	256: action2_3085;
-	1: action2_3103;
-	257: action2_3103;
-	2: action2_3083;
-	3: action2_3104;
+	relative_coord(0, 0): action2_3085;
+	relative_coord(0, 1): action2_3085;
+	relative_coord(1, 0): action2_3103;
+	relative_coord(1, 1): action2_3103;
+	relative_coord(2, 0): action2_3083;
+	relative_coord(3, 0): action2_3104;
 	action2_3086;
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_3107, relative_pos) {
-	0: action2_3085;
-	256: action2_3085;
-	512: action2_3104;
-	1: action2_3103;
-	257: action2_3103;
-	513: action2_3083;
+	relative_coord(0, 0): action2_3085;
+	relative_coord(0, 1): action2_3085;
+	relative_coord(0, 2): action2_3104;
+	relative_coord(1, 0): action2_3103;
+	relative_coord(1, 1): action2_3103;
+	relative_coord(1, 2): action2_3083;
 	action2_3086;
 }
 

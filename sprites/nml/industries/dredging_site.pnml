@@ -33,7 +33,7 @@ spritelayout action2_3941 {
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_3942, relative_pos) {
-	257: action2_3941;
+	relative_coord(1, 1): action2_3941;
 	action2_3941;
 }
 
