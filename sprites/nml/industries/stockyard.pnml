@@ -2,7 +2,7 @@
 item(FEAT_INDUSTRYTILES, tile_stockyard, 179) {
 	property {
 		substitute: 0;
-		accepted_cargos: [[FMSP, 8], [MNSP, 8], [0, 0]];
+		accepted_cargos: [[LVST, 8], [MNSP, 8], [0, 0]];
 		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
 		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
@@ -656,7 +656,7 @@ item(FEAT_INDUSTRIES, stockyard, 37) {
 		name: string(STR_IND_STOCKYARD);
 		nearby_station_name: string(STR_STATIONNAME_FACTORIES);
 		prod_cargo_types: [FOOD];
-		accept_cargo_types: [MNSP, FMSP];
+		accept_cargo_types: [MNSP, LVST];
 		prod_multiplier: [0, 0];
 		input_multiplier_1: [0, 0];
 		input_multiplier_2: [0, 0];
