@@ -17,3 +17,7 @@ template tmpl_ground_tile(x, y) {
 template tmpl_building_sprite(x, y, h, dy) {
     [x, y, 64, h, -31, dy, 9]
 }    
+
+template tmpl_building_sprite_filename(x, y, h, dy, filename) {
+    [x, y, 64, h, -31, dy, 9, filename]
+}    
