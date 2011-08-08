@@ -5,6 +5,7 @@
  * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
  */
 
+/* Do not use this template. Use the SPRITELAYOUT templates instead. */
 #define SWITCH_TERRAIN_NORMAL_DESERT_SNOW(name, next) \
 switch(FEAT_INDUSTRYTILES, SELF, switch_ ## name ## _terrain, terrain_type) { \
 	TILETYPE_DESERT: switch_ ## name ## _desert_ ## next; \
@@ -12,18 +13,21 @@ switch(FEAT_INDUSTRYTILES, SELF, switch_ ## name ## _terrain, terrain_type) { \
 	switch_ ## name ## _default_ ## next; \
 }
 
+/* Do not use this template. Use the SPRITELAYOUT templates instead. */
 #define SWITCH_TERRAIN_NORMAL_DESERT(name, next) \
 switch(FEAT_INDUSTRYTILES, SELF, switch_ ## name ## _terrain, terrain_type) { \
 	TILETYPE_DESERT: switch_ ## name ## _desert_ ## next; \
 	switch_ ## name ## _default_ ## next; \
 }
 
+/* Do not use this template. Use the SPRITELAYOUT templates instead. */
 #define SWITCH_TERRAIN_NORMAL_SNOW(name, next) \
 switch(FEAT_INDUSTRYTILES, SELF, switch_ ## name ## _terrain, terrain_type) { \
 	TILETYPE_SNOW: switch_ ## name ## _snow_ ## next; \
 	switch_ ## name ## _default_ ## next; \
 }
 
+/* Do not use this template. Use the SPRITELAYOUT templates instead. */
 #define SWITCH_TERRAIN_NONE(name, next) \
 switch(FEAT_INDUSTRYTILES, SELF, switch_ ## name ## _terrain, terrain_type) { \
 	switch_ ## name ## _default_ ## next; \

@@ -1,0 +1,157 @@
+/*
+ * This file is part of FIRS Industry Set for OpenTTD.
+ * FIRS is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 2.
+ * FIRS is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+
+/* Template used to close SPRITELAYOUT_..._BEGIN blocks. */
+#define SPRITELAYOUT_END }
+
+
+/* Defines a spritelayout for an industry tile with normal, desert and snow sprites.
+ * This template requires that the spriteset defines all three sprites in the specified order.
+ * 
+ * spritelayout_name    Name for the spritelayout block.
+ * ground_sprite_normal Ground sprite(normal).
+ * ground_sprite_desert Ground sprite(desert).
+ * ground_sprite_snow   Ground sprite(snow).
+ * building_spriteset   Spriteset for the building sprites.
+ * building_zextent     Size of the bounding box of the building sprite in the z direction. By default it is 16.
+ */
+
+#define SPRITELAYOUT_NORMAL_DESERT_SNOW_BEGIN(spritelayout_name, ground_sprite_normal, ground_sprite_desert, ground_sprite_snow, building_spriteset, building_zextent) \
+spritelayout spritelayout_name { \
+	ground { \
+		sprite: ground_sprite_normal; \
+		recolour_mode: RECOLOUR_REMAP; \
+		palette: PALETTE_USE_DEFAULT; \
+	} \
+ \
+	childsprite { \
+		sprite: ground_sprite_desert; \
+		recolour_mode: RECOLOUR_REMAP; \
+		palette: PALETTE_USE_DEFAULT; \
+		hide_sprite: terrain_type != TILETYPE_DESERT; \
+		always_draw: 1; \
+	} \
+ \
+	childsprite { \
+		sprite: ground_sprite_snow; \
+		recolour_mode: RECOLOUR_REMAP; \
+		palette: PALETTE_USE_DEFAULT; \
+		hide_sprite: terrain_type != TILETYPE_SNOW; \
+		always_draw: 1; \
+	} \
+ \
+	building { \
+		sprite: building_spriteset((terrain_type == TILETYPE_DESERT) + 2 * (terrain_type == TILETYPE_SNOW)); \
+		recolour_mode: RECOLOUR_REMAP; \
+		palette: PALETTE_USE_DEFAULT; \
+		zextent: building_zextent; \
+	}
+
+#define SPRITELAYOUT_NORMAL_DESERT_SNOW(spritelayout_name, ground_sprite_normal, ground_sprite_desert, ground_sprite_snow, building_spriteset, building_zextent) \
+SPRITELAYOUT_NORMAL_DESERT_SNOW_BEGIN(spritelayout_name, ground_sprite_normal, ground_sprite_desert, ground_sprite_snow, building_spriteset, building_zextent) SPRITELAYOUT_END
+
+
+/* Defines a spritelayout for an industry tile with normal and snow sprites.
+ * This template requires that the spriteset defines the sprites in the specified order.
+ * 
+ * spritelayout_name    Name for the spritelayout block.
+ * ground_sprite_normal Ground sprite(normal).
+ * ground_sprite_snow   Ground sprite(snow).
+ * building_spriteset   Spriteset for the building sprites.
+ * building_zextent     Size of the bounding box of the building sprite in the z direction. By default it is 16.
+ */
+
+#define SPRITELAYOUT_NORMAL_SNOW_BEGIN(spritelayout_name, ground_sprite_normal, ground_sprite_snow, building_spriteset, building_zextent) \
+spritelayout spritelayout_name { \
+	ground { \
+		sprite: ground_sprite_normal; \
+		recolour_mode: RECOLOUR_REMAP; \
+		palette: PALETTE_USE_DEFAULT; \
+	} \
+ \
+	childsprite { \
+		sprite: ground_sprite_snow; \
+		recolour_mode: RECOLOUR_REMAP; \
+		palette: PALETTE_USE_DEFAULT; \
+		hide_sprite: terrain_type != TILETYPE_SNOW; \
+		always_draw: 1; \
+	} \
+ \
+	building { \
+		sprite: building_spriteset(terrain_type == TILETYPE_SNOW); \
+		recolour_mode: RECOLOUR_REMAP; \
+		palette: PALETTE_USE_DEFAULT; \
+		zextent: building_zextent; \
+	}
+
+#define SPRITELAYOUT_NORMAL_SNOW(spritelayout_name,  ground_sprite_normal, ground_sprite_snow, building_spriteset, building_zextent) \
+SPRITELAYOUT_NORMAL_SNOW_BEGIN(spritelayout_name,  ground_sprite_normal, ground_sprite_snow, building_spriteset, building_zextent) SPRITELAYOUT_END
+
+
+/* Defines a spritelayout for an industry tile with normal and desert sprites.
+ * This template requires that the spriteset defines the sprites in the specified order.
+ * 
+ * spritelayout_name    Name for the spritelayout block.
+ * ground_sprite_normal Ground sprite(normal).
+ * ground_sprite_desert Ground sprite(desert).
+ * building_spriteset   Spriteset for the building sprites.
+ * building_zextent     Size of the bounding box of the building sprite in the z direction. By default it is 16.
+ */
+
+#define SPRITELAYOUT_NORMAL_DESERT_BEGIN(spritelayout_name, ground_sprite_normal, ground_sprite_desert, building_spriteset, building_zextent) \
+spritelayout spritelayout_name { \
+	ground { \
+		sprite: ground_sprite_normal; \
+		recolour_mode: RECOLOUR_REMAP; \
+		palette: PALETTE_USE_DEFAULT; \
+	} \
+ \
+	childsprite { \
+		sprite: ground_sprite_desert; \
+		recolour_mode: RECOLOUR_REMAP; \
+		palette: PALETTE_USE_DEFAULT; \
+		hide_sprite: terrain_type != TILETYPE_DESERT; \
+		always_draw: 1; \
+	} \
+ \
+	building { \
+		sprite: building_spriteset(terrain_type == TILETYPE_DESERT); \
+		recolour_mode: RECOLOUR_REMAP; \
+		palette: PALETTE_USE_DEFAULT; \
+		zextent: building_zextent; \
+	}
+
+#define SPRITELAYOUT_NORMAL_DESERT(spritelayout_name, ground_sprite_normal, ground_sprite_desert, building_spriteset, building_zextent) \
+SPRITELAYOUT_NORMAL_DESERT_BEGIN(spritelayout_name, ground_sprite_normal, ground_sprite_desert, building_spriteset, building_zextent) SPRITELAYOUT_END
+
+
+/* Defines a spritelayout for a industry tile with only normal sprites.
+ * 
+ * spritelayout_name    Name for the spritelayout block.
+ * ground_sprite_normal Ground sprite(normal).
+ * building_spriteset   Spriteset for the building sprites.
+ * building_zextent     Size of the bounding box of the building sprite in the z direction. By default it is 16.
+ */
+
+#define SPRITELAYOUT_NORMAL_BEGIN(spritelayout_name, ground_sprite_normal, building_spriteset, building_zextent) \
+spritelayout spritelayout_name { \
+	ground { \
+		sprite: ground_sprite_normal; \
+		recolour_mode: RECOLOUR_REMAP; \
+		palette: PALETTE_USE_DEFAULT; \
+	} \
+ \
+	building { \
+		sprite: building_spriteset; \
+		recolour_mode: RECOLOUR_REMAP; \
+		palette: PALETTE_USE_DEFAULT; \
+		zextent: building_zextent; \
+	}
+
+#define SPRITELAYOUT_NORMAL(spritelayout_name, ground_sprite_normal, building_spriteset, building_zextent) \
+SPRITELAYOUT_NORMAL_BEGIN(spritelayout_name, ground_sprite_normal, building_spriteset, building_zextent) SPRITELAYOUT_END
