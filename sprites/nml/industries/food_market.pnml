@@ -1,82 +1,29 @@
+/*
+ * This file is part of FIRS Industry Set for OpenTTD.
+ * FIRS is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 2.
+ * FIRS is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+#include "../templates/spritelayout_templates.pnml"
+
+#define THIS_ID(...) food_market ## __VA_ARGS__
+
+spriteset(THIS_ID(spriteset_1)) {
+	tmpl_building_sprite_filename(0, 0, 36, -4, "sprites/graphics/industries/foodmarket.png")
+	tmpl_building_sprite_filename(0, 0, 36, -4, "sprites/graphics/industries/foodmarket_snow.png")
+}
+
+SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_1), GROUNDSPRITE_CONCRETE, GROUNDSPRITE_CONCRETE, THIS_ID(spriteset_1), 16)
+
 item(FEAT_INDUSTRYTILES, tile_food_market, 194) {
 	property {
 		substitute: 0;
 		accepted_cargos: [[FOOD, 8], [FRVG, 8], [BEER, 8]];
 		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
 	}
-}
-
-spriteset(spriteset_4233, "sprites/graphics/industries/foodmarket.png") { tmpl_building_sprite(0, 0, 36, -4) } 
-spritelayout action2_4234 {
-	ground {
-		sprite: GROUNDSPRITE_CONCRETE;
-	}
-	building {
-		sprite: spriteset_4233;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_4235, relative_pos) {
-	relative_coord(0, 0): action2_4234;
-	action2_4234;
-}
-
-switch(FEAT_INDUSTRYTILES, PARENT, switch_food_market_default_layout, layout_num) {
-	1: action2_4235;
-	action2_4234;
-}
-
-spriteset(spriteset_4238, "sprites/graphics/industries/foodmarket.png") { tmpl_building_sprite(0, 0, 36, -4) } 
-spritelayout action2_4239 {
-	ground {
-		sprite: GROUNDSPRITE_CONCRETE;
-	}
-	building {
-		sprite: spriteset_4238;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_4240, relative_pos) {
-	relative_coord(0, 0): action2_4239;
-	action2_4239;
-}
-
-switch(FEAT_INDUSTRYTILES, PARENT, switch_food_market_desert_layout, layout_num) {
-	1: action2_4240;
-	action2_4239;
-}
-
-spriteset(spriteset_4243) { 	[0, 0, 64, 36, -31, -4, 9, "sprites/graphics/industries/foodmarket_snow.png"] } 
-spritelayout action2_4244 {
-	ground {
-		sprite: GROUNDSPRITE_CONCRETE;
-	}
-	building {
-		sprite: spriteset_4243;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_4245, relative_pos) {
-	relative_coord(0, 0): action2_4244;
-	action2_4244;
-}
-
-switch(FEAT_INDUSTRYTILES, PARENT, switch_food_market_snow_layout, layout_num) {
-	1: action2_4245;
-	action2_4244;
-}
-
-SWITCH_TERRAIN_NORMAL_DESERT_SNOW(food_market, layout)
-
-item(FEAT_INDUSTRYTILES, tile_food_market, 194) {
 	graphics {
-		switch_food_market_terrain;
+		THIS_ID(spritelayout_1);
 	}
 }
 
@@ -144,3 +91,4 @@ item(FEAT_INDUSTRIES, food_market, 59) {
 	}
 }
 
+#include "../templates/undefs.pnml"
