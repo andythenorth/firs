@@ -7,151 +7,30 @@
 
 #define THIS_ID(...) biorefinery ## __VA_ARGS__
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_166, 166) {
-	property {
-		substitute: 0;
-		accepted_cargos: [[6, 8], [12, 8], [0, 0]];
-		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
-		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
-		animation_info: [1, 7];
-		animation_speed: 3;
-		animation_triggers: 1;
-	}
+spriteset(THIS_ID(spriteset_ground), "sprites/graphics/industries/groundtiles.png") {
+	tmpl_ground_tile(80, 10)
 }
 
-spriteset(spriteset_2806, "sprites/graphics/industries/groundtiles.png") { tmpl_ground_tile(80, 10) } 
-spriteset(spriteset_2807, "sprites/graphics/industries/biorefinery.pcx") { tmpl_building_sprite(500, 10, 66, -35) } 
-spriteset(spriteset_2808, "sprites/graphics/industries/biorefinery.pcx") { tmpl_building_sprite(570, 10, 66, -35) } 
-spriteset(spriteset_2809, "sprites/graphics/industries/biorefinery.pcx") { tmpl_building_sprite(710, 10, 66, -35) } 
-spriteset(spriteset_2810, "sprites/graphics/industries/biorefinery.pcx") { tmpl_building_sprite(80, 10, 88, -58) } 
-spriteset(spriteset_2811, "sprites/graphics/industries/biorefinery.pcx") { tmpl_building_sprite(150, 10, 88, -60) } 
-spriteset(spriteset_2812, "sprites/graphics/industries/biorefinery.pcx") { tmpl_building_sprite(220, 10, 88, -64) } 
-spriteset(spriteset_2813, "sprites/graphics/industries/biorefinery.pcx") { tmpl_building_sprite(360, 10, 73, -45) } 
-spriteset(spriteset_2814, "sprites/graphics/industries/biorefinery.pcx") { tmpl_building_sprite(430, 10, 66, -38) } 
-spritelayout action2_2815 {
-	ground {
-		sprite: spriteset_2806;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_2806;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 48;
-	}
-}
+spriteset(THIS_ID(spriteset_1)) { tmpl_building_sprite_filename(500, 10, 66, -35, "sprites/graphics/industries/biorefinery.pcx") }
+spriteset(THIS_ID(spriteset_2)) { tmpl_building_sprite_filename(570, 10, 66, -35, "sprites/graphics/industries/biorefinery.pcx") }
+spriteset(THIS_ID(spriteset_3)) { tmpl_building_sprite_filename(710, 10, 66, -35, "sprites/graphics/industries/biorefinery.pcx") }
+spriteset(THIS_ID(spriteset_4)) { tmpl_building_sprite_filename( 80, 10, 88, -58, "sprites/graphics/industries/biorefinery.pcx") }
+spriteset(THIS_ID(spriteset_5)) { tmpl_building_sprite_filename(150, 10, 88, -60, "sprites/graphics/industries/biorefinery.pcx") }
+spriteset(THIS_ID(spriteset_6)) { tmpl_building_sprite_filename(220, 10, 88, -64, "sprites/graphics/industries/biorefinery.pcx") }
+spriteset(THIS_ID(spriteset_7)) { tmpl_building_sprite_filename(360, 10, 73, -45, "sprites/graphics/industries/biorefinery.pcx") }
+spriteset(THIS_ID(spriteset_8)) { tmpl_building_sprite_filename(430, 10, 66, -38, "sprites/graphics/industries/biorefinery.pcx") }
 
-spritelayout action2_2816 {
-	ground {
-		sprite: spriteset_2806;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_2807;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 48;
-	}
-}
+SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_1), THIS_ID(spriteset_ground), THIS_ID(spriteset_1), 48)
 
-spritelayout action2_2817 {
-	ground {
-		sprite: spriteset_2806;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_2808;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 48;
-	}
-}
+SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_2), THIS_ID(spriteset_ground), THIS_ID(spriteset_2), 48)
 
-spritelayout action2_2818 {
-	ground {
-		sprite: spriteset_2806;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_2809;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 48;
-	}
-}
+SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_3), THIS_ID(spriteset_ground), THIS_ID(spriteset_3), 48)
 
-spritelayout action2_2819 {
-	ground {
-		sprite: spriteset_2806;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_2810;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 48;
-	}
-}
+SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_4), THIS_ID(spriteset_ground), THIS_ID(spriteset_4), 48)
 
-spritelayout action2_2820 {
-	ground {
-		sprite: spriteset_2806;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_2811;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 48;
-	}
-}
+SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_5), THIS_ID(spriteset_ground), THIS_ID(spriteset_5), 48)
 
-spritelayout action2_2821 {
-	ground {
-		sprite: spriteset_2806;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_2813;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 48;
-	}
-}
-
-spritelayout action2_2822 {
-	ground {
-		sprite: spriteset_2806;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_2814;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 48;
-	}
-}
-
-spritelayout action2_2824 {
-	ground {
-		sprite: spriteset_2806;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_2812;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 7;
-	}
+SPRITELAYOUT_NORMAL_BEGIN(THIS_ID(spritelayout_6_anim_1), THIS_ID(spriteset_ground), THIS_ID(spriteset_6), 7)
 	building {
 		sprite: 3701;
 		xoffset: 1;
@@ -159,20 +38,9 @@ spritelayout action2_2824 {
 		xextent: 15;
 		zextent: 7;
 	}
-}
+SPRITELAYOUT_END
 
-spritelayout action2_2825 {
-	ground {
-		sprite: spriteset_2806;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_2812;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 7;
-	}
+SPRITELAYOUT_NORMAL_BEGIN(THIS_ID(spritelayout_6_anim_2), THIS_ID(spriteset_ground), THIS_ID(spriteset_6), 7)
 	building {
 		sprite: 3702;
 		xoffset: 1;
@@ -180,20 +48,9 @@ spritelayout action2_2825 {
 		xextent: 15;
 		zextent: 7;
 	}
-}
+SPRITELAYOUT_END
 
-spritelayout action2_2826 {
-	ground {
-		sprite: spriteset_2806;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_2812;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 7;
-	}
+SPRITELAYOUT_NORMAL_BEGIN(THIS_ID(spritelayout_6_anim_3), THIS_ID(spriteset_ground), THIS_ID(spriteset_6), 7)
 	building {
 		sprite: 3703;
 		xoffset: 1;
@@ -203,18 +60,7 @@ spritelayout action2_2826 {
 	}
 }
 
-spritelayout action2_2827 {
-	ground {
-		sprite: spriteset_2806;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_2812;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 7;
-	}
+SPRITELAYOUT_NORMAL_BEGIN(THIS_ID(spritelayout_6_anim_4), THIS_ID(spriteset_ground), THIS_ID(spriteset_6), 7)
 	building {
 		sprite: 3704;
 		xoffset: 1;
@@ -224,18 +70,7 @@ spritelayout action2_2827 {
 	}
 }
 
-spritelayout action2_2828 {
-	ground {
-		sprite: spriteset_2806;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_2812;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 7;
-	}
+SPRITELAYOUT_NORMAL_BEGIN(THIS_ID(spritelayout_6_anim_5), THIS_ID(spriteset_ground), THIS_ID(spriteset_6), 7)
 	building {
 		sprite: 3705;
 		xoffset: 1;
@@ -245,18 +80,7 @@ spritelayout action2_2828 {
 	}
 }
 
-spritelayout action2_2829 {
-	ground {
-		sprite: spriteset_2806;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_2812;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 7;
-	}
+SPRITELAYOUT_NORMAL_BEGIN(THIS_ID(spritelayout_6_anim_6), THIS_ID(spriteset_ground), THIS_ID(spriteset_6), 7)
 	building {
 		sprite: 3706;
 		xoffset: 1;
@@ -266,18 +90,7 @@ spritelayout action2_2829 {
 	}
 }
 
-spritelayout action2_2830 {
-	ground {
-		sprite: spriteset_2806;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_2812;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 7;
-	}
+SPRITELAYOUT_NORMAL_BEGIN(THIS_ID(spritelayout_6_anim_7), THIS_ID(spriteset_ground), THIS_ID(spriteset_6), 7)
 	building {
 		sprite: 3707;
 		xoffset: 1;
@@ -287,18 +100,7 @@ spritelayout action2_2830 {
 	}
 }
 
-spritelayout action2_2831 {
-	ground {
-		sprite: spriteset_2806;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_2812;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 7;
-	}
+SPRITELAYOUT_NORMAL_BEGIN(THIS_ID(spritelayout_6_anim_8), THIS_ID(spriteset_ground), THIS_ID(spriteset_6), 7)
 	building {
 		sprite: 3708;
 		xoffset: 1;
@@ -308,89 +110,100 @@ spritelayout action2_2831 {
 	}
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2832, animation_frame) {
-	0: action2_2824;
-	1: action2_2825;
-	2: action2_2826;
-	3: action2_2827;
-	4: action2_2828;
-	5: action2_2829;
-	6: action2_2830;
-	7: action2_2831;
-	action2_2824;
+SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_7), THIS_ID(spriteset_ground), THIS_ID(spriteset_7), 48)
+
+SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_8), THIS_ID(spriteset_ground), THIS_ID(spriteset_8), 48)
+
+spritelayout THIS_ID(spritelayout_9) {
+	ground {
+		sprite: THIS_ID(spriteset_ground);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(spritelayout_6_anim), animation_frame) {
+	1: THIS_ID(spritelayout_6_anim_2);
+	2: THIS_ID(spritelayout_6_anim_3);
+	3: THIS_ID(spritelayout_6_anim_4);
+	4: THIS_ID(spritelayout_6_anim_5);
+	5: THIS_ID(spritelayout_6_anim_6);
+	6: THIS_ID(spritelayout_6_anim_7);
+	7: THIS_ID(spritelayout_6_anim_8);
+	THIS_ID(spritelayout_6_anim_1);
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_2833, relative_pos) {
-	relative_coord(0, 0): action2_2815;
-	relative_coord(0, 2): action2_2817;
-	relative_coord(0, 3): action2_2816;
-	relative_coord(0, 4): action2_2816;
-	relative_coord(1, 0): action2_2822;
-	relative_coord(1, 2): action2_2819;
-	relative_coord(1, 3): action2_2820;
-	relative_coord(1, 4): action2_2832;
-	relative_coord(2, 0): action2_2821;
-	relative_coord(2, 2): action2_2815;
-	relative_coord(2, 3): action2_2818;
-	relative_coord(2, 4): action2_2815;
-	action2_2815;
+	relative_coord(0, 0): THIS_ID(spritelayout_9);
+	relative_coord(0, 2): THIS_ID(spritelayout_2);
+	relative_coord(0, 3): THIS_ID(spritelayout_1);
+	relative_coord(0, 4): THIS_ID(spritelayout_1);
+	relative_coord(1, 0): THIS_ID(spritelayout_8);
+	relative_coord(1, 2): THIS_ID(spritelayout_4);
+	relative_coord(1, 3): THIS_ID(spritelayout_5);
+	relative_coord(1, 4): THIS_ID(spritelayout_6_anim);
+	relative_coord(2, 0): THIS_ID(spritelayout_7);
+	relative_coord(2, 2): THIS_ID(spritelayout_9);
+	relative_coord(2, 3): THIS_ID(spritelayout_3);
+	relative_coord(2, 4): THIS_ID(spritelayout_9);
+	THIS_ID(spritelayout_9);
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_2834, relative_pos) {
-	relative_coord(0, 0): action2_2822;
-	relative_coord(0, 1): action2_2819;
-	relative_coord(0, 2): action2_2820;
-	relative_coord(0, 3): action2_2832;
-	relative_coord(0, 4): action2_2815;
-	relative_coord(1, 0): action2_2821;
-	relative_coord(1, 1): action2_2815;
-	relative_coord(1, 2): action2_2818;
-	relative_coord(1, 3): action2_2815;
-	relative_coord(1, 4): action2_2815;
-	relative_coord(2, 0): action2_2815;
-	relative_coord(2, 1): action2_2815;
-	relative_coord(2, 2): action2_2816;
-	relative_coord(2, 3): action2_2816;
-	relative_coord(2, 4): action2_2817;
-	action2_2815;
+	relative_coord(0, 0): THIS_ID(spritelayout_8);
+	relative_coord(0, 1): THIS_ID(spritelayout_4);
+	relative_coord(0, 2): THIS_ID(spritelayout_5);
+	relative_coord(0, 3): THIS_ID(spritelayout_6_anim);
+	relative_coord(0, 4): THIS_ID(spritelayout_9);
+	relative_coord(1, 0): THIS_ID(spritelayout_7);
+	relative_coord(1, 1): THIS_ID(spritelayout_9);
+	relative_coord(1, 2): THIS_ID(spritelayout_3);
+	relative_coord(1, 3): THIS_ID(spritelayout_9);
+	relative_coord(1, 4): THIS_ID(spritelayout_9);
+	relative_coord(2, 0): THIS_ID(spritelayout_9);
+	relative_coord(2, 1): THIS_ID(spritelayout_9);
+	relative_coord(2, 2): THIS_ID(spritelayout_1);
+	relative_coord(2, 3): THIS_ID(spritelayout_1);
+	relative_coord(2, 4): THIS_ID(spritelayout_2);
+	THIS_ID(spritelayout_9);
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_2835, relative_pos) {
-	relative_coord(0, 0): action2_2817;
-	relative_coord(0, 2): action2_2817;
-	relative_coord(0, 3): action2_2815;
-	relative_coord(1, 0): action2_2815;
-	relative_coord(1, 2): action2_2819;
-	relative_coord(1, 3): action2_2818;
-	relative_coord(2, 0): action2_2822;
-	relative_coord(2, 2): action2_2820;
-	relative_coord(2, 3): action2_2832;
-	relative_coord(3, 0): action2_2821;
-	relative_coord(3, 2): action2_2818;
-	relative_coord(3, 3): action2_2815;
-	relative_coord(4, 0): action2_2815;
-	relative_coord(4, 2): action2_2816;
-	relative_coord(4, 3): action2_2816;
-	action2_2815;
+	relative_coord(0, 0): THIS_ID(spritelayout_2);
+	relative_coord(0, 2): THIS_ID(spritelayout_2);
+	relative_coord(0, 3): THIS_ID(spritelayout_9);
+	relative_coord(1, 0): THIS_ID(spritelayout_9);
+	relative_coord(1, 2): THIS_ID(spritelayout_4);
+	relative_coord(1, 3): THIS_ID(spritelayout_3);
+	relative_coord(2, 0): THIS_ID(spritelayout_8);
+	relative_coord(2, 2): THIS_ID(spritelayout_5);
+	relative_coord(2, 3): THIS_ID(spritelayout_6_anim);
+	relative_coord(3, 0): THIS_ID(spritelayout_7);
+	relative_coord(3, 2): THIS_ID(spritelayout_3);
+	relative_coord(3, 3): THIS_ID(spritelayout_9);
+	relative_coord(4, 0): THIS_ID(spritelayout_9);
+	relative_coord(4, 2): THIS_ID(spritelayout_1);
+	relative_coord(4, 3): THIS_ID(spritelayout_1);
+	THIS_ID(spritelayout_9);
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_2836, relative_pos) {
-	relative_coord(0, 0): action2_2816;
-	relative_coord(0, 1): action2_2815;
-	relative_coord(0, 2): action2_2822;
-	relative_coord(1, 0): action2_2816;
-	relative_coord(1, 1): action2_2815;
-	relative_coord(1, 2): action2_2821;
-	relative_coord(2, 0): action2_2817;
-	relative_coord(2, 1): action2_2815;
-	relative_coord(2, 2): action2_2815;
-	relative_coord(3, 0): action2_2819;
-	relative_coord(3, 1): action2_2820;
-	relative_coord(3, 2): action2_2832;
-	relative_coord(4, 0): action2_2817;
-	relative_coord(4, 1): action2_2818;
-	relative_coord(4, 2): action2_2815;
-	action2_2815;
+	relative_coord(0, 0): THIS_ID(spritelayout_1);
+	relative_coord(0, 1): THIS_ID(spritelayout_9);
+	relative_coord(0, 2): THIS_ID(spritelayout_8);
+	relative_coord(1, 0): THIS_ID(spritelayout_1);
+	relative_coord(1, 1): THIS_ID(spritelayout_9);
+	relative_coord(1, 2): THIS_ID(spritelayout_7);
+	relative_coord(2, 0): THIS_ID(spritelayout_2);
+	relative_coord(2, 1): THIS_ID(spritelayout_9);
+	relative_coord(2, 2): THIS_ID(spritelayout_9);
+	relative_coord(3, 0): THIS_ID(spritelayout_4);
+	relative_coord(3, 1): THIS_ID(spritelayout_5);
+	relative_coord(3, 2): THIS_ID(spritelayout_6_anim);
+	relative_coord(4, 0): THIS_ID(spritelayout_2);
+	relative_coord(4, 1): THIS_ID(spritelayout_3);
+	relative_coord(4, 2): THIS_ID(spritelayout_9);
+	THIS_ID(spritelayout_9);
 }
 
 switch(FEAT_INDUSTRYTILES, PARENT, action2_2837, layout_num) {
@@ -398,7 +211,7 @@ switch(FEAT_INDUSTRYTILES, PARENT, action2_2837, layout_num) {
 	2: action2_2834;
 	3: action2_2835;
 	4: action2_2836;
-	action2_2815;
+	THIS_ID(spritelayout_9);
 }
 
 CHECK_NEARBY_TILE_CLASS(switch_biorefinery_cb_nearby_check)
@@ -434,79 +247,89 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_2850, (current_callback & 255)) {
 	action2_2848;
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_166, 166) {
+item(FEAT_INDUSTRYTILES, THIS_ID(industrytile), 166) {
+	property {
+		substitute: 0;
+		accepted_cargos: [[6, 8], [12, 8], [0, 0]];
+		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
+		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
+		animation_info: [1, 7];
+		animation_speed: 3;
+		animation_triggers: 1;
+	}
+
 	graphics {
 		action2_2850;
 	}
 }
 
 tilelayout tilelayout_biorefinery_1 {
-	0, 0: item_FEAT_INDUSTRYTILES_166;
-	0, 2: item_FEAT_INDUSTRYTILES_166;
-	0, 3: item_FEAT_INDUSTRYTILES_166;
-	0, 4: item_FEAT_INDUSTRYTILES_166;
-	1, 0: item_FEAT_INDUSTRYTILES_166;
-	1, 2: item_FEAT_INDUSTRYTILES_166;
-	1, 3: item_FEAT_INDUSTRYTILES_166;
-	1, 4: item_FEAT_INDUSTRYTILES_166;
-	2, 0: item_FEAT_INDUSTRYTILES_166;
-	2, 2: item_FEAT_INDUSTRYTILES_166;
-	2, 3: item_FEAT_INDUSTRYTILES_166;
-	2, 4: item_FEAT_INDUSTRYTILES_166;
+	0, 0: THIS_ID(industrytile);
+	0, 2: THIS_ID(industrytile);
+	0, 3: THIS_ID(industrytile);
+	0, 4: THIS_ID(industrytile);
+	1, 0: THIS_ID(industrytile);
+	1, 2: THIS_ID(industrytile);
+	1, 3: THIS_ID(industrytile);
+	1, 4: THIS_ID(industrytile);
+	2, 0: THIS_ID(industrytile);
+	2, 2: THIS_ID(industrytile);
+	2, 3: THIS_ID(industrytile);
+	2, 4: THIS_ID(industrytile);
 }
 
 tilelayout tilelayout_biorefinery_2 {
-	0, 0: item_FEAT_INDUSTRYTILES_166;
-	0, 1: item_FEAT_INDUSTRYTILES_166;
-	0, 2: item_FEAT_INDUSTRYTILES_166;
-	0, 3: item_FEAT_INDUSTRYTILES_166;
-	0, 4: item_FEAT_INDUSTRYTILES_166;
-	1, 0: item_FEAT_INDUSTRYTILES_166;
-	1, 1: item_FEAT_INDUSTRYTILES_166;
-	1, 2: item_FEAT_INDUSTRYTILES_166;
-	1, 3: item_FEAT_INDUSTRYTILES_166;
-	1, 4: item_FEAT_INDUSTRYTILES_166;
-	2, 0: item_FEAT_INDUSTRYTILES_166;
-	2, 1: item_FEAT_INDUSTRYTILES_166;
-	2, 2: item_FEAT_INDUSTRYTILES_166;
-	2, 3: item_FEAT_INDUSTRYTILES_166;
-	2, 4: item_FEAT_INDUSTRYTILES_166;
+	0, 0: THIS_ID(industrytile);
+	0, 1: THIS_ID(industrytile);
+	0, 2: THIS_ID(industrytile);
+	0, 3: THIS_ID(industrytile);
+	0, 4: THIS_ID(industrytile);
+	1, 0: THIS_ID(industrytile);
+	1, 1: THIS_ID(industrytile);
+	1, 2: THIS_ID(industrytile);
+	1, 3: THIS_ID(industrytile);
+	1, 4: THIS_ID(industrytile);
+	2, 0: THIS_ID(industrytile);
+	2, 1: THIS_ID(industrytile);
+	2, 2: THIS_ID(industrytile);
+	2, 3: THIS_ID(industrytile);
+	2, 4: THIS_ID(industrytile);
 }
 
 tilelayout tilelayout_biorefinery_3 {
-	0, 0: item_FEAT_INDUSTRYTILES_166;
-	0, 2: item_FEAT_INDUSTRYTILES_166;
-	0, 3: item_FEAT_INDUSTRYTILES_166;
-	1, 0: item_FEAT_INDUSTRYTILES_166;
-	1, 2: item_FEAT_INDUSTRYTILES_166;
-	1, 3: item_FEAT_INDUSTRYTILES_166;
-	2, 0: item_FEAT_INDUSTRYTILES_166;
-	2, 2: item_FEAT_INDUSTRYTILES_166;
-	2, 3: item_FEAT_INDUSTRYTILES_166;
-	3, 0: item_FEAT_INDUSTRYTILES_166;
-	3, 2: item_FEAT_INDUSTRYTILES_166;
-	3, 3: item_FEAT_INDUSTRYTILES_166;
-	4, 0: item_FEAT_INDUSTRYTILES_166;
-	4, 2: item_FEAT_INDUSTRYTILES_166;
-	4, 3: item_FEAT_INDUSTRYTILES_166;
+	0, 0: THIS_ID(industrytile);
+	0, 2: THIS_ID(industrytile);
+	0, 3: THIS_ID(industrytile);
+	1, 0: THIS_ID(industrytile);
+	1, 2: THIS_ID(industrytile);
+	1, 3: THIS_ID(industrytile);
+	2, 0: THIS_ID(industrytile);
+	2, 2: THIS_ID(industrytile);
+	2, 3: THIS_ID(industrytile);
+	3, 0: THIS_ID(industrytile);
+	3, 2: THIS_ID(industrytile);
+	3, 3: THIS_ID(industrytile);
+	4, 0: THIS_ID(industrytile);
+	4, 2: THIS_ID(industrytile);
+	4, 3: THIS_ID(industrytile);
 }
 
 tilelayout tilelayout_biorefinery_4 {
-	0, 0: item_FEAT_INDUSTRYTILES_166;
-	0, 1: item_FEAT_INDUSTRYTILES_166;
-	0, 2: item_FEAT_INDUSTRYTILES_166;
-	1, 0: item_FEAT_INDUSTRYTILES_166;
-	1, 1: item_FEAT_INDUSTRYTILES_166;
-	1, 2: item_FEAT_INDUSTRYTILES_166;
-	2, 0: item_FEAT_INDUSTRYTILES_166;
-	2, 1: item_FEAT_INDUSTRYTILES_166;
-	2, 2: item_FEAT_INDUSTRYTILES_166;
-	3, 0: item_FEAT_INDUSTRYTILES_166;
-	3, 1: item_FEAT_INDUSTRYTILES_166;
-	3, 2: item_FEAT_INDUSTRYTILES_166;
-	4, 0: item_FEAT_INDUSTRYTILES_166;
-	4, 1: item_FEAT_INDUSTRYTILES_166;
-	4, 2: item_FEAT_INDUSTRYTILES_166;
+	0, 0: THIS_ID(industrytile);
+	0, 1: THIS_ID(industrytile);
+	0, 2: THIS_ID(industrytile);
+	1, 0: THIS_ID(industrytile);
+	1, 1: THIS_ID(industrytile);
+	1, 2: THIS_ID(industrytile);
+	2, 0: THIS_ID(industrytile);
+	2, 1: THIS_ID(industrytile);
+	2, 2: THIS_ID(industrytile);
+	3, 0: THIS_ID(industrytile);
+	3, 1: THIS_ID(industrytile);
+	3, 2: THIS_ID(industrytile);
+	4, 0: THIS_ID(industrytile);
+	4, 1: THIS_ID(industrytile);
+	4, 2: THIS_ID(industrytile);
 }
 
 item(FEAT_INDUSTRIES, biorefinery, 46) {
