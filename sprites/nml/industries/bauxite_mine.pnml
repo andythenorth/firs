@@ -9,32 +9,15 @@
 
 #define THIS_STR_EXTRA_SUPPLIES        STR_EXTRA_ENGINEERING_SUPPLIES
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_197, 197) {
-	property {
-		substitute: 0;
-  accepted_cargos: [[ENSP, 8]];
-		land_shape_flags: 0;
-		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
-	}
-}
+SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_1), 2022, 2039, 12)
 
-spritelayout action2_2756 {
-	ground {
-		sprite: 2022;
-	}
-	building {
-		sprite: 2039;
-		zextent: 12;
-	}
-}
-
-spritelayout action2_2757 {
+spritelayout THIS_ID(spritelayout_2) {
 	ground {
 		sprite: 2022;
 	}
 }
 
-spritelayout action2_2758 {
+spritelayout THIS_ID(spritelayout_3) {
 	ground {
 		sprite: 2022;
 	}
@@ -48,43 +31,26 @@ spritelayout action2_2758 {
 	}
 }
 
-spritelayout action2_2759 {
-	ground {
-		sprite: 2022;
-	}
-	building {
-		sprite: 2036;
-		zextent: 12;
-	}
+SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_4), 2022, 2036, 12)
+SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_5), 2022, 2033, 12)
+
+switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_1), relative_pos) {
+	relative_coord(0, 0): THIS_ID(spritelayout_1);
+	relative_coord(2, 0): THIS_ID(spritelayout_5);
+	relative_coord(3, 0): THIS_ID(spritelayout_1);
+	relative_coord(0, 1): THIS_ID(spritelayout_1);
+	relative_coord(2, 1): THIS_ID(spritelayout_3);
+	relative_coord(3, 1): THIS_ID(spritelayout_1);
+	relative_coord(4, 1): THIS_ID(spritelayout_1);
+	relative_coord(0, 2): THIS_ID(spritelayout_1);
+	relative_coord(2, 2): THIS_ID(spritelayout_4);
+	relative_coord(3, 2): THIS_ID(spritelayout_2);
+	THIS_ID(spritelayout_1);
 }
 
-spritelayout action2_2760 {
-	ground {
-		sprite: 2022;
-	}
-	building {
-		sprite: 2033;
-		zextent: 12;
-	}
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_2761, relative_pos) {
-	relative_coord(0, 0): action2_2756;
-	relative_coord(2, 0): action2_2760;
-	relative_coord(3, 0): action2_2756;
-	relative_coord(0, 1): action2_2756;
-	relative_coord(2, 1): action2_2758;
-	relative_coord(3, 1): action2_2756;
-	relative_coord(4, 1): action2_2756;
-	relative_coord(0, 2): action2_2756;
-	relative_coord(2, 2): action2_2759;
-	relative_coord(3, 2): action2_2757;
-	action2_2756;
-}
-
-switch(FEAT_INDUSTRYTILES, PARENT, action2_2762, layout_num) {
-	1: action2_2761;
-	action2_2756;
+switch(FEAT_INDUSTRYTILES, PARENT, THIS_ID(layout), layout_num) {
+	1: THIS_ID(layout_1);
+	THIS_ID(spritelayout_1);
 }
 
 CHECK_NEARBY_TILE_CLASS(switch_bauxite_mine_cb_nearby_check)
@@ -101,26 +67,32 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_2772, var[0x60, 4, 1, 0]) {
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_2773, (current_callback & 255)) {
 	INDTILE_CB_SLOPE_IS_SUITABLE: action2_2772;
-	action2_2762;
+	THIS_ID(layout);
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_197, 197) {
+item(FEAT_INDUSTRYTILES, THIS_ID(industrytile), 197) {
+	property {
+		substitute: 0;
+		accepted_cargos: [[ENSP, 8]];
+		land_shape_flags: 0;
+		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
+	}
 	graphics {
 		action2_2773;
 	}
 }
 
 tilelayout tilelayout_bauxite_mine_1 {
-	0, 0: item_FEAT_INDUSTRYTILES_197;
-	2, 0: item_FEAT_INDUSTRYTILES_197;
-	3, 0: item_FEAT_INDUSTRYTILES_197;
-	0, 1: item_FEAT_INDUSTRYTILES_197;
-	2, 1: item_FEAT_INDUSTRYTILES_197;
-	3, 1: item_FEAT_INDUSTRYTILES_197;
-	4, 1: item_FEAT_INDUSTRYTILES_197;
-	0, 2: item_FEAT_INDUSTRYTILES_197;
-	2, 2: item_FEAT_INDUSTRYTILES_197;
-	3, 2: item_FEAT_INDUSTRYTILES_197;
+	0, 0: THIS_ID(industrytile);
+	2, 0: THIS_ID(industrytile);
+	3, 0: THIS_ID(industrytile);
+	0, 1: THIS_ID(industrytile);
+	2, 1: THIS_ID(industrytile);
+	3, 1: THIS_ID(industrytile);
+	4, 1: THIS_ID(industrytile);
+	0, 2: THIS_ID(industrytile);
+	2, 2: THIS_ID(industrytile);
+	3, 2: THIS_ID(industrytile);
 }
 
 item(FEAT_INDUSTRIES, bauxite_mine, 5) {
