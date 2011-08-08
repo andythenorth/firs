@@ -402,7 +402,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_7377, industry_distance(sheep_farm)) {
 	return 4;
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7378, ((industry_count(27) / 2) / industry_clusters)) {
+switch(FEAT_INDUSTRIES, SELF, action2_7378, ((industry_count(sheep_farm) / 2) / industry_clusters)) {
 	0: return 1024;
 	action2_7377;
 }
