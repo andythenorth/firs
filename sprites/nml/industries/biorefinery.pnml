@@ -30,85 +30,15 @@ SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_4), THIS_ID(spriteset_ground), THIS_ID(
 
 SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_5), THIS_ID(spriteset_ground), THIS_ID(spriteset_5), 48)
 
-SPRITELAYOUT_NORMAL_BEGIN(THIS_ID(spritelayout_6_anim_1), THIS_ID(spriteset_ground), THIS_ID(spriteset_6), 7)
+SPRITELAYOUT_NORMAL_BEGIN(THIS_ID(spritelayout_6_anim), THIS_ID(spriteset_ground), THIS_ID(spriteset_6), 7)
 	building {
-		sprite: 3701;
+		sprite: 3701 + animation_frame;
 		xoffset: 1;
 		zoffset: 62;
 		xextent: 15;
 		zextent: 7;
 	}
 SPRITELAYOUT_END
-
-SPRITELAYOUT_NORMAL_BEGIN(THIS_ID(spritelayout_6_anim_2), THIS_ID(spriteset_ground), THIS_ID(spriteset_6), 7)
-	building {
-		sprite: 3702;
-		xoffset: 1;
-		zoffset: 62;
-		xextent: 15;
-		zextent: 7;
-	}
-SPRITELAYOUT_END
-
-SPRITELAYOUT_NORMAL_BEGIN(THIS_ID(spritelayout_6_anim_3), THIS_ID(spriteset_ground), THIS_ID(spriteset_6), 7)
-	building {
-		sprite: 3703;
-		xoffset: 1;
-		zoffset: 62;
-		xextent: 15;
-		zextent: 7;
-	}
-}
-
-SPRITELAYOUT_NORMAL_BEGIN(THIS_ID(spritelayout_6_anim_4), THIS_ID(spriteset_ground), THIS_ID(spriteset_6), 7)
-	building {
-		sprite: 3704;
-		xoffset: 1;
-		zoffset: 62;
-		xextent: 15;
-		zextent: 7;
-	}
-}
-
-SPRITELAYOUT_NORMAL_BEGIN(THIS_ID(spritelayout_6_anim_5), THIS_ID(spriteset_ground), THIS_ID(spriteset_6), 7)
-	building {
-		sprite: 3705;
-		xoffset: 1;
-		zoffset: 62;
-		xextent: 15;
-		zextent: 7;
-	}
-}
-
-SPRITELAYOUT_NORMAL_BEGIN(THIS_ID(spritelayout_6_anim_6), THIS_ID(spriteset_ground), THIS_ID(spriteset_6), 7)
-	building {
-		sprite: 3706;
-		xoffset: 1;
-		zoffset: 62;
-		xextent: 15;
-		zextent: 7;
-	}
-}
-
-SPRITELAYOUT_NORMAL_BEGIN(THIS_ID(spritelayout_6_anim_7), THIS_ID(spriteset_ground), THIS_ID(spriteset_6), 7)
-	building {
-		sprite: 3707;
-		xoffset: 1;
-		zoffset: 62;
-		xextent: 15;
-		zextent: 7;
-	}
-}
-
-SPRITELAYOUT_NORMAL_BEGIN(THIS_ID(spritelayout_6_anim_8), THIS_ID(spriteset_ground), THIS_ID(spriteset_6), 7)
-	building {
-		sprite: 3708;
-		xoffset: 1;
-		zoffset: 62;
-		xextent: 15;
-		zextent: 7;
-	}
-}
 
 SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_7), THIS_ID(spriteset_ground), THIS_ID(spriteset_7), 48)
 
@@ -120,17 +50,6 @@ spritelayout THIS_ID(spritelayout_9) {
 		recolour_mode: RECOLOUR_REMAP;
 		palette: 0;
 	}
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(spritelayout_6_anim), animation_frame) {
-	1: THIS_ID(spritelayout_6_anim_2);
-	2: THIS_ID(spritelayout_6_anim_3);
-	3: THIS_ID(spritelayout_6_anim_4);
-	4: THIS_ID(spritelayout_6_anim_5);
-	5: THIS_ID(spritelayout_6_anim_6);
-	6: THIS_ID(spritelayout_6_anim_7);
-	7: THIS_ID(spritelayout_6_anim_8);
-	THIS_ID(spritelayout_6_anim_1);
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_2833, relative_pos) {
