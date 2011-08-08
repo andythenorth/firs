@@ -5,6 +5,8 @@
  * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
  */
 
+#define THIS_ID(...) lime_kiln ## __VA_ARGS__
+
 item(FEAT_INDUSTRYTILES, tile_lime_kiln, 191) {
 	property {
 		substitute: 0;
@@ -696,3 +698,5 @@ item(FEAT_INDUSTRIES, lime_kiln, 1) {
 		switch_main_lime_kiln;
 	}
 }
+
+#include "../templates/undefs.pnml"

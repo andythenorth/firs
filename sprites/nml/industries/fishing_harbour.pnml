@@ -5,6 +5,8 @@
  * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
  */
 
+#define THIS_ID(...) fishing_harbour ## __VA_ARGS__
+
 item(FEAT_INDUSTRYTILES, tile_fishing_harbour1, 195) {
 	property {
 		substitute: 0;
@@ -1217,3 +1219,4 @@ item(FEAT_INDUSTRIES, fishing_harbour, 31) {
 	}
 }
 
+#include "../templates/undefs.pnml"

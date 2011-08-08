@@ -5,6 +5,8 @@
  * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
  */
 
+#define THIS_ID(...) smithy_forge ## __VA_ARGS__
+
 item(FEAT_INDUSTRYTILES, tile_smithy_forge, 209) {
 	property {
 		substitute: 0;
@@ -412,3 +414,4 @@ item(FEAT_INDUSTRIES, smithy_forge, 6) {
 	}
 }
 
+#include "../templates/undefs.pnml"

@@ -5,6 +5,8 @@
  * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
  */
 
+#define THIS_ID(...) biorefinery ## __VA_ARGS__
+
 item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_166, 166) {
 	property {
 		substitute: 0;
@@ -713,3 +715,5 @@ item(FEAT_INDUSTRIES, biorefinery, 46) {
 		switch_main_biorefinery;
 	}
 }
+
+#include "../templates/undefs.pnml"
