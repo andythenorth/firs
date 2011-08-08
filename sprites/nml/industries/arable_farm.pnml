@@ -9,109 +9,47 @@
 
 #define THIS_STR_EXTRA_SUPPLIES        STR_EXTRA_FARM_SUPPLIES
 
-item(FEAT_INDUSTRYTILES, tile_arable_farm, 160) {
-	property {
-		substitute: 0;
-		accepted_cargos: [[FMSP, 8], [0, 0], [0, 0]];
-		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
-		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
-	}
+spriteset(THIS_ID(spriteset_1)) { tmpl_building_sprite_filename( 10, 10, 59, -28, "sprites/graphics/industries/arablefarm.pcx") } 
+spriteset(THIS_ID(spriteset_2)) { tmpl_building_sprite_filename( 80, 10, 59, -28, "sprites/graphics/industries/arablefarm.pcx") } 
+spriteset(THIS_ID(spriteset_3)) { tmpl_building_sprite_filename(150, 10, 59, -28, "sprites/graphics/industries/arablefarm.pcx") } 
+spriteset(THIS_ID(spriteset_4)) { tmpl_building_sprite_filename(220, 10, 59, -28, "sprites/graphics/industries/arablefarm.pcx") } 
+spriteset(THIS_ID(spriteset_5)) { tmpl_building_sprite_filename(290, 10, 59, -28, "sprites/graphics/industries/arablefarm.pcx") } 
+
+SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_1), 2022,                THIS_ID(spriteset_1), 32)
+SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_2), GROUNDSPRITE_NORMAL, THIS_ID(spriteset_2), 32)
+SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_3), GROUNDSPRITE_NORMAL, THIS_ID(spriteset_3), 32)
+SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_4), 2022,                THIS_ID(spriteset_4), 32)
+SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_5), 2022,                THIS_ID(spriteset_5), 32)
+
+switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_1), relative_pos) {
+	relative_coord(1, 0): THIS_ID(spritelayout_1);
+	relative_coord(1, 1): THIS_ID(spritelayout_2);
+	relative_coord(0, 2): THIS_ID(spritelayout_3);
+	relative_coord(2, 1): THIS_ID(spritelayout_4);
+	THIS_ID(spritelayout_5);
 }
 
-spriteset(spriteset_2686, "sprites/graphics/industries/arablefarm.pcx") { tmpl_building_sprite(10, 10, 59, -28) } 
-spriteset(spriteset_2687, "sprites/graphics/industries/arablefarm.pcx") { tmpl_building_sprite(80, 10, 59, -28) } 
-spriteset(spriteset_2688, "sprites/graphics/industries/arablefarm.pcx") { tmpl_building_sprite(150, 10, 59, -28) } 
-spriteset(spriteset_2689, "sprites/graphics/industries/arablefarm.pcx") { tmpl_building_sprite(220, 10, 59, -28) } 
-spriteset(spriteset_2690, "sprites/graphics/industries/arablefarm.pcx") { tmpl_building_sprite(290, 10, 59, -28) } 
-spritelayout action2_2691 {
-	ground {
-		sprite: 2022;
-	}
-	building {
-		sprite: spriteset_2686;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 32;
-	}
+switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_2), relative_pos) {
+	relative_coord(0, 0): THIS_ID(spritelayout_5);
+	relative_coord(0, 1): THIS_ID(spritelayout_4);
+	relative_coord(1, 0): THIS_ID(spritelayout_1);
+	relative_coord(1, 1): THIS_ID(spritelayout_2);
+	THIS_ID(spritelayout_3);
 }
 
-spritelayout action2_2692 {
-	ground {
-		sprite: GROUNDSPRITE_NORMAL;
-	}
-	building {
-		sprite: spriteset_2687;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 32;
-	}
+switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_3), relative_pos) {
+	relative_coord(0, 0): THIS_ID(spritelayout_1);
+	relative_coord(0, 1): THIS_ID(spritelayout_2);
+	relative_coord(1, 0): THIS_ID(spritelayout_5);
+	relative_coord(2, 0): THIS_ID(spritelayout_4);
+	THIS_ID(spritelayout_3);
 }
 
-spritelayout action2_2693 {
-	ground {
-		sprite: GROUNDSPRITE_NORMAL;
-	}
-	building {
-		sprite: spriteset_2688;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 32;
-	}
-}
-
-spritelayout action2_2694 {
-	ground {
-		sprite: 2022;
-	}
-	building {
-		sprite: spriteset_2689;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 32;
-	}
-}
-
-spritelayout action2_2695 {
-	ground {
-		sprite: 2022;
-	}
-	building {
-		sprite: spriteset_2690;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 32;
-	}
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_2696, relative_pos) {
-	relative_coord(1, 0): action2_2691;
-	relative_coord(1, 1): action2_2692;
-	relative_coord(0, 2): action2_2693;
-	relative_coord(2, 1): action2_2694;
-	action2_2695;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_2697, relative_pos) {
-	relative_coord(0, 0): action2_2695;
-	relative_coord(0, 1): action2_2694;
-	relative_coord(1, 0): action2_2691;
-	relative_coord(1, 1): action2_2692;
-	action2_2693;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_2698, relative_pos) {
-	relative_coord(0, 0): action2_2691;
-	relative_coord(0, 1): action2_2692;
-	relative_coord(1, 0): action2_2695;
-	relative_coord(2, 0): action2_2694;
-	action2_2693;
-}
-
-switch(FEAT_INDUSTRYTILES, PARENT, action2_2699, layout_num) {
-	1: action2_2696;
-	2: action2_2697;
-	3: action2_2698;
-	action2_2691;
+switch(FEAT_INDUSTRYTILES, PARENT, THIS_ID(layout), layout_num) {
+	1: THIS_ID(layout_1);
+	2: THIS_ID(layout_2);
+	3: THIS_ID(layout_3);
+	THIS_ID(spritelayout_1);
 }
 
 CHECK_NEARBY_TILE_CLASS(switch_arable_farm_cb_nearby_check)
@@ -178,37 +116,43 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_2720, ((var[0x60, 16, 255, 0] - snowlin
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_2721, (current_callback & 255)) {
 	INDTILE_CB_SLOPE_IS_SUITABLE: action2_2720;
-	action2_2699;
+	THIS_ID(layout);
 }
 
-item(FEAT_INDUSTRYTILES, tile_arable_farm, 160) {
+item(FEAT_INDUSTRYTILES, THIS_ID(industrytile), 160) {
+	property {
+		substitute: 0;
+		accepted_cargos: [[FMSP, 8], [0, 0], [0, 0]];
+		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
+		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
+	}
 	graphics {
 		action2_2721;
 	}
 }
 
 tilelayout tilelayout_arable_farm_1 {
-	1, 0: tile_arable_farm;
-	1, 1: tile_arable_farm;
-	0, 2: tile_arable_farm;
-	2, 1: tile_arable_farm;
-	0, 1: tile_arable_farm;
+	1, 0: THIS_ID(industrytile);
+	1, 1: THIS_ID(industrytile);
+	0, 2: THIS_ID(industrytile);
+	2, 1: THIS_ID(industrytile);
+	0, 1: THIS_ID(industrytile);
 }
 
 tilelayout tilelayout_arable_farm_2 {
-	0, 0: tile_arable_farm;
-	0, 1: tile_arable_farm;
-	1, 0: tile_arable_farm;
-	1, 1: tile_arable_farm;
-	2, 0: tile_arable_farm;
+	0, 0: THIS_ID(industrytile);
+	0, 1: THIS_ID(industrytile);
+	1, 0: THIS_ID(industrytile);
+	1, 1: THIS_ID(industrytile);
+	2, 0: THIS_ID(industrytile);
 }
 
 tilelayout tilelayout_arable_farm_3 {
-	0, 0: tile_arable_farm;
-	0, 1: tile_arable_farm;
-	1, 0: tile_arable_farm;
-	2, 0: tile_arable_farm;
-	2, 1: tile_arable_farm;
+	0, 0: THIS_ID(industrytile);
+	0, 1: THIS_ID(industrytile);
+	1, 0: THIS_ID(industrytile);
+	2, 0: THIS_ID(industrytile);
+	2, 1: THIS_ID(industrytile);
 }
 
 item(FEAT_INDUSTRIES, arable_farm, 26) {
