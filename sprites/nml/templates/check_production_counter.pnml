@@ -6,20 +6,26 @@
  */
 
 /*
- * Checks for production last month and increases the 'no production counter'
- * if nothing was produced or resets it, if something was produced
+ * Checks for transported and received cargo the last month and increases the 'closure counter'
+ * if nothing was transported or received. Otherwise it resets the closure_counter.
  *
  * switch name:  THIS_ID(check_production_counter)
  */
 
-switch(FEAT_INDUSTRIES, SELF, THIS_ID(increase_no_production_counter), STORE_PERM((1 + LOAD_PERM(store_closure_counter)), store_closure_counter)) {
+switch(FEAT_INDUSTRIES, SELF, THIS_ID(increase_closure_counter), STORE_PERM((1 + LOAD_PERM(var_closure_counter)), var_closure_counter)) {
 	return 0;
 }
-switch(FEAT_INDUSTRIES, SELF, THIS_ID(reset_no_production_counter), [STORE_PERM(0, store_closure_counter), 1]) {
+switch(FEAT_INDUSTRIES, SELF, THIS_ID(reset_closure_counter), [STORE_PERM(0, var_closure_counter), 1]) {
 	return 0;
 }
-switch(FEAT_INDUSTRIES, SELF, THIS_ID(check_production_counter), produced_last_month_1) {
-	0: THIS_ID(increase_no_production_counter);
-	THIS_ID(reset_no_production_counter);
+switch(FEAT_INDUSTRIES, SELF, THIS_ID(check_production_counter), 
+			transported_last_month_1 > 0 ||
+			transported_last_month_2 > 0 ||
+			(current_date - var_date_received_1) < 30 ||
+			(current_date - var_date_received_2) < 30 ||
+			(current_date - var_date_received_3) < 30
+		) {
+	0: THIS_ID(increase_closure_counter);
+	THIS_ID(reset_closure_counter);
 }
 
