@@ -12,16 +12,33 @@
 
 #define GROUNDTILE_HALF_BROWN 3962
 
-/* Persistant storage for primary industries */
-#define var_num_supplies_delivered  0
-#define var_date_received_supplies 10
+/* **************************************************************************
+/* Persistant storage for primary industries (template produce_primary) */
+ * **************************************************************************/
+#define var_num_supplies_delivered  0 // amount of supplies delivered this month
+
+//                                  1 // unused
+//                                  2 // unused
+//                                  3 // unused
+//                                  4 // unused
+//                                  5 // unused
+//                                  6 // unused
+//                                  7 // unused
+//                                  8 // unused
+//                                  9 // unused
+
+#define var_date_received_supplies 10 // date the last time supplies were delivered
+
+//                                 11 // unused
+//                                 12 // unused
+//                                 13 // unused
+//                                 14 // unused
+
 #define var_closure_counter        15
 
-/* persistant storage for secondary industries (template produce_secondary_C) */
-#define var_waiting_cargo_1   13
-#define var_waiting_cargo_2   14
-
+/* **************************************************************************
 /* persistant storage for secondary industries (template produce_secondary) */
+ * **************************************************************************/
 //                                  0 // unused
 
 #define var_ratio_cargo_1           1 // output per 8 units input of cargo 1; can be made temporary
@@ -42,7 +59,28 @@
 #define var_production_span        13 // time to consider a cargo usable for production boost (not yet used)
 
 //                                 14 // unused
+//#define var_closure_counter      15 // months without delivery, same as secondary industries
 
-// for all industries (?)
 
-#define store_closure_counter      15 
+/* **************************************************************************
+ * persistant storage for blackhole industries (template produce_blackhole) */
+ * **************************************************************************/
+//                                  0 // unused
+//                                  1 // unused
+//                                  2 // unused
+//                                  3 // unused
+//                                  4 // unused
+//                                  5 // unused
+//                                  6 // unused
+//                                  7 // unused
+//                                  8 // unused
+//                                  9 // unused
+
+// #define var_date_received_1     10 // date of last cargo 1 delivered, same as secondary industries
+// #define var_date_received_2     11 // date of last cargo 2 delivered, same as secondary industries
+// #define var_date_received_3     12 // date of last cargo 3 delivered, same as secondary industries
+
+//                                 13 // unused
+//                                 14 // unused
+
+// #define var_closure_counter     15 // months without delivery, same as secondary industries
