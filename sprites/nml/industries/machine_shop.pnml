@@ -2495,8 +2495,8 @@ tilelayout tilelayout_machine_shop_5 {
 
 
 /* Don't replace machine_shop in macros by THIS_ID(). It fails */
-CHECK_INCOMPATIBLE(machine_shop, machine_shop, 56, CB_RESULT_IND_DISALLOW_UNSUITABLE, CB_RESULT_IND_ALLOW_LOCATION)
-CHECK_FOUNDER     (machine_shop, machine_shop_machine_shop)
+CHECK_INCOMPATIBLE(machine_shop, 56, CB_RESULT_IND_DISALLOW_UNSUITABLE, return CB_RESULT_IND_ALLOW_LOCATION)
+CHECK_FOUNDER     (THIS_ID(machine_shop))
 
 SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
 
