@@ -7,119 +7,6 @@
 
 #define THIS_ID(...) sawmill ## __VA_ARGS__
 
-/* for secondary production template */
-#define THIS_NUM_OUTPUT_CARGOS    1
-#define THIS_PROD_RATIO_CARGO1    6
-#define THIS_PROD_RATIO_CARGO2    0
-#define THIS_PROD_RATIO_CARGO3    0
-#define THIS_BOOST_12             0
-#define THIS_BOOST_13             0
-#define THIS_BOOST_21             0
-#define THIS_BOOST_23             0
-#define THIS_BOOST_31             0
-#define THIS_BOOST_32             0
-#define THIS_PRODUCTION_SPAN      30
-
-/* extra text template */
-#define THIS_STR_EXTRA_TEXT       STR_EXTRA_SAWMILL
-#define THIS_STR_DEBUG_TEXT       STR_EXTRA_TEXT_DEBUG_SECONDARY
-
-item(FEAT_INDUSTRIES, sawmill, 12) {
-	property {
-		substitute: 2;
-		override: 2;
-		nearby_station_name: string(STR_STATIONNAME_MILLS);
-		prod_cargo_types: [WDPR];
-		accept_cargo_types: [WOOD];
-		input_multiplier_1: [0, 0];
-		input_multiplier_2: [0, 0];
-		input_multiplier_3: [0, 0];
-		conflicting_ind_types: [];
-		prob_random: 5;
-		prob_in_game: 2;
-		fund_cost_multiplier: 97;
-		map_colour: 194;
-		callback_flags: 317;
-	}
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7242, industry_distance(forest)) {
-	16..60: return 1024;
-	return 4;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7243, (((industry_count(11) * 5) / 4) / industry_clusters)) {
-	0: return 1024;
-	action2_7242;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7244, STORE_TEMP(-1, 256)) {
-	0: action2_7243;
-	action2_7243;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7245, industry_distance(forest)) {
-	0..16: return 4;
-	action2_7244;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7246, founder) {
-	16: action2_7245;
-	return 1024;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7247, game_mode) {
-	1: action2_7246;
-	return 1024;
-}
-
-#include "../templates/produce_secondary.pnml"
-#include "../templates/extra_text_secondary.pnml"
-
-CHECK_OPENING(action2_7276, 0, -1)
-
-switch(FEAT_INDUSTRIES, SELF, action2_7277, [STORE_TEMP(-701265, 256), 32928]) {
-	return;
-}
-
-SWITCH_COLOUR_SCHEME1(action2_7280)
-
-SET_PRODUCTION_COUNTER_PRODUCED(action2_7283)
-
-CHECK_CLOSE_SECONDARY(action2_7286)
-
-/* Decide randomly on cargo output */
-switch(FEAT_INDUSTRIES, SELF, THIS_ID(random_cargo_output), var[0x5F, 8, 3]) {
-	0: return 20;
-	1: return 2327;
-	2: return 2332;
-	return 21;
-}
-switch(FEAT_INDUSTRIES, SELF, THIS_ID(cargo_output), (extra_callback_info1 & 255)) {
-	1: THIS_ID(random_cargo_output);
-	0: return 18;
-	return 255;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7287, current_callback) {
-	0: THIS_ID(produce);
-	IND_CB_LOCATION_CHECK: action2_7247;
-	IND_CB_AVAILABILITY: action2_7276;
-	IND_CB_COLOUR: action2_7280;
-	IND_CB_CARGO_OUTPUT: THIS_ID(cargo_output);
-	IND_CB_EXTRA_TEXT_FUND: action2_7277;
-	IND_CB_RANDOM_PROD_CHANGE: action2_7286;
-	IND_CB_MONTHLY_PROD_CHANGE: action2_7283;
-	IND_CB_EXTRA_TEXT_INDUSTRY: THIS_ID(extra_text);
-	THIS_ID(simple_produce);
-}
-
-item(FEAT_INDUSTRIES, sawmill, 12) {
-	graphics {
-		action2_7287;
-	}
-}
-
 item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_11, 11) {
 	property {
 		substitute: 11;
@@ -214,6 +101,64 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_14, 14) {
 item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_15, 15) {
 	graphics {
 		action2_7304;
+	}
+}
+/* for secondary production template */
+#define THIS_NUM_OUTPUT_CARGOS    1
+#define THIS_PROD_RATIO_CARGO1    6
+#define THIS_PROD_RATIO_CARGO2    0
+#define THIS_PROD_RATIO_CARGO3    0
+#define THIS_BOOST_12             0
+#define THIS_BOOST_13             0
+#define THIS_BOOST_21             0
+#define THIS_BOOST_23             0
+#define THIS_BOOST_31             0
+#define THIS_BOOST_32             0
+#define THIS_PRODUCTION_SPAN      30
+
+/* extra text template */
+#define THIS_STR_EXTRA_TEXT       STR_EXTRA_SAWMILL
+#define THIS_STR_DEBUG_TEXT       STR_EXTRA_TEXT_DEBUG_SECONDARY
+
+
+CHECK_NEARBY_CLUSTER(forest, 16, 60, 5, 4, return CB_RESULT_IND_DISALLOW_UNSUITABLE, return CB_RESULT_IND_ALLOW_LOCATION)
+CHECK_FOUNDER       (THIS_ID(forest))
+
+SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
+
+#include "../templates/produce_secondary.pnml"
+#include "../templates/check_production_counter.pnml"
+#include "../templates/check_closure.pnml"
+
+#include "../templates/extra_text_secondary.pnml"
+
+#include "../templates/check_availability.pnml"
+
+item(FEAT_INDUSTRIES, sawmill, 12) {
+	property {
+		substitute: 2;
+		override: 2;
+		nearby_station_name: string(STR_STATIONNAME_MILLS);
+		prod_cargo_types: [WDPR];
+		accept_cargo_types: [WOOD];
+		input_multiplier_1: [0, 0];
+		input_multiplier_2: [0, 0];
+		input_multiplier_3: [0, 0];
+		conflicting_ind_types: [];
+		prob_random: 5;
+		prob_in_game: 2;
+		fund_cost_multiplier: 97;
+		map_colour: 194;
+		callback_flags: 317;
+	}
+	graphics {
+		produce_cargo_arrival:   THIS_ID(produce);
+		availability:            THIS_ID(check_availability);
+		location_check:          THIS_ID(check_location);
+		monthly_prod_change:     THIS_ID(check_production_counter);
+		random_prod_change:      THIS_ID(check_closure);
+		extra_text_industry:     THIS_ID(extra_text);
+		colour:                  THIS_ID(colour);
 	}
 }
 
