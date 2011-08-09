@@ -212,10 +212,46 @@ tilelayout tilelayout_smithy_forge_1 {
 	1, 0: tile_smithy_forge;
 }
 
+/* *************************************************
+ * Definition of the industry
+ * *************************************************/
+
+/* for secondary production template */
+#define THIS_NUM_OUTPUT_CARGOS    2
+#define THIS_PROD_RATIO_CARGO1    5
+#define THIS_PROD_RATIO_CARGO2    1
+#define THIS_PROD_RATIO_CARGO3    1
+#define THIS_BOOST_12             0
+#define THIS_BOOST_13             0
+#define THIS_BOOST_21             0
+#define THIS_BOOST_23             0
+#define THIS_BOOST_31             0
+#define THIS_BOOST_32             0
+#define THIS_PRODUCTION_SPAN      30
+/* extra text template */
+#define THIS_STR_EXTRA_TEXT       STR_EXTRA_SMITHY_FORGE
+#define THIS_STR_DEBUG_TEXT       STR_EXTRA_TEXT_DEBUG_SECONDARY
+
+
+CHECK_INCOMPATIBLE  (smithy_forge,  56, CB_RESULT_IND_DISALLOW_UNSUITABLE, return CB_RESULT_IND_ALLOW_LOCATION)
+CHECK_FOUNDER       (THIS_ID(smithy_forge))
+
+SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
+
+#include "../templates/produce_secondary.pnml"
+#include "../templates/check_production_counter.pnml"
+#include "../templates/check_closure.pnml"
+
+#include "../templates/extra_text_secondary.pnml"
+
+#include "../templates/check_availability.pnml"
+
 item(FEAT_INDUSTRIES, smithy_forge, 6) {
 	property {
 		substitute: 0;
-		layouts: [tilelayout_smithy_forge_1];
+		layouts: [
+				tilelayout_smithy_forge_1
+			];
 		life_type: 4;
 		closure_msg: 18483;
 		prod_increase_msg: 18485;
@@ -240,177 +276,14 @@ item(FEAT_INDUSTRIES, smithy_forge, 6) {
 		spec_flags: 16;
 		callback_flags: 2493;
 	}
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4552, industry_distance(smithy_forge)) {
-	0..56: return 1025;
-	return 1024;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4553, founder) {
-	16: action2_4552;
-	return 1024;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4554, game_mode) {
-	1: action2_4553;
-	return 1024;
-}
-
-produce(action2_4555, LOAD_TEMP(7), LOAD_TEMP(8), LOAD_TEMP(9), LOAD_TEMP(10), LOAD_TEMP(11), LOAD_TEMP(0));
-
-switch(FEAT_INDUSTRIES, SELF, action2_4556, [STORE_TEMP(0, 0), 1]) {
-	0: action2_4555;
-	action2_4555;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4557, [STORE_TEMP(STORE_PERM(STORE_TEMP(STORE_PERM(0, 11), 11), 10), 10), 1]) {
-	0: action2_4556;
-	action2_4556;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4558, [STORE_TEMP(STORE_PERM(0, 11), 11), STORE_TEMP(STORE_PERM(LOAD_TEMP(10), 10), 10)]) {
-	0: action2_4556;
-	action2_4556;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4559, STORE_TEMP(STORE_PERM(STORE_TEMP(STORE_PERM(max((LOAD_TEMP(10) / 2), 1), 10), 10), 11), 11)) {
-	0: action2_4556;
-	action2_4556;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4560, 2) {
-	2: action2_4559;
-	action2_4558;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4561, STORE_TEMP(((LOAD_PERM(4) + LOAD_PERM(5)) + LOAD_PERM(6)), 10)) {
-	0: action2_4557;
-	action2_4560;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4562, [STORE_TEMP(((LOAD_PERM(6) / LOAD_PERM(12)) * 8), 9), STORE_TEMP(STORE_PERM(((var[0x42, 0, -1] - LOAD_TEMP(9)) + LOAD_TEMP(9)), 9), 9)]) {
-	0: action2_4561;
-	action2_4561;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4563, [STORE_TEMP(((LOAD_PERM(5) / LOAD_PERM(12)) * 8), 8), STORE_TEMP(STORE_PERM(((var[0x41, 0, -1] - LOAD_TEMP(8)) + LOAD_TEMP(8)), 8), 8)]) {
-	0: action2_4562;
-	action2_4562;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4564, [STORE_TEMP(((LOAD_PERM(4) / LOAD_PERM(12)) * 8), 7), STORE_TEMP(STORE_PERM(((var[0x40, 0, -1] - LOAD_TEMP(7)) + LOAD_TEMP(7)), 7), 7)]) {
-	0: action2_4563;
-	action2_4563;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4565, STORE_PERM(max(min(((var[0x42, 0, -1] / 8) * LOAD_PERM(3)), LOAD_PERM(0)), 1), 6)) {
-	0: action2_4564;
-	action2_4564;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4566, [STORE_PERM(0, 6), var[0x42, 0, -1]]) {
-	0: action2_4564;
-	action2_4565;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4567, STORE_PERM(max(min(((var[0x41, 0, -1] / 8) * LOAD_PERM(2)), LOAD_PERM(0)), 1), 5)) {
-	0: action2_4566;
-	action2_4566;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4568, [STORE_PERM(0, 5), var[0x41, 0, -1]]) {
-	0: action2_4566;
-	action2_4567;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4569, STORE_PERM(max(min(((var[0x40, 0, -1] / 8) * LOAD_PERM(1)), LOAD_PERM(0)), 1), 4)) {
-	0: action2_4568;
-	action2_4568;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4570, [STORE_PERM(0, 4), var[0x40, 0, -1]]) {
-	0: action2_4568;
-	action2_4569;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4571, STORE_PERM(1, 3)) {
-	0: action2_4570;
-	action2_4570;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4572, STORE_PERM(1, 2)) {
-	0: action2_4571;
-	action2_4571;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4573, STORE_PERM(5, 1)) {
-	0: action2_4572;
-	action2_4572;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4574, STORE_TEMP(LOAD_PERM(0), 260)) {
-	0: return string(STR_INFO_DEBUG_PRODUCTION_RATIO);
-	return string(STR_INFO_DEBUG_PRODUCTION_RATIO);
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4575, STORE_TEMP((rotate((LOAD_PERM(11) & 65535), 16) | (LOAD_PERM(10) & 65535)), 259)) {
-	0: action2_4574;
-	action2_4574;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4576, STORE_TEMP((rotate((LOAD_PERM(9) & 65535), 16) | (LOAD_PERM(8) & 65535)), 258)) {
-	0: action2_4575;
-	action2_4575;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4577, STORE_TEMP((rotate((LOAD_PERM(7) & 65535), 16) | (LOAD_PERM(3) & 65535)), 257)) {
-	0: action2_4576;
-	action2_4576;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4578, STORE_TEMP((rotate((LOAD_PERM(2) & 65535), 16) | (LOAD_PERM(1) & 65535)), 256)) {
-	0: action2_4577;
-	action2_4577;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4579, show_debug_texts) {
-	1: action2_4578;
-	return string(STR_EXTRA_SMITHY_FORGE);
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4580, STORE_PERM((65535 / 1), 0)) {
-	0: action2_4573;
-	action2_4573;
-}
-
-CHECK_OPENING(action2_4583, 0, 1951)
-
-switch(FEAT_INDUSTRIES, SELF, action2_4584, [STORE_TEMP(-701265, 256), 32928]) {
-	return;
-}
-
-SWITCH_COLOUR_SCHEME1(action2_4587)
-
-SET_PRODUCTION_COUNTER_PRODUCED(action2_4590)
-
-CHECK_CLOSE_SECONDARY(action2_4593)
-
-switch(FEAT_INDUSTRIES, SELF, switch_main_smithy_forge, current_callback) {
-	0: action2_4580;
-	IND_CB_LOCATION_CHECK: action2_4554;
-	IND_CB_AVAILABILITY: action2_4583;
-	IND_CB_COLOUR: action2_4587;
-	IND_CB_EXTRA_TEXT_FUND: action2_4584;
-	IND_CB_RANDOM_PROD_CHANGE: action2_4593;
-	IND_CB_MONTHLY_PROD_CHANGE: action2_4590;
-	IND_CB_EXTRA_TEXT_INDUSTRY: action2_4579;
-	action2_4556;
-}
-
-item(FEAT_INDUSTRIES, smithy_forge, 6) {
 	graphics {
-		switch_main_smithy_forge;
+		produce_cargo_arrival:   THIS_ID(produce);
+		availability:            THIS_ID(check_availability);
+		location_check:          THIS_ID(check_location);
+		monthly_prod_change:     THIS_ID(check_production_counter);
+		random_prod_change:      THIS_ID(check_closure);
+		extra_text_industry:     THIS_ID(extra_text);
+		colour:                  THIS_ID(colour);
 	}
 }
 
