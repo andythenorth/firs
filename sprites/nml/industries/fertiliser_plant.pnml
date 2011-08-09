@@ -690,10 +690,52 @@ tilelayout tilelayout_fertiliser_plant_7 {
 	5, 6: tile_fertiliser_plant;
 }
 
+/* *************************************************
+ * Definition of the industry
+ * *************************************************/
+
+/* for secondary production template */
+#define THIS_NUM_OUTPUT_CARGOS    1
+#define THIS_PROD_RATIO_CARGO1    8
+#define THIS_PROD_RATIO_CARGO2    1
+#define THIS_PROD_RATIO_CARGO3    1
+#define THIS_BOOST_12             0
+#define THIS_BOOST_13             0
+#define THIS_BOOST_21             0
+#define THIS_BOOST_23             0
+#define THIS_BOOST_31             0
+#define THIS_BOOST_32             0
+#define THIS_PRODUCTION_SPAN      30
+/* extra text template */
+#define THIS_STR_EXTRA_TEXT       STR_EXTRA_FERTILIZER_PLANT
+#define THIS_STR_DEBUG_TEXT       STR_EXTRA_TEXT_DEBUG_SECONDARY
+
+
+CHECK_INCOMPATIBLE  (fertiliser_plant, 56, CB_RESULT_IND_DISALLOW_UNSUITABLE, return CB_RESULT_IND_ALLOW_LOCATION)
+CHECK_FOUNDER       (THIS_ID(fertiliser_plant))
+
+SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
+
+#include "../templates/produce_secondary.pnml"
+#include "../templates/check_production_counter.pnml"
+#include "../templates/check_closure.pnml"
+
+#include "../templates/extra_text_secondary.pnml"
+
+#include "../templates/check_availability.pnml"
+
 item(FEAT_INDUSTRIES, fertiliser_plant, 40) {
 	property {
 		substitute: 0;
-		layouts: [tilelayout_fertiliser_plant_1, tilelayout_fertiliser_plant_2, tilelayout_fertiliser_plant_3, tilelayout_fertiliser_plant_4, tilelayout_fertiliser_plant_5, tilelayout_fertiliser_plant_6, tilelayout_fertiliser_plant_7];
+		layouts: [
+				tilelayout_fertiliser_plant_1,
+				tilelayout_fertiliser_plant_2,
+				tilelayout_fertiliser_plant_3,
+				tilelayout_fertiliser_plant_4,
+				tilelayout_fertiliser_plant_5,
+				tilelayout_fertiliser_plant_6,
+				tilelayout_fertiliser_plant_7
+			];
 		life_type: 4;
 		closure_msg: 18483;
 		prod_increase_msg: 18485;
@@ -717,191 +759,14 @@ item(FEAT_INDUSTRIES, fertiliser_plant, 40) {
 		spec_flags: 0;
 		callback_flags: 2493;
 	}
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4030, industry_distance(fertiliser_plant)) {
-	0..56: return 1025;
-	return 1024;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4031, founder) {
-	16: action2_4030;
-	return 1024;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4032, game_mode) {
-	1: action2_4031;
-	return 1024;
-}
-
-produce(action2_4033, LOAD_TEMP(7), LOAD_TEMP(8), LOAD_TEMP(9), LOAD_TEMP(10), LOAD_TEMP(11), LOAD_TEMP(0));
-
-switch(FEAT_INDUSTRIES, SELF, action2_4034, [STORE_TEMP(0, 0), 1]) {
-	0: action2_4033;
-	action2_4033;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4035, [STORE_TEMP(STORE_PERM(STORE_TEMP(STORE_PERM(0, 11), 11), 10), 10), 1]) {
-	0: action2_4034;
-	action2_4034;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4036, [STORE_TEMP(STORE_PERM(0, 11), 11), STORE_TEMP(STORE_PERM(LOAD_TEMP(10), 10), 10)]) {
-	0: action2_4034;
-	action2_4034;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4037, STORE_TEMP(STORE_PERM(STORE_TEMP(STORE_PERM(max((LOAD_TEMP(10) / 1), 1), 10), 10), 11), 11)) {
-	0: action2_4034;
-	action2_4034;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4038, 1) {
-	2: action2_4037;
-	action2_4036;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4039, STORE_TEMP(((LOAD_PERM(4) + LOAD_PERM(5)) + LOAD_PERM(6)), 10)) {
-	0: action2_4035;
-	action2_4038;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4040, [STORE_TEMP(((LOAD_PERM(6) / LOAD_PERM(12)) * 8), 9), STORE_TEMP(STORE_PERM(((var[0x42, 0, -1] - LOAD_TEMP(9)) + LOAD_TEMP(9)), 9), 9)]) {
-	0: action2_4039;
-	action2_4039;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4041, [STORE_TEMP(((LOAD_PERM(5) / LOAD_PERM(12)) * 8), 8), STORE_TEMP(STORE_PERM(((var[0x41, 0, -1] - LOAD_TEMP(8)) + LOAD_TEMP(8)), 8), 8)]) {
-	0: action2_4040;
-	action2_4040;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4042, [STORE_TEMP(((LOAD_PERM(4) / LOAD_PERM(12)) * 8), 7), STORE_TEMP(STORE_PERM(((var[0x40, 0, -1] - LOAD_TEMP(7)) + LOAD_TEMP(7)), 7), 7)]) {
-	0: action2_4041;
-	action2_4041;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4043, STORE_PERM(max(min(((var[0x42, 0, -1] / 8) * LOAD_PERM(3)), LOAD_PERM(0)), 1), 6)) {
-	0: action2_4042;
-	action2_4042;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4044, [STORE_PERM(0, 6), var[0x42, 0, -1]]) {
-	0: action2_4042;
-	action2_4043;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4045, STORE_PERM(max(min(((var[0x41, 0, -1] / 8) * LOAD_PERM(2)), LOAD_PERM(0)), 1), 5)) {
-	0: action2_4044;
-	action2_4044;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4046, [STORE_PERM(0, 5), var[0x41, 0, -1]]) {
-	0: action2_4044;
-	action2_4045;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4047, STORE_PERM(max(min(((var[0x40, 0, -1] / 8) * LOAD_PERM(1)), LOAD_PERM(0)), 1), 4)) {
-	0: action2_4046;
-	action2_4046;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4048, [STORE_PERM(0, 4), var[0x40, 0, -1]]) {
-	0: action2_4046;
-	action2_4047;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4049, STORE_PERM(1, 3)) {
-	0: action2_4048;
-	action2_4048;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4050, STORE_PERM(1, 2)) {
-	0: action2_4049;
-	action2_4049;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4051, STORE_PERM(8, 1)) {
-	0: action2_4050;
-	action2_4050;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4052, STORE_TEMP(LOAD_PERM(0), 260)) {
-	0: return string(STR_INFO_DEBUG_PRODUCTION_RATIO);
-	return string(STR_INFO_DEBUG_PRODUCTION_RATIO);
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4053, STORE_TEMP((rotate((LOAD_PERM(11) & 65535), 16) | (LOAD_PERM(10) & 65535)), 259)) {
-	0: action2_4052;
-	action2_4052;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4054, STORE_TEMP((rotate((LOAD_PERM(9) & 65535), 16) | (LOAD_PERM(8) & 65535)), 258)) {
-	0: action2_4053;
-	action2_4053;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4055, STORE_TEMP((rotate((LOAD_PERM(7) & 65535), 16) | (LOAD_PERM(3) & 65535)), 257)) {
-	0: action2_4054;
-	action2_4054;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4056, STORE_TEMP((rotate((LOAD_PERM(2) & 65535), 16) | (LOAD_PERM(1) & 65535)), 256)) {
-	0: action2_4055;
-	action2_4055;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4057, show_debug_texts) {
-	1: action2_4056;
-	return string(STR_EXTRA_FERTILIZER_PLANT);
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4058, STORE_PERM((65535 / 1), 0)) {
-	0: action2_4051;
-	action2_4051;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4059, (current_date + 1)) {
-	0..703822: return 1;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4060, (extra_callback_info2 & 255)) {
-	1: return 1;
-	2: return 1;
-	action2_4059;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4061, restrict_open_during_gameplay) {
-	1..255: action2_4060;
-	action2_4059;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4062, [STORE_TEMP((703822 - 701265), 256), 32933]) {
-	return;
-}
-
-SWITCH_COLOUR_SCHEME1(action2_4065)
-
-SET_PRODUCTION_COUNTER_PRODUCED(action2_4068)
-
-CHECK_CLOSE_SECONDARY(action2_4071)
-
-switch(FEAT_INDUSTRIES, SELF, switch_main_fertiliser_plant, current_callback) {
-	0: action2_4058;
-	IND_CB_LOCATION_CHECK: action2_4032;
-	IND_CB_AVAILABILITY: action2_4061;
-	IND_CB_COLOUR: action2_4065;
-	IND_CB_EXTRA_TEXT_FUND: action2_4062;
-	IND_CB_RANDOM_PROD_CHANGE: action2_4071;
-	IND_CB_MONTHLY_PROD_CHANGE: action2_4068;
-	IND_CB_EXTRA_TEXT_INDUSTRY: action2_4057;
-	action2_4034;
-}
-
-item(FEAT_INDUSTRIES, fertiliser_plant, 40) {
 	graphics {
-		switch_main_fertiliser_plant;
+		produce_cargo_arrival:   THIS_ID(produce);
+		availability:            THIS_ID(check_availability);
+		location_check:          THIS_ID(check_location);
+		monthly_prod_change:     THIS_ID(check_production_counter);
+		random_prod_change:      THIS_ID(check_closure);
+		extra_text_industry:     THIS_ID(extra_text);
+		colour:                  THIS_ID(colour);
 	}
 }
 
