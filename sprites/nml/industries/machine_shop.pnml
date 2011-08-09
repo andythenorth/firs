@@ -2494,7 +2494,6 @@ tilelayout tilelayout_machine_shop_5 {
 #define THIS_STR_DEBUG_TEXT       STR_EXTRA_TEXT_DEBUG_SECONDARY
 
 
-/* Don't replace machine_shop in macros by THIS_ID(). It fails */
 CHECK_INCOMPATIBLE(machine_shop, 56, CB_RESULT_IND_DISALLOW_UNSUITABLE, return CB_RESULT_IND_ALLOW_LOCATION)
 CHECK_FOUNDER     (THIS_ID(machine_shop))
 

@@ -393,7 +393,6 @@ tilelayout tilelayout_aluminium_plant_3 {
 #define THIS_STR_DEBUG_TEXT       STR_EXTRA_TEXT_DEBUG_SECONDARY
 
 
-/* Don't replace machine_shop in macros by THIS_ID(). It fails */
 CHECK_INCOMPATIBLE  (aluminium_plant, 56, CB_RESULT_IND_DISALLOW_UNSUITABLE, return CB_RESULT_IND_ALLOW_LOCATION)
 CHECK_INCOMPATIBLE  (bauxite_mine,    16, CB_RESULT_IND_DISALLOW_UNSUITABLE, THIS_ID(aluminium_plant))
 CHECK_FOUNDER       (THIS_ID(bauxite_mine))
