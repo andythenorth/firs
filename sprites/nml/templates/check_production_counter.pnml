@@ -1,0 +1,25 @@
+/*
+ * This file is part of FIRS Industry Set for OpenTTD.
+ * FIRS is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 2.
+ * FIRS is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/*
+ * Checks for production last month and increases the 'no production counter'
+ * if nothing was produced or resets it, if something was produced
+ *
+ * switch name:  THIS_ID(check_production_counter)
+ */
+
+switch(FEAT_INDUSTRIES, SELF, THIS_ID(increase_no_production_counter), STORE_PERM((1 + LOAD_PERM(store_closure_counter)), store_closure_counter)) {
+	return 0;
+}
+switch(FEAT_INDUSTRIES, SELF, THIS_ID(reset_no_production_counter), [STORE_PERM(0, store_closure_counter), 1]) {
+	return 0;
+}
+switch(FEAT_INDUSTRIES, SELF, THIS_ID(check_production_counter), produced_last_month_1) {
+	0: THIS_ID(increase_no_production_counter);
+	THIS_ID(reset_no_production_counter);
+}
+
