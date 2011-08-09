@@ -127,3 +127,25 @@ switch (FEAT_INDUSTRIES, SELF, name ## _ ## incompatible,  industry_distance(inc
 	0 .. distance: return text; \
 	next; \
 }
+
+/*
+ * Check whether a certain location is suitable for building the industry
+ * Restrictions apply only to industries funded by the game.
+ *
+ * This switch should be called directly from the callback as THIS_ID(check_location)
+ *
+ * switch name:  param1 ## check_location
+ *               name   ## check_location
+ *               THIS_ID(check_location)
+ *
+ * Parameters:
+ * name:         name of this industry
+ * next          name of next switch or CB_RESULT_IND_ALLOW_LOCATION
+ */
+
+/* founder == FOUNDER_GAME means founded by the game, 0 .. 15 are player companies */
+#define CHECK_FOUNDER(name, next) \
+switch (FEAT_INDUSTRIES, SELF, name ## check_location, (game_mode == GAMEMODE_GAME) && (founder != FOUNDER_GAME)) { \
+	1: return CB_RESULT_IND_ALLOW_LOCATION; \
+	next; \
+}
