@@ -949,10 +949,50 @@ tilelayout tilelayout_fishing_harbour_5 {
 	5, 3: 255;
 }
 
+/* *************************************************
+ * Definition of the industry
+ * *************************************************/
+
+/* for secondary production template */
+#define THIS_NUM_OUTPUT_CARGOS    1
+#define THIS_PROD_RATIO_CARGO1    3
+#define THIS_PROD_RATIO_CARGO2    5
+#define THIS_PROD_RATIO_CARGO3    1
+#define THIS_BOOST_12             3
+#define THIS_BOOST_13             0
+#define THIS_BOOST_21             5
+#define THIS_BOOST_23             0
+#define THIS_BOOST_31             0
+#define THIS_BOOST_32             0
+#define THIS_PRODUCTION_SPAN      30
+/* extra text template */
+#define THIS_STR_EXTRA_TEXT       STR_EXTRA_FISHING_HARBOUR
+#define THIS_STR_DEBUG_TEXT       STR_EXTRA_TEXT_DEBUG_SECONDARY
+
+
+CHECK_NEARBY_CLUSTER(fishing_grounds, 16, 60, 5, 4, return CB_RESULT_IND_DISALLOW_UNSUITABLE, return CB_RESULT_IND_ALLOW_LOCATION)
+CHECK_FOUNDER       (THIS_ID(fishing_grounds))
+
+SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
+
+#include "../templates/produce_secondary.pnml"
+#include "../templates/check_production_counter.pnml"
+#include "../templates/check_closure.pnml"
+
+#include "../templates/extra_text_secondary.pnml"
+
+#include "../templates/check_availability.pnml"
+
 item(FEAT_INDUSTRIES, fishing_harbour, 31) {
 	property {
 		substitute: 0;
-		layouts: [tilelayout_fishing_harbour_1, tilelayout_fishing_harbour_2, tilelayout_fishing_harbour_3, tilelayout_fishing_harbour_4, tilelayout_fishing_harbour_5];
+		layouts: [
+				tilelayout_fishing_harbour_1,
+				tilelayout_fishing_harbour_2,
+				tilelayout_fishing_harbour_3,
+				tilelayout_fishing_harbour_4,
+				tilelayout_fishing_harbour_5
+			];
 		life_type: 4;
 		closure_msg: 18483;
 		prod_increase_msg: 18485;
@@ -976,246 +1016,14 @@ item(FEAT_INDUSTRIES, fishing_harbour, 31) {
 		spec_flags: 36;
 		callback_flags: 307;
 	}
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4176, industry_distance(fishing_grounds)) {
-	16..60: return 1024;
-	return 4;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4177, (((industry_count(32) * 5) / 4) / industry_clusters)) {
-	0: return 1024;
-	action2_4176;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4178, STORE_TEMP(-1, 256)) {
-	0: action2_4177;
-	action2_4177;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4179, founder) {
-	16: action2_4178;
-	return 1024;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4180, game_mode) {
-	1: action2_4179;
-	return 1024;
-}
-
-produce(action2_4181, LOAD_TEMP(7), LOAD_TEMP(8), LOAD_TEMP(9), LOAD_TEMP(10), LOAD_TEMP(11), LOAD_TEMP(0));
-
-switch(FEAT_INDUSTRIES, SELF, action2_4182, [STORE_TEMP(0, 0), 1]) {
-	0: action2_4181;
-	action2_4181;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4183, [STORE_TEMP(STORE_PERM(STORE_TEMP(STORE_PERM(0, 11), 11), 10), 10), 1]) {
-	0: action2_4182;
-	action2_4182;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4184, [STORE_TEMP(STORE_PERM(0, 11), 11), STORE_TEMP(STORE_PERM(LOAD_TEMP(10), 10), 10)]) {
-	0: action2_4182;
-	action2_4182;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4185, STORE_TEMP(STORE_PERM(STORE_TEMP(STORE_PERM(max((LOAD_TEMP(10) / 1), 1), 10), 10), 11), 11)) {
-	0: action2_4182;
-	action2_4182;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4186, 1) {
-	2: action2_4185;
-	action2_4184;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4187, STORE_TEMP(((LOAD_PERM(4) + LOAD_PERM(5)) + LOAD_PERM(6)), 10)) {
-	0: action2_4183;
-	action2_4186;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4188, [STORE_TEMP(((LOAD_PERM(6) / LOAD_PERM(12)) * 8), 9), STORE_TEMP(STORE_PERM(((var[0x42, 0, -1] - LOAD_TEMP(9)) + LOAD_TEMP(9)), 9), 9)]) {
-	0: action2_4187;
-	action2_4187;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4189, [STORE_TEMP(((LOAD_PERM(5) / LOAD_PERM(12)) * 8), 8), STORE_TEMP(STORE_PERM(((var[0x41, 0, -1] - LOAD_TEMP(8)) + LOAD_TEMP(8)), 8), 8)]) {
-	0: action2_4188;
-	action2_4188;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4190, [STORE_TEMP(((LOAD_PERM(4) / LOAD_PERM(12)) * 8), 7), STORE_TEMP(STORE_PERM(((var[0x40, 0, -1] - LOAD_TEMP(7)) + LOAD_TEMP(7)), 7), 7)]) {
-	0: action2_4189;
-	action2_4189;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4191, STORE_PERM(max(min(((var[0x42, 0, -1] / 8) * LOAD_PERM(12)), LOAD_PERM(0)), 1), 6)) {
-	0: action2_4190;
-	action2_4190;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4192, [STORE_PERM(0, 6), var[0x42, 0, -1]]) {
-	0: action2_4190;
-	action2_4191;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4193, STORE_PERM(max(min(((var[0x41, 0, -1] / 8) * LOAD_PERM(12)), LOAD_PERM(0)), 1), 5)) {
-	0: action2_4192;
-	action2_4192;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4194, [STORE_PERM(0, 5), var[0x41, 0, -1]]) {
-	0: action2_4192;
-	action2_4193;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4195, STORE_PERM(max(min(((var[0x40, 0, -1] / 8) * LOAD_PERM(12)), LOAD_PERM(0)), 1), 4)) {
-	0: action2_4194;
-	action2_4194;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4196, [STORE_PERM(0, 4), var[0x40, 0, -1]]) {
-	0: action2_4194;
-	action2_4195;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4197, STORE_PERM(((0 + LOAD_PERM(1)) + LOAD_PERM(2)), 12)) {
-	0: action2_4196;
-	action2_4196;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4198, [STORE_PERM(0, 2), 1]) {
-	0: action2_4197;
-	action2_4197;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4199, [STORE_PERM(5, 2), STORE_PERM((1 + LOAD_PERM(14)), 14)]) {
-	0: action2_4197;
-	action2_4197;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4200, LOAD_PERM(14)) {
-	0..7: action2_4199;
-	action2_4198;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4201, [STORE_PERM(0, 14), 1]) {
-	0: action2_4199;
-	action2_4199;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4202, (waiting_cargo_2 + waiting_cargo_3)) {
-	0: action2_4200;
-	action2_4201;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4203, [STORE_PERM(0, 1), 1]) {
-	0: action2_4202;
-	action2_4202;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4204, [STORE_PERM(3, 1), STORE_PERM((1 + LOAD_PERM(13)), 13)]) {
-	0: action2_4202;
-	action2_4202;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4205, LOAD_PERM(13)) {
-	0..7: action2_4204;
-	action2_4203;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4206, [STORE_PERM(0, 13), 1]) {
-	0: action2_4204;
-	action2_4204;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4207, waiting_cargo_1) {
-	0: action2_4205;
-	action2_4206;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4208, STORE_TEMP((rotate((LOAD_PERM(15) & 65535), 16) | (LOAD_PERM(14) & 65535)), 261)) {
-	0: return string(STR_INFO_DEBUG_PRODUCTION_CONTRIBUTION);
-	return string(STR_INFO_DEBUG_PRODUCTION_CONTRIBUTION);
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4209, STORE_TEMP((rotate((LOAD_PERM(13) & 65535), 16) | (LOAD_PERM(12) & 65535)), 260)) {
-	0: action2_4208;
-	action2_4208;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4210, STORE_TEMP((rotate((LOAD_PERM(11) & 65535), 16) | (LOAD_PERM(10) & 65535)), 259)) {
-	0: action2_4209;
-	action2_4209;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4211, STORE_TEMP((rotate((LOAD_PERM(9) & 65535), 16) | (LOAD_PERM(8) & 65535)), 258)) {
-	0: action2_4210;
-	action2_4210;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4212, STORE_TEMP((rotate((LOAD_PERM(7) & 65535), 16) | (LOAD_PERM(3) & 65535)), 257)) {
-	0: action2_4211;
-	action2_4211;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4213, STORE_TEMP((rotate((LOAD_PERM(2) & 65535), 16) | (LOAD_PERM(1) & 65535)), 256)) {
-	0: action2_4212;
-	action2_4212;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4214, show_debug_texts) {
-	1: action2_4213;
-	return string(STR_EXTRA_FISHING_HARBOUR);
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4215, STORE_PERM((65535 / 2), 0)) {
-	0: action2_4207;
-	action2_4207;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4216, (current_date + 1)) {
-	0: return 1;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4217, (extra_callback_info2 & 255)) {
-	1: return 1;
-	2: return 1;
-	action2_4216;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4218, restrict_open_during_gameplay) {
-	1..255: action2_4217;
-	action2_4216;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4219, [STORE_TEMP(-701265, 256), 32928]) {
-	return;
-}
-
-SWITCH_COLOUR_SCHEME1(action2_4222)
-
-SET_PRODUCTION_COUNTER_PRODUCED(action2_4225)
-
-CHECK_CLOSE_SECONDARY(action2_4228)
-
-switch(FEAT_INDUSTRIES, SELF, switch_main_fishing_harbour, current_callback) {
-	0: action2_4215;
-	IND_CB_LOCATION_CHECK: action2_4180;
-	IND_CB_AVAILABILITY: action2_4218;
-	IND_CB_COLOUR: action2_4222;
-	IND_CB_EXTRA_TEXT_FUND: action2_4219;
-	IND_CB_RANDOM_PROD_CHANGE: action2_4228;
-	IND_CB_MONTHLY_PROD_CHANGE: action2_4225;
-	IND_CB_EXTRA_TEXT_INDUSTRY: action2_4214;
-	action2_4182;
-}
-
-item(FEAT_INDUSTRIES, fishing_harbour, 31) {
 	graphics {
-		switch_main_fishing_harbour;
+		produce_cargo_arrival:   THIS_ID(produce);
+		availability:            THIS_ID(check_availability);
+		location_check:          THIS_ID(check_location);
+		monthly_prod_change:     THIS_ID(check_production_counter);
+		random_prod_change:      THIS_ID(check_closure);
+		extra_text_industry:     THIS_ID(extra_text);
+		colour:                  THIS_ID(colour);
 	}
 }
 
