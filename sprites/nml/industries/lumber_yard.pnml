@@ -272,10 +272,49 @@ tilelayout tilelayout_lumber_yard_4 {
 	4, 1: tile_lumber_yard;
 }
 
+/* *************************************************
+ * Definition of the industry
+ * *************************************************/
+
+/* for secondary production template */
+#define THIS_NUM_OUTPUT_CARGOS    2
+#define THIS_PROD_RATIO_CARGO1    6
+#define THIS_PROD_RATIO_CARGO2    2
+#define THIS_PROD_RATIO_CARGO3    1
+#define THIS_BOOST_12             2
+#define THIS_BOOST_13             0
+#define THIS_BOOST_21             6
+#define THIS_BOOST_23             0
+#define THIS_BOOST_31             0
+#define THIS_BOOST_32             0
+#define THIS_PRODUCTION_SPAN      30
+/* extra text template */
+#define THIS_STR_EXTRA_TEXT       STR_EXTRA_LUMBER_YARD
+#define THIS_STR_DEBUG_TEXT       STR_EXTRA_TEXT_DEBUG_SECONDARY
+
+
+CHECK_INCOMPATIBLE(lumber_yard, 56, CB_RESULT_IND_DISALLOW_UNSUITABLE, return CB_RESULT_IND_ALLOW_LOCATION)
+CHECK_FOUNDER     (THIS_ID(lumber_yard))
+
+SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
+
+#include "../templates/produce_secondary.pnml"
+#include "../templates/check_production_counter.pnml"
+#include "../templates/check_closure.pnml"
+
+#include "../templates/extra_text_secondary.pnml"
+
+#include "../templates/check_availability.pnml"
+
 item(FEAT_INDUSTRIES, lumber_yard, 41) {
 	property {
 		substitute: 0;
-		layouts: [tilelayout_lumber_yard_1, tilelayout_lumber_yard_2, tilelayout_lumber_yard_3, tilelayout_lumber_yard_4];
+		layouts: [
+				tilelayout_lumber_yard_1,
+				tilelayout_lumber_yard_2,
+				tilelayout_lumber_yard_3,
+				tilelayout_lumber_yard_4
+			];
 		life_type: 4;
 		closure_msg: 18483;
 		prod_increase_msg: 18485;
@@ -299,222 +338,14 @@ item(FEAT_INDUSTRIES, lumber_yard, 41) {
 		spec_flags: 0;
 		callback_flags: 2365;
 	}
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5734, industry_distance(lumber_yard)) {
-	0..56: return 1025;
-	return 1024;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5735, founder) {
-	16: action2_5734;
-	return 1024;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5736, game_mode) {
-	1: action2_5735;
-	return 1024;
-}
-
-produce(action2_5737, LOAD_TEMP(7), LOAD_TEMP(8), LOAD_TEMP(9), LOAD_TEMP(10), LOAD_TEMP(11), LOAD_TEMP(0));
-
-switch(FEAT_INDUSTRIES, SELF, action2_5738, [STORE_TEMP(0, 0), 1]) {
-	0: action2_5737;
-	action2_5737;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5739, [STORE_TEMP(STORE_PERM(STORE_TEMP(STORE_PERM(0, 11), 11), 10), 10), 1]) {
-	0: action2_5738;
-	action2_5738;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5740, [STORE_TEMP(STORE_PERM(0, 11), 11), STORE_TEMP(STORE_PERM(LOAD_TEMP(10), 10), 10)]) {
-	0: action2_5738;
-	action2_5738;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5741, STORE_TEMP(STORE_PERM(STORE_TEMP(STORE_PERM(max((LOAD_TEMP(10) / 2), 1), 10), 10), 11), 11)) {
-	0: action2_5738;
-	action2_5738;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5742, 2) {
-	2: action2_5741;
-	action2_5740;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5743, STORE_TEMP(((LOAD_PERM(4) + LOAD_PERM(5)) + LOAD_PERM(6)), 10)) {
-	0: action2_5739;
-	action2_5742;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5744, [STORE_TEMP(((LOAD_PERM(6) / LOAD_PERM(12)) * 8), 9), STORE_TEMP(STORE_PERM(((var[0x42, 0, -1] - LOAD_TEMP(9)) + LOAD_TEMP(9)), 9), 9)]) {
-	0: action2_5743;
-	action2_5743;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5745, [STORE_TEMP(((LOAD_PERM(5) / LOAD_PERM(12)) * 8), 8), STORE_TEMP(STORE_PERM(((var[0x41, 0, -1] - LOAD_TEMP(8)) + LOAD_TEMP(8)), 8), 8)]) {
-	0: action2_5744;
-	action2_5744;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5746, [STORE_TEMP(((LOAD_PERM(4) / LOAD_PERM(12)) * 8), 7), STORE_TEMP(STORE_PERM(((var[0x40, 0, -1] - LOAD_TEMP(7)) + LOAD_TEMP(7)), 7), 7)]) {
-	0: action2_5745;
-	action2_5745;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5747, STORE_PERM(max(min(((var[0x42, 0, -1] / 8) * LOAD_PERM(12)), LOAD_PERM(0)), 1), 6)) {
-	0: action2_5746;
-	action2_5746;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5748, [STORE_PERM(0, 6), var[0x42, 0, -1]]) {
-	0: action2_5746;
-	action2_5747;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5749, STORE_PERM(max(min(((var[0x41, 0, -1] / 8) * LOAD_PERM(12)), LOAD_PERM(0)), 1), 5)) {
-	0: action2_5748;
-	action2_5748;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5750, [STORE_PERM(0, 5), var[0x41, 0, -1]]) {
-	0: action2_5748;
-	action2_5749;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5751, STORE_PERM(max(min(((var[0x40, 0, -1] / 8) * LOAD_PERM(12)), LOAD_PERM(0)), 1), 4)) {
-	0: action2_5750;
-	action2_5750;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5752, [STORE_PERM(0, 4), var[0x40, 0, -1]]) {
-	0: action2_5750;
-	action2_5751;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5753, STORE_PERM(((0 + LOAD_PERM(1)) + LOAD_PERM(2)), 12)) {
-	0: action2_5752;
-	action2_5752;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5754, [STORE_PERM(0, 2), 1]) {
-	0: action2_5753;
-	action2_5753;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5755, [STORE_PERM(2, 2), STORE_PERM((1 + LOAD_PERM(14)), 14)]) {
-	0: action2_5753;
-	action2_5753;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5756, LOAD_PERM(14)) {
-	0..7: action2_5755;
-	action2_5754;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5757, [STORE_PERM(0, 14), 1]) {
-	0: action2_5755;
-	action2_5755;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5758, (waiting_cargo_2 + waiting_cargo_3)) {
-	0: action2_5756;
-	action2_5757;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5759, [STORE_PERM(0, 1), 1]) {
-	0: action2_5758;
-	action2_5758;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5760, [STORE_PERM(6, 1), STORE_PERM((1 + LOAD_PERM(13)), 13)]) {
-	0: action2_5758;
-	action2_5758;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5761, LOAD_PERM(13)) {
-	0..7: action2_5760;
-	action2_5759;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5762, [STORE_PERM(0, 13), 1]) {
-	0: action2_5760;
-	action2_5760;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5763, waiting_cargo_1) {
-	0: action2_5761;
-	action2_5762;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5764, STORE_TEMP((rotate((LOAD_PERM(15) & 65535), 16) | (LOAD_PERM(14) & 65535)), 261)) {
-	0: return string(STR_INFO_DEBUG_PRODUCTION_CONTRIBUTION);
-	return string(STR_INFO_DEBUG_PRODUCTION_CONTRIBUTION);
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5765, STORE_TEMP((rotate((LOAD_PERM(13) & 65535), 16) | (LOAD_PERM(12) & 65535)), 260)) {
-	0: action2_5764;
-	action2_5764;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5766, STORE_TEMP((rotate((LOAD_PERM(11) & 65535), 16) | (LOAD_PERM(10) & 65535)), 259)) {
-	0: action2_5765;
-	action2_5765;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5767, STORE_TEMP((rotate((LOAD_PERM(9) & 65535), 16) | (LOAD_PERM(8) & 65535)), 258)) {
-	0: action2_5766;
-	action2_5766;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5768, STORE_TEMP((rotate((LOAD_PERM(7) & 65535), 16) | (LOAD_PERM(3) & 65535)), 257)) {
-	0: action2_5767;
-	action2_5767;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5769, STORE_TEMP((rotate((LOAD_PERM(2) & 65535), 16) | (LOAD_PERM(1) & 65535)), 256)) {
-	0: action2_5768;
-	action2_5768;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5770, show_debug_texts) {
-	1: action2_5769;
-	return string(STR_EXTRA_LUMBER_YARD);
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5771, STORE_PERM((65535 / 2), 0)) {
-	0: action2_5763;
-	action2_5763;
-}
-
-CHECK_OPENING(action2_5774, 0, -1)
-
-switch(FEAT_INDUSTRIES, SELF, action2_5775, [STORE_TEMP(-701265, 256), 32933]) {
-	return;
-}
-
-SWITCH_COLOUR_SCHEME1(action2_5778)
-
-SET_PRODUCTION_COUNTER_PRODUCED(action2_5781)
-
-CHECK_CLOSE_SECONDARY(action2_5784)
-
-switch(FEAT_INDUSTRIES, SELF, switch_main_lumber_yard, current_callback) {
-	0: action2_5771;
-	IND_CB_LOCATION_CHECK: action2_5736;
-	IND_CB_AVAILABILITY: action2_5774;
-	IND_CB_COLOUR: action2_5778;
-	IND_CB_EXTRA_TEXT_FUND: action2_5775;
-	IND_CB_RANDOM_PROD_CHANGE: action2_5784;
-	IND_CB_MONTHLY_PROD_CHANGE: action2_5781;
-	IND_CB_EXTRA_TEXT_INDUSTRY: action2_5770;
-	action2_5738;
-}
-
-item(FEAT_INDUSTRIES, lumber_yard, 41) {
 	graphics {
-		switch_main_lumber_yard;
+		produce_cargo_arrival:   THIS_ID(produce);
+		availability:            THIS_ID(check_availability);
+		location_check:          THIS_ID(check_location);
+		monthly_prod_change:     THIS_ID(check_production_counter);
+		random_prod_change:      THIS_ID(check_closure);
+		extra_text_industry:     THIS_ID(extra_text);
+		colour:                  THIS_ID(colour);
 	}
 }
 
