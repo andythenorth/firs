@@ -128,6 +128,28 @@ switch (FEAT_INDUSTRIES, SELF, name ## _ ## incompatible,  industry_distance(inc
 	next; \
 }
 
+
+/*
+ * Check whether an industry is within a certain distance from a town centre
+ *
+ * This switch should be called directly from the callback as THIS_ID(check_location)
+ *
+ * Usage:        CHECK_TOWN_DISTANCE(switchname, min_distance, max_distance, nextswitch)
+ *
+ * Parameters:
+ * switchname:   name of this switch. Suggested: town_distance
+ * next          name of next switch or CB_RESULT_IND_ALLOW_LOCATION
+ * mindistance   minimum distance to town centre
+ * maxdistance   maximum distance to town centre
+ */
+
+/* founder == FOUNDER_GAME means founded by the game, 0 .. 15 are player companies */
+#define CHECK_TOWN_DISTANCE(name, mindistance, maxdistance, next) \
+switch (FEAT_INDUSTRIES, SELF, THIS_ID(name), town_euclidean_dist(0, 0)) { \
+	mindistance .. maxdistance: return CB_RESULT_IND_ALLOW_LOCATION; \
+	THIS_ID(next); \
+}
+
 /*
  * Check whether a certain location is suitable for building the industry
  * Restrictions apply only to industries funded by the game.
