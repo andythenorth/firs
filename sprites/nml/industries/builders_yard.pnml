@@ -208,10 +208,28 @@ tilelayout tilelayout_builders_yard_2 {
 	1, 0: tile_builders_yard;
 }
 
+/* *************************************************
+ * Definition of the industry
+ * *************************************************/
+
+#include "../templates/produce_blackhole.pnml"
+#include "../templates/check_closure.pnml"
+#include "../templates/check_production_counter.pnml"
+
+#include "../templates/extra_text_blackhole.pnml"
+
+#include "../templates/check_availability.pnml"
+
+CHECK_TOWN_DISTANCE (town_distance,  0, 64, return CB_RESULT_IND_DISALLOW_UNSUITABLE)
+CHECK_FOUNDER       (THIS_ID(town_distance))
+
 item(FEAT_INDUSTRIES, builders_yard, 63) {
 	property {
 		substitute: 0;
-		layouts: [tilelayout_builders_yard_1, tilelayout_builders_yard_2];
+		layouts: [
+				tilelayout_builders_yard_1,
+				tilelayout_builders_yard_2
+			];
 		life_type: 0;
 		closure_msg: 18483;
 		prod_increase_msg: 18485;
@@ -235,43 +253,14 @@ item(FEAT_INDUSTRIES, builders_yard, 63) {
 		remove_cost_multiplier: 0;
 		callback_flags: 265;
 	}
-}
-
-produce(action2_3229, 9999, 9999, 0, 0, 0, 0);
-
-switch(FEAT_INDUSTRIES, SELF, action2_3230, 1) {
-	1: return 1024;
-	return 1024;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_3231, town_euclidean_dist(0, 0)) {
-	0..64: action2_3230;
-	return 1025;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_3232, founder) {
-	16: action2_3231;
-	return 1024;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_3233, game_mode) {
-	1: action2_3232;
-	return 1024;
-}
-
-CHECK_OPENING(action2_3236, 0, -1)
-
-switch(FEAT_INDUSTRIES, SELF, switch_main_builders_yard, current_callback) {
-	IND_CB_AVAILABILITY: action2_3236;
-	IND_CB_LOCATION_CHECK: action2_3233;
-	IND_CB_EXTRA_TEXT_FUND: return string(STR_GENERIC_NEWLINE);
-	IND_CB_EXTRA_TEXT_INDUSTRY: return string(STR_GENERIC_NEWLINE);
-	action2_3229;
-}
-
-item(FEAT_INDUSTRIES, builders_yard, 63) {
 	graphics {
-		switch_main_builders_yard;
+		produce_cargo_arrival:   THIS_ID(produce);
+		availability:            THIS_ID(check_availability);
+		location_check:          THIS_ID(check_location);
+		monthly_prod_change:     THIS_ID(check_production_counter);
+		random_prod_change:      THIS_ID(check_closure);
+		extra_text_industry:     THIS_ID(extra_text);
+		THIS_ID(produce);
 	}
 }
 
