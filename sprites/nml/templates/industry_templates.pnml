@@ -109,6 +109,31 @@ switch(FEAT_INDUSTRIES, SELF, name, produced_last_month_1) { \
 }
 
 /*
+ * Check for ratio to related industry cluster
+ * 
+ * switch name:  THIS_ID(related)
+ *               industyname ## incompatible_industryname
+ *
+ * Parameters:
+ * related:      name of industry to check
+ * mindistance:  minimum required separation
+ * maxdistance:  maximum allowed separation
+ * next:         allow construction: name of next or "return CB_RESULT_IND_ALLOW_LOCATION"
+ * errtext:      deny construction: text for error message or "return CB_RESULT_IND_DISALLOW_UNSUITABLE"
+ */
+
+#define CHECK_NEARBY_CLUSTER(related, mindistance, maxdistance, mult, div, errtext, next) \
+switch (FEAT_INDUSTRIES, SELF, THIS_ID(related), \
+			industry_count(related) * mult / div / industry_clusters != 0 && \
+			(	industry_distance(related) < mindistance || \
+				industry_distance(related) > maxdistance) \
+		) { \
+	1: errtext; \
+	next; \
+}
+
+
+/*
  * Check for a minimum distance to another industry type
  * 
  * switch name:  THIS_ID(param1)
@@ -117,7 +142,7 @@ switch(FEAT_INDUSTRIES, SELF, name, produced_last_month_1) { \
  * Parameters:
  * incompatible: name of conflicting industry
  * distance:     minimum required separation
- * retval:       return value: text for error message or "return CB_RESULT_IND_DISALLOW_UNSUITABLE"
+ * errtext:      return value: text for error message or "return CB_RESULT_IND_DISALLOW_UNSUITABLE"
  * next:         name of next switch or "return CB_RESULT_IND_ALLOW_LOCATION"
  */
 
