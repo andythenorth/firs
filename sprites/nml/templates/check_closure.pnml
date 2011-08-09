@@ -19,7 +19,7 @@ switch(FEAT_INDUSTRIES, SELF, THIS_ID(close_random), (extra_callback_info2 & 32)
 
 /* Check whether sufficient time expired to close it */
 switch(FEAT_INDUSTRIES, SELF, THIS_ID(had_produced_check), LOAD_PERM(var_closure_counter)) {
-	0..60: return CB_RESULT_IND_PROD_NO_CHANGE;     // 60 month we accept doing nothing
+	0..60: return CB_RESULT_IND_PROD_NO_CHANGE;     // 60 month we accept receiving or delivering nothing
 	THIS_ID(close_random);
 }
 
