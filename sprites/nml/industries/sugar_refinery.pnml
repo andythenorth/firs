@@ -174,35 +174,10 @@ tilelayout tilelayout_sugar_refinery_2 {
 	1, 2: tile_sugar_refinery;
 }
 
-item(FEAT_INDUSTRIES, sugar_refinery, 19) {
-	property {
-		substitute: 0;
-		layouts: [tilelayout_sugar_refinery_1, tilelayout_sugar_refinery_2];
-		life_type: 4;
-		closure_msg: 18483;
-		prod_increase_msg: 18485;
-		prod_decrease_msg: 18489;
-		new_ind_msg: 18477;
-		name: string(STR_IND_SUGAR_REFINERY);
-		nearby_station_name: string(STR_STATIONNAME_CHEMICALS);
-		prod_cargo_types: [FOOD];
-		accept_cargo_types: [MNSP, cargo_sugarcane];
-		prod_multiplier: [0, 0];
-		input_multiplier_1: [0, 0];
-		input_multiplier_2: [0, 0];
-		input_multiplier_3: [0, 0];
-		min_cargo_distr: 5;
-		conflicting_ind_types: [];
-		prob_random: 5;
-		prob_in_game: 3;
-		prospect_chance: 0.75;
-		fund_cost_multiplier: 140;
-		map_colour: 83;
-		remove_cost_multiplier: 0;
-		spec_flags: 2048;
-		callback_flags: 445;
-	}
-}
+
+/* *************************************************
+ * Definition of the industry
+ * *************************************************/
 
 CHECK_INCOMPATIBLE(sugar_refinery, sugar_refinery, 56, CB_RESULT_IND_DISALLOW_UNSUITABLE, CB_RESULT_IND_ALLOW_LOCATION)
 CHECK_INCOMPATIBLE(sugar_refinery, arable_farm,    16, CB_RESULT_IND_DISALLOW_UNSUITABLE, sugar_refinery_sugar_refinery)
@@ -218,21 +193,47 @@ SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
 
 #include "../templates/check_availability.pnml"
 
-switch(FEAT_INDUSTRIES, SELF, switch_main_sugar_refinery, current_callback) {
-	0:                          THIS_ID(produce);
-	IND_CB_LOCATION_CHECK:      THIS_ID(check_location);
-	IND_CB_AVAILABILITY:        THIS_ID(check_availability);
-	IND_CB_COLOUR:              THIS_ID(colour);
-	IND_CB_EXTRA_TEXT_FUND:     return;
-	IND_CB_RANDOM_PROD_CHANGE:  THIS_ID(check_closure);
-	IND_CB_MONTHLY_PROD_CHANGE: THIS_ID(check_production_counter);
-	IND_CB_EXTRA_TEXT_INDUSTRY: THIS_ID(extra_text);
-	THIS_ID(produce);
-}
 
-item(FEAT_INDUSTRIES, THIS_ID(), 19) {
+item(FEAT_INDUSTRIES, sugar_refinery, 19) {
+	property {
+		layouts: [
+				tilelayout_sugar_refinery_1,
+				tilelayout_sugar_refinery_2
+			];
+		substitute:             0;
+		life_type:              4;
+		closure_msg:            18483;
+		prod_increase_msg:      18485;
+		prod_decrease_msg:      18489;
+		new_ind_msg:            18477;
+		name:                   string(STR_IND_SUGAR_REFINERY);
+		nearby_station_name:    string(STR_STATIONNAME_CHEMICALS);
+		prod_cargo_types:       [FOOD];
+		accept_cargo_types:     [MNSP, cargo_sugarcane];
+		prod_multiplier:        [0, 0];
+		input_multiplier_1:     [0, 0];
+		input_multiplier_2:     [0, 0];
+		input_multiplier_3:     [0, 0];
+		min_cargo_distr:        5;
+		conflicting_ind_types:  [];
+		prob_random:            5;
+		prob_in_game:           3;
+		prospect_chance:        0.75;
+		fund_cost_multiplier:   140;
+		map_colour:             83;
+		remove_cost_multiplier: 0;
+		spec_flags:             2048;
+		callback_flags:         445;
+	}
 	graphics {
-		switch_main_sugar_refinery;
+		produce_cargo_arrival:   THIS_ID(produce);
+		availability:            THIS_ID(check_availability);
+		location_check:          THIS_ID(check_location);
+		monthly_prod_change:     THIS_ID(check_production_counter);
+		random_prod_change:      THIS_ID(check_closure);
+		extra_text_industry:     THIS_ID(extra_text);
+		colour:                  THIS_ID(colour);
 	}
 }
+
 #include "../templates/undefs.pnml"
