@@ -41,13 +41,13 @@ switch(FEAT_INDUSTRIES, SELF, THIS_ID(check_availability_param), restrict_open_d
 /* Allow always in the scenario editor */
 switch (FEAT_INDUSTRIES, SELF, THIS_ID(available_game_mode), game_mode != GAMEMODE_GAME) {
 	1: return CB_RESULT_IND_ALLOW;
-	THIS_ID(check_availability_param)
+	THIS_ID(check_availability_param);
 }
 
 /* check availability due to maximum year */
 switch(FEAT_INDUSTRIES, SELF, THIS_ID(check_availability_max_year), (current_date + 1) > date(THIS_MAX_YEAR, 12, 31)) {
 	1: return CB_RESULT_IND_DISALLOW;
-	return THIS_ID(available_game_mode)
+	return THIS_ID(available_game_mode);
 }
 
 /* check availability due to minimum year */
