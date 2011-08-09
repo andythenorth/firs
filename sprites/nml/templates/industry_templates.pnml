@@ -108,3 +108,22 @@ switch(FEAT_INDUSTRIES, SELF, name, produced_last_month_1) { \
 	name ## _reset_no_production; \
 }
 
+/*
+ * Check for a minimum distance to another industry type
+ * 
+ * switch name:  param1 ## _ ## param2
+ *               name   ## _ ## incompatible
+ *
+ * Parameters:
+ * name:         name of this industry
+ * incompatible: name of conflicting industry
+ * distance:     minimum required separation
+ * retval:       return value: text for error message or CB_RESULT_IND_DISALLOW_UNSUITABLE
+ * next:         name of next switch or CB_RESULT_IND_ALLOW_LOCATION
+ */
+
+#define CHECK_INCOMPATIBLE(name, incompatible, distance, text, next) \
+switch (FEAT_INDUSTRIES, SELF, name ## _ ## incompatible,  industry_distance(incompatible)) { \
+	0 .. distance: return text; \
+	next; \
+}
