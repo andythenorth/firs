@@ -30,11 +30,22 @@ item(FEAT_INDUSTRYTILES, tile_food_market, 194) {
 tilelayout tilelayout_food_market_1 {
 	0, 0: tile_food_market;
 }
+/* *************************************************
+ * Definition of the industry
+ * *************************************************/
+
+#include "../templates/produce_blackhole.pnml"
+#include "../templates/check_closure.pnml"
+#include "../templates/check_production_counter.pnml"
+
+#include "../templates/check_availability.pnml"
 
 item(FEAT_INDUSTRIES, food_market, 59) {
 	property {
 		substitute: 0;
-		layouts: [tilelayout_food_market_1];
+		layouts: [
+				tilelayout_food_market_1
+			];
 		life_type: 0;
 		closure_msg: 18483;
 		prod_increase_msg: 18485;
@@ -58,36 +69,12 @@ item(FEAT_INDUSTRIES, food_market, 59) {
 		spec_flags: 16;
 		callback_flags: 385;
 	}
-}
-
-produce(action2_4250, 9999, 9999, 0, 0, 0, 0);
-
-switch(FEAT_INDUSTRIES, SELF, action2_4251, (current_date + 1)) {
-	0: return 1;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4252, (extra_callback_info2 & 255)) {
-	1: return 1;
-	2: return 1;
-	action2_4251;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4253, restrict_open_during_gameplay) {
-	1..255: action2_4252;
-	action2_4251;
-}
-
-switch(FEAT_INDUSTRIES, SELF, switch_main_food_market, current_callback) {
-	IND_CB_AVAILABILITY: action2_4253;
-	IND_CB_EXTRA_TEXT_FUND: return string(STR_GENERIC_NEWLINE);
-	IND_CB_EXTRA_TEXT_INDUSTRY: return string(STR_GENERIC_NEWLINE);
-	action2_4250;
-}
-
-item(FEAT_INDUSTRIES, food_market, 59) {
 	graphics {
-		switch_main_food_market;
+		produce_cargo_arrival:   THIS_ID(produce);
+		availability:            THIS_ID(check_availability);
+		monthly_prod_change:     THIS_ID(check_production_counter);
+		random_prod_change:      THIS_ID(check_closure);
+		THIS_ID(produce);
 	}
 }
 
