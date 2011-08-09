@@ -7,23 +7,6 @@
 
 #define THIS_ID(...) plastics_plant ## __VA_ARGS__
 
-/* for secondary production template */
-#define THIS_NUM_OUTPUT_CARGOS    2
-#define THIS_PROD_RATIO_CARGO1    6
-#define THIS_PROD_RATIO_CARGO2    6
-#define THIS_PROD_RATIO_CARGO3    0
-#define THIS_BOOST_12             0
-#define THIS_BOOST_13             0
-#define THIS_BOOST_21             0
-#define THIS_BOOST_23             0
-#define THIS_BOOST_31             0
-#define THIS_BOOST_32             0
-#define THIS_PRODUCTION_SPAN      30
-
-/* extra text template */
-#define THIS_STR_EXTRA_TEXT       STR_EXTRA_PLASTICS_PLANT
-#define THIS_STR_DEBUG_TEXT       STR_EXTRA_TEXT_DEBUG_SECONDARY
-
 item(FEAT_INDUSTRYTILES, tile_plastics_plant, 176) {
 	property {
 		substitute: 0;
@@ -626,10 +609,51 @@ tilelayout tilelayout_plastics_plant_3 {
 	2, 4: tile_plastics_plant;
 }
 
+/* *************************************************
+ * Definition of the industry
+ * *************************************************/
+
+/* for secondary production template */
+#define THIS_NUM_OUTPUT_CARGOS    2
+#define THIS_PROD_RATIO_CARGO1    6
+#define THIS_PROD_RATIO_CARGO2    6
+#define THIS_PROD_RATIO_CARGO3    0
+#define THIS_BOOST_12             0
+#define THIS_BOOST_13             0
+#define THIS_BOOST_21             0
+#define THIS_BOOST_23             0
+#define THIS_BOOST_31             0
+#define THIS_BOOST_32             0
+#define THIS_PRODUCTION_SPAN      30
+
+/* extra text template */
+#define THIS_STR_EXTRA_TEXT       STR_EXTRA_PLASTICS_PLANT
+#define THIS_STR_DEBUG_TEXT       STR_EXTRA_TEXT_DEBUG_SECONDARY
+
+
+CHECK_INCOMPATIBLE  (plastics_plant, 56, CB_RESULT_IND_DISALLOW_UNSUITABLE, return CB_RESULT_IND_ALLOW_LOCATION)
+CHECK_INCOMPATIBLE  (mixed_farm, 16, CB_RESULT_IND_DISALLOW_UNSUITABLE, THIS_ID(plastics_plant))
+CHECK_FOUNDER       (THIS_ID(mixed_farm))
+
+SWITCH_COLOUR_SCHEME2(THIS_ID(colour))
+
+#include "../templates/produce_secondary.pnml"
+#include "../templates/check_production_counter.pnml"
+#include "../templates/check_closure.pnml"
+
+#include "../templates/extra_text_secondary.pnml"
+
+#include "../templates/check_availability.pnml"
+
+
 item(FEAT_INDUSTRIES, THIS_ID(), 18) {
 	property {
 		substitute: 0;
-		layouts: [tilelayout_plastics_plant_1, tilelayout_plastics_plant_2, tilelayout_plastics_plant_3];
+		layouts: [
+				tilelayout_plastics_plant_1,
+				tilelayout_plastics_plant_2,
+				tilelayout_plastics_plant_3
+			];
 		life_type: 4;
 		closure_msg: 18483;
 		prod_increase_msg: 18485;
@@ -654,58 +678,14 @@ item(FEAT_INDUSTRIES, THIS_ID(), 18) {
 		spec_flags: 0;
 		callback_flags: 2493;
 	}
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6815, industry_distance(plastics_plant)) {
-	0..56: return 1025;
-	return 1024;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6816, industry_distance(mixed_farm)) {
-	0..16: return 4;
-	action2_6815;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6817, founder) {
-	16: action2_6816;
-	return 1024;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6818, game_mode) {
-	1: action2_6817;
-	return 1024;
-}
-
-#include "../templates/produce_secondary.pnml"
-#include "../templates/extra_text_secondary.pnml"
-
-CHECK_OPENING(action2_6847, 1932, -1)
-
-switch(FEAT_INDUSTRIES, SELF, action2_6848, [STORE_TEMP((705283 - 701265), 256), 32933]) {
-	return;
-}
-
-SWITCH_COLOUR_SCHEME2(action2_6851)
-
-SET_PRODUCTION_COUNTER_PRODUCED(action2_6854)
-
-CHECK_CLOSE_SECONDARY(action2_6857) 
-
-switch(FEAT_INDUSTRIES, SELF, switch_main_plastics_plant, current_callback) {
-	0: THIS_ID(produce);
-	IND_CB_LOCATION_CHECK: action2_6818;
-	IND_CB_AVAILABILITY: action2_6847;
-	IND_CB_COLOUR: action2_6851;
-	IND_CB_EXTRA_TEXT_FUND: action2_6848;
-	IND_CB_RANDOM_PROD_CHANGE: action2_6857;
-	IND_CB_MONTHLY_PROD_CHANGE: action2_6854;
-	IND_CB_EXTRA_TEXT_INDUSTRY: THIS_ID(extra_text);
-	THIS_ID(simple_produce);
-}
-
-item(FEAT_INDUSTRIES, THIS_ID(), 18) {
 	graphics {
-		switch_main_plastics_plant;
+		produce_cargo_arrival:   THIS_ID(produce);
+		availability:            THIS_ID(check_availability);
+		location_check:          THIS_ID(check_location);
+		monthly_prod_change:     THIS_ID(check_production_counter);
+		random_prod_change:      THIS_ID(check_closure);
+		extra_text_industry:     THIS_ID(extra_text);
+		colour:                  THIS_ID(colour);
 	}
 }
 
