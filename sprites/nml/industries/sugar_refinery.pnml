@@ -204,49 +204,28 @@ item(FEAT_INDUSTRIES, sugar_refinery, 19) {
 	}
 }
 
-switch(FEAT_INDUSTRIES, SELF, action2_7502, industry_distance(sugar_refinery)) {
-	0..56: return 1025;
-	return 1024;
-}
+CHECK_INCOMPATIBLE(sugar_refinery, sugar_refinery, 56, CB_RESULT_IND_DISALLOW_UNSUITABLE, CB_RESULT_IND_ALLOW_LOCATION)
+CHECK_INCOMPATIBLE(sugar_refinery, arable_farm,    16, CB_RESULT_IND_DISALLOW_UNSUITABLE, sugar_refinery_sugar_refinery)
+CHECK_FOUNDER     (sugar_refinery, sugar_refinery_arable_farm)
 
-switch(FEAT_INDUSTRIES, SELF, action2_7503, industry_distance(26)) {
-	0..16: return 4;
-	action2_7502;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7504, founder) {
-	16: action2_7503;
-	return 1024;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7505, game_mode) {
-	1: action2_7504;
-	return 1024;
-}
+SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
 
 #include "../templates/produce_secondary.pnml"
+#include "../templates/check_production_counter.pnml"
+#include "../templates/check_closure.pnml"
+
 #include "../templates/extra_text_secondary.pnml"
 
-CHECK_OPENING(action2_7543, 1731, -1)
-
-switch(FEAT_INDUSTRIES, SELF, action2_7544, [STORE_TEMP((631870 - 701265), 256), 32939]) {
-	return;
-}
-
-SWITCH_COLOUR_SCHEME1(action2_7547)
-
-SET_PRODUCTION_COUNTER_PRODUCED(action2_7550)
-
-CHECK_CLOSE_SECONDARY(action2_7553)
+#include "../templates/check_availability.pnml"
 
 switch(FEAT_INDUSTRIES, SELF, switch_main_sugar_refinery, current_callback) {
-	0: THIS_ID(produce);
-	IND_CB_LOCATION_CHECK: action2_7505;
-	IND_CB_AVAILABILITY: action2_7543;
-	IND_CB_COLOUR: action2_7547;
-	IND_CB_EXTRA_TEXT_FUND: action2_7544;
-	IND_CB_RANDOM_PROD_CHANGE: action2_7553;
-	IND_CB_MONTHLY_PROD_CHANGE: action2_7550;
+	0:                          THIS_ID(produce);
+	IND_CB_LOCATION_CHECK:      THIS_ID(check_location);
+	IND_CB_AVAILABILITY:        THIS_ID(check_availability);
+	IND_CB_COLOUR:              THIS_ID(colour);
+	IND_CB_EXTRA_TEXT_FUND:     return;
+	IND_CB_RANDOM_PROD_CHANGE:  THIS_ID(check_closure);
+	IND_CB_MONTHLY_PROD_CHANGE: THIS_ID(check_production_counter);
 	IND_CB_EXTRA_TEXT_INDUSTRY: THIS_ID(extra_text);
 	THIS_ID(produce);
 }
