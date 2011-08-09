@@ -16,6 +16,17 @@
  * THIS_STR_DEBUG_TEXT         debugging string
  */
 
+#ifndef THIS_STR_EXTRA_TEXT
+#define THIS_STR_EXTRA_TEXT STR_GENERIC_NEWLINE
+#endif
+
+#ifndef THIS_STR_DEBUG_TEXT
+#define THIS_STR_DEBUG_TEXT STR_EXTRA_TEXT_DEBUG_SECONDARY
+#endif
+
+/* First fill the stack for the string parameters before actually
+ * returning the string
+ */
 switch (FEAT_INDUSTRIES, SELF, THIS_ID(extra_text), [
 			STORE_TEMP(LOAD_PERM(var_ratio_cargo_1), 256),
 			STORE_TEMP(LOAD_PERM(var_ratio_cargo_2), 257),
