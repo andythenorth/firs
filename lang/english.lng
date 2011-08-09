@@ -102,6 +102,7 @@ STR_EXTRA_LUMBER_YARD                                                           
 STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Cargo production:{}  3t per 8t manufacturing supplies delivered{}  5t per 8t wool delivered{}  5t per 8t plant fibres delivered{}{}Production steps up if manufacturing supplies delivered within a month of other cargos.
 STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Cargo production:{}  2t per 8t coal delivered{}  2t per 8t clay delivered{}  4t per 8t stone delivered{}{}Production steps up if two or more cargos are delivered within a month of each other.
 STR_EXTRA_BRICKWORKS                                                            :{BLACK}Cargo production:{}  2t per 8t coal delivered{}  2t per 8t sand delivered{}  4t per 8t clay delivered{}{}Production steps up if two or more cargos are delivered within a month of each other.
+STR_EXTRA_MEAT_PACKER                                                                :{BLACK}Cargo production:{}  3t per 8t manufacturing supplies delivered{}  5t per 8t livestock delivered{}{}Increases to 8t per 8t when both cargos are delivered within a month of each other.
 STR_EXTRA_BIOREFINERY                                                           :{BLACK}Processes grain and sugar into petrol and chemicals.{}{}6t production per 8t delivered.
 STR_EXTRA_ENGINEERING_SUPPLIES                                                  :{BLACK}Engineering supplies may increase production.{}{YELLOW}  {DWORD_S} crates delivered this month
 STR_EXTRA_FARM_SUPPLIES                                                         :{BLACK}Farm supplies may increase production.{}{YELLOW}  {DWORD_S} crates delivered this month
@@ -211,4 +212,3 @@ STR_PARAM_NAME_PRIMARY_PRODUCTION_DECREASE                                      
 STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            :Allow secondary industries to close
 STR_PARAM_VALUE_ECONOMIES_TEST_ECONOMY                                          :Test Economy
 STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0                                         :No limit
-STR_PRODUCTION_MEAT_PACKER                                                      :{BLACK}Cargo production:{}  3t per 8t manufacturing supplies delivered{}  5t per 8t livestock delivered{}{}Increases to 8t per 8t when both cargos are delivered within a month of each other.
