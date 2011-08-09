@@ -354,10 +354,60 @@ tilelayout tilelayout_recycling_plant_1 {
 	4, 4: tile_recycling_plant;
 }
 
+/* *************************************************
+ * Definition of the industry
+ * *************************************************/
+
+/* for secondary production template */
+#define THIS_NUM_OUTPUT_CARGOS    2
+#define THIS_PROD_RATIO_CARGO1    6
+#define THIS_PROD_RATIO_CARGO2    6
+#define THIS_PROD_RATIO_CARGO3    1
+#define THIS_BOOST_12             0
+#define THIS_BOOST_13             0
+#define THIS_BOOST_21             0
+#define THIS_BOOST_23             0
+#define THIS_BOOST_31             0
+#define THIS_BOOST_32             0
+#define THIS_PRODUCTION_SPAN      30
+/* extra text template */
+#define THIS_STR_EXTRA_TEXT       STR_EXTRA_RECYCLING_PLANT
+#define THIS_STR_DEBUG_TEXT       STR_EXTRA_TEXT_DEBUG_SECONDARY
+
+
+CHECK_INCOMPATIBLE  (recycling_plant, 56, CB_RESULT_IND_DISALLOW_UNSUITABLE, return CB_RESULT_IND_ALLOW_LOCATION)
+CHECK_INCOMPATIBLE  (recycling_depot, 16, CB_RESULT_IND_DISALLOW_UNSUITABLE, THIS_ID(recycling_plant))
+CHECK_FOUNDER       (THIS_ID(recycling_depot))
+
+SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
+
+#include "../templates/produce_secondary.pnml"
+#include "../templates/check_production_counter.pnml"
+#include "../templates/check_closure.pnml"
+
+#include "../templates/extra_text_secondary.pnml"
+
+#include "../templates/check_availability.pnml"
+
+/* Decide randomly on cargo output */
+switch(FEAT_INDUSTRIES, SELF, action2_7198, var[0x5F, 8, 3]) {
+	0: return 20;
+	1: return 2327;
+	2: return 2332;
+	return 21;
+}
+switch(FEAT_INDUSTRIES, SELF, THIS_ID(cargo_output), (extra_callback_info1 & 255)) {
+	1: action2_7198;
+	0: return 18;
+	return 255;
+}
+
 item(FEAT_INDUSTRIES, recycling_plant, 23) {
 	property {
 		substitute: 0;
-		layouts: [tilelayout_recycling_plant_1];
+		layouts: [
+				tilelayout_recycling_plant_1
+			];
 		life_type: 4;
 		closure_msg: 18483;
 		prod_increase_msg: 18485;
@@ -381,196 +431,15 @@ item(FEAT_INDUSTRIES, recycling_plant, 23) {
 		spec_flags: 0;
 		callback_flags: 8637;
 	}
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7194, industry_distance(recycling_plant)) {
-	0..56: return 1025;
-	return 1024;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7195, industry_distance(recycling_depot)) {
-	0..16: return 4;
-	action2_7194;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7196, founder) {
-	16: action2_7195;
-	return 1024;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7197, game_mode) {
-	1: action2_7196;
-	return 1024;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7198, var[0x5F, 8, 3]) {
-	0: return 20;
-	1: return 2327;
-	2: return 2332;
-	return 21;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7199, (extra_callback_info1 & 255)) {
-	1: action2_7198;
-	0: return 18;
-	return 255;
-}
-
-produce(action2_7200, LOAD_TEMP(7), LOAD_TEMP(8), LOAD_TEMP(9), LOAD_TEMP(10), LOAD_TEMP(11), LOAD_TEMP(0));
-
-switch(FEAT_INDUSTRIES, SELF, action2_7201, [STORE_TEMP(0, 0), 1]) {
-	0: action2_7200;
-	action2_7200;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7202, [STORE_TEMP(STORE_PERM(STORE_TEMP(STORE_PERM(0, 11), 11), 10), 10), 1]) {
-	0: action2_7201;
-	action2_7201;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7203, [STORE_TEMP(STORE_PERM(0, 11), 11), STORE_TEMP(STORE_PERM(LOAD_TEMP(10), 10), 10)]) {
-	0: action2_7201;
-	action2_7201;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7204, STORE_TEMP(STORE_PERM(STORE_TEMP(STORE_PERM(max((LOAD_TEMP(10) / 2), 1), 10), 10), 11), 11)) {
-	0: action2_7201;
-	action2_7201;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7205, 2) {
-	2: action2_7204;
-	action2_7203;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7206, STORE_TEMP(((LOAD_PERM(4) + LOAD_PERM(5)) + LOAD_PERM(6)), 10)) {
-	0: action2_7202;
-	action2_7205;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7207, [STORE_TEMP(((LOAD_PERM(6) / LOAD_PERM(12)) * 8), 9), STORE_TEMP(STORE_PERM(((var[0x42, 0, -1] - LOAD_TEMP(9)) + LOAD_TEMP(9)), 9), 9)]) {
-	0: action2_7206;
-	action2_7206;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7208, [STORE_TEMP(((LOAD_PERM(5) / LOAD_PERM(12)) * 8), 8), STORE_TEMP(STORE_PERM(((var[0x41, 0, -1] - LOAD_TEMP(8)) + LOAD_TEMP(8)), 8), 8)]) {
-	0: action2_7207;
-	action2_7207;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7209, [STORE_TEMP(((LOAD_PERM(4) / LOAD_PERM(12)) * 8), 7), STORE_TEMP(STORE_PERM(((var[0x40, 0, -1] - LOAD_TEMP(7)) + LOAD_TEMP(7)), 7), 7)]) {
-	0: action2_7208;
-	action2_7208;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7210, STORE_PERM(max(min(((var[0x42, 0, -1] / 8) * LOAD_PERM(3)), LOAD_PERM(0)), 1), 6)) {
-	0: action2_7209;
-	action2_7209;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7211, [STORE_PERM(0, 6), var[0x42, 0, -1]]) {
-	0: action2_7209;
-	action2_7210;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7212, STORE_PERM(max(min(((var[0x41, 0, -1] / 8) * LOAD_PERM(2)), LOAD_PERM(0)), 1), 5)) {
-	0: action2_7211;
-	action2_7211;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7213, [STORE_PERM(0, 5), var[0x41, 0, -1]]) {
-	0: action2_7211;
-	action2_7212;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7214, STORE_PERM(max(min(((var[0x40, 0, -1] / 8) * LOAD_PERM(1)), LOAD_PERM(0)), 1), 4)) {
-	0: action2_7213;
-	action2_7213;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7215, [STORE_PERM(0, 4), var[0x40, 0, -1]]) {
-	0: action2_7213;
-	action2_7214;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7216, STORE_PERM(1, 3)) {
-	0: action2_7215;
-	action2_7215;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7217, STORE_PERM(1, 2)) {
-	0: action2_7216;
-	action2_7216;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7218, STORE_PERM(6, 1)) {
-	0: action2_7217;
-	action2_7217;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7219, STORE_TEMP(LOAD_PERM(0), 260)) {
-	0: return string(STR_INFO_DEBUG_PRODUCTION_RATIO);
-	return string(STR_INFO_DEBUG_PRODUCTION_RATIO);
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7220, STORE_TEMP((rotate((LOAD_PERM(11) & 65535), 16) | (LOAD_PERM(10) & 65535)), 259)) {
-	0: action2_7219;
-	action2_7219;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7221, STORE_TEMP((rotate((LOAD_PERM(9) & 65535), 16) | (LOAD_PERM(8) & 65535)), 258)) {
-	0: action2_7220;
-	action2_7220;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7222, STORE_TEMP((rotate((LOAD_PERM(7) & 65535), 16) | (LOAD_PERM(3) & 65535)), 257)) {
-	0: action2_7221;
-	action2_7221;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7223, STORE_TEMP((rotate((LOAD_PERM(2) & 65535), 16) | (LOAD_PERM(1) & 65535)), 256)) {
-	0: action2_7222;
-	action2_7222;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7224, show_debug_texts) {
-	1: action2_7223;
-	return string(STR_EXTRA_RECYCLING_PLANT);
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7225, STORE_PERM((65535 / 1), 0)) {
-	0: action2_7218;
-	action2_7218;
-}
-
-CHECK_OPENING(action2_7228, 1998, -1)
-
-switch(FEAT_INDUSTRIES, SELF, action2_7229, [STORE_TEMP((729390 - 701265), 256), 32933]) {
-	return;
-}
-
-SWITCH_COLOUR_SCHEME1(action2_7232)
-
-SET_PRODUCTION_COUNTER_PRODUCED(action2_7235)
-
-CHECK_CLOSE_SECONDARY(action2_7238)
-
-switch(FEAT_INDUSTRIES, SELF, switch_main_recycling_plant, current_callback) {
-	0: action2_7225;
-	IND_CB_LOCATION_CHECK: action2_7197;
-	IND_CB_AVAILABILITY: action2_7228;
-	IND_CB_COLOUR: action2_7232;
-	IND_CB_CARGO_OUTPUT: action2_7199;
-	IND_CB_EXTRA_TEXT_FUND: action2_7229;
-	IND_CB_RANDOM_PROD_CHANGE: action2_7238;
-	IND_CB_MONTHLY_PROD_CHANGE: action2_7235;
-	IND_CB_EXTRA_TEXT_INDUSTRY: action2_7224;
-	action2_7201;
-}
-
-item(FEAT_INDUSTRIES, recycling_plant, 23) {
 	graphics {
-		switch_main_recycling_plant;
+		produce_cargo_arrival:   THIS_ID(produce);
+		cargo_output:            THIS_ID(cargo_output);
+		availability:            THIS_ID(check_availability);
+		location_check:          THIS_ID(check_location);
+		monthly_prod_change:     THIS_ID(check_production_counter);
+		random_prod_change:      THIS_ID(check_closure);
+		extra_text_industry:     THIS_ID(extra_text);
+		colour:                  THIS_ID(colour);
 	}
 }
 
