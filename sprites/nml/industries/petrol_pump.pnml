@@ -191,11 +191,25 @@ tilelayout tilelayout_petrol_pump_2 {
 	0, 0: tile_petrol_pump;
 	1, 0: tile_petrol_pump;
 }
+/* *************************************************
+ * Definition of the industry
+ * *************************************************/
+
+#include "../templates/produce_blackhole.pnml"
+#include "../templates/check_closure.pnml"
+#include "../templates/check_production_counter.pnml"
+
+#include "../templates/extra_text_blackhole.pnml"
+
+#include "../templates/check_availability.pnml"
 
 item(FEAT_INDUSTRIES, petrol_pump, 60) {
 	property {
 		substitute: 0;
-		layouts: [tilelayout_petrol_pump_1, tilelayout_petrol_pump_2];
+		layouts: [
+				tilelayout_petrol_pump_1,
+				tilelayout_petrol_pump_2
+			];
 		life_type: 0;
 		closure_msg: 18483;
 		prod_increase_msg: 18485;
@@ -219,26 +233,13 @@ item(FEAT_INDUSTRIES, petrol_pump, 60) {
 		spec_flags: 0;
 		callback_flags: 385;
 	}
-}
-
-produce(action2_6727, 9999, 9999, 0, 0, 0, 0);
-
-CHECK_OPENING(action2_6730, 1910, -1)
-
-switch(FEAT_INDUSTRIES, SELF, action2_6731, [STORE_TEMP((697248 - 701265), 256), 32933]) {
-	return;
-}
-
-switch(FEAT_INDUSTRIES, SELF, switch_main_petrol_pump, current_callback) {
-	IND_CB_AVAILABILITY: action2_6730;
-	IND_CB_EXTRA_TEXT_FUND: action2_6731;
-	IND_CB_EXTRA_TEXT_INDUSTRY: return string(STR_GENERIC_NEWLINE);
-	action2_6727;
-}
-
-item(FEAT_INDUSTRIES, petrol_pump, 60) {
 	graphics {
-		switch_main_petrol_pump;
+		produce_cargo_arrival:   THIS_ID(produce);
+		availability:            THIS_ID(check_availability);
+		monthly_prod_change:     THIS_ID(check_production_counter);
+		random_prod_change:      THIS_ID(check_closure);
+		extra_text_industry:     THIS_ID(extra_text);
+		THIS_ID(produce);
 	}
 }
 
