@@ -72,7 +72,7 @@ tilelayout tilelayout_hardware_store_1 {
  * *************************************************/
 
 #include "../templates/produce_blackhole.pnml"
-#include "../templates/check_closure.pnml"
+#include "../templates/check_secondary_closure.pnml"
 #include "../templates/check_secondary_production_level.pnml"
 
 #include "../templates/check_availability.pnml"
