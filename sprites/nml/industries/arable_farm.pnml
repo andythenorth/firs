@@ -244,7 +244,7 @@ switch(FEAT_INDUSTRIES, SELF, switch_main_arable_farm, current_callback) {
 	IND_CB_AVAILABILITY: switch_arable_farm_cb_availability;
 	IND_CB_COLOUR: switch_arable_farm_cb_colour;
 	IND_CB_EXTRA_TEXT_FUND: return;
-	IND_CB_RANDOM_PROD_CHANGE:  THIS_ID(check_close);
+	IND_CB_RANDOM_PROD_CHANGE:  THIS_ID(check_closure);
 	IND_CB_MONTHLY_PROD_CHANGE: THIS_ID(check_production_change);
 	IND_CB_EXTRA_TEXT_INDUSTRY: THIS_ID(extra_text);
 	THIS_ID(produce);

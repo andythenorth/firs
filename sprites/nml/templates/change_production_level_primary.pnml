@@ -14,7 +14,7 @@
  * Used permanent storage: var_num_supplies_delivered
  *
  * Usage in the industry's pnml:
- * random callback:  THIS_ID(check_close)
+ * random callback:  THIS_ID(check_closure)
  * monthly callback: THIS_ID(check_production_change)
  *
  */
@@ -25,7 +25,7 @@
 /* =================================== */
 /* Closure check for random callback   */
 /* =================================== */
-switch(FEAT_INDUSTRIES, SELF, THIS_ID(check_close), (production_level <= 4) * (allow_close_primary > 0)) {
+switch(FEAT_INDUSTRIES, SELF, THIS_ID(check_closure), (production_level <= 4) * (allow_close_primary > 0)) {
 	1: return CB_RESULT_IND_PROD_CLOSE;
 	return CB_RESULT_IND_PROD_NO_CHANGE;
 }
