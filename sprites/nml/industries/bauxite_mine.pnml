@@ -7,8 +7,6 @@
 
 #define THIS_ID(...) bauxite_mine ## __VA_ARGS__
 
-#define THIS_STR_EXTRA_SUPPLIES        STR_EXTRA_ENGINEERING_SUPPLIES
-
 SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_1), 2022, 2039, 12)
 
 spritelayout THIS_ID(spritelayout_2) {
