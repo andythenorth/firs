@@ -121,10 +121,22 @@ tilelayout tilelayout_hotel_1 {
 	1, 1: tile_hotel;
 }
 
+/* *************************************************
+ * Definition of the industry
+ * *************************************************/
+
+#include "../templates/produce_blackhole.pnml"
+#include "../templates/check_closure.pnml"
+#include "../templates/check_production_counter.pnml"
+
+#include "../templates/check_availability.pnml"
+
 item(FEAT_INDUSTRIES, hotel, 58) {
 	property {
 		substitute: 0;
-		layouts: [tilelayout_hotel_1];
+		layouts: [
+				tilelayout_hotel_1
+			];
 		life_type: 0;
 		closure_msg: 18483;
 		prod_increase_msg: 18485;
@@ -148,23 +160,11 @@ item(FEAT_INDUSTRIES, hotel, 58) {
 		spec_flags: 16;
 		callback_flags: 385;
 	}
-}
-
-produce(action2_5274, 9999, 9999, 0, 0, 0, 0);
-
-CHECK_OPENING(action2_5277, 0, -1)
-
-
-switch(FEAT_INDUSTRIES, SELF, switch_main_hotel, current_callback) {
-	IND_CB_AVAILABILITY: action2_5277;
-	IND_CB_EXTRA_TEXT_FUND: return string(STR_GENERIC_NEWLINE);
-	IND_CB_EXTRA_TEXT_INDUSTRY: return string(STR_GENERIC_NEWLINE);
-	action2_5274;
-}
-
-item(FEAT_INDUSTRIES, hotel, 58) {
 	graphics {
-		switch_main_hotel;
+		produce_cargo_arrival:   THIS_ID(produce);
+		availability:            THIS_ID(check_availability);
+		monthly_prod_change:     THIS_ID(check_production_counter);
+		random_prod_change:      THIS_ID(check_closure);
 	}
 }
 
