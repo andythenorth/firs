@@ -237,10 +237,32 @@ tilelayout tilelayout_junkyard_3 {
 	4, 3: tile_junkyard;
 }
 
+/* *************************************************
+ * Definition of the industry
+ * *************************************************/
+
+#define THIS_STR_EXTRA_SUPPLIES STR_EXTRA_ENGINEERING_SUPPLIES
+
+CHECK_TOWN_DISTANCE (town_distance, 0, 144, return CB_RESULT_IND_ALLOW_LOCATION)
+CHECK_FOUNDER       (THIS_ID(town_distance))
+
+SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
+
+#include "../templates/produce_primary.pnml"
+#include "../templates/check_primary_production_level.pnml"
+
+#include "../templates/extra_text_primary.pnml"
+
+#include "../templates/check_availability.pnml"
+
 item(FEAT_INDUSTRIES, junkyard, 25) {
 	property {
 		substitute: 0;
-		layouts: [tilelayout_junkyard_1, tilelayout_junkyard_2, tilelayout_junkyard_3];
+		layouts: [
+				tilelayout_junkyard_1,
+				tilelayout_junkyard_2,
+				tilelayout_junkyard_3
+			];
 		life_type: 1;
 		closure_msg: 18483;
 		prod_increase_msg: 18485;
@@ -262,107 +284,17 @@ item(FEAT_INDUSTRIES, junkyard, 25) {
 		map_colour: 36;
 		remove_cost_multiplier: 0;
 		spec_flags: 0;
-		callback_flags: 1467;
 		nearby_station_name: 0;
 	}
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5545, 1) {
-	1: return 1024;
-	return 1024;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5546, town_euclidean_dist(0, 0)) {
-	0..144: action2_5545;
-	return 1025;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5547, founder) {
-	16: action2_5546;
-	return 1024;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5548, game_mode) {
-	1: action2_5547;
-	return 1024;
-}
-
-#include "../templates/produce_primary.pnml"
-
-switch(FEAT_INDUSTRIES, SELF, action2_5551, var[0x93, 0, -1]) {
-	0..4: return 3;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5552, allow_close_primary) {
-	1..255: action2_5551;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5553, (extra_callback_info2 & 31)) {
-	0: return 13;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5554, (extra_callback_info2 & 3)) {
-	0: return 13;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5555, STORE_PERM(var[0x93, 0, -1], 2)) {
-	0..4: return 0;
-	5..32: action2_5553;
-	action2_5554;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5556, allow_primary_production_decrease) {
-	1..255: action2_5555;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5557, (extra_callback_info2 & 3)) {
-	0: return 14;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5558, [STORE_PERM(0, 0), LOAD_TEMP(1)]) {
-	1..-1: action2_5557;
-	action2_5556;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5559, STORE_TEMP(LOAD_PERM(0), 1)) {
-	0: action2_5558;
-	action2_5558;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5560, [STORE_TEMP(LOAD_PERM(0), 256), var[0x93, 0, -1]]) {
-	128: return string(STR_EXTRA_MAX_PRODUCTION);
-	return string(STR_EXTRA_ENGINEERING_SUPPLIES);
-}
-
-CHECK_OPENING(action2_5564, 1879, -1)
-
-switch(FEAT_INDUSTRIES, SELF, action2_5565, [STORE_TEMP((685926 - 701265), 256), 32933]) {
-	return;
-}
-
-SWITCH_COLOUR_SCHEME1(action2_5568)
-
-switch(FEAT_INDUSTRIES, SELF, switch_main_junkyard, current_callback) {
-	0: THIS_ID(produce);
-	IND_CB_LOCATION_CHECK: action2_5548;
-	IND_CB_AVAILABILITY: action2_5564;
-	IND_CB_COLOUR: action2_5568;
-	IND_CB_EXTRA_TEXT_FUND: action2_5565;
-	IND_CB_RANDOM_PROD_CHANGE: action2_5552;
-	IND_CB_MONTHLY_PROD_CHANGE: action2_5559;
-	IND_CB_EXTRA_TEXT_INDUSTRY: action2_5560;
-	THIS_ID(produce);
-}
-
-item(FEAT_INDUSTRIES, junkyard, 25) {
 	graphics {
-		switch_main_junkyard;
+		produce_cargo_arrival:   THIS_ID(produce);
+		availability:            THIS_ID(check_availability);
+		location_check:          THIS_ID(check_location);
+		monthly_prod_change:     THIS_ID(check_production_level);
+		random_prod_change:      THIS_ID(check_closure);
+		extra_text_industry:     THIS_ID(extra_text);
+		colour:                  THIS_ID(colour);
 	}
 }
+
 #include "../templates/undefs.pnml"
