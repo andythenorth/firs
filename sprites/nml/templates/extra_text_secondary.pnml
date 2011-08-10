@@ -28,17 +28,9 @@
  * returning the string
  */
 switch (FEAT_INDUSTRIES, SELF, THIS_ID(extra_text), [
-			STORE_TEMP(LOAD_PERM(var_ratio_cargo_1), 256),
-			STORE_TEMP(LOAD_PERM(var_ratio_cargo_2), 257),
-			STORE_TEMP(LOAD_PERM(var_ratio_cargo_3), 258),
-			STORE_TEMP(LOAD_PERM(var_input_cargo_1), 259),
-			STORE_TEMP(LOAD_PERM(var_input_cargo_2), 260),
-			STORE_TEMP(LOAD_PERM(var_input_cargo_3), 261),
-			STORE_TEMP(LOAD_PERM(var_date_received_1), 262),
-			STORE_TEMP(LOAD_PERM(var_date_received_1), 263),
-			STORE_TEMP(LOAD_PERM(var_date_received_1), 264),
-			STORE_TEMP(produced_this_month_1, 265),
-			STORE_TEMP(produced_this_month_2, 266),
+			STORE_TEMP(produced_this_month_1,256),
+			STORE_TEMP(produced_this_month_2,257),
+			STORE_TEMP(current_date - max( max(LOAD_PERM(var_date_received_1), LOAD_PERM(var_date_received_2)), LOAD_PERM(var_date_received_3)), 258 ),
 			show_debug_texts
 			]) {
 	1: return string(THIS_STR_DEBUG_TEXT);
