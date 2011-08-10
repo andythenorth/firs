@@ -231,7 +231,7 @@ switch(FEAT_INDUSTRIES, SELF, switch_arable_farm_cb_location_check, game_mode) {
 }
 
 #include "../templates/produce_primary.pnml"
-#include "../templates/change_production_level_primary.pnml"
+#include "../templates/check_primary_production_level.pnml"
 #include "../templates/extra_text_primary.pnml"
 
 CHECK_OPENING(switch_arable_farm_cb_availability, 0, -1)

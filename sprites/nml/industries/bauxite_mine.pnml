@@ -106,7 +106,7 @@ CHECK_FOUNDER       (THIS_ID(aluminium_plant))
 SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
 
 #include "../templates/produce_primary.pnml"
-#include "../templates/change_production_level_primary.pnml"
+#include "../templates/check_primary_production_level.pnml"
 
 #include "../templates/extra_text_primary.pnml"
 

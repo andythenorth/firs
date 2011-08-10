@@ -332,7 +332,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_3730, game_mode) {
 }
 
 #include "../templates/produce_primary.pnml"
-#include "../templates/change_production_level_primary.pnml"
+#include "../templates/check_primary_production_level.pnml"
 #include "../templates/extra_text_primary.pnml"
 
 CHECK_OPENING(action2_3746, 0, -1)
