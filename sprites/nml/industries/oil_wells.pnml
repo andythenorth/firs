@@ -7,8 +7,6 @@
 
 #define THIS_ID(...) oil_wells ## __VA_ARGS__
 
-#define THIS_STR_EXTRA_SUPPLIES        STR_EXTRA_ENGINEERING_SUPPLIES
-
 item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_215, 215) {
 	property {
 		substitute: 0;
@@ -165,10 +163,33 @@ tilelayout tilelayout_7594_4 {
 	6, 0: item_FEAT_INDUSTRYTILES_215;
 }
 
+/* *************************************************
+ * Definition of the industry
+ * *************************************************/
+
+#define THIS_STR_EXTRA_SUPPLIES STR_EXTRA_ENGINEERING_SUPPLIES
+
+CHECK_INCOMPATIBLE  (oil_refinery, 16, CB_RESULT_IND_DISALLOW_UNSUITABLE, return CB_RESULT_IND_ALLOW_LOCATION)
+CHECK_FOUNDER       (THIS_ID(oil_refinery))
+
+SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
+
+#include "../templates/produce_primary.pnml"
+#include "../templates/check_primary_production_level.pnml"
+
+#include "../templates/extra_text_primary.pnml"
+
+#include "../templates/check_availability.pnml"
+
 item(FEAT_INDUSTRIES, oil_wells, 15) {
 	property {
 		substitute: 0;
-		layouts: [tilelayout_7594_1, tilelayout_7594_2, tilelayout_7594_3, tilelayout_7594_4];
+		layouts: [
+				tilelayout_7594_1,
+				tilelayout_7594_2,
+				tilelayout_7594_3,
+				tilelayout_7594_4
+			];
 		life_type: 2;
 		closure_msg: 18483;
 		prod_increase_msg: 18485;
@@ -185,54 +206,16 @@ item(FEAT_INDUSTRIES, oil_wells, 15) {
 		fund_cost_multiplier: 230;
 		map_colour: 152;
 		spec_flags: 0;
-		callback_flags: 1467;
 		nearby_station_name: string(STR_GENERIC_DCE3);
 	}
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6595, 1) {
-	1: return 1024;
-	return 1024;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6596, industry_distance(oil_refinery)) {
-	0..16: return 4;
-	action2_6595;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6597, founder) {
-	16: action2_6596;
-	return 1024;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6598, game_mode) {
-	1: action2_6597;
-	return 1024;
-}
-
-#include "../templates/produce_primary.pnml"
-#include "../templates/check_primary_production_level.pnml"
-#include "../templates/extra_text_primary.pnml"
-
-CHECK_OPENING(action2_6614, 1885, -1)
-
-SWITCH_COLOUR_SCHEME1(action2_6618)
-
-switch(FEAT_INDUSTRIES, SELF, action2_6619, current_callback) {
-	0: THIS_ID(produce);
-	IND_CB_LOCATION_CHECK: action2_6598;
-	IND_CB_AVAILABILITY: action2_6614;
-	IND_CB_COLOUR: action2_6618;
-	IND_CB_EXTRA_TEXT_FUND:     return;
-	IND_CB_RANDOM_PROD_CHANGE:  THIS_ID(check_closure);
-	IND_CB_MONTHLY_PROD_CHANGE: THIS_ID(check_production_level);
-	IND_CB_EXTRA_TEXT_INDUSTRY: THIS_ID(extra_text);
-	THIS_ID(produce);
-}
-
-item(FEAT_INDUSTRIES, oil_wells, 15) {
 	graphics {
-		action2_6619;
+		produce_cargo_arrival:   THIS_ID(produce);
+		availability:            THIS_ID(check_availability);
+		location_check:          THIS_ID(check_location);
+		monthly_prod_change:     THIS_ID(check_production_level);
+		random_prod_change:      THIS_ID(check_closure);
+		extra_text_industry:     THIS_ID(extra_text);
+		colour:                  THIS_ID(colour);
 	}
 }
 #include "../templates/undefs.pnml"
