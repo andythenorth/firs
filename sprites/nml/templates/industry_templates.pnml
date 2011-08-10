@@ -142,7 +142,7 @@ switch (FEAT_INDUSTRIES, SELF, THIS_ID(related), \
  * Parameters:
  * incompatible: name of conflicting industry
  * distance:     minimum required separation
- * errtext:      return value: text for error message or "return CB_RESULT_IND_DISALLOW_UNSUITABLE"
+ * errtext:      return value: text for error message or CB_RESULT_IND_DISALLOW_UNSUITABLE
  * next:         name of next switch or "return CB_RESULT_IND_ALLOW_LOCATION"
  */
 
