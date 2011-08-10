@@ -109,6 +109,25 @@ switch(FEAT_INDUSTRIES, SELF, name, produced_last_month_1) { \
 }
 
 /*
+ * Check for minimum distance to the coast
+ *
+ * switch name:  THIS_ID(name)
+ *               industryname ## name
+ *
+ * Parameters:
+ * name:         Name of this switch
+ * mindistance:  Minimum distance from coast
+ * maxdistance:  Maximum distance from coast
+ * errtext:      deny construction: text for error message or CB_RESULT_IND_DISALLOW_UNSUITABLE
+ * next:         allow construction: name of next switch or "return CB_RESULT_IND_ALLOW_LOCATION"
+ */
+#define CHECK_COAST_DISTANCE(name, mindistance, maxdistance, errtext, next) \
+switch (FEAT_INDUSTRIES, SELF, THIS_ID(name), water_distance) { \
+	mindistance .. maxdistance: next; \
+	return errtext; \
+}
+
+/*
  * Check for ratio to related industry cluster
  * 
  * switch name:  THIS_ID(related)
