@@ -7,103 +7,6 @@
 
 #define THIS_ID(...) steelmill ## __VA_ARGS__
 
-/* for secondary production template */
-#define THIS_NUM_OUTPUT_CARGOS    1
-#define THIS_PROD_RATIO_CARGO1    2
-#define THIS_PROD_RATIO_CARGO2    2
-#define THIS_PROD_RATIO_CARGO3    4
-#define THIS_BOOST_12             2
-#define THIS_BOOST_13             1
-#define THIS_BOOST_21             2
-#define THIS_BOOST_23             1
-#define THIS_BOOST_31             2
-#define THIS_BOOST_32             2
-#define THIS_PRODUCTION_SPAN      30
-/* extra text template */
-#define THIS_STR_EXTRA_TEXT       STR_EXTRA_STEELMILL
-#define THIS_STR_DEBUG_TEXT       STR_EXTRA_TEXT_DEBUG_SECONDARY
-
-
-item(FEAT_INDUSTRIES, steelmill, 7) {
-	property {
-		substitute: 8;
-		override: 8;
-		nearby_station_name: string(STR_STATIONNAME_MILLS);
-		accept_cargo_types: [IORE, COAL, SCRP];
-		input_multiplier_1: [0, 0];
-		input_multiplier_2: [0, 0];
-		input_multiplier_3: [0, 0];
-		conflicting_ind_types: [];
-		prob_random: 5;
-		prob_in_game: 2;
-		fund_cost_multiplier: 200;
-		map_colour: 9;
-		callback_flags: 445;
-	}
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7407, industry_distance(steelmill)) {
-	0..56: return 1025;
-	return 1024;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7408, industry_distance(coal_mine)) {
-	0..16: return 4;
-	action2_7407;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7409, industry_distance(iron_ore_mine)) {
-	0..16: return 4;
-	action2_7408;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7410, industry_distance(junkyard)) {
-	0..16: return 4;
-	action2_7409;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7411, founder) {
-	16: action2_7410;
-	return 1024;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_7412, game_mode) {
-	1: action2_7411;
-	return 1024;
-}
-
-#include "../templates/produce_secondary.pnml"
-#include "../templates/extra_text_secondary.pnml"
-
-CHECK_OPENING(action2_7455, 1874, -1)
-
-switch(FEAT_INDUSTRIES, SELF, action2_7456, [STORE_TEMP((684100 - 701265), 256), 32933]) {
-	return;
-}
-
-SWITCH_COLOUR_SCHEME1(action2_7459)
-
-SET_PRODUCTION_COUNTER_PRODUCED(action2_7462)
-
-CHECK_CLOSE_SECONDARY(action2_7465)
-
-switch(FEAT_INDUSTRIES, SELF, action2_7466, current_callback) {
-	0: THIS_ID(produce);
-	IND_CB_LOCATION_CHECK: action2_7412;
-	IND_CB_AVAILABILITY: action2_7455;
-	IND_CB_COLOUR: action2_7459;
-	IND_CB_EXTRA_TEXT_FUND: action2_7456;
-	IND_CB_RANDOM_PROD_CHANGE: action2_7465;
-	IND_CB_MONTHLY_PROD_CHANGE: action2_7462;
-	IND_CB_EXTRA_TEXT_INDUSTRY: THIS_ID(extra_text);
-	THIS_ID(produce);
-}
-
-item(FEAT_INDUSTRIES, steelmill, 7) {
-	graphics {
-		action2_7466;
-	}
-}
 
 item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_52, 52) {
 	property {
@@ -150,6 +53,69 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_57, 57) {
 		substitute: 57;
 		override: 57;
 		accepted_cargos: [[IORE, 8], [SCRP, 8], [COAL, 8]];
+	}
+}
+
+/* *************************************************
+ * Definition of the industry
+ * *************************************************/
+
+/* for secondary production template */
+#define THIS_NUM_OUTPUT_CARGOS    1
+#define THIS_PROD_RATIO_CARGO1    2
+#define THIS_PROD_RATIO_CARGO2    2
+#define THIS_PROD_RATIO_CARGO3    4
+#define THIS_BOOST_12             2
+#define THIS_BOOST_13             2
+#define THIS_BOOST_21             2
+#define THIS_BOOST_23             2
+#define THIS_BOOST_31             4
+#define THIS_BOOST_32             4
+#define THIS_PRODUCTION_SPAN      30
+/* extra text template */
+#define THIS_STR_EXTRA_TEXT       STR_EXTRA_STEELMILL
+
+
+CHECK_INCOMPATIBLE  (steelmill,     56, CB_RESULT_IND_DISALLOW_UNSUITABLE, return CB_RESULT_IND_ALLOW_LOCATION)
+CHECK_INCOMPATIBLE  (coal_mine,     16, CB_RESULT_IND_DISALLOW_UNSUITABLE, THIS_ID(steelmill))
+CHECK_INCOMPATIBLE  (iron_ore_mine, 16, CB_RESULT_IND_DISALLOW_UNSUITABLE, THIS_ID(coal_mine))
+CHECK_INCOMPATIBLE  (junkyard,      16, CB_RESULT_IND_DISALLOW_UNSUITABLE, THIS_ID(iron_ore_mine))
+CHECK_FOUNDER       (THIS_ID(junkyard))
+
+SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
+
+#include "../templates/produce_secondary.pnml"
+#include "../templates/check_production_counter.pnml"
+#include "../templates/check_closure.pnml"
+
+#include "../templates/extra_text_secondary.pnml"
+
+#include "../templates/check_availability.pnml"
+
+item(FEAT_INDUSTRIES, steelmill, 7) {
+	property {
+		substitute: 8;
+		override: 8;
+		nearby_station_name: string(STR_STATIONNAME_MILLS);
+		accept_cargo_types: [IORE, COAL, SCRP];
+		input_multiplier_1: [0, 0];
+		input_multiplier_2: [0, 0];
+		input_multiplier_3: [0, 0];
+		conflicting_ind_types: [];
+		prob_random: 5;
+		prob_in_game: 2;
+		fund_cost_multiplier: 200;
+		map_colour: 9;
+		callback_flags: 445;
+	}
+	graphics {
+		produce_cargo_arrival:   THIS_ID(produce);
+		availability:            THIS_ID(check_availability);
+		location_check:          THIS_ID(check_location);
+		monthly_prod_change:     THIS_ID(check_production_counter);
+		random_prod_change:      THIS_ID(check_closure);
+		extra_text_industry:     THIS_ID(extra_text);
+		colour:                  THIS_ID(colour);
 	}
 }
 
