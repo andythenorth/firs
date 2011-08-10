@@ -7,8 +7,6 @@
 
 #define THIS_ID(...) mixed_farm ## __VA_ARGS__
 
-#define THIS_STR_EXTRA_SUPPLIES        STR_EXTRA_FARM_SUPPLIES
-
 item(FEAT_INDUSTRYTILES, tile_mixed_farm, 190) {
 	property {
 		substitute: 0;
@@ -268,10 +266,35 @@ tilelayout tilelayout_mixed_farm_3 {
 	3, 2: tile_mixed_farm;
 }
 
+/* *************************************************
+ * Definition of the industry
+ * *************************************************/
+
+#define THIS_STR_EXTRA_SUPPLIES        STR_EXTRA_FARM_SUPPLIES
+
+CHECK_NEARBY_CLUSTER(mixed_farm,     10, 36, 1, 2, return CB_RESULT_IND_DISALLOW_UNSUITABLE, return CB_RESULT_IND_ALLOW_LOCATION)
+CHECK_INCOMPATIBLE  (stockyard,      16, CB_RESULT_IND_DISALLOW_UNSUITABLE, THIS_ID(mixed_farm))
+CHECK_INCOMPATIBLE  (textile_mill,   16, CB_RESULT_IND_DISALLOW_UNSUITABLE, THIS_ID(stockyard))
+CHECK_INCOMPATIBLE  (plastics_plant, 16, CB_RESULT_IND_DISALLOW_UNSUITABLE, THIS_ID(textile_mill))
+CHECK_FOUNDER       (THIS_ID(plastics_plant))
+
+SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
+
+#include "../templates/produce_primary.pnml"
+#include "../templates/check_primary_production_level.pnml"
+
+#include "../templates/extra_text_primary.pnml"
+
+#include "../templates/check_availability.pnml"
+
 item(FEAT_INDUSTRIES, mixed_farm, 29) {
 	property {
 		substitute: 0;
-		layouts: [tilelayout_mixed_farm_1, tilelayout_mixed_farm_2, tilelayout_mixed_farm_3];
+		layouts: [
+				tilelayout_mixed_farm_1,
+				tilelayout_mixed_farm_2,
+				tilelayout_mixed_farm_3
+			];
 		life_type: 2;
 		closure_msg: 18483;
 		prod_increase_msg: 18488;
@@ -294,73 +317,16 @@ item(FEAT_INDUSTRIES, mixed_farm, 29) {
 		map_colour: 7;
 		remove_cost_multiplier: 0;
 		spec_flags: 65;
-		callback_flags: 1339;
 	}
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6447, industry_distance(mixed_farm)) {
-	10..36: return 1024;
-	return 4;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6448, ((industry_count(29) / 2) / industry_clusters)) {
-	0: return 1024;
-	action2_6447;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6449, STORE_TEMP(-1, 256)) {
-	0: action2_6448;
-	action2_6448;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6450, industry_distance(stockyard)) {
-	0..16: return 4;
-	action2_6449;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6451, industry_distance(textile_mill)) {
-	0..16: return 4;
-	action2_6450;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6452, industry_distance(plastics_plant)) {
-	0..16: return 4;
-	action2_6451;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6453, founder) {
-	16: action2_6452;
-	return 1024;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6454, game_mode) {
-	1: action2_6453;
-	return 1024;
-}
-
-#include "../templates/produce_primary.pnml"
-#include "../templates/check_primary_production_level.pnml"
-#include "../templates/extra_text_primary.pnml"
-
-CHECK_OPENING(action2_6470, 0, -1)
-
-SWITCH_COLOUR_SCHEME1(action2_6474)
-
-switch(FEAT_INDUSTRIES, SELF, switch_main_mixed_farm, current_callback) {
-	0: THIS_ID(produce);
-	IND_CB_LOCATION_CHECK: action2_6454;
-	IND_CB_AVAILABILITY: action2_6470;
-	IND_CB_COLOUR: action2_6474;
-	IND_CB_EXTRA_TEXT_FUND:     return;
-	IND_CB_RANDOM_PROD_CHANGE:  THIS_ID(check_closure);
-	IND_CB_MONTHLY_PROD_CHANGE: THIS_ID(check_production_level);
-	IND_CB_EXTRA_TEXT_INDUSTRY: THIS_ID(extra_text);
-	THIS_ID(produce);
-}
-
-item(FEAT_INDUSTRIES, mixed_farm, 29) {
 	graphics {
-		switch_main_mixed_farm;
+		produce_cargo_arrival:   THIS_ID(produce);
+		availability:            THIS_ID(check_availability);
+		location_check:          THIS_ID(check_location);
+		monthly_prod_change:     THIS_ID(check_production_level);
+		random_prod_change:      THIS_ID(check_closure);
+		extra_text_industry:     THIS_ID(extra_text);
+		colour:                  THIS_ID(colour);
 	}
 }
+
 #include "../templates/undefs.pnml"
