@@ -70,7 +70,7 @@ switch(FEAT_INDUSTRIES, SELF, action2_6503, current_callback) {
 	IND_CB_COLOUR: action2_6502;
 	IND_CB_EXTRA_TEXT_FUND:     return;
 	IND_CB_RANDOM_PROD_CHANGE:  THIS_ID(check_closure);
-	IND_CB_MONTHLY_PROD_CHANGE: THIS_ID(check_production_change);
+	IND_CB_MONTHLY_PROD_CHANGE: THIS_ID(check_production_level);
 	IND_CB_EXTRA_TEXT_INDUSTRY: THIS_ID(extra_text);
 	THIS_ID(produce);
 }

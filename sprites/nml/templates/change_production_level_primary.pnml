@@ -15,7 +15,7 @@
  *
  * Usage in the industry's pnml:
  * random callback:  THIS_ID(check_closure)
- * monthly callback: THIS_ID(check_production_change)
+ * monthly callback: THIS_ID(check_production_level)
  *
  */
 
@@ -64,7 +64,7 @@ switch(FEAT_INDUSTRIES, SELF, THIS_ID(random_increase), (extra_callback_info2 & 
 	return CB_RESULT_IND_PROD_NO_CHANGE;
 }
 
-switch(FEAT_INDUSTRIES, SELF, THIS_ID(check_production_change), [
+switch(FEAT_INDUSTRIES, SELF, THIS_ID(check_production_level), [
 			STORE_TEMP(LOAD_PERM(var_num_supplies_delivered), var_supplies_delivered),
 			STORE_PERM(0, var_num_supplies_delivered),
 			LOAD_TEMP(var_supplies_delivered) > 0
