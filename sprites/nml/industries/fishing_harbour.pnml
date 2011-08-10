@@ -976,7 +976,7 @@ CHECK_FOUNDER       (THIS_ID(fishing_grounds))
 SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
 
 #include "../templates/produce_secondary.pnml"
-#include "../templates/check_production_counter.pnml"
+#include "../templates/check_secondary_production_level.pnml"
 #include "../templates/check_closure.pnml"
 
 #include "../templates/extra_text_secondary.pnml"
@@ -1020,7 +1020,7 @@ item(FEAT_INDUSTRIES, fishing_harbour, 31) {
 		produce_cargo_arrival:   THIS_ID(produce);
 		availability:            THIS_ID(check_availability);
 		location_check:          THIS_ID(check_location);
-		monthly_prod_change:     THIS_ID(check_production_counter);
+		monthly_prod_change:     THIS_ID(check_production_level);
 		random_prod_change:      THIS_ID(check_closure);
 		extra_text_industry:     THIS_ID(extra_text);
 		colour:                  THIS_ID(colour);

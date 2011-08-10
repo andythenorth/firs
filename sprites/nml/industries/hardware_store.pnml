@@ -73,7 +73,7 @@ tilelayout tilelayout_hardware_store_1 {
 
 #include "../templates/produce_blackhole.pnml"
 #include "../templates/check_closure.pnml"
-#include "../templates/check_production_counter.pnml"
+#include "../templates/check_secondary_production_level.pnml"
 
 #include "../templates/check_availability.pnml"
 
@@ -109,7 +109,7 @@ item(FEAT_INDUSTRIES, hardware_store, 57) {
 	graphics {
 		produce_cargo_arrival:   THIS_ID(produce);
 		availability:            THIS_ID(check_availability);
-		monthly_prod_change:     THIS_ID(check_production_counter);
+		monthly_prod_change:     THIS_ID(check_production_level);
 		random_prod_change:      THIS_ID(check_closure);
 	}
 }
