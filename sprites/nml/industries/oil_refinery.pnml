@@ -7,99 +7,7 @@
 
 #define THIS_ID(...) oil_refinery ## __VA_ARGS__
 
-/* for secondary production template */
-#define THIS_NUM_OUTPUT_CARGOS    2
-#define THIS_PROD_RATIO_CARGO1    6
-#define THIS_PROD_RATIO_CARGO2    0
-#define THIS_PROD_RATIO_CARGO3    0
-#define THIS_BOOST_12             0
-#define THIS_BOOST_13             0
-#define THIS_BOOST_21             0
-#define THIS_BOOST_23             0
-#define THIS_BOOST_31             0
-#define THIS_BOOST_32             0
-#define THIS_PRODUCTION_SPAN      30
-/* extra text template */
-#define THIS_STR_EXTRA_TEXT       STR_EXTRA_OIL_REFINERY
-#define THIS_STR_DEBUG_TEXT       STR_EXTRA_TEXT_DEBUG_SECONDARY
 
-
-item(FEAT_INDUSTRIES, THIS_ID(), 17) {
-	property {
-		substitute: 4;
-		override: 4;
-		nearby_station_name: string(STR_STATIONNAME_CHEMICALS);
-		prod_cargo_types: [RFPR, PETR];
-		accept_cargo_types: [OIL_];
-		input_multiplier_1: [0, 0];
-		input_multiplier_2: [0, 0];
-		input_multiplier_3: [0, 0];
-		conflicting_ind_types: [];
-		prob_random: 4;
-		prob_in_game: 2;
-		fund_cost_multiplier: 200;
-		map_colour: 191;
-		callback_flags: 445;
-	}
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6510, industry_distance(oil_refinery)) {
-	0..56: return 1025;
-	return 1024;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6511, industry_distance(oil_wells)) {
-	0..16: return 4;
-	action2_6510;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6512, industry_distance(oil_rig)) {
-	0..16: return 4;
-	action2_6511;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6513, founder) {
-	16: action2_6512;
-	return 1024;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6514, game_mode) {
-	1: action2_6513;
-	return 1024;
-}
-
-#include "../templates/produce_secondary.pnml"
-#include "../templates/extra_text_secondary.pnml"
-
-CHECK_OPENING(action2_6543, 1885, -1)
-
-switch(FEAT_INDUSTRIES, SELF, action2_6544, [STORE_TEMP((688117 - 701265), 256), 32933]) {
-	return;
-}
-
-SWITCH_COLOUR_SCHEME1(action2_6547)
-
-SET_PRODUCTION_COUNTER_PRODUCED(action2_6550)
-
-CHECK_CLOSE_SECONDARY(action2_6553)
-
-switch(FEAT_INDUSTRIES, SELF, action2_6554, current_callback) {
-	0: THIS_ID(produce);
-	IND_CB_LOCATION_CHECK: action2_6514;
-	IND_CB_AVAILABILITY: action2_6543;
-	IND_CB_COLOUR: action2_6547;
-	IND_CB_EXTRA_TEXT_FUND: action2_6544;
-	IND_CB_RANDOM_PROD_CHANGE: action2_6553;
-	IND_CB_MONTHLY_PROD_CHANGE: action2_6550;
-	IND_CB_EXTRA_TEXT_INDUSTRY: THIS_ID(extra_text);
-	THIS_ID(produce);
-}
-
-item(FEAT_INDUSTRIES, THIS_ID(), 17) {
-	graphics {
-		action2_6554;
-	}
-}
 
 item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_18, 18) {
 	property {
@@ -146,6 +54,68 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_23, 23) {
 		substitute: 23;
 		override: 23;
 		accepted_cargos: [[OIL_, 8], [0, 0], [0, 0]];
+	}
+}
+
+/* *************************************************
+ * Definition of the industry
+ * *************************************************/
+
+/* for secondary production template */
+#define THIS_NUM_OUTPUT_CARGOS    2
+#define THIS_PROD_RATIO_CARGO1    6
+#define THIS_PROD_RATIO_CARGO2    0
+#define THIS_PROD_RATIO_CARGO3    0
+#define THIS_BOOST_12             0
+#define THIS_BOOST_13             0
+#define THIS_BOOST_21             0
+#define THIS_BOOST_23             0
+#define THIS_BOOST_31             0
+#define THIS_BOOST_32             0
+#define THIS_PRODUCTION_SPAN      30
+/* extra text template */
+#define THIS_STR_EXTRA_TEXT       STR_EXTRA_OIL_REFINERY
+
+CHECK_INCOMPATIBLE  (oil_refinery,   56, CB_RESULT_IND_DISALLOW_UNSUITABLE, return CB_RESULT_IND_ALLOW_LOCATION)
+CHECK_INCOMPATIBLE  (oil_wells,      16, CB_RESULT_IND_DISALLOW_UNSUITABLE, THIS_ID(oil_refinery))
+CHECK_INCOMPATIBLE  (oil_rig,        16, CB_RESULT_IND_DISALLOW_UNSUITABLE, THIS_ID(oil_wells))
+CHECK_FOUNDER       (THIS_ID(oil_rig))
+
+SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
+
+#include "../templates/produce_secondary.pnml"
+#include "../templates/check_production_counter.pnml"
+#include "../templates/check_closure.pnml"
+
+#include "../templates/extra_text_secondary.pnml"
+
+#include "../templates/check_availability.pnml"
+
+item(FEAT_INDUSTRIES, THIS_ID(), 17) {
+	property {
+		substitute: 4;
+		override: 4;
+		nearby_station_name: string(STR_STATIONNAME_CHEMICALS);
+		prod_cargo_types: [RFPR, PETR];
+		accept_cargo_types: [OIL_];
+		input_multiplier_1: [0, 0];
+		input_multiplier_2: [0, 0];
+		input_multiplier_3: [0, 0];
+		conflicting_ind_types: [];
+		prob_random: 4;
+		prob_in_game: 2;
+		fund_cost_multiplier: 200;
+		map_colour: 191;
+		callback_flags: 445;
+	}
+	graphics {
+		produce_cargo_arrival:   THIS_ID(produce);
+		availability:            THIS_ID(check_availability);
+		location_check:          THIS_ID(check_location);
+		monthly_prod_change:     THIS_ID(check_production_counter);
+		random_prod_change:      THIS_ID(check_closure);
+		extra_text_industry:     THIS_ID(extra_text);
+		colour:                  THIS_ID(colour);
 	}
 }
 
