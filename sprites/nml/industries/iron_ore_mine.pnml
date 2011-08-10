@@ -7,80 +7,6 @@
 
 #define THIS_ID(...) iron_ore_mine ## __VA_ARGS__
 
-#define THIS_STR_EXTRA_SUPPLIES        STR_EXTRA_ENGINEERING_SUPPLIES
-
-item(FEAT_INDUSTRIES, THIS_ID(), 4) {
-	property {
-		substitute: 18;
-		override: 18;
-		accept_cargo_types: [ENSP, 255, 255];
-		prod_multiplier: [12];
-		conflicting_ind_types: [];
-		prob_random: 7;
-		prob_in_game: 3;
-		prospect_chance: 0.75;
-		fund_cost_multiplier: 232;
-		map_colour: 55;
-		callback_flags: 1339;
-	}
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5281, industry_distance(THIS_ID())) {
-	20..70: return 1024;
-	return 4;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5282, (((industry_count(4) * 2) / 3) / industry_clusters)) {
-	0: return 1024;
-	action2_5281;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5283, STORE_TEMP(-1, 256)) {
-	0: action2_5282;
-	action2_5282;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5284, industry_distance(steelmill)) {
-	0..16: return 4;
-	action2_5283;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5285, founder) {
-	16: action2_5284;
-	return 1024;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_5286, game_mode) {
-	1: action2_5285;
-	return 1024;
-}
-
-#include "../templates/produce_primary.pnml"
-#include "../templates/check_primary_production_level.pnml"
-#include "../templates/extra_text_primary.pnml"
-
-CHECK_OPENING(action2_5302, 0, -1)
-
-
-SWITCH_COLOUR_SCHEME1(action2_5306)
-
-switch(FEAT_INDUSTRIES, SELF, switch_main_iron_ore_mine, current_callback) {
-	IND_CB_LOCATION_CHECK: action2_5286;
-	IND_CB_AVAILABILITY: action2_5302;
-	IND_CB_COLOUR: action2_5306;
-	IND_CB_EXTRA_TEXT_FUND:     return;
-	IND_CB_RANDOM_PROD_CHANGE:  THIS_ID(check_closure);
-	IND_CB_MONTHLY_PROD_CHANGE: THIS_ID(check_production_level);
-	IND_CB_EXTRA_TEXT_INDUSTRY: THIS_ID(extra_text);
-	THIS_ID(produce);
-}
-
-item(FEAT_INDUSTRIES, iron_ore_mine, 4) {
-	graphics {
-		switch_main_iron_ore_mine;
-	}
-}
-
 item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_100, 100) {
 	property {
 		substitute: 100;
@@ -222,6 +148,49 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_115, 115) {
 		override: 115;
 		accepted_cargos: [[ENSP, 8]];
 		callback_flags: 0;
+	}
+}
+
+/* *************************************************
+ * Definition of the industry
+ * *************************************************/
+
+#define THIS_STR_EXTRA_SUPPLIES        STR_EXTRA_ENGINEERING_SUPPLIES
+
+CHECK_NEARBY_CLUSTER(iron_ore_mine, 20, 70, 2, 3, return CB_RESULT_IND_DISALLOW_UNSUITABLE, return CB_RESULT_IND_ALLOW_LOCATION)
+CHECK_INCOMPATIBLE  (steelmill,     16, CB_RESULT_IND_DISALLOW_UNSUITABLE, THIS_ID(iron_ore_mine))
+CHECK_FOUNDER       (THIS_ID(steelmill))
+
+SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
+
+#include "../templates/produce_primary.pnml"
+#include "../templates/check_primary_production_level.pnml"
+
+#include "../templates/extra_text_primary.pnml"
+
+#include "../templates/check_availability.pnml"
+
+item(FEAT_INDUSTRIES, iron_ore_mine, 4) {
+	property {
+		substitute: 18;
+		override: 18;
+		accept_cargo_types: [ENSP];
+		prod_multiplier: [12];
+		conflicting_ind_types: [];
+		prob_random: 7;
+		prob_in_game: 3;
+		prospect_chance: 0.75;
+		fund_cost_multiplier: 232;
+		map_colour: 55;
+	}
+	graphics {
+		produce_cargo_arrival:   THIS_ID(produce);
+		availability:            THIS_ID(check_availability);
+		location_check:          THIS_ID(check_location);
+		monthly_prod_change:     THIS_ID(check_production_level);
+		random_prod_change:      THIS_ID(check_closure);
+		extra_text_industry:     THIS_ID(extra_text);
+		colour:                  THIS_ID(colour);
 	}
 }
 
