@@ -95,10 +95,45 @@ tilelayout tilelayout_bauxite_mine_1 {
 	3, 2: THIS_ID(industrytile);
 }
 
+/* *************************************************
+ * Definition of the industry
+ * *************************************************/
+
+/* for secondary production template */
+#define THIS_NUM_OUTPUT_CARGOS    2
+#define THIS_PROD_RATIO_CARGO1    6
+#define THIS_PROD_RATIO_CARGO2    2
+#define THIS_PROD_RATIO_CARGO3    1
+#define THIS_BOOST_12             2
+#define THIS_BOOST_13             0
+#define THIS_BOOST_21             6
+#define THIS_BOOST_23             0
+#define THIS_BOOST_31             0
+#define THIS_BOOST_32             0
+#define THIS_PRODUCTION_SPAN      30
+/* extra text template */
+#define THIS_STR_EXTRA_TEXT       STR_EXTRA_GLASS_WORKS
+
+CHECK_NEARBY_CLUSTER(bauxite_mine,    20, 60, 2, 3, return CB_RESULT_IND_DISALLOW_UNSUITABLE, return CB_RESULT_IND_ALLOW_LOCATION)
+CHECK_INCOMPATIBLE  (aluminium_plant, 16, CB_RESULT_IND_DISALLOW_UNSUITABLE, THIS_ID(bauxite_mine))
+CHECK_FOUNDER       (THIS_ID(aluminium_plant))
+
+SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
+
+#include "../templates/produce_primary.pnml"
+#include "../templates/change_production_level_primary.pnml"
+
+#include "../templates/extra_text_primary.pnml"
+
+#include "../templates/check_availability.pnml"
+
+
 item(FEAT_INDUSTRIES, bauxite_mine, 5) {
 	property {
 		substitute: 0;
-		layouts: [tilelayout_bauxite_mine_1];
+		layouts: [
+				tilelayout_bauxite_mine_1
+			];
 		life_type: 1;
 		closure_msg: 18483;
 		prod_increase_msg: 18485;
@@ -122,61 +157,14 @@ item(FEAT_INDUSTRIES, bauxite_mine, 5) {
 		spec_flags: 0;
 		callback_flags: 1467;
 	}
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_2776, industry_distance(5)) {
-	20..70: return 1024;
-	return 4;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_2777, (((industry_count(5) * 2) / 3) / industry_clusters)) {
-	0: return 1024;
-	action2_2776;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_2778, STORE_TEMP(-1, 256)) {
-	0: action2_2777;
-	action2_2777;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_2779, industry_distance(8)) {
-	0..16: return 4;
-	action2_2778;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_2780, founder) {
-	16: action2_2779;
-	return 1024;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_2781, game_mode) {
-	1: action2_2780;
-	return 1024;
-}
-
-#include "../templates/produce_primary.pnml"
-#include "../templates/change_production_level_primary.pnml"
-#include "../templates/extra_text_primary.pnml"
-
-CHECK_OPENING(action2_2797, 1924, -1)
-
-SWITCH_COLOUR_SCHEME1(action2_2801)
-
-switch(FEAT_INDUSTRIES, SELF, switch_main_bauxite_mine, current_callback) {
-	0: THIS_ID(produce);
-	IND_CB_LOCATION_CHECK: action2_2781;
-	IND_CB_AVAILABILITY: action2_2797;
-	IND_CB_COLOUR: action2_2801;
-	IND_CB_EXTRA_TEXT_FUND:     return;
-	IND_CB_RANDOM_PROD_CHANGE:  THIS_ID(check_close);
-	IND_CB_MONTHLY_PROD_CHANGE: THIS_ID(check_production_change);
-	IND_CB_EXTRA_TEXT_INDUSTRY: THIS_ID(extra_text);
-	THIS_ID(produce);
-}
-
-item(FEAT_INDUSTRIES, bauxite_mine, 5) {
 	graphics {
-		switch_main_bauxite_mine;
+		produce_cargo_arrival:   THIS_ID(produce);
+		availability:            THIS_ID(check_availability);
+		location_check:          THIS_ID(check_location);
+		monthly_prod_change:     THIS_ID(check_production_change);
+		random_prod_change:      THIS_ID(check_close);
+		extra_text_industry:     THIS_ID(extra_text);
+		colour:                  THIS_ID(colour);
 	}
 }
 #include "../templates/undefs.pnml"
