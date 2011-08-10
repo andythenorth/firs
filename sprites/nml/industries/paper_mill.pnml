@@ -7,98 +7,6 @@
 
 #define THIS_ID(...) paper_mill ## __VA_ARGS__
 
-/* for secondary production template */
-#define THIS_NUM_OUTPUT_CARGOS    2
-#define THIS_PROD_RATIO_CARGO1    2
-#define THIS_PROD_RATIO_CARGO2    4
-#define THIS_PROD_RATIO_CARGO3    2
-#define THIS_BOOST_12             2
-#define THIS_BOOST_13             1
-#define THIS_BOOST_21             2
-#define THIS_BOOST_23             2
-#define THIS_BOOST_31             1
-#define THIS_BOOST_32             2
-#define THIS_PRODUCTION_SPAN      30
-/* extra text template */
-#define THIS_STR_EXTRA_TEXT       STR_EXTRA_PAPER_MILL
-#define THIS_STR_DEBUG_TEXT       STR_EXTRA_TEXT_DEBUG_SECONDARY
-
-item(FEAT_INDUSTRIES, paper_mill, 14) {
-	property {
-		substitute: 14;
-		override: 14;
-		nearby_station_name: string(STR_STATIONNAME_MILLS);
-		prod_cargo_types: [GOOD, MNSP];
-		accept_cargo_types: [CLAY, WOOD, RFPR];
-		input_multiplier_1: [0, 0];
-		input_multiplier_2: [0, 0];
-		input_multiplier_3: [0, 0];
-		conflicting_ind_types: [];
-		prob_random: 5;
-		prob_in_game: 2;
-		fund_cost_multiplier: 120;
-		map_colour: 184;
-		callback_flags: 445;
-	}
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6622, industry_distance(paper_mill)) {
-	0..56: return 1025;
-	return 1024;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6623, industry_distance(forest)) {
-	0..16: return 4;
-	action2_6622;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6624, industry_distance(clay_pit)) {
-	0..16: return 4;
-	action2_6623;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6625, founder) {
-	16: action2_6624;
-	return 1024;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_6626, game_mode) {
-	1: action2_6625;
-	return 1024;
-}
-
-#include "../templates/produce_secondary.pnml"
-#include "../templates/extra_text_secondary.pnml"
-
-CHECK_OPENING(action2_6669, 1611, -1)
-
-switch(FEAT_INDUSTRIES, SELF, action2_6670, [STORE_TEMP((588041 - 701265), 256), 32938]) {
-	return;
-}
-
-SWITCH_COLOUR_SCHEME1(action2_6673)
-
-SET_PRODUCTION_COUNTER_PRODUCED(action2_6676)
-
-CHECK_CLOSE_SECONDARY(action2_6679)
-
-switch(FEAT_INDUSTRIES, SELF, action2_6680, current_callback) {
-	0: THIS_ID(produce);
-	IND_CB_LOCATION_CHECK: action2_6626;
-	IND_CB_AVAILABILITY: action2_6669;
-	IND_CB_COLOUR: action2_6673;
-	IND_CB_EXTRA_TEXT_FUND: action2_6670;
-	IND_CB_RANDOM_PROD_CHANGE: action2_6679;
-	IND_CB_MONTHLY_PROD_CHANGE: action2_6676;
-	IND_CB_EXTRA_TEXT_INDUSTRY: THIS_ID(extra_text);
-	THIS_ID(produce);
-}
-
-item(FEAT_INDUSTRIES, paper_mill, 14) {
-	graphics {
-		action2_6680;
-	}
-}
 
 item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_64, 64) {
 	property {
@@ -161,6 +69,68 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_71, 71) {
 		substitute: 71;
 		override: 71;
 		accepted_cargos: [[WOOD, 8], [CLAY, 8], [RFPR, 8]];
+	}
+}
+
+/* *************************************************
+ * Definition of the industry
+ * *************************************************/
+
+/* for secondary production template */
+#define THIS_NUM_OUTPUT_CARGOS    2
+#define THIS_PROD_RATIO_CARGO1    2
+#define THIS_PROD_RATIO_CARGO2    4
+#define THIS_PROD_RATIO_CARGO3    2
+#define THIS_BOOST_12             2
+#define THIS_BOOST_13             2
+#define THIS_BOOST_21             4
+#define THIS_BOOST_23             4
+#define THIS_BOOST_31             2
+#define THIS_BOOST_32             2
+#define THIS_PRODUCTION_SPAN      30
+/* extra text template */
+#define THIS_STR_EXTRA_TEXT       STR_EXTRA_PAPER_MILL
+
+CHECK_INCOMPATIBLE  (paper_mill,   56, CB_RESULT_IND_DISALLOW_UNSUITABLE, return CB_RESULT_IND_ALLOW_LOCATION)
+CHECK_INCOMPATIBLE  (forest,       16, CB_RESULT_IND_DISALLOW_UNSUITABLE, THIS_ID(paper_mill))
+CHECK_INCOMPATIBLE  (clay_pit,     16, CB_RESULT_IND_DISALLOW_UNSUITABLE, THIS_ID(forest))
+CHECK_FOUNDER       (THIS_ID(clay_pit))
+
+SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
+
+#include "../templates/produce_secondary.pnml"
+#include "../templates/check_production_counter.pnml"
+#include "../templates/check_closure.pnml"
+
+#include "../templates/extra_text_secondary.pnml"
+
+#include "../templates/check_availability.pnml"
+
+item(FEAT_INDUSTRIES, paper_mill, 14) {
+	property {
+		substitute: 14;
+		override: 14;
+		nearby_station_name: string(STR_STATIONNAME_MILLS);
+		prod_cargo_types: [GOOD, MNSP];
+		accept_cargo_types: [CLAY, WOOD, RFPR];
+		input_multiplier_1: [0, 0];
+		input_multiplier_2: [0, 0];
+		input_multiplier_3: [0, 0];
+		conflicting_ind_types: [];
+		prob_random: 5;
+		prob_in_game: 2;
+		fund_cost_multiplier: 120;
+		map_colour: 184;
+		callback_flags: 445;
+	}
+	graphics {
+		produce_cargo_arrival:   THIS_ID(produce);
+		availability:            THIS_ID(check_availability);
+		location_check:          THIS_ID(check_location);
+		monthly_prod_change:     THIS_ID(check_production_counter);
+		random_prod_change:      THIS_ID(check_closure);
+		extra_text_industry:     THIS_ID(extra_text);
+		colour:                  THIS_ID(colour);
 	}
 }
 
