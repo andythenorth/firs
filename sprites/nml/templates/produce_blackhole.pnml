@@ -7,7 +7,7 @@
 
 /* Primary production which is boosted by supplies */
 
-produce(THIS_ID(production), 9999, 9999, 0, 0, 0, 0);
+produce(THIS_ID(production), 9999, 9999, 9999, 0, 0, 0);
 
 switch(FEAT_INDUSTRIES, SELF, THIS_ID(produce),
 			[
