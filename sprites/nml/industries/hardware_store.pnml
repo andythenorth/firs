@@ -67,10 +67,22 @@ tilelayout tilelayout_hardware_store_1 {
 	0, 0: tile_hardware_store;
 }
 
+/* *************************************************
+ * Definition of the industry
+ * *************************************************/
+
+#include "../templates/produce_blackhole.pnml"
+#include "../templates/check_closure.pnml"
+#include "../templates/check_production_counter.pnml"
+
+#include "../templates/check_availability.pnml"
+
 item(FEAT_INDUSTRIES, hardware_store, 57) {
 	property {
 		substitute: 0;
-		layouts: [tilelayout_hardware_store_1];
+		layouts: [
+				tilelayout_hardware_store_1
+			];
 		life_type: 0;
 		closure_msg: 18483;
 		prod_increase_msg: 18485;
@@ -94,22 +106,11 @@ item(FEAT_INDUSTRIES, hardware_store, 57) {
 		spec_flags: 16;
 		callback_flags: 385;
 	}
-}
-
-produce(action2_5252, 9999, 9999, 0, 0, 0, 0);
-
-CHECK_OPENING(action2_5255, 0, -1)
-
-switch(FEAT_INDUSTRIES, SELF, switch_main_hardware_store, current_callback) {
-	IND_CB_AVAILABILITY: action2_5255;
-	IND_CB_EXTRA_TEXT_FUND: return string(STR_GENERIC_NEWLINE);
-	IND_CB_EXTRA_TEXT_INDUSTRY: return string(STR_GENERIC_NEWLINE);
-	action2_5252;
-}
-
-item(FEAT_INDUSTRIES, hardware_store, 57) {
 	graphics {
-		switch_main_hardware_store;
+		produce_cargo_arrival:   THIS_ID(produce);
+		availability:            THIS_ID(check_availability);
+		monthly_prod_change:     THIS_ID(check_production_counter);
+		random_prod_change:      THIS_ID(check_closure);
 	}
 }
 
