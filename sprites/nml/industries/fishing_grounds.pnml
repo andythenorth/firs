@@ -332,10 +332,32 @@ tilelayout tilelayout_fishing_grounds_4 {
 	5, 7: 255;
 }
 
+/* *************************************************
+ * Definition of the industry
+ * *************************************************/
+
+#define THIS_STR_EXTRA_SUPPLIES        STR_EXTRA_FARM_SUPPLIES
+
+CHECK_NEARBY_CLUSTER(fishing_grounds,  16, 60, 3, 4, return CB_RESULT_IND_DISALLOW_UNSUITABLE, return CB_RESULT_IND_ALLOW_LOCATION)
+CHECK_INCOMPATIBLE  (fishing_harbour,  16, CB_RESULT_IND_DISALLOW_UNSUITABLE, THIS_ID(fishing_grounds))
+CHECK_COAST_DISTANCE(coastal_distance, 0, param_max_coastal_distance, CB_RESULT_IND_DISALLOW_UNSUITABLE, THIS_ID(fishing_harbour))
+CHECK_FOUNDER       (THIS_ID(coastal_distance))
+
+SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
+
+#include "../templates/produce_primary.pnml"
+
+#include "../templates/check_availability.pnml"
+
 item(FEAT_INDUSTRIES, fishing_grounds, 32) {
 	property {
 		substitute: 5;
-		layouts: [tilelayout_fishing_grounds_1, tilelayout_fishing_grounds_2, tilelayout_fishing_grounds_3, tilelayout_fishing_grounds_4];
+		layouts: [
+				tilelayout_fishing_grounds_1,
+				tilelayout_fishing_grounds_2,
+				tilelayout_fishing_grounds_3,
+				tilelayout_fishing_grounds_4
+			];
 		life_type: 1;
 		closure_msg: 18483;
 		prod_increase_msg: 18485;
@@ -358,75 +380,15 @@ item(FEAT_INDUSTRIES, fishing_grounds, 32) {
 		map_colour: 158;
 		remove_cost_multiplier: 0;
 		spec_flags: 1156;
-		callback_flags: 1081;
 	}
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4092, industry_distance(fishing_harbour)) {
-	16..60: return 1024;
-	return 4;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4093, (((industry_count(31) * 3) / 4) / industry_clusters)) {
-	0: return 1024;
-	action2_4092;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4094, STORE_TEMP(-1, 256)) {
-	0: action2_4093;
-	action2_4093;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4095, UCMP(var[0x8B, 0, 65535], param_max_coastal_distance)) {
-	2: return 4;
-	action2_4094;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4096, founder) {
-	16: action2_4095;
-	return 1024;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4097, game_mode) {
-	1: action2_4096;
-	return 1024;
-}
-
-produce(action2_4098, 9999, 0, 0, 0, 0, 0);
-
-switch(FEAT_INDUSTRIES, SELF, action2_4099, (current_date + 1)) {
-	0: return 1;
-	return 0;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4100, (extra_callback_info2 & 255)) {
-	1: return 1;
-	2: return 1;
-	action2_4099;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4101, restrict_open_during_gameplay) {
-	1..255: action2_4100;
-	action2_4099;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_4102, [STORE_TEMP(-701265, 256), 32928]) {
-	return;
-}
-
-switch(FEAT_INDUSTRIES, SELF, switch_main_fishing_grounds, current_callback) {
-	0: action2_4098;
-	IND_CB_LOCATION_CHECK: action2_4097;
-	IND_CB_AVAILABILITY: action2_4101;
-	IND_CB_EXTRA_TEXT_FUND: action2_4102;
-	41: return 0;
-	53: return 0;
-	action2_4098;
-}
-
-item(FEAT_INDUSTRIES, fishing_grounds, 32) {
 	graphics {
-		switch_main_fishing_grounds;
+		produce_cargo_arrival:   THIS_ID(produce);
+		availability:            THIS_ID(check_availability);
+		location_check:          THIS_ID(check_location);
+		monthly_prod_change:     return CB_RESULT_IND_PROD_NO_CHANGE;
+		random_prod_change:      return CB_RESULT_IND_PROD_NO_CHANGE;
+//		extra_text_industry:     // no extra text. No production increase by means of FMSP
+		colour:                  THIS_ID(colour);
 	}
 }
 
