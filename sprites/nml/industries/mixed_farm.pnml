@@ -302,7 +302,7 @@ item(FEAT_INDUSTRIES, mixed_farm, 29) {
 		new_ind_msg: 18477;
 		name: string(STR_IND_MIXEDFARM);
 		nearby_station_name: string(STR_STATIONNAME_FARMS);
-		prod_cargo_types: [FMSP, FICR];
+		prod_cargo_types: [LVST, FICR];
 		accept_cargo_types: [FMSP];
 		prod_multiplier: [2, 2];
 		input_multiplier_1: [0, 0];
