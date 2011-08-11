@@ -7,95 +7,9 @@
 
 #define THIS_ID(...) coal_mine ## __VA_ARGS__
 
-#define THIS_STR_EXTRA_SUPPLIES        STR_EXTRA_ENGINEERING_SUPPLIES
-
-item(FEAT_INDUSTRIES, coal_mine, 0) {
-	property {
-		substitute: 0;
-		override: 0;
-		accept_cargo_types: [ENSP, 255, 255];
-		prod_multiplier: [14, 0];
-		input_multiplier_1: [0, 0];
-		conflicting_ind_types: [];
-		prob_random: 8;
-		prob_in_game: 3;
-		prospect_chance: 0.75;
-		fund_cost_multiplier: 252;
-		map_colour: 1;
-		callback_flags: 1339;
-	}
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_3643, industry_distance(coal_mine)) {
-	20..70: return 1024;
-	return 4;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_3644, (((industry_count(0) * 2) / 3) / industry_clusters)) {
-	0: return 1024;
-	action2_3643;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_3645, STORE_TEMP(-1, 256)) {
-	0: action2_3644;
-	action2_3644;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_3646, industry_distance(brick_works)) {
-	0..16: return 4;
-	action2_3645;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_3647, industry_distance(cement_plant)) {
-	0..16: return 4;
-	action2_3646;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_3648, industry_distance(steelmill)) {
-	0..16: return 4;
-	action2_3647;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_3649, industry_distance(lime_kiln)) {
-	0..16: return 4;
-	action2_3648;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_3650, founder) {
-	16: action2_3649;
-	return 1024;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_3651, game_mode) {
-	1: action2_3650;
-	return 1024;
-}
-
-#include "../templates/produce_primary.pnml"
-#include "../templates/check_primary_production_level.pnml"
-#include "../templates/extra_text_primary.pnml"
-
-CHECK_OPENING(action2_3667, 0, -1)
-
-SWITCH_COLOUR_SCHEME1(action2_3671)
-
-switch(FEAT_INDUSTRIES, SELF, switch_main_coal_mine, current_callback) {
-	0: THIS_ID(produce);
-	IND_CB_LOCATION_CHECK: action2_3651;
-	IND_CB_AVAILABILITY: action2_3667;
-	IND_CB_COLOUR: action2_3671;
-	IND_CB_EXTRA_TEXT_FUND:     return;
-	IND_CB_RANDOM_PROD_CHANGE:  THIS_ID(check_closure);
-	IND_CB_MONTHLY_PROD_CHANGE: THIS_ID(check_production_level);
-	IND_CB_EXTRA_TEXT_INDUSTRY: THIS_ID(extra_text);
-	THIS_ID(produce);
-}
-
-item(FEAT_INDUSTRIES, coal_mine, 0) {
-	graphics {
-		switch_main_coal_mine;
-	}
-}
+/* *************************************************
+ * Definition of the industry tiles
+ * *************************************************/
 
 item(FEAT_INDUSTRYTILES, tile_coal_mine1, 0) {
 	property {
@@ -159,5 +73,53 @@ item(FEAT_INDUSTRYTILES, tile_coal_mine7, 6) {
 		callback_flags: 0;
 	}
 }
+
+/* *************************************************
+ * Definition of the industry
+ * *************************************************/
+
+#define THIS_STR_EXTRA_SUPPLIES        STR_EXTRA_ENGINEERING_SUPPLIES
+
+CHECK_NEARBY_CLUSTER(coal_mine,    20, 70, 2, 3, return CB_RESULT_IND_DISALLOW_UNSUITABLE, return CB_RESULT_IND_ALLOW_LOCATION)
+CHECK_INCOMPATIBLE  (brick_works,  16, CB_RESULT_IND_DISALLOW_UNSUITABLE, THIS_ID(coal_mine))
+CHECK_INCOMPATIBLE  (cement_plant, 16, CB_RESULT_IND_DISALLOW_UNSUITABLE, THIS_ID(brick_works))
+CHECK_INCOMPATIBLE  (steelmill,    16, CB_RESULT_IND_DISALLOW_UNSUITABLE, THIS_ID(cement_plant))
+CHECK_INCOMPATIBLE  (lime_kiln,    16, CB_RESULT_IND_DISALLOW_UNSUITABLE, THIS_ID(steelmill))
+CHECK_FOUNDER       (THIS_ID(lime_kiln))
+
+SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
+
+#include "../templates/produce_primary.pnml"
+#include "../templates/check_primary_production_level.pnml"
+
+#include "../templates/extra_text_primary.pnml"
+
+#include "../templates/check_availability.pnml"
+
+item(FEAT_INDUSTRIES, coal_mine, 0) {
+	property {
+		substitute: 0;
+		override: 0;
+		accept_cargo_types: [ENSP];
+		prod_multiplier: [14, 0];
+		input_multiplier_1: [0, 0];
+		conflicting_ind_types: [];
+		prob_random: 8;
+		prob_in_game: 3;
+		prospect_chance: 0.75;
+		fund_cost_multiplier: 252;
+		map_colour: 1;
+	}
+	graphics {
+		produce_cargo_arrival:   THIS_ID(produce);
+		availability:            THIS_ID(check_availability);
+		location_check:          THIS_ID(check_location);
+		monthly_prod_change:     THIS_ID(check_production_level);
+		random_prod_change:      THIS_ID(check_closure);
+		extra_text_industry:     THIS_ID(extra_text);
+		colour:                  THIS_ID(colour);
+	}
+}
+
 #include "../templates/undefs.pnml"
 
