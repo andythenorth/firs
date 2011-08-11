@@ -1,0 +1,152 @@
+/*
+ * This file is part of FIRS Industry Set for OpenTTD.
+ * FIRS is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 2.
+ * FIRS is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+#define THIS_ID(...) recycling_depot ## __VA_ARGS__
+
+item(FEAT_INDUSTRYTILES, tile_recycling_depot, 202) {
+	property {
+		substitute: 0;
+		accepted_cargos: [];
+		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
+	}
+}
+
+spriteset(spriteset_7146, "sprites/graphics/industries/recyclingdepot.pcx") { tmpl_ground_tile(10, 10) } 
+spriteset(spriteset_7147, "sprites/graphics/industries/recyclingdepot.pcx") { tmpl_ground_tile(80, 10) } 
+spritelayout action2_7148 {
+	ground {
+		sprite: GROUNDSPRITE_CONCRETE;
+	}
+	building {
+		sprite: spriteset_7146;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+}
+
+spritelayout action2_7149 {
+	ground {
+		sprite: GROUNDSPRITE_CONCRETE;
+	}
+	building {
+		sprite: spriteset_7147;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_7150, relative_pos) {
+	0: action2_7148;
+	action2_7149;
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, action2_7151, layout_num) {
+	1: action2_7150;
+	action2_7150;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, action2_7152, terrain_type) {
+	1: action2_7151;
+	4: action2_7151;
+	action2_7151;
+}
+
+item(FEAT_INDUSTRYTILES, tile_recycling_depot, 202) {
+	graphics {
+		action2_7152;
+	}
+}
+
+tilelayout tilelayout_recycling_depot_1 {
+	0, 0: tile_recycling_depot;
+	0, 1: tile_recycling_depot;
+	1, 0: tile_recycling_depot;
+	1, 1: tile_recycling_depot;
+}
+
+
+/* *************************************************
+ * Definition of the industry
+ * *************************************************/
+
+#define THIS_STR_EXTRA_SUPPLIES STR_EXTRA_ENGINEERING_SUPPLIES
+/* availability years */
+#define THIS_MIN_YEAR 1998
+
+CHECK_INCOMPATIBLE  (recycling_depot, 16, CB_RESULT_IND_DISALLOW_UNSUITABLE, return CB_RESULT_IND_ALLOW_LOCATION)
+CHECK_TOWN_DISTANCE (town_distance,    0, 256, THIS_ID(recycling_depot))
+CHECK_FOUNDER       (THIS_ID(town_distance))
+
+SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
+
+/* Production template not used. We have our separate one, see below */
+#include "../templates/check_primary_production_level.pnml"
+
+#include "../templates/extra_text_primary.pnml"
+
+#include "../templates/check_availability.pnml"
+
+
+/* We have a special production code here:
+ * Production depends on the town population: population / 12 is output
+ */
+produce(THIS_ID(production), 
+		waiting_cargo_1, // should be 0
+		waiting_cargo_2, // should be 0
+		waiting_cargo_3, // should be 0
+		LOAD_TEMP(1),    // we stored output here
+		0,               // no 2nd output
+		0                // don't repeat
+		);
+/* Parent scope is towns. var 0x82 is the population
+ * TODO: use nicer variable names when towns are implemented
+ * in NML */
+switch(FEAT_INDUSTRIES, PARENT, THIS_ID(produce), [STORE_TEMP(((var[0x82, 3, 8191] + 11) / 12), 1)]) {
+	0: THIS_ID(production);
+	THIS_ID(production);
+}
+
+item(FEAT_INDUSTRIES, recycling_depot, 24) {
+	property {
+		layouts: [
+				tilelayout_recycling_depot_1
+			];
+		substitute:             0;
+		life_type: 1;
+		closure_msg: 18483;
+		prod_increase_msg: 18485;
+		prod_decrease_msg: 18489;
+		new_ind_msg: 18477;
+		name: string(STR_IND_RECYCLING_DEPOT);
+		prod_cargo_types: [RCYC];
+		accept_cargo_types: [];
+		prod_multiplier: [0, 0];
+		input_multiplier_1: [0, 0];
+		input_multiplier_2: [0, 0];
+		input_multiplier_3: [0, 0];
+		min_cargo_distr: 2;
+		conflicting_ind_types: [];
+		prob_random: 20;
+		prob_in_game: 20;
+		prospect_chance: 0.75;
+		fund_cost_multiplier: 118;
+		map_colour: 191;
+		remove_cost_multiplier: 0;
+		spec_flags:             0;
+	}
+	graphics {
+		produce_cargo_arrival:   THIS_ID(produce);
+		availability:            THIS_ID(check_availability);
+		location_check:          THIS_ID(check_location);
+		monthly_prod_change:     THIS_ID(check_production_level);
+		random_prod_change:      THIS_ID(check_closure);
+		extra_text_industry:     THIS_ID(extra_text);
+		colour:                  THIS_ID(colour);
+	}
+}
+
+#include "../templates/undefs.pnml"
