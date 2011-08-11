@@ -1,0 +1,52 @@
+/*
+ * This file is part of FIRS Industry Set for OpenTTD.
+ * FIRS is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 2.
+ * FIRS is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/*
+ * Template which maps the random colour of an industry to an actual
+ * colour
+ */
+#define SWITCH_COLOUR_SCHEME1(name) \
+switch(FEAT_INDUSTRIES, SELF, name, colour) { \
+	0: return 0; \
+	1: return 1; \
+	2: return 2; \
+	3: return 13; \
+	4: return 2; \
+	5: return 5; \
+	6: return 1; \
+	7: return 1; \
+	8: return 0; \
+	9: return 14; \
+	10: return 10; \
+	11: return 11; \
+	12: return 13; \
+	13: return 13; \
+	14: return 14; \
+	15: return 14; \
+	return 0; \
+}
+
+#define SWITCH_COLOUR_SCHEME2(name) \
+switch(FEAT_INDUSTRIES, SELF, name, colour) { \
+	0: return 5; \
+	1: return 1; \
+	2: return 2; \
+	3: return 3; \
+	4: return 2; \
+	5: return 5; \
+	6: return 1; \
+	7: return 7; \
+	8: return 5; \
+	9: return 14; \
+	10: return 10; \
+	11: return 10; \
+	12: return 3; \
+	13: return 13; \
+	14: return 14; \
+	15: return 15; \
+	return 0; \
+}
