@@ -61,10 +61,35 @@ tilelayout tilelayout_dredging_site_1 {
 	2, 4: 255;
 }
 
+/* *************************************************
+ * Definition of the industry
+ * *************************************************/
+
+#define THIS_STR_EXTRA_SUPPLIES        STR_EXTRA_ENGINEERING_SUPPLIES
+
+CHECK_INCOMPATIBLE  (dredging_site, 56, CB_RESULT_IND_DISALLOW_UNSUITABLE, return CB_RESULT_IND_ALLOW_LOCATION)
+CHECK_INCOMPATIBLE  (lime_kiln,     16, CB_RESULT_IND_DISALLOW_UNSUITABLE, THIS_ID(dredging_site))
+CHECK_INCOMPATIBLE  (glass_works,   16, CB_RESULT_IND_DISALLOW_UNSUITABLE, THIS_ID(lime_kiln))
+CHECK_INCOMPATIBLE  (cement_plant,  16, CB_RESULT_IND_DISALLOW_UNSUITABLE, THIS_ID(glass_works))
+CHECK_INCOMPATIBLE  (brick_works,   16, CB_RESULT_IND_DISALLOW_UNSUITABLE, THIS_ID(cement_plant))
+CHECK_COAST_DISTANCE(coastal_distance, 0, param_max_coastal_distance, CB_RESULT_IND_DISALLOW_UNSUITABLE, THIS_ID(brick_works))
+CHECK_FOUNDER       (THIS_ID(coastal_distance))
+
+SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
+
+#include "../templates/produce_primary.pnml"
+#include "../templates/check_primary_production_level.pnml"
+
+#include "../templates/extra_text_primary.pnml"
+
+#include "../templates/check_availability.pnml"
+
 item(FEAT_INDUSTRIES, dredging_site, 20) {
 	property {
 		substitute: 0;
-		layouts: [tilelayout_dredging_site_1];
+		layouts: [
+				tilelayout_dredging_site_1
+			];
 		life_type: 1;
 		closure_msg: 18483;
 		prod_increase_msg: 18485;
@@ -87,73 +112,15 @@ item(FEAT_INDUSTRIES, dredging_site, 20) {
 		map_colour: 195;
 		remove_cost_multiplier: 0;
 		spec_flags: 4;
-		callback_flags: 1469;
 	}
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_3946, industry_distance(dredging_site)) {
-	0..56: return 1025;
-	return 1024;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_3947, industry_distance(lime_kiln)) {
-	0..16: return 4;
-	action2_3946;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_3948, industry_distance(glass_works)) {
-	0..16: return 4;
-	action2_3947;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_3949, industry_distance(cement_plant)) {
-	0..16: return 4;
-	action2_3948;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_3950, industry_distance(brick_works)) {
-	0..16: return 4;
-	action2_3949;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_3951, UCMP(var[0x8B, 0, 65535], param_max_coastal_distance)) {
-	2: return 4;
-	action2_3950;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_3952, founder) {
-	16: action2_3951;
-	return 1024;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_3953, game_mode) {
-	1: action2_3952;
-	return 1024;
-}
-
-#include "../templates/produce_primary.pnml"
-#include "../templates/check_primary_production_level.pnml"
-#include "../templates/extra_text_primary.pnml"
-
-CHECK_OPENING(action2_3969, 1852, -1)
-
-SWITCH_COLOUR_SCHEME1(action2_3973)
-
-switch(FEAT_INDUSTRIES, SELF, switch_main_dredging_site, current_callback) {
-	0: THIS_ID(produce);
-	IND_CB_LOCATION_CHECK: action2_3953;
-	IND_CB_AVAILABILITY: action2_3969;
-	IND_CB_COLOUR: action2_3973;
-	IND_CB_EXTRA_TEXT_FUND:     return;
-	IND_CB_RANDOM_PROD_CHANGE:  THIS_ID(check_closure);
-	IND_CB_MONTHLY_PROD_CHANGE: THIS_ID(check_production_level);
-	IND_CB_EXTRA_TEXT_INDUSTRY: THIS_ID(extra_text);
-	THIS_ID(produce);
-}
-
-item(FEAT_INDUSTRIES, dredging_site, 20) {
 	graphics {
-		switch_main_dredging_site;
+		produce_cargo_arrival:   THIS_ID(produce);
+		availability:            THIS_ID(check_availability);
+		location_check:          THIS_ID(check_location);
+		monthly_prod_change:     THIS_ID(check_production_level);
+		random_prod_change:      THIS_ID(check_closure);
+		extra_text_industry:     THIS_ID(extra_text);
+		colour:                  THIS_ID(colour);
 	}
 }
 #include "../templates/undefs.pnml"
