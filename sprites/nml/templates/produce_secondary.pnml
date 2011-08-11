@@ -55,12 +55,13 @@ produce (THIS_ID(simple_produce), waiting_cargo_1, waiting_cargo_2, waiting_carg
 			LOAD_PERM(var_leftover_cargo_1) / MAX_SUM_PROD_RATIO / THIS_NUM_OUTPUT_CARGOS * LOAD_PERM(var_ratio_cargo_1) +
 			LOAD_PERM(var_leftover_cargo_2) / MAX_SUM_PROD_RATIO / THIS_NUM_OUTPUT_CARGOS * LOAD_PERM(var_ratio_cargo_2) +
 			LOAD_PERM(var_leftover_cargo_3) / MAX_SUM_PROD_RATIO / THIS_NUM_OUTPUT_CARGOS * LOAD_PERM(var_ratio_cargo_3),
-
+			[
 			/* Remove any remainder */
 			STORE_PERM( LOAD_PERM(var_leftover_cargo_1) % (MAX_SUM_PROD_RATIO * THIS_NUM_OUTPUT_CARGOS), var_leftover_cargo_1),
 			STORE_PERM( LOAD_PERM(var_leftover_cargo_2) % (MAX_SUM_PROD_RATIO * THIS_NUM_OUTPUT_CARGOS), var_leftover_cargo_2),
 			STORE_PERM( LOAD_PERM(var_leftover_cargo_3) % (MAX_SUM_PROD_RATIO * THIS_NUM_OUTPUT_CARGOS), var_leftover_cargo_3),
-			0]
+			0
+			]
 );
 
 switch (FEAT_INDUSTRIES, SELF, THIS_ID(produce),
