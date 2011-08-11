@@ -85,23 +85,23 @@ STR_CID_STONE                                                                   
 STR_CID_MANUFACTURING_SUPPLIEs                                                  :{TINYFONT}HP
 STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}HL
 STR_CID_CHEMICALS                                                               :{TINYFONT}CH
-STR_GENERIC_DC33                                                                :{WORD_S} kratten constructiehulpgoederen
+STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                                                :{WORD_S} kratten constructiehulpgoederen
 STR_CID_PETROL                                                                  :{TINYFONT}BZ
 STR_CID_CLAY                                                                    :{TINYFONT}KL
 STR_CID_ALCOHOL                                                                 :{TINYFONT}AL
 STR_CID_RECYCLABLES                                                             :{TINYFONT}RC
 STR_STATIONNAME_FARMS                                                           :{STRING} Boerderij
 STR_STATIONNAME_MILLS                                                           :{STRING} Molen
-STR_GENERIC_DCE3                                                                :{STRING} Bron
+STR_STATIONNAME_WELLS                                                                :{STRING} Bron
 STR_STATIONNAME_CHEMICALS                                                       :{STRING} Raffinaderij
 STR_STATIONNAME_FACTORIES                                                       :{STRING} Fabriek
 STR_STATIONNAME_PLANTS                                                          :{STRING} Werkplaats
 STR_STATIONNAME_PITS                                                            :{STRING} Groeve
-STR_GENERIC_DCE9                                                                :{STRING} Depot
+STR_STATIONNAME_DEPOT                                                                :{STRING} Depot
 STR_STATIONNAME_DREDGING_SITE                                                   :{STRING} Grindgat
 STR_STATIONNAME_FISHING_GROUNDS                                                 :{STRING} Visgebied
 STR_STATIONNAME_SMITHY_FORGE                                                    :{STRING} Smidse
-STR_GENERIC_DCED                                                                :{STRING} Markt
+STR_STATIONNAME_MARKET                                                                :{STRING} Markt
 STR_GENERIC_NEWLINE                                                             :{}
 STR_GRF_DESC                                                                    :{ORANGE}FIRS Industry Replacement Set{}{BLACK}Door: {SILVER}andythenorth{BLACK} en {SILVER}FooBar{BLACK}.{}{BLACK}'1,000 commits en nog niet klaar...'{BLACK}{}{}Website: {SILVER}www.tt-foundry.com/sets/FIRS{BLACK}.Licentie: {SILVER}GPL v2{}{BLACK}Speciale dank aan {SILVER}Ammler{BLACK}, {SILVER}Core Xii{BLACK}, {SILVER}Irwe{BLACK}, {SILVER}planetmaker{BLACK} en {SILVER}Zephyris{}{BLACK}.Gebruikt onderdelen van: {SILVER}eGRVTS{BLACK}, {SILVER}ISR{BLACK} en {SILVER}OpenGFX{BLACK}.
 STR_IND_ALUMINIUM_PLANT                                                         :Aluminiumfabriek
@@ -153,7 +153,7 @@ STR_INFO_LIMIT_REACHED_FARM_SUPPLIES                                            
 STR_INFO_LIMIT_REACHED_MANUFACTURING_SUPPLIES                                   :{WHITE}Accepteert geen productiehulpgoederen{BLACK}{}(limiet bereikt)
 STR_INFO_MAX_STOCKPILE                                                          :{BLACK} (max 800)
 STR_INFO_PRODUCTION_3PER8                                                       :{BLACK}Productie:{}  3t per 8t geleverde productiehulpgoederen{}  5t per 8t geleverd suikerriet{}{}Verhoogt tot 8t per 8t als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
-STR_INFO_PRODUCTION_MACHINE_SHOP                                                :{BLACK}Bouwt en onderhoudt machines.{}{}8t productie voor iedere 8t geleverd.
+STR_EXTRA_MACHINE_SHOP                                                :{BLACK}Bouwt en onderhoudt machines.{}{}8t productie voor iedere 8t geleverd.
 STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :{SILVER}Maximale afstand tot de kust in tegels voor visgebieden en baggermolens.
 STR_PARAM_DESC_DEBUG                                                            :Alleen voor ontwikkelaars.
 STR_PARAM_DESC_ECONOMIES                                                        :Uiteindelijk zal FIRS een keuze aan economieën hebben. Goederen en industrieën varieren in elke economie. Betalingen voor goederen verschillen ook in elke economie. {}{}{SILVER}Op dit moment is slechts één economie :)

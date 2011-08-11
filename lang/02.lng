@@ -86,23 +86,23 @@ STR_CID_STONE                                                                   
 STR_CID_MANUFACTURING_SUPPLIEs                                                  :{TINYFONT}PG
 STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}LB
 STR_CID_CHEMICALS                                                               :{TINYFONT}CH
-STR_GENERIC_DC33                                                                :{WORD_S} Kisten Ersatzteile
+STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                                                :{WORD_S} Kisten Ersatzteile
 STR_CID_PETROL                                                                  :{TINYFONT}TS
 STR_CID_CLAY                                                                    :{TINYFONT}TM
 STR_CID_ALCOHOL                                                                 :{TINYFONT}AL
 STR_CID_RECYCLABLES                                                             :{TINYFONT}WS
 STR_STATIONNAME_FARMS                                                           :{STRING} Hof
 STR_STATIONNAME_MILLS                                                           :{STRING} Mühle
-STR_GENERIC_DCE3                                                                :{STRING} Quelle
+STR_STATIONNAME_WELLS                                                                :{STRING} Quelle
 STR_STATIONNAME_CHEMICALS                                                       :{STRING} Raffinerie
 STR_STATIONNAME_FACTORIES                                                       :{STRING} Fabrik
 STR_STATIONNAME_PLANTS                                                          :{STRING} Werk
 STR_STATIONNAME_PITS                                                            :{STRING} Steinbruch
-STR_GENERIC_DCE9                                                                :{STRING} Lager
+STR_STATIONNAME_DEPOT                                                                :{STRING} Lager
 STR_STATIONNAME_DREDGING_SITE                                                   :{STRING} Baggersee
 STR_STATIONNAME_FISHING_GROUNDS                                                 :{STRING} Fischgrund
 STR_STATIONNAME_SMITHY_FORGE                                                    :{STRING} Schmide
-STR_GENERIC_DCED                                                                :{STRING} Markt
+STR_STATIONNAME_MARKET                                                                :{STRING} Markt
 STR_GENERIC_NEWLINE                                                             :{}
 STR_GRF_DESC                                                                    :{ORANGE}FIRS Industrie-Set{}{BLACK}Von {SILVER}andythenorth{BLACK} und {SILVER}FooBar{BLACK}.{}{BLACK}Website: {SILVER}www.tt-foundry.com/sets/FIRS{}{BLACK}. Lizenz: {SILVER}GPL v20D{BLACK}. Besonderen Dank an {SILVER}Ammler{BLACK}, {SILVER}CoreXii{BLACK}, {SILVER}Irwe{BLACK}, {SILVER}planetmaker{BLACK} und {SILVER}Zephyris{BLACK}.{}FIRS nutzt Teile von {SILVER}eGRVTS{BLACK}, {SILVER}ISR{BLACK} und {SILVER}OpenGFX{BLACK}.
 STR_IND_ALUMINIUM_PLANT                                                         :{G=w}Aluminiumhütte
@@ -155,7 +155,7 @@ STR_INFO_LIMIT_REACHED_FARM_SUPPLIES                                            
 STR_INFO_LIMIT_REACHED_MANUFACTURING_SUPPLIES                                   :{WHITE}Akzeptiert keine Produktionsgüter{BLACK}{}(Lagerkapazität erreicht)
 STR_INFO_MAX_STOCKPILE                                                          :{BLACK} (max 800)
 STR_INFO_PRODUCTION_3PER8                                                       :{BLACK}Produktion:{}  3t pro gelieferter 8t Produktionsgüter{}  5t pro gelieferter 8t Rohrzucker{}{}Steigt auf 8t Produktion pro gelieferter 8t, wenn beide Frachtarten innerhalb eines Monats geliefert werden.
-STR_INFO_PRODUCTION_MACHINE_SHOP                                                :{BLACK}Baut und wartet Maschinen.{}{}8t Produktion pro gelieferter 8t.
+STR_EXTRA_MACHINE_SHOP                                                :{BLACK}Baut und wartet Maschinen.{}{}8t Produktion pro gelieferter 8t.
 STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :{SILVER}Maximaler Abstand von Fischgründen und Baggersees von der Küste in Feldern
 STR_PARAM_DESC_DEBUG                                                            :Für Entwickler
 STR_PARAM_DESC_ECONOMIES                                                        :Sobald fertiggestellt, wird FIRS eine Anzahl verschiedener Wirtschaft(sschwerpunkte) anbieten. Diese unterscheiden sich in Frachtarten, deren Profitabilität und den verfügbaren Industrien.{}{}{SILVER}Zur Zeit gibt es nur einen Wirtschaftstyp.

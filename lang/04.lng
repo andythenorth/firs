@@ -84,23 +84,23 @@ STR_CID_STONE                                                                   
 STR_CID_MANUFACTURING_SUPPLIEs                                                  :{TINYFONT}SM
 STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}SA
 STR_CID_CHEMICALS                                                               :{TINYFONT}PQ
-STR_GENERIC_DC33                                                                :{WORD_S} cajas de suministros de ingeniería
+STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                                                :{WORD_S} cajas de suministros de ingeniería
 STR_CID_PETROL                                                                  :{TINYFONT}FO
 STR_CID_CLAY                                                                    :{TINYFONT}AC
 STR_CID_ALCOHOL                                                                 :{TINYFONT}AL
 STR_CID_RECYCLABLES                                                             :{TINYFONT}RC
 STR_STATIONNAME_FARMS                                                           :{STRING} Granja
 STR_STATIONNAME_MILLS                                                           :{STRING} Planta
-STR_GENERIC_DCE3                                                                :{STRING} Pozos
+STR_STATIONNAME_WELLS                                                                :{STRING} Pozos
 STR_STATIONNAME_CHEMICALS                                                       :{STRING} Refinería
 STR_STATIONNAME_FACTORIES                                                       :{STRING} Fábrica
 STR_STATIONNAME_PLANTS                                                          :{STRING} Planta de Manufactura
 STR_STATIONNAME_PITS                                                            :{STRING} Cantera
-STR_GENERIC_DCE9                                                                :{STRING} Depósito
+STR_STATIONNAME_DEPOT                                                                :{STRING} Depósito
 STR_STATIONNAME_DREDGING_SITE                                                   :{STRING} Zona de Dragado
 STR_STATIONNAME_FISHING_GROUNDS                                                 :{STRING} Zona de Pesca
 STR_STATIONNAME_SMITHY_FORGE                                                    :{STRING} Forja
-STR_GENERIC_DCED                                                                :{STRING} Mercado
+STR_STATIONNAME_MARKET                                                                :{STRING} Mercado
 STR_GENERIC_NEWLINE                                                             :{}
 STR_GRF_DESC                                                                    :{ORANGE}FIRS Industry Replacement Set{}{BLACK}Creado por {SILVER}andythenorth{BLACK} y {SILVER}FooBar{BLACK}.{}{BLACK}'1,000 commits y contando...'{BLACK}{}{}Web: {SILVER}www.tt-foundry.com/sets/FIRS{BLACK}.Licencia: {SILVER}GPL v2{BLACK}. Agradecimientos a {SILVER}Ammler{BLACK}, {SILVER}Core Xii{BLACK}, {SILVER}Irwe{BLACK}, {SILVER}planetmaker{BLACK} y {SILVER}Zephyris{BLACK}. Usa partes de {SILVER}eGRVTS{BLACK}, {SILVER}ISR{BLACK} y {SILVER}OpenGFX{BLACK}.
 STR_IND_ALUMINIUM_PLANT                                                         :Planta de Aluminio
@@ -156,7 +156,7 @@ STR_INFO_MAX_STOCKPILE                                                          
 STR_INFO_MIGHT_CLOSE                                                            :{}{BLACK}Esta industria podría cerrar a menos que se entregue carga en un plazo de:{}{YELLOW} meses
 STR_INFO_NO_CARGO_DELIVERED                                                     :{}{RED}No se ha entregado carga durante al menos{POP_WORD}{POP_WORD}meses. Esta industria podría cerrar pronto. {}
 STR_INFO_PRODUCTION_3PER8                                                       :{BLACK}Producción:{}  3t por cada 8t de suministros de manufactura entregadas{}  5t por cada 8t de caña de azúcar entregadas{}{}Aumenta a 8t por cada 8t si ambas cargas son entregadas en un intervalo inferior a un mes.
-STR_INFO_PRODUCTION_MACHINE_SHOP                                                :{BLACK}Construye y repara maquinaria.{}{}8t producidas por cada 8t entregadas.
+STR_EXTRA_MACHINE_SHOP                                                :{BLACK}Construye y repara maquinaria.{}{}8t producidas por cada 8t entregadas.
 STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :{SILVER}Máxima distancia de las zonas de pesca y  de dragado con la costa (en casillas).
 STR_PARAM_DESC_DEBUG                                                            :Sólo para desarrolladores
 STR_PARAM_DESC_ECONOMIES                                                        :Cuando esté terminado, FIRS permitirá escoger entre diferentes economías. Las cargas e industrias variarán en cada economía, así como los pagos por carga. {}{}{SILVER}Actualmente solamente hay disponible una economía :)

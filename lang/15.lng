@@ -82,22 +82,22 @@ STR_CID_STONE                                                                   
 STR_CID_MANUFACTURING_SUPPLIEs                                                  :{TINYFONT}MS
 STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}FS
 STR_CID_CHEMICALS                                                               :{TINYFONT}CH
-STR_GENERIC_DC33                                                                :{WORD_S} beden strojírenských potřeb
+STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                                                :{WORD_S} beden strojírenských potřeb
 STR_CID_PETROL                                                                  :{TINYFONT}PT
 STR_CID_CLAY                                                                    :{TINYFONT}CL
 STR_CID_ALCOHOL                                                                 :{TINYFONT}AL
 STR_STATIONNAME_FARMS                                                           :{STRING} Farma
 STR_STATIONNAME_MILLS                                                           :{STRING} Pila
-STR_GENERIC_DCE3                                                                :{STRING} Prameny
+STR_STATIONNAME_WELLS                                                                :{STRING} Prameny
 STR_STATIONNAME_CHEMICALS                                                       :{STRING} Rafinérie
 STR_STATIONNAME_FACTORIES                                                       :{STRING} Továrna
 STR_STATIONNAME_PLANTS                                                          :{STRING} Závod
 STR_STATIONNAME_PITS                                                            :{STRING} Lom
-STR_GENERIC_DCE9                                                                :{STRING} Depo
+STR_STATIONNAME_DEPOT                                                                :{STRING} Depo
 STR_STATIONNAME_DREDGING_SITE                                                   :{STRING} Sedimenty
 STR_STATIONNAME_FISHING_GROUNDS                                                 :{STRING} Rybolov
 STR_STATIONNAME_SMITHY_FORGE                                                    :{STRING} Kovárna
-STR_GENERIC_DCED                                                                :{STRING} Tržnice
+STR_STATIONNAME_MARKET                                                                :{STRING} Tržnice
 STR_GENERIC_NEWLINE                                                             :{}
 STR_GRF_DESC                                                                    :{ORANGE}FIRS Industry Replacement Set{}{BLACK}By {SILVER}andythenorth{BLACK} and {SILVER}FooBar{BLACK}.{}{BLACK}'1,000 commits and counting...'{BLACK}{}{}Website: {SILVER}www.tt-foundry.com/sets/FIRS{BLACK}.License: {SILVER}GPL v2{BLACK}.Special thanks to {SILVER}Ammler{BLACK}, {SILVER}Core Xii{BLACK}, {SILVER}Irwe{BLACK}, {SILVER}planetmaker{BLACK} and {SILVER}Zephyris{BLACK}.Uses parts of {SILVER}eGRVTS{BLACK}, {SILVER}ISR{BLACK} and {SILVER}OpenGFX{BLACK}.
 STR_IND_ALUMINIUM_PLANT                                                         :Hliníková huť
@@ -146,7 +146,7 @@ STR_INFO_LIMIT_REACHED_FARM_SUPPLIES                                            
 STR_INFO_LIMIT_REACHED_MANUFACTURING_SUPPLIES                                   :{WHITE}Nepřijímá výrobní suroviny{BLACK}{}(Limit Reached)
 STR_INFO_MAX_STOCKPILE                                                          :{BLACK} (max 800)
 STR_INFO_PRODUCTION_3PER8                                                       :{BLACK}Produkce :{}  3t za 8t dodaných výrobních surovin{}  5t za 8t dodaného cukru{}{}Zvýší se na 8t za každých 8t obou nákladů přivezených během jednoho měsíce od sebe.
-STR_INFO_PRODUCTION_MACHINE_SHOP                                                :{BLACK}Staví a opravuje stroje.{}{}8t produkce na 8t dodaných.
+STR_EXTRA_MACHINE_SHOP                                                :{BLACK}Staví a opravuje stroje.{}{}8t produkce na 8t dodaných.
 STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :{SILVER}Maximální vzdálenost loviště ryb a těžby podvodních sedimentů od pobřeží.
 STR_PARAM_DESC_DEBUG                                                            :Pouze pro vývojáře
 STR_PARAM_DESC_ECONOMIES                                                        :Po dokončení FIRS umožní výběr ekonomik. Náklady a průmysly se liší v různých ekonomikách. Ceny za přepravu se rovněž liší v různých ekonomikách. {}{}{SILVER} V současnosti je pouze jedna ekonomika dostupná :)

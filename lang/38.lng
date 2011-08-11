@@ -64,16 +64,16 @@ STR_CID_PETROL                                                                  
 STR_CID_CLAY                                                                    :{TINYFONT}CL
 STR_STATIONNAME_FARMS                                                           :{STRING} Farma
 STR_STATIONNAME_MILLS                                                           :{STRING} Mlin
-STR_GENERIC_DCE3                                                                :{STRING} Izvor
+STR_STATIONNAME_WELLS                                                                :{STRING} Izvor
 STR_STATIONNAME_CHEMICALS                                                       :{STRING} Rafinerija
 STR_STATIONNAME_FACTORIES                                                       :{STRING} Tvornica
 STR_STATIONNAME_PLANTS                                                          :{STRING} Manufaktura
 STR_STATIONNAME_PITS                                                            :{STRING} Kamenolom
-STR_GENERIC_DCE9                                                                :{STRING} Depo
+STR_STATIONNAME_DEPOT                                                                :{STRING} Depo
 STR_STATIONNAME_DREDGING_SITE                                                   :{STRING} Jaruûaliöte
 STR_STATIONNAME_FISHING_GROUNDS                                                 :{STRING} Ribarska zona
 STR_STATIONNAME_SMITHY_FORGE                                                    :{STRING} éeljezara
-STR_GENERIC_DCED                                                                :{STRING} Trgovina
+STR_STATIONNAME_MARKET                                                                :{STRING} Trgovina
 STR_GENERIC_NEWLINE                                                             :{}
 STR_GRF_DESC                                                                    :{ORANGE}FIRS set industrije{}{BLACK}Od {SILVER}andythenorth{BLACK} i {SILVER}FooBar{BLACK}.{}{BLACK}'1,000 posveta...'{BLACK}{}{}Website: {SILVER}www.tt-foundry.com/sets/FIRS{BLACK}.License: {SILVER}GPL v2{BLACK}.Posebne zahvale za {SILVER}Ammler{BLACK}, {SILVER}Core Xii{BLACK}, {SILVER}Irwe{BLACK}, {SILVER}planetmaker{BLACK} i {SILVER}Zephyris{BLACK}.Koristi dijelove {SILVER}eGRVTS{BLACK}, {SILVER}ISR{BLACK} i {SILVER}OpenGFX{BLACK}.
 STR_IND_ALUMINIUM_PLANT                                                         :Tvornica aluminija
@@ -121,7 +121,7 @@ STR_INFO_LIMIT_REACHED_FARM_SUPPLIES                                            
 STR_INFO_LIMIT_REACHED_MANUFACTURING_SUPPLIES                                   :{WHITE}NNe prihvaca proizvodne potrepötine{BLACK}{}(Dostignut limit)
 STR_INFO_MAX_STOCKPILE                                                          :{BLACK} (max 800)
 STR_INFO_PRODUCTION_3PER8                                                       :{BLACK}Proizvodnja tereta:{}  3t od 8t dostavljenih proizvodnih potrepötina{}  5t od 8t dostavljenog öecera{}{}Povecanje na 8t od 8t ako oba tereta budu dostavljena unutar mjesec dana jedan od drugog.
-STR_INFO_PRODUCTION_MACHINE_SHOP                                                :{BLACK}Proizvodi i servisira strojeve.{}{}8t proizvedeno od 8t dostavljenog.
+STR_EXTRA_MACHINE_SHOP                                                :{BLACK}Proizvodi i servisira strojeve.{}{}8t proizvedeno od 8t dostavljenog.
 STR_PARAM_DESC_DEBUG                                                            :Samo za razvijatelje
 STR_PARAM_DESC_ECONOMIES                                                        :When finished, FIRS will feature a choice of economies. Cargos and industries vary in each economy. Cargo payment rates are also different in each economy. {}{}{SILVER}Currently only one economy is available :)
 STR_PARAM_DESC_NEVER_CLOSE                                                      :Po standardnim postavkama, FIRS primarne industrije nikad se ne zatvaraju.{}{}Ako se ukljuci mogucnost zatvaranja, primarne industrije ce se zatvoriti kada proizvodnja padne na niske razine (razina varira za svaki tip industrije). {SILVER}Iziskuje ukljuceno 'smanjenje primarne proizvodnje'.

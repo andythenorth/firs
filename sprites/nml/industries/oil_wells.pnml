@@ -208,7 +208,7 @@ item(FEAT_INDUSTRIES, oil_wells, 15) {
 		fund_cost_multiplier: 230;
 		map_colour: 152;
 		spec_flags:           0;
-		nearby_station_name: string(STR_GENERIC_DCE3);
+		nearby_station_name: string(STR_STATIONNAME_WELLS);
 	}
 	graphics {
 		produce_cargo_arrival:   THIS_ID(produce);

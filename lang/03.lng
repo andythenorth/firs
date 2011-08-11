@@ -64,16 +64,16 @@ STR_CID_PETROL                                                                  
 STR_CID_CLAY                                                                    :{TINYFONT}CL
 STR_STATIONNAME_FARMS                                                           :{STRING} Ferme
 STR_STATIONNAME_MILLS                                                           :{STRING} Usine
-STR_GENERIC_DCE3                                                                :{STRING} Puits
+STR_STATIONNAME_WELLS                                                                :{STRING} Puits
 STR_STATIONNAME_CHEMICALS                                                       :{STRING} Raffinerie
 STR_STATIONNAME_FACTORIES                                                       :{STRING} Fabrique
 STR_STATIONNAME_PLANTS                                                          :{STRING} Manufacture
 STR_STATIONNAME_PITS                                                            :{STRING} Carrière
-STR_GENERIC_DCE9                                                                :{STRING} Dépot
+STR_STATIONNAME_DEPOT                                                                :{STRING} Dépot
 STR_STATIONNAME_DREDGING_SITE                                                   :{STRING} Dragage
 STR_STATIONNAME_FISHING_GROUNDS                                                 :{STRING} Zone de pêche
 STR_STATIONNAME_SMITHY_FORGE                                                    :{STRING} Forge
-STR_GENERIC_DCED                                                                :{STRING} Marché
+STR_STATIONNAME_MARKET                                                                :{STRING} Marché
 STR_GENERIC_NEWLINE                                                             :{}
 STR_GRF_DESC                                                                    :{ORANGE}FIRS Industry Replacement Set{}{BLACK}By {SILVER}andythenorth{BLACK} and {SILVER}FooBar{BLACK}.{}{BLACK}'1,000 commits and counting...'{BLACK}{}{}Website: {SILVER}www.tt-foundry.com/sets/FIRS{BLACK}.License: {SILVER}GPL v2{BLACK}.Special thanks to {SILVER}Ammler{BLACK}, {SILVER}Core Xii{BLACK}, {SILVER}Irwe{BLACK}, {SILVER}planetmaker{BLACK} and {SILVER}Zephyris{BLACK}.Uses parts of {SILVER}eGRVTS{BLACK}, {SILVER}ISR{BLACK} and {SILVER}OpenGFX{BLACK}.
 STR_IND_ALUMINIUM_PLANT                                                         :Usine d'aluminium
@@ -121,7 +121,7 @@ STR_INFO_LIMIT_REACHED_FARM_SUPPLIES                                            
 STR_INFO_LIMIT_REACHED_MANUFACTURING_SUPPLIES                                   :{WHITE}N'accepte plus de fourniture industrielle{BLACK}{}(Limite Atteinte)
 STR_INFO_MAX_STOCKPILE                                                          :{BLACK} (max 800)
 STR_INFO_PRODUCTION_3PER8                                                       :{BLACK}Marchandises produites:{}  3t pour 8t de fournitures industrielle livrées{}  5t pour 8t de sucre livrées{}{}Augmente par tranche de 8t lorsque les deux marchandises sont livrées à un mois d'intervalle.
-STR_INFO_PRODUCTION_MACHINE_SHOP                                                :{BLACK}Construit et entretien des machines{}{}8t produites pour 8t livrées.
+STR_EXTRA_MACHINE_SHOP                                                :{BLACK}Construit et entretien des machines{}{}8t produites pour 8t livrées.
 STR_PARAM_DESC_DEBUG                                                            :Seulement pour les développeurs
 STR_PARAM_DESC_ECONOMIES                                                        :Lorsque ce sera terminé, FIRS permettra de choisir son économie. Les marchandises et les industries varient en fonction de l'économie choisie. Le paiement du transport est aussi différent dans chaque économie {}{}{SILVER}Actuellement une seule économie est disponible :)
 STR_PARAM_DESC_NEVER_CLOSE                                                      :Par défaut, les industries primaires ne ferment jamais.{}{}Si ce paramètre est activé, les industries primaires fermeront quand leur production tombe à un niveau faible (le niveau varie pour chaque type d'industrie). {SILVER}Necessite 'Permettre la baisse de production des industries primaires' activé.
