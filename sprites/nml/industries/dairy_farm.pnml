@@ -266,10 +266,34 @@ tilelayout tilelayout_dairy_farm_3 {
 	2, 3: tile_dairy_farm;
 }
 
+/* *************************************************
+ * Definition of the industry
+ * *************************************************/
+
+#define THIS_STR_EXTRA_SUPPLIES        STR_EXTRA_FARM_SUPPLIES
+
+CHECK_NEARBY_CLUSTER(dairy_farm, 10, 36, 1, 2, return CB_RESULT_IND_DISALLOW_UNSUITABLE, return CB_RESULT_IND_ALLOW_LOCATION)
+CHECK_INCOMPATIBLE  (dairy,      16, CB_RESULT_IND_DISALLOW_UNSUITABLE, THIS_ID(dairy_farm))
+CHECK_INCOMPATIBLE  (stockyard,  16, CB_RESULT_IND_DISALLOW_UNSUITABLE, THIS_ID(dairy))
+CHECK_FOUNDER       (THIS_ID(stockyard))
+
+SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
+
+#include "../templates/produce_primary.pnml"
+#include "../templates/check_primary_production_level.pnml"
+
+#include "../templates/extra_text_primary.pnml"
+
+#include "../templates/check_availability.pnml"
+
 item(FEAT_INDUSTRIES, dairy_farm, 28) {
 	property {
 		substitute: 0;
-		layouts: [tilelayout_dairy_farm_1, tilelayout_dairy_farm_2, tilelayout_dairy_farm_3];
+		layouts: [
+				tilelayout_dairy_farm_1,
+				tilelayout_dairy_farm_2,
+				tilelayout_dairy_farm_3
+			];
 		life_type: 2;
 		closure_msg: 18483;
 		prod_increase_msg: 18488;
@@ -292,68 +316,15 @@ item(FEAT_INDUSTRIES, dairy_farm, 28) {
 		map_colour: 164;
 		remove_cost_multiplier: 0;
 		spec_flags: 0;
-		callback_flags: 1339;
 	}
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_3724, industry_distance(dairy_farm)) {
-	10..36: return 1024;
-	return 4;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_3725, ((industry_count(28) / 2) / industry_clusters)) {
-	0: return 1024;
-	action2_3724;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_3726, STORE_TEMP(-1, 256)) {
-	0: action2_3725;
-	action2_3725;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_3727, industry_distance(dairy)) {
-	0..16: return 4;
-	action2_3726;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_3728, industry_distance(stockyard)) {
-	0..16: return 4;
-	action2_3727;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_3729, founder) {
-	16: action2_3728;
-	return 1024;
-}
-
-switch(FEAT_INDUSTRIES, SELF, action2_3730, game_mode) {
-	1: action2_3729;
-	return 1024;
-}
-
-#include "../templates/produce_primary.pnml"
-#include "../templates/check_primary_production_level.pnml"
-#include "../templates/extra_text_primary.pnml"
-
-CHECK_OPENING(action2_3746, 0, -1)
-
-SWITCH_COLOUR_SCHEME1(action2_3750)
-
-switch(FEAT_INDUSTRIES, SELF, switch_main_dairy_farm, current_callback) {
-	0: THIS_ID(produce);
-	IND_CB_LOCATION_CHECK: action2_3730;
-	IND_CB_AVAILABILITY: action2_3746;
-	IND_CB_COLOUR: action2_3750;
-	IND_CB_EXTRA_TEXT_FUND: return;
-	IND_CB_RANDOM_PROD_CHANGE:  THIS_ID(check_closure);
-	IND_CB_MONTHLY_PROD_CHANGE: THIS_ID(check_production_level);
-	IND_CB_EXTRA_TEXT_INDUSTRY: THIS_ID(extra_text);
-	THIS_ID(produce);
-}
-
-item(FEAT_INDUSTRIES, dairy_farm, 28) {
 	graphics {
-		switch_main_dairy_farm;
+		produce_cargo_arrival:   THIS_ID(produce);
+		availability:            THIS_ID(check_availability);
+		location_check:          THIS_ID(check_location);
+		monthly_prod_change:     THIS_ID(check_production_level);
+		random_prod_change:      THIS_ID(check_closure);
+		extra_text_industry:     THIS_ID(extra_text);
+		colour:                  THIS_ID(colour);
 	}
 }
 #include "../templates/undefs.pnml"
