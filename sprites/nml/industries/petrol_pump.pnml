@@ -194,6 +194,8 @@ tilelayout tilelayout_petrol_pump_2 {
 /* *************************************************
  * Definition of the industry
  * *************************************************/
+/* availability years */
+#define THIS_MIN_YEAR 1909
 
 #include "../templates/produce_blackhole.pnml"
 #include "../templates/check_secondary_closure.pnml"

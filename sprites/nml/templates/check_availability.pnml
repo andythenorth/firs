@@ -40,7 +40,7 @@ switch (FEAT_INDUSTRIES, SELF, THIS_ID(available_game_mode), game_mode == GAMEMO
 
 /* Allow only within the availability years */
 switch (FEAT_INDUSTRIES, SELF, THIS_ID(check_availability), current_date) {
-	date(1,1,THIS_MIN_YEAR) .. date(31,12,THIS_MAX_YEAR): THIS_ID(available_game_mode);
+	date(THIS_MIN_YEAR,1,1) .. date(THIS_MAX_YEAR,12,31): THIS_ID(available_game_mode);
 	return CB_RESULT_IND_DISALLOW;
 }
 

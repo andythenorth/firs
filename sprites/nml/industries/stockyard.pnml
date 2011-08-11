@@ -671,6 +671,8 @@ tilelayout tilelayout_stockyard_1 {
 /* extra text template */
 #define THIS_STR_EXTRA_TEXT       STR_EXTRA_MEAT_PACKER
 #define THIS_STR_DEBUG_TEXT       STR_EXTRA_TEXT_DEBUG_SECONDARY
+/* availability years */
+#define THIS_MIN_YEAR 1867
 
 
 CHECK_INCOMPATIBLE  (stockyard,     56, CB_RESULT_IND_DISALLOW_UNSUITABLE, return CB_RESULT_IND_ALLOW_LOCATION)

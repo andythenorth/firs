@@ -270,6 +270,8 @@ tilelayout tilelayout_biorefinery_4 {
 /* extra text template */
 #define THIS_STR_EXTRA_TEXT       STR_EXTRA_BIOREFINERY
 #define THIS_STR_DEBUG_TEXT       STR_EXTRA_TEXT_DEBUG_SECONDARY
+/* availability years */
+#define THIS_MIN_YEAR 1997
 
 
 CHECK_INCOMPATIBLE(biorefinery, 56, CB_RESULT_IND_DISALLOW_UNSUITABLE, return CB_RESULT_IND_ALLOW_LOCATION)
@@ -302,8 +304,8 @@ item(FEAT_INDUSTRIES, biorefinery, 46) {
 		new_ind_msg: 18477;
 		name: string(STR_IND_BIOREFINERY);
 		nearby_station_name: string(STR_STATIONNAME_CHEMICALS);
-		prod_cargo_types: [23, 25];
-		accept_cargo_types: [6, 12, 255];
+		prod_cargo_types: [RFPR, PETR];
+		accept_cargo_types: [GRAI, RSGR];
 		prod_multiplier: [0, 0];
 		input_multiplier_1: [0, 0];
 		input_multiplier_2: [0, 0];
@@ -317,7 +319,6 @@ item(FEAT_INDUSTRIES, biorefinery, 46) {
 		map_colour: 186;
 		remove_cost_multiplier: 0;
 		spec_flags: 2048;
-		callback_flags: 2493;
 	}
 	graphics {
 		produce_cargo_arrival:   THIS_ID(produce);

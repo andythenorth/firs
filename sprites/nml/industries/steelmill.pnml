@@ -74,6 +74,8 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_57, 57) {
 #define THIS_PRODUCTION_SPAN      30
 /* extra text template */
 #define THIS_STR_EXTRA_TEXT       STR_EXTRA_STEELMILL
+/* availability years */
+#define THIS_MIN_YEAR 1873
 
 
 CHECK_INCOMPATIBLE  (steelmill,     56, CB_RESULT_IND_DISALLOW_UNSUITABLE, return CB_RESULT_IND_ALLOW_LOCATION)

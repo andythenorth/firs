@@ -48,6 +48,8 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_28, 28) {
  * *************************************************/
 
 #define THIS_STR_EXTRA_SUPPLIES        STR_EXTRA_ENGINEERING_SUPPLIES
+/* availability years */
+#define THIS_MIN_YEAR 1967
 
 CHECK_COAST_DISTANCE(coastal_distance, 0, param_max_coastal_distance, CB_RESULT_IND_DISALLOW_UNSUITABLE, return CB_RESULT_IND_ALLOW_LOCATION)
 CHECK_INCOMPATIBLE  (oil_refinery,    16, CB_RESULT_IND_DISALLOW_UNSUITABLE, THIS_ID(coastal_distance))

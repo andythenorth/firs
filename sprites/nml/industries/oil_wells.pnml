@@ -168,6 +168,8 @@ tilelayout tilelayout_7594_4 {
  * *************************************************/
 
 #define THIS_STR_EXTRA_SUPPLIES STR_EXTRA_ENGINEERING_SUPPLIES
+/* availability years */
+#define THIS_MIN_YEAR 1884
 
 CHECK_INCOMPATIBLE  (oil_refinery, 16, CB_RESULT_IND_DISALLOW_UNSUITABLE, return CB_RESULT_IND_ALLOW_LOCATION)
 CHECK_FOUNDER       (THIS_ID(oil_refinery))

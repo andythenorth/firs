@@ -590,6 +590,8 @@ tilelayout tilelayout_furniture_factory_5 {
 #define THIS_PRODUCTION_SPAN      30
 /* extra text template */
 #define THIS_STR_EXTRA_TEXT       STR_EXTRA_FURNITURE_FACTORY
+/* availability years */
+#define THIS_MIN_YEAR 1840
 
 CHECK_INCOMPATIBLE  (furniture_factory, 56, CB_RESULT_IND_DISALLOW_UNSUITABLE, return CB_RESULT_IND_ALLOW_LOCATION)
 CHECK_FOUNDER       (THIS_ID(furniture_factory))
