@@ -1772,8 +1772,7 @@ item(FEAT_INDUSTRIES, iron_works, 21) {
 		fund_cost_multiplier: 69;
 		map_colour: 194;
 		remove_cost_multiplier: 0;
-		spec_flags: 0;
-		callback_flags: 445;
+		spec_flags:             0;
 	}
 	graphics {
 		produce_cargo_arrival:   THIS_ID(produce);

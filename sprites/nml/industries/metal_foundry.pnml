@@ -1907,8 +1907,7 @@ item(FEAT_INDUSTRIES, metal_foundry, 9) {
 		fund_cost_multiplier: 120;
 		map_colour: 123;
 		remove_cost_multiplier: 0;
-		spec_flags: 0;
-		callback_flags: 445;
+		spec_flags:             0;
 	}
 	graphics {
 		produce_cargo_arrival:   THIS_ID(produce);

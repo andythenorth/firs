@@ -273,8 +273,7 @@ item(FEAT_INDUSTRIES, smithy_forge, 6) {
 		fund_cost_multiplier: 63;
 		map_colour: 133;
 		remove_cost_multiplier: 0;
-		spec_flags: 16;
-		callback_flags: 2493;
+		spec_flags:             bitmask(IND_FLAG_ONLY_IN_TOWNS);
 	}
 	graphics {
 		produce_cargo_arrival:   THIS_ID(produce);

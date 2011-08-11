@@ -113,7 +113,7 @@ item(FEAT_INDUSTRIES, dredging_site, 20) {
 		fund_cost_multiplier: 180;
 		map_colour: 195;
 		remove_cost_multiplier: 0;
-		spec_flags: 4;
+		spec_flags:             bitmask(IND_FLAG_BUILT_ON_WATER);
 	}
 	graphics {
 		produce_cargo_arrival:   THIS_ID(produce);

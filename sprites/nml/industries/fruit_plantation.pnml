@@ -5263,7 +5263,7 @@ item(FEAT_INDUSTRIES, fruit_plantation, 30) {
 		prospect_chance: 0.75;
 		fund_cost_multiplier: 54;
 		map_colour: 86;
-		spec_flags: 0;
+		spec_flags:           0;
 	}
 	graphics {
 		produce_cargo_arrival:   THIS_ID(produce);

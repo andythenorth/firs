@@ -760,8 +760,7 @@ item(FEAT_INDUSTRIES, cement_plant, 43) {
 		fund_cost_multiplier: 203;
 		map_colour: 19;
 		remove_cost_multiplier: 0;
-		spec_flags: 4096;
-		callback_flags: 2493;
+		spec_flags:             bitmask(IND_FLAG_MILITARY_HELICOPTER_CAN_EXPLODE);
 	}
 	graphics {
 		produce_cargo_arrival:   THIS_ID(produce);

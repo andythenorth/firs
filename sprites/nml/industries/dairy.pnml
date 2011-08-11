@@ -1436,8 +1436,7 @@ item(FEAT_INDUSTRIES, dairy, 36) {
 		fund_cost_multiplier: 45;
 		map_colour: 15;
 		remove_cost_multiplier: 0;
-		spec_flags: 4096;
-		callback_flags: 445;
+		spec_flags:             bitmask(IND_FLAG_MILITARY_HELICOPTER_CAN_EXPLODE);
 	}
 	graphics {
 		produce_cargo_arrival:   THIS_ID(produce);

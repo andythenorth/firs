@@ -431,8 +431,7 @@ item(FEAT_INDUSTRIES, glass_works, 22) {
 		fund_cost_multiplier: 95;
 		map_colour: 146;
 		remove_cost_multiplier: 0;
-		spec_flags: 4096;
-		callback_flags: 2365;
+		spec_flags:             bitmask(IND_FLAG_MILITARY_HELICOPTER_CAN_EXPLODE);
 	}
 	graphics {
 		produce_cargo_arrival:   THIS_ID(produce);

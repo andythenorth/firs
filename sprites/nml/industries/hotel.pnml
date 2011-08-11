@@ -157,8 +157,7 @@ item(FEAT_INDUSTRIES, hotel, 58) {
 		fund_cost_multiplier: 6;
 		map_colour: 190;
 		remove_cost_multiplier: 0;
-		spec_flags: 16;
-		callback_flags: 385;
+		spec_flags:             bitmask(IND_FLAG_ONLY_IN_TOWNS);
 	}
 	graphics {
 		produce_cargo_arrival:   THIS_ID(produce);

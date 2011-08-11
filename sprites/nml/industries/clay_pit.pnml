@@ -1926,7 +1926,7 @@ item(FEAT_INDUSTRIES, clay_pit, 44) {
 		fund_cost_multiplier: 200;
 		map_colour: 46;
 		remove_cost_multiplier: 0;
-		spec_flags: 0;
+		spec_flags:             0;
 	}
 	graphics {
 		produce_cargo_arrival:   THIS_ID(produce);

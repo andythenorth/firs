@@ -141,8 +141,7 @@ item(FEAT_INDUSTRIES, bauxite_mine, 5) {
 		fund_cost_multiplier: 238;
 		map_colour: 71;
 		remove_cost_multiplier: 0;
-		spec_flags: 0;
-		callback_flags: 1467;
+		spec_flags:             0;
 	}
 	graphics {
 		produce_cargo_arrival:   THIS_ID(produce);
