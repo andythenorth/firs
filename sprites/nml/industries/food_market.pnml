@@ -42,6 +42,7 @@ tilelayout tilelayout_food_market_1 {
 
 item(FEAT_INDUSTRIES, food_market, 59) {
 	property {
+		substitute:             0;
 		layouts: [
 				tilelayout_food_market_1
 			];
@@ -60,7 +61,6 @@ item(FEAT_INDUSTRIES, food_market, 59) {
 		input_multiplier_3:     [0, 0];
 		min_cargo_distr:        2;
 
-		substitute:             0;
 		life_type:              IND_LIFE_TYPE_BLACK_HOLE;
 		conflicting_ind_types:  [food_market];
 		spec_flags:             bitmask(IND_FLAG_ONLY_IN_TOWNS);

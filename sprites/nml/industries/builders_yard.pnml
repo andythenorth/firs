@@ -220,7 +220,7 @@ tilelayout tilelayout_builders_yard_2 {
 
 #include "../templates/check_availability.pnml"
 
-CHECK_TOWN_DISTANCE (town_distance,  0, 64, return CB_RESULT_IND_DISALLOW_UNSUITABLE)
+CHECK_TOWN_DISTANCE (town_distance,  0, 64, return CB_RESULT_IND_ALLOW_LOCATION)
 CHECK_FOUNDER       (THIS_ID(town_distance))
 
 item(FEAT_INDUSTRIES, builders_yard, 63) {

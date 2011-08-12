@@ -79,6 +79,7 @@ tilelayout tilelayout_hardware_store_1 {
 
 item(FEAT_INDUSTRIES, hardware_store, 57) {
 	property {
+		substitute:             0;
 		layouts: [
 				tilelayout_hardware_store_1
 			];
@@ -97,7 +98,6 @@ item(FEAT_INDUSTRIES, hardware_store, 57) {
 		input_multiplier_3:     [0, 0];
 		min_cargo_distr:        2;
 
-		substitute:             0;
 		life_type:              IND_LIFE_TYPE_BLACK_HOLE;
 		conflicting_ind_types:  [hardware_store];
 		spec_flags:             bitmask(IND_FLAG_ONLY_IN_TOWNS);
