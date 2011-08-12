@@ -284,13 +284,13 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_2622, (current_callback & 255)) {
 
 item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_185, 185) {
 	property {
-		substitute: 0;
-		accepted_cargos: [[27, 8], [23, 8], [20, 8]];
-		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
-		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
-		animation_info: [1, 47];
-		animation_speed: 2;
-		animation_triggers: bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE);;
+		substitute:         0;
+		accepted_cargos:    [[AORE, 8], [RFPR, 8], [SCRP, 8]];
+		land_shape_flags:   bitmask(LSF_ONLY_ON_FLAT_LAND);
+		callback_flags:     bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
+		animation_info:     [1, 47];
+		animation_speed:    2;
+		animation_triggers: bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE);
 	}
 
 	graphics {
@@ -423,8 +423,8 @@ item(FEAT_INDUSTRIES, aluminium_plant, 8) {
 		new_ind_msg:            TTD_STR_NEWS_INDUSTRY_CONSTRUCTION;
 		name:                   string(STR_IND_ALUMINIUM_PLANT);
 		nearby_station_name:    string(STR_STATIONNAME_PLANTS);
-		prod_cargo_types: [9, 255];
-		accept_cargo_types: [27, 23, 20];
+		prod_cargo_types:       [STEL];
+		accept_cargo_types:     [AORE, RFPR, SCRP];
 		prod_multiplier: [0, 0];
 		input_multiplier_1: [0, 0];
 		input_multiplier_2: [0, 0];

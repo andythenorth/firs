@@ -129,7 +129,7 @@ item(FEAT_INDUSTRYTILES, THIS_ID(industrytile), 161) {
 		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 		animation_info: [1, 71];
 		animation_speed: 2;
-		animation_triggers: bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE);;
+		animation_triggers: bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE);
 	}
 	graphics {
 		action2_3017;
