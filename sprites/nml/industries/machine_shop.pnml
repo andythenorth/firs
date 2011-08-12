@@ -15,7 +15,7 @@ item(FEAT_INDUSTRYTILES, tile_machine_shop, 186) {
 		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 		animation_info: [1, 47];
 		animation_speed: 2;
-		animation_triggers: 1;
+		animation_triggers: bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE);;
 	}
 }
 
