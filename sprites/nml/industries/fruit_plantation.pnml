@@ -5249,11 +5249,11 @@ item(FEAT_INDUSTRIES, fruit_plantation, 30) {
 				tilelayout_5807_4
 			];
 		life_type:              IND_LIFE_TYPE_ORGANIC;
-		closure_msg: 18483;
-		prod_increase_msg: 18485;
-		prod_decrease_msg: 18489;
-		new_ind_msg: 18477;
-		name: 18453;
+		name:                   TTD_STR_INDUSTRY_NAME_FRUIT_PLANTATION;
+		closure_msg:            TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS;
+		prod_increase_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL;
+		prod_decrease_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_GENERAL;
+		new_ind_msg:            TTD_STR_NEWS_INDUSTRY_CONSTRUCTION;
 		prod_cargo_types: [FRVG];
 		accept_cargo_types: [FMSP];
 		prod_multiplier: [2];
@@ -5263,7 +5263,7 @@ item(FEAT_INDUSTRIES, fruit_plantation, 30) {
 		prospect_chance: 0.75;
 		fund_cost_multiplier: 54;
 		map_colour: 86;
-		spec_flags:           0;
+		spec_flags:            0;
 	}
 	graphics {
 		produce_cargo_arrival:   THIS_ID(produce);

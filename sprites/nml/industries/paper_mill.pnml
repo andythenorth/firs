@@ -112,7 +112,7 @@ item(FEAT_INDUSTRIES, paper_mill, 14) {
 	property {
 		substitute: 14;
 		override: 14;
-		nearby_station_name: string(STR_STATIONNAME_MILLS);
+		nearby_station_name:    string(STR_STATIONNAME_MILLS);
 		prod_cargo_types: [GOOD, MNSP];
 		accept_cargo_types: [CLAY, WOOD, RFPR];
 		input_multiplier_1: [0, 0];

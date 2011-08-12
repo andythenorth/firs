@@ -46,10 +46,10 @@ item(FEAT_INDUSTRIES, food_market, 59) {
 				tilelayout_food_market_1
 			];
 		name:                   string(STR_IND_FOOD_MARKET);
-		closure_msg:            18483;
-		prod_increase_msg:      18485;
-		prod_decrease_msg:      18489;
-		new_ind_msg:            18477;
+		closure_msg:            TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS;
+		prod_increase_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL;
+		prod_decrease_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_GENERAL;
+		new_ind_msg:            TTD_STR_NEWS_INDUSTRY_CONSTRUCTION;
 
 		prod_cargo_types:       [];
 		accept_cargo_types:     [FOOD, FRVG, BEER];

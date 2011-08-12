@@ -994,11 +994,11 @@ item(FEAT_INDUSTRIES, fishing_harbour, 31) {
 				tilelayout_fishing_harbour_5
 			];
 		life_type: 4;
-		closure_msg: 18483;
-		prod_increase_msg: 18485;
-		prod_decrease_msg: 18489;
-		new_ind_msg: 18477;
-		name: string(STR_IND_FISHING_HARBOUR);
+		closure_msg:            TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS;
+		prod_increase_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL;
+		prod_decrease_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_GENERAL;
+		new_ind_msg:            TTD_STR_NEWS_INDUSTRY_CONSTRUCTION;
+		name:                   string(STR_IND_FISHING_HARBOUR);
 		prod_cargo_types: [FOOD];
 		accept_cargo_types: [MNSP, FISH];
 		prod_multiplier: [0, 0];

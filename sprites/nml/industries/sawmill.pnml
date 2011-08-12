@@ -138,7 +138,7 @@ item(FEAT_INDUSTRIES, sawmill, 12) {
 	property {
 		substitute: 2;
 		override: 2;
-		nearby_station_name: string(STR_STATIONNAME_MILLS);
+		nearby_station_name:    string(STR_STATIONNAME_MILLS);
 		prod_cargo_types: [WDPR];
 		accept_cargo_types: [WOOD];
 		input_multiplier_1: [0, 0];

@@ -2519,11 +2519,11 @@ item(FEAT_INDUSTRIES, machine_shop, 38) {
 				tilelayout_machine_shop_4,tilelayout_machine_shop_5
 			];
 		life_type: 4;
-		closure_msg: 18483;
-		prod_increase_msg: 18485;
-		prod_decrease_msg: 18489;
-		new_ind_msg: 18477;
-		name: string(STR_IND_MACHINE_SHOP);
+		closure_msg:            TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS;
+		prod_increase_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL;
+		prod_decrease_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_GENERAL;
+		new_ind_msg:            TTD_STR_NEWS_INDUSTRY_CONSTRUCTION;
+		name:                   string(STR_IND_MACHINE_SHOP);
 		prod_cargo_types: [FMSP, ENSP];
 		accept_cargo_types: [STEL, PETR];
 		prod_multiplier: [0, 0];

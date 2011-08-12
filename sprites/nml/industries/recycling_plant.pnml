@@ -269,11 +269,11 @@ item(FEAT_INDUSTRIES, recycling_plant, 23) {
 				tilelayout_recycling_plant_1
 			];
 		life_type: 4;
-		closure_msg: 18483;
-		prod_increase_msg: 18485;
-		prod_decrease_msg: 18490;
-		new_ind_msg: 18477;
-		name: string(STR_IND_RECYCLING_PLANT);
+		closure_msg:            TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS;
+		prod_increase_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL;
+		prod_decrease_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_FARM;
+		new_ind_msg:            TTD_STR_NEWS_INDUSTRY_CONSTRUCTION;
+		name:                   string(STR_IND_RECYCLING_PLANT);
 		prod_cargo_types: [SCRP, MNSP];
 		accept_cargo_types: [RCYC];
 		prod_multiplier: [0, 0];

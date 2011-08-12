@@ -295,12 +295,12 @@ item(FEAT_INDUSTRIES, dairy_farm, 28) {
 				tilelayout_dairy_farm_3
 			];
 		life_type:              IND_LIFE_TYPE_ORGANIC;
-		closure_msg: 18483;
-		prod_increase_msg: 18488;
-		prod_decrease_msg: 18489;
-		new_ind_msg: 18477;
-		name: string(STR_IND_DAIRYFARM);
-		nearby_station_name: string(STR_STATIONNAME_FARMS);
+		closure_msg:            TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS;
+		prod_increase_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_FARM;
+		prod_decrease_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_GENERAL;
+		new_ind_msg:            TTD_STR_NEWS_INDUSTRY_CONSTRUCTION;
+		name:                   string(STR_IND_DAIRYFARM);
+		nearby_station_name:    string(STR_STATIONNAME_FARMS);
 		prod_cargo_types: [FMSP, MILK];
 		accept_cargo_types: [FMSP];
 		prod_multiplier: [2, 2];

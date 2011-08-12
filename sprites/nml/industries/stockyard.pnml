@@ -698,12 +698,12 @@ item(FEAT_INDUSTRIES, stockyard, 37) {
 				tilelayout_stockyard_1
 			];
 		life_type: 4;
-		closure_msg: 18483;
-		prod_increase_msg: 18485;
-		prod_decrease_msg: 18489;
-		new_ind_msg: 18477;
-		name: string(STR_IND_STOCKYARD);
-		nearby_station_name: string(STR_STATIONNAME_FACTORIES);
+		closure_msg:            TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS;
+		prod_increase_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL;
+		prod_decrease_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_GENERAL;
+		new_ind_msg:            TTD_STR_NEWS_INDUSTRY_CONSTRUCTION;
+		name:                   string(STR_IND_STOCKYARD);
+		nearby_station_name:    string(STR_STATIONNAME_FACTORIES);
 		prod_cargo_types: [FOOD];
 		accept_cargo_types: [MNSP, LVST];
 		prod_multiplier: [0, 0];

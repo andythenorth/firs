@@ -417,12 +417,12 @@ item(FEAT_INDUSTRIES, aluminium_plant, 8) {
 				tilelayout_aluminium_plant_3
 			];
 		life_type: 4;
-		closure_msg: 18483;
-		prod_increase_msg: 18485;
-		prod_decrease_msg: 18489;
-		new_ind_msg: 18477;
-		name: string(STR_IND_ALUMINIUM_PLANT);
-		nearby_station_name: string(STR_STATIONNAME_PLANTS);
+		closure_msg:            TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS;
+		prod_increase_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL;
+		prod_decrease_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_GENERAL;
+		new_ind_msg:            TTD_STR_NEWS_INDUSTRY_CONSTRUCTION;
+		name:                   string(STR_IND_ALUMINIUM_PLANT);
+		nearby_station_name:    string(STR_STATIONNAME_PLANTS);
 		prod_cargo_types: [9, 255];
 		accept_cargo_types: [27, 23, 20];
 		prod_multiplier: [0, 0];
