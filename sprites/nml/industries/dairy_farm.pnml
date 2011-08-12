@@ -301,7 +301,7 @@ item(FEAT_INDUSTRIES, dairy_farm, 28) {
 		new_ind_msg:            TTD_STR_NEWS_INDUSTRY_CONSTRUCTION;
 		name:                   string(STR_IND_DAIRYFARM);
 		nearby_station_name:    string(STR_STATIONNAME_FARMS);
-		prod_cargo_types: [FMSP, MILK];
+		prod_cargo_types:       [LVST, MILK];
 		accept_cargo_types: [FMSP];
 		prod_multiplier: [2, 2];
 		input_multiplier_1: [0, 0];

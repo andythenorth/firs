@@ -219,8 +219,8 @@ tilelayout tilelayout_recycling_plant_1 {
 /* for secondary production template */
 #define THIS_NUM_OUTPUT_CARGOS    2
 #define THIS_PROD_RATIO_CARGO1    6
-#define THIS_PROD_RATIO_CARGO2    6
-#define THIS_PROD_RATIO_CARGO3    1
+#define THIS_PROD_RATIO_CARGO2    0
+#define THIS_PROD_RATIO_CARGO3    0
 #define THIS_BOOST_12             0
 #define THIS_BOOST_13             0
 #define THIS_BOOST_21             0
@@ -274,8 +274,8 @@ item(FEAT_INDUSTRIES, recycling_plant, 23) {
 		prod_decrease_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_FARM;
 		new_ind_msg:            TTD_STR_NEWS_INDUSTRY_CONSTRUCTION;
 		name:                   string(STR_IND_RECYCLING_PLANT);
-		prod_cargo_types: [SCRP, MNSP];
-		accept_cargo_types: [RCYC];
+		prod_cargo_types:      [SCRP, MNSP];
+		accept_cargo_types:    [RCYC];
 		prod_multiplier: [0, 0];
 		input_multiplier_1: [0, 0];
 		input_multiplier_2: [0, 0];
