@@ -92,7 +92,7 @@ item(FEAT_INDUSTRIES, dredging_site, 20) {
 		layouts: [
 				tilelayout_dredging_site_1
 			];
-		life_type: 1;
+		life_type:              IND_LIFE_TYPE_EXTRACTIVE;
 		closure_msg: 18483;
 		prod_increase_msg: 18485;
 		prod_decrease_msg: 18489;

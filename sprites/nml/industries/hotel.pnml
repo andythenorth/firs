@@ -137,20 +137,20 @@ item(FEAT_INDUSTRIES, hotel, 58) {
 		layouts: [
 				tilelayout_hotel_1
 			];
-		life_type: 0;
+		life_type:              IND_LIFE_TYPE_BLACK_HOLE;
+		name:                   string(STR_IND_HOTEL);
 		closure_msg: 18483;
 		prod_increase_msg: 18485;
 		prod_decrease_msg: 18489;
 		new_ind_msg: 18477;
-		name: string(STR_IND_HOTEL);
-		prod_cargo_types: [PASS];
-		accept_cargo_types: [FOOD, BEER, PASS];
+		prod_cargo_types:       [PASS];
+		accept_cargo_types:     [FOOD, BEER, PASS];
 		prod_multiplier: [14, 0];
 		input_multiplier_1: [0, 0];
 		input_multiplier_2: [0, 0];
 		input_multiplier_3: [0, 0];
 		min_cargo_distr: 2;
-		conflicting_ind_types: [industry_type(IND_TYPE_NEW, 58)];
+		conflicting_ind_types:  [hotel];
 		prob_random: 10;
 		prob_in_game: 20;
 		prospect_chance: 0.75;

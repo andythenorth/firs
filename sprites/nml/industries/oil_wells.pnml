@@ -192,7 +192,7 @@ item(FEAT_INDUSTRIES, oil_wells, 15) {
 				tilelayout_7594_3,
 				tilelayout_7594_4
 			];
-		life_type: 2;
+		life_type:              IND_LIFE_TYPE_ORGANIC;
 		closure_msg: 18483;
 		prod_increase_msg: 18485;
 		prod_decrease_msg: 18489;

@@ -116,7 +116,7 @@ item(FEAT_INDUSTRIES, recycling_depot, 24) {
 				tilelayout_recycling_depot_1
 			];
 		substitute:             0;
-		life_type: 1;
+		life_type:              IND_LIFE_TYPE_EXTRACTIVE;
 		closure_msg: 18483;
 		prod_increase_msg: 18485;
 		prod_decrease_msg: 18489;

@@ -42,31 +42,34 @@ tilelayout tilelayout_food_market_1 {
 
 item(FEAT_INDUSTRIES, food_market, 59) {
 	property {
-		substitute: 0;
 		layouts: [
 				tilelayout_food_market_1
 			];
-		life_type: 0;
-		closure_msg: 18483;
-		prod_increase_msg: 18485;
-		prod_decrease_msg: 18489;
-		new_ind_msg: 18477;
-		name: string(STR_IND_FOOD_MARKET);
-		prod_cargo_types: [];
-		accept_cargo_types: [FOOD, FRVG, BEER];
-		prod_multiplier: [0, 0];
-		input_multiplier_1: [0, 0];
-		input_multiplier_2: [0, 0];
-		input_multiplier_3: [0, 0];
-		min_cargo_distr: 2;
-		conflicting_ind_types: [industry_type(IND_TYPE_NEW, 59)];
-		prob_random: 24;
-		prob_in_game: 12;
-		prospect_chance: 0.75;
-		fund_cost_multiplier: 6;
-		map_colour: 191;
-		remove_cost_multiplier: 0;
+		name:                   string(STR_IND_FOOD_MARKET);
+		closure_msg:            18483;
+		prod_increase_msg:      18485;
+		prod_decrease_msg:      18489;
+		new_ind_msg:            18477;
+
+		prod_cargo_types:       [];
+		accept_cargo_types:     [FOOD, FRVG, BEER];
+
+		prod_multiplier:        [0, 0];
+		input_multiplier_1:     [0, 0];
+		input_multiplier_2:     [0, 0];
+		input_multiplier_3:     [0, 0];
+		min_cargo_distr:        2;
+
+		substitute:             0;
+		life_type:              IND_LIFE_TYPE_BLACK_HOLE;
+		conflicting_ind_types:  [food_market];
 		spec_flags:             bitmask(IND_FLAG_ONLY_IN_TOWNS);
+		prob_random:            24;
+		prob_in_game:           12;
+		prospect_chance:        0.75;
+		fund_cost_multiplier:   6;
+		remove_cost_multiplier: 0;
+		map_colour:             191;
 	}
 	graphics {
 		produce_cargo_arrival:   THIS_ID(produce);

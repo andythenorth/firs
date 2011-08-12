@@ -1905,7 +1905,7 @@ item(FEAT_INDUSTRIES, clay_pit, 44) {
 				tilelayout_clay_pit_1,
 				tilelayout_clay_pit_2
 			];
-		life_type: 1;
+		life_type:              IND_LIFE_TYPE_EXTRACTIVE;
 		closure_msg: 18483;
 		prod_increase_msg: 18485;
 		prod_decrease_msg: 18489;

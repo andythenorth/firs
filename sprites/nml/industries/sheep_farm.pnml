@@ -393,7 +393,7 @@ item(FEAT_INDUSTRIES, sheep_farm, 27) {
 				tilelayout_sheep_farm_1,
 				tilelayout_sheep_farm_2
 			];
-		life_type: 2;
+		life_type:              IND_LIFE_TYPE_ORGANIC;
 		closure_msg: 18483;
 		prod_increase_msg: 18488;
 		prod_decrease_msg: 18489;

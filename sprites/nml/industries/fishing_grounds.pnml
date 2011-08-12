@@ -358,7 +358,7 @@ item(FEAT_INDUSTRIES, fishing_grounds, 32) {
 				tilelayout_fishing_grounds_3,
 				tilelayout_fishing_grounds_4
 			];
-		life_type: 1;
+		life_type:              IND_LIFE_TYPE_EXTRACTIVE;
 		closure_msg: 18483;
 		prod_increase_msg: 18485;
 		prod_decrease_msg: 18489;

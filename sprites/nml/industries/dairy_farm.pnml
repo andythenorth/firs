@@ -294,7 +294,7 @@ item(FEAT_INDUSTRIES, dairy_farm, 28) {
 				tilelayout_dairy_farm_2,
 				tilelayout_dairy_farm_3
 			];
-		life_type: 2;
+		life_type:              IND_LIFE_TYPE_ORGANIC;
 		closure_msg: 18483;
 		prod_increase_msg: 18488;
 		prod_decrease_msg: 18489;
