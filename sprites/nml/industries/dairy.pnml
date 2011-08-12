@@ -10,7 +10,7 @@
 item(FEAT_INDUSTRYTILES, tile_dairy, 181) {
 	property {
 		substitute: 0;
-		accepted_cargos: [[MNSP, 8], [10, 8], [0, 0]];
+		accepted_cargos:    [[MNSP, 8], [MILK, 8]];
 		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
 		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 		animation_info: [1, 7];

@@ -10,7 +10,7 @@
 item(FEAT_INDUSTRYTILES, tile_smithy_forge, 209) {
 	property {
 		substitute: 0;
-		accepted_cargos: [[STEL, 8], [0, 0], [0, 0]];
+		accepted_cargos: [[STEL, 8]];
 		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
 		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
@@ -67,7 +67,7 @@ switch(FEAT_INDUSTRYTILES, PARENT, switch_smithy_forge_default_layout, layout_nu
 item(FEAT_INDUSTRYTILES, tile_smithy_forge, 209) {
 	property {
 		substitute: 0;
-		accepted_cargos: [[STEL, 8], [0, 0], [0, 0]];
+		accepted_cargos: [[STEL, 8]];
 		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
 		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
@@ -124,7 +124,7 @@ switch(FEAT_INDUSTRYTILES, PARENT, switch_smithy_forge_desert_layout, layout_num
 item(FEAT_INDUSTRYTILES, tile_smithy_forge, 209) {
 	property {
 		substitute: 0;
-		accepted_cargos: [[STEL, 8], [0, 0], [0, 0]];
+		accepted_cargos: [[STEL, 8]];
 		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
 		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}

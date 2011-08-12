@@ -10,7 +10,7 @@
 item(FEAT_INDUSTRYTILES, tile_metal_foundry, 188) {
 	property {
 		substitute: 0;
-		accepted_cargos: [[STEL, 8], [0, 0], [0, 0]];
+		accepted_cargos: [[STEL, 8]];
 		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
 		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 		animation_info: [1, 47];

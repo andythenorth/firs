@@ -10,7 +10,7 @@
 item(FEAT_INDUSTRYTILES, tile_recycling_plant, 201) {
 	property {
 		substitute: 0;
-		accepted_cargos: [[RCYC, 8], [0, 0], [0, 0]];
+		accepted_cargos: [[RCYC, 8]];
 		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
 	}
 }

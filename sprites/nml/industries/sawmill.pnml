@@ -11,7 +11,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_11, 11) {
 	property {
 		substitute: 11;
 		override: 11;
-		accepted_cargos: [[WOOD, 8], [0, 0], [0, 0]];
+		accepted_cargos: [[WOOD, 8]];
 		land_shape_flags: 0;
 		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
@@ -21,7 +21,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_12, 12) {
 	property {
 		substitute: 12;
 		override: 12;
-		accepted_cargos: [[WOOD, 8], [0, 0], [0, 0]];
+		accepted_cargos: [[WOOD, 8]];
 		land_shape_flags: 0;
 		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
@@ -31,7 +31,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_13, 13) {
 	property {
 		substitute: 13;
 		override: 13;
-		accepted_cargos: [[WOOD, 8], [0, 0], [0, 0]];
+		accepted_cargos: [[WOOD, 8]];
 		land_shape_flags: 0;
 		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
@@ -41,7 +41,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_14, 14) {
 	property {
 		substitute: 14;
 		override: 14;
-		accepted_cargos: [[WOOD, 8], [0, 0], [0, 0]];
+		accepted_cargos: [[WOOD, 8]];
 		land_shape_flags: 0;
 		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
@@ -51,7 +51,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_15, 15) {
 	property {
 		substitute: 15;
 		override: 15;
-		accepted_cargos: [[WOOD, 8], [0, 0], [0, 0]];
+		accepted_cargos: [[WOOD, 8]];
 		land_shape_flags: 0;
 		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
