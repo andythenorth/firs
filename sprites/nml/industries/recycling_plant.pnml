@@ -249,17 +249,19 @@ SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
 
 #include "../templates/check_availability.pnml"
 
-/* Decide randomly on cargo output */
-switch(FEAT_INDUSTRIES, SELF, action2_7198, var[0x5F, 8, 3]) {
-	0: return 20;
-	1: return 2327;
-	2: return 2332;
-	return 21;
+/* Decide randomly on cargo output:
+ * First cargo is always MNSP, 2nd is randomly a choice of 4,
+ * 3rd cargo is not allowed nor defined */
+random_switch (FEAT_INDUSTRIES, SELF, THIS_ID(random_output_cargo)) {
+	1: return SCRP;   // scrap metal
+	1: return RFPR;   // chemicals
+	1: return BDMT;   // building materials
+	1: return FMSP;   // farm supplies
 }
 switch(FEAT_INDUSTRIES, SELF, THIS_ID(cargo_output), (extra_callback_info1 & 255)) {
-	1: action2_7198;
-	0: return 18;
-	return 255;
+	0: return MNSP;                   // first output cargo
+	1: THIS_ID(random_output_cargo);  // 2nd output cargo: randomly
+	return 0xFF;                      // terminate callback
 }
 
 item(FEAT_INDUSTRIES, recycling_plant, 23) {
