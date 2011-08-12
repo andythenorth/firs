@@ -167,13 +167,13 @@ tilelayout tilelayout_sugar_refinery_2 {
 #define THIS_NUM_OUTPUT_CARGOS    1
 #define THIS_PROD_RATIO_CARGO1    3
 #define THIS_PROD_RATIO_CARGO2    5
-#define THIS_PROD_RATIO_CARGO3    5
-#define THIS_BOOST_12             2
-#define THIS_BOOST_13             1
-#define THIS_BOOST_21             2
-#define THIS_BOOST_23             1
-#define THIS_BOOST_31             2
-#define THIS_BOOST_32             2
+#define THIS_PROD_RATIO_CARGO3    0
+#define THIS_BOOST_12             3
+#define THIS_BOOST_13             0
+#define THIS_BOOST_21             5
+#define THIS_BOOST_23             0
+#define THIS_BOOST_31             0
+#define THIS_BOOST_32             0
 #define THIS_PRODUCTION_SPAN      30
 /* extra text template */
 #define THIS_STR_EXTRA_TEXT       STR_INFO_PRODUCTION_3PER8
