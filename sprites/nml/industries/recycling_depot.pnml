@@ -112,10 +112,10 @@ switch(FEAT_INDUSTRIES, PARENT, THIS_ID(produce), [STORE_TEMP(((var[0x82, 3, 819
 
 item(FEAT_INDUSTRIES, recycling_depot, 24) {
 	property {
+		substitute:             0;
 		layouts: [
 				tilelayout_recycling_depot_1
 			];
-		substitute:             0;
 		life_type:              IND_LIFE_TYPE_EXTRACTIVE;
 		closure_msg:            TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS;
 		prod_increase_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL;

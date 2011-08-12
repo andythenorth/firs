@@ -199,11 +199,11 @@ SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
 
 item(FEAT_INDUSTRIES, sugar_refinery, 19) {
 	property {
+		substitute:             0;
 		layouts: [
 				tilelayout_sugar_refinery_1,
 				tilelayout_sugar_refinery_2
 			];
-		substitute:             0;
 		life_type:              4;
 		name:                   string(STR_IND_SUGAR_REFINERY);
 		nearby_station_name:    string(STR_STATIONNAME_CHEMICALS);
