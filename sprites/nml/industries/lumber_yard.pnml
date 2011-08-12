@@ -315,7 +315,7 @@ item(FEAT_INDUSTRIES, lumber_yard, 41) {
 				tilelayout_lumber_yard_3,
 				tilelayout_lumber_yard_4
 			];
-		life_type: 4;
+		life_type:              IND_LIFE_TYPE_PROCESSING;
 		closure_msg:            TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS;
 		prod_increase_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL;
 		prod_decrease_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_GENERAL;

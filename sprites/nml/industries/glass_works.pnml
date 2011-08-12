@@ -410,7 +410,7 @@ item(FEAT_INDUSTRIES, glass_works, 22) {
 				tilelayout_glass_works_2,
 				tilelayout_glass_works_3
 			];
-		life_type: 4;
+		life_type:              IND_LIFE_TYPE_PROCESSING;
 		closure_msg:            TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS;
 		prod_increase_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL;
 		prod_decrease_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_GENERAL;

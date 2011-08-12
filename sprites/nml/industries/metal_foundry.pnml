@@ -1887,7 +1887,7 @@ item(FEAT_INDUSTRIES, metal_foundry, 9) {
 				tilelayout_metal_foundry_1,
 				tilelayout_metal_foundry_2
 			];
-		life_type: 4;
+		life_type:              IND_LIFE_TYPE_PROCESSING;
 		closure_msg:            TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS;
 		prod_increase_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL;
 		prod_decrease_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_GENERAL;

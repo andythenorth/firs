@@ -1752,7 +1752,7 @@ item(FEAT_INDUSTRIES, iron_works, 21) {
 		layouts: [
 				tilelayout_iron_works_1
 			];
-		life_type: 4;
+		life_type:              IND_LIFE_TYPE_PROCESSING;
 		closure_msg:            TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS;
 		prod_increase_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL;
 		prod_decrease_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_GENERAL;
