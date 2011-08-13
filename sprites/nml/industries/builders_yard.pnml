@@ -189,7 +189,7 @@ TILE_ALLOW_PLAYER         (terrain_check,                        CB_RESULT_IND_D
 
 item(FEAT_INDUSTRYTILES, tile_builders_yard, 164) {
 	graphics {
-		THIS_ID(terrain_check);
+		slope_check: THIS_ID(terrain_check);
 		switch_builders_yard_terrain;
 	}
 }
