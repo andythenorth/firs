@@ -239,19 +239,18 @@ item(FEAT_INDUSTRIES, builders_yard, 63) {
 		prod_cargo_types: [];
 		accept_cargo_types: [BDMT];
 		prod_multiplier: [0, 0];
-		spec_flags: 32;
+		spec_flags:             bitmask(IND_FLAG_BUILT_NEAR_TOWN);
 		input_multiplier_1: [0, 0];
 		input_multiplier_2: [0, 0];
 		input_multiplier_3: [0, 0];
 		min_cargo_distr: 0;
-		conflicting_ind_types: [industry_type(IND_TYPE_NEW, 63)];
+		conflicting_ind_types:  [builders_yard];
 		prob_random: 18;
 		prob_in_game: 12;
 		prospect_chance: 0.75;
 		fund_cost_multiplier: 8;
 		map_colour: 15;
 		remove_cost_multiplier: 0;
-		spec_flags:             0;
 	}
 	graphics {
 		produce_cargo_arrival:   THIS_ID(produce);
