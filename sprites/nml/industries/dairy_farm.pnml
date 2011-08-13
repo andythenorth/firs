@@ -9,155 +9,67 @@
 
 #define THIS_STR_EXTRA_SUPPLIES        STR_EXTRA_FARM_SUPPLIES
 
-item(FEAT_INDUSTRYTILES, tile_dairy_farm, 180) {
-	property {
-		substitute: 0;
-		accepted_cargos: [[FMSP, 8]];
-		land_shape_flags: 0;
-		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
-	}
+spriteset(THIS_ID(spriteset_1), "sprites/graphics/industries/dairyfarm.pcx") { tmpl_building_sprite(10, 10, 52, -21) } 
+spriteset(THIS_ID(spriteset_2), "sprites/graphics/industries/dairyfarm.pcx") { tmpl_building_sprite(80, 10, 52, -21) } 
+spriteset(THIS_ID(spriteset_3), "sprites/graphics/industries/dairyfarm.pcx") { tmpl_building_sprite(150, 10, 52, -21) } 
+spriteset(THIS_ID(spriteset_4), "sprites/graphics/industries/dairyfarm.pcx") { tmpl_building_sprite(220, 10, 52, -21) } 
+spriteset(THIS_ID(spriteset_5), "sprites/graphics/industries/dairyfarm.pcx") { tmpl_building_sprite(290, 10, 52, -21) } 
+spriteset(THIS_ID(spriteset_6), "sprites/graphics/industries/dairyfarm.pcx") { tmpl_building_sprite(360, 10, 52, -21) } 
+
+SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_1), 2022, THIS_ID(spriteset_1), 24)
+
+SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_2), 2022, THIS_ID(spriteset_2), 48)
+
+SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_3), 2022, THIS_ID(spriteset_3), 24)
+
+SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_4), GROUNDSPRITE_NORMAL, THIS_ID(spriteset_4), 24)
+
+SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_5), GROUNDSPRITE_NORMAL, THIS_ID(spriteset_5), 8)
+
+SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_6), GROUNDSPRITE_NORMAL, THIS_ID(spriteset_6), 8)
+
+SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_7), 2022, THIS_ID(spriteset_5), 8)
+
+SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_8), 2022, THIS_ID(spriteset_6), 8)
+
+switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_1), relative_pos) {
+	relative_coord(3, 0): THIS_ID(spritelayout_1);
+	relative_coord(2, 0): THIS_ID(spritelayout_2);
+	relative_coord(3, 2): THIS_ID(spritelayout_3);
+	relative_coord(0, 2): THIS_ID(spritelayout_4);
+	relative_coord(0, 1): THIS_ID(spritelayout_5);
+	relative_coord(0, 0): THIS_ID(spritelayout_6);
+	relative_coord(2, 1): THIS_ID(spritelayout_7);
+	THIS_ID(spritelayout_8);
 }
 
-spriteset(spriteset_3683, "sprites/graphics/industries/dairyfarm.pcx") { tmpl_building_sprite(10, 10, 52, -21) } 
-spriteset(spriteset_3684, "sprites/graphics/industries/dairyfarm.pcx") { tmpl_building_sprite(80, 10, 52, -21) } 
-spriteset(spriteset_3685, "sprites/graphics/industries/dairyfarm.pcx") { tmpl_building_sprite(150, 10, 52, -21) } 
-spriteset(spriteset_3686, "sprites/graphics/industries/dairyfarm.pcx") { tmpl_building_sprite(220, 10, 52, -21) } 
-spriteset(spriteset_3687, "sprites/graphics/industries/dairyfarm.pcx") { tmpl_building_sprite(290, 10, 52, -21) } 
-spriteset(spriteset_3688, "sprites/graphics/industries/dairyfarm.pcx") { tmpl_building_sprite(360, 10, 52, -21) } 
-spritelayout action2_3689 {
-	ground {
-		sprite: 2022;
-	}
-	building {
-		sprite: spriteset_3683;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 24;
-	}
+switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_2), relative_pos) {
+	relative_coord(0, 2): THIS_ID(spritelayout_1);
+	relative_coord(1, 2): THIS_ID(spritelayout_2);
+	relative_coord(1, 1): THIS_ID(spritelayout_3);
+	relative_coord(2, 2): THIS_ID(spritelayout_4);
+	relative_coord(2, 0): THIS_ID(spritelayout_5);
+	relative_coord(2, 1): THIS_ID(spritelayout_6);
+	relative_coord(0, 1): THIS_ID(spritelayout_7);
+	THIS_ID(spritelayout_8);
 }
 
-spritelayout action2_3690 {
-	ground {
-		sprite: 2022;
-	}
-	building {
-		sprite: spriteset_3684;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 48;
-	}
+switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_3), relative_pos) {
+	relative_coord(0, 1): THIS_ID(spritelayout_1);
+	relative_coord(2, 0): THIS_ID(spritelayout_2);
+	relative_coord(1, 0): THIS_ID(spritelayout_3);
+	relative_coord(0, 3): THIS_ID(spritelayout_4);
+	relative_coord(1, 3): THIS_ID(spritelayout_5);
+	relative_coord(2, 3): THIS_ID(spritelayout_6);
+	relative_coord(2, 1): THIS_ID(spritelayout_7);
+	THIS_ID(spritelayout_8);
 }
 
-spritelayout action2_3691 {
-	ground {
-		sprite: 2022;
-	}
-	building {
-		sprite: spriteset_3685;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 24;
-	}
-}
-
-spritelayout action2_3692 {
-	ground {
-		sprite: GROUNDSPRITE_NORMAL;
-	}
-	building {
-		sprite: spriteset_3686;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 24;
-	}
-}
-
-spritelayout action2_3693 {
-	ground {
-		sprite: GROUNDSPRITE_NORMAL;
-	}
-	building {
-		sprite: spriteset_3687;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 8;
-	}
-}
-
-spritelayout action2_3694 {
-	ground {
-		sprite: GROUNDSPRITE_NORMAL;
-	}
-	building {
-		sprite: spriteset_3688;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 8;
-	}
-}
-
-spritelayout action2_3695 {
-	ground {
-		sprite: 2022;
-	}
-	building {
-		sprite: spriteset_3687;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 8;
-	}
-}
-
-spritelayout action2_3696 {
-	ground {
-		sprite: 2022;
-	}
-	building {
-		sprite: spriteset_3688;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 8;
-	}
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_3697, relative_pos) {
-	relative_coord(3, 0): action2_3689;
-	relative_coord(2, 0): action2_3690;
-	relative_coord(3, 2): action2_3691;
-	relative_coord(0, 2): action2_3692;
-	relative_coord(0, 1): action2_3693;
-	relative_coord(0, 0): action2_3694;
-	relative_coord(2, 1): action2_3695;
-	action2_3696;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_3698, relative_pos) {
-	relative_coord(0, 2): action2_3689;
-	relative_coord(1, 2): action2_3690;
-	relative_coord(1, 1): action2_3691;
-	relative_coord(2, 2): action2_3692;
-	relative_coord(2, 0): action2_3693;
-	relative_coord(2, 1): action2_3694;
-	relative_coord(0, 1): action2_3695;
-	action2_3696;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_3699, relative_pos) {
-	relative_coord(0, 1): action2_3689;
-	relative_coord(2, 0): action2_3690;
-	relative_coord(1, 0): action2_3691;
-	relative_coord(0, 3): action2_3692;
-	relative_coord(1, 3): action2_3693;
-	relative_coord(2, 3): action2_3694;
-	relative_coord(2, 1): action2_3695;
-	action2_3696;
-}
-
-switch(FEAT_INDUSTRYTILES, PARENT, action2_3700, layout_num) {
-	1: action2_3697;
-	2: action2_3698;
-	3: action2_3699;
-	action2_3689;
+switch(FEAT_INDUSTRYTILES, PARENT, THIS_ID(layout), layout_num) {
+	1: THIS_ID(layout_1);
+	2: THIS_ID(layout_2);
+	3: THIS_ID(layout_3);
+	THIS_ID(spritelayout_1);
 }
 
 CHECK_NEARBY_TILE_CLASS(action2_3708)
@@ -224,46 +136,53 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_3720, var[0x60, 9, 1, 0]) {
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_3721, (current_callback & 255)) {
 	INDTILE_CB_SLOPE_IS_SUITABLE: action2_3720;
-	action2_3700;
+	THIS_ID(layout);
 }
 
-item(FEAT_INDUSTRYTILES, tile_dairy_farm, 180) {
+item(FEAT_INDUSTRYTILES, THIS_ID(industrytile), 180) {
+	property {
+		substitute:       0;
+		accepted_cargos:  [[FMSP, 8]];
+		land_shape_flags: 0;
+		callback_flags:   bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
+	}
+
 	graphics {
 		action2_3721;
 	}
 }
 
 tilelayout tilelayout_dairy_farm_1 {
-	0, 0: tile_dairy_farm;
-	0, 1: tile_dairy_farm;
-	0, 2: tile_dairy_farm;
-	2, 0: tile_dairy_farm;
-	2, 1: tile_dairy_farm;
-	3, 0: tile_dairy_farm;
-	3, 1: tile_dairy_farm;
-	3, 2: tile_dairy_farm;
+	0, 0: THIS_ID(industrytile);
+	0, 1: THIS_ID(industrytile);
+	0, 2: THIS_ID(industrytile);
+	2, 0: THIS_ID(industrytile);
+	2, 1: THIS_ID(industrytile);
+	3, 0: THIS_ID(industrytile);
+	3, 1: THIS_ID(industrytile);
+	3, 2: THIS_ID(industrytile);
 }
 
 tilelayout tilelayout_dairy_farm_2 {
-	0, 0: tile_dairy_farm;
-	0, 1: tile_dairy_farm;
-	0, 2: tile_dairy_farm;
-	1, 1: tile_dairy_farm;
-	1, 2: tile_dairy_farm;
-	2, 0: tile_dairy_farm;
-	2, 1: tile_dairy_farm;
-	2, 2: tile_dairy_farm;
+	0, 0: THIS_ID(industrytile);
+	0, 1: THIS_ID(industrytile);
+	0, 2: THIS_ID(industrytile);
+	1, 1: THIS_ID(industrytile);
+	1, 2: THIS_ID(industrytile);
+	2, 0: THIS_ID(industrytile);
+	2, 1: THIS_ID(industrytile);
+	2, 2: THIS_ID(industrytile);
 }
 
 tilelayout tilelayout_dairy_farm_3 {
-	0, 1: tile_dairy_farm;
-	0, 3: tile_dairy_farm;
-	1, 0: tile_dairy_farm;
-	1, 1: tile_dairy_farm;
-	1, 3: tile_dairy_farm;
-	2, 0: tile_dairy_farm;
-	2, 1: tile_dairy_farm;
-	2, 3: tile_dairy_farm;
+	0, 1: THIS_ID(industrytile);
+	0, 3: THIS_ID(industrytile);
+	1, 0: THIS_ID(industrytile);
+	1, 1: THIS_ID(industrytile);
+	1, 3: THIS_ID(industrytile);
+	2, 0: THIS_ID(industrytile);
+	2, 1: THIS_ID(industrytile);
+	2, 3: THIS_ID(industrytile);
 }
 
 /* *************************************************
