@@ -118,7 +118,7 @@ SPRITELAYOUT_END
 
 SPRITELAYOUT_NORMAL_SNOW_BEGIN(THIS_ID(spritelayout_4_anim), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_4), 7)
 	building {
-		sprite: 2040;
+		sprite: 2040 + (animation_frame / 4);
 		xoffset: 5;
 		zoffset: 64 + animation_frame;
 		xextent: 11;
