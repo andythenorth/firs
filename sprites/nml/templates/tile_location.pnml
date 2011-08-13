@@ -52,8 +52,8 @@ switch (FEAT_INDUSTRYTILES, PARENT, THIS_ID(name), ( \
 			(((extra_callback_info2 & 0xFF00) >> 8) == IND_CREATION_PROSPECT) \
 			) \
 		) { \
-	1: return errtext; \
-	next; \
+	1: next; \
+	return errtext; \
 }
 
 /*
