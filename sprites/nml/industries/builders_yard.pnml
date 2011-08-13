@@ -7,179 +7,42 @@
 
 #define THIS_ID(...) builders_yard ## __VA_ARGS__
 
-item(FEAT_INDUSTRYTILES, tile_builders_yard, 164) {
-	property {
-		substitute: 0;
-		accepted_cargos: [[BDMT, 8]];
-		land_shape_flags: 0;
-		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
-	}
+spriteset(THIS_ID(spriteset_ground_snow)) {
+	tmpl_building_sprite_filename(150, 10, 43, -13, "sprites/graphics/industries/buildersyard.png")
+	tmpl_building_sprite_filename(150, 10, 43, -13, "sprites/graphics/industries/buildersyard_snow.png")
 }
 
-spriteset(spriteset_3187, "sprites/graphics/industries/groundtiles.png") { tmpl_ground_tile(10, 10) } 
-spriteset(spriteset_3188, "sprites/graphics/industries/buildersyard.png") { tmpl_building_sprite(10, 10, 51, -13) } 
-spriteset(spriteset_3189, "sprites/graphics/industries/buildersyard.png") { tmpl_building_sprite(80, 10, 51, -13) } 
-spriteset(spriteset_3190, "sprites/graphics/industries/buildersyard.png") { tmpl_building_sprite(150, 10, 43, -13) } 
-spritelayout action2_3191 {
-	ground {
-		sprite: 2022;
-	}
-	building {
-		sprite: spriteset_3190;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_3188;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
+spriteset(THIS_ID(spriteset_1)) {
+	tmpl_building_sprite_filename(10, 10, 51, -13, "sprites/graphics/industries/buildersyard.png")
+	tmpl_building_sprite_filename(10, 10, 51, -13, "sprites/graphics/industries/buildersyard_snow.png")
 }
 
-spritelayout action2_3192 {
-	ground {
-		sprite: 2022;
-	}
-	building {
-		sprite: spriteset_3190;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_3189;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
+spriteset(THIS_ID(spriteset_2)) {
+	tmpl_building_sprite_filename(80, 10, 51, -13, "sprites/graphics/industries/buildersyard.png")
+	tmpl_building_sprite_filename(80, 10, 51, -13, "sprites/graphics/industries/buildersyard_snow.png")
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_3193, relative_pos) {
-	relative_coord(0, 0): action2_3191;
-	relative_coord(0, 1): action2_3192;
-	action2_3191;
+SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_1), 2022, THIS_ID(spriteset_ground_snow), THIS_ID(spriteset_1), 16)
+
+SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_2), 2022, THIS_ID(spriteset_ground_snow), THIS_ID(spriteset_2), 16)
+
+switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_1), relative_pos) {
+	relative_coord(0, 0): THIS_ID(spritelayout_1);
+	relative_coord(0, 1): THIS_ID(spritelayout_2);
+	THIS_ID(spritelayout_1);
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_3194, relative_pos) {
-	relative_coord(0, 0): action2_3191;
-	relative_coord(1, 0): action2_3192;
-	action2_3191;
+switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_2), relative_pos) {
+	relative_coord(0, 0): THIS_ID(spritelayout_1);
+	relative_coord(1, 0): THIS_ID(spritelayout_2);
+	THIS_ID(spritelayout_1);
 }
 
-switch(FEAT_INDUSTRYTILES, PARENT, switch_builders_yard_default_layout, layout_num) {
-	1: action2_3193;
-	2: action2_3194;
-	action2_3193;
+switch(FEAT_INDUSTRYTILES, PARENT, THIS_ID(layout), layout_num) {
+	1: THIS_ID(layout_1);
+	2: THIS_ID(layout_2);
+	THIS_ID(layout_1);
 }
-
-spriteset(spriteset_3197, "sprites/graphics/industries/groundtiles.png") { tmpl_ground_tile(10, 10) } 
-spriteset(spriteset_3198, "sprites/graphics/industries/buildersyard.png") { tmpl_building_sprite(10, 10, 51, -13) } 
-spriteset(spriteset_3199, "sprites/graphics/industries/buildersyard.png") { tmpl_building_sprite(80, 10, 51, -13) } 
-spriteset(spriteset_3200, "sprites/graphics/industries/buildersyard.png") { tmpl_building_sprite(150, 10, 43, -13) } 
-spritelayout action2_3201 {
-	ground {
-		sprite: 2022;
-	}
-	building {
-		sprite: spriteset_3200;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_3198;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-}
-
-spritelayout action2_3202 {
-	ground {
-		sprite: 2022;
-	}
-	building {
-		sprite: spriteset_3200;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_3199;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_3203, relative_pos) {
-	relative_coord(0, 0): action2_3201;
-	relative_coord(0, 1): action2_3202;
-	action2_3201;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_3204, relative_pos) {
-	relative_coord(0, 0): action2_3201;
-	relative_coord(1, 0): action2_3202;
-	action2_3201;
-}
-
-switch(FEAT_INDUSTRYTILES, PARENT, switch_builders_yard_desert_layout, layout_num) {
-	1: action2_3203;
-	2: action2_3204;
-	action2_3203;
-}
-
-spriteset(spriteset_3207, "sprites/graphics/industries/groundtiles.png") { tmpl_ground_tile(10, 10) } 
-spriteset(spriteset_3208) { 	[10, 10, 64, 51, -31, -13, 9, "sprites/graphics/industries/buildersyard_snow.png"] } 
-spriteset(spriteset_3209) { 	[80, 10, 64, 51, -31, -13, 9, "sprites/graphics/industries/buildersyard_snow.png"] } 
-spriteset(spriteset_3210) { 	[150, 10, 64, 43, -31, -13, 9, "sprites/graphics/industries/buildersyard_snow.png"] } 
-spritelayout action2_3211 {
-	ground {
-		sprite: 2022;
-	}
-	building {
-		sprite: spriteset_3210;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_3208;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-}
-
-spritelayout action2_3212 {
-	ground {
-		sprite: 2022;
-	}
-	building {
-		sprite: spriteset_3210;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_3209;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_3213, relative_pos) {
-	relative_coord(0, 0): action2_3211;
-	relative_coord(0, 1): action2_3212;
-	action2_3211;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_3214, relative_pos) {
-	relative_coord(0, 0): action2_3211;
-	relative_coord(1, 0): action2_3212;
-	action2_3211;
-}
-
-switch(FEAT_INDUSTRYTILES, PARENT, switch_builders_yard_snow_layout, layout_num) {
-	1: action2_3213;
-	2: action2_3214;
-	action2_3213;
-}
-
-SWITCH_TERRAIN_NORMAL_DESERT_SNOW(builders_yard, layout)
-
 /* *************************************************
  * Definition of the industry tile and its callbacks
  * *************************************************/
@@ -188,9 +51,16 @@ TILE_DISALLOW_NEARBY_CLASS(nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_IND_D
 TILE_ALLOW_PLAYER         (terrain_check,                        CB_RESULT_IND_DISALLOW_UNSUITABLE, THIS_ID(nearby_industry))
 
 item(FEAT_INDUSTRYTILES, tile_builders_yard, 164) {
+	property {
+		substitute: 0;
+		accepted_cargos: [[BDMT, 8]];
+		land_shape_flags: 0;
+		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
+	}
+
 	graphics {
 		slope_check: THIS_ID(terrain_check);
-		switch_builders_yard_terrain;
+		THIS_ID(layout);
 	}
 }
 
