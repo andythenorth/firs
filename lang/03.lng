@@ -50,7 +50,8 @@ STR_EXTRA_ENGINEERING_SUPPLIES                                                  
 STR_EXTRA_FARM_SUPPLIES                                                         :{BLACK}Le matériel agricole peut augmenter la production.{}{YELLOW}  {DWORD_S} caisses livrées ce mois
 STR_GENERIC_D0B2                                                                :{BLACK}Les fournitures industrielle doublent la production des autres marchandises.{}{}{STRING}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Production maximum atteinte
-STR_GENERIC_D0C0                                                                :{BLACK} (max 200)
+
+
 STR_CID_SUGARCANE                                                               :{TINYFONT}SB
 STR_CID_FISH                                                                    :{TINYFONT}FI
 STR_CID_WOOL                                                                    :{TINYFONT}WL
@@ -116,11 +117,11 @@ STR_INFO_AVAILABILITY_FROM                                                      
 STR_INFO_AVAILABILITY_FROM_1610                                                 :{BLACK}Disponible: {YELLOW}1er Jan 1610
 STR_INFO_AVAILABILITY_FROM_1730                                                 :{BLACK}Disponible: {YELLOW}1er Jan 1730
 STR_INFO_AVAILABILITY_FROM_1762                                                 :{BLACK}Disponible: {YELLOW}1er Jan 1762
-STR_INFO_LIMIT_REACHED_ENGINEERING_SUPPLIES                                     :{WHITE}N'accepte plus de matériel d'ingénierie{BLACK}{}(Limite Atteinte)
-STR_INFO_LIMIT_REACHED_FARM_SUPPLIES                                            :{WHITE}N'accepte plus de matériel agricole{BLACK}{}(Limite Atteinte)
-STR_INFO_LIMIT_REACHED_MANUFACTURING_SUPPLIES                                   :{WHITE}N'accepte plus de fourniture industrielle{BLACK}{}(Limite Atteinte)
-STR_INFO_MAX_STOCKPILE                                                          :{BLACK} (max 800)
-STR_INFO_PRODUCTION_3PER8                                                       :{BLACK}Marchandises produites:{}  3t pour 8t de fournitures industrielle livrées{}  5t pour 8t de sucre livrées{}{}Augmente par tranche de 8t lorsque les deux marchandises sont livrées à un mois d'intervalle.
+
+
+
+
+STR_EXTRA_SUGAR_REFINERY                                                       :{BLACK}Marchandises produites:{}  3t pour 8t de fournitures industrielle livrées{}  5t pour 8t de sucre livrées{}{}Augmente par tranche de 8t lorsque les deux marchandises sont livrées à un mois d'intervalle.
 STR_EXTRA_MACHINE_SHOP                                                :{BLACK}Construit et entretien des machines{}{}8t produites pour 8t livrées.
 STR_PARAM_DESC_DEBUG                                                            :Seulement pour les développeurs
 STR_PARAM_DESC_ECONOMIES                                                        :Lorsque ce sera terminé, FIRS permettra de choisir son économie. Les marchandises et les industries varient en fonction de l'économie choisie. Le paiement du transport est aussi différent dans chaque économie {}{}{SILVER}Actuellement une seule économie est disponible :)

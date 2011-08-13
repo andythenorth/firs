@@ -76,7 +76,8 @@ STR_EXTRA_ENGINEERING_SUPPLIES                                                  
 STR_EXTRA_FARM_SUPPLIES                                                         :{BLACK}landw. Betriebsmittel können die Produktion erhöhen.{}{YELLOW} Diesen Monat wurden {DWORD_S} Kisten geliefert
 STR_GENERIC_D0B2                                                                :{BLACK}Produktionsgüter verdoppeln die Produktionseffizienz.{}{}{STRING}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Maximale Produktion erreicht
-STR_GENERIC_D0C0                                                                :{BLACK} (max 200)
+
+
 STR_CID_SUGARCANE                                                               :{TINYFONT}ZR
 STR_CID_FISH                                                                    :{TINYFONT}FI
 STR_CID_WOOL                                                                    :{TINYFONT}WL
@@ -150,11 +151,11 @@ STR_INFO_AVAILABILITY_FROM_1610                                                 
 STR_INFO_AVAILABILITY_FROM_1730                                                 :{BLACK}Verfügbar: {YELLOW}ab 1. Jan 1730
 STR_INFO_AVAILABILITY_FROM_1762                                                 :{BLACK}Verfügbar: {YELLOW}ab 1. Jan 1762
 STR_INFO_CLOSE_IF_NO_DELIVERY                                                   :{}{BLACK}Diese Industrie könnte schließen, wenn nicht im {WHITE}nächsten Monat{BLACK} Fracht angeliefert wird.
-STR_INFO_LIMIT_REACHED_ENGINEERING_SUPPLIES                                     :{WHITE}Akzeptiert keine Ersatzteile{BLACK}{}(Lagerkapazität erreicht)
-STR_INFO_LIMIT_REACHED_FARM_SUPPLIES                                            :{WHITE}Akzeptiert keine landw. Betriebsmittel{BLACK}{}(Lagerkapazität erreicht)
-STR_INFO_LIMIT_REACHED_MANUFACTURING_SUPPLIES                                   :{WHITE}Akzeptiert keine Produktionsgüter{BLACK}{}(Lagerkapazität erreicht)
-STR_INFO_MAX_STOCKPILE                                                          :{BLACK} (max 800)
-STR_INFO_PRODUCTION_3PER8                                                       :{BLACK}Produktion:{}  3t pro gelieferter 8t Produktionsgüter{}  5t pro gelieferter 8t Rohrzucker{}{}Steigt auf 8t Produktion pro gelieferter 8t, wenn beide Frachtarten innerhalb eines Monats geliefert werden.
+
+
+
+
+STR_EXTRA_SUGAR_REFINERY                                                       :{BLACK}Produktion:{}  3t pro gelieferter 8t Produktionsgüter{}  5t pro gelieferter 8t Rohrzucker{}{}Steigt auf 8t Produktion pro gelieferter 8t, wenn beide Frachtarten innerhalb eines Monats geliefert werden.
 STR_EXTRA_MACHINE_SHOP                                                :{BLACK}Baut und wartet Maschinen.{}{}8t Produktion pro gelieferter 8t.
 STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :{SILVER}Maximaler Abstand von Fischgründen und Baggersees von der Küste in Feldern
 STR_PARAM_DESC_DEBUG                                                            :Für Entwickler

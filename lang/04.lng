@@ -74,7 +74,8 @@ STR_EXTRA_ENGINEERING_SUPPLIES                                                  
 STR_EXTRA_FARM_SUPPLIES                                                         :{BLACK}La producción puede aumentar con Suministros Agrarios.{}{YELLOW}  {DWORD_S} cajas entregadas este mes
 STR_GENERIC_D0B2                                                                :{BLACK}Entregar Suministros de Manufactura duplica la producción del resto de cargas.{}{}{STRING}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Producción máxima alcanzada
-STR_GENERIC_D0C0                                                                :{BLACK} (max 200)
+
+
 STR_CID_SUGARCANE                                                               :{TINYFONT}RA
 STR_CID_FISH                                                                    :{TINYFONT}PC
 STR_CID_WOOL                                                                    :{TINYFONT}LN
@@ -149,13 +150,13 @@ STR_INFO_AVAILABILITY_FROM_1610                                                 
 STR_INFO_AVAILABILITY_FROM_1730                                                 :{BLACK}Disponible: {YELLOW}1 de Enero de 1730
 STR_INFO_AVAILABILITY_FROM_1762                                                 :{BLACK}Disponible: {YELLOW}1 de Enero de 1762
 STR_INFO_CLOSE_IF_NO_DELIVERY                                                   :{}{BLACK}Esta industria podría cerrar a menos que se entregue carga en un plazo de:{}{WHITE} mes
-STR_INFO_LIMIT_REACHED_ENGINEERING_SUPPLIES                                     :{WHITE}No acepta suministros de ingeniería{BLACK}{}(Límite alcanzado)
-STR_INFO_LIMIT_REACHED_FARM_SUPPLIES                                            :{WHITE}No acepta suministros agrarios{BLACK}{}(Límite alcanzado)
-STR_INFO_LIMIT_REACHED_MANUFACTURING_SUPPLIES                                   :{WHITE}No acepta suministros de manufactura{BLACK}{}(Límite alcanzado)
-STR_INFO_MAX_STOCKPILE                                                          :{BLACK} (max 800)
+
+
+
+
 STR_INFO_MIGHT_CLOSE                                                            :{}{BLACK}Esta industria podría cerrar a menos que se entregue carga en un plazo de:{}{YELLOW} meses
 STR_INFO_NO_CARGO_DELIVERED                                                     :{}{RED}No se ha entregado carga durante al menos{POP_WORD}{POP_WORD}meses. Esta industria podría cerrar pronto. {}
-STR_INFO_PRODUCTION_3PER8                                                       :{BLACK}Producción:{}  3t por cada 8t de suministros de manufactura entregadas{}  5t por cada 8t de caña de azúcar entregadas{}{}Aumenta a 8t por cada 8t si ambas cargas son entregadas en un intervalo inferior a un mes.
+STR_EXTRA_SUGAR_REFINERY                                                       :{BLACK}Producción:{}  3t por cada 8t de suministros de manufactura entregadas{}  5t por cada 8t de caña de azúcar entregadas{}{}Aumenta a 8t por cada 8t si ambas cargas son entregadas en un intervalo inferior a un mes.
 STR_EXTRA_MACHINE_SHOP                                                :{BLACK}Construye y repara maquinaria.{}{}8t producidas por cada 8t entregadas.
 STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :{SILVER}Máxima distancia de las zonas de pesca y  de dragado con la costa (en casillas).
 STR_PARAM_DESC_DEBUG                                                            :Sólo para desarrolladores

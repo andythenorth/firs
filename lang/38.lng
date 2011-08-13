@@ -50,7 +50,8 @@ STR_EXTRA_ENGINEERING_SUPPLIES                                                  
 STR_EXTRA_FARM_SUPPLIES                                                         :{BLACK}Poljoprivredne potrepötine mogu povecati proizvodnju.{}{YELLOW}  {DWORD_S} sanduka dostavljeno ovaj mjesec
 STR_GENERIC_D0B2                                                                :{BLACK}Proizvodne potrepötine udvostrucuju proizvodnju od drugih tereta.{}{}{STRING}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Dostignut maksimum proizvodnje
-STR_GENERIC_D0C0                                                                :{BLACK} (max 200)
+
+
 STR_CID_SUGARCANE                                                               :{TINYFONT}SB
 STR_CID_FISH                                                                    :{TINYFONT}FI
 STR_CID_WOOL                                                                    :{TINYFONT}WL
@@ -116,11 +117,11 @@ STR_INFO_AVAILABILITY_FROM                                                      
 STR_INFO_AVAILABILITY_FROM_1610                                                 :{BLACK}Dostupno: {YELLOW}1st Jan 1610
 STR_INFO_AVAILABILITY_FROM_1730                                                 :{BLACK}Dostupno: {YELLOW}1st Jan 1730
 STR_INFO_AVAILABILITY_FROM_1762                                                 :{BLACK}Dostupno: {YELLOW}1st Jan 1762
-STR_INFO_LIMIT_REACHED_ENGINEERING_SUPPLIES                                     :{WHITE}Ne prihvaca inûinjerske potrepötine{BLACK}{}(Dostignut limit)
-STR_INFO_LIMIT_REACHED_FARM_SUPPLIES                                            :{WHITE}Ne prihvaca poljoprivredne potrepötine{BLACK}{}(Dostignut limit)
-STR_INFO_LIMIT_REACHED_MANUFACTURING_SUPPLIES                                   :{WHITE}NNe prihvaca proizvodne potrepötine{BLACK}{}(Dostignut limit)
-STR_INFO_MAX_STOCKPILE                                                          :{BLACK} (max 800)
-STR_INFO_PRODUCTION_3PER8                                                       :{BLACK}Proizvodnja tereta:{}  3t od 8t dostavljenih proizvodnih potrepötina{}  5t od 8t dostavljenog öecera{}{}Povecanje na 8t od 8t ako oba tereta budu dostavljena unutar mjesec dana jedan od drugog.
+
+
+
+
+STR_EXTRA_SUGAR_REFINERY                                                       :{BLACK}Proizvodnja tereta:{}  3t od 8t dostavljenih proizvodnih potrepötina{}  5t od 8t dostavljenog öecera{}{}Povecanje na 8t od 8t ako oba tereta budu dostavljena unutar mjesec dana jedan od drugog.
 STR_EXTRA_MACHINE_SHOP                                                :{BLACK}Proizvodi i servisira strojeve.{}{}8t proizvedeno od 8t dostavljenog.
 STR_PARAM_DESC_DEBUG                                                            :Samo za razvijatelje
 STR_PARAM_DESC_ECONOMIES                                                        :When finished, FIRS will feature a choice of economies. Cargos and industries vary in each economy. Cargo payment rates are also different in each economy. {}{}{SILVER}Currently only one economy is available :)

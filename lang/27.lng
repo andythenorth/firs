@@ -72,7 +72,8 @@ STR_EXTRA_ENGINEERING_SUPPLIES                                                  
 STR_EXTRA_FARM_SUPPLIES                                                         :{BLACK}Le forniture agricole aumentano la produzione.{}{YELLOW}  {DWORD_S} casse consegnate questo mese
 STR_GENERIC_D0B2                                                                :{BLACK}Le forniture industriali raddoppiano la produzione di altre merci.{}{}{STRING}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Massimo livello di produzione raggiunto
-STR_GENERIC_D0C0                                                                :{BLACK} (max 200)
+
+
 STR_CID_SUGARCANE                                                               :{TINYFONT}SB
 STR_CID_FISH                                                                    :{TINYFONT}FI
 STR_CID_WOOL                                                                    :{TINYFONT}WL
@@ -142,13 +143,13 @@ STR_INFO_AVAILABILITY_FROM_1610                                                 
 STR_INFO_AVAILABILITY_FROM_1730                                                 :{BLACK}Disponibile: {YELLOW}1 gennaio 1730
 STR_INFO_AVAILABILITY_FROM_1762                                                 :{BLACK}Disponibile: {YELLOW}1 gennaio 1762
 STR_INFO_CLOSE_IF_NO_DELIVERY                                                   :{}{BLACK}Quest'industria potrebbe chiudere se non riceve merci entro:{}{WHITE}  mese
-STR_INFO_LIMIT_REACHED_ENGINEERING_SUPPLIES                                     :{WHITE}Non accetta forniture meccaniche{BLACK}{}(Limite raggiunto)
-STR_INFO_LIMIT_REACHED_FARM_SUPPLIES                                            :{WHITE}Non accetta forniture agricole{BLACK}{}(Limite raggiunto)
-STR_INFO_LIMIT_REACHED_MANUFACTURING_SUPPLIES                                   :{WHITE}Non accetta forniture industriali{BLACK}{}(Limite raggiunto)
-STR_INFO_MAX_STOCKPILE                                                          :{BLACK} (max 800)
+
+
+
+
 STR_INFO_MIGHT_CLOSE                                                            :{}{BLACK}Quest'industria potrebbe chiudere se non riceve merci entro:{}{YELLOW}  mesi
 STR_INFO_NO_CARGO_DELIVERED                                                     :{}{RED}Non è stata consegnata alcuna merce da {POP_WORD}{POP_WORD}mesi. Quest'industria potrebbe chiudere presto. {}
-STR_INFO_PRODUCTION_3PER8                                                       :{BLACK}Produzione di merci:{}  3t ogni 8t di forniture industriali consegnate{}  5t ogni 8t di canna da zucchero consegnate{}{}Aumenta fino a 8t ogni 8t se entrambe le merci sono consegnate entro un intervallo inferiore a un mese.
+STR_EXTRA_SUGAR_REFINERY                                                       :{BLACK}Produzione di merci:{}  3t ogni 8t di forniture industriali consegnate{}  5t ogni 8t di canna da zucchero consegnate{}{}Aumenta fino a 8t ogni 8t se entrambe le merci sono consegnate entro un intervallo inferiore a un mese.
 STR_EXTRA_MACHINE_SHOP                                                :{BLACK}Costruisce e ripara macchinari.{}{}8t di produzione ogni 8t consegnate.
 STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :{SILVER}Distanza massima, in caselle, delle zone di pesca e dei siti di dragaggio dalla costa.
 STR_PARAM_DESC_DEBUG                                                            :Solo per programmatori!

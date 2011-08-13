@@ -1,5 +1,26 @@
 
 ##grflangid 0x01
+STR_GRF_DESC                                                                    :{ORANGE}FIRS Industry Replacement Set{}{BLACK}By {SILVER}andythenorth{BLACK} and {SILVER}FooBar{BLACK}.{}{BLACK}'1,000 commits and counting...'{BLACK}{}{}Website: {SILVER}www.tt-foundry.com/sets/FIRS{BLACK}.License: {SILVER}GPL v2{BLACK}.Special thanks to {SILVER}Ammler{BLACK}, {SILVER}Core Xii{BLACK}, {SILVER}Irwe{BLACK}, {SILVER}planetmaker{BLACK} and {SILVER}Zephyris{BLACK}.Uses parts of {SILVER}eGRVTS{BLACK}, {SILVER}ISR{BLACK} and {SILVER}OpenGFX{BLACK}.
+STR_GRF_NAME                                                                    :{TITLE}
+
+STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :{SILVER}Maximum distance of fishing grounds, oil rigs and dredging sites from the coast in tiles.
+STR_PARAM_DESC_DEBUG                                                            :For developers only
+STR_PARAM_DESC_ECONOMIES                                                        :When finished, FIRS will feature a choice of economies. Cargos and industries vary in each economy. Cargo payment rates are also different in each economy. {}{}{SILVER}Currently only one economy is available :)
+STR_PARAM_DESC_NEVER_CLOSE                                                      :By default, FIRS primary industries will never close.{}{}If primary closing is turned on, primary industries will close when production falls to low levels (the level varies for each type of industry). {SILVER}Requires 'primary production decrease' on.
+STR_PARAM_DESC_NO_OPENINGS                                                      :No new industries will be constructed during the game. {}Players will not be able to fund or prospect for industries.  {}Industries will be constructed at the start of the game by the map generator (depending on map settings used).
+STR_PARAM_DESC_PRIMARY_PRODUCTION_DECREASE                                      :By default, FIRS primary industry production will never decrease.{}{}If primary production decrease is turned on, there is a chance that production will decrease if no supplies are delivered in a month. If production level is high, chance of decrease will be greater.
+STR_PARAM_DESC_SECONDARY_NEVER_CLOSE                                            :By default, FIRS secondary industries will never close.{}{}If secondary closing is turned on, secondary industries may close if no cargo is transported for a long time.
+STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY                                   :Maximum coastal distance of marine industries in tiles
+STR_PARAM_NAME_DEBUG                                                            :Show debug texts
+STR_PARAM_NAME_ECONOMIES                                                        :Economy
+STR_PARAM_NAME_NEVER_CLOSE                                                      :Allow primary industries to close
+STR_PARAM_NAME_NO_OPENINGS                                                      :Prevent industries opening during gameplay
+STR_PARAM_NAME_PRIMARY_PRODUCTION_DECREASE                                      :Allow primary production decrease
+STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            :Allow secondary industries to close
+STR_PARAM_VALUE_ECONOMIES_TEST_ECONOMY                                          :Test Economy
+STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0                                         :No limit
+
+
 STR_CARGO_NAME_ALCOHOL                                                          :Alcohol
 STR_CARGO_NAME_BAUXITE                                                          :Bauxite
 STR_CARGO_NAME_BUILDING_MATERIALS                                               :Building Materials
@@ -22,6 +43,7 @@ STR_CARGO_NAME_STONE                                                            
 STR_CARGO_NAME_SUGARCANE                                                        :Sugar Beet
 STR_CARGO_NAME_UNIT_LUMBER                                                      :{WORD_S_TONNES} of lumber
 STR_CARGO_NAME_WOOL                                                             :Wool
+
 STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} of alcohol
 STR_CARGO_UNIT_BAUXITE                                                          :{WORD_S_TONNES} of bauxite
 STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WORD_S_TONNES} of building materials
@@ -42,6 +64,7 @@ STR_CARGO_UNIT_SCRAP_METAL                                                      
 STR_CARGO_UNIT_STONE                                                            :{WORD_S_TONNES} of stone
 STR_CARGO_UNIT_SUGAR_BEET                                                       :{WORD_S_TONNES} of sugar beet
 STR_CARGO_UNIT_WOOL                                                             :{WORD_S_TONNES} of wool
+
 STR_CID_BAUXITE                                                                 :{TINYFONT}BX
 STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}BM
 STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}ES
@@ -49,6 +72,7 @@ STR_CID_LUMBER                                                                  
 STR_CID_METAL                                                                   :{TINYFONT}ML
 STR_CID_MILK                                                                    :{TINYFONT}MK
 STR_CID_SCRAP_METAL                                                             :{TINYFONT}SM
+
 STR_ERR_CLIMATE_TOYLAND                                                         :{ORANGE}FIRS is not designed to be used with Toyland climate
 STR_ERR_INCOMPATIBLE_PARAM_CANSET                                               :{ORANGE}E02: {YELLOW}Incompatible parameter: {ORANGE}CanSet parameter 2 must be 0 to work with FIRS. {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 STR_ERR_INCOMPATIBLE_PARAM_CITIYSET                                             :{ORANGE}E02: {YELLOW}Incompatible parameter: {ORANGE}NA City Set parameter 2 must be 0 to work with FIRS. {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
@@ -81,10 +105,11 @@ STR_ERR_INCOMPATIBLE_SET_TTRS_VERSION                                           
 STR_ERR_INCOMPATIBLE_SET_UKRS                                                   :{ORANGE}E01: {YELLOW}Incompatible set: {ORANGE}UKRS Industries {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 STR_ERR_INCOMPATIBLE_SET_UKRS_BRICKCHAIN                                        :{ORANGE}E01: {YELLOW}Incompatible set: {ORANGE}UKRS Brick Chain {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 STR_ERR_OPENTTD_VERSION                                                         :{ORANGE}E00: FIRS requires OpenTTD 1.1.0 / trunk r21208 or higher. {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+
+STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}Cargo production:{}  2t per 8t bauxite delivered{}  2t per 8t chemicals delivered{}  4t per 8t scrap metal delivered{}{}Production steps up if two or more cargos are delivered within a month of each other.
 STR_EXTRA_LIME_KILN                                                             :{BLACK}Cargo production:{}  4t per 8t stone delivered{}  4t per 8t coal delivered{}{}Increases to 8t per 8t when both cargos are delivered within a month of each other.
 STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Produces metal items like tools, ploughs, gates, shovels and horseshoes.{}{}5t production per 8t delivered.
 STR_EXTRA_STEELMILL                                                             :{BLACK}Cargo production:{}  2t per 8t iron ore delivered{}  2t per 8t coal delivered{}  4t per 8t scrap metal delivered{}{}Production steps up if two or more cargos are delivered within a month of each other.
-STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}Cargo production:{}  2t per 8t bauxite delivered{}  2t per 8t chemicals delivered{}  4t per 8t scrap metal delivered{}{}Production steps up if two or more cargos are delivered within a month of each other.
 STR_EXTRA_METAL_FOUNDRY                                                         :{BLACK}Produces metal hardware such as tools and parts.{}{}8t production per 8t delivered.
 STR_EXTRA_SAWMILL                                                               :{BLACK}Chops wood.{}{}6t production per 8t delivered.
 STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Cargo production:{}  3t per 8t manufacturing supplies delivered{}  5t per 8t lumber delivered{}{}Increases to 8t per 8t when both cargos are delivered within a month of each other.
@@ -108,9 +133,13 @@ STR_EXTRA_BIOREFINERY                                                           
 STR_EXTRA_ENGINEERING_SUPPLIES                                                  :{BLACK}Engineering supplies may increase production.{}{YELLOW}  {DWORD_S} crates delivered this month
 STR_EXTRA_FARM_SUPPLIES                                                         :{BLACK}Farm supplies may increase production.{}{YELLOW}  {DWORD_S} crates delivered this month
 STR_EXTRA_MACHINE_SHOP                                                          :{BLACK}Builds and services machinery.{}{}8t production per 8t delivered.
-STR_GENERIC_D0B2                                                                :{BLACK}Manufacturing supplies double production from other cargos.{}{}{STRING}
+STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Cargo production:{}  3t per 8t manufacturing supplies delivered{}  5t per 8t sugar cane delivered{}{}Increases to 8t per 8t when both cargos are delivered within a month of each other.
+
+STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ DEBUG ------------{}Production this month:{}Cargo 1: {WHITE}{DWORD_S}{BLACK}{}Cargo 2: {WHITE}{DWORD_S}{BLACK}{}Days since last delivery: {WHITE}{DWORD_S}{BLACK}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Maximum production reached
-STR_GENERIC_D0C0                                                                :{BLACK} (max 200)
+STR_GENERIC_D0B2                                                                :{BLACK}Manufacturing supplies double production from other cargos.{}{}{STRING}
+STR_GENERIC_NEWLINE                                                             :{}
+
 STR_CID_SUGARCANE                                                               :{TINYFONT}SB
 STR_CID_FISH                                                                    :{TINYFONT}FI
 STR_CID_WOOL                                                                    :{TINYFONT}WL
@@ -124,6 +153,7 @@ STR_CID_PETROL                                                                  
 STR_CID_CLAY                                                                    :{TINYFONT}CL
 STR_CID_ALCOHOL                                                                 :{TINYFONT}AL
 STR_CID_RECYCLABLES                                                             :{TINYFONT}RC
+
 STR_STATIONNAME_FARMS                                                           :{STRING} Farm
 STR_STATIONNAME_MILLS                                                           :{STRING} Mills
 STR_STATIONNAME_WELLS                                                           :{STRING} Wells
@@ -136,9 +166,7 @@ STR_STATIONNAME_DREDGING_SITE                                                   
 STR_STATIONNAME_FISHING_GROUNDS                                                 :{STRING} Fishing Grounds
 STR_STATIONNAME_SMITHY_FORGE                                                    :{STRING} Forge
 STR_STATIONNAME_MARKET                                                          :{STRING} Market
-STR_GENERIC_NEWLINE                                                             :{}
-STR_GRF_DESC                                                                    :{ORANGE}FIRS Industry Replacement Set{}{BLACK}By {SILVER}andythenorth{BLACK} and {SILVER}FooBar{BLACK}.{}{BLACK}'1,000 commits and counting...'{BLACK}{}{}Website: {SILVER}www.tt-foundry.com/sets/FIRS{BLACK}.License: {SILVER}GPL v2{BLACK}.Special thanks to {SILVER}Ammler{BLACK}, {SILVER}Core Xii{BLACK}, {SILVER}Irwe{BLACK}, {SILVER}planetmaker{BLACK} and {SILVER}Zephyris{BLACK}.Uses parts of {SILVER}eGRVTS{BLACK}, {SILVER}ISR{BLACK} and {SILVER}OpenGFX{BLACK}.
-STR_GRF_NAME                                                                    :{TITLE}
+
 STR_IND_ALUMINIUM_PLANT                                                         :Aluminium Plant
 STR_IND_ARABLE_FARM                                                             :Arable Farm
 STR_IND_BAUXITE_MINE                                                            :Bauxite Mine
@@ -179,36 +207,13 @@ STR_IND_STOCKYARD                                                               
 STR_IND_SUGAR_REFINERY                                                          :Sugar Refinery
 STR_IND_SUPERMARKET                                                             :Supermarket
 STR_IND_TEXTILE_MILL                                                            :Textile Mill
+
 STR_INFO_AVAILABILITY_FROM                                                      :{BLACK}Available: {YELLOW}{DATE_LONG}
 STR_INFO_AVAILABILITY_FROM_1610                                                 :{BLACK}Available: {YELLOW}1st Jan 1610
 STR_INFO_AVAILABILITY_FROM_1730                                                 :{BLACK}Available: {YELLOW}1st Jan 1730
 STR_INFO_AVAILABILITY_FROM_1762                                                 :{BLACK}Available: {YELLOW}1st Jan 1762
 STR_INFO_AVAILABILITY_FROM_LIMIT1_RANGE16                                       :{BLACK}Available: {YELLOW}{DATE_LONG}{}{BLACK}Limit of one per town {}Must be built within 16 tiles of town centre
+
 STR_INFO_CLOSE_IF_NO_DELIVERY                                                   :{}{BLACK}This industry might close unless any cargo is delivered within:{}{WHITE}  month
-STR_INFO_DEBUG_PRODUCTION_CONTRIBUTION                                          :{BLACK}------------ DEBUG ------------{}{}{BLACK}Current prod. contribution each cargo:{}{WHITE}1st Cargo: {WORD_S}/8 {}2nd Cargo: {WORD_S}/8 {}3rd Cargo: {WORD_S}/8 {}{}{BLACK}Cargo consumption (when cb ran):{}{WHITE}...From 1st Cargo: {WORD_S} {}...From 2nd Cargo: {WORD_S} {}...From 3rd Cargo: {WORD_S} {}{}{BLACK}Total production :{}{WHITE}1st Cargo: {WORD_S} {}2nd Cargo: {WORD_S} {}{}{BLACK}Current total production ratio:{}{WHITE}{WORD_S} {}{}{BLACK}'Combinatory production ticker':{}{WHITE}1st Cargo: {WORD_S} {}2nd Cargo: {WORD_S} {}3rd Cargo: {WORD_S}
-STR_INFO_DEBUG_PRODUCTION_RATIO                                                 :{BLACK}------------ DEBUG ------------{}{}{BLACK}Prod. ratio (out/in):{}{WHITE}1st Cargo: {WORD_S}/8 {}2nd Cargo: {WORD_S}/8 {}3rd Cargo: {WORD_S}/8 {}{}{BLACK}Cargo consumption (when cb ran):{}{WHITE}...From 1st Cargo: {WORD_S} {}...From 2nd Cargo: {WORD_S} {}...From 3rd Cargo: {WORD_S} {}{}{BLACK}Total production :{}{WHITE}1st Cargo: {WORD_S} {}2nd Cargo: {WORD_S} {}{}{BLACK}Output production limit (per input cargo):{}{WHITE}{DWORD_S}
-STR_INFO_DEBUG_PRODUCTION_RATIO_CALLBACK                                        :{BLACK}------------ DEBUG ------------{}{}{BLACK}Prod. ratio (out/in):{}{WHITE}2nd Cargo: {WORD_S}/8 {}3rd Cargo: {WORD_S}/8 {}{}{BLACK}Cargo consumption (when cb ran):{}{WHITE}...From 2nd Cargo: {WORD_S} {}...From 3rd Cargo: {WORD_S} {}{}{BLACK}Total production :{}{WHITE}1st Cargo: {WORD_S} {}2nd Cargo: {WORD_S} {}{}{BLACK}Production Supplies consumed last cycle:{}{WHITE}{DWORD_S}{}{BLACK}Output production limit (per input cargo):{}{WHITE}{DWORD_S}
-STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ DEBUG ------------{}Production this month:{}Cargo 1: {WHITE}{DWORD_S}{BLACK}{}Cargo 2: {WHITE}{DWORD_S}{BLACK}{}Days since last delivery: {WHITE}{DWORD_S}{BLACK}
-STR_INFO_LIMIT_REACHED_ENGINEERING_SUPPLIES                                     :{WHITE}Not accepting engineering supplies{BLACK}{}(Limit Reached)
-STR_INFO_LIMIT_REACHED_FARM_SUPPLIES                                            :{WHITE}Not accepting farm supplies{BLACK}{}(Limit Reached)
-STR_INFO_LIMIT_REACHED_MANUFACTURING_SUPPLIES                                   :{WHITE}Not accepting manufacturing supplies{BLACK}{}(Limit Reached)
-STR_INFO_MAX_STOCKPILE                                                          :{BLACK} (max 800)
 STR_INFO_MIGHT_CLOSE                                                            :{}{BLACK}This industry might close unless any cargo is delivered within:{}{YELLOW}  months
 STR_INFO_NO_CARGO_DELIVERED                                                     :{}{RED}No cargo has been delivered for at least {POP_WORD}{POP_WORD}months. This industry may close soon. {}
-STR_INFO_PRODUCTION_3PER8                                                       :{BLACK}Cargo production:{}  3t per 8t manufacturing supplies delivered{}  5t per 8t sugar cane delivered{}{}Increases to 8t per 8t when both cargos are delivered within a month of each other.
-STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :{SILVER}Maximum distance of fishing grounds, oil rigs and dredging sites from the coast in tiles.
-STR_PARAM_DESC_DEBUG                                                            :For developers only
-STR_PARAM_DESC_ECONOMIES                                                        :When finished, FIRS will feature a choice of economies. Cargos and industries vary in each economy. Cargo payment rates are also different in each economy. {}{}{SILVER}Currently only one economy is available :)
-STR_PARAM_DESC_NEVER_CLOSE                                                      :By default, FIRS primary industries will never close.{}{}If primary closing is turned on, primary industries will close when production falls to low levels (the level varies for each type of industry). {SILVER}Requires 'primary production decrease' on.
-STR_PARAM_DESC_NO_OPENINGS                                                      :No new industries will be constructed during the game. {}Players will not be able to fund or prospect for industries.  {}Industries will be constructed at the start of the game by the map generator (depending on map settings used).
-STR_PARAM_DESC_PRIMARY_PRODUCTION_DECREASE                                      :By default, FIRS primary industry production will never decrease.{}{}If primary production decrease is turned on, there is a chance that production will decrease if no supplies are delivered in a month. If production level is high, chance of decrease will be greater.
-STR_PARAM_DESC_SECONDARY_NEVER_CLOSE                                            :By default, FIRS secondary industries will never close.{}{}If secondary closing is turned on, secondary industries may close if no cargo is transported for a long time.
-STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY                                   :Maximum coastal distance of marine industries in tiles
-STR_PARAM_NAME_DEBUG                                                            :Show debug texts
-STR_PARAM_NAME_ECONOMIES                                                        :Economy
-STR_PARAM_NAME_NEVER_CLOSE                                                      :Allow primary industries to close
-STR_PARAM_NAME_NO_OPENINGS                                                      :Prevent industries opening during gameplay
-STR_PARAM_NAME_PRIMARY_PRODUCTION_DECREASE                                      :Allow primary production decrease
-STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            :Allow secondary industries to close
-STR_PARAM_VALUE_ECONOMIES_TEST_ECONOMY                                          :Test Economy
-STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0                                         :No limit

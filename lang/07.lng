@@ -75,7 +75,8 @@ STR_EXTRA_ENGINEERING_SUPPLIES                                                  
 STR_EXTRA_FARM_SUPPLIES                                                         :{BLACK}Поставки сельхозтоваров могут увеличить производительность.{}{YELLOW}  {DWORD_S} упаковок поставлено в этом месяце
 STR_GENERIC_D0B2                                                                :{BLACK}Поставки производственных материалов удвоят производительность от других грузов.{}{}{STRING}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Достигнута максимальная производительность
-STR_GENERIC_D0C0                                                                :{BLACK} (макс. 200)
+
+
 STR_CID_SUGARCANE                                                               :{TINYFONT}SB
 STR_CID_FISH                                                                    :{TINYFONT}FI
 STR_CID_WOOL                                                                    :{TINYFONT}WL
@@ -149,13 +150,13 @@ STR_INFO_AVAILABILITY_FROM_1610                                                 
 STR_INFO_AVAILABILITY_FROM_1730                                                 :{BLACK}Доступно: {YELLOW}1 янв 1730
 STR_INFO_AVAILABILITY_FROM_1762                                                 :{BLACK}Доступно: {YELLOW}1 янв 1762
 STR_INFO_CLOSE_IF_NO_DELIVERY                                                   :{}{BLACK}Предприятие может закрыться если поставок не будет в течение:{}{WHITE}  мес.
-STR_INFO_LIMIT_REACHED_ENGINEERING_SUPPLIES                                     :{WHITE}Не принимает промышленное оборудование{BLACK}{}(Достигнут предел)
-STR_INFO_LIMIT_REACHED_FARM_SUPPLIES                                            :{WHITE}Не принимает сельхозтовары{BLACK}{}(Достигнут предел)
-STR_INFO_LIMIT_REACHED_MANUFACTURING_SUPPLIES                                   :{WHITE}Не принимает производственные материалы{BLACK}{}(Достигнут предел)
-STR_INFO_MAX_STOCKPILE                                                          :{BLACK} (макс. 800)
+
+
+
+
 STR_INFO_MIGHT_CLOSE                                                            :{}{BLACK}Предприятие может закрыться если поставок не будет в течение:{}{YELLOW}  мес.
 STR_INFO_NO_CARGO_DELIVERED                                                     :{}{RED}Поставок не было как минимум {POP_WORD}{POP_WORD}месяцев. Это предприятие может скоро закрыться. {}
-STR_INFO_PRODUCTION_3PER8                                                       :{BLACK}Производится:{}  3т на 8т производственных материалов{}  5т на 8т сахарного тростника{}{}Увеличится до 8т на 8т если оба типа грузов будут поставлены в течение месяца.
+STR_EXTRA_SUGAR_REFINERY                                                       :{BLACK}Производится:{}  3т на 8т производственных материалов{}  5т на 8т сахарного тростника{}{}Увеличится до 8т на 8т если оба типа грузов будут поставлены в течение месяца.
 STR_EXTRA_MACHINE_SHOP                                                :{BLACK}Производит и обслуживает технику и промышленное оборудование.{}{}8т продукции на 8т поставок.
 STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :{SILVER}Максимальная удаленность рыболовств и дноуглублений от побережья.
 STR_PARAM_DESC_DEBUG                                                            :Только для разработчиков
