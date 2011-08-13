@@ -7,454 +7,80 @@
 
 #define THIS_ID(...) brickworks ## __VA_ARGS__
 
-item(FEAT_INDUSTRYTILES, tile_brick_works, 165) {
-	property {
-		substitute: 0;
-		accepted_cargos: [[COAL, 8], [CLAY, 8], [SAND, 8]];
-		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
-		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
-		animation_info: [1, 7];
-		animation_speed: 3;
-		animation_triggers: bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE);
-	}
-}
+spriteset(THIS_ID(spriteset_ground), "sprites/graphics/industries/groundtiles.png") { tmpl_ground_tile(150, 10) } 
 
-spriteset(spriteset_3078, "sprites/graphics/industries/brickworks.pcx") { tmpl_building_sprite(10, 10, 101, -64) } 
-spriteset(spriteset_3079, "sprites/graphics/industries/brickworks.pcx") { tmpl_building_sprite(80, 10, 101, -59) } 
-spriteset(spriteset_3080, "sprites/graphics/industries/brickworks.pcx") { tmpl_building_sprite(150, 10, 101, -71) } 
-spriteset(spriteset_3081, "sprites/graphics/industries/brickworks.pcx") { tmpl_building_sprite(220, 10, 101, -69) } 
-spriteset(spriteset_3082, "sprites/graphics/industries/groundtiles.png") { tmpl_ground_tile(150, 10) } 
-spritelayout action2_3083 {
-	ground {
-		sprite: spriteset_3082;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_3079;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 32;
-	}
-}
+spriteset(THIS_ID(spriteset_1), "sprites/graphics/industries/brickworks.pcx") { tmpl_building_sprite( 10, 10, 101, -64) } 
+spriteset(THIS_ID(spriteset_2), "sprites/graphics/industries/brickworks.pcx") { tmpl_building_sprite( 80, 10, 101, -59) } 
+spriteset(THIS_ID(spriteset_3), "sprites/graphics/industries/brickworks.pcx") { tmpl_building_sprite(150, 10, 101, -71) } 
+spriteset(THIS_ID(spriteset_4), "sprites/graphics/industries/brickworks.pcx") { tmpl_building_sprite(220, 10, 101, -69) } 
 
-spritelayout action2_3085 {
-	ground {
-		sprite: spriteset_3082;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
+SPRITELAYOUT_NORMAL_BEGIN(THIS_ID(spritelayout_1_anim), THIS_ID(spriteset_ground), THIS_ID(spriteset_1), 7)
 	building {
-		sprite: spriteset_3081;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 32;
-	}
-}
-
-spritelayout action2_3086 {
-	ground {
-		sprite: spriteset_3082;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-}
-
-spritelayout action2_3087 {
-	ground {
-		sprite: spriteset_3082;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_3078;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 7;
-	}
-	building {
-		sprite: 3707;
+		sprite:  3701 + ((animation_frame + 6) % 8);
 		xoffset: 8;
 		zoffset: 70;
 		xextent: 8;
 		zextent: 7;
 	}
-}
+SPRITELAYOUT_END
 
-spritelayout action2_3088 {
-	ground {
-		sprite: spriteset_3082;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_3078;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 7;
-	}
-	building {
-		sprite: 3708;
-		xoffset: 8;
-		zoffset: 70;
-		xextent: 8;
-		zextent: 7;
-	}
-}
+SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_2), THIS_ID(spriteset_ground), THIS_ID(spriteset_2), 32)
 
-spritelayout action2_3089 {
-	ground {
-		sprite: spriteset_3082;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
+SPRITELAYOUT_NORMAL_BEGIN(THIS_ID(spritelayout_3_anim), THIS_ID(spriteset_ground), THIS_ID(spriteset_3), 7)
 	building {
-		sprite: spriteset_3078;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 7;
-	}
-	building {
-		sprite: 3701;
-		xoffset: 8;
-		zoffset: 70;
-		xextent: 8;
-		zextent: 7;
-	}
-}
-
-spritelayout action2_3090 {
-	ground {
-		sprite: spriteset_3082;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_3078;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 7;
-	}
-	building {
-		sprite: 3702;
-		xoffset: 8;
-		zoffset: 70;
-		xextent: 8;
-		zextent: 7;
-	}
-}
-
-spritelayout action2_3091 {
-	ground {
-		sprite: spriteset_3082;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_3078;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 7;
-	}
-	building {
-		sprite: 3703;
-		xoffset: 8;
-		zoffset: 70;
-		xextent: 8;
-		zextent: 7;
-	}
-}
-
-spritelayout action2_3092 {
-	ground {
-		sprite: spriteset_3082;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_3078;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 7;
-	}
-	building {
-		sprite: 3704;
-		xoffset: 8;
-		zoffset: 70;
-		xextent: 8;
-		zextent: 7;
-	}
-}
-
-spritelayout action2_3093 {
-	ground {
-		sprite: spriteset_3082;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_3078;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 7;
-	}
-	building {
-		sprite: 3705;
-		xoffset: 8;
-		zoffset: 70;
-		xextent: 8;
-		zextent: 7;
-	}
-}
-
-spritelayout action2_3094 {
-	ground {
-		sprite: spriteset_3082;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_3078;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 7;
-	}
-	building {
-		sprite: 3706;
-		xoffset: 8;
-		zoffset: 70;
-		xextent: 8;
-		zextent: 7;
-	}
-}
-
-spritelayout action2_3095 {
-	ground {
-		sprite: spriteset_3082;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_3080;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 7;
-	}
-	building {
-		sprite: 3701;
+		sprite:  3701 + animation_frame;
 		yoffset: 8;
 		zoffset: 58;
 		yextent: 8;
 		zextent: 7;
 	}
-}
+SPRITELAYOUT_END
 
-spritelayout action2_3096 {
+SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_4), THIS_ID(spriteset_ground), THIS_ID(spriteset_4), 32)
+
+spritelayout THIS_ID(spritelayout_5) {
 	ground {
-		sprite: spriteset_3082;
+		sprite: THIS_ID(spriteset_ground);
 		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_3080;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 7;
-	}
-	building {
-		sprite: 3702;
-		yoffset: 8;
-		zoffset: 58;
-		yextent: 8;
-		zextent: 7;
+		palette: PALETTE_USE_DEFAULT;
 	}
 }
 
-spritelayout action2_3097 {
-	ground {
-		sprite: spriteset_3082;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_3080;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 7;
-	}
-	building {
-		sprite: 3703;
-		yoffset: 8;
-		zoffset: 58;
-		yextent: 8;
-		zextent: 7;
-	}
+switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_1), relative_pos) {
+	relative_coord(0, 0): THIS_ID(spritelayout_4);
+	relative_coord(0, 1): THIS_ID(spritelayout_4);
+	relative_coord(1, 0): THIS_ID(spritelayout_3_anim);
+	relative_coord(1, 1): THIS_ID(spritelayout_3_anim);
+	relative_coord(2, 0): THIS_ID(spritelayout_2);
+	relative_coord(2, 1): THIS_ID(spritelayout_1_anim);
+	THIS_ID(spritelayout_5);
 }
 
-spritelayout action2_3098 {
-	ground {
-		sprite: spriteset_3082;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_3080;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 7;
-	}
-	building {
-		sprite: 3704;
-		yoffset: 8;
-		zoffset: 58;
-		yextent: 8;
-		zextent: 7;
-	}
+switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_2), relative_pos) {
+	relative_coord(0, 0): THIS_ID(spritelayout_4);
+	relative_coord(0, 1): THIS_ID(spritelayout_4);
+	relative_coord(1, 0): THIS_ID(spritelayout_3_anim);
+	relative_coord(1, 1): THIS_ID(spritelayout_3_anim);
+	relative_coord(2, 0): THIS_ID(spritelayout_2);
+	relative_coord(3, 0): THIS_ID(spritelayout_1_anim);
+	THIS_ID(spritelayout_5);
 }
 
-spritelayout action2_3099 {
-	ground {
-		sprite: spriteset_3082;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_3080;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 7;
-	}
-	building {
-		sprite: 3705;
-		yoffset: 8;
-		zoffset: 58;
-		yextent: 8;
-		zextent: 7;
-	}
+switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_3), relative_pos) {
+	relative_coord(0, 0): THIS_ID(spritelayout_4);
+	relative_coord(0, 1): THIS_ID(spritelayout_4);
+	relative_coord(0, 2): THIS_ID(spritelayout_1_anim);
+	relative_coord(1, 0): THIS_ID(spritelayout_3_anim);
+	relative_coord(1, 1): THIS_ID(spritelayout_3_anim);
+	relative_coord(1, 2): THIS_ID(spritelayout_2);
+	THIS_ID(spritelayout_5);
 }
 
-spritelayout action2_3100 {
-	ground {
-		sprite: spriteset_3082;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_3080;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 7;
-	}
-	building {
-		sprite: 3706;
-		yoffset: 8;
-		zoffset: 58;
-		yextent: 8;
-		zextent: 7;
-	}
-}
-
-spritelayout action2_3101 {
-	ground {
-		sprite: spriteset_3082;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_3080;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 7;
-	}
-	building {
-		sprite: 3707;
-		yoffset: 8;
-		zoffset: 58;
-		yextent: 8;
-		zextent: 7;
-	}
-}
-
-spritelayout action2_3102 {
-	ground {
-		sprite: spriteset_3082;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_3080;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 7;
-	}
-	building {
-		sprite: 3708;
-		yoffset: 8;
-		zoffset: 58;
-		yextent: 8;
-		zextent: 7;
-	}
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_3103, animation_frame) {
-	0: action2_3095;
-	1: action2_3096;
-	2: action2_3097;
-	3: action2_3098;
-	4: action2_3099;
-	5: action2_3100;
-	6: action2_3101;
-	7: action2_3102;
-	action2_3095;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_3104, animation_frame) {
-	0: action2_3087;
-	1: action2_3088;
-	2: action2_3089;
-	3: action2_3090;
-	4: action2_3091;
-	5: action2_3092;
-	6: action2_3093;
-	7: action2_3094;
-	action2_3087;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_3105, relative_pos) {
-	relative_coord(0, 0): action2_3085;
-	relative_coord(0, 1): action2_3085;
-	relative_coord(1, 0): action2_3103;
-	relative_coord(1, 1): action2_3103;
-	relative_coord(2, 0): action2_3083;
-	relative_coord(2, 1): action2_3104;
-	action2_3086;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_3106, relative_pos) {
-	relative_coord(0, 0): action2_3085;
-	relative_coord(0, 1): action2_3085;
-	relative_coord(1, 0): action2_3103;
-	relative_coord(1, 1): action2_3103;
-	relative_coord(2, 0): action2_3083;
-	relative_coord(3, 0): action2_3104;
-	action2_3086;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_3107, relative_pos) {
-	relative_coord(0, 0): action2_3085;
-	relative_coord(0, 1): action2_3085;
-	relative_coord(0, 2): action2_3104;
-	relative_coord(1, 0): action2_3103;
-	relative_coord(1, 1): action2_3103;
-	relative_coord(1, 2): action2_3083;
-	action2_3086;
-}
-
-switch(FEAT_INDUSTRYTILES, PARENT, action2_3108, layout_num) {
-	1: action2_3105;
-	2: action2_3106;
-	3: action2_3107;
-	action2_3105;
+switch(FEAT_INDUSTRYTILES, PARENT, THIS_ID(layout), layout_num) {
+	1: THIS_ID(layout_1);
+	2: THIS_ID(layout_2);
+	3: THIS_ID(layout_3);
+	THIS_ID(layout_1);
 }
 
 CHECK_NEARBY_TILE_CLASS(action2_3116)
@@ -471,7 +97,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_3118, var[0x60, 0, 255, 0]) {
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_3119, (current_callback & 255)) {
 	INDTILE_CB_SLOPE_IS_SUITABLE: action2_3118;
-	action2_3108;
+	THIS_ID(layout);
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_3120, (extra_callback_info1 & 7)) {
@@ -490,44 +116,54 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_3121, (current_callback & 255)) {
 	action2_3119;
 }
 
-item(FEAT_INDUSTRYTILES, tile_brick_works, 165) {
+item(FEAT_INDUSTRYTILES, THIS_ID(industrytile), 165) {
+	property {
+		substitute: 0;
+		accepted_cargos: [[COAL, 8], [CLAY, 8], [SAND, 8]];
+		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
+		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
+		animation_info: [1, 7];
+		animation_speed: 3;
+		animation_triggers: bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE);
+	}
+
 	graphics {
 		action2_3121;
 	}
 }
 
 tilelayout tilelayout_brick_works_1 {
-	0, 0: tile_brick_works;
-	0, 1: tile_brick_works;
-	1, 0: tile_brick_works;
-	1, 1: tile_brick_works;
-	2, 0: tile_brick_works;
-	2, 1: tile_brick_works;
+	0, 0: THIS_ID(industrytile);
+	0, 1: THIS_ID(industrytile);
+	1, 0: THIS_ID(industrytile);
+	1, 1: THIS_ID(industrytile);
+	2, 0: THIS_ID(industrytile);
+	2, 1: THIS_ID(industrytile);
 	3, 0: item_FEAT_INDUSTRYTILES_231;
-	3, 1: tile_brick_works;
+	3, 1: THIS_ID(industrytile);
 	4, 0: item_FEAT_INDUSTRYTILES_229;
-	4, 1: tile_brick_works;
+	4, 1: THIS_ID(industrytile);
 }
 
 tilelayout tilelayout_brick_works_2 {
-	0, 0: tile_brick_works;
-	0, 1: tile_brick_works;
-	1, 0: tile_brick_works;
-	1, 1: tile_brick_works;
-	2, 0: tile_brick_works;
+	0, 0: THIS_ID(industrytile);
+	0, 1: THIS_ID(industrytile);
+	1, 0: THIS_ID(industrytile);
+	1, 1: THIS_ID(industrytile);
+	2, 0: THIS_ID(industrytile);
 	2, 1: item_FEAT_INDUSTRYTILES_231;
-	3, 0: tile_brick_works;
+	3, 0: THIS_ID(industrytile);
 	3, 1: item_FEAT_INDUSTRYTILES_229;
 }
 
 tilelayout tilelayout_brick_works_3 {
-	0, 0: tile_brick_works;
-	0, 1: tile_brick_works;
-	0, 2: tile_brick_works;
+	0, 0: THIS_ID(industrytile);
+	0, 1: THIS_ID(industrytile);
+	0, 2: THIS_ID(industrytile);
 	0, 3: item_FEAT_INDUSTRYTILES_231;
-	1, 0: tile_brick_works;
-	1, 1: tile_brick_works;
-	1, 2: tile_brick_works;
+	1, 0: THIS_ID(industrytile);
+	1, 1: THIS_ID(industrytile);
+	1, 2: THIS_ID(industrytile);
 	1, 3: item_FEAT_INDUSTRYTILES_229;
 }
 
