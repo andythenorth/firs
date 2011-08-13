@@ -1,0 +1,75 @@
+/*
+ * This file is part of FIRS Industry Set for OpenTTD.
+ * FIRS is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 2.
+ * FIRS is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/*
+ * Check for the nearby tiles NOT being of a specific class
+ *
+ * switch name:  THIS_ID(name)
+ *               tilename ## name
+ *
+ * Parameters:
+ * name:         Name of this switch
+ * class:        nearby tile class
+ * errtext:      deny construction: text for error message or CB_RESULT_IND_DISALLOW_UNSUITABLE
+ * next:         allow construction: name of next switch or "return CB_RESULT_IND_ALLOW_LOCATION"
+ */
+
+#define TILE_DISALLOW_NEARBY_CLASS(name, class, errtext, next) \
+switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(name), \
+    (nearby_tile_class( 1,  1) == class) | \
+    (nearby_tile_class( 1,  0) == class) | \
+    (nearby_tile_class( 1, -1) == class) | \
+    (nearby_tile_class( 0, -1) == class) | \
+    (nearby_tile_class(-1, -1) == class) | \
+    (nearby_tile_class(-1,  0) == class) | \
+    (nearby_tile_class(-1,  1) == class) | \
+    (nearby_tile_class( 0,  1) == class)) { \
+    1: return errtext; \
+    next; \
+}
+
+/*
+ * Check whether a certain location is suitable for building the industry
+ * Restrictions apply only to industries funded by the game.
+ *
+ * switch name:  THIS_ID(name)
+ *               tilename ## name
+ *
+ * Parameters:
+ * name          name of this switch
+ * errtext:      deny construction: text for error message or CB_RESULT_IND_DISALLOW_UNSUITABLE
+ * next          name of next switch or "return CB_RESULT_IND_ALLOW_LOCATION"
+ */
+
+/* founder == FOUNDER_GAME means founded by the game, 0 .. 15 are player companies */
+#define TILE_ALLOW_PLAYER(name, errtext, next) \
+switch (FEAT_INDUSTRYTILES, PARENT, THIS_ID(name), ( \
+			(((extra_callback_info2 & 0xFF00) >> 8) == IND_CREATION_FUND) || \
+			(((extra_callback_info2 & 0xFF00) >> 8) == IND_CREATION_PROSPECT) \
+			) \
+		) { \
+	1: return errtext; \
+	next; \
+}
+
+/*
+ * Check whether a tile is a flat tile and only allow construction in that case
+ *
+ * switch name:  THIS_ID(name)
+ *               tilename ## name
+ *
+ * Parameters:
+ * name          name of this switch
+ * errtext:      deny construction: text for error message or CB_RESULT_IND_DISALLOW_UNSUITABLE
+ * next          name of next switch or "return CB_RESULT_IND_ALLOW_LOCATION"
+ */
+
+#define TILE_ALLOW_ONLY_FLAT_LAND(name, errtext, next) \
+switch (FEAT_INDUSTRYTILES, SELF, THIS_ID(name), nearby_tile_slope(0,0) == SLOPE_FLAT) { \
+	1: next; \
+	return errtext; \
+}
