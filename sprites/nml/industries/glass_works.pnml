@@ -7,310 +7,81 @@
 
 #define THIS_ID(...) glass_works ## __VA_ARGS__
 
-item(FEAT_INDUSTRYTILES, tile_glass_works, 178) {
-	property {
-		substitute: 0;
-		accepted_cargos: [[SAND, 8], [RFPR, 8]];
-		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
-		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
-	}
+spriteset(THIS_ID(spriteset_ground), "sprites/graphics/industries/groundtiles.png") {
+	tmpl_ground_tile(150, 10)
+	tmpl_ground_tile(150, 10)
 }
 
-spriteset(spriteset_4966, "sprites/graphics/industries/glassworks.png") { tmpl_building_sprite(10, 10, 90, -59) } 
-spriteset(spriteset_4967, "sprites/graphics/industries/glassworks.png") { tmpl_building_sprite(80, 10, 90, -71) } 
-spriteset(spriteset_4968, "sprites/graphics/industries/glassworks.png") { tmpl_building_sprite(150, 10, 90, -59) } 
-spriteset(spriteset_4969, "sprites/graphics/industries/groundtiles.png") { tmpl_ground_tile(150, 10) } 
-spritelayout action2_4970 {
+spriteset(THIS_ID(spriteset_1)) {
+	tmpl_building_sprite_filename(10, 10, 90, -59, "sprites/graphics/industries/glassworks.png")
+	tmpl_building_sprite_filename(10, 10, 90, -59, "sprites/graphics/industries/glassworks_snow.png")
+}
+
+spriteset(THIS_ID(spriteset_2)) {
+	tmpl_building_sprite_filename(80, 10, 90, -71, "sprites/graphics/industries/glassworks.png")
+	tmpl_building_sprite_filename(80, 10, 90, -71, "sprites/graphics/industries/glassworks_snow.png")
+}
+
+spriteset(THIS_ID(spriteset_3)) {
+	tmpl_building_sprite_filename(150, 10, 90, -59, "sprites/graphics/industries/glassworks.png")
+	tmpl_building_sprite_filename(150, 10, 90, -59, "sprites/graphics/industries/glassworks_snow.png")
+}
+
+SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_1), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_1), 12)
+
+SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_2), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_2), 12)
+
+SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_3), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_3), 12)
+
+spritelayout THIS_ID(spritelayout_4) {
 	ground {
-		sprite: spriteset_4969;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_4966;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 12;
-	}
-}
-
-spritelayout action2_4971 {
-	ground {
-		sprite: spriteset_4969;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_4967;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 12;
-	}
-}
-
-spritelayout action2_4972 {
-	ground {
-		sprite: spriteset_4969;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_4968;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 12;
-	}
-}
-
-spritelayout action2_4973 {
-	ground {
-		sprite: spriteset_4969;
+		sprite: THIS_ID(spriteset_ground(terrain_type == TILETYPE_SNOW));
 		recolour_mode: RECOLOUR_REMAP;
 		palette: 0;
 	}
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4974, relative_pos) {
-	relative_coord(0, 0): action2_4973;
-	relative_coord(0, 1): action2_4972;
-	relative_coord(1, 0): action2_4970;
-	relative_coord(1, 1): action2_4971;
-	action2_4973;
+switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_1), relative_pos) {
+	relative_coord(0, 0): THIS_ID(spritelayout_4);
+	relative_coord(0, 1): THIS_ID(spritelayout_3);
+	relative_coord(1, 0): THIS_ID(spritelayout_1);
+	relative_coord(1, 1): THIS_ID(spritelayout_2);
+	THIS_ID(spritelayout_4);
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4975, relative_pos) {
-	relative_coord(0, 0): action2_4973;
-	relative_coord(0, 1): action2_4972;
-	relative_coord(1, 0): action2_4970;
-	relative_coord(1, 1): action2_4971;
-	relative_coord(2, 0): action2_4973;
-	relative_coord(2, 1): action2_4972;
-	relative_coord(3, 0): action2_4970;
-	relative_coord(3, 1): action2_4971;
-	action2_4973;
+switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_2), relative_pos) {
+	relative_coord(0, 0): THIS_ID(spritelayout_4);
+	relative_coord(0, 1): THIS_ID(spritelayout_3);
+	relative_coord(1, 0): THIS_ID(spritelayout_1);
+	relative_coord(1, 1): THIS_ID(spritelayout_2);
+	relative_coord(2, 0): THIS_ID(spritelayout_4);
+	relative_coord(2, 1): THIS_ID(spritelayout_3);
+	relative_coord(3, 0): THIS_ID(spritelayout_1);
+	relative_coord(3, 1): THIS_ID(spritelayout_2);
+	THIS_ID(spritelayout_4);
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4976, relative_pos) {
-	relative_coord(0, 0): action2_4973;
-	relative_coord(0, 1): action2_4972;
-	relative_coord(0, 2): action2_4973;
-	relative_coord(0, 3): action2_4972;
-	relative_coord(1, 0): action2_4970;
-	relative_coord(1, 1): action2_4971;
-	relative_coord(1, 2): action2_4970;
-	relative_coord(1, 3): action2_4971;
-	relative_coord(2, 1): action2_4973;
-	relative_coord(2, 2): action2_4972;
-	relative_coord(3, 1): action2_4970;
-	relative_coord(3, 2): action2_4971;
-	action2_4973;
+switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_3), relative_pos) {
+	relative_coord(0, 0): THIS_ID(spritelayout_4);
+	relative_coord(0, 1): THIS_ID(spritelayout_3);
+	relative_coord(0, 2): THIS_ID(spritelayout_4);
+	relative_coord(0, 3): THIS_ID(spritelayout_3);
+	relative_coord(1, 0): THIS_ID(spritelayout_1);
+	relative_coord(1, 1): THIS_ID(spritelayout_2);
+	relative_coord(1, 2): THIS_ID(spritelayout_1);
+	relative_coord(1, 3): THIS_ID(spritelayout_2);
+	relative_coord(2, 1): THIS_ID(spritelayout_4);
+	relative_coord(2, 2): THIS_ID(spritelayout_3);
+	relative_coord(3, 1): THIS_ID(spritelayout_1);
+	relative_coord(3, 2): THIS_ID(spritelayout_2);
+	THIS_ID(spritelayout_4);
 }
 
-switch(FEAT_INDUSTRYTILES, PARENT, action2_4977, layout_num) {
-	1: action2_4974;
-	2: action2_4975;
-	3: action2_4976;
-	action2_4970;
-}
-
-spriteset(spriteset_4979, "sprites/graphics/industries/glassworks.png") { tmpl_building_sprite(10, 10, 90, -59) } 
-spriteset(spriteset_4980, "sprites/graphics/industries/glassworks.png") { tmpl_building_sprite(80, 10, 90, -71) } 
-spriteset(spriteset_4981, "sprites/graphics/industries/glassworks.png") { tmpl_building_sprite(150, 10, 90, -59) } 
-spriteset(spriteset_4982, "sprites/graphics/industries/groundtiles.png") { tmpl_ground_tile(150, 10) } 
-spritelayout action2_4983 {
-	ground {
-		sprite: spriteset_4982;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_4979;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 12;
-	}
-}
-
-spritelayout action2_4984 {
-	ground {
-		sprite: spriteset_4982;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_4980;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 12;
-	}
-}
-
-spritelayout action2_4985 {
-	ground {
-		sprite: spriteset_4982;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_4981;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 12;
-	}
-}
-
-spritelayout action2_4986 {
-	ground {
-		sprite: spriteset_4982;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_4987, relative_pos) {
-	relative_coord(0, 0): action2_4986;
-	relative_coord(0, 1): action2_4985;
-	relative_coord(1, 0): action2_4983;
-	relative_coord(1, 1): action2_4984;
-	action2_4986;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_4988, relative_pos) {
-	relative_coord(0, 0): action2_4986;
-	relative_coord(0, 1): action2_4985;
-	relative_coord(1, 0): action2_4983;
-	relative_coord(1, 1): action2_4984;
-	relative_coord(2, 0): action2_4986;
-	relative_coord(2, 1): action2_4985;
-	relative_coord(3, 0): action2_4983;
-	relative_coord(3, 1): action2_4984;
-	action2_4986;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_4989, relative_pos) {
-	relative_coord(0, 0): action2_4986;
-	relative_coord(0, 1): action2_4985;
-	relative_coord(0, 2): action2_4986;
-	relative_coord(0, 3): action2_4985;
-	relative_coord(1, 0): action2_4983;
-	relative_coord(1, 1): action2_4984;
-	relative_coord(1, 2): action2_4983;
-	relative_coord(1, 3): action2_4984;
-	relative_coord(2, 1): action2_4986;
-	relative_coord(2, 2): action2_4985;
-	relative_coord(3, 1): action2_4983;
-	relative_coord(3, 2): action2_4984;
-	action2_4986;
-}
-
-switch(FEAT_INDUSTRYTILES, PARENT, action2_4990, layout_num) {
-	1: action2_4987;
-	2: action2_4988;
-	3: action2_4989;
-	action2_4983;
-}
-
-spriteset(spriteset_4992) { 	[10, 10, 64, 90, -31, -59, 9, "sprites/graphics/industries/glassworks_snow.png"] } 
-spriteset(spriteset_4993) { 	[80, 10, 64, 90, -31, -71, 9, "sprites/graphics/industries/glassworks_snow.png"] } 
-spriteset(spriteset_4994) { 	[150, 10, 64, 90, -31, -59, 9, "sprites/graphics/industries/glassworks_snow.png"] } 
-spriteset(spriteset_4995, "sprites/graphics/industries/groundtiles.png") { tmpl_ground_tile(150, 10) } 
-spritelayout action2_4996 {
-	ground {
-		sprite: spriteset_4995;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_4992;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 12;
-	}
-}
-
-spritelayout action2_4997 {
-	ground {
-		sprite: spriteset_4995;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_4993;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 12;
-	}
-}
-
-spritelayout action2_4998 {
-	ground {
-		sprite: spriteset_4995;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_4994;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 12;
-	}
-}
-
-spritelayout action2_4999 {
-	ground {
-		sprite: spriteset_4995;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_5000, relative_pos) {
-	relative_coord(0, 0): action2_4999;
-	relative_coord(0, 1): action2_4998;
-	relative_coord(1, 0): action2_4996;
-	relative_coord(1, 1): action2_4997;
-	action2_4999;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_5001, relative_pos) {
-	relative_coord(0, 0): action2_4999;
-	relative_coord(0, 1): action2_4998;
-	relative_coord(1, 0): action2_4996;
-	relative_coord(1, 1): action2_4997;
-	relative_coord(2, 0): action2_4999;
-	relative_coord(2, 1): action2_4998;
-	relative_coord(3, 0): action2_4996;
-	relative_coord(3, 1): action2_4997;
-	action2_4999;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_5002, relative_pos) {
-	relative_coord(0, 0): action2_4999;
-	relative_coord(0, 1): action2_4998;
-	relative_coord(0, 2): action2_4999;
-	relative_coord(0, 3): action2_4998;
-	relative_coord(1, 0): action2_4996;
-	relative_coord(1, 1): action2_4997;
-	relative_coord(1, 2): action2_4996;
-	relative_coord(1, 3): action2_4997;
-	relative_coord(2, 1): action2_4999;
-	relative_coord(2, 2): action2_4998;
-	relative_coord(3, 1): action2_4996;
-	relative_coord(3, 2): action2_4997;
-	action2_4999;
-}
-
-switch(FEAT_INDUSTRYTILES, PARENT, action2_5003, layout_num) {
-	1: action2_5000;
-	2: action2_5001;
-	3: action2_5002;
-	action2_4996;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_5004, terrain_type) {
-	1: action2_4990;
-	4: action2_5003;
-	action2_4977;
+switch(FEAT_INDUSTRYTILES, PARENT, THIS_ID(layout), layout_num) {
+	1: THIS_ID(layout_1);
+	2: THIS_ID(layout_2);
+	3: THIS_ID(layout_3);
+	THIS_ID(spritelayout_1);
 }
 
 CHECK_NEARBY_TILE_CLASS(action2_5012)
@@ -327,46 +98,53 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_5014, var[0x60, 0, 255, 0]) {
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_5015, (current_callback & 255)) {
 	INDTILE_CB_SLOPE_IS_SUITABLE: action2_5014;
-	action2_5004;
+	THIS_ID(layout);
 }
 
-item(FEAT_INDUSTRYTILES, tile_glass_works, 178) {
+item(FEAT_INDUSTRYTILES, THIS_ID(industrytile), 178) {
+	property {
+		substitute:       0;
+		accepted_cargos:  [[SAND, 8], [RFPR, 8]];
+		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
+		callback_flags:   bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
+	}
+
 	graphics {
 		action2_5015;
 	}
 }
 
 tilelayout tilelayout_glass_works_1 {
-	0, 0: tile_glass_works;
-	0, 1: tile_glass_works;
-	1, 0: tile_glass_works;
-	1, 1: tile_glass_works;
+	0, 0: THIS_ID(industrytile);
+	0, 1: THIS_ID(industrytile);
+	1, 0: THIS_ID(industrytile);
+	1, 1: THIS_ID(industrytile);
 }
 
 tilelayout tilelayout_glass_works_2 {
-	0, 0: tile_glass_works;
-	0, 1: tile_glass_works;
-	1, 0: tile_glass_works;
-	1, 1: tile_glass_works;
-	2, 0: tile_glass_works;
-	2, 1: tile_glass_works;
-	3, 0: tile_glass_works;
-	3, 1: tile_glass_works;
+	0, 0: THIS_ID(industrytile);
+	0, 1: THIS_ID(industrytile);
+	1, 0: THIS_ID(industrytile);
+	1, 1: THIS_ID(industrytile);
+	2, 0: THIS_ID(industrytile);
+	2, 1: THIS_ID(industrytile);
+	3, 0: THIS_ID(industrytile);
+	3, 1: THIS_ID(industrytile);
 }
 
 tilelayout tilelayout_glass_works_3 {
-	0, 0: tile_glass_works;
-	0, 1: tile_glass_works;
-	0, 2: tile_glass_works;
-	0, 3: tile_glass_works;
-	1, 0: tile_glass_works;
-	1, 1: tile_glass_works;
-	1, 2: tile_glass_works;
-	1, 3: tile_glass_works;
-	2, 1: tile_glass_works;
-	2, 2: tile_glass_works;
-	3, 1: tile_glass_works;
-	3, 2: tile_glass_works;
+	0, 0: THIS_ID(industrytile);
+	0, 1: THIS_ID(industrytile);
+	0, 2: THIS_ID(industrytile);
+	0, 3: THIS_ID(industrytile);
+	1, 0: THIS_ID(industrytile);
+	1, 1: THIS_ID(industrytile);
+	1, 2: THIS_ID(industrytile);
+	1, 3: THIS_ID(industrytile);
+	2, 1: THIS_ID(industrytile);
+	2, 2: THIS_ID(industrytile);
+	3, 1: THIS_ID(industrytile);
+	3, 2: THIS_ID(industrytile);
 }
 
 /* *************************************************
