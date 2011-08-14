@@ -1745,6 +1745,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_6340, animation_frame) {
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_6341, relative_pos) {
 	relative_coord(0, 0): action2_6314;
+	relative_coord(1, 0): action2_6314;
 	relative_coord(2, 0): action2_6314;
 	relative_coord(0, 1): action2_6314;
 	relative_coord(1, 1): action2_6314;
