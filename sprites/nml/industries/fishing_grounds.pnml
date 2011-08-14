@@ -70,18 +70,25 @@ switch(FEAT_INDUSTRYTILES, PARENT, THIS_ID(layout), layout_num) {
 	THIS_ID(spritelayout_1);
 }
 
+/* *************************************************
+ * Definition of the industry tile and its callbacks
+ * *************************************************/
+
 item(FEAT_INDUSTRYTILES, THIS_ID(industrytile), 204) {
 	property {
-		substitute: 0;
-		accepted_cargos: [];
+		substitute:       0;
+		accepted_cargos:  [];
 		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
-		callback_flags: 0;
 	}
 
 	graphics {
 		THIS_ID(layout);
 	}
 }
+
+/* *************************************************
+ * Definition of the industry layouts
+ * *************************************************/
 
 tilelayout tilelayout_fishing_grounds_1 {
 	0, 0: 255;
