@@ -6,6 +6,35 @@
  */
 
 /*
+ * Check for all nearby tiles and the tile itself NOT being of a specific terrain type
+ *
+ * switch name:  THIS_ID(name)
+ *               tilename ## name
+ *
+ * Parameters:
+ * name:         Name of this switch
+ * class:        nearby tile class
+ * errtext:      deny construction: text for error message or CB_RESULT_IND_DISALLOW_UNSUITABLE
+ * next:         allow construction: name of next switch or "return CB_RESULT_IND_ALLOW_LOCATION"
+ */
+
+#define TILE_DISALLOW_TERRAIN(name, terraintype, errtext, next) \
+switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(name), \
+			(nearby_tile_terrain_type( 1, -1) == terraintype) && \
+			(nearby_tile_terrain_type( 1,  0) == terraintype) && \
+			(nearby_tile_terrain_type( 1,  1) == terraintype) && \
+			(nearby_tile_terrain_type( 0, -1) == terraintype) && \
+			(nearby_tile_terrain_type( 0,  0) == terraintype) && \
+			(nearby_tile_terrain_type( 0,  1) == terraintype) && \
+			(nearby_tile_terrain_type(-1, -1) == terraintype) && \
+			(nearby_tile_terrain_type(-1,  0) == terraintype) && \
+			(nearby_tile_terrain_type(-1,  1) == terraintype) \
+		) { \
+	1: return errtext; \
+	next; \
+}
+
+/*
  * Check for the nearby tiles NOT being of a specific class
  *
  * switch name:  THIS_ID(name)
