@@ -7,64 +7,27 @@
 
 #define THIS_ID(...) hardware_store ## __VA_ARGS__
 
-item(FEAT_INDUSTRYTILES, tile_hardware_store, 218) {
+spriteset(THIS_ID(spriteset_1)) {
+	tmpl_building_sprite_filename(0, 0, 64, -33, "sprites/graphics/industries/hardwarestore.png")
+	tmpl_building_sprite_filename(0, 0, 64, -33, "sprites/graphics/industries/hardwarestore_snow.png")
+}
+
+SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_1), GROUNDSPRITE_CONCRETE, GROUNDSPRITE_CONCRETE, THIS_ID(spriteset_1), 16)
+
+item(FEAT_INDUSTRYTILES, THIS_ID(industrytile), 218) {
 	property {
-		substitute: 0;
-		accepted_cargos: [[GOOD, 8], [BDMT, 8]];
+		substitute:       0;
+		accepted_cargos:  [[GOOD, 8], [BDMT, 8]];
 		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
 	}
-}
 
-spriteset(spriteset_5235, "sprites/graphics/industries/hardwarestore.png") { tmpl_building_sprite(0, 0, 64, -33) } 
-spritelayout action2_5236 {
-	ground {
-		sprite: GROUNDSPRITE_CONCRETE;
-	}
-	building {
-		sprite: spriteset_5235;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-}
-
-spriteset(spriteset_5240, "sprites/graphics/industries/hardwarestore.png") { tmpl_building_sprite(0, 0, 64, -33) } 
-spritelayout action2_5241 {
-	ground {
-		sprite: GROUNDSPRITE_CONCRETE;
-	}
-	building {
-		sprite: spriteset_5240;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-}
-
-spriteset(spriteset_5245) { 	[0, 0, 64, 64, -31, -33, 9, "sprites/graphics/industries/hardwarestore_snow.png"] } 
-spritelayout action2_5246 {
-	ground {
-		sprite: GROUNDSPRITE_CONCRETE;
-	}
-	building {
-		sprite: spriteset_5245;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_5249, terrain_type) {
-	1: action2_5241;
-	4: action2_5246;
-	action2_5236;
-}
-
-item(FEAT_INDUSTRYTILES, tile_hardware_store, 218) {
 	graphics {
-		action2_5249;
+		THIS_ID(spritelayout_1);
 	}
 }
 
 tilelayout tilelayout_hardware_store_1 {
-	0, 0: tile_hardware_store;
+	0, 0: THIS_ID(industrytile);
 }
 
 /* *************************************************
