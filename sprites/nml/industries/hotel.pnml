@@ -36,6 +36,10 @@ switch(FEAT_INDUSTRYTILES, PARENT, THIS_ID(layout), layout_num) {
 	THIS_ID(spritelayout_1);
 }
 
+/* *************************************************
+ * Definition of the industry tile and its callbacks
+ * *************************************************/
+
 item(FEAT_INDUSTRYTILES, THIS_ID(industrytile), 217) {
 	property {
 		substitute:       0;
@@ -47,6 +51,10 @@ item(FEAT_INDUSTRYTILES, THIS_ID(industrytile), 217) {
 		THIS_ID(layout);
 	}
 }
+
+/* *************************************************
+ * Definition of the industry layouts
+ * *************************************************/
 
 tilelayout tilelayout_hotel_1 {
 	0, 0: THIS_ID(industrytile);
