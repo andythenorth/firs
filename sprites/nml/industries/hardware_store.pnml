@@ -61,7 +61,7 @@ item(FEAT_INDUSTRIES, hardware_store, 57) {
 		new_ind_msg:            TTD_STR_NEWS_INDUSTRY_CONSTRUCTION;
 
 		prod_cargo_types:       [];
-		accept_cargo_types:     [GRAI, BDMT];
+		accept_cargo_types:     [GOOD, BDMT];
 
 		prod_multiplier:        [0, 0];
 		input_multiplier_1:     [0, 0];
