@@ -7,107 +7,79 @@
 
 #define THIS_ID(...) fishing_grounds ## __VA_ARGS__
 
-item(FEAT_INDUSTRYTILES, tile_fishing_grounds, 204) {
+spriteset(THIS_ID(spriteset_1), "sprites/graphics/industries/fishinggrounds.pcx") { tmpl_ground_tile(10, 10) }
+spriteset(THIS_ID(spriteset_2), "sprites/graphics/industries/fishinggrounds.pcx") { tmpl_ground_tile(80, 10) }
+spriteset(THIS_ID(spriteset_3), "sprites/graphics/industries/fishinggrounds.pcx") { tmpl_ground_tile(150, 10) }
+spriteset(THIS_ID(spriteset_4), "sprites/graphics/industries/fishinggrounds.pcx") { tmpl_ground_tile(220, 10) }
+spriteset(THIS_ID(spriteset_5), "sprites/graphics/industries/fishinggrounds.pcx") { tmpl_building_sprite(290, 10, 31, -32) }
+
+SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_1), GROUNDSPRITE_WATER, THIS_ID(spriteset_1), 16)
+
+SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_2), GROUNDSPRITE_WATER, THIS_ID(spriteset_2), 16)
+
+SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_3), GROUNDSPRITE_WATER, THIS_ID(spriteset_3), 16)
+
+spritelayout THIS_ID(spritelayout_4) {
+	ground {
+		sprite: GROUNDSPRITE_WATER;
+	}
+	childsprite {
+		sprite: THIS_ID(spriteset_5);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+	building {
+		sprite: THIS_ID(spriteset_4);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_1), relative_pos) {
+	relative_coord(3, 2): THIS_ID(spritelayout_1);
+	relative_coord(3, 3): THIS_ID(spritelayout_4);
+	relative_coord(3, 4): THIS_ID(spritelayout_2);
+	THIS_ID(spritelayout_3);
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_2), relative_pos) {
+	relative_coord(3, 2): THIS_ID(spritelayout_1);
+	relative_coord(3, 3): THIS_ID(spritelayout_2);
+	relative_coord(3, 4): THIS_ID(spritelayout_4);
+	THIS_ID(spritelayout_3);
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_3), relative_pos) {
+	relative_coord(2, 3): THIS_ID(spritelayout_3);
+	relative_coord(5, 3): THIS_ID(spritelayout_4);
+	THIS_ID(spritelayout_2);
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_4), relative_pos) {
+	relative_coord(3, 5): THIS_ID(spritelayout_1);
+	relative_coord(3, 3): THIS_ID(spritelayout_4);
+	relative_coord(3, 2): THIS_ID(spritelayout_2);
+	THIS_ID(spritelayout_3);
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, THIS_ID(layout), layout_num) {
+	1: THIS_ID(layout_1);
+	2: THIS_ID(layout_2);
+	3: THIS_ID(layout_3);
+	4: THIS_ID(layout_4);
+	THIS_ID(spritelayout_1);
+}
+
+item(FEAT_INDUSTRYTILES, THIS_ID(industrytile), 204) {
 	property {
 		substitute: 0;
 		accepted_cargos: [];
 		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
 		callback_flags: 0;
 	}
-}
 
-spriteset(spriteset_4076, "sprites/graphics/industries/fishinggrounds.pcx") { tmpl_ground_tile(10, 10) } 
-spriteset(spriteset_4077, "sprites/graphics/industries/fishinggrounds.pcx") { tmpl_ground_tile(80, 10) } 
-spriteset(spriteset_4078, "sprites/graphics/industries/fishinggrounds.pcx") { tmpl_ground_tile(150, 10) } 
-spriteset(spriteset_4079, "sprites/graphics/industries/fishinggrounds.pcx") { tmpl_ground_tile(220, 10) } 
-spriteset(spriteset_4080, "sprites/graphics/industries/fishinggrounds.pcx") { tmpl_building_sprite(290, 10, 31, -32) } 
-spritelayout action2_4081 {
-	ground {
-		sprite: GROUNDSPRITE_WATER;
-	}
-	building {
-		sprite: spriteset_4076;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-}
-
-spritelayout action2_4082 {
-	ground {
-		sprite: GROUNDSPRITE_WATER;
-	}
-	building {
-		sprite: spriteset_4077;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-}
-
-spritelayout action2_4083 {
-	ground {
-		sprite: GROUNDSPRITE_WATER;
-	}
-	building {
-		sprite: spriteset_4078;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-}
-
-spritelayout action2_4084 {
-	ground {
-		sprite: GROUNDSPRITE_WATER;
-	}
-	childsprite {
-		sprite: spriteset_4080;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_4079;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_4085, relative_pos) {
-	relative_coord(3, 2): action2_4081;
-	relative_coord(3, 3): action2_4084;
-	relative_coord(3, 4): action2_4082;
-	action2_4083;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_4086, relative_pos) {
-	relative_coord(3, 2): action2_4081;
-	relative_coord(3, 3): action2_4082;
-	relative_coord(3, 4): action2_4084;
-	action2_4083;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_4087, relative_pos) {
-	relative_coord(2, 3): action2_4083;
-	relative_coord(5, 3): action2_4084;
-	action2_4082;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_4088, relative_pos) {
-	relative_coord(3, 5): action2_4081;
-	relative_coord(3, 3): action2_4084;
-	relative_coord(3, 2): action2_4082;
-	action2_4083;
-}
-
-switch(FEAT_INDUSTRYTILES, PARENT, action2_4089, layout_num) {
-	1: action2_4085;
-	2: action2_4086;
-	3: action2_4087;
-	4: action2_4088;
-	action2_4081;
-}
-
-item(FEAT_INDUSTRYTILES, tile_fishing_grounds, 204) {
 	graphics {
-		action2_4089;
+		THIS_ID(layout);
 	}
 }
 
@@ -135,15 +107,15 @@ tilelayout tilelayout_fishing_grounds_1 {
 	2, 6: 255;
 	3, 0: 255;
 	3, 1: 255;
-	3, 2: tile_fishing_grounds;
-	3, 3: tile_fishing_grounds;
-	3, 4: tile_fishing_grounds;
+	3, 2: THIS_ID(industrytile);
+	3, 3: THIS_ID(industrytile);
+	3, 4: THIS_ID(industrytile);
 	3, 5: 255;
 	3, 6: 255;
 	4, 0: 255;
 	4, 1: 255;
 	4, 2: 255;
-	4, 3: tile_fishing_grounds;
+	4, 3: THIS_ID(industrytile);
 	4, 4: 255;
 	4, 5: 255;
 	4, 6: 255;
@@ -187,23 +159,23 @@ tilelayout tilelayout_fishing_grounds_2 {
 	2, 6: 255;
 	3, 0: 255;
 	3, 1: 255;
-	3, 2: tile_fishing_grounds;
-	3, 3: tile_fishing_grounds;
-	3, 4: tile_fishing_grounds;
+	3, 2: THIS_ID(industrytile);
+	3, 3: THIS_ID(industrytile);
+	3, 4: THIS_ID(industrytile);
 	3, 5: 255;
 	3, 6: 255;
 	4, 0: 255;
 	4, 1: 255;
 	4, 2: 255;
 	4, 3: 255;
-	4, 4: tile_fishing_grounds;
+	4, 4: THIS_ID(industrytile);
 	4, 5: 255;
 	4, 6: 255;
 	5, 0: 255;
 	5, 1: 255;
 	5, 2: 255;
 	5, 3: 255;
-	5, 4: tile_fishing_grounds;
+	5, 4: THIS_ID(industrytile);
 	5, 5: 255;
 	5, 6: 255;
 	6, 0: 255;
@@ -240,7 +212,7 @@ tilelayout tilelayout_fishing_grounds_3 {
 	2, 0: 255;
 	2, 1: 255;
 	2, 2: 255;
-	2, 3: tile_fishing_grounds;
+	2, 3: THIS_ID(industrytile);
 	2, 4: 255;
 	2, 5: 255;
 	2, 6: 255;
@@ -260,9 +232,9 @@ tilelayout tilelayout_fishing_grounds_3 {
 	4, 6: 255;
 	5, 0: 255;
 	5, 1: 255;
-	5, 2: tile_fishing_grounds;
-	5, 3: tile_fishing_grounds;
-	5, 4: tile_fishing_grounds;
+	5, 2: THIS_ID(industrytile);
+	5, 3: THIS_ID(industrytile);
+	5, 4: THIS_ID(industrytile);
 	5, 5: 255;
 	5, 6: 255;
 	6, 0: 255;
@@ -303,15 +275,15 @@ tilelayout tilelayout_fishing_grounds_4 {
 	2, 2: 24;
 	2, 3: 24;
 	2, 4: 255;
-	2, 5: tile_fishing_grounds;
+	2, 5: THIS_ID(industrytile);
 	2, 6: 255;
 	2, 7: 255;
 	3, 0: 255;
 	3, 1: 255;
-	3, 2: tile_fishing_grounds;
-	3, 3: tile_fishing_grounds;
-	3, 4: tile_fishing_grounds;
-	3, 5: tile_fishing_grounds;
+	3, 2: THIS_ID(industrytile);
+	3, 3: THIS_ID(industrytile);
+	3, 4: THIS_ID(industrytile);
+	3, 5: THIS_ID(industrytile);
 	3, 6: 255;
 	3, 7: 255;
 	4, 0: 255;
