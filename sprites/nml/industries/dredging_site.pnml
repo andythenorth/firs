@@ -9,42 +9,32 @@
 
 #define THIS_STR_EXTRA_SUPPLIES        STR_EXTRA_ENGINEERING_SUPPLIES
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_198, 198) {
+spriteset(THIS_ID(spriteset_1)) {
+	tmpl_building_sprite_filename(10, 10, 100, -65, "sprites/graphics/industries/dredgingsite.pcx")
+}
+
+SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_1), GROUNDSPRITE_WATER, THIS_ID(spriteset_1), 74)
+
+switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_1), relative_pos) {
+	relative_coord(1, 1): THIS_ID(spritelayout_1);
+	THIS_ID(spritelayout_1);
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, THIS_ID(layout), layout_num) {
+	1: THIS_ID(layout_1);
+	THIS_ID(spritelayout_1);
+}
+
+item(FEAT_INDUSTRYTILES, THIS_ID(industrytile), 198) {
 	property {
-		substitute: 0;
-		accepted_cargos: [[ENSP, 8]];
+		substitute:       0;
+		accepted_cargos:  [[ENSP, 8]];
 		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
-		callback_flags: 0;
+		callback_flags:   0;
 	}
-}
 
-spriteset(spriteset_3940, "sprites/graphics/industries/dredgingsite.pcx") { tmpl_building_sprite(10, 10, 100, -65) } 
-spritelayout action2_3941 {
-	ground {
-		sprite: GROUNDSPRITE_WATER;
-	}
-	building {
-		sprite: spriteset_3940;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		always_draw: 1;
-		zextent: 74;
-	}
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_3942, relative_pos) {
-	relative_coord(1, 1): action2_3941;
-	action2_3941;
-}
-
-switch(FEAT_INDUSTRYTILES, PARENT, action2_3943, layout_num) {
-	1: action2_3942;
-	action2_3941;
-}
-
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_198, 198) {
 	graphics {
-		action2_3943;
+		THIS_ID(layout);
 	}
 }
 
@@ -57,7 +47,7 @@ tilelayout tilelayout_dredging_site_1 {
 	1, 4: 255;
 	2, 0: 255;
 	2, 2: 255;
-	2, 3: item_FEAT_INDUSTRYTILES_198;
+	2, 3: THIS_ID(industrytile);
 	2, 4: 255;
 }
 
