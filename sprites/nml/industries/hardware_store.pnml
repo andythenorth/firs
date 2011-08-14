@@ -14,6 +14,10 @@ spriteset(THIS_ID(spriteset_1)) {
 
 SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_1), GROUNDSPRITE_CONCRETE, GROUNDSPRITE_CONCRETE, THIS_ID(spriteset_1), 16)
 
+/* *************************************************
+ * Definition of the industry tile and its callbacks
+ * *************************************************/
+
 item(FEAT_INDUSTRYTILES, THIS_ID(industrytile), 218) {
 	property {
 		substitute:       0;
@@ -25,6 +29,10 @@ item(FEAT_INDUSTRYTILES, THIS_ID(industrytile), 218) {
 		THIS_ID(spritelayout_1);
 	}
 }
+
+/* *************************************************
+ * Definition of the industry layouts
+ * *************************************************/
 
 tilelayout tilelayout_hardware_store_1 {
 	0, 0: THIS_ID(industrytile);
