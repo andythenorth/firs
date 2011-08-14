@@ -574,6 +574,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_6261, relative_pos) {
 	relative_coord(2, 0): action2_6234;
 	relative_coord(0, 1): action2_6234;
 	relative_coord(1, 1): action2_6234;
+	relative_coord(1, 0): action2_6234;
 	relative_coord(0, 3): action2_6235;
 	relative_coord(1, 3): action2_6235;
 	relative_coord(1, 4): action2_6237;
@@ -589,8 +590,10 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_6262, relative_pos) {
 	relative_coord(1, 1): action2_6233;
 	relative_coord(0, 2): action2_6234;
 	relative_coord(1, 2): action2_6234;
+	relative_coord(1, 3): action2_6234;
 	relative_coord(2, 1): action2_6238;
 	relative_coord(2, 2): action2_6237;
+	relative_coord(2, 3): action2_6237;
 	relative_coord(2, 0): action2_6235;
 	relative_coord(3, 0): action2_6235;
 	relative_coord(3, 2): action2_6235;
