@@ -7,118 +7,52 @@
 
 #define THIS_ID(...) hotel ## __VA_ARGS__
 
-item(FEAT_INDUSTRYTILES, tile_hotel, 217) {
+spritelayout THIS_ID(spritelayout_1) {
+	ground {
+		sprite: GROUNDSPRITE_CLEARED;
+	}
+	building {
+		sprite: (terrain_type == TILETYPE_SNOW) ? 4583 : 4475;
+	}
+}
+
+spritelayout THIS_ID(spritelayout_2) {
+	ground {
+		sprite: GROUNDSPRITE_CLEARED;
+	}
+	building {
+		sprite: (terrain_type == TILETYPE_SNOW) ? 4584 : 4476;
+	}
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_1), relative_pos) {
+	relative_coord(0, 1): THIS_ID(spritelayout_2);
+	relative_coord(1, 1): THIS_ID(spritelayout_2);
+	THIS_ID(spritelayout_1);
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, THIS_ID(layout), layout_num) {
+	1: THIS_ID(layout_1);
+	THIS_ID(spritelayout_1);
+}
+
+item(FEAT_INDUSTRYTILES, THIS_ID(industrytile), 217) {
 	property {
-		substitute: 0;
-		accepted_cargos: [[FOOD, 8], [BEER, 8], [0, 8]];
+		substitute:       0;
+		accepted_cargos:  [[FOOD, 8], [BEER, 8], [0, 8]];
 		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
 	}
-}
 
-spritelayout action2_5259 {
-	ground {
-		sprite: GROUNDSPRITE_CLEARED;
-	}
-	building {
-		sprite: 4475;
-	}
-}
-
-spritelayout action2_5260 {
-	ground {
-		sprite: GROUNDSPRITE_CLEARED;
-	}
-	building {
-		sprite: 4476;
-	}
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_5261, relative_pos) {
-	relative_coord(0, 1): action2_5260;
-	relative_coord(1, 1): action2_5260;
-	action2_5259;
-}
-
-switch(FEAT_INDUSTRYTILES, PARENT, action2_5262, layout_num) {
-	1: action2_5261;
-	action2_5259;
-}
-
-spritelayout action2_5263 {
-	ground {
-		sprite: GROUNDSPRITE_CLEARED;
-	}
-	building {
-		sprite: 4475;
-	}
-}
-
-spritelayout action2_5264 {
-	ground {
-		sprite: GROUNDSPRITE_CLEARED;
-	}
-	building {
-		sprite: 4476;
-	}
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_5265, relative_pos) {
-	relative_coord(0, 1): action2_5264;
-	relative_coord(1, 1): action2_5264;
-	action2_5263;
-}
-
-switch(FEAT_INDUSTRYTILES, PARENT, action2_5266, layout_num) {
-	1: action2_5265;
-	action2_5263;
-}
-
-spritelayout action2_5267 {
-	ground {
-		sprite: GROUNDSPRITE_CLEARED;
-	}
-	building {
-		sprite: 4583;
-	}
-}
-
-spritelayout action2_5268 {
-	ground {
-		sprite: GROUNDSPRITE_CLEARED;
-	}
-	building {
-		sprite: 4584;
-	}
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_5269, relative_pos) {
-	relative_coord(0, 1): action2_5268;
-	relative_coord(1, 1): action2_5268;
-	action2_5267;
-}
-
-switch(FEAT_INDUSTRYTILES, PARENT, action2_5270, layout_num) {
-	1: action2_5269;
-	action2_5267;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_5271, terrain_type) {
-	1: action2_5266;
-	4: action2_5270;
-	action2_5262;
-}
-
-item(FEAT_INDUSTRYTILES, tile_hotel, 217) {
 	graphics {
-		action2_5271;
+		THIS_ID(layout);
 	}
 }
 
 tilelayout tilelayout_hotel_1 {
-	0, 0: tile_hotel;
-	0, 1: tile_hotel;
-	1, 0: tile_hotel;
-	1, 1: tile_hotel;
+	0, 0: THIS_ID(industrytile);
+	0, 1: THIS_ID(industrytile);
+	1, 0: THIS_ID(industrytile);
+	1, 1: THIS_ID(industrytile);
 }
 
 /* *************************************************
