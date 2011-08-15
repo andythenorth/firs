@@ -88,11 +88,11 @@ switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(name), \
  *
  * Parameters:
  * name          name of this switch
- * next          name of next switch or "return CB_RESULT_IND_DISALLOW_UNSUITABLE"
+ * next          name of next switch or "return CB_RESULT_IND_ALLOW_LOCATION"
  */
 
 /* founder == FOUNDER_GAME means founded by the game, 0 .. 15 are player companies */
-#define TILE_ALLOW_PLAYER(name, errtext, next) \
+#define TILE_ALLOW_PLAYER(name, next) \
 switch (FEAT_INDUSTRYTILES, PARENT, THIS_ID(name), ( \
 			(((extra_callback_info2 & 0xFF00) >> 8) == IND_CREATION_FUND) || \
 			(((extra_callback_info2 & 0xFF00) >> 8) == IND_CREATION_PROSPECT) \

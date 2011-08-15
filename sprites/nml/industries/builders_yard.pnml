@@ -48,7 +48,7 @@ switch(FEAT_INDUSTRYTILES, PARENT, THIS_ID(layout), layout_num) {
  * *************************************************/
 
 TILE_DISALLOW_NEARBY_CLASS(nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_IND_DISALLOW_UNSUITABLE, return CB_RESULT_IND_ALLOW_LOCATION)
-TILE_ALLOW_PLAYER         (terrain_check,                        CB_RESULT_IND_DISALLOW_UNSUITABLE, THIS_ID(nearby_industry))
+TILE_ALLOW_PLAYER         (terrain_check,                                                           THIS_ID(nearby_industry))
 
 item(FEAT_INDUSTRYTILES, tile_builders_yard, 164) {
 	property {
