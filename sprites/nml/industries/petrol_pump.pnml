@@ -7,15 +7,6 @@
 
 #define THIS_ID(...) petrol_pump ## __VA_ARGS__
 
-item(FEAT_INDUSTRYTILES, tile_petrol_pump, 203) {
-	property {
-		substitute: 0;
-		accepted_cargos: [[FOOD, 8], [GOOD, 8], [PETR, 8]];
-		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
-		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
-	}
-}
-
 spriteset(spriteset_6692, "sprites/graphics/industries/groundtiles.png") { tmpl_ground_tile(80, 10) } 
 spriteset(spriteset_6693, "sprites/graphics/industries/petrolpump.png") { tmpl_building_sprite(10, 10, 59, -28) } 
 spriteset(spriteset_6694, "sprites/graphics/industries/petrolpump.png") { tmpl_building_sprite(80, 10, 59, -28) } 
@@ -139,48 +130,67 @@ switch(FEAT_INDUSTRYTILES, PARENT, action2_6717, layout_num) {
 	action2_6713;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_6718, terrain_type) {
+switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(tile1_layout), terrain_type) {
 	1: action2_6708;
 	4: action2_6717;
 	action2_6699;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_6719, [STORE_TEMP(0, 0), STORE_TEMP((CMP(nearby_tile_class(0, -1), 2) | (LOAD_TEMP(0) & 255)), 0), STORE_TEMP((CMP(var[0x60, 24, 15, 32], 2) | (LOAD_TEMP(0) & 255)), 0), STORE_TEMP((CMP(nearby_tile_class(-1, 0), 2) | (LOAD_TEMP(0) & 255)), 0), STORE_TEMP((CMP(nearby_tile_class(-1, 1), 2) | (LOAD_TEMP(0) & 255)), 0), STORE_TEMP((CMP(nearby_tile_class(1, 0), 2) | (LOAD_TEMP(0) & 255)), 0), ((CMP(nearby_tile_class(1, 1), 2) | (LOAD_TEMP(0) & 255)) & 1)]) {
-	1: return 1024;
-	return 1025;
+/* *************************************************
+ * Definition of the industry tile and its callbacks
+ * *************************************************/
+
+/* Petrol station uses special road check, taylored for each layout separately
+ * when called by the game engine 
+ */
+switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(tile1_layout1_road_check),
+			(
+			nearby_tile_class( 0, -1) == TILE_CLASS_ROAD ||
+			nearby_tile_class( 0,  2) == TILE_CLASS_ROAD ||
+			nearby_tile_class(-1,  0) == TILE_CLASS_ROAD ||
+			nearby_tile_class(-1,  1) == TILE_CLASS_ROAD ||
+			nearby_tile_class( 1,  0) == TILE_CLASS_ROAD ||
+			nearby_tile_class( 1,  1) == TILE_CLASS_ROAD
+			) ) {
+	1: return CB_RESULT_IND_ALLOW_LOCATION;
+	return CB_RESULT_IND_DISALLOW_UNSUITABLE;
+}
+switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(tile1_layout2_road_check),
+			(
+			nearby_tile_class( 0, -1) == TILE_CLASS_ROAD ||
+			nearby_tile_class( 0,  1) == TILE_CLASS_ROAD ||
+			nearby_tile_class( 1, -1) == TILE_CLASS_ROAD ||
+			nearby_tile_class( 1,  1) == TILE_CLASS_ROAD ||
+			nearby_tile_class(-1,  0) == TILE_CLASS_ROAD ||
+			nearby_tile_class( 2,  0) == TILE_CLASS_ROAD
+			) ) {
+	1: return CB_RESULT_IND_ALLOW_LOCATION;
+	return CB_RESULT_IND_DISALLOW_UNSUITABLE;
+}
+switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(tile1_layout_check), (extra_callback_info2 & 255)) {
+	0: THIS_ID(tile1_layout1_road_check);
+	1: THIS_ID(tile1_layout2_road_check);
+	return CB_RESULT_IND_DISALLOW_UNSUITABLE;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_6720, [STORE_TEMP(0, 0), STORE_TEMP((CMP(nearby_tile_class(0, -1), 2) | (LOAD_TEMP(0) & 255)), 0), STORE_TEMP((CMP(nearby_tile_class(0, 1), 2) | (LOAD_TEMP(0) & 255)), 0), STORE_TEMP((CMP(nearby_tile_class(1, -1), 2) | (LOAD_TEMP(0) & 255)), 0), STORE_TEMP((CMP(nearby_tile_class(1, 1), 2) | (LOAD_TEMP(0) & 255)), 0), STORE_TEMP((CMP(nearby_tile_class(-1, 0), 2) | (LOAD_TEMP(0) & 255)), 0), ((CMP(var[0x60, 24, 15, 2], 2) | (LOAD_TEMP(0) & 255)) & 1)]) {
-	1: return 1024;
-	return 1025;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_6721, (extra_callback_info2 & 255)) {
-	0: action2_6719;
-	1: action2_6720;
-	return 1025;
-}
-
-switch(FEAT_INDUSTRYTILES, PARENT, action2_6722, founder) {
-	16: action2_6721;
-	return 1024;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_6723, var[0x60, 0, 255, 0]) {
-	1..255: return 1025;
-	action2_6722;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_6724, (current_callback & 255)) {
-	INDTILE_CB_SLOPE_IS_SUITABLE: action2_6723;
-	action2_6718;
-}
+TILE_ALLOW_PLAYER         (tile1_player_check,                                      THIS_ID(tile1_layout_check))
+TILE_ALLOW_ONLY_FLAT_LAND (tile1_location_check, CB_RESULT_IND_DISALLOW_UNSUITABLE, THIS_ID(tile1_player_check))
 
 item(FEAT_INDUSTRYTILES, tile_petrol_pump, 203) {
+	property {
+		substitute:       0;
+		accepted_cargos:  [[FOOD, 8], [GOOD, 8], [PETR, 8]];
+		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
+	}
 	graphics {
-		action2_6724;
+		slope_check:  THIS_ID(tile1_location_check);
+		THIS_ID(tile1_layout);
 	}
 }
+
+/* *************************************************
+ * Definition of the industry layouts
+ * *************************************************/
 
 tilelayout tilelayout_petrol_pump_1 {
 	0, 0: tile_petrol_pump;
