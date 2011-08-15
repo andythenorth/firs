@@ -36,61 +36,13 @@ spriteset(THIS_ID(spriteset_9),  "sprites/graphics/industries/cementplant.pcx") 
 spriteset(THIS_ID(spriteset_10), "sprites/graphics/industries/cementplant.pcx") { tmpl_building_sprite(710,  10, 113, -82) }
 spriteset(THIS_ID(spriteset_11), "sprites/graphics/industries/cementplant.pcx") { tmpl_building_sprite(780,  10, 113, -82) }
 
-spritelayout THIS_ID(spritelayout_1) {
-	ground {
-		sprite: THIS_ID(spriteset_ground);
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: THIS_ID(spriteset_1);
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 48;
-	}
-}
+SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_1), THIS_ID(spriteset_ground), THIS_ID(spriteset_1), 48)
 
-spritelayout THIS_ID(spritelayout_2) {
-	ground {
-		sprite: THIS_ID(spriteset_ground);
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: THIS_ID(spriteset_2);
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 48;
-	}
-}
+SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_2), THIS_ID(spriteset_ground), THIS_ID(spriteset_2), 48)
 
-spritelayout THIS_ID(spritelayout_3) {
-	ground {
-		sprite: THIS_ID(spriteset_ground);
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: THIS_ID(spriteset_3);
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 48;
-	}
-}
+SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_3), THIS_ID(spriteset_ground), THIS_ID(spriteset_3), 48)
 
-spritelayout THIS_ID(spritelayout_4) {
-	ground {
-		sprite: THIS_ID(spriteset_ground);
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: THIS_ID(spriteset_4);
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 48;
-	}
-}
+SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_4), THIS_ID(spriteset_ground), THIS_ID(spriteset_4), 48)
 
 spritelayout THIS_ID(spritelayout_5_anim) {
 	ground {
@@ -106,86 +58,17 @@ spritelayout THIS_ID(spritelayout_5_anim) {
 	}
 }
 
-spritelayout THIS_ID(spritelayout_6) {
-	ground {
-		sprite: THIS_ID(spriteset_ground);
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: THIS_ID(spriteset_6);
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 48;
-	}
-}
+SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_6), THIS_ID(spriteset_ground), THIS_ID(spriteset_6), 48)
 
-spritelayout THIS_ID(spritelayout_7) {
-	ground {
-		sprite: THIS_ID(spriteset_ground);
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: THIS_ID(spriteset_7);
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 48;
-	}
-}
+SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_7), THIS_ID(spriteset_ground), THIS_ID(spriteset_7), 48)
 
-spritelayout THIS_ID(spritelayout_8) {
-	ground {
-		sprite: GROUNDSPRITE_CONCRETE;
-	}
-	building {
-		sprite: THIS_ID(spriteset_8);
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 48;
-	}
-}
+SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_8), GROUNDSPRITE_CONCRETE, THIS_ID(spriteset_8), 48)
 
-spritelayout THIS_ID(spritelayout_9) {
-	ground {
-		sprite: THIS_ID(spriteset_ground);
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: THIS_ID(spriteset_9);
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 48;
-	}
-}
+SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_9), THIS_ID(spriteset_ground), THIS_ID(spriteset_9), 48)
 
-spritelayout THIS_ID(spritelayout_10) {
-	ground {
-		sprite: THIS_ID(spriteset_ground);
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: THIS_ID(spriteset_10);
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 48;
-	}
-}
+SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_10), THIS_ID(spriteset_ground), THIS_ID(spriteset_10), 48)
 
-spritelayout THIS_ID(spritelayout_11_anim) {
-	ground {
-		sprite: THIS_ID(spriteset_ground);
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: THIS_ID(spriteset_11);
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 7;
-	}
+SPRITELAYOUT_NORMAL_BEGIN(THIS_ID(spritelayout_11_anim), THIS_ID(spriteset_ground), THIS_ID(spriteset_11), 7)
 	building {
 		sprite: 3701 + animation_frame;
 		zoffset: 81;
@@ -200,7 +83,7 @@ spritelayout THIS_ID(spritelayout_11_anim) {
 		yextent: 7;
 		zextent: 7;
 	}
-}
+SPRITELAYOUT_END
 
 switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_1), relative_pos) {
 	relative_coord(0, 1): THIS_ID(spritelayout_2);
