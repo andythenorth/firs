@@ -847,16 +847,9 @@ switch(FEAT_INDUSTRYTILES, PARENT, THIS_ID(layout), layout_num) {
 	THIS_ID(spritelayout_1);
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4171, var[0x60, 0, 543, 0]) {
-	0..512: return 1025;
-	return 1024;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_4172, (current_callback & 255)) {
-	INDTILE_CB_SLOPE_IS_SUITABLE: action2_4171;
-	INDTILE_CB_FOUNDATIONS: return 0;
-	THIS_ID(layout);
-}
+/* *************************************************
+ * Definition of the industry tile and its callbacks
+ * *************************************************/
 
 item(FEAT_INDUSTRYTILES, tile_fishing_harbour1, 195) {
 	property {
@@ -866,22 +859,34 @@ item(FEAT_INDUSTRYTILES, tile_fishing_harbour1, 195) {
 	}
 
 	graphics {
-		action2_4172;
+		THIS_ID(layout);
 	}
 }
+
+/* It must not be a flat tile */
+TILE_CHECK_FLAT      (tile2_flat_check, return CB_RESULT_IND_DISALLOW_UNSUITABLE, return CB_RESULT_IND_ALLOW_LOCATION)
+
+/* We allow on sea shores and on normal slopes - but not rivers and canals */
+TILE_CHECK_WATERCLASS(tile2_land_check,     WATER_CLASS_NONE, THIS_ID(tile2_flat_check), return CB_RESULT_IND_DISALLOW_UNSUITABLE)
+TILE_CHECK_WATERCLASS(tile2_location_check, WATER_CLASS_SEA,  THIS_ID(tile2_flat_check), THIS_ID(tile2_land_check))
 
 item(FEAT_INDUSTRYTILES, tile_fishing_harbour2, 196) {
 	property {
 		substitute:       0;
 		accepted_cargos:  [[MNSP, 8], [FISH, 8]];
-		land_shape_flags: 32;
-		callback_flags:   48;
+		land_shape_flags: bitmask(LSF_ALLOW_ON_WATER);
 	}
 
 	graphics {
-		action2_4172;
+		foundations: return CB_RESULT_NO_FOUNDATIONS;
+		slope_check: THIS_ID(tile2_location_check);
+		THIS_ID(layout);
 	}
 }
+
+/* *************************************************
+ * Definition of the industry layouts
+ * *************************************************/
 
 tilelayout tilelayout_fishing_harbour_1 {
 	0, 3: tile_fishing_harbour1;
