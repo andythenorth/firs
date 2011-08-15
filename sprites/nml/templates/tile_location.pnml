@@ -88,8 +88,7 @@ switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(name), \
  *
  * Parameters:
  * name          name of this switch
- * errtext:      deny construction: text for error message or CB_RESULT_IND_DISALLOW_UNSUITABLE
- * next          name of next switch or "return CB_RESULT_IND_ALLOW_LOCATION"
+ * next          name of next switch or "return CB_RESULT_IND_DISALLOW_UNSUITABLE"
  */
 
 /* founder == FOUNDER_GAME means founded by the game, 0 .. 15 are player companies */
@@ -99,8 +98,8 @@ switch (FEAT_INDUSTRYTILES, PARENT, THIS_ID(name), ( \
 			(((extra_callback_info2 & 0xFF00) >> 8) == IND_CREATION_PROSPECT) \
 			) \
 		) { \
-	1: next; \
-	return errtext; \
+	1: return CB_RESULT_IND_ALLOW_LOCATION; \
+	next; \
 }
 
 /*
