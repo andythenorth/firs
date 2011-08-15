@@ -107,7 +107,7 @@ item(FEAT_INDUSTRYTILES, THIS_ID(industrytile), 165) {
 		substitute:         0;
 		accepted_cargos:    [[COAL, 8], [CLAY, 8], [SAND, 8]];
 		land_shape_flags:   bitmask(LSF_ONLY_ON_FLAT_LAND);
-		animation_info:     [1, 7];
+		animation_info:     [ANIMATION_LOOPING, 7];
 		animation_speed:    3;
 		animation_triggers: bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE);
 	}

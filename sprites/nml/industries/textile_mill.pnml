@@ -9,12 +9,12 @@
 
 item(FEAT_INDUSTRYTILES, tile_textile_mill, 183) {
 	property {
-		substitute: 0;
-		accepted_cargos: [[MNSP, 8], [WOOL, 8], [FICR, 8]];
-		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
-		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
-		animation_info: [1, 7];
-		animation_speed: 3;
+		substitute:         0;
+		accepted_cargos:    [[MNSP, 8], [WOOL, 8], [FICR, 8]];
+		land_shape_flags:   bitmask(LSF_ONLY_ON_FLAT_LAND);
+		callback_flags:     bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
+		animation_info:     [ANIMATION_LOOPING, 7];
+		animation_speed:    3;
 		animation_triggers: bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE);
 	}
 }

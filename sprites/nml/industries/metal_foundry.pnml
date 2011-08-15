@@ -121,12 +121,12 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_6355, (current_callback & 255)) {
 
 item(FEAT_INDUSTRYTILES, THIS_ID(industrytile), 188) {
 	property {
-		substitute: 0;
-		accepted_cargos: [[STEL, 8]];
+		substitute:       0;
+		accepted_cargos:  [[STEL, 8]];
 		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
-		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
-		animation_info: [1, 47];
-		animation_speed: 2;
+		callback_flags:   bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
+		animation_info:   [ANIMATION_LOOPING, 47];
+		animation_speed:  2;
 	}
 
 	graphics {

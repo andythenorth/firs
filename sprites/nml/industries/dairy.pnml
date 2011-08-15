@@ -249,7 +249,7 @@ item(FEAT_INDUSTRYTILES, THIS_ID(industrytile), 181) {
 		accepted_cargos:    [[MNSP, 8], [MILK, 8]];
 		land_shape_flags:   bitmask(LSF_ONLY_ON_FLAT_LAND);
 		callback_flags:     bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
-		animation_info:     [1, 7 * 6];
+		animation_info:     [ANIMATION_LOOPING, 7 * 6];
 		animation_speed:    3;
 		animation_triggers: bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE);
 	}

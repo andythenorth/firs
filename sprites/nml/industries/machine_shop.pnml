@@ -253,7 +253,7 @@ item(FEAT_INDUSTRYTILES, THIS_ID(industrytile), 186) {
 		accepted_cargos:    [[STEL, 8], [PETR, 8]];
 		land_shape_flags:   bitmask(LSF_ONLY_ON_FLAT_LAND);
 		callback_flags:     bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
-		animation_info:     [1, 47];
+		animation_info:     [ANIMATION_LOOPING, 47];
 		animation_speed:    2;
 		animation_triggers: bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE);
 	}
