@@ -28,3 +28,15 @@
 		zextent: 7; \
 		hide_sprite: animation_frame > 19; \
 	}
+
+/* Creates a long column of white smoke. */
+#define BUILDING_SMOKE_BIG(smoke_xoffset, smoke_yoffset, smoke_zoffset) \
+	building { \
+		sprite: 3701 + animation_frame; \
+		xoffset: smoke_xoffset; \
+		yoffset: smoke_yoffset; \
+		zoffset: smoke_zoffset; \
+		xextent: 15; \
+		yextent: 7; \
+		zextent: 7; \
+	}

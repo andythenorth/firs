@@ -5,6 +5,9 @@
  * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
  */
 
+#include "../templates/spritelayout_templates.pnml"
+#include "../templates/smoke_templates.pnml"
+
 #define THIS_ID(...) fertiliser_plant ## __VA_ARGS__
 
 spriteset(THIS_ID(spriteset_ground), "sprites/graphics/industries/groundtiles.png") { tmpl_ground_tile(80, 10) } 
@@ -39,22 +42,8 @@ SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_9), THIS_ID(spriteset_ground), THIS_ID(
 SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_10), THIS_ID(spriteset_ground), THIS_ID(spriteset_10), 48)
 
 SPRITELAYOUT_NORMAL_BEGIN(THIS_ID(spritelayout_1_anim), THIS_ID(spriteset_ground), THIS_ID(spriteset_1), 7)
-	building {
-		sprite: 3701 + animation_frame;
-		xoffset: 5;
-		zoffset: 69;
-		xextent: 11;
-		yextent: 7;
-		zextent: 7;
-	}
-	building {
-		sprite: 3701 + animation_frame;
-		xoffset: 9;
-		zoffset: 69;
-		xextent: 7;
-		yextent: 7;
-		zextent: 7;
-	}
+	BUILDING_SMOKE_BIG(5, 0, 69)
+	BUILDING_SMOKE_BIG(9, 0, 69)
 SPRITELAYOUT_END
 
 switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_1), relative_pos) {

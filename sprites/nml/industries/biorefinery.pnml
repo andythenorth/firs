@@ -5,6 +5,9 @@
  * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
  */
 
+#include "../templates/spritelayout_templates.pnml"
+#include "../templates/smoke_templates.pnml"
+
 #define THIS_ID(...) biorefinery ## __VA_ARGS__
 
 spriteset(THIS_ID(spriteset_ground), "sprites/graphics/industries/groundtiles.png") {
@@ -31,13 +34,8 @@ SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_4), THIS_ID(spriteset_ground), THIS_ID(
 SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_5), THIS_ID(spriteset_ground), THIS_ID(spriteset_5), 48)
 
 SPRITELAYOUT_NORMAL_BEGIN(THIS_ID(spritelayout_6_anim), THIS_ID(spriteset_ground), THIS_ID(spriteset_6), 7)
-	building {
-		sprite: 3701 + animation_frame;
-		xoffset: 1;
-		zoffset: 62;
-		xextent: 15;
-		zextent: 7;
-	}
+	BUILDING_SMOKE_BIG(1, 0, 62)
+	BUILDING_SMOKE_BIG(1, -3, 62)
 SPRITELAYOUT_END
 
 SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_7), THIS_ID(spriteset_ground), THIS_ID(spriteset_7), 48)
