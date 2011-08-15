@@ -7,14 +7,6 @@
 
 #define THIS_ID(...) recycling_depot ## __VA_ARGS__
 
-item(FEAT_INDUSTRYTILES, tile_recycling_depot, 202) {
-	property {
-		substitute: 0;
-		accepted_cargos: [];
-		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
-	}
-}
-
 spriteset(spriteset_7146, "sprites/graphics/industries/recyclingdepot.pcx") { tmpl_ground_tile(10, 10) } 
 spriteset(spriteset_7147, "sprites/graphics/industries/recyclingdepot.pcx") { tmpl_ground_tile(80, 10) } 
 spritelayout action2_7148 {
@@ -49,17 +41,30 @@ switch(FEAT_INDUSTRYTILES, PARENT, action2_7151, layout_num) {
 	action2_7150;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_7152, terrain_type) {
+switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(tile1_layout), terrain_type) {
 	1: action2_7151;
 	4: action2_7151;
 	action2_7151;
 }
 
+/* *************************************************
+ * Definition of the industry tile and its callbacks
+ * *************************************************/
+
 item(FEAT_INDUSTRYTILES, tile_recycling_depot, 202) {
+	property {
+		substitute:       0;
+		accepted_cargos:  [];
+		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
+	}
 	graphics {
-		action2_7152;
+		THIS_ID(tile1_layout);
 	}
 }
+
+/* *************************************************
+ * Definition of the industry layouts
+ * *************************************************/
 
 tilelayout tilelayout_recycling_depot_1 {
 	0, 0: tile_recycling_depot;
