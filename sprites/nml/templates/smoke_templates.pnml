@@ -1,0 +1,30 @@
+/*
+ * This file is part of FIRS Industry Set for OpenTTD.
+ * FIRS is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 2.
+ * FIRS is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/* Creates a small puff of dark smoke that slowly rises until dissapearing. */
+#define BUILDING_DARK_SMOKE_SMALL(smoke_xoffset, smoke_yoffset, initial_smoke_zoffset) \
+	building { \
+		sprite: 2040 + (animation_frame / 4); \
+		xoffset: smoke_xoffset; \
+		yoffset: smoke_yoffset; \
+		zoffset: initial_smoke_zoffset + animation_frame; \
+		xextent: 11; \
+		zextent: 7; \
+		hide_sprite: animation_frame > 19; \
+	}
+
+/* Creates a small puff of white smoke that slowly rises until dissapearing. */
+#define BUILDING_WHITE_SMOKE_SMALL(smoke_xoffset, smoke_yoffset, initial_smoke_zoffset) \
+	building { \
+		sprite: 3079 + (animation_frame / 4); \
+		xoffset: smoke_xoffset; \
+		yoffset: smoke_yoffset; \
+		zoffset: initial_smoke_zoffset + animation_frame; \
+		xextent: 11; \
+		zextent: 7; \
+		hide_sprite: animation_frame > 19; \
+	}

@@ -6,6 +6,7 @@
  */
 
 #include "../templates/spritelayout_templates.pnml"
+#include "../templates/smoke_templates.pnml"
 
 #define THIS_ID(...) aluminium_plant ## __VA_ARGS__
 
@@ -117,14 +118,7 @@ SPRITELAYOUT_NORMAL_SNOW_BEGIN(THIS_ID(spritelayout_12), THIS_ID(spriteset_groun
 SPRITELAYOUT_END
 
 SPRITELAYOUT_NORMAL_SNOW_BEGIN(THIS_ID(spritelayout_4_anim), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_4), 7)
-	building {
-		sprite: 2040 + (animation_frame / 4);
-		xoffset: 5;
-		zoffset: 64 + animation_frame;
-		xextent: 11;
-		zextent: 7;
-		hide_sprite: animation_frame > 19;
-	}
+	BUILDING_DARK_SMOKE_SMALL(5, 0, 64)
 SPRITELAYOUT_END
 
 switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_1), relative_pos) {

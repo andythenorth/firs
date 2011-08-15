@@ -60,14 +60,7 @@ SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_6), THIS_ID(spriteset_ground), THI
 SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_7), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_7), 32)
 
 SPRITELAYOUT_NORMAL_SNOW_BEGIN(THIS_ID(spritelayout_1_anim), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_1), 7)
-	building {
-		sprite: 2040 + (animation_frame / 4);
-		yoffset: 8;
-		zoffset: 53 + animation_frame;
-		yextent: 8;
-		zextent: 7;
-		hide_sprite: animation_frame > 19;
-	}
+	BUILDING_DARK_SMOKE_SMALL(0, 8, 53)
 SPRITELAYOUT_END
 
 switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_1), relative_pos) {
