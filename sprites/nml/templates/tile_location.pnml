@@ -6,6 +6,45 @@
  */
 
 /*
+ * Check that the tile for having a specific water class
+ *
+ * switch name:  THIS_ID(name)
+ *               tilename ## name
+ *
+ * Parameters:
+ * name:         Name of this switch
+ * class:        Water class to check for
+ * yes:          choice when present:     name of next switch or return <value>
+ * no:           choice when not present: name of next switch or return <value>
+ *        where <value> is a string, CB_RESULT_IND_DISALLOW_UNSUITABLE or CB_RESULT_IND_ALLOW_LOCATION
+ */
+
+#define TILE_CHECK_WATERCLASS(name, class, yes, no) \
+switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(name), nearby_tile_water_class(0,0) == class) { \
+	1: yes; \
+	no; \
+}
+
+/*
+ * Check that the tile for being a water tile
+ *
+ * switch name:  THIS_ID(name)
+ *               tilename ## name
+ *
+ * Parameters:
+ * name:         Name of this switch
+ * water:        water tile: name of next switch or return <value>
+ * land:         land tile:  name of next switch or return <value>
+ *        where <value> is a string, CB_RESULT_IND_DISALLOW_UNSUITABLE or CB_RESULT_IND_ALLOW_LOCATION
+ */
+
+#define TILE_CHECK_WATER(name, water, land) \
+switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(name), nearby_tile_is_water(0, 0)) { \
+	1: water; \
+	land; \
+}
+
+/*
  * Check that the tile itself is not a coast or water tile
  *
  * switch name:  THIS_ID(name)
@@ -100,6 +139,25 @@ switch (FEAT_INDUSTRYTILES, PARENT, THIS_ID(name), ( \
 		) { \
 	1: return CB_RESULT_IND_ALLOW_LOCATION; \
 	next; \
+}
+
+/*
+ * Check that the tile itself is a flat tile
+ *
+ * switch name:  THIS_ID(name)
+ *               tilename ## name
+ *
+ * Parameters:
+ * name:         Name of this switch
+ * flat:         flat tile:    name of next switch or return <value>
+ * sloped:       sloped tile:  name of next switch or return <value>
+ *        where <value> is a string, CB_RESULT_IND_DISALLOW_UNSUITABLE or CB_RESULT_IND_ALLOW_LOCATION
+ */
+
+#define TILE_CHECK_FLAT(name, flat, sloped) \
+switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(name), nearby_tile_slope(0,0) == SLOPE_FLAT) { \
+	1: flat; \
+	sloped; \
 }
 
 /*
