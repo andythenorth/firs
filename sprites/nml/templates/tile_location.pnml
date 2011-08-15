@@ -161,6 +161,24 @@ switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(name), nearby_tile_slope(0,0) == SLOPE_
 }
 
 /*
+ * Check whether a tile is steep slope and only disallow construction in that case
+ *
+ * switch name:  THIS_ID(name)
+ *               tilename ## name
+ *
+ * Parameters:
+ * name          name of this switch
+ * errtext:      deny construction: text for error message or CB_RESULT_IND_DISALLOW_UNSUITABLE
+ * next          name of next switch or "return CB_RESULT_IND_ALLOW_LOCATION"
+ */
+
+#define TILE_DISALLOW_STEEP_SLOPE(name, errtext, next) \
+switch (FEAT_INDUSTRYTILES, SELF, THIS_ID(name), nearby_tile_slope(0,0) & bitmask(IS_STEEP_SLOPE)) { \
+	1: return errtext; \
+	next; \
+}
+
+/*
  * Check whether a tile is a flat tile and only allow construction in that case
  *
  * switch name:  THIS_ID(name)

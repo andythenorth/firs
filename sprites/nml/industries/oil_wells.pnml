@@ -7,160 +7,117 @@
 
 #define THIS_ID(...) oil_wells ## __VA_ARGS__
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_215, 215) {
-	property {
-		substitute: 0;
-		accepted_cargos: [[ENSP, 8]];
-		land_shape_flags: 0;
-		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
-	}
-}
-
-spritelayout action2_6563 {
+spritelayout THIS_ID(tile1_layout) {
 	ground {
 		sprite: 2173;
 	}
 	building {
 		sprite: 2174;
-		xoffset: 1;
-		yoffset: 2;
+		xoffset:  1;
+		yoffset:  2;
 		xextent: 15;
 		yextent: 14;
 	}
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_6564, var[0x03, 0, 255]) {
-	0: action2_6563;
-	1: action2_6563;
-	2: action2_6563;
-	action2_6563;
-}
-
-CHECK_NEARBY_TILE_CLASS(action2_6572)
-
-switch(FEAT_INDUSTRYTILES, PARENT, action2_6573, founder) {
-	16: action2_6572;
-	return 1024;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_6574, var[0x60, 4, 1, 0]) {
-	1: return 1025;
-	action2_6573;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_6575, (current_callback & 255)) {
-	INDTILE_CB_SLOPE_IS_SUITABLE: action2_6574;
-	action2_6564;
-}
-
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_215, 215) {
-	graphics {
-		action2_6575;
-	}
-}
-
-//??????? Oil well vvv ??????
-
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_216, 216) {
-	property {
-		substitute: 0;
-		accepted_cargos: [[ENSP, 8]];
-		land_shape_flags: 0;
-		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
-	}
-}
-
 spriteset(spriteset_6579, "sprites/graphics/industries/oilwell.png") { tmpl_building_sprite(10, 10, 38, -9) } 
-spritelayout action2_6580 {
+
+spritelayout THIS_ID(tile2_layout) {
 	ground {
 		sprite: 2022;
 	}
 	building {
 		sprite: spriteset_6579;
 		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		xoffset: 1;
-		yoffset: 2;
+		palette:  0;
+		xoffset:  1;
+		yoffset:  2;
 		xextent: 15;
 		yextent: 14;
 	}
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_6581, var[0x03, 0, 255]) {
-	0: action2_6580;
-	1: action2_6580;
-	2: action2_6580;
-	action2_6580;
-}
+/* ***************************************************
+ * Definition of the industry tiles and their callbacks
+ * ***************************************************/
 
-CHECK_NEARBY_TILE_CLASS(action2_6589)
+TILE_DISALLOW_NEARBY_CLASS(tile_nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_IND_DISALLOW_UNSUITABLE, return CB_RESULT_IND_ALLOW_LOCATION)
+TILE_ALLOW_PLAYER         (tile_player_check,                                                            THIS_ID(tile_nearby_industry))
+TILE_DISALLOW_STEEP_SLOPE (tile_location_check,                       CB_RESULT_IND_DISALLOW_UNSUITABLE, THIS_ID(tile_player_check))
 
-switch(FEAT_INDUSTRYTILES, PARENT, action2_6590, founder) {
-	16: action2_6589;
-	return 1024;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_6591, var[0x60, 4, 1, 0]) {
-	1: return 1025;
-	action2_6590;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_6592, (current_callback & 255)) {
-	INDTILE_CB_SLOPE_IS_SUITABLE: action2_6591;
-	action2_6581;
-}
-
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_216, 216) {
+item(FEAT_INDUSTRYTILES, tile1_oil_well, 215) {
+	property {
+		substitute:       0;
+		accepted_cargos:  [[ENSP, 8]];
+		land_shape_flags: 0;
+	}
 	graphics {
-		action2_6592;
+		slope_check:  THIS_ID(tile_location_check);
+		THIS_ID(tile1_layout);
 	}
 }
 
+item(FEAT_INDUSTRYTILES, tile2_oil_well_building, 216) {
+	property {
+		substitute:       0;
+		accepted_cargos:  [[ENSP, 8]];
+		land_shape_flags: 0;
+	}
+	graphics {
+		slope_check:  THIS_ID(tile_location_check);
+		THIS_ID(tile2_layout);
+	}
+}
+
+/* *************************************************
+ * Definition of the industry layouts
+ * *************************************************/
+
 tilelayout tilelayout_7594_1 {
-	0, 0: item_FEAT_INDUSTRYTILES_215;
-	0, 7: item_FEAT_INDUSTRYTILES_215;
-	1, 4: item_FEAT_INDUSTRYTILES_215;
-	2, 1: item_FEAT_INDUSTRYTILES_215;
-	3, 5: item_FEAT_INDUSTRYTILES_216;
-	4, 8: item_FEAT_INDUSTRYTILES_215;
-	5, 1: item_FEAT_INDUSTRYTILES_215;
-	5, 4: item_FEAT_INDUSTRYTILES_215;
+	0, 0: tile1_oil_well;
+	0, 7: tile1_oil_well;
+	1, 4: tile1_oil_well;
+	2, 1: tile1_oil_well;
+	3, 5: tile2_oil_well_building;
+	4, 8: tile1_oil_well;
+	5, 1: tile1_oil_well;
+	5, 4: tile1_oil_well;
 }
 
 tilelayout tilelayout_7594_2 {
-	0, 0: item_FEAT_INDUSTRYTILES_215;
-	0, 4: item_FEAT_INDUSTRYTILES_215;
-	1, 4: item_FEAT_INDUSTRYTILES_215;
-	2, 8: item_FEAT_INDUSTRYTILES_215;
-	4, 4: item_FEAT_INDUSTRYTILES_216;
-	4, 8: item_FEAT_INDUSTRYTILES_215;
-	5, 2: item_FEAT_INDUSTRYTILES_215;
-	6, 2: item_FEAT_INDUSTRYTILES_215;
-	6, 4: item_FEAT_INDUSTRYTILES_215;
+	0, 0: tile1_oil_well;
+	0, 4: tile1_oil_well;
+	1, 4: tile1_oil_well;
+	2, 8: tile1_oil_well;
+	4, 4: tile2_oil_well_building;
+	4, 8: tile1_oil_well;
+	5, 2: tile1_oil_well;
+	6, 2: tile1_oil_well;
+	6, 4: tile1_oil_well;
 }
 
 tilelayout tilelayout_7594_3 {
-	0, 0: item_FEAT_INDUSTRYTILES_215;
-	0, 2: item_FEAT_INDUSTRYTILES_215;
-	1, 4: item_FEAT_INDUSTRYTILES_215;
-	1, 6: item_FEAT_INDUSTRYTILES_215;
-	2, 0: item_FEAT_INDUSTRYTILES_216;
-	3, 2: item_FEAT_INDUSTRYTILES_215;
-	3, 4: item_FEAT_INDUSTRYTILES_215;
+	0, 0: tile1_oil_well;
+	0, 2: tile1_oil_well;
+	1, 4: tile1_oil_well;
+	1, 6: tile1_oil_well;
+	2, 0: tile2_oil_well_building;
+	3, 2: tile1_oil_well;
+	3, 4: tile1_oil_well;
 }
 
 tilelayout tilelayout_7594_4 {
-	0, 0: item_FEAT_INDUSTRYTILES_215;
-	0, 4: item_FEAT_INDUSTRYTILES_215;
-	0, 6: item_FEAT_INDUSTRYTILES_215;
-	1, 2: item_FEAT_INDUSTRYTILES_215;
-	1, 8: item_FEAT_INDUSTRYTILES_216;
-	2, 0: item_FEAT_INDUSTRYTILES_215;
-	2, 2: item_FEAT_INDUSTRYTILES_215;
-	3, 1: item_FEAT_INDUSTRYTILES_215;
-	5, 0: item_FEAT_INDUSTRYTILES_215;
-	5, 2: item_FEAT_INDUSTRYTILES_215;
-	6, 0: item_FEAT_INDUSTRYTILES_215;
+	0, 0: tile1_oil_well;
+	0, 4: tile1_oil_well;
+	0, 6: tile1_oil_well;
+	1, 2: tile1_oil_well;
+	1, 8: tile2_oil_well_building;
+	2, 0: tile1_oil_well;
+	2, 2: tile1_oil_well;
+	3, 1: tile1_oil_well;
+	5, 0: tile1_oil_well;
+	5, 2: tile1_oil_well;
+	6, 0: tile1_oil_well;
 }
 
 /* *************************************************
