@@ -139,7 +139,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_3721, (current_callback & 255)) {
 	THIS_ID(layout);
 }
 
-item(FEAT_INDUSTRYTILES, THIS_ID(industrytile), 180) {
+item(FEAT_INDUSTRYTILES, THIS_ID(tile), 180) {
 	property {
 		substitute:       0;
 		accepted_cargos:  [[FMSP, 8]];
@@ -153,36 +153,36 @@ item(FEAT_INDUSTRYTILES, THIS_ID(industrytile), 180) {
 }
 
 tilelayout tilelayout_dairy_farm_1 {
-	0, 0: THIS_ID(industrytile);
-	0, 1: THIS_ID(industrytile);
-	0, 2: THIS_ID(industrytile);
-	2, 0: THIS_ID(industrytile);
-	2, 1: THIS_ID(industrytile);
-	3, 0: THIS_ID(industrytile);
-	3, 1: THIS_ID(industrytile);
-	3, 2: THIS_ID(industrytile);
+	0, 0: THIS_ID(tile);
+	0, 1: THIS_ID(tile);
+	0, 2: THIS_ID(tile);
+	2, 0: THIS_ID(tile);
+	2, 1: THIS_ID(tile);
+	3, 0: THIS_ID(tile);
+	3, 1: THIS_ID(tile);
+	3, 2: THIS_ID(tile);
 }
 
 tilelayout tilelayout_dairy_farm_2 {
-	0, 0: THIS_ID(industrytile);
-	0, 1: THIS_ID(industrytile);
-	0, 2: THIS_ID(industrytile);
-	1, 1: THIS_ID(industrytile);
-	1, 2: THIS_ID(industrytile);
-	2, 0: THIS_ID(industrytile);
-	2, 1: THIS_ID(industrytile);
-	2, 2: THIS_ID(industrytile);
+	0, 0: THIS_ID(tile);
+	0, 1: THIS_ID(tile);
+	0, 2: THIS_ID(tile);
+	1, 1: THIS_ID(tile);
+	1, 2: THIS_ID(tile);
+	2, 0: THIS_ID(tile);
+	2, 1: THIS_ID(tile);
+	2, 2: THIS_ID(tile);
 }
 
 tilelayout tilelayout_dairy_farm_3 {
-	0, 1: THIS_ID(industrytile);
-	0, 3: THIS_ID(industrytile);
-	1, 0: THIS_ID(industrytile);
-	1, 1: THIS_ID(industrytile);
-	1, 3: THIS_ID(industrytile);
-	2, 0: THIS_ID(industrytile);
-	2, 1: THIS_ID(industrytile);
-	2, 3: THIS_ID(industrytile);
+	0, 1: THIS_ID(tile);
+	0, 3: THIS_ID(tile);
+	1, 0: THIS_ID(tile);
+	1, 1: THIS_ID(tile);
+	1, 3: THIS_ID(tile);
+	2, 0: THIS_ID(tile);
+	2, 1: THIS_ID(tile);
+	2, 3: THIS_ID(tile);
 }
 
 /* *************************************************

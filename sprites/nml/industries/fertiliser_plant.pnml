@@ -208,7 +208,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_4027, (current_callback & 255)) {
 	action2_4025;
 }
 
-item(FEAT_INDUSTRYTILES, THIS_ID(industrytile), 163) {
+item(FEAT_INDUSTRYTILES, THIS_ID(tile), 163) {
 	property {
 		substitute:         0;
 		accepted_cargos:    [[RFPR, 8]];
@@ -225,117 +225,117 @@ item(FEAT_INDUSTRYTILES, THIS_ID(industrytile), 163) {
 }
 
 tilelayout tilelayout_fertiliser_plant_1 {
-	0, 0: THIS_ID(industrytile);
-	0, 1: THIS_ID(industrytile);
-	0, 2: THIS_ID(industrytile);
-	1, 0: THIS_ID(industrytile);
-	1, 1: THIS_ID(industrytile);
-	1, 2: THIS_ID(industrytile);
-	2, 0: THIS_ID(industrytile);
-	2, 1: THIS_ID(industrytile);
-	2, 2: THIS_ID(industrytile);
-	3, 0: THIS_ID(industrytile);
+	0, 0: THIS_ID(tile);
+	0, 1: THIS_ID(tile);
+	0, 2: THIS_ID(tile);
+	1, 0: THIS_ID(tile);
+	1, 1: THIS_ID(tile);
+	1, 2: THIS_ID(tile);
+	2, 0: THIS_ID(tile);
+	2, 1: THIS_ID(tile);
+	2, 2: THIS_ID(tile);
+	3, 0: THIS_ID(tile);
 	3, 1: item_FEAT_INDUSTRYTILES_224;
-	3, 2: THIS_ID(industrytile);
+	3, 2: THIS_ID(tile);
 }
 
 tilelayout tilelayout_fertiliser_plant_2 {
-	0, 0: THIS_ID(industrytile);
-	0, 1: THIS_ID(industrytile);
-	1, 0: THIS_ID(industrytile);
-	1, 1: THIS_ID(industrytile);
-	2, 0: THIS_ID(industrytile);
-	2, 1: THIS_ID(industrytile);
-	3, 0: THIS_ID(industrytile);
-	3, 1: THIS_ID(industrytile);
-	4, 0: THIS_ID(industrytile);
-	4, 1: THIS_ID(industrytile);
+	0, 0: THIS_ID(tile);
+	0, 1: THIS_ID(tile);
+	1, 0: THIS_ID(tile);
+	1, 1: THIS_ID(tile);
+	2, 0: THIS_ID(tile);
+	2, 1: THIS_ID(tile);
+	3, 0: THIS_ID(tile);
+	3, 1: THIS_ID(tile);
+	4, 0: THIS_ID(tile);
+	4, 1: THIS_ID(tile);
 }
 
 tilelayout tilelayout_fertiliser_plant_3 {
-	0, 1: THIS_ID(industrytile);
-	1, 0: THIS_ID(industrytile);
-	1, 1: THIS_ID(industrytile);
-	1, 2: THIS_ID(industrytile);
-	1, 3: THIS_ID(industrytile);
-	2, 0: THIS_ID(industrytile);
-	2, 1: THIS_ID(industrytile);
-	2, 2: THIS_ID(industrytile);
-	2, 3: THIS_ID(industrytile);
+	0, 1: THIS_ID(tile);
+	1, 0: THIS_ID(tile);
+	1, 1: THIS_ID(tile);
+	1, 2: THIS_ID(tile);
+	1, 3: THIS_ID(tile);
+	2, 0: THIS_ID(tile);
+	2, 1: THIS_ID(tile);
+	2, 2: THIS_ID(tile);
+	2, 3: THIS_ID(tile);
 }
 
 tilelayout tilelayout_fertiliser_plant_4 {
-	0, 1: THIS_ID(industrytile);
-	1, 0: THIS_ID(industrytile);
-	1, 1: THIS_ID(industrytile);
-	1, 2: THIS_ID(industrytile);
-	1, 3: THIS_ID(industrytile);
-	2, 0: THIS_ID(industrytile);
-	2, 1: THIS_ID(industrytile);
-	2, 2: THIS_ID(industrytile);
-	2, 3: THIS_ID(industrytile);
+	0, 1: THIS_ID(tile);
+	1, 0: THIS_ID(tile);
+	1, 1: THIS_ID(tile);
+	1, 2: THIS_ID(tile);
+	1, 3: THIS_ID(tile);
+	2, 0: THIS_ID(tile);
+	2, 1: THIS_ID(tile);
+	2, 2: THIS_ID(tile);
+	2, 3: THIS_ID(tile);
 }
 
 tilelayout tilelayout_fertiliser_plant_5 {
-	0, 0: THIS_ID(industrytile);
-	0, 2: THIS_ID(industrytile);
-	1, 0: THIS_ID(industrytile);
-	1, 2: THIS_ID(industrytile);
-	2, 0: THIS_ID(industrytile);
-	2, 2: THIS_ID(industrytile);
-	3, 0: THIS_ID(industrytile);
-	3, 2: THIS_ID(industrytile);
-	4, 0: THIS_ID(industrytile);
-	4, 2: THIS_ID(industrytile);
-	5, 0: THIS_ID(industrytile);
-	5, 2: THIS_ID(industrytile);
-	6, 0: THIS_ID(industrytile);
-	6, 2: THIS_ID(industrytile);
+	0, 0: THIS_ID(tile);
+	0, 2: THIS_ID(tile);
+	1, 0: THIS_ID(tile);
+	1, 2: THIS_ID(tile);
+	2, 0: THIS_ID(tile);
+	2, 2: THIS_ID(tile);
+	3, 0: THIS_ID(tile);
+	3, 2: THIS_ID(tile);
+	4, 0: THIS_ID(tile);
+	4, 2: THIS_ID(tile);
+	5, 0: THIS_ID(tile);
+	5, 2: THIS_ID(tile);
+	6, 0: THIS_ID(tile);
+	6, 2: THIS_ID(tile);
 }
 
 tilelayout tilelayout_fertiliser_plant_6 {
-	0, 0: THIS_ID(industrytile);
-	0, 2: THIS_ID(industrytile);
-	0, 3: THIS_ID(industrytile);
-	1, 0: THIS_ID(industrytile);
-	1, 2: THIS_ID(industrytile);
-	1, 3: THIS_ID(industrytile);
-	2, 0: THIS_ID(industrytile);
-	2, 2: THIS_ID(industrytile);
-	2, 3: THIS_ID(industrytile);
-	3, 0: THIS_ID(industrytile);
-	3, 2: THIS_ID(industrytile);
+	0, 0: THIS_ID(tile);
+	0, 2: THIS_ID(tile);
+	0, 3: THIS_ID(tile);
+	1, 0: THIS_ID(tile);
+	1, 2: THIS_ID(tile);
+	1, 3: THIS_ID(tile);
+	2, 0: THIS_ID(tile);
+	2, 2: THIS_ID(tile);
+	2, 3: THIS_ID(tile);
+	3, 0: THIS_ID(tile);
+	3, 2: THIS_ID(tile);
 	3, 3: item_FEAT_INDUSTRYTILES_224;
-	4, 0: THIS_ID(industrytile);
-	4, 2: THIS_ID(industrytile);
-	4, 3: THIS_ID(industrytile);
+	4, 0: THIS_ID(tile);
+	4, 2: THIS_ID(tile);
+	4, 3: THIS_ID(tile);
 }
 
 tilelayout tilelayout_fertiliser_plant_7 {
-	0, 0: THIS_ID(industrytile);
-	0, 1: THIS_ID(industrytile);
-	0, 2: THIS_ID(industrytile);
-	0, 5: THIS_ID(industrytile);
-	0, 6: THIS_ID(industrytile);
-	1, 0: THIS_ID(industrytile);
-	1, 1: THIS_ID(industrytile);
-	1, 2: THIS_ID(industrytile);
-	1, 5: THIS_ID(industrytile);
-	1, 6: THIS_ID(industrytile);
-	2, 0: THIS_ID(industrytile);
+	0, 0: THIS_ID(tile);
+	0, 1: THIS_ID(tile);
+	0, 2: THIS_ID(tile);
+	0, 5: THIS_ID(tile);
+	0, 6: THIS_ID(tile);
+	1, 0: THIS_ID(tile);
+	1, 1: THIS_ID(tile);
+	1, 2: THIS_ID(tile);
+	1, 5: THIS_ID(tile);
+	1, 6: THIS_ID(tile);
+	2, 0: THIS_ID(tile);
 	2, 1: item_FEAT_INDUSTRYTILES_224;
-	2, 2: THIS_ID(industrytile);
-	2, 5: THIS_ID(industrytile);
-	2, 6: THIS_ID(industrytile);
-	4, 0: THIS_ID(industrytile);
-	4, 1: THIS_ID(industrytile);
-	4, 2: THIS_ID(industrytile);
-	4, 5: THIS_ID(industrytile);
-	4, 6: THIS_ID(industrytile);
-	5, 1: THIS_ID(industrytile);
-	5, 2: THIS_ID(industrytile);
-	5, 5: THIS_ID(industrytile);
-	5, 6: THIS_ID(industrytile);
+	2, 2: THIS_ID(tile);
+	2, 5: THIS_ID(tile);
+	2, 6: THIS_ID(tile);
+	4, 0: THIS_ID(tile);
+	4, 1: THIS_ID(tile);
+	4, 2: THIS_ID(tile);
+	4, 5: THIS_ID(tile);
+	4, 6: THIS_ID(tile);
+	5, 1: THIS_ID(tile);
+	5, 2: THIS_ID(tile);
+	5, 5: THIS_ID(tile);
+	5, 6: THIS_ID(tile);
 }
 
 /* *************************************************

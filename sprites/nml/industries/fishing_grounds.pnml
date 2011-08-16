@@ -74,7 +74,7 @@ switch(FEAT_INDUSTRYTILES, PARENT, THIS_ID(layout), layout_num) {
  * Definition of the industry tile and its callbacks
  * *************************************************/
 
-item(FEAT_INDUSTRYTILES, THIS_ID(industrytile), 204) {
+item(FEAT_INDUSTRYTILES, THIS_ID(tile), 204) {
 	property {
 		substitute:       0;
 		accepted_cargos:  [];
@@ -114,15 +114,15 @@ tilelayout tilelayout_fishing_grounds_1 {
 	2, 6: 255;
 	3, 0: 255;
 	3, 1: 255;
-	3, 2: THIS_ID(industrytile);
-	3, 3: THIS_ID(industrytile);
-	3, 4: THIS_ID(industrytile);
+	3, 2: THIS_ID(tile);
+	3, 3: THIS_ID(tile);
+	3, 4: THIS_ID(tile);
 	3, 5: 255;
 	3, 6: 255;
 	4, 0: 255;
 	4, 1: 255;
 	4, 2: 255;
-	4, 3: THIS_ID(industrytile);
+	4, 3: THIS_ID(tile);
 	4, 4: 255;
 	4, 5: 255;
 	4, 6: 255;
@@ -166,23 +166,23 @@ tilelayout tilelayout_fishing_grounds_2 {
 	2, 6: 255;
 	3, 0: 255;
 	3, 1: 255;
-	3, 2: THIS_ID(industrytile);
-	3, 3: THIS_ID(industrytile);
-	3, 4: THIS_ID(industrytile);
+	3, 2: THIS_ID(tile);
+	3, 3: THIS_ID(tile);
+	3, 4: THIS_ID(tile);
 	3, 5: 255;
 	3, 6: 255;
 	4, 0: 255;
 	4, 1: 255;
 	4, 2: 255;
 	4, 3: 255;
-	4, 4: THIS_ID(industrytile);
+	4, 4: THIS_ID(tile);
 	4, 5: 255;
 	4, 6: 255;
 	5, 0: 255;
 	5, 1: 255;
 	5, 2: 255;
 	5, 3: 255;
-	5, 4: THIS_ID(industrytile);
+	5, 4: THIS_ID(tile);
 	5, 5: 255;
 	5, 6: 255;
 	6, 0: 255;
@@ -219,7 +219,7 @@ tilelayout tilelayout_fishing_grounds_3 {
 	2, 0: 255;
 	2, 1: 255;
 	2, 2: 255;
-	2, 3: THIS_ID(industrytile);
+	2, 3: THIS_ID(tile);
 	2, 4: 255;
 	2, 5: 255;
 	2, 6: 255;
@@ -239,9 +239,9 @@ tilelayout tilelayout_fishing_grounds_3 {
 	4, 6: 255;
 	5, 0: 255;
 	5, 1: 255;
-	5, 2: THIS_ID(industrytile);
-	5, 3: THIS_ID(industrytile);
-	5, 4: THIS_ID(industrytile);
+	5, 2: THIS_ID(tile);
+	5, 3: THIS_ID(tile);
+	5, 4: THIS_ID(tile);
 	5, 5: 255;
 	5, 6: 255;
 	6, 0: 255;
@@ -282,15 +282,15 @@ tilelayout tilelayout_fishing_grounds_4 {
 	2, 2: 24;
 	2, 3: 24;
 	2, 4: 255;
-	2, 5: THIS_ID(industrytile);
+	2, 5: THIS_ID(tile);
 	2, 6: 255;
 	2, 7: 255;
 	3, 0: 255;
 	3, 1: 255;
-	3, 2: THIS_ID(industrytile);
-	3, 3: THIS_ID(industrytile);
-	3, 4: THIS_ID(industrytile);
-	3, 5: THIS_ID(industrytile);
+	3, 2: THIS_ID(tile);
+	3, 3: THIS_ID(tile);
+	3, 4: THIS_ID(tile);
+	3, 5: THIS_ID(tile);
 	3, 6: 255;
 	3, 7: 255;
 	4, 0: 255;

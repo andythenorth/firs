@@ -99,7 +99,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_5444, (current_callback & 255)) {
 	action2_5442;
 }
 
-item(FEAT_INDUSTRYTILES, THIS_ID(industrytile), 199) {
+item(FEAT_INDUSTRYTILES, THIS_ID(tile), 199) {
 	property {
 		substitute: 0;
 		accepted_cargos:    [[IORE, 8], [WOOD, 8]];
@@ -116,15 +116,15 @@ item(FEAT_INDUSTRYTILES, THIS_ID(industrytile), 199) {
 }
 
 tilelayout tilelayout_iron_works_1 {
-	0, 0: THIS_ID(industrytile);
-	0, 1: THIS_ID(industrytile);
-	0, 2: THIS_ID(industrytile);
-	1, 0: THIS_ID(industrytile);
-	1, 1: THIS_ID(industrytile);
-	1, 2: THIS_ID(industrytile);
-	2, 0: THIS_ID(industrytile);
-	2, 1: THIS_ID(industrytile);
-	2, 2: THIS_ID(industrytile);
+	0, 0: THIS_ID(tile);
+	0, 1: THIS_ID(tile);
+	0, 2: THIS_ID(tile);
+	1, 0: THIS_ID(tile);
+	1, 1: THIS_ID(tile);
+	1, 2: THIS_ID(tile);
+	2, 0: THIS_ID(tile);
+	2, 1: THIS_ID(tile);
+	2, 2: THIS_ID(tile);
 }
 /* *************************************************
  * Definition of the industry

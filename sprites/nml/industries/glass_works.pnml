@@ -90,7 +90,7 @@ switch(FEAT_INDUSTRYTILES, PARENT, THIS_ID(tile1_layout), layout_num) {
 
 TILE_ALLOW_ONLY_FLAT_LAND (tile1_location_check,                        CB_RESULT_IND_DISALLOW_UNSUITABLE, return CB_RESULT_IND_ALLOW_LOCATION)
 
-item(FEAT_INDUSTRYTILES, THIS_ID(industrytile), 178) {
+item(FEAT_INDUSTRYTILES, THIS_ID(tile), 178) {
 	property {
 		substitute:       0;
 		accepted_cargos:  [[SAND, 8], [RFPR, 8]];
@@ -108,36 +108,36 @@ item(FEAT_INDUSTRYTILES, THIS_ID(industrytile), 178) {
  * *************************************************/
 
 tilelayout tilelayout_glass_works_1 {
-	0, 0: THIS_ID(industrytile);
-	0, 1: THIS_ID(industrytile);
-	1, 0: THIS_ID(industrytile);
-	1, 1: THIS_ID(industrytile);
+	0, 0: THIS_ID(tile);
+	0, 1: THIS_ID(tile);
+	1, 0: THIS_ID(tile);
+	1, 1: THIS_ID(tile);
 }
 
 tilelayout tilelayout_glass_works_2 {
-	0, 0: THIS_ID(industrytile);
-	0, 1: THIS_ID(industrytile);
-	1, 0: THIS_ID(industrytile);
-	1, 1: THIS_ID(industrytile);
-	2, 0: THIS_ID(industrytile);
-	2, 1: THIS_ID(industrytile);
-	3, 0: THIS_ID(industrytile);
-	3, 1: THIS_ID(industrytile);
+	0, 0: THIS_ID(tile);
+	0, 1: THIS_ID(tile);
+	1, 0: THIS_ID(tile);
+	1, 1: THIS_ID(tile);
+	2, 0: THIS_ID(tile);
+	2, 1: THIS_ID(tile);
+	3, 0: THIS_ID(tile);
+	3, 1: THIS_ID(tile);
 }
 
 tilelayout tilelayout_glass_works_3 {
-	0, 0: THIS_ID(industrytile);
-	0, 1: THIS_ID(industrytile);
-	0, 2: THIS_ID(industrytile);
-	0, 3: THIS_ID(industrytile);
-	1, 0: THIS_ID(industrytile);
-	1, 1: THIS_ID(industrytile);
-	1, 2: THIS_ID(industrytile);
-	1, 3: THIS_ID(industrytile);
-	2, 1: THIS_ID(industrytile);
-	2, 2: THIS_ID(industrytile);
-	3, 1: THIS_ID(industrytile);
-	3, 2: THIS_ID(industrytile);
+	0, 0: THIS_ID(tile);
+	0, 1: THIS_ID(tile);
+	0, 2: THIS_ID(tile);
+	0, 3: THIS_ID(tile);
+	1, 0: THIS_ID(tile);
+	1, 1: THIS_ID(tile);
+	1, 2: THIS_ID(tile);
+	1, 3: THIS_ID(tile);
+	2, 1: THIS_ID(tile);
+	2, 2: THIS_ID(tile);
+	3, 1: THIS_ID(tile);
+	3, 2: THIS_ID(tile);
 }
 
 /* *************************************************

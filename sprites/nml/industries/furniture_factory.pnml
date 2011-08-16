@@ -129,7 +129,7 @@ TILE_DISALLOW_NEARBY_CLASS(tile1_nearby_industry,  TILE_CLASS_INDUSTRY, CB_RESUL
 TILE_ALLOW_PLAYER         (tile1_player_check,                                                             THIS_ID(tile1_nearby_industry))
 TILE_ALLOW_ONLY_FLAT_LAND (tile1_location_check,                        CB_RESULT_IND_DISALLOW_UNSUITABLE, THIS_ID(tile1_player_check))
 
-item(FEAT_INDUSTRYTILES, THIS_ID(industrytile), 184) {
+item(FEAT_INDUSTRYTILES, THIS_ID(tile), 184) {
 	property {
 		substitute:       0;
 		accepted_cargos:  [[WDPR, 8], [MNSP, 8]];
@@ -147,58 +147,58 @@ item(FEAT_INDUSTRYTILES, THIS_ID(industrytile), 184) {
  * *************************************************/
 
 tilelayout tilelayout_furniture_factory_1 {
-	0, 1: THIS_ID(industrytile);
-	1, 0: THIS_ID(industrytile);
-	1, 1: THIS_ID(industrytile);
-	2, 0: THIS_ID(industrytile);
-	2, 1: THIS_ID(industrytile);
+	0, 1: THIS_ID(tile);
+	1, 0: THIS_ID(tile);
+	1, 1: THIS_ID(tile);
+	2, 0: THIS_ID(tile);
+	2, 1: THIS_ID(tile);
 }
 
 tilelayout tilelayout_furniture_factory_2 {
-	0, 0: THIS_ID(industrytile);
-	0, 1: THIS_ID(industrytile);
-	1, 0: THIS_ID(industrytile);
-	1, 1: THIS_ID(industrytile);
-	2, 0: THIS_ID(industrytile);
-	2, 1: THIS_ID(industrytile);
+	0, 0: THIS_ID(tile);
+	0, 1: THIS_ID(tile);
+	1, 0: THIS_ID(tile);
+	1, 1: THIS_ID(tile);
+	2, 0: THIS_ID(tile);
+	2, 1: THIS_ID(tile);
 }
 
 tilelayout tilelayout_furniture_factory_3 {
-	0, 0: THIS_ID(industrytile);
-	0, 1: THIS_ID(industrytile);
-	1, 0: THIS_ID(industrytile);
-	1, 1: THIS_ID(industrytile);
-	2, 0: THIS_ID(industrytile);
-	2, 1: THIS_ID(industrytile);
-	3, 0: THIS_ID(industrytile);
-	3, 1: THIS_ID(industrytile);
-	4, 0: THIS_ID(industrytile);
-	4, 1: THIS_ID(industrytile);
+	0, 0: THIS_ID(tile);
+	0, 1: THIS_ID(tile);
+	1, 0: THIS_ID(tile);
+	1, 1: THIS_ID(tile);
+	2, 0: THIS_ID(tile);
+	2, 1: THIS_ID(tile);
+	3, 0: THIS_ID(tile);
+	3, 1: THIS_ID(tile);
+	4, 0: THIS_ID(tile);
+	4, 1: THIS_ID(tile);
 }
 
 tilelayout tilelayout_furniture_factory_4 {
-	0, 0: THIS_ID(industrytile);
-	0, 1: THIS_ID(industrytile);
-	1, 0: THIS_ID(industrytile);
-	1, 1: THIS_ID(industrytile);
-	2, 0: THIS_ID(industrytile);
-	2, 1: THIS_ID(industrytile);
-	3, 0: THIS_ID(industrytile);
-	3, 1: THIS_ID(industrytile);
-	4, 0: THIS_ID(industrytile);
-	4, 1: THIS_ID(industrytile);
+	0, 0: THIS_ID(tile);
+	0, 1: THIS_ID(tile);
+	1, 0: THIS_ID(tile);
+	1, 1: THIS_ID(tile);
+	2, 0: THIS_ID(tile);
+	2, 1: THIS_ID(tile);
+	3, 0: THIS_ID(tile);
+	3, 1: THIS_ID(tile);
+	4, 0: THIS_ID(tile);
+	4, 1: THIS_ID(tile);
 }
 
 tilelayout tilelayout_furniture_factory_5 {
-	0, 0: THIS_ID(industrytile);
-	0, 1: THIS_ID(industrytile);
-	0, 2: THIS_ID(industrytile);
-	1, 0: THIS_ID(industrytile);
-	1, 1: THIS_ID(industrytile);
-	1, 2: THIS_ID(industrytile);
-	2, 0: THIS_ID(industrytile);
-	2, 1: THIS_ID(industrytile);
-	2, 2: THIS_ID(industrytile);
+	0, 0: THIS_ID(tile);
+	0, 1: THIS_ID(tile);
+	0, 2: THIS_ID(tile);
+	1, 0: THIS_ID(tile);
+	1, 1: THIS_ID(tile);
+	1, 2: THIS_ID(tile);
+	2, 0: THIS_ID(tile);
+	2, 1: THIS_ID(tile);
+	2, 2: THIS_ID(tile);
 }
 
 

@@ -200,7 +200,7 @@ switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(tile1_anim_control), (extra_callback_in
 	return 254;
 }
 
-item(FEAT_INDUSTRYTILES, THIS_ID(industrytile), 162) {
+item(FEAT_INDUSTRYTILES, THIS_ID(tile), 162) {
 	property {
 		substitute:         0;
 		accepted_cargos:    [[COAL, 8], [CLAY, 8], [GRVL, 8]];
@@ -222,102 +222,102 @@ item(FEAT_INDUSTRYTILES, THIS_ID(industrytile), 162) {
  * *************************************************/
 
 tilelayout tilelayout_cement_plant_1 {
-	0, 1: THIS_ID(industrytile);
-	0, 2: THIS_ID(industrytile);
-	1, 1: THIS_ID(industrytile);
-	1, 2: THIS_ID(industrytile);
-	2, 2: THIS_ID(industrytile);
-	3, 2: THIS_ID(industrytile);
+	0, 1: THIS_ID(tile);
+	0, 2: THIS_ID(tile);
+	1, 1: THIS_ID(tile);
+	1, 2: THIS_ID(tile);
+	2, 2: THIS_ID(tile);
+	3, 2: THIS_ID(tile);
 	4, 0: item_FEAT_INDUSTRYTILES_232;
-	4, 1: THIS_ID(industrytile);
-	4, 2: THIS_ID(industrytile);
-	4, 3: THIS_ID(industrytile);
+	4, 1: THIS_ID(tile);
+	4, 2: THIS_ID(tile);
+	4, 3: THIS_ID(tile);
 	5, 0: item_FEAT_INDUSTRYTILES_230;
-	5, 1: THIS_ID(industrytile);
-	5, 2: THIS_ID(industrytile);
+	5, 1: THIS_ID(tile);
+	5, 2: THIS_ID(tile);
 }
 
 tilelayout tilelayout_cement_plant_2 {
-	0, 0: THIS_ID(industrytile);
-	0, 1: THIS_ID(industrytile);
-	0, 2: THIS_ID(industrytile);
-	1, 0: THIS_ID(industrytile);
-	1, 1: THIS_ID(industrytile);
-	2, 0: THIS_ID(industrytile);
-	2, 1: THIS_ID(industrytile);
-	2, 2: THIS_ID(industrytile);
-	2, 3: THIS_ID(industrytile);
-	2, 4: THIS_ID(industrytile);
-	3, 0: THIS_ID(industrytile);
-	3, 1: THIS_ID(industrytile);
-	3, 2: THIS_ID(industrytile);
-	3, 3: THIS_ID(industrytile);
+	0, 0: THIS_ID(tile);
+	0, 1: THIS_ID(tile);
+	0, 2: THIS_ID(tile);
+	1, 0: THIS_ID(tile);
+	1, 1: THIS_ID(tile);
+	2, 0: THIS_ID(tile);
+	2, 1: THIS_ID(tile);
+	2, 2: THIS_ID(tile);
+	2, 3: THIS_ID(tile);
+	2, 4: THIS_ID(tile);
+	3, 0: THIS_ID(tile);
+	3, 1: THIS_ID(tile);
+	3, 2: THIS_ID(tile);
+	3, 3: THIS_ID(tile);
 	3, 4: item_FEAT_INDUSTRYTILES_232;
 }
 
 tilelayout tilelayout_cement_plant_3 {
-	0, 0: THIS_ID(industrytile);
-	0, 1: THIS_ID(industrytile);
-	0, 2: THIS_ID(industrytile);
-	0, 3: THIS_ID(industrytile);
+	0, 0: THIS_ID(tile);
+	0, 1: THIS_ID(tile);
+	0, 2: THIS_ID(tile);
+	0, 3: THIS_ID(tile);
 	0, 4: item_FEAT_INDUSTRYTILES_232;
 	0, 5: item_FEAT_INDUSTRYTILES_230;
-	1, 0: THIS_ID(industrytile);
-	1, 1: THIS_ID(industrytile);
-	1, 2: THIS_ID(industrytile);
-	1, 3: THIS_ID(industrytile);
-	1, 4: THIS_ID(industrytile);
-	1, 5: THIS_ID(industrytile);
-	1, 6: THIS_ID(industrytile);
-	2, 0: THIS_ID(industrytile);
-	2, 1: THIS_ID(industrytile);
-	2, 2: THIS_ID(industrytile);
-	2, 3: THIS_ID(industrytile);
-	2, 4: THIS_ID(industrytile);
-	2, 5: THIS_ID(industrytile);
+	1, 0: THIS_ID(tile);
+	1, 1: THIS_ID(tile);
+	1, 2: THIS_ID(tile);
+	1, 3: THIS_ID(tile);
+	1, 4: THIS_ID(tile);
+	1, 5: THIS_ID(tile);
+	1, 6: THIS_ID(tile);
+	2, 0: THIS_ID(tile);
+	2, 1: THIS_ID(tile);
+	2, 2: THIS_ID(tile);
+	2, 3: THIS_ID(tile);
+	2, 4: THIS_ID(tile);
+	2, 5: THIS_ID(tile);
 }
 
 tilelayout tilelayout_cement_plant_4 {
-	0, 0: THIS_ID(industrytile);
-	0, 1: THIS_ID(industrytile);
-	0, 2: THIS_ID(industrytile);
-	0, 3: THIS_ID(industrytile);
-	1, 0: THIS_ID(industrytile);
-	1, 1: THIS_ID(industrytile);
-	1, 2: THIS_ID(industrytile);
-	1, 3: THIS_ID(industrytile);
-	2, 0: THIS_ID(industrytile);
-	2, 1: THIS_ID(industrytile);
-	2, 2: THIS_ID(industrytile);
-	3, 0: THIS_ID(industrytile);
-	3, 1: THIS_ID(industrytile);
-	3, 2: THIS_ID(industrytile);
+	0, 0: THIS_ID(tile);
+	0, 1: THIS_ID(tile);
+	0, 2: THIS_ID(tile);
+	0, 3: THIS_ID(tile);
+	1, 0: THIS_ID(tile);
+	1, 1: THIS_ID(tile);
+	1, 2: THIS_ID(tile);
+	1, 3: THIS_ID(tile);
+	2, 0: THIS_ID(tile);
+	2, 1: THIS_ID(tile);
+	2, 2: THIS_ID(tile);
+	3, 0: THIS_ID(tile);
+	3, 1: THIS_ID(tile);
+	3, 2: THIS_ID(tile);
 	4, 0: item_FEAT_INDUSTRYTILES_232;
-	4, 1: THIS_ID(industrytile);
-	4, 2: THIS_ID(industrytile);
-	4, 3: THIS_ID(industrytile);
+	4, 1: THIS_ID(tile);
+	4, 2: THIS_ID(tile);
+	4, 3: THIS_ID(tile);
 	5, 0: item_FEAT_INDUSTRYTILES_230;
-	5, 1: THIS_ID(industrytile);
-	5, 2: THIS_ID(industrytile);
+	5, 1: THIS_ID(tile);
+	5, 2: THIS_ID(tile);
 }
 
 tilelayout tilelayout_cement_plant_5 {
-	0, 0: THIS_ID(industrytile);
-	0, 1: THIS_ID(industrytile);
-	1, 0: THIS_ID(industrytile);
-	1, 1: THIS_ID(industrytile);
-	2, 0: THIS_ID(industrytile);
-	2, 1: THIS_ID(industrytile);
-	3, 0: THIS_ID(industrytile);
-	3, 1: THIS_ID(industrytile);
-	4, 0: THIS_ID(industrytile);
-	4, 1: THIS_ID(industrytile);
+	0, 0: THIS_ID(tile);
+	0, 1: THIS_ID(tile);
+	1, 0: THIS_ID(tile);
+	1, 1: THIS_ID(tile);
+	2, 0: THIS_ID(tile);
+	2, 1: THIS_ID(tile);
+	3, 0: THIS_ID(tile);
+	3, 1: THIS_ID(tile);
+	4, 0: THIS_ID(tile);
+	4, 1: THIS_ID(tile);
 	4, 2: item_FEAT_INDUSTRYTILES_232;
-	5, 0: THIS_ID(industrytile);
-	5, 1: THIS_ID(industrytile);
-	5, 2: THIS_ID(industrytile);
-	6, 0: THIS_ID(industrytile);
-	6, 1: THIS_ID(industrytile);
+	5, 0: THIS_ID(tile);
+	5, 1: THIS_ID(tile);
+	5, 2: THIS_ID(tile);
+	6, 0: THIS_ID(tile);
+	6, 1: THIS_ID(tile);
 	6, 2: item_FEAT_INDUSTRYTILES_230;
 }
 

@@ -93,7 +93,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_5637, (current_callback & 255)) {
 	THIS_ID(layout);
 }
 
-item(FEAT_INDUSTRYTILES, THIS_ID(industrytile), 191) {
+item(FEAT_INDUSTRYTILES, THIS_ID(tile), 191) {
 	property {
 		substitute:       0;
 		accepted_cargos:  [[GRVL, 8], [COAL, 8]];
@@ -107,32 +107,32 @@ item(FEAT_INDUSTRYTILES, THIS_ID(industrytile), 191) {
 }
 
 tilelayout tilelayout_lime_kiln_1 {
-	0, 0: THIS_ID(industrytile);
-	0, 1: THIS_ID(industrytile);
-	0, 2: THIS_ID(industrytile);
-	1, 0: THIS_ID(industrytile);
-	1, 1: THIS_ID(industrytile);
-	1, 2: THIS_ID(industrytile);
+	0, 0: THIS_ID(tile);
+	0, 1: THIS_ID(tile);
+	0, 2: THIS_ID(tile);
+	1, 0: THIS_ID(tile);
+	1, 1: THIS_ID(tile);
+	1, 2: THIS_ID(tile);
 }
 
 tilelayout tilelayout_lime_kiln_2 {
-	0, 0: THIS_ID(industrytile);
-	0, 1: THIS_ID(industrytile);
-	1, 0: THIS_ID(industrytile);
-	1, 1: THIS_ID(industrytile);
-	2, 0: THIS_ID(industrytile);
-	2, 1: THIS_ID(industrytile);
+	0, 0: THIS_ID(tile);
+	0, 1: THIS_ID(tile);
+	1, 0: THIS_ID(tile);
+	1, 1: THIS_ID(tile);
+	2, 0: THIS_ID(tile);
+	2, 1: THIS_ID(tile);
 }
 
 tilelayout tilelayout_lime_kiln_3 {
-	0, 0: THIS_ID(industrytile);
-	0, 1: THIS_ID(industrytile);
-	0, 2: THIS_ID(industrytile);
-	0, 3: THIS_ID(industrytile);
-	1, 0: THIS_ID(industrytile);
-	1, 1: THIS_ID(industrytile);
-	1, 2: THIS_ID(industrytile);
-	1, 3: THIS_ID(industrytile);
+	0, 0: THIS_ID(tile);
+	0, 1: THIS_ID(tile);
+	0, 2: THIS_ID(tile);
+	0, 3: THIS_ID(tile);
+	1, 0: THIS_ID(tile);
+	1, 1: THIS_ID(tile);
+	1, 2: THIS_ID(tile);
+	1, 3: THIS_ID(tile);
 }
 
 

@@ -40,7 +40,7 @@ switch(FEAT_INDUSTRYTILES, PARENT, THIS_ID(layout), layout_num) {
  * Definition of the industry tile and its callbacks
  * *************************************************/
 
-item(FEAT_INDUSTRYTILES, THIS_ID(industrytile), 217) {
+item(FEAT_INDUSTRYTILES, THIS_ID(tile), 217) {
 	property {
 		substitute:       0;
 		accepted_cargos:  [[FOOD, 8], [BEER, 8], [0, 8]];
@@ -57,10 +57,10 @@ item(FEAT_INDUSTRYTILES, THIS_ID(industrytile), 217) {
  * *************************************************/
 
 tilelayout tilelayout_hotel_1 {
-	0, 0: THIS_ID(industrytile);
-	0, 1: THIS_ID(industrytile);
-	1, 0: THIS_ID(industrytile);
-	1, 1: THIS_ID(industrytile);
+	0, 0: THIS_ID(tile);
+	0, 1: THIS_ID(tile);
+	1, 0: THIS_ID(tile);
+	1, 1: THIS_ID(tile);
 }
 
 /* *************************************************
