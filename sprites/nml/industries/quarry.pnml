@@ -1755,7 +1755,7 @@ item(FEAT_INDUSTRYTILES, tile_quarry, 177) {
 	graphics {
 		foundations:  return CB_RESULT_NO_FOUNDATIONS;
 		autoslope:    return CB_RESULT_NO_AUTOSLOPE;
-		slope_check:  THIS_ID(tile1_location_check);
+		tile_check:   THIS_ID(tile1_location_check);
 		THIS_ID(layout);
 	}
 }

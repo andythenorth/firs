@@ -541,7 +541,7 @@ item(FEAT_INDUSTRYTILES, tile_plastics_plant, 176) {
 		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
 	}
 	graphics {
-		slope_check:  THIS_ID(tile1_location_check);
+		tile_check:   THIS_ID(tile1_location_check);
 		THIS_ID(tile1_layout);
 	}
 }

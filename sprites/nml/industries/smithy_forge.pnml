@@ -173,7 +173,7 @@ item(FEAT_INDUSTRYTILES, tile_smithy_forge, 209) {
 		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
 	}
 	graphics {
-		slope_check:  THIS_ID(tile_location_check);
+		tile_check:   THIS_ID(tile_location_check);
 		THIS_ID(layout);
 	}
 }

@@ -59,7 +59,7 @@ item(FEAT_INDUSTRYTILES, tile_builders_yard, 164) {
 	}
 
 	graphics {
-		slope_check: THIS_ID(terrain_check);
+		tile_check:  THIS_ID(terrain_check);
 		THIS_ID(layout);
 	}
 }

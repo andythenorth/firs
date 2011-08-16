@@ -1062,7 +1062,7 @@ switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(anim_control), (extra_callback_info1 & 
 item(FEAT_INDUSTRYTILES, tile_textile_mill, 183) {
 	graphics {
 		anim_control: THIS_ID(anim_control);
-		slope_check:  THIS_ID(location_check);
+		tile_check:   THIS_ID(location_check);
 		THIS_ID(layout_terrain);
 	}
 }

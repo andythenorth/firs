@@ -879,7 +879,7 @@ item(FEAT_INDUSTRYTILES, tile_fishing_harbour2, 196) {
 
 	graphics {
 		foundations: return CB_RESULT_NO_FOUNDATIONS;
-		slope_check: THIS_ID(tile2_location_check);
+		tile_check:  THIS_ID(tile2_location_check);
 		THIS_ID(layout);
 	}
 }

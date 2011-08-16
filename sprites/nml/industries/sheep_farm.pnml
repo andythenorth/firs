@@ -299,7 +299,7 @@ TILE_DISALLOW_COAST       (tile1_location_check,                        CB_RESUL
 
 item(FEAT_INDUSTRYTILES, tile_sheep_farm, 192) {
 	graphics {
-		slope_check:  THIS_ID(tile1_location_check);
+		tile_check:   THIS_ID(tile1_location_check);
 		THIS_ID(tile1_layout);
 	}
 }

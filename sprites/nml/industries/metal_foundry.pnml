@@ -120,7 +120,7 @@ item(FEAT_INDUSTRYTILES, THIS_ID(industrytile), 188) {
 	}
 
 	graphics {
-		slope_check: THIS_ID(tile1_location_check);
+		tile_check:  THIS_ID(tile1_location_check);
 		THIS_ID(layout);
 	}
 }

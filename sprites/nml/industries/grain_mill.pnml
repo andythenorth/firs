@@ -130,7 +130,7 @@ item(FEAT_INDUSTRYTILES, tile_grain_mill, 182) {
 	}
 
 	graphics {
-		slope_check:  THIS_ID(tile1_location_check);
+		tile_check:   THIS_ID(tile1_location_check);
 		THIS_ID(layout);
 	}
 }

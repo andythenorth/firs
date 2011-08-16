@@ -237,7 +237,7 @@ item(FEAT_INDUSTRYTILES, THIS_ID(industrytile), 185) {
 
 	graphics {
 		anim_control: THIS_ID(anim_control);
-		slope_check:  THIS_ID(tile_location);
+		tile_check:   THIS_ID(tile_location);
 		THIS_ID(layout);
 	}
 }

@@ -256,7 +256,7 @@ item(FEAT_INDUSTRYTILES, THIS_ID(industrytile), 181) {
 
 	graphics {
 		anim_control: THIS_ID(anim_control);
-		slope_check:  THIS_ID(location_check);
+		tile_check:   THIS_ID(location_check);
 		THIS_ID(layout);
 	}
 }

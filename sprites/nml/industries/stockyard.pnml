@@ -620,7 +620,7 @@ TILE_ALLOW_ONLY_FLAT_LAND (location_check,                       CB_RESULT_IND_D
 
 item(FEAT_INDUSTRYTILES, tile_stockyard, 179) {
 	graphics {
-		slope_check:  THIS_ID(location_check);
+		tile_check:   THIS_ID(location_check);
 		THIS_ID(layout_terrain);
 	}
 }

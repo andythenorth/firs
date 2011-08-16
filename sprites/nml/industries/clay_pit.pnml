@@ -842,7 +842,7 @@ item(FEAT_INDUSTRYTILES, THIS_ID(industrytile), 189) {
 	graphics {
 		foundations:  return CB_RESULT_NO_FOUNDATIONS;
 		autoslope:    return CB_RESULT_NO_AUTOSLOPE;
-		slope_check:  THIS_ID(tile1_location_check);
+		tile_check:   THIS_ID(tile1_location_check);
 		THIS_ID(layout);
 	}
 }

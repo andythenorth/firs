@@ -100,7 +100,7 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_oil_well), 215) {
 		special_flags:      1;
 	}
 	graphics {
-		slope_check:        THIS_ID(tile_location_check);
+		tile_check:         THIS_ID(tile_location_check);
 		anim_control:       THIS_ID(tile_oil_well_anim_control);
 		anim_next_frame:    THIS_ID(tile_oil_well_anim_next_frame);
 		random_trigger:     THIS_ID(tile_oil_well_random_trigger);
@@ -115,7 +115,7 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_building), 216) {
 		land_shape_flags: 0;
 	}
 	graphics {
-		slope_check:  THIS_ID(tile_location_check);
+		tile_check:   THIS_ID(tile_location_check);
 		THIS_ID(spritelayout_building);
 	}
 }
