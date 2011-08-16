@@ -5,29 +5,31 @@
  * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS industry set. If not, see <http://www.gnu.org/licenses/>.
  */
 
+#include "../templates/spritelayout_templates.pnml"
+
 #define THIS_ID(...) oil_wells ## __VA_ARGS__
 
-spritelayout THIS_ID(tile1_layout) {
+spritelayout THIS_ID(spritelayout_oil_well) {
 	ground {
 		sprite: 2173;
 	}
 	building {
-		sprite: 2174;
-		xoffset:  1;
-		yoffset:  2;
-		xextent: 15;
-		yextent: 14;
+		sprite:  2174 + (((animation_frame % 11) < 6) ? (animation_frame % 11) : 10 - (animation_frame % 11));
+		xoffset:    1;
+		yoffset:    2;
+		xextent:   15;
+		yextent:   14;
 	}
 }
 
-spriteset(spriteset_6579, "sprites/graphics/industries/oilwell.png") { tmpl_building_sprite(10, 10, 38, -9) } 
+spriteset(spriteset_building, "sprites/graphics/industries/oilwell.png") { tmpl_building_sprite(10, 10, 38, -9) } 
 
-spritelayout THIS_ID(tile2_layout) {
+spritelayout THIS_ID(spritelayout_building) {
 	ground {
 		sprite: 2022;
 	}
 	building {
-		sprite: spriteset_6579;
+		sprite: spriteset_building;
 		recolour_mode: RECOLOUR_REMAP;
 		palette:  0;
 		xoffset:  1;
@@ -45,19 +47,68 @@ TILE_DISALLOW_NEARBY_CLASS(tile_nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_
 TILE_ALLOW_PLAYER         (tile_player_check,                                                            THIS_ID(tile_nearby_industry))
 TILE_DISALLOW_STEEP_SLOPE (tile_location_check,                       CB_RESULT_IND_DISALLOW_UNSUITABLE, THIS_ID(tile_player_check))
 
-item(FEAT_INDUSTRYTILES, tile1_oil_well, 215) {
+
+random_switch (FEAT_INDUSTRYTILES, SELF, THIS_ID(tile_oil_well_random_trigger), bitmask(TRIGGER_INDUSTRYTILE_TILELOOP)) {
+	/* Start the animation. */
+	1: return 0;
+	/* Stop the animation / do nothing. */
+	6: return 10;
+}
+
+switch (FEAT_INDUSTRYTILES, SELF, THIS_ID(tile_oil_well_anim_control), animation_frame) {
+	/* Jump to the 'stop animation cycle' when triggered and the tile is currently animated. */
+	 0..8: return animation_frame + 11;
+	/* The animation will end in the next frame. Decide whether the animation shall start or stop. */
+	 9: THIS_ID(tile_oil_well_random_trigger);
+	/* The animation was stopped. Decide whether the animation shall start or stop. */
+	10: THIS_ID(tile_oil_well_random_trigger);
+	/* If we are already in the 'stop animation cycle', continue. */
+	return CB_RESULT_NEXT_FRAME;
+}
+
+random_switch (FEAT_INDUSTRYTILES, SELF, THIS_ID(tile_oil_well_random_next_frame), bitmask(TRIGGER_INDUSTRYTILE_TILELOOP)) {
+	/* Use different random data than the one in this switch. */
+	independent: THIS_ID(tile_oil_well_random_trigger);
+	/* Stop animation (probability 1/4). */
+	1: return 10;
+	/* Loop animation (probability 3/4). */
+	3: return 1;
+}
+
+switch (FEAT_INDUSTRYTILES, SELF, THIS_ID(tile_oil_well_anim_next_frame), animation_frame) {
+	/* Decide if the animation should continue or not. */
+	0: THIS_ID(tile_oil_well_random_next_frame);
+	/* Loop finished. Go back to the beginning. */
+	9: return 0;
+	/* The animation has been stopped. */
+	10: return CB_RESULT_STOP_ANIMATION;
+	20: return 10;
+	/* Continue. */
+	return CB_RESULT_NEXT_FRAME;
+}
+
+item(FEAT_INDUSTRYTILES, THIS_ID(tile_oil_well), 215) {
 	property {
-		substitute:       0;
-		accepted_cargos:  [[ENSP, 8]];
-		land_shape_flags: 0;
+		substitute:         0;
+		accepted_cargos:    [[ENSP, 8]];
+		land_shape_flags:   0;
+		/* Animation. */
+		animation_info:     [ANIMATION_LOOPING, 20];
+		animation_speed:    3;
+		animation_triggers: bitmask(ANIM_TRIGGER_INDTILE_TILE_LOOP);
+		callback_flags:     bitmask(INDTILE_CBF_ANIM_NEXT_FRAME);
+		special_flags:      1;
 	}
 	graphics {
-		slope_check:  THIS_ID(tile_location_check);
-		THIS_ID(tile1_layout);
+		slope_check:        THIS_ID(tile_location_check);
+		anim_control:       THIS_ID(tile_oil_well_anim_control);
+		anim_next_frame:    THIS_ID(tile_oil_well_anim_next_frame);
+		random_trigger:     THIS_ID(tile_oil_well_random_trigger);
+		THIS_ID(spritelayout_oil_well);
 	}
 }
 
-item(FEAT_INDUSTRYTILES, tile2_oil_well_building, 216) {
+item(FEAT_INDUSTRYTILES, THIS_ID(tile_building), 216) {
 	property {
 		substitute:       0;
 		accepted_cargos:  [[ENSP, 8]];
@@ -65,7 +116,7 @@ item(FEAT_INDUSTRYTILES, tile2_oil_well_building, 216) {
 	}
 	graphics {
 		slope_check:  THIS_ID(tile_location_check);
-		THIS_ID(tile2_layout);
+		THIS_ID(spritelayout_building);
 	}
 }
 
@@ -74,50 +125,50 @@ item(FEAT_INDUSTRYTILES, tile2_oil_well_building, 216) {
  * *************************************************/
 
 tilelayout tilelayout_7594_1 {
-	0, 0: tile1_oil_well;
-	0, 7: tile1_oil_well;
-	1, 4: tile1_oil_well;
-	2, 1: tile1_oil_well;
-	3, 5: tile2_oil_well_building;
-	4, 8: tile1_oil_well;
-	5, 1: tile1_oil_well;
-	5, 4: tile1_oil_well;
+	0, 0: THIS_ID(tile_oil_well);
+	0, 7: THIS_ID(tile_oil_well);
+	1, 4: THIS_ID(tile_oil_well);
+	2, 1: THIS_ID(tile_oil_well);
+	3, 5: THIS_ID(tile_building);
+	4, 8: THIS_ID(tile_oil_well);
+	5, 1: THIS_ID(tile_oil_well);
+	5, 4: THIS_ID(tile_oil_well);
 }
 
 tilelayout tilelayout_7594_2 {
-	0, 0: tile1_oil_well;
-	0, 4: tile1_oil_well;
-	1, 4: tile1_oil_well;
-	2, 8: tile1_oil_well;
-	4, 4: tile2_oil_well_building;
-	4, 8: tile1_oil_well;
-	5, 2: tile1_oil_well;
-	6, 2: tile1_oil_well;
-	6, 4: tile1_oil_well;
+	0, 0: THIS_ID(tile_oil_well);
+	0, 4: THIS_ID(tile_oil_well);
+	1, 4: THIS_ID(tile_oil_well);
+	2, 8: THIS_ID(tile_oil_well);
+	4, 4: THIS_ID(tile_building);
+	4, 8: THIS_ID(tile_oil_well);
+	5, 2: THIS_ID(tile_oil_well);
+	6, 2: THIS_ID(tile_oil_well);
+	6, 4: THIS_ID(tile_oil_well);
 }
 
 tilelayout tilelayout_7594_3 {
-	0, 0: tile1_oil_well;
-	0, 2: tile1_oil_well;
-	1, 4: tile1_oil_well;
-	1, 6: tile1_oil_well;
-	2, 0: tile2_oil_well_building;
-	3, 2: tile1_oil_well;
-	3, 4: tile1_oil_well;
+	0, 0: THIS_ID(tile_oil_well);
+	0, 2: THIS_ID(tile_oil_well);
+	1, 4: THIS_ID(tile_oil_well);
+	1, 6: THIS_ID(tile_oil_well);
+	2, 0: THIS_ID(tile_building);
+	3, 2: THIS_ID(tile_oil_well);
+	3, 4: THIS_ID(tile_oil_well);
 }
 
 tilelayout tilelayout_7594_4 {
-	0, 0: tile1_oil_well;
-	0, 4: tile1_oil_well;
-	0, 6: tile1_oil_well;
-	1, 2: tile1_oil_well;
-	1, 8: tile2_oil_well_building;
-	2, 0: tile1_oil_well;
-	2, 2: tile1_oil_well;
-	3, 1: tile1_oil_well;
-	5, 0: tile1_oil_well;
-	5, 2: tile1_oil_well;
-	6, 0: tile1_oil_well;
+	0, 0: THIS_ID(tile_oil_well);
+	0, 4: THIS_ID(tile_oil_well);
+	0, 6: THIS_ID(tile_oil_well);
+	1, 2: THIS_ID(tile_oil_well);
+	1, 8: THIS_ID(tile_building);
+	2, 0: THIS_ID(tile_oil_well);
+	2, 2: THIS_ID(tile_oil_well);
+	3, 1: THIS_ID(tile_oil_well);
+	5, 0: THIS_ID(tile_oil_well);
+	5, 2: THIS_ID(tile_oil_well);
+	6, 0: THIS_ID(tile_oil_well);
 }
 
 /* *************************************************
