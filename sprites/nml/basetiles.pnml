@@ -1,152 +1,115 @@
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_224, 224) {
+/* *************************************************
+ * tile_plain_concrete
+ * *************************************************/
+
+spriteset(spriteset_plain_concrete, "sprites/graphics/industries/groundtiles.png") { tmpl_ground_tile(80, 10) } 
+spriteset(spriteset_plain_concrete_snow, "sprites/graphics/industries/groundtiles.png") { tmpl_ground_tile(220, 10) } 
+
+spritelayout spritelayout_plain_conrete {
+	ground {
+		sprite: spriteset_plain_concrete;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+	childsprite {
+		sprite: spriteset_plain_concrete_snow;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		hide_sprite: terrain_type == TILETYPE_SNOW;
+	}
+}
+
+item(FEAT_INDUSTRYTILES, tile_plain_concrete, 224) {
 	property {
-		substitute: 0;
-		accepted_cargos: [];
+		substitute:       0;
+		accepted_cargos:  [];
 		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
 	}
-}
-
-spriteset(spriteset_2330, "sprites/graphics/industries/groundtiles.png") { tmpl_ground_tile(80, 10) } 
-spriteset(spriteset_2331, "sprites/graphics/industries/groundtiles.png") { tmpl_ground_tile(220, 10) } 
-spritelayout action2_2332 {
-	ground {
-		sprite: spriteset_2330;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-}
-
-spritelayout action2_2333 {
-	ground {
-		sprite: spriteset_2331;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_2334, terrain_type) {
-	1: action2_2332;
-	4: action2_2333;
-	action2_2332;
-}
-
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_224, 224) {
 	graphics {
-		action2_2334;
+		spritelayout_plain_conrete;
 	}
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_225, 225) {
+/* *************************************************
+ * tile_sloped_dirt
+ * *************************************************/
+
+spritelayout tile_sloped_dirt_spritelayout {
+	ground {
+		sprite: GROUNDSPRITE_CLEARED;
+	}
+}
+
+item(FEAT_INDUSTRYTILES, tile_sloped_dirt, 225) {
 	property {
-		substitute: 0;
-		accepted_cargos: [];
+		substitute:       0;
+		accepted_cargos:  [];
 		land_shape_flags: 0;
 	}
+	graphics {
+		tile_sloped_dirt_spritelayout;
+	}
 }
 
-spritelayout action2_2337 {
+/* *************************************************
+ * tile_flat_dirt
+ * *************************************************/
+
+spritelayout tile_flat_dirt_spritelayout {
 	ground {
 		sprite: GROUNDSPRITE_CLEARED;
 	}
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_225, 225) {
+item(FEAT_INDUSTRYTILES, tile_flat_dirt, 226) {
+	property {
+		substitute:       0;
+		accepted_cargos:  [];
+		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
+	}
 	graphics {
-		action2_2337;
+		tile_flat_dirt_spritelayout;
 	}
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_226, 226) {
+/* *************************************************
+ * tile_plastic_tanks
+ * *************************************************/
+
+#define THIS_ID(...) tile_plastic_tanks ## __VA_ARGS__
+
+spriteset(THIS_ID(tanks), "sprites/graphics/industries/generictiles.pcx") { tmpl_building_sprite(10, 10, 54, -23) } 
+spriteset(THIS_ID(concrete), "sprites/graphics/industries/groundtiles.png")  { tmpl_ground_tile(80, 10) } 
+
+SPRITELAYOUT_NORMAL(THIS_ID(spritelayout), THIS_ID(concrete), THIS_ID(tanks), 32)
+
+TILE_DISALLOW_NEARBY_CLASS(nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_IND_DISALLOW_UNSUITABLE, return CB_RESULT_IND_ALLOW_LOCATION)
+TILE_ALLOW_PLAYER         (player_check,                                                            THIS_ID(nearby_industry))
+TILE_ALLOW_ONLY_FLAT_LAND (location_check,                       CB_RESULT_IND_DISALLOW_UNSUITABLE, THIS_ID(player_check))
+
+item(FEAT_INDUSTRYTILES, tile_plastic_tanks, 227) {
 	property {
-		substitute: 0;
-		accepted_cargos: [];
+		substitute:       0;
+		accepted_cargos:  [];
 		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
 	}
-}
-
-spritelayout action2_2340 {
-	ground {
-		sprite: GROUNDSPRITE_CLEARED;
-	}
-}
-
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_226, 226) {
 	graphics {
-		action2_2340;
+		tile_check: THIS_ID(location_check);
+		THIS_ID(spritelayout);
 	}
 }
+#undef THIS_ID
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_227, 227) {
-	property {
-		substitute: 0;
-		accepted_cargos: [];
-		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
-		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
-	}
-}
+/* *************************************************
+ * tile228
+ * *************************************************/
 
-spriteset(spriteset_2344, "sprites/graphics/industries/generictiles.pcx") { tmpl_building_sprite(10, 10, 54, -23) } 
-spriteset(spriteset_2345, "sprites/graphics/industries/groundtiles.png") { tmpl_ground_tile(80, 10) } 
-spritelayout action2_2346 {
-	ground {
-		sprite: spriteset_2345;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_2344;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 32;
-	}
-}
-
-
-CHECK_NEARBY_TILE_CLASS(action2_2354)
-
-switch(FEAT_INDUSTRYTILES, PARENT, action2_2355, founder) {
-	16: action2_2354;
-	return 1024;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_2356, var[0x60, 0, 255, 0]) {
-	1..255: return 1025;
-	action2_2355;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_2357, (current_callback & 255)) {
-	INDTILE_CB_SLOPE_IS_SUITABLE: action2_2356;
-	action2_2346;
-}
-
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_227, 227) {
-	graphics {
-		action2_2357;
-	}
-}
-
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_228, 228) {
-	property {
-		substitute: 0;
-		accepted_cargos: [[cargo_sand, 8]];
-		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
-		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
-	}
-}
-
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_229, 229) {
-	property {
-		substitute: 0;
-		accepted_cargos: [[cargo_sand, 8]];
-		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
-		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
-	}
-}
+#define THIS_ID(...) tile228 ## __VA_ARGS__
 
 spriteset(spriteset_2362, "sprites/graphics/industries/generictiles.pcx") { tmpl_ground_tile(80, 10) } 
 spriteset(spriteset_2363, "sprites/graphics/industries/groundtiles.png") { tmpl_ground_tile(80, 10) } 
 spriteset(spriteset_2364, "sprites/graphics/industries/groundtiles.png") { tmpl_ground_tile(150, 10) } 
-spritelayout action2_2365 {
+spritelayout THIS_ID(spritelayout) {
 	ground {
 		sprite: spriteset_2363;
 		recolour_mode: RECOLOUR_REMAP;
@@ -160,29 +123,26 @@ spritelayout action2_2365 {
 	}
 }
 
-
-CHECK_NEARBY_TILE_CLASS(action2_2373)
-
-switch(FEAT_INDUSTRYTILES, PARENT, action2_2374, founder) {
-	16: action2_2373;
-	return 1024;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_2375, var[0x60, 0, 255, 0]) {
-	1..255: return 1025;
-	action2_2374;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_2376, (current_callback & 255)) {
-	INDTILE_CB_SLOPE_IS_SUITABLE: action2_2375;
-	action2_2365;
-}
+TILE_DISALLOW_NEARBY_CLASS(nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_IND_DISALLOW_UNSUITABLE, return CB_RESULT_IND_ALLOW_LOCATION)
+TILE_ALLOW_PLAYER         (player_check,                                                            THIS_ID(nearby_industry))
+TILE_ALLOW_ONLY_FLAT_LAND (location_check,                       CB_RESULT_IND_DISALLOW_UNSUITABLE, THIS_ID(player_check))
 
 item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_228, 228) {
+	property {
+		substitute:       0;
+		accepted_cargos:  [[cargo_sand, 8]];
+		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
+	}
 	graphics {
-		action2_2376;
+		tile_check: THIS_ID(location_check);
+		THIS_ID(spritelayout);
 	}
 }
+#undef THIS_ID
+
+/* *************************************************
+ * tile229
+ * *************************************************/
 
 spritelayout action2_2378 {
 	ground {
@@ -216,6 +176,12 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_2389, (current_callback & 255)) {
 }
 
 item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_229, 229) {
+	property {
+		substitute: 0;
+		accepted_cargos: [[cargo_sand, 8]];
+		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
+		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
+	}
 	graphics {
 		action2_2389;
 	}
