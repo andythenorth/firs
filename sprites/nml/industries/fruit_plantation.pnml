@@ -7,7 +7,7 @@
 
 #define THIS_ID(...) fruit_plantation ## __VA_ARGS__
 
-item(FEAT_INDUSTRYTILES, tile_plantation, 207) {
+item(FEAT_INDUSTRYTILES, THIS_ID(tile_plantation), 207) {
 	property {
 		substitute: 0;
 		accepted_cargos: [[FMSP, 8]];
@@ -5108,13 +5108,13 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_4788, (current_callback & 255)) {
 	action2_4776;
 }
 
-item(FEAT_INDUSTRYTILES, tile_plantation, 207) {
+item(FEAT_INDUSTRYTILES, THIS_ID(tile_plantation), 207) {
 	graphics {
 		action2_4788;
 	}
 }
 
-item(FEAT_INDUSTRYTILES, tile_house, 208) {
+item(FEAT_INDUSTRYTILES, THIS_ID(tile_house), 208) {
 	property {
 		substitute: 0;
 		accepted_cargos: [[FMSP, 8]];
@@ -5161,62 +5161,62 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_4805, (current_callback & 255)) {
 	action2_4793;
 }
 
-item(FEAT_INDUSTRYTILES, tile_house, 208) {
+item(FEAT_INDUSTRYTILES, THIS_ID(tile_house), 208) {
 	graphics {
 		action2_4805;
 	}
 }
 
 tilelayout tilelayout_5807_1 {
-	0, 0: tile_plantation;
-	0, 1: tile_plantation;
-	0, 2: tile_plantation;
-	1, 0: tile_plantation;
-	1, 1: tile_plantation;
-	1, 2: tile_plantation;
-	2, 1: tile_plantation;
-	2, 2: tile_house;
+	0, 0: THIS_ID(tile_plantation);
+	0, 1: THIS_ID(tile_plantation);
+	0, 2: THIS_ID(tile_plantation);
+	1, 0: THIS_ID(tile_plantation);
+	1, 1: THIS_ID(tile_plantation);
+	1, 2: THIS_ID(tile_plantation);
+	2, 1: THIS_ID(tile_plantation);
+	2, 2: THIS_ID(tile_house);
 }
 
 tilelayout tilelayout_5807_2 {
-	0, 0: tile_plantation;
-	0, 1: tile_plantation;
-	0, 2: tile_plantation;
-	0, 3: tile_plantation;
-	1, 1: tile_plantation;
-	1, 2: tile_plantation;
-	1, 3: tile_plantation;
-	1, 4: tile_house;
+	0, 0: THIS_ID(tile_plantation);
+	0, 1: THIS_ID(tile_plantation);
+	0, 2: THIS_ID(tile_plantation);
+	0, 3: THIS_ID(tile_plantation);
+	1, 1: THIS_ID(tile_plantation);
+	1, 2: THIS_ID(tile_plantation);
+	1, 3: THIS_ID(tile_plantation);
+	1, 4: THIS_ID(tile_house);
 }
 
 tilelayout tilelayout_5807_3 {
-	0, 0: tile_plantation;
-	0, 1: tile_plantation;
-	1, 0: tile_plantation;
-	1, 1: tile_plantation;
-	2, 0: tile_plantation;
-	2, 1: tile_plantation;
-	3, 0: tile_plantation;
-	3, 1: tile_house;
+	0, 0: THIS_ID(tile_plantation);
+	0, 1: THIS_ID(tile_plantation);
+	1, 0: THIS_ID(tile_plantation);
+	1, 1: THIS_ID(tile_plantation);
+	2, 0: THIS_ID(tile_plantation);
+	2, 1: THIS_ID(tile_plantation);
+	3, 0: THIS_ID(tile_plantation);
+	3, 1: THIS_ID(tile_house);
 }
 
 tilelayout tilelayout_5807_4 {
-	0, 0: tile_plantation;
-	0, 1: tile_plantation;
-	0, 3: tile_plantation;
-	0, 4: tile_plantation;
-	1, 0: tile_plantation;
-	1, 1: tile_plantation;
-	1, 3: tile_plantation;
-	1, 4: tile_plantation;
-	3, 0: tile_plantation;
-	3, 1: tile_plantation;
-	3, 3: tile_plantation;
-	3, 4: tile_plantation;
-	4, 0: tile_plantation;
-	4, 1: tile_house;
-	4, 3: tile_plantation;
-	4, 4: tile_plantation;
+	0, 0: THIS_ID(tile_plantation);
+	0, 1: THIS_ID(tile_plantation);
+	0, 3: THIS_ID(tile_plantation);
+	0, 4: THIS_ID(tile_plantation);
+	1, 0: THIS_ID(tile_plantation);
+	1, 1: THIS_ID(tile_plantation);
+	1, 3: THIS_ID(tile_plantation);
+	1, 4: THIS_ID(tile_plantation);
+	3, 0: THIS_ID(tile_plantation);
+	3, 1: THIS_ID(tile_plantation);
+	3, 3: THIS_ID(tile_plantation);
+	3, 4: THIS_ID(tile_plantation);
+	4, 0: THIS_ID(tile_plantation);
+	4, 1: THIS_ID(tile_house);
+	4, 3: THIS_ID(tile_plantation);
+	4, 4: THIS_ID(tile_plantation);
 }
 
 
