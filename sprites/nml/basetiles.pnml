@@ -21,7 +21,7 @@ spritelayout spritelayout_plain_conrete {
 		sprite: spriteset_plain_concrete_snow;
 		recolour_mode: RECOLOUR_REMAP;
 		palette: 0;
-		hide_sprite: terrain_type == TILETYPE_SNOW;
+		hide_sprite: terrain_type != TILETYPE_SNOW;
 	}
 }
 
