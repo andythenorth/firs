@@ -6,6 +6,28 @@
  */
 
 /*
+ * Check that the tile for being in a certain height range
+ *
+ * switch name:  THIS_ID(name)
+ *               tilename ## name
+ *
+ * Parameters:
+ * name:         Name of this switch
+ * minh:         Minimum height to check for
+ * maxh:         Maximum height to check for
+ * inrange:      choice when in range:     name of next switch or return <value>
+ * outrange:     choice when out of range: name of next switch or return <value>
+ *        where <value> is a string, CB_RESULT_IND_DISALLOW_UNSUITABLE or CB_RESULT_IND_ALLOW_LOCATION
+ */
+
+/* uses more efficient code for (nearby_tile_height(0,0) <= maxh) && (nearby_tile_height(0,0) >= minh) */
+#define TILE_CHECK_HEIGHT(name, minh, maxh, inrange, outrange) \
+switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(name), UCMP(nearby_tile_height(0, 0) - minh, maxh - minh)) { \
+	0..1: inrange; \
+	outrange; \
+}
+
+/*
  * Check that the tile for having a specific water class
  *
  * switch name:  THIS_ID(name)
