@@ -7,36 +7,31 @@
 
 #define THIS_ID(...) dredgine_site ## __VA_ARGS__
 
-#define THIS_STR_EXTRA_SUPPLIES        STR_EXTRA_ENGINEERING_SUPPLIES
-
 spriteset(THIS_ID(spriteset_1)) {
 	tmpl_building_sprite_filename(10, 10, 100, -65, "sprites/graphics/industries/dredgingsite.pcx")
 }
 
 SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_1), GROUNDSPRITE_WATER, THIS_ID(spriteset_1), 74)
 
-switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_1), relative_pos) {
-	relative_coord(1, 1): THIS_ID(spritelayout_1);
-	THIS_ID(spritelayout_1);
-}
-
-switch(FEAT_INDUSTRYTILES, PARENT, THIS_ID(layout), layout_num) {
-	1: THIS_ID(layout_1);
-	THIS_ID(spritelayout_1);
-}
+/* *************************************************
+ * Definition of the industry tile and its callbacks
+ * *************************************************/
 
 item(FEAT_INDUSTRYTILES, THIS_ID(tile), 198) {
 	property {
 		substitute:       0;
 		accepted_cargos:  [[ENSP, 8]];
 		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
-		callback_flags:   0;
 	}
 
 	graphics {
-		THIS_ID(layout);
+		THIS_ID(spritelayout_1);
 	}
 }
+
+/* *************************************************
+ * Definition of the industry layouts
+ * *************************************************/
 
 tilelayout tilelayout_dredging_site_1 {
 	0, 0: 255;
