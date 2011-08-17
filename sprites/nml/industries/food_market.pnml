@@ -16,16 +16,24 @@ spriteset(THIS_ID(spriteset_1)) {
 
 SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_1), GROUNDSPRITE_CONCRETE, GROUNDSPRITE_CONCRETE, THIS_ID(spriteset_1), 16)
 
+/* *************************************************
+ * Definition of the industry tile and its callbacks
+ * *************************************************/
+
 item(FEAT_INDUSTRYTILES, tile_food_market, 194) {
 	property {
-		substitute: 0;
-		accepted_cargos: [[FOOD, 8], [FRVG, 8], [BEER, 8]];
+		substitute:       0;
+		accepted_cargos:  [[FOOD, 8], [FRVG, 8], [BEER, 8]];
 		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
 	}
 	graphics {
 		THIS_ID(spritelayout_1);
 	}
 }
+
+/* *************************************************
+ * Definition of the industry layouts
+ * *************************************************/
 
 tilelayout tilelayout_food_market_1 {
 	0, 0: tile_food_market;
