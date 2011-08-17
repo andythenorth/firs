@@ -67,92 +67,41 @@ switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_3), relative_pos) {
 	THIS_ID(spritelayout_8);
 }
 
-switch(FEAT_INDUSTRYTILES, PARENT, THIS_ID(layout), layout_num) {
+switch(FEAT_INDUSTRYTILES, PARENT, THIS_ID(tile_spritelayout), layout_num) {
 	1: THIS_ID(layout_1);
 	2: THIS_ID(layout_2);
 	3: THIS_ID(layout_3);
 	THIS_ID(spritelayout_1);
 }
 
-CHECK_NEARBY_TILE_CLASS(action2_6431)
+/* *************************************************
+ * Definition of the industry tile and its callbacks
+ * *************************************************/
 
-switch(FEAT_INDUSTRYTILES, PARENT, action2_6432, founder) {
-	16: action2_6431;
-	return 1024;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_6433, ((var[0x60, 16, 255, 0] - snowline_height) + 8)) {
-	8..127: return 1025;
-	action2_6432;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_6434, var[0x60, 10, 1, 17]) {
-	1: return 1025;
-	action2_6433;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_6435, var[0x60, 10, 1, 16]) {
-	1: action2_6434;
-	action2_6433;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_6436, var[0x60, 10, 1, 31]) {
-	1: action2_6435;
-	action2_6433;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_6437, var[0x60, 10, 1, 1]) {
-	1: action2_6436;
-	action2_6433;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_6438, var[0x60, 10, 1, 15]) {
-	1: action2_6437;
-	action2_6433;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_6439, var[0x60, 10, 1, 241]) {
-	1: action2_6438;
-	action2_6433;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_6440, var[0x60, 10, 1, 240]) {
-	1: action2_6439;
-	action2_6433;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_6441, var[0x60, 10, 1, 255]) {
-	1: action2_6440;
-	action2_6433;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_6442, var[0x60, 4, 1, 0]) {
-	1: return 1025;
-	action2_6441;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_6443, var[0x60, 9, 1, 0]) {
-	1: return 1025;
-	action2_6442;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_6444, (current_callback & 255)) {
-	INDTILE_CB_SLOPE_IS_SUITABLE: action2_6443;
-	THIS_ID(layout);
-}
+/* Allow players to build it also on snow and in the desert */
+TILE_DISALLOW_NEARBY_CLASS(tile_nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_IND_DISALLOW_UNSUITABLE,           return CB_RESULT_IND_ALLOW_LOCATION)
+TILE_ALLOW_PLAYER         (tile_player_check,                                                                      THIS_ID(tile_nearby_industry))
+TILE_CHECK_HEIGHT         (tile_height_check,    0, snowline_height,  THIS_ID(tile_player_check),                  return string(STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE))
+TILE_DISALLOW_TERRAIN     (tile_desert_check,    TILETYPE_DESERT,     string(STR_ERR_LOCATION_NOT_IN_DESERT),      THIS_ID(tile_height_check))
+TILE_DISALLOW_STEEP_SLOPE (tile_slope_check,                          string(STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE), THIS_ID(tile_desert_check))
+TILE_CHECK_WATER          (tile_location_check,                       string(STR_ERR_LOCATION_NOT_ON_WATER),       THIS_ID(tile_slope_check))
 
 item(FEAT_INDUSTRYTILES, THIS_ID(tile), 190) {
 	property {
-		substitute: 0;
-		accepted_cargos: [[FMSP, 8]];
+		substitute:       0;
+		accepted_cargos:  [[FMSP, 8]];
 		land_shape_flags: 0;
-		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
 
 	graphics {
-		action2_6444;
+		tile_check:   THIS_ID(tile_location_check);
+		THIS_ID(tile_spritelayout);
 	}
 }
+
+/* *************************************************
+ * Definition of the industry layouts
+ * *************************************************/
 
 tilelayout tilelayout_mixed_farm_1 {
 	0, 2: THIS_ID(tile);
