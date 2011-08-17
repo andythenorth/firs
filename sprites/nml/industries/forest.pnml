@@ -7,14 +7,9 @@
 
 #define THIS_ID(...) forest ## __VA_ARGS__
 
-item(FEAT_INDUSTRYTILES, tile_trees, 205) {
-	property {
-		substitute: 0;
-		accepted_cargos: [[FMSP, 8]];
-		land_shape_flags: 0;
-		callback_flags: 112;
-	}
-}
+/* **************
+ * tile_trees
+ * *************/
 
 spritelayout action2_4257 {
 	ground {
@@ -5083,71 +5078,9 @@ switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(tile_trees_spritelayout), var[0x03, 0, 
 	action2_4276;
 }
 
-CHECK_NEARBY_TILE_CLASS(action2_4444)
-
-switch(FEAT_INDUSTRYTILES, PARENT, action2_4445, founder) {
-	16: action2_4444;
-	return 1024;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_4446, var[0x60, 10, 1, 17]) {
-	1: return 1025;
-	action2_4445;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_4447, var[0x60, 10, 1, 16]) {
-	1: action2_4446;
-	action2_4445;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_4448, var[0x60, 10, 1, 31]) {
-	1: action2_4447;
-	action2_4445;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_4449, var[0x60, 10, 1, 1]) {
-	1: action2_4448;
-	action2_4445;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_4450, var[0x60, 10, 1, 15]) {
-	1: action2_4449;
-	action2_4445;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_4451, var[0x60, 10, 1, 241]) {
-	1: action2_4450;
-	action2_4445;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_4452, var[0x60, 10, 1, 240]) {
-	1: action2_4451;
-	action2_4445;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_4453, var[0x60, 10, 1, 255]) {
-	1: action2_4452;
-	action2_4445;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_4454, var[0x60, 9, 1, 0]) {
-	1: return 1025;
-	action2_4453;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_4455, (current_callback & 255)) {
-	INDTILE_CB_SLOPE_IS_SUITABLE: action2_4454;
-	INDTILE_CB_FOUNDATIONS: return 0;
-	INDTILE_CB_AUTOSLOPE: return 255;
-	THIS_ID(tile_trees_spritelayout);
-}
-
-item(FEAT_INDUSTRYTILES, tile_trees, 205) {
-	graphics {
-		action2_4455;
-	}
-}
-
+/* **************
+ * tile_equipment
+ * *************/
 
 spriteset(spriteset_4459, "sprites/graphics/industries/forest.png") { tmpl_building_sprite(10, 10, 78, -45) } 
 spriteset(spriteset_4460, "sprites/graphics/industries/forest.png") { tmpl_building_sprite(80, 10, 78, -45) } 
@@ -5198,16 +5131,36 @@ spritelayout THIS_ID(tile_equipment_snow_spritelayout) {
 	}
 }
 
-TILE_CHECK_HEIGHT         (tile_equipment_height_check,  0, snowline_height,  THIS_ID(tile_equipment_snow_spritelayout), THIS_ID(tile_equipment_nonsnow_spritelayout))
+TILE_CHECK_HEIGHT(tile_equipment_height_check,  0, snowline_height,  THIS_ID(tile_equipment_nonsnow_spritelayout), THIS_ID(tile_equipment_snow_spritelayout))
 
 switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(tile_equipment_spritelayout), climate) {
 	CLIMATE_ARCTIC: THIS_ID(tile_equipment_height_check);
 	THIS_ID(tile_equipment_nonsnow_spritelayout);
 }
 
-/* *************************************************
- * Definition of the industry tile and its callbacks
- * *************************************************/
+/* ****************************************************
+ * Definition of the industry tiles and their callbacks
+ * ***************************************************/
+ 
+TILE_DISALLOW_NEARBY_CLASS(tile_trees_nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_IND_DISALLOW_UNSUITABLE,      return CB_RESULT_IND_ALLOW_LOCATION)
+TILE_ALLOW_PLAYER         (tile_trees_player_check,                                                                 THIS_ID(tile_trees_nearby_industry))
+TILE_CHECK_WATER          (tile_trees_water_check,                          string(STR_ERR_LOCATION_NOT_ON_WATER),  THIS_ID(tile_trees_player_check))
+TILE_DISALLOW_TERRAIN     (tile_trees_location_check,  TILETYPE_DESERT,     string(STR_ERR_LOCATION_NOT_IN_DESERT), THIS_ID(tile_trees_water_check))
+
+item(FEAT_INDUSTRYTILES, tile_trees, 205) {
+	property {
+		substitute:       0;
+		accepted_cargos:  [[FMSP, 8]];
+		land_shape_flags: 0;
+	}
+	graphics {
+		foundations: return CB_RESULT_NO_FOUNDATIONS;
+		autoslope:   return CB_RESULT_NO_AUTOSLOPE;
+		tile_check:  THIS_ID(tile_trees_location_check);
+		THIS_ID(tile_trees_spritelayout);
+	}
+}
+
 
 TILE_DISALLOW_NEARBY_CLASS(tile_equipment_nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_IND_DISALLOW_UNSUITABLE, return CB_RESULT_IND_ALLOW_LOCATION)
 TILE_ALLOW_PLAYER         (tile_equipment_player_check,                                                            THIS_ID(tile_equipment_nearby_industry))
