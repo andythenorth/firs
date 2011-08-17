@@ -191,7 +191,7 @@ switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(tile_anim_control), (extra_callback_inf
 	4: return 4;
 	5: return 5;
 	6: return 6;
-	return 254;
+	return CB_RESULT_NEXT_FRAME;
 }
 
 item(FEAT_INDUSTRYTILES, THIS_ID(tile), 163) {
