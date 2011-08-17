@@ -31,48 +31,6 @@ item(FEAT_INDUSTRYTILES, tile_plain_concrete, 224) {
 }
 
 /* *************************************************
- * tile_sloped_dirt
- * *************************************************/
-
-spritelayout tile_sloped_dirt_spritelayout {
-	ground {
-		sprite: GROUNDSPRITE_CLEARED;
-	}
-}
-
-item(FEAT_INDUSTRYTILES, tile_sloped_dirt, 225) {
-	property {
-		substitute:       0;
-		accepted_cargos:  [];
-		land_shape_flags: 0;
-	}
-	graphics {
-		tile_sloped_dirt_spritelayout;
-	}
-}
-
-/* *************************************************
- * tile_flat_dirt
- * *************************************************/
-
-spritelayout tile_flat_dirt_spritelayout {
-	ground {
-		sprite: GROUNDSPRITE_CLEARED;
-	}
-}
-
-item(FEAT_INDUSTRYTILES, tile_flat_dirt, 226) {
-	property {
-		substitute:       0;
-		accepted_cargos:  [];
-		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
-	}
-	graphics {
-		tile_flat_dirt_spritelayout;
-	}
-}
-
-/* *************************************************
  * tile_plastic_tanks
  * *************************************************/
 
@@ -101,48 +59,12 @@ item(FEAT_INDUSTRYTILES, tile_plastic_tanks, 227) {
 #undef THIS_ID
 
 /* *************************************************
- * tile228
+ * tile229
  * *************************************************/
-
-#define THIS_ID(...) tile228 ## __VA_ARGS__
 
 spriteset(spriteset_2362, "sprites/graphics/industries/generictiles.pcx") { tmpl_ground_tile(80, 10) } 
 spriteset(spriteset_2363, "sprites/graphics/industries/groundtiles.png") { tmpl_ground_tile(80, 10) } 
 spriteset(spriteset_2364, "sprites/graphics/industries/groundtiles.png") { tmpl_ground_tile(150, 10) } 
-spritelayout THIS_ID(spritelayout) {
-	ground {
-		sprite: spriteset_2363;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_2362;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 8;
-	}
-}
-
-TILE_DISALLOW_NEARBY_CLASS(nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_IND_DISALLOW_UNSUITABLE, return CB_RESULT_IND_ALLOW_LOCATION)
-TILE_ALLOW_PLAYER         (player_check,                                                            THIS_ID(nearby_industry))
-TILE_ALLOW_ONLY_FLAT_LAND (location_check,                       CB_RESULT_IND_DISALLOW_UNSUITABLE, THIS_ID(player_check))
-
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_228, 228) {
-	property {
-		substitute:       0;
-		accepted_cargos:  [[cargo_sand, 8]];
-		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
-	}
-	graphics {
-		tile_check: THIS_ID(location_check);
-		THIS_ID(spritelayout);
-	}
-}
-#undef THIS_ID
-
-/* *************************************************
- * tile229
- * *************************************************/
 
 spritelayout action2_2378 {
 	ground {
@@ -291,15 +213,6 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_232, 232) {
 	}
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_233, 233) {
-	property {
-		substitute: 0;
-		accepted_cargos: [[cargo_clay, 8]];
-		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
-		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
-	}
-}
-
 spriteset(spriteset_2426, "sprites/graphics/industries/generictiles.pcx") { tmpl_ground_tile(220, 10) } 
 spriteset(spriteset_2427, "sprites/graphics/industries/groundtiles.png") { tmpl_ground_tile(80, 10) } 
 spriteset(spriteset_2428, "sprites/graphics/industries/groundtiles.png") { tmpl_ground_tile(150, 10) } 
@@ -340,41 +253,31 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_232, 232) {
 	}
 }
 
-spritelayout action2_2442 {
-	ground {
-		sprite: spriteset_2428;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
+/* **************************************************
+ * Legacy support for meanwhile unused industry tiles
+ * Just define them as the farm's barn
+ *
+ * Unused tile numbers:
+ * 225, 226, 228, 233
+ * *************************************************/
+
+item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_225, 225) {
+	property {
+		substitute: 35;
 	}
-	building {
-		sprite: spriteset_2426;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 8;
+}
+item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_226, 226) {
+	property {
+		substitute: 35;
 	}
 }
-
-CHECK_NEARBY_TILE_CLASS(action2_2450)
-
-switch(FEAT_INDUSTRYTILES, PARENT, action2_2451, founder) {
-	16: action2_2450;
-	return 1024;
+item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_228, 228) {
+	property {
+		substitute: 35;
+	}
 }
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_2452, var[0x60, 0, 255, 0]) {
-	1..255: return 1025;
-	action2_2451;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_2453, (current_callback & 255)) {
-	INDTILE_CB_SLOPE_IS_SUITABLE: action2_2452;
-	action2_2442;
-}
-
 item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_233, 233) {
-	graphics {
-		action2_2453;
+	property {
+		substitute: 35;
 	}
 }
-
-
