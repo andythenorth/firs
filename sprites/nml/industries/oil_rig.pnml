@@ -7,12 +7,15 @@
 
 #define THIS_ID(...) oil_rig ## __VA_ARGS__
 
+/* *************************************************
+ * Definition of the industry tile and its callbacks
+ * *************************************************/
+
 item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_25, 25) {
 	property {
 		substitute: 25;
 		override: 25;
 		accepted_cargos: [[ENSP, 8], [PASS, 8]];
-		callback_flags: 0;
 	}
 }
 
@@ -21,7 +24,6 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_26, 26) {
 		substitute: 26;
 		override: 26;
 		accepted_cargos: [[ENSP, 8], [PASS, 8]];
-		callback_flags: 0;
 	}
 }
 
@@ -30,7 +32,6 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_27, 27) {
 		substitute: 27;
 		override: 27;
 		accepted_cargos: [[ENSP, 8], [PASS, 8]];
-		callback_flags: 0;
 	}
 }
 
@@ -39,7 +40,6 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_28, 28) {
 		substitute: 28;
 		override: 28;
 		accepted_cargos: [[ENSP, 8], [PASS, 8]];
-		callback_flags: 0;
 	}
 }
 

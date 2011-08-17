@@ -7,6 +7,9 @@
 
 #define THIS_ID(...) paper_mill ## __VA_ARGS__
 
+/* *************************************************
+ * Definition of the industry tile and its callbacks
+ * *************************************************/
 
 item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_64, 64) {
 	property {

@@ -7,12 +7,15 @@
 
 #define THIS_ID(...) iron_ore_mine ## __VA_ARGS__
 
+/* *************************************************
+ * Definition of the industry tile and its callbacks
+ * *************************************************/
+
 item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_100, 100) {
 	property {
 		substitute: 100;
 		override: 100;
 		callback_flags: 0;
-		accepted_cargos: [[ENSP, 8]];
 	}
 }
 
@@ -21,7 +24,6 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_101, 101) {
 		substitute: 101;
 		override: 101;
 		accepted_cargos: [[ENSP, 8]];
-		callback_flags: 0;
 	}
 }
 
@@ -30,7 +32,6 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_102, 102) {
 		substitute: 102;
 		override: 102;
 		accepted_cargos: [[ENSP, 8]];
-		callback_flags: 0;
 	}
 }
 
@@ -39,7 +40,6 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_103, 103) {
 		substitute: 103;
 		override: 103;
 		accepted_cargos: [[ENSP, 8]];
-		callback_flags: 0;
 	}
 }
 
@@ -48,7 +48,6 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_104, 104) {
 		substitute: 104;
 		override: 104;
 		accepted_cargos: [[ENSP, 8]];
-		callback_flags: 0;
 	}
 }
 
@@ -57,7 +56,6 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_105, 105) {
 		substitute: 105;
 		override: 105;
 		accepted_cargos: [[ENSP, 8]];
-		callback_flags: 0;
 	}
 }
 
@@ -66,7 +64,6 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_106, 106) {
 		substitute: 106;
 		override: 106;
 		accepted_cargos: [[ENSP, 8]];
-		callback_flags: 0;
 	}
 }
 
@@ -75,7 +72,6 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_107, 107) {
 		substitute: 107;
 		override: 107;
 		accepted_cargos: [[ENSP, 8]];
-		callback_flags: 0;
 	}
 }
 
@@ -84,7 +80,6 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_108, 108) {
 		substitute: 108;
 		override: 108;
 		accepted_cargos: [[ENSP, 8]];
-		callback_flags: 0;
 	}
 }
 
@@ -93,7 +88,6 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_109, 109) {
 		substitute: 109;
 		override: 109;
 		accepted_cargos: [[ENSP, 8]];
-		callback_flags: 0;
 	}
 }
 
@@ -102,7 +96,6 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_110, 110) {
 		substitute: 110;
 		override: 110;
 		accepted_cargos: [[ENSP, 8]];
-		callback_flags: 0;
 	}
 }
 
@@ -111,7 +104,6 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_111, 111) {
 		substitute: 111;
 		override: 111;
 		accepted_cargos: [[ENSP, 8]];
-		callback_flags: 0;
 	}
 }
 
@@ -120,7 +112,6 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_112, 112) {
 		substitute: 112;
 		override: 112;
 		accepted_cargos: [[ENSP, 8]];
-		callback_flags: 0;
 	}
 }
 
@@ -129,7 +120,6 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_113, 113) {
 		substitute: 113;
 		override: 113;
 		accepted_cargos: [[ENSP, 8]];
-		callback_flags: 0;
 	}
 }
 
@@ -138,7 +128,6 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_114, 114) {
 		substitute: 114;
 		override: 114;
 		accepted_cargos: [[ENSP, 8]];
-		callback_flags: 0;
 	}
 }
 
@@ -147,7 +136,6 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_115, 115) {
 		substitute: 115;
 		override: 115;
 		accepted_cargos: [[ENSP, 8]];
-		callback_flags: 0;
 	}
 }
 

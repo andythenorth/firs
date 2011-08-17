@@ -7,7 +7,9 @@
 
 #define THIS_ID(...) oil_refinery ## __VA_ARGS__
 
-
+/* *************************************************
+ * Definition of the industry tile and its callbacks
+ * *************************************************/
 
 item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_18, 18) {
 	property {
