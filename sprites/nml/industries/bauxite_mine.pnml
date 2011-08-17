@@ -46,39 +46,34 @@ switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_1), relative_pos) {
 	THIS_ID(spritelayout_1);
 }
 
-switch(FEAT_INDUSTRYTILES, PARENT, THIS_ID(layout), layout_num) {
+switch(FEAT_INDUSTRYTILES, PARENT, THIS_ID(tile_spritelayout), layout_num) {
 	1: THIS_ID(layout_1);
 	THIS_ID(spritelayout_1);
 }
 
-CHECK_NEARBY_TILE_CLASS(switch_bauxite_mine_cb_nearby_check)
+/* *************************************************
+ * Definition of the industry tile and its callbacks
+ * *************************************************/
 
-switch(FEAT_INDUSTRYTILES, PARENT, action2_2771, founder) {
-	16: switch_bauxite_mine_cb_nearby_check;
-	return 1024;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_2772, var[0x60, 4, 1, 0]) {
-	1: return 1025;
-	action2_2771;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_2773, (current_callback & 255)) {
-	INDTILE_CB_SLOPE_IS_SUITABLE: action2_2772;
-	THIS_ID(layout);
-}
+TILE_DISALLOW_NEARBY_CLASS(nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_IND_DISALLOW_UNSUITABLE, return CB_RESULT_IND_ALLOW_LOCATION)
+TILE_ALLOW_PLAYER         (player_check,                                                            THIS_ID(nearby_industry))
+TILE_DISALLOW_STEEP_SLOPE (location_check,                       CB_RESULT_IND_DISALLOW_UNSUITABLE, THIS_ID(player_check))
 
 item(FEAT_INDUSTRYTILES, THIS_ID(tile), 197) {
 	property {
-		substitute: 0;
-		accepted_cargos: [[ENSP, 8]];
+		substitute:       0;
+		accepted_cargos:  [[ENSP, 8]];
 		land_shape_flags: 0;
-		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
 	graphics {
-		action2_2773;
+		tile_check:   THIS_ID(location_check);
+		THIS_ID(tile_spritelayout);
 	}
 }
+
+/* *************************************************
+ * Definition of the industry layouts
+ * *************************************************/
 
 tilelayout tilelayout_bauxite_mine_1 {
 	0, 0: THIS_ID(tile);
