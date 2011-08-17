@@ -5,6 +5,43 @@
  * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
  */
 
+/* General remarks on the templates in this file
+ *
+ * There are three types of templates:
+ * - TILE_CHECK_XXX
+ * - TILE_ALLOW_XXX
+ * - TILE_DISALLOW_XXX
+ *
+ * Parameters and usage:
+ * TILE_CHECK_XXX   (name, <params>, if_positive, if_negative)
+ * TILE_ALLOW_XXX   (name, <params>, if_not_allowed)
+ * TILE_DISALLOW_XXX(name, <params>, error_text,  if_allowed)
+ *
+ * where 
+ *    name:       is the name of the switch which WILL be expanded by THIS_ID(name)
+ *    <params>:   depend on the template
+ *    error_text: is a string or CB_RESULT_IND_DISALLOW_UNSUITABLE
+ *    if_positive, if_negative, if_not_allowed, if_allowed:
+ *                is the name of the next switch or a return value like
+ *                "return CB_RESULT_IND_DISALLOW_UNSUITABLE" or
+ *                "return CB_RESULT_IND_ALLOW_LOCATION"
+ *
+ * List of templates:
+ * TILE_CHECK_HEIGHT         (name, minh, maxh,  inrange, outrange)
+ * TILE_CHECK_WATERCLASS     (name, class,       yes,     no)
+ * TILE_CHECK_WATER          (name,              water,   land)
+ * TILE_CHECK_FLAT           (name,              flat,    sloped)
+ *
+ * TILE_DISALLOW_COAST       (name,              errtext, next)
+ * TILE_DISALLOW_TERRAIN     (name, terraintype, errtext, next)
+ * TILE_DISALLOW_NEARBY_CLASS(name, class,       errtext, next)
+ * TILE_DISALLOW_STEEP_SLOPE (name,              errtext, next)
+ * TILE_DISALLOW_SLOPES      (name,              errtext, next)
+ *
+ * TILE_ALLOW_PLAYER         (name,                       next)
+ */
+
+
 /*
  * Check that the tile for being in a certain height range
  *
@@ -212,7 +249,7 @@ switch (FEAT_INDUSTRYTILES, SELF, THIS_ID(name), nearby_tile_slope(0,0) & bitmas
  * next          name of next switch or "return CB_RESULT_IND_ALLOW_LOCATION"
  */
 
-#define TILE_ALLOW_ONLY_FLAT_LAND(name, errtext, next) \
+#define TILE_DISALLOW_SLOPES(name, errtext, next) \
 switch (FEAT_INDUSTRYTILES, SELF, THIS_ID(name), nearby_tile_slope(0,0) == SLOPE_FLAT) { \
 	1: next; \
 	return errtext; \

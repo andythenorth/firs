@@ -88,7 +88,7 @@ switch(FEAT_INDUSTRYTILES, PARENT, THIS_ID(tile1_layout), layout_num) {
  * Definition of the industry tile and its callbacks
  * *************************************************/
 
-TILE_ALLOW_ONLY_FLAT_LAND (tile1_location_check,                        CB_RESULT_IND_DISALLOW_UNSUITABLE, return CB_RESULT_IND_ALLOW_LOCATION)
+TILE_DISALLOW_SLOPES      (tile1_location_check,                        CB_RESULT_IND_DISALLOW_UNSUITABLE, return CB_RESULT_IND_ALLOW_LOCATION)
 
 item(FEAT_INDUSTRYTILES, THIS_ID(tile), 178) {
 	property {

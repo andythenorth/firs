@@ -63,7 +63,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_15, 15) {
 
 TILE_DISALLOW_NEARBY_CLASS(tile_nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_IND_DISALLOW_UNSUITABLE, return CB_RESULT_IND_ALLOW_LOCATION)
 TILE_ALLOW_PLAYER         (tile_player_check,                                                            THIS_ID(tile_nearby_industry))
-TILE_ALLOW_ONLY_FLAT_LAND (tile_location_check,                       CB_RESULT_IND_DISALLOW_UNSUITABLE, THIS_ID(tile_player_check))
+TILE_DISALLOW_SLOPES      (tile_location_check,                       CB_RESULT_IND_DISALLOW_UNSUITABLE, THIS_ID(tile_player_check))
 
 item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_11, 11) {
 	graphics {

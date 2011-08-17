@@ -82,7 +82,7 @@ switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(tile1_layout_check), (extra_callback_in
 }
 
 TILE_ALLOW_PLAYER         (tile1_player_check,                                      THIS_ID(tile1_layout_check))
-TILE_ALLOW_ONLY_FLAT_LAND (tile1_location_check, CB_RESULT_IND_DISALLOW_UNSUITABLE, THIS_ID(tile1_player_check))
+TILE_DISALLOW_SLOPES      (tile1_location_check, CB_RESULT_IND_DISALLOW_UNSUITABLE, THIS_ID(tile1_player_check))
 
 item(FEAT_INDUSTRYTILES, THIS_ID(tile), 203) {
 	property {
