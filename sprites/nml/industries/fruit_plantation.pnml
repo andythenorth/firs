@@ -5077,54 +5077,19 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_4775, terrain_type) {
 	action2_4750;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4776, var[0x03, 0, 255]) {
+switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(tile_plantation_spritelayout), var[0x03, 0, 255]) {
 	0: action2_4616;
 	1: action2_4730;
 	2: action2_4775;
 	action2_4616;
 }
 
-CHECK_NEARBY_TILE_CLASS(action2_4784)
-
-switch(FEAT_INDUSTRYTILES, PARENT, action2_4785, founder) {
-	16: action2_4784;
-	return 1024;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_4786, ((var[0x60, 16, 255, 0] - snowline_height) + 8)) {
-	8..127: return 1025;
-	action2_4785;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_4787, var[0x60, 9, 1, 0]) {
-	1: return 1025;
-	action2_4786;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_4788, (current_callback & 255)) {
-	INDTILE_CB_SLOPE_IS_SUITABLE: action2_4787;
-	INDTILE_CB_FOUNDATIONS: return 0;
-	INDTILE_CB_AUTOSLOPE: return 255;
-	action2_4776;
-}
-
-item(FEAT_INDUSTRYTILES, THIS_ID(tile_plantation), 207) {
-	graphics {
-		action2_4788;
-	}
-}
-
-item(FEAT_INDUSTRYTILES, THIS_ID(tile_house), 208) {
-	property {
-		substitute: 0;
-		accepted_cargos: [[FMSP, 8]];
-		land_shape_flags: 0;
-		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
-	}
-}
+/* ***************
+ * tile with house
+ * ***************/
 
 spriteset(spriteset_4792, "sprites/graphics/industries/fruitplantation.pcx") { tmpl_building_sprite(10, 10, 59, -28) } 
-spritelayout action2_4793 {
+spritelayout THIS_ID(tile_house_spritelayout) {
 	ground {
 		sprite: 2022;
 	}
@@ -5138,34 +5103,53 @@ spritelayout action2_4793 {
 	}
 }
 
-CHECK_NEARBY_TILE_CLASS(action2_4801)
 
-switch(FEAT_INDUSTRYTILES, PARENT, action2_4802, founder) {
-	16: action2_4801;
-	return 1024;
-}
+/* ****************************************************
+ * Definition of the industry tiles and their callbacks
+ * ***************************************************/
+ 
+TILE_DISALLOW_NEARBY_CLASS(tile_plantation_nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_IND_DISALLOW_UNSUITABLE,      return CB_RESULT_IND_ALLOW_LOCATION)
+TILE_ALLOW_PLAYER         (tile_plantation_player_check,                                                                 THIS_ID(tile_plantation_nearby_industry))
+TILE_CHECK_WATER          (tile_plantation_water_check,                          string(STR_ERR_LOCATION_NOT_ON_WATER),  THIS_ID(tile_plantation_player_check))
+TILE_CHECK_HEIGHT         (tile_plantation_location_check,  0, snowline_height,  THIS_ID(tile_plantation_water_check),   return string(STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE))
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4803, ((var[0x60, 16, 255, 0] - snowline_height) + 8)) {
-	8..127: return 1025;
-	action2_4802;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_4804, var[0x60, 9, 1, 0]) {
-	1: return 1025;
-	action2_4803;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_4805, (current_callback & 255)) {
-	INDTILE_CB_SLOPE_IS_SUITABLE: action2_4804;
-	INDTILE_CB_AUTOSLOPE: return 255;
-	action2_4793;
-}
-
-item(FEAT_INDUSTRYTILES, THIS_ID(tile_house), 208) {
+item(FEAT_INDUSTRYTILES, THIS_ID(tile_plantation), 207) {
+	property {
+		substitute:       0;
+		accepted_cargos:  [[FMSP, 8]];
+		land_shape_flags: 0;
+	}
 	graphics {
-		action2_4805;
+		foundations: return CB_RESULT_NO_FOUNDATIONS;
+		autoslope:   return CB_RESULT_NO_AUTOSLOPE;
+		tile_check:  THIS_ID(tile_plantation_location_check);
+		THIS_ID(tile_plantation_spritelayout);
 	}
 }
+
+
+
+TILE_DISALLOW_NEARBY_CLASS(tile_house_nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_IND_DISALLOW_UNSUITABLE,      return CB_RESULT_IND_ALLOW_LOCATION)
+TILE_ALLOW_PLAYER         (tile_house_player_check,                                                                 THIS_ID(tile_house_nearby_industry))
+TILE_CHECK_WATER          (tile_house_water_check,                          string(STR_ERR_LOCATION_NOT_ON_WATER),  THIS_ID(tile_house_player_check))
+TILE_CHECK_HEIGHT         (tile_house_location_check,  0, snowline_height,  THIS_ID(tile_house_water_check),   return string(STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE))
+
+item(FEAT_INDUSTRYTILES, THIS_ID(tile_house), 208) {
+	property {
+		substitute:       0;
+		accepted_cargos:  [[FMSP, 8]];
+		land_shape_flags: 0;
+	}
+	graphics {
+		autoslope:  return CB_RESULT_AUTOSLOPE;
+		tile_check: THIS_ID(tile_house_location_check);
+		THIS_ID(tile_house_spritelayout);
+	}
+}
+
+/* *************************************************
+ * Definition of the industry layouts
+ * *************************************************/
 
 tilelayout tilelayout_5807_1 {
 	0, 0: THIS_ID(tile_plantation);
