@@ -59,73 +59,10 @@ item(FEAT_INDUSTRYTILES, tile_plastic_tanks, 227) {
 #undef THIS_ID
 
 /* *************************************************
- * tile229
+ * tile230
  * *************************************************/
 
-spriteset(spriteset_2362, "sprites/graphics/industries/generictiles.pcx") { tmpl_ground_tile(80, 10) } 
-spriteset(spriteset_2363, "sprites/graphics/industries/groundtiles.png") { tmpl_ground_tile(80, 10) } 
-spriteset(spriteset_2364, "sprites/graphics/industries/groundtiles.png") { tmpl_ground_tile(150, 10) } 
-
-spritelayout action2_2378 {
-	ground {
-		sprite: spriteset_2364;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_2362;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 8;
-	}
-}
-
-CHECK_NEARBY_TILE_CLASS(action2_2386)
-
-switch(FEAT_INDUSTRYTILES, PARENT, action2_2387, founder) {
-	16: action2_2386;
-	return 1024;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_2388, var[0x60, 0, 255, 0]) {
-	1..255: return 1025;
-	action2_2387;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_2389, (current_callback & 255)) {
-	INDTILE_CB_SLOPE_IS_SUITABLE: action2_2388;
-	action2_2378;
-}
-
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_229, 229) {
-	property {
-		substitute: 0;
-		accepted_cargos: [[cargo_sand, 8]];
-		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
-		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
-	}
-	graphics {
-		action2_2389;
-	}
-}
-
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_230, 230) {
-	property {
-		substitute: 0;
-		accepted_cargos: [[cargo_clay, 8]];
-		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
-		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
-	}
-}
-
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_231, 231) {
-	property {
-		substitute: 0;
-		accepted_cargos: [[cargo_clay, 8]];
-		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
-		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
-	}
-}
+#define THIS_ID(...) tile230 ## __VA_ARGS__
 
 spriteset(spriteset_2394, "sprites/graphics/industries/generictiles.pcx") { tmpl_ground_tile(150, 10) } 
 spriteset(spriteset_2395, "sprites/graphics/industries/groundtiles.png") { tmpl_ground_tile(80, 10) } 
@@ -162,56 +99,23 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_2408, (current_callback & 255)) {
 }
 
 item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_230, 230) {
-	graphics {
-		action2_2408;
-	}
-}
-
-spritelayout action2_2410 {
-	ground {
-		sprite: spriteset_2396;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_2394;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 8;
-	}
-}
-
-CHECK_NEARBY_TILE_CLASS(action2_2418)
-
-switch(FEAT_INDUSTRYTILES, PARENT, action2_2419, founder) {
-	16: action2_2418;
-	return 1024;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_2420, var[0x60, 0, 255, 0]) {
-	1..255: return 1025;
-	action2_2419;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_2421, (current_callback & 255)) {
-	INDTILE_CB_SLOPE_IS_SUITABLE: action2_2420;
-	action2_2410;
-}
-
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_231, 231) {
-	graphics {
-		action2_2421;
-	}
-}
-
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_232, 232) {
 	property {
 		substitute: 0;
 		accepted_cargos: [[cargo_clay, 8]];
 		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
 		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
+	graphics {
+		action2_2408;
+	}
 }
+#undef THIS_ID
+
+/* *************************************************
+ * tile232
+ * *************************************************/
+
+#define THIS_ID(...) tile232 ## __VA_ARGS__
 
 spriteset(spriteset_2426, "sprites/graphics/industries/generictiles.pcx") { tmpl_ground_tile(220, 10) } 
 spriteset(spriteset_2427, "sprites/graphics/industries/groundtiles.png") { tmpl_ground_tile(80, 10) } 
@@ -248,10 +152,17 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_2440, (current_callback & 255)) {
 }
 
 item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_232, 232) {
+	property {
+		substitute: 0;
+		accepted_cargos: [[cargo_clay, 8]];
+		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
+		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
+	}
 	graphics {
 		action2_2440;
 	}
 }
+#undef THIS_ID
 
 /* **************************************************
  * Legacy support for meanwhile unused industry tiles

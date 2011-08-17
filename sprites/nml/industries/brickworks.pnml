@@ -7,8 +7,30 @@
 
 #define THIS_ID(...) brickworks ## __VA_ARGS__
 
+/* shared ground tile by all sprite layouts of this industry */
 spriteset(THIS_ID(spriteset_ground), "sprites/graphics/industries/groundtiles.png") { tmpl_ground_tile(150, 10) } 
 
+/* *************************************************
+ * tile_sand
+ * *************************************************/
+
+spriteset(THIS_ID(spriteset_sand), "sprites/graphics/industries/generictiles.pcx") { tmpl_ground_tile(80, 10) } 
+
+SPRITELAYOUT_NORMAL(THIS_ID(tile_sand_spritelayout), THIS_ID(spriteset_ground), THIS_ID(spriteset_sand), 8)
+
+/* *************************************************
+ * tile_clay
+ * *************************************************/
+
+spriteset(THIS_ID(spriteset_clay), "sprites/graphics/industries/generictiles.pcx") { tmpl_ground_tile(150, 10) } 
+
+SPRITELAYOUT_NORMAL(THIS_ID(tile_clay_spritelayout), THIS_ID(spriteset_ground), THIS_ID(spriteset_clay), 8)
+
+/* *************************************************
+ * (general) tile
+ * *************************************************/
+
+/* also uses shared ground tile by all sprite layouts of this industry */
 spriteset(THIS_ID(spriteset_1), "sprites/graphics/industries/brickworks.pcx") { tmpl_building_sprite( 10, 10, 101, -64) } 
 spriteset(THIS_ID(spriteset_2), "sprites/graphics/industries/brickworks.pcx") { tmpl_building_sprite( 80, 10, 101, -59) } 
 spriteset(THIS_ID(spriteset_3), "sprites/graphics/industries/brickworks.pcx") { tmpl_building_sprite(150, 10, 101, -71) } 
@@ -83,13 +105,43 @@ switch(FEAT_INDUSTRYTILES, PARENT, THIS_ID(layout), layout_num) {
 	THIS_ID(layout_1);
 }
 
-/* *************************************************
- * Definition of the industry tile and its callbacks
- * *************************************************/
+/* ****************************************************
+ * Definition of the industry tiles and their callbacks
+ * ****************************************************/
+
+/* Sand depot tile */
 
 TILE_DISALLOW_NEARBY_CLASS(nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_IND_DISALLOW_UNSUITABLE, return CB_RESULT_IND_ALLOW_LOCATION)
 TILE_ALLOW_PLAYER         (player_check,                                                            THIS_ID(nearby_industry))
 TILE_ALLOW_ONLY_FLAT_LAND (location_check,                       CB_RESULT_IND_DISALLOW_UNSUITABLE, THIS_ID(player_check))
+
+item(FEAT_INDUSTRYTILES, THIS_ID(tile_sand), 229) {
+	property {
+		substitute:       0;
+		accepted_cargos:  [[cargo_sand, 8]];
+		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
+	}
+	graphics {
+		tile_check:   THIS_ID(location_check);
+		THIS_ID(tile_sand_spritelayout);
+	}
+}
+
+/* Clay depot tile */
+
+item(FEAT_INDUSTRYTILES, THIS_ID(tile_clay), 231) {
+	property {
+		substitute:       0;
+		accepted_cargos:  [[cargo_clay, 8]];
+		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
+	}
+	graphics {
+		tile_check:   THIS_ID(location_check);
+		THIS_ID(tile_clay_spritelayout);
+	}
+}
+
+/* General tile */
 
 switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(anim_control), (extra_callback_info1 & 7)) {
 	0: return 0;
@@ -130,9 +182,9 @@ tilelayout tilelayout_brick_works_1 {
 	1, 1: THIS_ID(tile);
 	2, 0: THIS_ID(tile);
 	2, 1: THIS_ID(tile);
-	3, 0: item_FEAT_INDUSTRYTILES_231;
+	3, 0: THIS_ID(tile_clay);
 	3, 1: THIS_ID(tile);
-	4, 0: item_FEAT_INDUSTRYTILES_229;
+	4, 0: THIS_ID(tile_sand);
 	4, 1: THIS_ID(tile);
 }
 
@@ -142,20 +194,20 @@ tilelayout tilelayout_brick_works_2 {
 	1, 0: THIS_ID(tile);
 	1, 1: THIS_ID(tile);
 	2, 0: THIS_ID(tile);
-	2, 1: item_FEAT_INDUSTRYTILES_231;
+	2, 1: THIS_ID(tile_clay);
 	3, 0: THIS_ID(tile);
-	3, 1: item_FEAT_INDUSTRYTILES_229;
+	3, 1: THIS_ID(tile_sand);
 }
 
 tilelayout tilelayout_brick_works_3 {
 	0, 0: THIS_ID(tile);
 	0, 1: THIS_ID(tile);
 	0, 2: THIS_ID(tile);
-	0, 3: item_FEAT_INDUSTRYTILES_231;
+	0, 3: THIS_ID(tile_clay);
 	1, 0: THIS_ID(tile);
 	1, 1: THIS_ID(tile);
 	1, 2: THIS_ID(tile);
-	1, 3: item_FEAT_INDUSTRYTILES_229;
+	1, 3: THIS_ID(tile_sand);
 }
 
 /* *************************************************
