@@ -1,5 +1,11 @@
 /* *************************************************
  * tile_plain_concrete
+ * 
+ * used by
+ *   - aluminum_plant.pnml
+ *   - fertiliser_plant.pnml
+ *   - plastics_plant.pnml
+ *   - stockyard.pnml
  * *************************************************/
 
 spriteset(spriteset_plain_concrete, "sprites/graphics/industries/groundtiles.png") { tmpl_ground_tile(80, 10) } 
@@ -29,34 +35,6 @@ item(FEAT_INDUSTRYTILES, tile_plain_concrete, 224) {
 		spritelayout_plain_conrete;
 	}
 }
-
-/* *************************************************
- * tile_plastic_tanks
- * *************************************************/
-
-#define THIS_ID(...) tile_plastic_tanks ## __VA_ARGS__
-
-spriteset(THIS_ID(tanks), "sprites/graphics/industries/generictiles.pcx") { tmpl_building_sprite(10, 10, 54, -23) } 
-spriteset(THIS_ID(concrete), "sprites/graphics/industries/groundtiles.png")  { tmpl_ground_tile(80, 10) } 
-
-SPRITELAYOUT_NORMAL(THIS_ID(spritelayout), THIS_ID(concrete), THIS_ID(tanks), 32)
-
-TILE_DISALLOW_NEARBY_CLASS(nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_IND_DISALLOW_UNSUITABLE, return CB_RESULT_IND_ALLOW_LOCATION)
-TILE_ALLOW_PLAYER         (player_check,                                                            THIS_ID(nearby_industry))
-TILE_ALLOW_ONLY_FLAT_LAND (location_check,                       CB_RESULT_IND_DISALLOW_UNSUITABLE, THIS_ID(player_check))
-
-item(FEAT_INDUSTRYTILES, tile_plastic_tanks, 227) {
-	property {
-		substitute:       0;
-		accepted_cargos:  [];
-		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
-	}
-	graphics {
-		tile_check: THIS_ID(location_check);
-		THIS_ID(spritelayout);
-	}
-}
-#undef THIS_ID
 
 /* **************************************************
  * Legacy support for meanwhile unused industry tiles

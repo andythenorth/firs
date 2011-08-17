@@ -7,6 +7,21 @@
 
 #define THIS_ID(...) plastics_plant ## __VA_ARGS__
 
+/* common ground sprite */
+spriteset(THIS_ID(spriteset_ground), "sprites/graphics/industries/groundtiles.png") { tmpl_ground_tile(80, 10) } 
+
+/* *************************************************
+ * tile_tanks
+ * *************************************************/
+
+spriteset(THIS_ID(spriteset_tanks), "sprites/graphics/industries/generictiles.pcx") { tmpl_building_sprite(10, 10, 54, -23) } 
+
+SPRITELAYOUT_NORMAL(THIS_ID(tile_tanks_spritelayout), THIS_ID(spriteset_ground), THIS_ID(spriteset_tanks), 32)
+
+/* *************************************************
+ * (general) tile
+ * *************************************************/
+
 spriteset(spriteset_6736, "sprites/graphics/industries/plasticsplant.png") { tmpl_building_sprite(10, 10, 62, -31) } 
 spriteset(spriteset_6737, "sprites/graphics/industries/plasticsplant.png") { tmpl_building_sprite(80, 10, 62, -31) } 
 spriteset(spriteset_6738, "sprites/graphics/industries/plasticsplant.png") { tmpl_building_sprite(150, 10, 55, -24) } 
@@ -15,10 +30,9 @@ spriteset(spriteset_6740, "sprites/graphics/industries/plasticsplant.png") { tmp
 spriteset(spriteset_6741, "sprites/graphics/industries/plasticsplant.png") { tmpl_building_sprite(360, 10, 87, -56) } 
 spriteset(spriteset_6742, "sprites/graphics/industries/plasticsplant.png") { tmpl_building_sprite(430, 10, 87, -56) } 
 spriteset(spriteset_6743, "sprites/graphics/industries/plasticsplant.png") { tmpl_building_sprite(500, 10, 87, -56) } 
-spriteset(spriteset_6744, "sprites/graphics/industries/groundtiles.png") { tmpl_ground_tile(80, 10) } 
 spritelayout action2_6745 {
 	ground {
-		sprite: spriteset_6744;
+		sprite: THIS_ID(spriteset_ground);
 		recolour_mode: RECOLOUR_REMAP;
 		palette: 0;
 	}
@@ -32,7 +46,7 @@ spritelayout action2_6745 {
 
 spritelayout action2_6746 {
 	ground {
-		sprite: spriteset_6744;
+		sprite: THIS_ID(spriteset_ground);
 		recolour_mode: RECOLOUR_REMAP;
 		palette: 0;
 	}
@@ -46,7 +60,7 @@ spritelayout action2_6746 {
 
 spritelayout action2_6747 {
 	ground {
-		sprite: spriteset_6744;
+		sprite: THIS_ID(spriteset_ground);
 		recolour_mode: RECOLOUR_REMAP;
 		palette: 0;
 	}
@@ -60,7 +74,7 @@ spritelayout action2_6747 {
 
 spritelayout action2_6748 {
 	ground {
-		sprite: spriteset_6744;
+		sprite: THIS_ID(spriteset_ground);
 		recolour_mode: RECOLOUR_REMAP;
 		palette: 0;
 	}
@@ -74,7 +88,7 @@ spritelayout action2_6748 {
 
 spritelayout action2_6749 {
 	ground {
-		sprite: spriteset_6744;
+		sprite: THIS_ID(spriteset_ground);
 		recolour_mode: RECOLOUR_REMAP;
 		palette: 0;
 	}
@@ -88,7 +102,7 @@ spritelayout action2_6749 {
 
 spritelayout action2_6750 {
 	ground {
-		sprite: spriteset_6744;
+		sprite: THIS_ID(spriteset_ground);
 		recolour_mode: RECOLOUR_REMAP;
 		palette: 0;
 	}
@@ -102,7 +116,7 @@ spritelayout action2_6750 {
 
 spritelayout action2_6751 {
 	ground {
-		sprite: spriteset_6744;
+		sprite: THIS_ID(spriteset_ground);
 		recolour_mode: RECOLOUR_REMAP;
 		palette: 0;
 	}
@@ -116,7 +130,7 @@ spritelayout action2_6751 {
 
 spritelayout action2_6752 {
 	ground {
-		sprite: spriteset_6744;
+		sprite: THIS_ID(spriteset_ground);
 		recolour_mode: RECOLOUR_REMAP;
 		palette: 0;
 	}
@@ -530,9 +544,25 @@ switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(tile1_layout), terrain_type) {
  * Definition of the industry tile and its callbacks
  * *************************************************/
 
-TILE_DISALLOW_NEARBY_CLASS(tile1_nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_IND_DISALLOW_UNSUITABLE, return CB_RESULT_IND_ALLOW_LOCATION)
-TILE_ALLOW_PLAYER         (tile1_player_check,                                                            THIS_ID(tile1_nearby_industry))
-TILE_ALLOW_ONLY_FLAT_LAND (tile1_location_check,                       CB_RESULT_IND_DISALLOW_UNSUITABLE, THIS_ID(tile1_player_check))
+TILE_DISALLOW_NEARBY_CLASS(tile_nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_IND_DISALLOW_UNSUITABLE, return CB_RESULT_IND_ALLOW_LOCATION)
+TILE_ALLOW_PLAYER         (tile_player_check,                                                            THIS_ID(tile_nearby_industry))
+TILE_ALLOW_ONLY_FLAT_LAND (tile_location_check,                       CB_RESULT_IND_DISALLOW_UNSUITABLE, THIS_ID(tile_player_check))
+
+/* tile with tanks */
+
+item(FEAT_INDUSTRYTILES, THIS_ID(tile_tanks), 227) {
+	property {
+		substitute:       0;
+		accepted_cargos:  [];
+		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
+	}
+	graphics {
+		tile_check: THIS_ID(tile_location_check);
+		THIS_ID(tile_tanks_spritelayout);
+	}
+}
+
+/* general tile */
 
 item(FEAT_INDUSTRYTILES, tile_plastics_plant, 176) {
 	property {
@@ -541,7 +571,7 @@ item(FEAT_INDUSTRYTILES, tile_plastics_plant, 176) {
 		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
 	}
 	graphics {
-		tile_check:   THIS_ID(tile1_location_check);
+		tile_check:   THIS_ID(tile_location_check);
 		THIS_ID(tile1_layout);
 	}
 }
@@ -559,7 +589,7 @@ tilelayout tilelayout_plastics_plant_1 {
 	1, 2: tile_plain_concrete;
 	2, 0: tile_plain_concrete;
 	2, 1: tile_plastics_plant;
-	2, 2: tile_plastic_tanks;
+	2, 2: THIS_ID(tile_tanks);
 	3, 0: tile_plastics_plant;
 	3, 1: tile_plastics_plant;
 	3, 2: tile_plain_concrete;
@@ -571,7 +601,7 @@ tilelayout tilelayout_plastics_plant_1 {
 tilelayout tilelayout_plastics_plant_2 {
 	0, 0: tile_plastics_plant;
 	0, 1: tile_plastics_plant;
-	0, 2: tile_plastic_tanks;
+	0, 2: THIS_ID(tile_tanks);
 	1, 0: tile_plastics_plant;
 	1, 1: tile_plastics_plant;
 	1, 2: tile_plain_concrete;
@@ -588,7 +618,7 @@ tilelayout tilelayout_plastics_plant_3 {
 	0, 1: tile_plastics_plant;
 	0, 2: tile_plain_concrete;
 	0, 3: tile_plastics_plant;
-	0, 4: tile_plastic_tanks;
+	0, 4: THIS_ID(tile_tanks);
 	1, 0: tile_plastics_plant;
 	1, 1: tile_plastics_plant;
 	1, 2: tile_plastics_plant;
