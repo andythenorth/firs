@@ -7,7 +7,7 @@
 
 #define THIS_ID(...) forest ## __VA_ARGS__
 
-item(FEAT_INDUSTRYTILES, tile_forest, 205) {
+item(FEAT_INDUSTRYTILES, tile_trees, 205) {
 	property {
 		substitute: 0;
 		accepted_cargos: [[FMSP, 8]];
@@ -5077,7 +5077,7 @@ switch(FEAT_INDUSTRYTILES, SELF, switch_forest_terrain, terrain_type) {
 	switch_forest_default_layout;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(tile_forest_spritelayout), var[0x03, 0, 255]) {
+switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(tile_trees_spritelayout), var[0x03, 0, 255]) {
 	1: action2_4390;
 	2: switch_forest_terrain;
 	action2_4276;
@@ -5139,10 +5139,10 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_4455, (current_callback & 255)) {
 	INDTILE_CB_SLOPE_IS_SUITABLE: action2_4454;
 	INDTILE_CB_FOUNDATIONS: return 0;
 	INDTILE_CB_AUTOSLOPE: return 255;
-	THIS_ID(tile_forest_spritelayout);
+	THIS_ID(tile_trees_spritelayout);
 }
 
-item(FEAT_INDUSTRYTILES, tile_forest, 205) {
+item(FEAT_INDUSTRYTILES, tile_trees, 205) {
 	graphics {
 		action2_4455;
 	}
@@ -5230,52 +5230,52 @@ item(FEAT_INDUSTRYTILES, tile_equipment, 206) {
  * *************************************************/
 
 tilelayout tilelayout_forest_1 {
-	0, 0: tile_forest;
-	0, 1: tile_forest;
-	0, 2: tile_forest;
-	1, 0: tile_forest;
-	1, 1: tile_forest;
-	1, 2: tile_forest;
-	2, 1: tile_forest;
+	0, 0: tile_trees;
+	0, 1: tile_trees;
+	0, 2: tile_trees;
+	1, 0: tile_trees;
+	1, 1: tile_trees;
+	1, 2: tile_trees;
+	2, 1: tile_trees;
 	2, 2: tile_equipment;
 }
 
 tilelayout tilelayout_forest_2 {
-	0, 0: tile_forest;
-	0, 1: tile_forest;
-	0, 2: tile_forest;
-	1, 0: tile_forest;
-	1, 1: tile_forest;
-	1, 2: tile_forest;
-	3, 0: tile_forest;
-	3, 1: tile_forest;
+	0, 0: tile_trees;
+	0, 1: tile_trees;
+	0, 2: tile_trees;
+	1, 0: tile_trees;
+	1, 1: tile_trees;
+	1, 2: tile_trees;
+	3, 0: tile_trees;
+	3, 1: tile_trees;
 	3, 2: tile_equipment;
-	4, 0: tile_forest;
-	4, 1: tile_forest;
-	4, 2: tile_forest;
+	4, 0: tile_trees;
+	4, 1: tile_trees;
+	4, 2: tile_trees;
 }
 
 tilelayout tilelayout_forest_3 {
-	0, 1: tile_forest;
-	0, 2: tile_forest;
-	0, 3: tile_forest;
-	1, 0: tile_forest;
-	1, 1: tile_forest;
-	1, 2: tile_forest;
-	1, 3: tile_forest;
-	1, 4: tile_forest;
-	2, 0: tile_forest;
-	2, 1: tile_forest;
-	2, 2: tile_forest;
-	2, 3: tile_forest;
-	3, 0: tile_forest;
-	3, 1: tile_forest;
+	0, 1: tile_trees;
+	0, 2: tile_trees;
+	0, 3: tile_trees;
+	1, 0: tile_trees;
+	1, 1: tile_trees;
+	1, 2: tile_trees;
+	1, 3: tile_trees;
+	1, 4: tile_trees;
+	2, 0: tile_trees;
+	2, 1: tile_trees;
+	2, 2: tile_trees;
+	2, 3: tile_trees;
+	3, 0: tile_trees;
+	3, 1: tile_trees;
 	3, 2: tile_equipment;
-	4, 0: tile_forest;
-	4, 1: tile_forest;
-	5, 0: tile_forest;
-	5, 1: tile_forest;
-	5, 2: tile_forest;
+	4, 0: tile_trees;
+	4, 1: tile_trees;
+	5, 0: tile_trees;
+	5, 1: tile_trees;
+	5, 2: tile_trees;
 }
 
 /* *************************************************
