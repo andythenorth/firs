@@ -5,60 +5,34 @@
  * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
  */
 
+#include "../templates/spritelayout_templates.pnml"
+
 #define THIS_ID(...) recycling_depot ## __VA_ARGS__
 
-spriteset(spriteset_7146, "sprites/graphics/industries/recyclingdepot.pcx") { tmpl_ground_tile(10, 10) } 
-spriteset(spriteset_7147, "sprites/graphics/industries/recyclingdepot.pcx") { tmpl_ground_tile(80, 10) } 
-spritelayout action2_7148 {
-	ground {
-		sprite: GROUNDSPRITE_CONCRETE;
-	}
-	building {
-		sprite: spriteset_7146;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-}
+spriteset(THIS_ID(spriteset_1), "sprites/graphics/industries/recyclingdepot.pcx") { tmpl_ground_tile(10, 10) } 
+spriteset(THIS_ID(spriteset_2), "sprites/graphics/industries/recyclingdepot.pcx") { tmpl_ground_tile(80, 10) } 
 
-spritelayout action2_7149 {
-	ground {
-		sprite: GROUNDSPRITE_CONCRETE;
-	}
-	building {
-		sprite: spriteset_7147;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-}
+SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_1), GROUNDSPRITE_CONCRETE, THIS_ID(spriteset_1), 16)
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_7150, relative_pos) {
-	0: action2_7148;
-	action2_7149;
-}
+SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_2), GROUNDSPRITE_CONCRETE, THIS_ID(spriteset_2), 16)
 
-switch(FEAT_INDUSTRYTILES, PARENT, action2_7151, layout_num) {
-	1: action2_7150;
-	action2_7150;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(tile1_layout), terrain_type) {
-	1: action2_7151;
-	4: action2_7151;
-	action2_7151;
+switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout), relative_pos) {
+	0: THIS_ID(spritelayout_1);
+	THIS_ID(spritelayout_2);
 }
 
 /* *************************************************
  * Definition of the industry tile and its callbacks
  * *************************************************/
 
-item(FEAT_INDUSTRYTILES, tile_recycling_depot, 202) {
+item(FEAT_INDUSTRYTILES, THIS_ID(tile), 202) {
 	property {
 		substitute:       0;
 		accepted_cargos:  [];
 		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
 	}
 	graphics {
-		THIS_ID(tile1_layout);
+		THIS_ID(layout);
 	}
 }
 
@@ -67,10 +41,10 @@ item(FEAT_INDUSTRYTILES, tile_recycling_depot, 202) {
  * *************************************************/
 
 tilelayout tilelayout_recycling_depot_1 {
-	0, 0: tile_recycling_depot;
-	0, 1: tile_recycling_depot;
-	1, 0: tile_recycling_depot;
-	1, 1: tile_recycling_depot;
+	0, 0: THIS_ID(tile);
+	0, 1: THIS_ID(tile);
+	1, 0: THIS_ID(tile);
+	1, 1: THIS_ID(tile);
 }
 
 
