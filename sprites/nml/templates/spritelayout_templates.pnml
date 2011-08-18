@@ -24,16 +24,15 @@
 #define SPRITELAYOUT_NORMAL_DESERT_SNOW_BEGIN(spritelayout_name, ground_sprite_normal, ground_sprite_desert, ground_sprite_snow, building_spriteset, building_zextent) \
 spritelayout spritelayout_name { \
 	ground { \
-		sprite: ground_sprite_normal; \
+		sprite: LOAD_TEMP(var_default_ground) != 0 ? LOAD_TEMP(var_default_ground) : GROUNDSPRITE_NORMAL; \
 		recolour_mode: RECOLOUR_REMAP; \
 		palette: PALETTE_USE_DEFAULT; \
 	} \
- \
 	childsprite { \
-		sprite: ground_sprite_desert; \
+		sprite: ground_sprite_normal; \
 		recolour_mode: RECOLOUR_REMAP; \
 		palette: PALETTE_USE_DEFAULT; \
-		hide_sprite: terrain_type != TILETYPE_DESERT; \
+		hide_sprite: terrain_type != TILETYPE_NORMAL; \
 		always_draw: 1; \
 	} \
  \
@@ -42,6 +41,14 @@ spritelayout spritelayout_name { \
 		recolour_mode: RECOLOUR_REMAP; \
 		palette: PALETTE_USE_DEFAULT; \
 		hide_sprite: terrain_type != TILETYPE_SNOW; \
+		always_draw: 1; \
+	} \
+ \
+	childsprite { \
+		sprite: ground_sprite_desert; \
+		recolour_mode: RECOLOUR_REMAP; \
+		palette: PALETTE_USE_DEFAULT; \
+		hide_sprite: terrain_type != TILETYPE_DESERT; \
 		always_draw: 1; \
 	} \
  \
@@ -113,9 +120,16 @@ SPRITELAYOUT_NORMAL_SNOW_BEGIN(spritelayout_name,  ground_sprite_normal, ground_
 #define SPRITELAYOUT_NORMAL_DESERT_BEGIN(spritelayout_name, ground_sprite_normal, ground_sprite_desert, building_spriteset, building_zextent) \
 spritelayout spritelayout_name { \
 	ground { \
+		sprite: LOAD_TEMP(var_default_ground) != 0 ? LOAD_TEMP(var_default_ground) : GROUNDSPRITE_NORMAL; \
+		recolour_mode: RECOLOUR_REMAP; \
+		palette: PALETTE_USE_DEFAULT; \
+	} \
+	childsprite { \
 		sprite: ground_sprite_normal; \
 		recolour_mode: RECOLOUR_REMAP; \
 		palette: PALETTE_USE_DEFAULT; \
+		hide_sprite: terrain_type == TILETYPE_DESERT; \
+		always_draw: 1; \
 	} \
  \
 	childsprite { \
@@ -148,9 +162,15 @@ SPRITELAYOUT_NORMAL_DESERT_BEGIN(spritelayout_name, ground_sprite_normal, ground
 #define SPRITELAYOUT_NORMAL_BEGIN(spritelayout_name, ground_sprite_normal, building_spriteset, building_zextent) \
 spritelayout spritelayout_name { \
 	ground { \
+		sprite: LOAD_TEMP(var_default_ground) != 0 ? LOAD_TEMP(var_default_ground) : GROUNDSPRITE_NORMAL; \
+		recolour_mode: RECOLOUR_REMAP; \
+		palette: PALETTE_USE_DEFAULT; \
+	} \
+	childsprite { \
 		sprite: ground_sprite_normal; \
 		recolour_mode: RECOLOUR_REMAP; \
 		palette: PALETTE_USE_DEFAULT; \
+		always_draw: 1; \
 	} \
  \
 	building { \
