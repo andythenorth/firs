@@ -7,1734 +7,817 @@
 
 #define THIS_ID(...) quarry ## __VA_ARGS__
 
-spriteset(spriteset_6862) { 	[10, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_6863) { 	[80, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_6864) { 	[150, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_6865) { 	[220, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_6866) { 	[290, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_6867) { 	[360, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_6868) { 	[10, 50, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_6869) { 	[80, 50, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_6870) { 	[150, 50, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_6871) { 	[220, 50, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_6872) { 	[290, 50, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_6873) { 	[360, 50, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_6874) { 	[10, 90, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_6875) { 	[80, 90, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_6876) { 	[150, 90, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_6877) { 	[220, 90, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_6878) { 	[290, 90, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_6879) { 	[360, 90, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_6880) { 	[10, 130, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_6881) { 	[80, 130, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_6882) { 	[150, 130, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_6883) { 	[220, 130, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_6884) { 	[290, 130, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_6885) { 	[360, 130, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_6886) { 	[440, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_6887) { 	[510, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_6888) { 	[580, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_6889) { 	[650, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_6890) { 	[440, 50, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_6891) { 	[510, 50, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_6892) { 	[580, 50, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_6893) { 	[650, 50, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_6894) { 	[580, 90, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_6895) { 	[650, 90, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_6896) { 	[730, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_6897) { 	[800, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_6898) { 	[870, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_6899) { 	[940, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_6900) { 	[1010, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_6901) { 	[1080, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_6902) { 	[1150, 10, 64, 34, -31, -3, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_6903) { 	[1220, 10, 64, 33, -31, -2, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_6904) { 	[1290, 10, 64, 34, -31, -3, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_6905) { 	[1360, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_6906) { 	[800, 50, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_6907) { 	[870, 50, 64, 51, -31, -20, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_6908) { 	[1010, 50, 64, 64, -31, -33, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_6909) { 	[1080, 50, 64, 49, -31, -18, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_6910) { 	[1150, 50, 64, 55, -31, -24, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_6911) { 	[730, 140, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_6912) { 	[800, 140, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_6913) { 	[940, 140, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_6914) { 	[730, 80, 64, 51, -31, -20, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_6915) { 	[800, 100, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_6916) { 	[940, 90, 64, 47, -31, -16, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spritelayout action2_6917 {
+spriteset(THIS_ID(spriteset_1)) {
+	[10, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+	[10, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+}
+
+spriteset(THIS_ID(spriteset_2)) {
+	[80, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+	[80, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+}
+
+spriteset(THIS_ID(spriteset_3)) {
+	[150, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+	[150, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+}
+
+spriteset(THIS_ID(spriteset_4)) {
+	[220, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+	[220, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+}
+
+spriteset(THIS_ID(spriteset_5)) {
+	[290, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+	[290, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+}
+
+spriteset(THIS_ID(spriteset_6)) {
+	[360, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+	[360, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+}
+
+spriteset(THIS_ID(spriteset_7)) {
+	[10, 50, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+	[10, 50, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+}
+
+spriteset(THIS_ID(spriteset_8)) {
+	[80, 50, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+	[80, 50, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+}
+
+spriteset(THIS_ID(spriteset_9)) {
+	[150, 50, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+	[150, 50, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+}
+
+spriteset(THIS_ID(spriteset_10)) {
+	[220, 50, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+	[220, 50, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+}
+
+spriteset(THIS_ID(spriteset_11)) {
+	[290, 50, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+	[290, 50, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+}
+
+spriteset(THIS_ID(spriteset_12)) {
+	[360, 50, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+	[360, 50, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+}
+
+spriteset(THIS_ID(spriteset_13)) {
+	[10, 90, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+	[10, 90, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+}
+
+spriteset(THIS_ID(spriteset_14)) {
+	[80, 90, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+	[80, 90, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+}
+
+spriteset(THIS_ID(spriteset_15)) {
+	[150, 90, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+	[150, 90, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+}
+
+spriteset(THIS_ID(spriteset_16)) {
+	[220, 90, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+	[220, 90, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+}
+
+spriteset(THIS_ID(spriteset_17)) {
+	[290, 90, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+	[290, 90, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+}
+
+spriteset(THIS_ID(spriteset_18)) {
+	[360, 90, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+	[360, 90, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+}
+
+spriteset(THIS_ID(spriteset_19)) {
+	[10, 130, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+	[10, 130, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+}
+
+spriteset(THIS_ID(spriteset_20)) {
+	[80, 130, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+	[80, 130, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+}
+
+spriteset(THIS_ID(spriteset_21)) {
+	[150, 130, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+	[150, 130, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+}
+
+spriteset(THIS_ID(spriteset_22)) {
+	[220, 130, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+	[220, 130, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+}
+
+spriteset(THIS_ID(spriteset_23)) {
+	[290, 130, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+	[290, 130, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+}
+
+spriteset(THIS_ID(spriteset_24)) {
+	[360, 130, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+	[360, 130, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+}
+
+spriteset(THIS_ID(spriteset_25)) {
+	[440, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+	[440, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+}
+
+spriteset(THIS_ID(spriteset_26)) {
+	[510, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+	[510, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+}
+
+spriteset(THIS_ID(spriteset_27)) {
+	[580, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+	[580, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+}
+
+spriteset(THIS_ID(spriteset_28)) {
+	[650, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+	[650, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+}
+
+spriteset(THIS_ID(spriteset_29)) {
+	[440, 50, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+	[440, 50, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+}
+
+spriteset(THIS_ID(spriteset_30)) {
+	[510, 50, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+	[510, 50, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+}
+
+spriteset(THIS_ID(spriteset_31)) {
+	[580, 50, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+	[580, 50, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+}
+
+spriteset(THIS_ID(spriteset_32)) {
+	[650, 50, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+	[650, 50, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+}
+
+spriteset(THIS_ID(spriteset_33)) {
+	[580, 90, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+	[580, 90, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+}
+
+spriteset(THIS_ID(spriteset_34)) {
+	[650, 90, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+	[650, 90, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+}
+
+spriteset(THIS_ID(spriteset_35)) {
+	[730, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+	[730, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+}
+
+spriteset(THIS_ID(spriteset_36)) {
+	[800, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+	[800, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+}
+
+spriteset(THIS_ID(spriteset_37)) {
+	[870, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+	[870, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+}
+
+spriteset(THIS_ID(spriteset_38)) {
+	[940, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+	[940, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+}
+
+spriteset(THIS_ID(spriteset_39)) {
+	[1010, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+	[1010, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+}
+
+spriteset(THIS_ID(spriteset_40)) {
+	[1080, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+	[1080, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+}
+
+spriteset(THIS_ID(spriteset_41)) {
+	[1150, 10, 64, 34, -31, -3, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+	[1150, 10, 64, 34, -31, -3, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+}
+
+spriteset(THIS_ID(spriteset_42)) {
+	[1220, 10, 64, 33, -31, -2, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+	[1220, 10, 64, 33, -31, -2, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+}
+
+spriteset(THIS_ID(spriteset_43)) {
+	[1290, 10, 64, 34, -31, -3, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+	[1290, 10, 64, 34, -31, -3, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+}
+
+spriteset(THIS_ID(spriteset_44)) {
+	[1360, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+	[1360, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+}
+
+spriteset(THIS_ID(spriteset_45)) {
+	[800, 50, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+	[800, 50, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+}
+
+spriteset(THIS_ID(spriteset_46)) {
+	[870, 50, 64, 51, -31, -20, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+	[870, 50, 64, 51, -31, -20, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+}
+
+spriteset(THIS_ID(spriteset_47)) {
+	[1010, 50, 64, 64, -31, -33, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+	[1010, 50, 64, 64, -31, -33, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+}
+
+spriteset(THIS_ID(spriteset_48)) {
+	[1080, 50, 64, 49, -31, -18, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+	[1080, 50, 64, 49, -31, -18, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+}
+
+spriteset(THIS_ID(spriteset_49)) {
+	[1150, 50, 64, 55, -31, -24, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+	[1150, 50, 64, 55, -31, -24, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+}
+
+spriteset(THIS_ID(spriteset_50)) {
+	[730, 140, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+	[730, 140, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+}
+
+spriteset(THIS_ID(spriteset_51)) {
+	[800, 140, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+	[800, 140, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+}
+
+spriteset(THIS_ID(spriteset_52)) {
+	[940, 140, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+	[940, 140, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+}
+
+spriteset(THIS_ID(spriteset_53)) {
+	[730, 80, 64, 51, -31, -20, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+	[730, 80, 64, 51, -31, -20, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+}
+
+spriteset(THIS_ID(spriteset_54)) {
+	[800, 100, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+	[800, 100, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+}
+
+spriteset(THIS_ID(spriteset_55)) {
+	[940, 90, 64, 47, -31, -16, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+	[940, 90, 64, 47, -31, -16, 9, "sprites/graphics/industries/quarry_waterpit.pcx"]
+}
+
+spritelayout THIS_ID(spritelayout_1) {
 	ground {
-		sprite: GROUNDSPRITE_NORMAL;
+		sprite: (terrain_type != TILETYPE_SNOW) ? GROUNDSPRITE_NORMAL : GROUNDSPRITE_SNOW;
 	}
 	building {
-		sprite: spriteset_6862;
+		sprite: THIS_ID(spriteset_1(terrain_type == TILETYPE_SNOW));
 		always_draw: 1;
 		xextent: 8;
 		yextent: 8;
 		zextent: 12;
 	}
 	building {
-		sprite: spriteset_6886;
+		sprite: THIS_ID(spriteset_25(terrain_type == TILETYPE_SNOW));
 		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
+		palette: PALETTE_USE_DEFAULT;
 		zextent: 12;
 	}
 }
 
-spritelayout action2_6918 {
+spritelayout THIS_ID(spritelayout_2) {
 	ground {
-		sprite: GROUNDSPRITE_NORMAL;
+		sprite: (terrain_type != TILETYPE_SNOW) ? GROUNDSPRITE_NORMAL : GROUNDSPRITE_SNOW;
 	}
 	building {
-		sprite: spriteset_6863;
+		sprite: THIS_ID(spriteset_2(terrain_type == TILETYPE_SNOW));
 		always_draw: 1;
 		xextent: 8;
 		yextent: 8;
 		zextent: 12;
 	}
 	building {
-		sprite: spriteset_6887;
+		sprite: THIS_ID(spriteset_26(terrain_type == TILETYPE_SNOW));
 		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
+		palette: PALETTE_USE_DEFAULT;
 		zextent: 12;
 	}
 }
 
-spritelayout action2_6919 {
+spritelayout THIS_ID(spritelayout_3) {
 	ground {
-		sprite: GROUNDSPRITE_NORMAL;
+		sprite: (terrain_type != TILETYPE_SNOW) ? GROUNDSPRITE_NORMAL : GROUNDSPRITE_SNOW;
 	}
 	building {
-		sprite: spriteset_6864;
+		sprite: THIS_ID(spriteset_3(terrain_type == TILETYPE_SNOW));
 		always_draw: 1;
 		xextent: 8;
 		yextent: 8;
 		zextent: 12;
 	}
 	building {
-		sprite: spriteset_6888;
+		sprite: THIS_ID(spriteset_27(terrain_type == TILETYPE_SNOW));
 		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
+		palette: PALETTE_USE_DEFAULT;
 		zextent: 12;
 	}
 }
 
-spritelayout action2_6920 {
+spritelayout THIS_ID(spritelayout_4) {
 	ground {
-		sprite: GROUNDSPRITE_NORMAL;
+		sprite: (terrain_type != TILETYPE_SNOW) ? GROUNDSPRITE_NORMAL : GROUNDSPRITE_SNOW;
 	}
 	building {
-		sprite: spriteset_6865;
+		sprite: THIS_ID(spriteset_4(terrain_type == TILETYPE_SNOW));
 		always_draw: 1;
 		xextent: 8;
 		yextent: 8;
 		zextent: 12;
 	}
 	building {
-		sprite: spriteset_6889;
+		sprite: THIS_ID(spriteset_28(terrain_type == TILETYPE_SNOW));
 		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
+		palette: PALETTE_USE_DEFAULT;
 		xextent: 11;
 		zextent: 42;
 	}
 }
 
-spritelayout action2_6921 {
+spritelayout THIS_ID(spritelayout_5) {
 	ground {
-		sprite: GROUNDSPRITE_NORMAL;
+		sprite: (terrain_type != TILETYPE_SNOW) ? GROUNDSPRITE_NORMAL : GROUNDSPRITE_SNOW;
 	}
 	building {
-		sprite: spriteset_6866;
+		sprite: THIS_ID(spriteset_5(terrain_type == TILETYPE_SNOW));
 		always_draw: 1;
 		zextent: 4;
 	}
 }
 
-spritelayout action2_6922 {
+spritelayout THIS_ID(spritelayout_6) {
 	ground {
-		sprite: GROUNDSPRITE_NORMAL;
+		sprite: (terrain_type != TILETYPE_SNOW) ? GROUNDSPRITE_NORMAL : GROUNDSPRITE_SNOW;
 	}
 	building {
-		sprite: spriteset_6867;
+		sprite: THIS_ID(spriteset_6(terrain_type == TILETYPE_SNOW));
 		always_draw: 1;
 		zextent: 4;
 	}
 }
 
-spritelayout action2_6923 {
+spritelayout THIS_ID(spritelayout_7) {
 	ground {
-		sprite: GROUNDSPRITE_NORMAL;
+		sprite: (terrain_type != TILETYPE_SNOW) ? GROUNDSPRITE_NORMAL : GROUNDSPRITE_SNOW;
 	}
 	building {
-		sprite: spriteset_6868;
+		sprite: THIS_ID(spriteset_7(terrain_type == TILETYPE_SNOW));
 		always_draw: 1;
 		zextent: 32;
 	}
 	building {
-		sprite: spriteset_6890;
+		sprite: THIS_ID(spriteset_29(terrain_type == TILETYPE_SNOW));
 		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
+		palette: PALETTE_USE_DEFAULT;
 		zextent: 32;
 	}
 }
 
-spritelayout action2_6924 {
+spritelayout THIS_ID(spritelayout_8) {
 	ground {
-		sprite: GROUNDSPRITE_NORMAL;
+		sprite: (terrain_type != TILETYPE_SNOW) ? GROUNDSPRITE_NORMAL : GROUNDSPRITE_SNOW;
 	}
 	building {
-		sprite: spriteset_6869;
+		sprite: THIS_ID(spriteset_8(terrain_type == TILETYPE_SNOW));
 		always_draw: 1;
 		xextent: 8;
 		yextent: 8;
 		zextent: 12;
 	}
 	building {
-		sprite: spriteset_6891;
+		sprite: THIS_ID(spriteset_30(terrain_type == TILETYPE_SNOW));
 		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
+		palette: PALETTE_USE_DEFAULT;
 		zextent: 32;
 	}
 }
 
-spritelayout action2_6925 {
+spritelayout THIS_ID(spritelayout_9) {
 	ground {
-		sprite: GROUNDSPRITE_NORMAL;
+		sprite: (terrain_type != TILETYPE_SNOW) ? GROUNDSPRITE_NORMAL : GROUNDSPRITE_SNOW;
 	}
 	building {
-		sprite: spriteset_6870;
+		sprite: THIS_ID(spriteset_9(terrain_type == TILETYPE_SNOW));
 		always_draw: 1;
 		zextent: 6;
 	}
 }
 
-spritelayout action2_6926 {
+spritelayout THIS_ID(spritelayout_10) {
 	ground {
-		sprite: spriteset_6871;
+		sprite: THIS_ID(spriteset_10(terrain_type == TILETYPE_SNOW));
 	}
 	building {
-		sprite: spriteset_6892;
+		sprite: THIS_ID(spriteset_31);
 		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
+		palette: PALETTE_USE_DEFAULT;
 		zextent: 32;
 	}
 }
 
-spritelayout action2_6927 {
+spritelayout THIS_ID(spritelayout_11) {
 	ground {
-		sprite: spriteset_6872;
+		sprite: THIS_ID(spriteset_11(terrain_type == TILETYPE_SNOW));
 	}
 	building {
-		sprite: spriteset_6893;
+		sprite: THIS_ID(spriteset_32(terrain_type == TILETYPE_SNOW));
 		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
+		palette: PALETTE_USE_DEFAULT;
 		zextent: 32;
 	}
 }
 
-spritelayout action2_6928 {
+spritelayout THIS_ID(spritelayout_12) {
 	ground {
-		sprite: GROUNDSPRITE_NORMAL;
+		sprite: (terrain_type != TILETYPE_SNOW) ? GROUNDSPRITE_NORMAL : GROUNDSPRITE_SNOW;
 	}
 	building {
-		sprite: spriteset_6873;
+		sprite: THIS_ID(spriteset_12(terrain_type == TILETYPE_SNOW));
 		always_draw: 1;
 		zextent: 6;
 	}
 }
 
-spritelayout action2_6929 {
+spritelayout THIS_ID(spritelayout_13) {
 	ground {
-		sprite: GROUNDSPRITE_NORMAL;
+		sprite: (terrain_type != TILETYPE_SNOW) ? GROUNDSPRITE_NORMAL : GROUNDSPRITE_SNOW;
 	}
 	building {
-		sprite: spriteset_6874;
+		sprite: THIS_ID(spriteset_13(terrain_type == TILETYPE_SNOW));
 		always_draw: 1;
 		zextent: 6;
 	}
 }
 
-spritelayout action2_6930 {
+spritelayout THIS_ID(spritelayout_14) {
 	ground {
-		sprite: GROUNDSPRITE_NORMAL;
+		sprite: (terrain_type != TILETYPE_SNOW) ? GROUNDSPRITE_NORMAL : GROUNDSPRITE_SNOW;
 	}
 	building {
-		sprite: spriteset_6875;
+		sprite: THIS_ID(spriteset_14(terrain_type == TILETYPE_SNOW));
 		always_draw: 1;
 		zextent: 6;
 	}
 }
 
-spritelayout action2_6931 {
+spritelayout THIS_ID(spritelayout_15) {
 	ground {
-		sprite: GROUNDSPRITE_NORMAL;
+		sprite: (terrain_type != TILETYPE_SNOW) ? GROUNDSPRITE_NORMAL : GROUNDSPRITE_SNOW;
 	}
 	building {
-		sprite: spriteset_6876;
+		sprite: THIS_ID(spriteset_15(terrain_type == TILETYPE_SNOW));
 		always_draw: 1;
 		zextent: 6;
 	}
 }
 
-spritelayout action2_6932 {
+spritelayout THIS_ID(spritelayout_16) {
 	ground {
-		sprite: spriteset_6877;
+		sprite: THIS_ID(spriteset_16(terrain_type == TILETYPE_SNOW));
 	}
 	building {
-		sprite: spriteset_6894;
+		sprite: THIS_ID(spriteset_33(terrain_type == TILETYPE_SNOW));
 		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
+		palette: PALETTE_USE_DEFAULT;
 		zextent: 32;
 	}
 }
 
-spritelayout action2_6933 {
+spritelayout THIS_ID(spritelayout_17) {
 	ground {
-		sprite: spriteset_6878;
+		sprite: THIS_ID(spriteset_17(terrain_type == TILETYPE_SNOW));
 	}
 	building {
-		sprite: spriteset_6895;
+		sprite: THIS_ID(spriteset_34(terrain_type == TILETYPE_SNOW));
 		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
+		palette: PALETTE_USE_DEFAULT;
 		zextent: 32;
 	}
 }
 
-spritelayout action2_6934 {
+spritelayout THIS_ID(spritelayout_18) {
 	ground {
-		sprite: GROUNDSPRITE_NORMAL;
+		sprite: (terrain_type != TILETYPE_SNOW) ? GROUNDSPRITE_NORMAL : GROUNDSPRITE_SNOW;
 	}
 	building {
-		sprite: spriteset_6879;
+		sprite: THIS_ID(spriteset_18(terrain_type == TILETYPE_SNOW));
 		always_draw: 1;
 		zextent: 6;
 	}
 }
 
-spritelayout action2_6935 {
+spritelayout THIS_ID(spritelayout_19) {
 	ground {
-		sprite: GROUNDSPRITE_NORMAL;
+		sprite: (terrain_type != TILETYPE_SNOW) ? GROUNDSPRITE_NORMAL : GROUNDSPRITE_SNOW;
 	}
 	building {
-		sprite: spriteset_6880;
+		sprite: THIS_ID(spriteset_19(terrain_type == TILETYPE_SNOW));
 		always_draw: 1;
 		zextent: 6;
 	}
 }
 
-spritelayout action2_6936 {
+spritelayout THIS_ID(spritelayout_20) {
 	ground {
-		sprite: GROUNDSPRITE_NORMAL;
+		sprite: (terrain_type != TILETYPE_SNOW) ? GROUNDSPRITE_NORMAL : GROUNDSPRITE_SNOW;
 	}
 	building {
-		sprite: spriteset_6881;
+		sprite: THIS_ID(spriteset_20(terrain_type == TILETYPE_SNOW));
 		always_draw: 1;
 		zextent: 6;
 	}
 }
 
-spritelayout action2_6937 {
+spritelayout THIS_ID(spritelayout_21) {
 	ground {
-		sprite: GROUNDSPRITE_NORMAL;
+		sprite: (terrain_type != TILETYPE_SNOW) ? GROUNDSPRITE_NORMAL : GROUNDSPRITE_SNOW;
 	}
 	building {
-		sprite: spriteset_6882;
+		sprite: THIS_ID(spriteset_21(terrain_type == TILETYPE_SNOW));
 		always_draw: 1;
 		zextent: 6;
 	}
 }
 
-spritelayout action2_6938 {
+spritelayout THIS_ID(spritelayout_22) {
 	ground {
-		sprite: GROUNDSPRITE_NORMAL;
+		sprite: (terrain_type != TILETYPE_SNOW) ? GROUNDSPRITE_NORMAL : GROUNDSPRITE_SNOW;
 	}
 	building {
-		sprite: spriteset_6883;
+		sprite: THIS_ID(spriteset_22(terrain_type == TILETYPE_SNOW));
 		always_draw: 1;
 		zextent: 6;
 	}
 }
 
-spritelayout action2_6939 {
+spritelayout THIS_ID(spritelayout_23) {
 	ground {
-		sprite: GROUNDSPRITE_NORMAL;
+		sprite: (terrain_type != TILETYPE_SNOW) ? GROUNDSPRITE_NORMAL : GROUNDSPRITE_SNOW;
 	}
 	building {
-		sprite: spriteset_6884;
+		sprite: THIS_ID(spriteset_23(terrain_type == TILETYPE_SNOW));
 		always_draw: 1;
 		zextent: 6;
 	}
 }
 
-spritelayout action2_6940 {
+spritelayout THIS_ID(spritelayout_24) {
 	ground {
-		sprite: GROUNDSPRITE_NORMAL;
+		sprite: (terrain_type != TILETYPE_SNOW) ? GROUNDSPRITE_NORMAL : GROUNDSPRITE_SNOW;
 	}
 	building {
-		sprite: spriteset_6885;
+		sprite: THIS_ID(spriteset_24(terrain_type == TILETYPE_SNOW));
 		always_draw: 1;
 		zextent: 6;
 	}
 }
 
-spritelayout action2_6941 {
+spritelayout THIS_ID(spritelayout_35) {
 	ground {
-		sprite: spriteset_6896;
+		sprite: THIS_ID(spriteset_35(terrain_type == TILETYPE_SNOW));
 	}
 }
 
-spritelayout action2_6942 {
+spritelayout THIS_ID(spritelayout_36) {
 	ground {
-		sprite: spriteset_6897;
+		sprite: THIS_ID(spriteset_36(terrain_type == TILETYPE_SNOW));
 	}
 	building {
-		sprite: spriteset_6906;
+		sprite: THIS_ID(spriteset_45(terrain_type == TILETYPE_SNOW));
 		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
+		palette: PALETTE_USE_DEFAULT;
 	}
 }
 
-spritelayout action2_6943 {
+spritelayout THIS_ID(spritelayout_37) {
 	ground {
-		sprite: spriteset_6898;
+		sprite: THIS_ID(spriteset_37(terrain_type == TILETYPE_SNOW));
 	}
 	building {
-		sprite: spriteset_6907;
+		sprite: THIS_ID(spriteset_46(terrain_type == TILETYPE_SNOW));
 		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
+		palette: PALETTE_USE_DEFAULT;
 		zextent: 32;
 	}
 }
 
-spritelayout action2_6944 {
+spritelayout THIS_ID(spritelayout_38) {
 	ground {
-		sprite: GROUNDSPRITE_NORMAL;
+		sprite: (terrain_type != TILETYPE_SNOW) ? GROUNDSPRITE_NORMAL : GROUNDSPRITE_SNOW;
 	}
 	building {
-		sprite: spriteset_6899;
+		sprite: THIS_ID(spriteset_38(terrain_type == TILETYPE_SNOW));
 		always_draw: 1;
 		zextent: 4;
 	}
 }
 
-spritelayout action2_6945 {
+spritelayout THIS_ID(spritelayout_39) {
 	ground {
-		sprite: spriteset_6900;
+		sprite: THIS_ID(spriteset_39(terrain_type == TILETYPE_SNOW));
 	}
 	building {
-		sprite: spriteset_6908;
+		sprite: THIS_ID(spriteset_47(terrain_type == TILETYPE_SNOW));
 		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
+		palette: PALETTE_USE_DEFAULT;
 		zextent: 48;
 	}
 }
 
-spritelayout action2_6946 {
+spritelayout THIS_ID(spritelayout_40) {
 	ground {
-		sprite: spriteset_6901;
+		sprite: THIS_ID(spriteset_40(terrain_type == TILETYPE_SNOW));
 	}
 	building {
-		sprite: spriteset_6909;
+		sprite: THIS_ID(spriteset_48(terrain_type == TILETYPE_SNOW));
 		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
+		palette: PALETTE_USE_DEFAULT;
 		zextent: 32;
 	}
 }
 
-spritelayout action2_6947 {
+spritelayout THIS_ID(spritelayout_41) {
 	ground {
-		sprite: spriteset_6902;
+		sprite: THIS_ID(spriteset_41(terrain_type == TILETYPE_SNOW));
 	}
 	building {
-		sprite: spriteset_6910;
+		sprite: THIS_ID(spriteset_49(terrain_type == TILETYPE_SNOW));
 		zextent: 48;
 	}
 }
 
-spritelayout action2_6948 {
+spritelayout THIS_ID(spritelayout_42) {
 	ground {
-		sprite: GROUNDSPRITE_NORMAL;
+		sprite: (terrain_type != TILETYPE_SNOW) ? GROUNDSPRITE_NORMAL : GROUNDSPRITE_SNOW;
 	}
 	building {
-		sprite: spriteset_6903;
+		sprite: THIS_ID(spriteset_42(terrain_type == TILETYPE_SNOW));
 		always_draw: 1;
 		zextent: 4;
 	}
 }
 
-spritelayout action2_6949 {
+spritelayout THIS_ID(spritelayout_43) {
 	ground {
-		sprite: GROUNDSPRITE_NORMAL;
+		sprite: (terrain_type != TILETYPE_SNOW) ? GROUNDSPRITE_NORMAL : GROUNDSPRITE_SNOW;
 	}
 	building {
-		sprite: spriteset_6904;
+		sprite: THIS_ID(spriteset_43(terrain_type == TILETYPE_SNOW));
 		always_draw: 1;
 		zextent: 4;
 	}
 }
 
-spritelayout action2_6950 {
+spritelayout THIS_ID(spritelayout_44) {
 	ground {
-		sprite: GROUNDSPRITE_NORMAL;
+		sprite: (terrain_type != TILETYPE_SNOW) ? GROUNDSPRITE_NORMAL : GROUNDSPRITE_SNOW;
 	}
 	building {
-		sprite: spriteset_6905;
+		sprite: THIS_ID(spriteset_44(terrain_type == TILETYPE_SNOW));
 		always_draw: 1;
 		zextent: 4;
 	}
 }
 
-spritelayout action2_6951 {
+spritelayout THIS_ID(spritelayout_50) {
 	ground {
-		sprite: spriteset_6911;
+		sprite: THIS_ID(spriteset_50(terrain_type == TILETYPE_SNOW));
 	}
 	building {
-		sprite: spriteset_6914;
+		sprite: THIS_ID(spriteset_53(terrain_type == TILETYPE_SNOW));
 		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
+		palette: PALETTE_USE_DEFAULT;
 		zextent: 32;
 	}
 }
 
-spritelayout action2_6952 {
+spritelayout THIS_ID(spritelayout_51) {
 	ground {
-		sprite: GROUNDSPRITE_NORMAL;
+		sprite: (terrain_type != TILETYPE_SNOW) ? GROUNDSPRITE_NORMAL : GROUNDSPRITE_SNOW;
 	}
 	building {
-		sprite: spriteset_6912;
+		sprite: THIS_ID(spriteset_51(terrain_type == TILETYPE_SNOW));
 		always_draw: 1;
 		zextent: 8;
 	}
 	building {
-		sprite: spriteset_6915;
+		sprite: THIS_ID(spriteset_54(terrain_type == TILETYPE_SNOW));
 		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
+		palette: PALETTE_USE_DEFAULT;
 		zextent: 8;
 	}
 }
 
-spritelayout action2_6953 {
+spritelayout THIS_ID(spritelayout_52) {
 	ground {
-		sprite: spriteset_6913;
+		sprite: THIS_ID(spriteset_52(terrain_type == TILETYPE_SNOW));
 	}
 	building {
-		sprite: spriteset_6916;
+		sprite: THIS_ID(spriteset_55(terrain_type == TILETYPE_SNOW));
 		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
+		palette: PALETTE_USE_DEFAULT;
 		zextent: 32;
 	}
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_6954, relative_pos) {
-	relative_coord(5, 3): action2_6917;
-	relative_coord(4, 3): action2_6918;
-	relative_coord(3, 3): action2_6919;
-	relative_coord(2, 3): action2_6920;
-	relative_coord(1, 3): action2_6921;
-	relative_coord(0, 3): action2_6922;
-	relative_coord(5, 2): action2_6923;
-	relative_coord(4, 2): action2_6924;
-	relative_coord(3, 2): action2_6925;
-	relative_coord(2, 2): action2_6926;
-	relative_coord(1, 2): action2_6927;
-	relative_coord(0, 2): action2_6928;
-	relative_coord(5, 1): action2_6929;
-	relative_coord(4, 1): action2_6930;
-	relative_coord(3, 1): action2_6931;
-	relative_coord(2, 1): action2_6932;
-	relative_coord(1, 1): action2_6933;
-	relative_coord(0, 1): action2_6934;
-	relative_coord(5, 0): action2_6935;
-	relative_coord(4, 0): action2_6936;
-	relative_coord(3, 0): action2_6937;
-	relative_coord(2, 0): action2_6938;
-	relative_coord(1, 0): action2_6939;
-	relative_coord(0, 0): action2_6940;
-	relative_coord(8, 2): action2_6941;
-	relative_coord(7, 2): action2_6942;
-	relative_coord(6, 2): action2_6943;
-	relative_coord(6, 3): action2_6944;
-	relative_coord(8, 1): action2_6945;
-	relative_coord(7, 1): action2_6946;
-	relative_coord(6, 1): action2_6947;
-	relative_coord(7, 0): action2_6948;
-	relative_coord(8, 0): action2_6949;
-	action2_6950;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_6955, relative_pos) {
-	relative_coord(5, 4): action2_6917;
-	relative_coord(4, 4): action2_6918;
-	relative_coord(3, 4): action2_6919;
-	relative_coord(2, 4): action2_6920;
-	relative_coord(1, 4): action2_6921;
-	relative_coord(0, 4): action2_6922;
-	relative_coord(5, 3): action2_6923;
-	relative_coord(4, 3): action2_6924;
-	relative_coord(3, 3): action2_6925;
-	relative_coord(2, 3): action2_6926;
-	relative_coord(1, 3): action2_6927;
-	relative_coord(0, 3): action2_6928;
-	relative_coord(5, 2): action2_6929;
-	relative_coord(4, 2): action2_6930;
-	relative_coord(3, 2): action2_6931;
-	relative_coord(2, 2): action2_6932;
-	relative_coord(1, 2): action2_6933;
-	relative_coord(0, 2): action2_6934;
-	relative_coord(5, 1): action2_6935;
-	relative_coord(4, 1): action2_6936;
-	relative_coord(3, 1): action2_6937;
-	relative_coord(2, 1): action2_6938;
-	relative_coord(1, 1): action2_6939;
-	relative_coord(0, 1): action2_6940;
-	relative_coord(6, 0): action2_6945;
-	relative_coord(6, 1): action2_6953;
-	relative_coord(6, 2): action2_6947;
-	relative_coord(6, 3): action2_6951;
-	action2_6952;
-}
-
-switch(FEAT_INDUSTRYTILES, PARENT, action2_6956, layout_num) {
-	1: action2_6954;
-	2: action2_6955;
-	action2_6917;
-}
-
-spritelayout action2_6957 {
-	ground {
-		sprite: GROUNDSPRITE_SNOW;
-	}
-	building {
-		sprite: spriteset_6862;
-		always_draw: 1;
-		xextent: 8;
-		yextent: 8;
-		zextent: 12;
-	}
-	building {
-		sprite: spriteset_6886;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 12;
-	}
-}
-
-spritelayout action2_6958 {
-	ground {
-		sprite: GROUNDSPRITE_SNOW;
-	}
-	building {
-		sprite: spriteset_6863;
-		always_draw: 1;
-		xextent: 8;
-		yextent: 8;
-		zextent: 12;
-	}
-	building {
-		sprite: spriteset_6887;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 12;
-	}
-}
-
-spritelayout action2_6959 {
-	ground {
-		sprite: GROUNDSPRITE_SNOW;
-	}
-	building {
-		sprite: spriteset_6864;
-		always_draw: 1;
-		xextent: 8;
-		yextent: 8;
-		zextent: 12;
-	}
-	building {
-		sprite: spriteset_6888;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 12;
-	}
-}
-
-spritelayout action2_6960 {
-	ground {
-		sprite: GROUNDSPRITE_SNOW;
-	}
-	building {
-		sprite: spriteset_6865;
-		always_draw: 1;
-		xextent: 8;
-		yextent: 8;
-		zextent: 12;
-	}
-	building {
-		sprite: spriteset_6889;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		xextent: 11;
-		zextent: 42;
-	}
-}
-
-spritelayout action2_6961 {
-	ground {
-		sprite: GROUNDSPRITE_SNOW;
-	}
-	building {
-		sprite: spriteset_6866;
-		always_draw: 1;
-		zextent: 4;
-	}
-}
-
-spritelayout action2_6962 {
-	ground {
-		sprite: GROUNDSPRITE_SNOW;
-	}
-	building {
-		sprite: spriteset_6867;
-		always_draw: 1;
-		zextent: 4;
-	}
-}
-
-spritelayout action2_6963 {
-	ground {
-		sprite: GROUNDSPRITE_SNOW;
-	}
-	building {
-		sprite: spriteset_6868;
-		always_draw: 1;
-		zextent: 32;
-	}
-	building {
-		sprite: spriteset_6890;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 32;
-	}
-}
-
-spritelayout action2_6964 {
-	ground {
-		sprite: GROUNDSPRITE_SNOW;
-	}
-	building {
-		sprite: spriteset_6869;
-		always_draw: 1;
-		xextent: 8;
-		yextent: 8;
-		zextent: 12;
-	}
-	building {
-		sprite: spriteset_6891;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 32;
-	}
-}
-
-spritelayout action2_6965 {
-	ground {
-		sprite: GROUNDSPRITE_SNOW;
-	}
-	building {
-		sprite: spriteset_6870;
-		always_draw: 1;
-		zextent: 6;
-	}
-}
-
-spritelayout action2_6966 {
-	ground {
-		sprite: spriteset_6871;
-	}
-	building {
-		sprite: spriteset_6892;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 32;
-	}
-}
-
-spritelayout action2_6967 {
-	ground {
-		sprite: spriteset_6872;
-	}
-	building {
-		sprite: spriteset_6893;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 32;
-	}
-}
-
-spritelayout action2_6968 {
-	ground {
-		sprite: GROUNDSPRITE_SNOW;
-	}
-	building {
-		sprite: spriteset_6873;
-		always_draw: 1;
-		zextent: 6;
-	}
-}
-
-spritelayout action2_6969 {
-	ground {
-		sprite: GROUNDSPRITE_SNOW;
-	}
-	building {
-		sprite: spriteset_6874;
-		always_draw: 1;
-		zextent: 6;
-	}
-}
-
-spritelayout action2_6970 {
-	ground {
-		sprite: GROUNDSPRITE_SNOW;
-	}
-	building {
-		sprite: spriteset_6875;
-		always_draw: 1;
-		zextent: 6;
-	}
-}
-
-spritelayout action2_6971 {
-	ground {
-		sprite: GROUNDSPRITE_SNOW;
-	}
-	building {
-		sprite: spriteset_6876;
-		always_draw: 1;
-		zextent: 6;
-	}
-}
-
-spritelayout action2_6972 {
-	ground {
-		sprite: spriteset_6877;
-	}
-	building {
-		sprite: spriteset_6894;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 32;
-	}
-}
-
-spritelayout action2_6973 {
-	ground {
-		sprite: spriteset_6878;
-	}
-	building {
-		sprite: spriteset_6895;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 32;
-	}
-}
-
-spritelayout action2_6974 {
-	ground {
-		sprite: GROUNDSPRITE_SNOW;
-	}
-	building {
-		sprite: spriteset_6879;
-		always_draw: 1;
-		zextent: 6;
-	}
-}
-
-spritelayout action2_6975 {
-	ground {
-		sprite: GROUNDSPRITE_SNOW;
-	}
-	building {
-		sprite: spriteset_6880;
-		always_draw: 1;
-		zextent: 6;
-	}
-}
-
-spritelayout action2_6976 {
-	ground {
-		sprite: GROUNDSPRITE_SNOW;
-	}
-	building {
-		sprite: spriteset_6881;
-		always_draw: 1;
-		zextent: 6;
-	}
-}
-
-spritelayout action2_6977 {
-	ground {
-		sprite: GROUNDSPRITE_SNOW;
-	}
-	building {
-		sprite: spriteset_6882;
-		always_draw: 1;
-		zextent: 6;
-	}
-}
-
-spritelayout action2_6978 {
-	ground {
-		sprite: GROUNDSPRITE_SNOW;
-	}
-	building {
-		sprite: spriteset_6883;
-		always_draw: 1;
-		zextent: 6;
-	}
-}
-
-spritelayout action2_6979 {
-	ground {
-		sprite: GROUNDSPRITE_SNOW;
-	}
-	building {
-		sprite: spriteset_6884;
-		always_draw: 1;
-		zextent: 6;
-	}
-}
-
-spritelayout action2_6980 {
-	ground {
-		sprite: GROUNDSPRITE_SNOW;
-	}
-	building {
-		sprite: spriteset_6885;
-		always_draw: 1;
-		zextent: 6;
-	}
-}
-
-spritelayout action2_6981 {
-	ground {
-		sprite: spriteset_6896;
-	}
-}
-
-spritelayout action2_6982 {
-	ground {
-		sprite: spriteset_6897;
-	}
-	building {
-		sprite: spriteset_6906;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-}
-
-spritelayout action2_6983 {
-	ground {
-		sprite: spriteset_6898;
-	}
-	building {
-		sprite: spriteset_6907;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 32;
-	}
-}
-
-spritelayout action2_6984 {
-	ground {
-		sprite: GROUNDSPRITE_SNOW;
-	}
-	building {
-		sprite: spriteset_6899;
-		always_draw: 1;
-		zextent: 4;
-	}
-}
-
-spritelayout action2_6985 {
-	ground {
-		sprite: spriteset_6900;
-	}
-	building {
-		sprite: spriteset_6908;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 48;
-	}
-}
-
-spritelayout action2_6986 {
-	ground {
-		sprite: spriteset_6901;
-	}
-	building {
-		sprite: spriteset_6909;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 32;
-	}
-}
-
-spritelayout action2_6987 {
-	ground {
-		sprite: spriteset_6902;
-	}
-	building {
-		sprite: spriteset_6910;
-		zextent: 48;
-	}
-}
-
-spritelayout action2_6988 {
-	ground {
-		sprite: GROUNDSPRITE_SNOW;
-	}
-	building {
-		sprite: spriteset_6903;
-		always_draw: 1;
-		zextent: 4;
-	}
-}
-
-spritelayout action2_6989 {
-	ground {
-		sprite: GROUNDSPRITE_SNOW;
-	}
-	building {
-		sprite: spriteset_6904;
-		always_draw: 1;
-		zextent: 4;
-	}
-}
-
-spritelayout action2_6990 {
-	ground {
-		sprite: GROUNDSPRITE_SNOW;
-	}
-	building {
-		sprite: spriteset_6905;
-		always_draw: 1;
-		zextent: 4;
-	}
-}
-
-spritelayout action2_6991 {
-	ground {
-		sprite: spriteset_6911;
-	}
-	building {
-		sprite: spriteset_6914;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 32;
-	}
-}
-
-spritelayout action2_6992 {
-	ground {
-		sprite: GROUNDSPRITE_SNOW;
-	}
-	building {
-		sprite: spriteset_6912;
-		always_draw: 1;
-		zextent: 8;
-	}
-	building {
-		sprite: spriteset_6915;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 8;
-	}
-}
-
-spritelayout action2_6993 {
-	ground {
-		sprite: spriteset_6913;
-	}
-	building {
-		sprite: spriteset_6916;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 32;
-	}
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_6994, relative_pos) {
-	relative_coord(5, 3): action2_6957;
-	relative_coord(4, 3): action2_6958;
-	relative_coord(3, 3): action2_6959;
-	relative_coord(2, 3): action2_6960;
-	relative_coord(1, 3): action2_6961;
-	relative_coord(0, 3): action2_6962;
-	relative_coord(5, 2): action2_6963;
-	relative_coord(4, 2): action2_6964;
-	relative_coord(3, 2): action2_6965;
-	relative_coord(2, 2): action2_6966;
-	relative_coord(1, 2): action2_6967;
-	relative_coord(0, 2): action2_6968;
-	relative_coord(5, 1): action2_6969;
-	relative_coord(4, 1): action2_6970;
-	relative_coord(3, 1): action2_6971;
-	relative_coord(2, 1): action2_6972;
-	relative_coord(1, 1): action2_6973;
-	relative_coord(0, 1): action2_6974;
-	relative_coord(5, 0): action2_6975;
-	relative_coord(4, 0): action2_6976;
-	relative_coord(3, 0): action2_6977;
-	relative_coord(2, 0): action2_6978;
-	relative_coord(1, 0): action2_6979;
-	relative_coord(0, 0): action2_6980;
-	relative_coord(8, 2): action2_6981;
-	relative_coord(7, 2): action2_6982;
-	relative_coord(6, 2): action2_6983;
-	relative_coord(6, 3): action2_6984;
-	relative_coord(8, 1): action2_6985;
-	relative_coord(7, 1): action2_6986;
-	relative_coord(6, 1): action2_6987;
-	relative_coord(7, 0): action2_6988;
-	relative_coord(8, 0): action2_6989;
-	action2_6990;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_6995, relative_pos) {
-	relative_coord(5, 4): action2_6957;
-	relative_coord(4, 4): action2_6958;
-	relative_coord(3, 4): action2_6959;
-	relative_coord(2, 4): action2_6960;
-	relative_coord(1, 4): action2_6961;
-	relative_coord(0, 4): action2_6962;
-	relative_coord(5, 3): action2_6963;
-	relative_coord(4, 3): action2_6964;
-	relative_coord(3, 3): action2_6965;
-	relative_coord(2, 3): action2_6966;
-	relative_coord(1, 3): action2_6967;
-	relative_coord(0, 3): action2_6968;
-	relative_coord(5, 2): action2_6969;
-	relative_coord(4, 2): action2_6970;
-	relative_coord(3, 2): action2_6971;
-	relative_coord(2, 2): action2_6972;
-	relative_coord(1, 2): action2_6973;
-	relative_coord(0, 2): action2_6974;
-	relative_coord(5, 1): action2_6975;
-	relative_coord(4, 1): action2_6976;
-	relative_coord(3, 1): action2_6977;
-	relative_coord(2, 1): action2_6978;
-	relative_coord(1, 1): action2_6979;
-	relative_coord(0, 1): action2_6980;
-	relative_coord(6, 0): action2_6985;
-	relative_coord(6, 1): action2_6993;
-	relative_coord(6, 2): action2_6987;
-	relative_coord(6, 3): action2_6991;
-	action2_6992;
-}
-
-switch(FEAT_INDUSTRYTILES, PARENT, action2_6996, layout_num) {
-	1: action2_6994;
-	2: action2_6995;
-	action2_6957;
-}
-
-spriteset(spriteset_6998) { 	[10, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_6999) { 	[80, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_7000) { 	[150, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_7001) { 	[220, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_7002) { 	[290, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_7003) { 	[360, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_7004) { 	[10, 50, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_7005) { 	[80, 50, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_7006) { 	[150, 50, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_7007) { 	[220, 50, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_7008) { 	[290, 50, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_7009) { 	[360, 50, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_7010) { 	[10, 90, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_7011) { 	[80, 90, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_7012) { 	[150, 90, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_7013) { 	[220, 90, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_7014) { 	[290, 90, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_7015) { 	[360, 90, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_7016) { 	[10, 130, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_7017) { 	[80, 130, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_7018) { 	[150, 130, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_7019) { 	[220, 130, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_7020) { 	[290, 130, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_7021) { 	[360, 130, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_7022) { 	[440, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_7023) { 	[510, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_7024) { 	[580, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_7025) { 	[650, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_7026) { 	[440, 50, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_7027) { 	[510, 50, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_7028) { 	[580, 50, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_7029) { 	[650, 50, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_7030) { 	[580, 90, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_7031) { 	[650, 90, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_7032) { 	[730, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_7033) { 	[800, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_7034) { 	[870, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_7035) { 	[940, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_7036) { 	[1010, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_7037) { 	[1080, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_7038) { 	[1150, 10, 64, 34, -31, -3, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_7039) { 	[1220, 10, 64, 33, -31, -2, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_7040) { 	[1290, 10, 64, 34, -31, -3, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_7041) { 	[1360, 10, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_7042) { 	[800, 50, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_7043) { 	[870, 50, 64, 51, -31, -20, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_7044) { 	[1010, 50, 64, 64, -31, -33, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_7045) { 	[1080, 50, 64, 49, -31, -18, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_7046) { 	[1150, 50, 64, 55, -31, -24, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_7047) { 	[730, 140, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_7048) { 	[800, 140, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_7049) { 	[940, 140, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_7050) { 	[730, 80, 64, 51, -31, -20, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_7051) { 	[800, 100, 64, 31, -31, 0, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spriteset(spriteset_7052) { 	[940, 90, 64, 47, -31, -16, 9, "sprites/graphics/industries/quarry_waterpit.pcx"] } 
-spritelayout action2_7053 {
-	ground {
-		sprite: GROUNDSPRITE_SNOW;
-	}
-	building {
-		sprite: spriteset_6998;
-		always_draw: 1;
-		xextent: 8;
-		yextent: 8;
-		zextent: 12;
-	}
-	building {
-		sprite: spriteset_7022;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 12;
-	}
-}
-
-spritelayout action2_7054 {
-	ground {
-		sprite: GROUNDSPRITE_SNOW;
-	}
-	building {
-		sprite: spriteset_6999;
-		always_draw: 1;
-		xextent: 8;
-		yextent: 8;
-		zextent: 12;
-	}
-	building {
-		sprite: spriteset_7023;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 12;
-	}
-}
-
-spritelayout action2_7055 {
-	ground {
-		sprite: GROUNDSPRITE_SNOW;
-	}
-	building {
-		sprite: spriteset_7000;
-		always_draw: 1;
-		xextent: 8;
-		yextent: 8;
-		zextent: 12;
-	}
-	building {
-		sprite: spriteset_7024;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 12;
-	}
-}
-
-spritelayout action2_7056 {
-	ground {
-		sprite: GROUNDSPRITE_SNOW;
-	}
-	building {
-		sprite: spriteset_7001;
-		always_draw: 1;
-		xextent: 8;
-		yextent: 8;
-		zextent: 12;
-	}
-	building {
-		sprite: spriteset_7025;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		xextent: 11;
-		zextent: 42;
-	}
-}
-
-spritelayout action2_7057 {
-	ground {
-		sprite: GROUNDSPRITE_SNOW;
-	}
-	building {
-		sprite: spriteset_7002;
-		always_draw: 1;
-		zextent: 4;
-	}
-}
-
-spritelayout action2_7058 {
-	ground {
-		sprite: GROUNDSPRITE_SNOW;
-	}
-	building {
-		sprite: spriteset_7003;
-		always_draw: 1;
-		zextent: 4;
-	}
-}
-
-spritelayout action2_7059 {
-	ground {
-		sprite: GROUNDSPRITE_SNOW;
-	}
-	building {
-		sprite: spriteset_7004;
-		always_draw: 1;
-		zextent: 32;
-	}
-	building {
-		sprite: spriteset_7026;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 32;
-	}
-}
-
-spritelayout action2_7060 {
-	ground {
-		sprite: GROUNDSPRITE_SNOW;
-	}
-	building {
-		sprite: spriteset_7005;
-		always_draw: 1;
-		xextent: 8;
-		yextent: 8;
-		zextent: 12;
-	}
-	building {
-		sprite: spriteset_7027;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 32;
-	}
-}
-
-spritelayout action2_7061 {
-	ground {
-		sprite: GROUNDSPRITE_SNOW;
-	}
-	building {
-		sprite: spriteset_7006;
-		always_draw: 1;
-		zextent: 6;
-	}
-}
-
-spritelayout action2_7062 {
-	ground {
-		sprite: spriteset_7007;
-	}
-	building {
-		sprite: spriteset_7028;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 32;
-	}
-}
-
-spritelayout action2_7063 {
-	ground {
-		sprite: spriteset_7008;
-	}
-	building {
-		sprite: spriteset_7029;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 32;
-	}
-}
-
-spritelayout action2_7064 {
-	ground {
-		sprite: GROUNDSPRITE_SNOW;
-	}
-	building {
-		sprite: spriteset_7009;
-		always_draw: 1;
-		zextent: 6;
-	}
-}
-
-spritelayout action2_7065 {
-	ground {
-		sprite: GROUNDSPRITE_SNOW;
-	}
-	building {
-		sprite: spriteset_7010;
-		always_draw: 1;
-		zextent: 6;
-	}
-}
-
-spritelayout action2_7066 {
-	ground {
-		sprite: GROUNDSPRITE_SNOW;
-	}
-	building {
-		sprite: spriteset_7011;
-		always_draw: 1;
-		zextent: 6;
-	}
-}
-
-spritelayout action2_7067 {
-	ground {
-		sprite: GROUNDSPRITE_SNOW;
-	}
-	building {
-		sprite: spriteset_7012;
-		always_draw: 1;
-		zextent: 6;
-	}
-}
-
-spritelayout action2_7068 {
-	ground {
-		sprite: spriteset_7013;
-	}
-	building {
-		sprite: spriteset_7030;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 32;
-	}
-}
-
-spritelayout action2_7069 {
-	ground {
-		sprite: spriteset_7014;
-	}
-	building {
-		sprite: spriteset_7031;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 32;
-	}
-}
-
-spritelayout action2_7070 {
-	ground {
-		sprite: GROUNDSPRITE_SNOW;
-	}
-	building {
-		sprite: spriteset_7015;
-		always_draw: 1;
-		zextent: 6;
-	}
-}
-
-spritelayout action2_7071 {
-	ground {
-		sprite: GROUNDSPRITE_SNOW;
-	}
-	building {
-		sprite: spriteset_7016;
-		always_draw: 1;
-		zextent: 6;
-	}
-}
-
-spritelayout action2_7072 {
-	ground {
-		sprite: GROUNDSPRITE_SNOW;
-	}
-	building {
-		sprite: spriteset_7017;
-		always_draw: 1;
-		zextent: 6;
-	}
-}
-
-spritelayout action2_7073 {
-	ground {
-		sprite: GROUNDSPRITE_SNOW;
-	}
-	building {
-		sprite: spriteset_7018;
-		always_draw: 1;
-		zextent: 6;
-	}
-}
-
-spritelayout action2_7074 {
-	ground {
-		sprite: GROUNDSPRITE_SNOW;
-	}
-	building {
-		sprite: spriteset_7019;
-		always_draw: 1;
-		zextent: 6;
-	}
-}
-
-spritelayout action2_7075 {
-	ground {
-		sprite: GROUNDSPRITE_SNOW;
-	}
-	building {
-		sprite: spriteset_7020;
-		always_draw: 1;
-		zextent: 6;
-	}
-}
-
-spritelayout action2_7076 {
-	ground {
-		sprite: GROUNDSPRITE_SNOW;
-	}
-	building {
-		sprite: spriteset_7021;
-		always_draw: 1;
-		zextent: 6;
-	}
-}
-
-spritelayout action2_7077 {
-	ground {
-		sprite: spriteset_7032;
-	}
-}
-
-spritelayout action2_7078 {
-	ground {
-		sprite: spriteset_7033;
-	}
-	building {
-		sprite: spriteset_7042;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-}
-
-spritelayout action2_7079 {
-	ground {
-		sprite: spriteset_7034;
-	}
-	building {
-		sprite: spriteset_7043;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 32;
-	}
-}
-
-spritelayout action2_7080 {
-	ground {
-		sprite: GROUNDSPRITE_SNOW;
-	}
-	building {
-		sprite: spriteset_7035;
-		always_draw: 1;
-		zextent: 4;
-	}
-}
-
-spritelayout action2_7081 {
-	ground {
-		sprite: spriteset_7036;
-	}
-	building {
-		sprite: spriteset_7044;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 48;
-	}
-}
-
-spritelayout action2_7082 {
-	ground {
-		sprite: spriteset_7037;
-	}
-	building {
-		sprite: spriteset_7045;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 32;
-	}
-}
-
-spritelayout action2_7083 {
-	ground {
-		sprite: spriteset_7038;
-	}
-	building {
-		sprite: spriteset_7046;
-		zextent: 48;
-	}
-}
-
-spritelayout action2_7084 {
-	ground {
-		sprite: GROUNDSPRITE_SNOW;
-	}
-	building {
-		sprite: spriteset_7039;
-		always_draw: 1;
-		zextent: 4;
-	}
-}
-
-spritelayout action2_7085 {
-	ground {
-		sprite: GROUNDSPRITE_SNOW;
-	}
-	building {
-		sprite: spriteset_7040;
-		always_draw: 1;
-		zextent: 4;
-	}
-}
-
-spritelayout action2_7086 {
-	ground {
-		sprite: GROUNDSPRITE_SNOW;
-	}
-	building {
-		sprite: spriteset_7041;
-		always_draw: 1;
-		zextent: 4;
-	}
-}
-
-spritelayout action2_7087 {
-	ground {
-		sprite: spriteset_7047;
-	}
-	building {
-		sprite: spriteset_7050;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 32;
-	}
-}
-
-spritelayout action2_7088 {
-	ground {
-		sprite: GROUNDSPRITE_SNOW;
-	}
-	building {
-		sprite: spriteset_7048;
-		always_draw: 1;
-		zextent: 8;
-	}
-	building {
-		sprite: spriteset_7051;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 8;
-	}
-}
-
-spritelayout action2_7089 {
-	ground {
-		sprite: spriteset_7049;
-	}
-	building {
-		sprite: spriteset_7052;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 32;
-	}
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_7090, relative_pos) {
-	relative_coord(5, 3): action2_7053;
-	relative_coord(4, 3): action2_7054;
-	relative_coord(3, 3): action2_7055;
-	relative_coord(2, 3): action2_7056;
-	relative_coord(1, 3): action2_7057;
-	relative_coord(0, 3): action2_7058;
-	relative_coord(5, 2): action2_7059;
-	relative_coord(4, 2): action2_7060;
-	relative_coord(3, 2): action2_7061;
-	relative_coord(2, 2): action2_7062;
-	relative_coord(1, 2): action2_7063;
-	relative_coord(0, 2): action2_7064;
-	relative_coord(5, 1): action2_7065;
-	relative_coord(4, 1): action2_7066;
-	relative_coord(3, 1): action2_7067;
-	relative_coord(2, 1): action2_7068;
-	relative_coord(1, 1): action2_7069;
-	relative_coord(0, 1): action2_7070;
-	relative_coord(5, 0): action2_7071;
-	relative_coord(4, 0): action2_7072;
-	relative_coord(3, 0): action2_7073;
-	relative_coord(2, 0): action2_7074;
-	relative_coord(1, 0): action2_7075;
-	relative_coord(0, 0): action2_7076;
-	relative_coord(8, 2): action2_7077;
-	relative_coord(7, 2): action2_7078;
-	relative_coord(6, 2): action2_7079;
-	relative_coord(6, 3): action2_7080;
-	relative_coord(8, 1): action2_7081;
-	relative_coord(7, 1): action2_7082;
-	relative_coord(6, 1): action2_7083;
-	relative_coord(7, 0): action2_7084;
-	relative_coord(8, 0): action2_7085;
-	action2_7086;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_7091, relative_pos) {
-	relative_coord(5, 4): action2_7053;
-	relative_coord(4, 4): action2_7054;
-	relative_coord(3, 4): action2_7055;
-	relative_coord(2, 4): action2_7056;
-	relative_coord(1, 4): action2_7057;
-	relative_coord(0, 4): action2_7058;
-	relative_coord(5, 3): action2_7059;
-	relative_coord(4, 3): action2_7060;
-	relative_coord(3, 3): action2_7061;
-	relative_coord(2, 3): action2_7062;
-	relative_coord(1, 3): action2_7063;
-	relative_coord(0, 3): action2_7064;
-	relative_coord(5, 2): action2_7065;
-	relative_coord(4, 2): action2_7066;
-	relative_coord(3, 2): action2_7067;
-	relative_coord(2, 2): action2_7068;
-	relative_coord(1, 2): action2_7069;
-	relative_coord(0, 2): action2_7070;
-	relative_coord(5, 1): action2_7071;
-	relative_coord(4, 1): action2_7072;
-	relative_coord(3, 1): action2_7073;
-	relative_coord(2, 1): action2_7074;
-	relative_coord(1, 1): action2_7075;
-	relative_coord(0, 1): action2_7076;
-	relative_coord(6, 0): action2_7081;
-	relative_coord(6, 1): action2_7089;
-	relative_coord(6, 2): action2_7083;
-	relative_coord(6, 3): action2_7087;
-	action2_7088;
-}
-
-switch(FEAT_INDUSTRYTILES, PARENT, action2_7092, layout_num) {
-	1: action2_7090;
-	2: action2_7091;
-	action2_7053;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout), terrain_type) {
-	1: action2_6996;
-	4: action2_7092;
-	action2_6956;
+switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_1), relative_pos) {
+	relative_coord(5, 3): THIS_ID(spritelayout_1);
+	relative_coord(4, 3): THIS_ID(spritelayout_2);
+	relative_coord(3, 3): THIS_ID(spritelayout_3);
+	relative_coord(2, 3): THIS_ID(spritelayout_4);
+	relative_coord(1, 3): THIS_ID(spritelayout_5);
+	relative_coord(0, 3): THIS_ID(spritelayout_6);
+	relative_coord(5, 2): THIS_ID(spritelayout_7);
+	relative_coord(4, 2): THIS_ID(spritelayout_8);
+	relative_coord(3, 2): THIS_ID(spritelayout_9);
+	relative_coord(2, 2): THIS_ID(spritelayout_10);
+	relative_coord(1, 2): THIS_ID(spritelayout_11);
+	relative_coord(0, 2): THIS_ID(spritelayout_12);
+	relative_coord(5, 1): THIS_ID(spritelayout_13);
+	relative_coord(4, 1): THIS_ID(spritelayout_14);
+	relative_coord(3, 1): THIS_ID(spritelayout_15);
+	relative_coord(2, 1): THIS_ID(spritelayout_16);
+	relative_coord(1, 1): THIS_ID(spritelayout_17);
+	relative_coord(0, 1): THIS_ID(spritelayout_18);
+	relative_coord(5, 0): THIS_ID(spritelayout_19);
+	relative_coord(4, 0): THIS_ID(spritelayout_20);
+	relative_coord(3, 0): THIS_ID(spritelayout_21);
+	relative_coord(2, 0): THIS_ID(spritelayout_22);
+	relative_coord(1, 0): THIS_ID(spritelayout_23);
+	relative_coord(0, 0): THIS_ID(spritelayout_24);
+	relative_coord(8, 2): THIS_ID(spritelayout_35);
+	relative_coord(7, 2): THIS_ID(spritelayout_36);
+	relative_coord(6, 2): THIS_ID(spritelayout_37);
+	relative_coord(6, 3): THIS_ID(spritelayout_38);
+	relative_coord(8, 1): THIS_ID(spritelayout_39);
+	relative_coord(7, 1): THIS_ID(spritelayout_40);
+	relative_coord(6, 1): THIS_ID(spritelayout_41);
+	relative_coord(7, 0): THIS_ID(spritelayout_42);
+	relative_coord(8, 0): THIS_ID(spritelayout_43);
+	THIS_ID(spritelayout_44);
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_2), relative_pos) {
+	relative_coord(5, 4): THIS_ID(spritelayout_1);
+	relative_coord(4, 4): THIS_ID(spritelayout_2);
+	relative_coord(3, 4): THIS_ID(spritelayout_3);
+	relative_coord(2, 4): THIS_ID(spritelayout_4);
+	relative_coord(1, 4): THIS_ID(spritelayout_5);
+	relative_coord(0, 4): THIS_ID(spritelayout_6);
+	relative_coord(5, 3): THIS_ID(spritelayout_7);
+	relative_coord(4, 3): THIS_ID(spritelayout_8);
+	relative_coord(3, 3): THIS_ID(spritelayout_9);
+	relative_coord(2, 3): THIS_ID(spritelayout_10);
+	relative_coord(1, 3): THIS_ID(spritelayout_11);
+	relative_coord(0, 3): THIS_ID(spritelayout_12);
+	relative_coord(5, 2): THIS_ID(spritelayout_13);
+	relative_coord(4, 2): THIS_ID(spritelayout_14);
+	relative_coord(3, 2): THIS_ID(spritelayout_15);
+	relative_coord(2, 2): THIS_ID(spritelayout_16);
+	relative_coord(1, 2): THIS_ID(spritelayout_17);
+	relative_coord(0, 2): THIS_ID(spritelayout_18);
+	relative_coord(5, 1): THIS_ID(spritelayout_19);
+	relative_coord(4, 1): THIS_ID(spritelayout_20);
+	relative_coord(3, 1): THIS_ID(spritelayout_21);
+	relative_coord(2, 1): THIS_ID(spritelayout_22);
+	relative_coord(1, 1): THIS_ID(spritelayout_23);
+	relative_coord(0, 1): THIS_ID(spritelayout_24);
+	relative_coord(6, 0): THIS_ID(spritelayout_39);
+	relative_coord(6, 1): THIS_ID(spritelayout_52);
+	relative_coord(6, 2): THIS_ID(spritelayout_41);
+	relative_coord(6, 3): THIS_ID(spritelayout_50);
+	THIS_ID(spritelayout_51);
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, THIS_ID(layout), layout_num) {
+	1: THIS_ID(layout_1);
+	2: THIS_ID(layout_2);
+	THIS_ID(spritelayout_1);
 }
 
 /* *************************************************
@@ -1746,7 +829,7 @@ TILE_ALLOW_PLAYER         (tile1_player_check,                                  
 TILE_DISALLOW_TERRAIN     (tile1_terrain_check, TILETYPE_DESERT,       CB_RESULT_IND_DISALLOW_UNSUITABLE, THIS_ID(tile1_player_check))
 TILE_DISALLOW_SLOPES      (tile1_location_check,                       CB_RESULT_IND_DISALLOW_UNSUITABLE, THIS_ID(tile1_terrain_check))
 
-item(FEAT_INDUSTRYTILES, tile_quarry, 177) {
+item(FEAT_INDUSTRYTILES, THIS_ID(tile), 177) {
 	property {
 		substitute:       0;
 		accepted_cargos:  [[ENSP, 8]];
@@ -1765,72 +848,72 @@ item(FEAT_INDUSTRYTILES, tile_quarry, 177) {
  * *************************************************/
 
 tilelayout tilelayout_quarry_1 {
-	0, 0: tile_quarry;
-	1, 0: tile_quarry;
-	2, 0: tile_quarry;
-	3, 0: tile_quarry;
-	4, 0: tile_quarry;
-	5, 0: tile_quarry;
-	6, 0: tile_quarry;
-	7, 0: tile_quarry;
-	8, 0: tile_quarry;
-	0, 1: tile_quarry;
-	1, 1: tile_quarry;
-	2, 1: tile_quarry;
-	3, 1: tile_quarry;
-	4, 1: tile_quarry;
-	5, 1: tile_quarry;
-	6, 1: tile_quarry;
-	7, 1: tile_quarry;
-	8, 1: tile_quarry;
-	0, 2: tile_quarry;
-	1, 2: tile_quarry;
-	2, 2: tile_quarry;
-	3, 2: tile_quarry;
-	4, 2: tile_quarry;
-	5, 2: tile_quarry;
-	6, 2: tile_quarry;
-	7, 2: tile_quarry;
-	8, 2: tile_quarry;
-	0, 3: tile_quarry;
-	1, 3: tile_quarry;
-	2, 3: tile_quarry;
-	3, 3: tile_quarry;
-	4, 3: tile_quarry;
-	5, 3: tile_quarry;
-	6, 3: tile_quarry;
+	0, 0: THIS_ID(tile);
+	1, 0: THIS_ID(tile);
+	2, 0: THIS_ID(tile);
+	3, 0: THIS_ID(tile);
+	4, 0: THIS_ID(tile);
+	5, 0: THIS_ID(tile);
+	6, 0: THIS_ID(tile);
+	7, 0: THIS_ID(tile);
+	8, 0: THIS_ID(tile);
+	0, 1: THIS_ID(tile);
+	1, 1: THIS_ID(tile);
+	2, 1: THIS_ID(tile);
+	3, 1: THIS_ID(tile);
+	4, 1: THIS_ID(tile);
+	5, 1: THIS_ID(tile);
+	6, 1: THIS_ID(tile);
+	7, 1: THIS_ID(tile);
+	8, 1: THIS_ID(tile);
+	0, 2: THIS_ID(tile);
+	1, 2: THIS_ID(tile);
+	2, 2: THIS_ID(tile);
+	3, 2: THIS_ID(tile);
+	4, 2: THIS_ID(tile);
+	5, 2: THIS_ID(tile);
+	6, 2: THIS_ID(tile);
+	7, 2: THIS_ID(tile);
+	8, 2: THIS_ID(tile);
+	0, 3: THIS_ID(tile);
+	1, 3: THIS_ID(tile);
+	2, 3: THIS_ID(tile);
+	3, 3: THIS_ID(tile);
+	4, 3: THIS_ID(tile);
+	5, 3: THIS_ID(tile);
+	6, 3: THIS_ID(tile);
 }
 
 tilelayout tilelayout_quarry_2 {
-	6, 0: tile_quarry;
-	0, 1: tile_quarry;
-	1, 1: tile_quarry;
-	2, 1: tile_quarry;
-	3, 1: tile_quarry;
-	4, 1: tile_quarry;
-	5, 1: tile_quarry;
-	6, 1: tile_quarry;
-	0, 2: tile_quarry;
-	1, 2: tile_quarry;
-	2, 2: tile_quarry;
-	3, 2: tile_quarry;
-	4, 2: tile_quarry;
-	5, 2: tile_quarry;
-	6, 2: tile_quarry;
-	0, 3: tile_quarry;
-	1, 3: tile_quarry;
-	2, 3: tile_quarry;
-	3, 3: tile_quarry;
-	4, 3: tile_quarry;
-	5, 3: tile_quarry;
-	6, 3: tile_quarry;
-	0, 4: tile_quarry;
-	1, 4: tile_quarry;
-	2, 4: tile_quarry;
-	3, 4: tile_quarry;
-	4, 4: tile_quarry;
-	5, 4: tile_quarry;
-	6, 4: tile_quarry;
+	6, 0: THIS_ID(tile);
+	0, 1: THIS_ID(tile);
+	1, 1: THIS_ID(tile);
+	2, 1: THIS_ID(tile);
+	3, 1: THIS_ID(tile);
+	4, 1: THIS_ID(tile);
+	5, 1: THIS_ID(tile);
+	6, 1: THIS_ID(tile);
+	0, 2: THIS_ID(tile);
+	1, 2: THIS_ID(tile);
+	2, 2: THIS_ID(tile);
+	3, 2: THIS_ID(tile);
+	4, 2: THIS_ID(tile);
+	5, 2: THIS_ID(tile);
+	6, 2: THIS_ID(tile);
+	0, 3: THIS_ID(tile);
+	1, 3: THIS_ID(tile);
+	2, 3: THIS_ID(tile);
+	3, 3: THIS_ID(tile);
+	4, 3: THIS_ID(tile);
+	5, 3: THIS_ID(tile);
+	6, 3: THIS_ID(tile);
+	0, 4: THIS_ID(tile);
+	1, 4: THIS_ID(tile);
+	2, 4: THIS_ID(tile);
+	3, 4: THIS_ID(tile);
+	4, 4: THIS_ID(tile);
+	5, 4: THIS_ID(tile);
+	6, 4: THIS_ID(tile);
 }
 
 /* *************************************************
