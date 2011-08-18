@@ -7,9 +7,19 @@
 
 #define THIS_ID(...) builders_yard ## __VA_ARGS__
 
+spriteset(THIS_ID(spriteset_empty)) {
+	[210,10,1,1,0,0, "sprites/graphics/industries/buildersyard.png"]
+	[210,10,1,1,0,0, "sprites/graphics/industries/buildersyard.png"]
+}
+
 spriteset(THIS_ID(spriteset_ground_snow)) {
-	tmpl_building_sprite_filename(150, 10, 43, -13, "sprites/graphics/industries/buildersyard.png")
 	tmpl_building_sprite_filename(150, 10, 43, -13, "sprites/graphics/industries/buildersyard_snow.png")
+	tmpl_building_sprite_filename(150, 10, 43, -13, "sprites/graphics/industries/buildersyard_snow.png")
+}
+
+spriteset(THIS_ID(spriteset_ground_normal)) {
+	tmpl_building_sprite_filename(150, 10, 43, -13, "sprites/graphics/industries/buildersyard.png")
+	tmpl_building_sprite_filename(150, 10, 43, -13, "sprites/graphics/industries/buildersyard.png")
 }
 
 spriteset(THIS_ID(spriteset_1)) {
@@ -22,9 +32,9 @@ spriteset(THIS_ID(spriteset_2)) {
 	tmpl_building_sprite_filename(80, 10, 51, -13, "sprites/graphics/industries/buildersyard_snow.png")
 }
 
-SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_1), 2022, THIS_ID(spriteset_ground_snow), THIS_ID(spriteset_1), 16)
+SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_1), THIS_ID(spriteset_ground_normal), THIS_ID(spriteset_ground_snow), THIS_ID(spriteset_1), 16)
 
-SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_2), 2022, THIS_ID(spriteset_ground_snow), THIS_ID(spriteset_2), 16)
+SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_2), THIS_ID(spriteset_ground_normal), THIS_ID(spriteset_ground_snow), THIS_ID(spriteset_2), 16)
 
 switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_1), relative_pos) {
 	relative_coord(0, 0): THIS_ID(spritelayout_1);
@@ -43,6 +53,9 @@ switch(FEAT_INDUSTRYTILES, PARENT, THIS_ID(layout), layout_num) {
 	2: THIS_ID(layout_2);
 	THIS_ID(layout_1);
 }
+
+GROUNDSPRITE_SWITCH(THIS_ID(ground_switch), THIS_ID(layout))
+
 /* *************************************************
  * Definition of the industry tile and its callbacks
  * *************************************************/
@@ -60,7 +73,7 @@ item(FEAT_INDUSTRYTILES, tile_builders_yard, 164) {
 
 	graphics {
 		tile_check:  THIS_ID(terrain_check);
-		THIS_ID(layout);
+		THIS_ID(ground_switch);
 	}
 }
 
