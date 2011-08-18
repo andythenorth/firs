@@ -1,0 +1,37 @@
+#define GROUNDSPRITE_SWITCH(name, target) \
+switch (FEAT_INDUSTRYTILES, SELF, THIS_ID(tile_decide_arctic), \
+		[ \
+			STORE_TEMP( (nearby_tile_height(0, 0) < (snowline_height - 8)) * GROUNDSPRITE_NORMAL, var_default_ground), \
+			STORE_TEMP( LOAD_TEMP(var_default_ground) + (LOAD_TEMP(var_default_ground) == 0) * 4493 * (nearby_tile_height(0, 0) <  (snowline_height     )), var_default_ground), \
+			STORE_TEMP( LOAD_TEMP(var_default_ground) + (LOAD_TEMP(var_default_ground) == 0) * 4512 * (nearby_tile_height(0, 0) <  (snowline_height +  8)), var_default_ground), \
+			STORE_TEMP( LOAD_TEMP(var_default_ground) + (LOAD_TEMP(var_default_ground) == 0) * 4531 * (nearby_tile_height(0, 0) <  (snowline_height + 16)), var_default_ground), \
+			STORE_TEMP( LOAD_TEMP(var_default_ground) + (LOAD_TEMP(var_default_ground) == 0) * 4550 * (nearby_tile_height(0, 0) >= (snowline_height + 16)), var_default_ground) \
+		]) { \
+	target; \
+} \
+switch (FEAT_INDUSTRYTILES, SELF, THIS_ID(tile_decide_tropic), \
+		[ \
+			STORE_TEMP( (nearby_tile_terrain_type(0, 0) == TILETYPE_DESERT) * GROUNDSPRITE_DESERT, var_default_ground), \
+			STORE_TEMP( LOAD_TEMP(var_default_ground) + (LOAD_TEMP(var_default_ground) == 0) * 4512 * (nearby_tile_terrain_type( 1, 0) == TILETYPE_DESERT), var_default_ground), \
+			STORE_TEMP( LOAD_TEMP(var_default_ground) + (LOAD_TEMP(var_default_ground) == 0) * 4512 * (nearby_tile_terrain_type(-1, 0) == TILETYPE_DESERT), var_default_ground), \
+			STORE_TEMP( LOAD_TEMP(var_default_ground) + (LOAD_TEMP(var_default_ground) == 0) * 4512 * (nearby_tile_terrain_type( 0, 1) == TILETYPE_DESERT), var_default_ground), \
+			STORE_TEMP( LOAD_TEMP(var_default_ground) + (LOAD_TEMP(var_default_ground) == 0) * 4512 * (nearby_tile_terrain_type( 0,-1) == TILETYPE_DESERT), var_default_ground), \
+			STORE_TEMP( LOAD_TEMP(var_default_ground) + (LOAD_TEMP(var_default_ground) == 0) * GROUNDSPRITE_NORMAL, var_default_ground) \
+		]) { \
+	target; \
+} \
+switch (FEAT_INDUSTRYTILES, SELF, THIS_ID(tile_decide_temperate), \
+		[ \
+			STORE_TEMP( GROUNDSPRITE_NORMAL, var_default_ground) \
+		]) { \
+	target; \
+} \
+switch (FEAT_INDUSTRYTILES, SELF, name, \
+		[ \
+			STORE_TEMP(0, var_default_ground), \
+			climate \
+		]) { \
+	CLIMATE_ARCTIC: THIS_ID(tile_decide_arctic); \
+	CLIMATE_TROPIC: THIS_ID(tile_decide_tropic); \
+	THIS_ID(tile_decide_temperate); \
+}

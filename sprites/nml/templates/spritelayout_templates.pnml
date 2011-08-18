@@ -69,9 +69,16 @@ SPRITELAYOUT_NORMAL_DESERT_SNOW_BEGIN(spritelayout_name, ground_sprite_normal, g
 #define SPRITELAYOUT_NORMAL_SNOW_BEGIN(spritelayout_name, ground_sprite_normal, ground_sprite_snow, building_spriteset, building_zextent) \
 spritelayout spritelayout_name { \
 	ground { \
+		sprite: LOAD_TEMP(var_default_ground) != 0 ? LOAD_TEMP(var_default_ground) : GROUNDSPRITE_NORMAL; \
+		recolour_mode: RECOLOUR_REMAP; \
+		palette: PALETTE_USE_DEFAULT; \
+	} \
+	childsprite { \
 		sprite: ground_sprite_normal; \
 		recolour_mode: RECOLOUR_REMAP; \
 		palette: PALETTE_USE_DEFAULT; \
+		hide_sprite: terrain_type == TILETYPE_SNOW; \
+		always_draw: 1; \
 	} \
  \
 	childsprite { \
