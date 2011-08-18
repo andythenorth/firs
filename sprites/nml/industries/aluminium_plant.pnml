@@ -107,15 +107,27 @@ SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_10), THIS_ID(spriteset_ground), TH
 
 SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_11), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_11), 90)
 
-SPRITELAYOUT_NORMAL_SNOW_BEGIN(THIS_ID(spritelayout_12), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_12), 90)
-	building {
-		sprite: 2054;
-		xoffset: 1;
-		yoffset: 2;
-		xextent: 15;
-		yextent: 14;
+/* No template as it uses a TTD sprite w/o snow as building */
+spritelayout THIS_ID(spritelayout_12) {
+	ground {
+		sprite: THIS_ID(spriteset_ground);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
 	}
-SPRITELAYOUT_END
+	childsprite {
+		sprite: GROUNDSPRITE_SNOW;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		hide_sprite: terrain_type != TILETYPE_SNOW;
+		always_draw: 1;
+	}
+	building {
+		sprite: 2054; // Transformer
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		zextent: 90;
+	}
+}
 
 SPRITELAYOUT_NORMAL_SNOW_BEGIN(THIS_ID(spritelayout_4_anim), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_4), 7)
 	BUILDING_DARK_SMOKE_SMALL(5, 0, 64)
