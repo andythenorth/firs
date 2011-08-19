@@ -11,7 +11,7 @@
  * Definition of the industry tile and its callbacks
  * *************************************************/
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_25, 25) {
+item(FEAT_INDUSTRYTILES, THIS_ID(tile_1), 25) {
 	property {
 		substitute: 25;
 		override: 25;
@@ -19,7 +19,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_25, 25) {
 	}
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_26, 26) {
+item(FEAT_INDUSTRYTILES, THIS_ID(tile_2), 26) {
 	property {
 		substitute: 26;
 		override: 26;
@@ -27,7 +27,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_26, 26) {
 	}
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_27, 27) {
+item(FEAT_INDUSTRYTILES, THIS_ID(tile_3), 27) {
 	property {
 		substitute: 27;
 		override: 27;
@@ -35,7 +35,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_27, 27) {
 	}
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_28, 28) {
+item(FEAT_INDUSTRYTILES, THIS_ID(tile_4), 28) {
 	property {
 		substitute: 28;
 		override: 28;

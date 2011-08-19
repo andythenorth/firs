@@ -7,7 +7,7 @@
 
 #define THIS_ID(...) sawmill ## __VA_ARGS__
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_11, 11) {
+item(FEAT_INDUSTRYTILES, THIS_ID(tile_1), 11) {
 	property {
 		substitute: 11;
 		override: 11;
@@ -17,7 +17,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_11, 11) {
 	}
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_12, 12) {
+item(FEAT_INDUSTRYTILES, THIS_ID(tile_2), 12) {
 	property {
 		substitute: 12;
 		override: 12;
@@ -27,7 +27,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_12, 12) {
 	}
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_13, 13) {
+item(FEAT_INDUSTRYTILES, THIS_ID(tile_3), 13) {
 	property {
 		substitute: 13;
 		override: 13;
@@ -37,7 +37,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_13, 13) {
 	}
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_14, 14) {
+item(FEAT_INDUSTRYTILES, THIS_ID(tile_4), 14) {
 	property {
 		substitute: 14;
 		override: 14;
@@ -47,7 +47,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_14, 14) {
 	}
 }
 
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_15, 15) {
+item(FEAT_INDUSTRYTILES, THIS_ID(tile_5), 15) {
 	property {
 		substitute: 15;
 		override: 15;

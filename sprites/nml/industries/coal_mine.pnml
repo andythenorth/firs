@@ -11,7 +11,7 @@
  * Definition of the industry tiles
  * *************************************************/
 
-item(FEAT_INDUSTRYTILES, tile_coal_mine1, 0) {
+item(FEAT_INDUSTRYTILES, THIS_ID(tile_1), 0) {
 	property {
 		substitute: 0;
 		override: 0;
@@ -19,7 +19,7 @@ item(FEAT_INDUSTRYTILES, tile_coal_mine1, 0) {
 	}
 }
 
-item(FEAT_INDUSTRYTILES, tile_coal_mine2, 1) {
+item(FEAT_INDUSTRYTILES, THIS_ID(tile_2), 1) {
 	property {
 		substitute: 1;
 		override: 1;
@@ -27,7 +27,7 @@ item(FEAT_INDUSTRYTILES, tile_coal_mine2, 1) {
 	}
 }
 
-item(FEAT_INDUSTRYTILES, tile_coal_mine3, 2) {
+item(FEAT_INDUSTRYTILES, THIS_ID(tile_3), 2) {
 	property {
 		substitute: 2;
 		override: 2;
@@ -35,7 +35,7 @@ item(FEAT_INDUSTRYTILES, tile_coal_mine3, 2) {
 	}
 }
 
-item(FEAT_INDUSTRYTILES, tile_coal_mine4, 3) {
+item(FEAT_INDUSTRYTILES, THIS_ID(tile_4), 3) {
 	property {
 		substitute: 3;
 		override: 3;
@@ -43,7 +43,7 @@ item(FEAT_INDUSTRYTILES, tile_coal_mine4, 3) {
 	}
 }
 
-item(FEAT_INDUSTRYTILES, tile_coal_mine5, 4) {
+item(FEAT_INDUSTRYTILES, THIS_ID(tile_5), 4) {
 	property {
 		substitute: 4;
 		override: 4;
@@ -51,7 +51,7 @@ item(FEAT_INDUSTRYTILES, tile_coal_mine5, 4) {
 	}
 }
 
-item(FEAT_INDUSTRYTILES, tile_coal_mine6, 5) {
+item(FEAT_INDUSTRYTILES, THIS_ID(tile_6), 5) {
 	property {
 		substitute: 5;
 		override: 5;
@@ -59,7 +59,7 @@ item(FEAT_INDUSTRYTILES, tile_coal_mine6, 5) {
 	}
 }
 
-item(FEAT_INDUSTRYTILES, tile_coal_mine7, 6) {
+item(FEAT_INDUSTRYTILES, THIS_ID(tile_7), 6) {
 	property {
 		substitute: 6;
 		override: 6;

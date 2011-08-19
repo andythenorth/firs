@@ -63,7 +63,7 @@ GROUNDSPRITE_SWITCH(THIS_ID(ground_switch), THIS_ID(layout))
 TILE_DISALLOW_NEARBY_CLASS(nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_IND_DISALLOW_UNSUITABLE, return CB_RESULT_IND_ALLOW_LOCATION)
 TILE_ALLOW_PLAYER         (terrain_check,                                                           THIS_ID(nearby_industry))
 
-item(FEAT_INDUSTRYTILES, tile_builders_yard, 164) {
+item(FEAT_INDUSTRYTILES, THIS_ID(tile), 164) {
 	property {
 		substitute: 0;
 		accepted_cargos: [[BDMT, 8]];
@@ -82,13 +82,13 @@ item(FEAT_INDUSTRYTILES, tile_builders_yard, 164) {
  * *************************************************/
 
 tilelayout tilelayout_builders_yard_1 {
-	0, 0: tile_builders_yard;
-	0, 1: tile_builders_yard;
+	0, 0: THIS_ID(tile);
+	0, 1: THIS_ID(tile);
 }
 
 tilelayout tilelayout_builders_yard_2 {
-	0, 0: tile_builders_yard;
-	1, 0: tile_builders_yard;
+	0, 0: THIS_ID(tile);
+	1, 0: THIS_ID(tile);
 }
 
 /* *************************************************

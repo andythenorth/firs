@@ -851,7 +851,7 @@ switch(FEAT_INDUSTRYTILES, PARENT, THIS_ID(layout), layout_num) {
  * Definition of the industry tile and its callbacks
  * *************************************************/
 
-item(FEAT_INDUSTRYTILES, tile_fishing_harbour1, 195) {
+item(FEAT_INDUSTRYTILES, THIS_ID(tile_1), 195) {
 	property {
 		substitute:       0;
 		accepted_cargos:  [[MNSP, 8], [FISH, 8]];
@@ -870,7 +870,7 @@ TILE_CHECK_FLAT      (tile2_flat_check, return CB_RESULT_IND_DISALLOW_UNSUITABLE
 TILE_CHECK_WATERCLASS(tile2_land_check,     WATER_CLASS_NONE, THIS_ID(tile2_flat_check), return CB_RESULT_IND_DISALLOW_UNSUITABLE)
 TILE_CHECK_WATERCLASS(tile2_location_check, WATER_CLASS_SEA,  THIS_ID(tile2_flat_check), THIS_ID(tile2_land_check))
 
-item(FEAT_INDUSTRYTILES, tile_fishing_harbour2, 196) {
+item(FEAT_INDUSTRYTILES, THIS_ID(tile_2), 196) {
 	property {
 		substitute:       0;
 		accepted_cargos:  [[MNSP, 8], [FISH, 8]];
@@ -889,15 +889,15 @@ item(FEAT_INDUSTRYTILES, tile_fishing_harbour2, 196) {
  * *************************************************/
 
 tilelayout tilelayout_fishing_harbour_1 {
-	0, 3: tile_fishing_harbour1;
-	0, 4: tile_fishing_harbour2;
+	0, 3: THIS_ID(tile_1);
+	0, 4: THIS_ID(tile_2);
 	1, 0: 255;
-	1, 1: tile_fishing_harbour1;
-	1, 2: tile_fishing_harbour1;
-	1, 3: tile_fishing_harbour1;
-	1, 4: tile_fishing_harbour2;
-	2, 1: tile_fishing_harbour1;
-	2, 2: tile_fishing_harbour1;
+	1, 1: THIS_ID(tile_1);
+	1, 2: THIS_ID(tile_1);
+	1, 3: THIS_ID(tile_1);
+	1, 4: THIS_ID(tile_2);
+	2, 1: THIS_ID(tile_1);
+	2, 2: THIS_ID(tile_1);
 }
 
 tilelayout tilelayout_fishing_harbour_2 {
@@ -906,40 +906,40 @@ tilelayout tilelayout_fishing_harbour_2 {
 	0, 0: 255;
 	0, 1: 255;
 	0, 2: 255;
-	1, 0: tile_fishing_harbour1;
-	1, 1: tile_fishing_harbour1;
-	2, 0: tile_fishing_harbour1;
-	2, 1: tile_fishing_harbour1;
-	2, 2: tile_fishing_harbour1;
-	3, 1: tile_fishing_harbour2;
-	3, 2: tile_fishing_harbour2;
+	1, 0: THIS_ID(tile_1);
+	1, 1: THIS_ID(tile_1);
+	2, 0: THIS_ID(tile_1);
+	2, 1: THIS_ID(tile_1);
+	2, 2: THIS_ID(tile_1);
+	3, 1: THIS_ID(tile_2);
+	3, 2: THIS_ID(tile_2);
 }
 
 tilelayout tilelayout_fishing_harbour_3 {
-	0, 0: tile_fishing_harbour2;
-	0, 1: tile_fishing_harbour2;
-	0, 2: tile_fishing_harbour2;
-	1, 0: tile_fishing_harbour1;
-	1, 2: tile_fishing_harbour1;
-	2, 1: tile_fishing_harbour1;
-	2, 2: tile_fishing_harbour1;
-	2, 3: tile_fishing_harbour1;
+	0, 0: THIS_ID(tile_2);
+	0, 1: THIS_ID(tile_2);
+	0, 2: THIS_ID(tile_2);
+	1, 0: THIS_ID(tile_1);
+	1, 2: THIS_ID(tile_1);
+	2, 1: THIS_ID(tile_1);
+	2, 2: THIS_ID(tile_1);
+	2, 3: THIS_ID(tile_1);
 	2, 4: 255;
 	3, 2: 255;
 	3, 3: 255;
 }
 
 tilelayout tilelayout_fishing_harbour_4 {
-	0, 0: tile_fishing_harbour2;
-	0, 1: tile_fishing_harbour1;
-	0, 2: tile_fishing_harbour1;
-	0, 3: tile_fishing_harbour1;
-	0, 4: tile_fishing_harbour1;
+	0, 0: THIS_ID(tile_2);
+	0, 1: THIS_ID(tile_1);
+	0, 2: THIS_ID(tile_1);
+	0, 3: THIS_ID(tile_1);
+	0, 4: THIS_ID(tile_1);
 	0, 5: 255;
-	1, 0: tile_fishing_harbour2;
-	1, 1: tile_fishing_harbour1;
-	1, 2: tile_fishing_harbour1;
-	1, 4: tile_fishing_harbour1;
+	1, 0: THIS_ID(tile_2);
+	1, 1: THIS_ID(tile_1);
+	1, 2: THIS_ID(tile_1);
+	1, 4: THIS_ID(tile_1);
 	1, 5: 255;
 	2, 3: 255;
 	2, 4: 255;
@@ -947,21 +947,21 @@ tilelayout tilelayout_fishing_harbour_4 {
 }
 
 tilelayout tilelayout_fishing_harbour_5 {
-	0, 0: tile_fishing_harbour2;
-	1, 0: tile_fishing_harbour1;
+	0, 0: THIS_ID(tile_2);
+	1, 0: THIS_ID(tile_1);
 	1, 2: 255;
-	2, 0: tile_fishing_harbour1;
-	2, 1: tile_fishing_harbour1;
-	2, 2: tile_fishing_harbour1;
+	2, 0: THIS_ID(tile_1);
+	2, 1: THIS_ID(tile_1);
+	2, 2: THIS_ID(tile_1);
 	2, 3: 255;
-	3, 0: tile_fishing_harbour1;
-	3, 1: tile_fishing_harbour1;
-	3, 2: tile_fishing_harbour1;
+	3, 0: THIS_ID(tile_1);
+	3, 1: THIS_ID(tile_1);
+	3, 2: THIS_ID(tile_1);
 	3, 3: 255;
 	4, 255: 255;
-	4, 0: tile_fishing_harbour1;
-	4, 1: tile_fishing_harbour1;
-	4, 2: tile_fishing_harbour1;
+	4, 0: THIS_ID(tile_1);
+	4, 1: THIS_ID(tile_1);
+	4, 2: THIS_ID(tile_1);
 	4, 3: 255;
 	5, 255: 255;
 	5, 0: 255;

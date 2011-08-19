@@ -20,7 +20,7 @@ SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_1), GROUNDSPRITE_CONCRETE, GROUNDS
  * Definition of the industry tile and its callbacks
  * *************************************************/
 
-item(FEAT_INDUSTRYTILES, tile_food_market, 194) {
+item(FEAT_INDUSTRYTILES, THIS_ID(tile), 194) {
 	property {
 		substitute:       0;
 		accepted_cargos:  [[FOOD, 8], [FRVG, 8], [BEER, 8]];
@@ -36,7 +36,7 @@ item(FEAT_INDUSTRYTILES, tile_food_market, 194) {
  * *************************************************/
 
 tilelayout tilelayout_food_market_1 {
-	0, 0: tile_food_market;
+	0, 0: THIS_ID(tile);
 }
 /* *************************************************
  * Definition of the industry

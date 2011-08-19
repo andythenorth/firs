@@ -119,7 +119,7 @@ TILE_DISALLOW_NEARBY_CLASS(tile1_nearby_industry,  TILE_CLASS_INDUSTRY, CB_RESUL
 TILE_ALLOW_PLAYER         (tile1_player_check,                                                             THIS_ID(tile1_nearby_industry))
 TILE_DISALLOW_SLOPES      (tile1_location_check,                        CB_RESULT_IND_DISALLOW_UNSUITABLE, THIS_ID(tile1_player_check))
 
-item(FEAT_INDUSTRYTILES, tile_grain_mill, 182) {
+item(FEAT_INDUSTRYTILES, THIS_ID(tile), 182) {
 	property {
 		substitute:       0;
 		accepted_cargos:  [[GRAI, 8], [MNSP, 8]];
@@ -140,50 +140,50 @@ item(FEAT_INDUSTRYTILES, tile_grain_mill, 182) {
  * *************************************************/
 
 tilelayout tilelayout_grain_mill_1 {
-	0, 0: tile_grain_mill;
-	0, 1: tile_grain_mill;
-	1, 0: tile_grain_mill;
-	1, 1: tile_grain_mill;
+	0, 0: THIS_ID(tile);
+	0, 1: THIS_ID(tile);
+	1, 0: THIS_ID(tile);
+	1, 1: THIS_ID(tile);
 }
 
 tilelayout tilelayout_grain_mill_2 {
-	0, 0: tile_grain_mill;
-	0, 1: tile_grain_mill;
-	1, 0: tile_grain_mill;
-	1, 1: tile_grain_mill;
+	0, 0: THIS_ID(tile);
+	0, 1: THIS_ID(tile);
+	1, 0: THIS_ID(tile);
+	1, 1: THIS_ID(tile);
 }
 
 tilelayout tilelayout_grain_mill_3 {
-	0, 0: tile_grain_mill;
-	0, 1: tile_grain_mill;
-	1, 0: tile_grain_mill;
-	1, 1: tile_grain_mill;
-	2, 0: tile_grain_mill;
-	2, 1: tile_grain_mill;
+	0, 0: THIS_ID(tile);
+	0, 1: THIS_ID(tile);
+	1, 0: THIS_ID(tile);
+	1, 1: THIS_ID(tile);
+	2, 0: THIS_ID(tile);
+	2, 1: THIS_ID(tile);
 }
 
 tilelayout tilelayout_grain_mill_4 {
-	0, 0: tile_grain_mill;
-	0, 1: tile_grain_mill;
-	1, 0: tile_grain_mill;
-	1, 1: tile_grain_mill;
-	2, 0: tile_grain_mill;
-	2, 1: tile_grain_mill;
+	0, 0: THIS_ID(tile);
+	0, 1: THIS_ID(tile);
+	1, 0: THIS_ID(tile);
+	1, 1: THIS_ID(tile);
+	2, 0: THIS_ID(tile);
+	2, 1: THIS_ID(tile);
 }
 
 tilelayout tilelayout_grain_mill_5 {
-	0, 0: tile_grain_mill;
-	0, 1: tile_grain_mill;
-	0, 2: tile_grain_mill;
-	0, 3: tile_grain_mill;
-	1, 0: tile_grain_mill;
-	1, 1: tile_grain_mill;
-	1, 2: tile_grain_mill;
-	1, 3: tile_grain_mill;
+	0, 0: THIS_ID(tile);
+	0, 1: THIS_ID(tile);
+	0, 2: THIS_ID(tile);
+	0, 3: THIS_ID(tile);
+	1, 0: THIS_ID(tile);
+	1, 1: THIS_ID(tile);
+	1, 2: THIS_ID(tile);
+	1, 3: THIS_ID(tile);
 }
 
 tilelayout tilelayout_grain_mill_6 {
-	0, 0: tile_grain_mill;
+	0, 0: THIS_ID(tile);
 }
 
 /* *************************************************
