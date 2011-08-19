@@ -169,6 +169,7 @@ item(FEAT_INDUSTRIES, sheep_farm, 27) {
 		location_check:          THIS_ID(check_location);
 		monthly_prod_change:     THIS_ID(check_production_level);
 		random_prod_change:      THIS_ID(check_closure);
+		extra_text_fund:         return string(STR_FUND_SHEEP_FARM);
 		extra_text_industry:     THIS_ID(extra_text);
 		colour:                  THIS_ID(colour);
 	}
