@@ -5,158 +5,48 @@
  * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
  */
 
+#include "../templates/spritelayout_templates.pnml"
+
 #define THIS_ID(...) smithy_forge ## __VA_ARGS__
 
-spriteset(spriteset_4510, "sprites/graphics/industries/groundtiles.png") { tmpl_ground_tile(150, 10) } 
-spriteset(spriteset_4511, "sprites/graphics/industries/forge.png") { tmpl_building_sprite(10, 10, 80, -49) } 
-spriteset(spriteset_4512, "sprites/graphics/industries/forge.png") { tmpl_building_sprite(80, 10, 80, -49) } 
-spriteset(spriteset_4513, "sprites/graphics/industries/forge.png") { tmpl_building_sprite(150, 10, 60, -29) } 
-spritelayout action2_4514 {
-	ground {
-		sprite: 2022;
-	}
+spriteset(THIS_ID(spriteset_1)) {
+	tmpl_building_sprite_filename(10, 10, 80, -49, "sprites/graphics/industries/forge.png")
+	tmpl_building_sprite_filename(10, 10, 80, -49, "sprites/graphics/industries/forge_snow.png")
+}
+
+spriteset(THIS_ID(spriteset_2)) {
+	tmpl_building_sprite_filename(80, 10, 80, -49, "sprites/graphics/industries/forge.png")
+	tmpl_building_sprite_filename(80, 10, 80, -49, "sprites/graphics/industries/forge_snow.png")
+}
+
+spriteset(THIS_ID(spriteset_3)) {
+	tmpl_building_sprite_filename(150, 10, 60, -29, "sprites/graphics/industries/forge.png")
+	tmpl_building_sprite_filename(150, 10, 60, -29, "sprites/graphics/industries/forge_snow.png")
+}
+
+SPRITELAYOUT_NORMAL_SNOW_BEGIN(THIS_ID(spritelayout_1), 2022, 2022, THIS_ID(spriteset_1), 48)
 	building {
-		sprite: spriteset_4513;
+		sprite: THIS_ID(spriteset_3);
 		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
+		palette: PALETTE_USE_DEFAULT;
+		hide_sprite: terrain_type != TILETYPE_SNOW;
 	}
+SPRITELAYOUT_END
+
+SPRITELAYOUT_NORMAL_SNOW_BEGIN(THIS_ID(spritelayout_2), 2022, 2022, THIS_ID(spriteset_2), 48)
 	building {
-		sprite: spriteset_4511;
+		sprite: THIS_ID(spriteset_3);
 		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 48;
+		palette: PALETTE_USE_DEFAULT;
+		hide_sprite: terrain_type != TILETYPE_SNOW;
 	}
-}
+SPRITELAYOUT_END
 
-spritelayout action2_4515 {
-	ground {
-		sprite: 2022;
-	}
-	building {
-		sprite: spriteset_4513;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_4512;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 48;
-	}
-}
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4516, relative_pos) {
-	relative_coord(0, 0): action2_4515;
-	action2_4514;
+switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout), relative_pos) {
+	relative_coord(0, 0): THIS_ID(spritelayout_2);
+	THIS_ID(spritelayout_1);
 }
-
-switch(FEAT_INDUSTRYTILES, PARENT, switch_smithy_forge_default_layout, layout_num) {
-	1: action2_4516;
-	action2_4514;
-}
-
-spriteset(spriteset_4520, "sprites/graphics/industries/groundtiles.png") { tmpl_ground_tile(150, 10) } 
-spriteset(spriteset_4521, "sprites/graphics/industries/forge.png") { tmpl_building_sprite(10, 10, 80, -49) } 
-spriteset(spriteset_4522, "sprites/graphics/industries/forge.png") { tmpl_building_sprite(80, 10, 80, -49) } 
-spriteset(spriteset_4523, "sprites/graphics/industries/forge.png") { tmpl_building_sprite(150, 10, 60, -29) } 
-spritelayout action2_4524 {
-	ground {
-		sprite: 2022;
-	}
-	building {
-		sprite: spriteset_4523;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_4521;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 48;
-	}
-}
-
-spritelayout action2_4525 {
-	ground {
-		sprite: 2022;
-	}
-	building {
-		sprite: spriteset_4523;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_4522;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 48;
-	}
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_4526, relative_pos) {
-	relative_coord(0, 0): action2_4525;
-	action2_4524;
-}
-
-switch(FEAT_INDUSTRYTILES, PARENT, switch_smithy_forge_desert_layout, layout_num) {
-	1: action2_4526;
-	action2_4524;
-}
-
-spriteset(spriteset_4530, "sprites/graphics/industries/groundtiles.png") { tmpl_ground_tile(150, 10) } 
-spriteset(spriteset_4531) { 	[10, 10, 64, 80, -31, -49, 9, "sprites/graphics/industries/forge_snow.png"] } 
-spriteset(spriteset_4532) { 	[80, 10, 64, 80, -31, -49, 9, "sprites/graphics/industries/forge_snow.png"] } 
-spriteset(spriteset_4533) { 	[150, 10, 64, 60, -31, -29, 9, "sprites/graphics/industries/forge_snow.png"] } 
-spritelayout action2_4534 {
-	ground {
-		sprite: 2022;
-	}
-	building {
-		sprite: spriteset_4533;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_4531;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 48;
-	}
-}
-
-spritelayout action2_4535 {
-	ground {
-		sprite: 2022;
-	}
-	building {
-		sprite: spriteset_4533;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_4532;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 48;
-	}
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_4536, relative_pos) {
-	relative_coord(0, 0): action2_4535;
-	action2_4534;
-}
-
-switch(FEAT_INDUSTRYTILES, PARENT, switch_smithy_forge_snow_layout, layout_num) {
-	1: action2_4536;
-	action2_4534;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout), terrain_type) {
-	1: switch_smithy_forge_desert_layout;
-	4: switch_smithy_forge_snow_layout;
-	switch_smithy_forge_default_layout;
-}
-
 
 /* *************************************************
  * Definition of the industry tile and its callbacks
@@ -166,12 +56,13 @@ TILE_DISALLOW_NEARBY_CLASS(tile_nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_
 TILE_ALLOW_PLAYER         (tile_player_check,                                                            THIS_ID(tile_nearby_industry))
 TILE_DISALLOW_SLOPES      (tile_location_check,                       CB_RESULT_IND_DISALLOW_UNSUITABLE, THIS_ID(tile_player_check))
 
-item(FEAT_INDUSTRYTILES, tile_smithy_forge, 209) {
+item(FEAT_INDUSTRYTILES, THIS_ID(tile), 209) {
 	property {
 		substitute: 0;
 		accepted_cargos: [[STEL, 8]];
 		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
 	}
+
 	graphics {
 		tile_check:   THIS_ID(tile_location_check);
 		THIS_ID(layout);
@@ -183,8 +74,8 @@ item(FEAT_INDUSTRYTILES, tile_smithy_forge, 209) {
  * *************************************************/
 
 tilelayout tilelayout_smithy_forge_1 {
-	0, 0: tile_smithy_forge;
-	1, 0: tile_smithy_forge;
+	0, 0: THIS_ID(tile);
+	1, 0: THIS_ID(tile);
 }
 
 /* *************************************************
