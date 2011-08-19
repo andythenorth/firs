@@ -5,116 +5,60 @@
  * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS industry set. If not, see <http://www.gnu.org/licenses/>.
  */
 
+#include "../templates/spritelayout_templates.pnml"
+
 #define THIS_ID(...) sugar_refinery ## __VA_ARGS__
 
-item(FEAT_INDUSTRYTILES, tile_sugar_refinery, 214) {
-	property {
-		substitute: 0;
-		accepted_cargos: [[RSGR, 8], [MNSP, 8]];
-		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
-		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
-	}
-}
+spriteset(THIS_ID(spriteset_ground), "sprites/graphics/industries/groundtiles.png") { tmpl_ground_tile(80, 10) } 
 
-spriteset(spriteset_7476, "sprites/graphics/industries/groundtiles.png") { tmpl_ground_tile(80, 10) } 
-spriteset(spriteset_7477, "sprites/graphics/industries/sugarrefinery.pcx") { tmpl_building_sprite(10, 10, 50, -23) } 
-spriteset(spriteset_7478, "sprites/graphics/industries/sugarrefinery.pcx") { tmpl_building_sprite(80, 10, 50, -25) } 
-spriteset(spriteset_7479, "sprites/graphics/industries/sugarrefinery.pcx") { tmpl_building_sprite(150, 10, 88, -56) } 
-spriteset(spriteset_7480, "sprites/graphics/industries/sugarrefinery.pcx") { tmpl_building_sprite(220, 10, 88, -58) } 
-spritelayout action2_7481 {
+spriteset(THIS_ID(spriteset_1), "sprites/graphics/industries/sugarrefinery.pcx") { tmpl_building_sprite(10, 10, 50, -23) } 
+
+spriteset(THIS_ID(spriteset_2), "sprites/graphics/industries/sugarrefinery.pcx") { tmpl_building_sprite(80, 10, 50, -25) } 
+
+spriteset(THIS_ID(spriteset_3), "sprites/graphics/industries/sugarrefinery.pcx") { tmpl_building_sprite(150, 10, 88, -56) } 
+
+spriteset(THIS_ID(spriteset_4), "sprites/graphics/industries/sugarrefinery.pcx") { tmpl_building_sprite(220, 10, 88, -58) } 
+
+SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_1), THIS_ID(spriteset_ground), THIS_ID(spriteset_1), 48)
+
+SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_2), THIS_ID(spriteset_ground), THIS_ID(spriteset_2), 48)
+
+SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_3), THIS_ID(spriteset_ground), THIS_ID(spriteset_3), 48)
+
+SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_4), THIS_ID(spriteset_ground), THIS_ID(spriteset_4), 48)
+
+spritelayout THIS_ID(spritelayout_5) {
 	ground {
-		sprite: spriteset_7476;
+		sprite: THIS_ID(spriteset_ground);
 		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_7476;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 48;
+		palette: PALETTE_USE_DEFAULT;
 	}
 }
 
-spritelayout action2_7482 {
-	ground {
-		sprite: spriteset_7476;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_7477;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 48;
-	}
+switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_1), relative_pos) {
+	relative_coord(0, 0): THIS_ID(spritelayout_4);
+	relative_coord(0, 1): THIS_ID(spritelayout_3);
+	relative_coord(1, 0): THIS_ID(spritelayout_4);
+	relative_coord(1, 1): THIS_ID(spritelayout_2);
+	relative_coord(2, 0): THIS_ID(spritelayout_4);
+	relative_coord(2, 1): THIS_ID(spritelayout_1);
+	THIS_ID(spritelayout_5);
 }
 
-spritelayout action2_7483 {
-	ground {
-		sprite: spriteset_7476;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_7478;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 48;
-	}
-}
-
-spritelayout action2_7484 {
-	ground {
-		sprite: spriteset_7476;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_7479;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 48;
-	}
-}
-
-spritelayout action2_7485 {
-	ground {
-		sprite: spriteset_7476;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_7480;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 48;
-	}
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_7486, relative_pos) {
-	relative_coord(0, 0): action2_7485;
-	relative_coord(0, 1): action2_7484;
-	relative_coord(1, 0): action2_7485;
-	relative_coord(1, 1): action2_7483;
-	relative_coord(2, 0): action2_7485;
-	relative_coord(2, 1): action2_7482;
-	action2_7481;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_7487, relative_pos) {
-	relative_coord(0, 0): action2_7485;
-	relative_coord(0, 1): action2_7485;
-	relative_coord(0, 2): action2_7485;
-	relative_coord(1, 0): action2_7484;
-	relative_coord(1, 1): action2_7483;
-	relative_coord(1, 2): action2_7482;
-	action2_7481;
+switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_2), relative_pos) {
+	relative_coord(0, 0): THIS_ID(spritelayout_4);
+	relative_coord(0, 1): THIS_ID(spritelayout_4);
+	relative_coord(0, 2): THIS_ID(spritelayout_4);
+	relative_coord(1, 0): THIS_ID(spritelayout_3);
+	relative_coord(1, 1): THIS_ID(spritelayout_2);
+	relative_coord(1, 2): THIS_ID(spritelayout_1);
+	THIS_ID(spritelayout_5);
 }
 
 switch(FEAT_INDUSTRYTILES, PARENT, THIS_ID(layout), layout_num) {
-	1: action2_7486;
-	2: action2_7487;
-	action2_7481;
+	1: THIS_ID(layout_1);
+	2: THIS_ID(layout_2);
+	THIS_ID(spritelayout_5);
 }
 
 /* *************************************************
@@ -125,7 +69,14 @@ TILE_DISALLOW_NEARBY_CLASS(nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_IND_D
 TILE_ALLOW_PLAYER         (player_check,                                                            THIS_ID(nearby_industry))
 TILE_DISALLOW_SLOPES      (location_check,                       CB_RESULT_IND_DISALLOW_UNSUITABLE, THIS_ID(player_check))
 
-item(FEAT_INDUSTRYTILES, tile_sugar_refinery, 214) {
+item(FEAT_INDUSTRYTILES, THIS_ID(tile), 214) {
+	property {
+		substitute:       0;
+		accepted_cargos:  [[RSGR, 8], [MNSP, 8]];
+		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
+		callback_flags:   bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
+	}
+
 	graphics {
 		tile_check:   THIS_ID(location_check);
 		THIS_ID(layout);
@@ -137,21 +88,21 @@ item(FEAT_INDUSTRYTILES, tile_sugar_refinery, 214) {
  * *************************************************/
 
 tilelayout tilelayout_sugar_refinery_1 {
-	0, 0: tile_sugar_refinery;
-	0, 1: tile_sugar_refinery;
-	1, 0: tile_sugar_refinery;
-	1, 1: tile_sugar_refinery;
-	2, 0: tile_sugar_refinery;
-	2, 1: tile_sugar_refinery;
+	0, 0: THIS_ID(tile);
+	0, 1: THIS_ID(tile);
+	1, 0: THIS_ID(tile);
+	1, 1: THIS_ID(tile);
+	2, 0: THIS_ID(tile);
+	2, 1: THIS_ID(tile);
 }
 
 tilelayout tilelayout_sugar_refinery_2 {
-	0, 0: tile_sugar_refinery;
-	0, 1: tile_sugar_refinery;
-	0, 2: tile_sugar_refinery;
-	1, 0: tile_sugar_refinery;
-	1, 1: tile_sugar_refinery;
-	1, 2: tile_sugar_refinery;
+	0, 0: THIS_ID(tile);
+	0, 1: THIS_ID(tile);
+	0, 2: THIS_ID(tile);
+	1, 0: THIS_ID(tile);
+	1, 1: THIS_ID(tile);
+	1, 2: THIS_ID(tile);
 }
 
 
