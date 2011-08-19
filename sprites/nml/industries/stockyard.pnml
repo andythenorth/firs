@@ -5,609 +5,119 @@
  * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
  */
 
+#include "../templates/spritelayout_templates.pnml"
+
 #define THIS_ID(...) stockyard ## __VA_ARGS__
 
-item(FEAT_INDUSTRYTILES, tile_stockyard, 179) {
-	property {
-		substitute: 0;
-		accepted_cargos: [[LVST, 8], [MNSP, 8]];
-		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
-		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
-	}
+spriteset(THIS_ID(spriteset_ground), "sprites/graphics/industries/groundtiles.png") {
+	tmpl_ground_tile(80, 10)
+	tmpl_ground_tile(80, 10)
 }
 
-spriteset(spriteset_6073, "sprites/graphics/industries/meatpacker.pcx") { tmpl_building_sprite(10, 10, 44, -13) } 
-spriteset(spriteset_6074, "sprites/graphics/industries/meatpacker.pcx") { tmpl_building_sprite(80, 10, 74, -43) } 
-spriteset(spriteset_6075, "sprites/graphics/industries/meatpacker.pcx") { tmpl_building_sprite(150, 10, 88, -57) } 
-spriteset(spriteset_6076, "sprites/graphics/industries/meatpacker.pcx") { tmpl_building_sprite(220, 10, 85, -54) } 
-spriteset(spriteset_6077, "sprites/graphics/industries/meatpacker.pcx") { tmpl_building_sprite(290, 10, 104, -73) } 
-spriteset(spriteset_6078, "sprites/graphics/industries/meatpacker.pcx") { tmpl_building_sprite(360, 10, 91, -60) } 
-spriteset(spriteset_6079, "sprites/graphics/industries/meatpacker2.pcx") { tmpl_building_sprite(10, 10, 98, -67) } 
-spriteset(spriteset_6080, "sprites/graphics/industries/meatpacker2.pcx") { tmpl_building_sprite(80, 10, 54, -23) } 
-spriteset(spriteset_6081, "sprites/graphics/industries/meatpacker2.pcx") { tmpl_building_sprite(150, 10, 76, -45) } 
-spriteset(spriteset_6082, "sprites/graphics/industries/meatpacker.pcx") { tmpl_building_sprite(640, 10, 32, -1) } 
-spriteset(spriteset_6083, "sprites/graphics/industries/meatpacker.pcx") { tmpl_building_sprite(710, 10, 49, -18) } 
-spriteset(spriteset_6084, "sprites/graphics/industries/groundtiles.png") { tmpl_ground_tile(80, 10) } 
-spritelayout action2_6085 {
+spriteset(THIS_ID(spriteset_1)) {
+	tmpl_building_sprite_filename(10, 10, 44, -13, "sprites/graphics/industries/meatpacker.pcx")
+	tmpl_building_sprite_filename(10, 10, 44, -13, "sprites/graphics/industries/meatpacker_snow.pcx")
+}
+
+spriteset(THIS_ID(spriteset_2)) {
+	tmpl_building_sprite_filename(80, 10, 74, -43, "sprites/graphics/industries/meatpacker.pcx")
+	tmpl_building_sprite_filename(80, 10, 74, -43, "sprites/graphics/industries/meatpacker_snow.pcx")
+}
+
+spriteset(THIS_ID(spriteset_3)) {
+	tmpl_building_sprite_filename(150, 10, 88, -57, "sprites/graphics/industries/meatpacker.pcx")
+	tmpl_building_sprite_filename(150, 10, 88, -57, "sprites/graphics/industries/meatpacker_snow.pcx")
+}
+
+spriteset(THIS_ID(spriteset_4)) {
+	tmpl_building_sprite_filename(220, 10, 85, -54, "sprites/graphics/industries/meatpacker.pcx")
+	tmpl_building_sprite_filename(220, 10, 85, -54, "sprites/graphics/industries/meatpacker_snow.pcx")
+}
+
+spriteset(THIS_ID(spriteset_5)) {
+	tmpl_building_sprite_filename(290, 10, 104, -73, "sprites/graphics/industries/meatpacker.pcx")
+	tmpl_building_sprite_filename(290, 10, 104, -73, "sprites/graphics/industries/meatpacker_snow.pcx")
+}
+
+spriteset(THIS_ID(spriteset_6)) {
+	tmpl_building_sprite_filename(360, 10, 91, -60, "sprites/graphics/industries/meatpacker.pcx")
+	tmpl_building_sprite_filename(360, 10, 91, -60, "sprites/graphics/industries/meatpacker_snow.pcx")
+}
+
+spriteset(THIS_ID(spriteset_7)) {
+	tmpl_building_sprite_filename(10, 10, 98, -67, "sprites/graphics/industries/meatpacker2.pcx")
+	tmpl_building_sprite_filename(10, 10, 98, -67, "sprites/graphics/industries/meatpacker_snow2.pcx")
+}
+
+spriteset(THIS_ID(spriteset_8)) {
+	tmpl_building_sprite_filename(80, 10, 54, -23, "sprites/graphics/industries/meatpacker2.pcx")
+	tmpl_building_sprite_filename(80, 10, 54, -23, "sprites/graphics/industries/meatpacker_snow2.pcx")
+}
+
+spriteset(THIS_ID(spriteset_9)) {
+	tmpl_building_sprite_filename(150, 10, 76, -45, "sprites/graphics/industries/meatpacker2.pcx")
+	tmpl_building_sprite_filename(150, 10, 76, -45, "sprites/graphics/industries/meatpacker_snow2.pcx")
+}
+
+spriteset(THIS_ID(spriteset_10)) {
+	tmpl_building_sprite_filename(640, 10, 32, -1, "sprites/graphics/industries/meatpacker.pcx")
+	tmpl_building_sprite_filename(640, 10, 32, -1, "sprites/graphics/industries/meatpacker_snow.pcx")
+}
+
+spriteset(THIS_ID(spriteset_11)) {
+	tmpl_building_sprite_filename(710, 10, 49, -18, "sprites/graphics/industries/meatpacker.pcx")
+	tmpl_building_sprite_filename(710, 10, 49, -18, "sprites/graphics/industries/meatpacker_snow.pcx")
+}
+
+SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_1), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_1), 32)
+
+SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_2), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_2), 32)
+
+SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_3), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_3), 32)
+
+SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_4), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_4), 32)
+
+SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_5), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_5), 96)
+
+SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_6), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_6), 64)
+
+SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_7), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_7), 64)
+
+SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_8), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_8), 48)
+
+SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_9), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_9), 48)
+
+SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_10), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_10), 48)
+
+SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_11), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_11), 8)
+
+spritelayout THIS_ID(spritelayout_12) {
 	ground {
-		sprite: spriteset_6084;
+		sprite: THIS_ID(spriteset_ground);
 		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_6073;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 32;
+		palette: PALETTE_USE_DEFAULT;
 	}
 }
 
-spritelayout action2_6086 {
-	ground {
-		sprite: spriteset_6084;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_6074;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 32;
-	}
+switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_1), relative_pos) {
+	relative_coord(4, 0): THIS_ID(spritelayout_1);
+	relative_coord(4, 1): THIS_ID(spritelayout_2);
+	relative_coord(4, 2): THIS_ID(spritelayout_3);
+	relative_coord(4, 3): THIS_ID(spritelayout_4);
+	relative_coord(3, 1): THIS_ID(spritelayout_5);
+	relative_coord(3, 2): THIS_ID(spritelayout_6);
+	relative_coord(3, 3): THIS_ID(spritelayout_7);
+	relative_coord(1, 1): THIS_ID(spritelayout_8);
+	relative_coord(1, 2): THIS_ID(spritelayout_9);
+	relative_coord(1, 3): THIS_ID(spritelayout_10);
+	relative_coord(3, 0): THIS_ID(spritelayout_12);
+	relative_coord(0, 1): THIS_ID(spritelayout_12);
+	relative_coord(0, 3): THIS_ID(spritelayout_12);
+	THIS_ID(spritelayout_11);
 }
 
-spritelayout action2_6087 {
-	ground {
-		sprite: spriteset_6084;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_6075;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 32;
-	}
-}
-
-spritelayout action2_6088 {
-	ground {
-		sprite: spriteset_6084;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_6076;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 32;
-	}
-}
-
-spritelayout action2_6089 {
-	ground {
-		sprite: spriteset_6084;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_6077;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 96;
-	}
-}
-
-spritelayout action2_6090 {
-	ground {
-		sprite: spriteset_6084;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_6078;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 64;
-	}
-}
-
-spritelayout action2_6091 {
-	ground {
-		sprite: spriteset_6084;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_6079;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 64;
-	}
-}
-
-spritelayout action2_6092 {
-	ground {
-		sprite: spriteset_6084;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_6080;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 48;
-	}
-}
-
-spritelayout action2_6093 {
-	ground {
-		sprite: spriteset_6084;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_6081;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 48;
-	}
-}
-
-spritelayout action2_6094 {
-	ground {
-		sprite: spriteset_6084;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_6082;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 48;
-	}
-}
-
-spritelayout action2_6095 {
-	ground {
-		sprite: spriteset_6084;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_6083;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 8;
-	}
-}
-
-spritelayout action2_6096 {
-	ground {
-		sprite: spriteset_6084;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_6097, relative_pos) {
-	relative_coord(4, 0): action2_6085;
-	relative_coord(4, 1): action2_6086;
-	relative_coord(4, 2): action2_6087;
-	relative_coord(4, 3): action2_6088;
-	relative_coord(3, 1): action2_6089;
-	relative_coord(3, 2): action2_6090;
-	relative_coord(3, 3): action2_6091;
-	relative_coord(1, 1): action2_6092;
-	relative_coord(1, 2): action2_6093;
-	relative_coord(1, 3): action2_6094;
-	relative_coord(3, 0): action2_6096;
-	relative_coord(0, 1): action2_6096;
-	relative_coord(0, 3): action2_6096;
-	action2_6095;
-}
-
-switch(FEAT_INDUSTRYTILES, PARENT, action2_6098, layout_num) {
-	1: action2_6097;
-	action2_6085;
-}
-
-spriteset(spriteset_6100, "sprites/graphics/industries/meatpacker.pcx") { tmpl_building_sprite(10, 10, 44, -13) } 
-spriteset(spriteset_6101, "sprites/graphics/industries/meatpacker.pcx") { tmpl_building_sprite(80, 10, 74, -43) } 
-spriteset(spriteset_6102, "sprites/graphics/industries/meatpacker.pcx") { tmpl_building_sprite(150, 10, 88, -57) } 
-spriteset(spriteset_6103, "sprites/graphics/industries/meatpacker.pcx") { tmpl_building_sprite(220, 10, 85, -54) } 
-spriteset(spriteset_6104, "sprites/graphics/industries/meatpacker.pcx") { tmpl_building_sprite(290, 10, 104, -73) } 
-spriteset(spriteset_6105, "sprites/graphics/industries/meatpacker.pcx") { tmpl_building_sprite(360, 10, 91, -60) } 
-spriteset(spriteset_6106, "sprites/graphics/industries/meatpacker2.pcx") { tmpl_building_sprite(10, 10, 98, -67) } 
-spriteset(spriteset_6107, "sprites/graphics/industries/meatpacker2.pcx") { tmpl_building_sprite(80, 10, 54, -23) } 
-spriteset(spriteset_6108, "sprites/graphics/industries/meatpacker2.pcx") { tmpl_building_sprite(150, 10, 76, -45) } 
-spriteset(spriteset_6109, "sprites/graphics/industries/meatpacker.pcx") { tmpl_building_sprite(640, 10, 32, -1) } 
-spriteset(spriteset_6110, "sprites/graphics/industries/meatpacker.pcx") { tmpl_building_sprite(710, 10, 49, -18) } 
-spriteset(spriteset_6111, "sprites/graphics/industries/groundtiles.png") { tmpl_ground_tile(80, 10) } 
-spritelayout action2_6112 {
-	ground {
-		sprite: spriteset_6111;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_6100;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 32;
-	}
-}
-
-spritelayout action2_6113 {
-	ground {
-		sprite: spriteset_6111;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_6101;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 32;
-	}
-}
-
-spritelayout action2_6114 {
-	ground {
-		sprite: spriteset_6111;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_6102;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 32;
-	}
-}
-
-spritelayout action2_6115 {
-	ground {
-		sprite: spriteset_6111;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_6103;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 32;
-	}
-}
-
-spritelayout action2_6116 {
-	ground {
-		sprite: spriteset_6111;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_6104;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 96;
-	}
-}
-
-spritelayout action2_6117 {
-	ground {
-		sprite: spriteset_6111;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_6105;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 64;
-	}
-}
-
-spritelayout action2_6118 {
-	ground {
-		sprite: spriteset_6111;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_6106;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 64;
-	}
-}
-
-spritelayout action2_6119 {
-	ground {
-		sprite: spriteset_6111;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_6107;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 48;
-	}
-}
-
-spritelayout action2_6120 {
-	ground {
-		sprite: spriteset_6111;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_6108;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 48;
-	}
-}
-
-spritelayout action2_6121 {
-	ground {
-		sprite: spriteset_6111;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_6109;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 48;
-	}
-}
-
-spritelayout action2_6122 {
-	ground {
-		sprite: spriteset_6111;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_6110;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 8;
-	}
-}
-
-spritelayout action2_6123 {
-	ground {
-		sprite: spriteset_6111;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_6124, relative_pos) {
-	relative_coord(4, 0): action2_6112;
-	relative_coord(4, 1): action2_6113;
-	relative_coord(4, 2): action2_6114;
-	relative_coord(4, 3): action2_6115;
-	relative_coord(3, 1): action2_6116;
-	relative_coord(3, 2): action2_6117;
-	relative_coord(3, 3): action2_6118;
-	relative_coord(1, 1): action2_6119;
-	relative_coord(1, 2): action2_6120;
-	relative_coord(1, 3): action2_6121;
-	relative_coord(3, 0): action2_6123;
-	relative_coord(0, 1): action2_6123;
-	relative_coord(0, 3): action2_6123;
-	action2_6122;
-}
-
-switch(FEAT_INDUSTRYTILES, PARENT, action2_6125, layout_num) {
-	1: action2_6124;
-	action2_6112;
-}
-
-spriteset(spriteset_6127) { 	[10, 10, 64, 44, -31, -13, 9, "sprites/graphics/industries/meatpacker_snow.pcx"] } 
-spriteset(spriteset_6128) { 	[80, 10, 64, 74, -31, -43, 9, "sprites/graphics/industries/meatpacker_snow.pcx"] } 
-spriteset(spriteset_6129) { 	[150, 10, 64, 88, -31, -57, 9, "sprites/graphics/industries/meatpacker_snow.pcx"] } 
-spriteset(spriteset_6130) { 	[220, 10, 64, 85, -31, -54, 9, "sprites/graphics/industries/meatpacker_snow.pcx"] } 
-spriteset(spriteset_6131) { 	[290, 10, 64, 104, -31, -73, 9, "sprites/graphics/industries/meatpacker_snow.pcx"] } 
-spriteset(spriteset_6132) { 	[360, 10, 64, 91, -31, -60, 9, "sprites/graphics/industries/meatpacker_snow.pcx"] } 
-spriteset(spriteset_6133) { 	[10, 10, 64, 98, -31, -67, 9, "sprites/graphics/industries/meatpacker_snow2.pcx"] } 
-spriteset(spriteset_6134) { 	[80, 10, 64, 54, -31, -23, 9, "sprites/graphics/industries/meatpacker_snow2.pcx"] } 
-spriteset(spriteset_6135) { 	[150, 10, 64, 76, -31, -45, 9, "sprites/graphics/industries/meatpacker_snow2.pcx"] } 
-spriteset(spriteset_6136) { 	[640, 10, 64, 32, -31, -1, 9, "sprites/graphics/industries/meatpacker_snow.pcx"] } 
-spriteset(spriteset_6137) { 	[710, 10, 64, 49, -31, -18, 9, "sprites/graphics/industries/meatpacker_snow.pcx"] } 
-spriteset(spriteset_6138, "sprites/graphics/industries/groundtiles.png") { tmpl_ground_tile(80, 10) } 
-spritelayout action2_6139 {
-	ground {
-		sprite: spriteset_6138;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_6127;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 32;
-	}
-}
-
-spritelayout action2_6140 {
-	ground {
-		sprite: spriteset_6138;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_6128;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 32;
-	}
-}
-
-spritelayout action2_6141 {
-	ground {
-		sprite: spriteset_6138;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_6129;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 32;
-	}
-}
-
-spritelayout action2_6142 {
-	ground {
-		sprite: spriteset_6138;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_6130;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 32;
-	}
-}
-
-spritelayout action2_6143 {
-	ground {
-		sprite: spriteset_6138;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_6131;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 96;
-	}
-}
-
-spritelayout action2_6144 {
-	ground {
-		sprite: spriteset_6138;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_6132;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 64;
-	}
-}
-
-spritelayout action2_6145 {
-	ground {
-		sprite: spriteset_6138;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_6133;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 64;
-	}
-}
-
-spritelayout action2_6146 {
-	ground {
-		sprite: spriteset_6138;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_6134;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 48;
-	}
-}
-
-spritelayout action2_6147 {
-	ground {
-		sprite: spriteset_6138;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_6135;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 48;
-	}
-}
-
-spritelayout action2_6148 {
-	ground {
-		sprite: spriteset_6138;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_6136;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 48;
-	}
-}
-
-spritelayout action2_6149 {
-	ground {
-		sprite: spriteset_6138;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-	building {
-		sprite: spriteset_6137;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 8;
-	}
-}
-
-spritelayout action2_6150 {
-	ground {
-		sprite: spriteset_6138;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, action2_6151, relative_pos) {
-	relative_coord(4, 0): action2_6139;
-	relative_coord(4, 1): action2_6140;
-	relative_coord(4, 2): action2_6141;
-	relative_coord(4, 3): action2_6142;
-	relative_coord(3, 1): action2_6143;
-	relative_coord(3, 2): action2_6144;
-	relative_coord(3, 3): action2_6145;
-	relative_coord(1, 1): action2_6146;
-	relative_coord(1, 2): action2_6147;
-	relative_coord(1, 3): action2_6148;
-	relative_coord(3, 0): action2_6150;
-	relative_coord(0, 1): action2_6150;
-	relative_coord(0, 3): action2_6150;
-	action2_6149;
-}
-
-switch(FEAT_INDUSTRYTILES, PARENT, action2_6152, layout_num) {
-	1: action2_6151;
-	action2_6139;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_terrain), terrain_type) {
-	1: action2_6125;
-	4: action2_6152;
-	action2_6098;
+switch(FEAT_INDUSTRYTILES, PARENT, THIS_ID(layout), layout_num) {
+	THIS_ID(layout_1);
 }
 
 /* *************************************************
@@ -618,10 +128,17 @@ TILE_DISALLOW_NEARBY_CLASS(nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_IND_D
 TILE_ALLOW_PLAYER         (player_check,                                                            THIS_ID(nearby_industry))
 TILE_DISALLOW_SLOPES      (location_check,                       CB_RESULT_IND_DISALLOW_UNSUITABLE, THIS_ID(player_check))
 
-item(FEAT_INDUSTRYTILES, tile_stockyard, 179) {
+item(FEAT_INDUSTRYTILES, THIS_ID(tile), 179) {
+	property {
+		substitute: 0;
+		accepted_cargos: [[LVST, 8], [MNSP, 8]];
+		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
+		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
+	}
+
 	graphics {
 		tile_check:   THIS_ID(location_check);
-		THIS_ID(layout_terrain);
+		THIS_ID(layout);
 	}
 }
 
@@ -630,20 +147,20 @@ item(FEAT_INDUSTRYTILES, tile_stockyard, 179) {
  * *************************************************/
 
 tilelayout tilelayout_stockyard_1 {
-	0, 1: tile_stockyard;
-	0, 2: tile_stockyard;
-	0, 3: tile_stockyard;
-	1, 1: tile_stockyard;
-	1, 2: tile_stockyard;
-	1, 3: tile_stockyard;
-	3, 0: tile_stockyard;
-	3, 1: tile_stockyard;
-	3, 2: tile_stockyard;
-	3, 3: tile_stockyard;
-	4, 0: tile_stockyard;
-	4, 1: tile_stockyard;
-	4, 2: tile_stockyard;
-	4, 3: tile_stockyard;
+	0, 1: THIS_ID(tile);
+	0, 2: THIS_ID(tile);
+	0, 3: THIS_ID(tile);
+	1, 1: THIS_ID(tile);
+	1, 2: THIS_ID(tile);
+	1, 3: THIS_ID(tile);
+	3, 0: THIS_ID(tile);
+	3, 1: THIS_ID(tile);
+	3, 2: THIS_ID(tile);
+	3, 3: THIS_ID(tile);
+	4, 0: THIS_ID(tile);
+	4, 1: THIS_ID(tile);
+	4, 2: THIS_ID(tile);
+	4, 3: THIS_ID(tile);
 	0, 0: tile_plain_concrete;
 	1, 0: tile_plain_concrete;
 }
