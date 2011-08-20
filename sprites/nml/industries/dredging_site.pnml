@@ -17,6 +17,9 @@ SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_1), GROUNDSPRITE_WATER, THIS_ID(sprites
  * Definition of the industry tile and its callbacks
  * *************************************************/
 
+TILE_DISALLOW_NEARBY_CLASS(tile_nearby_industry,  TILE_CLASS_INDUSTRY, CB_RESULT_IND_DISALLOW_UNSUITABLE, return CB_RESULT_IND_ALLOW_LOCATION)
+TILE_ALLOW_PLAYER         (tile_location_check,                                                             THIS_ID(tile_nearby_industry))
+
 item(FEAT_INDUSTRYTILES, THIS_ID(tile), 198) {
 	property {
 		substitute:       0;
@@ -25,6 +28,7 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile), 198) {
 	}
 
 	graphics {
+		tile_check: THIS_ID(tile_location_check);
 		THIS_ID(spritelayout_1);
 	}
 }

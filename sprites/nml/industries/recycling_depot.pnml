@@ -25,6 +25,9 @@ switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout), relative_pos) {
  * Definition of the industry tile and its callbacks
  * *************************************************/
 
+TILE_DISALLOW_NEARBY_CLASS(tile_nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_IND_DISALLOW_UNSUITABLE, return CB_RESULT_IND_ALLOW_LOCATION)
+TILE_ALLOW_PLAYER         (tile_location_check,                                                          THIS_ID(tile_nearby_industry))
+
 item(FEAT_INDUSTRYTILES, THIS_ID(tile), 202) {
 	property {
 		substitute:       0;
@@ -32,6 +35,7 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile), 202) {
 		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
 	}
 	graphics {
+		tile_check: THIS_ID(tile_location_check);
 		THIS_ID(layout);
 	}
 }
