@@ -36,6 +36,28 @@ item(FEAT_INDUSTRYTILES, tile_plain_concrete, 224) {
 	}
 }
 
+/* *******************************************************
+ * Spriteset to be used in many industries as ground tiles
+ * *******************************************************/
+
+/* Dirty tracks */
+spriteset(spriteset_ground_track_normal) {
+	tmpl_building_sprite_filename(150, 10, 43, -13, "sprites/graphics/industries/buildersyard.png")
+	tmpl_building_sprite_filename(150, 10, 43, -13, "sprites/graphics/industries/buildersyard.png")
+}
+
+/* Icy tracks */
+spriteset(spriteset_ground_track_snow) {
+	tmpl_building_sprite_filename(150, 10, 43, -13, "sprites/graphics/industries/buildersyard_snow.png")
+	tmpl_building_sprite_filename(150, 10, 43, -13, "sprites/graphics/industries/buildersyard_snow.png")
+}
+
+/* No overlay. To be used when custom ground is snowed */
+spriteset(spriteset_empty) {
+	[80,10,1,1,0,0, "sprites/graphics/industries/groundtiles.png"]
+	[80,10,1,1,0,0, "sprites/graphics/industries/groundtiles.png"]
+}
+
 /* **************************************************
  * Legacy support for meanwhile unused industry tiles
  * Just define them as the farm's barn
