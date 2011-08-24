@@ -211,6 +211,30 @@ CHECK_INCOMPATIBLE  (arable_farm,   16, CB_RESULT_IND_DISALLOW_UNSUITABLE, THIS_
 CHECK_TOWN_DISTANCE (town_distance,  0,144, THIS_ID(arable_farm))
 CHECK_FOUNDER       (THIS_ID(town_distance))
 
+/** After 1900, windmills only appear during map generation. */
+switch (FEAT_INDUSTRIES, SELF, THIS_ID(brick_layouts_only_check_layout), var[0x86]) {
+	5: return CB_RESULT_IND_DISALLOW_UNSUITABLE;
+	THIS_ID(check_location);
+}
+
+switch (FEAT_INDUSTRIES, SELF, THIS_ID(brick_layouts_only), extra_callback_info2) {
+	IND_CREATION_GENERATION: THIS_ID(check_location);
+	THIS_ID(brick_layouts_only_check_layout);
+}
+
+/** Before 1870, only windmills appear. */
+switch (FEAT_INDUSTRIES, SELF, THIS_ID(windmill_layout_only), var[0x86]) {
+	5: THIS_ID(check_location);
+	return CB_RESULT_IND_DISALLOW_UNSUITABLE;
+}
+
+/** Both types of layouts can appear between 1870 and 1900. */
+switch (FEAT_INDUSTRIES, SELF, THIS_ID(check_date), current_year) {
+	0..1870:    THIS_ID(windmill_layout_only);
+	1870..1900: THIS_ID(check_location);
+	THIS_ID(brick_layouts_only);
+}
+
 SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
 
 #include "../templates/produce_secondary.pnml"
@@ -257,7 +281,7 @@ item(FEAT_INDUSTRIES, grain_mill, 34) {
 	graphics {
 		produce_cargo_arrival:   THIS_ID(produce);
 		availability:            THIS_ID(check_availability);
-		location_check:          THIS_ID(check_location);
+		location_check:          THIS_ID(check_date);
 		monthly_prod_change:     THIS_ID(check_production_level);
 		random_prod_change:      THIS_ID(check_closure);
 		extra_text_industry:     THIS_ID(extra_text);
