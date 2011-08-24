@@ -9,15 +9,15 @@
 
 spriteset(THIS_ID(spriteset_ground), "sprites/graphics/industries/groundtiles.png") { tmpl_ground_tile(80, 10) }
 
-spriteset(THIS_ID(spriteset_1), "sprites/graphics/industries/recyclingplant.pcx") { tmpl_building_sprite(10, 10, 76, -45) }
-spriteset(THIS_ID(spriteset_2), "sprites/graphics/industries/recyclingplant.pcx") { tmpl_building_sprite(80, 10, 76, -45) }
-spriteset(THIS_ID(spriteset_3), "sprites/graphics/industries/recyclingplant.pcx") { tmpl_building_sprite(150, 10, 76, -45) }
-spriteset(THIS_ID(spriteset_4), "sprites/graphics/industries/recyclingplant.pcx") { tmpl_building_sprite(220, 10, 63, -32) }
-spriteset(THIS_ID(spriteset_5)) { 	[290, 10, 64, 63, -34, -32, 9, "sprites/graphics/industries/recyclingplant.pcx"] }
-spriteset(THIS_ID(spriteset_6), "sprites/graphics/industries/recyclingplant.pcx") { tmpl_building_sprite(360, 10, 39, -8) }
-spriteset(THIS_ID(spriteset_7), "sprites/graphics/industries/recyclingplant.pcx") { tmpl_building_sprite(430, 10, 39, -8) }
-spriteset(THIS_ID(spriteset_8), "sprites/graphics/industries/recyclingplant.pcx") { tmpl_building_sprite(500, 10, 39, -8) }
-spriteset(THIS_ID(spriteset_9), "sprites/graphics/industries/recyclingplant.pcx") { tmpl_building_sprite(570, 10, 43, -12) }
+spriteset(THIS_ID(spriteset_1), "sprites/graphics/industries/recyclingplant.png") { tmpl_building_sprite(10, 10, 76, -45) }
+spriteset(THIS_ID(spriteset_2), "sprites/graphics/industries/recyclingplant.png") { tmpl_building_sprite(80, 10, 76, -45) }
+spriteset(THIS_ID(spriteset_3), "sprites/graphics/industries/recyclingplant.png") { tmpl_building_sprite(150, 10, 76, -45) }
+spriteset(THIS_ID(spriteset_4), "sprites/graphics/industries/recyclingplant.png") { tmpl_building_sprite(220, 10, 63, -32) }
+spriteset(THIS_ID(spriteset_5)) { 	[290, 10, 64, 63, -34, -32, 9, "sprites/graphics/industries/recyclingplant.png"] }
+spriteset(THIS_ID(spriteset_6), "sprites/graphics/industries/recyclingplant.png") { tmpl_building_sprite(360, 10, 39, -8) }
+spriteset(THIS_ID(spriteset_7), "sprites/graphics/industries/recyclingplant.png") { tmpl_building_sprite(430, 10, 39, -8) }
+spriteset(THIS_ID(spriteset_8), "sprites/graphics/industries/recyclingplant.png") { tmpl_building_sprite(500, 10, 39, -8) }
+spriteset(THIS_ID(spriteset_9), "sprites/graphics/industries/recyclingplant.png") { tmpl_building_sprite(570, 10, 43, -12) }
 
 SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_1), THIS_ID(spriteset_ground), THIS_ID(spriteset_1), 48)
 
