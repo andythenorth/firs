@@ -10,14 +10,22 @@
 #define THIS_ID(...) sugar_refinery ## __VA_ARGS__
 
 spriteset(THIS_ID(spriteset_ground), "sprites/graphics/industries/groundtiles.png") { tmpl_ground_tile(80, 10) } 
-
-spriteset(THIS_ID(spriteset_1), "sprites/graphics/industries/sugarrefinery.pcx") { tmpl_building_sprite(10, 10, 50, -23) } 
-
-spriteset(THIS_ID(spriteset_2), "sprites/graphics/industries/sugarrefinery.pcx") { tmpl_building_sprite(80, 10, 50, -25) } 
-
-spriteset(THIS_ID(spriteset_3), "sprites/graphics/industries/sugarrefinery.pcx") { tmpl_building_sprite(150, 10, 88, -56) } 
-
-spriteset(THIS_ID(spriteset_4), "sprites/graphics/industries/sugarrefinery.pcx") { tmpl_building_sprite(220, 10, 88, -58) } 
+//large round tank
+spriteset(THIS_ID(spriteset_1), "sprites/graphics/industries/sugarrefinery.png") { tmpl_building_sprite(10, 10, 50, -23) } 
+//cone silo
+spriteset(THIS_ID(spriteset_2), "sprites/graphics/industries/sugarrefinery.png") { tmpl_building_sprite(80, 10, 50, -25) } 
+//large rectangular building
+spriteset(THIS_ID(spriteset_3), "sprites/graphics/industries/sugarrefinery.png") { tmpl_building_sprite(150, 10, 88, -56) } 
+//4 large silos
+spriteset(THIS_ID(spriteset_4), "sprites/graphics/industries/sugarrefinery.png") { tmpl_building_sprite(220, 10, 88, -58) } 
+//small brick gatehouse
+spriteset(THIS_ID(spriteset_5), "sprites/graphics/industries/sugarrefinery.png") { tmpl_building_sprite(290, 10, 88, -58) } 
+//brick warehouse with 2 large chimneys
+spriteset(THIS_ID(spriteset_6), "sprites/graphics/industries/sugarrefinery.png") { tmpl_building_sprite(360, 10, 88, -58) } 
+//brick storage yard
+spriteset(THIS_ID(spriteset_7), "sprites/graphics/industries/sugarrefinery.png") { tmpl_building_sprite(430, 10, 88, -58) } 
+//lime processor stack
+spriteset(THIS_ID(spriteset_8), "sprites/graphics/industries/sugarrefinery.png") { tmpl_building_sprite(500, 10, 88, -58) } 
 
 SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_1), THIS_ID(spriteset_ground), THIS_ID(spriteset_1), 48)
 
@@ -27,7 +35,15 @@ SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_3), THIS_ID(spriteset_ground), THIS_ID(
 
 SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_4), THIS_ID(spriteset_ground), THIS_ID(spriteset_4), 48)
 
-spritelayout THIS_ID(spritelayout_5) {
+SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_5), THIS_ID(spriteset_ground), THIS_ID(spriteset_5), 48)
+
+SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_6), THIS_ID(spriteset_ground), THIS_ID(spriteset_6), 48)
+
+SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_7), THIS_ID(spriteset_ground), THIS_ID(spriteset_7), 48)
+
+SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_8), THIS_ID(spriteset_ground), THIS_ID(spriteset_8), 48)
+
+spritelayout THIS_ID(spritelayout_0) {
 	ground {
 		sprite: THIS_ID(spriteset_ground);
 		recolour_mode: RECOLOUR_REMAP;
@@ -37,27 +53,22 @@ spritelayout THIS_ID(spritelayout_5) {
 
 switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_1), relative_pos) {
 	relative_coord(0, 0): THIS_ID(spritelayout_4);
-	relative_coord(0, 1): THIS_ID(spritelayout_3);
-	relative_coord(1, 0): THIS_ID(spritelayout_4);
-	relative_coord(1, 1): THIS_ID(spritelayout_2);
-	relative_coord(2, 0): THIS_ID(spritelayout_4);
-	relative_coord(2, 1): THIS_ID(spritelayout_1);
-	THIS_ID(spritelayout_5);
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_2), relative_pos) {
-	relative_coord(0, 0): THIS_ID(spritelayout_4);
 	relative_coord(0, 1): THIS_ID(spritelayout_4);
 	relative_coord(0, 2): THIS_ID(spritelayout_4);
-	relative_coord(1, 0): THIS_ID(spritelayout_3);
-	relative_coord(1, 1): THIS_ID(spritelayout_2);
+	relative_coord(1, 0): THIS_ID(spritelayout_8);
+	relative_coord(1, 1): THIS_ID(spritelayout_3);
 	relative_coord(1, 2): THIS_ID(spritelayout_1);
-	THIS_ID(spritelayout_5);
+	relative_coord(2, 0): THIS_ID(spritelayout_6);
+	relative_coord(2, 1): THIS_ID(spritelayout_0);
+	relative_coord(2, 2): THIS_ID(spritelayout_2);
+	relative_coord(3, 0): THIS_ID(spritelayout_7);
+	relative_coord(3, 1): THIS_ID(spritelayout_7);
+	relative_coord(3, 2): THIS_ID(spritelayout_5);
+	THIS_ID(spritelayout_0);
 }
 
 switch(FEAT_INDUSTRYTILES, PARENT, THIS_ID(layout), layout_num) {
 	1: THIS_ID(layout_1);
-	2: THIS_ID(layout_2);
 	THIS_ID(spritelayout_5);
 }
 
@@ -90,21 +101,17 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile), 214) {
 tilelayout tilelayout_sugar_refinery_1 {
 	0, 0: THIS_ID(tile);
 	0, 1: THIS_ID(tile);
-	1, 0: THIS_ID(tile);
-	1, 1: THIS_ID(tile);
-	2, 0: THIS_ID(tile);
-	2, 1: THIS_ID(tile);
-}
-
-tilelayout tilelayout_sugar_refinery_2 {
-	0, 0: THIS_ID(tile);
-	0, 1: THIS_ID(tile);
 	0, 2: THIS_ID(tile);
 	1, 0: THIS_ID(tile);
 	1, 1: THIS_ID(tile);
 	1, 2: THIS_ID(tile);
+	2, 0: THIS_ID(tile);
+	2, 1: THIS_ID(tile);
+	2, 2: THIS_ID(tile);
+	3, 0: THIS_ID(tile);
+	3, 1: THIS_ID(tile);
+	3, 2: THIS_ID(tile);
 }
-
 
 /* *************************************************
  * Definition of the industry
@@ -149,7 +156,6 @@ item(FEAT_INDUSTRIES, sugar_refinery, 19) {
 		substitute:             0;
 		layouts: [
 				tilelayout_sugar_refinery_1,
-				tilelayout_sugar_refinery_2
 			];
 		life_type:              4;
 		name:                   string(STR_IND_SUGAR_REFINERY);
