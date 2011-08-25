@@ -54,10 +54,10 @@ switch(FEAT_INDUSTRYTILES, PARENT, THIS_ID(tile_spritelayout), layout_num) {
  * Definition of the industry tile and its callbacks
  * *************************************************/
 
-TILE_DISALLOW_NEARBY_CLASS(tile_nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_IND_DISALLOW_UNSUITABLE, return CB_RESULT_IND_ALLOW_LOCATION)
+TILE_DISALLOW_NEARBY_CLASS(tile_nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
 TILE_ALLOW_PLAYER         (tile_player_check,                                                            THIS_ID(tile_nearby_industry))
-TILE_DISALLOW_SLOPES      (tile_flat_check,                           CB_RESULT_IND_DISALLOW_UNSUITABLE, THIS_ID(tile_player_check))
-TILE_DISALLOW_TERRAIN     (tile_desert_check,    TILETYPE_DESERT,     CB_RESULT_IND_DISALLOW_UNSUITABLE, THIS_ID(tile_flat_check))
+TILE_DISALLOW_SLOPES      (tile_flat_check,                           CB_RESULT_LOCATION_DISALLOW, THIS_ID(tile_player_check))
+TILE_DISALLOW_TERRAIN     (tile_desert_check,    TILETYPE_DESERT,     CB_RESULT_LOCATION_DISALLOW, THIS_ID(tile_flat_check))
 TILE_CHECK_HEIGHT         (tile_location_check,  0, snowline_height,  THIS_ID(tile_desert_check),        return string(STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE))
 
 item(FEAT_INDUSTRYTILES, THIS_ID(tile), 160) {
@@ -106,11 +106,11 @@ tilelayout tilelayout_arable_farm_3 {
 
 #define THIS_STR_EXTRA_SUPPLIES        STR_EXTRA_FARM_SUPPLIES
 
-CHECK_NEARBY_CLUSTER(arable_farm,    10, 36, 1, 2, return CB_RESULT_IND_DISALLOW_UNSUITABLE, return CB_RESULT_IND_ALLOW_LOCATION)
-CHECK_INCOMPATIBLE  (grain_mill,     16, CB_RESULT_IND_DISALLOW_UNSUITABLE, THIS_ID(arable_farm))
-CHECK_INCOMPATIBLE  (brewery,        16, CB_RESULT_IND_DISALLOW_UNSUITABLE, THIS_ID(grain_mill))
-CHECK_INCOMPATIBLE  (sugar_refinery, 16, CB_RESULT_IND_DISALLOW_UNSUITABLE, THIS_ID(brewery))
-CHECK_INCOMPATIBLE  (biorefinery,    16, CB_RESULT_IND_DISALLOW_UNSUITABLE, THIS_ID(sugar_refinery))
+CHECK_NEARBY_CLUSTER(arable_farm,    10, 36, 1, 2, return CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
+CHECK_INCOMPATIBLE  (grain_mill,     16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(arable_farm))
+CHECK_INCOMPATIBLE  (brewery,        16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(grain_mill))
+CHECK_INCOMPATIBLE  (sugar_refinery, 16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(brewery))
+CHECK_INCOMPATIBLE  (biorefinery,    16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(sugar_refinery))
 CHECK_FOUNDER       (THIS_ID(biorefinery))
 
 SWITCH_COLOUR_SCHEME1(THIS_ID(colour))

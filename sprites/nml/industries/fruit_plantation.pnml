@@ -5108,7 +5108,7 @@ spritelayout THIS_ID(tile_house_spritelayout) {
  * Definition of the industry tiles and their callbacks
  * ***************************************************/
  
-TILE_DISALLOW_NEARBY_CLASS(tile_plantation_nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_IND_DISALLOW_UNSUITABLE,      return CB_RESULT_IND_ALLOW_LOCATION)
+TILE_DISALLOW_NEARBY_CLASS(tile_plantation_nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW,      return CB_RESULT_LOCATION_ALLOW)
 TILE_ALLOW_PLAYER         (tile_plantation_player_check,                                                                 THIS_ID(tile_plantation_nearby_industry))
 TILE_CHECK_WATER          (tile_plantation_water_check,                          string(STR_ERR_LOCATION_NOT_ON_WATER),  THIS_ID(tile_plantation_player_check))
 TILE_CHECK_HEIGHT         (tile_plantation_location_check,  0, snowline_height,  THIS_ID(tile_plantation_water_check),   return string(STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE))
@@ -5129,7 +5129,7 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_plantation), 207) {
 
 
 
-TILE_DISALLOW_NEARBY_CLASS(tile_house_nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_IND_DISALLOW_UNSUITABLE,      return CB_RESULT_IND_ALLOW_LOCATION)
+TILE_DISALLOW_NEARBY_CLASS(tile_house_nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW,      return CB_RESULT_LOCATION_ALLOW)
 TILE_ALLOW_PLAYER         (tile_house_player_check,                                                                 THIS_ID(tile_house_nearby_industry))
 TILE_CHECK_WATER          (tile_house_water_check,                          string(STR_ERR_LOCATION_NOT_ON_WATER),  THIS_ID(tile_house_player_check))
 TILE_CHECK_HEIGHT         (tile_house_location_check,  0, snowline_height,  THIS_ID(tile_house_water_check),   return string(STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE))
@@ -5210,8 +5210,8 @@ tilelayout tilelayout_5807_4 {
 
 #define THIS_STR_EXTRA_SUPPLIES        STR_EXTRA_FARM_SUPPLIES
 
-CHECK_NEARBY_CLUSTER(fruit_plantation, 10, 36, 1, 2, return CB_RESULT_IND_DISALLOW_UNSUITABLE, return CB_RESULT_IND_ALLOW_LOCATION)
-CHECK_INCOMPATIBLE  (brewery,          16, CB_RESULT_IND_DISALLOW_UNSUITABLE, THIS_ID(fruit_plantation))
+CHECK_NEARBY_CLUSTER(fruit_plantation, 10, 36, 1, 2, return CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
+CHECK_INCOMPATIBLE  (brewery,          16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(fruit_plantation))
 CHECK_FOUNDER       (THIS_ID(brewery))
 
 SWITCH_COLOUR_SCHEME1(THIS_ID(colour))

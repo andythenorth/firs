@@ -79,7 +79,7 @@ switch(FEAT_INDUSTRYTILES, PARENT, THIS_ID(tile_spritelayout), layout_num) {
  * *************************************************/
 
 /* Allow players to build it also on snow and in the desert */
-TILE_DISALLOW_NEARBY_CLASS(tile_nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_IND_DISALLOW_UNSUITABLE,           return CB_RESULT_IND_ALLOW_LOCATION)
+TILE_DISALLOW_NEARBY_CLASS(tile_nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW,           return CB_RESULT_LOCATION_ALLOW)
 TILE_ALLOW_PLAYER         (tile_player_check,                                                                      THIS_ID(tile_nearby_industry))
 TILE_CHECK_HEIGHT         (tile_height_check,    0, snowline_height,  THIS_ID(tile_player_check),                  return string(STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE))
 TILE_DISALLOW_TERRAIN     (tile_desert_check,    TILETYPE_DESERT,     string(STR_ERR_LOCATION_NOT_IN_DESERT),      THIS_ID(tile_height_check))
@@ -142,10 +142,10 @@ tilelayout tilelayout_mixed_farm_3 {
 
 #define THIS_STR_EXTRA_SUPPLIES        STR_EXTRA_FARM_SUPPLIES
 
-CHECK_NEARBY_CLUSTER(mixed_farm,     10, 36, 1, 2, return CB_RESULT_IND_DISALLOW_UNSUITABLE, return CB_RESULT_IND_ALLOW_LOCATION)
-CHECK_INCOMPATIBLE  (stockyard,      16, CB_RESULT_IND_DISALLOW_UNSUITABLE, THIS_ID(mixed_farm))
-CHECK_INCOMPATIBLE  (textile_mill,   16, CB_RESULT_IND_DISALLOW_UNSUITABLE, THIS_ID(stockyard))
-CHECK_INCOMPATIBLE  (plastics_plant, 16, CB_RESULT_IND_DISALLOW_UNSUITABLE, THIS_ID(textile_mill))
+CHECK_NEARBY_CLUSTER(mixed_farm,     10, 36, 1, 2, return CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
+CHECK_INCOMPATIBLE  (stockyard,      16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(mixed_farm))
+CHECK_INCOMPATIBLE  (textile_mill,   16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(stockyard))
+CHECK_INCOMPATIBLE  (plastics_plant, 16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(textile_mill))
 CHECK_FOUNDER       (THIS_ID(plastics_plant))
 
 SWITCH_COLOUR_SCHEME1(THIS_ID(colour))

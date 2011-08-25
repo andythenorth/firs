@@ -138,9 +138,9 @@ switch(FEAT_INDUSTRYTILES, PARENT, THIS_ID(layout), layout_num) {
  * Definition of the industry tile and its callbacks
  * *************************************************/
 
-TILE_DISALLOW_NEARBY_CLASS(tile_nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_IND_DISALLOW_UNSUITABLE, return CB_RESULT_IND_ALLOW_LOCATION)
+TILE_DISALLOW_NEARBY_CLASS(tile_nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
 TILE_ALLOW_PLAYER         (tile_player_check,                                                            THIS_ID(tile_nearby_industry))
-TILE_DISALLOW_SLOPES      (tile_location_check,                       CB_RESULT_IND_DISALLOW_UNSUITABLE, THIS_ID(tile_player_check))
+TILE_DISALLOW_SLOPES      (tile_location_check,                       CB_RESULT_LOCATION_DISALLOW, THIS_ID(tile_player_check))
 
 /* tile with tanks */
 
@@ -249,8 +249,8 @@ tilelayout tilelayout_plastics_plant_3 {
 #define THIS_MIN_YEAR 1931
 
 
-CHECK_INCOMPATIBLE  (plastics_plant, 56, CB_RESULT_IND_DISALLOW_UNSUITABLE, return CB_RESULT_IND_ALLOW_LOCATION)
-CHECK_INCOMPATIBLE  (mixed_farm, 16, CB_RESULT_IND_DISALLOW_UNSUITABLE, THIS_ID(plastics_plant))
+CHECK_INCOMPATIBLE  (plastics_plant, 56, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
+CHECK_INCOMPATIBLE  (mixed_farm, 16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(plastics_plant))
 CHECK_FOUNDER       (THIS_ID(mixed_farm))
 
 SWITCH_COLOUR_SCHEME2(THIS_ID(colour))

@@ -15,8 +15,8 @@
  * name:         Name of this switch
  * mindistance:  Minimum distance from coast
  * maxdistance:  Maximum distance from coast
- * errtext:      deny construction: text for error message or CB_RESULT_IND_DISALLOW_UNSUITABLE
- * next:         allow construction: name of next switch or "return CB_RESULT_IND_ALLOW_LOCATION"
+ * errtext:      deny construction: text for error message or CB_RESULT_LOCATION_DISALLOW
+ * next:         allow construction: name of next switch or "return CB_RESULT_LOCATION_ALLOW"
  */
 #define CHECK_COAST_DISTANCE(name, mindistance, maxdistance, errtext, next) \
 switch (FEAT_INDUSTRIES, SELF, THIS_ID(name), water_distance) { \
@@ -34,8 +34,8 @@ switch (FEAT_INDUSTRIES, SELF, THIS_ID(name), water_distance) { \
  * related:      name of industry to check
  * mindistance:  minimum required separation
  * maxdistance:  maximum allowed separation
- * next:         allow construction: name of next or "return CB_RESULT_IND_ALLOW_LOCATION"
- * errtext:      deny construction: text for error message or "return CB_RESULT_IND_DISALLOW_UNSUITABLE"
+ * next:         allow construction: name of next or "return CB_RESULT_LOCATION_ALLOW"
+ * errtext:      deny construction: text for error message or "return CB_RESULT_LOCATION_DISALLOW"
  */
 
 #define CHECK_NEARBY_CLUSTER(related, mindistance, maxdistance, mult, div, errtext, next) \
@@ -58,8 +58,8 @@ switch (FEAT_INDUSTRIES, SELF, THIS_ID(related), \
  * Parameters:
  * incompatible: name of conflicting industry
  * distance:     minimum required separation
- * errtext:      return value: text for error message or CB_RESULT_IND_DISALLOW_UNSUITABLE
- * next:         name of next switch or "return CB_RESULT_IND_ALLOW_LOCATION"
+ * errtext:      return value: text for error message or CB_RESULT_LOCATION_DISALLOW
+ * next:         name of next switch or "return CB_RESULT_LOCATION_ALLOW"
  */
 
 #define CHECK_INCOMPATIBLE(incompatible, distance, errtext, next) \
@@ -78,7 +78,7 @@ switch (FEAT_INDUSTRIES, SELF, THIS_ID(incompatible), industry_distance(incompat
  *
  * Parameters:
  * switchname:   name of this switch. Suggested: town_distance
- * next          name of next switch or "return CB_RESULT_IND_ALLOW_LOCATION"
+ * next          name of next switch or "return CB_RESULT_LOCATION_ALLOW"
  * mindistance   minimum distance to town centre
  * maxdistance   maximum distance to town centre
  */
@@ -87,7 +87,7 @@ switch (FEAT_INDUSTRIES, SELF, THIS_ID(incompatible), industry_distance(incompat
 #define CHECK_TOWN_DISTANCE(name, mindistance, maxdistance, next) \
 switch (FEAT_INDUSTRIES, SELF, THIS_ID(name), town_euclidean_dist(0, 0)) { \
 	mindistance .. maxdistance: next; \
-	return CB_RESULT_IND_DISALLOW_UNSUITABLE; \
+	return CB_RESULT_LOCATION_DISALLOW; \
 }
 
 /*
@@ -99,7 +99,7 @@ switch (FEAT_INDUSTRIES, SELF, THIS_ID(name), town_euclidean_dist(0, 0)) { \
  * switch name:  THIS_ID(check_location)
  *
  * Parameters:
- * next          name of next switch or "return CB_RESULT_IND_ALLOW_LOCATION"
+ * next          name of next switch or "return CB_RESULT_LOCATION_ALLOW"
  */
 
 /* founder == FOUNDER_GAME means founded by the game, 0 .. 15 are player companies */
@@ -109,6 +109,6 @@ switch (FEAT_INDUSTRIES, SELF, THIS_ID(check_location), ( \
 			(extra_callback_info2 == IND_CREATION_PROSPECT) \
 			) \
 		) { \
-	1: return CB_RESULT_IND_ALLOW_LOCATION; \
+	1: return CB_RESULT_LOCATION_ALLOW; \
 	next; \
 }

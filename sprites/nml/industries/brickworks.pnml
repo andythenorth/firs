@@ -111,9 +111,9 @@ switch(FEAT_INDUSTRYTILES, PARENT, THIS_ID(layout), layout_num) {
 
 /* Sand depot tile */
 
-TILE_DISALLOW_NEARBY_CLASS(nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_IND_DISALLOW_UNSUITABLE, return CB_RESULT_IND_ALLOW_LOCATION)
+TILE_DISALLOW_NEARBY_CLASS(nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
 TILE_ALLOW_PLAYER         (player_check,                                                            THIS_ID(nearby_industry))
-TILE_DISALLOW_SLOPES      (location_check,                       CB_RESULT_IND_DISALLOW_UNSUITABLE, THIS_ID(player_check))
+TILE_DISALLOW_SLOPES      (location_check,                       CB_RESULT_LOCATION_DISALLOW, THIS_ID(player_check))
 
 item(FEAT_INDUSTRYTILES, THIS_ID(tile_sand), 229) {
 	property {
@@ -229,10 +229,10 @@ tilelayout tilelayout_brick_works_3 {
 /* extra text template */
 #define THIS_STR_EXTRA_TEXT       STR_EXTRA_BRICKWORKS
 
-CHECK_INCOMPATIBLE  (brick_works, 56, CB_RESULT_IND_DISALLOW_UNSUITABLE, return CB_RESULT_IND_ALLOW_LOCATION)
-CHECK_INCOMPATIBLE  (coal_mine,   16, CB_RESULT_IND_DISALLOW_UNSUITABLE, THIS_ID(brick_works))
-CHECK_INCOMPATIBLE  (quarry,      16, CB_RESULT_IND_DISALLOW_UNSUITABLE, THIS_ID(coal_mine))
-CHECK_INCOMPATIBLE  (clay_pit,    16, CB_RESULT_IND_DISALLOW_UNSUITABLE, THIS_ID(quarry))
+CHECK_INCOMPATIBLE  (brick_works, 56, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
+CHECK_INCOMPATIBLE  (coal_mine,   16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(brick_works))
+CHECK_INCOMPATIBLE  (quarry,      16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(coal_mine))
+CHECK_INCOMPATIBLE  (clay_pit,    16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(quarry))
 CHECK_FOUNDER       (THIS_ID(clay_pit))
 
 SWITCH_COLOUR_SCHEME1(THIS_ID(colour))

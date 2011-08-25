@@ -25,7 +25,7 @@ switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout), relative_pos) {
  * Definition of the industry tile and its callbacks
  * *************************************************/
 
-TILE_DISALLOW_NEARBY_CLASS(tile_nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_IND_DISALLOW_UNSUITABLE, return CB_RESULT_IND_ALLOW_LOCATION)
+TILE_DISALLOW_NEARBY_CLASS(tile_nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
 TILE_ALLOW_PLAYER         (tile_location_check,                                                          THIS_ID(tile_nearby_industry))
 
 item(FEAT_INDUSTRYTILES, THIS_ID(tile), 202) {
@@ -60,7 +60,7 @@ tilelayout tilelayout_recycling_depot_1 {
 /* availability years */
 #define THIS_MIN_YEAR 1998
 
-CHECK_INCOMPATIBLE  (recycling_depot, 16, CB_RESULT_IND_DISALLOW_UNSUITABLE, return CB_RESULT_IND_ALLOW_LOCATION)
+CHECK_INCOMPATIBLE  (recycling_depot, 16, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
 CHECK_TOWN_DISTANCE (town_distance,    0, 256, THIS_ID(recycling_depot))
 CHECK_FOUNDER       (THIS_ID(town_distance))
 

@@ -826,10 +826,10 @@ switch(FEAT_INDUSTRYTILES, PARENT, THIS_ID(layout), layout_num) {
  * Definition of the industry tile and its callbacks
  * *************************************************/
 
-TILE_DISALLOW_NEARBY_CLASS(tile1_nearby_industry,  TILE_CLASS_INDUSTRY, CB_RESULT_IND_DISALLOW_UNSUITABLE, return CB_RESULT_IND_ALLOW_LOCATION)
+TILE_DISALLOW_NEARBY_CLASS(tile1_nearby_industry,  TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
 TILE_ALLOW_PLAYER         (tile1_player_check,                                                             THIS_ID(tile1_nearby_industry))
-TILE_DISALLOW_TERRAIN     (tile1_disallow_terrain, TILETYPE_DESERT,     CB_RESULT_IND_DISALLOW_UNSUITABLE, THIS_ID(tile1_player_check))
-TILE_DISALLOW_SLOPES      (tile1_location_check,                        CB_RESULT_IND_DISALLOW_UNSUITABLE, THIS_ID(tile1_disallow_terrain))
+TILE_DISALLOW_TERRAIN     (tile1_disallow_terrain, TILETYPE_DESERT,     CB_RESULT_LOCATION_DISALLOW, THIS_ID(tile1_player_check))
+TILE_DISALLOW_SLOPES      (tile1_location_check,                        CB_RESULT_LOCATION_DISALLOW, THIS_ID(tile1_disallow_terrain))
 
 item(FEAT_INDUSTRYTILES, THIS_ID(tile), 189) {
 	property {
@@ -926,9 +926,9 @@ tilelayout tilelayout_clay_pit_2 {
 
 #define THIS_STR_EXTRA_SUPPLIES        STR_EXTRA_ENGINEERING_SUPPLIES
 
-CHECK_INCOMPATIBLE  (paper_mill,   16, CB_RESULT_IND_DISALLOW_UNSUITABLE, return CB_RESULT_IND_ALLOW_LOCATION)
-CHECK_INCOMPATIBLE  (cement_plant, 16, CB_RESULT_IND_DISALLOW_UNSUITABLE, THIS_ID(paper_mill))
-CHECK_INCOMPATIBLE  (brick_works,  16, CB_RESULT_IND_DISALLOW_UNSUITABLE, THIS_ID(cement_plant))
+CHECK_INCOMPATIBLE  (paper_mill,   16, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
+CHECK_INCOMPATIBLE  (cement_plant, 16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(paper_mill))
+CHECK_INCOMPATIBLE  (brick_works,  16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(cement_plant))
 CHECK_FOUNDER       (THIS_ID(brick_works))
 
 SWITCH_COLOUR_SCHEME1(THIS_ID(colour))

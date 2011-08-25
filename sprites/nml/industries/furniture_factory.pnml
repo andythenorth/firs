@@ -125,9 +125,9 @@ switch(FEAT_INDUSTRYTILES, PARENT, THIS_ID(tile1_layout), layout_num) {
  * Definition of the industry tile and its callbacks
  * *************************************************/
 
-TILE_DISALLOW_NEARBY_CLASS(tile1_nearby_industry,  TILE_CLASS_INDUSTRY, CB_RESULT_IND_DISALLOW_UNSUITABLE, return CB_RESULT_IND_ALLOW_LOCATION)
+TILE_DISALLOW_NEARBY_CLASS(tile1_nearby_industry,  TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
 TILE_ALLOW_PLAYER         (tile1_player_check,                                                             THIS_ID(tile1_nearby_industry))
-TILE_DISALLOW_SLOPES      (tile1_location_check,                        CB_RESULT_IND_DISALLOW_UNSUITABLE, THIS_ID(tile1_player_check))
+TILE_DISALLOW_SLOPES      (tile1_location_check,                        CB_RESULT_LOCATION_DISALLOW, THIS_ID(tile1_player_check))
 
 item(FEAT_INDUSTRYTILES, THIS_ID(tile), 184) {
 	property {
@@ -223,7 +223,7 @@ tilelayout tilelayout_furniture_factory_5 {
 /* availability years */
 #define THIS_MIN_YEAR 1840
 
-CHECK_INCOMPATIBLE  (furniture_factory, 56, CB_RESULT_IND_DISALLOW_UNSUITABLE, return CB_RESULT_IND_ALLOW_LOCATION)
+CHECK_INCOMPATIBLE  (furniture_factory, 56, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
 CHECK_FOUNDER       (THIS_ID(furniture_factory))
 
 SWITCH_COLOUR_SCHEME1(THIS_ID(colour))

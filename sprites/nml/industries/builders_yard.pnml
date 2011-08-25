@@ -60,7 +60,7 @@ GROUNDSPRITE_SWITCH(THIS_ID(ground_switch), THIS_ID(layout))
  * Definition of the industry tile and its callbacks
  * *************************************************/
 
-TILE_DISALLOW_NEARBY_CLASS(nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_IND_DISALLOW_UNSUITABLE, return CB_RESULT_IND_ALLOW_LOCATION)
+TILE_DISALLOW_NEARBY_CLASS(nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
 TILE_ALLOW_PLAYER         (terrain_check,                                                           THIS_ID(nearby_industry))
 
 item(FEAT_INDUSTRYTILES, THIS_ID(tile), 164) {
@@ -103,7 +103,7 @@ tilelayout tilelayout_builders_yard_2 {
 
 #include "../templates/check_availability.pnml"
 
-CHECK_TOWN_DISTANCE (town_distance,  0, 64, return CB_RESULT_IND_ALLOW_LOCATION)
+CHECK_TOWN_DISTANCE (town_distance,  0, 64, return CB_RESULT_LOCATION_ALLOW)
 CHECK_FOUNDER       (THIS_ID(town_distance))
 
 item(FEAT_INDUSTRIES, builders_yard, 63) {

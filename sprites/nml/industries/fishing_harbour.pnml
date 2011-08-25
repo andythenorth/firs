@@ -864,10 +864,10 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_1), 195) {
 }
 
 /* It must not be a flat tile */
-TILE_CHECK_FLAT      (tile2_flat_check, return CB_RESULT_IND_DISALLOW_UNSUITABLE, return CB_RESULT_IND_ALLOW_LOCATION)
+TILE_CHECK_FLAT      (tile2_flat_check, return CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
 
 /* We allow on sea shores and on normal slopes - but not rivers and canals */
-TILE_CHECK_WATERCLASS(tile2_land_check,     WATER_CLASS_NONE, THIS_ID(tile2_flat_check), return CB_RESULT_IND_DISALLOW_UNSUITABLE)
+TILE_CHECK_WATERCLASS(tile2_land_check,     WATER_CLASS_NONE, THIS_ID(tile2_flat_check), return CB_RESULT_LOCATION_DISALLOW)
 TILE_CHECK_WATERCLASS(tile2_location_check, WATER_CLASS_SEA,  THIS_ID(tile2_flat_check), THIS_ID(tile2_land_check))
 
 item(FEAT_INDUSTRYTILES, THIS_ID(tile_2), 196) {
@@ -991,7 +991,7 @@ tilelayout tilelayout_fishing_harbour_5 {
 #define THIS_STR_DEBUG_TEXT       STR_EXTRA_TEXT_DEBUG_SECONDARY
 
 
-CHECK_NEARBY_CLUSTER(fishing_grounds, 16, 60, 5, 4, return CB_RESULT_IND_DISALLOW_UNSUITABLE, return CB_RESULT_IND_ALLOW_LOCATION)
+CHECK_NEARBY_CLUSTER(fishing_grounds, 16, 60, 5, 4, return CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
 CHECK_FOUNDER       (THIS_ID(fishing_grounds))
 
 SWITCH_COLOUR_SCHEME1(THIS_ID(colour))

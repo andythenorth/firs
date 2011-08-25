@@ -60,8 +60,8 @@ switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(tile1_layout1_road_check),
 			nearby_tile_class( 1,  0) == TILE_CLASS_ROAD ||
 			nearby_tile_class( 1,  1) == TILE_CLASS_ROAD
 			) ) {
-	1: return CB_RESULT_IND_ALLOW_LOCATION;
-	return CB_RESULT_IND_DISALLOW_UNSUITABLE;
+	1: return CB_RESULT_LOCATION_ALLOW;
+	return CB_RESULT_LOCATION_DISALLOW;
 }
 switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(tile1_layout2_road_check),
 			(
@@ -72,17 +72,17 @@ switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(tile1_layout2_road_check),
 			nearby_tile_class(-1,  0) == TILE_CLASS_ROAD ||
 			nearby_tile_class( 2,  0) == TILE_CLASS_ROAD
 			) ) {
-	1: return CB_RESULT_IND_ALLOW_LOCATION;
-	return CB_RESULT_IND_DISALLOW_UNSUITABLE;
+	1: return CB_RESULT_LOCATION_ALLOW;
+	return CB_RESULT_LOCATION_DISALLOW;
 }
 switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(tile1_layout_check), (extra_callback_info2 & 255)) {
 	0: THIS_ID(tile1_layout1_road_check);
 	1: THIS_ID(tile1_layout2_road_check);
-	return CB_RESULT_IND_DISALLOW_UNSUITABLE;
+	return CB_RESULT_LOCATION_DISALLOW;
 }
 
 TILE_ALLOW_PLAYER         (tile1_player_check,                                      THIS_ID(tile1_layout_check))
-TILE_DISALLOW_SLOPES      (tile1_location_check, CB_RESULT_IND_DISALLOW_UNSUITABLE, THIS_ID(tile1_player_check))
+TILE_DISALLOW_SLOPES      (tile1_location_check, CB_RESULT_LOCATION_DISALLOW, THIS_ID(tile1_player_check))
 
 item(FEAT_INDUSTRYTILES, THIS_ID(tile), 203) {
 	property {

@@ -228,9 +228,9 @@ switch(FEAT_INDUSTRYTILES, PARENT, THIS_ID(layout), layout_num) {
  * Definition of the industry tile and its callbacks
  * *************************************************/
 
-TILE_DISALLOW_NEARBY_CLASS(nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_IND_DISALLOW_UNSUITABLE, return CB_RESULT_IND_ALLOW_LOCATION)
+TILE_DISALLOW_NEARBY_CLASS(nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
 TILE_ALLOW_PLAYER         (player_check,                                                            THIS_ID(nearby_industry))
-TILE_DISALLOW_SLOPES      (location_check,                       CB_RESULT_IND_DISALLOW_UNSUITABLE, THIS_ID(player_check))
+TILE_DISALLOW_SLOPES      (location_check,                       CB_RESULT_LOCATION_DISALLOW, THIS_ID(player_check))
 
 switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(anim_control), (extra_callback_info1 & 7)) {
 	0: return 0;
@@ -381,8 +381,8 @@ tilelayout tilelayout_dairy_7 {
 #define THIS_MIN_YEAR 1892
 
 
-CHECK_INCOMPATIBLE  (dairy,        56, CB_RESULT_IND_DISALLOW_UNSUITABLE, return CB_RESULT_IND_ALLOW_LOCATION)
-CHECK_INCOMPATIBLE  (dairy_farm,   16, CB_RESULT_IND_DISALLOW_UNSUITABLE, THIS_ID(dairy))
+CHECK_INCOMPATIBLE  (dairy,        56, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
+CHECK_INCOMPATIBLE  (dairy_farm,   16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(dairy))
 CHECK_TOWN_DISTANCE (town_distance, 0, 64, THIS_ID(dairy_farm))
 CHECK_FOUNDER       (THIS_ID(town_distance))
 

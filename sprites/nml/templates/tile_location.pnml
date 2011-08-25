@@ -20,11 +20,11 @@
  * where 
  *    name:       is the name of the switch which WILL be expanded by THIS_ID(name)
  *    <params>:   depend on the template
- *    error_text: is a string or CB_RESULT_IND_DISALLOW_UNSUITABLE
+ *    error_text: is a string or CB_RESULT_LOCATION_DISALLOW
  *    if_positive, if_negative, if_not_allowed, if_allowed:
  *                is the name of the next switch or a return value like
- *                "return CB_RESULT_IND_DISALLOW_UNSUITABLE" or
- *                "return CB_RESULT_IND_ALLOW_LOCATION"
+ *                "return CB_RESULT_LOCATION_DISALLOW" or
+ *                "return CB_RESULT_LOCATION_ALLOW"
  *
  * List of templates:
  * TILE_CHECK_HEIGHT         (name, minh, maxh,  inrange, outrange)
@@ -54,7 +54,7 @@
  * maxh:         Maximum height to check for
  * inrange:      choice when in range:     name of next switch or return <value>
  * outrange:     choice when out of range: name of next switch or return <value>
- *        where <value> is a string, CB_RESULT_IND_DISALLOW_UNSUITABLE or CB_RESULT_IND_ALLOW_LOCATION
+ *        where <value> is a string, CB_RESULT_LOCATION_DISALLOW or CB_RESULT_LOCATION_ALLOW
  */
 
 /* uses more efficient code for (nearby_tile_height(0,0) <= maxh) && (nearby_tile_height(0,0) >= minh) */
@@ -75,7 +75,7 @@ switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(name), UCMP(nearby_tile_height(0, 0) - 
  * class:        Water class to check for
  * yes:          choice when present:     name of next switch or return <value>
  * no:           choice when not present: name of next switch or return <value>
- *        where <value> is a string, CB_RESULT_IND_DISALLOW_UNSUITABLE or CB_RESULT_IND_ALLOW_LOCATION
+ *        where <value> is a string, CB_RESULT_LOCATION_DISALLOW or CB_RESULT_LOCATION_ALLOW
  */
 
 #define TILE_CHECK_WATERCLASS(name, class, yes, no) \
@@ -94,7 +94,7 @@ switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(name), nearby_tile_water_class(0,0) == 
  * name:         Name of this switch
  * water:        water tile: name of next switch or return <value>
  * land:         land tile:  name of next switch or return <value>
- *        where <value> is a string, CB_RESULT_IND_DISALLOW_UNSUITABLE or CB_RESULT_IND_ALLOW_LOCATION
+ *        where <value> is a string, CB_RESULT_LOCATION_DISALLOW or CB_RESULT_LOCATION_ALLOW
  */
 
 #define TILE_CHECK_WATER(name, water, land) \
@@ -111,8 +111,8 @@ switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(name), nearby_tile_is_water(0, 0)) { \
  *
  * Parameters:
  * name:         Name of this switch
- * errtext:      deny construction: text for error message or CB_RESULT_IND_DISALLOW_UNSUITABLE
- * next:         allow construction: name of next switch or "return CB_RESULT_IND_ALLOW_LOCATION"
+ * errtext:      deny construction: text for error message or CB_RESULT_LOCATION_DISALLOW
+ * next:         allow construction: name of next switch or "return CB_RESULT_LOCATION_ALLOW"
  */
 
 #define TILE_DISALLOW_COAST(name, errtext, next) \
@@ -130,8 +130,8 @@ switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(name), nearby_tile_is_water(0, 0)) { \
  * Parameters:
  * name:         Name of this switch
  * class:        nearby tile type (TILETYPE_DESERT or similar)
- * errtext:      deny construction: text for error message or CB_RESULT_IND_DISALLOW_UNSUITABLE
- * next:         allow construction: name of next switch or "return CB_RESULT_IND_ALLOW_LOCATION"
+ * errtext:      deny construction: text for error message or CB_RESULT_LOCATION_DISALLOW
+ * next:         allow construction: name of next switch or "return CB_RESULT_LOCATION_ALLOW"
  */
 
 #define TILE_DISALLOW_TERRAIN(name, terraintype, errtext, next) \
@@ -159,8 +159,8 @@ switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(name), \
  * Parameters:
  * name:         Name of this switch
  * class:        nearby tile class
- * errtext:      deny construction: text for error message or CB_RESULT_IND_DISALLOW_UNSUITABLE
- * next:         allow construction: name of next switch or "return CB_RESULT_IND_ALLOW_LOCATION"
+ * errtext:      deny construction: text for error message or CB_RESULT_LOCATION_DISALLOW
+ * next:         allow construction: name of next switch or "return CB_RESULT_LOCATION_ALLOW"
  */
 
 #define TILE_DISALLOW_NEARBY_CLASS(name, class, errtext, next) \
@@ -186,7 +186,7 @@ switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(name), \
  *
  * Parameters:
  * name          name of this switch
- * next          name of next switch or "return CB_RESULT_IND_ALLOW_LOCATION"
+ * next          name of next switch or "return CB_RESULT_LOCATION_ALLOW"
  */
 
 /* founder == FOUNDER_GAME means founded by the game, 0 .. 15 are player companies */
@@ -196,7 +196,7 @@ switch (FEAT_INDUSTRYTILES, PARENT, THIS_ID(name), ( \
 			(((extra_callback_info2 & 0xFF00) >> 8) == IND_CREATION_PROSPECT) \
 			) \
 		) { \
-	1: return CB_RESULT_IND_ALLOW_LOCATION; \
+	1: return CB_RESULT_LOCATION_ALLOW; \
 	next; \
 }
 
@@ -210,7 +210,7 @@ switch (FEAT_INDUSTRYTILES, PARENT, THIS_ID(name), ( \
  * name:         Name of this switch
  * flat:         flat tile:    name of next switch or return <value>
  * sloped:       sloped tile:  name of next switch or return <value>
- *        where <value> is a string, CB_RESULT_IND_DISALLOW_UNSUITABLE or CB_RESULT_IND_ALLOW_LOCATION
+ *        where <value> is a string, CB_RESULT_LOCATION_DISALLOW or CB_RESULT_LOCATION_ALLOW
  */
 
 #define TILE_CHECK_FLAT(name, flat, sloped) \
@@ -227,8 +227,8 @@ switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(name), nearby_tile_slope(0,0) == SLOPE_
  *
  * Parameters:
  * name          name of this switch
- * errtext:      deny construction: text for error message or CB_RESULT_IND_DISALLOW_UNSUITABLE
- * next          name of next switch or "return CB_RESULT_IND_ALLOW_LOCATION"
+ * errtext:      deny construction: text for error message or CB_RESULT_LOCATION_DISALLOW
+ * next          name of next switch or "return CB_RESULT_LOCATION_ALLOW"
  */
 
 #define TILE_DISALLOW_STEEP_SLOPE(name, errtext, next) \
@@ -245,8 +245,8 @@ switch (FEAT_INDUSTRYTILES, SELF, THIS_ID(name), nearby_tile_slope(0,0) & bitmas
  *
  * Parameters:
  * name          name of this switch
- * errtext:      deny construction: text for error message or CB_RESULT_IND_DISALLOW_UNSUITABLE
- * next          name of next switch or "return CB_RESULT_IND_ALLOW_LOCATION"
+ * errtext:      deny construction: text for error message or CB_RESULT_LOCATION_DISALLOW
+ * next          name of next switch or "return CB_RESULT_LOCATION_ALLOW"
  */
 
 #define TILE_DISALLOW_SLOPES(name, errtext, next) \
