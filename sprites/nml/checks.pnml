@@ -1,9 +1,11 @@
-if ((ttd_platform != PLATFORM_OPENTTD)) {
-	error(FATAL, USED_WITH, "OpenTTD");
+//TODO: add check for debug parameter to disable the checks below
+
+/* Version for long date string codes */
+if (ttd_platform != PLATFORM_OPENTTD || openttd_version < version_openttd(1, 2, 0, 22780)) {
+	error(FATAL, REQUIRES_OPENTTD, string(STR_MIN_OPENTTD_VERSION));
 	exit;
 }
-//TODO: add check for debug parameter to disable the checks below
-//TODO: add check for OpenTTD version
+
 
 if (grf_future_status("Meo\81")) {
 	error(FATAL, string(STR_ERR_INCOMPATIBLE_SET_NEW_CARGOS));
@@ -81,7 +83,7 @@ if (grf_future_status("SZ\13D")) {
 	error(FATAL, string(STR_ERR_INCOMPATIBLE_SET_OIL_WELL_DECREASE));
 }
 if (grf_future_status("EH\01\01")) {
-	if ((openttd_version <= 285232758)) {
+	if (openttd_version <= version_openttd(1,1,0,20086)) {
 		error(FATAL, string(STR_ERR_INCOMPATIBLE_SET_EXPERT_HARD_INDUSTRIES));
 	}
 }
