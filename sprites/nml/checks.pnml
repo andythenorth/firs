@@ -2,7 +2,7 @@
 
 /* Version for long date string codes */
 if (ttd_platform != PLATFORM_OPENTTD || openttd_version < version_openttd(1, 2, 0, 22780)) {
-	error(FATAL, REQUIRES_OPENTTD, string(STR_MIN_OPENTTD_VERSION));
+	error(FATAL, REQUIRES_OPENTTD, string(STR_ERR_OPENTTD_VERSION));
 	exit;
 }
 
