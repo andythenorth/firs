@@ -38,10 +38,10 @@ spriteset(THIS_ID(spriteset_14)) { 	[220, 110, 64, 39, -27, -12, 9, "sprites/gra
 spriteset(THIS_ID(spriteset_15)) { 	[290, 110, 64, 39, -15, -11, 9, "sprites/graphics/industries/fishingharbour.png"] }
 
 spriteset(THIS_ID(spriteset_16)) { 	[360, 110, 64, 39, -45, -15, 9, "sprites/graphics/industries/fishingharbour.png"] }
-
+// ramp part 1
 spriteset(THIS_ID(spriteset_17), "sprites/graphics/industries/fishingharbour.png") { tmpl_building_sprite(440, 110, 74, -26) }
-
-spriteset(THIS_ID(spriteset_18)) { 	[510, 110, 64, 74, 1, -42, 9, "sprites/graphics/industries/fishingharbour.png"] }
+// ramp part 2
+spriteset(THIS_ID(spriteset_18)) { 	[510, 110, 64, 74, -31, -42, 9, "sprites/graphics/industries/fishingharbour.png"] }
 
 spriteset(THIS_ID(spriteset_19), "sprites/graphics/industries/fishingharbour.png") { tmpl_building_sprite(360, 10, 39, 0) }
 
@@ -593,8 +593,8 @@ spritelayout THIS_ID(spritelayout_25) {
 		sprite: THIS_ID(spriteset_14);
 		recolour_mode: RECOLOUR_REMAP;
 		palette: 0;
-		xoffset: 2;
-		yoffset: 11;
+		xoffset: 12;
+		yoffset: 18;
 	}
 }
 
