@@ -23,145 +23,147 @@ spriteset(THIS_ID(spriteset_8), "sprites/graphics/industries/fertiliserplant.pcx
 spriteset(THIS_ID(spriteset_9), "sprites/graphics/industries/fertiliserplant.pcx") { tmpl_building_sprite(640, 10, 66, -35) } 
 spriteset(THIS_ID(spriteset_10), "sprites/graphics/industries/fertiliserplant.pcx") { tmpl_building_sprite(710, 10, 66, -35) } 
 
-SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_2), THIS_ID(spriteset_ground), THIS_ID(spriteset_2), 48)
+SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_large_building_left), THIS_ID(spriteset_ground), THIS_ID(spriteset_2), 48)
 
-SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_3), THIS_ID(spriteset_ground), THIS_ID(spriteset_3), 48)
+SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_large_building_centre), THIS_ID(spriteset_ground), THIS_ID(spriteset_3), 48)
 
-SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_4), THIS_ID(spriteset_ground), THIS_ID(spriteset_4), 48)
+SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_large_building_right), THIS_ID(spriteset_ground), THIS_ID(spriteset_4), 48)
 
-SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_5), THIS_ID(spriteset_ground), THIS_ID(spriteset_5), 48)
+SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_large_store_left), THIS_ID(spriteset_ground), THIS_ID(spriteset_5), 48)
 
-SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_6), THIS_ID(spriteset_ground), THIS_ID(spriteset_6), 48)
+SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_large_store_right), THIS_ID(spriteset_ground), THIS_ID(spriteset_6), 48)
 
-SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_7), THIS_ID(spriteset_ground), THIS_ID(spriteset_7), 48)
+SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_spherical_tanks), THIS_ID(spriteset_ground), THIS_ID(spriteset_7), 48)
 
-SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_8), THIS_ID(spriteset_ground), THIS_ID(spriteset_8), 48)
+SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_cylinder_tanks), THIS_ID(spriteset_ground), THIS_ID(spriteset_8), 48)
 
-SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_9), THIS_ID(spriteset_ground), THIS_ID(spriteset_9), 48)
+SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_office), THIS_ID(spriteset_ground), THIS_ID(spriteset_9), 48)
 
-SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_10), THIS_ID(spriteset_ground), THIS_ID(spriteset_10), 48)
+SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_forklift), THIS_ID(spriteset_ground), THIS_ID(spriteset_10), 48)
 
-SPRITELAYOUT_NORMAL_BEGIN(THIS_ID(spritelayout_1_anim), THIS_ID(spriteset_ground), THIS_ID(spriteset_1), 7)
+SPRITELAYOUT_NORMAL_BEGIN(THIS_ID(spritelayout_chimney_anim), THIS_ID(spriteset_ground), THIS_ID(spriteset_1), 7)
 	BUILDING_SMOKE_BIG(5, 0, 69)
 	BUILDING_SMOKE_BIG(9, 0, 69)
 SPRITELAYOUT_END
 
+SPRITELAYOUT_GROUND_NORMAL_SNOW(THIS_ID(spritelayout_concrete), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground))
+
 switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_1), relative_pos) {
-	relative_coord(0, 0): THIS_ID(spritelayout_1_anim);
-	relative_coord(0, 1): THIS_ID(spritelayout_4);
-	relative_coord(0, 2): THIS_ID(spritelayout_8);
-	relative_coord(1, 0): THIS_ID(spritelayout_6);
-	relative_coord(1, 1): THIS_ID(spritelayout_3);
-	relative_coord(1, 2): THIS_ID(spritelayout_9);
-	relative_coord(2, 0): THIS_ID(spritelayout_5);
-	relative_coord(2, 1): THIS_ID(spritelayout_2);
-	relative_coord(2, 2): THIS_ID(spritelayout_7);
-	relative_coord(3, 0): THIS_ID(spritelayout_10);
-	relative_coord(3, 2): THIS_ID(spritelayout_7);
-	THIS_ID(spritelayout_8);
+	relative_coord(0, 0): THIS_ID(spritelayout_chimney_anim);
+	relative_coord(0, 1): THIS_ID(spritelayout_large_building_right);
+	relative_coord(0, 2): THIS_ID(spritelayout_cylinder_tanks);
+	relative_coord(1, 0): THIS_ID(spritelayout_large_store_right);
+	relative_coord(1, 1): THIS_ID(spritelayout_large_building_centre);
+	relative_coord(1, 2): THIS_ID(spritelayout_office);
+	relative_coord(2, 0): THIS_ID(spritelayout_large_store_left);
+	relative_coord(2, 1): THIS_ID(spritelayout_large_building_left);
+	relative_coord(2, 2): THIS_ID(spritelayout_spherical_tanks);
+	relative_coord(3, 0): THIS_ID(spritelayout_forklift);
+	relative_coord(3, 2): THIS_ID(spritelayout_spherical_tanks);
+	THIS_ID(spritelayout_cylinder_tanks);
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_2), relative_pos) {
-	relative_coord(0, 0): THIS_ID(spritelayout_1_anim);
-	relative_coord(0, 1): THIS_ID(spritelayout_6);
-	relative_coord(1, 0): THIS_ID(spritelayout_4);
-	relative_coord(1, 1): THIS_ID(spritelayout_5);
-	relative_coord(2, 0): THIS_ID(spritelayout_3);
-	relative_coord(2, 1): THIS_ID(spritelayout_10);
-	relative_coord(3, 0): THIS_ID(spritelayout_2);
-	relative_coord(3, 1): THIS_ID(spritelayout_7);
-	relative_coord(4, 0): THIS_ID(spritelayout_8);
-	relative_coord(4, 1): THIS_ID(spritelayout_9);
-	THIS_ID(spritelayout_8);
+	relative_coord(0, 0): THIS_ID(spritelayout_chimney_anim);
+	relative_coord(0, 1): THIS_ID(spritelayout_large_store_right);
+	relative_coord(1, 0): THIS_ID(spritelayout_large_building_right);
+	relative_coord(1, 1): THIS_ID(spritelayout_large_store_left);
+	relative_coord(2, 0): THIS_ID(spritelayout_large_building_centre);
+	relative_coord(2, 1): THIS_ID(spritelayout_forklift);
+	relative_coord(3, 0): THIS_ID(spritelayout_large_building_left);
+	relative_coord(3, 1): THIS_ID(spritelayout_spherical_tanks);
+	relative_coord(4, 0): THIS_ID(spritelayout_cylinder_tanks);
+	relative_coord(4, 1): THIS_ID(spritelayout_office);
+	THIS_ID(spritelayout_cylinder_tanks);
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_3), relative_pos) {
-	relative_coord(0, 1): THIS_ID(spritelayout_4);
-	relative_coord(1, 0): THIS_ID(spritelayout_8);
-	relative_coord(1, 1): THIS_ID(spritelayout_3);
-	relative_coord(1, 2): THIS_ID(spritelayout_7);
-	relative_coord(1, 3): THIS_ID(spritelayout_6);
-	relative_coord(2, 0): THIS_ID(spritelayout_9);
-	relative_coord(2, 1): THIS_ID(spritelayout_2);
-	relative_coord(2, 2): THIS_ID(spritelayout_1_anim);
-	relative_coord(2, 3): THIS_ID(spritelayout_5);
-	THIS_ID(spritelayout_8);
+	relative_coord(0, 1): THIS_ID(spritelayout_large_building_right);
+	relative_coord(1, 0): THIS_ID(spritelayout_cylinder_tanks);
+	relative_coord(1, 1): THIS_ID(spritelayout_large_building_centre);
+	relative_coord(1, 2): THIS_ID(spritelayout_spherical_tanks);
+	relative_coord(1, 3): THIS_ID(spritelayout_large_store_right);
+	relative_coord(2, 0): THIS_ID(spritelayout_office);
+	relative_coord(2, 1): THIS_ID(spritelayout_large_building_left);
+	relative_coord(2, 2): THIS_ID(spritelayout_chimney_anim);
+	relative_coord(2, 3): THIS_ID(spritelayout_large_store_left);
+	THIS_ID(spritelayout_cylinder_tanks);
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_4), relative_pos) {
-	relative_coord(0, 1): THIS_ID(spritelayout_4);
-	relative_coord(1, 0): THIS_ID(spritelayout_1_anim);
-	relative_coord(1, 1): THIS_ID(spritelayout_3);
-	relative_coord(1, 2): THIS_ID(spritelayout_6);
-	relative_coord(1, 3): THIS_ID(spritelayout_8);
-	relative_coord(2, 0): THIS_ID(spritelayout_7);
-	relative_coord(2, 1): THIS_ID(spritelayout_2);
-	relative_coord(2, 2): THIS_ID(spritelayout_5);
-	relative_coord(2, 3): THIS_ID(spritelayout_9);
-	THIS_ID(spritelayout_8);
+	relative_coord(0, 1): THIS_ID(spritelayout_large_building_right);
+	relative_coord(1, 0): THIS_ID(spritelayout_chimney_anim);
+	relative_coord(1, 1): THIS_ID(spritelayout_large_building_centre);
+	relative_coord(1, 2): THIS_ID(spritelayout_large_store_right);
+	relative_coord(1, 3): THIS_ID(spritelayout_cylinder_tanks);
+	relative_coord(2, 0): THIS_ID(spritelayout_spherical_tanks);
+	relative_coord(2, 1): THIS_ID(spritelayout_large_building_left);
+	relative_coord(2, 2): THIS_ID(spritelayout_large_store_left);
+	relative_coord(2, 3): THIS_ID(spritelayout_office);
+	THIS_ID(spritelayout_cylinder_tanks);
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_5), relative_pos) {
-	relative_coord(0, 0): THIS_ID(spritelayout_4);
-	relative_coord(0, 2): THIS_ID(spritelayout_7);
-	relative_coord(1, 0): THIS_ID(spritelayout_3);
-	relative_coord(1, 2): THIS_ID(spritelayout_7);
-	relative_coord(2, 0): THIS_ID(spritelayout_2);
-	relative_coord(2, 2): THIS_ID(spritelayout_6);
-	relative_coord(3, 0): THIS_ID(spritelayout_1_anim);
-	relative_coord(3, 2): THIS_ID(spritelayout_5);
-	relative_coord(4, 0): THIS_ID(spritelayout_8);
-	relative_coord(4, 2): THIS_ID(spritelayout_6);
-	relative_coord(5, 0): THIS_ID(spritelayout_8);
-	relative_coord(5, 2): THIS_ID(spritelayout_5);
-	relative_coord(6, 0): THIS_ID(spritelayout_9);
-	relative_coord(6, 2): THIS_ID(spritelayout_10);
-	THIS_ID(spritelayout_8);
+	relative_coord(0, 0): THIS_ID(spritelayout_large_building_right);
+	relative_coord(0, 2): THIS_ID(spritelayout_spherical_tanks);
+	relative_coord(1, 0): THIS_ID(spritelayout_large_building_centre);
+	relative_coord(1, 2): THIS_ID(spritelayout_spherical_tanks);
+	relative_coord(2, 0): THIS_ID(spritelayout_large_building_left);
+	relative_coord(2, 2): THIS_ID(spritelayout_large_store_right);
+	relative_coord(3, 0): THIS_ID(spritelayout_chimney_anim);
+	relative_coord(3, 2): THIS_ID(spritelayout_large_store_left);
+	relative_coord(4, 0): THIS_ID(spritelayout_cylinder_tanks);
+	relative_coord(4, 2): THIS_ID(spritelayout_large_store_right);
+	relative_coord(5, 0): THIS_ID(spritelayout_cylinder_tanks);
+	relative_coord(5, 2): THIS_ID(spritelayout_large_store_left);
+	relative_coord(6, 0): THIS_ID(spritelayout_office);
+	relative_coord(6, 2): THIS_ID(spritelayout_forklift);
+	THIS_ID(spritelayout_cylinder_tanks);
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_6), relative_pos) {
-	relative_coord(0, 0): THIS_ID(spritelayout_4);
-	relative_coord(0, 2): THIS_ID(spritelayout_8);
-	relative_coord(0, 3): THIS_ID(spritelayout_8);
-	relative_coord(1, 0): THIS_ID(spritelayout_3);
-	relative_coord(1, 2): THIS_ID(spritelayout_6);
-	relative_coord(1, 3): THIS_ID(spritelayout_6);
-	relative_coord(2, 0): THIS_ID(spritelayout_2);
-	relative_coord(2, 2): THIS_ID(spritelayout_5);
-	relative_coord(2, 3): THIS_ID(spritelayout_5);
-	relative_coord(3, 0): THIS_ID(spritelayout_1_anim);
-	relative_coord(3, 2): THIS_ID(spritelayout_10);
-	relative_coord(4, 0): THIS_ID(spritelayout_7);
-	relative_coord(4, 2): THIS_ID(spritelayout_7);
-	relative_coord(4, 3): THIS_ID(spritelayout_9);
-	THIS_ID(spritelayout_8);
+	relative_coord(0, 0): THIS_ID(spritelayout_large_building_right);
+	relative_coord(0, 2): THIS_ID(spritelayout_cylinder_tanks);
+	relative_coord(0, 3): THIS_ID(spritelayout_cylinder_tanks);
+	relative_coord(1, 0): THIS_ID(spritelayout_large_building_centre);
+	relative_coord(1, 2): THIS_ID(spritelayout_large_store_right);
+	relative_coord(1, 3): THIS_ID(spritelayout_large_store_right);
+	relative_coord(2, 0): THIS_ID(spritelayout_large_building_left);
+	relative_coord(2, 2): THIS_ID(spritelayout_large_store_left);
+	relative_coord(2, 3): THIS_ID(spritelayout_large_store_left);
+	relative_coord(3, 0): THIS_ID(spritelayout_chimney_anim);
+	relative_coord(3, 2): THIS_ID(spritelayout_forklift);
+	relative_coord(4, 0): THIS_ID(spritelayout_spherical_tanks);
+	relative_coord(4, 2): THIS_ID(spritelayout_spherical_tanks);
+	relative_coord(4, 3): THIS_ID(spritelayout_office);
+	THIS_ID(spritelayout_cylinder_tanks);
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_7), relative_pos) {
-	relative_coord(0, 0): THIS_ID(spritelayout_4);
-	relative_coord(0, 1): THIS_ID(spritelayout_7);
-	relative_coord(0, 2): THIS_ID(spritelayout_1_anim);
-	relative_coord(0, 5): THIS_ID(spritelayout_8);
-	relative_coord(0, 6): THIS_ID(spritelayout_10);
-	relative_coord(1, 0): THIS_ID(spritelayout_3);
-	relative_coord(1, 1): THIS_ID(spritelayout_7);
-	relative_coord(1, 2): THIS_ID(spritelayout_6);
-	relative_coord(1, 5): THIS_ID(spritelayout_8);
-	relative_coord(1, 6): THIS_ID(spritelayout_6);
-	relative_coord(2, 0): THIS_ID(spritelayout_2);
-	relative_coord(2, 2): THIS_ID(spritelayout_5);
-	relative_coord(2, 5): THIS_ID(spritelayout_9);
-	relative_coord(2, 6): THIS_ID(spritelayout_5);
-	relative_coord(4, 0): THIS_ID(spritelayout_7);
-	relative_coord(4, 1): THIS_ID(spritelayout_7);
-	relative_coord(4, 2): THIS_ID(spritelayout_9);
-	relative_coord(4, 5): THIS_ID(spritelayout_8);
-	relative_coord(4, 6): THIS_ID(spritelayout_10);
-	relative_coord(5, 1): THIS_ID(spritelayout_7);
-	relative_coord(5, 2): THIS_ID(spritelayout_10);
-	relative_coord(5, 5): THIS_ID(spritelayout_8);
-	relative_coord(5, 6): THIS_ID(spritelayout_9);
-	THIS_ID(spritelayout_8);
+	relative_coord(0, 0): THIS_ID(spritelayout_large_building_right);
+	relative_coord(0, 1): THIS_ID(spritelayout_spherical_tanks);
+	relative_coord(0, 2): THIS_ID(spritelayout_chimney_anim);
+	relative_coord(0, 5): THIS_ID(spritelayout_cylinder_tanks);
+	relative_coord(0, 6): THIS_ID(spritelayout_forklift);
+	relative_coord(1, 0): THIS_ID(spritelayout_large_building_centre);
+	relative_coord(1, 1): THIS_ID(spritelayout_spherical_tanks);
+	relative_coord(1, 2): THIS_ID(spritelayout_large_store_right);
+	relative_coord(1, 5): THIS_ID(spritelayout_cylinder_tanks);
+	relative_coord(1, 6): THIS_ID(spritelayout_large_store_right);
+	relative_coord(2, 0): THIS_ID(spritelayout_large_building_left);
+	relative_coord(2, 2): THIS_ID(spritelayout_large_store_left);
+	relative_coord(2, 5): THIS_ID(spritelayout_office);
+	relative_coord(2, 6): THIS_ID(spritelayout_large_store_left);
+	relative_coord(4, 0): THIS_ID(spritelayout_spherical_tanks);
+	relative_coord(4, 1): THIS_ID(spritelayout_spherical_tanks);
+	relative_coord(4, 2): THIS_ID(spritelayout_office);
+	relative_coord(4, 5): THIS_ID(spritelayout_cylinder_tanks);
+	relative_coord(4, 6): THIS_ID(spritelayout_forklift);
+	relative_coord(5, 1): THIS_ID(spritelayout_spherical_tanks);
+	relative_coord(5, 2): THIS_ID(spritelayout_forklift);
+	relative_coord(5, 5): THIS_ID(spritelayout_cylinder_tanks);
+	relative_coord(5, 6): THIS_ID(spritelayout_office);
+	THIS_ID(spritelayout_cylinder_tanks);
 }
 
 switch(FEAT_INDUSTRYTILES, PARENT, THIS_ID(tile_spritelayout), layout_num) {
