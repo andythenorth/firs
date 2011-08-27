@@ -68,6 +68,11 @@ spriteset(THIS_ID(spriteset_8)) {
 	tmpl_building_sprite_filename(500, 10, 87, -56, "sprites/graphics/industries/plasticsplant_snow.png")
 }
 
+spriteset(THIS_ID(spriteset_9)) {
+	tmpl_building_sprite_filename(570, 10, 55, -24, "sprites/graphics/industries/plasticsplant.png")
+	tmpl_building_sprite_filename(570, 10, 55, -24, "sprites/graphics/industries/plasticsplant_snow.png")
+}
+
 SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_store_front), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_1), 32)
 
 SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_store_rear), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_2), 32)
@@ -84,6 +89,8 @@ SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_large_building_right), THIS_ID(spr
 
 SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_large_building_left), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_8), 52)
 
+SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_silos), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_9), 32)
+
 SPRITELAYOUT_GROUND_NORMAL_SNOW(THIS_ID(spritelayout_concrete), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground))
 
 switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_1), relative_pos) {
@@ -95,6 +102,7 @@ switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_1), relative_pos) {
 	relative_coord(1, 2): THIS_ID(spritelayout_concrete);
 	relative_coord(2, 0): THIS_ID(spritelayout_concrete);
 	relative_coord(2, 1): THIS_ID(spritelayout_large_building_right);
+	relative_coord(2, 2): THIS_ID(spritelayout_silos);
 	relative_coord(3, 1): THIS_ID(spritelayout_large_building_centre);
 	relative_coord(3, 2): THIS_ID(spritelayout_concrete);
 	relative_coord(4, 0): THIS_ID(spritelayout_tanks_rear);
@@ -105,7 +113,7 @@ switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_1), relative_pos) {
 
 switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_2), relative_pos) {
 	relative_coord(0, 1): THIS_ID(spritelayout_large_building_right);
-	relative_coord(0, 2): THIS_ID(spritelayout_tanks_rear);
+	relative_coord(0, 2): THIS_ID(spritelayout_silos);
 	relative_coord(1, 0): THIS_ID(spritelayout_large_building_left);
 	relative_coord(1, 1): THIS_ID(spritelayout_large_building_centre);
 	relative_coord(1, 2): THIS_ID(spritelayout_concrete);
@@ -123,6 +131,7 @@ switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_3), relative_pos) {
 	relative_coord(0, 1): THIS_ID(spritelayout_store_front);
 	relative_coord(0, 2): THIS_ID(spritelayout_concrete);
 	relative_coord(0, 3): THIS_ID(spritelayout_large_building_right);
+	relative_coord(0, 4): THIS_ID(spritelayout_silos);
 	relative_coord(1, 0): THIS_ID(spritelayout_store_rear);
 	relative_coord(1, 1): THIS_ID(spritelayout_store_front);
 	relative_coord(1, 2): THIS_ID(spritelayout_large_building_left);
@@ -192,7 +201,7 @@ tilelayout tilelayout_plastics_plant_1 {
 	1, 2: THIS_ID(tile);
 	2, 0: THIS_ID(tile);
 	2, 1: THIS_ID(tile);
-	2, 2: THIS_ID(tile_tanks);
+	2, 2: THIS_ID(tile);
 	3, 0: THIS_ID(tile);
 	3, 1: THIS_ID(tile);
 	3, 2: THIS_ID(tile);
@@ -204,7 +213,7 @@ tilelayout tilelayout_plastics_plant_1 {
 tilelayout tilelayout_plastics_plant_2 {
 	0, 0: THIS_ID(tile);
 	0, 1: THIS_ID(tile);
-	0, 2: THIS_ID(tile_tanks);
+	0, 2: THIS_ID(tile);
 	1, 0: THIS_ID(tile);
 	1, 1: THIS_ID(tile);
 	1, 2: THIS_ID(tile);
@@ -221,7 +230,7 @@ tilelayout tilelayout_plastics_plant_3 {
 	0, 1: THIS_ID(tile);
 	0, 2: THIS_ID(tile);
 	0, 3: THIS_ID(tile);
-	0, 4: THIS_ID(tile_tanks);
+	0, 4: THIS_ID(tile);
 	1, 0: THIS_ID(tile);
 	1, 1: THIS_ID(tile);
 	1, 2: THIS_ID(tile);
