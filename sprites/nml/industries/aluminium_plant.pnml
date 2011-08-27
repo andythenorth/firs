@@ -117,7 +117,7 @@ spritelayout THIS_ID(spritelayout_transformer) {
 	}
 }
 
-SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_concrete), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground_snow), spriteset_empty, 1)
+SPRITELAYOUT_GROUND_NORMAL_SNOW(THIS_ID(spritelayout_concrete), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground_snow))
 
 SPRITELAYOUT_NORMAL_SNOW_BEGIN(THIS_ID(spritelayout_chimney_anim), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground_snow), THIS_ID(spriteset_4), 7)
 	BUILDING_DARK_SMOKE_SMALL(5, 0, 64)
