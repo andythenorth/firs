@@ -15,58 +15,58 @@ spriteset(THIS_ID(spriteset_ground), "sprites/graphics/industries/groundtiles.pn
 }
 
 spriteset(THIS_ID(spriteset_1)) {
-	tmpl_building_sprite_filename(10, 10, 44, -13, "sprites/graphics/industries/meatpacker.pcx")
-	tmpl_building_sprite_filename(10, 10, 44, -13, "sprites/graphics/industries/meatpacker_snow.pcx")
+	tmpl_building_sprite_filename(10, 10, 44, -13, "sprites/graphics/industries/stockyard.png")
+	tmpl_building_sprite_filename(10, 10, 44, -13, "sprites/graphics/industries/stockyard_snow.png")
 }
 
 spriteset(THIS_ID(spriteset_2)) {
-	tmpl_building_sprite_filename(80, 10, 74, -43, "sprites/graphics/industries/meatpacker.pcx")
-	tmpl_building_sprite_filename(80, 10, 74, -43, "sprites/graphics/industries/meatpacker_snow.pcx")
+	tmpl_building_sprite_filename(80, 10, 74, -43, "sprites/graphics/industries/stockyard.png")
+	tmpl_building_sprite_filename(80, 10, 74, -43, "sprites/graphics/industries/stockyard_snow.png")
 }
 
 spriteset(THIS_ID(spriteset_3)) {
-	tmpl_building_sprite_filename(150, 10, 88, -57, "sprites/graphics/industries/meatpacker.pcx")
-	tmpl_building_sprite_filename(150, 10, 88, -57, "sprites/graphics/industries/meatpacker_snow.pcx")
+	tmpl_building_sprite_filename(150, 10, 88, -57, "sprites/graphics/industries/stockyard.png")
+	tmpl_building_sprite_filename(150, 10, 88, -57, "sprites/graphics/industries/stockyard_snow.png")
 }
 
 spriteset(THIS_ID(spriteset_4)) {
-	tmpl_building_sprite_filename(220, 10, 85, -54, "sprites/graphics/industries/meatpacker.pcx")
-	tmpl_building_sprite_filename(220, 10, 85, -54, "sprites/graphics/industries/meatpacker_snow.pcx")
+	tmpl_building_sprite_filename(220, 10, 85, -54, "sprites/graphics/industries/stockyard.png")
+	tmpl_building_sprite_filename(220, 10, 85, -54, "sprites/graphics/industries/stockyard_snow.png")
 }
 
 spriteset(THIS_ID(spriteset_5)) {
-	tmpl_building_sprite_filename(290, 10, 104, -73, "sprites/graphics/industries/meatpacker.pcx")
-	tmpl_building_sprite_filename(290, 10, 104, -73, "sprites/graphics/industries/meatpacker_snow.pcx")
+	tmpl_building_sprite_filename(290, 10, 104, -73, "sprites/graphics/industries/stockyard.png")
+	tmpl_building_sprite_filename(290, 10, 104, -73, "sprites/graphics/industries/stockyard_snow.png")
 }
 
 spriteset(THIS_ID(spriteset_6)) {
-	tmpl_building_sprite_filename(360, 10, 91, -60, "sprites/graphics/industries/meatpacker.pcx")
-	tmpl_building_sprite_filename(360, 10, 91, -60, "sprites/graphics/industries/meatpacker_snow.pcx")
+	tmpl_building_sprite_filename(360, 10, 91, -60, "sprites/graphics/industries/stockyard.png")
+	tmpl_building_sprite_filename(360, 10, 91, -60, "sprites/graphics/industries/stockyard_snow.png")
 }
 
 spriteset(THIS_ID(spriteset_7)) {
-	tmpl_building_sprite_filename(10, 10, 98, -67, "sprites/graphics/industries/meatpacker2.pcx")
-	tmpl_building_sprite_filename(10, 10, 98, -67, "sprites/graphics/industries/meatpacker_snow2.pcx")
+	tmpl_building_sprite_filename(430, 10, 98, -67, "sprites/graphics/industries/stockyard.png")
+	tmpl_building_sprite_filename(430, 10, 98, -67, "sprites/graphics/industries/stockyard_snow.png")
 }
 
 spriteset(THIS_ID(spriteset_8)) {
-	tmpl_building_sprite_filename(80, 10, 54, -23, "sprites/graphics/industries/meatpacker2.pcx")
-	tmpl_building_sprite_filename(80, 10, 54, -23, "sprites/graphics/industries/meatpacker_snow2.pcx")
+	tmpl_building_sprite_filename(500, 10, 54, -23, "sprites/graphics/industries/stockyard.png")
+	tmpl_building_sprite_filename(500, 10, 54, -23, "sprites/graphics/industries/stockyard_snow.png")
 }
 
 spriteset(THIS_ID(spriteset_9)) {
-	tmpl_building_sprite_filename(150, 10, 76, -45, "sprites/graphics/industries/meatpacker2.pcx")
-	tmpl_building_sprite_filename(150, 10, 76, -45, "sprites/graphics/industries/meatpacker_snow2.pcx")
+	tmpl_building_sprite_filename(570, 10, 76, -45, "sprites/graphics/industries/stockyard.png")
+	tmpl_building_sprite_filename(570, 10, 76, -45, "sprites/graphics/industries/stockyard_snow.png")
 }
 
 spriteset(THIS_ID(spriteset_10)) {
-	tmpl_building_sprite_filename(640, 10, 32, -1, "sprites/graphics/industries/meatpacker.pcx")
-	tmpl_building_sprite_filename(640, 10, 32, -1, "sprites/graphics/industries/meatpacker_snow.pcx")
+	tmpl_building_sprite_filename(640, 10, 32, -1, "sprites/graphics/industries/stockyard.png")
+	tmpl_building_sprite_filename(640, 10, 32, -1, "sprites/graphics/industries/stockyard_snow.png")
 }
 
 spriteset(THIS_ID(spriteset_11)) {
-	tmpl_building_sprite_filename(710, 10, 49, -18, "sprites/graphics/industries/meatpacker.pcx")
-	tmpl_building_sprite_filename(710, 10, 49, -18, "sprites/graphics/industries/meatpacker_snow.pcx")
+	tmpl_building_sprite_filename(710, 10, 49, -18, "sprites/graphics/industries/stockyard.png")
+	tmpl_building_sprite_filename(710, 10, 49, -18, "sprites/graphics/industries/stockyard_snow.png")
 }
 
 SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_1), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_1), 32)
