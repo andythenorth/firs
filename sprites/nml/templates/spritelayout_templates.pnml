@@ -182,3 +182,39 @@ spritelayout spritelayout_name { \
 
 #define SPRITELAYOUT_NORMAL(spritelayout_name, ground_sprite_normal, building_spriteset, building_zextent) \
 SPRITELAYOUT_NORMAL_BEGIN(spritelayout_name, ground_sprite_normal, building_spriteset, building_zextent) SPRITELAYOUT_END
+
+
+/* Defines a ground tile spritelayout for an industry tile with normal and snow sprites.
+ * This template requires that the spriteset defines the sprites in the specified order.
+ * 
+ * spritelayout_name    Name for the spritelayout block.
+ * ground_sprite_normal Ground sprite(normal).
+ * ground_sprite_snow   Ground sprite(snow).
+ */
+
+#define SPRITELAYOUT_GROUND_NORMAL_SNOW_BEGIN(spritelayout_name, ground_sprite_normal, ground_sprite_snow) \
+spritelayout spritelayout_name { \
+	ground { \
+		sprite: LOAD_TEMP(var_default_ground) != 0 ? LOAD_TEMP(var_default_ground) : GROUNDSPRITE_NORMAL; \
+		recolour_mode: RECOLOUR_REMAP; \
+		palette: PALETTE_USE_DEFAULT; \
+	} \
+	childsprite { \
+		sprite: ground_sprite_normal; \
+		recolour_mode: RECOLOUR_REMAP; \
+		palette: PALETTE_USE_DEFAULT; \
+		hide_sprite: terrain_type == TILETYPE_SNOW; \
+		always_draw: 1; \
+	} \
+ \
+	childsprite { \
+		sprite: ground_sprite_snow; \
+		recolour_mode: RECOLOUR_REMAP; \
+		palette: PALETTE_USE_DEFAULT; \
+		hide_sprite: terrain_type != TILETYPE_SNOW; \
+		always_draw: 1; \
+	}
+
+#define SPRITELAYOUT_GROUND_NORMAL_SNOW(spritelayout_name,  ground_sprite_normal, ground_sprite_snow) \
+SPRITELAYOUT_GROUND_NORMAL_SNOW_BEGIN(spritelayout_name,  ground_sprite_normal, ground_sprite_snow) SPRITELAYOUT_END
+
