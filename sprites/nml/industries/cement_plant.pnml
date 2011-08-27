@@ -15,27 +15,9 @@ spriteset(THIS_ID(spriteset_ground), "sprites/graphics/industries/groundtiles.pn
 	tmpl_ground_tile(80, 10)
 }
 
-/* *************************************************
- * clay depot tile
- * *************************************************/
+spriteset(THIS_ID(spriteset_clay), "sprites/graphics/industries/cementplant.png") { tmpl_ground_tile(80, 130) } 
+spriteset(THIS_ID(spriteset_stone), "sprites/graphics/industries/cementplant.png") { tmpl_ground_tile(150, 130) } 
 
-spriteset(THIS_ID(spriteset_clay), "sprites/graphics/industries/cementplant.png") { tmpl_ground_tile(150, 10) } 
-
-SPRITELAYOUT_NORMAL(THIS_ID(tile_clay_spritelayout), THIS_ID(spriteset_ground), THIS_ID(spriteset_clay), 8)
-
-/* *************************************************
- * stone depot tile
- * *************************************************/
-
-spriteset(THIS_ID(spriteset_stone), "sprites/graphics/industries/cementplant.png") { tmpl_ground_tile(220, 10) } 
-
-SPRITELAYOUT_NORMAL(THIS_ID(tile_stone_spritelayout), THIS_ID(spriteset_ground), THIS_ID(spriteset_stone), 8)
-
-/* *************************************************
- * (general) tile
- * *************************************************/
-
-/* ground spriteset defined above */
 spriteset(THIS_ID(spriteset_1),  "sprites/graphics/industries/cementplant.png") { tmpl_building_sprite( 80,  10, 113, -82) }
 spriteset(THIS_ID(spriteset_2),  "sprites/graphics/industries/cementplant.png") { tmpl_building_sprite(150,  10, 113, -82) }
 spriteset(THIS_ID(spriteset_3),  "sprites/graphics/industries/cementplant.png") { tmpl_building_sprite(220,  10, 113, -82) }
@@ -60,6 +42,10 @@ spriteset(THIS_ID(spriteset_8),  "sprites/graphics/industries/cementplant.png") 
 spriteset(THIS_ID(spriteset_9),  "sprites/graphics/industries/cementplant.png") { tmpl_building_sprite(640,  10, 113, -82) }
 spriteset(THIS_ID(spriteset_10), "sprites/graphics/industries/cementplant.png") { tmpl_building_sprite(710,  10, 113, -82) }
 spriteset(THIS_ID(spriteset_11), "sprites/graphics/industries/cementplant.png") { tmpl_building_sprite(780,  10, 113, -82) }
+
+SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_clay_staithe), THIS_ID(spriteset_ground), THIS_ID(spriteset_clay), 8)
+
+SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_stone_staithe), THIS_ID(spriteset_ground), THIS_ID(spriteset_stone), 8)
 
 SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_1), THIS_ID(spriteset_ground), THIS_ID(spriteset_1), 48)
 
@@ -105,8 +91,10 @@ switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_1), relative_pos) {
 	relative_coord(1, 2): THIS_ID(spritelayout_6);
 	relative_coord(2, 2): THIS_ID(spritelayout_5_anim);
 	relative_coord(3, 2): THIS_ID(spritelayout_4);
+	relative_coord(4, 0): THIS_ID(spritelayout_stone_staithe);
 	relative_coord(4, 2): THIS_ID(spritelayout_8);
 	relative_coord(4, 3): THIS_ID(spritelayout_7);
+	relative_coord(5, 0): THIS_ID(spritelayout_clay_staithe);
 	relative_coord(5, 1): THIS_ID(spritelayout_10);
 	relative_coord(5, 2): THIS_ID(spritelayout_9);
 	THIS_ID(spritelayout_11_anim);
@@ -126,6 +114,7 @@ switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_2), relative_pos) {
 	relative_coord(3, 1): THIS_ID(spritelayout_4);
 	relative_coord(3, 2): THIS_ID(spritelayout_10);
 	relative_coord(3, 3): THIS_ID(spritelayout_9);
+	relative_coord(3, 4): THIS_ID(spritelayout_stone_staithe);
 	THIS_ID(spritelayout_11_anim);
 }
 
@@ -134,8 +123,8 @@ switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_3), relative_pos) {
 	relative_coord(0, 1): THIS_ID(spritelayout_3);
 	relative_coord(0, 2): THIS_ID(spritelayout_6);
 	relative_coord(0, 3): THIS_ID(spritelayout_6);
-	relative_coord(0, 4): THIS_ID(spritelayout_1);
-	relative_coord(0, 5): THIS_ID(spritelayout_1);
+	relative_coord(0, 4): THIS_ID(spritelayout_stone_staithe);
+	relative_coord(0, 5): THIS_ID(spritelayout_clay_staithe);
 	relative_coord(1, 0): THIS_ID(spritelayout_2);
 	relative_coord(1, 1): THIS_ID(spritelayout_3);
 	relative_coord(1, 2): THIS_ID(spritelayout_5_anim);
@@ -166,8 +155,10 @@ switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_4), relative_pos) {
 	relative_coord(3, 0): THIS_ID(spritelayout_4);
 	relative_coord(3, 1): THIS_ID(spritelayout_4);
 	relative_coord(3, 2): THIS_ID(spritelayout_4);
+	relative_coord(4, 0): THIS_ID(spritelayout_stone_staithe);
 	relative_coord(4, 2): THIS_ID(spritelayout_8);
 	relative_coord(4, 3): THIS_ID(spritelayout_7);
+	relative_coord(5, 0): THIS_ID(spritelayout_clay_staithe);
 	relative_coord(5, 1): THIS_ID(spritelayout_10);
 	relative_coord(5, 2): THIS_ID(spritelayout_9);
 	THIS_ID(spritelayout_11_anim);
@@ -188,11 +179,12 @@ switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_5), relative_pos) {
 	relative_coord(3, 2): THIS_ID(spritelayout_5_anim);
 	relative_coord(4, 0): THIS_ID(spritelayout_4);
 	relative_coord(4, 1): THIS_ID(spritelayout_4);
-	relative_coord(4, 2): THIS_ID(spritelayout_4);
+	relative_coord(4, 2): THIS_ID(spritelayout_stone_staithe);
 	relative_coord(5, 1): THIS_ID(spritelayout_8);
 	relative_coord(5, 2): THIS_ID(spritelayout_7);
 	relative_coord(6, 0): THIS_ID(spritelayout_10);
 	relative_coord(6, 1): THIS_ID(spritelayout_9);
+	relative_coord(6, 2): THIS_ID(spritelayout_clay_staithe);
 	THIS_ID(spritelayout_11_anim);
 }
 
@@ -213,35 +205,8 @@ TILE_DISALLOW_NEARBY_CLASS(nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_LOCAT
 TILE_ALLOW_PLAYER         (player_check,                                                            THIS_ID(nearby_industry))
 TILE_DISALLOW_SLOPES      (location_check,                       CB_RESULT_LOCATION_DISALLOW, THIS_ID(player_check))
 
-/* clay tile */
 
-item(FEAT_INDUSTRYTILES, THIS_ID(tile_clay), 230) {
-	property {
-		substitute:       0;
-		accepted_cargos:  [[cargo_clay, 8]];
-		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
-	}
-	graphics {
-		tile_check: THIS_ID(location_check);
-		THIS_ID(tile_clay_spritelayout);
-	}
-}
-
-/* stone tile */
-
-item(FEAT_INDUSTRYTILES, THIS_ID(tile_stone), 232) {
-	property {
-		substitute:       0;
-		accepted_cargos:  [[cargo_clay, 8]];
-		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
-	}
-	graphics {
-		tile_check: THIS_ID(location_check);
-		THIS_ID(tile_stone_spritelayout);
-	}
-}
-
-/* General tile */
+/* tile */
 
 switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(tile1_anim_control), (extra_callback_info1 & 7)) {
 	0: return 0;
@@ -282,11 +247,11 @@ tilelayout tilelayout_cement_plant_1 {
 	1, 2: THIS_ID(tile);
 	2, 2: THIS_ID(tile);
 	3, 2: THIS_ID(tile);
-	4, 0: THIS_ID(tile_stone);
+	4, 0: THIS_ID(tile);
 	4, 1: THIS_ID(tile);
 	4, 2: THIS_ID(tile);
 	4, 3: THIS_ID(tile);
-	5, 0: THIS_ID(tile_clay);
+	5, 0: THIS_ID(tile);
 	5, 1: THIS_ID(tile);
 	5, 2: THIS_ID(tile);
 }
@@ -306,7 +271,7 @@ tilelayout tilelayout_cement_plant_2 {
 	3, 1: THIS_ID(tile);
 	3, 2: THIS_ID(tile);
 	3, 3: THIS_ID(tile);
-	3, 4: THIS_ID(tile_stone);
+	3, 4: THIS_ID(tile);
 }
 
 tilelayout tilelayout_cement_plant_3 {
@@ -314,8 +279,8 @@ tilelayout tilelayout_cement_plant_3 {
 	0, 1: THIS_ID(tile);
 	0, 2: THIS_ID(tile);
 	0, 3: THIS_ID(tile);
-	0, 4: THIS_ID(tile_stone);
-	0, 5: THIS_ID(tile_clay);
+	0, 4: THIS_ID(tile);
+	0, 5: THIS_ID(tile);
 	1, 0: THIS_ID(tile);
 	1, 1: THIS_ID(tile);
 	1, 2: THIS_ID(tile);
@@ -346,11 +311,11 @@ tilelayout tilelayout_cement_plant_4 {
 	3, 0: THIS_ID(tile);
 	3, 1: THIS_ID(tile);
 	3, 2: THIS_ID(tile);
-	4, 0: THIS_ID(tile_stone);
+	4, 0: THIS_ID(tile);
 	4, 1: THIS_ID(tile);
 	4, 2: THIS_ID(tile);
 	4, 3: THIS_ID(tile);
-	5, 0: THIS_ID(tile_clay);
+	5, 0: THIS_ID(tile);
 	5, 1: THIS_ID(tile);
 	5, 2: THIS_ID(tile);
 }
@@ -366,13 +331,13 @@ tilelayout tilelayout_cement_plant_5 {
 	3, 1: THIS_ID(tile);
 	4, 0: THIS_ID(tile);
 	4, 1: THIS_ID(tile);
-	4, 2: THIS_ID(tile_stone);
+	4, 2: THIS_ID(tile);
 	5, 0: THIS_ID(tile);
 	5, 1: THIS_ID(tile);
 	5, 2: THIS_ID(tile);
 	6, 0: THIS_ID(tile);
 	6, 1: THIS_ID(tile);
-	6, 2: THIS_ID(tile_clay);
+	6, 2: THIS_ID(tile);
 }
 
 /* *************************************************
