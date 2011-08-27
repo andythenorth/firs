@@ -14,17 +14,6 @@ spriteset(THIS_ID(spriteset_ground), "sprites/graphics/industries/groundtiles.pn
 }
 
 /* *************************************************
- * tile_tanks
- * *************************************************/
-
-spriteset(THIS_ID(spriteset_tanks)) {
-	tmpl_building_sprite_filename(10, 10, 54, -23, "sprites/graphics/industries/generictiles.pcx")
-	tmpl_building_sprite_filename(10, 10, 54, -23, "sprites/graphics/industries/generictiles.pcx")
-}
-
-SPRITELAYOUT_NORMAL(THIS_ID(tile_tanks_spritelayout), THIS_ID(spriteset_ground), THIS_ID(spriteset_tanks), 32)
-
-/* *************************************************
  * (general) tile
  * *************************************************/
 
@@ -159,20 +148,6 @@ switch(FEAT_INDUSTRYTILES, PARENT, THIS_ID(layout), layout_num) {
 TILE_DISALLOW_NEARBY_CLASS(tile_nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
 TILE_ALLOW_PLAYER         (tile_player_check,                                                            THIS_ID(tile_nearby_industry))
 TILE_DISALLOW_SLOPES      (tile_location_check,                       CB_RESULT_LOCATION_DISALLOW, THIS_ID(tile_player_check))
-
-/* tile with tanks */
-
-item(FEAT_INDUSTRYTILES, THIS_ID(tile_tanks), 227) {
-	property {
-		substitute:       0;
-		accepted_cargos:  [];
-		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
-	}
-	graphics {
-		tile_check: THIS_ID(tile_location_check);
-		THIS_ID(tile_tanks_spritelayout);
-	}
-}
 
 /* general tile */
 
