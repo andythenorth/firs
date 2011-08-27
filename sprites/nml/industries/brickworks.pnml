@@ -31,10 +31,10 @@ SPRITELAYOUT_NORMAL(THIS_ID(tile_clay_spritelayout), THIS_ID(spriteset_ground), 
  * *************************************************/
 
 /* also uses shared ground tile by all sprite layouts of this industry */
-spriteset(THIS_ID(spriteset_1), "sprites/graphics/industries/brickworks.pcx") { tmpl_building_sprite( 10, 10, 101, -64) } 
-spriteset(THIS_ID(spriteset_2), "sprites/graphics/industries/brickworks.pcx") { tmpl_building_sprite( 80, 10, 101, -59) } 
-spriteset(THIS_ID(spriteset_3), "sprites/graphics/industries/brickworks.pcx") { tmpl_building_sprite(150, 10, 101, -71) } 
-spriteset(THIS_ID(spriteset_4), "sprites/graphics/industries/brickworks.pcx") { tmpl_building_sprite(220, 10, 101, -69) } 
+spriteset(THIS_ID(spriteset_1), "sprites/graphics/industries/brickworks.png") { tmpl_building_sprite( 10, 10, 101, -64) } 
+spriteset(THIS_ID(spriteset_2), "sprites/graphics/industries/brickworks.png") { tmpl_building_sprite( 80, 10, 101, -59) } 
+spriteset(THIS_ID(spriteset_3), "sprites/graphics/industries/brickworks.png") { tmpl_building_sprite(150, 10, 101, -71) } 
+spriteset(THIS_ID(spriteset_4), "sprites/graphics/industries/brickworks.png") { tmpl_building_sprite(220, 10, 101, -69) } 
 
 SPRITELAYOUT_NORMAL_BEGIN(THIS_ID(spritelayout_1_anim), THIS_ID(spriteset_ground), THIS_ID(spriteset_1), 7)
 	building {
