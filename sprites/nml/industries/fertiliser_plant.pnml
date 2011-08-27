@@ -59,6 +59,7 @@ switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_1), relative_pos) {
 	relative_coord(2, 1): THIS_ID(spritelayout_large_building_left);
 	relative_coord(2, 2): THIS_ID(spritelayout_spherical_tanks);
 	relative_coord(3, 0): THIS_ID(spritelayout_forklift);
+	relative_coord(3, 1): THIS_ID(spritelayout_concrete);
 	relative_coord(3, 2): THIS_ID(spritelayout_spherical_tanks);
 	THIS_ID(spritelayout_cylinder_tanks);
 }
@@ -133,6 +134,7 @@ switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_6), relative_pos) {
 	relative_coord(2, 3): THIS_ID(spritelayout_large_store_left);
 	relative_coord(3, 0): THIS_ID(spritelayout_chimney_anim);
 	relative_coord(3, 2): THIS_ID(spritelayout_forklift);
+	relative_coord(3, 3): THIS_ID(spritelayout_concrete);
 	relative_coord(4, 0): THIS_ID(spritelayout_spherical_tanks);
 	relative_coord(4, 2): THIS_ID(spritelayout_spherical_tanks);
 	relative_coord(4, 3): THIS_ID(spritelayout_office);
@@ -151,6 +153,7 @@ switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_7), relative_pos) {
 	relative_coord(1, 5): THIS_ID(spritelayout_cylinder_tanks);
 	relative_coord(1, 6): THIS_ID(spritelayout_large_store_right);
 	relative_coord(2, 0): THIS_ID(spritelayout_large_building_left);
+	relative_coord(2, 1): THIS_ID(spritelayout_concrete);
 	relative_coord(2, 2): THIS_ID(spritelayout_large_store_left);
 	relative_coord(2, 5): THIS_ID(spritelayout_office);
 	relative_coord(2, 6): THIS_ID(spritelayout_large_store_left);
@@ -229,7 +232,7 @@ tilelayout tilelayout_fertiliser_plant_1 {
 	2, 1: THIS_ID(tile);
 	2, 2: THIS_ID(tile);
 	3, 0: THIS_ID(tile);
-	3, 1: tile_plain_concrete;
+	3, 1: THIS_ID(tile);
 	3, 2: THIS_ID(tile);
 }
 
@@ -299,7 +302,7 @@ tilelayout tilelayout_fertiliser_plant_6 {
 	2, 3: THIS_ID(tile);
 	3, 0: THIS_ID(tile);
 	3, 2: THIS_ID(tile);
-	3, 3: tile_plain_concrete;
+	3, 3: THIS_ID(tile);
 	4, 0: THIS_ID(tile);
 	4, 2: THIS_ID(tile);
 	4, 3: THIS_ID(tile);
@@ -317,7 +320,7 @@ tilelayout tilelayout_fertiliser_plant_7 {
 	1, 5: THIS_ID(tile);
 	1, 6: THIS_ID(tile);
 	2, 0: THIS_ID(tile);
-	2, 1: tile_plain_concrete;
+	2, 1: THIS_ID(tile);
 	2, 2: THIS_ID(tile);
 	2, 5: THIS_ID(tile);
 	2, 6: THIS_ID(tile);
