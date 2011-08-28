@@ -1,5 +1,26 @@
 
 ##grflangid 0x1F
+STR_GRF_DESC                                                                    :{ORANGE}FIRS Industry Replacement Set{}{BLACK}Door {SILVER}andythenorth{BLACK} en {SILVER}FooBar{BLACK}.{}{BLACK}'1,000 commits en tellende...'{BLACK}{}{}Website: {SILVER}www.tt-foundry.com/sets/FIRS{BLACK}.Licentie: {SILVER}GPL v2{}{BLACK}.Speciale dank aan {SILVER}Ammler{BLACK}, {SILVER}Core Xii{BLACK}, {SILVER}Irwe{BLACK}, {SILVER}planetmaker{BLACK} en {SILVER}Zephyris{}{BLACK}.Gebruikt delen van {SILVER}eGRVTS{BLACK}, {SILVER}ISR{BLACK} en {SILVER}OpenGFX{BLACK}.
+STR_GRF_NAME                                                                    :{TITLE}
+
+STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :{SILVER}Maximale afstand tot de kust in tegels voor visgebieden en baggermolens.
+STR_PARAM_DESC_DEBUG                                                            :Alleen voor ontwikkelaars.
+STR_PARAM_DESC_ECONOMIES                                                        :Uiteindelijk zal FIRS een keuze aan economieën hebben. Goederen en industrieën varieren in elke economie. Betalingen voor goederen verschillen ook in elke economie.{}{}{SILVER}Op dit moment is slechts één economie :)
+STR_PARAM_DESC_NEVER_CLOSE                                                      :Standaard zullen FIRS primaire industrieën nooit sluiten.{}Als sluiten van primaire industrieën is ingeschakeld zullen primaire industrieën sluiten zodra de produktie tot een laag niveau is gedaald (dit niveau varieert per industrie). {SILVER}'Primaire industrieën kunnen produktie verlagen' moet zijn ingeschakeld.
+STR_PARAM_DESC_NO_OPENINGS                                                      :Er zullen geen nieuwe industrieën gebouwd worden tijdens het spel.{}Spelers kunnen geen nieuwe industrieën financieren of proberen te bouwen.{}Alle industrieën worden door de generator gebouwd aan het begin van het spel (afhankelijk van de gebruikte instellingen van de kaart).
+STR_PARAM_DESC_PRIMARY_PRODUCTION_DECREASE                                      :Standaard zullen FIRS primaire industrieën hun produktie nooit verlagen.{}{}Als produktieverlaging voor primaire industrieën is ingeschakeld, is er een kans dat een industrie zijn produktie verlaagt als er in een maand geen hulpgoederen zijn geleverd. Bij een hoge produktie is de kans op produktieverlaging groter.
+STR_PARAM_DESC_SECONDARY_NEVER_CLOSE                                            :Standaard zullen FIRS secundaire industrieën nooit sluiten.{}{}Als sluiten van secundaire industrieën is ingeschakeld kunnen secundaire industrieën sluiten als er lange tijd geen vracht is getransporteerd.
+STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY                                   :Maximale afstand tot de kust in tegels voor zee-industrieën
+STR_PARAM_NAME_DEBUG                                                            :Laat debug-informatie zien
+STR_PARAM_NAME_ECONOMIES                                                        :Economie
+STR_PARAM_NAME_NEVER_CLOSE                                                      :Primaire industrieën kunnen sluiten
+STR_PARAM_NAME_NO_OPENINGS                                                      :Voorkom bouwen van nieuwe industrieën tijdens het spel
+STR_PARAM_NAME_PRIMARY_PRODUCTION_DECREASE                                      :Primaire industrieën kunnen produktie verlagen
+STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            :Secundaire industrieën kunnen sluiten
+STR_PARAM_VALUE_ECONOMIES_TEST_ECONOMY                                          :Test Economie
+STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0                                         :Geen limiet
+
+
 STR_CARGO_NAME_ALCOHOL                                                          :Alcohol
 STR_CARGO_NAME_BAUXITE                                                          :Bauxiet
 STR_CARGO_NAME_BUILDING_MATERIALS                                               :Bouwmaterialen
@@ -9,7 +30,7 @@ STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             
 STR_CARGO_NAME_FIBRES                                                           :Katoen
 STR_CARGO_NAME_FISH                                                             :Vis
 STR_CARGO_NAME_FARM_SUPPLIES                                                    :Landbouwhulpgoederen
-STR_CARGO_NAME_FRUITS                                                           :Fruit en Groente
+STR_CARGO_NAME_FRUITS                                                           :Fruit en groente
 STR_CARGO_NAME_LUMBER                                                           :Gezaagd hout
 STR_CARGO_NAME_METAL                                                            :Metaal
 STR_CARGO_NAME_MILK                                                             :Melk
@@ -22,95 +43,146 @@ STR_CARGO_NAME_STONE                                                            
 STR_CARGO_NAME_SUGARCANE                                                        :Suikerbieten
 STR_CARGO_NAME_UNIT_LUMBER                                                      :{WORD_S_TONNES} gezaagd hout
 STR_CARGO_NAME_WOOL                                                             :Wol
-STR_CARGO_UNIT_PETROL                                                           :{VOLUME} benzine
-STR_CARGO_UNIT_SUGAR_BEET                                                       :{WORD_S_TONNES} suikerbieten
+
 STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} alcohol
 STR_CARGO_UNIT_BAUXITE                                                          :{WORD_S_TONNES} bauxiet
 STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WORD_S_TONNES} bouwmaterialen
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} chemicaliën
 STR_CARGO_UNIT_CLAY                                                             :{WORD_S_TONNES} klei
+STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{WORD_S} kratten constructiehulpgoederen
 STR_CARGO_UNIT_FIBRES                                                           :{WORD_S_TONNES} katoen
 STR_CARGO_UNIT_FISH                                                             :{WORD_S_TONNES} vis
 STR_CARGO_UNIT_FMSP                                                             :{WORD_S} kratten landbouwhulpgoederen
-STR_CARGO_UNIT_FRUITS                                                           :{WORD_S_TONNES} fruit en Groente
+STR_CARGO_UNIT_FRUITS                                                           :{WORD_S_TONNES} fruit en groente
 STR_CARGO_UNIT_METAL                                                            :{WORD_S_TONNES} metaal
 STR_CARGO_UNIT_MILK                                                             :{VOLUME} melk
-STR_CARGO_UNIT_MNSP                                                             :{WORD_S} kratten productiehulpgoederen
+STR_CARGO_UNIT_MNSP                                                             :{WORD_S} kratten produktiehulpgoederen
+STR_CARGO_UNIT_PETROL                                                           :{VOLUME} benzine
 STR_CARGO_UNIT_RECYCLABLES                                                      :{WORD_S_TONNES} herbruikbare goederen
 STR_CARGO_UNIT_SAND                                                             :{WORD_S_TONNES} zand
 STR_CARGO_UNIT_SCRAP_METAL                                                      :{WORD_S_TONNES} schroot
 STR_CARGO_UNIT_STONE                                                            :{WORD_S_TONNES} grind
+STR_CARGO_UNIT_SUGAR_BEET                                                       :{WORD_S_TONNES} suikerbieten
 STR_CARGO_UNIT_WOOL                                                             :{WORD_S_TONNES} wol
+
+STR_CID_ALCOHOL                                                                 :{TINYFONT}AL
 STR_CID_BAUXITE                                                                 :{TINYFONT}BX
 STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}BM
-STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}HC
-STR_CID_LUMBER                                                                  :{TINYFONT}HT
-STR_CID_METAL                                                                   :{TINYFONT}AL
-STR_CID_MILK                                                                    :{TINYFONT}ML
-STR_CID_SCRAP_METAL                                                             :{TINYFONT}ST
-STR_EXTRA_LIME_KILN                                                             :{BLACK}Productie:{}  4t per 8t geleverd grind{}  4t per 8t geleverde kolen{}{}Verhoogt tot 8t per 8t als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
-STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Maakt smeedijzeren producten zoals hekken, roosters, gereedschappen, ploegen, keukengerei en hoefijzers.{}{}5t productie voor iedere 8t geleverd.
-STR_EXTRA_STEELMILL                                                             :{BLACK}Productie:{}  2t per 8t geleverd ijzererts{}  2t per 8t geleverde kolen{}  4t per 8t geleverd schroot{}{}Productie verhoogt als twee of meer vrachtsoorten binnen een maand van elkaar worden geleverd.
-STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}Productie:{}  2t per 8t geleverd bauxiet{}  2t per 8t geleverde chemicaliën{}  4t per 8t geleverd schroot{}{}Productie verhoogt als twee of meer vrachtsoorten binnen een maand van elkaar worden geleverd.
-STR_EXTRA_METAL_FOUNDRY                                                         :{BLACK}Maakt metalen gereedschappen en onderdelen.{}{}8t productie voor iedere 8t geleverd.
-STR_EXTRA_SAWMILL                                                               :{BLACK}Hakt hout.{}{}6t productie voor iedere 8t geleverd.
-STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Productie:{}  3t per 8t geleverde productiehulpgoederen{}  5t per 8t geleverd gezaagd hout{}{}Verhoogt tot 8t per 8t als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
-STR_EXTRA_PAPER_MILL                                                            :{BLACK}Maakt papier en karton uit houtpulp.{}{}{BLACK}Productie:{}  4t per 8t geleverd hout{}  2t per 8t geleverd klei{}  2t per 8t geleverde chemicaliën{}{}Productie verhoogt als twee of meer vrachtsoorten binnen een maand van elkaar worden geleverd.
-STR_EXTRA_OIL_REFINERY                                                          :{BLACK}Verwerkt ruwe olie tot benzine en chemicaliën.{}{}6t productie voor iedere 8t geleverd.
-STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}Maakt plasticproducten zoals verpakking en huishoudartikelen.{}{}6t productie voor iedere 8t geleverd.
-STR_EXTRA_IRON_WORKS                                                            :{BLACK}Productie:{}  1t per 8t geleverd hout{}  2t per 8t geleverd ijzererts{}{}Verhoogt tot 3t per 8t als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
-STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Maakt glasproducten zoals flessen, potten en vensterglas.{}{}{BLACK}Productie:{}  6t per 8t geleverd zand{}  2t per 8t geleverde chemicaliën{}{}Verhoogt tot 8t per 8t als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
-STR_EXTRA_RECYCLING_PLANT                                                       :{BLACK}Verwerkt afval tot herbruikbare goederen.{}{}6t productie voor iedere 8t geleverd.
-STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Productie:{}  3t per 8t geleverde productiehulpgoederen{}  5t per 8t geleverd vis{}{}Verhoogt tot 8t per 8t als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
-STR_EXTRA_GRAIN_MILL                                                            :{BLACK}Productie:{}  3t per 8t geleverde productiehulpgoederen{}  5t per 8t geleverd graan{}{}Verhoogt tot 8t per 8t als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
-STR_EXTRA_BREWERY                                                               :{BLACK}Productie:{}  3t per 8t geleverde productiehulpgoederen{}  5t per 8t geleverd graan{}  5t per 8t geleverd fruit en groente{}{}Productie verhoogt als productiehulpgoederen binnen een maand van andere vracht worden geleverd.
-STR_EXTRA_DAIRY                                                                 :{BLACK}Productie:{}  3t per 8t geleverde productiehulpgoederen{}  5t per 8t geleverde melk{}{}Verhoogt tot 8t per 8t als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
-STR_EXTRA_FERTILIZER_PLANT                                                      :{BLACK}Verwerkt chemicaliën tot kunstmest voor gebruik door boerderijen.{}{}8t productie voor iedere 8t geleverd.
-STR_EXTRA_LUMBER_YARD                                                           :{BLACK}Maakt onder andere houten palen en stijgerplanken..{}{}{BLACK}Productie:{}  2t per 8t geleverde chemicaliën{}  6t per 8t geleverd gezaagd hout{}{}Verhoogt tot 8t per 8t als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
-STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Productie:{}  3t per 8t geleverde productiehulpgoederen{}  5t per 8t geleverd wol{}  5t per 8t geleverd katoen{}{}Productie verhoogt als productiehulpgoederen binnen een maand van andere vracht worden geleverd.
-STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Productie:{}  2t per 8t geleverde kolen{}  2t per 8t geleverd klei{}  4t per 8t geleverd grind{}{}Productie verhoogt als twee of meer vrachtsoorten binnen een maand van elkaar worden geleverd.
-STR_EXTRA_BRICKWORKS                                                            :{BLACK}Productie:{}  2t per 8t geleverde kolen{}  2t per 8t geleverd zand{}  4t per 8t geleverd klei{}{}Productie verhoogt als twee of meer vrachtsoorten binnen een maand van elkaar worden geleverd.
-STR_EXTRA_BIOREFINERY                                                           :{BLACK}Verwerkt graan en suiker tot benzine and chemicaliën.{}{}6t productie voor iedere 8t geleverd.
-STR_EXTRA_ENGINEERING_SUPPLIES                                                  :{BLACK}Constructiehulpgoederen kunnen de productie verhogen.{}{YELLOW}  {DWORD_S} pallets geleverd deze maand
-STR_EXTRA_FARM_SUPPLIES                                                         :{BLACK}Landbouwhulpgoederen kunnen de productie verhogen.{}{YELLOW}  {DWORD_S} pallets geleverd deze maand
-STR_GENERIC_D0B2                                                                :{BLACK}Productiehulpgoederen verdubbelen de productiecapaciteit.{}{}{STRING}
-STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Maximale productiecapaciteit bereikt.
-
-
-STR_CID_SUGARCANE                                                               :{TINYFONT}SB
-STR_CID_FISH                                                                    :{TINYFONT}VS
-STR_CID_WOOL                                                                    :{TINYFONT}WL
-STR_CID_FIBRES                                                                  :{TINYFONT}KT
-STR_CID_SAND                                                                    :{TINYFONT}ZD
-STR_CID_STONE                                                                   :{TINYFONT}GD
-STR_CID_MANUFACTURING_SUPPLIEs                                                  :{TINYFONT}HP
-STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}HL
-STR_CID_CHEMICALS                                                               :{TINYFONT}CH
-STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                                                :{WORD_S} kratten constructiehulpgoederen
-STR_CID_PETROL                                                                  :{TINYFONT}BZ
+STR_CID_CHEMICALS                                                               :{TINYFONT}CM
 STR_CID_CLAY                                                                    :{TINYFONT}KL
-STR_CID_ALCOHOL                                                                 :{TINYFONT}AL
+STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}CH
+STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}LH
+STR_CID_FIBRES                                                                  :{TINYFONT}KT
+STR_CID_FISH                                                                    :{TINYFONT}VS
+STR_CID_LUMBER                                                                  :{TINYFONT}HT
+STR_CID_MANUFACTURING_SUPPLIEs                                                  :{TINYFONT}PH
+STR_CID_METAL                                                                   :{TINYFONT}MT
+STR_CID_MILK                                                                    :{TINYFONT}ML
+STR_CID_PETROL                                                                  :{TINYFONT}BZ
 STR_CID_RECYCLABLES                                                             :{TINYFONT}RC
-STR_STATIONNAME_FARMS                                                           :{STRING} Boerderij
-STR_STATIONNAME_MILLS                                                           :{STRING} Molen
-STR_STATIONNAME_WELLS                                                                :{STRING} Bron
-STR_STATIONNAME_CHEMICALS                                                       :{STRING} Raffinaderij
-STR_STATIONNAME_FACTORIES                                                       :{STRING} Fabriek
-STR_STATIONNAME_PLANTS                                                          :{STRING} Werkplaats
-STR_STATIONNAME_PITS                                                            :{STRING} Groeve
-STR_STATIONNAME_DEPOT                                                                :{STRING} Depot
-STR_STATIONNAME_DREDGING_SITE                                                   :{STRING} Grindgat
-STR_STATIONNAME_FISHING_GROUNDS                                                 :{STRING} Visgebied
-STR_STATIONNAME_SMITHY_FORGE                                                    :{STRING} Smidse
-STR_STATIONNAME_MARKET                                                                :{STRING} Markt
+STR_CID_SAND                                                                    :{TINYFONT}ZD
+STR_CID_SCRAP_METAL                                                             :{TINYFONT}ST
+STR_CID_STONE                                                                   :{TINYFONT}GD
+STR_CID_SUGARCANE                                                               :{TINYFONT}SB
+STR_CID_WOOL                                                                    :{TINYFONT}WL
+
+STR_ERR_CLIMATE_TOYLAND                                                         :{ORANGE}FIRS is niet ontworpen om in het speelgoedlandschap gebruikt te worden
+STR_ERR_INCOMPATIBLE_PARAM_CANSET                                               :{ORANGE}E02: {YELLOW}Ongeldige parameter waarde: {ORANGE}CanSet parameter 2 moet 0 zijn om samen te werken met FIRS. {YELLOW}Lees ook de FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_PARAM_CITYSET                                              :{ORANGE}E02: {YELLOW}Ongeldige parameter waarde: {ORANGE}NA City Set parameter 2 moet 0 zijn om met FIRS samen te werken. {YELLOW}Lees ook de FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_SET_ALPINE_CLIMATE                                         :{ORANGE}E01: {YELLOW}Onbruikbare set combinatie: {ORANGE}Alpine Climate {YELLOW}Lees ook de FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_SET_ECS_AGRICULTURAL                                       :{ORANGE}E01: {YELLOW}Onbruikbare set combinatie: {ORANGE}ECS Agricultural Vector {YELLOW}Lees ook de FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_SET_ECS_BASIC                                              :{ORANGE}E01: {YELLOW}Onbruikbare set combinatie: {ORANGE}ECS Basic Vector {YELLOW}Lees ook de FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_SET_ECS_BASIC_ARCTIC                                       :{ORANGE}E01: {YELLOW}Onbruikbare set combinatie: {ORANGE}ESC Basic for Arctic {YELLOW}Lees ook de FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_SET_ECS_BASIC_TROPIC                                       :{ORANGE}E01: {YELLOW}Onbruikbare set combinatie: {ORANGE}ECS Basic for Tropic {YELLOW}Lees ook de FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_SET_ECS_CHEMICAL                                           :{ORANGE}E01: {YELLOW}Onbruikbare set combinatie: {ORANGE}ECS Chemical Vector {YELLOW}Lees ook de FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_SET_ECS_CHEMICAL2                                          :{ORANGE}E01: {YELLOW}Onbruikbare set combinatie: {ORANGE}ECS Chemical Vector II {YELLOW}Lees ook de FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_SET_ECS_CONSTRUCTION                                       :{ORANGE}E01: {YELLOW}Onbruikbare set combinatie: {ORANGE}ECS Construction Vector {YELLOW}Lees ook de FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_SET_ECS_CONSTRUCTION_PIKKA                                 :{ORANGE}E01: {YELLOW}Onbruikbare set combinatie: {ORANGE}ECS Construction Vector by Pikkabird {YELLOW}Lees ook de FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_SET_ECS_MACHINERY                                          :{ORANGE}E01: {YELLOW}Onbruikbare set combinatie: {ORANGE}ECS Machinery Vector {YELLOW}Lees ook de FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_SET_ECS_MACHINERY_TROPIC                                   :{ORANGE}E01: {YELLOW}Onbruikbare set combinatie: {ORANGE}ECS Machinery for Tropic {YELLOW}Lees ook de FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_SET_ECS_TOWN                                               :{ORANGE}E01: {YELLOW}Onbruikbare set combinatie: {ORANGE}ECS Town Vector {YELLOW}Lees ook de FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_SET_ECS_WOOD                                               :{ORANGE}E01: {YELLOW}Onbruikbare set combinatie: {ORANGE}ECS Wood Vector {YELLOW}Lees ook de FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_SET_EXPERT_HARD_INDUSTRIES                                 :{ORANGE}E01: {YELLOW}Onbruikbare set combinatie: {ORANGE}Experts hard industries {YELLOW}Lees ook de FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_SET_EX_CITYBUILDER                                         :{ORANGE}E01: {YELLOW}Onbruikbare set combinatie: {ORANGE}Ex Citybuilder {YELLOW}Lees ook de FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_SET_LUMBER_MILL                                            :{ORANGE}E01: {YELLOW}Onbruikbare set combinatie: {ORANGE}Lumber Mill {YELLOW}Lees ook de FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_SET_LUUKLAND_CITYBUILDER                                   :{ORANGE}E01: {YELLOW}Onbruikbare set combinatie: {ORANGE}Luukland Citybuilder {YELLOW}Lees ook de FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_SET_MANIND                                                 :{ORANGE}E01: {YELLOW}Onbruikbare set combinatie: {ORANGE}Manual Industries {YELLOW}Lees ook de FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_SET_NEARBY_STATION_NAMES                                   :{ORANGE}E01: {YELLOW}Onbruikbare set combinatie: {ORANGE}Nearby Station Names {YELLOW}Lees ook de FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_SET_NEW_CARGOS                                             :{ORANGE}E01: {YELLOW}Onbruikbare set combinatie: {ORANGE}New Cargos {YELLOW}Lees ook de FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_SET_NEW_CARGOS_MB                                          :{ORANGE}E01: {YELLOW}Onbruikbare set combinatie: {ORANGE}NewCargos by Michael Blunck {YELLOW}Lees ook de FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_SET_NEW_CARGOS_PETROL                                      :{ORANGE}E01: {YELLOW}Onbruikbare set combinatie: {ORANGE}New Cargos Petrol + Tourists {YELLOW}Lees ook de FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_SET_OIL_WELL_DECREASE                                      :{ORANGE}E01: {YELLOW}Onbruikbare set combinatie: {ORANGE}Oil well decrease neutralizer {YELLOW}Lees ook de FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_SET_PBI                                                    :{ORANGE}E01: {YELLOW}Onbruikbare set combinatie: {ORANGE}Pikka Basic Industries {YELLOW}Lees ook de FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_SET_TOURISTSET                                             :{ORANGE}E01: {YELLOW}Onbruikbare set combinatie: {ORANGE}Tourist Set {YELLOW}Lees ook de FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_SET_TTRS_VERSION                                           :{ORANGE}E04: {YELLOW}Onbruikbare versie: {ORANGE}Total Town Replacement Set moet versie 3.11 or nieuwer zijn. {YELLOW}Lees ook de FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_SET_UKRS                                                   :{ORANGE}E01: {YELLOW}Onbruikbare set combinatie: {ORANGE}UKRS Industries {YELLOW}Lees ook de FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_SET_UKRS_BRICKCHAIN                                        :{ORANGE}E01: {YELLOW}Onbruikbare set combinatie: {ORANGE}UKRS Brick Chain {YELLOW}Lees ook de FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_OPENTTD_VERSION                                                         :{ORANGE}E00: FIRS heeft OpenTTD versie 1.2.0 of trunk r22780 of nieuwe nodig. {YELLOW}Lees de FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+
+STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE                                             :moet onder de sneeuwgrens geplaatst worden.
+STR_ERR_LOCATION_NOT_ON_WATER                                                   :moet op droog land geplaatst worden.
+STR_ERR_LOCATION_NOT_IN_DESERT                                                  :moet niet in de woestijn geplaatst worden.
+STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE                                             :kan niet op een steile helling geplaatst worden.
+
+STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}Productie:{}  2t per 8t geleverd bauxiet{}  2t per 8t geleverde chemicaliën{}  4t per 8t geleverd schroot{}{}Productie verhoogt als twee of meer vrachtsoorten binnen een maand van elkaar worden geleverd.
+STR_EXTRA_BIOREFINERY                                                           :{BLACK}Verwerkt graan en suiker tot benzine and chemicaliën.{}{}6t produktie voor iedere 8t geleverd.
+STR_EXTRA_BREWERY                                                               :{BLACK}Productie:{}  3t per 8t geleverde produktiehulpgoederen{}  5t per 8t geleverd graan{}  5t per 8t geleverd fruit en groente{}{}Productie verhoogt als produktiehulpgoederen binnen een maand van andere vracht worden geleverd.
+STR_EXTRA_BRICKWORKS                                                            :{BLACK}Productie:{}  2t per 8t geleverde kolen{}  2t per 8t geleverd zand{}  4t per 8t geleverd klei{}{}Productie verhoogt als twee of meer vrachtsoorten binnen een maand van elkaar worden geleverd.
+STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Productie:{}  2t per 8t geleverde kolen{}  2t per 8t geleverd klei{}  4t per 8t geleverd grind{}{}Productie verhoogt als twee of meer vrachtsoorten binnen een maand van elkaar worden geleverd.
+STR_EXTRA_DAIRY                                                                 :{BLACK}Productie:{}  3t per 8t geleverde produktiehulpgoederen{}  5t per 8t geleverde melk{}{}Verhoogt tot 8t per 8t als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
+STR_EXTRA_ENGINEERING_SUPPLIES                                                  :{BLACK}Constructiehulpgoederen kunnen de produktie verhogen.{}{YELLOW}  {DWORD_S} kratten geleverd deze maand
+STR_EXTRA_FARM_SUPPLIES                                                         :{BLACK}Landbouwhulpgoederen kunnen de produktie verhogen.{}{YELLOW}  {DWORD_S} kratten geleverd deze maand
+STR_EXTRA_FERTILIZER_PLANT                                                      :{BLACK}Verwerkt chemicaliën tot kunstmest voor gebruik door boerderijen.{}{}8t produktie voor iedere 8t geleverd.
+STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Productie:{}  3t per 8t geleverde produktiehulpgoederen{}  5t per 8t geleverd vis{}{}Verhoogt tot 8t per 8t als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
+STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Productie:{}  3t per 8t geleverde produktiehulpgoederen{}  5t per 8t geleverd gezaagd hout{}{}Verhoogt tot 8t per 8t als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
+STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Maakt glasprodukten zoals flessen, potten, en vensterglas.{}{}{BLACK}Productie:{}  6t per 8t geleverd zand{}  2t per 8t geleverde chemicaliën{}{}Verhoogt tot 8t per 8t als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
+STR_EXTRA_GRAIN_MILL                                                            :{BLACK}Productie:{}  3t per 8t geleverde produktiehulpgoederen{}  5t per 8t geleverd graan{}{}Verhoogt tot 8t per 8t als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
+STR_EXTRA_IRON_WORKS                                                            :{BLACK}Productie:{}  1t per 8t geleverd hout{}  2t per 8t geleverd ijzererts{}{}Verhoogt tot 3t per 8t als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
+STR_EXTRA_LIME_KILN                                                             :{BLACK}Productie:{}  4t per 8t geleverd grind{}  4t per 8t geleverde kolen{}{}Verhoogt tot 8t per 8t als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
+STR_EXTRA_LUMBER_YARD                                                           :{BLACK}Maakt onder andere houten palen en stijgerplanken.{}{}{BLACK}Productie:{}  2t per 8t geleverde chemicaliën{}  6t per 8t geleverd gezaagd hout{}{}Verhoogt tot 8t per 8t als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
+STR_EXTRA_MACHINE_SHOP                                                          :{BLACK}Bouwt en onderhoudt machines.{}{}8t produktie voor iedere 8t geleverd.
+STR_EXTRA_MEAT_PACKER                                                           :{BLACK}Productie:{}  3t per 8t geleverde produktiehulpgoederen{}  5t per 8t geleverd vee{}{}Verhoogt tot 8t per 8t als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
+STR_EXTRA_METAL_FOUNDRY                                                         :{BLACK}Maakt metalen gereedschappen en onderdelen.{}{}8t produktie voor iedere 8t geleverd.
+STR_EXTRA_OIL_REFINERY                                                          :{BLACK}Verwerkt ruwe olie tot benzine en chemicaliën.{}{}6t produktie voor iedere 8t geleverd.
+STR_EXTRA_PAPER_MILL                                                            :{BLACK}Maakt papier en karton uit houtpulp.{}{}{BLACK}Productie:{}  4t per 8t geleverd hout{}  2t per 8t geleverd klei{}  2t per 8t geleverde chemicaliën{}{}Productie verhoogt als twee of meer vrachtsoorten binnen een maand van elkaar worden geleverd.
+STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}Maakt plasticproducten zoals verpakkingen en huishoudartikelen.{}{}6t produktie voor iedere 8t geleverd.
+STR_EXTRA_RECYCLING_PLANT                                                       :{BLACK}Verwerkt afval tot herbruikbare goederen.{}{}6t produktie voor iedere 8t geleverd.
+STR_EXTRA_SAWMILL                                                               :{BLACK}Zaagt hout.{}{}6t produktie voor iedere 8t geleverd.
+STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Maakt smeedijzeren produkten zoals hekken, roosters, gereedschappen, ploegen, scheppen, en hoefijzers.{}{}5t produktie voor iedere 8t geleverd.
+STR_EXTRA_STEELMILL                                                             :{BLACK}Productie:{}  2t per 8t geleverd ijzererts{}  2t per 8t geleverde kolen{}  4t per 8t geleverd schroot{}{}Productie verhoogt als twee of meer vrachtsoorten binnen een maand van elkaar worden geleverd.
+STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Productie:{}  3t per 8t geleverde produktiehulpgoederen{}  5t per 8t geleverd suikerriet{}{}Verhoogt tot 8t per 8t als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
+STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Productie:{}  3t per 8t geleverde produktiehulpgoederen{}  5t per 8t geleverd wol{}  5t per 8t geleverd katoen{}{}Productie verhoogt als produktiehulpgoederen binnen een maand van andere vracht worden geleverd.
+
+STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ DEBUG ------------{}Produktie deze maand:{}Goederen 1: {WHITE}{DWORD_S}{BLACK}{}Goederen 2: {WHITE}{DWORD_S}{BLACK}{}Dagen sinds laatste levering: {WHITE}{DWORD_S}{BLACK}
+STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Maximale produktiecapaciteit bereikt.
+STR_GENERIC_D0B2                                                                :{BLACK}Productiehulpgoederen verdubbelen de produktiecapaciteit van andere goederen.{}{}{STRING}
 STR_GENERIC_NEWLINE                                                             :{}
-STR_GRF_DESC                                                                    :{ORANGE}FIRS Industry Replacement Set{}{BLACK}Door: {SILVER}andythenorth{BLACK} en {SILVER}FooBar{BLACK}.{}{BLACK}'1,000 commits en nog niet klaar...'{BLACK}{}{}Website: {SILVER}www.tt-foundry.com/sets/FIRS{BLACK}.Licentie: {SILVER}GPL v2{}{BLACK}Speciale dank aan {SILVER}Ammler{BLACK}, {SILVER}Core Xii{BLACK}, {SILVER}Irwe{BLACK}, {SILVER}planetmaker{BLACK} en {SILVER}Zephyris{}{BLACK}.Gebruikt onderdelen van: {SILVER}eGRVTS{BLACK}, {SILVER}ISR{BLACK} en {SILVER}OpenGFX{BLACK}.
+
+STR_FUND_MIXED_FARM                                                             :{}{BLACK}Plaats: {YELLOW}Kan niet gebouwd worden op sneeuw, in woestijnen, of op steile hellingen.
+STR_FUND_SHEEP_FARM                                                             :{}{BLACK}Plaats: {YELLOW}Kan niet gebouwd worden in woestijnen of op hellingen.
+STR_FUND_ARABLE_FARM                                                            :{}{BLACK}Plaats: {YELLOW}Kan niet gebouwd worden in sneeuw, in woestijnen, of op hellingen.
+STR_FUND_DAIRY_FARM                                                             :{}{BLACK}Plaats: {YELLOW}Kan niet gebouwd worden op steile hellingen.
+STR_FUND_FOREST                                                                 :{}{BLACK}Plaats: {YELLOW}Kan niet gebouwd worden in woestijnen.
+STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}Plaats: {YELLOW}Kan niet gebouwd worden op sneeuw.
+
+STR_STATIONNAME_CHEMICALS                                                       :{STRING} Raffinaderij
+STR_STATIONNAME_DEPOT                                                           :{STRING} Depot
+STR_STATIONNAME_DREDGING_SITE                                                   :{STRING} Grindwinning
+STR_STATIONNAME_FACTORIES                                                       :{STRING} Fabriek
+STR_STATIONNAME_FARMS                                                           :{STRING} Boerderij
+STR_STATIONNAME_FISHING_GROUNDS                                                 :{STRING} Visgebied
+STR_STATIONNAME_MARKET                                                          :{STRING} Markt
+STR_STATIONNAME_MILLS                                                           :{STRING} Molen
+STR_STATIONNAME_PITS                                                            :{STRING} Groeve
+STR_STATIONNAME_PLANTS                                                          :{STRING} Werkplaats
+STR_STATIONNAME_SMITHY_FORGE                                                    :{STRING} Smidse
+STR_STATIONNAME_WELLS                                                           :{STRING} Bron
+
 STR_IND_ALUMINIUM_PLANT                                                         :Aluminiumfabriek
 STR_IND_ARABLE_FARM                                                             :Landbouw boerenbedrijf
 STR_IND_BAUXITE_MINE                                                            :Bauxietmijn
 STR_IND_BIOREFINERY                                                             :Bioraffinaderij
 STR_IND_BREWERY                                                                 :Brouwerij
-STR_EXTRA_MEAT_PACKER                                                           :{BLACK}Productie:{}  3t per 8t geleverde productiehulpgoederen{}  5t per 8t geleverd vee{}{}Verhoogt tot 8t per 8t als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
 STR_IND_BRICK_WORKS                                                             :Steenfabriek
 STR_IND_BUILDERS_YARD                                                           :Aannemeropslagplaats
 STR_IND_CEMENT_PLANT                                                            :Cementfabriek
@@ -125,6 +197,7 @@ STR_IND_FOOD_MARKET                                                             
 STR_IND_FURNITURE_FACTORY                                                       :Meubelfabriek
 STR_IND_GLASS_WORKS                                                             :Glasfabriek
 STR_IND_GRAIN_MILL                                                              :Bakkerij
+STR_IND_HARDWARE_STORE                                                          :Doe het zelf winkel
 STR_IND_HOTEL                                                                   :Hotel
 STR_IND_IRON_WORKS                                                              :Ijzeroven
 STR_IND_JUNKYARD                                                                :Schroothoop
@@ -145,29 +218,13 @@ STR_IND_STOCKYARD                                                               
 STR_IND_SUGAR_REFINERY                                                          :Suikerfabriek
 STR_IND_SUPERMARKET                                                             :Supermarkt
 STR_IND_TEXTILE_MILL                                                            :Textielfabriek
+
 STR_INFO_AVAILABILITY_FROM                                                      :{BLACK}Beschikbaar: {YELLOW}{DATE_LONG}
 STR_INFO_AVAILABILITY_FROM_1610                                                 :{BLACK}Beschikbaar: {YELLOW}1 Jan 1610
 STR_INFO_AVAILABILITY_FROM_1730                                                 :{BLACK}Beschikbaar: {YELLOW}1 Jan 1730
 STR_INFO_AVAILABILITY_FROM_1762                                                 :{BLACK}Beschikbaar: {YELLOW}1 Jan 1762
+STR_INFO_AVAILABILITY_FROM_LIMIT1_RANGE16                                       :{BLACK}Beschikbaar: {YELLOW}{DATE_LONG}{}{BLACK}Maximaal één per stad{}Moet gebouwd worden binnen 16 tegels vanaf het stadcentrum
 
-
-
-
-STR_EXTRA_SUGAR_REFINERY                                                       :{BLACK}Productie:{}  3t per 8t geleverde productiehulpgoederen{}  5t per 8t geleverd suikerriet{}{}Verhoogt tot 8t per 8t als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
-STR_EXTRA_MACHINE_SHOP                                                :{BLACK}Bouwt en onderhoudt machines.{}{}8t productie voor iedere 8t geleverd.
-STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :{SILVER}Maximale afstand tot de kust in tegels voor visgebieden en baggermolens.
-STR_PARAM_DESC_DEBUG                                                            :Alleen voor ontwikkelaars.
-STR_PARAM_DESC_ECONOMIES                                                        :Uiteindelijk zal FIRS een keuze aan economieën hebben. Goederen en industrieën varieren in elke economie. Betalingen voor goederen verschillen ook in elke economie. {}{}{SILVER}Op dit moment is slechts één economie :)
-STR_PARAM_DESC_NEVER_CLOSE                                                      :Standaard zullen FIRS primaire industrieën nooit sluiten.{}Als sluiten van primaire industrieën is ingeschakeld zullen primaire industrieën sluiten zodra de productie tot een laag niveau is gedaald (dit niveau varieert per industrie). {SILVER}'Primaire industrieën kunnen productie verlagen' moet zijn ingeschakeld.
-STR_PARAM_DESC_NO_OPENINGS                                                      :{SILVER}Dit doet nog niets. {BLACK}Al het klaar is, zal het een 'zandbak mode' geven om te gebruiken in scenario's.
-STR_PARAM_DESC_PRIMARY_PRODUCTION_DECREASE                                      :Standaard kunnen FIRS primaire industrieën hun productie nooit verlagen.{}Als productieverlaging voor primaire industrieën is ingeschakeld is er een kans dat een industrie zijn productie verlaagt als er in een maand geen hulpgoederen zijn geleverd. Bij een hoge productie is de kans op productieverlaging groter.
-STR_PARAM_DESC_SECONDARY_NEVER_CLOSE                                            :Standaard zullen FIRS primaire industrieën nooit sluiten.{}Als sluiten van secundaire industrieën is ingeschakeld kunnen secundaire industrieën sluiten als voor lange tijd geen vracht is getransporteerd.
-STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY                                   :Maximale afstand tot de kust in tegels voor zee-industrieën
-STR_PARAM_NAME_DEBUG                                                            :Laat debug-informatie zien
-STR_PARAM_NAME_ECONOMIES                                                        :Economie
-STR_PARAM_NAME_NEVER_CLOSE                                                      :Primaire industrieën kunnen sluiten
-STR_PARAM_NAME_NO_OPENINGS                                                      :Voorkom bouwen van nieuwe industrieën (nog niet af)
-STR_PARAM_NAME_PRIMARY_PRODUCTION_DECREASE                                      :Primaire industrieën kunnen productie verlagen
-STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            :Secundaire industrieën kunnen sluiten
-STR_PARAM_VALUE_ECONOMIES_TEST_ECONOMY                                          :Test Economie
-STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0                                         :Geen limiet
+STR_INFO_CLOSE_IF_NO_DELIVERY                                                   :{}{BLACK}Deze industrie zou dicht kunnen gaan tenzij er goederen worden geleverd binnen:{}{WHITE}  maand
+STR_INFO_MIGHT_CLOSE                                                            :{}{BLACK}Deze industrie zou dicht kunnen gaan tenzij er goederen worden geleverd binnen:{}{YELLOW}  maanden
+STR_INFO_NO_CARGO_DELIVERED                                                     :{}{RED}Er zijn geen goederen geleverd voor tenminste {POP_WORD}{POP_WORD}maanden. Deze industry zou spoedig dicht kunnen gaan.{}
