@@ -52,7 +52,8 @@ switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout), relative_pos) {
  * *************************************************/
 
 TILE_DISALLOW_NEARBY_CLASS(tile_nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
-TILE_ALLOW_PLAYER         (tile_location_check,                                                          THIS_ID(tile_nearby_industry))
+TILE_ALLOW_PLAYER         (tile_player_check,                                                      THIS_ID(tile_nearby_industry))
+TILE_DISALLOW_SLOPES      (tile_location_check,                       CB_RESULT_LOCATION_DISALLOW, THIS_ID(tile_player_check))
 
 item(FEAT_INDUSTRYTILES, THIS_ID(tile), 201) {
 	property {
