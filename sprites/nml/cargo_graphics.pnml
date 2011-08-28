@@ -214,14 +214,14 @@ item(FEAT_CARGOS, cargo_bauxite, 27) {
 	}
 }
 
-if ((climate != CLIMATE_TROPICAL)) {
+if (ENABLE_SUGARCANE) {
 	item(FEAT_CARGOS, cargo_sugarcane, 12) {
 		graphics {
 			cargoicon_sugarbeet;
 		}
 	}
 } else {
-	item(FEAT_CARGOS, cargo_sugarcane, 12) {
+	item(FEAT_CARGOS, cargo_sugarbeet, 12) {
 		graphics {
 			cargoicon_sugarcane;
 		}
