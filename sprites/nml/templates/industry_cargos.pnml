@@ -1,0 +1,43 @@
+/*
+ * This file is part of FIRS Industry Set for OpenTTD.
+ * FIRS is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 2.
+ * FIRS is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/* Cargo to set the industry input and output cargos depending
+ * on the (internal) parameter "cargo_param" which should depend
+ * on the economy parameter and climate
+ */
+
+#define INDUSTRY_INPUT_CARGO_1(condition, c1) \
+if (condition) { \
+    property { \
+        accept_cargo_types: [c1]; \
+    } \
+}
+#define INDUSTRY_INPUT_CARGO_2(condition, c1, c2) \
+if (condition) { \
+    property { \
+        accept_cargo_types: [c1, c2]; \
+    } \
+}
+#define INDUSTRY_INPUT_CARGO_3(condition, c1, c2, c3) \
+if (condition) { \
+    property { \
+        accept_cargo_types: [c1, c2, c3]; \
+    } \
+}
+
+#define INDUSTRY_OUTPUT_CARGO_1(condition, c1) \
+if (condition) { \
+    property { \
+        prod_cargo_types: [c1]; \
+    } \
+}
+#define INDUSTRY_OUTPUT_CARGO_2(condition, c1, c2) \
+if (condition) { \
+    property { \
+        prod_cargo_types: [c1, c2]; \
+    } \
+}
