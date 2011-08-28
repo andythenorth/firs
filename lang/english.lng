@@ -65,13 +65,26 @@ STR_CARGO_UNIT_STONE                                                            
 STR_CARGO_UNIT_SUGAR_BEET                                                       :{WORD_S_TONNES} of sugar beet
 STR_CARGO_UNIT_WOOL                                                             :{WORD_S_TONNES} of wool
 
+STR_CID_ALCOHOL                                                                 :{TINYFONT}AL
 STR_CID_BAUXITE                                                                 :{TINYFONT}BX
 STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}BM
+STR_CID_CHEMICALS                                                               :{TINYFONT}CH
+STR_CID_CLAY                                                                    :{TINYFONT}CL
 STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}ES
+STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}FS
+STR_CID_FIBRES                                                                  :{TINYFONT}PF
+STR_CID_FISH                                                                    :{TINYFONT}FI
 STR_CID_LUMBER                                                                  :{TINYFONT}LU
+STR_CID_MANUFACTURING_SUPPLIEs                                                  :{TINYFONT}MS
 STR_CID_METAL                                                                   :{TINYFONT}ML
 STR_CID_MILK                                                                    :{TINYFONT}MK
+STR_CID_PETROL                                                                  :{TINYFONT}PT
+STR_CID_RECYCLABLES                                                             :{TINYFONT}RC
+STR_CID_SAND                                                                    :{TINYFONT}SA
 STR_CID_SCRAP_METAL                                                             :{TINYFONT}SM
+STR_CID_STONE                                                                   :{TINYFONT}ST
+STR_CID_SUGARCANE                                                               :{TINYFONT}SB
+STR_CID_WOOL                                                                    :{TINYFONT}WL
 
 STR_ERR_CLIMATE_TOYLAND                                                         :{ORANGE}FIRS is not designed to be used with Toyland climate
 STR_ERR_INCOMPATIBLE_PARAM_CANSET                                               :{ORANGE}E02: {YELLOW}Incompatible parameter: {ORANGE}CanSet parameter 2 must be 0 to work with FIRS. {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
@@ -151,20 +164,6 @@ STR_FUND_ARABLE_FARM                                                            
 STR_FUND_DAIRY_FARM                                                             :{}{BLACK}Location: {YELLOW}Cannot be funded on steep slopes.
 STR_FUND_FOREST                                                                 :{}{BLACK}Location: {YELLOW}Cannot be funded in deserts.
 STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}Location: {YELLOW}Cannot be funded on snow.
-
-STR_CID_ALCOHOL                                                                 :{TINYFONT}AL
-STR_CID_CHEMICALS                                                               :{TINYFONT}CH
-STR_CID_CLAY                                                                    :{TINYFONT}CL
-STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}FS
-STR_CID_FIBRES                                                                  :{TINYFONT}PF
-STR_CID_FISH                                                                    :{TINYFONT}FI
-STR_CID_MANUFACTURING_SUPPLIEs                                                  :{TINYFONT}MS
-STR_CID_PETROL                                                                  :{TINYFONT}PT
-STR_CID_RECYCLABLES                                                             :{TINYFONT}RC
-STR_CID_SAND                                                                    :{TINYFONT}SA
-STR_CID_STONE                                                                   :{TINYFONT}ST
-STR_CID_SUGARCANE                                                               :{TINYFONT}SB
-STR_CID_WOOL                                                                    :{TINYFONT}WL
 
 STR_STATIONNAME_CHEMICALS                                                       :{STRING} Refinery
 STR_STATIONNAME_DEPOT                                                           :{STRING} Depot
