@@ -85,26 +85,26 @@ spriteset(THIS_ID(spriteset_8)) {
 }
 
 
-SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_1), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_1), 32)
+SPRITELAYOUT_FENCES_NORMAL_SNOW(THIS_ID(spritelayout_1), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_1), 32)
 
-SPRITELAYOUT_NORMAL_SNOW_BEGIN(THIS_ID(spritelayout_2), THIS_ID(spriteset_ground_spriteset_2), THIS_ID(spriteset_ground_spriteset_2), THIS_ID(spriteset_2), 32)
+SPRITELAYOUT_FENCES_NORMAL_SNOW_BEGIN(THIS_ID(spritelayout_2), THIS_ID(spriteset_ground_spriteset_2), THIS_ID(spriteset_ground_spriteset_2), THIS_ID(spriteset_2), 32)
 	building {
 		sprite: THIS_ID(spriteset_flag_anim(2 * (((animation_frame % 6) < 4) ? (animation_frame % 6) : 6 - (animation_frame % 6)) + (terrain_type == TILETYPE_SNOW)));
 		recolour_mode: RECOLOUR_REMAP;
 		palette: 0;
 		zextent: 32;
 	}
-SPRITELAYOUT_END
+SPRITELAYOUT_FENCES_END
 
-SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_3), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_3), 32)
+SPRITELAYOUT_FENCES_NORMAL_SNOW(THIS_ID(spritelayout_3), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_3), 32)
 
-SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_4), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_4), 24)
+SPRITELAYOUT_FENCES_NORMAL_SNOW(THIS_ID(spritelayout_4), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_4), 24)
 
-SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_5), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_5), 24)
+SPRITELAYOUT_FENCES_NORMAL_SNOW(THIS_ID(spritelayout_5), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_5), 24)
 
-SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_6), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_6), 24)
+SPRITELAYOUT_FENCES_NORMAL_SNOW(THIS_ID(spritelayout_6), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_6), 24)
 
-SPRITELAYOUT_NORMAL_SNOW_BEGIN(THIS_ID(spritelayout_7_anim), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_7), 7)
+SPRITELAYOUT_FENCES_NORMAL_SNOW_BEGIN(THIS_ID(spritelayout_7_anim), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_7), 7)
 	building {
 		sprite: 3701 + (animation_frame % 7);
 		yoffset: 12;
@@ -112,9 +112,9 @@ SPRITELAYOUT_NORMAL_SNOW_BEGIN(THIS_ID(spritelayout_7_anim), THIS_ID(spriteset_g
 		yextent: 3;
 		zextent: 7;
 	}
-SPRITELAYOUT_END
+SPRITELAYOUT_FENCES_END
 
-SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_8), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_8), 16)
+SPRITELAYOUT_FENCES_NORMAL_SNOW(THIS_ID(spritelayout_8), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_8), 16)
 
 switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_1), relative_pos) {
 	relative_coord(0, 1): THIS_ID(spritelayout_5);
@@ -224,6 +224,10 @@ switch(FEAT_INDUSTRYTILES, PARENT, THIS_ID(layout), layout_num) {
 	THIS_ID(layout_1);
 }
 
+FENCES_EXCLUDE_BY_CLASS     ( THIS_ID(tile_fence_station),  THIS_ID(layout),             TILE_CLASS_STATION)
+FENCES_EXCLUDE_SAME_INDUSTRY( THIS_ID(tile_fence_industry), THIS_ID(tile_fence_station))
+ADD_FLAT_FENCES             ( THIS_ID(tile_fences),         THIS_ID(tile_fence_industry), 1, 1, 1, 1)
+
 /* *************************************************
  * Definition of the industry tile and its callbacks
  * *************************************************/
@@ -257,7 +261,7 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile), 181) {
 	graphics {
 		anim_control: THIS_ID(anim_control);
 		tile_check:   THIS_ID(location_check);
-		THIS_ID(layout);
+		THIS_ID(tile_fences);
 	}
 }
 
