@@ -18,15 +18,15 @@ spriteset(THIS_ID(spriteset_2), "sprites/graphics/industries/ironworks.pcx") { t
 spriteset(THIS_ID(spriteset_3), "sprites/graphics/industries/ironworks.pcx") { tmpl_building_sprite(150, 10, 70, -39) } 
 spriteset(THIS_ID(spriteset_4), "sprites/graphics/industries/ironworks.pcx") { tmpl_building_sprite(220, 10, 70, -39) } 
 
-SPRITELAYOUT_NORMAL_BEGIN(THIS_ID(spritelayout_1_anim), THIS_ID(spriteset_ground), THIS_ID(spriteset_1), 7)
+SPRITELAYOUT_FENCES_NORMAL_BEGIN(THIS_ID(spritelayout_1_anim), THIS_ID(spriteset_ground), THIS_ID(spriteset_1), 7)
 	BUILDING_DARK_SMOKE_SMALL(0, 4, 23)
-SPRITELAYOUT_END
+SPRITELAYOUT_FENCES_END
 
-SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_2), THIS_ID(spriteset_ground), THIS_ID(spriteset_2), 32)
+SPRITELAYOUT_FENCES_NORMAL(THIS_ID(spritelayout_2), THIS_ID(spriteset_ground), THIS_ID(spriteset_2), 32)
 
-SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_3), THIS_ID(spriteset_ground), THIS_ID(spriteset_3), 32)
+SPRITELAYOUT_FENCES_NORMAL(THIS_ID(spritelayout_3), THIS_ID(spriteset_ground), THIS_ID(spriteset_3), 32)
 
-SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_4), THIS_ID(spriteset_ground), THIS_ID(spriteset_4), 32)
+SPRITELAYOUT_FENCES_NORMAL(THIS_ID(spritelayout_4), THIS_ID(spriteset_ground), THIS_ID(spriteset_4), 32)
 
 spritelayout THIS_ID(spritelayout_5) {
 	ground {
@@ -59,6 +59,10 @@ switch(FEAT_INDUSTRYTILES, PARENT, THIS_ID(tile_layout), layout_num) {
 	2: THIS_ID(layout_2);
 	THIS_ID(layout_1);
 }
+
+FENCES_EXCLUDE_BY_CLASS     ( THIS_ID(tile_fence_station),  THIS_ID(tile_layout),         TILE_CLASS_STATION)
+FENCES_EXCLUDE_SAME_INDUSTRY( THIS_ID(tile_fence_industry), THIS_ID(tile_fence_station))
+ADD_FLAT_FENCES             ( THIS_ID(tile_fences),         THIS_ID(tile_fence_industry), 1, 1, 1, 1)
 
 /* *************************************************
  * Definition of the industry tile and its callbacks
@@ -100,7 +104,7 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile), 199) {
 	graphics {
 		anim_control: THIS_ID(tile_anim_control);
 		tile_check:   THIS_ID(tile_location_check);
-		THIS_ID(tile_layout);
+		THIS_ID(tile_fences);
 	}
 }
 
