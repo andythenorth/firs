@@ -19,27 +19,27 @@ spriteset(THIS_ID(spriteset_7), "sprites/graphics/industries/lumberyard.pcx") { 
 spriteset(THIS_ID(spriteset_8), "sprites/graphics/industries/lumberyard.pcx") { tmpl_building_sprite(290, 90, 31, -4) }
 spriteset(THIS_ID(spriteset_9), "sprites/graphics/industries/lumberyard.pcx") { tmpl_building_sprite(360, 10, 64, -24) }
 
-SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_1), 2022, THIS_ID(spriteset_1), 16)
+SPRITELAYOUT_FENCES_NORMAL(THIS_ID(spritelayout_1), 2022, THIS_ID(spriteset_1), 16)
 
-SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_2), 2022, THIS_ID(spriteset_2), 16)
+SPRITELAYOUT_FENCES_NORMAL(THIS_ID(spritelayout_2), 2022, THIS_ID(spriteset_2), 16)
 
-SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_3), 2022, THIS_ID(spriteset_3), 16)
+SPRITELAYOUT_FENCES_NORMAL(THIS_ID(spritelayout_3), 2022, THIS_ID(spriteset_3), 16)
 
-SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_4), 2022, THIS_ID(spriteset_4), 16)
+SPRITELAYOUT_FENCES_NORMAL(THIS_ID(spritelayout_4), 2022, THIS_ID(spriteset_4), 16)
 
-SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_5), 2022, THIS_ID(spriteset_5), 16)
+SPRITELAYOUT_FENCES_NORMAL(THIS_ID(spritelayout_5), 2022, THIS_ID(spriteset_5), 16)
 
-SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_6), 2022, THIS_ID(spriteset_6), 16)
+SPRITELAYOUT_FENCES_NORMAL(THIS_ID(spritelayout_6), 2022, THIS_ID(spriteset_6), 16)
 
-SPRITELAYOUT_NORMAL_BEGIN(THIS_ID(spritelayout_7), 2022, THIS_ID(spriteset_7), 16)
+SPRITELAYOUT_FENCES_NORMAL_BEGIN(THIS_ID(spritelayout_7), 2022, THIS_ID(spriteset_7), 16)
 	building {
 		sprite: THIS_ID(spriteset_7);
 		recolour_mode: RECOLOUR_REMAP;
 		palette: 0;
 	}
-SPRITELAYOUT_END
+SPRITELAYOUT_FENCES_END
 
-SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_8), 2022, THIS_ID(spriteset_8), 16)
+SPRITELAYOUT_FENCES_NORMAL(THIS_ID(spritelayout_8), 2022, THIS_ID(spriteset_8), 16)
 
 spritelayout THIS_ID(spritelayout_9) {
 	ground {
@@ -115,6 +115,10 @@ switch(FEAT_INDUSTRYTILES, PARENT, THIS_ID(tile_spritelayout), layout_num) {
 	THIS_ID(spritelayout_9);
 }
 
+FENCES_EXCLUDE_BY_CLASS( THIS_ID(tile_fence_station),  THIS_ID(tile_spritelayout),  TILE_CLASS_STATION)
+FENCES_EXCLUDE_BY_CLASS( THIS_ID(tile_fence_industry), THIS_ID(tile_fence_station), TILE_CLASS_INDUSTRY)
+ADD_FLAT_FENCES(THIS_ID(tile_fences), THIS_ID(tile_fence_industry), 1, 1, 1, 1)
+
 /* *************************************************
  * Definition of the industry tile and its callbacks
  * *************************************************/
@@ -132,7 +136,7 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile), 187) {
 
 	graphics {
 		tile_check:   THIS_ID(tile_location_check);
-		THIS_ID(tile_spritelayout);
+		THIS_ID(tile_fences);
 	}
 }
 
