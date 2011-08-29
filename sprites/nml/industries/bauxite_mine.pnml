@@ -7,12 +7,16 @@
 
 #define THIS_ID(...) bauxite_mine ## __VA_ARGS__
 
-SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_1), 2022, 2039, 12)
+SPRITELAYOUT_FENCES_NORMAL(THIS_ID(spritelayout_1), 2022, 2039, 12)
 
 spritelayout THIS_ID(spritelayout_2) {
 	ground {
 		sprite: 2022;
 	}
+	FENCE_NE
+	FENCE_NW
+	FENCE_SE
+	FENCE_SW
 }
 
 spritelayout THIS_ID(spritelayout_3) {
@@ -27,10 +31,14 @@ spritelayout THIS_ID(spritelayout_3) {
 		yextent: 12;
 		zextent: 12;
 	}
+	FENCE_NE
+	FENCE_NW
+	FENCE_SE
+	FENCE_SW
 }
 
-SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_4), 2022, 2036, 12)
-SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_5), 2022, 2033, 12)
+SPRITELAYOUT_FENCES_NORMAL(THIS_ID(spritelayout_4), 2022, 2036, 12)
+SPRITELAYOUT_FENCES_NORMAL(THIS_ID(spritelayout_5), 2022, 2033, 12)
 
 switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_1), relative_pos) {
 	relative_coord(0, 0): THIS_ID(spritelayout_1);
@@ -51,6 +59,10 @@ switch(FEAT_INDUSTRYTILES, PARENT, THIS_ID(tile_spritelayout), layout_num) {
 	THIS_ID(spritelayout_1);
 }
 
+FENCES_EXCLUDE_BY_CLASS     ( THIS_ID(tile_fence_station),  THIS_ID(tile_spritelayout),   TILE_CLASS_STATION)
+FENCES_EXCLUDE_SAME_INDUSTRY( THIS_ID(tile_fence_industry), THIS_ID(tile_fence_station))
+ADD_FLAT_FENCES             ( THIS_ID(tile_fences),         THIS_ID(tile_fence_industry), 1, 1, 1, 1)
+
 /* *************************************************
  * Definition of the industry tile and its callbacks
  * *************************************************/
@@ -67,7 +79,7 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile), 197) {
 	}
 	graphics {
 		tile_check:   THIS_ID(location_check);
-		THIS_ID(tile_spritelayout);
+		THIS_ID(tile_fences);
 	}
 }
 
