@@ -2,6 +2,82 @@
 FIRS Industry Replacement Set Changelog
 =======================================
 
+--------------
+0.7.x Releases
+--------------
+
+*0.7.0-beta1*
+- first beta release 
+- intended for translators to update translations 
+- intended to find bugs prior to 0.7.0 release
+
+FIRS 0.7 is *not* savegame compatible with any previous release of FIRS.
+
+*What's new in 0.7?*
+
+Over xxxxx changes since FIRS 0.6.4
+
+
+*New / Changed Industries*
+- Hardware Store
+- Recycling Depot
+- Recycling Plant
+- Hotel 
+- Food Market now accepts Fruit instead of Goods
+
+*Removed Industries*
+- None
+
+*New / Changed Cargos*
+- Introduce separate cargo labels for Sugar Beet (SGBT) and Sugarcane (SBCN).  Helps vehicle set authors provide more specific graphics.
+- Recyclables cargo, produced by Recycling Depot, accepted by Recycling Plant
+
+*New Features*
+- Parameter to prevent industry opening during game
+- Hint on possible locations for farms in the fund menu
+- Animation (flag) for Dairy.
+- Animation for Oil Wells.
+- Fences for some industries
+- Graphics to show metal at Metal Foundry
+- Improved appearance of Petrol Pump
+- Improved appearance of Arable Farm farmhouse
+- Improved appearance of Fruit Plantation farmhouse
+- Improved appearance of Dairy Farm farmhouse
+- Improved appearance of Mixed Farm farmhouse
+- Improved appearance of Sheep Farm farmhouse
+- Improved appearance of Grain Mill (bakery)
+- Improved appearance of Glass Works
+- Improved appearance of Sugar Refinery
+- Improved appearance of Fishing Harbour (updated fishing boats)
+- Additional layout for Sheep Farm
+- Additional layouts for reworked Glass Works
+- Snow for Dairy
+- Snow for Food Market
+- Snow for Hotel
+- Snow for Petrol Pump
+- Snow for Sheep Farm
+- Snow for Builders Yard
+- Snow for Lime Kiln
+- Snow for Forge
+- Better snow support (greeble tile) for Forest
+
+
+*Fixes*
+- Allow the player to also place industries where s/he wants in the scenario editor
+- builders yard had spec flag set twice
+- removed flickering sprites for Fishing Harbour (closes #2358)
+
+*Translations additions / updates*
+- Italian translation (Snail)
+- Update Dutch translation
+- Update Spanish translation
+
+*Documentation*
+- Add GPL header to all industry files.
+
+*Additional Compatibility checks*
+- FIRS 0.7 will report requirement for OTTD 1.2.0 or r22780 or later 
+- Set FIRS 0.7 as minimum compatible version to prevent breaking savegames using older FIRS  
 
 --------------
 0.6.x Releases
