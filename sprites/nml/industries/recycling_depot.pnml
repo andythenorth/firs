@@ -12,14 +12,18 @@
 spriteset(THIS_ID(spriteset_1), "sprites/graphics/industries/recyclingdepot.pcx") { tmpl_ground_tile(10, 10) } 
 spriteset(THIS_ID(spriteset_2), "sprites/graphics/industries/recyclingdepot.pcx") { tmpl_ground_tile(80, 10) } 
 
-SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_1), GROUNDSPRITE_CONCRETE, THIS_ID(spriteset_1), 16)
+SPRITELAYOUT_FENCES_NORMAL(THIS_ID(spritelayout_1), GROUNDSPRITE_CONCRETE, THIS_ID(spriteset_1), 16)
 
-SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_2), GROUNDSPRITE_CONCRETE, THIS_ID(spriteset_2), 16)
+SPRITELAYOUT_FENCES_NORMAL(THIS_ID(spritelayout_2), GROUNDSPRITE_CONCRETE, THIS_ID(spriteset_2), 16)
 
 switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout), relative_pos) {
 	0: THIS_ID(spritelayout_1);
 	THIS_ID(spritelayout_2);
 }
+
+FENCES_EXCLUDE_BY_CLASS     ( THIS_ID(tile_fence_station),  THIS_ID(layout),   TILE_CLASS_STATION)
+FENCES_EXCLUDE_SAME_INDUSTRY( THIS_ID(tile_fence_industry), THIS_ID(tile_fence_station))
+ADD_FLAT_FENCES             ( THIS_ID(tile_fences),         THIS_ID(tile_fence_industry), 1, 1, 1, 1)
 
 /* *************************************************
  * Definition of the industry tile and its callbacks
@@ -36,7 +40,7 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile), 202) {
 	}
 	graphics {
 		tile_check: THIS_ID(tile_location_check);
-		THIS_ID(layout);
+		THIS_ID(tile_fences);
 	}
 }
 
