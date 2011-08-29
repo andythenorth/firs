@@ -39,15 +39,15 @@ spriteset(THIS_ID(spriteset_5)) {
 	tmpl_building_sprite_filename(290, 10, 64, -31, "sprites/graphics/industries/limekiln_snow.png")
 }
 
-SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_1), 2022, THIS_ID(spriteset_ground), THIS_ID(spriteset_1), 48)
+SPRITELAYOUT_FENCES_NORMAL_SNOW(THIS_ID(spritelayout_1), 2022, THIS_ID(spriteset_ground), THIS_ID(spriteset_1), 48)
 
-SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_2), 2022, THIS_ID(spriteset_ground), THIS_ID(spriteset_2), 48)
+SPRITELAYOUT_FENCES_NORMAL_SNOW(THIS_ID(spritelayout_2), 2022, THIS_ID(spriteset_ground), THIS_ID(spriteset_2), 48)
 
-SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_3), 2022, THIS_ID(spriteset_ground), THIS_ID(spriteset_3), 48)
+SPRITELAYOUT_FENCES_NORMAL_SNOW(THIS_ID(spritelayout_3), 2022, THIS_ID(spriteset_ground), THIS_ID(spriteset_3), 48)
 
-SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_4), 2022, THIS_ID(spriteset_ground), THIS_ID(spriteset_4), 48)
+SPRITELAYOUT_FENCES_NORMAL_SNOW(THIS_ID(spritelayout_4), 2022, THIS_ID(spriteset_ground), THIS_ID(spriteset_4), 48)
 
-SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_5), 2022, THIS_ID(spriteset_ground), THIS_ID(spriteset_5), 48)
+SPRITELAYOUT_FENCES_NORMAL_SNOW(THIS_ID(spritelayout_5), 2022, THIS_ID(spriteset_ground), THIS_ID(spriteset_5), 48)
 
 spritelayout THIS_ID(spritelayout_6) {
 	ground {
@@ -61,6 +61,10 @@ spritelayout THIS_ID(spritelayout_6) {
 		hide_sprite: terrain_type != TILETYPE_SNOW;
 		always_draw: 1;
 	}
+	FENCE_NE
+	FENCE_NW
+	FENCE_SE
+	FENCE_SW
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_1), relative_pos) {
@@ -75,6 +79,10 @@ switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_1), relative_pos) {
 switch(FEAT_INDUSTRYTILES, PARENT, THIS_ID(tile1_spritelayout), layout_num) {
 	THIS_ID(layout_1);
 }
+
+FENCES_EXCLUDE_BY_CLASS     ( THIS_ID(tile_fence_station),  THIS_ID(tile1_spritelayout),  TILE_CLASS_STATION)
+FENCES_EXCLUDE_SAME_INDUSTRY( THIS_ID(tile_fence_industry), THIS_ID(tile_fence_station))
+ADD_FLAT_FENCES             ( THIS_ID(tile_fences),         THIS_ID(tile_fence_industry), 1, 1, 1, 1)
 
 /* *************************************************
  * Definition of the industry tile and its callbacks
@@ -93,7 +101,7 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile), 191) {
 
 	graphics {
 		tile_check:   THIS_ID(location_check);
-		THIS_ID(tile1_spritelayout);
+		THIS_ID(tile_fences);
 	}
 }
 
