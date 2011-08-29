@@ -17,17 +17,17 @@ spriteset(THIS_ID(spriteset_5), "sprites/graphics/industries/recyclingplant.png"
 spriteset(THIS_ID(spriteset_6), "sprites/graphics/industries/recyclingplant.png") { tmpl_building_sprite(360, 10, 63, -32) }
 
 //large building LH section
-SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_1), THIS_ID(spriteset_ground), THIS_ID(spriteset_1), 48)
+SPRITELAYOUT_FENCES_NORMAL(THIS_ID(spritelayout_1), THIS_ID(spriteset_ground), THIS_ID(spriteset_1), 48)
 //large building RH section
-SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_2), THIS_ID(spriteset_ground), THIS_ID(spriteset_2), 48)
+SPRITELAYOUT_FENCES_NORMAL(THIS_ID(spritelayout_2), THIS_ID(spriteset_ground), THIS_ID(spriteset_2), 48)
 //conveyor + crusher 
-SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_3), THIS_ID(spriteset_ground), THIS_ID(spriteset_3), 48)
+SPRITELAYOUT_FENCES_NORMAL(THIS_ID(spritelayout_3), THIS_ID(spriteset_ground), THIS_ID(spriteset_3), 48)
 //fenced area
-SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_4), THIS_ID(spriteset_ground), THIS_ID(spriteset_4), 48)
+SPRITELAYOUT_FENCES_NORMAL(THIS_ID(spritelayout_4), THIS_ID(spriteset_ground), THIS_ID(spriteset_4), 48)
 //small office
-SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_5), THIS_ID(spriteset_ground), THIS_ID(spriteset_5), 48)
+SPRITELAYOUT_FENCES_NORMAL(THIS_ID(spritelayout_5), THIS_ID(spriteset_ground), THIS_ID(spriteset_5), 48)
 //material handler
-SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_6), THIS_ID(spriteset_ground), THIS_ID(spriteset_6), 48)
+SPRITELAYOUT_FENCES_NORMAL(THIS_ID(spritelayout_6), THIS_ID(spriteset_ground), THIS_ID(spriteset_6), 48)
 
 spritelayout THIS_ID(spritelayout_0) {
 	ground {
@@ -47,6 +47,10 @@ switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout), relative_pos) {
 	THIS_ID(spritelayout_0);
 }
 
+FENCES_EXCLUDE_BY_CLASS     ( THIS_ID(tile_fence_station),  THIS_ID(layout),              TILE_CLASS_STATION)
+FENCES_EXCLUDE_SAME_INDUSTRY( THIS_ID(tile_fence_industry), THIS_ID(tile_fence_station))
+ADD_FLAT_FENCES             ( THIS_ID(tile_fences),         THIS_ID(tile_fence_industry), 1, 1, 1, 1)
+
 /* *************************************************
  * Definition of the industry tile and its callbacks
  * *************************************************/
@@ -63,7 +67,7 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile), 201) {
 	}
 	graphics {
 		tile_check: THIS_ID(tile_location_check);
-		THIS_ID(layout);
+		THIS_ID(tile_fences);
 	}
 }
 
