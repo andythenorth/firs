@@ -1,0 +1,192 @@
+/* Exclude fences to adjacent tileID
+ * 
+ * name:   name of this switch
+ * next:   name of next switch of spritelayout
+ * class:  class to exclude fences to
+ */
+#define FENCES_EXCLUDE_SAME_INDUSTRY(name, next) \
+switch (FEAT_INDUSTRYTILES, SELF, name, [ \
+			STORE_TEMP( LOAD_TEMP(var_use_fence_ne) * !nearby_tile_is_same_industry(-1,  0), var_use_fence_ne), \
+			STORE_TEMP( LOAD_TEMP(var_use_fence_nw) * !nearby_tile_is_same_industry( 0, -1), var_use_fence_nw), \
+			STORE_TEMP( LOAD_TEMP(var_use_fence_se) * !nearby_tile_is_same_industry( 0,  1), var_use_fence_se), \
+			STORE_TEMP( LOAD_TEMP(var_use_fence_sw) * !nearby_tile_is_same_industry( 1,  0), var_use_fence_sw), \
+		]) { \
+	next; \
+}
+
+/* Exclude fences to adjacent tile class
+ * 
+ * name:   name of this switch
+ * next:   name of next switch of spritelayout
+ * class:  class to exclude fences to
+ */
+#define FENCES_EXCLUDE_BY_CLASS(name, next, class) \
+switch (FEAT_INDUSTRYTILES, SELF, name, [ \
+			STORE_TEMP( LOAD_TEMP(var_use_fence_ne) * (nearby_tile_class(-1,  0) != class), var_use_fence_ne), \
+			STORE_TEMP( LOAD_TEMP(var_use_fence_nw) * (nearby_tile_class( 0, -1) != class), var_use_fence_nw), \
+			STORE_TEMP( LOAD_TEMP(var_use_fence_se) * (nearby_tile_class( 0,  1) != class), var_use_fence_se), \
+			STORE_TEMP( LOAD_TEMP(var_use_fence_sw) * (nearby_tile_class( 1,  0) != class), var_use_fence_sw), \
+		]) { \
+	next; \
+}
+
+
+/* Draw no fences around a tile
+ * 
+ * name:   name of this switch
+ * next:   name of next switch of spritelayout
+ */
+#define ADD_NO_FENCES(name, next) \
+switch (FEAT_INDUSTRYTILES, SELF, name, [ \
+			STORE_TEMP( 0, var_fencesprite_ne), \
+			STORE_TEMP( 0, var_fencesprite_nw), \
+			STORE_TEMP( 0, var_fencesprite_se), \
+			STORE_TEMP( 0, var_fencesprite_sw), \
+\
+			STORE_TEMP( 0, var_use_fence_ne), \
+			STORE_TEMP( 0, var_use_fence_nw), \
+			STORE_TEMP( 0, var_use_fence_se), \
+			STORE_TEMP( 0, var_use_fence_sw), \
+\
+			STORE_TEMP( 0, var_fence_offset_ne), \
+			STORE_TEMP( 0, var_fence_offset_nw), \
+			STORE_TEMP( 0, var_fence_offset_se), \
+			STORE_TEMP( 0, var_fence_offset_sw), \
+			]) { \
+	next; \
+}
+
+
+/* Add fences to a flat tile 
+ * 
+ * name:   name of this switch
+ * next:   name of next switch of spritelayout
+ * ne:     draw fence in NE
+ * nw:     draw fence in NW
+ * se:     draw fence in SE
+ * sw:     draw fence in SW
+ */
+#define ADD_FLAT_FENCES(name, next, ne, nw, se, sw) \
+switch (FEAT_INDUSTRYTILES, SELF, name, [ \
+			STORE_TEMP( 0, var_fencesprite_ne), \
+			STORE_TEMP( 0, var_fencesprite_nw), \
+			STORE_TEMP( 0, var_fencesprite_se), \
+			STORE_TEMP( 0, var_fencesprite_sw), \
+\
+			STORE_TEMP( ne, var_use_fence_ne), \
+			STORE_TEMP( nw, var_use_fence_nw), \
+			STORE_TEMP( se, var_use_fence_se), \
+			STORE_TEMP( sw, var_use_fence_sw), \
+\
+			STORE_TEMP( 0, var_fence_offset_ne), \
+			STORE_TEMP( 0, var_fence_offset_nw), \
+			STORE_TEMP( 0, var_fence_offset_se), \
+			STORE_TEMP( 0, var_fence_offset_sw), \
+			]) { \
+	next; \
+}
+
+
+/* Add sloped fences to a tile 
+ * 
+ * name:   name of this switch
+ * next:   name of next switch of spritelayout
+ * ne:     draw fence in NE
+ * nw:     draw fence in NW
+ * se:     draw fence in SE
+ * sw:     draw fence in SW
+ */
+#define ADD_FENCES(name, next, ne, nw, se, sw) \
+switch (FEAT_INDUSTRYTILES, SELF, name, [ \
+			STORE_TEMP( (nearby_tile_slope(0, 0) == 4  || nearby_tile_slope(0, 0) == 5  || nearby_tile_slope(0, 0) == 6  ||  \
+			             nearby_tile_slope(0, 0) == 7  || nearby_tile_slope(0, 0) == 23 || nearby_tile_slope(0, 0) == 30)*4 + \
+						(nearby_tile_slope(0, 0) == 8  || nearby_tile_slope(0, 0) == 9  || nearby_tile_slope(0, 0) == 10 ||  \
+			             nearby_tile_slope(0, 0) == 11 || nearby_tile_slope(0, 0) == 27 || nearby_tile_slope(0, 0) == 29)*6 \
+						, var_fencesprite_ne), \
+			STORE_TEMP( (nearby_tile_slope(0, 0) == 1  || nearby_tile_slope(0, 0) == 3  || nearby_tile_slope(0, 0) == 5  ||  \
+			             nearby_tile_slope(0, 0) == 7  || nearby_tile_slope(0, 0) == 23 || nearby_tile_slope(0, 0) == 27)*4 + \
+						(nearby_tile_slope(0, 0) == 8  || nearby_tile_slope(0, 0) == 10 || nearby_tile_slope(0, 0) == 12 ||  \
+			             nearby_tile_slope(0, 0) == 14 || nearby_tile_slope(0, 0) == 30 || nearby_tile_slope(0, 0) == 29)*6 \
+						, var_fencesprite_nw), \
+			STORE_TEMP( (nearby_tile_slope(0, 0) == 2  || nearby_tile_slope(0, 0) == 3  || nearby_tile_slope(0, 0) == 10 || \
+			             nearby_tile_slope(0, 0) == 11 || nearby_tile_slope(0, 0) == 23 || nearby_tile_slope(0, 0) == 27)*4 + \
+						(nearby_tile_slope(0, 0) == 4  || nearby_tile_slope(0, 0) == 5  || nearby_tile_slope(0, 0) == 12 || \
+			             nearby_tile_slope(0, 0) == 13 || nearby_tile_slope(0, 0) == 30 || nearby_tile_slope(0, 0) == 29)*6 \
+						, var_fencesprite_se), \
+			STORE_TEMP( (nearby_tile_slope(0, 0) == 2  || nearby_tile_slope(0, 0) == 6  || nearby_tile_slope(0, 0) == 10 ||  \
+			             nearby_tile_slope(0, 0) == 14 || nearby_tile_slope(0, 0) == 23 || nearby_tile_slope(0, 0) == 30)*4 + \
+						(nearby_tile_slope(0, 0) == 1  || nearby_tile_slope(0, 0) == 5  || nearby_tile_slope(0, 0) == 9  ||  \
+			             nearby_tile_slope(0, 0) == 13 || nearby_tile_slope(0, 0) == 27 || nearby_tile_slope(0, 0) == 29)*6 \
+						, var_fencesprite_sw), \
+ \
+			STORE_TEMP( ne, var_use_fence_ne), \
+			STORE_TEMP( nw, var_use_fence_nw), \
+			STORE_TEMP( se, var_use_fence_se), \
+			STORE_TEMP( sw, var_use_fence_sw), \
+ \
+			STORE_TEMP( (nearby_tile_slope(0, 0) == 13 || nearby_tile_slope(0, 0) == 14 || nearby_tile_slope(0, 0) == 30 || \
+			             nearby_tile_slope(0, 0) == 29 || nearby_tile_slope(0, 0) == 12), var_fence_offset_ne), \
+			STORE_TEMP( (nearby_tile_slope(0, 0) == 13 || nearby_tile_slope(0, 0) == 11 || nearby_tile_slope(0, 0) == 29 ||  \
+			             nearby_tile_slope(0, 0) == 27 || nearby_tile_slope(0, 0) == 9), var_fence_offset_nw), \
+			STORE_TEMP( (nearby_tile_slope(0, 0) == 6  || nearby_tile_slope(0, 0) == 14 || nearby_tile_slope(0, 0) == 30 || \
+			             nearby_tile_slope(0, 0) == 23 || nearby_tile_slope(0, 0) == 7), var_fence_offset_se), \
+			STORE_TEMP( (nearby_tile_slope(0, 0) == 3  || nearby_tile_slope(0, 0) == 11 || nearby_tile_slope(0, 0) == 27 || \
+			             nearby_tile_slope(0, 0) == 23 || nearby_tile_slope(0, 0) == 7), var_fence_offset_sw), \
+			1 \
+			]) { \
+	next; \
+}
+
+
+#define FENCE_NE \
+	building { \
+		sprite: 1302 + LOAD_TEMP(var_fencesprite_ne); \
+		hide_sprite: (LOAD_TEMP(var_use_fence_ne) == 0); \
+		xoffset:  0; \
+		yoffset:  0; \
+		zoffset:  LOAD_TEMP(var_fence_offset_ne) * 8; \
+		xextent: 1; \
+		yextent: 16; \
+		zextent: 6; \
+		recolour_mode: RECOLOUR_REMAP; \
+		palette:       PALETTE_USE_DEFAULT; \
+	}
+#define FENCE_SW \
+	building { \
+		sprite: 1302 + LOAD_TEMP(var_fencesprite_sw); \
+		hide_sprite: (LOAD_TEMP(var_use_fence_sw) == 0); \
+		xoffset: 16; \
+		yoffset:  0; \
+		zoffset:  LOAD_TEMP(var_fence_offset_sw) * 8; \
+		xextent: 1; \
+		yextent: 16; \
+		zextent: 6; \
+		recolour_mode: RECOLOUR_REMAP; \
+		palette:       PALETTE_USE_DEFAULT; \
+	}
+#define FENCE_NW \
+	building { \
+		sprite: 1301 + LOAD_TEMP(var_fencesprite_nw); \
+		hide_sprite: (LOAD_TEMP(var_use_fence_nw) == 0); \
+		xoffset:  0; \
+		yoffset:  0; \
+		zoffset:  LOAD_TEMP(var_fence_offset_nw) * 8; \
+		xextent: 16; \
+		yextent: 1; \
+		zextent: 6; \
+		recolour_mode: RECOLOUR_REMAP; \
+		palette:       PALETTE_USE_DEFAULT; \
+	}
+#define FENCE_SE \
+	building { \
+		sprite: 1301 + LOAD_TEMP(var_fencesprite_se); \
+		hide_sprite: (LOAD_TEMP(var_use_fence_se) == 0); \
+		xoffset: 0; \
+		yoffset: 16; \
+		zoffset:  LOAD_TEMP(var_fence_offset_se) * 8; \
+		xextent: 16; \
+		yextent: 1; \
+		zextent: 6; \
+		recolour_mode: RECOLOUR_REMAP; \
+		palette:       PALETTE_USE_DEFAULT; \
+	}
