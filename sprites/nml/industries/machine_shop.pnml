@@ -77,33 +77,33 @@ spriteset(THIS_ID(spriteset_13)) {
 	[920, 10, 64, 49, -39, -15, 9, "sprites/graphics/industries/machineshop_snow.png"]
 }
 
-SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_1), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_1), 16)
+SPRITELAYOUT_FENCES_NORMAL_SNOW(THIS_ID(spritelayout_1), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_1), 16)
 
-SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_2), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_2), 16)
+SPRITELAYOUT_FENCES_NORMAL_SNOW(THIS_ID(spritelayout_2), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_2), 16)
 
-SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_3), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_3), 16)
+SPRITELAYOUT_FENCES_NORMAL_SNOW(THIS_ID(spritelayout_3), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_3), 16)
 
-SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_4), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_4), 16)
+SPRITELAYOUT_FENCES_NORMAL_SNOW(THIS_ID(spritelayout_4), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_4), 16)
 
-SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_5), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_5), 32)
+SPRITELAYOUT_FENCES_NORMAL_SNOW(THIS_ID(spritelayout_5), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_5), 32)
 
-SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_6), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_6), 32)
+SPRITELAYOUT_FENCES_NORMAL_SNOW(THIS_ID(spritelayout_6), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_6), 32)
 
-SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_7), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_7), 32)
+SPRITELAYOUT_FENCES_NORMAL_SNOW(THIS_ID(spritelayout_7), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_7), 32)
 
-SPRITELAYOUT_NORMAL_SNOW_BEGIN(THIS_ID(spritelayout_8_anim), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_8), 7)
+SPRITELAYOUT_FENCES_NORMAL_SNOW_BEGIN(THIS_ID(spritelayout_8_anim), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_8), 7)
 	BUILDING_DARK_SMOKE_SMALL(13, 0, 73)
-SPRITELAYOUT_END
+SPRITELAYOUT_FENCES_END
 
-SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_9), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_9), 64)
+SPRITELAYOUT_FENCES_NORMAL_SNOW(THIS_ID(spritelayout_9), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_9), 64)
 
-SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_10), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_10), 64)
+SPRITELAYOUT_FENCES_NORMAL_SNOW(THIS_ID(spritelayout_10), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_10), 64)
 
-SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_11), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_11), 16)
+SPRITELAYOUT_FENCES_NORMAL_SNOW(THIS_ID(spritelayout_11), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_11), 16)
 
-SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_12), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_12), 16)
+SPRITELAYOUT_FENCES_NORMAL_SNOW(THIS_ID(spritelayout_12), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_12), 16)
 
-SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_13), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_13), 32)
+SPRITELAYOUT_FENCES_NORMAL_SNOW(THIS_ID(spritelayout_13), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_13), 32)
 
 spritelayout THIS_ID(spritelayout_14) {
 	ground {
@@ -222,6 +222,10 @@ switch(FEAT_INDUSTRYTILES, PARENT, THIS_ID(layout), layout_num) {
 	THIS_ID(layout_1);
 }
 
+FENCES_EXCLUDE_BY_CLASS     ( THIS_ID(tile_fence_station),  THIS_ID(layout),             TILE_CLASS_STATION)
+FENCES_EXCLUDE_SAME_INDUSTRY( THIS_ID(tile_fence_industry), THIS_ID(tile_fence_station))
+ADD_FLAT_FENCES             ( THIS_ID(tile_fences),         THIS_ID(tile_fence_industry), 1, 1, 1, 1)
+
 /* *************************************************
  * Definition of the industry tile and its callbacks
  * *************************************************/
@@ -260,7 +264,7 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile), 186) {
 	graphics {
 		anim_control: THIS_ID(tile1_anim_control);
 		tile_check:   THIS_ID(tile1_location_check);
-		THIS_ID(layout);
+		THIS_ID(tile_fences);
 	}
 }
 
