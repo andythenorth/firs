@@ -15,14 +15,14 @@ FIRS 0.7 is *not* savegame compatible with any previous release of FIRS.
 
 *What's new in 0.7?*
 
-Over xxxxx changes since FIRS 0.6.4
-
+Several hundred changes since FIRS 0.6.4
 
 *New / Changed Industries*
-- Hardware Store
-- Recycling Depot
-- Recycling Plant
-- Hotel 
+- Hardware Store (accepts Building Materials, Goods)
+- Recycling Depot (produces Recyclables)
+- Recycling Plant (accepts Recyclables, produces two random cargos from this list: Building Materials, Chemicals, Engineering Supplies, Farm Supplies, Manufacturing Supplies, Scrap Metal)
+- Hotel (accepts Food, Alcohol, Passengers, produces Passengers)
+
 - Food Market now accepts Fruit instead of Goods
 
 *Removed Industries*
@@ -33,24 +33,33 @@ Over xxxxx changes since FIRS 0.6.4
 - Recyclables cargo, produced by Recycling Depot, accepted by Recycling Plant
 
 *New Features*
-- Parameter to prevent industry opening during game
+- Parameter to prevent industry opening during game (useful for scenarios / multi-player challenges)
 - Hint on possible locations for farms in the fund menu
-- Animation (flag) for Dairy.
-- Animation for Oil Wells.
+- Petrol Pump will locate next to roads, in or out of towns
+- Animation (flag) for Dairy
+- Animation (pumps) for Oil Wells
 - Fences for some industries
 - Graphics to show metal at Metal Foundry
-- Improved appearance of Petrol Pump
+- Improved appearance of Dairy
 - Improved appearance of Arable Farm farmhouse
 - Improved appearance of Fruit Plantation farmhouse
+- Improved appearance of Furniture Factory
 - Improved appearance of Dairy Farm farmhouse
 - Improved appearance of Mixed Farm farmhouse
 - Improved appearance of Sheep Farm farmhouse
+- Improved appearance of Fishing Harbour (updated fishing boats, missing waves)
 - Improved appearance of Grain Mill (bakery)
+- Improved appearance of Grain Mill (windmill)
 - Improved appearance of Glass Works
+- Improved appearance of Petrol Pump
 - Improved appearance of Sugar Refinery
-- Improved appearance of Fishing Harbour (updated fishing boats)
+- Improved appearance of Plastics Plant
+- Improved appearance of Textile Mill
+- Improved appearance of Machine Shop
+- Improved appearance of Oil Wells (building added)
 - Additional layout for Sheep Farm
 - Additional layouts for reworked Glass Works
+- Snow for Aluminium Mill
 - Snow for Dairy
 - Snow for Food Market
 - Snow for Hotel
@@ -61,16 +70,26 @@ Over xxxxx changes since FIRS 0.6.4
 - Snow for Forge
 - Better snow support (greeble tile) for Forest
 
-
 *Fixes*
 - Allow the player to also place industries where s/he wants in the scenario editor
-- builders yard had spec flag set twice
-- removed flickering sprites for Fishing Harbour (closes #2358)
+- Builders Yard had spec flag set twice
+- Builders Yard construction probability was wrong
+- Lime Kiln construction probability was wrong
+- Store construction probability was wrong 
+- flickering graphics issue solved for Fishing Harbour
+- cargo slot 1E left empty for NARS2 rehearing compatibility
+- small amounts of delivered cargo could be 'lost' at secondary industries
+
+*Internal changes*
+- FIRS converted entirely to nml instead of nfo
+- replaced more pcx graphics files with png files
 
 *Translations additions / updates*
 - Italian translation (Snail)
-- Update Dutch translation
-- Update Spanish translation
+- Update Dutch translation (Alberth / Foobar)
+- Update Spanish translation (Terkhen)
+- Update German translation (Planetmaker)
+- !! translations framework changed, translations require updating for 0.7.x
 
 *Documentation*
 - Add GPL header to all industry files.
