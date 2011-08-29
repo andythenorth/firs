@@ -83,10 +83,13 @@ TILE_DISALLOW_SLOPES      (location_check,                       CB_RESULT_LOCAT
 item(FEAT_INDUSTRYTILES, THIS_ID(tile), 214) {
 	property {
 		substitute:       0;
-		accepted_cargos:  [[RSGR, 8], [MNSP, 8]];
+		accepted_cargos:  [[SGBT, 8], [MNSP, 8]];
 		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
 		callback_flags:   bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
+
+	/* Economy specific tile acceptance */
+	TILE_CARGO_2(ENABLE_SUGARCANE && ENABLE_MNSP, SGCN, MNSP)
 
 	graphics {
 		tile_check:   THIS_ID(location_check);
@@ -165,7 +168,7 @@ item(FEAT_INDUSTRIES, sugar_refinery, 19) {
 		prod_decrease_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_GENERAL;
 		new_ind_msg:            TTD_STR_NEWS_INDUSTRY_CONSTRUCTION;
 		prod_cargo_types:       [FOOD];
-		accept_cargo_types:     [MNSP, RSGR];
+		accept_cargo_types:     [MNSP, SGBT];
 		prod_multiplier:        [0, 0];
 		input_multiplier_1:     [0, 0];
 		input_multiplier_2:     [0, 0];
@@ -180,6 +183,10 @@ item(FEAT_INDUSTRIES, sugar_refinery, 19) {
 		remove_cost_multiplier: 0;
 		spec_flags:             bitmask(IND_FLAG_MILITARY_AIRPLANE_CAN_EXPLODE);
 	}
+
+	/* Economy specific cargo */
+	INDUSTRY_INPUT_CARGO_2(ENABLE_SUGARCANE && ENABLE_MNSP, MNSP, SGCN)
+
 	graphics {
 		produce_cargo_arrival:   THIS_ID(produce);
 		availability:            THIS_ID(check_availability);

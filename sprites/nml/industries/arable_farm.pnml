@@ -137,7 +137,7 @@ item(FEAT_INDUSTRIES, arable_farm, 26) {
 		new_ind_msg:            TTD_STR_NEWS_INDUSTRY_CONSTRUCTION;
 		name:                   string(STR_IND_ARABLE_FARM);
 		nearby_station_name:    string(STR_STATIONNAME_FARMS);
-		prod_cargo_types: [GRAI, RSGR];
+		prod_cargo_types: [GRAI, SGBT];
 		accept_cargo_types: [FMSP];
 		prod_multiplier: [2, 2];
 		input_multiplier_1: [0, 0];
@@ -155,6 +155,10 @@ item(FEAT_INDUSTRIES, arable_farm, 26) {
 		                                IND_FLAG_PLANT_FIELDS_WHEN_BUILT
 		                               );
 	}
+
+	/* Economy specific cargo */
+	INDUSTRY_OUTPUT_CARGO_2(ENABLE_SUGARCANE && ENABLE_GRAIN, GRAI, SGCN)
+
 	graphics {
 		produce_cargo_arrival:   THIS_ID(produce);
 		availability:            THIS_ID(check_availability);

@@ -154,13 +154,17 @@ switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(anim_control), (extra_callback_info1 & 
 item(FEAT_INDUSTRYTILES, THIS_ID(tile), 166) {
 	property {
 		substitute:         0;
-		accepted_cargos:    [[GRAI, 8], [RSGR, 8]];
+		accepted_cargos:    [[GRAI, 8], [SGBT, 8]];
 		land_shape_flags:   bitmask(LSF_ONLY_ON_FLAT_LAND);
 		special_flags:      bitmask(INDTILE_FLAG_RANDOM_ANIMATION);
 		animation_info:     [ANIMATION_LOOPING, 7];
 		animation_speed:    3;
 		animation_triggers: bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE);
 	}
+
+	/* Economy specific tile acceptance */
+	TILE_CARGO_2(ENABLE_SUGARCANE && ENABLE_GRAIN, GRAI, SGCN)
+
 	graphics {
 		anim_control: THIS_ID(anim_control);
 		tile_check:   THIS_ID(location_check);
@@ -295,7 +299,7 @@ item(FEAT_INDUSTRIES, biorefinery, 46) {
 		name:                   string(STR_IND_BIOREFINERY);
 		nearby_station_name:    string(STR_STATIONNAME_CHEMICALS);
 		prod_cargo_types: [RFPR, PETR];
-		accept_cargo_types: [GRAI, RSGR];
+		accept_cargo_types: [GRAI, SGBT];
 		prod_multiplier: [0, 0];
 		input_multiplier_1: [0, 0];
 		input_multiplier_2: [0, 0];
@@ -310,6 +314,10 @@ item(FEAT_INDUSTRIES, biorefinery, 46) {
 		remove_cost_multiplier: 0;
 		spec_flags:             bitmask(IND_FLAG_MILITARY_AIRPLANE_CAN_EXPLODE);
 	}
+
+	/* Economy specific cargo */
+	INDUSTRY_INPUT_CARGO_2(ENABLE_SUGARCANE && ENABLE_GRAIN, GRAI, SGCN)
+
 	graphics {
 		produce_cargo_arrival:   THIS_ID(produce);
 		availability:            THIS_ID(check_availability);
