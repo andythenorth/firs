@@ -9,15 +9,15 @@
 
 #define THIS_ID(...) lumber_yard ## __VA_ARGS__
 
-spriteset(THIS_ID(spriteset_1), "sprites/graphics/industries/lumberyard.pcx") { tmpl_building_sprite(80, 10, 64, -40) }
-spriteset(THIS_ID(spriteset_2), "sprites/graphics/industries/lumberyard.pcx") { tmpl_building_sprite(150, 10, 64, -34) }
-spriteset(THIS_ID(spriteset_3), "sprites/graphics/industries/lumberyard.pcx") { tmpl_building_sprite(220, 10, 64, -19) }
-spriteset(THIS_ID(spriteset_4), "sprites/graphics/industries/lumberyard.pcx") { tmpl_building_sprite(290, 10, 64, -35) }
-spriteset(THIS_ID(spriteset_5), "sprites/graphics/industries/lumberyard.pcx") { tmpl_building_sprite(10, 10, 64, -26) }
-spriteset(THIS_ID(spriteset_6), "sprites/graphics/industries/lumberyard.pcx") { tmpl_building_sprite(150, 90, 31, -4) }
-spriteset(THIS_ID(spriteset_7), "sprites/graphics/industries/lumberyard.pcx") { tmpl_building_sprite(220, 90, 31, -4) }
-spriteset(THIS_ID(spriteset_8), "sprites/graphics/industries/lumberyard.pcx") { tmpl_building_sprite(290, 90, 31, -4) }
-spriteset(THIS_ID(spriteset_9), "sprites/graphics/industries/lumberyard.pcx") { tmpl_building_sprite(360, 10, 64, -24) }
+spriteset(THIS_ID(spriteset_1), "sprites/graphics/industries/lumberyard.png") { tmpl_building_sprite(80, 10, 64, -40) }
+spriteset(THIS_ID(spriteset_2), "sprites/graphics/industries/lumberyard.png") { tmpl_building_sprite(150, 10, 64, -34) }
+spriteset(THIS_ID(spriteset_3), "sprites/graphics/industries/lumberyard.png") { tmpl_building_sprite(220, 10, 64, -19) }
+spriteset(THIS_ID(spriteset_4), "sprites/graphics/industries/lumberyard.png") { tmpl_building_sprite(290, 10, 64, -35) }
+spriteset(THIS_ID(spriteset_5), "sprites/graphics/industries/lumberyard.png") { tmpl_building_sprite(10, 10, 64, -26) }
+spriteset(THIS_ID(spriteset_6), "sprites/graphics/industries/lumberyard.png") { tmpl_building_sprite(150, 90, 31, -4) }
+spriteset(THIS_ID(spriteset_7), "sprites/graphics/industries/lumberyard.png") { tmpl_building_sprite(220, 90, 31, -4) }
+spriteset(THIS_ID(spriteset_8), "sprites/graphics/industries/lumberyard.png") { tmpl_building_sprite(290, 90, 31, -4) }
+spriteset(THIS_ID(spriteset_9), "sprites/graphics/industries/lumberyard.png") { tmpl_building_sprite(360, 10, 64, -24) }
 
 SPRITELAYOUT_FENCES_NORMAL(THIS_ID(spritelayout_1), 2022, THIS_ID(spriteset_1), 16)
 

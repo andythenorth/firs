@@ -9,12 +9,12 @@
 
 #define THIS_STR_EXTRA_SUPPLIES        STR_EXTRA_FARM_SUPPLIES
 
-spriteset(THIS_ID(spriteset_1), "sprites/graphics/industries/dairyfarm.pcx") { tmpl_building_sprite(10, 10, 52, -21) } 
-spriteset(THIS_ID(spriteset_2), "sprites/graphics/industries/dairyfarm.pcx") { tmpl_building_sprite(80, 10, 52, -21) } 
-spriteset(THIS_ID(spriteset_3), "sprites/graphics/industries/dairyfarm.pcx") { tmpl_building_sprite(150, 10, 52, -21) } 
-spriteset(THIS_ID(spriteset_4), "sprites/graphics/industries/dairyfarm.pcx") { tmpl_building_sprite(220, 10, 52, -21) } 
-spriteset(THIS_ID(spriteset_5), "sprites/graphics/industries/dairyfarm.pcx") { tmpl_building_sprite(290, 10, 52, -21) } 
-spriteset(THIS_ID(spriteset_6), "sprites/graphics/industries/dairyfarm.pcx") { tmpl_building_sprite(360, 10, 52, -21) } 
+spriteset(THIS_ID(spriteset_1), "sprites/graphics/industries/dairyfarm.png") { tmpl_building_sprite(10, 10, 52, -21) } 
+spriteset(THIS_ID(spriteset_2), "sprites/graphics/industries/dairyfarm.png") { tmpl_building_sprite(80, 10, 52, -21) } 
+spriteset(THIS_ID(spriteset_3), "sprites/graphics/industries/dairyfarm.png") { tmpl_building_sprite(150, 10, 52, -21) } 
+spriteset(THIS_ID(spriteset_4), "sprites/graphics/industries/dairyfarm.png") { tmpl_building_sprite(220, 10, 52, -21) } 
+spriteset(THIS_ID(spriteset_5), "sprites/graphics/industries/dairyfarm.png") { tmpl_building_sprite(290, 10, 52, -21) } 
+spriteset(THIS_ID(spriteset_6), "sprites/graphics/industries/dairyfarm.png") { tmpl_building_sprite(360, 10, 52, -21) } 
 
 SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_1), 2022, THIS_ID(spriteset_1), 24)
 

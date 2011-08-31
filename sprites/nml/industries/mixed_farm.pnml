@@ -9,14 +9,14 @@
 
 #define THIS_ID(...) mixed_farm ## __VA_ARGS__
 
-spriteset(THIS_ID(spriteset_1), "sprites/graphics/industries/mixedfarm.pcx") { tmpl_building_sprite(10, 10, 52, -21) } 
-spriteset(THIS_ID(spriteset_2), "sprites/graphics/industries/mixedfarm.pcx") { tmpl_building_sprite(80, 10, 52, -21) } 
-spriteset(THIS_ID(spriteset_3), "sprites/graphics/industries/mixedfarm.pcx") { tmpl_building_sprite(150, 10, 52, -21) } 
-spriteset(THIS_ID(spriteset_4), "sprites/graphics/industries/mixedfarm.pcx") { tmpl_building_sprite(220, 10, 52, -21) } 
-spriteset(THIS_ID(spriteset_5), "sprites/graphics/industries/mixedfarm.pcx") { tmpl_building_sprite(290, 10, 52, -21) } 
-spriteset(THIS_ID(spriteset_6), "sprites/graphics/industries/mixedfarm.pcx") { tmpl_building_sprite(360, 10, 52, -21) } 
-spriteset(THIS_ID(spriteset_7), "sprites/graphics/industries/mixedfarm.pcx") { tmpl_building_sprite(430, 10, 52, -21) } 
-spriteset(THIS_ID(spriteset_8), "sprites/graphics/industries/mixedfarm.pcx") { tmpl_building_sprite(500, 10, 52, -21) } 
+spriteset(THIS_ID(spriteset_1), "sprites/graphics/industries/mixedfarm.png") { tmpl_building_sprite(10, 10, 52, -21) } 
+spriteset(THIS_ID(spriteset_2), "sprites/graphics/industries/mixedfarm.png") { tmpl_building_sprite(80, 10, 52, -21) } 
+spriteset(THIS_ID(spriteset_3), "sprites/graphics/industries/mixedfarm.png") { tmpl_building_sprite(150, 10, 52, -21) } 
+spriteset(THIS_ID(spriteset_4), "sprites/graphics/industries/mixedfarm.png") { tmpl_building_sprite(220, 10, 52, -21) } 
+spriteset(THIS_ID(spriteset_5), "sprites/graphics/industries/mixedfarm.png") { tmpl_building_sprite(290, 10, 52, -21) } 
+spriteset(THIS_ID(spriteset_6), "sprites/graphics/industries/mixedfarm.png") { tmpl_building_sprite(360, 10, 52, -21) } 
+spriteset(THIS_ID(spriteset_7), "sprites/graphics/industries/mixedfarm.png") { tmpl_building_sprite(430, 10, 52, -21) } 
+spriteset(THIS_ID(spriteset_8), "sprites/graphics/industries/mixedfarm.png") { tmpl_building_sprite(500, 10, 52, -21) } 
 
 SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_1), GROUNDSPRITE_CLEARED, THIS_ID(spriteset_1), 64)
 

@@ -14,14 +14,14 @@ spriteset(THIS_ID(spriteset_ground), "sprites/graphics/industries/groundtiles.pn
 	tmpl_ground_tile(80, 10)
 }
 
-spriteset(THIS_ID(spriteset_1)) { tmpl_building_sprite_filename(500, 10, 66, -35, "sprites/graphics/industries/biorefinery.pcx") }
-spriteset(THIS_ID(spriteset_2)) { tmpl_building_sprite_filename(570, 10, 66, -35, "sprites/graphics/industries/biorefinery.pcx") }
-spriteset(THIS_ID(spriteset_3)) { tmpl_building_sprite_filename(710, 10, 66, -35, "sprites/graphics/industries/biorefinery.pcx") }
-spriteset(THIS_ID(spriteset_4)) { tmpl_building_sprite_filename( 80, 10, 88, -58, "sprites/graphics/industries/biorefinery.pcx") }
-spriteset(THIS_ID(spriteset_5)) { tmpl_building_sprite_filename(150, 10, 88, -60, "sprites/graphics/industries/biorefinery.pcx") }
-spriteset(THIS_ID(spriteset_6)) { tmpl_building_sprite_filename(220, 10, 88, -64, "sprites/graphics/industries/biorefinery.pcx") }
-spriteset(THIS_ID(spriteset_7)) { tmpl_building_sprite_filename(360, 10, 73, -45, "sprites/graphics/industries/biorefinery.pcx") }
-spriteset(THIS_ID(spriteset_8)) { tmpl_building_sprite_filename(430, 10, 66, -38, "sprites/graphics/industries/biorefinery.pcx") }
+spriteset(THIS_ID(spriteset_1)) { tmpl_building_sprite_filename(500, 10, 66, -35, "sprites/graphics/industries/biorefinery.png") }
+spriteset(THIS_ID(spriteset_2)) { tmpl_building_sprite_filename(570, 10, 66, -35, "sprites/graphics/industries/biorefinery.png") }
+spriteset(THIS_ID(spriteset_3)) { tmpl_building_sprite_filename(710, 10, 66, -35, "sprites/graphics/industries/biorefinery.png") }
+spriteset(THIS_ID(spriteset_4)) { tmpl_building_sprite_filename( 80, 10, 88, -58, "sprites/graphics/industries/biorefinery.png") }
+spriteset(THIS_ID(spriteset_5)) { tmpl_building_sprite_filename(150, 10, 88, -60, "sprites/graphics/industries/biorefinery.png") }
+spriteset(THIS_ID(spriteset_6)) { tmpl_building_sprite_filename(220, 10, 88, -64, "sprites/graphics/industries/biorefinery.png") }
+spriteset(THIS_ID(spriteset_7)) { tmpl_building_sprite_filename(360, 10, 73, -45, "sprites/graphics/industries/biorefinery.png") }
+spriteset(THIS_ID(spriteset_8)) { tmpl_building_sprite_filename(430, 10, 66, -38, "sprites/graphics/industries/biorefinery.png") }
 
 SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_1), THIS_ID(spriteset_ground), THIS_ID(spriteset_1), 48)
 
