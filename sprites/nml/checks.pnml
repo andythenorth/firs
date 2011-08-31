@@ -61,9 +61,7 @@ INCOMPATIBLE_GRF("SLTU", "Tourist Set")
 
 INCOMPATIBLE_GRF("SZ\13D", "Oil well decrease neutralizer")
 
-if (openttd_version <= version_openttd(1,1,0,20086)) {
-	INCOMPATIBLE_GRF("EH\01\01", "Experts hard industries")
-}
+INCOMPATIBLE_GRF("EH\01\01", "Experts hard industries")
 
 INCOMPATIBLE_GRF("DD\06\03", "UKRS Brick Chain")
 
