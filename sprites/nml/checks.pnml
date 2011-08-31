@@ -6,104 +6,77 @@ if (ttd_platform != PLATFORM_OPENTTD || openttd_version < version_openttd(1, 2, 
 	exit;
 }
 
+#define INCOMPATIBLE_GRF(grfid, name) \
+if (grf_future_status(grfid)) {\
+	error(FATAL, string(STR_ERR_INCOMPATIBLE_SET, name));\
+}
 
-if (grf_future_status("Meo\81")) {
-	error(FATAL, string(STR_ERR_INCOMPATIBLE_SET_NEW_CARGOS));
+INCOMPATIBLE_GRF("Meo\81", "New Cargos")
+
+INCOMPATIBLE_GRF("Meo\82", "New Cargos Petrol + Tourists")
+
+INCOMPATIBLE_GRF("Meo\91", "ECS Town Vector")
+
+INCOMPATIBLE_GRF("Meo\92", "ECS Basic Vector")
+
+INCOMPATIBLE_GRF("Meo\93", "ECS Chemical Vector")
+
+INCOMPATIBLE_GRF("Meo\94", "ECS Machinery Vector")
+
+INCOMPATIBLE_GRF("Meo\95", "ECS Wood Vector")
+
+INCOMPATIBLE_GRF("Meo\96", "ECS Construction Vector")
+
+INCOMPATIBLE_GRF("Meo\97", "ECS Agricultural Vector")
+
+INCOMPATIBLE_GRF("Meo\98", "ESC Basic for Arctic")
+
+INCOMPATIBLE_GRF("Meo\99", "ECS Basic for Tropic")
+
+INCOMPATIBLE_GRF("Meo\9A", "ECS Machinery for Tropic")
+
+INCOMPATIBLE_GRF("Meo\9B", "ECS Construction Vector by Pikkabird")
+
+INCOMPATIBLE_GRF("Meo\9C", "ECS Chemical Vector II")
+
+INCOMPATIBLE_GRF("SK\05\01", "Luukland Citybuilder")
+
+INCOMPATIBLE_GRF("JS\0A\02", "Luukland Citybuilder")
+
+INCOMPATIBLE_GRF("JS\0A\03", "Luukland Citybuilder")
+
+INCOMPATIBLE_GRF("JS\0A\04", "Luukland Citybuilder")
+
+INCOMPATIBLE_GRF("JS\0A\05", "Luukland Citybuilder")
+
+INCOMPATIBLE_GRF("EX\01\02", "Ex Citybuilder")
+
+INCOMPATIBLE_GRF("EX\01\03", "Ex Citybuilder")
+
+INCOMPATIBLE_GRF("DD\06\01", "UKRS Industries")
+
+INCOMPATIBLE_GRF("frMI", "Manual Industries")
+
+INCOMPATIBLE_GRF("SLTU", "Tourist Set")
+
+INCOMPATIBLE_GRF("SZ\13D", "Oil well decrease neutralizer")
+
+if (openttd_version <= version_openttd(1,1,0,20086)) {
+	INCOMPATIBLE_GRF("EH\01\01", "Experts hard industries")
 }
-if (grf_future_status("Meo\82")) {
-	error(FATAL, string(STR_ERR_INCOMPATIBLE_SET_NEW_CARGOS_PETROL));
-}
-if (grf_future_status("Meo\91")) {
-	error(FATAL, string(STR_ERR_INCOMPATIBLE_SET_ECS_TOWN));
-}
-if (grf_future_status("Meo\92")) {
-	error(FATAL, string(STR_ERR_INCOMPATIBLE_SET_ECS_BASIC));
-}
-if (grf_future_status("Meo\93")) {
-	error(FATAL, string(STR_ERR_INCOMPATIBLE_SET_ECS_CHEMICAL));
-}
-if (grf_future_status("Meo\94")) {
-	error(FATAL, string(STR_ERR_INCOMPATIBLE_SET_ECS_MACHINERY));
-}
-if (grf_future_status("Meo\95")) {
-	error(FATAL, string(STR_ERR_INCOMPATIBLE_SET_ECS_WOOD));
-}
-if (grf_future_status("Meo\96")) {
-	error(FATAL, string(STR_ERR_INCOMPATIBLE_SET_ECS_CONSTRUCTION));
-}
-if (grf_future_status("Meo\97")) {
-	error(FATAL, string(STR_ERR_INCOMPATIBLE_SET_ECS_AGRICULTURAL));
-}
-if (grf_future_status("Meo\98")) {
-	error(FATAL, string(STR_ERR_INCOMPATIBLE_SET_ECS_BASIC_ARCTIC));
-}
-if (grf_future_status("Meo\99")) {
-	error(FATAL, string(STR_ERR_INCOMPATIBLE_SET_ECS_BASIC_TROPIC));
-}
-if (grf_future_status("Meo\9A")) {
-	error(FATAL, string(STR_ERR_INCOMPATIBLE_SET_ECS_MACHINERY_TROPIC));
-}
-if (grf_future_status("Meo\9B")) {
-	error(FATAL, string(STR_ERR_INCOMPATIBLE_SET_ECS_CONSTRUCTION_PIKKA));
-}
-if (grf_future_status("Meo\9C")) {
-	error(FATAL, string(STR_ERR_INCOMPATIBLE_SET_ECS_CHEMICAL2));
-}
-if (grf_future_status("SK\05\01")) {
-	error(FATAL, string(STR_ERR_INCOMPATIBLE_SET_LUUKLAND_CITYBUILDER));
-}
-if (grf_future_status("JS\0A\02")) {
-	error(FATAL, string(STR_ERR_INCOMPATIBLE_SET_LUUKLAND_CITYBUILDER));
-}
-if (grf_future_status("JS\0A\03")) {
-	error(FATAL, string(STR_ERR_INCOMPATIBLE_SET_LUUKLAND_CITYBUILDER));
-}
-if (grf_future_status("JS\0A\04")) {
-	error(FATAL, string(STR_ERR_INCOMPATIBLE_SET_LUUKLAND_CITYBUILDER));
-}
-if (grf_future_status("JS\0A\05")) {
-	error(FATAL, string(STR_ERR_INCOMPATIBLE_SET_LUUKLAND_CITYBUILDER));
-}
-if (grf_future_status("EX\01\02")) {
-	error(FATAL, string(STR_ERR_INCOMPATIBLE_SET_EX_CITYBUILDER));
-}
-if (grf_future_status("EX\01\03")) {
-	error(FATAL, string(STR_ERR_INCOMPATIBLE_SET_EX_CITYBUILDER));
-}
-if (grf_future_status("DD\06\01")) {
-	error(FATAL, string(STR_ERR_INCOMPATIBLE_SET_UKRS));
-}
-if (grf_future_status("frMI")) {
-	error(FATAL, string(STR_ERR_INCOMPATIBLE_SET_MANIND));
-}
-if (grf_future_status("SLTU")) {
-	error(FATAL, string(STR_ERR_INCOMPATIBLE_SET_TOURISTSET));
-}
-if (grf_future_status("SZ\13D")) {
-	error(FATAL, string(STR_ERR_INCOMPATIBLE_SET_OIL_WELL_DECREASE));
-}
-if (grf_future_status("EH\01\01")) {
-	if (openttd_version <= version_openttd(1,1,0,20086)) {
-		error(FATAL, string(STR_ERR_INCOMPATIBLE_SET_EXPERT_HARD_INDUSTRIES));
-	}
-}
-if (grf_future_status("DD\06\03")) {
-	error(FATAL, string(STR_ERR_INCOMPATIBLE_SET_UKRS_BRICKCHAIN));
-}
-if (grf_future_status("DD\06\02")) {
-	error(FATAL, string(STR_ERR_INCOMPATIBLE_SET_PBI));
-}
-if (grf_future_status("mb\08\00")) {
-	error(FATAL, string(STR_ERR_INCOMPATIBLE_SET_NEW_CARGOS_MB));
-}
-if (grf_future_status("mb\07\00")) {
-	error(FATAL, string(STR_ERR_INCOMPATIBLE_SET_ALPINE_CLIMATE));
-}
-if (grf_future_status("AL\01\01")) {
-	error(FATAL, string(STR_ERR_INCOMPATIBLE_SET_NEARBY_STATION_NAMES));
-}
+
+INCOMPATIBLE_GRF("DD\06\03", "UKRS Brick Chain")
+
+INCOMPATIBLE_GRF("DD\06\02", "Pikka Basic Industries")
+
+INCOMPATIBLE_GRF("mb\08\00", "NewCargos by Michael Blunck")
+
+INCOMPATIBLE_GRF("mb\07\00", "Alpine Climate")
+
+INCOMPATIBLE_GRF("AL\01\01", "Nearby Station Names")
+
 if (grf_future_status("MG\08\00", "\FF\FF\FF\00")) {
-	error(FATAL, string(STR_ERR_INCOMPATIBLE_SET_LUMBER_MILL));
+	error(FATAL, string(STR_ERR_INCOMPATIBLE_SET, "Lumber Mill"));
 }
 
 if (grf_future_status("CACa")) {
@@ -112,7 +85,6 @@ if (grf_future_status("CACa")) {
 	}
 }
 if (grf_future_status("CASa")) {
-	param[9] = param["CASa", 1];
 	if (param["CASa", 1] != 0) {
 		error(FATAL, string(STR_ERR_INCOMPATIBLE_PARAM_CANSET));
 	}
