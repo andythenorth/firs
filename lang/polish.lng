@@ -20,27 +20,27 @@ STR_CARGO_NAME_SAND                                                             
 STR_CARGO_NAME_SCRAP_METAL                                                      :Złom
 STR_CARGO_NAME_STONE                                                            :Kamienie
 STR_CARGO_NAME_SUGARCANE                                                        :Buraki cukrowe
-STR_CARGO_UNIT_LUMBER                                                           :{WORD_S_TONNES} desek
+STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} desek
 STR_CARGO_NAME_WOOL                                                             :Wełna
 STR_CARGO_UNIT_PETROL                                                           :{VOLUME} paliwa
-STR_CARGO_UNIT_SUGAR_BEET                                                       :{WORD_S_TONNES} buraków cukrowych
+STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} buraków cukrowych
 STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} alkoholu
-STR_CARGO_UNIT_BAUXITE                                                          :{WORD_S_TONNES} boksytu
-STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WORD_S_TONNES} materiałów budowlanych
+STR_CARGO_UNIT_BAUXITE                                                          :{WEIGHT} boksytu
+STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WEIGHT} materiałów budowlanych
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} chemikaliów
-STR_CARGO_UNIT_CLAY                                                             :{WORD_S_TONNES} gliny
-STR_CARGO_UNIT_FIBRES                                                           :{WORD_S_TONNES} włókien naturalnych
-STR_CARGO_UNIT_FISH                                                             :{WORD_S_TONNES} ryb
-STR_CARGO_UNIT_FMSP                                                             :{WORD_S} skrzyń sprzętu rolniczego
-STR_CARGO_UNIT_FRUITS                                                           :{WORD_S_TONNES} owoców i warzyw
-STR_CARGO_UNIT_METAL                                                            :{WORD_S_TONNES} metalu
+STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} gliny
+STR_CARGO_UNIT_FIBRES                                                           :{WEIGHT} włókien naturalnych
+STR_CARGO_UNIT_FISH                                                             :{WEIGHT} ryb
+STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} skrzyń sprzętu rolniczego
+STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} owoców i warzyw
+STR_CARGO_UNIT_METAL                                                            :{WEIGHT} metalu
 STR_CARGO_UNIT_MILK                                                             :{VOLUME} mleka
-STR_CARGO_UNIT_MNSP                                                             :{WORD_S} skrzyń opakowań
-STR_CARGO_UNIT_RECYCLABLES                                                      :{WORD_S_TONNES} surowców wtórnych
-STR_CARGO_UNIT_SAND                                                             :{WORD_S_TONNES} piasku
-STR_CARGO_UNIT_SCRAP_METAL                                                      :{WORD_S_TONNES} złomu
-STR_CARGO_UNIT_STONE                                                            :{WORD_S_TONNES} kamieni
-STR_CARGO_UNIT_WOOL                                                             :{WORD_S_TONNES} wełny
+STR_CARGO_UNIT_MNSP                                                             :{SIGNED_WORD} skrzyń opakowań
+STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} surowców wtórnych
+STR_CARGO_UNIT_SAND                                                             :{WEIGHT} piasku
+STR_CARGO_UNIT_SCRAP_METAL                                                      :{WEIGHT} złomu
+STR_CARGO_UNIT_STONE                                                            :{WEIGHT} kamieni
+STR_CARGO_UNIT_WOOL                                                             :{WEIGHT} wełny
 STR_CID_BAUXITE                                                                 :{TINYFONT}BX
 STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}MB
 STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}MS
@@ -71,8 +71,8 @@ STR_EXTRA_TEXTILE_MILL                                                          
 STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Produkcja:{}  2 tony za 8 ton węgla{}  2 tony za 8 ton gliny{}  4 tony za 8 ton kamieni{}{}Produkcja wzrasta, gdy różne surowce są dostarczane w ciągu miesiąca.
 STR_EXTRA_BRICKWORKS                                                            :{BLACK}Produkcja:{}  2 tony za 8 ton węgla{}  2 tony za 8 ton piasku{}  4 tony za 8 ton gliny{}{}Produkcja wzrasta, gdy różne surowce są dostarczane w ciągu miesiąca.
 STR_EXTRA_BIOREFINERY                                                           :{BLACK}Przerabia zboże i cukier na paliwo i chemikalia.{}{}6 ton za 8 ton surowców.
-STR_EXTRA_ENGINEERING_SUPPLIES                                                  :{BLACK}Dostawy maszyn mogą zwiększyć produkcję.{}{YELLOW}  {DWORD_S} skrzyń dostarczono w tym miesiącu
-STR_EXTRA_FARM_SUPPLIES                                                         :{BLACK}Dostawy sprzętu rolniczego mogą zwiększyć produkcję.{}{YELLOW}  {DWORD_S} skrzyń dostarczono w tym miesiącu
+STR_EXTRA_ENGINEERING_SUPPLIES                                                  :{BLACK}Dostawy maszyn mogą zwiększyć produkcję.{}{YELLOW}  {COMMA} skrzyń dostarczono w tym miesiącu
+STR_EXTRA_FARM_SUPPLIES                                                         :{BLACK}Dostawy sprzętu rolniczego mogą zwiększyć produkcję.{}{YELLOW}  {COMMA} skrzyń dostarczono w tym miesiącu
 STR_GENERIC_D0B2                                                                :{BLACK}Dostarczanie opakowań pozwala na podwojenie produkcji.{}{}{STRING}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Osiagnięto maksymalny poziom produkcji
 
@@ -86,7 +86,7 @@ STR_CID_STONE                                                                   
 STR_CID_MANUFACTURING_SUPPLIEs                                                  :{TINYFONT}OP
 STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}SR
 STR_CID_CHEMICALS                                                               :{TINYFONT}CH
-STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                                                :{WORD_S} skrzyń maszyn
+STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                                                :{SIGNED_WORD} skrzyń maszyn
 STR_CID_PETROL                                                                  :{TINYFONT}PL
 STR_CID_CLAY                                                                    :{TINYFONT}GL
 STR_CID_ALCOHOL                                                                 :{TINYFONT}AL

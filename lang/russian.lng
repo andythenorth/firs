@@ -20,27 +20,27 @@ STR_CARGO_NAME_SAND                                                             
 STR_CARGO_NAME_SCRAP_METAL                                                      :Металлолом
 STR_CARGO_NAME_STONE                                                            :Камень
 STR_CARGO_NAME_SUGARCANE                                                        :Сахарная свёкла
-STR_CARGO_UNIT_LUMBER                                                           :{WORD_S_TONNES} пиломатериалов
+STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} пиломатериалов
 STR_CARGO_NAME_WOOL                                                             :Шерсть
 STR_CARGO_UNIT_PETROL                                                           :{VOLUME} топлива
-STR_CARGO_UNIT_SUGAR_BEET                                                       :{WORD_S_TONNES} сахарной свёклы
+STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} сахарной свёклы
 STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} алкоголя
-STR_CARGO_UNIT_BAUXITE                                                          :{WORD_S_TONNES} боксита
-STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WORD_S_TONNES} стройматериалов
+STR_CARGO_UNIT_BAUXITE                                                          :{WEIGHT} боксита
+STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WEIGHT} стройматериалов
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} химикатов
-STR_CARGO_UNIT_CLAY                                                             :{WORD_S_TONNES} глины
-STR_CARGO_UNIT_FIBRES                                                           :{WORD_S_TONNES} растительных волокон
-STR_CARGO_UNIT_FISH                                                             :{WORD_S_TONNES} рыбы
-STR_CARGO_UNIT_FMSP                                                             :{WORD_S} упаковок сельхозтоваров
-STR_CARGO_UNIT_FRUITS                                                           :{WORD_S_TONNES} овощей и фруктов
-STR_CARGO_UNIT_METAL                                                            :{WORD_S_TONNES} металла
+STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} глины
+STR_CARGO_UNIT_FIBRES                                                           :{WEIGHT} растительных волокон
+STR_CARGO_UNIT_FISH                                                             :{WEIGHT} рыбы
+STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} упаковок сельхозтоваров
+STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} овощей и фруктов
+STR_CARGO_UNIT_METAL                                                            :{WEIGHT} металла
 STR_CARGO_UNIT_MILK                                                             :{VOLUME} молока
-STR_CARGO_UNIT_MNSP                                                             :{WORD_S} упаковок производственных материалов
-STR_CARGO_UNIT_RECYCLABLES                                                      :{WORD_S_TONNES} вторсырья
-STR_CARGO_UNIT_SAND                                                             :{WORD_S_TONNES} песка
-STR_CARGO_UNIT_SCRAP_METAL                                                      :{WORD_S_TONNES} металлолома
-STR_CARGO_UNIT_STONE                                                            :{WORD_S_TONNES} камня
-STR_CARGO_UNIT_WOOL                                                             :{WORD_S_TONNES} шерсти
+STR_CARGO_UNIT_MNSP                                                             :{SIGNED_WORD} упаковок производственных материалов
+STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} вторсырья
+STR_CARGO_UNIT_SAND                                                             :{WEIGHT} песка
+STR_CARGO_UNIT_SCRAP_METAL                                                      :{WEIGHT} металлолома
+STR_CARGO_UNIT_STONE                                                            :{WEIGHT} камня
+STR_CARGO_UNIT_WOOL                                                             :{WEIGHT} шерсти
 STR_CID_BAUXITE                                                                 :{TINYFONT}BX
 STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}BM
 STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}ES
@@ -71,8 +71,8 @@ STR_EXTRA_TEXTILE_MILL                                                          
 STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Производится:{}  2т на 8т угля{}  2т на 8т глины{}  4т на 8т камня{}{}Производительность увеличится если два и более типа грузов будут поставлены в течение месяца.
 STR_EXTRA_BRICKWORKS                                                            :{BLACK}Производится:{}  2т на 8т угля{}  2т на 8т песка{}  4т на 8т глины{}{}Производительность увеличится если два и более типа грузов будут поставлены в течение месяца.
 STR_EXTRA_BIOREFINERY                                                           :{BLACK}Перерабатывает зерно и сахар в бензин и химикаты.{}{}6т продукции на 8т поставок.
-STR_EXTRA_ENGINEERING_SUPPLIES                                                  :{BLACK}Поставки оборудования могут увеличить производительность.{}{YELLOW}  {DWORD_S} упаковок поставлено в этом месяце
-STR_EXTRA_FARM_SUPPLIES                                                         :{BLACK}Поставки сельхозтоваров могут увеличить производительность.{}{YELLOW}  {DWORD_S} упаковок поставлено в этом месяце
+STR_EXTRA_ENGINEERING_SUPPLIES                                                  :{BLACK}Поставки оборудования могут увеличить производительность.{}{YELLOW}  {COMMA} упаковок поставлено в этом месяце
+STR_EXTRA_FARM_SUPPLIES                                                         :{BLACK}Поставки сельхозтоваров могут увеличить производительность.{}{YELLOW}  {COMMA} упаковок поставлено в этом месяце
 STR_GENERIC_D0B2                                                                :{BLACK}Поставки производственных материалов удвоят производительность от других грузов.{}{}{STRING}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Достигнута максимальная производительность
 
@@ -86,7 +86,7 @@ STR_CID_STONE                                                                   
 STR_CID_MANUFACTURING_SUPPLIEs                                                  :{TINYFONT}MS
 STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}FS
 STR_CID_CHEMICALS                                                               :{TINYFONT}CH
-STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                                                :{WORD_S} упаковок промышленного оборудования
+STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                                                :{SIGNED_WORD} упаковок промышленного оборудования
 STR_CID_PETROL                                                                  :{TINYFONT}PT
 STR_CID_CLAY                                                                    :{TINYFONT}CL
 STR_CID_ALCOHOL                                                                 :{TINYFONT}AL

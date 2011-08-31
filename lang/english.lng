@@ -45,27 +45,27 @@ STR_CARGO_NAME_SUGARCANE                                                        
 STR_CARGO_NAME_WOOL                                                             :Wool
 
 STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} of alcohol
-STR_CARGO_UNIT_BAUXITE                                                          :{WORD_S_TONNES} of bauxite
-STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WORD_S_TONNES} of building materials
+STR_CARGO_UNIT_BAUXITE                                                          :{WEIGHT} of bauxite
+STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WEIGHT} of building materials
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} of chemicals
-STR_CARGO_UNIT_CLAY                                                             :{WORD_S_TONNES} of clay
-STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{WORD_S} crates of engineering supplies
-STR_CARGO_UNIT_FIBRES                                                           :{WORD_S_TONNES} of plant fibres
-STR_CARGO_UNIT_FISH                                                             :{WORD_S_TONNES} of fish
-STR_CARGO_UNIT_FMSP                                                             :{WORD_S} crates of farm supplies
-STR_CARGO_UNIT_FRUITS                                                           :{WORD_S_TONNES} of fruit
-STR_CARGO_UNIT_LUMBER                                                           :{WORD_S_TONNES} of lumber
-STR_CARGO_UNIT_METAL                                                            :{WORD_S_TONNES} of metal
+STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} of clay
+STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} crates of engineering supplies
+STR_CARGO_UNIT_FIBRES                                                           :{WEIGHT} of plant fibres
+STR_CARGO_UNIT_FISH                                                             :{WEIGHT} of fish
+STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} crates of farm supplies
+STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} of fruit
+STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} of lumber
+STR_CARGO_UNIT_METAL                                                            :{WEIGHT} of metal
 STR_CARGO_UNIT_MILK                                                             :{VOLUME} of milk
-STR_CARGO_UNIT_MNSP                                                             :{WORD_S} crates of manufacturing supplies
+STR_CARGO_UNIT_MNSP                                                             :{SIGNED_WORD} crates of manufacturing supplies
 STR_CARGO_UNIT_PETROL                                                           :{VOLUME} of petrol
-STR_CARGO_UNIT_RECYCLABLES                                                      :{WORD_S_TONNES} of recyclables
-STR_CARGO_UNIT_SAND                                                             :{WORD_S_TONNES} of sand
-STR_CARGO_UNIT_SCRAP_METAL                                                      :{WORD_S_TONNES} of scrap metal
-STR_CARGO_UNIT_STONE                                                            :{WORD_S_TONNES} of stone
-STR_CARGO_UNIT_SUGAR_BEET                                                       :{WORD_S_TONNES} of sugar beet
-STR_CARGO_UNIT_SUGARCANE                                                        :{WORD_S_TONNES} of sugarcane
-STR_CARGO_UNIT_WOOL                                                             :{WORD_S_TONNES} of wool
+STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} of recyclables
+STR_CARGO_UNIT_SAND                                                             :{WEIGHT} of sand
+STR_CARGO_UNIT_SCRAP_METAL                                                      :{WEIGHT} of scrap metal
+STR_CARGO_UNIT_STONE                                                            :{WEIGHT} of stone
+STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} of sugar beet
+STR_CARGO_UNIT_SUGARCANE                                                        :{WEIGHT} of sugarcane
+STR_CARGO_UNIT_WOOL                                                             :{WEIGHT} of wool
 
 STR_CID_ALCOHOL                                                                 :{TINYFONT}AL
 STR_CID_BAUXITE                                                                 :{TINYFONT}BX
@@ -133,8 +133,8 @@ STR_EXTRA_BREWERY                                                               
 STR_EXTRA_BRICKWORKS                                                            :{BLACK}Cargo production:{}  2t per 8t coal delivered{}  2t per 8t sand delivered{}  4t per 8t clay delivered{}{}Production steps up if two or more cargos are delivered within a month of each other.
 STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Cargo production:{}  2t per 8t coal delivered{}  2t per 8t clay delivered{}  4t per 8t stone delivered{}{}Production steps up if two or more cargos are delivered within a month of each other.
 STR_EXTRA_DAIRY                                                                 :{BLACK}Cargo production:{}  3t per 8t manufacturing supplies delivered{}  5t per 8t milk delivered{}{}Increases to 8t per 8t when both cargos are delivered within a month of each other.
-STR_EXTRA_ENGINEERING_SUPPLIES                                                  :{BLACK}Engineering supplies may increase production.{}{YELLOW}  {DWORD_S} crates delivered this month
-STR_EXTRA_FARM_SUPPLIES                                                         :{BLACK}Farm supplies may increase production.{}{YELLOW}  {DWORD_S} crates delivered this month
+STR_EXTRA_ENGINEERING_SUPPLIES                                                  :{BLACK}Engineering supplies may increase production.{}{YELLOW}  {COMMA} crates delivered this month
+STR_EXTRA_FARM_SUPPLIES                                                         :{BLACK}Farm supplies may increase production.{}{YELLOW}  {COMMA} crates delivered this month
 STR_EXTRA_FERTILIZER_PLANT                                                      :{BLACK}Processes chemicals into fertiliser for use by farms.{}{}8t production per 8t delivered.
 STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Cargo production:{}  3t per 8t manufacturing supplies delivered{}  5t per 8t fish delivered{}{}Increases to 8t per 8t when both cargos are delivered within a month of each other.
 STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Cargo production:{}  3t per 8t manufacturing supplies delivered{}  5t per 8t lumber delivered{}{}Increases to 8t per 8t when both cargos are delivered within a month of each other.
@@ -156,7 +156,7 @@ STR_EXTRA_STEELMILL                                                             
 STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Cargo production:{}  3t per 8t manufacturing supplies delivered{}  5t per 8t sugar cane delivered{}{}Increases to 8t per 8t when both cargos are delivered within a month of each other.
 STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Cargo production:{}  3t per 8t manufacturing supplies delivered{}  5t per 8t wool delivered{}  5t per 8t plant fibres delivered{}{}Production steps up if manufacturing supplies delivered within a month of other cargos.
 
-STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ DEBUG ------------{}Production this month:{}Cargo 1: {WHITE}{DWORD_S}{BLACK}{}Cargo 2: {WHITE}{DWORD_S}{BLACK}{}Days since last delivery: {WHITE}{DWORD_S}{BLACK}
+STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ DEBUG ------------{}Production this month:{}Cargo 1: {WHITE}{COMMA}{BLACK}{}Cargo 2: {WHITE}{COMMA}{BLACK}{}Days since last delivery: {WHITE}{COMMA}{BLACK}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Maximum production reached
 STR_GENERIC_D0B2                                                                :{BLACK}Manufacturing supplies double production from other cargos.{}{}{STRING}
 STR_GENERIC_NEWLINE                                                             :{}

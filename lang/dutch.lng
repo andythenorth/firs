@@ -41,29 +41,29 @@ STR_CARGO_NAME_SAND                                                             
 STR_CARGO_NAME_SCRAP_METAL                                                      :Schroot
 STR_CARGO_NAME_STONE                                                            :Grind
 STR_CARGO_NAME_SUGARCANE                                                        :Suikerbieten
-STR_CARGO_UNIT_LUMBER                                                           :{WORD_S_TONNES} gezaagd hout
+STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} gezaagd hout
 STR_CARGO_NAME_WOOL                                                             :Wol
 
 STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} alcohol
-STR_CARGO_UNIT_BAUXITE                                                          :{WORD_S_TONNES} bauxiet
-STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WORD_S_TONNES} bouwmaterialen
+STR_CARGO_UNIT_BAUXITE                                                          :{WEIGHT} bauxiet
+STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WEIGHT} bouwmaterialen
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} chemicaliën
-STR_CARGO_UNIT_CLAY                                                             :{WORD_S_TONNES} klei
-STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{WORD_S} kratten constructiehulpgoederen
-STR_CARGO_UNIT_FIBRES                                                           :{WORD_S_TONNES} katoen
-STR_CARGO_UNIT_FISH                                                             :{WORD_S_TONNES} vis
-STR_CARGO_UNIT_FMSP                                                             :{WORD_S} kratten landbouwhulpgoederen
-STR_CARGO_UNIT_FRUITS                                                           :{WORD_S_TONNES} fruit en groente
-STR_CARGO_UNIT_METAL                                                            :{WORD_S_TONNES} metaal
+STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} klei
+STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} kratten constructiehulpgoederen
+STR_CARGO_UNIT_FIBRES                                                           :{WEIGHT} katoen
+STR_CARGO_UNIT_FISH                                                             :{WEIGHT} vis
+STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} kratten landbouwhulpgoederen
+STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} fruit en groente
+STR_CARGO_UNIT_METAL                                                            :{WEIGHT} metaal
 STR_CARGO_UNIT_MILK                                                             :{VOLUME} melk
-STR_CARGO_UNIT_MNSP                                                             :{WORD_S} kratten produktiehulpgoederen
+STR_CARGO_UNIT_MNSP                                                             :{SIGNED_WORD} kratten produktiehulpgoederen
 STR_CARGO_UNIT_PETROL                                                           :{VOLUME} benzine
-STR_CARGO_UNIT_RECYCLABLES                                                      :{WORD_S_TONNES} herbruikbare goederen
-STR_CARGO_UNIT_SAND                                                             :{WORD_S_TONNES} zand
-STR_CARGO_UNIT_SCRAP_METAL                                                      :{WORD_S_TONNES} schroot
-STR_CARGO_UNIT_STONE                                                            :{WORD_S_TONNES} grind
-STR_CARGO_UNIT_SUGAR_BEET                                                       :{WORD_S_TONNES} suikerbieten
-STR_CARGO_UNIT_WOOL                                                             :{WORD_S_TONNES} wol
+STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} herbruikbare goederen
+STR_CARGO_UNIT_SAND                                                             :{WEIGHT} zand
+STR_CARGO_UNIT_SCRAP_METAL                                                      :{WEIGHT} schroot
+STR_CARGO_UNIT_STONE                                                            :{WEIGHT} grind
+STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} suikerbieten
+STR_CARGO_UNIT_WOOL                                                             :{WEIGHT} wol
 
 STR_CID_ALCOHOL                                                                 :{TINYFONT}AL
 STR_CID_BAUXITE                                                                 :{TINYFONT}BX
@@ -130,8 +130,8 @@ STR_EXTRA_BREWERY                                                               
 STR_EXTRA_BRICKWORKS                                                            :{BLACK}Productie:{}  2t per 8t geleverde kolen{}  2t per 8t geleverd zand{}  4t per 8t geleverd klei{}{}Productie verhoogt als twee of meer vrachtsoorten binnen een maand van elkaar worden geleverd.
 STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Productie:{}  2t per 8t geleverde kolen{}  2t per 8t geleverd klei{}  4t per 8t geleverd grind{}{}Productie verhoogt als twee of meer vrachtsoorten binnen een maand van elkaar worden geleverd.
 STR_EXTRA_DAIRY                                                                 :{BLACK}Productie:{}  3t per 8t geleverde produktiehulpgoederen{}  5t per 8t geleverde melk{}{}Verhoogt tot 8t per 8t als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
-STR_EXTRA_ENGINEERING_SUPPLIES                                                  :{BLACK}Constructiehulpgoederen kunnen de produktie verhogen.{}{YELLOW}  {DWORD_S} kratten geleverd deze maand
-STR_EXTRA_FARM_SUPPLIES                                                         :{BLACK}Landbouwhulpgoederen kunnen de produktie verhogen.{}{YELLOW}  {DWORD_S} kratten geleverd deze maand
+STR_EXTRA_ENGINEERING_SUPPLIES                                                  :{BLACK}Constructiehulpgoederen kunnen de produktie verhogen.{}{YELLOW}  {COMMA} kratten geleverd deze maand
+STR_EXTRA_FARM_SUPPLIES                                                         :{BLACK}Landbouwhulpgoederen kunnen de produktie verhogen.{}{YELLOW}  {COMMA} kratten geleverd deze maand
 STR_EXTRA_FERTILIZER_PLANT                                                      :{BLACK}Verwerkt chemicaliën tot kunstmest voor gebruik door boerderijen.{}{}8t produktie voor iedere 8t geleverd.
 STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Productie:{}  3t per 8t geleverde produktiehulpgoederen{}  5t per 8t geleverd vis{}{}Verhoogt tot 8t per 8t als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
 STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Productie:{}  3t per 8t geleverde produktiehulpgoederen{}  5t per 8t geleverd gezaagd hout{}{}Verhoogt tot 8t per 8t als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
@@ -153,7 +153,7 @@ STR_EXTRA_STEELMILL                                                             
 STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Productie:{}  3t per 8t geleverde produktiehulpgoederen{}  5t per 8t geleverd suikerriet{}{}Verhoogt tot 8t per 8t als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
 STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Productie:{}  3t per 8t geleverde produktiehulpgoederen{}  5t per 8t geleverd wol{}  5t per 8t geleverd katoen{}{}Productie verhoogt als produktiehulpgoederen binnen een maand van andere vracht worden geleverd.
 
-STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ DEBUG ------------{}Produktie deze maand:{}Goederen 1: {WHITE}{DWORD_S}{BLACK}{}Goederen 2: {WHITE}{DWORD_S}{BLACK}{}Dagen sinds laatste levering: {WHITE}{DWORD_S}{BLACK}
+STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ DEBUG ------------{}Produktie deze maand:{}Goederen 1: {WHITE}{COMMA}{BLACK}{}Goederen 2: {WHITE}{COMMA}{BLACK}{}Dagen sinds laatste levering: {WHITE}{COMMA}{BLACK}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Maximale produktiecapaciteit bereikt.
 STR_GENERIC_D0B2                                                                :{BLACK}Productiehulpgoederen verdubbelen de produktiecapaciteit van andere goederen.{}{}{STRING}
 STR_GENERIC_NEWLINE                                                             :{}

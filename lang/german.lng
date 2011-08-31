@@ -47,26 +47,26 @@ STR_CARGO_NAME_WOOL                                                             
 
 STR_CARGO_UNIT_PETROL                                                           :{VOLUME} Treibstoff
 STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} Spirituosen
-STR_CARGO_UNIT_BAUXITE                                                          :{WORD_S_TONNES} Bauxit
-STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WORD_S_TONNES} Baustoffe
+STR_CARGO_UNIT_BAUXITE                                                          :{WEIGHT} Bauxit
+STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WEIGHT} Baustoffe
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} Chemikalien
-STR_CARGO_UNIT_CLAY                                                             :{WORD_S_TONNES} Tonminerale
-STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{WORD_S} Kisten Ersatzteile
-STR_CARGO_UNIT_FIBRES                                                           :{WORD_S_TONNES} Pflanzenfasern
-STR_CARGO_UNIT_FISH                                                             :{WORD_S_TONNES} Fisch
-STR_CARGO_UNIT_FMSP                                                             :{WORD_S} Kisten landw. Betriebsmittel
-STR_CARGO_UNIT_FRUITS                                                           :{WORD_S_TONNES} Früchte und Gemüse
-STR_CARGO_UNIT_LUMBER                                                           :{WORD_S_TONNES} Bauholz
-STR_CARGO_UNIT_METAL                                                            :{WORD_S_TONNES} Metall
+STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} Tonminerale
+STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} Kisten Ersatzteile
+STR_CARGO_UNIT_FIBRES                                                           :{WEIGHT} Pflanzenfasern
+STR_CARGO_UNIT_FISH                                                             :{WEIGHT} Fisch
+STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} Kisten landw. Betriebsmittel
+STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} Früchte und Gemüse
+STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} Bauholz
+STR_CARGO_UNIT_METAL                                                            :{WEIGHT} Metall
 STR_CARGO_UNIT_MILK                                                             :{VOLUME} Milch
-STR_CARGO_UNIT_MNSP                                                             :{WORD_S} Kisten Produktionsgüter
-STR_CARGO_UNIT_RECYCLABLES                                                      :{WORD_S_TONNES} Wertstoffe
-STR_CARGO_UNIT_SAND                                                             :{WORD_S_TONNES} Sand
-STR_CARGO_UNIT_SCRAP_METAL                                                      :{WORD_S_TONNES} Altmetall
-STR_CARGO_UNIT_STONE                                                            :{WORD_S_TONNES} Steine
-STR_CARGO_UNIT_SUGAR_BEET                                                       :{WORD_S_TONNES} Zuckerrüben
-STR_CARGO_UNIT_SUGARCANE                                                        :{WORD_S_TONNES} Zuckerrohr
-STR_CARGO_UNIT_WOOL                                                             :{WORD_S_TONNES} Wolle
+STR_CARGO_UNIT_MNSP                                                             :{SIGNED_WORD} Kisten Produktionsgüter
+STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} Wertstoffe
+STR_CARGO_UNIT_SAND                                                             :{WEIGHT} Sand
+STR_CARGO_UNIT_SCRAP_METAL                                                      :{WEIGHT} Altmetall
+STR_CARGO_UNIT_STONE                                                            :{WEIGHT} Steine
+STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} Zuckerrüben
+STR_CARGO_UNIT_SUGARCANE                                                        :{WEIGHT} Zuckerrohr
+STR_CARGO_UNIT_WOOL                                                             :{WEIGHT} Wolle
 
 
 STR_CID_ALCOHOL                                                                 :{TINYFONT}AL
@@ -135,8 +135,8 @@ STR_EXTRA_BREWERY                                                               
 STR_EXTRA_BRICKWORKS                                                            :{BLACK}Produktion:{}  2t pro gelieferter 8t Kohle{}  2t pro gelieferter 8t Sand{}  4t pro gelieferter 8t Ton{}{}Produktion steigt, wenn zwei oder mehr Frachtarten innerhalb eines Monats geliefert werden.
 STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Produktion:{}  2t pro gelieferter 8t Kohle{}  2t pro gelieferter 8t Ton{}  4t pro gelieferter 8t Steine{}{}Produktion steigt, wenn zwei oder mehr Frachtarten innerhalb eines Monats geliefert werden.
 STR_EXTRA_DAIRY                                                                 :{BLACK}Produktion:{}  3t pro gelieferter 8t Produktionsgüter{}  5t pro gelieferter 8t Milch{}{}Steigt auf 8t Produktion pro gelieferter 8t, wenn beide Frachtarten innerhalb eines Monats geliefert werden.
-STR_EXTRA_ENGINEERING_SUPPLIES                                                  :{BLACK}Ersatzteile können die Produktion erhöhen.{}{YELLOW} Diesen Monat wurden {DWORD_S} Kisten geliefert
-STR_EXTRA_FARM_SUPPLIES                                                         :{BLACK}landw. Betriebsmittel können die Produktion erhöhen.{}{YELLOW} Diesen Monat wurden {DWORD_S} Kisten geliefert
+STR_EXTRA_ENGINEERING_SUPPLIES                                                  :{BLACK}Ersatzteile können die Produktion erhöhen.{}{YELLOW} Diesen Monat wurden {COMMA} Kisten geliefert
+STR_EXTRA_FARM_SUPPLIES                                                         :{BLACK}landw. Betriebsmittel können die Produktion erhöhen.{}{YELLOW} Diesen Monat wurden {COMMA} Kisten geliefert
 STR_EXTRA_FERTILIZER_PLANT                                                      :{BLACK}Verarbeitet Chemikalien zu Dünger für landwirtschaftlichen Gebrauch.{}{}8t Produktion pro gelieferter 8t.
 STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Produktion:{}  3t pro gelieferter 8t Produktionsgüter{}  5t pro gelieferter 8t Fisch{}{}Steigt auf 8t Produktion pro gelieferter 8t, wenn beide Frachtarten innerhalb eines Monats geliefert werden.
 STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Produktion:{}  3t pro gelieferter 8t Produktionsgüter{}  5t pro gelieferter 8t Bauholz{}{}Steigt auf 8t Produktion pro gelieferter 8t, wenn beide Frachtarten innerhalb eines Monats geliefert werden.

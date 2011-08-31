@@ -19,26 +19,26 @@ STR_CARGO_NAME_SAND                                                             
 STR_CARGO_NAME_SCRAP_METAL                                                      :Metalli di scarto
 STR_CARGO_NAME_STONE                                                            :Pietre
 STR_CARGO_NAME_SUGARCANE                                                        :Barbabietole da zucchero
-STR_CARGO_UNIT_LUMBER                                                           :{WORD_S_TONNES} di prodotti in legno
+STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} di prodotti in legno
 STR_CARGO_NAME_WOOL                                                             :Lana
 STR_CARGO_UNIT_PETROL                                                           :{VOLUME} di benzina
-STR_CARGO_UNIT_SUGAR_BEET                                                       :{WORD_S_TONNES} di barbabietole da zucchero
+STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} di barbabietole da zucchero
 STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} di alcoolici
-STR_CARGO_UNIT_BAUXITE                                                          :{WORD_S_TONNES} di bauxite
-STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WORD_S_TONNES} di materiali per edilizia
+STR_CARGO_UNIT_BAUXITE                                                          :{WEIGHT} di bauxite
+STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WEIGHT} di materiali per edilizia
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} di prodotti chimici
-STR_CARGO_UNIT_CLAY                                                             :{WORD_S_TONNES} di argilla
-STR_CARGO_UNIT_FIBRES                                                           :{WORD_S_TONNES} di fibre tessili
-STR_CARGO_UNIT_FISH                                                             :{WORD_S_TONNES} di pesce
-STR_CARGO_UNIT_FMSP                                                             :{WORD_S} casse di forniture agricole
-STR_CARGO_UNIT_FRUITS                                                           :{WORD_S_TONNES} di frutta e verdura
-STR_CARGO_UNIT_METAL                                                            :{WORD_S_TONNES} di metalli
+STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} di argilla
+STR_CARGO_UNIT_FIBRES                                                           :{WEIGHT} di fibre tessili
+STR_CARGO_UNIT_FISH                                                             :{WEIGHT} di pesce
+STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} casse di forniture agricole
+STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} di frutta e verdura
+STR_CARGO_UNIT_METAL                                                            :{WEIGHT} di metalli
 STR_CARGO_UNIT_MILK                                                             :{VOLUME} di latte
-STR_CARGO_UNIT_MNSP                                                             :{WORD_S} casse di forniture industriali
-STR_CARGO_UNIT_SAND                                                             :{WORD_S_TONNES} di sabbia
-STR_CARGO_UNIT_SCRAP_METAL                                                      :{WORD_S_TONNES} di metalli di scarto
-STR_CARGO_UNIT_STONE                                                            :{WORD_S_TONNES} di pietre
-STR_CARGO_UNIT_WOOL                                                             :{WORD_S_TONNES} di lana
+STR_CARGO_UNIT_MNSP                                                             :{SIGNED_WORD} casse di forniture industriali
+STR_CARGO_UNIT_SAND                                                             :{WEIGHT} di sabbia
+STR_CARGO_UNIT_SCRAP_METAL                                                      :{WEIGHT} di metalli di scarto
+STR_CARGO_UNIT_STONE                                                            :{WEIGHT} di pietre
+STR_CARGO_UNIT_WOOL                                                             :{WEIGHT} di lana
 STR_CID_BAUXITE                                                                 :{TINYFONT}BX
 STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}BM
 STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}ES
@@ -68,8 +68,8 @@ STR_EXTRA_TEXTILE_MILL                                                          
 STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Produzione di merci:{}  2t ogni 8t di carbone consegnate{}  2t ogni 8t d'argilla consegnate{}  4t ogni 8t di pietre consegnate{}{}La produzione aumenta se due o più tipi di merci sono consegnate entro un intervallo inferiore a un mese.
 STR_EXTRA_BRICKWORKS                                                            :{BLACK}Produzione di merci:{}  2t ogni 8t di carbone consegnate{}  2t ogni 8t di sabbia consegnate{}  4t ogni 8t d'argilla consegnate{}{}La produzione aumenta se due o più tipi di merci sono consegnate entro un intervallo inferiore a un mese.
 STR_EXTRA_BIOREFINERY                                                           :{BLACK}Lavora il grano e lo zucchero per produrre carburanti e prodotti chimici.{}{}6t di produzione ogni 8t consegnate.
-STR_EXTRA_ENGINEERING_SUPPLIES                                                  :{BLACK}Le forniture meccaniche aumentano la produzione.{}{YELLOW}  {DWORD_S} casse consegnate questo mese
-STR_EXTRA_FARM_SUPPLIES                                                         :{BLACK}Le forniture agricole aumentano la produzione.{}{YELLOW}  {DWORD_S} casse consegnate questo mese
+STR_EXTRA_ENGINEERING_SUPPLIES                                                  :{BLACK}Le forniture meccaniche aumentano la produzione.{}{YELLOW}  {COMMA} casse consegnate questo mese
+STR_EXTRA_FARM_SUPPLIES                                                         :{BLACK}Le forniture agricole aumentano la produzione.{}{YELLOW}  {COMMA} casse consegnate questo mese
 STR_GENERIC_D0B2                                                                :{BLACK}Le forniture industriali raddoppiano la produzione di altre merci.{}{}{STRING}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Massimo livello di produzione raggiunto
 
@@ -83,7 +83,7 @@ STR_CID_STONE                                                                   
 STR_CID_MANUFACTURING_SUPPLIEs                                                  :{TINYFONT}MS
 STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}FS
 STR_CID_CHEMICALS                                                               :{TINYFONT}CH
-STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                                                :{WORD_S} casse di forniture meccaniche
+STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                                                :{SIGNED_WORD} casse di forniture meccaniche
 STR_CID_PETROL                                                                  :{TINYFONT}PT
 STR_CID_CLAY                                                                    :{TINYFONT}CL
 STR_CID_ALCOHOL                                                                 :{TINYFONT}AL
