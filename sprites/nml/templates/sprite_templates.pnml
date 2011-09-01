@@ -7,7 +7,7 @@
 
 /* Plain ground sprite without any frills */
 template tmpl_ground_tile(x, y) {
-	[x, y, 64, 31, -31, 0, 9]
+	[x, y, 64, 31, -31, 0]
 }
 
 /*
@@ -15,9 +15,9 @@ template tmpl_ground_tile(x, y) {
  * and normal alignment to the edges of the tile
  */
 template tmpl_building_sprite(x, y, h, dy) {
-    [x, y, 64, h, -31, dy, 9]
+    [x, y, 64, h, -31, dy]
 }    
 
 template tmpl_building_sprite_filename(x, y, h, dy, filename) {
-    [x, y, 64, h, -31, dy, 9, filename]
+    [x, y, 64, h, -31, dy, filename]
 }    
