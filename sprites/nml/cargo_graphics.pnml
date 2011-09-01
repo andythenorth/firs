@@ -3,7 +3,7 @@
  * x and y indices are zero-based indices in the cargo icons png file.
  */
 #define cargo_icon_template(cargoicon_id, x_index, y_index) \
-spriteset(cargoicon_id) { [10 + 20 * x_index, 10 + 20 * y_index, 10, 10, 0, 0, TILE, "sprites/graphics/other/cargoicons.png"] }
+spriteset(cargoicon_id) { [10 + 20 * x_index, 10 + 20 * y_index, 10, 10, 0, 0, "sprites/graphics/other/cargoicons.png"] }
 
 cargo_icon_template(cargoicon_passenger,               0, 0)
 cargo_icon_template(cargoicon_coal,                    1, 0)
