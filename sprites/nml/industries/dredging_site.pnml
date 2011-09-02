@@ -86,7 +86,7 @@ item(FEAT_INDUSTRIES, dredging_site, 20) {
 		prod_increase_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL;
 		prod_decrease_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_GENERAL;
 		new_ind_msg:            TTD_STR_NEWS_INDUSTRY_CONSTRUCTION;
-		name:                   string(STR_IND_DEDGING_SITE);
+		name:                   string(STR_IND_DREDGING_SITE);
 		nearby_station_name:    string(STR_STATIONNAME_DREDGING_SITE);
 		prod_cargo_types: [SAND, GRVL];
 		accept_cargo_types: [ENSP];
