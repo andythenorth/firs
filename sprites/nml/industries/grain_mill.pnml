@@ -13,38 +13,38 @@ spriteset(THIS_ID(spriteset_ground), "sprites/graphics/industries/groundtiles.pn
 }
 
 spriteset(THIS_ID(spriteset_1)) {
-	[10, 10, 64, 59, -34, -20, "sprites/graphics/industries/grainmill.png"]
-	[10, 10, 64, 59, -34, -20, "sprites/graphics/industries/grainmill_snow.png"]
+	[10, 10, 64, 31, -34, -20, "sprites/graphics/industries/grainmill.png"]
+	[10, 10, 64, 31, -34, -20, "sprites/graphics/industries/grainmill_snow.png"]
 }
 
 spriteset(THIS_ID(spriteset_2)) {
-	[80, 10, 64, 59, -34, -36, "sprites/graphics/industries/grainmill.png"]
-	[80, 10, 64, 59, -34, -36, "sprites/graphics/industries/grainmill_snow.png"]
+	[80, 10, 64, 31, -34, -36, "sprites/graphics/industries/grainmill.png"]
+	[80, 10, 64, 31, -34, -36, "sprites/graphics/industries/grainmill_snow.png"]
 }
 
 spriteset(THIS_ID(spriteset_3)) {
-	[150, 10, 64, 82, -33, -49, "sprites/graphics/industries/grainmill.png"]
-	[150, 10, 64, 82, -33, -49, "sprites/graphics/industries/grainmill_snow.png"]
+	[150, 60, 64, 82, -33, -49, "sprites/graphics/industries/grainmill.png"]
+	[150, 60, 64, 82, -33, -49, "sprites/graphics/industries/grainmill_snow.png"]
 }
 
 spriteset(THIS_ID(spriteset_4)) {
-	[220, 10, 64, 82, -33, -49, "sprites/graphics/industries/grainmill.png"]
-	[220, 10, 64, 82, -33, -49, "sprites/graphics/industries/grainmill_snow.png"]
+	[220, 60, 64, 82, -33, -49, "sprites/graphics/industries/grainmill.png"]
+	[220, 60, 64, 82, -33, -49, "sprites/graphics/industries/grainmill_snow.png"]
 }
 
 spriteset(THIS_ID(spriteset_5_anim)) {
-	tmpl_building_sprite_filename( 10, 110, 82, -52, "sprites/graphics/industries/grainmill.png")
-	tmpl_building_sprite_filename( 10, 110, 82, -52, "sprites/graphics/industries/grainmill_snow.png")
-	tmpl_building_sprite_filename( 80, 110, 82, -52, "sprites/graphics/industries/grainmill.png")
-	tmpl_building_sprite_filename( 80, 110, 82, -52, "sprites/graphics/industries/grainmill_snow.png")
-	tmpl_building_sprite_filename(150, 110, 82, -52, "sprites/graphics/industries/grainmill.png")
-	tmpl_building_sprite_filename(150, 110, 82, -52, "sprites/graphics/industries/grainmill_snow.png")
-	tmpl_building_sprite_filename(220, 110, 82, -52, "sprites/graphics/industries/grainmill.png")
-	tmpl_building_sprite_filename(220, 110, 82, -52, "sprites/graphics/industries/grainmill_snow.png")
-	tmpl_building_sprite_filename(290, 110, 82, -52, "sprites/graphics/industries/grainmill.png")
-	tmpl_building_sprite_filename(290, 110, 82, -52, "sprites/graphics/industries/grainmill_snow.png")
-	tmpl_building_sprite_filename(360, 110, 82, -52, "sprites/graphics/industries/grainmill.png")
-	tmpl_building_sprite_filename(360, 110, 82, -52, "sprites/graphics/industries/grainmill_snow.png")
+	tmpl_building_sprite_filename( 10, 200, 82, -52, "sprites/graphics/industries/grainmill.png")
+	tmpl_building_sprite_filename( 10, 200, 82, -52, "sprites/graphics/industries/grainmill_snow.png")
+	tmpl_building_sprite_filename( 80, 200, 82, -52, "sprites/graphics/industries/grainmill.png")
+	tmpl_building_sprite_filename( 80, 200, 82, -52, "sprites/graphics/industries/grainmill_snow.png")
+	tmpl_building_sprite_filename(150, 200, 82, -52, "sprites/graphics/industries/grainmill.png")
+	tmpl_building_sprite_filename(150, 200, 82, -52, "sprites/graphics/industries/grainmill_snow.png")
+	tmpl_building_sprite_filename(220, 200, 82, -52, "sprites/graphics/industries/grainmill.png")
+	tmpl_building_sprite_filename(220, 200, 82, -52, "sprites/graphics/industries/grainmill_snow.png")
+	tmpl_building_sprite_filename(290, 200, 82, -52, "sprites/graphics/industries/grainmill.png")
+	tmpl_building_sprite_filename(290, 200, 82, -52, "sprites/graphics/industries/grainmill_snow.png")
+	tmpl_building_sprite_filename(360, 200, 82, -52, "sprites/graphics/industries/grainmill.png")
+	tmpl_building_sprite_filename(360, 200, 82, -52, "sprites/graphics/industries/grainmill_snow.png")
 }
 
 SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_1), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_1), 24)
