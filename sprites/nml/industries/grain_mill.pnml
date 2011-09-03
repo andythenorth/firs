@@ -13,23 +13,23 @@ spriteset(THIS_ID(spriteset_ground), "sprites/graphics/industries/groundtiles.pn
 }
 
 spriteset(THIS_ID(spriteset_1)) {
-	[10, 10, 64, 31, -34, -20, "sprites/graphics/industries/grainmill.png"]
-	[10, 10, 64, 31, -34, -20, "sprites/graphics/industries/grainmill_snow.png"]
+	[10, 10, 64, 31, -31, 0, "sprites/graphics/industries/grainmill.png"]
+	[10, 10, 64, 31, -31, 0, "sprites/graphics/industries/grainmill_snow.png"]
 }
 
 spriteset(THIS_ID(spriteset_2)) {
-	[80, 10, 64, 31, -34, -36, "sprites/graphics/industries/grainmill.png"]
-	[80, 10, 64, 31, -34, -36, "sprites/graphics/industries/grainmill_snow.png"]
+	[80, 10, 64, 31, -31, 0, "sprites/graphics/industries/grainmill.png"]
+	[80, 10, 64, 31, -31, 0, "sprites/graphics/industries/grainmill_snow.png"]
 }
 
 spriteset(THIS_ID(spriteset_3)) {
-	[150, 60, 64, 82, -33, -49, "sprites/graphics/industries/grainmill.png"]
-	[150, 60, 64, 82, -33, -49, "sprites/graphics/industries/grainmill_snow.png"]
+	[150, 60, 64, 82, -31, -51, "sprites/graphics/industries/grainmill.png"]
+	[150, 60, 64, 82, -31, -51, "sprites/graphics/industries/grainmill_snow.png"]
 }
 
 spriteset(THIS_ID(spriteset_4)) {
-	[220, 60, 64, 82, -33, -49, "sprites/graphics/industries/grainmill.png"]
-	[220, 60, 64, 82, -33, -49, "sprites/graphics/industries/grainmill_snow.png"]
+	[220, 60, 64, 82, -31, -51, "sprites/graphics/industries/grainmill.png"]
+	[220, 60, 64, 82, -31, -51, "sprites/graphics/industries/grainmill_snow.png"]
 }
 
 spriteset(THIS_ID(spriteset_5_anim)) {
@@ -68,32 +68,32 @@ spritelayout THIS_ID(spritelayout_5_anim) {
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_1), relative_pos) {
-	relative_coord(0, 1): THIS_ID(spritelayout_3);
+	relative_coord(0, 1): THIS_ID(spritelayout_4);
 	relative_coord(1, 0): THIS_ID(spritelayout_1);
 	relative_coord(1, 1): THIS_ID(spritelayout_2);
-	THIS_ID(spritelayout_4);
+	THIS_ID(spritelayout_3);
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_2), relative_pos) {
-	relative_coord(0, 0): THIS_ID(spritelayout_4);
-	relative_coord(0, 1): THIS_ID(spritelayout_3);
-	relative_coord(1, 0): THIS_ID(spritelayout_4);
-	relative_coord(1, 1): THIS_ID(spritelayout_3);
+	relative_coord(0, 0): THIS_ID(spritelayout_3);
+	relative_coord(0, 1): THIS_ID(spritelayout_4);
+	relative_coord(1, 0): THIS_ID(spritelayout_3);
+	relative_coord(1, 1): THIS_ID(spritelayout_4);
 	relative_coord(2, 0): THIS_ID(spritelayout_1);
 	relative_coord(2, 1): THIS_ID(spritelayout_2);
-	THIS_ID(spritelayout_4);
+	THIS_ID(spritelayout_3);
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_3), relative_pos) {
-	relative_coord(0, 0): THIS_ID(spritelayout_4);
-	relative_coord(0, 1): THIS_ID(spritelayout_3);
-	relative_coord(0, 2): THIS_ID(spritelayout_4);
-	relative_coord(0, 3): THIS_ID(spritelayout_3);
+	relative_coord(0, 0): THIS_ID(spritelayout_3);
+	relative_coord(0, 1): THIS_ID(spritelayout_4);
+	relative_coord(0, 2): THIS_ID(spritelayout_3);
+	relative_coord(0, 3): THIS_ID(spritelayout_4);
 	relative_coord(1, 0): THIS_ID(spritelayout_1);
 	relative_coord(1, 1): THIS_ID(spritelayout_2);
 	relative_coord(1, 2): THIS_ID(spritelayout_1);
 	relative_coord(1, 3): THIS_ID(spritelayout_2);
-	THIS_ID(spritelayout_4);
+	THIS_ID(spritelayout_3);
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_4), relative_pos) {
