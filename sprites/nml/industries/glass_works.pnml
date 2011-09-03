@@ -13,18 +13,18 @@ spriteset(THIS_ID(spriteset_ground), "sprites/graphics/industries/groundtiles.pn
 }
 
 spriteset(THIS_ID(spriteset_1)) {
-	tmpl_building_sprite_filename(10, 10, 90, -59, "sprites/graphics/industries/glassworks.png")
-	tmpl_building_sprite_filename(10, 10, 90, -59, "sprites/graphics/industries/glassworks_snow.png")
+	tmpl_building_sprite_filename(10, 60, 90, -59, "sprites/graphics/industries/glassworks.png")
+	tmpl_building_sprite_filename(10, 60, 90, -59, "sprites/graphics/industries/glassworks_snow.png")
 }
 
 spriteset(THIS_ID(spriteset_2)) {
-	tmpl_building_sprite_filename(80, 10, 90, -71, "sprites/graphics/industries/glassworks.png")
-	tmpl_building_sprite_filename(80, 10, 90, -71, "sprites/graphics/industries/glassworks_snow.png")
+	tmpl_building_sprite_filename(80, 60, 90, -71, "sprites/graphics/industries/glassworks.png")
+	tmpl_building_sprite_filename(80, 60, 90, -71, "sprites/graphics/industries/glassworks_snow.png")
 }
 
 spriteset(THIS_ID(spriteset_3)) {
-	tmpl_building_sprite_filename(150, 10, 90, -59, "sprites/graphics/industries/glassworks.png")
-	tmpl_building_sprite_filename(150, 10, 90, -59, "sprites/graphics/industries/glassworks_snow.png")
+	tmpl_building_sprite_filename(150, 60, 90, -59, "sprites/graphics/industries/glassworks.png")
+	tmpl_building_sprite_filename(150, 60, 90, -59, "sprites/graphics/industries/glassworks_snow.png")
 }
 
 SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_1), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_1), 12)
