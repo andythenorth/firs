@@ -50,7 +50,7 @@ spritelayout THIS_ID(spritelayout_9) {
 	}
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2833, relative_pos) {
+switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_1), relative_pos) {
 	relative_coord(0, 0): THIS_ID(spritelayout_9);
 	relative_coord(0, 2): THIS_ID(spritelayout_2);
 	relative_coord(0, 3): THIS_ID(spritelayout_1);
@@ -66,7 +66,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_2833, relative_pos) {
 	THIS_ID(spritelayout_9);
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2834, relative_pos) {
+switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_2), relative_pos) {
 	relative_coord(0, 0): THIS_ID(spritelayout_8);
 	relative_coord(0, 1): THIS_ID(spritelayout_4);
 	relative_coord(0, 2): THIS_ID(spritelayout_5);
@@ -85,7 +85,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_2834, relative_pos) {
 	THIS_ID(spritelayout_9);
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2835, relative_pos) {
+switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_3), relative_pos) {
 	relative_coord(0, 0): THIS_ID(spritelayout_2);
 	relative_coord(0, 2): THIS_ID(spritelayout_2);
 	relative_coord(0, 3): THIS_ID(spritelayout_9);
@@ -104,7 +104,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_2835, relative_pos) {
 	THIS_ID(spritelayout_9);
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_2836, relative_pos) {
+switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_4), relative_pos) {
 	relative_coord(0, 0): THIS_ID(spritelayout_1);
 	relative_coord(0, 1): THIS_ID(spritelayout_9);
 	relative_coord(0, 2): THIS_ID(spritelayout_8);
@@ -123,11 +123,11 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_2836, relative_pos) {
 	THIS_ID(spritelayout_9);
 }
 
-switch(FEAT_INDUSTRYTILES, PARENT, THIS_ID(tile1_spritelayout), layout_num) {
-	1: action2_2833;
-	2: action2_2834;
-	3: action2_2835;
-	4: action2_2836;
+switch(FEAT_INDUSTRYTILES, PARENT, THIS_ID(layout), layout_num) {
+	1: THIS_ID(layout_1);
+	2: THIS_ID(layout_2);
+	3: THIS_ID(layout_3);
+	4: THIS_ID(layout_4);
 	THIS_ID(spritelayout_9);
 }
 
@@ -138,18 +138,6 @@ switch(FEAT_INDUSTRYTILES, PARENT, THIS_ID(tile1_spritelayout), layout_num) {
 TILE_DISALLOW_NEARBY_CLASS(nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
 TILE_ALLOW_PLAYER         (player_check,                                                            THIS_ID(nearby_industry))
 TILE_DISALLOW_SLOPES      (location_check,                       CB_RESULT_LOCATION_DISALLOW, THIS_ID(player_check))
-
-/* Return a random animation frame from the extra_callback_info1 */
-switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(anim_control), (extra_callback_info1 & 7)) {
-	0: return 0;
-	1: return 1;
-	2: return 2;
-	3: return 3;
-	4: return 4;
-	5: return 5;
-	6: return 6;
-	return CB_RESULT_NEXT_FRAME;
-}
 
 item(FEAT_INDUSTRYTILES, THIS_ID(tile), 166) {
 	property {
@@ -166,9 +154,8 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile), 166) {
 	TILE_CARGO_2(ENABLE_SUGARCANE && ENABLE_GRAIN, GRAI, SGCN)
 
 	graphics {
-		anim_control: THIS_ID(anim_control);
 		tile_check:   THIS_ID(location_check);
-		THIS_ID(tile1_spritelayout);
+		THIS_ID(layout);
 	}
 }
 
