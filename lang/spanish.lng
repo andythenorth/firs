@@ -21,6 +21,10 @@ STR_PARAM_NAME_PRIMARY_PRODUCTION_DECREASE                                      
 STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            :Permitir cierre de industrias secundarias
 STR_PARAM_VALUE_ECONOMIES_TEST_ECONOMY                                          :Economía de Prueba
 STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0                                         :Sin Límite
+STR_PARAM_NAME_STAT_RATING                                                      :Método de cálculo del rating de estaciones
+STR_PARAM_VALUE_STAT_RATING_DEFAULT                                             :Por defecto
+STR_PARAM_VALUE_STAT_RATING_REDUCED_TIME                                        :Efecto de "tiempo desde la última recogida de carga" reducido
+STR_PARAM_VALUE_STAT_RATING_100                                                 :Siempre 100%
 
 
 STR_CARGO_NAME_ALCOHOL                                                          :{G=m}Alcohol
@@ -51,15 +55,15 @@ STR_CARGO_UNIT_BAUXITE                                                          
 STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WEIGHT} de materiales de construcción
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} de productos químicas
 STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} de arcilla
-STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} cajas de suministros de ingeniería
+STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} caja{P 0 "" s} de suministros de ingeniería
 STR_CARGO_UNIT_FIBRES                                                           :{WEIGHT} de fibras vegetales
 STR_CARGO_UNIT_FISH                                                             :{WEIGHT} de pescado
-STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} cajas de suministros agrarios
+STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} caja{P 0 "" s} de suministros agrarios
 STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} de fruta
 STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} de tablas
 STR_CARGO_UNIT_METAL                                                            :{WEIGHT} de metal
 STR_CARGO_UNIT_MILK                                                             :{VOLUME} de leche
-STR_CARGO_UNIT_MNSP                                                             :{SIGNED_WORD} cajas de suministros de manufactura
+STR_CARGO_UNIT_MNSP                                                             :{SIGNED_WORD} caja{P 0 "" s} de suministros de manufactura
 STR_CARGO_UNIT_PETROL                                                           :{VOLUME} de fueloil
 STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} de reciclables
 STR_CARGO_UNIT_SAND                                                             :{WEIGHT} de arena
