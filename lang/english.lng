@@ -1,5 +1,6 @@
-
 ##grflangid 0x01
+##plural 0
+
 STR_GRF_DESC                                                                    :{ORANGE}FIRS Industry Replacement Set{}{BLACK}By {SILVER}andythenorth{BLACK} and {SILVER}FooBar{BLACK}.{}{BLACK}'1,000 commits and counting...'{BLACK}{}{}Website: {SILVER}www.tt-foundry.com/sets/FIRS{BLACK}.License: {SILVER}GPL v2{BLACK}.Special thanks to {SILVER}Ammler{BLACK}, {SILVER}Core Xii{BLACK}, {SILVER}Irwe{BLACK}, {SILVER}planetmaker{BLACK} and {SILVER}Zephyris{BLACK}.Uses parts of {SILVER}eGRVTS{BLACK}, {SILVER}ISR{BLACK} and {SILVER}OpenGFX{BLACK}.
 STR_GRF_NAME                                                                    :{TITLE}
 
@@ -53,15 +54,15 @@ STR_CARGO_UNIT_BAUXITE                                                          
 STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WEIGHT} of building materials
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} of chemicals
 STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} of clay
-STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} crates of engineering supplies
+STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} crate{P 0 "" s} of engineering supplies
 STR_CARGO_UNIT_FIBRES                                                           :{WEIGHT} of plant fibres
 STR_CARGO_UNIT_FISH                                                             :{WEIGHT} of fish
-STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} crates of farm supplies
+STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} crate{P 0 "" s} of farm supplies
 STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} of fruit
 STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} of lumber
 STR_CARGO_UNIT_METAL                                                            :{WEIGHT} of metal
 STR_CARGO_UNIT_MILK                                                             :{VOLUME} of milk
-STR_CARGO_UNIT_MNSP                                                             :{SIGNED_WORD} crates of manufacturing supplies
+STR_CARGO_UNIT_MNSP                                                             :{SIGNED_WORD} crate{P 0 "" s} of manufacturing supplies
 STR_CARGO_UNIT_PETROL                                                           :{VOLUME} of petrol
 STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} of recyclables
 STR_CARGO_UNIT_SAND                                                             :{WEIGHT} of sand

@@ -1,5 +1,6 @@
-
 ##grflangid 0x1F
+##plural 0
+
 STR_GRF_DESC                                                                    :{ORANGE}FIRS Industry Replacement Set{}{BLACK}Door {SILVER}andythenorth{BLACK} en {SILVER}FooBar{BLACK}.{}{BLACK}'1,000 commits en tellende...'{BLACK}{}{}Website: {SILVER}www.tt-foundry.com/sets/FIRS{BLACK}.Licentie: {SILVER}GPL v2{}{BLACK}.Speciale dank aan {SILVER}Ammler{BLACK}, {SILVER}Core Xii{BLACK}, {SILVER}Irwe{BLACK}, {SILVER}planetmaker{BLACK} en {SILVER}Zephyris{}{BLACK}.Gebruikt delen van {SILVER}eGRVTS{BLACK}, {SILVER}ISR{BLACK} en {SILVER}OpenGFX{BLACK}.
 STR_GRF_NAME                                                                    :{TITLE}
 
@@ -49,15 +50,15 @@ STR_CARGO_UNIT_BAUXITE                                                          
 STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WEIGHT} bouwmaterialen
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} chemicaliën
 STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} klei
-STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} kratten constructiehulpgoederen
+STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} krat{P 0 "" ten} constructiehulpgoederen
 STR_CARGO_UNIT_FIBRES                                                           :{WEIGHT} katoen
 STR_CARGO_UNIT_FISH                                                             :{WEIGHT} vis
-STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} kratten landbouwhulpgoederen
+STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} krat{P 0 "" ten} landbouwhulpgoederen
 STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} fruit en groente
 STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} gezaagd hout
 STR_CARGO_UNIT_METAL                                                            :{WEIGHT} metaal
 STR_CARGO_UNIT_MILK                                                             :{VOLUME} melk
-STR_CARGO_UNIT_MNSP                                                             :{SIGNED_WORD} kratten produktiehulpgoederen
+STR_CARGO_UNIT_MNSP                                                             :{SIGNED_WORD} krat{P 0 "" ten} produktiehulpgoederen
 STR_CARGO_UNIT_PETROL                                                           :{VOLUME} benzine
 STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} herbruikbare goederen
 STR_CARGO_UNIT_SAND                                                             :{WEIGHT} zand
