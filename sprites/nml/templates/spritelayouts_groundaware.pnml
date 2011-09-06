@@ -1,0 +1,53 @@
+/*
+ * This file is part of FIRS Industry Set for OpenTTD.
+ * FIRS is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 2.
+ * FIRS is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/* Defines a ground aware spritelayout for an industry tile.
+ * Ground sprite overlays and buildings must be defined separately.
+ * If var_default_ground is not initialized, the ground sprite will revert to GROUNDSPRITE_NORMAL.
+ *
+ * spritelayout_name       Name for the spritelayout block.
+ */
+#define GROUND_AWARE_SPRITELAYOUT(spritelayout_name) \
+spritelayout spritelayout_name { \
+	ground { \
+		sprite: LOAD_TEMP(var_default_ground) != 0 ? LOAD_TEMP(var_default_ground) : GROUNDSPRITE_NORMAL; \
+		recolour_mode: RECOLOUR_REMAP; \
+		palette: PALETTE_USE_DEFAULT; \
+	}
+
+/* Defines a ground sprite overlay that will appear only if a given condition is true.
+ *
+ * ground_overlay_sprite   Sprite to use for the overlay.
+ * condition               The overlay will only be drawn if this condition is true.
+ */
+#define CONDITIONAL_GROUND_SPRITE_OVERLAY(ground_overlay_sprite, condition) \
+	childsprite { \
+		sprite: ground_overlay_sprite; \
+		recolour_mode: RECOLOUR_REMAP; \
+		palette: PALETTE_USE_DEFAULT; \
+		hide_sprite: !(condition); \
+		always_draw: 1; \
+	}
+
+/* Defines a ground sprite overlay that will appear always.
+ *
+ * ground_overlay_sprite   Sprite to use for the overlay.
+ */
+#define GROUND_SPRITE_OVERLAY(ground_overlay_sprite) CONDITIONAL_GROUND_SPRITE_OVERLAY(ground_overlay_sprite, 1)
+
+/* Defines a building with normal and snow sprites.
+ *
+ * building_spriteset   Spriteset for the building sprites. This spriteset must define the sprites in the specified order.
+ * building_zextent     Size of the bounding box of the building sprite in the z direction. By default it is 16.
+ */
+#define NORMAL_SNOW_BUILDING(building_spriteset, building_zextent) \
+	building { \
+		sprite: building_spriteset(terrain_type == TILETYPE_SNOW); \
+		recolour_mode: RECOLOUR_REMAP; \
+		palette: PALETTE_USE_DEFAULT; \
+		zextent: building_zextent; \
+	}

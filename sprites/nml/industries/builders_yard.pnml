@@ -5,6 +5,8 @@
  * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
  */
 
+#include "../templates/spritelayouts_groundaware.pnml"
+
 #define THIS_ID(...) builders_yard ## __VA_ARGS__
 
 spriteset(THIS_ID(spriteset_empty)) {
@@ -12,12 +14,12 @@ spriteset(THIS_ID(spriteset_empty)) {
 	[210,10,1,1,0,0, "sprites/graphics/industries/buildersyard.png"]
 }
 
-spriteset(THIS_ID(spriteset_ground_snow)) {
+spriteset(THIS_ID(spriteset_ground_overlay_snow)) {
 	tmpl_building_sprite_filename(150, 10, 43, -13, "sprites/graphics/industries/buildersyard_snow.png")
 	tmpl_building_sprite_filename(150, 10, 43, -13, "sprites/graphics/industries/buildersyard_snow.png")
 }
 
-spriteset(THIS_ID(spriteset_ground_normal)) {
+spriteset(THIS_ID(spriteset_ground_overlay_normal)) {
 	tmpl_building_sprite_filename(150, 10, 43, -13, "sprites/graphics/industries/buildersyard.png")
 	tmpl_building_sprite_filename(150, 10, 43, -13, "sprites/graphics/industries/buildersyard.png")
 }
@@ -32,9 +34,17 @@ spriteset(THIS_ID(spriteset_2)) {
 	tmpl_building_sprite_filename(80, 10, 51, -13, "sprites/graphics/industries/buildersyard_snow.png")
 }
 
-SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_1), THIS_ID(spriteset_ground_normal), THIS_ID(spriteset_ground_snow), THIS_ID(spriteset_1), 16)
+GROUND_AWARE_SPRITELAYOUT(THIS_ID(spritelayout_1))
+	CONDITIONAL_GROUND_SPRITE_OVERLAY(THIS_ID(spriteset_ground_overlay_normal), terrain_type != TILETYPE_SNOW)
+	CONDITIONAL_GROUND_SPRITE_OVERLAY(THIS_ID(spriteset_ground_overlay_snow),   terrain_type == TILETYPE_SNOW)
+	NORMAL_SNOW_BUILDING(THIS_ID(spriteset_1), 16)
+SPRITELAYOUT_END
 
-SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_2), THIS_ID(spriteset_ground_normal), THIS_ID(spriteset_ground_snow), THIS_ID(spriteset_2), 16)
+GROUND_AWARE_SPRITELAYOUT(THIS_ID(spritelayout_2))
+	CONDITIONAL_GROUND_SPRITE_OVERLAY(THIS_ID(spriteset_ground_overlay_normal), terrain_type != TILETYPE_SNOW)
+	CONDITIONAL_GROUND_SPRITE_OVERLAY(THIS_ID(spriteset_ground_overlay_snow),   terrain_type == TILETYPE_SNOW)
+	NORMAL_SNOW_BUILDING(THIS_ID(spriteset_2), 16)
+SPRITELAYOUT_END
 
 switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_1), relative_pos) {
 	relative_coord(0, 0): THIS_ID(spritelayout_1);
