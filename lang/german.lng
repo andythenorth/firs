@@ -21,6 +21,10 @@ STR_PARAM_NAME_PRIMARY_PRODUCTION_DECREASE                                      
 STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            :Sekundärindustrien dürfen schließen
 STR_PARAM_VALUE_ECONOMIES_TEST_ECONOMY                                          :Standard
 STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0                                         :Kein Limit
+STR_PARAM_NAME_STAT_RATING                                                      :Algorithmus für Stationsbewertung
+STR_PARAM_VALUE_STAT_RATING_DEFAULT                                             :Standard
+STR_PARAM_VALUE_STAT_RATING_REDUCED_TIME                                        :Reduzierter Einfluß der Zeit seit der letzten Frachtaufnahme
+STR_PARAM_VALUE_STAT_RATING_100                                                 :Immer 100%
 
 STR_CARGO_NAME_ALCOHOL                                                          :Spirituosen
 STR_CARGO_NAME_BAUXITE                                                          :{G=n}Bauxit
@@ -51,15 +55,15 @@ STR_CARGO_UNIT_BAUXITE                                                          
 STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WEIGHT} Baustoffe
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} Chemikalien
 STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} Tonminerale
-STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} Kisten Ersatzteile
+STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} Kiste{P 0 "" n} Ersatzteile
 STR_CARGO_UNIT_FIBRES                                                           :{WEIGHT} Pflanzenfasern
 STR_CARGO_UNIT_FISH                                                             :{WEIGHT} Fisch
-STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} Kisten landw. Betriebsmittel
-STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} Früchte und Gemüse
+STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} Kiste{P 0 "" n} landw. Betriebsmittel
+STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} Früchte
 STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} Bauholz
 STR_CARGO_UNIT_METAL                                                            :{WEIGHT} Metall
 STR_CARGO_UNIT_MILK                                                             :{VOLUME} Milch
-STR_CARGO_UNIT_MNSP                                                             :{SIGNED_WORD} Kisten Produktionsgüter
+STR_CARGO_UNIT_MNSP                                                             :{SIGNED_WORD} Kiste{P 0 "" n} Produktionsgüter
 STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} Wertstoffe
 STR_CARGO_UNIT_SAND                                                             :{WEIGHT} Sand
 STR_CARGO_UNIT_SCRAP_METAL                                                      :{WEIGHT} Altmetall
@@ -92,9 +96,11 @@ STR_CID_SUGARCANE                                                               
 STR_CID_WOOL                                                                    :{TINYFONT}WL
 
 STR_ERR_CLIMATE_TOYLAND                                                         :{ORANGE}FIRS is not designed to be used with Toyland climate
-STR_ERR_INCOMPATIBLE_PARAM_CANSET                                               :{ORANGE}E02: {YELLOW}Incompatible parameter: {ORANGE}CanSet parameter 2 must be 0 to work with FIRS. {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
-STR_ERR_INCOMPATIBLE_PARAM_CITYSET                                              :{ORANGE}E02: {YELLOW}Incompatible parameter: {ORANGE}NA City Set parameter 2 must be 0 to work with FIRS. {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
-STR_ERR_OPENTTD_VERSION                                                         :{ORANGE}E00: FIRS requires OpenTTD 1.2.0 / trunk r22780 or higher. {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_SET                                                        :{ORANGE}E01: {YELLOW}Inkompatibles Set: {ORANGE}{STRING} {YELLOW}Siehe FIRS-Readme: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_PARAM_CANSET                                               :{ORANGE}E02: {YELLOW}Inkompatible Parameter: {ORANGE}CanSet Parameter 2 muß für Kompatibilität mit FIRS 0 sein. {YELLOW}Siehe FIRS Readme: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_PARAM_CITYSET                                              :{ORANGE}E02: {YELLOW}Inkompatible Parameter: {ORANGE}NA City Set Parameter 2 muß für Kompatibilität mit FIRS 0 sein. {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_SET_TTRS_VERSION                                           :{ORANGE}E04: {YELLOW}Inkompatible Version: {ORANGE}Total Town Replacement Set muß für FIRS-Kompatibilität Version 3.11 oder neuer sein. {YELLOW}Siehe FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_OPENTTD_VERSION                                                         :{ORANGE}E00: FIRS benötigt OpenTTD 1.2.0 / trunk r22780 oder neuer. {YELLOW}Siehe FIRS Readme: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 
 STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE                                             :muß unterhalt der Schneegrenze errichtet werden.
 STR_ERR_LOCATION_NOT_ON_WATER                                                   :muß an Land errichtet werden.
@@ -130,6 +136,7 @@ STR_EXTRA_STEELMILL                                                             
 STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Produktion:{}  3t pro gelieferter 8t Produktionsgüter{}  5t pro gelieferter 8t Rohrzucker{}{}Steigt auf 8t Produktion pro gelieferter 8t, wenn beide Frachtarten innerhalb eines Monats geliefert werden.
 STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Produktion:{}  3t pro gelieferter 8t Produktionsgüter{}  5t pro gelieferter 8t Wolle{}  5t pro gelieferter 8t pflanzlicher Fasern{}{}Produktion steigt, wenn Produktionsgüter innerhalb eines Monats wie die andere Fracht geliefert werden.
 
+STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ DEBUG ------------{}Produktion diesen Monat:{}Fracht 1: {WHITE}{COMMA}{BLACK}{}Fracht 2: {WHITE}{COMMA}{BLACK}{}Tage seit letzter Lieferung: {WHITE}{COMMA}{BLACK}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Maximale Produktion erreicht
 STR_GENERIC_D0B2                                                                :{BLACK}Produktionsgüter verdoppeln die Produktionseffizienz.{}{}{STRING}
 STR_GENERIC_NEWLINE                                                             :{}
