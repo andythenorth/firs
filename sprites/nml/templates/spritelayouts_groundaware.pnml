@@ -14,9 +14,53 @@
 #define GROUND_AWARE_SPRITELAYOUT(spritelayout_name) \
 spritelayout spritelayout_name { \
 	ground { \
-		sprite: LOAD_TEMP(var_default_ground) != 0 ? LOAD_TEMP(var_default_ground) : GROUNDSPRITE_NORMAL; \
+		sprite: GROUNDSPRITE_NORMAL ; \
 		recolour_mode: RECOLOUR_REMAP; \
 		palette: PALETTE_USE_DEFAULT; \
+	} \
+	childsprite { \
+		sprite: GROUNDSPRITE_DESERT; \
+		recolour_mode: RECOLOUR_REMAP; \
+		palette: PALETTE_USE_DEFAULT; \
+		hide_sprite: (climate == CLIMATE_TROPIC) && (nearby_tile_terrain_type(0, 0) != TILETYPE_DESERT); \
+	} \
+	childsprite { \
+		sprite: 4512; \
+		recolour_mode: RECOLOUR_REMAP; \
+		palette: PALETTE_USE_DEFAULT; \
+		hide_sprite: \
+			(climate == CLIMATE_TROPIC) && \
+			(nearby_tile_terrain_type( 1, 0) != TILETYPE_DESERT) && \
+			(nearby_tile_terrain_type(-1, 0) != TILETYPE_DESERT) && \
+			(nearby_tile_terrain_type( 0, 1) != TILETYPE_DESERT) && \
+			(nearby_tile_terrain_type( 0,-1) != TILETYPE_DESERT); \
+	} \
+	childsprite { \
+		sprite: GROUNDSPRITE_SNOW; \
+		recolour_mode: RECOLOUR_REMAP; \
+		palette: PALETTE_USE_DEFAULT; \
+		hide_sprite: (climate == CLIMATE_ARCTIC) && (nearby_tile_height(0, 0) >= (snowline_height + 16)); \
+	} \
+	childsprite { \
+		sprite: 4531; \
+		recolour_mode: RECOLOUR_REMAP; \
+		palette: PALETTE_USE_DEFAULT; \
+		hide_sprite: (climate == CLIMATE_ARCTIC) && \
+			(nearby_tile_height(0, 0) >= (snowline_height + 8)) && (nearby_tile_height(0, 0) < (snowline_height + 16)); \
+	} \
+	childsprite { \
+		sprite: 4512; \
+		recolour_mode: RECOLOUR_REMAP; \
+		palette: PALETTE_USE_DEFAULT; \
+		hide_sprite: (climate == CLIMATE_ARCTIC) && \
+			(nearby_tile_height(0, 0) >= (snowline_height + 0)) && (nearby_tile_height(0, 0) < (snowline_height + 8)); \
+	} \
+	childsprite { \
+		sprite: 4493; \
+		recolour_mode: RECOLOUR_REMAP; \
+		palette: PALETTE_USE_DEFAULT; \
+		hide_sprite: (climate == CLIMATE_ARCTIC) && \
+			(nearby_tile_height(0, 0) >= (snowline_height - 8)) && (nearby_tile_height(0, 0) < (snowline_height + 0)); \
 	}
 
 /* Defines a ground sprite overlay that will appear only if a given condition is true.
