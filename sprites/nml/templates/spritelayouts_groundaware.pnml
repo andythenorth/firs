@@ -95,3 +95,18 @@ spritelayout spritelayout_name { \
 		palette: PALETTE_USE_DEFAULT; \
 		zextent: building_zextent; \
 	}
+
+/* Defines conditionally a building
+ *
+ * building_spriteset   Spriteset for the building sprites. This spriteset must define the sprites in the specified order.
+ * building_zextent     Size of the bounding box of the building sprite in the z direction. By default it is 16.
+ * condition            The building will only be drawn if this condition is true.
+ */
+#define CONDITONAL_BUILDING_SPRITE(building_sprite, building_zextent, condition) \
+	building { \
+		sprite: building_spriteset(terrain_type == TILETYPE_SNOW); \
+		recolour_mode: RECOLOUR_REMAP; \
+		palette: PALETTE_USE_DEFAULT; \
+		zextent: building_zextent; \
+		hide_sprite: !(condition); \
+	}
