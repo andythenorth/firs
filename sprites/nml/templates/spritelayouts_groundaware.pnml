@@ -104,7 +104,7 @@ spritelayout spritelayout_name { \
  */
 #define CONDITONAL_BUILDING_SPRITE(building_sprite, building_zextent, condition) \
 	building { \
-		sprite: building_spriteset(terrain_type == TILETYPE_SNOW); \
+		sprite: building_sprite; \
 		recolour_mode: RECOLOUR_REMAP; \
 		palette: PALETTE_USE_DEFAULT; \
 		zextent: building_zextent; \
