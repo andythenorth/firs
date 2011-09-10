@@ -107,22 +107,26 @@ spriteset(THIS_ID(spriteset_5_anim)) {
 }
 
 GROUND_AWARE_SPRITELAYOUT(THIS_ID(spritelayout_1))
+	CONDITIONAL_GROUND_SPRITE_OVERLAY(THIS_ID(spriteset_ground), terrain_type != TILETYPE_SNOW)
 	CONDITIONAL_GROUND_SPRITE_OVERLAY(THIS_ID(spriteset_ground_overlay_normal_1), terrain_type != TILETYPE_SNOW)
 	CONDITIONAL_GROUND_SPRITE_OVERLAY(THIS_ID(spriteset_ground_overlay_snow_1),   terrain_type == TILETYPE_SNOW)
 SPRITELAYOUT_END
 
 GROUND_AWARE_SPRITELAYOUT(THIS_ID(spritelayout_2))
+	CONDITIONAL_GROUND_SPRITE_OVERLAY(THIS_ID(spriteset_ground), terrain_type != TILETYPE_SNOW)
 	CONDITIONAL_GROUND_SPRITE_OVERLAY(THIS_ID(spriteset_ground_overlay_normal_2), terrain_type != TILETYPE_SNOW)
 	CONDITIONAL_GROUND_SPRITE_OVERLAY(THIS_ID(spriteset_ground_overlay_snow_2),   terrain_type == TILETYPE_SNOW)
 SPRITELAYOUT_END
 
 GROUND_AWARE_SPRITELAYOUT(THIS_ID(spritelayout_3))
+	CONDITIONAL_GROUND_SPRITE_OVERLAY(THIS_ID(spriteset_ground), terrain_type != TILETYPE_SNOW)
 	CONDITIONAL_GROUND_SPRITE_OVERLAY(THIS_ID(spriteset_ground_overlay_normal_3), terrain_type != TILETYPE_SNOW)
 	CONDITIONAL_GROUND_SPRITE_OVERLAY(THIS_ID(spriteset_ground_overlay_snow_3),   terrain_type == TILETYPE_SNOW)
 	NORMAL_SNOW_BUILDING(THIS_ID(spriteset_snow_3), 48)
 SPRITELAYOUT_END
 
 GROUND_AWARE_SPRITELAYOUT(THIS_ID(spritelayout_4))
+	CONDITIONAL_GROUND_SPRITE_OVERLAY(THIS_ID(spriteset_ground), terrain_type != TILETYPE_SNOW)
 	CONDITIONAL_GROUND_SPRITE_OVERLAY(THIS_ID(spriteset_ground_overlay_normal_4), terrain_type != TILETYPE_SNOW)
 	CONDITIONAL_GROUND_SPRITE_OVERLAY(THIS_ID(spriteset_ground_overlay_snow_4),   terrain_type == TILETYPE_SNOW)
 	NORMAL_SNOW_BUILDING(THIS_ID(spriteset_snow_4), 48)
