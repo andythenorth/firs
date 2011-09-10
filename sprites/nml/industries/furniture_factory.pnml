@@ -13,33 +13,33 @@ spriteset(THIS_ID(spriteset_ground), "sprites/graphics/industries/groundtiles.pn
 }
 
 spriteset(THIS_ID(spriteset_1)) {
-	tmpl_building_sprite_filename(10, 10, 88, -42, "sprites/graphics/industries/furniturefactory.png")
-	tmpl_building_sprite_filename(10, 10, 88, -42, "sprites/graphics/industries/furniturefactory_snow.png")
+	tmpl_building_sprite_filename(10, 60, 88, -42, "sprites/graphics/industries/furniturefactory.png")
+	tmpl_building_sprite_filename(10, 60, 88, -42, "sprites/graphics/industries/furniturefactory_snow.png")
 }
 
 spriteset(THIS_ID(spriteset_2)) {
-	tmpl_building_sprite_filename(80, 10, 88, -44, "sprites/graphics/industries/furniturefactory.png")
-	tmpl_building_sprite_filename(80, 10, 88, -44, "sprites/graphics/industries/furniturefactory_snow.png")
+	tmpl_building_sprite_filename(80, 60, 88, -44, "sprites/graphics/industries/furniturefactory.png")
+	tmpl_building_sprite_filename(80, 60, 88, -44, "sprites/graphics/industries/furniturefactory_snow.png")
 }
 
 spriteset(THIS_ID(spriteset_3)) {
-	tmpl_building_sprite_filename(150, 10, 88, -42, "sprites/graphics/industries/furniturefactory.png")
-	tmpl_building_sprite_filename(150, 10, 88, -42, "sprites/graphics/industries/furniturefactory_snow.png")
+	tmpl_building_sprite_filename(150, 60, 88, -42, "sprites/graphics/industries/furniturefactory.png")
+	tmpl_building_sprite_filename(150, 60, 88, -42, "sprites/graphics/industries/furniturefactory_snow.png")
 }
 
 spriteset(THIS_ID(spriteset_4)) {
-	tmpl_building_sprite_filename(220, 10, 88, -42, "sprites/graphics/industries/furniturefactory.png")
-	tmpl_building_sprite_filename(220, 10, 88, -42, "sprites/graphics/industries/furniturefactory_snow.png")
+	tmpl_building_sprite_filename(220, 60, 88, -42, "sprites/graphics/industries/furniturefactory.png")
+	tmpl_building_sprite_filename(220, 60, 88, -42, "sprites/graphics/industries/furniturefactory_snow.png")
 }
 
 spriteset(THIS_ID(spriteset_5)) {
-	tmpl_building_sprite_filename(290, 10, 88, -42, "sprites/graphics/industries/furniturefactory.png")
-	tmpl_building_sprite_filename(290, 10, 88, -42, "sprites/graphics/industries/furniturefactory_snow.png")
+	tmpl_building_sprite_filename(290, 60, 88, -42, "sprites/graphics/industries/furniturefactory.png")
+	tmpl_building_sprite_filename(290, 60, 88, -42, "sprites/graphics/industries/furniturefactory_snow.png")
 }
 
 spriteset(THIS_ID(spriteset_6)) {
-	tmpl_building_sprite_filename(360, 10, 88, -41, "sprites/graphics/industries/furniturefactory.png")
-	tmpl_building_sprite_filename(360, 10, 88, -41, "sprites/graphics/industries/furniturefactory_snow.png")
+	tmpl_building_sprite_filename(360, 60, 88, -41, "sprites/graphics/industries/furniturefactory.png")
+	tmpl_building_sprite_filename(360, 60, 88, -41, "sprites/graphics/industries/furniturefactory_snow.png")
 }
 
 SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_1), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_1), 92)
