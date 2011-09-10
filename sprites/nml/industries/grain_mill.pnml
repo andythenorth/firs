@@ -106,33 +106,33 @@ spriteset(THIS_ID(spriteset_5_anim)) {
 	tmpl_building_sprite_filename(360, 200, 82, -52, "sprites/graphics/industries/grainmill_snow.png")
 }
 
-GROUND_AWARE_SPRITELAYOUT(THIS_ID(spritelayout_1))
+GROUND_AWARE_SPRITELAYOUT(THIS_ID(brickbakery_tile_1))
 	CONDITIONAL_GROUND_SPRITE_OVERLAY(THIS_ID(spriteset_ground), terrain_type != TILETYPE_SNOW)
 	CONDITIONAL_GROUND_SPRITE_OVERLAY(THIS_ID(spriteset_ground_overlay_normal_1), terrain_type != TILETYPE_SNOW)
 	CONDITIONAL_GROUND_SPRITE_OVERLAY(THIS_ID(spriteset_ground_overlay_snow_1),   terrain_type == TILETYPE_SNOW)
 SPRITELAYOUT_END
 
-GROUND_AWARE_SPRITELAYOUT(THIS_ID(spritelayout_2))
+GROUND_AWARE_SPRITELAYOUT(THIS_ID(brickbakery_tile_2))
 	CONDITIONAL_GROUND_SPRITE_OVERLAY(THIS_ID(spriteset_ground), terrain_type != TILETYPE_SNOW)
 	CONDITIONAL_GROUND_SPRITE_OVERLAY(THIS_ID(spriteset_ground_overlay_normal_2), terrain_type != TILETYPE_SNOW)
 	CONDITIONAL_GROUND_SPRITE_OVERLAY(THIS_ID(spriteset_ground_overlay_snow_2),   terrain_type == TILETYPE_SNOW)
 SPRITELAYOUT_END
 
-GROUND_AWARE_SPRITELAYOUT(THIS_ID(spritelayout_3))
+GROUND_AWARE_SPRITELAYOUT(THIS_ID(brickbakery_tile_3))
 	CONDITIONAL_GROUND_SPRITE_OVERLAY(THIS_ID(spriteset_ground), terrain_type != TILETYPE_SNOW)
 	CONDITIONAL_GROUND_SPRITE_OVERLAY(THIS_ID(spriteset_ground_overlay_normal_3), terrain_type != TILETYPE_SNOW)
 	CONDITIONAL_GROUND_SPRITE_OVERLAY(THIS_ID(spriteset_ground_overlay_snow_3),   terrain_type == TILETYPE_SNOW)
 	NORMAL_SNOW_BUILDING(THIS_ID(spriteset_snow_3), 48)
 SPRITELAYOUT_END
 
-GROUND_AWARE_SPRITELAYOUT(THIS_ID(spritelayout_4))
+GROUND_AWARE_SPRITELAYOUT(THIS_ID(brickbakery_tile_4))
 	CONDITIONAL_GROUND_SPRITE_OVERLAY(THIS_ID(spriteset_ground), terrain_type != TILETYPE_SNOW)
 	CONDITIONAL_GROUND_SPRITE_OVERLAY(THIS_ID(spriteset_ground_overlay_normal_4), terrain_type != TILETYPE_SNOW)
 	CONDITIONAL_GROUND_SPRITE_OVERLAY(THIS_ID(spriteset_ground_overlay_snow_4),   terrain_type == TILETYPE_SNOW)
 	NORMAL_SNOW_BUILDING(THIS_ID(spriteset_snow_4), 48)
 SPRITELAYOUT_END
 
-spritelayout THIS_ID(spritelayout_5_anim) {
+spritelayout THIS_ID(windmill_tile_anim) {
 	ground {
 		sprite: 2022;
 	}
@@ -145,37 +145,37 @@ spritelayout THIS_ID(spritelayout_5_anim) {
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_1), relative_pos) {
-	relative_coord(0, 1): THIS_ID(spritelayout_4);
-	relative_coord(1, 0): THIS_ID(spritelayout_1);
-	relative_coord(1, 1): THIS_ID(spritelayout_2);
-	THIS_ID(spritelayout_3);
+	relative_coord(0, 1): THIS_ID(brickbakery_tile_4);
+	relative_coord(1, 0): THIS_ID(brickbakery_tile_1);
+	relative_coord(1, 1): THIS_ID(brickbakery_tile_2);
+	THIS_ID(brickbakery_tile_3);
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_2), relative_pos) {
-	relative_coord(0, 0): THIS_ID(spritelayout_3);
-	relative_coord(0, 1): THIS_ID(spritelayout_4);
-	relative_coord(1, 0): THIS_ID(spritelayout_3);
-	relative_coord(1, 1): THIS_ID(spritelayout_4);
-	relative_coord(2, 0): THIS_ID(spritelayout_1);
-	relative_coord(2, 1): THIS_ID(spritelayout_2);
-	THIS_ID(spritelayout_3);
+	relative_coord(0, 0): THIS_ID(brickbakery_tile_3);
+	relative_coord(0, 1): THIS_ID(brickbakery_tile_4);
+	relative_coord(1, 0): THIS_ID(brickbakery_tile_3);
+	relative_coord(1, 1): THIS_ID(brickbakery_tile_4);
+	relative_coord(2, 0): THIS_ID(brickbakery_tile_1);
+	relative_coord(2, 1): THIS_ID(brickbakery_tile_2);
+	THIS_ID(brickbakery_tile_3);
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_3), relative_pos) {
-	relative_coord(0, 0): THIS_ID(spritelayout_3);
-	relative_coord(0, 1): THIS_ID(spritelayout_4);
-	relative_coord(0, 2): THIS_ID(spritelayout_3);
-	relative_coord(0, 3): THIS_ID(spritelayout_4);
-	relative_coord(1, 0): THIS_ID(spritelayout_1);
-	relative_coord(1, 1): THIS_ID(spritelayout_2);
-	relative_coord(1, 2): THIS_ID(spritelayout_1);
-	relative_coord(1, 3): THIS_ID(spritelayout_2);
-	THIS_ID(spritelayout_3);
+	relative_coord(0, 0): THIS_ID(brickbakery_tile_3);
+	relative_coord(0, 1): THIS_ID(brickbakery_tile_4);
+	relative_coord(0, 2): THIS_ID(brickbakery_tile_3);
+	relative_coord(0, 3): THIS_ID(brickbakery_tile_4);
+	relative_coord(1, 0): THIS_ID(brickbakery_tile_1);
+	relative_coord(1, 1): THIS_ID(brickbakery_tile_2);
+	relative_coord(1, 2): THIS_ID(brickbakery_tile_1);
+	relative_coord(1, 3): THIS_ID(brickbakery_tile_2);
+	THIS_ID(brickbakery_tile_3);
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_4), relative_pos) {
-	relative_coord(0, 0): THIS_ID(spritelayout_5_anim);
-	THIS_ID(spritelayout_5_anim);
+	relative_coord(0, 0): THIS_ID(windmill_tile_anim);
+	THIS_ID(windmill_tile_anim);
 }
 
 switch(FEAT_INDUSTRYTILES, PARENT, THIS_ID(layout), layout_num) {
@@ -185,7 +185,7 @@ switch(FEAT_INDUSTRYTILES, PARENT, THIS_ID(layout), layout_num) {
 	4: THIS_ID(layout_2);
 	5: THIS_ID(layout_3);
 	6: THIS_ID(layout_4);
-	THIS_ID(spritelayout_1);
+	THIS_ID(brickbakery_tile_1);
 }
 
 /* *************************************************
