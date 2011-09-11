@@ -15,28 +15,28 @@ spriteset(THIS_ID(spriteset_ground), "sprites/graphics/industries/groundtiles.pn
 }
 
 spriteset(THIS_ID(spriteset_1)) {
-	tmpl_building_sprite_filename(10, 10, 103, -74, "sprites/graphics/industries/textilemill.png")
-	tmpl_building_sprite_filename(10, 10, 103, -74, "sprites/graphics/industries/textilemill_snow.png")
+	tmpl_building_sprite_filename(10, 60, 103, -74, "sprites/graphics/industries/textilemill.png")
+	tmpl_building_sprite_filename(10, 60, 103, -74, "sprites/graphics/industries/textilemill_snow.png")
 }
 
 spriteset(THIS_ID(spriteset_2)) {
-	tmpl_building_sprite_filename(80, 10, 103, -72, "sprites/graphics/industries/textilemill.png")
-	tmpl_building_sprite_filename(80, 10, 103, -72, "sprites/graphics/industries/textilemill_snow.png")
+	tmpl_building_sprite_filename(80, 60, 103, -72, "sprites/graphics/industries/textilemill.png")
+	tmpl_building_sprite_filename(80, 60, 103, -72, "sprites/graphics/industries/textilemill_snow.png")
 }
 
 spriteset(THIS_ID(spriteset_3)) {
-	tmpl_building_sprite_filename(150, 10, 103, -72, "sprites/graphics/industries/textilemill.png")
-	tmpl_building_sprite_filename(150, 10, 103, -72, "sprites/graphics/industries/textilemill_snow.png")
+	tmpl_building_sprite_filename(150, 60, 103, -72, "sprites/graphics/industries/textilemill.png")
+	tmpl_building_sprite_filename(150, 60, 103, -72, "sprites/graphics/industries/textilemill_snow.png")
 }
 
 spriteset(THIS_ID(spriteset_4)) {
-	tmpl_building_sprite_filename(220, 10, 103, -72, "sprites/graphics/industries/textilemill.png")
-	tmpl_building_sprite_filename(220, 10, 103, -72, "sprites/graphics/industries/textilemill_snow.png")
+	tmpl_building_sprite_filename(220, 60, 103, -72, "sprites/graphics/industries/textilemill.png")
+	tmpl_building_sprite_filename(220, 60, 103, -72, "sprites/graphics/industries/textilemill_snow.png")
 }
 
 spriteset(THIS_ID(spriteset_5)) {
-	tmpl_building_sprite_filename(290, 10, 103, -72, "sprites/graphics/industries/textilemill.png")
-	tmpl_building_sprite_filename(290, 10, 103, -72, "sprites/graphics/industries/textilemill_snow.png")
+	tmpl_building_sprite_filename(290, 60, 103, -72, "sprites/graphics/industries/textilemill.png")
+	tmpl_building_sprite_filename(290, 60, 103, -72, "sprites/graphics/industries/textilemill_snow.png")
 }
 
 SPRITELAYOUT_NORMAL_SNOW_BEGIN(THIS_ID(spritelayout_1_anim), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_1), 7)
