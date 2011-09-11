@@ -15,13 +15,13 @@ spriteset(THIS_ID(spriteset_ground), "sprites/graphics/industries/groundtiles.pn
 }
 
 spriteset(THIS_ID(spriteset_1)) {
-	tmpl_building_sprite_filename(10, 10, 59, -28, "sprites/graphics/industries/petrolpump.png")
-	tmpl_building_sprite_filename(10, 10, 59, -28, "sprites/graphics/industries/petrolpump_snow.png")
+	tmpl_building_sprite_filename(10, 60, 59, -28, "sprites/graphics/industries/petrolpump.png")
+	tmpl_building_sprite_filename(10, 60, 59, -28, "sprites/graphics/industries/petrolpump_snow.png")
 }
 
 spriteset(THIS_ID(spriteset_2)) {
-	tmpl_building_sprite_filename(80, 10, 59, -28, "sprites/graphics/industries/petrolpump.png")
-	tmpl_building_sprite_filename(80, 10, 59, -28, "sprites/graphics/industries/petrolpump_snow.png")
+	tmpl_building_sprite_filename(80, 60, 59, -28, "sprites/graphics/industries/petrolpump.png")
+	tmpl_building_sprite_filename(80, 60, 59, -28, "sprites/graphics/industries/petrolpump_snow.png")
 }
 
 SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_1), GROUNDSPRITE_CONCRETE, GROUNDSPRITE_CONCRETE, THIS_ID(spriteset_1), 16)
