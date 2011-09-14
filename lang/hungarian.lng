@@ -1,0 +1,259 @@
+﻿##grflangid 0x24
+
+##case t ba
+
+STR_GRF_DESC                                                                    :{ORANGE}FIRS Industry Replacement Set{}{BLACK}Készítette: {SILVER}andythenorth{BLACK} és {SILVER}FooBar{BLACK}.{}{BLACK}{BLACK}{}Weboldal: {SILVER}www.tt-foundry.com/sets/FIRS{BLACK}.{}{BLACK}'1000 commit, és még nincs vége...'{BLACK}{}{}Licensz: {SILVER}GPL v2{}{}{BLACK}.Külön köszönet {SILVER}Ammler{BLACK}-nek, {SILVER}Core Xii{BLACK}-nek, {SILVER}Irwe{BLACK}-nek, {SILVER}planetmaker{BLACK}-nek és {SILVER}Zephyris{BLACK}-nek.{}Részeket használ fel a következőekből: {SILVER}eGRVTS{BLACK}, {SILVER}ISR{BLACK} és {SILVER}OpenGFX{BLACK}.
+STR_GRF_NAME                                                                    :{TITLE}
+
+STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :{SILVER}A halászterületek, olajfúró tornyok és mederkotrások maximális távolsága a parttól.
+STR_PARAM_DESC_DEBUG                                                            :Csak fejlesztőknek
+STR_PARAM_DESC_ECONOMIES                                                        :Ha kész lesz, a FIRS-ben különféle gazdaságok lesznek elérhetők, különféle gazdasági épületekkel és rakományokkal. Az egyes rakományokért fizetett szállítási díjak is különbözni fognak. {}{}{SILVER}Egyelőre csak egy gazdaság érhető el :)
+STR_PARAM_DESC_NEVER_CLOSE                                                      :Alapértelmezésben a FIRS elsődleges gazdasági épületei nem zárnak be.{}{}Ha ez a beállítás be van kapcsolva, az elsődleges gazdasági épületek bezárnak, ha a termelésük egy bizonyos szint alá esik (ez a szint a különféle gazdasági épületek esetén eltérő). {SILVER}Ehhez szükséges bekapcsolni az elsődleges gazdasági épületek termeléscsökkenését is.
+STR_PARAM_DESC_NO_OPENINGS                                                      :Hatására nem fognak új gazdasági épületek épülni a játék folyamán. {}A játékosok sem fognak tudni új gazdasági épületeket építtetni. {}A gazdasági épületeket a térképgenerátor fogja elhelyezni a játék elején, a beállításoktól függően.
+STR_PARAM_DESC_PRIMARY_PRODUCTION_DECREASE                                      :Alapértelmezésben a FIRS gazdasági épületek termelése nem csökken.{}{}Ha az elsődleges gazdasági épületek termeléscsökkenése be van kapcsolva, van esély arra, hogy a termelés csökken, ha egy hónapig nem érkezik szállítmány. Ha magas a termelés, a termeléscsökkenés esélye is nagyobb.
+STR_PARAM_DESC_SECONDARY_NEVER_CLOSE                                            :Alapértelmezésben a FIRS másodlagos gazdasági épületei nem zárnak be.{}{}Ha ez a beállítás be van kapcsolva, a másodlagos gazdasági épületek bezárhatnak, ha sokáig nem érkezik hozzájuk szállítmány.
+STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY                                   :Tengeri gazdasági létesítmények maximális távolsága a parttól
+STR_PARAM_NAME_DEBUG                                                            :Debug szövegek mutatása
+STR_PARAM_NAME_ECONOMIES                                                        :Gazdaság
+STR_PARAM_NAME_NEVER_CLOSE                                                      :Elsődleges gazdasági épületek bezárásának engedélyezése
+STR_PARAM_NAME_NO_OPENINGS                                                      :Új gazdasági épületek nyitásának meggátlása
+STR_PARAM_NAME_PRIMARY_PRODUCTION_DECREASE                                      :Elsődleges gazdasági épületek termeléscsökkenésének engedélyezése
+STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            :Másodlagos gazdasági épületek bezárásának engedélyezése
+STR_PARAM_VALUE_ECONOMIES_TEST_ECONOMY                                          :Teszt gazdaság
+STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0                                         :Nincs határ
+
+
+STR_CARGO_NAME_ALCOHOL                                                          :Szeszes ital
+STR_CARGO_NAME_ALCOHOL.t                                                        :szeszes italt
+STR_CARGO_NAME_BAUXITE                                                          :Bauxit
+STR_CARGO_NAME_BAUXITE.t                                                        :bauxitot
+STR_CARGO_NAME_BUILDING_MATERIALS                                               :Építőanyag
+STR_CARGO_NAME_BUILDING_MATERIALS.t                                             :építőanyagot
+STR_CARGO_NAME_CHEMICALS                                                        :Vegyszer
+STR_CARGO_NAME_CHEMICALS.t                                                      :vegyszert
+STR_CARGO_NAME_CLAY                                                             :Agyag
+STR_CARGO_NAME_CLAY.t                                                           :agyagot
+STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :Ipari segédeszközök
+STR_CARGO_NAME_ENGINEERING_SUPPLIES.t                                           :ipari segédeszközöket
+STR_CARGO_NAME_FIBRES                                                           :Növényi rost
+STR_CARGO_NAME_FIBRES.t                                                         :növényi rostot
+STR_CARGO_NAME_FISH                                                             :Hal
+STR_CARGO_NAME_FISH.t                                                           :halat
+STR_CARGO_NAME_FARM_SUPPLIES                                                    :Mezőgazdasági felszerelés
+STR_CARGO_NAME_FARM_SUPPLIES.t                                                  :mezőgazdasági felszerelés
+STR_CARGO_NAME_FRUITS                                                           :Gyümölcs
+STR_CARGO_NAME_FRUITS.t                                                         :gyümölcsöt
+STR_CARGO_NAME_LUMBER                                                           :Fűrészáru
+STR_CARGO_NAME_LUMBER.t                                                         :fűrészárut
+STR_CARGO_NAME_METAL                                                            :Fém
+STR_CARGO_NAME_METAL.t                                                          :fémet
+STR_CARGO_NAME_MILK                                                             :Tej
+STR_CARGO_NAME_MILK.t                                                           :tejet
+STR_CARGO_NAME_MANUFACTURING_SUPPLIES                                           :Gyártási segédeszközök
+STR_CARGO_NAME_MANUFACTURING_SUPPLIES.t                                         :gyártási segédeszközöket
+STR_CARGO_NAME_PETROL                                                           :Üzemanyag
+STR_CARGO_NAME_PETROL.t                                                         :üzemanyagot
+STR_CARGO_NAME_RECYCLABLES                                                      :Újrahasznosítható áru
+STR_CARGO_NAME_RECYCLABLES.t                                                    :újrahasznosítható árut
+STR_CARGO_NAME_SAND                                                             :Homok
+STR_CARGO_NAME_SAND.t                                                           :homokot
+STR_CARGO_NAME_SCRAP_METAL                                                      :Fémhulladék
+STR_CARGO_NAME_SCRAP_METAL.t                                                    :fémhulladékot
+STR_CARGO_NAME_STONE                                                            :Kő
+STR_CARGO_NAME_STONE.t                                                          :követ
+STR_CARGO_NAME_SUGAR_BEET                                                       :Cukorrépa
+STR_CARGO_NAME_SUGAR_BEET.t                                                     :cukorrépát
+STR_CARGO_NAME_SUGARCANE                                                        :Cukornád
+STR_CARGO_NAME_SUGARCANE.t                                                      :cukornádat
+STR_CARGO_NAME_WOOL                                                             :Gyapjú
+STR_CARGO_NAME_WOOL.t                                                           :gyapjút
+
+STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} szeszes ital
+STR_CARGO_UNIT_BAUXITE                                                          :{WEIGHT} bauxit
+STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WEIGHT} építőanyag
+STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} vegyszer
+STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} agyag
+STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} láda ipari segédeszköz
+STR_CARGO_UNIT_FIBRES                                                           :{WEIGHT} növényi rost
+STR_CARGO_UNIT_FISH                                                             :{WEIGHT} hal
+STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} láda mezőgazdasági felszerelés
+STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} gyümölcs
+STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} fűrészáru
+STR_CARGO_UNIT_METAL                                                            :{WEIGHT} fém
+STR_CARGO_UNIT_MILK                                                             :{VOLUME} tej
+STR_CARGO_UNIT_MNSP                                                             :{SIGNED_WORD} láda gyártási segédeszköz
+STR_CARGO_UNIT_PETROL                                                           :{VOLUME} üzemanyag
+STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} újrahasznosítható áru
+STR_CARGO_UNIT_SAND                                                             :{WEIGHT} homok
+STR_CARGO_UNIT_SCRAP_METAL                                                      :{WEIGHT} fémhulladék
+STR_CARGO_UNIT_STONE                                                            :{WEIGHT} kő
+STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} cukorrépa
+STR_CARGO_UNIT_SUGARCANE                                                        :{WEIGHT} cukornád
+STR_CARGO_UNIT_WOOL                                                             :{WEIGHT} gyapjú
+
+STR_CID_ALCOHOL                                                                 :{TINYFONT}IT
+STR_CID_BAUXITE                                                                 :{TINYFONT}BX
+STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}ÉA
+STR_CID_CHEMICALS                                                               :{TINYFONT}VS
+STR_CID_CLAY                                                                    :{TINYFONT}AG
+STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}IS
+STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}MF
+STR_CID_FIBRES                                                                  :{TINYFONT}NR
+STR_CID_FISH                                                                    :{TINYFONT}HL
+STR_CID_LUMBER                                                                  :{TINYFONT}FÜ
+STR_CID_MANUFACTURING_SUPPLIES                                                  :{TINYFONT}GS
+STR_CID_METAL                                                                   :{TINYFONT}FM
+STR_CID_MILK                                                                    :{TINYFONT}TJ
+STR_CID_PETROL                                                                  :{TINYFONT}ÜA
+STR_CID_RECYCLABLES                                                             :{TINYFONT}ÚÁ
+STR_CID_SAND                                                                    :{TINYFONT}HM
+STR_CID_SCRAP_METAL                                                             :{TINYFONT}FH
+STR_CID_STONE                                                                   :{TINYFONT}KÖ
+STR_CID_SUGAR_BEET                                                              :{TINYFONT}CR
+STR_CID_SUGARCANE                                                               :{TINYFONT}CN
+STR_CID_WOOL                                                                    :{TINYFONT}GY
+
+STR_ERR_CLIMATE_TOYLAND                                                         :{ORANGE}A FIRS nem a játékvilág tájhoz lett tervezve.
+STR_ERR_INCOMPATIBLE_PARAM_CANSET                                               :{ORANGE}E02: {YELLOW}Nem kompatibilis paraméter: {ORANGE}A CanSet 2. paramétere 0 kell, hogy legyen a FIRS-szel való használathoz. {YELLOW}Lásd a FIRS ReadMe-t: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_PARAM_CITYSET                                              :{ORANGE}E02: {YELLOW}Nem kompatibilis paraméter: {ORANGE}Az NA City Set 2. paramétere 0 kell, hogy legyen a FIRS-szel való használathoz. {YELLOW}Lásd a FIRS ReadMe-t: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_OPENTTD_VERSION                                                         :{ORANGE}E00: A FIRS-hez az OpenTTD legalább 1.2.0, vagy r22780 trunk verziója szüksséges.{YELLOW}Lásd a FIRS ReadMe-t: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+
+STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE                                             :csak a hóhatár felett építhető.
+STR_ERR_LOCATION_NOT_ON_WATER                                                   :csak szárazföldőn építhető.
+STR_ERR_LOCATION_NOT_IN_DESERT                                                  :nem építhető sivatagban.
+STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE                                             :nem építhető meredek lejtőkön.
+
+STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}Termelés:{}  2t termelés 8t bauxit szállítása esetén{}  2t termelés 8t vegyszer szállítása esetén{}  4t termelés 8t fémhulladék szállítása esetén{}{}A termelés megnő, ha legalább két különféle rakományból érkezik szállítmány egy hónapon belül.
+STR_EXTRA_BIOREFINERY                                                           :{BLACK}Gabonából és cukorból üzemanyagot és vegyszereket álílt elő.{}{}6t termelés 8t szállítása esetén.
+STR_EXTRA_BREWERY                                                               :{BLACK}Termelés:{}  3t termelés 8t gyártási segédeszköz szállítása esetén{}  5t termelés 8t búza szállítása esetén{}  5t termelés 8t gyümölcs szállítása esetén{}{}A termelés megnő, ha szállítmány érkezik gyártási segédeszközökből és egy másik rakományból egy hónapon belül.
+STR_EXTRA_BRICKWORKS                                                            :{BLACK}Termelés:{}  2t termelés 8t szén szállítása esetén{}  2t termelés 8t homok szállítása esetén{}  4t termelés 8t agyag szállítása esetén{}{}A termelés megnő, ha legalább két különféle rakományból érkezik szállítmány egy hónapon belül.
+STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Termelés:{}  2t termelés 8t szén szállítása esetén{}  2t termelés 8t agyag szállítása esetén{}  4t termelés 8t kő szállítása esetén{}{}A termelés megnő, ha legalább két különféle rakományból érkezik szállítmány egy hónapon belül.
+STR_EXTRA_DAIRY                                                                 :{BLACK}Termelés:{}  3t termelés 8t gyártási segédeszköz szállítása esetén{}  5t termelés 8t tej szállítása esetén{}{}8 tonnánként 8 tonnára emelkedik, ha mindkét rakományból érkezik szállítmány egy hónapon belül.
+STR_EXTRA_ENGINEERING_SUPPLIES                                                  :{BLACK}Ipari segédeszközök szállítása növelheti a termelést.{}{YELLOW}  {COMMA} láda szállítva ebben a hónapban
+STR_EXTRA_FARM_SUPPLIES                                                         :{BLACK}Mezőgazdasági felszerelés szállítása növelheti a termelést.{}{YELLOW}  {COMMA} láda szállítva ebben a hónapban
+STR_EXTRA_FERTILIZER_PLANT                                                      :{BLACK}A vegyszerekből műtrágyát állít elő a farmok részére.{}{}8t termelés 8t szállítása esetén.
+STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Termelés:{}  3t termelés 8t gyártási segédeszköz szállítása esetén{}  5t termelés 8t hal szállítása esetén{}{}8 tonnánként 8 tonnára emelkedik, ha mindkét rakományból érkezik szállítmány egy hónapon belül.
+STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Termelés:{}  3t termelés 8t gyártási segédeszköz szállítása esetén{}  5t termelés 8t fűrészáru szállítása esetén{}{}8 tonnánként 8 tonnára emelkedik, ha mindkét rakományból érkezik szállítmány egy hónapon belül.
+STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Üveg termékeket, például ablaküvegeket és befőttes üvegeket gyárt.{}{}{BLACK}Termelés:{}  6t termelés 8t homok szállítása esetén{}  2t termelés 8t vegyszer szállítása esetén{}{}8 tonnánként 8 tonnára emelkedik, ha mindkét rakományból érkezik szállítmány egy hónapon belül.
+STR_EXTRA_GRAIN_MILL                                                            :{BLACK}Termelés:{}  3t termelés 8t gyártási segédeszköz szállítása esetén{}  5t termelés 8t búza szállítása esetén{}{}8 tonnánként 8 tonnára emelkedik, ha mindkét rakományból érkezik szállítmány egy hónapon belül.
+STR_EXTRA_IRON_WORKS                                                            :{BLACK}Termelés:{}  1t termelés 8t fa szállítása esetén{}  2t termelés 8t vasérc szállítása esetén{}{}8 tonnánként 3 tonnára emelkedik, ha mindkét rakományból érkezik szállítmány egy hónapon belül.
+STR_EXTRA_LIME_KILN                                                             :{BLACK}Termelés:{}  4t termelés 8t kő szállítása esetén{}  4t termelés 8t szén szállítása esetén{}{}8 tonnánként 8 tonnára emelkedik, ha mindkét rakományból érkezik szállítmány egy hónapon belül.
+STR_EXTRA_LUMBER_YARD                                                           :{BLACK}Fából készült termékeket, például oszlopokat és kerítéseket gyárt.{}{}{BLACK}Termelés:{}  2t termelés 8t vegyszer szállítása esetén{}  6t termelés 8t fűrészáru szállítása esetén{}{}8 tonnánként 8 tonnára emelkedik, ha mindkét rakományból érkezik szállítmány egy hónapon belül.
+STR_EXTRA_MACHINE_SHOP                                                          :{BLACK}Gépjárműveket épít és javít.{}{}8t termelés 8t szállítása esetén.
+STR_EXTRA_MEAT_PACKER                                                           :{BLACK}Termelés:{}  3t termelés 8t gyártási segédeszköz szállítása esetén{}  5t termelés 8t állat szállítása esetén{}{}8 tonnánként 8 tonnára emelkedik, ha mindkét rakományból érkezik szállítmány egy hónapon belül.
+STR_EXTRA_METAL_FOUNDRY                                                         :{BLACK}Fémeszközöket, például szerszámokat és alkatrészeket gyárt.{}{}8t termelés 8t szállítása esetén.
+STR_EXTRA_OIL_REFINERY                                                          :{BLACK}Feldolgozza a nyersolajat, üzemanyagot és vegyszereket állít elő.{}{}6t termelés 8t szállítása esetén.
+STR_EXTRA_PAPER_MILL                                                            :{BLACK}Fát aprít, hogy papírt és kartont gyártson.{}{}{BLACK}Termelés:{}  4t termelés 8t fa szállítása esetén{}  2t termelés 8t agyag szállítása esetén{}  2t termelés 8t vegyszer szállítása esetén{}{}A termelés megnő, ha legalább két különféle rakományból érkezik szállítmány egy hónapon belül.
+STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}Műanyag termékeket, például csomagolásokat és háztartási cikkeket gyárt.{}{}6t termelés 8t szállítása esetén.
+STR_EXTRA_RECYCLING_PLANT                                                       :{BLACK}Újrahasznosítható termékeket dolgoz fel, hogy azok alkalmasak legyenek ipari felhasználásra.{}{}6t termelés 8t szállítása esetén.
+STR_EXTRA_SAWMILL                                                               :{BLACK}Feldolgozza a kivágott fákat.{}{}6t termelés 8t szállítása esetén.
+STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Fémeszközöket, például szerszámokat és patkókat gyárt.{}{}5t termelés 8t szállítása esetén.
+STR_EXTRA_STEELMILL                                                             :{BLACK}Termelés:{}  2t termelés 8t vasérc szállítása esetén{}  2t termelés 8t szén szállítása esetén{}  4t termelés 8t fémhulladék szállítása esetén{}{}A termelés megnő, ha legalább két különféle rakományból érkezik szállítmány egy hónapon belül.
+STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Termelés:{}  3t termelés 8t gyártási segédeszköz szállítása esetén{}  5t termelés 8t cukornád szállítása esetén{}{}8 tonnánként 8 tonnára emelkedik, ha mindkét rakományból érkezik szállítmány egy hónapon belül.
+STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Termelés:{}  3t termelés 8t gyártási segédeszköz szállítása esetén{}  5t termelés 8t gyapjú szállítása esetén{}  5t termelés 8t növényi rost szállítása esetén{}{}A termelés megnő, ha szállítmány érkezik gyártási segédeszközökből és egy másik rakományból egy hónapon belül.
+
+STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ DEBUG ------------{}Termelés ebben a hónapban:{}1. rakomány: {WHITE}{COMMA}{BLACK}{}2. rakomány: {WHITE}{COMMA}{BLACK}{}Eltelt napok az utolsó szállítmány óta: {WHITE}{COMMA}{BLACK}
+STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Elérte a maximális termelést
+STR_GENERIC_D0B2                                                                :{BLACK}Gyártási segédeszközök szállítása megduplázza a más rakományokból származó termelést.{}{}{STRING}
+STR_GENERIC_NEWLINE                                                             :{}
+
+STR_FUND_MIXED_FARM                                                             :{}{BLACK}Helyszín: {YELLOW}Nem építhető havas területen, sivatagban és meredek lejtőn.
+STR_FUND_SHEEP_FARM                                                             :{}{BLACK}Helyszín: {YELLOW}Nem építhető sivatagban és lejtőn.
+STR_FUND_ARABLE_FARM                                                            :{}{BLACK}Helyszín: {YELLOW}Nem építhető havas területen, sivatagban és lejtőn.
+STR_FUND_DAIRY_FARM                                                             :{}{BLACK}Helyszín: {YELLOW}Nem építhető meredek lejtőn.
+STR_FUND_FOREST                                                                 :{}{BLACK}Helyszín: {YELLOW}Nem építhető siatagban.
+STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}Helyszín: {YELLOW}Nem építhető havas területen.
+
+STR_STATIONNAME_CHEMICALS                                                       :{STRING} Finomító
+STR_STATIONNAME_DEPOT                                                           :{STRING} Raktár
+STR_STATIONNAME_DREDGING_SITE                                                   :{STRING} Mederkotrás
+STR_STATIONNAME_FACTORIES                                                       :{STRING} Gyár
+STR_STATIONNAME_FARMS                                                           :{STRING} Farm
+STR_STATIONNAME_FISHING_GROUNDS                                                 :{STRING} Halászterület
+STR_STATIONNAME_MARKET                                                          :{STRING} Piac
+STR_STATIONNAME_MILLS                                                           :{STRING} Művek
+STR_STATIONNAME_PITS                                                            :{STRING} Kőfejtő
+STR_STATIONNAME_PLANTS                                                          :{STRING} Üzem
+STR_STATIONNAME_SMITHY_FORGE                                                    :{STRING} Műhely
+STR_STATIONNAME_WELLS                                                           :{STRING} Kút
+
+STR_IND_ALUMINIUM_PLANT                                                         :Alumíniumkohó
+STR_IND_ALUMINIUM_PLANT.t                                                       :alumíniumkohót
+STR_IND_ARABLE_FARM                                                             :Farm
+STR_IND_ARABLE_FARM.t                                                           :farmot
+STR_IND_BAUXITE_MINE                                                            :Bauxitbánya
+STR_IND_BAUXITE_MINE.t                                                          :bauxitbányát
+STR_IND_BIOREFINERY                                                             :Bioüzem
+STR_IND_BIOREFINERY.t                                                           :bioüzemet
+STR_IND_BREWERY                                                                 :Sörfőzde
+STR_IND_BREWERY.t                                                               :sörfőzdét
+STR_IND_BRICK_WORKS                                                             :Téglagyár
+STR_IND_BRICK_WORKS.t                                                           :téglagyárat
+STR_IND_BUILDERS_YARD                                                           :Építkezés
+STR_IND_BUILDERS_YARD.t                                                         :építkezési területet
+STR_IND_CEMENT_PLANT                                                            :Cementgyár
+STR_IND_CEMENT_PLANT.t                                                          :cementgyárat
+STR_IND_CLAY_PIT                                                                :Agyagbánya
+STR_IND_CLAY_PIT.t                                                              :agyagbányát
+STR_IND_DAIRY                                                                   :Tejüzem
+STR_IND_DAIRY.t                                                                 :tejüzemet
+STR_IND_DAIRYFARM                                                               :Tehenészet
+STR_IND_DAIRYFARM.t                                                             :tehenészetet
+STR_IND_DREDGING_SITE                                                           :Mederkotrás
+STR_IND_DREDGING_SITE.t                                                         :mederkotrási területet
+STR_IND_FERTILISER_PLANT                                                        :Műtrágyaüzem
+STR_IND_FERTILISER_PLANT.t                                                      :műtrágyaüzemet
+STR_IND_FISHING_GROUND                                                          :Halászterület
+STR_IND_FISHING_GROUND.t                                                        :halászterületet
+STR_IND_FISHING_HARBOUR                                                         :Halászkikötő
+STR_IND_FISHING_HARBOUR.t                                                       :halászkikötőt
+STR_IND_FOOD_MARKET                                                             :Piac
+STR_IND_FOOD_MARKET.t                                                           :piacot
+STR_IND_FURNITURE_FACTORY                                                       :Bútorgyár
+STR_IND_FURNITURE_FACTORY.t                                                     :bútorgyárat
+STR_IND_GLASS_WORKS                                                             :Üveggyár
+STR_IND_GLASS_WORKS.t                                                           :üveggyárat
+STR_IND_GRAIN_MILL                                                              :Malom
+STR_IND_GRAIN_MILL.t                                                            :malmot
+STR_IND_HARDWARE_STORE                                                          :Fémáru-bolt
+STR_IND_HARDWARE_STORE.t                                                        :fémáru-boltot
+STR_IND_HOTEL                                                                   :Szálloda
+STR_IND_HOTEL.t                                                                 :szállodát
+STR_IND_IRON_WORKS                                                              :Vaskohó
+STR_IND_IRON_WORKS.t                                                            :vaskohót
+STR_IND_JUNKYARD                                                                :Roncstelep
+STR_IND_JUNKYARD.t                                                              :roncstelepet
+STR_IND_LIME_KILN                                                               :Mészégető
+STR_IND_LIME_KILN.t                                                             :mészégetőt
+STR_IND_LUMBER_YARD                                                             :Fatelep
+STR_IND_LUMBER_YARD.t                                                           :fatelepet
+STR_IND_MACHINE_SHOP                                                            :Gépjárműüzem
+STR_IND_MACHINE_SHOP.t                                                          :gépjárműüzemet
+STR_IND_METAL_FOUNDRY                                                           :Öntőműhely
+STR_IND_METAL_FOUNDRY.t                                                         :öntőműhelyt
+STR_IND_MIXEDFARM                                                               :Vegyes farm
+STR_IND_MIXEDFARM.t                                                             :vegyes farmot
+STR_IND_PETROLPUMP                                                              :Benzinkút
+STR_IND_PETROLPUMP.t                                                            :benzinkutat
+STR_IND_PLASTICS_PLANT                                                          :Műanyaggyár
+STR_IND_PLASTICS_PLANT.t                                                        :műanyaggyárat
+STR_IND_QUARRY                                                                  :Kőfejtő
+STR_IND_QUARRY.t                                                                :kőfejtőt
+STR_IND_RECYCLING_DEPOT                                                         :Hulladékgyűjtő
+STR_IND_RECYCLING_DEPOT.t                                                       :hulladékgyűjtőt
+STR_IND_RECYCLING_PLANT                                                         :Úrjahasznosító telep
+STR_IND_RECYCLING_PLANT.t                                                       :úrjahasznosító telepet
+STR_IND_RETAILMARKET                                                            :Áruház
+STR_IND_RETAILMARKET.t                                                          :áruházat
+STR_IND_SHEEPFARM                                                               :Birkafarm
+STR_IND_SHEEPFARM.t                                                             :birkafarmot
+STR_IND_SMITHY_FORGE                                                            :Kovácsműhely
+STR_IND_SMITHY_FORGE.t                                                          :kovácsműhelyt
+STR_IND_STOCKYARD                                                               :Vágóhíd
+STR_IND_STOCKYARD.t                                                             :vágóhidat
+STR_IND_SUGAR_REFINERY                                                          :Cukorfinomító
+STR_IND_SUGAR_REFINERY.t                                                        :cukorfinomítót
+STR_IND_SUPERMARKET                                                             :Szupermarket
+STR_IND_SUPERMARKET.t                                                           :szupermarketet
+STR_IND_TEXTILE_MILL                                                            :Textilüzem
+STR_IND_TEXTILE_MILL.t                                                          :textilüzemet
