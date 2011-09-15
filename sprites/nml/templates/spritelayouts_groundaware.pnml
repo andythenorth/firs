@@ -108,7 +108,7 @@ spritelayout spritelayout_name { \
  * building_zextent     Size of the bounding box of the building sprite in the z direction. By default it is 16.
  * condition            The building will only be drawn if this condition is true.
  */
-#define CONDITONAL_BUILDING_SPRITE(building_sprite, building_zextent, condition) \
+#define CONDITIONAL_BUILDING_SPRITE(building_sprite, building_zextent, condition) \
 	building { \
 		sprite: building_sprite; \
 		recolour_mode: RECOLOUR_REMAP; \

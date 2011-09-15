@@ -128,22 +128,22 @@ GROUND_AWARE_SPRITELAYOUT(THIS_ID(brickbakery_tile_3))
 	// normal
 	CONDITIONAL_GROUND_SPRITE_OVERLAY(THIS_ID(spriteset_ground), terrain_type != TILETYPE_SNOW)
 	CONDITIONAL_GROUND_SPRITE_OVERLAY(THIS_ID(spriteset_ground_overlay_normal_3), terrain_type != TILETYPE_SNOW)
-	CONDITONAL_BUILDING_SPRITE(THIS_ID(spriteset_normal_3), 48, terrain_type != TILETYPE_SNOW)
+	CONDITIONAL_BUILDING_SPRITE(THIS_ID(spriteset_normal_3), 48, terrain_type != TILETYPE_SNOW)
 	// snow
 	CONDITIONAL_GROUND_SPRITE_OVERLAY(GROUNDSPRITE_SNOW, terrain_type == TILETYPE_SNOW)
 	CONDITIONAL_GROUND_SPRITE_OVERLAY(THIS_ID(spriteset_ground_overlay_snow_3), terrain_type == TILETYPE_SNOW)
-	CONDITONAL_BUILDING_SPRITE(THIS_ID(spriteset_snow_3), 48, terrain_type == TILETYPE_SNOW)
+	CONDITIONAL_BUILDING_SPRITE(THIS_ID(spriteset_snow_3), 48, terrain_type == TILETYPE_SNOW)
 SPRITELAYOUT_END
 
 GROUND_AWARE_SPRITELAYOUT(THIS_ID(brickbakery_tile_4))
 	// normal
 	CONDITIONAL_GROUND_SPRITE_OVERLAY(THIS_ID(spriteset_ground), terrain_type != TILETYPE_SNOW)
 	CONDITIONAL_GROUND_SPRITE_OVERLAY(THIS_ID(spriteset_ground_overlay_normal_4), terrain_type != TILETYPE_SNOW)
-	CONDITONAL_BUILDING_SPRITE(THIS_ID(spriteset_normal_4), 48, terrain_type != TILETYPE_SNOW)
+	CONDITIONAL_BUILDING_SPRITE(THIS_ID(spriteset_normal_4), 48, terrain_type != TILETYPE_SNOW)
 	// snow
 	CONDITIONAL_GROUND_SPRITE_OVERLAY(GROUNDSPRITE_SNOW, terrain_type == TILETYPE_SNOW)
 	CONDITIONAL_GROUND_SPRITE_OVERLAY(THIS_ID(spriteset_ground_overlay_snow_4), terrain_type == TILETYPE_SNOW)
-	CONDITONAL_BUILDING_SPRITE(THIS_ID(spriteset_snow_4), 48, terrain_type == TILETYPE_SNOW)
+	CONDITIONAL_BUILDING_SPRITE(THIS_ID(spriteset_snow_4), 48, terrain_type == TILETYPE_SNOW)
 SPRITELAYOUT_END
 
 spritelayout THIS_ID(windmill_tile_anim) {
