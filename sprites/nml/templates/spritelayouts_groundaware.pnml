@@ -5,9 +5,10 @@
  * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
  */
 
-/* Defines a ground aware spritelayout for an industry tile.
+/* Defines a flat, ground aware spritelayout for an industry tile.
  * Ground sprite overlays and buildings must be defined separately.
- * If var_default_ground is not initialized, the ground sprite will revert to GROUNDSPRITE_NORMAL.
+ *
+ * Use this layout when the tile uses foundations and autoslope
  *
  * spritelayout_name       Name for the spritelayout block.
  */
@@ -115,4 +116,70 @@ spritelayout spritelayout_name { \
 		palette: PALETTE_USE_DEFAULT; \
 		zextent: building_zextent; \
 		hide_sprite: !(condition); \
+	}
+
+/* Defines a sloped, ground aware spritelayout for an industry tile.
+ * Ground sprite overlays and buildings must be defined separately.
+ *
+ * Use this spritelayout when the tile doesn't use foundations and
+ * autoslope. It's analoguous to GROUND_AWARE_SPRITELAYOUT
+ *
+ * spritelayout_name       Name for the spritelayout block.
+ */
+#define SLOPE_AWARE_SPRITELAYOUT(spritelayout_name) \
+spritelayout spritelayout_name { \
+	ground { \
+		sprite: GROUNDSPRITE_NORMAL + slope_to_sprite_offset(nearby_tile_slope(0, 0)); \
+		recolour_mode: RECOLOUR_REMAP; \
+		palette: PALETTE_USE_DEFAULT; \
+	} \
+	childsprite { \
+		sprite: GROUNDSPRITE_DESERT + slope_to_sprite_offset(nearby_tile_slope(0, 0)); \
+		recolour_mode: RECOLOUR_REMAP; \
+		palette: PALETTE_USE_DEFAULT; \
+		hide_sprite: (climate != CLIMATE_TROPIC) || \
+			(climate == CLIMATE_TROPIC) && (nearby_tile_terrain_type(0, 0) != TILETYPE_DESERT); \
+	} \
+	childsprite { \
+		sprite: 4512 + slope_to_sprite_offset(nearby_tile_slope(0, 0)); \
+		recolour_mode: RECOLOUR_REMAP; \
+		palette: PALETTE_USE_DEFAULT; \
+		hide_sprite: (climate != CLIMATE_TROPIC) || \
+			(climate == CLIMATE_TROPIC) && (nearby_tile_terrain_type(0, 0) == TILETYPE_DESERT) || \
+			(climate == CLIMATE_TROPIC) && (nearby_tile_terrain_type(0, 0) == TILETYPE_NORMAL) && \
+			((nearby_tile_terrain_type( 1, 0) != TILETYPE_DESERT) && \
+			(nearby_tile_terrain_type(-1, 0) != TILETYPE_DESERT) && \
+			(nearby_tile_terrain_type( 0, 1) != TILETYPE_DESERT) && \
+			(nearby_tile_terrain_type( 0,-1) != TILETYPE_DESERT)); \
+	} \
+	childsprite { \
+		sprite: GROUNDSPRITE_SNOW + slope_to_sprite_offset(nearby_tile_slope(0, 0)); \
+		recolour_mode: RECOLOUR_REMAP; \
+		palette: PALETTE_USE_DEFAULT; \
+		hide_sprite: (climate != CLIMATE_ARCTIC) || \
+			(climate == CLIMATE_ARCTIC) && (nearby_tile_height(0, 0) < (snowline_height + 16)); \
+	} \
+	childsprite { \
+		sprite: 4531 + slope_to_sprite_offset(nearby_tile_slope(0, 0)); \
+		recolour_mode: RECOLOUR_REMAP; \
+		palette: PALETTE_USE_DEFAULT; \
+		hide_sprite: (climate != CLIMATE_ARCTIC) || \
+			(climate == CLIMATE_ARCTIC) && \
+			((nearby_tile_height(0, 0) < (snowline_height + 8)) || (nearby_tile_height(0, 0) >= (snowline_height + 16))); \
+	} \
+	childsprite { \
+		sprite: 4512 + slope_to_sprite_offset(nearby_tile_slope(0, 0)); \
+		recolour_mode: RECOLOUR_REMAP; \
+		palette: PALETTE_USE_DEFAULT; \
+		hide_sprite: (climate != CLIMATE_ARCTIC) || \
+			(climate == CLIMATE_ARCTIC) && \
+			((nearby_tile_height(0, 0) < (snowline_height + 0)) || (nearby_tile_height(0, 0) >= (snowline_height + 8))); \
+	} \
+	childsprite { \
+		sprite: 4493 + slope_to_sprite_offset(nearby_tile_slope(0, 0)); \
+		recolour_mode: RECOLOUR_REMAP; \
+		palette: PALETTE_USE_DEFAULT; \
+		hide_sprite: (climate != CLIMATE_ARCTIC) || \
+			(climate == CLIMATE_ARCTIC) && \
+			((nearby_tile_height(0, 0) < (snowline_height - 8)) || (nearby_tile_height(0, 0) >= (snowline_height + 0))); \
 	}
