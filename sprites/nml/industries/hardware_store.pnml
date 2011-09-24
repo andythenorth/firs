@@ -48,7 +48,7 @@ tilelayout tilelayout_hardware_store_1 {
 
 #include "../templates/check_availability.pnml"
 
-item(FEAT_INDUSTRIES, hardware_store, 57) {
+item(FEAT_INDUSTRIES, hardware_store, IND_HARDWARESTORE_ID) {
 	property {
 		substitute:             0;
 		layouts: [

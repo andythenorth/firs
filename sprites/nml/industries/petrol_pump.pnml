@@ -123,7 +123,7 @@ tilelayout tilelayout_petrol_pump_2 {
 
 #include "../templates/check_availability.pnml"
 
-item(FEAT_INDUSTRIES, petrol_pump, 60) {
+item(FEAT_INDUSTRIES, petrol_pump, IND_PETROLPUMP_ID) {
 	property {
 		substitute: 0;
 		layouts: [

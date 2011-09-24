@@ -133,7 +133,7 @@ SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
 
 #include "../templates/check_availability.pnml"
 
-item(FEAT_INDUSTRIES, sheep_farm, 27) {
+item(FEAT_INDUSTRIES, sheep_farm, IND_SHEEPFARM_ID) {
 	property {
 		substitute: 0;
 		layouts: [

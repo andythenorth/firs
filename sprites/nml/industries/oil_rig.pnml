@@ -64,7 +64,7 @@ SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
 
 #include "../templates/check_availability.pnml"
 
-item(FEAT_INDUSTRIES, oil_rig, 16) {
+item(FEAT_INDUSTRIES, oil_rig, IND_OILRIG_ID) {
 	property {
 		substitute: 5;
 		override: 5;

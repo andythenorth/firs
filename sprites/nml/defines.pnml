@@ -126,7 +126,7 @@ if (climate == CLIMATE_TROPICAL) { market_tree = MARKET_TREE_TROPICAL; }
 //#define IND_VACANT_ID                0x03
 #define IND_IRONOREMINE_ID           0x04
 #define IND_BAUXITEMINE_ID           0x05
-#define IND_FORGE_ID                 0x06
+#define IND_SMITHYFORGE_ID           0x06
 #define IND_STEELMILL_ID             0x07
 #define IND_ALUMINIUMPLANT_ID        0x08
 #define IND_METALWORKSHOP_ID         0x09
@@ -136,7 +136,7 @@ if (climate == CLIMATE_TROPICAL) { market_tree = MARKET_TREE_TROPICAL; }
 #define IND_FURNITUREFACTORY_ID      0x0D
 #define IND_PAPERMILL_ID             0x0E
 #define IND_OILWELLS_ID              0x0F
-#define IND_OILPLATFORM_ID           0x10
+#define IND_OILRIG_ID                0x10
 #define IND_OILREFINERY_ID           0x11
 #define IND_PLASTICSPLANT_ID         0x12
 #define IND_SUGARREFINERY_ID         0x13
@@ -157,7 +157,7 @@ if (climate == CLIMATE_TROPICAL) { market_tree = MARKET_TREE_TROPICAL; }
 #define IND_GRAINMILL_ID             0x22
 #define IND_BREWERY_ID               0x23
 #define IND_DAIRY_ID                 0x24
-#define IND_MEATPACKER_ID            0x25
+#define IND_STOCKYARD_ID             0x25
 #define IND_MACHINESHOP_ID           0x26
 //#define IND_VACANT_ID                0x27
 #define IND_FERTILISERPLANT_ID       0x28

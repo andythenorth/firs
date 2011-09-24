@@ -136,7 +136,7 @@ switch(FEAT_INDUSTRIES, SELF, THIS_ID(cargo_output), (extra_callback_info1 & 255
 	return 0xFF;                      // terminate callback
 }
 
-item(FEAT_INDUSTRIES, recycling_plant, 23) {
+item(FEAT_INDUSTRIES, recycling_plant, IND_RECYCLINGPLANT_ID) {
 	property {
 		substitute: 0;
 		layouts: [

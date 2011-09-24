@@ -97,7 +97,7 @@ switch(FEAT_INDUSTRIES, PARENT, THIS_ID(produce), [STORE_TEMP(((var[0x82, 3, 819
 	THIS_ID(production);
 }
 
-item(FEAT_INDUSTRIES, recycling_depot, 24) {
+item(FEAT_INDUSTRIES, recycling_depot, IND_RECYCLINGDEPOT_ID) {
 	property {
 		substitute:             0;
 		layouts: [

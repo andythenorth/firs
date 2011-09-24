@@ -73,7 +73,7 @@ tilelayout tilelayout_hotel_1 {
 
 #include "../templates/check_availability.pnml"
 
-item(FEAT_INDUSTRIES, hotel, 58) {
+item(FEAT_INDUSTRIES, hotel, IND_HOTEL_ID) {
 	property {
 		substitute: 0;
 		layouts: [

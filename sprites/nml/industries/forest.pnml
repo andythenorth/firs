@@ -5251,7 +5251,7 @@ SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
 
 #include "../templates/check_availability.pnml"
 
-item(FEAT_INDUSTRIES, forest, 11) {
+item(FEAT_INDUSTRIES, forest, IND_FOREST_ID) {
 	property {
 		substitute: 0;
 		layouts: [

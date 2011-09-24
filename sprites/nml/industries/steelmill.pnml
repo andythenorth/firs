@@ -97,7 +97,7 @@ SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
 
 #include "../templates/check_availability.pnml"
 
-item(FEAT_INDUSTRIES, steelmill, 7) {
+item(FEAT_INDUSTRIES, steelmill, IND_STEELMILL_ID) {
 	property {
 		substitute: 8;
 		override: 8;

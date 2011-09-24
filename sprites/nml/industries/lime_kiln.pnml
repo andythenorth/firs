@@ -175,7 +175,7 @@ SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
 
 #include "../templates/check_availability.pnml"
 
-item(FEAT_INDUSTRIES, lime_kiln, 1) {
+item(FEAT_INDUSTRIES, lime_kiln, IND_LIMEKILN_ID) {
 	property {
 		substitute: 0;
 		layouts: [
