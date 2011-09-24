@@ -170,11 +170,11 @@ tilelayout tilelayout_metal_foundry_2 {
 
 /* for secondary production template */
 #define THIS_NUM_OUTPUT_CARGOS    2
-#define THIS_PROD_RATIO_CARGO1    8
-#define THIS_PROD_RATIO_CARGO2    8
+#define THIS_PROD_RATIO_CARGO1    6
+#define THIS_PROD_RATIO_CARGO2    2
 #define THIS_PROD_RATIO_CARGO3    0
-#define THIS_BOOST_12             0
-#define THIS_BOOST_13             0
+#define THIS_BOOST_12             6
+#define THIS_BOOST_13             2
 #define THIS_BOOST_21             0
 #define THIS_BOOST_23             0
 #define THIS_BOOST_31             0
@@ -215,7 +215,7 @@ item(FEAT_INDUSTRIES, metal_foundry, 9) {
 		new_ind_msg:            TTD_STR_NEWS_INDUSTRY_CONSTRUCTION;
 		name:                   string(STR_IND_METAL_FOUNDRY);
 		prod_cargo_types: [GOOD, MNSP];
-		accept_cargo_types: [STEL];
+		accept_cargo_types: [STEL, RFPR];
 		prod_multiplier: [0, 0];
 		input_multiplier_1: [0, 0];
 		input_multiplier_2: [0, 0];
