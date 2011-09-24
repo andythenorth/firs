@@ -179,10 +179,10 @@ if (climate == CLIMATE_TROPICAL) { market_tree = MARKET_TREE_TROPICAL; }
 //#define IND_VACANT_ID                0x38
 #define IND_HARDWARESTORE_ID           0x39
 #define IND_HOTEL_ID                 0x3A
-#define IND_GENERALSTORE_ID          0x3B
+#define IND_FOODMARKET_ID            0x3B
 #define IND_PETROLPUMP_ID            0x3C
-#define IND_SUPERMARKET_ID           0x3D
-#define IND_RETAILMARKET_ID          0x3E
+//#define IND_VACANT_ID           0x3D
+//#define IND_VACANT_ID          0x3E
 #define IND_BUILDERSYARD_ID          0x3F
 
 //3F is last ID to be used (64 industry limit)

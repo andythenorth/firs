@@ -365,7 +365,7 @@ SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
 
 #include "../templates/check_availability.pnml"
 
-item(FEAT_INDUSTRIES, aluminium_plant, 8) {
+item(FEAT_INDUSTRIES, aluminium_plant, IND_ALUMINIUMPLANT_ID) {
 	property {
 		substitute: 0;
 		layouts: [

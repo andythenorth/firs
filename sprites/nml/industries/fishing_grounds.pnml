@@ -328,7 +328,7 @@ SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
 
 #include "../templates/check_availability.pnml"
 
-item(FEAT_INDUSTRIES, fishing_grounds, 32) {
+item(FEAT_INDUSTRIES, fishing_grounds, IND_FISHINGGROUNDS_ID) {
 	property {
 		substitute: 5;
 		layouts: [

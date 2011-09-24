@@ -116,7 +116,7 @@ tilelayout tilelayout_builders_yard_2 {
 CHECK_TOWN_DISTANCE (town_distance,  0, 64, return CB_RESULT_LOCATION_ALLOW)
 CHECK_FOUNDER       (THIS_ID(town_distance))
 
-item(FEAT_INDUSTRIES, builders_yard, 63) {
+item(FEAT_INDUSTRIES, builders_yard, IND_BUILDERSYARD_ID) {
 	property {
 		substitute: 0;
 		layouts: [
