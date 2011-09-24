@@ -10,6 +10,15 @@
 
 #define SPRITE_TREE2 1586
 
+#define MARKET_TREE_TEMPERATE 1681
+#define MARKET_TREE_TROPICAL 1914
+#define MARKET_TREE_ARCTIC 1716
+market_tree = MARKET_TREE_TEMPERATE;
+if (climate == CLIMATE_ARCTIC) { market_tree = MARKET_TREE_ARCTIC; }
+if (climate == CLIMATE_TROPICAL) { market_tree = MARKET_TREE_TROPICAL; }
+#define MARKET_TREE_SNOW 1772
+
+
 #define GROUNDTILE_HALF_BROWN 3962
 
 /* **************************************************************************

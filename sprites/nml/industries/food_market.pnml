@@ -9,12 +9,38 @@
 
 #define THIS_ID(...) food_market ## __VA_ARGS__
 
-spriteset(THIS_ID(spriteset_1)) {
-	tmpl_building_sprite_filename(0, 0, 36, -4, "sprites/graphics/industries/foodmarket.png")
-	tmpl_building_sprite_filename(0, 0, 36, -4, "sprites/graphics/industries/foodmarket_snow.png")
-}
+spriteset(THIS_ID(spriteset_ground_normal)) { tmpl_ground_tile_filename(10, 10, "sprites/graphics/industries/foodmarket.png") }
+spriteset(THIS_ID(spriteset_ground_snow))   { tmpl_ground_tile_filename(10, 10, "sprites/graphics/industries/foodmarket_snow.png") }
 
-SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_1), GROUNDSPRITE_CONCRETE, GROUNDSPRITE_CONCRETE, THIS_ID(spriteset_1), 16)
+spriteset(THIS_ID(spriteset_building_normal)) {	tmpl_building_sprite_filename(10, 60, 36, -4, "sprites/graphics/industries/foodmarket.png") }
+spriteset(THIS_ID(spriteset_building_snow)) { tmpl_building_sprite_filename(10, 60, 36, -4, "sprites/graphics/industries/foodmarket_snow.png") }
+
+GROUND_AWARE_SPRITELAYOUT(THIS_ID(spritelayout_1))
+	CONDITIONAL_GROUND_SPRITE_OVERLAY(THIS_ID(spriteset_ground_normal),   terrain_type != TILETYPE_SNOW)
+	CONDITIONAL_GROUND_SPRITE_OVERLAY(GROUNDSPRITE_SNOW, terrain_type == TILETYPE_SNOW)
+	CONDITIONAL_GROUND_SPRITE_OVERLAY(THIS_ID(spriteset_ground_snow), terrain_type == TILETYPE_SNOW)
+	// Add two trees; care for snow on snowy terrain. Climate-selection done
+	// in defines.pnml (to allow also to select a different sprite in the presence
+	// of other tree NewGRFs
+	building {
+		sprite: nearby_tile_terrain_type(0, 0) != TILETYPE_SNOW ? market_tree : MARKET_TREE_SNOW;
+		xoffset: 11;
+		yoffset: 1;
+		xextent: 6;
+		yextent: 6;
+	}
+	building {
+		sprite: nearby_tile_terrain_type(0, 0) != TILETYPE_SNOW ? market_tree : MARKET_TREE_SNOW;
+		xoffset: 11;
+		yoffset: 6;
+		xextent: 6;
+		yextent: 6;
+	}
+	CONDITIONAL_BUILDING_SPRITE(THIS_ID(spriteset_building_normal), 16, nearby_tile_terrain_type(0, 0) != TILETYPE_SNOW)
+	CONDITIONAL_BUILDING_SPRITE(THIS_ID(spriteset_building_snow), 16, nearby_tile_terrain_type(0, 0) == TILETYPE_SNOW)
+SPRITELAYOUT_END
+
+
 
 /* *************************************************
  * Definition of the industry tile and its callbacks
