@@ -7,32 +7,21 @@ Makefile.local
 # And the description file and the grs which are generated automatically
 firs*.grf
 firs
+firs-*
 firs.md5
-*.cnfo
 *.nml
 *.md5
-
-# Ignore intermediate files created by the Makefile:
-*.nfo
-docs/license.txt
-docs/changelog.txt
 docs/readme.txt
+custom_tags.txt
+
 # Dependency files:
 sprites/nfo/cargo_schemes.pnfo
 sprites/nfo/cargos.pnfo
 sprites/nfo/lang/remove_defines.pnfo
 Makefile.dep
+.version
 *.dep
-REV
-custom_tags.txt
 parsetab.py
-
-
-# Ignore directories from bundle creation / install:
-firs-*
-
-#The .renum dir
-.renum
 
 # Ignore frequent development left-overs like
 # editor backups, patches, rejects etc. pp
