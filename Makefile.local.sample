@@ -11,10 +11,6 @@
 # Programme definitions / search paths
 ################################################################
 # Build parameters and programmes
-# NFORENUM_FLAGS = $(shell [ `$(NFORENUM) -s -v 2>/dev/null | wc -l ` -eq 1 ] && echo "-s" || echo "")
-# NFO_WARN_LEVEL = 4 
-# GRFCODEC_FLAGS = $(shell $(GRFCODEC) -s -v >/dev/null 2>/dev/null && echo "-s" || echo "") -e -p 2 -c
-# CATCODEC_FLAGS = -e
 # TAR_FLAGS      = -cf 
 # ZIP_FLAGS      = -r
 # SRCZIP_FLAGS   =
@@ -24,9 +20,6 @@
 # UNIX2DOS_FLAGS = -q
 # NML_FLAGS      =
 
-# NFORENUM       = nforenum
-# GRFCODEC       = grfcodec
-# CATCODEC       = catcodec
 # TAR            = tar
 # ZIP            = zip
 # SRCZIP         = gzip
@@ -44,8 +37,6 @@
 # "mdep":   A faster script which requires python
 # "none":   Skip the dependency generation (mostly)
 # DEP_CHECK_TYPE := mdep
-
-
 
 # Remove the @ when you want a more verbose output.
 # _V = @
