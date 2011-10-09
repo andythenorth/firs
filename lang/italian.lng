@@ -1,112 +1,135 @@
 
 ##grflangid 0x27
+
 STR_CARGO_NAME_ALCOHOL                                                          :Alcoolici
 STR_CARGO_NAME_BAUXITE                                                          :Bauxite
 STR_CARGO_NAME_BUILDING_MATERIALS                                               :Materiali per edilizia
 STR_CARGO_NAME_CHEMICALS                                                        :Prodotti chimici
 STR_CARGO_NAME_CLAY                                                             :Argilla
 STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :Forniture meccaniche
+STR_CARGO_NAME_FARM_SUPPLIES                                                    :Forniture agricole
 STR_CARGO_NAME_FIBRES                                                           :Fibre tessili
 STR_CARGO_NAME_FISH                                                             :Pesce
-STR_CARGO_NAME_FARM_SUPPLIES                                                    :Forniture agricole
 STR_CARGO_NAME_FRUITS                                                           :Frutta e verdura
 STR_CARGO_NAME_LUMBER                                                           :Prodotti in legno
+STR_CARGO_NAME_MANUFACTURING_SUPPLIES                                           :Forniture industriali
 STR_CARGO_NAME_METAL                                                            :Metalli
 STR_CARGO_NAME_MILK                                                             :Latte
-STR_CARGO_NAME_MANUFACTURING_SUPPLIES                                           :Forniture industriali
 STR_CARGO_NAME_PETROL                                                           :Benzina
+STR_CARGO_NAME_RECYCLABLES                                                      :Prodotti riciclati
 STR_CARGO_NAME_SAND                                                             :Sabbia
 STR_CARGO_NAME_SCRAP_METAL                                                      :Metalli di scarto
 STR_CARGO_NAME_STONE                                                            :Pietre
-STR_CARGO_NAME_SUGARCANE                                                        :Barbabietole da zucchero
-STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} di prodotti in legno
+STR_CARGO_NAME_SUGAR_BEET                                                       :Barbabietole da zucchero
+STR_CARGO_NAME_SUGARCANE                                                        :Canne da zucchero
 STR_CARGO_NAME_WOOL                                                             :Lana
-STR_CARGO_UNIT_PETROL                                                           :{VOLUME} di benzina
-STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} di barbabietole da zucchero
+
 STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} di alcoolici
 STR_CARGO_UNIT_BAUXITE                                                          :{WEIGHT} di bauxite
 STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WEIGHT} di materiali per edilizia
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} di prodotti chimici
 STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} di argilla
+STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} casse di forniture meccaniche
 STR_CARGO_UNIT_FIBRES                                                           :{WEIGHT} di fibre tessili
 STR_CARGO_UNIT_FISH                                                             :{WEIGHT} di pesce
 STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} casse di forniture agricole
 STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} di frutta e verdura
+STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} di prodotti in legno
 STR_CARGO_UNIT_METAL                                                            :{WEIGHT} di metalli
 STR_CARGO_UNIT_MILK                                                             :{VOLUME} di latte
 STR_CARGO_UNIT_MNSP                                                             :{SIGNED_WORD} casse di forniture industriali
+STR_CARGO_UNIT_PETROL                                                           :{VOLUME} di benzina
+STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} di prodotti riciclati
 STR_CARGO_UNIT_SAND                                                             :{WEIGHT} di sabbia
 STR_CARGO_UNIT_SCRAP_METAL                                                      :{WEIGHT} di metalli di scarto
 STR_CARGO_UNIT_STONE                                                            :{WEIGHT} di pietre
+STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} di barbabietola da zucchero
+STR_CARGO_UNIT_SUGARCANE                                                      	:{WEIGHT} di canne da zucchero
 STR_CARGO_UNIT_WOOL                                                             :{WEIGHT} di lana
+
+STR_CID_ALCOHOL                                                                 :{TINYFONT}AL
 STR_CID_BAUXITE                                                                 :{TINYFONT}BX
-STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}BM
-STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}ES
-STR_CID_LUMBER                                                                  :{TINYFONT}LU
-STR_CID_METAL                                                                   :{TINYFONT}ML
-STR_CID_MILK                                                                    :{TINYFONT}MK
-STR_CID_SCRAP_METAL                                                             :{TINYFONT}SM
-STR_EXTRA_LIME_KILN                                                             :{BLACK}Produzione di merci:{}  4t ogni 8t di pietre consegnate{}  4t ogni 8t di carbone consegnate{}{}Aumenta fino a 8t ogni 8t se entrambe le merci sono consegnate entro un intervallo inferiore a un mese.
-STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Costruisce oggetti metallici come attrezzi edili e agricoli, e ferri di cavallo.{}{}5t di produzione ogni 8t consegnate.
-STR_EXTRA_STEELMILL                                                             :{BLACK}Produzione di merci:{}  2t ogni 8t di minerale di ferro consegnate{}  2t ogni 8t di carbone consegnate{}  4t ogni 8t di metalli di scarto consegnate{}{}La produzione aumenta se due o più tipi di merci sono consegnate entro un intervallo inferiore a un mese.
-STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}Produzione di merci:{}  2t ogni 8t di bauxite consegnate{}  2t ogni 8t di prodotti chimici consegnate{}  4t ogni 8t di metalli di scarto consegnate{}{}La produzione aumenta se due o più tipi di merci sono consegnate entro un intervallo inferiore a un mese.
-STR_EXTRA_METAL_FOUNDRY                                                         :{BLACK}Produce oggetti metallici, come utensili e parti meccaniche.{}{}8t di produzione ogni 8t consegnate.
-STR_EXTRA_SAWMILL                                                               :{BLACK}Taglia la legna.{}{}6t di produzione ogni 8t consegnate.
-STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Produzione di merci:{}  3t ogni 8t di forniture industriali consegnate{}  5t ogni 8t di prodotti in legno consegnate{}{}Aumenta fino a 8t ogni 8t se entrambe le merci sono consegnate entro un intervallo inferiore a un mese.
-STR_EXTRA_PAPER_MILL                                                            :{BLACK}Tritura la legna per produrre carta e imballaggi.{}{}{BLACK}Produzione di merci:{}  4t ogni 8t di legname consegnate{}  2t ogni 8t d'argilla consegnate{}  2t ogni 8t di prodotti chimici consegnate{}{}La produzione aumenta se due o più tipi di merci sono consegnate entro un intervallo inferiore a un mese.
-STR_EXTRA_OIL_REFINERY                                                          :{BLACK}Lavora il petrolio per produrre carburanti e prodotti chimici.{}{}6t di produzione ogni 8t consegnate.
-STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}Costruisce prodotti in plastica come imballaggi e prodotti di consumo.{}{}6t di produzione ogni 8t consegnate.
-STR_EXTRA_IRON_WORKS                                                            :{BLACK}Produzione di merci:{}  1t ogni 8t di legname consegnate{}  2t ogni 8t di minerale di ferro consegnate{}{}Aumenta fino a 3t ogni 8t se entrambe le merci sono consegnate entro un intervallo inferiore a un mese.
-STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Produce oggetti in vetro come bottiglie, vasi e finestre.{}{}{BLACK}Produzione di merci:{}  6t ogni 8t di sabbia consegnate{}  2t ogni 8t di prodotti chimici consegnate{}{}Aumenta fino a 8t ogni 8t se entrambe le merci sono consegnate entro un intervallo inferiore a un mese.
-STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Produzione di merci:{}  3t ogni 8t di forniture industriali consegnate{}  5t ogni 8t di pesce consegnate{}{}Aumenta fino a 8t ogni 8t se entrambe le merci sono consegnate entro un intervallo inferiore a un mese.
-STR_EXTRA_GRAIN_MILL                                                            :{BLACK}Produzione di merci:{}  3t ogni 8t di forniture industriali consegnate{}  5t ogni 8t di grano consegnate{}{}Aumenta fino a 8t ogni 8t se entrambe le merci sono consegnate entro un intervallo inferiore a un mese.
-STR_EXTRA_BREWERY                                                               :{BLACK}Produzione di merci:{}  3t ogni 8t di forniture industriali consegnate{}  5t ogni 8t di grano consegnate{}  5t ogni 8t di frutta e verdura consegnate{}{}La produzione aumenta se riceve forniture industriali entro un mese dalla consegna di altre merci.
-STR_EXTRA_DAIRY                                                                 :{BLACK}Produzione di merci:{}  3t ogni 8t di forniture industriali consegnate{}  5t ogni 8t di latte consegnate{}{}Aumenta fino a 8t ogni 8t se entrambe le merci sono consegnate entro un intervallo inferiore a un mese.
-STR_EXTRA_FERTILIZER_PLANT                                                      :{BLACK}Produce fertilizzanti dai prodotti chimici.{}{}8t di produzione ogni 8t consegnate.
-STR_EXTRA_LUMBER_YARD                                                           :{BLACK}Costruisce oggetti come palizzate, steccati o pali.{}{}{BLACK}Produzione di merci:{}  2t ogni 8t di prodotti chimici consegnate{}  6t ogni 8t di prodotti in legno consegnate{}{}Aumenta fino a 8t ogni 8t se entrambe le merci sono consegnate entro un intervallo inferiore a un mese.
-STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Produzione di merci:{}  3t ogni 8t di forniture industriali consegnate{}  5t ogni 8t di lana consegnate{}  5t ogni 8t di fibre tessili consegnate{}{}La produzione aumenta se riceve forniture industriali entro un mese dalla consegna di altre merci.
-STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Produzione di merci:{}  2t ogni 8t di carbone consegnate{}  2t ogni 8t d'argilla consegnate{}  4t ogni 8t di pietre consegnate{}{}La produzione aumenta se due o più tipi di merci sono consegnate entro un intervallo inferiore a un mese.
-STR_EXTRA_BRICKWORKS                                                            :{BLACK}Produzione di merci:{}  2t ogni 8t di carbone consegnate{}  2t ogni 8t di sabbia consegnate{}  4t ogni 8t d'argilla consegnate{}{}La produzione aumenta se due o più tipi di merci sono consegnate entro un intervallo inferiore a un mese.
+STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}ME
+STR_CID_CHEMICALS                                                               :{TINYFONT}PC
+STR_CID_CLAY                                                                    :{TINYFONT}AR
+STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}FM
+STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}FA
+STR_CID_FIBRES                                                                  :{TINYFONT}FT
+STR_CID_FISH                                                                    :{TINYFONT}PE
+STR_CID_LUMBER                                                                  :{TINYFONT}PL
+STR_CID_MANUFACTURING_SUPPLIES                                                  :{TINYFONT}FI
+STR_CID_METAL                                                                   :{TINYFONT}MT
+STR_CID_MILK                                                                    :{TINYFONT}LA
+STR_CID_PETROL                                                                  :{TINYFONT}BE
+STR_CID_RECYCLABLES                                                             :{TINYFONT}PR
+STR_CID_SAND                                                                    :{TINYFONT}SA
+STR_CID_SCRAP_METAL                                                             :{TINYFONT}MS
+STR_CID_STONE                                                                   :{TINYFONT}PI
+STR_CID_SUGAR_BEET                                                              :{TINYFONT}BS
+STR_CID_SUGARCANE                                                               :{TINYFONT}CS
+STR_CID_WOOL                                                                    :{TINYFONT}LN
+
+STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}Produzione:{}  2t ogni 8t di bauxite consegnate{}  2t ogni 8t di prodotti chimici consegnate{}  4t ogni 8t di metalli di scarto consegnate{}{}La produzione aumenta se due o più tipi di merci sono consegnati entro un intervallo inferiore a un mese.
 STR_EXTRA_BIOREFINERY                                                           :{BLACK}Lavora il grano e lo zucchero per produrre carburanti e prodotti chimici.{}{}6t di produzione ogni 8t consegnate.
+STR_EXTRA_BREWERY                                                               :{BLACK}Produzione:{}  3t ogni 8t di forniture industriali consegnate{}  5t ogni 8t di grano consegnate{}  5t ogni 8t di frutta e verdura consegnate{}{}La produzione aumenta se riceve forniture industriali entro un mese dalla consegna di altre merci.
+STR_EXTRA_BRICKWORKS                                                            :{BLACK}Produzione:{}  2t ogni 8t di carbone consegnate{}  2t ogni 8t di sabbia consegnate{}  4t ogni 8t d'argilla consegnate{}{}La produzione aumenta se due o più tipi di merci sono consegnate entro un intervallo inferiore a un mese.
+STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Produzione:{}  2t ogni 8t di carbone consegnate{}  2t ogni 8t d'argilla consegnate{}  4t ogni 8t di pietre consegnate{}{}La produzione aumenta se due o più tipi di merci sono consegnate entro un intervallo inferiore a un mese.
+STR_EXTRA_DAIRY                                                                 :{BLACK}Produzione:{}  3t ogni 8t di forniture industriali consegnate{}  5t ogni 8t di latte consegnate{}{}Aumenta fino a 8t ogni 8t se entrambe le merci sono consegnate entro un intervallo inferiore a un mese.
 STR_EXTRA_ENGINEERING_SUPPLIES                                                  :{BLACK}Le forniture meccaniche aumentano la produzione.{}{YELLOW}  {COMMA} casse consegnate questo mese
 STR_EXTRA_FARM_SUPPLIES                                                         :{BLACK}Le forniture agricole aumentano la produzione.{}{YELLOW}  {COMMA} casse consegnate questo mese
+STR_EXTRA_FERTILIZER_PLANT                                                      :{BLACK}Produce fertilizzanti dai prodotti chimici.{}{}8t di produzione ogni 8t consegnate.
+STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Produzione:{}  3t ogni 8t di forniture industriali consegnate{}  5t ogni 8t di pesce consegnate{}{}Aumenta fino a 8t ogni 8t se entrambe le merci sono consegnate entro un intervallo inferiore a un mese.
+STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Produzione:{}  3t ogni 8t di forniture industriali consegnate{}  5t ogni 8t di prodotti in legno consegnate{}{}Aumenta fino a 8t ogni 8t se entrambe le merci sono consegnate entro un intervallo inferiore a un mese.
+STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Produce oggetti in vetro come bottiglie, vasi e finestre.{}{}{BLACK}Produzione:{}  6t ogni 8t di sabbia consegnate{}  2t ogni 8t di prodotti chimici consegnate{}{}Aumenta fino a 8t ogni 8t se entrambe le merci sono consegnate entro un intervallo inferiore a un mese.
+STR_EXTRA_GRAIN_MILL                                                            :{BLACK}Produzione:{}  3t ogni 8t di forniture industriali consegnate{}  5t ogni 8t di grano consegnate{}{}Aumenta fino a 8t ogni 8t se entrambe le merci sono consegnate entro un intervallo inferiore a un mese.
+STR_EXTRA_IRON_WORKS                                                            :{BLACK}Produzione:{}  1t ogni 8t di legname consegnate{}  2t ogni 8t di minerale di ferro consegnate{}{}Aumenta fino a 3t ogni 8t se entrambe le merci sono consegnate entro un intervallo inferiore a un mese.
+STR_EXTRA_LIME_KILN                                                             :{BLACK}Produzione:{}  4t ogni 8t di pietre consegnate{}  4t ogni 8t di carbone consegnate{}{}Aumenta fino a 8t ogni 8t se entrambe le merci sono consegnate entro un intervallo inferiore a un mese.
+STR_EXTRA_LUMBER_YARD                                                           :{BLACK}Costruisce oggetti come palizzate, steccati o pali.{}{}{BLACK}Produzione:{}  2t ogni 8t di prodotti chimici consegnate{}  6t ogni 8t di prodotti in legno consegnate{}{}Aumenta fino a 8t ogni 8t se entrambe le merci sono consegnate entro un intervallo inferiore a un mese.
+STR_EXTRA_MACHINE_SHOP                                                			:{BLACK}Costruisce e ripara macchinari.{}{}8t di produzione ogni 8t consegnate.
+STR_EXTRA_METAL_FOUNDRY                                                         :{BLACK}Produce oggetti metallici, come utensili e parti meccaniche.{}{}8t di produzione ogni 8t consegnate.
+STR_EXTRA_OIL_REFINERY                                                          :{BLACK}Lavora il petrolio per produrre carburanti e prodotti chimici.{}{}6t di produzione ogni 8t consegnate.
+STR_EXTRA_PAPER_MILL                                                            :{BLACK}Tritura la legna per produrre carta e imballaggi.{}{}{BLACK}Produzione:{}  4t ogni 8t di legname consegnate{}  2t ogni 8t d'argilla consegnate{}  2t ogni 8t di prodotti chimici consegnate{}{}La produzione aumenta se due o più tipi di merci sono consegnate entro un intervallo inferiore a un mese.
+STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}Costruisce prodotti in plastica come imballaggi e prodotti di consumo.{}{}6t di produzione ogni 8t consegnate.
+STR_EXTRA_RECYCLING_PLANT                                                       :{BLACK}Lavora i prodotti da riciclare garantendo un loro riutilizzo industriale.{}{}6t di produzione ogni 8t consegnate.
+STR_EXTRA_SAWMILL                                                               :{BLACK}Taglia la legna.{}{}6t di produzione ogni 8t consegnate.
+STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Costruisce oggetti metallici come attrezzi edili e agricoli, e ferri di cavallo.{}{}5t di produzione ogni 8t consegnate.
+STR_EXTRA_STEELMILL                                                             :{BLACK}Produzione:{}  2t ogni 8t di minerale di ferro consegnate{}  2t ogni 8t di carbone consegnate{}  4t ogni 8t di metalli di scarto consegnate{}{}La produzione aumenta se due o più tipi di merci sono consegnate entro un intervallo inferiore a un mese.
+STR_EXTRA_SUGAR_REFINERY                                                       	:{BLACK}Produzione:{}  3t ogni 8t di forniture industriali consegnate{}  5t ogni 8t di canna da zucchero consegnate{}{}Aumenta fino a 8t ogni 8t se entrambe le merci sono consegnate entro un intervallo inferiore a un mese.
+STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Produzione:{}  3t ogni 8t di forniture industriali consegnate{}  5t ogni 8t di lana consegnate{}  5t ogni 8t di fibre tessili consegnate{}{}La produzione aumenta se riceve forniture industriali entro un mese dalla consegna di altre merci.
+
 STR_GENERIC_D0B2                                                                :{BLACK}Le forniture industriali raddoppiano la produzione di altre merci.{}{}{STRING}
-STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Massimo livello di produzione raggiunto
+STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Livello massimo di produzione raggiunto
+STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ DEBUG ------------{}Produzione questo mese:{}Prodotto 1: {WHITE}{COMMA}{BLACK}{}Prodotto 2: {WHITE}{COMMA}{BLACK}{}Giorni trascorsi dall'ultima consegna: {WHITE}{COMMA}{BLACK}
+STR_FUND_MIXED_FARM                                                             :{}{BLACK}Luogo: {YELLOW}Non si può fondare sulla neve, o nel deserto, e neanche su terreno in pendenza.
+STR_FUND_SHEEP_FARM                                                             :{}{BLACK}Luogo: {YELLOW}Non si può fondare nel deserto o su terreno in pendenza.	
+STR_FUND_ARABLE_FARM                                                            :{}{BLACK}Luogo: {YELLOW}Non si può fondare sulla neve, o nel deserto, e neanche su terreno in pendenza.
+STR_FUND_DAIRY_FARM                                                             :{}{BLACK}Luogo: {YELLOW}Non si può fondare su terreno in pendenza.
+STR_FUND_FOREST                                                                 :{}{BLACK}Luogo: {YELLOW}Non si può fondare nel deserto.
+STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}Luogo: {YELLOW}Non si può fondare sulla neve.
 
-
-STR_CID_SUGARCANE                                                               :{TINYFONT}SB
-STR_CID_FISH                                                                    :{TINYFONT}FI
-STR_CID_WOOL                                                                    :{TINYFONT}WL
-STR_CID_FIBRES                                                                  :{TINYFONT}PF
-STR_CID_SAND                                                                    :{TINYFONT}SA
-STR_CID_STONE                                                                   :{TINYFONT}ST
-STR_CID_MANUFACTURING_SUPPLIES                                                  :{TINYFONT}MS
-STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}FS
-STR_CID_CHEMICALS                                                               :{TINYFONT}CH
-STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                                                :{SIGNED_WORD} casse di forniture meccaniche
-STR_CID_PETROL                                                                  :{TINYFONT}PT
-STR_CID_CLAY                                                                    :{TINYFONT}CL
-STR_CID_ALCOHOL                                                                 :{TINYFONT}AL
-STR_STATIONNAME_FARMS                                                           :Fattorie di {STRING}
-STR_STATIONNAME_MILLS                                                           :Mulini di {STRING}
-STR_STATIONNAME_WELLS                                                                :Pozzi di {STRING}
 STR_STATIONNAME_CHEMICALS                                                       :Raffinerie di {STRING}
-STR_STATIONNAME_FACTORIES                                                       :Fabbriche di {STRING}
-STR_STATIONNAME_PLANTS                                                          :Zona industriale di {STRING}
-STR_STATIONNAME_PITS                                                            :Cava di {STRING}
-STR_STATIONNAME_DEPOT                                                                :Depositi di {STRING}
+STR_STATIONNAME_DEPOT                                                           :Depositi di {STRING}
 STR_STATIONNAME_DREDGING_SITE                                                   :Siti di dragaggio di {STRING}
+STR_STATIONNAME_FACTORIES                                                       :Fabbriche di {STRING}
+STR_STATIONNAME_FARMS                                                           :Fattorie di {STRING}
 STR_STATIONNAME_FISHING_GROUNDS                                                 :Zone di pesca di {STRING}
+STR_STATIONNAME_MARKET                                                          :Mercato di {STRING}
+STR_STATIONNAME_MILLS                                                           :Mulini di {STRING}
+STR_STATIONNAME_PITS                                                            :Cava di {STRING}
+STR_STATIONNAME_PLANTS                                                          :Zona industriale di {STRING}
 STR_STATIONNAME_SMITHY_FORGE                                                    :Fonderie di {STRING}
-STR_STATIONNAME_MARKET                                                                :Mercato di {STRING}
+STR_STATIONNAME_WELLS                                                           :Pozzi di {STRING}
+
 STR_GENERIC_NEWLINE                                                             :{}
+STR_GRF_NAME                                                                    :{TITLE}
 STR_GRF_DESC                                                                    :{ORANGE}FIRS Industry Replacement Set{}{BLACK}Di {SILVER}andythenorth{BLACK} e {SILVER}FooBar{BLACK}.{}{BLACK}'Più di 1,000 realizzazioni...'{BLACK}{}{}Website: {SILVER}www.tt-foundry.com/sets/FIRS{BLACK}.Licenza: {SILVER}GPL v2{BLACK}.Un ringraziamento particolare a {SILVER}Ammler{BLACK}, {SILVER}Core Xii{BLACK}, {SILVER}Irwe{BLACK}, {SILVER}planetmaker{BLACK} and {SILVER}Zephyris{BLACK}.Usa parti dei set {SILVER}eGRVTS{BLACK}, {SILVER}ISR{BLACK} e {SILVER}OpenGFX{BLACK}.
 STR_IND_ALUMINIUM_PLANT                                                         :Fabbrica di alluminio
 STR_IND_ARABLE_FARM                                                             :Podere agricolo
 STR_IND_BAUXITE_MINE                                                            :Miniera di bauxite
 STR_IND_BIOREFINERY                                                             :Raffineria di biocombustibili
 STR_IND_BREWERY                                                                 :Distilleria
-STR_EXTRA_MEAT_PACKER                                                           :{BLACK}Produzione di merci:{}  3t ogni 8t di forniture industriali consegnate{}  5t ogni 8t di bestiame consegnate{}{}Aumenta fino a 8t ogni 8t se entrambe le merci sono consegnate entro un intervallo inferiore a un mese.
+STR_EXTRA_MEAT_PACKER                                                           :{BLACK}Produzione:{}  3t ogni 8t di forniture industriali consegnate{}  5t ogni 8t di bestiame consegnate{}{}Aumenta fino a 8t ogni 8t se entrambe le merci sono consegnate entro un intervallo inferiore a un mese.
+
 STR_IND_BRICK_WORKS                                                             :Fabbrica di mattoni
 STR_IND_BUILDERS_YARD                                                           :Cantiere edile
 STR_IND_CEMENT_PLANT                                                            :Fabbrica di cemento
@@ -121,16 +144,20 @@ STR_IND_FOOD_MARKET                                                             
 STR_IND_FURNITURE_FACTORY                                                       :Mobilifico
 STR_IND_GLASS_WORKS                                                             :Fabbrica di vetro
 STR_IND_GRAIN_MILL                                                              :Forno comunale
+STR_IND_HARDWARE_STORE                                                          :Negozio di ferramenta
+STR_IND_HOTEL                                                                   :Hotel
 STR_IND_IRON_WORKS                                                              :Fucina per ferro
 STR_IND_JUNKYARD                                                                :Deposito di rottami
 STR_IND_LIME_KILN                                                               :Forno per ceramiche
-STR_IND_LUMBER_YARD                                                             :Segheria
+STR_IND_LUMBER_YARD                                                             :Falegnameria
 STR_IND_MACHINE_SHOP                                                            :Fabbrica di macchinari
 STR_IND_METAL_FOUNDRY                                                           :Fonderia
 STR_IND_MIXEDFARM                                                               :Azienda agricola
 STR_IND_PETROLPUMP                                                              :Pompa di benzina
 STR_IND_PLASTICS_PLANT                                                          :Fabbrica di prodotti in plastica
 STR_IND_QUARRY                                                                  :Cava di pietre
+STR_IND_RECYCLING_DEPOT                                                         :Deposito di prodotti da riciclare
+STR_IND_RECYCLING_PLANT                                                         :Centrale di riciclaggio
 STR_IND_RETAILMARKET                                                            :Negozio al dettaglio
 STR_IND_SHEEPFARM                                                               :Allevamento di ovini
 STR_IND_SMITHY_FORGE                                                            :Piccola fucina
@@ -142,21 +169,34 @@ STR_IND_TEXTILE_MILL                                                            
 
 
 
-STR_EXTRA_SUGAR_REFINERY                                                       :{BLACK}Produzione di merci:{}  3t ogni 8t di forniture industriali consegnate{}  5t ogni 8t di canna da zucchero consegnate{}{}Aumenta fino a 8t ogni 8t se entrambe le merci sono consegnate entro un intervallo inferiore a un mese.
-STR_EXTRA_MACHINE_SHOP                                                :{BLACK}Costruisce e ripara macchinari.{}{}8t di produzione ogni 8t consegnate.
-STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :{SILVER}Distanza massima, in caselle, delle zone di pesca e dei siti di dragaggio dalla costa.
+STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :{SILVER}Distanza massima, in caselle, di zone di pesca, piattaforme petrolifere e siti di dragaggio dalla costa.
 STR_PARAM_DESC_DEBUG                                                            :Solo per programmatori!
 STR_PARAM_DESC_ECONOMIES                                                        :Quando finito, FIRS permetter la scelta fra diversi tipi di economie. Le merci e le industrie cambieranno a seconda del tipo scelto. Anche i pagamenti per ciascuna merce cambieranno. {}{}{SILVER}Per ora, è disponibile solo un tipo di economia :)
 STR_PARAM_DESC_NEVER_CLOSE                                                      :Di default, le industrie primarie in FIRS non chiudono mai.{}{}Se permetti la loro chiusura, chiuderanno quando il loro livello di produzione sarà sceso a un livello basso (il livello esatto cambia col tipo di industria). {SILVER}Per farlo funzionare, devi anche permettere la diminuzione di produzione delle aziende primarie.
-STR_PARAM_DESC_NO_OPENINGS                                                      :{SILVER}Questo non fa ancora niente. {BLACK}Quando funzionerà, sar‡ utile per creare scenari.
-STR_PARAM_DESC_PRIMARY_PRODUCTION_DECREASE                                      :Di default, il livello di produzione delle industrie primarie in FIRS non scende mai.{}{}Se vuoi permettere al livello di cambiare, ci sarà la possibilità che il livello diminuisca se nessun tipo di forniture (industriali, meccaniche o agricole) non viene consegnato entro un mese. Più alto è il livello di produzione, maggiore è la possibilità di una sua diminuzione.
-STR_PARAM_DESC_SECONDARY_NEVER_CLOSE                                            :Di default, le industrie secondarie in FIRS non chiudono mai.{}{}Se permetti la loro chiusura, potrebbero chiudere se non trasporti le loro merci per un lungo periodo di tempo.
-STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY                                   :Distanza massima dalla costa delle aziende costruite sul mare (in caselle)
+STR_PARAM_DESC_NO_OPENINGS                                                      :Nessuna nuova industria sarà costruita durante il gioco. {}I giocatore non potranno fondare industrie. {}Le industrie saranno costruite all'inizio del gioco dal generatore della mappa (e dipenderanno dalle opzioni scelte).
+STR_PARAM_DESC_PRIMARY_PRODUCTION_DECREASE                                      :Di default, il livello di produzione delle industrie primarie non scende mai.{}{}Se permetti al livello di cambiare, ci sarà la possibilità che il livello diminuisca se nessun tipo di forniture (industriali, meccaniche o agricole) non viene consegnato in un mese. Più alto è il livello di produzione, maggiore è la possibilità di una sua diminuzione.
+STR_PARAM_DESC_SECONDARY_NEVER_CLOSE                                            :Di default, le industrie secondarie non chiudono mai.{}{}Se permetti la loro chiusura, potrebbero chiudere se non ci trasporti merci per un lungo periodo di tempo.
+STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY                                   :Distanza massima dalla costa, in caselle, delle industrie marine
 STR_PARAM_NAME_DEBUG                                                            :Mostra i testi di debug
 STR_PARAM_NAME_ECONOMIES                                                        :Economia
 STR_PARAM_NAME_NEVER_CLOSE                                                      :Permetti la chiusura delle industrie primarie
-STR_PARAM_NAME_NO_OPENINGS                                                      :Impedisci la costruzione di industrie (non ancora finito)
+STR_PARAM_NAME_NO_OPENINGS                                                      :Impedisci la costruzione di industrie durante il gioco
 STR_PARAM_NAME_PRIMARY_PRODUCTION_DECREASE                                      :Permetti la diminuzione della produzione delle industrie primarie
 STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            :Permetti la chiusura delle industrie secondarie
 STR_PARAM_VALUE_ECONOMIES_TEST_ECONOMY                                          :Economia di prova
 STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0                                         :Illimitata
+STR_PARAM_NAME_STAT_RATING                                                      :Algoritmo del "rating" delle stazioni
+STR_PARAM_VALUE_STAT_RATING_DEFAULT                                             :Default
+STR_PARAM_VALUE_STAT_RATING_REDUCED_TIME                                        :Riduce l'effetto del "tempo trascorso dall'ultimo carico"
+STR_PARAM_VALUE_STAT_RATING_100                                                 :Sempre 100%
+
+STR_ERR_CLIMATE_TOYLAND                                                         :{ORANGE}FIRS non funziona con Toyland
+STR_ERR_INCOMPATIBLE_SET                                                        :{ORANGE}E01: {YELLOW}Set incompatibile: {ORANGE}{STRING} {YELLOW}Consulta il Leggimi di FIRS: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_PARAM_CANSET                                               :{ORANGE}E02: {YELLOW}Parametro incompatibile: {ORANGE}Il parametro n. 2 del CanSet dev'essere impostato a 0 per funzionare con FIRS. {YELLOW}Consulta il Leggimi di FIRS: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_PARAM_CITYSET                                              :{ORANGE}E02: {YELLOW}Parametro incompatibile: {ORANGE}Il parametro n. 2 del NA City Set dev'essere impostato a 0 per funzionare con FIRS. {YELLOW}Consulta il Leggimi di FIRS: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_SET_TTRS_VERSION                                           :{ORANGE}E04: {YELLOW}Versione incompatibile: {ORANGE}Ci vuole la versione 3.11 o più recente del Total Town Replacement Set. {YELLOW}Consulta il Leggimi di FIRS: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_OPENTTD_VERSION                                                         :{ORANGE}E00: FIRS ha bisogno almeno di OpenTTD 1.2.0 / trunk r22780 (o più recente). {YELLOW}Consulta il Leggimi di FIRS: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE                                             :dev'essere messo più in basso delle nevi perenni.
+STR_ERR_LOCATION_NOT_ON_WATER                                                   :dev'essere piazzato sulla terra, non sull'acqua.
+STR_ERR_LOCATION_NOT_IN_DESERT                                                  :non può essere messo nel deserto.
+STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE                                             :non può essere messo su terreno in pendenza.
