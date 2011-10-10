@@ -1,0 +1,204 @@
+##grflangid 0x0F
+##plural 0
+
+STR_GRF_DESC                                                                    :{ORANGE}Set Amnewid Diwidiannau FIRS {}{BLACK}Gan {SILVER}andythenorth{BLACK} a {SILVER}FooBar{BLACK}.{}{BLACK}'1,000 o ddiweddariadau a mwy...'{BLACK}{}{}Gwefan: {SILVER}www.tt-foundry.com/sets/FIRS{BLACK}.Trwydded: {SILVER}GPL v2{BLACK}.Diolch arbennig i {SILVER}Ammler{BLACK}, {SILVER}Core Xii{BLACK}, {SILVER}Irwe{BLACK}, {SILVER}planetmaker{BLACK} a {SILVER}Zephyris{BLACK}.Defnyddir elfennau o {SILVER}eGRVTS{BLACK}, {SILVER}ISR{BLACK} a {SILVER}OpenGFX{BLACK}.
+STR_GRF_NAME                                                                    :{TITLE}
+
+STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :{SILVER}Pellter uchafsymol o'r arfordir ar gyfer meusydd pysgota, rigiau olew a mannau carthu fishing grounds, oil rigs and dredging sites, mewn teiliau.
+STR_PARAM_DESC_DEBUG                                                            :Ar gyfer datblygwyr yn unig
+STR_PARAM_DESC_ECONOMIES                                                        :Pan fydd wedi ei orffen, bydd FIRS yn cynnwys dewis o economíau. Mae'r cargo a diwydiannau'n amrywio o economi i economi, ynghyd â'r cyfraddau tâl llwythi. {}{}{SILVER}Dim on un economi sydd ar gael ar hyn o bryd :)
+STR_PARAM_DESC_NEVER_CLOSE                                                      :Fel rhagosodiad, ni fydd diwydiannau cynradd FIRS byth yn cau.{}{}Os caniateir eu cau, bydd diwydiannau cynradd yn cau pan fo'u cynhyrch yn syrthio i lefelau isel (mae'r lefel yn amrywio yn ôl y diwydiant). {SILVER}Rhaid i 'ostwng cynhyrchiant cynradd' gael ei droi ymlaen.
+STR_PARAM_DESC_NO_OPENINGS                                                      :Ni agorir diwydiannau newydd yn ystod y gêm. {}Ni chaiff chwareuwyr mwynchwilio na ariannu diwydiannau newydd.  {}Adeiladir diwydiannau ar ddechrau'r gêm gan y cynhyrchydd map (yn ôl y gosodiadau map a ddefnyddir).
+STR_PARAM_DESC_PRIMARY_PRODUCTION_DECREASE                                      :Fel rhagosodiad, ni fydd cynhyrch diwydiannau cynradd FIRS byth yn gostwng.{}{}Os y caniateir iddynt ostwng, mae siawns y bydd cynnyrch yn gostwng os na dderbynnir mewnbynnau am gyfnod o fis. Os yw'r lefel cynhyrchu'n uchel, mae'r siawns o ostyngiad yn uwch.
+STR_PARAM_DESC_SECONDARY_NEVER_CLOSE                                            :Fel rhagosodiad, ni fydd diwydiannau eilradd FIRS byth yn cau.{}{}Os caniateir eu cau, bydd diwydiannau eilradd yn cau os da gludir llwythi am amser hir.
+STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY                                   :Pellter o'r arfordir ar gyfer diwydiannau morol (mewn teiliau)
+STR_PARAM_NAME_DEBUG                                                            :Dangos testun dadnamu
+STR_PARAM_NAME_ECONOMIES                                                        :Economi
+STR_PARAM_NAME_NEVER_CLOSE                                                      :Caniatáu i ddiwydiannau cynradd gau
+STR_PARAM_NAME_NO_OPENINGS                                                      :Nadu diwydiannau rhag agor yn ystod y gêm
+STR_PARAM_NAME_PRIMARY_PRODUCTION_DECREASE                                      :Caniatáu i gynnyrch ddiwydiannau cynradd ostwng
+STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            :Caniatáu i ddiwydiannau eilradd gau
+STR_PARAM_VALUE_ECONOMIES_TEST_ECONOMY                                          :Economi Prawf
+STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0                                         :Dim terfyn
+STR_PARAM_NAME_STAT_RATING                                                      :Algorithm graddio gorsafoedd
+STR_PARAM_VALUE_STAT_RATING_DEFAULT                                             :Rhagosodedig
+STR_PARAM_VALUE_STAT_RATING_REDUCED_TIME                                        :Lleihau dylanwad "amser ers casgliad llwyth diwethaf"
+STR_PARAM_VALUE_STAT_RATING_100                                                 :Wastad 100%
+
+
+STR_CARGO_NAME_ALCOHOL                                                          :Alcohol
+STR_CARGO_NAME_BAUXITE                                                          :Bawcsit
+STR_CARGO_NAME_BUILDING_MATERIALS                                               :Deunyddiau Adeiladu
+STR_CARGO_NAME_CHEMICALS                                                        :Cemegion
+STR_CARGO_NAME_CLAY                                                             :Clai
+STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :Deunyddiau Peirianneg
+STR_CARGO_NAME_FIBRES                                                           :Ffibrau Planhigion
+STR_CARGO_NAME_FISH                                                             :Pysgod
+STR_CARGO_NAME_FARM_SUPPLIES                                                    :Deunyddiau Fferm
+STR_CARGO_NAME_FRUITS                                                           :Frwythau
+STR_CARGO_NAME_LUMBER                                                           :Pren
+STR_CARGO_NAME_METAL                                                            :Metel
+STR_CARGO_NAME_MILK                                                             :Llefrith
+STR_CARGO_NAME_MANUFACTURING_SUPPLIES                                           :Deunyddiau Gweithgynhyrchu
+STR_CARGO_NAME_PETROL                                                           :Petrol
+STR_CARGO_NAME_RECYCLABLES                                                      :Deunyddiau Ailgylchadwy
+STR_CARGO_NAME_SAND                                                             :Tywod
+STR_CARGO_NAME_SCRAP_METAL                                                      :Metel Sgrap
+STR_CARGO_NAME_STONE                                                            :Carreg
+STR_CARGO_NAME_SUGAR_BEET                                                       :Betys Melys
+STR_CARGO_NAME_SUGARCANE                                                        :Siwgwr Câns
+STR_CARGO_NAME_WOOL                                                             :Gwlân
+
+STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} o alcohol
+STR_CARGO_UNIT_BAUXITE                                                          :{WEIGHT} o fawcsit
+STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WEIGHT} o ddeunyddiau adeiladu
+STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} o gemegion
+STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} o glai
+STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} crât o ddeunyddiau peirianneg
+STR_CARGO_UNIT_FIBRES                                                           :{WEIGHT} o ffibrau planhigion
+STR_CARGO_UNIT_FISH                                                             :{WEIGHT} o bysgod
+STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} crât o ddeunyddiau fferm
+STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} o ffrwythau
+STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} o bren
+STR_CARGO_UNIT_METAL                                                            :{WEIGHT} o fetel
+STR_CARGO_UNIT_MILK                                                             :{VOLUME} o lefrith
+STR_CARGO_UNIT_MNSP                                                             :{SIGNED_WORD} crât o ddeunyddiau gweithgynhyrchu
+STR_CARGO_UNIT_PETROL                                                           :{VOLUME} o betrol
+STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} o ddeunyddiau ailgylchadwy
+STR_CARGO_UNIT_SAND                                                             :{WEIGHT} o dywod
+STR_CARGO_UNIT_SCRAP_METAL                                                      :{WEIGHT} o fetel sgrap
+STR_CARGO_UNIT_STONE                                                            :{WEIGHT} o garreg
+STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} o fetys melys
+STR_CARGO_UNIT_SUGARCANE                                                        :{WEIGHT} o siwgwr câns
+STR_CARGO_UNIT_WOOL                                                             :{WEIGHT} o wlân
+
+STR_CID_ALCOHOL                                                                 :{TINYFONT}ALC
+STR_CID_BAUXITE                                                                 :{TINYFONT}BCS
+STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}ADL
+STR_CID_CHEMICALS                                                               :{TINYFONT}CEM
+STR_CID_CLAY                                                                    :{TINYFONT}CLI
+STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}PEI
+STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}FRM
+STR_CID_FIBRES                                                                  :{TINYFONT}FBR
+STR_CID_FISH                                                                    :{TINYFONT}PSG
+STR_CID_LUMBER                                                                  :{TINYFONT}PRN
+STR_CID_MANUFACTURING_SUPPLIES                                                  :{TINYFONT}GWG
+STR_CID_METAL                                                                   :{TINYFONT}MTL
+STR_CID_MILK                                                                    :{TINYFONT}LLF
+STR_CID_PETROL                                                                  :{TINYFONT}PTL
+STR_CID_RECYCLABLES                                                             :{TINYFONT}AIL
+STR_CID_SAND                                                                    :{TINYFONT}TYW
+STR_CID_SCRAP_METAL                                                             :{TINYFONT}SGP
+STR_CID_STONE                                                                   :{TINYFONT}CRG
+STR_CID_SUGAR_BEET                                                              :{TINYFONT}BTM
+STR_CID_SUGARCANE                                                               :{TINYFONT}SGR
+STR_CID_WOOL                                                                    :{TINYFONT}GWL
+
+STR_ERR_CLIMATE_TOYLAND                                                         :{ORANGE}Ni ddyluniwyd FIRS i weithio gyda'r hinsawdd Toyland
+STR_ERR_INCOMPATIBLE_SET                                                        :{ORANGE}E01: {YELLOW}Set angydnaws: {ORANGE}{STRING} {YELLOW}Gweler ReadMe FIRS: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_PARAM_CANSET                                               :{ORANGE}E02: {YELLOW}Paramedr anghydnaws: {ORANGE}Rhaid i baramedr 2 CanSet fod yn 0 i weithio gyda FIRS. {YELLOW}Gweler ReadMe FIRS: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_PARAM_CITYSET                                              :{ORANGE}E02: {YELLOW}Paramedr anghydnaws: {ORANGE}Rhaid i baramedr 2 NA City Set fod yn 0 i weithio gyda FIRS. {YELLOW}Gweler ReadMe FIRS: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_SET_TTRS_VERSION                                           :{ORANGE}E04: {YELLOW}Fersiwn anghydnaws: {ORANGE}Rhaid i Total Town Replacement Set fod yn fersiwn 3.11 neu ddiweddarach. {YELLOW}Gweler ReadMe FIRS: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_OPENTTD_VERSION                                                         :{ORANGE}E00: Mae FIRS angen OpenTTD 1.2.0 / trunk r22780 neu uwch. {YELLOW}Gweler ReadMe FIRS: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+
+STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE                                             :rhaid fod islaw'r llinell eira.
+STR_ERR_LOCATION_NOT_ON_WATER                                                   :rhaid for ar dir sych.
+STR_ERR_LOCATION_NOT_IN_DESERT                                                  :ni gaiff fod mewn anialwch.
+STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE                                             :ni gaiff fod ar lethrau serth.
+
+STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}Cynnyrch llwythi:{}  2t am bob 8t o fawcsit a ddanfonir{}  2t am bob 8t o gemegion a ddanfonir{}  4t am bob 8t metel sgrap a ddanfonir{}{}Mae cynnyrch yn cynyddu os y danfonir mwy nag un math o lwyth o fewn mis.
+STR_EXTRA_BIOREFINERY                                                           :{BLACK}Yn prosesu grawn a siwgr i fewn i betrol a chemegion.{}{}6t o gynnyrch am bob 8t a ddanfonir.
+STR_EXTRA_BREWERY                                                               :{BLACK}Cynnyrch llwythi:{}  3t am bob 8t o ddeunyddiau gweithgynhyrchu a ddanfonir{}  5t am bob 8t o rawn a ddanfonir{}  5t am bob 8t o ffrwythau a ddanfonir{}{}Mae cynnyrch yn codi os y danfonir deunyddiau gweithgynhyrchu o fewn mis i nwyddau eraill.
+STR_EXTRA_BRICKWORKS                                                            :{BLACK}Cynnyrch llwythi:{}  2t am bob 8t o lo a ddanfonir{}  2t am bob 8t o dywod a ddanfonir{}  4t am bob 8t o glai a ddanfonir{}{}Mae cynnyrch yn cynyddu os y danfonir mwy nag un math o lwyth o fewn mis.
+STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Cynnyrch llwythi:{}  2t am bob 8t o lo a ddanfonir{}  2t am bob 8t o glai a ddanfonir{}  4t am bob 8t o garreg a ddanfonir{}{}Mae cynnyrch yn cynyddu os y danfonir mwy nag un math o lwyth o fewn mis.
+STR_EXTRA_DAIRY                                                                 :{BLACK}Cynnyrch llwythi:{}  3t am bob 8t o ddeunyddiau gweithgynhyrchu a ddanfonir{}  5t am bob 8t o lefrith a ddanfonir{}{}Cynyddai at 8t am bob 8t os y daw y ddau fath o lwyth o fewn mis.
+STR_EXTRA_ENGINEERING_SUPPLIES                                                  :{BLACK}Gall ddeunyddiau peirianneg gynyddu cynnyrch.{}{YELLOW}  Danfonwyd {COMMA} crât y mis yma
+STR_EXTRA_FARM_SUPPLIES                                                         :{BLACK}Gall ddeunyddiau fferm gynyddu cynnyrch.{}{YELLOW}  Danfonwyd {COMMA} crât y mis yma
+STR_EXTRA_FERTILIZER_PLANT                                                      :{BLACK}Yn prosesu cemegion i fewn i wrtaith ar gyfer ffermydd.{}{}8t o gynnyrch am bob 8t a ddanfonir.
+STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Cynnyrch llwythi:{}  3t am bob 8t o ddeunyddiau gweithgynhyrchu a ddanfonir{}  5t am bob 8t o bysgod a ddanfonir{}{}Cynyddai at 8t am bob 8t os y daw y ddau fath o lwyth o fewn mis.
+STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Cynnyrch llwythi:{}  3t am bob 8t o ddeunyddiau gweithgynhyrchu a ddanfonir{}  5t am bob 8t o bren a ddanfonir{}{}Cynyddai at 8t am bob 8t os y daw y ddau fath o lwyth o fewn mis.
+STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Yn cynhyrchu eitemau gwydr fel poteli, jariau a ffenestri.{}{}{BLACK}Cynnyrch llwythi:{}  6t am bob 8t o dywod a ddanfonir{}  2t am bob 8t o gemegion a ddanfonir{}{}Cynyddai at 8t am bob 8t os y daw y ddau fath o lwyth o fewn mis.
+STR_EXTRA_GRAIN_MILL                                                            :{BLACK}Cynnyrch llwythi:{}  3t am bob 8t o ddeunyddiau gweithgynhyrchu a ddanfonir{}  5t am bob 8t o rawn a ddanfonir{}{}Cynyddai at 8t am bob 8t os y daw y ddau fath o lwyth o fewn mis.
+STR_EXTRA_IRON_WORKS                                                            :{BLACK}Cynnyrch llwythi:{}  1t am bob 8t o bren a ddanfonir{}  2t am bob 8t o fwyn haearn a ddanfonir{}{}Cynyddai at 3t am bob 8t os y daw y ddau fath o lwyth o fewn mis.
+STR_EXTRA_LIME_KILN                                                             :{BLACK}Cynnyrch llwythi:{}  4t am bob 8t o garreg a ddanfonir{}  4t am bob 8t o lo a ddanfonir{}{}Cynyddai at 8t am bob 8t os y daw y ddau fath o lwyth o fewn mis.
+STR_EXTRA_LUMBER_YARD                                                           :{BLACK}Yn cynhyrchu eitemau fel polion a ffensys.{}{}{BLACK}Cynnyrch llwythi:{}  2t am bob 8t o gemegion a ddanfonir{}  6t am bob 8t o bren a ddanfonir{}{}Cynyddai at 8t am bob 8t os y daw y ddau fath o lwyth o fewn mis.
+STR_EXTRA_MACHINE_SHOP                                                          :{BLACK}Yn adeiladu a gwasanaethu peirianwaith.{}{}8t o gynnyrch am bob 8t a ddanfonir.
+STR_EXTRA_MEAT_PACKER                                                           :{BLACK}Cynnyrch llwythi:{}  3t am bob 8t o ddeunyddiau gweithgynhyrchu a ddanfonir{}  5t am bob 8t o dda byw a ddanfonir{}{}Cynyddai at 8t am bob 8t os y daw y ddau fath o lwyth o fewn mis.
+STR_EXTRA_METAL_FABRICATION_PLANT                                               :{BLACK}Yn cynhyrchu cydrannau metel paentiedig.{}{}{BLACK}Cynnyrch llwythi:{}2t am bob 8t o gemegion a ddanfonir{}6t am bob 8t o fetel a ddanfonir{}{}Cynyddai at 8t am bob 8t os y daw y ddau fath o lwyth o fewn mis.
+STR_EXTRA_METAL_FOUNDRY                                                         :{BLACK}Yn cynhyrchu eitemau metel plât fel tuniau, offer peirianyddol a nwyddau cartref.{}{}{BLACK}Cynnyrch llwythi:{}2t am bob 8t o gemegion a ddanfonir{}6t am bob 8t o fetel a ddanfonir{}{}Cynyddai at 8t am bob 8t os y daw y ddau fath o lwyth o fewn mis.
+STR_EXTRA_OIL_REFINERY                                                          :{BLACK}Yn prosesu olew crai i fewn i betrol a chemegion.{}{}6t o gynnyrch am bob 8t a ddanfonir.
+STR_EXTRA_PAPER_MILL                                                            :{BLACK}Yn mathru coed i creu papur a chardfwrdd.{}{}{BLACK}Cynnyrch llwythi:{}  4t am bob 8t o goed a ddanfonir{}  2t am bob 8t o glai a ddanfonir{}  2t am bob 8t o gemegion a ddanfonir{}{}Mae cynnyrch yn cynyddu os y danfonir mwy nag un math o lwyth o fewn mis.
+STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}Yn creu eitemau plastig fel pecynnau a nwyddau cartref.{}{}6t o gynnyrch am bob 8t a ddanfonir.
+STR_EXTRA_RECYCLING_PLANT                                                       :{BLACK}Yn prosesu deunyddiau ailgylchadwy ar gyfer aildefnydd mewn diwydiant.{}{}6t o gynnyrch am bob 8t a danfonir.
+STR_EXTRA_SAWMILL                                                               :{BLACK}Yn llifo coed.{}{}6t o gynnyrch am bob 8t a ddanfonir.
+STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Yn cynhyrchu eitemau metel fel arfau, paladuron, giatiau, rhawiau a phedolau.{}{}5t o gynnyrch am bob 8t a ddanfonir.
+STR_EXTRA_STEELMILL                                                             :{BLACK}Cynnyrch llwythi:{}  2t am bob 8t o fwyn haearn a ddanfonir{}  2t am bob 8t o lo a ddanfonir{}  4t am bob 8t o fetel sgrap a ddanfonir{}{}Mae cynnyrch yn cynyddu os y danfonir mwy nag un math o lwyth o fewn mis.
+STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Cynnyrch llwythi:{}  3t am bob 8t o ddeunyddiau gweithgynhyrchu a ddanfonir{}  5t am bob 8t o siwgr cân a ddanfonir{}{}Cynyddai at 8t am bob 8t os y daw y ddau fath o lwyth o fewn mis.
+STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Cynnyrch llwythi:{}  3t am bob 8t o ddeunyddiau gweithgynhyrchu a ddanfonir{}  5t am bob 8t o wlân a ddanfonir{}  5t am bob 8t o ffibrau planhigion a ddanfonir{}{}Mae cynnyrch yn cynyddu os y danfonir mwy nag un math o lwyth o fewn mis.
+
+STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ DADNAMU ------------{}Cynnyrch y mis yma:{}Cargo 1: {WHITE}{COMMA}{BLACK}{}Cargo 2: {WHITE}{COMMA}{BLACK}{}Diwrnodau ers y danfoniad diwethaf: {WHITE}{COMMA}{BLACK}
+STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Cyrhaeddwyd yr uchafswm cynhyrchu
+STR_GENERIC_D0B2                                                                :{BLACK}Mae deunyddiau gweithgynhyrchu yn dyblu cynnyrch o lwythi eraill.{}{}{STRING}
+STR_GENERIC_NEWLINE                                                             :{}
+
+STR_FUND_MIXED_FARM                                                             :{}{BLACK}Lleoliad: {YELLOW}Ni ellir ei ariannu ar eira, mewn anialwch nac ar lethrau serth.
+STR_FUND_SHEEP_FARM                                                             :{}{BLACK}Location: {YELLOW}Ni ellir ei ariannu mewn ainialwch nac ar lethrau serth.
+STR_FUND_ARABLE_FARM                                                            :{}{BLACK}Location: {YELLOW}Ni ellir ei ariannu ar eira, mewn anialwch nac ar lethrau.
+STR_FUND_DAIRY_FARM                                                             :{}{BLACK}Location: {YELLOW}Ni ellir ei ariannu ar lethrau serth.
+STR_FUND_FOREST                                                                 :{}{BLACK}Location: {YELLOW}Ni ellir ei ariannu mewn anialwch.
+STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}Location: {YELLOW}Ni ellir ei ariannu ar eira.
+
+STR_STATIONNAME_CHEMICALS                                                       :Purfa {STRING}
+STR_STATIONNAME_DEPOT                                                           :Depo {STRING}
+STR_STATIONNAME_DREDGING_SITE                                                   :Carthfa {STRING}
+STR_STATIONNAME_FACTORIES                                                       :Ffatri {STRING}
+STR_STATIONNAME_FARMS                                                           :Fferm {STRING}
+STR_STATIONNAME_FISHING_GROUNDS                                                 :Pysgotfa {STRING}
+STR_STATIONNAME_MARKET                                                          :Marchnad {STRING}
+STR_STATIONNAME_MILLS                                                           :Melin {STRING}
+STR_STATIONNAME_PITS                                                            :Chwarel {STRING}
+STR_STATIONNAME_PLANTS                                                          :Gwaith {STRING}
+STR_STATIONNAME_SMITHY_FORGE                                                    :Gefail {STRING}
+STR_STATIONNAME_WELLS                                                           :Ffynhonau {STRING}
+
+STR_IND_ALUMINIUM_PLANT                                                         :Gwaith Alwminiwm
+STR_IND_ARABLE_FARM                                                             :Fferm Âr
+STR_IND_BAUXITE_MINE                                                            :Cloddfa Bawcsit
+STR_IND_BIOREFINERY                                                             :Purfa Fiolegol
+STR_IND_BREWERY                                                                 :Bragdy
+STR_IND_BRICK_WORKS                                                             :Gwaith Brics
+STR_IND_BUILDERS_YARD                                                           :Iard Adeiladu
+STR_IND_CEMENT_PLANT                                                            :Gwaith Sment
+STR_IND_CLAY_PIT                                                                :Pwll Clai
+STR_IND_DAIRY                                                                   :Hufenfa
+STR_IND_DAIRYFARM                                                               :Fferm Lefrith
+STR_IND_DREDGING_SITE                                                           :Safle Carthu
+STR_IND_FERTILISER_PLANT                                                        :Gwaith Gwrtaith
+STR_IND_FISHING_GROUND                                                          :Maes Pysgota
+STR_IND_FISHING_HARBOUR                                                         :Porthladd Pysgota
+STR_IND_FOOD_MARKET                                                             :Marchnad Fwyd
+STR_IND_FURNITURE_FACTORY                                                       :Ffatri Dodrefn
+STR_IND_GLASS_WORKS                                                             :Gwaith Gwydr
+STR_IND_GRAIN_MILL                                                              :Melin Rawn
+STR_IND_HARDWARE_STORE                                                          :Siop Nwyddau Haearn
+STR_IND_HOTEL                                                                   :Hotel
+STR_IND_IRON_WORKS                                                              :Gwaith Haearn
+STR_IND_JUNKYARD                                                                :Iard Sgrap
+STR_IND_LIME_KILN                                                               :Cylyn Calch
+STR_IND_LUMBER_YARD                                                             :Iard Goed
+STR_IND_MACHINE_SHOP                                                            :Siop Beirianwaith
+STR_IND_METAL_FABRICATION_PLANT                                                 :Gweithdy Metelau
+STR_IND_METAL_FOUNDRY                                                           :Ffowndri
+STR_IND_MIXEDFARM                                                               :Fferm Cymysg
+STR_IND_PETROLPUMP                                                              :Pwmp Petrol
+STR_IND_PLASTICS_PLANT                                                          :Gwaith Plastigion
+STR_IND_QUARRY                                                                  :Chwarel
+STR_IND_RECYCLING_DEPOT                                                         :Depo Ailgylchu
+STR_IND_RECYCLING_PLANT                                                         :Gwaith Ailgylchu
+STR_IND_RETAILMARKET                                                            :Marchnad Nwyddau
+STR_IND_SHEEPFARM                                                               :Fferm Ddefaid
+STR_IND_SMITHY_FORGE                                                            :Gefail
+STR_IND_STOCKYARD                                                               :Iard Nwyddau
+STR_IND_SUGAR_REFINERY                                                          :Purfa Siwgr
+STR_IND_SUPERMARKET                                                             :Archfarchnad
+STR_IND_TEXTILE_MILL                                                            :Melin Wlân
