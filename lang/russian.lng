@@ -1,169 +1,291 @@
+﻿##grflangid 0x07
+##plural 6
+##gender m f n p
+##case m f n p nom gen dat acc abl pre
 
-##grflangid 0x07
-STR_CARGO_NAME_ALCOHOL                                                          :Алкоголь
-STR_CARGO_NAME_BAUXITE                                                          :Боксит
-STR_CARGO_NAME_BUILDING_MATERIALS                                               :Стройматериалы
-STR_CARGO_NAME_CHEMICALS                                                        :Химикаты
-STR_CARGO_NAME_CLAY                                                             :Глина
-STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :Промышленное оборудование
-STR_CARGO_NAME_FIBRES                                                           :Растительные волокна
-STR_CARGO_NAME_FISH                                                             :Рыба
-STR_CARGO_NAME_FARM_SUPPLIES                                                    :Сельхозтовары
-STR_CARGO_NAME_FRUITS                                                           :Овощи и фрукты
-STR_CARGO_NAME_LUMBER                                                           :Пиломатериалы
-STR_CARGO_NAME_METAL                                                            :Металл
-STR_CARGO_NAME_MILK                                                             :Молоко
-STR_CARGO_NAME_MANUFACTURING_SUPPLIES                                           :Производственные материалы
-STR_CARGO_NAME_PETROL                                                           :Топливо
-STR_CARGO_NAME_RECYCLABLES                                                      :Вторсырьё
-STR_CARGO_NAME_SAND                                                             :Песок
-STR_CARGO_NAME_SCRAP_METAL                                                      :Металлолом
-STR_CARGO_NAME_STONE                                                            :Камень
-STR_CARGO_NAME_SUGARCANE                                                        :Сахарная свёкла
-STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} пиломатериалов
-STR_CARGO_NAME_WOOL                                                             :Шерсть
-STR_CARGO_UNIT_PETROL                                                           :{VOLUME} топлива
-STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} сахарной свёклы
-STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} алкоголя
-STR_CARGO_UNIT_BAUXITE                                                          :{WEIGHT} боксита
+STR_GRF_DESC                                                                    :{ORANGE}Набор FIRS для полной замены предприятий{}{BLACK}От {SILVER}andythenorth{BLACK} и {SILVER}FooBar{BLACK}.{}{BLACK}'Более 2,000 изменений и работа продолжается...'{BLACK}{}{}Вебсайт: {SILVER}www.tt-foundry.com/sets/FIRS{BLACK}. Лицензия: {SILVER}GPL v2{BLACK}. Особая благодарность {SILVER}Ammler{BLACK}, {SILVER}Core Xii{BLACK}, {SILVER}Irwe{BLACK}, {SILVER}planetmaker{BLACK} и {SILVER}Zephyris{BLACK}. Использованы элементы {SILVER}eGRVTS{BLACK}, {SILVER}ISR{BLACK} и {SILVER}OpenGFX{BLACK}.
+STR_GRF_NAME                                                                    :{TITLE}
+
+STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :{SILVER}Максимальная удалённость местоположения рыболовных промыслов, нефтянных вышек и участков углубления дна от побережья в клетках.
+STR_PARAM_DESC_DEBUG                                                            :Только для разработчиков
+STR_PARAM_DESC_ECONOMIES                                                        :По завершению FIRS позволит выбирать экономику. Грузы и предприятия различны в каждой экономике. Тарифы на оплату перевозки в каждой экономике также отличаются.{}{SILVER}Сейчас доступна лишь одна экономика :)
+STR_PARAM_DESC_NEVER_CLOSE                                                      :По умолчанию сырьевые предприятия в FIRS закрыться не могут.{}При разрешённом закрытии сырьевые предприятия могут закрыться в случае падения производства до низкого уровня (конкретный уровень различен для каждого типа предприятия). {SILVER}Требуется разрешить 'снижение производства добывающих предприятий'.
+STR_PARAM_DESC_NO_OPENINGS                                                      :Без создания новых предприятий во время игры.{}Игроки не смогут профинансировать или разведать предприятия.{}Предприятия будут созданы в начале игры при создании мира (в зависимости от использованных настроек).
+STR_PARAM_DESC_PRIMARY_PRODUCTION_DECREASE                                      :По умолчанию производство добывающих предприятий FIRS снижаться не может.{}При разрешённом снижении производства появляется вероятность его снижения, если в течении месяца не будет доставлено запасов. Чем выше уровень производства, тем больше вероятность снижения.
+STR_PARAM_DESC_SECONDARY_NEVER_CLOSE                                            :По умолчанию обрабатывающие предприятия FIRS закрыться не могут.{}{}При разрешённом закрытии обрабатывающие предприятия могут закрыться в случае отсутствия перевозки грузов в течении долгого времени.
+STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY                                   :Макс. удалённость предприятий на море от побережья в клетках
+STR_PARAM_NAME_DEBUG                                                            :Показать отладочные сообщения
+STR_PARAM_NAME_ECONOMIES                                                        :Экономика
+STR_PARAM_NAME_NEVER_CLOSE                                                      :Разрешить закрытие добывающих предприятий
+STR_PARAM_NAME_NO_OPENINGS                                                      :Запретить создание предприятий во время игры
+STR_PARAM_NAME_PRIMARY_PRODUCTION_DECREASE                                      :Разрешить снижение производства добывающих предприятий
+STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            :Разрешить закрытие обрабатывающих предприятий
+STR_PARAM_VALUE_ECONOMIES_TEST_ECONOMY                                          :тестовая экономика
+STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0                                         :без ограничений
+STR_PARAM_NAME_STAT_RATING                                                      :Алгоритм рейтинга на станции
+STR_PARAM_VALUE_STAT_RATING_DEFAULT                                             :стандартный
+STR_PARAM_VALUE_STAT_RATING_REDUCED_TIME                                        :снижен эффект "времени с момента последней погрузки"
+STR_PARAM_VALUE_STAT_RATING_100                                                 :всегда 100%
+
+
+STR_CARGO_NAME_ALCOHOL                                                          :{G=n}Спиртное
+STR_CARGO_NAME_ALCOHOL.gen                                                      :спиртного
+STR_CARGO_NAME_ALCOHOL.acc                                                      :спиртное
+STR_CARGO_NAME_BAUXITE                                                          :{G=p}Бокситы
+STR_CARGO_NAME_BAUXITE.gen                                                      :бокситов
+STR_CARGO_NAME_BAUXITE.acc                                                      :бокситы
+STR_CARGO_NAME_BUILDING_MATERIALS                                               :{G=p}Стройматериалы
+STR_CARGO_NAME_BUILDING_MATERIALS.gen                                           :стройматериалов
+STR_CARGO_NAME_BUILDING_MATERIALS.acc                                           :стройматериалы
+STR_CARGO_NAME_CHEMICALS                                                        :{G=p}Химикаты
+STR_CARGO_NAME_CHEMICALS.gen                                                    :химикатов
+STR_CARGO_NAME_CHEMICALS.acc                                                    :химикаты
+STR_CARGO_NAME_CLAY                                                             :{G=f}Глина
+STR_CARGO_NAME_CLAY.gen                                                         :глины
+STR_CARGO_NAME_CLAY.acc                                                         :глину
+STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :{G=n}Оборудование
+STR_CARGO_NAME_ENGINEERING_SUPPLIES.gen                                         :оборудования
+STR_CARGO_NAME_ENGINEERING_SUPPLIES.acc                                         :оборудование
+STR_CARGO_NAME_FIBRES                                                           :{G=p}Растительные волокна
+STR_CARGO_NAME_FIBRES.gen                                                       :растительных волокон
+STR_CARGO_NAME_FIBRES.acc                                                       :растительные волокна
+STR_CARGO_NAME_FISH                                                             :{G=f}Рыба
+STR_CARGO_NAME_FISH.gen                                                         :рыбы
+STR_CARGO_NAME_FISH.acc                                                         :рыбу
+STR_CARGO_NAME_FARM_SUPPLIES                                                    :{G=p}Агротехсредства
+STR_CARGO_NAME_FARM_SUPPLIES.gen                                                :агротехсредств
+STR_CARGO_NAME_FARM_SUPPLIES.acc                                                :агротехсредства
+STR_CARGO_NAME_FRUITS                                                           :{G=p}Фрукты
+STR_CARGO_NAME_FRUITS.gen                                                       :фруктов
+STR_CARGO_NAME_FRUITS.acc                                                       :фрукты
+STR_CARGO_NAME_LUMBER                                                           :{G=p}Пиломатериалы
+STR_CARGO_NAME_LUMBER.gen                                                       :пиломатериалов
+STR_CARGO_NAME_LUMBER.acc                                                       :пиломатериалы
+STR_CARGO_NAME_METAL                                                            :{G=m}Металл
+STR_CARGO_NAME_METAL.gen                                                        :металла
+STR_CARGO_NAME_METAL.acc                                                        :металл
+STR_CARGO_NAME_MILK                                                             :{G=n}Молоко
+STR_CARGO_NAME_MILK.gen                                                         :молока
+STR_CARGO_NAME_MILK.acc                                                         :молоко
+STR_CARGO_NAME_MANUFACTURING_SUPPLIES                                           :{G=p}Материалы
+STR_CARGO_NAME_MANUFACTURING_SUPPLIES.gen                                       :материалов
+STR_CARGO_NAME_MANUFACTURING_SUPPLIES.acc                                       :материалы
+STR_CARGO_NAME_PETROL                                                           :{G=m}Бензин
+STR_CARGO_NAME_PETROL.gen                                                       :бензина
+STR_CARGO_NAME_PETROL.acc                                                       :бензин
+STR_CARGO_NAME_RECYCLABLES                                                      :{G=n}Вторсырьё
+STR_CARGO_NAME_RECYCLABLES.gen                                                  :вторсырья
+STR_CARGO_NAME_RECYCLABLES.acc                                                  :вторсырьё
+STR_CARGO_NAME_SAND                                                             :{G=m}Песок
+STR_CARGO_NAME_SAND.gen                                                         :песка
+STR_CARGO_NAME_SAND.acc                                                         :песок
+STR_CARGO_NAME_SCRAP_METAL                                                      :{G=m}Металлолом
+STR_CARGO_NAME_SCRAP_METAL.gen                                                  :металлолома
+STR_CARGO_NAME_SCRAP_METAL.acc                                                  :металлолом
+STR_CARGO_NAME_STONE                                                            :{G=m}Известняк
+STR_CARGO_NAME_STONE.gen                                                        :известняка
+STR_CARGO_NAME_STONE.acc                                                        :известняк
+STR_CARGO_NAME_SUGAR_BEET                                                       :{G=f}Сахарная свёкла
+STR_CARGO_NAME_SUGAR_BEET.gen                                                   :сахарной свёклы
+STR_CARGO_NAME_SUGAR_BEET.acc                                                   :сахарную свёклу
+STR_CARGO_NAME_SUGARCANE                                                        :{G=m}Сахарный тростник
+STR_CARGO_NAME_SUGARCANE.gen                                                    :сахарного тростника
+STR_CARGO_NAME_SUGARCANE.acc                                                    :сахарный тростник
+STR_CARGO_NAME_WOOL                                                             :{G=f}Шерсть
+STR_CARGO_NAME_WOOL.gen                                                         :шерсти
+STR_CARGO_NAME_WOOL.acc                                                         :шерсть
+
+STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} спиртного
+STR_CARGO_UNIT_BAUXITE                                                          :{WEIGHT} бокситов
 STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WEIGHT} стройматериалов
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} химикатов
 STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} глины
+STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} единиц{P 0 а ы ""} оборудования
 STR_CARGO_UNIT_FIBRES                                                           :{WEIGHT} растительных волокон
 STR_CARGO_UNIT_FISH                                                             :{WEIGHT} рыбы
-STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} упаковок сельхозтоваров
-STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} овощей и фруктов
+STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} единиц{P 0 а ы ""} агротехсредств
+STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} фруктов
+STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} пиломатериалов
 STR_CARGO_UNIT_METAL                                                            :{WEIGHT} металла
 STR_CARGO_UNIT_MILK                                                             :{VOLUME} молока
-STR_CARGO_UNIT_MNSP                                                             :{SIGNED_WORD} упаковок производственных материалов
+STR_CARGO_UNIT_MNSP                                                             :{SIGNED_WORD} ящик{P 0 "" а ов} материалов
+STR_CARGO_UNIT_PETROL                                                           :{VOLUME} бензина
 STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} вторсырья
 STR_CARGO_UNIT_SAND                                                             :{WEIGHT} песка
 STR_CARGO_UNIT_SCRAP_METAL                                                      :{WEIGHT} металлолома
-STR_CARGO_UNIT_STONE                                                            :{WEIGHT} камня
+STR_CARGO_UNIT_STONE                                                            :{WEIGHT} известняка
+STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} сахарной свеклы
+STR_CARGO_UNIT_SUGARCANE                                                        :{WEIGHT} сахарного тростника
 STR_CARGO_UNIT_WOOL                                                             :{WEIGHT} шерсти
-STR_CID_BAUXITE                                                                 :{TINYFONT}BX
-STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}BM
-STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}ES
-STR_CID_LUMBER                                                                  :{TINYFONT}LU
-STR_CID_METAL                                                                   :{TINYFONT}ML
-STR_CID_MILK                                                                    :{TINYFONT}MK
-STR_CID_SCRAP_METAL                                                             :{TINYFONT}SM
-STR_EXTRA_LIME_KILN                                                             :{BLACK}Производится:{}  4т на 8т камня{}  4т на 8т угля{}{}Увеличится до 8т на 8т если оба типа грузов будут поставлены в течение месяца.
-STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Производит металлические предметы, такие как стальные ворота, инструменты, плуги, лопаты и подковы.{}{}5т продукции на 8т поставок.
-STR_EXTRA_STEELMILL                                                             :{BLACK}Производится:{}  2т на 8т железной руды{}  2т на 8т угля{}  4т на 8т металлолома{}{}Производительность увеличится если два и более типа грузов будут поставлены в течение месяца.
-STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}Производится:{}  2т на 8т боксита{}  2т на 8т химикатов{}  4т на 8т металлолома{}{}Производительность увеличится если два и более типа грузов будут поставлены в течение месяца.
-STR_EXTRA_METAL_FOUNDRY                                                         :{BLACK}Производит металлические изделия, такие как инструменты и запчасти.{}{}8т продукции на 8т поставок.
-STR_EXTRA_SAWMILL                                                               :{BLACK}Пилит деревья.{}{}6т продукции на 8т поставок.
-STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Производится:{}  3т на 8т производственных материалов{}  5т на 8т пиломатериалов{}{}Увеличится до 8т на 8т если оба типа грузов будут поставлены в течение месяца.
-STR_EXTRA_PAPER_MILL                                                            :{BLACK}Перерабатывает древесину для производства бумаги и картона.{}{}{BLACK}Производится:{}  4т на 8т древесины{}  2т на 8т глины{}  2т на 8т химикатов{}{}Производительность увеличится если два и более типа грузов будут поставлены в течение месяца.
-STR_EXTRA_OIL_REFINERY                                                          :{BLACK}Перегоняет сырую нефть в бензин и химикаты.{}{}6т продукции на 8т поставок.
-STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}Производит пластмассовые предметы, такие как пластиковые пакеты и прочие хозтовары.{}{}6т продукции на 8т поставок.
-STR_EXTRA_IRON_WORKS                                                            :{BLACK}Производится:{}  1т на 8т древесины{}  2т на 8т железной руды{}{}Увеличится до 3т на 8т если оба типа грузов будут поставлены в течение месяца.
-STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Производит предметы из стекла, такие как бутылки, банки и оконные стёкла.{}{}{BLACK}Производится:{}  6т на 8т песка{}  2т на 8т химикатов{}{}Увеличится до 8т на 8т если оба типа грузов будут поставлены в течение месяца.
-STR_EXTRA_RECYCLING_PLANT                                                       :{BLACK}Производит вторсырье для использования в производстве.{}{}6т продукции на 8т поставок.
-STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Производится:{}  3т на 8т производственных материалов{}  5т на 8т рыбы{}{}Увеличится до 8т на 8т если оба типа грузов будут поставлены в течение месяца.
-STR_EXTRA_GRAIN_MILL                                                            :{BLACK}Производится:{}  3т на 8т производственных материалов{}  5т на 8т зерна{}{}Увеличится до 8т на 8т если оба типа грузов будут поставлены в течение месяца.
-STR_EXTRA_BREWERY                                                               :{BLACK}Производится:{}  3т на 8т производственных материалов{}  5т на 8т зерна{}  5т на 8т овощей и фруктов{}{}Производительность увеличится если производственных материалов будут поставлены в том же месяце, что и остальной груз.
-STR_EXTRA_DAIRY                                                                 :{BLACK}Производится:{}  3т на 8т производственных материалов{}  5т на 8т молока{}{}Увеличится до 8т на 8т если оба типа грузов будут поставлены в течение месяца.
-STR_EXTRA_FERTILIZER_PLANT                                                      :{BLACK}Преобразует химические вещества в удобрения для ферм.{}{}8т продукции на 8т поставок.
-STR_EXTRA_LUMBER_YARD                                                           :{BLACK}Производит предметы, такие как столбы и колья для забора.{}{}{BLACK}Производится:{}  2т на 8т химикатов{}  6т на 8т пиломатериалов{}{}Увеличится до 8т на 8т если оба типа грузов будут поставлены в течение месяца.
-STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Производится:{}  3т на 8т производственных материалов{}  5т на 8т шерсти{}  5т на 8т растительных волокон{}{}Производительность увеличится если производственных материалов будут поставлены в том же месяце, что и остальной груз.
-STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Производится:{}  2т на 8т угля{}  2т на 8т глины{}  4т на 8т камня{}{}Производительность увеличится если два и более типа грузов будут поставлены в течение месяца.
-STR_EXTRA_BRICKWORKS                                                            :{BLACK}Производится:{}  2т на 8т угля{}  2т на 8т песка{}  4т на 8т глины{}{}Производительность увеличится если два и более типа грузов будут поставлены в течение месяца.
-STR_EXTRA_BIOREFINERY                                                           :{BLACK}Перерабатывает зерно и сахар в бензин и химикаты.{}{}6т продукции на 8т поставок.
-STR_EXTRA_ENGINEERING_SUPPLIES                                                  :{BLACK}Поставки оборудования могут увеличить производительность.{}{YELLOW}  {COMMA} упаковок поставлено в этом месяце
-STR_EXTRA_FARM_SUPPLIES                                                         :{BLACK}Поставки сельхозтоваров могут увеличить производительность.{}{YELLOW}  {COMMA} упаковок поставлено в этом месяце
-STR_GENERIC_D0B2                                                                :{BLACK}Поставки производственных материалов удвоят производительность от других грузов.{}{}{STRING}
-STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Достигнута максимальная производительность
 
+STR_CID_ALCOHOL                                                                 :{TINYFONT}СП
+STR_CID_BAUXITE                                                                 :{TINYFONT}БО
+STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}СМ
+STR_CID_CHEMICALS                                                               :{TINYFONT}ХИ
+STR_CID_CLAY                                                                    :{TINYFONT}ГЛ
+STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}ОБ
+STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}АГ
+STR_CID_FIBRES                                                                  :{TINYFONT}РВ
+STR_CID_FISH                                                                    :{TINYFONT}РЫ
+STR_CID_LUMBER                                                                  :{TINYFONT}ПМ
+STR_CID_MANUFACTURING_SUPPLIES                                                  :{TINYFONT}МА
+STR_CID_METAL                                                                   :{TINYFONT}МЕ
+STR_CID_MILK                                                                    :{TINYFONT}МО
+STR_CID_PETROL                                                                  :{TINYFONT}БЕ
+STR_CID_RECYCLABLES                                                             :{TINYFONT}ВС
+STR_CID_SAND                                                                    :{TINYFONT}ПЕ
+STR_CID_SCRAP_METAL                                                             :{TINYFONT}МЛ
+STR_CID_STONE                                                                   :{TINYFONT}ИЗ
+STR_CID_SUGAR_BEET                                                              :{TINYFONT}СС
+STR_CID_SUGARCANE                                                               :{TINYFONT}СТ
+STR_CID_WOOL                                                                    :{TINYFONT}ШЕ
 
-STR_CID_SUGARCANE                                                               :{TINYFONT}SB
-STR_CID_FISH                                                                    :{TINYFONT}FI
-STR_CID_WOOL                                                                    :{TINYFONT}WL
-STR_CID_FIBRES                                                                  :{TINYFONT}PF
-STR_CID_SAND                                                                    :{TINYFONT}SA
-STR_CID_STONE                                                                   :{TINYFONT}ST
-STR_CID_MANUFACTURING_SUPPLIES                                                  :{TINYFONT}MS
-STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}FS
-STR_CID_CHEMICALS                                                               :{TINYFONT}CH
-STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                                                :{SIGNED_WORD} упаковок промышленного оборудования
-STR_CID_PETROL                                                                  :{TINYFONT}PT
-STR_CID_CLAY                                                                    :{TINYFONT}CL
-STR_CID_ALCOHOL                                                                 :{TINYFONT}AL
-STR_CID_RECYCLABLES                                                             :{TINYFONT}RC
-STR_STATIONNAME_FARMS                                                           :{STRING} Ферма
-STR_STATIONNAME_MILLS                                                           :{STRING} Цеха
-STR_STATIONNAME_WELLS                                                                :{STRING} Скважина
-STR_STATIONNAME_CHEMICALS                                                       :{STRING} Комплекс
-STR_STATIONNAME_FACTORIES                                                       :{STRING} Фабрика
-STR_STATIONNAME_PLANTS                                                          :{STRING} Завод
-STR_STATIONNAME_PITS                                                            :{STRING} Карьер
-STR_STATIONNAME_DEPOT                                                                :{STRING} Депо
-STR_STATIONNAME_DREDGING_SITE                                                   :{STRING} Дноуглубление
-STR_STATIONNAME_FISHING_GROUNDS                                                 :{STRING} Рыболовство
-STR_STATIONNAME_SMITHY_FORGE                                                    :{STRING} Кузницы
-STR_STATIONNAME_MARKET                                                                :{STRING} Рынок
+STR_ERR_CLIMATE_TOYLAND                                                         :{ORANGE}FIRS не предназначен для использования в игрушечном мире
+STR_ERR_INCOMPATIBLE_SET                                                        :{ORANGE}E01: {YELLOW}Несовместимый набор: {ORANGE}{STRING} {YELLOW}Подробности в FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_PARAM_CANSET                                               :{ORANGE}E02: {YELLOW}Несовместимый параметр: {ORANGE}CanSet параметр 2 должен быть равен 0 при использовании совместно с FIRS. {YELLOW}Подробности в FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_PARAM_CITYSET                                              :{ORANGE}E02: {YELLOW}Несовместимый параметр: {ORANGE}NA City Set параметр 2 должен быть равен 0 при использовании совместно с FIRS. {YELLOW}Подробности в FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_SET_TTRS_VERSION                                           :{ORANGE}E04: {YELLOW}Несовместимая версия: {ORANGE}Total Town Replacement Set должен быть версии release 3.11 или новее. {YELLOW}Подробности в FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_OPENTTD_VERSION                                                         :{ORANGE}E00: FIRS требует OpenTTD 1.2.0 / trunk r22780 или выше. {YELLOW}Подробности в FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+
+STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE                                             :должно находиться ниже снеговой линии.
+STR_ERR_LOCATION_NOT_ON_WATER                                                   :должно находиться на суше.
+STR_ERR_LOCATION_NOT_IN_DESERT                                                  :не должно находиться в пустыне.
+STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE                                             :не может находиться на крутых склонах.
+
+STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}Производство груза:{}  {SILVER}2/8{BLACK} за единицу бокситов{}  {SILVER}2/8{BLACK} за единицу химикатов{}  {SILVER}4/8{BLACK} за единицу металлолома{}{}Производство возрастёт, если в течении месяца будут доставлены любые два или более грузов.
+STR_EXTRA_BIOREFINERY                                                           :{BLACK}Перерабатывается зерно и сахар в бензин и химикаты.{}{}{SILVER}6/8{BLACK} продукции за единицу доставленного груза.
+STR_EXTRA_BREWERY                                                               :{BLACK}Производство груза:{}  {SILVER}3/8{BLACK} за единицу материалов{}  {SILVER}5/8{BLACK} за единицу зерна{}  {SILVER}5/8{BLACK} за единицу фруктов{}{}Производство возрастёт, если в течении месяца среди прочих грузов будут доставлены материалы.
+STR_EXTRA_BRICKWORKS                                                            :{BLACK}Производство груза:{}  {SILVER}2/8{BLACK} за единицу угля{}  {SILVER}2/8{BLACK} за единицу песка{}  {SILVER}4/8{BLACK} за единицу глины{}{}Производство возрастёт, если в течении месяца будут доставлены любые два или более грузов.
+STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Производство груза:{}  {SILVER}2/8{BLACK} за единицу угля{}  {SILVER}2/8{BLACK} за единицу глины{}  {SILVER}4/8{BLACK} за единицу известняка{}{}Производство возрастёт, если в течении месяца будут доставлены любые два или более грузов.
+STR_EXTRA_DAIRY                                                                 :{BLACK}Производство груза:{}  {SILVER}3/8{BLACK} за единицу материалов{}  {SILVER}5/8{BLACK} за единицу молока{}{}Вырастет до {SILVER}8/8{BLACK} за единицу, если в течении месяца будут доставлены оба груза.
+STR_EXTRA_ENGINEERING_SUPPLIES                                                  :{BLACK}Оборудование может увеличить производство.{}{YELLOW}  {COMMA} единиц{P 0 а ы ""} доставлено в этом месяце
+STR_EXTRA_FARM_SUPPLIES                                                         :{BLACK}Агротехсредства могут увеличить производство.{}{YELLOW}  {COMMA} единиц{P 0 а ы ""} доставлено в этом месяце
+STR_EXTRA_FERTILIZER_PLANT                                                      :{BLACK}Перерабатываются химикаты в удобрения для использования в хозяйствах.{}{}{SILVER}8/8{BLACK} продукции за единицу доставленного груза.
+STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Производство груза:{}  {SILVER}3/8{BLACK} за единицу материалов{}  {SILVER}5/8{BLACK} за единицу рыбы{}{}Вырастет до {SILVER}8/8{BLACK} за единицу, если в течении месяца будут доставлены оба груза.
+STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Производство груза:{}  {SILVER}3/8{BLACK} за единицу материалов{}  {SILVER}5/8{BLACK} за единицу пиломатериалов{}{}Вырастет до {SILVER}8/8{BLACK} за единицу, если в течении месяца будут доставлены оба груза.
+STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Производятся предметы из стекла, такие как бутылки, банки и оконные стёкла.{}{}{BLACK}Производство груза:{}  {SILVER}6/8{BLACK} за единицу песка{}  {SILVER}2/8{BLACK} за единицу химикатов{}{}Вырастет до {SILVER}8/8{BLACK} за единицу, если в течении месяца будут доставлены оба груза.
+STR_EXTRA_GRAIN_MILL                                                            :{BLACK}Производство груза:{}  {SILVER}3/8{BLACK} за единицу материалов{}  {SILVER}5/8{BLACK} за единицу зерна{}{}Вырастет до {SILVER}8/8{BLACK} за единицу, если в течении месяца будут доставлены оба груза.
+STR_EXTRA_IRON_WORKS                                                            :{BLACK}Производство груза:{}  {SILVER}1/8{BLACK} за единицу древесины{}  {SILVER}2/8{BLACK} за единицу железной руды{}{}Вырастет до {SILVER}3/8{BLACK} за единицу, если в течении месяца будут доставлены оба груза.
+STR_EXTRA_LIME_KILN                                                             :{BLACK}Производство груза:{}  {SILVER}4/8{BLACK} за единицу известняка{}  {SILVER}4/8{BLACK} за единицу угля{}{}Вырастет до {SILVER}8/8{BLACK} за единицу, если в течении месяца будут доставлены оба груза.
+STR_EXTRA_LUMBER_YARD                                                           :{BLACK}Производятся такие предметы, как столбы и доски для ограды.{}{}{BLACK}Производство груза:{}  {SILVER}2/8{BLACK} за единицу химикатов{}  {SILVER}6/8{BLACK} за единицу пиломатериалов{}{}Вырастет до {SILVER}8/8{BLACK} за единицу, если в течении месяца будут доставлены оба груза.
+STR_EXTRA_MACHINE_SHOP                                                          :{BLACK}Производится и обслуживается техника.{}{}{SILVER}8/8{BLACK} продукции за единицу доставленного груза.
+STR_EXTRA_MEAT_PACKER                                                           :{BLACK}Производство груза:{}  {SILVER}3/8{BLACK} за единицу материалов{}  {SILVER}5/8{BLACK} за единицу скота{}{}Вырастет до {SILVER}8/8{BLACK} за единицу, если в течении месяца будут доставлены оба груза.
+STR_EXTRA_METAL_FABRICATION_PLANT                                               :{BLACK}Производятся окрашенные металлические конструкции.{}{}{BLACK}Производство груза:{}  {SILVER}2/8{BLACK} за единицу химикатов{}  {SILVER}6/8{BLACK} за единицу металла{}{}Вырастет до {SILVER}8/8{BLACK} за единицу, если в течении месяца будут доставлены оба груза.
+STR_EXTRA_METAL_FOUNDRY                                                         :{BLACK}Производятся изделия из металла и жести, такие как консервные банки, инструменты и товары для дома.{}{}{BLACK}Производство груза:{}  {SILVER}2/8{BLACK} за единицу химикатов{}  {SILVER}6/8{BLACK} за единицу металла{}{}Вырастет до {SILVER}8/8{BLACK} за единицу, если в течении месяца будут доставлены оба груза.
+STR_EXTRA_OIL_REFINERY                                                          :{BLACK}Перерабатывает сырую нефть в бензин и химикаты.{}{}{SILVER}6/8{BLACK} продукции за единицу доставленного груза.
+STR_EXTRA_PAPER_MILL                                                            :{BLACK}Перерабатывается древесина для производства бумаги и картона.{}{}{BLACK}Производство груза:{}  {SILVER}4/8{BLACK} за единицу древесины{}  {SILVER}2/8{BLACK} за единицу глины{}  {SILVER}2/8{BLACK} за единицу химикатов{}{}Производство возрастёт, если в течении месяца будут доставлены любые два или более грузов.
+STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}Производятся предметы из пластмассы, такие как упаковочные материалы и товары для дома.{}{}{SILVER}6/8{BLACK} продукции за единицу доставленного груза.
+STR_EXTRA_RECYCLING_PLANT                                                       :{BLACK}Перерабатывается вторсырьё для повторного использования в производстве.{}{}{SILVER}6/8{BLACK} продукции за единицу доставленного груза.
+STR_EXTRA_SAWMILL                                                               :{BLACK}Распиливается древесина.{}{}{SILVER}6/8{BLACK} продукции за единицу доставленного груза.
+STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Производятся изделия из металла, такие как инструменты, плуги, ворота, лопаты и подковы.{}{}{SILVER}5/8{BLACK} продукции за единицу доставленного груза.
+STR_EXTRA_STEELMILL                                                             :{BLACK}Производство груза:{}  {SILVER}2/8{BLACK} за единицу железной руды{}  {SILVER}2/8{BLACK} за единицу угля{}  {SILVER}4/8{BLACK} за единицу металлолома{}{}Производство возрастёт, если в течении месяца будут доставлены любые два или более грузов.
+STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Производство груза:{}  {SILVER}3/8{BLACK} за единицу материалов{}  {SILVER}5/8{BLACK} за единицу сахарной свёклы{}{}Вырастет до {SILVER}8/8{BLACK} за единицу, если в течении месяца будут доставлены оба груза.
+STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Производство груза:{}  {SILVER}3/8{BLACK} за единицу материалов{}  {SILVER}5/8{BLACK} за единицу шерсти{}  {SILVER}5/8{BLACK} за единицу растительных волокон{}{}Производство возрастёт, если в течении месяца среди прочих грузов будут доставлены материалы.
+
+STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}----------- ОТЛАДКА -----------{}Произведено в этом месяце:{}Груз 1: {WHITE}{COMMA}{BLACK}{}Груз 2: {WHITE}{COMMA}{BLACK}{}Дней с момента последней доставки: {WHITE}{COMMA}{BLACK}
+STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Достигнут максимальный уровень производства
+STR_GENERIC_D0B2                                                                :{BLACK}Материалы удваивают производство других грузов.{}{}{STRING}
 STR_GENERIC_NEWLINE                                                             :{}
-STR_GRF_DESC                                                                    :{ORANGE}FIRS Industry Replacement Set{}{BLACK}By {SILVER}andythenorth{BLACK} and {SILVER}FooBar{BLACK}.{}{BLACK}'1,000 commits and counting...'{BLACK}{}{}Website: {SILVER}www.tt-foundry.com/sets/FIRS{BLACK}.License: {SILVER}GPL v2{BLACK}.Special thanks to {SILVER}Ammler{BLACK}, {SILVER}Core Xii{BLACK}, {SILVER}Irwe{BLACK}, {SILVER}planetmaker{BLACK} and {SILVER}Zephyris{BLACK}.Uses parts of {SILVER}eGRVTS{BLACK}, {SILVER}ISR{BLACK} and {SILVER}OpenGFX{BLACK}.
-STR_IND_ALUMINIUM_PLANT                                                         :Алюминиевый завод
-STR_IND_ARABLE_FARM                                                             :Зерновое хозяйство
-STR_IND_BAUXITE_MINE                                                            :Бокситовая шахта
-STR_IND_BIOREFINERY                                                             :Биоперерабатывающий завод
-STR_EXTRA_MEAT_PACKER                                                           :{BLACK}Производится:{}  3т на 8т производственных материалов{}  5т на 8т скота{}{}Увеличится до 8т на 8т если оба типа грузов будут поставлены в течение месяца.
-STR_IND_BREWERY                                                                 :Пивоваренный завод
-STR_IND_BRICK_WORKS                                                             :Кирпичный завод
-STR_IND_BUILDERS_YARD                                                           :Стройбаза
-STR_IND_CEMENT_PLANT                                                            :Цементный завод
-STR_IND_CLAY_PIT                                                                :Глиняный карьер
-STR_IND_DAIRY                                                                   :Молокозавод
-STR_IND_DAIRYFARM                                                               :Молочная ферма
-STR_IND_DREDGING_SITE                                                           :Участок дноуглубления
-STR_IND_FERTILISER_PLANT                                                        :Фабрика удобрений
-STR_IND_FISHING_GROUND                                                          :Рыболовный промысел
-STR_IND_FISHING_HARBOUR                                                         :Рыболовная пристань
-STR_IND_FOOD_MARKET                                                             :Магазин
-STR_IND_FURNITURE_FACTORY                                                       :Мебельная фабрика
-STR_IND_GLASS_WORKS                                                             :Стекольный завод
-STR_IND_GRAIN_MILL                                                              :Пекарня
-STR_IND_HOTEL                                                                   :Отель / Ресторан
-STR_IND_IRON_WORKS                                                              :Сталелитейный завод
-STR_IND_JUNKYARD                                                                :Свалка
-STR_IND_LIME_KILN                                                               :Известковые печи
-STR_IND_LUMBER_YARD                                                             :Лесоторговая база
-STR_IND_MACHINE_SHOP                                                            :Машиностроительный завод
-STR_IND_METAL_FOUNDRY                                                           :Литейный завод
-STR_IND_MIXEDFARM                                                               :Смешанная ферма
-STR_IND_PETROLPUMP                                                              :Заправка
-STR_IND_PLASTICS_PLANT                                                          :Пластмассовый завод
-STR_IND_QUARRY                                                                  :Карьер
-STR_IND_RECYCLING_DEPOT                                                         :Пункт приема мусора
-STR_IND_RECYCLING_PLANT                                                         :Мусороперерабатывающий завод
-STR_IND_RETAILMARKET                                                            :Рынок
-STR_IND_SHEEPFARM                                                               :Овцеферма
-STR_IND_SMITHY_FORGE                                                            :Кузница
-STR_IND_STOCKYARD                                                               :Скотобойня
-STR_IND_SUGAR_REFINERY                                                          :Сахарорафинадный завод
-STR_IND_SUPERMARKET                                                             :Супермаркет
-STR_IND_TEXTILE_MILL                                                            :Текстильная фабрика
 
+STR_FUND_MIXED_FARM                                                             :{}{BLACK}Положение: {YELLOW}Нельзя разместить ни на снегу или в пустыне, ни на крутых склонах.
+STR_FUND_SHEEP_FARM                                                             :{}{BLACK}Положение: {YELLOW}Нельзя разместить ни в пустыне, ни на склонах.
+STR_FUND_ARABLE_FARM                                                            :{}{BLACK}Положение: {YELLOW}Нельзя разместить ни на снегу или в пустыне, ни на склонах.
+STR_FUND_DAIRY_FARM                                                             :{}{BLACK}Положение: {YELLOW}Нельзя разместить на крутых склонах.
+STR_FUND_FOREST                                                                 :{}{BLACK}Положение: {YELLOW}Нельзя разместить в пустыне.
+STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}Положение: {YELLOW}Нельзя разместить на снегу.
 
+STR_STATIONNAME_CHEMICALS                                                       :{STRING} Перерабатывающий завод
+STR_STATIONNAME_DEPOT                                                           :{STRING} Пункт
+STR_STATIONNAME_DREDGING_SITE                                                   :{STRING} Район углубления дна
+STR_STATIONNAME_FACTORIES                                                       :{STRING} Фабрика
+STR_STATIONNAME_FARMS                                                           :{STRING} Ферма
+STR_STATIONNAME_FISHING_GROUNDS                                                 :{STRING} Рыболовный участок
+STR_STATIONNAME_MARKET                                                          :{STRING} Рынок
+STR_STATIONNAME_MILLS                                                           :{STRING} Предприятие
+STR_STATIONNAME_PITS                                                            :{STRING} Карьер
+STR_STATIONNAME_PLANTS                                                          :{STRING} Завод
+STR_STATIONNAME_SMITHY_FORGE                                                    :{STRING} Мастерская
+STR_STATIONNAME_WELLS                                                           :{STRING} Скважина
 
-
-STR_EXTRA_SUGAR_REFINERY                                                       :{BLACK}Производится:{}  3т на 8т производственных материалов{}  5т на 8т сахарного тростника{}{}Увеличится до 8т на 8т если оба типа грузов будут поставлены в течение месяца.
-STR_EXTRA_MACHINE_SHOP                                                :{BLACK}Производит и обслуживает технику и промышленное оборудование.{}{}8т продукции на 8т поставок.
-STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :{SILVER}Максимальная удаленность рыболовств и дноуглублений от побережья.
-STR_PARAM_DESC_DEBUG                                                            :Только для разработчиков
-STR_PARAM_DESC_ECONOMIES                                                        :Когда будет реализовано, FIRS предоставит выбор различных типов экономик. Набор грузов и предприятий будет разным в каждой из них. Вознаграждения за доставку грузов также будут различными. {}{}{SILVER}Сейчас доступен лишь один тип экономики.
-STR_PARAM_DESC_NEVER_CLOSE                                                      :По умолчанию сырьевые предприятия в FIRS не могут закрываться.{}{}Если данная опция включена, сырьевые предприятия будут закрываться когда их уровень производительности упадет ниже определенной отметки, различной для каждого типа предприятий. {SILVER}Данная опция требует разрешения снижения производительности сырьевых предприятий.
-STR_PARAM_DESC_NO_OPENINGS                                                      :{SILVER}На данный момент эта опция ни на что не влияет. {BLACK}Когда будет реализована, данная опция будет предоставлять 'режим песочницы' для совместного использования со сценариями.
-STR_PARAM_DESC_PRIMARY_PRODUCTION_DECREASE                                      :По умолчанию сырьевые предприятия в FIRS никогда не снижают производительность.{}{}Если данная опция включена, то появится вероятность того, что производительность снизится в случае если предприятию в течении месяца не будут поставляться средства производства. Чем выше уровень производительности, тем больше вероятность того, что это случится.
-STR_PARAM_DESC_SECONDARY_NEVER_CLOSE                                            :По умолчанию, обрабатывающие предприятия в FIRS не могут закрываться.{}{}Если данная опция включена, обрабатывающие предприятия могут закрыться, если груз не будет перевозиться в течении долгого времени.
-STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY                                   :Максимальная длина морских объектов вдоль побережья
-STR_PARAM_NAME_DEBUG                                                            :Показывать отладочные сообщения
-STR_PARAM_NAME_ECONOMIES                                                        :Экономика
-STR_PARAM_NAME_NEVER_CLOSE                                                      :Разрешить закрытие сырьевых предприятий
-STR_PARAM_NAME_NO_OPENINGS                                                      :Предотвращать создание предприятий (незавершено)
-STR_PARAM_NAME_PRIMARY_PRODUCTION_DECREASE                                      :Разрешить снижение производительности сырьевых предприятий
-STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            :Разрешить закрытие обрабатывающих предприятий
-STR_PARAM_VALUE_ECONOMIES_TEST_ECONOMY                                          :Тестовая экономика
-STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0                                         :Нет пределов
+STR_IND_ALUMINIUM_PLANT                                                         :{G=m}Алюминиевый завод
+STR_IND_ALUMINIUM_PLANT.gen                                                     :алюминиевого завода
+STR_IND_ARABLE_FARM                                                             :{G=n}Земледельческое хозяйство
+STR_IND_ARABLE_FARM.gen                                                         :земледельческого хозяйства
+STR_IND_BAUXITE_MINE                                                            :{G=m}Бокситовый рудник
+STR_IND_BAUXITE_MINE.gen                                                        :бокситового рудника
+STR_IND_BIOREFINERY                                                             :{G=m}Биоперерабатывающий завод
+STR_IND_BIOREFINERY.gen                                                         :биоперерабатывающего завода
+STR_IND_BREWERY                                                                 :{G=m}Пивоваренный завод
+STR_IND_BREWERY.gen                                                             :пивоваренного завода
+STR_IND_BRICK_WORKS                                                             :{G=m}Кирпичный завод
+STR_IND_BRICK_WORKS.gen                                                         :кирпичного завода
+STR_IND_BUILDERS_YARD                                                           :{G=m}Склад стройматериалов
+STR_IND_BUILDERS_YARD.gen                                                       :склада стройматериалов
+STR_IND_CEMENT_PLANT                                                            :{G=m}Цементный завод
+STR_IND_CEMENT_PLANT.gen                                                        :цементного завода
+STR_IND_CLAY_PIT                                                                :{G=m}Глиняный карьер
+STR_IND_CLAY_PIT.gen                                                            :глиняного карьера
+STR_IND_DAIRY                                                                   :{G=m}Молокозавод
+STR_IND_DAIRY.gen                                                               :молокозавода
+STR_IND_DAIRYFARM                                                               :{G=n}Молочное хозяйство
+STR_IND_DAIRYFARM.gen                                                           :молочного хозяйства
+STR_IND_DREDGING_SITE                                                           :{G=m}Участок углубления дна
+STR_IND_DREDGING_SITE.gen                                                       :участка углубления дна
+STR_IND_FERTILISER_PLANT                                                        :{G=m}Завод удобрений
+STR_IND_FERTILISER_PLANT.gen                                                    :завода удобрений
+STR_IND_FISHING_GROUND                                                          :{G=m}Рыболовный промысел
+STR_IND_FISHING_GROUND.gen                                                      :рыболовного промысла
+STR_IND_FISHING_HARBOUR                                                         :{G=m}Рыболовный порт
+STR_IND_FISHING_HARBOUR.gen                                                     :рыболовного порта
+STR_IND_FOOD_MARKET                                                             :{G=m}Продовольственный магазин
+STR_IND_FOOD_MARKET.gen                                                         :продовольственного магазина
+STR_IND_FURNITURE_FACTORY                                                       :{G=f}Мебельная фабрика
+STR_IND_FURNITURE_FACTORY.gen                                                   :мебельной фабрики
+STR_IND_GLASS_WORKS                                                             :{G=m}Стекольный завод
+STR_IND_GLASS_WORKS.gen                                                         :стекольного завода
+STR_IND_GRAIN_MILL                                                              :{G=f}Пекарня
+STR_IND_GRAIN_MILL.gen                                                          :пекарни
+STR_IND_HARDWARE_STORE                                                          :{G=m}Хозяйственный магазин
+STR_IND_HARDWARE_STORE.gen                                                      :хозяйственного магазина
+STR_IND_HOTEL                                                                   :{G=f}Гостинница
+STR_IND_HOTEL.gen                                                               :гостинницы
+STR_IND_IRON_WORKS                                                              :{G=m}Металлургический завод
+STR_IND_IRON_WORKS.gen                                                          :металлургического завода
+STR_IND_JUNKYARD                                                                :{G=f}Свалка
+STR_IND_JUNKYARD.gen                                                            :свалки
+STR_IND_LIME_KILN                                                               :{G=m}Известковый завод
+STR_IND_LIME_KILN.gen                                                           :известкового завода
+STR_IND_LUMBER_YARD                                                             :{G=m}Склад лесоматериалов
+STR_IND_LUMBER_YARD.gen                                                         :склада лесоматериалов
+STR_IND_MACHINE_SHOP                                                            :{G=m}Механический завод
+STR_IND_MACHINE_SHOP.gen                                                        :механического завода
+STR_IND_METAL_FABRICATION_PLANT                                                 :{G=m}Завод металлоконструкций
+STR_IND_METAL_FABRICATION_PLANT.gen                                             :завода металлоконструкций
+STR_IND_METAL_FOUNDRY                                                           :{G=m}Завод металлоизделий
+STR_IND_METAL_FOUNDRY.gen                                                       :завода металлоизделий
+STR_IND_MIXEDFARM                                                               :{G=n}Смешанное хозяйство
+STR_IND_MIXEDFARM.gen                                                           :смешанного хозяйства
+STR_IND_PETROLPUMP                                                              :{G=f}Заправочная станция
+STR_IND_PETROLPUMP.gen                                                          :заправочной станции
+STR_IND_PLASTICS_PLANT                                                          :{G=m}Пластмассовый завод
+STR_IND_PLASTICS_PLANT.gen                                                      :пластмассового завода
+STR_IND_QUARRY                                                                  :{G=m}Карьер
+STR_IND_QUARRY.gen                                                              :карьера
+STR_IND_RECYCLING_DEPOT                                                         :{G=m}Пункт приёма отходов
+STR_IND_RECYCLING_DEPOT.gen                                                     :пункта приёма отходов
+STR_IND_RECYCLING_PLANT                                                         :{G=m}Завод по переработке отходов
+STR_IND_RECYCLING_PLANT.gen                                                     :завода по переработке отходов
+STR_IND_RETAILMARKET                                                            :{G=m}Магазин
+STR_IND_RETAILMARKET.gen                                                        :магазина
+STR_IND_SHEEPFARM                                                               :{G=n}Овцеводческое хозяйство
+STR_IND_SHEEPFARM.gen                                                           :овцеводческого хозяйства
+STR_IND_SMITHY_FORGE                                                            :{G=f}Мастерская
+STR_IND_SMITHY_FORGE.gen                                                        :мастерской
+STR_IND_STOCKYARD                                                               :{G=f}Скотобойня
+STR_IND_STOCKYARD.gen                                                           :скотобойни
+STR_IND_SUGAR_REFINERY                                                          :{G=m}Сахарный завод
+STR_IND_SUGAR_REFINERY.gen                                                      :сахарного завода
+STR_IND_SUPERMARKET                                                             :{G=m}Супермаркет
+STR_IND_SUPERMARKET.gen                                                         :супермаркета
+STR_IND_TEXTILE_MILL                                                            :{G=f}Текстильная фабрика
+STR_IND_TEXTILE_MILL.gen                                                        :текстильной фабрики
