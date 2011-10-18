@@ -1,259 +1,268 @@
-Ôªø##grflangid 0x24
+##grflangid 0x24
 
 ##case t ba
 
-STR_GRF_DESC                                                                    :{ORANGE}FIRS Industry Replacement Set{}{BLACK}K√©sz√≠tette: {SILVER}andythenorth{BLACK} √©s {SILVER}FooBar{BLACK}.{}{BLACK}{BLACK}{}Weboldal: {SILVER}www.tt-foundry.com/sets/FIRS{BLACK}.{}{BLACK}'1000 commit, √©s m√©g nincs v√©ge...'{BLACK}{}{}Licensz: {SILVER}GPL v2{}{}{BLACK}.K√ºl√∂n k√∂sz√∂net {SILVER}Ammler{BLACK}-nek, {SILVER}Core Xii{BLACK}-nek, {SILVER}Irwe{BLACK}-nek, {SILVER}planetmaker{BLACK}-nek √©s {SILVER}Zephyris{BLACK}-nek.{}R√©szeket haszn√°l fel a k√∂vetkez≈ëekb≈ël: {SILVER}eGRVTS{BLACK}, {SILVER}ISR{BLACK} √©s {SILVER}OpenGFX{BLACK}.
+STR_GRF_DESC                                                                    :{ORANGE}FIRS Industry Replacement Set{}{BLACK}KÈszÌtette: {SILVER}andythenorth{BLACK} Ès {SILVER}FooBar{BLACK}.{}{BLACK}{BLACK}{}Weboldal: {SILVER}www.tt-foundry.com/sets/FIRS{BLACK}.{}{BLACK}'1000 commit, Ès mÈg nincs vÈge...'{BLACK}{}{}Licensz: {SILVER}GPL v2{}{}{BLACK}.K¸lˆn kˆszˆnet {SILVER}Ammler{BLACK}-nek, {SILVER}Core Xii{BLACK}-nek, {SILVER}Irwe{BLACK}-nek, {SILVER}planetmaker{BLACK}-nek Ès {SILVER}Zephyris{BLACK}-nek.{}RÈszeket haszn·l fel a kˆvetkezıekbıl: {SILVER}eGRVTS{BLACK}, {SILVER}ISR{BLACK} Ès {SILVER}OpenGFX{BLACK}.
 STR_GRF_NAME                                                                    :{TITLE}
 
-STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :{SILVER}A hal√°szter√ºletek, olajf√∫r√≥ tornyok √©s mederkotr√°sok maxim√°lis t√°vols√°ga a partt√≥l.
-STR_PARAM_DESC_DEBUG                                                            :Csak fejleszt≈ëknek
-STR_PARAM_DESC_ECONOMIES                                                        :Ha k√©sz lesz, a FIRS-ben k√ºl√∂nf√©le gazdas√°gok lesznek el√©rhet≈ëk, k√ºl√∂nf√©le gazdas√°gi √©p√ºletekkel √©s rakom√°nyokkal. Az egyes rakom√°nyok√©rt fizetett sz√°ll√≠t√°si d√≠jak is k√ºl√∂nb√∂zni fognak. {}{}{SILVER}Egyel≈ëre csak egy gazdas√°g √©rhet≈ë el :)
-STR_PARAM_DESC_NEVER_CLOSE                                                      :Alap√©rtelmez√©sben a FIRS els≈ëdleges gazdas√°gi √©p√ºletei nem z√°rnak be.{}{}Ha ez a be√°ll√≠t√°s be van kapcsolva, az els≈ëdleges gazdas√°gi √©p√ºletek bez√°rnak, ha a termel√©s√ºk egy bizonyos szint al√° esik (ez a szint a k√ºl√∂nf√©le gazdas√°gi √©p√ºletek eset√©n elt√©r≈ë). {SILVER}Ehhez sz√ºks√©ges bekapcsolni az els≈ëdleges gazdas√°gi √©p√ºletek termel√©scs√∂kken√©s√©t is.
-STR_PARAM_DESC_NO_OPENINGS                                                      :Hat√°s√°ra nem fognak √∫j gazdas√°gi √©p√ºletek √©p√ºlni a j√°t√©k folyam√°n. {}A j√°t√©kosok sem fognak tudni √∫j gazdas√°gi √©p√ºleteket √©p√≠ttetni. {}A gazdas√°gi √©p√ºleteket a t√©rk√©pgener√°tor fogja elhelyezni a j√°t√©k elej√©n, a be√°ll√≠t√°sokt√≥l f√ºgg≈ëen.
-STR_PARAM_DESC_PRIMARY_PRODUCTION_DECREASE                                      :Alap√©rtelmez√©sben a FIRS gazdas√°gi √©p√ºletek termel√©se nem cs√∂kken.{}{}Ha az els≈ëdleges gazdas√°gi √©p√ºletek termel√©scs√∂kken√©se be van kapcsolva, van es√©ly arra, hogy a termel√©s cs√∂kken, ha egy h√≥napig nem √©rkezik sz√°ll√≠tm√°ny. Ha magas a termel√©s, a termel√©scs√∂kken√©s es√©lye is nagyobb.
-STR_PARAM_DESC_SECONDARY_NEVER_CLOSE                                            :Alap√©rtelmez√©sben a FIRS m√°sodlagos gazdas√°gi √©p√ºletei nem z√°rnak be.{}{}Ha ez a be√°ll√≠t√°s be van kapcsolva, a m√°sodlagos gazdas√°gi √©p√ºletek bez√°rhatnak, ha sok√°ig nem √©rkezik hozz√°juk sz√°ll√≠tm√°ny.
-STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY                                   :Tengeri gazdas√°gi l√©tes√≠tm√©nyek maxim√°lis t√°vols√°ga a partt√≥l
-STR_PARAM_NAME_DEBUG                                                            :Debug sz√∂vegek mutat√°sa
-STR_PARAM_NAME_ECONOMIES                                                        :Gazdas√°g
-STR_PARAM_NAME_NEVER_CLOSE                                                      :Els≈ëdleges gazdas√°gi √©p√ºletek bez√°r√°s√°nak enged√©lyez√©se
-STR_PARAM_NAME_NO_OPENINGS                                                      :√öj gazdas√°gi √©p√ºletek nyit√°s√°nak megg√°tl√°sa
-STR_PARAM_NAME_PRIMARY_PRODUCTION_DECREASE                                      :Els≈ëdleges gazdas√°gi √©p√ºletek termel√©scs√∂kken√©s√©nek enged√©lyez√©se
-STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            :M√°sodlagos gazdas√°gi √©p√ºletek bez√°r√°s√°nak enged√©lyez√©se
-STR_PARAM_VALUE_ECONOMIES_TEST_ECONOMY                                          :Teszt gazdas√°g
-STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0                                         :Nincs hat√°r
+STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :{SILVER}A hal·szter¸letek, olajf˙rÛ tornyok Ès mederkotr·sok maxim·lis t·vols·ga a parttÛl.
+STR_PARAM_DESC_DEBUG                                                            :Csak fejlesztıknek
+STR_PARAM_DESC_ECONOMIES                                                        :Ha kÈsz lesz, a FIRS-ben k¸lˆnfÈle gazdas·gok lesznek elÈrhetık, k¸lˆnfÈle gazdas·gi Èp¸letekkel Ès rakom·nyokkal. Az egyes rakom·nyokÈrt fizetett sz·llÌt·si dÌjak is k¸lˆnbˆzni fognak. {}{}{SILVER}Egyelıre csak egy gazdas·g Èrhetı el :)
+STR_PARAM_DESC_NEVER_CLOSE                                                      :AlapÈrtelmezÈsben a FIRS elsıdleges gazdas·gi Èp¸letei nem z·rnak be.{}{}Ha ez a be·llÌt·s be van kapcsolva, az elsıdleges gazdas·gi Èp¸letek bez·rnak, ha a termelÈs¸k egy bizonyos szint al· esik (ez a szint a k¸lˆnfÈle gazdas·gi Èp¸letek esetÈn eltÈrı). {SILVER}Ehhez sz¸ksÈges bekapcsolni az elsıdleges gazdas·gi Èp¸letek termelÈscsˆkkenÈsÈt is.
+STR_PARAM_DESC_NO_OPENINGS                                                      :Hat·s·ra nem fognak ˙j gazdas·gi Èp¸letek Èp¸lni a j·tÈk folyam·n. {}A j·tÈkosok sem fognak tudni ˙j gazdas·gi Èp¸leteket ÈpÌttetni. {}A gazdas·gi Èp¸leteket a tÈrkÈpgener·tor fogja elhelyezni a j·tÈk elejÈn, a be·llÌt·soktÛl f¸ggıen.
+STR_PARAM_DESC_PRIMARY_PRODUCTION_DECREASE                                      :AlapÈrtelmezÈsben a FIRS gazdas·gi Èp¸letek termelÈse nem csˆkken.{}{}Ha az elsıdleges gazdas·gi Èp¸letek termelÈscsˆkkenÈse be van kapcsolva, van esÈly arra, hogy a termelÈs csˆkken, ha egy hÛnapig nem Èrkezik sz·llÌtm·ny. Ha magas a termelÈs, a termelÈscsˆkkenÈs esÈlye is nagyobb.
+STR_PARAM_DESC_SECONDARY_NEVER_CLOSE                                            :AlapÈrtelmezÈsben a FIRS m·sodlagos gazdas·gi Èp¸letei nem z·rnak be.{}{}Ha ez a be·llÌt·s be van kapcsolva, a m·sodlagos gazdas·gi Èp¸letek bez·rhatnak, ha sok·ig nem Èrkezik hozz·juk sz·llÌtm·ny.
+STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY                                   :Tengeri gazdas·gi lÈtesÌtmÈnyek maxim·lis t·vols·ga a parttÛl
+STR_PARAM_NAME_DEBUG                                                            :Debug szˆvegek mutat·sa
+STR_PARAM_NAME_ECONOMIES                                                        :Gazdas·g
+STR_PARAM_NAME_NEVER_CLOSE                                                      :Elsıdleges gazdas·gi Èp¸letek bez·r·s·nak engedÈlyezÈse
+STR_PARAM_NAME_NO_OPENINGS                                                      :⁄j gazdas·gi Èp¸letek nyit·s·nak megg·tl·sa
+STR_PARAM_NAME_PRIMARY_PRODUCTION_DECREASE                                      :Elsıdleges gazdas·gi Èp¸letek termelÈscsˆkkenÈsÈnek engedÈlyezÈse
+STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            :M·sodlagos gazdas·gi Èp¸letek bez·r·s·nak engedÈlyezÈse
+STR_PARAM_VALUE_ECONOMIES_TEST_ECONOMY                                          :Teszt gazdas·g
+STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0                                         :Nincs hat·r
+STR_PARAM_NAME_STAT_RATING                                                      :Algoritmus az ·llom·sokrÛl alkotott vÈlemÈny meghat·roz·s·ra
+STR_PARAM_VALUE_STAT_RATING_DEFAULT                                             :AlapÈrtelmezett
+STR_PARAM_VALUE_STAT_RATING_REDUCED_TIME                                        :Az utolsÛ sz·llÌt·s Ûta eltelt idı csˆkkentett hat·s˙
+STR_PARAM_VALUE_STAT_RATING_100                                                 :Mindig 100%
 
 
 STR_CARGO_NAME_ALCOHOL                                                          :Szeszes ital
 STR_CARGO_NAME_ALCOHOL.t                                                        :szeszes italt
 STR_CARGO_NAME_BAUXITE                                                          :Bauxit
 STR_CARGO_NAME_BAUXITE.t                                                        :bauxitot
-STR_CARGO_NAME_BUILDING_MATERIALS                                               :√âp√≠t≈ëanyag
-STR_CARGO_NAME_BUILDING_MATERIALS.t                                             :√©p√≠t≈ëanyagot
+STR_CARGO_NAME_BUILDING_MATERIALS                                               :…pÌtıanyag
+STR_CARGO_NAME_BUILDING_MATERIALS.t                                             :ÈpÌtıanyagot
 STR_CARGO_NAME_CHEMICALS                                                        :Vegyszer
 STR_CARGO_NAME_CHEMICALS.t                                                      :vegyszert
 STR_CARGO_NAME_CLAY                                                             :Agyag
 STR_CARGO_NAME_CLAY.t                                                           :agyagot
-STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :Ipari seg√©deszk√∂z√∂k
-STR_CARGO_NAME_ENGINEERING_SUPPLIES.t                                           :ipari seg√©deszk√∂z√∂ket
-STR_CARGO_NAME_FIBRES                                                           :N√∂v√©nyi rost
-STR_CARGO_NAME_FIBRES.t                                                         :n√∂v√©nyi rostot
+STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :Ipari segÈdeszkˆzˆk
+STR_CARGO_NAME_ENGINEERING_SUPPLIES.t                                           :ipari segÈdeszkˆzˆket
+STR_CARGO_NAME_FIBRES                                                           :NˆvÈnyi rost
+STR_CARGO_NAME_FIBRES.t                                                         :nˆvÈnyi rostot
 STR_CARGO_NAME_FISH                                                             :Hal
 STR_CARGO_NAME_FISH.t                                                           :halat
-STR_CARGO_NAME_FARM_SUPPLIES                                                    :Mez≈ëgazdas√°gi felszerel√©s
-STR_CARGO_NAME_FARM_SUPPLIES.t                                                  :mez≈ëgazdas√°gi felszerel√©s
-STR_CARGO_NAME_FRUITS                                                           :Gy√ºm√∂lcs
-STR_CARGO_NAME_FRUITS.t                                                         :gy√ºm√∂lcs√∂t
-STR_CARGO_NAME_LUMBER                                                           :F≈±r√©sz√°ru
-STR_CARGO_NAME_LUMBER.t                                                         :f≈±r√©sz√°rut
-STR_CARGO_NAME_METAL                                                            :F√©m
-STR_CARGO_NAME_METAL.t                                                          :f√©met
+STR_CARGO_NAME_FARM_SUPPLIES                                                    :Mezıgazdas·gi felszerelÈs
+STR_CARGO_NAME_FARM_SUPPLIES.t                                                  :mezıgazdas·gi felszerelÈs
+STR_CARGO_NAME_FRUITS                                                           :Gy¸mˆlcs
+STR_CARGO_NAME_FRUITS.t                                                         :gy¸mˆlcsˆt
+STR_CARGO_NAME_LUMBER                                                           :F˚rÈsz·ru
+STR_CARGO_NAME_LUMBER.t                                                         :f˚rÈsz·rut
+STR_CARGO_NAME_METAL                                                            :FÈm
+STR_CARGO_NAME_METAL.t                                                          :fÈmet
 STR_CARGO_NAME_MILK                                                             :Tej
 STR_CARGO_NAME_MILK.t                                                           :tejet
-STR_CARGO_NAME_MANUFACTURING_SUPPLIES                                           :Gy√°rt√°si seg√©deszk√∂z√∂k
-STR_CARGO_NAME_MANUFACTURING_SUPPLIES.t                                         :gy√°rt√°si seg√©deszk√∂z√∂ket
-STR_CARGO_NAME_PETROL                                                           :√územanyag
-STR_CARGO_NAME_PETROL.t                                                         :√ºzemanyagot
-STR_CARGO_NAME_RECYCLABLES                                                      :√öjrahasznos√≠that√≥ √°ru
-STR_CARGO_NAME_RECYCLABLES.t                                                    :√∫jrahasznos√≠that√≥ √°rut
+STR_CARGO_NAME_MANUFACTURING_SUPPLIES                                           :Gy·rt·si segÈdeszkˆzˆk
+STR_CARGO_NAME_MANUFACTURING_SUPPLIES.t                                         :gy·rt·si segÈdeszkˆzˆket
+STR_CARGO_NAME_PETROL                                                           :‹zemanyag
+STR_CARGO_NAME_PETROL.t                                                         :¸zemanyagot
+STR_CARGO_NAME_RECYCLABLES                                                      :⁄jrahasznosÌthatÛ ·ru
+STR_CARGO_NAME_RECYCLABLES.t                                                    :˙jrahasznosÌthatÛ ·rut
 STR_CARGO_NAME_SAND                                                             :Homok
 STR_CARGO_NAME_SAND.t                                                           :homokot
-STR_CARGO_NAME_SCRAP_METAL                                                      :F√©mhullad√©k
-STR_CARGO_NAME_SCRAP_METAL.t                                                    :f√©mhullad√©kot
-STR_CARGO_NAME_STONE                                                            :K≈ë
-STR_CARGO_NAME_STONE.t                                                          :k√∂vet
-STR_CARGO_NAME_SUGAR_BEET                                                       :Cukorr√©pa
-STR_CARGO_NAME_SUGAR_BEET.t                                                     :cukorr√©p√°t
-STR_CARGO_NAME_SUGARCANE                                                        :Cukorn√°d
-STR_CARGO_NAME_SUGARCANE.t                                                      :cukorn√°dat
-STR_CARGO_NAME_WOOL                                                             :Gyapj√∫
-STR_CARGO_NAME_WOOL.t                                                           :gyapj√∫t
+STR_CARGO_NAME_SCRAP_METAL                                                      :FÈmhulladÈk
+STR_CARGO_NAME_SCRAP_METAL.t                                                    :fÈmhulladÈkot
+STR_CARGO_NAME_STONE                                                            :Kı
+STR_CARGO_NAME_STONE.t                                                          :kˆvet
+STR_CARGO_NAME_SUGAR_BEET                                                       :CukorrÈpa
+STR_CARGO_NAME_SUGAR_BEET.t                                                     :cukorrÈp·t
+STR_CARGO_NAME_SUGARCANE                                                        :Cukorn·d
+STR_CARGO_NAME_SUGARCANE.t                                                      :cukorn·dat
+STR_CARGO_NAME_WOOL                                                             :Gyapj˙
+STR_CARGO_NAME_WOOL.t                                                           :gyapj˙t
 
 STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} szeszes ital
 STR_CARGO_UNIT_BAUXITE                                                          :{WEIGHT} bauxit
-STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WEIGHT} √©p√≠t≈ëanyag
+STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WEIGHT} ÈpÌtıanyag
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} vegyszer
 STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} agyag
-STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} l√°da ipari seg√©deszk√∂z
-STR_CARGO_UNIT_FIBRES                                                           :{WEIGHT} n√∂v√©nyi rost
+STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} l·da ipari segÈdeszkˆz
+STR_CARGO_UNIT_FIBRES                                                           :{WEIGHT} nˆvÈnyi rost
 STR_CARGO_UNIT_FISH                                                             :{WEIGHT} hal
-STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} l√°da mez≈ëgazdas√°gi felszerel√©s
-STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} gy√ºm√∂lcs
-STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} f≈±r√©sz√°ru
-STR_CARGO_UNIT_METAL                                                            :{WEIGHT} f√©m
+STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} l·da mezıgazdas·gi felszerelÈs
+STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} gy¸mˆlcs
+STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} f˚rÈsz·ru
+STR_CARGO_UNIT_METAL                                                            :{WEIGHT} fÈm
 STR_CARGO_UNIT_MILK                                                             :{VOLUME} tej
-STR_CARGO_UNIT_MNSP                                                             :{SIGNED_WORD} l√°da gy√°rt√°si seg√©deszk√∂z
-STR_CARGO_UNIT_PETROL                                                           :{VOLUME} √ºzemanyag
-STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} √∫jrahasznos√≠that√≥ √°ru
+STR_CARGO_UNIT_MNSP                                                             :{SIGNED_WORD} l·da gy·rt·si segÈdeszkˆz
+STR_CARGO_UNIT_PETROL                                                           :{VOLUME} ¸zemanyag
+STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} ˙jrahasznosÌthatÛ ·ru
 STR_CARGO_UNIT_SAND                                                             :{WEIGHT} homok
-STR_CARGO_UNIT_SCRAP_METAL                                                      :{WEIGHT} f√©mhullad√©k
-STR_CARGO_UNIT_STONE                                                            :{WEIGHT} k≈ë
-STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} cukorr√©pa
-STR_CARGO_UNIT_SUGARCANE                                                        :{WEIGHT} cukorn√°d
-STR_CARGO_UNIT_WOOL                                                             :{WEIGHT} gyapj√∫
+STR_CARGO_UNIT_SCRAP_METAL                                                      :{WEIGHT} fÈmhulladÈk
+STR_CARGO_UNIT_STONE                                                            :{WEIGHT} kı
+STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} cukorrÈpa
+STR_CARGO_UNIT_SUGARCANE                                                        :{WEIGHT} cukorn·d
+STR_CARGO_UNIT_WOOL                                                             :{WEIGHT} gyapj˙
 
 STR_CID_ALCOHOL                                                                 :{TINYFONT}IT
 STR_CID_BAUXITE                                                                 :{TINYFONT}BX
-STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}√âA
+STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}…A
 STR_CID_CHEMICALS                                                               :{TINYFONT}VS
 STR_CID_CLAY                                                                    :{TINYFONT}AG
 STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}IS
 STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}MF
 STR_CID_FIBRES                                                                  :{TINYFONT}NR
 STR_CID_FISH                                                                    :{TINYFONT}HL
-STR_CID_LUMBER                                                                  :{TINYFONT}F√ú
+STR_CID_LUMBER                                                                  :{TINYFONT}F‹
 STR_CID_MANUFACTURING_SUPPLIES                                                  :{TINYFONT}GS
 STR_CID_METAL                                                                   :{TINYFONT}FM
 STR_CID_MILK                                                                    :{TINYFONT}TJ
-STR_CID_PETROL                                                                  :{TINYFONT}√úA
-STR_CID_RECYCLABLES                                                             :{TINYFONT}√ö√Å
+STR_CID_PETROL                                                                  :{TINYFONT}‹A
+STR_CID_RECYCLABLES                                                             :{TINYFONT}⁄¡
 STR_CID_SAND                                                                    :{TINYFONT}HM
 STR_CID_SCRAP_METAL                                                             :{TINYFONT}FH
-STR_CID_STONE                                                                   :{TINYFONT}K√ñ
+STR_CID_STONE                                                                   :{TINYFONT}K÷
 STR_CID_SUGAR_BEET                                                              :{TINYFONT}CR
 STR_CID_SUGARCANE                                                               :{TINYFONT}CN
 STR_CID_WOOL                                                                    :{TINYFONT}GY
 
-STR_ERR_CLIMATE_TOYLAND                                                         :{ORANGE}A FIRS nem a j√°t√©kvil√°g t√°jhoz lett tervezve.
-STR_ERR_INCOMPATIBLE_PARAM_CANSET                                               :{ORANGE}E02: {YELLOW}Nem kompatibilis param√©ter: {ORANGE}A CanSet 2. param√©tere 0 kell, hogy legyen a FIRS-szel val√≥ haszn√°lathoz. {YELLOW}L√°sd a FIRS ReadMe-t: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
-STR_ERR_INCOMPATIBLE_PARAM_CITYSET                                              :{ORANGE}E02: {YELLOW}Nem kompatibilis param√©ter: {ORANGE}Az NA City Set 2. param√©tere 0 kell, hogy legyen a FIRS-szel val√≥ haszn√°lathoz. {YELLOW}L√°sd a FIRS ReadMe-t: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
-STR_ERR_OPENTTD_VERSION                                                         :{ORANGE}E00: A FIRS-hez az OpenTTD legal√°bb 1.2.0, vagy r22780 trunk verzi√≥ja sz√ºkss√©ges.{YELLOW}L√°sd a FIRS ReadMe-t: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_CLIMATE_TOYLAND                                                         :{ORANGE}A FIRS nem a j·tÈkvil·g t·jhoz lett tervezve.
+STR_ERR_INCOMPATIBLE_SET                                                        :{ORANGE}E01: {YELLOW}Nem kompatibilis NewGRF: {ORANGE}{STRING} {YELLOW}L·sd a FIRS ReadMe-t: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_PARAM_CANSET                                               :{ORANGE}E02: {YELLOW}Nem kompatibilis paramÈter: {ORANGE}A CanSet 2. paramÈtere 0 kell, hogy legyen a FIRS-szel valÛ haszn·lathoz. {YELLOW}L·sd a FIRS ReadMe-t: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_PARAM_CITYSET                                              :{ORANGE}E02: {YELLOW}Nem kompatibilis paramÈter: {ORANGE}Az NA City Set 2. paramÈtere 0 kell, hogy legyen a FIRS-szel valÛ haszn·lathoz. {YELLOW}L·sd a FIRS ReadMe-t: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_SET_TTRS_VERSION                                           :{ORANGE}E04: {YELLOW}Nem kompatibilis verziÛ: {ORANGE}A Total Town Replacement Set 3.11-es vagy ˙jabb verziÛja sz¸ksÈges. {YELLOW}L·sd a FIRS ReadMe-t: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_OPENTTD_VERSION                                                         :{ORANGE}E00: A FIRS-hez az OpenTTD legal·bb 1.2.0, vagy r22780 trunk verziÛja sz¸kssÈges.{YELLOW}L·sd a FIRS ReadMe-t: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 
-STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE                                             :csak a h√≥hat√°r felett √©p√≠thet≈ë.
-STR_ERR_LOCATION_NOT_ON_WATER                                                   :csak sz√°razf√∂ld≈ën √©p√≠thet≈ë.
-STR_ERR_LOCATION_NOT_IN_DESERT                                                  :nem √©p√≠thet≈ë sivatagban.
-STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE                                             :nem √©p√≠thet≈ë meredek lejt≈ëk√∂n.
+STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE                                             :csak a hÛhat·r felett ÈpÌthetı.
+STR_ERR_LOCATION_NOT_ON_WATER                                                   :csak sz·razfˆldın ÈpÌthetı.
+STR_ERR_LOCATION_NOT_IN_DESERT                                                  :nem ÈpÌthetı sivatagban.
+STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE                                             :nem ÈpÌthetı meredek lejtıkˆn.
 
-STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}Termel√©s:{}  2t termel√©s 8t bauxit sz√°ll√≠t√°sa eset√©n{}  2t termel√©s 8t vegyszer sz√°ll√≠t√°sa eset√©n{}  4t termel√©s 8t f√©mhullad√©k sz√°ll√≠t√°sa eset√©n{}{}A termel√©s megn≈ë, ha legal√°bb k√©t k√ºl√∂nf√©le rakom√°nyb√≥l √©rkezik sz√°ll√≠tm√°ny egy h√≥napon bel√ºl.
-STR_EXTRA_BIOREFINERY                                                           :{BLACK}Gabon√°b√≥l √©s cukorb√≥l √ºzemanyagot √©s vegyszereket √°l√≠lt el≈ë.{}{}6t termel√©s 8t sz√°ll√≠t√°sa eset√©n.
-STR_EXTRA_BREWERY                                                               :{BLACK}Termel√©s:{}  3t termel√©s 8t gy√°rt√°si seg√©deszk√∂z sz√°ll√≠t√°sa eset√©n{}  5t termel√©s 8t b√∫za sz√°ll√≠t√°sa eset√©n{}  5t termel√©s 8t gy√ºm√∂lcs sz√°ll√≠t√°sa eset√©n{}{}A termel√©s megn≈ë, ha sz√°ll√≠tm√°ny √©rkezik gy√°rt√°si seg√©deszk√∂z√∂kb≈ël √©s egy m√°sik rakom√°nyb√≥l egy h√≥napon bel√ºl.
-STR_EXTRA_BRICKWORKS                                                            :{BLACK}Termel√©s:{}  2t termel√©s 8t sz√©n sz√°ll√≠t√°sa eset√©n{}  2t termel√©s 8t homok sz√°ll√≠t√°sa eset√©n{}  4t termel√©s 8t agyag sz√°ll√≠t√°sa eset√©n{}{}A termel√©s megn≈ë, ha legal√°bb k√©t k√ºl√∂nf√©le rakom√°nyb√≥l √©rkezik sz√°ll√≠tm√°ny egy h√≥napon bel√ºl.
-STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Termel√©s:{}  2t termel√©s 8t sz√©n sz√°ll√≠t√°sa eset√©n{}  2t termel√©s 8t agyag sz√°ll√≠t√°sa eset√©n{}  4t termel√©s 8t k≈ë sz√°ll√≠t√°sa eset√©n{}{}A termel√©s megn≈ë, ha legal√°bb k√©t k√ºl√∂nf√©le rakom√°nyb√≥l √©rkezik sz√°ll√≠tm√°ny egy h√≥napon bel√ºl.
-STR_EXTRA_DAIRY                                                                 :{BLACK}Termel√©s:{}  3t termel√©s 8t gy√°rt√°si seg√©deszk√∂z sz√°ll√≠t√°sa eset√©n{}  5t termel√©s 8t tej sz√°ll√≠t√°sa eset√©n{}{}8 tonn√°nk√©nt 8 tonn√°ra emelkedik, ha mindk√©t rakom√°nyb√≥l √©rkezik sz√°ll√≠tm√°ny egy h√≥napon bel√ºl.
-STR_EXTRA_ENGINEERING_SUPPLIES                                                  :{BLACK}Ipari seg√©deszk√∂z√∂k sz√°ll√≠t√°sa n√∂velheti a termel√©st.{}{YELLOW}  {COMMA} l√°da sz√°ll√≠tva ebben a h√≥napban
-STR_EXTRA_FARM_SUPPLIES                                                         :{BLACK}Mez≈ëgazdas√°gi felszerel√©s sz√°ll√≠t√°sa n√∂velheti a termel√©st.{}{YELLOW}  {COMMA} l√°da sz√°ll√≠tva ebben a h√≥napban
-STR_EXTRA_FERTILIZER_PLANT                                                      :{BLACK}A vegyszerekb≈ël m≈±tr√°gy√°t √°ll√≠t el≈ë a farmok r√©sz√©re.{}{}8t termel√©s 8t sz√°ll√≠t√°sa eset√©n.
-STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Termel√©s:{}  3t termel√©s 8t gy√°rt√°si seg√©deszk√∂z sz√°ll√≠t√°sa eset√©n{}  5t termel√©s 8t hal sz√°ll√≠t√°sa eset√©n{}{}8 tonn√°nk√©nt 8 tonn√°ra emelkedik, ha mindk√©t rakom√°nyb√≥l √©rkezik sz√°ll√≠tm√°ny egy h√≥napon bel√ºl.
-STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Termel√©s:{}  3t termel√©s 8t gy√°rt√°si seg√©deszk√∂z sz√°ll√≠t√°sa eset√©n{}  5t termel√©s 8t f≈±r√©sz√°ru sz√°ll√≠t√°sa eset√©n{}{}8 tonn√°nk√©nt 8 tonn√°ra emelkedik, ha mindk√©t rakom√°nyb√≥l √©rkezik sz√°ll√≠tm√°ny egy h√≥napon bel√ºl.
-STR_EXTRA_GLASS_WORKS                                                           :{BLACK}√úveg term√©keket, p√©ld√°ul ablak√ºvegeket √©s bef≈ëttes √ºvegeket gy√°rt.{}{}{BLACK}Termel√©s:{}  6t termel√©s 8t homok sz√°ll√≠t√°sa eset√©n{}  2t termel√©s 8t vegyszer sz√°ll√≠t√°sa eset√©n{}{}8 tonn√°nk√©nt 8 tonn√°ra emelkedik, ha mindk√©t rakom√°nyb√≥l √©rkezik sz√°ll√≠tm√°ny egy h√≥napon bel√ºl.
-STR_EXTRA_GRAIN_MILL                                                            :{BLACK}Termel√©s:{}  3t termel√©s 8t gy√°rt√°si seg√©deszk√∂z sz√°ll√≠t√°sa eset√©n{}  5t termel√©s 8t b√∫za sz√°ll√≠t√°sa eset√©n{}{}8 tonn√°nk√©nt 8 tonn√°ra emelkedik, ha mindk√©t rakom√°nyb√≥l √©rkezik sz√°ll√≠tm√°ny egy h√≥napon bel√ºl.
-STR_EXTRA_IRON_WORKS                                                            :{BLACK}Termel√©s:{}  1t termel√©s 8t fa sz√°ll√≠t√°sa eset√©n{}  2t termel√©s 8t vas√©rc sz√°ll√≠t√°sa eset√©n{}{}8 tonn√°nk√©nt 3 tonn√°ra emelkedik, ha mindk√©t rakom√°nyb√≥l √©rkezik sz√°ll√≠tm√°ny egy h√≥napon bel√ºl.
-STR_EXTRA_LIME_KILN                                                             :{BLACK}Termel√©s:{}  4t termel√©s 8t k≈ë sz√°ll√≠t√°sa eset√©n{}  4t termel√©s 8t sz√©n sz√°ll√≠t√°sa eset√©n{}{}8 tonn√°nk√©nt 8 tonn√°ra emelkedik, ha mindk√©t rakom√°nyb√≥l √©rkezik sz√°ll√≠tm√°ny egy h√≥napon bel√ºl.
-STR_EXTRA_LUMBER_YARD                                                           :{BLACK}F√°b√≥l k√©sz√ºlt term√©keket, p√©ld√°ul oszlopokat √©s ker√≠t√©seket gy√°rt.{}{}{BLACK}Termel√©s:{}  2t termel√©s 8t vegyszer sz√°ll√≠t√°sa eset√©n{}  6t termel√©s 8t f≈±r√©sz√°ru sz√°ll√≠t√°sa eset√©n{}{}8 tonn√°nk√©nt 8 tonn√°ra emelkedik, ha mindk√©t rakom√°nyb√≥l √©rkezik sz√°ll√≠tm√°ny egy h√≥napon bel√ºl.
-STR_EXTRA_MACHINE_SHOP                                                          :{BLACK}G√©pj√°rm≈±veket √©p√≠t √©s jav√≠t.{}{}8t termel√©s 8t sz√°ll√≠t√°sa eset√©n.
-STR_EXTRA_MEAT_PACKER                                                           :{BLACK}Termel√©s:{}  3t termel√©s 8t gy√°rt√°si seg√©deszk√∂z sz√°ll√≠t√°sa eset√©n{}  5t termel√©s 8t √°llat sz√°ll√≠t√°sa eset√©n{}{}8 tonn√°nk√©nt 8 tonn√°ra emelkedik, ha mindk√©t rakom√°nyb√≥l √©rkezik sz√°ll√≠tm√°ny egy h√≥napon bel√ºl.
-STR_EXTRA_METAL_FOUNDRY                                                         :{BLACK}F√©meszk√∂z√∂ket, p√©ld√°ul szersz√°mokat √©s alkatr√©szeket gy√°rt.{}{}8t termel√©s 8t sz√°ll√≠t√°sa eset√©n.
-STR_EXTRA_OIL_REFINERY                                                          :{BLACK}Feldolgozza a nyersolajat, √ºzemanyagot √©s vegyszereket √°ll√≠t el≈ë.{}{}6t termel√©s 8t sz√°ll√≠t√°sa eset√©n.
-STR_EXTRA_PAPER_MILL                                                            :{BLACK}F√°t apr√≠t, hogy pap√≠rt √©s kartont gy√°rtson.{}{}{BLACK}Termel√©s:{}  4t termel√©s 8t fa sz√°ll√≠t√°sa eset√©n{}  2t termel√©s 8t agyag sz√°ll√≠t√°sa eset√©n{}  2t termel√©s 8t vegyszer sz√°ll√≠t√°sa eset√©n{}{}A termel√©s megn≈ë, ha legal√°bb k√©t k√ºl√∂nf√©le rakom√°nyb√≥l √©rkezik sz√°ll√≠tm√°ny egy h√≥napon bel√ºl.
-STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}M≈±anyag term√©keket, p√©ld√°ul csomagol√°sokat √©s h√°ztart√°si cikkeket gy√°rt.{}{}6t termel√©s 8t sz√°ll√≠t√°sa eset√©n.
-STR_EXTRA_RECYCLING_PLANT                                                       :{BLACK}√öjrahasznos√≠that√≥ term√©keket dolgoz fel, hogy azok alkalmasak legyenek ipari felhaszn√°l√°sra.{}{}6t termel√©s 8t sz√°ll√≠t√°sa eset√©n.
-STR_EXTRA_SAWMILL                                                               :{BLACK}Feldolgozza a kiv√°gott f√°kat.{}{}6t termel√©s 8t sz√°ll√≠t√°sa eset√©n.
-STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}F√©meszk√∂z√∂ket, p√©ld√°ul szersz√°mokat √©s patk√≥kat gy√°rt.{}{}5t termel√©s 8t sz√°ll√≠t√°sa eset√©n.
-STR_EXTRA_STEELMILL                                                             :{BLACK}Termel√©s:{}  2t termel√©s 8t vas√©rc sz√°ll√≠t√°sa eset√©n{}  2t termel√©s 8t sz√©n sz√°ll√≠t√°sa eset√©n{}  4t termel√©s 8t f√©mhullad√©k sz√°ll√≠t√°sa eset√©n{}{}A termel√©s megn≈ë, ha legal√°bb k√©t k√ºl√∂nf√©le rakom√°nyb√≥l √©rkezik sz√°ll√≠tm√°ny egy h√≥napon bel√ºl.
-STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Termel√©s:{}  3t termel√©s 8t gy√°rt√°si seg√©deszk√∂z sz√°ll√≠t√°sa eset√©n{}  5t termel√©s 8t cukorn√°d sz√°ll√≠t√°sa eset√©n{}{}8 tonn√°nk√©nt 8 tonn√°ra emelkedik, ha mindk√©t rakom√°nyb√≥l √©rkezik sz√°ll√≠tm√°ny egy h√≥napon bel√ºl.
-STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Termel√©s:{}  3t termel√©s 8t gy√°rt√°si seg√©deszk√∂z sz√°ll√≠t√°sa eset√©n{}  5t termel√©s 8t gyapj√∫ sz√°ll√≠t√°sa eset√©n{}  5t termel√©s 8t n√∂v√©nyi rost sz√°ll√≠t√°sa eset√©n{}{}A termel√©s megn≈ë, ha sz√°ll√≠tm√°ny √©rkezik gy√°rt√°si seg√©deszk√∂z√∂kb≈ël √©s egy m√°sik rakom√°nyb√≥l egy h√≥napon bel√ºl.
+STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}TermelÈs:{}  2t termelÈs 8t bauxit sz·llÌt·sa esetÈn{}  2t termelÈs 8t vegyszer sz·llÌt·sa esetÈn{}  4t termelÈs 8t fÈmhulladÈk sz·llÌt·sa esetÈn{}{}A termelÈs megnı, ha legal·bb kÈt k¸lˆnfÈle rakom·nybÛl Èrkezik sz·llÌtm·ny egy hÛnapon bel¸l.
+STR_EXTRA_BIOREFINERY                                                           :{BLACK}Gabon·bÛl Ès cukorbÛl ¸zemanyagot Ès vegyszereket ·lÌlt elı.{}{}6t termelÈs 8t sz·llÌt·sa esetÈn.
+STR_EXTRA_BREWERY                                                               :{BLACK}TermelÈs:{}  3t termelÈs 8t gy·rt·si segÈdeszkˆz sz·llÌt·sa esetÈn{}  5t termelÈs 8t b˙za sz·llÌt·sa esetÈn{}  5t termelÈs 8t gy¸mˆlcs sz·llÌt·sa esetÈn{}{}A termelÈs megnı, ha sz·llÌtm·ny Èrkezik gy·rt·si segÈdeszkˆzˆkbıl Ès egy m·sik rakom·nybÛl egy hÛnapon bel¸l.
+STR_EXTRA_BRICKWORKS                                                            :{BLACK}TermelÈs:{}  2t termelÈs 8t szÈn sz·llÌt·sa esetÈn{}  2t termelÈs 8t homok sz·llÌt·sa esetÈn{}  4t termelÈs 8t agyag sz·llÌt·sa esetÈn{}{}A termelÈs megnı, ha legal·bb kÈt k¸lˆnfÈle rakom·nybÛl Èrkezik sz·llÌtm·ny egy hÛnapon bel¸l.
+STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}TermelÈs:{}  2t termelÈs 8t szÈn sz·llÌt·sa esetÈn{}  2t termelÈs 8t agyag sz·llÌt·sa esetÈn{}  4t termelÈs 8t kı sz·llÌt·sa esetÈn{}{}A termelÈs megnı, ha legal·bb kÈt k¸lˆnfÈle rakom·nybÛl Èrkezik sz·llÌtm·ny egy hÛnapon bel¸l.
+STR_EXTRA_DAIRY                                                                 :{BLACK}TermelÈs:{}  3t termelÈs 8t gy·rt·si segÈdeszkˆz sz·llÌt·sa esetÈn{}  5t termelÈs 8t tej sz·llÌt·sa esetÈn{}{}8 tonn·nkÈnt 8 tonn·ra emelkedik, ha mindkÈt rakom·nybÛl Èrkezik sz·llÌtm·ny egy hÛnapon bel¸l.
+STR_EXTRA_ENGINEERING_SUPPLIES                                                  :{BLACK}Ipari segÈdeszkˆzˆk sz·llÌt·sa nˆvelheti a termelÈst.{}{YELLOW}  {COMMA} l·da sz·llÌtva ebben a hÛnapban
+STR_EXTRA_FARM_SUPPLIES                                                         :{BLACK}Mezıgazdas·gi felszerelÈs sz·llÌt·sa nˆvelheti a termelÈst.{}{YELLOW}  {COMMA} l·da sz·llÌtva ebben a hÛnapban
+STR_EXTRA_FERTILIZER_PLANT                                                      :{BLACK}A vegyszerekbıl m˚tr·gy·t ·llÌt elı a farmok rÈszÈre.{}{}8t termelÈs 8t sz·llÌt·sa esetÈn.
+STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}TermelÈs:{}  3t termelÈs 8t gy·rt·si segÈdeszkˆz sz·llÌt·sa esetÈn{}  5t termelÈs 8t hal sz·llÌt·sa esetÈn{}{}8 tonn·nkÈnt 8 tonn·ra emelkedik, ha mindkÈt rakom·nybÛl Èrkezik sz·llÌtm·ny egy hÛnapon bel¸l.
+STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}TermelÈs:{}  3t termelÈs 8t gy·rt·si segÈdeszkˆz sz·llÌt·sa esetÈn{}  5t termelÈs 8t f˚rÈsz·ru sz·llÌt·sa esetÈn{}{}8 tonn·nkÈnt 8 tonn·ra emelkedik, ha mindkÈt rakom·nybÛl Èrkezik sz·llÌtm·ny egy hÛnapon bel¸l.
+STR_EXTRA_GLASS_WORKS                                                           :{BLACK}‹veg termÈkeket, pÈld·ul ablak¸vegeket Ès befıttes ¸vegeket gy·rt.{}{}{BLACK}TermelÈs:{}  6t termelÈs 8t homok sz·llÌt·sa esetÈn{}  2t termelÈs 8t vegyszer sz·llÌt·sa esetÈn{}{}8 tonn·nkÈnt 8 tonn·ra emelkedik, ha mindkÈt rakom·nybÛl Èrkezik sz·llÌtm·ny egy hÛnapon bel¸l.
+STR_EXTRA_GRAIN_MILL                                                            :{BLACK}TermelÈs:{}  3t termelÈs 8t gy·rt·si segÈdeszkˆz sz·llÌt·sa esetÈn{}  5t termelÈs 8t b˙za sz·llÌt·sa esetÈn{}{}8 tonn·nkÈnt 8 tonn·ra emelkedik, ha mindkÈt rakom·nybÛl Èrkezik sz·llÌtm·ny egy hÛnapon bel¸l.
+STR_EXTRA_IRON_WORKS                                                            :{BLACK}TermelÈs:{}  1t termelÈs 8t fa sz·llÌt·sa esetÈn{}  2t termelÈs 8t vasÈrc sz·llÌt·sa esetÈn{}{}8 tonn·nkÈnt 3 tonn·ra emelkedik, ha mindkÈt rakom·nybÛl Èrkezik sz·llÌtm·ny egy hÛnapon bel¸l.
+STR_EXTRA_LIME_KILN                                                             :{BLACK}TermelÈs:{}  4t termelÈs 8t kı sz·llÌt·sa esetÈn{}  4t termelÈs 8t szÈn sz·llÌt·sa esetÈn{}{}8 tonn·nkÈnt 8 tonn·ra emelkedik, ha mindkÈt rakom·nybÛl Èrkezik sz·llÌtm·ny egy hÛnapon bel¸l.
+STR_EXTRA_LUMBER_YARD                                                           :{BLACK}F·bÛl kÈsz¸lt termÈkeket, pÈld·ul oszlopokat Ès kerÌtÈseket gy·rt.{}{}{BLACK}TermelÈs:{}  2t termelÈs 8t vegyszer sz·llÌt·sa esetÈn{}  6t termelÈs 8t f˚rÈsz·ru sz·llÌt·sa esetÈn{}{}8 tonn·nkÈnt 8 tonn·ra emelkedik, ha mindkÈt rakom·nybÛl Èrkezik sz·llÌtm·ny egy hÛnapon bel¸l.
+STR_EXTRA_MACHINE_SHOP                                                          :{BLACK}GÈpj·rm˚veket ÈpÌt Ès javÌt.{}{}8t termelÈs 8t sz·llÌt·sa esetÈn.
+STR_EXTRA_MEAT_PACKER                                                           :{BLACK}TermelÈs:{}  3t termelÈs 8t gy·rt·si segÈdeszkˆz sz·llÌt·sa esetÈn{}  5t termelÈs 8t ·llat sz·llÌt·sa esetÈn{}{}8 tonn·nkÈnt 8 tonn·ra emelkedik, ha mindkÈt rakom·nybÛl Èrkezik sz·llÌtm·ny egy hÛnapon bel¸l.
+STR_EXTRA_METAL_FABRICATION_PLANT                                               :{BLACK}Festett fÈmalkatrÈszeket gy·rt.{}{}{BLACK}TermelÈs:{}2t termelÈs 8t vegyszer sz·llÌt·sa esetÈn{}6t termelÈs 8t fÈm sz·llÌt·sa esetÈn{}{}8 tonn·nkÈnt 8 tonn·ra emelkedik, ha mindkÈt rakom·nybÛl Èrkezik sz·llÌtm·ny egy hÛnapon bel¸l.
+STR_EXTRA_METAL_FOUNDRY                                                         :{BLACK}FÈmeszkˆzˆket, pÈld·ul konzervdobozokat Ès h·ztart·si segÈdeszkˆzˆket gy·rt.{}{}{BLACK}TermelÈs:{}2t termelÈs 8t vegyszer sz·llÌt·sa esetÈn{}6t termelÈs 8t fÈm sz·llÌt·sa esetÈn{}{}8 tonn·nkÈnt 8 tonn·ra emelkedik, ha mindkÈt rakom·nybÛl Èrkezik sz·llÌtm·ny egy hÛnapon bel¸l.
+STR_EXTRA_OIL_REFINERY                                                          :{BLACK}Feldolgozza a nyersolajat, ¸zemanyagot Ès vegyszereket ·llÌt elı.{}{}6t termelÈs 8t sz·llÌt·sa esetÈn.
+STR_EXTRA_PAPER_MILL                                                            :{BLACK}F·t aprÌt, hogy papÌrt Ès kartont gy·rtson.{}{}{BLACK}TermelÈs:{}  4t termelÈs 8t fa sz·llÌt·sa esetÈn{}  2t termelÈs 8t agyag sz·llÌt·sa esetÈn{}  2t termelÈs 8t vegyszer sz·llÌt·sa esetÈn{}{}A termelÈs megnı, ha legal·bb kÈt k¸lˆnfÈle rakom·nybÛl Èrkezik sz·llÌtm·ny egy hÛnapon bel¸l.
+STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}M˚anyag termÈkeket, pÈld·ul csomagol·sokat Ès h·ztart·si cikkeket gy·rt.{}{}6t termelÈs 8t sz·llÌt·sa esetÈn.
+STR_EXTRA_RECYCLING_PLANT                                                       :{BLACK}⁄jrahasznosÌthatÛ termÈkeket dolgoz fel, hogy azok alkalmasak legyenek ipari felhaszn·l·sra.{}{}6t termelÈs 8t sz·llÌt·sa esetÈn.
+STR_EXTRA_SAWMILL                                                               :{BLACK}Feldolgozza a kiv·gott f·kat.{}{}6t termelÈs 8t sz·llÌt·sa esetÈn.
+STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}FÈmeszkˆzˆket, pÈld·ul szersz·mokat Ès patkÛkat gy·rt.{}{}5t termelÈs 8t sz·llÌt·sa esetÈn.
+STR_EXTRA_STEELMILL                                                             :{BLACK}TermelÈs:{}  2t termelÈs 8t vasÈrc sz·llÌt·sa esetÈn{}  2t termelÈs 8t szÈn sz·llÌt·sa esetÈn{}  4t termelÈs 8t fÈmhulladÈk sz·llÌt·sa esetÈn{}{}A termelÈs megnı, ha legal·bb kÈt k¸lˆnfÈle rakom·nybÛl Èrkezik sz·llÌtm·ny egy hÛnapon bel¸l.
+STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}TermelÈs:{}  3t termelÈs 8t gy·rt·si segÈdeszkˆz sz·llÌt·sa esetÈn{}  5t termelÈs 8t cukorn·d sz·llÌt·sa esetÈn{}{}8 tonn·nkÈnt 8 tonn·ra emelkedik, ha mindkÈt rakom·nybÛl Èrkezik sz·llÌtm·ny egy hÛnapon bel¸l.
+STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}TermelÈs:{}  3t termelÈs 8t gy·rt·si segÈdeszkˆz sz·llÌt·sa esetÈn{}  5t termelÈs 8t gyapj˙ sz·llÌt·sa esetÈn{}  5t termelÈs 8t nˆvÈnyi rost sz·llÌt·sa esetÈn{}{}A termelÈs megnı, ha sz·llÌtm·ny Èrkezik gy·rt·si segÈdeszkˆzˆkbıl Ès egy m·sik rakom·nybÛl egy hÛnapon bel¸l.
 
-STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ DEBUG ------------{}Termel√©s ebben a h√≥napban:{}1. rakom√°ny: {WHITE}{COMMA}{BLACK}{}2. rakom√°ny: {WHITE}{COMMA}{BLACK}{}Eltelt napok az utols√≥ sz√°ll√≠tm√°ny √≥ta: {WHITE}{COMMA}{BLACK}
-STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}El√©rte a maxim√°lis termel√©st
-STR_GENERIC_D0B2                                                                :{BLACK}Gy√°rt√°si seg√©deszk√∂z√∂k sz√°ll√≠t√°sa megdupl√°zza a m√°s rakom√°nyokb√≥l sz√°rmaz√≥ termel√©st.{}{}{STRING}
+STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ DEBUG ------------{}TermelÈs ebben a hÛnapban:{}1. rakom·ny: {WHITE}{COMMA}{BLACK}{}2. rakom·ny: {WHITE}{COMMA}{BLACK}{}Eltelt napok az utolsÛ sz·llÌtm·ny Ûta: {WHITE}{COMMA}{BLACK}
+STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}ElÈrte a maxim·lis termelÈst
+STR_GENERIC_D0B2                                                                :{BLACK}Gy·rt·si segÈdeszkˆzˆk sz·llÌt·sa megdupl·zza a m·s rakom·nyokbÛl sz·rmazÛ termelÈst.{}{}{STRING}
 STR_GENERIC_NEWLINE                                                             :{}
 
-STR_FUND_MIXED_FARM                                                             :{}{BLACK}Helysz√≠n: {YELLOW}Nem √©p√≠thet≈ë havas ter√ºleten, sivatagban √©s meredek lejt≈ën.
-STR_FUND_SHEEP_FARM                                                             :{}{BLACK}Helysz√≠n: {YELLOW}Nem √©p√≠thet≈ë sivatagban √©s lejt≈ën.
-STR_FUND_ARABLE_FARM                                                            :{}{BLACK}Helysz√≠n: {YELLOW}Nem √©p√≠thet≈ë havas ter√ºleten, sivatagban √©s lejt≈ën.
-STR_FUND_DAIRY_FARM                                                             :{}{BLACK}Helysz√≠n: {YELLOW}Nem √©p√≠thet≈ë meredek lejt≈ën.
-STR_FUND_FOREST                                                                 :{}{BLACK}Helysz√≠n: {YELLOW}Nem √©p√≠thet≈ë siatagban.
-STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}Helysz√≠n: {YELLOW}Nem √©p√≠thet≈ë havas ter√ºleten.
+STR_FUND_MIXED_FARM                                                             :{}{BLACK}HelyszÌn: {YELLOW}Nem ÈpÌthetı havas ter¸leten, sivatagban Ès meredek lejtın.
+STR_FUND_SHEEP_FARM                                                             :{}{BLACK}HelyszÌn: {YELLOW}Nem ÈpÌthetı sivatagban Ès lejtın.
+STR_FUND_ARABLE_FARM                                                            :{}{BLACK}HelyszÌn: {YELLOW}Nem ÈpÌthetı havas ter¸leten, sivatagban Ès lejtın.
+STR_FUND_DAIRY_FARM                                                             :{}{BLACK}HelyszÌn: {YELLOW}Nem ÈpÌthetı meredek lejtın.
+STR_FUND_FOREST                                                                 :{}{BLACK}HelyszÌn: {YELLOW}Nem ÈpÌthetı siatagban.
+STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}HelyszÌn: {YELLOW}Nem ÈpÌthetı havas ter¸leten.
 
-STR_STATIONNAME_CHEMICALS                                                       :{STRING} Finom√≠t√≥
-STR_STATIONNAME_DEPOT                                                           :{STRING} Rakt√°r
-STR_STATIONNAME_DREDGING_SITE                                                   :{STRING} Mederkotr√°s
-STR_STATIONNAME_FACTORIES                                                       :{STRING} Gy√°r
+STR_STATIONNAME_CHEMICALS                                                       :{STRING} FinomÌtÛ
+STR_STATIONNAME_DEPOT                                                           :{STRING} Rakt·r
+STR_STATIONNAME_DREDGING_SITE                                                   :{STRING} Mederkotr·s
+STR_STATIONNAME_FACTORIES                                                       :{STRING} Gy·r
 STR_STATIONNAME_FARMS                                                           :{STRING} Farm
-STR_STATIONNAME_FISHING_GROUNDS                                                 :{STRING} Hal√°szter√ºlet
+STR_STATIONNAME_FISHING_GROUNDS                                                 :{STRING} Hal·szter¸let
 STR_STATIONNAME_MARKET                                                          :{STRING} Piac
-STR_STATIONNAME_MILLS                                                           :{STRING} M≈±vek
-STR_STATIONNAME_PITS                                                            :{STRING} K≈ëfejt≈ë
-STR_STATIONNAME_PLANTS                                                          :{STRING} √územ
-STR_STATIONNAME_SMITHY_FORGE                                                    :{STRING} M≈±hely
-STR_STATIONNAME_WELLS                                                           :{STRING} K√∫t
+STR_STATIONNAME_MILLS                                                           :{STRING} M˚vek
+STR_STATIONNAME_PITS                                                            :{STRING} Kıfejtı
+STR_STATIONNAME_PLANTS                                                          :{STRING} ‹zem
+STR_STATIONNAME_SMITHY_FORGE                                                    :{STRING} M˚hely
+STR_STATIONNAME_WELLS                                                           :{STRING} K˙t
 
-STR_IND_ALUMINIUM_PLANT                                                         :Alum√≠niumkoh√≥
-STR_IND_ALUMINIUM_PLANT.t                                                       :alum√≠niumkoh√≥t
+STR_IND_ALUMINIUM_PLANT                                                         :AlumÌniumkohÛ
+STR_IND_ALUMINIUM_PLANT.t                                                       :alumÌniumkohÛt
 STR_IND_ARABLE_FARM                                                             :Farm
 STR_IND_ARABLE_FARM.t                                                           :farmot
-STR_IND_BAUXITE_MINE                                                            :Bauxitb√°nya
-STR_IND_BAUXITE_MINE.t                                                          :bauxitb√°ny√°t
-STR_IND_BIOREFINERY                                                             :Bio√ºzem
-STR_IND_BIOREFINERY.t                                                           :bio√ºzemet
-STR_IND_BREWERY                                                                 :S√∂rf≈ëzde
-STR_IND_BREWERY.t                                                               :s√∂rf≈ëzd√©t
-STR_IND_BRICK_WORKS                                                             :T√©glagy√°r
-STR_IND_BRICK_WORKS.t                                                           :t√©glagy√°rat
-STR_IND_BUILDERS_YARD                                                           :√âp√≠tkez√©s
-STR_IND_BUILDERS_YARD.t                                                         :√©p√≠tkez√©si ter√ºletet
-STR_IND_CEMENT_PLANT                                                            :Cementgy√°r
-STR_IND_CEMENT_PLANT.t                                                          :cementgy√°rat
-STR_IND_CLAY_PIT                                                                :Agyagb√°nya
-STR_IND_CLAY_PIT.t                                                              :agyagb√°ny√°t
-STR_IND_DAIRY                                                                   :Tej√ºzem
-STR_IND_DAIRY.t                                                                 :tej√ºzemet
-STR_IND_DAIRYFARM                                                               :Tehen√©szet
-STR_IND_DAIRYFARM.t                                                             :tehen√©szetet
-STR_IND_DREDGING_SITE                                                           :Mederkotr√°s
-STR_IND_DREDGING_SITE.t                                                         :mederkotr√°si ter√ºletet
-STR_IND_FERTILISER_PLANT                                                        :M≈±tr√°gya√ºzem
-STR_IND_FERTILISER_PLANT.t                                                      :m≈±tr√°gya√ºzemet
-STR_IND_FISHING_GROUND                                                          :Hal√°szter√ºlet
-STR_IND_FISHING_GROUND.t                                                        :hal√°szter√ºletet
-STR_IND_FISHING_HARBOUR                                                         :Hal√°szkik√∂t≈ë
-STR_IND_FISHING_HARBOUR.t                                                       :hal√°szkik√∂t≈ët
+STR_IND_BAUXITE_MINE                                                            :Bauxitb·nya
+STR_IND_BAUXITE_MINE.t                                                          :bauxitb·ny·t
+STR_IND_BIOREFINERY                                                             :Bio¸zem
+STR_IND_BIOREFINERY.t                                                           :bio¸zemet
+STR_IND_BREWERY                                                                 :Sˆrfızde
+STR_IND_BREWERY.t                                                               :sˆrfızdÈt
+STR_IND_BRICK_WORKS                                                             :TÈglagy·r
+STR_IND_BRICK_WORKS.t                                                           :tÈglagy·rat
+STR_IND_BUILDERS_YARD                                                           :…pÌtkezÈs
+STR_IND_BUILDERS_YARD.t                                                         :ÈpÌtkezÈsi ter¸letet
+STR_IND_CEMENT_PLANT                                                            :Cementgy·r
+STR_IND_CEMENT_PLANT.t                                                          :cementgy·rat
+STR_IND_CLAY_PIT                                                                :Agyagb·nya
+STR_IND_CLAY_PIT.t                                                              :agyagb·ny·t
+STR_IND_DAIRY                                                                   :Tej¸zem
+STR_IND_DAIRY.t                                                                 :tej¸zemet
+STR_IND_DAIRYFARM                                                               :TehenÈszet
+STR_IND_DAIRYFARM.t                                                             :tehenÈszetet
+STR_IND_DREDGING_SITE                                                           :Mederkotr·s
+STR_IND_DREDGING_SITE.t                                                         :mederkotr·si ter¸letet
+STR_IND_FERTILISER_PLANT                                                        :M˚tr·gya¸zem
+STR_IND_FERTILISER_PLANT.t                                                      :m˚tr·gya¸zemet
+STR_IND_FISHING_GROUND                                                          :Hal·szter¸let
+STR_IND_FISHING_GROUND.t                                                        :hal·szter¸letet
+STR_IND_FISHING_HARBOUR                                                         :Hal·szkikˆtı
+STR_IND_FISHING_HARBOUR.t                                                       :hal·szkikˆtıt
 STR_IND_FOOD_MARKET                                                             :Piac
 STR_IND_FOOD_MARKET.t                                                           :piacot
-STR_IND_FURNITURE_FACTORY                                                       :B√∫torgy√°r
-STR_IND_FURNITURE_FACTORY.t                                                     :b√∫torgy√°rat
-STR_IND_GLASS_WORKS                                                             :√úveggy√°r
-STR_IND_GLASS_WORKS.t                                                           :√ºveggy√°rat
+STR_IND_FURNITURE_FACTORY                                                       :B˙torgy·r
+STR_IND_FURNITURE_FACTORY.t                                                     :b˙torgy·rat
+STR_IND_GLASS_WORKS                                                             :‹veggy·r
+STR_IND_GLASS_WORKS.t                                                           :¸veggy·rat
 STR_IND_GRAIN_MILL                                                              :Malom
 STR_IND_GRAIN_MILL.t                                                            :malmot
-STR_IND_HARDWARE_STORE                                                          :F√©m√°ru-bolt
-STR_IND_HARDWARE_STORE.t                                                        :f√©m√°ru-boltot
-STR_IND_HOTEL                                                                   :Sz√°lloda
-STR_IND_HOTEL.t                                                                 :sz√°llod√°t
-STR_IND_IRON_WORKS                                                              :Vaskoh√≥
-STR_IND_IRON_WORKS.t                                                            :vaskoh√≥t
+STR_IND_HARDWARE_STORE                                                          :FÈm·ru-bolt
+STR_IND_HARDWARE_STORE.t                                                        :fÈm·ru-boltot
+STR_IND_HOTEL                                                                   :Sz·lloda
+STR_IND_HOTEL.t                                                                 :sz·llod·t
+STR_IND_IRON_WORKS                                                              :VaskohÛ
+STR_IND_IRON_WORKS.t                                                            :vaskohÛt
 STR_IND_JUNKYARD                                                                :Roncstelep
 STR_IND_JUNKYARD.t                                                              :roncstelepet
-STR_IND_LIME_KILN                                                               :M√©sz√©get≈ë
-STR_IND_LIME_KILN.t                                                             :m√©sz√©get≈ët
+STR_IND_LIME_KILN                                                               :MÈszÈgetı
+STR_IND_LIME_KILN.t                                                             :mÈszÈgetıt
 STR_IND_LUMBER_YARD                                                             :Fatelep
 STR_IND_LUMBER_YARD.t                                                           :fatelepet
-STR_IND_MACHINE_SHOP                                                            :G√©pj√°rm≈±√ºzem
-STR_IND_MACHINE_SHOP.t                                                          :g√©pj√°rm≈±√ºzemet
-STR_IND_METAL_FOUNDRY                                                           :√ñnt≈ëm≈±hely
-STR_IND_METAL_FOUNDRY.t                                                         :√∂nt≈ëm≈±helyt
+STR_IND_MACHINE_SHOP                                                            :GÈpj·rm˚¸zem
+STR_IND_MACHINE_SHOP.t                                                          :gÈpj·rm˚¸zemet
+STR_IND_METAL_FABRICATION_PLANT                                                 :FÈmalkatrÈszgy·rtÛ ¸zem
+STR_IND_METAL_FABRICATION_PLANT.t                                               :fÈmalkatrÈszgy·rtÛ ¸zemet
+STR_IND_METAL_FOUNDRY                                                           :FÈmfeldolgozÛ m˚hely
+STR_IND_METAL_FOUNDRY.t                                                         :fÈmfeldolgozÛ m˙helyt
 STR_IND_MIXEDFARM                                                               :Vegyes farm
 STR_IND_MIXEDFARM.t                                                             :vegyes farmot
-STR_IND_PETROLPUMP                                                              :Benzink√∫t
+STR_IND_PETROLPUMP                                                              :Benzink˙t
 STR_IND_PETROLPUMP.t                                                            :benzinkutat
-STR_IND_PLASTICS_PLANT                                                          :M≈±anyaggy√°r
-STR_IND_PLASTICS_PLANT.t                                                        :m≈±anyaggy√°rat
-STR_IND_QUARRY                                                                  :K≈ëfejt≈ë
-STR_IND_QUARRY.t                                                                :k≈ëfejt≈ët
-STR_IND_RECYCLING_DEPOT                                                         :Hullad√©kgy≈±jt≈ë
-STR_IND_RECYCLING_DEPOT.t                                                       :hullad√©kgy≈±jt≈ët
-STR_IND_RECYCLING_PLANT                                                         :√örjahasznos√≠t√≥ telep
-STR_IND_RECYCLING_PLANT.t                                                       :√∫rjahasznos√≠t√≥ telepet
-STR_IND_RETAILMARKET                                                            :√Åruh√°z
-STR_IND_RETAILMARKET.t                                                          :√°ruh√°zat
+STR_IND_PLASTICS_PLANT                                                          :M˚anyaggy·r
+STR_IND_PLASTICS_PLANT.t                                                        :m˚anyaggy·rat
+STR_IND_QUARRY                                                                  :Kıfejtı
+STR_IND_QUARRY.t                                                                :kıfejtıt
+STR_IND_RECYCLING_DEPOT                                                         :HulladÈkgy˚jtı
+STR_IND_RECYCLING_DEPOT.t                                                       :hulladÈkgy˚jtıt
+STR_IND_RECYCLING_PLANT                                                         :⁄rjahasznosÌtÛ telep
+STR_IND_RECYCLING_PLANT.t                                                       :˙rjahasznosÌtÛ telepet
+STR_IND_RETAILMARKET                                                            :¡ruh·z
+STR_IND_RETAILMARKET.t                                                          :·ruh·zat
 STR_IND_SHEEPFARM                                                               :Birkafarm
 STR_IND_SHEEPFARM.t                                                             :birkafarmot
-STR_IND_SMITHY_FORGE                                                            :Kov√°csm≈±hely
-STR_IND_SMITHY_FORGE.t                                                          :kov√°csm≈±helyt
-STR_IND_STOCKYARD                                                               :V√°g√≥h√≠d
-STR_IND_STOCKYARD.t                                                             :v√°g√≥hidat
-STR_IND_SUGAR_REFINERY                                                          :Cukorfinom√≠t√≥
-STR_IND_SUGAR_REFINERY.t                                                        :cukorfinom√≠t√≥t
+STR_IND_SMITHY_FORGE                                                            :Kov·csm˚hely
+STR_IND_SMITHY_FORGE.t                                                          :kov·csm˚helyt
+STR_IND_STOCKYARD                                                               :V·gÛhÌd
+STR_IND_STOCKYARD.t                                                             :v·gÛhidat
+STR_IND_SUGAR_REFINERY                                                          :CukorfinomÌtÛ
+STR_IND_SUGAR_REFINERY.t                                                        :cukorfinomÌtÛt
 STR_IND_SUPERMARKET                                                             :Szupermarket
 STR_IND_SUPERMARKET.t                                                           :szupermarketet
-STR_IND_TEXTILE_MILL                                                            :Textil√ºzem
-STR_IND_TEXTILE_MILL.t                                                          :textil√ºzemet
+STR_IND_TEXTILE_MILL                                                            :Textil¸zem
+STR_IND_TEXTILE_MILL.t                                                          :textil¸zemet
