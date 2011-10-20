@@ -20,6 +20,10 @@ STR_PARAM_NAME_PRIMARY_PRODUCTION_DECREASE                                      
 STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            :Secundaire industrieën kunnen sluiten
 STR_PARAM_VALUE_ECONOMIES_TEST_ECONOMY                                          :Test Economie
 STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0                                         :Geen limiet
+STR_PARAM_NAME_STAT_RATING                                                      :Station waarderingsalgoritme
+STR_PARAM_VALUE_STAT_RATING_DEFAULT                                             :Standaard
+STR_PARAM_VALUE_STAT_RATING_REDUCED_TIME                                        :Effect van "tijd sinds laatste goederen-laadmoment" is verminderd
+STR_PARAM_VALUE_STAT_RATING_100                                                 :Altijd 100%
 
 
 STR_CARGO_NAME_ALCOHOL                                                          :Alcohol
@@ -120,7 +124,8 @@ STR_EXTRA_LIME_KILN                                                             
 STR_EXTRA_LUMBER_YARD                                                           :{BLACK}Maakt onder andere houten palen en stijgerplanken.{}{}{BLACK}Productie:{}  2t per 8t geleverde chemicaliën{}  6t per 8t geleverd gezaagd hout{}{}Verhoogt tot 8t per 8t als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
 STR_EXTRA_MACHINE_SHOP                                                          :{BLACK}Bouwt en onderhoudt machines.{}{}8t produktie voor iedere 8t geleverd.
 STR_EXTRA_MEAT_PACKER                                                           :{BLACK}Productie:{}  3t per 8t geleverde produktiehulpgoederen{}  5t per 8t geleverd vee{}{}Verhoogt tot 8t per 8t als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
-STR_EXTRA_METAL_FOUNDRY                                                         :{BLACK}Maakt metalen gereedschappen en onderdelen.{}{}8t produktie voor iedere 8t geleverd.
+STR_EXTRA_METAL_FABRICATION_PLANT                                               :{BLACK}Maakt geverfde metalen onderdelen.{}{}{BLACK}Productie:{}2t per 8t geleverde chemicaliën{}6t per 8t geleverd metaal{}{}Verhoogt tot 8t per 8t als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
+STR_EXTRA_METAL_FOUNDRY                                                         :{BLACK}Maakt onderdelen uit metalen platen, zoals blikken en huishoudapparatuur.{}{}{BLACK}Productie:{}2t per 8t geleverde chemicaliën{}6t per 8t geleverd metaal{}{}Verhoogt tot 8t per 8t als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
 STR_EXTRA_OIL_REFINERY                                                          :{BLACK}Verwerkt ruwe olie tot benzine en chemicaliën.{}{}6t produktie voor iedere 8t geleverd.
 STR_EXTRA_PAPER_MILL                                                            :{BLACK}Maakt papier en karton uit houtpulp.{}{}{BLACK}Productie:{}  4t per 8t geleverd hout{}  2t per 8t geleverd klei{}  2t per 8t geleverde chemicaliën{}{}Productie verhoogt als twee of meer vrachtsoorten binnen een maand van elkaar worden geleverd.
 STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}Maakt plasticproducten zoals verpakkingen en huishoudartikelen.{}{}6t produktie voor iedere 8t geleverd.
@@ -182,7 +187,8 @@ STR_IND_JUNKYARD                                                                
 STR_IND_LIME_KILN                                                               :Kalkoven
 STR_IND_LUMBER_YARD                                                             :Houtwerkplaats
 STR_IND_MACHINE_SHOP                                                            :Machinewerkplaats
-STR_IND_METAL_FOUNDRY                                                           :IJzergieterij
+STR_IND_METAL_FABRICATION_PLANT                                                 :Metalen onderdelenfabriek
+STR_IND_METAL_FOUNDRY                                                           :Metaalwerkplaats
 STR_IND_MIXEDFARM                                                               :Gemengd boerenbedrijf
 STR_IND_PETROLPUMP                                                              :Tankstation
 STR_IND_PLASTICS_PLANT                                                          :Kunststoffabriek
