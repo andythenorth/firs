@@ -37,6 +37,10 @@ bundle_xz: $(XZ_FILENAME)
 # Install targets
 ################################################################
 install: $(DIR_NAME)
+ifeq ($(INSTALL_DIR),"")
+	$(_E) "No install dir defined! Aborting"
+	$(_V) false
+endif
 	$(_E) "[INSTALL] to $(INSTALL_DIR)"
 	$(_V) install -d $(INSTALL_DIR)
 	$(_V) install -m644 $(TARGET_FILES) $(INSTALL_DIR)

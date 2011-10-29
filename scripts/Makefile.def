@@ -13,7 +13,7 @@ NML_FLAGS      ?= -c
 CC             ?= gcc
 CC_FLAGS       ?= -C -E - <
 
-GIMP           ?= $(shell [ `which gimp` ] && echo "gimp" || echo "")
+GIMP           ?= $(shell [ `which gimp 2>/dev/null` ] && echo "gimp" || echo "")
 GIMP_FLAGS     ?= -i -b - <
 
 # Macs have a different md5 command than linux or mingw envirnoment:
@@ -76,14 +76,17 @@ endif
 ################################################################
 PROJECT_NAME := $(basename $(firstword $(TARGET_FILES)))
 
+# If we are not given an install dir explicitly we'll try to
+#    find the default one for the OS we have
+ifndef $(INSTALL_DIR)
+
 # Determine the OS we run on and set the default install path accordingly
 OSTYPE:=$(shell uname -s)
-ifeq ($(OSTYPE),Linux)
-INSTALL_DIR?=$(HOME)/.openttd/data/$(PROJECT_NAME)
-else
+
 ifeq ($(OSTYPE),Darwin)
-INSTALL_DIR?=$(HOME)/Documents/OpenTTD/data/$(PROJECT_NAME)
-else
+INSTALL_DIR :=$(HOME)/Documents/OpenTTD/data/$(PROJECT_NAME)
+endif
+
 ifeq ($(shell echo "$(OSTYPE)" | cut -d_ -f1),MINGW32)
 # If CC has been set to the default implicit value (cc), check if it can be used. Otherwise use a saner default.
 ifeq "$(origin CC)" "default"
@@ -91,14 +94,21 @@ ifeq "$(origin CC)" "default"
 endif
 WIN_VER = $(shell echo "$(OSTYPE)" | cut -d- -f2 | cut -d. -f1)
 ifeq ($(WIN_VER),5)
-	INSTALL_DIR?=C:\Documents and Settings\All Users\Shared Documents\OpenTTD\data\$(PROJECT_NAME)
+	INSTALL_DIR :=C:\Documents and Settings\All Users\Shared Documents\OpenTTD\data\$(PROJECT_NAME)
 else
-	INSTALL_DIR?=C:\Users\Public\Documents\OpenTTD\data\$(PROJECT_NAME)
-endif
-else
-INSTALL_DIR?=
+	INSTALL_DIR :=C:\Users\Public\Documents\OpenTTD\data\$(PROJECT_NAME)
 endif
 endif
+
+ifeq ($(shell echo "$(OSTYPE)" | cut -d_ -f1),CYGWIN)
+INSTALL_DIR :=$(shell cygpath -A -O)/OpenTTD/data/$(PROJECT_NAME)
+endif
+
+# If non of the above matched, we'll assume we're on a unix-like system
+ifeq ($(OSTYPE),Linux)
+INSTALL_DIR := $(HOME)/.openttd/data/$(PROJECT_NAME)
+endif
+
 endif
 DOCDIR ?= $(INSTALL_DIR)
 
