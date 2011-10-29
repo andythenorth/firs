@@ -27,12 +27,19 @@
 /* First fill the stack for the string parameters before actually
  * returning the string
  */
-switch (FEAT_INDUSTRIES, SELF, THIS_ID(extra_text), [
+switch (FEAT_INDUSTRIES, SELF, THIS_ID(extra_text_debug), [
 			STORE_TEMP(produced_this_month_1,256),
 			STORE_TEMP(produced_this_month_2,257),
-			STORE_TEMP(current_date - max( max(LOAD_PERM(var_date_received_1), LOAD_PERM(var_date_received_2)), LOAD_PERM(var_date_received_3)), 258 ),
+			STORE_TEMP(current_date - max( max(LOAD_PERM(var_date_received_1), LOAD_PERM(var_date_received_2)), LOAD_PERM(var_date_received_3)), 258)
+			]) {
+	return string(THIS_STR_DEBUG_TEXT);
+}
+switch (FEAT_INDUSTRIES, SELF, THIS_ID(extra_text), [
+#ifdef THIS_STR_EXTRA_TEXT_PARAM0
+			STORE_TEMP(THIS_STR_EXTRA_TEXT_PARAM0, 256),
+#endif
 			show_debug_texts
 			]) {
-	1: return string(THIS_STR_DEBUG_TEXT);
+	1: THIS_ID(extra_text_debug);
 	return string(THIS_STR_EXTRA_TEXT);
 }
