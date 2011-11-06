@@ -266,7 +266,7 @@ item(FEAT_INDUSTRIES, junkyard, IND_JUNKYARD_ID) {
 		prod_decrease_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_GENERAL;
 		new_ind_msg:            TTD_STR_NEWS_INDUSTRY_CONSTRUCTION;
 		name:                   string(STR_IND_JUNKYARD);
-		prod_cargo_types: [SCRP];
+		prod_cargo_types: [SCMT];
 		accept_cargo_types: [ENSP];
 		prod_multiplier: [6, 0];
 		input_multiplier_1: [0, 0];

@@ -125,7 +125,7 @@ SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
  * First cargo is always MNSP, 2nd is randomly a choice of 4,
  * 3rd cargo is not allowed nor defined */
 random_switch (FEAT_INDUSTRIES, SELF, THIS_ID(random_output_cargo)) {
-	1: return SCRP;   // scrap metal
+	1: return SCMT;   // scrap metal
 	1: return RFPR;   // chemicals
 	1: return BDMT;   // building materials
 	1: return FMSP;   // farm supplies
@@ -148,7 +148,7 @@ item(FEAT_INDUSTRIES, recycling_plant, IND_RECYCLINGPLANT_ID) {
 		prod_decrease_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_FARM;
 		new_ind_msg:            TTD_STR_NEWS_INDUSTRY_CONSTRUCTION;
 		name:                   string(STR_IND_RECYCLING_PLANT);
-		prod_cargo_types:      [SCRP, MNSP];
+		prod_cargo_types:      [SCMT, MNSP];
 		accept_cargo_types:    [RCYC];
 		prod_multiplier: [0, 0];
 		input_multiplier_1: [0, 0];

@@ -236,7 +236,7 @@ switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(anim_control), (extra_callback_info1 & 
 item(FEAT_INDUSTRYTILES, THIS_ID(tile), 185) {
 	property {
 		substitute:         0;
-		accepted_cargos:    [[AORE, 8], [RFPR, 8], [SCRP, 8]];
+		accepted_cargos:    [[AORE, 8], [RFPR, 8], [SCMT, 8]];
 		land_shape_flags:   bitmask(LSF_ONLY_ON_FLAT_LAND);
 		callback_flags:     bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 		animation_info:     [ANIMATION_LOOPING, 47];
@@ -381,7 +381,7 @@ item(FEAT_INDUSTRIES, aluminium_plant, IND_ALUMINIUMPLANT_ID) {
 		name:                   string(STR_IND_ALUMINIUM_PLANT);
 		nearby_station_name:    string(STR_STATIONNAME_PLANTS);
 		prod_cargo_types:       [STEL];
-		accept_cargo_types:     [AORE, RFPR, SCRP];
+		accept_cargo_types:     [AORE, RFPR, SCMT];
 		prod_multiplier: [0, 0];
 		input_multiplier_1: [0, 0];
 		input_multiplier_2: [0, 0];
