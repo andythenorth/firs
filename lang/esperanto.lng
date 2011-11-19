@@ -1,0 +1,206 @@
+##grflangid 0x05
+##plural 0
+
+STR_GRF_DESC                                                                    :{ORANGE}FIRS Industry Replacement Set{}{BLACK}De {SILVER}andythenorth{BLACK} kaj {SILVER}FooBar{BLACK}.{}{BLACK}'1,000 revizoj kaj nombranta...'{BLACK}{}{}Retpaĝo: {SILVER}www.tt-foundry.com/sets/FIRS{BLACK}.Licenco: {SILVER}GPL v2{BLACK}.Specialiaj dankoj al {SILVER}Ammler{BLACK}, {SILVER}Core Xii{BLACK}, {SILVER}Irwe{BLACK}, {SILVER}planetmaker{BLACK} kaj {SILVER}Zephyris{BLACK}.Uzas partojn de {SILVER}eGRVTS{BLACK}, {SILVER}ISR{BLACK} kaj {SILVER}OpenGFX{BLACK}.
+STR_GRF_NAME                                                                    :{TITLE}
+
+STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :{SILVER}Maksimuma distanco de fiŝkaptejoj, oleplatformoj, kaj skrapejoj de la marbordo en kaheloj.
+STR_PARAM_DESC_DEBUG                                                            :Nur por disvolvigantoj
+STR_PARAM_DESC_ECONOMIES                                                        :Kiam elfinis, FIRS havos diversajn ekonomiojn. Ŝarĝoj kaj industrioj varias en ĉiu ekonomio. Ŝarĝaj pagaj procentoj ankaŭ estas diferenca en ĉiu ekonomio. {}{}{SILVER}Hodiaŭa nur unu ekonomio estas disponebla :)
+STR_PARAM_DESC_NEVER_CLOSE                                                      :Norme, FIRS unuaj industrioj ne fermos.{}{}Se unua fermo estas agema, unuaj industrioj fermos kiam produkto malplialtigas al malgrandajn procentojn (la procento varias por ĉiun industrian tipon). {SILVER}Bezonas 'unua produkto malplialtigi' ageman.
+STR_PARAM_DESC_NO_OPENINGS                                                      :Ne novajn industriojn estos konstruata dum la ludo. {}Ludistoj ne povos fundi aŭ prospektori.  {}Industrioj estos konstruata je la eko de la ludo per la mapa kreinto(dependi de la mapa agordoj estas uzata).
+STR_PARAM_DESC_PRIMARY_PRODUCTION_DECREASE                                      :Norme, FIRS unua industria produkto ne malplialtigos.{}{}Se unua produkto malplialtigi estas agema, estas elbo ke produkto malplialtigos se ne provizoj liveris en unu monato. Se produkta procento estas granda, okazo de malplialtigo estos granda.
+STR_PARAM_DESC_SECONDARY_NEVER_CLOSE                                            :Norme, FIRS  duaj industrioj ne fermos.{}{}Se dua fermo estas agema, duaj industrioj eble fermas se ne ŝarĝon estas transporta por longetempo.
+STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY                                   :Maksimuma marborda distanco de mara industrioj en kaheloj
+STR_PARAM_NAME_DEBUG                                                            :Montri riparaj tekstoj
+STR_PARAM_NAME_ECONOMIES                                                        :Ekonomio
+STR_PARAM_NAME_NEVER_CLOSE                                                      :Permesi unuajn industriojn fermi
+STR_PARAM_NAME_NO_OPENINGS                                                      :Ne permesi industriajn konstruo dum la ludo
+STR_PARAM_NAME_PRIMARY_PRODUCTION_DECREASE                                      :Permesi unuan produkton malplialtigi
+STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            :Permesi duajn industriojn fermi
+STR_PARAM_VALUE_ECONOMIES_TEST_ECONOMY                                          :Provaĵa Ekonomio
+STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0                                         :Ne limigo
+STR_PARAM_NAME_STAT_RATING                                                      :Stacidoma inda algoritmo
+STR_PARAM_VALUE_STAT_RATING_DEFAULT                                             :Norme
+STR_PARAM_VALUE_STAT_RATING_REDUCED_TIME                                        :Efekto de "tempo de kiam antaŭa ŝarĝa preno" estas reduktata
+STR_PARAM_VALUE_STAT_RATING_100                                                 :Ĉiam 100%
+
+
+STR_CARGO_NAME_ALCOHOL                                                          :Alkoholo
+STR_CARGO_NAME_BAUXITE                                                          :Baksajto
+STR_CARGO_NAME_BUILDING_MATERIALS                                               :Konstruaj Materialoj
+STR_CARGO_NAME_CHEMICALS                                                        :Ĥemiaĵoj
+STR_CARGO_NAME_CLAY                                                             :Argilo
+STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :Inĝenieraprovizoj
+STR_CARGO_NAME_FIBRES                                                           :Naturaj Fibroj
+STR_CARGO_NAME_FISH                                                             :Fiŝo
+STR_CARGO_NAME_FARM_SUPPLIES                                                    :Terkulturaprovizoj
+STR_CARGO_NAME_FRUITS                                                           :Fruktoj
+STR_CARGO_NAME_LUMBER                                                           :Prilaborita Ligno
+STR_CARGO_NAME_METAL                                                            :Metalo
+STR_CARGO_NAME_MILK                                                             :Lakto
+STR_CARGO_NAME_MANUFACTURING_SUPPLIES                                           :Fabrikaprovizoj
+STR_CARGO_NAME_PETROL                                                           :Petrolo
+STR_CARGO_NAME_RECYCLABLES                                                      :Reuzadoj
+STR_CARGO_NAME_SAND                                                             :Sablo
+STR_CARGO_NAME_SCRAP_METAL                                                      :Peceta Metalo
+STR_CARGO_NAME_STONE                                                            :Ŝtono
+STR_CARGO_NAME_SUGAR_BEET                                                       :Sukerbeto
+STR_CARGO_NAME_SUGARCANE                                                        :Sukerkano
+STR_CARGO_NAME_WOOL                                                             :Lano
+
+STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} da alkoholo
+STR_CARGO_UNIT_BAUXITE                                                          :{WEIGHT} da baksajto
+STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WEIGHT} da konstruaj materialoj
+STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} da ĥemiaĵoj
+STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} da argilo
+STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} kesto{P 0 "" j} da inĝenieraprovizoj
+STR_CARGO_UNIT_FIBRES                                                           :{WEIGHT} da naturaj fibroj
+STR_CARGO_UNIT_FISH                                                             :{WEIGHT} da fiŝo
+STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} kesto{P 0 "" j} da terkultulaprovizoj
+STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} da fruktoj
+STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} da prilaborita ligno
+STR_CARGO_UNIT_METAL                                                            :{WEIGHT} da metalo
+STR_CARGO_UNIT_MILK                                                             :{VOLUME} da lakto
+STR_CARGO_UNIT_MNSP                                                             :{SIGNED_WORD} kesto{P 0 "" j} da fabrikaprovizoj
+STR_CARGO_UNIT_PETROL                                                           :{VOLUME} da petrolo
+STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} da reuzadoj
+STR_CARGO_UNIT_SAND                                                             :{WEIGHT} da sablo
+STR_CARGO_UNIT_SCRAP_METAL                                                      :{WEIGHT} da peceta metalo
+STR_CARGO_UNIT_STONE                                                            :{WEIGHT} da ŝtono
+STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} da sukerbeto
+STR_CARGO_UNIT_SUGARCANE                                                        :{WEIGHT} da sukerkano
+STR_CARGO_UNIT_WOOL                                                             :{WEIGHT} da lano
+
+STR_CID_ALCOHOL                                                                 :{TINYFONT}AL
+STR_CID_BAUXITE                                                                 :{TINYFONT}BK
+STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}KM
+STR_CID_CHEMICALS                                                               :{TINYFONT}ĤE
+STR_CID_CLAY                                                                    :{TINYFONT}AR
+STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}IP
+STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}TP
+STR_CID_FIBRES                                                                  :{TINYFONT}NF
+STR_CID_FISH                                                                    :{TINYFONT}FI
+STR_CID_LUMBER                                                                  :{TINYFONT}PL
+STR_CID_MANUFACTURING_SUPPLIES                                                  :{TINYFONT}FP
+STR_CID_METAL                                                                   :{TINYFONT}ML
+STR_CID_MILK                                                                    :{TINYFONT}LK
+STR_CID_PETROL                                                                  :{TINYFONT}PT
+STR_CID_RECYCLABLES                                                             :{TINYFONT}RZ
+STR_CID_SAND                                                                    :{TINYFONT}SA
+STR_CID_SCRAP_METAL                                                             :{TINYFONT}PM
+STR_CID_STONE                                                                   :{TINYFONT}ŜT
+STR_CID_SUGAR_BEET                                                              :{TINYFONT}SB
+STR_CID_SUGARCANE                                                               :{TINYFONT}SK
+STR_CID_WOOL                                                                    :{TINYFONT}LN
+
+STR_ERR_CLIMATE_TOYLAND                                                         :{ORANGE}FIRS ne estas farata por kongrui ĉe la Toyland klimato
+STR_ERR_INCOMPATIBLE_SET                                                        :{ORANGE}E01: {YELLOW}Malkongrua aro: {ORANGE}{STRING} {YELLOW}Legu FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_PARAM_CANSET                                               :{ORANGE}E02: {YELLOW}Malkongrua parametro: {ORANGE}CanSet parametro 2 devas esti 0 por kongrui ĉe FIRS. {YELLOW}Legu FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_PARAM_CITYSET                                              :{ORANGE}E02: {YELLOW}Malkongrua parametro: {ORANGE}NA City Set parametro 2 devas esti 0 por kongrui ĉe FIRS. {YELLOW}Legu FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_SET_TTRS_VERSION                                           :{ORANGE}E04: {YELLOW}Malkongrua versio: {ORANGE}Total Town Replacement Set devas esti versio release 3.11 aŭ pli nova. {YELLOW}Legu FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_OPENTTD_VERSION                                                         :{ORANGE}E00: FIRS bezonas OpenTTD 1.2.0 / trunk r22780 aŭ pli freŝa. {YELLOW}Legu FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+
+STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE                                             :devas loki sub la neĝa linio.
+STR_ERR_LOCATION_NOT_ON_WATER                                                   :devas loki sur seka tero.
+STR_ERR_LOCATION_NOT_IN_DESERT                                                  :ne devas loki en la dezerto.
+STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE                                             :ne povas loki sur krutaj deklivoj.
+
+STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}Ŝarĝa produkto:{}  2t por 8t baksajto estas liverata{}  2t por 8t ĥemiaĵoj estas liverataj{}  4t por 8t peceta metalo estas liverata{}{}Produkto plialtigos se du aŭ plu ŝarĝoj estas liverataj en monato de unu la alia.
+STR_EXTRA_BIOREFINERY                                                           :{BLACK}Ekprilaboritas grenon kaj sukeron al petrolon kaj ĥemiajojn.{}{}6t produkto por 8t estas liverata.
+STR_EXTRA_BREWERY                                                               :{BLACK}Ŝarĝa produkto:{}  3t por 8t fabrikaprovizoj estas liverataj{}  5t por 8t greno estas liverata{}  5t por 8t fruktoj estas liverataj{}{}Produkto plialtigos se fabrikaprovizoj estas liverataj en monato de unu la alia ŝarĝoj.
+STR_EXTRA_BRICKWORKS                                                            :{BLACK}Ŝarĝa produkto:{}  2t por 8t karbo estas liverata{}  2t por 8t sablo estas liverata{}  4t por 8t argilo estas liverata{}{}Produkto plialtigos se du aŭ plu ŝarĝoj en monato de unu la alia.
+STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Ŝarĝa produkto:{}  2t por 8t karbo estas liverata{}  2t por 8t argilo estas liverata{}  4t por 8t ŝtono estas liverata{}{}Produkto plialtigos se du aŭ plu ŝarĝoj en monato de unu la alia.
+STR_EXTRA_DAIRY                                                                 :{BLACK}Ŝarĝa produkto:{}  3t por 8t fabrikaprovizoj estas liverataj{}  5t per 8t lakto estas liverata{}{}Plialtigos al 8t por 8t kiam ambaŭ ŝarĝoj estas liverataj en monato de unu la alia.
+STR_EXTRA_ENGINEERING_SUPPLIES                                                  :{BLACK}Inĝenieraprovizoj plialtigos produkton.{}{YELLOW}  {COMMA} kestoj estas liverataj ĉi tiu monato
+STR_EXTRA_FARM_SUPPLIES                                                         :{BLACK}Terkultulaprovizoj plialtigos produkton.{}{YELLOW}  {COMMA} kestoj estas liverataj ĉi tiu monato
+STR_EXTRA_FERTILIZER_PLANT                                                      :{BLACK}Ekprilaboritas ĥemiaĵojn al sterkon por farma uzo.{}{}{WEIGHT_SHORT} produkto por{VOLUME_SHORT} estas liverata.
+STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Ŝarĝa produkto:{}  3t por 8t fabrikaprovizoj estas liverataj{}  5t por 8t fiŝo estas liverata{}{}Plialtigos al 8t por 8t kiam ambaŭ ŝarĝoj estas liverataj en monato de unu la alia.
+STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Ŝarĝa produkto:{}  3t per 8t fabrikaprovizoj estas liverataj{}  5t per 8t lumber delivered{}{}Plialtigos al 8t por 8t kiam ambaŭ ŝarĝoj estas liverataj en monato de unu la alia.
+STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Produktas glasajn varojn kiel botelojn, botelegojn, kaj vitraĵojn.{}{}{BLACK}Ŝarĝa produkto:{}  6t por 8t sablo estas liverata{}  2t por 8t ĥemiaĵoj estas liverataj{}{}Plialtigos al 8t por 8t kiam ambaŭ ŝarĝoj estas liverataj en monato de unu la alia.
+STR_EXTRA_GRAIN_MILL                                                            :{BLACK}Ŝarĝa produkto:{}  3t per 8t fabrikaprovizoj estas liverataj{}  5t por 8t greno estas liverata{}{}Plialtigos al 8t por 8t kiam ambaŭ ŝarĝoj estas liverataj en monato de unu la alia.
+STR_EXTRA_IRON_WORKS                                                            :{BLACK}Ŝarĝa produkto:{}  1t por 8t ligno estas liverata{}  2t por 8t fera erco estas liverata{}{}Plialtigos al 3t por 8t kiam ambaŭ ŝarĝoj estas liverataj en monato de unu la alia.
+STR_EXTRA_LIME_KILN                                                             :{BLACK}Ŝarĝa produkto:{}  4t por 8t ŝtono estas liverata{}  4t por 8t karbo estas liverata{}{}Plialtigos al 8t por 8t kiam ambaŭ ŝarĝoj estas liverataj en monato de unu la alia.
+STR_EXTRA_LUMBER_YARD                                                           :{BLACK}Produktas objektojn kiel fosojn kaj palisarfostojn.{}{}{BLACK}Ŝarĝa produkto:{}  2t por 8t ĥemiaĵoj estas liverataj{}  6t por 8t prilaborita ligno estas liverata{}{}Plialtigos al 8t por 8t kiam ambaŭ ŝarĝoj estas liverataj en monato de unu la alia.
+STR_EXTRA_MACHINE_SHOP                                                          :{BLACK}Konstruas kaj riparas maŝinojn.{}{}8t produkto por 8t estas liverata.
+STR_EXTRA_MEAT_PACKER                                                           :{BLACK}Ŝarĝa produkto:{}  3t por 8t fabrikaprovizoj estas liverata{}  5t por 8t brutoj estas liverata{}{}Plialtigos al 8t por 8t kiam ambaŭ ŝarĝoj estas liverataj en monato de unu la alia.
+STR_EXTRA_METAL_FABRICATION_PLANT                                               :{BLACK}Produktas farbajn metalajn konsistigaĵojn.{}{}{BLACK}Ŝarĝa produkto:{}2t por 8t ĥemiaĵoj estas liverataj{}6t por 8t metalo estas liverata{}{}Plialtigos al 8t por 8t kiam ambaŭ ŝarĝoj estas liverataj en monato de unu la alia.
+STR_EXTRA_METAL_FOUNDRY                                                         :{BLACK}Produktas ladajn metalajn varojn kiel ladskatolojn, laborilojn, kaj hejmajn varojn.{}{}{BLACK}Ŝarĝa produkto:{}2t por 8t ĥemiaĵoj estas liverataj{}6t por 8t metalo estas liverata{}{}Plialtigos al 8t por 8t kiam ambaŭ ŝarĝoj estas liverataj en monato de unu la alia.
+STR_EXTRA_OIL_REFINERY                                                          :{BLACK}Ekprilaboritas krudan oleon al petrolon kaj ĥemiaĵojn.{}{}6t produkto por 8t estas liverata.
+STR_EXTRA_PAPER_MILL                                                            :{BLACK}Frakasas lignon al produkti paperon kaj kartonon.{}{}{BLACK}Ŝarĝa produkto:{}  4t por 8t ligno estas liverata{}  2t por 8t argilo estas liverata{}  2t por 8t ĥemiaĵoj estas liverataj{}{}Produkto plialtigos se du aŭ plu ŝarĝoj en monato de unu la alia.
+STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}Produktas plastajn varojn kiel enpakon kaj hejmajn varojn.{}{}6t produkto por 8t estas liverata.
+STR_EXTRA_RECYCLING_PLANT                                                       :{BLACK}Prilaboras reuzojn por reuzo en fabriko.{}{}6t produkto por 8t estas liverata.
+STR_EXTRA_SAWMILL                                                               :{BLACK}Tranĉas lignon.{}{}6t produkto por 8t estas liverata.
+STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Produktas metalajn varojn kiel laborilojn, plugilojn, pordojn, ŝovelilojn kaj hufferojn.{}{}5t produkto por 8t estas liverata.
+STR_EXTRA_STEELMILL                                                             :{BLACK}Ŝarĝa produkto:{}  2t por 8t fera erco estas liverata{}  2t por 8t karbo estas liverata{}  4t per 8t peceta metalo estas liverata{}{}Produkto plialtigos se du aŭ plu ŝarĝoj en monato de unu la alia.
+STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Ŝarĝa produkto:{}  3t por 8t fabrikaprovizoj estas liverataj{}  5t por 8t sukerkano estas liverata{}{}Plialtigos al 8t por 8t kiam ambaŭ ŝarĝoj estas liverataj en monato de unu la alia.
+STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Ŝarĝa produkto:{}  3t por 8t fabrikaprovizoj estas liverataj{}  5t por 8t lano estas liverata{}  5t por 8t naturaj fibroj estas liverataj{}{}Produkto plialtigos se fabrikaprovizoj estas liverataj en monato de unu la alia ŝarĝoj.
+
+STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ Riparo ------------{}Produkto de ĉi tiu monato:{}Ŝarĝo 1: {WHITE}{COMMA}{BLACK}{}Ŝarĝo 2: {WHITE}{COMMA}{BLACK}{}Tagoj de kiam la antaŭa livero: {WHITE}{COMMA}{BLACK}
+STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Maksimuma produkto estas plenumata
+STR_GENERIC_D0B2                                                                :{BLACK}Fabrikaprovizoj duobligas produkton de alia ŝarĝoj.{}{}{STRING}
+STR_GENERIC_NEWLINE                                                             :{}
+
+STR_FUND_MIXED_FARM                                                             :{}{BLACK}Loko: {YELLOW}Ne povas esti fondata sur neĝo aŭ en dezertoj aŭ sur krutaj deklivoj.
+STR_FUND_SHEEP_FARM                                                             :{}{BLACK}Loko: {YELLOW}Ne povas esti fondata en dezertoj nek sur deklivoj.
+STR_FUND_ARABLE_FARM                                                            :{}{BLACK}Loko: {YELLOW}Ne povas esti fondata sur neĝo aŭ en dezertoj aŭ sur krutaj deklivoj.
+STR_FUND_DAIRY_FARM                                                             :{}{BLACK}Loko: {YELLOW}Ne povas esti fondata sur krutaj deklivoj.
+STR_FUND_FOREST                                                                 :{}{BLACK}Loko: {YELLOW}Ne povas esti fondata en dezertoj.
+STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}Loko: {YELLOW}Ne povas esti fondata sur neĝo.
+
+STR_STATIONNAME_CHEMICALS                                                       :{STRING} Rafinejo
+STR_STATIONNAME_DEPOT                                                           :{STRING} Tenejo
+STR_STATIONNAME_DREDGING_SITE                                                   :{STRING} Skrapejo
+STR_STATIONNAME_FACTORIES                                                       :{STRING} Fabrikejo
+STR_STATIONNAME_FARMS                                                           :{STRING} Farmo
+STR_STATIONNAME_FISHING_GROUNDS                                                 :{STRING} Fiŝkaptejo
+STR_STATIONNAME_MARKET                                                          :{STRING} Vendejo
+STR_STATIONNAME_MILLS                                                           :{STRING} Muelejoj
+STR_STATIONNAME_PITS                                                            :{STRING} Ŝtonejo
+STR_STATIONNAME_PLANTS                                                          :{STRING} Faciligo
+STR_STATIONNAME_SMITHY_FORGE                                                    :{STRING} Forĝejo
+STR_STATIONNAME_WELLS                                                           :{STRING} Fontoj
+
+STR_IND_ALUMINIUM_PLANT                                                         :Aluminifarejo
+STR_IND_ARABLE_FARM                                                             :Plugebla Farmo
+STR_IND_BAUXITE_MINE                                                            :Baksajtmino
+STR_IND_BIOREFINERY                                                             :Organrafinejo
+STR_IND_BREWERY                                                                 :Alkoholfarejo
+STR_IND_BRICK_WORKS                                                             :Brikfarejo
+STR_IND_BUILDERS_YARD                                                           :Konstruistkorto
+STR_IND_CEMENT_PLANT                                                            :Cementfarejo
+STR_IND_CLAY_PIT                                                                :Argila Fosaĵo
+STR_IND_DAIRY                                                                   :Laktfarejo
+STR_IND_DAIRYFARM                                                               :Lakta Farmo
+STR_IND_DREDGING_SITE                                                           :Skrapejo
+STR_IND_FERTILISER_PLANT                                                        :Sterkfarejo
+STR_IND_FISHING_GROUND                                                          :Fiŝkaptejo
+STR_IND_FISHING_HARBOUR                                                         :Fiŝkapta Haveno
+STR_IND_FOOD_MARKET                                                             :Manĝaĵa Vendejo
+STR_IND_FURNITURE_FACTORY                                                       :Meblarfarejo
+STR_IND_GLASS_WORKS                                                             :Glasfarejo
+STR_IND_GRAIN_MILL                                                              :Grenmuelejo
+STR_IND_HARDWARE_STORE                                                          :Laborila Vendejo
+STR_IND_HOTEL                                                                   :Hotelo
+STR_IND_IRON_WORKS                                                              :Fermetiejo
+STR_IND_JUNKYARD                                                                :Forĵetaĵejo
+STR_IND_LIME_KILN                                                               :Kalkforno
+STR_IND_LUMBER_YARD                                                             :Prilaboritejo de Ligno
+STR_IND_MACHINE_SHOP                                                            :Maŝinfarejo
+STR_IND_METAL_FABRICATION_PLANT                                                 :Metalfabrika Faciligo
+STR_IND_METAL_FOUNDRY                                                           :Prilaboritejo de Metalo
+STR_IND_MIXEDFARM                                                               :Miksa Farmo
+STR_IND_PETROLPUMP                                                              :Petrolpumpilo
+STR_IND_PLASTICS_PLANT                                                          :Plastfarejo
+STR_IND_QUARRY                                                                  :Ŝtonejo
+STR_IND_RECYCLING_DEPOT                                                         :Reuzada Tenejo
+STR_IND_RECYCLING_PLANT                                                         :Reuzada Faciligo
+STR_IND_RETAILMARKET                                                            :Vendoplaco
+STR_IND_SHEEPFARM                                                               :Ŝafa Farmo
+STR_IND_SMITHY_FORGE                                                            :Forĝejo de Metalisto
+STR_IND_STOCKYARD                                                               :Prilaboritejo de Brutaro
+STR_IND_SUGAR_REFINERY                                                          :Sukerarafinejo
+STR_IND_SUPERMARKET                                                             :Magazeno
+STR_IND_TEXTILE_MILL                                                            :Teksaĵfarejo
+
+
