@@ -16,19 +16,20 @@ spriteset(THIS_ID(spriteset_ground), "sprites/graphics/industries/groundtiles.pn
 spriteset(THIS_ID(spriteset_1), "sprites/graphics/industries/ironworks.png") { tmpl_building_sprite(10, 10, 70, -40) } 
 spriteset(THIS_ID(spriteset_2), "sprites/graphics/industries/ironworks.png") { tmpl_building_sprite(80, 10, 70, -39) } 
 spriteset(THIS_ID(spriteset_3), "sprites/graphics/industries/ironworks.png") { tmpl_building_sprite(150, 10, 70, -39) } 
-spriteset(THIS_ID(spriteset_4), "sprites/graphics/industries/ironworks.png") { tmpl_building_sprite(290, 10, 70, -39) } 
+spriteset(THIS_ID(spriteset_4), "sprites/graphics/industries/ironworks.png") { tmpl_building_sprite(220, 10, 70, -39) } 
+spriteset(THIS_ID(spriteset_5), "sprites/graphics/industries/ironworks.png") { tmpl_building_sprite(290, 10, 70, -39) } 
 
-SPRITELAYOUT_FENCES_NORMAL_BEGIN(THIS_ID(spritelayout_1_anim), THIS_ID(spriteset_ground), THIS_ID(spriteset_1), 7)
+SPRITELAYOUT_FENCES_NORMAL_BEGIN(THIS_ID(spritelayout_furnace_anim), THIS_ID(spriteset_ground), THIS_ID(spriteset_1), 7)
 	BUILDING_DARK_SMOKE_SMALL(0, 4, 23)
 SPRITELAYOUT_FENCES_END
 
-SPRITELAYOUT_FENCES_NORMAL(THIS_ID(spritelayout_2), THIS_ID(spriteset_ground), THIS_ID(spriteset_2), 32)
+SPRITELAYOUT_FENCES_NORMAL(THIS_ID(spritelayout_large_shed), THIS_ID(spriteset_ground), THIS_ID(spriteset_2), 32)
 
-SPRITELAYOUT_FENCES_NORMAL(THIS_ID(spritelayout_3), THIS_ID(spriteset_ground), THIS_ID(spriteset_3), 32)
+SPRITELAYOUT_FENCES_NORMAL(THIS_ID(spritelayout_large_shed_clerestory_roof), THIS_ID(spriteset_ground), THIS_ID(spriteset_3), 32)
 
-SPRITELAYOUT_FENCES_NORMAL(THIS_ID(spritelayout_4), THIS_ID(spriteset_ground), THIS_ID(spriteset_4), 32)
+SPRITELAYOUT_FENCES_NORMAL(THIS_ID(spritelayout_metal_pigs_anim), THIS_ID(spriteset_ground), THIS_ID(spriteset_5), 32)
 
-spritelayout THIS_ID(spritelayout_5) {
+spritelayout THIS_ID(spritelayout_empty_ground) {
 	ground {
 		sprite: THIS_ID(spriteset_ground);
 		recolour_mode: RECOLOUR_REMAP;
@@ -37,21 +38,21 @@ spritelayout THIS_ID(spritelayout_5) {
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_1), relative_pos) {
-	relative_coord(0, 0): THIS_ID(spritelayout_3);
-	relative_coord(0, 1): THIS_ID(spritelayout_1_anim);
-	relative_coord(0, 2): THIS_ID(spritelayout_4);
-	relative_coord(1, 0): THIS_ID(spritelayout_3);
-	relative_coord(1, 1): THIS_ID(spritelayout_1_anim);
-	relative_coord(1, 2): THIS_ID(spritelayout_4);
-	relative_coord(2, 0): THIS_ID(spritelayout_2);
-	THIS_ID(spritelayout_5);
+	relative_coord(0, 0): THIS_ID(spritelayout_large_shed_clerestory_roof);
+	relative_coord(0, 1): THIS_ID(spritelayout_furnace_anim);
+	relative_coord(0, 2): THIS_ID(spritelayout_metal_pigs_anim);
+	relative_coord(1, 0): THIS_ID(spritelayout_large_shed_clerestory_roof);
+	relative_coord(1, 1): THIS_ID(spritelayout_furnace_anim);
+	relative_coord(1, 2): THIS_ID(spritelayout_metal_pigs_anim);
+	relative_coord(2, 0): THIS_ID(spritelayout_large_shed);
+	THIS_ID(spritelayout_empty_ground);
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_2), relative_pos) {
-	relative_coord(0, 0): THIS_ID(spritelayout_2);
-	relative_coord(1, 0): THIS_ID(spritelayout_3);
-	relative_coord(1, 1): THIS_ID(spritelayout_1_anim);
-	THIS_ID(spritelayout_5);
+	relative_coord(0, 0): THIS_ID(spritelayout_large_shed);
+	relative_coord(1, 0): THIS_ID(spritelayout_large_shed_clerestory_roof);
+	relative_coord(1, 1): THIS_ID(spritelayout_furnace_anim);
+	THIS_ID(spritelayout_empty_ground);
 }
 
 switch(FEAT_INDUSTRYTILES, PARENT, THIS_ID(tile_layout), layout_num) {
