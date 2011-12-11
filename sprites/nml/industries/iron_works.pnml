@@ -28,8 +28,15 @@ SPRITELAYOUT_FENCES_NORMAL(THIS_ID(spritelayout_large_shed), THIS_ID(spriteset_g
 
 SPRITELAYOUT_FENCES_NORMAL(THIS_ID(spritelayout_large_shed_clerestory_roof), THIS_ID(spriteset_ground), THIS_ID(spriteset_3), 32)
 
-SPRITELAYOUT_FENCES_NORMAL(THIS_ID(spritelayout_metal_pigs_anim), THIS_ID(spriteset_ground), THIS_ID(spriteset_5), 32)
-
+SPRITELAYOUT_FENCES_NORMAL(THIS_ID(fenced_spriteset_4), THIS_ID(spriteset_ground), THIS_ID(spriteset_4), 32)
+SPRITELAYOUT_FENCES_NORMAL(THIS_ID(fenced_spriteset_5), THIS_ID(spriteset_ground), THIS_ID(spriteset_5), 32)
+SPRITELAYOUT_FENCES_NORMAL(THIS_ID(fenced_spriteset_6), THIS_ID(spriteset_ground), THIS_ID(spriteset_6), 32)
+switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(spritelayout_metal_pigs_anim), animation_frame) {
+	0..60: THIS_ID(fenced_spriteset_4);
+	61..120: THIS_ID(fenced_spriteset_5);
+	THIS_ID(fenced_spriteset_6);
+}
+ 
 spritelayout THIS_ID(spritelayout_empty_ground) {
 	ground {
 		sprite: THIS_ID(spriteset_ground);
@@ -92,19 +99,43 @@ switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(tile_anim_control), (extra_callback_inf
 	return CB_RESULT_NEXT_FRAME;
 }
 
+switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(tile_anim_building_next_frame), animation_frame) {
+	0..180: return animation_frame + 1;
+	return 0;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(anim_layout_1), relative_pos) {
+	relative_coord(0, 1): return CB_RESULT_NEXT_FRAME;
+	relative_coord(0, 2): THIS_ID(tile_anim_building_next_frame);
+	relative_coord(1, 1): return CB_RESULT_NEXT_FRAME;
+	relative_coord(1, 2): THIS_ID(tile_anim_building_next_frame);
+	return CB_RESULT_STOP_ANIMATION;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(anim_layout_2), relative_pos) {
+	relative_coord(1, 1): return CB_RESULT_NEXT_FRAME;
+	return CB_RESULT_STOP_ANIMATION;
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, THIS_ID(tile_anim_next_frame), layout_num) {
+	1: THIS_ID(anim_layout_1);
+	2: THIS_ID(anim_layout_2);
+	return CB_RESULT_STOP_ANIMATION;
+}
 item(FEAT_INDUSTRYTILES, THIS_ID(tile), 199) {
 	property {
 		substitute:         0;
 		accepted_cargos:    [[IORE, 8], [WOOD, 8]];
 		land_shape_flags:   bitmask(LSF_ONLY_ON_FLAT_LAND);
 		special_flags:      bitmask(INDTILE_FLAG_RANDOM_ANIMATION);
-		animation_info:     [ANIMATION_LOOPING, 47];
+		animation_info:     [ANIMATION_LOOPING, 180];
 		animation_speed:    2;
 		animation_triggers: bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE);
 	}
 
 	graphics {
 		anim_control: THIS_ID(tile_anim_control);
+		anim_next_frame: THIS_ID(tile_anim_next_frame);
 		tile_check:   THIS_ID(tile_location_check);
 		THIS_ID(tile_fences);
 	}
