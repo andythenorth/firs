@@ -99,29 +99,6 @@ switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(tile_anim_control), (extra_callback_inf
 	return CB_RESULT_NEXT_FRAME;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(tile_anim_building_next_frame), animation_frame) {
-	0..180: return animation_frame + 1;
-	return 0;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(anim_layout_1), relative_pos) {
-	relative_coord(0, 1): return CB_RESULT_NEXT_FRAME;
-	relative_coord(0, 2): THIS_ID(tile_anim_building_next_frame);
-	relative_coord(1, 1): return CB_RESULT_NEXT_FRAME;
-	relative_coord(1, 2): THIS_ID(tile_anim_building_next_frame);
-	return CB_RESULT_STOP_ANIMATION;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(anim_layout_2), relative_pos) {
-	relative_coord(1, 1): return CB_RESULT_NEXT_FRAME;
-	return CB_RESULT_STOP_ANIMATION;
-}
-
-switch(FEAT_INDUSTRYTILES, PARENT, THIS_ID(tile_anim_next_frame), layout_num) {
-	1: THIS_ID(anim_layout_1);
-	2: THIS_ID(anim_layout_2);
-	return CB_RESULT_STOP_ANIMATION;
-}
 item(FEAT_INDUSTRYTILES, THIS_ID(tile), 199) {
 	property {
 		substitute:         0;
@@ -135,7 +112,6 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile), 199) {
 
 	graphics {
 		anim_control: THIS_ID(tile_anim_control);
-		anim_next_frame: THIS_ID(tile_anim_next_frame);
 		tile_check:   THIS_ID(tile_location_check);
 		THIS_ID(tile_fences);
 	}
