@@ -85,7 +85,6 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile), 214) {
 		substitute:       0;
 		accepted_cargos:  [[SGBT, 8], [MNSP, 8]];
 		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
-		callback_flags:   bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
 
 	/* Economy specific tile acceptance */

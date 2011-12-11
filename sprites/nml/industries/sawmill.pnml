@@ -13,7 +13,6 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_1), 11) {
 		override: 11;
 		accepted_cargos: [[WOOD, 8]];
 		land_shape_flags: 0;
-		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
 }
 
@@ -23,7 +22,6 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_2), 12) {
 		override: 12;
 		accepted_cargos: [[WOOD, 8]];
 		land_shape_flags: 0;
-		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
 }
 
@@ -33,7 +31,6 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_3), 13) {
 		override: 13;
 		accepted_cargos: [[WOOD, 8]];
 		land_shape_flags: 0;
-		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
 }
 
@@ -43,7 +40,6 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_4), 14) {
 		override: 14;
 		accepted_cargos: [[WOOD, 8]];
 		land_shape_flags: 0;
-		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
 }
 
@@ -53,7 +49,6 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_5), 15) {
 		override: 15;
 		accepted_cargos: [[WOOD, 8]];
 		land_shape_flags: 0;
-		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
 }
 

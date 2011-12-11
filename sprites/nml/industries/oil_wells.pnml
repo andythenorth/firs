@@ -96,7 +96,6 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_oil_well), 215) {
 		animation_info:     [ANIMATION_LOOPING, 20];
 		animation_speed:    3;
 		animation_triggers: bitmask(ANIM_TRIGGER_INDTILE_TILE_LOOP);
-		callback_flags:     bitmask(INDTILE_CBF_ANIM_NEXT_FRAME);
 		special_flags:      1;
 	}
 	graphics {

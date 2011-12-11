@@ -84,7 +84,6 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile), 192) {
 		substitute: 0;
 		accepted_cargos: [[FMSP, 8]];
 		land_shape_flags: 0;
-		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
 
 	graphics {

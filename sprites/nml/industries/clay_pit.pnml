@@ -836,7 +836,6 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile), 189) {
 		substitute:       0;
 		accepted_cargos:  [[ENSP, 8]];
 		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
-		callback_flags:   bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
 
 	graphics {
