@@ -18,6 +18,7 @@ spriteset(THIS_ID(spriteset_2), "sprites/graphics/industries/ironworks.png") { t
 spriteset(THIS_ID(spriteset_3), "sprites/graphics/industries/ironworks.png") { tmpl_building_sprite(150, 10, 70, -39) } 
 spriteset(THIS_ID(spriteset_4), "sprites/graphics/industries/ironworks.png") { tmpl_building_sprite(220, 10, 70, -39) } 
 spriteset(THIS_ID(spriteset_5), "sprites/graphics/industries/ironworks.png") { tmpl_building_sprite(290, 10, 70, -39) } 
+spriteset(THIS_ID(spriteset_6), "sprites/graphics/industries/ironworks.png") { tmpl_building_sprite(360, 10, 70, -39) } 
 
 SPRITELAYOUT_FENCES_NORMAL_BEGIN(THIS_ID(spritelayout_furnace_anim), THIS_ID(spriteset_ground), THIS_ID(spriteset_1), 7)
 	BUILDING_DARK_SMOKE_SMALL(0, 4, 23)
