@@ -22,7 +22,7 @@ spritelayout THIS_ID(spritelayout_oil_well) {
 	}
 }
 
-spriteset(spriteset_building, "sprites/graphics/industries/oilwell.png") { tmpl_building_sprite(10, 10, 38, -9) } 
+spriteset(spriteset_building, "sprites/graphics/industries/oilwell.png") { tmpl_building_sprite(10, 10, 38, -9) }
 
 spritelayout THIS_ID(spritelayout_building) {
 	ground {
@@ -96,7 +96,6 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_oil_well), 215) {
 		animation_info:     [ANIMATION_LOOPING, 20];
 		animation_speed:    3;
 		animation_triggers: bitmask(ANIM_TRIGGER_INDTILE_TILE_LOOP);
-		callback_flags:     bitmask(INDTILE_CBF_ANIM_NEXT_FRAME);
 		special_flags:      1;
 	}
 	graphics {
@@ -220,7 +219,7 @@ item(FEAT_INDUSTRIES, oil_wells, 15) {
 	}
 	graphics {
 		produce_cargo_arrival:   THIS_ID(produce);
-		availability:            THIS_ID(check_availability);
+		construction_probability:THIS_ID(check_availability);
 		location_check:          THIS_ID(check_location);
 		monthly_prod_change:     THIS_ID(check_production_level);
 		random_prod_change:      THIS_ID(check_closure);

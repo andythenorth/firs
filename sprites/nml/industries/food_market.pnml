@@ -81,7 +81,7 @@ item(FEAT_INDUSTRIES, food_market, 59) {
 	}
 	graphics {
 		produce_cargo_arrival:   THIS_ID(produce);
-		availability:            THIS_ID(check_availability);
+		construction_probability:THIS_ID(check_availability);
 		monthly_prod_change:     THIS_ID(check_production_level);
 		random_prod_change:      THIS_ID(check_closure);
 		THIS_ID(produce);

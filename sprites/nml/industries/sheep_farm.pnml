@@ -84,7 +84,6 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile), 192) {
 		substitute: 0;
 		accepted_cargos: [[FMSP, 8]];
 		land_shape_flags: 0;
-		callback_flags: bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
 
 	graphics {
@@ -165,7 +164,7 @@ item(FEAT_INDUSTRIES, sheep_farm, 27) {
 	}
 	graphics {
 		produce_cargo_arrival:   THIS_ID(produce);
-		availability:            THIS_ID(check_availability);
+		construction_probability:THIS_ID(check_availability);
 		location_check:          THIS_ID(check_location);
 		monthly_prod_change:     THIS_ID(check_production_level);
 		random_prod_change:      THIS_ID(check_closure);

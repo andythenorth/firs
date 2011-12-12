@@ -12,7 +12,9 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_plantation), 207) {
 		substitute: 0;
 		accepted_cargos: [[FMSP, 8]];
 		land_shape_flags: 0;
-		callback_flags: 112;
+/* *********************************************
+ *		callback_flags: 112; TODO. Replace by proper callbacks
+ * ********************************************/
 	}
 }
 
@@ -5251,7 +5253,7 @@ item(FEAT_INDUSTRIES, fruit_plantation, 30) {
 	}
 	graphics {
 		produce_cargo_arrival:   THIS_ID(produce);
-		availability:            THIS_ID(check_availability);
+		construction_probability:THIS_ID(check_availability);
 		location_check:          THIS_ID(check_location);
 		monthly_prod_change:     THIS_ID(check_production_level);
 		random_prod_change:      THIS_ID(check_closure);

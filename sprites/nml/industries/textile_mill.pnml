@@ -156,7 +156,6 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile), 183) {
 		substitute:         0;
 		accepted_cargos:    [[MNSP, 8], [WOOL, 8], [FICR, 8]];
 		land_shape_flags:   bitmask(LSF_ONLY_ON_FLAT_LAND);
-		callback_flags:     bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 		animation_info:     [ANIMATION_LOOPING, 7];
 		animation_speed:    3;
 		animation_triggers: bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE);
@@ -316,7 +315,7 @@ item(FEAT_INDUSTRIES, textile_mill, 42) {
 	}
 	graphics {
 		produce_cargo_arrival:   THIS_ID(produce);
-		availability:            THIS_ID(check_availability);
+		construction_probability:THIS_ID(check_availability);
 		location_check:          THIS_ID(check_location);
 		monthly_prod_change:     THIS_ID(check_production_level);
 		random_prod_change:      THIS_ID(check_closure);

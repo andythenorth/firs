@@ -15,7 +15,6 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_1), 100) {
 	property {
 		substitute: 100;
 		override: 100;
-		callback_flags: 0;
 	}
 }
 
@@ -173,7 +172,7 @@ item(FEAT_INDUSTRIES, iron_ore_mine, 4) {
 	}
 	graphics {
 		produce_cargo_arrival:   THIS_ID(produce);
-		availability:            THIS_ID(check_availability);
+		construction_probability:THIS_ID(check_availability);
 		location_check:          THIS_ID(check_location);
 		monthly_prod_change:     THIS_ID(check_production_level);
 		random_prod_change:      THIS_ID(check_closure);

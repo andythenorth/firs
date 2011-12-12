@@ -366,7 +366,7 @@ item(FEAT_INDUSTRIES, fishing_grounds, 32) {
 	}
 	graphics {
 		produce_cargo_arrival:   THIS_ID(produce);
-		availability:            THIS_ID(check_availability);
+		construction_probability:THIS_ID(check_availability);
 		location_check:          THIS_ID(check_location);
 		monthly_prod_change:     return CB_RESULT_IND_PROD_NO_CHANGE;
 		random_prod_change:      return CB_RESULT_IND_PROD_NO_CHANGE;

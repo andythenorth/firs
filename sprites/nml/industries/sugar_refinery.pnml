@@ -9,23 +9,23 @@
 
 #define THIS_ID(...) sugar_refinery ## __VA_ARGS__
 
-spriteset(THIS_ID(spriteset_ground), "sprites/graphics/industries/groundtiles.png") { tmpl_ground_tile(80, 10) } 
+spriteset(THIS_ID(spriteset_ground), "sprites/graphics/industries/groundtiles.png") { tmpl_ground_tile(80, 10) }
 //large round tank
-spriteset(THIS_ID(spriteset_1), "sprites/graphics/industries/sugarrefinery.png") { tmpl_building_sprite(10, 10, 50, -23) } 
+spriteset(THIS_ID(spriteset_1), "sprites/graphics/industries/sugarrefinery.png") { tmpl_building_sprite(10, 10, 50, -23) }
 //cone silo
-spriteset(THIS_ID(spriteset_2), "sprites/graphics/industries/sugarrefinery.png") { tmpl_building_sprite(80, 10, 50, -25) } 
+spriteset(THIS_ID(spriteset_2), "sprites/graphics/industries/sugarrefinery.png") { tmpl_building_sprite(80, 10, 50, -25) }
 //large rectangular building
-spriteset(THIS_ID(spriteset_3), "sprites/graphics/industries/sugarrefinery.png") { tmpl_building_sprite(150, 10, 88, -56) } 
+spriteset(THIS_ID(spriteset_3), "sprites/graphics/industries/sugarrefinery.png") { tmpl_building_sprite(150, 10, 88, -56) }
 //4 large silos
-spriteset(THIS_ID(spriteset_4), "sprites/graphics/industries/sugarrefinery.png") { tmpl_building_sprite(220, 10, 88, -58) } 
+spriteset(THIS_ID(spriteset_4), "sprites/graphics/industries/sugarrefinery.png") { tmpl_building_sprite(220, 10, 88, -58) }
 //small brick gatehouse
-spriteset(THIS_ID(spriteset_5), "sprites/graphics/industries/sugarrefinery.png") { tmpl_building_sprite(290, 10, 88, -58) } 
+spriteset(THIS_ID(spriteset_5), "sprites/graphics/industries/sugarrefinery.png") { tmpl_building_sprite(290, 10, 88, -58) }
 //brick warehouse with 2 large chimneys
-spriteset(THIS_ID(spriteset_6), "sprites/graphics/industries/sugarrefinery.png") { tmpl_building_sprite(360, 10, 88, -58) } 
+spriteset(THIS_ID(spriteset_6), "sprites/graphics/industries/sugarrefinery.png") { tmpl_building_sprite(360, 10, 88, -58) }
 //brick storage yard
-spriteset(THIS_ID(spriteset_7), "sprites/graphics/industries/sugarrefinery.png") { tmpl_building_sprite(430, 10, 88, -58) } 
+spriteset(THIS_ID(spriteset_7), "sprites/graphics/industries/sugarrefinery.png") { tmpl_building_sprite(430, 10, 88, -58) }
 //lime processor stack
-spriteset(THIS_ID(spriteset_8), "sprites/graphics/industries/sugarrefinery.png") { tmpl_building_sprite(500, 10, 88, -58) } 
+spriteset(THIS_ID(spriteset_8), "sprites/graphics/industries/sugarrefinery.png") { tmpl_building_sprite(500, 10, 88, -58) }
 
 SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_1), THIS_ID(spriteset_ground), THIS_ID(spriteset_1), 48)
 
@@ -85,7 +85,6 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile), 214) {
 		substitute:       0;
 		accepted_cargos:  [[SGBT, 8], [MNSP, 8]];
 		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
-		callback_flags:   bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 	}
 
 	/* Economy specific tile acceptance */
@@ -189,7 +188,7 @@ item(FEAT_INDUSTRIES, sugar_refinery, 19) {
 
 	graphics {
 		produce_cargo_arrival:   THIS_ID(produce);
-		availability:            THIS_ID(check_availability);
+		construction_probability:THIS_ID(check_availability);
 		location_check:          THIS_ID(check_location);
 		monthly_prod_change:     THIS_ID(check_production_level);
 		random_prod_change:      THIS_ID(check_closure);

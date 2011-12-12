@@ -28,19 +28,19 @@
 
 /* Check for restriction via parameter */
 switch(FEAT_INDUSTRIES, SELF, THIS_ID(check_availability_param), restrict_open_during_gameplay) {
-	1..255: return CB_RESULT_IND_DISALLOW;            // disallow when restrictions in place
-	return CB_RESULT_IND_ALLOW;                       // we may build
+	1..255: return CB_RESULT_IND_NO_CONSTRUCTION;         // disallow when restrictions in place
+	return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;       // we may build
 }
 
 /* Allow always in the scenario editor */
 switch (FEAT_INDUSTRIES, SELF, THIS_ID(available_game_mode), game_mode == GAMEMODE_GAME) {
 	1: THIS_ID(check_availability_param);
-	return CB_RESULT_IND_ALLOW;
+	return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
 }
 
 /* Allow only within the availability years */
 switch (FEAT_INDUSTRIES, SELF, THIS_ID(check_availability), current_date) {
 	date(THIS_MIN_YEAR,1,1) .. date(THIS_MAX_YEAR,12,31): THIS_ID(available_game_mode);
-	return CB_RESULT_IND_DISALLOW;
+	return CB_RESULT_IND_NO_CONSTRUCTION;
 }
 

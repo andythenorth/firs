@@ -238,7 +238,6 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile), 185) {
 		substitute:         0;
 		accepted_cargos:    [[AORE, 8], [RFPR, 8], [SCRP, 8]];
 		land_shape_flags:   bitmask(LSF_ONLY_ON_FLAT_LAND);
-		callback_flags:     bitmask(INDTILE_CBF_SLOPE_IS_SUITABLE);
 		animation_info:     [ANIMATION_LOOPING, 47];
 		animation_speed:    2;
 		animation_triggers: bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE);
@@ -398,7 +397,7 @@ item(FEAT_INDUSTRIES, aluminium_plant, 8) {
 	}
 	graphics {
 		produce_cargo_arrival:   THIS_ID(produce);
-		availability:            THIS_ID(check_availability);
+		construction_probability:THIS_ID(check_availability);
 		location_check:          THIS_ID(check_location);
 		monthly_prod_change:     THIS_ID(check_production_level);
 		random_prod_change:      THIS_ID(check_closure);
