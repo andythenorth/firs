@@ -3797,7 +3797,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_4387, var[0x60, 0, 31, 0]) {
 	action2_4368;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4390, ((var[0x60, 16, 255, 0] - snowline_height) + 8)) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_4390, ((var[0x60, 16, 255, 0] - snowline_height) + 1)) {
 	0..7: action2_4321;
 	8..15: action2_4343;
 	16..23: action2_4365;
@@ -5082,9 +5082,9 @@ switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(tile_trees_spritelayout), var[0x03, 0, 
  * tile_equipment
  * *************/
 
-spriteset(spriteset_4459, "sprites/graphics/industries/forest.png") { tmpl_building_sprite(10, 10, 78, -45) } 
-spriteset(spriteset_4460, "sprites/graphics/industries/forest.png") { tmpl_building_sprite(80, 10, 78, -45) } 
-spriteset(spriteset_4461, "sprites/graphics/industries/forest.png") { tmpl_building_sprite(220, 10, 78, -45) } 
+spriteset(spriteset_4459, "sprites/graphics/industries/forest.png") { tmpl_building_sprite(10, 10, 78, -45) }
+spriteset(spriteset_4460, "sprites/graphics/industries/forest.png") { tmpl_building_sprite(80, 10, 78, -45) }
+spriteset(spriteset_4461, "sprites/graphics/industries/forest.png") { tmpl_building_sprite(220, 10, 78, -45) }
 spritelayout THIS_ID(tile_equipment_nonsnow_spritelayout) {
 	ground {
 		sprite: 2022;
@@ -5141,7 +5141,7 @@ switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(tile_equipment_spritelayout), climate) 
 /* ****************************************************
  * Definition of the industry tiles and their callbacks
  * ***************************************************/
- 
+
 TILE_DISALLOW_NEARBY_CLASS(tile_trees_nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW,      return CB_RESULT_LOCATION_ALLOW)
 TILE_ALLOW_PLAYER         (tile_trees_player_check,                                                                 THIS_ID(tile_trees_nearby_industry))
 TILE_CHECK_WATER          (tile_trees_water_check,                          string(STR_ERR_LOCATION_NOT_ON_WATER),  THIS_ID(tile_trees_player_check))
