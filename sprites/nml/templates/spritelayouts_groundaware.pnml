@@ -27,16 +27,23 @@ spritelayout spritelayout_name { \
 			(climate == CLIMATE_TROPIC) && (nearby_tile_terrain_type(0, 0) != TILETYPE_DESERT); \
 	} \
 	childsprite { \
+		/* The desert<>grass transition tile. */ \
 		sprite: 4512; \
 		recolour_mode: RECOLOUR_REMAP; \
 		palette: PALETTE_USE_DEFAULT; \
-		hide_sprite: (climate != CLIMATE_TROPIC) || \
-			(climate == CLIMATE_TROPIC) && (nearby_tile_terrain_type(0, 0) == TILETYPE_DESERT) || \
-			(climate == CLIMATE_TROPIC) && (nearby_tile_terrain_type(0, 0) == TILETYPE_NORMAL) && \
-			((nearby_tile_terrain_type( 1, 0) != TILETYPE_DESERT) && \
-			(nearby_tile_terrain_type(-1, 0) != TILETYPE_DESERT) && \
-			(nearby_tile_terrain_type( 0, 1) != TILETYPE_DESERT) && \
-			(nearby_tile_terrain_type( 0,-1) != TILETYPE_DESERT)); \
+		hide_sprite: \
+			/* Hide if we're not in the tropic climate... */ \
+			(climate != CLIMATE_TROPIC) || \
+			/* ...or if the current tile is desert... */ \
+			((climate == CLIMATE_TROPIC) && (nearby_tile_terrain_type(0, 0) == TILETYPE_DESERT)) || \
+			/* ...or if the current tile is grass but none of the surrounding tiles is desert...*/ \
+			((climate == CLIMATE_TROPIC) && (nearby_tile_terrain_type(0, 0) == TILETYPE_NORMAL) && \
+				((nearby_tile_terrain_type( 1, 0) != TILETYPE_DESERT) && \
+				 (nearby_tile_terrain_type(-1, 0) != TILETYPE_DESERT) && \
+				 (nearby_tile_terrain_type( 0, 1) != TILETYPE_DESERT) && \
+				 (nearby_tile_terrain_type( 0,-1) != TILETYPE_DESERT) \
+				) \
+			); \
 	} \
 	childsprite { \
 		sprite: GROUNDSPRITE_SNOW; \
