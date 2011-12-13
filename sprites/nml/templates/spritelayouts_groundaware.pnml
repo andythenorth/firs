@@ -28,7 +28,7 @@ spritelayout spritelayout_name { \
 	} \
 	childsprite { \
 		/* The desert<>grass transition tile. */ \
-		sprite: 4512; \
+		sprite: GROUNDSPRITE_DESERT_1_2; \
 		recolour_mode: RECOLOUR_REMAP; \
 		palette: PALETTE_USE_DEFAULT; \
 		hide_sprite: \
@@ -46,14 +46,14 @@ spritelayout spritelayout_name { \
 			); \
 	} \
 	childsprite { \
-		sprite: GROUNDSPRITE_SNOW; \
+		sprite: GROUNDSPRITE_SNOW_4_4; \
 		recolour_mode: RECOLOUR_REMAP; \
 		palette: PALETTE_USE_DEFAULT; \
 		hide_sprite: (climate != CLIMATE_ARCTIC) || \
 			(climate == CLIMATE_ARCTIC) && (nearby_tile_height(0, 0) < (snowline_height + 16)); \
 	} \
 	childsprite { \
-		sprite: 4531; \
+		sprite: GROUNDSPRITE_SNOW_3_4; \
 		recolour_mode: RECOLOUR_REMAP; \
 		palette: PALETTE_USE_DEFAULT; \
 		hide_sprite: (climate != CLIMATE_ARCTIC) || \
@@ -61,7 +61,7 @@ spritelayout spritelayout_name { \
 			((nearby_tile_height(0, 0) < (snowline_height + 8)) || (nearby_tile_height(0, 0) >= (snowline_height + 16))); \
 	} \
 	childsprite { \
-		sprite: 4512; \
+		sprite: GROUNDSPRITE_SNOW_2_4; \
 		recolour_mode: RECOLOUR_REMAP; \
 		palette: PALETTE_USE_DEFAULT; \
 		hide_sprite: (climate != CLIMATE_ARCTIC) || \
@@ -69,7 +69,7 @@ spritelayout spritelayout_name { \
 			((nearby_tile_height(0, 0) < (snowline_height + 0)) || (nearby_tile_height(0, 0) >= (snowline_height + 8))); \
 	} \
 	childsprite { \
-		sprite: 4493; \
+		sprite: GROUNDSPRITE_SNOW_1_4; \
 		recolour_mode: RECOLOUR_REMAP; \
 		palette: PALETTE_USE_DEFAULT; \
 		hide_sprite: (climate != CLIMATE_ARCTIC) || \
