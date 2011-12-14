@@ -2,10 +2,10 @@
 switch (FEAT_INDUSTRYTILES, SELF, THIS_ID(tile_decide_arctic), \
 		[ \
 			STORE_TEMP( (nearby_tile_height(0, 0) < (snowline_height - 8)) * GROUNDSPRITE_NORMAL, var_default_ground), \
-			STORE_TEMP( LOAD_TEMP(var_default_ground) + (LOAD_TEMP(var_default_ground) == 0) * 4493 * (nearby_tile_height(0, 0) <  (snowline_height     )), var_default_ground), \
-			STORE_TEMP( LOAD_TEMP(var_default_ground) + (LOAD_TEMP(var_default_ground) == 0) * 4512 * (nearby_tile_height(0, 0) <  (snowline_height +  8)), var_default_ground), \
-			STORE_TEMP( LOAD_TEMP(var_default_ground) + (LOAD_TEMP(var_default_ground) == 0) * 4531 * (nearby_tile_height(0, 0) <  (snowline_height + 16)), var_default_ground), \
-			STORE_TEMP( LOAD_TEMP(var_default_ground) + (LOAD_TEMP(var_default_ground) == 0) * 4550 * (nearby_tile_height(0, 0) >= (snowline_height + 16)), var_default_ground) \
+			STORE_TEMP( LOAD_TEMP(var_default_ground) + (LOAD_TEMP(var_default_ground) == 0) * 4493 * (nearby_tile_height(0, 0) <  (snowline_height    )), var_default_ground), \
+			STORE_TEMP( LOAD_TEMP(var_default_ground) + (LOAD_TEMP(var_default_ground) == 0) * 4512 * (nearby_tile_height(0, 0) <  (snowline_height + 1)), var_default_ground), \
+			STORE_TEMP( LOAD_TEMP(var_default_ground) + (LOAD_TEMP(var_default_ground) == 0) * 4531 * (nearby_tile_height(0, 0) <  (snowline_height + 2)), var_default_ground), \
+			STORE_TEMP( LOAD_TEMP(var_default_ground) + (LOAD_TEMP(var_default_ground) == 0) * 4550 * (nearby_tile_height(0, 0) >= (snowline_height + 2)), var_default_ground) \
 		]) { \
 	target; \
 } \

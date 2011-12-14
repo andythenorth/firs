@@ -3801,7 +3801,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_4727, var[0x60, 0, 31, 0]) {
 	action2_4708;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4730, ((var[0x60, 16, 255, 0] - snowline_height) + 8)) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_4730, ((var[0x60, 16, 255, 0] - snowline_height) + 1)) {
 	0..7: action2_4661;
 	8..15: action2_4683;
 	16..23: action2_4705;
@@ -5087,7 +5087,7 @@ switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(tile_plantation_spritelayout), var[0x03
  * tile with house
  * ***************/
 
-spriteset(spriteset_4792, "sprites/graphics/industries/fruitplantation.png") { tmpl_building_sprite(10, 10, 59, -28) } 
+spriteset(spriteset_4792, "sprites/graphics/industries/fruitplantation.png") { tmpl_building_sprite(10, 10, 59, -28) }
 spritelayout THIS_ID(tile_house_spritelayout) {
 	ground {
 		sprite: 2022;
@@ -5106,7 +5106,7 @@ spritelayout THIS_ID(tile_house_spritelayout) {
 /* ****************************************************
  * Definition of the industry tiles and their callbacks
  * ***************************************************/
- 
+
 TILE_DISALLOW_NEARBY_CLASS(tile_plantation_nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW,      return CB_RESULT_LOCATION_ALLOW)
 TILE_ALLOW_PLAYER         (tile_plantation_player_check,                                                                 THIS_ID(tile_plantation_nearby_industry))
 TILE_CHECK_WATER          (tile_plantation_water_check,                          string(STR_ERR_LOCATION_NOT_ON_WATER),  THIS_ID(tile_plantation_player_check))

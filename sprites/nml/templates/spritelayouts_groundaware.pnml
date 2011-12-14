@@ -50,7 +50,7 @@ spritelayout spritelayout_name { \
 		recolour_mode: RECOLOUR_REMAP; \
 		palette: PALETTE_USE_DEFAULT; \
 		hide_sprite: (climate != CLIMATE_ARCTIC) || \
-			(climate == CLIMATE_ARCTIC) && (nearby_tile_height(0, 0) < (snowline_height + 16)); \
+			(climate == CLIMATE_ARCTIC) && (nearby_tile_height(0, 0) < (snowline_height + 2)); \
 	} \
 	childsprite { \
 		sprite: GROUNDSPRITE_SNOW_3_4; \
@@ -58,7 +58,7 @@ spritelayout spritelayout_name { \
 		palette: PALETTE_USE_DEFAULT; \
 		hide_sprite: (climate != CLIMATE_ARCTIC) || \
 			(climate == CLIMATE_ARCTIC) && \
-			((nearby_tile_height(0, 0) < (snowline_height + 8)) || (nearby_tile_height(0, 0) >= (snowline_height + 16))); \
+			((nearby_tile_height(0, 0) < (snowline_height + 1)) || (nearby_tile_height(0, 0) >= (snowline_height + 2))); \
 	} \
 	childsprite { \
 		sprite: GROUNDSPRITE_SNOW_2_4; \
@@ -66,7 +66,7 @@ spritelayout spritelayout_name { \
 		palette: PALETTE_USE_DEFAULT; \
 		hide_sprite: (climate != CLIMATE_ARCTIC) || \
 			(climate == CLIMATE_ARCTIC) && \
-			((nearby_tile_height(0, 0) < (snowline_height + 0)) || (nearby_tile_height(0, 0) >= (snowline_height + 8))); \
+			((nearby_tile_height(0, 0) < (snowline_height + 0)) || (nearby_tile_height(0, 0) >= (snowline_height + 1))); \
 	} \
 	childsprite { \
 		sprite: GROUNDSPRITE_SNOW_1_4; \
@@ -74,7 +74,7 @@ spritelayout spritelayout_name { \
 		palette: PALETTE_USE_DEFAULT; \
 		hide_sprite: (climate != CLIMATE_ARCTIC) || \
 			(climate == CLIMATE_ARCTIC) && \
-			((nearby_tile_height(0, 0) < (snowline_height - 8)) || (nearby_tile_height(0, 0) >= (snowline_height + 0))); \
+			((nearby_tile_height(0, 0) < (snowline_height - 1)) || (nearby_tile_height(0, 0) >= (snowline_height + 0))); \
 	}
 
 /* Defines a ground sprite overlay that will appear only if a given condition is true.
@@ -164,7 +164,7 @@ spritelayout spritelayout_name { \
 		recolour_mode: RECOLOUR_REMAP; \
 		palette: PALETTE_USE_DEFAULT; \
 		hide_sprite: (climate != CLIMATE_ARCTIC) || \
-			(climate == CLIMATE_ARCTIC) && (nearby_tile_height(0, 0) < (snowline_height + 16)); \
+			(climate == CLIMATE_ARCTIC) && (nearby_tile_height(0, 0) < (snowline_height + 2)); \
 	} \
 	childsprite { \
 		sprite: 4531 + slope_to_sprite_offset(nearby_tile_slope(0, 0)); \
@@ -172,7 +172,7 @@ spritelayout spritelayout_name { \
 		palette: PALETTE_USE_DEFAULT; \
 		hide_sprite: (climate != CLIMATE_ARCTIC) || \
 			(climate == CLIMATE_ARCTIC) && \
-			((nearby_tile_height(0, 0) < (snowline_height + 8)) || (nearby_tile_height(0, 0) >= (snowline_height + 16))); \
+			((nearby_tile_height(0, 0) < (snowline_height + 1)) || (nearby_tile_height(0, 0) >= (snowline_height + 2))); \
 	} \
 	childsprite { \
 		sprite: 4512 + slope_to_sprite_offset(nearby_tile_slope(0, 0)); \
@@ -180,7 +180,7 @@ spritelayout spritelayout_name { \
 		palette: PALETTE_USE_DEFAULT; \
 		hide_sprite: (climate != CLIMATE_ARCTIC) || \
 			(climate == CLIMATE_ARCTIC) && \
-			((nearby_tile_height(0, 0) < (snowline_height + 0)) || (nearby_tile_height(0, 0) >= (snowline_height + 8))); \
+			((nearby_tile_height(0, 0) < (snowline_height + 0)) || (nearby_tile_height(0, 0) >= (snowline_height + 1))); \
 	} \
 	childsprite { \
 		sprite: 4493 + slope_to_sprite_offset(nearby_tile_slope(0, 0)); \
@@ -188,5 +188,5 @@ spritelayout spritelayout_name { \
 		palette: PALETTE_USE_DEFAULT; \
 		hide_sprite: (climate != CLIMATE_ARCTIC) || \
 			(climate == CLIMATE_ARCTIC) && \
-			((nearby_tile_height(0, 0) < (snowline_height - 8)) || (nearby_tile_height(0, 0) >= (snowline_height + 0))); \
+			((nearby_tile_height(0, 0) < (snowline_height - 1)) || (nearby_tile_height(0, 0) >= (snowline_height + 0))); \
 	}
