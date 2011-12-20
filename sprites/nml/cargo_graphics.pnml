@@ -44,8 +44,8 @@ cargo_icon_template(cargoicon_sugarcane,              15, 1)
 switch(FEAT_CARGOS, SELF, switch_station_rating_reduced_effect,
 	/* Positive bonuses for having pickup in last 30 or 6o days. */
 	[STORE_TEMP(
-		(extra_callback_info2 & 0xFF) < 12 ? 179 :
-		((extra_callback_info2 & 0xFF) < 24 ? 153 : 0)
+		(extra_callback_info2 & 0xFF) < 12 ? 153 :
+		((extra_callback_info2 & 0xFF) < 24 ? 95   : 0)
 	 , 0),
 	/* Positive bonuses for having small amount of cargo waiting. */
 	STORE_TEMP(
@@ -55,10 +55,10 @@ switch(FEAT_CARGOS, SELF, switch_station_rating_reduced_effect,
 	 , 1),
 	/* Negative bonuses for having large amount of cargo waiting. */
 	STORE_TEMP(
-		((extra_callback_info2 >> 8) & 0xFFFF) > 10000 ? -75 :
-		(((extra_callback_info2 >> 8) & 0xFFFF) > 5000 ? -50 :
-		(((extra_callback_info2 >> 8) & 0xFFFF) > 2500 ? -38 :
-		(((extra_callback_info2 >> 8) & 0xFFFF) > 1000 ? -25 : 0)))
+		((extra_callback_info2 >> 8) & 0xFFFF) > 6400 ? -180 :
+		(((extra_callback_info2 >> 8) & 0xFFFF) > 3200 ? -150 :
+		(((extra_callback_info2 >> 8) & 0xFFFF) > 1600 ? -120 :
+		(((extra_callback_info2 >> 8) & 0xFFFF) > 1000 ? -90 : 0)))
 	 , 2),
 	/* The +40 is for the vehicle speed bonus, we fix it at the maximum value. */
 	LOAD_TEMP(0) + LOAD_TEMP(1) + LOAD_TEMP(2) + 40
