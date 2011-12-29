@@ -13,17 +13,22 @@ FIRS Industry Replacement Set Changelog
 
 FIRS 0.7 is *not* savegame compatible with any previous release of FIRS.
 
+OpenTTD version 1.2.x or newer is required for FIRS 0.7.
+
 *What's new in 0.7?*
 
 Several hundred changes since FIRS 0.6.4
 
 *New / Changed Industries*
 - Hardware Store (accepts Building Materials, Goods)
+- Metal Fabrication Plant (available 1852; accepts Metal, Chemicals, produces Building Materials)
 - Recycling Depot (produces Recyclables)
 - Recycling Plant (accepts Recyclables, produces two random cargos from this list: Building Materials, Chemicals, Engineering Supplies, Farm Supplies, Manufacturing Supplies, Scrap Metal)
 - Hotel (accepts Food, Alcohol, Passengers, produces Passengers)
 
 - Food Market now accepts Fruit instead of Goods
+- Lime Kiln production reduced slightly for better balance of Farm Supplies chain
+- Metal Foundry renamed to Metal Workshop, now also accepts Chemicals
 
 *Removed Industries*
 - None
@@ -32,12 +37,17 @@ Several hundred changes since FIRS 0.6.4
 - Introduce separate cargo labels for Sugar Beet (SGBT) and Sugarcane (SBCN).  Helps vehicle set authors provide more specific graphics.
 - Recyclables cargo, produced by Recycling Depot, accepted by Recycling Plant
 
+!!!!!!! Change: set Sugar Cane classes to Piece Goods, Neo-Bulk (breaks savegames)
+!!!!!!! Change: Scrap Metal now uses label SCMT instead of SCRP (due to changed classes); changed classes for Scrap Metal; breaks savegames
+
 *New Features*
 - Parameter to prevent industry opening during game (useful for scenarios / multi-player challenges)
+- Station ratings can be controlled with a parameter (default | improved | always 100%).  Affects amount of cargo distributed to stations by industries.
 - Hint on possible locations for farms in the fund menu
 - Petrol Pump will locate next to roads, in or out of towns
 - Animation (flag) for Dairy
 - Animation (pumps) for Oil Wells
+- Animation (molten metal) for Iron Works
 - Fences for some industries
 - Graphics to show metal at Metal Foundry
 - Improved appearance of Dairy
@@ -47,6 +57,7 @@ Several hundred changes since FIRS 0.6.4
 - Improved appearance of Dairy Farm farmhouse
 - Improved appearance of Mixed Farm farmhouse
 - Improved appearance of Sheep Farm farmhouse
+- Improved appearance of Food Market (added trees)
 - Improved appearance of Fishing Harbour (updated fishing boats, missing waves)
 - Improved appearance of Grain Mill (bakery)
 - Improved appearance of Grain Mill (windmill)
@@ -60,14 +71,15 @@ Several hundred changes since FIRS 0.6.4
 - Additional layout for Sheep Farm
 - Additional layouts for reworked Glass Works
 - Snow for Aluminium Mill
+- Snow for Builders Yard
 - Snow for Dairy
 - Snow for Food Market
+- Snow for Forge
+- Snow for Grain Mill (bakery)
 - Snow for Hotel
+- Snow for Lime Kiln
 - Snow for Petrol Pump
 - Snow for Sheep Farm
-- Snow for Builders Yard
-- Snow for Lime Kiln
-- Snow for Forge
 - Better snow support (greeble tile) for Forest
 
 *Fixes*
@@ -76,24 +88,31 @@ Several hundred changes since FIRS 0.6.4
 - Builders Yard construction probability was wrong
 - Lime Kiln construction probability was wrong
 - Store construction probability was wrong 
-- flickering graphics issue solved for Fishing Harbour
-- cargo slot 1E left empty for NARS2 rehearing compatibility
-- small amounts of delivered cargo could be 'lost' at secondary industries
+- Flickering graphics issue solved for Fishing Harbour
+- Cargo slot 1E left empty for NARS2 rehearing compatibility
+- Small amounts of delivered cargo could be 'lost' at secondary industries
+- Always draw all ground sprites, so that in transparent mode the correct one is shown
+- Industry production info text now uses litres, crates etc appropriately (previously all units were 't')
+- Tile offset wrong for Forest above snowline
 
 *Internal changes*
 - FIRS converted entirely to nml instead of nfo
-- replaced more pcx graphics files with png files
+- Replaced all pcx graphics files with png files
+- Update to grf v8
 
 *Translations additions / updates*
+- Hungarian translation (Brumi)
 - Italian translation (Snail)
 - Polish translation (Radmir)
-- Russian translation (kvwrd)
+- Russian translation (akasoft, kvwrd)
 - Serbian translation (Etran)
+- Welsh translation (kazzie)
+- Update Croation translation (Voyager1)
 - Update Dutch translation (Alberth)
 - Update Spanish translation (Terkhen)
 - Update German translation (Eddi / Planetmaker)
 - !! translations framework changed, translations require updating for 0.7.x
-- updated script to log missing strings: http://bundles.openttdcoop.org/firs/nightlies/LATEST/log/
+- Updated script to log missing strings: http://bundles.openttdcoop.org/firs/nightlies/LATEST/log/
 
 *Documentation*
 - Add GPL header to all industry files.
