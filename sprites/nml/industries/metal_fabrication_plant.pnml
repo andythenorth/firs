@@ -8,18 +8,18 @@
 #define THIS_ID(...) metal_fabrication_plant ## __VA_ARGS__
 
 spriteset(THIS_ID(spriteset_ground), "sprites/graphics/industries/groundtiles.png") {
-	tmpl_ground_tile(150, 10)
-	tmpl_ground_tile(150, 10)
+	tmpl_ground_tile(80, 10)
+	tmpl_ground_tile(80, 10)
 }
 
 spriteset(THIS_ID(spriteset_1)) {
-	tmpl_building_sprite_filename(10, 60, 70, -39, "sprites/graphics/industries/metalfabricationplant.png")
-	tmpl_building_sprite_filename(10, 60, 70, -39, "sprites/graphics/industries/metalfabricationplant_snow.png")
+	tmpl_building_sprite_filename(10, 60, 70, -36, "sprites/graphics/industries/metalfabricationplant.png")
+	tmpl_building_sprite_filename(10, 60, 70, -36, "sprites/graphics/industries/metalfabricationplant_snow.png")
 }
 
 spriteset(THIS_ID(spriteset_2)) {
-	tmpl_building_sprite_filename(80, 60, 70, -39, "sprites/graphics/industries/metalfabricationplant.png")
-	tmpl_building_sprite_filename(80, 60, 70, -39, "sprites/graphics/industries/metalfabricationplant_snow.png")
+	tmpl_building_sprite_filename(80, 60, 70, -36, "sprites/graphics/industries/metalfabricationplant.png")
+	tmpl_building_sprite_filename(80, 60, 70, -36, "sprites/graphics/industries/metalfabricationplant_snow.png")
 }
 
 spriteset(THIS_ID(spriteset_3)) {
@@ -28,8 +28,8 @@ spriteset(THIS_ID(spriteset_3)) {
 }
 
 spriteset(THIS_ID(spriteset_4)) {
-	tmpl_building_sprite_filename(220, 60, 51, -20, "sprites/graphics/industries/metalfabricationplant.png")
-	tmpl_building_sprite_filename(220, 60, 51, -20, "sprites/graphics/industries/metalfabricationplant_snow.png")
+	tmpl_building_sprite_filename(220, 60, 51, -23, "sprites/graphics/industries/metalfabricationplant.png")
+	tmpl_building_sprite_filename(220, 60, 51, -23, "sprites/graphics/industries/metalfabricationplant_snow.png")
 }
 
 spriteset(THIS_ID(spriteset_5)) {
@@ -47,53 +47,51 @@ spriteset(THIS_ID(spriteset_7)) {
 	tmpl_building_sprite_filename(430, 60, 31, 0, "sprites/graphics/industries/metalfabricationplant_snow.png")
 }
 
+SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_1), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_1), 32)
+
 SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_2), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_2), 32)
 
-SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_3), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_3), 32)
+SPRITELAYOUT_NORMAL_SNOW(THIS_ID(small_workshop), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_3), 32)
 
-SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_4), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_4), 32)
+SPRITELAYOUT_NORMAL_SNOW(THIS_ID(boilerhouse), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_4), 32)
 
-SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_5), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_5), 32)
+SPRITELAYOUT_NORMAL_SNOW(THIS_ID(metal_store), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_5), 32)
 
-SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_6), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_6), 32)
+SPRITELAYOUT_NORMAL_SNOW(THIS_ID(greeble_tile_1), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_6), 32)
 
-SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_7), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_7), 32)
-
-SPRITELAYOUT_NORMAL_SNOW_BEGIN(THIS_ID(spritelayout_1_anim), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_1), 7)
-	BUILDING_DARK_SMOKE_SMALL(0, 8, 53)
-SPRITELAYOUT_END
+SPRITELAYOUT_NORMAL_SNOW(THIS_ID(greeble_tile_2), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_7), 32)
 
 switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_1), relative_pos) {
-	relative_coord(0, 0): THIS_ID(spritelayout_3);
-	relative_coord(2, 0): THIS_ID(spritelayout_3);
-	relative_coord(0, 1): THIS_ID(spritelayout_3);
-	relative_coord(1, 1): THIS_ID(spritelayout_3);
-	relative_coord(1, 0): THIS_ID(spritelayout_3);
-	relative_coord(0, 3): THIS_ID(spritelayout_4);
-	relative_coord(1, 3): THIS_ID(spritelayout_4);
-	relative_coord(1, 4): THIS_ID(spritelayout_6);
-	relative_coord(2, 1): THIS_ID(spritelayout_1_anim);
+	relative_coord(0, 0): THIS_ID(small_workshop);
+	relative_coord(2, 0): THIS_ID(small_workshop);
+	relative_coord(0, 1): THIS_ID(small_workshop);
+	relative_coord(1, 1): THIS_ID(small_workshop);
+	relative_coord(1, 0): THIS_ID(small_workshop);
+	relative_coord(0, 3): THIS_ID(boilerhouse);
+	relative_coord(1, 3): THIS_ID(boilerhouse);
+	relative_coord(1, 4): THIS_ID(greeble_tile_1);
+	relative_coord(2, 1): THIS_ID(spritelayout_1);
 	relative_coord(2, 2): THIS_ID(spritelayout_2);
-	relative_coord(2, 3): THIS_ID(spritelayout_7);
-	relative_coord(2, 4): THIS_ID(spritelayout_7);
-	THIS_ID(spritelayout_5);
+	relative_coord(2, 3): THIS_ID(greeble_tile_2);
+	relative_coord(2, 4): THIS_ID(greeble_tile_2);
+	THIS_ID(metal_store);
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_2), relative_pos) {
-	relative_coord(1, 0): THIS_ID(spritelayout_1_anim);
+	relative_coord(1, 0): THIS_ID(spritelayout_1);
 	relative_coord(1, 1): THIS_ID(spritelayout_2);
-	relative_coord(0, 2): THIS_ID(spritelayout_3);
-	relative_coord(1, 2): THIS_ID(spritelayout_3);
-	relative_coord(1, 3): THIS_ID(spritelayout_3);
-	relative_coord(2, 1): THIS_ID(spritelayout_7);
-	relative_coord(2, 2): THIS_ID(spritelayout_6);
-	relative_coord(2, 3): THIS_ID(spritelayout_6);
-	relative_coord(2, 0): THIS_ID(spritelayout_4);
-	relative_coord(3, 0): THIS_ID(spritelayout_4);
-	relative_coord(3, 2): THIS_ID(spritelayout_4);
-	relative_coord(0, 3): THIS_ID(spritelayout_3);
-	relative_coord(3, 3): THIS_ID(spritelayout_3);
-	THIS_ID(spritelayout_5);
+	relative_coord(0, 2): THIS_ID(small_workshop);
+	relative_coord(1, 2): THIS_ID(small_workshop);
+	relative_coord(1, 3): THIS_ID(small_workshop);
+	relative_coord(2, 1): THIS_ID(greeble_tile_2);
+	relative_coord(2, 2): THIS_ID(greeble_tile_1);
+	relative_coord(2, 3): THIS_ID(greeble_tile_1);
+	relative_coord(2, 0): THIS_ID(boilerhouse);
+	relative_coord(3, 0): THIS_ID(boilerhouse);
+	relative_coord(3, 2): THIS_ID(boilerhouse);
+	relative_coord(0, 3): THIS_ID(small_workshop);
+	relative_coord(3, 3): THIS_ID(small_workshop);
+	THIS_ID(metal_store);
 }
 
 switch(FEAT_INDUSTRYTILES, PARENT, THIS_ID(layout), layout_num) {
