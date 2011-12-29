@@ -13,38 +13,38 @@ spriteset(THIS_ID(spriteset_ground), "sprites/graphics/industries/groundtiles.pn
 }
 
 spriteset(THIS_ID(spriteset_1)) {
-	tmpl_building_sprite_filename(10, 60, 70, -39, "sprites/graphics/industries/metalfoundry.png")
-	tmpl_building_sprite_filename(10, 60, 70, -39, "sprites/graphics/industries/metalfoundry_snow.png")
+	tmpl_building_sprite_filename(10, 60, 70, -39, "sprites/graphics/industries/metalworkshop.png")
+	tmpl_building_sprite_filename(10, 60, 70, -39, "sprites/graphics/industries/metalworkshop_snow.png")
 }
 
 spriteset(THIS_ID(spriteset_2)) {
-	tmpl_building_sprite_filename(80, 60, 70, -39, "sprites/graphics/industries/metalfoundry.png")
-	tmpl_building_sprite_filename(80, 60, 70, -39, "sprites/graphics/industries/metalfoundry_snow.png")
+	tmpl_building_sprite_filename(80, 60, 70, -39, "sprites/graphics/industries/metalworkshop.png")
+	tmpl_building_sprite_filename(80, 60, 70, -39, "sprites/graphics/industries/metalworkshop_snow.png")
 }
 
 spriteset(THIS_ID(spriteset_3)) {
-	tmpl_building_sprite_filename(150, 60, 51, -20, "sprites/graphics/industries/metalfoundry.png")
-	tmpl_building_sprite_filename(150, 60, 51, -20, "sprites/graphics/industries/metalfoundry_snow.png")
+	tmpl_building_sprite_filename(150, 60, 51, -20, "sprites/graphics/industries/metalworkshop.png")
+	tmpl_building_sprite_filename(150, 60, 51, -20, "sprites/graphics/industries/metalworkshop_snow.png")
 }
 
 spriteset(THIS_ID(spriteset_4)) {
-	tmpl_building_sprite_filename(220, 60, 51, -20, "sprites/graphics/industries/metalfoundry.png")
-	tmpl_building_sprite_filename(220, 60, 51, -20, "sprites/graphics/industries/metalfoundry_snow.png")
+	tmpl_building_sprite_filename(220, 60, 51, -20, "sprites/graphics/industries/metalworkshop.png")
+	tmpl_building_sprite_filename(220, 60, 51, -20, "sprites/graphics/industries/metalworkshop_snow.png")
 }
 
 spriteset(THIS_ID(spriteset_5)) {
-	tmpl_building_sprite_filename(290, 60, 51, -20, "sprites/graphics/industries/metalfoundry.png")
-	tmpl_building_sprite_filename(290, 60, 51, -20, "sprites/graphics/industries/metalfoundry_snow.png")
+	tmpl_building_sprite_filename(290, 60, 51, -20, "sprites/graphics/industries/metalworkshop.png")
+	tmpl_building_sprite_filename(290, 60, 51, -20, "sprites/graphics/industries/metalworkshop_snow.png")
 }
 
 spriteset(THIS_ID(spriteset_6)) {
-	tmpl_building_sprite_filename(360, 60, 31, 0, "sprites/graphics/industries/metalfoundry.png")
-	tmpl_building_sprite_filename(360, 60, 31, 0, "sprites/graphics/industries/metalfoundry_snow.png")
+	tmpl_building_sprite_filename(360, 60, 31, 0, "sprites/graphics/industries/metalworkshop.png")
+	tmpl_building_sprite_filename(360, 60, 31, 0, "sprites/graphics/industries/metalworkshop_snow.png")
 }
 
 spriteset(THIS_ID(spriteset_7)) {
-	tmpl_building_sprite_filename(430, 60, 31, 0, "sprites/graphics/industries/metalfoundry.png")
-	tmpl_building_sprite_filename(430, 60, 31, 0, "sprites/graphics/industries/metalfoundry_snow.png")
+	tmpl_building_sprite_filename(430, 60, 31, 0, "sprites/graphics/industries/metalworkshop.png")
+	tmpl_building_sprite_filename(430, 60, 31, 0, "sprites/graphics/industries/metalworkshop_snow.png")
 }
 
 SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_2), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_2), 32)
