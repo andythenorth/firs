@@ -14,7 +14,7 @@ CC             ?= gcc
 CC_FLAGS       ?= -C -E - <
 
 GIMP           ?= $(shell [ `which gimp 2>/dev/null` ] && echo "gimp" || echo "")
-GIMP_FLAGS     ?= -i -b - <
+GIMP_FLAGS     ?= -n -i -b - <
 
 # Macs have a different md5 command than linux or mingw envirnoment:
 MD5SUM         ?= $(shell [ "$(OSTYPE)" = "Darwin" ] && echo "md5 -r" || echo "md5sum")
@@ -84,7 +84,7 @@ ifndef $(INSTALL_DIR)
 OSTYPE:=$(shell uname -s)
 
 ifeq ($(OSTYPE),Darwin)
-INSTALL_DIR :=$(HOME)/Documents/OpenTTD/data/$(PROJECT_NAME)
+INSTALL_DIR :=$(HOME)/Documents/OpenTTD/newgrf/$(PROJECT_NAME)
 endif
 
 ifeq ($(shell echo "$(OSTYPE)" | cut -d_ -f1),MINGW32)
@@ -96,17 +96,17 @@ WIN_VER = $(shell echo "$(OSTYPE)" | cut -d- -f2 | cut -d. -f1)
 ifeq ($(WIN_VER),5)
 	INSTALL_DIR :=C:\Documents and Settings\All Users\Shared Documents\OpenTTD\data\$(PROJECT_NAME)
 else
-	INSTALL_DIR :=C:\Users\Public\Documents\OpenTTD\data\$(PROJECT_NAME)
+	INSTALL_DIR :=C:\Users\Public\Documents\OpenTTD\newgrf\$(PROJECT_NAME)
 endif
 endif
 
 ifeq ($(shell echo "$(OSTYPE)" | cut -d_ -f1),CYGWIN)
-INSTALL_DIR :=$(shell cygpath -A -O)/OpenTTD/data/$(PROJECT_NAME)
+INSTALL_DIR :=$(shell cygpath -A -O)/OpenTTD/newgrf/$(PROJECT_NAME)
 endif
 
 # If non of the above matched, we'll assume we're on a unix-like system
 ifeq ($(OSTYPE),Linux)
-INSTALL_DIR := $(HOME)/.openttd/data/$(PROJECT_NAME)
+INSTALL_DIR := $(HOME)/.openttd/newgrf/$(PROJECT_NAME)
 endif
 
 endif
