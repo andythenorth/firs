@@ -131,6 +131,20 @@ spritelayout spritelayout_name { \
 		hide_sprite: !(condition); \
 	}
 
+
+/* Defines a building
+ *
+ * building_spriteset   Spriteset for the building sprites. This spriteset must define the sprites in the specified order.
+ * building_zextent     Size of the bounding box of the building sprite in the z direction. By default it is 16.
+ */
+#define UNCONDITIONAL_BUILDING_SPRITE(building_sprite, building_zextent) \
+	building { \
+		sprite: building_sprite; \
+		recolour_mode: RECOLOUR_REMAP; \
+		palette: PALETTE_USE_DEFAULT; \
+		zextent: building_zextent; \
+	}
+
 /* Defines a sloped, ground aware spritelayout for an industry tile.
  * Ground sprite overlays and buildings must be defined separately.
  *
