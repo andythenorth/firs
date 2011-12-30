@@ -73,7 +73,7 @@ GROUNDSPRITE_SWITCH(THIS_ID(ground_switch), THIS_ID(layout))
 TILE_DISALLOW_NEARBY_CLASS(nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
 TILE_ALLOW_PLAYER         (terrain_check,                                                           THIS_ID(nearby_industry))
 
-item(FEAT_INDUSTRYTILES, THIS_ID(tile), 164) {
+item(FEAT_INDUSTRYTILES, THIS_ID(tile), TILE_BUILDERSYARD_1) {
 	property {
 		substitute: 0;
 		accepted_cargos: [[BDMT, 8]];

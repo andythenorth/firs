@@ -20,7 +20,7 @@ SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_1), GROUNDSPRITE_WATER, THIS_ID(sprites
 TILE_DISALLOW_NEARBY_CLASS(tile_nearby_industry,  TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
 TILE_ALLOW_PLAYER         (tile_location_check,                                                             THIS_ID(tile_nearby_industry))
 
-item(FEAT_INDUSTRYTILES, THIS_ID(tile), 198) {
+item(FEAT_INDUSTRYTILES, THIS_ID(tile), TILE_DREDGINGSITE_1) {
 	property {
 		substitute:       0;
 		accepted_cargos:  [[ENSP, 8]];

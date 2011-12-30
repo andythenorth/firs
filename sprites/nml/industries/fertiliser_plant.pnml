@@ -199,7 +199,7 @@ switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(tile_anim_control), (extra_callback_inf
 	return CB_RESULT_NEXT_FRAME;
 }
 
-item(FEAT_INDUSTRYTILES, THIS_ID(tile), 163) {
+item(FEAT_INDUSTRYTILES, THIS_ID(tile), TILE_FERTILISERPLANT_1) {
 	property {
 		substitute:         0;
 		accepted_cargos:    [[RFPR, 8]];

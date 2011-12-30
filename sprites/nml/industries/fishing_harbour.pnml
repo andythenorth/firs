@@ -851,7 +851,7 @@ switch(FEAT_INDUSTRYTILES, PARENT, THIS_ID(layout), layout_num) {
  * Definition of the industry tile and its callbacks
  * *************************************************/
 
-item(FEAT_INDUSTRYTILES, THIS_ID(tile_1), 195) {
+item(FEAT_INDUSTRYTILES, THIS_ID(tile_1), TILE_FISHINGHARBOUR_1) {
 	property {
 		substitute:       0;
 		accepted_cargos:  [[MNSP, 8], [FISH, 8]];
@@ -870,7 +870,7 @@ TILE_CHECK_FLAT      (tile2_flat_check, return CB_RESULT_LOCATION_DISALLOW, retu
 TILE_CHECK_WATERCLASS(tile2_land_check,     WATER_CLASS_NONE, THIS_ID(tile2_flat_check), return CB_RESULT_LOCATION_DISALLOW)
 TILE_CHECK_WATERCLASS(tile2_location_check, WATER_CLASS_SEA,  THIS_ID(tile2_flat_check), THIS_ID(tile2_land_check))
 
-item(FEAT_INDUSTRYTILES, THIS_ID(tile_2), 196) {
+item(FEAT_INDUSTRYTILES, THIS_ID(tile_2), TILE_FISHINGHARBOUR_2) {
 	property {
 		substitute:       0;
 		accepted_cargos:  [[MNSP, 8], [FISH, 8]];

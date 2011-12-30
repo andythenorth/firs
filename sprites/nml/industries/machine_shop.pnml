@@ -251,7 +251,7 @@ switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(tile1_anim_control), (extra_callback_in
 	return CB_RESULT_START_ANIMATION;
 }
 
-item(FEAT_INDUSTRYTILES, THIS_ID(tile), 186) {
+item(FEAT_INDUSTRYTILES, THIS_ID(tile), TILE_MACHINESHOP_1) {
 	property {
 		substitute:         0;
 		accepted_cargos:    [[STEL, 8], [PETR, 8]];

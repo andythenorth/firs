@@ -46,7 +46,7 @@ SPRITELAYOUT_END
  * Definition of the industry tile and its callbacks
  * *************************************************/
 
-item(FEAT_INDUSTRYTILES, THIS_ID(tile), 194) {
+item(FEAT_INDUSTRYTILES, THIS_ID(tile), TILE_FOODMARKET_1) {
 	property {
 		substitute:       0;
 		accepted_cargos:  [[FOOD, 8], [FRVG, 8], [BEER, 8]];

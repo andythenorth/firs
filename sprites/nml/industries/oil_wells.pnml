@@ -87,7 +87,7 @@ switch (FEAT_INDUSTRYTILES, SELF, THIS_ID(tile_oil_well_anim_next_frame), animat
 	return CB_RESULT_NEXT_FRAME;
 }
 
-item(FEAT_INDUSTRYTILES, THIS_ID(tile_oil_well), 215) {
+item(FEAT_INDUSTRYTILES, THIS_ID(tile_oil_well), TILE_OILWELLS_1) {
 	property {
 		substitute:         0;
 		accepted_cargos:    [[ENSP, 8]];
@@ -107,7 +107,7 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_oil_well), 215) {
 	}
 }
 
-item(FEAT_INDUSTRYTILES, THIS_ID(tile_building), 216) {
+item(FEAT_INDUSTRYTILES, THIS_ID(tile_building), TILE_OILWELLS_2) {
 	property {
 		substitute:       0;
 		accepted_cargos:  [[ENSP, 8]];

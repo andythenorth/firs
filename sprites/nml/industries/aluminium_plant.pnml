@@ -233,7 +233,7 @@ switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(anim_control), (extra_callback_info1 & 
 	return CB_RESULT_START_ANIMATION;
 }
 
-item(FEAT_INDUSTRYTILES, THIS_ID(tile), 185) {
+item(FEAT_INDUSTRYTILES, THIS_ID(tile), TILE_ALUMINIUMPLANT_1) {
 	property {
 		substitute:         0;
 		accepted_cargos:    [[AORE, 8], [RFPR, 8], [SCMT, 8]];

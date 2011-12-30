@@ -247,7 +247,7 @@ switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(anim_control), (extra_callback_info1 & 
 	return CB_RESULT_START_ANIMATION;
 }
 
-item(FEAT_INDUSTRYTILES, THIS_ID(tile), 181) {
+item(FEAT_INDUSTRYTILES, THIS_ID(tile), TILE_DAIRY_1) {
 	property {
 		substitute:         0;
 		accepted_cargos:    [[MNSP, 8], [MILK, 8]];

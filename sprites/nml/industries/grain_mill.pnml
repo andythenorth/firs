@@ -207,7 +207,7 @@ TILE_ALLOW_PLAYER         (tile1_player_check, THIS_ID(tile1_nearby_industry))
 TILE_DISALLOW_SLOPES      (tile1_location_check, CB_RESULT_LOCATION_DISALLOW, THIS_ID(tile1_player_check))
 GROUNDSPRITE_SWITCH(THIS_ID(ground_switch), THIS_ID(layout))
 
-item(FEAT_INDUSTRYTILES, THIS_ID(tile), 182) {
+item(FEAT_INDUSTRYTILES, THIS_ID(tile), TILE_GRAINMILL_1) {
 	property {
 		substitute:       0;
 		accepted_cargos:  [[GRAI, 8], [MNSP, 8]];

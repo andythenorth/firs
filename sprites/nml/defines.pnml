@@ -187,3 +187,71 @@ if (climate == CLIMATE_TROPICAL) { market_tree = MARKET_TREE_TROPICAL; }
 
 //3F is last ID to be used (64 industry limit)
 
+//Definition of industry tile IDs
+// tiles 0-159 currently vacant
+#define TILE_ARABLEFARM_1                  160
+#define TILE_BREWERY_1                     161
+#define TILE_CEMENTPLANT_1                 162
+#define TILE_FERTILISERPLANT_1             163
+#define TILE_BUILDERSYARD_1                164
+#define TILE_BRICKWORKS_1                  165
+#define TILE_BIOREFINERY_1                 166
+//#define TILE_VACANT                        167
+//#define TILE_VACANT                        168
+//#define TILE_VACANT                        169
+//#define TILE_VACANT                        170
+//#define TILE_VACANT                        171
+//#define TILE_VACANT                        172
+//#define TILE_VACANT                        173
+//#define TILE_VACANT                        174
+//#define TILE_VACANT                        175
+#define TILE_PLASTICSPLANT_1               176
+#define TILE_QUARRY_1                      177
+#define TILE_GLASSWORKS_1                  178
+#define TILE_STOCKYARD_1                   179
+#define TILE_DAIRYFARM_1                   180
+#define TILE_DAIRY_1                       181
+#define TILE_GRAINMILL_1                   182
+#define TILE_TEXTILEMILL_1                 183
+#define TILE_FURNITUREFACTORY_1            184
+#define TILE_ALUMINIUMPLANT_1              185
+#define TILE_MACHINESHOP_1                 186
+#define TILE_LUMBERYARD_1                  187
+#define TILE_METALWORKSHOP_1               188
+#define TILE_CLAYPIT_1                     189
+#define TILE_MIXEDFARM_1                   190
+#define TILE_LIMEKILN_1                    191
+#define TILE_SHEEPFARM_1                   192
+#define TILE_JUNKYARD_1                    193
+#define TILE_FOODMARKET_1                  194
+#define TILE_FISHINGHARBOUR_1              195
+#define TILE_FISHINGHARBOUR_2              196
+#define TILE_BAUXITEMINE_1                 197
+#define TILE_DREDGINGSITE_1                198
+#define TILE_IRONWORKS_1                   199
+#define TILE_METALFABRICATIONPLANT_1       200
+#define TILE_RECYCLINGPLANT_1              201
+#define TILE_RECYCLINGDEPOT_1              202
+#define TILE_PETROLPUMP_1                  203
+#define TILE_FISHINGGROUNDS_1              204
+#define TILE_FOREST_1                      205
+#define TILE_FOREST_2                      206
+#define TILE_FRUITPLANTATION_1             207
+#define TILE_FRUITPLANTATION_2             208
+#define TILE_FORGE_1                       209
+//#define TILE_VACANT                        210
+//#define TILE_VACANT                        211
+//#define TILE_VACANT                        212
+//#define TILE_VACANT                        213
+#define TILE_SUGARREFINERY_1               214
+#define TILE_OILWELLS_1                    215
+#define TILE_OILWELLS_2                    216
+#define TILE_HOTEL_1                       217
+#define TILE_HARDWARESTORE_1               218
+//#define TILE_VACANT                        219
+//#define TILE_VACANT                        220
+//#define TILE_VACANT                        221
+//#define TILE_VACANT                        222
+//#define TILE_VACANT                        223
+#define TILE_GENERIC_CONCRETE              224
+// tiles 225, 226, 228, 233 reserved for legacy reasons - see basetiles.pnml

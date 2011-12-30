@@ -5147,7 +5147,7 @@ TILE_ALLOW_PLAYER         (tile_trees_player_check,                             
 TILE_CHECK_WATER          (tile_trees_water_check,                          string(STR_ERR_LOCATION_NOT_ON_WATER),  THIS_ID(tile_trees_player_check))
 TILE_DISALLOW_TERRAIN     (tile_trees_location_check,  TILETYPE_DESERT,     string(STR_ERR_LOCATION_NOT_IN_DESERT), THIS_ID(tile_trees_water_check))
 
-item(FEAT_INDUSTRYTILES, tile_trees, 205) {
+item(FEAT_INDUSTRYTILES, tile_trees, TILE_FOREST_1) {
 	property {
 		substitute:       0;
 		accepted_cargos:  [[FMSP, 8]];
@@ -5166,7 +5166,7 @@ TILE_DISALLOW_NEARBY_CLASS(tile_equipment_nearby_industry, TILE_CLASS_INDUSTRY, 
 TILE_ALLOW_PLAYER         (tile_equipment_player_check,                                                            THIS_ID(tile_equipment_nearby_industry))
 TILE_CHECK_WATER          (tile_equipment_location_check,                       CB_RESULT_LOCATION_DISALLOW, THIS_ID(tile_equipment_player_check))
 
-item(FEAT_INDUSTRYTILES, tile_equipment, 206) {
+item(FEAT_INDUSTRYTILES, tile_equipment, TILE_FOREST_2) {
 	property {
 		substitute:       0;
 		accepted_cargos:  [[FMSP, 8]];

@@ -84,7 +84,7 @@ switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(tile1_layout_check), (extra_callback_in
 TILE_ALLOW_PLAYER         (tile1_player_check,                                      THIS_ID(tile1_layout_check))
 TILE_DISALLOW_SLOPES      (tile1_location_check, CB_RESULT_LOCATION_DISALLOW, THIS_ID(tile1_player_check))
 
-item(FEAT_INDUSTRYTILES, THIS_ID(tile), 203) {
+item(FEAT_INDUSTRYTILES, THIS_ID(tile), TILE_PETROLPUMP_1) {
 	property {
 		substitute:       0;
 		accepted_cargos:  [[FOOD, 8], [GOOD, 8], [PETR, 8]];

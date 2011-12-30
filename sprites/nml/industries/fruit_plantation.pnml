@@ -5112,7 +5112,7 @@ TILE_ALLOW_PLAYER         (tile_plantation_player_check,                        
 TILE_CHECK_WATER          (tile_plantation_water_check,                          string(STR_ERR_LOCATION_NOT_ON_WATER),  THIS_ID(tile_plantation_player_check))
 TILE_CHECK_HEIGHT         (tile_plantation_location_check,  0, snowline_height,  THIS_ID(tile_plantation_water_check),   return string(STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE))
 
-item(FEAT_INDUSTRYTILES, THIS_ID(tile_plantation), 207) {
+item(FEAT_INDUSTRYTILES, THIS_ID(tile_plantation), TILE_FRUITPLANTATION_1) {
 	property {
 		substitute:       0;
 		accepted_cargos:  [[FMSP, 8]];
@@ -5133,7 +5133,7 @@ TILE_ALLOW_PLAYER         (tile_house_player_check,                             
 TILE_CHECK_WATER          (tile_house_water_check,                          string(STR_ERR_LOCATION_NOT_ON_WATER),  THIS_ID(tile_house_player_check))
 TILE_CHECK_HEIGHT         (tile_house_location_check,  0, snowline_height,  THIS_ID(tile_house_water_check),   return string(STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE))
 
-item(FEAT_INDUSTRYTILES, THIS_ID(tile_house), 208) {
+item(FEAT_INDUSTRYTILES, THIS_ID(tile_house), TILE_FRUITPLANTATION_2) {
 	property {
 		substitute:       0;
 		accepted_cargos:  [[FMSP, 8]];

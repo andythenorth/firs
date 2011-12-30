@@ -32,7 +32,7 @@ ADD_FLAT_FENCES             ( THIS_ID(tile_fences),         THIS_ID(tile_fence_i
 TILE_DISALLOW_NEARBY_CLASS(tile_nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
 TILE_ALLOW_PLAYER         (tile_location_check,                                                          THIS_ID(tile_nearby_industry))
 
-item(FEAT_INDUSTRYTILES, THIS_ID(tile), 202) {
+item(FEAT_INDUSTRYTILES, THIS_ID(tile), TILE_RECYCLINGDEPOT_1) {
 	property {
 		substitute:       0;
 		accepted_cargos:  [];

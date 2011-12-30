@@ -24,7 +24,7 @@ spritelayout spritelayout_plain_conrete {
 	}
 }
 
-item(FEAT_INDUSTRYTILES, tile_plain_concrete, 224) {
+item(FEAT_INDUSTRYTILES, tile_plain_concrete, TILE_GENERIC_CONCRETE) {
 	property {
 		substitute:       0;
 		accepted_cargos:  [];

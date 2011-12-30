@@ -40,7 +40,7 @@ switch(FEAT_INDUSTRYTILES, PARENT, THIS_ID(layout), layout_num) {
  * Definition of the industry tile and its callbacks
  * *************************************************/
 
-item(FEAT_INDUSTRYTILES, THIS_ID(tile), 217) {
+item(FEAT_INDUSTRYTILES, THIS_ID(tile), TILE_HOTEL_1) {
 	property {
 		substitute:       0;
 		accepted_cargos:  [[FOOD, 8], [BEER, 8], [0, 8]];

@@ -101,7 +101,7 @@ switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(tile_anim_control), (extra_callback_inf
 	return CB_RESULT_NEXT_FRAME;
 }
 
-item(FEAT_INDUSTRYTILES, THIS_ID(tile), 161) {
+item(FEAT_INDUSTRYTILES, THIS_ID(tile), TILE_BREWERY_1) {
 	property {
 		substitute:         0;
 		accepted_cargos:    [[FRVG, 8], [GRAI, 8], [MNSP, 8]];

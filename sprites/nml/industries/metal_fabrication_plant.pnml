@@ -108,7 +108,7 @@ TILE_DISALLOW_NEARBY_CLASS(tile1_nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT
 TILE_ALLOW_PLAYER         (tile1_player_check,                                                            THIS_ID(tile1_nearby_industry))
 TILE_DISALLOW_SLOPES      (tile1_location_check,                       CB_RESULT_LOCATION_DISALLOW, THIS_ID(tile1_player_check))
 
-item(FEAT_INDUSTRYTILES, THIS_ID(tile), 188) {
+item(FEAT_INDUSTRYTILES, THIS_ID(tile), TILE_METALFABRICATIONPLANT_1) {
 	property {
 		substitute:       0;
 		accepted_cargos:  [[STEL, 8], [RFPR, 8]];

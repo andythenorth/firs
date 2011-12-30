@@ -120,7 +120,7 @@ switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(anim_control), (extra_callback_info1 & 
 	return 254;
 }
 
-item(FEAT_INDUSTRYTILES, THIS_ID(tile), 165) {
+item(FEAT_INDUSTRYTILES, THIS_ID(tile), TILE_BRICKWORKS_1) {
 	property {
 		substitute:         0;
 		accepted_cargos:    [[COAL, 8], [CLAY, 8], [SAND, 8]];
