@@ -403,7 +403,7 @@ item(FEAT_CARGOS, cargo_building_materials, 28) {
 		station_list_colour: 184;
 		cargo_payment_list_colour: 184;
 		is_freight: 1;
-		cargo_classes: bitmask(CC_PIECE_GOODS, CC_COVERED);
+		cargo_classes: bitmask(CC_PIECE_GOODS);
 		cargo_label: "BDMT";
 		town_growth_effect: TOWNGROWTH_NONE;
 		town_growth_multiplier: 1.0;
