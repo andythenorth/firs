@@ -6,6 +6,9 @@ FIRS Industry Replacement Set Changelog
 0.7.x Releases
 --------------
 
+*0.7.0*
+- release
+
 *0.7.0-beta1*
 - first beta release 
 - intended for translators to update translations 
@@ -35,10 +38,11 @@ Several hundred changes since FIRS 0.6.4
 
 *New / Changed Cargos*
 - Introduce separate cargo labels for Sugar Beet (SGBT) and Sugarcane (SBCN).  Helps vehicle set authors provide more specific graphics.
-- Recyclables cargo, produced by Recycling Depot, accepted by Recycling Plant
+- set Sugar Cane classes to 'bulk, non-pourable'
 
-!!!!!!! Change: set Sugar Cane classes to Piece Goods, Neo-Bulk (breaks savegames)
-!!!!!!! Change: Scrap Metal now uses label SCMT instead of SCRP (due to changed classes); changed classes for Scrap Metal; breaks savegames
+- Introduced Recyclables cargo, produced by Recycling Depot, accepted by Recycling Plant
+- Scrap Metal now uses label SCMT instead of SCRP (due to changed classes); changed classes for Scrap Metal
+- removed 'covered' class from Building Materials cargo, added 'bulk' class
 
 *New Features*
 - Parameter to prevent industry opening during game (useful for scenarios / multi-player challenges)
