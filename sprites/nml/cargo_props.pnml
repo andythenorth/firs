@@ -1,4 +1,4 @@
-#define CC_NEO_BULK 11
+#define CC_CUSTOM_NOT_POURABLE 12
 
 cargotable {
     PASS, COAL, MAIL, OIL_,
@@ -524,7 +524,7 @@ if (ENABLE_SUGARCANE) {
             station_list_colour: 182;
             cargo_payment_list_colour: 182;
             is_freight: 1;
-            cargo_classes: bitmask(CC_PIECE_GOODS, CC_NEO_BULK);
+            cargo_classes: bitmask(CC_BULK, CC_CUSTOM_NOT_POURABLE);
             cargo_label: "SGCN";
             town_growth_effect: TOWNGROWTH_NONE;
             town_growth_multiplier: 1.0;
