@@ -1,63 +1,82 @@
 ====================================
 {{GRF_TITLE}} ReadMe
 ====================================
+A full industry set with lots of new industries and lots of new cargos.
+
+
+
+Features improved gameplay and good support from vehicle sets. 
+
+Includes parameter options to control industry behaviour such as closure. 
+
+FIRS 0.7.0 is a fully playable release featuring 49 industries and 31 cargos.
+  http://tt-foundry.com/sets/FIRS/schema/industries?economy=point_7_release
 
 ----------
-0 Contents
+Using FIRS
+
 ----------
 
-1 Preface
-2 Obtaining FIRS
-3 Using FIRS
-  3.1 Vehicle Set support
-  3.2 Parameters
-4 Errors and warnings
-5 FIRS Development
-  5.1 Translations
-  5.2 Compilation
-6 Credits
-7 FIRS Web Links
-8 FIRS License
+
+FIRS requires OpenTTD 1.2.0-beta1 or newer (or nightly build > r23667)
 
 
 
----------
-1 Preface
----------
-
-<<<<<<< local
-*FIRS 0.7 Release Notes*
-=======
-GRF Name : {{GRF_TITLE}}
-GRF ID   : {{GRF_ID}}
-
-This version of FIRS is created using repository version {{REPO_REVISION}}
+FIRS is available in the Temperate, Arctic and Desert climates.
 
 
-*FIRS 0.5 Release Notes*
->>>>>>> other
 
-<<<<<<< local
-FIRS 0.7 is a fully playable release of FIRS featuring 42 industries and 29 cargos.
-http://tt-foundry.com/sets/FIRS/schema/industries?economy=point_7_release
-=======
-FIRS 0.5 is a fully playable release of FIRS featuring 42 industries and 29 cargos.
-http://tt-foundry.com/sets/FIRS/schema/industries?economy=point_5_release
->>>>>>> other
+For latest information / releases, visit TT-Forums.
 
-Nightly builds of FIRS are available, but aren't recommended for most
-players as they often contain work-in-progress!  Thanks though to all those who
-do try the nightlies and report problems :)
+Release thread. Discussion of FIRS new releases, gameplay tips and bug reports:
+	http://www.tt-forums.net/viewtopic.php?t=44177
+
+Development thread. Discussion of development, features, ideas and improvements.
+	
+  http://www.tt-forums.net/viewtopic.php?t=41607
+
+Installing FIRS is easy using the in-game content service. 
+For help with manual installation, try http://wiki.openttd.org/NewGRF
 
 
-*Getting Started with FIRS*
-FIRS lets you get started playing straight away with easy-to-understand
-gameplay:
-- there are plenty of familiar industries and cargos you'll recognise from the
-  default game
-- FIRS adds lots of exciting new cargos and industries to play with
-- primary industries like mines and farms _always_ produce cargo
-- secondary industries like the steel mill and cement plant _always_ produce
+*Setting up a game with FIRS*
+
+To avoid conflicts, FIRS will disable itself if certain other newgrfs are 
+detected in the current game.  You'll see a message if this happens.  
+
+
+Conflicting newgrfs include other industry sets, such as ECS and PBI.
+
+You can find a full list of errors towards the end of this readme.
+
+
+
+
+FIRS has a number of parameters to control industry behaviour.
+
+These cover things like industry production changes, closure and opening.
+
+The parameters generally include help text explaining how they work.
+
+Many FIRS cargos are not transportable using the default vehicles. 
+
+You'll need newgrf vehicle set(s) that support FIRS cargos.  Fortunately there 
+
+are lots of great vehicle sets with FIRS support.  The in-game content service
+
+is a good place to find these.  
+
+You can find a list of compatible vehicle sets towards the end of this readme.
+
+
+
+
+*Playing a game with FIRS*
+You can jump right into FIRS gameplay:
+- there are familiar industries and cargos you'll recognise from default OpenTTD
+- FIRS also adds lots of exciting new cargos and industries to play with
+- primary industries like mines and farms will always produce some cargo
+- secondary industries like the steel mill and cement plant will always produce
   some output cargo when an input cargo is delivered.
 
 For players who want more, FIRS also rewards you by:
@@ -66,51 +85,45 @@ For players who want more, FIRS also rewards you by:
   one input cargo regularly
 - introducing new industries and cargos as time goes by.
 
-The pixels are lickable and work brilliantly with original graphics and OpenGFX.
-
-
 *More Info / Things to Watch Out For!*
 - primary industry will not increase production unless supplies are delivered.
 - some industries are available from year 0. Some industries (and the cargos
   they use) are only available after a certain date.
   Intro dates can be found at:
-  http://tt-foundry.com/sets/FIRS/schema/industries
-- FIRS works well if the colour of the mini-map is changed - this is possible in
-  recent nightly builds of OTTD (in advanced options -> interface)
+    http://tt-foundry.com/sets/FIRS/schema/industries
+- You may find it easier to see industries on the mini-map if you change the
+  map background colour (in advanced options -> interface)
 - FIRS 0.7 is *not* savegame compatible with FIRS 0.6 or earlier.
-- any savegame using the nightly build of FIRS may break :o
 
 
+* Boosting Primary Production *
+Primary industries produce raw materials, e.g.
+- mines, farms, junk yard, oil wells, oil rig etc.
 
-------------------
-2 Obtaining FIRS
-------------------
+Many FIRS primary industries accept Engineering Supplies or Farm Supplies.
+They will only increase production if the correct supplies are delivered.
 
-Stable releases of FIRS are available via OpenTTD's built-in online content.
+Every month there is a chance of a production increase if at least 1t of the
+correct supplies are delivered.
+Only 1t of supplies is required - delivering more than 1t of supplies will
+not make a production increase more likely.
 
-Nightly versions of FIRS are available from http://bundles.openttdcoop.org/firs/
-
-The source of FIRS is available for releases from the DevZone's bundle server next
-to the releases at http://bundles.openttdcoop.org/firs
-The repository itself can be obtained as mercurial checkout
-hg clone http://hg.openttdcoop.org/firs
+Small vehicles are best for delivering supplies.
 
 
+* Industry Closure *
+Industries won't close unless closure is enabled by parameter.
 
-------------
-3 Using FIRS
-------------
+If primary industry closure is enabled, there is a chance of closure each
+month if industry production falls to a low level.  Primary production decrease 
+parameter *must* be enabled if you want primary industries to be able to close.
 
-Obviously you need to add it to the game first. We're not explaining that here,
-go read the OpenTTD manual at http://wiki.openttd.org/NewGRF.
+If secondary industry closure is enabled, there is a chance of closure each
+month if no cargo has been delivered in the previous 18 months.
 
-FIRS shouldn't be used with other industry sets active. FIRS will disable itself
-if an incompatible industry set is detected, but this detection will only work
-for industry sets known at the time of the FIRS release. There's a possibility
-that FIRS will be compatible with other industry sets in the future.
-
-3.1 Vehicle Set Support
------------------------
+-------------------
+Vehicle Set Support
+-------------------
 
 Furthermore you need a vehicle set that supports the FIRS cargos. Any vehicle
 set with proper Cargo Classes support should do that by default. The OpenTTD
@@ -139,67 +152,6 @@ available from the OpenTTD built-in download manager are known to support FIRS:
 (Contact a FIRS developer to have your own set listed here)
 
 
-3.2 Parameters
---------------
-
-Parameter 1. Economy setting: unfinished, may only be set to 0
-
-
-Parameter 2. Primary production change:
-
-  0 = no production decreases (ever); production increase chance if supplies delivered monthly (default)
-
-  1 = production decrease chance if no ENSP; production increase chance if supplies delivered monthly.
-
-
-Parameter 3. Industry Closure / Openings.  Bit map (add the numbers to get the required setting).
-
-  0 = no primary or secondary industry closures (default)
-  1 = allow primary industry closure
-  2 = allow secondary industry closure
-  3 = allow primary and secondary industry closure (combination of 1 + 2)
-
-  4 = no industries open during game (unfinished, doesn't work yet)
-
-
-
-* Boosting Primary Production *
-
-Primary industries produce raw materials, e.g.
-- mines, farms, junk yard, oil wells, oil rig etc.
-
-Many FIRS primary industries accept Engineering Supplies or Farm Supplies.
-They will only increase production if the correct supplies are delivered.
-
-Every month there is a chance of a production increase if at least 1t of the
-correct supplies are delivered.
-Only 1t of supplies is required - delivering more than 1t of supplies will
-not make a production increase more likely.
-
-
-Small vehicles are best for delivering supplies.
-(transfer orders are recommended, with a large vehicle dropping supplies at
-a station to be delivered by small vehicles).
-
-
-If parameter 1 is set to 0, primary industry production will never reduce.
-
-If parameter 1 is set to 1, there is a chance that a primary industry will
-reduce production if no supplies are delivered in a month.
-If the industry is producing a high level of output, there is a greater chance
-of a production decrease.
-
-
-* Industry Closure *
-
-Industries won't close unless closure is enabled by parameter.
-
-If primary industry closure is enabled, there is a chance of closure each
-month if industry production falls to a low level.
-
-If secondary industry closure is enabled, there is a chance of closure each
-month if no cargo has been delivered in the previous 18 months.
-
 
 ---------------------
 4 Errors and warnings
@@ -210,6 +162,11 @@ to locate all incompatible NewGRFs, but not all may have been found.
 In case FIRS is able to detect an incompatible NewGRF, it will issue an error (and
 disable itself) or issue a warning. Below you will find an explanation of possible
 errors and warnings.
+
+A full list of conflicting newgrfs can be found here:
+	
+  http://dev.openttdcoop.org/projects/firs/repository/entry/sprites/nml/checks.pnml
+
 
 
 E00: FIRS requires...
@@ -248,41 +205,45 @@ about possible problems in FIRS at the penalty of never being allowed to use FIR
 again.
 
 
-
-------------------
-5 FIRS Development
-------------------
-
-5.1 Translations
-----------------
+------------
+Translations
+------------
 
 FIRS developers are always happy to receive translations or translation updates
 for this set. Translations are done as easily as grabbign a text file and
 replacing the English text in it by the text in your language
 
 The authorative english language file is found at
-http://dev.openttdcoop.org/projects/firs/repository/entry/lang/english.lng
+  http://dev.openttdcoop.org/projects/firs/repository/entry/lang/english.lng
 all existing translations at
-http://dev.openttdcoop.org/projects/firs/repository/show/lang
+  http://dev.openttdcoop.org/projects/firs/repository/show/lang
 Grab the existing language file from there, if you want to update a translation.
 
-The status of the existing translations is logged for each run daily. Transcripts
-are found at http://bundles.openttdcoop.org/firs/nightlies/LATEST/log/
+The status of the existing translations is logged for each run daily. 
+Transcripts are found at 
+  http://bundles.openttdcoop.org/firs/nightlies/LATEST/log/
 
 New or updated translations go either to our issue tracker at
-http://dev.openttdcoop.org/projects/firs/issues (just create a new issue for it)
+  http://dev.openttdcoop.org/projects/firs/issues (just create a new issue)
 or post the translated file in the FIRS discussion thread at in the tt-forums:
-http://www.tt-forums.net/viewtopic.php?t=41607
+  http://www.tt-forums.net/viewtopic.php?t=41607
 
 
 
-5.2 Compilation
-----------------
+-----------------------------------
+Obtaining FIRS Source / Compilation
+-----------------------------------
 
-The FIRS source is available in a Mercurial repository and is available through
-http://hg.openttdcoop.org/firs. E.g. use
+Stable releases of FIRS are available via OpenTTD's built-in content service.
+
+Nightly versions of FIRS are available from 
+  http://bundles.openttdcoop.org/firs/
+
+The source of FIRS is available for releases from the DevZone's bundle server 
+next to the releases at 
+  http://bundles.openttdcoop.org/firs
+The repository itself can be obtained as mercurial checkout
   hg clone http://hg.openttdcoop.org/firs
-to get yourself a copy.
 
 In order to compile FIRS from source you need at least a recent version of NML.
 Place nmlc in your system's PATH environment variable and run the makefile:
@@ -296,11 +257,16 @@ Place nmlc in your system's PATH environment variable and run the makefile:
 either 'make', 'make install', or 'make bundle_zip'. There's more
 options, but these are probably sufficient for you to know.
 
+=======
+GRF Name : {{GRF_TITLE}}
+GRF ID   : {{GRF_ID}}
+
+This version of FIRS is created using repository version {{REPO_REVISION}}
 
 
----------
-6 Credits
----------
+-------
+Credits
+-------
 
 Programming:
     andythenorth (Project maintainer)
@@ -309,7 +275,7 @@ Programming:
     Terkhen
     Yexo
 
-Translations:
+Translations (list is not exhaustive, but we try to attribute all translations):
     Croatian:    Voyager1
     Czech:       KouDy, Nargon
     Dutch:       Alberth
@@ -322,7 +288,7 @@ Translations:
     Serbian:     etran
     Spanish:     Terkhen
 
-Graphics (by industry):
+Graphics (list is not exhaustive, but we try to attribute all uses):
     andythenorth
     DanMacK:
         Fishing Boat
@@ -351,32 +317,16 @@ Graphics (by industry):
         Aluminium Plant
         Fertiliser Plant
 
+Thanks to all OpenTTD devs who provide patches and support for FIRS.
+
+Thanks to #openttdcoop and especially Ammler who provides and works a 
+lot on maintaining the Development Zone where this project is hosted and who 
+also frequently gives much valuable input.
 
 
-----------------
-7 FIRS Web Links
-----------------
-
-FIRS Website: http://tt-foundry.com/sets/FIRS/schema/industries
-Information about industries and cargos for both users and set authors.
-
-OpenTTD Wiki page about FIRS: http://wiki.openttd.org/FIRS
-
-Project Page: http://dev.openttdcoop.org/projects/firs
-Source repository and issue tracker.
-
-General Discussion: http://www.tt-forums.net/viewtopic.php?t=44177
-Discussion of the FIRS releases. Talk about it's features, discuss bugs and
-ventilating your ideas.
-
-Development Discussion: http://www.tt-forums.net/viewtopic.php?t=41607
-Follow the latest development.
-
-
-
---------------
-8 FIRS License
---------------
+------------
+FIRS License
+------------
 
 FIRS Industry Replacement Set - Full industry replacement set for OpenTTD
 Copyright (C) 2009-2011  andythenorth, and others (see credits above)
