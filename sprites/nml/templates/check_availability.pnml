@@ -28,8 +28,8 @@
 
 /* Check for restriction via parameter */
 switch(FEAT_INDUSTRIES, SELF, THIS_ID(check_availability_param), restrict_open_during_gameplay) {
-	1..255: return CB_RESULT_IND_NO_CONSTRUCTION;            // disallow when restrictions in place
-	return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;                       // we may build
+	1..255: return CB_RESULT_IND_NO_CONSTRUCTION;         // disallow when restrictions in place
+	return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;       // we may build
 }
 
 /* Allow always in the scenario editor */

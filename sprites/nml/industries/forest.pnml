@@ -5082,9 +5082,10 @@ switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(tile_trees_spritelayout), var[0x03, 0, 
  * tile_equipment
  * *************/
 
-spriteset(spriteset_4459, "sprites/graphics/industries/forest.png") { tmpl_building_sprite(10, 10, 78, -45) } 
-spriteset(spriteset_4460, "sprites/graphics/industries/forest.png") { tmpl_building_sprite(80, 10, 78, -45) } 
-spriteset(spriteset_4461, "sprites/graphics/industries/forest.png") { tmpl_building_sprite(220, 10, 78, -47) } 
+spriteset(spriteset_4459, "sprites/graphics/industries/forest.png") { tmpl_building_sprite(10, 10, 78, -45) }
+spriteset(spriteset_4460, "sprites/graphics/industries/forest.png") { tmpl_building_sprite(80, 10, 78, -45) }
+spriteset(spriteset_4461, "sprites/graphics/industries/forest.png") { tmpl_building_sprite(220, 10, 78, -45) }
+
 spritelayout THIS_ID(tile_equipment_nonsnow_spritelayout) {
 	ground {
 		sprite: 2022;
