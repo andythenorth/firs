@@ -69,7 +69,9 @@ INCOMPATIBLE_GRF("DD\06\02", "Pikka Basic Industries")
 
 INCOMPATIBLE_GRF("mb\08\00", "NewCargos by Michael Blunck")
 
-INCOMPATIBLE_GRF("mb\07\00", "Alpine Climate")
+if (climate == CLIMATE_ARCTIC) {
+	INCOMPATIBLE_GRF("mb\07\00", "Alpine Climate")
+}
 
 INCOMPATIBLE_GRF("AL\01\01", "Nearby Station Names")
 
