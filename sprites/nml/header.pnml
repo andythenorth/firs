@@ -66,6 +66,7 @@ grf {
 	param 5 {
 		station_rating_algorithm {
 			name: string(STR_PARAM_NAME_STAT_RATING);
+			desc: string(STR_PARAM_DESC_STAT_RATING);
 			def_value: 0;
 			min_value: 0;
 			max_value: 2;
