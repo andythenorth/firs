@@ -1,5 +1,33 @@
-
 ##grflangid 0x30
+##plural 7
+
+STR_GRF_DESC                                                                    :{ORANGE}FIRS Industry Replacement Set{}{BLACK}Autorzy: andythenorth, FooBar, planetmaker, Terkhen, Yexo i inni. {SILVER}Więcej informacji w pliku readme. {BLACK}Licencja: GPL v2.
+STR_GRF_NAME                                                                    :{TITLE}
+STR_GRF_URL                                                                     :http://dev.openttdcoop.org/projects/firs
+
+STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :Maksymalna odległość od linii brzegowej dla łowisk, platform wiertniczych i pogłębiarek.
+STR_PARAM_DESC_STAT_RATING                                                      :Ocena stacji uzależniona jest od ilości ładunku dostarczonego przez przemysł; im więcej dostarczono, tym wyższa ocena.
+STR_PARAM_DESC_DEBUG                                                            :Tylko dla deweloperów
+STR_PARAM_DESC_ECONOMIES                                                        :FIRS docelowo ma składać się z kilku ekonomii różniących się przedsiębiorstwami, towarami i cenami. {}{}{SILVER}Na razie tylko jedna ekonomia jest dostępna :)
+STR_PARAM_DESC_NEVER_CLOSE                                                      :Domyślnie kopalnie i farmy nie upadają.{}{}Jeżeli parametr jest włączony, przedsiebiorstwo upada, jeśli jego produkcja zejdzie do zbyt niskiego poziomu. {SILVER}Parametr 'Pozwalaj na spadek produkcji w kopalniach i farmach' musi być włączony.
+STR_PARAM_DESC_NO_OPENINGS                                                      :Domyślnie nowe przedsiębiorstwa powstają w trakcie gry.{}{}Jeśli parametr jest włączony to nowe zakłady nie będą otwierane, a gracz nie będzie miał możliwości ich fundowania.
+STR_PARAM_DESC_PRIMARY_PRODUCTION_DECREASE                                      :Domyślnie produkcja w kopalniach i farmach nie spada.{}{}Jeżeli parametr jest włączony, produkcja może się zmniejszyć jeśli nie dostarczy się odpowiednich zasobów. Im wyższa produkcja, tym większa szansa na jej zmniejszenie.
+STR_PARAM_DESC_SECONDARY_NEVER_CLOSE                                            :Domyślnie przedsiębiorstwa przetwórcze nie upadają.{}{}Jeśli parametr jest włączony, spółki do których nie dostarcza się towarów upadają po pewnym czasie.
+STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY                                   :Maksymalny dystans przedsiębiorstw morskich od wybrzeża
+STR_PARAM_NAME_DEBUG                                                            :Tryb debugowania
+STR_PARAM_NAME_ECONOMIES                                                        :Ekonomia
+STR_PARAM_NAME_NEVER_CLOSE                                                      :Pozwalaj na upadłość kopalń i farm
+STR_PARAM_NAME_NO_OPENINGS                                                      :Zapobiegaj powstawaniu nowych przedsiebiorstw
+STR_PARAM_NAME_PRIMARY_PRODUCTION_DECREASE                                      :Pozwalaj na spadek produkcji w kopalniach i farmach
+STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            :Pozwalaj zakładom przetwórczym na upadłość
+STR_PARAM_VALUE_ECONOMIES_TEST_ECONOMY                                          :ekonomia testowa
+STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0                                         :bez limitu
+STR_PARAM_NAME_STAT_RATING                                                      :System oceny stacji
+STR_PARAM_VALUE_STAT_RATING_DEFAULT                                             :domyślny
+STR_PARAM_VALUE_STAT_RATING_REDUCED_TIME                                        :ulepszony - zredukowany wpływ czasu od ostatniego odbioru ładunku
+STR_PARAM_VALUE_STAT_RATING_100                                                 :zawsze 100%
+
+
 STR_CARGO_NAME_ALCOHOL                                                          :Alkohol
 STR_CARGO_NAME_BAUXITE                                                          :Boksyt
 STR_CARGO_NAME_BUILDING_MATERIALS                                               :Materiały budowlane
@@ -9,7 +37,7 @@ STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             
 STR_CARGO_NAME_FIBRES                                                           :Włókna naturalne
 STR_CARGO_NAME_FISH                                                             :Ryby
 STR_CARGO_NAME_FARM_SUPPLIES                                                    :Sprzęt rolniczy
-STR_CARGO_NAME_FRUITS                                                           :Owoce i warzywa
+STR_CARGO_NAME_FRUITS                                                           :Owoce
 STR_CARGO_NAME_LUMBER                                                           :Deski
 STR_CARGO_NAME_METAL                                                            :Metal
 STR_CARGO_NAME_MILK                                                             :Mleko
@@ -19,97 +47,126 @@ STR_CARGO_NAME_RECYCLABLES                                                      
 STR_CARGO_NAME_SAND                                                             :Piasek
 STR_CARGO_NAME_SCRAP_METAL                                                      :Złom
 STR_CARGO_NAME_STONE                                                            :Kamienie
-STR_CARGO_NAME_SUGARCANE                                                        :Buraki cukrowe
-STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} desek
+STR_CARGO_NAME_SUGAR_BEET                                                       :Buraki cukrowe
+STR_CARGO_NAME_SUGARCANE                                                        :Trzcina cukrowa
 STR_CARGO_NAME_WOOL                                                             :Wełna
-STR_CARGO_UNIT_PETROL                                                           :{VOLUME} paliwa
-STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} buraków cukrowych
+
 STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} alkoholu
 STR_CARGO_UNIT_BAUXITE                                                          :{WEIGHT} boksytu
 STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WEIGHT} materiałów budowlanych
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} chemikaliów
 STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} gliny
+STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} skrzy{P 0 nia nie ń} maszyn
 STR_CARGO_UNIT_FIBRES                                                           :{WEIGHT} włókien naturalnych
 STR_CARGO_UNIT_FISH                                                             :{WEIGHT} ryb
-STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} skrzyń sprzętu rolniczego
-STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} owoców i warzyw
+STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} skrzy{P 0 nia nie ń} sprzętu rolniczego
+STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} owoców
+STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} desek
 STR_CARGO_UNIT_METAL                                                            :{WEIGHT} metalu
 STR_CARGO_UNIT_MILK                                                             :{VOLUME} mleka
-STR_CARGO_UNIT_MNSP                                                             :{SIGNED_WORD} skrzyń opakowań
+STR_CARGO_UNIT_MNSP                                                             :{SIGNED_WORD} skrzy{P 0 nia nie ń} opakowań
+STR_CARGO_UNIT_PETROL                                                           :{VOLUME} paliwa
 STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} surowców wtórnych
 STR_CARGO_UNIT_SAND                                                             :{WEIGHT} piasku
 STR_CARGO_UNIT_SCRAP_METAL                                                      :{WEIGHT} złomu
 STR_CARGO_UNIT_STONE                                                            :{WEIGHT} kamieni
+STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} buraków cukrowych
+STR_CARGO_UNIT_SUGARCANE                                                        :{WEIGHT} trzciny cukrowej
 STR_CARGO_UNIT_WOOL                                                             :{WEIGHT} wełny
+
+STR_CID_ALCOHOL                                                                 :{TINYFONT}AL
 STR_CID_BAUXITE                                                                 :{TINYFONT}BX
 STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}MB
-STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}MS
-STR_CID_LUMBER                                                                  :{TINYFONT}DS
-STR_CID_METAL                                                                   :{TINYFONT}ML
-STR_CID_MILK                                                                    :{TINYFONT}ML
-STR_CID_SCRAP_METAL                                                             :{TINYFONT}ZL
-STR_EXTRA_LIME_KILN                                                             :{BLACK}Produkcja:{}  4 tony za 8 ton kamieni{}  4 tony za 8 ton węgla{}{}Produkcja wzrasta do 8 ton za 8 ton, gdy oba surowce są dostarczane w ciągu miesiąca.
-STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Produkcja ręcznie kutych podków, narzędzi, bramek i innych drobnych metalowych przedmiotów.{}{}5 ton za 8 ton surowców.
-STR_EXTRA_STEELMILL                                                             :{BLACK}Produkcja:{}  2 tony za 8 ton rudy żelaza{}  2 tony za 8 ton węgla{}  4 tony za 8 ton złomu{}{}Produkcja wzrasta, gdy różne surowce są dostarczane w ciągu miesiąca.
-STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}Produkcja:{}  2 tony za 8 ton boksytu{}  2 tony za 8 ton chemikaliów{}  4 tony za 8 ton złomu{}{}Produkcja wzrasta, gdy różne surowce są dostarczane w ciągu miesiąca.
-STR_EXTRA_METAL_FOUNDRY                                                         :{BLACK}Produkuje narzędzia i części z dostarczonych metali.{}{}8 ton za 8 ton surowców.
-STR_EXTRA_SAWMILL                                                               :{BLACK}Drzewo się rżnie. Jest deska, jest sęk.{}{}6 ton za 8 ton surowców.
-STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Produkcja:{}  3 tony za 8 ton opakowań{}  5 ton za 8 ton desek{}{}Produkcja wzrasta do 8 ton za 8 ton, gdy oba surowce są dostarczane w ciągu miesiąca.
-STR_EXTRA_PAPER_MILL                                                            :{BLACK}Przerabia drewno na papier i karton.{}{}{BLACK}Produkcja:{}  4 tony za 8 ton drewna{}  2 tony za 8 ton gliny{}  2 tony za 8 ton chemikaliów{}{}Produkcja wzrasta, gdy różne surowce są dostarczane w ciągu miesiąca.
-STR_EXTRA_OIL_REFINERY                                                          :{BLACK}W procesie rafinacji produkuje paliwo i chemikalia.{}{}6 ton za 8 ton surowców.
-STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}Produkuje artykuły plastikowe na użytek przedsiębiorstw i gospodarstw domowych.{}{}6 ton za 8 ton surowców.
-STR_EXTRA_IRON_WORKS                                                            :{BLACK}Produkcja:{}  1 tona za 8 ton drewna{}  2 tony za 8 ton rudy żelaza{}{}Produkcja wzrasta do 3 ton za 8 ton, gdy oba surowce są dostarczane w ciągu miesiąca.
-STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Produkuje butelki, słoje, szyby i inne rzeczy ze szkła.{}{}{BLACK}Produkcja:{}  6 ton za 8 ton piasku{}  2 tony za 8 ton chemikaliów{}{}Produkcja wzrasta do 8 ton za 8 ton, gdy oba surowce są dostarczane w ciągu miesiąca.
-STR_EXTRA_RECYCLING_PLANT                                                       :{BLACK}Przetwarza surowce wtórne do ponownego wykorzystania w przemyśle.{}{}6 ton za 8 ton surowców.
-STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Produkcja:{}  3 tony za 8 ton opakowań{}  5 ton za 8 ton ryb{}{}Produkcja wzrasta do 8 ton za 8 ton, gdy oba surowce są dostarczane w ciągu miesiąca.
-STR_EXTRA_GRAIN_MILL                                                            :{BLACK}Produkcja:{}  3 tony za 8 ton opakowań{}  5 ton za 8 ton zboża{}{}Produkcja wzrasta do 8 ton za 8 ton, gdy oba surowce są dostarczane w ciągu miesiąca.
-STR_EXTRA_BREWERY                                                               :{BLACK}Produkcja:{}  3 tony za 8 ton opakowań{}  5 ton za 8 ton zboża{}  5 ton za 8 ton owoców i warzyw{}{}Produkcja wzrasta, gdy opakowania są dostarczane najpóźniej miesiąc po surowcach.
-STR_EXTRA_DAIRY                                                                 :{BLACK}Produkcja:{}  3 tony za 8 ton opakowań{}  5 ton za 8 ton mleka{}{}Produkcja wzrasta do 8 ton za 8 ton, gdy oba surowce są dostarczane w ciągu miesiąca.
-STR_EXTRA_FERTILIZER_PLANT                                                      :{BLACK}Produkuje nawozy z chemikaliów.{}{}8 ton za 8 ton surowców.
-STR_EXTRA_LUMBER_YARD                                                           :{BLACK}Produkuje płoty, słupy itp.{}{}{BLACK}Produkcja:{}  2 tony za 8 ton chemikaliów{}  6 ton za 8 ton desek{}{}Produkcja wzrasta do 8 ton za 8 ton, gdy oba surowce są dostarczane w ciągu miesiąca.
-STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Produkcja:{}  3 tony za 8 ton opakowań{}  5 ton za 8 ton wełny{}  5 ton za 8 ton włókien naturalnych{}{}Produkcja wzrasta, gdy opakowania są dostarczane najpóźniej miesiąc po surowcach.
-STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Produkcja:{}  2 tony za 8 ton węgla{}  2 tony za 8 ton gliny{}  4 tony za 8 ton kamieni{}{}Produkcja wzrasta, gdy różne surowce są dostarczane w ciągu miesiąca.
-STR_EXTRA_BRICKWORKS                                                            :{BLACK}Produkcja:{}  2 tony za 8 ton węgla{}  2 tony za 8 ton piasku{}  4 tony za 8 ton gliny{}{}Produkcja wzrasta, gdy różne surowce są dostarczane w ciągu miesiąca.
-STR_EXTRA_BIOREFINERY                                                           :{BLACK}Przerabia zboże i cukier na paliwo i chemikalia.{}{}6 ton za 8 ton surowców.
-STR_EXTRA_ENGINEERING_SUPPLIES                                                  :{BLACK}Dostawy maszyn mogą zwiększyć produkcję.{}{YELLOW}  {COMMA} skrzyń dostarczono w tym miesiącu
-STR_EXTRA_FARM_SUPPLIES                                                         :{BLACK}Dostawy sprzętu rolniczego mogą zwiększyć produkcję.{}{YELLOW}  {COMMA} skrzyń dostarczono w tym miesiącu
-STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Osiagnięto maksymalny poziom produkcji
-
-
-STR_CID_SUGARCANE                                                               :{TINYFONT}BC
-STR_CID_FISH                                                                    :{TINYFONT}RB
-STR_CID_WOOL                                                                    :{TINYFONT}WL
-STR_CID_FIBRES                                                                  :{TINYFONT}WN
-STR_CID_SAND                                                                    :{TINYFONT}PS
-STR_CID_STONE                                                                   :{TINYFONT}KM
-STR_CID_MANUFACTURING_SUPPLIES                                                  :{TINYFONT}OP
-STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}SR
 STR_CID_CHEMICALS                                                               :{TINYFONT}CH
-STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                                                :{SIGNED_WORD} skrzyń maszyn
-STR_CID_PETROL                                                                  :{TINYFONT}PL
 STR_CID_CLAY                                                                    :{TINYFONT}GL
-STR_CID_ALCOHOL                                                                 :{TINYFONT}AL
+STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}MS
+STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}SR
+STR_CID_FIBRES                                                                  :{TINYFONT}WN
+STR_CID_FISH                                                                    :{TINYFONT}RB
+STR_CID_LUMBER                                                                  :{TINYFONT}DS
+STR_CID_MANUFACTURING_SUPPLIES                                                  :{TINYFONT}OP
+STR_CID_METAL                                                                   :{TINYFONT}MT
+STR_CID_MILK                                                                    :{TINYFONT}MK
+STR_CID_PETROL                                                                  :{TINYFONT}PL
 STR_CID_RECYCLABLES                                                             :{TINYFONT}SW
-STR_STATIONNAME_FARMS                                                           :{STRING} Farma
-STR_STATIONNAME_MILLS                                                           :{STRING} Zakłady
-STR_STATIONNAME_WELLS                                                                :{STRING} Pole Naftowe
-STR_STATIONNAME_CHEMICALS                                                       :{STRING} Rafineria
-STR_STATIONNAME_FACTORIES                                                       :{STRING} Fabryka
-STR_STATIONNAME_PLANTS                                                          :{STRING} Zakłady
-STR_STATIONNAME_PITS                                                            :{STRING} Odkrywka
-STR_STATIONNAME_DEPOT                                                                :{STRING} Depozyt
-STR_STATIONNAME_DREDGING_SITE                                                   :{STRING} Pogłębiarka
-STR_STATIONNAME_FISHING_GROUNDS                                                 :{STRING} Łowisko
-STR_STATIONNAME_SMITHY_FORGE                                                    :{STRING} Kuźnia
-STR_STATIONNAME_MARKET                                                                :{STRING} Hurt/Detal
+STR_CID_SAND                                                                    :{TINYFONT}PK
+STR_CID_SCRAP_METAL                                                             :{TINYFONT}ZM
+STR_CID_STONE                                                                   :{TINYFONT}KM
+STR_CID_SUGAR_BEET                                                              :{TINYFONT}BC
+STR_CID_SUGARCANE                                                               :{TINYFONT}TC
+STR_CID_WOOL                                                                    :{TINYFONT}WE
+
+STR_ERR_CLIMATE_TOYLAND                                                         :{ORANGE}FIRS nie został zaprojektowany do użycia z klimatem zabawkowym
+STR_ERR_INCOMPATIBLE_SET                                                        :{ORANGE}E01: {YELLOW}Niekompatybilny zestaw: {ORANGE}{STRING} {YELLOW}Zobacz FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_PARAM_CANSET                                               :{ORANGE}E02: {YELLOW}Niekompatybilny parametr: {ORANGE}Parametr 2 CanSet musi być ustawiony na 0 by działać z FIRS. {YELLOW}Zobacz FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_PARAM_CITYSET                                              :{ORANGE}E02: {YELLOW}Niekompatybilny parametr: {ORANGE}Parametr 2 NA City Set musi być ustawiony na 0 by działać z FIRS. {YELLOW}Zobacz FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_SET_TTRS_VERSION                                           :{ORANGE}E04: {YELLOW}Niekompatybilna wersja: {ORANGE}Total Town Replacement Set musi być w wersji 3.11 lub nowszej. {YELLOW}Zobacz FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_OPENTTD_VERSION                                                         :{ORANGE}E00: FIRS wymaga OpenTTD 1.2.0 / trunk r22780 lub nowszy. {YELLOW}Zobacz FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+
+STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE                                             :musi być ustawione poniżej linii śniegu.
+STR_ERR_LOCATION_NOT_ON_WATER                                                   :musi być ustawione na suchym lądzie.
+STR_ERR_LOCATION_NOT_IN_DESERT                                                  :nie może być ustawione na pustyni.
+STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE                                             :nie może być ustawione na stromym zboczu.
+
+STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}Produkcja:{}  2t z 8t boksytu{}  2t z 8t chemikaliów{}  4t z 8t złomu{}{}Produkcja wzrasta, gdy różne surowce są dostarczane w ciągu miesiąca.
+STR_EXTRA_BIOREFINERY                                                           :{BLACK}Przerabia zboże i cukier na paliwo i chemikalia.{}{}6t z 8t surowców.
+STR_EXTRA_BREWERY                                                               :{BLACK}Produkcja:{}  3t z 8t opakowań{}  5t z 8t zboża{}  5t z 8t owoców{}{}Produkcja wzrasta, gdy opakowania są dostarczane najpóźniej miesiąc po surowcach.
+STR_EXTRA_BRICKWORKS                                                            :{BLACK}Produkcja:{}  2t z 8t węgla{}  2t z 8t piasku{}  4t z 8t gliny{}{}Produkcja wzrasta, gdy różne surowce są dostarczane w ciągu miesiąca.
+STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Produkcja:{}  2t z 8t węgla{}  2t z 8t gliny{}  4t z 8t kamieni{}{}Produkcja wzrasta, gdy różne surowce są dostarczane w ciągu miesiąca.
+STR_EXTRA_DAIRY                                                                 :{BLACK}Produkcja:{}  3t z 8t opakowań{}  5t z 8t mleka{}{}Produkcja wzrasta do 8t z 8t, gdy oba surowce są dostarczane w ciągu miesiąca.
+STR_EXTRA_ENGINEERING_SUPPLIES                                                  :{BLACK}Dostawy maszyn mogą zwiększyć produkcję.{}{YELLOW}  {COMMA} skrzy{P 0 nię nie ń} dostarczono w tym miesiącu
+STR_EXTRA_FARM_SUPPLIES                                                         :{BLACK}Dostawy sprzętu rolniczego mogą zwiększyć produkcję.{}{YELLOW}  {COMMA} skrzy{P 0 nię nie ń} dostarczono w tym miesiącu
+STR_EXTRA_FERTILIZER_PLANT                                                      :{BLACK}Produkują nawozy z chemikaliów.{}{}{WEIGHT_SHORT} z {VOLUME_SHORT} surowców.
+STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Produkcja:{}  3t z 8t opakowań{}  5t z 8t ryb{}{}Produkcja wzrasta do 8t z 8t, gdy oba surowce są dostarczane w ciągu miesiąca.
+STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Produkcja:{}  3t z 8t opakowań{}  5t z 8t desek{}{}Produkcja wzrasta do 8t z 8t, gdy oba surowce są dostarczane w ciągu miesiąca.
+STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Produkuje butelki, słoje, szyby i inne rzeczy ze szkła.{}{}{BLACK}Produkcja:{}  6t z 8t piasku{}  2t z 8t chemikaliów{}{}Produkcja wzrasta do 8t z 8t, gdy oba surowce są dostarczane w ciągu miesiąca.
+STR_EXTRA_GRAIN_MILL                                                            :{BLACK}Produkcja:{}  3t z 8t opakowań{}  5t z 8t zboża{}{}Produkcja wzrasta do 8t z 8t, gdy oba surowce są dostarczane w ciągu miesiąca.
+STR_EXTRA_IRON_WORKS                                                            :{BLACK}Produkcja:{}  2t z 8t drewna{}  2t z 8t rudy żelaza{}{}Produkcja wzrasta do 4t z 8t, gdy oba surowce są dostarczane w ciągu miesiąca.
+STR_EXTRA_LIME_KILN                                                             :{BLACK}Produkcja:{}  3t z 8t kamieni{}  3t z 8t węgla{}{}Produkcja wzrasta do 6t z 8t, gdy oba surowce są dostarczane w ciągu miesiąca.
+STR_EXTRA_LUMBER_YARD                                                           :{BLACK}Produkuje płoty, słupy itp.{}{}{BLACK}Produkcja:{}  2t z 8t chemikaliów{}  6t z 8t desek{}{}Produkcja wzrasta do 8t z 8t, gdy oba surowce są dostarczane w ciągu miesiąca.
+STR_EXTRA_MACHINE_SHOP                                                          :{BLACK}Produkuje różnego rodzaju maszyny.{}{}8t z 8t surowców.
+STR_EXTRA_MEAT_PACKER                                                           :{BLACK}Produkcja:{}  3t z 8t opakowań{}  5t z 8t żywca{}{}Produkcja wzrasta do 8t z 8t, gdy oba surowce są dostarczane w ciągu miesiąca.
+STR_EXTRA_METAL_FABRICATION_PLANT                                               :{BLACK}Produkują armaturę i różne elementy malowane.{}{}{BLACK}Produkcja:{}  2t z 8t chemikaliów{}  6t z 8t metalu{}{}Produkcja wzrasta do 8t z 8t, gdy oba surowce są dostarczane w ciągu miesiąca.
+STR_EXTRA_METAL_FOUNDRY                                                         :{BLACK}Produkują galwanizowane puszki, narzędzia i części.{}{}{BLACK}Produkcja:{}  2t z 8t chemikaliów{}  6t z 8t metalu{}{}Produkcja wzrasta do 8t z 8t, gdy oba surowce są dostarczane w ciągu miesiąca.
+STR_EXTRA_OIL_REFINERY                                                          :{BLACK}W procesie rafinacji produkuje paliwo i chemikalia.{}{}6t z 8t surowców.
+STR_EXTRA_PAPER_MILL                                                            :{BLACK}Przerabia drewno na papier i karton.{}{}{BLACK}Produkcja:{}  4t z 8t drewna{}  2t z 8t gliny{}  2t z 8t chemikaliów{}{}Produkcja wzrasta, gdy różne surowce są dostarczane w ciągu miesiąca.
+STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}Produkuje artykuły plastikowe na użytek przedsiębiorstw i gospodarstw domowych.{}{}6t z 8t surowców.
+STR_EXTRA_RECYCLING_PLANT                                                       :{BLACK}Przerabia surowce wtórne do ponownego wykorzystania w przemyśle.{}{}6t z 8t surowców.
+STR_EXTRA_SAWMILL                                                               :{BLACK}Drzewo się rżnie. Jest deska, jest sęk.{}{}6t z 8t surowców.
+STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Produkcja ręcznie kutych podków, narzędzi, bramek i innych drobnych metalowych przedmiotów.{}{}5t z 8t surowców.
+STR_EXTRA_STEELMILL                                                             :{BLACK}Produkcja:{}  2t z 8t rudy żelaza{}  2t z 8t węgla{}  4t z 8t złomu{}{}Produkcja wzrasta, gdy różne surowce są dostarczane w ciągu miesiąca.
+STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Produkcja:{}  3t z 8t opakowań{}  5t z 8t buraków cukrowych{}{}Produkcja wzrasta do 8t z 8t, gdy oba surowce są dostarczane w ciągu miesiąca.
+STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Produkcja:{}  3t z 8t opakowań{}  5t z 8t wełny{}  5t z 8t włókien naturalnych{}{}Produkcja wzrasta, gdy opakowania są dostarczane najpóźniej miesiąc po surowcach.
+
+STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}--------- DEBUGOWANIE ---------{}Produkcja w tym miesiącu:{}Ładunek 1: {WHITE}{COMMA}{BLACK}{}Ładunek 2: {WHITE}{COMMA}{BLACK}{}Dni od ostatniej dostawy: {WHITE}{COMMA}{BLACK}
+STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Osiągnięto maksymalny poziom produkcji
 STR_GENERIC_NEWLINE                                                             :{}
-STR_GRF_DESC                                                                    :{ORANGE}FIRS Industry Replacement Set{}{BLACK}Autorzy: {SILVER}andythenorth{BLACK} and {SILVER}FooBar{BLACK}.{}{BLACK}'1,000 i wiecej zmian...'{BLACK}{}{}Strona internetowa: {SILVER}www.tt-foundry.com/sets/FIRS{BLACK}.Licencja: {SILVER}GPL v2{BLACK}.Podziękowania dla {SILVER}Ammler{BLACK}, {SILVER}Core Xii{BLACK}, {SILVER}Irwe{BLACK}, {SILVER}planetmaker{BLACK} and {SILVER}Zephyris{BLACK}.Wykorzystuje elementy {SILVER}eGRVTS{BLACK}, {SILVER}ISR{BLACK} i {SILVER}OpenGFX{BLACK}.
+
+STR_FUND_MIXED_FARM                                                             :{}{BLACK}Lokalizacja: {YELLOW}Nie może być budowane na śniegu, pustyni i stromych zboczach.
+STR_FUND_SHEEP_FARM                                                             :{}{BLACK}Lokalizacja: {YELLOW}Nie może być budowane na pustyni i zboczach.
+STR_FUND_ARABLE_FARM                                                            :{}{BLACK}Lokalizacja: {YELLOW}Nie może być budowane na śniegu, pustyni i zboczach.
+STR_FUND_DAIRY_FARM                                                             :{}{BLACK}Lokalizacja: {YELLOW}Nie może być budowane na stromych zboczach.
+STR_FUND_FOREST                                                                 :{}{BLACK}Lokalizacja: {YELLOW}Nie może być budowane na pustyni.
+STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}Lokalizacja: {YELLOW}Nie może być budowane na śniegu.
+
+STR_STATIONNAME_CHEMICALS                                                       :{STRING} Rafineria
+STR_STATIONNAME_DEPOT                                                           :{STRING} Magazyn
+STR_STATIONNAME_DREDGING_SITE                                                   :{STRING} Pogłębiarka
+STR_STATIONNAME_FACTORIES                                                       :{STRING} Fabryka
+STR_STATIONNAME_FARMS                                                           :{STRING} Farma
+STR_STATIONNAME_FISHING_GROUNDS                                                 :{STRING} Łowisko
+STR_STATIONNAME_MARKET                                                          :{STRING} Rynek
+STR_STATIONNAME_MILLS                                                           :{STRING} Zakłady
+STR_STATIONNAME_PITS                                                            :{STRING} Odkrywka
+STR_STATIONNAME_PLANTS                                                          :{STRING} Zakłady
+STR_STATIONNAME_SMITHY_FORGE                                                    :{STRING} Kuźnia
+STR_STATIONNAME_WELLS                                                           :{STRING} Pole Naftowe
+
 STR_IND_ALUMINIUM_PLANT                                                         :Huta Aluminium
 STR_IND_ARABLE_FARM                                                             :Pole Uprawne
 STR_IND_BAUXITE_MINE                                                            :Kopalnia Boksytu
 STR_IND_BIOREFINERY                                                             :Biorafineria
 STR_IND_BREWERY                                                                 :Browar
-STR_EXTRA_MEAT_PACKER                                                           :{BLACK}Produkcja:{}  3 tony za 8 ton opakowań{}  5 ton za 8 ton żywca{}{}Produkcja wzrasta do 8 ton za 8 ton, gdy oba surowce są dostarczane w ciągu miesiąca.
 STR_IND_BRICK_WORKS                                                             :Cegielnia
 STR_IND_BUILDERS_YARD                                                           :Spółka Budowlana
 STR_IND_CEMENT_PLANT                                                            :Cementownia
@@ -124,13 +181,15 @@ STR_IND_FOOD_MARKET                                                             
 STR_IND_FURNITURE_FACTORY                                                       :Fabryka Mebli
 STR_IND_GLASS_WORKS                                                             :Huta Szkła
 STR_IND_GRAIN_MILL                                                              :Piekarnia
-STR_IND_HOTEL                                                                   :Hotel / Restauracja
+STR_IND_HARDWARE_STORE                                                          :Sklep Przemysłowy
+STR_IND_HOTEL                                                                   :Hotel
 STR_IND_IRON_WORKS                                                              :Piec Hutniczy
 STR_IND_JUNKYARD                                                                :Złomowisko
 STR_IND_LIME_KILN                                                               :Piec Wapienny
 STR_IND_LUMBER_YARD                                                             :Stolarnia
 STR_IND_MACHINE_SHOP                                                            :Fabryka Maszyn
-STR_IND_METAL_FOUNDRY                                                           :Odlewnia Metali
+STR_IND_METAL_FABRICATION_PLANT                                                 :Zakłady Metalowe
+STR_IND_METAL_FOUNDRY                                                           :Warsztaty
 STR_IND_MIXEDFARM                                                               :Gospdarstwo Rolne
 STR_IND_PETROLPUMP                                                              :Stacja Paliw
 STR_IND_PLASTICS_PLANT                                                          :Fabryka Tworzyw Sztucznych
@@ -146,22 +205,3 @@ STR_IND_SUPERMARKET                                                             
 STR_IND_TEXTILE_MILL                                                            :Zakłady Odzieżowe
 
 
-
-STR_EXTRA_SUGAR_REFINERY                                                       :{BLACK}Produkcja:{}  3 tony za 8 ton opakowań{}  5 ton za 8 ton trzciny cukrowej{}{}Produkcja wzrasta do 8 ton za 8 ton, gdy oba surowce są dostarczane w ciągu miesiąca.
-STR_EXTRA_MACHINE_SHOP                                                :{BLACK}Produkuje różnego rodzaju maszyny.{}{}8 ton za 8 ton surowców.
-STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :Maksymalna odległość (w kratkach) od linni brzegowej dla łowisk i pogłębiarek.
-STR_PARAM_DESC_DEBUG                                                            :Tylko dla deweloperów
-STR_PARAM_DESC_ECONOMIES                                                        :FIRS docelowo ma składać się z kilku ekonomii różniących się przedsiębiorstwami, towarami i cenami. {}{}{SILVER}Na razie tylko jedna ekonomia jest dostępna :)
-STR_PARAM_DESC_NEVER_CLOSE                                                      :Domyślnie kopalnie i farmy nie upadają.{}{}Jeżeli parametr jest włączony, przedsiebiorstwo upada, jeśli jego produkcja zejdzie do zbyt niskiego poziomu. {SILVER}Parametr 'pozwalaj na spadek produkcji w kopalniach i farmach' musi byc włączony.
-STR_PARAM_DESC_NO_OPENINGS                                                      :{SILVER}Na razie nie robi nic. {BLACK}Gdy skończone, umożliwi włączenie trybu sandboksowego dla twórców scenariuszy.
-STR_PARAM_DESC_PRIMARY_PRODUCTION_DECREASE                                      :Domyślnie produkcja w kopalniach i farmach nie spada.{}{}Jeżeli parametr jest włączony, produkcja może się zmniejszyć jeśli nie dostarczy się odpowiednich zasobów. Im wyższa produkcja, tym większa szansa na jej zmniejszenie.
-STR_PARAM_DESC_SECONDARY_NEVER_CLOSE                                            :Domyślnie przedsiębiorstwa przetwórcze nie upadają.{}{}Jeśli parametr jest włączony, spółki do których nie dostarcza się towarów upadają po pewnym czasie.
-STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY                                   :Maksymalny dystans przedsiębiorstw morskich od wybrzeża
-STR_PARAM_NAME_DEBUG                                                            :Tryb debugowania
-STR_PARAM_NAME_ECONOMIES                                                        :Ekonomia
-STR_PARAM_NAME_NEVER_CLOSE                                                      :Pozwalaj na upadłość kopalń i farm
-STR_PARAM_NAME_NO_OPENINGS                                                      :Zapobiegaj powstawaniu nowych przedsiebiorstw (niedokończone)
-STR_PARAM_NAME_PRIMARY_PRODUCTION_DECREASE                                      :Pozwalaj na spadek produkcji w kopalniach i farmach
-STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            :Pozwalaj zakładom przetwórczym na upadłość
-STR_PARAM_VALUE_ECONOMIES_TEST_ECONOMY                                          :Ekonomia testowa
-STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0                                         :Bez limitu
