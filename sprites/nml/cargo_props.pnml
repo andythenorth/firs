@@ -1,5 +1,3 @@
-#define CC_CUSTOM_NOT_POURABLE 12
-
 cargotable {
     PASS, COAL, MAIL, OIL_,
     LVST, GOOD, GRAI, WOOD,
@@ -503,7 +501,7 @@ item(FEAT_CARGOS, cargo_scrap_metal, 20) {
 		station_list_colour: 20;
 		cargo_payment_list_colour: 20;
 		is_freight: 1;
-		cargo_classes: bitmask(CC_BULK, CC_CUSTOM_NOT_POURABLE);
+		cargo_classes: bitmask(CC_BULK, CC_NON_POURABLE);
 		cargo_label: "SCMT";
 		town_growth_effect: TOWNGROWTH_NONE;
 		town_growth_multiplier: 1.0;
@@ -524,7 +522,7 @@ if (ENABLE_SUGARCANE) {
             station_list_colour: 182;
             cargo_payment_list_colour: 182;
             is_freight: 1;
-            cargo_classes: bitmask(CC_BULK, CC_CUSTOM_NOT_POURABLE);
+            cargo_classes: bitmask(CC_BULK, CC_NON_POURABLE);
             cargo_label: "SGCN";
             town_growth_effect: TOWNGROWTH_NONE;
             town_growth_multiplier: 1.0;
