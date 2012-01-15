@@ -9,8 +9,8 @@
 
 #define THIS_ID(...) recycling_depot ## __VA_ARGS__
 
-spriteset(THIS_ID(spriteset_1), "sprites/graphics/industries/recyclingdepot.png") { tmpl_ground_tile(10, 10) } 
-spriteset(THIS_ID(spriteset_2), "sprites/graphics/industries/recyclingdepot.png") { tmpl_ground_tile(80, 10) } 
+spriteset(THIS_ID(spriteset_1), "sprites/graphics/industries/recyclingdepot.png") { tmpl_ground_tile(10, 10) }
+spriteset(THIS_ID(spriteset_2), "sprites/graphics/industries/recyclingdepot.png") { tmpl_ground_tile(80, 10) }
 
 SPRITELAYOUT_FENCES_NORMAL(THIS_ID(spritelayout_1), GROUNDSPRITE_CONCRETE, THIS_ID(spriteset_1), 16)
 
@@ -81,7 +81,7 @@ SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
 /* We have a special production code here:
  * Production depends on the town population: population / 12 is output
  */
-produce(THIS_ID(production), 
+produce(THIS_ID(production),
 		waiting_cargo_1, // should be 0
 		waiting_cargo_2, // should be 0
 		waiting_cargo_3, // should be 0
@@ -126,7 +126,7 @@ item(FEAT_INDUSTRIES, recycling_depot, IND_RECYCLINGDEPOT_ID) {
 		spec_flags:             0;
 	}
 	graphics {
-		produce_cargo_arrival:   THIS_ID(produce);
+		produce_256_ticks:       THIS_ID(produce);
 		construction_probability:THIS_ID(check_availability);
 		location_check:          THIS_ID(check_location);
 		monthly_prod_change:     THIS_ID(check_production_level);
