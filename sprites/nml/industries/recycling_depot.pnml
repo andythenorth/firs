@@ -73,8 +73,6 @@ SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
 /* Production template not used. We have our separate one, see below */
 #include "../templates/check_primary_production_level.pnml"
 
-#include "../templates/extra_text_primary.pnml"
-
 #include "../templates/check_availability.pnml"
 
 
@@ -131,7 +129,7 @@ item(FEAT_INDUSTRIES, recycling_depot, IND_RECYCLINGDEPOT_ID) {
 		location_check:          THIS_ID(check_location);
 		monthly_prod_change:     THIS_ID(check_production_level);
 		random_prod_change:      THIS_ID(check_closure);
-		extra_text_industry:     return(STR_EXTRA_RECYCLING_DEPOT);
+		extra_text_industry:     return string(STR_EXTRA_RECYCLING_DEPOT);
 		colour:                  THIS_ID(colour);
 	}
 }
