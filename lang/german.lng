@@ -5,12 +5,14 @@
 
 STR_GRF_DESC                                                                    :{ORANGE}FIRS Industrie-Set{}{BLACK}Von {SILVER}andythenorth{BLACK}, {SILVER}FooBar{BLACK}, {SILVER}Terkhen{BLACK} und {SILVER}planetmaker{BLACK}.{}{BLACK}Website: {SILVER}www.tt-foundry.com/sets/FIRS{}{BLACK}. Lizenz: {SILVER}GPL v20D{BLACK}. Besonderen Dank an {SILVER}Ammler{BLACK}, {SILVER}CoreXii{BLACK}, {SILVER}Irwe{BLACK} und {SILVER}Zephyris{BLACK}.{}FIRS nutzt Teile von {SILVER}eGRVTS{BLACK}, {SILVER}ISR{BLACK} und {SILVER}OpenGFX{BLACK}.
 STR_GRF_NAME                                                                    :{TITLE}
+STR_GRF_URL                                                                     :http://dev.openttdcoop.org/projects/firs
 
 STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :Maximaler Abstand von Fischgründen und Baggersees von der Küste in Feldern
+STR_PARAM_DESC_STAT_RATING                                                      :Die Bahnhofsbewertung beeinflußt die Anzahl zum Bahnhof gelieferter Güter; je höher die Bewertung ist, desto mehr Güter werden zum Bahnhof geliefert.
 STR_PARAM_DESC_DEBUG                                                            :Für Entwickler
 STR_PARAM_DESC_ECONOMIES                                                        :Sobald fertiggestellt, wird FIRS eine Anzahl verschiedener Wirtschaft(sschwerpunkte) anbieten. Diese unterscheiden sich in Frachtarten, deren Profitabilität und den verfügbaren Industrien.{}{}{SILVER}Zur Zeit gibt es nur einen Wirtschaftstyp.
 STR_PARAM_DESC_NEVER_CLOSE                                                      :Standardmäßig schließen Primärindustrien in FIRS nie.{}Wenn das Schließen von Primärindustrien erlaubt ist, so schließt eine Industrie, wenn ihre Produktion sehr niedrig ist (die genaue Menge hängt von der Industrie ab). {SILVER}Voraussetzung: 'Primärindustrien dürfen Produktion vermindern' ist aktiviert.
-STR_PARAM_DESC_NO_OPENINGS                                                      :{SILVER}Diese Funktion ist noch nicht implementiert.{BLACK} Sobald sie fertig gestellt ist, wird dieser Parameter einen 'Sandkasten-Modus' für Scenarien ermöglichen
+STR_PARAM_DESC_NO_OPENINGS                                                      :Standardmäßig werden neue Industrien im Laufe der Zeit gegründet.{}{}Wenn 'Neue Industrien öffnen' ausgeschaltet ist, werden keine neuen Industrien auftauchen und Spieler können auch keine finanzieren oder prospektieren.
 STR_PARAM_DESC_PRIMARY_PRODUCTION_DECREASE                                      :Standardmäßig reduzieren Primärindustrien in FIRS ihre Produktion nie.{}Wenn eine Reduzierung der Produktionsmenge bei Primärindustrien erlaubt ist, gibt es eine Wahrscheinlichkeit mit der eine Industrie seine Produktion senkt, wenn einen Monat lang keine Güter angeliefert wurden. Bei hohen Produktionsraten ist die Wahrscheinlichkeit größer.
 STR_PARAM_DESC_SECONDARY_NEVER_CLOSE                                            :Standardmäßig schließen Sekundärindustrien in FIRS nie.{}{}Wenn das Schließen von Sekundärindustrien erlaubt ist, so kann sie schließen, wenn über einen längeren Zeitraum keine Fracht transportiert worden ist.
 STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY                                   :Maximaler Abstrand mariner Industrien von der Küste
@@ -24,7 +26,7 @@ STR_PARAM_VALUE_ECONOMIES_TEST_ECONOMY                                          
 STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0                                         :Kein Limit
 STR_PARAM_NAME_STAT_RATING                                                      :Algorithmus für Stationsbewertung
 STR_PARAM_VALUE_STAT_RATING_DEFAULT                                             :Standard
-STR_PARAM_VALUE_STAT_RATING_REDUCED_TIME                                        :Reduzierter Einfluß der Zeit seit der letzten Frachtaufnahme
+STR_PARAM_VALUE_STAT_RATING_REDUCED_TIME                                        :Verbesserte Bahnhofsbewertung - Reduzierter Einfluß der Zeit seit der letzten Frachtaufnahme
 STR_PARAM_VALUE_STAT_RATING_100                                                 :Immer 100%
 
 STR_CARGO_NAME_ALCOHOL                                                          :Spirituosen
@@ -121,16 +123,18 @@ STR_EXTRA_FISHING_HARBOUR                                                       
 STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Produktion:{}  3t pro gelieferter 8t Produktionsgüter{}  5t pro gelieferter 8t Bauholz{}{}Steigt auf 8t Produktion pro gelieferter 8t, wenn beide Frachtarten innerhalb eines Monats geliefert werden.
 STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Produziert Glasteile wie Flaschen, Gläser und Fensterscheiben.{}{}{BLACK}Produktion:{}  6t pro gelieferter 8t Sand{}  2t pro gelieferter 8t Chemikalien{}{}Steigt auf 8t Produktion pro gelieferter 8t, wenn beide Frachtarten innerhalb eines Monats geliefert werden.
 STR_EXTRA_GRAIN_MILL                                                            :{BLACK}Produktion:{}  3t pro gelieferter 8t Produktionsgüter{}  5t pro gelieferter 8t Getreide{}{}Steigt auf 8t Produktion pro gelieferter 8t, wenn beide Frachtarten innerhalb eines Monats geliefert werden.
-STR_EXTRA_IRON_WORKS                                                            :{BLACK}Produktion:{}  1t pro gelieferter 8t Holz{}  2t pro gelieferter 8t Eisenerz{}{}Steigt auf 3t Produktion pro gelieferter 8t, wenn beide Frachtarten innerhalb eines Monats geliefert werden.
-STR_EXTRA_LIME_KILN                                                             :{BLACK}Produktion:{}  4t pro gelieferter 8t Steine{}  4t pro gelieferter 8t Kohle{}{}Steigt auf 8t Produktion pro gelieferter 8t, wenn beide Frachtarten innerhalb eines Monats geliefert werden.
+STR_EXTRA_IRON_WORKS                                                            :{BLACK}Produktion:{}  2t pro gelieferter 8t Holz{}  2t pro gelieferter 8t Eisenerz{}{}Steigt auf 4t Produktion pro gelieferter 8t, wenn beide Frachtarten innerhalb eines Monats geliefert werden.
+STR_EXTRA_LIME_KILN                                                             :{BLACK}Produktion:{}  3t pro gelieferter 8t Steine{}  3t pro gelieferter 8t Kohle{}{}Steigt auf 6t Produktion pro gelieferter 8t, wenn beide Frachtarten innerhalb eines Monats geliefert werden.
 STR_EXTRA_LUMBER_YARD                                                           :{BLACK}Produziert Dinge wie Balken und Zaunpfähle.{}{}{BLACK}Produktion:{}  2t pro gelieferter 8t Chemikalien{}  6t pro gelieferter 8t Bauholz{}{}Steigt auf 8t Produktion pro gelieferter 8t, wenn beide Frachtarten innerhalb eines Monats geliefert werden.
 STR_EXTRA_MACHINE_SHOP                                                          :{BLACK}Baut und wartet Maschinen.{}{}8t Produktion pro gelieferter 8t.
 STR_EXTRA_MEAT_PACKER                                                           :{BLACK}Produziert:{}  3t pro gelieferter 8t Produktionsgüter{}  5t pro gelieferten 8t Viehs{}{}Produktion steigt auf 8t pro gelieferter 8t wenn beide Frachtarten innerhalb eines Monats angeliefert werden.
-STR_EXTRA_METAL_FOUNDRY                                                         :{BLACK}Produziert Metallgegenstände wie Werkzeuge und Ersatzteile.{}{}8t Produktion pro gelieferter 8t.
+STR_EXTRA_METAL_FABRICATION_PLANT                                               :{BLACK}Produziert lackierte Metallgegenstände.{}{}{BLACK}Produktion:{}2t pro 8t gelieferter Chemikalien{}6t pro 8t gelieferten Metall{}{}Steigt auf 8t pro gelieferter 8t, wenn beide Frachtarten innerhalb eines Monats geliefert werden.
+STR_EXTRA_METAL_FOUNDRY                                                         :{BLACK}Produziert Metallgegenstände wie Werkzeuge und Ersatzteile.{}{}2t pro 8t gelieferter Chemikalien{}6t pro gelieferter 8t Metall{}{}Steigt auf 8t pro gelieferter 8t, wenn beide Frachtarten innerhalb eines Monats geliefert werden.
 STR_EXTRA_OIL_REFINERY                                                          :{BLACK}Verarbeitet Rohöl in Treibstoff und Chemikalien.{}{}6t Produktion pro gelieferter 8t.
 STR_EXTRA_PAPER_MILL                                                            :{BLACK}Zermahlt Holz und stellt daraus Papier und Karton her.{}{}{BLACK}Produktion:{}  4t pro gelieferter 8t Holz{}  2t pro gelieferter 8t Ton{}  2t pro gelieferter 8t Chemikalien{}{}Produktion steigt, wenn zwei oder mehr Frachtarten innerhalb eines Monats geliefert werden.
 STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}Produziert Plastikteile wie Verpackungen und Haushaltswaren.{}{}6t Produktion pro gelieferter 8t.
 STR_EXTRA_RECYCLING_PLANT                                                       :{BLACK}Verarbeitet Wertstoffe zur Wiederverwendung in der Produktion.{}{}6t Produktion pro gelieferter 8t.
+STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}Produziert Wertstoffe in Abhängigkeit von der Größe der nahegelegenen Stadt
 STR_EXTRA_SAWMILL                                                               :{BLACK}Sägt Holz.{}{}6t Produktion pro gelieferter 8t.
 STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Verarbeitet Schmiedeeisen zu Gegenständen wie Zäunen, Werkzeugen, Pflügen, Schaufeln und Hufeisen.{}{}5t Produktion pro gelieferter 8t.
 STR_EXTRA_STEELMILL                                                             :{BLACK}Produktion:{}  2t pro gelieferter 8t Eisenerz{}  2t pro gelieferter 8t Kohle{}  4t pro gelieferter 8t Altmetall{}{}Produktion steigt, wenn zwei oder mehr Frachtarten innerhalb eines Monats geliefert werden.
@@ -148,7 +152,7 @@ STR_FUND_DAIRY_FARM                                                             
 STR_FUND_FOREST                                                                 :{}{BLACK}Ort: {YELLOW}Kann nicht in Wüsten errichtet werden.
 STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}Ort: {YELLOW}Kann nicht im Schnee errichtet werden.
 
-STR_STATIONNAME_CHEMICALS                                                       :{STRING} Rafinerie
+STR_STATIONNAME_CHEMICALS                                                       :{STRING} Raffinerie
 STR_STATIONNAME_DEPOT                                                           :{STRING} Lager
 STR_STATIONNAME_DREDGING_SITE                                                   :{STRING} Baggersee
 STR_STATIONNAME_FACTORIES                                                       :{STRING} Fabrik
@@ -158,7 +162,7 @@ STR_STATIONNAME_MARKET                                                          
 STR_STATIONNAME_MILLS                                                           :{STRING} Mühle
 STR_STATIONNAME_PITS                                                            :{STRING} Steinbruch
 STR_STATIONNAME_PLANTS                                                          :{STRING} Werk
-STR_STATIONNAME_SMITHY_FORGE                                                    :{STRING} Schmide
+STR_STATIONNAME_SMITHY_FORGE                                                    :{STRING} Schmiede
 STR_STATIONNAME_WELLS                                                           :{STRING} Quelle
 
 STR_IND_ALUMINIUM_PLANT                                                         :{G=w}Aluminiumhütte
@@ -187,6 +191,7 @@ STR_IND_JUNKYARD                                                                
 STR_IND_LIME_KILN                                                               :{G=w}Kalkbrennerei
 STR_IND_LUMBER_YARD                                                             :{G=w}Holzverarbeitung
 STR_IND_MACHINE_SHOP                                                            :{G=m}Maschinenbaubetrieb
+STR_IND_METAL_FABRICATION_PLANT                                                 :{G=w}Metallwarenfabrik
 STR_IND_METAL_FOUNDRY                                                           :{G=w}Gießerei
 STR_IND_MIXEDFARM                                                               :{G=m}Bauernhof
 STR_IND_PETROLPUMP                                                              :{G=w}Tankstelle
