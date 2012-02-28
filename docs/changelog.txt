@@ -6,6 +6,27 @@ FIRS Industry Replacement Set Changelog
 0.7.x Releases
 --------------
 
+*0.7.1*
+
+*Fixes*
+- Recycling Depot production was wrong; production now correctly depends on town population
+- Dredging Site didn't set AI routes flag, so was invisible to AIs
+- Forest should not set the disaster typical for mines
+- remove white pixels from Clay Pit
+- AlpineClimate grf is only incompatible in the arctic climate
+
+*Changes*
+- try to make bouy for Dredging Site more visible
+- set description text for station rating algorithm parameter
+- improve text for 'no opening' parameter
+- improved appearance of Quarry / Clay Pit graphics
+- make use of CC_NON_POURABLE cargo class (Scrap Metal, Sugarcane)
+
+*Translations additions / updates*
+- German (planetmaker)
+- Russian (akasoft) 
+- Polish (Radmir)
+
 *0.7.0*
 - release
 
