@@ -9,8 +9,8 @@ STR_CARGO_NAME_BAUXITE                                                          
 STR_CARGO_NAME_BUILDING_MATERIALS                                               :Matériaux de construction
 STR_CARGO_NAME_CHEMICALS                                                        :Produits chimiques
 STR_CARGO_NAME_CLAY                                                             :Argile
-STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :Fournitures techniques
-STR_CARGO_NAME_FARM_SUPPLIES                                                    :Fournitures agricoles
+STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :Matériel technique
+STR_CARGO_NAME_FARM_SUPPLIES                                                    :Matériel agricole
 STR_CARGO_NAME_FIBRES                                                           :Fibres végétales
 STR_CARGO_NAME_FISH                                                             :Poisson
 STR_CARGO_NAME_FRUITS                                                           :Fruits
@@ -31,10 +31,10 @@ STR_CARGO_UNIT_BAUXITE                                                          
 STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WEIGHT} de matériaux de construction
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} de produits chimiques
 STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} d'argile
-STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} caisse{P 0 "" s} de fournitures techniques 
+STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} caisse{P 0 "" s} de matériel technique 
 STR_CARGO_UNIT_FIBRES                                                           :{WEIGHT} de fibres végétales
 STR_CARGO_UNIT_FISH                                                             :{WEIGHT} de poisson
-STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} caisse{P 0 "" s} de fournitures agricoles
+STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} caisse{P 0 "" s} de matériel agricole
 STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} de fruits
 STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} de bois d'œuvre
 STR_CARGO_UNIT_METAL                                                            :{WEIGHT} de métal
@@ -53,13 +53,13 @@ STR_CID_BAUXITE                                                                 
 STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}MC
 STR_CID_CHEMICALS                                                               :{TINYFONT}PC
 STR_CID_CLAY                                                                    :{TINYFONT}AR
-STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}FT
-STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}FA
+STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}MT
+STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}MA
 STR_CID_FIBRES                                                                  :{TINYFONT}FV
 STR_CID_FISH                                                                    :{TINYFONT}PO
 STR_CID_LUMBER                                                                  :{TINYFONT}BV
 STR_CID_MANUFACTURING_SUPPLIES                                                  :{TINYFONT}FI
-STR_CID_METAL                                                                   :{TINYFONT}MT
+STR_CID_METAL                                                                   :{TINYFONT}ML
 STR_CID_MILK                                                                    :{TINYFONT}LT
 STR_CID_PETROL                                                                  :{TINYFONT}ES
 STR_CID_RECYCLABLES                                                             :{TINYFONT}MR
@@ -73,7 +73,7 @@ STR_ERR_CLIMATE_TOYLAND                                                         
 STR_ERR_INCOMPATIBLE_PARAM_CANSET                                               :{ORANGE}E02: {YELLOW}Paramètre incompatible{NBSP}: {ORANGE}le paramètre 2 de CanSet doit être à 0 pour fonctionner avec FIRS. {YELLOW}Voir le Lisez-moi de FIRS{NBSP}: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 STR_ERR_INCOMPATIBLE_PARAM_CITYSET                                              :{ORANGE}E02: {YELLOW}Paramètre incompatible{NBSP}: {ORANGE}le paramètre 2 de NA City Set doit être à 0 pour fonctionner avec FIRS. {YELLOW}Voir le Lisez-moi de FIRS{NBSP}: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 STR_ERR_INCOMPATIBLE_SET                                                        :{ORANGE}E01: {YELLOW}Module incompatible{NBSP}: {ORANGE}{STRING} {YELLOW}Voir le Lisez-moi de FIRS{NBSP}: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
-STR_ERR_INCOMPATIBLE_SET_TTRS_VERSION                                           :{ORANGE}E04: {YELLOW}Version incompatible{NBSP}: {ORANGE}la version de Total Town Replacement Set doit être supérieure ou égale 3.11. {YELLOW}Voir le Lisez-moi de FIRS{NBSP}: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_SET_TTRS_VERSION                                           :{ORANGE}E04: {YELLOW}Version incompatible{NBSP}: {ORANGE}la version de Total Town Replacement Set doit être supérieure ou égale à 3.11. {YELLOW}Voir le Lisez-moi de FIRS{NBSP}: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE                                             :doit être placé sous la ligne d'enneigement.
 STR_ERR_LOCATION_NOT_IN_DESERT                                                  :ne doit pas être placé dans le désert.
 STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE                                             :ne peut pas être placé sur des pentes abruptes.
@@ -84,37 +84,37 @@ STR_EXTRA_BIOREFINERY                                                           
 STR_EXTRA_BREWERY                                                               :{BLACK}Marchandises produites{NBSP}:{}  3{NBSP}t pour 8{NBSP}t livrées de fournitures industrielles{}  5{NBSP}t pour 8{NBSP}t livrées de céréales{}  5{NBSP}t pour 8{NBSP}t livrées de fruits{}{}La production augmente si des fournitures industrielles sont livrées dans le même mois que d'autres marchandises.
 STR_EXTRA_BRICKWORKS                                                            :{BLACK}Marchandises produites{NBSP}:{}  2{NBSP}t pour 8{NBSP}t livrées de charbon{}  2{NBSP}t pour 8{NBSP}t livrées de sable{}  4{NBSP}t pour 8{NBSP}t livrées d'argile{}{}Il faut au moins 2 types de marchandises livrées dans le même mois pour que la production augmente.
 STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Marchandises produites{NBSP}:{}  2{NBSP}t pour 8{NBSP}t livrées de charbon{}  2{NBSP}t pour 8{NBSP}t livrées d'argile{}  4{NBSP}t pour 8{NBSP}t livrées de gravier{}{}Il faut au moins 2 types de marchandises livrées dans le même mois pour que la production augmente.
-STR_EXTRA_DAIRY                                                                 :{BLACK}Marchandises produites{NBSP}:{}  3{NBSP}t pour 8{NBSP}t livrées de fournitures industrielles{}  5{NBSP}t pour 8{NBSP}000{NBSP}l (8{NBSP}t) livrés de lait{}{}La production augmente par tranche de 8{NBSP}t lorsque les deux marchandises sont livrées dans le même mois.
-STR_EXTRA_ENGINEERING_SUPPLIES                                                  :{BLACK}Les fournitures techniques permettent d'augmenter la production.{}{YELLOW}  {COMMA} caisse{P "" s} livrée{P "" s} ce mois-ci
-STR_EXTRA_FARM_SUPPLIES                                                         :{BLACK}Les fournitures agricoles permettent d'augmenter la production.{}{YELLOW}  {COMMA} caisse{P "" s} livrée{P "" s} ce mois-ci
+STR_EXTRA_DAIRY                                                                 :{BLACK}Marchandises produites{NBSP}:{}  3{NBSP}t pour 8{NBSP}t livrées de fournitures industrielles{}  5{NBSP}t pour 8{NBSP}000{NBSP}l (8{NBSP}t) livrés de lait{}{}La production augmente de 8{NBSP}t par tranche de 8{NBSP}t livrées lorsque les deux marchandises sont livrées dans le même mois.
+STR_EXTRA_ENGINEERING_SUPPLIES                                                  :{BLACK}Le matériel technique permet d'augmenter la production.{}{YELLOW}  {COMMA} caisse{P "" s} livrée{P "" s} ce mois-ci
+STR_EXTRA_FARM_SUPPLIES                                                         :{BLACK}Le matériel agricole permet d'augmenter la production.{}{YELLOW}  {COMMA} caisse{P "" s} livrée{P "" s} ce mois-ci
 STR_EXTRA_FERTILIZER_PLANT                                                      :{BLACK}Transforme les produits chimiques en engrais pour les exploitations agricoles.{}{}{WEIGHT_SHORT} produites pour {VOLUME_SHORT} livrés.
-STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Marchandises produites{NBSP}:{}  3{NBSP}t pour 8{NBSP}t livrées de fournitures industrielles{}  5{NBSP}t pour 8{NBSP}t livrées de poisson{}{}La production augmente par tranche de 8{NBSP}t lorsque les deux marchandises sont livrées dans le même mois.
-STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Marchandises produites{NBSP}:{}  3{NBSP}t pour 8{NBSP}t livrées de fournitures industrielles{}  5{NBSP}t pour 8{NBSP}t livrées de bois d'œuvre{}{}La production augmente par tranche de 8{NBSP}t lorsque les deux marchandises sont livrées dans le même mois.
-STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Produit des objets en verre comme les bouteilles, les bocaux et les vitres.{}{}{BLACK}Marchandises produites{NBSP}:{}  6{NBSP}t pour 8{NBSP}t livrées de sable{}  2{NBSP}t pour 8{NBSP}t livrées de produits chimiques{}{}La production augmente par tranche de 8{NBSP}t lorsque les deux marchandises sont livrées dans le même mois.
-STR_EXTRA_GRAIN_MILL                                                            :{BLACK}Marchandises produites{NBSP}:{}  3{NBSP}t pour 8{NBSP}t livrées de fournitures industrielles{}  5{NBSP}t pour 8{NBSP}t livrées de céréales{}{}La production augmente par tranche de 8{NBSP}t lorsque les deux marchandises sont livrées dans le même mois.
+STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Marchandises produites{NBSP}:{}  3{NBSP}t pour 8{NBSP}t livrées de fournitures industrielles{}  5{NBSP}t pour 8{NBSP}t livrées de poisson{}{}La production augmente de 8{NBSP}t par tranche de 8{NBSP}t livrées lorsque les deux marchandises sont livrées dans le même mois.
+STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Marchandises produites{NBSP}:{}  3{NBSP}t pour 8{NBSP}t livrées de fournitures industrielles{}  5{NBSP}t pour 8{NBSP}t livrées de bois d'œuvre{}{}La production augmente de 8{NBSP}t par tranche de 8{NBSP}t livrées lorsque les deux marchandises sont livrées dans le même mois.
+STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Produit des objets en verre tels que des bouteilles, des bocaux ou des vitres.{}{}{BLACK}Marchandises produites{NBSP}:{}  6{NBSP}t pour 8{NBSP}t livrées de sable{}  2{NBSP}t pour 8{NBSP}t livrées de produits chimiques{}{}La production augmente de 8{NBSP}t par tranche de 8{NBSP}t livrées lorsque les deux marchandises sont livrées dans le même mois.
+STR_EXTRA_GRAIN_MILL                                                            :{BLACK}Marchandises produites{NBSP}:{}  3{NBSP}t pour 8{NBSP}t livrées de fournitures industrielles{}  5{NBSP}t pour 8{NBSP}t livrées de céréales{}{}La production augmente de 8{NBSP}t par tranche de 8{NBSP}t livrées lorsque les deux marchandises sont livrées dans le même mois.
 STR_EXTRA_IRON_WORKS                                                            :{BLACK}Marchandises produites{NBSP}:{}  2{NBSP}t pour 8{NBSP}t livrées de bois{}  2{NBSP}t pour 8{NBSP}t livrées de minerai de fer{}{}La production augmente de 4{NBSP}t par tranche de 8{NBSP}t livrées lorsque les deux marchandises sont livrées dans le même mois.
 STR_EXTRA_LIME_KILN                                                             :{BLACK}Marchandises produites{NBSP}:{}  3{NBSP}t pour 8{NBSP}t livrées de gravier{}  3{NBSP}t pour 8{NBSP}t livrées de charbon{}{}La production augmente de 6{NBSP}t par tranche de 8{NBSP}t livrées lorsque les deux marchandises sont livrées dans le même mois.
-STR_EXTRA_LUMBER_YARD                                                           :{BLACK}Produit des objets comme les poteaux et les piquets de clôture.{}{}{BLACK}Marchandises produites{NBSP}:{}  2{NBSP}t pour 8{NBSP}t livrées de produits chimiques{}  6{NBSP}t pour 8{NBSP}t livrées de bois d'œuvre{}{}La production augmente de 8{NBSP}t par tranche de 8{NBSP}t livrées lorsque les deux marchandises sont livrées dans le même mois.
+STR_EXTRA_LUMBER_YARD                                                           :{BLACK}Produit des objets tels que des poteaux ou des piquets de clôture.{}{}{BLACK}Marchandises produites{NBSP}:{}  2{NBSP}t pour 8{NBSP}t livrées de produits chimiques{}  6{NBSP}t pour 8{NBSP}t livrées de bois d'œuvre{}{}La production augmente de 8{NBSP}t par tranche de 8{NBSP}t livrées lorsque les deux marchandises sont livrées dans le même mois.
 STR_EXTRA_MACHINE_SHOP                                                          :{BLACK}Construit et entretient des machines.{}{}8{NBSP}t produites pour 8{NBSP}t livrées.
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Production maximum atteinte
 STR_EXTRA_MEAT_PACKER                                                           :{BLACK}Marchandises produites{NBSP}:{}  3{NBSP}t pour 8{NBSP}t livrées de fournitures industrielles{}  5{NBSP}t pour 8{NBSP}t livrées de bétail{}{}La production augmente de 8{NBSP}t par tranche de 8{NBSP}t livrées lorsque les deux marchandises sont livrées dans le même mois.
 STR_EXTRA_METAL_FABRICATION_PLANT                                               :{BLACK}Produit des composants métalliques peints.{}{}{BLACK}Marchandises produites{NBSP}:{}  2{NBSP}t pour 8{NBSP}t livrées de produits chimiques{}  6{NBSP}t pour 8{NBSP}t livrées de métal{}{}La production augmente de 8{NBSP}t par tranche de 8{NBSP}t livrées lorsque les deux marchandises sont livrées dans le même mois.
-STR_EXTRA_METAL_FOUNDRY                                                         :{BLACK}Produit des objets métalliques comme les boîtes de conserve, les outils et les articles ménagers.{}{}{BLACK}Marchandises produites{NBSP}:{}  2{NBSP}t pour 8{NBSP}t livrées de produits chimiques{}  6{NBSP}t pour 8{NBSP}t livrées de métal{}{}La production augmente de 8{NBSP}t par tranche de 8{NBSP}t livrées lorsque les deux marchandises sont livrées dans le même mois.
+STR_EXTRA_METAL_FOUNDRY                                                         :{BLACK}Produit des objets métalliques tels que des boîtes de conserve, des outils ou des articles ménagers.{}{}{BLACK}Marchandises produites{NBSP}:{}  2{NBSP}t pour 8{NBSP}t livrées de produits chimiques{}  6{NBSP}t pour 8{NBSP}t livrées de métal{}{}La production augmente de 8{NBSP}t par tranche de 8{NBSP}t livrées lorsque les deux marchandises sont livrées dans le même mois.
 STR_EXTRA_OIL_REFINERY                                                          :{BLACK}Transforme le pétrole brut en essence et en produits chimiques.{}{}6{NBSP}t produites pour 8{NBSP}t livrées.
 STR_EXTRA_PAPER_MILL                                                            :{BLACK}Transforme le bois en pâte pour produire du papier et du carton.{}{}{BLACK}Marchandises produites{NBSP}:{}  4{NBSP}t pour 8{NBSP}t livrées de bois{}  2{NBSP}t pour 8{NBSP}t livrées d'argile{}  2{NBSP}t pour 8{NBSP}t livrées de produits chimiques{}{}Il faut au moins 2 types de marchandises livrées dans le même mois pour que la production augmente.
-STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}Produit des objets en plastique tels que des emballages et des articles ménagers.{}{}6{NBSP}t produites pour 8{NBSP}t livrées.
+STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}Produit des objets en plastique tels que des emballages ou des articles ménagers.{}{}6{NBSP}t produites pour 8{NBSP}t livrées.
 STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}Produit des matériaux recyclables selon la taille de la ville.
 STR_EXTRA_RECYCLING_PLANT                                                       :{BLACK}Produit des matériaux recyclés utilisables dans l'industrie.{}{}6{NBSP}t produites pour 8{NBSP}t livrées.
 STR_EXTRA_SAWMILL                                                               :{BLACK}Débite du bois.{}{}6{NBSP}t produites pour 8{NBSP}t livrées.
-STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Produit des objets métalliques tels que des outils, des charrues, des portes, des pelles ou des fers à cheval.{}{}5{NBSP}t produites pour 8{NBSP}t livrées.
+STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Produit des objets métalliques tels que des outils, des charrues, des grilles, des pelles ou des fers à cheval.{}{}5{NBSP}t produites pour 8{NBSP}t livrées.
 STR_EXTRA_STEELMILL                                                             :{BLACK}Marchandises produites{NBSP}:{}  2{NBSP}t pour 8{NBSP}t livrées de minerai de fer{}  2{NBSP}t pour 8{NBSP}t livrées de charbon{}  4{NBSP}t pour 8{NBSP}t livrées de ferraille{}{}Il faut au moins 2 types de marchandises livrées dans le même mois pour que la production augmente.
 STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Marchandises produites{NBSP}:{}  3{NBSP}t pour 8{NBSP}t livrées de fournitures industrielles{}  5{NBSP}t pour 8{NBSP}t livrées de cannes à sucre{}{}La production augmente de 8{NBSP}t par tranche de 8{NBSP}t livrées lorsque les deux marchandises sont livrées dans le même mois.
 STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ DEBUG ------------{}Production ce mois-ci{NBSP}:{}Marchandise 1{NBSP}: {WHITE}{COMMA}{BLACK}{}Marchandise 2{NBSP}: {WHITE}{COMMA}{BLACK}{}Jours écoulés depuis la dernière livraison{NBSP}: {WHITE}{COMMA}{BLACK}
 STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Marchandises produites{NBSP}:{}  3{NBSP}t pour 8{NBSP}t livrées de fournitures industrielles{}  5{NBSP}t pour 8{NBSP}t livrées de laine{}  5{NBSP}t pour 8{NBSP}t livrées de fibres végétales{}{}La production augmente si des fournitures industrielles sont livrées dans le même mois que d'autres marchandises.
 STR_FUND_ARABLE_FARM                                                            :{}{BLACK}Emplacement{NBSP}: {YELLOW}ne peut pas être construite sur de la neige, dans le désert ou sur une pente.
 STR_FUND_DAIRY_FARM                                                             :{}{BLACK}Emplacement{NBSP}: {YELLOW}ne peut pas être construite sur des pentes abruptes.
-STR_FUND_FOREST                                                                 :{}{BLACK}Emplacement{NBSP}: {YELLOW}ne peut pas être construite dans le désert.
-STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}Emplacement{NBSP}: {YELLOW}ne peut pas être construit sur de la neige.
+STR_FUND_FOREST                                                                 :{}{BLACK}Emplacement{NBSP}: {YELLOW}ne peut pas être placée dans le désert.
+STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}Emplacement{NBSP}: {YELLOW}ne peut pas être placé sur de la neige.
 STR_FUND_MIXED_FARM                                                             :{}{BLACK}Emplacement{NBSP}: {YELLOW}ne peut pas être construite sur de la neige, dans le désert ou sur des pentes abruptes.
 STR_FUND_SHEEP_FARM                                                             :{}{BLACK}Emplacement{NBSP}: {YELLOW}ne peut pas être construit dans le désert ou sur une pente.
 STR_GENERIC_NEWLINE                                                             :{}
@@ -144,10 +144,10 @@ STR_IND_JUNKYARD                                                                
 STR_IND_LIME_KILN                                                               :Four à chaux
 STR_IND_LUMBER_YARD                                                             :Dépôt de bois
 STR_IND_MACHINE_SHOP                                                            :Atelier d'usinage
-STR_IND_METAL_FABRICATION_PLANT                                                 :Usine de fabrication de métal
+STR_IND_METAL_FABRICATION_PLANT                                                 :Usine métallurgique
 STR_IND_METAL_FOUNDRY                                                           :Fonderie
 STR_IND_MIXEDFARM                                                               :Exploitation agricole mixte
-STR_IND_PETROLPUMP                                                              :Station essence
+STR_IND_PETROLPUMP                                                              :Station d'essence
 STR_IND_PLASTICS_PLANT                                                          :Usine plastique
 STR_IND_QUARRY                                                                  :Carrière
 STR_IND_RECYCLING_DEPOT                                                         :Centre de tri des déchets
@@ -158,14 +158,14 @@ STR_IND_SMITHY_FORGE                                                            
 STR_IND_STOCKYARD                                                               :Parc à bestiaux
 STR_IND_SUGAR_REFINERY                                                          :Raffinerie de sucre
 STR_IND_SUPERMARKET                                                             :Supermarché
-STR_IND_TEXTILE_MILL                                                            :Usine Textile
+STR_IND_TEXTILE_MILL                                                            :Usine textile
 STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :Éloignement côtier maximal des zones de pêche, plates-formes pétrolières et sites de dragage.
 STR_PARAM_DESC_DEBUG                                                            :Seulement pour les développeurs
-STR_PARAM_DESC_ECONOMIES                                                        :Lorsque ce sera terminé, FIRS permettra de choisir son économie. Les marchandises et les industries varieront en fonction de l'économie choisie. Les coûts du transport seront aussi différents dans chaque économie {}{}{SILVER}Actuellement, une seule économie est disponible :)
+STR_PARAM_DESC_ECONOMIES                                                        :Lorsque ce sera terminé, FIRS permettra de choisir son économie. Les marchandises et les industries varieront en fonction de l'économie choisie. Les coûts du transport seront différents dans chaque économie {}{}{SILVER}Actuellement, une seule économie est disponible :)
 STR_PARAM_DESC_NEVER_CLOSE                                                      :Par défaut, les industries primaires ne ferment jamais.{}{}Si ce paramètre est activé, les industries primaires fermeront quand leur production tombera à un niveau faible (le niveau varie pour chaque type d'industrie).{}{SILVER}Nécessite l'activation du paramètre «{NBSP}Permettre la baisse de production des industries primaires{NBSP}».
-STR_PARAM_DESC_NO_OPENINGS                                                      :Par défaut, de nouvelles industries s'ouvriront durant la partie.{}{}Si ce paramètre est activé, de nouvelles industries ne seront pas ouvertes durant la partie, et les joueurs ne pourront pas construire ni prospecter d'industries.
+STR_PARAM_DESC_NO_OPENINGS                                                      :Par défaut, de nouvelles industries s'ouvriront durant la partie.{}{}Si ce paramètre est activé, de nouvelles industries ne seront pas ouvertes durant la partie, et les joueurs ne pourront ni construire ni prospecter d'industries.
 STR_PARAM_DESC_PRIMARY_PRODUCTION_DECREASE                                      :Par défaut, la production des industries primaires ne diminue jamais.{}{}Si ce paramètre est activé, il est possible que la production diminue si aucune fourniture n'est livrée dans le mois. Plus le niveau de production est élevé, plus il y a de risques de voir la production diminuer.
-STR_PARAM_DESC_SECONDARY_NEVER_CLOSE                                            :Par défaut, les industries secondaires ne ferment jamais.{}{}Si ce paramètre est activé, les industries secondaires peuvent fermer si aucune marchandises n'est transportée pendant longtemps.
+STR_PARAM_DESC_SECONDARY_NEVER_CLOSE                                            :Par défaut, les industries secondaires ne ferment jamais.{}{}Si ce paramètre est activé, les industries secondaires peuvent fermer si aucune marchandise n'est transportée pendant longtemps.
 STR_PARAM_DESC_STAT_RATING                                                      :La cote (qualité de service) d'une station influe sur la quantité de marchandises livrées par une industrie{NBSP}: au plus la cote est élevée, au plus des marchandises y seront livrées.
 STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY                                   :Éloignement côtier maximal des industries maritimes (en nombre de cases)
 STR_PARAM_NAME_DEBUG                                                            :Afficher les textes de débogage
@@ -179,7 +179,7 @@ STR_PARAM_VALUE_ECONOMIES_TEST_ECONOMY                                          
 STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0                                         :Pas de limite
 STR_PARAM_VALUE_STAT_RATING_100                                                 :Toujours 100{NBSP}%
 STR_PARAM_VALUE_STAT_RATING_DEFAULT                                             :Celui par défaut
-STR_PARAM_VALUE_STAT_RATING_REDUCED_TIME                                        :Cotation améliorée : réduit l'effet du temps écoulé depuis le dernier enlèvement de marchandises
+STR_PARAM_VALUE_STAT_RATING_REDUCED_TIME                                        :Cotation améliorée{NBSP}: réduit l'effet du temps écoulé depuis le dernier enlèvement de marchandises
 STR_STATIONNAME_CHEMICALS                                                       :{STRING} Raffinerie
 STR_STATIONNAME_DEPOT                                                           :{STRING} Dépôt
 STR_STATIONNAME_DREDGING_SITE                                                   :{STRING} Dragage
