@@ -1,5 +1,7 @@
 ##grflangid 0x30
 ##plural 7
+##gender m f n
+##case d c b n m w
 
 STR_GRF_DESC                                                                    :{ORANGE}FIRS Industry Replacement Set{}{BLACK}Autorzy: andythenorth, FooBar, planetmaker, Terkhen, Yexo i inni. {SILVER}Więcej informacji w pliku readme. {BLACK}Licencja: GPL v2.
 STR_GRF_NAME                                                                    :{TITLE}
@@ -28,28 +30,72 @@ STR_PARAM_VALUE_STAT_RATING_REDUCED_TIME                                        
 STR_PARAM_VALUE_STAT_RATING_100                                                 :zawsze 100%
 
 
-STR_CARGO_NAME_ALCOHOL                                                          :Alkohol
-STR_CARGO_NAME_BAUXITE                                                          :Boksyt
-STR_CARGO_NAME_BUILDING_MATERIALS                                               :Materiały budowlane
-STR_CARGO_NAME_CHEMICALS                                                        :Chemikalia
-STR_CARGO_NAME_CLAY                                                             :Glina
-STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :Maszyny
-STR_CARGO_NAME_FIBRES                                                           :Włókna naturalne
-STR_CARGO_NAME_FISH                                                             :Ryby
-STR_CARGO_NAME_FARM_SUPPLIES                                                    :Sprzęt rolniczy
-STR_CARGO_NAME_FRUITS                                                           :Owoce
-STR_CARGO_NAME_LUMBER                                                           :Deski
-STR_CARGO_NAME_METAL                                                            :Metal
-STR_CARGO_NAME_MILK                                                             :Mleko
-STR_CARGO_NAME_MANUFACTURING_SUPPLIES                                           :Opakowania
-STR_CARGO_NAME_PETROL                                                           :Paliwo
-STR_CARGO_NAME_RECYCLABLES                                                      :Surowce wtórne
-STR_CARGO_NAME_SAND                                                             :Piasek
-STR_CARGO_NAME_SCRAP_METAL                                                      :Złom
-STR_CARGO_NAME_STONE                                                            :Kamienie
-STR_CARGO_NAME_SUGAR_BEET                                                       :Buraki cukrowe
-STR_CARGO_NAME_SUGARCANE                                                        :Trzcina cukrowa
-STR_CARGO_NAME_WOOL                                                             :Wełna
+STR_CARGO_NAME_ALCOHOL                                                          :{G=m}Alkohol
+STR_CARGO_NAME_ALCOHOL.d                                                        :alkoholu
+STR_CARGO_NAME_ALCOHOL.b                                                        :alkohol
+STR_CARGO_NAME_BAUXITE                                                          :{G=m}Boksyt
+STR_CARGO_NAME_BAUXITE.d                                                        :boksytu
+STR_CARGO_NAME_BAUXITE.b                                                        :boksyt
+STR_CARGO_NAME_BUILDING_MATERIALS                                               :{G=m}Materiały budowlane
+STR_CARGO_NAME_BUILDING_MATERIALS.d                                             :materiałów budowlanych
+STR_CARGO_NAME_BUILDING_MATERIALS.b                                             :materiały budowlane
+STR_CARGO_NAME_CHEMICALS                                                        :{G=n}Chemikalia
+STR_CARGO_NAME_CHEMICALS.d                                                      :chemikaliów
+STR_CARGO_NAME_CHEMICALS.b                                                      :chemikalia
+STR_CARGO_NAME_CLAY                                                             :{G=f}Glina
+STR_CARGO_NAME_CLAY.d                                                           :gliny
+STR_CARGO_NAME_CLAY.b                                                           :glinę
+STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :{G=f}Maszyny
+STR_CARGO_NAME_ENGINEERING_SUPPLIES.d                                           :maszyn
+STR_CARGO_NAME_ENGINEERING_SUPPLIES.b                                           :maszyny
+STR_CARGO_NAME_FIBRES                                                           :{G=n}Włókna naturalne
+STR_CARGO_NAME_FIBRES.d                                                         :włókien naturalnych
+STR_CARGO_NAME_FIBRES.b                                                         :włókna naturalne
+STR_CARGO_NAME_FISH                                                             :{G=f}Ryby
+STR_CARGO_NAME_FISH.d                                                           :ryb
+STR_CARGO_NAME_FISH.b                                                           :ryby
+STR_CARGO_NAME_FARM_SUPPLIES                                                    :{G=m}Sprzęt rolniczy
+STR_CARGO_NAME_FARM_SUPPLIES.d                                                  :sprzętu rolniczego
+STR_CARGO_NAME_FARM_SUPPLIES.b                                                  :sprzęt rolniczy
+STR_CARGO_NAME_FRUITS                                                           :{G=m}Owoce
+STR_CARGO_NAME_FRUITS.d                                                         :owoców
+STR_CARGO_NAME_FRUITS.b                                                         :owoce
+STR_CARGO_NAME_LUMBER                                                           :{G=f}Deski
+STR_CARGO_NAME_LUMBER.d                                                         :desek
+STR_CARGO_NAME_LUMBER.b                                                         :deski
+STR_CARGO_NAME_METAL                                                            :{G=m}Metal
+STR_CARGO_NAME_METAL.d                                                          :metalu
+STR_CARGO_NAME_METAL.b                                                          :metal
+STR_CARGO_NAME_MILK                                                             :{G=n}Mleko
+STR_CARGO_NAME_MILK.d                                                           :mleka
+STR_CARGO_NAME_MILK.b                                                           :mleko
+STR_CARGO_NAME_MANUFACTURING_SUPPLIES                                           :{G=n}Opakowania
+STR_CARGO_NAME_MANUFACTURING_SUPPLIES.d                                         :opakowań
+STR_CARGO_NAME_MANUFACTURING_SUPPLIES.b                                         :opakowania
+STR_CARGO_NAME_PETROL                                                           :{G=n}Paliwo
+STR_CARGO_NAME_PETROL.d                                                         :paliwa
+STR_CARGO_NAME_PETROL.b                                                         :paliwo
+STR_CARGO_NAME_RECYCLABLES                                                      :{G=m}Surowce wtórne
+STR_CARGO_NAME_RECYCLABLES.d                                                    :surowców wtórnych
+STR_CARGO_NAME_RECYCLABLES.b                                                    :surowce wtórne
+STR_CARGO_NAME_SAND                                                             :{G=m}Piasek
+STR_CARGO_NAME_SAND.d                                                           :piasku
+STR_CARGO_NAME_SAND.b                                                           :piasek
+STR_CARGO_NAME_SCRAP_METAL                                                      :{G=m}Złom
+STR_CARGO_NAME_SCRAP_METAL.d                                                    :złomu
+STR_CARGO_NAME_SCRAP_METAL.b                                                    :złom
+STR_CARGO_NAME_STONE                                                            :{G=m}Kamienie
+STR_CARGO_NAME_STONE.d                                                          :kamieni
+STR_CARGO_NAME_STONE.b                                                          :kamienie
+STR_CARGO_NAME_SUGAR_BEET                                                       :{G=m}Buraki cukrowe
+STR_CARGO_NAME_SUGAR_BEET.d                                                     :buraków cukrowych
+STR_CARGO_NAME_SUGAR_BEET.b                                                     :buraki cukrowe
+STR_CARGO_NAME_SUGARCANE                                                        :{G=f}Trzcina cukrowa
+STR_CARGO_NAME_SUGARCANE.d                                                      :trzciny cukrowej
+STR_CARGO_NAME_SUGARCANE.b                                                      :trzcinę cukrową
+STR_CARGO_NAME_WOOL                                                             :{G=f}Wełna
+STR_CARGO_NAME_WOOL.d                                                           :wełny
+STR_CARGO_NAME_WOOL.b                                                           :wełnę
 
 STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} alkoholu
 STR_CARGO_UNIT_BAUXITE                                                          :{WEIGHT} boksytu
@@ -87,7 +133,7 @@ STR_CID_LUMBER                                                                  
 STR_CID_MANUFACTURING_SUPPLIES                                                  :{TINYFONT}OP
 STR_CID_METAL                                                                   :{TINYFONT}MT
 STR_CID_MILK                                                                    :{TINYFONT}MK
-STR_CID_PETROL                                                                  :{TINYFONT}PL
+STR_CID_PETROL                                                                  :{TINYFONT}PW
 STR_CID_RECYCLABLES                                                             :{TINYFONT}SW
 STR_CID_SAND                                                                    :{TINYFONT}PK
 STR_CID_SCRAP_METAL                                                             :{TINYFONT}ZM
@@ -132,6 +178,7 @@ STR_EXTRA_OIL_REFINERY                                                          
 STR_EXTRA_PAPER_MILL                                                            :{BLACK}Przerabia drewno na papier i karton.{}{}{BLACK}Produkcja:{}  4t z 8t drewna{}  2t z 8t gliny{}  2t z 8t chemikaliów{}{}Produkcja wzrasta, gdy różne surowce są dostarczane w ciągu miesiąca.
 STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}Produkuje artykuły plastikowe na użytek przedsiębiorstw i gospodarstw domowych.{}{}6t z 8t surowców.
 STR_EXTRA_RECYCLING_PLANT                                                       :{BLACK}Przerabia surowce wtórne do ponownego wykorzystania w przemyśle.{}{}6t z 8t surowców.
+STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}Poziom produkcji zależy od wielkości pobliskiego miasta.
 STR_EXTRA_SAWMILL                                                               :{BLACK}Drzewo się rżnie. Jest deska, jest sęk.{}{}6t z 8t surowców.
 STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Produkcja ręcznie kutych podków, narzędzi, bramek i innych drobnych metalowych przedmiotów.{}{}5t z 8t surowców.
 STR_EXTRA_STEELMILL                                                             :{BLACK}Produkcja:{}  2t z 8t rudy żelaza{}  2t z 8t węgla{}  4t z 8t złomu{}{}Produkcja wzrasta, gdy różne surowce są dostarczane w ciągu miesiąca.
@@ -162,46 +209,87 @@ STR_STATIONNAME_PLANTS                                                          
 STR_STATIONNAME_SMITHY_FORGE                                                    :{STRING} Kuźnia
 STR_STATIONNAME_WELLS                                                           :{STRING} Pole Naftowe
 
-STR_IND_ALUMINIUM_PLANT                                                         :Huta Aluminium
-STR_IND_ARABLE_FARM                                                             :Pole Uprawne
-STR_IND_BAUXITE_MINE                                                            :Kopalnia Boksytu
-STR_IND_BIOREFINERY                                                             :Biorafineria
-STR_IND_BREWERY                                                                 :Browar
-STR_IND_BRICK_WORKS                                                             :Cegielnia
-STR_IND_BUILDERS_YARD                                                           :Spółka Budowlana
-STR_IND_CEMENT_PLANT                                                            :Cementownia
-STR_IND_CLAY_PIT                                                                :Kopalnia Gliny
-STR_IND_DAIRY                                                                   :Mleczarnia
-STR_IND_DAIRYFARM                                                               :Ferma Krów
-STR_IND_DREDGING_SITE                                                           :Pogłębiarka
-STR_IND_FERTILISER_PLANT                                                        :Zakłady Chemiczne
-STR_IND_FISHING_GROUND                                                          :Łowisko
-STR_IND_FISHING_HARBOUR                                                         :Port Rybacki
-STR_IND_FOOD_MARKET                                                             :Sklep
-STR_IND_FURNITURE_FACTORY                                                       :Fabryka Mebli
-STR_IND_GLASS_WORKS                                                             :Huta Szkła
-STR_IND_GRAIN_MILL                                                              :Piekarnia
-STR_IND_HARDWARE_STORE                                                          :Sklep Przemysłowy
-STR_IND_HOTEL                                                                   :Hotel
-STR_IND_IRON_WORKS                                                              :Piec Hutniczy
-STR_IND_JUNKYARD                                                                :Złomowisko
-STR_IND_LIME_KILN                                                               :Piec Wapienny
-STR_IND_LUMBER_YARD                                                             :Stolarnia
-STR_IND_MACHINE_SHOP                                                            :Fabryka Maszyn
-STR_IND_METAL_FABRICATION_PLANT                                                 :Zakłady Metalowe
-STR_IND_METAL_FOUNDRY                                                           :Warsztaty
-STR_IND_MIXEDFARM                                                               :Gospdarstwo Rolne
-STR_IND_PETROLPUMP                                                              :Stacja Paliw
-STR_IND_PLASTICS_PLANT                                                          :Fabryka Tworzyw Sztucznych
-STR_IND_QUARRY                                                                  :Kamieniołomy
-STR_IND_RECYCLING_DEPOT                                                         :Wysypisko
-STR_IND_RECYCLING_PLANT                                                         :Przetwórnia Odpadów
-STR_IND_RETAILMARKET                                                            :Hipermarket
-STR_IND_SHEEPFARM                                                               :Ferma Owiec
-STR_IND_SMITHY_FORGE                                                            :Kuźnia
-STR_IND_STOCKYARD                                                               :Ubojnia
-STR_IND_SUGAR_REFINERY                                                          :Cukrownia
-STR_IND_SUPERMARKET                                                             :Supermarket
-STR_IND_TEXTILE_MILL                                                            :Zakłady Odzieżowe
+STR_IND_ALUMINIUM_PLANT                                                         :{G=f}Huta aluminium
+STR_IND_ALUMINIUM_PLANT.d                                                       :huty aluminium
+STR_IND_ARABLE_FARM                                                             :{G=n}Pole uprawne
+STR_IND_ARABLE_FARM.d                                                           :pola uprawnego
+STR_IND_BAUXITE_MINE                                                            :{G=f}Kopalnia boksytu
+STR_IND_BAUXITE_MINE.d                                                          :kopalni boksytu
+STR_IND_BIOREFINERY                                                             :{G=f}Biorafineria
+STR_IND_BIOREFINERY.d                                                           :biorafinerii
+STR_IND_BREWERY                                                                 :{G=m}Browar
+STR_IND_BREWERY.d                                                               :browaru
+STR_IND_BRICK_WORKS                                                             :{G=f}Cegielnia
+STR_IND_BRICK_WORKS.d                                                           :cegielni
+STR_IND_BUILDERS_YARD                                                           :{G=f}Spółka budowlana
+STR_IND_BUILDERS_YARD.d                                                         :spółki budowlanej
+STR_IND_CEMENT_PLANT                                                            :{G=f}Cementownia
+STR_IND_CEMENT_PLANT.d                                                          :cementowni
+STR_IND_CLAY_PIT                                                                :{G=f}Kopalnia gliny
+STR_IND_CLAY_PIT.d                                                              :kopalni gliny
+STR_IND_DAIRY                                                                   :{G=f}Mleczarnia
+STR_IND_DAIRY.d                                                                 :mleczarni
+STR_IND_DAIRYFARM                                                               :{G=f}Ferma krów
+STR_IND_DAIRYFARM.d                                                             :fermy krów
+STR_IND_DREDGING_SITE                                                           :{G=f}Pogłębiarka
+STR_IND_DREDGING_SITE.d                                                         :pogłębiarki
+STR_IND_FERTILISER_PLANT                                                        :{G=m}Zakłady chemiczne
+STR_IND_FERTILISER_PLANT.d                                                      :zakładu chemicznego
+STR_IND_FISHING_GROUND                                                          :{G=n}Łowisko
+STR_IND_FISHING_GROUND.d                                                        :łowiska
+STR_IND_FISHING_HARBOUR                                                         :{G=m}Port rybacki
+STR_IND_FISHING_HARBOUR.d                                                       :portu rybackiego
+STR_IND_FOOD_MARKET                                                             :{G=m}Sklep
+STR_IND_FOOD_MARKET.d                                                           :sklepu
+STR_IND_FURNITURE_FACTORY                                                       :{G=f}Fabryka mebli
+STR_IND_FURNITURE_FACTORY.d                                                     :fabryki mebli
+STR_IND_GLASS_WORKS                                                             :{G=f}Huta szkła
+STR_IND_GLASS_WORKS.d                                                           :huty szkła
+STR_IND_GRAIN_MILL                                                              :{G=f}Piekarnia
+STR_IND_GRAIN_MILL.d                                                            :piekarni
+STR_IND_HARDWARE_STORE                                                          :{G=m}Sklep przemysłowy
+STR_IND_HARDWARE_STORE.d                                                        :sklepu przemysłowego
+STR_IND_HOTEL                                                                   :{G=m}Hotel
+STR_IND_HOTEL.d                                                                 :hotelu
+STR_IND_IRON_WORKS                                                              :{G=m}Piec hutniczy
+STR_IND_IRON_WORKS.d                                                            :pieca hutniczego
+STR_IND_JUNKYARD                                                                :{G=n}Złomowisko
+STR_IND_JUNKYARD.d                                                              :złomowiska
+STR_IND_LIME_KILN                                                               :{G=m}Piec wapienny
+STR_IND_LIME_KILN.d                                                             :pieca wapiennego
+STR_IND_LUMBER_YARD                                                             :{G=f}Stolarnia
+STR_IND_LUMBER_YARD.d                                                           :stolarni
+STR_IND_MACHINE_SHOP                                                            :{G=f}Fabryka maszyn
+STR_IND_MACHINE_SHOP.d                                                          :fabryki maszyn
+STR_IND_METAL_FABRICATION_PLANT                                                 :{G=m}Zakłady metalowe
+STR_IND_METAL_FABRICATION_PLANT.d                                               :zakładu metalowego
+STR_IND_METAL_FOUNDRY                                                           :{G=m}Warsztaty
+STR_IND_METAL_FOUNDRY.d                                                         :warsztatu
+STR_IND_MIXEDFARM                                                               :{G=n}Gospdarstwo rolne
+STR_IND_MIXEDFARM.d                                                             :gospodarstwa rolnego
+STR_IND_PETROLPUMP                                                              :{G=f}Stacja paliw
+STR_IND_PETROLPUMP.d                                                            :stacji paliw
+STR_IND_PLASTICS_PLANT                                                          :{G=f}Fabryka tworzyw sztucznych
+STR_IND_PLASTICS_PLANT.d                                                        :fabryki tworzyw sztucznych
+STR_IND_QUARRY                                                                  :{G=m}Kamieniołomy
+STR_IND_QUARRY.d                                                                :kamieniołomu
+STR_IND_RECYCLING_DEPOT                                                         :{G=n}Wysypisko
+STR_IND_RECYCLING_DEPOT.d                                                       :wysypiska
+STR_IND_RECYCLING_PLANT                                                         :{G=f}Przetwórnia odpadów
+STR_IND_RECYCLING_PLANT.d                                                       :przetwórni odpadów
+STR_IND_RETAILMARKET                                                            :{G=m}Hipermarket
+STR_IND_RETAILMARKET.d                                                          :hipermarketu
+STR_IND_SHEEPFARM                                                               :{G=f}Ferma owiec
+STR_IND_SHEEPFARM.d                                                             :fermy owiec
+STR_IND_SMITHY_FORGE                                                            :{G=f}Kuźnia
+STR_IND_SMITHY_FORGE.d                                                          :kuźni
+STR_IND_STOCKYARD                                                               :{G=f}Ubojnia
+STR_IND_STOCKYARD.d                                                             :ubojni
+STR_IND_SUGAR_REFINERY                                                          :{G=f}Cukrownia
+STR_IND_SUGAR_REFINERY.d                                                        :cukrowni
+STR_IND_SUPERMARKET                                                             :{G=m}Supermarket
+STR_IND_SUPERMARKET.d                                                           :supermarketu
+STR_IND_TEXTILE_MILL                                                            :{G=m}Zakłady odzieżowe
+STR_IND_TEXTILE_MILL.d                                                          :zakładu odzieżowego
 
 
