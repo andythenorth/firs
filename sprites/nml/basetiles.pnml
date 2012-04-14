@@ -1,14 +1,14 @@
 /* *************************************************
  * tile_plain_concrete
- * 
+ *
  * used by
  *   - fertiliser_plant.pnml
  *   - plastics_plant.pnml
  *   - stockyard.pnml
  * *************************************************/
 
-spriteset(spriteset_plain_concrete, "sprites/graphics/industries/groundtiles.png") { tmpl_ground_tile(80, 10) } 
-spriteset(spriteset_plain_concrete_snow, "sprites/graphics/industries/groundtiles.png") { tmpl_ground_tile(220, 10) } 
+spriteset(spriteset_plain_concrete, "sprites/graphics/industries/groundtiles.png") { tmpl_ground_tile(80, 10) }
+spriteset(spriteset_plain_concrete_snow, "sprites/graphics/industries/groundtiles.png") { tmpl_ground_tile(220, 10) }
 
 spritelayout spritelayout_plain_conrete {
 	ground {
@@ -55,33 +55,4 @@ spriteset(spriteset_ground_track_snow) {
 spriteset(spriteset_empty) {
 	[80,10,1,1,0,0, "sprites/graphics/industries/groundtiles.png"]
 	[80,10,1,1,0,0, "sprites/graphics/industries/groundtiles.png"]
-}
-
-/* **************************************************
- * Legacy support for meanwhile unused industry tiles
- * Just define them as the farm's barn
- *
- * Unused tile numbers:
- * 225, 226, 228, 233
- * *************************************************/
-
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_225, 225) {
-	property {
-		substitute: 35;
-	}
-}
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_226, 226) {
-	property {
-		substitute: 35;
-	}
-}
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_228, 228) {
-	property {
-		substitute: 35;
-	}
-}
-item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_233, 233) {
-	property {
-		substitute: 35;
-	}
 }
