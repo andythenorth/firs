@@ -8,15 +8,15 @@
 #define THIS_ID(...) brickworks ## __VA_ARGS__
 
 /* shared ground tile by all sprite layouts of this industry */
-spriteset(THIS_ID(spriteset_ground), "sprites/graphics/industries/groundtiles.png") { tmpl_ground_tile(150, 10) } 
+spriteset(THIS_ID(spriteset_ground), "sprites/graphics/industries/groundtiles.png") { tmpl_ground_tile(150, 10) }
 
-spriteset(THIS_ID(spriteset_sand), "sprites/graphics/industries/brickworks.png") { tmpl_ground_tile(290, 10) } 
-spriteset(THIS_ID(spriteset_clay), "sprites/graphics/industries/brickworks.png") { tmpl_ground_tile(360, 10) } 
+spriteset(THIS_ID(spriteset_sand), "sprites/graphics/industries/brickworks.png") { tmpl_ground_tile(290, 10) }
+spriteset(THIS_ID(spriteset_clay), "sprites/graphics/industries/brickworks.png") { tmpl_ground_tile(360, 10) }
 
-spriteset(THIS_ID(spriteset_1), "sprites/graphics/industries/brickworks.png") { tmpl_building_sprite( 10, 10, 101, -64) } 
-spriteset(THIS_ID(spriteset_2), "sprites/graphics/industries/brickworks.png") { tmpl_building_sprite( 80, 10, 101, -59) } 
-spriteset(THIS_ID(spriteset_3), "sprites/graphics/industries/brickworks.png") { tmpl_building_sprite(150, 10, 101, -71) } 
-spriteset(THIS_ID(spriteset_4), "sprites/graphics/industries/brickworks.png") { tmpl_building_sprite(220, 10, 101, -69) } 
+spriteset(THIS_ID(spriteset_1), "sprites/graphics/industries/brickworks.png") { tmpl_building_sprite( 10, 10, 101, -64) }
+spriteset(THIS_ID(spriteset_2), "sprites/graphics/industries/brickworks.png") { tmpl_building_sprite( 80, 10, 101, -59) }
+spriteset(THIS_ID(spriteset_3), "sprites/graphics/industries/brickworks.png") { tmpl_building_sprite(150, 10, 101, -71) }
+spriteset(THIS_ID(spriteset_4), "sprites/graphics/industries/brickworks.png") { tmpl_building_sprite(220, 10, 101, -69) }
 
 SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_sand_staithe), THIS_ID(spriteset_ground), THIS_ID(spriteset_sand), 8)
 
@@ -225,6 +225,7 @@ item(FEAT_INDUSTRIES, brick_works, IND_BRICKWORKS_ID) {
 		prod_decrease_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_GENERAL;
 		new_ind_msg:            TTD_STR_NEWS_INDUSTRY_CONSTRUCTION;
 		name:                   string(STR_IND_BRICK_WORKS);
+		nearby_station_name:    string(STR_STATION, string(STR_TOWN), string(STR_IND_BRICK_WORKS));
 		prod_cargo_types:       [BDMT];
 		accept_cargo_types:     [COAL, SAND, CLAY];
 		prod_multiplier:        [0, 0];

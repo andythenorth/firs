@@ -161,7 +161,7 @@ item(FEAT_INDUSTRIES, sugar_refinery, IND_SUGARREFINERY_ID) {
 			];
 		life_type:              4;
 		name:                   string(STR_IND_SUGAR_REFINERY);
-		nearby_station_name:    string(STR_STATIONNAME_CHEMICALS);
+		nearby_station_name:    string(STR_STATION, string(STR_TOWN), string(STR_IND_SUGAR_REFINERY));
 		closure_msg:            TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS;
 		prod_increase_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL;
 		prod_decrease_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_GENERAL;

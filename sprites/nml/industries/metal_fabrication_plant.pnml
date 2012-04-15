@@ -212,6 +212,7 @@ item(FEAT_INDUSTRIES, metal_fabrication_plant, IND_METALFABPLANT_ID) {
 		prod_decrease_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_GENERAL;
 		new_ind_msg:            TTD_STR_NEWS_INDUSTRY_CONSTRUCTION;
 		name:                   string(STR_IND_METAL_FABRICATION_PLANT);
+		nearby_station_name:    string(STR_STATION, string(STR_TOWN), string(STR_IND_METAL_FABRICATION_PLANT));
 		prod_cargo_types: [BDMT];
 		accept_cargo_types: [STEL, RFPR];
 		prod_multiplier: [0, 0];

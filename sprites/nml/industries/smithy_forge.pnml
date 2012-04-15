@@ -124,7 +124,7 @@ item(FEAT_INDUSTRIES, smithy_forge, IND_SMITHYFORGE_ID) {
 		prod_decrease_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_GENERAL;
 		new_ind_msg:            TTD_STR_NEWS_INDUSTRY_CONSTRUCTION;
 		name:                   string(STR_IND_SMITHY_FORGE);
-		nearby_station_name:    string(STR_STATIONNAME_SMITHY_FORGE);
+		nearby_station_name:    string(STR_STATION, string(STR_TOWN), string(STR_IND_SMITHY_FORGE));
 		prod_cargo_types: [ENSP, FMSP];
 		accept_cargo_types: [STEL];
 		prod_multiplier: [0, 0];

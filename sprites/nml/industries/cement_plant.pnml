@@ -15,8 +15,8 @@ spriteset(THIS_ID(spriteset_ground), "sprites/graphics/industries/groundtiles.pn
 	tmpl_ground_tile(80, 10)
 }
 
-spriteset(THIS_ID(spriteset_clay), "sprites/graphics/industries/cementplant.png") { tmpl_ground_tile(80, 130) } 
-spriteset(THIS_ID(spriteset_stone), "sprites/graphics/industries/cementplant.png") { tmpl_ground_tile(150, 130) } 
+spriteset(THIS_ID(spriteset_clay), "sprites/graphics/industries/cementplant.png") { tmpl_ground_tile(80, 130) }
+spriteset(THIS_ID(spriteset_stone), "sprites/graphics/industries/cementplant.png") { tmpl_ground_tile(150, 130) }
 
 spriteset(THIS_ID(spriteset_1),  "sprites/graphics/industries/cementplant.png") { tmpl_building_sprite( 80,  10, 113, -82) }
 spriteset(THIS_ID(spriteset_2),  "sprites/graphics/industries/cementplant.png") { tmpl_building_sprite(150,  10, 113, -82) }
@@ -401,6 +401,7 @@ item(FEAT_INDUSTRIES, cement_plant, IND_CEMENTPLANT_ID) {
 		prod_decrease_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_GENERAL;
 		new_ind_msg:            TTD_STR_NEWS_INDUSTRY_CONSTRUCTION;
 		name:                   string(STR_IND_CEMENT_PLANT);
+		nearby_station_name:    string(STR_STATION, string(STR_TOWN), string(STR_IND_CEMENT_PLANT));
 		prod_cargo_types: [BDMT];
 		accept_cargo_types: [COAL, CLAY, GRVL];
 		prod_multiplier: [0, 0];

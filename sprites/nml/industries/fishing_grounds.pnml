@@ -343,7 +343,7 @@ item(FEAT_INDUSTRIES, fishing_grounds, IND_FISHINGGROUNDS_ID) {
 		prod_decrease_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_GENERAL;
 		new_ind_msg:            TTD_STR_NEWS_INDUSTRY_CONSTRUCTION;
 		name:                   string(STR_IND_FISHING_GROUND);
-		nearby_station_name:    string(STR_STATIONNAME_FISHING_GROUNDS);
+		nearby_station_name:    string(STR_STATION, string(STR_TOWN), string(STR_IND_FISHING_GROUND));
 		prod_cargo_types: [FISH];
 		accept_cargo_types: [];
 		prod_multiplier: [5, 0];

@@ -434,6 +434,7 @@ item(FEAT_INDUSTRIES, machine_shop, IND_MACHINESHOP_ID) {
 		prod_decrease_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_GENERAL;
 		new_ind_msg:            TTD_STR_NEWS_INDUSTRY_CONSTRUCTION;
 		name:                   string(STR_IND_MACHINE_SHOP);
+		nearby_station_name:    string(STR_STATION, string(STR_TOWN), string(STR_IND_MACHINE_SHOP));
 		prod_cargo_types: [FMSP, ENSP];
 		accept_cargo_types: [STEL, PETR];
 		prod_multiplier: [0, 0];

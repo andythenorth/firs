@@ -189,6 +189,7 @@ item(FEAT_INDUSTRIES, lime_kiln, IND_LIMEKILN_ID) {
 		prod_decrease_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_GENERAL;
 		new_ind_msg:            TTD_STR_NEWS_INDUSTRY_CONSTRUCTION;
 		name:                   string(STR_IND_LIME_KILN);
+		nearby_station_name:    string(STR_STATION, string(STR_TOWN), string(STR_IND_LIME_KILN));
 		prod_cargo_types: [RFPR, FMSP];
 		accept_cargo_types: [GRVL, COAL];
 		prod_multiplier: [0, 0];

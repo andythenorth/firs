@@ -189,7 +189,7 @@ item(FEAT_INDUSTRIES, glass_works, IND_GLASSWORKS_ID) {
 		prod_decrease_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_GENERAL;
 		new_ind_msg:            TTD_STR_NEWS_INDUSTRY_CONSTRUCTION;
 		name:                   string(STR_IND_GLASS_WORKS);
-		nearby_station_name:    string(STR_STATIONNAME_FACTORIES);
+		nearby_station_name:    string(STR_STATION, string(STR_TOWN), string(STR_IND_GLASS_WORKS));
 		prod_cargo_types: [BDMT, MNSP];
 		accept_cargo_types: [SAND, RFPR];
 		prod_multiplier: [0, 0];

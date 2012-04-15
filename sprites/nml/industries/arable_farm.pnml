@@ -136,7 +136,7 @@ item(FEAT_INDUSTRIES, arable_farm, IND_ARABLEFARM_ID) {
 		prod_decrease_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_FARM;
 		new_ind_msg:            TTD_STR_NEWS_INDUSTRY_CONSTRUCTION;
 		name:                   string(STR_IND_ARABLE_FARM);
-		nearby_station_name:    string(STR_STATIONNAME_FARMS);
+		nearby_station_name:    string(STR_STATION, string(STR_TOWN), string(STR_IND_ARABLE_FARM));
 		prod_cargo_types: [GRAI, SGBT];
 		accept_cargo_types: [FMSP];
 		prod_multiplier: [2, 2];

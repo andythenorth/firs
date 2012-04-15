@@ -349,6 +349,7 @@ item(FEAT_INDUSTRIES, grain_mill, IND_GRAINMILL_ID) {
 		prod_decrease_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_GENERAL;
 		new_ind_msg:            TTD_STR_NEWS_INDUSTRY_CONSTRUCTION;
 		name:                   string(STR_IND_GRAIN_MILL);
+		nearby_station_name:    string(STR_STATION, string(STR_TOWN), string(STR_IND_GRAIN_MILL));
 		prod_cargo_types: [FOOD];
 		accept_cargo_types: [MNSP, GRAI];
 		prod_multiplier: [0, 0];

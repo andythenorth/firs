@@ -252,7 +252,7 @@ item(FEAT_INDUSTRIES, furniture_factory, IND_FURNITUREFACTORY_ID) {
 		prod_decrease_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_GENERAL;
 		new_ind_msg:            TTD_STR_NEWS_INDUSTRY_CONSTRUCTION;
 		name:                   string(STR_IND_FURNITURE_FACTORY);
-		nearby_station_name:    string(STR_STATIONNAME_FACTORIES);
+		nearby_station_name:    string(STR_STATION, string(STR_TOWN), string(STR_IND_FURNITURE_FACTORY));
 		prod_cargo_types: [GOOD];
 		accept_cargo_types: [MNSP, WDPR];
 		prod_multiplier: [0, 0];

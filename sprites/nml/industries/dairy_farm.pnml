@@ -9,12 +9,12 @@
 
 #define THIS_STR_EXTRA_SUPPLIES        STR_EXTRA_FARM_SUPPLIES
 
-spriteset(THIS_ID(spriteset_barn1),      "sprites/graphics/industries/dairyfarm.png") { tmpl_building_sprite(10, 10, 52, -21) } 
-spriteset(THIS_ID(spriteset_silo),       "sprites/graphics/industries/dairyfarm.png") { tmpl_building_sprite(80, 10, 52, -21) } 
-spriteset(THIS_ID(spriteset_barn2),      "sprites/graphics/industries/dairyfarm.png") { tmpl_building_sprite(150, 10, 52, -21) } 
-spriteset(THIS_ID(spriteset_house),      "sprites/graphics/industries/dairyfarm.png") { tmpl_building_sprite(220, 10, 52, -21) } 
-spriteset(THIS_ID(spriteset_cows_bw),    "sprites/graphics/industries/dairyfarm.png") { tmpl_building_sprite(290, 10, 52, -21) } 
-spriteset(THIS_ID(spriteset_cows_brown), "sprites/graphics/industries/dairyfarm.png") { tmpl_building_sprite(360, 10, 52, -21) } 
+spriteset(THIS_ID(spriteset_barn1),      "sprites/graphics/industries/dairyfarm.png") { tmpl_building_sprite(10, 10, 52, -21) }
+spriteset(THIS_ID(spriteset_silo),       "sprites/graphics/industries/dairyfarm.png") { tmpl_building_sprite(80, 10, 52, -21) }
+spriteset(THIS_ID(spriteset_barn2),      "sprites/graphics/industries/dairyfarm.png") { tmpl_building_sprite(150, 10, 52, -21) }
+spriteset(THIS_ID(spriteset_house),      "sprites/graphics/industries/dairyfarm.png") { tmpl_building_sprite(220, 10, 52, -21) }
+spriteset(THIS_ID(spriteset_cows_bw),    "sprites/graphics/industries/dairyfarm.png") { tmpl_building_sprite(290, 10, 52, -21) }
+spriteset(THIS_ID(spriteset_cows_brown), "sprites/graphics/industries/dairyfarm.png") { tmpl_building_sprite(360, 10, 52, -21) }
 
 GROUND_AWARE_SPRITELAYOUT(THIS_ID(spritelayout_barn1))
 	CONDITIONAL_GROUND_SPRITE_OVERLAY(2022, terrain_type != TILETYPE_SNOW)
@@ -190,7 +190,7 @@ item(FEAT_INDUSTRIES, dairy_farm, IND_DAIRYFARM_ID) {
 		prod_decrease_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_GENERAL;
 		new_ind_msg:            TTD_STR_NEWS_INDUSTRY_CONSTRUCTION;
 		name:                   string(STR_IND_DAIRYFARM);
-		nearby_station_name:    string(STR_STATIONNAME_FARMS);
+		nearby_station_name:    string(STR_STATION, string(STR_TOWN), string(STR_IND_DAIRYFARM));
 		prod_cargo_types:       [LVST, MILK];
 		accept_cargo_types: [FMSP];
 		prod_multiplier: [2, 2];

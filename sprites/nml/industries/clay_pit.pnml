@@ -952,7 +952,7 @@ item(FEAT_INDUSTRIES, clay_pit, IND_CLAYPIT_ID) {
 		prod_decrease_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_GENERAL;
 		new_ind_msg:            TTD_STR_NEWS_INDUSTRY_CONSTRUCTION;
 		name:                   string(STR_IND_CLAY_PIT);
-		nearby_station_name:    string(STR_STATIONNAME_PITS);
+		nearby_station_name:    string(STR_STATION, string(STR_TOWN), string(STR_IND_CLAY_PIT));
 		prod_cargo_types: [CLAY];
 		accept_cargo_types: [ENSP];
 		prod_multiplier: [10, 200];

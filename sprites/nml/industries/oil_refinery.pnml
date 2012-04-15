@@ -99,7 +99,6 @@ item(FEAT_INDUSTRIES, THIS_ID(), IND_OILREFINERY_ID) {
 	property {
 		substitute: 4;
 		override: 4;
-		nearby_station_name:    string(STR_STATIONNAME_CHEMICALS);
 		prod_cargo_types: [RFPR, PETR];
 		accept_cargo_types: [OIL_];
 		input_multiplier_1: [0, 0];

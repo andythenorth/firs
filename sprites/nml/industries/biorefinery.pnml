@@ -284,7 +284,7 @@ item(FEAT_INDUSTRIES, biorefinery, IND_BIOREFINERY_ID) {
 		prod_decrease_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_GENERAL;
 		new_ind_msg:            TTD_STR_NEWS_INDUSTRY_CONSTRUCTION;
 		name:                   string(STR_IND_BIOREFINERY);
-		nearby_station_name:    string(STR_STATIONNAME_CHEMICALS);
+		nearby_station_name:    string(STR_STATION, string(STR_TOWN), string(STR_IND_BIOREFINERY));
 		prod_cargo_types: [RFPR, PETR];
 		accept_cargo_types: [GRAI, SGBT];
 		prod_multiplier: [0, 0];

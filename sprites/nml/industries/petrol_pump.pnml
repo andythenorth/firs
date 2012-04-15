@@ -49,7 +49,7 @@ switch(FEAT_INDUSTRYTILES, PARENT, THIS_ID(layout), layout_num) {
  * *************************************************/
 
 /* Petrol station uses special road check, taylored for each layout separately
- * when called by the game engine 
+ * when called by the game engine
  */
 switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(tile1_layout1_road_check),
 			(
@@ -132,6 +132,7 @@ item(FEAT_INDUSTRIES, petrol_pump, IND_PETROLPUMP_ID) {
 			];
 		life_type:              IND_LIFE_TYPE_BLACK_HOLE;
 		name:                   string(STR_IND_PETROLPUMP);
+		nearby_station_name:    string(STR_STATION, string(STR_TOWN), string(STR_IND_PETROLPUMP));
 		closure_msg:            TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS;
 		prod_increase_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL;
 		prod_decrease_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_GENERAL;

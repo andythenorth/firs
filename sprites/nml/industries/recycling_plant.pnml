@@ -20,7 +20,7 @@ spriteset(THIS_ID(spriteset_6), "sprites/graphics/industries/recyclingplant.png"
 SPRITELAYOUT_FENCES_NORMAL(THIS_ID(spritelayout_1), THIS_ID(spriteset_ground), THIS_ID(spriteset_1), 48)
 //large building RH section
 SPRITELAYOUT_FENCES_NORMAL(THIS_ID(spritelayout_2), THIS_ID(spriteset_ground), THIS_ID(spriteset_2), 48)
-//conveyor + crusher 
+//conveyor + crusher
 SPRITELAYOUT_FENCES_NORMAL(THIS_ID(spritelayout_3), THIS_ID(spriteset_ground), THIS_ID(spriteset_3), 48)
 //fenced area
 SPRITELAYOUT_FENCES_NORMAL(THIS_ID(spritelayout_4), THIS_ID(spriteset_ground), THIS_ID(spriteset_4), 48)
@@ -148,6 +148,7 @@ item(FEAT_INDUSTRIES, recycling_plant, IND_RECYCLINGPLANT_ID) {
 		prod_decrease_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_FARM;
 		new_ind_msg:            TTD_STR_NEWS_INDUSTRY_CONSTRUCTION;
 		name:                   string(STR_IND_RECYCLING_PLANT);
+		nearby_station_name:    string(STR_STATION, string(STR_TOWN), string(STR_IND_RECYCLING_PLANT));
 		prod_cargo_types:      [SCMT, MNSP];
 		accept_cargo_types:    [RCYC];
 		prod_multiplier: [0, 0];

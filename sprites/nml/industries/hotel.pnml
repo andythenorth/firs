@@ -81,6 +81,7 @@ item(FEAT_INDUSTRIES, hotel, IND_HOTEL_ID) {
 			];
 		life_type:              IND_LIFE_TYPE_BLACK_HOLE;
 		name:                   string(STR_IND_HOTEL);
+		nearby_station_name:    string(STR_STATION, string(STR_TOWN), string(STR_IND_HOTEL));
 		closure_msg:            TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS;
 		prod_increase_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL;
 		prod_decrease_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_GENERAL;
