@@ -13,12 +13,12 @@ spriteset(THIS_ID(spriteset_ground), "sprites/graphics/industries/groundtiles.pn
 	tmpl_ground_tile(150, 10)
 }
 
-spriteset(THIS_ID(spriteset_1), "sprites/graphics/industries/ironworks.png") { tmpl_building_sprite(10, 10, 70, -40) } 
-spriteset(THIS_ID(spriteset_2), "sprites/graphics/industries/ironworks.png") { tmpl_building_sprite(80, 10, 70, -39) } 
-spriteset(THIS_ID(spriteset_3), "sprites/graphics/industries/ironworks.png") { tmpl_building_sprite(150, 10, 70, -39) } 
-spriteset(THIS_ID(spriteset_4), "sprites/graphics/industries/ironworks.png") { tmpl_building_sprite(220, 10, 70, -39) } 
-spriteset(THIS_ID(spriteset_5), "sprites/graphics/industries/ironworks.png") { tmpl_building_sprite(290, 10, 70, -39) } 
-spriteset(THIS_ID(spriteset_6), "sprites/graphics/industries/ironworks.png") { tmpl_building_sprite(360, 10, 70, -39) } 
+spriteset(THIS_ID(spriteset_1), "sprites/graphics/industries/ironworks.png") { tmpl_building_sprite(10, 10, 70, -40) }
+spriteset(THIS_ID(spriteset_2), "sprites/graphics/industries/ironworks.png") { tmpl_building_sprite(80, 10, 70, -39) }
+spriteset(THIS_ID(spriteset_3), "sprites/graphics/industries/ironworks.png") { tmpl_building_sprite(150, 10, 70, -39) }
+spriteset(THIS_ID(spriteset_4), "sprites/graphics/industries/ironworks.png") { tmpl_building_sprite(220, 10, 70, -39) }
+spriteset(THIS_ID(spriteset_5), "sprites/graphics/industries/ironworks.png") { tmpl_building_sprite(290, 10, 70, -39) }
+spriteset(THIS_ID(spriteset_6), "sprites/graphics/industries/ironworks.png") { tmpl_building_sprite(360, 10, 70, -39) }
 
 SPRITELAYOUT_FENCES_NORMAL_BEGIN(THIS_ID(spritelayout_furnace_anim), THIS_ID(spriteset_ground), THIS_ID(spriteset_1), 7)
 	BUILDING_DARK_SMOKE_SMALL(0, 4, 23)
@@ -36,7 +36,7 @@ switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(spritelayout_metal_pigs_anim), animatio
 	61..120: THIS_ID(fenced_spriteset_5);
 	THIS_ID(fenced_spriteset_6);
 }
- 
+
 spritelayout THIS_ID(spritelayout_empty_ground) {
 	ground {
 		sprite: THIS_ID(spriteset_ground);
@@ -177,6 +177,7 @@ item(FEAT_INDUSTRIES, iron_works, IND_IRONWORKS_ID) {
 		prod_decrease_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_GENERAL;
 		new_ind_msg:            TTD_STR_NEWS_INDUSTRY_CONSTRUCTION;
 		name:                   string(STR_IND_IRON_WORKS);
+		nearby_station_name:    string(STR_STATIONNAME_WORKS);
 		prod_cargo_types: [STEL];
 		accept_cargo_types: [IORE, WOOD];
 		prod_multiplier: [0, 0];
