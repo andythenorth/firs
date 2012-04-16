@@ -3,14 +3,16 @@
 ##gender m f
 ##plural 0
 
-STR_GRF_DESC                                                                    :{ORANGE}FIRS Industry Replacement Set{}{BLACK}Creado por {SILVER}andythenorth{BLACK} y {SILVER}FooBar{BLACK}.{}{BLACK}'2,500 commits y contando...'{BLACK}{}{}Página Web: {SILVER}www.tt-foundry.com/sets/FIRS{BLACK}.Licencia: {SILVER}GPL v2{BLACK}. Agradecimientos to {SILVER}Ammler{BLACK}, {SILVER}Core Xii{BLACK}, {SILVER}Irwe{BLACK}, {SILVER}planetmaker{BLACK} y {SILVER}Zephyris{BLACK}. Usa parte de {SILVER}eGRVTS{BLACK}, {SILVER}ISR{BLACK} y {SILVER}OpenGFX{BLACK}.
+STR_GRF_DESC                                                                    :{ORANGE}FIRS Industry Replacement Set{}{BLACK}Creado por andythenorth, FooBar, planetmaker, Terkhen y Yexo, con ayuda de muchos otros.{SILVER}Consulta el leeme para más información, incluyendo instrucciones de como usar FIRS. {BLACK}Licencia: GPL v2.
 STR_GRF_NAME                                                                    :{TITLE}
+STR_GRF_URL                                                                     :http://dev.openttdcoop.org/projects/firs
 
 STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :Máxima distancia de zonas de pesca, plataformas petrolíferas y zonas de dragado a la costa en casillas.
+STR_PARAM_DESC_STAT_RATING                                                      :Las calificaciones de las estaciones influencian la cantidad de carga entregada por la industria a las estaciones; cuanto más alta la calificación, más carga.
 STR_PARAM_DESC_DEBUG                                                            :Sólo para desarrolladores
 STR_PARAM_DESC_ECONOMIES                                                        :Cuando esté terminado, FIRS permitirá escoger entre diferentes economías. Las cargas e industrias variarán en cada economía, así como los pagos por carga. {}{}{SILVER}Actualmente solamente hay una economía disponible :)
 STR_PARAM_DESC_NEVER_CLOSE                                                      :Por defecto, las industrias primarias nunca cierran en FIRS.{}{}Si esta opción es activada, las industrias primarias cerrarán cuando la producción caiga a niveles bajos (el nivel varía para cada tipo de industria).{SILVER}Requiere activar'Permitir disminución de la producción de industrias primarias'.
-STR_PARAM_DESC_NO_OPENINGS                                                      :No aparecerán nuevas industrias durante la partida. {}Los jugadores no podrán fundar o prospectar industrias. {}Las industrias solamente podrán ser creadas al comienzo de la partida por el generador de mapas (dependiendo de la configuración de mapa que se emplee).
+STR_PARAM_DESC_NO_OPENINGS                                                      :No aparecerán nuevas industrias durante la partida. {}No aparecerán nuevas industrias durante la partida, y los jugadores no podrán fundar o prospectar industrias.
 STR_PARAM_DESC_PRIMARY_PRODUCTION_DECREASE                                      :Por defecto, la producción de las industrias primarias en FIRS nunca se reduce.{}{}Si esta opción es activada, hay una probabilidad de que la producción se reduzca si no se entregan suministros a la industria durante un mes. Si el nivel de producción es alto, las posibilidades de que la producción se reduzca son mayores.
 STR_PARAM_DESC_SECONDARY_NEVER_CLOSE                                            :Por defecto, las industrias secundarias nunca cierran en FIRS.{}{}Si esta opción es activada, las industrias secundarias pueden cerrar si no se les entrega carga durante mucho tiempo.
 STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY                                   :Máxima distancia con la costa para industrias marítimas en casillas
@@ -22,9 +24,9 @@ STR_PARAM_NAME_PRIMARY_PRODUCTION_DECREASE                                      
 STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            :Permitir cierre de industrias secundarias
 STR_PARAM_VALUE_ECONOMIES_TEST_ECONOMY                                          :Economía de Prueba
 STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0                                         :Sin Límite
-STR_PARAM_NAME_STAT_RATING                                                      :Método de cálculo del rating de estaciones
+STR_PARAM_NAME_STAT_RATING                                                      :Método de cálculo de la calificación de estaciones
 STR_PARAM_VALUE_STAT_RATING_DEFAULT                                             :Por defecto
-STR_PARAM_VALUE_STAT_RATING_REDUCED_TIME                                        :Efecto de "tiempo desde la última recogida de carga" reducido
+STR_PARAM_VALUE_STAT_RATING_REDUCED_TIME                                        :Mejorar calificaciones - Efecto de "tiempo desde la última recogida de carga" reducido
 STR_PARAM_VALUE_STAT_RATING_100                                                 :Siempre 100%
 
 
@@ -126,12 +128,14 @@ STR_EXTRA_LIME_KILN                                                             
 STR_EXTRA_LUMBER_YARD                                                           :{BLACK}Produce objetos tales como mástiles y cercas.{}{}{BLACK}Producción:{}  2t por cada 8t de productos químicos entregadas{}  6t por cada 8t de tablas entregadas{}{}Aumenta a 8t por cada 8t si ambas cargas son entregadas en un intervalo inferior a un mes.
 STR_EXTRA_MACHINE_SHOP                                                          :{BLACK}Construye y repara maquinaria.{}{}8t producidas por cada 8t entregadas.
 STR_EXTRA_MEAT_PACKER                                                           :{BLACK}Producción:{}  3t por cada 8t de suministros de manufactura entregadas{}  5t por cada 8t de ganado entregadas{}{}Aumenta a 8t por cada 8t si ambas cargas son entregadas en un intervalo inferior a un mes.
+STR_EXTRA_METAL_FABRICATION_PLANT                                               :{BLACK}Produce componentes de metal pintado.{}{}{BLACK}Cargo production:{}  2t por cada 8t de productos químicos entregadas{}  6t por cada 8t de metal entregadas{}{}Aumenta a 8t por cada 8t si ambas cargas son entregadas en un intervalo inferior a un mes.
 STR_EXTRA_METAL_FOUNDRY                                                         :{BLACK}Fabrica productos metálicos tales como herramientas o piezas.{}{}8t producidas por cada 8t entregadas.
 STR_EXTRA_OIL_REFINERY                                                          :{BLACK}Procesa petróleo crudo en fueloil y productos químicos.{}{}6t producidas por cada 8t entregadas.
 STR_EXTRA_PAPER_MILL                                                            :{BLACK}Convierte madera en pulpa para hacer papel y cartón.{}{}{BLACK}Producción:{}  4t por cada 8t de madera entregadas{}  2t por cada 8t de arcilla entregadas{}  2t por cada 8t de productos químicos entregadas{}{}La producción aumenta si dos o más cargas son entregadas en un intervalo inferior a un mes.
 STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}Fabrica productos de plástico tales como embalaje o productos del hogar.{}{}6t producidas por cada 8t entregadas.
 STR_EXTRA_RECYCLING_PLANT                                                       :{BLACK}Procesa productos reciclables para ser reutilizados en manufacturas.{}{}6t producidas por cada 8t entregadas.
 STR_EXTRA_SAWMILL                                                               :{BLACK}Aserra madera.{}{}6t producidas por cada 8t entregadas.
+STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}Produce reciclables dependiendo del tamaño del pueblo.
 STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Produce objetos de metal forjado como herramientas, puertas, útiles de labranza o cocina y herraduras.{}{}5t de producción por cada 8t entregadas.
 STR_EXTRA_STEELMILL                                                             :{BLACK}Producción:{}  2t por cada 8t de mineral de hierro entregadas{}  2t por cada 8t de carbón entregadas{}  4t por cada 8t de chatarra entregadas{}{}La producción aumenta si dos o más cargas son entregadas en un intervalo inferior a un mes.
 STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Producción:{}  3t por cada 8t de suministros de manufactura entregadas{}  5t por cada 8t de caña de azúcar entregadas{}{}Aumenta a 8t por cada 8t si ambas cargas son entregadas en un intervalo inferior a un mes.
@@ -147,6 +151,9 @@ STR_FUND_ARABLE_FARM                                                            
 STR_FUND_DAIRY_FARM                                                             :{}{BLACK}Localización: {YELLOW}No puede ser fundada en zonas en pendiente.
 STR_FUND_FOREST                                                                 :{}{BLACK}Localización: {YELLOW}No puede ser fundada en desiertos.
 STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}Localización: {YELLOW}No puede ser fundada en nieve.
+
+STR_TOWN                                                                        :{STRING}
+STR_STATION                                                                     :{STRING} {STRING}
 
 STR_IND_ALUMINIUM_PLANT                                                         :{G=f}Planta de Aluminio
 STR_IND_ARABLE_FARM                                                             :{G=f}Finca Agrícola
@@ -174,6 +181,7 @@ STR_IND_JUNKYARD                                                                
 STR_IND_LIME_KILN                                                               :{G=m}Horno de Cal
 STR_IND_LUMBER_YARD                                                             :{G=f}Planta de Tratamiento de Madera
 STR_IND_MACHINE_SHOP                                                            :{G=f}Fábrica de Maquinaria
+STR_IND_METAL_FABRICATION_PLANT                                                 :{G=f}Planta de Fabricación de Metal
 STR_IND_METAL_FOUNDRY                                                           :{G=m}Fundición
 STR_IND_MIXEDFARM                                                               :{G=f}Granja Mixta
 STR_IND_PETROLPUMP                                                              :{G=f}Gasolinera
