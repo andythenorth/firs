@@ -48,42 +48,44 @@ TILE_ALLOW_PLAYER         (tile_player_check,                                   
 TILE_DISALLOW_STEEP_SLOPE (tile_location_check,                       CB_RESULT_LOCATION_DISALLOW, THIS_ID(tile_player_check))
 
 
+switch (FEAT_INDUSTRYTILES, SELF, THIS_ID(tile_oil_well_stop_anim), animation_frame) {
+	1: return 11; // jump to the 'stop animation cycle' when triggered and currently animated
+	2: return 12;
+	3: return 13;
+	4: return 14;
+	5: return 15;
+	6: return 16;
+	7: return 17;
+	8: return 18;
+	9: return 19;
+	10: return 20;
+	return CB_RESULT_DO_NOTHING;
+}
+
+switch (FEAT_INDUSTRYTILES, SELF, THIS_ID(tile_oil_well_start_anim), animation_frame) {
+	11: return 1;
+	12: return 2;
+	13: return 3;
+	14: return 4;
+	15: return 5;
+	16: return 6;
+	17: return 7;
+	18: return 8;
+	19: return 9;
+	20: return 10;
+	return CB_RESULT_START_ANIMATION;
+}
+
+
 random_switch (FEAT_INDUSTRYTILES, SELF, THIS_ID(tile_oil_well_random_trigger), bitmask(TRIGGER_INDUSTRYTILE_TILELOOP)) {
-	/* Start the animation. */
-	1: return 0;
-	/* Stop the animation / do nothing. */
-	6: return 10;
-}
-
-switch (FEAT_INDUSTRYTILES, SELF, THIS_ID(tile_oil_well_anim_control), animation_frame) {
-	/* Jump to the 'stop animation cycle' when triggered and the tile is currently animated. */
-	 0..8: return animation_frame + 11;
-	/* The animation will end in the next frame. Decide whether the animation shall start or stop. */
-	 9: THIS_ID(tile_oil_well_random_trigger);
-	/* The animation was stopped. Decide whether the animation shall start or stop. */
-	10: THIS_ID(tile_oil_well_random_trigger);
-	/* If we are already in the 'stop animation cycle', continue. */
-	return CB_RESULT_NEXT_FRAME;
-}
-
-random_switch (FEAT_INDUSTRYTILES, SELF, THIS_ID(tile_oil_well_random_next_frame), bitmask(TRIGGER_INDUSTRYTILE_TILELOOP)) {
-	/* Use different random data than the one in this switch. */
-	independent: THIS_ID(tile_oil_well_random_trigger);
-	/* Stop animation (probability 1/4). */
-	1: return 10;
-	/* Loop animation (probability 3/4). */
-	3: return 1;
+	1: return THIS_ID(tile_oil_well_stop_anim);
+	1: return THIS_ID(tile_oil_well_start_anim);
 }
 
 switch (FEAT_INDUSTRYTILES, SELF, THIS_ID(tile_oil_well_anim_next_frame), animation_frame) {
-	/* Decide if the animation should continue or not. */
-	0: THIS_ID(tile_oil_well_random_next_frame);
-	/* Loop finished. Go back to the beginning. */
-	9: return 0;
-	/* The animation has been stopped. */
-	10: return CB_RESULT_STOP_ANIMATION;
-	20: return 10;
-	/* Continue. */
+	10: return 1;
+	11: return CB_RESULT_STOP_ANIMATION; // Don't actually stop animation, just keep looping the same frame over and over.
+	20: return 11;
 	return CB_RESULT_NEXT_FRAME;
 }
 
@@ -96,11 +98,11 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_oil_well), TILE_OILWELLS_1) {
 		animation_info:     [ANIMATION_LOOPING, 20];
 		animation_speed:    3;
 		animation_triggers: bitmask(ANIM_TRIGGER_INDTILE_TILE_LOOP);
-		special_flags:      1;
+		special_flags:      bitmask(INDTILE_FLAG_RANDOM_ANIMATION);
 	}
 	graphics {
 		tile_check:         THIS_ID(tile_location_check);
-		anim_control:       THIS_ID(tile_oil_well_anim_control);
+		anim_control:       THIS_ID(tile_oil_well_random_trigger);
 		anim_next_frame:    THIS_ID(tile_oil_well_anim_next_frame);
 		random_trigger:     THIS_ID(tile_oil_well_random_trigger);
 		THIS_ID(spritelayout_oil_well);
