@@ -1,7 +1,7 @@
 ##grflangid 0x03
 ##plural 2
 
-STR_GRF_DESC                                                                    :{ORANGE}FIRS Industry Replacement Set{}{BLACK}Proposé par andythenorth, FooBar, planetmaker, Terkhen and Yexo, avec l'aide de bien d'autres personnes. {SILVER}Voir le Lisez-moi pour plus d'informations, y compris sur la façon d'utiliser FIRS.{}{BLACK}Licence: GPL v2
+STR_GRF_DESC                                                                    :{ORANGE}FIRS Industry Replacement Set{}{BLACK}Proposé par andythenorth, FooBar, planetmaker, Terkhen et Yexo, avec l'aide de bien d'autres personnes. {SILVER}Voir le Lisez-moi pour plus d'informations, y compris sur la façon d'utiliser FIRS.{}{BLACK}Licence: GPL v2
 STR_GRF_NAME                                                                    :{TITLE}
 STR_GRF_URL                                                                     :http://dev.openttdcoop.org/projects/firs
 
@@ -156,18 +156,18 @@ STR_IND_RECYCLING_PLANT                                                         
 STR_IND_RETAILMARKET                                                            :Commerce de détail
 STR_IND_SHEEPFARM                                                               :Élevage ovin
 STR_IND_SMITHY_FORGE                                                            :Forge
-STR_IND_STOCKYARD                                                               :Parc à bestiaux
+STR_IND_STOCKYARD                                                               :Boucherie industrielle
 STR_IND_SUGAR_REFINERY                                                          :Raffinerie de sucre
 STR_IND_SUPERMARKET                                                             :Supermarché
 STR_IND_TEXTILE_MILL                                                            :Usine textile
 STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :Éloignement côtier maximal des zones de pêche, plates-formes pétrolières et sites de dragage.
 STR_PARAM_DESC_DEBUG                                                            :Seulement pour les développeurs
-STR_PARAM_DESC_ECONOMIES                                                        :Lorsque ce sera terminé, FIRS permettra de choisir son économie. Les marchandises et les industries varieront en fonction de l'économie choisie. Les coûts du transport seront différents dans chaque économie {}{}{SILVER}Actuellement, une seule économie est disponible :)
+STR_PARAM_DESC_ECONOMIES                                                        :Lorsque ce sera terminé, FIRS permettra de choisir son économie. Les marchandises et les industries varieront en fonction de l'économie choisie. Les coûts du transport seront différents dans chaque économie. {}{}{SILVER}Actuellement, une seule économie est disponible :)
 STR_PARAM_DESC_NEVER_CLOSE                                                      :Par défaut, les industries primaires ne ferment jamais.{}{}Si ce paramètre est activé, les industries primaires fermeront quand leur production tombera à un niveau faible (le niveau varie pour chaque type d'industrie).{}{SILVER}Nécessite l'activation du paramètre «{NBSP}Permettre la baisse de production des industries primaires{NBSP}».
 STR_PARAM_DESC_NO_OPENINGS                                                      :Par défaut, de nouvelles industries s'ouvriront durant la partie.{}{}Si ce paramètre est activé, de nouvelles industries ne seront pas ouvertes durant la partie, et les joueurs ne pourront ni construire ni prospecter d'industries.
 STR_PARAM_DESC_PRIMARY_PRODUCTION_DECREASE                                      :Par défaut, la production des industries primaires ne diminue jamais.{}{}Si ce paramètre est activé, il est possible que la production diminue si aucune fourniture n'est livrée dans le mois. Plus le niveau de production est élevé, plus il y a de risques de voir la production diminuer.
 STR_PARAM_DESC_SECONDARY_NEVER_CLOSE                                            :Par défaut, les industries secondaires ne ferment jamais.{}{}Si ce paramètre est activé, les industries secondaires peuvent fermer si aucune marchandise n'est transportée pendant longtemps.
-STR_PARAM_DESC_STAT_RATING                                                      :La cote (qualité de service) d'une station influe sur la quantité de marchandises livrées par une industrie{NBSP}: au plus la cote est élevée, au plus des marchandises y seront livrées.
+STR_PARAM_DESC_STAT_RATING                                                      :La cote (qualité de service) d'une station influe sur la quantité de marchandises livrées par une industrie{NBSP}: au plus la cote est élevée, au plus des marchandises y seront livrées.{}{}La «{NBSP}Cotation améliorée{NBSP}» réduit l'effet du temps écoulé depuis le dernier enlèvement de marchandises.
 STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY                                   :Éloignement côtier maximal des industries maritimes (en nombre de cases)
 STR_PARAM_NAME_DEBUG                                                            :Afficher les textes de débogage
 STR_PARAM_NAME_ECONOMIES                                                        :Économie
@@ -180,4 +180,6 @@ STR_PARAM_VALUE_ECONOMIES_TEST_ECONOMY                                          
 STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0                                         :Pas de limite
 STR_PARAM_VALUE_STAT_RATING_100                                                 :Toujours 100{NBSP}%
 STR_PARAM_VALUE_STAT_RATING_DEFAULT                                             :Celui par défaut
-STR_PARAM_VALUE_STAT_RATING_REDUCED_TIME                                        :Cotation améliorée{NBSP}: réduit l'effet du temps écoulé depuis le dernier enlèvement de marchandises
+STR_PARAM_VALUE_STAT_RATING_REDUCED_TIME                                        :Cotation améliorée
+STR_TOWN                                                                        :{STRING}
+STR_STATION                                                                     :{STRING} {STRING}
