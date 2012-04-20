@@ -1,14 +1,15 @@
 ##grflangid 0x1F
 ##plural 0
 
-STR_GRF_DESC                                                                    :{ORANGE}FIRS Industry Replacement Set{}{BLACK}Door {SILVER}andythenorth{BLACK} en {SILVER}FooBar{BLACK}.{}{BLACK}'1,000 commits en tellende...'{BLACK}{}{}Website: {SILVER}www.tt-foundry.com/sets/FIRS{BLACK}.Licentie: {SILVER}GPL v2{}{BLACK}.Speciale dank aan {SILVER}Ammler{BLACK}, {SILVER}Core Xii{BLACK}, {SILVER}Irwe{BLACK}, {SILVER}planetmaker{BLACK} en {SILVER}Zephyris{}{BLACK}.Gebruikt delen van {SILVER}eGRVTS{BLACK}, {SILVER}ISR{BLACK} en {SILVER}OpenGFX{BLACK}.
+STR_GRF_DESC                                                                    :{ORANGE}FIRS Industry Replacement Set{}{BLACK}Door andythenorth, FooBar, planetmaker, Terkhen, en Yexo, met hulp van vele anderen. {SILVER}Lees de 'readme' voor meer informatie, inclusief hoe je FIRS kunt gebruiken. {BLACK}Licentie: GPL V2.
 STR_GRF_NAME                                                                    :{TITLE}
 
 STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :Maximale afstand tot de kust in tegels voor visgebieden en baggermolens.
+STR_PARAM_DESC_STAT_RATING                                                      :Stationreputaties beïnvloeden de hoeveelheid goederen die een industrie aflvert aan het station; hoe hoger de reputatie hoe meer afgeleverd wordt.
 STR_PARAM_DESC_DEBUG                                                            :Alleen voor ontwikkelaars.
 STR_PARAM_DESC_ECONOMIES                                                        :Uiteindelijk zal FIRS een keuze aan economieën hebben. Goederen en industrieën varieren in elke economie. Betalingen voor goederen verschillen ook in elke economie.{}{}{SILVER}Op dit moment is slechts één economie :)
 STR_PARAM_DESC_NEVER_CLOSE                                                      :Standaard zullen FIRS primaire industrieën nooit sluiten.{}Als sluiten van primaire industrieën is ingeschakeld zullen primaire industrieën sluiten zodra de productie tot een laag niveau is gedaald (dit niveau varieert per industrie). {SILVER}'Primaire industrieën kunnen productie verlagen' moet zijn ingeschakeld.
-STR_PARAM_DESC_NO_OPENINGS                                                      :Er zullen geen nieuwe industrieën gebouwd worden tijdens het spel.{}Spelers kunnen geen nieuwe industrieën financieren of proberen te bouwen.{}Alle industrieën worden door de generator gebouwd aan het begin van het spel (afhankelijk van de gebruikte instellingen van de kaart).
+STR_PARAM_DESC_NO_OPENINGS                                                      :Normaal worden er nieuwe industrieën gebouwd tijdens het spel.{}{}Als 'voorkom bouwen van nieuwe industrieën' aan staat, dan komen er geen nieuwe industrieën bij tijdens het spel, en spelers kunnen ze ook niet kopen of proberen.
 STR_PARAM_DESC_PRIMARY_PRODUCTION_DECREASE                                      :Standaard zullen FIRS primaire industrieën hun productie nooit verlagen.{}{}Als productieverlaging voor primaire industrieën is ingeschakeld, is er een kans dat een industrie zijn productie verlaagt als er in een maand geen hulpgoederen zijn geleverd. Bij een hoge productie is de kans op productieverlaging groter.
 STR_PARAM_DESC_SECONDARY_NEVER_CLOSE                                            :Standaard zullen FIRS secundaire industrieën nooit sluiten.{}{}Als sluiten van secundaire industrieën is ingeschakeld kunnen secundaire industrieën sluiten als er lange tijd geen vracht is getransporteerd.
 STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY                                   :Maximale afstand tot de kust in tegels voor zee-industrieën
@@ -22,7 +23,7 @@ STR_PARAM_VALUE_ECONOMIES_TEST_ECONOMY                                          
 STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0                                         :Geen limiet
 STR_PARAM_NAME_STAT_RATING                                                      :Station waarderingsalgoritme
 STR_PARAM_VALUE_STAT_RATING_DEFAULT                                             :Standaard
-STR_PARAM_VALUE_STAT_RATING_REDUCED_TIME                                        :Effect van "tijd sinds laatste goederen-laadmoment" is verminderd
+STR_PARAM_VALUE_STAT_RATING_REDUCED_TIME                                        :Betere reputatie - Het effect van "tijd sinds laatste goederen-laadmoment" is verminderd
 STR_PARAM_VALUE_STAT_RATING_100                                                 :Altijd 100%
 
 
@@ -119,17 +120,18 @@ STR_EXTRA_FISHING_HARBOUR                                                       
 STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Productie:{}  3t per 8t geleverde productiehulpgoederen{}  5t per 8t geleverd gezaagd hout{}{}Verhoogt tot 8t per 8t als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
 STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Maakt glasprodukten zoals flessen, potten, en vensterglas.{}{}{BLACK}Productie:{}  6t per 8t geleverd zand{}  2t per 8t geleverde chemicaliën{}{}Verhoogt tot 8t per 8t als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
 STR_EXTRA_GRAIN_MILL                                                            :{BLACK}Productie:{}  3t per 8t geleverde productiehulpgoederen{}  5t per 8t geleverd graan{}{}Verhoogt tot 8t per 8t als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
-STR_EXTRA_IRON_WORKS                                                            :{BLACK}Productie:{}  1t per 8t geleverd hout{}  2t per 8t geleverd ijzererts{}{}Verhoogt tot 3t per 8t als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
-STR_EXTRA_LIME_KILN                                                             :{BLACK}Productie:{}  4t per 8t geleverd grind{}  4t per 8t geleverde kolen{}{}Verhoogt tot 8t per 8t als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
+STR_EXTRA_IRON_WORKS                                                            :{BLACK}Productie:{}  2t per 8t geleverd hout{}  2t per 8t geleverd ijzererts{}{}Verhoogt tot 4t per 8t als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
+STR_EXTRA_LIME_KILN                                                             :{BLACK}Productie:{}  3t per 8t geleverd grind{}  3t per 8t geleverde kolen{}{}Verhoogt tot 6t per 8t als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
 STR_EXTRA_LUMBER_YARD                                                           :{BLACK}Maakt onder andere houten palen en stijgerplanken.{}{}{BLACK}Productie:{}  2t per 8t geleverde chemicaliën{}  6t per 8t geleverd gezaagd hout{}{}Verhoogt tot 8t per 8t als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
 STR_EXTRA_MACHINE_SHOP                                                          :{BLACK}Bouwt en onderhoudt machines.{}{}8t productie voor iedere 8t geleverd.
 STR_EXTRA_MEAT_PACKER                                                           :{BLACK}Productie:{}  3t per 8t geleverde productiehulpgoederen{}  5t per 8t geleverd vee{}{}Verhoogt tot 8t per 8t als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
-STR_EXTRA_METAL_FABRICATION_PLANT                                               :{BLACK}Maakt geverfde metalen onderdelen.{}{}{BLACK}Productie:{}2t per 8t geleverde chemicaliën{}6t per 8t geleverd metaal{}{}Verhoogt tot 8t per 8t als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
-STR_EXTRA_METAL_FOUNDRY                                                         :{BLACK}Maakt onderdelen uit metalen platen, zoals blikken en huishoudapparatuur.{}{}{BLACK}Productie:{}2t per 8t geleverde chemicaliën{}6t per 8t geleverd metaal{}{}Verhoogt tot 8t per 8t als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
+STR_EXTRA_METAL_FABRICATION_PLANT                                               :{BLACK}Maakt geverfde metalen onderdelen.{}{}{BLACK}Productie:{}  2t per 8t geleverde chemicaliën{}  6t per 8t geleverd metaal{}{}Verhoogt tot 8t per 8t als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
+STR_EXTRA_METAL_FOUNDRY                                                         :{BLACK}Maakt onderdelen uit metalen platen, zoals blikken en huishoudapparatuur.{}{}{BLACK}Productie:{}  2t per 8t geleverde chemicaliën{}  6t per 8t geleverd metaal{}{}Verhoogt tot 8t per 8t als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
 STR_EXTRA_OIL_REFINERY                                                          :{BLACK}Verwerkt ruwe olie tot benzine en chemicaliën.{}{}6t productie voor iedere 8t geleverd.
 STR_EXTRA_PAPER_MILL                                                            :{BLACK}Maakt papier en karton uit houtpulp.{}{}{BLACK}Productie:{}  4t per 8t geleverd hout{}  2t per 8t geleverd klei{}  2t per 8t geleverde chemicaliën{}{}Productie verhoogt als twee of meer vrachtsoorten binnen een maand van elkaar worden geleverd.
 STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}Maakt plasticproducten zoals verpakkingen en huishoudartikelen.{}{}6t productie voor iedere 8t geleverd.
 STR_EXTRA_RECYCLING_PLANT                                                       :{BLACK}Verwerkt afval tot herbruikbare goederen.{}{}6t productie voor iedere 8t geleverd.
+STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}Produceert afval, afhankelijk van de stadsgrootte.
 STR_EXTRA_SAWMILL                                                               :{BLACK}Zaagt hout.{}{}6t productie voor iedere 8t geleverd.
 STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Maakt smeedijzeren produkten zoals hekken, roosters, gereedschappen, ploegen, scheppen, en hoefijzers.{}{}5t productie voor iedere 8t geleverd.
 STR_EXTRA_STEELMILL                                                             :{BLACK}Productie:{}  2t per 8t geleverd ijzererts{}  2t per 8t geleverde kolen{}  4t per 8t geleverd schroot{}{}Productie verhoogt als twee of meer vrachtsoorten binnen een maand van elkaar worden geleverd.
@@ -146,6 +148,9 @@ STR_FUND_ARABLE_FARM                                                            
 STR_FUND_DAIRY_FARM                                                             :{}{BLACK}Plaats: {YELLOW}Kan niet gebouwd worden op steile hellingen.
 STR_FUND_FOREST                                                                 :{}{BLACK}Plaats: {YELLOW}Kan niet gebouwd worden in woestijnen.
 STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}Plaats: {YELLOW}Kan niet gebouwd worden op sneeuw.
+
+
+
 
 STR_IND_ALUMINIUM_PLANT                                                         :Aluminiumfabriek
 STR_IND_ARABLE_FARM                                                             :Landbouw boerenbedrijf
