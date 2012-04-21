@@ -25,7 +25,7 @@ if (climate == CLIMATE_TROPICAL) { market_tree = MARKET_TREE_TROPICAL; }
 #define PRODUCTION_SPAN 30
 
 /* **************************************************************************
- * Persistant storage for primary industries (template produce_primary)
+ * persistent storage for primary industries (template produce_primary)
  * **************************************************************************/
 #define var_num_supplies_delivered  0 // amount of supplies delivered this month
 
@@ -49,7 +49,7 @@ if (climate == CLIMATE_TROPICAL) { market_tree = MARKET_TREE_TROPICAL; }
 #define var_closure_counter        15
 
 /* **************************************************************************
- * persistant storage for secondary industries (template produce_secondary)
+ * persistent storage for secondary industries (template produce_secondary)
  * **************************************************************************/
 //                                  0 // unused
 
@@ -75,7 +75,7 @@ if (climate == CLIMATE_TROPICAL) { market_tree = MARKET_TREE_TROPICAL; }
 
 
 /* **************************************************************************
- * persistant storage for blackhole industries (template produce_blackhole)
+ * persistent storage for blackhole industries (template produce_blackhole)
  * **************************************************************************/
 //                                  0 // unused
 //                                  1 // unused
