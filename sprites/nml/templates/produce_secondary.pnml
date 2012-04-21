@@ -8,7 +8,7 @@
 /* Production template for secondary industries with equal output to all output cargos
  *
  * Delivery period to consider a cargo for production ratios is the the last var_production_span days
- * 
+ *
  * It accepts up to three input cargos and produes up to two output cargos
  * It uses the following permanent storages:
  *
@@ -35,7 +35,7 @@
  * THIS_BOOST_31
  * THIS_BOOST_32
  *
- * THIS_PRODUCTION_SPAN           time span which is considered for production ratios
+ * PRODUCTION_SPAN           time span which is considered for production ratios
  *
  */
 
@@ -47,7 +47,7 @@
 #define var_received_timely_2       1
 #define var_received_timely_3       2
 
-produce (THIS_ID(simple_produce), waiting_cargo_1, waiting_cargo_2, waiting_cargo_3, 
+produce (THIS_ID(simple_produce), waiting_cargo_1, waiting_cargo_2, waiting_cargo_3,
 			LOAD_PERM(var_leftover_cargo_1) / MAX_SUM_PROD_RATIO / THIS_NUM_OUTPUT_CARGOS * LOAD_PERM(var_ratio_cargo_1) +
 			LOAD_PERM(var_leftover_cargo_2) / MAX_SUM_PROD_RATIO / THIS_NUM_OUTPUT_CARGOS * LOAD_PERM(var_ratio_cargo_2) +
 			LOAD_PERM(var_leftover_cargo_3) / MAX_SUM_PROD_RATIO / THIS_NUM_OUTPUT_CARGOS * LOAD_PERM(var_ratio_cargo_3),
@@ -79,22 +79,22 @@ switch (FEAT_INDUSTRIES, SELF, THIS_ID(produce),
 			STORE_PERM( LOAD_PERM(var_input_cargo_3) + waiting_cargo_3, var_input_cargo_3),
 
 			/* Check whether the cargos were delivered within the time frame to be considered delivered concurrently */
-			STORE_TEMP( (current_date - LOAD_PERM(var_date_received_1)) <= THIS_PRODUCTION_SPAN, var_received_timely_1),
-			STORE_TEMP( (current_date - LOAD_PERM(var_date_received_2)) <= THIS_PRODUCTION_SPAN, var_received_timely_2),
-			STORE_TEMP( (current_date - LOAD_PERM(var_date_received_3)) <= THIS_PRODUCTION_SPAN, var_received_timely_3),
+			STORE_TEMP( (current_date - LOAD_PERM(var_date_received_1)) <= PRODUCTION_SPAN, var_received_timely_1),
+			STORE_TEMP( (current_date - LOAD_PERM(var_date_received_2)) <= PRODUCTION_SPAN, var_received_timely_2),
+			STORE_TEMP( (current_date - LOAD_PERM(var_date_received_3)) <= PRODUCTION_SPAN, var_received_timely_3),
 
 			/* Calculate current production ratios for the individual cargos */
-			STORE_PERM( THIS_PROD_RATIO_CARGO1 + 
+			STORE_PERM( THIS_PROD_RATIO_CARGO1 +
 			            LOAD_TEMP(var_received_timely_2) * THIS_BOOST_21 +
 			            LOAD_TEMP(var_received_timely_3) * THIS_BOOST_31,
 			    var_ratio_cargo_1
 			),
-			STORE_PERM( THIS_PROD_RATIO_CARGO2 + 
+			STORE_PERM( THIS_PROD_RATIO_CARGO2 +
 			            LOAD_TEMP(var_received_timely_1) * THIS_BOOST_12 +
 			            LOAD_TEMP(var_received_timely_3) * THIS_BOOST_32,
 			    var_ratio_cargo_2
 			),
-			STORE_PERM( THIS_PROD_RATIO_CARGO3 + 
+			STORE_PERM( THIS_PROD_RATIO_CARGO3 +
 			            LOAD_TEMP(var_received_timely_1) * THIS_BOOST_13 +
 			            LOAD_TEMP(var_received_timely_2) * THIS_BOOST_23,
 			    var_ratio_cargo_3

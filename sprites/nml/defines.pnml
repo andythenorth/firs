@@ -21,6 +21,9 @@ if (climate == CLIMATE_TROPICAL) { market_tree = MARKET_TREE_TROPICAL; }
 
 #define GROUNDTILE_HALF_BROWN 3962
 
+// used for secondary industry production
+#define PRODUCTION_SPAN 30
+
 /* **************************************************************************
  * Persistant storage for primary industries (template produce_primary)
  * **************************************************************************/
