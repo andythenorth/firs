@@ -31,9 +31,9 @@ spriteset(THIS_ID(spriteset_ground_spriteset_5), "sprites/graphics/industries/gr
 }
 
 spriteset(THIS_ID(spriteset_5_anim)) {
-	tmpl_building_sprite_filename(360,  10, 113, -82, "sprites/graphics/industries/cementplant.png")
+	tmpl_building_sprite_filename(220, 130, 113, -82, "sprites/graphics/industries/cementplant.png")
+	tmpl_building_sprite_filename(290, 130, 113, -82, "sprites/graphics/industries/cementplant.png")
 	tmpl_building_sprite_filename(360, 130, 113, -82, "sprites/graphics/industries/cementplant.png")
-	tmpl_building_sprite_filename(360, 250, 113, -82, "sprites/graphics/industries/cementplant.png")
 }
 
 spriteset(THIS_ID(spriteset_6),  "sprites/graphics/industries/cementplant.png") { tmpl_building_sprite(430,  10, 113, -82) }
