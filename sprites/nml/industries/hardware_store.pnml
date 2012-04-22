@@ -42,10 +42,6 @@ tilelayout tilelayout_hardware_store_1 {
  * Definition of the industry
  * *************************************************/
 
-#include "../templates/produce_blackhole.pnml"
-#include "../templates/check_secondary_closure.pnml"
-#include "../templates/check_secondary_production_level.pnml"
-
 #include "../templates/check_availability.pnml"
 
 item(FEAT_INDUSTRIES, hardware_store, IND_HARDWARESTORE_ID) {
@@ -81,10 +77,7 @@ item(FEAT_INDUSTRIES, hardware_store, IND_HARDWARESTORE_ID) {
 		remove_cost_multiplier: 0;
 	}
 	graphics {
-		produce_cargo_arrival:   THIS_ID(produce);
 		construction_probability:THIS_ID(check_availability);
-		monthly_prod_change:     THIS_ID(check_production_level);
-		random_prod_change:      THIS_ID(check_closure);
 	}
 }
 
