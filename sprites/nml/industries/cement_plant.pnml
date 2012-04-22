@@ -25,7 +25,11 @@ spriteset(THIS_ID(spriteset_4),  "sprites/graphics/industries/cementplant.png") 
 
 spriteset(THIS_ID(spriteset_ground_spriteset_5), "sprites/graphics/industries/groundtiles.png") {
 	tmpl_ground_tile(80, 10)
-	/* DUPLICATED */
+	/* DUPLICATED - NUMBER SPRITES NEEDS TO MATCH TO NUMBER OF ANIMATED FRAMES USED BY SPRITELAYOUT*/
+	tmpl_ground_tile(80, 10)
+	tmpl_ground_tile(80, 10)
+	tmpl_ground_tile(80, 10)
+	tmpl_ground_tile(80, 10)
 	tmpl_ground_tile(80, 10)
 	tmpl_ground_tile(80, 10)
 }
@@ -34,6 +38,10 @@ spriteset(THIS_ID(spriteset_5_anim)) {
 	tmpl_building_sprite_filename(220, 130, 113, -82, "sprites/graphics/industries/cementplant.png")
 	tmpl_building_sprite_filename(290, 130, 113, -82, "sprites/graphics/industries/cementplant.png")
 	tmpl_building_sprite_filename(360, 130, 113, -82, "sprites/graphics/industries/cementplant.png")
+	tmpl_building_sprite_filename(430, 130, 113, -82, "sprites/graphics/industries/cementplant.png")
+	tmpl_building_sprite_filename(500, 130, 113, -82, "sprites/graphics/industries/cementplant.png")
+	tmpl_building_sprite_filename(570, 130, 113, -82, "sprites/graphics/industries/cementplant.png")
+	tmpl_building_sprite_filename(640, 130, 113, -82, "sprites/graphics/industries/cementplant.png")
 }
 
 spriteset(THIS_ID(spriteset_6),  "sprites/graphics/industries/cementplant.png") { tmpl_building_sprite(430,  10, 113, -82) }
@@ -62,7 +70,7 @@ spritelayout THIS_ID(spritelayout_5_anim) {
 		palette: 0;
 	}
 	building {
-		sprite: THIS_ID(spriteset_5_anim(animation_frame / 3));
+		sprite: THIS_ID(spriteset_5_anim(animation_frame));
 		recolour_mode: RECOLOUR_REMAP;
 		palette: 0;
 		zextent: 48;
