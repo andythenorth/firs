@@ -23,5 +23,5 @@ template tmpl_building_sprite(x, y, h, dy) {
 }
 
 template tmpl_building_sprite_filename(x, y, h, dy, filename) {
-    [x, y, 64, h, -31, dy, filename]
+    [x, y, 64, h, -31, dy, NOCROP, filename]
 }
