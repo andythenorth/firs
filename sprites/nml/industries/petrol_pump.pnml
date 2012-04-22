@@ -115,12 +115,6 @@ tilelayout tilelayout_petrol_pump_2 {
 /* availability years */
 #define THIS_MIN_YEAR 1909
 
-#include "../templates/produce_blackhole.pnml"
-#include "../templates/check_secondary_closure.pnml"
-#include "../templates/check_secondary_production_level.pnml"
-
-#include "../templates/extra_text_blackhole.pnml"
-
 #include "../templates/check_availability.pnml"
 
 item(FEAT_INDUSTRIES, petrol_pump, IND_PETROLPUMP_ID) {
@@ -157,12 +151,7 @@ item(FEAT_INDUSTRIES, petrol_pump, IND_PETROLPUMP_ID) {
 		map_colour:             15;
 	}
 	graphics {
-		produce_cargo_arrival:   THIS_ID(produce);
 		construction_probability:THIS_ID(check_availability);
-		monthly_prod_change:     THIS_ID(check_production_level);
-		random_prod_change:      THIS_ID(check_closure);
-		extra_text_industry:     THIS_ID(extra_text);
-		THIS_ID(produce);
 	}
 }
 
