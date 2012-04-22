@@ -104,12 +104,6 @@ tilelayout tilelayout_builders_yard_2 {
  * Definition of the industry
  * *************************************************/
 
-#include "../templates/produce_blackhole.pnml"
-#include "../templates/check_secondary_closure.pnml"
-#include "../templates/check_secondary_production_level.pnml"
-
-#include "../templates/extra_text_blackhole.pnml"
-
 #include "../templates/check_availability.pnml"
 
 CHECK_TOWN_DISTANCE (town_distance,  0, 64, return CB_RESULT_LOCATION_ALLOW)
@@ -146,13 +140,8 @@ item(FEAT_INDUSTRIES, builders_yard, IND_BUILDERSYARD_ID) {
 		remove_cost_multiplier: 0;
 	}
 	graphics {
-		produce_cargo_arrival:   THIS_ID(produce);
 		construction_probability:THIS_ID(check_availability);
 		location_check:          THIS_ID(check_location);
-		monthly_prod_change:     THIS_ID(check_production_level);
-		random_prod_change:      THIS_ID(check_closure);
-		extra_text_industry:     THIS_ID(extra_text);
-		THIS_ID(produce);
 	}
 }
 
