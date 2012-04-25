@@ -73,6 +73,9 @@ tilelayout tilelayout_hotel_1 {
 
 #include "../templates/check_availability.pnml"
 
+CHECK_INCOMPATIBLE  (hotel, 20, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
+CHECK_FOUNDER       (THIS_ID(hotel))
+
 item(FEAT_INDUSTRIES, hotel, IND_HOTEL_ID) {
 	property {
 		substitute: 0;
@@ -107,6 +110,7 @@ item(FEAT_INDUSTRIES, hotel, IND_HOTEL_ID) {
 		construction_probability:THIS_ID(check_availability);
 		monthly_prod_change:     THIS_ID(check_production_level);
 		random_prod_change:      THIS_ID(check_closure);
+		location_check:          THIS_ID(check_location);
 	}
 }
 
