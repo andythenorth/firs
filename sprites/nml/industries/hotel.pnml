@@ -67,10 +67,6 @@ tilelayout tilelayout_hotel_1 {
  * Definition of the industry
  * *************************************************/
 
-#include "../templates/produce_blackhole.pnml"
-#include "../templates/check_secondary_closure.pnml"
-#include "../templates/check_secondary_production_level.pnml"
-
 #include "../templates/check_availability.pnml"
 
 CHECK_INCOMPATIBLE  (hotel, 20, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
