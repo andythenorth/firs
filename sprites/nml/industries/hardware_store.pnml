@@ -44,7 +44,9 @@ tilelayout tilelayout_hardware_store_1 {
 
 #include "../templates/check_availability.pnml"
 
-CHECK_INCOMPATIBLE  (hardware_store, 20, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
+CHECK_INCOMPATIBLE  (petrol_pump, 16, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
+CHECK_INCOMPATIBLE  (builders_yard, 16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(petrol_pump))
+CHECK_INCOMPATIBLE  (hardware_store, 20, CB_RESULT_LOCATION_DISALLOW, THIS_ID(builders_yard))
 CHECK_FOUNDER       (THIS_ID(hardware_store))
 
 item(FEAT_INDUSTRIES, hardware_store, IND_HARDWARESTORE_ID) {

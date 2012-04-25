@@ -70,7 +70,9 @@ tilelayout tilelayout_food_market_1 {
 
 #include "../templates/check_availability.pnml"
 
-CHECK_INCOMPATIBLE  (food_market, 20, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
+CHECK_INCOMPATIBLE  (petrol_pump, 16, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
+CHECK_INCOMPATIBLE  (hotel, 16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(petrol_pump))
+CHECK_INCOMPATIBLE  (food_market, 20, CB_RESULT_LOCATION_DISALLOW, THIS_ID(hotel))
 CHECK_FOUNDER       (THIS_ID(food_market))
 
 item(FEAT_INDUSTRIES, food_market, IND_FOODMARKET_ID) {

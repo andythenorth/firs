@@ -117,7 +117,10 @@ tilelayout tilelayout_petrol_pump_2 {
 
 #include "../templates/check_availability.pnml"
 
-CHECK_INCOMPATIBLE  (petrol_pump, 20, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
+CHECK_INCOMPATIBLE  (hotel, 16, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
+CHECK_INCOMPATIBLE  (hardware_store, 16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(hotel))
+CHECK_INCOMPATIBLE  (food_market, 16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(hardware_store))
+CHECK_INCOMPATIBLE  (petrol_pump, 20, CB_RESULT_LOCATION_DISALLOW, THIS_ID(food_market))
 CHECK_FOUNDER       (THIS_ID(petrol_pump))
 
 item(FEAT_INDUSTRIES, petrol_pump, IND_PETROLPUMP_ID) {
