@@ -121,7 +121,7 @@ tilelayout tilelayout_builders_yard_2 {
 
 #include "../templates/check_availability.pnml"
 
-CHECK_INCOMPATIBLE  (builders_yard, 16, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
+CHECK_INCOMPATIBLE  (builders_yard, 20, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
 CHECK_FOUNDER       (THIS_ID(builders_yard))
 
 item(FEAT_INDUSTRIES, builders_yard, IND_BUILDERSYARD_ID) {
