@@ -48,7 +48,7 @@ switch(FEAT_INDUSTRYTILES, PARENT, THIS_ID(layout), layout_num) {
  * Definition of the industry tile and its callbacks
  * *************************************************/
 
-/* Petrol station uses special road check, taylored for each layout separately
+/* Petrol station uses special road check, tailored for each layout separately
  * when called by the game engine
  */
 switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(tile1_layout1_road_check),
@@ -117,6 +117,9 @@ tilelayout tilelayout_petrol_pump_2 {
 
 #include "../templates/check_availability.pnml"
 
+CHECK_INCOMPATIBLE  (petrol_pump, 20, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
+CHECK_FOUNDER       (THIS_ID(petrol_pump))
+
 item(FEAT_INDUSTRIES, petrol_pump, IND_PETROLPUMP_ID) {
 	property {
 		substitute: 0;
@@ -152,6 +155,7 @@ item(FEAT_INDUSTRIES, petrol_pump, IND_PETROLPUMP_ID) {
 	}
 	graphics {
 		construction_probability:THIS_ID(check_availability);
+		location_check:          THIS_ID(check_location);
 	}
 }
 
