@@ -38,7 +38,7 @@ STR_CARGO_NAME_FIBRES                                                           
 STR_CARGO_NAME_FISH                                                             :Fish
 STR_CARGO_NAME_FARM_SUPPLIES                                                    :Farm Supplies
 STR_CARGO_NAME_FRUITS                                                           :Fruit
-STR_CARGO_NAME_LUMBER                                                           :Lumber
+STR_CARGO_NAME_LUMBER                                                           :Timber
 STR_CARGO_NAME_METAL                                                            :Metal
 STR_CARGO_NAME_MILK                                                             :Milk
 STR_CARGO_NAME_MANUFACTURING_SUPPLIES                                           :Manufacturing Supplies
@@ -61,7 +61,7 @@ STR_CARGO_UNIT_FIBRES                                                           
 STR_CARGO_UNIT_FISH                                                             :{WEIGHT} of fish
 STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} crate{P 0 "" s} of farm supplies
 STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} of fruit
-STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} of lumber
+STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} of timber
 STR_CARGO_UNIT_METAL                                                            :{WEIGHT} of metal
 STR_CARGO_UNIT_MILK                                                             :{VOLUME} of milk
 STR_CARGO_UNIT_MNSP                                                             :{SIGNED_WORD} crate{P 0 "" s} of manufacturing supplies
@@ -119,12 +119,12 @@ STR_EXTRA_ENGINEERING_SUPPLIES                                                  
 STR_EXTRA_FARM_SUPPLIES                                                         :{BLACK}Farm supplies may increase production.{}{YELLOW}  {COMMA} crates delivered this month
 STR_EXTRA_FERTILIZER_PLANT                                                      :{BLACK}Processes chemicals into fertiliser for use by farms.{}{}{WEIGHT_SHORT} production per {VOLUME_SHORT} delivered.
 STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Cargo production:{}  3t per 8t manufacturing supplies delivered{}  5t per 8t fish delivered{}{}Increases to 8t per 8t when both cargos are delivered within a month of each other.
-STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Cargo production:{}  3t per 8t manufacturing supplies delivered{}  5t per 8t lumber delivered{}{}Increases to 8t per 8t when both cargos are delivered within a month of each other.
+STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Cargo production:{}  3t per 8t manufacturing supplies delivered{}  5t per 8t timber delivered{}{}Increases to 8t per 8t when both cargos are delivered within a month of each other.
 STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Produces glass items such as bottles, jars and window panes.{}{}{BLACK}Cargo production:{}  6t per 8t sand delivered{}  2t per 8t chemicals delivered{}{}Increases to 8t per 8t when both cargos are delivered within a month of each other.
 STR_EXTRA_GRAIN_MILL                                                            :{BLACK}Cargo production:{}  3t per 8t manufacturing supplies delivered{}  5t per 8t grain delivered{}{}Increases to 8t per 8t when both cargos are delivered within a month of each other.
 STR_EXTRA_IRON_WORKS                                                            :{BLACK}Cargo production:{}  2t per 8t wood delivered{}  2t per 8t iron ore delivered{}{}Increases to 4t per 8t when both cargos are delivered within a month of each other.
 STR_EXTRA_LIME_KILN                                                             :{BLACK}Cargo production:{}  3t per 8t stone delivered{}  3t per 8t coal delivered{}{}Increases to 6t per 8t when both cargos are delivered within a month of each other.
-STR_EXTRA_LUMBER_YARD                                                           :{BLACK}Produces items such as poles and fence posts.{}{}{BLACK}Cargo production:{}  2t per 8t chemicals delivered{}  6t per 8t lumber delivered{}{}Increases to 8t per 8t when both cargos are delivered within a month of each other.
+STR_EXTRA_LUMBER_YARD                                                           :{BLACK}Produces items such as poles and fence posts.{}{}{BLACK}Cargo production:{}  2t per 8t chemicals delivered{}  6t per 8t timber delivered{}{}Increases to 8t per 8t when both cargos are delivered within a month of each other.
 STR_EXTRA_MACHINE_SHOP                                                          :{BLACK}Builds and services machinery.{}{}8t production per 8t delivered.
 STR_EXTRA_MEAT_PACKER                                                           :{BLACK}Cargo production:{}  3t per 8t manufacturing supplies delivered{}  5t per 8t livestock delivered{}{}Increases to 8t per 8t when both cargos are delivered within a month of each other.
 STR_EXTRA_METAL_FABRICATION_PLANT                                               :{BLACK}Produces painted metal components.{}{}{BLACK}Cargo production:{}  2t per 8t chemicals delivered{}  6t per 8t metal delivered{}{}Increases to 8t per 8t when both cargos are delivered within a month of each other.
@@ -169,21 +169,21 @@ STR_IND_DREDGING_SITE                                                           
 STR_IND_FERTILISER_PLANT                                                        :Fertiliser Plant
 STR_IND_FISHING_GROUND                                                          :Fishing Grounds
 STR_IND_FISHING_HARBOUR                                                         :Fishing Harbour
-STR_IND_FOOD_MARKET                                                             :Food Market
+STR_IND_FOOD_MARKET                                                             :Grocer's Shop
 STR_IND_FURNITURE_FACTORY                                                       :Furniture Factory
 STR_IND_GLASS_WORKS                                                             :Glass Works
 STR_IND_GRAIN_MILL                                                              :Grain Mill
 STR_IND_HARDWARE_STORE                                                          :Hardware Store
 STR_IND_HOTEL                                                                   :Hotel
 STR_IND_IRON_WORKS                                                              :Iron Works
-STR_IND_JUNKYARD                                                                :Junk Yard
+STR_IND_JUNKYARD                                                                :Scrap Yard
 STR_IND_LIME_KILN                                                               :Lime Kiln
-STR_IND_LUMBER_YARD                                                             :Lumber Yard
+STR_IND_LUMBER_YARD                                                             :Timber Yard
 STR_IND_MACHINE_SHOP                                                            :Machine Shop
 STR_IND_METAL_FABRICATION_PLANT                                                 :Metal Fabrication Plant
 STR_IND_METAL_FOUNDRY                                                           :Metal Workshop
 STR_IND_MIXEDFARM                                                               :Mixed Farm
-STR_IND_PETROLPUMP                                                              :Petrol Pump
+STR_IND_PETROLPUMP                                                              :Petrol Station
 STR_IND_PLASTICS_PLANT                                                          :Plastics Plant
 STR_IND_QUARRY                                                                  :Quarry
 STR_IND_RECYCLING_DEPOT                                                         :Recycling Depot
