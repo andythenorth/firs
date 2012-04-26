@@ -10,10 +10,10 @@
 /*
  * Check whether an industry *tile* is within a certain distance of houses
  * *
- * Usage:        CHECK_HOUSES_NEARBY(switchname, next)
+ * Usage:        CHECK_HOUSES_NEARBY(switchname, x, y next)
  *
  * Parameters:
- * name          name of this switch. Suggested: houses_nearby
+ * name          name of this switch. Suggested: tile_houses_nearby
  * x             x offset from north tile of industry
  * y             y offset from north tile of industry
  * next          name of next switch or "return CB_RESULT_LOCATION_DISALLOW"
@@ -22,6 +22,24 @@
 #define CHECK_HOUSES_NEARBY(name, x, y, next) \
 switch (FEAT_INDUSTRYTILES, SELF, THIS_ID(name), nearby_tile_class(x, y)) { \
     TILE_CLASS_HOUSE: return CB_RESULT_LOCATION_ALLOW; \
+    next; \
+}
+
+/*
+ * Check whether an industry *tile* is within a certain distance of road
+ * *
+ * Usage:        CHECK_ROAD_ADJACENT(switchname, next)
+ *
+ * Parameters:
+ * name          name of this switch. Suggested: tile_road_adjacent
+ * x             x offset from north tile of industry
+ * y             y offset from north tile of industry
+ * next          name of next switch or "return CB_RESULT_LOCATION_DISALLOW"
+ */
+
+#define CHECK_ROAD_ADJACENT(name, x, y, next) \
+switch (FEAT_INDUSTRYTILES, SELF, THIS_ID(name), nearby_tile_class(x, y)) { \
+    TILE_CLASS_ROAD: return CB_RESULT_LOCATION_ALLOW; \
     next; \
 }
 

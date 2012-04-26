@@ -18,6 +18,12 @@ SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_1), GROUNDSPRITE_CONCRETE, GROUNDS
  * Definition of the industry tile and its callbacks
  * *************************************************/
 
+CHECK_ROAD_ADJACENT     (tile_road_adjacent_4, -1, 0, return CB_RESULT_LOCATION_DISALLOW)
+CHECK_ROAD_ADJACENT     (tile_road_adjacent_3, 0, -1, THIS_ID(tile_road_adjacent_4))
+CHECK_ROAD_ADJACENT     (tile_road_adjacent_2, 1, 0,  THIS_ID(tile_road_adjacent_3))
+CHECK_ROAD_ADJACENT     (tile_road_adjacent_1, 0, 1, THIS_ID(tile_road_adjacent_2))
+TILE_ALLOW_PLAYER       (terrain_check, THIS_ID(tile_road_adjacent_1))
+
 item(FEAT_INDUSTRYTILES, THIS_ID(tile), TILE_HARDWARESTORE_1) {
 	property {
 		substitute:       0;
@@ -26,6 +32,7 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile), TILE_HARDWARESTORE_1) {
 	}
 
 	graphics {
+		tile_check:  THIS_ID(terrain_check);
 		THIS_ID(spritelayout_1);
 	}
 }
