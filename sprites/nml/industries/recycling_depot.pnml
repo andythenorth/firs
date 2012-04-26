@@ -81,7 +81,8 @@ tilelayout tilelayout_recycling_depot_1 {
 
 CHECK_INCOMPATIBLE  (recycling_plant, 16, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
 CHECK_INCOMPATIBLE  (recycling_depot, 20, CB_RESULT_LOCATION_DISALLOW, THIS_ID(recycling_plant))
-CHECK_FOUNDER       (THIS_ID(recycling_depot))
+CHECK_INDUSTRY_TOWN_COUNT   (check_location, recycling_depot, 0, 0, string(STR_ERR_LOCATION_LIMIT_1_PER_TOWN), THIS_ID(recycling_depot))
+/* Don't use founder check for this industry, there is a hard limit of 1 per town irrespective of funding type */
 
 SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
 

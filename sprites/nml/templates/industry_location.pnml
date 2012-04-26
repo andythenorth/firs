@@ -111,6 +111,27 @@ switch (FEAT_INDUSTRIES, SELF, THIS_ID(incompatible), industry_distance(incompat
 
 
 /*
+ * Check for count of industry type per town
+ * *
+ * Usage:        CHECK_INDUSTRY_TOWN_COUNT(switchname, industry_type, mincount, maxcount, errtext, next)
+ *
+ * Parameters:
+ * switchname:   name of this switch. Suggested: town_distance
+ * errtext:      return value: text for error message or CB_RESULT_LOCATION_DISALLOW
+ * next          name of next switch or "return CB_RESULT_LOCATION_ALLOW"
+ * industry_type name of industry type to check for
+ * mincount      minimum number of industry type
+ * maxcount      maximum number of industry type
+ */
+
+#define CHECK_INDUSTRY_TOWN_COUNT(switchname, industry_type, mincount, maxcount, errtext, next) \
+switch (FEAT_INDUSTRIES, SELF, THIS_ID(switchname), industry_town_count(industry_type)) { \
+	mincount .. maxcount: next; \
+	return errtext; \
+}
+
+
+/*
  * Check whether an industry is within a certain distance from a town centre
  * *
  * Usage:        CHECK_TOWN_DISTANCE(switchname, min_distance, max_distance, next)
