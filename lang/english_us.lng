@@ -34,7 +34,7 @@ STR_CARGO_NAME_BUILDING_MATERIALS                                               
 STR_CARGO_NAME_CHEMICALS                                                        :Chemicals
 STR_CARGO_NAME_CLAY                                                             :Clay
 STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :Engineering Supplies
-STR_CARGO_NAME_FIBRES                                                           :Plant Fibres
+STR_CARGO_NAME_FIBRES                                                           :Plant Fibers
 STR_CARGO_NAME_FISH                                                             :Fish
 STR_CARGO_NAME_FARM_SUPPLIES                                                    :Farm Supplies
 STR_CARGO_NAME_FRUITS                                                           :Fruit
@@ -57,7 +57,7 @@ STR_CARGO_UNIT_BUILDING_MATERIALS                                               
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} of chemicals
 STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} of clay
 STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} crate{P 0 "" s} of engineering supplies
-STR_CARGO_UNIT_FIBRES                                                           :{SIGNED_WORD} bales of plant fibres
+STR_CARGO_UNIT_FIBRES                                                           :{SIGNED_WORD} bales of plant fibers
 STR_CARGO_UNIT_FISH                                                             :{WEIGHT} of fish
 STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} crate{P 0 "" s} of farm supplies
 STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} of fruit
@@ -117,7 +117,7 @@ STR_EXTRA_CEMENT_PLANT                                                          
 STR_EXTRA_DAIRY                                                                 :{BLACK}Cargo production:{}  3t per 8t manufacturing supplies delivered{}  5t per 8t milk delivered{}{}Increases to 8t per 8t when both cargos are delivered within a month of each other.
 STR_EXTRA_ENGINEERING_SUPPLIES                                                  :{BLACK}Engineering supplies may increase production.{}{YELLOW}  {COMMA} crates delivered this month
 STR_EXTRA_FARM_SUPPLIES                                                         :{BLACK}Farm supplies may increase production.{}{YELLOW}  {COMMA} crates delivered this month
-STR_EXTRA_FERTILIZER_PLANT                                                      :{BLACK}Processes chemicals into fertiliser for use by farms.{}{}{WEIGHT_SHORT} production per {VOLUME_SHORT} delivered.
+STR_EXTRA_FERTILIZER_PLANT                                                      :{BLACK}Processes chemicals into fertilizer for use by farms.{}{}{WEIGHT_SHORT} production per {VOLUME_SHORT} delivered.
 STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Cargo production:{}  3t per 8t manufacturing supplies delivered{}  5t per 8t fish delivered{}{}Increases to 8t per 8t when both cargos are delivered within a month of each other.
 STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Cargo production:{}  3t per 8t manufacturing supplies delivered{}  5t per 8t lumber delivered{}{}Increases to 8t per 8t when both cargos are delivered within a month of each other.
 STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Produces glass items such as bottles, jars and window panes.{}{}{BLACK}Cargo production:{}  6t per 8t sand delivered{}  2t per 8t chemicals delivered{}{}Increases to 8t per 8t when both cargos are delivered within a month of each other.
@@ -138,7 +138,7 @@ STR_EXTRA_SAWMILL                                                               
 STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Produces metal items like tools, ploughs, gates, shovels and horseshoes.{}{}5t production per 8t delivered.
 STR_EXTRA_STEELMILL                                                             :{BLACK}Cargo production:{}  2t per 8t iron ore delivered{}  2t per 8t coal delivered{}  4t per 8t scrap metal delivered{}{}Production steps up if two or more cargos are delivered within a month of each other.
 STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Cargo production:{}  3t per 8t manufacturing supplies delivered{}  5t per 8t sugar cane delivered{}{}Increases to 8t per 8t when both cargos are delivered within a month of each other.
-STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Cargo production:{}  3t per 8t manufacturing supplies delivered{}  5t per 8t wool delivered{}  5t per 8t plant fibres delivered{}{}Production steps up if manufacturing supplies delivered within a month of other cargos.
+STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Cargo production:{}  3t per 8t manufacturing supplies delivered{}  5t per 8t wool delivered{}  5t per 8t plant fibers delivered{}{}Production steps up if manufacturing supplies delivered within a month of other cargos.
 
 STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ DEBUG ------------{}Production this month:{}Cargo 1: {WHITE}{COMMA}{BLACK}{}Cargo 2: {WHITE}{COMMA}{BLACK}{}Days since last delivery: {WHITE}{COMMA}{BLACK}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Maximum production reached
@@ -154,7 +154,7 @@ STR_FUND_FRUIT_PLANTATION                                                       
 STR_TOWN                                                                        :{STRING}
 STR_STATION                                                                     :{STRING} {STRING}
 
-STR_IND_ALUMINIUM_PLANT                                                         :Aluminium Plant
+STR_IND_ALUMINIUM_PLANT                                                         :Aluminum Plant
 STR_IND_ARABLE_FARM                                                             :Arable Farm
 STR_IND_BAUXITE_MINE                                                            :Bauxite Mine
 STR_IND_BIOREFINERY                                                             :Biorefinery
@@ -166,9 +166,9 @@ STR_IND_CLAY_PIT                                                                
 STR_IND_DAIRY                                                                   :Dairy
 STR_IND_DAIRYFARM                                                               :Dairy Farm
 STR_IND_DREDGING_SITE                                                           :Dredging Site
-STR_IND_FERTILISER_PLANT                                                        :Fertiliser Plant
+STR_IND_FERTILISER_PLANT                                                        :Fertilizer Plant
 STR_IND_FISHING_GROUND                                                          :Fishing Grounds
-STR_IND_FISHING_HARBOUR                                                         :Fishing Harbour
+STR_IND_FISHING_HARBOUR                                                         :Fishing Harbor
 STR_IND_FOOD_MARKET                                                             :Food Market
 STR_IND_FURNITURE_FACTORY                                                       :Furniture Factory
 STR_IND_GLASS_WORKS                                                             :Glass Works
