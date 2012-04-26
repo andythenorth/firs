@@ -178,8 +178,8 @@ switch(FEAT_INDUSTRYTILES, PARENT, THIS_ID(tile_spritelayout), layout_num) {
  * *************************************************/
 
 TILE_DISALLOW_NEARBY_CLASS(tile_nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
-TILE_ALLOW_PLAYER         (tile_player_check,                                                            THIS_ID(tile_nearby_industry))
-TILE_DISALLOW_STEEP_SLOPE (tile_location_check,                       CB_RESULT_LOCATION_DISALLOW, THIS_ID(tile_player_check))
+TILE_DISALLOW_STEEP_SLOPE (tile_slope_check,                       CB_RESULT_LOCATION_DISALLOW, THIS_ID(tile_nearby_industry))
+TILE_ALLOW_PLAYER         (tile_location_check,                                                            THIS_ID(tile_slope_check))
 
 item(FEAT_INDUSTRYTILES, THIS_ID(tile), TILE_JUNKYARD_1) {
 	property {

@@ -68,8 +68,7 @@ ADD_FLAT_FENCES             ( THIS_ID(tile_fences),         THIS_ID(tile_fence_i
  * *************************************************/
 
 TILE_DISALLOW_NEARBY_CLASS(nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
-TILE_ALLOW_PLAYER         (player_check,                                                            THIS_ID(nearby_industry))
-TILE_DISALLOW_STEEP_SLOPE (location_check,                       CB_RESULT_LOCATION_DISALLOW, THIS_ID(player_check))
+TILE_ALLOW_PLAYER         (location_check, THIS_ID(nearby_industry))
 
 item(FEAT_INDUSTRYTILES, THIS_ID(tile), TILE_BAUXITEMINE_1) {
 	property {

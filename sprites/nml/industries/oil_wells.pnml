@@ -44,8 +44,7 @@ spritelayout THIS_ID(spritelayout_building) {
  * ***************************************************/
 
 TILE_DISALLOW_NEARBY_CLASS(tile_nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
-TILE_ALLOW_PLAYER         (tile_player_check,                                                            THIS_ID(tile_nearby_industry))
-TILE_DISALLOW_STEEP_SLOPE (tile_location_check,                       CB_RESULT_LOCATION_DISALLOW, THIS_ID(tile_player_check))
+TILE_ALLOW_PLAYER         (tile_location_check,                                                            THIS_ID(tile_nearby_industry))
 
 
 switch (FEAT_INDUSTRYTILES, SELF, THIS_ID(tile_oil_well_stop_anim), animation_frame) {

@@ -17,7 +17,7 @@
  * TILE_ALLOW_XXX   (name, <params>, if_not_allowed)
  * TILE_DISALLOW_XXX(name, <params>, error_text,  if_allowed)
  *
- * where 
+ * where
  *    name:       is the name of the switch which WILL be expanded by THIS_ID(name)
  *    <params>:   depend on the template
  *    error_text: is a string or CB_RESULT_LOCATION_DISALLOW
@@ -233,8 +233,8 @@ switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(name), nearby_tile_slope(0,0) == SLOPE_
 
 #define TILE_DISALLOW_STEEP_SLOPE(name, errtext, next) \
 switch (FEAT_INDUSTRYTILES, SELF, THIS_ID(name), nearby_tile_slope(0,0) & bitmask(IS_STEEP_SLOPE)) { \
-	1: return errtext; \
-	next; \
+	0: next; \
+	return errtext; \
 }
 
 /*
