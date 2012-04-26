@@ -94,9 +94,27 @@ switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_2), relative_pos) {
 	THIS_ID(metal_store);
 }
 
+switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_3), relative_pos) {
+	relative_coord(0, 0): THIS_ID(small_workshop);
+	relative_coord(0, 1): THIS_ID(small_workshop);
+	relative_coord(1, 0): THIS_ID(small_workshop);
+	relative_coord(1, 1): THIS_ID(small_workshop);
+	relative_coord(1, 2): THIS_ID(boilerhouse);
+	relative_coord(3, 0): THIS_ID(metal_store);
+	relative_coord(3, 1): THIS_ID(spritelayout_1);
+	relative_coord(3, 2): THIS_ID(spritelayout_2);
+	relative_coord(3, 3): THIS_ID(greeble_tile_2);
+	relative_coord(4, 0): THIS_ID(metal_store);
+	relative_coord(4, 1): THIS_ID(boilerhouse);
+	relative_coord(4, 2): THIS_ID(greeble_tile_2);
+	relative_coord(4, 3): THIS_ID(greeble_tile_1);
+	THIS_ID(metal_store);
+}
+
 switch(FEAT_INDUSTRYTILES, PARENT, THIS_ID(layout), layout_num) {
 	1: THIS_ID(layout_1);
 	2: THIS_ID(layout_2);
+	3: THIS_ID(layout_3);
 	THIS_ID(layout_1);
 }
 
@@ -162,6 +180,22 @@ tilelayout tilelayout_metal_fabrication_plant_2 {
 	2, 2: THIS_ID(tile);
 }
 
+tilelayout tilelayout_metal_fabrication_plant_3 {
+	0, 0: THIS_ID(tile);
+	0, 1: THIS_ID(tile);
+	1, 0: THIS_ID(tile);
+	1, 1: THIS_ID(tile);
+	1, 2: THIS_ID(tile);
+	3, 0: THIS_ID(tile);
+	3, 1: THIS_ID(tile);
+	3, 2: THIS_ID(tile);
+	3, 3: THIS_ID(tile);
+	4, 0: THIS_ID(tile);
+	4, 1: THIS_ID(tile);
+	4, 2: THIS_ID(tile);
+	4, 3: THIS_ID(tile);
+}
+
 /* *************************************************
  * Definition of the industry
  * *************************************************/
@@ -203,7 +237,8 @@ item(FEAT_INDUSTRIES, metal_fabrication_plant, IND_METALFABPLANT_ID) {
 		substitute: 0;
 		layouts: [
 				tilelayout_metal_fabrication_plant_1,
-				tilelayout_metal_fabrication_plant_2
+				tilelayout_metal_fabrication_plant_2,
+				tilelayout_metal_fabrication_plant_3
 			];
 		life_type:              IND_LIFE_TYPE_PROCESSING;
 		closure_msg:            TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS;
