@@ -63,34 +63,35 @@ SPRITELAYOUT_NORMAL_SNOW(THIS_ID(greeble_tile_2), THIS_ID(spriteset_ground), THI
 
 switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_1), relative_pos) {
 	relative_coord(0, 0): THIS_ID(small_workshop);
-	relative_coord(2, 0): THIS_ID(small_workshop);
 	relative_coord(0, 1): THIS_ID(small_workshop);
-	relative_coord(1, 1): THIS_ID(small_workshop);
+	relative_coord(0, 2): THIS_ID(boilerhouse);
+	relative_coord(0, 3): THIS_ID(greeble_tile_1);
 	relative_coord(1, 0): THIS_ID(small_workshop);
-	relative_coord(0, 3): THIS_ID(boilerhouse);
-	relative_coord(1, 3): THIS_ID(boilerhouse);
-	relative_coord(1, 4): THIS_ID(greeble_tile_1);
+	relative_coord(1, 1): THIS_ID(small_workshop);
+	relative_coord(1, 2): THIS_ID(greeble_tile_2);
+	relative_coord(1, 3): THIS_ID(greeble_tile_1);
+	relative_coord(2, 0): THIS_ID(small_workshop);
 	relative_coord(2, 1): THIS_ID(spritelayout_1);
 	relative_coord(2, 2): THIS_ID(spritelayout_2);
 	relative_coord(2, 3): THIS_ID(greeble_tile_2);
-	relative_coord(2, 4): THIS_ID(greeble_tile_2);
+	relative_coord(2, 4): THIS_ID(greeble_tile_1);
 	THIS_ID(metal_store);
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_2), relative_pos) {
+	relative_coord(0, 2): THIS_ID(small_workshop);
+	relative_coord(0, 3): THIS_ID(small_workshop);
 	relative_coord(1, 0): THIS_ID(spritelayout_1);
 	relative_coord(1, 1): THIS_ID(spritelayout_2);
-	relative_coord(0, 2): THIS_ID(small_workshop);
 	relative_coord(1, 2): THIS_ID(small_workshop);
 	relative_coord(1, 3): THIS_ID(small_workshop);
+	relative_coord(2, 0): THIS_ID(greeble_tile_2);
 	relative_coord(2, 1): THIS_ID(greeble_tile_2);
 	relative_coord(2, 2): THIS_ID(greeble_tile_1);
 	relative_coord(2, 3): THIS_ID(greeble_tile_1);
-	relative_coord(2, 0): THIS_ID(boilerhouse);
 	relative_coord(3, 0): THIS_ID(boilerhouse);
-	relative_coord(3, 2): THIS_ID(boilerhouse);
-	relative_coord(0, 3): THIS_ID(small_workshop);
-	relative_coord(3, 3): THIS_ID(small_workshop);
+	relative_coord(3, 2): THIS_ID(metal_store);
+	relative_coord(3, 3): THIS_ID(metal_store);
 	THIS_ID(metal_store);
 }
 
