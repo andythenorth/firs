@@ -73,11 +73,9 @@ switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(tile1_layout), STORE_TEMP((var[0x7E, 0,
  * Definition of the industry tile and its callbacks
  * *************************************************/
 
-TILE_DISALLOW_NEARBY_CLASS(tile1_nearby_industry,  TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
-TILE_ALLOW_PLAYER         (tile1_player_check,                                                             THIS_ID(tile1_nearby_industry))
-TILE_DISALLOW_TERRAIN     (tile1_disallow_terrain, TILETYPE_DESERT,     CB_RESULT_LOCATION_DISALLOW, THIS_ID(tile1_player_check))
-TILE_DISALLOW_SLOPES      (tile1_flat_land_check,                       CB_RESULT_LOCATION_DISALLOW, THIS_ID(tile1_disallow_terrain))
-TILE_DISALLOW_COAST       (tile1_location_check,                        CB_RESULT_LOCATION_DISALLOW, THIS_ID(tile1_flat_land_check))
+TILE_DISALLOW_NEARBY_CLASS(tile1_nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
+TILE_ALLOW_PLAYER         (tile1_player_check, THIS_ID(tile1_nearby_industry))
+TILE_DISALLOW_COAST       (tile1_location_check, CB_RESULT_LOCATION_DISALLOW, THIS_ID(tile1_player_check))
 
 item(FEAT_INDUSTRYTILES, THIS_ID(tile), TILE_SHEEPFARM_1) {
 	property {
@@ -168,7 +166,6 @@ item(FEAT_INDUSTRIES, sheep_farm, IND_SHEEPFARM_ID) {
 		location_check:          THIS_ID(check_location);
 		monthly_prod_change:     THIS_ID(check_production_level);
 		random_prod_change:      THIS_ID(check_closure);
-		extra_text_fund:         return string(STR_FUND_SHEEP_FARM);
 		extra_text_industry:     THIS_ID(extra_text);
 		colour:                  THIS_ID(colour);
 	}
