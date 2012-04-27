@@ -112,10 +112,10 @@ STR_EXTRA_STEELMILL                                                             
 STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Marchandises produites{NBSP}:{}  3{NBSP}t pour 8{NBSP}t livrées de fournitures industrielles{}  5{NBSP}t pour 8{NBSP}t livrées de cannes à sucre{}{}La production augmente de 8{NBSP}t par tranche de 8{NBSP}t livrées lorsque les deux marchandises sont livrées dans le même mois.
 STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ DEBUG ------------{}Production ce mois-ci{NBSP}:{}Marchandise 1{NBSP}: {WHITE}{COMMA}{BLACK}{}Marchandise 2{NBSP}: {WHITE}{COMMA}{BLACK}{}Jours écoulés depuis la dernière livraison{NBSP}: {WHITE}{COMMA}{BLACK}
 STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Marchandises produites{NBSP}:{}  3{NBSP}t pour 8{NBSP}t livrées de fournitures industrielles{}  5{NBSP}t pour 8{NBSP}t livrées de laine{}  5{NBSP}t pour 8{NBSP}t livrées de fibres végétales{}{}La production augmente si des fournitures industrielles sont livrées dans le même mois que d'autres marchandises.
-STR_FUND_ARABLE_FARM                                                            :{}{BLACK}Emplacement{NBSP}: {YELLOW}ne peut pas être construite sur de la neige, dans le désert ou sur une pente.
+STR_FUND_ARABLE_FARM                                                            :{}{BLACK}Emplacement{NBSP}: {YELLOW}ne peut pas être construite sur de la neige ni dans le désert.
 STR_FUND_FOREST                                                                 :{}{BLACK}Emplacement{NBSP}: {YELLOW}ne peut pas être placée dans le désert.
 STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}Emplacement{NBSP}: {YELLOW}ne peut pas être placé sur de la neige.
-STR_FUND_MIXED_FARM                                                             :{}{BLACK}Emplacement{NBSP}: {YELLOW}ne peut pas être construite sur de la neige, dans le désert ou sur des pentes abruptes.
+STR_FUND_MIXED_FARM                                                             :{}{BLACK}Emplacement{NBSP}: {YELLOW}ne peut pas être construite sur de la neige ni dans le désert.
 STR_GENERIC_NEWLINE                                                             :{}
 STR_IND_ALUMINIUM_PLANT                                                         :Usine d'aluminium
 STR_IND_ARABLE_FARM                                                             :Ferme céréalière
@@ -178,5 +178,8 @@ STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0                                         
 STR_PARAM_VALUE_STAT_RATING_100                                                 :Toujours 100{NBSP}%
 STR_PARAM_VALUE_STAT_RATING_DEFAULT                                             :Celui par défaut
 STR_PARAM_VALUE_STAT_RATING_REDUCED_TIME                                        :Cotation améliorée
+
 STR_TOWN                                                                        :{STRING}
 STR_STATION                                                                     :{STRING} {STRING}
+
+STR_ERR_LOCATION_LIMIT_1_PER_TOWN                                               :seulement une industrie de ce type par ville.
