@@ -57,7 +57,7 @@ STR_CARGO_UNIT_BUILDING_MATERIALS                                               
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} of chemicals
 STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} of clay
 STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} crate{P 0 "" s} of engineering supplies
-STR_CARGO_UNIT_FIBRES                                                           :{SIGNED_WORD} bales of plant fibers
+STR_CARGO_UNIT_FIBRES                                                           :{SIGNED_WORD} bale{P 0 "" s} of plant fibers
 STR_CARGO_UNIT_FISH                                                             :{WEIGHT} of fish
 STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} crate{P 0 "" s} of farm supplies
 STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} of fruit
@@ -72,7 +72,7 @@ STR_CARGO_UNIT_SCRAP_METAL                                                      
 STR_CARGO_UNIT_STONE                                                            :{WEIGHT} of stone
 STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} of sugar beet
 STR_CARGO_UNIT_SUGARCANE                                                        :{WEIGHT} of sugarcane
-STR_CARGO_UNIT_WOOL                                                             :{SIGNED_WORD} bales of wool
+STR_CARGO_UNIT_WOOL                                                             :{SIGNED_WORD} bale{P 0 "" s} of wool
 
 STR_CID_ALCOHOL                                                                 :{TINYFONT}AL
 STR_CID_BAUXITE                                                                 :{TINYFONT}BX
@@ -107,7 +107,7 @@ STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE                                             
 STR_ERR_LOCATION_NOT_ON_WATER                                                   :must be placed on dry land.
 STR_ERR_LOCATION_NOT_IN_DESERT                                                  :must not be placed in the desert.
 STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE                                             :cannot be placed on steep slopes.
-STR_ERR_LOCATION_LIMIT_1_PER_TOWN                                               :only 1 industry of this type allowed per town.
+STR_ERR_LOCATION_LIMIT_1_PER_TOWN                                               :only one industry of this type allowed per town.
 
 STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}Cargo production:{}  2t per 8t bauxite delivered{}  2t per 8t chemicals delivered{}  4t per 8t scrap metal delivered{}{}Production steps up if two or more cargos are delivered within a month of each other.
 STR_EXTRA_BIOREFINERY                                                           :{BLACK}Processes grain and sugar into gasoline and chemicals.{}{}6t production per 8t delivered.
