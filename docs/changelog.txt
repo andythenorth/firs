@@ -11,20 +11,23 @@ FIRS Industry Replacement Set Changelog
 *Fixes*
 - prevent Windmill sprites jittering when zoomed out
 - Metal Fabrication Plant had wrong number of output cargos (Rhamphoryncus)
-- don't need to use production cb for town industries (no more 'cargo waiting to be processed)
+- don't need to use production cb for town industries (no more 'cargo waiting to be processed')
 	- affects Builders Yard, Food Market, Hardware Store, Hotel and Petrol Pump
 - only one Recycling Depot per town (otherwise population-dependent production is wrong)
+- intro date for Recycling Depot was wrong 
 - adjust various checks for steep slopes when building industry, some fixed, some have been removed 
 
 *Changes*
 - improved Cement Plant kiln animation
 - Recycling Depot will always try to locate at edge of town, and avoid Recycling Plants
+- introduce Biorefinery a little later
 
 *New Features*
 - introduce 'bales' as unit for Wool and Plant Fibres cargos
 - educate town industries to locate more sensibly, for better gameplay and appearance
 	- improves Builders Yard, Food Market, Hardware Store, Hotel and Petrol Pump
 - additional layout for Metal Fabrication Plant; improved existing layouts
+- add 'Available from' dates for industries that have availability restricted by date
 
 *Translations additions / updates*
 - Dutch (Alberth)
