@@ -370,6 +370,7 @@ item(FEAT_INDUSTRIES, fishing_grounds, IND_FISHINGGROUNDS_ID) {
 		location_check:          THIS_ID(check_location);
 		monthly_prod_change:     return CB_RESULT_IND_PROD_NO_CHANGE;
 		random_prod_change:      return CB_RESULT_IND_PROD_NO_CHANGE;
+		build_prod_change:       randomise_primary_production_on_build;
 //		extra_text_industry:     // no extra text. No production increase by means of FMSP
 		colour:                  THIS_ID(colour);
 	}

@@ -88,6 +88,7 @@ item(FEAT_INDUSTRIES, oil_rig, IND_OILRIG_ID) {
 		location_check:          THIS_ID(check_location);
 		monthly_prod_change:     THIS_ID(check_production_level);
 		random_prod_change:      THIS_ID(check_closure);
+		build_prod_change:       randomise_primary_production_on_build;
 		extra_text_industry:     THIS_ID(extra_text);
 		extra_text_fund:         return string(STR_FUND_AVAILABLE_FROM, string(STR_FUND_AVAILABLE_FROM_DATE_OILRIG));
 		colour:                  THIS_ID(colour);
