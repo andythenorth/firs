@@ -49,6 +49,7 @@ STR_CARGO_UNIT_STONE                                                            
 STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} de betteraves sucrières
 STR_CARGO_UNIT_SUGARCANE                                                        :{WEIGHT} de cannes à sucre
 STR_CARGO_UNIT_WOOL                                                             :{WEIGHT} de laine
+
 STR_CID_ALCOHOL                                                                 :{TINYFONT}AL
 STR_CID_BAUXITE                                                                 :{TINYFONT}BX
 STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}MC
@@ -70,16 +71,19 @@ STR_CID_STONE                                                                   
 STR_CID_SUGAR_BEET                                                              :{TINYFONT}BS
 STR_CID_SUGARCANE                                                               :{TINYFONT}CS
 STR_CID_WOOL                                                                    :{TINYFONT}LN
+
 STR_ERR_CLIMATE_TOYLAND                                                         :{ORANGE}FIRS n'est pas conçu pour être utilisé avec l'environnement «{NBSP}Monde{NBSP}des{NBSP}Jouets{NBSP}»
 STR_ERR_INCOMPATIBLE_PARAM_CANSET                                               :{ORANGE}E02: {YELLOW}Paramètre incompatible{NBSP}: {ORANGE}le paramètre 2 de CanSet doit être à 0 pour fonctionner avec FIRS. {YELLOW}Voir le Lisez-moi de FIRS{NBSP}: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 STR_ERR_INCOMPATIBLE_PARAM_CITYSET                                              :{ORANGE}E02: {YELLOW}Paramètre incompatible{NBSP}: {ORANGE}le paramètre 2 de NA City Set doit être à 0 pour fonctionner avec FIRS. {YELLOW}Voir le Lisez-moi de FIRS{NBSP}: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 STR_ERR_INCOMPATIBLE_SET                                                        :{ORANGE}E01: {YELLOW}Module incompatible{NBSP}: {ORANGE}{STRING} {YELLOW}Voir le Lisez-moi de FIRS{NBSP}: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 STR_ERR_INCOMPATIBLE_SET_TTRS_VERSION                                           :{ORANGE}E04: {YELLOW}Version incompatible{NBSP}: {ORANGE}la version de Total Town Replacement Set doit être supérieure ou égale à 3.11. {YELLOW}Voir le Lisez-moi de FIRS{NBSP}: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_LOCATION_LIMIT_1_PER_TOWN                                               :Une seule industrie de ce type par ville.
 STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE                                             :doit être placé sous la ligne d'enneigement.
 STR_ERR_LOCATION_NOT_IN_DESERT                                                  :ne doit pas être placé dans le désert.
 STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE                                             :ne peut pas être placé sur des pentes abruptes.
 STR_ERR_LOCATION_NOT_ON_WATER                                                   :doit être placé sur du terrain sec.
 STR_ERR_OPENTTD_VERSION                                                         :{ORANGE}E00: FIRS nécessite la version OpenTTD 1.2.0 / rev. r22780 ou supérieure. {YELLOW}Voir le Lisez-moi de FIRS{NBSP}: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+
 STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}Marchandises produites{NBSP}:{}  2{NBSP}t pour 8{NBSP}t livrées de bauxite{}  2{NBSP}t pour 8{NBSP}t livrées de produits chimiques{}  4{NBSP}t pour 8{NBSP}t livrées de ferraille{}{}Il faut au moins 2 types de marchandises livrées dans le même mois pour que la production augmente.
 STR_EXTRA_BIOREFINERY                                                           :{BLACK}Transforme les céréales et le sucre en essence et en produits chimiques.{}{}6{NBSP}t produites pour 8{NBSP}t livrées.
 STR_EXTRA_BREWERY                                                               :{BLACK}Marchandises produites{NBSP}:{}  3{NBSP}t pour 8{NBSP}t livrées de fournitures industrielles{}  5{NBSP}t pour 8{NBSP}t livrées de céréales{}  5{NBSP}t pour 8{NBSP}t livrées de fruits{}{}La production augmente si des fournitures industrielles sont livrées dans le même mois que d'autres marchandises.
@@ -112,11 +116,17 @@ STR_EXTRA_STEELMILL                                                             
 STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Marchandises produites{NBSP}:{}  3{NBSP}t pour 8{NBSP}t livrées de fournitures industrielles{}  5{NBSP}t pour 8{NBSP}t livrées de cannes à sucre{}{}La production augmente de 8{NBSP}t par tranche de 8{NBSP}t livrées lorsque les deux marchandises sont livrées dans le même mois.
 STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ DEBUG ------------{}Production ce mois-ci{NBSP}:{}Marchandise 1{NBSP}: {WHITE}{COMMA}{BLACK}{}Marchandise 2{NBSP}: {WHITE}{COMMA}{BLACK}{}Jours écoulés depuis la dernière livraison{NBSP}: {WHITE}{COMMA}{BLACK}
 STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Marchandises produites{NBSP}:{}  3{NBSP}t pour 8{NBSP}t livrées de fournitures industrielles{}  5{NBSP}t pour 8{NBSP}t livrées de laine{}  5{NBSP}t pour 8{NBSP}t livrées de fibres végétales{}{}La production augmente si des fournitures industrielles sont livrées dans le même mois que d'autres marchandises.
+
 STR_FUND_ARABLE_FARM                                                            :{}{BLACK}Emplacement{NBSP}: {YELLOW}ne peut pas être construite sur de la neige ni dans le désert.
+STR_FUND_AVAILABLE_FROM                                                         :{}{BLACK}Disponible à partir de{NBSP}:{NBSP}{YELLOW}{STRING}
+# All STR_FUND_AVAILABLE_FROM_DATE_* left out intentionally as it would be counter-productive to include them.
+# It's indeed better to pick up dates from the original english.lng instead of risking a typo or a mismatch.
 STR_FUND_FOREST                                                                 :{}{BLACK}Emplacement{NBSP}: {YELLOW}ne peut pas être placée dans le désert.
 STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}Emplacement{NBSP}: {YELLOW}ne peut pas être placé sur de la neige.
 STR_FUND_MIXED_FARM                                                             :{}{BLACK}Emplacement{NBSP}: {YELLOW}ne peut pas être construite sur de la neige ni dans le désert.
+
 STR_GENERIC_NEWLINE                                                             :{}
+
 STR_IND_ALUMINIUM_PLANT                                                         :Usine d'aluminium
 STR_IND_ARABLE_FARM                                                             :Ferme céréalière
 STR_IND_BAUXITE_MINE                                                            :Mine de bauxite
@@ -157,6 +167,7 @@ STR_IND_STOCKYARD                                                               
 STR_IND_SUGAR_REFINERY                                                          :Raffinerie de sucre
 STR_IND_SUPERMARKET                                                             :Supermarché
 STR_IND_TEXTILE_MILL                                                            :Usine textile
+
 STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :Éloignement côtier maximal des zones de pêche, plates-formes pétrolières et sites de dragage.
 STR_PARAM_DESC_DEBUG                                                            :Seulement pour les développeurs
 STR_PARAM_DESC_ECONOMIES                                                        :Lorsque ce sera terminé, FIRS permettra de choisir son économie. Les marchandises et les industries varieront en fonction de l'économie choisie. Les coûts du transport seront différents dans chaque économie. {}{}{SILVER}Actuellement, une seule économie est disponible :)
@@ -179,7 +190,5 @@ STR_PARAM_VALUE_STAT_RATING_100                                                 
 STR_PARAM_VALUE_STAT_RATING_DEFAULT                                             :Celui par défaut
 STR_PARAM_VALUE_STAT_RATING_REDUCED_TIME                                        :Cotation améliorée
 
-STR_TOWN                                                                        :{STRING}
 STR_STATION                                                                     :{STRING} {STRING}
-
-STR_ERR_LOCATION_LIMIT_1_PER_TOWN                                               :seulement une industrie de ce type par ville.
+STR_TOWN                                                                        :{STRING}
