@@ -76,7 +76,7 @@ tilelayout tilelayout_recycling_depot_1 {
  * *************************************************/
 
 #define THIS_STR_EXTRA_SUPPLIES STR_EXTRA_ENGINEERING_SUPPLIES
-/* availability years */
+/* availability years - also update available from strings if changing these */
 #define THIS_MIN_YEAR 1998
 
 CHECK_INCOMPATIBLE  (recycling_plant, 16, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)

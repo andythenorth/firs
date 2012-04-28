@@ -104,7 +104,7 @@ tilelayout tilelayout_bauxite_mine_1 {
  * *************************************************/
 
 #define THIS_STR_EXTRA_SUPPLIES STR_EXTRA_ENGINEERING_SUPPLIES
-/* availability years */
+/* availability years - also update available from strings if changing these */
 #define THIS_MIN_YEAR 1923
 
 CHECK_NEARBY_CLUSTER(bauxite_mine,    20, 60, 2, 3, return CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)

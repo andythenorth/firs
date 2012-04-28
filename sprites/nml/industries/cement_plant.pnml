@@ -373,7 +373,7 @@ tilelayout tilelayout_cement_plant_5 {
 #define THIS_BOOST_32             4
 /* extra text template */
 #define THIS_STR_EXTRA_TEXT       STR_EXTRA_CEMENT_PLANT
-/* availability years */
+/* availability years - also update available from strings if changing these */
 #define THIS_MIN_YEAR 1902
 
 CHECK_INCOMPATIBLE  (cement_plant,  56, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)

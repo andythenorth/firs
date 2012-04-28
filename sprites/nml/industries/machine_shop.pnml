@@ -401,7 +401,7 @@ tilelayout tilelayout_machine_shop_5 {
 /* extra text template */
 #define THIS_STR_EXTRA_TEXT       STR_EXTRA_MACHINE_SHOP
 #define THIS_STR_DEBUG_TEXT       STR_EXTRA_TEXT_DEBUG_SECONDARY
-/* availability years */
+/* availability years - also update available from strings if changing these */
 #define THIS_MIN_YEAR 1870
 
 

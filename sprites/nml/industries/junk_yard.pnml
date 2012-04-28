@@ -237,7 +237,7 @@ tilelayout tilelayout_junkyard_3 {
  * *************************************************/
 
 #define THIS_STR_EXTRA_SUPPLIES STR_EXTRA_ENGINEERING_SUPPLIES
-/* availability years */
+/* availability years - also update available from strings if changing these */
 #define THIS_MIN_YEAR 1878
 
 CHECK_TOWN_DISTANCE (town_distance, 0, 144, return CB_RESULT_LOCATION_ALLOW)

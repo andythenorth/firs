@@ -219,7 +219,7 @@ tilelayout tilelayout_furniture_factory_5 {
 #define THIS_BOOST_32             0
 /* extra text template */
 #define THIS_STR_EXTRA_TEXT       STR_EXTRA_FURNITURE_FACTORY
-/* availability years */
+/* availability years - also update available from strings if changing these */
 #define THIS_MIN_YEAR 1840
 
 CHECK_INCOMPATIBLE  (furniture_factory, 56, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)

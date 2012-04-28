@@ -178,7 +178,7 @@ tilelayout tilelayout_stockyard_1 {
 /* extra text template */
 #define THIS_STR_EXTRA_TEXT       STR_EXTRA_MEAT_PACKER
 #define THIS_STR_DEBUG_TEXT       STR_EXTRA_TEXT_DEBUG_SECONDARY
-/* availability years */
+/* availability years - also update available from strings if changing these */
 #define THIS_MIN_YEAR 1867
 
 

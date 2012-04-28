@@ -48,7 +48,7 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_4), 28) {
  * *************************************************/
 
 #define THIS_STR_EXTRA_SUPPLIES        STR_EXTRA_ENGINEERING_SUPPLIES
-/* availability years */
+/* availability years - also update available from strings if changing these */
 #define THIS_MIN_YEAR 1967
 
 CHECK_COAST_DISTANCE(coastal_distance, 0, param_max_coastal_distance, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)

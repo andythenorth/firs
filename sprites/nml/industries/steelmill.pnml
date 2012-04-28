@@ -76,7 +76,7 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_6), 57) {
 #define THIS_BOOST_32             4
 /* extra text template */
 #define THIS_STR_EXTRA_TEXT       STR_EXTRA_STEELMILL
-/* availability years */
+/* availability years - also update available from strings if changing these */
 #define THIS_MIN_YEAR 1873
 
 
