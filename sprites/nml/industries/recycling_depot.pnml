@@ -147,6 +147,7 @@ item(FEAT_INDUSTRIES, recycling_depot, IND_RECYCLINGDEPOT_ID) {
 		monthly_prod_change:     THIS_ID(check_production_level);
 		random_prod_change:      THIS_ID(check_closure);
 		extra_text_industry:     return string(STR_EXTRA_RECYCLING_DEPOT);
+		extra_text_fund:         return string(STR_FUND_AVAILABLE_FROM, string(STR_FUND_AVAILABLE_FROM_DATE_RECYCLING_DEPOT));
 		colour:                  THIS_ID(colour);
 	}
 }
