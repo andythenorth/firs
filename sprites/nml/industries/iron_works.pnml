@@ -78,8 +78,7 @@ ADD_FLAT_FENCES             ( THIS_ID(tile_fences),         THIS_ID(tile_fence_i
  * *************************************************/
 
 TILE_DISALLOW_NEARBY_CLASS(tile_nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
-TILE_ALLOW_PLAYER         (tile_player_check,                                                            THIS_ID(tile_nearby_industry))
-TILE_DISALLOW_SLOPES      (tile_location_check,                       CB_RESULT_LOCATION_DISALLOW, THIS_ID(tile_player_check))
+TILE_ALLOW_PLAYER         (tile_location_check, THIS_ID(tile_nearby_industry))
 
 /* Return a random animation frame from the extra_callback_info1 */
 switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(tile_anim_control), (extra_callback_info1 & 14)) {
@@ -103,6 +102,22 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile), TILE_IRONWORKS_1) {
 	property {
 		substitute:         0;
 		accepted_cargos:    [[IORE, 8], [WOOD, 8]];
+		land_shape_flags:   0;
+	}
+
+	graphics {
+		tile_check:   THIS_ID(tile_location_check);
+		THIS_ID(tile_fences);
+	}
+}
+
+/* The animated tiles must not build on slopes.  Use a separate tile to achieve that.  Chains to same other checks, graphics etc. */
+TILE_DISALLOW_SLOPES      (tile2_location_check, CB_RESULT_LOCATION_DISALLOW, THIS_ID(tile_location_check))
+
+item(FEAT_INDUSTRYTILES, THIS_ID(tile_animated), TILE_IRONWORKS_2) {
+	property {
+		substitute:         0;
+		accepted_cargos:    [[IORE, 8], [WOOD, 8]];
 		land_shape_flags:   bitmask(LSF_ONLY_ON_FLAT_LAND);
 		special_flags:      bitmask(INDTILE_FLAG_RANDOM_ANIMATION);
 		animation_info:     [ANIMATION_LOOPING, 180];
@@ -112,7 +127,7 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile), TILE_IRONWORKS_1) {
 
 	graphics {
 		anim_control: THIS_ID(tile_anim_control);
-		tile_check:   THIS_ID(tile_location_check);
+		tile_check:   THIS_ID(tile2_location_check);
 		THIS_ID(tile_fences);
 	}
 }
@@ -123,11 +138,11 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile), TILE_IRONWORKS_1) {
 
 tilelayout tilelayout_iron_works_1 {
 	0, 0: THIS_ID(tile);
-	0, 1: THIS_ID(tile);
-	0, 2: THIS_ID(tile);
+	0, 1: THIS_ID(tile_animated);
+	0, 2: THIS_ID(tile_animated);
 	1, 0: THIS_ID(tile);
-	1, 1: THIS_ID(tile);
-	1, 2: THIS_ID(tile);
+	1, 1: THIS_ID(tile_animated);
+	1, 2: THIS_ID(tile_animated);
 	2, 0: THIS_ID(tile);
 	2, 1: THIS_ID(tile);
 	2, 2: THIS_ID(tile);
