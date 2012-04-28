@@ -311,6 +311,7 @@ item(FEAT_INDUSTRIES, biorefinery, IND_BIOREFINERY_ID) {
 		monthly_prod_change:     THIS_ID(check_production_level);
 		random_prod_change:      THIS_ID(check_closure);
 		extra_text_industry:     THIS_ID(extra_text);
+		extra_text_fund:         return string(STR_FUND_AVAILABLE_FROM, string(STR_FUND_AVAILABLE_FROM_DATE_BIOREFINERY));
 		colour:                  THIS_ID(colour);
 	}
 }
