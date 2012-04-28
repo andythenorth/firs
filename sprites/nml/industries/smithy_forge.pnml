@@ -147,6 +147,7 @@ item(FEAT_INDUSTRIES, smithy_forge, IND_SMITHYFORGE_ID) {
 		monthly_prod_change:     THIS_ID(check_production_level);
 		random_prod_change:      THIS_ID(check_closure);
 		extra_text_industry:     THIS_ID(extra_text);
+		/*extra_text_fund:         return string(STR_FUND_AVAILABLE_FROM, string(STR_FUND_AVAILABLE_UNTIL_DATE_SMITHY_FORGE));*/
 		colour:                  THIS_ID(colour);
 	}
 }
