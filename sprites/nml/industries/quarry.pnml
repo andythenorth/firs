@@ -824,11 +824,13 @@ switch(FEAT_INDUSTRYTILES, PARENT, THIS_ID(layout), layout_num) {
  * Definition of the industry tile and its callbacks
  * *************************************************/
 
+/* tile_check is disabled; if it's enabled OpenTTD won't terraform for this industry, which makes it unlikely to be built on steep maps.
+// This means that this industry will locate adjacent to others, blocking routes.  It's the lesser of two evils.
 TILE_DISALLOW_NEARBY_CLASS(tile1_nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
 TILE_ALLOW_PLAYER         (tile1_player_check,                                                            THIS_ID(tile1_nearby_industry))
 TILE_DISALLOW_TERRAIN     (tile1_terrain_check, TILETYPE_DESERT,       CB_RESULT_LOCATION_DISALLOW, THIS_ID(tile1_player_check))
 TILE_DISALLOW_SLOPES      (tile1_location_check,                       CB_RESULT_LOCATION_DISALLOW, THIS_ID(tile1_terrain_check))
-
+*/
 item(FEAT_INDUSTRYTILES, THIS_ID(tile), TILE_QUARRY_1) {
 	property {
 		substitute:       0;
@@ -838,7 +840,7 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile), TILE_QUARRY_1) {
 	graphics {
 		foundations:  return CB_RESULT_NO_FOUNDATIONS;
 		autoslope:    return CB_RESULT_NO_AUTOSLOPE;
-		tile_check:   THIS_ID(tile1_location_check);
+		/*tile_check:   THIS_ID(tile1_location_check); // disabled to permit terraforming, see note above*/
 		THIS_ID(layout);
 	}
 }
