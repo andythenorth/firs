@@ -5082,53 +5082,57 @@ switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(tile_trees_spritelayout), var[0x03, 0, 
  * tile_equipment
  * *************/
 
-spriteset(spriteset_4459, "sprites/graphics/industries/forest.png") { tmpl_building_sprite(10, 10, 78, -45) }
-spriteset(spriteset_4460, "sprites/graphics/industries/forest.png") { tmpl_building_sprite(80, 10, 78, -45) }
-spriteset(spriteset_4461, "sprites/graphics/industries/forest.png") { tmpl_building_sprite(220, 10, 78, -45) }
+spriteset(spriteset_crane, "sprites/graphics/industries/forest.png") { tmpl_building_sprite(10, 10, 78, -45) }
+spriteset(spriteset_bulldozer, "sprites/graphics/industries/forest.png") { tmpl_building_sprite(80, 10, 78, -45) }
+spriteset(spriteset_tracks_snowtile, "sprites/graphics/industries/forest.png") { tmpl_building_sprite(220, 10, 78, -45) }
 
 spritelayout THIS_ID(tile_equipment_nonsnow_spritelayout) {
 	ground {
 		sprite: 2022;
 	}
 	building {
-		sprite: spriteset_4459;
+		sprite: spriteset_crane;
 		recolour_mode: RECOLOUR_REMAP;
 		palette: 0;
 		xextent: 7;
 		yextent: 7;
 		zextent: 7;
+		always_draw: 1;
 	}
 	building {
-		sprite: spriteset_4460;
+		sprite: spriteset_bulldozer;
 		recolour_mode: RECOLOUR_REMAP;
 		palette: 0;
 		xextent: 7;
 		yextent: 7;
 		zextent: 7;
+		always_draw: 1;
 	}
 }
 
 spritelayout THIS_ID(tile_equipment_snow_spritelayout) {
 	ground {
-		sprite: spriteset_4461;
+		sprite: spriteset_tracks_snowtile;
 		recolour_mode: RECOLOUR_REMAP;
 		palette: 0;
 	}
 	building {
-		sprite: spriteset_4459;
+		sprite: spriteset_crane;
 		recolour_mode: RECOLOUR_REMAP;
 		palette: 0;
 		xextent: 7;
 		yextent: 7;
 		zextent: 7;
+		always_draw: 1;
 	}
 	building {
-		sprite: spriteset_4460;
+		sprite: spriteset_bulldozer;
 		recolour_mode: RECOLOUR_REMAP;
 		palette: 0;
 		xextent: 7;
 		yextent: 7;
 		zextent: 7;
+		always_draw: 1;
 	}
 }
 
