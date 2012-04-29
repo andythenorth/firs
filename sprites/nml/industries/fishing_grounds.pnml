@@ -328,6 +328,20 @@ SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
 
 #include "../templates/check_availability.pnml"
 
+/* industry specific switch to randomise initial production; as Fishing Grounds never changes production, go for a wide range of productions*/
+random_switch(FEAT_INDUSTRIES, SELF, THIS_ID(randomise_primary_production_on_build)) {
+	1: return 8;
+	1: return 12;
+	3: return 16;
+	2: return 20;
+	2: return 24;
+	1: return 28;
+	1: return 32;
+	1: return 36;
+	1: return 40;
+}
+
+
 item(FEAT_INDUSTRIES, fishing_grounds, IND_FISHINGGROUNDS_ID) {
 	property {
 		substitute: 5;
@@ -370,7 +384,7 @@ item(FEAT_INDUSTRIES, fishing_grounds, IND_FISHINGGROUNDS_ID) {
 		location_check:          THIS_ID(check_location);
 		monthly_prod_change:     return CB_RESULT_IND_PROD_NO_CHANGE;
 		random_prod_change:      return CB_RESULT_IND_PROD_NO_CHANGE;
-		build_prod_change:       randomise_primary_production_on_build;
+		build_prod_change:       THIS_ID(randomise_primary_production_on_build); // initial production customised to Fishing Grounds
 //		extra_text_industry:     // no extra text. No production increase by means of FMSP
 		colour:                  THIS_ID(colour);
 	}
