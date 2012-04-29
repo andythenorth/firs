@@ -101,7 +101,7 @@ item(FEAT_INDUSTRIES, hotel, IND_HOTEL_ID) {
 		fund_cost_multiplier: 6;
 		map_colour: 190;
 		remove_cost_multiplier: 0;
-		spec_flags:             bitmask(IND_FLAG_ONLY_IN_TOWNS);
+		spec_flags:             bitmask(IND_FLAG_BUILT_NEAR_TOWN); /*use build near town not in town, hotel is large and town locations hard to find */
 	}
 	graphics {
 		construction_probability:THIS_ID(check_availability);
