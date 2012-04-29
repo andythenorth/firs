@@ -165,6 +165,8 @@ tilelayout tilelayout_iron_works_1 {
 /* extra text template */
 #define THIS_STR_EXTRA_TEXT       STR_EXTRA_IRON_WORKS
 #define THIS_STR_DEBUG_TEXT       STR_EXTRA_TEXT_DEBUG_SECONDARY
+/* availability years - also update available from strings if changing these */
+#define THIS_MAX_YEAR 1901
 
 CHECK_NEARBY_CLUSTER(iron_ore_mine, 16, 60, 5, 4, return CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
 CHECK_FOUNDER     (THIS_ID(iron_ore_mine))
@@ -215,6 +217,7 @@ item(FEAT_INDUSTRIES, iron_works, IND_IRONWORKS_ID) {
 		monthly_prod_change:     THIS_ID(check_production_level);
 		random_prod_change:      THIS_ID(check_closure);
 		extra_text_industry:     THIS_ID(extra_text);
+		extra_text_fund:         return string(STR_FUND_AVAILABLE_UNTIL, string(STR_FUND_AVAILABLE_UNTIL_DATE_IRON_WORKS));
 		colour:                  THIS_ID(colour);
 	}
 }
