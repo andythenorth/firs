@@ -269,7 +269,7 @@ item(FEAT_INDUSTRIES, junkyard, IND_JUNKYARD_ID) {
 		nearby_station_name:    string(STR_STATION, string(STR_TOWN), string(STR_IND_JUNKYARD));
 		prod_cargo_types: [SCMT];
 		accept_cargo_types: [ENSP];
-		prod_multiplier: [6, 0];
+		prod_multiplier: [12, 0];
 		input_multiplier_1: [0, 0];
 		input_multiplier_2: [0, 0];
 		input_multiplier_3: [0, 0];

@@ -5239,7 +5239,7 @@ item(FEAT_INDUSTRIES, fruit_plantation, IND_FRUITPLANTATION_ID) {
 		new_ind_msg:            TTD_STR_NEWS_INDUSTRY_CONSTRUCTION;
 		prod_cargo_types: [FRVG];
 		accept_cargo_types: [FMSP];
-		prod_multiplier: [2];
+		prod_multiplier: [6];
 		conflicting_ind_types: [];
 		prob_random: 8;
 		prob_in_game: 3;

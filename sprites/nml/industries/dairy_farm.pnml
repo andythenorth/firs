@@ -193,7 +193,7 @@ item(FEAT_INDUSTRIES, dairy_farm, IND_DAIRYFARM_ID) {
 		nearby_station_name:    string(STR_STATION, string(STR_TOWN), string(STR_IND_DAIRYFARM));
 		prod_cargo_types:       [LVST, MILK];
 		accept_cargo_types: [FMSP];
-		prod_multiplier: [2, 2];
+		prod_multiplier: [4, 4];
 		input_multiplier_1: [0, 0];
 		input_multiplier_2: [0, 0];
 		input_multiplier_3: [0, 0];
