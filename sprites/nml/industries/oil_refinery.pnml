@@ -11,11 +11,18 @@
  * Definition of the industry tile and its callbacks
  * *************************************************/
 
+TILE_DISALLOW_NEARBY_CLASS(tile_nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
+TILE_ALLOW_PLAYER         (tile_player_check,                                                            THIS_ID(tile_nearby_industry))
+TILE_DISALLOW_SLOPES      (tile_location_check,                       CB_RESULT_LOCATION_DISALLOW, THIS_ID(tile_player_check))
+
 item(FEAT_INDUSTRYTILES, THIS_ID(tile_1), 18) {
 	property {
 		substitute: 18;
 		override: 18;
 		accepted_cargos: [[OIL_, 8]];
+	}
+	graphics {
+		tile_check: THIS_ID(tile_location_check);
 	}
 }
 
@@ -25,6 +32,9 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_2), 19) {
 		override: 19;
 		accepted_cargos: [[OIL_, 8]];
 	}
+	graphics {
+		tile_check: THIS_ID(tile_location_check);
+	}
 }
 
 item(FEAT_INDUSTRYTILES, THIS_ID(tile_3), 20) {
@@ -32,6 +42,9 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_3), 20) {
 		substitute: 20;
 		override: 20;
 		accepted_cargos: [[OIL_, 8]];
+	}
+	graphics {
+		tile_check: THIS_ID(tile_location_check);
 	}
 }
 
@@ -41,6 +54,9 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_4), 21) {
 		override: 21;
 		accepted_cargos: [[OIL_, 8]];
 	}
+	graphics {
+		tile_check: THIS_ID(tile_location_check);
+	}
 }
 
 item(FEAT_INDUSTRYTILES, THIS_ID(tile_5), 22) {
@@ -49,6 +65,9 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_5), 22) {
 		override: 22;
 		accepted_cargos: [[OIL_, 8]];
 	}
+	graphics {
+		tile_check: THIS_ID(tile_location_check);
+	}
 }
 
 item(FEAT_INDUSTRYTILES, THIS_ID(tile_6), 23) {
@@ -56,6 +75,9 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_6), 23) {
 		substitute: 23;
 		override: 23;
 		accepted_cargos: [[OIL_, 8]];
+	}
+	graphics {
+		tile_check: THIS_ID(tile_location_check);
 	}
 }
 
