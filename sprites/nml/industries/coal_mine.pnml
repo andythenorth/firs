@@ -22,7 +22,7 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_1), 0) {
 		accepted_cargos: [[ENSP, 8]];
 	}
 	graphics {
-		THIS_ID(tile_location_check);
+		tile_check: THIS_ID(tile_location_check);
 	}
 }
 
@@ -33,7 +33,7 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_2), 1) {
 		accepted_cargos: [[ENSP, 8]];
 	}
 	graphics {
-		THIS_ID(tile_location_check);
+		tile_check: THIS_ID(tile_location_check);
 	}
 }
 
@@ -44,7 +44,7 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_3), 2) {
 		accepted_cargos: [[ENSP, 8]];
 	}
 	graphics {
-		THIS_ID(tile_location_check);
+		tile_check: THIS_ID(tile_location_check);
 	}
 }
 
@@ -55,7 +55,7 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_4), 3) {
 		accepted_cargos: [[ENSP, 8]];
 	}
 	graphics {
-		THIS_ID(tile_location_check);
+		tile_check: THIS_ID(tile_location_check);
 	}
 }
 
@@ -66,7 +66,7 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_5), 4) {
 		accepted_cargos: [[ENSP, 8]];
 	}
 	graphics {
-		THIS_ID(tile_location_check);
+		tile_check: THIS_ID(tile_location_check);
 	}
 }
 
@@ -77,7 +77,7 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_6), 5) {
 		accepted_cargos: [[ENSP, 8]];
 	}
 	graphics {
-		THIS_ID(tile_location_check);
+		tile_check: THIS_ID(tile_location_check);
 	}
 }
 
@@ -88,7 +88,7 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_7), 6) {
 		accepted_cargos: [[ENSP, 8]];
 	}
 	graphics {
-		THIS_ID(tile_location_check);
+		tile_check: THIS_ID(tile_location_check);
 	}
 }
 
