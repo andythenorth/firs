@@ -57,36 +57,35 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_5), 15) {
  * *************************************************/
 
 TILE_DISALLOW_NEARBY_CLASS(tile_nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
-TILE_ALLOW_PLAYER         (tile_player_check,                                                            THIS_ID(tile_nearby_industry))
-TILE_DISALLOW_SLOPES      (tile_location_check,                       CB_RESULT_LOCATION_DISALLOW, THIS_ID(tile_player_check))
+TILE_ALLOW_PLAYER         (tile_location_check, THIS_ID(tile_nearby_industry))
 
 item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_11, 11) {
 	graphics {
-		THIS_ID(tile_location_check);
+		tile_check: THIS_ID(tile_location_check);
 	}
 }
 
 item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_12, 12) {
 	graphics {
-		THIS_ID(tile_location_check);
+		tile_check: THIS_ID(tile_location_check);
 	}
 }
 
 item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_13, 13) {
 	graphics {
-		THIS_ID(tile_location_check);
+		tile_check: THIS_ID(tile_location_check);
 	}
 }
 
 item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_14, 14) {
 	graphics {
-		THIS_ID(tile_location_check);
+		tile_check: THIS_ID(tile_location_check);
 	}
 }
 
 item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_15, 15) {
 	graphics {
-		THIS_ID(tile_location_check);
+		tile_check: THIS_ID(tile_location_check);
 	}
 }
 /* *************************************************
