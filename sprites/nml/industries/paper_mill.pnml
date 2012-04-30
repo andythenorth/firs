@@ -11,11 +11,17 @@
  * Definition of the industry tile and its callbacks
  * *************************************************/
 
+TILE_DISALLOW_NEARBY_CLASS(tile_nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
+TILE_ALLOW_PLAYER         (tile_location_check,                                                            THIS_ID(tile_nearby_industry))
+
 item(FEAT_INDUSTRYTILES, THIS_ID(tile_1), 64) {
 	property {
 		substitute: 64;
 		override: 64;
 		accepted_cargos: [[WOOD, 8], [CLAY, 8], [RFPR, 8]];
+	}
+	graphics {
+		tile_check: THIS_ID(tile_location_check);
 	}
 }
 
@@ -25,6 +31,9 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_2), 65) {
 		override: 65;
 		accepted_cargos: [[WOOD, 8], [CLAY, 8], [RFPR, 8]];
 	}
+	graphics {
+		tile_check: THIS_ID(tile_location_check);
+	}
 }
 
 item(FEAT_INDUSTRYTILES, THIS_ID(tile_3), 66) {
@@ -32,6 +41,9 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_3), 66) {
 		substitute: 66;
 		override: 66;
 		accepted_cargos: [[WOOD, 8], [CLAY, 8], [RFPR, 8]];
+	}
+	graphics {
+		tile_check: THIS_ID(tile_location_check);
 	}
 }
 
@@ -41,6 +53,9 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_4), 67) {
 		override: 67;
 		accepted_cargos: [[WOOD, 8], [CLAY, 8], [RFPR, 8]];
 	}
+	graphics {
+		tile_check: THIS_ID(tile_location_check);
+	}
 }
 
 item(FEAT_INDUSTRYTILES, THIS_ID(tile_5), 68) {
@@ -48,6 +63,9 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_5), 68) {
 		substitute: 68;
 		override: 68;
 		accepted_cargos: [[WOOD, 8], [CLAY, 8], [RFPR, 8]];
+	}
+	graphics {
+		tile_check: THIS_ID(tile_location_check);
 	}
 }
 
@@ -57,6 +75,9 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_6), 69) {
 		override: 69;
 		accepted_cargos: [[WOOD, 8], [CLAY, 8], [RFPR, 8]];
 	}
+	graphics {
+		tile_check: THIS_ID(tile_location_check);
+	}
 }
 
 item(FEAT_INDUSTRYTILES, THIS_ID(tile_7), 70) {
@@ -65,6 +86,9 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_7), 70) {
 		override: 70;
 		accepted_cargos: [[WOOD, 8], [CLAY, 8], [RFPR, 8]];
 	}
+	graphics {
+		tile_check: THIS_ID(tile_location_check);
+	}
 }
 
 item(FEAT_INDUSTRYTILES, THIS_ID(tile_8), 71) {
@@ -72,6 +96,9 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_8), 71) {
 		substitute: 71;
 		override: 71;
 		accepted_cargos: [[WOOD, 8], [CLAY, 8], [RFPR, 8]];
+	}
+	graphics {
+		tile_check: THIS_ID(tile_location_check);
 	}
 }
 
