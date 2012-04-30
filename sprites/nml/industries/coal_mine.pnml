@@ -11,11 +11,18 @@
  * Definition of the industry tiles
  * *************************************************/
 
+TILE_DISALLOW_NEARBY_CLASS(tile_nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
+TILE_ALLOW_PLAYER         (tile_player_check,                                                            THIS_ID(tile_nearby_industry))
+TILE_DISALLOW_SLOPES      (tile_location_check,                       CB_RESULT_LOCATION_DISALLOW, THIS_ID(tile_player_check))
+
 item(FEAT_INDUSTRYTILES, THIS_ID(tile_1), 0) {
 	property {
 		substitute: 0;
 		override: 0;
 		accepted_cargos: [[ENSP, 8]];
+	}
+	graphics {
+		THIS_ID(tile_location_check);
 	}
 }
 
@@ -25,6 +32,9 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_2), 1) {
 		override: 1;
 		accepted_cargos: [[ENSP, 8]];
 	}
+	graphics {
+		THIS_ID(tile_location_check);
+	}
 }
 
 item(FEAT_INDUSTRYTILES, THIS_ID(tile_3), 2) {
@@ -32,6 +42,9 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_3), 2) {
 		substitute: 2;
 		override: 2;
 		accepted_cargos: [[ENSP, 8]];
+	}
+	graphics {
+		THIS_ID(tile_location_check);
 	}
 }
 
@@ -41,6 +54,9 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_4), 3) {
 		override: 3;
 		accepted_cargos: [[ENSP, 8]];
 	}
+	graphics {
+		THIS_ID(tile_location_check);
+	}
 }
 
 item(FEAT_INDUSTRYTILES, THIS_ID(tile_5), 4) {
@@ -48,6 +64,9 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_5), 4) {
 		substitute: 4;
 		override: 4;
 		accepted_cargos: [[ENSP, 8]];
+	}
+	graphics {
+		THIS_ID(tile_location_check);
 	}
 }
 
@@ -57,6 +76,9 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_6), 5) {
 		override: 5;
 		accepted_cargos: [[ENSP, 8]];
 	}
+	graphics {
+		THIS_ID(tile_location_check);
+	}
 }
 
 item(FEAT_INDUSTRYTILES, THIS_ID(tile_7), 6) {
@@ -64,6 +86,9 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_7), 6) {
 		substitute: 6;
 		override: 6;
 		accepted_cargos: [[ENSP, 8]];
+	}
+	graphics {
+		THIS_ID(tile_location_check);
 	}
 }
 
