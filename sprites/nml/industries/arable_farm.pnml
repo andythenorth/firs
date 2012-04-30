@@ -138,7 +138,7 @@ item(FEAT_INDUSTRIES, arable_farm, IND_ARABLEFARM_ID) {
 		nearby_station_name:    string(STR_STATION, string(STR_TOWN), string(STR_IND_ARABLE_FARM));
 		prod_cargo_types: [GRAI, SGBT];
 		accept_cargo_types: [FMSP];
-		prod_multiplier: [4, 4];
+		prod_multiplier: [7, 7];
 		input_multiplier_1: [0, 0];
 		input_multiplier_2: [0, 0];
 		input_multiplier_3: [0, 0];

@@ -958,7 +958,7 @@ item(FEAT_INDUSTRIES, clay_pit, IND_CLAYPIT_ID) {
 		nearby_station_name:    string(STR_STATION, string(STR_TOWN), string(STR_IND_CLAY_PIT));
 		prod_cargo_types: [CLAY];
 		accept_cargo_types: [ENSP];
-		prod_multiplier: [20, 200];
+		prod_multiplier: [16, 0];
 		input_multiplier_1: [0, 0];
 		input_multiplier_2: [0, 0];
 		input_multiplier_3: [0, 0];
