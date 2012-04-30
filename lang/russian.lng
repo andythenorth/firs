@@ -59,9 +59,9 @@ STR_CARGO_NAME_FARM_SUPPLIES.acc                                                
 STR_CARGO_NAME_FRUITS                                                           :{G=p}Фрукты
 STR_CARGO_NAME_FRUITS.gen                                                       :фруктов
 STR_CARGO_NAME_FRUITS.acc                                                       :фрукты
-STR_CARGO_NAME_LUMBER                                                           :{G=p}Пиломатериалы
-STR_CARGO_NAME_LUMBER.gen                                                       :пиломатериалов
-STR_CARGO_NAME_LUMBER.acc                                                       :пиломатериалы
+STR_CARGO_NAME_LUMBER                                                           :{G=p}Лесоматериалы
+STR_CARGO_NAME_LUMBER.gen                                                       :лесоматериалов
+STR_CARGO_NAME_LUMBER.acc                                                       :лесоматериалы
 STR_CARGO_NAME_METAL                                                            :{G=m}Металл
 STR_CARGO_NAME_METAL.gen                                                        :металла
 STR_CARGO_NAME_METAL.acc                                                        :металл
@@ -102,11 +102,11 @@ STR_CARGO_UNIT_BUILDING_MATERIALS                                               
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} химикатов
 STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} глины
 STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} единиц{P 0 а ы ""} оборудования
-STR_CARGO_UNIT_FIBRES                                                           :{WEIGHT} растительных волокон
+STR_CARGO_UNIT_FIBRES                                                           :{SIGNED_WORD} тюк{P 0 "" а ов} растительных волокон
 STR_CARGO_UNIT_FISH                                                             :{WEIGHT} рыбы
 STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} единиц{P 0 а ы ""} агротехсредств
 STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} фруктов
-STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} пиломатериалов
+STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} лесоматериалов
 STR_CARGO_UNIT_METAL                                                            :{WEIGHT} металла
 STR_CARGO_UNIT_MILK                                                             :{VOLUME} молока
 STR_CARGO_UNIT_MNSP                                                             :{SIGNED_WORD} ящик{P 0 "" а ов} материалов
@@ -117,7 +117,7 @@ STR_CARGO_UNIT_SCRAP_METAL                                                      
 STR_CARGO_UNIT_STONE                                                            :{WEIGHT} известняка
 STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} сахарной свеклы
 STR_CARGO_UNIT_SUGARCANE                                                        :{WEIGHT} сахарного тростника
-STR_CARGO_UNIT_WOOL                                                             :{WEIGHT} шерсти
+STR_CARGO_UNIT_WOOL                                                             :{SIGNED_WORD} тюк{P 0 "" а ов} шерсти
 
 STR_CID_ALCOHOL                                                                 :{TINYFONT}СП
 STR_CID_BAUXITE                                                                 :{TINYFONT}БО
@@ -152,6 +152,7 @@ STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE                                             
 STR_ERR_LOCATION_NOT_ON_WATER                                                   :должно находиться на суше.
 STR_ERR_LOCATION_NOT_IN_DESERT                                                  :не должно находиться в пустыне.
 STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE                                             :не может находиться на крутых склонах.
+STR_ERR_LOCATION_LIMIT_1_PER_TOWN                                               :разрешено только одно предприятие такого типа на город.
 
 STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}Производство груза:{}  {SILVER}2/8{BLACK} за единицу бокситов{}  {SILVER}2/8{BLACK} за единицу химикатов{}  {SILVER}4/8{BLACK} за единицу металлолома{}{}Производство возрастёт, если в течении месяца будут доставлены любые два или более грузов.
 STR_EXTRA_BIOREFINERY                                                           :{BLACK}Перерабатывается зерно и сахар в бензин и химикаты.{}{}{SILVER}6/8{BLACK} продукции за единицу доставленного груза.
@@ -163,12 +164,12 @@ STR_EXTRA_ENGINEERING_SUPPLIES                                                  
 STR_EXTRA_FARM_SUPPLIES                                                         :{BLACK}Агротехсредства могут увеличить производство.{}{YELLOW}  {COMMA} единиц{P 0 а ы ""} доставлено в этом месяце
 STR_EXTRA_FERTILIZER_PLANT                                                      :{BLACK}Перерабатываются химикаты в удобрения для использования в хозяйствах.{}{}{SILVER}{WEIGHT_SHORT}/{VOLUME_SHORT}{BLACK} продукции за единицу доставленного груза.
 STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Производство груза:{}  {SILVER}3/8{BLACK} за единицу материалов{}  {SILVER}5/8{BLACK} за единицу рыбы{}{}Вырастет до {SILVER}8/8{BLACK} за единицу, если в течении месяца будут доставлены оба груза.
-STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Производство груза:{}  {SILVER}3/8{BLACK} за единицу материалов{}  {SILVER}5/8{BLACK} за единицу пиломатериалов{}{}Вырастет до {SILVER}8/8{BLACK} за единицу, если в течении месяца будут доставлены оба груза.
+STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Производство груза:{}  {SILVER}3/8{BLACK} за единицу материалов{}  {SILVER}5/8{BLACK} за единицу лесоматериалов{}{}Вырастет до {SILVER}8/8{BLACK} за единицу, если в течении месяца будут доставлены оба груза.
 STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Производятся предметы из стекла, такие как бутылки, банки и оконные стёкла.{}{}{BLACK}Производство груза:{}  {SILVER}6/8{BLACK} за единицу песка{}  {SILVER}2/8{BLACK} за единицу химикатов{}{}Вырастет до {SILVER}8/8{BLACK} за единицу, если в течении месяца будут доставлены оба груза.
 STR_EXTRA_GRAIN_MILL                                                            :{BLACK}Производство груза:{}  {SILVER}3/8{BLACK} за единицу материалов{}  {SILVER}5/8{BLACK} за единицу зерна{}{}Вырастет до {SILVER}8/8{BLACK} за единицу, если в течении месяца будут доставлены оба груза.
 STR_EXTRA_IRON_WORKS                                                            :{BLACK}Производство груза:{}  {SILVER}2/8{BLACK} за единицу древесины{}  {SILVER}2/8{BLACK} за единицу железной руды{}{}Вырастет до {SILVER}4/8{BLACK} за единицу, если в течении месяца будут доставлены оба груза.
 STR_EXTRA_LIME_KILN                                                             :{BLACK}Производство груза:{}  {SILVER}3/8{BLACK} за единицу известняка{}  {SILVER}3/8{BLACK} за единицу угля{}{}Вырастет до {SILVER}6/8{BLACK} за единицу, если в течении месяца будут доставлены оба груза.
-STR_EXTRA_LUMBER_YARD                                                           :{BLACK}Производятся такие предметы, как столбы и доски для ограды.{}{}{BLACK}Производство груза:{}  {SILVER}2/8{BLACK} за единицу химикатов{}  {SILVER}6/8{BLACK} за единицу пиломатериалов{}{}Вырастет до {SILVER}8/8{BLACK} за единицу, если в течении месяца будут доставлены оба груза.
+STR_EXTRA_LUMBER_YARD                                                           :{BLACK}Производятся такие предметы, как столбы и доски для ограды.{}{}{BLACK}Производство груза:{}  {SILVER}2/8{BLACK} за единицу химикатов{}  {SILVER}6/8{BLACK} за единицу лесоматериалов{}{}Вырастет до {SILVER}8/8{BLACK} за единицу, если в течении месяца будут доставлены оба груза.
 STR_EXTRA_MACHINE_SHOP                                                          :{BLACK}Производится и обслуживается техника.{}{}{SILVER}8/8{BLACK} продукции за единицу доставленного груза.
 STR_EXTRA_MEAT_PACKER                                                           :{BLACK}Производство груза:{}  {SILVER}3/8{BLACK} за единицу материалов{}  {SILVER}5/8{BLACK} за единицу скота{}{}Вырастет до {SILVER}8/8{BLACK} за единицу, если в течении месяца будут доставлены оба груза.
 STR_EXTRA_METAL_FABRICATION_PLANT                                               :{BLACK}Производятся окрашенные металлические конструкции.{}{}{BLACK}Производство груза:{}  {SILVER}2/8{BLACK} за единицу химикатов{}  {SILVER}6/8{BLACK} за единицу металла{}{}Вырастет до {SILVER}8/8{BLACK} за единицу, если в течении месяца будут доставлены оба груза.
@@ -177,6 +178,7 @@ STR_EXTRA_OIL_REFINERY                                                          
 STR_EXTRA_PAPER_MILL                                                            :{BLACK}Перерабатывается древесина для производства бумаги и картона.{}{}{BLACK}Производство груза:{}  {SILVER}4/8{BLACK} за единицу древесины{}  {SILVER}2/8{BLACK} за единицу глины{}  {SILVER}2/8{BLACK} за единицу химикатов{}{}Производство возрастёт, если в течении месяца будут доставлены любые два или более грузов.
 STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}Производятся предметы из пластмассы, такие как упаковочные материалы и товары для дома.{}{}{SILVER}6/8{BLACK} продукции за единицу доставленного груза.
 STR_EXTRA_RECYCLING_PLANT                                                       :{BLACK}Перерабатывается вторсырьё для повторного использования в производстве.{}{}{SILVER}6/8{BLACK} продукции за единицу доставленного груза.
+STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}Производит вторсырьё в зависимости от размера города.
 STR_EXTRA_SAWMILL                                                               :{BLACK}Распиливается древесина.{}{}{SILVER}6/8{BLACK} продукции за единицу доставленного груза.
 STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Производятся изделия из металла, такие как инструменты, плуги, ворота, лопаты и подковы.{}{}{SILVER}5/8{BLACK} продукции за единицу доставленного груза.
 STR_EXTRA_STEELMILL                                                             :{BLACK}Производство груза:{}  {SILVER}2/8{BLACK} за единицу железной руды{}  {SILVER}2/8{BLACK} за единицу угля{}  {SILVER}4/8{BLACK} за единицу металлолома{}{}Производство возрастёт, если в течении месяца будут доставлены любые два или более грузов.
@@ -187,10 +189,44 @@ STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Достигнут максимальный уровень производства
 STR_GENERIC_NEWLINE                                                             :{}
 
-STR_FUND_MIXED_FARM                                                             :{}{BLACK}Положение: {YELLOW}Нельзя разместить ни на снегу или в пустыне, ни на крутых склонах.
-STR_FUND_ARABLE_FARM                                                            :{}{BLACK}Положение: {YELLOW}Нельзя разместить ни на снегу или в пустыне, ни на склонах.
+STR_FUND_MIXED_FARM                                                             :{}{BLACK}Положение: {YELLOW}Нельзя разместить на снегу или в пустыне.
+STR_FUND_ARABLE_FARM                                                            :{}{BLACK}Положение: {YELLOW}Нельзя разместить на снегу или в пустыне.
 STR_FUND_FOREST                                                                 :{}{BLACK}Положение: {YELLOW}Нельзя разместить в пустыне.
 STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}Положение: {YELLOW}Нельзя разместить на снегу.
+
+STR_FUND_AVAILABLE_FROM                                                         :{}{BLACK}Доступно с: {YELLOW}{STRING}
+STR_FUND_AVAILABLE_FROM_DATE_ALUMINIUM_PLANT                                    :1923
+STR_FUND_AVAILABLE_FROM_DATE_BAUXITE_MINE                                       :1923
+STR_FUND_AVAILABLE_FROM_DATE_BIOREFINERY                                        :2001
+STR_FUND_AVAILABLE_FROM_DATE_CEMENT_PLANT                                       :1902
+STR_FUND_AVAILABLE_FROM_DATE_DAIRY                                              :1892
+STR_FUND_AVAILABLE_FROM_DATE_DREDGING_SITE                                      :1852
+STR_FUND_AVAILABLE_FROM_DATE_FERTILISER_PLANT                                   :1927
+STR_FUND_AVAILABLE_FROM_DATE_FURNITURE_FACTORY                                  :1840
+STR_FUND_AVAILABLE_FROM_DATE_JUNKYARD                                           :1878
+STR_FUND_AVAILABLE_FROM_DATE_MACHINE_SHOP                                       :1870
+STR_FUND_AVAILABLE_FROM_DATE_METAL_FABRICATION_PLANT                            :1852
+STR_FUND_AVAILABLE_FROM_DATE_METAL_FOUNDRY                                      :1762
+STR_FUND_AVAILABLE_FROM_DATE_OILREFINERY                                        :1884
+STR_FUND_AVAILABLE_FROM_DATE_OILRIG                                             :1967
+STR_FUND_AVAILABLE_FROM_DATE_OILWELLS                                           :1884
+STR_FUND_AVAILABLE_FROM_DATE_PAPERMILL                                          :1610
+STR_FUND_AVAILABLE_FROM_DATE_PETROL_PUMP                                        :1909
+STR_FUND_AVAILABLE_FROM_DATE_PLASTICS_PLANT                                     :1931
+STR_FUND_AVAILABLE_FROM_DATE_RECYCLING_DEPOT                                    :1997
+STR_FUND_AVAILABLE_FROM_DATE_RECYCLING_PLANT                                    :1997
+STR_FUND_AVAILABLE_FROM_DATE_STEELMILL                                          :1873
+STR_FUND_AVAILABLE_FROM_DATE_STOCKYARD                                          :1867
+STR_FUND_AVAILABLE_FROM_DATE_SUGAR_REFINERY                                     :1730
+STR_FUND_AVAILABLE_FROM_DATE_TEXTILE_MILL                                       :1762
+
+STR_FUND_AVAILABLE_UNTIL                                                        :{}{BLACK}Недоступно после: {YELLOW}{STRING}
+STR_FUND_AVAILABLE_UNTIL_DATE_IRON_WORKS                                        :1901
+STR_FUND_AVAILABLE_UNTIL_DATE_SMITHY_FORGE                                      :1948
+
+
+STR_TOWN                                                                        :{STRING}
+STR_STATION                                                                     :{STRING} {STRING}
 
 STR_IND_ALUMINIUM_PLANT                                                         :{G=m}Алюминиевый завод
 STR_IND_ALUMINIUM_PLANT.gen                                                     :алюминиевого завода
