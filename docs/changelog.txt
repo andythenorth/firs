@@ -6,6 +6,33 @@ FIRS Industry Replacement Set Changelog
 0.7.x Releases
 --------------
 
+*0.7.5*
+
+*Fixes*
+- added missing space in fund menu 'Available from' text (OliTTD)
+- remove shape checks at Quarry and Clay Pit, thereby enabling terraforming 
+	- increases chance that these industries appear on steep maps
+- allow Hotels to build near town instead of forcing to build in town (hotels weren't built often)
+- 1-tile industry spacing buffer for Sawmill didn't have cb enabled
+
+*Changes*
+- use smaller trees at food market
+- improve appearance of Lumber Yard shed
+
+*Features*
+- 1-tile industry spacing for Steel Mill, Paper Mill, Oil Refinery, Iron Ore Mine, Coal Mine
+	- prevents industries touching when built
+- randomise initial production for industries that produce cargo
+- make Forests easier to see with invisibility on - prevents machinery tile being transparent
+- maximum construction dates for Iron Works (1901) and Smithy Forge (1948)
+- Iron Works and Lumber Yard can now locate on slopes
+
+*Translations additions / updates*
+- French (OliTTD)
+- Russian (akasoft)
+- Spanish (Terkhen)
+
+
 *0.7.4*
 
 *Fixes*
