@@ -118,12 +118,14 @@ STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  
 STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Marchandises produites{NBSP}:{}  3{NBSP}t pour 8{NBSP}t livrées de fournitures industrielles{}  5{NBSP}t pour 8{NBSP}t livrées de laine{}  5{NBSP}t pour 8{NBSP}t livrées de fibres végétales{}{}La production augmente si des fournitures industrielles sont livrées dans le même mois que d'autres marchandises.
 
 STR_FUND_ARABLE_FARM                                                            :{}{BLACK}Emplacement{NBSP}: {YELLOW}ne peut pas être construite sur de la neige ni dans le désert.
-STR_FUND_AVAILABLE_FROM                                                         :{}{BLACK}Disponible à partir de{NBSP}:{NBSP}{YELLOW}{STRING}
-# All STR_FUND_AVAILABLE_FROM_DATE_* left out intentionally as it would be counter-productive to include them.
-# It's indeed better to pick up dates from the original english.lng instead of risking a typo or a mismatch.
 STR_FUND_FOREST                                                                 :{}{BLACK}Emplacement{NBSP}: {YELLOW}ne peut pas être placée dans le désert.
 STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}Emplacement{NBSP}: {YELLOW}ne peut pas être placé sur de la neige.
 STR_FUND_MIXED_FARM                                                             :{}{BLACK}Emplacement{NBSP}: {YELLOW}ne peut pas être construite sur de la neige ni dans le désert.
+
+STR_FUND_AVAILABLE_FROM                                                         :{}{BLACK}Disponible à partir de{NBSP}:{NBSP}{YELLOW}{STRING}
+STR_FUND_AVAILABLE_UNTIL                                                        :{}{BLACK}Plus disponible après{NBSP}:{NBSP}{YELLOW}{STRING}
+# All STR_FUND_AVAILABLE_FROM/UNTIL_DATE_* left out intentionally as it would be counter-productive to include them.
+# It's indeed better to pick up dates by default from the original english.lng file instead of risking a typo or a mismatch.
 
 STR_GENERIC_NEWLINE                                                             :{}
 
