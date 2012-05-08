@@ -98,7 +98,7 @@ item(FEAT_INDUSTRIES, hotel, IND_HOTEL_ID) {
 		prob_random: 10;
 		prob_in_game: 20;
 		prospect_chance: 0.75;
-		fund_cost_multiplier: 6;
+		fund_cost_multiplier: 15;
 		map_colour: 190;
 		remove_cost_multiplier: 0;
 		spec_flags:             bitmask(IND_FLAG_BUILT_NEAR_TOWN); /*use build near town not in town, hotel is large and town locations hard to find */
