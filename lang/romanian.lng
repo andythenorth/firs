@@ -1,0 +1,177 @@
+##grflangid 0x28
+##plural 0
+
+STR_GRF_NAME                                                                    :{TITLE}Nume
+
+STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :Distanþa maximã a zonelor de pescuit, a sondelor petroliere ºi zonelor de dragare faþã de coastã.
+STR_PARAM_DESC_STAT_RATING                                                      :Cotarea gãrii are influenþã asupra mãrfurilor livrate de un obiectiv industrial acelei gãri. Cu cât este mai mare cotarea, cu atât se livreazã mai mult.
+STR_PARAM_DESC_DEBUG                                                            :Doar pentru dezvoltatori
+STR_PARAM_NAME_ECONOMIES                                                        :Economie
+STR_PARAM_NAME_NEVER_CLOSE                                                      :Permite industriilor primare sã se închidã
+STR_PARAM_NAME_NO_OPENINGS                                                      :Împiedicã apariþia noilor industrii în timpul jocului
+STR_PARAM_NAME_PRIMARY_PRODUCTION_DECREASE                                      :Permite descreºterea producþiei
+STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            :Permite industriilor secundare sã se închidã
+STR_PARAM_VALUE_ECONOMIES_TEST_ECONOMY                                          :Testare econimie
+STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0                                         :Fãrã limitã
+STR_PARAM_NAME_STAT_RATING                                                      :Algoritm cotare gãri
+STR_PARAM_VALUE_STAT_RATING_DEFAULT                                             :Predefinit
+STR_PARAM_VALUE_STAT_RATING_REDUCED_TIME                                        :Mãreºte cotarea - reduce effect of time since last pickup
+STR_PARAM_VALUE_STAT_RATING_100                                                 :Mereu 100%
+
+
+STR_CARGO_NAME_ALCOHOL                                                          :Alcool
+STR_CARGO_NAME_BAUXITE                                                          :Bauxitã
+STR_CARGO_NAME_BUILDING_MATERIALS                                               :Materiale de construcþii
+STR_CARGO_NAME_CHEMICALS                                                        :Produse chimice
+STR_CARGO_NAME_CLAY                                                             :Lut
+STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :Echipament de inginerie
+STR_CARGO_NAME_FIBRES                                                           :Fibre vegetale
+STR_CARGO_NAME_FISH                                                             :Peºte
+STR_CARGO_NAME_FARM_SUPPLIES                                                    :Produse agricole
+STR_CARGO_NAME_FRUITS                                                           :Fructe
+STR_CARGO_NAME_LUMBER                                                           :Cherestea
+STR_CARGO_NAME_METAL                                                            :Metal
+STR_CARGO_NAME_MILK                                                             :Lapte
+STR_CARGO_NAME_MANUFACTURING_SUPPLIES                                           :Consumabile
+STR_CARGO_NAME_PETROL                                                           :Petrol
+STR_CARGO_NAME_RECYCLABLES                                                      :Produse reciclabile
+STR_CARGO_NAME_SAND                                                             :Nisip
+STR_CARGO_NAME_SCRAP_METAL                                                      :Deºeuri metalice
+STR_CARGO_NAME_STONE                                                            :Piatrã
+STR_CARGO_NAME_SUGAR_BEET                                                       :Sfeclã de zahãr
+STR_CARGO_NAME_SUGARCANE                                                        :Trestie de zahãr
+STR_CARGO_NAME_WOOL                                                             :Lânã
+
+STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} de alcool
+STR_CARGO_UNIT_BAUXITE                                                          :{WEIGHT} de bauxitã
+STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WEIGHT} materiale de construcþii
+STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} de chimicale
+STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} de lut
+STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} cutii{P 0 "" s} cu echipamente de inginerie
+STR_CARGO_UNIT_FIBRES                                                           :{SIGNED_WORD} baloþi{P 0 "" s} fibre vegetale
+STR_CARGO_UNIT_FISH                                                             :{WEIGHT} de peºte
+STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} cutii{P 0 "" s} cu produse agricole
+STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} de fructe
+STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} de cherestea
+STR_CARGO_UNIT_METAL                                                            :{WEIGHT} de metal
+STR_CARGO_UNIT_MILK                                                             :{VOLUME} de lapte
+STR_CARGO_UNIT_MNSP                                                             :{SIGNED_WORD} cutii{P 0 "" s} cu consumabile
+STR_CARGO_UNIT_PETROL                                                           :{VOLUME} de petrol
+STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} de produse reciclabile
+STR_CARGO_UNIT_SAND                                                             :{WEIGHT} de nisip
+STR_CARGO_UNIT_SCRAP_METAL                                                      :{WEIGHT} de deºeuri metalice
+STR_CARGO_UNIT_STONE                                                            :{WEIGHT} de piatrã
+STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} de sfeclã de zahãr
+STR_CARGO_UNIT_SUGARCANE                                                        :{WEIGHT} de trestie de zahãr
+STR_CARGO_UNIT_WOOL                                                             :{SIGNED_WORD} baloþi{P 0 "" s} de lânã
+
+STR_CID_ALCOHOL                                                                 :{TINYFONT}AL
+STR_CID_BAUXITE                                                                 :{TINYFONT}BX
+STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}BM
+STR_CID_CHEMICALS                                                               :{TINYFONT}CH
+STR_CID_CLAY                                                                    :{TINYFONT}CY
+STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}ES
+STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}FS
+STR_CID_FIBRES                                                                  :{TINYFONT}PF
+STR_CID_FISH                                                                    :{TINYFONT}FI
+STR_CID_LUMBER                                                                  :{TINYFONT}LU
+STR_CID_MANUFACTURING_SUPPLIES                                                  :{TINYFONT}MS
+STR_CID_METAL                                                                   :{TINYFONT}MT
+STR_CID_MILK                                                                    :{TINYFONT}MK
+STR_CID_PETROL                                                                  :{TINYFONT}PT
+STR_CID_RECYCLABLES                                                             :{TINYFONT}RC
+STR_CID_SAND                                                                    :{TINYFONT}SA
+STR_CID_SCRAP_METAL                                                             :{TINYFONT}SM
+STR_CID_STONE                                                                   :{TINYFONT}ST
+STR_CID_SUGAR_BEET                                                              :{TINYFONT}SB
+STR_CID_SUGARCANE                                                               :{TINYFONT}SC
+STR_CID_WOOL                                                                    :{TINYFONT}WL
+
+STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}Producþia mãrfii:{}  2t pentru 8t de bauxitã{}  2t pentru 8t de produse chimice{}  4t pentru 8t de deºeuri metalice
+STR_EXTRA_BIOREFINERY                                                           :{BLACK}Transformã cereale ºi zahãr în petrol ºi produse chimice.{}{}6t de producþie pentru 8t livrate.
+STR_EXTRA_BREWERY                                                               :{BLACK}Producþia mãrfii:{}  3t pentru 8t de produse consumabile{}  5t pentru 8t cereale{}  5t pentru 8t fructe
+STR_EXTRA_BRICKWORKS                                                            :{BLACK}Producþia mãrfii:{}  2t pentru 8t de cãrbuni{}  2t pentru 8t de nisip{}  4t pentru 8t de lut
+STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Producþia mãrfii:{}  2t pentru 8t de cãrbuni{}  2t pentru 8t de lut{}  4t pentru 8t de piatrã
+STR_EXTRA_DAIRY                                                                 :{BLACK}Producþia mãrfii:{}  3t pentru 8t de produse consumabile{}  5t pentru 8t de lapte
+STR_EXTRA_ENGINEERING_SUPPLIES                                                  :{BLACK}Echipamentele de inginerie ar putea mãri producþia.{}{YELLOW}  {COMMA} cutii livrate luna aceasta
+STR_EXTRA_FARM_SUPPLIES                                                         :{BLACK}Produsele agricole ar putea mãri producþia.{}{YELLOW}  {COMMA} cutii livrate luna aceasta
+STR_EXTRA_FERTILIZER_PLANT                                                      :{BLACK}Transformã produsele chimice în îngrãºãmânt pentru ferme.{}{}{WEIGHT_SHORT} produs pentru {VOLUME_SHORT} livrat.
+STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Producþia mãrfii:{}  3t pentru 8t de produse consumabile{}  5t pentru 8t de peºte
+STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Cargo production:{}  3t pentru 8t de produse consumabile{}  5t pentru 8t de cherestea
+STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Prouce obiecte din sticlã.{}{}{BLACK}Producþia mãrfii:{}  6t pentru 8t de nisip{}  2t pentru 8t de produse chimice
+STR_EXTRA_GRAIN_MILL                                                            :{BLACK}Producþia mãrfii:{}  3t pentru 8t de produse consumabile{}  5t pentru 8t de cereale
+STR_EXTRA_IRON_WORKS                                                            :{BLACK}Producþia mãrfii:{}  2t pentru 8t de lemn{}  2t pentru 8t minereu de fier
+STR_EXTRA_LIME_KILN                                                             :{BLACK}Producþia mãrfii:{}  3t pentru 8t de piatrã{}  3t pentru 8t de cãrbune
+STR_EXTRA_LUMBER_YARD                                                           :{BLACK}Produce obiecte din lemn.{}{}{BLACK}Producþia mãrfii:{}  2t pentru 8t de peoduse chimice{}  6t pentru 8t de cherestea
+STR_EXTRA_MACHINE_SHOP                                                          :{BLACK}Construcþii de maºini.{}{}8t de producþie per 8t livrate.
+STR_EXTRA_MEAT_PACKER                                                           :{BLACK}Producþia mãrfii:{}  3t pentru 8t de produse consumabile{}  5t pentru 8t de animale
+STR_EXTRA_METAL_FABRICATION_PLANT                                               :{BLACK}Produce componente metalice.{}{}{BLACK}Producþia mãrfii:{}  2t pentru 8t de produse chimice{}  6t pentru 8t de metal
+STR_EXTRA_METAL_FOUNDRY                                                         :{BLACK}Produce bunuri din metal ºi produse electrocasnice.{}{}{BLACK}Producþia mãrfii:{}  2t pentru 8t de produse chimice{}  6t pentru 8t de metal
+STR_EXTRA_OIL_REFINERY                                                          :{BLACK}Rafineazã petrolul în produse chimice.{}{}6t de producþie pentru 8t livrate.
+STR_EXTRA_PAPER_MILL                                                            :{BLACK}Produce hârtie ºi produse de celulozã.{}{}{BLACK}Producþia mãrfii:{}  4t pentru 8t de lemn{}  2t pentru 8t de lut{}  2t pentru 8t de produse chimice
+STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}Produce bunuri din material plastic.{}{}6t de producºie pentru 8t delivered.
+STR_EXTRA_RECYCLING_PLANT                                                       :{BLACK}Processes recyclables for reuse in manufacturing.{}{}6t production per 8t livrate.
+STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}Produse reciclabile în funþie de dimensiunile oraºului.
+STR_EXTRA_SAWMILL                                                               :{BLACK}Prelucreazã lemnul.{}{}6t de producþie pentru 8t livrate.
+STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Produce obiecte metalice.{}{}8t de producþie pentru 8t livrate.
+STR_EXTRA_STEELMILL                                                             :{BLACK}Producþia mãrfii:{}  2t pentru 8t minereu de fier{}  2t pentru 8t de cãrbune{}  4t pentru 8t de deºeuri metalice
+STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Producþia mãrfii:{}  3t pentru 8t de produse consumabile{}  5t pentru 8t de zahãr
+STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Producþia mãrfii:{}  3t pentru 8t de produse consumabile{}  5t pentru 8t de lânã{}  5t pentru 8t de fibre vegetale
+
+STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ DEBUG ------------{}Producþie în luna curentã:{}Marfa 1: {WHITE}{COMMA}{BLACK}{}Marfa 2: {WHITE}{COMMA}{BLACK}{}zile de la ultima livrare: {WHITE}{COMMA}{BLACK}
+STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}S-a atins nivelul maxim de producþie.
+STR_GENERIC_NEWLINE                                                             :{}
+
+STR_FUND_MIXED_FARM                                                             :{}{BLACK}Locaþie: {YELLOW}nu poate fi construit pe zãpadã sau în deºert.
+STR_FUND_ARABLE_FARM                                                            :{}{BLACK}Locaþie: {YELLOW}nu poate fi construit pe zãpadã sau în deºert.
+STR_FUND_FOREST                                                                 :{}{BLACK}Locaþie: {YELLOW}nu poate fi construitîn deºert.
+STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}Locaþie: {YELLOW}nu poate fi construit pe zãpadã.
+
+STR_FUND_AVAILABLE_FROM                                                         :{}{BLACK}Disponibil din: {YELLOW}{STRING}
+
+STR_FUND_AVAILABLE_UNTIL                                                        :{}{BLACK}Indisponibil dupã: {YELLOW}{STRING}
+
+
+STR_TOWN                                                                        :{STRING}
+STR_STATION                                                                     :{STRING} {STRING}
+
+STR_IND_ALUMINIUM_PLANT                                                         :Fabricã de aluminiu
+STR_IND_ARABLE_FARM                                                             :Fermã arabilã
+STR_IND_BAUXITE_MINE                                                            :Minã de bauxitã
+STR_IND_BIOREFINERY                                                             :Rafinãrie biologicã
+STR_IND_BREWERY                                                                 :Fabricã de bere
+STR_IND_BRICK_WORKS                                                             :Fabricã de cãrãmidã
+STR_IND_BUILDERS_YARD                                                           :ªantier de construcþie
+STR_IND_CEMENT_PLANT                                                            :Fabricã de ciment
+STR_IND_CLAY_PIT                                                                :Groapã de lut
+STR_IND_DAIRY                                                                   :Fabricã de lapte
+STR_IND_DAIRYFARM                                                               :Fermã de vaci
+STR_IND_DREDGING_SITE                                                           :Dragaj
+STR_IND_FERTILISER_PLANT                                                        :Îngrãºãmânt
+STR_IND_FISHING_GROUND                                                          :Zonã de pescuit
+STR_IND_FISHING_HARBOUR                                                         :port pescãresc
+STR_IND_FOOD_MARKET                                                             :Bãcãnie
+STR_IND_FURNITURE_FACTORY                                                       :Fabricã de mobilã
+STR_IND_GLASS_WORKS                                                             :Fabricã de sticlã
+STR_IND_GRAIN_MILL                                                              :Moarã de cereale
+STR_IND_HARDWARE_STORE                                                          :Magazin de hardware
+STR_IND_HOTEL                                                                   :Hotel
+STR_IND_IRON_WORKS                                                              :Oþelãrie
+STR_IND_JUNKYARD                                                                :Groapã de gunoi
+STR_IND_LIME_KILN                                                               :Cuptor de var
+STR_IND_LUMBER_YARD                                                             :Fabricã de cherestea
+STR_IND_MACHINE_SHOP                                                            :Magazin auto
+STR_IND_METAL_FABRICATION_PLANT                                                 :Uzinã de prelucrarea metalului
+STR_IND_METAL_FOUNDRY                                                           :Atelier de prelucrarea metalului
+STR_IND_MIXEDFARM                                                               :Fermã mixtã
+STR_IND_PETROLPUMP                                                              :Staþie de petrol
+STR_IND_PLASTICS_PLANT                                                          :Fabricã de materiale plastice
+STR_IND_QUARRY                                                                  :Carierã
+STR_IND_RECYCLING_DEPOT                                                         :Depozit de materiale reciclabile
+STR_IND_RECYCLING_PLANT                                                         :Fabricã de reciclarea materialelor
+STR_IND_SHEEPFARM                                                               :Fermã de oi
+STR_IND_SMITHY_FORGE                                                            :Fierãrie
+STR_IND_STOCKYARD                                                               :Þarc de vite
+STR_IND_SUGAR_REFINERY                                                          :Rafinãrie de zahãr
+STR_IND_SUPERMARKET                                                             :Supermarket
+STR_IND_TEXTILE_MILL                                                            :Fabricã de textile
