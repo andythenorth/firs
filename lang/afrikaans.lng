@@ -1,0 +1,227 @@
+##grflangid 0x1B
+##plural 0
+
+STR_GRF_DESC                                                                    :{ORANGE}FIRS Nywerheid vervanging stel{}{BLACK}Aan u gebring deur andythenorth, FooBar, planetmaker, Terkhen and Yexo, met help van baie ander. {SILVER}Sien readme vir meer inligting, ingesluit hoe om FIRS te gebruik. {BLACK}Lisensie: GPL v2.
+STR_GRF_NAME                                                                    :{TITLE}
+STR_GRF_URL                                                                     :http://dev.openttdcoop.org/projects/firs
+
+STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :Die maksimum afstand teëls wat die vis waters, oliebore en baggerwerk-terreine van die kus af is. 
+STR_PARAM_DESC_STAT_RATING                                                      :Stasie graderings beïnvloed die hoeveelheid vrag wat afgelewer word deur 'n nywerheid aan die stasie, hoe hoër die telling, hoe meer word gelewer.
+STR_PARAM_DESC_DEBUG                                                            :Vir developers alleenlik
+STR_PARAM_DESC_ECONOMIES                                                        :Wanneer dit klaar is, sal FIRS beskik oor 'n groot keuse van ekonomieë. Vragte en nywerhede sal wissel in elke ekonomie. Vrag betalings tariewe sal ook verskillend wees in elke ekonomie. {}{}{SILVER}Tans is daar net een ekonomie is beskikbaar :)
+STR_PARAM_DESC_NEVER_CLOSE                                                      :By verstek, 'n FIRS primêre nywerheid sal nooit toemaak {} {} As primêre sluiting aangeskakel is, sal die primêre nywerhede sluit wanneer die produksie val na lae vlakke (vlak wissel vir elke tipe industrie) . {SILVER}Vereiste "primêre produksie-afname" aan.
+STR_PARAM_DESC_NO_OPENINGS                                                      :By verstek, nuwe nywerhede sal begin tydens spel. {} Indien 'n "verhoed die opening" aangeskakel is sal nywerhede nie oopmaak tydens die spel nie, en die spelers sal nie in staat wees om die vooruitsig vir nywerhede te bevonds nie.
+STR_PARAM_DESC_PRIMARY_PRODUCTION_DECREASE                                      :By verstek, FIRS se primêre nywerheid produksie sal nooit verminder {} {} As primêre produksie afname aangeskakel is, sal daar 'n kans wees dat die produksie sal afneem, as daar geen voorrade afgelewer word in 'n maand. Indien produksie hoog is, sal die kans groter wees vir 'n daling.
+STR_PARAM_DESC_SECONDARY_NEVER_CLOSE                                            :By verstek, FIRS sekondêre nywerhede sal nooit toemaak {} {} Indien sekondêre sluiting aangeskakel is, sal sekondêre nywerhede sluit indien daar geen vrag vervoer word vir 'n lang tyd.
+STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY                                   :Maksimum kus afstand van mariene nywerhede in teëls 
+STR_PARAM_NAME_DEBUG                                                            :Wys debug teks
+STR_PARAM_NAME_ECONOMIES                                                        :Ekonomy
+STR_PARAM_NAME_NEVER_CLOSE                                                      :Laat primêre nywerhede toe om te sluit.
+STR_PARAM_NAME_NO_OPENINGS                                                      :Verhoed dat nywerhede oop maak tydens die spel 
+STR_PARAM_NAME_PRIMARY_PRODUCTION_DECREASE                                      :Laat primêre produksie afneem
+STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            :Laat sekondere nywerhede toe om te sluit.
+STR_PARAM_VALUE_ECONOMIES_TEST_ECONOMY                                          :Toets Ekonomie
+STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0                                         :Geen limiet
+STR_PARAM_NAME_STAT_RATING                                                      :Stasie gradering algorithm
+STR_PARAM_VALUE_STAT_RATING_DEFAULT                                             :Default
+STR_PARAM_VALUE_STAT_RATING_REDUCED_TIME                                        :Verbeterde gradering - verminder die effek van tyd sedert die laaste aflewering
+STR_PARAM_VALUE_STAT_RATING_100                                                 :Altyd 100%
+
+
+STR_CARGO_NAME_ALCOHOL                                                          :Alkohol
+STR_CARGO_NAME_BAUXITE                                                          :Bauxiet 
+STR_CARGO_NAME_BUILDING_MATERIALS                                               :Bou Materiaal
+STR_CARGO_NAME_CHEMICALS                                                        :Chemikalieë
+STR_CARGO_NAME_CLAY                                                             :Klei
+STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :Ingenieurswese Benodighede
+STR_CARGO_NAME_FIBRES                                                           :Plant Vesels
+STR_CARGO_NAME_FISH                                                             :Vis
+STR_CARGO_NAME_FARM_SUPPLIES                                                    :Plaas Benodighede
+STR_CARGO_NAME_FRUITS                                                           :Vrugte
+STR_CARGO_NAME_LUMBER                                                           :Hout
+STR_CARGO_NAME_METAL                                                            :Metaal
+STR_CARGO_NAME_MILK                                                             :Melk
+STR_CARGO_NAME_MANUFACTURING_SUPPLIES                                           :Vervaardigings Benodighede
+STR_CARGO_NAME_PETROL                                                           :Petrol
+STR_CARGO_NAME_RECYCLABLES                                                      :Herwinbaares
+STR_CARGO_NAME_SAND                                                             :Sand
+STR_CARGO_NAME_SCRAP_METAL                                                      :Skrap Metaal
+STR_CARGO_NAME_STONE                                                            :Stene
+STR_CARGO_NAME_SUGAR_BEET                                                       :Suiker Beet
+STR_CARGO_NAME_SUGARCANE                                                        :Suikerriet
+STR_CARGO_NAME_WOOL                                                             :Wol
+
+STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} alkohol
+STR_CARGO_UNIT_BAUXITE                                                          :{WEIGHT} bauxite
+STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WEIGHT} bou materiaal
+STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} chemikalieë
+STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} klei
+STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} krat{P 0 "" te} ingenieurswese benodighede
+STR_CARGO_UNIT_FIBRES                                                           :{SIGNED_WORD} ba{P 0 al le} plant vesels
+STR_CARGO_UNIT_FISH                                                             :{WEIGHT} vis
+STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} krat{P 0 "" te} plaas benodighede
+STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} vrugte
+STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} hout
+STR_CARGO_UNIT_METAL                                                            :{WEIGHT} metaal
+STR_CARGO_UNIT_MILK                                                             :{VOLUME} melk
+STR_CARGO_UNIT_MNSP                                                             :{SIGNED_WORD} krat{P 0 "" te} vervaardigings benodighede
+STR_CARGO_UNIT_PETROL                                                           :{VOLUME} petrol
+STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} herwinbares
+STR_CARGO_UNIT_SAND                                                             :{WEIGHT} sand
+STR_CARGO_UNIT_SCRAP_METAL                                                      :{WEIGHT} skrap metaal
+STR_CARGO_UNIT_STONE                                                            :{WEIGHT} stene
+STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} suiker beet
+STR_CARGO_UNIT_SUGARCANE                                                        :{WEIGHT} suikerriet
+STR_CARGO_UNIT_WOOL                                                             :{SIGNED_WORD} ba{P 0 al le} wol
+
+STR_CID_ALCOHOL                                                                 :{TINYFONT}AL
+STR_CID_BAUXITE                                                                 :{TINYFONT}BX
+STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}BM
+STR_CID_CHEMICALS                                                               :{TINYFONT}CH
+STR_CID_CLAY                                                                    :{TINYFONT}CY
+STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}ES
+STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}FS
+STR_CID_FIBRES                                                                  :{TINYFONT}PF
+STR_CID_FISH                                                                    :{TINYFONT}FI
+STR_CID_LUMBER                                                                  :{TINYFONT}LU
+STR_CID_MANUFACTURING_SUPPLIES                                                  :{TINYFONT}MS
+STR_CID_METAL                                                                   :{TINYFONT}MT
+STR_CID_MILK                                                                    :{TINYFONT}MK
+STR_CID_PETROL                                                                  :{TINYFONT}PT
+STR_CID_RECYCLABLES                                                             :{TINYFONT}RC
+STR_CID_SAND                                                                    :{TINYFONT}SA
+STR_CID_SCRAP_METAL                                                             :{TINYFONT}SM
+STR_CID_STONE                                                                   :{TINYFONT}ST
+STR_CID_SUGAR_BEET                                                              :{TINYFONT}SB
+STR_CID_SUGARCANE                                                               :{TINYFONT}SC
+STR_CID_WOOL                                                                    :{TINYFONT}WL
+
+STR_ERR_CLIMATE_TOYLAND                                                         :{ORANGE}FIRS is nie bedoel om in die Toyland klimaat te gebruik nie
+STR_ERR_INCOMPATIBLE_SET                                                        :{ORANGE}E01: {YELLOW}Onaanpasbstel: {ORANGE}{STRING} {YELLOW}Lees die FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_PARAM_CANSET                                               :{ORANGE}E02: {YELLOW}Onaanpasbparameter: {ORANGE}CanSet parameter 2 moet 0 wees om met FIRS te werk. {YELLOW}Lees die FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_PARAM_CITYSET                                              :{ORANGE}E02: {YELLOW}Onaanpasbparameter: {ORANGE}NA City Set parameter 2 must 0 wees om met FIRS te werk. {YELLOW}Lees die FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_SET_TTRS_VERSION                                           :{ORANGE}E04: {YELLOW}Onaanpasbweergawe: {ORANGE}Total Town Replacement Set moet weergawe 3.11 of nuwer wees. {YELLOW}Lees die FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_OPENTTD_VERSION                                                         :{ORANGE}E00: FIRS benodig OpenTTD 1.2.0 / trunk r22780 of hoër. {YELLOW}Lees die FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+
+STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE                                             :moet onder die sneeulyn wees.
+STR_ERR_LOCATION_NOT_ON_WATER                                                   :moet op droë land wees.
+STR_ERR_LOCATION_NOT_IN_DESERT                                                  :kannie in die woestyn wees nie.
+STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE                                             :kannie op styl slope geplaas word nie.
+STR_ERR_LOCATION_LIMIT_1_PER_TOWN                                               :net een van die nywerheid word per dorp toe gelaat.
+
+STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}Vrag produksie:{} 2t per 8t bauxiet afgelewer{} 2t per 8t chemikalieë afgelewer{} 4t per 8t skroot metaal afgelewer{}{}Produksie neem toe as twee of meer vragte afgelewer word binne 'n maand van mekaar.
+STR_EXTRA_BIOREFINERY                                                           :{BLACK}Prosesseer graan and suiker tot petrol and chemikalieë.{}{}6t produksie per 8t afgelewer.
+STR_EXTRA_BREWERY                                                               :{BLACK}Vrag produksie:{} 3t per 8t vervaardigings benodighede afgelewer{} 5t per 8t graan afgelewer{} 5t per 8t vrugte afgelewer{}{}Produksie neem toe as vervaardigings benodighede afgelewer word binne 'n maand van ander vragte.
+STR_EXTRA_BRICKWORKS                                                            :{BLACK}Vrag produksie:{} 2t per 8t steenkool afgelewer{} 2t per 8t sand afgelewer{} 4t per 8t klei afgelewer{}{}Produksie neem toe as twee of meer vragte afgelewer word binne 'n maand van mekaar.
+STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Vrag produksie:{} 2t per 8t steenkool afgelewer{} 2t per 8t klei afgelewer{} 4t per 8t stene afgelewer{}{}Produksie neem toe as twee of meer vragte afgelewer word binne 'n maand van mekaar.
+STR_EXTRA_DAIRY                                                                 :{BLACK}Vrag produksie:{} 3t per 8t vervaardigings benodighede afgelewer{} 5t per 8t melk afgelewer{}{}Vermeeder to 8t per 8t wanneer beide vragte afgelewer word binne 'n maand van mekaar.
+STR_EXTRA_ENGINEERING_SUPPLIES                                                  :{BLACK}Ingenieurswese Benodighede mag produksie verhoog.{}{YELLOW} {COMMA} kratte afgelewer die maand.
+STR_EXTRA_FARM_SUPPLIES                                                         :{BLACK}Plaas benodighede mag produksie verhoog.{}{YELLOW} {COMMA} kratte afgelewer die maand.
+STR_EXTRA_FERTILIZER_PLANT                                                      :{BLACK}Prosesseer chemikalieë tot kunsmis vir gebruik deur plase.{}{}{WEIGHT_SHORT} produksie per {VOLUME_SHORT} afgelewer.
+STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Vrag produksie:{} 3t per 8t vervaardigings benodighede afgelewer{} 5t per 8t vis afgelewer{}{}Vermeeder tot 8t per 8t wanneer beide vragte afgelewer word binne 'n maand van mekaar.
+STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Vrag produksie:{} 3t per 8t vervaardigings benodighede afgelewer{} 5t per 8t hout afgelewer{}{}Vermeeder tot 8t per 8t wanneer beide vragte afgelewer word binne 'n maand van mekaar.
+STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Produseer glass items soos bottels, flesse en venster glas.{}{}{BLACK}Vrag produksie:{} 6t per 8t sand afgelewer{} 2t per 8t chemikalieë afgelewer{}{}Vermeeder tot 8t per 8t wanneer beide vragte afgelewer word binne 'n maand van mekaar.
+STR_EXTRA_GRAIN_MILL                                                            :{BLACK}Vrag produksie:{} 3t per 8t vervaardigings benodighede afgelewer{} 5t per 8t graan afgelewer{}{}Vermeeder tot 8t per 8t wanneer beide vragte afgelewer word binne 'n maand van mekaar.
+STR_EXTRA_IRON_WORKS                                                            :{BLACK}Vrag produksie:{} 2t per 8t hout afgelewer{} 2t per 8t yster erts afgelewer{}{}Vermeeder tot 4t per 8t wanneer beide vragte afgelewer word binne 'n maand van mekaar.
+STR_EXTRA_LIME_KILN                                                             :{BLACK}Vrag produksie:{} 3t per 8t stene afgelewer{} 3t per 8t steenkool afgelewer{}{}Vermeeder tot 6t per 8t wanneer beide vragte afgelewer word binne 'n maand van mekaar.
+STR_EXTRA_LUMBER_YARD                                                           :{BLACK}Produseer items soos pale en heiningpale.{}{}{BLACK}Vrag produksie:{} 2t per 8t chemikalieë afgelewer{} 6t per 8t hout afgelewer{}{}Vermeeder tot 8t per 8t wanneer beide vragte afgelewer word binne 'n maand van mekaar.
+STR_EXTRA_MACHINE_SHOP                                                          :{BLACK}Bou en diens masjinerie.{}{}8t produksie per 8t afgelewer.
+STR_EXTRA_MEAT_PACKER                                                           :{BLACK}Vrag produksie:{} 3t per 8t vervaardigings benodighede afgelewer{} 5t per 8t lewende hawe afgelewer{}{}Vermeeder tot 8t per 8t wanneer beide vragte afgelewer word binne 'n maand van mekaar.
+STR_EXTRA_METAL_FABRICATION_PLANT                                               :{BLACK}Produseer gevervde metaal onderdele.{}{}{BLACK}Vrag produksie:{} 2t per 8t chemikalieë afgelewer{} 6t per 8t metal afgelewer{}{}Vermeeder to 8t per 8t wanneer beide vragte afgelewer word binne 'n maand van mekaar.
+STR_EXTRA_METAL_FOUNDRY                                                         :{BLACK}Produseer oorgetrekte metaal items soos as blikkies, hardwand huishoudelike goedere.{}{}{BLACK}Vrag produksie:{} 2t per 8t chemikalieë afgelewer{} 6t per 8t metaal afgelewer{}{}Vermeeder tot 8t per 8t wanneer beide vragte afgelewer word binne 'n maand van mekaar.
+STR_EXTRA_OIL_REFINERY                                                          :{BLACK}Prosesseer ru-olie tot petrol and chemikalieë.{}{}6t produksie per 8t afgelewer.
+STR_EXTRA_PAPER_MILL                                                            :{BLACK}Pulp hout om papier en karton te produseer.{}{}{BLACK}Vrag produksie:{} 4t per 8t wood afgelewer{} 2t per 8t klei afgelewer{} 2t per 8t chemikalieë afgelewer{}{}Produksie neem toe as twee of meer vragte afgelewer word binne 'n maand van mekaar.
+STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}Produseer plastiek items soos as verpakking and huishoudelike goedere.{}{}6t produksie per 8t afgelewer.
+STR_EXTRA_RECYCLING_PLANT                                                       :{BLACK}Prosesseer herwinbares vir hergebruik in vervaardiging.{}{}6t produksie per 8t afgelewer.
+STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}Produseer herwinbares afhangende van die dorp grootte.
+STR_EXTRA_SAWMILL                                                               :{BLACK}Kap hout.{}{}6t produksie per 8t afgelewer.
+STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Produseer metaal items soos gereedskap, ploeë, hekke, skoppe en perdeskoene.{}{}8t produksie per 8t afgelewer.
+STR_EXTRA_STEELMILL                                                             :{BLACK}Vrag produksie:{} 2t per 8t yster erts afgelewer{} 2t per 8t steenkool afgelewer{} 4t per 8t skroot metaal afgelewer{}{}Produksie neem toe as twee of meer vragte afgelewer word binne 'n maand van mekaar.
+STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Vrag produksie:{} 3t per 8t vervaardigings benodighede afgelewer{} 5t per 8t suiker afgelewer{}{}Vermeeder tot 8t per 8t wanneer beide vragte afgelewer word binne 'n maand van mekaar.
+STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Vrag produksie:{} 3t per 8t vervaardigings benodighede afgelewer{} 5t per 8t wol afgelewer{} 5t per 8t plant vesels afgelewer{}{}Produksie neem toe as vervaardigings benodighede afgelewer word binne 'n maand van ander vragte.
+
+STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ DEBUG ------------{}Produksie die maand:{}Vrag 1: {WHITE}{COMMA}{BLACK}{}Vrag 2: {WHITE}{COMMA}{BLACK}{}Dae sedert laaste aflewering: {WHITE}{COMMA}{BLACK}
+STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Maksimum produksie beryk
+STR_GENERIC_NEWLINE                                                             :{}
+
+STR_FUND_MIXED_FARM                                                             :{}{BLACK}Ligging: {YELLOW}Kannie befonds word in sneeu of in die woestyn nie.
+STR_FUND_ARABLE_FARM                                                            :{}{BLACK}Ligging: {YELLOW}Kannie befonds word in sneeu of in die woestyn nie.
+STR_FUND_FOREST                                                                 :{}{BLACK}Ligging: {YELLOW}Kannie befonds word in die woestyn.
+STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}Ligging: {YELLOW}Kannie befonds word in sneeu.
+
+STR_FUND_AVAILABLE_FROM                                                         :{}{BLACK}Beskikbaar van: {YELLOW}{STRING}
+STR_FUND_AVAILABLE_FROM_DATE_ALUMINIUM_PLANT                                    :1923
+STR_FUND_AVAILABLE_FROM_DATE_BAUXITE_MINE                                       :1923
+STR_FUND_AVAILABLE_FROM_DATE_BIOREFINERY                                        :2001
+STR_FUND_AVAILABLE_FROM_DATE_CEMENT_PLANT                                       :1902
+STR_FUND_AVAILABLE_FROM_DATE_DAIRY                                              :1892
+STR_FUND_AVAILABLE_FROM_DATE_DREDGING_SITE                                      :1852
+STR_FUND_AVAILABLE_FROM_DATE_FERTILISER_PLANT                                   :1927
+STR_FUND_AVAILABLE_FROM_DATE_FURNITURE_FACTORY                                  :1840
+STR_FUND_AVAILABLE_FROM_DATE_JUNKYARD                                           :1878
+STR_FUND_AVAILABLE_FROM_DATE_MACHINE_SHOP                                       :1870
+STR_FUND_AVAILABLE_FROM_DATE_METAL_FABRICATION_PLANT                            :1852
+STR_FUND_AVAILABLE_FROM_DATE_METAL_FOUNDRY                                      :1762
+STR_FUND_AVAILABLE_FROM_DATE_OILREFINERY                                        :1884
+STR_FUND_AVAILABLE_FROM_DATE_OILRIG                                             :1967
+STR_FUND_AVAILABLE_FROM_DATE_OILWELLS                                           :1884
+STR_FUND_AVAILABLE_FROM_DATE_PAPERMILL                                          :1610
+STR_FUND_AVAILABLE_FROM_DATE_PETROL_PUMP                                        :1909
+STR_FUND_AVAILABLE_FROM_DATE_PLASTICS_PLANT                                     :1931
+STR_FUND_AVAILABLE_FROM_DATE_RECYCLING_DEPOT                                    :1997
+STR_FUND_AVAILABLE_FROM_DATE_RECYCLING_PLANT                                    :1997
+STR_FUND_AVAILABLE_FROM_DATE_STEELMILL                                          :1873
+STR_FUND_AVAILABLE_FROM_DATE_STOCKYARD                                          :1867
+STR_FUND_AVAILABLE_FROM_DATE_SUGAR_REFINERY                                     :1730
+STR_FUND_AVAILABLE_FROM_DATE_TEXTILE_MILL                                       :1762
+
+STR_FUND_AVAILABLE_UNTIL                                                        :{}{BLACK}nie beskikbaar tot: {YELLOW}{STRING}
+STR_FUND_AVAILABLE_UNTIL_DATE_IRON_WORKS                                        :1901
+STR_FUND_AVAILABLE_UNTIL_DATE_SMITHY_FORGE                                      :1948
+
+
+STR_TOWN                                                                        :{STRING}
+STR_STATION                                                                     :{STRING} {STRING}
+
+STR_IND_ALUMINIUM_PLANT                                                         :Aluminium Fabriek
+STR_IND_ARABLE_FARM                                                             :BewerkbPlaas
+STR_IND_BAUXITE_MINE                                                            :Bauxiet Myn
+STR_IND_BIOREFINERY                                                             :Bioraffinadery
+STR_IND_BREWERY                                                                 :Brouery
+STR_IND_BRICK_WORKS                                                             :Steen Werke
+STR_IND_BUILDERS_YARD                                                           :Bouers Werf
+STR_IND_CEMENT_PLANT                                                            :Sement Fabriek
+STR_IND_CLAY_PIT                                                                :Klei Pit
+STR_IND_DAIRY                                                                   :Melk
+STR_IND_DAIRYFARM                                                               :Melk Plaas
+STR_IND_DREDGING_SITE                                                           :Baggerwerk terrein
+STR_IND_FERTILISER_PLANT                                                        :Kunsmis Fabriek
+STR_IND_FISHING_GROUND                                                          :Vis Waters
+STR_IND_FISHING_HARBOUR                                                         :Vis Hawe
+STR_IND_FOOD_MARKET                                                             :Kruidenierswinkel
+STR_IND_FURNITURE_FACTORY                                                       :Meubelfabriek
+STR_IND_GLASS_WORKS                                                             :Glas Werke
+STR_IND_GRAIN_MILL                                                              :Graan Meule
+STR_IND_HARDWARE_STORE                                                          :Hardewarewinkel
+STR_IND_HOTEL                                                                   :Hotel
+STR_IND_IRON_WORKS                                                              :Staal Werke
+STR_IND_JUNKYARD                                                                :Skrootwerf
+STR_IND_LIME_KILN                                                               :Kalkoond
+STR_IND_LUMBER_YARD                                                             :Houtwerf
+STR_IND_MACHINE_SHOP                                                            :Masjienwinkel
+STR_IND_METAL_FABRICATION_PLANT                                                 :Metaal Vervaardiging Fabriek
+STR_IND_METAL_FOUNDRY                                                           :Metaal Werkswinkel
+STR_IND_MIXEDFARM                                                               :Gemende Plaas
+STR_IND_PETROLPUMP                                                              :Petrol Stasie
+STR_IND_PLASTICS_PLANT                                                          :Plastiese Fabriek
+STR_IND_QUARRY                                                                  :Quarry
+STR_IND_RECYCLING_DEPOT                                                         :Herwinningsdepot
+STR_IND_RECYCLING_PLANT                                                         :Herwinningsplant
+STR_IND_SHEEPFARM                                                               :Skaap Plaas
+STR_IND_SMITHY_FORGE                                                            :Smeltery
+STR_IND_STOCKYARD                                                               :Bees Plaas
+STR_IND_SUGAR_REFINERY                                                          :Suiker Meule
+STR_IND_SUPERMARKET                                                             :Supermark
+STR_IND_TEXTILE_MILL                                                            :Textiel Fabriek
+
+
