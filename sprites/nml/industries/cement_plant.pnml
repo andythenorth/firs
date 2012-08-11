@@ -374,7 +374,7 @@ tilelayout tilelayout_cement_plant_5 {
 /* extra text template */
 #define THIS_STR_EXTRA_TEXT       STR_EXTRA_CEMENT_PLANT
 /* availability years - also update available from strings if changing these */
-#define THIS_MIN_YEAR 1848
+#define THIS_MIN_YEAR 1824
 
 CHECK_INCOMPATIBLE  (cement_plant,  56, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
 CHECK_INCOMPATIBLE  (coal_mine,     16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(cement_plant))
