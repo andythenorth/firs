@@ -99,7 +99,7 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_6), 23) {
 /* extra text template */
 #define THIS_STR_EXTRA_TEXT       STR_EXTRA_OIL_REFINERY
 /* availability years - also update available from strings if changing these */
-#define THIS_MIN_YEAR 1884
+#define THIS_MIN_YEAR 1830
 
 CHECK_INCOMPATIBLE  (oil_refinery,   56, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
 CHECK_INCOMPATIBLE  (oil_wells,      16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(oil_refinery))
