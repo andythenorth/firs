@@ -220,7 +220,6 @@ tilelayout tilelayout_furniture_factory_5 {
 /* extra text template */
 #define THIS_STR_EXTRA_TEXT       STR_EXTRA_FURNITURE_FACTORY
 /* availability years - also update available from strings if changing these */
-#define THIS_MIN_YEAR 1840
 
 CHECK_INCOMPATIBLE  (furniture_factory, 56, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
 CHECK_FOUNDER       (THIS_ID(furniture_factory))
@@ -275,7 +274,6 @@ item(FEAT_INDUSTRIES, furniture_factory, IND_FURNITUREFACTORY_ID) {
 		monthly_prod_change:     THIS_ID(check_production_level);
 		random_prod_change:      THIS_ID(check_closure);
 		extra_text_industry:     THIS_ID(extra_text);
-		extra_text_fund:         return string(STR_FUND_AVAILABLE_FROM, string(STR_FUND_AVAILABLE_FROM_DATE_FURNITURE_FACTORY));
 		colour:                  THIS_ID(colour);
 	}
 }
