@@ -119,8 +119,6 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_8), 71) {
 #define THIS_BOOST_32             2
 /* extra text template */
 #define THIS_STR_EXTRA_TEXT       STR_EXTRA_PAPER_MILL
-/* availability years - also update available from strings if changing these */
-#define THIS_MIN_YEAR 1610
 
 CHECK_INCOMPATIBLE  (paper_mill,   56, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
 CHECK_INCOMPATIBLE  (forest,       16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(paper_mill))
@@ -159,7 +157,6 @@ item(FEAT_INDUSTRIES, paper_mill, IND_PAPERMILL_ID) {
 		monthly_prod_change:     THIS_ID(check_production_level);
 		random_prod_change:      THIS_ID(check_closure);
 		extra_text_industry:     THIS_ID(extra_text);
-		extra_text_fund:         return string(STR_FUND_AVAILABLE_FROM, string(STR_FUND_AVAILABLE_FROM_DATE_PAPERMILL));
 		colour:                  THIS_ID(colour);
 	}
 }
