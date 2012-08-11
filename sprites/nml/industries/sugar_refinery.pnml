@@ -133,8 +133,6 @@ tilelayout tilelayout_sugar_refinery_1 {
 /* extra text template */
 #define THIS_STR_EXTRA_TEXT       STR_EXTRA_SUGAR_REFINERY
 #define THIS_STR_DEBUG_TEXT       STR_EXTRA_TEXT_DEBUG_SECONDARY
-/* availability years - also update available from strings if changing these */
-#define THIS_MIN_YEAR 1730
 
 
 CHECK_INCOMPATIBLE(sugar_refinery, 56, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
@@ -192,7 +190,6 @@ item(FEAT_INDUSTRIES, sugar_refinery, IND_SUGARREFINERY_ID) {
 		monthly_prod_change:     THIS_ID(check_production_level);
 		random_prod_change:      THIS_ID(check_closure);
 		extra_text_industry:     THIS_ID(extra_text);
-		extra_text_fund:         return string(STR_FUND_AVAILABLE_FROM, string(STR_FUND_AVAILABLE_FROM_DATE_SUGAR_REFINERY));
 		colour:                  THIS_ID(colour);
 	}
 }
