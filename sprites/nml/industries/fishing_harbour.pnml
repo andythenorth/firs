@@ -1034,9 +1034,7 @@ item(FEAT_INDUSTRIES, fishing_harbour, IND_FISHINGHARBOUR_ID) {
 		fund_cost_multiplier: 150;
 		map_colour: 15;
 		remove_cost_multiplier: 0;
-		spec_flags:             bitmask(IND_FLAG_BUILT_ON_WATER,
-		                                IND_FLAG_BUILT_NEAR_TOWN
-									);
+		spec_flags:             bitmask(IND_FLAG_BUILT_ON_WATER);
 	}
 	graphics {
 		produce_cargo_arrival:   THIS_ID(produce);
