@@ -23,12 +23,6 @@ grf {
 			type: bool;
 			bit: 0;
 		}
-		primary_industry_old_production {
-			name: string(STR_PARAM_NAME_PRIMARY_OLD_PRODUCTION);
-			desc: string(STR_PARAM_DESC_PRIMARY_OLD_PRODUCTION);
-			type: bool;
-			bit: 1;
-		}
 	}
 	param 2 {
 		allow_close_primary {

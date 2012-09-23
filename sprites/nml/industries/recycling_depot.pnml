@@ -111,6 +111,45 @@ switch(FEAT_INDUSTRIES, PARENT, THIS_ID(produce), [STORE_TEMP(((var[0x82, 3, 819
 	THIS_ID(production);
 }
 
+/* Decrease production in one of 32 cases */
+switch(FEAT_INDUSTRIES, SELF, THIS_ID(random_slow_decrease), (extra_callback_info2 & 31)) {
+	0: return CB_RESULT_IND_PROD_DECREMENT_BY_1;
+	return CB_RESULT_IND_PROD_NO_CHANGE;
+}
+
+/* decrease production in one of four cases */
+switch(FEAT_INDUSTRIES, SELF, THIS_ID(random_decrease), (extra_callback_info2 & 3)) {
+	0: return CB_RESULT_IND_PROD_DECREMENT_BY_1;
+	return CB_RESULT_IND_PROD_NO_CHANGE;
+}
+
+switch(FEAT_INDUSTRIES, SELF, THIS_ID(decrease_production), production_level) {
+	0..4: return CB_RESULT_IND_PROD_NO_CHANGE;  // if we're here, we close in the random production change CB
+	5..32: THIS_ID(random_slow_decrease);
+	THIS_ID(random_decrease);
+}
+
+/* Don't even consider to decrease production, if turned off */
+switch(FEAT_INDUSTRIES, SELF, THIS_ID(check_decrease_production), allow_primary_production_decrease) {
+	1..255: THIS_ID(decrease_production);
+	return CB_RESULT_IND_PROD_NO_CHANGE;
+}
+
+/* increase production in one of four cases */
+switch(FEAT_INDUSTRIES, SELF, THIS_ID(random_increase), (extra_callback_info2 & 3)) {
+	0: return CB_RESULT_IND_PROD_INCREMENT_BY_1;
+	return CB_RESULT_IND_PROD_NO_CHANGE;
+}
+
+switch(FEAT_INDUSTRIES, SELF, THIS_ID(check_production_level), [
+			STORE_TEMP(LOAD_PERM(var_num_supplies_delivered), 0),
+			STORE_PERM(0, var_num_supplies_delivered),
+			LOAD_TEMP(0) > 0
+			]) {
+	1: THIS_ID(random_increase);
+	THIS_ID(check_decrease_production);
+}
+
 item(FEAT_INDUSTRIES, recycling_depot, IND_RECYCLINGDEPOT_ID) {
 	property {
 		substitute:             0;
