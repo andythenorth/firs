@@ -28,9 +28,10 @@ if (climate == CLIMATE_TROPICAL) { market_tree = MARKET_TREE_TROPICAL; }
  * persistent storage for primary industries (template produce_primary)
  * **************************************************************************/
 #define var_num_supplies_delivered  0 // amount of supplies delivered this month
+#define var_num_supplies_delivered_last 1
+#define var_num_supplies_delivered_bef_last 2
+#define var_current_supplies_prod_factor 3
 
-//                                  1 // unused
-//                                  2 // unused
 //                                  3 // unused
 //                                  4 // unused
 //                                  5 // unused

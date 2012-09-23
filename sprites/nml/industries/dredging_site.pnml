@@ -108,7 +108,8 @@ item(FEAT_INDUSTRIES, dredging_site, IND_DREDGINGSITE_ID) {
 		produce_cargo_arrival:   THIS_ID(produce);
 		construction_probability:THIS_ID(check_availability);
 		location_check:          THIS_ID(check_location);
-		monthly_prod_change:     THIS_ID(check_production_level);
+		produce_256_ticks:       THIS_ID(produce_256_ticks);
+		monthly_prod_change:     THIS_ID(monthly_update);
 		random_prod_change:      THIS_ID(check_closure);
 		build_prod_change:       randomise_primary_production_on_build;
 		extra_text_industry:     THIS_ID(extra_text);

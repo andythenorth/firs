@@ -73,4 +73,17 @@ switch(FEAT_INDUSTRIES, SELF, THIS_ID(check_production_level), [
 	THIS_ID(check_decrease_production);
 }
 
+switch(FEAT_INDUSTRIES, SELF, THIS_ID(monthly_update_bonus_only), [
+	STORE_PERM(LOAD_PERM(var_num_supplies_delivered_last), var_num_supplies_delivered_bef_last),
+	STORE_PERM(LOAD_PERM(var_num_supplies_delivered), var_num_supplies_delivered_last),
+	STORE_PERM(0, var_num_supplies_delivered)
+]) {
+	return CB_RESULT_IND_PROD_NO_CHANGE;
+}
+
+switch(FEAT_INDUSTRIES, SELF, THIS_ID(monthly_update), primary_industry_old_production) {
+	1: THIS_ID(check_production_level);
+	THIS_ID(monthly_update_bonus_only);
+}
+
 #undef var_supplies_delivered

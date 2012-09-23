@@ -13,7 +13,8 @@
  * THIS_STR_EXTRA_SUPPLIES         string shown when supplies can increase production
  */
 
-switch(FEAT_INDUSTRIES, SELF, THIS_ID(extra_text), [STORE_TEMP(LOAD_PERM(var_num_supplies_delivered), 256), production_level]) {
-	128: return string(STR_EXTRA_MAX_PRODUCTION);
-	return string(THIS_STR_EXTRA_SUPPLIES);
+switch(FEAT_INDUSTRIES, SELF, THIS_ID(extra_text), LOAD_PERM(var_current_supplies_prod_factor)) {
+	3: return string(STR_PRIMARY_PRODUCTION_4X);
+	1: return string(STR_PRIMARY_PRODUCTION_2X);
+	return string(STR_PRIMARY_PRODUCTION_1X);
 }

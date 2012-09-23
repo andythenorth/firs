@@ -21,6 +21,13 @@ grf {
 			name: string(STR_PARAM_NAME_PRIMARY_PRODUCTION_DECREASE);
 			desc: string(STR_PARAM_DESC_PRIMARY_PRODUCTION_DECREASE);
 			type: bool;
+			bit: 0;
+		}
+		primary_industry_old_production {
+			name: string(STR_PARAM_NAME_PRIMARY_OLD_PRODUCTION);
+			desc: string(STR_PARAM_DESC_PRIMARY_OLD_PRODUCTION);
+			type: bool;
+			bit: 1;
 		}
 	}
 	param 2 {
