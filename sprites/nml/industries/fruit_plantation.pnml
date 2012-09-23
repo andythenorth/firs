@@ -5209,7 +5209,7 @@ tilelayout tilelayout_5807_4 {
 
 #define THIS_STR_EXTRA_SUPPLIES        STR_EXTRA_FARM_SUPPLIES
 
-CHECK_NEARBY_CLUSTER(fruit_plantation, 10, 36, 1, 2, return CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
+CHECK_NEARBY_CLUSTER(fruit_plantation, 10, 36, 3, 4, return CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
 CHECK_INCOMPATIBLE  (brewery,          16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(fruit_plantation))
 CHECK_FOUNDER       (THIS_ID(brewery))
 
@@ -5241,7 +5241,7 @@ item(FEAT_INDUSTRIES, fruit_plantation, IND_FRUITPLANTATION_ID) {
 		accept_cargo_types: [FMSP];
 		prod_multiplier: [6];
 		conflicting_ind_types: [];
-		prob_random: 8;
+		prob_random: 18;
 		prob_in_game: 3;
 		prospect_chance: 0.75;
 		fund_cost_multiplier: 54;

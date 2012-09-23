@@ -107,7 +107,7 @@ tilelayout tilelayout_bauxite_mine_1 {
 /* availability years - also update available from strings if changing these */
 #define THIS_MIN_YEAR 1923
 
-CHECK_NEARBY_CLUSTER(bauxite_mine,    20, 60, 2, 3, return CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
+CHECK_NEARBY_CLUSTER(bauxite_mine,    20, 40, 2, 3, return CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
 CHECK_INCOMPATIBLE  (aluminium_plant, 16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(bauxite_mine))
 CHECK_FOUNDER       (THIS_ID(aluminium_plant))
 
@@ -142,8 +142,8 @@ item(FEAT_INDUSTRIES, bauxite_mine, IND_BAUXITEMINE_ID) {
 		input_multiplier_3: [0, 0];
 		min_cargo_distr: 5;
 		conflicting_ind_types: [];
-		prob_random: 5;
-		prob_in_game: 5;
+		prob_random: 8;
+		prob_in_game: 10;
 		prospect_chance: 0.75;
 		fund_cost_multiplier: 238;
 		map_colour: 71;
