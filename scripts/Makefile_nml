@@ -1,0 +1,24 @@
+#
+# This file is part of the NML build framework
+# NML build framework is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 2.
+# NML build framework is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+# See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with NML build framework. If not, see <http://www.gnu.org/licenses/>.
+#
+
+################################################################
+# NML-specific targets and rules
+################################################################
+
+nml:
+	$(_E) "[CPP] $(NML_FILE)"
+	$(_V) $(CC) -D REPO_REVISION=$(REPO_REVISION) $(CC_FLAGS) $(MAIN_SRC_FILE) > $(NML_FILE)
+
+################################################################
+# Definitions which extend the common rules
+################################################################
+clean::
+	$(_E) "[CLEAN NML]"
+	$(_V)-rm -rf $(NML_FILE)
+
+test::
+	$(_E) "nml:                          $(NML) $(NML_FLAGS)"

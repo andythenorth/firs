@@ -1,0 +1,27 @@
+#
+# This file is part of the NML build framework
+# NML build framework is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 2.
+# NML build framework is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+# See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with NML build framework. If not, see <http://www.gnu.org/licenses/>.
+#
+
+################################################################
+# Documentation targets
+################################################################
+
+%.txt: %.ptxt md5
+	$(_E) "[DOC] $@"
+	$(_V) cat $< \
+		| sed -e "s/$(REPLACE_TITLE)/$(REPO_TITLE)/" \
+		| sed -e "s/$(REPLACE_GRFID)/$(GRF_ID)/" \
+		| sed -e "s/$(REPLACE_REVISION)/$(REPO_REVISION)/" \
+		| sed -e "s/$(REPLACE_FILENAME)/$(OUTPUT_FILENAME)/" \
+		| sed -e "s/$(REPLACE_MD5SUM)/$(shell cat $(MD5_FILENAME))/" \
+		> $@
+	$(_V) [ -z "$(UNIX2DOS)" ] || $(UNIX2DOS) $(UNIX2DOS_FLAGS) $@
+
+doc: $(DOC_FILES)
+
+clean::
+	$(_E) "[CLEAN DOC]"
+	$(_V) -for i in $(patsubst %.txt,%,$(DOC_FILES)); do [ -f $$i.ptxt ] && [ -f $$.txt ] && rm -rf $$i.txt || true; done

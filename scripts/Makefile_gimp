@@ -1,0 +1,42 @@
+#
+# This file is part of the NML build framework
+# NML build framework is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 2.
+# NML build framework is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+# See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with NML build framework. If not, see <http://www.gnu.org/licenses/>.
+#
+
+################################################################
+# Targets related to creation of graphics files
+################################################################
+# Dependency on source list file via dep check
+%.scm: $(SCRIPT_DIR)/gimpscript $(SCRIPT_DIR)/gimp.sed
+	$(_E) "[GIMP-SCRIPT] $@"
+	$(_V) cat $(SCRIPT_DIR)/gimpscript > $@
+	$(_V) cat $(GFX_LIST_FILES) | grep $(patsubst %.scm,%.png,$@) | sed -f $(SCRIPT_DIR)/gimp.sed >> $@
+	$(_V) echo "(gimp-quit 0)" >> $@
+
+# create the png file. And make sure it's re-created even when present in the repo
+%.png: %.scm
+	$(_E) "[GIMP] $@"
+	$(_V) $(GIMP) $(GIMP_FLAGS) $< >/dev/null
+
+ifdef $(GFX_LIST_FILES)
+Makefile_gfx.dep: $(GFX_LIST_FILES) $(SCRIPT_DIR)/Makefile_gimp
+	$(_E) "[GFX-DEP] $@"
+	$(_V) echo "" > $@
+	$(_V) for j in $(GFX_LIST_FILES); do for i in `cat $$j | grep "\([pP][cCnN][xXgG]\)" | cut -d\  -f1 | sed "s/\.\([pP][cCnN][xXgG]\)//"`; do echo "$$i.scm: $$j" >> $@; echo "gfx: $$i.png" >> $@; done; done
+	$(_V) cat $(GFX_LIST_FILES) | grep "\([pP][cCnN][xXgG]\)" | sed "s/[ ] */ /g" | cut -d\  -f1-2 | sed "s/ /: /g" >> $@
+endif
+
+ifdef $(GFX_LIST_FILES)
+gfx: Makefile_gfx.dep
+else
+gfx:
+endif
+
+maintainer-clean::
+	$(_E) "[MAINTAINER CLEAN GFX]"
+	$(_V) rm -rf Makefile_gfx.dep
+ifdef $(GFX_LIST_FILES)
+	$(_V) for j in $(GFX_LIST_FILES); do for i in `cat $$j | grep "\([pP][cCnN][xXgG]\)" | cut -d\  -f1 | sed "s/\.\([pP][cCnN][xXgG]\)//"`; do rm -rf $$i.scm; rm -rf $$i.png; done; done
+endif
