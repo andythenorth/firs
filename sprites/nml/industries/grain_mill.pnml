@@ -11,83 +11,66 @@
 
 spriteset(THIS_ID(spriteset_ground), "sprites/graphics/industries/groundtiles.png") {
 	tmpl_ground_tile(150, 10)
-	tmpl_ground_tile(150, 10)
 }
 
 spriteset(THIS_ID(spriteset_ground_overlay_snow_1)) {
-	tmpl_building_sprite_filename(10, 10, 31, 0, "sprites/graphics/industries/grainmill_snow.png")
 	tmpl_building_sprite_filename(10, 10, 31, 0, "sprites/graphics/industries/grainmill_snow.png")
 }
 
 spriteset(THIS_ID(spriteset_ground_overlay_snow_2)) {
 	tmpl_building_sprite_filename(80, 10, 31, 0, "sprites/graphics/industries/grainmill_snow.png")
-	tmpl_building_sprite_filename(80, 10, 31, 0, "sprites/graphics/industries/grainmill_snow.png")
 }
 spriteset(THIS_ID(spriteset_ground_overlay_snow_3)) {
 	tmpl_building_sprite_filename(150, 10, 31, 0, "sprites/graphics/industries/grainmill_snow.png")
-	tmpl_building_sprite_filename(150, 10, 31, 0, "sprites/graphics/industries/grainmill_snow.png")
 }
 spriteset(THIS_ID(spriteset_ground_overlay_snow_4)) {
-	tmpl_building_sprite_filename(220, 10, 31, 0, "sprites/graphics/industries/grainmill_snow.png")
 	tmpl_building_sprite_filename(220, 10, 31, 0, "sprites/graphics/industries/grainmill_snow.png")
 }
 
 spriteset(THIS_ID(spriteset_ground_overlay_normal_1)) {
 	tmpl_building_sprite_filename(10, 10, 31, 0, "sprites/graphics/industries/grainmill.png")
-	tmpl_building_sprite_filename(10, 10, 31, 0, "sprites/graphics/industries/grainmill.png")
 }
 
 spriteset(THIS_ID(spriteset_ground_overlay_normal_2)) {
 	tmpl_building_sprite_filename(80, 10, 31, 0, "sprites/graphics/industries/grainmill.png")
-	tmpl_building_sprite_filename(80, 10, 31, 0, "sprites/graphics/industries/grainmill.png")
 }
 spriteset(THIS_ID(spriteset_ground_overlay_normal_3)) {
 	tmpl_building_sprite_filename(150, 10, 31, 0, "sprites/graphics/industries/grainmill.png")
-	tmpl_building_sprite_filename(150, 10, 31, 0, "sprites/graphics/industries/grainmill.png")
 }
 spriteset(THIS_ID(spriteset_ground_overlay_normal_4)) {
-	tmpl_building_sprite_filename(220, 10, 31, 0, "sprites/graphics/industries/grainmill.png")
 	tmpl_building_sprite_filename(220, 10, 31, 0, "sprites/graphics/industries/grainmill.png")
 }
 
 
 spriteset(THIS_ID(spriteset_snow_1)) {
 	[10, 10, 64, 31, -31, 0, "sprites/graphics/industries/grainmill_snow.png"]
-	[10, 10, 64, 31, -31, 0, "sprites/graphics/industries/grainmill_snow.png"]
 }
 
 spriteset(THIS_ID(spriteset_snow_2)) {
-	[80, 10, 64, 31, -31, 0, "sprites/graphics/industries/grainmill_snow.png"]
 	[80, 10, 64, 31, -31, 0, "sprites/graphics/industries/grainmill_snow.png"]
 }
 
 spriteset(THIS_ID(spriteset_snow_3)) {
 	[150, 60, 64, 82, -31, -51, "sprites/graphics/industries/grainmill_snow.png"]
-	[150, 60, 64, 82, -31, -51, "sprites/graphics/industries/grainmill_snow.png"]
 }
 
 spriteset(THIS_ID(spriteset_snow_4)) {
-	[220, 60, 64, 82, -31, -51, "sprites/graphics/industries/grainmill_snow.png"]
 	[220, 60, 64, 82, -31, -51, "sprites/graphics/industries/grainmill_snow.png"]
 }
 
 spriteset(THIS_ID(spriteset_normal_1)) {
 	[10, 10, 64, 31, -31, 0, "sprites/graphics/industries/grainmill.png"]
-	[10, 10, 64, 31, -31, 0, "sprites/graphics/industries/grainmill.png"]
 }
 
 spriteset(THIS_ID(spriteset_normal_2)) {
-	[80, 10, 64, 31, -31, 0, "sprites/graphics/industries/grainmill.png"]
 	[80, 10, 64, 31, -31, 0, "sprites/graphics/industries/grainmill.png"]
 }
 
 spriteset(THIS_ID(spriteset_normal_3)) {
 	[150, 60, 64, 82, -31, -51, "sprites/graphics/industries/grainmill.png"]
-	[150, 60, 64, 82, -31, -51, "sprites/graphics/industries/grainmill.png"]
 }
 
 spriteset(THIS_ID(spriteset_normal_4)) {
-	[220, 60, 64, 82, -31, -51, "sprites/graphics/industries/grainmill.png"]
 	[220, 60, 64, 82, -31, -51, "sprites/graphics/industries/grainmill.png"]
 }
 
@@ -142,17 +125,14 @@ GROUND_AWARE_SPRITELAYOUT(THIS_ID(brickbakery_tile_4))
 	CONDITIONAL_BUILDING_SPRITE(THIS_ID(spriteset_snow_4), 48, terrain_type == TILETYPE_SNOW)
 SPRITELAYOUT_END
 
-spritelayout THIS_ID(windmill_tile_anim) {
-	ground {
-		sprite: 2022;
-	}
+GROUND_AWARE_SPRITELAYOUT(THIS_ID(windmill_tile_anim))
 	building {
 		sprite: THIS_ID(spriteset_5_anim(2 * animation_frame + (terrain_type == TILETYPE_SNOW)));
 		recolour_mode: RECOLOUR_REMAP;
 		palette: 0;
 		zextent: 24;
 	}
-}
+SPRITELAYOUT_END
 
 switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_1), relative_pos) {
 	relative_coord(0, 1): THIS_ID(brickbakery_tile_4);
