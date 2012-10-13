@@ -67,6 +67,6 @@ industry_template = industry_templates[industry_name + '.pypnml']
 
 templated_pnml = industry_template(industry = industry)
 
-pnml = codecs.open(os.path.join(currentdir,'sprites','nml','industries','grain_mill.pnml'), 'w','utf8')
+pnml = codecs.open(os.path.join(currentdir,'sprites','nml','generated_pnml','grain_mill.pnml'), 'w','utf8')
 pnml.write(templated_pnml)
 pnml.close()
