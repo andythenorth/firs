@@ -7,7 +7,7 @@
 
 #include "../templates/spritelayouts_groundaware.pnml"
 
-#define THIS_ID(...) grain_mill ## __VA_ARGS__
+#define THIS_ID(...) grain_mill_ ## __VA_ARGS__
 
 spriteset(grain_mill_spriteset_ground, "sprites/graphics/industries/groundtiles.png") {
 	tmpl_ground_tile(150, 10)
@@ -200,7 +200,7 @@ switch(FEAT_INDUSTRYTILES, SELF, grain_mill_layout_4, relative_pos) {
 	grain_mill_windmill_tile_anim;
 }
 
-switch(FEAT_INDUSTRYTILES, PARENT, THIS_ID(layout), layout_num) {
+switch(FEAT_INDUSTRYTILES, PARENT, grain_mill_layout, layout_num) {
 	1: grain_mill_layout_1;
 	2: grain_mill_layout_1;
 	3: grain_mill_layout_2;
@@ -215,11 +215,11 @@ switch(FEAT_INDUSTRYTILES, PARENT, THIS_ID(layout), layout_num) {
  * *************************************************/
 
 TILE_DISALLOW_NEARBY_CLASS(tile1_nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
-TILE_ALLOW_PLAYER         (tile1_player_check, THIS_ID(tile1_nearby_industry))
-TILE_DISALLOW_SLOPES      (tile1_location_check, CB_RESULT_LOCATION_DISALLOW, THIS_ID(tile1_player_check))
-GROUNDSPRITE_SWITCH(THIS_ID(ground_switch), THIS_ID(layout))
+TILE_ALLOW_PLAYER         (tile1_player_check, grain_mill_tile1_nearby_industry)
+TILE_DISALLOW_SLOPES      (tile1_location_check, CB_RESULT_LOCATION_DISALLOW, grain_mill_tile1_player_check)
+GROUNDSPRITE_SWITCH(grain_mill_ground_switch, grain_mill_layout)
 
-item(FEAT_INDUSTRYTILES, THIS_ID(tile), TILE_GRAINMILL_1) {
+item(FEAT_INDUSTRYTILES, grain_mill_tile, TILE_GRAINMILL_1) {
 	property {
 		substitute:       0;
 		accepted_cargos:  [[GRAI, 8], [MNSP, 8]];
@@ -229,8 +229,8 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile), TILE_GRAINMILL_1) {
 	}
 
 	graphics {
-		tile_check:   THIS_ID(tile1_location_check);
-		THIS_ID(ground_switch);
+		tile_check:   grain_mill_tile1_location_check;
+		grain_mill_ground_switch;
 	}
 }
 
@@ -239,50 +239,50 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile), TILE_GRAINMILL_1) {
  * *************************************************/
 
 tilelayout tilelayout_grain_mill_1 {
-	0, 0: THIS_ID(tile);
-	0, 1: THIS_ID(tile);
-	1, 0: THIS_ID(tile);
-	1, 1: THIS_ID(tile);
+	0, 0: grain_mill_tile;
+	0, 1: grain_mill_tile;
+	1, 0: grain_mill_tile;
+	1, 1: grain_mill_tile;
 }
 
 tilelayout tilelayout_grain_mill_2 {
-	0, 0: THIS_ID(tile);
-	0, 1: THIS_ID(tile);
-	1, 0: THIS_ID(tile);
-	1, 1: THIS_ID(tile);
+	0, 0: grain_mill_tile;
+	0, 1: grain_mill_tile;
+	1, 0: grain_mill_tile;
+	1, 1: grain_mill_tile;
 }
 
 tilelayout tilelayout_grain_mill_3 {
-	0, 0: THIS_ID(tile);
-	0, 1: THIS_ID(tile);
-	1, 0: THIS_ID(tile);
-	1, 1: THIS_ID(tile);
-	2, 0: THIS_ID(tile);
-	2, 1: THIS_ID(tile);
+	0, 0: grain_mill_tile;
+	0, 1: grain_mill_tile;
+	1, 0: grain_mill_tile;
+	1, 1: grain_mill_tile;
+	2, 0: grain_mill_tile;
+	2, 1: grain_mill_tile;
 }
 
 tilelayout tilelayout_grain_mill_4 {
-	0, 0: THIS_ID(tile);
-	0, 1: THIS_ID(tile);
-	1, 0: THIS_ID(tile);
-	1, 1: THIS_ID(tile);
-	2, 0: THIS_ID(tile);
-	2, 1: THIS_ID(tile);
+	0, 0: grain_mill_tile;
+	0, 1: grain_mill_tile;
+	1, 0: grain_mill_tile;
+	1, 1: grain_mill_tile;
+	2, 0: grain_mill_tile;
+	2, 1: grain_mill_tile;
 }
 
 tilelayout tilelayout_grain_mill_5 {
-	0, 0: THIS_ID(tile);
-	0, 1: THIS_ID(tile);
-	0, 2: THIS_ID(tile);
-	0, 3: THIS_ID(tile);
-	1, 0: THIS_ID(tile);
-	1, 1: THIS_ID(tile);
-	1, 2: THIS_ID(tile);
-	1, 3: THIS_ID(tile);
+	0, 0: grain_mill_tile;
+	0, 1: grain_mill_tile;
+	0, 2: grain_mill_tile;
+	0, 3: grain_mill_tile;
+	1, 0: grain_mill_tile;
+	1, 1: grain_mill_tile;
+	1, 2: grain_mill_tile;
+	1, 3: grain_mill_tile;
 }
 
 tilelayout tilelayout_grain_mill_6 {
-	0, 0: THIS_ID(tile);
+	0, 0: grain_mill_tile;
 }
 
 /* *************************************************
@@ -304,36 +304,36 @@ tilelayout tilelayout_grain_mill_6 {
 #define THIS_STR_EXTRA_TEXT       STR_EXTRA_GRAIN_MILL
 
 CHECK_INCOMPATIBLE  (grain_mill,    56, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
-CHECK_INCOMPATIBLE  (brewery,       16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(grain_mill))
-CHECK_INCOMPATIBLE  (arable_farm,   16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(brewery))
-CHECK_TOWN_DISTANCE (town_distance,  0,144, THIS_ID(arable_farm))
-CHECK_FOUNDER       (THIS_ID(town_distance))
+CHECK_INCOMPATIBLE  (brewery,       16, CB_RESULT_LOCATION_DISALLOW, grain_mill_grain_mill)
+CHECK_INCOMPATIBLE  (arable_farm,   16, CB_RESULT_LOCATION_DISALLOW, grain_mill_brewery)
+CHECK_TOWN_DISTANCE (town_distance,  0,144, grain_mill_arable_farm)
+CHECK_FOUNDER       (grain_mill_town_distance)
 
 /** After 1900, windmills only appear during map generation. */
-switch (FEAT_INDUSTRIES, SELF, THIS_ID(brick_layouts_only_check_layout), var[0x86]) {
+switch (FEAT_INDUSTRIES, SELF, grain_mill_brick_layouts_only_check_layout, var[0x86]) {
 	5: return CB_RESULT_LOCATION_DISALLOW;
-	THIS_ID(check_location);
+	grain_mill_check_location;
 }
 
-switch (FEAT_INDUSTRIES, SELF, THIS_ID(brick_layouts_only), extra_callback_info2) {
-	IND_CREATION_GENERATION: THIS_ID(check_location);
-	THIS_ID(brick_layouts_only_check_layout);
+switch (FEAT_INDUSTRIES, SELF, grain_mill_brick_layouts_only, extra_callback_info2) {
+	IND_CREATION_GENERATION: grain_mill_check_location;
+	grain_mill_brick_layouts_only_check_layout;
 }
 
 /** Before 1870, only windmills appear. */
-switch (FEAT_INDUSTRIES, SELF, THIS_ID(windmill_layout_only), var[0x86]) {
-	5: THIS_ID(check_location);
+switch (FEAT_INDUSTRIES, SELF, grain_mill_windmill_layout_only, var[0x86]) {
+	5: grain_mill_check_location;
 	return CB_RESULT_LOCATION_DISALLOW;
 }
 
 /** Both types of layouts can appear between 1870 and 1900. */
-switch (FEAT_INDUSTRIES, SELF, THIS_ID(check_date), current_year) {
-	0..1870:    THIS_ID(windmill_layout_only);
-	1870..1900: THIS_ID(check_location);
-	THIS_ID(brick_layouts_only);
+switch (FEAT_INDUSTRIES, SELF, grain_mill_check_date, current_year) {
+	0..1870:    grain_mill_windmill_layout_only;
+	1870..1900: grain_mill_check_location;
+	grain_mill_brick_layouts_only;
 }
 
-SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
+SWITCH_COLOUR_SCHEME1(grain_mill_colour)
 
 #include "../templates/produce_secondary.pnml"
 #include "../templates/check_secondary_production_level.pnml"
@@ -378,13 +378,13 @@ item(FEAT_INDUSTRIES, grain_mill, IND_GRAINMILL_ID) {
 		spec_flags:             0;
 	}
 	graphics {
-		produce_cargo_arrival:   THIS_ID(produce);
-		construction_probability:THIS_ID(check_availability);
-		location_check:          THIS_ID(check_date);
-		monthly_prod_change:     THIS_ID(check_production_level);
-		random_prod_change:      THIS_ID(check_closure);
-		extra_text_industry:     THIS_ID(extra_text);
-		colour:                  THIS_ID(colour);
+		produce_cargo_arrival:   grain_mill_produce;
+		construction_probability:grain_mill_check_availability;
+		location_check:          grain_mill_check_date;
+		monthly_prod_change:     grain_mill_check_production_level;
+		random_prod_change:      grain_mill_check_closure;
+		extra_text_industry:     grain_mill_extra_text;
+		colour:                  grain_mill_colour;
 	}
 }
 
