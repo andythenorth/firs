@@ -4,7 +4,7 @@ syntax: glob
 # The local makefile should be ignored:
 Makefile.local
 
-# And the description file and the grs which are generated automatically
+# And files and dirs which are generated automatically
 firs*.grf
 firs
 firs-*
@@ -13,6 +13,7 @@ firs.md5
 *.md5
 docs/readme.txt
 custom_tags.txt
+sprites/nml/generated_pnml
 
 # Dependency files:
 sprites/nfo/cargo_schemes.pnfo
