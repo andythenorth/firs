@@ -169,7 +169,10 @@ SPRITELAYOUT_END
 
     switch(FEAT_INDUSTRYTILES, SELF, grain_mill_layout_1, relative_pos) {
     
-        relative_coord(0, 0): grain_mill_brickbakery_tile_4;
+        relative_coord(0, 0): grain_mill_brickbakery_tile_3;
+    
+    
+        relative_coord(0, 1): grain_mill_brickbakery_tile_4;
     
     
         relative_coord(1, 0): grain_mill_brickbakery_tile_1;
@@ -236,10 +239,14 @@ SPRITELAYOUT_END
 
 
 
-switch(FEAT_INDUSTRYTILES, SELF, grain_mill_layout_4, relative_pos) {
-	relative_coord(0, 0): grain_mill_windmill_tile_anim;
+    switch(FEAT_INDUSTRYTILES, SELF, grain_mill_layout_4, relative_pos) {
+    
+        relative_coord(0, 0): grain_mill_windmill_tile_anim;
+    
 	grain_mill_windmill_tile_anim;
 }
+
+
 
 switch(FEAT_INDUSTRYTILES, PARENT, grain_mill_layout, layout_num) {
 	1: grain_mill_layout_1;

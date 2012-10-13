@@ -22,13 +22,17 @@ class Layout(object):
         self.id = id
         self.default_tile = default_tile
         self.tiles = tiles
+        layouts.append(self) # register this layout with this context
 
     def render(self, industry):
         template = templates['layout.pynml']
         return template(layout=self, industry=industry)
 
+layouts = []
+
 layout_1 = Layout('layout_1', default_tile = 'brickbakery_tile_3', tiles = (
-    (0, 0, 'brickbakery_tile_4'),
+    (0, 0, 'brickbakery_tile_3'),
+    (0, 1, 'brickbakery_tile_4'),
     (1, 0, 'brickbakery_tile_1'),
     (1, 1, 'brickbakery_tile_2'),
 ))
@@ -51,9 +55,12 @@ layout_3 = Layout('layout_3', default_tile = 'brickbakery_tile_3', tiles = (
     (1, 2, 'brickbakery_tile_1'),
     (1, 3, 'brickbakery_tile_2'),
 ))
+layout_4 = Layout('layout_4', default_tile = 'windmill_tile_anim', tiles = (
+    (0, 0, 'windmill_tile_anim'),
+))
 
 industry_name = 'grain_mill'
-industry = Industry(name=industry_name, layouts=(layout_1, layout_2, layout_3))
+industry = Industry(name=industry_name, layouts=layouts)
 
 # compile a single final nml file for the grf
 industry_template = industry_templates[industry_name + '.pypnml']

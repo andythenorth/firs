@@ -170,11 +170,6 @@ SPRITELAYOUT_END
     ${layout.render(industry=industry)}
 </tal:build_layouts>
 
-switch(FEAT_INDUSTRYTILES, SELF, ${industry.name}_layout_4, relative_pos) {
-	relative_coord(0, 0): ${industry.name}_windmill_tile_anim;
-	${industry.name}_windmill_tile_anim;
-}
-
 switch(FEAT_INDUSTRYTILES, PARENT, ${industry.name}_layout, layout_num) {
 	1: ${industry.name}_layout_1;
 	2: ${industry.name}_layout_1;
