@@ -5,13 +5,18 @@
 # See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with NML build framework. If not, see <http://www.gnu.org/licenses/>.
 #
 
+.PHONY: preprocesspy
+
 ################################################################
 # NML-specific targets and rules
 ################################################################
 
-nml:
+nml: preprocesspy
 	$(_E) "[CPP] $(NML_FILE)"
 	$(_V) $(CC) -D REPO_REVISION=$(REPO_REVISION) $(CC_FLAGS) $(MAIN_SRC_FILE) > $(NML_FILE)
+
+preprocesspy:
+	python sprites/nml/build.py
 
 ################################################################
 # Definitions which extend the common rules
