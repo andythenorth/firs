@@ -9,12 +9,12 @@
 
 #define THIS_ID(...) recycling_depot ## __VA_ARGS__
 
-spriteset(THIS_ID(spriteset_1), "sprites/graphics/industries/recyclingdepot.png") { tmpl_ground_tile(10, 10) }
-spriteset(THIS_ID(spriteset_2), "sprites/graphics/industries/recyclingdepot.png") { tmpl_ground_tile(80, 10) }
+spriteset(THIS_ID(spriteset_tile_with_hut), "sprites/graphics/industries/recyclingdepot.png") { tmpl_ground_tile(10, 10) }
+spriteset(THIS_ID(spriteset_tile_plain), "sprites/graphics/industries/recyclingdepot.png") { tmpl_ground_tile(80, 10) }
 
-SPRITELAYOUT_FENCES_NORMAL(THIS_ID(spritelayout_1), GROUNDSPRITE_CONCRETE, THIS_ID(spriteset_1), 16)
+SPRITELAYOUT_FENCES_NORMAL(THIS_ID(spritelayout_1), GROUNDSPRITE_CONCRETE, THIS_ID(spriteset_tile_with_hut), 16)
 
-SPRITELAYOUT_FENCES_NORMAL(THIS_ID(spritelayout_2), GROUNDSPRITE_CONCRETE, THIS_ID(spriteset_2), 16)
+SPRITELAYOUT_FENCES_NORMAL(THIS_ID(spritelayout_2), GROUNDSPRITE_CONCRETE, THIS_ID(spriteset_tile_plain), 16)
 
 switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout), relative_pos) {
 	0: THIS_ID(spritelayout_1);
