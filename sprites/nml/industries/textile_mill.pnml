@@ -14,42 +14,42 @@ spriteset(THIS_ID(spriteset_ground), "sprites/graphics/industries/groundtiles.pn
 	tmpl_ground_tile(150, 10)
 }
 
-spriteset(THIS_ID(spriteset_1)) {
+spriteset(THIS_ID(spriteset_large_chimney)) {
 	tmpl_building_sprite_filename(10, 60, 103, -74, "sprites/graphics/industries/textilemill.png")
 	tmpl_building_sprite_filename(10, 60, 103, -74, "sprites/graphics/industries/textilemill_snow.png")
 }
 
-spriteset(THIS_ID(spriteset_2)) {
+spriteset(THIS_ID(spriteset_large_building_lh_part)) {
 	tmpl_building_sprite_filename(80, 60, 103, -72, "sprites/graphics/industries/textilemill.png")
 	tmpl_building_sprite_filename(80, 60, 103, -72, "sprites/graphics/industries/textilemill_snow.png")
 }
 
-spriteset(THIS_ID(spriteset_3)) {
+spriteset(THIS_ID(spriteset_large_building_rh_part)) {
 	tmpl_building_sprite_filename(150, 60, 103, -72, "sprites/graphics/industries/textilemill.png")
 	tmpl_building_sprite_filename(150, 60, 103, -72, "sprites/graphics/industries/textilemill_snow.png")
 }
 
-spriteset(THIS_ID(spriteset_4)) {
+spriteset(THIS_ID(spriteset_crates_greeble)) {
 	tmpl_building_sprite_filename(220, 60, 103, -72, "sprites/graphics/industries/textilemill.png")
 	tmpl_building_sprite_filename(220, 60, 103, -72, "sprites/graphics/industries/textilemill_snow.png")
 }
 
-spriteset(THIS_ID(spriteset_5)) {
+spriteset(THIS_ID(spriteset_small_warehouse)) {
 	tmpl_building_sprite_filename(290, 60, 103, -72, "sprites/graphics/industries/textilemill.png")
 	tmpl_building_sprite_filename(290, 60, 103, -72, "sprites/graphics/industries/textilemill_snow.png")
 }
 
-SPRITELAYOUT_NORMAL_SNOW_BEGIN(THIS_ID(spritelayout_1_anim), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_1), 7)
+SPRITELAYOUT_NORMAL_SNOW_BEGIN(THIS_ID(spritelayout_1_anim), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_large_chimney), 7)
 	BUILDING_SMOKE_BIG(0, 9, 78)
 SPRITELAYOUT_END
 
-SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_2), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_2), 64)
+SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_2), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_large_building_lh_part), 64)
 
-SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_3), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_3), 64)
+SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_3), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_large_building_rh_part), 64)
 
-SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_4), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_4), 64)
+SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_4), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_crates_greeble), 64)
 
-SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_5), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_5), 64)
+SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_5), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_small_warehouse), 64)
 
 spritelayout THIS_ID(spritelayout_6) {
 	ground {
