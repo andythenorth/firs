@@ -166,34 +166,9 @@ GROUND_AWARE_SPRITELAYOUT(${industry.name}_windmill_tile_anim)
 	}
 SPRITELAYOUT_END
 
-switch(FEAT_INDUSTRYTILES, SELF, ${industry.name}_layout_1, relative_pos) {
-	relative_coord(0, 1): ${industry.name}_brickbakery_tile_4;
-	relative_coord(1, 0): ${industry.name}_brickbakery_tile_1;
-	relative_coord(1, 1): ${industry.name}_brickbakery_tile_2;
-	${industry.name}_brickbakery_tile_3;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, ${industry.name}_layout_2, relative_pos) {
-	relative_coord(0, 0): ${industry.name}_brickbakery_tile_3;
-	relative_coord(0, 1): ${industry.name}_brickbakery_tile_4;
-	relative_coord(1, 0): ${industry.name}_brickbakery_tile_3;
-	relative_coord(1, 1): ${industry.name}_brickbakery_tile_4;
-	relative_coord(2, 0): ${industry.name}_brickbakery_tile_1;
-	relative_coord(2, 1): ${industry.name}_brickbakery_tile_2;
-	${industry.name}_brickbakery_tile_3;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, ${industry.name}_layout_3, relative_pos) {
-	relative_coord(0, 0): ${industry.name}_brickbakery_tile_3;
-	relative_coord(0, 1): ${industry.name}_brickbakery_tile_4;
-	relative_coord(0, 2): ${industry.name}_brickbakery_tile_3;
-	relative_coord(0, 3): ${industry.name}_brickbakery_tile_4;
-	relative_coord(1, 0): ${industry.name}_brickbakery_tile_1;
-	relative_coord(1, 1): ${industry.name}_brickbakery_tile_2;
-	relative_coord(1, 2): ${industry.name}_brickbakery_tile_1;
-	relative_coord(1, 3): ${industry.name}_brickbakery_tile_2;
-	${industry.name}_brickbakery_tile_3;
-}
+<tal:build_layouts repeat="layout python:industry.layouts">
+    ${layout.render(industry=industry)}
+</tal:build_layouts>
 
 switch(FEAT_INDUSTRYTILES, SELF, ${industry.name}_layout_4, relative_pos) {
 	relative_coord(0, 0): ${industry.name}_windmill_tile_anim;
