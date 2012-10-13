@@ -8,13 +8,16 @@ from chameleon import PageTemplateLoader # chameleon used in most template cases
 templates = PageTemplateLoader(os.path.join(currentdir,'sprites','nml','templates'))
 industry_templates = PageTemplateLoader(os.path.join(currentdir,'sprites','nml','industries'))
 
-class Industry(object):
-    """Base class for all types of industry"""
-    def __init__(self, name, layouts):
-        self.name = name
-        self.graphics_file = '"sprites/graphics/industries/' + name + '.png"' # don't use os.path.join here, this is for nml
-        self.graphics_file_snow = '"sprites/graphics/industries/' + name + '_snow.png"' # don't use os.path.join here, this is for nml
-        self.layouts = layouts
+class Tile(object):
+    """Base class to hold industry tiles"""
+    def __init__(self, id):
+        self.id = id
+        tiles.append(self) # register this layout with this context
+        print tiles
+
+    def render(self, industry):
+        template = templates['tile.pynml']
+        return template(tile=self, industry=industry)
 
 class Layout(object):
     """Base class to hold industry layouts"""
@@ -27,6 +30,22 @@ class Layout(object):
     def render(self, industry):
         template = templates['layout.pynml']
         return template(layout=self, industry=industry)
+
+class Industry(object):
+    """Base class for all types of industry"""
+    def __init__(self, name, layouts):
+        self.name = name
+        self.graphics_file = '"sprites/graphics/industries/' + name + '.png"' # don't use os.path.join here, this is for nml
+        self.graphics_file_snow = '"sprites/graphics/industries/' + name + '_snow.png"' # don't use os.path.join here, this is for nml
+        self.layouts = layouts
+
+tiles = []
+
+brickbakery_tile_1 = Tile('brickbakery_tile_1')
+brickbakery_tile_2 = Tile('brickbakery_tile_2')
+brickbakery_tile_3 = Tile('brickbakery_tile_3')
+brickbakery_tile_4 = Tile('brickbakery_tile_4')
+windmill_tile_anim = Tile('windmill_tile_anim')
 
 layouts = []
 
