@@ -13,7 +13,7 @@ class Spriteset(object):
     def __init__(self, id, sprites, zextent=16):
         self.id = id
         self.sprites = sprites
-        self.zextent = zextent # set this to value of largest sprite
+        self.zextent = zextent # optional parameter, to use set this to value of largest sprite in spriteset, or omit for default (16)
 
     def render(self, industry):
         template = templates['spriteset.pynml']
@@ -55,11 +55,12 @@ class Industry(object):
         self.tiles = tiles
         self.layouts = layouts
 
+""" by convention, ids for use in nml have industry name prefix, local python object ids don't bother with industry name prefix """
 
 spritesets = []
 spriteset_ground_overlay_1 = Spriteset(
     id = 'grain_mill_spriteset_ground_overlay_1',
-	sprites = [(10, 10, 64, 31, -31, 0)]
+	sprites = [(10, 10, 64, 31, -31, 0)],
 )
 spritesets.append(spriteset_ground_overlay_1)
 spriteset_ground_overlay_2 = Spriteset(
@@ -90,40 +91,42 @@ spriteset_2 = Spriteset(
 spritesets.append(spriteset_2)
 spriteset_3 = Spriteset(
     id = 'grain_mill_spriteset_3',
-	sprites = [(150, 60, 64, 82, -31, -51)]
+	sprites = [(150, 60, 64, 82, -31, -51)],
+	zextent = 48 # optional zextent value, will default to 16 if this param is omitted
 )
 spritesets.append(spriteset_3)
 spriteset_4 = Spriteset(
     id = 'grain_mill_spriteset_4',
-	sprites = [(220, 60, 64, 82, -31, -51)]
+	sprites = [(220, 60, 64, 82, -31, -51)],
+	zextent = 48 # optional zextent value, will default to 16 if this param is omitted
 )
 spritesets.append(spriteset_4)
 
 
 tiles = []
 brickbakery_tile_1 = Tile(
-    id = 'brickbakery_tile_1',
+    id = 'grain_mill_brickbakery_tile_1',
     ground_sprite = 'grain_mill_spriteset_ground',
     ground_overlay = spriteset_ground_overlay_1,
     building_sprites = []
 )
 tiles.append(brickbakery_tile_1)
 brickbakery_tile_2 = Tile(
-    id = 'brickbakery_tile_2',
+    id = 'grain_mill_brickbakery_tile_2',
     ground_sprite = 'grain_mill_spriteset_ground',
     ground_overlay = spriteset_ground_overlay_2,
     building_sprites = []
 )
 tiles.append(brickbakery_tile_2)
 brickbakery_tile_3 = Tile(
-    id = 'brickbakery_tile_3',
+    id = 'grain_mill_brickbakery_tile_3',
     ground_sprite = 'grain_mill_spriteset_ground',
     ground_overlay = spriteset_ground_overlay_3,
     building_sprites = [spriteset_3]
 )
 tiles.append(brickbakery_tile_3)
 brickbakery_tile_4 = Tile(
-    id = 'brickbakery_tile_4',
+    id = 'grain_mill_brickbakery_tile_4',
     ground_sprite = 'grain_mill_spriteset_ground',
     ground_overlay = spriteset_ground_overlay_4,
     building_sprites = [spriteset_4]
@@ -140,32 +143,32 @@ windmill_tile_anim = Tile(
 
 
 layouts = []
-layout_1 = Layout('layout_1', default_tile = 'brickbakery_tile_3', tiles = [
-    (0, 0, 'brickbakery_tile_3'),
-    (0, 1, 'brickbakery_tile_4'),
-    (1, 0, 'brickbakery_tile_1'),
-    (1, 1, 'brickbakery_tile_2'),
+layout_1 = Layout('layout_1', default_tile = 'grain_mill_brickbakery_tile_3', tiles = [
+    (0, 0, 'grain_mill_brickbakery_tile_3'),
+    (0, 1, 'grain_mill_brickbakery_tile_4'),
+    (1, 0, 'grain_mill_brickbakery_tile_1'),
+    (1, 1, 'grain_mill_brickbakery_tile_2'),
 ])
 layouts.append(layout_1)
-layout_2 = Layout('layout_2', default_tile = 'brickbakery_tile_3', tiles = [
-    (0, 0, 'brickbakery_tile_3'),
-    (0, 1, 'brickbakery_tile_4'),
-    (1, 0, 'brickbakery_tile_3'),
-    (1, 1, 'brickbakery_tile_4'),
-    (2, 0, 'brickbakery_tile_1'),
-    (2, 1, 'brickbakery_tile_2'),
+layout_2 = Layout('layout_2', default_tile = 'grain_mill_brickbakery_tile_3', tiles = [
+    (0, 0, 'grain_mill_brickbakery_tile_3'),
+    (0, 1, 'grain_mill_brickbakery_tile_4'),
+    (1, 0, 'grain_mill_brickbakery_tile_3'),
+    (1, 1, 'grain_mill_brickbakery_tile_4'),
+    (2, 0, 'grain_mill_brickbakery_tile_1'),
+    (2, 1, 'grain_mill_brickbakery_tile_2'),
 
 ])
 layouts.append(layout_2)
-layout_3 = Layout('layout_3', default_tile = 'brickbakery_tile_3', tiles = [
-    (0, 0, 'brickbakery_tile_3'),
-    (0, 1, 'brickbakery_tile_4'),
-    (0, 2, 'brickbakery_tile_3'),
-    (0, 3, 'brickbakery_tile_4'),
-    (1, 0, 'brickbakery_tile_1'),
-    (1, 1, 'brickbakery_tile_2'),
-    (1, 2, 'brickbakery_tile_1'),
-    (1, 3, 'brickbakery_tile_2'),
+layout_3 = Layout('layout_3', default_tile = 'grain_mill_brickbakery_tile_3', tiles = [
+    (0, 0, 'grain_mill_brickbakery_tile_3'),
+    (0, 1, 'grain_mill_brickbakery_tile_4'),
+    (0, 2, 'grain_mill_brickbakery_tile_3'),
+    (0, 3, 'grain_mill_brickbakery_tile_4'),
+    (1, 0, 'grain_mill_brickbakery_tile_1'),
+    (1, 1, 'grain_mill_brickbakery_tile_2'),
+    (1, 2, 'grain_mill_brickbakery_tile_1'),
+    (1, 3, 'grain_mill_brickbakery_tile_2'),
 ])
 layouts.append(layout_3)
 layout_4 = Layout('layout_4', default_tile = 'windmill_tile_anim', tiles = [

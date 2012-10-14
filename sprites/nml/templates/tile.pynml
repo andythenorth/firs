@@ -82,14 +82,14 @@ spritelayout grain_mill_${tile.id} {
             sprite: ${building_sprite.id};
             recolour_mode: RECOLOUR_REMAP;
             palette: PALETTE_USE_DEFAULT;
-            zextent: 48;
+            zextent: ${building_sprite.zextent};
             hide_sprite: !(terrain_type != TILETYPE_SNOW);
         }
         building {
             sprite: ${building_sprite.id}_snow;
             recolour_mode: RECOLOUR_REMAP;
             palette: PALETTE_USE_DEFAULT;
-            zextent: 48;
+            zextent: ${building_sprite.zextent};
             hide_sprite: !(terrain_type == TILETYPE_SNOW);
         }
     </tal:build_building_sprites>
