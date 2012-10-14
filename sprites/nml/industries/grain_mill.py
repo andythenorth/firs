@@ -37,7 +37,7 @@ class SpriteLayout(object):
 
     def render(self, industry):
         template = templates['spritelayout.pynml']
-        return template(tile=self, industry=industry)
+        return template(spritelayout=self, industry=industry)
 
 
 class IndustryLayout(object):

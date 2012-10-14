@@ -1,4 +1,4 @@
-spritelayout ${tile.id} {
+spritelayout ${spritelayout.id} {
     // generic ground (terrain aware / climate aware)
     ground {
         sprite: GROUNDSPRITE_NORMAL ;
@@ -51,13 +51,13 @@ spritelayout ${tile.id} {
     // industry-specific ground (snow aware)
     // normal
     childsprite {
-        sprite: ${tile.ground_sprite.id};
+        sprite: ${spritelayout.ground_sprite.id};
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
         hide_sprite: !(terrain_type != TILETYPE_SNOW); always_draw: 1;
     }
     childsprite {
-        sprite: ${tile.ground_overlay.id};
+        sprite: ${spritelayout.ground_overlay.id};
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
         hide_sprite: !(terrain_type != TILETYPE_SNOW); always_draw: 1;
@@ -70,14 +70,14 @@ spritelayout ${tile.id} {
         hide_sprite: !(terrain_type == TILETYPE_SNOW); always_draw: 1;
     }
     childsprite {
-        sprite: ${tile.ground_overlay.id}_snow;
+        sprite: ${spritelayout.ground_overlay.id}_snow;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
         hide_sprite: !(terrain_type == TILETYPE_SNOW); always_draw: 1;
     }
 
     // industry buildings (snow aware)
-    <tal:build_building_sprites repeat="building_sprite python:tile.building_sprites">
+    <tal:build_building_sprites repeat="building_sprite spritelayout.building_sprites">
         building {
             sprite: ${building_sprite.id}(${building_sprite.animation_rate} * animation_frame);
             recolour_mode: RECOLOUR_REMAP;
