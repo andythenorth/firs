@@ -13,65 +13,9 @@
     ${spriteset.render(industry=industry)}
 </tal:build_spritesets>
 
-spriteset(${industry.id}_spriteset_ground_windmill) {
-	tmpl_building_sprite_filename(10, 160, 31, 0, ${industry.graphics_file})
-	tmpl_building_sprite_filename(10, 160, 31, 0, ${industry.graphics_file})
-	tmpl_building_sprite_filename(10, 160, 31, 0, ${industry.graphics_file})
-	tmpl_building_sprite_filename(10, 160, 31, 0, ${industry.graphics_file})
-	tmpl_building_sprite_filename(10, 160, 31, 0, ${industry.graphics_file})
-	tmpl_building_sprite_filename(10, 160, 31, 0, ${industry.graphics_file})
-	tmpl_building_sprite_filename(10, 160, 31, 0, ${industry.graphics_file})
-	tmpl_building_sprite_filename(10, 160, 31, 0, ${industry.graphics_file})
-	tmpl_building_sprite_filename(10, 160, 31, 0, ${industry.graphics_file})
-	tmpl_building_sprite_filename(10, 160, 31, 0, ${industry.graphics_file})
-	tmpl_building_sprite_filename(10, 160, 31, 0, ${industry.graphics_file})
-	tmpl_building_sprite_filename(10, 160, 31, 0, ${industry.graphics_file})
-}
-
-spriteset(${industry.id}_spriteset_ground_windmill_snow) {
-	tmpl_building_sprite_filename(10, 160, 31, 0, ${industry.graphics_file_snow})
-	tmpl_building_sprite_filename(10, 160, 31, 0, ${industry.graphics_file_snow})
-	tmpl_building_sprite_filename(10, 160, 31, 0, ${industry.graphics_file_snow})
-	tmpl_building_sprite_filename(10, 160, 31, 0, ${industry.graphics_file_snow})
-	tmpl_building_sprite_filename(10, 160, 31, 0, ${industry.graphics_file_snow})
-	tmpl_building_sprite_filename(10, 160, 31, 0, ${industry.graphics_file_snow})
-	tmpl_building_sprite_filename(10, 160, 31, 0, ${industry.graphics_file_snow})
-	tmpl_building_sprite_filename(10, 160, 31, 0, ${industry.graphics_file_snow})
-	tmpl_building_sprite_filename(10, 160, 31, 0, ${industry.graphics_file_snow})
-	tmpl_building_sprite_filename(10, 160, 31, 0, ${industry.graphics_file_snow})
-	tmpl_building_sprite_filename(10, 160, 31, 0, ${industry.graphics_file_snow})
-	tmpl_building_sprite_filename(10, 160, 31, 0, ${industry.graphics_file_snow})
-}
-
-spriteset(${industry.id}_spriteset_windmill_anim) {
-	tmpl_building_sprite_filename( 10, 200, 82, -52, ${industry.graphics_file})
-	tmpl_building_sprite_filename( 10, 200, 82, -52, ${industry.graphics_file_snow})
-	tmpl_building_sprite_filename( 80, 200, 82, -52, ${industry.graphics_file})
-	tmpl_building_sprite_filename( 80, 200, 82, -52, ${industry.graphics_file_snow})
-	tmpl_building_sprite_filename(150, 200, 82, -52, ${industry.graphics_file})
-	tmpl_building_sprite_filename(150, 200, 82, -52, ${industry.graphics_file_snow})
-	tmpl_building_sprite_filename(220, 200, 82, -52, ${industry.graphics_file})
-	tmpl_building_sprite_filename(220, 200, 82, -52, ${industry.graphics_file_snow})
-	tmpl_building_sprite_filename(290, 200, 82, -52, ${industry.graphics_file})
-	tmpl_building_sprite_filename(290, 200, 82, -52, ${industry.graphics_file_snow})
-	tmpl_building_sprite_filename(360, 200, 82, -52, ${industry.graphics_file})
-	tmpl_building_sprite_filename(360, 200, 82, -52, ${industry.graphics_file_snow})
-}
-
 <tal:build_layouts repeat="tile python:industry.tiles">
     ${tile.render(industry=industry)}
 </tal:build_layouts>
-
-GROUND_AWARE_SPRITELAYOUT(${industry.id}_windmill_tile_anim)
-	CONDITIONAL_GROUND_SPRITE_OVERLAY(${industry.id}_spriteset_ground_windmill, terrain_type != TILETYPE_SNOW)
-	CONDITIONAL_GROUND_SPRITE_OVERLAY(${industry.id}_spriteset_ground_windmill_snow, terrain_type == TILETYPE_SNOW)
-	building {
-		sprite: ${industry.id}_spriteset_windmill_anim(2 * animation_frame + (terrain_type == TILETYPE_SNOW));
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 24;
-	}
-SPRITELAYOUT_END
 
 <tal:build_layouts repeat="layout python:industry.layouts">
     ${layout.render(industry=industry)}

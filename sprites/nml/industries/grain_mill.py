@@ -10,15 +10,17 @@ industry_templates = PageTemplateLoader(os.path.join(currentdir,'sprites','nml',
 
 class Spriteset(object):
     """Base class to hold industry spritesets"""
-    def __init__(self, id, sprites, type='', zextent=16, animation_rate = 0):
+    # arguably this should be two different classes, one for building/feature spritesets, and one for ground spritesets
+    def __init__(self, id, sprites=[], type='', zextent=16, animation_rate = 0, autofill_sprites = 1):
         self.id = id
         self.type = type # set to ground or other special types, or omit for default (building, greeble, foundations etc)
         self.sprites = sprites
         self.zextent = zextent # optional parameter, to use set this to value of largest sprite in spriteset, or omit for default (16)
         self.animation_rate = animation_rate # multiplier to tile's animation rate, set to 1 for same as tile, >1 for faster; leave default (0) to disable animation
+        self.autofill_sprites = autofill_sprites # create n sprites per sprite passed (convenience method for use where spriteset sizes must match)
 
     def get_ground_tile_x_start(self, type):
-        return {'mud': 0, 'concrete': 80, 'cobble': 150, 'snow': 220}[type]
+        return {'mud': 0, 'concrete': 80, 'cobble': 150, 'snow': 220, 'empty':290}[type]
 
     def render(self, industry):
         template = templates['spriteset.pynml']
@@ -65,7 +67,6 @@ class Industry(object):
 spritesets = []
 spriteset_ground_bakery = Spriteset(
     id = 'grain_mill_spriteset_ground_bakery',
-	sprites = [(10, 10, 64, 31, -31, 0)],
 	type='cobble',
 )
 spritesets.append(spriteset_ground_bakery)
@@ -113,6 +114,27 @@ spriteset_4 = Spriteset(
 )
 spritesets.append(spriteset_4)
 
+spriteset_windmill_anim = Spriteset(
+    id = 'grain_mill_spriteset_windmill_anim',
+	sprites = [(10, 200, 64, 82, -31, -52), (80, 200, 64, 82, -31, -52), (150, 200, 64, 82, -31, -52),
+               (220, 200, 64, 82, -31, -52), (290, 200, 64, 82, -31, -52), (360, 200, 64, 82, -31, -52)],
+	zextent = 24, # optional zextent value, will default to 16 if this param is omitted
+	animation_rate = 1
+)
+spritesets.append(spriteset_windmill_anim)
+spriteset_ground_windmill = Spriteset(
+    id = 'grain_mill_spriteset_ground_windmill',
+	type = 'empty',
+	autofill_sprites = len(spriteset_windmill_anim.sprites), # autofills number of animated frames (can get count from another spriteset if defined already)
+)
+spritesets.append(spriteset_ground_windmill)
+spriteset_ground_overlay_windmill = Spriteset(
+    id = 'grain_mill_spriteset_ground_overlay_windmill',
+	sprites = [(10, 160, 64, 31, -31, 0)],
+	autofill_sprites = len(spriteset_windmill_anim.sprites), # autofills number of animated frames (can get count from another spriteset if defined already)
+)
+spritesets.append(spriteset_ground_overlay_windmill)
+
 
 tiles = []
 brickbakery_tile_1 = SpriteLayout(
@@ -143,14 +165,13 @@ brickbakery_tile_4 = SpriteLayout(
     building_sprites = [spriteset_4]
 )
 tiles.append(brickbakery_tile_4)
-"""
 windmill_tile_anim = SpriteLayout(
-    id = 'windmill_tile_anim',
-    ground_sprite = 'windmill_spriteset_ground_windmill',
-    ground_overlay = 'bar',
-    building_sprites = ('ham','eggs')
+    id = 'grain_mill_windmill_tile_anim',
+    ground_sprite = spriteset_ground_windmill,
+    ground_overlay = spriteset_ground_overlay_windmill,
+    building_sprites = [spriteset_windmill_anim]
 )
-"""
+tiles.append(windmill_tile_anim)
 
 
 layouts = []
@@ -182,8 +203,8 @@ layout_3 = IndustryLayout('layout_3', default_tile = 'grain_mill_brickbakery_til
     (1, 3, 'grain_mill_brickbakery_tile_2'),
 ])
 layouts.append(layout_3)
-layout_4 = IndustryLayout('layout_4', default_tile = 'windmill_tile_anim', tiles = [
-    (0, 0, 'windmill_tile_anim'),
+layout_4 = IndustryLayout('layout_4', default_tile = 'grain_mill_windmill_tile_anim', tiles = [
+    (0, 0, 'grain_mill_windmill_tile_anim'),
 ])
 layouts.append(layout_4)
 
