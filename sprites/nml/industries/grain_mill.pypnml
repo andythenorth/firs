@@ -13,33 +13,9 @@ spriteset(${industry.name}_spriteset_ground, "sprites/graphics/industries/ground
 	tmpl_ground_tile(150, 10)
 }
 
-spriteset(${industry.name}_spriteset_ground_overlay_1_snow) {
-	tmpl_building_sprite_filename(10, 10, 31, 0, ${industry.graphics_file_snow})
-}
-
-spriteset(${industry.name}_spriteset_ground_overlay_2_snow) {
-	tmpl_building_sprite_filename(80, 10, 31, 0, ${industry.graphics_file_snow})
-}
-spriteset(${industry.name}_spriteset_ground_overlay_3_snow) {
-	tmpl_building_sprite_filename(150, 10, 31, 0, ${industry.graphics_file_snow})
-}
-spriteset(${industry.name}_spriteset_ground_overlay_4_snow) {
-	tmpl_building_sprite_filename(220, 10, 31, 0, ${industry.graphics_file_snow})
-}
-
-spriteset(${industry.name}_spriteset_ground_overlay_1) {
-	tmpl_building_sprite_filename(10, 10, 31, 0, ${industry.graphics_file})
-}
-spriteset(${industry.name}_spriteset_ground_overlay_2) {
-	tmpl_building_sprite_filename(80, 10, 31, 0, ${industry.graphics_file})
-}
-spriteset(${industry.name}_spriteset_ground_overlay_3) {
-	tmpl_building_sprite_filename(150, 10, 31, 0, ${industry.graphics_file})
-}
-spriteset(${industry.name}_spriteset_ground_overlay_4) {
-	tmpl_building_sprite_filename(220, 10, 31, 0, ${industry.graphics_file})
-}
-
+<tal:build_spritesets repeat="spriteset python:industry.spritesets">
+    ${spriteset.render(industry=industry)}
+</tal:build_spritesets>
 
 spriteset(${industry.name}_spriteset_1_snow) {
 	[10, 10, 64, 31, -31, 0, ${industry.graphics_file_snow}]

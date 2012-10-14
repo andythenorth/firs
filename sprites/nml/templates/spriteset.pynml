@@ -1,1 +1,11 @@
+spriteset(${industry.name}_${spriteset.id}) {
+    <tal:build_sprites repeat="sprite spriteset.sprites">
+	    tmpl_building_sprite_filename(${sprite[0]}, ${sprite[1]}, ${sprite[2]}, ${sprite[3]}, ${industry.graphics_file})
+    </tal:build_sprites>
+}
 
+spriteset(${industry.name}_${spriteset.id}_snow) {
+    <tal:build_sprites repeat="sprite spriteset.sprites">
+	    tmpl_building_sprite_filename(${sprite[0]}, ${sprite[1]}, ${sprite[2]}, ${sprite[3]}, ${industry.graphics_file_snow})
+    </tal:build_sprites>
+}

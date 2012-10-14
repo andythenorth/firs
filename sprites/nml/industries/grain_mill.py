@@ -8,6 +8,17 @@ from chameleon import PageTemplateLoader # chameleon used in most template cases
 templates = PageTemplateLoader(os.path.join(currentdir,'sprites','nml','templates'), format='text')
 industry_templates = PageTemplateLoader(os.path.join(currentdir,'sprites','nml','industries'), format='text')
 
+class Spriteset(object):
+    """Base class to hold industry spritesets"""
+    def __init__(self, id, sprites):
+        self.id = id
+        self.sprites = sprites
+
+    def render(self, industry):
+        template = templates['spriteset.pynml']
+        return template(spriteset=self, industry=industry)
+
+
 class Tile(object):
     """Base class to hold industry tiles"""
     def __init__(self, id, ground_sprite, ground_overlay, building_sprites):
@@ -35,15 +46,39 @@ class Layout(object):
 
 class Industry(object):
     """Base class for all types of industry"""
-    def __init__(self, name, tiles, layouts):
+    def __init__(self, name, spritesets, tiles, layouts):
         self.name = name
         self.graphics_file = '"sprites/graphics/industries/' + name + '.png"' # don't use os.path.join here, this is for nml
         self.graphics_file_snow = '"sprites/graphics/industries/' + name + '_snow.png"' # don't use os.path.join here, this is for nml
+        self.spritesets = spritesets
         self.tiles = tiles
         self.layouts = layouts
 
-tiles = []
 
+spritesets = []
+spriteset_ground_overlay_1 = Spriteset(
+    id = 'spriteset_ground_overlay_1',
+	sprites = [(10, 10, 31, 0)]
+)
+spritesets.append(spriteset_ground_overlay_1)
+spriteset_ground_overlay_2 = Spriteset(
+    id = 'spriteset_ground_overlay_2',
+	sprites = [(80, 10, 31, 0)]
+)
+spritesets.append(spriteset_ground_overlay_2)
+spriteset_ground_overlay_3 = Spriteset(
+    id = 'spriteset_ground_overlay_3',
+	sprites = [(150, 10, 31, 0)]
+)
+spritesets.append(spriteset_ground_overlay_3)
+spriteset_ground_overlay_4 = Spriteset(
+    id = 'spriteset_ground_overlay_4',
+	sprites = [(220, 10, 31, 0)]
+)
+spritesets.append(spriteset_ground_overlay_4)
+
+
+tiles = []
 brickbakery_tile_1 = Tile(
     id = 'brickbakery_tile_1',
     ground_sprite = 'grain_mill_spriteset_ground',
@@ -80,8 +115,9 @@ windmill_tile_anim = Tile(
     building_sprites = ('ham','eggs')
 )
 """
-layouts = []
 
+
+layouts = []
 layout_1 = Layout('layout_1', default_tile = 'brickbakery_tile_3', tiles = [
     (0, 0, 'brickbakery_tile_3'),
     (0, 1, 'brickbakery_tile_4'),
@@ -116,7 +152,7 @@ layout_4 = Layout('layout_4', default_tile = 'windmill_tile_anim', tiles = [
 layouts.append(layout_4)
 
 industry_name = 'grain_mill'
-industry = Industry(name=industry_name, tiles=tiles, layouts=layouts)
+industry = Industry(name=industry_name, spritesets=spritesets, tiles=tiles, layouts=layouts)
 
 # compile a single final nml file for the grf
 industry_template = industry_templates[industry_name + '.pypnml']
