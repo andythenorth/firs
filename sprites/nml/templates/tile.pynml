@@ -57,7 +57,7 @@ spritelayout grain_mill_${tile.id} {
         hide_sprite: !(terrain_type != TILETYPE_SNOW); always_draw: 1;
     }
     childsprite {
-        sprite: ${tile.ground_overlay};
+        sprite: ${tile.ground_overlay.id};
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
         hide_sprite: !(terrain_type != TILETYPE_SNOW); always_draw: 1;
@@ -70,7 +70,7 @@ spritelayout grain_mill_${tile.id} {
         hide_sprite: !(terrain_type == TILETYPE_SNOW); always_draw: 1;
     }
     childsprite {
-        sprite: ${tile.ground_overlay}_snow;
+        sprite: ${tile.ground_overlay.id}_snow;
         recolour_mode: RECOLOUR_REMAP;
         palette: PALETTE_USE_DEFAULT;
         hide_sprite: !(terrain_type == TILETYPE_SNOW); always_draw: 1;
@@ -79,14 +79,14 @@ spritelayout grain_mill_${tile.id} {
     // industry buildings (snow aware)
     <tal:build_building_sprites repeat="building_sprite python:tile.building_sprites">
         building {
-            sprite: ${building_sprite};
+            sprite: ${building_sprite.id};
             recolour_mode: RECOLOUR_REMAP;
             palette: PALETTE_USE_DEFAULT;
             zextent: 48;
             hide_sprite: !(terrain_type != TILETYPE_SNOW);
         }
         building {
-            sprite: ${building_sprite}_snow;
+            sprite: ${building_sprite.id}_snow;
             recolour_mode: RECOLOUR_REMAP;
             palette: PALETTE_USE_DEFAULT;
             zextent: 48;

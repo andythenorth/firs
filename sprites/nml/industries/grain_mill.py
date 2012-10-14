@@ -10,9 +10,10 @@ industry_templates = PageTemplateLoader(os.path.join(currentdir,'sprites','nml',
 
 class Spriteset(object):
     """Base class to hold industry spritesets"""
-    def __init__(self, id, sprites):
+    def __init__(self, id, sprites, zextent=16):
         self.id = id
         self.sprites = sprites
+        self.zextent = zextent # set this to value of largest sprite
 
     def render(self, industry):
         template = templates['spriteset.pynml']
@@ -57,43 +58,43 @@ class Industry(object):
 
 spritesets = []
 spriteset_ground_overlay_1 = Spriteset(
-    id = 'spriteset_ground_overlay_1',
+    id = 'grain_mill_spriteset_ground_overlay_1',
 	sprites = [(10, 10, 64, 31, -31, 0)]
 )
 spritesets.append(spriteset_ground_overlay_1)
 spriteset_ground_overlay_2 = Spriteset(
-    id = 'spriteset_ground_overlay_2',
+    id = 'grain_mill_spriteset_ground_overlay_2',
 	sprites = [(80, 10, 64, 31, -31, 0)]
 )
 spritesets.append(spriteset_ground_overlay_2)
 spriteset_ground_overlay_3 = Spriteset(
-    id = 'spriteset_ground_overlay_3',
+    id = 'grain_mill_spriteset_ground_overlay_3',
 	sprites = [(150, 10, 64, 31, -31, 0)]
 )
 spritesets.append(spriteset_ground_overlay_3)
 spriteset_ground_overlay_4 = Spriteset(
-    id = 'spriteset_ground_overlay_4',
+    id = 'grain_mill_spriteset_ground_overlay_4',
 	sprites = [(220, 10, 64, 31, -31, 0)]
 )
 spritesets.append(spriteset_ground_overlay_4)
 
 spriteset_1 = Spriteset(
-    id = 'spriteset_1',
+    id = 'grain_mill_spriteset_1',
 	sprites = [(10, 10, 64, 31, -31, 0)]
 )
 spritesets.append(spriteset_1)
 spriteset_2 = Spriteset(
-    id = 'spriteset_2',
+    id = 'grain_mill_spriteset_2',
 	sprites = [(80, 10, 64, 31, -31, 0)]
 )
 spritesets.append(spriteset_2)
 spriteset_3 = Spriteset(
-    id = 'spriteset_3',
+    id = 'grain_mill_spriteset_3',
 	sprites = [(150, 60, 64, 82, -31, -51)]
 )
 spritesets.append(spriteset_3)
 spriteset_4 = Spriteset(
-    id = 'spriteset_4',
+    id = 'grain_mill_spriteset_4',
 	sprites = [(220, 60, 64, 82, -31, -51)]
 )
 spritesets.append(spriteset_4)
@@ -103,29 +104,29 @@ tiles = []
 brickbakery_tile_1 = Tile(
     id = 'brickbakery_tile_1',
     ground_sprite = 'grain_mill_spriteset_ground',
-    ground_overlay = 'grain_mill_spriteset_ground_overlay_1',
+    ground_overlay = spriteset_ground_overlay_1,
     building_sprites = []
 )
 tiles.append(brickbakery_tile_1)
 brickbakery_tile_2 = Tile(
     id = 'brickbakery_tile_2',
     ground_sprite = 'grain_mill_spriteset_ground',
-    ground_overlay = 'grain_mill_spriteset_ground_overlay_2',
+    ground_overlay = spriteset_ground_overlay_2,
     building_sprites = []
 )
 tiles.append(brickbakery_tile_2)
 brickbakery_tile_3 = Tile(
     id = 'brickbakery_tile_3',
     ground_sprite = 'grain_mill_spriteset_ground',
-    ground_overlay = 'grain_mill_spriteset_ground_overlay_3',
-    building_sprites = ['grain_mill_spriteset_3']
+    ground_overlay = spriteset_ground_overlay_3,
+    building_sprites = [spriteset_3]
 )
 tiles.append(brickbakery_tile_3)
 brickbakery_tile_4 = Tile(
     id = 'brickbakery_tile_4',
     ground_sprite = 'grain_mill_spriteset_ground',
-    ground_overlay = 'grain_mill_spriteset_ground_overlay_4',
-    building_sprites = ['grain_mill_spriteset_4']
+    ground_overlay = spriteset_ground_overlay_4,
+    building_sprites = [spriteset_4]
 )
 tiles.append(brickbakery_tile_4)
 """

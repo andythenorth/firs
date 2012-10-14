@@ -1,10 +1,10 @@
-spriteset(${industry.id}_${spriteset.id}) {
+spriteset(${spriteset.id}) {
     <tal:build_sprites repeat="sprite spriteset.sprites">
 	    [${sprite[0]}, ${sprite[1]}, ${sprite[2]}, ${sprite[3]}, ${sprite[4]}, ${sprite[5]}, NOCROP, ${industry.graphics_file}]
     </tal:build_sprites>
 }
 
-spriteset(${industry.id}_${spriteset.id}_snow) {
+spriteset(${spriteset.id}_snow) {
     <tal:build_sprites repeat="sprite spriteset.sprites">
 	    [${sprite[0]}, ${sprite[1]}, ${sprite[2]}, ${sprite[3]}, ${sprite[4]}, ${sprite[5]}, NOCROP, ${industry.graphics_file_snow}]
     </tal:build_sprites>
