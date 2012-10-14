@@ -1,0 +1,104 @@
+<!--!
+  This file is part of FIRS Industry Set for OpenTTD.
+  FIRS is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 2.
+  FIRS is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+  See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
+-->
+<tal:build_spritelayouts repeat="spritelayout python:industry.spritelayouts">
+    spritelayout ${spritelayout.id} {
+        // generic ground (terrain aware / climate aware)
+        ground {
+            sprite: GROUNDSPRITE_NORMAL ;
+            recolour_mode: RECOLOUR_REMAP;
+            palette: PALETTE_USE_DEFAULT;
+        }
+        childsprite {
+            sprite: GROUNDSPRITE_DESERT;
+            recolour_mode: RECOLOUR_REMAP;
+            palette: PALETTE_USE_DEFAULT;
+            always_draw: 1;
+            hide_sprite: (climate != CLIMATE_TROPIC) || (climate == CLIMATE_TROPIC) && (nearby_tile_terrain_type(0, 0) != TILETYPE_DESERT);
+        }
+        childsprite {
+            sprite: GROUNDSPRITE_DESERT_1_2;
+            recolour_mode: RECOLOUR_REMAP;
+            palette: PALETTE_USE_DEFAULT;
+            always_draw: 1;
+            hide_sprite: (climate != CLIMATE_TROPIC) || ((climate == CLIMATE_TROPIC) && (nearby_tile_terrain_type(0, 0) == TILETYPE_DESERT)) || ((climate == CLIMATE_TROPIC) && (nearby_tile_terrain_type(0, 0) == TILETYPE_NORMAL) && ((nearby_tile_terrain_type( 1, 0) != TILETYPE_DESERT) && (nearby_tile_terrain_type(-1, 0) != TILETYPE_DESERT) && (nearby_tile_terrain_type( 0, 1) != TILETYPE_DESERT) && (nearby_tile_terrain_type( 0,-1) != TILETYPE_DESERT) ) );
+        }
+        childsprite {
+            sprite: GROUNDSPRITE_SNOW_4_4;
+            recolour_mode: RECOLOUR_REMAP;
+            palette: PALETTE_USE_DEFAULT;
+            always_draw: 1;
+            hide_sprite: (climate != CLIMATE_ARCTIC) || (climate == CLIMATE_ARCTIC) && (nearby_tile_height(0, 0) < (snowline_height + 2));
+        }
+        childsprite {
+            sprite: GROUNDSPRITE_SNOW_3_4;
+            recolour_mode: RECOLOUR_REMAP;
+            palette: PALETTE_USE_DEFAULT;
+            always_draw: 1;
+            hide_sprite: (climate != CLIMATE_ARCTIC) || (climate == CLIMATE_ARCTIC) && ((nearby_tile_height(0, 0) < (snowline_height + 1)) || (nearby_tile_height(0, 0) >= (snowline_height + 2)));
+        }
+        childsprite {
+            sprite: GROUNDSPRITE_SNOW_2_4;
+            recolour_mode: RECOLOUR_REMAP;
+            palette: PALETTE_USE_DEFAULT;
+            always_draw: 1;
+            hide_sprite: (climate != CLIMATE_ARCTIC) || (climate == CLIMATE_ARCTIC) && ((nearby_tile_height(0, 0) < (snowline_height + 0)) || (nearby_tile_height(0, 0) >= (snowline_height + 1)));
+        }
+        childsprite {
+            sprite: GROUNDSPRITE_SNOW_1_4;
+            recolour_mode: RECOLOUR_REMAP;
+            palette: PALETTE_USE_DEFAULT;
+            always_draw: 1;
+            hide_sprite: (climate != CLIMATE_ARCTIC) || (climate == CLIMATE_ARCTIC) && ((nearby_tile_height(0, 0) < (snowline_height - 1)) || (nearby_tile_height(0, 0) >= (snowline_height + 0)));
+        }
+
+        // industry-specific ground (snow aware)
+        // normal
+        childsprite {
+            sprite: ${spritelayout.ground_sprite.id};
+            recolour_mode: RECOLOUR_REMAP;
+            palette: PALETTE_USE_DEFAULT;
+            hide_sprite: !(terrain_type != TILETYPE_SNOW); always_draw: 1;
+        }
+        childsprite {
+            sprite: ${spritelayout.ground_overlay.id};
+            recolour_mode: RECOLOUR_REMAP;
+            palette: PALETTE_USE_DEFAULT;
+            hide_sprite: !(terrain_type != TILETYPE_SNOW); always_draw: 1;
+        }
+        // snow
+        childsprite {
+            sprite: GROUNDSPRITE_SNOW;
+            recolour_mode: RECOLOUR_REMAP;
+            palette: PALETTE_USE_DEFAULT;
+            hide_sprite: !(terrain_type == TILETYPE_SNOW); always_draw: 1;
+        }
+        childsprite {
+            sprite: ${spritelayout.ground_overlay.id}_snow;
+            recolour_mode: RECOLOUR_REMAP;
+            palette: PALETTE_USE_DEFAULT;
+            hide_sprite: !(terrain_type == TILETYPE_SNOW); always_draw: 1;
+        }
+
+        // industry buildings (snow aware)
+        <tal:build_building_sprites repeat="building_sprite spritelayout.building_sprites">
+            building {
+                sprite: ${building_sprite.id}(${building_sprite.animation_rate} * animation_frame);
+                recolour_mode: RECOLOUR_REMAP;
+                palette: PALETTE_USE_DEFAULT;
+                zextent: ${building_sprite.zextent};
+                hide_sprite: !(terrain_type != TILETYPE_SNOW);
+            }
+            building {
+                sprite: ${building_sprite.id}_snow(${building_sprite.animation_rate} * animation_frame);
+                recolour_mode: RECOLOUR_REMAP;
+                palette: PALETTE_USE_DEFAULT;
+                zextent: ${building_sprite.zextent};
+                hide_sprite: !(terrain_type == TILETYPE_SNOW);
+            }
+        </tal:build_building_sprites>
+    }
+</tal:build_spritelayouts>

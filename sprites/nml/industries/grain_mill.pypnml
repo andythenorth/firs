@@ -13,9 +13,8 @@
     ${spriteset.render(industry=industry)}
 </tal:build_spritesets>
 
-<tal:build_spritelayouts repeat="spritelayout python:industry.spritelayouts">
-    ${spritelayout.render(industry=industry)}
-</tal:build_spritelayouts>
+
+${industry.get_spritelayouts()}
 
 ${industry.get_industry_layouts_as_graphic_switches()}
 

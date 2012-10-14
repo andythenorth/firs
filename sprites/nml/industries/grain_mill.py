@@ -42,10 +42,6 @@ class SpriteLayout(object):
         self.ground_overlay = ground_overlay
         self.building_sprites = building_sprites
 
-    def render(self, industry):
-        template = templates['spritelayout.pynml']
-        return template(spritelayout=self, industry=industry)
-
 
 class IndustryLayout(object):
     """Base class to hold industry layouts"""
@@ -64,6 +60,10 @@ class Industry(object):
         self.spritesets = spritesets
         self.spritelayouts = spritelayouts # by convention spritelayout is one word :P
         self.industry_layouts = industry_layouts
+
+    def get_spritelayouts(self):
+        template = templates['spritelayouts.pynml']
+        return template(industry=industry)
 
     def get_industry_layouts_as_tilelayouts(self):
         template = templates['industry_layout_tilelayouts.pynml']
