@@ -137,86 +137,86 @@ spritesets.append(spriteset_ground_overlay_windmill)
 
 
 spritelayouts = []
-brickbakery_spritelayout_1 = SpriteLayout(
-    id = 'grain_mill_brickbakery_spritelayout_1',
+spritelayout_brickbakery_1 = SpriteLayout(
+    id = 'grain_mill_spritelayout_brickbakery_1',
     ground_sprite = spriteset_ground_bakery,
     ground_overlay = spriteset_ground_overlay_1,
     building_sprites = []
 )
-spritelayouts.append(brickbakery_spritelayout_1)
-brickbakery_spritelayout_2 = SpriteLayout(
-    id = 'grain_mill_brickbakery_spritelayout_2',
+spritelayouts.append(spritelayout_brickbakery_1)
+spritelayout_brickbakery_2 = SpriteLayout(
+    id = 'grain_mill_spritelayout_brickbakery_2',
     ground_sprite = spriteset_ground_bakery,
     ground_overlay = spriteset_ground_overlay_2,
     building_sprites = []
 )
-spritelayouts.append(brickbakery_spritelayout_2)
-brickbakery_spritelayout_3 = SpriteLayout(
-    id = 'grain_mill_brickbakery_spritelayout_3',
+spritelayouts.append(spritelayout_brickbakery_2)
+spritelayout_brickbakery_3 = SpriteLayout(
+    id = 'grain_mill_spritelayout_brickbakery_3',
     ground_sprite = spriteset_ground_bakery,
     ground_overlay = spriteset_ground_overlay_3,
     building_sprites = [spriteset_3]
 )
-spritelayouts.append(brickbakery_spritelayout_3)
-brickbakery_spritelayout_4 = SpriteLayout(
-    id = 'grain_mill_brickbakery_spritelayout_4',
+spritelayouts.append(spritelayout_brickbakery_3)
+spritelayout_brickbakery_4 = SpriteLayout(
+    id = 'grain_mill_spritelayout_brickbakery_4',
     ground_sprite = spriteset_ground_bakery,
     ground_overlay = spriteset_ground_overlay_4,
     building_sprites = [spriteset_4]
 )
-spritelayouts.append(brickbakery_spritelayout_4)
-windmill_tile_anim = SpriteLayout(
-    id = 'grain_mill_windmill_tile_anim',
+spritelayouts.append(spritelayout_brickbakery_4)
+spritelayout_windmill_anim = SpriteLayout(
+    id = 'grain_mill_spritelayout_windmill_anim',
     ground_sprite = spriteset_ground_windmill,
     ground_overlay = spriteset_ground_overlay_windmill,
     building_sprites = [spriteset_windmill_anim]
 )
-spritelayouts.append(windmill_tile_anim)
+spritelayouts.append(spritelayout_windmill_anim)
 
 
 industry_layouts = []
-layout_1 = IndustryLayout(
-    id = 'layout_1',
-    default_tile = 'grain_mill_brickbakery_spritelayout_3',
-    spritelayouts = [(0, 0, 'grain_mill_brickbakery_spritelayout_3'),
-            (0, 1, 'grain_mill_brickbakery_spritelayout_4'),
-            (1, 0, 'grain_mill_brickbakery_spritelayout_1'),
-            (1, 1, 'grain_mill_brickbakery_spritelayout_2')
+industry_layout_1 = IndustryLayout(
+    id = 'grain_mill_industry_layout_1',
+    default_tile = 'grain_mill_spritelayout_brickbakery_3',
+    spritelayouts = [(0, 0, 'grain_mill_spritelayout_brickbakery_3'),
+            (0, 1, 'grain_mill_spritelayout_brickbakery_4'),
+            (1, 0, 'grain_mill_spritelayout_brickbakery_1'),
+            (1, 1, 'grain_mill_spritelayout_brickbakery_2')
     ]
 )
-industry_layouts.append(layout_1)
-layout_2 = IndustryLayout(
-    id = 'layout_2',
-    default_tile = 'grain_mill_brickbakery_spritelayout_3',
-    spritelayouts = [(0, 0, 'grain_mill_brickbakery_spritelayout_3'),
-             (0, 1, 'grain_mill_brickbakery_spritelayout_4'),
-             (1, 0, 'grain_mill_brickbakery_spritelayout_3'),
-             (1, 1, 'grain_mill_brickbakery_spritelayout_4'),
-             (2, 0, 'grain_mill_brickbakery_spritelayout_1'),
-             (2, 1, 'grain_mill_brickbakery_spritelayout_2')
+industry_layouts.append(industry_layout_1)
+industry_layout_2 = IndustryLayout(
+    id = 'grain_mill_industry_layout_2',
+    default_tile = 'grain_mill_spritelayout_brickbakery_3',
+    spritelayouts = [(0, 0, 'grain_mill_spritelayout_brickbakery_3'),
+             (0, 1, 'grain_mill_spritelayout_brickbakery_4'),
+             (1, 0, 'grain_mill_spritelayout_brickbakery_3'),
+             (1, 1, 'grain_mill_spritelayout_brickbakery_4'),
+             (2, 0, 'grain_mill_spritelayout_brickbakery_1'),
+             (2, 1, 'grain_mill_spritelayout_brickbakery_2')
     ]
 )
-industry_layouts.append(layout_2)
-layout_3 = IndustryLayout(
-    id = 'layout_3',
-    default_tile = 'grain_mill_brickbakery_spritelayout_3',
-    spritelayouts = [(0, 0, 'grain_mill_brickbakery_spritelayout_3'),
-             (0, 1, 'grain_mill_brickbakery_spritelayout_4'),
-             (0, 2, 'grain_mill_brickbakery_spritelayout_3'),
-             (0, 3, 'grain_mill_brickbakery_spritelayout_4'),
-             (1, 0, 'grain_mill_brickbakery_spritelayout_1'),
-             (1, 1, 'grain_mill_brickbakery_spritelayout_2'),
-             (1, 2, 'grain_mill_brickbakery_spritelayout_1'),
-             (1, 3, 'grain_mill_brickbakery_spritelayout_2')
+industry_layouts.append(industry_layout_2)
+industry_layout_3 = IndustryLayout(
+    id = 'grain_mill_industry_layout_3',
+    default_tile = 'grain_mill_spritelayout_brickbakery_3',
+    spritelayouts = [(0, 0, 'grain_mill_spritelayout_brickbakery_3'),
+             (0, 1, 'grain_mill_spritelayout_brickbakery_4'),
+             (0, 2, 'grain_mill_spritelayout_brickbakery_3'),
+             (0, 3, 'grain_mill_spritelayout_brickbakery_4'),
+             (1, 0, 'grain_mill_spritelayout_brickbakery_1'),
+             (1, 1, 'grain_mill_spritelayout_brickbakery_2'),
+             (1, 2, 'grain_mill_spritelayout_brickbakery_1'),
+             (1, 3, 'grain_mill_spritelayout_brickbakery_2')
     ]
 )
-industry_layouts.append(layout_3)
-layout_4 = IndustryLayout(
-    id = 'layout_4',
-    default_tile = 'grain_mill_windmill_tile_anim',
-    spritelayouts = [(0, 0, 'grain_mill_windmill_tile_anim')]
+industry_layouts.append(industry_layout_3)
+industry_layout_4 = IndustryLayout(
+    id = 'grain_mill_industry_layout_4',
+    default_tile = 'grain_mill_spritelayout_windmill_anim',
+    spritelayouts = [(0, 0, 'grain_mill_spritelayout_windmill_anim')]
 )
-industry_layouts.append(layout_4)
+industry_layouts.append(industry_layout_4)
 
 industry_id = 'grain_mill'
 industry = Industry(id=industry_id, spritesets=spritesets, spritelayouts=spritelayouts, industry_layouts=industry_layouts)

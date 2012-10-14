@@ -1,4 +1,4 @@
-switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_${industry_layout.id}, relative_pos) {
+switch(FEAT_INDUSTRYTILES, SELF, ${industry_layout.id}, relative_pos) {
     <tal:build_industry_layout repeat="spritelayout industry_layout.spritelayouts">
         relative_coord(${spritelayout[0]}, ${spritelayout[1]}): ${spritelayout[2]};
     </tal:build_industry_layout>
