@@ -175,37 +175,47 @@ tiles.append(windmill_tile_anim)
 
 
 layouts = []
-layout_1 = IndustryLayout('layout_1', default_tile = 'grain_mill_brickbakery_tile_3', tiles = [
-    (0, 0, 'grain_mill_brickbakery_tile_3'),
-    (0, 1, 'grain_mill_brickbakery_tile_4'),
-    (1, 0, 'grain_mill_brickbakery_tile_1'),
-    (1, 1, 'grain_mill_brickbakery_tile_2'),
-])
+layout_1 = IndustryLayout(
+    id = 'layout_1',
+    default_tile = 'grain_mill_brickbakery_tile_3',
+    tiles = [(0, 0, 'grain_mill_brickbakery_tile_3'),
+            (0, 1, 'grain_mill_brickbakery_tile_4'),
+            (1, 0, 'grain_mill_brickbakery_tile_1'),
+            (1, 1, 'grain_mill_brickbakery_tile_2')
+    ]
+)
 layouts.append(layout_1)
-layout_2 = IndustryLayout('layout_2', default_tile = 'grain_mill_brickbakery_tile_3', tiles = [
-    (0, 0, 'grain_mill_brickbakery_tile_3'),
-    (0, 1, 'grain_mill_brickbakery_tile_4'),
-    (1, 0, 'grain_mill_brickbakery_tile_3'),
-    (1, 1, 'grain_mill_brickbakery_tile_4'),
-    (2, 0, 'grain_mill_brickbakery_tile_1'),
-    (2, 1, 'grain_mill_brickbakery_tile_2'),
-
-])
+layout_2 = IndustryLayout(
+    id = 'layout_2',
+    default_tile = 'grain_mill_brickbakery_tile_3',
+    tiles = [(0, 0, 'grain_mill_brickbakery_tile_3'),
+             (0, 1, 'grain_mill_brickbakery_tile_4'),
+             (1, 0, 'grain_mill_brickbakery_tile_3'),
+             (1, 1, 'grain_mill_brickbakery_tile_4'),
+             (2, 0, 'grain_mill_brickbakery_tile_1'),
+             (2, 1, 'grain_mill_brickbakery_tile_2')
+    ]
+)
 layouts.append(layout_2)
-layout_3 = IndustryLayout('layout_3', default_tile = 'grain_mill_brickbakery_tile_3', tiles = [
-    (0, 0, 'grain_mill_brickbakery_tile_3'),
-    (0, 1, 'grain_mill_brickbakery_tile_4'),
-    (0, 2, 'grain_mill_brickbakery_tile_3'),
-    (0, 3, 'grain_mill_brickbakery_tile_4'),
-    (1, 0, 'grain_mill_brickbakery_tile_1'),
-    (1, 1, 'grain_mill_brickbakery_tile_2'),
-    (1, 2, 'grain_mill_brickbakery_tile_1'),
-    (1, 3, 'grain_mill_brickbakery_tile_2'),
-])
+layout_3 = IndustryLayout(
+    id = 'layout_3',
+    default_tile = 'grain_mill_brickbakery_tile_3',
+    tiles = [(0, 0, 'grain_mill_brickbakery_tile_3'),
+             (0, 1, 'grain_mill_brickbakery_tile_4'),
+             (0, 2, 'grain_mill_brickbakery_tile_3'),
+             (0, 3, 'grain_mill_brickbakery_tile_4'),
+             (1, 0, 'grain_mill_brickbakery_tile_1'),
+             (1, 1, 'grain_mill_brickbakery_tile_2'),
+             (1, 2, 'grain_mill_brickbakery_tile_1'),
+             (1, 3, 'grain_mill_brickbakery_tile_2')
+    ]
+)
 layouts.append(layout_3)
-layout_4 = IndustryLayout('layout_4', default_tile = 'grain_mill_windmill_tile_anim', tiles = [
-    (0, 0, 'grain_mill_windmill_tile_anim'),
-])
+layout_4 = IndustryLayout(
+    id = 'layout_4',
+    default_tile = 'grain_mill_windmill_tile_anim',
+    tiles = [(0, 0, 'grain_mill_windmill_tile_anim')]
+)
 layouts.append(layout_4)
 
 industry_id = 'grain_mill'
