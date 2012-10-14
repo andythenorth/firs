@@ -54,8 +54,8 @@ class IndustryLayout(object):
         self.default_tile = default_tile
         self.spritelayouts = spritelayouts
 
-    def render(self, industry):
-        template = templates['industry_layout.pynml']
+    def render_graphics_switches(self, industry):
+        template = templates['industry_layout_graphics_switches.pynml']
         return template(industry_layout=self, industry=industry)
 
 
