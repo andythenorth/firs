@@ -10,10 +10,15 @@ industry_templates = PageTemplateLoader(os.path.join(currentdir,'sprites','nml',
 
 class Spriteset(object):
     """Base class to hold industry spritesets"""
-    def __init__(self, id, sprites, zextent=16):
+    def __init__(self, id, sprites, type='', zextent=16, animation_rate = 0):
         self.id = id
+        self.type = type # set to ground or other special types, or omit for default (building, greeble, foundations etc)
         self.sprites = sprites
         self.zextent = zextent # optional parameter, to use set this to value of largest sprite in spriteset, or omit for default (16)
+        self.animation_rate = animation_rate # multiplier to tile's animation rate, set to 1 for same as tile, >1 for faster; leave default (0) to disable animation
+
+    def get_ground_tile_x_start(self, type):
+        return {'mud': 0, 'concrete': 80, 'cobble': 150, 'snow': 220}[type]
 
     def render(self, industry):
         template = templates['spriteset.pynml']
@@ -58,6 +63,12 @@ class Industry(object):
 """ by convention, ids for use in nml have industry name prefix, local python object ids don't bother with industry name prefix """
 
 spritesets = []
+spriteset_ground_bakery = Spriteset(
+    id = 'grain_mill_spriteset_ground_bakery',
+	sprites = [(10, 10, 64, 31, -31, 0)],
+	type='cobble',
+)
+spritesets.append(spriteset_ground_bakery)
 spriteset_ground_overlay_1 = Spriteset(
     id = 'grain_mill_spriteset_ground_overlay_1',
 	sprites = [(10, 10, 64, 31, -31, 0)],
@@ -106,28 +117,28 @@ spritesets.append(spriteset_4)
 tiles = []
 brickbakery_tile_1 = SpriteLayout(
     id = 'grain_mill_brickbakery_tile_1',
-    ground_sprite = 'grain_mill_spriteset_ground',
+    ground_sprite = spriteset_ground_bakery,
     ground_overlay = spriteset_ground_overlay_1,
     building_sprites = []
 )
 tiles.append(brickbakery_tile_1)
 brickbakery_tile_2 = SpriteLayout(
     id = 'grain_mill_brickbakery_tile_2',
-    ground_sprite = 'grain_mill_spriteset_ground',
+    ground_sprite = spriteset_ground_bakery,
     ground_overlay = spriteset_ground_overlay_2,
     building_sprites = []
 )
 tiles.append(brickbakery_tile_2)
 brickbakery_tile_3 = SpriteLayout(
     id = 'grain_mill_brickbakery_tile_3',
-    ground_sprite = 'grain_mill_spriteset_ground',
+    ground_sprite = spriteset_ground_bakery,
     ground_overlay = spriteset_ground_overlay_3,
     building_sprites = [spriteset_3]
 )
 tiles.append(brickbakery_tile_3)
 brickbakery_tile_4 = SpriteLayout(
     id = 'grain_mill_brickbakery_tile_4',
-    ground_sprite = 'grain_mill_spriteset_ground',
+    ground_sprite = spriteset_ground_bakery,
     ground_overlay = spriteset_ground_overlay_4,
     building_sprites = [spriteset_4]
 )

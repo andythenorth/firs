@@ -9,10 +9,6 @@
 
 #define THIS_ID(...) ${industry.id}_ ## __VA_ARGS__
 
-spriteset(${industry.id}_spriteset_ground, "sprites/graphics/industries/groundtiles.png") {
-	tmpl_ground_tile(150, 10)
-}
-
 <tal:build_spritesets repeat="spriteset python:industry.spritesets">
     ${spriteset.render(industry=industry)}
 </tal:build_spritesets>
