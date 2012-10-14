@@ -13,12 +13,12 @@
     ${spriteset.render(industry=industry)}
 </tal:build_spritesets>
 
-<tal:build_layouts repeat="tile python:industry.spritelayouts">
-    ${tile.render(industry=industry)}
+<tal:build_layouts repeat="spritelayout python:industry.spritelayouts">
+    ${spritelayout.render(industry=industry)}
 </tal:build_layouts>
 
-<tal:build_layouts repeat="layout python:industry.layouts">
-    ${layout.render(industry=industry)}
+<tal:build_layouts repeat="industry_layout python:industry.industry_layouts">
+    ${industry_layout.render(industry=industry)}
 </tal:build_layouts>
 
 switch(FEAT_INDUSTRYTILES, PARENT, ${industry.id}_layout, layout_num) {

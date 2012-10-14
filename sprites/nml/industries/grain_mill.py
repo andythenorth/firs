@@ -49,18 +49,18 @@ class IndustryLayout(object):
 
     def render(self, industry):
         template = templates['industry_layout.pynml']
-        return template(layout=self, industry=industry)
+        return template(industry_layout=self, industry=industry)
 
 
 class Industry(object):
     """Base class for all types of industry"""
-    def __init__(self, id, spritesets, spritelayouts, layouts):
+    def __init__(self, id, spritesets, spritelayouts, industry_layouts):
         self.id = id
         self.graphics_file = '"sprites/graphics/industries/' + id + '.png"' # don't use os.path.join here, this is for nml
         self.graphics_file_snow = '"sprites/graphics/industries/' + id + '_snow.png"' # don't use os.path.join here, this is for nml
         self.spritesets = spritesets
-        self.spritelayouts = spritelayouts
-        self.layouts = layouts
+        self.spritelayouts = spritelayouts # by convention spritelayout is one word :P
+        self.industry_layouts = industry_layouts
 
 """ by convention, ids for use in nml have industry name prefix, local python object ids don't bother with industry name prefix """
 
@@ -174,7 +174,7 @@ windmill_tile_anim = SpriteLayout(
 spritelayouts.append(windmill_tile_anim)
 
 
-layouts = []
+industry_layouts = []
 layout_1 = IndustryLayout(
     id = 'layout_1',
     default_tile = 'grain_mill_brickbakery_tile_3',
@@ -184,7 +184,7 @@ layout_1 = IndustryLayout(
             (1, 1, 'grain_mill_brickbakery_tile_2')
     ]
 )
-layouts.append(layout_1)
+industry_layouts.append(layout_1)
 layout_2 = IndustryLayout(
     id = 'layout_2',
     default_tile = 'grain_mill_brickbakery_tile_3',
@@ -196,7 +196,7 @@ layout_2 = IndustryLayout(
              (2, 1, 'grain_mill_brickbakery_tile_2')
     ]
 )
-layouts.append(layout_2)
+industry_layouts.append(layout_2)
 layout_3 = IndustryLayout(
     id = 'layout_3',
     default_tile = 'grain_mill_brickbakery_tile_3',
@@ -210,16 +210,16 @@ layout_3 = IndustryLayout(
              (1, 3, 'grain_mill_brickbakery_tile_2')
     ]
 )
-layouts.append(layout_3)
+industry_layouts.append(layout_3)
 layout_4 = IndustryLayout(
     id = 'layout_4',
     default_tile = 'grain_mill_windmill_tile_anim',
     spritelayouts = [(0, 0, 'grain_mill_windmill_tile_anim')]
 )
-layouts.append(layout_4)
+industry_layouts.append(layout_4)
 
 industry_id = 'grain_mill'
-industry = Industry(id=industry_id, spritesets=spritesets, spritelayouts=spritelayouts, layouts=layouts)
+industry = Industry(id=industry_id, spritesets=spritesets, spritelayouts=spritelayouts, industry_layouts=industry_layouts)
 
 # compile a single final nml file for the grf
 industry_template = industry_templates[industry_id + '.pypnml']
