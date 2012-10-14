@@ -11,13 +11,13 @@ industry_templates = PageTemplateLoader(os.path.join(currentdir,'sprites','nml',
 class Spriteset(object):
     """Base class to hold industry spritesets"""
     # arguably this should be two different classes, one for building/feature spritesets, and one for ground spritesets
-    def __init__(self, id, sprites=[], type='', zextent=16, animation_rate = 0, autofill_sprites = 1):
+    def __init__(self, id, sprites=[], type='', zextent=16, animation_rate = 0, num_sprites_to_autofill = 1):
         self.id = id
         self.type = type # set to ground or other special types, or omit for default (building, greeble, foundations etc)
         self.sprites = sprites
         self.zextent = zextent # optional parameter, to use set this to value of largest sprite in spriteset, or omit for default (16)
         self.animation_rate = animation_rate # multiplier to tile's animation rate, set to 1 for same as tile, >1 for faster; leave default (0) to disable animation
-        self.autofill_sprites = autofill_sprites # create n sprites per sprite passed (convenience method for use where spriteset sizes must match)
+        self.num_sprites_to_autofill = num_sprites_to_autofill # create n sprites per sprite passed (convenience method for use where spriteset sizes must match)
 
     def get_ground_tile_x_start(self, type):
         return {'mud': 0, 'concrete': 80, 'cobble': 150, 'snow': 220, 'empty':290}[type]
@@ -125,13 +125,13 @@ spritesets.append(spriteset_windmill_anim)
 spriteset_ground_windmill = Spriteset(
     id = 'grain_mill_spriteset_ground_windmill',
 	type = 'empty',
-	autofill_sprites = len(spriteset_windmill_anim.sprites), # autofills number of animated frames (can get count from another spriteset if defined already)
+	num_sprites_to_autofill = len(spriteset_windmill_anim.sprites), # autofills number of animated frames (can get count from another spriteset if defined already)
 )
 spritesets.append(spriteset_ground_windmill)
 spriteset_ground_overlay_windmill = Spriteset(
     id = 'grain_mill_spriteset_ground_overlay_windmill',
 	sprites = [(10, 160, 64, 31, -31, 0)],
-	autofill_sprites = len(spriteset_windmill_anim.sprites), # autofills number of animated frames (can get count from another spriteset if defined already)
+	num_sprites_to_autofill = len(spriteset_windmill_anim.sprites), # autofills number of animated frames (can get count from another spriteset if defined already)
 )
 spritesets.append(spriteset_ground_overlay_windmill)
 
