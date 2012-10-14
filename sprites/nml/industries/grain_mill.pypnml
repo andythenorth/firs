@@ -88,7 +88,7 @@ switch(FEAT_INDUSTRYTILES, PARENT, ${industry.id}_layout, layout_num) {
 	4: ${industry.id}_layout_2;
 	5: ${industry.id}_layout_3;
 	6: ${industry.id}_layout_4;
-	${industry.id}_brickbakery_tile_1;
+	${industry.id}_layout_1; // default
 }
 
 /* *************************************************
