@@ -58,24 +58,45 @@ class Industry(object):
 spritesets = []
 spriteset_ground_overlay_1 = Spriteset(
     id = 'spriteset_ground_overlay_1',
-	sprites = [(10, 10, 31, 0)]
+	sprites = [(10, 10, 64, 31, -31, 0)]
 )
 spritesets.append(spriteset_ground_overlay_1)
 spriteset_ground_overlay_2 = Spriteset(
     id = 'spriteset_ground_overlay_2',
-	sprites = [(80, 10, 31, 0)]
+	sprites = [(80, 10, 64, 31, -31, 0)]
 )
 spritesets.append(spriteset_ground_overlay_2)
 spriteset_ground_overlay_3 = Spriteset(
     id = 'spriteset_ground_overlay_3',
-	sprites = [(150, 10, 31, 0)]
+	sprites = [(150, 10, 64, 31, -31, 0)]
 )
 spritesets.append(spriteset_ground_overlay_3)
 spriteset_ground_overlay_4 = Spriteset(
     id = 'spriteset_ground_overlay_4',
-	sprites = [(220, 10, 31, 0)]
+	sprites = [(220, 10, 64, 31, -31, 0)]
 )
 spritesets.append(spriteset_ground_overlay_4)
+
+spriteset_1 = Spriteset(
+    id = 'spriteset_1',
+	sprites = [(10, 10, 64, 31, -31, 0)]
+)
+spritesets.append(spriteset_1)
+spriteset_2 = Spriteset(
+    id = 'spriteset_2',
+	sprites = [(80, 10, 64, 31, -31, 0)]
+)
+spritesets.append(spriteset_2)
+spriteset_3 = Spriteset(
+    id = 'spriteset_3',
+	sprites = [(150, 60, 64, 82, -31, -51)]
+)
+spritesets.append(spriteset_3)
+spriteset_4 = Spriteset(
+    id = 'spriteset_4',
+	sprites = [(220, 60, 64, 82, -31, -51)]
+)
+spritesets.append(spriteset_4)
 
 
 tiles = []

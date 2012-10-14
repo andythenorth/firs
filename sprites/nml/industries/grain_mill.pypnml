@@ -17,38 +17,6 @@ spriteset(${industry.name}_spriteset_ground, "sprites/graphics/industries/ground
     ${spriteset.render(industry=industry)}
 </tal:build_spritesets>
 
-spriteset(${industry.name}_spriteset_1_snow) {
-	[10, 10, 64, 31, -31, 0, ${industry.graphics_file_snow}]
-}
-
-spriteset(${industry.name}_spriteset_2_snow) {
-	[80, 10, 64, 31, -31, 0, ${industry.graphics_file_snow}]
-}
-
-spriteset(${industry.name}_spriteset_3_snow) {
-	[150, 60, 64, 82, -31, -51, ${industry.graphics_file_snow}]
-}
-
-spriteset(${industry.name}_spriteset_4_snow) {
-	[220, 60, 64, 82, -31, -51, ${industry.graphics_file_snow}]
-}
-
-spriteset(${industry.name}_spriteset_1) {
-	[10, 10, 64, 31, -31, 0, ${industry.graphics_file}]
-}
-
-spriteset(${industry.name}_spriteset_2) {
-	[80, 10, 64, 31, -31, 0, ${industry.graphics_file}]
-}
-
-spriteset(${industry.name}_spriteset_3) {
-	[150, 60, 64, 82, -31, -51, ${industry.graphics_file}]
-}
-
-spriteset(${industry.name}_spriteset_4) {
-	[220, 60, 64, 82, -31, -51, ${industry.graphics_file}]
-}
-
 spriteset(${industry.name}_spriteset_ground_windmill) {
 	tmpl_building_sprite_filename(10, 160, 31, 0, ${industry.graphics_file})
 	tmpl_building_sprite_filename(10, 160, 31, 0, ${industry.graphics_file})
