@@ -13,64 +13,63 @@ spriteset(${industry.name}_spriteset_ground, "sprites/graphics/industries/ground
 	tmpl_ground_tile(150, 10)
 }
 
-spriteset(${industry.name}_spriteset_ground_overlay_snow_1) {
-	tmpl_building_sprite_filename(10, 10, 31, 0, ${industry.graphics_file})
+spriteset(${industry.name}_spriteset_ground_overlay_1_snow) {
+	tmpl_building_sprite_filename(10, 10, 31, 0, ${industry.graphics_file_snow})
 }
 
-spriteset(${industry.name}_spriteset_ground_overlay_snow_2) {
+spriteset(${industry.name}_spriteset_ground_overlay_2_snow) {
 	tmpl_building_sprite_filename(80, 10, 31, 0, ${industry.graphics_file_snow})
 }
-spriteset(${industry.name}_spriteset_ground_overlay_snow_3) {
+spriteset(${industry.name}_spriteset_ground_overlay_3_snow) {
 	tmpl_building_sprite_filename(150, 10, 31, 0, ${industry.graphics_file_snow})
 }
-spriteset(${industry.name}_spriteset_ground_overlay_snow_4) {
+spriteset(${industry.name}_spriteset_ground_overlay_4_snow) {
 	tmpl_building_sprite_filename(220, 10, 31, 0, ${industry.graphics_file_snow})
 }
 
-spriteset(${industry.name}_spriteset_ground_overlay_normal_1) {
+spriteset(${industry.name}_spriteset_ground_overlay_1_normal) {
 	tmpl_building_sprite_filename(10, 10, 31, 0, ${industry.graphics_file})
 }
-
-spriteset(${industry.name}_spriteset_ground_overlay_normal_2) {
+spriteset(${industry.name}_spriteset_ground_overlay_2_normal) {
 	tmpl_building_sprite_filename(80, 10, 31, 0, ${industry.graphics_file})
 }
-spriteset(${industry.name}_spriteset_ground_overlay_normal_3) {
+spriteset(${industry.name}_spriteset_ground_overlay_3_normal) {
 	tmpl_building_sprite_filename(150, 10, 31, 0, ${industry.graphics_file})
 }
-spriteset(${industry.name}_spriteset_ground_overlay_normal_4) {
+spriteset(${industry.name}_spriteset_ground_overlay_4_normal) {
 	tmpl_building_sprite_filename(220, 10, 31, 0, ${industry.graphics_file})
 }
 
 
-spriteset(${industry.name}_spriteset_snow_1) {
+spriteset(${industry.name}_spriteset_1_snow) {
 	[10, 10, 64, 31, -31, 0, ${industry.graphics_file_snow}]
 }
 
-spriteset(${industry.name}_spriteset_snow_2) {
+spriteset(${industry.name}_spriteset_2_snow) {
 	[80, 10, 64, 31, -31, 0, ${industry.graphics_file_snow}]
 }
 
-spriteset(${industry.name}_spriteset_snow_3) {
+spriteset(${industry.name}_spriteset_3_snow) {
 	[150, 60, 64, 82, -31, -51, ${industry.graphics_file_snow}]
 }
 
-spriteset(${industry.name}_spriteset_snow_4) {
+spriteset(${industry.name}_spriteset_4_snow) {
 	[220, 60, 64, 82, -31, -51, ${industry.graphics_file_snow}]
 }
 
-spriteset(${industry.name}_spriteset_normal_1) {
+spriteset(${industry.name}_spriteset_1_normal) {
 	[10, 10, 64, 31, -31, 0, ${industry.graphics_file}]
 }
 
-spriteset(${industry.name}_spriteset_normal_2) {
+spriteset(${industry.name}_spriteset_2_normal) {
 	[80, 10, 64, 31, -31, 0, ${industry.graphics_file}]
 }
 
-spriteset(${industry.name}_spriteset_normal_3) {
+spriteset(${industry.name}_spriteset_3_normal) {
 	[150, 60, 64, 82, -31, -51, ${industry.graphics_file}]
 }
 
-spriteset(${industry.name}_spriteset_normal_4) {
+spriteset(${industry.name}_spriteset_4_normal) {
 	[220, 60, 64, 82, -31, -51, ${industry.graphics_file}]
 }
 

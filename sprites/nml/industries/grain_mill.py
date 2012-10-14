@@ -49,26 +49,26 @@ tiles = []
 brickbakery_tile_1 = Tile(
     id = 'brickbakery_tile_1',
     ground_sprite = 'grain_mill_spriteset_ground',
-    ground_overlay = 'grain_mill_spriteset_ground_overlay_normal_1',
+    ground_overlay = 'grain_mill_spriteset_ground_overlay_1',
     building_sprites = []
 )
 brickbakery_tile_2 = Tile(
     id = 'brickbakery_tile_2',
     ground_sprite = 'grain_mill_spriteset_ground',
-    ground_overlay = 'grain_mill_spriteset_ground_overlay_normal_2',
+    ground_overlay = 'grain_mill_spriteset_ground_overlay_2',
     building_sprites = []
 )
 brickbakery_tile_3 = Tile(
     id = 'brickbakery_tile_3',
     ground_sprite = 'grain_mill_spriteset_ground',
-    ground_overlay = 'grain_mill_spriteset_ground_overlay_normal_3',
-    building_sprites = ['grain_mill_spriteset_normal_3']
+    ground_overlay = 'grain_mill_spriteset_ground_overlay_3',
+    building_sprites = ['grain_mill_spriteset_3']
 )
 brickbakery_tile_4 = Tile(
     id = 'brickbakery_tile_4',
     ground_sprite = 'grain_mill_spriteset_ground',
-    ground_overlay = 'grain_mill_spriteset_ground_overlay_normal_4',
-    building_sprites = ['grain_mill_spriteset_normal_4']
+    ground_overlay = 'grain_mill_spriteset_ground_overlay_4',
+    building_sprites = ['grain_mill_spriteset_4']
 )
 """
 windmill_tile_anim = Tile(
