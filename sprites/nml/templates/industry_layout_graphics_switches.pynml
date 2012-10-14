@@ -7,8 +7,8 @@
 
 <tal:build_industry_layouts_graphic_switches repeat="industry_layout python:industry.industry_layouts">
     switch(FEAT_INDUSTRYTILES, SELF, ${industry_layout.id}_graphics_switch, relative_pos) {
-        <tal:build_industry_layout repeat="spritelayout industry_layout.spritelayouts">
-            relative_coord(${spritelayout[0]}, ${spritelayout[1]}): ${spritelayout[2]};
+        <tal:build_industry_layout repeat="layout industry_layout.layout">
+            relative_coord(${layout[0]}, ${layout[1]}): ${layout[2]};
         </tal:build_industry_layout>
         ${industry_layout.default_tile};
     }
@@ -16,7 +16,7 @@
 
 switch(FEAT_INDUSTRYTILES, PARENT, ${industry.id}_industry_layout_master_graphics_switch, layout_num) {
     <tal:build_available_industry_layouts repeat="layout_num range(len(industry.industry_layouts))">
-	${layout_num+1}: ${industry.industry_layouts[layout_num].id}_graphics_switch;
+	    ${layout_num+1}: ${industry.industry_layouts[layout_num].id}_graphics_switch;
 	</tal:build_available_industry_layouts>
 	${industry.industry_layouts[0].id}_graphics_switch; // default
 }

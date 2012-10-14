@@ -41,10 +41,10 @@ class SpriteLayout(object):
 
 class IndustryLayout(object):
     """Base class to hold industry layouts"""
-    def __init__(self, id, default_tile, spritelayouts):
+    def __init__(self, id, default_tile, layout):
         self.id = id
         self.default_tile = default_tile
-        self.spritelayouts = spritelayouts
+        self.layout = layout
 
 
 class Industry(object):
@@ -194,43 +194,43 @@ industry_layouts = []
 industry_layout_1 = IndustryLayout(
     id = 'grain_mill_industry_layout_1',
     default_tile = 'grain_mill_spritelayout_brickbakery_3',
-    spritelayouts = [(0, 0, 'grain_mill_spritelayout_brickbakery_3'),
-            (0, 1, 'grain_mill_spritelayout_brickbakery_4'),
-            (1, 0, 'grain_mill_spritelayout_brickbakery_1'),
-            (1, 1, 'grain_mill_spritelayout_brickbakery_2')
+    layout = [(0, 0, 'grain_mill_spritelayout_brickbakery_3'),
+              (0, 1, 'grain_mill_spritelayout_brickbakery_4'),
+              (1, 0, 'grain_mill_spritelayout_brickbakery_1'),
+              (1, 1, 'grain_mill_spritelayout_brickbakery_2')
     ]
 )
 industry_layouts.append(industry_layout_1)
 industry_layout_2 = IndustryLayout(
     id = 'grain_mill_industry_layout_2',
     default_tile = 'grain_mill_spritelayout_brickbakery_3',
-    spritelayouts = [(0, 0, 'grain_mill_spritelayout_brickbakery_3'),
-             (0, 1, 'grain_mill_spritelayout_brickbakery_4'),
-             (1, 0, 'grain_mill_spritelayout_brickbakery_3'),
-             (1, 1, 'grain_mill_spritelayout_brickbakery_4'),
-             (2, 0, 'grain_mill_spritelayout_brickbakery_1'),
-             (2, 1, 'grain_mill_spritelayout_brickbakery_2')
+    layout = [(0, 0, 'grain_mill_spritelayout_brickbakery_3'),
+              (0, 1, 'grain_mill_spritelayout_brickbakery_4'),
+              (1, 0, 'grain_mill_spritelayout_brickbakery_3'),
+              (1, 1, 'grain_mill_spritelayout_brickbakery_4'),
+              (2, 0, 'grain_mill_spritelayout_brickbakery_1'),
+              (2, 1, 'grain_mill_spritelayout_brickbakery_2')
     ]
 )
 industry_layouts.append(industry_layout_2)
 industry_layout_3 = IndustryLayout(
     id = 'grain_mill_industry_layout_3',
     default_tile = 'grain_mill_spritelayout_brickbakery_3',
-    spritelayouts = [(0, 0, 'grain_mill_spritelayout_brickbakery_3'),
-             (0, 1, 'grain_mill_spritelayout_brickbakery_4'),
-             (0, 2, 'grain_mill_spritelayout_brickbakery_3'),
-             (0, 3, 'grain_mill_spritelayout_brickbakery_4'),
-             (1, 0, 'grain_mill_spritelayout_brickbakery_1'),
-             (1, 1, 'grain_mill_spritelayout_brickbakery_2'),
-             (1, 2, 'grain_mill_spritelayout_brickbakery_1'),
-             (1, 3, 'grain_mill_spritelayout_brickbakery_2')
+    layout = [(0, 0, 'grain_mill_spritelayout_brickbakery_3'),
+              (0, 1, 'grain_mill_spritelayout_brickbakery_4'),
+              (0, 2, 'grain_mill_spritelayout_brickbakery_3'),
+              (0, 3, 'grain_mill_spritelayout_brickbakery_4'),
+              (1, 0, 'grain_mill_spritelayout_brickbakery_1'),
+              (1, 1, 'grain_mill_spritelayout_brickbakery_2'),
+              (1, 2, 'grain_mill_spritelayout_brickbakery_1'),
+              (1, 3, 'grain_mill_spritelayout_brickbakery_2')
     ]
 )
 industry_layouts.append(industry_layout_3)
 industry_layout_4 = IndustryLayout(
     id = 'grain_mill_industry_layout_4',
     default_tile = 'grain_mill_spritelayout_windmill_anim',
-    spritelayouts = [(0, 0, 'grain_mill_spritelayout_windmill_anim')]
+    layout = [(0, 0, 'grain_mill_spritelayout_windmill_anim')]
 )
 industry_layouts.append(industry_layout_4)
 

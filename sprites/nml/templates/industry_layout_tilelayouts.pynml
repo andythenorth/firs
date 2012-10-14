@@ -7,8 +7,8 @@
 
 <tal:build_industry_layouts_tilelayouts repeat="industry_layout python:industry.industry_layouts">
     tilelayout ${industry_layout.id}_tilelayout {
-        <tal:build_industry_layout repeat="spritelayout industry_layout.spritelayouts">
-            ${spritelayout[0]}, ${spritelayout[1]}: ${industry.id}_tile;
+        <tal:build_industry_layout repeat="layout industry_layout.layout">
+            ${layout[0]}, ${layout[1]}: ${industry.id}_tile;
         </tal:build_industry_layout>
     }
 </tal:build_industry_layouts_tilelayouts>
