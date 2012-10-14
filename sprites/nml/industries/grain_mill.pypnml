@@ -9,10 +9,7 @@
 
 #define THIS_ID(...) ${industry.id}_ ## __VA_ARGS__
 
-<tal:build_spritesets repeat="spriteset python:industry.spritesets">
-    ${spriteset.render(industry=industry)}
-</tal:build_spritesets>
-
+${industry.get_spritesets()}
 
 ${industry.get_spritelayouts()}
 

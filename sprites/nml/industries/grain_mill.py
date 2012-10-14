@@ -29,10 +29,6 @@ class Spriteset(object):
     def get_ground_tile_x_start(self, type):
         return {'mud': 0, 'concrete': 80, 'cobble': 150, 'snow': 220, 'empty':290}[type]
 
-    def render(self, industry):
-        template = templates['spriteset.pynml']
-        return template(spriteset=self, industry=industry)
-
 
 class SpriteLayout(object):
     """Base class to hold spritelayouts for industry spritelayouts"""
@@ -60,6 +56,10 @@ class Industry(object):
         self.spritesets = spritesets
         self.spritelayouts = spritelayouts # by convention spritelayout is one word :P
         self.industry_layouts = industry_layouts
+
+    def get_spritesets(self):
+        template = templates['spritesets.pynml']
+        return template(industry=industry)
 
     def get_spritelayouts(self):
         template = templates['spritelayouts.pynml']
