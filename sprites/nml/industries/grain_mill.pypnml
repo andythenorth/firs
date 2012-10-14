@@ -119,6 +119,10 @@ spriteset(${industry.name}_spriteset_windmill_anim) {
 	tmpl_building_sprite_filename(360, 200, 82, -52, ${industry.graphics_file_snow})
 }
 
+<tal:build_layouts repeat="tile python:industry.tiles">
+    <!--!${tile.render(industry=industry)}-->
+</tal:build_layouts>
+
 GROUND_AWARE_SPRITELAYOUT(${industry.name}_brickbakery_tile_1)
 	// normal
 	CONDITIONAL_GROUND_SPRITE_OVERLAY(${industry.name}_spriteset_ground, terrain_type != TILETYPE_SNOW)

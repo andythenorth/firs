@@ -5,19 +5,20 @@ currentdir = os.curdir
 
 from chameleon import PageTemplateLoader # chameleon used in most template cases
 # setup the places we look for templates
-templates = PageTemplateLoader(os.path.join(currentdir,'sprites','nml','templates'))
-industry_templates = PageTemplateLoader(os.path.join(currentdir,'sprites','nml','industries'))
+templates = PageTemplateLoader(os.path.join(currentdir,'sprites','nml','templates'), format='text')
+industry_templates = PageTemplateLoader(os.path.join(currentdir,'sprites','nml','industries'), format='text')
 
 class Tile(object):
     """Base class to hold industry tiles"""
-    def __init__(self, id):
+    def __init__(self, id, sprites):
         self.id = id
+        self.sprites = sprites
         tiles.append(self) # register this layout with this context
-        print tiles
 
     def render(self, industry):
         template = templates['tile.pynml']
         return template(tile=self, industry=industry)
+
 
 class Layout(object):
     """Base class to hold industry layouts"""
@@ -31,21 +32,33 @@ class Layout(object):
         template = templates['layout.pynml']
         return template(layout=self, industry=industry)
 
+
 class Industry(object):
     """Base class for all types of industry"""
-    def __init__(self, name, layouts):
+    def __init__(self, name, tiles, layouts):
         self.name = name
         self.graphics_file = '"sprites/graphics/industries/' + name + '.png"' # don't use os.path.join here, this is for nml
         self.graphics_file_snow = '"sprites/graphics/industries/' + name + '_snow.png"' # don't use os.path.join here, this is for nml
+        self.tiles = tiles
         self.layouts = layouts
 
 tiles = []
 
-brickbakery_tile_1 = Tile('brickbakery_tile_1')
-brickbakery_tile_2 = Tile('brickbakery_tile_2')
-brickbakery_tile_3 = Tile('brickbakery_tile_3')
-brickbakery_tile_4 = Tile('brickbakery_tile_4')
-windmill_tile_anim = Tile('windmill_tile_anim')
+brickbakery_tile_1 = Tile('brickbakery_tile_1', sprites = (
+
+))
+brickbakery_tile_2 = Tile('brickbakery_tile_2', sprites = (
+
+))
+brickbakery_tile_3 = Tile('brickbakery_tile_3', sprites = (
+
+))
+brickbakery_tile_4 = Tile('brickbakery_tile_4', sprites = (
+
+))
+windmill_tile_anim = Tile('windmill_tile_anim', sprites = (
+
+))
 
 layouts = []
 
@@ -79,12 +92,16 @@ layout_4 = Layout('layout_4', default_tile = 'windmill_tile_anim', tiles = (
 ))
 
 industry_name = 'grain_mill'
-industry = Industry(name=industry_name, layouts=layouts)
+industry = Industry(name=industry_name, tiles=tiles, layouts=layouts)
 
 # compile a single final nml file for the grf
 industry_template = industry_templates[industry_name + '.pypnml']
 
 templated_pnml = industry_template(industry = industry)
+# an ugly hack here because chameleon html escapes some characters
+templated_pnml = '>'.join(templated_pnml.split('&gt;'))
+templated_pnml = '<'.join(templated_pnml.split('&lt;'))
+templated_pnml = '&'.join(templated_pnml.split('&amp;'))
 
 pnml = codecs.open(os.path.join(currentdir,'sprites','nml','generated_pnml','grain_mill.pnml'), 'w','utf8')
 pnml.write(templated_pnml)
