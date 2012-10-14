@@ -82,14 +82,14 @@ windmill_tile_anim = Tile(
 """
 layouts = []
 
-layout_1 = Layout('layout_1', default_tile = 'brickbakery_tile_3', tiles = (
+layout_1 = Layout('layout_1', default_tile = 'brickbakery_tile_3', tiles = [
     (0, 0, 'brickbakery_tile_3'),
     (0, 1, 'brickbakery_tile_4'),
     (1, 0, 'brickbakery_tile_1'),
     (1, 1, 'brickbakery_tile_2'),
-))
+])
 layouts.append(layout_1)
-layout_2 = Layout('layout_2', default_tile = 'brickbakery_tile_3', tiles = (
+layout_2 = Layout('layout_2', default_tile = 'brickbakery_tile_3', tiles = [
     (0, 0, 'brickbakery_tile_3'),
     (0, 1, 'brickbakery_tile_4'),
     (1, 0, 'brickbakery_tile_3'),
@@ -97,9 +97,9 @@ layout_2 = Layout('layout_2', default_tile = 'brickbakery_tile_3', tiles = (
     (2, 0, 'brickbakery_tile_1'),
     (2, 1, 'brickbakery_tile_2'),
 
-))
+])
 layouts.append(layout_2)
-layout_3 = Layout('layout_3', default_tile = 'brickbakery_tile_3', tiles = (
+layout_3 = Layout('layout_3', default_tile = 'brickbakery_tile_3', tiles = [
     (0, 0, 'brickbakery_tile_3'),
     (0, 1, 'brickbakery_tile_4'),
     (0, 2, 'brickbakery_tile_3'),
@@ -108,11 +108,11 @@ layout_3 = Layout('layout_3', default_tile = 'brickbakery_tile_3', tiles = (
     (1, 1, 'brickbakery_tile_2'),
     (1, 2, 'brickbakery_tile_1'),
     (1, 3, 'brickbakery_tile_2'),
-))
+])
 layouts.append(layout_3)
-layout_4 = Layout('layout_4', default_tile = 'windmill_tile_anim', tiles = (
+layout_4 = Layout('layout_4', default_tile = 'windmill_tile_anim', tiles = [
     (0, 0, 'windmill_tile_anim'),
-))
+])
 layouts.append(layout_4)
 
 industry_name = 'grain_mill'
