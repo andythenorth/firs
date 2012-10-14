@@ -21,7 +21,7 @@
     ${industry_layout.render(industry=industry)}
 </tal:build_layouts>
 
-switch(FEAT_INDUSTRYTILES, PARENT, ${industry.id}_industry_layout, layout_num) {
+switch(FEAT_INDUSTRYTILES, PARENT, ${industry.id}_industry_layout_graphics_switch, layout_num) {
 	1: ${industry.id}_industry_layout_1;
 	2: ${industry.id}_industry_layout_1;
 	3: ${industry.id}_industry_layout_2;
@@ -38,7 +38,7 @@ switch(FEAT_INDUSTRYTILES, PARENT, ${industry.id}_industry_layout, layout_num) {
 TILE_DISALLOW_NEARBY_CLASS(tile1_nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
 TILE_ALLOW_PLAYER         (tile1_player_check, ${industry.id}_tile1_nearby_industry)
 TILE_DISALLOW_SLOPES      (tile1_location_check, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_tile1_player_check)
-GROUNDSPRITE_SWITCH(${industry.id}_ground_switch, ${industry.id}_industry_layout)
+GROUNDSPRITE_SWITCH(${industry.id}_ground_switch, ${industry.id}_industry_layout_graphics_switch)
 
 item(FEAT_INDUSTRYTILES, ${industry.id}_tile, TILE_GRAINMILL_1) {
 	property {
