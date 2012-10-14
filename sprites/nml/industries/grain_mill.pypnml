@@ -17,9 +17,7 @@
     ${spritelayout.render(industry=industry)}
 </tal:build_spritelayouts>
 
-<tal:build_industry_layouts_graphic_switches repeat="industry_layout python:industry.industry_layouts">
-    ${industry_layout.render_graphics_switches(industry=industry)}
-</tal:build_industry_layouts_graphic_switches>
+${industry.get_industry_layouts_as_graphic_switches()}
 
 switch(FEAT_INDUSTRYTILES, PARENT, ${industry.id}_industry_layout_master_graphics_switch, layout_num) {
 	1: ${industry.id}_industry_layout_1;

@@ -54,10 +54,6 @@ class IndustryLayout(object):
         self.default_tile = default_tile
         self.spritelayouts = spritelayouts
 
-    def render_graphics_switches(self, industry):
-        template = templates['industry_layout_graphics_switches.pynml']
-        return template(industry_layout=self, industry=industry)
-
 
 class Industry(object):
     """Base class for all types of industry"""
@@ -76,6 +72,11 @@ class Industry(object):
     def get_industry_layouts_as_property(self):
         template = templates['industry_layout_property.pynml']
         return template(industry=industry)
+
+    def get_industry_layouts_as_graphic_switches(self):
+        template = templates['industry_layout_graphics_switches.pynml']
+        return template(industry=industry)
+
 
 """ by convention, ids for use in nml have industry name prefix, local python object ids don't bother with industry name prefix """
 

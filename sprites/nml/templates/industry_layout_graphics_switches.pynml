@@ -5,9 +5,11 @@
   See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
 -->
 
-switch(FEAT_INDUSTRYTILES, SELF, ${industry_layout.id}, relative_pos) {
-    <tal:build_industry_layout repeat="spritelayout industry_layout.spritelayouts">
-        relative_coord(${spritelayout[0]}, ${spritelayout[1]}): ${spritelayout[2]};
-    </tal:build_industry_layout>
-	${industry_layout.default_tile};
-}
+<tal:build_industry_layouts_graphic_switches repeat="industry_layout python:industry.industry_layouts">
+    switch(FEAT_INDUSTRYTILES, SELF, ${industry_layout.id}, relative_pos) {
+        <tal:build_industry_layout repeat="spritelayout industry_layout.spritelayouts">
+            relative_coord(${spritelayout[0]}, ${spritelayout[1]}): ${spritelayout[2]};
+        </tal:build_industry_layout>
+        ${industry_layout.default_tile};
+    }
+</tal:build_industry_layouts_graphic_switches>
