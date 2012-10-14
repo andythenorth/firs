@@ -23,11 +23,9 @@
 
 switch(FEAT_INDUSTRYTILES, PARENT, ${industry.id}_industry_layout_graphics_switch, layout_num) {
 	1: ${industry.id}_industry_layout_1;
-	2: ${industry.id}_industry_layout_1;
-	3: ${industry.id}_industry_layout_2;
-	4: ${industry.id}_industry_layout_2;
-	5: ${industry.id}_industry_layout_3;
-	6: ${industry.id}_industry_layout_4;
+	2: ${industry.id}_industry_layout_2;
+	3: ${industry.id}_industry_layout_3;
+	4: ${industry.id}_industry_layout_4;
 	${industry.id}_industry_layout_1; // default
 }
 
@@ -71,27 +69,11 @@ tilelayout tilelayout_grain_mill_2 {
 	0, 1: ${industry.id}_tile;
 	1, 0: ${industry.id}_tile;
 	1, 1: ${industry.id}_tile;
+	2, 0: ${industry.id}_tile;
+	2, 1: ${industry.id}_tile;
 }
 
 tilelayout tilelayout_grain_mill_3 {
-	0, 0: ${industry.id}_tile;
-	0, 1: ${industry.id}_tile;
-	1, 0: ${industry.id}_tile;
-	1, 1: ${industry.id}_tile;
-	2, 0: ${industry.id}_tile;
-	2, 1: ${industry.id}_tile;
-}
-
-tilelayout tilelayout_grain_mill_4 {
-	0, 0: ${industry.id}_tile;
-	0, 1: ${industry.id}_tile;
-	1, 0: ${industry.id}_tile;
-	1, 1: ${industry.id}_tile;
-	2, 0: ${industry.id}_tile;
-	2, 1: ${industry.id}_tile;
-}
-
-tilelayout tilelayout_grain_mill_5 {
 	0, 0: ${industry.id}_tile;
 	0, 1: ${industry.id}_tile;
 	0, 2: ${industry.id}_tile;
@@ -102,7 +84,7 @@ tilelayout tilelayout_grain_mill_5 {
 	1, 3: ${industry.id}_tile;
 }
 
-tilelayout tilelayout_grain_mill_6 {
+tilelayout tilelayout_grain_mill_4 {
 	0, 0: ${industry.id}_tile;
 }
 
@@ -172,8 +154,6 @@ item(FEAT_INDUSTRIES, grain_mill, IND_GRAINMILL_ID) {
 				tilelayout_grain_mill_2,
 				tilelayout_grain_mill_3,
 				tilelayout_grain_mill_4,
-				tilelayout_grain_mill_5,
-				tilelayout_grain_mill_6
 			];
 		life_type:              IND_LIFE_TYPE_PROCESSING;
 		closure_msg:            TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS;
