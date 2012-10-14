@@ -15,14 +15,6 @@ ${industry.get_spritelayouts()}
 
 ${industry.get_industry_layouts_as_graphic_switches()}
 
-switch(FEAT_INDUSTRYTILES, PARENT, ${industry.id}_industry_layout_master_graphics_switch, layout_num) {
-	1: ${industry.id}_industry_layout_1;
-	2: ${industry.id}_industry_layout_2;
-	3: ${industry.id}_industry_layout_3;
-	4: ${industry.id}_industry_layout_4;
-	${industry.id}_industry_layout_1; // default
-}
-
 /* *************************************************
  * Definition of the industry tile and its callbacks
  * *************************************************/
