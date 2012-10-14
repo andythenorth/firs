@@ -7,9 +7,9 @@
 
 #include "../templates/spritelayouts_groundaware.pnml"
 
-#define THIS_ID(...) ${industry.name}_ ## __VA_ARGS__
+#define THIS_ID(...) ${industry.id}_ ## __VA_ARGS__
 
-spriteset(${industry.name}_spriteset_ground, "sprites/graphics/industries/groundtiles.png") {
+spriteset(${industry.id}_spriteset_ground, "sprites/graphics/industries/groundtiles.png") {
 	tmpl_ground_tile(150, 10)
 }
 
@@ -17,7 +17,7 @@ spriteset(${industry.name}_spriteset_ground, "sprites/graphics/industries/ground
     ${spriteset.render(industry=industry)}
 </tal:build_spritesets>
 
-spriteset(${industry.name}_spriteset_ground_windmill) {
+spriteset(${industry.id}_spriteset_ground_windmill) {
 	tmpl_building_sprite_filename(10, 160, 31, 0, ${industry.graphics_file})
 	tmpl_building_sprite_filename(10, 160, 31, 0, ${industry.graphics_file})
 	tmpl_building_sprite_filename(10, 160, 31, 0, ${industry.graphics_file})
@@ -32,7 +32,7 @@ spriteset(${industry.name}_spriteset_ground_windmill) {
 	tmpl_building_sprite_filename(10, 160, 31, 0, ${industry.graphics_file})
 }
 
-spriteset(${industry.name}_spriteset_ground_windmill_snow) {
+spriteset(${industry.id}_spriteset_ground_windmill_snow) {
 	tmpl_building_sprite_filename(10, 160, 31, 0, ${industry.graphics_file_snow})
 	tmpl_building_sprite_filename(10, 160, 31, 0, ${industry.graphics_file_snow})
 	tmpl_building_sprite_filename(10, 160, 31, 0, ${industry.graphics_file_snow})
@@ -47,7 +47,7 @@ spriteset(${industry.name}_spriteset_ground_windmill_snow) {
 	tmpl_building_sprite_filename(10, 160, 31, 0, ${industry.graphics_file_snow})
 }
 
-spriteset(${industry.name}_spriteset_windmill_anim) {
+spriteset(${industry.id}_spriteset_windmill_anim) {
 	tmpl_building_sprite_filename( 10, 200, 82, -52, ${industry.graphics_file})
 	tmpl_building_sprite_filename( 10, 200, 82, -52, ${industry.graphics_file_snow})
 	tmpl_building_sprite_filename( 80, 200, 82, -52, ${industry.graphics_file})
@@ -66,11 +66,11 @@ spriteset(${industry.name}_spriteset_windmill_anim) {
     ${tile.render(industry=industry)}
 </tal:build_layouts>
 
-GROUND_AWARE_SPRITELAYOUT(${industry.name}_windmill_tile_anim)
-	CONDITIONAL_GROUND_SPRITE_OVERLAY(${industry.name}_spriteset_ground_windmill, terrain_type != TILETYPE_SNOW)
-	CONDITIONAL_GROUND_SPRITE_OVERLAY(${industry.name}_spriteset_ground_windmill_snow, terrain_type == TILETYPE_SNOW)
+GROUND_AWARE_SPRITELAYOUT(${industry.id}_windmill_tile_anim)
+	CONDITIONAL_GROUND_SPRITE_OVERLAY(${industry.id}_spriteset_ground_windmill, terrain_type != TILETYPE_SNOW)
+	CONDITIONAL_GROUND_SPRITE_OVERLAY(${industry.id}_spriteset_ground_windmill_snow, terrain_type == TILETYPE_SNOW)
 	building {
-		sprite: ${industry.name}_spriteset_windmill_anim(2 * animation_frame + (terrain_type == TILETYPE_SNOW));
+		sprite: ${industry.id}_spriteset_windmill_anim(2 * animation_frame + (terrain_type == TILETYPE_SNOW));
 		recolour_mode: RECOLOUR_REMAP;
 		palette: 0;
 		zextent: 24;
@@ -81,14 +81,14 @@ SPRITELAYOUT_END
     ${layout.render(industry=industry)}
 </tal:build_layouts>
 
-switch(FEAT_INDUSTRYTILES, PARENT, ${industry.name}_layout, layout_num) {
-	1: ${industry.name}_layout_1;
-	2: ${industry.name}_layout_1;
-	3: ${industry.name}_layout_2;
-	4: ${industry.name}_layout_2;
-	5: ${industry.name}_layout_3;
-	6: ${industry.name}_layout_4;
-	${industry.name}_brickbakery_tile_1;
+switch(FEAT_INDUSTRYTILES, PARENT, ${industry.id}_layout, layout_num) {
+	1: ${industry.id}_layout_1;
+	2: ${industry.id}_layout_1;
+	3: ${industry.id}_layout_2;
+	4: ${industry.id}_layout_2;
+	5: ${industry.id}_layout_3;
+	6: ${industry.id}_layout_4;
+	${industry.id}_brickbakery_tile_1;
 }
 
 /* *************************************************
@@ -96,11 +96,11 @@ switch(FEAT_INDUSTRYTILES, PARENT, ${industry.name}_layout, layout_num) {
  * *************************************************/
 
 TILE_DISALLOW_NEARBY_CLASS(tile1_nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
-TILE_ALLOW_PLAYER         (tile1_player_check, ${industry.name}_tile1_nearby_industry)
-TILE_DISALLOW_SLOPES      (tile1_location_check, CB_RESULT_LOCATION_DISALLOW, ${industry.name}_tile1_player_check)
-GROUNDSPRITE_SWITCH(${industry.name}_ground_switch, ${industry.name}_layout)
+TILE_ALLOW_PLAYER         (tile1_player_check, ${industry.id}_tile1_nearby_industry)
+TILE_DISALLOW_SLOPES      (tile1_location_check, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_tile1_player_check)
+GROUNDSPRITE_SWITCH(${industry.id}_ground_switch, ${industry.id}_layout)
 
-item(FEAT_INDUSTRYTILES, ${industry.name}_tile, TILE_GRAINMILL_1) {
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile, TILE_GRAINMILL_1) {
 	property {
 		substitute:       0;
 		accepted_cargos:  [[GRAI, 8], [MNSP, 8]];
@@ -110,8 +110,8 @@ item(FEAT_INDUSTRYTILES, ${industry.name}_tile, TILE_GRAINMILL_1) {
 	}
 
 	graphics {
-		tile_check:   ${industry.name}_tile1_location_check;
-		${industry.name}_ground_switch;
+		tile_check:   ${industry.id}_tile1_location_check;
+		${industry.id}_ground_switch;
 	}
 }
 
@@ -120,50 +120,50 @@ item(FEAT_INDUSTRYTILES, ${industry.name}_tile, TILE_GRAINMILL_1) {
  * *************************************************/
 
 tilelayout tilelayout_grain_mill_1 {
-	0, 0: ${industry.name}_tile;
-	0, 1: ${industry.name}_tile;
-	1, 0: ${industry.name}_tile;
-	1, 1: ${industry.name}_tile;
+	0, 0: ${industry.id}_tile;
+	0, 1: ${industry.id}_tile;
+	1, 0: ${industry.id}_tile;
+	1, 1: ${industry.id}_tile;
 }
 
 tilelayout tilelayout_grain_mill_2 {
-	0, 0: ${industry.name}_tile;
-	0, 1: ${industry.name}_tile;
-	1, 0: ${industry.name}_tile;
-	1, 1: ${industry.name}_tile;
+	0, 0: ${industry.id}_tile;
+	0, 1: ${industry.id}_tile;
+	1, 0: ${industry.id}_tile;
+	1, 1: ${industry.id}_tile;
 }
 
 tilelayout tilelayout_grain_mill_3 {
-	0, 0: ${industry.name}_tile;
-	0, 1: ${industry.name}_tile;
-	1, 0: ${industry.name}_tile;
-	1, 1: ${industry.name}_tile;
-	2, 0: ${industry.name}_tile;
-	2, 1: ${industry.name}_tile;
+	0, 0: ${industry.id}_tile;
+	0, 1: ${industry.id}_tile;
+	1, 0: ${industry.id}_tile;
+	1, 1: ${industry.id}_tile;
+	2, 0: ${industry.id}_tile;
+	2, 1: ${industry.id}_tile;
 }
 
 tilelayout tilelayout_grain_mill_4 {
-	0, 0: ${industry.name}_tile;
-	0, 1: ${industry.name}_tile;
-	1, 0: ${industry.name}_tile;
-	1, 1: ${industry.name}_tile;
-	2, 0: ${industry.name}_tile;
-	2, 1: ${industry.name}_tile;
+	0, 0: ${industry.id}_tile;
+	0, 1: ${industry.id}_tile;
+	1, 0: ${industry.id}_tile;
+	1, 1: ${industry.id}_tile;
+	2, 0: ${industry.id}_tile;
+	2, 1: ${industry.id}_tile;
 }
 
 tilelayout tilelayout_grain_mill_5 {
-	0, 0: ${industry.name}_tile;
-	0, 1: ${industry.name}_tile;
-	0, 2: ${industry.name}_tile;
-	0, 3: ${industry.name}_tile;
-	1, 0: ${industry.name}_tile;
-	1, 1: ${industry.name}_tile;
-	1, 2: ${industry.name}_tile;
-	1, 3: ${industry.name}_tile;
+	0, 0: ${industry.id}_tile;
+	0, 1: ${industry.id}_tile;
+	0, 2: ${industry.id}_tile;
+	0, 3: ${industry.id}_tile;
+	1, 0: ${industry.id}_tile;
+	1, 1: ${industry.id}_tile;
+	1, 2: ${industry.id}_tile;
+	1, 3: ${industry.id}_tile;
 }
 
 tilelayout tilelayout_grain_mill_6 {
-	0, 0: ${industry.name}_tile;
+	0, 0: ${industry.id}_tile;
 }
 
 /* *************************************************
@@ -185,36 +185,36 @@ tilelayout tilelayout_grain_mill_6 {
 #define THIS_STR_EXTRA_TEXT       STR_EXTRA_GRAIN_MILL
 
 CHECK_INCOMPATIBLE  (grain_mill,    56, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
-CHECK_INCOMPATIBLE  (brewery,       16, CB_RESULT_LOCATION_DISALLOW, ${industry.name}_grain_mill)
-CHECK_INCOMPATIBLE  (arable_farm,   16, CB_RESULT_LOCATION_DISALLOW, ${industry.name}_brewery)
-CHECK_TOWN_DISTANCE (town_distance,  0,144, ${industry.name}_arable_farm)
-CHECK_FOUNDER       (${industry.name}_town_distance)
+CHECK_INCOMPATIBLE  (brewery,       16, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_grain_mill)
+CHECK_INCOMPATIBLE  (arable_farm,   16, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_brewery)
+CHECK_TOWN_DISTANCE (town_distance,  0,144, ${industry.id}_arable_farm)
+CHECK_FOUNDER       (${industry.id}_town_distance)
 
 /** After 1900, windmills only appear during map generation. */
-switch (FEAT_INDUSTRIES, SELF, ${industry.name}_brick_layouts_only_check_layout, var[0x86]) {
+switch (FEAT_INDUSTRIES, SELF, ${industry.id}_brick_layouts_only_check_layout, var[0x86]) {
 	5: return CB_RESULT_LOCATION_DISALLOW;
-	${industry.name}_check_location;
+	${industry.id}_check_location;
 }
 
-switch (FEAT_INDUSTRIES, SELF, ${industry.name}_brick_layouts_only, extra_callback_info2) {
-	IND_CREATION_GENERATION: ${industry.name}_check_location;
-	${industry.name}_brick_layouts_only_check_layout;
+switch (FEAT_INDUSTRIES, SELF, ${industry.id}_brick_layouts_only, extra_callback_info2) {
+	IND_CREATION_GENERATION: ${industry.id}_check_location;
+	${industry.id}_brick_layouts_only_check_layout;
 }
 
 /** Before 1870, only windmills appear. */
-switch (FEAT_INDUSTRIES, SELF, ${industry.name}_windmill_layout_only, var[0x86]) {
-	5: ${industry.name}_check_location;
+switch (FEAT_INDUSTRIES, SELF, ${industry.id}_windmill_layout_only, var[0x86]) {
+	5: ${industry.id}_check_location;
 	return CB_RESULT_LOCATION_DISALLOW;
 }
 
 /** Both types of layouts can appear between 1870 and 1900. */
-switch (FEAT_INDUSTRIES, SELF, ${industry.name}_check_date, current_year) {
-	0..1870:    ${industry.name}_windmill_layout_only;
-	1870..1900: ${industry.name}_check_location;
-	${industry.name}_brick_layouts_only;
+switch (FEAT_INDUSTRIES, SELF, ${industry.id}_check_date, current_year) {
+	0..1870:    ${industry.id}_windmill_layout_only;
+	1870..1900: ${industry.id}_check_location;
+	${industry.id}_brick_layouts_only;
 }
 
-SWITCH_COLOUR_SCHEME1(${industry.name}_colour)
+SWITCH_COLOUR_SCHEME1(${industry.id}_colour)
 
 #include "../templates/produce_secondary.pnml"
 #include "../templates/check_secondary_production_level.pnml"
@@ -259,13 +259,13 @@ item(FEAT_INDUSTRIES, grain_mill, IND_GRAINMILL_ID) {
 		spec_flags:             0;
 	}
 	graphics {
-		produce_cargo_arrival:   ${industry.name}_produce;
-		construction_probability:${industry.name}_check_availability;
-		location_check:          ${industry.name}_check_date;
-		monthly_prod_change:     ${industry.name}_check_production_level;
-		random_prod_change:      ${industry.name}_check_closure;
-		extra_text_industry:     ${industry.name}_extra_text;
-		colour:                  ${industry.name}_colour;
+		produce_cargo_arrival:   ${industry.id}_produce;
+		construction_probability:${industry.id}_check_availability;
+		location_check:          ${industry.id}_check_date;
+		monthly_prod_change:     ${industry.id}_check_production_level;
+		random_prod_change:      ${industry.id}_check_closure;
+		extra_text_industry:     ${industry.id}_extra_text;
+		colour:                  ${industry.id}_colour;
 	}
 }
 

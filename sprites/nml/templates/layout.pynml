@@ -1,6 +1,6 @@
-switch(FEAT_INDUSTRYTILES, SELF, ${industry.name}_${layout.id}, relative_pos) {
+switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_${layout.id}, relative_pos) {
     <tal:build_tiles_in_layout repeat="tile layout.tiles">
-        relative_coord(${tile[0]}, ${tile[1]}): ${industry.name}_${tile[2]};
+        relative_coord(${tile[0]}, ${tile[1]}): ${industry.id}_${tile[2]};
     </tal:build_tiles_in_layout>
-	${industry.name}_${layout.default_tile};
+	${industry.id}_${layout.default_tile};
 }

@@ -46,10 +46,10 @@ class Layout(object):
 
 class Industry(object):
     """Base class for all types of industry"""
-    def __init__(self, name, spritesets, tiles, layouts):
-        self.name = name
-        self.graphics_file = '"sprites/graphics/industries/' + name + '.png"' # don't use os.path.join here, this is for nml
-        self.graphics_file_snow = '"sprites/graphics/industries/' + name + '_snow.png"' # don't use os.path.join here, this is for nml
+    def __init__(self, id, spritesets, tiles, layouts):
+        self.id = id
+        self.graphics_file = '"sprites/graphics/industries/' + id + '.png"' # don't use os.path.join here, this is for nml
+        self.graphics_file_snow = '"sprites/graphics/industries/' + id + '_snow.png"' # don't use os.path.join here, this is for nml
         self.spritesets = spritesets
         self.tiles = tiles
         self.layouts = layouts
@@ -172,11 +172,11 @@ layout_4 = Layout('layout_4', default_tile = 'windmill_tile_anim', tiles = [
 ])
 layouts.append(layout_4)
 
-industry_name = 'grain_mill'
-industry = Industry(name=industry_name, spritesets=spritesets, tiles=tiles, layouts=layouts)
+industry_id = 'grain_mill'
+industry = Industry(id=industry_id, spritesets=spritesets, tiles=tiles, layouts=layouts)
 
 # compile a single final nml file for the grf
-industry_template = industry_templates[industry_name + '.pypnml']
+industry_template = industry_templates[industry_id + '.pypnml']
 
 templated_pnml = industry_template(industry = industry)
 # an ugly hack here because chameleon html escapes some characters
