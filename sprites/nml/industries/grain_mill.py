@@ -10,9 +10,11 @@ industry_templates = PageTemplateLoader(os.path.join(currentdir,'sprites','nml',
 
 class Tile(object):
     """Base class to hold industry tiles"""
-    def __init__(self, id, sprites):
+    def __init__(self, id, ground_sprite, ground_overlay, building_sprites):
         self.id = id
-        self.sprites = sprites
+        self.ground_sprite = ground_sprite
+        self.ground_overlay = ground_overlay
+        self.building_sprites = building_sprites
         tiles.append(self) # register this layout with this context
 
     def render(self, industry):
@@ -44,22 +46,38 @@ class Industry(object):
 
 tiles = []
 
-brickbakery_tile_1 = Tile('brickbakery_tile_1', sprites = (
-
-))
-brickbakery_tile_2 = Tile('brickbakery_tile_2', sprites = (
-
-))
-brickbakery_tile_3 = Tile('brickbakery_tile_3', sprites = (
-
-))
-brickbakery_tile_4 = Tile('brickbakery_tile_4', sprites = (
-
-))
-windmill_tile_anim = Tile('windmill_tile_anim', sprites = (
-
-))
-
+brickbakery_tile_1 = Tile(
+    id = 'brickbakery_tile_1',
+    ground_sprite = 'grain_mill_spriteset_ground',
+    ground_overlay = 'grain_mill_spriteset_ground_overlay_normal_1',
+    building_sprites = []
+)
+brickbakery_tile_2 = Tile(
+    id = 'brickbakery_tile_2',
+    ground_sprite = 'grain_mill_spriteset_ground',
+    ground_overlay = 'grain_mill_spriteset_ground_overlay_normal_2',
+    building_sprites = []
+)
+brickbakery_tile_3 = Tile(
+    id = 'brickbakery_tile_3',
+    ground_sprite = 'grain_mill_spriteset_ground',
+    ground_overlay = 'grain_mill_spriteset_ground_overlay_normal_3',
+    building_sprites = ['grain_mill_spriteset_normal_3']
+)
+brickbakery_tile_4 = Tile(
+    id = 'brickbakery_tile_4',
+    ground_sprite = 'grain_mill_spriteset_ground',
+    ground_overlay = 'grain_mill_spriteset_ground_overlay_normal_4',
+    building_sprites = ['grain_mill_spriteset_normal_4']
+)
+"""
+windmill_tile_anim = Tile(
+    id = 'windmill_tile_anim',
+    ground_sprite = 'windmill_spriteset_ground_windmill',
+    ground_overlay = 'bar',
+    building_sprites = ('ham','eggs')
+)
+"""
 layouts = []
 
 layout_1 = Layout('layout_1', default_tile = 'brickbakery_tile_3', tiles = (
