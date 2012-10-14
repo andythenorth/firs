@@ -54,6 +54,10 @@ class IndustryLayout(object):
         self.default_tile = default_tile
         self.spritelayouts = spritelayouts
 
+    def render_tilelayouts(self, industry):
+        template = templates['industry_layout_tilelayouts.pynml']
+        return template(industry_layout=self, industry=industry)
+
     def render_graphics_switches(self, industry):
         template = templates['industry_layout_graphics_switches.pynml']
         return template(industry_layout=self, industry=industry)
@@ -68,6 +72,10 @@ class Industry(object):
         self.spritesets = spritesets
         self.spritelayouts = spritelayouts # by convention spritelayout is one word :P
         self.industry_layouts = industry_layouts
+
+    def get_layouts_property(self):
+        template = templates['industry_layout_property.pynml']
+        return template(industry=industry)
 
 """ by convention, ids for use in nml have industry name prefix, local python object ids don't bother with industry name prefix """
 
