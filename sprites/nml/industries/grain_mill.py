@@ -20,8 +20,8 @@ class Spriteset(object):
         return template(spriteset=self, industry=industry)
 
 
-class Tile(object):
-    """Base class to hold industry tiles"""
+class SpriteLayout(object):
+    """Base class to hold spritelayouts for industry tiles"""
     def __init__(self, id, ground_sprite, ground_overlay, building_sprites):
         self.id = id
         self.ground_sprite = ground_sprite
@@ -29,11 +29,11 @@ class Tile(object):
         self.building_sprites = building_sprites
 
     def render(self, industry):
-        template = templates['tile.pynml']
+        template = templates['spritelayout.pynml']
         return template(tile=self, industry=industry)
 
 
-class Layout(object):
+class IndustryLayout(object):
     """Base class to hold industry layouts"""
     def __init__(self, id, default_tile, tiles):
         self.id = id
@@ -41,7 +41,7 @@ class Layout(object):
         self.tiles = tiles
 
     def render(self, industry):
-        template = templates['layout.pynml']
+        template = templates['industry_layout.pynml']
         return template(layout=self, industry=industry)
 
 
@@ -104,28 +104,28 @@ spritesets.append(spriteset_4)
 
 
 tiles = []
-brickbakery_tile_1 = Tile(
+brickbakery_tile_1 = SpriteLayout(
     id = 'grain_mill_brickbakery_tile_1',
     ground_sprite = 'grain_mill_spriteset_ground',
     ground_overlay = spriteset_ground_overlay_1,
     building_sprites = []
 )
 tiles.append(brickbakery_tile_1)
-brickbakery_tile_2 = Tile(
+brickbakery_tile_2 = SpriteLayout(
     id = 'grain_mill_brickbakery_tile_2',
     ground_sprite = 'grain_mill_spriteset_ground',
     ground_overlay = spriteset_ground_overlay_2,
     building_sprites = []
 )
 tiles.append(brickbakery_tile_2)
-brickbakery_tile_3 = Tile(
+brickbakery_tile_3 = SpriteLayout(
     id = 'grain_mill_brickbakery_tile_3',
     ground_sprite = 'grain_mill_spriteset_ground',
     ground_overlay = spriteset_ground_overlay_3,
     building_sprites = [spriteset_3]
 )
 tiles.append(brickbakery_tile_3)
-brickbakery_tile_4 = Tile(
+brickbakery_tile_4 = SpriteLayout(
     id = 'grain_mill_brickbakery_tile_4',
     ground_sprite = 'grain_mill_spriteset_ground',
     ground_overlay = spriteset_ground_overlay_4,
@@ -133,7 +133,7 @@ brickbakery_tile_4 = Tile(
 )
 tiles.append(brickbakery_tile_4)
 """
-windmill_tile_anim = Tile(
+windmill_tile_anim = SpriteLayout(
     id = 'windmill_tile_anim',
     ground_sprite = 'windmill_spriteset_ground_windmill',
     ground_overlay = 'bar',
@@ -143,14 +143,14 @@ windmill_tile_anim = Tile(
 
 
 layouts = []
-layout_1 = Layout('layout_1', default_tile = 'grain_mill_brickbakery_tile_3', tiles = [
+layout_1 = IndustryLayout('layout_1', default_tile = 'grain_mill_brickbakery_tile_3', tiles = [
     (0, 0, 'grain_mill_brickbakery_tile_3'),
     (0, 1, 'grain_mill_brickbakery_tile_4'),
     (1, 0, 'grain_mill_brickbakery_tile_1'),
     (1, 1, 'grain_mill_brickbakery_tile_2'),
 ])
 layouts.append(layout_1)
-layout_2 = Layout('layout_2', default_tile = 'grain_mill_brickbakery_tile_3', tiles = [
+layout_2 = IndustryLayout('layout_2', default_tile = 'grain_mill_brickbakery_tile_3', tiles = [
     (0, 0, 'grain_mill_brickbakery_tile_3'),
     (0, 1, 'grain_mill_brickbakery_tile_4'),
     (1, 0, 'grain_mill_brickbakery_tile_3'),
@@ -160,7 +160,7 @@ layout_2 = Layout('layout_2', default_tile = 'grain_mill_brickbakery_tile_3', ti
 
 ])
 layouts.append(layout_2)
-layout_3 = Layout('layout_3', default_tile = 'grain_mill_brickbakery_tile_3', tiles = [
+layout_3 = IndustryLayout('layout_3', default_tile = 'grain_mill_brickbakery_tile_3', tiles = [
     (0, 0, 'grain_mill_brickbakery_tile_3'),
     (0, 1, 'grain_mill_brickbakery_tile_4'),
     (0, 2, 'grain_mill_brickbakery_tile_3'),
@@ -171,7 +171,7 @@ layout_3 = Layout('layout_3', default_tile = 'grain_mill_brickbakery_tile_3', ti
     (1, 3, 'grain_mill_brickbakery_tile_2'),
 ])
 layouts.append(layout_3)
-layout_4 = Layout('layout_4', default_tile = 'windmill_tile_anim', tiles = [
+layout_4 = IndustryLayout('layout_4', default_tile = 'windmill_tile_anim', tiles = [
     (0, 0, 'windmill_tile_anim'),
 ])
 layouts.append(layout_4)
