@@ -13,7 +13,7 @@ class Spriteset(object):
     def __init__(self, id, sprites, zextent=16):
         self.id = id
         self.sprites = sprites
-        self.zextent = zextent # set this to value of largest sprite
+        self.zextent = zextent # optional parameter, to use set this to value of largest sprite in spriteset, or omit for default (16)
 
     def render(self, industry):
         template = templates['spriteset.pynml']
@@ -60,7 +60,7 @@ class Industry(object):
 spritesets = []
 spriteset_ground_overlay_1 = Spriteset(
     id = 'grain_mill_spriteset_ground_overlay_1',
-	sprites = [(10, 10, 64, 31, -31, 0)]
+	sprites = [(10, 10, 64, 31, -31, 0)],
 )
 spritesets.append(spriteset_ground_overlay_1)
 spriteset_ground_overlay_2 = Spriteset(
@@ -91,12 +91,14 @@ spriteset_2 = Spriteset(
 spritesets.append(spriteset_2)
 spriteset_3 = Spriteset(
     id = 'grain_mill_spriteset_3',
-	sprites = [(150, 60, 64, 82, -31, -51)]
+	sprites = [(150, 60, 64, 82, -31, -51)],
+	zextent = 48 # optional zextent value, will default to 16 if this param is omitted
 )
 spritesets.append(spriteset_3)
 spriteset_4 = Spriteset(
     id = 'grain_mill_spriteset_4',
-	sprites = [(220, 60, 64, 82, -31, -51)]
+	sprites = [(220, 60, 64, 82, -31, -51)],
+	zextent = 48 # optional zextent value, will default to 16 if this param is omitted
 )
 spritesets.append(spriteset_4)
 
