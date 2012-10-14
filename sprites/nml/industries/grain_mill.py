@@ -54,10 +54,6 @@ class IndustryLayout(object):
         self.default_tile = default_tile
         self.spritelayouts = spritelayouts
 
-    def render_tilelayouts(self, industry):
-        template = templates['industry_layout_tilelayouts.pynml']
-        return template(industry_layout=self, industry=industry)
-
     def render_graphics_switches(self, industry):
         template = templates['industry_layout_graphics_switches.pynml']
         return template(industry_layout=self, industry=industry)
@@ -73,7 +69,11 @@ class Industry(object):
         self.spritelayouts = spritelayouts # by convention spritelayout is one word :P
         self.industry_layouts = industry_layouts
 
-    def get_layouts_property(self):
+    def get_industry_layouts_as_tilelayouts(self):
+        template = templates['industry_layout_tilelayouts.pynml']
+        return template(industry=industry)
+
+    def get_industry_layouts_as_property(self):
         template = templates['industry_layout_property.pynml']
         return template(industry=industry)
 

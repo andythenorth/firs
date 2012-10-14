@@ -5,8 +5,10 @@
   See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
 -->
 
-tilelayout ${industry_layout.id}_tilelayout {
-    <tal:build_industry_layout repeat="spritelayout industry_layout.spritelayouts">
-        ${spritelayout[0]}, ${spritelayout[1]}: ${industry.id}_tile;
-    </tal:build_industry_layout>
-}
+<tal:build_industry_layouts_tilelayouts repeat="industry_layout python:industry.industry_layouts">
+    tilelayout ${industry_layout.id}_tilelayout {
+        <tal:build_industry_layout repeat="spritelayout industry_layout.spritelayouts">
+            ${spritelayout[0]}, ${spritelayout[1]}: ${industry.id}_tile;
+        </tal:build_industry_layout>
+    }
+</tal:build_industry_layouts_tilelayouts>
