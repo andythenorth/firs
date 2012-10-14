@@ -17,14 +17,14 @@ industry_templates = PageTemplateLoader(os.path.join(currentdir,'sprites','nml',
 
 class Spriteset(object):
     """Base class to hold industry spritesets"""
-    # arguably this should be two different classes, one for building/feature spritesets, and one for ground spritesets
+    # !! arguably this should be two different classes, one for building/feature spritesets, and one for ground spritesets
     def __init__(self, id, sprites=[], type='', zextent=16, animation_rate = 0, num_sprites_to_autofill = 1):
         self.id = id
-        self.type = type # set to ground or other special types, or omit for default (building, greeble, foundations etc)
-        self.sprites = sprites
-        self.zextent = zextent # optional parameter, to use set this to value of largest sprite in spriteset, or omit for default (16)
-        self.animation_rate = animation_rate # multiplier to tile's animation rate, set to 1 for same as tile, >1 for faster; leave default (0) to disable animation
-        self.num_sprites_to_autofill = num_sprites_to_autofill # create n sprites per sprite passed (convenience method for use where spriteset sizes must match)
+        self.sprites = sprites # a list of sprites 6-tuples in format (x, y, w, h, xoffs, yoffs)
+        self.type = type # set to ground or other special types, or omit for default (building, greeble, foundations etc - graphics from png named same as industry)
+        self.zextent = zextent # optional parameter, to use set this to z size of largest sprite in spriteset, or omit for default (16)
+        self.animation_rate = animation_rate # optional multiplier to tile's animation rate, set to 1 for same as tile, >1 for faster; leave default (0) to disable animation
+        self.num_sprites_to_autofill = num_sprites_to_autofill # create n sprites per sprite passed (optional convenience method for use where spriteset sizes must match; set value to same as size of largest spriteset)
 
     def get_ground_tile_x_start(self, type):
         return {'mud': 0, 'concrete': 80, 'cobble': 150, 'snow': 220, 'empty':290}[type]
