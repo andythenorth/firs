@@ -10,7 +10,7 @@
         <tal:build_industry_layout repeat="layout industry_layout.layout">
             relative_coord(${layout[0]}, ${layout[1]}): ${layout[2]};
         </tal:build_industry_layout>
-        ${industry_layout.default_tile};
+        ${industry_layout.default_spritelayout};
     }
 </tal:build_industry_layouts_graphic_switches>
 

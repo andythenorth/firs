@@ -41,9 +41,9 @@ class SpriteLayout(object):
 
 class IndustryLayout(object):
     """Base class to hold industry layouts"""
-    def __init__(self, id, default_tile, layout):
+    def __init__(self, id, default_spritelayout, layout):
         self.id = id
-        self.default_tile = default_tile
+        self.default_spritelayout = default_spritelayout
         self.layout = layout
 
 
@@ -193,7 +193,7 @@ spritelayouts.append(spritelayout_windmill_anim)
 industry_layouts = []
 industry_layout_1 = IndustryLayout(
     id = 'grain_mill_industry_layout_1',
-    default_tile = 'grain_mill_spritelayout_brickbakery_3',
+    default_spritelayout = 'grain_mill_spritelayout_brickbakery_3',
     layout = [(0, 0, 'grain_mill_spritelayout_brickbakery_3'),
               (0, 1, 'grain_mill_spritelayout_brickbakery_4'),
               (1, 0, 'grain_mill_spritelayout_brickbakery_1'),
@@ -203,7 +203,7 @@ industry_layout_1 = IndustryLayout(
 industry_layouts.append(industry_layout_1)
 industry_layout_2 = IndustryLayout(
     id = 'grain_mill_industry_layout_2',
-    default_tile = 'grain_mill_spritelayout_brickbakery_3',
+    default_spritelayout = 'grain_mill_spritelayout_brickbakery_3',
     layout = [(0, 0, 'grain_mill_spritelayout_brickbakery_3'),
               (0, 1, 'grain_mill_spritelayout_brickbakery_4'),
               (1, 0, 'grain_mill_spritelayout_brickbakery_3'),
@@ -215,7 +215,7 @@ industry_layout_2 = IndustryLayout(
 industry_layouts.append(industry_layout_2)
 industry_layout_3 = IndustryLayout(
     id = 'grain_mill_industry_layout_3',
-    default_tile = 'grain_mill_spritelayout_brickbakery_3',
+    default_spritelayout = 'grain_mill_spritelayout_brickbakery_3',
     layout = [(0, 0, 'grain_mill_spritelayout_brickbakery_3'),
               (0, 1, 'grain_mill_spritelayout_brickbakery_4'),
               (0, 2, 'grain_mill_spritelayout_brickbakery_3'),
@@ -229,7 +229,7 @@ industry_layout_3 = IndustryLayout(
 industry_layouts.append(industry_layout_3)
 industry_layout_4 = IndustryLayout(
     id = 'grain_mill_industry_layout_4',
-    default_tile = 'grain_mill_spritelayout_windmill_anim',
+    default_spritelayout = 'grain_mill_spritelayout_windmill_anim',
     layout = [(0, 0, 'grain_mill_spritelayout_windmill_anim')]
 )
 industry_layouts.append(industry_layout_4)
