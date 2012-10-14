@@ -28,7 +28,7 @@ class Spriteset(object):
 
 
 class SpriteLayout(object):
-    """Base class to hold spritelayouts for industry tiles"""
+    """Base class to hold spritelayouts for industry spritelayouts"""
     def __init__(self, id, ground_sprite, ground_overlay, building_sprites):
         self.id = id
         self.ground_sprite = ground_sprite
@@ -42,10 +42,10 @@ class SpriteLayout(object):
 
 class IndustryLayout(object):
     """Base class to hold industry layouts"""
-    def __init__(self, id, default_tile, tiles):
+    def __init__(self, id, default_tile, spritelayouts):
         self.id = id
         self.default_tile = default_tile
-        self.tiles = tiles
+        self.spritelayouts = spritelayouts
 
     def render(self, industry):
         template = templates['industry_layout.pynml']
@@ -54,12 +54,12 @@ class IndustryLayout(object):
 
 class Industry(object):
     """Base class for all types of industry"""
-    def __init__(self, id, spritesets, tiles, layouts):
+    def __init__(self, id, spritesets, spritelayouts, layouts):
         self.id = id
         self.graphics_file = '"sprites/graphics/industries/' + id + '.png"' # don't use os.path.join here, this is for nml
         self.graphics_file_snow = '"sprites/graphics/industries/' + id + '_snow.png"' # don't use os.path.join here, this is for nml
         self.spritesets = spritesets
-        self.tiles = tiles
+        self.spritelayouts = spritelayouts
         self.layouts = layouts
 
 """ by convention, ids for use in nml have industry name prefix, local python object ids don't bother with industry name prefix """
@@ -136,49 +136,49 @@ spriteset_ground_overlay_windmill = Spriteset(
 spritesets.append(spriteset_ground_overlay_windmill)
 
 
-tiles = []
+spritelayouts = []
 brickbakery_tile_1 = SpriteLayout(
     id = 'grain_mill_brickbakery_tile_1',
     ground_sprite = spriteset_ground_bakery,
     ground_overlay = spriteset_ground_overlay_1,
     building_sprites = []
 )
-tiles.append(brickbakery_tile_1)
+spritelayouts.append(brickbakery_tile_1)
 brickbakery_tile_2 = SpriteLayout(
     id = 'grain_mill_brickbakery_tile_2',
     ground_sprite = spriteset_ground_bakery,
     ground_overlay = spriteset_ground_overlay_2,
     building_sprites = []
 )
-tiles.append(brickbakery_tile_2)
+spritelayouts.append(brickbakery_tile_2)
 brickbakery_tile_3 = SpriteLayout(
     id = 'grain_mill_brickbakery_tile_3',
     ground_sprite = spriteset_ground_bakery,
     ground_overlay = spriteset_ground_overlay_3,
     building_sprites = [spriteset_3]
 )
-tiles.append(brickbakery_tile_3)
+spritelayouts.append(brickbakery_tile_3)
 brickbakery_tile_4 = SpriteLayout(
     id = 'grain_mill_brickbakery_tile_4',
     ground_sprite = spriteset_ground_bakery,
     ground_overlay = spriteset_ground_overlay_4,
     building_sprites = [spriteset_4]
 )
-tiles.append(brickbakery_tile_4)
+spritelayouts.append(brickbakery_tile_4)
 windmill_tile_anim = SpriteLayout(
     id = 'grain_mill_windmill_tile_anim',
     ground_sprite = spriteset_ground_windmill,
     ground_overlay = spriteset_ground_overlay_windmill,
     building_sprites = [spriteset_windmill_anim]
 )
-tiles.append(windmill_tile_anim)
+spritelayouts.append(windmill_tile_anim)
 
 
 layouts = []
 layout_1 = IndustryLayout(
     id = 'layout_1',
     default_tile = 'grain_mill_brickbakery_tile_3',
-    tiles = [(0, 0, 'grain_mill_brickbakery_tile_3'),
+    spritelayouts = [(0, 0, 'grain_mill_brickbakery_tile_3'),
             (0, 1, 'grain_mill_brickbakery_tile_4'),
             (1, 0, 'grain_mill_brickbakery_tile_1'),
             (1, 1, 'grain_mill_brickbakery_tile_2')
@@ -188,7 +188,7 @@ layouts.append(layout_1)
 layout_2 = IndustryLayout(
     id = 'layout_2',
     default_tile = 'grain_mill_brickbakery_tile_3',
-    tiles = [(0, 0, 'grain_mill_brickbakery_tile_3'),
+    spritelayouts = [(0, 0, 'grain_mill_brickbakery_tile_3'),
              (0, 1, 'grain_mill_brickbakery_tile_4'),
              (1, 0, 'grain_mill_brickbakery_tile_3'),
              (1, 1, 'grain_mill_brickbakery_tile_4'),
@@ -200,7 +200,7 @@ layouts.append(layout_2)
 layout_3 = IndustryLayout(
     id = 'layout_3',
     default_tile = 'grain_mill_brickbakery_tile_3',
-    tiles = [(0, 0, 'grain_mill_brickbakery_tile_3'),
+    spritelayouts = [(0, 0, 'grain_mill_brickbakery_tile_3'),
              (0, 1, 'grain_mill_brickbakery_tile_4'),
              (0, 2, 'grain_mill_brickbakery_tile_3'),
              (0, 3, 'grain_mill_brickbakery_tile_4'),
@@ -214,12 +214,12 @@ layouts.append(layout_3)
 layout_4 = IndustryLayout(
     id = 'layout_4',
     default_tile = 'grain_mill_windmill_tile_anim',
-    tiles = [(0, 0, 'grain_mill_windmill_tile_anim')]
+    spritelayouts = [(0, 0, 'grain_mill_windmill_tile_anim')]
 )
 layouts.append(layout_4)
 
 industry_id = 'grain_mill'
-industry = Industry(id=industry_id, spritesets=spritesets, tiles=tiles, layouts=layouts)
+industry = Industry(id=industry_id, spritesets=spritesets, spritelayouts=spritelayouts, layouts=layouts)
 
 # compile a single final nml file for the grf
 industry_template = industry_templates[industry_id + '.pypnml']

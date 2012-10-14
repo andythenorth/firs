@@ -13,7 +13,7 @@
     ${spriteset.render(industry=industry)}
 </tal:build_spritesets>
 
-<tal:build_layouts repeat="tile python:industry.tiles">
+<tal:build_layouts repeat="tile python:industry.spritelayouts">
     ${tile.render(industry=industry)}
 </tal:build_layouts>
 
