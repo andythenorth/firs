@@ -49,13 +49,18 @@ class IndustryLayout(object):
 
 class Industry(object):
     """Base class for all types of industry"""
-    def __init__(self, id, spritesets):
+    def __init__(self, id):
         self.id = id
         self.graphics_file = '"sprites/graphics/industries/' + id + '.png"' # don't use os.path.join here, this is for nml
         self.graphics_file_snow = '"sprites/graphics/industries/' + id + '_snow.png"' # don't use os.path.join here, this is for nml
-        self.spritesets = spritesets
+        self.spritesets = []
         self.spritelayouts = [] # by convention spritelayout is one word :P
         self.industry_layouts = []
+
+    def add_spriteset(self, id, sprites=[], type='', zextent=16, animation_rate=0, num_sprites_to_autofill=1):
+        new_spriteset = Spriteset(id, sprites, type, zextent, animation_rate, num_sprites_to_autofill)
+        self.spritesets.append(new_spriteset)
+        return new_spriteset # returning the new obj isn't essential, but permits the caller giving it a reference for use elsewhere
 
     def add_spritelayout(self, id, ground_sprite, ground_overlay, building_sprites):
         new_spritelayout = SpriteLayout(id, ground_sprite, ground_overlay, building_sprites)
@@ -96,80 +101,64 @@ Some method properties need a string - the templating is then typically directly
 When a string is expected are basically two choices: provide a string directly, or make an object reference and get an id from that object.
 """
 
-spritesets = []
-spriteset_ground_bakery = Spriteset(
+industry_id = 'grain_mill'
+industry = Industry(id=industry_id)
+
+spriteset_ground_bakery = industry.add_spriteset(
     id = 'grain_mill_spriteset_ground_bakery',
 	type='cobble',
 )
-spritesets.append(spriteset_ground_bakery)
-spriteset_ground_overlay_1 = Spriteset(
+spriteset_ground_overlay_1 = industry.add_spriteset(
     id = 'grain_mill_spriteset_ground_overlay_1',
 	sprites = [(10, 10, 64, 31, -31, 0)],
 )
-spritesets.append(spriteset_ground_overlay_1)
-spriteset_ground_overlay_2 = Spriteset(
+spriteset_ground_overlay_2 = industry.add_spriteset(
     id = 'grain_mill_spriteset_ground_overlay_2',
 	sprites = [(80, 10, 64, 31, -31, 0)]
 )
-spritesets.append(spriteset_ground_overlay_2)
-spriteset_ground_overlay_3 = Spriteset(
+spriteset_ground_overlay_3 = industry.add_spriteset(
     id = 'grain_mill_spriteset_ground_overlay_3',
 	sprites = [(150, 10, 64, 31, -31, 0)]
 )
-spritesets.append(spriteset_ground_overlay_3)
-spriteset_ground_overlay_4 = Spriteset(
+spriteset_ground_overlay_4 = industry.add_spriteset(
     id = 'grain_mill_spriteset_ground_overlay_4',
 	sprites = [(220, 10, 64, 31, -31, 0)]
 )
-spritesets.append(spriteset_ground_overlay_4)
-
-spriteset_1 = Spriteset(
+spriteset_1 = industry.add_spriteset(
     id = 'grain_mill_spriteset_1',
 	sprites = [(10, 10, 64, 31, -31, 0)]
 )
-spritesets.append(spriteset_1)
-spriteset_2 = Spriteset(
+spriteset_2 = industry.add_spriteset(
     id = 'grain_mill_spriteset_2',
 	sprites = [(80, 10, 64, 31, -31, 0)]
 )
-spritesets.append(spriteset_2)
-spriteset_3 = Spriteset(
+spriteset_3 = industry.add_spriteset(
     id = 'grain_mill_spriteset_3',
 	sprites = [(150, 60, 64, 82, -31, -51)],
 	zextent = 48 # optional zextent value, will default to 16 if this param is omitted
 )
-spritesets.append(spriteset_3)
-spriteset_4 = Spriteset(
+spriteset_4 = industry.add_spriteset(
     id = 'grain_mill_spriteset_4',
 	sprites = [(220, 60, 64, 82, -31, -51)],
 	zextent = 48 # optional zextent value, will default to 16 if this param is omitted
 )
-spritesets.append(spriteset_4)
-
-spriteset_windmill_anim = Spriteset(
+spriteset_windmill_anim = industry.add_spriteset(
     id = 'grain_mill_spriteset_windmill_anim',
 	sprites = [(10, 200, 64, 82, -31, -52), (80, 200, 64, 82, -31, -52), (150, 200, 64, 82, -31, -52),
                (220, 200, 64, 82, -31, -52), (290, 200, 64, 82, -31, -52), (360, 200, 64, 82, -31, -52)],
 	zextent = 24, # optional zextent value, will default to 16 if this param is omitted
 	animation_rate = 1
 )
-spritesets.append(spriteset_windmill_anim)
-spriteset_ground_windmill = Spriteset(
+spriteset_ground_windmill = industry.add_spriteset(
     id = 'grain_mill_spriteset_ground_windmill',
 	type = 'empty',
 	num_sprites_to_autofill = len(spriteset_windmill_anim.sprites), # autofills number of animated frames (can get count from another spriteset if defined already)
 )
-spritesets.append(spriteset_ground_windmill)
-spriteset_ground_overlay_windmill = Spriteset(
+spriteset_ground_overlay_windmill = industry.add_spriteset(
     id = 'grain_mill_spriteset_ground_overlay_windmill',
 	sprites = [(10, 160, 64, 31, -31, 0)],
 	num_sprites_to_autofill = len(spriteset_windmill_anim.sprites), # autofills number of animated frames (can get count from another spriteset if defined already)
 )
-spritesets.append(spriteset_ground_overlay_windmill)
-
-
-industry_id = 'grain_mill'
-industry = Industry(id=industry_id, spritesets=spritesets)
 
 industry.add_spritelayout(
     id = 'grain_mill_spritelayout_brickbakery_1',
