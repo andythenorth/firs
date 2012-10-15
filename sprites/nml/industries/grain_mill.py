@@ -49,13 +49,17 @@ class IndustryLayout(object):
 
 class Industry(object):
     """Base class for all types of industry"""
-    def __init__(self, id, spritesets, spritelayouts):
+    def __init__(self, id, spritesets):
         self.id = id
         self.graphics_file = '"sprites/graphics/industries/' + id + '.png"' # don't use os.path.join here, this is for nml
         self.graphics_file_snow = '"sprites/graphics/industries/' + id + '_snow.png"' # don't use os.path.join here, this is for nml
         self.spritesets = spritesets
-        self.spritelayouts = spritelayouts # by convention spritelayout is one word :P
+        self.spritelayouts = [] # by convention spritelayout is one word :P
         self.industry_layouts = []
+
+    def add_spritelayout(self, id, ground_sprite, ground_overlay, building_sprites):
+        new_spritelayout = SpriteLayout(id, ground_sprite, ground_overlay, building_sprites)
+        self.spritelayouts.append(new_spritelayout)
 
     def add_industry_layout(self, id, default_spritelayout, layout):
         new_layout = IndustryLayout(id, default_spritelayout, layout)
@@ -156,46 +160,39 @@ spriteset_ground_overlay_windmill = Spriteset(
 spritesets.append(spriteset_ground_overlay_windmill)
 
 
-spritelayouts = []
-spritelayout_brickbakery_1 = SpriteLayout(
+industry_id = 'grain_mill'
+industry = Industry(id=industry_id, spritesets=spritesets)
+
+spritelayout_brickbakery_1 = industry.add_spritelayout(
     id = 'grain_mill_spritelayout_brickbakery_1',
     ground_sprite = spriteset_ground_bakery,
     ground_overlay = spriteset_ground_overlay_1,
     building_sprites = []
 )
-spritelayouts.append(spritelayout_brickbakery_1)
-spritelayout_brickbakery_2 = SpriteLayout(
+spritelayout_brickbakery_2 = industry.add_spritelayout(
     id = 'grain_mill_spritelayout_brickbakery_2',
     ground_sprite = spriteset_ground_bakery,
     ground_overlay = spriteset_ground_overlay_2,
     building_sprites = []
 )
-spritelayouts.append(spritelayout_brickbakery_2)
-spritelayout_brickbakery_3 = SpriteLayout(
+spritelayout_brickbakery_3 = industry.add_spritelayout(
     id = 'grain_mill_spritelayout_brickbakery_3',
     ground_sprite = spriteset_ground_bakery,
     ground_overlay = spriteset_ground_overlay_3,
     building_sprites = [spriteset_3]
 )
-spritelayouts.append(spritelayout_brickbakery_3)
-spritelayout_brickbakery_4 = SpriteLayout(
+spritelayout_brickbakery_4 = industry.add_spritelayout(
     id = 'grain_mill_spritelayout_brickbakery_4',
     ground_sprite = spriteset_ground_bakery,
     ground_overlay = spriteset_ground_overlay_4,
     building_sprites = [spriteset_4]
 )
-spritelayouts.append(spritelayout_brickbakery_4)
-spritelayout_windmill_anim = SpriteLayout(
+spritelayout_windmill_anim = industry.add_spritelayout(
     id = 'grain_mill_spritelayout_windmill_anim',
     ground_sprite = spriteset_ground_windmill,
     ground_overlay = spriteset_ground_overlay_windmill,
     building_sprites = [spriteset_windmill_anim]
 )
-spritelayouts.append(spritelayout_windmill_anim)
-
-
-industry_id = 'grain_mill'
-industry = Industry(id=industry_id, spritesets=spritesets, spritelayouts=spritelayouts)
 
 industry_layout_1 = industry.add_industry_layout(
     id = 'grain_mill_industry_layout_1',
