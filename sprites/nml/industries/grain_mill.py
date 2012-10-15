@@ -60,10 +60,12 @@ class Industry(object):
     def add_spritelayout(self, id, ground_sprite, ground_overlay, building_sprites):
         new_spritelayout = SpriteLayout(id, ground_sprite, ground_overlay, building_sprites)
         self.spritelayouts.append(new_spritelayout)
+        return new_spritelayout # returning the new obj isn't essential, but permits the caller giving it a reference for use elsewhere
 
     def add_industry_layout(self, id, default_spritelayout, layout):
-        new_layout = IndustryLayout(id, default_spritelayout, layout)
-        self.industry_layouts.append(new_layout)
+        new_industry_layout = IndustryLayout(id, default_spritelayout, layout)
+        self.industry_layouts.append(new_industry_layout)
+        return new_industry_layout # returning the new obj isn't essential, but permits the caller giving it a reference for use elsewhere
 
     def get_spritesets(self):
         template = templates['spritesets.pynml']
@@ -163,38 +165,38 @@ spritesets.append(spriteset_ground_overlay_windmill)
 industry_id = 'grain_mill'
 industry = Industry(id=industry_id, spritesets=spritesets)
 
-spritelayout_brickbakery_1 = industry.add_spritelayout(
+industry.add_spritelayout(
     id = 'grain_mill_spritelayout_brickbakery_1',
     ground_sprite = spriteset_ground_bakery,
     ground_overlay = spriteset_ground_overlay_1,
     building_sprites = []
 )
-spritelayout_brickbakery_2 = industry.add_spritelayout(
+industry.add_spritelayout(
     id = 'grain_mill_spritelayout_brickbakery_2',
     ground_sprite = spriteset_ground_bakery,
     ground_overlay = spriteset_ground_overlay_2,
     building_sprites = []
 )
-spritelayout_brickbakery_3 = industry.add_spritelayout(
+industry.add_spritelayout(
     id = 'grain_mill_spritelayout_brickbakery_3',
     ground_sprite = spriteset_ground_bakery,
     ground_overlay = spriteset_ground_overlay_3,
     building_sprites = [spriteset_3]
 )
-spritelayout_brickbakery_4 = industry.add_spritelayout(
+industry.add_spritelayout(
     id = 'grain_mill_spritelayout_brickbakery_4',
     ground_sprite = spriteset_ground_bakery,
     ground_overlay = spriteset_ground_overlay_4,
     building_sprites = [spriteset_4]
 )
-spritelayout_windmill_anim = industry.add_spritelayout(
+industry.add_spritelayout(
     id = 'grain_mill_spritelayout_windmill_anim',
     ground_sprite = spriteset_ground_windmill,
     ground_overlay = spriteset_ground_overlay_windmill,
     building_sprites = [spriteset_windmill_anim]
 )
 
-industry_layout_1 = industry.add_industry_layout(
+industry.add_industry_layout(
     id = 'grain_mill_industry_layout_1',
     default_spritelayout = 'grain_mill_spritelayout_brickbakery_3',
     layout = [(0, 0, 'grain_mill_spritelayout_brickbakery_3'),
@@ -203,7 +205,7 @@ industry_layout_1 = industry.add_industry_layout(
               (1, 1, 'grain_mill_spritelayout_brickbakery_2')
     ]
 )
-industry_layout_2 = industry.add_industry_layout(
+industry.add_industry_layout(
     id = 'grain_mill_industry_layout_2',
     default_spritelayout = 'grain_mill_spritelayout_brickbakery_3',
     layout = [(0, 0, 'grain_mill_spritelayout_brickbakery_3'),
@@ -214,7 +216,7 @@ industry_layout_2 = industry.add_industry_layout(
               (2, 1, 'grain_mill_spritelayout_brickbakery_2')
     ]
 )
-industry_layout_3 = industry.add_industry_layout(
+industry.add_industry_layout(
     id = 'grain_mill_industry_layout_3',
     default_spritelayout = 'grain_mill_spritelayout_brickbakery_3',
     layout = [(0, 0, 'grain_mill_spritelayout_brickbakery_3'),
@@ -227,7 +229,7 @@ industry_layout_3 = industry.add_industry_layout(
               (1, 3, 'grain_mill_spritelayout_brickbakery_2')
     ]
 )
-industry_layout_4 = industry.add_industry_layout(
+industry.add_industry_layout(
     id = 'grain_mill_industry_layout_4',
     default_spritelayout = 'grain_mill_spritelayout_windmill_anim',
     layout = [(0, 0, 'grain_mill_spritelayout_windmill_anim')]
