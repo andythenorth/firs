@@ -230,15 +230,16 @@ industry.add_industry_layout(
     layout = [(0, 0, 'grain_mill_spritelayout_windmill_anim')]
 )
 
-# compile a single final nml file for the grf
+# Templating
 industry_template = industry_templates[industry_id + '.pypnml']
 
-templated_pnml = industry_template(industry = industry)
+templated_pnml = industry_template(industry=industry)
 # an ugly hack here because chameleon html escapes some characters
 templated_pnml = '>'.join(templated_pnml.split('&gt;'))
 templated_pnml = '<'.join(templated_pnml.split('&lt;'))
 templated_pnml = '&'.join(templated_pnml.split('&amp;'))
 
+# save the results of templating
 pnml = codecs.open(os.path.join(currentdir,'sprites','nml','generated_pnml','grain_mill.pnml'), 'w','utf8')
 pnml.write(templated_pnml)
 pnml.close()
