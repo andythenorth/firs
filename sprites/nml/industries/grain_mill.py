@@ -57,18 +57,18 @@ class Industry(object):
         self.spritelayouts = [] # by convention spritelayout is one word :P
         self.industry_layouts = []
 
-    def add_spriteset(self, id, sprites=[], type='', zextent=16, animation_rate=0, num_sprites_to_autofill=1):
-        new_spriteset = Spriteset(id, sprites, type, zextent, animation_rate, num_sprites_to_autofill)
+    def add_spriteset(self, *args, **kwargs):
+        new_spriteset = Spriteset(*args, **kwargs)
         self.spritesets.append(new_spriteset)
         return new_spriteset # returning the new obj isn't essential, but permits the caller giving it a reference for use elsewhere
 
-    def add_spritelayout(self, id, ground_sprite, ground_overlay, building_sprites):
-        new_spritelayout = SpriteLayout(id, ground_sprite, ground_overlay, building_sprites)
+    def add_spritelayout(self, *args, **kwargs):
+        new_spritelayout = SpriteLayout(*args, **kwargs)
         self.spritelayouts.append(new_spritelayout)
         return new_spritelayout # returning the new obj isn't essential, but permits the caller giving it a reference for use elsewhere
 
-    def add_industry_layout(self, id, default_spritelayout, layout):
-        new_industry_layout = IndustryLayout(id, default_spritelayout, layout)
+    def add_industry_layout(self, *args, **kwargs):
+        new_industry_layout = IndustryLayout(*args, **kwargs)
         self.industry_layouts.append(new_industry_layout)
         return new_industry_layout # returning the new obj isn't essential, but permits the caller giving it a reference for use elsewhere
 
