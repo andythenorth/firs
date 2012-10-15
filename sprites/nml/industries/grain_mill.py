@@ -88,7 +88,13 @@ class Industry(object):
         return template(industry=industry)
 
 
-""" by convention, ids for use in nml have industry name prefix, local python object ids don't bother with industry name prefix """
+"""
+Notes to self whilst figuring out python-firs (notes will probably rot here forever).
+By convention, ids for use in nml have industry name prefix, local python object ids don't bother with industry name prefix.
+Some method properties expect object references, and the templating then uses properties from that object.
+Some method properties need a string - the templating is then typically directly writing out an nml identifier.
+When a string is expected are basically two choices: provide a string directly, or make an object reference and get an id from that object.
+"""
 
 spritesets = []
 spriteset_ground_bakery = Spriteset(
