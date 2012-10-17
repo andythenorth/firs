@@ -104,8 +104,19 @@ class Industry(object):
         template = templates['industry_layout_graphics_switches.pynml']
         return template(industry=industry)
 
-    def render_pnml(self):
-        return self
+    def render_and_save_pnml(self):
+        industry_template = industry_templates[self.id + '.pypnml']
+        templated_pnml = industry_template(industry=self)
+
+        # an ugly hack here because chameleon html escapes some characters
+        templated_pnml = '>'.join(templated_pnml.split('&gt;'))
+        templated_pnml = '<'.join(templated_pnml.split('&lt;'))
+        templated_pnml = '&'.join(templated_pnml.split('&amp;'))
+
+        # save the results of templating
+        pnml = codecs.open(os.path.join(currentdir,'sprites','nml','generated_pnml', self.id + '.pnml'), 'w','utf8')
+        pnml.write(templated_pnml)
+        pnml.close()
 
 """
 Notes to self whilst figuring out python-firs (notes will probably rot here forever).
@@ -247,15 +258,4 @@ industry.add_industry_layout(
 )
 
 # Templating
-industry_template = industry_templates[industry_id + '.pypnml']
-
-templated_pnml = industry_template(industry=industry)
-# an ugly hack here because chameleon html escapes some characters
-templated_pnml = '>'.join(templated_pnml.split('&gt;'))
-templated_pnml = '<'.join(templated_pnml.split('&lt;'))
-templated_pnml = '&'.join(templated_pnml.split('&amp;'))
-
-# save the results of templating
-pnml = codecs.open(os.path.join(currentdir,'sprites','nml','generated_pnml','grain_mill.pnml'), 'w','utf8')
-pnml.write(templated_pnml)
-pnml.close()
+industry.render_and_save_pnml()
