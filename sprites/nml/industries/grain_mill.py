@@ -15,6 +15,16 @@ from chameleon import PageTemplateLoader # chameleon used in most template cases
 templates = PageTemplateLoader(os.path.join(currentdir,'sprites','nml','templates'), format='text')
 industry_templates = PageTemplateLoader(os.path.join(currentdir,'sprites','nml','industries'), format='text')
 
+
+def unescape_chameleon_output(escaped_nml):
+    # chameleon html-escapes some characters; that's sane and secure for chameleon's intended web use, but not wanted for nml
+    # there is probably a standard module for unescaping html entities, but this will do for now
+    escaped_nml = '>'.join(escaped_nml.split('&gt;'))
+    escaped_nml = '<'.join(escaped_nml.split('&lt;'))
+    escaped_nml = '&'.join(escaped_nml.split('&amp;'))
+    return escaped_nml
+
+
 class Tile(object):
     """ Base class to hold industry tiles"""
     def __init__(self, id):
@@ -107,11 +117,7 @@ class Industry(object):
     def render_and_save_pnml(self):
         industry_template = industry_templates[self.id + '.pypnml']
         templated_pnml = industry_template(industry=self)
-
-        # an ugly hack here because chameleon html escapes some characters
-        templated_pnml = '>'.join(templated_pnml.split('&gt;'))
-        templated_pnml = '<'.join(templated_pnml.split('&lt;'))
-        templated_pnml = '&'.join(templated_pnml.split('&amp;'))
+        templated_pnml = unescape_chameleon_output(templated_pnml)
 
         # save the results of templating
         pnml = codecs.open(os.path.join(currentdir,'sprites','nml','generated_pnml', self.id + '.pnml'), 'w','utf8')
