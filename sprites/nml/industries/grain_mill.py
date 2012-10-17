@@ -15,6 +15,12 @@ from chameleon import PageTemplateLoader # chameleon used in most template cases
 templates = PageTemplateLoader(os.path.join(currentdir,'sprites','nml','templates'), format='text')
 industry_templates = PageTemplateLoader(os.path.join(currentdir,'sprites','nml','industries'), format='text')
 
+class Tile(object):
+    """ Base class to hold industry tiles"""
+    def __init__(self, id):
+        self.id = id
+
+
 class Spriteset(object):
     """Base class to hold industry spritesets"""
     # !! arguably this should be two different classes, one for building/feature spritesets, and one for ground spritesets
@@ -44,7 +50,7 @@ class IndustryLayout(object):
     def __init__(self, id, default_spritelayout, layout):
         self.id = id
         self.default_spritelayout = default_spritelayout
-        self.layout = layout
+        self.layout = layout # a list of 4-tuples (SE offset from N tile, SW offset from N tile, tile identifier, identifier of spriteset or next nml switch)
 
 
 class Industry(object):
@@ -53,9 +59,15 @@ class Industry(object):
         self.id = id
         self.graphics_file = '"sprites/graphics/industries/' + id + '.png"' # don't use os.path.join here, this is for nml
         self.graphics_file_snow = '"sprites/graphics/industries/' + id + '_snow.png"' # don't use os.path.join here, this is for nml
+        self.tiles = []
         self.spritesets = []
         self.spritelayouts = [] # by convention spritelayout is one word :P
         self.industry_layouts = []
+
+    def add_tile(self, *args, **kwargs):
+        new_tile = Tile(*args, **kwargs)
+        self.tiles.append(new_tile)
+        return new_tile
 
     def add_spriteset(self, *args, **kwargs):
         new_spriteset = Spriteset(*args, **kwargs)
@@ -103,6 +115,8 @@ When a string is expected are basically two choices: provide a string directly, 
 
 industry_id = 'grain_mill'
 industry = Industry(id=industry_id)
+
+industry.add_tile(id='grain_mill_tile')
 
 spriteset_ground_bakery = industry.add_spriteset(
     id = 'grain_mill_spriteset_ground_bakery',
@@ -194,40 +208,40 @@ industry.add_spritelayout(
 industry.add_industry_layout(
     id = 'grain_mill_industry_layout_1',
     default_spritelayout = 'grain_mill_spritelayout_brickbakery_3',
-    layout = [(0, 0, 'grain_mill_spritelayout_brickbakery_3'),
-              (0, 1, 'grain_mill_spritelayout_brickbakery_4'),
-              (1, 0, 'grain_mill_spritelayout_brickbakery_1'),
-              (1, 1, 'grain_mill_spritelayout_brickbakery_2')
+    layout = [(0, 0, 'grain_mill_tile', 'grain_mill_spritelayout_brickbakery_3'),
+              (0, 1, 'grain_mill_tile', 'grain_mill_spritelayout_brickbakery_4'),
+              (1, 0, 'grain_mill_tile', 'grain_mill_spritelayout_brickbakery_1'),
+              (1, 1, 'grain_mill_tile','grain_mill_spritelayout_brickbakery_2')
     ]
 )
 industry.add_industry_layout(
     id = 'grain_mill_industry_layout_2',
     default_spritelayout = 'grain_mill_spritelayout_brickbakery_3',
-    layout = [(0, 0, 'grain_mill_spritelayout_brickbakery_3'),
-              (0, 1, 'grain_mill_spritelayout_brickbakery_4'),
-              (1, 0, 'grain_mill_spritelayout_brickbakery_3'),
-              (1, 1, 'grain_mill_spritelayout_brickbakery_4'),
-              (2, 0, 'grain_mill_spritelayout_brickbakery_1'),
-              (2, 1, 'grain_mill_spritelayout_brickbakery_2')
+    layout = [(0, 0, 'grain_mill_tile', 'grain_mill_spritelayout_brickbakery_3'),
+              (0, 1, 'grain_mill_tile', 'grain_mill_spritelayout_brickbakery_4'),
+              (1, 0, 'grain_mill_tile', 'grain_mill_spritelayout_brickbakery_3'),
+              (1, 1, 'grain_mill_tile', 'grain_mill_spritelayout_brickbakery_4'),
+              (2, 0, 'grain_mill_tile', 'grain_mill_spritelayout_brickbakery_1'),
+              (2, 1, 'grain_mill_tile', 'grain_mill_spritelayout_brickbakery_2')
     ]
 )
 industry.add_industry_layout(
     id = 'grain_mill_industry_layout_3',
     default_spritelayout = 'grain_mill_spritelayout_brickbakery_3',
-    layout = [(0, 0, 'grain_mill_spritelayout_brickbakery_3'),
-              (0, 1, 'grain_mill_spritelayout_brickbakery_4'),
-              (0, 2, 'grain_mill_spritelayout_brickbakery_3'),
-              (0, 3, 'grain_mill_spritelayout_brickbakery_4'),
-              (1, 0, 'grain_mill_spritelayout_brickbakery_1'),
-              (1, 1, 'grain_mill_spritelayout_brickbakery_2'),
-              (1, 2, 'grain_mill_spritelayout_brickbakery_1'),
-              (1, 3, 'grain_mill_spritelayout_brickbakery_2')
+    layout = [(0, 0, 'grain_mill_tile', 'grain_mill_spritelayout_brickbakery_3'),
+              (0, 1, 'grain_mill_tile', 'grain_mill_spritelayout_brickbakery_4'),
+              (0, 2, 'grain_mill_tile', 'grain_mill_spritelayout_brickbakery_3'),
+              (0, 3, 'grain_mill_tile', 'grain_mill_spritelayout_brickbakery_4'),
+              (1, 0, 'grain_mill_tile', 'grain_mill_spritelayout_brickbakery_1'),
+              (1, 1, 'grain_mill_tile', 'grain_mill_spritelayout_brickbakery_2'),
+              (1, 2, 'grain_mill_tile', 'grain_mill_spritelayout_brickbakery_1'),
+              (1, 3, 'grain_mill_tile', 'grain_mill_spritelayout_brickbakery_2')
     ]
 )
 industry.add_industry_layout(
     id = 'grain_mill_industry_layout_4',
     default_spritelayout = 'grain_mill_spritelayout_windmill_anim',
-    layout = [(0, 0, 'grain_mill_spritelayout_windmill_anim')]
+    layout = [(0, 0, 'grain_mill_tile', 'grain_mill_spritelayout_windmill_anim')]
 )
 
 # Templating

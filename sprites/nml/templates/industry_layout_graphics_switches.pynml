@@ -8,7 +8,7 @@
 <tal:build_industry_layouts_graphic_switches repeat="industry_layout python:industry.industry_layouts">
     switch(FEAT_INDUSTRYTILES, SELF, ${industry_layout.id}_graphics_switch, relative_pos) {
         <tal:build_industry_layout repeat="layout industry_layout.layout">
-            relative_coord(${layout[0]}, ${layout[1]}): ${layout[2]};
+            relative_coord(${layout[0]}, ${layout[1]}): ${layout[3]};
         </tal:build_industry_layout>
         ${industry_layout.default_spritelayout};
     }
