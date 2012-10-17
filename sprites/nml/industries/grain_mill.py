@@ -1,4 +1,4 @@
-from firs import Industry, Tile, Spriteset, SpriteLayout, IndustryLayout
+from firs import Industry, Tile, Sprite, Spriteset, SpriteLayout, IndustryLayout
 
 """
 Notes to self whilst figuring out python-firs (notes will probably rot here forever).

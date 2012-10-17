@@ -30,6 +30,18 @@ class Tile(object):
     def __init__(self, id):
         self.id = id
 
+class Sprite(object):
+    """Base class to hold simple sprites (using numbers from a base set)"""
+    def __init__(self, sprite_number, sprite_number_snow='', xoffset=0, yoffset=0, zoffset=0, xextent=16, yextent=16, zextent=16):
+        self.sprite_number = sprite_number
+        self.sprite_number_snow = (sprite_number, sprite_number_snow)[sprite_number_snow!=''] # set a snow sprite explicitly (optional).
+        self.xoffset = xoffset
+        self.yoffset = yoffset
+        self.zoffset = zoffset
+        self.xextent = xextent
+        self.yextent = yextent
+        self.zextent = zextent
+
 
 class Spriteset(object):
     """Base class to hold industry spritesets"""
@@ -70,6 +82,7 @@ class Industry(object):
         self.graphics_file = '"sprites/graphics/industries/' + id + '.png"' # don't use os.path.join here, this is for nml
         self.graphics_file_snow = '"sprites/graphics/industries/' + id + '_snow.png"' # don't use os.path.join here, this is for nml
         self.tiles = []
+        self.sprites = []
         self.spritesets = []
         self.spritelayouts = [] # by convention spritelayout is one word :P
         self.industry_layouts = []
@@ -78,6 +91,11 @@ class Industry(object):
         new_tile = Tile(*args, **kwargs)
         self.tiles.append(new_tile)
         return new_tile
+
+    def add_sprite(self, *args, **kwargs):
+        new_sprite = Sprite(*args, **kwargs)
+        self.sprites.append(new_sprite)
+        return new_sprite # returning the new obj isn't essential, but permits the caller giving it a reference for use elsewhere
 
     def add_spriteset(self, *args, **kwargs):
         new_spriteset = Spriteset(*args, **kwargs)
@@ -113,6 +131,9 @@ class Industry(object):
     def get_industry_layouts_as_graphic_switches(self):
         template = templates['industry_layout_graphics_switches.pynml']
         return template(industry=self)
+
+    def is_this_a_spriteset(self, building_sprite):
+        return isinstance(building_sprite, Spriteset)
 
     def render_and_save_pnml(self):
         industry_template = industry_templates[self.id + '.pypnml']

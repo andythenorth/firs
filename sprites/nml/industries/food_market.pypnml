@@ -9,7 +9,7 @@
 
 #define THIS_ID(...) ${industry.id}_ ## __VA_ARGS__
 
-spriteset(THIS_ID(spriteset_ground_normal)) { tmpl_ground_tile_filename(10, 10, "sprites/graphics/industries/foodmarket.png") }
+<!--!spriteset(THIS_ID(spriteset_ground_normal)) { tmpl_ground_tile_filename(10, 10, "sprites/graphics/industries/foodmarket.png") }
 spriteset(THIS_ID(spriteset_ground_snow))   { tmpl_ground_tile_filename(10, 10, "sprites/graphics/industries/foodmarket_snow.png") }
 
 spriteset(THIS_ID(spriteset_building_normal)) {	tmpl_building_sprite_filename(10, 60, 36, -4, "sprites/graphics/industries/foodmarket.png") }
@@ -39,7 +39,13 @@ GROUND_AWARE_SPRITELAYOUT(THIS_ID(spritelayout_1))
 	CONDITIONAL_BUILDING_SPRITE(THIS_ID(spriteset_building_normal), 16, nearby_tile_terrain_type(0, 0) != TILETYPE_SNOW)
 	CONDITIONAL_BUILDING_SPRITE(THIS_ID(spriteset_building_snow), 16, nearby_tile_terrain_type(0, 0) == TILETYPE_SNOW)
 SPRITELAYOUT_END
+-->
 
+${industry.get_spritesets()}
+
+${industry.get_spritelayouts()}
+
+${industry.get_industry_layouts_as_graphic_switches()}
 
 
 /* *************************************************
@@ -60,7 +66,7 @@ item(FEAT_INDUSTRYTILES, THIS_ID(_tile), TILE_FOODMARKET_1) {
 	}
 	graphics {
 		tile_check:  THIS_ID(terrain_check);
-		THIS_ID(spritelayout_1);
+		THIS_ID(spritelayout);
 	}
 }
 

@@ -85,20 +85,48 @@
 
         // industry buildings (snow aware)
         <tal:build_building_sprites repeat="building_sprite spritelayout.building_sprites">
-            building {
-                sprite: ${building_sprite.id}(${building_sprite.animation_rate} * animation_frame);
-                recolour_mode: RECOLOUR_REMAP;
-                palette: PALETTE_USE_DEFAULT;
-                zextent: ${building_sprite.zextent};
-                hide_sprite: !(terrain_type != TILETYPE_SNOW);
-            }
-            building {
-                sprite: ${building_sprite.id}_snow(${building_sprite.animation_rate} * animation_frame);
-                recolour_mode: RECOLOUR_REMAP;
-                palette: PALETTE_USE_DEFAULT;
-                zextent: ${building_sprite.zextent};
-                hide_sprite: !(terrain_type == TILETYPE_SNOW);
-            }
+            <tal:render_spriteset condition="industry.is_this_a_spriteset(building_sprite)">
+                building {
+                    sprite: ${building_sprite.id}(${building_sprite.animation_rate} * animation_frame);
+                    recolour_mode: RECOLOUR_REMAP;
+                    palette: PALETTE_USE_DEFAULT;
+                    zextent: ${building_sprite.zextent};
+                    hide_sprite: !(terrain_type != TILETYPE_SNOW);
+                }
+                building {
+                    sprite: ${building_sprite.id}_snow(${building_sprite.animation_rate} * animation_frame);
+                    recolour_mode: RECOLOUR_REMAP;
+                    palette: PALETTE_USE_DEFAULT;
+                    zextent: ${building_sprite.zextent};
+                    hide_sprite: !(terrain_type == TILETYPE_SNOW);
+                }
+            </tal:render_spriteset>
+            <tal:render_sprite condition="not industry.is_this_a_spriteset(building_sprite)">
+                building {
+                    sprite: ${building_sprite.sprite_number};
+                    recolour_mode: RECOLOUR_REMAP;
+                    palette: PALETTE_USE_DEFAULT;
+                    xoffset: ${building_sprite.xoffset};
+                    yoffset: ${building_sprite.yoffset};
+                    zoffset: ${building_sprite.zoffset};
+                    xextent: ${building_sprite.xextent};
+                    yextent: ${building_sprite.yextent};
+                    zextent: ${building_sprite.zextent};
+                    hide_sprite: !(terrain_type != TILETYPE_SNOW);
+                }
+                building {
+                    sprite: ${building_sprite.sprite_number_snow};
+                    recolour_mode: RECOLOUR_REMAP;
+                    palette: PALETTE_USE_DEFAULT;
+                    xoffset: ${building_sprite.xoffset};
+                    yoffset: ${building_sprite.yoffset};
+                    zoffset: ${building_sprite.zoffset};
+                    xextent: ${building_sprite.xextent};
+                    yextent: ${building_sprite.yextent};
+                    zextent: ${building_sprite.zextent};
+                    hide_sprite: !(terrain_type == TILETYPE_SNOW);
+                }
+            </tal:render_sprite>
         </tal:build_building_sprites>
     }
 </tal:build_spritelayouts>
