@@ -61,12 +61,12 @@ spriteset_windmill_anim = industry.add_spriteset(
 spriteset_ground_windmill = industry.add_spriteset(
     id = 'grain_mill_spriteset_ground_windmill',
     type = 'empty',
-    num_sprites_to_autofill = len(spriteset_windmill_anim.sprites), # autofills number of animated frames (can get count from another spriteset if defined already)
+    num_sprites_to_autofill = len(spriteset_windmill_anim.sprites), # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
 )
 spriteset_ground_overlay_windmill = industry.add_spriteset(
     id = 'grain_mill_spriteset_ground_overlay_windmill',
     sprites = [(10, 160, 64, 31, -31, 0)],
-    num_sprites_to_autofill = len(spriteset_windmill_anim.sprites), # autofills number of animated frames (can get count from another spriteset if defined already)
+    num_sprites_to_autofill = len(spriteset_windmill_anim.sprites), # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
 )
 
 industry.add_spritelayout(
