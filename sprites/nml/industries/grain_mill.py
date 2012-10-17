@@ -8,8 +8,7 @@ Some method properties need a string - the templating is then typically directly
 When a string is expected are basically two choices: provide a string directly, or make an object reference and get an id from that object.
 """
 
-industry_id = 'grain_mill'
-industry = Industry(id=industry_id)
+industry = Industry(id='grain_mill')
 
 industry.add_tile(id='grain_mill_tile')
 
