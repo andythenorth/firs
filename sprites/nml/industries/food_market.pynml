@@ -7,7 +7,7 @@
 
 #include "../templates/spritelayout_templates.pnml"
 
-#define THIS_ID(...) food_market ## __VA_ARGS__
+#define THIS_ID(...) ${industry.id}_ ## __VA_ARGS__
 
 spriteset(THIS_ID(spriteset_ground_normal)) { tmpl_ground_tile_filename(10, 10, "sprites/graphics/industries/foodmarket.png") }
 spriteset(THIS_ID(spriteset_ground_snow))   { tmpl_ground_tile_filename(10, 10, "sprites/graphics/industries/foodmarket_snow.png") }
@@ -52,7 +52,7 @@ CHECK_ROAD_ADJACENT     (tile_road_adjacent_2, 1, 0,  THIS_ID(tile_road_adjacent
 CHECK_ROAD_ADJACENT     (tile_road_adjacent_1, 0, 1, THIS_ID(tile_road_adjacent_2))
 TILE_ALLOW_PLAYER       (terrain_check, THIS_ID(tile_road_adjacent_1))
 
-item(FEAT_INDUSTRYTILES, THIS_ID(tile), TILE_FOODMARKET_1) {
+item(FEAT_INDUSTRYTILES, THIS_ID(_tile), TILE_FOODMARKET_1) {
 	property {
 		substitute:       0;
 		accepted_cargos:  [[FOOD, 8], [FRVG, 8], [BEER, 8]];
@@ -69,7 +69,7 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile), TILE_FOODMARKET_1) {
  * *************************************************/
 
 tilelayout tilelayout_food_market_1 {
-	0, 0: THIS_ID(tile);
+	0, 0: THIS_ID(_tile);
 }
 /* *************************************************
  * Definition of the industry
