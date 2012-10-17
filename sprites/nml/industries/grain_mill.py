@@ -104,6 +104,8 @@ class Industry(object):
         template = templates['industry_layout_graphics_switches.pynml']
         return template(industry=industry)
 
+    def render_pnml(self):
+        return self
 
 """
 Notes to self whilst figuring out python-firs (notes will probably rot here forever).
@@ -120,58 +122,58 @@ industry.add_tile(id='grain_mill_tile')
 
 spriteset_ground_bakery = industry.add_spriteset(
     id = 'grain_mill_spriteset_ground_bakery',
-	type='cobble',
+    type='cobble',
 )
 spriteset_ground_overlay_1 = industry.add_spriteset(
     id = 'grain_mill_spriteset_ground_overlay_1',
-	sprites = [(10, 10, 64, 31, -31, 0)],
+    sprites = [(10, 10, 64, 31, -31, 0)],
 )
 spriteset_ground_overlay_2 = industry.add_spriteset(
     id = 'grain_mill_spriteset_ground_overlay_2',
-	sprites = [(80, 10, 64, 31, -31, 0)]
+    sprites = [(80, 10, 64, 31, -31, 0)]
 )
 spriteset_ground_overlay_3 = industry.add_spriteset(
     id = 'grain_mill_spriteset_ground_overlay_3',
-	sprites = [(150, 10, 64, 31, -31, 0)]
+    sprites = [(150, 10, 64, 31, -31, 0)]
 )
 spriteset_ground_overlay_4 = industry.add_spriteset(
     id = 'grain_mill_spriteset_ground_overlay_4',
-	sprites = [(220, 10, 64, 31, -31, 0)]
+    sprites = [(220, 10, 64, 31, -31, 0)]
 )
 spriteset_1 = industry.add_spriteset(
     id = 'grain_mill_spriteset_1',
-	sprites = [(10, 10, 64, 31, -31, 0)]
+    sprites = [(10, 10, 64, 31, -31, 0)]
 )
 spriteset_2 = industry.add_spriteset(
     id = 'grain_mill_spriteset_2',
-	sprites = [(80, 10, 64, 31, -31, 0)]
+    sprites = [(80, 10, 64, 31, -31, 0)]
 )
 spriteset_3 = industry.add_spriteset(
     id = 'grain_mill_spriteset_3',
-	sprites = [(150, 60, 64, 82, -31, -51)],
-	zextent = 48 # optional zextent value, will default to 16 if this param is omitted
+    sprites = [(150, 60, 64, 82, -31, -51)],
+    zextent = 48 # optional zextent value, will default to 16 if this param is omitted
 )
 spriteset_4 = industry.add_spriteset(
     id = 'grain_mill_spriteset_4',
-	sprites = [(220, 60, 64, 82, -31, -51)],
-	zextent = 48 # optional zextent value, will default to 16 if this param is omitted
+    sprites = [(220, 60, 64, 82, -31, -51)],
+    zextent = 48 # optional zextent value, will default to 16 if this param is omitted
 )
 spriteset_windmill_anim = industry.add_spriteset(
     id = 'grain_mill_spriteset_windmill_anim',
-	sprites = [(10, 200, 64, 82, -31, -52), (80, 200, 64, 82, -31, -52), (150, 200, 64, 82, -31, -52),
+    sprites = [(10, 200, 64, 82, -31, -52), (80, 200, 64, 82, -31, -52), (150, 200, 64, 82, -31, -52),
                (220, 200, 64, 82, -31, -52), (290, 200, 64, 82, -31, -52), (360, 200, 64, 82, -31, -52)],
-	zextent = 24, # optional zextent value, will default to 16 if this param is omitted
-	animation_rate = 1
+    zextent = 24, # optional zextent value, will default to 16 if this param is omitted
+    animation_rate = 1
 )
 spriteset_ground_windmill = industry.add_spriteset(
     id = 'grain_mill_spriteset_ground_windmill',
-	type = 'empty',
-	num_sprites_to_autofill = len(spriteset_windmill_anim.sprites), # autofills number of animated frames (can get count from another spriteset if defined already)
+    type = 'empty',
+    num_sprites_to_autofill = len(spriteset_windmill_anim.sprites), # autofills number of animated frames (can get count from another spriteset if defined already)
 )
 spriteset_ground_overlay_windmill = industry.add_spriteset(
     id = 'grain_mill_spriteset_ground_overlay_windmill',
-	sprites = [(10, 160, 64, 31, -31, 0)],
-	num_sprites_to_autofill = len(spriteset_windmill_anim.sprites), # autofills number of animated frames (can get count from another spriteset if defined already)
+    sprites = [(10, 160, 64, 31, -31, 0)],
+    num_sprites_to_autofill = len(spriteset_windmill_anim.sprites), # autofills number of animated frames (can get count from another spriteset if defined already)
 )
 
 industry.add_spritelayout(
