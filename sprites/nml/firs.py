@@ -33,7 +33,7 @@ class Tile(object):
 class Sprite(object):
     """Base class to hold simple sprites (using numbers from a base set)"""
     def __init__(self, sprite_number, sprite_number_snow='', xoffset=0, yoffset=0, zoffset=0, xextent=16, yextent=16, zextent=16):
-        self.sprite_number = sprite_number # can also dump in raw nml here for things like controlling animation frame
+        self.sprite_number = sprite_number # can also provide raw nml with the sprite number for things like controlling animation frame
         self.sprite_number_snow = (sprite_number, sprite_number_snow)[sprite_number_snow!=''] # set a snow sprite explicitly (optional).
         self.xoffset = xoffset
         self.yoffset = yoffset
