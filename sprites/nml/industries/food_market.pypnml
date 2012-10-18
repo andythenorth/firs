@@ -9,38 +9,6 @@
 
 #define THIS_ID(...) ${industry.id}_ ## __VA_ARGS__
 
-<!--!spriteset(THIS_ID(spriteset_ground_normal)) { tmpl_ground_tile_filename(10, 10, "sprites/graphics/industries/foodmarket.png") }
-spriteset(THIS_ID(spriteset_ground_snow))   { tmpl_ground_tile_filename(10, 10, "sprites/graphics/industries/foodmarket_snow.png") }
-
-spriteset(THIS_ID(spriteset_building_normal)) {	tmpl_building_sprite_filename(10, 60, 36, -4, "sprites/graphics/industries/foodmarket.png") }
-spriteset(THIS_ID(spriteset_building_snow)) { tmpl_building_sprite_filename(10, 60, 36, -4, "sprites/graphics/industries/foodmarket_snow.png") }
-
-GROUND_AWARE_SPRITELAYOUT(THIS_ID(spritelayout_1))
-	CONDITIONAL_GROUND_SPRITE_OVERLAY(THIS_ID(spriteset_ground_normal),   terrain_type != TILETYPE_SNOW)
-	CONDITIONAL_GROUND_SPRITE_OVERLAY(GROUNDSPRITE_SNOW, terrain_type == TILETYPE_SNOW)
-	CONDITIONAL_GROUND_SPRITE_OVERLAY(THIS_ID(spriteset_ground_snow), terrain_type == TILETYPE_SNOW)
-	// Add two trees; care for snow on snowy terrain. Climate-selection done
-	// in defines.pnml (to allow also to select a different sprite in the presence
-	// of other tree NewGRFs
-	building {
-		sprite: nearby_tile_terrain_type(0, 0) != TILETYPE_SNOW ? market_tree : MARKET_TREE_SNOW;
-		xoffset: 11;
-		yoffset: 1;
-		xextent: 6;
-		yextent: 6;
-	}
-	building {
-		sprite: nearby_tile_terrain_type(0, 0) != TILETYPE_SNOW ? market_tree : MARKET_TREE_SNOW;
-		xoffset: 11;
-		yoffset: 6;
-		xextent: 6;
-		yextent: 6;
-	}
-	CONDITIONAL_BUILDING_SPRITE(THIS_ID(spriteset_building_normal), 16, nearby_tile_terrain_type(0, 0) != TILETYPE_SNOW)
-	CONDITIONAL_BUILDING_SPRITE(THIS_ID(spriteset_building_snow), 16, nearby_tile_terrain_type(0, 0) == TILETYPE_SNOW)
-SPRITELAYOUT_END
--->
-
 ${industry.get_spritesets()}
 
 ${industry.get_spritelayouts()}
@@ -53,20 +21,20 @@ ${industry.get_industry_layouts_as_graphic_switches()}
  * *************************************************/
 
 CHECK_ROAD_ADJACENT     (tile_road_adjacent_4, -1, 0, return CB_RESULT_LOCATION_DISALLOW)
-CHECK_ROAD_ADJACENT     (tile_road_adjacent_3, 0, -1, THIS_ID(tile_road_adjacent_4))
-CHECK_ROAD_ADJACENT     (tile_road_adjacent_2, 1, 0,  THIS_ID(tile_road_adjacent_3))
-CHECK_ROAD_ADJACENT     (tile_road_adjacent_1, 0, 1, THIS_ID(tile_road_adjacent_2))
-TILE_ALLOW_PLAYER       (terrain_check, THIS_ID(tile_road_adjacent_1))
+CHECK_ROAD_ADJACENT     (tile_road_adjacent_3, 0, -1, ${industry.id}_tile_road_adjacent_4)
+CHECK_ROAD_ADJACENT     (tile_road_adjacent_2, 1, 0,  ${industry.id}_tile_road_adjacent_3)
+CHECK_ROAD_ADJACENT     (tile_road_adjacent_1, 0, 1, ${industry.id}_tile_road_adjacent_2)
+TILE_ALLOW_PLAYER       (terrain_check, ${industry.id}_tile_road_adjacent_1)
 
-item(FEAT_INDUSTRYTILES, THIS_ID(_tile), TILE_FOODMARKET_1) {
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile, TILE_FOODMARKET_1) {
 	property {
 		substitute:       0;
 		accepted_cargos:  [[FOOD, 8], [FRVG, 8], [BEER, 8]];
 		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
 	}
 	graphics {
-		tile_check:  THIS_ID(terrain_check);
-		THIS_ID(spritelayout);
+		tile_check:  ${industry.id}_terrain_check;
+		${industry.id}_spritelayout;
 	}
 }
 
@@ -74,9 +42,8 @@ item(FEAT_INDUSTRYTILES, THIS_ID(_tile), TILE_FOODMARKET_1) {
  * Definition of the industry layouts
  * *************************************************/
 
-tilelayout tilelayout_food_market_1 {
-	0, 0: THIS_ID(_tile);
-}
+${industry.get_industry_layouts_as_tilelayouts()}
+
 /* *************************************************
  * Definition of the industry
  * *************************************************/
@@ -84,16 +51,14 @@ tilelayout tilelayout_food_market_1 {
 #include "../templates/check_availability.pnml"
 
 CHECK_INCOMPATIBLE  (petrol_pump, 16, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
-CHECK_INCOMPATIBLE  (hotel, 16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(petrol_pump))
-CHECK_INCOMPATIBLE  (food_market, 20, CB_RESULT_LOCATION_DISALLOW, THIS_ID(hotel))
-CHECK_FOUNDER       (THIS_ID(food_market))
+CHECK_INCOMPATIBLE  (hotel, 16, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_petrol_pump)
+CHECK_INCOMPATIBLE  (food_market, 20, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_hotel)
+CHECK_FOUNDER       (${industry.id}_food_market)
 
 item(FEAT_INDUSTRIES, food_market, IND_FOODMARKET_ID) {
 	property {
 		substitute:             0;
-		layouts: [
-				tilelayout_food_market_1
-			];
+		layouts: [${industry.get_industry_layouts_as_property()}];
 		name:                   string(STR_IND_FOOD_MARKET);
 		nearby_station_name:    string(STR_STATION, string(STR_TOWN), string(STR_IND_FOOD_MARKET));
 		closure_msg:            TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS;
@@ -121,8 +86,8 @@ item(FEAT_INDUSTRIES, food_market, IND_FOODMARKET_ID) {
 		map_colour:             191;
 	}
 	graphics {
-		construction_probability:THIS_ID(check_availability);
-		location_check:          THIS_ID(check_location);
+		construction_probability:${industry.id}_check_availability;
+		location_check:          ${industry.id}_check_location;
 	}
 }
 
