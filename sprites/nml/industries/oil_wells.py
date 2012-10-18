@@ -11,18 +11,14 @@ When a string is expected are basically two choices: provide a string directly, 
 industry = Industry(id='oil_wells')
 
 industry.add_tile(id='oil_wells_tile_pump')
+industry.add_tile(id='oil_wells_tile_building')
 
-spriteset_ground = industry.add_spriteset(
-    id = 'oil_wells_spriteset_ground',
+spriteset_ground_pump = industry.add_spriteset(
+    id = 'oil_wells_spriteset_ground_overlay_pump',
     type='empty',
 )
-spriteset_ground_overlay = industry.add_spriteset(
-    id = 'oil_wells_spriteset_ground_overlay',
-    sprites = [(0, 0, 1, 1, 0, 0)], # no ground overlay needed, use a 1px sprite of blue
-)
-spriteset_1 = industry.add_spriteset(
-    id = 'oil_wells_spriteset',
-    sprites = [(10, 60, 64, 36, -31, -4)]
+sprite_ground_overlay_pump = industry.add_sprite(
+    sprite_number = 2173
 )
 sprite_pump = industry.add_sprite(
     sprite_number = '2174 + (((animation_frame % 11) < 6) ? (animation_frame % 11) : 10 - (animation_frame % 11))',
@@ -31,13 +27,35 @@ sprite_pump = industry.add_sprite(
     xextent= 15,
     yextent= 14
 )
-
 industry.add_spritelayout(
     id = 'oil_wells_spritelayout_pump',
-    ground_sprite = spriteset_ground,
-    ground_overlay = spriteset_ground_overlay,
-    building_sprites = [spriteset_1]
+    ground_sprite = spriteset_ground_pump,
+    ground_overlay = sprite_ground_overlay_pump,
+    building_sprites = [sprite_pump]
 )
+
+spriteset_ground_building = industry.add_spriteset(
+    id = 'oil_wells_spriteset_ground_overlay_building',
+    type='empty',
+)
+sprite_ground_overlay_building = industry.add_sprite(
+    sprite_number = 'GROUNDTILE_MUD_TRACKS',
+)
+spriteset_building = industry.add_spriteset(
+    id = 'oil_wells_spriteset_building',
+    sprites = [(10, 10, 64, 38, -31, -9)],
+    xoffset= 1,
+    yoffset= 2,
+    xextent= 15,
+    yextent= 14
+)
+industry.add_spritelayout(
+    id = 'oil_wells_spritelayout_building',
+    ground_sprite = spriteset_ground_building,
+    ground_overlay = sprite_ground_overlay_building,
+    building_sprites = [spriteset_building]
+)
+
 
 industry.add_industry_layout(
     id = 'oil_wells_industry_layout_1',
@@ -46,7 +64,7 @@ industry.add_industry_layout(
               (0, 7, 'oil_wells_tile_pump', 'oil_wells_spritelayout_pump'),
               (1, 4, 'oil_wells_tile_pump', 'oil_wells_spritelayout_pump'),
               (2, 1, 'oil_wells_tile_pump', 'oil_wells_spritelayout_pump'),
-              (3, 5, 'oil_wells_tile_building', 'oil_wells_spritelayout_pump'), #tile_building
+              (3, 5, 'oil_wells_tile_building', 'oil_wells_spritelayout_building'),
               (4, 8, 'oil_wells_tile_pump', 'oil_wells_spritelayout_pump'),
               (5, 1, 'oil_wells_tile_pump', 'oil_wells_spritelayout_pump'),
               (5, 4, 'oil_wells_tile_pump', 'oil_wells_spritelayout_pump'),
@@ -59,7 +77,7 @@ industry.add_industry_layout(
               (0, 4, 'oil_wells_tile_pump', 'oil_wells_spritelayout_pump'),
               (1, 4, 'oil_wells_tile_pump', 'oil_wells_spritelayout_pump'),
               (2, 8, 'oil_wells_tile_pump', 'oil_wells_spritelayout_pump'),
-              (4, 4, 'oil_wells_tile_building', 'oil_wells_spritelayout_pump'), #tile_building
+              (4, 4, 'oil_wells_tile_building', 'oil_wells_spritelayout_building'),
               (4, 8, 'oil_wells_tile_pump', 'oil_wells_spritelayout_pump'),
               (5, 2, 'oil_wells_tile_pump', 'oil_wells_spritelayout_pump'),
               (6, 2, 'oil_wells_tile_pump', 'oil_wells_spritelayout_pump'),
@@ -73,7 +91,7 @@ industry.add_industry_layout(
               (0, 2, 'oil_wells_tile_pump', 'oil_wells_spritelayout_pump'),
               (1, 4, 'oil_wells_tile_pump', 'oil_wells_spritelayout_pump'),
               (1, 6, 'oil_wells_tile_pump', 'oil_wells_spritelayout_pump'),
-              (2, 0, 'oil_wells_tile_building', 'oil_wells_spritelayout_pump'), #tile_building
+              (2, 0, 'oil_wells_tile_building', 'oil_wells_spritelayout_building'),
               (3, 2, 'oil_wells_tile_pump', 'oil_wells_spritelayout_pump'),
               (3, 4, 'oil_wells_tile_pump', 'oil_wells_spritelayout_pump'),
     ]
@@ -85,7 +103,7 @@ industry.add_industry_layout(
               (0, 4, 'oil_wells_tile_pump', 'oil_wells_spritelayout_pump'),
               (0, 6, 'oil_wells_tile_pump', 'oil_wells_spritelayout_pump'),
               (1, 2, 'oil_wells_tile_pump', 'oil_wells_spritelayout_pump'),
-              (1, 8, 'oil_wells_tile_building', 'oil_wells_spritelayout_pump'), #tile_building
+              (1, 8, 'oil_wells_tile_building', 'oil_wells_spritelayout_building'),
               (2, 0, 'oil_wells_tile_pump', 'oil_wells_spritelayout_pump'),
               (2, 2, 'oil_wells_tile_pump', 'oil_wells_spritelayout_pump'),
               (3, 1, 'oil_wells_tile_pump', 'oil_wells_spritelayout_pump'),

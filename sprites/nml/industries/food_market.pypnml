@@ -15,7 +15,6 @@ ${industry.get_spritelayouts()}
 
 ${industry.get_industry_layouts_as_graphic_switches()}
 
-
 /* *************************************************
  * Definition of the industry tile and its callbacks
  * *************************************************/
@@ -34,7 +33,7 @@ item(FEAT_INDUSTRYTILES, ${industry.id}_tile, TILE_FOODMARKET_1) {
 	}
 	graphics {
 		tile_check:  ${industry.id}_terrain_check;
-		${industry.id}_spritelayout;
+		${industry.id}_industry_layout_master_graphics_switch;
 	}
 }
 

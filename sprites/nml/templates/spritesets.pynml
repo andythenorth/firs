@@ -33,6 +33,10 @@
                 tmpl_ground_tile(${spriteset.get_ground_tile_x_start(spriteset.type)}, 10)
             </tal:autofill_sprites>
         }
-        <!--! no need for a specific snow ground sprite, the spritelayout handles it -->
+        spriteset(${spriteset.id}_snow, "sprites/graphics/industries/groundtiles.png") {
+            <tal:autofill_sprites repeat="autosprite_num range(spriteset.num_sprites_to_autofill)">
+                tmpl_ground_tile(${spriteset.get_ground_tile_x_start(spriteset.type)}, 10)
+            </tal:autofill_sprites>
+        }
     </tal:ground>
 </tal:build_spritesets>

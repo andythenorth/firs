@@ -121,32 +121,37 @@ class Industry(object):
 
     def get_spritesets(self):
         template = templates['spritesets.pynml']
-        return template(industry=self)
+        return unescape_chameleon_output(template(industry=self))
 
     def get_spritelayouts(self):
         template = templates['spritelayouts.pynml']
-        return template(industry=self)
+        return unescape_chameleon_output(template(industry=self))
 
     def get_industry_layouts_as_tilelayouts(self):
         template = templates['industry_layout_tilelayouts.pynml']
-        return template(industry=self)
+        return unescape_chameleon_output(template(industry=self))
 
     def get_industry_layouts_as_property(self):
         template = templates['industry_layout_property.pynml']
-        return template(industry=self)
+        return unescape_chameleon_output(template(industry=self))
 
     def get_industry_layouts_as_graphic_switches(self):
         template = templates['industry_layout_graphics_switches.pynml']
-        return template(industry=self)
+        return unescape_chameleon_output(template(industry=self))
 
-    def is_this_a_spriteset(self, building_sprite):
-        return isinstance(building_sprite, Spriteset)
+    def unpack_sprite_or_spriteset(self, sprite_or_spriteset, terrain_type=''):
+        if terrain_type != '':
+            suffix = '_' + terrain_type
+        else:
+            suffix = ''
+        if isinstance(sprite_or_spriteset, Spriteset):
+            return sprite_or_spriteset.id + suffix  + '(' + str(sprite_or_spriteset.animation_rate) + '* animation_frame)'
+        if isinstance(sprite_or_spriteset, Sprite):
+            return getattr(sprite_or_spriteset, 'sprite_number' + suffix)
 
     def render_and_save_pnml(self):
         industry_template = industry_templates[self.id + '.pypnml']
-        templated_pnml = industry_template(industry=self)
-        # chameleon outputs some chars as html-escaped entities, we need to fix that up for nml use by unescaping them
-        templated_pnml = unescape_chameleon_output(templated_pnml)
+        templated_pnml = unescape_chameleon_output(industry_template(industry=self))
 
         # save the results of templating
         pnml = codecs.open(os.path.join(currentdir,'sprites','nml','generated_pnml', self.id + '.pnml'), 'w','utf8')

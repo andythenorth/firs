@@ -9,35 +9,11 @@
 
 #define THIS_ID(...) ${industry.id}_ ## __VA_ARGS__
 
-spritelayout THIS_ID(spritelayout_oil_well) {
-	ground {
-		sprite: 2173;
-	}
-	building {
-		sprite:  2174 + (((animation_frame % 11) < 6) ? (animation_frame % 11) : 10 - (animation_frame % 11));
-		xoffset:    1;
-		yoffset:    2;
-		xextent:   15;
-		yextent:   14;
-	}
-}
+${industry.get_spritesets()}
 
-spriteset(spriteset_building, "sprites/graphics/industries/oilwell.png") { tmpl_building_sprite(10, 10, 38, -9) }
+${industry.get_spritelayouts()}
 
-spritelayout THIS_ID(spritelayout_building) {
-	ground {
-		sprite: 2022;
-	}
-	building {
-		sprite: spriteset_building;
-		recolour_mode: RECOLOUR_REMAP;
-		palette:  0;
-		xoffset:  1;
-		yoffset:  2;
-		xextent: 15;
-		yextent: 14;
-	}
-}
+${industry.get_industry_layouts_as_graphic_switches()}
 
 /* ***************************************************
  * Definition of the industry tiles and their callbacks
@@ -104,7 +80,7 @@ item(FEAT_INDUSTRYTILES, oil_wells_tile_pump, TILE_OILWELLS_1) {
 		anim_control:       ${industry.id}_tile_oil_well_random_trigger;
 		anim_next_frame:    ${industry.id}_tile_oil_well_anim_next_frame;
 		random_trigger:     ${industry.id}_tile_oil_well_random_trigger;
-		${industry.id}_spritelayout_oil_well;
+		${industry.id}_industry_layout_master_graphics_switch;
 	}
 }
 
@@ -116,7 +92,7 @@ item(FEAT_INDUSTRYTILES, oil_wells_tile_building, TILE_OILWELLS_2) {
 	}
 	graphics {
 		tile_check:   ${industry.id}_tile_location_check;
-		${industry.id}_spritelayout_building;
+		${industry.id}_industry_layout_master_graphics_switch;
 	}
 }
 
