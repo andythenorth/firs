@@ -7,7 +7,7 @@
 
 #include "../templates/spritelayout_templates.pnml"
 
-#define THIS_ID(...) oil_wells ## __VA_ARGS__
+#define THIS_ID(...) ${industry.id}_ ## __VA_ARGS__
 
 spritelayout THIS_ID(spritelayout_oil_well) {
 	ground {
