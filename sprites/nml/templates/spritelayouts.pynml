@@ -90,6 +90,11 @@
                     sprite: ${building_sprite.id}(${building_sprite.animation_rate} * animation_frame);
                     recolour_mode: RECOLOUR_REMAP;
                     palette: PALETTE_USE_DEFAULT;
+                    xoffset: ${building_sprite.xoffset};
+                    yoffset: ${building_sprite.yoffset};
+                    zoffset: ${building_sprite.zoffset};
+                    xextent: ${building_sprite.xextent};
+                    yextent: ${building_sprite.yextent};
                     zextent: ${building_sprite.zextent};
                     hide_sprite: !(terrain_type != TILETYPE_SNOW);
                 }
@@ -97,6 +102,11 @@
                     sprite: ${building_sprite.id}_snow(${building_sprite.animation_rate} * animation_frame);
                     recolour_mode: RECOLOUR_REMAP;
                     palette: PALETTE_USE_DEFAULT;
+                    xoffset: ${building_sprite.xoffset};
+                    yoffset: ${building_sprite.yoffset};
+                    zoffset: ${building_sprite.zoffset};
+                    xextent: ${building_sprite.xextent};
+                    yextent: ${building_sprite.yextent};
                     zextent: ${building_sprite.zextent};
                     hide_sprite: !(terrain_type == TILETYPE_SNOW);
                 }
