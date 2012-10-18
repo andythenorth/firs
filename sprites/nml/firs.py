@@ -35,13 +35,13 @@ class Sprite(object):
     def __init__(self, sprite_number, sprite_number_snow='', xoffset=0, yoffset=0, zoffset=0, xextent=16, yextent=16, zextent=16):
         self.sprite_number = sprite_number # can also provide raw nml with the sprite number for things like controlling animation frame
         self.sprite_number_snow = (sprite_number, sprite_number_snow)[sprite_number_snow!=''] # set a snow sprite explicitly (optional).
-        # optional parameters for offsets and extents
+        # optional parameters for offsets and extents for the *spritelayout* to use with this sprite (read nml spritelayout docs to see use)
         self.xoffset = xoffset
         self.yoffset = yoffset
-        self.zoffset = zoffset
+        self.zoffset = zoffset # set extents to x/y/z sizes of largest sprite in spriteset, or omit for default (16)
         self.xextent = xextent
         self.yextent = yextent
-        self.zextent = zextent # optional parameter, to use set this to z size of largest sprite in spriteset, or omit for default (16)
+        self.zextent = zextent
 
 
 class Spriteset(object):
@@ -53,13 +53,13 @@ class Spriteset(object):
         self.type = type # set to ground or other special types, or omit for default (building, greeble, foundations etc - graphics from png named same as industry)
         self.animation_rate = animation_rate # optional multiplier to tile's animation rate, set to 1 for same as tile, >1 for faster; leave default (0) to disable animation
         self.num_sprites_to_autofill = num_sprites_to_autofill # create n sprites per sprite passed (optional convenience method for use where spriteset sizes must match; set value to same as size of largest spriteset)
-        # optional parameters for offsets and extents
+        # optional parameters for offsets and extents for the *spritelayout* to use with this sprite (read nml spritelayout docs to see use)
         self.xoffset = xoffset
         self.yoffset = yoffset
         self.zoffset = zoffset
-        self.xextent = xextent
+        self.xextent = xextent # set extents to x/y/z sizes of largest sprite in spriteset, or omit for default (16)
         self.yextent = yextent
-        self.zextent = zextent # optional parameter, to use set this to z size of largest sprite in spriteset, or omit for default (16)
+        self.zextent = zextent
 
     def get_ground_tile_x_start(self, type):
         return {'mud': 0, 'concrete': 80, 'cobble': 150, 'snow': 220, 'slab': 290, 'empty':360}[type]
