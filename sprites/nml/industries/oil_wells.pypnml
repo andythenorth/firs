@@ -44,10 +44,10 @@ spritelayout THIS_ID(spritelayout_building) {
  * ***************************************************/
 
 TILE_DISALLOW_NEARBY_CLASS(tile_nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
-TILE_ALLOW_PLAYER         (tile_location_check,                                                            THIS_ID(tile_nearby_industry))
+TILE_ALLOW_PLAYER         (tile_location_check, ${industry.id}_tile_nearby_industry)
 
 
-switch (FEAT_INDUSTRYTILES, SELF, THIS_ID(tile_oil_well_stop_anim), animation_frame) {
+switch (FEAT_INDUSTRYTILES, SELF, ${industry.id}_tile_oil_well_stop_anim, animation_frame) {
 	1: return 11; // jump to the 'stop animation cycle' when triggered and currently animated
 	2: return 12;
 	3: return 13;
@@ -61,7 +61,7 @@ switch (FEAT_INDUSTRYTILES, SELF, THIS_ID(tile_oil_well_stop_anim), animation_fr
 	return CB_RESULT_DO_NOTHING;
 }
 
-switch (FEAT_INDUSTRYTILES, SELF, THIS_ID(tile_oil_well_start_anim), animation_frame) {
+switch (FEAT_INDUSTRYTILES, SELF, ${industry.id}_tile_oil_well_start_anim, animation_frame) {
 	11: return 1;
 	12: return 2;
 	13: return 3;
@@ -76,19 +76,19 @@ switch (FEAT_INDUSTRYTILES, SELF, THIS_ID(tile_oil_well_start_anim), animation_f
 }
 
 
-random_switch (FEAT_INDUSTRYTILES, SELF, THIS_ID(tile_oil_well_random_trigger), bitmask(TRIGGER_INDUSTRYTILE_TILELOOP)) {
-	1: return THIS_ID(tile_oil_well_stop_anim);
-	1: return THIS_ID(tile_oil_well_start_anim);
+random_switch (FEAT_INDUSTRYTILES, SELF, ${industry.id}_tile_oil_well_random_trigger, bitmask(TRIGGER_INDUSTRYTILE_TILELOOP)) {
+	1: return ${industry.id}_tile_oil_well_stop_anim;
+	1: return ${industry.id}_tile_oil_well_start_anim;
 }
 
-switch (FEAT_INDUSTRYTILES, SELF, THIS_ID(tile_oil_well_anim_next_frame), animation_frame) {
+switch (FEAT_INDUSTRYTILES, SELF, ${industry.id}_tile_oil_well_anim_next_frame, animation_frame) {
 	10: return 1;
 	11: return CB_RESULT_STOP_ANIMATION; // Don't actually stop animation, just keep looping the same frame over and over.
 	20: return 11;
 	return CB_RESULT_NEXT_FRAME;
 }
 
-item(FEAT_INDUSTRYTILES, THIS_ID(tile_oil_well), TILE_OILWELLS_1) {
+item(FEAT_INDUSTRYTILES, oil_wells_tile_pump, TILE_OILWELLS_1) {
 	property {
 		substitute:         0;
 		accepted_cargos:    [[ENSP, 8]];
@@ -100,23 +100,23 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_oil_well), TILE_OILWELLS_1) {
 		special_flags:      bitmask(INDTILE_FLAG_RANDOM_ANIMATION);
 	}
 	graphics {
-		tile_check:         THIS_ID(tile_location_check);
-		anim_control:       THIS_ID(tile_oil_well_random_trigger);
-		anim_next_frame:    THIS_ID(tile_oil_well_anim_next_frame);
-		random_trigger:     THIS_ID(tile_oil_well_random_trigger);
-		THIS_ID(spritelayout_oil_well);
+		tile_check:         ${industry.id}_tile_location_check;
+		anim_control:       ${industry.id}_tile_oil_well_random_trigger;
+		anim_next_frame:    ${industry.id}_tile_oil_well_anim_next_frame;
+		random_trigger:     ${industry.id}_tile_oil_well_random_trigger;
+		${industry.id}_spritelayout_oil_well;
 	}
 }
 
-item(FEAT_INDUSTRYTILES, THIS_ID(tile_building), TILE_OILWELLS_2) {
+item(FEAT_INDUSTRYTILES, oil_wells_tile_building, TILE_OILWELLS_2) {
 	property {
 		substitute:       0;
 		accepted_cargos:  [[ENSP, 8]];
 		land_shape_flags: 0;
 	}
 	graphics {
-		tile_check:   THIS_ID(tile_location_check);
-		THIS_ID(spritelayout_building);
+		tile_check:   ${industry.id}_tile_location_check;
+		${industry.id}_spritelayout_building;
 	}
 }
 
@@ -124,52 +124,7 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_building), TILE_OILWELLS_2) {
  * Definition of the industry layouts
  * *************************************************/
 
-tilelayout tilelayout_7594_1 {
-	0, 0: THIS_ID(tile_oil_well);
-	0, 7: THIS_ID(tile_oil_well);
-	1, 4: THIS_ID(tile_oil_well);
-	2, 1: THIS_ID(tile_oil_well);
-	3, 5: THIS_ID(tile_building);
-	4, 8: THIS_ID(tile_oil_well);
-	5, 1: THIS_ID(tile_oil_well);
-	5, 4: THIS_ID(tile_oil_well);
-}
-
-tilelayout tilelayout_7594_2 {
-	0, 0: THIS_ID(tile_oil_well);
-	0, 4: THIS_ID(tile_oil_well);
-	1, 4: THIS_ID(tile_oil_well);
-	2, 8: THIS_ID(tile_oil_well);
-	4, 4: THIS_ID(tile_building);
-	4, 8: THIS_ID(tile_oil_well);
-	5, 2: THIS_ID(tile_oil_well);
-	6, 2: THIS_ID(tile_oil_well);
-	6, 4: THIS_ID(tile_oil_well);
-}
-
-tilelayout tilelayout_7594_3 {
-	0, 0: THIS_ID(tile_oil_well);
-	0, 2: THIS_ID(tile_oil_well);
-	1, 4: THIS_ID(tile_oil_well);
-	1, 6: THIS_ID(tile_oil_well);
-	2, 0: THIS_ID(tile_building);
-	3, 2: THIS_ID(tile_oil_well);
-	3, 4: THIS_ID(tile_oil_well);
-}
-
-tilelayout tilelayout_7594_4 {
-	0, 0: THIS_ID(tile_oil_well);
-	0, 4: THIS_ID(tile_oil_well);
-	0, 6: THIS_ID(tile_oil_well);
-	1, 2: THIS_ID(tile_oil_well);
-	1, 8: THIS_ID(tile_building);
-	2, 0: THIS_ID(tile_oil_well);
-	2, 2: THIS_ID(tile_oil_well);
-	3, 1: THIS_ID(tile_oil_well);
-	5, 0: THIS_ID(tile_oil_well);
-	5, 2: THIS_ID(tile_oil_well);
-	6, 0: THIS_ID(tile_oil_well);
-}
+${industry.get_industry_layouts_as_tilelayouts()}
 
 /* *************************************************
  * Definition of the industry
@@ -180,9 +135,9 @@ tilelayout tilelayout_7594_4 {
 #define THIS_MIN_YEAR 1830
 
 CHECK_INCOMPATIBLE  (oil_refinery, 16, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
-CHECK_FOUNDER       (THIS_ID(oil_refinery))
+CHECK_FOUNDER       (${industry.id}_oil_refinery)
 
-SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
+SWITCH_COLOUR_SCHEME1(${industry.id}_colour)
 
 #include "../templates/produce_primary.pnml"
 #include "../templates/check_primary_production_level.pnml"
@@ -191,15 +146,10 @@ SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
 
 #include "../templates/check_availability.pnml"
 
-item(FEAT_INDUSTRIES, oil_wells, IND_OILWELLS_ID) {
+item(FEAT_INDUSTRIES, ${industry.id}, IND_OILWELLS_ID) {
 	property {
 		substitute: 0;
-		layouts: [
-				tilelayout_7594_1,
-				tilelayout_7594_2,
-				tilelayout_7594_3,
-				tilelayout_7594_4
-			];
+		layouts: [${industry.get_industry_layouts_as_property()}];
 		life_type:              IND_LIFE_TYPE_ORGANIC;
 		closure_msg:            TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS;
 		prod_increase_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL;
@@ -218,16 +168,16 @@ item(FEAT_INDUSTRIES, oil_wells, IND_OILWELLS_ID) {
 		spec_flags:           0;
 	}
 	graphics {
-		produce_cargo_arrival:   THIS_ID(produce);
-		construction_probability:THIS_ID(check_availability);
-		location_check:          THIS_ID(check_location);
-		produce_256_ticks:       THIS_ID(produce_256_ticks);
-		monthly_prod_change:     THIS_ID(monthly_update);
-		random_prod_change:      THIS_ID(check_closure);
+		produce_cargo_arrival:   ${industry.id}_produce;
+		construction_probability:${industry.id}_check_availability;
+		location_check:          ${industry.id}_check_location;
+		produce_256_ticks:       ${industry.id}_produce_256_ticks;
+		monthly_prod_change:     ${industry.id}_monthly_update;
+		random_prod_change:      ${industry.id}_check_closure;
 		build_prod_change:       randomise_primary_production_on_build;
-		extra_text_industry:     THIS_ID(extra_text);
+		extra_text_industry:     ${industry.id}_extra_text;
 		extra_text_fund:         return string(STR_FUND_AVAILABLE_FROM, string(STR_FUND_AVAILABLE_FROM_DATE_OILWELLS));
-		colour:                  THIS_ID(colour);
+		colour:                  ${industry.id}_colour;
 	}
 }
 #include "../templates/undefs.pnml"
