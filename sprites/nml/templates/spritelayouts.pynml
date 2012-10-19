@@ -83,6 +83,9 @@
             hide_sprite: !(terrain_type == TILETYPE_SNOW); always_draw: 1;
         }
 
+        FENCE_NE \
+        FENCE_NW \
+
         // industry buildings (snow aware)
         <tal:build_building_sprites repeat="building_sprite spritelayout.building_sprites">
             building {
@@ -110,5 +113,9 @@
                 hide_sprite: !(terrain_type == TILETYPE_SNOW);
             }
         </tal:build_building_sprites>
+
+        FENCE_SE \
+        FENCE_SW \
+
     }
 </tal:build_spritelayouts>
