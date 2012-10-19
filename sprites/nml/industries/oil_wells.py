@@ -14,7 +14,7 @@ industry.add_tile(id='oil_wells_tile_pump')
 industry.add_tile(id='oil_wells_tile_building')
 
 spriteset_ground_pump = industry.add_spriteset(
-    id = 'oil_wells_spriteset_ground_overlay_pump',
+    id = 'oil_wells_spriteset_ground_pump',
     type='empty',
 )
 sprite_ground_overlay_pump = industry.add_sprite(
