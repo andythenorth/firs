@@ -25,14 +25,14 @@ spriteset_1 = industry.add_spriteset(
     sprites = [(10, 60, 64, 36, -31, -4)]
 )
 sprite_tree_1 = industry.add_sprite(
-    sprite_number = 'MARKET_TREE_SNOW', # defined in defines.pnml, to permit possibility of selecting a different sprite if a tree grf is loaded
+    sprite_number = 'nearby_tile_terrain_type(0, 0) != TILETYPE_SNOW ? market_tree : MARKET_TREE_SNOW', # defined in defines.pnml, to permit possibility of selecting a different sprite if a tree grf is loaded
     xoffset= 11,
     yoffset= 1,
     xextent= 6,
     yextent= 6
 )
 sprite_tree_2 = industry.add_sprite(
-    sprite_number = 'MARKET_TREE_SNOW', # defined in defines.pnml, to permit possibility of selecting a different sprite if a tree grf is loaded
+    sprite_number = 'nearby_tile_terrain_type(0, 0) != TILETYPE_SNOW ? market_tree : MARKET_TREE_SNOW', # defined in defines.pnml, to permit possibility of selecting a different sprite if a tree grf is loaded
     xoffset= 11,
     yoffset= 6,
     xextent= 6,
