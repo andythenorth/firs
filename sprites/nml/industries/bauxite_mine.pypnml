@@ -59,26 +59,26 @@ switch(FEAT_INDUSTRYTILES, PARENT, THIS_ID(tile_spritelayout), layout_num) {
 	THIS_ID(spritelayout_1);
 }
 
-FENCES_EXCLUDE_BY_CLASS     ( THIS_ID(tile_fence_station),  THIS_ID(tile_spritelayout),   TILE_CLASS_STATION)
-FENCES_EXCLUDE_SAME_INDUSTRY( THIS_ID(tile_fence_industry), THIS_ID(tile_fence_station))
-ADD_FLAT_FENCES             ( THIS_ID(tile_fences),         THIS_ID(tile_fence_industry), 1, 1, 1, 1)
+FENCES_EXCLUDE_BY_CLASS     ( ${industry.id}_tile_fence_station,  ${industry.id}_tile_spritelayout,   TILE_CLASS_STATION)
+FENCES_EXCLUDE_SAME_INDUSTRY( ${industry.id}_tile_fence_industry, ${industry.id}_tile_fence_station)
+ADD_FLAT_FENCES             ( ${industry.id}_tile_fences,         ${industry.id}_tile_fence_industry, 1, 1, 1, 1)
 
 /* *************************************************
  * Definition of the industry tile and its callbacks
  * *************************************************/
 
 TILE_DISALLOW_NEARBY_CLASS(nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
-TILE_ALLOW_PLAYER         (location_check, THIS_ID(nearby_industry))
+TILE_ALLOW_PLAYER         (location_check, ${industry.id}_nearby_industry)
 
-item(FEAT_INDUSTRYTILES, THIS_ID(tile), TILE_BAUXITEMINE_1) {
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile, TILE_BAUXITEMINE_1) {
 	property {
 		substitute:       0;
 		accepted_cargos:  [[ENSP, 8]];
 		land_shape_flags: 0;
 	}
 	graphics {
-		tile_check:   THIS_ID(location_check);
-		THIS_ID(tile_fences);
+		tile_check:   ${industry.id}_location_check;
+		${industry.id}_tile_fences;
 	}
 }
 
@@ -108,10 +108,10 @@ tilelayout tilelayout_bauxite_mine_1 {
 #define THIS_MIN_YEAR 1923
 
 CHECK_NEARBY_CLUSTER(bauxite_mine,    20, 40, 2, 3, return CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
-CHECK_INCOMPATIBLE  (aluminium_plant, 16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(bauxite_mine))
-CHECK_FOUNDER       (THIS_ID(aluminium_plant))
+CHECK_INCOMPATIBLE  (aluminium_plant, 16, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_bauxite_mine)
+CHECK_FOUNDER       (${industry.id}_aluminium_plant)
 
-SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
+SWITCH_COLOUR_SCHEME1(${industry.id}_colour)
 
 #include "../templates/produce_primary.pnml"
 #include "../templates/check_primary_production_level.pnml"
@@ -151,16 +151,16 @@ item(FEAT_INDUSTRIES, bauxite_mine, IND_BAUXITEMINE_ID) {
 		spec_flags:             0;
 	}
 	graphics {
-		produce_cargo_arrival:   THIS_ID(produce);
-		construction_probability:THIS_ID(check_availability);
-		location_check:          THIS_ID(check_location);
-		produce_256_ticks:       THIS_ID(produce_256_ticks);
-		monthly_prod_change:     THIS_ID(monthly_update);
-		random_prod_change:      THIS_ID(check_closure);
+		produce_cargo_arrival:   ${industry.id}_produce;
+		construction_probability:${industry.id}_check_availability;
+		location_check:          ${industry.id}_check_location;
+		produce_256_ticks:       ${industry.id}_produce_256_ticks;
+		monthly_prod_change:     ${industry.id}_monthly_update;
+		random_prod_change:      ${industry.id}_check_closure;
 		build_prod_change:       randomise_primary_production_on_build;
-		extra_text_industry:     THIS_ID(extra_text);
+		extra_text_industry:     ${industry.id}_extra_text;
 		extra_text_fund:         return string(STR_FUND_AVAILABLE_FROM, string(STR_FUND_AVAILABLE_FROM_DATE_BAUXITE_MINE));
-		colour:                  THIS_ID(colour);
+		colour:                  ${industry.id}_colour;
 	}
 }
 #include "../templates/undefs.pnml"
