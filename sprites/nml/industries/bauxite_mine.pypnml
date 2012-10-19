@@ -7,59 +7,14 @@
 
 #define THIS_ID(...) ${industry.id}_ ## __VA_ARGS__
 
-SPRITELAYOUT_FENCES_NORMAL(THIS_ID(spritelayout_1), 2022, 2039, 12)
+${industry.get_spritesets()}
 
-spritelayout THIS_ID(spritelayout_2) {
-	ground {
-		sprite: 2022;
-	}
-	FENCE_NE
-	FENCE_NW
-	FENCE_SE
-	FENCE_SW
-}
+${industry.get_spritelayouts()}
 
-spritelayout THIS_ID(spritelayout_3) {
-	ground {
-		sprite: 2022;
-	}
-	building {
-		sprite: 2030;
-		xoffset: 2;
-		yoffset: 3;
-		xextent: 13;
-		yextent: 12;
-		zextent: 12;
-	}
-	FENCE_NE
-	FENCE_NW
-	FENCE_SE
-	FENCE_SW
-}
+${industry.get_industry_layouts_as_graphic_switches()}
 
-SPRITELAYOUT_FENCES_NORMAL(THIS_ID(spritelayout_4), 2022, 2036, 12)
-SPRITELAYOUT_FENCES_NORMAL(THIS_ID(spritelayout_5), 2022, 2033, 12)
 
-switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_1), relative_pos) {
-	relative_coord(0, 0): THIS_ID(spritelayout_1);
-	relative_coord(2, 0): THIS_ID(spritelayout_5);
-	relative_coord(3, 0): THIS_ID(spritelayout_1);
-	relative_coord(0, 1): THIS_ID(spritelayout_1);
-	relative_coord(2, 1): THIS_ID(spritelayout_3);
-	relative_coord(3, 1): THIS_ID(spritelayout_1);
-	relative_coord(4, 1): THIS_ID(spritelayout_1);
-	relative_coord(0, 2): THIS_ID(spritelayout_1);
-	relative_coord(2, 2): THIS_ID(spritelayout_4);
-	relative_coord(3, 2): THIS_ID(spritelayout_2);
-	THIS_ID(spritelayout_1);
-}
-
-switch(FEAT_INDUSTRYTILES, PARENT, THIS_ID(tile_spritelayout), layout_num) {
-	1: THIS_ID(layout_1);
-	THIS_ID(spritelayout_1);
-}
-
-FENCES_EXCLUDE_BY_CLASS     ( ${industry.id}_tile_fence_station,  ${industry.id}_tile_spritelayout,   TILE_CLASS_STATION)
+FENCES_EXCLUDE_BY_CLASS     ( ${industry.id}_tile_fence_station,  ${industry.id}_industry_layout_master_graphics_switch,   TILE_CLASS_STATION)
 FENCES_EXCLUDE_SAME_INDUSTRY( ${industry.id}_tile_fence_industry, ${industry.id}_tile_fence_station)
 ADD_FLAT_FENCES             ( ${industry.id}_tile_fences,         ${industry.id}_tile_fence_industry, 1, 1, 1, 1)
 

@@ -10,52 +10,65 @@ When a string is expected are basically two choices: provide a string directly, 
 
 industry = Industry(id='bauxite_mine')
 
-industry.add_tile(id='bauxite_mine_tile_pump')
-industry.add_tile(id='bauxite_mine_tile_building')
+industry.add_tile(id='bauxite_mine_tile')
 
-spriteset_ground_pump = industry.add_spriteset(
-    id = 'bauxite_mine_spriteset_ground_overlay_pump',
-    type='empty',
+sprite_ground = industry.add_sprite(
+    sprite_number = 'GROUNDTILE_MUD_TRACKS' # ground tile same as overlay tile
 )
-sprite_ground_overlay_pump = industry.add_sprite(
-    sprite_number = 2173
+sprite_ground_overlay = industry.add_sprite(
+    sprite_number = 'GROUNDTILE_MUD_TRACKS'
 )
-sprite_pump = industry.add_sprite(
-    sprite_number = '2174 + (((animation_frame % 11) < 6) ? (animation_frame % 11) : 10 - (animation_frame % 11))',
-    xoffset= 1,
-    yoffset= 2,
-    xextent= 15,
-    yextent= 14
+sprite_1 = industry.add_sprite(
+    sprite_number = 2039,
+    zextent= 12,
+)
+# there is no sprite 2 for this industry, spritelayout_2 doesn't need a building sprite
+sprite_3 = industry.add_sprite(
+    sprite_number = 2030,
+    xoffset= 2,
+    yoffset= 3,
+    xextent= 13,
+    yextent= 12,
+    zextent= 12,
+)
+sprite_4 = industry.add_sprite(
+    sprite_number = 2036,
+    zextent= 12,
+)
+sprite_5 = industry.add_sprite(
+    sprite_number = 2033,
+    zextent= 12,
 )
 industry.add_spritelayout(
-    id = 'bauxite_mine_spritelayout_pump',
-    ground_sprite = spriteset_ground_pump,
-    ground_overlay = sprite_ground_overlay_pump,
-    building_sprites = [sprite_pump]
-)
-
-spriteset_ground_building = industry.add_spriteset(
-    id = 'bauxite_mine_spriteset_ground_overlay_building',
-    type='empty',
-)
-sprite_ground_overlay_building = industry.add_sprite(
-    sprite_number = 'GROUNDTILE_MUD_TRACKS',
-)
-spriteset_building = industry.add_spriteset(
-    id = 'bauxite_mine_spriteset_building',
-    sprites = [(10, 10, 64, 38, -31, -9)],
-    xoffset= 1,
-    yoffset= 2,
-    xextent= 15,
-    yextent= 14
+    id = 'bauxite_mine_spritelayout_1',
+    ground_sprite = sprite_ground,
+    ground_overlay = sprite_ground_overlay,
+    building_sprites = [sprite_1]
 )
 industry.add_spritelayout(
-    id = 'bauxite_mine_spritelayout_building',
-    ground_sprite = spriteset_ground_building,
-    ground_overlay = sprite_ground_overlay_building,
-    building_sprites = [spriteset_building]
+    id = 'bauxite_mine_spritelayout_2',
+    ground_sprite = sprite_ground,
+    ground_overlay = sprite_ground_overlay,
+    building_sprites = []
 )
-
+industry.add_spritelayout(
+    id = 'bauxite_mine_spritelayout_3',
+    ground_sprite = sprite_ground,
+    ground_overlay = sprite_ground_overlay,
+    building_sprites = [sprite_3]
+)
+industry.add_spritelayout(
+    id = 'bauxite_mine_spritelayout_4',
+    ground_sprite = sprite_ground,
+    ground_overlay = sprite_ground_overlay,
+    building_sprites = [sprite_4]
+)
+industry.add_spritelayout(
+    id = 'bauxite_mine_spritelayout_5',
+    ground_sprite = sprite_ground,
+    ground_overlay = sprite_ground_overlay,
+    building_sprites = [sprite_5]
+)
 
 industry.add_industry_layout(
     id = 'bauxite_mine_industry_layout_1',
