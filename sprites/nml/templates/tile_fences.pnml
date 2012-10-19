@@ -124,14 +124,10 @@ switch (FEAT_INDUSTRYTILES, SELF, name, [ \
 			STORE_TEMP( se, var_use_fence_se), \
 			STORE_TEMP( sw, var_use_fence_sw), \
  \
-			STORE_TEMP( (nearby_tile_slope(0, 0) == 13 || nearby_tile_slope(0, 0) == 14 || nearby_tile_slope(0, 0) == 30 || \
-			             nearby_tile_slope(0, 0) == 29 || nearby_tile_slope(0, 0) == 12), var_fence_offset_ne), \
-			STORE_TEMP( (nearby_tile_slope(0, 0) == 13 || nearby_tile_slope(0, 0) == 11 || nearby_tile_slope(0, 0) == 29 ||  \
-			             nearby_tile_slope(0, 0) == 27 || nearby_tile_slope(0, 0) == 9), var_fence_offset_nw), \
-			STORE_TEMP( (nearby_tile_slope(0, 0) == 6  || nearby_tile_slope(0, 0) == 14 || nearby_tile_slope(0, 0) == 30 || \
-			             nearby_tile_slope(0, 0) == 23 || nearby_tile_slope(0, 0) == 7), var_fence_offset_se), \
-			STORE_TEMP( (nearby_tile_slope(0, 0) == 3  || nearby_tile_slope(0, 0) == 11 || nearby_tile_slope(0, 0) == 27 || \
-			             nearby_tile_slope(0, 0) == 23 || nearby_tile_slope(0, 0) == 7), var_fence_offset_sw), \
+			STORE_TEMP( (nearby_tile_slope(0,0) & bitmask(CORNER_N, CORNER_E)) == bitmask(CORNER_N, CORNER_E), var_fence_offset_ne) \
+			STORE_TEMP( (nearby_tile_slope(0,0) & bitmask(CORNER_N, CORNER_W)) == bitmask(CORNER_N, CORNER_W), var_fence_offset_nw) \
+			STORE_TEMP( (nearby_tile_slope(0,0) & bitmask(CORNER_S, CORNER_E)) == bitmask(CORNER_S, CORNER_E), var_fence_offset_se) \
+			STORE_TEMP( (nearby_tile_slope(0,0) & bitmask(CORNER_S, CORNER_W)) == bitmask(CORNER_S, CORNER_W), var_fence_offset_sw) \
 			1 \
 			]) { \
 	next; \
