@@ -237,7 +237,7 @@ tilelayout tilelayout_plastics_plant_3 {
 /* extra text template */
 #define THIS_STR_EXTRA_TEXT       STR_EXTRA_PLASTICS_PLANT
 #define THIS_STR_DEBUG_TEXT       STR_EXTRA_TEXT_DEBUG_SECONDARY
-/* availability years - also update available from strings if changing these */
+/* availability years */
 #define THIS_MIN_YEAR 1931
 
 
@@ -294,7 +294,7 @@ item(FEAT_INDUSTRIES, THIS_ID(), IND_PLASTICSPLANT_ID) {
 		monthly_prod_change:     THIS_ID(check_production_level);
 		random_prod_change:      THIS_ID(check_closure);
 		extra_text_industry:     THIS_ID(extra_text);
-		extra_text_fund:         return string(STR_FUND_AVAILABLE_FROM, string(STR_FUND_AVAILABLE_FROM_DATE_PLASTICS_PLANT));
+		extra_text_fund:         return string(STR_FUND_AVAILABLE_FROM, THIS_MIN_YEAR);
 		colour:                  THIS_ID(colour);
 	}
 }

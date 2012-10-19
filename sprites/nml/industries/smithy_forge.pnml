@@ -96,7 +96,7 @@ tilelayout tilelayout_smithy_forge_1 {
 /* extra text template */
 #define THIS_STR_EXTRA_TEXT       STR_EXTRA_SMITHY_FORGE
 #define THIS_STR_DEBUG_TEXT       STR_EXTRA_TEXT_DEBUG_SECONDARY
-/* availability years - also update available from strings if changing these */
+/* availability years */
 #define THIS_MAX_YEAR 1948
 
 
@@ -149,7 +149,7 @@ item(FEAT_INDUSTRIES, smithy_forge, IND_SMITHYFORGE_ID) {
 		monthly_prod_change:     THIS_ID(check_production_level);
 		random_prod_change:      THIS_ID(check_closure);
 		extra_text_industry:     THIS_ID(extra_text);
-		extra_text_fund:         return string(STR_FUND_AVAILABLE_UNTIL, string(STR_FUND_AVAILABLE_UNTIL_DATE_SMITHY_FORGE));
+		extra_text_fund:         return string(STR_FUND_AVAILABLE_UNTIL, THIS_MAX_YEAR);
 		colour:                  THIS_ID(colour);
 	}
 }

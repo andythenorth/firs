@@ -55,7 +55,7 @@ tilelayout tilelayout_dredging_site_1 {
  * *************************************************/
 
 #define THIS_STR_EXTRA_SUPPLIES        STR_EXTRA_ENGINEERING_SUPPLIES
-/* availability years - also update available from strings if changing these */
+/* availability years */
 #define THIS_MIN_YEAR 1825
 
 CHECK_INCOMPATIBLE  (dredging_site, 56, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
@@ -113,7 +113,7 @@ item(FEAT_INDUSTRIES, dredging_site, IND_DREDGINGSITE_ID) {
 		random_prod_change:      THIS_ID(check_closure);
 		build_prod_change:       randomise_primary_production_on_build;
 		extra_text_industry:     THIS_ID(extra_text);
-		extra_text_fund:         return string(STR_FUND_AVAILABLE_FROM, string(STR_FUND_AVAILABLE_FROM_DATE_DREDGING_SITE));
+		extra_text_fund:         return string(STR_FUND_AVAILABLE_FROM, THIS_MIN_YEAR);
 		colour:                  THIS_ID(colour);
 	}
 }

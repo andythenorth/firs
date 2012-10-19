@@ -107,7 +107,7 @@ ${industry.get_industry_layouts_as_tilelayouts()}
  * *************************************************/
 
 #define THIS_STR_EXTRA_SUPPLIES STR_EXTRA_ENGINEERING_SUPPLIES
-/* availability years - also update available from strings if changing these */
+/* availability years */
 #define THIS_MIN_YEAR 1830
 
 CHECK_INCOMPATIBLE  (oil_refinery, 16, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
@@ -152,7 +152,7 @@ item(FEAT_INDUSTRIES, ${industry.id}, IND_OILWELLS_ID) {
 		random_prod_change:      ${industry.id}_check_closure;
 		build_prod_change:       randomise_primary_production_on_build;
 		extra_text_industry:     ${industry.id}_extra_text;
-		extra_text_fund:         return string(STR_FUND_AVAILABLE_FROM, string(STR_FUND_AVAILABLE_FROM_DATE_OILWELLS));
+		extra_text_fund:         return string(STR_FUND_AVAILABLE_FROM, THIS_MIN_YEAR);
 		colour:                  ${industry.id}_colour;
 	}
 }

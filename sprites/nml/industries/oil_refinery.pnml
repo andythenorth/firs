@@ -98,7 +98,7 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_6), 23) {
 #define THIS_BOOST_32             0
 /* extra text template */
 #define THIS_STR_EXTRA_TEXT       STR_EXTRA_OIL_REFINERY
-/* availability years - also update available from strings if changing these */
+/* availability years */
 #define THIS_MIN_YEAR 1830
 
 CHECK_INCOMPATIBLE  (oil_refinery,   56, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
@@ -139,7 +139,7 @@ item(FEAT_INDUSTRIES, THIS_ID(), IND_OILREFINERY_ID) {
 		monthly_prod_change:     THIS_ID(check_production_level);
 		random_prod_change:      THIS_ID(check_closure);
 		extra_text_industry:     THIS_ID(extra_text);
-		extra_text_fund:         return string(STR_FUND_AVAILABLE_FROM, string(STR_FUND_AVAILABLE_FROM_DATE_OILREFINERY));
+		extra_text_fund:         return string(STR_FUND_AVAILABLE_FROM, THIS_MIN_YEAR);
 		colour:                  THIS_ID(colour);
 	}
 }

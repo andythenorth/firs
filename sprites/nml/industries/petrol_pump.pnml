@@ -112,7 +112,7 @@ tilelayout tilelayout_petrol_pump_2 {
 /* *************************************************
  * Definition of the industry
  * *************************************************/
-/* availability years - also update available from strings if changing these  */
+/* availability years */
 #define THIS_MIN_YEAR 1909
 
 #include "../templates/check_availability.pnml"
@@ -158,7 +158,7 @@ item(FEAT_INDUSTRIES, petrol_pump, IND_PETROLPUMP_ID) {
 	}
 	graphics {
 		construction_probability:THIS_ID(check_availability);
-		extra_text_fund:         return string(STR_FUND_AVAILABLE_FROM, string(STR_FUND_AVAILABLE_FROM_DATE_PETROL_PUMP));
+		extra_text_fund:         return string(STR_FUND_AVAILABLE_FROM, THIS_MIN_YEAR);
 		location_check:          THIS_ID(check_location);
 	}
 }

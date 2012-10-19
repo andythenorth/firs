@@ -122,10 +122,8 @@ STR_FUND_FOREST                                                                 
 STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}Emplacement{NBSP}: {YELLOW}ne peut pas être placé sur de la neige.
 STR_FUND_MIXED_FARM                                                             :{}{BLACK}Emplacement{NBSP}: {YELLOW}ne peut pas être construite sur de la neige ni dans le désert.
 
-STR_FUND_AVAILABLE_FROM                                                         :{}{BLACK}Disponible à partir de{NBSP}:{NBSP}{YELLOW}{STRING}
-STR_FUND_AVAILABLE_UNTIL                                                        :{}{BLACK}Plus disponible après{NBSP}:{NBSP}{YELLOW}{STRING}
-# All STR_FUND_AVAILABLE_FROM/UNTIL_DATE_* left out intentionally as it would be counter-productive to include them.
-# It's indeed better to pick up dates by default from the original english.lng file instead of risking a typo or a mismatch.
+STR_FUND_AVAILABLE_FROM                                                         :{}{BLACK}Disponible à partir de{NBSP}:{NBSP}{YELLOW}{COMMA}
+STR_FUND_AVAILABLE_UNTIL                                                        :{}{BLACK}Plus disponible après{NBSP}:{NBSP}{YELLOW}{COMMA}
 
 STR_GENERIC_NEWLINE                                                             :{}
 
