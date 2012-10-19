@@ -98,12 +98,12 @@
         }
         building {
             sprite: 1301 + LOAD_TEMP(var_fencesprite_nw);
-            hide_sprite: (LOAD_TEMP(var_use_fence_ne) == 0);
+            hide_sprite: (LOAD_TEMP(var_use_fence_nw) == 0);
             xoffset:  0;
             yoffset:  0;
-            zoffset:  LOAD_TEMP(var_fence_offset_ne) * 8;
-            xextent: 1;
-            yextent: 16;
+            zoffset:  LOAD_TEMP(var_fence_offset_nw) * 8;
+            xextent: 16;
+            yextent: 1;
             zextent: 6;
             recolour_mode: RECOLOUR_REMAP;
             palette:       PALETTE_USE_DEFAULT;
@@ -140,12 +140,12 @@
         // fences SE and SW
         building {
             sprite: 1301 + LOAD_TEMP(var_fencesprite_se);
-            hide_sprite: (LOAD_TEMP(var_use_fence_sw) == 0);
-            xoffset: 16;
-            yoffset:  0;
-            zoffset:  LOAD_TEMP(var_fence_offset_sw) * 8;
-            xextent: 1;
-            yextent: 16;
+            hide_sprite: (LOAD_TEMP(var_use_fence_se) == 0);
+            xoffset: 0;
+            yoffset:  16;
+            zoffset:  LOAD_TEMP(var_fence_offset_se) * 8;
+            xextent: 16;
+            yextent: 1;
             zextent: 6;
             recolour_mode: RECOLOUR_REMAP;
             palette:       PALETTE_USE_DEFAULT;
