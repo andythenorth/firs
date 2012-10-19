@@ -59,57 +59,17 @@ industry.add_spritelayout(
 
 industry.add_industry_layout(
     id = 'bauxite_mine_industry_layout_1',
-    default_spritelayout = 'bauxite_mine_spritelayout_pump',
-    layout = [(0, 0, 'bauxite_mine_tile_pump', 'bauxite_mine_spritelayout_pump'),
-              (0, 7, 'bauxite_mine_tile_pump', 'bauxite_mine_spritelayout_pump'),
-              (1, 4, 'bauxite_mine_tile_pump', 'bauxite_mine_spritelayout_pump'),
-              (2, 1, 'bauxite_mine_tile_pump', 'bauxite_mine_spritelayout_pump'),
-              (3, 5, 'bauxite_mine_tile_building', 'bauxite_mine_spritelayout_building'),
-              (4, 8, 'bauxite_mine_tile_pump', 'bauxite_mine_spritelayout_pump'),
-              (5, 1, 'bauxite_mine_tile_pump', 'bauxite_mine_spritelayout_pump'),
-              (5, 4, 'bauxite_mine_tile_pump', 'bauxite_mine_spritelayout_pump'),
-    ]
-)
-industry.add_industry_layout(
-    id = 'bauxite_mine_industry_layout_2',
-    default_spritelayout = 'bauxite_mine_spritelayout_pump',
-    layout = [(0, 0, 'bauxite_mine_tile_pump', 'bauxite_mine_spritelayout_pump'),
-              (0, 4, 'bauxite_mine_tile_pump', 'bauxite_mine_spritelayout_pump'),
-              (1, 4, 'bauxite_mine_tile_pump', 'bauxite_mine_spritelayout_pump'),
-              (2, 8, 'bauxite_mine_tile_pump', 'bauxite_mine_spritelayout_pump'),
-              (4, 4, 'bauxite_mine_tile_building', 'bauxite_mine_spritelayout_building'),
-              (4, 8, 'bauxite_mine_tile_pump', 'bauxite_mine_spritelayout_pump'),
-              (5, 2, 'bauxite_mine_tile_pump', 'bauxite_mine_spritelayout_pump'),
-              (6, 2, 'bauxite_mine_tile_pump', 'bauxite_mine_spritelayout_pump'),
-              (6, 4, 'bauxite_mine_tile_pump', 'bauxite_mine_spritelayout_pump'),
-    ]
-)
-industry.add_industry_layout(
-    id = 'bauxite_mine_industry_layout_3',
-    default_spritelayout = 'bauxite_mine_spritelayout_pump',
-    layout = [(0, 0, 'bauxite_mine_tile_pump', 'bauxite_mine_spritelayout_pump'),
-              (0, 2, 'bauxite_mine_tile_pump', 'bauxite_mine_spritelayout_pump'),
-              (1, 4, 'bauxite_mine_tile_pump', 'bauxite_mine_spritelayout_pump'),
-              (1, 6, 'bauxite_mine_tile_pump', 'bauxite_mine_spritelayout_pump'),
-              (2, 0, 'bauxite_mine_tile_building', 'bauxite_mine_spritelayout_building'),
-              (3, 2, 'bauxite_mine_tile_pump', 'bauxite_mine_spritelayout_pump'),
-              (3, 4, 'bauxite_mine_tile_pump', 'bauxite_mine_spritelayout_pump'),
-    ]
-)
-industry.add_industry_layout(
-    id = 'bauxite_mine_industry_layout_4',
-    default_spritelayout = 'bauxite_mine_spritelayout_pump',
-    layout = [(0, 0, 'bauxite_mine_tile_pump', 'bauxite_mine_spritelayout_pump'),
-              (0, 4, 'bauxite_mine_tile_pump', 'bauxite_mine_spritelayout_pump'),
-              (0, 6, 'bauxite_mine_tile_pump', 'bauxite_mine_spritelayout_pump'),
-              (1, 2, 'bauxite_mine_tile_pump', 'bauxite_mine_spritelayout_pump'),
-              (1, 8, 'bauxite_mine_tile_building', 'bauxite_mine_spritelayout_building'),
-              (2, 0, 'bauxite_mine_tile_pump', 'bauxite_mine_spritelayout_pump'),
-              (2, 2, 'bauxite_mine_tile_pump', 'bauxite_mine_spritelayout_pump'),
-              (3, 1, 'bauxite_mine_tile_pump', 'bauxite_mine_spritelayout_pump'),
-              (5, 0, 'bauxite_mine_tile_pump', 'bauxite_mine_spritelayout_pump'),
-              (5, 2, 'bauxite_mine_tile_pump', 'bauxite_mine_spritelayout_pump'),
-              (6, 0, 'bauxite_mine_tile_pump', 'bauxite_mine_spritelayout_pump'),
+    default_spritelayout = 'bauxite_mine_spritelayout_1',
+    layout = [(0, 0, 'bauxite_mine_tile', 'bauxite_mine_spritelayout_1'),
+              (0, 1, 'bauxite_mine_tile', 'bauxite_mine_spritelayout_1'),
+              (0, 2, 'bauxite_mine_tile', 'bauxite_mine_spritelayout_1'),
+              (2, 0, 'bauxite_mine_tile', 'bauxite_mine_spritelayout_5'),
+              (2, 1, 'bauxite_mine_tile', 'bauxite_mine_spritelayout_3'),
+              (2, 2, 'bauxite_mine_tile', 'bauxite_mine_spritelayout_4'),
+              (3, 0, 'bauxite_mine_tile', 'bauxite_mine_spritelayout_1'),
+              (3, 1, 'bauxite_mine_tile', 'bauxite_mine_spritelayout_1'),
+              (3, 2, 'bauxite_mine_tile', 'bauxite_mine_spritelayout_2'),
+              (4, 1, 'bauxite_mine_tile', 'bauxite_mine_spritelayout_1'),
     ]
 )
 # Templating
