@@ -1,5 +1,5 @@
 /* Exclude fences to adjacent tileID
- * 
+ *
  * name:   name of this switch
  * next:   name of next switch of spritelayout
  * class:  class to exclude fences to
@@ -15,7 +15,7 @@ switch (FEAT_INDUSTRYTILES, SELF, name, [ \
 }
 
 /* Exclude fences to adjacent tile class
- * 
+ *
  * name:   name of this switch
  * next:   name of next switch of spritelayout
  * class:  class to exclude fences to
@@ -32,7 +32,7 @@ switch (FEAT_INDUSTRYTILES, SELF, name, [ \
 
 
 /* Draw no fences around a tile
- * 
+ *
  * name:   name of this switch
  * next:   name of next switch of spritelayout
  */
@@ -57,8 +57,8 @@ switch (FEAT_INDUSTRYTILES, SELF, name, [ \
 }
 
 
-/* Add fences to a flat tile 
- * 
+/* Add fences to a flat tile
+ *
  * name:   name of this switch
  * next:   name of next switch of spritelayout
  * ne:     draw fence in NE
@@ -87,8 +87,8 @@ switch (FEAT_INDUSTRYTILES, SELF, name, [ \
 }
 
 
-/* Add sloped fences to a tile 
- * 
+/* Add sloped fences to a tile
+ *
  * name:   name of this switch
  * next:   name of next switch of spritelayout
  * ne:     draw fence in NE
@@ -134,6 +134,7 @@ switch (FEAT_INDUSTRYTILES, SELF, name, [ \
 }
 
 
+/* the NE / NW / SE / NE fence defines are not used by python templating, they are left for legacy support whilst templates are migrated */
 #define FENCE_NE \
 	building { \
 		sprite: 1302 + LOAD_TEMP(var_fencesprite_ne); \
