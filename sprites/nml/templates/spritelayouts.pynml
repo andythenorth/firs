@@ -83,8 +83,31 @@
             hide_sprite: !(terrain_type == TILETYPE_SNOW); always_draw: 1;
         }
 
-        FENCE_NE \
-        FENCE_NW \
+        // fences NE and NW
+        building {
+            sprite: 1302 + LOAD_TEMP(var_fencesprite_ne);
+            hide_sprite: (LOAD_TEMP(var_use_fence_ne) == 0);
+            xoffset:  0;
+            yoffset:  0;
+            zoffset:  LOAD_TEMP(var_fence_offset_ne) * 8;
+            xextent: 1;
+            yextent: 16;
+            zextent: 6;
+            recolour_mode: RECOLOUR_REMAP;
+            palette:       PALETTE_USE_DEFAULT;
+        }
+        building {
+            sprite: 1301 + LOAD_TEMP(var_fencesprite_ne);
+            hide_sprite: (LOAD_TEMP(var_use_fence_ne) == 0);
+            xoffset:  0;
+            yoffset:  0;
+            zoffset:  LOAD_TEMP(var_fence_offset_ne) * 8;
+            xextent: 1;
+            yextent: 16;
+            zextent: 6;
+            recolour_mode: RECOLOUR_REMAP;
+            palette:       PALETTE_USE_DEFAULT;
+        }
 
         // industry buildings (snow aware)
         <tal:build_building_sprites repeat="building_sprite spritelayout.building_sprites">
@@ -114,8 +137,31 @@
             }
         </tal:build_building_sprites>
 
-        FENCE_SE \
-        FENCE_SW \
+        // fences SE and SW
+        building {
+            sprite: 1301 + LOAD_TEMP(var_fencesprite_sw);
+            hide_sprite: (LOAD_TEMP(var_use_fence_sw) == 0);
+            xoffset: 16;
+            yoffset:  0;
+            zoffset:  LOAD_TEMP(var_fence_offset_sw) * 8;
+            xextent: 1;
+            yextent: 16;
+            zextent: 6;
+            recolour_mode: RECOLOUR_REMAP;
+            palette:       PALETTE_USE_DEFAULT;
+        }
+        building {
+            sprite: 1302 + LOAD_TEMP(var_fencesprite_sw);
+            hide_sprite: (LOAD_TEMP(var_use_fence_sw) == 0);
+            xoffset: 16;
+            yoffset:  0;
+            zoffset:  LOAD_TEMP(var_fence_offset_sw) * 8;
+            xextent: 1;
+            yextent: 16;
+            zextent: 6;
+            recolour_mode: RECOLOUR_REMAP;
+            palette:       PALETTE_USE_DEFAULT;
+        }
 
     }
 </tal:build_spritelayouts>
