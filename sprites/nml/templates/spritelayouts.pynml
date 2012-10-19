@@ -97,7 +97,7 @@
             palette:       PALETTE_USE_DEFAULT;
         }
         building {
-            sprite: 1301 + LOAD_TEMP(var_fencesprite_ne);
+            sprite: 1301 + LOAD_TEMP(var_fencesprite_nw);
             hide_sprite: (LOAD_TEMP(var_use_fence_ne) == 0);
             xoffset:  0;
             yoffset:  0;
@@ -139,7 +139,7 @@
 
         // fences SE and SW
         building {
-            sprite: 1301 + LOAD_TEMP(var_fencesprite_sw);
+            sprite: 1301 + LOAD_TEMP(var_fencesprite_se);
             hide_sprite: (LOAD_TEMP(var_use_fence_sw) == 0);
             xoffset: 16;
             yoffset:  0;
