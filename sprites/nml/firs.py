@@ -67,11 +67,12 @@ class Spriteset(object):
 
 class SpriteLayout(object):
     """Base class to hold spritelayouts for industry spritelayouts"""
-    def __init__(self, id, ground_sprite, ground_overlay, building_sprites):
+    def __init__(self, id, ground_sprite, ground_overlay, building_sprites, fences=[]):
         self.id = id
         self.ground_sprite = ground_sprite
         self.ground_overlay = ground_overlay
         self.building_sprites = building_sprites
+        self.fences = fences # a simple list of keywords.  Valid values: 'ne', 'se', 'sw', 'nw'.  Order is arbitrary.
 
 
 class IndustryLayout(object):
