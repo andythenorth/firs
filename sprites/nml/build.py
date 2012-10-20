@@ -19,3 +19,7 @@ from industries import bauxite_mine
 from industries import food_market
 from industries import grain_mill
 from industries import oil_wells
+
+
+# graphics templating conversion unfinished
+from industries import oil_refinery
