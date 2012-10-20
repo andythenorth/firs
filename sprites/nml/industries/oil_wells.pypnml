@@ -96,6 +96,8 @@ item(FEAT_INDUSTRYTILES, oil_wells_tile_building, TILE_OILWELLS_2) {
 	}
 }
 
+${industry.get_fence_switches()}
+
 /* *************************************************
  * Definition of the industry layouts
  * *************************************************/
