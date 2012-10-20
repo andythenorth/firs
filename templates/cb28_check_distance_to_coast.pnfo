@@ -1,7 +1,0 @@
--1 * 15	 02 0A 10  //check distance to nearest coast
-    85 
-      8B 20 \wxFFFF // var, param (industry ID), shift, mask
-      \2ucmp 7F MAX_COAST_DISTANCE 00 \wxFFFF // check parameter for distance to coast
-    01 //range
-       04 80  \w02 \w02 //don't build industry if distance to coast exceeds limit
-    10 00 //default

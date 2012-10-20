@@ -1,8 +1,0 @@
--1 * 15	 02 0A 10  //check euclidean distance to town (result is distance squared)
-    85 
-      66  00  00 \wxFFFF // var, param (tile offset), shift, mask 
-       01 //range
-         10 00  \w00 THIS_DISTANCE_LIMIT_SQUARED //continue using placement routine if below limit
-       01 84 //otherwise don't build industry if limit is exceeded      
-       
-#undef THIS_DISTANCE_LIMIT_SQUARED       
