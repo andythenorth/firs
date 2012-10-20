@@ -51,30 +51,35 @@ industry.add_spritelayout(
     ground_sprite = sprite_ground,
     ground_overlay = sprite_ground_overlay,
     building_sprites = [sprite_1]
+    fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
     id = 'bauxite_mine_spritelayout_2',
     ground_sprite = sprite_ground,
     ground_overlay = sprite_ground_overlay,
     building_sprites = []
+    fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
     id = 'bauxite_mine_spritelayout_3',
     ground_sprite = sprite_ground,
     ground_overlay = sprite_ground_overlay,
     building_sprites = [sprite_3]
+    fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
     id = 'bauxite_mine_spritelayout_4',
     ground_sprite = sprite_ground,
     ground_overlay = sprite_ground_overlay,
-    building_sprites = [sprite_4]
+    building_sprites = [sprite_4],
+    fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
     id = 'bauxite_mine_spritelayout_5',
     ground_sprite = sprite_ground,
     ground_overlay = sprite_ground_overlay,
     building_sprites = [sprite_5]
+    fences = ['nw','ne','se','sw']
 )
 
 industry.add_industry_layout(
