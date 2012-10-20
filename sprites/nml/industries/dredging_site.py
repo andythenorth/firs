@@ -17,5 +17,29 @@ When a string is expected are basically two choices: provide a string directly, 
 
 industry = Industry(id='dredging_site')
 
+sprite_ground = industry.add_sprite(
+    sprite_number = 'GROUNDSPRITE_WATER',
+)
+
+spriteset_ground_overlay = industry.add_spriteset(
+    id = 'dredging_site_spriteset_ground_overlay',
+    type='empty',
+)
+
+spriteset_platform = industry.add_spriteset(
+    id = 'dredging_site_spriteset_platform',
+    sprites = [(10, 10, 64, 100, -31, -65)],
+    zextent= 74
+)
+
+industry.add_spritelayout(
+    id = 'dredging_site_spritelayout_1',
+    ground_sprite = sprite_ground,
+    ground_overlay = spriteset_ground_overlay,
+    building_sprites = [spriteset_platform]
+)
+
+# dredging site has one layout only, don't bother inserting templated industry layouts etc
+
 # Templating
 industry.render_and_save_pnml()

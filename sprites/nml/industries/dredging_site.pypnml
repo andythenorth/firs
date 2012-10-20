@@ -5,22 +5,23 @@
  * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS industry set. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#define THIS_ID(...) ${industry.id} ## __VA_ARGS__
+#define THIS_ID(...) ${industry.id}_ ## __VA_ARGS__
 
-spriteset(THIS_ID(spriteset_1)) {
-	tmpl_building_sprite_filename(10, 10, 100, -65, "sprites/graphics/industries/dredging_site.png")
-}
+${industry.get_spritesets()}
 
-SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_1), GROUNDSPRITE_WATER, THIS_ID(spriteset_1), 74)
+${industry.get_spritelayouts()}
+
+<!--! dredging site has one layout only, don't bother inserting templated industry layouts etc -->
+<!--! ${industry.get_industry_layouts_as_graphic_switches()} -->
 
 /* *************************************************
  * Definition of the industry tile and its callbacks
  * *************************************************/
 
 TILE_DISALLOW_NEARBY_CLASS(tile_nearby_industry,  TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
-TILE_ALLOW_PLAYER         (tile_location_check,                                                             THIS_ID(tile_nearby_industry))
+TILE_ALLOW_PLAYER         (tile_location_check, ${industry.id}_tile_nearby_industry)
 
-item(FEAT_INDUSTRYTILES, THIS_ID(tile), TILE_DREDGINGSITE_1) {
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile, TILE_DREDGINGSITE_1) {
 	property {
 		substitute:       0;
 		accepted_cargos:  [[ENSP, 8]];
@@ -28,8 +29,8 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile), TILE_DREDGINGSITE_1) {
 	}
 
 	graphics {
-		tile_check: THIS_ID(tile_location_check);
-		THIS_ID(spritelayout_1);
+		tile_check: ${industry.id}_tile_location_check;
+		${industry.id}_spritelayout_1;
 	}
 }
 
@@ -46,7 +47,7 @@ tilelayout tilelayout_dredging_site_1 {
 	1, 4: 255;
 	2, 0: 255;
 	2, 2: 255;
-	2, 3: THIS_ID(tile);
+	2, 3: ${industry.id}_tile;
 	2, 4: 255;
 }
 
@@ -59,14 +60,14 @@ tilelayout tilelayout_dredging_site_1 {
 #define THIS_MIN_YEAR 1825
 
 CHECK_INCOMPATIBLE  (dredging_site, 56, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
-CHECK_INCOMPATIBLE  (lime_kiln,     16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(dredging_site))
-CHECK_INCOMPATIBLE  (glass_works,   16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(lime_kiln))
-CHECK_INCOMPATIBLE  (cement_plant,  16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(glass_works))
-CHECK_INCOMPATIBLE  (brick_works,   16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(cement_plant))
-CHECK_COAST_DISTANCE(coastal_distance, 0, param_max_coastal_distance, CB_RESULT_LOCATION_DISALLOW, THIS_ID(brick_works))
-CHECK_FOUNDER       (THIS_ID(coastal_distance))
+CHECK_INCOMPATIBLE  (lime_kiln,     16, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_dredging_site)
+CHECK_INCOMPATIBLE  (glass_works,   16, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_lime_kiln)
+CHECK_INCOMPATIBLE  (cement_plant,  16, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_glass_works)
+CHECK_INCOMPATIBLE  (brick_works,   16, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_cement_plant)
+CHECK_COAST_DISTANCE(coastal_distance, 0, param_max_coastal_distance, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_brick_works)
+CHECK_FOUNDER       (${industry.id}_coastal_distance)
 
-SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
+SWITCH_COLOUR_SCHEME1(${industry.id}_colour)
 
 #include "../templates/produce_primary.pnml"
 #include "../templates/check_primary_production_level.pnml"
@@ -105,16 +106,16 @@ item(FEAT_INDUSTRIES, dredging_site, IND_DREDGINGSITE_ID) {
 		spec_flags:             bitmask(IND_FLAG_BUILT_ON_WATER, IND_FLAG_AI_CREATES_AIR_AND_SHIP_ROUTES);
 	}
 	graphics {
-		produce_cargo_arrival:   THIS_ID(produce);
-		construction_probability:THIS_ID(check_availability);
-		location_check:          THIS_ID(check_location);
-		produce_256_ticks:       THIS_ID(produce_256_ticks);
-		monthly_prod_change:     THIS_ID(monthly_update);
-		random_prod_change:      THIS_ID(check_closure);
+		produce_cargo_arrival:   ${industry.id}_produce;
+		construction_probability:${industry.id}_check_availability;
+		location_check:          ${industry.id}_check_location;
+		produce_256_ticks:       ${industry.id}_produce_256_ticks;
+		monthly_prod_change:     ${industry.id}_monthly_update;
+		random_prod_change:      ${industry.id}_check_closure;
 		build_prod_change:       randomise_primary_production_on_build;
-		extra_text_industry:     THIS_ID(extra_text);
+		extra_text_industry:     ${industry.id}_extra_text;
 		extra_text_fund:         return string(STR_FUND_AVAILABLE_FROM, THIS_MIN_YEAR);
-		colour:                  THIS_ID(colour);
+		colour:                  ${industry.id}_colour;
 	}
 }
 #include "../templates/undefs.pnml"
