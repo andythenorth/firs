@@ -20,6 +20,6 @@ from industries import food_market
 from industries import grain_mill
 from industries import oil_wells
 
-
-# graphics templating conversion unfinished
+# industries with only partial conversion to python templating, mostly still cpp
+from industries import coal_mine
 from industries import oil_refinery
