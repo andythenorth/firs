@@ -23,3 +23,4 @@ from industries import oil_wells
 # industries with only partial conversion to python templating, mostly still cpp
 from industries import coal_mine
 from industries import oil_refinery
+from industries import oil_rig
