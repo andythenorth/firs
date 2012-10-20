@@ -18,31 +18,41 @@ When a string is expected are basically two choices: provide a string directly, 
 industry = Industry(id='hotel')
 
 industry.add_tile(id='hotel_tile')
-"""
-spriteset_ground = industry.add_spriteset(
-    id = 'hotel_spriteset_ground',
-    type='slab',
+
+sprite_ground = industry.add_sprite(
+    sprite_number = 'GROUNDSPRITE_CLEARED'
 )
 spriteset_ground_overlay = industry.add_spriteset(
-    id = 'hotel_spriteset_ground_overlay',
-    sprites = [(10, 10, 64, 31, -31, 0)],
+    id = 'hotel_spriteset_ground',
+    type='empty',
 )
-spriteset_1 = industry.add_spriteset(
-    id = 'hotel_spriteset',
-    sprites = [(10, 60, 64, 36, -31, -4)]
+sprite_building_1 = industry.add_sprite(
+    sprite_number = '(terrain_type == TILETYPE_SNOW) ? 4583 : 4475'
+)
+sprite_building_2 = industry.add_sprite(
+    sprite_number = '(terrain_type == TILETYPE_SNOW) ? 4584 : 4476'
 )
 
 industry.add_spritelayout(
-    id = 'hotel_spritelayout',
-    ground_sprite = spriteset_ground,
+    id = 'hotel_spritelayout_1',
+    ground_sprite = sprite_ground,
     ground_overlay = spriteset_ground_overlay,
-    building_sprites = [spriteset_1, sprite_tree_1, sprite_tree_2]
+    building_sprites = [sprite_building_1]
 )
-"""
+industry.add_spritelayout(
+    id = 'hotel_spritelayout_2',
+    ground_sprite = sprite_ground,
+    ground_overlay = spriteset_ground_overlay,
+    building_sprites = [sprite_building_2]
+)
+
 industry.add_industry_layout(
     id = 'hotel_industry_layout',
     default_spritelayout = 'hotel_spritelayout_1',
-    layout = [(0, 0, 'hotel_tile', 'hotel_spritelayout_1')
+    layout = [(0, 0, 'hotel_tile', 'hotel_spritelayout_1'),
+              (1, 0, 'hotel_tile', 'hotel_spritelayout_1'),
+              (0, 1, 'hotel_tile', 'hotel_spritelayout_2'),
+              (1, 1, 'hotel_tile', 'hotel_spritelayout_2')
     ]
 )
 

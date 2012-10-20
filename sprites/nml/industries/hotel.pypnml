@@ -7,34 +7,11 @@
 
 #define THIS_ID(...) ${industry.id}_ ## __VA_ARGS__
 
-spritelayout THIS_ID(spritelayout_1) {
-	ground {
-		sprite: GROUNDSPRITE_CLEARED;
-	}
-	building {
-		sprite: (terrain_type == TILETYPE_SNOW) ? 4583 : 4475;
-	}
-}
+${industry.get_spritesets()}
 
-spritelayout THIS_ID(spritelayout_2) {
-	ground {
-		sprite: GROUNDSPRITE_CLEARED;
-	}
-	building {
-		sprite: (terrain_type == TILETYPE_SNOW) ? 4584 : 4476;
-	}
-}
+${industry.get_spritelayouts()}
 
-switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_layout_1, relative_pos) {
-	relative_coord(0, 1): ${industry.id}_spritelayout_2;
-	relative_coord(1, 1): ${industry.id}_spritelayout_2;
-	${industry.id}_spritelayout_1;
-}
-
-switch(FEAT_INDUSTRYTILES, PARENT, ${industry.id}_layout, layout_num) {
-	1: ${industry.id}_layout_1;
-	${industry.id}_spritelayout_1;
-}
+${industry.get_industry_layouts_as_graphic_switches()}
 
 /* *************************************************
  * Definition of the industry tile and its callbacks
@@ -48,7 +25,7 @@ item(FEAT_INDUSTRYTILES, ${industry.id}_tile, TILE_HOTEL_1) {
 	}
 
 	graphics {
-		${industry.id}_layout;
+		${industry.id}_industry_layout_master_graphics_switch;
 	}
 }
 
