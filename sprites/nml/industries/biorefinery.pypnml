@@ -8,7 +8,7 @@
 #include "../templates/spritelayout_templates.pnml"
 #include "../templates/smoke_templates.pnml"
 
-#define THIS_ID(...) biorefinery ## __VA_ARGS__
+#define THIS_ID(...) ${industry.id} ## __VA_ARGS__
 
 spriteset(THIS_ID(spriteset_ground), "sprites/graphics/industries/groundtiles.png") {
 	tmpl_ground_tile(80, 10)

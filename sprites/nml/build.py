@@ -15,6 +15,7 @@ currentdir = os.curdir
 import sys
 sys.path.append(os.path.join('industries')) # add to the module search path
 
+from industries import biorefinery
 from industries import bauxite_mine
 from industries import dredging_site
 from industries import food_market
