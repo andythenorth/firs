@@ -5,10 +5,10 @@
  * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS industry set. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#define THIS_ID(...) dredgine_site ## __VA_ARGS__
+#define THIS_ID(...) ${industry.id} ## __VA_ARGS__
 
 spriteset(THIS_ID(spriteset_1)) {
-	tmpl_building_sprite_filename(10, 10, 100, -65, "sprites/graphics/industries/dredgingsite.png")
+	tmpl_building_sprite_filename(10, 10, 100, -65, "sprites/graphics/industries/dredging_site.png")
 }
 
 SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_1), GROUNDSPRITE_WATER, THIS_ID(spriteset_1), 74)
