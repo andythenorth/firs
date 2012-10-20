@@ -5,7 +5,7 @@
  * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#define THIS_ID(...) hotel ## __VA_ARGS__
+#define THIS_ID(...) ${industry.id}_ ## __VA_ARGS__
 
 spritelayout THIS_ID(spritelayout_1) {
 	ground {
@@ -25,22 +25,22 @@ spritelayout THIS_ID(spritelayout_2) {
 	}
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_1), relative_pos) {
-	relative_coord(0, 1): THIS_ID(spritelayout_2);
-	relative_coord(1, 1): THIS_ID(spritelayout_2);
-	THIS_ID(spritelayout_1);
+switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_layout_1, relative_pos) {
+	relative_coord(0, 1): ${industry.id}_spritelayout_2;
+	relative_coord(1, 1): ${industry.id}_spritelayout_2;
+	${industry.id}_spritelayout_1;
 }
 
-switch(FEAT_INDUSTRYTILES, PARENT, THIS_ID(layout), layout_num) {
-	1: THIS_ID(layout_1);
-	THIS_ID(spritelayout_1);
+switch(FEAT_INDUSTRYTILES, PARENT, ${industry.id}_layout, layout_num) {
+	1: ${industry.id}_layout_1;
+	${industry.id}_spritelayout_1;
 }
 
 /* *************************************************
  * Definition of the industry tile and its callbacks
  * *************************************************/
 
-item(FEAT_INDUSTRYTILES, THIS_ID(tile), TILE_HOTEL_1) {
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile, TILE_HOTEL_1) {
 	property {
 		substitute:       0;
 		accepted_cargos:  [[FOOD, 8], [BEER, 8], [0, 8]];
@@ -48,7 +48,7 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile), TILE_HOTEL_1) {
 	}
 
 	graphics {
-		THIS_ID(layout);
+		${industry.id}_layout;
 	}
 }
 
@@ -56,12 +56,7 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile), TILE_HOTEL_1) {
  * Definition of the industry layouts
  * *************************************************/
 
-tilelayout tilelayout_hotel_1 {
-	0, 0: THIS_ID(tile);
-	0, 1: THIS_ID(tile);
-	1, 0: THIS_ID(tile);
-	1, 1: THIS_ID(tile);
-}
+${industry.get_industry_layouts_as_tilelayouts()}
 
 /* *************************************************
  * Definition of the industry
@@ -70,16 +65,14 @@ tilelayout tilelayout_hotel_1 {
 #include "../templates/check_availability.pnml"
 
 CHECK_INCOMPATIBLE  (petrol_pump, 16, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
-CHECK_INCOMPATIBLE  (food_market, 16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(petrol_pump))
-CHECK_INCOMPATIBLE  (hotel, 20, CB_RESULT_LOCATION_DISALLOW, THIS_ID(food_market))
-CHECK_FOUNDER       (THIS_ID(hotel))
+CHECK_INCOMPATIBLE  (food_market, 16, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_petrol_pump)
+CHECK_INCOMPATIBLE  (hotel, 20, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_food_market)
+CHECK_FOUNDER       (${industry.id}_hotel)
 
 item(FEAT_INDUSTRIES, hotel, IND_HOTEL_ID) {
 	property {
 		substitute: 0;
-		layouts: [
-				tilelayout_hotel_1
-			];
+		layouts: [${industry.get_industry_layouts_as_property()}];
 		life_type:              IND_LIFE_TYPE_BLACK_HOLE;
 		name:                   string(STR_IND_HOTEL);
 		nearby_station_name:    string(STR_STATION, string(STR_TOWN), string(STR_IND_HOTEL));
@@ -104,9 +97,9 @@ item(FEAT_INDUSTRIES, hotel, IND_HOTEL_ID) {
 		spec_flags:             bitmask(IND_FLAG_BUILT_NEAR_TOWN); /*use build near town not in town, hotel is large and town locations hard to find */
 	}
 	graphics {
-		construction_probability:THIS_ID(check_availability);
+		construction_probability:${industry.id}_check_availability;
 		build_prod_change:       randomise_primary_production_on_build;
-		location_check:          THIS_ID(check_location);
+		location_check:          ${industry.id}_check_location;
 	}
 }
 

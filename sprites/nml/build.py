@@ -20,6 +20,7 @@ from industries import bauxite_mine
 from industries import dredging_site
 from industries import food_market
 from industries import grain_mill
+from industries import hotel
 from industries import oil_wells
 
 # industries with only partial conversion to python templating, mostly still cpp
