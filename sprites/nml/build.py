@@ -24,3 +24,4 @@ from industries import oil_wells
 from industries import coal_mine
 from industries import oil_refinery
 from industries import oil_rig
+from industries import steel_mill
