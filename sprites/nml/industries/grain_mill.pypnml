@@ -15,6 +15,8 @@ ${industry.get_spritelayouts()}
 
 ${industry.get_industry_layouts_as_graphic_switches()}
 
+${industry.get_fence_switches()}
+
 /* *************************************************
  * Definition of the industry tile and its callbacks
  * *************************************************/
@@ -22,7 +24,6 @@ ${industry.get_industry_layouts_as_graphic_switches()}
 TILE_DISALLOW_NEARBY_CLASS(tile1_nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
 TILE_ALLOW_PLAYER         (tile1_player_check, ${industry.id}_tile1_nearby_industry)
 TILE_DISALLOW_SLOPES      (tile1_location_check, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_tile1_player_check)
-GROUNDSPRITE_SWITCH(${industry.id}_ground_switch, ${industry.id}_industry_layout_master_graphics_switch)
 
 item(FEAT_INDUSTRYTILES, ${industry.id}_tile, TILE_GRAINMILL_1) {
 	property {
@@ -35,7 +36,7 @@ item(FEAT_INDUSTRYTILES, ${industry.id}_tile, TILE_GRAINMILL_1) {
 
 	graphics {
 		tile_check:   ${industry.id}_tile1_location_check;
-		${industry.id}_ground_switch;
+		${industry.id}_tile_fences;
 	}
 }
 

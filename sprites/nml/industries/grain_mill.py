@@ -79,31 +79,36 @@ industry.add_spritelayout(
     id = 'grain_mill_spritelayout_brickbakery_1',
     ground_sprite = spriteset_ground_bakery,
     ground_overlay = spriteset_ground_overlay_1,
-    building_sprites = []
+    building_sprites = [],
+    fences = ['nw','ne','se']
 )
 industry.add_spritelayout(
     id = 'grain_mill_spritelayout_brickbakery_2',
     ground_sprite = spriteset_ground_bakery,
     ground_overlay = spriteset_ground_overlay_2,
-    building_sprites = []
+    building_sprites = [],
+    fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
     id = 'grain_mill_spritelayout_brickbakery_3',
     ground_sprite = spriteset_ground_bakery,
     ground_overlay = spriteset_ground_overlay_3,
-    building_sprites = [spriteset_3]
+    building_sprites = [spriteset_3],
+    fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
     id = 'grain_mill_spritelayout_brickbakery_4',
     ground_sprite = spriteset_ground_bakery,
     ground_overlay = spriteset_ground_overlay_4,
-    building_sprites = [spriteset_4]
+    building_sprites = [spriteset_4],
+    fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
     id = 'grain_mill_spritelayout_windmill_anim',
     ground_sprite = spriteset_ground_windmill,
     ground_overlay = spriteset_ground_overlay_windmill,
-    building_sprites = [spriteset_windmill_anim]
+    building_sprites = [spriteset_windmill_anim],
+    fences = ['nw','ne','se','sw']
 )
 
 industry.add_industry_layout(
