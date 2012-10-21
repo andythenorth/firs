@@ -29,32 +29,42 @@ spriteset_ground_overlay = industry.add_spriteset(
 )
 spriteset_1 = industry.add_spriteset(
     id = 'sugar_refinery_spriteset_1',
-    sprites = [(10, 10, 64, 76, -31, -45)],
+    sprites = [(10, 10, 64, 50, -31, -23)],
     zextent = 48
 )
 spriteset_2 = industry.add_spriteset(
     id = 'sugar_refinery_spriteset_2',
-    sprites = [(80, 10, 64, 76, -31, -45)],
+    sprites = [(80, 10, 64, 50, -31, -25)],
     zextent = 48
 )
 spriteset_3 = industry.add_spriteset(
     id = 'sugar_refinery_spriteset_3',
-    sprites = [(150, 10, 64, 63, -31, -32)],
+    sprites = [(150, 10, 64, 88, -31, -56)],
     zextent = 48
 )
 spriteset_4 = industry.add_spriteset(
     id = 'sugar_refinery_spriteset_4',
-    sprites = [(220, 10, 64, 63, -31, -32)],
+    sprites = [(220, 10, 64, 88, -31, -58)],
     zextent = 48
 )
 spriteset_5 = industry.add_spriteset(
     id = 'sugar_refinery_spriteset_5',
-    sprites = [(290, 10, 64, 63, -31, -32)],
+    sprites = [(290, 10, 64, 88, -31, -58)],
     zextent = 48
 )
 spriteset_6 = industry.add_spriteset(
     id = 'sugar_refinery_spriteset_6',
-    sprites = [(360, 10, 64, 63, -31, -32)],
+    sprites = [(360, 10, 64, 88, -31, -58)],
+    zextent = 48
+)
+spriteset_7 = industry.add_spriteset(
+    id = 'sugar_refinery_spriteset_7',
+    sprites = [(430, 10, 64, 88, -31, -58)],
+    zextent = 48
+)
+spriteset_8 = industry.add_spriteset(
+    id = 'sugar_refinery_spriteset_8',
+    sprites = [(500, 10, 64, 88, -31, -58)],
     zextent = 48
 )
 
@@ -91,7 +101,7 @@ industry.add_spritelayout(
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_5],
-    fences = ['nw','ne','se','sw']
+    fences = ['se']
 )
 industry.add_spritelayout(
     id = 'sugar_refinery_spritelayout_6',
@@ -104,19 +114,39 @@ industry.add_spritelayout(
     id = 'sugar_refinery_spritelayout_7',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
+    building_sprites = [spriteset_7],
+    fences = []
+)
+industry.add_spritelayout(
+    id = 'sugar_refinery_spritelayout_8',
+    ground_sprite = spriteset_ground,
+    ground_overlay = spriteset_ground_overlay,
+    building_sprites = [spriteset_8],
+    fences = ['nw','ne','se','sw']
+)
+industry.add_spritelayout(
+    id = 'sugar_refinery_spritelayout_9',
+    ground_sprite = spriteset_ground,
+    ground_overlay = spriteset_ground_overlay,
     building_sprites = [],
     fences = ['nw','ne','se','sw']
 )
 
 industry.add_industry_layout(
-    id = 'sugar_refinery_industry_layout',
-    default_spritelayout = 'sugar_refinery_spritelayout_7',
-    layout = [(0, 0, 'sugar_refinery_tile', 'sugar_refinery_spritelayout_2'),
-              (0, 1, 'sugar_refinery_tile', 'sugar_refinery_spritelayout_3'),
-              (1, 0, 'sugar_refinery_tile', 'sugar_refinery_spritelayout_1'),
-              (1, 1, 'sugar_refinery_tile', 'sugar_refinery_spritelayout_4'),
-              (2, 0, 'sugar_refinery_tile', 'sugar_refinery_spritelayout_5'),
-              (2, 1, 'sugar_refinery_tile', 'sugar_refinery_spritelayout_6')
+    id = 'sugar_refinery_industry_layout_1',
+    default_spritelayout = 'sugar_refinery_spritelayout_9',
+    layout = [(0, 0, 'sugar_refinery_tile', 'sugar_refinery_spritelayout_4'),
+              (0, 1, 'sugar_refinery_tile', 'sugar_refinery_spritelayout_4'),
+              (0, 2, 'sugar_refinery_tile', 'sugar_refinery_spritelayout_4'),
+              (1, 0, 'sugar_refinery_tile', 'sugar_refinery_spritelayout_8'),
+              (1, 1, 'sugar_refinery_tile', 'sugar_refinery_spritelayout_3'),
+              (1, 2, 'sugar_refinery_tile', 'sugar_refinery_spritelayout_1'),
+              (2, 0, 'sugar_refinery_tile', 'sugar_refinery_spritelayout_6'),
+              (2, 1, 'sugar_refinery_tile', 'sugar_refinery_spritelayout_9'),
+              (2, 2, 'sugar_refinery_tile', 'sugar_refinery_spritelayout_2'),
+              (3, 0, 'sugar_refinery_tile', 'sugar_refinery_spritelayout_7'),
+              (3, 1, 'sugar_refinery_tile', 'sugar_refinery_spritelayout_7'),
+              (3, 2, 'sugar_refinery_tile', 'sugar_refinery_spritelayout_5')
     ]
 )
 

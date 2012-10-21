@@ -7,80 +7,25 @@
 
 #include "../templates/spritelayout_templates.pnml"
 
-#define THIS_ID(...) ${industry.id} ## __VA_ARGS__
+#define THIS_ID(...) ${industry.id}_ ## __VA_ARGS__
 
-spriteset(THIS_ID(spriteset_ground), "sprites/graphics/industries/groundtiles.png") { tmpl_ground_tile(80, 10) }
-//large round tank
-spriteset(THIS_ID(spriteset_1), "sprites/graphics/industries/sugar_refinery.png") { tmpl_building_sprite(10, 10, 50, -23) }
-//cone silo
-spriteset(THIS_ID(spriteset_2), "sprites/graphics/industries/sugar_refinery.png") { tmpl_building_sprite(80, 10, 50, -25) }
-//large rectangular building
-spriteset(THIS_ID(spriteset_3), "sprites/graphics/industries/sugar_refinery.png") { tmpl_building_sprite(150, 10, 88, -56) }
-//4 large silos
-spriteset(THIS_ID(spriteset_4), "sprites/graphics/industries/sugar_refinery.png") { tmpl_building_sprite(220, 10, 88, -58) }
-//small brick gatehouse
-spriteset(THIS_ID(spriteset_5), "sprites/graphics/industries/sugar_refinery.png") { tmpl_building_sprite(290, 10, 88, -58) }
-//brick warehouse with 2 large chimneys
-spriteset(THIS_ID(spriteset_6), "sprites/graphics/industries/sugar_refinery.png") { tmpl_building_sprite(360, 10, 88, -58) }
-//brick storage yard
-spriteset(THIS_ID(spriteset_7), "sprites/graphics/industries/sugar_refinery.png") { tmpl_building_sprite(430, 10, 88, -58) }
-//lime processor stack
-spriteset(THIS_ID(spriteset_8), "sprites/graphics/industries/sugar_refinery.png") { tmpl_building_sprite(500, 10, 88, -58) }
+${industry.get_spritesets()}
 
-SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_1), THIS_ID(spriteset_ground), THIS_ID(spriteset_1), 48)
+${industry.get_spritelayouts()}
 
-SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_2), THIS_ID(spriteset_ground), THIS_ID(spriteset_2), 48)
+${industry.get_industry_layouts_as_graphic_switches()}
 
-SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_3), THIS_ID(spriteset_ground), THIS_ID(spriteset_3), 48)
-
-SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_4), THIS_ID(spriteset_ground), THIS_ID(spriteset_4), 48)
-
-SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_5), THIS_ID(spriteset_ground), THIS_ID(spriteset_5), 48)
-
-SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_6), THIS_ID(spriteset_ground), THIS_ID(spriteset_6), 48)
-
-SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_7), THIS_ID(spriteset_ground), THIS_ID(spriteset_7), 48)
-
-SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_8), THIS_ID(spriteset_ground), THIS_ID(spriteset_8), 48)
-
-spritelayout THIS_ID(spritelayout_0) {
-	ground {
-		sprite: THIS_ID(spriteset_ground);
-		recolour_mode: RECOLOUR_REMAP;
-		palette: PALETTE_USE_DEFAULT;
-	}
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_1), relative_pos) {
-	relative_coord(0, 0): THIS_ID(spritelayout_4);
-	relative_coord(0, 1): THIS_ID(spritelayout_4);
-	relative_coord(0, 2): THIS_ID(spritelayout_4);
-	relative_coord(1, 0): THIS_ID(spritelayout_8);
-	relative_coord(1, 1): THIS_ID(spritelayout_3);
-	relative_coord(1, 2): THIS_ID(spritelayout_1);
-	relative_coord(2, 0): THIS_ID(spritelayout_6);
-	relative_coord(2, 1): THIS_ID(spritelayout_0);
-	relative_coord(2, 2): THIS_ID(spritelayout_2);
-	relative_coord(3, 0): THIS_ID(spritelayout_7);
-	relative_coord(3, 1): THIS_ID(spritelayout_7);
-	relative_coord(3, 2): THIS_ID(spritelayout_5);
-	THIS_ID(spritelayout_0);
-}
-
-switch(FEAT_INDUSTRYTILES, PARENT, THIS_ID(layout), layout_num) {
-	1: THIS_ID(layout_1);
-	THIS_ID(spritelayout_5);
-}
+${industry.get_fence_switches()}
 
 /* *************************************************
  * Definition of the industry tile and its callbacks
  * *************************************************/
 
 TILE_DISALLOW_NEARBY_CLASS(nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
-TILE_ALLOW_PLAYER         (player_check,                                                            THIS_ID(nearby_industry))
-TILE_DISALLOW_SLOPES      (location_check,                       CB_RESULT_LOCATION_DISALLOW, THIS_ID(player_check))
+TILE_ALLOW_PLAYER         (player_check, ${industry.id}_nearby_industry)
+TILE_DISALLOW_SLOPES      (location_check, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_player_check)
 
-item(FEAT_INDUSTRYTILES, THIS_ID(tile), TILE_SUGARREFINERY_1) {
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile, TILE_SUGARREFINERY_1) {
 	property {
 		substitute:       0;
 		accepted_cargos:  [[SGBT, 8], [MNSP, 8]];
@@ -91,8 +36,8 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile), TILE_SUGARREFINERY_1) {
 	TILE_CARGO_2(ENABLE_SUGARCANE && ENABLE_MNSP, SGCN, MNSP)
 
 	graphics {
-		tile_check:   THIS_ID(location_check);
-		THIS_ID(layout);
+		tile_check:   ${industry.id}_location_check;
+		${industry.id}_tile_fences;
 	}
 }
 
@@ -100,20 +45,7 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile), TILE_SUGARREFINERY_1) {
  * Definition of the industry layouts
  * *************************************************/
 
-tilelayout tilelayout_sugar_refinery_1 {
-	0, 0: THIS_ID(tile);
-	0, 1: THIS_ID(tile);
-	0, 2: THIS_ID(tile);
-	1, 0: THIS_ID(tile);
-	1, 1: THIS_ID(tile);
-	1, 2: THIS_ID(tile);
-	2, 0: THIS_ID(tile);
-	2, 1: THIS_ID(tile);
-	2, 2: THIS_ID(tile);
-	3, 0: THIS_ID(tile);
-	3, 1: THIS_ID(tile);
-	3, 2: THIS_ID(tile);
-}
+${industry.get_industry_layouts_as_tilelayouts()}
 
 /* *************************************************
  * Definition of the industry
@@ -136,10 +68,10 @@ tilelayout tilelayout_sugar_refinery_1 {
 
 
 CHECK_INCOMPATIBLE(sugar_refinery, 56, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
-CHECK_INCOMPATIBLE(arable_farm,    16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(sugar_refinery))
-CHECK_FOUNDER     (THIS_ID(arable_farm))
+CHECK_INCOMPATIBLE(arable_farm,    16, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_sugar_refinery)
+CHECK_FOUNDER     (${industry.id}_arable_farm)
 
-SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
+SWITCH_COLOUR_SCHEME1(${industry.id}_colour)
 
 #include "../templates/produce_secondary.pnml"
 #include "../templates/check_secondary_production_level.pnml"
@@ -153,9 +85,7 @@ SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
 item(FEAT_INDUSTRIES, sugar_refinery, IND_SUGARREFINERY_ID) {
 	property {
 		substitute:             0;
-		layouts: [
-				tilelayout_sugar_refinery_1,
-			];
+		layouts: [${industry.get_industry_layouts_as_property()}];
 		life_type:              4;
 		name:                   string(STR_IND_SUGAR_REFINERY);
 		nearby_station_name:    string(STR_STATION, string(STR_TOWN), string(STR_IND_SUGAR_REFINERY));
@@ -184,13 +114,13 @@ item(FEAT_INDUSTRIES, sugar_refinery, IND_SUGARREFINERY_ID) {
 	INDUSTRY_INPUT_CARGO_2(ENABLE_SUGARCANE && ENABLE_MNSP, MNSP, SGCN)
 
 	graphics {
-		produce_cargo_arrival:   THIS_ID(produce);
-		construction_probability:THIS_ID(check_availability);
-		location_check:          THIS_ID(check_location);
-		monthly_prod_change:     THIS_ID(check_production_level);
-		random_prod_change:      THIS_ID(check_closure);
-		extra_text_industry:     THIS_ID(extra_text);
-		colour:                  THIS_ID(colour);
+		produce_cargo_arrival:   ${industry.id}_produce;
+		construction_probability:${industry.id}_check_availability;
+		location_check:          ${industry.id}_check_location;
+		monthly_prod_change:     ${industry.id}_check_production_level;
+		random_prod_change:      ${industry.id}_check_closure;
+		extra_text_industry:     ${industry.id}_extra_text;
+		colour:                  ${industry.id}_colour;
 	}
 }
 
