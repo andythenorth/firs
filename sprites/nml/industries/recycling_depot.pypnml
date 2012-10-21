@@ -7,10 +7,10 @@
 
 #include "../templates/spritelayout_templates.pnml"
 
-#define THIS_ID(...) recycling_depot ## __VA_ARGS__
+#define THIS_ID(...) ${industry.id}_ ## __VA_ARGS__
 
-spriteset(THIS_ID(spriteset_tile_with_hut), "sprites/graphics/industries/recyclingdepot.png") { tmpl_ground_tile(10, 10) }
-spriteset(THIS_ID(spriteset_tile_plain), "sprites/graphics/industries/recyclingdepot.png") { tmpl_ground_tile(80, 10) }
+spriteset(THIS_ID(spriteset_tile_with_hut), "sprites/graphics/industries/recycling_depot.png") { tmpl_ground_tile(10, 10) }
+spriteset(THIS_ID(spriteset_tile_plain), "sprites/graphics/industries/recycling_depot.png") { tmpl_ground_tile(80, 10) }
 
 SPRITELAYOUT_FENCES_NORMAL(THIS_ID(spritelayout_1), GROUNDSPRITE_CONCRETE, THIS_ID(spriteset_tile_with_hut), 16)
 
