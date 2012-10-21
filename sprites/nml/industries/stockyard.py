@@ -116,42 +116,42 @@ industry.add_spritelayout(
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_5],
-    fences = ['se']
+    fences = ['nw','se','sw']
 )
 industry.add_spritelayout(
     id = 'stockyard_spritelayout_6',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_6],
-    fences = ['nw','ne','se','sw']
+    fences = ['nw','se','sw']
 )
 industry.add_spritelayout(
     id = 'stockyard_spritelayout_7',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_7],
-    fences = ['nw','ne','se','sw']
+    fences = ['nw','se','sw']
 )
 industry.add_spritelayout(
     id = 'stockyard_spritelayout_8',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_8],
-    fences = ['nw','ne','se','sw']
+    fences = ['nw','ne','se']
 )
 industry.add_spritelayout(
     id = 'stockyard_spritelayout_9',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_9],
-    fences = ['nw','ne','se','sw']
+    fences = ['nw','ne','se']
 )
 industry.add_spritelayout(
     id = 'stockyard_spritelayout_10',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_10],
-    fences = ['nw','ne','se','sw']
+    fences = ['nw','ne','se']
 )
 industry.add_spritelayout(
     id = 'stockyard_spritelayout_11',
