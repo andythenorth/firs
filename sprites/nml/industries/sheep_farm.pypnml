@@ -7,67 +7,15 @@
 
 #include "../templates/spritelayout_templates.pnml"
 
-#define THIS_ID(...) sheep_farm ## __VA_ARGS__
+#define THIS_ID(...) ${industry.id}_ ## __VA_ARGS__
 
-spriteset(THIS_ID(spriteset_1)) {
-	tmpl_building_sprite_filename(10, 10, 52, -21, "sprites/graphics/industries/sheep_farm.png")
-	tmpl_building_sprite_filename(10, 10, 52, -21, "sprites/graphics/industries/sheep_farm_snow.png")
-}
+${industry.get_spritesets()}
 
-spriteset(THIS_ID(spriteset_2)) {
-	tmpl_building_sprite_filename(80, 10, 52, -19, "sprites/graphics/industries/sheep_farm.png")
-	tmpl_building_sprite_filename(80, 10, 52, -19, "sprites/graphics/industries/sheep_farm_snow.png")
-}
+${industry.get_spritelayouts()}
 
-spriteset(THIS_ID(spriteset_3)) {
-	tmpl_building_sprite_filename(150, 10, 52, -21, "sprites/graphics/industries/sheep_farm.png")
-	tmpl_building_sprite_filename(150, 10, 52, -21, "sprites/graphics/industries/sheep_farm_snow.png")
-}
+${industry.get_industry_layouts_as_graphic_switches()}
 
-spriteset(THIS_ID(spriteset_4)) {
-	tmpl_building_sprite_filename(220, 10, 52, -21, "sprites/graphics/industries/sheep_farm.png")
-	tmpl_building_sprite_filename(220, 10, 52, -21, "sprites/graphics/industries/sheep_farm_snow.png")
-}
-
-spriteset(THIS_ID(spriteset_5)) {
-	tmpl_building_sprite_filename(290, 10, 52, -21, "sprites/graphics/industries/sheep_farm.png")
-	tmpl_building_sprite_filename(290, 10, 52, -21, "sprites/graphics/industries/sheep_farm_snow.png")
-}
-
-SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_1), GROUNDSPRITE_NORMAL, GROUNDSPRITE_NORMAL, THIS_ID(spriteset_1), 24)
-
-SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_2), GROUNDSPRITE_NORMAL, GROUNDSPRITE_NORMAL, THIS_ID(spriteset_2), 24)
-
-SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_3), GROUNDSPRITE_NORMAL, GROUNDSPRITE_NORMAL, THIS_ID(spriteset_3), 24)
-
-SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_4), GROUNDSPRITE_NORMAL, GROUNDSPRITE_NORMAL, THIS_ID(spriteset_4), 8)
-
-SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_5), GROUNDSPRITE_NORMAL, GROUNDSPRITE_NORMAL, THIS_ID(spriteset_5), 8)
-
-switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_1), relative_pos) {
-	relative_coord(0, 0): THIS_ID(spritelayout_3);
-	relative_coord(1, 0): THIS_ID(spritelayout_2);
-	relative_coord(1, 2): THIS_ID(spritelayout_4);
-	relative_coord(3, 0): THIS_ID(spritelayout_1);
-	THIS_ID(spritelayout_5);
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_2), relative_pos) {
-	relative_coord(0, 0): THIS_ID(spritelayout_2);
-	relative_coord(0, 1): THIS_ID(spritelayout_1);
-	relative_coord(0, 2): THIS_ID(spritelayout_4);
-	relative_coord(2, 0): THIS_ID(spritelayout_3);
-	THIS_ID(spritelayout_5);
-}
-
-switch(FEAT_INDUSTRYTILES, PARENT, THIS_ID(layout), layout_num) {
-	2: THIS_ID(layout_2);
-	THIS_ID(layout_1);
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(tile1_layout), STORE_TEMP((var[0x7E, 0, 255, 161] + var[0x7E, 0, 255, 65]), 16)) {
-	THIS_ID(layout);
-}
+${industry.get_fence_switches()}
 
 /* *************************************************
  * Definition of the industry tile and its callbacks
@@ -86,7 +34,7 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile), TILE_SHEEPFARM_1) {
 
 	graphics {
 		tile_check:   THIS_ID(tile1_location_check);
-		THIS_ID(tile1_layout);
+		THIS_ID(tile_fences);
 	}
 }
 
@@ -94,21 +42,7 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile), TILE_SHEEPFARM_1) {
  * Definition of the industry layouts
  * *************************************************/
 
-tilelayout tilelayout_sheep_farm_1 {
-	0, 0: THIS_ID(tile);
-	1, 0: THIS_ID(tile);
-	3, 0: THIS_ID(tile);
-	3, 1: THIS_ID(tile);
-	1, 2: THIS_ID(tile);
-}
-
-tilelayout tilelayout_sheep_farm_2 {
-	0, 0: THIS_ID(tile);
-	0, 1: THIS_ID(tile);
-	0, 2: THIS_ID(tile);
-	2, 0: THIS_ID(tile);
-	2, 2: THIS_ID(tile);
-}
+${industry.get_industry_layouts_as_tilelayouts()}
 
 /* *************************************************
  * Definition of the industry
@@ -133,10 +67,7 @@ SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
 item(FEAT_INDUSTRIES, sheep_farm, IND_SHEEPFARM_ID) {
 	property {
 		substitute: 0;
-		layouts: [
-				tilelayout_sheep_farm_1,
-				tilelayout_sheep_farm_2
-			];
+		layouts: [${industry.get_industry_layouts_as_property()}];
 		life_type:              IND_LIFE_TYPE_ORGANIC;
 		closure_msg:            TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS;
 		prod_increase_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_FARM;
