@@ -25,6 +25,7 @@ from industries import hotel
 from industries import oil_wells
 from industries import recycling_depot
 from industries import recycling_plant
+from industries import sheep_farm
 from industries import smithy_forge
 from industries import stockyard
 from industries import sugar_refinery

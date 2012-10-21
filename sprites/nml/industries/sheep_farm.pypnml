@@ -10,28 +10,28 @@
 #define THIS_ID(...) sheep_farm ## __VA_ARGS__
 
 spriteset(THIS_ID(spriteset_1)) {
-	tmpl_building_sprite_filename(10, 10, 52, -21, "sprites/graphics/industries/sheepfarm.png")
-	tmpl_building_sprite_filename(10, 10, 52, -21, "sprites/graphics/industries/sheepfarm_snow.png")
+	tmpl_building_sprite_filename(10, 10, 52, -21, "sprites/graphics/industries/sheep_farm.png")
+	tmpl_building_sprite_filename(10, 10, 52, -21, "sprites/graphics/industries/sheep_farm_snow.png")
 }
 
 spriteset(THIS_ID(spriteset_2)) {
-	tmpl_building_sprite_filename(80, 10, 52, -19, "sprites/graphics/industries/sheepfarm.png")
-	tmpl_building_sprite_filename(80, 10, 52, -19, "sprites/graphics/industries/sheepfarm_snow.png")
+	tmpl_building_sprite_filename(80, 10, 52, -19, "sprites/graphics/industries/sheep_farm.png")
+	tmpl_building_sprite_filename(80, 10, 52, -19, "sprites/graphics/industries/sheep_farm_snow.png")
 }
 
 spriteset(THIS_ID(spriteset_3)) {
-	tmpl_building_sprite_filename(150, 10, 52, -21, "sprites/graphics/industries/sheepfarm.png")
-	tmpl_building_sprite_filename(150, 10, 52, -21, "sprites/graphics/industries/sheepfarm_snow.png")
+	tmpl_building_sprite_filename(150, 10, 52, -21, "sprites/graphics/industries/sheep_farm.png")
+	tmpl_building_sprite_filename(150, 10, 52, -21, "sprites/graphics/industries/sheep_farm_snow.png")
 }
 
 spriteset(THIS_ID(spriteset_4)) {
-	tmpl_building_sprite_filename(220, 10, 52, -21, "sprites/graphics/industries/sheepfarm.png")
-	tmpl_building_sprite_filename(220, 10, 52, -21, "sprites/graphics/industries/sheepfarm_snow.png")
+	tmpl_building_sprite_filename(220, 10, 52, -21, "sprites/graphics/industries/sheep_farm.png")
+	tmpl_building_sprite_filename(220, 10, 52, -21, "sprites/graphics/industries/sheep_farm_snow.png")
 }
 
 spriteset(THIS_ID(spriteset_5)) {
-	tmpl_building_sprite_filename(290, 10, 52, -21, "sprites/graphics/industries/sheepfarm.png")
-	tmpl_building_sprite_filename(290, 10, 52, -21, "sprites/graphics/industries/sheepfarm_snow.png")
+	tmpl_building_sprite_filename(290, 10, 52, -21, "sprites/graphics/industries/sheep_farm.png")
+	tmpl_building_sprite_filename(290, 10, 52, -21, "sprites/graphics/industries/sheep_farm_snow.png")
 }
 
 SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_1), GROUNDSPRITE_NORMAL, GROUNDSPRITE_NORMAL, THIS_ID(spriteset_1), 24)
