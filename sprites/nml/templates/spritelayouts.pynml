@@ -71,7 +71,7 @@
         }
         // snow
         childsprite {
-            sprite: GROUNDSPRITE_SNOW;
+            sprite: ${industry.unpack_sprite_or_spriteset(spritelayout.ground_sprite, terrain_type='snow')};
             recolour_mode: RECOLOUR_REMAP;
             palette: PALETTE_USE_DEFAULT;
             hide_sprite: !(terrain_type == TILETYPE_SNOW); always_draw: 1;

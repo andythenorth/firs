@@ -162,3 +162,5 @@ class Industry(object):
         pnml = codecs.open(os.path.join(currentdir,'sprites','nml','generated_pnml', self.id + '.pnml'), 'w','utf8')
         pnml.write(templated_pnml)
         pnml.close()
+
+
