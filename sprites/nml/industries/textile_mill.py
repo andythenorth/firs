@@ -21,87 +21,84 @@ industry.add_tile(id='textile_mill_tile')
 
 spriteset_ground = industry.add_spriteset(
     id = 'textile_mill_spriteset_ground',
-    type = 'concrete'
+    type = 'cobble'
 )
 spriteset_ground_overlay = industry.add_spriteset(
     id = 'textile_mill_spriteset_ground_overlay',
     type = 'empty'
 )
-spriteset_1 = industry.add_spriteset(
-    id = 'textile_mill_spriteset_1',
-    sprites = [(10, 10, 64, 76, -31, -45)],
+spriteset_large_chimney = industry.add_spriteset(
+    id = 'textile_mill_spriteset_large_chimney',
+    sprites = [(10, 60, 64, 103, -31, -74)],
+    zextent = 64
+)
+spriteset_large_building_lh_part = industry.add_spriteset(
+    id = 'textile_mill_spriteset_large_building_lh_part',
+    sprites = [(80, 60, 64, 103, -31, -72)],
+    zextent = 64
+)
+spriteset_large_building_rh_part = industry.add_spriteset(
+    id = 'textile_mill_spriteset_large_building_rh_part',
+    sprites = [(150, 60, 64, 103, -31, -72)],
+    zextent = 64
+)
+spriteset_crates_greeble = industry.add_spriteset(
+    id = 'textile_mill_spriteset_crates_greeble',
+    sprites = [(220, 60, 64, 103, -31, -72)],
+    zextent = 64
+)
+spriteset_small_warehouse = industry.add_spriteset(
+    id = 'textile_mill_spriteset_small_warehouse',
+    sprites = [(290, 60, 64, 103, -31, -72)],
     zextent = 48
 )
-spriteset_2 = industry.add_spriteset(
-    id = 'textile_mill_spriteset_2',
-    sprites = [(80, 10, 64, 76, -31, -45)],
-    zextent = 48
-)
-spriteset_3 = industry.add_spriteset(
-    id = 'textile_mill_spriteset_3',
-    sprites = [(150, 10, 64, 63, -31, -32)],
-    zextent = 48
-)
-spriteset_4 = industry.add_spriteset(
-    id = 'textile_mill_spriteset_4',
-    sprites = [(220, 10, 64, 63, -31, -32)],
-    zextent = 48
-)
-spriteset_5 = industry.add_spriteset(
-    id = 'textile_mill_spriteset_5',
-    sprites = [(290, 10, 64, 63, -31, -32)],
-    zextent = 48
-)
-spriteset_6 = industry.add_spriteset(
-    id = 'textile_mill_spriteset_6',
-    sprites = [(360, 10, 64, 63, -31, -32)],
-    zextent = 48
+sprite_smoke = industry.add_sprite(
+    sprite_number = '3701 + animation_frame',
+    xoffset= 0,
+    yoffset= 9,
+    zoffset= 78,
+    xextent= 15,
+    yextent= 7,
+    zextent= 7
 )
 
 industry.add_spritelayout(
-    id = 'textile_mill_spritelayout_1',
+    id = 'textile_mill_spritelayout_1_anim',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
-    building_sprites = [spriteset_1],
+    building_sprites = [spriteset_large_chimney, sprite_smoke],
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
     id = 'textile_mill_spritelayout_2',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
-    building_sprites = [spriteset_2],
+    building_sprites = [spriteset_large_building_lh_part],
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
     id = 'textile_mill_spritelayout_3',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
-    building_sprites = [spriteset_3],
+    building_sprites = [spriteset_large_building_rh_part],
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
     id = 'textile_mill_spritelayout_4',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
-    building_sprites = [spriteset_4],
+    building_sprites = [spriteset_crates_greeble],
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
     id = 'textile_mill_spritelayout_5',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
-    building_sprites = [spriteset_5],
+    building_sprites = [spriteset_small_warehouse],
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
     id = 'textile_mill_spritelayout_6',
-    ground_sprite = spriteset_ground,
-    ground_overlay = spriteset_ground_overlay,
-    building_sprites = [spriteset_6],
-    fences = ['nw','ne','se','sw']
-)
-industry.add_spritelayout(
-    id = 'textile_mill_spritelayout_7',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [],
@@ -109,14 +106,83 @@ industry.add_spritelayout(
 )
 
 industry.add_industry_layout(
-    id = 'textile_mill_industry_layout',
-    default_spritelayout = 'textile_mill_spritelayout_7',
-    layout = [(0, 0, 'textile_mill_tile', 'textile_mill_spritelayout_2'),
-              (0, 1, 'textile_mill_tile', 'textile_mill_spritelayout_3'),
-              (1, 0, 'textile_mill_tile', 'textile_mill_spritelayout_1'),
-              (1, 1, 'textile_mill_tile', 'textile_mill_spritelayout_4'),
+    id = 'textile_mill_industry_layout_1',
+    default_spritelayout = 'textile_mill_spritelayout_6',
+    layout = [(0, 0, 'textile_mill_tile', 'textile_mill_spritelayout_3'),
+              (0, 1, 'textile_mill_tile', 'textile_mill_spritelayout_1_anim'),
+              (1, 0, 'textile_mill_tile', 'textile_mill_spritelayout_2'),
+              (1, 1, 'textile_mill_tile', 'textile_mill_spritelayout_5'),
+              (2, 0, 'textile_mill_tile', 'textile_mill_spritelayout_3'),
+              (2, 1, 'textile_mill_tile', 'textile_mill_spritelayout_3'),
+              (3, 0, 'textile_mill_tile', 'textile_mill_spritelayout_2'),
+              (3, 1, 'textile_mill_tile', 'textile_mill_spritelayout_2'),
+              (4, 0, 'textile_mill_tile', 'textile_mill_spritelayout_5'),
+              (4, 1, 'textile_mill_tile', 'textile_mill_spritelayout_4')
+    ]
+)
+industry.add_industry_layout(
+    id = 'textile_mill_industry_layout_2',
+    default_spritelayout = 'textile_mill_spritelayout_6',
+    layout = [(0, 0, 'textile_mill_tile', 'textile_mill_spritelayout_3'),
+              (0, 1, 'textile_mill_tile', 'textile_mill_spritelayout_4'),
+              (0, 2, 'textile_mill_tile', 'textile_mill_spritelayout_1_anim'),
+              (1, 0, 'textile_mill_tile', 'textile_mill_spritelayout_2'),
+              (1, 1, 'textile_mill_tile', 'textile_mill_spritelayout_6'),
+              (1, 2, 'textile_mill_tile', 'textile_mill_spritelayout_5'),
               (2, 0, 'textile_mill_tile', 'textile_mill_spritelayout_5'),
-              (2, 1, 'textile_mill_tile', 'textile_mill_spritelayout_6')
+              (2, 1, 'textile_mill_tile', 'textile_mill_spritelayout_6'),
+    ]
+)
+industry.add_industry_layout(
+    id = 'textile_mill_industry_layout_3',
+    default_spritelayout = 'textile_mill_spritelayout_6',
+    layout = [(0, 0, 'textile_mill_tile', 'textile_mill_spritelayout_3'),
+              (0, 1, 'textile_mill_tile', 'textile_mill_spritelayout_5'),
+              (1, 0, 'textile_mill_tile', 'textile_mill_spritelayout_2'),
+              (1, 1, 'textile_mill_tile', 'textile_mill_spritelayout_4'),
+              (2, 0, 'textile_mill_tile', 'textile_mill_spritelayout_1_anim'),
+    ]
+)
+industry.add_industry_layout(
+    id = 'textile_mill_industry_layout_4',
+    default_spritelayout = 'textile_mill_spritelayout_6',
+    layout = [(0, 0, 'textile_mill_tile', 'textile_mill_spritelayout_3'),
+              (0, 1, 'textile_mill_tile', 'textile_mill_spritelayout_3'),
+              (1, 0, 'textile_mill_tile', 'textile_mill_spritelayout_2'),
+              (1, 1, 'textile_mill_tile', 'textile_mill_spritelayout_2'),
+              (2, 0, 'textile_mill_tile', 'textile_mill_spritelayout_5'),
+              (2, 1, 'textile_mill_tile', 'textile_mill_spritelayout_4'),
+              (3, 0, 'textile_mill_tile', 'textile_mill_spritelayout_3'),
+              (3, 1, 'textile_mill_tile', 'textile_mill_spritelayout_5'),
+              (4, 0, 'textile_mill_tile', 'textile_mill_spritelayout_2'),
+              (4, 1, 'textile_mill_tile', 'textile_mill_spritelayout_1_anim')
+    ]
+)
+industry.add_industry_layout(
+    id = 'textile_mill_industry_layout_5',
+    default_spritelayout = 'textile_mill_spritelayout_6',
+    layout = [(0, 0, 'textile_mill_tile', 'textile_mill_spritelayout_3'),
+              (0, 1, 'textile_mill_tile', 'textile_mill_spritelayout_3'),
+              (0, 2, 'textile_mill_tile', 'textile_mill_spritelayout_5'),
+              (0, 3, 'textile_mill_tile', 'textile_mill_spritelayout_5'),
+              (1, 0, 'textile_mill_tile', 'textile_mill_spritelayout_2'),
+              (1, 1, 'textile_mill_tile', 'textile_mill_spritelayout_2'),
+              (1, 2, 'textile_mill_tile', 'textile_mill_spritelayout_4'),
+              (1, 3, 'textile_mill_tile', 'textile_mill_spritelayout_1_anim')
+    ]
+)
+industry.add_industry_layout(
+    id = 'textile_mill_industry_layout_6',
+    default_spritelayout = 'textile_mill_spritelayout_6',
+    layout = [(0, 0, 'textile_mill_tile', 'textile_mill_spritelayout_5'),
+              (0, 1, 'textile_mill_tile', 'textile_mill_spritelayout_3'),
+              (0, 2, 'textile_mill_tile', 'textile_mill_spritelayout_3'),
+              (1, 0, 'textile_mill_tile', 'textile_mill_spritelayout_5'),
+              (1, 1, 'textile_mill_tile', 'textile_mill_spritelayout_2'),
+              (1, 2, 'textile_mill_tile', 'textile_mill_spritelayout_2'),
+              (2, 0, 'textile_mill_tile', 'textile_mill_spritelayout_5'),
+              (2, 1, 'textile_mill_tile', 'textile_mill_spritelayout_1_anim'),
+              (2, 2, 'textile_mill_tile', 'textile_mill_spritelayout_4')
     ]
 )
 
