@@ -21,42 +21,44 @@ industry.add_tile(id='recycling_depot_tile')
 
 spriteset_ground = industry.add_spriteset(
     id = 'recycling_depot_spriteset_ground',
-    type='slab',
+    type = 'slab'
 )
 spriteset_ground_overlay = industry.add_spriteset(
     id = 'recycling_depot_spriteset_ground_overlay',
-    sprites = [(10, 10, 64, 31, -31, 0)],
+    type = 'empty'
 )
-spriteset_1 = industry.add_spriteset(
-    id = 'recycling_depot_spriteset',
-    sprites = [(10, 60, 64, 36, -31, -4)]
+spriteset_hut = industry.add_spriteset(
+    id = 'recycling_depot_spriteset_hut',
+    sprites = [(10, 10, 64, 31, -31, 0)]
 )
-sprite_tree_1 = industry.add_sprite(
-    sprite_number = 'nearby_tile_terrain_type(0, 0) != TILETYPE_SNOW ? market_tree : MARKET_TREE_SNOW', # defined in defines.pnml, to permit possibility of selecting a different sprite if a tree grf is loaded
-    xoffset= 11,
-    yoffset= 1,
-    xextent= 6,
-    yextent= 6
-)
-sprite_tree_2 = industry.add_sprite(
-    sprite_number = 'nearby_tile_terrain_type(0, 0) != TILETYPE_SNOW ? market_tree : MARKET_TREE_SNOW', # defined in defines.pnml, to permit possibility of selecting a different sprite if a tree grf is loaded
-    xoffset= 11,
-    yoffset= 6,
-    xextent= 6,
-    yextent= 6
+spriteset_no_hut = industry.add_spriteset(
+    id = 'recycling_depot_spriteset_no_hut',
+    sprites = [(80, 10, 64, 31, -31, 0)]
 )
 
 industry.add_spritelayout(
-    id = 'recycling_depot_spritelayout',
+    id = 'recycling_depot_spritelayout_hut',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
-    building_sprites = [spriteset_1, sprite_tree_1, sprite_tree_2]
+    building_sprites = [spriteset_hut],
+    fences = ['nw','ne','se','sw']
+)
+industry.add_spritelayout(
+    id = 'recycling_depot_spritelayout_no_hut',
+    ground_sprite = spriteset_ground,
+    ground_overlay = spriteset_ground_overlay,
+    building_sprites = [spriteset_no_hut],
+    fences = ['nw','ne','se','sw']
 )
 industry.add_industry_layout(
     id = 'recycling_depot_industry_layout',
-    default_spritelayout = 'recycling_depot_spritelayout',
-    layout = [(0, 0, 'recycling_depot_tile', 'recycling_depot_spritelayout')
+    default_spritelayout = 'recycling_depot_spritelayout_no_hut',
+    layout = [(0, 0, 'recycling_depot_tile', 'recycling_depot_spritelayout_hut'),
+              (0, 1, 'recycling_depot_tile', 'recycling_depot_spritelayout_no_hut'),
+              (1, 0, 'recycling_depot_tile', 'recycling_depot_spritelayout_no_hut'),
+              (1, 1, 'recycling_depot_tile', 'recycling_depot_spritelayout_no_hut')
     ]
 )
+
 # Templating
 industry.render_and_save_pnml()
