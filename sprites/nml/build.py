@@ -30,6 +30,7 @@ from industries import textile_mill
 
 # industries with only partial conversion to python templating, mostly still cpp
 from industries import coal_mine
+from industries import fishing_grounds
 from industries import iron_ore_mine
 from industries import oil_refinery
 from industries import oil_rig
