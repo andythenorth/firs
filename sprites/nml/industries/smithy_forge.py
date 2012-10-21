@@ -19,44 +19,43 @@ industry = Industry(id='smithy_forge')
 
 industry.add_tile(id='smithy_forge_tile')
 
-spriteset_ground = industry.add_spriteset(
-    id = 'smithy_forge_spriteset_ground',
-    type = 'slab'
+sprite_ground = industry.add_sprite(
+    sprite_number = 'GROUNDTILE_MUD_TRACKS',
 )
 spriteset_ground_overlay = industry.add_spriteset(
     id = 'smithy_forge_spriteset_ground_overlay',
     type = 'empty'
 )
-spriteset_hut = industry.add_spriteset(
-    id = 'smithy_forge_spriteset_hut',
-    sprites = [(10, 10, 64, 31, -31, 0)]
+spriteset_1 = industry.add_spriteset(
+    id = 'smithy_forge_spriteset_1',
+    sprites = [(10, 10, 64, 80, -31, -49)],
+    zextent = 48
 )
-spriteset_no_hut = industry.add_spriteset(
-    id = 'smithy_forge_spriteset_no_hut',
-    sprites = [(80, 10, 64, 31, -31, 0)]
+spriteset_2 = industry.add_spriteset(
+    id = 'smithy_forge_spriteset_2',
+    sprites = [(80, 10, 64, 80, -31, -49)],
+    zextent = 48
 )
 
 industry.add_spritelayout(
-    id = 'smithy_forge_spritelayout_hut',
-    ground_sprite = spriteset_ground,
+    id = 'smithy_forge_spritelayout_1',
+    ground_sprite = sprite_ground,
     ground_overlay = spriteset_ground_overlay,
-    building_sprites = [spriteset_hut],
-    fences = ['nw','ne','se','sw']
+    building_sprites = [spriteset_1],
+    fences = ['se','sw']
 )
 industry.add_spritelayout(
-    id = 'smithy_forge_spritelayout_no_hut',
-    ground_sprite = spriteset_ground,
+    id = 'smithy_forge_spritelayout_2',
+    ground_sprite = sprite_ground,
     ground_overlay = spriteset_ground_overlay,
-    building_sprites = [spriteset_no_hut],
-    fences = ['nw','ne','se','sw']
+    building_sprites = [spriteset_2],
+    fences = ['se','sw']
 )
 industry.add_industry_layout(
     id = 'smithy_forge_industry_layout',
-    default_spritelayout = 'smithy_forge_spritelayout_no_hut',
-    layout = [(0, 0, 'smithy_forge_tile', 'smithy_forge_spritelayout_hut'),
-              (0, 1, 'smithy_forge_tile', 'smithy_forge_spritelayout_no_hut'),
-              (1, 0, 'smithy_forge_tile', 'smithy_forge_spritelayout_no_hut'),
-              (1, 1, 'smithy_forge_tile', 'smithy_forge_spritelayout_no_hut')
+    default_spritelayout = 'smithy_forge_spritelayout_1',
+    layout = [(0, 0, 'smithy_forge_tile', 'smithy_forge_spritelayout_2'),
+              (1, 0, 'smithy_forge_tile', 'smithy_forge_spritelayout_1'),
     ]
 )
 

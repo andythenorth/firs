@@ -9,54 +9,23 @@
 
 #define THIS_ID(...) ${industry.id}_ ## __VA_ARGS__
 
-spriteset(THIS_ID(spriteset_1)) {
-	tmpl_building_sprite_filename(10, 10, 80, -49, "sprites/graphics/industries/smithy_forge.png")
-	tmpl_building_sprite_filename(10, 10, 80, -49, "sprites/graphics/industries/smithy_forge_snow.png")
-}
+${industry.get_spritesets()}
 
-spriteset(THIS_ID(spriteset_2)) {
-	tmpl_building_sprite_filename(80, 10, 80, -49, "sprites/graphics/industries/smithy_forge.png")
-	tmpl_building_sprite_filename(80, 10, 80, -49, "sprites/graphics/industries/smithy_forge_snow.png")
-}
+${industry.get_spritelayouts()}
 
-spriteset(THIS_ID(spriteset_3)) {
-	tmpl_building_sprite_filename(150, 10, 60, -29, "sprites/graphics/industries/smithy_forge.png")
-	tmpl_building_sprite_filename(150, 10, 60, -29, "sprites/graphics/industries/smithy_forge_snow.png")
-}
+${industry.get_industry_layouts_as_graphic_switches()}
 
-SPRITELAYOUT_NORMAL_SNOW_BEGIN(THIS_ID(spritelayout_1), 2022, 2022, THIS_ID(spriteset_1), 48)
-	building {
-		sprite: THIS_ID(spriteset_3);
-		recolour_mode: RECOLOUR_REMAP;
-		palette: PALETTE_USE_DEFAULT;
-		hide_sprite: terrain_type != TILETYPE_SNOW;
-	}
-SPRITELAYOUT_END
-
-SPRITELAYOUT_NORMAL_SNOW_BEGIN(THIS_ID(spritelayout_2), 2022, 2022, THIS_ID(spriteset_2), 48)
-	building {
-		sprite: THIS_ID(spriteset_3);
-		recolour_mode: RECOLOUR_REMAP;
-		palette: PALETTE_USE_DEFAULT;
-		hide_sprite: terrain_type != TILETYPE_SNOW;
-	}
-SPRITELAYOUT_END
-
-
-switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout), relative_pos) {
-	relative_coord(0, 0): THIS_ID(spritelayout_2);
-	THIS_ID(spritelayout_1);
-}
+${industry.get_fence_switches()}
 
 /* *************************************************
  * Definition of the industry tile and its callbacks
  * *************************************************/
 
 TILE_DISALLOW_NEARBY_CLASS(tile_nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
-TILE_ALLOW_PLAYER         (tile_player_check,                                                            THIS_ID(tile_nearby_industry))
-TILE_DISALLOW_SLOPES      (tile_location_check,                       CB_RESULT_LOCATION_DISALLOW, THIS_ID(tile_player_check))
+TILE_ALLOW_PLAYER         (tile_player_check, ${industry.id}_tile_nearby_industry)
+TILE_DISALLOW_SLOPES      (tile_location_check, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_tile_player_check)
 
-item(FEAT_INDUSTRYTILES, THIS_ID(tile), TILE_FORGE_1) {
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile, TILE_FORGE_1) {
 	property {
 		substitute: 0;
 		accepted_cargos: [[STEL, 8]];
@@ -64,8 +33,8 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile), TILE_FORGE_1) {
 	}
 
 	graphics {
-		tile_check:   THIS_ID(tile_location_check);
-		THIS_ID(layout);
+		tile_check:   ${industry.id}_tile_location_check;
+		${industry.id}_tile_fences;
 	}
 }
 
@@ -73,10 +42,7 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile), TILE_FORGE_1) {
  * Definition of the industry layouts
  * *************************************************/
 
-tilelayout tilelayout_smithy_forge_1 {
-	0, 0: THIS_ID(tile);
-	1, 0: THIS_ID(tile);
-}
+${industry.get_industry_layouts_as_tilelayouts()}
 
 /* *************************************************
  * Definition of the industry
@@ -101,9 +67,9 @@ tilelayout tilelayout_smithy_forge_1 {
 
 
 CHECK_INCOMPATIBLE  (smithy_forge,  56, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
-CHECK_FOUNDER       (THIS_ID(smithy_forge))
+CHECK_FOUNDER       (${industry.id}_smithy_forge)
 
-SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
+SWITCH_COLOUR_SCHEME1(${industry.id}_colour)
 
 #include "../templates/produce_secondary.pnml"
 #include "../templates/check_secondary_production_level.pnml"
@@ -116,9 +82,7 @@ SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
 item(FEAT_INDUSTRIES, smithy_forge, IND_SMITHYFORGE_ID) {
 	property {
 		substitute:             0;
-		layouts: [
-				tilelayout_smithy_forge_1
-			];
+		layouts: [${industry.get_industry_layouts_as_property()}];
 		life_type:              IND_LIFE_TYPE_PROCESSING;
 		closure_msg:            TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS;
 		prod_increase_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL;
@@ -143,14 +107,14 @@ item(FEAT_INDUSTRIES, smithy_forge, IND_SMITHYFORGE_ID) {
 		spec_flags:             bitmask(IND_FLAG_ONLY_IN_TOWNS);
 	}
 	graphics {
-		produce_cargo_arrival:   THIS_ID(produce);
-		construction_probability:THIS_ID(check_availability);
-		location_check:          THIS_ID(check_location);
-		monthly_prod_change:     THIS_ID(check_production_level);
-		random_prod_change:      THIS_ID(check_closure);
-		extra_text_industry:     THIS_ID(extra_text);
+		produce_cargo_arrival:   ${industry.id}_produce;
+		construction_probability:${industry.id}_check_availability;
+		location_check:          ${industry.id}_check_location;
+		monthly_prod_change:     ${industry.id}_check_production_level;
+		random_prod_change:      ${industry.id}_check_closure;
+		extra_text_industry:     ${industry.id}_extra_text;
 		extra_text_fund:         return string(STR_FUND_AVAILABLE_UNTIL, THIS_MAX_YEAR);
-		colour:                  THIS_ID(colour);
+		colour:                  ${industry.id}_colour;
 	}
 }
 
