@@ -7,21 +7,21 @@
 
 #include "../templates/spritelayout_templates.pnml"
 
-#define THIS_ID(...) smithy_forge ## __VA_ARGS__
+#define THIS_ID(...) ${industry.id}_ ## __VA_ARGS__
 
 spriteset(THIS_ID(spriteset_1)) {
-	tmpl_building_sprite_filename(10, 10, 80, -49, "sprites/graphics/industries/forge.png")
-	tmpl_building_sprite_filename(10, 10, 80, -49, "sprites/graphics/industries/forge_snow.png")
+	tmpl_building_sprite_filename(10, 10, 80, -49, "sprites/graphics/industries/smithy_forge.png")
+	tmpl_building_sprite_filename(10, 10, 80, -49, "sprites/graphics/industries/smithy_forge_snow.png")
 }
 
 spriteset(THIS_ID(spriteset_2)) {
-	tmpl_building_sprite_filename(80, 10, 80, -49, "sprites/graphics/industries/forge.png")
-	tmpl_building_sprite_filename(80, 10, 80, -49, "sprites/graphics/industries/forge_snow.png")
+	tmpl_building_sprite_filename(80, 10, 80, -49, "sprites/graphics/industries/smithy_forge.png")
+	tmpl_building_sprite_filename(80, 10, 80, -49, "sprites/graphics/industries/smithy_forge_snow.png")
 }
 
 spriteset(THIS_ID(spriteset_3)) {
-	tmpl_building_sprite_filename(150, 10, 60, -29, "sprites/graphics/industries/forge.png")
-	tmpl_building_sprite_filename(150, 10, 60, -29, "sprites/graphics/industries/forge_snow.png")
+	tmpl_building_sprite_filename(150, 10, 60, -29, "sprites/graphics/industries/smithy_forge.png")
+	tmpl_building_sprite_filename(150, 10, 60, -29, "sprites/graphics/industries/smithy_forge_snow.png")
 }
 
 SPRITELAYOUT_NORMAL_SNOW_BEGIN(THIS_ID(spritelayout_1), 2022, 2022, THIS_ID(spriteset_1), 48)

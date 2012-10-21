@@ -25,6 +25,7 @@ from industries import hotel
 from industries import oil_wells
 from industries import recycling_depot
 from industries import recycling_plant
+from industries import smithy_forge
 
 # industries with only partial conversion to python templating, mostly still cpp
 from industries import coal_mine
