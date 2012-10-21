@@ -19,6 +19,7 @@ from industries import biorefinery
 from industries import bauxite_mine
 from industries import dredging_site
 from industries import food_market
+from industries import glass_works
 from industries import grain_mill
 from industries import hotel
 from industries import oil_wells

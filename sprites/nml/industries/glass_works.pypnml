@@ -5,7 +5,7 @@
  * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#define THIS_ID(...) glass_works ## __VA_ARGS__
+#define THIS_ID(...) ${industry.id} ## __VA_ARGS__
 
 spriteset(THIS_ID(spriteset_ground), "sprites/graphics/industries/groundtiles.png") {
 	tmpl_ground_tile(150, 10)
@@ -13,18 +13,18 @@ spriteset(THIS_ID(spriteset_ground), "sprites/graphics/industries/groundtiles.pn
 }
 
 spriteset(THIS_ID(spriteset_1)) {
-	tmpl_building_sprite_filename(10, 60, 90, -59, "sprites/graphics/industries/glassworks.png")
-	tmpl_building_sprite_filename(10, 60, 90, -59, "sprites/graphics/industries/glassworks_snow.png")
+	tmpl_building_sprite_filename(10, 60, 90, -59, "sprites/graphics/industries/glass_works.png")
+	tmpl_building_sprite_filename(10, 60, 90, -59, "sprites/graphics/industries/glass_works_snow.png")
 }
 
 spriteset(THIS_ID(spriteset_2)) {
-	tmpl_building_sprite_filename(80, 60, 90, -71, "sprites/graphics/industries/glassworks.png")
-	tmpl_building_sprite_filename(80, 60, 90, -71, "sprites/graphics/industries/glassworks_snow.png")
+	tmpl_building_sprite_filename(80, 60, 90, -71, "sprites/graphics/industries/glass_works.png")
+	tmpl_building_sprite_filename(80, 60, 90, -71, "sprites/graphics/industries/glass_works_snow.png")
 }
 
 spriteset(THIS_ID(spriteset_3)) {
-	tmpl_building_sprite_filename(150, 60, 90, -59, "sprites/graphics/industries/glassworks.png")
-	tmpl_building_sprite_filename(150, 60, 90, -59, "sprites/graphics/industries/glassworks_snow.png")
+	tmpl_building_sprite_filename(150, 60, 90, -59, "sprites/graphics/industries/glass_works.png")
+	tmpl_building_sprite_filename(150, 60, 90, -59, "sprites/graphics/industries/glass_works_snow.png")
 }
 
 SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_1), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_1), 12)
