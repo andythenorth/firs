@@ -5,7 +5,7 @@
  * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS industry set. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#define THIS_ID(...) plastics_plant ## __VA_ARGS__
+#define THIS_ID(...) ${industry.id} ## __VA_ARGS__
 
 /* common ground sprite */
 spriteset(THIS_ID(spriteset_ground), "sprites/graphics/industries/groundtiles.png") {
@@ -18,48 +18,48 @@ spriteset(THIS_ID(spriteset_ground), "sprites/graphics/industries/groundtiles.pn
  * *************************************************/
 
 spriteset(THIS_ID(spriteset_1)) {
-	tmpl_building_sprite_filename(10, 10, 62, -31, "sprites/graphics/industries/plasticsplant.png")
-	tmpl_building_sprite_filename(10, 10, 62, -31, "sprites/graphics/industries/plasticsplant_snow.png")
+	tmpl_building_sprite_filename(10, 10, 62, -31, "sprites/graphics/industries/plastics_plant.png")
+	tmpl_building_sprite_filename(10, 10, 62, -31, "sprites/graphics/industries/plastics_plant_snow.png")
 }
 
 spriteset(THIS_ID(spriteset_2)) {
-	tmpl_building_sprite_filename(80, 10, 62, -31, "sprites/graphics/industries/plasticsplant.png")
-	tmpl_building_sprite_filename(80, 10, 62, -31, "sprites/graphics/industries/plasticsplant_snow.png")
+	tmpl_building_sprite_filename(80, 10, 62, -31, "sprites/graphics/industries/plastics_plant.png")
+	tmpl_building_sprite_filename(80, 10, 62, -31, "sprites/graphics/industries/plastics_plant_snow.png")
 }
 
 spriteset(THIS_ID(spriteset_3)) {
-	tmpl_building_sprite_filename(150, 10, 55, -24, "sprites/graphics/industries/plasticsplant.png")
-	tmpl_building_sprite_filename(150, 10, 55, -24, "sprites/graphics/industries/plasticsplant_snow.png")
+	tmpl_building_sprite_filename(150, 10, 55, -24, "sprites/graphics/industries/plastics_plant.png")
+	tmpl_building_sprite_filename(150, 10, 55, -24, "sprites/graphics/industries/plastics_plant_snow.png")
 }
 
 spriteset(THIS_ID(spriteset_4)) {
-	tmpl_building_sprite_filename(220, 10, 55, -24, "sprites/graphics/industries/plasticsplant.png")
-	tmpl_building_sprite_filename(220, 10, 55, -24, "sprites/graphics/industries/plasticsplant_snow.png")
+	tmpl_building_sprite_filename(220, 10, 55, -24, "sprites/graphics/industries/plastics_plant.png")
+	tmpl_building_sprite_filename(220, 10, 55, -24, "sprites/graphics/industries/plastics_plant_snow.png")
 }
 
 spriteset(THIS_ID(spriteset_5)) {
-	tmpl_building_sprite_filename(290, 10, 55, -24, "sprites/graphics/industries/plasticsplant.png")
-	tmpl_building_sprite_filename(290, 10, 55, -24, "sprites/graphics/industries/plasticsplant_snow.png")
+	tmpl_building_sprite_filename(290, 10, 55, -24, "sprites/graphics/industries/plastics_plant.png")
+	tmpl_building_sprite_filename(290, 10, 55, -24, "sprites/graphics/industries/plastics_plant_snow.png")
 }
 
 spriteset(THIS_ID(spriteset_6)) {
-	tmpl_building_sprite_filename(360, 10, 87, -56, "sprites/graphics/industries/plasticsplant.png")
-	tmpl_building_sprite_filename(360, 10, 87, -56, "sprites/graphics/industries/plasticsplant_snow.png")
+	tmpl_building_sprite_filename(360, 10, 87, -56, "sprites/graphics/industries/plastics_plant.png")
+	tmpl_building_sprite_filename(360, 10, 87, -56, "sprites/graphics/industries/plastics_plant_snow.png")
 }
 
 spriteset(THIS_ID(spriteset_7)) {
-	tmpl_building_sprite_filename(430, 10, 87, -56, "sprites/graphics/industries/plasticsplant.png")
-	tmpl_building_sprite_filename(430, 10, 87, -56, "sprites/graphics/industries/plasticsplant_snow.png")
+	tmpl_building_sprite_filename(430, 10, 87, -56, "sprites/graphics/industries/plastics_plant.png")
+	tmpl_building_sprite_filename(430, 10, 87, -56, "sprites/graphics/industries/plastics_plant_snow.png")
 }
 
 spriteset(THIS_ID(spriteset_8)) {
-	tmpl_building_sprite_filename(500, 10, 87, -56, "sprites/graphics/industries/plasticsplant.png")
-	tmpl_building_sprite_filename(500, 10, 87, -56, "sprites/graphics/industries/plasticsplant_snow.png")
+	tmpl_building_sprite_filename(500, 10, 87, -56, "sprites/graphics/industries/plastics_plant.png")
+	tmpl_building_sprite_filename(500, 10, 87, -56, "sprites/graphics/industries/plastics_plant_snow.png")
 }
 
 spriteset(THIS_ID(spriteset_9)) {
-	tmpl_building_sprite_filename(570, 10, 55, -24, "sprites/graphics/industries/plasticsplant.png")
-	tmpl_building_sprite_filename(570, 10, 55, -24, "sprites/graphics/industries/plasticsplant_snow.png")
+	tmpl_building_sprite_filename(570, 10, 55, -24, "sprites/graphics/industries/plastics_plant.png")
+	tmpl_building_sprite_filename(570, 10, 55, -24, "sprites/graphics/industries/plastics_plant_snow.png")
 }
 
 SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_store_front), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_1), 32)

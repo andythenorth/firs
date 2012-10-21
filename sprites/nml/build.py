@@ -23,6 +23,7 @@ from industries import glass_works
 from industries import grain_mill
 from industries import hotel
 from industries import oil_wells
+from industries import plastics_plant
 from industries import recycling_depot
 from industries import recycling_plant
 from industries import sheep_farm
