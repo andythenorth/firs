@@ -29,43 +29,58 @@ spriteset_ground_overlay = industry.add_spriteset(
 )
 spriteset_1 = industry.add_spriteset(
     id = 'stockyard_spriteset_1',
-    sprites = [(10, 10, 64, 50, -31, -23)],
-    zextent = 48
+    sprites = [(10, 10, 64, 44, -31, -13)],
+    zextent = 32
 )
 spriteset_2 = industry.add_spriteset(
     id = 'stockyard_spriteset_2',
-    sprites = [(80, 10, 64, 50, -31, -25)],
-    zextent = 48
+    sprites = [(80, 10, 64, 74, -31, -43)],
+    zextent = 32
 )
 spriteset_3 = industry.add_spriteset(
     id = 'stockyard_spriteset_3',
-    sprites = [(150, 10, 64, 88, -31, -56)],
-    zextent = 48
+    sprites = [(150, 10, 64, 88, -31, -57)],
+    zextent = 32
 )
 spriteset_4 = industry.add_spriteset(
     id = 'stockyard_spriteset_4',
-    sprites = [(220, 10, 64, 88, -31, -58)],
-    zextent = 48
+    sprites = [(220, 10, 64, 85, -31, -54)],
+    zextent = 32
 )
 spriteset_5 = industry.add_spriteset(
     id = 'stockyard_spriteset_5',
-    sprites = [(290, 10, 64, 88, -31, -58)],
-    zextent = 48
+    sprites = [(290, 10, 64, 104, -31, -73)],
+    zextent = 96
 )
 spriteset_6 = industry.add_spriteset(
     id = 'stockyard_spriteset_6',
-    sprites = [(360, 10, 64, 88, -31, -58)],
-    zextent = 48
+    sprites = [(360, 10, 64, 91, -31, -60)],
+    zextent = 64
 )
 spriteset_7 = industry.add_spriteset(
     id = 'stockyard_spriteset_7',
-    sprites = [(430, 10, 64, 88, -31, -58)],
-    zextent = 48
+    sprites = [(430, 10, 64, 98, -31, -67)],
+    zextent = 64
 )
 spriteset_8 = industry.add_spriteset(
     id = 'stockyard_spriteset_8',
-    sprites = [(500, 10, 64, 88, -31, -58)],
+    sprites = [(500, 10, 64, 54, -31, -23)],
     zextent = 48
+)
+spriteset_9 = industry.add_spriteset(
+    id = 'stockyard_spriteset_9',
+    sprites = [(570, 10, 64, 76, -31, -45)],
+    zextent = 48
+)
+spriteset_10 = industry.add_spriteset(
+    id = 'stockyard_spriteset_10',
+    sprites = [(640, 10, 64, 32, -31, -1)],
+    zextent = 48
+)
+spriteset_11 = industry.add_spriteset(
+    id = 'stockyard_spriteset_11',
+    sprites = [(710, 10, 64, 49, -31, -18)],
+    zextent = 8
 )
 
 industry.add_spritelayout(
@@ -115,7 +130,7 @@ industry.add_spritelayout(
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_7],
-    fences = []
+    fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
     id = 'stockyard_spritelayout_8',
@@ -128,25 +143,49 @@ industry.add_spritelayout(
     id = 'stockyard_spritelayout_9',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
-    building_sprites = [],
+    building_sprites = [spriteset_9],
     fences = ['nw','ne','se','sw']
+)
+industry.add_spritelayout(
+    id = 'stockyard_spritelayout_10',
+    ground_sprite = spriteset_ground,
+    ground_overlay = spriteset_ground_overlay,
+    building_sprites = [spriteset_10],
+    fences = ['nw','ne','se','sw']
+)
+industry.add_spritelayout(
+    id = 'stockyard_spritelayout_11',
+    ground_sprite = spriteset_ground,
+    ground_overlay = spriteset_ground_overlay,
+    building_sprites = [spriteset_11],
+    fences = ['nw','ne','se','sw']
+)
+industry.add_spritelayout(
+    id = 'stockyard_spritelayout_12',
+    ground_sprite = spriteset_ground,
+    ground_overlay = spriteset_ground_overlay,
+    building_sprites = [],
+    fences = ['nw','ne','se']
 )
 
 industry.add_industry_layout(
     id = 'stockyard_industry_layout_1',
-    default_spritelayout = 'stockyard_spritelayout_9',
-    layout = [(0, 0, 'stockyard_tile', 'stockyard_spritelayout_4'),
-              (0, 1, 'stockyard_tile', 'stockyard_spritelayout_4'),
-              (0, 2, 'stockyard_tile', 'stockyard_spritelayout_4'),
-              (1, 0, 'stockyard_tile', 'stockyard_spritelayout_8'),
-              (1, 1, 'stockyard_tile', 'stockyard_spritelayout_3'),
-              (1, 2, 'stockyard_tile', 'stockyard_spritelayout_1'),
-              (2, 0, 'stockyard_tile', 'stockyard_spritelayout_6'),
-              (2, 1, 'stockyard_tile', 'stockyard_spritelayout_9'),
-              (2, 2, 'stockyard_tile', 'stockyard_spritelayout_2'),
-              (3, 0, 'stockyard_tile', 'stockyard_spritelayout_7'),
-              (3, 1, 'stockyard_tile', 'stockyard_spritelayout_7'),
-              (3, 2, 'stockyard_tile', 'stockyard_spritelayout_5')
+    default_spritelayout = 'stockyard_spritelayout_11',
+    layout = [(0, 0, 'stockyard_tile', 'stockyard_spritelayout_12'),
+              (0, 1, 'stockyard_tile', 'stockyard_spritelayout_12'),
+              (0, 3, 'stockyard_tile', 'stockyard_spritelayout_12'),
+              (1, 0, 'stockyard_tile', 'stockyard_spritelayout_12'),
+              (1, 1, 'stockyard_tile', 'stockyard_spritelayout_8'),
+              (1, 2, 'stockyard_tile', 'stockyard_spritelayout_9'),
+              (1, 3, 'stockyard_tile', 'stockyard_spritelayout_10'),
+              (3, 0, 'stockyard_tile', 'stockyard_spritelayout_12'),
+              (3, 1, 'stockyard_tile', 'stockyard_spritelayout_5'),
+              (3, 2, 'stockyard_tile', 'stockyard_spritelayout_6'),
+              (3, 3, 'stockyard_tile', 'stockyard_spritelayout_7'),
+              (4, 0, 'stockyard_tile', 'stockyard_spritelayout_1'),
+              (4, 1, 'stockyard_tile', 'stockyard_spritelayout_2'),
+              (4, 2, 'stockyard_tile', 'stockyard_spritelayout_3'),
+              (4, 3, 'stockyard_tile', 'stockyard_spritelayout_4'),
     ]
 )
 
