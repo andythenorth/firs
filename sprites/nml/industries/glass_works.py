@@ -17,46 +17,112 @@ When a string is expected are basically two choices: provide a string directly, 
 
 industry = Industry(id='glass_works')
 
-industry.add_tile(id='food_market_tile')
+industry.add_tile(id='glass_works_tile')
 
 spriteset_ground = industry.add_spriteset(
-    id = 'food_market_spriteset_ground',
-    type='slab',
+    id = 'glass_works_spriteset_ground',
+    type='cobble',
 )
-spriteset_ground_overlay = industry.add_spriteset(
-    id = 'food_market_spriteset_ground_overlay',
+spriteset_ground_overlay_1 = industry.add_spriteset(
+    id = 'glass_works_spriteset_ground_overlay_1',
     sprites = [(10, 10, 64, 31, -31, 0)],
 )
+spriteset_ground_overlay_2 = industry.add_spriteset(
+    id = 'glass_works_spriteset_ground_overlay_2',
+    sprites = [(80, 10, 64, 31, -31, 0)],
+)
+spriteset_ground_overlay_3 = industry.add_spriteset(
+    id = 'glass_works_spriteset_ground_overlay_3',
+    sprites = [(150, 10, 64, 31, -31, 0)],
+)
+spriteset_ground_overlay_4 = industry.add_spriteset(
+    id = 'glass_works_spriteset_ground_overlay_4',
+    sprites = [(220, 10, 64, 31, -31, 0)],
+)
 spriteset_1 = industry.add_spriteset(
-    id = 'food_market_spriteset',
-    sprites = [(10, 60, 64, 36, -31, -4)]
+    id = 'glass_works_spriteset_1',
+    sprites = [(10, 60, 64, 90, -31, -59)],
+    zextent = 12
 )
-sprite_tree_1 = industry.add_sprite(
-    sprite_number = 'nearby_tile_terrain_type(0, 0) != TILETYPE_SNOW ? market_tree : MARKET_TREE_SNOW', # defined in defines.pnml, to permit possibility of selecting a different sprite if a tree grf is loaded
-    xoffset= 11,
-    yoffset= 1,
-    xextent= 6,
-    yextent= 6
+spriteset_2 = industry.add_spriteset(
+    id = 'glass_works_spriteset_2',
+    sprites = [(80, 60, 64, 90, -31, -71)],
+    zextent = 12
 )
-sprite_tree_2 = industry.add_sprite(
-    sprite_number = 'nearby_tile_terrain_type(0, 0) != TILETYPE_SNOW ? market_tree : MARKET_TREE_SNOW', # defined in defines.pnml, to permit possibility of selecting a different sprite if a tree grf is loaded
-    xoffset= 11,
-    yoffset= 6,
-    xextent= 6,
-    yextent= 6
+spriteset_3 = industry.add_spriteset(
+    id = 'glass_works_spriteset_3',
+    sprites = [(150, 60, 64, 90, -31, -59)],
+    zextent = 12
 )
 
 industry.add_spritelayout(
-    id = 'food_market_spritelayout',
+    id = 'glass_works_spritelayout_1',
     ground_sprite = spriteset_ground,
-    ground_overlay = spriteset_ground_overlay,
-    building_sprites = [spriteset_1, sprite_tree_1, sprite_tree_2]
+    ground_overlay = spriteset_ground_overlay_1,
+    building_sprites = [spriteset_1],
+    fences = ['nw','ne','se','sw']
 )
+industry.add_spritelayout(
+    id = 'glass_works_spritelayout_2',
+    ground_sprite = spriteset_ground,
+    ground_overlay = spriteset_ground_overlay_2,
+    building_sprites = [spriteset_2],
+    fences = ['nw','ne','se','sw']
+)
+industry.add_spritelayout(
+    id = 'glass_works_spritelayout_3',
+    ground_sprite = spriteset_ground,
+    ground_overlay = spriteset_ground_overlay_3,
+    building_sprites = [spriteset_3],
+    fences = ['nw','ne','se','sw']
+)
+industry.add_spritelayout(
+    id = 'glass_works_spritelayout_4',
+    ground_sprite = spriteset_ground,
+    ground_overlay = spriteset_ground_overlay_4,
+    building_sprites = [],
+    fences = ['nw','ne','se','sw']
+)
+
 industry.add_industry_layout(
-    id = 'food_market_industry_layout',
-    default_spritelayout = 'food_market_spritelayout',
-    layout = [(0, 0, 'food_market_tile', 'food_market_spritelayout')
+    id = 'glass_works_industry_layout_1',
+    default_spritelayout = 'glass_works_spritelayout_4',
+    layout = [(0, 0, 'glass_works_tile', 'glass_works_spritelayout_4'),
+              (0, 1, 'glass_works_tile', 'glass_works_spritelayout_3'),
+              (1, 0, 'glass_works_tile', 'glass_works_spritelayout_1'),
+              (1, 1, 'glass_works_tile', 'glass_works_spritelayout_2'),
     ]
 )
+industry.add_industry_layout(
+    id = 'glass_works_industry_layout_2',
+    default_spritelayout = 'glass_works_spritelayout_4',
+    layout = [(0, 0, 'glass_works_tile', 'glass_works_spritelayout_4'),
+              (0, 1, 'glass_works_tile', 'glass_works_spritelayout_3'),
+              (1, 0, 'glass_works_tile', 'glass_works_spritelayout_1'),
+              (1, 1, 'glass_works_tile', 'glass_works_spritelayout_2'),
+              (2, 0, 'glass_works_tile', 'glass_works_spritelayout_4'),
+              (2, 1, 'glass_works_tile', 'glass_works_spritelayout_3'),
+              (3, 0, 'glass_works_tile', 'glass_works_spritelayout_1'),
+              (3, 1, 'glass_works_tile', 'glass_works_spritelayout_2'),
+    ]
+)
+industry.add_industry_layout(
+    id = 'glass_works_industry_layout_3',
+    default_spritelayout = 'glass_works_spritelayout_4',
+    layout = [(0, 0, 'glass_works_tile', 'glass_works_spritelayout_4'),
+              (0, 1, 'glass_works_tile', 'glass_works_spritelayout_3'),
+              (0, 2, 'glass_works_tile', 'glass_works_spritelayout_4'),
+              (0, 3, 'glass_works_tile', 'glass_works_spritelayout_3'),
+              (1, 0, 'glass_works_tile', 'glass_works_spritelayout_1'),
+              (1, 1, 'glass_works_tile', 'glass_works_spritelayout_2'),
+              (1, 2, 'glass_works_tile', 'glass_works_spritelayout_1'),
+              (1, 3, 'glass_works_tile', 'glass_works_spritelayout_2'),
+              (2, 1, 'glass_works_tile', 'glass_works_spritelayout_4'),
+              (2, 2, 'glass_works_tile', 'glass_works_spritelayout_3'),
+              (3, 1, 'glass_works_tile', 'glass_works_spritelayout_1'),
+              (3, 2, 'glass_works_tile', 'glass_works_spritelayout_2')
+    ]
+)
+
 # Templating
 industry.render_and_save_pnml()

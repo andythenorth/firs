@@ -5,94 +5,25 @@
  * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#define THIS_ID(...) ${industry.id} ## __VA_ARGS__
+#define THIS_ID(...) ${industry.id}_ ## __VA_ARGS__
 
-spriteset(THIS_ID(spriteset_ground), "sprites/graphics/industries/groundtiles.png") {
-	tmpl_ground_tile(150, 10)
-	tmpl_ground_tile(150, 10)
-}
+${industry.get_spritesets()}
 
-spriteset(THIS_ID(spriteset_1)) {
-	tmpl_building_sprite_filename(10, 60, 90, -59, "sprites/graphics/industries/glass_works.png")
-	tmpl_building_sprite_filename(10, 60, 90, -59, "sprites/graphics/industries/glass_works_snow.png")
-}
+${industry.get_spritelayouts()}
 
-spriteset(THIS_ID(spriteset_2)) {
-	tmpl_building_sprite_filename(80, 60, 90, -71, "sprites/graphics/industries/glass_works.png")
-	tmpl_building_sprite_filename(80, 60, 90, -71, "sprites/graphics/industries/glass_works_snow.png")
-}
+${industry.get_industry_layouts_as_graphic_switches()}
 
-spriteset(THIS_ID(spriteset_3)) {
-	tmpl_building_sprite_filename(150, 60, 90, -59, "sprites/graphics/industries/glass_works.png")
-	tmpl_building_sprite_filename(150, 60, 90, -59, "sprites/graphics/industries/glass_works_snow.png")
-}
-
-SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_1), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_1), 12)
-
-SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_2), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_2), 12)
-
-SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_3), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_3), 12)
-
-spritelayout THIS_ID(spritelayout_4) {
-	ground {
-		sprite: THIS_ID(spriteset_ground(terrain_type == TILETYPE_SNOW));
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-	}
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_1), relative_pos) {
-	relative_coord(0, 0): THIS_ID(spritelayout_4);
-	relative_coord(0, 1): THIS_ID(spritelayout_3);
-	relative_coord(1, 0): THIS_ID(spritelayout_1);
-	relative_coord(1, 1): THIS_ID(spritelayout_2);
-	THIS_ID(spritelayout_4);
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_2), relative_pos) {
-	relative_coord(0, 0): THIS_ID(spritelayout_4);
-	relative_coord(0, 1): THIS_ID(spritelayout_3);
-	relative_coord(1, 0): THIS_ID(spritelayout_1);
-	relative_coord(1, 1): THIS_ID(spritelayout_2);
-	relative_coord(2, 0): THIS_ID(spritelayout_4);
-	relative_coord(2, 1): THIS_ID(spritelayout_3);
-	relative_coord(3, 0): THIS_ID(spritelayout_1);
-	relative_coord(3, 1): THIS_ID(spritelayout_2);
-	THIS_ID(spritelayout_4);
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_3), relative_pos) {
-	relative_coord(0, 0): THIS_ID(spritelayout_4);
-	relative_coord(0, 1): THIS_ID(spritelayout_3);
-	relative_coord(0, 2): THIS_ID(spritelayout_4);
-	relative_coord(0, 3): THIS_ID(spritelayout_3);
-	relative_coord(1, 0): THIS_ID(spritelayout_1);
-	relative_coord(1, 1): THIS_ID(spritelayout_2);
-	relative_coord(1, 2): THIS_ID(spritelayout_1);
-	relative_coord(1, 3): THIS_ID(spritelayout_2);
-	relative_coord(2, 1): THIS_ID(spritelayout_4);
-	relative_coord(2, 2): THIS_ID(spritelayout_3);
-	relative_coord(3, 1): THIS_ID(spritelayout_1);
-	relative_coord(3, 2): THIS_ID(spritelayout_2);
-	THIS_ID(spritelayout_4);
-}
-
-switch(FEAT_INDUSTRYTILES, PARENT, THIS_ID(tile1_layout), layout_num) {
-	1: THIS_ID(layout_1);
-	2: THIS_ID(layout_2);
-	3: THIS_ID(layout_3);
-	THIS_ID(spritelayout_1);
-}
+${industry.get_fence_switches()}
 
 /* *************************************************
  * Definition of the industry tile and its callbacks
  * *************************************************/
 
 TILE_DISALLOW_NEARBY_CLASS(tile1_nearby_industry,  TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
-TILE_ALLOW_PLAYER         (tile1_player_check,                                                             THIS_ID(tile1_nearby_industry))
-TILE_DISALLOW_SLOPES      (tile1_location_check,                        CB_RESULT_LOCATION_DISALLOW, THIS_ID(tile1_player_check))
+TILE_ALLOW_PLAYER         (tile1_player_check,                                                             ${industry.id}_tile1_nearby_industry)
+TILE_DISALLOW_SLOPES      (tile1_location_check,                        CB_RESULT_LOCATION_DISALLOW, ${industry.id}_tile1_player_check)
 
-item(FEAT_INDUSTRYTILES, THIS_ID(tile), TILE_GLASSWORKS_1) {
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile, TILE_GLASSWORKS_1) {
 	property {
 		substitute:       0;
 		accepted_cargos:  [[SAND, 8], [RFPR, 8]];
@@ -100,8 +31,8 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile), TILE_GLASSWORKS_1) {
 	}
 
 	graphics {
-		tile_check:   THIS_ID(tile1_location_check);
-		THIS_ID(tile1_layout);
+		tile_check:   ${industry.id}_tile1_location_check;
+		${industry.id}_tile_fences;
 	}
 }
 
@@ -109,38 +40,8 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile), TILE_GLASSWORKS_1) {
  * Definition of the industry layouts
  * *************************************************/
 
-tilelayout tilelayout_glass_works_1 {
-	0, 0: THIS_ID(tile);
-	0, 1: THIS_ID(tile);
-	1, 0: THIS_ID(tile);
-	1, 1: THIS_ID(tile);
-}
+${industry.get_industry_layouts_as_tilelayouts()}
 
-tilelayout tilelayout_glass_works_2 {
-	0, 0: THIS_ID(tile);
-	0, 1: THIS_ID(tile);
-	1, 0: THIS_ID(tile);
-	1, 1: THIS_ID(tile);
-	2, 0: THIS_ID(tile);
-	2, 1: THIS_ID(tile);
-	3, 0: THIS_ID(tile);
-	3, 1: THIS_ID(tile);
-}
-
-tilelayout tilelayout_glass_works_3 {
-	0, 0: THIS_ID(tile);
-	0, 1: THIS_ID(tile);
-	0, 2: THIS_ID(tile);
-	0, 3: THIS_ID(tile);
-	1, 0: THIS_ID(tile);
-	1, 1: THIS_ID(tile);
-	1, 2: THIS_ID(tile);
-	1, 3: THIS_ID(tile);
-	2, 1: THIS_ID(tile);
-	2, 2: THIS_ID(tile);
-	3, 1: THIS_ID(tile);
-	3, 2: THIS_ID(tile);
-}
 
 /* *************************************************
  * Definition of the industry
@@ -161,10 +62,10 @@ tilelayout tilelayout_glass_works_3 {
 #define THIS_STR_EXTRA_TEXT       STR_EXTRA_GLASS_WORKS
 
 CHECK_INCOMPATIBLE  (glass_works,   56, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
-CHECK_INCOMPATIBLE  (quarry,        16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(glass_works))
-CHECK_FOUNDER       (THIS_ID(quarry))
+CHECK_INCOMPATIBLE  (quarry,        16, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_glass_works)
+CHECK_FOUNDER       (${industry.id}_quarry)
 
-SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
+SWITCH_COLOUR_SCHEME1(${industry.id}_colour)
 
 #include "../templates/produce_secondary.pnml"
 #include "../templates/check_secondary_production_level.pnml"
@@ -177,11 +78,7 @@ SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
 item(FEAT_INDUSTRIES, glass_works, IND_GLASSWORKS_ID) {
 	property {
 		substitute: 0;
-		layouts: [
-				tilelayout_glass_works_1,
-				tilelayout_glass_works_2,
-				tilelayout_glass_works_3
-			];
+		layouts: [${industry.get_industry_layouts_as_property()}];
 		life_type:              IND_LIFE_TYPE_PROCESSING;
 		closure_msg:            TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS;
 		prod_increase_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL;
@@ -206,13 +103,13 @@ item(FEAT_INDUSTRIES, glass_works, IND_GLASSWORKS_ID) {
 		spec_flags:             bitmask(IND_FLAG_MILITARY_HELICOPTER_CAN_EXPLODE);
 	}
 	graphics {
-		produce_cargo_arrival:   THIS_ID(produce);
-		construction_probability:THIS_ID(check_availability);
-		location_check:          THIS_ID(check_location);
-		monthly_prod_change:     THIS_ID(check_production_level);
-		random_prod_change:      THIS_ID(check_closure);
-		extra_text_industry:     THIS_ID(extra_text);
-		colour:                  THIS_ID(colour);
+		produce_cargo_arrival:   ${industry.id}_produce;
+		construction_probability:${industry.id}_check_availability;
+		location_check:          ${industry.id}_check_location;
+		monthly_prod_change:     ${industry.id}_check_production_level;
+		random_prod_change:      ${industry.id}_check_closure;
+		extra_text_industry:     ${industry.id}_extra_text;
+		colour:                  ${industry.id}_colour;
 	}
 }
 
