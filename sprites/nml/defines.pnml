@@ -18,8 +18,9 @@ if (climate == CLIMATE_ARCTIC) { market_tree = MARKET_TREE_ARCTIC; }
 if (climate == CLIMATE_TROPICAL) { market_tree = MARKET_TREE_TROPICAL; }
 #define MARKET_TREE_SNOW 1793
 
-#define GROUNDTILE_MUD_TRACKS 2022
-#define GROUNDTILE_HALF_BROWN 3962
+#define GROUNDTILE_MUD_TRACKS     2022
+#define GROUNDTILE_SLABS          1420
+#define GROUNDTILE_HALF_BROWN     3962
 
 // used for secondary industry production
 #define PRODUCTION_SPAN 30

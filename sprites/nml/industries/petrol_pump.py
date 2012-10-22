@@ -19,44 +19,50 @@ industry = Industry(id='petrol_pump')
 
 industry.add_tile(id='petrol_pump_tile')
 
-spriteset_ground = industry.add_spriteset(
-    id = 'petrol_pump_spriteset_ground',
-    type='slab',
+sprite_ground = industry.add_sprite(
+    sprite_number = 'GROUNDTILE_SLABS',
+    sprite_number_snow = 'GROUNDTILE_SLABS',
 )
-spriteset_ground_overlay = industry.add_spriteset(
-    id = 'petrol_pump_spriteset_ground_overlay',
-    sprites = [(10, 10, 64, 31, -31, 0)],
+sprite_ground_overlay = industry.add_sprite(
+    sprite_number = 'GROUNDTILE_SLABS',
+    sprite_number_snow = 'GROUNDTILE_SLABS',
 )
 spriteset_1 = industry.add_spriteset(
-    id = 'petrol_pump_spriteset',
-    sprites = [(10, 60, 64, 36, -31, -4)]
+    id = 'petrol_pump_spriteset_1',
+    sprites = [(10, 60, 64, 59, -31, -28)]
 )
-sprite_tree_1 = industry.add_sprite(
-    sprite_number = 'nearby_tile_terrain_type(0, 0) != TILETYPE_SNOW ? market_tree : MARKET_TREE_SNOW', # defined in defines.pnml, to permit possibility of selecting a different sprite if a tree grf is loaded
-    xoffset= 11,
-    yoffset= 1,
-    xextent= 6,
-    yextent= 6
-)
-sprite_tree_2 = industry.add_sprite(
-    sprite_number = 'nearby_tile_terrain_type(0, 0) != TILETYPE_SNOW ? market_tree : MARKET_TREE_SNOW', # defined in defines.pnml, to permit possibility of selecting a different sprite if a tree grf is loaded
-    xoffset= 11,
-    yoffset= 6,
-    xextent= 6,
-    yextent= 6
+spriteset_2 = industry.add_spriteset(
+    id = 'petrol_pump_spriteset_2',
+    sprites = [(80, 60, 64, 59, -31, -28)]
 )
 
 industry.add_spritelayout(
-    id = 'petrol_pump_spritelayout',
-    ground_sprite = spriteset_ground,
-    ground_overlay = spriteset_ground_overlay,
-    building_sprites = [spriteset_1, sprite_tree_1, sprite_tree_2]
+    id = 'petrol_pump_spritelayout_1',
+    ground_sprite = sprite_ground,
+    ground_overlay = sprite_ground_overlay,
+    building_sprites = [spriteset_1]
 )
+industry.add_spritelayout(
+    id = 'petrol_pump_spritelayout_2',
+    ground_sprite = sprite_ground,
+    ground_overlay = sprite_ground_overlay,
+    building_sprites = [spriteset_2]
+)
+
 industry.add_industry_layout(
-    id = 'petrol_pump_industry_layout',
-    default_spritelayout = 'petrol_pump_spritelayout',
-    layout = [(0, 0, 'petrol_pump_tile', 'petrol_pump_spritelayout')
+    id = 'petrol_pump_industry_layout_1',
+    default_spritelayout = 'petrol_pump_spritelayout_1',
+    layout = [(0, 0, 'petrol_pump_tile', 'petrol_pump_spritelayout_1'),
+              (0, 1, 'petrol_pump_tile', 'petrol_pump_spritelayout_2')
     ]
 )
+industry.add_industry_layout(
+    id = 'petrol_pump_industry_layout_2',
+    default_spritelayout = 'petrol_pump_spritelayout_1',
+    layout = [(0, 0, 'petrol_pump_tile', 'petrol_pump_spritelayout_1'),
+              (1, 0, 'petrol_pump_tile', 'petrol_pump_spritelayout_2')
+    ]
+)
+
 # Templating
 industry.render_and_save_pnml()
