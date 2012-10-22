@@ -5,161 +5,36 @@
  * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS industry set. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#define THIS_ID(...) ${industry.id} ## __VA_ARGS__
+#define THIS_ID(...) ${industry.id}_ ## __VA_ARGS__
 
-/* common ground sprite */
-spriteset(THIS_ID(spriteset_ground), "sprites/graphics/industries/groundtiles.png") {
-	tmpl_ground_tile(80, 10)
-	tmpl_ground_tile(80, 10)
-}
 
-/* *************************************************
- * (general) tile
- * *************************************************/
+${industry.get_spritesets()}
 
-spriteset(THIS_ID(spriteset_1)) {
-	tmpl_building_sprite_filename(10, 10, 62, -31, "sprites/graphics/industries/plastics_plant.png")
-	tmpl_building_sprite_filename(10, 10, 62, -31, "sprites/graphics/industries/plastics_plant_snow.png")
-}
+${industry.get_spritelayouts()}
 
-spriteset(THIS_ID(spriteset_2)) {
-	tmpl_building_sprite_filename(80, 10, 62, -31, "sprites/graphics/industries/plastics_plant.png")
-	tmpl_building_sprite_filename(80, 10, 62, -31, "sprites/graphics/industries/plastics_plant_snow.png")
-}
+${industry.get_industry_layouts_as_graphic_switches()}
 
-spriteset(THIS_ID(spriteset_3)) {
-	tmpl_building_sprite_filename(150, 10, 55, -24, "sprites/graphics/industries/plastics_plant.png")
-	tmpl_building_sprite_filename(150, 10, 55, -24, "sprites/graphics/industries/plastics_plant_snow.png")
-}
-
-spriteset(THIS_ID(spriteset_4)) {
-	tmpl_building_sprite_filename(220, 10, 55, -24, "sprites/graphics/industries/plastics_plant.png")
-	tmpl_building_sprite_filename(220, 10, 55, -24, "sprites/graphics/industries/plastics_plant_snow.png")
-}
-
-spriteset(THIS_ID(spriteset_5)) {
-	tmpl_building_sprite_filename(290, 10, 55, -24, "sprites/graphics/industries/plastics_plant.png")
-	tmpl_building_sprite_filename(290, 10, 55, -24, "sprites/graphics/industries/plastics_plant_snow.png")
-}
-
-spriteset(THIS_ID(spriteset_6)) {
-	tmpl_building_sprite_filename(360, 10, 87, -56, "sprites/graphics/industries/plastics_plant.png")
-	tmpl_building_sprite_filename(360, 10, 87, -56, "sprites/graphics/industries/plastics_plant_snow.png")
-}
-
-spriteset(THIS_ID(spriteset_7)) {
-	tmpl_building_sprite_filename(430, 10, 87, -56, "sprites/graphics/industries/plastics_plant.png")
-	tmpl_building_sprite_filename(430, 10, 87, -56, "sprites/graphics/industries/plastics_plant_snow.png")
-}
-
-spriteset(THIS_ID(spriteset_8)) {
-	tmpl_building_sprite_filename(500, 10, 87, -56, "sprites/graphics/industries/plastics_plant.png")
-	tmpl_building_sprite_filename(500, 10, 87, -56, "sprites/graphics/industries/plastics_plant_snow.png")
-}
-
-spriteset(THIS_ID(spriteset_9)) {
-	tmpl_building_sprite_filename(570, 10, 55, -24, "sprites/graphics/industries/plastics_plant.png")
-	tmpl_building_sprite_filename(570, 10, 55, -24, "sprites/graphics/industries/plastics_plant_snow.png")
-}
-
-SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_store_front), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_1), 32)
-
-SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_store_rear), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_2), 32)
-
-SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_pipes), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_3), 32)
-
-SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_tanks_front), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_4), 32)
-
-SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_tanks_rear), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_5), 32)
-
-SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_large_building_centre), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_6), 52)
-
-SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_large_building_right), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_7), 52)
-
-SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_large_building_left), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_8), 52)
-
-SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_silos), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_9), 32)
-
-SPRITELAYOUT_GROUND_NORMAL_SNOW(THIS_ID(spritelayout_concrete), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground))
-
-switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_1), relative_pos) {
-	relative_coord(0, 0): THIS_ID(spritelayout_store_rear);
-	relative_coord(0, 1): THIS_ID(spritelayout_store_front);
-	relative_coord(0, 2): THIS_ID(spritelayout_concrete);
-	relative_coord(1, 0): THIS_ID(spritelayout_store_rear);
-	relative_coord(1, 1): THIS_ID(spritelayout_store_front);
-	relative_coord(1, 2): THIS_ID(spritelayout_concrete);
-	relative_coord(2, 0): THIS_ID(spritelayout_concrete);
-	relative_coord(2, 1): THIS_ID(spritelayout_large_building_right);
-	relative_coord(2, 2): THIS_ID(spritelayout_silos);
-	relative_coord(3, 1): THIS_ID(spritelayout_large_building_centre);
-	relative_coord(3, 2): THIS_ID(spritelayout_concrete);
-	relative_coord(4, 0): THIS_ID(spritelayout_tanks_rear);
-	relative_coord(4, 1): THIS_ID(spritelayout_tanks_front);
-	relative_coord(4, 2): THIS_ID(spritelayout_pipes);
-	THIS_ID(spritelayout_large_building_left);
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_2), relative_pos) {
-	relative_coord(0, 1): THIS_ID(spritelayout_large_building_right);
-	relative_coord(0, 2): THIS_ID(spritelayout_silos);
-	relative_coord(1, 0): THIS_ID(spritelayout_large_building_left);
-	relative_coord(1, 1): THIS_ID(spritelayout_large_building_centre);
-	relative_coord(1, 2): THIS_ID(spritelayout_concrete);
-	relative_coord(2, 0): THIS_ID(spritelayout_tanks_rear);
-	relative_coord(2, 1): THIS_ID(spritelayout_tanks_front);
-	relative_coord(2, 2): THIS_ID(spritelayout_pipes);
-	relative_coord(3, 0): THIS_ID(spritelayout_store_rear);
-	relative_coord(3, 1): THIS_ID(spritelayout_store_front);
-	relative_coord(3, 2): THIS_ID(spritelayout_concrete);
-	THIS_ID(spritelayout_large_building_left);
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_3), relative_pos) {
-	relative_coord(0, 0): THIS_ID(spritelayout_store_rear);
-	relative_coord(0, 1): THIS_ID(spritelayout_store_front);
-	relative_coord(0, 2): THIS_ID(spritelayout_concrete);
-	relative_coord(0, 3): THIS_ID(spritelayout_large_building_right);
-	relative_coord(0, 4): THIS_ID(spritelayout_silos);
-	relative_coord(1, 0): THIS_ID(spritelayout_store_rear);
-	relative_coord(1, 1): THIS_ID(spritelayout_store_front);
-	relative_coord(1, 2): THIS_ID(spritelayout_large_building_left);
-	relative_coord(1, 3): THIS_ID(spritelayout_large_building_centre);
-	relative_coord(1, 4): THIS_ID(spritelayout_concrete);
-	relative_coord(2, 0): THIS_ID(spritelayout_store_rear);
-	relative_coord(2, 1): THIS_ID(spritelayout_store_front);
-	relative_coord(2, 2): THIS_ID(spritelayout_tanks_rear);
-	relative_coord(2, 3): THIS_ID(spritelayout_tanks_front);
-	relative_coord(2, 4): THIS_ID(spritelayout_pipes);
-	THIS_ID(spritelayout_large_building_left);
-}
-
-switch(FEAT_INDUSTRYTILES, PARENT, THIS_ID(layout), layout_num) {
-	1: THIS_ID(layout_1);
-	2: THIS_ID(layout_2);
-	3: THIS_ID(layout_3);
-	THIS_ID(spritelayout_store_front);
-}
+${industry.get_fence_switches()}
 
 /* *************************************************
  * Definition of the industry tile and its callbacks
  * *************************************************/
 
 TILE_DISALLOW_NEARBY_CLASS(tile_nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
-TILE_ALLOW_PLAYER         (tile_player_check,                                                            THIS_ID(tile_nearby_industry))
-TILE_DISALLOW_SLOPES      (tile_location_check,                       CB_RESULT_LOCATION_DISALLOW, THIS_ID(tile_player_check))
+TILE_ALLOW_PLAYER         (tile_player_check, ${industry.id}_tile_nearby_industry)
+TILE_DISALLOW_SLOPES      (tile_location_check, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_tile_player_check)
 
 /* general tile */
 
-item(FEAT_INDUSTRYTILES, THIS_ID(tile), TILE_PLASTICSPLANT_1) {
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile, TILE_PLASTICSPLANT_1) {
 	property {
 		substitute:       0;
 		accepted_cargos:  [[RFPR, 8], [FICR, 8]];
 		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
 	}
 	graphics {
-		tile_check: THIS_ID(tile_location_check);
-		THIS_ID(layout);
+		tile_check: ${industry.id}_tile_location_check;
+		${industry.id}_tile_fences;
 	}
 }
 
@@ -167,56 +42,7 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile), TILE_PLASTICSPLANT_1) {
  * Definition of the industry layouts
  * *************************************************/
 
-tilelayout tilelayout_plastics_plant_1 {
-	0, 0: THIS_ID(tile);
-	0, 1: THIS_ID(tile);
-	0, 2: THIS_ID(tile);
-	1, 0: THIS_ID(tile);
-	1, 1: THIS_ID(tile);
-	1, 2: THIS_ID(tile);
-	2, 0: THIS_ID(tile);
-	2, 1: THIS_ID(tile);
-	2, 2: THIS_ID(tile);
-	3, 0: THIS_ID(tile);
-	3, 1: THIS_ID(tile);
-	3, 2: THIS_ID(tile);
-	4, 0: THIS_ID(tile);
-	4, 1: THIS_ID(tile);
-	4, 2: THIS_ID(tile);
-}
-
-tilelayout tilelayout_plastics_plant_2 {
-	0, 0: THIS_ID(tile);
-	0, 1: THIS_ID(tile);
-	0, 2: THIS_ID(tile);
-	1, 0: THIS_ID(tile);
-	1, 1: THIS_ID(tile);
-	1, 2: THIS_ID(tile);
-	2, 0: THIS_ID(tile);
-	2, 1: THIS_ID(tile);
-	2, 2: THIS_ID(tile);
-	3, 0: THIS_ID(tile);
-	3, 1: THIS_ID(tile);
-	3, 2: THIS_ID(tile);
-}
-
-tilelayout tilelayout_plastics_plant_3 {
-	0, 0: THIS_ID(tile);
-	0, 1: THIS_ID(tile);
-	0, 2: THIS_ID(tile);
-	0, 3: THIS_ID(tile);
-	0, 4: THIS_ID(tile);
-	1, 0: THIS_ID(tile);
-	1, 1: THIS_ID(tile);
-	1, 2: THIS_ID(tile);
-	1, 3: THIS_ID(tile);
-	1, 4: THIS_ID(tile);
-	2, 0: THIS_ID(tile);
-	2, 1: THIS_ID(tile);
-	2, 2: THIS_ID(tile);
-	2, 3: THIS_ID(tile);
-	2, 4: THIS_ID(tile);
-}
+${industry.get_industry_layouts_as_tilelayouts()}
 
 /* *************************************************
  * Definition of the industry
@@ -242,10 +68,10 @@ tilelayout tilelayout_plastics_plant_3 {
 
 
 CHECK_INCOMPATIBLE  (plastics_plant, 56, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
-CHECK_INCOMPATIBLE  (mixed_farm, 16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(plastics_plant))
-CHECK_FOUNDER       (THIS_ID(mixed_farm))
+CHECK_INCOMPATIBLE  (mixed_farm, 16, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_plastics_plant)
+CHECK_FOUNDER       (${industry.id}_mixed_farm)
 
-SWITCH_COLOUR_SCHEME2(THIS_ID(colour))
+SWITCH_COLOUR_SCHEME2(${industry.id}_colour)
 
 #include "../templates/produce_secondary.pnml"
 #include "../templates/check_secondary_production_level.pnml"
@@ -256,14 +82,10 @@ SWITCH_COLOUR_SCHEME2(THIS_ID(colour))
 #include "../templates/check_availability.pnml"
 
 
-item(FEAT_INDUSTRIES, THIS_ID(), IND_PLASTICSPLANT_ID) {
+item(FEAT_INDUSTRIES, ${industry.id}, IND_PLASTICSPLANT_ID) {
 	property {
 		substitute: 0;
-		layouts: [
-				tilelayout_plastics_plant_1,
-				tilelayout_plastics_plant_2,
-				tilelayout_plastics_plant_3
-			];
+		layouts: [${industry.get_industry_layouts_as_property()}];
 		life_type:              IND_LIFE_TYPE_PROCESSING;
 		closure_msg:            TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS;
 		prod_increase_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL;
@@ -288,14 +110,14 @@ item(FEAT_INDUSTRIES, THIS_ID(), IND_PLASTICSPLANT_ID) {
 		spec_flags:             0;
 	}
 	graphics {
-		produce_cargo_arrival:   THIS_ID(produce);
-		construction_probability:THIS_ID(check_availability);
-		location_check:          THIS_ID(check_location);
-		monthly_prod_change:     THIS_ID(check_production_level);
-		random_prod_change:      THIS_ID(check_closure);
-		extra_text_industry:     THIS_ID(extra_text);
+		produce_cargo_arrival:   ${industry.id}_produce;
+		construction_probability:${industry.id}_check_availability;
+		location_check:          ${industry.id}_check_location;
+		monthly_prod_change:     ${industry.id}_check_production_level;
+		random_prod_change:      ${industry.id}_check_closure;
+		extra_text_industry:     ${industry.id}_extra_text;
 		extra_text_fund:         return string(STR_FUND_AVAILABLE_FROM, THIS_MIN_YEAR);
-		colour:                  THIS_ID(colour);
+		colour:                  ${industry.id}_colour;
 	}
 }
 
