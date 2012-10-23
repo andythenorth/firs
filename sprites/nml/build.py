@@ -22,6 +22,7 @@ from industries import food_market
 from industries import glass_works
 from industries import grain_mill
 from industries import hotel
+from industries import lumber_yard
 from industries import oil_wells
 from industries import petrol_pump
 from industries import plastics_plant

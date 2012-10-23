@@ -1,0 +1,134 @@
+/*
+ * This file is part of FIRS Industry Set for OpenTTD.
+ * FIRS is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 2.
+ * FIRS is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+#include "../templates/spritelayout_templates.pnml"
+
+#define THIS_ID(...) ${industry.id}_ ## __VA_ARGS__
+
+${industry.get_spritesets()}
+
+${industry.get_spritelayouts()}
+
+${industry.get_industry_layouts_as_graphic_switches()}
+
+${industry.get_fence_switches()}
+
+/* *************************************************
+ * Definition of the industry tile and its callbacks
+ * *************************************************/
+
+TILE_DISALLOW_NEARBY_CLASS(tile_nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
+TILE_ALLOW_PLAYER         (tile_location_check, THIS_ID(tile_nearby_industry))
+
+item(FEAT_INDUSTRYTILES, THIS_ID(tile), TILE_LUMBERYARD_1) {
+	property {
+		substitute:       0;
+		accepted_cargos:  [[WDPR, 8], [RFPR, 8]];
+		land_shape_flags: 0;
+	}
+
+	graphics {
+		tile_check:   THIS_ID(tile_location_check);
+		THIS_ID(tile_fences);
+	}
+}
+
+
+/* The kiln building must not build on slopes.  Use a separate tile to achieve that.  Chains to same other checks, graphics etc. */
+TILE_DISALLOW_SLOPES      (tile2_location_check, CB_RESULT_LOCATION_DISALLOW, THIS_ID(tile_location_check))
+
+item(FEAT_INDUSTRYTILES, THIS_ID(kiln_building_tile), TILE_LUMBERYARD_2) {
+	property {
+		substitute:       0;
+		accepted_cargos:  [[WDPR, 8], [RFPR, 8]];
+		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
+	}
+
+	graphics {
+		tile_check:   THIS_ID(tile2_location_check);
+		THIS_ID(tile_fences);
+	}
+}
+
+/* *************************************************
+ * Definition of the industry layouts
+ * *************************************************/
+
+${industry.get_industry_layouts_as_tilelayouts()}
+
+/* *************************************************
+ * Definition of the industry
+ * *************************************************/
+
+/* for secondary production template */
+#define THIS_NUM_OUTPUT_CARGOS    2
+#define THIS_PROD_RATIO_CARGO1    6
+#define THIS_PROD_RATIO_CARGO2    2
+#define THIS_PROD_RATIO_CARGO3    0
+#define THIS_BOOST_12             6
+#define THIS_BOOST_13             0
+#define THIS_BOOST_21             2
+#define THIS_BOOST_23             0
+#define THIS_BOOST_31             0
+#define THIS_BOOST_32             0
+/* extra text template */
+#define THIS_STR_EXTRA_TEXT       STR_EXTRA_LUMBER_YARD
+#define THIS_STR_DEBUG_TEXT       STR_EXTRA_TEXT_DEBUG_SECONDARY
+
+
+CHECK_INCOMPATIBLE(lumber_yard, 56, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
+CHECK_FOUNDER     (THIS_ID(lumber_yard))
+
+SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
+
+#include "../templates/produce_secondary.pnml"
+#include "../templates/check_secondary_production_level.pnml"
+#include "../templates/check_secondary_closure.pnml"
+
+#include "../templates/extra_text_secondary.pnml"
+
+#include "../templates/check_availability.pnml"
+
+item(FEAT_INDUSTRIES, lumber_yard, IND_LUMBERYARD_ID) {
+	property {
+		substitute: 0;
+		layouts: [${industry.get_industry_layouts_as_property()}];
+		life_type:              IND_LIFE_TYPE_PROCESSING;
+		closure_msg:            TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS;
+		prod_increase_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL;
+		prod_decrease_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_GENERAL;
+		new_ind_msg:            TTD_STR_NEWS_INDUSTRY_CONSTRUCTION;
+		name:                   string(STR_IND_LUMBER_YARD);
+		nearby_station_name:    string(STR_STATION, string(STR_TOWN), string(STR_IND_LUMBER_YARD));
+		prod_cargo_types: [ENSP, BDMT];
+		accept_cargo_types: [WDPR, RFPR];
+		prod_multiplier: [0, 0];
+		input_multiplier_1: [0, 0];
+		input_multiplier_2: [0, 0];
+		input_multiplier_3: [0, 0];
+		min_cargo_distr: 5;
+		conflicting_ind_types: [];
+		prob_random: 5;
+		prob_in_game: 3;
+		prospect_chance: 0.75;
+		fund_cost_multiplier: 35;
+		map_colour: 42;
+		remove_cost_multiplier: 0;
+		spec_flags:             0;
+	}
+	graphics {
+		produce_cargo_arrival:   THIS_ID(produce);
+		construction_probability:THIS_ID(check_availability);
+		location_check:          THIS_ID(check_location);
+		monthly_prod_change:     THIS_ID(check_production_level);
+		random_prod_change:      THIS_ID(check_closure);
+		extra_text_industry:     THIS_ID(extra_text);
+		colour:                  THIS_ID(colour);
+	}
+}
+
+#include "../templates/undefs.pnml"
