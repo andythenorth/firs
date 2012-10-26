@@ -5,26 +5,26 @@
  * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#define THIS_ID(...) hardware_store ## __VA_ARGS__
+#define THIS_ID(...) ${industry.id}_ ## __VA_ARGS__
 
-spriteset(THIS_ID(spriteset_1)) {
+spriteset(${industry.id}_spriteset_1) {
 	tmpl_building_sprite_filename(0, 0, 64, -33, "sprites/graphics/industries/hardware_store.png")
 	tmpl_building_sprite_filename(0, 0, 64, -33, "sprites/graphics/industries/hardware_store_snow.png")
 }
 
-SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_1), GROUNDSPRITE_CONCRETE, GROUNDSPRITE_CONCRETE, THIS_ID(spriteset_1), 16)
+SPRITELAYOUT_NORMAL_SNOW(${industry.id}_spritelayout_1, GROUNDSPRITE_CONCRETE, GROUNDSPRITE_CONCRETE, ${industry.id}_spriteset_1, 16)
 
 /* *************************************************
  * Definition of the industry tile and its callbacks
  * *************************************************/
 
 CHECK_ROAD_ADJACENT     (tile_road_adjacent_4, -1, 0, return CB_RESULT_LOCATION_DISALLOW)
-CHECK_ROAD_ADJACENT     (tile_road_adjacent_3, 0, -1, THIS_ID(tile_road_adjacent_4))
-CHECK_ROAD_ADJACENT     (tile_road_adjacent_2, 1, 0,  THIS_ID(tile_road_adjacent_3))
-CHECK_ROAD_ADJACENT     (tile_road_adjacent_1, 0, 1, THIS_ID(tile_road_adjacent_2))
-TILE_ALLOW_PLAYER       (terrain_check, THIS_ID(tile_road_adjacent_1))
+CHECK_ROAD_ADJACENT     (tile_road_adjacent_3, 0, -1, ${industry.id}_tile_road_adjacent_4)
+CHECK_ROAD_ADJACENT     (tile_road_adjacent_2, 1, 0,  ${industry.id}_tile_road_adjacent_3)
+CHECK_ROAD_ADJACENT     (tile_road_adjacent_1, 0, 1, ${industry.id}_tile_road_adjacent_2)
+TILE_ALLOW_PLAYER       (terrain_check, ${industry.id}_tile_road_adjacent_1)
 
-item(FEAT_INDUSTRYTILES, THIS_ID(tile), TILE_HARDWARESTORE_1) {
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile, TILE_HARDWARESTORE_1) {
 	property {
 		substitute:       0;
 		accepted_cargos:  [[GOOD, 8], [BDMT, 8]];
@@ -32,8 +32,8 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile), TILE_HARDWARESTORE_1) {
 	}
 
 	graphics {
-		tile_check:  THIS_ID(terrain_check);
-		THIS_ID(spritelayout_1);
+		tile_check:  ${industry.id}_terrain_check;
+		${industry.id}_spritelayout_1;
 	}
 }
 
@@ -42,7 +42,7 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile), TILE_HARDWARESTORE_1) {
  * *************************************************/
 
 tilelayout tilelayout_hardware_store_1 {
-	0, 0: THIS_ID(tile);
+	0, 0: ${industry.id}_tile;
 }
 
 /* *************************************************
@@ -52,9 +52,9 @@ tilelayout tilelayout_hardware_store_1 {
 #include "../templates/check_availability.pnml"
 
 CHECK_INCOMPATIBLE  (petrol_pump, 16, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
-CHECK_INCOMPATIBLE  (builders_yard, 16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(petrol_pump))
-CHECK_INCOMPATIBLE  (hardware_store, 20, CB_RESULT_LOCATION_DISALLOW, THIS_ID(builders_yard))
-CHECK_FOUNDER       (THIS_ID(hardware_store))
+CHECK_INCOMPATIBLE  (builders_yard, 16, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_petrol_pump)
+CHECK_INCOMPATIBLE  (hardware_store, 20, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_builders_yard)
+CHECK_FOUNDER       (${industry.id}_hardware_store)
 
 item(FEAT_INDUSTRIES, hardware_store, IND_HARDWARESTORE_ID) {
 	property {
@@ -89,8 +89,8 @@ item(FEAT_INDUSTRIES, hardware_store, IND_HARDWARESTORE_ID) {
 		remove_cost_multiplier: 0;
 	}
 	graphics {
-		construction_probability:THIS_ID(check_availability);
-		location_check:          THIS_ID(check_location);
+		construction_probability:${industry.id}_check_availability;
+		location_check:          ${industry.id}_check_location;
 	}
 }
 
