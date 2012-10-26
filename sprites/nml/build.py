@@ -33,6 +33,7 @@ from industries import smithy_forge
 from industries import stockyard
 from industries import sugar_refinery
 from industries import textile_mill
+from industries import hardware_store
 
 # industries with only partial conversion to python templating, mostly still cpp
 from industries import coal_mine

@@ -8,8 +8,8 @@
 #define THIS_ID(...) hardware_store ## __VA_ARGS__
 
 spriteset(THIS_ID(spriteset_1)) {
-	tmpl_building_sprite_filename(0, 0, 64, -33, "sprites/graphics/industries/hardwarestore.png")
-	tmpl_building_sprite_filename(0, 0, 64, -33, "sprites/graphics/industries/hardwarestore_snow.png")
+	tmpl_building_sprite_filename(0, 0, 64, -33, "sprites/graphics/industries/hardware_store.png")
+	tmpl_building_sprite_filename(0, 0, 64, -33, "sprites/graphics/industries/hardware_store_snow.png")
 }
 
 SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_1), GROUNDSPRITE_CONCRETE, GROUNDSPRITE_CONCRETE, THIS_ID(spriteset_1), 16)
