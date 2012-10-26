@@ -19,38 +19,24 @@ industry = Industry(id='hardware_store')
 
 industry.add_tile(id='hardware_store_tile')
 
-spriteset_ground = industry.add_spriteset(
+hardware_store_spriteset_ground = industry.add_spriteset(
     id = 'hardware_store_spriteset_ground',
     type='slab',
 )
-spriteset_ground_overlay = industry.add_spriteset(
+hardware_store_spriteset_ground_overlay = industry.add_spriteset(
     id = 'hardware_store_spriteset_ground_overlay',
-    sprites = [(10, 10, 64, 31, -31, 0)],
+    type = 'empty',
 )
-spriteset_1 = industry.add_spriteset(
+hardware_store_spriteset = industry.add_spriteset(
     id = 'hardware_store_spriteset',
-    sprites = [(10, 60, 64, 36, -31, -4)]
-)
-sprite_tree_1 = industry.add_sprite(
-    sprite_number = 'nearby_tile_terrain_type(0, 0) != TILETYPE_SNOW ? market_tree : MARKET_TREE_SNOW', # defined in defines.pnml, to permit possibility of selecting a different sprite if a tree grf is loaded
-    xoffset= 11,
-    yoffset= 1,
-    xextent= 6,
-    yextent= 6
-)
-sprite_tree_2 = industry.add_sprite(
-    sprite_number = 'nearby_tile_terrain_type(0, 0) != TILETYPE_SNOW ? market_tree : MARKET_TREE_SNOW', # defined in defines.pnml, to permit possibility of selecting a different sprite if a tree grf is loaded
-    xoffset= 11,
-    yoffset= 6,
-    xextent= 6,
-    yextent= 6
+    sprites = [(0, 0, 64, 64, -31, -33)]
 )
 
 industry.add_spritelayout(
     id = 'hardware_store_spritelayout',
-    ground_sprite = spriteset_ground,
-    ground_overlay = spriteset_ground_overlay,
-    building_sprites = [spriteset_1, sprite_tree_1, sprite_tree_2]
+    ground_sprite = hardware_store_spriteset_ground,
+    ground_overlay = hardware_store_spriteset_ground_overlay,
+    building_sprites = [hardware_store_spriteset]
 )
 industry.add_industry_layout(
     id = 'hardware_store_industry_layout',

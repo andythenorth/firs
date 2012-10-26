@@ -7,12 +7,14 @@
 
 #define THIS_ID(...) ${industry.id}_ ## __VA_ARGS__
 
-spriteset(${industry.id}_spriteset_1) {
-	tmpl_building_sprite_filename(0, 0, 64, -33, "sprites/graphics/industries/hardware_store.png")
-	tmpl_building_sprite_filename(0, 0, 64, -33, "sprites/graphics/industries/hardware_store_snow.png")
-}
+${industry.get_spritesets()}
 
-SPRITELAYOUT_NORMAL_SNOW(${industry.id}_spritelayout_1, GROUNDSPRITE_CONCRETE, GROUNDSPRITE_CONCRETE, ${industry.id}_spriteset_1, 16)
+${industry.get_spritelayouts()}
+
+${industry.get_industry_layouts_as_graphic_switches()}
+
+${industry.get_fence_switches()}
+
 
 /* *************************************************
  * Definition of the industry tile and its callbacks
@@ -33,7 +35,7 @@ item(FEAT_INDUSTRYTILES, ${industry.id}_tile, TILE_HARDWARESTORE_1) {
 
 	graphics {
 		tile_check:  ${industry.id}_terrain_check;
-		${industry.id}_spritelayout_1;
+		${industry.id}_tile_fences;
 	}
 }
 
@@ -41,9 +43,7 @@ item(FEAT_INDUSTRYTILES, ${industry.id}_tile, TILE_HARDWARESTORE_1) {
  * Definition of the industry layouts
  * *************************************************/
 
-tilelayout tilelayout_hardware_store_1 {
-	0, 0: ${industry.id}_tile;
-}
+${industry.get_industry_layouts_as_tilelayouts()}
 
 /* *************************************************
  * Definition of the industry
@@ -59,9 +59,7 @@ CHECK_FOUNDER       (${industry.id}_hardware_store)
 item(FEAT_INDUSTRIES, hardware_store, IND_HARDWARESTORE_ID) {
 	property {
 		substitute:             0;
-		layouts: [
-				tilelayout_hardware_store_1
-			];
+		layouts: [${industry.get_industry_layouts_as_property()}];
 		name:                   string(STR_IND_HARDWARE_STORE);
 		nearby_station_name:    string(STR_STATION, string(STR_TOWN), string(STR_IND_HARDWARE_STORE));
 		closure_msg:            TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS;
