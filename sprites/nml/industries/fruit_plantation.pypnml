@@ -5087,7 +5087,7 @@ switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(tile_plantation_spritelayout), var[0x03
  * tile with house
  * ***************/
 
-spriteset(spriteset_4792, "sprites/graphics/industries/fruitplantation.png") { tmpl_building_sprite(10, 10, 59, -28) }
+spriteset(spriteset_4792, "sprites/graphics/industries/fruit_plantation.png") { tmpl_building_sprite(10, 10, 59, -28) }
 spritelayout THIS_ID(tile_house_spritelayout) {
 	ground {
 		sprite: 2022;

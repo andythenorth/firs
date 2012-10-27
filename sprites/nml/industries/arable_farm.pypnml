@@ -7,11 +7,11 @@
 
 #define THIS_ID(...) ${industry.id}_ ## __VA_ARGS__
 
-spriteset(THIS_ID(spriteset_1)) { tmpl_building_sprite_filename( 10, 10, 59, -28, "sprites/graphics/industries/arablefarm.png") }
-spriteset(THIS_ID(spriteset_2)) { tmpl_building_sprite_filename( 80, 10, 59, -28, "sprites/graphics/industries/arablefarm.png") }
-spriteset(THIS_ID(spriteset_3)) { tmpl_building_sprite_filename(150, 10, 59, -28, "sprites/graphics/industries/arablefarm.png") }
-spriteset(THIS_ID(spriteset_4)) { tmpl_building_sprite_filename(220, 10, 59, -28, "sprites/graphics/industries/arablefarm.png") }
-spriteset(THIS_ID(spriteset_5)) { tmpl_building_sprite_filename(290, 10, 59, -28, "sprites/graphics/industries/arablefarm.png") }
+spriteset(THIS_ID(spriteset_1)) { tmpl_building_sprite_filename( 10, 10, 59, -28, "sprites/graphics/industries/arable_farm.png") }
+spriteset(THIS_ID(spriteset_2)) { tmpl_building_sprite_filename( 80, 10, 59, -28, "sprites/graphics/industries/arable_farm.png") }
+spriteset(THIS_ID(spriteset_3)) { tmpl_building_sprite_filename(150, 10, 59, -28, "sprites/graphics/industries/arable_farm.png") }
+spriteset(THIS_ID(spriteset_4)) { tmpl_building_sprite_filename(220, 10, 59, -28, "sprites/graphics/industries/arable_farm.png") }
+spriteset(THIS_ID(spriteset_5)) { tmpl_building_sprite_filename(290, 10, 59, -28, "sprites/graphics/industries/arable_farm.png") }
 
 SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_1), 2022,                THIS_ID(spriteset_1), 32)
 SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_2), GROUNDSPRITE_NORMAL, THIS_ID(spriteset_2), 32)
