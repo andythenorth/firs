@@ -17,32 +17,5 @@ When a string is expected are basically two choices: provide a string directly, 
 
 industry = Industry(id='quarry')
 
-industry.add_tile(id='quarry_tile')
-
-spriteset_ground = industry.add_spriteset(
-    id = 'quarry_spriteset_ground',
-    type='slab',
-)
-spriteset_ground_overlay = industry.add_spriteset(
-    id = 'quarry_spriteset_ground_overlay',
-    sprites = [(10, 10, 64, 31, -31, 0)],
-)
-spriteset_1 = industry.add_spriteset(
-    id = 'quarry_spriteset',
-    sprites = [(10, 60, 64, 36, -31, -4)]
-)
-
-industry.add_spritelayout(
-    id = 'quarry_spritelayout',
-    ground_sprite = spriteset_ground,
-    ground_overlay = spriteset_ground_overlay,
-    building_sprites = [spriteset_1]
-)
-industry.add_industry_layout(
-    id = 'quarry_industry_layout',
-    default_spritelayout = 'quarry_spritelayout',
-    layout = [(0, 0, 'quarry_tile', 'quarry_spritelayout')
-    ]
-)
 # Templating
 industry.render_and_save_pnml()
