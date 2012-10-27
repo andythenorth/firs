@@ -42,5 +42,7 @@ from industries import iron_ore_mine
 from industries import oil_refinery
 from industries import oil_rig
 from industries import paper_mill
+from industries import quarry
 from industries import sawmill
 from industries import steel_mill
+
