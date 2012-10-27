@@ -5,7 +5,7 @@
  * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS industry set. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#define THIS_ID(...) arable_farm ## __VA_ARGS__
+#define THIS_ID(...) ${industry.id}_ ## __VA_ARGS__
 
 spriteset(THIS_ID(spriteset_1)) { tmpl_building_sprite_filename( 10, 10, 59, -28, "sprites/graphics/industries/arablefarm.png") }
 spriteset(THIS_ID(spriteset_2)) { tmpl_building_sprite_filename( 80, 10, 59, -28, "sprites/graphics/industries/arablefarm.png") }
