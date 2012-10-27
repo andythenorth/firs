@@ -40,6 +40,7 @@ from industries import arable_farm
 from industries import clay_pit
 from industries import coal_mine
 from industries import fishing_grounds
+from industries import fishing_harbour
 from industries import forest
 from industries import fruit_plantation
 from industries import iron_ore_mine
