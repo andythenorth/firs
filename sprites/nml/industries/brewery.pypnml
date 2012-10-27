@@ -7,73 +7,13 @@
 
 #define THIS_ID(...) ${industry.id}_ ## __VA_ARGS__
 
-spriteset(THIS_ID(spriteset_ground), "sprites/graphics/industries/groundtiles.png") {
-	tmpl_ground_tile(150, 10)
-	tmpl_ground_tile(150, 10)
-}
+${industry.get_spritesets()}
 
-spriteset(THIS_ID(spriteset_1)) {
-	tmpl_building_sprite_filename( 10, 60, 91, -60, "sprites/graphics/industries/brewery.png")
-	tmpl_building_sprite_filename( 10, 60, 91, -60, "sprites/graphics/industries/brewery_snow.png")
-}
+${industry.get_spritelayouts()}
 
-spriteset(THIS_ID(spriteset_2)) {
-	tmpl_building_sprite_filename( 80, 60, 91, -60, "sprites/graphics/industries/brewery.png")
-	tmpl_building_sprite_filename( 80, 60, 91, -60, "sprites/graphics/industries/brewery_snow.png")
-}
+${industry.get_industry_layouts_as_graphic_switches()}
 
-spriteset(THIS_ID(spriteset_3)) {
-	tmpl_building_sprite_filename( 150, 60, 91, -60, "sprites/graphics/industries/brewery.png")
-	tmpl_building_sprite_filename( 150, 60, 91, -60, "sprites/graphics/industries/brewery_snow.png")
-}
-
-SPRITELAYOUT_NORMAL_SNOW_BEGIN(THIS_ID(spritelayout_1_anim), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_1), 7)
-	BUILDING_WHITE_SMOKE_SMALL(8, 0, 55)
-SPRITELAYOUT_END
-
-SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_2), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_2), 48)
-
-SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_3), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground), THIS_ID(spriteset_3), 48)
-
-switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_1), relative_pos) {
-	relative_coord(1, 0): THIS_ID(spritelayout_1_anim);
-	relative_coord(1, 2): THIS_ID(spritelayout_2);
-	THIS_ID(spritelayout_3);
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_2), relative_pos) {
-	relative_coord(1, 0): THIS_ID(spritelayout_2);
-	relative_coord(2, 0): THIS_ID(spritelayout_1_anim);
-	THIS_ID(spritelayout_3);
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_3), relative_pos) {
-	relative_coord(1, 0): THIS_ID(spritelayout_1_anim);
-	relative_coord(1, 1): THIS_ID(spritelayout_2);
-	THIS_ID(spritelayout_3);
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_4), relative_pos) {
-	relative_coord(0, 0): THIS_ID(spritelayout_1_anim);
-	relative_coord(2, 0): THIS_ID(spritelayout_2);
-	THIS_ID(spritelayout_3);
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_5), relative_pos) {
-	relative_coord(1, 0): THIS_ID(spritelayout_2);
-	relative_coord(1, 1): THIS_ID(spritelayout_2);
-	relative_coord(2, 0): THIS_ID(spritelayout_1_anim);
-	THIS_ID(spritelayout_3);
-}
-
-switch(FEAT_INDUSTRYTILES, PARENT, THIS_ID(tile_spritelayout), layout_num) {
-	1: THIS_ID(layout_1);
-	2: THIS_ID(layout_2);
-	3: THIS_ID(layout_3);
-	4: THIS_ID(layout_4);
-	5: THIS_ID(layout_5);
-	THIS_ID(layout_1);
-}
+${industry.get_fence_switches()}
 
 /* *************************************************
  * Definition of the industry tile and its callbacks
@@ -114,7 +54,7 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile), TILE_BREWERY_1) {
 	graphics {
 		anim_control: THIS_ID(tile_anim_control);
 		tile_check:   THIS_ID(tile_location_check);
-		THIS_ID(tile_spritelayout);
+		THIS_ID(tile_fences);
 	}
 }
 
@@ -122,37 +62,7 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile), TILE_BREWERY_1) {
  * Definition of the industry layouts
  * *************************************************/
 
-tilelayout tilelayout_brewery_1 {
-	0, 2: THIS_ID(tile);
-	1, 0: THIS_ID(tile);
-	1, 2: THIS_ID(tile);
-}
-
-tilelayout tilelayout_brewery_2 {
-	0, 0: THIS_ID(tile);
-	1, 0: THIS_ID(tile);
-	2, 0: THIS_ID(tile);
-}
-
-tilelayout tilelayout_brewery_3 {
-	0, 1: THIS_ID(tile);
-	1, 0: THIS_ID(tile);
-	1, 1: THIS_ID(tile);
-}
-
-tilelayout tilelayout_brewery_4 {
-	0, 0: THIS_ID(tile);
-	1, 0: THIS_ID(tile);
-	2, 0: THIS_ID(tile);
-}
-
-tilelayout tilelayout_brewery_5 {
-	0, 0: THIS_ID(tile);
-	0, 1: THIS_ID(tile);
-	1, 0: THIS_ID(tile);
-	1, 1: THIS_ID(tile);
-	2, 0: THIS_ID(tile);
-}
+${industry.get_industry_layouts_as_tilelayouts()}
 
 /* *************************************************
  * Definition of the industry
@@ -193,13 +103,7 @@ SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
 item(FEAT_INDUSTRIES, brewery, IND_BREWERY_ID) {
 	property {
 		substitute: 0;
-		layouts: [
-				tilelayout_brewery_1,
-				tilelayout_brewery_2,
-				tilelayout_brewery_3,
-				tilelayout_brewery_4,
-				tilelayout_brewery_5
-			];
+		layouts: [${industry.get_industry_layouts_as_property()}];
 		life_type:              IND_LIFE_TYPE_PROCESSING;
 		closure_msg:            TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS;
 		prod_increase_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL;
