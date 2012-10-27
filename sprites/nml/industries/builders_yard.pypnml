@@ -7,31 +7,31 @@
 
 #include "../templates/spritelayouts_groundaware.pnml"
 
-#define THIS_ID(...) builders_yard ## __VA_ARGS__
+#define THIS_ID(...) ${industry.id}_ ## __VA_ARGS__
 
 spriteset(THIS_ID(spriteset_empty)) {
-	[210,10,1,1,0,0, "sprites/graphics/industries/buildersyard.png"]
-	[210,10,1,1,0,0, "sprites/graphics/industries/buildersyard.png"]
+	[210,10,1,1,0,0, "sprites/graphics/industries/builders_yard.png"]
+	[210,10,1,1,0,0, "sprites/graphics/industries/builders_yard.png"]
 }
 
 spriteset(THIS_ID(spriteset_ground_overlay_snow)) {
-	tmpl_building_sprite_filename(150, 10, 43, -13, "sprites/graphics/industries/buildersyard_snow.png")
-	tmpl_building_sprite_filename(150, 10, 43, -13, "sprites/graphics/industries/buildersyard_snow.png")
+	tmpl_building_sprite_filename(150, 10, 43, -13, "sprites/graphics/industries/builders_yard_snow.png")
+	tmpl_building_sprite_filename(150, 10, 43, -13, "sprites/graphics/industries/builders_yard_snow.png")
 }
 
 spriteset(THIS_ID(spriteset_ground_overlay_normal)) {
-	tmpl_building_sprite_filename(150, 10, 43, -13, "sprites/graphics/industries/buildersyard.png")
-	tmpl_building_sprite_filename(150, 10, 43, -13, "sprites/graphics/industries/buildersyard.png")
+	tmpl_building_sprite_filename(150, 10, 43, -13, "sprites/graphics/industries/builders_yard.png")
+	tmpl_building_sprite_filename(150, 10, 43, -13, "sprites/graphics/industries/builders_yard.png")
 }
 
 spriteset(THIS_ID(spriteset_1)) {
-	tmpl_building_sprite_filename(10, 10, 51, -13, "sprites/graphics/industries/buildersyard.png")
-	tmpl_building_sprite_filename(10, 10, 51, -13, "sprites/graphics/industries/buildersyard_snow.png")
+	tmpl_building_sprite_filename(10, 10, 51, -13, "sprites/graphics/industries/builders_yard.png")
+	tmpl_building_sprite_filename(10, 10, 51, -13, "sprites/graphics/industries/builders_yard_snow.png")
 }
 
 spriteset(THIS_ID(spriteset_2)) {
-	tmpl_building_sprite_filename(80, 10, 51, -13, "sprites/graphics/industries/buildersyard.png")
-	tmpl_building_sprite_filename(80, 10, 51, -13, "sprites/graphics/industries/buildersyard_snow.png")
+	tmpl_building_sprite_filename(80, 10, 51, -13, "sprites/graphics/industries/builders_yard.png")
+	tmpl_building_sprite_filename(80, 10, 51, -13, "sprites/graphics/industries/builders_yard_snow.png")
 }
 
 GROUND_AWARE_SPRITELAYOUT(THIS_ID(spritelayout_1))
