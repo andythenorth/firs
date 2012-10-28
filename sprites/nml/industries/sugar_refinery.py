@@ -67,6 +67,18 @@ spriteset_8 = industry.add_spriteset(
     sprites = [(500, 10, 64, 88, -31, -58)],
     zextent = 48
 )
+sprite_smoke_1 = industry.add_smoke_sprite(
+    smoke_type = 'white_smoke_big',
+    xoffset= 5,
+    yoffset= 8,
+    zoffset= 72,
+)
+sprite_smoke_2 = industry.add_smoke_sprite(
+    smoke_type = 'white_smoke_big',
+    xoffset= 5,
+    yoffset= 12,
+    zoffset= 72,
+)
 
 industry.add_spritelayout(
     id = 'sugar_refinery_spritelayout_1',
@@ -108,6 +120,7 @@ industry.add_spritelayout(
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_6],
+    smoke_sprites = [sprite_smoke_1, sprite_smoke_2],
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
