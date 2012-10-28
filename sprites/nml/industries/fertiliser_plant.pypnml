@@ -8,20 +8,20 @@
 #include "../templates/spritelayout_templates.pnml"
 #include "../templates/smoke_templates.pnml"
 
-#define THIS_ID(...) fertiliser_plant ## __VA_ARGS__
+#define THIS_ID(...) ${industry.id}_ ## __VA_ARGS__
 
 spriteset(THIS_ID(spriteset_ground), "sprites/graphics/industries/groundtiles.png") { tmpl_ground_tile(80, 10) }
 
-spriteset(THIS_ID(spriteset_1), "sprites/graphics/industries/fertiliserplant.png") { tmpl_building_sprite(80, 10, 114, -88) }
-spriteset(THIS_ID(spriteset_2), "sprites/graphics/industries/fertiliserplant.png") { tmpl_building_sprite(150, 10, 114, -83) }
-spriteset(THIS_ID(spriteset_3), "sprites/graphics/industries/fertiliserplant.png") { tmpl_building_sprite(220, 10, 114, -83) }
-spriteset(THIS_ID(spriteset_4), "sprites/graphics/industries/fertiliserplant.png") { tmpl_building_sprite(290, 10, 114, -83) }
-spriteset(THIS_ID(spriteset_5), "sprites/graphics/industries/fertiliserplant.png") { tmpl_building_sprite(360, 10, 66, -35) }
-spriteset(THIS_ID(spriteset_6), "sprites/graphics/industries/fertiliserplant.png") { tmpl_building_sprite(430, 10, 66, -35) }
-spriteset(THIS_ID(spriteset_7), "sprites/graphics/industries/fertiliserplant.png") { tmpl_building_sprite(500, 10, 66, -35) }
-spriteset(THIS_ID(spriteset_8), "sprites/graphics/industries/fertiliserplant.png") { tmpl_building_sprite(570, 10, 66, -35) }
-spriteset(THIS_ID(spriteset_9), "sprites/graphics/industries/fertiliserplant.png") { tmpl_building_sprite(640, 10, 66, -35) }
-spriteset(THIS_ID(spriteset_10), "sprites/graphics/industries/fertiliserplant.png") { tmpl_building_sprite(710, 10, 66, -35) }
+spriteset(THIS_ID(spriteset_1), "sprites/graphics/industries/fertiliser_plant.png") { tmpl_building_sprite(80, 10, 114, -88) }
+spriteset(THIS_ID(spriteset_2), "sprites/graphics/industries/fertiliser_plant.png") { tmpl_building_sprite(150, 10, 114, -83) }
+spriteset(THIS_ID(spriteset_3), "sprites/graphics/industries/fertiliser_plant.png") { tmpl_building_sprite(220, 10, 114, -83) }
+spriteset(THIS_ID(spriteset_4), "sprites/graphics/industries/fertiliser_plant.png") { tmpl_building_sprite(290, 10, 114, -83) }
+spriteset(THIS_ID(spriteset_5), "sprites/graphics/industries/fertiliser_plant.png") { tmpl_building_sprite(360, 10, 66, -35) }
+spriteset(THIS_ID(spriteset_6), "sprites/graphics/industries/fertiliser_plant.png") { tmpl_building_sprite(430, 10, 66, -35) }
+spriteset(THIS_ID(spriteset_7), "sprites/graphics/industries/fertiliser_plant.png") { tmpl_building_sprite(500, 10, 66, -35) }
+spriteset(THIS_ID(spriteset_8), "sprites/graphics/industries/fertiliser_plant.png") { tmpl_building_sprite(570, 10, 66, -35) }
+spriteset(THIS_ID(spriteset_9), "sprites/graphics/industries/fertiliser_plant.png") { tmpl_building_sprite(640, 10, 66, -35) }
+spriteset(THIS_ID(spriteset_10), "sprites/graphics/industries/fertiliser_plant.png") { tmpl_building_sprite(710, 10, 66, -35) }
 
 SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_large_building_left), THIS_ID(spriteset_ground), THIS_ID(spriteset_2), 48)
 
