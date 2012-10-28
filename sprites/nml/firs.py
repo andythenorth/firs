@@ -43,6 +43,20 @@ class Sprite(object):
         self.yextent = yextent
         self.zextent = zextent
 
+class SmokeSprite(object):
+    """Base class to handle smoke sprites (using smoke sprite numbers from a base set)"""
+    def __init__(self, smoke_type, xoffset=0, yoffset=0, zoffset=0, xextent=16, yextent=16, zextent=16):
+        # optional parameters for offsets and extents for the *spritelayout* to use with this sprite (read nml spritelayout docs to see use)
+        self.xoffset = xoffset
+        self.yoffset = yoffset
+        self.zoffset = zoffset # set extents to x/y/z sizes of largest sprite in spriteset, or omit for default (16)
+        self.xextent = xextent
+        self.yextent = yextent
+        self.zextent = zextent
+        if smoke_type == 'white_smoke_small':
+            self.sprite_number = '3079 + (animation_frame / 4)'
+            self.zoffset = str(self.zoffset) + '+ animation_frame'
+            self.hide_sprite = 'animation_frame > 19'
 
 class Spriteset(object):
     """Base class to hold industry spritesets"""
@@ -67,11 +81,12 @@ class Spriteset(object):
 
 class SpriteLayout(object):
     """Base class to hold spritelayouts for industry spritelayouts"""
-    def __init__(self, id, ground_sprite, ground_overlay, building_sprites, fences=[]):
+    def __init__(self, id, ground_sprite, ground_overlay, building_sprites, smoke_sprites=[], fences=[]):
         self.id = id
         self.ground_sprite = ground_sprite
         self.ground_overlay = ground_overlay
         self.building_sprites = building_sprites
+        self.smoke_sprites = smoke_sprites
         self.fences = fences # a simple list of keywords.  Valid values: 'ne', 'se', 'sw', 'nw'.  Order is arbitrary.
 
 
@@ -91,6 +106,7 @@ class Industry(object):
         self.graphics_file_snow = '"sprites/graphics/industries/' + id + '_snow.png"' # don't use os.path.join here, this is for nml
         self.tiles = []
         self.sprites = []
+        self.smoke_sprites = []
         self.spritesets = []
         self.spritelayouts = [] # by convention spritelayout is one word :P
         self.industry_layouts = []
@@ -104,6 +120,11 @@ class Industry(object):
         new_sprite = Sprite(*args, **kwargs)
         self.sprites.append(new_sprite)
         return new_sprite # returning the new obj isn't essential, but permits the caller giving it a reference for use elsewhere
+
+    def add_smoke_sprite(self, *args, **kwargs):
+        new_smoke_sprite = SmokeSprite(*args, **kwargs)
+        self.smoke_sprites.append(new_smoke_sprite)
+        return new_smoke_sprite # returning the new obj isn't essential, but permits the caller giving it a reference for use elsewhere
 
     def add_spriteset(self, *args, **kwargs):
         new_spriteset = Spriteset(*args, **kwargs)

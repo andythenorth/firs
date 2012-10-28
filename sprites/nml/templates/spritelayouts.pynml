@@ -141,6 +141,22 @@
             }
         </tal:build_building_sprites>
 
+        // smoke sprites
+        <tal:optional_smoke repeat="smoke_sprite spritelayout.smoke_sprites">
+            building {
+                sprite: ${smoke_sprite.sprite_number};
+                recolour_mode: RECOLOUR_REMAP;
+                palette: PALETTE_USE_DEFAULT;
+                xoffset: ${smoke_sprite.xoffset};
+                yoffset: ${smoke_sprite.yoffset};
+                zoffset: ${smoke_sprite.zoffset};
+                xextent: ${smoke_sprite.xextent};
+                yextent: ${smoke_sprite.yextent};
+                zextent: ${smoke_sprite.zextent};
+                hide_sprite: ${smoke_sprite.hide_sprite};
+            }
+        </tal:optional_smoke>
+
         // fences SE and SW
         <tal:optional_fence condition="'se' in spritelayout.fences">
             building {
