@@ -30,8 +30,8 @@ sprite_1 = industry.add_sprite(
     zextent= 12,
 )
 # there is no sprite 2 for this industry, spritelayout_2 doesn't need a building sprite
-sprite_3 = industry.add_sprite(
-    sprite_number = 2030,
+sprite_3_anim = industry.add_sprite(
+    sprite_number = '2028 + ((animation_frame < 33) ? (animation_frame %3) : 0)',
     xoffset= 2,
     yoffset= 3,
     xextent= 13,
@@ -61,10 +61,10 @@ industry.add_spritelayout(
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
-    id = 'bauxite_mine_spritelayout_3',
+    id = 'bauxite_mine_spritelayout_3_anim',
     ground_sprite = sprite_ground,
     ground_overlay = sprite_ground_overlay,
-    building_sprites = [sprite_3],
+    building_sprites = [sprite_3_anim],
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
@@ -89,7 +89,7 @@ industry.add_industry_layout(
               (0, 1, 'bauxite_mine_tile', 'bauxite_mine_spritelayout_1'),
               (0, 2, 'bauxite_mine_tile', 'bauxite_mine_spritelayout_1'),
               (2, 0, 'bauxite_mine_tile', 'bauxite_mine_spritelayout_5'),
-              (2, 1, 'bauxite_mine_tile', 'bauxite_mine_spritelayout_3'),
+              (2, 1, 'bauxite_mine_tile', 'bauxite_mine_spritelayout_3_anim'),
               (2, 2, 'bauxite_mine_tile', 'bauxite_mine_spritelayout_4'),
               (3, 0, 'bauxite_mine_tile', 'bauxite_mine_spritelayout_1'),
               (3, 1, 'bauxite_mine_tile', 'bauxite_mine_spritelayout_1'),
