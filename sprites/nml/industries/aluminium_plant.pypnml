@@ -8,7 +8,7 @@
 #include "../templates/spritelayout_templates.pnml"
 #include "../templates/smoke_templates.pnml"
 
-#define THIS_ID(...) aluminium_plant ## __VA_ARGS__
+#define THIS_ID(...) ${industry.id}_ ## __VA_ARGS__
 
 spriteset(THIS_ID(spriteset_ground), "sprites/graphics/industries/groundtiles.png") {
 	tmpl_ground_tile(80, 10)
@@ -16,63 +16,63 @@ spriteset(THIS_ID(spriteset_ground), "sprites/graphics/industries/groundtiles.pn
 }
 
 spriteset(THIS_ID(spriteset_1)) {
-	tmpl_building_sprite_filename(10, 10, 57, -26, "sprites/graphics/industries/aluminiumplant.png")
-	tmpl_building_sprite_filename(10, 10, 57, -26, "sprites/graphics/industries/aluminiumplant_snow.png")
+	tmpl_building_sprite_filename(10, 10, 57, -26, "sprites/graphics/industries/aluminium_plant.png")
+	tmpl_building_sprite_filename(10, 10, 57, -26, "sprites/graphics/industries/aluminium_plant_snow.png")
 }
 
 spriteset(THIS_ID(spriteset_2)) {
-	tmpl_building_sprite_filename(80, 10, 66, -26, "sprites/graphics/industries/aluminiumplant.png")
-	tmpl_building_sprite_filename(80, 10, 66, -26, "sprites/graphics/industries/aluminiumplant_snow.png")
+	tmpl_building_sprite_filename(80, 10, 66, -26, "sprites/graphics/industries/aluminium_plant.png")
+	tmpl_building_sprite_filename(80, 10, 66, -26, "sprites/graphics/industries/aluminium_plant_snow.png")
 }
 
 spriteset(THIS_ID(spriteset_3)) {
-	tmpl_building_sprite_filename(150, 10, 92, -61, "sprites/graphics/industries/aluminiumplant.png")
-	tmpl_building_sprite_filename(150, 10, 92, -61, "sprites/graphics/industries/aluminiumplant_snow.png")
+	tmpl_building_sprite_filename(150, 10, 92, -61, "sprites/graphics/industries/aluminium_plant.png")
+	tmpl_building_sprite_filename(150, 10, 92, -61, "sprites/graphics/industries/aluminium_plant_snow.png")
 }
 
 spriteset(THIS_ID(spriteset_4)) {
-	tmpl_building_sprite_filename(220, 10, 90, -61, "sprites/graphics/industries/aluminiumplant.png")
-	tmpl_building_sprite_filename(220, 10, 90, -61, "sprites/graphics/industries/aluminiumplant_snow.png")
+	tmpl_building_sprite_filename(220, 10, 90, -61, "sprites/graphics/industries/aluminium_plant.png")
+	tmpl_building_sprite_filename(220, 10, 90, -61, "sprites/graphics/industries/aluminium_plant_snow.png")
 }
 
 spriteset(THIS_ID(spriteset_5)) {
-	tmpl_building_sprite_filename(290, 10, 100, -61, "sprites/graphics/industries/aluminiumplant.png")
-	tmpl_building_sprite_filename(290, 10, 100, -61, "sprites/graphics/industries/aluminiumplant_snow.png")
+	tmpl_building_sprite_filename(290, 10, 100, -61, "sprites/graphics/industries/aluminium_plant.png")
+	tmpl_building_sprite_filename(290, 10, 100, -61, "sprites/graphics/industries/aluminium_plant_snow.png")
 }
 
 spriteset(THIS_ID(spriteset_6)) {
-	tmpl_building_sprite_filename(360, 10, 100, -61, "sprites/graphics/industries/aluminiumplant.png")
-	tmpl_building_sprite_filename(360, 10, 100, -61, "sprites/graphics/industries/aluminiumplant_snow.png")
+	tmpl_building_sprite_filename(360, 10, 100, -61, "sprites/graphics/industries/aluminium_plant.png")
+	tmpl_building_sprite_filename(360, 10, 100, -61, "sprites/graphics/industries/aluminium_plant_snow.png")
 }
 
 spriteset(THIS_ID(spriteset_vehicles)) {
-	tmpl_building_sprite_filename(430, 10, 56, -26, "sprites/graphics/industries/aluminiumplant.png")
-	tmpl_building_sprite_filename(430, 10, 56, -26, "sprites/graphics/industries/aluminiumplant_snow.png")
+	tmpl_building_sprite_filename(430, 10, 56, -26, "sprites/graphics/industries/aluminium_plant.png")
+	tmpl_building_sprite_filename(430, 10, 56, -26, "sprites/graphics/industries/aluminium_plant_snow.png")
 }
 
 spriteset(THIS_ID(spriteset_forklift)) {
-	tmpl_building_sprite_filename(500, 10, 56, -26, "sprites/graphics/industries/aluminiumplant.png")
-	tmpl_building_sprite_filename(500, 10, 56, -26, "sprites/graphics/industries/aluminiumplant_snow.png")
+	tmpl_building_sprite_filename(500, 10, 56, -26, "sprites/graphics/industries/aluminium_plant.png")
+	tmpl_building_sprite_filename(500, 10, 56, -26, "sprites/graphics/industries/aluminium_plant_snow.png")
 }
 
 spriteset(THIS_ID(spriteset_9)) {
-	tmpl_building_sprite_filename(570, 10, 110, -61, "sprites/graphics/industries/aluminiumplant.png")
-	tmpl_building_sprite_filename(570, 10, 110, -61, "sprites/graphics/industries/aluminiumplant_snow.png")
+	tmpl_building_sprite_filename(570, 10, 110, -61, "sprites/graphics/industries/aluminium_plant.png")
+	tmpl_building_sprite_filename(570, 10, 110, -61, "sprites/graphics/industries/aluminium_plant_snow.png")
 }
 
 spriteset(THIS_ID(spriteset_10)) {
-	tmpl_building_sprite_filename(640, 10, 110, -61, "sprites/graphics/industries/aluminiumplant.png")
-	tmpl_building_sprite_filename(640, 10, 110, -61, "sprites/graphics/industries/aluminiumplant_snow.png")
+	tmpl_building_sprite_filename(640, 10, 110, -61, "sprites/graphics/industries/aluminium_plant.png")
+	tmpl_building_sprite_filename(640, 10, 110, -61, "sprites/graphics/industries/aluminium_plant_snow.png")
 }
 
 spriteset(THIS_ID(spriteset_11)) {
-	tmpl_building_sprite_filename(710, 10, 110, -61, "sprites/graphics/industries/aluminiumplant.png")
-	tmpl_building_sprite_filename(710, 10, 110, -61, "sprites/graphics/industries/aluminiumplant_snow.png")
+	tmpl_building_sprite_filename(710, 10, 110, -61, "sprites/graphics/industries/aluminium_plant.png")
+	tmpl_building_sprite_filename(710, 10, 110, -61, "sprites/graphics/industries/aluminium_plant_snow.png")
 }
 
 spriteset(THIS_ID(spriteset_ground_snow)) {
-	tmpl_building_sprite_filename(780, 10, 56, -25, "sprites/graphics/industries/aluminiumplant.png")
-	tmpl_building_sprite_filename(780, 10, 56, -25, "sprites/graphics/industries/aluminiumplant_snow.png")
+	tmpl_building_sprite_filename(780, 10, 56, -25, "sprites/graphics/industries/aluminium_plant.png")
+	tmpl_building_sprite_filename(780, 10, 56, -25, "sprites/graphics/industries/aluminium_plant_snow.png")
 }
 
 SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_long_hall), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground_snow), THIS_ID(spriteset_1), 64)

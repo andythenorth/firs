@@ -37,6 +37,7 @@ from industries import textile_mill
 from industries import hardware_store
 
 # industries with only partial conversion to python templating, mostly still cpp
+from industries import aluminium_plant
 from industries import arable_farm
 from industries import brick_works
 from industries import builders_yard
