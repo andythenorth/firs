@@ -45,18 +45,27 @@ class Sprite(object):
 
 class SmokeSprite(object):
     """Base class to handle smoke sprites (using smoke sprite numbers from a base set)"""
-    def __init__(self, smoke_type, xoffset=0, yoffset=0, zoffset=0, xextent=16, yextent=16, zextent=16):
-        # optional parameters for offsets and extents for the *spritelayout* to use with this sprite (read nml spritelayout docs to see use)
+    def __init__(self, smoke_type, xoffset=0, yoffset=0, zoffset=0):
+        # defaults
         self.xoffset = xoffset
         self.yoffset = yoffset
-        self.zoffset = zoffset # set extents to x/y/z sizes of largest sprite in spriteset, or omit for default (16)
-        self.xextent = xextent
-        self.yextent = yextent
-        self.zextent = zextent
+        self.zoffset = zoffset
+        self.xextent = 16
+        self.yextent = 16
+        self.zextent = 16
+        self.hide_sprite = 0
         if smoke_type == 'white_smoke_small':
             self.sprite_number = '3079 + (animation_frame / 4)'
             self.zoffset = str(self.zoffset) + '+ animation_frame'
+            self.xextent = 11
+            self.zextent = 7
             self.hide_sprite = 'animation_frame > 19'
+        elif smoke_type == 'smoke_big':
+            self.sprite_number = '3701 + animation_frame'
+            self.xextent = 15
+            self.yextent = 7
+            self.zextent = 7
+
 
 class Spriteset(object):
     """Base class to hold industry spritesets"""
