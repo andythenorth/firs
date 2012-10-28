@@ -7,19 +7,19 @@
 
 #include "../templates/spritelayout_templates.pnml"
 
-#define THIS_ID(...) junk_yard ## __VA_ARGS__
+#define THIS_ID(...) ${industry.id}_ ## __VA_ARGS__
 
 spriteset(THIS_ID(spriteset_ground), "sprites/graphics/industries/groundtiles.png") { tmpl_ground_tile(10, 10) }
 
-spriteset(THIS_ID(spriteset_1), "sprites/graphics/industries/junkyard.png") { tmpl_building_sprite(10, 10, 55, -24) }
-spriteset(THIS_ID(spriteset_2), "sprites/graphics/industries/junkyard.png") { tmpl_building_sprite(80, 10, 55, -24) }
-spriteset(THIS_ID(spriteset_3), "sprites/graphics/industries/junkyard.png") { tmpl_building_sprite(150, 10, 55, -24) }
-spriteset(THIS_ID(spriteset_4), "sprites/graphics/industries/junkyard.png") { tmpl_building_sprite(220, 10, 55, -24) }
-spriteset(THIS_ID(spriteset_5), "sprites/graphics/industries/junkyard.png") { tmpl_building_sprite(290, 10, 55, -24) }
-spriteset(THIS_ID(spriteset_6), "sprites/graphics/industries/junkyard.png") { tmpl_building_sprite(360, 10, 55, -24) }
-spriteset(THIS_ID(spriteset_7), "sprites/graphics/industries/junkyard.png") { tmpl_building_sprite(430, 10, 55, -24) }
-spriteset(THIS_ID(spriteset_8), "sprites/graphics/industries/junkyard.png") { tmpl_building_sprite(500, 10, 55, -24) }
-spriteset(THIS_ID(spriteset_9), "sprites/graphics/industries/junkyard.png") { tmpl_building_sprite(570, 10, 55, -24) }
+spriteset(THIS_ID(spriteset_1), "sprites/graphics/industries/junk_yard.png") { tmpl_building_sprite(10, 10, 55, -24) }
+spriteset(THIS_ID(spriteset_2), "sprites/graphics/industries/junk_yard.png") { tmpl_building_sprite(80, 10, 55, -24) }
+spriteset(THIS_ID(spriteset_3), "sprites/graphics/industries/junk_yard.png") { tmpl_building_sprite(150, 10, 55, -24) }
+spriteset(THIS_ID(spriteset_4), "sprites/graphics/industries/junk_yard.png") { tmpl_building_sprite(220, 10, 55, -24) }
+spriteset(THIS_ID(spriteset_5), "sprites/graphics/industries/junk_yard.png") { tmpl_building_sprite(290, 10, 55, -24) }
+spriteset(THIS_ID(spriteset_6), "sprites/graphics/industries/junk_yard.png") { tmpl_building_sprite(360, 10, 55, -24) }
+spriteset(THIS_ID(spriteset_7), "sprites/graphics/industries/junk_yard.png") { tmpl_building_sprite(430, 10, 55, -24) }
+spriteset(THIS_ID(spriteset_8), "sprites/graphics/industries/junk_yard.png") { tmpl_building_sprite(500, 10, 55, -24) }
+spriteset(THIS_ID(spriteset_9), "sprites/graphics/industries/junk_yard.png") { tmpl_building_sprite(570, 10, 55, -24) }
 
 spritelayout THIS_ID(spritelayout_1) {
 	ground {
