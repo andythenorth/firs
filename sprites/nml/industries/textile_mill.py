@@ -52,21 +52,19 @@ spriteset_small_warehouse = industry.add_spriteset(
     sprites = [(290, 60, 64, 103, -31, -72)],
     zextent = 48
 )
-sprite_smoke = industry.add_sprite(
-    sprite_number = '3701 + animation_frame',
+sprite_smoke = industry.add_smoke_sprite(
+    smoke_type = 'white_smoke_big',
     xoffset= 0,
     yoffset= 9,
     zoffset= 78,
-    xextent= 15,
-    yextent= 7,
-    zextent= 7
 )
 
 industry.add_spritelayout(
     id = 'textile_mill_spritelayout_1_anim',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
-    building_sprites = [spriteset_large_chimney, sprite_smoke],
+    building_sprites = [spriteset_large_chimney],
+    smoke_sprites = [sprite_smoke],
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
