@@ -7,36 +7,36 @@
 
 #include "../templates/spritelayout_templates.pnml"
 
-#define THIS_ID(...) lime_kiln ## __VA_ARGS__
+#define THIS_ID(...) ${industry.id}_ ## __VA_ARGS__
 
 spriteset(THIS_ID(spriteset_ground)) {
-	tmpl_building_sprite_filename(360, 10, 64, -33, "sprites/graphics/industries/limekiln.png")
-	tmpl_building_sprite_filename(360, 10, 64, -33, "sprites/graphics/industries/limekiln_snow.png")
+	tmpl_building_sprite_filename(360, 10, 64, -33, "sprites/graphics/industries/lime_kiln.png")
+	tmpl_building_sprite_filename(360, 10, 64, -33, "sprites/graphics/industries/lime_kiln_snow.png")
 }
 
 spriteset(THIS_ID(spriteset_1)) {
-	tmpl_building_sprite_filename(10, 10, 110, -70, "sprites/graphics/industries/limekiln.png")
-	tmpl_building_sprite_filename(10, 10, 110, -70, "sprites/graphics/industries/limekiln_snow.png")
+	tmpl_building_sprite_filename(10, 10, 110, -70, "sprites/graphics/industries/lime_kiln.png")
+	tmpl_building_sprite_filename(10, 10, 110, -70, "sprites/graphics/industries/lime_kiln_snow.png")
 }
 
 spriteset(THIS_ID(spriteset_2)) {
-	tmpl_building_sprite_filename(80, 10, 110, -70, "sprites/graphics/industries/limekiln.png")
-	tmpl_building_sprite_filename(80, 10, 110, -70, "sprites/graphics/industries/limekiln_snow.png")
+	tmpl_building_sprite_filename(80, 10, 110, -70, "sprites/graphics/industries/lime_kiln.png")
+	tmpl_building_sprite_filename(80, 10, 110, -70, "sprites/graphics/industries/lime_kiln_snow.png")
 }
 
 spriteset(THIS_ID(spriteset_3)) {
-	tmpl_building_sprite_filename(150, 10, 64, -31, "sprites/graphics/industries/limekiln.png")
-	tmpl_building_sprite_filename(150, 10, 64, -31, "sprites/graphics/industries/limekiln_snow.png")
+	tmpl_building_sprite_filename(150, 10, 64, -31, "sprites/graphics/industries/lime_kiln.png")
+	tmpl_building_sprite_filename(150, 10, 64, -31, "sprites/graphics/industries/lime_kiln_snow.png")
 }
 
 spriteset(THIS_ID(spriteset_4)) {
-	tmpl_building_sprite_filename(220, 10, 92, -60, "sprites/graphics/industries/limekiln.png")
-	tmpl_building_sprite_filename(220, 10, 92, -60, "sprites/graphics/industries/limekiln_snow.png")
+	tmpl_building_sprite_filename(220, 10, 92, -60, "sprites/graphics/industries/lime_kiln.png")
+	tmpl_building_sprite_filename(220, 10, 92, -60, "sprites/graphics/industries/lime_kiln_snow.png")
 }
 
 spriteset(THIS_ID(spriteset_5)) {
-	tmpl_building_sprite_filename(290, 10, 64, -31, "sprites/graphics/industries/limekiln.png")
-	tmpl_building_sprite_filename(290, 10, 64, -31, "sprites/graphics/industries/limekiln_snow.png")
+	tmpl_building_sprite_filename(290, 10, 64, -31, "sprites/graphics/industries/lime_kiln.png")
+	tmpl_building_sprite_filename(290, 10, 64, -31, "sprites/graphics/industries/lime_kiln_snow.png")
 }
 
 SPRITELAYOUT_FENCES_NORMAL_SNOW(THIS_ID(spritelayout_1), 2022, THIS_ID(spriteset_ground), THIS_ID(spriteset_1), 48)
