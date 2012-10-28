@@ -67,23 +67,17 @@ spriteset_8 = industry.add_spriteset(
     sprites = [(430, 10, 64, 66, -31, -38)],
     zextent = 48
 )
-sprite_smoke_1 = industry.add_sprite(
-    sprite_number = '3701 + animation_frame',
+sprite_smoke_1 = industry.add_smoke_sprite(
+    smoke_type = 'white_smoke_big',
     xoffset= 1,
     yoffset= 0,
     zoffset= 62,
-    xextent= 15,
-    yextent= 7,
-    zextent= 7
 )
-sprite_smoke_2 = industry.add_sprite(
-    sprite_number = '3701 + animation_frame',
+sprite_smoke_2 = industry.add_smoke_sprite(
+    smoke_type = 'white_smoke_big',
     xoffset= 1,
     yoffset= -3,
     zoffset= 62,
-    xextent= 15,
-    yextent= 7,
-    zextent= 7
 )
 
 industry.add_spritelayout(
@@ -125,7 +119,8 @@ industry.add_spritelayout(
     id = 'biorefinery_spritelayout_6_anim',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
-    building_sprites = [spriteset_6, sprite_smoke_2, sprite_smoke_1],
+    building_sprites = [spriteset_6],
+    smoke_sprites = [sprite_smoke_2, sprite_smoke_1],
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
