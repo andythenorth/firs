@@ -59,6 +59,12 @@ spriteset_9 = industry.add_spriteset(
     id = 'lumber_yard_spriteset_9',
     sprites = [(360, 10, 64, 64, -31, -24)]
 )
+sprite_smoke = industry.add_smoke_sprite(
+    smoke_type = 'white_smoke_small',
+    xoffset= 0,
+    yoffset= 3,
+    zoffset= 12,
+)
 
 industry.add_spritelayout(
     id = 'lumber_yard_spritelayout_1',
@@ -72,6 +78,7 @@ industry.add_spritelayout(
     ground_sprite = sprite_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_2],
+    smoke_sprites = [sprite_smoke],
     fences = ['nw','ne','se','sw']
 )
 # no spritelayout 3 for this industry, historical reasons

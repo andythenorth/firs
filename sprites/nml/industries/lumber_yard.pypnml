@@ -29,6 +29,9 @@ item(FEAT_INDUSTRYTILES, ${industry.id}_tile, TILE_LUMBERYARD_1) {
 		substitute:       0;
 		accepted_cargos:  [[WDPR, 8], [RFPR, 8]];
 		land_shape_flags: 0;
+		animation_info:     [ANIMATION_LOOPING, 71];
+		animation_speed:    2;
+		animation_triggers: bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE);
 	}
 
 	graphics {
