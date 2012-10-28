@@ -82,6 +82,18 @@ spriteset_11 = industry.add_spriteset(
     sprites = [(710, 10, 64, 49, -31, -18)],
     zextent = 8
 )
+sprite_smoke_1 = industry.add_smoke_sprite(
+    smoke_type = 'white_smoke_big',
+    xoffset= 17,
+    yoffset= 9,
+    zoffset= 99,
+)
+sprite_smoke_2 = industry.add_smoke_sprite(
+    smoke_type = 'white_smoke_big',
+    xoffset= 20,
+    yoffset= 9,
+    zoffset= 100,
+)
 
 industry.add_spritelayout(
     id = 'stockyard_spritelayout_1',
@@ -116,6 +128,7 @@ industry.add_spritelayout(
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_5],
+    smoke_sprites = [sprite_smoke_1, sprite_smoke_2],
     fences = ['nw','se','sw']
 )
 industry.add_spritelayout(
