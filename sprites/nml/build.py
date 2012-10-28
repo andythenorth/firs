@@ -42,6 +42,7 @@ from industries import builders_yard
 from industries import clay_pit
 from industries import coal_mine
 from industries import dairy
+from industries import dairy_farm
 from industries import fertiliser_plant
 from industries import fishing_grounds
 from industries import fishing_harbour

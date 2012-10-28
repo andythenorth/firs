@@ -5,16 +5,16 @@
  * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS industry set. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#define THIS_ID(...) dairy_farm ## __VA_ARGS__
+#define THIS_ID(...) ${industry.id}_ ## __VA_ARGS__
 
 #define THIS_STR_EXTRA_SUPPLIES        STR_EXTRA_FARM_SUPPLIES
 
-spriteset(THIS_ID(spriteset_barn1),      "sprites/graphics/industries/dairyfarm.png") { tmpl_building_sprite(10, 10, 52, -21) }
-spriteset(THIS_ID(spriteset_silo),       "sprites/graphics/industries/dairyfarm.png") { tmpl_building_sprite(80, 10, 52, -21) }
-spriteset(THIS_ID(spriteset_barn2),      "sprites/graphics/industries/dairyfarm.png") { tmpl_building_sprite(150, 10, 52, -21) }
-spriteset(THIS_ID(spriteset_house),      "sprites/graphics/industries/dairyfarm.png") { tmpl_building_sprite(220, 10, 52, -21) }
-spriteset(THIS_ID(spriteset_cows_bw),    "sprites/graphics/industries/dairyfarm.png") { tmpl_building_sprite(290, 10, 52, -21) }
-spriteset(THIS_ID(spriteset_cows_brown), "sprites/graphics/industries/dairyfarm.png") { tmpl_building_sprite(360, 10, 52, -21) }
+spriteset(THIS_ID(spriteset_barn1),      "sprites/graphics/industries/dairy_farm.png") { tmpl_building_sprite(10, 10, 52, -21) }
+spriteset(THIS_ID(spriteset_silo),       "sprites/graphics/industries/dairy_farm.png") { tmpl_building_sprite(80, 10, 52, -21) }
+spriteset(THIS_ID(spriteset_barn2),      "sprites/graphics/industries/dairy_farm.png") { tmpl_building_sprite(150, 10, 52, -21) }
+spriteset(THIS_ID(spriteset_house),      "sprites/graphics/industries/dairy_farm.png") { tmpl_building_sprite(220, 10, 52, -21) }
+spriteset(THIS_ID(spriteset_cows_bw),    "sprites/graphics/industries/dairy_farm.png") { tmpl_building_sprite(290, 10, 52, -21) }
+spriteset(THIS_ID(spriteset_cows_brown), "sprites/graphics/industries/dairy_farm.png") { tmpl_building_sprite(360, 10, 52, -21) }
 
 GROUND_AWARE_SPRITELAYOUT(THIS_ID(spritelayout_barn1))
 	CONDITIONAL_GROUND_SPRITE_OVERLAY(2022, terrain_type != TILETYPE_SNOW)
