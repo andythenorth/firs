@@ -46,6 +46,13 @@ sprite_5 = industry.add_sprite(
     sprite_number = 2033,
     zextent= 12,
 )
+sprite_smoke = industry.add_smoke_sprite(
+    smoke_type = 'dark_smoke_small',
+    xoffset= 0,
+    yoffset= 2,
+    zoffset= 38,
+)
+
 industry.add_spritelayout(
     id = 'bauxite_mine_spritelayout_1',
     ground_sprite = sprite_ground,
@@ -79,6 +86,7 @@ industry.add_spritelayout(
     ground_sprite = sprite_ground,
     ground_overlay = sprite_ground_overlay,
     building_sprites = [sprite_5],
+    smoke_sprites = [sprite_smoke],
     fences = ['nw','ne','se','sw']
 )
 

@@ -54,6 +54,12 @@ class SmokeSprite(object):
         self.xextent = 16
         self.yextent = 16
         self.zextent = 16
+        if smoke_type == 'dark_smoke_small':
+            self.sprite_number = '2040 + (animation_frame / 4)'
+            self.zoffset = str(self.zoffset) + '+ animation_frame'
+            self.xextent = 11
+            self.zextent = 7
+            self.hide_sprite = 'animation_frame > 19'
         if smoke_type == 'white_smoke_small':
             self.sprite_number = '3079 + (animation_frame / 4)'
             self.zoffset = str(self.zoffset) + '+ animation_frame'
