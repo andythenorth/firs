@@ -28,6 +28,9 @@ item(FEAT_INDUSTRYTILES, ${industry.id}_tile, TILE_GLASSWORKS_1) {
 		substitute:       0;
 		accepted_cargos:  [[SAND, 8], [RFPR, 8]];
 		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
+		animation_info:     [ANIMATION_LOOPING, 71];
+		animation_speed:    2;
+		animation_triggers: bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE);
 	}
 
 	graphics {

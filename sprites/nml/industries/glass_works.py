@@ -54,6 +54,12 @@ spriteset_3 = industry.add_spriteset(
     sprites = [(150, 60, 64, 90, -31, -59)],
     zextent = 12
 )
+sprite_smoke = industry.add_smoke_sprite(
+    smoke_type = 'white_smoke_small',
+    xoffset= 8,
+    yoffset= 0,
+    zoffset= 55,
+)
 
 industry.add_spritelayout(
     id = 'glass_works_spritelayout_1',
@@ -74,6 +80,7 @@ industry.add_spritelayout(
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay_3,
     building_sprites = [spriteset_3],
+    smoke_sprites = [sprite_smoke],
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
