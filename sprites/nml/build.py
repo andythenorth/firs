@@ -47,6 +47,7 @@ from industries import fishing_harbour
 from industries import forest
 from industries import fruit_plantation
 from industries import iron_ore_mine
+from industries import iron_works
 from industries import junk_yard
 from industries import lime_kiln
 from industries import machine_shop
