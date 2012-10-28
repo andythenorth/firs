@@ -42,11 +42,11 @@ spriteset_3 = industry.add_spriteset(
     sprites = [(150, 60, 64, 91, -31, -60)],
     zextent = 48
 )
-sprite_smoke = industry.add_sprite(
-    sprite_number = 'animation_frame <= 19 ? 3079 + (animation_frame / 4) : 3079',
+sprite_smoke = industry.add_smoke_sprite(
+    smoke_type = 'white_smoke_small',
     xoffset= 8,
     yoffset= 0,
-    zoffset= '55 + animation_frame',
+    zoffset= 55,
     xextent= 11,
     zextent= 7
 )
@@ -55,7 +55,8 @@ industry.add_spritelayout(
     id = 'brewery_spritelayout_1_anim',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
-    building_sprites = [spriteset_1, sprite_smoke],
+    building_sprites = [spriteset_1],
+    smoke_sprites = [sprite_smoke],
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
