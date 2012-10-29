@@ -43,7 +43,6 @@ from industries import brick_works
 from industries import builders_yard
 from industries import cement_plant
 from industries import clay_pit
-from industries import coal_mine
 from industries import dairy
 from industries import dairy_farm
 from industries import fertiliser_plant
@@ -52,7 +51,6 @@ from industries import fishing_harbour
 from industries import forest
 from industries import fruit_plantation
 from industries import furniture_factory
-from industries import iron_ore_mine
 from industries import iron_works
 from industries import junk_yard
 from industries import lime_kiln
@@ -60,10 +58,14 @@ from industries import machine_shop
 from industries import metal_fabrication_plant
 from industries import metal_workshop
 from industries import mixed_farm
+from industries import quarry
+
+# industries reusing default industry graphics (and possibly default layouts)
+from industries import coal_mine
+from industries import iron_ore_mine
 from industries import oil_refinery
 from industries import oil_rig
 from industries import paper_mill
-from industries import quarry
 from industries import sawmill
 from industries import steel_mill
 
