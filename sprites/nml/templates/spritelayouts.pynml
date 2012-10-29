@@ -153,9 +153,7 @@
                 xextent: ${smoke_sprite.xextent};
                 yextent: ${smoke_sprite.yextent};
                 zextent: ${smoke_sprite.zextent};
-                <tal:optional_hide_sprite condition="hasattr(smoke_sprite, 'hide_sprite')">
-                    hide_sprite: ${smoke_sprite.hide_sprite};
-                </tal:optional_hide_sprite>
+                hide_sprite: ${smoke_sprite.hide_sprite};
             }
         </tal:optional_smoke>
 
