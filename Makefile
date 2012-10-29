@@ -36,6 +36,8 @@ REPLACE_REVISION    := {{REPO_REVISION}}
 REPLACE_FILENAME    := {{FILENAME}}
 REPLACE_MD5SUM      := {{GRF_MD5}}
 
+NML_MIN_VERSION     := 2044
+
 
 # general definitions (no rules!)
 -include Makefile_dist

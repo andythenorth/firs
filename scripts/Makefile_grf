@@ -10,7 +10,7 @@
 
 grf $(GRF_FILE): gfx nml lng
 	$(_E) "[NML] $(GRF_FILE)"
-	$(_V) $(NML) $(NML_FLAGS) --grf $(GRF_FILE) $(NML_FILE)
+	$(_V) [ $(NML_VERSION) -ge $(NML_MIN_VERSION) ] && $(NML) $(NML_FLAGS) --grf $(GRF_FILE) $(NML_FILE) || echo "NML is too old. Minimum $(NML_MIN_VERSION) is required."
 
 $(MD5_FILENAME) $(MD5_SRC_FILENAME): $(GRF_FILE)
 	$(_E) "[MD5] $@"
