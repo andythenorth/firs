@@ -17,7 +17,7 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_plantation), 207) {
 
 ${industry.get_spritelayouts()}
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4616, var[0x60, 0, 31, 0]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_4616, nearby_tile_slope(0,0)) {
 	0: action2_4597;
 	1: action2_4598;
 	2: action2_4599;
@@ -41,7 +41,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_4616, var[0x60, 0, 31, 0]) {
 }
 
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4639, var[0x60, 0, 31, 0]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_4639, nearby_tile_slope(0,0)) {
 	0: action2_4620;
 	1: action2_4621;
 	2: action2_4622;
@@ -64,7 +64,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_4639, var[0x60, 0, 31, 0]) {
 	action2_4620;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4661, var[0x60, 0, 31, 0]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_4661, nearby_tile_slope(0,0)) {
 	0: action2_4642;
 	1: action2_4643;
 	2: action2_4644;
@@ -87,7 +87,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_4661, var[0x60, 0, 31, 0]) {
 	action2_4642;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4683, var[0x60, 0, 31, 0]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_4683, nearby_tile_slope(0,0)) {
 	0: action2_4664;
 	1: action2_4665;
 	2: action2_4666;
@@ -110,7 +110,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_4683, var[0x60, 0, 31, 0]) {
 	action2_4664;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4705, var[0x60, 0, 31, 0]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_4705, nearby_tile_slope(0,0)) {
 	0: action2_4686;
 	1: action2_4687;
 	2: action2_4688;
@@ -133,7 +133,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_4705, var[0x60, 0, 31, 0]) {
 	action2_4686;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4727, var[0x60, 0, 31, 0]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_4727, nearby_tile_slope(0,0)) {
 	0: action2_4708;
 	1: action2_4709;
 	2: action2_4710;
@@ -156,7 +156,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_4727, var[0x60, 0, 31, 0]) {
 	action2_4708;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4730, ((var[0x60, 16, 255, 0] - snowline_height) + 1)) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_4730, ((nearby_tile_height(0,0) - snowline_height) + 1)) {
 	0..7: action2_4661;
 	8..15: action2_4683;
 	16..23: action2_4705;
@@ -164,7 +164,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_4730, ((var[0x60, 16, 255, 0] - snowlin
 	action2_4639;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4750, var[0x60, 0, 31, 0]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_4750, nearby_tile_slope(0,0)) {
 	0: action2_4731;
 	1: action2_4732;
 	2: action2_4733;
@@ -187,7 +187,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_4750, var[0x60, 0, 31, 0]) {
 	action2_4731;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4772, var[0x60, 0, 31, 0]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_4772, nearby_tile_slope(0,0)) {
 	0: action2_4753;
 	1: action2_4754;
 	2: action2_4755;
@@ -211,14 +211,14 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_4772, var[0x60, 0, 31, 0]) {
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, action2_4775, terrain_type) {
-	1: action2_4772;
+	TILETYPE_DESERT: action2_4772;
 	action2_4750;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(tile_plantation_spritelayout), var[0x03, 0, 255]) {
-	0: action2_4616;
-	1: action2_4730;
-	2: action2_4775;
+switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(tile_plantation_spritelayout), climate) {
+	CLIMATE_TEMPERATE: action2_4616;
+	CLIMATE_ARCTIC: action2_4730;
+	CLIMATE_TROPIC: action2_4775;
 	action2_4616;
 }
 
