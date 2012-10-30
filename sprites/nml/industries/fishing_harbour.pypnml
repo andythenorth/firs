@@ -737,7 +737,7 @@ spritelayout THIS_ID(spritelayout_32) {
 	}
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4163, var[0x60, 0, 31, 0]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_4163, nearby_tile_slope(0,0)) {
 	0: THIS_ID(spritelayout_10);
 	1: THIS_ID(spritelayout_4);
 	2: THIS_ID(spritelayout_8);
@@ -756,7 +756,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_4163, var[0x60, 0, 31, 0]) {
 	THIS_ID(spritelayout_10);
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4164, var[0x60, 0, 31, 0]) {
+switch(FEAT_INDUSTRYTILES, SELF, action2_4164, nearby_tile_slope(0,0)) {
 	0: THIS_ID(spritelayout_20);
 	1: THIS_ID(spritelayout_14);
 	2: THIS_ID(spritelayout_18);

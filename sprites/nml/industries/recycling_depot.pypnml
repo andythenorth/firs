@@ -89,10 +89,9 @@ produce(${industry.id}_production,
 		0,               // no 2nd output
 		0                // don't repeat
 		);
-/* Parent scope is towns. var 0x82 is the population
- * TODO: use nicer variable names when towns are implemented
- * in NML */
-switch(FEAT_INDUSTRIES, PARENT, ${industry.id}_produce, [STORE_TEMP(((var[0x82, 3, 8191] + 11) / 12), 1)]) {
+
+
+switch(FEAT_INDUSTRIES, PARENT, ${industry.id}_produce, [STORE_TEMP(((population + 11) / 12), 1)]) {
 	0: ${industry.id}_production;
 	${industry.id}_production;
 }
