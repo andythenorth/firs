@@ -129,7 +129,7 @@ class Industry(object):
         self.spritesets = []
         self.spritelayouts = [] # by convention spritelayout is one word :P
         self.industry_layouts = []
-        # nml item properties, most of these should be provided as strings for insertion into nml
+        # nml item properties, most of these should be provided as strings for insertion into nml.  See nml docs for meaning + acceptable values.
         self.substitute = substitute
         self.name = name
         self.nearby_station_name = nearby_station_name

@@ -365,34 +365,30 @@ SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
 
 item(FEAT_INDUSTRIES, aluminium_plant, IND_ALUMINIUMPLANT_ID) {
 	property {
-		substitute: 0;
-		layouts: [
-				tilelayout_aluminium_plant_1,
-				tilelayout_aluminium_plant_2,
-				tilelayout_aluminium_plant_3
-			];
-		life_type:              IND_LIFE_TYPE_PROCESSING;
-		closure_msg:            TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS;
-		prod_increase_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL;
-		prod_decrease_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_GENERAL;
-		new_ind_msg:            TTD_STR_NEWS_INDUSTRY_CONSTRUCTION;
-		name:                   string(STR_IND_ALUMINIUM_PLANT);
-		nearby_station_name:    string(STR_STATION, string(STR_TOWN), string(STR_IND_ALUMINIUM_PLANT));
-		prod_cargo_types:       [STEL];
-		accept_cargo_types:     [AORE, RFPR, SCMT];
-		prod_multiplier: [0, 0];
-		input_multiplier_1: [0, 0];
-		input_multiplier_2: [0, 0];
-		input_multiplier_3: [0, 0];
-		min_cargo_distr: 5;
-		conflicting_ind_types: [];
-		prob_random: 5;
-		prob_in_game: 3;
-		prospect_chance: 0.75;
-		fund_cost_multiplier: 200;
-		map_colour: 175;
-		remove_cost_multiplier: 0;
-		spec_flags:             0;
+		substitute: ${industry.substitute};
+		layouts: ${industry.layouts};
+		life_type: ${industry.life_type};
+		closure_msg: ${industry.closure_msg};
+		prod_increase_msg: ${industry.prod_increase_msg};
+		prod_decrease_msg: ${industry.prod_decrease_msg};
+		new_ind_msg: ${industry.new_ind_msg};
+		name: ${industry.name};
+		nearby_station_name: ${industry.nearby_station_name};
+		prod_cargo_types: ${industry.prod_cargo_types};
+		accept_cargo_types: ${industry.accept_cargo_types};
+		prod_multiplier: ${industry.prod_multiplier};
+		input_multiplier_1: ${industry.input_multiplier_1};
+		input_multiplier_2: ${industry.input_multiplier_2};
+		input_multiplier_3: ${industry.input_multiplier_3};
+		min_cargo_distr: ${industry.min_cargo_distr};
+		conflicting_ind_types: ${industry.conflicting_ind_types};
+		prob_random: ${industry.prob_random};
+		prob_in_game: ${industry.prob_in_game};
+		prospect_chance: ${industry.prospect_chance};
+		fund_cost_multiplier: ${industry.fund_cost_multiplier};
+		map_colour: ${industry.map_colour};
+		remove_cost_multiplier: ${industry.remove_cost_multiplier};
+		spec_flags: ${industry.spec_flags};
 	}
 	graphics {
 		produce_cargo_arrival:   THIS_ID(produce);
