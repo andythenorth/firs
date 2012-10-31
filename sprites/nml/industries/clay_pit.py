@@ -15,7 +15,31 @@ Some method properties need a string - the templating is then typically directly
 When a string is expected are basically two choices: provide a string directly, or make an object reference and get an id from that object.
 """
 
-industry = Industry(id='clay_pit')
+industry = Industry(id='clay_pit',
+                    accept_cargo_types='[ENSP]',
+                    input_multiplier_1='[0, 0]',
+                    input_multiplier_3='[0, 0]',
+                    input_multiplier_2='[0, 0]',
+                    prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL',
+                    prod_cargo_types='[CLAY]',
+                    layouts='[tilelayout_clay_pit_1, tilelayout_clay_pit_2]',
+                    prob_in_game='3',
+                    prob_random='5',
+                    prod_multiplier='[16, 0]',
+                    substitute='0',
+                    new_ind_msg='TTD_STR_NEWS_INDUSTRY_CONSTRUCTION',
+                    map_colour='46',
+                    conflicting_ind_types='[]',
+                    prod_decrease_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_GENERAL',
+                    life_type='IND_LIFE_TYPE_EXTRACTIVE',
+                    min_cargo_distr='5',
+                    spec_flags='0',
+                    remove_cost_multiplier='0',
+                    prospect_chance='0.75',
+                    name='string(STR_IND_CLAY_PIT)',
+                    nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_IND_CLAY_PIT)',
+                    fund_cost_multiplier='200',
+                    closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS')
 
 # industry uses layouts and sprites from default game, no custom layouts etc
 

@@ -15,7 +15,31 @@ Some method properties need a string - the templating is then typically directly
 When a string is expected are basically two choices: provide a string directly, or make an object reference and get an id from that object.
 """
 
-industry = Industry(id='arable_farm')
+industry = Industry(id='arable_farm',
+                    accept_cargo_types='[FMSP]',
+                    input_multiplier_1='[0, 0]',
+                    input_multiplier_3='[0, 0]',
+                    input_multiplier_2='[0, 0]',
+                    prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_FARM',
+                    prod_cargo_types='[GRAI, SGBT]',
+                    layouts='[tilelayout_arable_farm_1, tilelayout_arable_farm_2, tilelayout_arable_farm_3]',
+                    prob_in_game='4',
+                    prob_random='24',
+                    prod_multiplier='[7, 7]',
+                    substitute='0',
+                    new_ind_msg='TTD_STR_NEWS_INDUSTRY_CONSTRUCTION',
+                    map_colour='208',
+                    conflicting_ind_types='[]',
+                    prod_decrease_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_FARM',
+                    life_type='IND_LIFE_TYPE_ORGANIC',
+                    min_cargo_distr='1',
+                    spec_flags='bitmask(IND_FLAG_PLANT_FIELDS_PERIODICALLY, IND_FLAG_PLANT_FIELDS_WHEN_BUILT)',
+                    remove_cost_multiplier='0',
+                    prospect_chance='0.75',
+                    name='string(STR_IND_ARABLE_FARM)',
+                    nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_IND_ARABLE_FARM)',
+                    fund_cost_multiplier='55',
+                    closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS')
 
 # industry uses layouts and sprites from default game, no custom layouts etc
 

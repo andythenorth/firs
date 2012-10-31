@@ -15,7 +15,25 @@ Some method properties need a string - the templating is then typically directly
 When a string is expected are basically two choices: provide a string directly, or make an object reference and get an id from that object.
 """
 
-industry = Industry(id='oil_wells')
+industry = Industry(id='oil_wells',
+                    new_ind_msg='TTD_STR_NEWS_INDUSTRY_CONSTRUCTION',
+                    map_colour='152',
+                    prospect_chance='0.75',
+                    name='18445',
+                    layouts='[oil_wells_industry_layout_1_tilelayout, oil_wells_industry_layout_2_tilelayout, oil_wells_industry_layout_3_tilelayout, oil_wells_industry_layout_4_tilelayout]',
+                    accept_cargo_types='[ENSP]',
+                    prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL',
+                    life_type='IND_LIFE_TYPE_ORGANIC',
+                    conflicting_ind_types='[]',
+                    prod_decrease_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_GENERAL',
+                    spec_flags='0',
+                    prod_cargo_types='[OIL_]',
+                    closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
+                    prob_in_game='3',
+                    prob_random='5',
+                    fund_cost_multiplier='230',
+                    prod_multiplier='[28]',
+                    substitute='0')
 
 industry.add_tile(id='oil_wells_tile_pump')
 industry.add_tile(id='oil_wells_tile_building')

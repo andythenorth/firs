@@ -15,7 +15,31 @@ Some method properties need a string - the templating is then typically directly
 When a string is expected are basically two choices: provide a string directly, or make an object reference and get an id from that object.
 """
 
-industry = Industry(id='brewery')
+industry = Industry(id='brewery',
+                    accept_cargo_types='[MNSP, FRVG, GRAI]',
+                    input_multiplier_1='[0, 0]',
+                    input_multiplier_3='[0, 0]',
+                    input_multiplier_2='[0, 0]',
+                    prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL',
+                    prod_cargo_types='[BEER]',
+                    layouts='[brewery_industry_layout_1_tilelayout, brewery_industry_layout_2_tilelayout, brewery_industry_layout_3_tilelayout, brewery_industry_layout_4_tilelayout, brewery_industry_layout_5_tilelayout]',
+                    prob_in_game='3',
+                    prob_random='5',
+                    prod_multiplier='[0, 0]',
+                    substitute='0',
+                    new_ind_msg='TTD_STR_NEWS_INDUSTRY_CONSTRUCTION',
+                    map_colour='191',
+                    conflicting_ind_types='[]',
+                    prod_decrease_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_GENERAL',
+                    life_type='IND_LIFE_TYPE_PROCESSING',
+                    min_cargo_distr='5',
+                    spec_flags='0',
+                    remove_cost_multiplier='0',
+                    prospect_chance='0.75',
+                    name='string(STR_IND_BREWERY)',
+                    nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_IND_BREWERY)',
+                    fund_cost_multiplier='50',
+                    closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS')
 
 industry.add_tile(id='brewery_tile')
 

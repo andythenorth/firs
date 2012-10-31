@@ -15,7 +15,22 @@ Some method properties need a string - the templating is then typically directly
 When a string is expected are basically two choices: provide a string directly, or make an object reference and get an id from that object.
 """
 
-industry = Industry(id='oil_rig')
+industry = Industry(id='oil_rig',
+                    accept_cargo_types='[ENSP]',
+                    input_multiplier_1='[0, 0]',
+                    input_multiplier_3='[0, 0]',
+                    input_multiplier_2='[0, 0]',
+                    prod_cargo_types='[OIL_, PASS]',
+                    prob_in_game='6',
+                    prob_random='6',
+                    prod_multiplier='[29, 4]',
+                    substitute='5',
+                    map_colour='152',
+                    prospect_chance='0.75',
+                    name='18439',
+                    conflicting_ind_types='[]',
+                    fund_cost_multiplier='255',
+                    override='5')
 
 # industry uses layouts and sprites from default game, no custom layouts etc
 

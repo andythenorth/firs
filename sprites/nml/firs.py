@@ -116,7 +116,10 @@ class IndustryLayout(object):
 
 class Industry(object):
     """Base class for all types of industry"""
-    def __init__(self, id):
+    def __init__(self, id, override='', substitute='', name='', nearby_station_name='', layouts='', accept_cargo_types='', prod_cargo_types='',
+                 prod_multiplier='', min_cargo_distr='', input_multiplier_1='', input_multiplier_2='', input_multiplier_3='',
+                 prod_increase_msg='', prod_decrease_msg='', new_ind_msg='', closure_msg='', prob_in_game='', prob_random='', prospect_chance='',
+                 map_colour='', conflicting_ind_types='', life_type='', spec_flags='', fund_cost_multiplier='', remove_cost_multiplier=''):
         self.id = id
         self.graphics_file = '"sprites/graphics/industries/' + id + '.png"' # don't use os.path.join here, this is for nml
         self.graphics_file_snow = '"sprites/graphics/industries/' + id + '_snow.png"' # don't use os.path.join here, this is for nml
@@ -126,6 +129,32 @@ class Industry(object):
         self.spritesets = []
         self.spritelayouts = [] # by convention spritelayout is one word :P
         self.industry_layouts = []
+        # nml item properties, most of these should be provided as strings for insertion into nml
+        self.substitute = substitute
+        self.name = name
+        self.nearby_station_name = nearby_station_name
+        self.layouts = layouts # !! needs to handle automatic layouts when present
+        self.accept_cargo_types = accept_cargo_types
+        self.prod_cargo_types = prod_cargo_types
+        self.prod_multiplier = prod_multiplier
+        self.min_cargo_distr = min_cargo_distr
+        self.input_multiplier_1 = input_multiplier_1
+        self.input_multiplier_2 = input_multiplier_2
+        self.input_multiplier_3 = input_multiplier_3
+        self.prod_increase_msg = prod_increase_msg
+        self.prod_decrease_msg = prod_decrease_msg
+        self.new_ind_msg = new_ind_msg
+        self.closure_msg = closure_msg
+        self.prob_in_game = prob_in_game
+        self.prob_random = prob_random
+        self.prospect_chance = prospect_chance
+        self.map_colour = map_colour
+        self.conflicting_ind_types = conflicting_ind_types
+        self.life_type = life_type
+        self.spec_flags = spec_flags
+        self.fund_cost_multiplier = fund_cost_multiplier
+        self.remove_cost_multiplier = remove_cost_multiplier
+
 
     def add_tile(self, *args, **kwargs):
         new_tile = Tile(*args, **kwargs)

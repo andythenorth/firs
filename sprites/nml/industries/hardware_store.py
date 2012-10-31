@@ -15,7 +15,31 @@ Some method properties need a string - the templating is then typically directly
 When a string is expected are basically two choices: provide a string directly, or make an object reference and get an id from that object.
 """
 
-industry = Industry(id='hardware_store')
+industry = Industry(id='hardware_store',
+                    accept_cargo_types='[GOOD, BDMT]',
+                    input_multiplier_1='[0, 0]',
+                    input_multiplier_3='[0, 0]',
+                    input_multiplier_2='[0, 0]',
+                    prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL',
+                    prod_cargo_types='[]',
+                    layouts='[hardware_store_industry_layout_tilelayout]',
+                    prob_in_game='12',
+                    prob_random='24',
+                    prod_multiplier='[0, 0]',
+                    substitute='0',
+                    new_ind_msg='TTD_STR_NEWS_INDUSTRY_CONSTRUCTION',
+                    map_colour='15',
+                    conflicting_ind_types='[hardware_store]',
+                    prod_decrease_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_GENERAL',
+                    life_type='IND_LIFE_TYPE_BLACK_HOLE',
+                    min_cargo_distr='2',
+                    spec_flags='bitmask(IND_FLAG_ONLY_IN_TOWNS)',
+                    remove_cost_multiplier='0',
+                    prospect_chance='0.75',
+                    name='string(STR_IND_HARDWARE_STORE)',
+                    nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_IND_HARDWARE_STORE)',
+                    fund_cost_multiplier='6',
+                    closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS')
 
 industry.add_tile(id='hardware_store_tile')
 
