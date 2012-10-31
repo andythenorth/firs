@@ -1,0 +1,6 @@
+animation_speed=3,
+animation_triggers=bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE),
+animation_info=[ANIMATION_LOOPING, 7],
+land_shape_flags=bitmask(LSF_ONLY_ON_FLAT_LAND),
+accepted_cargos=[[MNSP, 8], [WOOL, 8], [FICR, 8]],
+substitute=0,
