@@ -73,7 +73,9 @@ CHECK_INDUSTRY_TOWN_COUNT   (check_location, recycling_depot, 0, 0, string(STR_E
 SWITCH_COLOUR_SCHEME1(${industry.id}_colour)
 
 /* Production template not used. We have our separate one, see below */
+#define CUSTOM_MONTHLY_PROD_CHECK
 #include "../templates/check_primary_production_level.pnml"
+#undef CUSTOM_MONTHLY_PROD_CHECK
 
 #include "../templates/check_availability.pnml"
 

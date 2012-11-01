@@ -30,7 +30,7 @@ switch(FEAT_INDUSTRIES, SELF, THIS_ID(check_closure), (production_level <= 4) * 
 /* =================================== */
 /* Production change evaluated monthly */
 /* =================================== */
-
+#ifndef CUSTOM_MONTHLY_PROD_CHECK
 switch(FEAT_INDUSTRIES, SELF, THIS_ID(monthly_update), [
 	STORE_PERM(LOAD_PERM(var_num_supplies_delivered_last), var_num_supplies_delivered_bef_last),
 	STORE_PERM(LOAD_PERM(var_num_supplies_delivered), var_num_supplies_delivered_last),
@@ -38,3 +38,4 @@ switch(FEAT_INDUSTRIES, SELF, THIS_ID(monthly_update), [
 ]) {
 	return CB_RESULT_IND_PROD_NO_CHANGE;
 }
+#endif
