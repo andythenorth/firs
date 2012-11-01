@@ -10,6 +10,8 @@ import codecs # used for writing files - more unicode friendly than standard ope
 import os.path
 currentdir = os.curdir
 
+import global_constants as global_constants
+
 from chameleon import PageTemplateLoader # chameleon used in most template cases
 # setup the places we look for templates
 templates = PageTemplateLoader(os.path.join(currentdir,'sprites','nml','templates'), format='text')
@@ -113,13 +115,40 @@ class IndustryLayout(object):
         self.default_spritelayout = default_spritelayout
         self.layout = layout # a list of 4-tuples (SE offset from N tile, SW offset from N tile, tile identifier, identifier of spriteset or next nml switch)
 
+class IndustryProperties(object):
+    """Base class to hold properties corresponding to nml industry item properties"""
+    def __init__(self, **kwargs):
+        # nml item properties, most of these should be provided as strings for insertion into nml.  See nml docs for meaning + acceptable values.
+        self.substitute = kwargs.get('substitute', None)
+        self.name = kwargs.get('name', None)
+        self.nearby_station_name = kwargs.get('nearby_station_name', None)
+        self.layouts = kwargs.get('layouts', None) # !! needs to handle automatic layouts when present
+        self.accept_cargo_types = kwargs.get('accept_cargo_types', None)
+        self.prod_cargo_types = kwargs.get('prod_cargo_types', None)
+        self.prod_multiplier = kwargs.get('prod_multiplier', None)
+        self.min_cargo_distr = kwargs.get('min_cargo_distr', None)
+        self.input_multiplier_1 = kwargs.get('input_multiplier_1', None)
+        self.input_multiplier_2 = kwargs.get('input_multiplier_2', None)
+        self.input_multiplier_3 = kwargs.get('input_multiplier_3', None)
+        self.prod_increase_msg = kwargs.get('prod_increase_msg', None)
+        self.prod_decrease_msg = kwargs.get('prod_decrease_msg', None)
+        self.new_ind_msg = kwargs.get('new_ind_msg', None)
+        self.closure_msg = kwargs.get('closure_msg', None)
+        self.prob_in_game = kwargs.get('prob_in_game', None)
+        self.prob_random = kwargs.get('prob_random', None)
+        self.prospect_chance = kwargs.get('prospect_chance', None)
+        self.map_colour = kwargs.get('map_colour', None)
+        self.conflicting_ind_types = kwargs.get('conflicting_ind_types', None)
+        self.life_type = kwargs.get('life_type', None)
+        self.spec_flags = kwargs.get('spec_flags', None)
+        self.fund_cost_multiplier = kwargs.get('fund_cost_multiplier', None)
+        self.remove_cost_multiplier = kwargs.get('remove_cost_multiplier', None)
+
+
 
 class Industry(object):
     """Base class for all types of industry"""
-    def __init__(self, id, override='', substitute='', name='', nearby_station_name='', layouts='', accept_cargo_types='', prod_cargo_types='',
-                 prod_multiplier='', min_cargo_distr='', input_multiplier_1='', input_multiplier_2='', input_multiplier_3='',
-                 prod_increase_msg='', prod_decrease_msg='', new_ind_msg='', closure_msg='', prob_in_game='', prob_random='', prospect_chance='',
-                 map_colour='', conflicting_ind_types='', life_type='', spec_flags='', fund_cost_multiplier='', remove_cost_multiplier=''):
+    def __init__(self, id, **kwargs):
         self.id = id
         self.graphics_file = '"sprites/graphics/industries/' + id + '.png"' # don't use os.path.join here, this is for nml
         self.graphics_file_snow = '"sprites/graphics/industries/' + id + '_snow.png"' # don't use os.path.join here, this is for nml
@@ -129,31 +158,7 @@ class Industry(object):
         self.spritesets = []
         self.spritelayouts = [] # by convention spritelayout is one word :P
         self.industry_layouts = []
-        # nml item properties, most of these should be provided as strings for insertion into nml.  See nml docs for meaning + acceptable values.
-        self.substitute = substitute
-        self.name = name
-        self.nearby_station_name = nearby_station_name
-        self.layouts = layouts # !! needs to handle automatic layouts when present
-        self.accept_cargo_types = accept_cargo_types
-        self.prod_cargo_types = prod_cargo_types
-        self.prod_multiplier = prod_multiplier
-        self.min_cargo_distr = min_cargo_distr
-        self.input_multiplier_1 = input_multiplier_1
-        self.input_multiplier_2 = input_multiplier_2
-        self.input_multiplier_3 = input_multiplier_3
-        self.prod_increase_msg = prod_increase_msg
-        self.prod_decrease_msg = prod_decrease_msg
-        self.new_ind_msg = new_ind_msg
-        self.closure_msg = closure_msg
-        self.prob_in_game = prob_in_game
-        self.prob_random = prob_random
-        self.prospect_chance = prospect_chance
-        self.map_colour = map_colour
-        self.conflicting_ind_types = conflicting_ind_types
-        self.life_type = life_type
-        self.spec_flags = spec_flags
-        self.fund_cost_multiplier = fund_cost_multiplier
-        self.remove_cost_multiplier = remove_cost_multiplier
+        self.default_industry_properties = IndustryProperties(**kwargs)
 
 
     def add_tile(self, *args, **kwargs):
@@ -226,7 +231,7 @@ class Industry(object):
 
     def render_and_save_pnml(self):
         industry_template = industry_templates[self.id + '.pypnml']
-        templated_pnml = unescape_chameleon_output(industry_template(industry=self))
+        templated_pnml = unescape_chameleon_output(industry_template(industry=self, global_constants=global_constants))
 
         # save the results of templating
         pnml = codecs.open(os.path.join(currentdir,'sprites','nml','generated_pnml', self.id + '.pnml'), 'w','utf8')
