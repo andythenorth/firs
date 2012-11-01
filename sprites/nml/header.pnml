@@ -10,9 +10,10 @@ grf {
 			name: string(STR_PARAM_NAME_ECONOMIES);
 			desc: string(STR_PARAM_DESC_ECONOMIES);
 			min_value: 0;
-			max_value: 0;
+			max_value: 1;
 			names: {
 				0: string(STR_PARAM_VALUE_ECONOMIES_TEST_ECONOMY);
+				1: string(STR_PARAM_VALUE_ECONOMIES_TEST_ECONOMY);
 			};
 		}
 	}

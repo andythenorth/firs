@@ -121,55 +121,25 @@ SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
 
 #include "../templates/check_availability.pnml"
 
-item(FEAT_INDUSTRIES, arable_farm, IND_ARABLEFARM_ID) {
-	property {
-		substitute: 0;
-		layouts: [
-				tilelayout_arable_farm_1,
-				tilelayout_arable_farm_2,
-				tilelayout_arable_farm_3
-			];
-		life_type:              IND_LIFE_TYPE_ORGANIC;
-		closure_msg:            TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS;
-		prod_increase_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_FARM;
-		prod_decrease_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_FARM;
-		new_ind_msg:            TTD_STR_NEWS_INDUSTRY_CONSTRUCTION;
-		name:                   string(STR_IND_ARABLE_FARM);
-		nearby_station_name:    string(STR_STATION, string(STR_TOWN), string(STR_IND_ARABLE_FARM));
-		prod_cargo_types: [GRAI, SGBT];
-		accept_cargo_types: [FMSP];
-		prod_multiplier: [7, 7];
-		input_multiplier_1: [0, 0];
-		input_multiplier_2: [0, 0];
-		input_multiplier_3: [0, 0];
-		min_cargo_distr: 1;
-		conflicting_ind_types: [];
-		prob_random: 24;
-		prob_in_game: 4;
-		prospect_chance: 0.75;
-		fund_cost_multiplier: 55;
-		map_colour: 208;
-		remove_cost_multiplier: 0;
-		spec_flags:             bitmask(IND_FLAG_PLANT_FIELDS_PERIODICALLY,
-		                                IND_FLAG_PLANT_FIELDS_WHEN_BUILT
-		                               );
-	}
-
-	/* Economy specific cargo */
-	INDUSTRY_OUTPUT_CARGO_2(ENABLE_SUGARCANE && ENABLE_GRAIN, GRAI, SGCN)
-
-	graphics {
-		produce_cargo_arrival:   THIS_ID(produce);
-		produce_256_ticks:       THIS_ID(produce_256_ticks);
-		construction_probability:THIS_ID(check_availability);
-		location_check:          THIS_ID(check_location);
-		monthly_prod_change:     THIS_ID(monthly_update);
-		random_prod_change:      THIS_ID(check_closure);
-		build_prod_change:       randomise_primary_production_on_build;
-		extra_text_fund:         return string(STR_FUND_ARABLE_FARM);
-		extra_text_industry:     THIS_ID(extra_text);
-		colour:                  THIS_ID(colour);
-	}
+if (param[0]==0) {
+    item(FEAT_INDUSTRIES, arable_farm, IND_ARABLEFARM_ID) {
+        property {
+            ${industry.get_industry_properties()}
+        }
+        /* Economy specific cargo */
+        INDUSTRY_OUTPUT_CARGO_2(ENABLE_SUGARCANE && ENABLE_GRAIN, GRAI, SGCN)
+        graphics {
+            produce_cargo_arrival:   THIS_ID(produce);
+            produce_256_ticks:       THIS_ID(produce_256_ticks);
+            construction_probability:THIS_ID(check_availability);
+            location_check:          THIS_ID(check_location);
+            monthly_prod_change:     THIS_ID(monthly_update);
+            random_prod_change:      THIS_ID(check_closure);
+            build_prod_change:       randomise_primary_production_on_build;
+            extra_text_fund:         return string(STR_FUND_ARABLE_FARM);
+            extra_text_industry:     THIS_ID(extra_text);
+            colour:                  THIS_ID(colour);
+        }
+    }
 }
-
 #include "../templates/undefs.pnml"

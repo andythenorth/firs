@@ -37,7 +37,7 @@ industry = Industry(id='machine_shop',
                     remove_cost_multiplier='0',
                     prospect_chance='0.75',
                     name='string(STR_IND_MACHINE_SHOP)',
-                    nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_IND_MACHINE_SHOP)',
+                    nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_IND_MACHINE_SHOP))',
                     fund_cost_multiplier='145',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS')
 

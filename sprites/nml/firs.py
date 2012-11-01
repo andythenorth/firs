@@ -210,6 +210,10 @@ class Industry(object):
         template = templates['fence_switches.pynml']
         return unescape_chameleon_output(template(industry=self))
 
+    def get_industry_properties(self):
+        template = templates['industry_properties.pynml']
+        return unescape_chameleon_output(template(industry=self))
+
     def unpack_sprite_or_spriteset(self, sprite_or_spriteset, terrain_type=''):
         if terrain_type != '':
             suffix = '_' + terrain_type
