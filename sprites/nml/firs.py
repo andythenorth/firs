@@ -159,6 +159,7 @@ class Industry(object):
         self.spritelayouts = [] # by convention spritelayout is one word :P
         self.industry_layouts = []
         self.default_industry_properties = IndustryProperties(**kwargs)
+        self.economy_variations = {}
 
 
     def add_tile(self, *args, **kwargs):
@@ -190,6 +191,9 @@ class Industry(object):
         new_industry_layout = IndustryLayout(*args, **kwargs)
         self.industry_layouts.append(new_industry_layout)
         return new_industry_layout # returning the new obj isn't essential, but permits the caller giving it a reference for use elsewhere
+
+    def add_economy_variation(self, economy, disabled=False, **kwargs):
+        self.economy_variations[economy] = {'disabled':disabled, 'industry_properties': IndustryProperties(**kwargs)}
 
     def get_spritesets(self):
         template = templates['spritesets.pynml']

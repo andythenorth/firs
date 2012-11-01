@@ -41,6 +41,9 @@ industry = Industry(id='arable_farm',
                     fund_cost_multiplier='55',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS')
 
+industry.add_economy_variation(economy='TEST_1', disabled=True)
+industry.add_economy_variation(economy='TEST_2', disabled=False)
+
 # industry uses layouts and sprites from default game, no custom layouts etc
 
 # Templating
