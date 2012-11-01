@@ -123,7 +123,7 @@ SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
 
 <tal:build_economies repeat="economy global_constants.economies">
     if (param[0]==${repeat.economy.index}) {
-        <tal:industry_on_or_off condition="industry.economy_variations.get(economy, False).disabled==False">
+        <tal:industry_on_or_off condition="industry.economy_variations[economy].disabled==False">
         item(FEAT_INDUSTRIES, arable_farm, IND_ARABLEFARM_ID) {
             property {
                 ${industry.get_industry_properties()}
