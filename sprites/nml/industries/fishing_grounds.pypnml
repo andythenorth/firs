@@ -324,8 +324,6 @@ CHECK_FOUNDER       (THIS_ID(coastal_distance))
 
 SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
 
-#include "../templates/produce_primary.pnml"
-
 #include "../templates/check_availability.pnml"
 
 /* industry specific switch to randomise initial production; as Fishing Grounds never changes production, go for a wide range of productions*/
@@ -379,7 +377,6 @@ item(FEAT_INDUSTRIES, fishing_grounds, IND_FISHINGGROUNDS_ID) {
 								   );
 	}
 	graphics {
-		produce_cargo_arrival:   THIS_ID(produce);
 		construction_probability:THIS_ID(check_availability);
 		location_check:          THIS_ID(check_location);
 		monthly_prod_change:     return CB_RESULT_IND_PROD_NO_CHANGE;
