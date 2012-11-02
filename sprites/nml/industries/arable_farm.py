@@ -41,7 +41,7 @@ industry = Industry(id='arable_farm',
                     fund_cost_multiplier='55',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS')
 
-industry.economy_variations['TEST_1']['disabled']=True
+industry.economy_variations['TEST_1'].disabled = True
 
 # industry uses layouts and sprites from default game, no custom layouts etc
 

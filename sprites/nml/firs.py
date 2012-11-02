@@ -143,6 +143,8 @@ class IndustryProperties(object):
         self.spec_flags = kwargs.get('spec_flags', None)
         self.fund_cost_multiplier = kwargs.get('fund_cost_multiplier', None)
         self.remove_cost_multiplier = kwargs.get('remove_cost_multiplier', None)
+        # not nml properties
+        self.disabled = kwargs.get('disabled', False)
 
 
 
@@ -193,8 +195,8 @@ class Industry(object):
         self.industry_layouts.append(new_industry_layout)
         return new_industry_layout # returning the new obj isn't essential, but permits the caller giving it a reference for use elsewhere
 
-    def add_economy_variation(self, economy, disabled=False, **kwargs):
-        self.economy_variations[economy] = {'disabled':disabled, 'industry_properties': IndustryProperties(**kwargs)}
+    def add_economy_variation(self, economy):
+        self.economy_variations[economy] = IndustryProperties()
 
     def get_numeric_id(self):
         return global_constants.industry_numeric_ids[self.id]
