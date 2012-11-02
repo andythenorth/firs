@@ -1,4 +1,4 @@
-economies = ["TEST_1","TEST_2"]
+economies = ["TEST_1","TEST_2","TEST_3"]
 
 
 # Definition of the IDs of the single industries
