@@ -161,7 +161,7 @@ class Industry(object):
         self.default_industry_properties = IndustryProperties(**kwargs)
         self.economy_variations = {}
         for economy in global_constants.economies:
-            self.add_economy_variation(economy=economy, disabled=False)
+            self.add_economy_variation(economy)
 
     def add_tile(self, *args, **kwargs):
         new_tile = Tile(*args, **kwargs)
