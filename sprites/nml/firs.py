@@ -195,6 +195,9 @@ class Industry(object):
     def add_economy_variation(self, economy, disabled=False, **kwargs):
         self.economy_variations[economy] = {'disabled':disabled, 'industry_properties': IndustryProperties(**kwargs)}
 
+    def get_numeric_id(self):
+        return global_constants.industry_numeric_ids[self.id]
+
     def get_spritesets(self):
         template = templates['spritesets.pynml']
         return unescape_chameleon_output(template(industry=self))
@@ -221,7 +224,10 @@ class Industry(object):
 
     def get_industry_properties(self):
         template = templates['industry_properties.pynml']
-        return unescape_chameleon_output(template(industry=self))
+        return unescape_chameleon_output(template(industry=self, global_constants=global_constants))
+
+    def get_conditional_expressions_for_enabled_economies(self):
+        return "param[0]==1 || param[0]==2"
 
     def unpack_sprite_or_spriteset(self, sprite_or_spriteset, terrain_type=''):
         if terrain_type != '':
@@ -235,7 +241,7 @@ class Industry(object):
 
     def render_and_save_pnml(self):
         industry_template = industry_templates[self.id + '.pypnml']
-        templated_pnml = unescape_chameleon_output(industry_template(industry=self, global_constants=global_constants))
+        templated_pnml = unescape_chameleon_output(industry_template(industry=self))
 
         # save the results of templating
         pnml = codecs.open(os.path.join(currentdir,'sprites','nml','generated_pnml', self.id + '.pnml'), 'w','utf8')

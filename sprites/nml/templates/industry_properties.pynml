@@ -1,24 +1,35 @@
-substitute: ${industry.default_industry_properties.substitute};
-layouts: ${industry.default_industry_properties.layouts};
-life_type: ${industry.default_industry_properties.life_type};
-closure_msg: ${industry.default_industry_properties.closure_msg};
-prod_increase_msg: ${industry.default_industry_properties.prod_increase_msg};
-prod_decrease_msg: ${industry.default_industry_properties.prod_decrease_msg};
-new_ind_msg: ${industry.default_industry_properties.new_ind_msg};
-name: ${industry.default_industry_properties.name};
-nearby_station_name: ${industry.default_industry_properties.nearby_station_name};
-prod_cargo_types: ${industry.default_industry_properties.prod_cargo_types};
-accept_cargo_types: ${industry.default_industry_properties.accept_cargo_types};
-prod_multiplier: ${industry.default_industry_properties.prod_multiplier};
-input_multiplier_1: ${industry.default_industry_properties.input_multiplier_1};
-input_multiplier_2: ${industry.default_industry_properties.input_multiplier_2};
-input_multiplier_3: ${industry.default_industry_properties.input_multiplier_3};
-min_cargo_distr: ${industry.default_industry_properties.min_cargo_distr};
-conflicting_ind_types: ${industry.default_industry_properties.conflicting_ind_types};
-prob_random: ${industry.default_industry_properties.prob_random};
-prob_in_game: ${industry.default_industry_properties.prob_in_game};
-prospect_chance: ${industry.default_industry_properties.prospect_chance};
-fund_cost_multiplier: ${industry.default_industry_properties.fund_cost_multiplier};
-map_colour: ${industry.default_industry_properties.map_colour};
-remove_cost_multiplier: ${industry.default_industry_properties.remove_cost_multiplier};
-spec_flags: ${industry.default_industry_properties.spec_flags};
+
+<tal:build_economies repeat="economy global_constants.economies">
+    if (param[0]==${repeat.economy.index}) {
+        <tal:industry_on_or_off condition="industry.economy_variations[economy].disabled==False">
+        item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
+            property {
+                substitute: ${industry.default_industry_properties.substitute};
+                layouts: ${industry.default_industry_properties.layouts};
+                life_type: ${industry.default_industry_properties.life_type};
+                closure_msg: ${industry.default_industry_properties.closure_msg};
+                prod_increase_msg: ${industry.default_industry_properties.prod_increase_msg};
+                prod_decrease_msg: ${industry.default_industry_properties.prod_decrease_msg};
+                new_ind_msg: ${industry.default_industry_properties.new_ind_msg};
+                name: ${industry.default_industry_properties.name};
+                nearby_station_name: ${industry.default_industry_properties.nearby_station_name};
+                prod_cargo_types: ${industry.default_industry_properties.prod_cargo_types};
+                accept_cargo_types: ${industry.default_industry_properties.accept_cargo_types};
+                prod_multiplier: ${industry.default_industry_properties.prod_multiplier};
+                input_multiplier_1: ${industry.default_industry_properties.input_multiplier_1};
+                input_multiplier_2: ${industry.default_industry_properties.input_multiplier_2};
+                input_multiplier_3: ${industry.default_industry_properties.input_multiplier_3};
+                min_cargo_distr: ${industry.default_industry_properties.min_cargo_distr};
+                conflicting_ind_types: ${industry.default_industry_properties.conflicting_ind_types};
+                prob_random: ${industry.default_industry_properties.prob_random};
+                prob_in_game: ${industry.default_industry_properties.prob_in_game};
+                prospect_chance: ${industry.default_industry_properties.prospect_chance};
+                fund_cost_multiplier: ${industry.default_industry_properties.fund_cost_multiplier};
+                map_colour: ${industry.default_industry_properties.map_colour};
+                remove_cost_multiplier: ${industry.default_industry_properties.remove_cost_multiplier};
+                spec_flags: ${industry.default_industry_properties.spec_flags};
+            }
+        }
+        </tal:industry_on_or_off>
+    }
+</tal:build_economies>

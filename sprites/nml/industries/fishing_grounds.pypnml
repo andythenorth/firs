@@ -340,7 +340,7 @@ random_switch(FEAT_INDUSTRIES, SELF, THIS_ID(randomise_primary_production_on_bui
 }
 
 
-item(FEAT_INDUSTRIES, fishing_grounds, IND_FISHINGGROUNDS_ID) {
+item(FEAT_INDUSTRIES, fishing_grounds, ${industry.get_numeric_id()}) {
 	property {
 		substitute: 5;
 		layouts: [

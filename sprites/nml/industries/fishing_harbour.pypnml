@@ -1003,7 +1003,7 @@ SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
 
 #include "../templates/check_availability.pnml"
 
-item(FEAT_INDUSTRIES, fishing_harbour, IND_FISHINGHARBOUR_ID) {
+item(FEAT_INDUSTRIES, fishing_harbour, ${industry.get_numeric_id()}) {
 	property {
 		substitute: 0;
 		layouts: [

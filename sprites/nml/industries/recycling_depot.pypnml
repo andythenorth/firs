@@ -137,7 +137,7 @@ switch(FEAT_INDUSTRIES, SELF, ${industry.id}_check_production_level, [
 	${industry.id}_check_decrease_production;
 }
 
-item(FEAT_INDUSTRIES, recycling_depot, IND_RECYCLINGDEPOT_ID) {
+item(FEAT_INDUSTRIES, recycling_depot, ${industry.get_numeric_id()}) {
 	property {
 		substitute:             0;
 		layouts: [${industry.get_industry_layouts_as_property()}];

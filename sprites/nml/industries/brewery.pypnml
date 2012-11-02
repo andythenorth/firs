@@ -100,7 +100,7 @@ SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
 
 #include "../templates/check_availability.pnml"
 
-item(FEAT_INDUSTRIES, brewery, IND_BREWERY_ID) {
+item(FEAT_INDUSTRIES, brewery, ${industry.get_numeric_id()}) {
 	property {
 		substitute: 0;
 		layouts: [${industry.get_industry_layouts_as_property()}];

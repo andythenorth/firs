@@ -120,77 +120,13 @@ if (climate == CLIMATE_TROPICAL) { market_tree = MARKET_TREE_TROPICAL; }
 #define var_use_fence_sw           12 // draw fence in the SW
 
 /* **************************************************************************
- * industry IDs
+ * migration note - industry IDs moved to global_constants.py
  * **************************************************************************/
 
-// Definition of the IDs of the single industries
-#define IND_NULL_ID                  0x00
-#define IND_COALMINE_ID              0x00
-#define IND_LIMEKILN_ID              0x01
-#define IND_METALFABPLANT_ID         0x02
-//#define IND_VACANT_ID                0x03
-#define IND_IRONOREMINE_ID           0x04
-#define IND_BAUXITEMINE_ID           0x05
-#define IND_SMITHYFORGE_ID           0x06
-#define IND_STEELMILL_ID             0x07
-#define IND_ALUMINIUMPLANT_ID        0x08
-#define IND_METALWORKSHOP_ID         0x09
-#define IND_QUARRY_ID                0x0A
-#define IND_FOREST_ID                0x0B
-#define IND_SAWMILL_ID               0x0C
-#define IND_FURNITUREFACTORY_ID      0x0D
-#define IND_PAPERMILL_ID             0x0E
-#define IND_OILWELLS_ID              0x0F
-#define IND_OILRIG_ID                0x10
-#define IND_OILREFINERY_ID           0x11
-#define IND_PLASTICSPLANT_ID         0x12
-#define IND_SUGARREFINERY_ID         0x13
-#define IND_DREDGINGSITE_ID          0x14
-#define IND_IRONWORKS_ID             0x15
-#define IND_GLASSWORKS_ID            0x16
-#define IND_RECYCLINGPLANT_ID        0x17
-#define IND_RECYCLINGDEPOT_ID        0x18
-#define IND_JUNKYARD_ID              0x19
-#define IND_ARABLEFARM_ID            0x1A
-#define IND_SHEEPFARM_ID             0x1B
-#define IND_DAIRYFARM_ID             0x1C
-#define IND_MIXEDFARM_ID             0x1D
-#define IND_FRUITPLANTATION_ID       0x1E
-#define IND_FISHINGHARBOUR_ID        0x1F
-#define IND_FISHINGGROUNDS_ID        0x20
-#define IND_GUANOMINE_ID             0x21
-#define IND_GRAINMILL_ID             0x22
-#define IND_BREWERY_ID               0x23
-#define IND_DAIRY_ID                 0x24
-#define IND_STOCKYARD_ID             0x25
-#define IND_MACHINESHOP_ID           0x26
-//#define IND_VACANT_ID                0x27
-#define IND_FERTILISERPLANT_ID       0x28
-#define IND_LUMBERYARD_ID            0x29
-#define IND_TEXTILEMILL_ID           0x2A
-#define IND_CEMENTPLANT_ID           0x2B
-#define IND_CLAYPIT_ID               0x2C
-#define IND_BRICKWORKS_ID            0x2D
-#define IND_BIOREFINERY_ID           0x2E
-//#define IND_VACANT_ID                0x2F
-//#define IND_VACANT_ID                0x30
-//#define IND_VACANT_ID                0x31
-//#define IND_VACANT_ID                0x32
-//#define IND_VACANT_ID                0x33
-//#define IND_VACANT_ID                0x34
-//#define IND_VACANT_ID                0x35
-//#define IND_VACANT_ID                0x36
-//#define IND_VACANT_ID                0x37
-//#define IND_VACANT_ID                0x38
-#define IND_HARDWARESTORE_ID           0x39
-#define IND_HOTEL_ID                 0x3A
-#define IND_FOODMARKET_ID            0x3B
-#define IND_PETROLPUMP_ID            0x3C
-//#define IND_VACANT_ID           0x3D
-//#define IND_VACANT_ID          0x3E
-#define IND_BUILDERSYARD_ID          0x3F
 
-//3F is last ID to be used (64 industry limit)
+/* **************************************************************************
+ * industry tile IDs
+ * **************************************************************************/
 
 //Definition of industry tile IDs
 // tiles 0-159 currently vacant

@@ -92,7 +92,7 @@ switch(FEAT_INDUSTRIES, SELF, ${industry.id}_cargo_output, (extra_callback_info1
 	return 0xFF;                      // terminate callback
 }
 
-item(FEAT_INDUSTRIES, recycling_plant, IND_RECYCLINGPLANT_ID) {
+item(FEAT_INDUSTRIES, recycling_plant, ${industry.get_numeric_id()}) {
 	property {
 		substitute: 0;
 		layouts: [${industry.get_industry_layouts_as_property()}];

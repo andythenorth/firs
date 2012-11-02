@@ -135,7 +135,7 @@ SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
 
 #include "../templates/check_availability.pnml"
 
-item(FEAT_INDUSTRIES, paper_mill, IND_PAPERMILL_ID) {
+item(FEAT_INDUSTRIES, paper_mill, ${industry.get_numeric_id()}) {
 	property {
 		substitute: 14;
 		override: 14;

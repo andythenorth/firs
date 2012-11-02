@@ -82,7 +82,7 @@ SWITCH_COLOUR_SCHEME1(${industry.id}_colour)
 
 #include "../templates/check_availability.pnml"
 
-item(FEAT_INDUSTRIES, textile_mill, IND_TEXTILEMILL_ID) {
+item(FEAT_INDUSTRIES, textile_mill, ${industry.get_numeric_id()}) {
 	property {
 		substitute: 0;
 		layouts: [${industry.get_industry_layouts_as_property()}];

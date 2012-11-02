@@ -209,7 +209,7 @@ SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
 
 #include "../templates/check_availability.pnml"
 
-item(FEAT_INDUSTRIES, iron_ore_mine, IND_IRONOREMINE_ID) {
+item(FEAT_INDUSTRIES, iron_ore_mine, ${industry.get_numeric_id()}) {
 	property {
 		substitute: 18;
 		override: 18;

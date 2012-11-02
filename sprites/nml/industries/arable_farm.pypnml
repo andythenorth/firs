@@ -121,29 +121,28 @@ SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
 
 #include "../templates/check_availability.pnml"
 
-<tal:build_economies repeat="economy global_constants.economies">
-    if (param[0]==${repeat.economy.index}) {
-        <tal:industry_on_or_off condition="industry.economy_variations[economy].disabled==False">
-        item(FEAT_INDUSTRIES, arable_farm, IND_ARABLEFARM_ID) {
-            property {
-                ${industry.get_industry_properties()}
-            }
-            /* Economy specific cargo */
-            INDUSTRY_OUTPUT_CARGO_2(ENABLE_SUGARCANE && ENABLE_GRAIN, GRAI, SGCN)
-            graphics {
-                produce_cargo_arrival:   THIS_ID(produce);
-                produce_256_ticks:       THIS_ID(produce_256_ticks);
-                construction_probability:THIS_ID(check_availability);
-                location_check:          THIS_ID(check_location);
-                monthly_prod_change:     THIS_ID(monthly_update);
-                random_prod_change:      THIS_ID(check_closure);
-                build_prod_change:       randomise_primary_production_on_build;
-                extra_text_fund:         return string(STR_FUND_ARABLE_FARM);
-                extra_text_industry:     THIS_ID(extra_text);
-                colour:                  THIS_ID(colour);
-            }
-        }
-        </tal:industry_on_or_off>
+${industry.get_industry_properties()}
+
+if (${industry.get_conditional_expressions_for_enabled_economies()}) {
+   item(FEAT_INDUSTRIES, arable_farm, ${industry.get_numeric_id()}) {
+        /* Economy specific cargo */
+        INDUSTRY_OUTPUT_CARGO_2(ENABLE_SUGARCANE && ENABLE_GRAIN, GRAI, SGCN)
     }
-</tal:build_economies>
+}
+
+item(FEAT_INDUSTRIES, arable_farm, ${industry.get_numeric_id()}) {
+    graphics {
+        produce_cargo_arrival:   THIS_ID(produce);
+        produce_256_ticks:       THIS_ID(produce_256_ticks);
+        construction_probability:THIS_ID(check_availability);
+        location_check:          THIS_ID(check_location);
+        monthly_prod_change:     THIS_ID(monthly_update);
+        random_prod_change:      THIS_ID(check_closure);
+        build_prod_change:       randomise_primary_production_on_build;
+        extra_text_fund:         return string(STR_FUND_ARABLE_FARM);
+        extra_text_industry:     THIS_ID(extra_text);
+        colour:                  THIS_ID(colour);
+    }
+}
+
 #include "../templates/undefs.pnml"

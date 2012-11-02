@@ -349,7 +349,7 @@ SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
 
 #include "../templates/check_availability.pnml"
 
-item(FEAT_INDUSTRIES, forest, IND_FOREST_ID) {
+item(FEAT_INDUSTRIES, forest, ${industry.get_numeric_id()}) {
 	property {
 		substitute: INDUSTRYTYPE_FOREST;
 		layouts: [

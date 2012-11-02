@@ -76,7 +76,7 @@ SWITCH_COLOUR_SCHEME1(${industry.id}_colour)
 
 #include "../templates/check_availability.pnml"
 
-item(FEAT_INDUSTRIES, dredging_site, IND_DREDGINGSITE_ID) {
+item(FEAT_INDUSTRIES, dredging_site, ${industry.get_numeric_id()}) {
 	property {
 		substitute: 0;
 		layouts: [
