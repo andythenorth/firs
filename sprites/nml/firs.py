@@ -229,6 +229,12 @@ class Industry(object):
         template = templates['industry_properties.pynml']
         return unescape_chameleon_output(template(industry=self, global_constants=global_constants))
 
+    def get_property(self, economy, property_name):
+        value = getattr(self.economy_variations[economy], property_name)
+        if value is None:
+            value = getattr(self.default_industry_properties, property_name)
+        return value
+
     def get_conditional_expressions_for_enabled_economies(self):
         return "param[0]==1 || param[0]==2"
 
