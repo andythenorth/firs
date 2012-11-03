@@ -1,7 +1,7 @@
 economies = []
-economies.append({'id': "TEST_1"})
-economies.append({'id': "TEST_2"})
-economies.append({'id': "TEST_3"})
+economies.append({'id': "TEST_1", 'cargos': ['coal']})
+economies.append({'id': "TEST_2", 'cargos': []})
+economies.append({'id': "TEST_3", 'cargos': []})
 
 # Definition of the IDs of the single industries
 industry_numeric_ids = dict(coal_mine = 0x00,

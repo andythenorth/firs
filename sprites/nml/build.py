@@ -14,9 +14,62 @@ currentdir = os.curdir
 
 import sys
 sys.path.append(os.path.join('industries')) # add to the module search path
+sys.path.append(os.path.join('cargos')) # add to the module search path
 
-import cargo_props
+import codecs # used for writing files - more unicode friendly than standard open() module
 
+from cargos import alcohol
+from cargos import bauxite
+from cargos import building_materials
+from cargos import chemicals
+from cargos import clay
+from cargos import coal
+from cargos import engineering_supplies
+from cargos import farm_supplies
+from cargos import fish
+from cargos import food
+from cargos import fruits
+from cargos import goods
+from cargos import grain
+from cargos import gravel
+from cargos import iron_ore
+from cargos import livestock
+from cargos import lumber
+from cargos import mail
+from cargos import manufacturing_supplies
+from cargos import milk
+from cargos import oil
+from cargos import passengers
+from cargos import petrol
+from cargos import plant_fibres
+from cargos import recyclables
+from cargos import sand
+from cargos import scrap_metal
+from cargos import steel
+from cargos import sugar_beet
+from cargos import sugarcane
+from cargos import wood
+from cargos import wool
+
+cargos = [alcohol, bauxite, building_materials, chemicals, clay, coal, engineering_supplies, farm_supplies, fish,
+          food, fruits, goods, grain, gravel, iron_ore, livestock, lumber, mail, manufacturing_supplies, milk,
+          oil, passengers, petrol, plant_fibres, recyclables, sand, scrap_metal, steel, sugar_beet, sugarcane, wood, wool]
+
+cargo_output_pnml = []
+cargo_table = []
+# there is some insanity with cargo.cargo, it's ducktape coding, overlook it.
+for cargo in cargos:
+    cargo_output_pnml.append(cargo.cargo.render_pnml())
+    cargo_table.append(cargo.cargo.cargo_label.replace('"',''))
+
+# save the results of cargo templating
+pnml = codecs.open(os.path.join(currentdir,'sprites','nml','generated_pnml', 'cargo_props.pnml'), 'w','utf8')
+pnml.write('cargotable{' + ','.join(cargo_table) + '}')
+pnml.write(''.join(cargo_output_pnml))
+pnml.close()
+
+
+# industries currently take care of rendering themselves to pnml (this comment may age badly)
 from industries import biorefinery
 from industries import brewery
 from industries import bauxite_mine

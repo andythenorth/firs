@@ -1,0 +1,23 @@
+
+item(FEAT_CARGOS, ${cargo.id}, ${cargo.number}) {
+    property {
+        ${cargo.get_property_declaration('number')}
+        ${cargo.get_property_declaration('type_name')}
+        ${cargo.get_property_declaration('unit_name')}
+        ${cargo.get_property_declaration('type_abbreviation')}
+        ${cargo.get_property_declaration('sprite')}
+        ${cargo.get_property_declaration('weight')}
+        ${cargo.get_property_declaration('station_list_colour')}
+        ${cargo.get_property_declaration('cargo_payment_list_colour')}
+        ${cargo.get_property_declaration('is_freight')}
+        ${cargo.get_property_declaration('cargo_classes')}
+        ${cargo.get_property_declaration('cargo_label')}
+        ${cargo.get_property_declaration('town_growth_effect')}
+        ${cargo.get_property_declaration('town_growth_multiplier')}
+        ${cargo.get_property_declaration('units_of_cargo')}
+        ${cargo.get_property_declaration('items_of_cargo')}
+        ${cargo.get_property_declaration('penalty_lowerbound')}
+        ${cargo.get_property_declaration('single_penalty_length')}
+        ${cargo.get_property_declaration('price_factor')}
+    }
+}

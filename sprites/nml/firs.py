@@ -26,6 +26,36 @@ def unescape_chameleon_output(escaped_nml):
     escaped_nml = '&'.join(escaped_nml.split('&amp;'))
     return escaped_nml
 
+class Cargo(object):
+    """ Base class to hold cargos"""
+    def __init__(self, id, **kwargs):
+        self.id = id
+        self.cargo_label = kwargs['cargo_label']
+        self.number = kwargs['number']
+        self.type_name = kwargs['type_name']
+        self.unit_name = kwargs['unit_name']
+        self.type_abbreviation = kwargs['type_abbreviation']
+        self.sprite = kwargs['sprite']
+        self.weight = kwargs['weight']
+        self.station_list_colour = kwargs['station_list_colour']
+        self.cargo_payment_list_colour = kwargs['cargo_payment_list_colour']
+        self.is_freight = kwargs['is_freight']
+        self.cargo_classes = kwargs['cargo_classes']
+        self.town_growth_effect = kwargs['town_growth_effect']
+        self.town_growth_multiplier = kwargs['town_growth_multiplier']
+        self.units_of_cargo = kwargs['units_of_cargo']
+        self.items_of_cargo = kwargs['items_of_cargo']
+        self.penalty_lowerbound = kwargs['penalty_lowerbound']
+        self.single_penalty_length = kwargs['single_penalty_length']
+        self.price_factor = kwargs['price_factor']
+
+    def get_property_declaration(self, property_name):
+        return property_name + ': ' + getattr(self, property_name) + ';'
+
+    def render_pnml(self):
+        cargo_template = templates['cargo_props.pypnml']
+        templated_pnml = unescape_chameleon_output(cargo_template(cargo=self))
+        return templated_pnml
 
 class Tile(object):
     """ Base class to hold industry tiles"""
