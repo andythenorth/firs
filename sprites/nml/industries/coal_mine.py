@@ -25,8 +25,7 @@ industry = Industry(id='coal_mine',
                     map_colour='1',
                     prospect_chance='0.75',
                     fund_cost_multiplier='252',
-                    override='0',
-                    layouts='USE_DEFAULT')
+                    override='0')
 
 # industry uses layouts and sprites from default game, no custom layouts etc
 

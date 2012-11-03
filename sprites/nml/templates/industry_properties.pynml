@@ -18,7 +18,7 @@
                 ${industry.get_property_declaration('min_cargo_distr')}
                 ${industry.get_property_declaration('map_colour')}
                 ${industry.get_property_declaration('spec_flags')}
-                layouts: ${industry.get_industry_layouts_as_property()}
+                ${industry.get_industry_layouts_as_property()}
                 conflicting_ind_types: []; // set this prop empty, FIRS has it's own better checks for this
                 <!--! following props may optionally vary per economy, or use industry default -->
                 ${industry.get_property_declaration('prod_multiplier', economy)}

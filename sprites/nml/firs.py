@@ -217,15 +217,15 @@ class Industry(object):
         return unescape_chameleon_output(template(industry=self))
 
     def get_industry_layouts_as_property(self):
-        # option for no layout declaration if over-riding a default industry
-        if self.default_industry_properties.layouts == 'USE_DEFAULT':
-            return
         # supports auto-magic layouts from layout objects, or layouts simply declared as a string for nml
-        elif self.default_industry_properties.layouts != None:
-            return self.default_industry_properties.layouts + ';' # simple case
-        else:
+        # or no layout declaration if over-riding a default industry
+        if self.default_industry_properties.layouts == 'AUTO':
             template = templates['industry_layout_property.pynml'] # automagic case
-            return unescape_chameleon_output(template(industry=self))
+            return 'layouts: ' + unescape_chameleon_output(template(industry=self))
+        elif self.default_industry_properties.layouts != None:
+            return 'layouts: ' + self.default_industry_properties.layouts + ';' # simple case
+        else:
+            return
 
 
     def get_industry_layouts_as_graphic_switches(self):
