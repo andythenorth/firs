@@ -252,7 +252,11 @@ class Industry(object):
                 value = economy_value
             else:
                 value = default_value
-        return property_name + ': ' + value + ';'
+        # we don't want to render empty properties for nml
+        if value == None or value == '':
+            return
+        else:
+            return property_name + ': ' + value + ';'
 
     def get_conditional_expressions_for_enabled_economies(self):
         return "param[0]==1 || param[0]==2"
