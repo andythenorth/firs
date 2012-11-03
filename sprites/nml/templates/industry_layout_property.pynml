@@ -5,6 +5,6 @@
   See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
 -->
 
-<tal:build_industry_layouts repeat="industry_layout industry.industry_layouts">
+[<tal:build_industry_layouts repeat="industry_layout industry.industry_layouts">
     ${industry_layout.id}_tilelayout,
-</tal:build_industry_layouts>
+</tal:build_industry_layouts>];
