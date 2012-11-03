@@ -25,7 +25,6 @@ industry = Industry(id='sawmill',
                     prob_random='5',
                     substitute='2',
                     map_colour='194',
-                    conflicting_ind_types='[]',
                     fund_cost_multiplier='97',
                     override='2')
 

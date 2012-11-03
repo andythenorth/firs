@@ -138,13 +138,15 @@ class IndustryProperties(object):
         self.prob_random = kwargs.get('prob_random', None)
         self.prospect_chance = kwargs.get('prospect_chance', None)
         self.map_colour = kwargs.get('map_colour', None)
-        self.conflicting_ind_types = kwargs.get('conflicting_ind_types', None)
         self.life_type = kwargs.get('life_type', None)
         self.spec_flags = kwargs.get('spec_flags', None)
         self.fund_cost_multiplier = kwargs.get('fund_cost_multiplier', None)
         self.remove_cost_multiplier = kwargs.get('remove_cost_multiplier', None)
         # not nml properties
         self.disabled = kwargs.get('disabled', False)
+        # nml properties we want to prevent being set for one reason or another
+        if 'conflicting_ind_types' in kwargs:
+            raise Exception("Don't set conflicting_ind_types property; use the FIRS location checks for conflicting industry (these are more flexible).")
 
 
 

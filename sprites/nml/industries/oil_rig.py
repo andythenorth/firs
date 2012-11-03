@@ -28,7 +28,6 @@ industry = Industry(id='oil_rig',
                     map_colour='152',
                     prospect_chance='0.75',
                     name='18439',
-                    conflicting_ind_types='[]',
                     fund_cost_multiplier='255',
                     override='5')
 

@@ -20,7 +20,6 @@
                 input_multiplier_2: ${industry.get_property(economy, 'input_multiplier_2')};
                 input_multiplier_3: ${industry.get_property(economy, 'input_multiplier_3')};
                 min_cargo_distr: ${industry.get_property(economy, 'min_cargo_distr')};
-                conflicting_ind_types: ${industry.get_property(economy, 'conflicting_ind_types')};
                 prob_random: ${industry.get_property(economy, 'prob_random')};
                 prob_in_game: ${industry.get_property(economy, 'prob_in_game')};
                 prospect_chance: ${industry.get_property(economy, 'prospect_chance')};
@@ -28,6 +27,8 @@
                 map_colour: ${industry.get_property(economy, 'map_colour')};
                 remove_cost_multiplier: ${industry.get_property(economy, 'remove_cost_multiplier')};
                 spec_flags: ${industry.get_property(economy, 'spec_flags')};
+                // props we don't want industries to set a value for
+                conflicting_ind_types: []; // don't use this, FIRS has it's own better checks for this
             }
         }
         </tal:industry_on_or_off>

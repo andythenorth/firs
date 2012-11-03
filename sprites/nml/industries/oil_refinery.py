@@ -26,7 +26,6 @@ industry = Industry(id='oil_refinery',
                     prob_random='4',
                     substitute='4',
                     map_colour='191',
-                    conflicting_ind_types='[]',
                     fund_cost_multiplier='200',
                     override='4')
 

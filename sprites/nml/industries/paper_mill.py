@@ -25,7 +25,6 @@ industry = Industry(id='paper_mill',
                     prob_random='5',
                     substitute='14',
                     map_colour='184',
-                    conflicting_ind_types='[]',
                     fund_cost_multiplier='120',
                     override='14')
 
