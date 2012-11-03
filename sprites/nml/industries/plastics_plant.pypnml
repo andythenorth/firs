@@ -85,7 +85,6 @@ SWITCH_COLOUR_SCHEME2(${industry.id}_colour)
 item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
 	property {
 		substitute: 0;
-		layouts: [${industry.get_industry_layouts_as_property()}];
 		life_type:              IND_LIFE_TYPE_PROCESSING;
 		closure_msg:            TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS;
 		prod_increase_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL;

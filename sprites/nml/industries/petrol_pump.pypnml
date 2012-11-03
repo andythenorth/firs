@@ -92,7 +92,6 @@ CHECK_FOUNDER       (${industry.id}_petrol_pump)
 item(FEAT_INDUSTRIES, petrol_pump, ${industry.get_numeric_id()}) {
 	property {
 		substitute: 0;
-		layouts: [${industry.get_industry_layouts_as_property()}];
 		life_type:              IND_LIFE_TYPE_BLACK_HOLE;
 		name:                   string(STR_IND_PETROLPUMP);
 		nearby_station_name:    string(STR_STATION, string(STR_TOWN), string(STR_IND_PETROLPUMP));

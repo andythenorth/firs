@@ -57,7 +57,6 @@ CHECK_FOUNDER       (${industry.id}_food_market)
 item(FEAT_INDUSTRIES, food_market, ${industry.get_numeric_id()}) {
 	property {
 		substitute:             0;
-		layouts: [${industry.get_industry_layouts_as_property()}];
 		name:                   string(STR_IND_FOOD_MARKET);
 		nearby_station_name:    string(STR_STATION, string(STR_TOWN), string(STR_IND_FOOD_MARKET));
 		closure_msg:            TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS;

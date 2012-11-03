@@ -122,7 +122,7 @@ class IndustryProperties(object):
         self.substitute = kwargs.get('substitute', None)
         self.name = kwargs.get('name', None)
         self.nearby_station_name = kwargs.get('nearby_station_name', None)
-        self.layouts = kwargs.get('layouts', None) # !! needs to handle automatic layouts when present
+        self.layouts = kwargs.get('layouts', None) # !! needs to handle case automatic layouts when present
         self.accept_cargo_types = kwargs.get('accept_cargo_types', None)
         self.prod_cargo_types = kwargs.get('prod_cargo_types', None)
         self.prod_multiplier = kwargs.get('prod_multiplier', None)
@@ -216,8 +216,13 @@ class Industry(object):
         return unescape_chameleon_output(template(industry=self))
 
     def get_industry_layouts_as_property(self):
-        template = templates['industry_layout_property.pynml']
-        return unescape_chameleon_output(template(industry=self))
+        print self.default_industry_properties.layouts
+        if self.default_industry_properties.layouts != None:
+            return self.default_industry_properties.layouts
+        else:
+            template = templates['industry_layout_property.pynml']
+            return unescape_chameleon_output(template(industry=self))
+
 
     def get_industry_layouts_as_graphic_switches(self):
         template = templates['industry_layout_graphics_switches.pynml']

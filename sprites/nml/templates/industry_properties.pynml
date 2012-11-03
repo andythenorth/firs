@@ -1,11 +1,18 @@
+// props that don't vary by economy, or that we don't want industries to set a value for
+item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
+    property {
+            conflicting_ind_types: []; // don't use this, FIRS has it's own better checks for this
+            layouts: ${industry.get_industry_layouts_as_property()}; // same for all economies
+    }
+}
 
+// props that vary by economy
 <tal:build_economies repeat="economy global_constants.economies">
     if (param[0]==${repeat.economy.index}) {
         <tal:industry_on_or_off condition="industry.get_property(economy, 'disabled') != True">
         item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
             property {
                 ${industry.get_property_declaration(economy, 'substitute')}
-                ${industry.get_property_declaration(economy, 'layouts')}
                 ${industry.get_property_declaration(economy, 'life_type')}
                 ${industry.get_property_declaration(economy, 'closure_msg')}
                 ${industry.get_property_declaration(economy, 'prod_increase_msg')}
@@ -27,8 +34,6 @@
                 ${industry.get_property_declaration(economy, 'map_colour')}
                 ${industry.get_property_declaration(economy, 'remove_cost_multiplier')}
                 ${industry.get_property_declaration(economy, 'spec_flags')}
-                // props we don't want industries to set a value for
-                conflicting_ind_types: []; // don't use this, FIRS has it's own better checks for this
             }
         }
         </tal:industry_on_or_off>

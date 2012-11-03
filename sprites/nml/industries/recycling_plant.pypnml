@@ -95,7 +95,6 @@ switch(FEAT_INDUSTRIES, SELF, ${industry.id}_cargo_output, (extra_callback_info1
 item(FEAT_INDUSTRIES, recycling_plant, ${industry.get_numeric_id()}) {
 	property {
 		substitute: 0;
-		layouts: [${industry.get_industry_layouts_as_property()}];
 		life_type:              IND_LIFE_TYPE_PROCESSING;
 		closure_msg:            TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS;
 		prod_increase_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL;

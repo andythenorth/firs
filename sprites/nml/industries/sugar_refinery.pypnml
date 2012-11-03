@@ -88,7 +88,6 @@ SWITCH_COLOUR_SCHEME1(${industry.id}_colour)
 item(FEAT_INDUSTRIES, sugar_refinery, ${industry.get_numeric_id()}) {
 	property {
 		substitute:             0;
-		layouts: [${industry.get_industry_layouts_as_property()}];
 		life_type:              4;
 		name:                   string(STR_IND_SUGAR_REFINERY);
 		nearby_station_name:    string(STR_STATION, string(STR_TOWN), string(STR_IND_SUGAR_REFINERY));

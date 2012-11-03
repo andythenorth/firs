@@ -59,7 +59,6 @@ CHECK_FOUNDER       (${industry.id}_hardware_store)
 item(FEAT_INDUSTRIES, hardware_store, ${industry.get_numeric_id()}) {
 	property {
 		substitute:             0;
-		layouts: [${industry.get_industry_layouts_as_property()}];
 		name:                   string(STR_IND_HARDWARE_STORE);
 		nearby_station_name:    string(STR_STATION, string(STR_TOWN), string(STR_IND_HARDWARE_STORE));
 		closure_msg:            TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS;
