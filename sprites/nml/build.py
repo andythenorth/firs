@@ -61,6 +61,7 @@ cargotable = [] # 'cargotable' is a single word in nml
 for cargo in cargos:
     cargo_output_pnml.append(cargo.render_pnml())
     cargotable.append(cargo.cargo_label.replace('"',''))
+    print cargo.economy_variations
 
 # save the results of cargo templating
 pnml = codecs.open(os.path.join(currentdir,'sprites','nml','generated_pnml', 'cargo_props.pnml'), 'w','utf8')

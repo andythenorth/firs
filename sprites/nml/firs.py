@@ -48,6 +48,12 @@ class Cargo(object):
         self.penalty_lowerbound = kwargs['penalty_lowerbound']
         self.single_penalty_length = kwargs['single_penalty_length']
         self.price_factor = kwargs['price_factor']
+        self.economy_variations = {}
+        for economy in global_constants.economies:
+            self.add_economy_variation(economy)
+
+    def add_economy_variation(self, economy):
+        self.economy_variations[economy] = {'disabled': False}
 
     def get_property_declaration(self, property_name):
         return property_name + ': ' + getattr(self, property_name) + ';'
@@ -256,7 +262,6 @@ class Industry(object):
             return 'layouts: ' + self.default_industry_properties.layouts + ';' # simple case
         else:
             return
-
 
     def get_industry_layouts_as_graphic_switches(self):
         template = templates['industry_layout_graphics_switches.pynml']
