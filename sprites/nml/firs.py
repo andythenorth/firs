@@ -120,6 +120,7 @@ class IndustryProperties(object):
     def __init__(self, **kwargs):
         # nml item properties, most of these should be provided as strings for insertion into nml.  See nml docs for meaning + acceptable values.
         self.substitute = kwargs.get('substitute', None)
+        self.override = kwargs.get('override', None)
         self.name = kwargs.get('name', None)
         self.nearby_station_name = kwargs.get('nearby_station_name', None)
         self.layouts = kwargs.get('layouts', None) # !! needs to handle case automatic layouts when present
@@ -216,8 +217,11 @@ class Industry(object):
         return unescape_chameleon_output(template(industry=self))
 
     def get_industry_layouts_as_property(self):
+        # option for no layout declaration if over-riding a default industry
+        if self.default_industry_properties.layouts == 'USE_DEFAULT':
+            return
         # supports auto-magic layouts from layout objects, or layouts simply declared as a string for nml
-        if self.default_industry_properties.layouts != None:
+        elif self.default_industry_properties.layouts != None:
             return self.default_industry_properties.layouts + ';' # simple case
         else:
             template = templates['industry_layout_property.pynml'] # automagic case

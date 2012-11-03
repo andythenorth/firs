@@ -5,6 +5,7 @@
             property {
                 <!--! following props are always same for all economies -->
                 ${industry.get_property_declaration('substitute')}
+                ${industry.get_property_declaration('override')}
                 ${industry.get_property_declaration('life_type')}
                 ${industry.get_property_declaration('closure_msg')}
                 ${industry.get_property_declaration('prod_increase_msg')}

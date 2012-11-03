@@ -114,20 +114,9 @@ SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
 
 #include "../templates/check_availability.pnml"
 
+${industry.get_industry_properties()}
+
 item(FEAT_INDUSTRIES, coal_mine, ${industry.get_numeric_id()}) {
-	property {
-		substitute: 0;
-		override: 0;
-		accept_cargo_types: [ENSP];
-		prod_multiplier: [20, 0];
-		input_multiplier_1: [0, 0];
-		conflicting_ind_types: [];
-		prob_random: 8;
-		prob_in_game: 3;
-		prospect_chance: 0.75;
-		fund_cost_multiplier: 252;
-		map_colour: 1;
-	}
 	graphics {
 		produce_cargo_arrival:   THIS_ID(produce);
 		construction_probability:THIS_ID(check_availability);
