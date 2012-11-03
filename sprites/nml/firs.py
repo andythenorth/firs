@@ -199,7 +199,7 @@ class Industry(object):
         return new_industry_layout # returning the new obj isn't essential, but permits the caller giving it a reference for use elsewhere
 
     def add_economy_variation(self, economy):
-        self.economy_variations[economy] = IndustryProperties()
+        self.economy_variations[economy['id']] = IndustryProperties()
 
     def get_numeric_id(self):
         return global_constants.industry_numeric_ids[self.id]
@@ -242,7 +242,7 @@ class Industry(object):
 
     def get_property(self, property_name, economy):
         # straightforward lookup of a property, doesn't try to handle failure case of property not found; don't look up props that don't exist
-        return getattr(self.economy_variations[economy], property_name)
+        return getattr(self.economy_variations[economy['id']], property_name)
 
     def get_property_declaration(self, property_name, economy=None):
         # does magic to get the property from the defaults if not set
@@ -251,7 +251,7 @@ class Industry(object):
         if economy is None:
             value = default_value
         else:
-            economy_value = getattr(self.economy_variations[economy], property_name)
+            economy_value = getattr(self.economy_variations[economy['id']], property_name)
             if economy_value is not None:
                 value = economy_value
             else:
