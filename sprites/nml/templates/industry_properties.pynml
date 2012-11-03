@@ -4,29 +4,29 @@
         <tal:industry_on_or_off condition="industry.get_property(economy, 'disabled') != True">
         item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
             property {
-                substitute: ${industry.get_property(economy, 'substitute')};
-                layouts: ${industry.get_property(economy, 'layouts')};
-                life_type: ${industry.get_property(economy, 'life_type')};
-                closure_msg: ${industry.get_property(economy, 'closure_msg')};
-                prod_increase_msg: ${industry.get_property(economy, 'prod_increase_msg')};
-                prod_decrease_msg: ${industry.get_property(economy, 'prod_decrease_msg')};
-                new_ind_msg: ${industry.get_property(economy, 'new_ind_msg')};
-                name: ${industry.get_property(economy, 'name')};
-                nearby_station_name: ${industry.get_property(economy, 'nearby_station_name')};
-                prod_cargo_types: ${industry.get_property(economy, 'prod_cargo_types')};
-                accept_cargo_types: ${industry.get_property(economy, 'accept_cargo_types')};
-                prod_multiplier: ${industry.get_property(economy, 'prod_multiplier')};
-                input_multiplier_1: ${industry.get_property(economy, 'input_multiplier_1')};
-                input_multiplier_2: ${industry.get_property(economy, 'input_multiplier_2')};
-                input_multiplier_3: ${industry.get_property(economy, 'input_multiplier_3')};
-                min_cargo_distr: ${industry.get_property(economy, 'min_cargo_distr')};
-                prob_random: ${industry.get_property(economy, 'prob_random')};
-                prob_in_game: ${industry.get_property(economy, 'prob_in_game')};
-                prospect_chance: ${industry.get_property(economy, 'prospect_chance')};
-                fund_cost_multiplier: ${industry.get_property(economy, 'fund_cost_multiplier')};
-                map_colour: ${industry.get_property(economy, 'map_colour')};
-                remove_cost_multiplier: ${industry.get_property(economy, 'remove_cost_multiplier')};
-                spec_flags: ${industry.get_property(economy, 'spec_flags')};
+                ${industry.get_property_declaration(economy, 'substitute')}
+                ${industry.get_property_declaration(economy, 'layouts')}
+                ${industry.get_property_declaration(economy, 'life_type')}
+                ${industry.get_property_declaration(economy, 'closure_msg')}
+                ${industry.get_property_declaration(economy, 'prod_increase_msg')}
+                ${industry.get_property_declaration(economy, 'prod_decrease_msg')}
+                ${industry.get_property_declaration(economy, 'new_ind_msg')}
+                ${industry.get_property_declaration(economy, 'name')}
+                ${industry.get_property_declaration(economy, 'nearby_station_name')}
+                ${industry.get_property_declaration(economy, 'prod_cargo_types')}
+                ${industry.get_property_declaration(economy, 'accept_cargo_types')}
+                ${industry.get_property_declaration(economy, 'prod_multiplier')}
+                ${industry.get_property_declaration(economy, 'input_multiplier_1')}
+                ${industry.get_property_declaration(economy, 'input_multiplier_2')}
+                ${industry.get_property_declaration(economy, 'input_multiplier_3')}
+                ${industry.get_property_declaration(economy, 'min_cargo_distr')}
+                ${industry.get_property_declaration(economy, 'prob_random')}
+                ${industry.get_property_declaration(economy, 'prob_in_game')}
+                ${industry.get_property_declaration(economy, 'prospect_chance')}
+                ${industry.get_property_declaration(economy, 'fund_cost_multiplier')}
+                ${industry.get_property_declaration(economy, 'map_colour')}
+                ${industry.get_property_declaration(economy, 'remove_cost_multiplier')}
+                ${industry.get_property_declaration(economy, 'spec_flags')}
                 // props we don't want industries to set a value for
                 conflicting_ind_types: []; // don't use this, FIRS has it's own better checks for this
             }

@@ -232,10 +232,16 @@ class Industry(object):
         return unescape_chameleon_output(template(industry=self, global_constants=global_constants))
 
     def get_property(self, economy, property_name):
+        # straightforward lookup of a property, doesn't try to handle failure case of property not found; don't look up props that don't exist
+        return getattr(self.economy_variations[economy], property_name)
+
+    def get_property_declaration(self, economy, property_name):
+        # does magic to get the property from the defaults if not set
+        # that enables economies to over-ride selected properties and not bother setting others
         value = getattr(self.economy_variations[economy], property_name)
         if value is None:
             value = getattr(self.default_industry_properties, property_name)
-        return value
+        return property_name + ': ' + value + ';'
 
     def get_conditional_expressions_for_enabled_economies(self):
         return "param[0]==1 || param[0]==2"
