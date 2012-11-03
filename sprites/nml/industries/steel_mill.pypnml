@@ -5,7 +5,7 @@
  * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS industry set. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#define THIS_ID(...) ${industry.id} ## __VA_ARGS__
+#define THIS_ID(...) ${industry.id}_ ## __VA_ARGS__
 
 /* *************************************************
  * Definition of the industry tile and its callbacks
@@ -102,11 +102,11 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_6), 57) {
 #define THIS_MIN_YEAR 1873
 
 
-CHECK_INCOMPATIBLE  (steelmill,     56, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
-CHECK_INCOMPATIBLE  (coal_mine,     16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(steelmill))
+CHECK_INCOMPATIBLE  (steel_mill,     56, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
+CHECK_INCOMPATIBLE  (coal_mine,     16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(steel_mill))
 CHECK_INCOMPATIBLE  (iron_ore_mine, 16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(coal_mine))
-CHECK_INCOMPATIBLE  (junkyard,      16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(iron_ore_mine))
-CHECK_FOUNDER       (THIS_ID(junkyard))
+CHECK_INCOMPATIBLE  (junk_yard,      16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(iron_ore_mine))
+CHECK_FOUNDER       (THIS_ID(junk_yard))
 
 SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
 
@@ -118,20 +118,9 @@ SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
 
 #include "../templates/check_availability.pnml"
 
-item(FEAT_INDUSTRIES, steelmill, ${industry.get_numeric_id()}) {
-	property {
-		substitute: 8;
-		override: 8;
-		accept_cargo_types: [IORE, COAL, SCMT];
-		input_multiplier_1: [0, 0];
-		input_multiplier_2: [0, 0];
-		input_multiplier_3: [0, 0];
-		conflicting_ind_types: [];
-		prob_random: 5;
-		prob_in_game: 2;
-		fund_cost_multiplier: 200;
-		map_colour: 9;
-	}
+${industry.get_industry_properties()}
+
+item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
 	graphics {
 		produce_cargo_arrival:   THIS_ID(produce);
 		construction_probability:THIS_ID(check_availability);

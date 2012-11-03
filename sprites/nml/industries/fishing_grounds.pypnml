@@ -339,43 +339,9 @@ random_switch(FEAT_INDUSTRIES, SELF, THIS_ID(randomise_primary_production_on_bui
 	1: return 40;
 }
 
+${industry.get_industry_properties()}
 
 item(FEAT_INDUSTRIES, fishing_grounds, ${industry.get_numeric_id()}) {
-	property {
-		substitute: 5;
-		layouts: [
-				tilelayout_fishing_grounds_1,
-				tilelayout_fishing_grounds_2,
-				tilelayout_fishing_grounds_3,
-				tilelayout_fishing_grounds_4
-			];
-		life_type:              IND_LIFE_TYPE_EXTRACTIVE;
-		closure_msg:            TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS;
-		prod_increase_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL;
-		prod_decrease_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_GENERAL;
-		new_ind_msg:            TTD_STR_NEWS_INDUSTRY_CONSTRUCTION;
-		name:                   string(STR_IND_FISHING_GROUND);
-		nearby_station_name:    string(STR_STATION, string(STR_TOWN), string(STR_IND_FISHING_GROUND));
-		prod_cargo_types: [FISH];
-		accept_cargo_types: [];
-		prod_multiplier: [5, 0];
-		input_multiplier_1: [0, 0];
-		input_multiplier_2: [0, 0];
-		input_multiplier_3: [0, 0];
-		min_cargo_distr: 2;
-		conflicting_ind_types: [];
-		prob_random: 20;
-		prob_in_game: 20;
-		prospect_chance: 0.75;
-		fund_cost_multiplier: 88;
-		map_colour: 158;
-		remove_cost_multiplier: 0;
-		spec_flags:             bitmask(
-		                               IND_FLAG_BUILT_ON_WATER,
-								       IND_FLAG_NO_PRODUCTION_INCREASE,
-								       IND_FLAG_AI_CREATES_AIR_AND_SHIP_ROUTES
-								   );
-	}
 	graphics {
 		construction_probability:THIS_ID(check_availability);
 		location_check:          THIS_ID(check_location);

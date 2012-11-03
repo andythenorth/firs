@@ -5,7 +5,7 @@
  * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS industry set. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#define THIS_ID(...) ${industry.id} ## __VA_ARGS__
+#define THIS_ID(...) ${industry.id}_ ## __VA_ARGS__
 
 /* *************************************************
  * Definition of the industry tile and its callbacks
@@ -197,8 +197,8 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_16), 115) {
 #define THIS_STR_EXTRA_SUPPLIES        STR_EXTRA_ENGINEERING_SUPPLIES
 
 CHECK_NEARBY_CLUSTER(iron_ore_mine, 20, 70, 2, 3, return CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
-CHECK_INCOMPATIBLE  (steelmill,     16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(iron_ore_mine))
-CHECK_FOUNDER       (THIS_ID(steelmill))
+CHECK_INCOMPATIBLE  (steel_mill,     16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(iron_ore_mine))
+CHECK_FOUNDER       (THIS_ID(steel_mill))
 
 SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
 
@@ -209,19 +209,9 @@ SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
 
 #include "../templates/check_availability.pnml"
 
-item(FEAT_INDUSTRIES, iron_ore_mine, ${industry.get_numeric_id()}) {
-	property {
-		substitute: 18;
-		override: 18;
-		accept_cargo_types: [ENSP];
-		prod_multiplier: [19];
-		conflicting_ind_types: [];
-		prob_random: 7;
-		prob_in_game: 4;
-		prospect_chance: 0.75;
-		fund_cost_multiplier: 232;
-		map_colour: 55;
-	}
+${industry.get_industry_properties()}
+
+item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
 	graphics {
 		produce_cargo_arrival:   THIS_ID(produce);
 		construction_probability:THIS_ID(check_availability);

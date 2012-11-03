@@ -56,35 +56,9 @@ CHECK_INCOMPATIBLE  (builders_yard, 16, CB_RESULT_LOCATION_DISALLOW, ${industry.
 CHECK_INCOMPATIBLE  (hardware_store, 20, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_builders_yard)
 CHECK_FOUNDER       (${industry.id}_hardware_store)
 
-item(FEAT_INDUSTRIES, hardware_store, ${industry.get_numeric_id()}) {
-	property {
-		substitute:             0;
-		name:                   string(STR_IND_HARDWARE_STORE);
-		nearby_station_name:    string(STR_STATION, string(STR_TOWN), string(STR_IND_HARDWARE_STORE));
-		closure_msg:            TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS;
-		prod_increase_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL;
-		prod_decrease_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_GENERAL;
-		new_ind_msg:            TTD_STR_NEWS_INDUSTRY_CONSTRUCTION;
+${industry.get_industry_properties()}
 
-		prod_cargo_types:       [];
-		accept_cargo_types:     [GOOD, BDMT];
-
-		prod_multiplier:        [0, 0];
-		input_multiplier_1:     [0, 0];
-		input_multiplier_2:     [0, 0];
-		input_multiplier_3:     [0, 0];
-		min_cargo_distr:        2;
-
-		life_type:              IND_LIFE_TYPE_BLACK_HOLE;
-		conflicting_ind_types:  [hardware_store];
-		spec_flags:             bitmask(IND_FLAG_ONLY_IN_TOWNS);
-		prob_random:            24;
-		prob_in_game:           12;
-		prospect_chance:        0.75;
-		fund_cost_multiplier:   6;
-		map_colour:             15;
-		remove_cost_multiplier: 0;
-	}
+item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
 	graphics {
 		construction_probability:${industry.id}_check_availability;
 		location_check:          ${industry.id}_check_location;

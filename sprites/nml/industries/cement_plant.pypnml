@@ -392,39 +392,9 @@ SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
 
 #include "../templates/check_availability.pnml"
 
-item(FEAT_INDUSTRIES, cement_plant, ${industry.get_numeric_id()}) {
-	property {
-		substitute: 0;
-		layouts: [
-				tilelayout_cement_plant_1,
-				tilelayout_cement_plant_2,
-				tilelayout_cement_plant_3,
-				tilelayout_cement_plant_4,
-				tilelayout_cement_plant_5
-			];
-		life_type:              IND_LIFE_TYPE_PROCESSING;
-		closure_msg:            TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS;
-		prod_increase_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL;
-		prod_decrease_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_GENERAL;
-		new_ind_msg:            TTD_STR_NEWS_INDUSTRY_CONSTRUCTION;
-		name:                   string(STR_IND_CEMENT_PLANT);
-		nearby_station_name:    string(STR_STATION, string(STR_TOWN), string(STR_IND_CEMENT_PLANT));
-		prod_cargo_types: [BDMT];
-		accept_cargo_types: [COAL, CLAY, GRVL];
-		prod_multiplier: [0, 0];
-		input_multiplier_1: [0, 0];
-		input_multiplier_2: [0, 0];
-		input_multiplier_3: [0, 0];
-		min_cargo_distr: 5;
-		conflicting_ind_types: [];
-		prob_random: 5;
-		prob_in_game: 3;
-		prospect_chance: 0.75;
-		fund_cost_multiplier: 203;
-		map_colour: 19;
-		remove_cost_multiplier: 0;
-		spec_flags:             bitmask(IND_FLAG_MILITARY_HELICOPTER_CAN_EXPLODE);
-	}
+${industry.get_industry_properties()}
+
+item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
 	graphics {
 		produce_cargo_arrival:   THIS_ID(produce);
 		construction_probability:THIS_ID(check_availability);

@@ -361,32 +361,9 @@ SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
 
 #include "../templates/check_availability.pnml"
 
-item(FEAT_INDUSTRIES, fruit_plantation, ${industry.get_numeric_id()}) {
-	property {
-		substitute: 0;
-		layouts: [
-				tilelayout_5807_1,
-				tilelayout_5807_2,
-				tilelayout_5807_3,
-				tilelayout_5807_4
-			];
-		life_type:              IND_LIFE_TYPE_ORGANIC;
-		name:                   TTD_STR_INDUSTRY_NAME_FRUIT_PLANTATION;
-		closure_msg:            TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS;
-		prod_increase_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL;
-		prod_decrease_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_GENERAL;
-		new_ind_msg:            TTD_STR_NEWS_INDUSTRY_CONSTRUCTION;
-		prod_cargo_types: [FRVG];
-		accept_cargo_types: [FMSP];
-		prod_multiplier: [6];
-		conflicting_ind_types: [];
-		prob_random: 18;
-		prob_in_game: 3;
-		prospect_chance: 0.75;
-		fund_cost_multiplier: 54;
-		map_colour: 86;
-		spec_flags:            0;
-	}
+${industry.get_industry_properties()}
+
+item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
 	graphics {
 		produce_cargo_arrival:   THIS_ID(produce);
 		construction_probability:THIS_ID(check_availability);

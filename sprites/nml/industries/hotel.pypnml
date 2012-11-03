@@ -46,32 +46,9 @@ CHECK_INCOMPATIBLE  (food_market, 16, CB_RESULT_LOCATION_DISALLOW, ${industry.id
 CHECK_INCOMPATIBLE  (hotel, 20, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_food_market)
 CHECK_FOUNDER       (${industry.id}_hotel)
 
-item(FEAT_INDUSTRIES, hotel, ${industry.get_numeric_id()}) {
-	property {
-		substitute: 0;
-		life_type:              IND_LIFE_TYPE_BLACK_HOLE;
-		name:                   string(STR_IND_HOTEL);
-		nearby_station_name:    string(STR_STATION, string(STR_TOWN), string(STR_IND_HOTEL));
-		closure_msg:            TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS;
-		prod_increase_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL;
-		prod_decrease_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_GENERAL;
-		new_ind_msg:            TTD_STR_NEWS_INDUSTRY_CONSTRUCTION;
-		prod_cargo_types:       [PASS];
-		accept_cargo_types:     [FOOD, BEER, PASS];
-		prod_multiplier: [20, 0];
-		input_multiplier_1: [0, 0];
-		input_multiplier_2: [0, 0];
-		input_multiplier_3: [0, 0];
-		min_cargo_distr: 2;
-		conflicting_ind_types:  [hotel];
-		prob_random: 10;
-		prob_in_game: 20;
-		prospect_chance: 0.75;
-		fund_cost_multiplier: 15;
-		map_colour: 190;
-		remove_cost_multiplier: 0;
-		spec_flags:             bitmask(IND_FLAG_BUILT_NEAR_TOWN); /*use build near town not in town, hotel is large and town locations hard to find */
-	}
+${industry.get_industry_properties()}
+
+item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
 	graphics {
 		construction_probability:${industry.id}_check_availability;
 		build_prod_change:       randomise_primary_production_on_build;

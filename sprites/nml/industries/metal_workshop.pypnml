@@ -186,8 +186,8 @@ tilelayout tilelayout_metal_foundry_2 {
 #define THIS_MIN_YEAR 1762
 
 
-CHECK_INCOMPATIBLE(metal_foundry, 56, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
-CHECK_FOUNDER     (THIS_ID(metal_foundry))
+CHECK_INCOMPATIBLE(metal_workshop, 56, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
+CHECK_FOUNDER     (THIS_ID(metal_workshop))
 
 SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
 
@@ -199,37 +199,9 @@ SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
 
 #include "../templates/check_availability.pnml"
 
+${industry.get_industry_properties()}
 
-item(FEAT_INDUSTRIES, metal_foundry, ${industry.get_numeric_id()}) {
-	property {
-		substitute: 0;
-		layouts: [
-				tilelayout_metal_foundry_1,
-				tilelayout_metal_foundry_2
-			];
-		life_type:              IND_LIFE_TYPE_PROCESSING;
-		closure_msg:            TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS;
-		prod_increase_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL;
-		prod_decrease_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_GENERAL;
-		new_ind_msg:            TTD_STR_NEWS_INDUSTRY_CONSTRUCTION;
-		name:                   string(STR_IND_METAL_FOUNDRY);
-		nearby_station_name:    string(STR_STATION, string(STR_TOWN), string(STR_IND_METAL_FOUNDRY));
-		prod_cargo_types: [GOOD, MNSP];
-		accept_cargo_types: [STEL, RFPR];
-		prod_multiplier: [0, 0];
-		input_multiplier_1: [0, 0];
-		input_multiplier_2: [0, 0];
-		input_multiplier_3: [0, 0];
-		min_cargo_distr: 5;
-		conflicting_ind_types: [];
-		prob_random: 5;
-		prob_in_game: 3;
-		prospect_chance: 0.75;
-		fund_cost_multiplier: 120;
-		map_colour: 123;
-		remove_cost_multiplier: 0;
-		spec_flags:             0;
-	}
+item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
 	graphics {
 		produce_cargo_arrival:   THIS_ID(produce);
 		construction_probability:THIS_ID(check_availability);

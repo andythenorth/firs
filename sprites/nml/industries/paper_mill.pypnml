@@ -5,7 +5,7 @@
  * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS industry set. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#define THIS_ID(...) ${industry.id} ## __VA_ARGS__
+#define THIS_ID(...) ${industry.id}_ ## __VA_ARGS__
 
 /* *************************************************
  * Definition of the industry tile and its callbacks
@@ -135,21 +135,9 @@ SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
 
 #include "../templates/check_availability.pnml"
 
-item(FEAT_INDUSTRIES, paper_mill, ${industry.get_numeric_id()}) {
-	property {
-		substitute: 14;
-		override: 14;
-		prod_cargo_types: [GOOD, MNSP];
-		accept_cargo_types: [CLAY, WOOD, RFPR];
-		input_multiplier_1: [0, 0];
-		input_multiplier_2: [0, 0];
-		input_multiplier_3: [0, 0];
-		conflicting_ind_types: [];
-		prob_random: 5;
-		prob_in_game: 2;
-		fund_cost_multiplier: 120;
-		map_colour: 184;
-	}
+${industry.get_industry_properties()}
+
+item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
 	graphics {
 		produce_cargo_arrival:   THIS_ID(produce);
 		construction_probability:THIS_ID(check_availability);

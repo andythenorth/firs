@@ -89,35 +89,9 @@ CHECK_INCOMPATIBLE  (food_market, 16, CB_RESULT_LOCATION_DISALLOW, ${industry.id
 CHECK_INCOMPATIBLE  (petrol_pump, 20, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_food_market)
 CHECK_FOUNDER       (${industry.id}_petrol_pump)
 
-item(FEAT_INDUSTRIES, petrol_pump, ${industry.get_numeric_id()}) {
-	property {
-		substitute: 0;
-		life_type:              IND_LIFE_TYPE_BLACK_HOLE;
-		name:                   string(STR_IND_PETROLPUMP);
-		nearby_station_name:    string(STR_STATION, string(STR_TOWN), string(STR_IND_PETROLPUMP));
-		closure_msg:            TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS;
-		prod_increase_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL;
-		prod_decrease_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_GENERAL;
-		new_ind_msg:            TTD_STR_NEWS_INDUSTRY_CONSTRUCTION;
+${industry.get_industry_properties()}
 
-		prod_cargo_types:       [];
-		accept_cargo_types:     [FOOD, GOOD, PETR];
-
-		prod_multiplier:        [0, 0];
-		input_multiplier_1:     [0, 0];
-		input_multiplier_2:     [0, 0];
-		input_multiplier_3:     [0, 0];
-		min_cargo_distr:        2;
-
-		conflicting_ind_types:  [];
-		spec_flags:             0;
-		prob_random:            14;
-		prob_in_game:           14;
-		prospect_chance:        0.75;
-		fund_cost_multiplier:   8;
-		remove_cost_multiplier: 0;
-		map_colour:             15;
-	}
+item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
 	graphics {
 		construction_probability:${industry.id}_check_availability;
 		extra_text_fund:         return string(STR_FUND_AVAILABLE_FROM, THIS_MIN_YEAR);

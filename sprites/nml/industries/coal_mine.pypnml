@@ -5,7 +5,7 @@
  * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS industry set. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#define THIS_ID(...) ${industry.id} ## __VA_ARGS__
+#define THIS_ID(...) ${industry.id}_ ## __VA_ARGS__
 
 /* *************************************************
  * Definition of the industry tiles
@@ -101,8 +101,8 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_7), 6) {
 CHECK_NEARBY_CLUSTER(coal_mine,    20, 70, 2, 3, return CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
 CHECK_INCOMPATIBLE  (brick_works,  16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(coal_mine))
 CHECK_INCOMPATIBLE  (cement_plant, 16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(brick_works))
-CHECK_INCOMPATIBLE  (steelmill,    16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(cement_plant))
-CHECK_INCOMPATIBLE  (lime_kiln,    16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(steelmill))
+CHECK_INCOMPATIBLE  (steel_mill,    16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(cement_plant))
+CHECK_INCOMPATIBLE  (lime_kiln,    16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(steel_mill))
 CHECK_FOUNDER       (THIS_ID(lime_kiln))
 
 SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
@@ -116,7 +116,7 @@ SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
 
 ${industry.get_industry_properties()}
 
-item(FEAT_INDUSTRIES, coal_mine, ${industry.get_numeric_id()}) {
+item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
 	graphics {
 		produce_cargo_arrival:   THIS_ID(produce);
 		construction_probability:THIS_ID(check_availability);

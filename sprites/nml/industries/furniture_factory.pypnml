@@ -234,39 +234,9 @@ SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
 
 #include "../templates/check_availability.pnml"
 
-item(FEAT_INDUSTRIES, furniture_factory, ${industry.get_numeric_id()}) {
-	property {
-		substitute: 0;
-		layouts: [
-				tilelayout_furniture_factory_1,
-				tilelayout_furniture_factory_2,
-				tilelayout_furniture_factory_3,
-				tilelayout_furniture_factory_4,
-				tilelayout_furniture_factory_5
-			];
-		life_type:              IND_LIFE_TYPE_PROCESSING;
-		closure_msg:            TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS;
-		prod_increase_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL;
-		prod_decrease_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_GENERAL;
-		new_ind_msg:            TTD_STR_NEWS_INDUSTRY_CONSTRUCTION;
-		name:                   string(STR_IND_FURNITURE_FACTORY);
-		nearby_station_name:    string(STR_STATION, string(STR_TOWN), string(STR_IND_FURNITURE_FACTORY));
-		prod_cargo_types: [GOOD];
-		accept_cargo_types: [MNSP, WDPR];
-		prod_multiplier: [0, 0];
-		input_multiplier_1: [0, 0];
-		input_multiplier_2: [0, 0];
-		input_multiplier_3: [0, 0];
-		min_cargo_distr: 5;
-		conflicting_ind_types: [];
-		prob_random: 8;
-		prob_in_game: 7;
-		prospect_chance: 0.75;
-		fund_cost_multiplier: 95;
-		map_colour: 186;
-		remove_cost_multiplier: 0;
-		spec_flags:             0;
-	}
+${industry.get_industry_properties()}
+
+item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
 	graphics {
 		produce_cargo_arrival:   THIS_ID(produce);
 		construction_probability:THIS_ID(check_availability);

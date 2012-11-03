@@ -92,32 +92,9 @@ switch(FEAT_INDUSTRIES, SELF, ${industry.id}_cargo_output, (extra_callback_info1
 	return 0xFF;                      // terminate callback
 }
 
-item(FEAT_INDUSTRIES, recycling_plant, ${industry.get_numeric_id()}) {
-	property {
-		substitute: 0;
-		life_type:              IND_LIFE_TYPE_PROCESSING;
-		closure_msg:            TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS;
-		prod_increase_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL;
-		prod_decrease_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_FARM;
-		new_ind_msg:            TTD_STR_NEWS_INDUSTRY_CONSTRUCTION;
-		name:                   string(STR_IND_RECYCLING_PLANT);
-		nearby_station_name:    string(STR_STATION, string(STR_TOWN), string(STR_IND_RECYCLING_PLANT));
-		prod_cargo_types:      [SCMT, MNSP];
-		accept_cargo_types:    [RCYC];
-		prod_multiplier: [0, 0];
-		input_multiplier_1: [0, 0];
-		input_multiplier_2: [0, 0];
-		input_multiplier_3: [0, 0];
-		min_cargo_distr: 5;
-		conflicting_ind_types: [];
-		prob_random: 7;
-		prob_in_game: 7;
-		prospect_chance: 0.75;
-		fund_cost_multiplier: 118;
-		map_colour: 164;
-		remove_cost_multiplier: 0;
-		spec_flags:             0;
-	}
+${industry.get_industry_properties()}
+
+item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
 	graphics {
 		produce_cargo_arrival:   ${industry.id}_produce;
 		cargo_output:            ${industry.id}_cargo_output;
