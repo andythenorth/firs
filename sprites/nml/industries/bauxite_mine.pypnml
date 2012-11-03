@@ -81,10 +81,9 @@ SWITCH_COLOUR_SCHEME1(${industry.id}_colour)
 
 #include "../templates/check_availability.pnml"
 
-
 ${industry.get_industry_properties()}
 
-item(FEAT_INDUSTRIES, bauxite_mine, ${industry.get_numeric_id()}) {
+item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
 	graphics {
 		produce_cargo_arrival:   ${industry.id}_produce;
 		construction_probability:${industry.id}_check_availability;

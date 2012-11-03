@@ -88,36 +88,16 @@ SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
 
 #include "../templates/check_availability.pnml"
 
-item(FEAT_INDUSTRIES, biorefinery, ${industry.get_numeric_id()}) {
-	property {
-		substitute: 0;
-		life_type:              IND_LIFE_TYPE_PROCESSING;
-		closure_msg:            TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS;
-		prod_increase_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL;
-		prod_decrease_msg:      TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_GENERAL;
-		new_ind_msg:            TTD_STR_NEWS_INDUSTRY_CONSTRUCTION;
-		name:                   string(STR_IND_BIOREFINERY);
-		nearby_station_name:    string(STR_STATION, string(STR_TOWN), string(STR_IND_BIOREFINERY));
-		prod_cargo_types: [RFPR, PETR];
-		accept_cargo_types: [GRAI, SGBT];
-		prod_multiplier: [0, 0];
-		input_multiplier_1: [0, 0];
-		input_multiplier_2: [0, 0];
-		input_multiplier_3: [0, 0];
-		min_cargo_distr: 5;
-		conflicting_ind_types: [];
-		prob_random: 5;
-		prob_in_game: 3;
-		prospect_chance: 0.75;
-		fund_cost_multiplier: 170;
-		map_colour: 186;
-		remove_cost_multiplier: 0;
-		spec_flags:             bitmask(IND_FLAG_MILITARY_AIRPLANE_CAN_EXPLODE);
-	}
+${industry.get_industry_properties()}
 
+if (${industry.get_conditional_expressions_for_enabled_economies()}) {
+   item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
 	/* Economy specific cargo */
 	INDUSTRY_INPUT_CARGO_2(ENABLE_SUGARCANE && ENABLE_GRAIN, GRAI, SGCN)
+    }
+}
 
+item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
 	graphics {
 		produce_cargo_arrival:   ${industry.id}_produce;
 		construction_probability:${industry.id}_check_availability;

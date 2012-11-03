@@ -365,7 +365,7 @@ SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
 
 ${industry.get_industry_properties()}
 
-item(FEAT_INDUSTRIES, aluminium_plant, ${industry.get_numeric_id()}) {
+item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
 	graphics {
 		produce_cargo_arrival:   THIS_ID(produce);
 		construction_probability:THIS_ID(check_availability);
