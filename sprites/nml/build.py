@@ -18,56 +18,55 @@ sys.path.append(os.path.join('cargos')) # add to the module search path
 
 import codecs # used for writing files - more unicode friendly than standard open() module
 
-from cargos import alcohol
-from cargos import bauxite
-from cargos import building_materials
-from cargos import chemicals
-from cargos import clay
-from cargos import coal
-from cargos import engineering_supplies
-from cargos import farm_supplies
-from cargos import fish
-from cargos import food
-from cargos import fruits
-from cargos import goods
-from cargos import grain
-from cargos import gravel
-from cargos import iron_ore
-from cargos import livestock
-from cargos import lumber
-from cargos import mail
-from cargos import manufacturing_supplies
-from cargos import milk
-from cargos import oil
-from cargos import passengers
-from cargos import petrol
-from cargos import plant_fibres
-from cargos import recyclables
-from cargos import sand
-from cargos import scrap_metal
-from cargos import steel
-from cargos import sugar_beet
-from cargos import sugarcane
-from cargos import wood
-from cargos import wool
+from cargos.alcohol import cargo as alcohol
+from cargos.bauxite import cargo as bauxite
+from cargos.building_materials import cargo as building_materials
+from cargos.chemicals import cargo as chemicals
+from cargos.clay import cargo as clay
+from cargos.coal import cargo as coal
+from cargos.engineering_supplies import cargo as engineering_supplies
+from cargos.farm_supplies import cargo as farm_supplies
+from cargos.fish import cargo as fish
+from cargos.food import cargo as food
+from cargos.fruits import cargo as fruits
+from cargos.goods import cargo as goods
+from cargos.grain import cargo as grain
+from cargos.gravel import cargo as gravel
+from cargos.iron_ore import cargo as iron_ore
+from cargos.livestock import cargo as livestock
+from cargos.lumber import cargo as lumber
+from cargos.mail import cargo as mail
+from cargos.manufacturing_supplies import cargo as manufacturing_supplies
+from cargos.milk import cargo as milk
+from cargos.oil import cargo as oil
+from cargos.passengers import cargo as passengers
+from cargos.petrol import cargo as petrol
+from cargos.plant_fibres import cargo as plant_fibres
+from cargos.recyclables import cargo as recyclables
+from cargos.sand import cargo as sand
+from cargos.scrap_metal import cargo as scrap_metal
+from cargos.steel import cargo as steel
+from cargos.sugar_beet import cargo as sugar_beet
+from cargos.sugarcane import cargo as sugarcane
+from cargos.wood import cargo as wood
+from cargos.wool import cargo as wool
 
 cargos = [alcohol, bauxite, building_materials, chemicals, clay, coal, engineering_supplies, farm_supplies, fish,
           food, fruits, goods, grain, gravel, iron_ore, livestock, lumber, mail, manufacturing_supplies, milk,
           oil, passengers, petrol, plant_fibres, recyclables, sand, scrap_metal, steel, sugar_beet, sugarcane, wood, wool]
 
 cargo_output_pnml = []
-cargo_table = []
+cargotable = [] # 'cargotable' is a single word in nml
 # there is some insanity with cargo.cargo, it's ducktape coding, overlook it.
 for cargo in cargos:
-    cargo_output_pnml.append(cargo.cargo.render_pnml())
-    cargo_table.append(cargo.cargo.cargo_label.replace('"',''))
+    cargo_output_pnml.append(cargo.render_pnml())
+    cargotable.append(cargo.cargo_label.replace('"',''))
 
 # save the results of cargo templating
 pnml = codecs.open(os.path.join(currentdir,'sprites','nml','generated_pnml', 'cargo_props.pnml'), 'w','utf8')
-pnml.write('cargotable{' + ','.join(cargo_table) + '}')
+pnml.write('cargotable{' + ','.join(cargotable) + '}')
 pnml.write(''.join(cargo_output_pnml))
 pnml.close()
-
 
 # industries currently take care of rendering themselves to pnml (this comment may age badly)
 from industries import biorefinery
