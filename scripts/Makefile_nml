@@ -17,7 +17,7 @@ nml: preprocesspy
 
 preprocesspy:
 	mkdir -p generated_pnml
-	python src/build_firs.py
+	python scripts/preprocess.py
 
 ################################################################
 # Definitions which extend the common rules
