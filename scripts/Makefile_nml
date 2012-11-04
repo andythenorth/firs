@@ -25,6 +25,7 @@ preprocesspy:
 clean::
 	$(_E) "[CLEAN NML]"
 	$(_V)-rm -rf $(NML_FILE)
+	$(_V)-rm -r generated_pnml
 
 test::
 	$(_E) "nml:                          $(NML) $(NML_FLAGS)"
