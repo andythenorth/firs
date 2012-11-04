@@ -1,0 +1,389 @@
+/*
+ * This file is part of FIRS Industry Set for OpenTTD.
+ * FIRS is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 2.
+ * FIRS is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+#include "../src/templates/spritelayout_templates.pnml"
+#include "../src/templates/smoke_templates.pnml"
+
+#define THIS_ID(...) ${industry.id}_ ## __VA_ARGS__
+
+spriteset(THIS_ID(spriteset_ground), "src/graphics/industries/groundtiles.png") { tmpl_ground_tile(80, 10) }
+
+spriteset(THIS_ID(spriteset_1), "src/graphics/industries/fertiliser_plant.png") { tmpl_building_sprite(80, 10, 114, -88) }
+spriteset(THIS_ID(spriteset_2), "src/graphics/industries/fertiliser_plant.png") { tmpl_building_sprite(150, 10, 114, -83) }
+spriteset(THIS_ID(spriteset_3), "src/graphics/industries/fertiliser_plant.png") { tmpl_building_sprite(220, 10, 114, -83) }
+spriteset(THIS_ID(spriteset_4), "src/graphics/industries/fertiliser_plant.png") { tmpl_building_sprite(290, 10, 114, -83) }
+spriteset(THIS_ID(spriteset_5), "src/graphics/industries/fertiliser_plant.png") { tmpl_building_sprite(360, 10, 66, -35) }
+spriteset(THIS_ID(spriteset_6), "src/graphics/industries/fertiliser_plant.png") { tmpl_building_sprite(430, 10, 66, -35) }
+spriteset(THIS_ID(spriteset_7), "src/graphics/industries/fertiliser_plant.png") { tmpl_building_sprite(500, 10, 66, -35) }
+spriteset(THIS_ID(spriteset_8), "src/graphics/industries/fertiliser_plant.png") { tmpl_building_sprite(570, 10, 66, -35) }
+spriteset(THIS_ID(spriteset_9), "src/graphics/industries/fertiliser_plant.png") { tmpl_building_sprite(640, 10, 66, -35) }
+spriteset(THIS_ID(spriteset_10), "src/graphics/industries/fertiliser_plant.png") { tmpl_building_sprite(710, 10, 66, -35) }
+
+SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_large_building_left), THIS_ID(spriteset_ground), THIS_ID(spriteset_2), 48)
+
+SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_large_building_centre), THIS_ID(spriteset_ground), THIS_ID(spriteset_3), 48)
+
+SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_large_building_right), THIS_ID(spriteset_ground), THIS_ID(spriteset_4), 48)
+
+SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_large_store_left), THIS_ID(spriteset_ground), THIS_ID(spriteset_5), 48)
+
+SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_large_store_right), THIS_ID(spriteset_ground), THIS_ID(spriteset_6), 48)
+
+SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_spherical_tanks), THIS_ID(spriteset_ground), THIS_ID(spriteset_7), 48)
+
+SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_cylinder_tanks), THIS_ID(spriteset_ground), THIS_ID(spriteset_8), 48)
+
+SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_office), THIS_ID(spriteset_ground), THIS_ID(spriteset_9), 48)
+
+SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_forklift), THIS_ID(spriteset_ground), THIS_ID(spriteset_10), 48)
+
+SPRITELAYOUT_NORMAL_BEGIN(THIS_ID(spritelayout_chimney_anim), THIS_ID(spriteset_ground), THIS_ID(spriteset_1), 7)
+	BUILDING_SMOKE_BIG(5, 0, 69)
+	BUILDING_SMOKE_BIG(9, 0, 69)
+SPRITELAYOUT_END
+
+SPRITELAYOUT_GROUND_NORMAL_SNOW(THIS_ID(spritelayout_concrete), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground))
+
+switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_1), relative_pos) {
+	relative_coord(0, 0): THIS_ID(spritelayout_chimney_anim);
+	relative_coord(0, 1): THIS_ID(spritelayout_large_building_right);
+	relative_coord(0, 2): THIS_ID(spritelayout_cylinder_tanks);
+	relative_coord(1, 0): THIS_ID(spritelayout_large_store_right);
+	relative_coord(1, 1): THIS_ID(spritelayout_large_building_centre);
+	relative_coord(1, 2): THIS_ID(spritelayout_office);
+	relative_coord(2, 0): THIS_ID(spritelayout_large_store_left);
+	relative_coord(2, 1): THIS_ID(spritelayout_large_building_left);
+	relative_coord(2, 2): THIS_ID(spritelayout_spherical_tanks);
+	relative_coord(3, 0): THIS_ID(spritelayout_forklift);
+	relative_coord(3, 1): THIS_ID(spritelayout_concrete);
+	relative_coord(3, 2): THIS_ID(spritelayout_spherical_tanks);
+	THIS_ID(spritelayout_cylinder_tanks);
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_2), relative_pos) {
+	relative_coord(0, 0): THIS_ID(spritelayout_chimney_anim);
+	relative_coord(0, 1): THIS_ID(spritelayout_large_store_right);
+	relative_coord(1, 0): THIS_ID(spritelayout_large_building_right);
+	relative_coord(1, 1): THIS_ID(spritelayout_large_store_left);
+	relative_coord(2, 0): THIS_ID(spritelayout_large_building_centre);
+	relative_coord(2, 1): THIS_ID(spritelayout_forklift);
+	relative_coord(3, 0): THIS_ID(spritelayout_large_building_left);
+	relative_coord(3, 1): THIS_ID(spritelayout_spherical_tanks);
+	relative_coord(4, 0): THIS_ID(spritelayout_cylinder_tanks);
+	relative_coord(4, 1): THIS_ID(spritelayout_office);
+	THIS_ID(spritelayout_cylinder_tanks);
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_3), relative_pos) {
+	relative_coord(0, 1): THIS_ID(spritelayout_large_building_right);
+	relative_coord(1, 0): THIS_ID(spritelayout_cylinder_tanks);
+	relative_coord(1, 1): THIS_ID(spritelayout_large_building_centre);
+	relative_coord(1, 2): THIS_ID(spritelayout_spherical_tanks);
+	relative_coord(1, 3): THIS_ID(spritelayout_large_store_right);
+	relative_coord(2, 0): THIS_ID(spritelayout_office);
+	relative_coord(2, 1): THIS_ID(spritelayout_large_building_left);
+	relative_coord(2, 2): THIS_ID(spritelayout_chimney_anim);
+	relative_coord(2, 3): THIS_ID(spritelayout_large_store_left);
+	THIS_ID(spritelayout_cylinder_tanks);
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_4), relative_pos) {
+	relative_coord(0, 1): THIS_ID(spritelayout_large_building_right);
+	relative_coord(1, 0): THIS_ID(spritelayout_chimney_anim);
+	relative_coord(1, 1): THIS_ID(spritelayout_large_building_centre);
+	relative_coord(1, 2): THIS_ID(spritelayout_large_store_right);
+	relative_coord(1, 3): THIS_ID(spritelayout_cylinder_tanks);
+	relative_coord(2, 0): THIS_ID(spritelayout_spherical_tanks);
+	relative_coord(2, 1): THIS_ID(spritelayout_large_building_left);
+	relative_coord(2, 2): THIS_ID(spritelayout_large_store_left);
+	relative_coord(2, 3): THIS_ID(spritelayout_office);
+	THIS_ID(spritelayout_cylinder_tanks);
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_5), relative_pos) {
+	relative_coord(0, 0): THIS_ID(spritelayout_large_building_right);
+	relative_coord(0, 2): THIS_ID(spritelayout_spherical_tanks);
+	relative_coord(1, 0): THIS_ID(spritelayout_large_building_centre);
+	relative_coord(1, 2): THIS_ID(spritelayout_spherical_tanks);
+	relative_coord(2, 0): THIS_ID(spritelayout_large_building_left);
+	relative_coord(2, 2): THIS_ID(spritelayout_large_store_right);
+	relative_coord(3, 0): THIS_ID(spritelayout_chimney_anim);
+	relative_coord(3, 2): THIS_ID(spritelayout_large_store_left);
+	relative_coord(4, 0): THIS_ID(spritelayout_cylinder_tanks);
+	relative_coord(4, 2): THIS_ID(spritelayout_large_store_right);
+	relative_coord(5, 0): THIS_ID(spritelayout_cylinder_tanks);
+	relative_coord(5, 2): THIS_ID(spritelayout_large_store_left);
+	relative_coord(6, 0): THIS_ID(spritelayout_office);
+	relative_coord(6, 2): THIS_ID(spritelayout_forklift);
+	THIS_ID(spritelayout_cylinder_tanks);
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_6), relative_pos) {
+	relative_coord(0, 0): THIS_ID(spritelayout_large_building_right);
+	relative_coord(0, 2): THIS_ID(spritelayout_cylinder_tanks);
+	relative_coord(0, 3): THIS_ID(spritelayout_cylinder_tanks);
+	relative_coord(1, 0): THIS_ID(spritelayout_large_building_centre);
+	relative_coord(1, 2): THIS_ID(spritelayout_large_store_right);
+	relative_coord(1, 3): THIS_ID(spritelayout_large_store_right);
+	relative_coord(2, 0): THIS_ID(spritelayout_large_building_left);
+	relative_coord(2, 2): THIS_ID(spritelayout_large_store_left);
+	relative_coord(2, 3): THIS_ID(spritelayout_large_store_left);
+	relative_coord(3, 0): THIS_ID(spritelayout_chimney_anim);
+	relative_coord(3, 2): THIS_ID(spritelayout_forklift);
+	relative_coord(3, 3): THIS_ID(spritelayout_concrete);
+	relative_coord(4, 0): THIS_ID(spritelayout_spherical_tanks);
+	relative_coord(4, 2): THIS_ID(spritelayout_spherical_tanks);
+	relative_coord(4, 3): THIS_ID(spritelayout_office);
+	THIS_ID(spritelayout_cylinder_tanks);
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_7), relative_pos) {
+	relative_coord(0, 0): THIS_ID(spritelayout_large_building_right);
+	relative_coord(0, 1): THIS_ID(spritelayout_spherical_tanks);
+	relative_coord(0, 2): THIS_ID(spritelayout_chimney_anim);
+	relative_coord(0, 5): THIS_ID(spritelayout_cylinder_tanks);
+	relative_coord(0, 6): THIS_ID(spritelayout_forklift);
+	relative_coord(1, 0): THIS_ID(spritelayout_large_building_centre);
+	relative_coord(1, 1): THIS_ID(spritelayout_spherical_tanks);
+	relative_coord(1, 2): THIS_ID(spritelayout_large_store_right);
+	relative_coord(1, 5): THIS_ID(spritelayout_cylinder_tanks);
+	relative_coord(1, 6): THIS_ID(spritelayout_large_store_right);
+	relative_coord(2, 0): THIS_ID(spritelayout_large_building_left);
+	relative_coord(2, 1): THIS_ID(spritelayout_concrete);
+	relative_coord(2, 2): THIS_ID(spritelayout_large_store_left);
+	relative_coord(2, 5): THIS_ID(spritelayout_office);
+	relative_coord(2, 6): THIS_ID(spritelayout_large_store_left);
+	relative_coord(4, 0): THIS_ID(spritelayout_spherical_tanks);
+	relative_coord(4, 1): THIS_ID(spritelayout_spherical_tanks);
+	relative_coord(4, 2): THIS_ID(spritelayout_office);
+	relative_coord(4, 5): THIS_ID(spritelayout_cylinder_tanks);
+	relative_coord(4, 6): THIS_ID(spritelayout_forklift);
+	relative_coord(5, 1): THIS_ID(spritelayout_spherical_tanks);
+	relative_coord(5, 2): THIS_ID(spritelayout_forklift);
+	relative_coord(5, 5): THIS_ID(spritelayout_cylinder_tanks);
+	relative_coord(5, 6): THIS_ID(spritelayout_office);
+	THIS_ID(spritelayout_cylinder_tanks);
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, THIS_ID(tile_spritelayout), layout_num) {
+	1: THIS_ID(layout_1);
+	2: THIS_ID(layout_2);
+	3: THIS_ID(layout_3);
+	4: THIS_ID(layout_4);
+	5: THIS_ID(layout_5);
+	6: THIS_ID(layout_6);
+	7: THIS_ID(layout_7);
+	THIS_ID(layout_1);
+}
+
+/* *************************************************
+ * Definition of the industry tile and its callbacks
+ * *************************************************/
+
+TILE_DISALLOW_NEARBY_CLASS(tile_nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
+TILE_ALLOW_PLAYER         (tile_player_check,                                                            THIS_ID(tile_nearby_industry))
+TILE_DISALLOW_SLOPES      (tile_location_check,                       CB_RESULT_LOCATION_DISALLOW, THIS_ID(tile_player_check))
+
+switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(tile_anim_control), (extra_callback_info1 & 7)) {
+	0: return 0;
+	1: return 1;
+	2: return 2;
+	3: return 3;
+	4: return 4;
+	5: return 5;
+	6: return 6;
+	return CB_RESULT_NEXT_FRAME;
+}
+
+item(FEAT_INDUSTRYTILES, THIS_ID(tile), TILE_FERTILISERPLANT_1) {
+	property {
+		substitute:         0;
+		accepted_cargos:    [[RFPR, 8]];
+		land_shape_flags:   bitmask(LSF_ONLY_ON_FLAT_LAND);
+		special_flags:      bitmask(INDTILE_FLAG_RANDOM_ANIMATION);
+		animation_info:     [ANIMATION_LOOPING, 7];
+		animation_speed:    3;
+		animation_triggers: bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE);
+	}
+
+	graphics {
+		anim_control: THIS_ID(tile_anim_control);
+		tile_check:   THIS_ID(tile_location_check);
+		THIS_ID(tile_spritelayout);
+	}
+}
+
+/* *************************************************
+ * Definition of the industry layouts
+ * *************************************************/
+
+tilelayout tilelayout_fertiliser_plant_1 {
+	0, 0: THIS_ID(tile);
+	0, 1: THIS_ID(tile);
+	0, 2: THIS_ID(tile);
+	1, 0: THIS_ID(tile);
+	1, 1: THIS_ID(tile);
+	1, 2: THIS_ID(tile);
+	2, 0: THIS_ID(tile);
+	2, 1: THIS_ID(tile);
+	2, 2: THIS_ID(tile);
+	3, 0: THIS_ID(tile);
+	3, 1: THIS_ID(tile);
+	3, 2: THIS_ID(tile);
+}
+
+tilelayout tilelayout_fertiliser_plant_2 {
+	0, 0: THIS_ID(tile);
+	0, 1: THIS_ID(tile);
+	1, 0: THIS_ID(tile);
+	1, 1: THIS_ID(tile);
+	2, 0: THIS_ID(tile);
+	2, 1: THIS_ID(tile);
+	3, 0: THIS_ID(tile);
+	3, 1: THIS_ID(tile);
+	4, 0: THIS_ID(tile);
+	4, 1: THIS_ID(tile);
+}
+
+tilelayout tilelayout_fertiliser_plant_3 {
+	0, 1: THIS_ID(tile);
+	1, 0: THIS_ID(tile);
+	1, 1: THIS_ID(tile);
+	1, 2: THIS_ID(tile);
+	1, 3: THIS_ID(tile);
+	2, 0: THIS_ID(tile);
+	2, 1: THIS_ID(tile);
+	2, 2: THIS_ID(tile);
+	2, 3: THIS_ID(tile);
+}
+
+tilelayout tilelayout_fertiliser_plant_4 {
+	0, 1: THIS_ID(tile);
+	1, 0: THIS_ID(tile);
+	1, 1: THIS_ID(tile);
+	1, 2: THIS_ID(tile);
+	1, 3: THIS_ID(tile);
+	2, 0: THIS_ID(tile);
+	2, 1: THIS_ID(tile);
+	2, 2: THIS_ID(tile);
+	2, 3: THIS_ID(tile);
+}
+
+tilelayout tilelayout_fertiliser_plant_5 {
+	0, 0: THIS_ID(tile);
+	0, 2: THIS_ID(tile);
+	1, 0: THIS_ID(tile);
+	1, 2: THIS_ID(tile);
+	2, 0: THIS_ID(tile);
+	2, 2: THIS_ID(tile);
+	3, 0: THIS_ID(tile);
+	3, 2: THIS_ID(tile);
+	4, 0: THIS_ID(tile);
+	4, 2: THIS_ID(tile);
+	5, 0: THIS_ID(tile);
+	5, 2: THIS_ID(tile);
+	6, 0: THIS_ID(tile);
+	6, 2: THIS_ID(tile);
+}
+
+tilelayout tilelayout_fertiliser_plant_6 {
+	0, 0: THIS_ID(tile);
+	0, 2: THIS_ID(tile);
+	0, 3: THIS_ID(tile);
+	1, 0: THIS_ID(tile);
+	1, 2: THIS_ID(tile);
+	1, 3: THIS_ID(tile);
+	2, 0: THIS_ID(tile);
+	2, 2: THIS_ID(tile);
+	2, 3: THIS_ID(tile);
+	3, 0: THIS_ID(tile);
+	3, 2: THIS_ID(tile);
+	3, 3: THIS_ID(tile);
+	4, 0: THIS_ID(tile);
+	4, 2: THIS_ID(tile);
+	4, 3: THIS_ID(tile);
+}
+
+tilelayout tilelayout_fertiliser_plant_7 {
+	0, 0: THIS_ID(tile);
+	0, 1: THIS_ID(tile);
+	0, 2: THIS_ID(tile);
+	0, 5: THIS_ID(tile);
+	0, 6: THIS_ID(tile);
+	1, 0: THIS_ID(tile);
+	1, 1: THIS_ID(tile);
+	1, 2: THIS_ID(tile);
+	1, 5: THIS_ID(tile);
+	1, 6: THIS_ID(tile);
+	2, 0: THIS_ID(tile);
+	2, 1: THIS_ID(tile);
+	2, 2: THIS_ID(tile);
+	2, 5: THIS_ID(tile);
+	2, 6: THIS_ID(tile);
+	4, 0: THIS_ID(tile);
+	4, 1: THIS_ID(tile);
+	4, 2: THIS_ID(tile);
+	4, 5: THIS_ID(tile);
+	4, 6: THIS_ID(tile);
+	5, 1: THIS_ID(tile);
+	5, 2: THIS_ID(tile);
+	5, 5: THIS_ID(tile);
+	5, 6: THIS_ID(tile);
+}
+
+/* *************************************************
+ * Definition of the industry
+ * *************************************************/
+
+/* for secondary production template */
+#define THIS_NUM_OUTPUT_CARGOS    1
+#define THIS_PROD_RATIO_CARGO1    8
+#define THIS_PROD_RATIO_CARGO2    1
+#define THIS_PROD_RATIO_CARGO3    1
+#define THIS_BOOST_12             0
+#define THIS_BOOST_13             0
+#define THIS_BOOST_21             0
+#define THIS_BOOST_23             0
+#define THIS_BOOST_31             0
+#define THIS_BOOST_32             0
+/* extra text template */
+#define THIS_STR_EXTRA_TEXT       STR_EXTRA_FERTILIZER_PLANT
+#define THIS_STR_EXTRA_TEXT_PARAM0 ((8<<16) | 8)
+#define THIS_STR_DEBUG_TEXT       STR_EXTRA_TEXT_DEBUG_SECONDARY
+/* availability years */
+#define THIS_MIN_YEAR 1927
+
+
+CHECK_INCOMPATIBLE  (fertiliser_plant, 56, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
+CHECK_FOUNDER       (THIS_ID(fertiliser_plant))
+
+SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
+
+#include "../src/templates/produce_secondary.pnml"
+#include "../src/templates/check_secondary_production_level.pnml"
+#include "../src/templates/check_secondary_closure.pnml"
+
+#include "../src/templates/extra_text_secondary.pnml"
+
+#include "../src/templates/check_availability.pnml"
+
+${industry.get_industry_properties()}
+
+item(FEAT_INDUSTRIES, fertiliser_plant, ${industry.get_numeric_id()}) {
+	graphics {
+		produce_cargo_arrival:   THIS_ID(produce);
+		construction_probability:THIS_ID(check_availability);
+		location_check:          THIS_ID(check_location);
+		monthly_prod_change:     THIS_ID(check_production_level);
+		random_prod_change:      THIS_ID(check_closure);
+		extra_text_industry:     THIS_ID(extra_text);
+		extra_text_fund:         return string(STR_FUND_AVAILABLE_FROM, THIS_MIN_YEAR);
+		colour:                  THIS_ID(colour);
+	}
+}
+
+#include "../src/templates/undefs.pnml"

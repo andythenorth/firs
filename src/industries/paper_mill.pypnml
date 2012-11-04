@@ -1,0 +1,152 @@
+/*
+ * This file is part of FIRS industry set.
+ * FIRS industry set is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 2.
+ * FIRS industry set is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS industry set. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+#define THIS_ID(...) ${industry.id}_ ## __VA_ARGS__
+
+/* *************************************************
+ * Definition of the industry tile and its callbacks
+ * *************************************************/
+
+TILE_DISALLOW_NEARBY_CLASS(tile_nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
+TILE_ALLOW_PLAYER         (tile_location_check,                                                            THIS_ID(tile_nearby_industry))
+
+item(FEAT_INDUSTRYTILES, THIS_ID(tile_1), 64) {
+	property {
+		substitute: 64;
+		override: 64;
+		accepted_cargos: [[WOOD, 8], [CLAY, 8], [RFPR, 8]];
+	}
+	graphics {
+		tile_check: THIS_ID(tile_location_check);
+	}
+}
+
+item(FEAT_INDUSTRYTILES, THIS_ID(tile_2), 65) {
+	property {
+		substitute: 65;
+		override: 65;
+		accepted_cargos: [[WOOD, 8], [CLAY, 8], [RFPR, 8]];
+	}
+	graphics {
+		tile_check: THIS_ID(tile_location_check);
+	}
+}
+
+item(FEAT_INDUSTRYTILES, THIS_ID(tile_3), 66) {
+	property {
+		substitute: 66;
+		override: 66;
+		accepted_cargos: [[WOOD, 8], [CLAY, 8], [RFPR, 8]];
+	}
+	graphics {
+		tile_check: THIS_ID(tile_location_check);
+	}
+}
+
+item(FEAT_INDUSTRYTILES, THIS_ID(tile_4), 67) {
+	property {
+		substitute: 67;
+		override: 67;
+		accepted_cargos: [[WOOD, 8], [CLAY, 8], [RFPR, 8]];
+	}
+	graphics {
+		tile_check: THIS_ID(tile_location_check);
+	}
+}
+
+item(FEAT_INDUSTRYTILES, THIS_ID(tile_5), 68) {
+	property {
+		substitute: 68;
+		override: 68;
+		accepted_cargos: [[WOOD, 8], [CLAY, 8], [RFPR, 8]];
+	}
+	graphics {
+		tile_check: THIS_ID(tile_location_check);
+	}
+}
+
+item(FEAT_INDUSTRYTILES, THIS_ID(tile_6), 69) {
+	property {
+		substitute: 69;
+		override: 69;
+		accepted_cargos: [[WOOD, 8], [CLAY, 8], [RFPR, 8]];
+	}
+	graphics {
+		tile_check: THIS_ID(tile_location_check);
+	}
+}
+
+item(FEAT_INDUSTRYTILES, THIS_ID(tile_7), 70) {
+	property {
+		substitute: 70;
+		override: 70;
+		accepted_cargos: [[WOOD, 8], [CLAY, 8], [RFPR, 8]];
+	}
+	graphics {
+		tile_check: THIS_ID(tile_location_check);
+	}
+}
+
+item(FEAT_INDUSTRYTILES, THIS_ID(tile_8), 71) {
+	property {
+		substitute: 71;
+		override: 71;
+		accepted_cargos: [[WOOD, 8], [CLAY, 8], [RFPR, 8]];
+	}
+	graphics {
+		tile_check: THIS_ID(tile_location_check);
+	}
+}
+
+/* *************************************************
+ * Definition of the industry
+ * *************************************************/
+
+/* for secondary production template */
+#define THIS_NUM_OUTPUT_CARGOS    2
+#define THIS_PROD_RATIO_CARGO1    2
+#define THIS_PROD_RATIO_CARGO2    4
+#define THIS_PROD_RATIO_CARGO3    2
+#define THIS_BOOST_12             2
+#define THIS_BOOST_13             2
+#define THIS_BOOST_21             4
+#define THIS_BOOST_23             4
+#define THIS_BOOST_31             2
+#define THIS_BOOST_32             2
+/* extra text template */
+#define THIS_STR_EXTRA_TEXT       STR_EXTRA_PAPER_MILL
+
+CHECK_INCOMPATIBLE  (paper_mill,   56, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
+CHECK_INCOMPATIBLE  (forest,       16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(paper_mill))
+CHECK_INCOMPATIBLE  (clay_pit,     16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(forest))
+CHECK_FOUNDER       (THIS_ID(clay_pit))
+
+SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
+
+#include "../src/templates/produce_secondary.pnml"
+#include "../src/templates/check_secondary_production_level.pnml"
+#include "../src/templates/check_secondary_closure.pnml"
+
+#include "../src/templates/extra_text_secondary.pnml"
+
+#include "../src/templates/check_availability.pnml"
+
+${industry.get_industry_properties()}
+
+item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
+	graphics {
+		produce_cargo_arrival:   THIS_ID(produce);
+		construction_probability:THIS_ID(check_availability);
+		location_check:          THIS_ID(check_location);
+		monthly_prod_change:     THIS_ID(check_production_level);
+		random_prod_change:      THIS_ID(check_closure);
+		extra_text_industry:     THIS_ID(extra_text);
+		colour:                  THIS_ID(colour);
+	}
+}
+
+#include "../src/templates/undefs.pnml"

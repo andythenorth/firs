@@ -2,30 +2,30 @@
 
 #include "generated_pnml/parameters.pnml"
 
-#include "src/nml/defines.pnml"
+#include "src/defines.pnml"
 
 #include "generated_pnml/checks.pnml"
 #include "generated_pnml/conditions.pnml"
 
 #include "generated_pnml/registered_cargos.pnml"
-#include "src/nml/cargo_graphics.pnml"
+#include "src/cargo_graphics.pnml"
 
 //disable the default industries
 disable_item(FEAT_INDUSTRIES, 0, 36);
 
-#include "src/nml/templates/tile_fences.pnml"
-#include "src/nml/templates/tile_location.pnml"
-#include "src/nml/templates/tile_ground_sprite.pnml"
-#include "src/nml/templates/tile_cargos.pnml"
+#include "src/templates/tile_fences.pnml"
+#include "src/templates/tile_location.pnml"
+#include "src/templates/tile_ground_sprite.pnml"
+#include "src/templates/tile_cargos.pnml"
 
-#include "src/nml/templates/sprite_templates.pnml"
-#include "src/nml/templates/spritelayout_templates.pnml"
-#include "src/nml/templates/industry_location.pnml"
-#include "src/nml/templates/industry_colour.pnml"
-#include "src/nml/templates/industry_cargos.pnml"
-#include "src/nml/templates/randomise_primary_production_on_build.pnml"
+#include "src/templates/sprite_templates.pnml"
+#include "src/templates/spritelayout_templates.pnml"
+#include "src/templates/industry_location.pnml"
+#include "src/templates/industry_colour.pnml"
+#include "src/templates/industry_cargos.pnml"
+#include "src/templates/randomise_primary_production_on_build.pnml"
 
-#include "src/nml/basetiles.pnml"
+#include "src/basetiles.pnml"
 
 #include "generated_pnml/aluminium_plant.pnml"
 #include "generated_pnml/arable_farm.pnml"

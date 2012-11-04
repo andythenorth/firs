@@ -1,0 +1,134 @@
+/*
+ * This file is part of FIRS industry set.
+ * FIRS industry set is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 2.
+ * FIRS industry set is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS industry set. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+#define THIS_ID(...) ${industry.id}_ ## __VA_ARGS__
+
+/* *************************************************
+ * Definition of the industry tiles
+ * *************************************************/
+
+TILE_DISALLOW_NEARBY_CLASS(tile_nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
+TILE_ALLOW_PLAYER         (tile_player_check,                                                            THIS_ID(tile_nearby_industry))
+TILE_DISALLOW_SLOPES      (tile_location_check,                       CB_RESULT_LOCATION_DISALLOW, THIS_ID(tile_player_check))
+
+item(FEAT_INDUSTRYTILES, THIS_ID(tile_1), 0) {
+	property {
+		substitute: 0;
+		override: 0;
+		accepted_cargos: [[ENSP, 8]];
+	}
+	graphics {
+		tile_check: THIS_ID(tile_location_check);
+	}
+}
+
+item(FEAT_INDUSTRYTILES, THIS_ID(tile_2), 1) {
+	property {
+		substitute: 1;
+		override: 1;
+		accepted_cargos: [[ENSP, 8]];
+	}
+	graphics {
+		tile_check: THIS_ID(tile_location_check);
+	}
+}
+
+item(FEAT_INDUSTRYTILES, THIS_ID(tile_3), 2) {
+	property {
+		substitute: 2;
+		override: 2;
+		accepted_cargos: [[ENSP, 8]];
+	}
+	graphics {
+		tile_check: THIS_ID(tile_location_check);
+	}
+}
+
+item(FEAT_INDUSTRYTILES, THIS_ID(tile_4), 3) {
+	property {
+		substitute: 3;
+		override: 3;
+		accepted_cargos: [[ENSP, 8]];
+	}
+	graphics {
+		tile_check: THIS_ID(tile_location_check);
+	}
+}
+
+item(FEAT_INDUSTRYTILES, THIS_ID(tile_5), 4) {
+	property {
+		substitute: 4;
+		override: 4;
+		accepted_cargos: [[ENSP, 8]];
+	}
+	graphics {
+		tile_check: THIS_ID(tile_location_check);
+	}
+}
+
+item(FEAT_INDUSTRYTILES, THIS_ID(tile_6), 5) {
+	property {
+		substitute: 5;
+		override: 5;
+		accepted_cargos: [[ENSP, 8]];
+	}
+	graphics {
+		tile_check: THIS_ID(tile_location_check);
+	}
+}
+
+item(FEAT_INDUSTRYTILES, THIS_ID(tile_7), 6) {
+	property {
+		substitute: 6;
+		override: 6;
+		accepted_cargos: [[ENSP, 8]];
+	}
+	graphics {
+		tile_check: THIS_ID(tile_location_check);
+	}
+}
+
+/* *************************************************
+ * Definition of the industry
+ * *************************************************/
+
+#define THIS_STR_EXTRA_SUPPLIES        STR_EXTRA_ENGINEERING_SUPPLIES
+
+CHECK_NEARBY_CLUSTER(coal_mine,    20, 70, 2, 3, return CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
+CHECK_INCOMPATIBLE  (brick_works,  16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(coal_mine))
+CHECK_INCOMPATIBLE  (cement_plant, 16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(brick_works))
+CHECK_INCOMPATIBLE  (steel_mill,    16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(cement_plant))
+CHECK_INCOMPATIBLE  (lime_kiln,    16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(steel_mill))
+CHECK_FOUNDER       (THIS_ID(lime_kiln))
+
+SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
+
+#include "../src/templates/produce_primary.pnml"
+#include "../src/templates/check_primary_production_level.pnml"
+
+#include "../src/templates/extra_text_primary.pnml"
+
+#include "../src/templates/check_availability.pnml"
+
+${industry.get_industry_properties()}
+
+item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
+	graphics {
+		produce_cargo_arrival:   THIS_ID(produce);
+		construction_probability:THIS_ID(check_availability);
+		location_check:          THIS_ID(check_location);
+		produce_256_ticks:       THIS_ID(produce_256_ticks);
+		monthly_prod_change:     THIS_ID(monthly_update);
+		random_prod_change:      THIS_ID(check_closure);
+		build_prod_change:       randomise_primary_production_on_build;
+		extra_text_industry:     THIS_ID(extra_text);
+		colour:                  THIS_ID(colour);
+	}
+}
+
+#include "../src/templates/undefs.pnml"
+

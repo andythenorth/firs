@@ -1,0 +1,148 @@
+/*
+ * This file is part of FIRS industry set.
+ * FIRS industry set is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 2.
+ * FIRS industry set is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS industry set. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+#define THIS_ID(...) ${industry.id}_ ## __VA_ARGS__
+
+spriteset(THIS_ID(spriteset_1)) { tmpl_building_sprite_filename( 10, 10, 59, -28, "src/graphics/industries/arable_farm.png") }
+spriteset(THIS_ID(spriteset_2)) { tmpl_building_sprite_filename( 80, 10, 59, -28, "src/graphics/industries/arable_farm.png") }
+spriteset(THIS_ID(spriteset_3)) { tmpl_building_sprite_filename(150, 10, 59, -28, "src/graphics/industries/arable_farm.png") }
+spriteset(THIS_ID(spriteset_4)) { tmpl_building_sprite_filename(220, 10, 59, -28, "src/graphics/industries/arable_farm.png") }
+spriteset(THIS_ID(spriteset_5)) { tmpl_building_sprite_filename(290, 10, 59, -28, "src/graphics/industries/arable_farm.png") }
+
+SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_1), 2022,                THIS_ID(spriteset_1), 32)
+SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_2), GROUNDSPRITE_NORMAL, THIS_ID(spriteset_2), 32)
+SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_3), GROUNDSPRITE_NORMAL, THIS_ID(spriteset_3), 32)
+SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_4), 2022,                THIS_ID(spriteset_4), 32)
+SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_5), 2022,                THIS_ID(spriteset_5), 32)
+
+switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_1), relative_pos) {
+	relative_coord(1, 0): THIS_ID(spritelayout_1);
+	relative_coord(1, 1): THIS_ID(spritelayout_2);
+	relative_coord(0, 2): THIS_ID(spritelayout_3);
+	relative_coord(2, 1): THIS_ID(spritelayout_4);
+	THIS_ID(spritelayout_5);
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_2), relative_pos) {
+	relative_coord(0, 0): THIS_ID(spritelayout_5);
+	relative_coord(0, 1): THIS_ID(spritelayout_4);
+	relative_coord(1, 0): THIS_ID(spritelayout_1);
+	relative_coord(1, 1): THIS_ID(spritelayout_2);
+	THIS_ID(spritelayout_3);
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_3), relative_pos) {
+	relative_coord(0, 0): THIS_ID(spritelayout_1);
+	relative_coord(0, 1): THIS_ID(spritelayout_2);
+	relative_coord(1, 0): THIS_ID(spritelayout_5);
+	relative_coord(2, 0): THIS_ID(spritelayout_4);
+	THIS_ID(spritelayout_3);
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, THIS_ID(tile_spritelayout), layout_num) {
+	1: THIS_ID(layout_1);
+	2: THIS_ID(layout_2);
+	3: THIS_ID(layout_3);
+	THIS_ID(spritelayout_1);
+}
+
+/* *************************************************
+ * Definition of the industry tile and its callbacks
+ * *************************************************/
+
+TILE_DISALLOW_NEARBY_CLASS(tile_nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
+TILE_ALLOW_PLAYER         (tile_player_check, THIS_ID(tile_nearby_industry))
+TILE_DISALLOW_TERRAIN     (tile_desert_check, TILETYPE_DESERT, CB_RESULT_LOCATION_DISALLOW, THIS_ID(tile_player_check))
+TILE_CHECK_HEIGHT         (tile_location_check, 0, snowline_height, THIS_ID(tile_desert_check), return string(STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE))
+
+item(FEAT_INDUSTRYTILES, THIS_ID(tile), TILE_ARABLEFARM_1) {
+	property {
+		substitute:       0;
+		accepted_cargos:  [[FMSP, 8]];
+		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
+	}
+	graphics {
+		tile_check:   THIS_ID(tile_location_check);
+		THIS_ID(tile_spritelayout);
+	}
+}
+
+/* *************************************************
+ * Definition of the industry layouts
+ * *************************************************/
+
+tilelayout tilelayout_arable_farm_1 {
+	1, 0: THIS_ID(tile);
+	1, 1: THIS_ID(tile);
+	0, 2: THIS_ID(tile);
+	2, 1: THIS_ID(tile);
+	0, 1: THIS_ID(tile);
+}
+
+tilelayout tilelayout_arable_farm_2 {
+	0, 0: THIS_ID(tile);
+	0, 1: THIS_ID(tile);
+	1, 0: THIS_ID(tile);
+	1, 1: THIS_ID(tile);
+	2, 0: THIS_ID(tile);
+}
+
+tilelayout tilelayout_arable_farm_3 {
+	0, 0: THIS_ID(tile);
+	0, 1: THIS_ID(tile);
+	1, 0: THIS_ID(tile);
+	2, 0: THIS_ID(tile);
+	2, 1: THIS_ID(tile);
+}
+
+/* *************************************************
+ * Definition of the industry
+ * *************************************************/
+
+#define THIS_STR_EXTRA_SUPPLIES        STR_EXTRA_FARM_SUPPLIES
+
+CHECK_NEARBY_CLUSTER(arable_farm,    10, 36, 1, 2, return CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
+CHECK_INCOMPATIBLE  (grain_mill,     16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(arable_farm))
+CHECK_INCOMPATIBLE  (brewery,        16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(grain_mill))
+CHECK_INCOMPATIBLE  (sugar_refinery, 16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(brewery))
+CHECK_INCOMPATIBLE  (biorefinery,    16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(sugar_refinery))
+CHECK_FOUNDER       (THIS_ID(biorefinery))
+
+SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
+
+#include "../src/templates/produce_primary.pnml"
+#include "../src/templates/check_primary_production_level.pnml"
+
+#include "../src/templates/extra_text_primary.pnml"
+
+#include "../src/templates/check_availability.pnml"
+
+${industry.get_industry_properties()}
+
+if (${industry.get_conditional_expressions_for_enabled_economies()}) {
+   item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
+        /* Economy specific cargo */
+        INDUSTRY_OUTPUT_CARGO_2(ENABLE_SUGARCANE && ENABLE_GRAIN, GRAI, SGCN)
+    }
+}
+
+item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
+    graphics {
+        produce_cargo_arrival:   THIS_ID(produce);
+        produce_256_ticks:       THIS_ID(produce_256_ticks);
+        construction_probability:THIS_ID(check_availability);
+        location_check:          THIS_ID(check_location);
+        monthly_prod_change:     THIS_ID(monthly_update);
+        random_prod_change:      THIS_ID(check_closure);
+        build_prod_change:       randomise_primary_production_on_build;
+        extra_text_fund:         return string(STR_FUND_ARABLE_FARM);
+        extra_text_industry:     THIS_ID(extra_text);
+        colour:                  THIS_ID(colour);
+    }
+}
+
+#include "../src/templates/undefs.pnml"

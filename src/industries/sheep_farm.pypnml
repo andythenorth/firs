@@ -1,0 +1,84 @@
+/*
+ * This file is part of FIRS industry set.
+ * FIRS industry set is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 2.
+ * FIRS industry set is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS industry set. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+#include "../src/templates/spritelayout_templates.pnml"
+
+#define THIS_ID(...) ${industry.id}_ ## __VA_ARGS__
+
+${industry.get_spritesets()}
+
+${industry.get_spritelayouts()}
+
+${industry.get_industry_layouts_as_graphic_switches()}
+
+${industry.get_fence_switches()}
+
+/* *************************************************
+ * Definition of the industry tile and its callbacks
+ * *************************************************/
+
+TILE_DISALLOW_NEARBY_CLASS(tile1_nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
+TILE_ALLOW_PLAYER         (tile1_player_check, THIS_ID(tile1_nearby_industry))
+TILE_DISALLOW_COAST       (tile1_location_check, CB_RESULT_LOCATION_DISALLOW, THIS_ID(tile1_player_check))
+
+item(FEAT_INDUSTRYTILES, THIS_ID(tile), TILE_SHEEPFARM_1) {
+	property {
+		substitute: 0;
+		accepted_cargos: [[FMSP, 8]];
+		land_shape_flags: 0;
+	}
+
+	graphics {
+		tile_check:   THIS_ID(tile1_location_check);
+		THIS_ID(tile_fences);
+	}
+}
+
+/* *************************************************
+ * Definition of the industry layouts
+ * *************************************************/
+
+${industry.get_industry_layouts_as_tilelayouts()}
+
+/* *************************************************
+ * Definition of the industry
+ * *************************************************/
+
+#define THIS_STR_EXTRA_SUPPLIES        STR_EXTRA_FARM_SUPPLIES
+
+CHECK_NEARBY_CLUSTER(sheep_farm,    10, 36, 1, 2, return CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
+CHECK_INCOMPATIBLE  (stockyard,     16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(sheep_farm))
+CHECK_INCOMPATIBLE  (textile_mill,  16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(stockyard))
+CHECK_FOUNDER       (THIS_ID(textile_mill))
+
+SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
+
+#include "../src/templates/produce_primary.pnml"
+#include "../src/templates/check_primary_production_level.pnml"
+
+#include "../src/templates/extra_text_primary.pnml"
+
+#include "../src/templates/check_availability.pnml"
+
+${industry.get_industry_properties()}
+
+item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
+	graphics {
+		produce_cargo_arrival:   THIS_ID(produce);
+		construction_probability:THIS_ID(check_availability);
+		location_check:          THIS_ID(check_location);
+		produce_256_ticks:       THIS_ID(produce_256_ticks);
+		monthly_prod_change:     THIS_ID(monthly_update);
+		random_prod_change:      THIS_ID(check_closure);
+		build_prod_change:       randomise_primary_production_on_build;
+		extra_text_industry:     THIS_ID(extra_text);
+		colour:                  THIS_ID(colour);
+	}
+}
+
+#include "../src/templates/undefs.pnml"
+
