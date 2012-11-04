@@ -19,6 +19,8 @@ import codecs # used for writing files - more unicode friendly than standard ope
 
 import firs
 
+firs.render_and_save_header_items()
+
 import cargos
 from cargos import alcohol
 from cargos import bauxite

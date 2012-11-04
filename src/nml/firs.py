@@ -18,6 +18,7 @@ from chameleon import PageTemplateLoader # chameleon used in most template cases
 # setup the places we look for templates
 templates = PageTemplateLoader(os.path.join(currentdir,'src','nml','templates'), format='text')
 industry_templates = PageTemplateLoader(os.path.join(currentdir,'src','nml','industries'), format='text')
+header_item_templates = PageTemplateLoader(os.path.join(currentdir,'src','nml','header_items'), format='text')
 
 from cargos import registered_cargos
 from industries import registered_industries
@@ -29,6 +30,16 @@ def unescape_chameleon_output(escaped_nml):
     escaped_nml = '<'.join(escaped_nml.split('&lt;'))
     escaped_nml = '&'.join(escaped_nml.split('&amp;'))
     return escaped_nml
+
+def render_and_save_header_items():
+    header_items = ['conditions','checks','parameters','header']
+    for header_item in header_items:
+        template = header_item_templates[header_item + '.pypnml']
+        templated_pnml = unescape_chameleon_output(template())
+        # save the results of templating
+        pnml = codecs.open(os.path.join(pnml_output_path, header_item + '.pnml'), 'w','utf8')
+        pnml.write(templated_pnml)
+        pnml.close()
 
 def render_and_save_registered_cargos():
     template = templates['registered_cargos.pypnml']

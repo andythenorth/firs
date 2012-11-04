@@ -1,11 +1,11 @@
-#include "src/nml/header.pnml"
+#include "generated_pnml/header.pnml"
 
-#include "src/nml/parameters.pnml"
+#include "generated_pnml/parameters.pnml"
 
 #include "src/nml/defines.pnml"
-#include "src/nml/checks.pnml"
 
-#include "src/nml/conditions.pnml"
+#include "generated_pnml/checks.pnml"
+#include "generated_pnml/conditions.pnml"
 
 #include "generated_pnml/registered_cargos.pnml"
 #include "src/nml/cargo_graphics.pnml"
