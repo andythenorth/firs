@@ -226,7 +226,7 @@ class IndustryProperties(object):
         self.prospect_chance = kwargs.get('prospect_chance', None)
         self.map_colour = kwargs.get('map_colour', None)
         self.life_type = kwargs.get('life_type', None)
-        self.spec_flags = kwargs.get('spec_flags', None)
+        self.spec_flags = kwargs.get('spec_flags', '0')
         self.fund_cost_multiplier = kwargs.get('fund_cost_multiplier', None)
         self.remove_cost_multiplier = kwargs.get('remove_cost_multiplier', None)
         # not nml properties
