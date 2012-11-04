@@ -6,6 +6,8 @@
   FIRS is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
   See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
 """
+from time import time
+start = time()
 
 print "[PYTHON] python preprocessing"
 
@@ -59,6 +61,7 @@ firs.render_and_save_registered_cargos()
 
 
 import industries
+
 from industries import biorefinery
 from industries import brewery
 from industries import bauxite_mine
@@ -113,5 +116,10 @@ from industries import paper_mill
 from industries import sawmill
 from industries import steel_mill
 
+
 for industry in industries.registered_industries:
     industry.render_and_save_pnml()
+
+firs.render_docs()
+
+print (time() - start)

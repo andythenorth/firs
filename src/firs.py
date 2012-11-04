@@ -11,6 +11,7 @@ import os.path
 currentdir = os.curdir
 # set output path for generated_pnml
 pnml_output_path = os.path.join(currentdir, 'generated_pnml')
+docs_output_path = os.path.join(currentdir, 'docs')
 src_path = os.path.join(currentdir, 'src')
 
 import global_constants as global_constants
@@ -20,6 +21,7 @@ from chameleon import PageTemplateLoader # chameleon used in most template cases
 templates = PageTemplateLoader(os.path.join(src_path, 'templates'), format='text')
 industry_templates = PageTemplateLoader(os.path.join(src_path, 'industries'), format='text')
 header_item_templates = PageTemplateLoader(os.path.join(src_path, 'header_items'), format='text')
+docs_templates = PageTemplateLoader(os.path.join(src_path, 'docs_templates'), format='text')
 
 from cargos import registered_cargos
 from industries import registered_industries
@@ -49,6 +51,22 @@ def render_and_save_registered_cargos():
     pnml = codecs.open(os.path.join(pnml_output_path, 'registered_cargos.pnml'), 'w','utf8')
     pnml.write(templated_pnml)
     pnml.close()
+
+def render_docs():
+    template = docs_templates['test_docs.pytxt']
+    economy_schemas = {}
+    for economy in global_constants.economies:
+        enabled_cargos = [cargo for cargo in registered_cargos if not cargo.economy_variations[economy].get('disabled')]
+        enabled_industries = [industry for industry in registered_industries if not industry.economy_variations[economy].disabled]
+        economy_schemas[economy] = {'enabled_cargos':enabled_cargos, 'enabled_industries':enabled_industries}
+
+    templated_docs = template(registered_cargos=registered_cargos, registered_industries=registered_industries,
+                              economy_schemas=economy_schemas, global_constants=global_constants)
+    # save the results of templating
+    docs = codecs.open(os.path.join(docs_output_path, 'test_docs.txt'), 'w','utf8')
+    docs.write(templated_docs)
+    docs.close()
+
 
 class Cargo(object):
     """ Base class to hold cargos"""
@@ -359,5 +377,4 @@ class Industry(object):
         pnml = codecs.open(os.path.join(pnml_output_path, self.id + '.pnml'), 'w','utf8')
         pnml.write(templated_pnml)
         pnml.close()
-
 
