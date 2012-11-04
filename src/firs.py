@@ -330,6 +330,7 @@ class Industry(object):
             return property_name + ': ' + value + ';'
 
     def get_conditional_expressions_for_enabled_economies(self):
+        # returns a string that can be used as the conditions in nml if() blocks for economy stuff
         enabled_economies = []
         for i, economy in enumerate(global_constants.economies):
             if not self.economy_variations[economy].disabled:
