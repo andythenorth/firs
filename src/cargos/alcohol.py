@@ -19,3 +19,5 @@ cargo = Cargo(id = 'alcohol',
               penalty_lowerbound = '0',
               single_penalty_length = '24',
               price_factor = '145.9608078')
+
+cargo.economy_variations['TEST_1']['disabled'] = True

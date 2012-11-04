@@ -44,7 +44,7 @@ def render_and_save_header_items():
 
 def render_and_save_registered_cargos():
     template = templates['registered_cargos.pypnml']
-    templated_pnml = unescape_chameleon_output(template(registered_cargos=registered_cargos))
+    templated_pnml = unescape_chameleon_output(template(registered_cargos=registered_cargos, global_constants=global_constants))
     # save the results of templating
     pnml = codecs.open(os.path.join(pnml_output_path, 'registered_cargos.pnml'), 'w','utf8')
     pnml.write(templated_pnml)
@@ -79,6 +79,10 @@ class Cargo(object):
 
     def add_economy_variation(self, economy):
         self.economy_variations[economy] = {'disabled': False}
+
+    def get_property(self, property_name, economy):
+        # straightforward lookup of a property, doesn't try to handle failure case of property not found; don't look up props that don't exist
+        return self.economy_variations[economy].get(property_name)
 
     def get_property_declaration(self, property_name):
         return property_name + ': ' + getattr(self, property_name) + ';'
