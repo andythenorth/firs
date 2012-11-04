@@ -55,7 +55,7 @@ from cargos import wool
 cargo_output_pnml = []
 cargotable = [] # 'cargotable' is a single word in nml
 # there is some insanity with cargo_module.cargo, it's ducktape coding, overlook it.
-for cargo in cargos.cargos_list:
+for cargo in cargos.registered_cargos:
     cargo_output_pnml.append(cargo.render_pnml())
     cargotable.append(cargo.cargo_label.replace('"',''))
     print cargo.economy_variations

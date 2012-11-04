@@ -17,7 +17,7 @@ from chameleon import PageTemplateLoader # chameleon used in most template cases
 templates = PageTemplateLoader(os.path.join(currentdir,'sprites','nml','templates'), format='text')
 industry_templates = PageTemplateLoader(os.path.join(currentdir,'sprites','nml','industries'), format='text')
 
-from cargos import cargos_list
+from cargos import registered_cargos
 
 def unescape_chameleon_output(escaped_nml):
     # chameleon html-escapes some characters; that's sane and secure for chameleon's intended web use, but not wanted for nml
@@ -61,7 +61,7 @@ class Cargo(object):
         return property_name + ': ' + getattr(self, property_name) + ';'
 
     def register(self):
-        cargos_list.append(self)
+        registered_cargos.append(self)
 
     def render_pnml(self):
         cargo_template = templates['cargo_props.pypnml']

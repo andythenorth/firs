@@ -1,1 +1,1 @@
-cargos_list = []
+registered_cargos = []

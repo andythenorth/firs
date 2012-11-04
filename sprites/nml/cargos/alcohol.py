@@ -19,5 +19,3 @@ cargo = Cargo(id = 'alcohol',
               penalty_lowerbound = '0',
               single_penalty_length = '24',
               price_factor = '145.9608078')
-
-alcohol = cargo
