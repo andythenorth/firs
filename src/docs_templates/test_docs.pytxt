@@ -3,7 +3,7 @@
 *${len(economy_schemas[economy].enabled_cargos)} Cargos*
 ${', '.join([cargo.id for cargo in economy_schemas[economy].enabled_cargos])}
 
-*${len(economy_schemas[economy].enabled_industries)}Industries*
+*${len(economy_schemas[economy].enabled_industries)} Industries*
 ${', '.join([industry.id for industry in economy_schemas[economy].enabled_industries])}
 
 ========================================================================================
