@@ -16,8 +16,8 @@ nml: preprocesspy
 	$(_V) $(CC) -D REPO_REVISION=$(REPO_REVISION) $(CC_FLAGS) $(MAIN_SRC_FILE) > $(NML_FILE)
 
 preprocesspy:
-	mkdir -p sprites/nml/generated_pnml
-	python sprites/nml/build.py
+	mkdir -p src/nml/generated_pnml
+	python src/nml/build.py
 
 ################################################################
 # Definitions which extend the common rules

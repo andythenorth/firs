@@ -8,7 +8,7 @@
 # Definition of the grfs
 GRF_FILE            := firs.grf
 REPO_NAME           := FIRS industry replacement set
-MAIN_SRC_FILE       := sprites/firs.pnml
+MAIN_SRC_FILE       := src/firs.pnml
 # GFX_LIST_FILES      := gfx/png_source_list
 
 # Directory structure

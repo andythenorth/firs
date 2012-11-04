@@ -1,0 +1,227 @@
+/*
+ * This file is part of FIRS Industry Set for OpenTTD.
+ * FIRS is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 2.
+ * FIRS is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+#define THIS_ID(...) ${industry.id}_ ## __VA_ARGS__
+
+/* shared ground tile by all sprite layouts of this industry */
+spriteset(THIS_ID(spriteset_ground), "src/graphics/industries/groundtiles.png") { tmpl_ground_tile(150, 10) }
+
+spriteset(THIS_ID(spriteset_sand), "src/graphics/industries/brick_works.png") { tmpl_ground_tile(290, 10) }
+spriteset(THIS_ID(spriteset_clay), "src/graphics/industries/brick_works.png") { tmpl_ground_tile(360, 10) }
+
+spriteset(THIS_ID(spriteset_1), "src/graphics/industries/brick_works.png") { tmpl_building_sprite( 10, 10, 101, -64) }
+spriteset(THIS_ID(spriteset_2), "src/graphics/industries/brick_works.png") { tmpl_building_sprite( 80, 10, 101, -59) }
+spriteset(THIS_ID(spriteset_3), "src/graphics/industries/brick_works.png") { tmpl_building_sprite(150, 10, 101, -71) }
+spriteset(THIS_ID(spriteset_4), "src/graphics/industries/brick_works.png") { tmpl_building_sprite(220, 10, 101, -69) }
+
+SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_sand_staithe), THIS_ID(spriteset_ground), THIS_ID(spriteset_sand), 8)
+
+SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_clay_staithe), THIS_ID(spriteset_ground), THIS_ID(spriteset_clay), 8)
+
+SPRITELAYOUT_NORMAL_BEGIN(THIS_ID(spritelayout_1_anim), THIS_ID(spriteset_ground), THIS_ID(spriteset_1), 7)
+	building {
+		sprite:  3701 + ((animation_frame + 6) % 8);
+		xoffset: 8;
+		zoffset: 70;
+		xextent: 8;
+		zextent: 7;
+	}
+SPRITELAYOUT_END
+
+SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_2), THIS_ID(spriteset_ground), THIS_ID(spriteset_2), 32)
+
+SPRITELAYOUT_NORMAL_BEGIN(THIS_ID(spritelayout_3_anim), THIS_ID(spriteset_ground), THIS_ID(spriteset_3), 7)
+	building {
+		sprite:  3701 + animation_frame;
+		yoffset: 8;
+		zoffset: 58;
+		yextent: 8;
+		zextent: 7;
+	}
+SPRITELAYOUT_END
+
+SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_4), THIS_ID(spriteset_ground), THIS_ID(spriteset_4), 32)
+
+spritelayout THIS_ID(spritelayout_5) {
+	ground {
+		sprite: THIS_ID(spriteset_ground);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+	}
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_1), relative_pos) {
+	relative_coord(0, 0): THIS_ID(spritelayout_4);
+	relative_coord(0, 1): THIS_ID(spritelayout_4);
+	relative_coord(1, 0): THIS_ID(spritelayout_3_anim);
+	relative_coord(1, 1): THIS_ID(spritelayout_3_anim);
+	relative_coord(2, 0): THIS_ID(spritelayout_2);
+	relative_coord(2, 1): THIS_ID(spritelayout_1_anim);
+	relative_coord(3, 0): THIS_ID(spritelayout_clay_staithe);
+	relative_coord(4, 0): THIS_ID(spritelayout_sand_staithe);
+	THIS_ID(spritelayout_5);
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_2), relative_pos) {
+	relative_coord(0, 0): THIS_ID(spritelayout_4);
+	relative_coord(0, 1): THIS_ID(spritelayout_4);
+	relative_coord(1, 0): THIS_ID(spritelayout_3_anim);
+	relative_coord(1, 1): THIS_ID(spritelayout_3_anim);
+	relative_coord(2, 0): THIS_ID(spritelayout_2);
+	relative_coord(2, 1): THIS_ID(spritelayout_clay_staithe);
+	relative_coord(3, 0): THIS_ID(spritelayout_1_anim);
+	relative_coord(3, 1): THIS_ID(spritelayout_sand_staithe);
+	THIS_ID(spritelayout_5);
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_3), relative_pos) {
+	relative_coord(0, 0): THIS_ID(spritelayout_4);
+	relative_coord(0, 1): THIS_ID(spritelayout_4);
+	relative_coord(0, 2): THIS_ID(spritelayout_1_anim);
+	relative_coord(0, 3): THIS_ID(spritelayout_clay_staithe);
+	relative_coord(1, 0): THIS_ID(spritelayout_3_anim);
+	relative_coord(1, 1): THIS_ID(spritelayout_3_anim);
+	relative_coord(1, 2): THIS_ID(spritelayout_2);
+  relative_coord(1, 3): THIS_ID(spritelayout_sand_staithe);
+	THIS_ID(spritelayout_5);
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, THIS_ID(layout), layout_num) {
+	1: THIS_ID(layout_1);
+	2: THIS_ID(layout_2);
+	3: THIS_ID(layout_3);
+	THIS_ID(layout_1);
+}
+
+/* ****************************************************
+ * Definition of the industry tiles and their callbacks
+ * ****************************************************/
+
+/* Sand depot tile */
+
+TILE_DISALLOW_NEARBY_CLASS(nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
+TILE_ALLOW_PLAYER         (player_check,                                                            THIS_ID(nearby_industry))
+TILE_DISALLOW_SLOPES      (location_check,                       CB_RESULT_LOCATION_DISALLOW, THIS_ID(player_check))
+
+/* tile */
+
+switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(anim_control), (extra_callback_info1 & 7)) {
+	0: return 0;
+	1: return 1;
+	2: return 2;
+	3: return 3;
+	4: return 4;
+	5: return 5;
+	6: return 6;
+	return 254;
+}
+
+item(FEAT_INDUSTRYTILES, THIS_ID(tile), TILE_BRICKWORKS_1) {
+	property {
+		substitute:         0;
+		accepted_cargos:    [[COAL, 8], [CLAY, 8], [SAND, 8]];
+		land_shape_flags:   bitmask(LSF_ONLY_ON_FLAT_LAND);
+		animation_info:     [ANIMATION_LOOPING, 7];
+		animation_speed:    3;
+		animation_triggers: bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE);
+	}
+
+	graphics {
+		anim_control: THIS_ID(anim_control);
+		tile_check:   THIS_ID(location_check);
+		THIS_ID(layout);
+	}
+}
+
+/* *************************************************
+ * Definition of the industry layouts
+ * *************************************************/
+
+tilelayout tilelayout_brick_works_1 {
+	0, 0: THIS_ID(tile);
+	0, 1: THIS_ID(tile);
+	1, 0: THIS_ID(tile);
+	1, 1: THIS_ID(tile);
+	2, 0: THIS_ID(tile);
+	2, 1: THIS_ID(tile);
+	3, 0: THIS_ID(tile);
+	3, 1: THIS_ID(tile);
+	4, 0: THIS_ID(tile);
+	4, 1: THIS_ID(tile);
+}
+
+tilelayout tilelayout_brick_works_2 {
+	0, 0: THIS_ID(tile);
+	0, 1: THIS_ID(tile);
+	1, 0: THIS_ID(tile);
+	1, 1: THIS_ID(tile);
+	2, 0: THIS_ID(tile);
+	2, 1: THIS_ID(tile);
+	3, 0: THIS_ID(tile);
+	3, 1: THIS_ID(tile);
+}
+
+tilelayout tilelayout_brick_works_3 {
+	0, 0: THIS_ID(tile);
+	0, 1: THIS_ID(tile);
+	0, 2: THIS_ID(tile);
+	0, 3: THIS_ID(tile);
+	1, 0: THIS_ID(tile);
+	1, 1: THIS_ID(tile);
+	1, 2: THIS_ID(tile);
+	1, 3: THIS_ID(tile);
+}
+
+/* *************************************************
+ * Definition of the industry
+ * *************************************************/
+
+/* for secondary production template */
+#define THIS_NUM_OUTPUT_CARGOS    1
+#define THIS_PROD_RATIO_CARGO1    2
+#define THIS_PROD_RATIO_CARGO2    2
+#define THIS_PROD_RATIO_CARGO3    4
+#define THIS_BOOST_12             2
+#define THIS_BOOST_13             2
+#define THIS_BOOST_21             2
+#define THIS_BOOST_23             2
+#define THIS_BOOST_31             4
+#define THIS_BOOST_32             4
+/* extra text template */
+#define THIS_STR_EXTRA_TEXT       STR_EXTRA_BRICKWORKS
+
+CHECK_INCOMPATIBLE  (brick_works, 56, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
+CHECK_INCOMPATIBLE  (coal_mine,   16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(brick_works))
+CHECK_INCOMPATIBLE  (quarry,      16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(coal_mine))
+CHECK_INCOMPATIBLE  (clay_pit,    16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(quarry))
+CHECK_FOUNDER       (THIS_ID(clay_pit))
+
+SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
+
+#include "../templates/produce_secondary.pnml"
+#include "../templates/check_secondary_production_level.pnml"
+#include "../templates/check_secondary_closure.pnml"
+
+#include "../templates/extra_text_secondary.pnml"
+
+#include "../templates/check_availability.pnml"
+
+${industry.get_industry_properties()}
+
+item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
+	graphics {
+		produce_cargo_arrival:   THIS_ID(produce);
+		construction_probability:THIS_ID(check_availability);
+		location_check:          THIS_ID(check_location);
+		monthly_prod_change:     THIS_ID(check_production_level);
+		random_prod_change:      THIS_ID(check_closure);
+		extra_text_industry:     THIS_ID(extra_text);
+		colour:                  THIS_ID(colour);
+	}
+}
+
+#include "../templates/undefs.pnml"

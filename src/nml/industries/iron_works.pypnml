@@ -1,0 +1,197 @@
+/*
+ * This file is part of FIRS Industry Set for OpenTTD.
+ * FIRS is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 2.
+ * FIRS is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+#include "../templates/spritelayout_templates.pnml"
+
+#define THIS_ID(...) ${industry.id}_ ## __VA_ARGS__
+
+spriteset(THIS_ID(spriteset_ground), "src/graphics/industries/groundtiles.png") {
+	tmpl_ground_tile(150, 10)
+}
+
+spriteset(THIS_ID(spriteset_1), "src/graphics/industries/iron_works.png") { tmpl_building_sprite(10, 10, 70, -40) }
+spriteset(THIS_ID(spriteset_2), "src/graphics/industries/iron_works.png") { tmpl_building_sprite(80, 10, 70, -39) }
+spriteset(THIS_ID(spriteset_3), "src/graphics/industries/iron_works.png") { tmpl_building_sprite(150, 10, 70, -39) }
+spriteset(THIS_ID(spriteset_4), "src/graphics/industries/iron_works.png") { tmpl_building_sprite(220, 10, 70, -39) }
+spriteset(THIS_ID(spriteset_5), "src/graphics/industries/iron_works.png") { tmpl_building_sprite(290, 10, 70, -39) }
+spriteset(THIS_ID(spriteset_6), "src/graphics/industries/iron_works.png") { tmpl_building_sprite(360, 10, 70, -39) }
+
+SPRITELAYOUT_FENCES_NORMAL_BEGIN(THIS_ID(spritelayout_furnace_anim), THIS_ID(spriteset_ground), THIS_ID(spriteset_1), 7)
+	BUILDING_DARK_SMOKE_SMALL(0, 4, 23)
+SPRITELAYOUT_FENCES_END
+
+SPRITELAYOUT_FENCES_NORMAL(THIS_ID(spritelayout_large_shed), THIS_ID(spriteset_ground), THIS_ID(spriteset_2), 32)
+
+SPRITELAYOUT_FENCES_NORMAL(THIS_ID(spritelayout_large_shed_clerestory_roof), THIS_ID(spriteset_ground), THIS_ID(spriteset_3), 32)
+
+SPRITELAYOUT_FENCES_NORMAL(THIS_ID(fenced_spriteset_4), THIS_ID(spriteset_ground), THIS_ID(spriteset_4), 32)
+SPRITELAYOUT_FENCES_NORMAL(THIS_ID(fenced_spriteset_5), THIS_ID(spriteset_ground), THIS_ID(spriteset_5), 32)
+SPRITELAYOUT_FENCES_NORMAL(THIS_ID(fenced_spriteset_6), THIS_ID(spriteset_ground), THIS_ID(spriteset_6), 32)
+switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(spritelayout_metal_pigs_anim), animation_frame) {
+	0..60: THIS_ID(fenced_spriteset_4);
+	61..120: THIS_ID(fenced_spriteset_5);
+	THIS_ID(fenced_spriteset_6);
+}
+
+spritelayout THIS_ID(spritelayout_empty_ground) {
+	ground {
+		sprite: THIS_ID(spriteset_ground);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_1), relative_pos) {
+	relative_coord(0, 0): THIS_ID(spritelayout_large_shed_clerestory_roof);
+	relative_coord(0, 1): THIS_ID(spritelayout_furnace_anim);
+	relative_coord(0, 2): THIS_ID(spritelayout_metal_pigs_anim);
+	relative_coord(1, 0): THIS_ID(spritelayout_large_shed_clerestory_roof);
+	relative_coord(1, 1): THIS_ID(spritelayout_furnace_anim);
+	relative_coord(1, 2): THIS_ID(spritelayout_metal_pigs_anim);
+	relative_coord(2, 0): THIS_ID(spritelayout_large_shed);
+	THIS_ID(spritelayout_empty_ground);
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_2), relative_pos) {
+	relative_coord(0, 0): THIS_ID(spritelayout_large_shed);
+	relative_coord(1, 0): THIS_ID(spritelayout_large_shed_clerestory_roof);
+	relative_coord(1, 1): THIS_ID(spritelayout_furnace_anim);
+	THIS_ID(spritelayout_empty_ground);
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, THIS_ID(tile_layout), layout_num) {
+	1: THIS_ID(layout_1);
+	2: THIS_ID(layout_2);
+	THIS_ID(layout_1);
+}
+
+FENCES_EXCLUDE_BY_CLASS     ( THIS_ID(tile_fence_station),  THIS_ID(tile_layout),         TILE_CLASS_STATION)
+FENCES_EXCLUDE_SAME_INDUSTRY( THIS_ID(tile_fence_industry), THIS_ID(tile_fence_station))
+ADD_FLAT_FENCES             ( THIS_ID(tile_fences),         THIS_ID(tile_fence_industry), 1, 1, 1, 1)
+
+/* *************************************************
+ * Definition of the industry tile and its callbacks
+ * *************************************************/
+
+TILE_DISALLOW_NEARBY_CLASS(tile_nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
+TILE_ALLOW_PLAYER         (tile_location_check, THIS_ID(tile_nearby_industry))
+
+/* Return a random animation frame from the extra_callback_info1 */
+switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(tile_anim_control), (extra_callback_info1 & 14)) {
+	0: return 0;
+	1: return 2;
+	2: return 4;
+	3: return 6;
+	4: return 8;
+	5: return 10;
+	6: return 12;
+	7: return 14;
+	8: return 16;
+	9: return 18;
+	10: return 20;
+	11: return 22;
+	12: return 24;
+	return CB_RESULT_NEXT_FRAME;
+}
+
+item(FEAT_INDUSTRYTILES, THIS_ID(tile), TILE_IRONWORKS_1) {
+	property {
+		substitute:         0;
+		accepted_cargos:    [[IORE, 8], [WOOD, 8]];
+		land_shape_flags:   0;
+	}
+
+	graphics {
+		tile_check:   THIS_ID(tile_location_check);
+		THIS_ID(tile_fences);
+	}
+}
+
+/* The animated tiles must not build on slopes.  Use a separate tile to achieve that.  Chains to same other checks, graphics etc. */
+TILE_DISALLOW_SLOPES      (tile2_location_check, CB_RESULT_LOCATION_DISALLOW, THIS_ID(tile_location_check))
+
+item(FEAT_INDUSTRYTILES, THIS_ID(tile_animated), TILE_IRONWORKS_2) {
+	property {
+		substitute:         0;
+		accepted_cargos:    [[IORE, 8], [WOOD, 8]];
+		land_shape_flags:   bitmask(LSF_ONLY_ON_FLAT_LAND);
+		special_flags:      bitmask(INDTILE_FLAG_RANDOM_ANIMATION);
+		animation_info:     [ANIMATION_LOOPING, 180];
+		animation_speed:    2;
+		animation_triggers: bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE);
+	}
+
+	graphics {
+		anim_control: THIS_ID(tile_anim_control);
+		tile_check:   THIS_ID(tile2_location_check);
+		THIS_ID(tile_fences);
+	}
+}
+
+/* *************************************************
+ * Definition of the industry layouts
+ * *************************************************/
+
+tilelayout tilelayout_iron_works_1 {
+	0, 0: THIS_ID(tile);
+	0, 1: THIS_ID(tile_animated);
+	0, 2: THIS_ID(tile_animated);
+	1, 0: THIS_ID(tile);
+	1, 1: THIS_ID(tile_animated);
+	1, 2: THIS_ID(tile_animated);
+	2, 0: THIS_ID(tile);
+	2, 1: THIS_ID(tile);
+	2, 2: THIS_ID(tile);
+}
+/* *************************************************
+ * Definition of the industry
+ * *************************************************/
+
+/* for secondary production template */
+#define THIS_NUM_OUTPUT_CARGOS    1
+#define THIS_PROD_RATIO_CARGO1    2
+#define THIS_PROD_RATIO_CARGO2    2
+#define THIS_PROD_RATIO_CARGO3    1
+#define THIS_BOOST_12             1
+#define THIS_BOOST_13             0
+#define THIS_BOOST_21             2
+#define THIS_BOOST_23             0
+#define THIS_BOOST_31             0
+#define THIS_BOOST_32             0
+/* extra text template */
+#define THIS_STR_EXTRA_TEXT       STR_EXTRA_IRON_WORKS
+#define THIS_STR_DEBUG_TEXT       STR_EXTRA_TEXT_DEBUG_SECONDARY
+/* availability years */
+#define THIS_MAX_YEAR 1901
+
+CHECK_NEARBY_CLUSTER(iron_ore_mine, 16, 60, 5, 4, return CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
+CHECK_FOUNDER     (THIS_ID(iron_ore_mine))
+
+SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
+
+#include "../templates/produce_secondary.pnml"
+#include "../templates/check_secondary_production_level.pnml"
+#include "../templates/check_secondary_closure.pnml"
+
+#include "../templates/extra_text_secondary.pnml"
+
+#include "../templates/check_availability.pnml"
+
+item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
+	graphics {
+		produce_cargo_arrival:   THIS_ID(produce);
+		construction_probability:THIS_ID(check_availability);
+		location_check:          THIS_ID(check_location);
+		monthly_prod_change:     THIS_ID(check_production_level);
+		random_prod_change:      THIS_ID(check_closure);
+		extra_text_industry:     THIS_ID(extra_text);
+		extra_text_fund:         return string(STR_FUND_AVAILABLE_UNTIL, THIS_MAX_YEAR);
+		colour:                  THIS_ID(colour);
+	}
+}
+
+#include "../templates/undefs.pnml"

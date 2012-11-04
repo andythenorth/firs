@@ -1,0 +1,88 @@
+#include "src/nml/header.pnml"
+
+#include "src/nml/parameters.pnml"
+
+#include "src/nml/defines.pnml"
+#include "src/nml/checks.pnml"
+
+#include "src/nml/conditions.pnml"
+
+#include "src/nml/generated_pnml/cargo_props.pnml"
+#include "src/nml/cargo_graphics.pnml"
+
+//disable the default industries
+disable_item(FEAT_INDUSTRIES, 0, 36);
+
+#include "src/nml/templates/tile_fences.pnml"
+#include "src/nml/templates/tile_location.pnml"
+#include "src/nml/templates/tile_ground_sprite.pnml"
+#include "src/nml/templates/tile_cargos.pnml"
+
+#include "src/nml/templates/sprite_templates.pnml"
+#include "src/nml/templates/spritelayout_templates.pnml"
+#include "src/nml/templates/industry_location.pnml"
+#include "src/nml/templates/industry_colour.pnml"
+#include "src/nml/templates/industry_cargos.pnml"
+#include "src/nml/templates/randomise_primary_production_on_build.pnml"
+
+#include "src/nml/basetiles.pnml"
+
+#include "src/nml/generated_pnml/aluminium_plant.pnml"
+#include "src/nml/generated_pnml/arable_farm.pnml"
+#include "src/nml/generated_pnml/bauxite_mine.pnml"
+#include "src/nml/generated_pnml/biorefinery.pnml"
+#include "src/nml/generated_pnml/brewery.pnml"
+
+#include "src/nml/generated_pnml/brick_works.pnml"
+#include "src/nml/generated_pnml/builders_yard.pnml"
+#include "src/nml/generated_pnml/cement_plant.pnml"
+#include "src/nml/generated_pnml/clay_pit.pnml"
+#include "src/nml/generated_pnml/coal_mine.pnml"
+
+#include "src/nml/generated_pnml/dairy.pnml"
+#include "src/nml/generated_pnml/dairy_farm.pnml"
+#include "src/nml/generated_pnml/dredging_site.pnml"
+#include "src/nml/generated_pnml/fertiliser_plant.pnml"
+#include "src/nml/generated_pnml/fishing_grounds.pnml"
+
+#include "src/nml/generated_pnml/fishing_harbour.pnml"
+#include "src/nml/generated_pnml/food_market.pnml"
+#include "src/nml/generated_pnml/forest.pnml"
+#include "src/nml/generated_pnml/fruit_plantation.pnml"
+#include "src/nml/generated_pnml/furniture_factory.pnml"
+
+#include "src/nml/generated_pnml/glass_works.pnml"
+#include "src/nml/generated_pnml/grain_mill.pnml"
+#include "src/nml/generated_pnml/hardware_store.pnml"
+#include "src/nml/generated_pnml/hotel.pnml"
+#include "src/nml/generated_pnml/iron_works.pnml"
+
+#include "src/nml/generated_pnml/iron_ore_mine.pnml"
+#include "src/nml/generated_pnml/junk_yard.pnml"
+#include "src/nml/generated_pnml/lime_kiln.pnml"
+#include "src/nml/generated_pnml/lumber_yard.pnml"
+
+#include "src/nml/generated_pnml/machine_shop.pnml"
+#include "src/nml/generated_pnml/metal_fabrication_plant.pnml"
+#include "src/nml/generated_pnml/metal_workshop.pnml"
+#include "src/nml/generated_pnml/mixed_farm.pnml"
+
+#include "src/nml/generated_pnml/oil_rig.pnml"
+#include "src/nml/generated_pnml/oil_wells.pnml"
+#include "src/nml/generated_pnml/oil_refinery.pnml"
+
+#include "src/nml/generated_pnml/paper_mill.pnml"
+#include "src/nml/generated_pnml/petrol_pump.pnml"
+#include "src/nml/generated_pnml/plastics_plant.pnml"
+#include "src/nml/generated_pnml/quarry.pnml"
+
+#include "src/nml/generated_pnml/recycling_plant.pnml"
+#include "src/nml/generated_pnml/recycling_depot.pnml"
+#include "src/nml/generated_pnml/sheep_farm.pnml"
+#include "src/nml/generated_pnml/smithy_forge.pnml"
+#include "src/nml/generated_pnml/steel_mill.pnml"
+#include "src/nml/generated_pnml/stockyard.pnml"
+
+#include "src/nml/generated_pnml/sugar_refinery.pnml"
+#include "src/nml/generated_pnml/sawmill.pnml"
+#include "src/nml/generated_pnml/textile_mill.pnml"
