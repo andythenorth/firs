@@ -42,5 +42,3 @@ industry = Industry(id='mixed_farm',
 
 # industry uses layouts and sprites from default game, no custom layouts etc
 
-# Templating
-industry.render_and_save_pnml()

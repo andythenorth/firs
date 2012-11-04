@@ -18,6 +18,7 @@ templates = PageTemplateLoader(os.path.join(currentdir,'sprites','nml','template
 industry_templates = PageTemplateLoader(os.path.join(currentdir,'sprites','nml','industries'), format='text')
 
 from cargos import registered_cargos
+from industries import registered_industries
 
 def unescape_chameleon_output(escaped_nml):
     # chameleon html-escapes some characters; that's sane and secure for chameleon's intended web use, but not wanted for nml
@@ -208,6 +209,10 @@ class Industry(object):
         self.economy_variations = {}
         for economy in global_constants.economies:
             self.add_economy_variation(economy)
+        self.register()
+
+    def register(self):
+        registered_industries.append(self)
 
     def add_tile(self, *args, **kwargs):
         new_tile = Tile(*args, **kwargs)

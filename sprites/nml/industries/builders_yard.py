@@ -41,5 +41,3 @@ industry = Industry(id='builders_yard',
 
 # industry uses layouts and sprites from default game, no custom layouts etc
 
-# Templating
-industry.render_and_save_pnml()

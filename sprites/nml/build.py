@@ -18,6 +18,7 @@ sys.path.append(os.path.join('cargos')) # add to the module search path
 
 import codecs # used for writing files - more unicode friendly than standard open() module
 
+
 import cargos
 from cargos import alcohol
 from cargos import bauxite
@@ -66,7 +67,8 @@ pnml.write('cargotable{' + ','.join(cargotable) + '}')
 pnml.write(''.join(cargo_output_pnml))
 pnml.close()
 
-# industries currently take care of rendering themselves to pnml (this comment may age badly)
+
+import industries
 from industries import biorefinery
 from industries import brewery
 from industries import bauxite_mine
@@ -120,3 +122,6 @@ from industries import oil_rig
 from industries import paper_mill
 from industries import sawmill
 from industries import steel_mill
+
+for industry in industries.registered_industries:
+    industry.render_and_save_pnml()

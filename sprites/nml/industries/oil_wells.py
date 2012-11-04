@@ -138,5 +138,3 @@ industry.add_industry_layout(
               (6, 0, 'oil_wells_tile_pump', 'oil_wells_spritelayout_pump'),
     ]
 )
-# Templating
-industry.render_and_save_pnml()

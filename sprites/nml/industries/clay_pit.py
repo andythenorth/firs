@@ -42,5 +42,3 @@ industry = Industry(id='clay_pit',
 
 # industry uses layouts and sprites from default game, no custom layouts etc
 
-# Templating
-industry.render_and_save_pnml()

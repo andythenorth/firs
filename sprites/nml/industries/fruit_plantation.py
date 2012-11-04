@@ -1425,5 +1425,3 @@ industry.add_spritelayout(
 )
 
 
-# Templating
-industry.render_and_save_pnml()

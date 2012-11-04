@@ -64,5 +64,3 @@ industry.add_spritelayout(
 
 # dredging site has one layout only, don't bother inserting templated industry layouts etc
 
-# Templating
-industry.render_and_save_pnml()

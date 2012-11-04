@@ -173,5 +173,3 @@ industry.add_industry_layout(
     layout = [(0, 0, 'grain_mill_tile', 'grain_mill_spritelayout_windmill_anim')]
 )
 
-# Templating
-industry.render_and_save_pnml()

@@ -45,5 +45,3 @@ industry.economy_variations['TEST_1'].disabled = True
 
 # industry uses layouts and sprites from default game, no custom layouts etc
 
-# Templating
-industry.render_and_save_pnml()

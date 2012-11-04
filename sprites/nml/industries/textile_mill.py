@@ -207,5 +207,3 @@ industry.add_industry_layout(
     ]
 )
 
-# Templating
-industry.render_and_save_pnml()

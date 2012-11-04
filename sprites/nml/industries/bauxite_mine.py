@@ -128,5 +128,3 @@ industry.add_industry_layout(
               (4, 1, 'bauxite_mine_tile', 'bauxite_mine_spritelayout_1'),
     ]
 )
-# Templating
-industry.render_and_save_pnml()

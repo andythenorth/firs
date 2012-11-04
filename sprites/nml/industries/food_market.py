@@ -81,5 +81,3 @@ industry.add_industry_layout(
     layout = [(0, 0, 'food_market_tile', 'food_market_spritelayout')
     ]
 )
-# Templating
-industry.render_and_save_pnml()

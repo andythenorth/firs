@@ -30,5 +30,3 @@ industry = Industry(id='paper_mill',
 
 # industry uses layouts and sprites from default game, no custom layouts etc
 
-# Templating
-industry.render_and_save_pnml()

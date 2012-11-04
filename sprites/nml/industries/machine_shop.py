@@ -42,5 +42,3 @@ industry = Industry(id='machine_shop',
 
 # industry uses layouts and sprites from default game, no custom layouts etc
 
-# Templating
-industry.render_and_save_pnml()

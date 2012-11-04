@@ -67,5 +67,3 @@ industry.add_industry_layout(
     layout = [(0, 0, 'hardware_store_tile', 'hardware_store_spritelayout')
     ]
 )
-# Templating
-industry.render_and_save_pnml()
