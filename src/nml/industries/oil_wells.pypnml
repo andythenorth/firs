@@ -5,7 +5,7 @@
  * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS industry set. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "../templates/spritelayout_templates.pnml"
+#include "../src/nml/templates/spritelayout_templates.pnml"
 
 #define THIS_ID(...) ${industry.id}_ ## __VA_ARGS__
 
@@ -117,12 +117,12 @@ CHECK_FOUNDER       (${industry.id}_oil_refinery)
 
 SWITCH_COLOUR_SCHEME1(${industry.id}_colour)
 
-#include "../templates/produce_primary.pnml"
-#include "../templates/check_primary_production_level.pnml"
+#include "../src/nml/templates/produce_primary.pnml"
+#include "../src/nml/templates/check_primary_production_level.pnml"
 
-#include "../templates/extra_text_primary.pnml"
+#include "../src/nml/templates/extra_text_primary.pnml"
 
-#include "../templates/check_availability.pnml"
+#include "../src/nml/templates/check_availability.pnml"
 
 ${industry.get_industry_properties()}
 
@@ -140,4 +140,4 @@ item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
 		colour:                  ${industry.id}_colour;
 	}
 }
-#include "../templates/undefs.pnml"
+#include "../src/nml/templates/undefs.pnml"

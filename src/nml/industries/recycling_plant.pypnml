@@ -69,13 +69,13 @@ CHECK_FOUNDER       (${industry.id}_recycling_depot)
 
 SWITCH_COLOUR_SCHEME1(${industry.id}_colour)
 
-#include "../templates/produce_secondary.pnml"
-#include "../templates/check_secondary_production_level.pnml"
-#include "../templates/check_secondary_closure.pnml"
+#include "../src/nml/templates/produce_secondary.pnml"
+#include "../src/nml/templates/check_secondary_production_level.pnml"
+#include "../src/nml/templates/check_secondary_closure.pnml"
 
-#include "../templates/extra_text_secondary.pnml"
+#include "../src/nml/templates/extra_text_secondary.pnml"
 
-#include "../templates/check_availability.pnml"
+#include "../src/nml/templates/check_availability.pnml"
 
 /* Decide randomly on cargo output:
  * First cargo is always MNSP, 2nd is randomly a choice of 4,
@@ -108,4 +108,4 @@ item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
 	}
 }
 
-#include "../templates/undefs.pnml"
+#include "../src/nml/templates/undefs.pnml"

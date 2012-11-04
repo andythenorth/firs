@@ -62,7 +62,7 @@ for cargo in cargos.registered_cargos:
     print cargo.economy_variations
 
 # save the results of cargo templating
-pnml = codecs.open(os.path.join(currentdir,'src','nml','generated_pnml', 'cargo_props.pnml'), 'w','utf8')
+pnml = codecs.open(os.path.join(currentdir, 'generated_pnml', 'cargo_props.pnml'), 'w','utf8')
 pnml.write('cargotable{' + ','.join(cargotable) + '}')
 pnml.write(''.join(cargo_output_pnml))
 pnml.close()

@@ -73,13 +73,13 @@ CHECK_FOUNDER       (${industry.id}_mixed_farm)
 
 SWITCH_COLOUR_SCHEME2(${industry.id}_colour)
 
-#include "../templates/produce_secondary.pnml"
-#include "../templates/check_secondary_production_level.pnml"
-#include "../templates/check_secondary_closure.pnml"
+#include "../src/nml/templates/produce_secondary.pnml"
+#include "../src/nml/templates/check_secondary_production_level.pnml"
+#include "../src/nml/templates/check_secondary_closure.pnml"
 
-#include "../templates/extra_text_secondary.pnml"
+#include "../src/nml/templates/extra_text_secondary.pnml"
 
-#include "../templates/check_availability.pnml"
+#include "../src/nml/templates/check_availability.pnml"
 
 ${industry.get_industry_properties()}
 
@@ -96,4 +96,4 @@ item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
 	}
 }
 
-#include "../templates/undefs.pnml"
+#include "../src/nml/templates/undefs.pnml"

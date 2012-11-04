@@ -325,7 +325,7 @@ class Industry(object):
         templated_pnml = unescape_chameleon_output(industry_template(industry=self))
 
         # save the results of templating
-        pnml = codecs.open(os.path.join(currentdir,'src','nml','generated_pnml', self.id + '.pnml'), 'w','utf8')
+        pnml = codecs.open(os.path.join(currentdir, 'generated_pnml', self.id + '.pnml'), 'w','utf8')
         pnml.write(templated_pnml)
         pnml.close()
 

@@ -114,12 +114,12 @@ CHECK_FOUNDER       (THIS_ID(biorefinery))
 
 SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
 
-#include "../templates/produce_primary.pnml"
-#include "../templates/check_primary_production_level.pnml"
+#include "../src/nml/templates/produce_primary.pnml"
+#include "../src/nml/templates/check_primary_production_level.pnml"
 
-#include "../templates/extra_text_primary.pnml"
+#include "../src/nml/templates/extra_text_primary.pnml"
 
-#include "../templates/check_availability.pnml"
+#include "../src/nml/templates/check_availability.pnml"
 
 ${industry.get_industry_properties()}
 
@@ -145,4 +145,4 @@ item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
     }
 }
 
-#include "../templates/undefs.pnml"
+#include "../src/nml/templates/undefs.pnml"

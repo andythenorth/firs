@@ -5,7 +5,7 @@
  * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "../templates/spritelayout_templates.pnml"
+#include "../src/nml/templates/spritelayout_templates.pnml"
 
 #define THIS_ID(...) ${industry.id}_ ## __VA_ARGS__
 
@@ -74,10 +74,10 @@ SWITCH_COLOUR_SCHEME1(${industry.id}_colour)
 
 /* Production template not used. We have our separate one, see below */
 #define CUSTOM_MONTHLY_PROD_CHECK
-#include "../templates/check_primary_production_level.pnml"
+#include "../src/nml/templates/check_primary_production_level.pnml"
 #undef CUSTOM_MONTHLY_PROD_CHECK
 
-#include "../templates/check_availability.pnml"
+#include "../src/nml/templates/check_availability.pnml"
 
 
 /* We have a special production code here:
@@ -152,4 +152,4 @@ item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
 	}
 }
 
-#include "../templates/undefs.pnml"
+#include "../src/nml/templates/undefs.pnml"

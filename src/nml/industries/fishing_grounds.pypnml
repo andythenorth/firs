@@ -324,7 +324,7 @@ CHECK_FOUNDER       (THIS_ID(coastal_distance))
 
 SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
 
-#include "../templates/check_availability.pnml"
+#include "../src/nml/templates/check_availability.pnml"
 
 /* industry specific switch to randomise initial production; as Fishing Grounds never changes production, go for a wide range of productions*/
 random_switch(FEAT_INDUSTRIES, SELF, THIS_ID(randomise_primary_production_on_build)) {
@@ -353,4 +353,4 @@ item(FEAT_INDUSTRIES, fishing_grounds, ${industry.get_numeric_id()}) {
 	}
 }
 
-#include "../templates/undefs.pnml"
+#include "../src/nml/templates/undefs.pnml"

@@ -5,7 +5,7 @@
  * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "../templates/spritelayouts_groundaware.pnml"
+#include "../src/nml/templates/spritelayouts_groundaware.pnml"
 
 #define THIS_ID(...) ${industry.id}_ ## __VA_ARGS__
 
@@ -119,7 +119,7 @@ tilelayout tilelayout_builders_yard_2 {
  * Definition of the industry
  * *************************************************/
 
-#include "../templates/check_availability.pnml"
+#include "../src/nml/templates/check_availability.pnml"
 
 CHECK_INCOMPATIBLE  (hardware_store, 16, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
 CHECK_INCOMPATIBLE  (builders_yard, 20, CB_RESULT_LOCATION_DISALLOW, THIS_ID(hardware_store))
@@ -134,4 +134,4 @@ item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
 	}
 }
 
-#include "../templates/undefs.pnml"
+#include "../src/nml/templates/undefs.pnml"

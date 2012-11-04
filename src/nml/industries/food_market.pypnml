@@ -5,7 +5,7 @@
  * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "../templates/spritelayout_templates.pnml"
+#include "../src/nml/templates/spritelayout_templates.pnml"
 
 #define THIS_ID(...) ${industry.id}_ ## __VA_ARGS__
 
@@ -47,7 +47,7 @@ ${industry.get_industry_layouts_as_tilelayouts()}
  * Definition of the industry
  * *************************************************/
 
-#include "../templates/check_availability.pnml"
+#include "../src/nml/templates/check_availability.pnml"
 
 CHECK_INCOMPATIBLE  (petrol_pump, 16, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
 CHECK_INCOMPATIBLE  (hotel, 16, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_petrol_pump)
@@ -63,4 +63,4 @@ item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
 	}
 }
 
-#include "../templates/undefs.pnml"
+#include "../src/nml/templates/undefs.pnml"
