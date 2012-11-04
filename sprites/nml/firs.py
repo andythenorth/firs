@@ -17,6 +17,7 @@ from chameleon import PageTemplateLoader # chameleon used in most template cases
 templates = PageTemplateLoader(os.path.join(currentdir,'sprites','nml','templates'), format='text')
 industry_templates = PageTemplateLoader(os.path.join(currentdir,'sprites','nml','industries'), format='text')
 
+from cargos import cargos_list
 
 def unescape_chameleon_output(escaped_nml):
     # chameleon html-escapes some characters; that's sane and secure for chameleon's intended web use, but not wanted for nml
@@ -51,12 +52,16 @@ class Cargo(object):
         self.economy_variations = {}
         for economy in global_constants.economies:
             self.add_economy_variation(economy)
+        self.register()
 
     def add_economy_variation(self, economy):
         self.economy_variations[economy] = {'disabled': False}
 
     def get_property_declaration(self, property_name):
         return property_name + ': ' + getattr(self, property_name) + ';'
+
+    def register(self):
+        cargos_list.append(self)
 
     def render_pnml(self):
         cargo_template = templates['cargo_props.pypnml']

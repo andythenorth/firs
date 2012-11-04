@@ -19,3 +19,5 @@ cargo = Cargo(id = 'scrap_metal',
               penalty_lowerbound = '30',
               single_penalty_length = '255',
               price_factor = '126.846313477')
+
+scrap_metal = cargo

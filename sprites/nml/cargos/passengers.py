@@ -19,3 +19,5 @@ cargo = Cargo(id = 'passengers',
               penalty_lowerbound = '0',
               single_penalty_length = '22',
               price_factor = '101.749420166')
+
+passengers = cargo

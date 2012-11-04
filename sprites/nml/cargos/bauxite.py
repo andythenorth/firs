@@ -19,3 +19,5 @@ cargo = Cargo(id = 'bauxite',
               penalty_lowerbound = '30',
               single_penalty_length = '255',
               price_factor = '82.5862884521')
+
+bauxite = cargo

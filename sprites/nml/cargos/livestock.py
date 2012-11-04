@@ -19,3 +19,5 @@ cargo = Cargo(id = 'livestock',
               penalty_lowerbound = '0',
               single_penalty_length = '22',
               price_factor = '124.073982239')
+
+livestock = cargo

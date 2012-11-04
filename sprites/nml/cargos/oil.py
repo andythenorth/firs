@@ -19,3 +19,5 @@ cargo = Cargo(id = 'oil',
               penalty_lowerbound = '30',
               single_penalty_length = '255',
               price_factor = '93.3108329773')
+
+oil = cargo
