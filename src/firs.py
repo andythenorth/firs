@@ -333,7 +333,7 @@ class Industry(object):
         enabled_economies = []
         for i, economy in enumerate(global_constants.economies):
             if not self.economy_variations[economy].disabled:
-                enabled_economies.append('economy==' + str(count))
+                enabled_economies.append('economy==' + str(i))
         return ' || '.join(enabled_economies)
 
     def unpack_sprite_or_spriteset(self, sprite_or_spriteset, terrain_type=''):
