@@ -20,4 +20,3 @@ cargo = Cargo(id = 'mail',
               single_penalty_length = '24',
               price_factor = '143.869400024')
 
-mail = cargo

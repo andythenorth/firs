@@ -20,4 +20,3 @@ cargo = Cargo(id = 'sugar_beet',
               single_penalty_length = '30',
               price_factor = '116.194725037')
 
-sugar_beet = cargo

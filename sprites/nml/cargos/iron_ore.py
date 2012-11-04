@@ -20,4 +20,3 @@ cargo = Cargo(id = 'iron_ore',
               single_penalty_length = '255',
               price_factor = '75.4852294922')
 
-iron_ore = cargo

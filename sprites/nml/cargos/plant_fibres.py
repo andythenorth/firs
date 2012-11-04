@@ -20,4 +20,3 @@ cargo = Cargo(id = 'plant_fibres',
               single_penalty_length = '36',
               price_factor = '107.634544373')
 
-plant_fibres = cargo

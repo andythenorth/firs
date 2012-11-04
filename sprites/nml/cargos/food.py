@@ -20,4 +20,3 @@ cargo = Cargo(id = 'food',
               single_penalty_length = '24',
               price_factor = '149.803161621')
 
-food = cargo

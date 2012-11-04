@@ -20,4 +20,3 @@ cargo = Cargo(id = 'scrap_metal',
               single_penalty_length = '255',
               price_factor = '126.846313477')
 
-scrap_metal = cargo

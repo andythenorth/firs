@@ -19,5 +19,3 @@ cargo = Cargo(id = 'manufacturing_supplies',
               penalty_lowerbound = '8',
               single_penalty_length = '60',
               price_factor = '134.506702423')
-
-manufacturing_supplies = cargo
