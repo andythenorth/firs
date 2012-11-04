@@ -10,11 +10,11 @@ grf {
 			name: string(STR_PARAM_NAME_ECONOMIES);
 			desc: string(STR_PARAM_DESC_ECONOMIES);
 			min_value: 0;
-			max_value: 2;
+			max_value: ${len(global_constants.economies)-1};
 			names: {
-				0: string(STR_PARAM_VALUE_ECONOMIES_TEST_ECONOMY);
-				1: string(STR_PARAM_VALUE_ECONOMIES_TEST_ECONOMY);
-				2: string(STR_PARAM_VALUE_ECONOMIES_TEST_ECONOMY);
+			    <tal:build_economies repeat="economy global_constants.economies">
+                    ${repeat.economy.index}: string(STR_PARAM_VALUE_ECONOMIES_${economy});
+			    </tal:build_economies>
 			};
 		}
 	}

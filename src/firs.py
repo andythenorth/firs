@@ -36,7 +36,7 @@ def render_and_save_header_items():
     header_items = ['conditions','checks','parameters','header']
     for header_item in header_items:
         template = header_item_templates[header_item + '.pypnml']
-        templated_pnml = unescape_chameleon_output(template())
+        templated_pnml = unescape_chameleon_output(template(global_constants=global_constants))
         # save the results of templating
         pnml = codecs.open(os.path.join(pnml_output_path, header_item + '.pnml'), 'w','utf8')
         pnml.write(templated_pnml)
