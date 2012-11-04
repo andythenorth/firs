@@ -20,3 +20,4 @@ cargo = Cargo(id = 'recyclables',
               single_penalty_length = '128',
               price_factor = '104.570388794')
 
+cargo.economy_variations['BASIC']['disabled'] = True

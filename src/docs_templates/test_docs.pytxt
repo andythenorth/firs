@@ -1,10 +1,10 @@
-<tal:build_economies repeat="economy_schema economy_schemas.iteritems()">
-**Economy: ${economy_schema[0]}**
-*Cargos*
-${', '.join([cargo.id for cargo in economy_schema[1].enabled_cargos])}
+<tal:build_economies repeat="economy global_constants.economies">
+**Economy: ${economy}**
+*${len(economy_schemas[economy].enabled_cargos)} Cargos*
+${', '.join([cargo.id for cargo in economy_schemas[economy].enabled_cargos])}
 
-*Industries*
-${', '.join([industry.id for industry in economy_schema[1].enabled_industries])}
+*${len(economy_schemas[economy].enabled_industries)}Industries*
+${', '.join([industry.id for industry in economy_schemas[economy].enabled_industries])}
 
 ========================================================================================
 </tal:build_economies>

@@ -34,6 +34,8 @@ industry = Industry(id='fruit_plantation',
                     prod_multiplier='[6]',
                     substitute='0')
 
+industry.economy_variations['BASIC'].disabled = True
+
 building_0 = industry.add_sprite(
     sprite_number = 1633,
     xoffset = 2,

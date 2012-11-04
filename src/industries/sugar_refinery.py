@@ -40,6 +40,8 @@ industry = Industry(id='sugar_refinery',
                     fund_cost_multiplier='140',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS')
 
+industry.economy_variations['BASIC'].disabled = True
+
 industry.add_tile(id='sugar_refinery_tile')
 
 spriteset_ground = industry.add_spriteset(

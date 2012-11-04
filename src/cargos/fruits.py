@@ -20,3 +20,4 @@ cargo = Cargo(id = 'fruits',
               single_penalty_length = '26',
               price_factor = '119.696617126')
 
+cargo.economy_variations['BASIC']['disabled'] = True

@@ -40,6 +40,8 @@ industry = Industry(id='recycling_plant',
                     fund_cost_multiplier='118',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS')
 
+industry.economy_variations['BASIC'].disabled = True
+
 industry.add_tile(id='recycling_plant_tile')
 
 spriteset_ground = industry.add_spriteset(

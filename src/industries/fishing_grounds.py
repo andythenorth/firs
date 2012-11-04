@@ -40,5 +40,7 @@ industry = Industry(id='fishing_grounds',
                     fund_cost_multiplier='88',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS')
 
+industry.economy_variations['BASIC'].disabled = True
+
 # industry uses layouts and sprites from default game, no custom layouts etc
 
