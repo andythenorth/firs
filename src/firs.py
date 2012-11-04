@@ -330,7 +330,11 @@ class Industry(object):
             return property_name + ': ' + value + ';'
 
     def get_conditional_expressions_for_enabled_economies(self):
-        return "param[0]==1 || param[0]==2"
+        enabled_economies = []
+        for i, economy in enumerate(global_constants.economies):
+            if not self.economy_variations[economy].disabled:
+                enabled_economies.append('economy==' + str(count))
+        return ' || '.join(enabled_economies)
 
     def unpack_sprite_or_spriteset(self, sprite_or_spriteset, terrain_type=''):
         if terrain_type != '':
