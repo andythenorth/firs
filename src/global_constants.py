@@ -1,3 +1,4 @@
+# changing the order of items in econmy list breaks savegames, don't do it.
 economies = ["TEST_1","TEST_2","TEST_3"]
 
 # Definition of the IDs of the single industries
