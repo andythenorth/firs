@@ -1,0 +1,11 @@
+<!--! wrapper for writing cargotable and all cargo definitions to one pnml file -->
+
+cargotable {
+<tal:build_cargo_table repeat="cargo registered_cargos">
+    ${cargo.cargo_label.replace('"','')},
+</tal:build_cargo_table>
+}
+
+<tal:build_cargo_properties repeat="cargo registered_cargos">
+    ${cargo.render_pnml()}
+</tal:build_cargo_properties>

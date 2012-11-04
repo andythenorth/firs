@@ -9,6 +9,8 @@ import codecs # used for writing files - more unicode friendly than standard ope
 
 import os.path
 currentdir = os.curdir
+# set output path for generated_pnml
+pnml_output_path = os.path.join(currentdir, 'generated_pnml')
 
 import global_constants as global_constants
 
@@ -27,6 +29,14 @@ def unescape_chameleon_output(escaped_nml):
     escaped_nml = '<'.join(escaped_nml.split('&lt;'))
     escaped_nml = '&'.join(escaped_nml.split('&amp;'))
     return escaped_nml
+
+def render_and_save_registered_cargos():
+    template = templates['registered_cargos.pypnml']
+    templated_pnml = unescape_chameleon_output(template(registered_cargos=registered_cargos))
+    # save the results of templating
+    pnml = codecs.open(os.path.join(pnml_output_path, 'registered_cargos.pnml'), 'w','utf8')
+    pnml.write(templated_pnml)
+    pnml.close()
 
 class Cargo(object):
     """ Base class to hold cargos"""
@@ -325,7 +335,7 @@ class Industry(object):
         templated_pnml = unescape_chameleon_output(industry_template(industry=self))
 
         # save the results of templating
-        pnml = codecs.open(os.path.join(currentdir, 'generated_pnml', self.id + '.pnml'), 'w','utf8')
+        pnml = codecs.open(os.path.join(pnml_output_path, self.id + '.pnml'), 'w','utf8')
         pnml.write(templated_pnml)
         pnml.close()
 

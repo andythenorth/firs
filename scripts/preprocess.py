@@ -17,6 +17,7 @@ sys.path.append(os.path.join(currentdir, 'src', 'nml')) # add to the module sear
 
 import codecs # used for writing files - more unicode friendly than standard open() module
 
+import firs
 
 import cargos
 from cargos import alcohol
@@ -52,19 +53,7 @@ from cargos import sugarcane
 from cargos import wood
 from cargos import wool
 
-cargo_output_pnml = []
-cargotable = [] # 'cargotable' is a single word in nml
-# there is some insanity with cargo_module.cargo, it's ducktape coding, overlook it.
-for cargo in cargos.registered_cargos:
-    cargo_output_pnml.append(cargo.render_pnml())
-    cargotable.append(cargo.cargo_label.replace('"',''))
-    print cargo.economy_variations
-
-# save the results of cargo templating
-pnml = codecs.open(os.path.join(currentdir, 'generated_pnml', 'cargo_props.pnml'), 'w','utf8')
-pnml.write('cargotable{' + ','.join(cargotable) + '}')
-pnml.write(''.join(cargo_output_pnml))
-pnml.close()
+firs.render_and_save_registered_cargos()
 
 
 import industries
