@@ -300,14 +300,13 @@ class Industry(object):
 
     def get_date_conditions_for_hide_sprites(self, date_variation_index):
         if len(self.graphics_change_dates) == 0:
-            return ""
+            return "" # no date variations, just one set of graphics
         elif date_variation_index == 0:
-            return "|| current_year >= " + str(self.graphics_change_dates[date_variation_index])
+            return "|| current_year >= " + str(self.graphics_change_dates[date_variation_index]) # first set of graphics, hide after first change date
         elif date_variation_index == len(self.graphics_change_dates):
-            return "|| current_year < " + str(self.graphics_change_dates[date_variation_index - 1])
+            return "|| current_year < " + str(self.graphics_change_dates[date_variation_index - 1]) # last set of graphics, hide before last change date
         else:
             return "|| current_year < " + str(self.graphics_change_dates[date_variation_index - 1]) + " || current_year >= " + str(self.graphics_change_dates[date_variation_index - 2])
-        # "(terrain_type == TILETYPE_SNOW) || current_year < $(first_year) || current_year > $(last_year)"
 
     def get_spritesets(self):
         template = templates['spritesets.pynml']
