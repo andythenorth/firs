@@ -365,7 +365,7 @@ class Industry(object):
         else:
             suffix = ''
         if isinstance(sprite_or_spriteset, Spriteset):
-            return sprite_or_spriteset.id + suffix  + '(' + str(sprite_or_spriteset.animation_rate) + '* animation_frame)'
+            return sprite_or_spriteset.id + '_0' + suffix  + '(' + str(sprite_or_spriteset.animation_rate) + '* animation_frame)'
         if isinstance(sprite_or_spriteset, Sprite):
             return getattr(sprite_or_spriteset, 'sprite_number' + suffix)
 
