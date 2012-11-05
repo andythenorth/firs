@@ -240,17 +240,15 @@ class IndustryProperties(object):
 
 class Industry(object):
     """Base class for all types of industry"""
-    def __init__(self, id, graphics_change_dates=[0], **kwargs):
+    def __init__(self, id, graphics_change_dates=[], **kwargs):
         self.id = id
-        self.graphics_file = '"src/graphics/industries/' + id + '_1.png"' # don't use os.path.join here, this is for nml
-        self.graphics_file_snow = '"src/graphics/industries/' + id + '_1_snow.png"' # don't use os.path.join here, this is for nml
+        self.graphics_change_dates = graphics_change_dates # 0-based, ordered list of dates for which graphics should change, match to graphics suffixed _1, _2, _3 etc.
         self.tiles = []
         self.sprites = []
         self.smoke_sprites = []
         self.spritesets = []
         self.spritelayouts = [] # by convention spritelayout is one word :P
         self.industry_layouts = []
-        self.graphics_change_dates = graphics_change_dates # 0-based, ordered list of dates for which graphics should change, match to graphics suffixed _1, _2, _3 etc.
         self.default_industry_properties = IndustryProperties(**kwargs)
         self.economy_variations = {}
         for economy in global_constants.economies:
@@ -295,6 +293,21 @@ class Industry(object):
 
     def get_numeric_id(self):
         return global_constants.industry_numeric_ids[self.id]
+
+    def get_graphics_file_path(self, date_variation_num, terrain=''):
+         # don't use os.path.join here, this returns a string for use by nml
+        return '"src/graphics/industries/' + self.id + '_' + str(date_variation_num + 1) + terrain + '.png"'
+
+    def get_date_conditions_for_hide_sprites(self, date_variation_index):
+        if len(self.graphics_change_dates) == 0:
+            return ""
+        elif date_variation_index == 0:
+            return "|| current_year >= " + str(self.graphics_change_dates[date_variation_index])
+        elif date_variation_index == len(self.graphics_change_dates):
+            return "|| current_year < " + str(self.graphics_change_dates[date_variation_index - 1])
+        else:
+            return "|| current_year < " + str(self.graphics_change_dates[date_variation_index - 1]) + " || current_year >= " + str(self.graphics_change_dates[date_variation_index - 2])
+        # "(terrain_type == TILETYPE_SNOW) || current_year < $(first_year) || current_year > $(last_year)"
 
     def get_spritesets(self):
         template = templates['spritesets.pynml']
@@ -361,13 +374,14 @@ class Industry(object):
                 enabled_economies.append('economy==' + str(i))
         return ' || '.join(enabled_economies)
 
-    def unpack_sprite_or_spriteset(self, sprite_or_spriteset, terrain_type=''):
+    def unpack_sprite_or_spriteset(self, sprite_or_spriteset, terrain_type='', date_variation_num='0'):
+        date_variation_suffix = '_' + str(date_variation_num)
         if terrain_type != '':
             suffix = '_' + terrain_type
         else:
             suffix = ''
         if isinstance(sprite_or_spriteset, Spriteset):
-            return sprite_or_spriteset.id + '_0' + suffix  + '(' + str(sprite_or_spriteset.animation_rate) + '* animation_frame)'
+            return sprite_or_spriteset.id + date_variation_suffix + suffix  + '(' + str(sprite_or_spriteset.animation_rate) + '* animation_frame)'
         if isinstance(sprite_or_spriteset, Sprite):
             return getattr(sprite_or_spriteset, 'sprite_number' + suffix)
 

@@ -61,26 +61,26 @@
             sprite: ${industry.unpack_sprite_or_spriteset(spritelayout.ground_sprite)};
             recolour_mode: RECOLOUR_REMAP;
             palette: PALETTE_USE_DEFAULT;
-            hide_sprite: !(terrain_type != TILETYPE_SNOW); always_draw: 1;
+            hide_sprite: (terrain_type == TILETYPE_SNOW); always_draw: 1;
         }
         childsprite {
             sprite: ${industry.unpack_sprite_or_spriteset(spritelayout.ground_overlay)};
             recolour_mode: RECOLOUR_REMAP;
             palette: PALETTE_USE_DEFAULT;
-            hide_sprite: !(terrain_type != TILETYPE_SNOW); always_draw: 1;
+            hide_sprite: (terrain_type == TILETYPE_SNOW); always_draw: 1;
         }
         // snow
         childsprite {
             sprite: ${industry.unpack_sprite_or_spriteset(spritelayout.ground_sprite, terrain_type='snow')};
             recolour_mode: RECOLOUR_REMAP;
             palette: PALETTE_USE_DEFAULT;
-            hide_sprite: !(terrain_type == TILETYPE_SNOW); always_draw: 1;
+            hide_sprite: (terrain_type != TILETYPE_SNOW); always_draw: 1;
         }
         childsprite {
             sprite: ${industry.unpack_sprite_or_spriteset(spritelayout.ground_overlay, terrain_type='snow')};
             recolour_mode: RECOLOUR_REMAP;
             palette: PALETTE_USE_DEFAULT;
-            hide_sprite: !(terrain_type == TILETYPE_SNOW); always_draw: 1;
+            hide_sprite: (terrain_type != TILETYPE_SNOW); always_draw: 1;
         }
 
         // fences NE and NW
@@ -114,32 +114,34 @@
         </tal:optional_fence>
 
         // industry buildings (snow aware)
-        <tal:build_building_sprites repeat="building_sprite spritelayout.building_sprites">
-            building {
-                sprite: ${industry.unpack_sprite_or_spriteset(building_sprite)};
-                recolour_mode: RECOLOUR_REMAP;
-                palette: PALETTE_USE_DEFAULT;
-                xoffset: ${building_sprite.xoffset};
-                yoffset: ${building_sprite.yoffset};
-                zoffset: ${building_sprite.zoffset};
-                xextent: ${building_sprite.xextent};
-                yextent: ${building_sprite.yextent};
-                zextent: ${building_sprite.zextent};
-                hide_sprite: (terrain_type == TILETYPE_SNOW);
-            }
-            building {
-                sprite: ${industry.unpack_sprite_or_spriteset(building_sprite, terrain_type='snow')};
-                recolour_mode: RECOLOUR_REMAP;
-                palette: PALETTE_USE_DEFAULT;
-                xoffset: ${building_sprite.xoffset};
-                yoffset: ${building_sprite.yoffset};
-                zoffset: ${building_sprite.zoffset};
-                xextent: ${building_sprite.xextent};
-                yextent: ${building_sprite.yextent};
-                zextent: ${building_sprite.zextent};
-                hide_sprite: (terrain_type != TILETYPE_SNOW);
-            }
-        </tal:build_building_sprites>
+        <tal:date_variations repeat="date_variation_num range(len(industry.graphics_change_dates)+1)"><!--! +1 because we need to run repeat at least once -->
+            <tal:build_building_sprites repeat="building_sprite spritelayout.building_sprites">
+                building {
+                    sprite: ${industry.unpack_sprite_or_spriteset(building_sprite, date_variation_num=date_variation_num)};
+                    recolour_mode: RECOLOUR_REMAP;
+                    palette: PALETTE_USE_DEFAULT;
+                    xoffset: ${building_sprite.xoffset};
+                    yoffset: ${building_sprite.yoffset};
+                    zoffset: ${building_sprite.zoffset};
+                    xextent: ${building_sprite.xextent};
+                    yextent: ${building_sprite.yextent};
+                    zextent: ${building_sprite.zextent};
+                    hide_sprite: (terrain_type == TILETYPE_SNOW) ${industry.get_date_conditions_for_hide_sprites(repeat.date_variation_num.index)};
+                }
+                building {
+                    sprite: ${industry.unpack_sprite_or_spriteset(building_sprite, terrain_type='snow', date_variation_num=date_variation_num)};
+                    recolour_mode: RECOLOUR_REMAP;
+                    palette: PALETTE_USE_DEFAULT;
+                    xoffset: ${building_sprite.xoffset};
+                    yoffset: ${building_sprite.yoffset};
+                    zoffset: ${building_sprite.zoffset};
+                    xextent: ${building_sprite.xextent};
+                    yextent: ${building_sprite.yextent};
+                    zextent: ${building_sprite.zextent};
+                    hide_sprite: (terrain_type != TILETYPE_SNOW) ${industry.get_date_conditions_for_hide_sprites(repeat.date_variation_num.index)};
+                }
+            </tal:build_building_sprites>
+        </tal:date_variations>
 
         // smoke sprites
         <tal:optional_smoke repeat="smoke_sprite spritelayout.smoke_sprites">
