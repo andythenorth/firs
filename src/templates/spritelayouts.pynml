@@ -125,7 +125,7 @@
                 xextent: ${building_sprite.xextent};
                 yextent: ${building_sprite.yextent};
                 zextent: ${building_sprite.zextent};
-                hide_sprite: !(terrain_type != TILETYPE_SNOW);
+                hide_sprite: (terrain_type == TILETYPE_SNOW);
             }
             building {
                 sprite: ${industry.unpack_sprite_or_spriteset(building_sprite, terrain_type='snow')};
@@ -137,7 +137,7 @@
                 xextent: ${building_sprite.xextent};
                 yextent: ${building_sprite.yextent};
                 zextent: ${building_sprite.zextent};
-                hide_sprite: !(terrain_type == TILETYPE_SNOW);
+                hide_sprite: (terrain_type != TILETYPE_SNOW);
             }
         </tal:build_building_sprites>
 
