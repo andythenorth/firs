@@ -165,7 +165,8 @@ class SmokeSprite(object):
 class Spriteset(object):
     """Base class to hold industry spritesets"""
     # !! arguably this should be two different classes, one for building/feature spritesets, and one for ground spritesets
-    def __init__(self, id, sprites=[], type='', xoffset=0, yoffset=0, zoffset=0, xextent=16, yextent=16, zextent=16, animation_rate = 0, num_sprites_to_autofill = 1):
+    def __init__(self, id, sprites=[], type='', xoffset=0, yoffset=0, zoffset=0, xextent=16, yextent=16,
+                 zextent=16, animation_rate = 0, num_sprites_to_autofill = 1):
         self.id = id
         self.sprites = sprites # a list of sprites 6-tuples in format (x, y, w, h, xoffs, yoffs)
         self.type = type # set to ground or other special types, or omit for default (building, greeble, foundations etc - graphics from png named same as industry)
@@ -239,7 +240,7 @@ class IndustryProperties(object):
 
 class Industry(object):
     """Base class for all types of industry"""
-    def __init__(self, id, **kwargs):
+    def __init__(self, id, graphics_change_dates=[0], **kwargs):
         self.id = id
         self.graphics_file = '"src/graphics/industries/' + id + '_1.png"' # don't use os.path.join here, this is for nml
         self.graphics_file_snow = '"src/graphics/industries/' + id + '_1_snow.png"' # don't use os.path.join here, this is for nml
@@ -249,6 +250,7 @@ class Industry(object):
         self.spritesets = []
         self.spritelayouts = [] # by convention spritelayout is one word :P
         self.industry_layouts = []
+        self.graphics_change_dates = graphics_change_dates # 0-based, ordered list of dates for which graphics should change, match to graphics suffixed _1, _2, _3 etc.
         self.default_industry_properties = IndustryProperties(**kwargs)
         self.economy_variations = {}
         for economy in global_constants.economies:
