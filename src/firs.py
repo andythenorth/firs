@@ -241,8 +241,8 @@ class Industry(object):
     """Base class for all types of industry"""
     def __init__(self, id, **kwargs):
         self.id = id
-        self.graphics_file = '"src/graphics/industries/' + id + '.png"' # don't use os.path.join here, this is for nml
-        self.graphics_file_snow = '"src/graphics/industries/' + id + '_snow.png"' # don't use os.path.join here, this is for nml
+        self.graphics_file = '"src/graphics/industries/' + id + '_1.png"' # don't use os.path.join here, this is for nml
+        self.graphics_file_snow = '"src/graphics/industries/' + id + '_1_snow.png"' # don't use os.path.join here, this is for nml
         self.tiles = []
         self.sprites = []
         self.smoke_sprites = []
