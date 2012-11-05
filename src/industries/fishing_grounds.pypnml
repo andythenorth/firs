@@ -7,11 +7,11 @@
 
 #define THIS_ID(...) fishing_grounds ## __VA_ARGS__
 
-spriteset(THIS_ID(spriteset_1), "src/graphics/industries/fishing_grounds.png") { tmpl_ground_tile(10, 10) }
-spriteset(THIS_ID(spriteset_2), "src/graphics/industries/fishing_grounds.png") { tmpl_ground_tile(80, 10) }
-spriteset(THIS_ID(spriteset_3), "src/graphics/industries/fishing_grounds.png") { tmpl_ground_tile(150, 10) }
-spriteset(THIS_ID(spriteset_4), "src/graphics/industries/fishing_grounds.png") { tmpl_ground_tile(220, 10) }
-spriteset(THIS_ID(spriteset_5), "src/graphics/industries/fishing_grounds.png") { tmpl_building_sprite(290, 10, 31, -32) }
+spriteset(THIS_ID(spriteset_1), "src/graphics/industries/fishing_grounds_1.png") { tmpl_ground_tile(10, 10) }
+spriteset(THIS_ID(spriteset_2), "src/graphics/industries/fishing_grounds_1.png") { tmpl_ground_tile(80, 10) }
+spriteset(THIS_ID(spriteset_3), "src/graphics/industries/fishing_grounds_1.png") { tmpl_ground_tile(150, 10) }
+spriteset(THIS_ID(spriteset_4), "src/graphics/industries/fishing_grounds_1.png") { tmpl_ground_tile(220, 10) }
+spriteset(THIS_ID(spriteset_5), "src/graphics/industries/fishing_grounds_1.png") { tmpl_building_sprite(290, 10, 31, -32) }
 
 SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_1), GROUNDSPRITE_WATER, THIS_ID(spriteset_1), 16)
 

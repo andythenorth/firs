@@ -15,13 +15,13 @@ spriteset(THIS_ID(spriteset_ground), "src/graphics/industries/groundtiles.png") 
 	tmpl_ground_tile(80, 10)
 }
 
-spriteset(THIS_ID(spriteset_clay), "src/graphics/industries/cement_plant.png") { tmpl_ground_tile(80, 130) }
-spriteset(THIS_ID(spriteset_stone), "src/graphics/industries/cement_plant.png") { tmpl_ground_tile(150, 130) }
+spriteset(THIS_ID(spriteset_clay), "src/graphics/industries/cement_plant_1.png") { tmpl_ground_tile(80, 130) }
+spriteset(THIS_ID(spriteset_stone), "src/graphics/industries/cement_plant_1.png") { tmpl_ground_tile(150, 130) }
 
-spriteset(THIS_ID(spriteset_1),  "src/graphics/industries/cement_plant.png") { tmpl_building_sprite( 80,  10, 113, -82) }
-spriteset(THIS_ID(spriteset_2),  "src/graphics/industries/cement_plant.png") { tmpl_building_sprite(150,  10, 113, -82) }
-spriteset(THIS_ID(spriteset_3),  "src/graphics/industries/cement_plant.png") { tmpl_building_sprite(220,  10, 113, -82) }
-spriteset(THIS_ID(spriteset_4),  "src/graphics/industries/cement_plant.png") { tmpl_building_sprite(290,  10, 113, -82) }
+spriteset(THIS_ID(spriteset_1),  "src/graphics/industries/cement_plant_1.png") { tmpl_building_sprite( 80,  10, 113, -82) }
+spriteset(THIS_ID(spriteset_2),  "src/graphics/industries/cement_plant_1.png") { tmpl_building_sprite(150,  10, 113, -82) }
+spriteset(THIS_ID(spriteset_3),  "src/graphics/industries/cement_plant_1.png") { tmpl_building_sprite(220,  10, 113, -82) }
+spriteset(THIS_ID(spriteset_4),  "src/graphics/industries/cement_plant_1.png") { tmpl_building_sprite(290,  10, 113, -82) }
 
 spriteset(THIS_ID(spriteset_ground_spriteset_5), "src/graphics/industries/groundtiles.png") {
 	tmpl_ground_tile(80, 10)
@@ -35,21 +35,21 @@ spriteset(THIS_ID(spriteset_ground_spriteset_5), "src/graphics/industries/ground
 }
 
 spriteset(THIS_ID(spriteset_5_anim)) {
-	tmpl_building_sprite_filename(220, 130, 113, -82, "src/graphics/industries/cement_plant.png")
-	tmpl_building_sprite_filename(290, 130, 113, -82, "src/graphics/industries/cement_plant.png")
-	tmpl_building_sprite_filename(360, 130, 113, -82, "src/graphics/industries/cement_plant.png")
-	tmpl_building_sprite_filename(430, 130, 113, -82, "src/graphics/industries/cement_plant.png")
-	tmpl_building_sprite_filename(500, 130, 113, -82, "src/graphics/industries/cement_plant.png")
-	tmpl_building_sprite_filename(570, 130, 113, -82, "src/graphics/industries/cement_plant.png")
-	tmpl_building_sprite_filename(640, 130, 113, -82, "src/graphics/industries/cement_plant.png")
+	tmpl_building_sprite_filename(220, 130, 113, -82, "src/graphics/industries/cement_plant_1.png")
+	tmpl_building_sprite_filename(290, 130, 113, -82, "src/graphics/industries/cement_plant_1.png")
+	tmpl_building_sprite_filename(360, 130, 113, -82, "src/graphics/industries/cement_plant_1.png")
+	tmpl_building_sprite_filename(430, 130, 113, -82, "src/graphics/industries/cement_plant_1.png")
+	tmpl_building_sprite_filename(500, 130, 113, -82, "src/graphics/industries/cement_plant_1.png")
+	tmpl_building_sprite_filename(570, 130, 113, -82, "src/graphics/industries/cement_plant_1.png")
+	tmpl_building_sprite_filename(640, 130, 113, -82, "src/graphics/industries/cement_plant_1.png")
 }
 
-spriteset(THIS_ID(spriteset_6),  "src/graphics/industries/cement_plant.png") { tmpl_building_sprite(430,  10, 113, -82) }
-spriteset(THIS_ID(spriteset_7),  "src/graphics/industries/cement_plant.png") { tmpl_building_sprite(500,  10, 113, -82) }
-spriteset(THIS_ID(spriteset_8),  "src/graphics/industries/cement_plant.png") { tmpl_building_sprite(570,  10, 113, -82) }
-spriteset(THIS_ID(spriteset_9),  "src/graphics/industries/cement_plant.png") { tmpl_building_sprite(640,  10, 113, -82) }
-spriteset(THIS_ID(spriteset_10), "src/graphics/industries/cement_plant.png") { tmpl_building_sprite(710,  10, 113, -82) }
-spriteset(THIS_ID(spriteset_11), "src/graphics/industries/cement_plant.png") { tmpl_building_sprite(780,  10, 113, -82) }
+spriteset(THIS_ID(spriteset_6),  "src/graphics/industries/cement_plant_1.png") { tmpl_building_sprite(430,  10, 113, -82) }
+spriteset(THIS_ID(spriteset_7),  "src/graphics/industries/cement_plant_1.png") { tmpl_building_sprite(500,  10, 113, -82) }
+spriteset(THIS_ID(spriteset_8),  "src/graphics/industries/cement_plant_1.png") { tmpl_building_sprite(570,  10, 113, -82) }
+spriteset(THIS_ID(spriteset_9),  "src/graphics/industries/cement_plant_1.png") { tmpl_building_sprite(640,  10, 113, -82) }
+spriteset(THIS_ID(spriteset_10), "src/graphics/industries/cement_plant_1.png") { tmpl_building_sprite(710,  10, 113, -82) }
+spriteset(THIS_ID(spriteset_11), "src/graphics/industries/cement_plant_1.png") { tmpl_building_sprite(780,  10, 113, -82) }
 
 SPRITELAYOUT_FENCES_NORMAL(THIS_ID(spritelayout_clay_staithe), THIS_ID(spriteset_ground), THIS_ID(spriteset_clay), 8)
 

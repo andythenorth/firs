@@ -13,12 +13,12 @@ spriteset(THIS_ID(spriteset_ground), "src/graphics/industries/groundtiles.png") 
 	tmpl_ground_tile(150, 10)
 }
 
-spriteset(THIS_ID(spriteset_1), "src/graphics/industries/iron_works.png") { tmpl_building_sprite(10, 10, 70, -40) }
-spriteset(THIS_ID(spriteset_2), "src/graphics/industries/iron_works.png") { tmpl_building_sprite(80, 10, 70, -39) }
-spriteset(THIS_ID(spriteset_3), "src/graphics/industries/iron_works.png") { tmpl_building_sprite(150, 10, 70, -39) }
-spriteset(THIS_ID(spriteset_4), "src/graphics/industries/iron_works.png") { tmpl_building_sprite(220, 10, 70, -39) }
-spriteset(THIS_ID(spriteset_5), "src/graphics/industries/iron_works.png") { tmpl_building_sprite(290, 10, 70, -39) }
-spriteset(THIS_ID(spriteset_6), "src/graphics/industries/iron_works.png") { tmpl_building_sprite(360, 10, 70, -39) }
+spriteset(THIS_ID(spriteset_1), "src/graphics/industries/iron_works_1.png") { tmpl_building_sprite(10, 10, 70, -40) }
+spriteset(THIS_ID(spriteset_2), "src/graphics/industries/iron_works_1.png") { tmpl_building_sprite(80, 10, 70, -39) }
+spriteset(THIS_ID(spriteset_3), "src/graphics/industries/iron_works_1.png") { tmpl_building_sprite(150, 10, 70, -39) }
+spriteset(THIS_ID(spriteset_4), "src/graphics/industries/iron_works_1.png") { tmpl_building_sprite(220, 10, 70, -39) }
+spriteset(THIS_ID(spriteset_5), "src/graphics/industries/iron_works_1.png") { tmpl_building_sprite(290, 10, 70, -39) }
+spriteset(THIS_ID(spriteset_6), "src/graphics/industries/iron_works_1.png") { tmpl_building_sprite(360, 10, 70, -39) }
 
 SPRITELAYOUT_FENCES_NORMAL_BEGIN(THIS_ID(spritelayout_furnace_anim), THIS_ID(spriteset_ground), THIS_ID(spriteset_1), 7)
 	BUILDING_DARK_SMOKE_SMALL(0, 4, 23)

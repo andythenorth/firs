@@ -175,9 +175,9 @@ SLOPE_AWARE_SPRITELAYOUT(THIS_ID(tree_tile_layout))
  * tile_equipment
  * *************/
 
-spriteset(spriteset_crane, "src/graphics/industries/forest.png") { tmpl_building_sprite(10, 10, 78, -45) }
-spriteset(spriteset_bulldozer, "src/graphics/industries/forest.png") { tmpl_building_sprite(80, 10, 78, -45) }
-spriteset(spriteset_tracks_snowtile, "src/graphics/industries/forest.png") { tmpl_building_sprite(220, 10, 78, -45) }
+spriteset(spriteset_crane, "src/graphics/industries/forest_1.png") { tmpl_building_sprite(10, 10, 78, -45) }
+spriteset(spriteset_bulldozer, "src/graphics/industries/forest_1.png") { tmpl_building_sprite(80, 10, 78, -45) }
+spriteset(spriteset_tracks_snowtile, "src/graphics/industries/forest_1.png") { tmpl_building_sprite(220, 10, 78, -45) }
 
 spritelayout THIS_ID(tile_equipment_nonsnow_spritelayout) {
 	ground {

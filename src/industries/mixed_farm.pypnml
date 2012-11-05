@@ -9,14 +9,14 @@
 
 #define THIS_ID(...) ${industry.id}_ ## __VA_ARGS__
 
-spriteset(THIS_ID(spriteset_1), "src/graphics/industries/mixed_farm.png") { tmpl_building_sprite(10, 10, 52, -21) }
-spriteset(THIS_ID(spriteset_2), "src/graphics/industries/mixed_farm.png") { tmpl_building_sprite(80, 10, 52, -21) }
-spriteset(THIS_ID(spriteset_3), "src/graphics/industries/mixed_farm.png") { tmpl_building_sprite(150, 10, 52, -21) }
-spriteset(THIS_ID(spriteset_4), "src/graphics/industries/mixed_farm.png") { tmpl_building_sprite(220, 10, 52, -21) }
-spriteset(THIS_ID(spriteset_5), "src/graphics/industries/mixed_farm.png") { tmpl_building_sprite(290, 10, 52, -21) }
-spriteset(THIS_ID(spriteset_6), "src/graphics/industries/mixed_farm.png") { tmpl_building_sprite(360, 10, 52, -21) }
-spriteset(THIS_ID(spriteset_7), "src/graphics/industries/mixed_farm.png") { tmpl_building_sprite(430, 10, 52, -21) }
-spriteset(THIS_ID(spriteset_8), "src/graphics/industries/mixed_farm.png") { tmpl_building_sprite(500, 10, 52, -21) }
+spriteset(THIS_ID(spriteset_1), "src/graphics/industries/mixed_farm_1.png") { tmpl_building_sprite(10, 10, 52, -21) }
+spriteset(THIS_ID(spriteset_2), "src/graphics/industries/mixed_farm_1.png") { tmpl_building_sprite(80, 10, 52, -21) }
+spriteset(THIS_ID(spriteset_3), "src/graphics/industries/mixed_farm_1.png") { tmpl_building_sprite(150, 10, 52, -21) }
+spriteset(THIS_ID(spriteset_4), "src/graphics/industries/mixed_farm_1.png") { tmpl_building_sprite(220, 10, 52, -21) }
+spriteset(THIS_ID(spriteset_5), "src/graphics/industries/mixed_farm_1.png") { tmpl_building_sprite(290, 10, 52, -21) }
+spriteset(THIS_ID(spriteset_6), "src/graphics/industries/mixed_farm_1.png") { tmpl_building_sprite(360, 10, 52, -21) }
+spriteset(THIS_ID(spriteset_7), "src/graphics/industries/mixed_farm_1.png") { tmpl_building_sprite(430, 10, 52, -21) }
+spriteset(THIS_ID(spriteset_8), "src/graphics/industries/mixed_farm_1.png") { tmpl_building_sprite(500, 10, 52, -21) }
 
 SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_1), GROUNDSPRITE_CLEARED, THIS_ID(spriteset_1), 64)
 

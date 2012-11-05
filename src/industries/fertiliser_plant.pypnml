@@ -12,16 +12,16 @@
 
 spriteset(THIS_ID(spriteset_ground), "src/graphics/industries/groundtiles.png") { tmpl_ground_tile(80, 10) }
 
-spriteset(THIS_ID(spriteset_1), "src/graphics/industries/fertiliser_plant.png") { tmpl_building_sprite(80, 10, 114, -88) }
-spriteset(THIS_ID(spriteset_2), "src/graphics/industries/fertiliser_plant.png") { tmpl_building_sprite(150, 10, 114, -83) }
-spriteset(THIS_ID(spriteset_3), "src/graphics/industries/fertiliser_plant.png") { tmpl_building_sprite(220, 10, 114, -83) }
-spriteset(THIS_ID(spriteset_4), "src/graphics/industries/fertiliser_plant.png") { tmpl_building_sprite(290, 10, 114, -83) }
-spriteset(THIS_ID(spriteset_5), "src/graphics/industries/fertiliser_plant.png") { tmpl_building_sprite(360, 10, 66, -35) }
-spriteset(THIS_ID(spriteset_6), "src/graphics/industries/fertiliser_plant.png") { tmpl_building_sprite(430, 10, 66, -35) }
-spriteset(THIS_ID(spriteset_7), "src/graphics/industries/fertiliser_plant.png") { tmpl_building_sprite(500, 10, 66, -35) }
-spriteset(THIS_ID(spriteset_8), "src/graphics/industries/fertiliser_plant.png") { tmpl_building_sprite(570, 10, 66, -35) }
-spriteset(THIS_ID(spriteset_9), "src/graphics/industries/fertiliser_plant.png") { tmpl_building_sprite(640, 10, 66, -35) }
-spriteset(THIS_ID(spriteset_10), "src/graphics/industries/fertiliser_plant.png") { tmpl_building_sprite(710, 10, 66, -35) }
+spriteset(THIS_ID(spriteset_1), "src/graphics/industries/fertiliser_plant_1.png") { tmpl_building_sprite(80, 10, 114, -88) }
+spriteset(THIS_ID(spriteset_2), "src/graphics/industries/fertiliser_plant_1.png") { tmpl_building_sprite(150, 10, 114, -83) }
+spriteset(THIS_ID(spriteset_3), "src/graphics/industries/fertiliser_plant_1.png") { tmpl_building_sprite(220, 10, 114, -83) }
+spriteset(THIS_ID(spriteset_4), "src/graphics/industries/fertiliser_plant_1.png") { tmpl_building_sprite(290, 10, 114, -83) }
+spriteset(THIS_ID(spriteset_5), "src/graphics/industries/fertiliser_plant_1.png") { tmpl_building_sprite(360, 10, 66, -35) }
+spriteset(THIS_ID(spriteset_6), "src/graphics/industries/fertiliser_plant_1.png") { tmpl_building_sprite(430, 10, 66, -35) }
+spriteset(THIS_ID(spriteset_7), "src/graphics/industries/fertiliser_plant_1.png") { tmpl_building_sprite(500, 10, 66, -35) }
+spriteset(THIS_ID(spriteset_8), "src/graphics/industries/fertiliser_plant_1.png") { tmpl_building_sprite(570, 10, 66, -35) }
+spriteset(THIS_ID(spriteset_9), "src/graphics/industries/fertiliser_plant_1.png") { tmpl_building_sprite(640, 10, 66, -35) }
+spriteset(THIS_ID(spriteset_10), "src/graphics/industries/fertiliser_plant_1.png") { tmpl_building_sprite(710, 10, 66, -35) }
 
 SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_large_building_left), THIS_ID(spriteset_ground), THIS_ID(spriteset_2), 48)
 
