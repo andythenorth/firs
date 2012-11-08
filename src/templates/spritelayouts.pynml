@@ -116,12 +116,12 @@
         // industry buildings (construction aware, snow aware)
         <tal:date_variations repeat="date_variation_num range(len(industry.graphics_change_dates)+1)"><!--! +1 because we need to run repeat at least once -->
             <tal:build_building_sprites repeat="building_sprite spritelayout.building_sprites">
-                building {
-                    sprite: GROUNDTILE_MUD_TRACKS;
+                <!--! building {
+                    sprite: ${building_sprite.id}_spriteset_default_construction_state_1;
                     recolour_mode: RECOLOUR_REMAP;
                     palette: PALETTE_USE_DEFAULT;
                     hide_sprite: (construction_state == 3) ;
-                }
+                } -->
                 building {
                     sprite: ${industry.unpack_sprite_or_spriteset(building_sprite, date_variation_num=date_variation_num)};
                     recolour_mode: RECOLOUR_REMAP;

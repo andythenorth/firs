@@ -42,4 +42,16 @@
         </tal:ground>
     </tal:date_variations>
 
+
+    /* Construction states */
+    spriteset(${spriteset.id}_spriteset_default_construction_state_1) {
+        <tal:autofill_sprites repeat="autosprite_num range(spriteset.num_sprites_to_autofill)">
+            tmpl_building_sprite_filename(10, 10, 64, 0, "src/graphics/other/default_construction_states.png")
+        </tal:autofill_sprites>
+            <!--! tmpl_building_sprite_filename(80, 10, 64, 0, "src/graphics/other/default_construction_states.png")
+            tmpl_building_sprite_filename(150, 10, 64, 0, "src/graphics/other/default_construction_states.png")
+            tmpl_building_sprite_filename(220, 10, 64, 0, "src/graphics/other/default_construction_states.png")
+            tmpl_building_sprite_filename(290, 10, 64, 0, "src/graphics/other/default_construction_states.png")-->
+    }
+
 </tal:build_spritesets>
