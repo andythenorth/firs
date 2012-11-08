@@ -1,0 +1,10 @@
+R;%{BUILD}/*.zip
+%{BUILD}/*.md5
+%{BUILD}/*build.log
+E;%{BUILD}/*build.err.log
+L;%{BUILD}/*.nml
+L;%{BUILD}/*.nfo
+L;%{BUILD}/rpmlist
+%{BUILD}/translations
+%{BUILD}/docs/*.txt
+
