@@ -63,15 +63,23 @@ spriteset(spriteset_default_construction_states) {
 	tmpl_building_sprite_filename(80, 10, 64, -33, "src/graphics/other/default_construction_states.png")
 	tmpl_building_sprite_filename(150, 10, 64, -33, "src/graphics/other/default_construction_states.png")
 	tmpl_building_sprite_filename(220, 10, 64, -33, "src/graphics/other/default_construction_states.png")
-	/* repeat the empty tile a few times to increase chances of empty tiles being used */
 	tmpl_building_sprite_filename(290, 10, 64, -33, "src/graphics/other/default_construction_states.png")
-	tmpl_building_sprite_filename(290, 10, 64, -33, "src/graphics/other/default_construction_states.png")
-	tmpl_building_sprite_filename(290, 10, 64, -33, "src/graphics/other/default_construction_states.png")
+	tmpl_building_sprite_filename(360, 10, 64, -33, "src/graphics/other/default_construction_states.png")
+	tmpl_building_sprite_filename(430, 10, 64, -33, "src/graphics/other/default_construction_states.png")
+	tmpl_building_sprite_filename(500, 10, 64, -33, "src/graphics/other/default_construction_states.png")
+	tmpl_building_sprite_filename(10, 100, 64, -33, "src/graphics/other/default_construction_states.png")
+	tmpl_building_sprite_filename(80, 100, 64, -33, "src/graphics/other/default_construction_states.png")
+	tmpl_building_sprite_filename(150, 100, 64, -33, "src/graphics/other/default_construction_states.png")
+	tmpl_building_sprite_filename(220, 100, 64, -33, "src/graphics/other/default_construction_states.png")
+	tmpl_building_sprite_filename(290, 100, 64, -33, "src/graphics/other/default_construction_states.png")
+	tmpl_building_sprite_filename(360, 100, 64, -33, "src/graphics/other/default_construction_states.png")
+	tmpl_building_sprite_filename(430, 100, 64, -33, "src/graphics/other/default_construction_states.png")
+	tmpl_building_sprite_filename(500, 100, 64, -33, "src/graphics/other/default_construction_states.png")
 }
 
 spritelayout spritelayout_default_construction_states {
 	ground {
-		sprite: spriteset_default_construction_states(random_bits % 7);
+		sprite: spriteset_default_construction_states(random_bits % 16);
 		recolour_mode: RECOLOUR_REMAP;
 		palette: 0;
 	}
