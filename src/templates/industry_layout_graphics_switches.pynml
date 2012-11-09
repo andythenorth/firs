@@ -21,6 +21,11 @@ switch(FEAT_INDUSTRYTILES, PARENT, ${industry.id}_industry_graphics_switch_layou
 	${industry.industry_layouts[0].id}_graphics_switch; // default
 }
 
-switch(FEAT_INDUSTRYTILES, PARENT, ${industry.id}_industry_master_graphics_switch, STORE_TEMP(random_bits, 0)) {
+switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_industry_construction_state_graphics_switch, construction_state) {
+	0..2: spritelayout_default_construction_states;
 	${industry.id}_industry_graphics_switch_layouts; // default
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, ${industry.id}_industry_master_graphics_switch, STORE_TEMP(random_bits, 0)) {
+	${industry.id}_industry_construction_state_graphics_switch; // default
 }

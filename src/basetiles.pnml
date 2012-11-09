@@ -56,3 +56,20 @@ spriteset(spriteset_empty) {
 	[80,10,1,1,0,0, "src/graphics/industries/groundtiles.png"]
 	[80,10,1,1,0,0, "src/graphics/industries/groundtiles.png"]
 }
+
+/* Construction states */
+spriteset(spriteset_default_construction_states) {
+	tmpl_building_sprite_filename(10, 10, 64, -33, "src/graphics/other/default_construction_states.png")
+	tmpl_building_sprite_filename(80, 10, 64, -33, "src/graphics/other/default_construction_states.png")
+	tmpl_building_sprite_filename(150, 10, 64, -33, "src/graphics/other/default_construction_states.png")
+	tmpl_building_sprite_filename(220, 10, 64, -33, "src/graphics/other/default_construction_states.png")
+	tmpl_building_sprite_filename(290, 10, 64, -33, "src/graphics/other/default_construction_states.png")
+}
+
+spritelayout spritelayout_default_construction_states {
+	ground {
+		sprite: spriteset_default_construction_states();
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+}
