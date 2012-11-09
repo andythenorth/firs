@@ -68,7 +68,7 @@ spriteset(spriteset_default_construction_states) {
 
 spritelayout spritelayout_default_construction_states {
 	ground {
-		sprite: spriteset_default_construction_states();
+		sprite: spriteset_default_construction_states(random_bits % 5);
 		recolour_mode: RECOLOUR_REMAP;
 		palette: 0;
 	}
