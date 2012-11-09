@@ -72,11 +72,6 @@ CHECK_INDUSTRY_TOWN_COUNT   (check_location, recycling_depot, 0, 0, string(STR_E
 
 SWITCH_COLOUR_SCHEME1(${industry.id}_colour)
 
-/* Production template not used. We have our separate one, see below */
-#define CUSTOM_MONTHLY_PROD_CHECK
-#include "../src/templates/check_primary_production_level.pnml"
-#undef CUSTOM_MONTHLY_PROD_CHECK
-
 #include "../src/templates/check_availability.pnml"
 
 
@@ -93,49 +88,11 @@ produce(${industry.id}_production,
 		);
 
 
-switch(FEAT_INDUSTRIES, PARENT, ${industry.id}_produce, [STORE_TEMP(((population + 11) / 12), 1)]) {
+switch(FEAT_INDUSTRIES, PARENT, ${industry.id}_produce, [STORE_TEMP(((population + 11) / (12 * 7)), 1)]) {
 	0: ${industry.id}_production;
 	${industry.id}_production;
 }
 
-/* Decrease production in one of 32 cases */
-switch(FEAT_INDUSTRIES, SELF, ${industry.id}_random_slow_decrease, (extra_callback_info2 & 31)) {
-	0: return CB_RESULT_IND_PROD_DECREMENT_BY_1;
-	return CB_RESULT_IND_PROD_NO_CHANGE;
-}
-
-/* decrease production in one of four cases */
-switch(FEAT_INDUSTRIES, SELF, ${industry.id}_random_decrease, (extra_callback_info2 & 3)) {
-	0: return CB_RESULT_IND_PROD_DECREMENT_BY_1;
-	return CB_RESULT_IND_PROD_NO_CHANGE;
-}
-
-switch(FEAT_INDUSTRIES, SELF, ${industry.id}_decrease_production, production_level) {
-	0..4: return CB_RESULT_IND_PROD_NO_CHANGE;  // if we're here, we close in the random production change CB
-	5..32: ${industry.id}_random_slow_decrease;
-	${industry.id}_random_decrease;
-}
-
-/* Don't even consider to decrease production, if turned off */
-switch(FEAT_INDUSTRIES, SELF, ${industry.id}_check_decrease_production, allow_primary_production_decrease) {
-	1..255: ${industry.id}_decrease_production;
-	return CB_RESULT_IND_PROD_NO_CHANGE;
-}
-
-/* increase production in one of four cases */
-switch(FEAT_INDUSTRIES, SELF, ${industry.id}_random_increase, (extra_callback_info2 & 3)) {
-	0: return CB_RESULT_IND_PROD_INCREMENT_BY_1;
-	return CB_RESULT_IND_PROD_NO_CHANGE;
-}
-
-switch(FEAT_INDUSTRIES, SELF, ${industry.id}_check_production_level, [
-			STORE_TEMP(LOAD_PERM(var_num_supplies_delivered), 0),
-			STORE_PERM(0, var_num_supplies_delivered),
-			LOAD_TEMP(0) > 0
-			]) {
-	1: ${industry.id}_random_increase;
-	${industry.id}_check_decrease_production;
-}
 
 ${industry.get_industry_properties()}
 
@@ -144,8 +101,8 @@ item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
 		produce_256_ticks:       ${industry.id}_produce;
 		construction_probability:${industry.id}_check_availability;
 		location_check:          ${industry.id}_check_location;
-		monthly_prod_change:     ${industry.id}_check_production_level;
-		random_prod_change:      ${industry.id}_check_closure;
+		monthly_prod_change:     CB_RESULT_IND_PROD_NO_CHANGE;
+		random_prod_change:      CB_RESULT_IND_PROD_NO_CHANGE;
 		extra_text_industry:     return string(STR_EXTRA_RECYCLING_DEPOT);
 		extra_text_fund:         return string(STR_FUND_AVAILABLE_FROM, THIS_MIN_YEAR);
 		colour:                  ${industry.id}_colour;
