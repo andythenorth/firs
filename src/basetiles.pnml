@@ -63,12 +63,15 @@ spriteset(spriteset_default_construction_states) {
 	tmpl_building_sprite_filename(80, 10, 64, -33, "src/graphics/other/default_construction_states.png")
 	tmpl_building_sprite_filename(150, 10, 64, -33, "src/graphics/other/default_construction_states.png")
 	tmpl_building_sprite_filename(220, 10, 64, -33, "src/graphics/other/default_construction_states.png")
+	/* repeat the empty tile a few times to increase chances of empty tiles being used */
+	tmpl_building_sprite_filename(290, 10, 64, -33, "src/graphics/other/default_construction_states.png")
+	tmpl_building_sprite_filename(290, 10, 64, -33, "src/graphics/other/default_construction_states.png")
 	tmpl_building_sprite_filename(290, 10, 64, -33, "src/graphics/other/default_construction_states.png")
 }
 
 spritelayout spritelayout_default_construction_states {
 	ground {
-		sprite: spriteset_default_construction_states(random_bits % 5);
+		sprite: spriteset_default_construction_states(random_bits % 7);
 		recolour_mode: RECOLOUR_REMAP;
 		palette: 0;
 	}
