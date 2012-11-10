@@ -16,6 +16,7 @@ When a string is expected are basically two choices: provide a string directly, 
 """
 
 industry = Industry(id='lime_kiln',
+                    graphics_change_dates=[],
                     accept_cargo_types='[GRVL, COAL]',
                     input_multiplier_1='[0, 0]',
                     input_multiplier_3='[0, 0]',
