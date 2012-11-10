@@ -25,6 +25,9 @@ if (climate == CLIMATE_TROPICAL) { market_tree = MARKET_TREE_TROPICAL; }
 // used for secondary industry production
 #define PRODUCTION_SPAN 30
 
+/* Permanent storage locations - uses different defines for different classes of industry */
+// on 10th Nov 2012 I verified that all permanent storage operations were using identifiers for storage, not numbers - Andy
+
 /* **************************************************************************
  * persistent storage for primary industries (template produce_primary)
  * **************************************************************************/
