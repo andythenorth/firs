@@ -9,16 +9,12 @@ STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   
 STR_PARAM_DESC_STAT_RATING                                                      :Aseman arviot vaikuttavat teollisuuden asemalle kuljettaman rahdin määrään; mitä parempi arvio, sitä enemmän asemalle kuljetetaan.
 STR_PARAM_DESC_DEBUG                                                            :Vain kehittäjille
 STR_PARAM_DESC_ECONOMIES                                                        :Valmistuessaan, FIRS:ssä on mahdollisuus valita talous. Rahdit, teollisuus sekä rahtitaksat vaihtelevat talouksien välillä. {}{}{SILVER}Tällä hetkellä on saatavilla vain yksi talous :)
-STR_PARAM_DESC_NEVER_CLOSE                                                      :Oletuksena FIRS:n ensisijaiset teollisuuslaitokset eivät sulkeudu ikinä.{}{}Tämän ominaisuuden ollessa käytössä ensisijaiset teollisuuslaitokset sulkeutuvat tuotannon laskiessa alhaiselle tasolle (tämä taso riippuu teollisuustyypistä). {SILVER}'Ensisijaisen tuoton väheneminen' oltava käytössä.
 STR_PARAM_DESC_NO_OPENINGS                                                      :Oletuksena uusia teollisuuslaitoksia avautuu pelin aikana.{}{}Tämän ominaisuuden ollessa käytössä ensisijaisia teollisuuslaitoksia ei avaudu pelin aikana eivätkä pelaajat voi rahoittaa niitä.
-STR_PARAM_DESC_PRIMARY_PRODUCTION_DECREASE                                      :Oletuksena FIRS:n ensisijaisten teollisuuslaitosten tuotanto ei vähene.{}{}Tämän ominaisuuden ollessa käytössä tuotanto voi laskea mikäli tarvikkeita ei kuljeteta kuukauden aikana. Jos tuotannon taso on korkealla, väheneminen on todennäköisempää.
 STR_PARAM_DESC_SECONDARY_NEVER_CLOSE                                            :Oletuksena FIRS:n toissijaiset teollisuuslaitokset eivät sulkeudu ikinä.{}{}Tämän ominaisuuden ollessa käytössä toissijaiset teollisuuslaitokset voivat sulkeutua jos rahtia ei ole kuljetettu pitkään aikaan.
 STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY                                   :Meriteollisuuden vähimmäismatka rantaan, ruutuina
 STR_PARAM_NAME_DEBUG                                                            :Näytä vianetsintätekstit
 STR_PARAM_NAME_ECONOMIES                                                        :Talous
-STR_PARAM_NAME_NEVER_CLOSE                                                      :Salli ensisijaisten teollisuuslaitosten sulkeminen
 STR_PARAM_NAME_NO_OPENINGS                                                      :Estä teollisuuslaitosten avaaminen pelin aikana
-STR_PARAM_NAME_PRIMARY_PRODUCTION_DECREASE                                      :Salli ensisijaisen tuoton väheneminen
 STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            :Salli toissijaisten teollisuuslaitosten sulkeminen
 STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0                                         :Ei rajaa
 STR_PARAM_NAME_STAT_RATING                                                      :Aseman arvioiden algoritmi

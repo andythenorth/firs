@@ -10,16 +10,12 @@ STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   
 STR_PARAM_DESC_STAT_RATING                                                      :Las calificaciones de las estaciones influencian la cantidad de carga entregada por la industria a las estaciones; cuanto más alta la calificación, más carga.
 STR_PARAM_DESC_DEBUG                                                            :Sólo para desarrolladores
 STR_PARAM_DESC_ECONOMIES                                                        :Cuando esté terminado, FIRS permitirá escoger entre diferentes economías. Las cargas e industrias variarán en cada economía, así como los pagos por carga. {}{}{SILVER}Actualmente solamente hay una economía disponible :)
-STR_PARAM_DESC_NEVER_CLOSE                                                      :Por defecto, las industrias primarias nunca cierran en FIRS.{}{}Si esta opción es activada, las industrias primarias cerrarán cuando la producción caiga a niveles bajos (el nivel varía para cada tipo de industria).{SILVER}Requiere activar'Permitir disminución de la producción de industrias primarias'.
 STR_PARAM_DESC_NO_OPENINGS                                                      :No aparecerán nuevas industrias durante la partida. {}No aparecerán nuevas industrias durante la partida, y los jugadores no podrán fundar o prospectar industrias.
-STR_PARAM_DESC_PRIMARY_PRODUCTION_DECREASE                                      :Por defecto, la producción de las industrias primarias en FIRS nunca se reduce.{}{}Si esta opción es activada, hay una probabilidad de que la producción se reduzca si no se entregan suministros a la industria durante un mes. Si el nivel de producción es alto, las posibilidades de que la producción se reduzca son mayores.
 STR_PARAM_DESC_SECONDARY_NEVER_CLOSE                                            :Por defecto, las industrias secundarias nunca cierran en FIRS.{}{}Si esta opción es activada, las industrias secundarias pueden cerrar si no se les entrega carga durante mucho tiempo.
 STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY                                   :Máxima distancia con la costa para industrias marítimas en casillas
 STR_PARAM_NAME_DEBUG                                                            :Mostrar textos de depuración
 STR_PARAM_NAME_ECONOMIES                                                        :Economía
-STR_PARAM_NAME_NEVER_CLOSE                                                      :Permitir cierre de industrias primarias
 STR_PARAM_NAME_NO_OPENINGS                                                      :Prevenir construcción de nuevas industrias
-STR_PARAM_NAME_PRIMARY_PRODUCTION_DECREASE                                      :Permitir disminución de la producción de industrias primarias
 STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            :Permitir cierre de industrias secundarias
 STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0                                         :Sin Límite
 STR_PARAM_NAME_STAT_RATING                                                      :Método de cálculo de la calificación de estaciones

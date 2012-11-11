@@ -73,7 +73,7 @@ item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
 		location_check:          THIS_ID(check_location);
 		produce_256_ticks:       THIS_ID(produce_256_ticks);
 		monthly_prod_change:     THIS_ID(monthly_update);
-		random_prod_change:      THIS_ID(check_closure);
+        random_prod_change:      return CB_RESULT_IND_PROD_NO_CHANGE;
 		build_prod_change:       randomise_primary_production_on_build;
 		extra_text_industry:     THIS_ID(extra_text);
 		extra_text_fund:         return string(STR_FUND_AVAILABLE_FROM, THIS_MIN_YEAR);

@@ -9,16 +9,12 @@ STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   
 STR_PARAM_DESC_STAT_RATING                                                      :Peringkat stasiun mempengaruhi jumlah kargo yang dipasok oleh industri ke suatu stasiun; semakin tinggi peringkat, semakin tinggi jumlah pasokan.
 STR_PARAM_DESC_DEBUG                                                            :Hanya untuk pengembang / developer
 STR_PARAM_DESC_ECONOMIES                                                        :Jika terselesaikan, FIRS akan mempunyai fitur pilihan sistem ekonomi. Kargo dan industri akan berbeda di setiap sistem ekonomi. Pembayaran kargo juga akan berbeda di setiap sistem ekonomi. {}{}{SILVER}Saat ini hanya satu sistem ekonomi tersedia :)
-STR_PARAM_DESC_NEVER_CLOSE                                                      :Secara normal, industri primer dalam FIRS tidak akan tutup.{}{}Jika diaktifkan, industri primer akan tutup ketika produsi jatuh ke level rendah (level berbeda-beda pada setiap industri). {SILVER}Membutuhkan 'izinkan pengurangan roduksi industri primer' diaktifkan.
 STR_PARAM_DESC_NO_OPENINGS                                                      :Secara normal, industri baru akan dibuat dalam permainan.{}{}Jika diaktifkan tidak ada industri dibuat dalam permainan, dan pemain tidak akan bisa membiayai atau memprospek industri.
-STR_PARAM_DESC_PRIMARY_PRODUCTION_DECREASE                                      :Secara normal, produksi kargo industri prier FIRS tidak akan berkurang.{}{}Jika diaktifkan, akan ada kemungkinan produksik turun jika tidak ada suplai yang diantarkan dalam satu bulan. Jika produksi tinggi, kemungkinan penurunan produksi menjadi lebih besar.
 STR_PARAM_DESC_SECONDARY_NEVER_CLOSE                                            :Secara normal, industri sekunder dalam FIRS tidak akan tutup.{}{}Jika diaktifkan, industri sekunder mungkin tutup jika tidak ada kargo diantarkan untuk waktu lama.
 STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY                                   :Jarak terjauh untuk industri lepas pantai dari garis pantai dalam blok area
 STR_PARAM_NAME_DEBUG                                                            :Perlihatkan teks debug
 STR_PARAM_NAME_ECONOMIES                                                        :Sistem Ekonomi
-STR_PARAM_NAME_NEVER_CLOSE                                                      :Izinkan industry primer tutup
 STR_PARAM_NAME_NO_OPENINGS                                                      :Tiadakan pembukaan industri baru
-STR_PARAM_NAME_PRIMARY_PRODUCTION_DECREASE                                      :Izinkan pengurangan produksi industri primer
 STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            :Izinkan pabrik sekunder tutup
 STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0                                         :Tak Terbatas
 STR_PARAM_NAME_STAT_RATING                                                      :Alogritma peringkat stasiun

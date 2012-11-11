@@ -7,25 +7,13 @@
 
 /*
  * This template is for use with primary industries which support supply usage
- * - Production will increase in 1/4 when supplies are delivered
- * - Production will decrease in 1/32 when no supplies are delivered and prod. level <= 32
- * - Production will decrease in 1/4 when no supplies are delivered and prod. level > 32
  *
  * Used permanent storage: var_num_supplies_delivered
  *
  * Usage in the industry's pnml:
- * random callback:  THIS_ID(check_closure)
  * monthly callback: THIS_ID(check_production_level)
  *
  */
-
-/* =================================== */
-/* Closure check for random callback   */
-/* =================================== */
-switch(FEAT_INDUSTRIES, SELF, THIS_ID(check_closure), (production_level <= 4) * (allow_close_primary > 0)) {
-	1: return CB_RESULT_IND_PROD_CLOSE;
-	return CB_RESULT_IND_PROD_NO_CHANGE;
-}
 
 /* =================================== */
 /* Production change evaluated monthly */

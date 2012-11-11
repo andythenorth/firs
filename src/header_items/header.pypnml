@@ -18,21 +18,23 @@ grf {
 			};
 		}
 	}
-	param 1 {
-		allow_primary_production_decrease {
-			name: string(STR_PARAM_NAME_PRIMARY_PRODUCTION_DECREASE);
-			desc: string(STR_PARAM_DESC_PRIMARY_PRODUCTION_DECREASE);
+    // deprecated param 1
+	/* param 1 {
+		allow_primary_production_change {
+			name: string(STR_PARAM_NAME_PRIMARY_PRODUCTION_CHANGE);
+			desc: string(STR_PARAM_DESC_PRIMARY_PRODUCTION_CHANGE);
 			type: bool;
 			bit: 0;
 		}
-	}
+	} */
 	param 2 {
-		allow_close_primary {
+		// primary closure deprecated
+		/*allow_close_primary {
 			name: string(STR_PARAM_NAME_NEVER_CLOSE);
 			desc: string(STR_PARAM_DESC_NEVER_CLOSE);
 			type: bool;
 			bit: 0;
-		}
+		}*/
 		allow_close_secondary {
 			name: string(STR_PARAM_NAME_SECONDARY_NEVER_CLOSE);
 			desc: string(STR_PARAM_DESC_SECONDARY_NEVER_CLOSE);

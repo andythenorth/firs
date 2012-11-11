@@ -11,16 +11,12 @@ STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   
 STR_PARAM_DESC_STAT_RATING                                                      :Die Bahnhofsbewertung beeinflußt die Anzahl zum Bahnhof gelieferter Güter; je höher die Bewertung ist, desto mehr Güter werden zum Bahnhof geliefert.
 STR_PARAM_DESC_DEBUG                                                            :Für Entwickler
 STR_PARAM_DESC_ECONOMIES                                                        :Sobald fertiggestellt, wird FIRS eine Anzahl verschiedener Wirtschaft(sschwerpunkte) anbieten. Diese unterscheiden sich in Frachtarten, deren Profitabilität und den verfügbaren Industrien.{}{}{SILVER}Zur Zeit gibt es nur einen Wirtschaftstyp.
-STR_PARAM_DESC_NEVER_CLOSE                                                      :Standardmäßig schließen Primärindustrien in FIRS nie.{}Wenn das Schließen von Primärindustrien erlaubt ist, so schließt eine Industrie, wenn ihre Produktion sehr niedrig ist (die genaue Menge hängt von der Industrie ab). {SILVER}Voraussetzung: 'Primärindustrien dürfen Produktion vermindern' ist aktiviert.
 STR_PARAM_DESC_NO_OPENINGS                                                      :Standardmäßig werden neue Industrien im Laufe der Zeit gegründet.{}{}Wenn 'Neue Industrien öffnen' ausgeschaltet ist, werden keine neuen Industrien auftauchen und Spieler können auch keine finanzieren oder prospektieren.
-STR_PARAM_DESC_PRIMARY_PRODUCTION_DECREASE                                      :Standardmäßig reduzieren Primärindustrien in FIRS ihre Produktion nie.{}Wenn eine Reduzierung der Produktionsmenge bei Primärindustrien erlaubt ist, gibt es eine Wahrscheinlichkeit mit der eine Industrie seine Produktion senkt, wenn einen Monat lang keine Güter angeliefert wurden. Bei hohen Produktionsraten ist die Wahrscheinlichkeit größer.
 STR_PARAM_DESC_SECONDARY_NEVER_CLOSE                                            :Standardmäßig schließen Sekundärindustrien in FIRS nie.{}{}Wenn das Schließen von Sekundärindustrien erlaubt ist, so kann sie schließen, wenn über einen längeren Zeitraum keine Fracht transportiert worden ist.
 STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY                                   :Maximaler Abstrand mariner Industrien von der Küste
 STR_PARAM_NAME_DEBUG                                                            :Debug-Texte anzeigen
 STR_PARAM_NAME_ECONOMIES                                                        :Wirtschaftstyp
-STR_PARAM_NAME_NEVER_CLOSE                                                      :Primärindustrien dürfen schließen
 STR_PARAM_NAME_NO_OPENINGS                                                      :Bau von Industrien verbieten (nicht vollständig)
-STR_PARAM_NAME_PRIMARY_PRODUCTION_DECREASE                                      :Primärindustrien dürfen Produktion vermindern
 STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            :Sekundärindustrien dürfen schließen
 STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0                                         :Kein Limit
 STR_PARAM_NAME_STAT_RATING                                                      :Algorithmus für Stationsbewertung
