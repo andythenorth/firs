@@ -1,5 +1,5 @@
 # changing the order of items in econmy list breaks savegames, don't do it.
-economies = ["FIRS","BASIC","TEST_3"]
+economies = ["FIRS","BASIC"]
 
 # Definition of the IDs of the single industries
 industry_numeric_ids = dict(coal_mine = 0x00,
