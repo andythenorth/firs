@@ -3,6 +3,58 @@ FIRS Industry Replacement Set Changelog
 =======================================
 
 --------------
+0.8.x Releases
+--------------
+
+*0.8.0*
+
+*New Features*
+- Reworked supplies mechanic: deliver supplies regularly for temporary production boost
+- Construction sprites for some industries
+- Snow and fences for Biorefinery
+- Snow and fences for Glass Works
+- Snow for windmill version of Grain Mill
+- Fences for Smithy Forge
+- Snow for Recycling Depot
+- Snow and fences for Textile Mill
+- Snow, fences and smoke for Sugar Refinery
+- Snow, fences and smoke for Stockyard
+- Snow and smoke for Lumber Yard
+- Smoke and animated winding wheels for bauxite mine
+
+*Changes*
+- Adjusted various primary industry probabilities and clustering behaviours
+- Remove parameters that offered primary industry production change / closing as options
+- Removed intro date from Furniture Factory for better game balance
+- Removed intro date from Paper Mill to improve gameplay balance
+- Removed intro date from Stockyard to prevent broken chains
+- Removed intro date from Dairy to prevent broken industry chains
+- Removed intro date from Sugar Refinery to avoid breaking Sugarcane / Sugar Beet chain for early start dates
+- Removed intro date from Textile Mill to avoid breaking cargo chains
+- Fishing Harbours no longer required to locate near town - increases probability of being built
+- Use 1825 as intro date for Dredging Site for better game balance
+- Use 1830 as intro date for Oil Wells and Oil Refinery to improve game balance
+- Use 1824 as intro date Cement Plant to improve game balance 
+- [Makefile] use nml translation report script by Alberth
+
+*Fixes*
+- Recycling Depot production code was incorrect
+- Palette wrong for Quarry
+- Hotels were too cheap to build (closes #3965)
+- Removed STR_EXTRA_FERTILIZER_PLANT from all translations that still used {WEIGHT_SHORT}
+- Missing 'chemicals' in Fertiliser Plant extra text string (alberth)
+- [Makefile] Adopt NML version check to NML's new version output
+
+*Translations additions / updates*
+- Afrikaans (telanus)
+- Dutch (Alberth)
+- French (OliTTD)
+- Hungarian (Brumi)
+- Indonesian (Yoursnotmine)
+- Romanian (Stef Ionesco)
+- Swedish (Joel_A)
+
+--------------
 0.7.x Releases
 --------------
 
