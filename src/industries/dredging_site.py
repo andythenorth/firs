@@ -54,12 +54,23 @@ spriteset_platform = industry.add_spriteset(
     sprites = [(10, 10, 64, 100, -31, -65)],
     zextent= 74
 )
+spriteset_greeble = industry.add_spriteset(
+    id = 'dredging_site_spriteset_greeble',
+    sprites = [(80, 10, 64, 39, -31, -10)],
+    zextent= 39
+)
+spriteset_crane_animated = industry.add_spriteset(
+    id = 'dredging_site_spriteset_spriteset_crane_animated',
+    sprites = [(150, 10, 64, 64, -33, -35)],
+    zextent= 39
+)
+
 
 industry.add_spritelayout(
     id = 'dredging_site_spritelayout_1',
     ground_sprite = sprite_ground,
-    ground_overlay = spriteset_ground_overlay,
-    building_sprites = [spriteset_platform]
+    ground_overlay = spriteset_platform,
+    building_sprites = [spriteset_crane_animated, spriteset_greeble]
 )
 
 # dredging site has one layout only, don't bother inserting templated industry layouts etc
