@@ -10,7 +10,7 @@ STR_PARAM_DESC_STAT_RATING                                                      
 STR_PARAM_DESC_DEBUG                                                            :For developers only
 STR_PARAM_DESC_ECONOMIES                                                        :When finished, FIRS will feature a choice of economies. Cargos and industries vary in each economy. Cargo payment rates are also different in each economy. {}{}{SILVER}Currently only one economy is available :)
 STR_PARAM_DESC_NO_OPENINGS                                                      :By default, new industries will open during the game.{}{}If 'prevent opening' is turned on industries will not open during game, and players will not be able to fund or prospect for industries.
-STR_PARAM_DESC_SECONDARY_NEVER_CLOSE                                            :By default, FIRS secondary industries will never close.{}{}If secondary closing is turned on, secondary industries may close if no cargo is transported for a long time.
+STR_PARAM_DESC_SECONDARY_NEVER_CLOSE                                            :By default, FIRS secondary industries will never close.{}{}If secondary closing is turned on, secondary industries may close if no cargo is transported for a long time.  Primary industries will never close in FIRS and are not affected by this setting.
 STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY                                   :Maximum coastal distance of marine industries in tiles
 STR_PARAM_NAME_DEBUG                                                            :Show debug texts
 STR_PARAM_NAME_ECONOMIES                                                        :Economy
@@ -140,9 +140,9 @@ STR_EXTRA_TEXTILE_MILL                                                          
 
 STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ DEBUG ------------{}Production this month:{}Cargo 1: {WHITE}{COMMA}{BLACK}{}Cargo 2: {WHITE}{COMMA}{BLACK}{}Days since last delivery: {WHITE}{COMMA}{BLACK}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Maximum production reached
-STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Current production: {YELLOW}normal {}{}{BLACK}Supplies required within 3 months for a production boost (30t = 2x, 120t = 4x)
-STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Current production: {YELLOW}enhanced (2x) {}{}{BLACK}Supplies required within 3 months for a production boost (30t = 2x, 120t = 4x)
-STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}Current production: {YELLOW}gung ho (4x) {}{}{BLACK}Supplies required within 3 months for a production boost (30t = 2x, 120t = 4x)
+STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Current production: {YELLOW}normal {}{}{BLACK}To double production deliver 30t supplies within three months (or 120t for quadruple production)
+STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Current production: {YELLOW}enhanced (double) {}{}{BLACK}To keep this level, deliver 30t supplies within three months, or 120t to raise to quadruple production
+STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}Current production: {YELLOW}gung ho (quadruple) {}{}{BLACK}To keep this level, deliver 120t supplies within three months
 STR_GENERIC_NEWLINE                                                             :{}
 
 STR_FUND_MIXED_FARM                                                             :{}{BLACK}Location: {YELLOW}Cannot be funded on snow or in deserts.
