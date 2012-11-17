@@ -32,9 +32,14 @@ switch(FEAT_INDUSTRIES, SELF, THIS_ID(check_availability_param), restrict_open_d
 	return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;       // we may build
 }
 
+/* Allow always during map gen */
+switch (FEAT_INDUSTRIES, SELF, THIS_ID(check_map_gen), extra_callback_info2 == IND_CREATION_GENERATION) {
+	1: return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
+	THIS_ID(check_availability_param);
+}
 /* Allow always in the scenario editor */
 switch (FEAT_INDUSTRIES, SELF, THIS_ID(available_game_mode), game_mode == GAMEMODE_GAME) {
-	1: THIS_ID(check_availability_param);
+	1: THIS_ID(check_map_gen);
 	return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
 }
 
