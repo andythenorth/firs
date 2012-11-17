@@ -70,6 +70,7 @@ from industries import food_market
 from industries import glass_works
 from industries import grain_mill
 from industries import hotel
+from industries import iron_works
 from industries import lumber_yard
 from industries import oil_wells
 from industries import petrol_pump
@@ -98,7 +99,6 @@ from industries import fishing_harbour
 from industries import forest
 from industries import fruit_plantation
 from industries import furniture_factory
-from industries import iron_works
 from industries import junk_yard
 from industries import lime_kiln
 from industries import machine_shop
