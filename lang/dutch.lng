@@ -3,13 +3,14 @@
 
 STR_GRF_DESC                                                                    :{ORANGE}FIRS Industry Replacement Set{}{BLACK}Door andythenorth, FooBar, planetmaker, Terkhen, en Yexo, met hulp van vele anderen. {SILVER}Lees de 'readme' voor meer informatie, inclusief hoe je FIRS kunt gebruiken. {BLACK}Licentie: GPL V2.
 STR_GRF_NAME                                                                    :{TITLE}
+STR_GRF_URL                                                                     :http://dev.openttdcoop.org/projects/firs
 
 STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :Maximale afstand tot de kust in tegels voor visgebieden en baggermolens.
 STR_PARAM_DESC_STAT_RATING                                                      :Stationreputaties beïnvloeden de hoeveelheid goederen die een industrie aflvert aan het station; hoe hoger de reputatie hoe meer afgeleverd wordt.
 STR_PARAM_DESC_DEBUG                                                            :Alleen voor ontwikkelaars.
 STR_PARAM_DESC_ECONOMIES                                                        :Uiteindelijk zal FIRS een keuze aan economieën hebben. Goederen en industrieën varieren in elke economie. Betalingen voor goederen verschillen ook in elke economie.{}{}{SILVER}Op dit moment is slechts één economie :)
 STR_PARAM_DESC_NO_OPENINGS                                                      :Normaal worden er nieuwe industrieën gebouwd tijdens het spel.{}{}Als 'voorkom bouwen van nieuwe industrieën' aan staat, dan komen er geen nieuwe industrieën bij tijdens het spel, en spelers kunnen ze ook niet kopen of proberen.
-STR_PARAM_DESC_SECONDARY_NEVER_CLOSE                                            :Standaard zullen FIRS secundaire industrieën nooit sluiten.{}{}Als sluiten van secundaire industrieën is ingeschakeld kunnen secundaire industrieën sluiten als er lange tijd geen vracht is getransporteerd.
+STR_PARAM_DESC_SECONDARY_NEVER_CLOSE                                            :Standaard zullen FIRS secundaire industrieën nooit sluiten.{}{}Als sluiten van secundaire industrieën is ingeschakeld kunnen secundaire industrieën sluiten als er lange tijd geen vracht is getransporteerd. Primaire industrieën sluiten nooit in FIRS en worden niet beïnvloed
 STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY                                   :Maximale afstand tot de kust in tegels voor zee-industrieën
 STR_PARAM_NAME_DEBUG                                                            :Laat debug-informatie zien
 STR_PARAM_NAME_ECONOMIES                                                        :Economie
@@ -17,10 +18,13 @@ STR_PARAM_NAME_NO_OPENINGS                                                      
 STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            :Secundaire industrieën kunnen sluiten
 STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0                                         :Geen limiet
 STR_PARAM_NAME_STAT_RATING                                                      :Station waarderingsalgoritme
-STR_PARAM_VALUE_STAT_RATING_DEFAULT                                             :Standaard
-STR_PARAM_VALUE_STAT_RATING_REDUCED_TIME                                        :Betere reputatie - Het effect van "tijd sinds laatste goederen-laadmoment" is verminderd
-STR_PARAM_VALUE_STAT_RATING_100                                                 :Altijd 100%
+STR_PARAM_VALUE_STAT_RATING_DEFAULT                                             :Sinister (gebruikt standaard OpenTTD waardering)
+STR_PARAM_VALUE_STAT_RATING_REDUCED_TIME                                        :Aanbevolen - minder effect van "tijd sinds het laatste laadmoment"
+STR_PARAM_VALUE_STAT_RATING_100                                                 :Overdreven vriendelijk (waardering is altijd 100%)
 
+STR_PARAM_VALUE_ECONOMIES_BASIC                                                 :Basis economie
+STR_PARAM_VALUE_ECONOMIES_FIRS                                                  :FIRS economie
+STR_PARAM_VALUE_ECONOMIES_TEST_3                                                :Test economie 3
 
 STR_CARGO_NAME_ALCOHOL                                                          :Alcohol
 STR_CARGO_NAME_BAUXITE                                                          :Bauxiet
@@ -111,30 +115,34 @@ STR_EXTRA_CEMENT_PLANT                                                          
 STR_EXTRA_DAIRY                                                                 :{BLACK}Productie:{}  3t per 8 kratten geleverde productiehulpgoederen{}  5t per 8.000l geleverde melk{}{}Productie Verhoogt als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
 STR_EXTRA_ENGINEERING_SUPPLIES                                                  :{BLACK}Constructiehulpgoederen kunnen de productie verhogen.{}{YELLOW}  {COMMA} kratten geleverd deze maand
 STR_EXTRA_FARM_SUPPLIES                                                         :{BLACK}Landbouwhulpgoederen kunnen de productie verhogen.{}{YELLOW}  {COMMA} kratten geleverd deze maand
-STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Productie:{}  3t per 8t geleverde productiehulpgoederen{}  5t per 8t geleverd vis{}{}Verhoogt tot 8t per 8t als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
-STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Productie:{}  3t per 8t geleverde productiehulpgoederen{}  5t per 8t geleverd gezaagd hout{}{}Verhoogt tot 8t per 8t als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
-STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Maakt glasprodukten zoals flessen, potten, en vensterglas.{}{}{BLACK}Productie:{}  6t per 8t geleverd zand{}  2t per 8t geleverde chemicaliën{}{}Verhoogt tot 8t per 8t als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
-STR_EXTRA_GRAIN_MILL                                                            :{BLACK}Productie:{}  3t per 8t geleverde productiehulpgoederen{}  5t per 8t geleverd graan{}{}Verhoogt tot 8t per 8t als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
-STR_EXTRA_IRON_WORKS                                                            :{BLACK}Productie:{}  2t per 8t geleverd hout{}  2t per 8t geleverd ijzererts{}{}Verhoogt tot 4t per 8t als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
-STR_EXTRA_LIME_KILN                                                             :{BLACK}Productie:{}  3t per 8t geleverd grind{}  3t per 8t geleverde kolen{}{}Verhoogt tot 6t per 8t als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
-STR_EXTRA_LUMBER_YARD                                                           :{BLACK}Maakt onder andere houten palen en stijgerplanken.{}{}{BLACK}Productie:{}  2t per 8t geleverde chemicaliën{}  6t per 8t geleverd gezaagd hout{}{}Verhoogt tot 8t per 8t als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
-STR_EXTRA_MACHINE_SHOP                                                          :{BLACK}Bouwt en onderhoudt machines.{}{}8t productie voor iedere 8t geleverd.
-STR_EXTRA_MEAT_PACKER                                                           :{BLACK}Productie:{}  3t per 8t geleverde productiehulpgoederen{}  5t per 8t geleverd vee{}{}Verhoogt tot 8t per 8t als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
-STR_EXTRA_METAL_FABRICATION_PLANT                                               :{BLACK}Maakt geverfde metalen onderdelen.{}{}{BLACK}Productie:{}  2t per 8t geleverde chemicaliën{}  6t per 8t geleverd metaal{}{}Verhoogt tot 8t per 8t als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
-STR_EXTRA_METAL_FOUNDRY                                                         :{BLACK}Maakt onderdelen uit metalen platen, zoals blikken en huishoudapparatuur.{}{}{BLACK}Productie:{}  2t per 8t geleverde chemicaliën{}  6t per 8t geleverd metaal{}{}Verhoogt tot 8t per 8t als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
-STR_EXTRA_OIL_REFINERY                                                          :{BLACK}Verwerkt ruwe olie tot benzine en chemicaliën.{}{}6t productie voor iedere 8t geleverd.
-STR_EXTRA_PAPER_MILL                                                            :{BLACK}Maakt papier en karton uit houtpulp.{}{}{BLACK}Productie:{}  4t per 8t geleverd hout{}  2t per 8t geleverd klei{}  2t per 8t geleverde chemicaliën{}{}Productie verhoogt als twee of meer vrachtsoorten binnen een maand van elkaar worden geleverd.
-STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}Maakt plasticproducten zoals verpakkingen en huishoudartikelen.{}{}6t productie voor iedere 8t geleverd.
-STR_EXTRA_RECYCLING_PLANT                                                       :{BLACK}Verwerkt afval tot herbruikbare goederen.{}{}6t productie voor iedere 8t geleverd.
-STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}Produceert afval, afhankelijk van de stadsgrootte.
-STR_EXTRA_SAWMILL                                                               :{BLACK}Zaagt hout.{}{}6t productie voor iedere 8t geleverd.
-STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Maakt smeedijzeren produkten zoals hekken, roosters, gereedschappen, ploegen, scheppen, en hoefijzers.{}{}8t productie voor iedere 8t geleverd.
+STR_EXTRA_FERTILIZER_PLANT                                                      :{BLACK}Productie:{}  8 kratten per 8,000l afgeleverde chemicaliën
+STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Productie:{}  3t per 8 kratten geleverde productiehulpgoederen{}  5t per 8t geleverd vis{}{}Productie wordt verhoogd als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
+STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Productie:{}  3t per 8 kratten geleverde productiehulpgoederen{}  5t per 8t geleverd gezaagd hout{}{}Productie wordt verhoogd als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
+STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Maakt glasprodukten zoals flessen, potten, en vensterglas.{}{}{BLACK}Productie:{}  6t per 8t geleverd zand{}  2t per 8,000l geleverde chemicaliën{}{}Productie wordt verhoogd als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
+STR_EXTRA_GRAIN_MILL                                                            :{BLACK}Productie:{}  3t per 8 kratten geleverde productiehulpgoederen{}  5t per 8t geleverd graan{}{}Productie wordt verhoogd als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
+STR_EXTRA_IRON_WORKS                                                            :{BLACK}Productie:{}  2t per 8t geleverd hout{}  2t per 8t geleverd ijzererts{}{}Productie wordt verhoogd als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
+STR_EXTRA_LIME_KILN                                                             :{BLACK}Productie:{}  3t per 8t geleverd grind{}  3t per 8t geleverde kolen{}{}Productie wordt verhoogd als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
+STR_EXTRA_LUMBER_YARD                                                           :{BLACK}Maakt onder andere houten palen en stijgerplanken.{}{}{BLACK}Productie:{}  2t per 8,000l geleverde chemicaliën{}  6t per 8t geleverd gezaagd hout{}{}Productie wordt verhoogd als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
+STR_EXTRA_MACHINE_SHOP                                                          :{BLACK}Bouwt en onderhoudt machines.{}{}Productie:{} 8 kratten voor iedere 8,000l geleverde benzine{} 8 kratten voor elke 8t geleverd metaal.
+STR_EXTRA_MEAT_PACKER                                                           :{BLACK}Productie:{}  3t per 8 kratten geleverde productiehulpgoederen{}  5t per 8t geleverd vee{}{}Productie wordt verhoogd als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
+STR_EXTRA_METAL_FABRICATION_PLANT                                               :{BLACK}Maakt geverfde metalen onderdelen.{}{}{BLACK}Productie:{}  2t per 8,000l geleverde chemicaliën{}  6t per 8t geleverd metaal{}{}Productie wordt verhoogd als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
+STR_EXTRA_METAL_FOUNDRY                                                         :{BLACK}Maakt onderdelen uit metalen platen, zoals blikken en huishoudapparatuur.{}{}{BLACK}Productie:{}  2 kratten per 8,000l geleverde chemicaliën{}  6 kratten per 8t geleverd metaal{}{}Productie wordt verhoogd als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
+STR_EXTRA_OIL_REFINERY                                                          :{BLACK}Verwerkt ruwe olie tot benzine en chemicaliën.{}{}Productie:{} 6,000l voor iedere geleverde 8,000l
+STR_EXTRA_PAPER_MILL                                                            :{BLACK}Maakt papier en karton uit houtpulp.{}{}{BLACK}Productie:{}  4 kratten per 8t geleverd hout{}  2 kratten per 8t geleverde klei{}  2 kratten per 8,000l geleverde chemicaliën{}{}Productie verhoogt als twee of meer vrachtsoorten binnen een maand van elkaar worden geleverd.
+STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}Maakt plasticproducten zoals verpakkingen en huishoudartikelen.{}{}Productie:{} 6 kratten voor iedere 8 balen geleverd katoen{} 6 kratten voor iedere 8,000l geleverde chemicaliën
+STR_EXTRA_RECYCLING_PLANT                                                       :{BLACK}Verwerkt herbruikbare goederen.{}Productie:{} 6t productie voor iedere 8t geleverde herbruikbare goederen
+STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}Productie is evenredig met het aantal inwoners in the stad.
+STR_EXTRA_SAWMILL                                                               :{BLACK}Zaagt hout.{}{}Productie:{} 6t voor iedere 8t geleverd hout.
+STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Maakt smeedijzeren produkten zoals hekken, roosters, gereedschappen, ploegen, scheppen, en hoefijzers.{}{}Productie:{} 8t voor iedere 8t geleverd metaal.
 STR_EXTRA_STEELMILL                                                             :{BLACK}Productie:{}  2t per 8t geleverd ijzererts{}  2t per 8t geleverde kolen{}  4t per 8t geleverd schroot{}{}Productie verhoogt als twee of meer vrachtsoorten binnen een maand van elkaar worden geleverd.
 STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Productie:{}  3t per 8t geleverde productiehulpgoederen{}  5t per 8t geleverd suikerriet{}{}Verhoogt tot 8t per 8t als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
-STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Productie:{}  3t per 8t geleverde productiehulpgoederen{}  5t per 8t geleverd wol{}  5t per 8t geleverd katoen{}{}Productie verhoogt als productiehulpgoederen binnen een maand van andere vracht worden geleverd.
+STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Productie:{}  3 kratten per 8 kratten geleverde productiehulpgoederen{}  5 kratten per 8 balen geleverd wol{}  5t per 8t geleverd katoen{}{}Productie verhoogt als productiehulpgoederen binnen een maand van andere vracht worden geleverd.
 
 STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ DEBUG ------------{}productie deze maand:{}Goederen 1: {WHITE}{COMMA}{BLACK}{}Goederen 2: {WHITE}{COMMA}{BLACK}{}Dagen sinds laatste levering: {WHITE}{COMMA}{BLACK}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Maximale productiecapaciteit bereikt.
+STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Huidige productie: {YELLOW}normaal{}{}{BLACK}Om de productie te verdubbelen  moet er 30t hulpgoederen afgeleverd worden in drie maanden (of 120t om de productie te verviervoudigen).
+STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Huidige productie: {YELLOW}verhoogd (dubbel){}{}{BLACK}Om dit niveau te houden moet er 30t hulpgoederen afgeleverd worden in drie maanden, of 120t om de productie te verviervoudigen.
+STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}Huidige productie: {YELLOW}gepassioneerd (verviervoudigd){}{}{BLACK}Om dit niveau te houden moet er 120t hulpgoederen afgeleverd worden in drie maanden.
 STR_GENERIC_NEWLINE                                                             :{}
 
 STR_FUND_MIXED_FARM                                                             :{}{BLACK}Plaats: {YELLOW}Kan niet gebouwd worden op sneeuw, of in woestijnen.
@@ -144,6 +152,10 @@ STR_FUND_FRUIT_PLANTATION                                                       
 
 STR_FUND_AVAILABLE_FROM                                                         :{}{BLACK}Beschikbaar vanaf: {YELLOW}{COMMA}
 STR_FUND_AVAILABLE_UNTIL                                                        :{}{BLACK}Niet meer beschikbaar na: {YELLOW}{COMMA}
+
+
+STR_TOWN                                                                        :{STRING}
+STR_STATION                                                                     :{STRING} {STRING}
 
 STR_IND_ALUMINIUM_PLANT                                                         :Aluminiumfabriek
 STR_IND_ARABLE_FARM                                                             :Landbouw boerenbedrijf
