@@ -22,7 +22,7 @@ industry = Industry(id='mixed_farm',
                     input_multiplier_2='[0, 0]',
                     prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_FARM',
                     prod_cargo_types='[LVST, FICR]',
-                    layouts='[tilelayout_mixed_farm_1, tilelayout_mixed_farm_2, tilelayout_mixed_farm_3]',
+                    layouts='AUTO',
                     prob_in_game='3',
                     prob_random='24',
                     prod_multiplier='[7, 7]',
@@ -42,5 +42,145 @@ industry = Industry(id='mixed_farm',
 
 industry.economy_variations['BASIC'].disabled = True
 
-# industry uses layouts and sprites from default game, no custom layouts etc
+industry.add_tile(id='mixed_farm_tile')
 
+spriteset_ground = industry.add_spriteset(
+    id = 'mixed_farm_spriteset_ground',
+    type = 'empty'
+)
+sprite_ground_mud = industry.add_sprite(
+    sprite_number = 'GROUNDSPRITE_CLEARED'
+)
+spriteset_ground_overlay = industry.add_spriteset(
+    id = 'mixed_farm_spriteset_ground_overlay',
+    type = 'empty'
+)
+spriteset_1 = industry.add_spriteset(
+    id = 'mixed_farm_spriteset_1',
+    sprites = [(10, 10, 64, 52, -31, -21)],
+    zextent = 32
+)
+spriteset_2 = industry.add_spriteset(
+    id = 'mixed_farm_spriteset_2',
+    sprites = [(80, 10, 64, 52, -31, -21)],
+    zextent = 32
+)
+spriteset_3 = industry.add_spriteset(
+    id = 'mixed_farm_spriteset_3',
+    sprites = [(150, 10, 64, 52, -31, -21)],
+    zextent = 32
+)
+spriteset_4 = industry.add_spriteset(
+    id = 'mixed_farm_spriteset_4',
+    sprites = [(220, 10, 64, 52, -31, -21)],
+    zextent = 32
+)
+spriteset_5 = industry.add_spriteset(
+    id = 'mixed_farm_spriteset_5',
+    sprites = [(290, 10, 64, 52, -31, -21)],
+    zextent = 32
+)
+spriteset_6 = industry.add_spriteset(
+    id = 'mixed_farm_spriteset_6',
+    sprites = [(360, 10, 64, 52, -31, -21)],
+    zextent = 32
+)
+spriteset_7 = industry.add_spriteset(
+    id = 'mixed_farm_spriteset_7',
+    sprites = [(430, 10, 64, 52, -31, -21)],
+    zextent = 32
+)
+spriteset_8 = industry.add_spriteset(
+    id = 'mixed_farm_spriteset_8',
+    sprites = [(500, 10, 64, 52, -31, -21)],
+    zextent = 32
+)
+
+industry.add_spritelayout(
+    id = 'mixed_farm_spritelayout_1',
+    ground_sprite = spriteset_ground,
+    ground_overlay = spriteset_ground_overlay,
+    building_sprites = [spriteset_1]
+)
+industry.add_spritelayout(
+    id = 'mixed_farm_spritelayout_2',
+    ground_sprite = spriteset_ground,
+    ground_overlay = spriteset_ground_overlay,
+    building_sprites = [spriteset_2],
+)
+industry.add_spritelayout(
+    id = 'mixed_farm_spritelayout_3',
+    ground_sprite = sprite_ground_mud,
+    ground_overlay = spriteset_ground_overlay,
+    building_sprites = [spriteset_3],
+)
+industry.add_spritelayout(
+    id = 'mixed_farm_spritelayout_4',
+    ground_sprite = spriteset_ground,
+    ground_overlay = spriteset_ground_overlay,
+    building_sprites = [spriteset_4],
+)
+industry.add_spritelayout(
+    id = 'mixed_farm_spritelayout_5',
+    ground_sprite = spriteset_ground,
+    ground_overlay = spriteset_ground_overlay,
+    building_sprites = [spriteset_5],
+)
+industry.add_spritelayout(
+    id = 'mixed_farm_spritelayout_6',
+    ground_sprite = spriteset_ground,
+    ground_overlay = spriteset_ground_overlay,
+    building_sprites = [spriteset_6],
+)
+industry.add_spritelayout(
+    id = 'mixed_farm_spritelayout_7',
+    ground_sprite = spriteset_ground,
+    ground_overlay = spriteset_ground_overlay,
+    building_sprites = [spriteset_7],
+)
+industry.add_spritelayout(
+    id = 'mixed_farm_spritelayout_8',
+    ground_sprite = spriteset_ground,
+    ground_overlay = spriteset_ground_overlay,
+    building_sprites = [spriteset_8],
+)
+
+industry.add_industry_layout(
+    id = 'mixed_farm_industry_layout_1',
+    default_spritelayout = 'mixed_farm_spritelayout_8',
+    layout = [(0, 2, 'mixed_farm_tile', 'mixed_farm_spritelayout_8'),
+              (0, 3, 'mixed_farm_tile', 'mixed_farm_spritelayout_3'),
+              (1, 0, 'mixed_farm_tile', 'mixed_farm_spritelayout_2'),
+              (2, 0, 'mixed_farm_tile', 'mixed_farm_spritelayout_1'),
+              (2, 2, 'mixed_farm_tile', 'mixed_farm_spritelayout_5'),
+              (2, 3, 'mixed_farm_tile', 'mixed_farm_spritelayout_7'),
+              (3, 2, 'mixed_farm_tile', 'mixed_farm_spritelayout_6'),
+              (3, 3, 'mixed_farm_tile', 'mixed_farm_spritelayout_4'),
+    ]
+)
+industry.add_industry_layout(
+    id = 'mixed_farm_industry_layout_2',
+    default_spritelayout = 'mixed_farm_spritelayout_8',
+    layout = [(0, 0, 'mixed_farm_tile', 'mixed_farm_spritelayout_4'),
+              (0, 2, 'mixed_farm_tile', 'mixed_farm_spritelayout_7'),
+              (0, 3, 'mixed_farm_tile', 'mixed_farm_spritelayout_6'),
+              (1, 0, 'mixed_farm_tile', 'mixed_farm_spritelayout_5'),
+              (1, 3, 'mixed_farm_tile', 'mixed_farm_spritelayout_1'),
+              (2, 0, 'mixed_farm_tile', 'mixed_farm_spritelayout_8'),
+              (2, 1, 'mixed_farm_tile', 'mixed_farm_spritelayout_3'),
+              (2, 2, 'mixed_farm_tile', 'mixed_farm_spritelayout_2'),
+    ]
+)
+industry.add_industry_layout(
+    id = 'mixed_farm_industry_layout_3',
+    default_spritelayout = 'mixed_farm_spritelayout_8',
+    layout = [(0, 0, 'mixed_farm_tile', 'mixed_farm_spritelayout_8'),
+              (0, 1, 'mixed_farm_tile', 'mixed_farm_spritelayout_1'),
+              (0, 2, 'mixed_farm_tile', 'mixed_farm_spritelayout_5'),
+              (1, 0, 'mixed_farm_tile', 'mixed_farm_spritelayout_2'),
+              (1, 2, 'mixed_farm_tile', 'mixed_farm_spritelayout_3'),
+              (2, 0, 'mixed_farm_tile', 'mixed_farm_spritelayout_7'),
+              (3, 0, 'mixed_farm_tile', 'mixed_farm_spritelayout_4'),
+              (3, 2, 'mixed_farm_tile', 'mixed_farm_spritelayout_6'),
+    ]
+)

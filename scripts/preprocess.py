@@ -69,9 +69,11 @@ from industries import dredging_site
 from industries import food_market
 from industries import glass_works
 from industries import grain_mill
+from industries import hardware_store
 from industries import hotel
 from industries import iron_works
 from industries import lumber_yard
+from industries import mixed_farm
 from industries import oil_wells
 from industries import petrol_pump
 from industries import plastics_plant
@@ -82,7 +84,6 @@ from industries import smithy_forge
 from industries import stockyard
 from industries import sugar_refinery
 from industries import textile_mill
-from industries import hardware_store
 
 # industries with only partial conversion to python templating, mostly still cpp
 from industries import aluminium_plant
@@ -90,21 +91,22 @@ from industries import arable_farm
 from industries import brick_works
 from industries import builders_yard
 from industries import cement_plant
-from industries import clay_pit
 from industries import dairy
 from industries import dairy_farm
 from industries import fertiliser_plant
-from industries import fishing_grounds
-from industries import fishing_harbour
-from industries import forest
-from industries import fruit_plantation
 from industries import furniture_factory
 from industries import junk_yard
 from industries import lime_kiln
 from industries import machine_shop
 from industries import metal_fabrication_plant
 from industries import metal_workshop
-from industries import mixed_farm
+
+# industries which will be hard to convert
+from industries import clay_pit
+from industries import fishing_grounds
+from industries import fishing_harbour
+from industries import forest
+from industries import fruit_plantation
 from industries import quarry
 
 # industries reusing default industry graphics (and possibly default layouts)
