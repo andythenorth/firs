@@ -22,7 +22,7 @@ industry = Industry(id='builders_yard',
                     input_multiplier_2='[0, 0]',
                     prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL',
                     prod_cargo_types='[]',
-                    layouts='[tilelayout_builders_yard_1, tilelayout_builders_yard_2]',
+                    layouts='AUTO',
                     prob_in_game='12',
                     prob_random='18',
                     prod_multiplier='[0, 0]',
@@ -38,3 +38,52 @@ industry = Industry(id='builders_yard',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_IND_BUILDERS_YARD))',
                     fund_cost_multiplier='8',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS')
+
+
+industry.add_tile(id='builders_yard_tile')
+
+sprite_ground = industry.add_sprite(
+    sprite_number = 'GROUNDTILE_MUD_TRACKS'
+)
+spriteset_ground_overlay = industry.add_spriteset(
+    id = 'builders_yard_spriteset_ground_overlay',
+    type = 'empty'
+)
+spriteset_1 = industry.add_spriteset(
+    id = 'builders_yard_spriteset_1',
+    sprites = [(10, 10, 64, 51, -31, -13)],
+    zextent = 16
+)
+spriteset_2 = industry.add_spriteset(
+    id = 'builders_yard_spriteset_2',
+    sprites = [(80, 10, 64, 51, -31, -13)],
+    zextent = 16
+)
+
+industry.add_spritelayout(
+    id = 'builders_yard_spritelayout_1',
+    ground_sprite = sprite_ground,
+    ground_overlay = spriteset_ground_overlay,
+    building_sprites = [spriteset_1]
+)
+industry.add_spritelayout(
+    id = 'builders_yard_spritelayout_2',
+    ground_sprite = sprite_ground,
+    ground_overlay = spriteset_ground_overlay,
+    building_sprites = [spriteset_2],
+)
+
+industry.add_industry_layout(
+    id = 'builders_yard_industry_layout_1',
+    default_spritelayout = 'builders_yard_spritelayout_1',
+    layout = [(0, 0, 'builders_yard_tile', 'builders_yard_spritelayout_1'),
+              (0, 1, 'builders_yard_tile', 'builders_yard_spritelayout_2'),
+    ]
+)
+industry.add_industry_layout(
+    id = 'builders_yard_industry_layout_2',
+    default_spritelayout = 'builders_yard_spritelayout_1',
+    layout = [(0, 0, 'builders_yard_tile', 'builders_yard_spritelayout_1'),
+              (1, 0, 'builders_yard_tile', 'builders_yard_spritelayout_2'),
+    ]
+)
