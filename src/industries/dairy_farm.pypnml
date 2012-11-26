@@ -7,91 +7,13 @@
 
 #define THIS_ID(...) ${industry.id}_ ## __VA_ARGS__
 
-#define THIS_STR_EXTRA_SUPPLIES        STR_EXTRA_FARM_SUPPLIES
+${industry.get_spritesets()}
 
-spriteset(THIS_ID(spriteset_barn1),      "src/graphics/industries/dairy_farm_1.png") { tmpl_building_sprite(10, 10, 52, -21) }
-spriteset(THIS_ID(spriteset_silo),       "src/graphics/industries/dairy_farm_1.png") { tmpl_building_sprite(80, 10, 52, -21) }
-spriteset(THIS_ID(spriteset_barn2),      "src/graphics/industries/dairy_farm_1.png") { tmpl_building_sprite(150, 10, 52, -21) }
-spriteset(THIS_ID(spriteset_house),      "src/graphics/industries/dairy_farm_1.png") { tmpl_building_sprite(220, 10, 52, -21) }
-spriteset(THIS_ID(spriteset_cows_bw),    "src/graphics/industries/dairy_farm_1.png") { tmpl_building_sprite(290, 10, 52, -21) }
-spriteset(THIS_ID(spriteset_cows_brown), "src/graphics/industries/dairy_farm_1.png") { tmpl_building_sprite(360, 10, 52, -21) }
+${industry.get_spritelayouts()}
 
-GROUND_AWARE_SPRITELAYOUT(THIS_ID(spritelayout_barn1))
-	CONDITIONAL_GROUND_SPRITE_OVERLAY(2022, terrain_type != TILETYPE_SNOW)
-	UNCONDITIONAL_BUILDING_SPRITE(THIS_ID(spriteset_barn1), 24)
-SPRITELAYOUT_END
+${industry.get_industry_layouts_as_graphic_switches()}
 
-GROUND_AWARE_SPRITELAYOUT(THIS_ID(spritelayout_silo))
-	CONDITIONAL_GROUND_SPRITE_OVERLAY(2022, terrain_type != TILETYPE_SNOW)
-	UNCONDITIONAL_BUILDING_SPRITE(THIS_ID(spriteset_silo), 48)
-SPRITELAYOUT_END
-
-GROUND_AWARE_SPRITELAYOUT(THIS_ID(spritelayout_barn2))
-	CONDITIONAL_GROUND_SPRITE_OVERLAY(2022, terrain_type != TILETYPE_SNOW)
-	UNCONDITIONAL_BUILDING_SPRITE(THIS_ID(spriteset_barn2), 24)
-SPRITELAYOUT_END
-
-GROUND_AWARE_SPRITELAYOUT(THIS_ID(spritelayout_house))
-	UNCONDITIONAL_BUILDING_SPRITE(THIS_ID(spriteset_house), 24)
-SPRITELAYOUT_END
-
-GROUND_AWARE_SPRITELAYOUT(THIS_ID(spritelayout_cows_bw))
-	UNCONDITIONAL_BUILDING_SPRITE(THIS_ID(spriteset_cows_bw), 8)
-SPRITELAYOUT_END
-
-GROUND_AWARE_SPRITELAYOUT(THIS_ID(spritelayout_cows_brown))
-	UNCONDITIONAL_BUILDING_SPRITE(THIS_ID(spriteset_cows_brown), 8)
-SPRITELAYOUT_END
-
-GROUND_AWARE_SPRITELAYOUT(THIS_ID(spritelayout_cows_bw_dirt))
-	CONDITIONAL_GROUND_SPRITE_OVERLAY(2022, terrain_type != TILETYPE_SNOW)
-	UNCONDITIONAL_BUILDING_SPRITE(THIS_ID(spriteset_cows_bw), 8)
-SPRITELAYOUT_END
-
-GROUND_AWARE_SPRITELAYOUT(THIS_ID(spritelayout_cows_brown_dirt))
-	CONDITIONAL_GROUND_SPRITE_OVERLAY(2022, terrain_type != TILETYPE_SNOW)
-	UNCONDITIONAL_BUILDING_SPRITE(THIS_ID(spriteset_cows_brown), 8)
-SPRITELAYOUT_END
-
-switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_1), relative_pos) {
-	relative_coord(3, 0): THIS_ID(spritelayout_barn1);
-	relative_coord(2, 0): THIS_ID(spritelayout_silo);
-	relative_coord(3, 2): THIS_ID(spritelayout_barn2);
-	relative_coord(0, 2): THIS_ID(spritelayout_house);
-	relative_coord(0, 1): THIS_ID(spritelayout_cows_bw);
-	relative_coord(0, 0): THIS_ID(spritelayout_cows_brown);
-	relative_coord(2, 1): THIS_ID(spritelayout_cows_bw_dirt);
-	THIS_ID(spritelayout_cows_brown_dirt);
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_2), relative_pos) {
-	relative_coord(0, 2): THIS_ID(spritelayout_barn1);
-	relative_coord(1, 2): THIS_ID(spritelayout_silo);
-	relative_coord(1, 1): THIS_ID(spritelayout_barn2);
-	relative_coord(2, 2): THIS_ID(spritelayout_house);
-	relative_coord(2, 0): THIS_ID(spritelayout_cows_bw);
-	relative_coord(2, 1): THIS_ID(spritelayout_cows_brown);
-	relative_coord(0, 1): THIS_ID(spritelayout_cows_bw_dirt);
-	THIS_ID(spritelayout_cows_brown_dirt);
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_3), relative_pos) {
-	relative_coord(0, 1): THIS_ID(spritelayout_barn1);
-	relative_coord(2, 0): THIS_ID(spritelayout_silo);
-	relative_coord(1, 0): THIS_ID(spritelayout_barn2);
-	relative_coord(0, 3): THIS_ID(spritelayout_house);
-	relative_coord(1, 3): THIS_ID(spritelayout_cows_bw);
-	relative_coord(2, 3): THIS_ID(spritelayout_cows_brown);
-	relative_coord(2, 1): THIS_ID(spritelayout_cows_bw_dirt);
-	THIS_ID(spritelayout_cows_brown_dirt);
-}
-
-switch(FEAT_INDUSTRYTILES, PARENT, THIS_ID(tile_spritelayout), layout_num) {
-	1: THIS_ID(layout_1);
-	2: THIS_ID(layout_2);
-	3: THIS_ID(layout_3);
-	THIS_ID(spritelayout_barn1);
-}
+${industry.get_fence_switches()}
 
 /* *************************************************
  * Definition of the industry tile and its callbacks
@@ -99,14 +21,14 @@ switch(FEAT_INDUSTRYTILES, PARENT, THIS_ID(tile_spritelayout), layout_num) {
 
 /* Allow players to build it also on snow and in the desert */
 TILE_DISALLOW_NEARBY_CLASS(tile_nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
-TILE_DISALLOW_STEEP_SLOPE (tile_slope_check, string(STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE), THIS_ID(tile_nearby_industry))
-TILE_CHECK_HEIGHT         (tile_height_check, 0, snowline_height, THIS_ID(tile_slope_check), return string(STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE))
-TILE_DISALLOW_TERRAIN     (tile_desert_check, TILETYPE_DESERT, string(STR_ERR_LOCATION_NOT_IN_DESERT), THIS_ID(tile_height_check))
-TILE_ALLOW_PLAYER         (tile_player_check, THIS_ID(tile_desert_check))
-TILE_CHECK_WATER          (tile_location_check, string(STR_ERR_LOCATION_NOT_ON_WATER), THIS_ID(tile_player_check))
+TILE_DISALLOW_STEEP_SLOPE (tile_slope_check, string(STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE), ${industry.id}_tile_nearby_industry)
+TILE_CHECK_HEIGHT         (tile_height_check, 0, snowline_height, ${industry.id}_tile_slope_check, return string(STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE))
+TILE_DISALLOW_TERRAIN     (tile_desert_check, TILETYPE_DESERT, string(STR_ERR_LOCATION_NOT_IN_DESERT), ${industry.id}_tile_height_check)
+TILE_ALLOW_PLAYER         (tile_player_check, ${industry.id}_tile_desert_check)
+TILE_CHECK_WATER          (tile_location_check, string(STR_ERR_LOCATION_NOT_ON_WATER), ${industry.id}_tile_player_check)
 
 /* Tile which is built upon foundations and with autoslope */
-item(FEAT_INDUSTRYTILES, THIS_ID(tile_house), TILE_DAIRYFARM_1) {
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile, TILE_DAIRYFARM_1) {
 	property {
 		substitute:       0;
 		accepted_cargos:  [[FMSP, 8]];
@@ -114,8 +36,8 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_house), TILE_DAIRYFARM_1) {
 	}
 
 	graphics {
-		tile_check:   THIS_ID(tile_location_check);
-		THIS_ID(tile_spritelayout);
+		tile_check:   ${industry.id}_tile_location_check;
+		${industry.id}_tile_fences;
 	}
 }
 
@@ -123,38 +45,7 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_house), TILE_DAIRYFARM_1) {
  * Definition of the industry layouts
  * *************************************************/
 
-tilelayout tilelayout_dairy_farm_1 {
-	0, 0: THIS_ID(tile_house);
-	0, 1: THIS_ID(tile_house);
-	0, 2: THIS_ID(tile_house);
-	2, 0: THIS_ID(tile_house);
-	2, 1: THIS_ID(tile_house);
-	3, 0: THIS_ID(tile_house);
-	3, 1: THIS_ID(tile_house);
-	3, 2: THIS_ID(tile_house);
-}
-
-tilelayout tilelayout_dairy_farm_2 {
-	0, 0: THIS_ID(tile_house);
-	0, 1: THIS_ID(tile_house);
-	0, 2: THIS_ID(tile_house);
-	1, 1: THIS_ID(tile_house);
-	1, 2: THIS_ID(tile_house);
-	2, 0: THIS_ID(tile_house);
-	2, 1: THIS_ID(tile_house);
-	2, 2: THIS_ID(tile_house);
-}
-
-tilelayout tilelayout_dairy_farm_3 {
-	0, 1: THIS_ID(tile_house);
-	0, 3: THIS_ID(tile_house);
-	1, 0: THIS_ID(tile_house);
-	1, 1: THIS_ID(tile_house);
-	1, 3: THIS_ID(tile_house);
-	2, 0: THIS_ID(tile_house);
-	2, 1: THIS_ID(tile_house);
-	2, 3: THIS_ID(tile_house);
-}
+${industry.get_industry_layouts_as_tilelayouts()}
 
 /* *************************************************
  * Definition of the industry
@@ -163,11 +54,11 @@ tilelayout tilelayout_dairy_farm_3 {
 #define THIS_STR_EXTRA_SUPPLIES        STR_EXTRA_FARM_SUPPLIES
 
 CHECK_NEARBY_CLUSTER(dairy_farm, 10, 36, 1, 2, return CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
-CHECK_INCOMPATIBLE  (dairy,      16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(dairy_farm))
-CHECK_INCOMPATIBLE  (stockyard,  16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(dairy))
-CHECK_FOUNDER       (THIS_ID(stockyard))
+CHECK_INCOMPATIBLE  (dairy,      16, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_dairy_farm)
+CHECK_INCOMPATIBLE  (stockyard,  16, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_dairy)
+CHECK_FOUNDER       (${industry.id}_stockyard)
 
-SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
+SWITCH_COLOUR_SCHEME1(${industry.id}_colour)
 
 #include "../src/templates/produce_primary.pnml"
 #include "../src/templates/check_primary_production_level.pnml"
@@ -180,15 +71,15 @@ ${industry.get_industry_properties()}
 
 item(FEAT_INDUSTRIES, dairy_farm, ${industry.get_numeric_id()}) {
 	graphics {
-		produce_cargo_arrival:   THIS_ID(produce);
-		construction_probability:THIS_ID(check_availability);
-		location_check:          THIS_ID(check_location);
-		produce_256_ticks:       THIS_ID(produce_256_ticks);
-		monthly_prod_change:     THIS_ID(monthly_update);
+		produce_cargo_arrival:   ${industry.id}_produce;
+		construction_probability:${industry.id}_check_availability;
+		location_check:          ${industry.id}_check_location;
+		produce_256_ticks:       ${industry.id}_produce_256_ticks;
+		monthly_prod_change:     ${industry.id}_monthly_update;
         random_prod_change:      return CB_RESULT_IND_PROD_NO_CHANGE;
 		build_prod_change:       randomise_primary_production_on_build;
-		extra_text_industry:     THIS_ID(extra_text);
-		colour:                  THIS_ID(colour);
+		extra_text_industry:     ${industry.id}_extra_text;
+		colour:                  ${industry.id}_colour;
 	}
 }
 #include "../src/templates/undefs.pnml"
