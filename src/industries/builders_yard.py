@@ -38,6 +38,3 @@ industry = Industry(id='builders_yard',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_IND_BUILDERS_YARD))',
                     fund_cost_multiplier='8',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS')
-
-# industry uses layouts and sprites from default game, no custom layouts etc
-
