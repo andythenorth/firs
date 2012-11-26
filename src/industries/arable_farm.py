@@ -22,7 +22,7 @@ industry = Industry(id='arable_farm',
                     input_multiplier_2='[0, 0]',
                     prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_FARM',
                     prod_cargo_types='[GRAI, SGBT]',
-                    layouts='[tilelayout_arable_farm_1, tilelayout_arable_farm_2, tilelayout_arable_farm_3]',
+                    layouts='AUTO',
                     prob_in_game='4',
                     prob_random='24',
                     prod_multiplier='[7, 7]',
@@ -42,3 +42,104 @@ industry = Industry(id='arable_farm',
 
 # industry uses layouts and sprites from default game, no custom layouts etc
 
+
+industry.add_tile(id='arable_farm_tile')
+
+sprite_ground = industry.add_sprite(
+    sprite_number = 'GROUNDTILE_MUD_TRACKS'
+)
+spriteset_ground_empty = industry.add_spriteset(
+    id = 'arable_farm_spriteset_ground',
+    type = 'empty'
+)
+spriteset_ground_overlay = industry.add_spriteset(
+    id = 'arable_farm_spriteset_ground_overlay',
+    type = 'empty'
+)
+spriteset_1 = industry.add_spriteset(
+    id = 'arable_farm_spriteset_1',
+    sprites = [(10, 10, 64, 59, -31, -28)],
+    zextent = 32
+)
+spriteset_2 = industry.add_spriteset(
+    id = 'arable_farm_spriteset_2',
+    sprites = [(80, 10, 64, 59, -31, -28)],
+    zextent = 32
+)
+spriteset_3 = industry.add_spriteset(
+    id = 'arable_farm_spriteset_3',
+    sprites = [(150, 10, 64, 59, -31, -28)],
+    zextent = 32
+)
+spriteset_4 = industry.add_spriteset(
+    id = 'arable_farm_spriteset_4',
+    sprites = [(220, 10, 64, 59, -31, -28)],
+    zextent = 32
+)
+spriteset_5 = industry.add_spriteset(
+    id = 'arable_farm_spriteset_5',
+    sprites = [(290, 10, 64, 59, -31, -28)],
+    zextent = 32
+)
+
+industry.add_spritelayout(
+    id = 'arable_farm_spritelayout_1',
+    ground_sprite = sprite_ground,
+    ground_overlay = spriteset_ground_overlay,
+    building_sprites = [spriteset_1]
+)
+industry.add_spritelayout(
+    id = 'arable_farm_spritelayout_2',
+    ground_sprite = spriteset_ground_empty,
+    ground_overlay = spriteset_ground_overlay,
+    building_sprites = [spriteset_2],
+)
+industry.add_spritelayout(
+    id = 'arable_farm_spritelayout_3',
+    ground_sprite = spriteset_ground_empty,
+    ground_overlay = spriteset_ground_overlay,
+    building_sprites = [spriteset_3],
+)
+industry.add_spritelayout(
+    id = 'arable_farm_spritelayout_4',
+    ground_sprite = sprite_ground,
+    ground_overlay = spriteset_ground_overlay,
+    building_sprites = [spriteset_4],
+)
+industry.add_spritelayout(
+    id = 'arable_farm_spritelayout_5',
+    ground_sprite = sprite_ground,
+    ground_overlay = spriteset_ground_overlay,
+    building_sprites = [spriteset_5],
+)
+
+industry.add_industry_layout(
+    id = 'arable_farm_industry_layout_1',
+    default_spritelayout = 'arable_farm_spritelayout_5',
+    layout = [(0, 1, 'arable_farm_tile', 'arable_farm_spritelayout_5'),
+              (0, 2, 'arable_farm_tile', 'arable_farm_spritelayout_3'),
+              (1, 0, 'arable_farm_tile', 'arable_farm_spritelayout_1'),
+              (1, 1, 'arable_farm_tile', 'arable_farm_spritelayout_2'),
+              (2, 1, 'arable_farm_tile', 'arable_farm_spritelayout_4'),
+    ]
+)
+industry.add_industry_layout(
+    id = 'arable_farm_industry_layout_2',
+    default_spritelayout = 'arable_farm_spritelayout_3',
+    layout = [(0, 0, 'arable_farm_tile', 'arable_farm_spritelayout_5'),
+              (0, 1, 'arable_farm_tile', 'arable_farm_spritelayout_4'),
+              (1, 0, 'arable_farm_tile', 'arable_farm_spritelayout_1'),
+              (1, 1, 'arable_farm_tile', 'arable_farm_spritelayout_2'),
+              (2, 0, 'arable_farm_tile', 'arable_farm_spritelayout_3'),
+    ]
+)
+industry.add_industry_layout(
+    id = 'arable_farm_industry_layout_3',
+    default_spritelayout = 'arable_farm_spritelayout_3',
+    layout = [(0, 0, 'arable_farm_tile', 'arable_farm_spritelayout_1'),
+              (0, 1, 'arable_farm_tile', 'arable_farm_spritelayout_2'),
+              (1, 0, 'arable_farm_tile', 'arable_farm_spritelayout_5'),
+              (2, 0, 'arable_farm_tile', 'arable_farm_spritelayout_4'),
+              (2, 1, 'arable_farm_tile', 'arable_farm_spritelayout_3'),
+    ]
+)
