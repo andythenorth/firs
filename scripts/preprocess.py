@@ -66,6 +66,7 @@ from industries import arable_farm
 from industries import bauxite_mine
 from industries import biorefinery
 from industries import brewery
+from industries import brick_works
 from industries import builders_yard
 from industries import dairy
 from industries import dairy_farm
@@ -92,7 +93,6 @@ from industries import textile_mill
 
 # industries with only partial conversion to python templating, mostly still cpp
 from industries import aluminium_plant
-from industries import brick_works
 from industries import cement_plant
 from industries import fertiliser_plant
 from industries import furniture_factory
