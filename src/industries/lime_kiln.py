@@ -23,7 +23,7 @@ industry = Industry(id='lime_kiln',
                     input_multiplier_2='[0, 0]',
                     prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL',
                     prod_cargo_types='[RFPR, FMSP]',
-                    layouts='[tilelayout_lime_kiln_1, tilelayout_lime_kiln_2, tilelayout_lime_kiln_3]',
+                    layouts='AUTO',
                     prob_in_game='6',
                     prob_random='7',
                     prod_multiplier='[0, 0]',
@@ -43,5 +43,116 @@ industry = Industry(id='lime_kiln',
 
 industry.economy_variations['BASIC'].disabled = True
 
-# industry uses layouts and sprites from default game, no custom layouts etc
+industry.add_tile(id='lime_kiln_tile')
 
+sprite_ground = industry.add_sprite(
+    sprite_number = 'GROUNDTILE_MUD_TRACKS' # ground tile same as overlay tile
+)
+sprite_ground_overlay = industry.add_sprite(
+    sprite_number = 'GROUNDTILE_MUD_TRACKS'
+)
+
+spriteset_1 = industry.add_spriteset(
+    id = 'lime_kiln_spriteset_1',
+    sprites = [(10, 10, 64, 110, -31, -70)],
+    zextent = 48
+)
+spriteset_2 = industry.add_spriteset(
+    id = 'lime_kiln_spriteset_2',
+    sprites = [(80, 10, 64, 110, -31, -70)],
+    zextent = 48
+)
+spriteset_3 = industry.add_spriteset(
+    id = 'lime_kiln_spriteset_3',
+    sprites = [(150, 10, 64, 64, -31, -31)],
+    zextent = 48
+)
+spriteset_4 = industry.add_spriteset(
+    id = 'lime_kiln_spriteset_4',
+    sprites = [(220, 10, 64, 92, -31, -60)],
+    zextent = 48
+)
+spriteset_5 = industry.add_spriteset(
+    id = 'lime_kiln_spriteset_5',
+    sprites = [(290, 10, 64, 64, -31, -31)],
+    zextent = 48
+)
+
+industry.add_spritelayout(
+    id = 'lime_kiln_spritelayout_1',
+    ground_sprite = sprite_ground,
+    ground_overlay = sprite_ground_overlay,
+    building_sprites = [spriteset_1],
+    fences = ['nw','ne','se','sw']
+)
+industry.add_spritelayout(
+    id = 'lime_kiln_spritelayout_2',
+    ground_sprite = sprite_ground,
+    ground_overlay = sprite_ground_overlay,
+    building_sprites = [spriteset_2],
+    fences = ['nw','ne','se','sw']
+)
+industry.add_spritelayout(
+    id = 'lime_kiln_spritelayout_3',
+    ground_sprite = sprite_ground,
+    ground_overlay = sprite_ground_overlay,
+    building_sprites = [spriteset_3],
+    fences = ['nw','ne','se','sw']
+)
+industry.add_spritelayout(
+    id = 'lime_kiln_spritelayout_4',
+    ground_sprite = sprite_ground,
+    ground_overlay = sprite_ground_overlay,
+    building_sprites = [spriteset_4],
+    fences = ['nw','ne','se','sw']
+)
+industry.add_spritelayout(
+    id = 'lime_kiln_spritelayout_5',
+    ground_sprite = sprite_ground,
+    ground_overlay = sprite_ground_overlay,
+    building_sprites = [spriteset_5],
+    fences = ['nw','ne','se','sw']
+)
+industry.add_spritelayout(
+    id = 'lime_kiln_spritelayout_6',
+    ground_sprite = sprite_ground,
+    ground_overlay = sprite_ground_overlay,
+    building_sprites = [],
+    fences = ['nw','ne','se','sw']
+)
+
+industry.add_industry_layout(
+    id = 'lime_kiln_industry_layout_1',
+    default_spritelayout = 'lime_kiln_spritelayout_6',
+    layout = [(0, 0, 'lime_kiln_tile', 'lime_kiln_spritelayout_2'),
+              (0, 1, 'lime_kiln_tile', 'lime_kiln_spritelayout_1'),
+              (0, 2, 'lime_kiln_tile', 'lime_kiln_spritelayout_6'),
+              (1, 0, 'lime_kiln_tile', 'lime_kiln_spritelayout_4'),
+              (1, 1, 'lime_kiln_tile', 'lime_kiln_spritelayout_5'),
+              (1, 2, 'lime_kiln_tile', 'lime_kiln_spritelayout_3'),
+    ]
+)
+industry.add_industry_layout(
+    id = 'lime_kiln_industry_layout_2',
+    default_spritelayout = 'lime_kiln_spritelayout_6',
+    layout = [(0, 0, 'lime_kiln_tile', 'lime_kiln_spritelayout_2'),
+              (0, 1, 'lime_kiln_tile', 'lime_kiln_spritelayout_1'),
+              (1, 0, 'lime_kiln_tile', 'lime_kiln_spritelayout_4'),
+              (1, 1, 'lime_kiln_tile', 'lime_kiln_spritelayout_5'),
+              (2, 0, 'lime_kiln_tile', 'lime_kiln_spritelayout_6'),
+              (2, 1, 'lime_kiln_tile', 'lime_kiln_spritelayout_3'),
+    ]
+)
+industry.add_industry_layout(
+    id = 'lime_kiln_industry_layout_3',
+    default_spritelayout = 'lime_kiln_spritelayout_6',
+    layout = [(0, 0, 'lime_kiln_tile', 'lime_kiln_spritelayout_2'),
+              (0, 1, 'lime_kiln_tile', 'lime_kiln_spritelayout_1'),
+              (0, 2, 'lime_kiln_tile', 'lime_kiln_spritelayout_6'),
+              (0, 3, 'lime_kiln_tile', 'lime_kiln_spritelayout_6'),
+              (1, 0, 'lime_kiln_tile', 'lime_kiln_spritelayout_4'),
+              (1, 1, 'lime_kiln_tile', 'lime_kiln_spritelayout_5'),
+              (1, 2, 'lime_kiln_tile', 'lime_kiln_spritelayout_3'),
+              (1, 3, 'lime_kiln_tile', 'lime_kiln_spritelayout_6'),
+    ]
+)

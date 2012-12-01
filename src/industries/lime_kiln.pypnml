@@ -9,90 +9,23 @@
 
 #define THIS_ID(...) ${industry.id}_ ## __VA_ARGS__
 
-spriteset(THIS_ID(spriteset_ground)) {
-	tmpl_building_sprite_filename(360, 10, 64, -33, "src/graphics/industries/lime_kiln_1.png")
-	tmpl_building_sprite_filename(360, 10, 64, -33, "src/graphics/industries/lime_kiln_1_snow.png")
-}
+${industry.get_spritesets()}
 
-spriteset(THIS_ID(spriteset_1)) {
-	tmpl_building_sprite_filename(10, 10, 110, -70, "src/graphics/industries/lime_kiln_1.png")
-	tmpl_building_sprite_filename(10, 10, 110, -70, "src/graphics/industries/lime_kiln_1_snow.png")
-}
+${industry.get_spritelayouts()}
 
-spriteset(THIS_ID(spriteset_2)) {
-	tmpl_building_sprite_filename(80, 10, 110, -70, "src/graphics/industries/lime_kiln_1.png")
-	tmpl_building_sprite_filename(80, 10, 110, -70, "src/graphics/industries/lime_kiln_1_snow.png")
-}
+${industry.get_industry_layouts_as_graphic_switches()}
 
-spriteset(THIS_ID(spriteset_3)) {
-	tmpl_building_sprite_filename(150, 10, 64, -31, "src/graphics/industries/lime_kiln_1.png")
-	tmpl_building_sprite_filename(150, 10, 64, -31, "src/graphics/industries/lime_kiln_1_snow.png")
-}
-
-spriteset(THIS_ID(spriteset_4)) {
-	tmpl_building_sprite_filename(220, 10, 92, -60, "src/graphics/industries/lime_kiln_1.png")
-	tmpl_building_sprite_filename(220, 10, 92, -60, "src/graphics/industries/lime_kiln_1_snow.png")
-}
-
-spriteset(THIS_ID(spriteset_5)) {
-	tmpl_building_sprite_filename(290, 10, 64, -31, "src/graphics/industries/lime_kiln_1.png")
-	tmpl_building_sprite_filename(290, 10, 64, -31, "src/graphics/industries/lime_kiln_1_snow.png")
-}
-
-SPRITELAYOUT_FENCES_NORMAL_SNOW(THIS_ID(spritelayout_1), 2022, THIS_ID(spriteset_ground), THIS_ID(spriteset_1), 48)
-
-SPRITELAYOUT_FENCES_NORMAL_SNOW(THIS_ID(spritelayout_2), 2022, THIS_ID(spriteset_ground), THIS_ID(spriteset_2), 48)
-
-SPRITELAYOUT_FENCES_NORMAL_SNOW(THIS_ID(spritelayout_3), 2022, THIS_ID(spriteset_ground), THIS_ID(spriteset_3), 48)
-
-SPRITELAYOUT_FENCES_NORMAL_SNOW(THIS_ID(spritelayout_4), 2022, THIS_ID(spriteset_ground), THIS_ID(spriteset_4), 48)
-
-SPRITELAYOUT_FENCES_NORMAL_SNOW(THIS_ID(spritelayout_5), 2022, THIS_ID(spriteset_ground), THIS_ID(spriteset_5), 48)
-
-spritelayout THIS_ID(spritelayout_6) {
-	ground {
-		sprite: 2022;
-	}
-
-	childsprite {
-		sprite: THIS_ID(spriteset_ground);
-		recolour_mode: RECOLOUR_REMAP;
-		palette: PALETTE_USE_DEFAULT;
-		hide_sprite: terrain_type != TILETYPE_SNOW;
-		always_draw: 1;
-	}
-	FENCE_NE
-	FENCE_NW
-	FENCE_SE
-	FENCE_SW
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_1), relative_pos) {
-	relative_coord(0, 0): THIS_ID(spritelayout_2);
-	relative_coord(0, 1): THIS_ID(spritelayout_1);
-	relative_coord(1, 0): THIS_ID(spritelayout_4);
-	relative_coord(1, 1): THIS_ID(spritelayout_5);
-	relative_coord(1, 2): THIS_ID(spritelayout_3);
-	THIS_ID(spritelayout_6);
-}
-
-switch(FEAT_INDUSTRYTILES, PARENT, THIS_ID(tile1_spritelayout), layout_num) {
-	THIS_ID(layout_1);
-}
-
-FENCES_EXCLUDE_BY_CLASS     ( THIS_ID(tile_fence_station),  THIS_ID(tile1_spritelayout),  TILE_CLASS_STATION)
-FENCES_EXCLUDE_SAME_INDUSTRY( THIS_ID(tile_fence_industry), THIS_ID(tile_fence_station))
-ADD_FLAT_FENCES             ( THIS_ID(tile_fences),         THIS_ID(tile_fence_industry), 1, 1, 1, 1)
+${industry.get_fence_switches()}
 
 /* *************************************************
  * Definition of the industry tile and its callbacks
  * *************************************************/
 
 TILE_DISALLOW_NEARBY_CLASS(nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
-TILE_ALLOW_PLAYER         (player_check,                                                            THIS_ID(nearby_industry))
-TILE_DISALLOW_SLOPES      (location_check,                       CB_RESULT_LOCATION_DISALLOW, THIS_ID(player_check))
+TILE_ALLOW_PLAYER         (player_check,                                                            ${industry.id}_nearby_industry)
+TILE_DISALLOW_SLOPES      (location_check,                       CB_RESULT_LOCATION_DISALLOW, ${industry.id}_player_check)
 
-item(FEAT_INDUSTRYTILES, THIS_ID(tile), TILE_LIMEKILN_1) {
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile, TILE_LIMEKILN_1) {
 	property {
 		substitute:       0;
 		accepted_cargos:  [[GRVL, 8], [COAL, 8]];
@@ -100,8 +33,8 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile), TILE_LIMEKILN_1) {
 	}
 
 	graphics {
-		tile_check:   THIS_ID(location_check);
-		THIS_ID(tile_fences);
+		tile_check:   ${industry.id}_location_check;
+		${industry.id}_tile_fences;
 	}
 }
 
@@ -109,35 +42,7 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile), TILE_LIMEKILN_1) {
  * Definition of the industry layouts
  * *************************************************/
 
-tilelayout tilelayout_lime_kiln_1 {
-	0, 0: THIS_ID(tile);
-	0, 1: THIS_ID(tile);
-	0, 2: THIS_ID(tile);
-	1, 0: THIS_ID(tile);
-	1, 1: THIS_ID(tile);
-	1, 2: THIS_ID(tile);
-}
-
-tilelayout tilelayout_lime_kiln_2 {
-	0, 0: THIS_ID(tile);
-	0, 1: THIS_ID(tile);
-	1, 0: THIS_ID(tile);
-	1, 1: THIS_ID(tile);
-	2, 0: THIS_ID(tile);
-	2, 1: THIS_ID(tile);
-}
-
-tilelayout tilelayout_lime_kiln_3 {
-	0, 0: THIS_ID(tile);
-	0, 1: THIS_ID(tile);
-	0, 2: THIS_ID(tile);
-	0, 3: THIS_ID(tile);
-	1, 0: THIS_ID(tile);
-	1, 1: THIS_ID(tile);
-	1, 2: THIS_ID(tile);
-	1, 3: THIS_ID(tile);
-}
-
+${industry.get_industry_layouts_as_tilelayouts()}
 
 /* *************************************************
  * Definition of the industry
@@ -160,11 +65,11 @@ tilelayout tilelayout_lime_kiln_3 {
 
 
 CHECK_INCOMPATIBLE(lime_kiln, 56, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
-CHECK_INCOMPATIBLE(coal_mine, 16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(lime_kiln))
-CHECK_INCOMPATIBLE(quarry,    16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(coal_mine))
-CHECK_FOUNDER     (THIS_ID(quarry))
+CHECK_INCOMPATIBLE(coal_mine, 16, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_lime_kiln)
+CHECK_INCOMPATIBLE(quarry,    16, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_coal_mine)
+CHECK_FOUNDER     (${industry.id}_quarry)
 
-SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
+SWITCH_COLOUR_SCHEME1(${industry.id}_colour)
 
 #include "../src/templates/produce_secondary.pnml"
 #include "../src/templates/check_secondary_production_level.pnml"
@@ -178,13 +83,13 @@ ${industry.get_industry_properties()}
 
 item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
 	graphics {
-		produce_cargo_arrival:   THIS_ID(produce);
-		construction_probability:THIS_ID(check_availability);
-		location_check:          THIS_ID(check_location);
-		monthly_prod_change:     THIS_ID(check_production_level);
-		random_prod_change:      THIS_ID(check_closure);
-		extra_text_industry:     THIS_ID(extra_text);
-		colour:                  THIS_ID(colour);
+		produce_cargo_arrival:   ${industry.id}_produce;
+		construction_probability:${industry.id}_check_availability;
+		location_check:          ${industry.id}_check_location;
+		monthly_prod_change:     ${industry.id}_check_production_level;
+		random_prod_change:      ${industry.id}_check_closure;
+		extra_text_industry:     ${industry.id}_extra_text;
+		colour:                  ${industry.id}_colour;
 	}
 }
 
