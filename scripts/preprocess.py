@@ -72,6 +72,7 @@ from industries import dairy
 from industries import dairy_farm
 from industries import dredging_site
 from industries import food_market
+from industries import furniture_factory
 from industries import glass_works
 from industries import grain_mill
 from industries import hardware_store
@@ -99,7 +100,6 @@ from industries import textile_mill
 from industries import aluminium_plant
 from industries import cement_plant
 from industries import fertiliser_plant
-from industries import furniture_factory
 
 # industries which will be hard to convert
 from industries import clay_pit
