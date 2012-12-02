@@ -9,187 +9,31 @@
 
 #define THIS_ID(...) ${industry.id}_ ## __VA_ARGS__
 
-spriteset(THIS_ID(spriteset_ground), "src/graphics/industries/groundtiles.png") { tmpl_ground_tile(10, 10) }
+${industry.get_spritesets()}
 
-spriteset(THIS_ID(spriteset_1), "src/graphics/industries/junk_yard_1.png") { tmpl_building_sprite(10, 10, 55, -24) }
-spriteset(THIS_ID(spriteset_2), "src/graphics/industries/junk_yard_1.png") { tmpl_building_sprite(80, 10, 55, -24) }
-spriteset(THIS_ID(spriteset_3), "src/graphics/industries/junk_yard_1.png") { tmpl_building_sprite(150, 10, 55, -24) }
-spriteset(THIS_ID(spriteset_4), "src/graphics/industries/junk_yard_1.png") { tmpl_building_sprite(220, 10, 55, -24) }
-spriteset(THIS_ID(spriteset_5), "src/graphics/industries/junk_yard_1.png") { tmpl_building_sprite(290, 10, 55, -24) }
-spriteset(THIS_ID(spriteset_6), "src/graphics/industries/junk_yard_1.png") { tmpl_building_sprite(360, 10, 55, -24) }
-spriteset(THIS_ID(spriteset_7), "src/graphics/industries/junk_yard_1.png") { tmpl_building_sprite(430, 10, 55, -24) }
-spriteset(THIS_ID(spriteset_8), "src/graphics/industries/junk_yard_1.png") { tmpl_building_sprite(500, 10, 55, -24) }
-spriteset(THIS_ID(spriteset_9), "src/graphics/industries/junk_yard_1.png") { tmpl_building_sprite(570, 10, 55, -24) }
+${industry.get_spritelayouts()}
 
-spritelayout THIS_ID(spritelayout_1) {
-	ground {
-		sprite: 2022;
-	}
-	building {
-		sprite: THIS_ID(spriteset_1);
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 32;
-	}
-}
+${industry.get_industry_layouts_as_graphic_switches()}
 
-spritelayout THIS_ID(spritelayout_2) {
-	ground {
-		sprite: 2022;
-	}
-	building {
-		sprite: THIS_ID(spriteset_2);
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 32;
-	}
-}
-
-spritelayout THIS_ID(spritelayout_3) {
-	ground {
-		sprite: 2022;
-	}
-	building {
-		sprite: THIS_ID(spriteset_3);
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 32;
-	}
-}
-
-spritelayout THIS_ID(spritelayout_4) {
-	ground {
-		sprite: 2022;
-	}
-	building {
-		sprite: THIS_ID(spriteset_4);
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 32;
-	}
-}
-
-spritelayout THIS_ID(spritelayout_5) {
-	ground {
-		sprite: 2022;
-	}
-	building {
-		sprite: THIS_ID(spriteset_5);
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 32;
-	}
-}
-
-spritelayout THIS_ID(spritelayout_6) {
-	ground {
-		sprite: 2022;
-	}
-	building {
-		sprite: THIS_ID(spriteset_6);
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 32;
-	}
-}
-
-spritelayout THIS_ID(spritelayout_7) {
-	ground {
-		sprite: 2022;
-	}
-	building {
-		sprite: THIS_ID(spriteset_7);
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 32;
-	}
-}
-
-spritelayout THIS_ID(spritelayout_8) {
-	ground {
-		sprite: 2022;
-	}
-	building {
-		sprite: THIS_ID(spriteset_8);
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 32;
-	}
-}
-
-spritelayout THIS_ID(spritelayout_9) {
-	ground {
-		sprite: 2022;
-	}
-	building {
-		sprite: THIS_ID(spriteset_9);
-		recolour_mode: RECOLOUR_REMAP;
-		palette: 0;
-		zextent: 32;
-	}
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_1), relative_pos) {
-	relative_coord(0, 2): THIS_ID(spritelayout_2);
-	relative_coord(1, 1): THIS_ID(spritelayout_2);
-	relative_coord(2, 1): THIS_ID(spritelayout_1);
-	relative_coord(2, 2): THIS_ID(spritelayout_8);
-	relative_coord(3, 1): THIS_ID(spritelayout_4);
-	relative_coord(3, 2): THIS_ID(spritelayout_7);
-	relative_coord(4, 0): THIS_ID(spritelayout_5);
-	relative_coord(4, 1): THIS_ID(spritelayout_3);
-	relative_coord(4, 2): THIS_ID(spritelayout_6);
-	THIS_ID(spritelayout_9);
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_2), relative_pos) {
-	relative_coord(0, 1): THIS_ID(spritelayout_7);
-	relative_coord(1, 1): THIS_ID(spritelayout_1);
-	relative_coord(1, 2): THIS_ID(spritelayout_8);
-	relative_coord(2, 0): THIS_ID(spritelayout_5);
-	relative_coord(2, 1): THIS_ID(spritelayout_3);
-	relative_coord(2, 2): THIS_ID(spritelayout_6);
-	THIS_ID(spritelayout_9);
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_3), relative_pos) {
-	relative_coord(0, 3): THIS_ID(spritelayout_2);
-	relative_coord(1, 1): THIS_ID(spritelayout_2);
-	relative_coord(1, 3): THIS_ID(spritelayout_9);
-	relative_coord(2, 1): THIS_ID(spritelayout_1);
-	relative_coord(2, 3): THIS_ID(spritelayout_8);
-	relative_coord(3, 1): THIS_ID(spritelayout_4);
-	relative_coord(3, 3): THIS_ID(spritelayout_7);
-	relative_coord(4, 0): THIS_ID(spritelayout_5);
-	relative_coord(4, 1): THIS_ID(spritelayout_3);
-	relative_coord(4, 3): THIS_ID(spritelayout_6);
-	THIS_ID(spritelayout_9);
-}
-
-switch(FEAT_INDUSTRYTILES, PARENT, THIS_ID(tile_spritelayout), layout_num) {
-	1: THIS_ID(layout_1);
-	2: THIS_ID(layout_2);
-	3: THIS_ID(layout_3);
-	THIS_ID(spritelayout_1);
-}
+${industry.get_fence_switches()}
 
 /* *************************************************
  * Definition of the industry tile and its callbacks
  * *************************************************/
 
 TILE_DISALLOW_NEARBY_CLASS(tile_nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
-TILE_DISALLOW_STEEP_SLOPE (tile_slope_check,                       CB_RESULT_LOCATION_DISALLOW, THIS_ID(tile_nearby_industry))
-TILE_ALLOW_PLAYER         (tile_location_check,                                                            THIS_ID(tile_slope_check))
+TILE_DISALLOW_STEEP_SLOPE (tile_slope_check,                       CB_RESULT_LOCATION_DISALLOW, ${industry.id}_tile_nearby_industry)
+TILE_ALLOW_PLAYER         (tile_location_check,                                                            ${industry.id}_tile_slope_check)
 
-item(FEAT_INDUSTRYTILES, THIS_ID(tile), TILE_JUNKYARD_1) {
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile, TILE_JUNKYARD_1) {
 	property {
 		substitute:       0;
 		accepted_cargos:  [[ENSP, 8]];
 		land_shape_flags: 0;
 	}
 	graphics {
-		tile_check:   THIS_ID(tile_location_check);
-		THIS_ID(tile_spritelayout);
+		tile_check:   ${industry.id}_tile_location_check;
+		${industry.id}_tile_fences;
 	}
 }
 
@@ -197,40 +41,7 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile), TILE_JUNKYARD_1) {
  * Definition of the industry layouts
  * *************************************************/
 
-tilelayout tilelayout_junkyard_1 {
-	0, 2: THIS_ID(tile);
-	1, 1: THIS_ID(tile);
-	1, 2: THIS_ID(tile);
-	2, 1: THIS_ID(tile);
-	2, 2: THIS_ID(tile);
-	3, 1: THIS_ID(tile);
-	3, 2: THIS_ID(tile);
-	4, 0: THIS_ID(tile);
-	4, 1: THIS_ID(tile);
-	4, 2: THIS_ID(tile);
-}
-
-tilelayout tilelayout_junkyard_2 {
-	0, 1: THIS_ID(tile);
-	1, 1: THIS_ID(tile);
-	1, 2: THIS_ID(tile);
-	2, 0: THIS_ID(tile);
-	2, 1: THIS_ID(tile);
-	2, 2: THIS_ID(tile);
-}
-
-tilelayout tilelayout_junkyard_3 {
-	0, 3: THIS_ID(tile);
-	1, 1: THIS_ID(tile);
-	1, 3: THIS_ID(tile);
-	2, 1: THIS_ID(tile);
-	2, 3: THIS_ID(tile);
-	3, 1: THIS_ID(tile);
-	3, 3: THIS_ID(tile);
-	4, 0: THIS_ID(tile);
-	4, 1: THIS_ID(tile);
-	4, 3: THIS_ID(tile);
-}
+${industry.get_industry_layouts_as_tilelayouts()}
 
 /* *************************************************
  * Definition of the industry
@@ -241,9 +52,9 @@ tilelayout tilelayout_junkyard_3 {
 #define THIS_MIN_YEAR 1878
 
 CHECK_TOWN_DISTANCE (town_distance, 0, 144, return CB_RESULT_LOCATION_ALLOW)
-CHECK_FOUNDER       (THIS_ID(town_distance))
+CHECK_FOUNDER       (${industry.id}_town_distance)
 
-SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
+SWITCH_COLOUR_SCHEME1(${industry.id}_colour)
 
 #include "../src/templates/produce_primary.pnml"
 #include "../src/templates/check_primary_production_level.pnml"
@@ -256,16 +67,16 @@ ${industry.get_industry_properties()}
 
 item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
 	graphics {
-		produce_cargo_arrival:   THIS_ID(produce);
-		construction_probability:THIS_ID(check_availability);
-		location_check:          THIS_ID(check_location);
-		produce_256_ticks:       THIS_ID(produce_256_ticks);
-		monthly_prod_change:     THIS_ID(monthly_update);
+		produce_cargo_arrival:   ${industry.id}_produce;
+		construction_probability:${industry.id}_check_availability;
+		location_check:          ${industry.id}_check_location;
+		produce_256_ticks:       ${industry.id}_produce_256_ticks;
+		monthly_prod_change:     ${industry.id}_monthly_update;
         random_prod_change:      return CB_RESULT_IND_PROD_NO_CHANGE;
 		build_prod_change:       randomise_primary_production_on_build;
-		extra_text_industry:     THIS_ID(extra_text);
+		extra_text_industry:     ${industry.id}_extra_text;
 		extra_text_fund:         return string(STR_FUND_AVAILABLE_FROM, THIS_MIN_YEAR);
-		colour:                  THIS_ID(colour);
+		colour:                  ${industry.id}_colour;
 	}
 }
 
