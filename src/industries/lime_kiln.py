@@ -77,12 +77,32 @@ spriteset_5 = industry.add_spriteset(
     sprites = [(290, 10, 64, 64, -31, -31)],
     zextent = 48
 )
+sprite_smoke_1 = industry.add_smoke_sprite(
+    smoke_type = 'white_smoke_big',
+    xoffset= 10,
+    yoffset= 5,
+    zoffset= 73,
+)
+sprite_smoke_2 = industry.add_smoke_sprite(
+    smoke_type = 'white_smoke_big',
+    xoffset= 10,
+    yoffset= 10,
+    zoffset= 73,
+    animation_frame_offset = 1
+)
+sprite_smoke_3 = industry.add_smoke_sprite(
+    smoke_type = 'white_smoke_big',
+    xoffset= 10,
+    yoffset= 15,
+    zoffset= 73,
+)
 
 industry.add_spritelayout(
     id = 'lime_kiln_spritelayout_1',
     ground_sprite = sprite_ground,
     ground_overlay = sprite_ground_overlay,
     building_sprites = [spriteset_1],
+    smoke_sprites = [sprite_smoke_1, sprite_smoke_2, sprite_smoke_3],
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
