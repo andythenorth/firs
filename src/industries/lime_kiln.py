@@ -16,7 +16,6 @@ When a string is expected are basically two choices: provide a string directly, 
 """
 
 industry = Industry(id='lime_kiln',
-                    graphics_change_dates=[],
                     accept_cargo_types='[GRVL, COAL]',
                     input_multiplier_1='[0, 0]',
                     input_multiplier_3='[0, 0]',
@@ -39,7 +38,8 @@ industry = Industry(id='lime_kiln',
                     name='string(STR_IND_LIME_KILN)',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_IND_LIME_KILN))',
                     fund_cost_multiplier='45',
-                    closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS')
+                    closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
+                    graphics_change_dates = [1952, 1978])
 
 industry.economy_variations['BASIC'].disabled = True
 
