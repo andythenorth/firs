@@ -80,6 +80,7 @@ from industries import iron_works
 from industries import lime_kiln
 from industries import lumber_yard
 from industries import metal_fabrication_plant
+from industries import metal_workshop
 from industries import mixed_farm
 from industries import oil_wells
 from industries import petrol_pump
@@ -99,7 +100,6 @@ from industries import fertiliser_plant
 from industries import furniture_factory
 from industries import junk_yard
 from industries import machine_shop
-from industries import metal_workshop
 
 # industries which will be hard to convert
 from industries import clay_pit

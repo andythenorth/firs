@@ -22,7 +22,7 @@ industry = Industry(id='metal_workshop',
                     input_multiplier_2='[0, 0]',
                     prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL',
                     prod_cargo_types='[GOOD, MNSP]',
-                    layouts='[tilelayout_metal_foundry_1, tilelayout_metal_foundry_2]',
+                    layouts='AUTO',
                     prob_in_game='3',
                     prob_random='5',
                     prod_multiplier='[0, 0]',
@@ -40,5 +40,146 @@ industry = Industry(id='metal_workshop',
                     fund_cost_multiplier='120',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS')
 
-# industry uses layouts and sprites from default game, no custom layouts etc
 
+industry.add_tile(id='metal_workshop_tile')
+
+spriteset_ground = industry.add_spriteset(
+    id = 'metal_workshop_spriteset_ground',
+    type = 'cobble',
+)
+spriteset_ground_overlay = industry.add_spriteset(
+    id = 'metal_workshop_spriteset_ground_overlay',
+    type = 'empty'
+)
+spriteset_1 = industry.add_spriteset(
+    id = 'metal_workshop_spriteset_1',
+    sprites = [(10, 60, 64, 70, -31, -39)],
+    zextent = 32
+)
+spriteset_2 = industry.add_spriteset(
+    id = 'metal_workshop_spriteset_2',
+    sprites = [(80, 60, 64, 70, -31, -39)],
+    zextent = 32
+)
+spriteset_3 = industry.add_spriteset(
+    id = 'metal_workshop_spriteset_3',
+    sprites = [(150, 60, 64, 51, -31, -20)],
+    zextent = 32
+)
+spriteset_4 = industry.add_spriteset(
+    id = 'metal_workshop_spriteset_4',
+    sprites = [(220, 60, 64, 51, -31, -20)],
+    zextent = 32
+)
+spriteset_5 = industry.add_spriteset(
+    id = 'metal_workshop_spriteset_5',
+    sprites = [(290, 60, 64, 51, -31, -20)],
+    zextent = 32
+)
+spriteset_6 = industry.add_spriteset(
+    id = 'metal_workshop_spriteset_6',
+    sprites = [(360, 60, 64, 31, -31, 0)],
+    zextent = 32
+)
+spriteset_7 = industry.add_spriteset(
+    id = 'metal_workshop_spriteset_7',
+    sprites = [(430, 60, 64, 31, -31, 0)],
+    zextent = 32
+)
+sprite_smoke = industry.add_smoke_sprite(
+    smoke_type = 'dark_smoke_small',
+    xoffset= 0,
+    yoffset= 8,
+    zoffset= 53,
+)
+
+industry.add_spritelayout(
+    id = 'metal_workshop_spritelayout_1',
+    ground_sprite = spriteset_ground,
+    ground_overlay = spriteset_ground_overlay,
+    building_sprites = [spriteset_1],
+    smoke_sprites = [sprite_smoke],
+    fences = ['nw','ne','se','sw']
+)
+industry.add_spritelayout(
+    id = 'metal_workshop_spritelayout_2',
+    ground_sprite = spriteset_ground,
+    ground_overlay = spriteset_ground_overlay,
+    building_sprites = [spriteset_2],
+    fences = ['nw','ne','se','sw']
+)
+industry.add_spritelayout(
+    id = 'metal_workshop_spritelayout_3',
+    ground_sprite = spriteset_ground,
+    ground_overlay = spriteset_ground_overlay,
+    building_sprites = [spriteset_3],
+    fences = ['nw','ne','se']
+)
+industry.add_spritelayout(
+    id = 'metal_workshop_spritelayout_4',
+    ground_sprite = spriteset_ground,
+    ground_overlay = spriteset_ground_overlay,
+    building_sprites = [spriteset_4],
+    fences = ['nw','ne','se']
+)
+industry.add_spritelayout(
+    id = 'metal_workshop_spritelayout_5',
+    ground_sprite = spriteset_ground,
+    ground_overlay = spriteset_ground_overlay,
+    building_sprites = [spriteset_5],
+    fences = ['nw','ne','se']
+)
+industry.add_spritelayout(
+    id = 'metal_workshop_spritelayout_6',
+    ground_sprite = spriteset_ground,
+    ground_overlay = spriteset_ground_overlay,
+    building_sprites = [spriteset_6],
+    fences = ['nw','ne','se','sw']
+)
+industry.add_spritelayout(
+    id = 'metal_workshop_spritelayout_7',
+    ground_sprite = spriteset_ground,
+    ground_overlay = spriteset_ground_overlay,
+    building_sprites = [spriteset_7],
+    fences = ['nw','ne','se','sw']
+)
+
+industry.add_industry_layout(
+    id = 'metal_workshop_industry_layout_1',
+    default_spritelayout = 'metal_workshop_spritelayout_5',
+    layout = [(0, 0, 'metal_workshop_tile', 'metal_workshop_spritelayout_3'),
+              (0, 1, 'metal_workshop_tile', 'metal_workshop_spritelayout_3'),
+              (0, 2, 'metal_workshop_tile', 'metal_workshop_spritelayout_5'),
+              (0, 3, 'metal_workshop_tile', 'metal_workshop_spritelayout_4'),
+              (0, 4, 'metal_workshop_tile', 'metal_workshop_spritelayout_5'),
+              (1, 0, 'metal_workshop_tile', 'metal_workshop_spritelayout_3'),
+              (1, 1, 'metal_workshop_tile', 'metal_workshop_spritelayout_3'),
+              (1, 2, 'metal_workshop_tile', 'metal_workshop_spritelayout_5'),
+              (1, 3, 'metal_workshop_tile', 'metal_workshop_spritelayout_4'),
+              (1, 4, 'metal_workshop_tile', 'metal_workshop_spritelayout_6'),
+              (2, 0, 'metal_workshop_tile', 'metal_workshop_spritelayout_3'),
+              (2, 1, 'metal_workshop_tile', 'metal_workshop_spritelayout_1'),
+              (2, 2, 'metal_workshop_tile', 'metal_workshop_spritelayout_2'),
+              (2, 3, 'metal_workshop_tile', 'metal_workshop_spritelayout_7'),
+              (2, 4, 'metal_workshop_tile', 'metal_workshop_spritelayout_7'),
+    ]
+)
+industry.add_industry_layout(
+    id = 'metal_workshop_industry_layout_2',
+    default_spritelayout = 'metal_workshop_spritelayout_5',
+    layout = [(0, 2, 'metal_workshop_tile', 'metal_workshop_spritelayout_3'),
+              (0, 3, 'metal_workshop_tile', 'metal_workshop_spritelayout_3'),
+              (1, 0, 'metal_workshop_tile', 'metal_workshop_spritelayout_1'),
+              (1, 1, 'metal_workshop_tile', 'metal_workshop_spritelayout_2'),
+              (1, 2, 'metal_workshop_tile', 'metal_workshop_spritelayout_3'),
+              (1, 3, 'metal_workshop_tile', 'metal_workshop_spritelayout_3'),
+              (2, 0, 'metal_workshop_tile', 'metal_workshop_spritelayout_4'),
+              (2, 1, 'metal_workshop_tile', 'metal_workshop_spritelayout_7'),
+              (2, 2, 'metal_workshop_tile', 'metal_workshop_spritelayout_6'),
+              (2, 3, 'metal_workshop_tile', 'metal_workshop_spritelayout_6'),
+              (3, 0, 'metal_workshop_tile', 'metal_workshop_spritelayout_4'),
+              (3, 1, 'metal_workshop_tile', 'metal_workshop_spritelayout_5'),
+              (3, 2, 'metal_workshop_tile', 'metal_workshop_spritelayout_4'),
+              (3, 3, 'metal_workshop_tile', 'metal_workshop_spritelayout_3'),
+    ]
+)
