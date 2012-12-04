@@ -144,7 +144,6 @@ industry.add_spritelayout(
 
 industry.add_industry_layout(
     id = 'lime_kiln_industry_layout_1',
-    default_spritelayout = 'lime_kiln_spritelayout_6',
     layout = [(0, 0, 'lime_kiln_tile', 'lime_kiln_spritelayout_2'),
               (0, 1, 'lime_kiln_tile', 'lime_kiln_spritelayout_1'),
               (0, 2, 'lime_kiln_tile', 'lime_kiln_spritelayout_6'),
@@ -155,7 +154,6 @@ industry.add_industry_layout(
 )
 industry.add_industry_layout(
     id = 'lime_kiln_industry_layout_2',
-    default_spritelayout = 'lime_kiln_spritelayout_6',
     layout = [(0, 0, 'lime_kiln_tile', 'lime_kiln_spritelayout_2'),
               (0, 1, 'lime_kiln_tile', 'lime_kiln_spritelayout_1'),
               (1, 0, 'lime_kiln_tile', 'lime_kiln_spritelayout_4'),
@@ -166,7 +164,6 @@ industry.add_industry_layout(
 )
 industry.add_industry_layout(
     id = 'lime_kiln_industry_layout_3',
-    default_spritelayout = 'lime_kiln_spritelayout_6',
     layout = [(0, 0, 'lime_kiln_tile', 'lime_kiln_spritelayout_2'),
               (0, 1, 'lime_kiln_tile', 'lime_kiln_spritelayout_1'),
               (0, 2, 'lime_kiln_tile', 'lime_kiln_spritelayout_6'),

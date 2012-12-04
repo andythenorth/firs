@@ -137,7 +137,6 @@ industry.add_spritelayout(
 
 industry.add_industry_layout(
     id = 'dairy_farm_industry_layout_1',
-    default_spritelayout = 'dairy_farm_spritelayout_cows_brown_dirt',
     layout = [(0, 0, 'dairy_farm_tile', 'dairy_farm_spritelayout_cows_brown'),
               (0, 1, 'dairy_farm_tile', 'dairy_farm_spritelayout_cows_bw'),
               (0, 2, 'dairy_farm_tile', 'dairy_farm_spritelayout_house'),
@@ -150,7 +149,6 @@ industry.add_industry_layout(
 )
 industry.add_industry_layout(
     id = 'dairy_farm_industry_layout_2',
-    default_spritelayout = 'dairy_farm_spritelayout_cows_brown_dirt',
     layout = [(0, 0, 'dairy_farm_tile', 'dairy_farm_spritelayout_cows_brown_dirt'),
               (0, 1, 'dairy_farm_tile', 'dairy_farm_spritelayout_cows_bw_dirt'),
               (0, 2, 'dairy_farm_tile', 'dairy_farm_spritelayout_barn1'),
@@ -163,7 +161,6 @@ industry.add_industry_layout(
 )
 industry.add_industry_layout(
     id = 'dairy_farm_industry_layout_3',
-    default_spritelayout = 'dairy_farm_spritelayout_cows_brown_dirt',
     layout = [(0, 1, 'dairy_farm_tile', 'dairy_farm_spritelayout_barn1'),
               (0, 3, 'dairy_farm_tile', 'dairy_farm_spritelayout_house'),
               (1, 0, 'dairy_farm_tile', 'dairy_farm_spritelayout_barn2'),

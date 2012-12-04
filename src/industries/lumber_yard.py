@@ -78,10 +78,6 @@ spriteset_8 = industry.add_spriteset(
     id = 'lumber_yard_spriteset_8',
     sprites = [(290, 90, 64, 31, -31, -4)]
 )
-spriteset_9 = industry.add_spriteset(
-    id = 'lumber_yard_spriteset_9',
-    sprites = [(360, 10, 64, 64, -31, -24)]
-)
 sprite_smoke = industry.add_smoke_sprite(
     smoke_type = 'white_smoke_small',
     xoffset= 0,
@@ -140,17 +136,9 @@ industry.add_spritelayout(
     building_sprites = [spriteset_8],
     fences = ['nw','ne','se','sw']
 )
-industry.add_spritelayout(
-    id = 'lumber_yard_spritelayout_9',
-    ground_sprite = sprite_ground,
-    ground_overlay = spriteset_ground_overlay,
-    building_sprites = [spriteset_9],
-    fences = ['nw','ne','se','sw']
-)
 
 industry.add_industry_layout(
     id = 'lumber_yard_industry_layout_1',
-    default_spritelayout = 'lumber_yard_spritelayout_9',
     layout = [(0, 0, 'lumber_yard_tile', 'lumber_yard_spritelayout_2'),
               (0, 1, 'lumber_yard_tile', 'lumber_yard_spritelayout_1'),
               (0, 2, 'lumber_yard_tile', 'lumber_yard_spritelayout_5'),
@@ -167,7 +155,6 @@ industry.add_industry_layout(
 )
 industry.add_industry_layout(
     id = 'lumber_yard_industry_layout_2',
-    default_spritelayout = 'lumber_yard_spritelayout_9',
     layout = [(0, 0, 'lumber_yard_tile', 'lumber_yard_spritelayout_2'),
               (0, 1, 'lumber_yard_tile', 'lumber_yard_spritelayout_1'),
               (0, 2, 'lumber_yard_tile', 'lumber_yard_spritelayout_5'),
@@ -184,7 +171,6 @@ industry.add_industry_layout(
 )
 industry.add_industry_layout(
     id = 'lumber_yard_industry_layout_3',
-    default_spritelayout = 'lumber_yard_spritelayout_9',
     layout = [(0, 0, 'lumber_yard_tile', 'lumber_yard_spritelayout_6'),
               (0, 1, 'lumber_yard_tile', 'lumber_yard_spritelayout_4'),
               (0, 2, 'lumber_yard_tile', 'lumber_yard_spritelayout_2'),
@@ -199,7 +185,6 @@ industry.add_industry_layout(
 )
 industry.add_industry_layout(
     id = 'lumber_yard_industry_layout_4',
-    default_spritelayout = 'lumber_yard_spritelayout_9',
     layout = [(0, 0, 'lumber_yard_tile', 'lumber_yard_spritelayout_4'),
               (0, 1, 'lumber_yard_tile', 'lumber_yard_spritelayout_7'),
               (1, 0, 'lumber_yard_tile', 'lumber_yard_spritelayout_4'),

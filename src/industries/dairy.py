@@ -178,7 +178,6 @@ industry.add_spritelayout(
 
 industry.add_industry_layout(
     id = 'dairy_industry_layout_1',
-    default_spritelayout = 'dairy_spritelayout_7',
     layout = [(0, 0, 'dairy_tile_smoke', 'dairy_spritelayout_7'),
               (0, 1, 'dairy_tile', 'dairy_spritelayout_5'),
               (1, 0, 'dairy_tile', 'dairy_spritelayout_6'),
@@ -191,7 +190,6 @@ industry.add_industry_layout(
 )
 industry.add_industry_layout(
     id = 'dairy_industry_layout_2',
-    default_spritelayout = 'dairy_spritelayout_7',
     layout = [(0, 1, 'dairy_tile_smoke', 'dairy_spritelayout_7'),
               (0, 2, 'dairy_tile', 'dairy_spritelayout_5'),
               (1, 1, 'dairy_tile', 'dairy_spritelayout_6'),
@@ -206,7 +204,6 @@ industry.add_industry_layout(
 )
 industry.add_industry_layout(
     id = 'dairy_industry_layout_3',
-    default_spritelayout = 'dairy_spritelayout_7',
     layout = [(0, 0, 'dairy_tile_smoke', 'dairy_spritelayout_7'),
               (0, 1, 'dairy_tile', 'dairy_spritelayout_5'),
               (0, 2, 'dairy_tile', 'dairy_spritelayout_8'),
@@ -221,7 +218,6 @@ industry.add_industry_layout(
 )
 industry.add_industry_layout(
     id = 'dairy_industry_layout_4',
-    default_spritelayout = 'dairy_spritelayout_7',
     layout = [(0, 0, 'dairy_tile_smoke', 'dairy_spritelayout_7'),
               (0, 1, 'dairy_tile', 'dairy_spritelayout_5'),
               (0, 2, 'dairy_tile_smoke', 'dairy_spritelayout_7'),
@@ -240,7 +236,6 @@ industry.add_industry_layout(
 )
 industry.add_industry_layout(
     id = 'dairy_industry_layout_5',
-    default_spritelayout = 'dairy_spritelayout_7',
     layout = [(0, 0, 'dairy_tile', 'dairy_spritelayout_8'),
               (0, 1, 'dairy_tile', 'dairy_spritelayout_3'),
               (0, 2, 'dairy_tile_smoke', 'dairy_spritelayout_7'),
@@ -253,7 +248,6 @@ industry.add_industry_layout(
 )
 industry.add_industry_layout(
     id = 'dairy_industry_layout_6',
-    default_spritelayout = 'dairy_spritelayout_7',
     layout = [(0, 0, 'dairy_tile_smoke', 'dairy_spritelayout_7'),
               (0, 1, 'dairy_tile', 'dairy_spritelayout_5'),
               (1, 0, 'dairy_tile', 'dairy_spritelayout_6'),
@@ -266,7 +260,6 @@ industry.add_industry_layout(
 )
 industry.add_industry_layout(
     id = 'dairy_industry_layout_7',
-    default_spritelayout = 'dairy_spritelayout_7',
     layout = [(0, 0, 'dairy_tile_smoke', 'dairy_spritelayout_7'),
               (0, 1, 'dairy_tile', 'dairy_spritelayout_5'),
               (0, 3, 'dairy_tile_smoke', 'dairy_spritelayout_7'),

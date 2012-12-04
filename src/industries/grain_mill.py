@@ -136,7 +136,6 @@ industry.add_spritelayout(
 
 industry.add_industry_layout(
     id = 'grain_mill_industry_layout_1',
-    default_spritelayout = 'grain_mill_spritelayout_brickbakery_3',
     layout = [(0, 0, 'grain_mill_tile', 'grain_mill_spritelayout_brickbakery_3'),
               (0, 1, 'grain_mill_tile', 'grain_mill_spritelayout_brickbakery_4'),
               (1, 0, 'grain_mill_tile', 'grain_mill_spritelayout_brickbakery_1'),
@@ -145,7 +144,6 @@ industry.add_industry_layout(
 )
 industry.add_industry_layout(
     id = 'grain_mill_industry_layout_2',
-    default_spritelayout = 'grain_mill_spritelayout_brickbakery_3',
     layout = [(0, 0, 'grain_mill_tile', 'grain_mill_spritelayout_brickbakery_3'),
               (0, 1, 'grain_mill_tile', 'grain_mill_spritelayout_brickbakery_4'),
               (1, 0, 'grain_mill_tile', 'grain_mill_spritelayout_brickbakery_3'),
@@ -156,7 +154,6 @@ industry.add_industry_layout(
 )
 industry.add_industry_layout(
     id = 'grain_mill_industry_layout_3',
-    default_spritelayout = 'grain_mill_spritelayout_brickbakery_3',
     layout = [(0, 0, 'grain_mill_tile', 'grain_mill_spritelayout_brickbakery_3'),
               (0, 1, 'grain_mill_tile', 'grain_mill_spritelayout_brickbakery_4'),
               (0, 2, 'grain_mill_tile', 'grain_mill_spritelayout_brickbakery_3'),
@@ -169,7 +166,6 @@ industry.add_industry_layout(
 )
 industry.add_industry_layout(
     id = 'grain_mill_industry_layout_4',
-    default_spritelayout = 'grain_mill_spritelayout_windmill_anim',
     layout = [(0, 0, 'grain_mill_tile', 'grain_mill_spritelayout_windmill_anim')]
 )
 

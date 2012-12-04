@@ -209,7 +209,6 @@ industry.add_spritelayout(
 
 industry.add_industry_layout(
     id = 'stockyard_industry_layout_1',
-    default_spritelayout = 'stockyard_spritelayout_11',
     layout = [(0, 0, 'stockyard_tile', 'stockyard_spritelayout_12'),
               (0, 1, 'stockyard_tile', 'stockyard_spritelayout_12'),
               (0, 2, 'stockyard_tile', 'stockyard_spritelayout_11'),

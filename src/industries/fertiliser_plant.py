@@ -197,7 +197,6 @@ industry.add_spritelayout(
 
 industry.add_industry_layout(
     id = 'fertiliser_plant_industry_layout_1',
-    default_spritelayout = 'fertiliser_plant_spritelayout_8',
     layout = [(0, 0, 'fertiliser_plant_tile', 'fertiliser_plant_spritelayout_1'),
               (0, 1, 'fertiliser_plant_tile', 'fertiliser_plant_spritelayout_4'),
               (0, 2, 'fertiliser_plant_tile', 'fertiliser_plant_spritelayout_8'),
@@ -214,7 +213,6 @@ industry.add_industry_layout(
 )
 industry.add_industry_layout(
     id = 'fertiliser_plant_industry_layout_2',
-    default_spritelayout = 'fertiliser_plant_spritelayout_8',
     layout = [(0, 0, 'fertiliser_plant_tile', 'fertiliser_plant_spritelayout_1'),
               (0, 1, 'fertiliser_plant_tile', 'fertiliser_plant_spritelayout_6'),
               (1, 0, 'fertiliser_plant_tile', 'fertiliser_plant_spritelayout_4'),
@@ -229,7 +227,6 @@ industry.add_industry_layout(
 )
 industry.add_industry_layout(
     id = 'fertiliser_plant_industry_layout_3',
-    default_spritelayout = 'fertiliser_plant_spritelayout_8',
     layout = [(0, 1, 'fertiliser_plant_tile', 'fertiliser_plant_spritelayout_4'),
               (1, 0, 'fertiliser_plant_tile', 'fertiliser_plant_spritelayout_8'),
               (1, 1, 'fertiliser_plant_tile', 'fertiliser_plant_spritelayout_3'),
@@ -243,7 +240,6 @@ industry.add_industry_layout(
 )
 industry.add_industry_layout(
     id = 'fertiliser_plant_industry_layout_4',
-    default_spritelayout = 'fertiliser_plant_spritelayout_5',
     layout = [(0, 1, 'fertiliser_plant_tile', 'fertiliser_plant_spritelayout_4'),
               (1, 0, 'fertiliser_plant_tile', 'fertiliser_plant_spritelayout_1'),
               (1, 1, 'fertiliser_plant_tile', 'fertiliser_plant_spritelayout_3'),
@@ -257,7 +253,6 @@ industry.add_industry_layout(
 )
 industry.add_industry_layout(
     id = 'fertiliser_plant_industry_layout_5',
-    default_spritelayout = 'fertiliser_plant_spritelayout_5',
     layout = [(0, 0, 'fertiliser_plant_tile', 'fertiliser_plant_spritelayout_4'),
               (0, 2, 'fertiliser_plant_tile', 'fertiliser_plant_spritelayout_7'),
               (1, 0, 'fertiliser_plant_tile', 'fertiliser_plant_spritelayout_3'),
@@ -276,7 +271,6 @@ industry.add_industry_layout(
 )
 industry.add_industry_layout(
     id = 'fertiliser_plant_industry_layout_6',
-    default_spritelayout = 'fertiliser_plant_spritelayout_5',
     layout = [(0, 0, 'fertiliser_plant_tile', 'fertiliser_plant_spritelayout_4'),
               (0, 2, 'fertiliser_plant_tile', 'fertiliser_plant_spritelayout_8'),
               (0, 3, 'fertiliser_plant_tile', 'fertiliser_plant_spritelayout_8'),
@@ -296,7 +290,6 @@ industry.add_industry_layout(
 )
 industry.add_industry_layout(
     id = 'fertiliser_plant_industry_layout_7',
-    default_spritelayout = 'fertiliser_plant_spritelayout_5',
     layout = [(0, 0, 'fertiliser_plant_tile', 'fertiliser_plant_spritelayout_4'),
               (0, 1, 'fertiliser_plant_tile', 'fertiliser_plant_spritelayout_7'),
               (0, 2, 'fertiliser_plant_tile', 'fertiliser_plant_spritelayout_1'),

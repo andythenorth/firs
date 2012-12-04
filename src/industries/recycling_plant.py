@@ -125,17 +125,9 @@ industry.add_spritelayout(
     building_sprites = [spriteset_6],
     fences = ['nw','ne','se','sw']
 )
-industry.add_spritelayout(
-    id = 'recycling_plant_spritelayout_7',
-    ground_sprite = spriteset_ground,
-    ground_overlay = spriteset_ground_overlay,
-    building_sprites = [],
-    fences = ['nw','ne','se','sw']
-)
 
 industry.add_industry_layout(
     id = 'recycling_plant_industry_layout',
-    default_spritelayout = 'recycling_plant_spritelayout_7',
     layout = [(0, 0, 'recycling_plant_tile', 'recycling_plant_spritelayout_2'),
               (0, 1, 'recycling_plant_tile', 'recycling_plant_spritelayout_3'),
               (1, 0, 'recycling_plant_tile', 'recycling_plant_spritelayout_1'),

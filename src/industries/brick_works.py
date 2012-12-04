@@ -126,13 +126,6 @@ industry.add_spritelayout(
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
-    id = 'brick_works_spritelayout_5',
-    ground_sprite = spriteset_ground,
-    ground_overlay = spriteset_ground_overlay,
-    building_sprites = [],
-    fences = ['nw','ne','se','sw']
-)
-industry.add_spritelayout(
     id = 'brick_works_spritelayout_sand_staithe',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
@@ -149,7 +142,6 @@ industry.add_spritelayout(
 
 industry.add_industry_layout(
     id = 'brick_works_industry_layout_1',
-    default_spritelayout = 'brick_works_spritelayout_5',
     layout = [(0, 0, 'brick_works_tile', 'brick_works_spritelayout_4'),
               (0, 1, 'brick_works_tile', 'brick_works_spritelayout_4'),
               (1, 0, 'brick_works_tile', 'brick_works_spritelayout_3'),
@@ -162,7 +154,6 @@ industry.add_industry_layout(
 )
 industry.add_industry_layout(
     id = 'brick_works_industry_layout_2',
-    default_spritelayout = 'brick_works_spritelayout_5',
     layout = [(0, 0, 'brick_works_tile', 'brick_works_spritelayout_4'),
               (0, 1, 'brick_works_tile', 'brick_works_spritelayout_4'),
               (1, 0, 'brick_works_tile', 'brick_works_spritelayout_3'),
@@ -175,7 +166,6 @@ industry.add_industry_layout(
 )
 industry.add_industry_layout(
     id = 'brick_works_industry_layout_3',
-    default_spritelayout = 'brick_works_spritelayout_5',
     layout = [(0, 0, 'brick_works_tile', 'brick_works_spritelayout_4'),
               (0, 1, 'brick_works_tile', 'brick_works_spritelayout_4'),
               (0, 2, 'brick_works_tile', 'brick_works_spritelayout_1'),

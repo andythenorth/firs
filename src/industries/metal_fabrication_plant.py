@@ -146,7 +146,6 @@ industry.add_spritelayout(
 
 industry.add_industry_layout(
     id = 'metal_fabrication_plant_industry_layout_1',
-    default_spritelayout = 'metal_fabrication_plant_spritelayout_5',
     layout = [(0, 0, 'metal_fabrication_plant_tile', 'metal_fabrication_plant_spritelayout_3'),
               (0, 1, 'metal_fabrication_plant_tile', 'metal_fabrication_plant_spritelayout_3'),
               (0, 2, 'metal_fabrication_plant_tile', 'metal_fabrication_plant_spritelayout_4'),
@@ -166,7 +165,6 @@ industry.add_industry_layout(
 )
 industry.add_industry_layout(
     id = 'metal_fabrication_plant_industry_layout_2',
-    default_spritelayout = 'metal_fabrication_plant_spritelayout_5',
     layout = [(0, 2, 'metal_fabrication_plant_tile', 'metal_fabrication_plant_spritelayout_3'),
               (0, 3, 'metal_fabrication_plant_tile', 'metal_fabrication_plant_spritelayout_3'),
               (1, 0, 'metal_fabrication_plant_tile', 'metal_fabrication_plant_spritelayout_1'),
@@ -185,7 +183,6 @@ industry.add_industry_layout(
 )
 industry.add_industry_layout(
     id = 'metal_fabrication_plant_industry_layout_3',
-    default_spritelayout = 'metal_fabrication_plant_spritelayout_5',
     layout = [(0, 0, 'metal_fabrication_plant_tile', 'metal_fabrication_plant_spritelayout_3'),
               (0, 1, 'metal_fabrication_plant_tile', 'metal_fabrication_plant_spritelayout_3'),
               (1, 0, 'metal_fabrication_plant_tile', 'metal_fabrication_plant_spritelayout_3'),

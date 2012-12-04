@@ -77,7 +77,5 @@ industry.add_spritelayout(
 )
 industry.add_industry_layout(
     id = 'food_market_industry_layout',
-    default_spritelayout = 'food_market_spritelayout',
-    layout = [(0, 0, 'food_market_tile', 'food_market_spritelayout')
-    ]
+    layout = [(0, 0, 'food_market_tile', 'food_market_spritelayout')]
 )

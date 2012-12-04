@@ -116,7 +116,6 @@ industry.add_spritelayout(
 
 industry.add_industry_layout(
     id = 'glass_works_industry_layout_1',
-    default_spritelayout = 'glass_works_spritelayout_4',
     layout = [(0, 0, 'glass_works_tile', 'glass_works_spritelayout_4'),
               (0, 1, 'glass_works_tile', 'glass_works_spritelayout_3'),
               (1, 0, 'glass_works_tile', 'glass_works_spritelayout_1'),
@@ -125,7 +124,6 @@ industry.add_industry_layout(
 )
 industry.add_industry_layout(
     id = 'glass_works_industry_layout_2',
-    default_spritelayout = 'glass_works_spritelayout_4',
     layout = [(0, 0, 'glass_works_tile', 'glass_works_spritelayout_4'),
               (0, 1, 'glass_works_tile', 'glass_works_spritelayout_3'),
               (1, 0, 'glass_works_tile', 'glass_works_spritelayout_1'),
@@ -138,7 +136,6 @@ industry.add_industry_layout(
 )
 industry.add_industry_layout(
     id = 'glass_works_industry_layout_3',
-    default_spritelayout = 'glass_works_spritelayout_4',
     layout = [(0, 0, 'glass_works_tile', 'glass_works_spritelayout_4'),
               (0, 1, 'glass_works_tile', 'glass_works_spritelayout_3'),
               (0, 2, 'glass_works_tile', 'glass_works_spritelayout_4'),

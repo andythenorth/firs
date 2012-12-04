@@ -197,9 +197,8 @@ class SpriteLayout(object):
 
 class IndustryLayout(object):
     """Base class to hold industry layouts"""
-    def __init__(self, id, default_spritelayout, layout):
+    def __init__(self, id, layout):
         self.id = id
-        self.default_spritelayout = default_spritelayout
         self.layout = layout # a list of 4-tuples (SE offset from N tile, SW offset from N tile, tile identifier, identifier of spriteset or next nml switch)
 
 class IndustryProperties(object):

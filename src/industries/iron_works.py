@@ -128,7 +128,6 @@ industry.add_spritelayout(
 )
 industry.add_industry_layout(
     id = 'iron_works_industry_layout_1',
-    default_spritelayout = 'iron_works_spritelayout_empty',
     layout = [(0, 0, 'iron_works_tile', 'iron_works_spritelayout_large_shed_clerestory_roof'),
               (0, 1, 'iron_works_tile_anim_1', 'iron_works_spritelayout_furnace_anim'),
               (0, 2, 'iron_works_tile_anim_2', 'iron_works_spritelayout_iron_pigs_anim'),

@@ -111,7 +111,6 @@ industry.add_spritelayout(
 
 industry.add_industry_layout(
     id = 'sheep_farm_industry_layout_1',
-    default_spritelayout = 'sheep_farm_spritelayout_5',
     layout = [(0, 0, 'sheep_farm_tile', 'sheep_farm_spritelayout_3'),
               (1, 0, 'sheep_farm_tile', 'sheep_farm_spritelayout_2'),
               (1, 2, 'sheep_farm_tile', 'sheep_farm_spritelayout_4'),
@@ -121,7 +120,6 @@ industry.add_industry_layout(
 )
 industry.add_industry_layout(
     id = 'sheep_farm_industry_layout_2',
-    default_spritelayout = 'sheep_farm_spritelayout_5',
     layout = [(0, 0, 'sheep_farm_tile', 'sheep_farm_spritelayout_2'),
               (0, 1, 'sheep_farm_tile', 'sheep_farm_spritelayout_1'),
               (0, 2, 'sheep_farm_tile', 'sheep_farm_spritelayout_4'),

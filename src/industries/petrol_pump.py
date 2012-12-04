@@ -74,14 +74,12 @@ industry.add_spritelayout(
 
 industry.add_industry_layout(
     id = 'petrol_pump_industry_layout_1',
-    default_spritelayout = 'petrol_pump_spritelayout_1',
     layout = [(0, 0, 'petrol_pump_tile', 'petrol_pump_spritelayout_1'),
               (0, 1, 'petrol_pump_tile', 'petrol_pump_spritelayout_2')
     ]
 )
 industry.add_industry_layout(
     id = 'petrol_pump_industry_layout_2',
-    default_spritelayout = 'petrol_pump_spritelayout_1',
     layout = [(0, 0, 'petrol_pump_tile', 'petrol_pump_spritelayout_1'),
               (1, 0, 'petrol_pump_tile', 'petrol_pump_spritelayout_2')
     ]

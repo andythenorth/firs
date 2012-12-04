@@ -146,7 +146,6 @@ industry.add_spritelayout(
 
 industry.add_industry_layout(
     id = 'metal_workshop_industry_layout_1',
-    default_spritelayout = 'metal_workshop_spritelayout_5',
     layout = [(0, 0, 'metal_workshop_tile', 'metal_workshop_spritelayout_3'),
               (0, 1, 'metal_workshop_tile', 'metal_workshop_spritelayout_3'),
               (0, 2, 'metal_workshop_tile', 'metal_workshop_spritelayout_5'),
@@ -166,7 +165,6 @@ industry.add_industry_layout(
 )
 industry.add_industry_layout(
     id = 'metal_workshop_industry_layout_2',
-    default_spritelayout = 'metal_workshop_spritelayout_5',
     layout = [(0, 2, 'metal_workshop_tile', 'metal_workshop_spritelayout_3'),
               (0, 3, 'metal_workshop_tile', 'metal_workshop_spritelayout_3'),
               (1, 0, 'metal_workshop_tile', 'metal_workshop_spritelayout_1'),

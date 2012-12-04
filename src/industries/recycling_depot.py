@@ -77,7 +77,6 @@ industry.add_spritelayout(
 )
 industry.add_industry_layout(
     id = 'recycling_depot_industry_layout',
-    default_spritelayout = 'recycling_depot_spritelayout_no_hut',
     layout = [(0, 0, 'recycling_depot_tile', 'recycling_depot_spritelayout_hut'),
               (0, 1, 'recycling_depot_tile', 'recycling_depot_spritelayout_no_hut'),
               (1, 0, 'recycling_depot_tile', 'recycling_depot_spritelayout_no_hut'),

@@ -147,7 +147,6 @@ industry.add_spritelayout(
 
 industry.add_industry_layout(
     id = 'mixed_farm_industry_layout_1',
-    default_spritelayout = 'mixed_farm_spritelayout_8',
     layout = [(0, 2, 'mixed_farm_tile', 'mixed_farm_spritelayout_8'),
               (0, 3, 'mixed_farm_tile', 'mixed_farm_spritelayout_3'),
               (1, 0, 'mixed_farm_tile', 'mixed_farm_spritelayout_2'),
@@ -160,7 +159,6 @@ industry.add_industry_layout(
 )
 industry.add_industry_layout(
     id = 'mixed_farm_industry_layout_2',
-    default_spritelayout = 'mixed_farm_spritelayout_8',
     layout = [(0, 0, 'mixed_farm_tile', 'mixed_farm_spritelayout_4'),
               (0, 2, 'mixed_farm_tile', 'mixed_farm_spritelayout_7'),
               (0, 3, 'mixed_farm_tile', 'mixed_farm_spritelayout_6'),
@@ -173,7 +171,6 @@ industry.add_industry_layout(
 )
 industry.add_industry_layout(
     id = 'mixed_farm_industry_layout_3',
-    default_spritelayout = 'mixed_farm_spritelayout_8',
     layout = [(0, 0, 'mixed_farm_tile', 'mixed_farm_spritelayout_8'),
               (0, 1, 'mixed_farm_tile', 'mixed_farm_spritelayout_1'),
               (0, 2, 'mixed_farm_tile', 'mixed_farm_spritelayout_5'),

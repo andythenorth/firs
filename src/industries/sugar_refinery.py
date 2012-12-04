@@ -173,7 +173,6 @@ industry.add_spritelayout(
 
 industry.add_industry_layout(
     id = 'sugar_refinery_industry_layout_1',
-    default_spritelayout = 'sugar_refinery_spritelayout_9',
     layout = [(0, 0, 'sugar_refinery_tile', 'sugar_refinery_spritelayout_4'),
               (0, 1, 'sugar_refinery_tile', 'sugar_refinery_spritelayout_4'),
               (0, 2, 'sugar_refinery_tile', 'sugar_refinery_spritelayout_4'),

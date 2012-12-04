@@ -226,7 +226,6 @@ industry.add_spritelayout(
 
 industry.add_industry_layout(
     id = 'machine_shop_industry_layout_1',
-    default_spritelayout = 'machine_shop_spritelayout_1',
     layout = [(0, 0, 'machine_shop_tile', 'machine_shop_spritelayout_2'),
               (0, 1, 'machine_shop_tile', 'machine_shop_spritelayout_7'),
               (0, 2, 'machine_shop_tile', 'machine_shop_spritelayout_14'),
@@ -249,7 +248,6 @@ industry.add_industry_layout(
 )
 industry.add_industry_layout(
     id = 'machine_shop_industry_layout_2',
-    default_spritelayout = 'machine_shop_spritelayout_1',
     layout = [(0, 0, 'machine_shop_tile', 'machine_shop_spritelayout_1'),
               (0, 1, 'machine_shop_tile', 'machine_shop_spritelayout_7'),
               (0, 2, 'machine_shop_tile', 'machine_shop_spritelayout_1'),
@@ -274,7 +272,6 @@ industry.add_industry_layout(
 )
 industry.add_industry_layout(
     id = 'machine_shop_industry_layout_3',
-    default_spritelayout = 'machine_shop_spritelayout_1',
     layout = [(0, 0, 'machine_shop_tile', 'machine_shop_spritelayout_1'),
               (0, 1, 'machine_shop_tile', 'machine_shop_spritelayout_7'),
               (0, 2, 'machine_shop_tile', 'machine_shop_spritelayout_1'),
@@ -299,7 +296,6 @@ industry.add_industry_layout(
 )
 industry.add_industry_layout(
     id = 'machine_shop_industry_layout_4',
-    default_spritelayout = 'machine_shop_spritelayout_1',
     layout = [(0, 0, 'machine_shop_tile', 'machine_shop_spritelayout_1'),
               (0, 1, 'machine_shop_tile', 'machine_shop_spritelayout_7'),
               (0, 2, 'machine_shop_tile', 'machine_shop_spritelayout_13'),
@@ -324,7 +320,6 @@ industry.add_industry_layout(
 )
 industry.add_industry_layout(
     id = 'machine_shop_industry_layout_5',
-    default_spritelayout = 'machine_shop_spritelayout_1',
     layout = [(0, 0, 'machine_shop_tile', 'machine_shop_spritelayout_3'),
               (0, 1, 'machine_shop_tile', 'machine_shop_spritelayout_4'),
               (0, 2, 'machine_shop_tile', 'machine_shop_spritelayout_1'),

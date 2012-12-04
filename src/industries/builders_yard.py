@@ -75,14 +75,12 @@ industry.add_spritelayout(
 
 industry.add_industry_layout(
     id = 'builders_yard_industry_layout_1',
-    default_spritelayout = 'builders_yard_spritelayout_1',
     layout = [(0, 0, 'builders_yard_tile', 'builders_yard_spritelayout_1'),
               (0, 1, 'builders_yard_tile', 'builders_yard_spritelayout_2'),
     ]
 )
 industry.add_industry_layout(
     id = 'builders_yard_industry_layout_2',
-    default_spritelayout = 'builders_yard_spritelayout_1',
     layout = [(0, 0, 'builders_yard_tile', 'builders_yard_spritelayout_1'),
               (1, 0, 'builders_yard_tile', 'builders_yard_spritelayout_2'),
     ]

@@ -152,7 +152,6 @@ industry.add_spritelayout(
 
 industry.add_industry_layout(
     id = 'junk_yard_industry_layout_1',
-    default_spritelayout = 'junk_yard_spritelayout_9',
     layout = [(0, 2, 'junk_yard_tile', 'junk_yard_spritelayout_2'),
               (1, 1, 'junk_yard_tile', 'junk_yard_spritelayout_2'),
               (1, 2, 'junk_yard_tile', 'junk_yard_spritelayout_9'),
@@ -167,7 +166,6 @@ industry.add_industry_layout(
 )
 industry.add_industry_layout(
     id = 'junk_yard_industry_layout_2',
-    default_spritelayout = 'junk_yard_spritelayout_9',
     layout = [(0, 1, 'junk_yard_tile', 'junk_yard_spritelayout_7'),
               (1, 1, 'junk_yard_tile', 'junk_yard_spritelayout_1'),
               (1, 2, 'junk_yard_tile', 'junk_yard_spritelayout_8'),
@@ -178,7 +176,6 @@ industry.add_industry_layout(
 )
 industry.add_industry_layout(
     id = 'junk_yard_industry_layout_3',
-    default_spritelayout = 'junk_yard_spritelayout_9',
     layout = [(0, 3, 'junk_yard_tile', 'junk_yard_spritelayout_2'),
               (1, 1, 'junk_yard_tile', 'junk_yard_spritelayout_2'),
               (1, 3, 'junk_yard_tile', 'junk_yard_spritelayout_9'),

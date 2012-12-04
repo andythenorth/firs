@@ -130,7 +130,6 @@ industry.add_spritelayout(
 
 industry.add_industry_layout(
     id = 'textile_mill_industry_layout_1',
-    default_spritelayout = 'textile_mill_spritelayout_6',
     layout = [(0, 0, 'textile_mill_tile', 'textile_mill_spritelayout_3'),
               (0, 1, 'textile_mill_tile', 'textile_mill_spritelayout_1_anim'),
               (1, 0, 'textile_mill_tile', 'textile_mill_spritelayout_2'),
@@ -145,7 +144,6 @@ industry.add_industry_layout(
 )
 industry.add_industry_layout(
     id = 'textile_mill_industry_layout_2',
-    default_spritelayout = 'textile_mill_spritelayout_6',
     layout = [(0, 0, 'textile_mill_tile', 'textile_mill_spritelayout_3'),
               (0, 1, 'textile_mill_tile', 'textile_mill_spritelayout_4'),
               (0, 2, 'textile_mill_tile', 'textile_mill_spritelayout_1_anim'),
@@ -158,7 +156,6 @@ industry.add_industry_layout(
 )
 industry.add_industry_layout(
     id = 'textile_mill_industry_layout_3',
-    default_spritelayout = 'textile_mill_spritelayout_6',
     layout = [(0, 0, 'textile_mill_tile', 'textile_mill_spritelayout_3'),
               (0, 1, 'textile_mill_tile', 'textile_mill_spritelayout_5'),
               (1, 0, 'textile_mill_tile', 'textile_mill_spritelayout_2'),
@@ -168,7 +165,6 @@ industry.add_industry_layout(
 )
 industry.add_industry_layout(
     id = 'textile_mill_industry_layout_4',
-    default_spritelayout = 'textile_mill_spritelayout_6',
     layout = [(0, 0, 'textile_mill_tile', 'textile_mill_spritelayout_3'),
               (0, 1, 'textile_mill_tile', 'textile_mill_spritelayout_3'),
               (1, 0, 'textile_mill_tile', 'textile_mill_spritelayout_2'),
@@ -183,7 +179,6 @@ industry.add_industry_layout(
 )
 industry.add_industry_layout(
     id = 'textile_mill_industry_layout_5',
-    default_spritelayout = 'textile_mill_spritelayout_6',
     layout = [(0, 0, 'textile_mill_tile', 'textile_mill_spritelayout_3'),
               (0, 1, 'textile_mill_tile', 'textile_mill_spritelayout_3'),
               (0, 2, 'textile_mill_tile', 'textile_mill_spritelayout_5'),
@@ -196,7 +191,6 @@ industry.add_industry_layout(
 )
 industry.add_industry_layout(
     id = 'textile_mill_industry_layout_6',
-    default_spritelayout = 'textile_mill_spritelayout_6',
     layout = [(0, 0, 'textile_mill_tile', 'textile_mill_spritelayout_5'),
               (0, 1, 'textile_mill_tile', 'textile_mill_spritelayout_3'),
               (0, 2, 'textile_mill_tile', 'textile_mill_spritelayout_3'),

@@ -85,7 +85,6 @@ industry.add_spritelayout(
 
 industry.add_industry_layout(
     id = 'oil_wells_industry_layout_1',
-    default_spritelayout = 'oil_wells_spritelayout_pump',
     layout = [(0, 0, 'oil_wells_tile_pump', 'oil_wells_spritelayout_pump'),
               (0, 7, 'oil_wells_tile_pump', 'oil_wells_spritelayout_pump'),
               (1, 4, 'oil_wells_tile_pump', 'oil_wells_spritelayout_pump'),
@@ -98,7 +97,6 @@ industry.add_industry_layout(
 )
 industry.add_industry_layout(
     id = 'oil_wells_industry_layout_2',
-    default_spritelayout = 'oil_wells_spritelayout_pump',
     layout = [(0, 0, 'oil_wells_tile_pump', 'oil_wells_spritelayout_pump'),
               (0, 4, 'oil_wells_tile_pump', 'oil_wells_spritelayout_pump'),
               (1, 4, 'oil_wells_tile_pump', 'oil_wells_spritelayout_pump'),
@@ -112,7 +110,6 @@ industry.add_industry_layout(
 )
 industry.add_industry_layout(
     id = 'oil_wells_industry_layout_3',
-    default_spritelayout = 'oil_wells_spritelayout_pump',
     layout = [(0, 0, 'oil_wells_tile_pump', 'oil_wells_spritelayout_pump'),
               (0, 2, 'oil_wells_tile_pump', 'oil_wells_spritelayout_pump'),
               (1, 4, 'oil_wells_tile_pump', 'oil_wells_spritelayout_pump'),
@@ -124,7 +121,6 @@ industry.add_industry_layout(
 )
 industry.add_industry_layout(
     id = 'oil_wells_industry_layout_4',
-    default_spritelayout = 'oil_wells_spritelayout_pump',
     layout = [(0, 0, 'oil_wells_tile_pump', 'oil_wells_spritelayout_pump'),
               (0, 4, 'oil_wells_tile_pump', 'oil_wells_spritelayout_pump'),
               (0, 6, 'oil_wells_tile_pump', 'oil_wells_spritelayout_pump'),

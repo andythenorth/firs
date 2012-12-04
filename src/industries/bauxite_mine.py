@@ -117,7 +117,6 @@ industry.add_spritelayout(
 
 industry.add_industry_layout(
     id = 'bauxite_mine_industry_layout_1',
-    default_spritelayout = 'bauxite_mine_spritelayout_1',
     layout = [(0, 0, 'bauxite_mine_tile', 'bauxite_mine_spritelayout_1'),
               (0, 1, 'bauxite_mine_tile', 'bauxite_mine_spritelayout_1'),
               (0, 2, 'bauxite_mine_tile', 'bauxite_mine_spritelayout_1'),

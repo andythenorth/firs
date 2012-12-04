@@ -76,7 +76,6 @@ industry.add_spritelayout(
 )
 industry.add_industry_layout(
     id = 'smithy_forge_industry_layout',
-    default_spritelayout = 'smithy_forge_spritelayout_1',
     layout = [(0, 0, 'smithy_forge_tile', 'smithy_forge_spritelayout_2'),
               (1, 0, 'smithy_forge_tile', 'smithy_forge_spritelayout_1'),
     ]

@@ -171,7 +171,6 @@ industry.add_spritelayout(
 
 industry.add_industry_layout(
     id = 'plastics_plant_industry_layout_1',
-    default_spritelayout = 'plastics_plant_spritelayout_8',
     layout = [(0, 0, 'plastics_plant_tile', 'plastics_plant_spritelayout_2'),
               (0, 1, 'plastics_plant_tile', 'plastics_plant_spritelayout_1'),
               (0, 2, 'plastics_plant_tile', 'plastics_plant_spritelayout_10'),
@@ -191,7 +190,6 @@ industry.add_industry_layout(
 )
 industry.add_industry_layout(
     id = 'plastics_plant_industry_layout_2',
-    default_spritelayout = 'plastics_plant_spritelayout_8',
     layout = [(0, 0, 'plastics_plant_tile', 'plastics_plant_spritelayout_8'),
               (0, 1, 'plastics_plant_tile', 'plastics_plant_spritelayout_7'),
               (0, 2, 'plastics_plant_tile', 'plastics_plant_spritelayout_9'),
@@ -208,7 +206,6 @@ industry.add_industry_layout(
 )
 industry.add_industry_layout(
     id = 'plastics_plant_industry_layout_3',
-    default_spritelayout = 'plastics_plant_spritelayout_8',
     layout = [(0, 0, 'plastics_plant_tile', 'plastics_plant_spritelayout_2'),
               (0, 1, 'plastics_plant_tile', 'plastics_plant_spritelayout_1'),
               (0, 2, 'plastics_plant_tile', 'plastics_plant_spritelayout_10'),

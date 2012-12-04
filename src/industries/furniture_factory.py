@@ -126,7 +126,6 @@ industry.add_spritelayout(
 
 industry.add_industry_layout(
     id = 'furniture_factory_industry_layout_1',
-    default_spritelayout = 'furniture_factory_spritelayout_5',
     layout = [(0, 1, 'furniture_factory_tile', 'furniture_factory_spritelayout_3'),
               (1, 0, 'furniture_factory_tile', 'furniture_factory_spritelayout_5'),
               (1, 1, 'furniture_factory_tile', 'furniture_factory_spritelayout_2'),
@@ -136,7 +135,6 @@ industry.add_industry_layout(
 )
 industry.add_industry_layout(
     id = 'furniture_factory_industry_layout_2',
-    default_spritelayout = 'furniture_factory_spritelayout_5',
     layout = [(0, 0, 'furniture_factory_tile', 'furniture_factory_spritelayout_5'),
               (0, 1, 'furniture_factory_tile', 'furniture_factory_spritelayout_3'),
               (1, 0, 'furniture_factory_tile', 'furniture_factory_spritelayout_4'),
@@ -147,7 +145,6 @@ industry.add_industry_layout(
 )
 industry.add_industry_layout(
     id = 'furniture_factory_industry_layout_3',
-    default_spritelayout = 'furniture_factory_spritelayout_5',
     layout = [(0, 0, 'furniture_factory_tile', 'furniture_factory_spritelayout_3'),
               (0, 1, 'furniture_factory_tile', 'furniture_factory_spritelayout_6'),
               (1, 0, 'furniture_factory_tile', 'furniture_factory_spritelayout_2'),
@@ -162,7 +159,6 @@ industry.add_industry_layout(
 )
 industry.add_industry_layout(
     id = 'furniture_factory_industry_layout_4',
-    default_spritelayout = 'furniture_factory_spritelayout_5',
     layout = [(0, 0, 'furniture_factory_tile', 'furniture_factory_spritelayout_5'),
               (0, 1, 'furniture_factory_tile', 'furniture_factory_spritelayout_6'),
               (1, 0, 'furniture_factory_tile', 'furniture_factory_spritelayout_4'),
@@ -177,7 +173,6 @@ industry.add_industry_layout(
 )
 industry.add_industry_layout(
     id = 'furniture_factory_industry_layout_5',
-    default_spritelayout = 'furniture_factory_spritelayout_5',
     layout = [(0, 0, 'furniture_factory_tile', 'furniture_factory_spritelayout_5'),
               (0, 1, 'furniture_factory_tile', 'furniture_factory_spritelayout_3'),
               (0, 2, 'furniture_factory_tile', 'furniture_factory_spritelayout_3'),

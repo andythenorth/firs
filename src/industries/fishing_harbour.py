@@ -42,5 +42,4 @@ industry = Industry(id='fishing_harbour',
 
 industry.economy_variations['BASIC'].disabled = True
 
-# industry uses layouts and sprites from default game, no custom layouts etc
 

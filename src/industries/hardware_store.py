@@ -63,7 +63,5 @@ industry.add_spritelayout(
 )
 industry.add_industry_layout(
     id = 'hardware_store_industry_layout',
-    default_spritelayout = 'hardware_store_spritelayout',
-    layout = [(0, 0, 'hardware_store_tile', 'hardware_store_spritelayout')
-    ]
+    layout = [(0, 0, 'hardware_store_tile', 'hardware_store_spritelayout')]
 )

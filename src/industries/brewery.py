@@ -99,7 +99,6 @@ industry.add_spritelayout(
 
 industry.add_industry_layout(
     id = 'brewery_industry_layout_1',
-    default_spritelayout = 'brewery_spritelayout_3',
     layout = [(0, 2, 'brewery_tile', 'brewery_spritelayout_3'),
               (1, 0, 'brewery_tile', 'brewery_spritelayout_1_anim'),
               (1, 2, 'brewery_tile', 'brewery_spritelayout_2')
@@ -107,7 +106,6 @@ industry.add_industry_layout(
 )
 industry.add_industry_layout(
     id = 'brewery_industry_layout_2',
-    default_spritelayout = 'brewery_spritelayout_3',
     layout = [(0, 0, 'brewery_tile', 'brewery_spritelayout_3'),
               (1, 0, 'brewery_tile', 'brewery_spritelayout_2'),
               (2, 0, 'brewery_tile', 'brewery_spritelayout_1_anim')
@@ -115,7 +113,6 @@ industry.add_industry_layout(
 )
 industry.add_industry_layout(
     id = 'brewery_industry_layout_3',
-    default_spritelayout = 'brewery_spritelayout_3',
     layout = [(0, 1, 'brewery_tile', 'brewery_spritelayout_3'),
               (1, 0, 'brewery_tile', 'brewery_spritelayout_1_anim'),
               (1, 1, 'brewery_tile', 'brewery_spritelayout_2')
@@ -123,7 +120,6 @@ industry.add_industry_layout(
 )
 industry.add_industry_layout(
     id = 'brewery_industry_layout_4',
-    default_spritelayout = 'brewery_spritelayout_3',
     layout = [(0, 0, 'brewery_tile', 'brewery_spritelayout_1_anim'),
               (1, 0, 'brewery_tile', 'brewery_spritelayout_3'),
               (2, 0, 'brewery_tile', 'brewery_spritelayout_2')
@@ -131,7 +127,6 @@ industry.add_industry_layout(
 )
 industry.add_industry_layout(
     id = 'brewery_industry_layout_5',
-    default_spritelayout = 'brewery_spritelayout_3',
     layout = [(0, 0, 'brewery_tile', 'brewery_spritelayout_3'),
               (0, 1, 'brewery_tile', 'brewery_spritelayout_3'),
               (1, 0, 'brewery_tile', 'brewery_spritelayout_2'),

@@ -71,7 +71,6 @@ industry.add_spritelayout(
 
 industry.add_industry_layout(
     id = 'hotel_industry_layout',
-    default_spritelayout = 'hotel_spritelayout_1',
     layout = [(0, 0, 'hotel_tile', 'hotel_spritelayout_1'),
               (1, 0, 'hotel_tile', 'hotel_spritelayout_1'),
               (0, 1, 'hotel_tile', 'hotel_spritelayout_2'),
