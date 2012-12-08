@@ -10,230 +10,23 @@
 
 #define THIS_ID(...) ${industry.id}_ ## __VA_ARGS__
 
-spriteset(THIS_ID(spriteset_ground), "src/graphics/industries/groundtiles.png") {
-	tmpl_ground_tile(80, 10)
-	tmpl_ground_tile(80, 10)
-}
+${industry.get_spritesets()}
 
-spriteset(THIS_ID(spriteset_1)) {
-	tmpl_building_sprite_filename(10, 10, 57, -26, "src/graphics/industries/aluminium_plant_1.png")
-	tmpl_building_sprite_filename(10, 10, 57, -26, "src/graphics/industries/aluminium_plant_1_snow.png")
-}
+${industry.get_spritelayouts()}
 
-spriteset(THIS_ID(spriteset_2)) {
-	tmpl_building_sprite_filename(80, 10, 66, -26, "src/graphics/industries/aluminium_plant_1.png")
-	tmpl_building_sprite_filename(80, 10, 66, -26, "src/graphics/industries/aluminium_plant_1_snow.png")
-}
+${industry.get_industry_layouts_as_graphic_switches()}
 
-spriteset(THIS_ID(spriteset_3)) {
-	tmpl_building_sprite_filename(150, 10, 92, -61, "src/graphics/industries/aluminium_plant_1.png")
-	tmpl_building_sprite_filename(150, 10, 92, -61, "src/graphics/industries/aluminium_plant_1_snow.png")
-}
-
-spriteset(THIS_ID(spriteset_4)) {
-	tmpl_building_sprite_filename(220, 10, 90, -61, "src/graphics/industries/aluminium_plant_1.png")
-	tmpl_building_sprite_filename(220, 10, 90, -61, "src/graphics/industries/aluminium_plant_1_snow.png")
-}
-
-spriteset(THIS_ID(spriteset_5)) {
-	tmpl_building_sprite_filename(290, 10, 100, -61, "src/graphics/industries/aluminium_plant_1.png")
-	tmpl_building_sprite_filename(290, 10, 100, -61, "src/graphics/industries/aluminium_plant_1_snow.png")
-}
-
-spriteset(THIS_ID(spriteset_6)) {
-	tmpl_building_sprite_filename(360, 10, 100, -61, "src/graphics/industries/aluminium_plant_1.png")
-	tmpl_building_sprite_filename(360, 10, 100, -61, "src/graphics/industries/aluminium_plant_1_snow.png")
-}
-
-spriteset(THIS_ID(spriteset_vehicles)) {
-	tmpl_building_sprite_filename(430, 10, 56, -26, "src/graphics/industries/aluminium_plant_1.png")
-	tmpl_building_sprite_filename(430, 10, 56, -26, "src/graphics/industries/aluminium_plant_1_snow.png")
-}
-
-spriteset(THIS_ID(spriteset_forklift)) {
-	tmpl_building_sprite_filename(500, 10, 56, -26, "src/graphics/industries/aluminium_plant_1.png")
-	tmpl_building_sprite_filename(500, 10, 56, -26, "src/graphics/industries/aluminium_plant_1_snow.png")
-}
-
-spriteset(THIS_ID(spriteset_9)) {
-	tmpl_building_sprite_filename(570, 10, 110, -61, "src/graphics/industries/aluminium_plant_1.png")
-	tmpl_building_sprite_filename(570, 10, 110, -61, "src/graphics/industries/aluminium_plant_1_snow.png")
-}
-
-spriteset(THIS_ID(spriteset_10)) {
-	tmpl_building_sprite_filename(640, 10, 110, -61, "src/graphics/industries/aluminium_plant_1.png")
-	tmpl_building_sprite_filename(640, 10, 110, -61, "src/graphics/industries/aluminium_plant_1_snow.png")
-}
-
-spriteset(THIS_ID(spriteset_11)) {
-	tmpl_building_sprite_filename(710, 10, 110, -61, "src/graphics/industries/aluminium_plant_1.png")
-	tmpl_building_sprite_filename(710, 10, 110, -61, "src/graphics/industries/aluminium_plant_1_snow.png")
-}
-
-spriteset(THIS_ID(spriteset_ground_snow)) {
-	tmpl_building_sprite_filename(780, 10, 56, -25, "src/graphics/industries/aluminium_plant_1.png")
-	tmpl_building_sprite_filename(780, 10, 56, -25, "src/graphics/industries/aluminium_plant_1_snow.png")
-}
-
-SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_long_hall), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground_snow), THIS_ID(spriteset_1), 64)
-
-SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_small_office), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground_snow), THIS_ID(spriteset_2), 90)
-
-SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_big_office), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground_snow), THIS_ID(spriteset_3), 64)
-
-SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_bigtank), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground_snow), THIS_ID(spriteset_5), 64)
-
-SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_storage_tanks), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground_snow), THIS_ID(spriteset_6), 64)
-
-SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_vehicles), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground_snow), THIS_ID(spriteset_vehicles), 32)
-
-SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_forklift), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground_snow), THIS_ID(spriteset_forklift), 32)
-
-SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_big_hall_left), THIS_ID(spriteset_ground), spriteset_empty, THIS_ID(spriteset_9), 90)
-
-SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_big_hall_centre), THIS_ID(spriteset_ground), spriteset_empty, THIS_ID(spriteset_10), 90)
-
-SPRITELAYOUT_NORMAL_SNOW(THIS_ID(spritelayout_big_hall_right), THIS_ID(spriteset_ground), spriteset_empty, THIS_ID(spriteset_11), 90)
-
-/* No template as it uses a TTD sprite w/o snow as building */
-spritelayout THIS_ID(spritelayout_transformer) {
-	ground {
-		sprite: THIS_ID(spriteset_ground);
-		recolour_mode: RECOLOUR_REMAP;
-		palette: PALETTE_USE_DEFAULT;
-	}
-	childsprite {
-		sprite: GROUNDSPRITE_SNOW;
-		recolour_mode: RECOLOUR_REMAP;
-		palette: PALETTE_USE_DEFAULT;
-		hide_sprite: terrain_type != TILETYPE_SNOW;
-		always_draw: 1;
-	}
-	building {
-		sprite: 2054; // Transformer
-		recolour_mode: RECOLOUR_REMAP;
-		palette: PALETTE_USE_DEFAULT;
-		zextent: 90;
-	}
-}
-
-SPRITELAYOUT_GROUND_NORMAL_SNOW(THIS_ID(spritelayout_concrete), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground_snow))
-
-SPRITELAYOUT_NORMAL_SNOW_BEGIN(THIS_ID(spritelayout_chimney_anim), THIS_ID(spriteset_ground), THIS_ID(spriteset_ground_snow), THIS_ID(spriteset_4), 7)
-	BUILDING_DARK_SMOKE_SMALL(5, 0, 64)
-SPRITELAYOUT_END
-
-switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_1), relative_pos) {
-	relative_coord(0, 2): THIS_ID(spritelayout_concrete);
-	relative_coord(0, 3): THIS_ID(spritelayout_big_hall_right);
-	relative_coord(1, 2): THIS_ID(spritelayout_big_hall_left);
-	relative_coord(1, 3): THIS_ID(spritelayout_big_hall_centre);
-	relative_coord(2, 0): THIS_ID(spritelayout_big_office);
-	relative_coord(2, 1): THIS_ID(spritelayout_long_hall);
-	relative_coord(2, 2): THIS_ID(spritelayout_bigtank);
-	relative_coord(2, 3): THIS_ID(spritelayout_storage_tanks);
-	relative_coord(3, 0): THIS_ID(spritelayout_chimney_anim);
-	relative_coord(3, 1): THIS_ID(spritelayout_long_hall);
-	relative_coord(3, 2): THIS_ID(spritelayout_concrete);
-	relative_coord(3, 3): THIS_ID(spritelayout_forklift);
-	relative_coord(4, 0): THIS_ID(spritelayout_long_hall);
-	relative_coord(4, 1): THIS_ID(spritelayout_long_hall);
-	relative_coord(4, 2): THIS_ID(spritelayout_long_hall);
-	relative_coord(4, 3): THIS_ID(spritelayout_small_office);
-	relative_coord(5, 0): THIS_ID(spritelayout_long_hall);
-	relative_coord(5, 1): THIS_ID(spritelayout_long_hall);
-	relative_coord(5, 2): THIS_ID(spritelayout_long_hall);
-	relative_coord(5, 3): THIS_ID(spritelayout_vehicles);
-	relative_coord(7, 1): THIS_ID(spritelayout_transformer);
-	THIS_ID(spritelayout_long_hall);
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_2), relative_pos) {
-	relative_coord(0, 0): THIS_ID(spritelayout_long_hall);
-	relative_coord(0, 1): THIS_ID(spritelayout_concrete);
-	relative_coord(0, 2): THIS_ID(spritelayout_long_hall);
-	relative_coord(0, 3): THIS_ID(spritelayout_concrete);
-	relative_coord(0, 4): THIS_ID(spritelayout_big_hall_right);
-	relative_coord(1, 0): THIS_ID(spritelayout_long_hall);
-	relative_coord(1, 1): THIS_ID(spritelayout_chimney_anim);
-	relative_coord(1, 2): THIS_ID(spritelayout_long_hall);
-	relative_coord(1, 3): THIS_ID(spritelayout_big_hall_left);
-	relative_coord(1, 4): THIS_ID(spritelayout_big_hall_centre);
-	relative_coord(2, 0): THIS_ID(spritelayout_long_hall);
-	relative_coord(2, 1): THIS_ID(spritelayout_big_office);
-	relative_coord(2, 2): THIS_ID(spritelayout_long_hall);
-	relative_coord(2, 3): THIS_ID(spritelayout_bigtank);
-	relative_coord(2, 4): THIS_ID(spritelayout_storage_tanks);
-	relative_coord(3, 0): THIS_ID(spritelayout_long_hall);
-	relative_coord(3, 1): THIS_ID(spritelayout_concrete);
-	relative_coord(3, 2): THIS_ID(spritelayout_long_hall);
-	relative_coord(3, 3): THIS_ID(spritelayout_forklift);
-	relative_coord(3, 4): THIS_ID(spritelayout_concrete);
-	relative_coord(4, 0): THIS_ID(spritelayout_long_hall);
-	relative_coord(4, 1): THIS_ID(spritelayout_transformer);
-	relative_coord(4, 2): THIS_ID(spritelayout_long_hall);
-	relative_coord(4, 3): THIS_ID(spritelayout_small_office);
-	relative_coord(4, 4): THIS_ID(spritelayout_vehicles);
-	THIS_ID(spritelayout_long_hall);
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_3), relative_pos) {
-	relative_coord(0, 0): THIS_ID(spritelayout_transformer);
-	relative_coord(1, 0): THIS_ID(spritelayout_big_office);
-	relative_coord(1, 1): THIS_ID(spritelayout_small_office);
-	relative_coord(2, 0): THIS_ID(spritelayout_chimney_anim);
-	relative_coord(2, 1): THIS_ID(spritelayout_forklift);
-	relative_coord(3, 0): THIS_ID(spritelayout_long_hall);
-	relative_coord(3, 1): THIS_ID(spritelayout_long_hall);
-	relative_coord(4, 0): THIS_ID(spritelayout_long_hall);
-	relative_coord(4, 1): THIS_ID(spritelayout_long_hall);
-	relative_coord(5, 0): THIS_ID(spritelayout_long_hall);
-	relative_coord(5, 1): THIS_ID(spritelayout_long_hall);
-	relative_coord(6, 0): THIS_ID(spritelayout_vehicles);
-	relative_coord(6, 1): THIS_ID(spritelayout_vehicles);
-	relative_coord(7, 0): THIS_ID(spritelayout_forklift);
-	relative_coord(7, 1): THIS_ID(spritelayout_big_hall_right);
-	relative_coord(8, 0): THIS_ID(spritelayout_big_hall_left);
-	relative_coord(8, 1): THIS_ID(spritelayout_big_hall_centre);
-	relative_coord(9, 0): THIS_ID(spritelayout_bigtank);
-	relative_coord(9, 1): THIS_ID(spritelayout_storage_tanks);
-	THIS_ID(spritelayout_long_hall);
-}
-
-switch(FEAT_INDUSTRYTILES, PARENT, THIS_ID(layout), layout_num) {
-	2: THIS_ID(layout_2);
-	3: THIS_ID(layout_3);
-	THIS_ID(layout_1);
-}
-
-GROUNDSPRITE_SWITCH(THIS_ID(ground_switch), THIS_ID(layout))
+${industry.get_fence_switches()}
 
 /* *************************************************
  * Definition of the industry tile and its callbacks
  * *************************************************/
 
 TILE_DISALLOW_NEARBY_CLASS(tile_nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
-TILE_ALLOW_PLAYER         (tile_player,                                                                  THIS_ID(tile_nearby_industry))
-TILE_DISALLOW_SLOPES      (tile_location,                             CB_RESULT_LOCATION_DISALLOW, THIS_ID(tile_player))
+TILE_ALLOW_PLAYER         (tile_player, ${industry.id}_tile_nearby_industry)
+TILE_DISALLOW_SLOPES      (tile_location, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_tile_player)
 
-switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(anim_control), (extra_callback_info1 & 14)) {
-	0: return 0;
-	1: return 2;
-	2: return 4;
-	3: return 6;
-	4: return 8;
-	5: return 10;
-	6: return 12;
-	7: return 14;
-	8: return 16;
-	9: return 18;
-	10: return 20;
-	11: return 22;
-	12: return 24;
-	return CB_RESULT_START_ANIMATION;
-}
-
-item(FEAT_INDUSTRYTILES, THIS_ID(tile), TILE_ALUMINIUMPLANT_1) {
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile, TILE_ALUMINIUMPLANT_1) {
 	property {
 		substitute:         0;
 		accepted_cargos:    [[AORE, 8], [RFPR, 8], [SCMT, 8]];
@@ -244,9 +37,8 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile), TILE_ALUMINIUMPLANT_1) {
 	}
 
 	graphics {
-		anim_control: THIS_ID(anim_control);
-		tile_check:   THIS_ID(tile_location);
-		THIS_ID(ground_switch);
+		tile_check:   ${industry.id}_tile_location;
+		${industry.id}_tile_fences;
 	}
 }
 
@@ -254,79 +46,7 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile), TILE_ALUMINIUMPLANT_1) {
  * Definition of the industry layouts
  * *************************************************/
 
-tilelayout tilelayout_aluminium_plant_1 {
-	0, 2: THIS_ID(tile);
-	0, 3: THIS_ID(tile);
-	1, 2: THIS_ID(tile);
-	1, 3: THIS_ID(tile);
-	2, 0: THIS_ID(tile);
-	2, 1: THIS_ID(tile);
-	2, 2: THIS_ID(tile);
-	2, 3: THIS_ID(tile);
-	3, 0: THIS_ID(tile);
-	3, 1: THIS_ID(tile);
-	3, 2: THIS_ID(tile);
-	3, 3: THIS_ID(tile);
-	4, 0: THIS_ID(tile);
-	4, 1: THIS_ID(tile);
-	4, 2: THIS_ID(tile);
-	4, 3: THIS_ID(tile);
-	5, 0: THIS_ID(tile);
-	5, 1: THIS_ID(tile);
-	5, 2: THIS_ID(tile);
-	5, 3: THIS_ID(tile);
-	7, 1: THIS_ID(tile);
-}
-
-tilelayout tilelayout_aluminium_plant_2 {
-	0, 0: THIS_ID(tile);
-	0, 1: THIS_ID(tile);
-	0, 2: THIS_ID(tile);
-	0, 3: THIS_ID(tile);
-	0, 4: THIS_ID(tile);
-	1, 0: THIS_ID(tile);
-	1, 1: THIS_ID(tile);
-	1, 2: THIS_ID(tile);
-	1, 3: THIS_ID(tile);
-	1, 4: THIS_ID(tile);
-	2, 0: THIS_ID(tile);
-	2, 1: THIS_ID(tile);
-	2, 2: THIS_ID(tile);
-	2, 3: THIS_ID(tile);
-	2, 4: THIS_ID(tile);
-	3, 0: THIS_ID(tile);
-	3, 1: THIS_ID(tile);
-	3, 2: THIS_ID(tile);
-	3, 3: THIS_ID(tile);
-	3, 4: THIS_ID(tile);
-	4, 0: THIS_ID(tile);
-	4, 1: THIS_ID(tile);
-	4, 2: THIS_ID(tile);
-	4, 3: THIS_ID(tile);
-	4, 4: THIS_ID(tile);
-}
-
-tilelayout tilelayout_aluminium_plant_3 {
-	0, 0: THIS_ID(tile);
-	1, 0: THIS_ID(tile);
-	1, 1: THIS_ID(tile);
-	2, 0: THIS_ID(tile);
-	2, 1: THIS_ID(tile);
-	3, 0: THIS_ID(tile);
-	3, 1: THIS_ID(tile);
-	4, 0: THIS_ID(tile);
-	4, 1: THIS_ID(tile);
-	5, 0: THIS_ID(tile);
-	5, 1: THIS_ID(tile);
-	6, 0: THIS_ID(tile);
-	6, 1: THIS_ID(tile);
-	7, 0: THIS_ID(tile);
-	7, 1: THIS_ID(tile);
-	8, 0: THIS_ID(tile);
-	8, 1: THIS_ID(tile);
-	9, 0: THIS_ID(tile);
-	9, 1: THIS_ID(tile);
-}
+${industry.get_industry_layouts_as_tilelayouts()}
 
 /* *************************************************
  * Definition of the industry
@@ -350,10 +70,10 @@ tilelayout tilelayout_aluminium_plant_3 {
 #define THIS_MIN_YEAR 1923
 
 CHECK_INCOMPATIBLE  (aluminium_plant, 56, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
-CHECK_INCOMPATIBLE  (bauxite_mine,    16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(aluminium_plant))
-CHECK_FOUNDER       (THIS_ID(bauxite_mine))
+CHECK_INCOMPATIBLE  (bauxite_mine,    16, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_aluminium_plant)
+CHECK_FOUNDER       (${industry.id}_bauxite_mine)
 
-SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
+SWITCH_COLOUR_SCHEME1(${industry.id}_colour)
 
 #include "../src/templates/produce_secondary.pnml"
 #include "../src/templates/check_secondary_production_level.pnml"
@@ -367,14 +87,14 @@ ${industry.get_industry_properties()}
 
 item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
 	graphics {
-		produce_cargo_arrival:   THIS_ID(produce);
-		construction_probability:THIS_ID(check_availability);
-		location_check:          THIS_ID(check_location);
-		monthly_prod_change:     THIS_ID(check_production_level);
-		random_prod_change:      THIS_ID(check_closure);
-		extra_text_industry:     THIS_ID(extra_text);
+		produce_cargo_arrival:   ${industry.id}_produce;
+		construction_probability:${industry.id}_check_availability;
+		location_check:          ${industry.id}_check_location;
+		monthly_prod_change:     ${industry.id}_check_production_level;
+		random_prod_change:      ${industry.id}_check_closure;
+		extra_text_industry:     ${industry.id}_extra_text;
 		extra_text_fund:         return string(STR_FUND_AVAILABLE_FROM, THIS_MIN_YEAR);
-		colour:                  THIS_ID(colour);
+		colour:                  ${industry.id}_colour;
 	}
 }
 
