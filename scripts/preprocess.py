@@ -62,6 +62,7 @@ firs.render_and_save_registered_cargos()
 
 import industries
 
+from industries import aluminium_plant
 from industries import arable_farm
 from industries import bauxite_mine
 from industries import biorefinery
@@ -71,6 +72,7 @@ from industries import builders_yard
 from industries import dairy
 from industries import dairy_farm
 from industries import dredging_site
+from industries import fertiliser_plant
 from industries import food_market
 from industries import furniture_factory
 from industries import glass_works
@@ -97,9 +99,7 @@ from industries import sugar_refinery
 from industries import textile_mill
 
 # industries with only partial conversion to python templating, mostly still cpp
-from industries import aluminium_plant
 from industries import cement_plant
-from industries import fertiliser_plant
 
 # industries which will be hard to convert
 from industries import clay_pit
