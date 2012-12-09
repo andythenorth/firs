@@ -10,21 +10,23 @@ FIRS Industry Replacement Set Changelog
 
 *New Features*
 - Reworked supplies mechanic: deliver supplies regularly for temporary production boost
-- Construction sprites for some industries
-- Snow and fences for Biorefinery
-- Snow and fences for Glass Works
+- Construction sprites for majority of industries
 - Snow for windmill version of Grain Mill
 - Fences for Smithy Forge
-- Snow for Recycling Depot
-- Snow and fences for Textile Mill
-- Snow, fences and smoke for Sugar Refinery
-- Snow, fences and smoke for Stockyard
+- Snow for Cement Plant, Brick Works, Recycling Depot, Recycling Plant and Machine Shop
+- Snow and fences for Biorefinery and Glass Works, Metal Workshop and Textile Mill
+- Snow, fences and smoke for Metal Fabrication Plant, Sugar Refinery and Stockyard
 - Snow and smoke for Lumber Yard
 - Smoke and animated winding wheels for Bauxite Mine
+- Smoke for Lime Kiln
+- Lime Kiln shows different crane / loader graphics depending on date
+- Dredging Site shows steam or diesel cranes depending on date
+
 
 *Changes*
 - Adjusted various primary industry probabilities and clustering behaviours
 - Remove parameters that offered primary industry production change / closing as options
+- Improved names for station rating algorithm parameter options
 - Removed intro date from Furniture Factory for better game balance
 - Removed intro date from Paper Mill to improve gameplay balance
 - Removed intro date from Stockyard to prevent broken chains
@@ -34,7 +36,8 @@ FIRS Industry Replacement Set Changelog
 - Fishing Harbours no longer required to locate near town - increases probability of being built
 - Use 1825 as intro date for Dredging Site for better game balance
 - Use 1830 as intro date for Oil Wells and Oil Refinery to improve game balance
-- Use 1824 as intro date for Cement Plant to improve game balance 
+- Use 1824 as intro date for Cement Plant to improve game balance
+- Improved snow for Plastics Plant and Fertiliser Plant 
 - [Makefile] use nml translation report script by Alberth
 
 *Fixes*
