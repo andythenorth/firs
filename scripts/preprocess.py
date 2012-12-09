@@ -69,6 +69,7 @@ from industries import biorefinery
 from industries import brewery
 from industries import brick_works
 from industries import builders_yard
+from industries import cement_plant
 from industries import dairy
 from industries import dairy_farm
 from industries import dredging_site
@@ -98,10 +99,8 @@ from industries import stockyard
 from industries import sugar_refinery
 from industries import textile_mill
 
-# industries with only partial conversion to python templating, mostly still cpp
-from industries import cement_plant
 
-# industries which will be hard to convert
+# industries which will be hard to convert to python templating, mostly still cpp
 from industries import clay_pit
 from industries import fishing_grounds
 from industries import fishing_harbour
