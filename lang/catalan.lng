@@ -1,0 +1,203 @@
+##grflangid 0x22
+##gender Masculin Femenin
+##plural 0
+
+STR_GRF_DESC                                                                    :{ORANGE}FIRS Industry Replacement Set{}{BLACK}Fet per andythenorth, FooBar, planetmaker, Terkhen i Yexo, amb l'ajuda de molts altres. {SILVER}Consulteu el llegeixme per a mÈs informaciÛ, incloent-hi com usar FIRS. {BLACK}LlicËncia: GPL v2.
+STR_GRF_NAME                                                                    :{TITLE}
+STR_GRF_URL                                                                     :http://dev.openttdcoop.org/projects/firs
+
+STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :M‡xima dist‡ncia en quadres des de caladors de pesca, plataformes petrolÌferes i zones de dragatge fins la costa.
+STR_PARAM_DESC_STAT_RATING                                                      :El rati de les estacions influencia la quantitat de c‡rrega que rep per part d'una ind˙stria, a ratis mÈs elevats mÈs carregament rep.
+STR_PARAM_DESC_DEBUG                                                            :NomÈs per a desenvolupadors
+STR_PARAM_DESC_ECONOMIES                                                        :Quan estigui acabat, FIRS oferir‡ diferents modalitats d'economies. Les ind˙stries i c‡rregues variaran en cada economia. Les tarifes de cada c‡rrega tambÈ seran diferens en cada economia. {}{}{SILVER}Actualment nomÈs hi ha una economia disponible :)
+STR_PARAM_DESC_NO_OPENINGS                                                      :Per defecte, durant el joc s'aniran obrint noves ind˙stries.{}{}Si activeu l'impediment d'apariciÛ d'ind˙stries, no se n'obriran durant el joc, i els jugadors no podran financiar-ne ni prospeccionar-ne de noves.
+STR_PARAM_DESC_SECONDARY_NEVER_CLOSE                                            :Per defecte, les ind˙stries secund‡ries de FIRS mai no tanquen.{}{}Si activeu el tancament de secund‡ries, les ind˙stries secund‡ries poden tancar si no reben c‡rrega durant un llarg perÌode. Les ind˙stries prim‡ries no tancaran mai a FIRS i no es veuen afectades per aquest par‡metre.
+STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY                                   :M‡xima dist‡ncia a la costa en quadres per a les ind˙stries marines
+STR_PARAM_NAME_DEBUG                                                            :Mostra textos de depuraciÛ
+STR_PARAM_NAME_ECONOMIES                                                        :Economia
+STR_PARAM_NAME_NO_OPENINGS                                                      :Impedeix l'apariciÛ d'ind˙stries durant el joc
+STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            :Permet el tancament d'ind˙stries secund‡ries
+STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0                                         :Sense lÌmit
+STR_PARAM_NAME_STAT_RATING                                                      :Algorisme de ratis d'estaciÛ
+STR_PARAM_VALUE_STAT_RATING_DEFAULT                                             :Dur (ratis est‡ndards de l'OpenTTD)
+STR_PARAM_VALUE_STAT_RATING_REDUCED_TIME                                        :Favorable (permet mÈs temps entre c‡rregues)
+STR_PARAM_VALUE_STAT_RATING_100                                                 :IncreÔblement generÛs (el rati Ès sempre del 100%)
+
+STR_PARAM_VALUE_ECONOMIES_BASIC                                                 :Economia B‡sica
+STR_PARAM_VALUE_ECONOMIES_FIRS                                                  :Economia FIRS
+STR_PARAM_VALUE_ECONOMIES_TEST_3                                                :Economia de Prova 3
+
+STR_CARGO_NAME_ALCOHOL                                                          :{G=Masculin}Alcohol
+STR_CARGO_NAME_BAUXITE                                                          :{G=Femenin}Bauxita
+STR_CARGO_NAME_BUILDING_MATERIALS                                               :{G=Masculin}Materials de construcciÛ
+STR_CARGO_NAME_CHEMICALS                                                        :{G=Masculin}Productes quÌmics
+STR_CARGO_NAME_CLAY                                                             :{G=Femenin}Argila
+STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :{G=Masculin}Subministraments tËcnics
+STR_CARGO_NAME_FIBRES                                                           :{G=Femenin}Fibres vegetals
+STR_CARGO_NAME_FISH                                                             :{G=Masculin}Peix
+STR_CARGO_NAME_FARM_SUPPLIES                                                    :{G=Masculin}Subministraments agrÌcoles
+STR_CARGO_NAME_FRUITS                                                           :{G=Femenin}Fruita
+STR_CARGO_NAME_LUMBER                                                           :{G=Masculin}Taulons
+STR_CARGO_NAME_METAL                                                            :{G=Masculin}Metall
+STR_CARGO_NAME_MILK                                                             :{G=Femenin}Llet
+STR_CARGO_NAME_MANUFACTURING_SUPPLIES                                           :{G=Masculin}Subministraments industrials
+STR_CARGO_NAME_PETROL                                                           :{G=Femenin}Gasolina
+STR_CARGO_NAME_RECYCLABLES                                                      :{G=Femenin}Deixalles
+STR_CARGO_NAME_SAND                                                             :{G=Femenin}Sorra
+STR_CARGO_NAME_SCRAP_METAL                                                      :{G=Femenin}Ferralla
+STR_CARGO_NAME_STONE                                                            :{G=Femenin}Pedres
+STR_CARGO_NAME_SUGAR_BEET                                                       :{G=Femenin}Remolatxa
+STR_CARGO_NAME_SUGARCANE                                                        :{G=Femenin}Canya de sucre
+STR_CARGO_NAME_WOOL                                                             :{G=Femenin}Llana
+
+STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} d'alcohol
+STR_CARGO_UNIT_BAUXITE                                                          :{WEIGHT} de bauxita
+STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WEIGHT} de materials de construcciÛ
+STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} de productes quÌmics
+STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} d'argila
+STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} caix{P 0 a es} de subministraments tËcnics
+STR_CARGO_UNIT_FIBRES                                                           :{SIGNED_WORD} bal{P 0 a es} de fibres vegetals
+STR_CARGO_UNIT_FISH                                                             :{WEIGHT} de peix
+STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} caix{P 0 a es} de subministraments agrÌcoles
+STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} de fruita
+STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} de taulons
+STR_CARGO_UNIT_METAL                                                            :{WEIGHT} de metall
+STR_CARGO_UNIT_MILK                                                             :{VOLUME} de llet
+STR_CARGO_UNIT_MNSP                                                             :{SIGNED_WORD} caix{P 0 a es} de subministraments industrials
+STR_CARGO_UNIT_PETROL                                                           :{VOLUME} de gasolina
+STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} de deixalles
+STR_CARGO_UNIT_SAND                                                             :{WEIGHT} de sorra
+STR_CARGO_UNIT_SCRAP_METAL                                                      :{WEIGHT} de ferralla
+STR_CARGO_UNIT_STONE                                                            :{WEIGHT} de pedres
+STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} de remolatxa
+STR_CARGO_UNIT_SUGARCANE                                                        :{WEIGHT} de canya de sucre
+STR_CARGO_UNIT_WOOL                                                             :{SIGNED_WORD} bal{P 0 a es} de llana
+
+STR_CID_ALCOHOL                                                                 :{TINYFONT}AL
+STR_CID_BAUXITE                                                                 :{TINYFONT}BX
+STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}MC
+STR_CID_CHEMICALS                                                               :{TINYFONT}PQ
+STR_CID_CLAY                                                                    :{TINYFONT}AR
+STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}ST
+STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}SA
+STR_CID_FIBRES                                                                  :{TINYFONT}FV
+STR_CID_FISH                                                                    :{TINYFONT}PE
+STR_CID_LUMBER                                                                  :{TINYFONT}TA
+STR_CID_MANUFACTURING_SUPPLIES                                                  :{TINYFONT}SI
+STR_CID_METAL                                                                   :{TINYFONT}MT
+STR_CID_MILK                                                                    :{TINYFONT}LE
+STR_CID_PETROL                                                                  :{TINYFONT}GA
+STR_CID_RECYCLABLES                                                             :{TINYFONT}DE
+STR_CID_SAND                                                                    :{TINYFONT}SO
+STR_CID_SCRAP_METAL                                                             :{TINYFONT}FL
+STR_CID_STONE                                                                   :{TINYFONT}PE
+STR_CID_SUGAR_BEET                                                              :{TINYFONT}RE
+STR_CID_SUGARCANE                                                               :{TINYFONT}CN
+STR_CID_WOOL                                                                    :{TINYFONT}LA
+
+STR_ERR_CLIMATE_TOYLAND                                                         :{ORANGE}FIRS no est‡ dissenyat per al paisatge de joguines
+STR_ERR_INCOMPATIBLE_SET                                                        :{ORANGE}E01: {YELLOW}Arxiu NewGRF incompatible: {ORANGE}{STRING} {YELLOW}Consulteu el llegeixme de FIRS: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_PARAM_CANSET                                               :{ORANGE}E02: {YELLOW}Par‡metre incompatible: {ORANGE}El segon par‡metre de CanSet ha de ser 0 perquË funcioni amb FIRS. {YELLOW}Consulteu el llegeixme de FIRS: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_PARAM_CITYSET                                              :{ORANGE}E02: {YELLOW}Par‡metre incompatible: {ORANGE}El segon par‡metre de NA City Set ha de ser 0 perquË funcioni amb FIRS. {YELLOW}Consulteu el llegeixme de FIRS: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_SET_TTRS_VERSION                                           :{ORANGE}E04: {YELLOW}VersiÛ incompatible: {ORANGE}La versiÛ de Total Town Replacement Set ha de ser 3.11 o superior. {YELLOW}Consulteu el llegeixme de FIRS: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_OPENTTD_VERSION                                                         :{ORANGE}E00: FIRS requereix la versiÛ OpenTTD 1.2.0 / trunk r22780 o superior. {YELLOW}Consulteu el llegeixme de FIRS: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+
+STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE                                             :s'ha de situar sota l'estatge de les neus.
+STR_ERR_LOCATION_NOT_ON_WATER                                                   :s'ha de situar en terra ferma.
+STR_ERR_LOCATION_NOT_IN_DESERT                                                  :no es pot situar al desert.
+STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE                                             :no es pot situar en terreny inclinat.
+STR_ERR_LOCATION_LIMIT_1_PER_TOWN                                               :nomÈs es permet una ind˙stria d'aquest tipus a cada poblaciÛ.
+
+STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}ProducciÛ:{}  2t per cada 8t de bauxita{}  2t per cada 8.000L de productes quÌmics{}  4t per cada 8t de ferralla{}{}La producciÛ augmenta si es reben dues o mÈs c‡rregues en un mes.
+STR_EXTRA_BIOREFINERY                                                           :{BLACK}ProducciÛ:{}  6.000L per cada 8t de gra{}  6.000L per cada 8t de remolatxa
+STR_EXTRA_BREWERY                                                               :{BLACK}ProducciÛ:{}  3.000L per cada 8 caixes de subministraments industrials{}  5.000L per cada 8t de gra{}  5.000L per cada 8t de fruita{}{}La producciÛ augmenta si es reben subministraments industrials i una altra c‡rrega en un mes.
+STR_EXTRA_BRICKWORKS                                                            :{BLACK}ProducciÛ:{}  2t per cada 8t de carbÛ{}  2t per cada 8t de sorra{}  4t per cada 8t d'argila{}{}La producciÛ augmenta si es reben dues o mÈs c‡rregues en un mes.
+STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}ProducciÛ:{}  2t per cada 8t de carbÛ{}  2t per cada 8t d'argila{}  4t per cada 8t de pedres{}{}La producciÛ augmenta si es reben dues o mÈs c‡rregues en un mes.
+STR_EXTRA_DAIRY                                                                 :{BLACK}ProducciÛ:{}  3t per cada 8 caixes de subministraments industrials{}  5t per cada 8.000L de llet{}{}La producciÛ augmenta si es reben en un mes les dues c‡rregues.
+STR_EXTRA_ENGINEERING_SUPPLIES                                                  :{BLACK}Els subministraments tËcnics poden fer augmentar la producciÛ.{}{YELLOW}  {COMMA} caixes rebudes aquest mes
+STR_EXTRA_FARM_SUPPLIES                                                         :{BLACK}Els subministraments agrÌcoles poden fer augmentar la producciÛ.{}{YELLOW}  {COMMA} caixes rebudes aquest mes
+STR_EXTRA_FERTILIZER_PLANT                                                      :{BLACK}ProducciÛ:{}  8 caixes per cada 8.000L de productes quÌmics
+STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}ProducciÛ:{}  3t per cada 8 caixes de subministraments industrials{}  5t per cada 8t de peix{}{}La producciÛ augmenta si es reben en un mes les dues c‡rregues.
+STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}ProducciÛ:{}  3 palets per cada 8 caixes de subministraments industrials{}  5 palets per cada 8t de taulons{}{}La producciÛ augmenta si es reben en un mes les dues c‡rregues.
+STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Fabrica objectes de vidre com ara ampolles, gerres i plafons.{}{}{BLACK}ProducciÛ:{}  6t per cada 8t de sorra{}  2t per cada 8.000L de productes quÌmics{}{}La producciÛ augmenta si es reben en un mes les dues c‡rregues.
+STR_EXTRA_GRAIN_MILL                                                            :{BLACK}ProducciÛ:{}  3t per cada 8 caixes de sumbinistres industrials{}  5t per cada 8t de gra{}{}La producciÛ augmenta si es reben en un mes les dues c‡rregues.
+STR_EXTRA_IRON_WORKS                                                            :{BLACK}ProducciÛ:{}  2t per cada 8t de fusta{}  2t per cada 8t de mineral de ferro{}{}La producciÛ augmenta si es reben en un mes les dues c‡rregues.
+STR_EXTRA_LIME_KILN                                                             :{BLACK}ProducciÛ:{}  3t per cada 8t de pedres{}  3t per cada 8t de carbÛ{}{}La producciÛ augmenta si es reben en un mes les dues c‡rregues.
+STR_EXTRA_LUMBER_YARD                                                           :{BLACK}Fabrica objectes com ara perxes, astes, tanques i baranes.{}{}{BLACK}ProducciÛ:{}  2t per cada 8.000L de productes quÌmics{}  6t per cada 8t de taulons{}{}La producciÛ augmenta si es reben en un mes les dues c‡rregues.
+STR_EXTRA_MACHINE_SHOP                                                          :{BLACK}Construeix i prepara m‡quines diverses.{}{}ProducciÛ:{}  8 caixes per cada 8.000L de gasolina{}  8 caixes per cada 8t de metall
+STR_EXTRA_MEAT_PACKER                                                           :{BLACK}ProducciÛ:{}  3t per cada 8 caixes de subministraments industrials{}  5t per cada 8t de bestiar{}{}La producciÛ augmenta si es reben en un mes les dues c‡rregues.
+STR_EXTRA_METAL_FABRICATION_PLANT                                               :{BLACK}Produeix components met‡l∑lics.{}{}{BLACK}ProducciÛ:{}  2t per cada 8.000L de productes quÌmics{}  6t per cada 8t de metall{}{}La producciÛ augmenta si es reben en un mes les dues c‡rregues.
+STR_EXTRA_METAL_FOUNDRY                                                         :{BLACK}Produces objectes met‡l∑lics com ara llaunes, estris i ferramentes.{}{}{BLACK}ProducciÛ:{}  2 caixes per cada 8.000L de productes quÌmics{}  6 caixes per cada 8t de metall{}{}La producciÛ augmenta si es reben en un mes les dues c‡rregues.
+STR_EXTRA_OIL_REFINERY                                                          :{BLACK}Processa el petroli cru en gasolina i productes quÌmics.{}{}ProducciÛ:{}  6.000L per cada 8.000L de petroli
+STR_EXTRA_PAPER_MILL                                                            :{BLACK}Tracta la fusta per a produir paper i cartrÛ.{}{}{BLACK}ProducciÛ:{}  4 caixes per cada 8t de fusta{}  2 caixes per cada 8t d'argila{}  2 caixes per cada 8.000L de productes quÌmics{}{}La producciÛ augmenta si es reben dues o mÈs c‡rregues en un mes.
+STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}Produeix objectes de pl‡stic com ara envasos i material domËstic.{}{}ProducciÛ:{}  6 caixes per cada 8 bales de fibres vegetals{}  6 caixes per cada 8.000L de productes quÌmics
+STR_EXTRA_RECYCLING_PLANT                                                       :{BLACK}Processa les deixalles per a reciclar-les.{}{}ProducciÛ:{}  6t per cada 8t de deixalles
+STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}La producciÛ Ès proporcional a la poblaciÛ de la localitat.
+STR_EXTRA_SAWMILL                                                               :{BLACK}Talla la fusta.{}{}ProducciÛ:{}  6t per cada 8t de fusta
+STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Produeix objectes de metall com ara pales, aixades, eines, portes i ferradures.{}{}ProducciÛ:{}  8 caixes per cada 8t de metall
+STR_EXTRA_STEELMILL                                                             :{BLACK}ProducciÛ:{}  2t per cada 8t de mineral de ferro{}  2t per cada 8t de carbÛ{}  4t per cada 8t de ferralla{}{}La producciÛ augmenta si es reben dues o mÈs c‡rregues en un mes.
+STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}ProducciÛ:{}  3t per cada 8 caixes de subministraments industrials{}  5t per cada 8t de remolatxa{}{}Augmenta a 8t per cada 8t si es reben les dues c‡rregues en un mes.
+STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}ProducciÛ:{}  3 palets per cada 8 caixes de subministraments industrials{}  5 palets per cada 8 bales de llana{}  5 palets per cada 8 bales de fibres vegetals{}{}La producciÛ augmenta si es reben subministraments industrials i una altra c‡rrega en un mes.
+
+STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ DEBUG ------------{}ProducciÛ d'aquest mes:{}C‡rrega 1: {WHITE}{COMMA}{BLACK}{}C‡rrega 2: {WHITE}{COMMA}{BLACK}{}Dies des de la darrera entrega: {WHITE}{COMMA}{BLACK}
+STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Assolit el m‡xim de producciÛ
+STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}ProducciÛ actual: {YELLOW}normal}{}{BLACK}Per a doblar la producciÛ cal que lliureu 30 caixes de subministraments en tres mesos (o 120 caixes per a producciÛ qu‡druple)
+STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}ProducciÛ actual: {YELLOW}millorada (doble){}{}{BLACK}Per a mantenir aquest nivell cal que lliureu 30 caixes de subministraments en tres mesos, o 120 caixes per aconseguir producciÛ qu‡druple
+STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}ProducciÛ actual: {YELLOW}entusiasta (qu‡druple){}{}{BLACK}Per a mantenir aquest nivell cal que lliureu 120 caixes de subministraments en tres mesos
+STR_GENERIC_NEWLINE                                                             :{}
+
+STR_FUND_MIXED_FARM                                                             :{}{BLACK}LocalitzaciÛ: {YELLOW}No es pot situar a la neu ni al desert.
+STR_FUND_ARABLE_FARM                                                            :{}{BLACK}LocalitzaciÛ: {YELLOW}No es pot situar a la neu ni al desert.
+STR_FUND_FOREST                                                                 :{}{BLACK}LocalitzaciÛ: {YELLOW}No es pot situar al desert.
+STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}LocalitzaciÛ: {YELLOW}No es pot situar a la neu.
+
+STR_FUND_AVAILABLE_FROM                                                         :{}{BLACK}Disponible des de: {YELLOW}{COMMA}
+
+STR_FUND_AVAILABLE_UNTIL                                                        :{}{BLACK}No disponible desprÈs de: {YELLOW}{COMMA}
+
+
+STR_TOWN                                                                        :{STRING}
+STR_STATION                                                                     :{STRING} {STRING}
+
+STR_IND_ALUMINIUM_PLANT                                                         :{G=Femenin}Planta d'alumini
+STR_IND_ARABLE_FARM                                                             :{G=Femenin}Granja de conreu
+STR_IND_BAUXITE_MINE                                                            :{G=Femenin}Mina de bauxita
+STR_IND_BIOREFINERY                                                             :{G=Femenin}Biorefineria
+STR_IND_BREWERY                                                                 :{G=Femenin}Cerveseria
+STR_IND_BRICK_WORKS                                                             :{G=Femenin}F‡brica de maons
+STR_IND_BUILDERS_YARD                                                           :{G=Femenin}Constructora
+STR_IND_CEMENT_PLANT                                                            :{G=Femenin}F‡brica de ciment
+STR_IND_CLAY_PIT                                                                :{G=Femenin}Argilera
+STR_IND_DAIRY                                                                   :{G=Femenin}Ind˙stria l‡ctia
+STR_IND_DAIRYFARM                                                               :{G=Femenin}Granja bovina
+STR_IND_DREDGING_SITE                                                           :{G=Femenin}Zona de dragatge
+STR_IND_FERTILISER_PLANT                                                        :{G=Femenin}F‡brica de fertilitzant
+STR_IND_FISHING_GROUND                                                          :{G=Masculin}Calador de pesca
+STR_IND_FISHING_HARBOUR                                                         :{G=Masculin}Port pesquer
+STR_IND_FOOD_MARKET                                                             :{G=Masculin}Mercat
+STR_IND_FURNITURE_FACTORY                                                       :{G=Femenin}F‡brica de mobles
+STR_IND_GLASS_WORKS                                                             :{G=Femenin}Vidrieria
+STR_IND_GRAIN_MILL                                                              :{G=Masculin}MolÌ fariner
+STR_IND_HARDWARE_STORE                                                          :{G=Femenin}Ferreteria
+STR_IND_HOTEL                                                                   :{G=Masculin}Hotel
+STR_IND_IRON_WORKS                                                              :{G=Femenin}Farga
+STR_IND_JUNKYARD                                                                :{G=Masculin}Desballestador
+STR_IND_LIME_KILN                                                               :{G=Masculin}Forn de calÁ
+STR_IND_LUMBER_YARD                                                             :{G=Femenin}Fusteria
+STR_IND_MACHINE_SHOP                                                            :{G=Femenin}F‡brica de maquin‡ria
+STR_IND_METAL_FABRICATION_PLANT                                                 :{G=Femenin}Ind˙stria metal∑l˙rgica
+STR_IND_METAL_FOUNDRY                                                           :{G=Femenin}Foneria
+STR_IND_MIXEDFARM                                                               :{G=Femenin}Granja mixta
+STR_IND_PETROLPUMP                                                              :{G=Femenin}Gasolinera
+STR_IND_PLASTICS_PLANT                                                          :{G=Femenin}F‡brica de pl‡stics
+STR_IND_QUARRY                                                                  :{G=Femenin}Pedrera
+STR_IND_RECYCLING_DEPOT                                                         :{G=Femenin}Deixalleria
+STR_IND_RECYCLING_PLANT                                                         :{G=Femenin}Planta de reciclatge
+STR_IND_SHEEPFARM                                                               :{G=Femenin}Granja ovina
+STR_IND_SMITHY_FORGE                                                            :{G=Femenin}Ferreria
+STR_IND_STOCKYARD                                                               :{G=Masculin}Escorxador
+STR_IND_SUGAR_REFINERY                                                          :{G=Femenin}Ind˙stria sucrera
+STR_IND_SUPERMARKET                                                             :{G=Masculin}Supermercat
+STR_IND_TEXTILE_MILL                                                            :{G=Femenin}F‡brica tËxtil
+
+
