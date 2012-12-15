@@ -315,7 +315,7 @@ class Industry(object):
         elif date_variation_index == len(self.graphics_change_dates):
             return "|| (current_year + " + random_offset + ") < " + str(self.graphics_change_dates[date_variation_index - 1]) # last set of graphics, hide before last change date
         else:
-            return "|| (current_year + " + random_offset + ") < " + str(self.graphics_change_dates[date_variation_index - 1]) + " || (current_year + " + random_offset + ") >= " + str(self.graphics_change_dates[date_variation_index - 2])
+            return "|| (current_year + " + random_offset + ") < " + str(self.graphics_change_dates[date_variation_index - 1]) + " || (current_year + " + random_offset + ") >= " + str(self.graphics_change_dates[date_variation_index])
 
     def get_spritesets(self):
         template = templates['spritesets.pynml']
