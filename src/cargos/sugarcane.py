@@ -18,6 +18,7 @@ cargo = Cargo(id = 'sugarcane',
               items_of_cargo = 'string(STR_CARGO_UNIT_SUGARCANE)',
               penalty_lowerbound = '5',
               single_penalty_length = '30',
-              price_factor = '116.194725037')
+              price_factor = '116.194725037',
+              disabled_climates = ['CLIMATE_TEMPERATE', 'CLIMATE_ARCTIC', 'CLIMATE_TOYLAND'])
 
 cargo.economy_variations['BASIC']['disabled'] = True
