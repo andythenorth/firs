@@ -115,6 +115,12 @@ spriteset_13 = industry.add_spriteset(
     sprites = [(920, 10, 64, 49, -39, -15)],
     zextent = 32
 )
+# out of sequence for historical reasons
+spriteset_14 = industry.add_spriteset(
+    id = 'machine_shop_spriteset_14',
+    sprites = [(710, 10, 64, 31, -28, -1)],
+    zextent = 32
+)
 sprite_smoke = industry.add_smoke_sprite(
     smoke_type = 'dark_smoke_small',
     xoffset= 13,
@@ -161,7 +167,7 @@ industry.add_spritelayout(
     id = 'machine_shop_spritelayout_6',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
-    building_sprites = [spriteset_6],
+    building_sprites = [spriteset_6, spriteset_14],
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
