@@ -38,7 +38,8 @@ industry = Industry(id='fertiliser_plant',
                     name='string(STR_IND_FERTILISER_PLANT)',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_IND_FERTILISER_PLANT))',
                     fund_cost_multiplier='170',
-                    closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS')
+                    closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
+                    graphics_change_dates = [1952])
 
 
 industry.add_tile(id='fertiliser_plant_tile')
