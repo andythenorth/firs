@@ -38,7 +38,8 @@ industry = Industry(id='machine_shop',
                     name='string(STR_IND_MACHINE_SHOP)',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_IND_MACHINE_SHOP))',
                     fund_cost_multiplier='145',
-                    closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS')
+                    closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
+                    graphics_change_dates = [1920, 1945, 1970, 1990, 2010])
 
 industry.add_tile(id='machine_shop_tile')
 
