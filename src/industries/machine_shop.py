@@ -79,7 +79,7 @@ spriteset_5 = industry.add_spriteset(
 spriteset_6 = industry.add_spriteset(
     id = 'machine_shop_spriteset_6',
     sprites = [(360, 10, 64, 78, -31, -47)],
-    zextent = 32
+    zextent = 78
 )
 spriteset_7 = industry.add_spriteset(
     id = 'machine_shop_spriteset_7',
