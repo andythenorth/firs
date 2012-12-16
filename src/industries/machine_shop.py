@@ -168,7 +168,8 @@ industry.add_spritelayout(
     id = 'machine_shop_spritelayout_6',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
-    building_sprites = [spriteset_6, spriteset_14],
+    #building_sprites = [spriteset_6, spriteset_14], # commented due to spritesorter issues obscuring spriteset_14
+    building_sprites = [spriteset_6],
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
