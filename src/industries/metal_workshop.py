@@ -41,7 +41,6 @@ industry = Industry(id='metal_workshop',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS')
 
 industry.economy_variations['BASIC_ARCTIC'].disabled = True
-industry.economy_variations['BASIC_TROPIC'].disabled = True
 
 industry.add_tile(id='metal_workshop_tile')
 

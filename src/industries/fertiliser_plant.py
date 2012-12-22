@@ -42,7 +42,6 @@ industry = Industry(id='fertiliser_plant',
                     graphics_change_dates = [1952])
 
 industry.economy_variations['BASIC_TEMPERATE'].disabled = True
-industry.economy_variations['BASIC_TROPIC'].disabled = True
 
 industry.add_tile(id='fertiliser_plant_tile')
 

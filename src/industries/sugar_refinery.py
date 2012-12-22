@@ -42,7 +42,6 @@ industry = Industry(id='sugar_refinery',
 
 industry.economy_variations['BASIC_TEMPERATE'].disabled = True
 industry.economy_variations['BASIC_ARCTIC'].disabled = True
-industry.economy_variations['BASIC_TROPIC'].disabled = True
 
 industry.add_tile(id='sugar_refinery_tile')
 

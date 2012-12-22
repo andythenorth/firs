@@ -22,4 +22,3 @@ cargo = Cargo(id = 'bauxite',
 
 cargo.economy_variations['BASIC_TEMPERATE']['disabled'] = True
 cargo.economy_variations['BASIC_ARCTIC']['disabled'] = True
-cargo.economy_variations['BASIC_TROPIC']['disabled'] = True
