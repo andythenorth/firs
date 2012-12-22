@@ -28,5 +28,9 @@ industry = Industry(id='paper_mill',
                     fund_cost_multiplier='120',
                     override='14')
 
+industry.economy_variations['BASIC_TEMPERATE'].disabled = True
+industry.economy_variations['BASIC_ARCTIC'].disabled = True
+industry.economy_variations['BASIC_TROPIC'].disabled = True
+
 # industry uses layouts and sprites from default game, no custom layouts etc
 

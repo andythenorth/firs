@@ -22,7 +22,9 @@ STR_PARAM_VALUE_STAT_RATING_DEFAULT                                             
 STR_PARAM_VALUE_STAT_RATING_REDUCED_TIME                                        :Favourable (allows longer time between cargo pickups)
 STR_PARAM_VALUE_STAT_RATING_100                                                 :Insanely generous (rating is always 100%)
 
-STR_PARAM_VALUE_ECONOMIES_BASIC                                                 :Basic Economy
+STR_PARAM_VALUE_ECONOMIES_BASIC_TEMPERATE                                       :Temperate Basic Economy
+STR_PARAM_VALUE_ECONOMIES_BASIC_ARCTIC                                          :Arctic Basic Economy
+STR_PARAM_VALUE_ECONOMIES_BASIC_TROPIC                                          :Tropic Basic Economy
 STR_PARAM_VALUE_ECONOMIES_FIRS                                                  :FIRS Economy
 STR_PARAM_VALUE_ECONOMIES_TEST_3                                                :Test Economy 3
 
@@ -145,6 +147,7 @@ STR_PRIMARY_PRODUCTION_2X                                                       
 STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}Current production: {YELLOW}gung ho (quadruple){}{}{BLACK}To keep this level, deliver 120 crates supplies within three months
 STR_GENERIC_NEWLINE                                                             :{}
 
+STR_FUND_BASIC_FARM                                                             :{}{BLACK}Location: {YELLOW}Cannot be funded on snow or in deserts.
 STR_FUND_MIXED_FARM                                                             :{}{BLACK}Location: {YELLOW}Cannot be funded on snow or in deserts.
 STR_FUND_ARABLE_FARM                                                            :{}{BLACK}Location: {YELLOW}Cannot be funded on snow or in deserts.
 STR_FUND_FOREST                                                                 :{}{BLACK}Location: {YELLOW}Cannot be funded in deserts.
@@ -160,6 +163,7 @@ STR_STATION                                                                     
 
 STR_IND_ALUMINIUM_PLANT                                                         :Aluminium Plant
 STR_IND_ARABLE_FARM                                                             :Arable Farm
+STR_IND_BASICFARM                                                               :Farm
 STR_IND_BAUXITE_MINE                                                            :Bauxite Mine
 STR_IND_BIOREFINERY                                                             :Biorefinery
 STR_IND_BREWERY                                                                 :Brewery

@@ -40,7 +40,6 @@ industry = Industry(id='metal_workshop',
                     fund_cost_multiplier='120',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS')
 
-
 industry.add_tile(id='metal_workshop_tile')
 
 spriteset_ground = industry.add_spriteset(

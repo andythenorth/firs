@@ -21,4 +21,4 @@ cargo = Cargo(id = 'sugar_beet',
               price_factor = '116.194725037',
               disabled_climates = ['CLIMATE_TROPICAL'])
 
-cargo.economy_variations['BASIC']['disabled'] = True
+cargo.economy_variations['BASIC_TEMPERATE']['disabled'] = True

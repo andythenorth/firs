@@ -40,7 +40,7 @@ industry = Industry(id='stockyard',
                     fund_cost_multiplier='145',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS')
 
-industry.economy_variations['BASIC'].disabled = True
+industry.economy_variations['BASIC_TROPIC'].disabled = True
 
 industry.add_tile(id='stockyard_tile')
 

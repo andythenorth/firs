@@ -20,4 +20,4 @@ cargo = Cargo(id = 'bauxite',
               single_penalty_length = '255',
               price_factor = '82.5862884521')
 
-cargo.economy_variations['BASIC']['disabled'] = True
+cargo.economy_variations['BASIC_TEMPERATE']['disabled'] = True

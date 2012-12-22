@@ -40,6 +40,10 @@ industry = Industry(id='lumber_yard',
                     fund_cost_multiplier='35',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS')
 
+industry.economy_variations['BASIC_TEMPERATE'].disabled = True
+industry.economy_variations['BASIC_ARCTIC'].disabled = True
+industry.economy_variations['BASIC_TROPIC'].disabled = True
+
 industry.add_tile(id='lumber_yard_tile')
 
 sprite_ground = industry.add_sprite(

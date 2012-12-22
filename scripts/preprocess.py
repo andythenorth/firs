@@ -64,6 +64,7 @@ import industries
 
 from industries import aluminium_plant
 from industries import arable_farm
+from industries import basic_farm
 from industries import bauxite_mine
 from industries import biorefinery
 from industries import brewery

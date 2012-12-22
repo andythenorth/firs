@@ -21,4 +21,4 @@ cargo = Cargo(id = 'sugarcane',
               price_factor = '116.194725037',
               disabled_climates = ['CLIMATE_TEMPERATE', 'CLIMATE_ARCTIC', 'CLIMATE_TOYLAND'])
 
-cargo.economy_variations['BASIC']['disabled'] = True
+cargo.economy_variations['BASIC_TEMPERATE']['disabled'] = True
