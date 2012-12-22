@@ -10,6 +10,12 @@ FIRS Industry Replacement Set Changelog
 
 *New Features*
 - Reworked supplies mechanic: deliver supplies regularly for temporary production boost
+- Economies, selected by parameter: 
+	- standard FIRS economy (31 cargos, 50 industries) 
+	- a basic economy to suit each climate, designed by DanMacK 
+		- Temperate Basic (18 cargos, 19 industries)
+		- Arctic Basic (17 cargos, 19 industries)
+		- Tropic Basic (18 cargos, 21 industries)
 - Construction sprites for majority of industries
 - Snow for windmill version of Grain Mill
 - Fences for Smithy Forge
@@ -21,7 +27,8 @@ FIRS Industry Replacement Set Changelog
 - Smoke for Lime Kiln
 - Lime Kiln shows different crane / loader graphics depending on date
 - Dredging Site shows steam or diesel cranes depending on date
-(most snow drawn by DanMacK) 
+- Aluminimum Plant, Fertiliser Plant, Junk Yard, Machine Shop have date-sensitive graphics
+(most new snow sprites have been drawn by DanMacK)
 
 *Changes*
 - Adjusted various primary industry probabilities and clustering behaviours
@@ -37,24 +44,29 @@ FIRS Industry Replacement Set Changelog
 - Use 1825 as intro date for Dredging Site for better game balance
 - Use 1830 as intro date for Oil Wells and Oil Refinery to improve game balance
 - Use 1824 as intro date for Cement Plant to improve game balance
-- Improved snow for Plastics Plant and Fertiliser Plant 
+- Improved snow for Brewery, Plastics Plant and Fertiliser Plant
+- Improved appearance of Food Market (DanMacK)
 - [Makefile] use nml translation report script by Alberth
 
 *Fixes*
 - Recycling Depot production code was incorrect
 - Palette wrong for Quarry
+- Bad company colour pixels in Fishing Harbour
 - Hotels were too cheap to build
+- Hotel tile didn't accept passengers 
 - Removed STR_EXTRA_FERTILIZER_PLANT from all translations that still used {WEIGHT_SHORT}
 - Missing 'chemicals' in Fertiliser Plant extra text string (alberth)
 - [Makefile] Adopt NML version check to NML's new version output
 
 *Translations additions / updates*
 - Afrikaans (telanus)
+- Catalan (Bassals)
 - Dutch (Alberth)
 - French (OliTTD)
 - Hungarian (Brumi)
 - Indonesian (Yoursnotmine)
 - Romanian (Stef Ionesco)
+- Spanish (Terkhen)
 - Swedish (Joel_A)
 
 --------------
