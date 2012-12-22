@@ -5,76 +5,99 @@
  * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#define THIS_ID(...) fishing_grounds ## __VA_ARGS__
+#define THIS_ID(...) ${industry.id}_ ## __VA_ARGS__
 
-spriteset(THIS_ID(spriteset_1), "src/graphics/industries/fishing_grounds_1.png") { tmpl_ground_tile(10, 10) }
-spriteset(THIS_ID(spriteset_2), "src/graphics/industries/fishing_grounds_1.png") { tmpl_ground_tile(80, 10) }
-spriteset(THIS_ID(spriteset_3), "src/graphics/industries/fishing_grounds_1.png") { tmpl_ground_tile(150, 10) }
-spriteset(THIS_ID(spriteset_4), "src/graphics/industries/fishing_grounds_1.png") { tmpl_ground_tile(220, 10) }
-spriteset(THIS_ID(spriteset_5), "src/graphics/industries/fishing_grounds_1.png") { tmpl_building_sprite(290, 10, 31, -32) }
+/* uses templated spritesets, but not templated layouts - no need for snow, construction states etc */
 
-SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_1), GROUNDSPRITE_WATER, THIS_ID(spriteset_1), 16)
+${industry.get_spritesets()}
 
-SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_2), GROUNDSPRITE_WATER, THIS_ID(spriteset_2), 16)
-
-SPRITELAYOUT_NORMAL(THIS_ID(spritelayout_3), GROUNDSPRITE_WATER, THIS_ID(spriteset_3), 16)
-
-spritelayout THIS_ID(spritelayout_4) {
+spritelayout fishing_grounds_spritelayout_1 {
+	ground {
+		sprite: GROUNDSPRITE_WATER;
+	}
+	building {
+		sprite: fishing_grounds_spriteset_1_0;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+}
+spritelayout fishing_grounds_spritelayout_2 {
+	ground {
+		sprite: GROUNDSPRITE_WATER;
+	}
+	building {
+		sprite: fishing_grounds_spriteset_2_0;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+}
+spritelayout fishing_grounds_spritelayout_3 {
+	ground {
+		sprite: GROUNDSPRITE_WATER;
+	}
+	building {
+		sprite: fishing_grounds_spriteset_3_0;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+}
+spritelayout ${industry.id}_spritelayout_4 {
 	ground {
 		sprite: GROUNDSPRITE_WATER;
 	}
 	childsprite {
-		sprite: THIS_ID(spriteset_5);
+		sprite: ${industry.id}_spriteset_5_0;
 		recolour_mode: RECOLOUR_REMAP;
 		palette: 0;
+		always_draw: 1;
 	}
 	building {
-		sprite: THIS_ID(spriteset_4);
+		sprite: ${industry.id}_spriteset_4_0;
 		recolour_mode: RECOLOUR_REMAP;
 		palette: 0;
 	}
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_1), relative_pos) {
-	relative_coord(3, 2): THIS_ID(spritelayout_1);
-	relative_coord(3, 3): THIS_ID(spritelayout_4);
-	relative_coord(3, 4): THIS_ID(spritelayout_2);
-	THIS_ID(spritelayout_3);
+switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_layout_1, relative_pos) {
+	relative_coord(3, 2): ${industry.id}_spritelayout_1;
+	relative_coord(3, 3): ${industry.id}_spritelayout_4;
+	relative_coord(3, 4): ${industry.id}_spritelayout_2;
+	${industry.id}_spritelayout_3;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_2), relative_pos) {
-	relative_coord(3, 2): THIS_ID(spritelayout_1);
-	relative_coord(3, 3): THIS_ID(spritelayout_2);
-	relative_coord(3, 4): THIS_ID(spritelayout_4);
-	THIS_ID(spritelayout_3);
+switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_layout_2, relative_pos) {
+	relative_coord(3, 2): ${industry.id}_spritelayout_1;
+	relative_coord(3, 3): ${industry.id}_spritelayout_2;
+	relative_coord(3, 4): ${industry.id}_spritelayout_4;
+	${industry.id}_spritelayout_3;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_3), relative_pos) {
-	relative_coord(2, 3): THIS_ID(spritelayout_3);
-	relative_coord(5, 3): THIS_ID(spritelayout_4);
-	THIS_ID(spritelayout_2);
+switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_layout_3, relative_pos) {
+	relative_coord(2, 3): ${industry.id}_spritelayout_3;
+	relative_coord(5, 3): ${industry.id}_spritelayout_4;
+	${industry.id}_spritelayout_2;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_4), relative_pos) {
-	relative_coord(3, 5): THIS_ID(spritelayout_1);
-	relative_coord(3, 3): THIS_ID(spritelayout_4);
-	relative_coord(3, 2): THIS_ID(spritelayout_2);
-	THIS_ID(spritelayout_3);
+switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_layout_4, relative_pos) {
+	relative_coord(3, 5): ${industry.id}_spritelayout_1;
+	relative_coord(3, 3): ${industry.id}_spritelayout_4;
+	relative_coord(3, 2): ${industry.id}_spritelayout_2;
+	${industry.id}_spritelayout_3;
 }
 
-switch(FEAT_INDUSTRYTILES, PARENT, THIS_ID(layout), layout_num) {
-	1: THIS_ID(layout_1);
-	2: THIS_ID(layout_2);
-	3: THIS_ID(layout_3);
-	4: THIS_ID(layout_4);
-	THIS_ID(spritelayout_1);
+switch(FEAT_INDUSTRYTILES, PARENT, ${industry.id}_layout, layout_num) {
+	1: ${industry.id}_layout_1;
+	2: ${industry.id}_layout_2;
+	3: ${industry.id}_layout_3;
+	4: ${industry.id}_layout_4;
+	${industry.id}_spritelayout_1;
 }
 
 /* *************************************************
  * Definition of the industry tile and its callbacks
  * *************************************************/
 
-item(FEAT_INDUSTRYTILES, THIS_ID(tile), TILE_FISHINGGROUNDS_1) {
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile, TILE_FISHINGGROUNDS_1) {
 	property {
 		substitute:       0;
 		accepted_cargos:  [];
@@ -82,7 +105,7 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile), TILE_FISHINGGROUNDS_1) {
 	}
 
 	graphics {
-		THIS_ID(layout);
+		${industry.id}_layout;
 	}
 }
 
@@ -114,15 +137,15 @@ tilelayout tilelayout_fishing_grounds_1 {
 	2, 6: 255;
 	3, 0: 255;
 	3, 1: 255;
-	3, 2: THIS_ID(tile);
-	3, 3: THIS_ID(tile);
-	3, 4: THIS_ID(tile);
+	3, 2: ${industry.id}_tile;
+	3, 3: ${industry.id}_tile;
+	3, 4: ${industry.id}_tile;
 	3, 5: 255;
 	3, 6: 255;
 	4, 0: 255;
 	4, 1: 255;
 	4, 2: 255;
-	4, 3: THIS_ID(tile);
+	4, 3: ${industry.id}_tile;
 	4, 4: 255;
 	4, 5: 255;
 	4, 6: 255;
@@ -166,23 +189,23 @@ tilelayout tilelayout_fishing_grounds_2 {
 	2, 6: 255;
 	3, 0: 255;
 	3, 1: 255;
-	3, 2: THIS_ID(tile);
-	3, 3: THIS_ID(tile);
-	3, 4: THIS_ID(tile);
+	3, 2: ${industry.id}_tile;
+	3, 3: ${industry.id}_tile;
+	3, 4: ${industry.id}_tile;
 	3, 5: 255;
 	3, 6: 255;
 	4, 0: 255;
 	4, 1: 255;
 	4, 2: 255;
 	4, 3: 255;
-	4, 4: THIS_ID(tile);
+	4, 4: ${industry.id}_tile;
 	4, 5: 255;
 	4, 6: 255;
 	5, 0: 255;
 	5, 1: 255;
 	5, 2: 255;
 	5, 3: 255;
-	5, 4: THIS_ID(tile);
+	5, 4: ${industry.id}_tile;
 	5, 5: 255;
 	5, 6: 255;
 	6, 0: 255;
@@ -219,7 +242,7 @@ tilelayout tilelayout_fishing_grounds_3 {
 	2, 0: 255;
 	2, 1: 255;
 	2, 2: 255;
-	2, 3: THIS_ID(tile);
+	2, 3: ${industry.id}_tile;
 	2, 4: 255;
 	2, 5: 255;
 	2, 6: 255;
@@ -239,9 +262,9 @@ tilelayout tilelayout_fishing_grounds_3 {
 	4, 6: 255;
 	5, 0: 255;
 	5, 1: 255;
-	5, 2: THIS_ID(tile);
-	5, 3: THIS_ID(tile);
-	5, 4: THIS_ID(tile);
+	5, 2: ${industry.id}_tile;
+	5, 3: ${industry.id}_tile;
+	5, 4: ${industry.id}_tile;
 	5, 5: 255;
 	5, 6: 255;
 	6, 0: 255;
@@ -282,15 +305,15 @@ tilelayout tilelayout_fishing_grounds_4 {
 	2, 2: 24;
 	2, 3: 24;
 	2, 4: 255;
-	2, 5: THIS_ID(tile);
+	2, 5: ${industry.id}_tile;
 	2, 6: 255;
 	2, 7: 255;
 	3, 0: 255;
 	3, 1: 255;
-	3, 2: THIS_ID(tile);
-	3, 3: THIS_ID(tile);
-	3, 4: THIS_ID(tile);
-	3, 5: THIS_ID(tile);
+	3, 2: ${industry.id}_tile;
+	3, 3: ${industry.id}_tile;
+	3, 4: ${industry.id}_tile;
+	3, 5: ${industry.id}_tile;
 	3, 6: 255;
 	3, 7: 255;
 	4, 0: 255;
@@ -318,16 +341,16 @@ tilelayout tilelayout_fishing_grounds_4 {
 #define THIS_STR_EXTRA_SUPPLIES        STR_EXTRA_FARM_SUPPLIES
 
 CHECK_NEARBY_CLUSTER(fishing_grounds,  16, 60, 3, 4, return CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
-CHECK_INCOMPATIBLE  (fishing_harbour,  16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(fishing_grounds))
-CHECK_COAST_DISTANCE(coastal_distance, 0, param_max_coastal_distance, CB_RESULT_LOCATION_DISALLOW, THIS_ID(fishing_harbour))
-CHECK_FOUNDER       (THIS_ID(coastal_distance))
+CHECK_INCOMPATIBLE  (fishing_harbour,  16, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_fishing_grounds)
+CHECK_COAST_DISTANCE(coastal_distance, 0, param_max_coastal_distance, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_fishing_harbour)
+CHECK_FOUNDER       (${industry.id}_coastal_distance)
 
-SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
+SWITCH_COLOUR_SCHEME1(${industry.id}_colour)
 
 #include "../src/templates/check_availability.pnml"
 
 /* industry specific switch to randomise initial production; as Fishing Grounds never changes production, go for a wide range of productions*/
-random_switch(FEAT_INDUSTRIES, SELF, THIS_ID(randomise_primary_production_on_build)) {
+random_switch(FEAT_INDUSTRIES, SELF, ${industry.id}_randomise_primary_production_on_build) {
 	1: return 8;
 	1: return 12;
 	3: return 16;
@@ -343,13 +366,13 @@ ${industry.get_industry_properties()}
 
 item(FEAT_INDUSTRIES, fishing_grounds, ${industry.get_numeric_id()}) {
 	graphics {
-		construction_probability:THIS_ID(check_availability);
-		location_check:          THIS_ID(check_location);
+		construction_probability:${industry.id}_check_availability;
+		location_check:          ${industry.id}_check_location;
 		monthly_prod_change:     return CB_RESULT_IND_PROD_NO_CHANGE;
 		random_prod_change:      return CB_RESULT_IND_PROD_NO_CHANGE;
-		build_prod_change:       THIS_ID(randomise_primary_production_on_build); // initial production customised to Fishing Grounds
+		build_prod_change:       ${industry.id}_randomise_primary_production_on_build; // initial production customised to Fishing Grounds
 //		extra_text_industry:     // no extra text. No production increase by means of FMSP
-		colour:                  THIS_ID(colour);
+		colour:                  ${industry.id}_colour;
 	}
 }
 
