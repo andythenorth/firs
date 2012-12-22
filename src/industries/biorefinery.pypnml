@@ -5,9 +5,6 @@
  * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "../src/templates/spritelayout_templates.pnml"
-#include "../src/templates/smoke_templates.pnml"
-
 #define THIS_ID(...) ${industry.id}_ ## __VA_ARGS__
 
 ${industry.get_spritesets()}
