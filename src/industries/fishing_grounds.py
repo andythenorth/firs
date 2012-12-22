@@ -41,6 +41,7 @@ industry = Industry(id='fishing_grounds',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS')
 
 industry.economy_variations['BASIC_TEMPERATE'].disabled = True
+industry.economy_variations['BASIC_TROPIC'].disabled = True
 
 spriteset_1 = industry.add_spriteset(
     id = 'fishing_grounds_spriteset_1',

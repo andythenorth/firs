@@ -21,3 +21,5 @@ cargo = Cargo(id = 'wool',
               price_factor = '105.202674866')
 
 cargo.economy_variations['BASIC_TEMPERATE']['disabled'] = True
+cargo.economy_variations['BASIC_ARCTIC']['disabled'] = True
+cargo.economy_variations['BASIC_TROPIC']['disabled'] = True

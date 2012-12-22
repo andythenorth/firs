@@ -21,3 +21,4 @@ cargo = Cargo(id = 'fish',
               price_factor = '143.869400024')
 
 cargo.economy_variations['BASIC_TEMPERATE']['disabled'] = True
+cargo.economy_variations['BASIC_TROPIC']['disabled'] = True

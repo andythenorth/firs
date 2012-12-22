@@ -20,3 +20,5 @@ cargo = Cargo(id = 'iron_ore',
               single_penalty_length = '255',
               price_factor = '75.4852294922')
 
+cargo.economy_variations['BASIC_ARCTIC']['disabled'] = True
+cargo.economy_variations['BASIC_TROPIC']['disabled'] = True

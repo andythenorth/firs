@@ -42,7 +42,7 @@ industry = Industry(id='aluminium_plant',
                     graphics_change_dates = [1942, 1980])
 
 industry.economy_variations['BASIC_TEMPERATE'].disabled = True
-
+industry.economy_variations['BASIC_ARCTIC'].disabled = True
 
 industry.add_tile(id='aluminium_plant_tile')
 

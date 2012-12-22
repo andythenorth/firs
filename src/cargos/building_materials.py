@@ -21,3 +21,5 @@ cargo = Cargo(id = 'building_materials',
               price_factor = '136.233329773')
 
 cargo.economy_variations['BASIC_TEMPERATE']['disabled'] = True
+cargo.economy_variations['BASIC_ARCTIC']['disabled'] = True
+cargo.economy_variations['BASIC_TROPIC']['disabled'] = True

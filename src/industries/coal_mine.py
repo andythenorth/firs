@@ -27,5 +27,8 @@ industry = Industry(id='coal_mine',
                     fund_cost_multiplier='252',
                     override='0')
 
+industry.economy_variations['BASIC_ARCTIC'].disabled = True
+industry.economy_variations['BASIC_TROPIC'].disabled = True
+
 # industry uses layouts and sprites from default game, no custom layouts etc
 

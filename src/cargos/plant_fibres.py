@@ -21,3 +21,5 @@ cargo = Cargo(id = 'plant_fibres',
               price_factor = '107.634544373')
 
 cargo.economy_variations['BASIC_TEMPERATE']['disabled'] = True
+cargo.economy_variations['BASIC_ARCTIC']['disabled'] = True
+cargo.economy_variations['BASIC_TROPIC']['disabled'] = True

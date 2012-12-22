@@ -21,3 +21,5 @@ cargo = Cargo(id = 'milk',
               price_factor = '134.579658508')
 
 cargo.economy_variations['BASIC_TEMPERATE']['disabled'] = True
+cargo.economy_variations['BASIC_ARCTIC']['disabled'] = True
+cargo.economy_variations['BASIC_TROPIC']['disabled'] = True

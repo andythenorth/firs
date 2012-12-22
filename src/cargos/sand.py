@@ -21,3 +21,5 @@ cargo = Cargo(id = 'sand',
               price_factor = '73.2479095459')
 
 cargo.economy_variations['BASIC_TEMPERATE']['disabled'] = True
+cargo.economy_variations['BASIC_ARCTIC']['disabled'] = True
+cargo.economy_variations['BASIC_TROPIC']['disabled'] = True

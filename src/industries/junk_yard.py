@@ -41,6 +41,8 @@ industry = Industry(id='junk_yard',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
                     graphics_change_dates = [1949, 1960, 1980, 2000])
 
+industry.economy_variations['BASIC_ARCTIC'].disabled = True
+
 industry.add_tile(id='junk_yard_tile')
 
 sprite_ground = industry.add_sprite(

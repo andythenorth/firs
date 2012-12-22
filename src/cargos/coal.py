@@ -20,3 +20,5 @@ cargo = Cargo(id = 'coal',
               single_penalty_length = '255',
               price_factor = '74.2692947388')
 
+cargo.economy_variations['BASIC_ARCTIC']['disabled'] = True
+cargo.economy_variations['BASIC_TROPIC']['disabled'] = True

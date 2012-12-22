@@ -41,6 +41,9 @@ industry = Industry(id='machine_shop',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
                     graphics_change_dates = [1920, 1945, 1970, 1990, 2010])
 
+industry.economy_variations['BASIC_ARCTIC'].disabled = True
+industry.economy_variations['BASIC_TROPIC'].disabled = True
+
 industry.add_tile(id='machine_shop_tile')
 
 spriteset_ground = industry.add_spriteset(

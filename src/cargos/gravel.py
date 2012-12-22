@@ -21,3 +21,5 @@ cargo = Cargo(id = 'gravel',
               price_factor = '74.1233825684')
 
 cargo.economy_variations['BASIC_TEMPERATE']['disabled'] = True
+cargo.economy_variations['BASIC_ARCTIC']['disabled'] = True
+cargo.economy_variations['BASIC_TROPIC']['disabled'] = True

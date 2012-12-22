@@ -42,6 +42,8 @@ industry = Industry(id='lime_kiln',
                     graphics_change_dates = [1952, 1978])
 
 industry.economy_variations['BASIC_TEMPERATE'].disabled = True
+industry.economy_variations['BASIC_ARCTIC'].disabled = True
+industry.economy_variations['BASIC_TROPIC'].disabled = True
 
 industry.add_tile(id='lime_kiln_tile')
 
