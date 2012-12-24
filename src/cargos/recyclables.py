@@ -18,6 +18,7 @@ cargo = Cargo(id = 'recyclables',
               items_of_cargo = 'string(STR_CARGO_UNIT_RECYCLABLES)',
               penalty_lowerbound = '10',
               single_penalty_length = '128',
+              capacity_multiplier = '1',
               price_factor = '104.570388794')
 
 cargo.economy_variations['BASIC_TEMPERATE']['disabled'] = True

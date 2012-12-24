@@ -19,6 +19,7 @@ if (${cargo.get_conditional_expressions_for_cargo_climates()}) {
             ${cargo.get_property_declaration('penalty_lowerbound')}
             ${cargo.get_property_declaration('single_penalty_length')}
             ${cargo.get_property_declaration('price_factor')}
+            ${cargo.get_property_declaration('capacity_multiplier')}
         }
     }
 }

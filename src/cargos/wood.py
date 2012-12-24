@@ -18,5 +18,6 @@ cargo = Cargo(id = 'wood',
               items_of_cargo = '118',
               penalty_lowerbound = '24',
               single_penalty_length = '255',
-              price_factor = '97.3963737488')
+              price_factor = '97.3963737488',
+              capacity_multiplier = '1')
 

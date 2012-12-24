@@ -18,7 +18,8 @@ cargo = Cargo(id = 'alcohol',
               items_of_cargo = 'string(STR_CARGO_UNIT_ALCOHOL)',
               penalty_lowerbound = '0',
               single_penalty_length = '24',
-              price_factor = '145.9608078')
+              price_factor = '145.9608078',
+              capacity_multiplier = '1')
 
 cargo.economy_variations['BASIC_TEMPERATE']['disabled'] = True
 cargo.economy_variations['BASIC_TROPIC']['disabled'] = True

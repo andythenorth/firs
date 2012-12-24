@@ -90,6 +90,7 @@ class Cargo(object):
         self.penalty_lowerbound = kwargs['penalty_lowerbound']
         self.single_penalty_length = kwargs['single_penalty_length']
         self.price_factor = kwargs['price_factor']
+        self.capacity_multiplier = kwargs['capacity_multiplier']
         self.disabled_climates = kwargs.get('disabled_climates', [])
         self.economy_variations = {}
         for economy in global_constants.economies:

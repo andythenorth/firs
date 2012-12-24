@@ -18,6 +18,7 @@ cargo = Cargo(id = 'sand',
               items_of_cargo = 'string(STR_CARGO_UNIT_SAND)',
               penalty_lowerbound = '30',
               single_penalty_length = '255',
+              capacity_multiplier = '1',
               price_factor = '73.2479095459')
 
 cargo.economy_variations['BASIC_TEMPERATE']['disabled'] = True

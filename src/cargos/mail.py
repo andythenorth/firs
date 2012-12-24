@@ -18,5 +18,6 @@ cargo = Cargo(id = 'mail',
               items_of_cargo = '113',
               penalty_lowerbound = '6',
               single_penalty_length = '24',
-              price_factor = '143.869400024')
+              price_factor = '143.869400024',
+              capacity_multiplier = '2')
 

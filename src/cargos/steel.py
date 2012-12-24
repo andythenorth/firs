@@ -18,6 +18,7 @@ cargo = Cargo(id = 'steel',
               items_of_cargo = 'string(STR_CARGO_UNIT_METAL)',
               penalty_lowerbound = '7',
               single_penalty_length = '255',
+              capacity_multiplier = '1',
               price_factor = '126.165390015')
 
 cargo.economy_variations['BASIC_ARCTIC']['disabled'] = True

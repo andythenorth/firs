@@ -18,6 +18,7 @@ cargo = Cargo(id = 'livestock',
               items_of_cargo = '115',
               penalty_lowerbound = '0',
               single_penalty_length = '22',
-              price_factor = '124.073982239')
+              price_factor = '124.073982239',
+              capacity_multiplier = '1')
 
 cargo.economy_variations['BASIC_TROPIC']['disabled'] = True

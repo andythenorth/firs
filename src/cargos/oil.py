@@ -18,4 +18,5 @@ cargo = Cargo(id = 'oil',
               items_of_cargo = '114',
               penalty_lowerbound = '30',
               single_penalty_length = '255',
-              price_factor = '93.3108329773')
+              price_factor = '93.3108329773',
+              capacity_multiplier = '1')

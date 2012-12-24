@@ -18,4 +18,5 @@ cargo = Cargo(id = 'manufacturing_supplies',
               items_of_cargo = 'string(STR_CARGO_UNIT_MNSP)',
               penalty_lowerbound = '8',
               single_penalty_length = '60',
-              price_factor = '134.506702423')
+              price_factor = '134.506702423',
+              capacity_multiplier = '1')

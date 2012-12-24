@@ -18,5 +18,6 @@ cargo = Cargo(id = 'goods',
               items_of_cargo = '116',
               penalty_lowerbound = '5',
               single_penalty_length = '24',
-              price_factor = '149.4140625')
+              price_factor = '149.4140625',
+              capacity_multiplier = '2')
 
