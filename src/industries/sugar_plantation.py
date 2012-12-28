@@ -15,13 +15,13 @@ Some method properties need a string - the templating is then typically directly
 When a string is expected are basically two choices: provide a string directly, or make an object reference and get an id from that object.
 """
 
-industry = Industry(id='sugarcane_plantation',
+industry = Industry(id='sugar_plantation',
                     accept_cargo_types='[FMSP]',
                     input_multiplier_1='[0, 0]',
                     input_multiplier_3='[0, 0]',
                     input_multiplier_2='[0, 0]',
                     prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_FARM',
-                    prod_cargo_types='[SGCN]',
+                    prod_cargo_types='[SGCN, SGBT]',
                     layouts='AUTO',
                     prob_in_game='4',
                     prob_random='24',
@@ -35,108 +35,109 @@ industry = Industry(id='sugarcane_plantation',
                     spec_flags='bitmask(IND_FLAG_PLANT_FIELDS_PERIODICALLY, IND_FLAG_PLANT_FIELDS_WHEN_BUILT)',
                     remove_cost_multiplier='0',
                     prospect_chance='0.75',
-                    name='string(STR_IND_SUGARCANE_PLANTATION)',
-                    nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_IND_SUGARCANE_PLANTATION))',
+                    name='string(STR_IND_SUGAR_PLANTATION)',
+                    nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_IND_SUGAR_PLANTATION))',
                     fund_cost_multiplier='55',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS')
 
 industry.economy_variations['BASIC_TEMPERATE'].disabled = True
 industry.economy_variations['BASIC_ARCTIC'].disabled = True
+industry.economy_variations['FIRS'].disabled = True
 
-industry.add_tile(id='sugarcane_plantation_tile')
+industry.add_tile(id='sugar_plantation_tile')
 
 sprite_ground = industry.add_sprite(
     sprite_number = 'GROUNDTILE_MUD_TRACKS'
 )
 spriteset_ground_empty = industry.add_spriteset(
-    id = 'sugarcane_plantation_spriteset_ground',
+    id = 'sugar_plantation_spriteset_ground',
     type = 'empty'
 )
 spriteset_ground_overlay = industry.add_spriteset(
-    id = 'sugarcane_plantation_spriteset_ground_overlay',
+    id = 'sugar_plantation_spriteset_ground_overlay',
     type = 'empty'
 )
 spriteset_1 = industry.add_spriteset(
-    id = 'sugarcane_plantation_spriteset_1',
+    id = 'sugar_plantation_spriteset_1',
     sprites = [(10, 10, 64, 59, -31, -28)],
     zextent = 32
 )
 spriteset_2 = industry.add_spriteset(
-    id = 'sugarcane_plantation_spriteset_2',
+    id = 'sugar_plantation_spriteset_2',
     sprites = [(80, 10, 64, 59, -31, -28)],
     zextent = 32
 )
 spriteset_3 = industry.add_spriteset(
-    id = 'sugarcane_plantation_spriteset_3',
+    id = 'sugar_plantation_spriteset_3',
     sprites = [(150, 10, 64, 59, -31, -28)],
     zextent = 32
 )
 spriteset_4 = industry.add_spriteset(
-    id = 'sugarcane_plantation_spriteset_4',
+    id = 'sugar_plantation_spriteset_4',
     sprites = [(220, 10, 64, 59, -31, -28)],
     zextent = 32
 )
 spriteset_5 = industry.add_spriteset(
-    id = 'sugarcane_plantation_spriteset_5',
+    id = 'sugar_plantation_spriteset_5',
     sprites = [(290, 10, 64, 59, -31, -28)],
     zextent = 32
 )
 
 industry.add_spritelayout(
-    id = 'sugarcane_plantation_spritelayout_1',
+    id = 'sugar_plantation_spritelayout_1',
     ground_sprite = sprite_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_1]
 )
 industry.add_spritelayout(
-    id = 'sugarcane_plantation_spritelayout_2',
+    id = 'sugar_plantation_spritelayout_2',
     ground_sprite = spriteset_ground_empty,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_2],
 )
 industry.add_spritelayout(
-    id = 'sugarcane_plantation_spritelayout_3',
+    id = 'sugar_plantation_spritelayout_3',
     ground_sprite = spriteset_ground_empty,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_3],
 )
 industry.add_spritelayout(
-    id = 'sugarcane_plantation_spritelayout_4',
+    id = 'sugar_plantation_spritelayout_4',
     ground_sprite = sprite_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_4],
 )
 industry.add_spritelayout(
-    id = 'sugarcane_plantation_spritelayout_5',
+    id = 'sugar_plantation_spritelayout_5',
     ground_sprite = sprite_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_5],
 )
 
 industry.add_industry_layout(
-    id = 'sugarcane_plantation_industry_layout_1',
-    layout = [(0, 1, 'sugarcane_plantation_tile', 'sugarcane_plantation_spritelayout_5'),
-              (0, 2, 'sugarcane_plantation_tile', 'sugarcane_plantation_spritelayout_3'),
-              (1, 0, 'sugarcane_plantation_tile', 'sugarcane_plantation_spritelayout_1'),
-              (1, 1, 'sugarcane_plantation_tile', 'sugarcane_plantation_spritelayout_2'),
-              (2, 1, 'sugarcane_plantation_tile', 'sugarcane_plantation_spritelayout_4'),
+    id = 'sugar_plantation_industry_layout_1',
+    layout = [(0, 1, 'sugar_plantation_tile', 'sugar_plantation_spritelayout_5'),
+              (0, 2, 'sugar_plantation_tile', 'sugar_plantation_spritelayout_3'),
+              (1, 0, 'sugar_plantation_tile', 'sugar_plantation_spritelayout_1'),
+              (1, 1, 'sugar_plantation_tile', 'sugar_plantation_spritelayout_2'),
+              (2, 1, 'sugar_plantation_tile', 'sugar_plantation_spritelayout_4'),
     ]
 )
 industry.add_industry_layout(
-    id = 'sugarcane_plantation_industry_layout_2',
-    layout = [(0, 0, 'sugarcane_plantation_tile', 'sugarcane_plantation_spritelayout_5'),
-              (0, 1, 'sugarcane_plantation_tile', 'sugarcane_plantation_spritelayout_4'),
-              (1, 0, 'sugarcane_plantation_tile', 'sugarcane_plantation_spritelayout_1'),
-              (1, 1, 'sugarcane_plantation_tile', 'sugarcane_plantation_spritelayout_2'),
-              (2, 0, 'sugarcane_plantation_tile', 'sugarcane_plantation_spritelayout_3'),
+    id = 'sugar_plantation_industry_layout_2',
+    layout = [(0, 0, 'sugar_plantation_tile', 'sugar_plantation_spritelayout_5'),
+              (0, 1, 'sugar_plantation_tile', 'sugar_plantation_spritelayout_4'),
+              (1, 0, 'sugar_plantation_tile', 'sugar_plantation_spritelayout_1'),
+              (1, 1, 'sugar_plantation_tile', 'sugar_plantation_spritelayout_2'),
+              (2, 0, 'sugar_plantation_tile', 'sugar_plantation_spritelayout_3'),
     ]
 )
 industry.add_industry_layout(
-    id = 'sugarcane_plantation_industry_layout_3',
-    layout = [(0, 0, 'sugarcane_plantation_tile', 'sugarcane_plantation_spritelayout_1'),
-              (0, 1, 'sugarcane_plantation_tile', 'sugarcane_plantation_spritelayout_2'),
-              (1, 0, 'sugarcane_plantation_tile', 'sugarcane_plantation_spritelayout_5'),
-              (2, 0, 'sugarcane_plantation_tile', 'sugarcane_plantation_spritelayout_4'),
-              (2, 1, 'sugarcane_plantation_tile', 'sugarcane_plantation_spritelayout_3'),
+    id = 'sugar_plantation_industry_layout_3',
+    layout = [(0, 0, 'sugar_plantation_tile', 'sugar_plantation_spritelayout_1'),
+              (0, 1, 'sugar_plantation_tile', 'sugar_plantation_spritelayout_2'),
+              (1, 0, 'sugar_plantation_tile', 'sugar_plantation_spritelayout_5'),
+              (2, 0, 'sugar_plantation_tile', 'sugar_plantation_spritelayout_4'),
+              (2, 1, 'sugar_plantation_tile', 'sugar_plantation_spritelayout_3'),
     ]
 )

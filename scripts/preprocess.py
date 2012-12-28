@@ -97,7 +97,7 @@ from industries import recycling_plant
 from industries import sheep_farm
 from industries import smithy_forge
 from industries import stockyard
-from industries import sugarcane_plantation
+from industries import sugar_plantation
 from industries import sugar_refinery
 from industries import textile_mill
 

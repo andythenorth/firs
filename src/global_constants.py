@@ -5,7 +5,7 @@ economies = ["FIRS", "BASIC_TEMPERATE", "BASIC_ARCTIC", "BASIC_TROPIC"]
 industry_numeric_ids = dict(coal_mine = 0x00,
                             lime_kiln = 0x01,
                             metal_fabrication_plant = 0x02,
-                            sugarcane_plantation = 0x03,
+                            sugar_plantation = 0x03,
                             iron_ore_mine = 0x04,
                             bauxite_mine = 0x05,
                             smithy_forge = 0x06,
