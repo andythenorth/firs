@@ -106,7 +106,7 @@ from industries import fishing_grounds
 from industries import fishing_harbour
 from industries import forest
 from industries import fruit_plantation
-from industries import port
+#from industries import port
 from industries import quarry
 
 # industries reusing default industry graphics (and possibly default layouts)
