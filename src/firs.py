@@ -35,7 +35,7 @@ def unescape_chameleon_output(escaped_nml):
     return escaped_nml
 
 def render_and_save_header_items():
-    header_items = ['conditions','checks','parameters','header']
+    header_items = ['checks','conditions','header','master_control_program','parameters']
     for header_item in header_items:
         template = header_item_templates[header_item + '.pypnml']
         templated_pnml = unescape_chameleon_output(template(global_constants=global_constants))

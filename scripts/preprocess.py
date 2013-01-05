@@ -21,8 +21,6 @@ import codecs # used for writing files - more unicode friendly than standard ope
 
 import firs
 
-firs.render_and_save_header_items()
-
 import cargos
 from cargos import alcohol
 from cargos import bauxite
@@ -108,6 +106,7 @@ from industries import fishing_grounds
 from industries import fishing_harbour
 from industries import forest
 from industries import fruit_plantation
+from industries import port
 from industries import quarry
 
 # industries reusing default industry graphics (and possibly default layouts)
@@ -122,6 +121,9 @@ from industries import steel_mill
 
 for industry in industries.registered_industries:
     industry.render_and_save_pnml()
+
+# n.b header items depend on industries being in scope
+firs.render_and_save_header_items()
 
 firs.render_docs()
 
