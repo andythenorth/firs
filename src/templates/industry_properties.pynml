@@ -13,8 +13,6 @@
                 ${industry.get_property_declaration('new_ind_msg')}
                 ${industry.get_property_declaration('name')}
                 ${industry.get_property_declaration('nearby_station_name')}
-                ${industry.get_property_declaration('prod_cargo_types')}
-                ${industry.get_property_declaration('accept_cargo_types')}
                 ${industry.get_property_declaration('min_cargo_distr')}
                 ${industry.get_property_declaration('map_colour')}
                 ${industry.get_property_declaration('spec_flags')}
@@ -30,6 +28,9 @@
                 ${industry.get_property_declaration('prospect_chance', economy)}
                 ${industry.get_property_declaration('fund_cost_multiplier', economy)}
                 ${industry.get_property_declaration('remove_cost_multiplier', economy)}
+                <!--! don't use declaration magic for these props that use lists -->
+                accept_cargo_types: [${','.join(industry.get_property('accept_cargo_types', economy))}];
+                prod_cargo_types: [${','.join(industry.get_property('prod_cargo_types', economy))}];
             }
         }
         </tal:industry_on_or_off>

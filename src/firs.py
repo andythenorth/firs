@@ -354,12 +354,9 @@ class Industry(object):
         return unescape_chameleon_output(template(industry=self, global_constants=global_constants))
 
     def get_property(self, property_name, economy):
-        # straightforward lookup of a property, doesn't try to handle failure case of property not found; don't look up props that don't exist
-        return getattr(self.economy_variations[economy], property_name)
-
-    def get_property_declaration(self, property_name, economy=None):
         # does magic to get the property from the defaults if not set
         # that enables economies to over-ride selected properties and not bother setting others
+        # doesn't try to handle failure case of property not found at all: don't look up props that don't exist
         default_value = getattr(self.default_industry_properties, property_name)
         if economy is None:
             value = default_value
@@ -369,6 +366,10 @@ class Industry(object):
                 value = economy_value
             else:
                 value = default_value
+        return value
+
+    def get_property_declaration(self, property_name, economy=None):
+        value = self.get_property(property_name, economy)
         # we don't want to render empty properties for nml
         if value == None or value == '':
             return

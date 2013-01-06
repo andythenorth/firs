@@ -16,13 +16,14 @@ When a string is expected are basically two choices: provide a string directly, 
 """
 
 industry = Industry(id='iron_ore_mine',
-                    accept_cargo_types='[ENSP]',
+                    accept_cargo_types=['ENSP'],
                     map_colour='55',
                     prospect_chance='0.75',
                     prob_in_game='4',
                     override='18',
                     prob_random='7',
                     prod_multiplier='[19]',
+                    prod_cargo_types=['GRAI', 'LVST'],
                     substitute='18',
                     fund_cost_multiplier='232')
 
