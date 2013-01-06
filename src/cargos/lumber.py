@@ -21,3 +21,6 @@ cargo = Cargo(id = 'lumber',
               price_factor = '125.533103943',
               capacity_multiplier = '1')
 
+cargo.economy_variations['BASIC_ARCTIC']['disabled'] = True
+
+
