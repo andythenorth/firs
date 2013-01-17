@@ -3,13 +3,11 @@
 ##plural 0
 
 STR_GRF_DESC                                                                    :{ORANGE}FIRS Industry Replacement Set{}{BLACK}Fet per andythenorth, FooBar, planetmaker, Terkhen i Yexo, amb l'ajuda de molts altres. {SILVER}Consulteu el llegeixme per a més informació, incloent-hi com usar FIRS. {BLACK}Llicència: GPL v2.
-STR_GRF_NAME                                                                    :{TITLE}
-STR_GRF_URL                                                                     :http://dev.openttdcoop.org/projects/firs
 
 STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :Màxima distància en quadres des de caladors de pesca, plataformes petrolíferes i zones de dragatge fins la costa.
 STR_PARAM_DESC_STAT_RATING                                                      :El rati de les estacions influencia la quantitat de càrrega que rep per part d'una indústria, a ratis més elevats més carregament rep.
 STR_PARAM_DESC_DEBUG                                                            :Només per a desenvolupadors
-STR_PARAM_DESC_ECONOMIES                                                        :Quan estigui acabat, FIRS oferirà diferents modalitats d'economies. Les indústries i càrregues variaran en cada economia. Les tarifes de cada càrrega també seran diferens en cada economia. {}{}{SILVER}Actualment només hi ha una economia disponible :)
+STR_PARAM_DESC_ECONOMIES                                                        :Cada model d'economia ofereix una combinació diferent de càrregues i indústries.{}{}Per als jugadors que cerquin un estil de joc senzill, les economies "bàsiques" contenen menys tipus d'indústries i de càrregues.
 STR_PARAM_DESC_NO_OPENINGS                                                      :Per defecte, durant el joc s'aniran obrint noves indústries.{}{}Si activeu l'impediment d'aparició d'indústries, no se n'obriran durant el joc, i els jugadors no podran financiar-ne ni prospeccionar-ne de noves.
 STR_PARAM_DESC_SECONDARY_NEVER_CLOSE                                            :Per defecte, les indústries secundàries de FIRS mai no tanquen.{}{}Si activeu el tancament de secundàries, les indústries secundàries poden tancar si no reben càrrega durant un llarg període. Les indústries primàries no tancaran mai a FIRS i no es veuen afectades per aquest paràmetre.
 STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY                                   :Màxima distància a la costa en quadres per a les indústries marines
@@ -23,6 +21,9 @@ STR_PARAM_VALUE_STAT_RATING_DEFAULT                                             
 STR_PARAM_VALUE_STAT_RATING_REDUCED_TIME                                        :Favorable (permet més temps entre càrregues)
 STR_PARAM_VALUE_STAT_RATING_100                                                 :Increïblement generós (el rati és sempre del 100%)
 
+STR_PARAM_VALUE_ECONOMIES_BASIC_TEMPERATE                                       :Economia Bàsica Temperada
+STR_PARAM_VALUE_ECONOMIES_BASIC_ARCTIC                                          :Economia Bàsica Àrtica
+STR_PARAM_VALUE_ECONOMIES_BASIC_TROPIC                                          :Economia Bàsica Tropical
 STR_PARAM_VALUE_ECONOMIES_FIRS                                                  :Economia FIRS
 STR_PARAM_VALUE_ECONOMIES_TEST_3                                                :Economia de Prova 3
 
@@ -95,7 +96,7 @@ STR_CID_SUGARCANE                                                               
 STR_CID_WOOL                                                                    :{TINYFONT}LA
 
 STR_ERR_CLIMATE_TOYLAND                                                         :{ORANGE}FIRS no està dissenyat per al paisatge de joguines
-STR_ERR_INCOMPATIBLE_SET                                                        :{ORANGE}E01: {YELLOW}Arxiu NewGRF incompatible: {ORANGE}{STRING} {YELLOW}Consulteu el llegeixme de FIRS: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_SET                                                        :{ORANGE}E01: {YELLOW}Fitxer NewGRF incompatible: {ORANGE}{STRING} {YELLOW}Consulteu el llegeixme de FIRS: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 STR_ERR_INCOMPATIBLE_PARAM_CANSET                                               :{ORANGE}E02: {YELLOW}Paràmetre incompatible: {ORANGE}El segon paràmetre de CanSet ha de ser 0 perquè funcioni amb FIRS. {YELLOW}Consulteu el llegeixme de FIRS: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 STR_ERR_INCOMPATIBLE_PARAM_CITYSET                                              :{ORANGE}E02: {YELLOW}Paràmetre incompatible: {ORANGE}El segon paràmetre de NA City Set ha de ser 0 perquè funcioni amb FIRS. {YELLOW}Consulteu el llegeixme de FIRS: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 STR_ERR_INCOMPATIBLE_SET_TTRS_VERSION                                           :{ORANGE}E04: {YELLOW}Versió incompatible: {ORANGE}La versió de Total Town Replacement Set ha de ser 3.11 o superior. {YELLOW}Consulteu el llegeixme de FIRS: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
@@ -108,23 +109,23 @@ STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE                                             
 STR_ERR_LOCATION_LIMIT_1_PER_TOWN                                               :només es permet una indústria d'aquest tipus a cada població.
 
 STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}Producció:{}  2t per cada 8t de bauxita{}  2t per cada 8.000L de productes químics{}  4t per cada 8t de ferralla{}{}La producció augmenta si es reben dues o més càrregues en un mes.
-STR_EXTRA_BIOREFINERY                                                           :{BLACK}Producció:{}  6.000L per cada 8t de gra{}  6.000L per cada 8t de remolatxa
-STR_EXTRA_BREWERY                                                               :{BLACK}Producció:{}  3.000L per cada 8 caixes de subministraments industrials{}  5.000L per cada 8t de gra{}  5.000L per cada 8t de fruita{}{}La producció augmenta si es reben subministraments industrials i una altra càrrega en un mes.
+STR_EXTRA_BIOREFINERY                                                           :{BLACK}Producció:{}  6.000L per cada 8t de gra{}  6.000L per cada 8t de sucre o remolatxa
+STR_EXTRA_BREWERY                                                               :{BLACK}Producció:{}  3.000L per cada 8 caixes de subministraments{}  5.000L per cada 8t de gra{}  5.000L per cada 8t de fruita{}{}La producció augmenta si es reben subministraments industrials i una altra càrrega en un mes.
 STR_EXTRA_BRICKWORKS                                                            :{BLACK}Producció:{}  2t per cada 8t de carbó{}  2t per cada 8t de sorra{}  4t per cada 8t d'argila{}{}La producció augmenta si es reben dues o més càrregues en un mes.
 STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Producció:{}  2t per cada 8t de carbó{}  2t per cada 8t d'argila{}  4t per cada 8t de pedres{}{}La producció augmenta si es reben dues o més càrregues en un mes.
-STR_EXTRA_DAIRY                                                                 :{BLACK}Producció:{}  3t per cada 8 caixes de subministraments industrials{}  5t per cada 8.000L de llet{}{}La producció augmenta si es reben en un mes les dues càrregues.
+STR_EXTRA_DAIRY                                                                 :{BLACK}Producció:{}  3t per cada 8 caixes de subministraments{}  5t per cada 8.000L de llet{}{}La producció augmenta si es reben en un mes les dues càrregues.
 STR_EXTRA_ENGINEERING_SUPPLIES                                                  :{BLACK}Els subministraments tècnics poden fer augmentar la producció.{}{YELLOW}  {COMMA} caixes rebudes aquest mes
 STR_EXTRA_FARM_SUPPLIES                                                         :{BLACK}Els subministraments agrícoles poden fer augmentar la producció.{}{YELLOW}  {COMMA} caixes rebudes aquest mes
 STR_EXTRA_FERTILIZER_PLANT                                                      :{BLACK}Producció:{}  8 caixes per cada 8.000L de productes químics
-STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Producció:{}  3t per cada 8 caixes de subministraments industrials{}  5t per cada 8t de peix{}{}La producció augmenta si es reben en un mes les dues càrregues.
-STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Producció:{}  3 palets per cada 8 caixes de subministraments industrials{}  5 palets per cada 8t de taulons{}{}La producció augmenta si es reben en un mes les dues càrregues.
+STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Producció:{}  3t per cada 8 caixes de subministraments{}  5t per cada 8t de peix{}{}La producció augmenta si es reben en un mes les dues càrregues.
+STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Producció:{}  3 palets per cada 8 caixes de subministraments{}  5 palets per cada 8t de taulons{}{}La producció augmenta si es reben en un mes les dues càrregues.
 STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Fabrica objectes de vidre com ara ampolles, gerres i plafons.{}{}{BLACK}Producció:{}  6t per cada 8t de sorra{}  2t per cada 8.000L de productes químics{}{}La producció augmenta si es reben en un mes les dues càrregues.
-STR_EXTRA_GRAIN_MILL                                                            :{BLACK}Producció:{}  3t per cada 8 caixes de sumbinistres industrials{}  5t per cada 8t de gra{}{}La producció augmenta si es reben en un mes les dues càrregues.
+STR_EXTRA_GRAIN_MILL                                                            :{BLACK}Producció:{}  3t per cada 8 caixes de subministraments{}  5t per cada 8t de gra{}{}La producció augmenta si es reben en un mes les dues càrregues.
 STR_EXTRA_IRON_WORKS                                                            :{BLACK}Producció:{}  2t per cada 8t de fusta{}  2t per cada 8t de mineral de ferro{}{}La producció augmenta si es reben en un mes les dues càrregues.
 STR_EXTRA_LIME_KILN                                                             :{BLACK}Producció:{}  3t per cada 8t de pedres{}  3t per cada 8t de carbó{}{}La producció augmenta si es reben en un mes les dues càrregues.
 STR_EXTRA_LUMBER_YARD                                                           :{BLACK}Fabrica objectes com ara perxes, astes, tanques i baranes.{}{}{BLACK}Producció:{}  2t per cada 8.000L de productes químics{}  6t per cada 8t de taulons{}{}La producció augmenta si es reben en un mes les dues càrregues.
 STR_EXTRA_MACHINE_SHOP                                                          :{BLACK}Construeix i prepara màquines diverses.{}{}Producció:{}  8 caixes per cada 8.000L de gasolina{}  8 caixes per cada 8t de metall
-STR_EXTRA_MEAT_PACKER                                                           :{BLACK}Producció:{}  3t per cada 8 caixes de subministraments industrials{}  5t per cada 8t de bestiar{}{}La producció augmenta si es reben en un mes les dues càrregues.
+STR_EXTRA_MEAT_PACKER                                                           :{BLACK}Producció:{}  3t per cada 8 caixes de subministraments{}  5t per cada 8t de bestiar{}{}La producció augmenta si es reben en un mes les dues càrregues.
 STR_EXTRA_METAL_FABRICATION_PLANT                                               :{BLACK}Produeix components metàl·lics.{}{}{BLACK}Producció:{}  2t per cada 8.000L de productes químics{}  6t per cada 8t de metall{}{}La producció augmenta si es reben en un mes les dues càrregues.
 STR_EXTRA_METAL_FOUNDRY                                                         :{BLACK}Produces objectes metàl·lics com ara llaunes, estris i ferramentes.{}{}{BLACK}Producció:{}  2 caixes per cada 8.000L de productes químics{}  6 caixes per cada 8t de metall{}{}La producció augmenta si es reben en un mes les dues càrregues.
 STR_EXTRA_OIL_REFINERY                                                          :{BLACK}Processa el petroli cru en gasolina i productes químics.{}{}Producció:{}  6.000L per cada 8.000L de petroli
@@ -135,18 +136,20 @@ STR_EXTRA_RECYCLING_DEPOT                                                       
 STR_EXTRA_SAWMILL                                                               :{BLACK}Talla la fusta.{}{}Producció:{}  6t per cada 8t de fusta
 STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Produeix objectes de metall com ara pales, aixades, eines, portes i ferradures.{}{}Producció:{}  8 caixes per cada 8t de metall
 STR_EXTRA_STEELMILL                                                             :{BLACK}Producció:{}  2t per cada 8t de mineral de ferro{}  2t per cada 8t de carbó{}  4t per cada 8t de ferralla{}{}La producció augmenta si es reben dues o més càrregues en un mes.
-STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Producció:{}  3t per cada 8 caixes de subministraments industrials{}  5t per cada 8t de remolatxa{}{}Augmenta a 8t per cada 8t si es reben les dues càrregues en un mes.
-STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Producció:{}  3 palets per cada 8 caixes de subministraments industrials{}  5 palets per cada 8 bales de llana{}  5 palets per cada 8 bales de fibres vegetals{}{}La producció augmenta si es reben subministraments industrials i una altra càrrega en un mes.
+STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Producció:{}  3t per cada 8 caixes de subministraments{}  5t per cada 8t de sucre o remolatxa{}{}Augmenta a 8t per cada 8t si es reben les dues càrregues en un mes.
+STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Producció:{}  3 palets per cada 8 caixes de subministraments{}  5 palets per cada 8 bales de llana{}  5 palets per cada 8 bales de fibres vegetals{}{}La producció augmenta si es reben subministraments industrials i una altra càrrega en un mes.
 
 STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ DEBUG ------------{}Producció d'aquest mes:{}Càrrega 1: {WHITE}{COMMA}{BLACK}{}Càrrega 2: {WHITE}{COMMA}{BLACK}{}Dies des de la darrera entrega: {WHITE}{COMMA}{BLACK}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Assolit el màxim de producció
-STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Producció actual: {YELLOW}normal}{}{BLACK}Per a doblar la producció cal que lliureu 30 caixes de subministraments en tres mesos (o 120 caixes per a producció quàdruple)
+STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Producció actual: {YELLOW}normal{}{}{BLACK}Per a doblar la producció cal que lliureu 30 caixes de subministraments en tres mesos (o 120 caixes per a producció quàdruple)
 STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Producció actual: {YELLOW}millorada (doble){}{}{BLACK}Per a mantenir aquest nivell cal que lliureu 30 caixes de subministraments en tres mesos, o 120 caixes per aconseguir producció quàdruple
 STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}Producció actual: {YELLOW}entusiasta (quàdruple){}{}{BLACK}Per a mantenir aquest nivell cal que lliureu 120 caixes de subministraments en tres mesos
 STR_GENERIC_NEWLINE                                                             :{}
 
+STR_FUND_BASIC_FARM                                                             :{}{BLACK}Localització: {YELLOW}No es pot situar a la neu ni al desert.
 STR_FUND_MIXED_FARM                                                             :{}{BLACK}Localització: {YELLOW}No es pot situar a la neu ni al desert.
 STR_FUND_ARABLE_FARM                                                            :{}{BLACK}Localització: {YELLOW}No es pot situar a la neu ni al desert.
+STR_FUND_SUGAR_PLANTATION                                                       :{}{BLACK}Localització: {YELLOW}No es pot situar a la neu ni al desert.
 STR_FUND_FOREST                                                                 :{}{BLACK}Localització: {YELLOW}No es pot situar al desert.
 STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}Localització: {YELLOW}No es pot situar a la neu.
 
@@ -160,6 +163,7 @@ STR_STATION                                                                     
 
 STR_IND_ALUMINIUM_PLANT                                                         :{G=Femenin}Planta d'alumini
 STR_IND_ARABLE_FARM                                                             :{G=Femenin}Granja de conreu
+STR_IND_BASICFARM                                                               :{G=Femenin}Granja
 STR_IND_BAUXITE_MINE                                                            :{G=Femenin}Mina de bauxita
 STR_IND_BIOREFINERY                                                             :{G=Femenin}Biorefineria
 STR_IND_BREWERY                                                                 :{G=Femenin}Cerveseria
@@ -189,14 +193,14 @@ STR_IND_METAL_FOUNDRY                                                           
 STR_IND_MIXEDFARM                                                               :{G=Femenin}Granja mixta
 STR_IND_PETROLPUMP                                                              :{G=Femenin}Gasolinera
 STR_IND_PLASTICS_PLANT                                                          :{G=Femenin}Fàbrica de plàstics
+STR_IND_PORT                                                                    :{G=Masculin}Port
 STR_IND_QUARRY                                                                  :{G=Femenin}Pedrera
 STR_IND_RECYCLING_DEPOT                                                         :{G=Femenin}Deixalleria
 STR_IND_RECYCLING_PLANT                                                         :{G=Femenin}Planta de reciclatge
 STR_IND_SHEEPFARM                                                               :{G=Femenin}Granja ovina
 STR_IND_SMITHY_FORGE                                                            :{G=Femenin}Ferreria
 STR_IND_STOCKYARD                                                               :{G=Masculin}Escorxador
-STR_IND_SUGAR_REFINERY                                                          :{G=Femenin}Indústria sucrera
+STR_IND_SUGAR_PLANTATION                                                        :{G=Femenin}Plantació de sucre
+STR_IND_SUGAR_REFINERY                                                          :{G=Femenin}Sucreria
 STR_IND_SUPERMARKET                                                             :{G=Masculin}Supermercat
 STR_IND_TEXTILE_MILL                                                            :{G=Femenin}Fàbrica tèxtil
-
-
