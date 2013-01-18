@@ -23,7 +23,7 @@ industry = Industry(id='iron_ore_mine',
                     override='18',
                     prob_random='7',
                     prod_multiplier='[19]',
-                    prod_cargo_types=['GRAI', 'LVST'],
+                    prod_cargo_types=['IORE'],
                     substitute='18',
                     fund_cost_multiplier='232')
 
