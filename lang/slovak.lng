@@ -1,0 +1,208 @@
+##grflangid 0x16
+##plural 0xA
+##gender m z s
+##case g
+
+STR_GRF_DESC                                                                    :{ORANGE}FIRS Industry Replacement Set{}{BLACK}Vám prináša andythenorth, FooBar, planetmaker, Terkhen, Yexo a ďalší. {SILVER}Pozri readme pre viac informácií, vrátane ako použiť FIRS. {BLACK}Licencia: GPL v2.
+STR_GRF_NAME                                                                    :{TITLE}
+STR_GRF_URL                                                                     :http://dev.openttdcoop.org/projects/firs
+
+STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :Maximálna vzdialenosť lovísk rýb, ropných plošín a bagrovísk od pobrežia v dielcoch.
+STR_PARAM_DESC_STAT_RATING                                                      :Hodnotenie stanice ovplyvňuje množstvo dodaného tovaru z priemyslu do stanice; čím vyššie hodnotenie, tým viac je dodané tovaru.
+STR_PARAM_DESC_DEBUG                                                            :Len pre vývojárov
+STR_PARAM_DESC_ECONOMIES                                                        :Každá ekonomika poskytuje rôzne kombinácie tovaru a priemyslu.{}{}Pre hráčov, ktorý chcú jednoduchšiu hrateľnosť, 'Základná' ekonomika obsahuje menej priemyslu a tovaru ako ostatné FIRS ekonomiky.
+STR_PARAM_DESC_NO_OPENINGS                                                      :V predvolenom nastavení sa bude počas hry otvárať nový priemysel.{}{}Ak zvolíte 'brániť otváraniu' priemysel sa nebude otvárať počas hry, a hráči nebudú mocť založiť priemysel. (players will not be able to fund or prospect for industries.)
+STR_PARAM_DESC_SECONDARY_NEVER_CLOSE                                            :V predvolenom nastavení sa sekundárny priemysel FIRS nikdy nezavrie.{}{}Ak je sekundárne zatváranie zapnuté, sekundárny priemysel sa môže zatvoriť ak sa netransportuje žiaden tovar počas dlhej doby. Primárny priemysel sa nikdy nezatvorí vo FIRS a nie je ovplyvnený týmto nastavením.
+STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY                                   :Maximálna pobrežná vzdialenosť morského priemyslu v dielcoch
+STR_PARAM_NAME_DEBUG                                                            :Zobraz debug texty
+STR_PARAM_NAME_ECONOMIES                                                        :Ekonomika
+STR_PARAM_NAME_NO_OPENINGS                                                      :Zabrániť otváraniu priemyslu počas hry
+STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            :Umožniť zatvárenie sekundárneho priemyslu
+STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0                                         :Bez limitu
+STR_PARAM_NAME_STAT_RATING                                                      :Algoritmus hodnotenia staníc
+STR_PARAM_VALUE_STAT_RATING_DEFAULT                                             :Štandardné (použiť štandardné OpenTTD hodnotenie)
+STR_PARAM_VALUE_STAT_RATING_REDUCED_TIME                                        :Priaznivé (umožniť dlhšiu dobu medzi jednotlivými vyzdvihnutiami nákladu)
+STR_PARAM_VALUE_STAT_RATING_100                                                 :Šialene veľkorysé (hodnotenie je vždy 100%)
+
+STR_PARAM_VALUE_ECONOMIES_BASIC_TEMPERATE                                       :Základná ekonomika mierneho podnebia
+STR_PARAM_VALUE_ECONOMIES_BASIC_ARCTIC                                          :Základná ekonomika arktického podnebia
+STR_PARAM_VALUE_ECONOMIES_BASIC_TROPIC                                          :Základná ekonomika tropického podnebia
+STR_PARAM_VALUE_ECONOMIES_FIRS                                                  :FIRS Ekonomika
+STR_PARAM_VALUE_ECONOMIES_TEST_3                                                :Test Ekonomika 3
+
+STR_CARGO_NAME_ALCOHOL                                                          :Alkohol
+STR_CARGO_NAME_BAUXITE                                                          :Bauxit
+STR_CARGO_NAME_BUILDING_MATERIALS                                               :Stavebné materiály
+STR_CARGO_NAME_CHEMICALS                                                        :Chemikálie
+STR_CARGO_NAME_CLAY                                                             :Hlina
+STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :Strojárske potreby
+STR_CARGO_NAME_FIBRES                                                           :Rastlinné vlákna
+STR_CARGO_NAME_FISH                                                             :Ryby
+STR_CARGO_NAME_FARM_SUPPLIES                                                    :Poľnohospodárske potreby
+STR_CARGO_NAME_FRUITS                                                           :Ovocie a Zelenina
+STR_CARGO_NAME_LUMBER                                                           :Stavebné drevo
+STR_CARGO_NAME_METAL                                                            :Kov
+STR_CARGO_NAME_MILK                                                             :Mlieko
+STR_CARGO_NAME_MANUFACTURING_SUPPLIES                                           :Výrobný materiál
+STR_CARGO_NAME_PETROL                                                           :Benzín
+STR_CARGO_NAME_RECYCLABLES                                                      :Recyklovaný materiál
+STR_CARGO_NAME_SAND                                                             :Piesok
+STR_CARGO_NAME_SCRAP_METAL                                                      :Kovový šrot
+STR_CARGO_NAME_STONE                                                            :Kameň
+STR_CARGO_NAME_SUGAR_BEET                                                       :Cukrová repa
+STR_CARGO_NAME_SUGARCANE                                                        :Cukrová trstina
+STR_CARGO_NAME_WOOL                                                             :Vlna
+
+STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} stavebného dreva
+STR_CARGO_UNIT_BAUXITE                                                          :{WEIGHT} bauxitu
+STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WEIGHT} stavebného materiálu
+STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} chemikálií
+STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} hliny
+STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} debn{P 0 a y ien} strojárskych potrieb
+STR_CARGO_UNIT_FIBRES                                                           :{SIGNED_WORD} balík{P 0 "" y ov} rastlinních vlákien
+STR_CARGO_UNIT_FISH                                                             :{WEIGHT} ryb
+STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} debn{P 0 a y ien} poľnohospodárskych potrieb
+STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} ovocia a zeleniny
+STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} stavebného dreva
+STR_CARGO_UNIT_METAL                                                            :{WEIGHT} kovu
+STR_CARGO_UNIT_MILK                                                             :{VOLUME} mlieka
+STR_CARGO_UNIT_MNSP                                                             :{SIGNED_WORD} debn{P 0 a y ien} výrobného materiálu
+STR_CARGO_UNIT_PETROL                                                           :{VOLUME} benzínu
+STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} recyklovaného materiálu
+STR_CARGO_UNIT_SAND                                                             :{WEIGHT} piesku
+STR_CARGO_UNIT_SCRAP_METAL                                                      :{WEIGHT} kovového šrotu
+STR_CARGO_UNIT_STONE                                                            :{WEIGHT} kameňa
+STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} cukrovej repy
+STR_CARGO_UNIT_SUGARCANE                                                        :{WEIGHT} cukrovej trstiny
+STR_CARGO_UNIT_WOOL                                                             :{SIGNED_WORD} balík{P 0 "" y ov} vlny
+
+STR_CID_ALCOHOL                                                                 :{TINYFONT}AL
+STR_CID_BAUXITE                                                                 :{TINYFONT}BX
+STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}BM
+STR_CID_CHEMICALS                                                               :{TINYFONT}CH
+STR_CID_CLAY                                                                    :{TINYFONT}CY
+STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}ES
+STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}FS
+STR_CID_FIBRES                                                                  :{TINYFONT}PF
+STR_CID_FISH                                                                    :{TINYFONT}FI
+STR_CID_LUMBER                                                                  :{TINYFONT}LU
+STR_CID_MANUFACTURING_SUPPLIES                                                  :{TINYFONT}MS
+STR_CID_METAL                                                                   :{TINYFONT}MT
+STR_CID_MILK                                                                    :{TINYFONT}MK
+STR_CID_PETROL                                                                  :{TINYFONT}PT
+STR_CID_RECYCLABLES                                                             :{TINYFONT}RC
+STR_CID_SAND                                                                    :{TINYFONT}SA
+STR_CID_SCRAP_METAL                                                             :{TINYFONT}SM
+STR_CID_STONE                                                                   :{TINYFONT}ST
+STR_CID_SUGAR_BEET                                                              :{TINYFONT}SB
+STR_CID_SUGARCANE                                                               :{TINYFONT}SC
+STR_CID_WOOL                                                                    :{TINYFONT}WL
+
+STR_ERR_CLIMATE_TOYLAND                                                         :{ORANGE}FIRS nie je určený pre použitie v Toylande
+STR_ERR_INCOMPATIBLE_SET                                                        :{ORANGE}E01: {YELLOW}Nekompatibilná set: {ORANGE}{STRING} {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_PARAM_CANSET                                               :{ORANGE}E02: {YELLOW}Nekompatibilný parameter: {ORANGE}CanSet parameter 2 musí byť 0 pre prácu s FIRS. {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_PARAM_CITYSET                                              :{ORANGE}E02: {YELLOW}Nekompatibilný parameter: {ORANGE}NA City Set parameter 2 musí byť 0 pre prácu s FIRS. {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_SET_TTRS_VERSION                                           :{ORANGE}E04: {YELLOW}Nekompatibilná verzia: {ORANGE}Total Town Replacement Set musí byť vo verzii 3.11 alebo novšej. {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_OPENTTD_VERSION                                                         :{ORANGE}E00: FIRS vyžaduje OpenTTD 1.2.0 / trunk r22780 alebo novší. {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+
+STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE                                             :musí byť umiestnená pod hranicou snehu.
+STR_ERR_LOCATION_NOT_ON_WATER                                                   :musí byť umiestnená na pevnine.
+STR_ERR_LOCATION_NOT_IN_DESERT                                                  :nemôže byť umiestnená na púšti.
+STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE                                             :nemôže byť umiestnená na strmom svahu.
+STR_ERR_LOCATION_LIMIT_1_PER_TOWN                                               :len jeden typ tohto priemyslu je povolený v meste.
+
+STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}Produkcia tovaru:{}  2t na 8t dodaného bauxitu{}  2t na 8,000l dodaných chemikálií{}  4t na 8t dodaného kovového šrotu{}{}Produkcia sa zvyšuje, ak sú doručené dva alebo viac typov tovaru počas mesiaca.
+STR_EXTRA_BIOREFINERY                                                           :{BLACK}Produkcia tovaru:{}  6,000l na 8t dodaného obilia{}  6,000l na 8t dodaného cukru
+STR_EXTRA_BREWERY                                                               :{BLACK}Produkcia tovaru:{}  3,000l na 8 debien dodaného výrobného materiálu{}  5,000l na 8t dodaného obilia{}  5,000l na 8t dodaného ovocia a zeleniny{}{}Produkcia sa zvyšuje, ak je dodaný výrobný materiál počas jedného mesiaca.
+STR_EXTRA_BRICKWORKS                                                            :{BLACK}Produkcia tovaru:{}  2t na 8t dodaného uhlia{}  2t na 8t dodaného piesku{}  4t na 8t dodanej hliny{}{}Produkcia sa zvyšuje, ak sú dodané dva alebo viac typov tovaru počas jedného mesiaca.
+STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Produkcia tovaru:{}  2t na 8t dodaného uhlia{}  2t na 8t dodanej hliny{}  4t na 8t dodaného kameňa{}{}Produkcia sa zvyšuje, ak sú dodané dva alebo viac typov tovaru počas jedného mesiaca.
+STR_EXTRA_DAIRY                                                                 :{BLACK}Produkcia tovaru:{}  3t na 8 debien dodaného výrobného materiálu{}  5t na 8,000l dodaného mlieka{}{}Produkcia sa zvyšuje, ak sú dodané obidva tovary počas jedného mesiaca.
+STR_EXTRA_ENGINEERING_SUPPLIES                                                  :{BLACK}Strojárske potreby môžu zvýšiť produkciu.{}{YELLOW}  {COMMA} debien doručených tento mesiac
+STR_EXTRA_FARM_SUPPLIES                                                         :{BLACK}Poľnohospodárske potreby môžu zvýšiť produkciu.{}{YELLOW}  {COMMA} debien doručených tento mesiac
+STR_EXTRA_FERTILIZER_PLANT                                                      :{BLACK}Produkcia tovaru:{}  8 debien na 8,000l dodaných chemikálií
+STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Produkcia tovaru:{}  3t na 8 debien dodaného výrobného materiálu{}  5t na 8t dodaných rýb{}{}Produkcia sa zvyšuje, ak sú dodané obidva tovary počas jedného mesiaca.
+STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Produkcia tovaru:{}  3t na 8 debien dodaného výrobného materiálu{}  5t na 8t dodaného stavebného dreva{}{}Produkcia sa zvyšuje, ak sú dodané obidva tovary počas jedného mesiaca.
+STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Produkuje sklenené predmety, ako poháre, fľaše a okenné výplne.{}{}{BLACK}Produkcia tovaru:{}  6t na 8t dodaného piesku{}  2t na 8,000l dodaných chemikálií{}{}Produkcia sa zvyšuje, ak sú dodané obidva tovary počas jedného mesiaca.
+STR_EXTRA_GRAIN_MILL                                                            :{BLACK}Produkcia tovaru:{}  3t na 8 debien dodaného výrobného materiálu{}  5t na 8t dodaného obilia{}{}Produkcia sa zvyšuje, ak sú dodané obidva tovary počas jedného mesiaca.
+STR_EXTRA_IRON_WORKS                                                            :{BLACK}Produkcia tovaru:{}  2t na 8t dodaného dreva{}  2t na 8t dodanej železnej rudy{}{}Produkcia sa zvyšuje, ak sú dodané obidva tovary počas jedného mesiaca.
+STR_EXTRA_LIME_KILN                                                             :{BLACK}Produkcia tovaru:{}  3t na 8t dodaného kameňa{}  3t na 8t dodaného uhlia{}{}Produkcia sa zvyšuje, ak sú dodané obidva tovary počas jedného mesiaca.
+STR_EXTRA_LUMBER_YARD                                                           :{BLACK}Produkuje predmety ako drevené stĺpy.{}{}{BLACK}Produkcia tovaru:{}  2t na 8,000l dodaných chemikálií{}  6t na 8t dodaného stavebného dreva{}{}Produkcia sa zvyšuje, ak sú dodané obidva tovary počas jedného mesiaca.
+STR_EXTRA_MACHINE_SHOP                                                          :{BLACK}Konštruuje a opravuje stroje.{}{}Produkcia tovaru:{}  8 debien na 8,000l dodaného benzínu{}  8 debien na 8t dodaného kovu
+STR_EXTRA_MEAT_PACKER                                                           :{BLACK}Produkcia tovaru:{}  3t na 8 debien dodaného výrobného materiálu{}  5t na 8t dodaného dobytka{}{}Produkcia sa zvyšuje, ak sú dodané obidva tovary počas jedného mesiaca.
+STR_EXTRA_METAL_FABRICATION_PLANT                                               :{BLACK}Produkuje natreté kovové komponenty.{}{}{BLACK}Produkcia tovaru:{}  2t na 8,000l dodaných chemikálií{}  6t na 8t dodaného kovu{}{}Produkcia sa zvyšuje, ak sú dodané obidva tovary počas jedného mesiaca.
+STR_EXTRA_METAL_FOUNDRY                                                         :{BLACK}Produkuje pokovované kovové predmety, ako sú plechovky, železiarsky tovar a potreby pre domácnosť.{}{}{BLACK}Produkcia tovaru:{}  2 debny per 8,000l dodaných chemikálií{}  6 debien na 8t dodaného kovu{}{}Produkcia sa zvyšuje, ak sú dodané obidva tovary počas jedného mesiaca.
+STR_EXTRA_OIL_REFINERY                                                          :{BLACK}Spracováva ropu na benzín a chemikálie.{}{}Produkcia tovaru:{}  6,000l na 8,000l dodanej ropy
+STR_EXTRA_PAPER_MILL                                                            :{BLACK}Spracováva drevo na výrobu papiera a kartónu.{}{}{BLACK}Produkcia tovaru:{}  4 debny na 8t dodaného dreva{}  2 debny na 8t dodanej hliny{}  2 debny na 8,000l dodaných chemikálií{}{}Produkcia sa zvyšuje, ak sú doručené dva alebo viac typov tovaru počas mesiaca.
+STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}Vyrába plastové predmety, ako sú obaly a potreby pre domácnosť.{}{}Produkcia tovaru:{}  6 debien na 8 balíkov dodaných rastlinných vlákien{}  6 debien na 8,000l dodaných chemikálií
+STR_EXTRA_RECYCLING_PLANT                                                       :{BLACK}Procesy recyklácie na opakované použitie.{}{}Produkcia tovaru:{}  6t na 8t dodaného recyklovaného materiálu
+STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}Výroba je úmerná mestskej populácie.
+STR_EXTRA_SAWMILL                                                               :{BLACK}Spracovanie dreva.{}{}Produkcia tovaru:{}  6t na 8t dodaného dreva
+STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Produkuje kovové predmety ako nástroje, pluhy, brány, lopaty a podkovy.{}{}Produkcia tovaru:{}  8t na 8t dodaného kovu
+STR_EXTRA_STEELMILL                                                             :{BLACK}Produkcia tovaru:{}  2t na 8t dodanej železnej rudy{}  2t na 8t dodaného uhlia{}  4t na 8t dodaného kovového šrotu{}{}Produkcia sa zvyšuje, ak sú doručené dva alebo viac typov tovaru počas mesiaca.
+STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Produkcia tovaru:{}  3t na 8 debien dodaného výrobného materiálu{}  5t na 8t dodaného cukru{}{}Zvýšenie na 8t na 8t, keď sú dodané obidva tovary počas jedného mesiaca.
+STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Produkcia tovaru:{}  3 debny na 8 debien dodaného výrobného materiálu{}  5 debien na 8 balíkov dodanej vlny{}  5 debien na 8t dodaných rastlinných vlákien{}{}Produkcia sa zvyšuje, ak je dodaný výrobný materiál počas jedného mesiaca.
+
+STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ DEBUG ------------{}Produkcia tento mesiac:{}Tovar 1: {WHITE}{COMMA}{BLACK}{}Tovar 2: {WHITE}{COMMA}{BLACK}{}Počet dní od posledného dodania: {WHITE}{COMMA}{BLACK}
+STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Maximálna produkcia dosiahnuta
+STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Súčasná produkcia: {YELLOW}normálna{}{}{BLACK}Na zdvojenie produkcie dodajte 30 debien potrieb do troch mesiacov (alebo 120 debien pre štvornásobnú produkciu)
+STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Súčasná produkcia: {YELLOW}zvýšená (double){}{}{BLACK}Na udržanie úrovne výroby, dodajte 30 debien potrieb do troch mesiacov, alebo 120 debien pre zvýšenie na štvornásobnú produkciu
+STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}Súčasná produkcia: {YELLOW}gung ho (quadruple){}{}{BLACK}Na udržanie úrovne výroby, dodajte 120 debien potrieb do troch mesiacov
+STR_GENERIC_NEWLINE                                                             :{}
+
+STR_FUND_BASIC_FARM                                                             :{}{BLACK}Umiestnenie: {YELLOW}Nemôže byť založená na snehu alebo na púšti.
+STR_FUND_MIXED_FARM                                                             :{}{BLACK}Umiestnenie: {YELLOW}Nemôže byť založená na snehu alebo na púšti.
+STR_FUND_ARABLE_FARM                                                            :{}{BLACK}Umiestnenie: {YELLOW}Nemôže byť založená na snehu alebo na púšti.
+STR_FUND_SUGAR_PLANTATION                                                       :{}{BLACK}Umiestnenie: {YELLOW}Nemôže byť založená na snehu alebo na púšti.
+STR_FUND_FOREST                                                                 :{}{BLACK}Umiestnenie: {YELLOW}Nemôže byť založený na púšti.
+STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}Umiestnenie: {YELLOW}Nemôže byť založená na snehu.
+
+STR_FUND_AVAILABLE_FROM                                                         :{}{BLACK}Dostupné od: {YELLOW}{COMMA}
+
+STR_FUND_AVAILABLE_UNTIL                                                        :{}{BLACK}Nedostupné po: {YELLOW}{COMMA}
+
+
+STR_TOWN                                                                        :{STRING}
+STR_STATION                                                                     :{STRING} {STRING}
+
+STR_IND_ALUMINIUM_PLANT                                                         :Závod na výrobu hliníka
+STR_IND_ARABLE_FARM                                                             :Orná pôda
+STR_IND_BASICFARM                                                               :Farma
+STR_IND_BAUXITE_MINE                                                            :Bauxitová baňa
+STR_IND_BIOREFINERY                                                             :Biorafinéria
+STR_IND_BREWERY                                                                 :Pivovar
+STR_IND_BRICK_WORKS                                                             :Tehelňa
+STR_IND_BUILDERS_YARD                                                           :Stavebniny
+STR_IND_CEMENT_PLANT                                                            :Cementáreň
+STR_IND_CLAY_PIT                                                                :Hlinená baňa
+STR_IND_DAIRY                                                                   :Mliekareň
+STR_IND_DAIRYFARM                                                               :Kravín
+STR_IND_DREDGING_SITE                                                           :Bagrovisko
+STR_IND_FERTILISER_PLANT                                                        :Závod na výrobu hnojív
+STR_IND_FISHING_GROUND                                                          :Lovisko rýb
+STR_IND_FISHING_HARBOUR                                                         :Rybí prístav
+STR_IND_FOOD_MARKET                                                             :Obchod s potravinami
+STR_IND_FURNITURE_FACTORY                                                       :Závod na výrobu nábytku
+STR_IND_GLASS_WORKS                                                             :Skláreň
+STR_IND_GRAIN_MILL                                                              :Pekáreň
+STR_IND_HARDWARE_STORE                                                          :Železiarstvo
+STR_IND_HOTEL                                                                   :Hotel
+STR_IND_IRON_WORKS                                                              :Železiareň
+STR_IND_JUNKYARD                                                                :Smetisko
+STR_IND_LIME_KILN                                                               :Vápenka
+STR_IND_LUMBER_YARD                                                             :Obchod s drevom
+STR_IND_MACHINE_SHOP                                                            :Strojársky závod
+STR_IND_METAL_FABRICATION_PLANT                                                 :Kovovýrobný závod
+STR_IND_METAL_FOUNDRY                                                           :Kovodielňa
+STR_IND_MIXEDFARM                                                               :Zmiešaná farma
+STR_IND_PETROLPUMP                                                              :Čerpacia stanica
+STR_IND_PLASTICS_PLANT                                                          :Závod na výrobu plastu
+STR_IND_QUARRY                                                                  :Lom
+STR_IND_RECYCLING_DEPOT                                                         :Recyklačná skládka
+STR_IND_RECYCLING_PLANT                                                         :Závod na recykláciu
+STR_IND_SHEEPFARM                                                               :Ovčia farma
+STR_IND_SMITHY_FORGE                                                            :Kováčska dielňa
+STR_IND_STOCKYARD                                                               :Bitúnok
+STR_IND_SUGAR_REFINERY                                                          :Cukrovar
+STR_IND_SUPERMARKET                                                             :Supermarket
+STR_IND_TEXTILE_MILL                                                            :Odevný závod
+
