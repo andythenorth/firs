@@ -338,8 +338,6 @@ tilelayout tilelayout_fishing_grounds_4 {
  * Definition of the industry
  * *************************************************/
 
-#define THIS_STR_EXTRA_SUPPLIES        STR_EXTRA_FARM_SUPPLIES
-
 CHECK_NEARBY_CLUSTER(fishing_grounds,  16, 60, 3, 4, return CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
 CHECK_INCOMPATIBLE  (fishing_harbour,  16, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_fishing_grounds)
 CHECK_COAST_DISTANCE(coastal_distance, 0, param_max_coastal_distance, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_fishing_harbour)

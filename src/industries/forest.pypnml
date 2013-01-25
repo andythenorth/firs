@@ -333,8 +333,6 @@ tilelayout tilelayout_forest_3 {
  * Definition of the industry
  * *************************************************/
 
-#define THIS_STR_EXTRA_SUPPLIES        STR_EXTRA_FARM_SUPPLIES
-
 CHECK_NEARBY_CLUSTER(forest,       15, 80, 3, 4, return CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
 CHECK_INCOMPATIBLE  (sawmill,      16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(forest))
 CHECK_INCOMPATIBLE  (paper_mill,   16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(sawmill))

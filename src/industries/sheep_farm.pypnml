@@ -47,8 +47,6 @@ ${industry.get_industry_layouts_as_tilelayouts()}
  * Definition of the industry
  * *************************************************/
 
-#define THIS_STR_EXTRA_SUPPLIES        STR_EXTRA_FARM_SUPPLIES
-
 CHECK_NEARBY_CLUSTER(sheep_farm,    10, 36, 1, 2, return CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
 CHECK_INCOMPATIBLE  (stockyard,     16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(sheep_farm))
 CHECK_INCOMPATIBLE  (textile_mill,  16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(stockyard))

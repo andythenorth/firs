@@ -7,8 +7,6 @@
 
 #define THIS_ID(...) ${industry.id}_ ## __VA_ARGS__
 
-#define THIS_STR_EXTRA_SUPPLIES        STR_EXTRA_ENGINEERING_SUPPLIES
-
 spriteset(THIS_ID(spriteset_1)) {
 	[10, 10, 64, 31, -31, 0, "src/graphics/industries/clay_pit_1.png"]
 	[10, 10, 64, 31, -31, 0, "src/graphics/industries/clay_pit_1_snow.png"]
@@ -925,8 +923,6 @@ tilelayout tilelayout_clay_pit_2 {
 /* *************************************************
  * Definition of the industry
  * *************************************************/
-
-#define THIS_STR_EXTRA_SUPPLIES        STR_EXTRA_ENGINEERING_SUPPLIES
 
 CHECK_INCOMPATIBLE  (paper_mill,   16, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
 CHECK_INCOMPATIBLE  (cement_plant, 16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(paper_mill))
