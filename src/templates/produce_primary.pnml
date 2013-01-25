@@ -21,7 +21,7 @@ switch(FEAT_INDUSTRIES, SELF, THIS_ID(produce_256_ticks),
 			LOAD_PERM(var_num_supplies_delivered_last) +
 			LOAD_PERM(var_num_supplies_delivered_bef_last),
 		8),
-		STORE_TEMP((LOAD_TEMP(8) > 120) ? 3 : ((LOAD_TEMP(8) > 30) ? 1 : 0), 9),
+		STORE_TEMP((LOAD_TEMP(8) > SUPPLY_BOOST_QUADRUPLE) ? 3 : ((LOAD_TEMP(8) > SUPPLY_BOOST_DOUBLE) ? 1 : 0), 9),
 		STORE_PERM(LOAD_TEMP(9), var_current_supplies_prod_factor)
 		]) {
 	THIS_ID(production_256);
