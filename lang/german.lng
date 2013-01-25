@@ -144,9 +144,9 @@ STR_EXTRA_TEXTILE_MILL                                                          
 
 STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ DEBUG ------------{}Produktion diesen Monat:{}Fracht 1: {WHITE}{COMMA}{BLACK}{}Fracht 2: {WHITE}{COMMA}{BLACK}{}Tage seit letzter Lieferung: {WHITE}{COMMA}{BLACK}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Maximale Produktion erreicht
-STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Momentane Production: {YELLOW}normal{}{}{BLACK}Um die Produktion zu verdoppeln müssen 30 Kisten innerhalb dreier Monate angeliefert werden (oder 120 für 4-fache Produktion)
-STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Momentane Production: {YELLOW}erhöht (doppelt){}{}{BLACK}Um diesen Produktionslevel zu halten müssen innerhalb dreier Monate 30 Kisten angeliefert werden (oder 120 um die Produktion auf 4-fach zu erhöhen)
-STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}Momentane Production: {YELLOW}übereifrig (vierfach){}{}{BLACK}Um diesen Produktionslevel zu halten müssen innerhalb dreier Monate 120 Kisten angeliefert werden
+STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Momentane Production: {YELLOW}normal{}{}{BLACK}Um die Produktion zu verdoppeln müssen {SIGNED_WORD} Kisten innerhalb dreier Monate angeliefert werden (oder {SIGNED_WORD} für 4-fache Produktion)
+STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Momentane Production: {YELLOW}erhöht (doppelt){}{}{BLACK}Um diesen Produktionslevel zu halten müssen innerhalb dreier Monate {SIGNED_WORD} Kisten angeliefert werden (oder {SIGNED_WORD} um die Produktion auf 4-fach zu erhöhen)
+STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}Momentane Production: {YELLOW}übereifrig (vierfach){}{}{BLACK}Um diesen Produktionslevel zu halten müssen innerhalb dreier Monate {SIGNED_WORD} Kisten angeliefert werden
 STR_GENERIC_NEWLINE                                                             :{}
 
 STR_FUND_BASIC_FARM                                                             :{}{BLACK}Ort: {YELLOW}Kann nicht im Schnee oder in Wüsten errichtet werden.

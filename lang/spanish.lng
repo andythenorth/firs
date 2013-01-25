@@ -143,9 +143,9 @@ STR_EXTRA_TEXTILE_MILL                                                          
 
 STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ DEBUG ------------{}Producción este mes:{}Carga 1: {WHITE}{COMMA}{BLACK}{}Carga 2: {WHITE}{COMMA}{BLACK}{}Días desde la última entrega: {WHITE}{COMMA}{BLACK}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Producción máxima alcanzada
-STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Producción: {YELLOW}normal{}{}{BLACK}Para duplicar la producción, se deben de entregar 30 cajas de suministros en un intervalo de tres meses (o 120 cajas para cuadriplicarla)
-STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Producción: {YELLOW}doble{}{}{BLACK}Para mantener este nivel de producción, se deben de entregar 30 cajas de suministros en un intervalo de tres meses, o 120 cajas para cuadriplicarla
-STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}Producción: {YELLOW}cuádruple{}{}{BLACK}Para mantener este nivel de producción, se deben de entregar 120 cajas de suministros en un intervalo de tres meses
+STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Producción: {YELLOW}normal{}{}{BLACK}Para duplicar la producción, se deben de entregar {SIGNED_WORD} cajas de suministros en un intervalo de tres meses (o {SIGNED_WORD} cajas para cuadriplicarla)
+STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Producción: {YELLOW}doble{}{}{BLACK}Para mantener este nivel de producción, se deben de entregar {SIGNED_WORD} cajas de suministros en un intervalo de tres meses, o {SIGNED_WORD} cajas para cuadriplicarla
+STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}Producción: {YELLOW}cuádruple{}{}{BLACK}Para mantener este nivel de producción, se deben de entregar {SIGNED_WORD} cajas de suministros en un intervalo de tres meses
 STR_GENERIC_NEWLINE                                                             :{}
 
 STR_FUND_BASIC_FARM                                                             :{}{BLACK}Localización: {YELLOW}No puede ser fundada en desiertos o nieve.

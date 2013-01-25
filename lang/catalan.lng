@@ -141,9 +141,9 @@ STR_EXTRA_TEXTILE_MILL                                                          
 
 STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ DEBUG ------------{}Producció d'aquest mes:{}Càrrega 1: {WHITE}{COMMA}{BLACK}{}Càrrega 2: {WHITE}{COMMA}{BLACK}{}Dies des de la darrera entrega: {WHITE}{COMMA}{BLACK}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Assolit el màxim de producció
-STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Producció actual: {YELLOW}normal{}{}{BLACK}Per a doblar la producció cal que lliureu 30 caixes de subministraments en tres mesos (o 120 caixes per a producció quàdruple)
-STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Producció actual: {YELLOW}millorada (doble){}{}{BLACK}Per a mantenir aquest nivell cal que lliureu 30 caixes de subministraments en tres mesos, o 120 caixes per aconseguir producció quàdruple
-STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}Producció actual: {YELLOW}entusiasta (quàdruple){}{}{BLACK}Per a mantenir aquest nivell cal que lliureu 120 caixes de subministraments en tres mesos
+STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Producció actual: {YELLOW}normal{}{}{BLACK}Per a doblar la producció cal que lliureu {SIGNED_WORD} caixes de subministraments en tres mesos (o {SIGNED_WORD} caixes per a producció quàdruple)
+STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Producció actual: {YELLOW}millorada (doble){}{}{BLACK}Per a mantenir aquest nivell cal que lliureu {SIGNED_WORD} caixes de subministraments en tres mesos, o {SIGNED_WORD} caixes per aconseguir producció quàdruple
+STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}Producció actual: {YELLOW}entusiasta (quàdruple){}{}{BLACK}Per a mantenir aquest nivell cal que lliureu {SIGNED_WORD} caixes de subministraments en tres mesos
 STR_GENERIC_NEWLINE                                                             :{}
 
 STR_FUND_BASIC_FARM                                                             :{}{BLACK}Localització: {YELLOW}No es pot situar a la neu ni al desert.

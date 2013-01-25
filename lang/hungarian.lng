@@ -165,9 +165,9 @@ STR_EXTRA_TEXTILE_MILL                                                          
 
 STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ DEBUG ------------{}Termelés ebben a hónapban:{}1. rakomány: {WHITE}{COMMA}{BLACK}{}2. rakomány: {WHITE}{COMMA}{BLACK}{}Eltelt napok az utolsó szállítmány óta: {WHITE}{COMMA}{BLACK}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Elérte a maximális termelést
-STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Jelenlegi termelés: {YELLOW}alapszintű {}{}{BLACK}A termelés megduplázásához 30 láda segédeszköz szállítása szükséges 3 hónapon belül (vagy 120 láda a termelés megnégyszerezéséhez)
-STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Jelenlegi termelés: {YELLOW}megnövekedett (kétszeres) {}{}{BLACK}A szint fenntartásához 30 láda segédeszköz szállítása szükséges 3 hónapon belül, vagy 120 láda a négyszeres szint eléréséhez
-STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}Jelenlegi termelés: {YELLOW}maximális (négyszeres) {}{}{BLACK}A szint fenntartásához 120 láda segédeszköz szállítása szükséges 3 hónapon belül
+STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Jelenlegi termelés: {YELLOW}alapszintű {}{}{BLACK}A termelés megduplázásához {SIGNED_WORD} láda segédeszköz szállítása szükséges 3 hónapon belül (vagy {SIGNED_WORD} láda a termelés megnégyszerezéséhez)
+STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Jelenlegi termelés: {YELLOW}megnövekedett (kétszeres) {}{}{BLACK}A szint fenntartásához {SIGNED_WORD} láda segédeszköz szállítása szükséges 3 hónapon belül, vagy {SIGNED_WORD} láda a négyszeres szint eléréséhez
+STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}Jelenlegi termelés: {YELLOW}maximális (négyszeres) {}{}{BLACK}A szint fenntartásához {SIGNED_WORD} láda segédeszköz szállítása szükséges 3 hónapon belül
 STR_GENERIC_NEWLINE                                                             :{}
 
 STR_FUND_BASIC_FARM                                                             :{}{BLACK}Helyszín: {YELLOW}Nem építhető havas területen és sivatagban.
