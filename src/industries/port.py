@@ -25,7 +25,7 @@ industry = Industry(id='port',
                     layouts='AUTO',
                     prob_in_game='12',
                     prob_random='24',
-                    prod_multiplier='[0, 0]',
+                    prod_multiplier='[9, 9]',
                     substitute='0',
                     new_ind_msg='TTD_STR_NEWS_INDUSTRY_CONSTRUCTION',
                     map_colour='191',
@@ -46,6 +46,7 @@ industry.economy_variations['BASIC_TROPIC'].disabled = True
 
 industry.economy_variations['BASIC_ARCTIC'].accept_cargo_types = ['GOOD', 'BEER', 'PETR']
 industry.economy_variations['BASIC_ARCTIC'].prod_cargo_types = ['ENSP', 'CLAY']
+industry.economy_variations['BASIC_ARCTIC'].prod_multiplier='[7, 10]'
 
 industry.add_tile(id='port_tile')
 
