@@ -46,7 +46,7 @@ industry.economy_variations['BASIC_TROPIC'].disabled = True
 
 industry.economy_variations['BASIC_ARCTIC'].accept_cargo_types = ['GOOD', 'BEER', 'PETR']
 industry.economy_variations['BASIC_ARCTIC'].prod_cargo_types = ['ENSP', 'CLAY']
-industry.economy_variations['BASIC_ARCTIC'].prod_multiplier='[7, 10]'
+industry.economy_variations['BASIC_ARCTIC'].prod_multiplier = '[7, 14]'
 
 industry.add_tile(id='port_tile')
 
