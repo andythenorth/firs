@@ -410,7 +410,7 @@ class Industry(object):
 
     def render_and_save_pnml(self):
         industry_template = industry_templates[self.id + '.pypnml']
-        templated_pnml = unescape_chameleon_output(industry_template(industry=self))
+        templated_pnml = unescape_chameleon_output(industry_template(industry=self, global_constants=global_constants))
 
         # save the results of templating
         pnml = codecs.open(os.path.join(pnml_output_path, self.id + '.pnml'), 'w','utf8')
