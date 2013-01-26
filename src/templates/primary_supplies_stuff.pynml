@@ -12,7 +12,7 @@
  */
 
 switch(FEAT_INDUSTRIES, SELF, THIS_ID(extra_text), LOAD_PERM(var_current_supplies_prod_factor)) {
-	3: return string(STR_PRIMARY_PRODUCTION_4X, SUPPLY_BOOST_QUADRUPLE);
-	1: return string(STR_PRIMARY_PRODUCTION_2X, SUPPLY_BOOST_DOUBLE, SUPPLY_BOOST_QUADRUPLE);
-	return string(STR_PRIMARY_PRODUCTION_1X, SUPPLY_BOOST_DOUBLE, SUPPLY_BOOST_QUADRUPLE);
+	3: return string(STR_PRIMARY_PRODUCTION_4X, ${industry.supply_requirements[1]});
+	1: return string(STR_PRIMARY_PRODUCTION_2X, ${industry.supply_requirements[0]}, ${industry.supply_requirements[1]});
+	return string(STR_PRIMARY_PRODUCTION_1X, ${industry.supply_requirements[0]}, ${industry.supply_requirements[1]});
 }

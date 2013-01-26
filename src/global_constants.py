@@ -1,6 +1,8 @@
 # changing the order of items in econmy list breaks savegames, don't do it.
 economies = ["FIRS", "BASIC_TEMPERATE", "BASIC_ARCTIC", "BASIC_TROPIC"]
 
+supply_requirements = {'ENSP': [21, 84], 'FMSP': [14, 56]}
+
 # Definition of the IDs of the single industries
 industry_numeric_ids = dict(coal_mine = 0x00,
                             lime_kiln = 0x01,
