@@ -58,6 +58,11 @@ ${industry.get_industry_layouts_as_tilelayouts()}
  * Definition of the industry
  * *************************************************/
 
+#include "../src/templates/produce_primary.pnml"
+#include "../src/templates/check_primary_production_level.pnml"
+
+${industry.get_primary_supplies_stuff()}
+
 #include "../src/templates/check_availability.pnml"
 
 CHECK_INCOMPATIBLE  (port, 16, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
@@ -67,8 +72,15 @@ ${industry.get_industry_properties()}
 
 item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
 	graphics {
-		construction_probability:${industry.id}_check_availability;
-		location_check:          ${industry.id}_check_location;
+        produce_cargo_arrival:   ${industry.id}_produce;
+        produce_256_ticks:       ${industry.id}_produce_256_ticks;
+        construction_probability:${industry.id}_check_availability;
+        location_check:          ${industry.id}_check_location;
+        monthly_prod_change:     ${industry.id}_monthly_update;
+        random_prod_change:      return CB_RESULT_IND_PROD_NO_CHANGE;
+        build_prod_change:       randomise_primary_production_on_build;
+        extra_text_fund:         return string(STR_FUND_ARABLE_FARM);
+        extra_text_industry:     ${industry.id}_extra_text;
 	}
 }
 

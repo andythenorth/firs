@@ -306,6 +306,8 @@ class Industry(object):
             return global_constants.supply_requirements['ENSP']
         elif 'FMSP' in self.default_industry_properties.accept_cargo_types:
             return global_constants.supply_requirements['FMSP']
+        elif self.id == 'port': # what a nasty hard coded hack :)
+            return global_constants.supply_requirements['port']
         else:
             return None
 
