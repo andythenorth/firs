@@ -5,12 +5,10 @@
  * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS industry set. If not, see <http://www.gnu.org/licenses/>.
  */
 
-/* Template to handle display of extra text for primary industries
+/* Template to handle defining supply requirements, and display of extra text for primary industries
  *
  * No debug texts. Show extra text about influence of supplies
  *
- * Required defines in the industry's pnml file:
- * THIS_STR_EXTRA_SUPPLIES         string shown when supplies can increase production
  */
 
 switch(FEAT_INDUSTRIES, SELF, THIS_ID(extra_text), LOAD_PERM(var_current_supplies_prod_factor)) {

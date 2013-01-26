@@ -58,9 +58,9 @@ SWITCH_COLOUR_SCHEME1(${industry.id}_colour)
 #include "../src/templates/produce_primary.pnml"
 #include "../src/templates/check_primary_production_level.pnml"
 
-#include "../src/templates/extra_text_primary.pnml"
+${industry.get_primary_supplies_stuff()}
 
-#include "../src/templates/check_availability.pnml"
+#include                "../src/templates/check_availability.pnml"
 
 ${industry.get_industry_properties()}
 
