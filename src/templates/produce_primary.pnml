@@ -26,3 +26,6 @@ switch(FEAT_INDUSTRIES, SELF, THIS_ID(produce_256_ticks),
 		]) {
 	THIS_ID(production_256);
 }
+
+#undef SUPPLY_BOOST_DOUBLE
+#undef SUPPLY_BOOST_QUADRUPLE
