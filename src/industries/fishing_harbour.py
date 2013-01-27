@@ -43,19 +43,29 @@ industry = Industry(id='fishing_harbour',
 industry.economy_variations['BASIC_TEMPERATE'].disabled = True
 industry.economy_variations['BASIC_TROPIC'].disabled = True
 
+sprite_ground = industry.add_sprite(
+    sprite_number = 'GROUNDSPRITE_WATER'
+)
+spriteset_ground_empty = industry.add_spriteset(
+    id = 'fishing_harbour_spriteset_ground',
+    type = 'empty'
+)
 spriteset_1 = industry.add_spriteset(
     id = 'fishing_harbour_spriteset_1',
     sprites = [(10, 10, 64, 39, -31, -8)],
+    always_draw = 1,
 )
 spriteset_2 = industry.add_spriteset(
     id = 'fishing_harbour_spriteset_2',
     sprites = [(10, 60, 64, 39, -31, -7)],
-    zextent = 7
+    zextent = 7,
+    always_draw = 1,
 )
 spriteset_3 = industry.add_spriteset(
     id = 'fishing_harbour_spriteset_3',
     sprites = [(80, 60, 64, 39, -31, -7)],
-    zextent = 7
+    zextent = 7,
+    always_draw = 1
 )
 spriteset_4 = industry.add_spriteset(
     id = 'fishing_harbour_spriteset_4',
@@ -84,10 +94,25 @@ spriteset_8 = industry.add_spriteset(
 spriteset_9 = industry.add_spriteset(
     id = 'fishing_harbour_spriteset_9',
     sprites = [(150, 10, 64, 39, -31, 0)],
+    yoffset = 4,
+    zoffset = 27,
+    yextent = 12,
+
+)
+spriteset_9b = industry.add_spriteset(
+    id = 'fishing_harbour_spriteset_9b',
+    sprites = [(150, 10, 64, 39, -31, 0)],
+    yoffset = 5,
+    zoffset = 40,
+    yextent = 11,
+
 )
 spriteset_10 = industry.add_spriteset(
     id = 'fishing_harbour_spriteset_10',
     sprites = [(220, 10, 64, 39, -31, -7)],
+    yoffset = 4,
+    zoffset = 27,
+    yextent = 12,
 )
 spriteset_11 = industry.add_spriteset(
     id = 'fishing_harbour_spriteset_11',
@@ -116,14 +141,210 @@ spriteset_16 = industry.add_spriteset(
 spriteset_17 = industry.add_spriteset(
     id = 'fishing_harbour_spriteset_17',
     sprites = [(440, 110, 64, 74, -31, -26)],
+    always_draw = 1
 )
 spriteset_18 = industry.add_spriteset(
     id = 'fishing_harbour_spriteset_18',
     sprites = [(510, 110, 64, 74, -31, -42)],
+    always_draw = 1
 )
 spriteset_19 = industry.add_spriteset(
     id = 'fishing_harbour_spriteset_19',
     sprites = [(360, 10, 64, 39, -31, 0)],
+    zoffset = 18,
+)
+
+industry.add_spritelayout(
+    id = 'fishing_harbour_spritelayout_1',
+    ground_sprite = spriteset_ground_empty,
+    ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_2, spriteset_1, spriteset_19]
+)
+industry.add_spritelayout(
+    id = 'fishing_harbour_spritelayout_2',
+    ground_sprite = spriteset_ground_empty,
+    ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_3, spriteset_1, spriteset_19]
+)
+industry.add_spritelayout(
+    id = 'fishing_harbour_spritelayout_3',
+    ground_sprite = spriteset_ground_empty,
+    ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_2, spriteset_3, spriteset_1, spriteset_19]
+)
+industry.add_spritelayout(
+    id = 'fishing_harbour_spritelayout_4',
+    ground_sprite = spriteset_ground_empty,
+    ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_3, spriteset_4, spriteset_1, spriteset_19]
+)
+industry.add_spritelayout(
+    id = 'fishing_harbour_spritelayout_5',
+    ground_sprite = spriteset_ground_empty,
+    ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_5, spriteset_4, spriteset_1, spriteset_19]
+)
+industry.add_spritelayout(
+    id = 'fishing_harbour_spritelayout_6',
+    ground_sprite = spriteset_ground_empty,
+    ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_5, spriteset_2, spriteset_1, spriteset_19]
+)
+industry.add_spritelayout(
+    id = 'fishing_harbour_spritelayout_7',
+    ground_sprite = spriteset_ground_empty,
+    ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_6, spriteset_1, spriteset_19]
+)
+industry.add_spritelayout(
+    id = 'fishing_harbour_spritelayout_8',
+    ground_sprite = spriteset_ground_empty,
+    ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_6, spriteset_7, spriteset_1, spriteset_19]
+)
+industry.add_spritelayout(
+    id = 'fishing_harbour_spritelayout_9',
+    ground_sprite = spriteset_ground_empty,
+    ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_7, spriteset_1, spriteset_19]
+)
+industry.add_spritelayout(
+    id = 'fishing_harbour_spritelayout_10',
+    ground_sprite = spriteset_ground_empty,
+    ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_1]
+)
+industry.add_spritelayout(
+    id = 'fishing_harbour_spritelayout_11',
+    ground_sprite = spriteset_ground_empty,
+    ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_2, spriteset_1, spriteset_8]
+)
+industry.add_spritelayout(
+    id = 'fishing_harbour_spritelayout_12',
+    ground_sprite = spriteset_ground_empty,
+    ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_3, spriteset_1, spriteset_8]
+)
+industry.add_spritelayout(
+    id = 'fishing_harbour_spritelayout_13',
+    ground_sprite = spriteset_ground_empty,
+    ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_2, spriteset_3, spriteset_1, spriteset_8]
+)
+industry.add_spritelayout(
+    id = 'fishing_harbour_spritelayout_14',
+    ground_sprite = spriteset_ground_empty,
+    ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_3, spriteset_4, spriteset_1, spriteset_8]
+)
+industry.add_spritelayout(
+    id = 'fishing_harbour_spritelayout_15',
+    ground_sprite = spriteset_ground_empty,
+    ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_5, spriteset_4, spriteset_1, spriteset_8]
+)
+industry.add_spritelayout(
+    id = 'fishing_harbour_spritelayout_16',
+    ground_sprite = spriteset_ground_empty,
+    ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_5, spriteset_2, spriteset_1, spriteset_8]
+)
+industry.add_spritelayout(
+    id = 'fishing_harbour_spritelayout_17',
+    ground_sprite = spriteset_ground_empty,
+    ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_6, spriteset_1, spriteset_8]
+)
+industry.add_spritelayout(
+    id = 'fishing_harbour_spritelayout_18',
+    ground_sprite = spriteset_ground_empty,
+    ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_6, spriteset_7, spriteset_1, spriteset_8]
+)
+industry.add_spritelayout(
+    id = 'fishing_harbour_spritelayout_19',
+    ground_sprite = spriteset_ground_empty,
+    ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_7, spriteset_1, spriteset_8]
+)
+industry.add_spritelayout(
+    id = 'fishing_harbour_spritelayout_20',
+    ground_sprite = spriteset_ground_empty,
+    ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_1, spriteset_8]
+)
+industry.add_spritelayout(
+    id = 'fishing_harbour_spritelayout_21',
+    ground_sprite = sprite_ground,
+    ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_11]
+)
+industry.add_spritelayout(
+    id = 'fishing_harbour_spritelayout_22',
+    ground_sprite = sprite_ground,
+    ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_12]
+)
+industry.add_spritelayout(
+    id = 'fishing_harbour_spritelayout_23',
+    ground_sprite = sprite_ground,
+    ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_13]
+)
+industry.add_spritelayout(
+    id = 'fishing_harbour_spritelayout_24',
+    ground_sprite = sprite_ground,
+    ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_14]
+)
+industry.add_spritelayout(
+    id = 'fishing_harbour_spritelayout_25',
+    ground_sprite = sprite_ground,
+    ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_14]
+)
+industry.add_spritelayout(
+    id = 'fishing_harbour_spritelayout_26',
+    ground_sprite = sprite_ground,
+    ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_15]
+)
+industry.add_spritelayout(
+    id = 'fishing_harbour_spritelayout_27',
+    ground_sprite = sprite_ground,
+    ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_16]
+)
+industry.add_spritelayout(
+    id = 'fishing_harbour_spritelayout_28',
+    ground_sprite = spriteset_ground_empty,
+    ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_2, spriteset_3, spriteset_1, spriteset_9]
+)
+industry.add_spritelayout(
+    id = 'fishing_harbour_spritelayout_29',
+    ground_sprite = spriteset_ground_empty,
+    ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_2, spriteset_3, spriteset_1, spriteset_10]
+)
+industry.add_spritelayout(
+    id = 'fishing_harbour_spritelayout_30',
+    ground_sprite = spriteset_ground_empty,
+    ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_2, spriteset_3, spriteset_1, spriteset_9b]
+)
+industry.add_spritelayout(
+    id = 'fishing_harbour_spritelayout_31',
+    ground_sprite = sprite_ground,
+    ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_17]
+)
+industry.add_spritelayout(
+    id = 'fishing_harbour_spritelayout_32',
+    ground_sprite = sprite_ground,
+    ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_18]
 )
 
 industry.add_industry_layout(

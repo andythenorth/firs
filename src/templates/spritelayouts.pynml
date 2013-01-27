@@ -126,6 +126,7 @@
                     xextent: ${building_sprite.xextent};
                     yextent: ${building_sprite.yextent};
                     zextent: ${building_sprite.zextent};
+                    always_draw: ${building_sprite.always_draw};
                     hide_sprite: (terrain_type == TILETYPE_SNOW) ${industry.get_date_conditions_for_hide_sprites(repeat.date_variation_num.index)};
                 }
                 building {
@@ -138,6 +139,7 @@
                     xextent: ${building_sprite.xextent};
                     yextent: ${building_sprite.yextent};
                     zextent: ${building_sprite.zextent};
+                    always_draw: ${building_sprite.always_draw};
                     hide_sprite: (terrain_type != TILETYPE_SNOW) ${industry.get_date_conditions_for_hide_sprites(repeat.date_variation_num.index)};
                 }
             </tal:build_building_sprites>

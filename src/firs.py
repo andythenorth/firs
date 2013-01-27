@@ -130,7 +130,7 @@ class Tile(object):
 
 class Sprite(object):
     """Base class to hold simple sprites (using numbers from a base set)"""
-    def __init__(self, sprite_number, sprite_number_snow='', xoffset=0, yoffset=0, zoffset=0, xextent=16, yextent=16, zextent=16):
+    def __init__(self, sprite_number, sprite_number_snow='', xoffset=0, yoffset=0, zoffset=0, xextent=16, yextent=16, zextent=16, always_draw=0):
         self.sprite_number = sprite_number # can also provide raw nml with the sprite number for things like controlling animation frame
         self.sprite_number_snow = (sprite_number, sprite_number_snow)[sprite_number_snow!=''] # set a snow sprite explicitly (optional).
         # optional parameters for offsets and extents for the *spritelayout* to use with this sprite (read nml spritelayout docs to see use)
@@ -140,6 +140,7 @@ class Sprite(object):
         self.xextent = xextent
         self.yextent = yextent
         self.zextent = zextent
+        self.always_draw = always_draw
 
 class SmokeSprite(object):
     """Base class to handle smoke sprites (using smoke sprite numbers from a base set)"""
@@ -176,7 +177,7 @@ class Spriteset(object):
     """Base class to hold industry spritesets"""
     # !! arguably this should be two different classes, one for building/feature spritesets, and one for ground spritesets
     def __init__(self, id, sprites=[], type='', xoffset=0, yoffset=0, zoffset=0, xextent=16, yextent=16,
-                 zextent=16, animation_rate = 0, num_sprites_to_autofill = 1):
+                 zextent=16, animation_rate = 0, always_draw=0, num_sprites_to_autofill = 1):
         self.id = id
         self.sprites = sprites # a list of sprites 6-tuples in format (x, y, w, h, xoffs, yoffs)
         self.type = type # set to ground or other special types, or omit for default (building, greeble, foundations etc - graphics from png named same as industry)
@@ -189,6 +190,7 @@ class Spriteset(object):
         self.xextent = xextent # set extents to x/y/z sizes of largest sprite in spriteset, or omit for default (16)
         self.yextent = yextent
         self.zextent = zextent
+        self.always_draw = always_draw
 
     def get_ground_tile_x_start(self, type):
         return {'mud': 0, 'concrete': 80, 'cobble': 150, 'snow': 220, 'slab': 290, 'empty':360}[type]
