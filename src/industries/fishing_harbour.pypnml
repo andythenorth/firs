@@ -11,7 +11,7 @@ ${industry.get_spritesets()}
 
 ${industry.get_spritelayouts()}
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4163, nearby_tile_slope(0,0)) {
+switch(FEAT_INDUSTRYTILES, SELF, fishing_harbour_slope_switch_1, nearby_tile_slope(0,0)) {
 	0: ${industry.id}_spritelayout_10;
 	1: ${industry.id}_spritelayout_4;
 	2: ${industry.id}_spritelayout_8;
@@ -30,7 +30,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_4163, nearby_tile_slope(0,0)) {
 	${industry.id}_spritelayout_10;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_4164, nearby_tile_slope(0,0)) {
+switch(FEAT_INDUSTRYTILES, SELF, fishing_harbour_slope_switch_2, nearby_tile_slope(0,0)) {
 	0: ${industry.id}_spritelayout_20;
 	1: ${industry.id}_spritelayout_14;
 	2: ${industry.id}_spritelayout_18;
