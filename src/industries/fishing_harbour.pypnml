@@ -49,77 +49,7 @@ switch(FEAT_INDUSTRYTILES, SELF, action2_4164, nearby_tile_slope(0,0)) {
 	THIS_ID(spritelayout_20);
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_1), relative_pos) {
-	relative_coord(0, 3): THIS_ID(spritelayout_27);
-	relative_coord(0, 4): action2_4163;
-	relative_coord(1, 1): THIS_ID(spritelayout_11);
-	relative_coord(1, 2): THIS_ID(spritelayout_29);
-	relative_coord(1, 3): THIS_ID(spritelayout_11);
-	relative_coord(1, 4): action2_4164;
-	relative_coord(2, 1): THIS_ID(spritelayout_24);
-	relative_coord(2, 2): THIS_ID(spritelayout_24);
-	THIS_ID(spritelayout_2);
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_2), relative_pos) {
-	relative_coord(1, 0): THIS_ID(spritelayout_23);
-	relative_coord(1, 1): THIS_ID(spritelayout_23);
-	relative_coord(2, 0): THIS_ID(spritelayout_30);
-	relative_coord(2, 1): THIS_ID(spritelayout_12);
-	relative_coord(2, 2): THIS_ID(spritelayout_21);
-	relative_coord(3, 1): action2_4164;
-	relative_coord(3, 2): action2_4163;
-	THIS_ID(spritelayout_2);
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_3), relative_pos) {
-	relative_coord(0, 0): action2_4164;
-	relative_coord(0, 1): action2_4164;
-	relative_coord(0, 2): action2_4164;
-	relative_coord(1, 0): THIS_ID(spritelayout_24);
-	relative_coord(1, 2): THIS_ID(spritelayout_2);
-	relative_coord(2, 1): THIS_ID(spritelayout_26);
-	relative_coord(2, 2): THIS_ID(spritelayout_28);
-	relative_coord(2, 3): THIS_ID(spritelayout_22);
-	THIS_ID(spritelayout_1);
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_4), relative_pos) {
-	relative_coord(0, 0): action2_4164;
-	relative_coord(0, 1): THIS_ID(spritelayout_11);
-	relative_coord(0, 2): THIS_ID(spritelayout_1);
-	relative_coord(0, 3): THIS_ID(spritelayout_1);
-	relative_coord(0, 4): THIS_ID(spritelayout_28);
-	relative_coord(1, 0): action2_4163;
-	relative_coord(1, 1): THIS_ID(spritelayout_31);
-	relative_coord(1, 2): THIS_ID(spritelayout_32);
-	relative_coord(1, 4): THIS_ID(spritelayout_25);
-	THIS_ID(spritelayout_1);
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_5), relative_pos) {
-	relative_coord(0, 0): action2_4163;
-	relative_coord(1, 0): THIS_ID(spritelayout_3);
-	relative_coord(2, 0): THIS_ID(spritelayout_3);
-	relative_coord(2, 1): THIS_ID(spritelayout_31);
-	relative_coord(2, 2): THIS_ID(spritelayout_32);
-	relative_coord(3, 0): THIS_ID(spritelayout_30);
-	relative_coord(3, 1): THIS_ID(spritelayout_13);
-	relative_coord(3, 2): THIS_ID(spritelayout_13);
-	relative_coord(4, 0): THIS_ID(spritelayout_24);
-	relative_coord(4, 1): THIS_ID(spritelayout_24);
-	relative_coord(4, 2): THIS_ID(spritelayout_24);
-	THIS_ID(spritelayout_1);
-}
-
-switch(FEAT_INDUSTRYTILES, PARENT, THIS_ID(layout), layout_num) {
-	1: THIS_ID(layout_1);
-	2: THIS_ID(layout_2);
-	3: THIS_ID(layout_3);
-	4: THIS_ID(layout_4);
-	5: THIS_ID(layout_5);
-	THIS_ID(spritelayout_1);
-}
+${industry.get_industry_layouts_as_graphic_switches()}
 
 /* *************************************************
  * Definition of the industry tile and its callbacks
@@ -133,7 +63,7 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_1), TILE_FISHINGHARBOUR_1) {
 	}
 
 	graphics {
-		THIS_ID(layout);
+		THIS_ID(industry_master_graphics_switch);
 	}
 }
 
@@ -154,7 +84,7 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_2), TILE_FISHINGHARBOUR_2) {
 	graphics {
 		foundations: return CB_RESULT_NO_FOUNDATIONS;
 		tile_check:  THIS_ID(tile2_location_check);
-		THIS_ID(layout);
+		THIS_ID(industry_master_graphics_switch);
 	}
 }
 
