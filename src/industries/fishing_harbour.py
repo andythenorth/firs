@@ -87,7 +87,7 @@ spriteset_9 = industry.add_spriteset(
 )
 spriteset_10 = industry.add_spriteset(
     id = 'fishing_harbour_spriteset_10',
-    sprites = [(360, 60, 64, 39, -31, -7)],
+    sprites = [(220, 10, 64, 39, -31, -7)],
 )
 spriteset_11 = industry.add_spriteset(
     id = 'fishing_harbour_spriteset_11',
