@@ -43,6 +43,88 @@ industry = Industry(id='fishing_harbour',
 industry.economy_variations['BASIC_TEMPERATE'].disabled = True
 industry.economy_variations['BASIC_TROPIC'].disabled = True
 
+spriteset_1 = industry.add_spriteset(
+    id = 'fishing_harbour_spriteset_1',
+    sprites = [(10, 10, 64, 39, -31, -8)],
+)
+spriteset_2 = industry.add_spriteset(
+    id = 'fishing_harbour_spriteset_2',
+    sprites = [(10, 60, 64, 39, -31, -7)],
+    zextent = 7
+)
+spriteset_3 = industry.add_spriteset(
+    id = 'fishing_harbour_spriteset_3',
+    sprites = [(80, 60, 64, 39, -31, -7)],
+    zextent = 7
+)
+spriteset_4 = industry.add_spriteset(
+    id = 'fishing_harbour_spriteset_4',
+    sprites = [(150, 60, 64, 39, -31, -7)],
+    zextent = 7
+)
+spriteset_5 = industry.add_spriteset(
+    id = 'fishing_harbour_spriteset_5',
+    sprites = [(220, 60, 64, 39, -31, -7)],
+    zextent = 7
+)
+spriteset_6 = industry.add_spriteset(
+    id = 'fishing_harbour_spriteset_6',
+    sprites = [(290, 60, 64, 39, -31, -7)],
+    zextent = 7
+)
+spriteset_7 = industry.add_spriteset(
+    id = 'fishing_harbour_spriteset_7',
+    sprites = [(360, 60, 64, 39, -31, -7)],
+    zextent = 7
+)
+spriteset_8 = industry.add_spriteset(
+    id = 'fishing_harbour_spriteset_8',
+    sprites = [(80, 10, 64, 39, -31, 0)],
+)
+spriteset_9 = industry.add_spriteset(
+    id = 'fishing_harbour_spriteset_9',
+    sprites = [(150, 10, 64, 39, -31, 0)],
+)
+spriteset_10 = industry.add_spriteset(
+    id = 'fishing_harbour_spriteset_10',
+    sprites = [(360, 60, 64, 39, -31, -7)],
+)
+spriteset_11 = industry.add_spriteset(
+    id = 'fishing_harbour_spriteset_11',
+    sprites = [(10, 110, 64, 39, -35, -15)],
+)
+spriteset_12 = industry.add_spriteset(
+    id = 'fishing_harbour_spriteset_12',
+    sprites = [(80, 110, 64, 39, -31, -14)],
+)
+spriteset_13 = industry.add_spriteset(
+    id = 'fishing_harbour_spriteset_13',
+    sprites = [(150, 110, 64, 39, -31, -8)],
+)
+spriteset_14 = industry.add_spriteset(
+    id = 'fishing_harbour_spriteset_14',
+    sprites = [(220, 110, 64, 39, -27, -12)],
+)
+spriteset_15 = industry.add_spriteset(
+    id = 'fishing_harbour_spriteset_15',
+    sprites = [(290, 110, 64, 39, -15, -11)],
+)
+spriteset_16 = industry.add_spriteset(
+    id = 'fishing_harbour_spriteset_16',
+    sprites = [(360, 110, 64, 39, -45, -15)],
+)
+spriteset_17 = industry.add_spriteset(
+    id = 'fishing_harbour_spriteset_17',
+    sprites = [(440, 110, 64, 74, -31, -26)],
+)
+spriteset_18 = industry.add_spriteset(
+    id = 'fishing_harbour_spriteset_18',
+    sprites = [(510, 110, 64, 74, -31, -42)],
+)
+spriteset_19 = industry.add_spriteset(
+    id = 'fishing_harbour_spriteset_19',
+    sprites = [(360, 10, 64, 39, -31, 0)],
+)
 
 industry.add_industry_layout(
     id = 'fishing_harbour_industry_layout_1',
