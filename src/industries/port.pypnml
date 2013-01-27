@@ -12,26 +12,72 @@ ${industry.get_spritesets()}
 
 ${industry.get_spritelayouts()}
 
+switch(FEAT_INDUSTRYTILES, SELF, port_slope_switch_1, nearby_tile_slope(0,0)) {
+	0: ${industry.id}_spritelayout_10;
+	1: ${industry.id}_spritelayout_4;
+	2: ${industry.id}_spritelayout_8;
+	3: ${industry.id}_spritelayout_9;
+	4: ${industry.id}_spritelayout_6;
+	5: ${industry.id}_spritelayout_5;
+	6: ${industry.id}_spritelayout_7;
+	7: ${industry.id}_spritelayout_10;
+	8: ${industry.id}_spritelayout_3;
+	9: ${industry.id}_spritelayout_4;
+	10: ${industry.id}_spritelayout_8;
+	11: ${industry.id}_spritelayout_9;
+	12: ${industry.id}_spritelayout_6;
+	13: ${industry.id}_spritelayout_5;
+	14: ${industry.id}_spritelayout_7;
+	${industry.id}_spritelayout_10;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, port_slope_switch_2, nearby_tile_slope(0,0)) {
+	0: ${industry.id}_spritelayout_20;
+	1: ${industry.id}_spritelayout_14;
+	2: ${industry.id}_spritelayout_18;
+	3: ${industry.id}_spritelayout_19;
+	4: ${industry.id}_spritelayout_16;
+	5: ${industry.id}_spritelayout_15;
+	6: ${industry.id}_spritelayout_17;
+	7: ${industry.id}_spritelayout_20;
+	8: ${industry.id}_spritelayout_13;
+	9: ${industry.id}_spritelayout_14;
+	10: ${industry.id}_spritelayout_18;
+	11: ${industry.id}_spritelayout_19;
+	12: ${industry.id}_spritelayout_16;
+	13: ${industry.id}_spritelayout_15;
+	14: ${industry.id}_spritelayout_17;
+	${industry.id}_spritelayout_20;
+}
+
 ${industry.get_industry_layouts_as_graphic_switches()}
 
 /* *************************************************
  * Definition of the industry tile and its callbacks
  * *************************************************/
 
-CHECK_ROAD_ADJACENT     (tile_road_adjacent_4, -1, 0, return CB_RESULT_LOCATION_DISALLOW)
-CHECK_ROAD_ADJACENT     (tile_road_adjacent_3, 0, -1, ${industry.id}_tile_road_adjacent_4)
-CHECK_ROAD_ADJACENT     (tile_road_adjacent_2, 1, 0,  ${industry.id}_tile_road_adjacent_3)
-CHECK_ROAD_ADJACENT     (tile_road_adjacent_1, 0, 1, ${industry.id}_tile_road_adjacent_2)
-TILE_ALLOW_PLAYER       (terrain_check, ${industry.id}_tile_road_adjacent_1)
+/* It must not be a flat tile */
+TILE_CHECK_FLAT      (tile2_flat_check, return CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
 
+/* We allow on sea shores and on normal slopes - but not rivers and canals */
+TILE_CHECK_WATERCLASS(tile2_land_check,     WATER_CLASS_NONE, ${industry.id}_tile2_flat_check, return CB_RESULT_LOCATION_DISALLOW)
+TILE_CHECK_WATERCLASS(tile2_location_check, WATER_CLASS_SEA,  ${industry.id}_tile2_flat_check, ${industry.id}_tile2_land_check)
 
 <tal:build_economies repeat="economy global_constants.economies">
     if (economy==${repeat.economy.index}) {
         <tal:industry_on_or_off condition="industry.get_property('enabled', economy) == True">
-        item(FEAT_INDUSTRYTILES, ${industry.id}_tile, TILE_PORT_1) {
+        item(FEAT_INDUSTRYTILES, ${industry.id}_tile_1, TILE_PORT_1) {
             property {
                 substitute:       0;
                 land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
+                <!--! don't use declaration magic for these props that use lists -->
+                accepted_cargos: [${','.join(['['+ i +', 8]' for i in industry.get_property('accept_cargo_types', economy)])}];
+            }
+        }
+        item(FEAT_INDUSTRYTILES, ${industry.id}_tile_2, TILE_PORT_2) {
+            property {
+                substitute:       0;
+                land_shape_flags: bitmask(LSF_ALLOW_ON_WATER);
                 <!--! don't use declaration magic for these props that use lists -->
                 accepted_cargos: [${','.join(['['+ i +', 8]' for i in industry.get_property('accept_cargo_types', economy)])}];
             }
@@ -41,13 +87,18 @@ TILE_ALLOW_PLAYER       (terrain_check, ${industry.id}_tile_road_adjacent_1)
 </tal:build_economies>
 
 
-item(FEAT_INDUSTRYTILES, ${industry.id}_tile, TILE_PORT_1) {
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile_1, TILE_PORT_1) {
 	graphics {
-		tile_check:  ${industry.id}_terrain_check;
 		${industry.id}_industry_master_graphics_switch;
 	}
 }
-
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile_2, TILE_PORT_2) {
+	graphics {
+		foundations: return CB_RESULT_NO_FOUNDATIONS;
+		tile_check:  ${industry.id}_tile2_location_check;
+		${industry.id}_industry_master_graphics_switch;
+	}
+}
 /* *************************************************
  * Definition of the industry layouts
  * *************************************************/
