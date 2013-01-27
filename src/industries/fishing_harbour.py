@@ -40,8 +40,8 @@ industry = Industry(id='fishing_harbour',
                     fund_cost_multiplier='150',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS')
 
-industry.economy_variations['BASIC_TEMPERATE'].disabled = True
-industry.economy_variations['BASIC_TROPIC'].disabled = True
+industry.economy_variations['FIRS'].enabled = True
+industry.economy_variations['BASIC_ARCTIC'].enabled = True
 
 sprite_ground = industry.add_sprite(
     sprite_number = 'GROUNDSPRITE_WATER'

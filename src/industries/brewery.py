@@ -39,8 +39,8 @@ industry = Industry(id='brewery',
                     fund_cost_multiplier='50',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS')
 
-industry.economy_variations['BASIC_TEMPERATE'].disabled = True
-industry.economy_variations['BASIC_TROPIC'].disabled = True
+industry.economy_variations['FIRS'].enabled = True
+industry.economy_variations['BASIC_ARCTIC'].enabled = True
 
 industry.add_tile(id='brewery_tile')
 

@@ -27,8 +27,8 @@ industry = Industry(id='iron_ore_mine',
                     substitute='18',
                     fund_cost_multiplier='232')
 
-industry.economy_variations['BASIC_ARCTIC'].disabled = True
-industry.economy_variations['BASIC_TROPIC'].disabled = True
+industry.economy_variations['FIRS'].enabled = True
+industry.economy_variations['BASIC_TEMPERATE'].enabled = True
 
 # industry uses layouts and sprites from default game, no custom layouts etc
 

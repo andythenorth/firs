@@ -40,6 +40,11 @@ industry = Industry(id='grain_mill',
                     fund_cost_multiplier='44',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS')
 
+industry.economy_variations['FIRS'].enabled = True
+industry.economy_variations['BASIC_TEMPERATE'].enabled = True
+industry.economy_variations['BASIC_ARCTIC'].enabled = True
+industry.economy_variations['BASIC_TROPIC'].enabled = True
+
 industry.add_tile(id='grain_mill_tile')
 
 spriteset_ground_bakery = industry.add_spriteset(

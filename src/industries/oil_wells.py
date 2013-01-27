@@ -34,6 +34,11 @@ industry = Industry(id='oil_wells',
                     prod_multiplier='[28]',
                     substitute='0')
 
+industry.economy_variations['FIRS'].enabled = True
+industry.economy_variations['BASIC_TEMPERATE'].enabled = True
+industry.economy_variations['BASIC_ARCTIC'].enabled = True
+industry.economy_variations['BASIC_TROPIC'].enabled = True
+
 industry.add_tile(id='oil_wells_tile_pump')
 industry.add_tile(id='oil_wells_tile_building')
 

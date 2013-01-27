@@ -40,9 +40,7 @@ industry = Industry(id='iron_works',
                     fund_cost_multiplier='69',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS')
 
-industry.economy_variations['BASIC_TEMPERATE'].disabled = True
-industry.economy_variations['BASIC_ARCTIC'].disabled = True
-industry.economy_variations['BASIC_TROPIC'].disabled = True
+industry.economy_variations['FIRS'].enabled = True
 
 industry.add_tile(id='iron_works_tile')
 industry.add_tile(id='iron_works_tile_anim_1')

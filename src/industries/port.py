@@ -40,9 +40,7 @@ industry = Industry(id='port',
                     fund_cost_multiplier='6',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS')
 
-industry.economy_variations['FIRS'].disabled = True
-industry.economy_variations['BASIC_TEMPERATE'].disabled = True
-industry.economy_variations['BASIC_TROPIC'].disabled = True
+industry.economy_variations['BASIC_ARCTIC'].enabled = True
 
 industry.economy_variations['BASIC_ARCTIC'].accept_cargo_types = ['GOOD', 'BEER', 'PETR']
 industry.economy_variations['BASIC_ARCTIC'].prod_cargo_types = ['ENSP', 'CLAY']

@@ -39,6 +39,12 @@ industry = Industry(id='food_market',
                     fund_cost_multiplier='6',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS')
 
+industry.economy_variations['FIRS'].enabled = True
+industry.economy_variations['BASIC_TEMPERATE'].enabled = True
+industry.economy_variations['BASIC_ARCTIC'].enabled = True
+industry.economy_variations['BASIC_TROPIC'].enabled = True
+
+
 industry.add_tile(id='food_market_tile')
 
 spriteset_ground = industry.add_spriteset(

@@ -57,7 +57,7 @@ def render_docs():
     economy_schemas = {}
     for economy in global_constants.economies:
         enabled_cargos = [cargo for cargo in registered_cargos if not cargo.economy_variations[economy].get('disabled')]
-        enabled_industries = [industry for industry in registered_industries if not industry.economy_variations[economy].disabled]
+        enabled_industries = [industry for industry in registered_industries if industry.economy_variations[economy].enabled]
         economy_schemas[economy] = {'enabled_cargos':enabled_cargos, 'enabled_industries':enabled_industries}
 
     templated_docs = template(registered_cargos=registered_cargos, registered_industries=registered_industries,
@@ -242,7 +242,7 @@ class IndustryProperties(object):
         self.fund_cost_multiplier = kwargs.get('fund_cost_multiplier', None)
         self.remove_cost_multiplier = kwargs.get('remove_cost_multiplier', None)
         # not nml properties
-        self.disabled = kwargs.get('disabled', False)
+        self.enabled = kwargs.get('enabled', False)
         # nml properties we want to prevent being set for one reason or another
         if 'conflicting_ind_types' in kwargs:
             raise Exception("Don't set conflicting_ind_types property; use the FIRS location checks for conflicting industry (these are more flexible).")
@@ -397,7 +397,7 @@ class Industry(object):
         # returns a string that can be used as the conditions in nml if() blocks for economy stuff
         enabled_economies = []
         for i, economy in enumerate(global_constants.economies):
-            if not self.economy_variations[economy].disabled:
+            if self.economy_variations[economy].enabled:
                 enabled_economies.append('economy==' + str(i))
         return ' || '.join(enabled_economies)
 

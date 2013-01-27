@@ -28,8 +28,8 @@ industry = Industry(id='steel_mill',
                     fund_cost_multiplier='200',
                     override='8')
 
-industry.economy_variations['BASIC_ARCTIC'].disabled = True
-industry.economy_variations['BASIC_TROPIC'].disabled = True
+industry.economy_variations['FIRS'].enabled = True
+industry.economy_variations['BASIC_TEMPERATE'].enabled = True
 
 # industry uses layouts and sprites from default game, no custom layouts etc
 

@@ -27,7 +27,7 @@ TILE_ALLOW_PLAYER       (terrain_check, ${industry.id}_tile_road_adjacent_1)
 
 <tal:build_economies repeat="economy global_constants.economies">
     if (economy==${repeat.economy.index}) {
-        <tal:industry_on_or_off condition="industry.get_property('disabled', economy) != True">
+        <tal:industry_on_or_off condition="industry.get_property('enabled', economy) == True">
         item(FEAT_INDUSTRYTILES, ${industry.id}_tile, TILE_PORT_1) {
             property {
                 substitute:       0;

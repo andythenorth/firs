@@ -34,8 +34,8 @@ industry = Industry(id='fruit_plantation',
                     prod_multiplier='[6]',
                     substitute='0')
 
-industry.economy_variations['BASIC_TEMPERATE'].disabled = True
-industry.economy_variations['BASIC_ARCTIC'].disabled = True
+industry.economy_variations['FIRS'].enabled = True
+industry.economy_variations['BASIC_TROPIC'].enabled = True
 
 building_0 = industry.add_sprite(
     sprite_number = 1633,

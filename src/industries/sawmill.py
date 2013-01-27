@@ -28,7 +28,9 @@ industry = Industry(id='sawmill',
                     fund_cost_multiplier='97',
                     override='2')
 
-industry.economy_variations['BASIC_ARCTIC'].disabled = True
+industry.economy_variations['FIRS'].enabled = True
+industry.economy_variations['BASIC_TEMPERATE'].enabled = True
+industry.economy_variations['BASIC_TROPIC'].enabled = True
 
 # industry uses layouts and sprites from default game, no custom layouts etc
 
