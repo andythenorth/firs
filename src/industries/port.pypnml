@@ -116,8 +116,10 @@ ${industry.get_primary_supplies_stuff()}
 
 #include "../src/templates/check_availability.pnml"
 
-CHECK_INCOMPATIBLE  (port, 16, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
+CHECK_INCOMPATIBLE  (port, 48, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
 CHECK_FOUNDER       (${industry.id}_port)
+
+SWITCH_COLOUR_SCHEME1(${industry.id}_colour)
 
 ${industry.get_industry_properties()}
 
@@ -132,6 +134,7 @@ item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
         build_prod_change:       randomise_primary_production_on_build;
         extra_text_fund:         return string(STR_FUND_ARABLE_FARM);
         extra_text_industry:     ${industry.id}_extra_text;
+		colour:                  ${industry.id}_colour;
 	}
 }
 
