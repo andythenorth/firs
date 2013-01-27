@@ -36,7 +36,6 @@ industry = Industry(id='petrol_pump',
                     remove_cost_multiplier='0',
                     prospect_chance='0.75',
                     name='string(STR_IND_PETROLPUMP)',
-                    nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_IND_PETROLPUMP))',
                     fund_cost_multiplier='8',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS')
 
