@@ -3,6 +3,30 @@ FIRS Industry Replacement Set Changelog
 =======================================
 
 --------------
+0.9.x Releases
+--------------
+
+*0.9.0*
+
+- Feature: add Port industry (Arctic Basic economy only)
+- Change: some town based industries no longer set nearby station name (Pikka said it was silly)
+- Change: reduce supply requirements for industries using ENSP to 21t and 84t
+- Change: adjust supply requirements for industries using FMSP to 14t and 56t
+
+*Fixes*
+- Fix: wrong produced cargos at Iron Ore Mine and Coal Mine 
+- Fix: prevent flickering graphics at Fishing Harbour 
+- Fix: sprites out of place at Cement Works
+
+*Translations additions / updates*
+- Change: update Catalan translation (bassals)
+- Fix: bad control string in german lang file
+- Change: plural forms in NML are now decimal like in OpenTTD lang files. Adopt the Slovakian lang file accordingly
+- Change: update Hungarian translation (Brumi)
+- Add: Slovak language file.
+- Change: update US English translation (Supercheese)
+
+--------------
 0.8.x Releases
 --------------
 
