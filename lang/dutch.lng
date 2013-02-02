@@ -111,7 +111,9 @@ STR_ERR_LOCATION_LIMIT_1_PER_TOWN                                               
 
 STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}Productie:{}  2t per 8t geleverd bauxiet{}  2t per 8.000l geleverde chemicaliën{}  4t per 8t geleverd schroot{}{}Productie verhoogt als twee of meer vrachtsoorten binnen een maand van elkaar worden geleverd.
 STR_EXTRA_BIOREFINERY                                                           :{BLACK}Productie:{}  6.000l per 8t geleverd graan{}  6.00l per 8t geleverde suiker
-STR_EXTRA_BREWERY                                                               :{BLACK}Productie:{}  3.000l per 8 kratten geleverde productiehulpgoederen{}  5.000l per 8t geleverd graan{}  5.000l per 8t geleverd fruit en groente{}{}Productie verhoogt als productiehulpgoederen binnen een maand van andere vracht worden geleverd.
+STR_EXTRA_BREWERY                                                               :{BLACK}Productie:{}  3.000l per 8 kratten geleverde productiehulpgoederen{} {STRING} {STRING}{}Productie verhoogt als productiehulpgoederen binnen een maand van andere vracht worden geleverd.
+STR_EXTRA_BREWERY_GRAIN_SUBSTR                                                  :5.000l per 8t geleverd graan{}
+STR_EXTRA_BREWERY_FRUIT_SUBSTR                                                  :5.000l per 8t geleverd fruit en groente{}
 STR_EXTRA_BRICKWORKS                                                            :{BLACK}Productie:{}  2t per 8t geleverde kolen{}  2t per 8t geleverd zand{}  4t per 8t geleverd klei{}{}Productie verhoogt als twee of meer vrachtsoorten binnen een maand van elkaar worden geleverd.
 STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Productie:{}  2t per 8t geleverde kolen{}  2t per 8t geleverd klei{}  4t per 8t geleverd grind{}{}Productie verhoogt als twee of meer vrachtsoorten binnen een maand van elkaar worden geleverd.
 STR_EXTRA_DAIRY                                                                 :{BLACK}Productie:{}  3t per 8 kratten geleverde productiehulpgoederen{}  5t per 8.000l geleverde melk{}{}Productie Verhoogt als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
@@ -143,6 +145,9 @@ STR_EXTRA_MAX_PRODUCTION                                                        
 STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Huidige productie: {YELLOW}normaal{}{}{BLACK}Om de productie te verdubbelen  moet er {SIGNED_WORD} kratten hulpgoederen afgeleverd worden binnen drie maanden (of {SIGNED_WORD} kratten om de productie te verviervoudigen).
 STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Huidige productie: {YELLOW}verhoogd (dubbel){}{}{BLACK}Om dit niveau te houden moet er {SIGNED_WORD} kratten hulpgoederen afgeleverd worden binnen drie maanden, of {SIGNED_WORD} kratten om de productie te verviervoudigen.
 STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}Huidige productie: {YELLOW}gepassioneerd (verviervoudigd){}{}{BLACK}Om dit niveau te houden moet er {SIGNED_WORD} kratten hulpgoederen afgeleverd worden binnen drie maanden.
+STR_PORT_PRODUCTION_1X                                                          :{BLACK}Huidige productie: {YELLOW}normaal{}{}{BLACK}Lever {SIGNED_WORD} eenheden vracht binnen drie maanden om de productie te verdubbelen{}Voor verviervoudigen van de productie moet je {SIGNED_WORD} eenheden vracht binnen drie maanden leveren
+STR_PORT_PRODUCTION_2X                                                          :{BLACK}Huidige productie: {YELLOW}verhoogd (dubbel){}{}{BLACK}Om dit niveau te houden moet er {SIGNED_WORD} eenheden vracht afgeleverd worden binnen drie maanden, of {SIGNED_WORD} eenheden om de productie te verviervoudigen.
+STR_PORT_PRODUCTION_4X                                                          :{BLACK}Huidige productie: {YELLOW}gepassioneerd (verviervoudigd){}{}{BLACK}Om dit niveau te houden moet er {SIGNED_WORD} eenheden vracht afgeleverd worden binnen drie maanden.
 STR_GENERIC_NEWLINE                                                             :{}
 
 STR_FUND_BASIC_FARM                                                             :{}{BLACK}Plaats: {YELLOW}Kan niet gebouwd worden op sneeuw of in woestijnen.
@@ -192,6 +197,7 @@ STR_IND_METAL_FOUNDRY                                                           
 STR_IND_MIXEDFARM                                                               :Gemengd boerenbedrijf
 STR_IND_PETROLPUMP                                                              :Tankstation
 STR_IND_PLASTICS_PLANT                                                          :Kunststoffabriek
+STR_IND_PORT                                                                    :Haven
 STR_IND_QUARRY                                                                  :Zandwinning
 STR_IND_RECYCLING_DEPOT                                                         :Recycling verzamelpunt
 STR_IND_RECYCLING_PLANT                                                         :Recyclingfabriek
