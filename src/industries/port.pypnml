@@ -132,7 +132,6 @@ item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
         monthly_prod_change:     ${industry.id}_monthly_update;
         random_prod_change:      return CB_RESULT_IND_PROD_NO_CHANGE;
         build_prod_change:       randomise_primary_production_on_build;
-        extra_text_fund:         return string(STR_FUND_ARABLE_FARM);
         extra_text_industry:     ${industry.id}_extra_text;
 		colour:                  ${industry.id}_colour;
 	}
