@@ -37,7 +37,7 @@ industry = Industry(id='port',
                     prospect_chance='0.75',
                     name='string(STR_IND_PORT)',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_IND_PORT))',
-                    fund_cost_multiplier='6',
+                    fund_cost_multiplier='152',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS')
 
 industry.economy_variations['BASIC_ARCTIC'].enabled = True
