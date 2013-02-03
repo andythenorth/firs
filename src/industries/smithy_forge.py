@@ -38,7 +38,8 @@ industry = Industry(id='smithy_forge',
                     name='string(STR_IND_SMITHY_FORGE)',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_IND_SMITHY_FORGE))',
                     fund_cost_multiplier='63',
-                    closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS')
+                    closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
+                    extra_text_industry='')
 
 industry.economy_variations['FIRS'].enabled = True
 

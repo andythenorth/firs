@@ -37,7 +37,8 @@ industry = Industry(id='food_market',
                     prospect_chance='0.75',
                     name='string(STR_IND_FOOD_MARKET)',
                     fund_cost_multiplier='6',
-                    closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS')
+                    closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
+                    extra_text_industry='')
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True

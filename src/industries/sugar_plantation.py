@@ -38,7 +38,8 @@ industry = Industry(id='sugar_plantation',
                     name='string(STR_IND_SUGAR_PLANTATION)',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_IND_SUGAR_PLANTATION))',
                     fund_cost_multiplier='55',
-                    closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS')
+                    closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
+                    extra_text_industry='')
 
 industry.economy_variations['BASIC_TROPIC'].enabled = True
 

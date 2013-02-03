@@ -27,7 +27,8 @@ industry = Industry(id='oil_refinery',
                     substitute='4',
                     map_colour='191',
                     fund_cost_multiplier='200',
-                    override='4')
+                    override='4',
+                    extra_text_industry='')
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True

@@ -38,7 +38,8 @@ industry = Industry(id='port',
                     name='string(STR_IND_PORT)',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_IND_PORT))',
                     fund_cost_multiplier='152',
-                    closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS')
+                    closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
+                    extra_text_industry='')
 
 industry.economy_variations['BASIC_ARCTIC'].enabled = True
 

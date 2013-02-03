@@ -243,6 +243,7 @@ class IndustryProperties(object):
         self.remove_cost_multiplier = kwargs.get('remove_cost_multiplier', None)
         # not nml properties
         self.enabled = kwargs.get('enabled', False)
+        self.extra_text_industry = kwargs.get('extra_text_industry', None)
         # nml properties we want to prevent being set for one reason or another
         if 'conflicting_ind_types' in kwargs:
             raise Exception("Don't set conflicting_ind_types property; use the FIRS location checks for conflicting industry (these are more flexible).")

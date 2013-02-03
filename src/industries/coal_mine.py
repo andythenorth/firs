@@ -26,7 +26,8 @@ industry = Industry(id='coal_mine',
                     map_colour='1',
                     prospect_chance='0.75',
                     fund_cost_multiplier='252',
-                    override='0')
+                    override='0',
+                    extra_text_industry='')
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True

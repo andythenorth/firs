@@ -26,7 +26,8 @@ industry = Industry(id='paper_mill',
                     substitute='14',
                     map_colour='184',
                     fund_cost_multiplier='120',
-                    override='14')
+                    override='14',
+                    extra_text_industry='')
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_ARCTIC'].enabled = True

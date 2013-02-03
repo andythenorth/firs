@@ -38,7 +38,8 @@ industry = Industry(id='metal_fabrication_plant',
                     name='string(STR_IND_METAL_FABRICATION_PLANT)',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_IND_METAL_FABRICATION_PLANT))',
                     fund_cost_multiplier='120',
-                    closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS')
+                    closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
+                    extra_text_industry='')
 
 industry.economy_variations['FIRS'].enabled = True
 

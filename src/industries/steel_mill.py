@@ -26,7 +26,8 @@ industry = Industry(id='steel_mill',
                     substitute='8',
                     map_colour='9',
                     fund_cost_multiplier='200',
-                    override='8')
+                    override='8',
+                    extra_text_industry='')
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True

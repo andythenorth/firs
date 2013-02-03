@@ -25,7 +25,8 @@ industry = Industry(id='iron_ore_mine',
                     prod_multiplier='[19]',
                     prod_cargo_types=['IORE'],
                     substitute='18',
-                    fund_cost_multiplier='232')
+                    fund_cost_multiplier='232',
+                    extra_text_industry='')
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True

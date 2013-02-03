@@ -39,6 +39,7 @@ industry = Industry(id='junk_yard',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_IND_JUNKYARD))',
                     fund_cost_multiplier='101',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
+                    extra_text_industry='',
                     graphics_change_dates = [1949, 1960, 1980, 2000])
 
 industry.economy_variations['FIRS'].enabled = True
