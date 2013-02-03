@@ -39,7 +39,7 @@ industry = Industry(id='sheep_farm',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_IND_SHEEPFARM))',
                     fund_cost_multiplier='45',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
-                    extra_text_industry='')
+                    )
 
 industry.economy_variations['FIRS'].enabled = True
 

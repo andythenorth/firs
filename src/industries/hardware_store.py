@@ -38,7 +38,7 @@ industry = Industry(id='hardware_store',
                     name='string(STR_IND_HARDWARE_STORE)',
                     fund_cost_multiplier='6',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
-                    extra_text_industry='')
+                    )
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True

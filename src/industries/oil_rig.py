@@ -31,7 +31,7 @@ industry = Industry(id='oil_rig',
                     name='18439',
                     fund_cost_multiplier='255',
                     override='5',
-                    extra_text_industry='')
+                    )
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True

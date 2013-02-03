@@ -39,7 +39,7 @@ industry = Industry(id='fishing_grounds',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_IND_FISHING_GROUND))',
                     fund_cost_multiplier='88',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
-                    extra_text_industry='')
+                    )
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_ARCTIC'].enabled = True

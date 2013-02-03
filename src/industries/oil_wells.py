@@ -33,7 +33,7 @@ industry = Industry(id='oil_wells',
                     fund_cost_multiplier='230',
                     prod_multiplier='[28]',
                     substitute='0',
-                    extra_text_industry='')
+                    )
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True

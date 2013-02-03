@@ -40,7 +40,7 @@ industry = Industry(id='dredging_site',
                     fund_cost_multiplier='180',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
                     graphics_change_dates = [1945],
-                    extra_text_industry='')
+                    )
 
 industry.economy_variations['FIRS'].enabled = True
 

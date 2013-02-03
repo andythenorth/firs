@@ -37,7 +37,7 @@ industry = Industry(id='builders_yard',
                     name='string(STR_IND_BUILDERS_YARD)',
                     fund_cost_multiplier='8',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
-                    extra_text_industry='')
+                    )
 
 industry.economy_variations['FIRS'].enabled = True
 

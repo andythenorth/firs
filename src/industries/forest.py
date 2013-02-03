@@ -32,7 +32,7 @@ industry = Industry(id='forest',
                     fund_cost_multiplier='95',
                     prod_multiplier='[19]',
                     substitute='INDUSTRYTYPE_FOREST',
-                    extra_text_industry='')
+                    )
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True
