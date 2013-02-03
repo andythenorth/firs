@@ -38,7 +38,7 @@ industry = Industry(id='brewery',
                     name='string(STR_IND_BREWERY)',
                     fund_cost_multiplier='50',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
-                    extra_text_industry='')
+                    extra_text_industry='STR_EXTRA_BREWERY, string(STR_EXTRA_BREWERY_GRAIN_SUBSTR), string(STR_EXTRA_BREWERY_FRUIT_SUBSTR)')
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_ARCTIC'].enabled = True

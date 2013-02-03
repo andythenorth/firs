@@ -39,7 +39,7 @@ industry = Industry(id='glass_works',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_IND_GLASS_WORKS))',
                     fund_cost_multiplier='95',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
-                    extra_text_industry='')
+                    extra_text_industry='STR_EXTRA_GLASS_WORKS')
 
 industry.economy_variations['FIRS'].enabled = True
 

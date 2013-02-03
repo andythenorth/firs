@@ -40,7 +40,7 @@ industry = Industry(id='fertiliser_plant',
                     fund_cost_multiplier='170',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
                     graphics_change_dates = [1952],
-                    extra_text_industry='')
+                    extra_text_industry='STR_EXTRA_FERTILIZER_PLANT')
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_ARCTIC'].enabled = True

@@ -78,7 +78,7 @@ ${industry.get_industry_layouts_as_tilelayouts()}
 #define THIS_BOOST_31             0
 #define THIS_BOOST_32             0
 /* extra text template */
-#define THIS_STR_EXTRA_TEXT       STR_EXTRA_LUMBER_YARD
+#define THIS_STR_EXTRA_TEXT       ${industry.default_industry_properties.extra_text_industry}
 #define THIS_STR_DEBUG_TEXT       STR_EXTRA_TEXT_DEBUG_SECONDARY
 
 

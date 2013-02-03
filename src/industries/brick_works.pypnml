@@ -77,7 +77,7 @@ ${industry.get_industry_layouts_as_tilelayouts()}
 #define THIS_BOOST_31             4
 #define THIS_BOOST_32             4
 /* extra text template */
-#define THIS_STR_EXTRA_TEXT       STR_EXTRA_BRICKWORKS
+#define THIS_STR_EXTRA_TEXT       ${industry.default_industry_properties.extra_text_industry}
 
 CHECK_INCOMPATIBLE  (brick_works, 56, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
 CHECK_INCOMPATIBLE  (coal_mine,   16, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_brick_works)

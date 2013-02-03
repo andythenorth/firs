@@ -39,7 +39,7 @@ industry = Industry(id='grain_mill',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_IND_GRAIN_MILL))',
                     fund_cost_multiplier='44',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
-                    extra_text_industry='')
+                    extra_text_industry='STR_EXTRA_GRAIN_MILL')
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True
