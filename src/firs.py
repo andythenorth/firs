@@ -221,7 +221,7 @@ class IndustryProperties(object):
         self.override = kwargs.get('override', None)
         self.name = kwargs.get('name', None)
         self.nearby_station_name = kwargs.get('nearby_station_name', None)
-        self.layouts = kwargs.get('layouts', None) # !! needs to handle case automatic layouts when present
+        self.layouts = kwargs.get('layouts', None) # !! automatic layout handling can be specified for this using 'AUTO' as the value
         self.accept_cargo_types = kwargs.get('accept_cargo_types', None)
         self.prod_cargo_types = kwargs.get('prod_cargo_types', None)
         self.prod_multiplier = kwargs.get('prod_multiplier', None)
