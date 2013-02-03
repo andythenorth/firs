@@ -16,12 +16,6 @@
  * THIS_STR_DEBUG_TEXT         debugging string
  */
 
-#define THIS_STR_EXTRA_TEXT     ${industry.default_industry_properties.extra_text_industry}
-
-#ifndef THIS_STR_EXTRA_TEXT
-#define THIS_STR_EXTRA_TEXT STR_GENERIC_NEWLINE
-#endif
-
 #ifndef THIS_STR_DEBUG_TEXT
 #define THIS_STR_DEBUG_TEXT STR_EXTRA_TEXT_DEBUG_SECONDARY
 #endif
@@ -43,5 +37,5 @@ switch (FEAT_INDUSTRIES, SELF, THIS_ID(extra_text), [
 			show_debug_texts
 			]) {
 	1: THIS_ID(extra_text_debug);
-	return string(THIS_STR_EXTRA_TEXT);
+	return string(${industry.default_industry_properties.extra_text_industry});
 }
