@@ -117,8 +117,6 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_8), 71) {
 #define THIS_BOOST_23             4
 #define THIS_BOOST_31             2
 #define THIS_BOOST_32             2
-/* extra text template */
-#define THIS_STR_EXTRA_TEXT       ${industry.default_industry_properties.extra_text_industry}
 
 CHECK_INCOMPATIBLE  (paper_mill,   56, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
 CHECK_INCOMPATIBLE  (forest,       16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(paper_mill))
@@ -131,7 +129,7 @@ SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
 #include "../src/templates/check_secondary_production_level.pnml"
 #include "../src/templates/check_secondary_closure.pnml"
 
-#include "../src/templates/extra_text_secondary.pnml"
+${industry.get_extra_text_secondary()}
 
 #include "../src/templates/check_availability.pnml"
 

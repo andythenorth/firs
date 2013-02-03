@@ -57,8 +57,6 @@ ${industry.get_industry_layouts_as_tilelayouts()}
 #define THIS_BOOST_23             0
 #define THIS_BOOST_31             0
 #define THIS_BOOST_32             0
-/* extra text template */
-#define THIS_STR_EXTRA_TEXT       ${industry.default_industry_properties.extra_text_industry}
 /* availability years - also update available from strings if changing these */
 
 CHECK_INCOMPATIBLE  (furniture_factory, 56, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
@@ -70,7 +68,7 @@ SWITCH_COLOUR_SCHEME1(${industry.id}_colour)
 #include "../src/templates/check_secondary_production_level.pnml"
 #include "../src/templates/check_secondary_closure.pnml"
 
-#include "../src/templates/extra_text_secondary.pnml"
+${industry.get_extra_text_secondary()}
 
 #include "../src/templates/check_availability.pnml"
 

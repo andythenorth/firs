@@ -16,6 +16,8 @@
  * THIS_STR_DEBUG_TEXT         debugging string
  */
 
+#define THIS_STR_EXTRA_TEXT     ${industry.default_industry_properties.extra_text_industry}
+
 #ifndef THIS_STR_EXTRA_TEXT
 #define THIS_STR_EXTRA_TEXT STR_GENERIC_NEWLINE
 #endif
