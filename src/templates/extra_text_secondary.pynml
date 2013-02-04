@@ -20,10 +20,17 @@
 #define THIS_STR_DEBUG_TEXT STR_EXTRA_TEXT_DEBUG_SECONDARY
 #endif
 
+switch (FEAT_INDUSTRIES, SELF, ${industry.id}_extra_text_non_debug, economy) {
+    <tal:build_economies repeat="economy global_constants.economies">
+    ${repeat.economy.index}: string(${industry.get_property('extra_text_industry', economy)});
+    </tal:build_economies>
+	return string(${industry.default_industry_properties.extra_text_industry});
+}
+
 /* First fill the stack for the string parameters before actually
  * returning the string
  */
-switch (FEAT_INDUSTRIES, SELF, THIS_ID(extra_text_debug), [
+switch (FEAT_INDUSTRIES, SELF, ${industry.id}_extra_text_debug, [
 			STORE_TEMP(produced_this_month_1,256),
 			STORE_TEMP(produced_this_month_2,257),
 			STORE_TEMP(current_date - max( max(LOAD_PERM(var_date_received_1), LOAD_PERM(var_date_received_2)), LOAD_PERM(var_date_received_3)), 258)
@@ -36,6 +43,6 @@ switch (FEAT_INDUSTRIES, SELF, THIS_ID(extra_text), [
 #endif
 			show_debug_texts
 			]) {
-	1: THIS_ID(extra_text_debug);
-	return string(${industry.default_industry_properties.extra_text_industry});
+	1: ${industry.id}_extra_text_debug;
+	${industry.id}_extra_text_non_debug;
 }

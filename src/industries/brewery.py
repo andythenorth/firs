@@ -42,6 +42,7 @@ industry = Industry(id='brewery',
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_ARCTIC'].enabled = True
+industry.economy_variations['BASIC_ARCTIC'].extra_text_industry = 'STR_EXTRA_BREWERY, string(STR_EXTRA_BREWERY_GRAIN_SUBSTR)'
 
 industry.add_tile(id='brewery_tile')
 
