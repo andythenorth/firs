@@ -49,8 +49,8 @@ STR_CARGO_NAME_FARM_SUPPLIES                                                    
 STR_CARGO_NAME_FARM_SUPPLIES.t                                                  :mezőgazdasági felszerelés
 STR_CARGO_NAME_FRUITS                                                           :Gyümölcs
 STR_CARGO_NAME_FRUITS.t                                                         :gyümölcsöt
-STR_CARGO_NAME_LUMBER                                                            :Fűrészáru
-STR_CARGO_NAME_LUMBER.t                                                          :fűrészárut
+STR_CARGO_NAME_LUMBER                                                           :Fűrészáru
+STR_CARGO_NAME_LUMBER.t                                                         :fűrészárut
 STR_CARGO_NAME_METAL                                                            :Fém
 STR_CARGO_NAME_METAL.t                                                          :fémet
 STR_CARGO_NAME_MILK                                                             :Tej
@@ -80,11 +80,11 @@ STR_CARGO_UNIT_BUILDING_MATERIALS                                               
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} vegyszer
 STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} agyag
 STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} láda ipari segédeszköz
-STR_CARGO_UNIT_FIBRES                                                            :{SIGNED_WORD} bála növényi rost
+STR_CARGO_UNIT_FIBRES                                                           :{SIGNED_WORD} bála növényi rost
 STR_CARGO_UNIT_FISH                                                             :{WEIGHT} hal
 STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} láda mezőgazdasági felszerelés
 STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} gyümölcs
-STR_CARGO_UNIT_LUMBER                                                            :{WEIGHT} fűrészáru
+STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} fűrészáru
 STR_CARGO_UNIT_METAL                                                            :{WEIGHT} fém
 STR_CARGO_UNIT_MILK                                                             :{VOLUME} tej
 STR_CARGO_UNIT_MNSP                                                             :{SIGNED_WORD} láda gyártási segédeszköz
@@ -101,14 +101,14 @@ STR_CID_ALCOHOL                                                                 
 STR_CID_BAUXITE                                                                 :{TINYFONT}BX
 STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}ÉA
 STR_CID_CHEMICALS                                                               :{TINYFONT}VS
-STR_CID_CLAY                                                                     :{TINYFONT}AG
+STR_CID_CLAY                                                                    :{TINYFONT}AG
 STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}IS
 STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}MF
 STR_CID_FIBRES                                                                  :{TINYFONT}NR
 STR_CID_FISH                                                                    :{TINYFONT}HL
 STR_CID_LUMBER                                                                  :{TINYFONT}FÜ
 STR_CID_MANUFACTURING_SUPPLIES                                                  :{TINYFONT}GS
-STR_CID_METAL                                                                    :{TINYFONT}FM
+STR_CID_METAL                                                                   :{TINYFONT}FM
 STR_CID_MILK                                                                    :{TINYFONT}TJ
 STR_CID_PETROL                                                                  :{TINYFONT}ÜA
 STR_CID_RECYCLABLES                                                             :{TINYFONT}ÚÁ
@@ -133,8 +133,10 @@ STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE                                             
 STR_ERR_LOCATION_LIMIT_1_PER_TOWN                                               :településenként csak egy ilyen gazdasági épület építhető.
 
 STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}Termelés:{}  2 tonna termelés 8 tonna bauxit szállítása esetén{}  2 tonna termelés 8.000 liter vegyszer szállítása esetén{}  4 tonna termelés 8 tonna fémhulladék szállítása esetén{}{}A termelés megnő, ha legalább két különféle rakományból érkezik szállítmány egy hónapon belül.
-STR_EXTRA_BIOREFINERY                                                            :{BLACK}Termelés:{}  6.000 liter termelés 8 tonna gabona szállítása esetén{}  6.000 liter termelés 8 tonna cukor szállítása esetén.
-STR_EXTRA_BREWERY                                                                :{BLACK}Termelés:{}  3.000 liter termelés 8 láda gyártási segédeszköz szállítása esetén{}  5.000 liter termelés 8 tonna búza szállítása esetén{}  5.000 liter termelés 8 tonna gyümölcs szállítása esetén{}{}A termelés megnő, ha szállítmány érkezik gyártási segédeszközökből és egy másik rakományból egy hónapon belül.
+STR_EXTRA_BIOREFINERY                                                           :{BLACK}Termelés:{}  6.000 liter termelés 8 tonna gabona szállítása esetén{}  6.000 liter termelés 8 tonna cukor szállítása esetén.
+STR_EXTRA_BREWERY                                                               :{BLACK}Termelés:{}  3.000 liter termelés 8 láda gyártási segédeszköz szállítása esetén{}  {STRING}  {STRING}{}A termelés megnő, ha szállítmány érkezik gyártási segédeszközökből és egy másik rakományból egy hónapon belül.
+STR_EXTRA_BREWERY_GRAIN_SUBSTR                                                  :5.000 liter termelés 8 tonna gabona szállítása esetén{}
+STR_EXTRA_BREWERY_FRUIT_SUBSTR                                                  :5.000 liter termelés 8 tonna gyümölcs szállítása esetén{}
 STR_EXTRA_BRICKWORKS                                                            :{BLACK}Termelés:{}  2 tonna termelés 8 tonna szén szállítása esetén{}  2 tonna termelés 8 tonna homok szállítása esetén{}  4 tonna termelés 8 tonna agyag szállítása esetén{}{}A termelés megnő, ha legalább két különféle rakományból érkezik szállítmány egy hónapon belül.
 STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Termelés:{}  2 tonna termelés 8 tonna szén szállítása esetén{}  2 tonna termelés 8 tonna agyag szállítása esetén{}  4 tonna termelés 8 tonna kő szállítása esetén{}{}A termelés megnő, ha legalább két különféle rakományból érkezik szállítmány egy hónapon belül.
 STR_EXTRA_DAIRY                                                                 :{BLACK}Termelés:{}  3 tonna termelés 8 láda gyártási segédeszköz szállítása esetén{}  5 tonna termelés 8.000 liter tej szállítása esetén{}{}A termelés megnő, ha mindkét rakományból érkezik szállítmány egy hónapon belül.
@@ -166,6 +168,9 @@ STR_EXTRA_MAX_PRODUCTION                                                        
 STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Jelenlegi termelés: {YELLOW}alapszintű {}{}{BLACK}A termelés megduplázásához {SIGNED_WORD} láda segédeszköz szállítása szükséges 3 hónapon belül (vagy {SIGNED_WORD} láda a termelés megnégyszerezéséhez)
 STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Jelenlegi termelés: {YELLOW}megnövekedett (kétszeres) {}{}{BLACK}A szint fenntartásához {SIGNED_WORD} láda segédeszköz szállítása szükséges 3 hónapon belül, vagy {SIGNED_WORD} láda a négyszeres szint eléréséhez
 STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}Jelenlegi termelés: {YELLOW}maximális (négyszeres) {}{}{BLACK}A szint fenntartásához {SIGNED_WORD} láda segédeszköz szállítása szükséges 3 hónapon belül
+STR_PORT_PRODUCTION_1X                                                          :{BLACK}Jelenlegi termelés: {YELLOW}alapszintű {}{}{BLACK}A termelés megduplázásához {SIGNED_WORD} egység rakomány szállítása szükséges 3 hónapon belül (vagy {SIGNED_WORD} egység a termelés megnégyszerezéséhez)
+STR_PORT_PRODUCTION_2X                                                          :{BLACK}Jelenlegi termelés: {YELLOW}megnövekedett (kétszeres) {}{}{BLACK}A szint fenntartásához {SIGNED_WORD} egység rakomány szállítása szükséges 3 hónapon belül, vagy {SIGNED_WORD} egység a négyszeres szint eléréséhez
+STR_PORT_PRODUCTION_4X                                                          :{BLACK}Jelenlegi termelés: {YELLOW}maximális (négyszeres) {}{}{BLACK}A szint fenntartásához {SIGNED_WORD} egység rakomámy szállítása szükséges 3 hónapon belül
 STR_GENERIC_NEWLINE                                                             :{}
 
 STR_FUND_BASIC_FARM                                                             :{}{BLACK}Helyszín: {YELLOW}Nem építhető havas területen és sivatagban.
@@ -227,12 +232,12 @@ STR_IND_HOTEL                                                                   
 STR_IND_HOTEL.t                                                                 :szállodát
 STR_IND_IRON_WORKS                                                              :Vaskohó
 STR_IND_IRON_WORKS.t                                                            :vaskohót
-STR_IND_JUNKYARD                                                                 :Roncstelep
-STR_IND_JUNKYARD.t                                                               :roncstelepet
+STR_IND_JUNKYARD                                                                :Roncstelep
+STR_IND_JUNKYARD.t                                                              :roncstelepet
 STR_IND_LIME_KILN                                                               :Mészégető
 STR_IND_LIME_KILN.t                                                             :mészégetőt
-STR_IND_LUMBER_YARD                                                              :Fatelep
-STR_IND_LUMBER_YARD.t                                                            :fatelepet
+STR_IND_LUMBER_YARD                                                             :Fatelep
+STR_IND_LUMBER_YARD.t                                                           :fatelepet
 STR_IND_MACHINE_SHOP                                                            :Gépjárműüzem
 STR_IND_MACHINE_SHOP.t                                                          :gépjárműüzemet
 STR_IND_METAL_FABRICATION_PLANT                                                 :Fémalkatrészgyártó üzem
@@ -241,8 +246,8 @@ STR_IND_METAL_FOUNDRY                                                           
 STR_IND_METAL_FOUNDRY.t                                                         :fémfeldolgozó múhelyt
 STR_IND_MIXEDFARM                                                               :Vegyes farm
 STR_IND_MIXEDFARM.t                                                             :vegyes farmot
-STR_IND_PETROLPUMP                                                               :Benzinkút
-STR_IND_PETROLPUMP.t                                                             :benzinkutat
+STR_IND_PETROLPUMP                                                              :Benzinkút
+STR_IND_PETROLPUMP.t                                                            :benzinkutat
 STR_IND_PLASTICS_PLANT                                                          :Műanyaggyár
 STR_IND_PLASTICS_PLANT.t                                                        :műanyaggyárat
 STR_IND_PORT                                                                    :Kikötő
