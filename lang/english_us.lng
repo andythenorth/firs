@@ -1,207 +1,29 @@
 ##grflangid 0x00
 ##plural 0
 
-STR_GRF_DESC                                                                    :{ORANGE}FIRS Industry Replacement Set{}{BLACK}Brought to you by andythenorth, FooBar, planetmaker, Terkhen and Yexo, with help from many others. {SILVER}See readme for more information, including how to use FIRS. {BLACK}License: GPL v2.
-STR_GRF_NAME                                                                    :{TITLE}
-STR_GRF_URL                                                                     :http://dev.openttdcoop.org/projects/firs
-
-STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :Maximum distance of fishing grounds, oil rigs and dredging sites from the coast in tiles.
-STR_PARAM_DESC_STAT_RATING                                                      :Station ratings influence the amount of cargo delivered by an industry to the station; the higher the rating, the more is delivered.
-STR_PARAM_DESC_DEBUG                                                            :For developers only
-STR_PARAM_DESC_ECONOMIES                                                        :Each economy provides a different combination of cargos and industries.{}{}For players who want simple gameplay, 'Basic' economies contain fewer industries and cargos than other FIRS economies.
-STR_PARAM_DESC_NO_OPENINGS                                                      :By default, new industries will open during the game.{}{}If 'prevent opening' is turned on industries will not open during game, and players will not be able to fund or prospect for industries.
-STR_PARAM_DESC_SECONDARY_NEVER_CLOSE                                            :By default, FIRS secondary industries will never close.{}{}If secondary closing is turned on, secondary industries may close if no cargo is transported for a long time.  Primary industries will never close in FIRS and are not affected by this setting.
-STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY                                   :Maximum coastal distance of marine industries in tiles
-STR_PARAM_NAME_DEBUG                                                            :Show debug texts
-STR_PARAM_NAME_ECONOMIES                                                        :Economy
-STR_PARAM_NAME_NO_OPENINGS                                                      :Prevent industries opening during gameplay
-STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            :Allow secondary industries to close
-STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0                                         :No limit
-STR_PARAM_NAME_STAT_RATING                                                      :Station rating algorithm
-STR_PARAM_VALUE_STAT_RATING_DEFAULT                                             :Grim and mean (uses standard OpenTTD rating)
 STR_PARAM_VALUE_STAT_RATING_REDUCED_TIME                                        :Favorable (allows longer time between cargo pickups)
-STR_PARAM_VALUE_STAT_RATING_100                                                 :Insanely generous (rating is always 100%)
 
-STR_PARAM_VALUE_ECONOMIES_BASIC_TEMPERATE                                       :Temperate Basic Economy
-STR_PARAM_VALUE_ECONOMIES_BASIC_ARCTIC                                          :Arctic Basic Economy
-STR_PARAM_VALUE_ECONOMIES_BASIC_TROPIC                                          :Tropic Basic Economy
-STR_PARAM_VALUE_ECONOMIES_FIRS                                                  :FIRS Economy
-STR_PARAM_VALUE_ECONOMIES_TEST_3                                                :Test Economy 3
-
-STR_CARGO_NAME_ALCOHOL                                                          :Alcohol
-STR_CARGO_NAME_BAUXITE                                                          :Bauxite
-STR_CARGO_NAME_BUILDING_MATERIALS                                               :Building Materials
-STR_CARGO_NAME_CHEMICALS                                                        :Chemicals
-STR_CARGO_NAME_CLAY                                                             :Clay
-STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :Engineering Supplies
 STR_CARGO_NAME_FIBRES                                                           :Plant Fibers
-STR_CARGO_NAME_FISH                                                             :Fish
-STR_CARGO_NAME_FARM_SUPPLIES                                                    :Farm Supplies
-STR_CARGO_NAME_FRUITS                                                           :Fruit
 STR_CARGO_NAME_LUMBER                                                           :Lumber
-STR_CARGO_NAME_METAL                                                            :Metal
-STR_CARGO_NAME_MILK                                                             :Milk
-STR_CARGO_NAME_MANUFACTURING_SUPPLIES                                           :Manufacturing Supplies
 STR_CARGO_NAME_PETROL                                                           :Gasoline
-STR_CARGO_NAME_RECYCLABLES                                                      :Recyclables
-STR_CARGO_NAME_SAND                                                             :Sand
-STR_CARGO_NAME_SCRAP_METAL                                                      :Scrap Metal
-STR_CARGO_NAME_STONE                                                            :Stone
-STR_CARGO_NAME_SUGAR_BEET                                                       :Sugar Beet
-STR_CARGO_NAME_SUGARCANE                                                        :Sugarcane
-STR_CARGO_NAME_WOOL                                                             :Wool
 
-STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} of alcohol
-STR_CARGO_UNIT_BAUXITE                                                          :{WEIGHT} of bauxite
-STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WEIGHT} of building materials
-STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} of chemicals
-STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} of clay
-STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} crate{P 0 "" s} of engineering supplies
 STR_CARGO_UNIT_FIBRES                                                           :{SIGNED_WORD} bale{P 0 "" s} of plant fibers
-STR_CARGO_UNIT_FISH                                                             :{WEIGHT} of fish
-STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} crate{P 0 "" s} of farm supplies
-STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} of fruit
 STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} of lumber
-STR_CARGO_UNIT_METAL                                                            :{WEIGHT} of metal
-STR_CARGO_UNIT_MILK                                                             :{VOLUME} of milk
-STR_CARGO_UNIT_MNSP                                                             :{SIGNED_WORD} crate{P 0 "" s} of manufacturing supplies
 STR_CARGO_UNIT_PETROL                                                           :{VOLUME} of gasoline
-STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} of recyclables
-STR_CARGO_UNIT_SAND                                                             :{WEIGHT} of sand
-STR_CARGO_UNIT_SCRAP_METAL                                                      :{WEIGHT} of scrap metal
-STR_CARGO_UNIT_STONE                                                            :{WEIGHT} of stone
-STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} of sugar beet
-STR_CARGO_UNIT_SUGARCANE                                                        :{WEIGHT} of sugarcane
-STR_CARGO_UNIT_WOOL                                                             :{SIGNED_WORD} bale{P 0 "" s} of wool
 
-STR_CID_ALCOHOL                                                                 :{TINYFONT}AL
-STR_CID_BAUXITE                                                                 :{TINYFONT}BX
-STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}BM
-STR_CID_CHEMICALS                                                               :{TINYFONT}CH
-STR_CID_CLAY                                                                    :{TINYFONT}CY
-STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}ES
-STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}FS
-STR_CID_FIBRES                                                                  :{TINYFONT}PF
-STR_CID_FISH                                                                    :{TINYFONT}FI
-STR_CID_LUMBER                                                                  :{TINYFONT}LU
-STR_CID_MANUFACTURING_SUPPLIES                                                  :{TINYFONT}MS
-STR_CID_METAL                                                                   :{TINYFONT}MT
-STR_CID_MILK                                                                    :{TINYFONT}MK
-STR_CID_PETROL                                                                  :{TINYFONT}PT
-STR_CID_RECYCLABLES                                                             :{TINYFONT}RC
-STR_CID_SAND                                                                    :{TINYFONT}SA
-STR_CID_SCRAP_METAL                                                             :{TINYFONT}SM
-STR_CID_STONE                                                                   :{TINYFONT}ST
-STR_CID_SUGAR_BEET                                                              :{TINYFONT}SB
-STR_CID_SUGARCANE                                                               :{TINYFONT}SC
-STR_CID_WOOL                                                                    :{TINYFONT}WL
-
-STR_ERR_CLIMATE_TOYLAND                                                         :{ORANGE}FIRS is not designed to be used with Toyland climate
-STR_ERR_INCOMPATIBLE_SET                                                        :{ORANGE}E01: {YELLOW}Incompatible set: {ORANGE}{STRING} {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
-STR_ERR_INCOMPATIBLE_PARAM_CANSET                                               :{ORANGE}E02: {YELLOW}Incompatible parameter: {ORANGE}CanSet parameter 2 must be 0 to work with FIRS. {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
-STR_ERR_INCOMPATIBLE_PARAM_CITYSET                                              :{ORANGE}E02: {YELLOW}Incompatible parameter: {ORANGE}NA City Set parameter 2 must be 0 to work with FIRS. {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
-STR_ERR_INCOMPATIBLE_SET_TTRS_VERSION                                           :{ORANGE}E04: {YELLOW}Incompatible version: {ORANGE}Total Town Replacement Set must be version release 3.11 or newer. {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
-STR_ERR_OPENTTD_VERSION                                                         :{ORANGE}E00: FIRS requires OpenTTD 1.2.0 / trunk r22780 or higher. {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
-
-STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE                                             :must be placed below the snow line.
-STR_ERR_LOCATION_NOT_ON_WATER                                                   :must be placed on dry land.
-STR_ERR_LOCATION_NOT_IN_DESERT                                                  :must not be placed in the desert.
-STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE                                             :cannot be placed on steep slopes.
-STR_ERR_LOCATION_LIMIT_1_PER_TOWN                                               :only one industry of this type allowed per town.
-
-STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}Cargo production:{}  2t per 8t bauxite delivered{}  2t per 8,000l chemicals delivered{}  4t per 8t scrap metal delivered{}{}Production steps up if two or more cargos are delivered within a month of each other.
-STR_EXTRA_BIOREFINERY                                                           :{BLACK}Cargo production:{}  6,000l per 8t grain delivered{}  6,000l per 8t sugar delivered
-STR_EXTRA_BREWERY                                                               :{BLACK}Cargo production:{}  3,000l per 8 crates manufacturing supplies delivered{}  5,000l per 8t grain delivered{}  5,000l per 8t fruit delivered{}{}Production steps up if manufacturing supplies delivered within a month of other cargos.
-STR_EXTRA_BRICKWORKS                                                            :{BLACK}Cargo production:{}  2t per 8t coal delivered{}  2t per 8t sand delivered{}  4t per 8t clay delivered{}{}Production steps up if two or more cargos are delivered within a month of each other.
-STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Cargo production:{}  2t per 8t coal delivered{}  2t per 8t clay delivered{}  4t per 8t stone delivered{}{}Production steps up if two or more cargos are delivered within a month of each other.
-STR_EXTRA_DAIRY                                                                 :{BLACK}Cargo production:{}  3t per 8t manufacturing supplies delivered{}  5t per 8t milk delivered{}{}Increases to 8t per 8t when both cargos are delivered within a month of each other.
-STR_EXTRA_FERTILIZER_PLANT                                                      :{BLACK}Cargo production:{}  8 crates per 8,000l chemicals delivered
-STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Cargo production:{}  3t per 8 crates manufacturing supplies delivered{}  5t per 8t fish delivered{}{}Production steps up if both cargos are delivered within a month of each other.
 STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Cargo production:{}  3t per 8 crates manufacturing supplies delivered{}  5t per 8t lumber delivered{}{}Production steps up if both cargos are delivered within a month of each other.
-STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Produces glass items such as bottles, jars and window panes.{}{}{BLACK}Cargo production:{}  6t per 8t sand delivered{}  2t per 8,000l chemicals delivered{}{}Production steps up if both cargos are delivered within a month of each other.
-STR_EXTRA_GRAIN_MILL                                                            :{BLACK}Cargo production:{}  3t per 8 crates manufacturing supplies delivered{}  5t per 8t grain delivered{}{}Production steps up if both cargos are delivered within a month of each other.
-STR_EXTRA_IRON_WORKS                                                            :{BLACK}Cargo production:{}  2t per 8t wood delivered{}  2t per 8t iron ore delivered{}{}Production steps up if both cargos are delivered within a month of each other.
-STR_EXTRA_LIME_KILN                                                             :{BLACK}Cargo production:{}  3t per 8t stone delivered{}  3t per 8t coal delivered{}{}Production steps up if both cargos are delivered within a month of each other.
 STR_EXTRA_LUMBER_YARD                                                           :{BLACK}Produces items such as poles and fence posts.{}{}{BLACK}Cargo production:{}  2t per 8,000l chemicals delivered{}  6t per 8t lumber delivered{}{}Production steps up if both cargos are delivered within a month of each other.
 STR_EXTRA_MACHINE_SHOP                                                          :{BLACK}Builds and services machinery.{}{}Cargo production:{}  8 crates per 8,000l gasoline delivered{}  8 crates per 8t metal delivered
-STR_EXTRA_MEAT_PACKER                                                           :{BLACK}Cargo production:{}  3t per 8 crates manufacturing supplies delivered{}  5t per 8t livestock delivered{}{}Production steps up if both cargos are delivered within a month of each other.
-STR_EXTRA_METAL_FABRICATION_PLANT                                               :{BLACK}Produces painted metal components.{}{}{BLACK}Cargo production:{}  2t per 8,000l chemicals delivered{}  6t per 8t metal delivered{}{}Production steps up if both cargos are delivered within a month of each other.
-STR_EXTRA_METAL_FOUNDRY                                                         :{BLACK}Produces plated metal items such as tin cans, hardware and household goods.{}{}{BLACK}Cargo production:{}  2 crates per 8,000l chemicals delivered{}  6 crates per 8t metal delivered{}{}Production steps up if both cargos are delivered within a month of each other.
 STR_EXTRA_OIL_REFINERY                                                          :{BLACK}Processes crude oil into gasoline and chemicals.{}{}Cargo production:{}  6,000l per 8,000l delivered
-STR_EXTRA_PAPER_MILL                                                            :{BLACK}Pulps wood to produce paper and cardboard.{}{}{BLACK}Cargo production:{}  4 crates per 8t wood delivered{}  2 crates per 8t clay delivered{}  2 crates per 8,000l chemicals delivered{}{}Production steps up if two or more cargos are delivered within a month of each other.
 STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}Produces plastic items such as packaging and household goods.{}{}Cargo production:{}  6 crates per 8 bales plant fibers delivered{}  6 crates per 8,000l chemicals delivered
-STR_EXTRA_RECYCLING_PLANT                                                       :{BLACK}Processes recyclables for reuse.{}{}Cargo production:{}  6t per 8t recyclables delivered
-STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}Production is proportional to town population.
-STR_EXTRA_SAWMILL                                                               :{BLACK}Chops wood.{}{}Cargo production:{}  6t per 8t wood delivered
 STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Produces metal items like tools, plows, gates, shovels and horseshoes.{}{}Cargo production:{}  8t per 8t metal delivered
-STR_EXTRA_STEELMILL                                                             :{BLACK}Cargo production:{}  2t per 8t iron ore delivered{}  2t per 8t coal delivered{}  4t per 8t scrap metal delivered{}{}Production steps up if two or more cargos are delivered within a month of each other.
 STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Cargo production:{}  3t per 8 crates manufacturing supplies delivered{}  5t per 8t sugar delivered{}{}Increases to 8t per 8t when both cargos are delivered within a month of each other.
 STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Cargo production:{}  3 crates per 8 crates manufacturing supplies delivered{}  5 crates per 8 bales wool delivered{}  5 crates per 8t plant fibers delivered{}{}Production steps up if manufacturing supplies delivered within a month of other cargos.
 
-STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ DEBUG ------------{}Production this month:{}Cargo 1: {WHITE}{COMMA}{BLACK}{}Cargo 2: {WHITE}{COMMA}{BLACK}{}Days since last delivery: {WHITE}{COMMA}{BLACK}
-STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Maximum production reached
-STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Current production: {YELLOW}normal{}{}{BLACK}To double production deliver {SIGNED_WORD} crates supplies within three months (or {SIGNED_WORD} crates for quadruple production)
-STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Current production: {YELLOW}enhanced (double){}{}{BLACK}To keep this level, deliver {SIGNED_WORD} crates supplies within three months, or {SIGNED_WORD} crates to raise to quadruple production
-STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}Current production: {YELLOW}gung ho (quadruple){}{}{BLACK}To keep this level, deliver {SIGNED_WORD} crates supplies within three months
-STR_GENERIC_NEWLINE                                                             :{}
-
-STR_FUND_BASIC_FARM                                                             :{}{BLACK}Location: {YELLOW}Cannot be funded on snow or in deserts.
-STR_FUND_MIXED_FARM                                                             :{}{BLACK}Location: {YELLOW}Cannot be funded on snow or in deserts.
-STR_FUND_ARABLE_FARM                                                            :{}{BLACK}Location: {YELLOW}Cannot be funded on snow or in deserts.
-STR_FUND_SUGAR_PLANTATION                                                       :{}{BLACK}Location: {YELLOW}Cannot be funded on snow or in deserts.
-STR_FUND_FOREST                                                                 :{}{BLACK}Location: {YELLOW}Cannot be funded in deserts.
-STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}Location: {YELLOW}Cannot be funded on snow.
-
-STR_FUND_AVAILABLE_FROM                                                         :{}{BLACK}Available from: {YELLOW}{COMMA}
-
-STR_FUND_AVAILABLE_UNTIL                                                        :{}{BLACK}Not available after: {YELLOW}{COMMA}
-
-
-STR_TOWN                                                                        :{STRING}
-STR_STATION                                                                     :{STRING} {STRING}
-
 STR_IND_ALUMINIUM_PLANT                                                         :Aluminum Plant
-STR_IND_ARABLE_FARM                                                             :Arable Farm
-STR_IND_BASICFARM                                                               :Farm
-STR_IND_BAUXITE_MINE                                                            :Bauxite Mine
-STR_IND_BIOREFINERY                                                             :Biorefinery
-STR_IND_BREWERY                                                                 :Brewery
-STR_IND_BRICK_WORKS                                                             :Brick Works
-STR_IND_BUILDERS_YARD                                                           :Builders Yard
-STR_IND_CEMENT_PLANT                                                            :Cement Plant
-STR_IND_CLAY_PIT                                                                :Clay Pit
-STR_IND_DAIRY                                                                   :Dairy
-STR_IND_DAIRYFARM                                                               :Dairy Farm
-STR_IND_DREDGING_SITE                                                           :Dredging Site
 STR_IND_FERTILISER_PLANT                                                        :Fertilizer Plant
-STR_IND_FISHING_GROUND                                                          :Fishing Grounds
 STR_IND_FISHING_HARBOUR                                                         :Fishing Harbor
 STR_IND_FOOD_MARKET                                                             :Grocery Store
-STR_IND_FURNITURE_FACTORY                                                       :Furniture Factory
-STR_IND_GLASS_WORKS                                                             :Glass Works
-STR_IND_GRAIN_MILL                                                              :Grain Mill
-STR_IND_HARDWARE_STORE                                                          :Hardware Store
-STR_IND_HOTEL                                                                   :Hotel
-STR_IND_IRON_WORKS                                                              :Iron Works
 STR_IND_JUNKYARD                                                                :Junk Yard
-STR_IND_LIME_KILN                                                               :Lime Kiln
 STR_IND_LUMBER_YARD                                                             :Lumber Yard
-STR_IND_MACHINE_SHOP                                                            :Machine Shop
-STR_IND_METAL_FABRICATION_PLANT                                                 :Metal Fabrication Plant
-STR_IND_METAL_FOUNDRY                                                           :Metal Workshop
-STR_IND_MIXEDFARM                                                               :Mixed Farm
 STR_IND_PETROLPUMP                                                              :Gas Station
-STR_IND_PLASTICS_PLANT                                                          :Plastics Plant
-STR_IND_PORT                                                                    :Port
-STR_IND_QUARRY                                                                  :Quarry
-STR_IND_RECYCLING_DEPOT                                                         :Recycling Depot
-STR_IND_RECYCLING_PLANT                                                         :Recycling Plant
-STR_IND_SHEEPFARM                                                               :Sheep Farm
-STR_IND_SMITHY_FORGE                                                            :Smithy Forge
-STR_IND_STOCKYARD                                                               :Stockyard
-STR_IND_SUGAR_PLANTATION                                                        :Sugar Plantation
-STR_IND_SUGAR_REFINERY                                                          :Sugar Refinery
-STR_IND_SUPERMARKET                                                             :Supermarket
-STR_IND_TEXTILE_MILL                                                            :Textile Mill
-
-
