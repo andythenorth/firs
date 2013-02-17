@@ -24,6 +24,11 @@ STR_PARAM_VALUE_STAT_RATING_DEFAULT                                             
 STR_PARAM_VALUE_STAT_RATING_REDUCED_TIME                                        :ulepszony - zredukowany wpływ czasu od ostatniego odbioru ładunku
 STR_PARAM_VALUE_STAT_RATING_100                                                 :zawsze 100%
 
+STR_PARAM_VALUE_ECONOMIES_BASIC_TEMPERATE                                       :Zwykła ekonomia dla klimatu umiarkowanego
+STR_PARAM_VALUE_ECONOMIES_BASIC_ARCTIC                                          :Zwykła ekonomia dla klimatu arktycznego
+STR_PARAM_VALUE_ECONOMIES_BASIC_TROPIC                                          :Zwykła ekonomia dla klimatu tropikalnego
+STR_PARAM_VALUE_ECONOMIES_FIRS                                                  :Ekonomia FIRS
+STR_PARAM_VALUE_ECONOMIES_TEST_3                                                :Ekonomia testowa 3
 
 STR_CARGO_NAME_ALCOHOL                                                          :{G=m}Alkohol
 STR_CARGO_NAME_ALCOHOL.d                                                        :alkoholu
@@ -138,23 +143,27 @@ STR_CID_SUGARCANE                                                               
 STR_CID_WOOL                                                                    :{TINYFONT}WE
 
 STR_ERR_CLIMATE_TOYLAND                                                         :{ORANGE}FIRS nie został zaprojektowany do użycia z klimatem zabawkowym
-STR_ERR_INCOMPATIBLE_SET                                                        :{ORANGE}E01: {YELLOW}Niekompatybilny zestaw: {ORANGE}{STRING} {YELLOW}Zobacz FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
-STR_ERR_INCOMPATIBLE_PARAM_CANSET                                               :{ORANGE}E02: {YELLOW}Niekompatybilny parametr: {ORANGE}Parametr 2 CanSet musi być ustawiony na 0 by działać z FIRS. {YELLOW}Zobacz FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
-STR_ERR_INCOMPATIBLE_PARAM_CITYSET                                              :{ORANGE}E02: {YELLOW}Niekompatybilny parametr: {ORANGE}Parametr 2 NA City Set musi być ustawiony na 0 by działać z FIRS. {YELLOW}Zobacz FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
-STR_ERR_INCOMPATIBLE_SET_TTRS_VERSION                                           :{ORANGE}E04: {YELLOW}Niekompatybilna wersja: {ORANGE}Total Town Replacement Set musi być w wersji 3.11 lub nowszej. {YELLOW}Zobacz FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
-STR_ERR_OPENTTD_VERSION                                                         :{ORANGE}E00: FIRS wymaga OpenTTD 1.2.0 / trunk r22780 lub nowszy. {YELLOW}Zobacz FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_SET                                                        :{ORANGE}E01: {YELLOW}Niekompatybilny zestaw: {ORANGE}{STRING} {YELLOW}Przeczytaj FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_PARAM_CANSET                                               :{ORANGE}E02: {YELLOW}Niekompatybilny parametr: {ORANGE}Parametr 2 CanSet musi być ustawiony na 0 by działać z FIRS. {YELLOW}Przeczytaj FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_PARAM_CITYSET                                              :{ORANGE}E02: {YELLOW}Niekompatybilny parametr: {ORANGE}Parametr 2 NA City Set musi być ustawiony na 0 by działać z FIRS. {YELLOW}Przeczytaj FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_SET_TTRS_VERSION                                           :{ORANGE}E04: {YELLOW}Niekompatybilna wersja: {ORANGE}Total Town Replacement Set musi być w wersji 3.11 lub nowszej. {YELLOW}Przeczytaj FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_OPENTTD_VERSION                                                         :{ORANGE}E00: FIRS wymaga OpenTTD 1.2.0 / trunk r22780 lub nowszy. {YELLOW}Przeczytaj FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 
 STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE                                             :musi być ustawione poniżej linii śniegu.
 STR_ERR_LOCATION_NOT_ON_WATER                                                   :musi być ustawione na suchym lądzie.
 STR_ERR_LOCATION_NOT_IN_DESERT                                                  :nie może być ustawione na pustyni.
 STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE                                             :nie może być ustawione na stromym zboczu.
+STR_ERR_LOCATION_LIMIT_1_PER_TOWN                                               :dozwolone tylko jedno przedsiębiorstwo tego typu na jedno miasto.
 
-STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}Produkcja:{}  2t z 8t boksytu{}  2t z 8t chemikaliów{}  4t z 8t złomu{}{}Produkcja wzrasta, gdy różne surowce są dostarczane w ciągu miesiąca.
-STR_EXTRA_BIOREFINERY                                                           :{BLACK}Przerabia zboże i cukier na paliwo i chemikalia.{}{}6t z 8t surowców.
-STR_EXTRA_BREWERY                                                               :{BLACK}Produkcja:{}  3t z 8t opakowań{}  5t z 8t zboża{}  5t z 8t owoców{}{}Produkcja wzrasta, gdy opakowania są dostarczane najpóźniej miesiąc po surowcach.
+STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}Produkcja:{}  2t z 8t boksytu{}  2t z 8,000l chemikaliów{}  4t z 8t złomu{}{}Produkcja wzrasta, gdy 2 lub więcej surowców jest dostarczonych w ciągu miesiąca.
+STR_EXTRA_BIOREFINERY                                                           :{BLACK}Produkcja:{} 6,000l na 8t dostarczonego zboża{}  6,000l na 8t dostarczonego cukru.
+STR_EXTRA_BREWERY                                                               :{BLACK}Produkcja:{}  3,000l na 8 skrzyń dostarczonych opakowań{} {STRING} {STRING}{}Produkcja wzrasta, jeśli opakowania są dostarczone w tym samym miesiącu, co pozostałe surowce.
+STR_EXTRA_BREWERY_GRAIN_SUBSTR                                                  :5,000l na 8t dostarczonego zboża{}
+STR_EXTRA_BREWERY_FRUIT_SUBSTR                                                  :5,000l na 8t dostarczonych owoców{}
 STR_EXTRA_BRICKWORKS                                                            :{BLACK}Produkcja:{}  2t z 8t węgla{}  2t z 8t piasku{}  4t z 8t gliny{}{}Produkcja wzrasta, gdy różne surowce są dostarczane w ciągu miesiąca.
 STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Produkcja:{}  2t z 8t węgla{}  2t z 8t gliny{}  4t z 8t kamieni{}{}Produkcja wzrasta, gdy różne surowce są dostarczane w ciągu miesiąca.
 STR_EXTRA_DAIRY                                                                 :{BLACK}Produkcja:{}  3t z 8t opakowań{}  5t z 8t mleka{}{}Produkcja wzrasta do 8t z 8t, gdy oba surowce są dostarczane w ciągu miesiąca.
+STR_EXTRA_FERTILIZER_PLANT                                                      :{BLACK}Produkcja:{}  8 skrzyń na 8,000l dostarczonych chemikaliów.
 STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Produkcja:{}  3t z 8t opakowań{}  5t z 8t ryb{}{}Produkcja wzrasta do 8t z 8t, gdy oba surowce są dostarczane w ciągu miesiąca.
 STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Produkcja:{}  3t z 8t opakowań{}  5t z 8t desek{}{}Produkcja wzrasta do 8t z 8t, gdy oba surowce są dostarczane w ciągu miesiąca.
 STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Produkuje butelki, słoje, szyby i inne rzeczy ze szkła.{}{}{BLACK}Produkcja:{}  6t z 8t piasku{}  2t z 8t chemikaliów{}{}Produkcja wzrasta do 8t z 8t, gdy oba surowce są dostarczane w ciągu miesiąca.
@@ -174,17 +183,30 @@ STR_EXTRA_RECYCLING_DEPOT                                                       
 STR_EXTRA_SAWMILL                                                               :{BLACK}Drzewo się rżnie. Jest deska, jest sęk.{}{}6t z 8t surowców.
 STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Produkcja ręcznie kutych podków, narzędzi, bramek i innych drobnych metalowych przedmiotów.{}{}5t z 8t surowców.
 STR_EXTRA_STEELMILL                                                             :{BLACK}Produkcja:{}  2t z 8t rudy żelaza{}  2t z 8t węgla{}  4t z 8t złomu{}{}Produkcja wzrasta, gdy różne surowce są dostarczane w ciągu miesiąca.
-STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Produkcja:{}  3t z 8t opakowań{}  5t z 8t buraków cukrowych{}{}Produkcja wzrasta do 8t z 8t, gdy oba surowce są dostarczane w ciągu miesiąca.
-STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Produkcja:{}  3t z 8t opakowań{}  5t z 8t wełny{}  5t z 8t włókien naturalnych{}{}Produkcja wzrasta, gdy opakowania są dostarczane najpóźniej miesiąc po surowcach.
+STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Produkcja:{}  3t z 8 skrzyń opakowań{}  5t z 8t buraków cukrowych{}{}Produkcja wzrasta do 8t z 8t, gdy oba surowce są dostarczane w ciągu miesiąca.
+STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Produkcja:{}  3 skrzynie z 8 skrzyń opakowań{}  5 skrzyń na 8t wełny{}  5 skrzyń z 8t włókien naturalnych{}{}Produkcja wzrasta, gdy opakowania są dostarczane najpóźniej miesiąc po surowcach.
 
 STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}--------- DEBUGOWANIE ---------{}Produkcja w tym miesiącu:{}Ładunek 1: {WHITE}{COMMA}{BLACK}{}Ładunek 2: {WHITE}{COMMA}{BLACK}{}Dni od ostatniej dostawy: {WHITE}{COMMA}{BLACK}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Osiągnięto maksymalny poziom produkcji
+STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Aktualna produkcja: {YELLOW}normalna{}{}{BLACK}By podwoić produkcję, dostarcz {SIGNED_WORD} skrzyń surowców w ciągu 3 miesięcy (lub {SIGNED_WORD} skrzyń by produkcja wzrosła czterokrotnie)
+STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Aktualna produkcja: {YELLOW}ulepszona (podwójna){}{}{BLACK}By utrzymać ten poziom, dostarcz {SIGNED_WORD} skrzyń surowców w ciągu 3 miesięcy, lub {SIGNED_WORD} skrzyń by produkcja wzrosła czterokrotnie
+STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}Aktualna produkcja: {YELLOW}niewiarygodna (poczwórna){}{}{BLACK}By utrzymać ten poziom, dostarcz {SIGNED_WORD} skrzyń surowców w ciągu 3 miesięcy
+STR_PORT_PRODUCTION_1X                                                          :{BLACK}Aktualna produkcja: {YELLOW}normalna{}{}{BLACK}By podwoić produkcję, dostarcz {SIGNED_WORD} jedostek w ciągu 3 miesięcy{}By osiągnąć poczwórny poziom produkcji, dostarcz {SIGNED_WORD} jednostek w ciągu 3 miesięcy
+STR_PORT_PRODUCTION_2X                                                          :{BLACK}Aktualna produkcja: {YELLOW}ulepszona (podwójna){}{}{BLACK}By utrzymać ten poziom, dostarcz {SIGNED_WORD} jedostek w ciągu 3 miesięcy, lub {SIGNED_WORD} jednostek, by osiągnąć poczwórny poziom produkcji
+STR_PORT_PRODUCTION_4X                                                          :{BLACK}Aktualna produkcja: {YELLOW}niewiarygodna (poczwórna){}{}{BLACKBy utrzymać ten poziom, dostarcz {SIGNED_WORD} jednostek w ciągu 3 miesięcy
 STR_GENERIC_NEWLINE                                                             :{}
 
+STR_FUND_BASIC_FARM                                                             :{}{BLACK}Lokalizacja: {YELLOW}Nie może być budowane na śniegu ani na pustyni.
 STR_FUND_MIXED_FARM                                                             :{}{BLACK}Lokalizacja: {YELLOW}Nie może być budowane na śniegu, pustyni i stromych zboczach.
 STR_FUND_ARABLE_FARM                                                            :{}{BLACK}Lokalizacja: {YELLOW}Nie może być budowane na śniegu, pustyni i zboczach.
+STR_FUND_SUGAR_PLANTATION                                                       :{}{BLACK}Lokalizacja: {YELLOW}Nie może być budowane na śniegu ani na pustyni.
 STR_FUND_FOREST                                                                 :{}{BLACK}Lokalizacja: {YELLOW}Nie może być budowane na pustyni.
 STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}Lokalizacja: {YELLOW}Nie może być budowane na śniegu.
+
+STR_FUND_AVAILABLE_FROM                                                         :{}{BLACK}Dostępne od: {YELLOW}{COMMA}
+
+STR_FUND_AVAILABLE_UNTIL                                                        :{}{BLACK}Niedostępne po: {YELLOW}{COMMA}
+
 
 STR_TOWN                                                                        :{STRING}
 STR_STATION                                                                     :{STRING} {STRING}
@@ -251,6 +273,8 @@ STR_IND_PETROLPUMP                                                              
 STR_IND_PETROLPUMP.d                                                            :stacji paliw
 STR_IND_PLASTICS_PLANT                                                          :{G=f}Fabryka tworzyw sztucznych
 STR_IND_PLASTICS_PLANT.d                                                        :fabryki tworzyw sztucznych
+STR_IND_PORT                                                                    :{G=m}Port
+STR_IND_PORT.d                                                                  :portu
 STR_IND_QUARRY                                                                  :{G=m}Kamieniołomy
 STR_IND_QUARRY.d                                                                :kamieniołomu
 STR_IND_RECYCLING_DEPOT                                                         :{G=n}Wysypisko
@@ -263,6 +287,8 @@ STR_IND_SMITHY_FORGE                                                            
 STR_IND_SMITHY_FORGE.d                                                          :kuźni
 STR_IND_STOCKYARD                                                               :{G=f}Ubojnia
 STR_IND_STOCKYARD.d                                                             :ubojni
+STR_IND_SUGAR_PLANTATION                                                        :{G=f}Plantacja cukru
+STR_IND_SUGAR_PLANTATION.d                                                      :plantacji cukru
 STR_IND_SUGAR_REFINERY                                                          :{G=f}Cukrownia
 STR_IND_SUGAR_REFINERY.d                                                        :cukrowni
 STR_IND_SUPERMARKET                                                             :{G=m}Supermarket
