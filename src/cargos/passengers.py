@@ -18,6 +18,6 @@ cargo = Cargo(id = 'passengers',
               items_of_cargo = '111',
               penalty_lowerbound = '0',
               single_penalty_length = '22',
-              capacity_multiplier = '1',
+              capacity_multiplier = '4',
               price_factor = '101.749420166')
 
