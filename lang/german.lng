@@ -114,6 +114,8 @@ STR_ERR_LOCATION_LIMIT_1_PER_TOWN                                               
 STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}Produktion:{}  2t pro gelieferter 8t Bauxit{}  2t pro gelieferter 8000l Chemikalien{}  4t pro gelieferter 8t Altmetall{}{}Produktion steigt, wenn zwei oder mehr Frachtarten innerhalb eines Monats geliefert werden.
 STR_EXTRA_BIOREFINERY                                                           :{BLACK}Produktion:{}  6000l Produktion pro gelieferter 8t Getreide. 6000l pro gelieferter 8t Zucker
 STR_EXTRA_BREWERY                                                               :{BLACK}Produktion:{}  3000l pro gelieferter 8 Kisten Produktionsgüter{}  5000l pro gelieferter 8t Getreide{}  5000l pro gelieferter 8t Früchte und Gemüse{}{}Produktion steigt, wenn Produktionsgüter innerhalb eines Monats wie die andere Fracht geliefert werden.
+STR_EXTRA_BREWERY_GRAIN_SUBSTR                                                  :5,000l pro 8t gelieferten Getreides{}
+STR_EXTRA_BREWERY_FRUIT_SUBSTR                                                  :5,000l pro 8t gelieferter Früchte{}
 STR_EXTRA_BRICKWORKS                                                            :{BLACK}Produktion:{}  2t pro gelieferter 8t Kohle{}  2t pro gelieferter 8t Sand{}  4t pro gelieferter 8t Ton{}{}Produktion steigt, wenn zwei oder mehr Frachtarten innerhalb eines Monats geliefert werden.
 STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Produktion:{}  2t pro gelieferter 8t Kohle{}  2t pro gelieferter 8t Ton{}  4t pro gelieferter 8t Steine{}{}Produktion steigt, wenn zwei oder mehr Frachtarten innerhalb eines Monats geliefert werden.
 STR_EXTRA_DAIRY                                                                 :{BLACK}Produktion:{}  3t pro gelieferter 8t Produktionsgüter{}  5t pro gelieferter 8t Milch{}{}Steigt auf 8t Produktion pro gelieferter 8t, wenn beide Frachtarten innerhalb eines Monats geliefert werden.
@@ -142,9 +144,12 @@ STR_EXTRA_TEXTILE_MILL                                                          
 
 STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ DEBUG ------------{}Produktion diesen Monat:{}Fracht 1: {WHITE}{COMMA}{BLACK}{}Fracht 2: {WHITE}{COMMA}{BLACK}{}Tage seit letzter Lieferung: {WHITE}{COMMA}{BLACK}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Maximale Produktion erreicht
-STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Momentane Production: {YELLOW}normal{}{}{BLACK}Um die Produktion zu verdoppeln müssen {SIGNED_WORD} Kisten innerhalb dreier Monate angeliefert werden (oder {SIGNED_WORD} für 4-fache Produktion)
-STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Momentane Production: {YELLOW}erhöht (doppelt){}{}{BLACK}Um diesen Produktionslevel zu halten müssen innerhalb dreier Monate {SIGNED_WORD} Kisten angeliefert werden (oder {SIGNED_WORD} um die Produktion auf 4-fach zu erhöhen)
+STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Momentane Production: {YELLOW}normal{}{}{BLACK}Um die Produktion zu verdoppeln müssen {SIGNED_WORD} Kisten innerhalb dreier Monate angeliefert werden (oder {SIGNED_WORD} Kisten für 4-fache Produktion)
+STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Momentane Production: {YELLOW}erhöht (doppelt){}{}{BLACK}Um diesen Produktionslevel zu halten müssen innerhalb dreier Monate {SIGNED_WORD} Kisten angeliefert werden (oder {SIGNED_WORD} Kisten, um die Produktion auf 4-fach zu erhöhen)
 STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}Momentane Production: {YELLOW}übereifrig (vierfach){}{}{BLACK}Um diesen Produktionslevel zu halten müssen innerhalb dreier Monate {SIGNED_WORD} Kisten angeliefert werden
+STR_PORT_PRODUCTION_1X                                                          :{BLACK}Momentane Production: {YELLOW}normal{}{}{BLACK}Um diesen Produktionslevel zu hlaten, müssen innerhalb dreier Monate {SIGNED_WORD} Frachteinheiten angeliefert werden (oder {SIGNED_WORD} für 4-fache Produktion)
+STR_PORT_PRODUCTION_2X                                                          :{BLACK}Momentane Production: {YELLOW}erhöht (doppelt){}{}{BLACK}Um diesen Produktionslevel zu halten, müssen innerhalb dreier Monate {SIGNED_WORD} Frachteinheiten geliefert werden (oder {SIGNED_WORD} Frachteinheiten, um die Produktion auf 4-fach zu erhöhen)
+STR_PORT_PRODUCTION_4X                                                          :{BLACK}Momentane Production: {YELLOW}übereifrig (vierfach){}{}{BLACK}Um diesen Produktionslevel zu hlaten müssen innerhalb dreier Monate {SIGNED_WORD} Frachteinheiten angeliefert werden.
 STR_GENERIC_NEWLINE                                                             :{}
 
 STR_FUND_BASIC_FARM                                                             :{}{BLACK}Ort: {YELLOW}Kann nicht im Schnee oder in Wüsten errichtet werden.
@@ -194,6 +199,7 @@ STR_IND_METAL_FOUNDRY                                                           
 STR_IND_MIXEDFARM                                                               :{G=m}Bauernhof
 STR_IND_PETROLPUMP                                                              :{G=w}Tankstelle
 STR_IND_PLASTICS_PLANT                                                          :{G=w}Plastikfabrik
+STR_IND_PORT                                                                    :{G=m}Hafen
 STR_IND_QUARRY                                                                  :{G=m}Steinbruch
 STR_IND_RECYCLING_DEPOT                                                         :{G=m}Wertstoffhof
 STR_IND_RECYCLING_PLANT                                                         :{G=w}Recyclingfabrik
