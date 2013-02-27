@@ -1,49 +1,49 @@
 ##grflangid 0x1F
 ##plural 0
 
-STR_GRF_DESC                                                                    :{ORANGE}FIRS Industry Replacement Set{}{BLACK}Door andythenorth, FooBar, planetmaker, Terkhen, en Yexo, met hulp van vele anderen. {SILVER}Lees de 'readme' voor meer informatie, inclusief hoe je FIRS kunt gebruiken. {BLACK}Licentie: GPL V2.
+STR_GRF_DESC                                                                    :{ORANGE}FIRS Industry Replacement Set{}{BLACK}Door andythenorth, FooBar, planetmaker, Terkhen en Yexo met hulp van vele anderen. {SILVER}Lees de 'readme' voor meer informatie, inclusief hoe je FIRS kunt gebruiken. {BLACK}Licentie: GPL V2.
 STR_GRF_NAME                                                                    :{TITLE}
 STR_GRF_URL                                                                     :http://dev.openttdcoop.org/projects/firs
 
 STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :Maximale afstand tot de kust in tegels voor visgebieden en baggermolens.
-STR_PARAM_DESC_STAT_RATING                                                      :Stationreputaties beïnvloeden de hoeveelheid goederen die een industrie aflvert aan het station; hoe hoger de reputatie hoe meer afgeleverd wordt.
+STR_PARAM_DESC_STAT_RATING                                                      :Stationsreputaties beïnvloeden de hoeveelheid goederen die een industrie aflevert aan het station; hoe hoger de reputatie hoe meer afgeleverd wordt.
 STR_PARAM_DESC_DEBUG                                                            :Alleen voor ontwikkelaars.
 STR_PARAM_DESC_ECONOMIES                                                        :Elke economie heeft een andere combinatie van goederen en industrieën.{}{}Voor spelers die een eenvoudig spelverloop willen zijn er 'basis' economieën die minder industrieën en goederen bevatten.
-STR_PARAM_DESC_NO_OPENINGS                                                      :Normaal worden er nieuwe industrieën gebouwd tijdens het spel.{}{}Als 'voorkom bouwen van nieuwe industrieën' aan staat, dan komen er geen nieuwe industrieën bij tijdens het spel, en spelers kunnen ze ook niet kopen of proberen.
-STR_PARAM_DESC_SECONDARY_NEVER_CLOSE                                            :Standaard zullen FIRS secundaire industrieën nooit sluiten.{}{}Als sluiten van secundaire industrieën is ingeschakeld kunnen secundaire industrieën sluiten als er lange tijd geen vracht is getransporteerd. Primaire industrieën sluiten nooit in FIRS en worden niet beïnvloed
+STR_PARAM_DESC_NO_OPENINGS                                                      :Normaal worden er nieuwe industrieën gebouwd tijdens het spel.{}{}Als 'voorkom bouwen van nieuwe industrieën' aan staat, worden geen nieuwe industrieën gebouwd tijdens het spel. Spelers kunnen nieuwe industrieën ook niet kopen of proberen.
+STR_PARAM_DESC_SECONDARY_NEVER_CLOSE                                            :Standaard sluiten secundaire industrieën nooit.{}{}Als sluiten van secundaire industrieën is ingeschakeld kunnen secundaire industrieën sluiten als er lange tijd geen vracht is getransporteerd. Primaire industrieën sluiten nooit in FIRS en worden niet beïnvloed.
 STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY                                   :Maximale afstand tot de kust in tegels voor zee-industrieën
 STR_PARAM_NAME_DEBUG                                                            :Laat debug-informatie zien
 STR_PARAM_NAME_ECONOMIES                                                        :Economie
 STR_PARAM_NAME_NO_OPENINGS                                                      :Voorkom bouwen van nieuwe industrieën tijdens het spel
 STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            :Secundaire industrieën kunnen sluiten
 STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0                                         :Geen limiet
-STR_PARAM_NAME_STAT_RATING                                                      :Station waarderingsalgoritme
-STR_PARAM_VALUE_STAT_RATING_DEFAULT                                             :Sinister (gebruikt standaard OpenTTD waardering)
-STR_PARAM_VALUE_STAT_RATING_REDUCED_TIME                                        :Aanbevolen - minder effect van "tijd sinds het laatste laadmoment"
+STR_PARAM_NAME_STAT_RATING                                                      :Waarderingsalgoritme stations
+STR_PARAM_VALUE_STAT_RATING_DEFAULT                                             :Meedogenloos (gebruikt standaard OpenTTD waardering)
+STR_PARAM_VALUE_STAT_RATING_REDUCED_TIME                                        :Goedgezind (minder last van verstreken tijd sinds het laatste laadmoment)
 STR_PARAM_VALUE_STAT_RATING_100                                                 :Overdreven vriendelijk (waardering is altijd 100%)
 
-STR_PARAM_VALUE_ECONOMIES_BASIC_TEMPERATE                                       :Basis economie voor het gematigde klimaat
-STR_PARAM_VALUE_ECONOMIES_BASIC_ARCTIC                                          :Basis economie voor het subarctisch klimaat
-STR_PARAM_VALUE_ECONOMIES_BASIC_TROPIC                                          :Basis economie voor het subtropisch klimaat
+STR_PARAM_VALUE_ECONOMIES_BASIC_TEMPERATE                                       :Basiseconomie voor het gematigde klimaat
+STR_PARAM_VALUE_ECONOMIES_BASIC_ARCTIC                                          :Basiseconomie voor het subarctisch klimaat
+STR_PARAM_VALUE_ECONOMIES_BASIC_TROPIC                                          :Basiseconomie voor het subtropisch klimaat
 STR_PARAM_VALUE_ECONOMIES_FIRS                                                  :FIRS economie
-STR_PARAM_VALUE_ECONOMIES_TEST_3                                                :Test economie 3
+STR_PARAM_VALUE_ECONOMIES_TEST_3                                                :Testeconomie 3
 
 STR_CARGO_NAME_ALCOHOL                                                          :Alcohol
 STR_CARGO_NAME_BAUXITE                                                          :Bauxiet
 STR_CARGO_NAME_BUILDING_MATERIALS                                               :Bouwmaterialen
 STR_CARGO_NAME_CHEMICALS                                                        :Chemicaliën
 STR_CARGO_NAME_CLAY                                                             :Klei
-STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :Constructiehulpgoederen
+STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :Constructiematerialen
 STR_CARGO_NAME_FIBRES                                                           :Katoen
 STR_CARGO_NAME_FISH                                                             :Vis
-STR_CARGO_NAME_FARM_SUPPLIES                                                    :Landbouwhulpgoederen
-STR_CARGO_NAME_FRUITS                                                           :Fruit en groente
+STR_CARGO_NAME_FARM_SUPPLIES                                                    :Landbouwmaterialen
+STR_CARGO_NAME_FRUITS                                                           :Groente en fruit
 STR_CARGO_NAME_LUMBER                                                           :Gezaagd hout
 STR_CARGO_NAME_METAL                                                            :Metaal
 STR_CARGO_NAME_MILK                                                             :Melk
-STR_CARGO_NAME_MANUFACTURING_SUPPLIES                                           :Productiehulpgoederen
+STR_CARGO_NAME_MANUFACTURING_SUPPLIES                                           :Productiematerialen
 STR_CARGO_NAME_PETROL                                                           :Benzine
-STR_CARGO_NAME_RECYCLABLES                                                      :Herbruikbare goederen
+STR_CARGO_NAME_RECYCLABLES                                                      :Kringloopgoederen
 STR_CARGO_NAME_SAND                                                             :Zand
 STR_CARGO_NAME_SCRAP_METAL                                                      :Schroot
 STR_CARGO_NAME_STONE                                                            :Grind
@@ -56,17 +56,17 @@ STR_CARGO_UNIT_BAUXITE                                                          
 STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WEIGHT} bouwmaterialen
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} chemicaliën
 STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} klei
-STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} krat{P 0 "" ten} constructiehulpgoederen
+STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} krat{P 0 "" ten} constructiematerialen
 STR_CARGO_UNIT_FIBRES                                                           :{SIGNED_WORD} ba{P 0 al len} katoen
 STR_CARGO_UNIT_FISH                                                             :{WEIGHT} vis
-STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} krat{P 0 "" ten} landbouwhulpgoederen
+STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} krat{P 0 "" ten} landbouwmaterialen
 STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} fruit en groente
 STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} gezaagd hout
 STR_CARGO_UNIT_METAL                                                            :{WEIGHT} metaal
 STR_CARGO_UNIT_MILK                                                             :{VOLUME} melk
-STR_CARGO_UNIT_MNSP                                                             :{SIGNED_WORD} krat{P 0 "" ten} productiehulpgoederen
+STR_CARGO_UNIT_MNSP                                                             :{SIGNED_WORD} krat{P 0 "" ten} productiematerialen
 STR_CARGO_UNIT_PETROL                                                           :{VOLUME} benzine
-STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} herbruikbare goederen
+STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} kringloopgoederen
 STR_CARGO_UNIT_SAND                                                             :{WEIGHT} zand
 STR_CARGO_UNIT_SCRAP_METAL                                                      :{WEIGHT} schroot
 STR_CARGO_UNIT_STONE                                                            :{WEIGHT} grind
@@ -88,7 +88,7 @@ STR_CID_MANUFACTURING_SUPPLIES                                                  
 STR_CID_METAL                                                                   :{TINYFONT}MT
 STR_CID_MILK                                                                    :{TINYFONT}ML
 STR_CID_PETROL                                                                  :{TINYFONT}BZ
-STR_CID_RECYCLABLES                                                             :{TINYFONT}RC
+STR_CID_RECYCLABLES                                                             :{TINYFONT}KG
 STR_CID_SAND                                                                    :{TINYFONT}ZD
 STR_CID_SCRAP_METAL                                                             :{TINYFONT}ST
 STR_CID_STONE                                                                   :{TINYFONT}GD
@@ -96,66 +96,66 @@ STR_CID_SUGAR_BEET                                                              
 STR_CID_SUGARCANE                                                               :{TINYFONT}SR
 STR_CID_WOOL                                                                    :{TINYFONT}WL
 
-STR_ERR_CLIMATE_TOYLAND                                                         :{ORANGE}FIRS is niet ontworpen om in het speelgoedlandschap gebruikt te worden
-STR_ERR_INCOMPATIBLE_SET                                                        :{ORANGE}E01: {YELLOW}Onbruikbare set combinatie: {ORANGE}{STRING} {YELLOW}Lees ook de FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
-STR_ERR_INCOMPATIBLE_PARAM_CANSET                                               :{ORANGE}E02: {YELLOW}Ongeldige parameter waarde: {ORANGE}CanSet parameter 2 moet 0 zijn om samen te werken met FIRS. {YELLOW}Lees ook de FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
-STR_ERR_INCOMPATIBLE_PARAM_CITYSET                                              :{ORANGE}E02: {YELLOW}Ongeldige parameter waarde: {ORANGE}NA City Set parameter 2 moet 0 zijn om met FIRS samen te werken. {YELLOW}Lees ook de FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
-STR_ERR_INCOMPATIBLE_SET_TTRS_VERSION                                           :{ORANGE}E04: {YELLOW}Onbruikbare versie: {ORANGE}Total Town Replacement Set moet versie 3.11 or nieuwer zijn. {YELLOW}Lees ook de FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
-STR_ERR_OPENTTD_VERSION                                                         :{ORANGE}E00: FIRS heeft OpenTTD versie 1.2.0 of trunk r22780 of nieuwer nodig. {YELLOW}Lees ook de FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_CLIMATE_TOYLAND                                                         :{ORANGE}FIRS is niet ontworpen om in het speelgoedlandschap gebruikt te worden.
+STR_ERR_INCOMPATIBLE_SET                                                        :{ORANGE}E01: {YELLOW}Onbruikbare setcombinatie: {ORANGE}{STRING} {YELLOW}Lees ook de FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt.
+STR_ERR_INCOMPATIBLE_PARAM_CANSET                                               :{ORANGE}E02: {YELLOW}Ongeldige parameterwaarde: {ORANGE}CanSet parameter 2 moet 0 zijn om samen te werken met FIRS. {YELLOW}Lees ook de FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt.
+STR_ERR_INCOMPATIBLE_PARAM_CITYSET                                              :{ORANGE}E02: {YELLOW}Ongeldige parameterwaarde: {ORANGE}NA City Set parameter 2 moet 0 zijn om met FIRS samen te werken. {YELLOW}Lees ook de FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt.
+STR_ERR_INCOMPATIBLE_SET_TTRS_VERSION                                           :{ORANGE}E04: {YELLOW}Onbruikbare versie: {ORANGE}Total Town Replacement Set moet versie 3.11 of nieuwer zijn. {YELLOW}Lees ook de FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt.
+STR_ERR_OPENTTD_VERSION                                                         :{ORANGE}E00: FIRS heeft OpenTTD versie 1.2.0 of trunk r22780 of nieuwer nodig. {YELLOW}Lees ook de FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt.
 
 STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE                                             :moet onder de sneeuwgrens geplaatst worden.
 STR_ERR_LOCATION_NOT_ON_WATER                                                   :moet op droog land geplaatst worden.
 STR_ERR_LOCATION_NOT_IN_DESERT                                                  :moet niet in de woestijn geplaatst worden.
 STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE                                             :kan niet op een steile helling geplaatst worden.
-STR_ERR_LOCATION_LIMIT_1_PER_TOWN                                               :slechts ëën industrie van dit type toegestaan per plaats.
+STR_ERR_LOCATION_LIMIT_1_PER_TOWN                                               :slechts één industrie van dit type toegestaan per plaats.
 
-STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}Productie:{}  2t per 8t geleverd bauxiet{}  2t per 8.000l geleverde chemicaliën{}  4t per 8t geleverd schroot{}{}Productie verhoogt als twee of meer vrachtsoorten binnen een maand van elkaar worden geleverd.
-STR_EXTRA_BIOREFINERY                                                           :{BLACK}Productie:{}  6.000l per 8t geleverd graan{}  6.00l per 8t geleverde suiker
-STR_EXTRA_BREWERY                                                               :{BLACK}Productie:{}  3.000l per 8 kratten geleverde productiehulpgoederen{} {STRING} {STRING}{}Productie verhoogt als productiehulpgoederen binnen een maand van andere vracht worden geleverd.
-STR_EXTRA_BREWERY_GRAIN_SUBSTR                                                  :5.000l per 8t geleverd graan{}
-STR_EXTRA_BREWERY_FRUIT_SUBSTR                                                  :5.000l per 8t geleverd fruit en groente{}
-STR_EXTRA_BRICKWORKS                                                            :{BLACK}Productie:{}  2t per 8t geleverde kolen{}  2t per 8t geleverd zand{}  4t per 8t geleverd klei{}{}Productie verhoogt als twee of meer vrachtsoorten binnen een maand van elkaar worden geleverd.
-STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Productie:{}  2t per 8t geleverde kolen{}  2t per 8t geleverd klei{}  4t per 8t geleverd grind{}{}Productie verhoogt als twee of meer vrachtsoorten binnen een maand van elkaar worden geleverd.
-STR_EXTRA_DAIRY                                                                 :{BLACK}Productie:{}  3t per 8 kratten geleverde productiehulpgoederen{}  5t per 8.000l geleverde melk{}{}Productie Verhoogt als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
-STR_EXTRA_FERTILIZER_PLANT                                                      :{BLACK}Productie:{}  8 kratten per 8,000l afgeleverde chemicaliën
-STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Productie:{}  3t per 8 kratten geleverde productiehulpgoederen{}  5t per 8t geleverd vis{}{}Productie wordt verhoogd als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
-STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Productie:{}  3t per 8 kratten geleverde productiehulpgoederen{}  5t per 8t geleverd gezaagd hout{}{}Productie wordt verhoogd als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
-STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Maakt glasprodukten zoals flessen, potten, en vensterglas.{}{}{BLACK}Productie:{}  6t per 8t geleverd zand{}  2t per 8,000l geleverde chemicaliën{}{}Productie wordt verhoogd als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
-STR_EXTRA_GRAIN_MILL                                                            :{BLACK}Productie:{}  3t per 8 kratten geleverde productiehulpgoederen{}  5t per 8t geleverd graan{}{}Productie wordt verhoogd als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
-STR_EXTRA_IRON_WORKS                                                            :{BLACK}Productie:{}  2t per 8t geleverd hout{}  2t per 8t geleverd ijzererts{}{}Productie wordt verhoogd als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
-STR_EXTRA_LIME_KILN                                                             :{BLACK}Productie:{}  3t per 8t geleverd grind{}  3t per 8t geleverde kolen{}{}Productie wordt verhoogd als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
-STR_EXTRA_LUMBER_YARD                                                           :{BLACK}Maakt onder andere houten palen en stijgerplanken.{}{}{BLACK}Productie:{}  2t per 8,000l geleverde chemicaliën{}  6t per 8t geleverd gezaagd hout{}{}Productie wordt verhoogd als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
-STR_EXTRA_MACHINE_SHOP                                                          :{BLACK}Bouwt en onderhoudt machines.{}{}Productie:{} 8 kratten voor iedere 8,000l geleverde benzine{} 8 kratten voor elke 8t geleverd metaal.
-STR_EXTRA_MEAT_PACKER                                                           :{BLACK}Productie:{}  3t per 8 kratten geleverde productiehulpgoederen{}  5t per 8t geleverd vee{}{}Productie wordt verhoogd als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
-STR_EXTRA_METAL_FABRICATION_PLANT                                               :{BLACK}Maakt geverfde metalen onderdelen.{}{}{BLACK}Productie:{}  2t per 8,000l geleverde chemicaliën{}  6t per 8t geleverd metaal{}{}Productie wordt verhoogd als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
-STR_EXTRA_METAL_FOUNDRY                                                         :{BLACK}Maakt onderdelen uit metalen platen, zoals blikken en huishoudapparatuur.{}{}{BLACK}Productie:{}  2 kratten per 8,000l geleverde chemicaliën{}  6 kratten per 8t geleverd metaal{}{}Productie wordt verhoogd als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
-STR_EXTRA_OIL_REFINERY                                                          :{BLACK}Verwerkt ruwe olie tot benzine en chemicaliën.{}{}Productie:{} 6,000l voor iedere geleverde 8,000l
-STR_EXTRA_PAPER_MILL                                                            :{BLACK}Maakt papier en karton uit houtpulp.{}{}{BLACK}Productie:{}  4 kratten per 8t geleverd hout{}  2 kratten per 8t geleverde klei{}  2 kratten per 8,000l geleverde chemicaliën{}{}Productie verhoogt als twee of meer vrachtsoorten binnen een maand van elkaar worden geleverd.
-STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}Maakt plasticproducten zoals verpakkingen en huishoudartikelen.{}{}Productie:{} 6 kratten voor iedere 8 balen geleverd katoen{} 6 kratten voor iedere 8,000l geleverde chemicaliën
-STR_EXTRA_RECYCLING_PLANT                                                       :{BLACK}Verwerkt herbruikbare goederen.{}Productie:{} 6t productie voor iedere 8t geleverde herbruikbare goederen
+STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}Productie:{}  2t per 8t afgeleverd bauxiet{}  2t per 8.000l afgeleverde chemicaliën{}  4t per 8t afgeleverd schroot{}{}Productie wordt verhoogd als twee of meer vrachtsoorten binnen een maand van elkaar worden afgeleverd.
+STR_EXTRA_BIOREFINERY                                                           :{BLACK}Productie:{}  6.000l per 8t afgeleverd graan{}  6.000l per 8t afgeleverde suiker
+STR_EXTRA_BREWERY                                                               :{BLACK}Productie:{}  3.000l per 8 kratten afgeleverde productiematerialen{} {STRING} {STRING}{}Productie wordt verhoogd als productiematerialen binnen een maand van andere vracht worden afgeleverd.
+STR_EXTRA_BREWERY_GRAIN_SUBSTR                                                  :5.000l per 8t afgeleverd graan{}
+STR_EXTRA_BREWERY_FRUIT_SUBSTR                                                  :5.000l per 8t afgeleverd groente en fruit{}
+STR_EXTRA_BRICKWORKS                                                            :{BLACK}Productie:{}  2t per 8t afgeleverde kolen{}  2t per 8t afgeleverd zand{}  4t per 8t afgeleverd klei{}{}Productie wordt verhoogd als twee of meer vrachtsoorten binnen een maand van elkaar worden afgeleverd.
+STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Productie:{}  2t per 8t afgeleverde kolen{}  2t per 8t afgeleverd klei{}  4t per 8t afgeleverd grind{}{}Productie wordt verhoogd als twee of meer vrachtsoorten binnen een maand van elkaar worden afgeleverd.
+STR_EXTRA_DAIRY                                                                 :{BLACK}Productie:{}  3t per 8 kratten afgeleverde productiematerialen{}  5t per 8.000l afgeleverde melk{}{}Productie wordt verhoogd als beide vrachtsoorten binnen een maand van elkaar worden afgeleverd.
+STR_EXTRA_FERTILIZER_PLANT                                                      :{BLACK}Productie:{}  8 kratten per 8.000l afafgeleverde chemicaliën
+STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Productie:{}  3t per 8 kratten afgeleverde productiematerialen{}  5t per 8t afgeleverd vis{}{}Productie wordt verhoogd als beide vrachtsoorten binnen een maand van elkaar worden afgeleverd.
+STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Productie:{}  3t per 8 kratten afgeleverde productiematerialen{}  5t per 8t afgeleverd gezaagd hout{}{}Productie wordt verhoogd als beide vrachtsoorten binnen een maand van elkaar worden afgeleverd.
+STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Maakt glasproducten zoals flessen, potten, en vensterglas.{}{}{BLACK}Productie:{}  6t per 8t afgeleverd zand{}  2t per 8.000l afgeleverde chemicaliën{}{}Productie wordt verhoogd als beide vrachtsoorten binnen een maand van elkaar worden afgeleverd.
+STR_EXTRA_GRAIN_MILL                                                            :{BLACK}Productie:{}  3t per 8 kratten afgeleverde productiematerialen{}  5t per 8t afgeleverd graan{}{}Productie wordt verhoogd als beide vrachtsoorten binnen een maand van elkaar worden afgeleverd.
+STR_EXTRA_IRON_WORKS                                                            :{BLACK}Productie:{}  2t per 8t afgeleverd hout{}  2t per 8t afgeleverd ijzererts{}{}Productie wordt verhoogd als beide vrachtsoorten binnen een maand van elkaar worden afgeleverd.
+STR_EXTRA_LIME_KILN                                                             :{BLACK}Productie:{}  3t per 8t afgeleverd grind{}  3t per 8t afgeleverde kolen{}{}Productie wordt verhoogd als beide vrachtsoorten binnen een maand van elkaar worden afgeleverd.
+STR_EXTRA_LUMBER_YARD                                                           :{BLACK}Maakt houtproducten zoals schuttingpalen en schuttingdelen.{}{}{BLACK}Productie:{}  2t per 8.000l afgeleverde chemicaliën{}  6t per 8t afgeleverd gezaagd hout{}{}Productie wordt verhoogd als beide vrachtsoorten binnen een maand van elkaar worden afgeleverd.
+STR_EXTRA_MACHINE_SHOP                                                          :{BLACK}Bouwt en onderhoudt machines.{}{}Productie:{} 8 kratten voor iedere 8.000l afgeleverde benzine{} 8 kratten voor elke 8t afgeleverd metaal.
+STR_EXTRA_MEAT_PACKER                                                           :{BLACK}Productie:{}  3t per 8 kratten afgeleverde productiematerialen{}  5t per 8t afgeleverd vee{}{}Productie wordt verhoogd als beide vrachtsoorten binnen een maand van elkaar worden afgeleverd.
+STR_EXTRA_METAL_FABRICATION_PLANT                                               :{BLACK}Maakt geverfde metalen onderdelen.{}{}{BLACK}Productie:{}  2t per 8.000l afgeleverde chemicaliën{}  6t per 8t afgeleverd metaal{}{}Productie wordt verhoogd als beide vrachtsoorten binnen een maand van elkaar worden afgeleverd.
+STR_EXTRA_METAL_FOUNDRY                                                         :{BLACK}Maakt mataalproducten uit metalen platen zoals blikken en huishoudartikelen.{}{}{BLACK}Productie:{}  2 kratten per 8.000l afgeleverde chemicaliën{}  6 kratten per 8t afgeleverd metaal{}{}Productie wordt verhoogd als beide vrachtsoorten binnen een maand van elkaar worden afgeleverd.
+STR_EXTRA_OIL_REFINERY                                                          :{BLACK}Verwerkt ruwe olie tot benzine en chemicaliën.{}{}Productie:{} 6.000l voor iedere 8.000l afgeleverde benzine
+STR_EXTRA_PAPER_MILL                                                            :{BLACK}Maakt papier en karton uit houtpulp.{}{}{BLACK}Productie:{}  4 kratten per 8t afgeleverd hout{}  2 kratten per 8t afgeleverde klei{}  2 kratten per 8.000l afgeleverde chemicaliën{}{}Productie wordt verhoogd als twee of meer vrachtsoorten binnen een maand van elkaar worden afgeleverd.
+STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}Maakt plasticproducten zoals verpakkingen en huishoudartikelen.{}{}Productie:{} 6 kratten voor iedere 8 balen afgeleverd katoen{} 6 kratten voor iedere 8.000l afgeleverde chemicaliën
+STR_EXTRA_RECYCLING_PLANT                                                       :{BLACK}Verwerkt kringloopgoederen.{}Productie:{} 6t productie voor iedere 8t afgeleverde kringloopgoederen
 STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}Productie is evenredig met het aantal inwoners in the stad.
-STR_EXTRA_SAWMILL                                                               :{BLACK}Zaagt hout.{}{}Productie:{} 6t voor iedere 8t geleverd hout.
-STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Maakt smeedijzeren produkten zoals hekken, roosters, gereedschappen, ploegen, scheppen, en hoefijzers.{}{}Productie:{} 8t voor iedere 8t geleverd metaal.
-STR_EXTRA_STEELMILL                                                             :{BLACK}Productie:{}  2t per 8t geleverd ijzererts{}  2t per 8t geleverde kolen{}  4t per 8t geleverd schroot{}{}Productie verhoogt als twee of meer vrachtsoorten binnen een maand van elkaar worden geleverd.
-STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Productie:{}  3t per 8 kratten geleverde productiehulpgoederen{}  5t per 8t geleverd suikerriet{}{}Verhoogt tot 8t per 8t als beide vrachtsoorten binnen een maand van elkaar worden geleverd.
-STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Productie:{}  3 kratten per 8 kratten geleverde productiehulpgoederen{}  5 kratten per 8 balen geleverd wol{}  5t per 8t geleverd katoen{}{}Productie verhoogt als productiehulpgoederen binnen een maand van andere vracht worden geleverd.
+STR_EXTRA_SAWMILL                                                               :{BLACK}Zaagt hout.{}{}Productie:{} 6t voor iedere 8t afgeleverd hout
+STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Maakt smeedijzeren produkten zoals hekken, roosters, gereedschappen, ploegen, scheppen en hoefijzers.{}{}Productie:{} 8t voor iedere 8t afgeleverd metaal
+STR_EXTRA_STEELMILL                                                             :{BLACK}Productie:{}  2t per 8t afgeleverd ijzererts{}  2t per 8t afgeleverde kolen{}  4t per 8t afgeleverd schroot{}{}Productie wordt verhoogd als twee of meer vrachtsoorten binnen een maand van elkaar worden afgeleverd.
+STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Productie:{}  3t per 8 kratten afgeleverde productiematerialen{}  5t per 8t afgeleverd suikerriet{}{}Productie wordt verhoogd tot 8t per 8t als beide vrachtsoorten binnen een maand van elkaar worden afgeleverd.
+STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Productie:{}  3 kratten per 8 kratten afgeleverde productiematerialen{}  5 kratten per 8 balen afgeleverd wol{}  5t per 8t afgeleverd katoen{}{}Productie wordt verhoogd als productiematerialen binnen een maand van andere vracht worden afgeleverd.
 
 STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ DEBUG ------------{}productie deze maand:{}Goederen 1: {WHITE}{COMMA}{BLACK}{}Goederen 2: {WHITE}{COMMA}{BLACK}{}Dagen sinds laatste levering: {WHITE}{COMMA}{BLACK}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Maximale productiecapaciteit bereikt.
-STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Huidige productie: {YELLOW}Normaal{}{}{BLACK}Om de productie te verdubbelen  moet er {SIGNED_WORD} kratten hulpgoederen afgeleverd worden binnen drie maanden (of {SIGNED_WORD} kratten om de productie te verviervoudigen).
-STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Huidige productie: {YELLOW}Verhoogd (dubbel){}{}{BLACK}Om dit niveau te houden moet er {SIGNED_WORD} kratten hulpgoederen afgeleverd worden binnen drie maanden, of {SIGNED_WORD} kratten om de productie te verviervoudigen.
-STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}Huidige productie: {YELLOW}Gepassioneerd (verviervoudigd){}{}{BLACK}Om dit niveau te houden moet er {SIGNED_WORD} kratten hulpgoederen afgeleverd worden binnen drie maanden.
-STR_PORT_PRODUCTION_1X                                                          :{BLACK}Huidige productie: {YELLOW}Normaal{}{}{BLACK}Lever {SIGNED_WORD} eenheden vracht binnen drie maanden om de productie te verdubbelen{}Voor verviervoudigen van de productie moet je {SIGNED_WORD} eenheden vracht binnen drie maanden leveren
-STR_PORT_PRODUCTION_2X                                                          :{BLACK}Huidige productie: {YELLOW}Verhoogd (dubbel){}{}{BLACK}Om dit niveau te houden moet er {SIGNED_WORD} eenheden vracht afgeleverd worden binnen drie maanden, of {SIGNED_WORD} eenheden om de productie te verviervoudigen.
-STR_PORT_PRODUCTION_4X                                                          :{BLACK}Huidige productie: {YELLOW}Gepassioneerd (verviervoudigd){}{}{BLACK}Om dit niveau te houden moet er {SIGNED_WORD} eenheden vracht afgeleverd worden binnen drie maanden.
+STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Huidige productie: {YELLOW}Normaal{}{}{BLACK}Lever binnen drie maanden {SIGNED_WORD} kratten constructie-, landbouw- of productiematerialen af om het productieniveau te verdubbelen (of {SIGNED_WORD} kratten om het productieniveau te verviervoudigen).
+STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Huidige productie: {YELLOW}Verhoogd (verdubbeld){}{}{BLACK}Lever binnen drie maanden {SIGNED_WORD} kratten constructie-, landbouw- of productiematerialen af om dit productieniveau te handhaven (of {SIGNED_WORD} kratten om het productieniveau te verviervoudigen).
+STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}Huidige productie: {YELLOW}Gepassioneerd (verviervoudigd){}{}{BLACK}Lever binnen drie maanden {SIGNED_WORD} kratten constructie-, landbouw- of productiematerialen af om dit productieniveau te handhaven.
+STR_PORT_PRODUCTION_1X                                                          :{BLACK}Huidige productie: {YELLOW}Normaal{}{}{BLACK}Lever binnen drie maanden {SIGNED_WORD} eenheden vracht om het productieniveau te verdubbelen (of {SIGNED_WORD} eenheden vracht om het productieniveau te verviervoudigen).
+STR_PORT_PRODUCTION_2X                                                          :{BLACK}Huidige productie: {YELLOW}Verhoogd (verdubbeld){}{}{BLACK}Lever binnen drie maanden {SIGNED_WORD} eenheden vracht om dit productieniveau te handhaven (of {SIGNED_WORD} eenheden vracht om het productieniveau te verviervoudigen).
+STR_PORT_PRODUCTION_4X                                                          :{BLACK}Huidige productie: {YELLOW}Gepassioneerd (verviervoudigd){}{}{BLACK}Lever binnen drie maanden {SIGNED_WORD} eenheden vracht om dit productieniveau te handhaven.
 STR_GENERIC_NEWLINE                                                             :{}
 
-STR_FUND_BASIC_FARM                                                             :{}{BLACK}Plaats: {YELLOW}Kan niet gebouwd worden op sneeuw of in woestijnen.
-STR_FUND_MIXED_FARM                                                             :{}{BLACK}Plaats: {YELLOW}Kan niet gebouwd worden op sneeuw of in woestijnen.
-STR_FUND_ARABLE_FARM                                                            :{}{BLACK}Plaats: {YELLOW}Kan niet gebouwd worden op sneeuw of in woestijnen.
-STR_FUND_SUGAR_PLANTATION                                                       :{}{BLACK}Plaats: {YELLOW}Kan niet gebouwd worden op sneeuw of in woestijnen.
-STR_FUND_FOREST                                                                 :{}{BLACK}Plaats: {YELLOW}Kan niet gebouwd worden in woestijnen.
-STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}Plaats: {YELLOW}Kan niet gebouwd worden op sneeuw.
+STR_FUND_BASIC_FARM                                                             :{}{BLACK}Plaats: {YELLOW}Kan niet boven de sneeuwgrens of in woestijnen gebouwd worden.
+STR_FUND_MIXED_FARM                                                             :{}{BLACK}Plaats: {YELLOW}Kan niet boven de sneeuwgrens of in woestijnen gebouwd worden.
+STR_FUND_ARABLE_FARM                                                            :{}{BLACK}Plaats: {YELLOW}Kan niet boven de sneeuwgrens of in woestijnen gebouwd worden.
+STR_FUND_SUGAR_PLANTATION                                                       :{}{BLACK}Plaats: {YELLOW}Kan niet boven de sneeuwgrens of in woestijnen gebouwd worden.
+STR_FUND_FOREST                                                                 :{}{BLACK}Plaats: {YELLOW}Kan niet in woestijnen gebouwd worden.
+STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}Plaats: {YELLOW}Kan niet boven de sneeuwgrens gebouwd worden.
 
 STR_FUND_AVAILABLE_FROM                                                         :{}{BLACK}Beschikbaar vanaf: {YELLOW}{COMMA}
 
@@ -185,9 +185,9 @@ STR_IND_FOOD_MARKET                                                             
 STR_IND_FURNITURE_FACTORY                                                       :Meubelfabriek
 STR_IND_GLASS_WORKS                                                             :Glasfabriek
 STR_IND_GRAIN_MILL                                                              :Bakkerij
-STR_IND_HARDWARE_STORE                                                          :Doe-het-zelf-zaak
+STR_IND_HARDWARE_STORE                                                          :IJzerhandel
 STR_IND_HOTEL                                                                   :Hotel
-STR_IND_IRON_WORKS                                                              :Ijzeroven
+STR_IND_IRON_WORKS                                                              :IJzeroven
 STR_IND_JUNKYARD                                                                :Schroothoop
 STR_IND_LIME_KILN                                                               :Kalkoven
 STR_IND_LUMBER_YARD                                                             :Houtwerkplaats
@@ -199,7 +199,7 @@ STR_IND_PETROLPUMP                                                              
 STR_IND_PLASTICS_PLANT                                                          :Kunststoffabriek
 STR_IND_PORT                                                                    :Haven
 STR_IND_QUARRY                                                                  :Zandwinning
-STR_IND_RECYCLING_DEPOT                                                         :Recycling verzamelpunt
+STR_IND_RECYCLING_DEPOT                                                         :Kringloopwinkel
 STR_IND_RECYCLING_PLANT                                                         :Recyclingfabriek
 STR_IND_SHEEPFARM                                                               :Schapenhouderij
 STR_IND_SMITHY_FORGE                                                            :Smederij
