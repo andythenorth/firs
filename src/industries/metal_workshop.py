@@ -43,7 +43,6 @@ industry = Industry(id='metal_workshop',
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True
-industry.economy_variations['BASIC_TROPIC'].enabled = True
 
 industry.add_tile(id='metal_workshop_tile')
 

@@ -131,14 +131,18 @@ STR_EXTRA_METAL_FABRICATION_PLANT                                               
 STR_EXTRA_METAL_FOUNDRY                                                         :{BLACK}Produces plated metal items such as tin cans, hardware and household goods.{}{}{BLACK}Cargo production:{}  2 crates per 8,000l chemicals delivered{}  6 crates per 8t metal delivered{}{}Production steps up if both cargos are delivered within a month of each other.
 STR_EXTRA_OIL_REFINERY                                                          :{BLACK}Processes crude oil into petrol and chemicals.{}{}Cargo production:{}  6,000l per 8,000l delivered
 STR_EXTRA_PAPER_MILL                                                            :{BLACK}Pulps wood to produce paper and cardboard.{}{}{BLACK}Cargo production:{}  4 crates per 8t wood delivered{}  2 crates per 8t clay delivered{}  2 crates per 8,000l chemicals delivered{}{}Production steps up if two or more cargos are delivered within a month of each other.
-STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}Produces plastic items such as packaging and household goods.{}{}Cargo production:{}  6 crates per 8 bales plant fibres delivered{}  6 crates per 8,000l chemicals delivered
+STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}Produces plastic items such as packaging and household goods.{}{}Cargo production:{} {STRING} {STRING}
+STR_EXTRA_PLASTICS_PLANT_CHEMICALS_SUBSTR                                       :6 crates per 8,000l chemicals delivered{}
+STR_EXTRA_PLASTICS_PLANT_PLANT_FIBRES_SUBSTR                                    :6 crates per 8 bales plant fibres delivered{}
 STR_EXTRA_RECYCLING_PLANT                                                       :{BLACK}Processes recyclables for reuse.{}{}Cargo production:{}  6t per 8t recyclables delivered
 STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}Production is proportional to town population.
 STR_EXTRA_SAWMILL                                                               :{BLACK}Chops wood.{}{}Cargo production:{}  6t per 8t wood delivered
 STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Produces metal items like tools, ploughs, gates, shovels and horseshoes.{}{}Cargo production:{}  8 crates per 8t metal delivered
 STR_EXTRA_STEELMILL                                                             :{BLACK}Cargo production:{}  2t per 8t iron ore delivered{}  2t per 8t coal delivered{}  4t per 8t scrap metal delivered{}{}Production steps up if two or more cargos are delivered within a month of each other.
 STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Cargo production:{}  3t per 8 crates manufacturing supplies delivered{}  5t per 8t sugar delivered{}{}Production steps up if two or more cargos are delivered within a month of each other.
-STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Cargo production:{}  3 crates per 8 crates manufacturing supplies delivered{}  5 crates per 8 bales wool delivered{}  5 crates per 8 bales plant fibres delivered{}{}Production steps up if manufacturing supplies delivered within a month of other cargos.
+STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Cargo production:{}  3 crates per 8 crates manufacturing supplies delivered{} {STRING} {STRING} {}Production steps up if manufacturing supplies delivered within a month of other cargos.
+STR_EXTRA_TEXTILE_MILL_WOOL_SUBSTR                                              :5 crates per 8 bales wool delivered{}
+STR_EXTRA_TEXTILE_MILL_PLANT_FIBRES_SUBSTR                                      :5 crates per 8 bales plant fibres delivered{}
 
 STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ DEBUG ------------{}Production this month:{}Cargo 1: {WHITE}{COMMA}{BLACK}{}Cargo 2: {WHITE}{COMMA}{BLACK}{}Days since last delivery: {WHITE}{COMMA}{BLACK}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Maximum production reached
@@ -199,6 +203,7 @@ STR_IND_PETROLPUMP                                                              
 STR_IND_PLASTICS_PLANT                                                          :Plastics Plant
 STR_IND_PORT                                                                    :Port
 STR_IND_QUARRY                                                                  :Quarry
+STR_IND_RANCH                                                                   :Ranch
 STR_IND_RECYCLING_DEPOT                                                         :Recycling Depot
 STR_IND_RECYCLING_PLANT                                                         :Recycling Plant
 STR_IND_SHEEPFARM                                                               :Sheep Farm

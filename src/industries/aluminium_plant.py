@@ -43,7 +43,6 @@ industry = Industry(id='aluminium_plant',
                     graphics_change_dates = [1942, 1980])
 
 industry.economy_variations['FIRS'].enabled = True
-industry.economy_variations['BASIC_TROPIC'].enabled = True
 
 industry.add_tile(id='aluminium_plant_tile')
 

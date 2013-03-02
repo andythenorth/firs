@@ -43,7 +43,6 @@ industry = Industry(id='basic_farm',
 
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True
 industry.economy_variations['BASIC_ARCTIC'].enabled = True
-industry.economy_variations['BASIC_TROPIC'].enabled = True
 
 industry.add_tile(id='basic_farm_tile')
 

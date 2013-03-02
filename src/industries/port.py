@@ -42,10 +42,15 @@ industry = Industry(id='port',
                     )
 
 industry.economy_variations['BASIC_ARCTIC'].enabled = True
+industry.economy_variations['BASIC_TROPIC'].enabled = True
 
 industry.economy_variations['BASIC_ARCTIC'].accept_cargo_types = ['GOOD', 'BEER', 'PETR']
 industry.economy_variations['BASIC_ARCTIC'].prod_cargo_types = ['ENSP', 'CLAY']
 industry.economy_variations['BASIC_ARCTIC'].prod_multiplier = '[7, 14]'
+
+industry.economy_variations['BASIC_TROPIC'].accept_cargo_types = ['FOOD', 'AORE', 'FRVG']
+industry.economy_variations['BASIC_TROPIC'].prod_cargo_types = ['STEL', 'MNSP']
+industry.economy_variations['BASIC_TROPIC'].prod_multiplier = '[7, 16]'
 
 industry.add_tile(id='port_tile')
 

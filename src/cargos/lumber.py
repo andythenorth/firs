@@ -22,5 +22,6 @@ cargo = Cargo(id = 'lumber',
               capacity_multiplier = '1')
 
 cargo.economy_variations['BASIC_ARCTIC']['disabled'] = True
+cargo.economy_variations['BASIC_TROPIC']['disabled'] = True
 
 

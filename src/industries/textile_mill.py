@@ -39,9 +39,11 @@ industry = Industry(id='textile_mill',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_IND_TEXTILE_MILL))',
                     fund_cost_multiplier='120',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
-                    extra_text_industry='STR_EXTRA_TEXTILE_MILL')
+                    extra_text_industry='STR_EXTRA_TEXTILE_MILL, string(STR_EXTRA_TEXTILE_MILL_WOOL_SUBSTR), string(STR_EXTRA_TEXTILE_MILL_PLANT_FIBRES_SUBSTR)')
 
 industry.economy_variations['FIRS'].enabled = True
+industry.economy_variations['BASIC_TROPIC'].enabled = True
+industry.economy_variations['BASIC_TROPIC'].extra_text_industry = 'STR_EXTRA_TEXTILE_MILL, string(STR_EXTRA_TEXTILE_MILL_WOOL_SUBSTR)'
 
 industry.add_tile(id='textile_mill_tile')
 

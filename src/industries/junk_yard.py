@@ -44,7 +44,6 @@ industry = Industry(id='junk_yard',
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True
-industry.economy_variations['BASIC_TROPIC'].enabled = True
 
 industry.add_tile(id='junk_yard_tile')
 

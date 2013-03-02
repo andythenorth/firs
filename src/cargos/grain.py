@@ -21,3 +21,4 @@ cargo = Cargo(id = 'grain',
               price_factor = '116.194725037',
               capacity_multiplier = '1')
 
+cargo.economy_variations['BASIC_TROPIC']['disabled'] = True

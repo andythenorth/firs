@@ -21,3 +21,4 @@ cargo = Cargo(id = 'wood',
               price_factor = '97.3963737488',
               capacity_multiplier = '1')
 
+cargo.economy_variations['BASIC_TROPIC']['disabled'] = True

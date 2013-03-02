@@ -42,6 +42,9 @@ industry = Industry(id='sheep_farm',
                     )
 
 industry.economy_variations['FIRS'].enabled = True
+industry.economy_variations['BASIC_TROPIC'].enabled = True
+
+industry.economy_variations['BASIC_TROPIC'].name = 'string(STR_IND_RANCH)'
 
 industry.add_tile(id='sheep_farm_tile')
 

@@ -11,14 +11,14 @@
                 ${industry.get_property_declaration('prod_increase_msg')}
                 ${industry.get_property_declaration('prod_decrease_msg')}
                 ${industry.get_property_declaration('new_ind_msg')}
-                ${industry.get_property_declaration('name')}
-                ${industry.get_property_declaration('nearby_station_name')}
                 ${industry.get_property_declaration('min_cargo_distr')}
                 ${industry.get_property_declaration('map_colour')}
                 ${industry.get_property_declaration('spec_flags')}
                 ${industry.get_industry_layouts_as_property()}
                 conflicting_ind_types: []; // set this prop empty, FIRS has it's own better checks for this
                 <!--! following props may optionally vary per economy, or use industry default -->
+                ${industry.get_property_declaration('name', economy)}
+                ${industry.get_property_declaration('nearby_station_name', economy)}
                 ${industry.get_property_declaration('prod_multiplier', economy)}
                 ${industry.get_property_declaration('input_multiplier_1', economy)}
                 ${industry.get_property_declaration('input_multiplier_2', economy)}

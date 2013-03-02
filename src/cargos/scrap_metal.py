@@ -22,3 +22,4 @@ cargo = Cargo(id = 'scrap_metal',
               price_factor = '126.846313477')
 
 cargo.economy_variations['BASIC_ARCTIC']['disabled'] = True
+cargo.economy_variations['BASIC_TROPIC']['disabled'] = True
