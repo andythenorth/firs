@@ -132,14 +132,18 @@ STR_EXTRA_METAL_FABRICATION_PLANT                                               
 STR_EXTRA_METAL_FOUNDRY                                                         :{BLACK}Produce elementos metálicos tales como latas, herramientas o piezas.{}{}{BLACK}Producción:{} 2 cajas por cada 8,000l de productos químicos entregados{} 6 cajas por cada 8t de metal entregadas{}{}La producción se incrementa si ambas cargas son entregadas con menos de un mes de diferencia entre ambas
 STR_EXTRA_OIL_REFINERY                                                          :{BLACK}Procesa petróleo crudo en fueloil y productos químicos.{}{}6,000l producidps por cada 8,000l entregados
 STR_EXTRA_PAPER_MILL                                                            :{BLACK}Convierte madera en pulpa para hacer papel y cartón.{}{}{BLACK}Producción:{} 4 cajas por cada 8t de madera entregadas{} 2 cajas por cada 8t de arcilla entregadas{}  2 cajas por cada 8,000l de productos químicos entregados{}{}La producción se incrementa si dos o más cargas son entregadas con menos de un mes de diferencia entre ambas
-STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}Fabrica productos de plástico tales como embalaje o productos del hogar.{}{}Producción:{} 6 cajas por cada 8 fardos de fibras vegetales entregados{} 6 cajas por cada 8,000l de productos químicos entregados
+STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}Fabrica productos de plástico tales como embalaje o productos del hogar.{}{}Producción:{} {STRING} {STRING}
+STR_EXTRA_PLASTICS_PLANT_CHEMICALS_SUBSTR                                       :6 cajas por cada 8,000l de productos químicos entregados{}
+STR_EXTRA_PLASTICS_PLANT_PLANT_FIBRES_SUBSTR                                    :6 cajas por cada 8 fardos de fibras vegetales entregados{}
 STR_EXTRA_RECYCLING_PLANT                                                       :{BLACK}Procesa productos reciclables para ser reutilizados.{}{}Producción:{} 6t producidas por cada 8t de reciclables entregadas
 STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}La producción es proporcional a la población del pueblo
 STR_EXTRA_SAWMILL                                                               :{BLACK}Aserra madera.{}{}Producción:{} 6t producidas por cada 8t de madera entregadas
 STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Produce objetos de metal forjado como herramientas, puertas, útiles de labranza o cocina y herraduras.{}{}Producción:{} 8t por cada 8t de metal entregadas
 STR_EXTRA_STEELMILL                                                             :{BLACK}Producción:{} 2t por cada 8t de mineral de hierro entregadas{} 2t por cada 8t de carbón entregadas{}  4t por cada 8t de chatarra entregadas{}{}La producción se incrementa si dos o más cargas son entregadas en un intervalo inferior a un mes
 STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Producción:{} 3t por cada 8 cajas de suministros de manufactura entregadas{} 5t por cada 8t de caña de azúcar entregadas{}{}La producción se incrementa si dos o más cargas son entregadas con menos de un mes de diferencia entre ambas
-STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Producción:{} 3 cajas por cada 8 cajas de suministros de manufactura entregadas{} 5 cajas por cada 8 fardos de lana entregados{} 5 cajas por cada 8t de fibras vegetales entregadas{}{}La producción se incrementa si se entregan suministros de manufactura en un intervalo inferior a un mes desde el envío de una de las otras cargas
+STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Producción:{}  3 cajas por cada 8 cajas de suministros de manufactura entregadas{} {STRING} {STRING} {}La producción se incrementa si se entregan suministros de manufactura en un intervalo inferior a un mes desde el envío de una de las otras cargas
+STR_EXTRA_TEXTILE_MILL_WOOL_SUBSTR                                              :5 cajas por cada 8 fardos de lana entregados{}
+STR_EXTRA_TEXTILE_MILL_PLANT_FIBRES_SUBSTR                                      :5 cajas por cada 8t de fibras vegetales entregadas{}
 
 STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ DEBUG ------------{}Producción este mes:{}Carga 1: {WHITE}{COMMA}{BLACK}{}Carga 2: {WHITE}{COMMA}{BLACK}{}Días desde la última entrega: {WHITE}{COMMA}{BLACK}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Producción máxima alcanzada
@@ -184,6 +188,7 @@ STR_IND_FISHING_GROUND                                                          
 STR_IND_FISHING_HARBOUR                                                         :{G=m}Puerto de Pesca
 STR_IND_FOOD_MARKET                                                             :{G=f}Tienda de Ultramarinos
 STR_IND_FURNITURE_FACTORY                                                       :{G=f}Fábrica de Muebles
+STR_IND_GENERAL_STORE                                                           :{G=f}Tienda General
 STR_IND_GLASS_WORKS                                                             :{G=f}Cristalería
 STR_IND_GRAIN_MILL                                                              :{G=m}Molino de Grano
 STR_IND_HARDWARE_STORE                                                          :{G=f}Ferretería
@@ -200,6 +205,7 @@ STR_IND_PETROLPUMP                                                              
 STR_IND_PLASTICS_PLANT                                                          :{G=f}Fábrica de Plásticos
 STR_IND_PORT                                                                    :{G=m}Puerto
 STR_IND_QUARRY                                                                  :{G=f}Cantera
+STR_IND_RANCH                                                                   :{G=m}Rancho
 STR_IND_RECYCLING_DEPOT                                                         :{G=m}Depósito de Reciclado
 STR_IND_RECYCLING_PLANT                                                         :{G=f}Planta de Reciclado
 STR_IND_SHEEPFARM                                                               :{G=f}Granja de Ovejas
