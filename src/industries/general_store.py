@@ -15,8 +15,8 @@ Some method properties need a string - the templating is then typically directly
 When a string is expected are basically two choices: provide a string directly, or make an object reference and get an id from that object.
 """
 
-industry = Industry(id='food_market',
-                    accept_cargo_types=['FOOD', 'FRVG', 'BEER'],
+industry = Industry(id='general_store',
+                    accept_cargo_types=['FOOD', 'GOOD', 'BEER'],
                     input_multiplier_1='[0, 0]',
                     input_multiplier_3='[0, 0]',
                     input_multiplier_2='[0, 0]',
@@ -35,50 +35,37 @@ industry = Industry(id='food_market',
                     spec_flags='bitmask(IND_FLAG_ONLY_IN_TOWNS)',
                     remove_cost_multiplier='0',
                     prospect_chance='0.75',
-                    name='string(STR_IND_FOOD_MARKET)',
+                    name='string(STR_IND_GENERAL_STORE)',
                     fund_cost_multiplier='6',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
                     )
 
-industry.economy_variations['FIRS'].enabled = True
+industry.economy_variations['BASIC_TEMPERATE'].enabled = True
+industry.economy_variations['BASIC_ARCTIC'].enabled = True
+industry.economy_variations['BASIC_TROPIC'].enabled = True
 
 
-industry.add_tile(id='food_market_tile')
+industry.add_tile(id='general_store_tile')
 
 spriteset_ground = industry.add_spriteset(
-    id = 'food_market_spriteset_ground',
+    id = 'general_store_spriteset_ground',
     type='slab',
 )
 spriteset_ground_overlay = industry.add_spriteset(
-    id = 'food_market_spriteset_ground_overlay',
+    id = 'general_store_spriteset_ground_overlay',
     sprites = [(10, 10, 64, 31, -31, 0)],
 )
 spriteset_1 = industry.add_spriteset(
-    id = 'food_market_spriteset',
-    sprites = [(10, 60, 64, 36, -31, -4)]
+    id = 'general_store_spriteset',
+    sprites = [(10, 60, 64, 48, -31, -18)]
 )
-sprite_tree_1 = industry.add_sprite(
-    sprite_number = 'nearby_tile_terrain_type(0, 0) != TILETYPE_SNOW ? market_tree : MARKET_TREE_SNOW', # defined in defines.pnml, to permit possibility of selecting a different sprite if a tree grf is loaded
-    xoffset= 11,
-    yoffset= 1,
-    xextent= 6,
-    yextent= 6
-)
-sprite_tree_2 = industry.add_sprite(
-    sprite_number = 'nearby_tile_terrain_type(0, 0) != TILETYPE_SNOW ? market_tree : MARKET_TREE_SNOW', # defined in defines.pnml, to permit possibility of selecting a different sprite if a tree grf is loaded
-    xoffset= 11,
-    yoffset= 6,
-    xextent= 6,
-    yextent= 6
-)
-
 industry.add_spritelayout(
-    id = 'food_market_spritelayout',
+    id = 'general_store_spritelayout',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
-    building_sprites = [spriteset_1, sprite_tree_1, sprite_tree_2]
+    building_sprites = [spriteset_1]
 )
 industry.add_industry_layout(
-    id = 'food_market_industry_layout',
-    layout = [(0, 0, 'food_market_tile', 'food_market_spritelayout')]
+    id = 'general_store_industry_layout',
+    layout = [(0, 0, 'general_store_tile', 'general_store_spritelayout')]
 )

@@ -75,6 +75,7 @@ from industries import dredging_site
 from industries import fertiliser_plant
 from industries import food_market
 from industries import furniture_factory
+from industries import general_store
 from industries import glass_works
 from industries import grain_mill
 from industries import hardware_store
