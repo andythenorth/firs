@@ -42,6 +42,7 @@ industry = Industry(id='dairy_farm',
                     )
 
 industry.economy_variations['FIRS'].enabled = True
+industry.economy_variations['BASIC_TEMPERATE'].enabled = True
 
 industry.add_tile(id='dairy_farm_tile')
 

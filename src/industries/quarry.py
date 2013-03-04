@@ -42,3 +42,4 @@ industry = Industry(id='quarry',
                     )
 
 industry.economy_variations['FIRS'].enabled = True
+industry.economy_variations['BASIC_TEMPERATE'].enabled = True

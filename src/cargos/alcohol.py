@@ -21,5 +21,4 @@ cargo = Cargo(id = 'alcohol',
               price_factor = '145.9608078',
               capacity_multiplier = '1')
 
-cargo.economy_variations['BASIC_TEMPERATE']['disabled'] = True
 cargo.economy_variations['BASIC_TROPIC']['disabled'] = True

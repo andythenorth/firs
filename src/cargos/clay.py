@@ -21,5 +21,4 @@ cargo = Cargo(id = 'clay',
               price_factor = '72.9804039001',
               capacity_multiplier = '1')
 
-cargo.economy_variations['BASIC_TEMPERATE']['disabled'] = True
 cargo.economy_variations['BASIC_TROPIC']['disabled'] = True

@@ -20,3 +20,6 @@ cargo = Cargo(id = 'fuel_oil',
               single_penalty_length = '255',
               capacity_multiplier = '1',
               price_factor = '126.749038696')
+
+cargo.economy_variations['BASIC_TEMPERATE']['disabled'] = True
+

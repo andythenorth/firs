@@ -31,7 +31,6 @@ industry = Industry(id='oil_refinery',
                     extra_text_industry='STR_EXTRA_OIL_REFINERY')
 
 industry.economy_variations['FIRS'].enabled = True
-industry.economy_variations['BASIC_TEMPERATE'].enabled = True
 industry.economy_variations['BASIC_ARCTIC'].enabled = True
 industry.economy_variations['BASIC_TROPIC'].enabled = True
 

@@ -30,7 +30,6 @@ industry = Industry(id='sawmill',
                     extra_text_industry='STR_EXTRA_SAWMILL')
 
 industry.economy_variations['FIRS'].enabled = True
-industry.economy_variations['BASIC_TEMPERATE'].enabled = True
 
 # industry uses layouts and sprites from default game, no custom layouts etc
 

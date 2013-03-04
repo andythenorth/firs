@@ -89,6 +89,7 @@ from industries import metal_fabrication_plant
 from industries import metal_workshop
 from industries import mixed_farm
 from industries import oil_wells
+from industries import orchard_piggery
 from industries import petrol_pump
 from industries import plastics_plant
 from industries import recycling_depot

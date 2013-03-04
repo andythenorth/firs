@@ -42,6 +42,7 @@ industry = Industry(id='dairy',
                     extra_text_industry='STR_EXTRA_DAIRY')
 
 industry.economy_variations['FIRS'].enabled = True
+industry.economy_variations['BASIC_TEMPERATE'].enabled = True
 
 industry.add_tile(id='dairy_tile')
 industry.add_tile(id='dairy_tile_smoke')
