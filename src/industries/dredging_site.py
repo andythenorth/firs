@@ -43,6 +43,7 @@ industry = Industry(id='dredging_site',
                     )
 
 industry.economy_variations['FIRS'].enabled = True
+industry.economy_variations['BASIC_TEMPERATE'].enabled = True
 
 sprite_ground = industry.add_sprite(
     sprite_number = 'GROUNDSPRITE_WATER',
