@@ -21,5 +21,4 @@ cargo = Cargo(id = 'fruits',
               price_factor = '119.696617126',
               capacity_multiplier = '1')
 
-cargo.economy_variations['BASIC_TEMPERATE']['disabled'] = True
 cargo.economy_variations['BASIC_ARCTIC']['disabled'] = True

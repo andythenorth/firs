@@ -36,7 +36,6 @@ industry = Industry(id='oil_wells',
                     )
 
 industry.economy_variations['FIRS'].enabled = True
-industry.economy_variations['BASIC_TEMPERATE'].enabled = True
 industry.economy_variations['BASIC_ARCTIC'].enabled = True
 industry.economy_variations['BASIC_TROPIC'].enabled = True
 

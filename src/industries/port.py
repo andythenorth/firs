@@ -41,8 +41,13 @@ industry = Industry(id='port',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
                     )
 
+industry.economy_variations['BASIC_TEMPERATE'].enabled = True
 industry.economy_variations['BASIC_ARCTIC'].enabled = True
 industry.economy_variations['BASIC_TROPIC'].enabled = True
+
+industry.economy_variations['BASIC_TEMPERATE'].accept_cargo_types = ['CLAY', 'FOOD', 'GOOD']
+industry.economy_variations['BASIC_TEMPERATE'].prod_cargo_types = ['RFPR', 'ENSP']
+industry.economy_variations['BASIC_TEMPERATE'].prod_multiplier = '[19, 7]'
 
 industry.economy_variations['BASIC_ARCTIC'].accept_cargo_types = ['GOOD', 'BEER', 'PETR']
 industry.economy_variations['BASIC_ARCTIC'].prod_cargo_types = ['ENSP', 'CLAY']

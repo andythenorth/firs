@@ -42,6 +42,8 @@ industry = Industry(id='glass_works',
                     extra_text_industry='STR_EXTRA_GLASS_WORKS')
 
 industry.economy_variations['FIRS'].enabled = True
+industry.economy_variations['BASIC_TEMPERATE'].enabled = True
+industry.economy_variations['BASIC_TEMPERATE'].prod_cargo_types = ['GOOD', 'MNSP']
 
 industry.add_tile(id='glass_works_tile')
 

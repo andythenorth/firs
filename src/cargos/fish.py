@@ -22,3 +22,4 @@ cargo = Cargo(id = 'fish',
               capacity_multiplier = '1')
 
 cargo.economy_variations['BASIC_TEMPERATE']['disabled'] = True
+
