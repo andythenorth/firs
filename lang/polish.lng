@@ -178,6 +178,8 @@ STR_EXTRA_METAL_FOUNDRY                                                         
 STR_EXTRA_OIL_REFINERY                                                          :{BLACK}W procesie rafinacji produkuje paliwo i chemikalia.{}{}6t z 8t surowców.
 STR_EXTRA_PAPER_MILL                                                            :{BLACK}Przerabia drewno na papier i karton.{}{}{BLACK}Produkcja:{}  4t z 8t drewna{}  2t z 8t gliny{}  2t z 8t chemikaliów{}{}Produkcja wzrasta, gdy różne surowce są dostarczane w ciągu miesiąca.
 STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}Produkuje artykuły plastikowe na użytek przedsiębiorstw i gospodarstw domowych.{}{}6t z 8t surowców.
+STR_EXTRA_PLASTICS_PLANT_CHEMICALS_SUBSTR                                       :6 skrzyń na 8,000l dostarczonych chemikaliów{}
+STR_EXTRA_PLASTICS_PLANT_PLANT_FIBRES_SUBSTR                                    :6 skrzyń na 8 beli dostarczonych artykułów plastikowych{}
 STR_EXTRA_RECYCLING_PLANT                                                       :{BLACK}Przerabia surowce wtórne do ponownego wykorzystania w przemyśle.{}{}6t z 8t surowców.
 STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}Poziom produkcji zależy od wielkości pobliskiego miasta.
 STR_EXTRA_SAWMILL                                                               :{BLACK}Drzewo się rżnie. Jest deska, jest sęk.{}{}6t z 8t surowców.
@@ -185,6 +187,8 @@ STR_EXTRA_SMITHY_FORGE                                                          
 STR_EXTRA_STEELMILL                                                             :{BLACK}Produkcja:{}  2t z 8t rudy żelaza{}  2t z 8t węgla{}  4t z 8t złomu{}{}Produkcja wzrasta, gdy różne surowce są dostarczane w ciągu miesiąca.
 STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Produkcja:{}  3t z 8 skrzyń opakowań{}  5t z 8t buraków cukrowych{}{}Produkcja wzrasta do 8t z 8t, gdy oba surowce są dostarczane w ciągu miesiąca.
 STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Produkcja:{}  3 skrzynie z 8 skrzyń opakowań{}  5 skrzyń na 8t wełny{}  5 skrzyń z 8t włókien naturalnych{}{}Produkcja wzrasta, gdy opakowania są dostarczane najpóźniej miesiąc po surowcach.
+STR_EXTRA_TEXTILE_MILL_WOOL_SUBSTR                                              :5 skrzyń na 8 dostarczonych beli wełny{}
+STR_EXTRA_TEXTILE_MILL_PLANT_FIBRES_SUBSTR                                      :5 skrzyń na 8 dostarczonych beli artykułów plastikowych{}
 
 STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}--------- DEBUGOWANIE ---------{}Produkcja w tym miesiącu:{}Ładunek 1: {WHITE}{COMMA}{BLACK}{}Ładunek 2: {WHITE}{COMMA}{BLACK}{}Dni od ostatniej dostawy: {WHITE}{COMMA}{BLACK}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Osiągnięto maksymalny poziom produkcji
@@ -199,6 +203,7 @@ STR_GENERIC_NEWLINE                                                             
 STR_FUND_BASIC_FARM                                                             :{}{BLACK}Lokalizacja: {YELLOW}Nie może być budowane na śniegu ani na pustyni.
 STR_FUND_MIXED_FARM                                                             :{}{BLACK}Lokalizacja: {YELLOW}Nie może być budowane na śniegu, pustyni i stromych zboczach.
 STR_FUND_ARABLE_FARM                                                            :{}{BLACK}Lokalizacja: {YELLOW}Nie może być budowane na śniegu, pustyni i zboczach.
+STR_FUND_ORCHARD_PIGGERY                                                        :{}{BLACK}Lokalizacja: {YELLOW}Nie może być budowane na śniegu ani na pustyni.
 STR_FUND_SUGAR_PLANTATION                                                       :{}{BLACK}Lokalizacja: {YELLOW}Nie może być budowane na śniegu ani na pustyni.
 STR_FUND_FOREST                                                                 :{}{BLACK}Lokalizacja: {YELLOW}Nie może być budowane na pustyni.
 STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}Lokalizacja: {YELLOW}Nie może być budowane na śniegu.
@@ -221,6 +226,8 @@ STR_IND_BIOREFINERY                                                             
 STR_IND_BIOREFINERY.d                                                           :biorafinerii
 STR_IND_BREWERY                                                                 :{G=m}Browar
 STR_IND_BREWERY.d                                                               :browaru
+STR_IND_BREWERY_CIDER_MILL                                                      :{G=f}Rozlewnia cydru
+STR_IND_BREWERY_CIDER_MILL.d                                                    :rozlewni cydru
 STR_IND_BRICK_WORKS                                                             :{G=f}Cegielnia
 STR_IND_BRICK_WORKS.d                                                           :cegielni
 STR_IND_BUILDERS_YARD                                                           :{G=f}Spółka budowlana
@@ -245,6 +252,8 @@ STR_IND_FOOD_MARKET                                                             
 STR_IND_FOOD_MARKET.d                                                           :sklepu
 STR_IND_FURNITURE_FACTORY                                                       :{G=f}Fabryka mebli
 STR_IND_FURNITURE_FACTORY.d                                                     :fabryki mebli
+STR_IND_GENERAL_STORE                                                           :{G=m}Sklep
+STR_IND_GENERAL_STORE.d                                                         :sklepu
 STR_IND_GLASS_WORKS                                                             :{G=f}Huta szkła
 STR_IND_GLASS_WORKS.d                                                           :huty szkła
 STR_IND_GRAIN_MILL                                                              :{G=f}Piekarnia
@@ -277,6 +286,8 @@ STR_IND_PORT                                                                    
 STR_IND_PORT.d                                                                  :portu
 STR_IND_QUARRY                                                                  :{G=m}Kamieniołomy
 STR_IND_QUARRY.d                                                                :kamieniołomu
+STR_IND_RANCH                                                                   :{G=n}Ranczo
+STR_IND_RANCH.d                                                                 :rancza
 STR_IND_RECYCLING_DEPOT                                                         :{G=n}Wysypisko
 STR_IND_RECYCLING_DEPOT.d                                                       :wysypiska
 STR_IND_RECYCLING_PLANT                                                         :{G=f}Przetwórnia odpadów
