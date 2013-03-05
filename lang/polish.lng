@@ -177,7 +177,7 @@ STR_EXTRA_METAL_FABRICATION_PLANT                                               
 STR_EXTRA_METAL_FOUNDRY                                                         :{BLACK}Produkują galwanizowane puszki, narzędzia i części.{}{}{BLACK}Produkcja:{}  2t z 8t chemikaliów{}  6t z 8t metalu{}{}Produkcja wzrasta do 8t z 8t, gdy oba surowce są dostarczane w ciągu miesiąca.
 STR_EXTRA_OIL_REFINERY                                                          :{BLACK}W procesie rafinacji produkuje paliwo i chemikalia.{}{}6t z 8t surowców.
 STR_EXTRA_PAPER_MILL                                                            :{BLACK}Przerabia drewno na papier i karton.{}{}{BLACK}Produkcja:{}  4t z 8t drewna{}  2t z 8t gliny{}  2t z 8t chemikaliów{}{}Produkcja wzrasta, gdy różne surowce są dostarczane w ciągu miesiąca.
-STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}Produkuje artykuły plastikowe na użytek przedsiębiorstw i gospodarstw domowych.{}{}6t z 8t surowców.
+STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}Produkuje artykuły plastikowe na użytek przedsiębiorstw i gospodarstw domowych.{}{}Produkcja:{} {STRING} {STRING}
 STR_EXTRA_PLASTICS_PLANT_CHEMICALS_SUBSTR                                       :6 skrzyń na 8,000l dostarczonych chemikaliów{}
 STR_EXTRA_PLASTICS_PLANT_PLANT_FIBRES_SUBSTR                                    :6 skrzyń na 8 beli dostarczonych artykułów plastikowych{}
 STR_EXTRA_RECYCLING_PLANT                                                       :{BLACK}Przerabia surowce wtórne do ponownego wykorzystania w przemyśle.{}{}6t z 8t surowców.
@@ -186,7 +186,7 @@ STR_EXTRA_SAWMILL                                                               
 STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Produkcja ręcznie kutych podków, narzędzi, bramek i innych drobnych metalowych przedmiotów.{}{}5t z 8t surowców.
 STR_EXTRA_STEELMILL                                                             :{BLACK}Produkcja:{}  2t z 8t rudy żelaza{}  2t z 8t węgla{}  4t z 8t złomu{}{}Produkcja wzrasta, gdy różne surowce są dostarczane w ciągu miesiąca.
 STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Produkcja:{}  3t z 8 skrzyń opakowań{}  5t z 8t buraków cukrowych{}{}Produkcja wzrasta do 8t z 8t, gdy oba surowce są dostarczane w ciągu miesiąca.
-STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Produkcja:{}  3 skrzynie z 8 skrzyń opakowań{}  5 skrzyń na 8t wełny{}  5 skrzyń z 8t włókien naturalnych{}{}Produkcja wzrasta, gdy opakowania są dostarczane najpóźniej miesiąc po surowcach.
+STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Produkcja:{}  3 skrzynie z 8 skrzyń opakowań{} {STRING} {STRING} {}Produkcja wzrasta, gdy opakowania są dostarczane w ciągu miesiąca po innych towarach.
 STR_EXTRA_TEXTILE_MILL_WOOL_SUBSTR                                              :5 skrzyń na 8 dostarczonych beli wełny{}
 STR_EXTRA_TEXTILE_MILL_PLANT_FIBRES_SUBSTR                                      :5 skrzyń na 8 dostarczonych beli artykułów plastikowych{}
 
@@ -287,7 +287,7 @@ STR_IND_PORT.d                                                                  
 STR_IND_QUARRY                                                                  :{G=m}Kamieniołomy
 STR_IND_QUARRY.d                                                                :kamieniołomu
 STR_IND_RANCH                                                                   :{G=n}Ranczo
-STR_IND_RANCH.d                                                                 :rancza
+STR_IND_RANCH.d                                                                   :rancza
 STR_IND_RECYCLING_DEPOT                                                         :{G=n}Wysypisko
 STR_IND_RECYCLING_DEPOT.d                                                       :wysypiska
 STR_IND_RECYCLING_PLANT                                                         :{G=f}Przetwórnia odpadów
