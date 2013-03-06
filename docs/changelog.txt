@@ -2,6 +2,37 @@
 FIRS Industry Replacement Set Changelog
 =======================================
 
+
+--------------
+0.10.x Releases
+--------------
+
+*New Features / Changes *
+- Feature: reworked Basic Temperate economy
+- Feature: add Orchard and Piggery industry in Basic Temperate
+- Feature: rework Tropic Basic economy
+- Feature: add General Store and remove Food Market and Hardware Store for Basic economies (graphics by DanMacK)
+- Change: improve map colour for General Store
+- Change: add cargo class 'covered' to Clay cargo
+- Change: make Scrap Metal more visible in station list and payment rate views by changing colour (Supercheese)
+- Change: improve map colour for Glass Works
+
+*Fixes*
+- Fix: bad date range check for Grain Mill during construction
+- Fix: Grain Mill couldn't be built by player at all before 1870, and layout handling on construction for windmill variant was broken
+- Fix: use 'crates' instead of 't' for text about Smithy Forge output cargo
+
+*Translations additions / updates*
+- Change: tweaks to various English strings (Joel A)
+- Change: remove strings from multiple languages to suppress build warnings
+- Fix: Typo in string command of Polish language file.
+- Fix: Italian lang file had wrong lang ID
+- Change: update Dutch translation (Alberth, Hyronymous)
+- Change: update Spanish translation (Terkhen)
+- Change: update Swedish translation (NGC3982)
+- Change: update Polish translation (wojteks86)
+
+
 --------------
 0.9.x Releases
 --------------
