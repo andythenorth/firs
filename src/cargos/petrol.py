@@ -1,6 +1,6 @@
 from firs import Cargo
 
-cargo = Cargo(id = 'fuel_oil',
+cargo = Cargo(id = 'petrol',
               number = '25',
               type_name = 'string(STR_CARGO_NAME_PETROL)',
               unit_name = 'string(STR_CARGO_NAME_PETROL)',
