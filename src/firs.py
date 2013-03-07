@@ -318,15 +318,17 @@ class Industry(object):
     def get_numeric_id(self):
         return global_constants.industry_numeric_ids[self.id]
 
-    def get_graphics_file_path(self, date_variation_num, terrain=''):
+    def get_graphics_file_path(self, date_variation_num=None, terrain='', construction_state_num=None):
          # don't use os.path.join here, this returns a string for use by nml
-        return '"src/graphics/industries/' + self.id + '_' + str(date_variation_num + 1) + terrain + '.png"'
+        if construction_state_num != None:
+            return '"src/graphics/industries/' + self.id + '_construction_' + str(construction_state_num+1) + '.png"'
+        else:
+            return '"src/graphics/industries/' + self.id + '_' + str(date_variation_num + 1) + terrain + '.png"'
 
     def get_switch_name_for_construction_states(self):
-        # industries use the default construction state, or have special case, handled by named switch here
+        # industries use the default construction sprites (shared), or their own handled by automagic spritesets / spritelayouts (graphics in spritesheets with same layout as industry)
         if self.default_industry_properties.override_default_construction_states == True:
-            # for this case, also provide a switch with this name in the industry .pypnml
-            return self.id + '_industry_construction_state_graphics_switch_layouts'
+            return self.id + '_industry_graphics_switch_layouts'
         else:
             return 'spritelayout_default_construction_states'
 
@@ -415,14 +417,17 @@ class Industry(object):
                 enabled_economies.append('economy==' + str(i))
         return ' || '.join(enabled_economies)
 
-    def unpack_sprite_or_spriteset(self, sprite_or_spriteset, terrain_type='', date_variation_num='0'):
+    def unpack_sprite_or_spriteset(self, sprite_or_spriteset, construction_state_num=3, terrain_type='', date_variation_num='0'):
         date_variation_suffix = '_' + str(date_variation_num)
         if terrain_type != '':
             suffix = '_' + terrain_type
         else:
             suffix = ''
         if isinstance(sprite_or_spriteset, Spriteset):
-            return sprite_or_spriteset.id + date_variation_suffix + suffix  + '(' + str(sprite_or_spriteset.animation_rate) + '* animation_frame)'
+            if construction_state_num == 3 or self.default_industry_properties.override_default_construction_states == False:
+                return sprite_or_spriteset.id + date_variation_suffix + suffix  + '(' + str(sprite_or_spriteset.animation_rate) + '* animation_frame)'
+            else:
+                return sprite_or_spriteset.id + '_spriteset_default_construction_state_' + str(construction_state_num) + '(' + str(sprite_or_spriteset.animation_rate) + '* animation_frame)'
         if isinstance(sprite_or_spriteset, Sprite):
             return getattr(sprite_or_spriteset, 'sprite_number' + suffix)
 
