@@ -243,6 +243,7 @@ class IndustryProperties(object):
         self.remove_cost_multiplier = kwargs.get('remove_cost_multiplier', None)
         # not nml properties
         self.enabled = kwargs.get('enabled', False)
+        self.override_default_construction_states = kwargs.get('override_default_construction_states', False)
         self.extra_text_industry = kwargs.get('extra_text_industry', None) # value is string(s) to return for corresponding nml cb, use 'STR_GENERIC_NEWLINE' in default property declaration if no string needed
         # nml properties we want to prevent being set for one reason or another
         if 'conflicting_ind_types' in kwargs:
@@ -322,8 +323,12 @@ class Industry(object):
         return '"src/graphics/industries/' + self.id + '_' + str(date_variation_num + 1) + terrain + '.png"'
 
     def get_switch_name_for_construction_states(self):
-        # !! unfinished. industries use the default construction state, or have special case, handled by named switch here
-        return 'spritelayout_default_construction_states'
+        # industries use the default construction state, or have special case, handled by named switch here
+        if self.default_industry_properties.override_default_construction_states == True:
+            # for this case, also provide a switch with this name in the industry .pypnml
+            return self.id + '_industry_construction_state_graphics_switch_layouts'
+        else:
+            return 'spritelayout_default_construction_states'
 
     def get_date_conditions_for_hide_sprites(self, date_variation_index):
         random_offset = "5 * LOAD_TEMP(0) / 0x10000" # random is in nml at run-time, not compile-time python, so this is a string

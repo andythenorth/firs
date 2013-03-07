@@ -49,6 +49,11 @@ switch(FEAT_INDUSTRYTILES, SELF, fishing_harbour_slope_switch_2, nearby_tile_slo
 	${industry.id}_spritelayout_20;
 }
 
+switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_industry_construction_state_graphics_switch_layouts, construction_state) {
+	0..2: spritelayout_default_construction_states;
+	spritelayout_default_construction_states; // default
+}
+
 ${industry.get_industry_layouts_as_graphic_switches()}
 
 /* *************************************************
