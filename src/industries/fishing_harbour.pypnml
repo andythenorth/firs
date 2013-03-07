@@ -49,7 +49,6 @@ switch(FEAT_INDUSTRYTILES, SELF, fishing_harbour_slope_switch_2, nearby_tile_slo
 	${industry.id}_spritelayout_20;
 }
 
-
 ${industry.get_industry_layouts_as_graphic_switches()}
 
 /* *************************************************
