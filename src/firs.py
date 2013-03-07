@@ -321,6 +321,10 @@ class Industry(object):
          # don't use os.path.join here, this returns a string for use by nml
         return '"src/graphics/industries/' + self.id + '_' + str(date_variation_num + 1) + terrain + '.png"'
 
+    def get_switch_name_for_construction_states(self):
+        # !! unfinished. industries use the default construction state, or have special case, handled by named switch here
+        return 'spritelayout_default_construction_states'
+
     def get_date_conditions_for_hide_sprites(self, date_variation_index):
         random_offset = "5 * LOAD_TEMP(0) / 0x10000" # random is in nml at run-time, not compile-time python, so this is a string
         if len(self.graphics_change_dates) == 0:

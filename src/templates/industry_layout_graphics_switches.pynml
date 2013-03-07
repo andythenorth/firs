@@ -22,7 +22,7 @@ switch(FEAT_INDUSTRYTILES, PARENT, ${industry.id}_industry_graphics_switch_layou
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_industry_construction_state_graphics_switch, construction_state) {
-	0..2: spritelayout_default_construction_states;
+	0..2: ${industry.get_switch_name_for_construction_states()};
 	${industry.id}_industry_graphics_switch_layouts; // default
 }
 
