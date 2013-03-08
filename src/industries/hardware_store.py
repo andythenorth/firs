@@ -36,7 +36,7 @@ industry = Industry(id='hardware_store',
                     remove_cost_multiplier='0',
                     prospect_chance='0.75',
                     name='string(STR_IND_HARDWARE_STORE)',
-                    fund_cost_multiplier='6',
+                    fund_cost_multiplier='15',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
                     )
 
