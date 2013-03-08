@@ -85,7 +85,7 @@ grf {
 }
 
 basecost {
-	PR_BUILD_INDUSTRY: 4;       // Industries are more expensive
-	PR_BUILD_INDUSTRY_RAW : 4;  // Building primary industries is also expensive
-	PR_CLEAR_INDUSTRY : 4;      // Deleting industries must also be expensive
+	PR_BUILD_INDUSTRY: 2;       // Industries are more expensive
+	PR_BUILD_INDUSTRY_RAW : 2;  // Building primary industries is also expensive
+	PR_CLEAR_INDUSTRY : 2;      // Deleting industries must also be expensive
 }
