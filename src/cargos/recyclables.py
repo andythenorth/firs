@@ -20,7 +20,7 @@ cargo = Cargo(id = 'recyclables',
               single_penalty_length = '128',
               capacity_multiplier = '1',
               price_factor = '104.570388794',
-              icon_indices = (2,2))
+              icon_indices = (11, 0))
 
 cargo.economy_variations['BASIC_TEMPERATE']['disabled'] = True
 cargo.economy_variations['BASIC_ARCTIC']['disabled'] = True

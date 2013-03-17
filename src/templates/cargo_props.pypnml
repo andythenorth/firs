@@ -23,7 +23,7 @@ if (${cargo.get_conditional_expressions_for_cargo_climates()}) {
         }
         graphics {
             station_rating: switch_station_rating;
-            <!--!cargoicon_oil;-->
+            cargoicon_${cargo.id};
         }
     }
 }

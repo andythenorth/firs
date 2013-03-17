@@ -20,7 +20,7 @@ cargo = Cargo(id = 'wood',
               single_penalty_length = '255',
               price_factor = '97.3963737488',
               capacity_multiplier = '1',
-              icon_indices = (2,2))
+              icon_indices = (8, 0))
 
 cargo.economy_variations['BASIC_TEMPERATE']['disabled'] = True
 cargo.economy_variations['BASIC_TROPIC']['disabled'] = True

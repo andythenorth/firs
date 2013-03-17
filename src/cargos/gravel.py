@@ -20,7 +20,7 @@ cargo = Cargo(id = 'gravel',
               single_penalty_length = '255',
               price_factor = '74.1233825684',
               capacity_multiplier = '1',
-              icon_indices = (2,2))
+              icon_indices = (5, 1))
 
 cargo.economy_variations['BASIC_TEMPERATE']['disabled'] = True
 cargo.economy_variations['BASIC_ARCTIC']['disabled'] = True

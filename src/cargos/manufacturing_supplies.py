@@ -20,4 +20,4 @@ cargo = Cargo(id = 'manufacturing_supplies',
               single_penalty_length = '60',
               price_factor = '134.506702423',
               capacity_multiplier = '1',
-              icon_indices = (2,2))
+              icon_indices = (7, 1))

@@ -20,5 +20,5 @@ cargo = Cargo(id = 'farm_supplies',
               single_penalty_length = '36',
               price_factor = '128.11088562',
               capacity_multiplier = '1',
-              icon_indices = (2,2))
+              icon_indices = (8, 1))
 

@@ -20,4 +20,4 @@ cargo = Cargo(id = 'livestock',
               single_penalty_length = '22',
               price_factor = '124.073982239',
               capacity_multiplier = '1',
-              icon_indices = (2,2))
+              icon_indices = (4, 0))

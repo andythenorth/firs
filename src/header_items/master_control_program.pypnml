@@ -10,8 +10,8 @@
 #include "generated_pnml/conditions.pnml"
 
 #include "src/header_items/custom_station_ratings.pnml"
-#include "generated_pnml/registered_cargos.pnml"
 #include "src/cargo_graphics.pnml"
+#include "generated_pnml/registered_cargos.pnml"
 
 //disable the default industries
 disable_item(FEAT_INDUSTRIES, 0, 36);

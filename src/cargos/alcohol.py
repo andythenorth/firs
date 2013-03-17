@@ -20,6 +20,6 @@ cargo = Cargo(id = 'alcohol',
               single_penalty_length = '24',
               price_factor = '145.9608078',
               capacity_multiplier = '1',
-              icon_indices = (2,2))
+              icon_indices = (7, 0))
 
 cargo.economy_variations['BASIC_TROPIC']['disabled'] = True

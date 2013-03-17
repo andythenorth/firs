@@ -20,7 +20,7 @@ cargo = Cargo(id = 'milk',
               single_penalty_length = '20',
               capacity_multiplier = '1',
               price_factor = '134.579658508',
-              icon_indices = (2,2))
+              icon_indices = (13, 0))
 
 cargo.economy_variations['BASIC_ARCTIC']['disabled'] = True
 cargo.economy_variations['BASIC_TROPIC']['disabled'] = True
