@@ -21,5 +21,9 @@ if (${cargo.get_conditional_expressions_for_cargo_climates()}) {
             ${cargo.get_property_declaration('price_factor')}
             ${cargo.get_property_declaration('capacity_multiplier')}
         }
+        graphics {
+            station_rating: switch_station_rating;
+            <!--!cargoicon_oil;-->
+        }
     }
 }
