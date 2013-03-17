@@ -19,5 +19,6 @@ cargo = Cargo(id = 'mail',
               penalty_lowerbound = '6',
               single_penalty_length = '24',
               price_factor = '143.869400024',
-              capacity_multiplier = '2')
+              capacity_multiplier = '2',
+              icon_indices = (2,2))
 

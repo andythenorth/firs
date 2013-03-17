@@ -19,6 +19,7 @@ cargo = Cargo(id = 'clay',
               penalty_lowerbound = '30',
               single_penalty_length = '255',
               price_factor = '72.9804039001',
-              capacity_multiplier = '1')
+              capacity_multiplier = '1',
+              icon_indices = (2,2))
 
 cargo.economy_variations['BASIC_TROPIC']['disabled'] = True

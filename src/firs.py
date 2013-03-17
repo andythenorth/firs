@@ -92,9 +92,12 @@ class Cargo(object):
         self.price_factor = kwargs['price_factor']
         self.capacity_multiplier = kwargs['capacity_multiplier']
         self.disabled_climates = kwargs.get('disabled_climates', [])
+        # not nml properties
         self.economy_variations = {}
         for economy in global_constants.economies:
             self.add_economy_variation(economy)
+        # icon indices relate to position of icon in cargo icons spritesheet
+        self.icon_indices = kwargs['icon_indices']
         self.register()
 
     def add_economy_variation(self, economy):

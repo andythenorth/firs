@@ -19,7 +19,8 @@ cargo = Cargo(id = 'building_materials',
               penalty_lowerbound = '12',
               single_penalty_length = '255',
               price_factor = '136.233329773',
-              capacity_multiplier = '1')
+              capacity_multiplier = '1',
+              icon_indices = (2,2))
 
 cargo.economy_variations['BASIC_TEMPERATE']['disabled'] = True
 cargo.economy_variations['BASIC_ARCTIC']['disabled'] = True

@@ -19,7 +19,8 @@ cargo = Cargo(id = 'petrol',
               penalty_lowerbound = '18',
               single_penalty_length = '255',
               capacity_multiplier = '1',
-              price_factor = '126.749038696')
+              price_factor = '126.749038696',
+              icon_indices = (2,2))
 
 cargo.economy_variations['BASIC_TEMPERATE']['disabled'] = True
 

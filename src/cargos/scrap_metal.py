@@ -19,7 +19,8 @@ cargo = Cargo(id = 'scrap_metal',
               penalty_lowerbound = '30',
               single_penalty_length = '255',
               capacity_multiplier = '1',
-              price_factor = '126.846313477')
+              price_factor = '126.846313477',
+              icon_indices = (2,2))
 
 cargo.economy_variations['BASIC_ARCTIC']['disabled'] = True
 cargo.economy_variations['BASIC_TROPIC']['disabled'] = True

@@ -19,7 +19,8 @@ cargo = Cargo(id = 'bauxite',
               penalty_lowerbound = '30',
               single_penalty_length = '255',
               price_factor = '82.5862884521',
-              capacity_multiplier = '1')
+              capacity_multiplier = '1',
+              icon_indices = (2,2))
 
 cargo.economy_variations['BASIC_TEMPERATE']['disabled'] = True
 cargo.economy_variations['BASIC_ARCTIC']['disabled'] = True

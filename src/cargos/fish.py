@@ -19,7 +19,8 @@ cargo = Cargo(id = 'fish',
               penalty_lowerbound = '12',
               single_penalty_length = '30',
               price_factor = '143.869400024',
-              capacity_multiplier = '1')
+              capacity_multiplier = '1',
+              icon_indices = (2,2))
 
 cargo.economy_variations['BASIC_TEMPERATE']['disabled'] = True
 

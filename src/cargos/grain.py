@@ -19,7 +19,8 @@ cargo = Cargo(id = 'grain',
               penalty_lowerbound = '4',
               single_penalty_length = '40',
               price_factor = '116.194725037',
-              capacity_multiplier = '1')
+              capacity_multiplier = '1',
+              icon_indices = (2,2))
 
 cargo.economy_variations['BASIC_TEMPERATE']['disabled'] = True
 cargo.economy_variations['BASIC_TROPIC']['disabled'] = True
