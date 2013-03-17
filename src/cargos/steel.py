@@ -1,5 +1,5 @@
 from firs import Cargo
-
+# 'steel' stands in for generic metal; this ensures easy cargo support
 cargo = Cargo(id = 'steel',
               number = '9',
               type_name = 'string(STR_CARGO_NAME_METAL)',
