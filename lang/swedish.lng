@@ -109,8 +109,8 @@ STR_ERR_LOCATION_NOT_IN_DESERT                                                  
 STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE                                             :kan inte placeras på branta sluttningar.
 STR_ERR_LOCATION_LIMIT_1_PER_TOWN                                               :bara en industri av den här typen är tillåten per stad.
 
-STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}Lastproduktion:{}  2 t per 8 t levererad bauxit{}  2 t per 8 t levererade kemikalier{}  4 t per 8 t levererat metallskrot{}{}Produktionen ökar om två eller flera godstyper levereras inom en månad av varandra.
-STR_EXTRA_BIOREFINERY                                                           :{BLACK}Omvandlar spannmål och socker till bensin och kemikalier.{}{}Producerar 6t per 8t levererade.
+STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}Lastproduktion:{}  2 t per 8 t levererad bauxit{}  2 t per 8,000l levererade kemikalier{}  4 t per 8 t levererat metallskrot{}{}Produktionen ökar om två eller flera godstyper levereras inom en månad av varandra.
+STR_EXTRA_BIOREFINERY                                                           :{BLACK}Lastproduktion:{} 6,000l per 8t levererad spannmål{} 6,000l per 8t levererat socker
 STR_EXTRA_BREWERY                                                               :{BLACK}Varuproduktion:{} 3,000l per 8 lådor levererat produktionsmateriel{} {STRING} {STRING}{}Produktionen ökar om produktionsmateriel levereras inom en månad av andra godstyper.
 STR_EXTRA_BREWERY_GRAIN_SUBSTR                                                  :5,000l per 8t levererat spannmål{}
 STR_EXTRA_BREWERY_FRUIT_SUBSTR                                                  :5,000l per 8t levererad frukt{}
@@ -131,14 +131,18 @@ STR_EXTRA_METAL_FABRICATION_PLANT                                               
 STR_EXTRA_METAL_FOUNDRY                                                         :{BLACK}Producerar pläterade metallföremål som konservburkar, verktyg och husgeråd.{}{}{BLACK}Lastproduktion:{}  2t per 8,000l levererade kemikalier{}  6 lådor per 8t levererad metall{}{}Produktionen ökar om båda godstyperna levereras inom en månad av varandra.
 STR_EXTRA_OIL_REFINERY                                                          :{BLACK}Förädlar råolja till bensin och kemikalier.{}{}Lastproduktion:{}  6,000l per 8,000l levererade
 STR_EXTRA_PAPER_MILL                                                            :{BLACK}Gör timmer till pappersmassa och producerar papper och kartong.{}{}{BLACK}Lastproduktion:{}  4 lådor per 8t levererat timmer{}  2 lådor per 8t levererad lera{}  2 lådor per 8,000l levererade kemikalier{}{}Produktionen ökar om två eller flera godstyper levereras inom en månad av varandra.
-STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}Producerar plastföremål som förpackningar och husgeråd.{}{}Lastproduktion:{}  6 lådor per 8 levererade balar med växtfibrer{}  6 lådor per 8,000l levererade kemikalier
+STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}Producerar plastföremål som förpackningar och husgeråd.{}{}Lastproduktion:{} {STRING} {STRING}
+STR_EXTRA_PLASTICS_PLANT_CHEMICALS_SUBSTR                                       :6 lådor per 8,000l levererade kemikalier{}
+STR_EXTRA_PLASTICS_PLANT_PLANT_FIBRES_SUBSTR                                    :6 lådor per 8 levererade balar med växtfibrer{}
 STR_EXTRA_RECYCLING_PLANT                                                       :{BLACK}Återvinner returmaterial.{}{}Lastproduktion:{}  6t per 8t levererat returmaterial
 STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}Produktionen är proportionell mot stadens befolkningstal.
 STR_EXTRA_SAWMILL                                                               :{BLACK}Sågar upp timmer.{}{}Lastproduktion:{}  6t per 8t levererat timmer
-STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Producerar metallföremål som redskap, plogar, grindar, skyfflar och hästskor.{}{}Lastproduktion:{}  8t per 8t levererad metall
+STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Producerar metallföremål som redskap, plogar, grindar, skyfflar och hästskor.{}{}Lastproduktion:{} 8 lådor per 8t levererad metall
 STR_EXTRA_STEELMILL                                                             :{BLACK}Lastproduktion:{}  2t per 8t levererad järnmalm{}  2t per 8t levererat kol{}  4t per 8t levererat metallskrot{}{}Produktionen ökar om två eller flera godstyper levereras inom en månad av varandra.
 STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Lastproduktion:{}  3t per 8 lådor levererad produktionsmateriel{}  5t per 8t levererat socker{}{}Produktionen ökar om båda godstyperna levereras inom en månad av varandra.
-STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Lastproduktion:{}  3 lådor per 8 lådor levererad produktionsmateriel{}  5 lådor per 8 levererade balar med ull{}  5 lådor per 8t levererade växtfibrer{}{}Produktionen ökar om produktionsmateriel levereras inom en månad av andra godstyper.
+STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Lastproduktion:{}  3 lådor per 8 lådor levererad produktionsmateriel{} {STRING} {STRING}{}Produktionen ökar om produktionsmateriel levereras inom en månad av andra godstyper.
+STR_EXTRA_TEXTILE_MILL_WOOL_SUBSTR                                              :5 lådor per 8 levererade balar med ull{}
+STR_EXTRA_TEXTILE_MILL_PLANT_FIBRES_SUBSTR                                      :5 lådor per 8 levererade balar med växtfibrer{}
 
 STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ FELSÖKNING ------------{}Produktion denna månad:{}Last 1: {WHITE}{COMMA}{BLACK}{}Last 2: {WHITE}{COMMA}{BLACK}{}Dagar sedan senaste leverans: {WHITE}{COMMA}{BLACK}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Maximal produktion uppnådd
@@ -153,6 +157,7 @@ STR_GENERIC_NEWLINE                                                             
 STR_FUND_BASIC_FARM                                                             :{}{BLACK}Placering: {YELLOW}Kan inte byggas på snö eller i öknar.
 STR_FUND_MIXED_FARM                                                             :{}{BLACK}Placering: {YELLOW}Kan inte byggas på snö eller i öknar.
 STR_FUND_ARABLE_FARM                                                            :{}{BLACK}Placering: {YELLOW}Kan inte byggas på snö eller i öknar.
+STR_FUND_ORCHARD_PIGGERY                                                        :{}{BLACK}Placering: {YELLOW}Kan inte byggas på snö eller i öknar.
 STR_FUND_SUGAR_PLANTATION                                                       :{}{BLACK}Placering: {YELLOW}Kan inte byggas på snö eller i öknar.
 STR_FUND_FOREST                                                                 :{}{BLACK}Placering: {YELLOW}Kan inte byggas i öknar.
 STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}Placering: {YELLOW}Kan inte byggas på snö.
@@ -171,6 +176,7 @@ STR_IND_BASICFARM                                                               
 STR_IND_BAUXITE_MINE                                                            :Bauxitgruva
 STR_IND_BIOREFINERY                                                             :Bioraffinaderi
 STR_IND_BREWERY                                                                 :Bryggeri
+STR_IND_BREWERY_CIDER_MILL                                                      :Musteri
 STR_IND_BRICK_WORKS                                                             :Tegelbruk
 STR_IND_BUILDERS_YARD                                                           :Byggföretag
 STR_IND_CEMENT_PLANT                                                            :Cementfabrik
@@ -181,8 +187,9 @@ STR_IND_DREDGING_SITE                                                           
 STR_IND_FERTILISER_PLANT                                                        :Gödningsfabrik
 STR_IND_FISHING_GROUND                                                          :Fångstområde
 STR_IND_FISHING_HARBOUR                                                         :Fiskehamn
-STR_IND_FOOD_MARKET                                                             :Mataffär
+STR_IND_FOOD_MARKET                                                             :Matbutik
 STR_IND_FURNITURE_FACTORY                                                       :Möbelfabrik
+STR_IND_GENERAL_STORE                                                           :Affär
 STR_IND_GLASS_WORKS                                                             :Glasbruk
 STR_IND_GRAIN_MILL                                                              :Kvarn
 STR_IND_HARDWARE_STORE                                                          :Byggvaruhus
@@ -195,10 +202,12 @@ STR_IND_MACHINE_SHOP                                                            
 STR_IND_METAL_FABRICATION_PLANT                                                 :Plåtverkstad
 STR_IND_METAL_FOUNDRY                                                           :Metallgjuteri
 STR_IND_MIXEDFARM                                                               :Blandjordbruk
+STR_IND_ORCHARD_PIGGERY                                                         :Fruktträdgård och svinfarm
 STR_IND_PETROLPUMP                                                              :Bensinstation
 STR_IND_PLASTICS_PLANT                                                          :Plastfabrik
 STR_IND_PORT                                                                    :Handelshamn
 STR_IND_QUARRY                                                                  :Grustäkt
+STR_IND_RANCH                                                                   :Ranch
 STR_IND_RECYCLING_DEPOT                                                         :Återvinningsstation
 STR_IND_RECYCLING_PLANT                                                         :Återvinningsanläggning
 STR_IND_SHEEPFARM                                                               :Fårfarm
@@ -208,5 +217,4 @@ STR_IND_SUGAR_PLANTATION                                                        
 STR_IND_SUGAR_REFINERY                                                          :Sockerbruk
 STR_IND_SUPERMARKET                                                             :Stormarknad
 STR_IND_TEXTILE_MILL                                                            :Textilfabrik
-
 
