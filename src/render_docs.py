@@ -54,6 +54,7 @@ class DocHelper(object):
         string_id = utils.unwrap_nml_string_declaration(getattr(industry.default_industry_properties, 'name'))
         return base_lang_strings.get(string_id, 'NONE')
 
+
 def render_docs(doc_list, file_type):
     for doc_name in doc_list:
         template = docs_templates[doc_name + '.pt'] # .pt is the conventional extension for chameleon page templates
@@ -64,6 +65,7 @@ def render_docs(doc_list, file_type):
         doc_file = codecs.open(os.path.join(docs_output_path, doc_name + '.' + file_type), 'w','utf8')
         doc_file.write(doc)
         doc_file.close()
+
 
 economy_schemas = {}
 for economy in global_constants.economies:
