@@ -46,5 +46,9 @@ pnml.write(templated_pnml)
 pnml.close()
 
 for industry in industries.registered_industries:
-    industry.render_and_save_pnml()
+    pnml = industry.render_pnml()
+    # save the results of templating
+    pnml_file = codecs.open(os.path.join(pnml_output_path, industry.id + '.pnml'), 'w','utf8')
+    pnml_file.write(pnml)
+    pnml_file.close()
 
