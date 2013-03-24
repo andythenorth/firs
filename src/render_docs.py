@@ -37,7 +37,8 @@ repo_vars = utils.get_repo_vars(sys)
 import firs
 from cargos import registered_cargos
 from industries import registered_industries
-# default sort for docs is by vehicle intro date
+# default sort for docs is by id
+registered_cargos = sorted(registered_cargos, key=lambda registered_cargos: registered_cargos.id)
 registered_industries = sorted(registered_industries, key=lambda registered_industries: registered_industries.id)
 
 

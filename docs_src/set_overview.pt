@@ -25,22 +25,38 @@
         </ul>
         <p class="alert alert-info">Just one little problem: it's not finished yet ;)</p>
         <hr />
+        <h4>Industries</h4>
         <table class="table table-striped">
             <thead>
                 <tr>
                     <th>Industry</th>
-                    <!--!<th class="number">Intro Date</th>
-                    <th>Extra Info</th>-->
                 </tr>
             </thead>
             <tbody>
-                <tal:build_vehicles_list repeat="industry registered_industries">
+                <tal:industries repeat="industry registered_industries">
                     <tr>
                         <td>${industry.id}</td>
                     </tr>
-                </tal:build_vehicles_list>
+                </tal:industries>
             </tbody>
         </table>
+        <hr />
+        <h4>Cargos</h4>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Industry</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tal:cargos repeat="cargo registered_cargos">
+                    <tr>
+                        <td>${cargo.id}</td>
+                    </tr>
+                </tal:cargos>
+            </tbody>
+        </table>
+
     </div>
     <div style="text-align:center; color:#999; padding:5px; background-color:#eee; border-top:solid 1px #ddd; box-shadow: inset 0px 1px 1px #ddd">FIRS, with thanks to all who helped</div>
 </body>
