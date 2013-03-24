@@ -15,6 +15,7 @@ docs_output_path = os.path.join(currentdir, 'docs')
 src_path = os.path.join(currentdir, 'src')
 
 import global_constants as global_constants
+import utils as utils
 
 from chameleon import PageTemplateLoader # chameleon used in most template cases
 # setup the places we look for templates
@@ -26,19 +27,11 @@ docs_templates = PageTemplateLoader(os.path.join(src_path, 'docs_templates'), fo
 from cargos import registered_cargos
 from industries import registered_industries
 
-def unescape_chameleon_output(escaped_nml):
-    # chameleon html-escapes some characters; that's sane and secure for chameleon's intended web use, but not wanted for nml
-    # there is probably a standard module for unescaping html entities, but this will do for now
-    escaped_nml = '>'.join(escaped_nml.split('&gt;'))
-    escaped_nml = '<'.join(escaped_nml.split('&lt;'))
-    escaped_nml = '&'.join(escaped_nml.split('&amp;'))
-    return escaped_nml
-
 def render_and_save_header_items():
     header_items = ['checks','conditions','header','master_control_program','parameters']
     for header_item in header_items:
         template = header_item_templates[header_item + '.pypnml']
-        templated_pnml = unescape_chameleon_output(template(registered_industries=registered_industries, global_constants=global_constants))
+        templated_pnml = utils.unescape_chameleon_output(template(registered_industries=registered_industries, global_constants=global_constants))
         # save the results of templating
         pnml = codecs.open(os.path.join(pnml_output_path, header_item + '.pnml'), 'w','utf8')
         pnml.write(templated_pnml)
@@ -46,7 +39,7 @@ def render_and_save_header_items():
 
 def render_and_save_registered_cargos():
     template = templates['registered_cargos.pypnml']
-    templated_pnml = unescape_chameleon_output(template(registered_cargos=registered_cargos, global_constants=global_constants))
+    templated_pnml = utils.unescape_chameleon_output(template(registered_cargos=registered_cargos, global_constants=global_constants))
     # save the results of templating
     pnml = codecs.open(os.path.join(pnml_output_path, 'registered_cargos.pnml'), 'w','utf8')
     pnml.write(templated_pnml)
@@ -123,7 +116,7 @@ class Cargo(object):
 
     def render_pnml(self):
         cargo_template = templates['cargo_props.pypnml']
-        templated_pnml = unescape_chameleon_output(cargo_template(cargo=self))
+        templated_pnml = utils.unescape_chameleon_output(cargo_template(cargo=self))
         return templated_pnml
 
 class Tile(object):
@@ -348,22 +341,22 @@ class Industry(object):
 
     def get_spritesets(self):
         template = templates['spritesets.pynml']
-        return unescape_chameleon_output(template(industry=self))
+        return utils.unescape_chameleon_output(template(industry=self))
 
     def get_spritelayouts(self):
         template = templates['spritelayouts.pynml']
-        return unescape_chameleon_output(template(industry=self))
+        return utils.unescape_chameleon_output(template(industry=self))
 
     def get_industry_layouts_as_tilelayouts(self):
         template = templates['industry_layout_tilelayouts.pynml']
-        return unescape_chameleon_output(template(industry=self))
+        return utils.unescape_chameleon_output(template(industry=self))
 
     def get_industry_layouts_as_property(self):
         # supports auto-magic layouts from layout objects, or layouts simply declared as a string for nml
         # or no layout declaration if over-riding a default industry
         if self.default_industry_properties.layouts == 'AUTO':
             template = templates['industry_layout_property.pynml'] # automagic case
-            return 'layouts: ' + unescape_chameleon_output(template(industry=self))
+            return 'layouts: ' + utils.unescape_chameleon_output(template(industry=self))
         elif self.default_industry_properties.layouts != None:
             return 'layouts: ' + self.default_industry_properties.layouts + ';' # simple case
         else:
@@ -371,23 +364,23 @@ class Industry(object):
 
     def get_industry_layouts_as_graphic_switches(self):
         template = templates['industry_layout_graphics_switches.pynml']
-        return unescape_chameleon_output(template(industry=self))
+        return utils.unescape_chameleon_output(template(industry=self))
 
     def get_fence_switches(self):
         template = templates['fence_switches.pynml']
-        return unescape_chameleon_output(template(industry=self))
+        return utils.unescape_chameleon_output(template(industry=self))
 
     def get_primary_supplies_stuff(self):
         template = templates['primary_supplies_stuff.pynml']
-        return unescape_chameleon_output(template(industry=self))
+        return utils.unescape_chameleon_output(template(industry=self))
 
     def get_industry_properties(self):
         template = templates['industry_properties.pynml']
-        return unescape_chameleon_output(template(industry=self, global_constants=global_constants))
+        return utils.unescape_chameleon_output(template(industry=self, global_constants=global_constants))
 
     def get_extra_text_secondary(self):
         template = templates['extra_text_secondary.pynml']
-        return unescape_chameleon_output(template(industry=self, global_constants=global_constants))
+        return utils.unescape_chameleon_output(template(industry=self, global_constants=global_constants))
 
     def get_property(self, property_name, economy):
         # does magic to get the property from the defaults if not set
@@ -436,7 +429,7 @@ class Industry(object):
 
     def render_and_save_pnml(self):
         industry_template = industry_templates[self.id + '.pypnml']
-        templated_pnml = unescape_chameleon_output(industry_template(industry=self, global_constants=global_constants))
+        templated_pnml = utils.unescape_chameleon_output(industry_template(industry=self, global_constants=global_constants))
 
         # save the results of templating
         pnml = codecs.open(os.path.join(pnml_output_path, self.id + '.pnml'), 'w','utf8')
