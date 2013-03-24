@@ -24,7 +24,7 @@ def parse_base_lang():
 
     import codecs # used for writing files - more unicode friendly than standard open() module
 
-    base_lang_file = codecs.open(os.path.join('lang_src', 'english.pylng'), 'r','utf8')
+    base_lang_file = codecs.open(os.path.join('lang', 'english.lng'), 'r','utf8')
     text = base_lang_file.readlines()
     # this is fragile, playing one line python is silly :)
     strings = dict((line.split(':',1)[0].strip(), line.split(':',1)[1].strip()) for line in text if ':' in line)

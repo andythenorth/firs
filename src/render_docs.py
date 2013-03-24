@@ -34,6 +34,13 @@ import utils as utils
 # get args passed by makefile
 repo_vars = utils.get_repo_vars(sys)
 
+# get the strings from base lang file so they can be used in docs
+base_lang_strings = utils.parse_base_lang()
+
+metadata = {}
+metadata['dev_thread_url'] = 'http://www.tt-forums.net/viewtopic.php?t=41607'
+metadata['repo_url'] = 'http://dev.openttdcoop.org/projects/firs/'
+
 import firs
 from cargos import registered_cargos
 from industries import registered_industries
@@ -46,7 +53,8 @@ def render_docs(doc_list, file_type):
     for doc_name in doc_list:
         template = docs_templates[doc_name + '.pt'] # .pt is the conventional extension for chameleon page templates
         doc = template(registered_cargos=registered_cargos, registered_industries=registered_industries,
-                              economy_schemas=economy_schemas, global_constants=global_constants, repo_vars=repo_vars)
+                              economy_schemas=economy_schemas, global_constants=global_constants, repo_vars=repo_vars,
+                              metadata=metadata)
         # save the results of templating
         doc_file = codecs.open(os.path.join(docs_output_path, doc_name + '.' + file_type), 'w','utf8')
         doc_file.write(doc)

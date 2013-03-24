@@ -10,8 +10,8 @@
     <div class="navbar navbar-inverse navbar-static-top" style="border-bottom:3px solid #64ace0; box-shadow: 0px 1px 2px #333">
         <div class="navbar-inner">
             <ul class="nav pull-right">
-                <li><a href="<!--!{metadata['repo_url']}-->"><i class="icon-gift icon-white"></i> Source Repository</a></li>
-                <li><a href="<!--!{metadata['dev_thread_url']}-->"><i class="icon-comment icon-white"></i> Discuss at TT-Forums.net</a></li>
+                <li><a href="${metadata['repo_url']}"><i class="icon-gift icon-white"></i> Source Repository</a></li>
+                <li><a href="${metadata['dev_thread_url']}"><i class="icon-comment icon-white"></i> Discuss at TT-Forums.net</a></li>
             </ul>
         </div>
     </div>
