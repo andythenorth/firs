@@ -87,8 +87,8 @@ FIRS Industry Replacement Set Changelog
 - Change: adjust supply requirements for industries using FMSP to 14t and 56t
 
 *Fixes*
-- Fix: wrong produced cargos at Iron Ore Mine and Coal Mine 
-- Fix: prevent flickering graphics at Fishing Harbour 
+- Fix: wrong produced cargos at Iron Ore Mine and Coal Mine
+- Fix: prevent flickering graphics at Fishing Harbour
 - Fix: sprites out of place at Cement Works
 
 *Translations additions / updates*
@@ -126,9 +126,9 @@ FIRS Industry Replacement Set Changelog
 
 *New Features*
 - Reworked supplies mechanic: deliver supplies regularly for temporary production boost
-- Economies, selected by parameter: 
-	- standard FIRS economy (31 cargos, 50 industries) 
-	- a basic economy to suit each climate, designed by DanMacK 
+- Economies, selected by parameter:
+	- standard FIRS economy (31 cargos, 50 industries)
+	- a basic economy to suit each climate, designed by DanMacK
 		- Temperate Basic (18 cargos, 19 industries)
 		- Arctic Basic (17 cargos, 19 industries)
 		- Tropic Basic (18 cargos, 21 industries)
@@ -169,7 +169,7 @@ FIRS Industry Replacement Set Changelog
 - Palette wrong for Quarry
 - Bad company colour pixels in Fishing Harbour
 - Hotels were too cheap to build
-- Hotel tile didn't accept passengers 
+- Hotel tile didn't accept passengers
 - Removed STR_EXTRA_FERTILIZER_PLANT from all translations that still used {WEIGHT_SHORT}
 - Missing 'chemicals' in Fertiliser Plant extra text string (alberth)
 - [Makefile] Adopt NML version check to NML's new version output
@@ -194,7 +194,7 @@ FIRS Industry Replacement Set Changelog
 
 *Fixes*
 - added missing space in fund menu 'Available from' text (OliTTD)
-- remove shape checks at Quarry and Clay Pit, thereby enabling terraforming 
+- remove shape checks at Quarry and Clay Pit, thereby enabling terraforming
 	- increases chance that these industries appear on steep maps
 - allow Hotels to build near town instead of forcing to build in town (hotels weren't built often)
 - 1-tile industry spacing buffer for Sawmill didn't have cb enabled
@@ -225,8 +225,8 @@ FIRS Industry Replacement Set Changelog
 - don't need to use production cb for town industries (no more 'cargo waiting to be processed')
 	- affects Builders Yard, Food Market, Hardware Store, Hotel and Petrol Pump
 - only one Recycling Depot per town (otherwise population-dependent production is wrong)
-- intro date for Recycling Depot was wrong 
-- adjust various checks for steep slopes when building industry, some fixed, some have been removed 
+- intro date for Recycling Depot was wrong
+- adjust various checks for steep slopes when building industry, some fixed, some have been removed
 
 *Changes*
 - improved Cement Plant kiln animation
@@ -270,7 +270,7 @@ Minimum compatible version bumped to r2734 (will break compatibility with older 
 - Italian (Snail)
 - French (OliTTD)
 - Polish (Radmir)
-- Spanish (Terkhen) 
+- Spanish (Terkhen)
 
 
 *0.7.2*
@@ -306,15 +306,15 @@ Minimum compatible version bumped to r2734 (will break compatibility with older 
 
 *Translations additions / updates*
 - German (planetmaker)
-- Russian (akasoft) 
+- Russian (akasoft)
 - Polish (Radmir)
 
 *0.7.0*
 - release
 
 *0.7.0-beta1*
-- first beta release 
-- intended for translators to update translations 
+- first beta release
+- intended for translators to update translations
 - intended to find bugs prior to 0.7.0 release
 
 FIRS 0.7 is *not* savegame compatible with any previous release of FIRS.
@@ -394,7 +394,7 @@ Several hundred changes since FIRS 0.6.4
 - Builders Yard had special flag set twice
 - Builders Yard construction probability was wrong
 - Lime Kiln construction probability was wrong
-- Store construction probability was wrong 
+- Store construction probability was wrong
 - Flickering graphics issue solved for Fishing Harbour
 - Cargo slot 1E left empty for NARS2 regearing compatibility
 - Small amounts of delivered cargo could be 'lost' at secondary industries
@@ -425,8 +425,8 @@ Several hundred changes since FIRS 0.6.4
 - Add GPL header to all industry files.
 
 *Additional Compatibility checks*
-- FIRS 0.7 will report requirement for OTTD 1.2.0 or r22780 or later 
-- Set FIRS 0.7 as minimum compatible version to prevent breaking savegames using older FIRS  
+- FIRS 0.7 will report requirement for OTTD 1.2.0 or r22780 or later
+- Set FIRS 0.7 as minimum compatible version to prevent breaking savegames using older FIRS
 
 --------------
 0.6.x Releases
@@ -446,9 +446,9 @@ Several hundred changes since FIRS 0.6.4
 - Fix Fishing Grounds closing + production (will never change production, never close; does not use FIRS parameters)
 - Fix unintended change to base costs for 'stuff with town' and 'fund town' (reset to game defaults)
 - Builders Yard can build on steep slopes
-- Fix disasters for Dairy Farm (removed unintended explosion disaster)     
+- Fix disasters for Dairy Farm (removed unintended explosion disaster)
 - Fix disasters for Biorefinery (use airplane disaster instead of helicopter)
-- Internal improvements (suppress some non-useful build errors) 
+- Internal improvements (suppress some non-useful build errors)
 - Internal work to restore Recycling Plant (but not available in game for 0.6.3)
 
 
@@ -457,7 +457,7 @@ Several hundred changes since FIRS 0.6.4
 - Improved appearance of Aluminium Plant (additional layouts, better graphics)
 - Improved appearance of Plastics Plant (uses company colours)
 - Improved appearance of Brickworks (additional layouts, uses more company colours)
-- Improved appearance of Lime Kiln (additional layouts, better graphics, 
+- Improved appearance of Lime Kiln (additional layouts, better graphics,
 - Updated translations for Dutch, Serbian, Spanish (Alberth, etran, Terkhen)
 - Windmill graphics for Grain Mill (work in progress, DanMacK)
 - Sawmills will try to locate close to Forests (with random chance of success) - helps link an industry chain in  games played before fast vehicles are available (Iron Works and Fishing Harbour already do this)
@@ -469,7 +469,7 @@ Several hundred changes since FIRS 0.6.4
 - Multiple internal improvements and code changes with no effect on gameplay
 
 Between releases:
-- Translators can use a script that indicates what's changed in language files. 
+- Translators can use a script that indicates what's changed in language files.
 - Added a FIRS page to OpenTTD wiki http://wiki.openttd.org/FIRS
 
 *0.6.1*  Changes the following:
@@ -478,7 +478,7 @@ Between releases:
 - Added cargo icons for Alcohol, Clay, Sugar Beet, Building Materials (DanMacK)
 - Improved animation cycle for smoke where used
 - Map colour for Iron Works improved
-- Iron Works was incorrectly showing intro date in fund menu  
+- Iron Works was incorrectly showing intro date in fund menu
 - Improve position of Dredging Site sprites
 - Dredging Site shows intro date in fund menu
 - Fix numerous industries that weren't using placement checks correctly
@@ -496,14 +496,14 @@ Over 150 changes since FIRS 0.5.5
 *New Industries*
 - Dredging Site
 - Smithy Forge
-- Iron Works 
+- Iron Works
 
 *Removed Industries*
 - Forge
 
 *New / Changed Cargos*
 - Alcohol cargo added (cargo label: BEER) - produced by Brewery, Sugar Refinery (Tropic only) - accepted by Store
-- Cargo classes changed for Wool from Piece to Piece + Covered (to match ECS spec) 
+- Cargo classes changed for Wool from Piece to Piece + Covered (to match ECS spec)
 - Cargo classes changed for Goods from Piece + Express to Express (to match default TTD)
 
 *New Features*
@@ -518,26 +518,25 @@ Over 150 changes since FIRS 0.5.5
 - Game will try and locate Fishing Harbours and Fishing Grounds near each other
 - Graphics for Smithy Forge (Yatta / DanMacK)
 - Remove large brick building from Sugar Refinery for better appearance
-- Furniture Factory graphics now feature lumber and crates 
+- Furniture Factory graphics now feature lumber and crates
 - Cement plant has animation for rotating kiln (not very good, needs improving)
 - Brewery uses company colour for flag
 - Cargo colours improved (used in cargo payment rate graph, and in industry chain view)
 
 *Fixes*
-- Secondary industries were unexpectedly closing even when supplied with cargo (mistake with industry registers)  
-- Deliveries of Engineering Supplies / Farm Supplies now reported correctly in industry windows  
+- Secondary industries were unexpectedly closing even when supplied with cargo (mistake with industry registers)
+- Deliveries of Engineering Supplies / Farm Supplies now reported correctly in industry windows
 - Mixed Farm now creates fields when built
-- Boring minor error with Petrol Pump ground sprite  
+- Boring minor error with Petrol Pump ground sprite
 - Minor errors with Biorefinery tiles
 - Flashing red pixel in Lumber Yard
 - Boring minor error with Dairy ground sprite
 - Changed callback handling to be more explicit in production code (removes one known error now, prevents future errors)
-- Update attribution of graphics 
+- Update attribution of graphics
 
 *Translations*
 - Some translations update
 - German language now uses genders
-
 
 *Documentation*
 - Readme now explains what causes primary and secondary industry to close (if closure is enabled)
@@ -545,13 +544,12 @@ Over 150 changes since FIRS 0.5.5
 *Additional Compatibility checks*
 - Experts Hard Industries NewGRF will be reported as incompatible
 - Citybuilder NewGRFS will be reported as incompatible
-- FIRS 0.6 will report requirement for OTTD 1.1.x or r21208 or later 
-- Set FIRS 0.6 as minimum compatible version to prevent breaking savegames using older FIRS  
+- FIRS 0.6 will report requirement for OTTD 1.1.x or r21208 or later
+- Set FIRS 0.6 as minimum compatible version to prevent breaking savegames using older FIRS
 
 --------------
 0.5.x Releases
 --------------
-
 
 *0.5.5*  Changes the following:
 - Fixed mistake where secondary industries with two output cargos would produce even with no input cargo
@@ -581,9 +579,7 @@ Over 150 changes since FIRS 0.5.5
 
 *Important*
 The grfID has changed in FIRS 0.5.  It is *not* savegame compatible with any previous release of FIRS.
-
 *What's new in 0.5?*
-
 Over 120 changes since FIRS 0.4
 
 *New Industries*
@@ -600,7 +596,7 @@ Over 120 changes since FIRS 0.4
 
 *Removed Industries*
 - Water Plant and Water Tower
-- Windmill 
+- Windmill
 - Supermarket
 - Retail Market
 - Wholesale Market
@@ -627,12 +623,11 @@ Over 120 changes since FIRS 0.4
 - General Store renamed to Store
 - Fishing Grounds production lower to better match vehicles
 - Improved minimap colours for various industries
-- Bug fixed with Lumber Yard production ratios 
+- Bug fixed with Lumber Yard production ratios
 - Various industry window texts fixed
 
 *Translations*
 - Most translations updated
-
 
 -----------
 0.4 Release
@@ -708,7 +703,6 @@ Over 80 changes since FIRS 0.2
 - Polish
 
 
-
 -----------
 0.2 Release
 -----------
@@ -731,7 +725,7 @@ Anti-clustering for most secondary industries.  This prevents secondary industri
 
 *Clustering only available in OpenTTD nightly r19902 or newer.  Will fail gracefully in older versions.
 
-Tweaked numerous production levels.  
+Tweaked numerous production levels.
 - Farms now have much lower production.  Use feeder services or one large station to cover multiple farms.
 - Oil wells have much higher production.  Oil was not widely available enough on the map.  More industries now use chemicals, so the oil cargo chain is a little more important in gameplay.
 
@@ -753,7 +747,7 @@ Fruit and Vegetables cargo had the wrong cargo classes defined.  Now fixed.
 
 Changes to industry colours:
 - more industries now use industry colours
-- some industry colours are now prevented from appearing because they just suck 
+- some industry colours are now prevented from appearing because they just suck
 
 Completely revised graphics and layouts for:
 - Fertiliser Plant

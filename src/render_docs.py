@@ -29,19 +29,24 @@ repo_vars = utils.get_repo_vars(sys)
 from cargos import registered_cargos
 from industries import registered_industries
 
-template = docs_templates['test_docs.pytxt']
 economy_schemas = {}
 for economy in global_constants.economies:
     enabled_cargos = [cargo for cargo in registered_cargos if not cargo.economy_variations[economy].get('disabled')]
     enabled_industries = [industry for industry in registered_industries if industry.economy_variations[economy].enabled]
     economy_schemas[economy] = {'enabled_cargos':enabled_cargos, 'enabled_industries':enabled_industries}
 
+for doc_name in ['changelog']:
+    template = docs_templates[doc_name + '.pt']
+    doc = template(registered_cargos=registered_cargos, registered_industries=registered_industries,
+                          economy_schemas=economy_schemas, global_constants=global_constants, repo_vars=repo_vars)
+    doc_file = codecs.open(os.path.join(docs_output_path, doc_name + '.txt'), 'w','utf8')
+    doc_file.write(doc)
+    doc_file.close()
+
+template = docs_templates['test_docs.pytxt']
 templated_docs = template(registered_cargos=registered_cargos, registered_industries=registered_industries,
                           economy_schemas=economy_schemas, global_constants=global_constants)
 # save the results of templating
 docs = codecs.open(os.path.join(docs_output_path, 'test_docs.txt'), 'w','utf8')
 docs.write(templated_docs)
 docs.close()
-
-
-print repo_vars
