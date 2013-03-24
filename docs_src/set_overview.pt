@@ -35,19 +35,17 @@
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th>Ship Name</th>
-                    <th class="number">Intro Date</th>
-                    <th>Extra Info</th>
+                    <th>Industry</th>
+                    <!--!<th class="number">Intro Date</th>
+                    <th>Extra Info</th>-->
                 </tr>
             </thead>
             <tbody>
-                <!--!<tal:build_vehicles_list repeat="vehicle vehicles">
+                <tal:build_vehicles_list repeat="industry registered_industries">
                     <tr>
-                        <td>${vehicle.get_name_substr()} ${base_lang_strings[vehicle.get_str_name_suffix()]}</td>
-                        <td class="number">${vehicle.intro_date}</td>
-                        <td>${base_lang_strings[vehicle.get_str_type_info()]}</td>
+                        <td>${industry.id}</td>
                     </tr>
-                </tal:build_vehicles_list>-->
+                </tal:build_vehicles_list>
             </tbody>
         </table>
     </div>

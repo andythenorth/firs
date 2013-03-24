@@ -34,6 +34,7 @@ import utils as utils
 # get args passed by makefile
 repo_vars = utils.get_repo_vars(sys)
 
+import firs
 from cargos import registered_cargos
 from industries import registered_industries
 
