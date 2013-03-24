@@ -9,19 +9,12 @@
 # Documentation targets
 ################################################################
 
-%.txt: %.ptxt md5
-	$(_E) "[DOC] $@"
-	$(_V) cat $< \
-		| sed -e "s/$(REPLACE_TITLE)/$(REPO_TITLE)/" \
-		| sed -e "s/$(REPLACE_GRFID)/$(GRF_ID)/" \
-		| sed -e "s/$(REPLACE_REVISION)/$(REPO_REVISION)/" \
-		| sed -e "s/$(REPLACE_FILENAME)/$(OUTPUT_FILENAME)/" \
-		| sed -e "s/$(REPLACE_MD5SUM)/$(shell cat $(MD5_FILENAME))/" \
-		> $@
-	$(_V) [ -z "$(UNIX2DOS)" ] || $(UNIX2DOS) $(UNIX2DOS_FLAGS) $@
+doc: renderdocspy
+	#$(_V) $(CC) -D REPO_REVISION=$(REPO_REVISION) $(CC_FLAGS) $(MAIN_SRC_FILE) > $(NML_FILE)
 
-doc: $(DOC_FILES)
+renderdocspy:
+	#python src/render_docs.py '${REPO_TITLE}' '${REPO_REVISION}'
 
 clean::
-	$(_E) "[CLEAN DOC]"
-	$(_V) -for i in $(patsubst %.txt,%,$(DOC_FILES)); do [ -f $$i.ptxt ] && [ -f $$.txt ] && rm -rf $$i.txt || true; done
+	$(_E) "[CLEAN DOCS]"
+	$(_V)-rm -r docs

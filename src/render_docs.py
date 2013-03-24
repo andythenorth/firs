@@ -9,20 +9,28 @@
 print "[PYTHON] render docs"
 
 import codecs # used for writing files - more unicode friendly than standard open() module
-import shutil
 
+import shutil
 import sys
 import os.path
 currentdir = os.curdir
-docs_output_path = os.path.join(currentdir, 'docs')
 src_path = os.path.join(currentdir, 'src')
 
-import global_constants as global_constants
-import utils as utils
+docs_output_path = os.path.join(currentdir, 'docs')
+if os.path.exists(docs_output_path):
+    os.rmdir(docs_output_path)
+os.mkdir(docs_output_path)
+
+static_dir_src = os.path.join(currentdir, 'docs_src', 'static')
+static_dir_dst = os.path.join(docs_output_path,'static')
+shutil.copytree(static_dir_src, static_dir_dst)
 
 from chameleon import PageTemplateLoader # chameleon used in most template cases
 # setup the places we look for templates
 docs_templates = PageTemplateLoader(os.path.join(currentdir, 'docs_src'), format='text')
+
+import global_constants as global_constants
+import utils as utils
 
 # get args passed by makefile
 repo_vars = utils.get_repo_vars(sys)
@@ -45,11 +53,6 @@ for economy in global_constants.economies:
     enabled_cargos = [cargo for cargo in registered_cargos if not cargo.economy_variations[economy].get('disabled')]
     enabled_industries = [industry for industry in registered_industries if industry.economy_variations[economy].enabled]
     economy_schemas[economy] = {'enabled_cargos':enabled_cargos, 'enabled_industries':enabled_industries}
-
-static_dir_src = os.path.join(currentdir, 'docs_src', 'static')
-static_dir_dst = os.path.join(docs_output_path,'static')
-shutil.rmtree(static_dir_dst)
-shutil.copytree(static_dir_src, static_dir_dst)
 
 # render standard docs from a list
 html_docs = ['set_overview']

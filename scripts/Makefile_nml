@@ -17,7 +17,7 @@ nml: preprocesspy
 
 preprocesspy:
 	mkdir -p generated_pnml
-	mkdir -p docs
+	$(_V)-touch generated_pnml/_files_here_are_generated.txt
 	python scripts/preprocess.py '${REPO_TITLE}' '${REPO_REVISION}'
 
 ################################################################
@@ -26,8 +26,7 @@ preprocesspy:
 clean::
 	$(_E) "[CLEAN NML]"
 	$(_V)-rm -rf $(NML_FILE)
-	$(_V)-rm -r generated_pnml/*
-	$(_V)-touch generated_pnml/_files_here_are_generated.txt
+	$(_V)-rm -r generated_pnml
 
 test::
 	$(_E) "nml:                          $(NML) $(NML_FLAGS)"
