@@ -29,3 +29,15 @@ def parse_base_lang():
     # this is fragile, playing one line python is silly :)
     strings = dict((line.split(':',1)[0].strip(), line.split(':',1)[1].strip()) for line in text if ':' in line)
     return strings
+
+
+def unwrap_nml_string_declaration(nml_string=None):
+    # some properties are declared in python as 'string(STR_HAM_EGGS)'
+    # this is done because it saves hassle with nml (distinguishes from default OTTD strings)
+    # doesn't work for direct lookups of string identifier in lang file though, so remove the string() packaging
+
+    if nml_string is not None and 'string(' in nml_string:
+        unwrapped_string = nml_string.split('string(')[1][:-1] # split and then slice off the closing bracket
+        return unwrapped_string
+
+

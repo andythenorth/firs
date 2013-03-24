@@ -35,7 +35,10 @@
             <tbody>
                 <tal:industries repeat="industry registered_industries">
                     <tr>
-                        <td>${industry.id}</td>
+                        <td>
+                            ${industry.id}
+                            ${doc_helper.get_industry_name(industry)}
+                        </td>
                     </tr>
                 </tal:industries>
             </tbody>

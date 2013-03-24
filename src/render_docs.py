@@ -48,13 +48,18 @@ from industries import registered_industries
 registered_cargos = sorted(registered_cargos, key=lambda registered_cargos: registered_cargos.id)
 registered_industries = sorted(registered_industries, key=lambda registered_industries: registered_industries.id)
 
+class DocHelper(object):
+    # dirty class to help do some doc formatting
+    def get_industry_name(self, industry):
+        string_id = utils.unwrap_nml_string_declaration(getattr(industry.default_industry_properties, 'name'))
+        return base_lang_strings.get(string_id, 'NONE')
 
 def render_docs(doc_list, file_type):
     for doc_name in doc_list:
         template = docs_templates[doc_name + '.pt'] # .pt is the conventional extension for chameleon page templates
         doc = template(registered_cargos=registered_cargos, registered_industries=registered_industries,
                               economy_schemas=economy_schemas, global_constants=global_constants, repo_vars=repo_vars,
-                              metadata=metadata)
+                              metadata=metadata, utils=utils, doc_helper=DocHelper())
         # save the results of templating
         doc_file = codecs.open(os.path.join(docs_output_path, doc_name + '.' + file_type), 'w','utf8')
         doc_file.write(doc)
