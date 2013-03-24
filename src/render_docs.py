@@ -37,6 +37,9 @@ repo_vars = utils.get_repo_vars(sys)
 import firs
 from cargos import registered_cargos
 from industries import registered_industries
+# default sort for docs is by vehicle intro date
+registered_industries = sorted(registered_industries, key=lambda registered_industries: registered_industries.id)
+
 
 def render_docs(doc_list, file_type):
     for doc_name in doc_list:
