@@ -17,6 +17,7 @@ nml: preprocesspy
 
 preprocesspy:
 	mkdir -p generated_pnml
+	mkdir -p docs
 	python scripts/preprocess.py
 
 ################################################################
@@ -25,7 +26,10 @@ preprocesspy:
 clean::
 	$(_E) "[CLEAN NML]"
 	$(_V)-rm -rf $(NML_FILE)
-	$(_V)-rm -r generated_pnml
+	$(_V)-rm -r generated_pnml/*
+	$(_V)-touch generated_pnml/_files_here_are_generated.txt
+	$(_E) "[CLEAN DOCS]"
+	$(_V)-mkdir -p docs
 
 test::
 	$(_E) "nml:                          $(NML) $(NML_FLAGS)"

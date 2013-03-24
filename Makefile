@@ -18,7 +18,7 @@ SCRIPT_DIR          := scripts
 LANG_DIR            := lang
 
 # Documentation files:
-DOC_FILES = docs/readme.txt docs/license.txt docs/changelog.txt
+DOC_FILES = docs_src/readme.txt docs_src/license.txt docs_src/changelog.txt
 
 # List of all files which will get shipped
 # DOC_FILES = readme, changelog and license
