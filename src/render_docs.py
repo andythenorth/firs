@@ -51,8 +51,14 @@ registered_industries = sorted(registered_industries, key=lambda registered_indu
 class DocHelper(object):
     # dirty class to help do some doc formatting
     def get_industry_name(self, industry):
+        # industries don't store the name as a python attr, look it up in base_lang using string id
         string_id = utils.unwrap_nml_string_declaration(getattr(industry.default_industry_properties, 'name'))
-        return base_lang_strings.get(string_id, 'NONE')
+        return base_lang_strings.get(string_id, 'NO NAME ' + industry.id)
+
+    def get_registered_industries_sorted_by_name(self):
+        # industries don't store the name as a python attr, but we often need to iterate over their names in A-Z order
+        result = dict((self.get_industry_name(industry), industry) for industry in registered_industries)
+        return sorted(result.items())
 
 
 def render_docs(doc_list, file_type):

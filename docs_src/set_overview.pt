@@ -29,16 +29,18 @@
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th>Industry ID</th>
                     <th>Name</th>
+                    <th>Industry ID</th>
                 </tr>
             </thead>
             <tbody>
-                <tal:industries repeat="industry registered_industries">
-                    <tr>
-                        <td>${industry.id}</td>
-                        <td>${doc_helper.get_industry_name(industry)}</td>
-                    </tr>
+                <tal:industries repeat="item doc_helper.get_registered_industries_sorted_by_name()">
+                    <tal:industry define="name item[0]; industry item[1]">
+                        <tr>
+                            <td>${name}</td>
+                            <td>${industry.id}</td>
+                        </tr>
+                    </tal:industry>
                 </tal:industries>
             </tbody>
         </table>
