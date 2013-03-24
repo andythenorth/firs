@@ -32,6 +32,6 @@ for industry in industries.registered_industries:
 # n.b header items depend on industries being in scope
 firs.render_and_save_header_items()
 
-firs.render_docs()
+import render_docs
 
 print (time() - start)

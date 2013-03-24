@@ -45,21 +45,6 @@ def render_and_save_registered_cargos():
     pnml.write(templated_pnml)
     pnml.close()
 
-def render_docs():
-    template = docs_templates['test_docs.pytxt']
-    economy_schemas = {}
-    for economy in global_constants.economies:
-        enabled_cargos = [cargo for cargo in registered_cargos if not cargo.economy_variations[economy].get('disabled')]
-        enabled_industries = [industry for industry in registered_industries if industry.economy_variations[economy].enabled]
-        economy_schemas[economy] = {'enabled_cargos':enabled_cargos, 'enabled_industries':enabled_industries}
-
-    templated_docs = template(registered_cargos=registered_cargos, registered_industries=registered_industries,
-                              economy_schemas=economy_schemas, global_constants=global_constants)
-    # save the results of templating
-    docs = codecs.open(os.path.join(docs_output_path, 'test_docs.txt'), 'w','utf8')
-    docs.write(templated_docs)
-    docs.close()
-
 
 class Cargo(object):
     """ Base class to hold cargos"""
