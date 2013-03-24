@@ -14,11 +14,10 @@ import shutil
 import sys
 import os.path
 currentdir = os.curdir
-src_path = os.path.join(currentdir, 'src')
 
 docs_output_path = os.path.join(currentdir, 'docs')
 if os.path.exists(docs_output_path):
-    os.rmdir(docs_output_path)
+    shutil.rmtree(docs_output_path)
 os.mkdir(docs_output_path)
 
 static_dir_src = os.path.join(currentdir, 'docs_src', 'static')
