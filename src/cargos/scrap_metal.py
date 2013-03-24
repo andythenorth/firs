@@ -1,4 +1,4 @@
-from firs import Cargo
+from cargo import Cargo
 
 cargo = Cargo(id = 'scrap_metal',
               number = '20',

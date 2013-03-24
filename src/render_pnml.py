@@ -24,9 +24,9 @@ templates = PageTemplateLoader(os.path.join(src_path, 'templates'), format='text
 industry_templates = PageTemplateLoader(os.path.join(src_path, 'industries'), format='text')
 header_item_templates = PageTemplateLoader(os.path.join(src_path, 'header_items'), format='text')
 
-import cargos, register_cargos
+import cargos
 from cargos import registered_cargos
-import industries, register_industries
+import industries
 from industries import registered_industries
 
 header_items = ['checks','conditions','header','master_control_program','parameters']

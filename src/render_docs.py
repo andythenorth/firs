@@ -20,7 +20,7 @@ import utils as utils
 
 from chameleon import PageTemplateLoader # chameleon used in most template cases
 # setup the places we look for templates
-docs_templates = PageTemplateLoader(os.path.join(src_path, 'docs_templates'), format='text')
+docs_templates = PageTemplateLoader(os.path.join(currentdir, 'docs_src'), format='text')
 
 from cargos import registered_cargos
 from industries import registered_industries

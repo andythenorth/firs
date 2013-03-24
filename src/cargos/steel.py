@@ -1,4 +1,4 @@
-from firs import Cargo
+from cargo import Cargo
 # 'steel' stands in for generic metal; this ensures easy cargo support
 cargo = Cargo(id = 'steel',
               number = '9',
