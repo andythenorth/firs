@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" href="static/css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="static/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="navbar navbar-inverse navbar-static-top" style="border-bottom:3px solid #64ace0; box-shadow: 0px 1px 2px #333">
+        <div class="navbar-inner">
+            <ul class="nav pull-right">
+                <li><a href="<!--!{metadata['repo_url']}-->"><i class="icon-gift icon-white"></i> Source Repository</a></li>
+                <li><a href="<!--!{metadata['dev_thread_url']}-->"><i class="icon-comment icon-white"></i> Discuss at TT-Forums.net</a></li>
+            </ul>
+        </div>
+    </div>
+    <br />
+    <div class="container">
+        <h1>FIRS Industry Replacement Set</h1>
+        <hr />
+        <h3>New Industries and Cargos for OpenTTD</h3>
+        <ul class="inline">
+            <li><i class="icon-ok-circle"></i> Intro dates <!--!${metadata['dates'][0]}-${metadata['dates'][1]}--></li>
+            <li><i class="icon-ok-circle"></i> Wide range of ship types and capacities</li>
+            <li><i class="icon-ok-circle"></i> Compatible with all known cargos</li>
+            <li><i class="icon-ok-circle"></i> Supports 2 company colours</li>
+            <li><i class="icon-ok-circle"></i> Autorefit support</li>
+            <li><i class="icon-ok-circle"></i> Parameter for ship speed</li>
+            <li><i class="icon-ok-circle"></i> Parameter for canal construction costs</li>
+            <li><i class="icon-ok-circle"></i> GPL v2 license</li>
+        </ul>
+        <p class="alert alert-info">Just one little problem: it's not finished yet ;)</p>
+        <hr />
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Ship Name</th>
+                    <th class="number">Intro Date</th>
+                    <th>Extra Info</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!--!<tal:build_vehicles_list repeat="vehicle vehicles">
+                    <tr>
+                        <td>${vehicle.get_name_substr()} ${base_lang_strings[vehicle.get_str_name_suffix()]}</td>
+                        <td class="number">${vehicle.intro_date}</td>
+                        <td>${base_lang_strings[vehicle.get_str_type_info()]}</td>
+                    </tr>
+                </tal:build_vehicles_list>-->
+            </tbody>
+        </table>
+    </div>
+    <div style="text-align:center; color:#999; padding:5px; background-color:#eee; border-top:solid 1px #ddd; box-shadow: inset 0px 1px 1px #ddd">FIRS, with thanks to all who helped</div>
+</body>
+
+</html>

@@ -9,6 +9,7 @@
 print "[PYTHON] render docs"
 
 import codecs # used for writing files - more unicode friendly than standard open() module
+import shutil
 
 import sys
 import os.path
@@ -29,18 +30,30 @@ repo_vars = utils.get_repo_vars(sys)
 from cargos import registered_cargos
 from industries import registered_industries
 
+def render_docs(doc_list, file_type):
+    for doc_name in doc_list:
+        template = docs_templates[doc_name + '.pt'] # .pt is the conventional extension for chameleon page templates
+        doc = template(registered_cargos=registered_cargos, registered_industries=registered_industries,
+                              economy_schemas=economy_schemas, global_constants=global_constants, repo_vars=repo_vars)
+        # save the results of templating
+        doc_file = codecs.open(os.path.join(docs_output_path, doc_name + '.' + file_type), 'w','utf8')
+        doc_file.write(doc)
+        doc_file.close()
+
 economy_schemas = {}
 for economy in global_constants.economies:
     enabled_cargos = [cargo for cargo in registered_cargos if not cargo.economy_variations[economy].get('disabled')]
     enabled_industries = [industry for industry in registered_industries if industry.economy_variations[economy].enabled]
     economy_schemas[economy] = {'enabled_cargos':enabled_cargos, 'enabled_industries':enabled_industries}
 
+static_dir_src = os.path.join(currentdir, 'docs_src', 'static')
+static_dir_dst = os.path.join(docs_output_path,'static')
+shutil.rmtree(static_dir_dst)
+shutil.copytree(static_dir_src, static_dir_dst)
+
 # render standard docs from a list
-for doc_name in ['changelog', 'license', 'readme', 'test_docs']:
-    template = docs_templates[doc_name + '.pt'] # .pt is the conventional extension for chameleon page templates
-    doc = template(registered_cargos=registered_cargos, registered_industries=registered_industries,
-                          economy_schemas=economy_schemas, global_constants=global_constants, repo_vars=repo_vars)
-    # save the results of templating
-    doc_file = codecs.open(os.path.join(docs_output_path, doc_name + '.txt'), 'w','utf8')
-    doc_file.write(doc)
-    doc_file.close()
+html_docs = ['set_overview']
+txt_docs = ['changelog', 'license', 'readme', 'test_docs']
+
+render_docs(html_docs, 'html')
+render_docs(txt_docs, 'txt')
