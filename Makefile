@@ -12,13 +12,13 @@ MAIN_SRC_FILE       := generated_pnml/master_control_program.pnml
 # GFX_LIST_FILES      := gfx/png_source_list
 
 # Directory structure
-SRC_DIR             := sprites
+SRC_DIR             := src
 DOC_DIR             := docs
 SCRIPT_DIR          := scripts
 LANG_DIR            := lang
 
 # Documentation files:
-DOC_FILES = docs_src/license.txt
+DOC_FILES = docs_src/readme.txt docs_src/license.txt
 
 # List of all files which will get shipped
 # DOC_FILES = readme, changelog and license
