@@ -27,25 +27,6 @@ docs_templates = PageTemplateLoader(os.path.join(src_path, 'docs_templates'), fo
 from cargos import registered_cargos
 from industries import registered_industries
 
-def render_and_save_header_items():
-    header_items = ['checks','conditions','header','master_control_program','parameters']
-    for header_item in header_items:
-        template = header_item_templates[header_item + '.pypnml']
-        templated_pnml = utils.unescape_chameleon_output(template(registered_industries=registered_industries, global_constants=global_constants))
-        # save the results of templating
-        pnml = codecs.open(os.path.join(pnml_output_path, header_item + '.pnml'), 'w','utf8')
-        pnml.write(templated_pnml)
-        pnml.close()
-
-def render_and_save_registered_cargos():
-    template = templates['registered_cargos.pypnml']
-    templated_pnml = utils.unescape_chameleon_output(template(registered_cargos=registered_cargos, global_constants=global_constants))
-    # save the results of templating
-    pnml = codecs.open(os.path.join(pnml_output_path, 'registered_cargos.pnml'), 'w','utf8')
-    pnml.write(templated_pnml)
-    pnml.close()
-
-
 class Cargo(object):
     """ Base class to hold cargos"""
     def __init__(self, id, **kwargs):
