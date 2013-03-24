@@ -9,14 +9,17 @@ print "[PYTHON] render pnml"
 
 import codecs # used for writing files - more unicode friendly than standard open() module
 
+import shutil
+import sys
 import os.path
 currentdir = os.curdir
-# set output path for generated_pnml
-pnml_output_path = os.path.join(currentdir, 'generated_pnml')
 src_path = os.path.join(currentdir, 'src')
 
-import global_constants as global_constants
-import utils as utils
+# set output path for generated_pnml, clean it if it exists, create it if it doesn't
+pnml_output_path = os.path.join(currentdir, 'generated_pnml')
+if os.path.exists(pnml_output_path):
+    shutil.rmtree(pnml_output_path)
+os.mkdir(pnml_output_path)
 
 from chameleon import PageTemplateLoader # chameleon used in most template cases
 # setup the places we look for templates
@@ -24,6 +27,9 @@ templates = PageTemplateLoader(os.path.join(src_path, 'templates'), format='text
 industry_templates = PageTemplateLoader(os.path.join(src_path, 'industries'), format='text')
 header_item_templates = PageTemplateLoader(os.path.join(src_path, 'header_items'), format='text')
 
+import global_constants as global_constants
+import utils as utils
+import firs
 import cargos
 from cargos import registered_cargos
 import industries
