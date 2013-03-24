@@ -10,6 +10,7 @@ print "[PYTHON] render docs"
 
 import codecs # used for writing files - more unicode friendly than standard open() module
 
+import sys
 import os.path
 currentdir = os.curdir
 docs_output_path = os.path.join(currentdir, 'docs')
@@ -22,9 +23,11 @@ from chameleon import PageTemplateLoader # chameleon used in most template cases
 # setup the places we look for templates
 docs_templates = PageTemplateLoader(os.path.join(currentdir, 'docs_src'), format='text')
 
+# get args passed by makefile
+repo_vars = utils.get_repo_vars(sys)
+
 from cargos import registered_cargos
 from industries import registered_industries
-
 
 template = docs_templates['test_docs.pytxt']
 economy_schemas = {}
@@ -39,3 +42,6 @@ templated_docs = template(registered_cargos=registered_cargos, registered_indust
 docs = codecs.open(os.path.join(docs_output_path, 'test_docs.txt'), 'w','utf8')
 docs.write(templated_docs)
 docs.close()
+
+
+print repo_vars
