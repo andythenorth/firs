@@ -10,8 +10,8 @@ L;%{BUILD}/*.nfo
 L;%{BUILD}/rpmlist
 # publish the whole translation report folder
 %{BUILD}/translations
-# publish all txt-files from docs
-%{BUILD}/docs/*.txt
+# publish the whole docs folder
+%{BUILD}/docs
 
 #
 # Prefixes: 
