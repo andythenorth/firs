@@ -28,7 +28,6 @@ from cargos import food
 from cargos import fruits
 from cargos import goods
 from cargos import grain
-from cargos import gravel
 from cargos import iron_ore
 from cargos import livestock
 from cargos import lumber
@@ -43,6 +42,7 @@ from cargos import plant_fibres
 from cargos import recyclables
 from cargos import sand
 from cargos import scrap_metal
+from cargos import stone
 from cargos import sugar_beet
 from cargos import sugarcane
 from cargos import wood

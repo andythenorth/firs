@@ -1,6 +1,6 @@
 from cargo import Cargo
 
-cargo = Cargo(id = 'gravel',
+cargo = Cargo(id = 'stone',
               number = '26',
               type_name = 'string(STR_CARGO_NAME_STONE)',
               unit_name = 'string(STR_CARGO_NAME_STONE)',
