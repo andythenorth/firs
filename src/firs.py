@@ -34,6 +34,7 @@ from cargos import livestock
 from cargos import lumber
 from cargos import mail
 from cargos import manufacturing_supplies
+from cargos import metal
 from cargos import milk
 from cargos import oil
 from cargos import passengers
@@ -42,7 +43,6 @@ from cargos import plant_fibres
 from cargos import recyclables
 from cargos import sand
 from cargos import scrap_metal
-from cargos import steel
 from cargos import sugar_beet
 from cargos import sugarcane
 from cargos import wood
