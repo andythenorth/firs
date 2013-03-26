@@ -38,23 +38,33 @@
 <body>
     <div class="navbar navbar-inverse navbar-static-top" style="border-bottom:3px solid #64ace0; box-shadow: 0px 1px 2px #333">
         <div class="navbar-inner">
+            <ul class="nav pull-left">
+                <li><a href="set_overview.html">Home</a></li>
+            </ul>
             <ul class="nav pull-right">
                 <li><a href="${metadata['repo_url']}"><i class="icon-gift icon-white"></i> Source Repository</a></li>
                 <li><a href="${metadata['dev_thread_url']}"><i class="icon-comment icon-white"></i> Discuss at TT-Forums.net</a></li>
             </ul>
         </div>
     </div>
-    <br />
-    <div class="container">
-        <h1>FIRS Industry Replacement Set</h1>
-        <ul class="inline">
-            <li><a href="cargos_code_reference.html">Cargos Reference</a></li>
-            <li><a href="industries_code_reference.html">Industries Reference</a></li>
-        </ul>
-        <hr />
-        <metal:block define-slot="body">
-            <p>Ooooops - there is no content for some reason. Something has probably gone nuts in the build. </p>
-        </metal:block>
+    <div class="container-fluid">
+        <div class="page-header">
+            <h1>FIRS Industry Replacement Set</h1>
+        </div>
+        <div class="row-fluid">
+            <div class="span2">
+                <ul class="nav nav-list">
+                    <li class="nav-header">Code Reference</li>
+                    <li><a href="cargos_code_reference.html">Cargos Reference</a></li>
+                    <li><a href="industries_code_reference.html">Industries Reference</a></li>
+                </ul>
+            </div>
+            <div class="span9">
+                <metal:block define-slot="body">
+                    <p>Ooooops - there is no content for some reason. Something has probably gone nuts in the build. </p>
+                </metal:block>
+            </div>
+        </div>
     </div>
     <div style="text-align:center; color:#999; padding:5px; background-color:#eee; border-top:solid 1px #ddd; box-shadow: inset 0px 1px 1px #ddd">
         FIRS, with thanks to all who helped
