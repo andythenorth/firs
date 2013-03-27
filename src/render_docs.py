@@ -15,10 +15,13 @@ import sys
 import os.path
 currentdir = os.curdir
 
+docs_src = os.path.join(currentdir, 'docs_src')
 docs_output_path = os.path.join(currentdir, 'docs')
 if os.path.exists(docs_output_path):
     shutil.rmtree(docs_output_path)
 os.mkdir(docs_output_path)
+
+shutil.copy(os.path.join(docs_src,'index.html'), docs_output_path)
 
 static_dir_src = os.path.join(currentdir, 'docs_src', 'html', 'static')
 static_dir_dst = os.path.join(docs_output_path, 'html', 'static')
