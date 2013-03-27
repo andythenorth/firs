@@ -24,7 +24,7 @@
             <tbody>
                 <tal:cargos repeat="cargo registered_cargos">
                     <tr>
-                        <td>NOT DONE <!--!${cargo.name}--></td>
+                        <td>${doc_helper.get_cargo_name(cargo)}</td>
                         <td>${cargo.id}</td>
                         <td>${cargo.number}</td>
                         <td>${cargo.cargo_label}</td>
