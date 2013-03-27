@@ -43,5 +43,61 @@
     is a good place to find these.
     You can find a list of compatible vehicle sets towards the end of this readme.</p>
 
+
+    <h3>Playing a game with FIRS</h3>
+    You can jump right into FIRS gameplay:
+    - there are familiar industries and cargos you'll recognise from default OpenTTD
+    - FIRS also adds lots of exciting new cargos and industries to play with
+    - primary industries like mines and farms will always produce some cargo
+    - secondary industries like the steel mill and cement plant will always produce
+      some output cargo when an input cargo is delivered.
+
+    <p>For players who want more, FIRS also rewards you by:
+    - increasing primary industry production when you deliver supplies regularly
+    - increasing production at some secondary industries when you deliver more than
+      one input cargo regularly
+    - introducing new industries and cargos as time goes by.</p>
+
+    <h3>More Info / Things to Watch Out For!</h3>
+    <p>- primary industry will not increase production unless supplies are delivered.
+    - primary industry will always produce cargo. There is no need to deliver supplies
+    to get cargo produced, only for production increases.
+    - when small amounts of cargo (less than 8t) are delivered to secondary industries,
+    this will be stored until there is enough to produce a certain amount of output
+    cargo. It can appear that such small amounts of cargo are lost, but they aren't.
+    - some industries are available from year 0. Some industries (and the cargos
+      they use) are only available after a certain date.
+      Intro dates can be found at:
+        http://tt-foundry.com/sets/FIRS/schema/industries
+    - You may find it easier to see industries on the mini-map if you change the
+      map background colour (in advanced options -> interface)
+    - FIRS 0.7 is *not* savegame compatible with FIRS 0.6 or earlier.</p>
+
+
+    <h3>Boosting Primary Production</h3>
+    <p>Primary industries produce raw materials, e.g.
+    - mines, farms, junk yard, oil wells, oil rig etc.</p>
+
+    <p>Many FIRS primary industries accept Engineering Supplies or Farm Supplies.
+    They will only increase production if the correct supplies are delivered.</p>
+
+    <p>Every month there is a chance of a production increase if at least 1t of the
+    correct supplies are delivered.
+    Only 1t of supplies is required - delivering more than 1t of supplies will
+    not make a production increase more likely.</p>
+
+
+    <h3>Industry Closure</h3>
+    <p>Industries won't close unless closure is enabled by parameter.</p>
+
+    <p>If primary industry closure is enabled, there is a chance of closure each
+    month if industry production falls to a low level.  Primary production decrease
+    parameter *must* be enabled if you want primary industries to be able to close.</p>
+
+    <p>If secondary industry closure is enabled, there is a chance of closure each
+    month if no cargo has been delivered in the previous 18 months.</p>
+
+
+
 </div>
 </tal:main_template>

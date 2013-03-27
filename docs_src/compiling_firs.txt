@@ -1,0 +1,25 @@
+-----------------------------------
+Obtaining FIRS Source / Compilation
+-----------------------------------
+Stable releases of FIRS are available via OpenTTD's built-in content service.
+
+Nightly versions of FIRS are available from
+  http://bundles.openttdcoop.org/firs/
+
+The source of FIRS is available for releases from the DevZone's bundle server
+next to the releases at
+  http://bundles.openttdcoop.org/firs
+The repository itself can be obtained as mercurial checkout
+  hg clone http://hg.openttdcoop.org/firs
+
+In order to compile FIRS from source you need at least a recent version of NML.
+Place nmlc in your system's PATH environment variable and run the makefile:
+   make                  Compile the FIRS newgrf
+   make bundle_zip       Compile and create a zip with directory structure and
+                         documentation
+   make install          Compile, tar and install to OpenTTD data directory
+                         (either guessed by the makefile or to be configured
+                          in Makefile.local)
+
+either 'make', 'make install', or 'make bundle_zip'. There's more
+options, but these are probably sufficient for you to know.
