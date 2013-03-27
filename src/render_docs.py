@@ -53,15 +53,22 @@ registered_industries = sorted(registered_industries, key=lambda registered_indu
 
 class DocHelper(object):
     # dirty class to help do some doc formatting
-    def get_industry_name(self, industry):
-        # industries don't store the name as a python attr, look it up in base_lang using string id
-        string_id = utils.unwrap_nml_string_declaration(getattr(industry.default_industry_properties, 'name'))
+    def get_industry_name(self, industry, economy=None):
+        # industries don't store the name directly as a python attr, but in lang - so look it up in base_lang using string id
+        name = industry.get_property('name', economy)
+        string_id = utils.unwrap_nml_string_declaration(name)
         return base_lang_strings.get(string_id, 'NO NAME ' + industry.id)
 
     def get_registered_industries_sorted_by_name(self):
         # industries don't store the name as a python attr, but we often need to iterate over their names in A-Z order
         result = dict((self.get_industry_name(industry), industry) for industry in registered_industries)
         return sorted(result.items())
+
+    def get_cargo_name(self, cargo):
+        # cargos don't store the name directly as a python attr, but in lang - so look it up in base_lang using string id
+        name = cargo.type_name
+        string_id = utils.unwrap_nml_string_declaration(name)
+        return base_lang_strings.get(string_id, 'NO NAME ' + cargo.id)
 
 
 def render_docs(doc_list, file_type):
@@ -87,7 +94,7 @@ for economy in global_constants.economies:
     economy_schemas[economy] = {'enabled_cargos':enabled_cargos, 'enabled_industries':enabled_industries}
 
 # render standard docs from a list
-html_docs = ['set_overview', 'code_reference']
+html_docs = ['set_overview', 'code_reference','economies']
 txt_docs = ['changelog', 'license', 'readme', 'test_docs']
 
 render_docs(html_docs, 'html')
