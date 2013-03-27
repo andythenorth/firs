@@ -1,4 +1,10 @@
-<tal:main_template define="main_template load: main_template.pt" metal:use-macro="main_template">
+<tal:page_with_sidebar_template define="page_with_sidebar_template load: page_with_sidebar_template.pt" metal:use-macro="page_with_sidebar_template">
+<div metal:fill-slot='sidebar_nav'>
+    <li class="nav-header">Code Reference</li>
+    <li><a href="#cargos">Cargos Reference</a></li>
+    <li><a href="#industries">Industries Reference</a></li>
+</div>
+
 <div metal:fill-slot='body'>
     <div id="cargos">
         <div class="page-header">
@@ -58,4 +64,4 @@
         </table>
     </div>
 </div>
-</tal:main_template>
+</tal:page_with_sidebar_template>

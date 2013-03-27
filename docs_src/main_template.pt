@@ -58,20 +58,9 @@
         </div>
     </div>
     <div class="container">
-        <div class="row">
-            <div class="span2">
-                <ul class="nav nav-list well">
-                    <li class="nav-header">Code Reference</li>
-                    <li><a href="#cargos">Cargos Reference</a></li>
-                    <li><a href="#industries">Industries Reference</a></li>
-                </ul>
-            </div>
-            <div class="span10">
-                <metal:block define-slot="body">
-                    <p>Ooooops - there is no content for some reason. Something has probably gone nuts in the build. </p>
-                </metal:block>
-            </div>
-        </div>
+        <metal:block define-slot="body">
+            <p>Ooooops - there is no content for some reason. Something has probably gone nuts in the build. </p>
+        </metal:block>
     </div>
     <div style="text-align:center; color:#999; padding:5px; background-color:#eee; border-top:solid 1px #ddd; box-shadow: inset 0px 1px 1px #ddd">
         FIRS, with thanks to all who helped
