@@ -99,7 +99,7 @@ for economy in global_constants.economies:
     economy_schemas[economy] = {'enabled_cargos':enabled_cargos, 'enabled_industries':enabled_industries}
 
 # render standard docs from a list
-html_docs = ['set_overview', 'code_reference','economies']
+html_docs = ['set_overview', 'code_reference','economies', 'cargos', 'industries']
 txt_docs = ['changelog', 'license', 'readme', 'test_docs']
 
 render_docs(html_docs, 'html')

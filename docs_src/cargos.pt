@@ -1,0 +1,33 @@
+<tal:page_with_sidebar_template define="page_with_sidebar_template load: page_with_sidebar_template.pt" metal:use-macro="page_with_sidebar_template">
+<div metal:fill-slot='sidebar_nav'>
+    <li class="nav-header">Cargos</li>
+    <tal:economies repeat="cargo registered_cargos">
+        <li><a href="#${cargo.id}">${doc_helper.get_cargo_name(cargo)}</a></li>
+    </tal:economies>
+</div>
+
+<div metal:fill-slot='body'>
+    <h2>Cargos</h2>
+    <br />
+    <tal:economies repeat="cargo registered_cargos">
+        <div id="${cargo.id}">
+            <div class="page-header">
+                <h3>${doc_helper.get_cargo_name(cargo)} <small>Cargo</small></h3>
+            </div>
+            <!--!<ul class="inline">
+                <tal:industries repeat="cargo economy_schemas[economy].enabled_cargos">
+                    <li>${doc_helper.get_cargo_name(cargo)}</li>
+                </tal:industries>
+            </ul>
+
+            <h4>${len(economy_schemas[economy].enabled_industries)} Industries</h4>
+            <ul class="inline">
+                <tal:industries repeat="industry economy_schemas[economy].enabled_industries">
+                    <li>${doc_helper.get_industry_name(industry, economy)}</li>
+                </tal:industries>
+            </ul>-->
+        </div>
+        <br />
+    </tal:economies>
+</div>
+</tal:page_with_sidebar_template>
