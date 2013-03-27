@@ -53,6 +53,17 @@ registered_industries = sorted(registered_industries, key=lambda registered_indu
 
 class DocHelper(object):
     # dirty class to help do some doc formatting
+    def get_economy_name(self, economy):
+        string_id = "STR_PARAM_VALUE_ECONOMIES_" + economy
+        name_string = base_lang_strings.get(string_id, 'NO_NAME ' + economy)
+        return name_string.split(' Economy')[0] # name strings contain 'economy', I don't want that in docs
+
+    def get_cargo_name(self, cargo):
+        # cargos don't store the name directly as a python attr, but in lang - so look it up in base_lang using string id
+        name = cargo.type_name
+        string_id = utils.unwrap_nml_string_declaration(name)
+        return base_lang_strings.get(string_id, 'NO NAME ' + cargo.id)
+
     def get_industry_name(self, industry, economy=None):
         # industries don't store the name directly as a python attr, but in lang - so look it up in base_lang using string id
         name = industry.get_property('name', economy)
@@ -63,12 +74,6 @@ class DocHelper(object):
         # industries don't store the name as a python attr, but we often need to iterate over their names in A-Z order
         result = dict((self.get_industry_name(industry), industry) for industry in registered_industries)
         return sorted(result.items())
-
-    def get_cargo_name(self, cargo):
-        # cargos don't store the name directly as a python attr, but in lang - so look it up in base_lang using string id
-        name = cargo.type_name
-        string_id = utils.unwrap_nml_string_declaration(name)
-        return base_lang_strings.get(string_id, 'NO NAME ' + cargo.id)
 
 
 def render_docs(doc_list, file_type):
