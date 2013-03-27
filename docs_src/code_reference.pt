@@ -1,0 +1,61 @@
+<tal:main_template define="main_template load: main_template.pt" metal:use-macro="main_template">
+<div metal:fill-slot='body'>
+    <div id="cargos">
+        <div class="page-header">
+            <h2>Cargos <small>Code Reference</small></h2>
+        </div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Internal ID (src / nml)</th>
+                    <th>ID in Game</th>
+                    <th>Label</th>
+                    <th>Weight</th>
+                    <th>Capacity Multiplier</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tal:cargos repeat="cargo registered_cargos">
+                    <tr>
+                        <td>NOT DONE <!--!${cargo.name}--></td>
+                        <td>${cargo.id}</td>
+                        <td>${cargo.number}</td>
+                        <td>${cargo.cargo_label}</td>
+                        <td>${cargo.weight}</td>
+                        <td>${cargo.capacity_multiplier}</td>
+                    </tr>
+                </tal:cargos>
+            </tbody>
+        </table>
+    </div>
+    <br />
+    <br />
+
+    <div id="industries">
+        <div class="page-header">
+            <h2>Industries <small>Code Reference</small></h2>
+        </div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Internal ID (src / nml)</th>
+                    <th>ID in Game</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tal:industries repeat="item doc_helper.get_registered_industries_sorted_by_name()">
+                    <tal:industry define="name item[0]; industry item[1]">
+                        <tr>
+                            <td>${name}</td>
+                            <td>${industry.id}</td>
+                            <td>${global_constants.industry_numeric_ids[industry.id]}</td>
+                        </tr>
+                    </tal:industry>
+                </tal:industries>
+            </tbody>
+        </table>
+    </div>
+</div>
+</tal:main_template>
