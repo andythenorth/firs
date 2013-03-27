@@ -20,8 +20,8 @@ if os.path.exists(docs_output_path):
     shutil.rmtree(docs_output_path)
 os.mkdir(docs_output_path)
 
-static_dir_src = os.path.join(currentdir, 'docs_src', 'static')
-static_dir_dst = os.path.join(docs_output_path,'static')
+static_dir_src = os.path.join(currentdir, 'docs_src', 'html', 'static')
+static_dir_dst = os.path.join(docs_output_path, 'html', 'static')
 shutil.copytree(static_dir_src, static_dir_dst)
 
 from chameleon import PageTemplateLoader # chameleon used in most template cases
@@ -68,7 +68,11 @@ def render_docs(doc_list, file_type):
                               economy_schemas=economy_schemas, global_constants=global_constants, repo_vars=repo_vars,
                               metadata=metadata, utils=utils, doc_helper=DocHelper())
         # save the results of templating
-        doc_file = codecs.open(os.path.join(docs_output_path, doc_name + '.' + file_type), 'w','utf8')
+        if file_type == 'html':
+            subdir = 'html'
+        else:
+            subdir = ''
+        doc_file = codecs.open(os.path.join(docs_output_path, subdir, doc_name + '.' + file_type), 'w','utf8')
         doc_file.write(doc)
         doc_file.close()
 
