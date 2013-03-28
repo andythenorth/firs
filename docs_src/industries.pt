@@ -14,6 +14,8 @@
             <div class="page-header">
                 <h3>${doc_helper.get_industry_name(industry)} <small>Industry</small></h3>
             </div>
+            <img src="static/img/industries/${industry.id}.png" alt="${doc_helper.get_industry_name(industry)}" />
+
             <!--!<ul class="inline">
                 <tal:industries repeat="cargo economy_schemas[economy].enabled_cargos">
                     <li>${doc_helper.get_cargo_name(cargo)}</li>
