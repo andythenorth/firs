@@ -17,17 +17,25 @@ def unescape_chameleon_output(escaped_nml):
 
 
 def parse_base_lang():
-    print "[PARSE BASE LANG] utils.py"
+    print "[PARSE BASE LANG & EXTRA STRINGS] utils.py"
 
     import os.path
     currentdir = os.curdir
 
     import codecs # used for writing files - more unicode friendly than standard open() module
 
+    def split_nml_string_lines(text):
+        # this is fragile, playing one line python is silly :)
+        return dict((line.split(':',1)[0].strip(), line.split(':',1)[1].strip()) for line in text if ':' in line)
+
     base_lang_file = codecs.open(os.path.join('lang', 'english.lng'), 'r','utf8')
-    text = base_lang_file.readlines()
-    # this is fragile, playing one line python is silly :)
-    strings = dict((line.split(':',1)[0].strip(), line.split(':',1)[1].strip()) for line in text if ':' in line)
+    strings = split_nml_string_lines(base_lang_file.readlines())
+
+    extra_strings_file = codecs.open(os.path.join('docs_src', 'extra_strings.lng'), 'r','utf8')
+    extra_strings = split_nml_string_lines(extra_strings_file.readlines())
+    for i in extra_strings:
+        strings[i] = extra_strings[i]
+
     return strings
 
 
@@ -39,5 +47,6 @@ def unwrap_nml_string_declaration(nml_string=None):
     if nml_string is not None and 'string(' in nml_string:
         unwrapped_string = nml_string.split('string(')[1][:-1] # split and then slice off the closing bracket
         return unwrapped_string
-
+    else:
+        return nml_string
 
