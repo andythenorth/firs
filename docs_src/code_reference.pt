@@ -24,7 +24,9 @@
             <tbody>
                 <tal:cargos repeat="cargo registered_cargos">
                     <tr>
-                        <td>${doc_helper.get_cargo_name(cargo)}</td>
+                        <td>
+                            <a href="cargos.html#${cargo.id}">${doc_helper.get_cargo_name(cargo)}</a>
+                        </td>
                         <td>${cargo.id}</td>
                         <td>${cargo.number}</td>
                         <td>${cargo.cargo_label}</td>
@@ -54,7 +56,9 @@
                 <tal:industries repeat="item doc_helper.get_registered_industries_sorted_by_name()">
                     <tal:industry define="name item[0]; industry item[1]">
                         <tr>
-                            <td>${name}</td>
+                            <td>
+                                <a href="industries.html#${industry.id}">${name}</a>
+                            </td>
                             <td>${industry.id}</td>
                             <td>${global_constants.industry_numeric_ids[industry.id]}</td>
                         </tr>
