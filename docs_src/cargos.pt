@@ -1,6 +1,6 @@
 <tal:page_with_sidebar_template define="page_with_sidebar_template load: page_with_sidebar_template.pt" metal:use-macro="page_with_sidebar_template">
 <div metal:fill-slot='sidebar_nav'>
-    <li class="nav-header">Cargos</li>
+    <li class="nav-header">Cargos (${len(registered_cargos)})</li>
     <tal:economies repeat="cargo registered_cargos">
         <li><a href="#${cargo.id}">${doc_helper.get_cargo_name(cargo)}</a></li>
     </tal:economies>

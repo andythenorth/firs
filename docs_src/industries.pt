@@ -1,6 +1,6 @@
 <tal:page_with_sidebar_template define="page_with_sidebar_template load: page_with_sidebar_template.pt" metal:use-macro="page_with_sidebar_template">
 <div metal:fill-slot='sidebar_nav'>
-    <li class="nav-header">Industries</li>
+    <li class="nav-header">Industries (${len(registered_industries)})</li>
     <tal:economies repeat="industry registered_industries">
         <li><a href="#${industry.id}">${doc_helper.get_industry_name(industry)}</a></li>
     </tal:economies>
