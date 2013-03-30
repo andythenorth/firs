@@ -92,7 +92,7 @@ class DocHelper(object):
         result  = []
         for industry in registered_industries:
             for cargo_label in industry.get_property('prod_cargo_types', None):
-                if cargo.cargo_label == '"' + cargo_label + '"':
+                if cargo.cargo_label[1:-1] == cargo_label:
                     result.append(industry)
         return result
 
@@ -100,9 +100,31 @@ class DocHelper(object):
         result  = []
         for industry in registered_industries:
             for cargo_label in industry.get_property('accept_cargo_types', None):
-                if cargo.cargo_label == '"' + cargo_label + '"':
+                if cargo.cargo_label[1:-1] == cargo_label:
                     result.append(industry)
         return result
+
+    def industry_accepted_cargo_mapping(self, economy_schemas, registered_cargos, industry):
+        result = []
+        for cargo in registered_cargos:
+            if cargo.cargo_label[1:-1] in industry.get_property('accept_cargo_types', None):
+                result.append(cargo)
+            for economy in economy_schemas:
+                if cargo.cargo_label[1:-1] in industry.get_property('accept_cargo_types', economy):
+                    print 'foo'
+                    result.append(cargo)
+        return set(result)
+
+    def industry_produced_cargo_mapping(self, economy_schemas, registered_cargos, industry):
+        result = []
+        for cargo in registered_cargos:
+            if cargo.cargo_label[1:-1] in industry.get_property('prod_cargo_types', None):
+                result.append(cargo)
+            for economy in economy_schemas:
+                if cargo.cargo_label[1:-1] in industry.get_property('prod_cargo_types', economy):
+                    print 'foo'
+                    result.append(cargo)
+        return set(result)
 
     def get_active_nav(self, doc_name, nav_link):
         return ('','active')[doc_name == nav_link]

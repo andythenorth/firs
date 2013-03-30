@@ -17,8 +17,8 @@
                 <table class="table table-condensed">
                     <tbody>
                         <tr>
-                            <th style="text-align:right; width:120px;">Economies:</th>
-                            <td>
+                            <th style="border-top:none; text-align:right; width:120px;">Economies:</th>
+                            <td style="border-top:none;">
                                 <tal:economies repeat="cargo_in_economy doc_helper.cargo_economy_mapping(economy_schemas, cargo)">
                                     <a href="economies.html#${cargo_in_economy}">${doc_helper.get_economy_name(cargo_in_economy)}</a>${(',', '')[repeat.cargo_in_economy.end]}
                                 </tal:economies>
@@ -44,13 +44,7 @@
                 </table>
                 <p class="muted">Production / acceptance varies by economy</p>
             </div>
-
-            <!--!<h4>${len(economy_schemas[economy].enabled_industries)} Industries</h4>
-            <ul class="inline">
-                <tal:industries repeat="industry economy_schemas[economy].enabled_industries">
-                    <li>${doc_helper.get_industry_name(industry, economy)}</li>
-                </tal:industries>
-            </ul>-->
+            <br />
         </div>
     </tal:economies>
 </div>
