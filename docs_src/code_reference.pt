@@ -11,16 +11,16 @@
             <h2>Cargos <small>Code Reference</small></h2>
         </div>
         <p class="pull-right"><a href="http://newgrf-specs.tt-wiki.net/wiki/NML:Cargos#Cargo_IDs">&#187; Reference for NewGRF cargo IDs</a>
-        <table class="table table-striped">
+        <table class="table table-striped tablesorter">
             <thead>
                 <tr>
                     <th>Name</th>
                     <th>NML Identifier</th>
-                    <th>ID</th>
+                    <th class="number">ID</th>
                     <th>Label</th>
-                    <th>Weight</th>
-                    <th>Capacity Multiplier</th>
-                    <th>Chart Colour</th>
+                    <th class="number">Weight</th>
+                    <th class="number">Capacity Multiplier</th>
+                    <th class="number">Chart Colour</th>
                 </tr>
             </thead>
             <tbody>
@@ -30,11 +30,11 @@
                             <a href="cargos.html#${cargo.id}">${doc_helper.get_cargo_name(cargo)}</a>
                         </td>
                         <td>${cargo.id}</td>
-                        <td>${cargo.number}d</td>
+                        <td class="number">${cargo.number}d</td>
                         <td>${cargo.cargo_label}</td>
-                        <td>${cargo.weight}</td>
-                        <td>${cargo.capacity_multiplier}</td>
-                        <td>${cargo.cargo_payment_list_colour}</td>
+                        <td class="number">${cargo.weight}</td>
+                        <td class="number">${cargo.capacity_multiplier}</td>
+                        <td class="number">${cargo.cargo_payment_list_colour}</td>
                     </tr>
                 </tal:cargos>
             </tbody>
@@ -48,13 +48,13 @@
             <h2>Industries <small>Code Reference</small></h2>
         </div>
         <p class="pull-right"><a href="http://newgrf-specs.tt-wiki.net/wiki/IndustryDefaultProps">&#187; Reference for NewGRF industry IDs</a></p>
-        <table class="table table-striped">
+        <table class="table table-striped tablesorter">
             <thead>
                 <tr>
                     <th>Name</th>
                     <th>NML identifier</th>
-                    <th>ID</th>
-                    <th>Map Colour</th>
+                    <th class="number">ID</th>
+                    <th class="number">Map Colour</th>
                 </tr>
             </thead>
             <tbody>
@@ -65,8 +65,8 @@
                                 <a href="industries.html#${industry.id}">${name}</a>
                             </td>
                             <td>${industry.id}</td>
-                            <td>${global_constants.industry_numeric_ids[industry.id]}d</td>
-                            <td>${industry.get_property('map_colour', None)}</td>
+                            <td class="number">${global_constants.industry_numeric_ids[industry.id]}d</td>
+                            <td class="number">${industry.get_property('map_colour', None)}</td>
                         </tr>
                     </tal:industry>
                 </tal:industries>

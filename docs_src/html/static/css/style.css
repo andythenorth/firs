@@ -2,3 +2,12 @@ td.number, th.number {
     text-align:right;
     padding-right:8px;
 }
+
+.tablesorter-header {
+    cursor:pointer;
+}
+
+.tablesorter-headerAsc, .tablesorter-headerDesc {
+    background-color:#0077CC;
+    color:#fff; 
+}
