@@ -11,23 +11,23 @@
     <br />
     <tal:economies repeat="cargo registered_cargos">
         <div id="${cargo.id}">
-            <div class="page-header">
+            <div class="page-header" style="overflow:hidden;">
                 <h3>${doc_helper.get_cargo_name(cargo)} <small>Cargo</small></h3>
+                <p class="pull-left muted">Economies:</p>
+                <ul class="pull-left inline">
+                    <tal:industries repeat="cargo_in_economy doc_helper.cargo_economy_mapping(economy_schemas, cargo)">
+                        <li><a href="economies.html#${cargo_in_economy}">${doc_helper.get_economy_name(cargo_in_economy)}</a></li>
+                    </tal:industries>
+                </ul>
             </div>
-            <!--!<ul class="inline">
-                <tal:industries repeat="cargo economy_schemas[economy].enabled_cargos">
-                    <li>${doc_helper.get_cargo_name(cargo)}</li>
-                </tal:industries>
-            </ul>
 
-            <h4>${len(economy_schemas[economy].enabled_industries)} Industries</h4>
+            <!--!<h4>${len(economy_schemas[economy].enabled_industries)} Industries</h4>
             <ul class="inline">
                 <tal:industries repeat="industry economy_schemas[economy].enabled_industries">
                     <li>${doc_helper.get_industry_name(industry, economy)}</li>
                 </tal:industries>
             </ul>-->
         </div>
-        <br />
     </tal:economies>
 </div>
 </tal:page_with_sidebar_template>
