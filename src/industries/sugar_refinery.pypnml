@@ -27,15 +27,12 @@ TILE_DISALLOW_SLOPES      (location_check, CB_RESULT_LOCATION_DISALLOW, ${indust
 item(FEAT_INDUSTRYTILES, ${industry.id}_tile, TILE_SUGARREFINERY_1) {
 	property {
 		substitute:       0;
-		accepted_cargos:  [[SGBT, 8], [MNSP, 8]];
+		accepted_cargos:  [[SGBT, 8], [SGCN, 8], [MNSP, 8]];
 		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
 		animation_info:     [ANIMATION_LOOPING, 7];
 		animation_speed:    3;
 		animation_triggers: bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE);
 	}
-
-	/* Economy specific tile acceptance */
-	TILE_CARGO_2(ENABLE_SUGARCANE && ENABLE_MNSP, SGCN, MNSP)
 
 	graphics {
 		tile_check:   ${industry.id}_location_check;
@@ -57,12 +54,12 @@ ${industry.get_industry_layouts_as_tilelayouts()}
 #define THIS_NUM_OUTPUT_CARGOS    1
 #define THIS_PROD_RATIO_CARGO1    3
 #define THIS_PROD_RATIO_CARGO2    5
-#define THIS_PROD_RATIO_CARGO3    0
+#define THIS_PROD_RATIO_CARGO3    5
 #define THIS_BOOST_12             3
-#define THIS_BOOST_13             0
+#define THIS_BOOST_13             3
 #define THIS_BOOST_21             5
 #define THIS_BOOST_23             0
-#define THIS_BOOST_31             0
+#define THIS_BOOST_31             5
 #define THIS_BOOST_32             0
 #define THIS_STR_DEBUG_TEXT       STR_EXTRA_TEXT_DEBUG_SECONDARY
 
@@ -82,13 +79,6 @@ ${industry.get_extra_text_secondary()}
 #include "../src/templates/check_availability.pnml"
 
 ${industry.get_industry_properties()}
-
-if (${industry.get_conditional_expressions_for_enabled_economies()}) {
-   item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
-        /* Economy specific cargo */
-        INDUSTRY_INPUT_CARGO_2(ENABLE_SUGARCANE && ENABLE_MNSP, MNSP, SGCN)
-    }
-}
 
 item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
 	graphics {
