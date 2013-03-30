@@ -50,6 +50,7 @@
                     <th>Name</th>
                     <th>Internal ID (src / nml)</th>
                     <th>ID in Game</th>
+                    <th>Map Colour</th>
                 </tr>
             </thead>
             <tbody>
@@ -61,6 +62,7 @@
                             </td>
                             <td>${industry.id}</td>
                             <td>${global_constants.industry_numeric_ids[industry.id]}</td>
+                            <td>${industry.get_property('map_colour', None)}</td>
                         </tr>
                     </tal:industry>
                 </tal:industries>
