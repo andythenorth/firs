@@ -26,6 +26,7 @@ industry = Industry(id='sawmill',
                     substitute='2',
                     map_colour='194',
                     fund_cost_multiplier='97',
+                    name='TTD_STR_INDUSTRY_NAME_SAWMILL',
                     override='2',
                     extra_text_industry='STR_EXTRA_SAWMILL')
 
