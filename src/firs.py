@@ -84,6 +84,7 @@ from industries import oil_wells
 from industries import orchard_piggery
 from industries import petrol_pump
 from industries import plastics_plant
+from industries import ranch
 from industries import recycling_depot
 from industries import recycling_plant
 from industries import sheep_farm
