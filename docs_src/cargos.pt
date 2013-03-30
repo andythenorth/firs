@@ -11,7 +11,7 @@
     <br />
     <tal:economies repeat="cargo registered_cargos">
         <div id="${cargo.id}">
-            <div class="page-header">
+            <div class="page-header" style="overflow:hidden;">
                 <h3>${doc_helper.get_cargo_name(cargo)} <small>Cargo</small></h3>
                 <p class="muted">${doc_helper.get_cargo_extra_info(cargo)}</p>
                 <table class="table table-condensed">
@@ -42,7 +42,7 @@
                         </tr>
                     </tbody>
                 </table>
-                <p class="muted">Production / acceptance varies by economy</p>
+                <p class="muted pull-right"><small>Production and acceptance varies by economy</small></p>
             </div>
             <br />
         </div>

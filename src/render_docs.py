@@ -104,6 +104,13 @@ class DocHelper(object):
                     result.append(industry)
         return result
 
+    def industry_economy_mapping(self, economy_schemas, industry):
+        result = []
+        for economy in economy_schemas:
+            if industry in economy_schemas[economy]['enabled_industries']:
+                result.append(economy)
+        return result
+
     def industry_accepted_cargo_mapping(self, economy_schemas, registered_cargos, industry):
         result = []
         for cargo in registered_cargos:
