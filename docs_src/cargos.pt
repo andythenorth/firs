@@ -13,6 +13,7 @@
         <div id="${cargo.id}">
             <div class="page-header">
                 <h3>${doc_helper.get_cargo_name(cargo)} <small>Cargo</small></h3>
+                <p class="muted">${doc_helper.get_cargo_extra_info(cargo)}</p>
                 <p>
                     Economies:
                     <tal:economies repeat="cargo_in_economy doc_helper.cargo_economy_mapping(economy_schemas, cargo)">
