@@ -14,6 +14,7 @@
         <div id="${economy}">
             <div class="page-header">
                 <h3>${doc_helper.get_economy_name(economy)} <small>Economy</small></h3>
+                <p>${doc_helper.get_economy_extra_info(economy)}</p>
             </div>
             <h4>${len(economy_schemas[economy].enabled_cargos)} Cargos</h4>
             <ul class="inline">

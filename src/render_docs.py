@@ -75,6 +75,9 @@ class DocHelper(object):
         result = dict((self.get_industry_name(industry), industry) for industry in registered_industries)
         return sorted(result.items())
 
+    def get_economy_extra_info(self, economy):
+        return base_lang_strings.get('ECONOMY_INFO_' + economy, '')
+
 
 def render_docs(doc_list, file_type):
     for doc_name in doc_list:
