@@ -25,6 +25,7 @@ industry = Industry(id='coal_mine',
                     substitute='0',
                     map_colour='1',
                     prospect_chance='0.75',
+                    name='TTD_STR_INDUSTRY_NAME_COAL_MINE',
                     fund_cost_multiplier='252',
                     override='0',
                     )

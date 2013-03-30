@@ -28,7 +28,7 @@ industry = Industry(id='oil_rig',
                     map_colour='152',
                     spec_flags='bitmask(IND_FLAG_BUILT_ON_WATER, IND_FLAG_AI_CREATES_AIR_AND_SHIP_ROUTES)',
                     prospect_chance='0.75',
-                    name='18439',
+                    name='TTD_STR_INDUSTRY_NAME_OIL_RIG',
                     fund_cost_multiplier='255',
                     override='5',
                     )

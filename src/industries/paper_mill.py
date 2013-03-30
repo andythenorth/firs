@@ -26,6 +26,7 @@ industry = Industry(id='paper_mill',
                     substitute='14',
                     map_colour='184',
                     fund_cost_multiplier='120',
+                    name='TTD_STR_INDUSTRY_NAME_PAPER_MILL',
                     override='14',
                     extra_text_industry='STR_EXTRA_PAPER_MILL')
 

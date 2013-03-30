@@ -27,6 +27,7 @@ industry = Industry(id='oil_refinery',
                     substitute='4',
                     map_colour='191',
                     fund_cost_multiplier='200',
+                    name='TTD_STR_INDUSTRY_NAME_OIL_REFINERY',
                     override='4',
                     extra_text_industry='STR_EXTRA_OIL_REFINERY')
 
