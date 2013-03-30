@@ -1,4 +1,5 @@
 <tal:page_with_sidebar_template define="page_with_sidebar_template load: page_with_sidebar_template.pt" metal:use-macro="page_with_sidebar_template">
+
 <div metal:fill-slot='sidebar_nav'>
     <li class="nav-header">Economies (${len(global_constants.economies)})</li>
     <tal:economies repeat="economy global_constants.economies">

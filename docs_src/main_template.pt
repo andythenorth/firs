@@ -33,7 +33,6 @@
             })
         })
     </script>-->
-
 </head>
 
 <body>
@@ -41,11 +40,21 @@
         <div class="navbar-inner">
             <div class="container">
                 <ul class="nav pull-left">
-                    <li><a href="set_overview.html">Overview</a></li>
-                    <li><a href="economies.html">Economies</a></li>
-                    <li><a href="cargos.html">Cargos</a></li>
-                    <li><a href="industries.html">Industries</a></li>
-                    <li><a href="code_reference.html">Code Reference</a></li>
+                    <li class="${doc_helper.get_active_nav(doc_name, 'set_overview')}">
+                        <a href="set_overview.html">Overview</a>
+                    </li>
+                    <li class="${doc_helper.get_active_nav(doc_name, 'economies')}">
+                        <a href="economies.html">Economies</a>
+                    </li>
+                    <li class="${doc_helper.get_active_nav(doc_name, 'cargos')}">
+                        <a href="cargos.html">Cargos</a>
+                    </li>
+                    <li class="${doc_helper.get_active_nav(doc_name, 'industries')}">
+                        <a href="industries.html">Industries</a>
+                    </li>
+                    <li class="${doc_helper.get_active_nav(doc_name, 'code_reference')}">
+                        <a href="code_reference.html">Code Reference</a>
+                    </li>
                 </ul>
                 <ul class="nav pull-right">
                     <li><a href="${metadata['repo_url']}"><i class="icon-gift icon-white"></i> Source Repository</a></li>

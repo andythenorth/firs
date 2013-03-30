@@ -78,13 +78,15 @@ class DocHelper(object):
     def get_economy_extra_info(self, economy):
         return base_lang_strings.get('ECONOMY_INFO_' + economy, '')
 
+    def get_active_nav(self, doc_name, nav_link):
+        return ('','active')[doc_name == nav_link]
 
 def render_docs(doc_list, file_type):
     for doc_name in doc_list:
         template = docs_templates[doc_name + '.pt'] # .pt is the conventional extension for chameleon page templates
         doc = template(registered_cargos=registered_cargos, registered_industries=registered_industries,
                               economy_schemas=economy_schemas, global_constants=global_constants, repo_vars=repo_vars,
-                              metadata=metadata, utils=utils, doc_helper=DocHelper())
+                              metadata=metadata, utils=utils, doc_helper=DocHelper(), doc_name=doc_name)
         # save the results of templating
         if file_type == 'html':
             subdir = 'html'
