@@ -11,13 +11,27 @@
     <br />
     <tal:economies repeat="cargo registered_cargos">
         <div id="${cargo.id}">
-            <div class="page-header" style="overflow:hidden;">
+            <div class="page-header">
                 <h3>${doc_helper.get_cargo_name(cargo)} <small>Cargo</small></h3>
-                <p class="pull-left">Economies:
-                    <tal:industries repeat="cargo_in_economy doc_helper.cargo_economy_mapping(economy_schemas, cargo)">
+                <p>
+                    Economies:
+                    <tal:economies repeat="cargo_in_economy doc_helper.cargo_economy_mapping(economy_schemas, cargo)">
                         <a href="economies.html#${cargo_in_economy}">${doc_helper.get_economy_name(cargo_in_economy)}</a>${(',', '')[repeat.cargo_in_economy.end]}
-                    </tal:industries>
+                    </tal:economies
                 </p>
+                <p>
+                    Produced by:
+                    <tal:producing_industries repeat="cargo_produced_by doc_helper.cargo_producing_industry_mapping(registered_industries, cargo)">
+                        <a href="industries.html#${cargo_produced_by.id}">${doc_helper.get_industry_name(cargo_produced_by)}</a>${(',', '')[repeat.cargo_produced_by.end]}
+                    </tal:producing_industries>
+                </p>
+                <p>
+                    Accepted by:
+                    <tal:accepting_industries repeat="cargo_accepted_by doc_helper.cargo_accepting_industry_mapping(registered_industries, cargo)">
+                        <a href="industries.html#${cargo_accepted_by.id}">${doc_helper.get_industry_name(cargo_accepted_by)}</a>${(',', '')[repeat.cargo_accepted_by.end]}
+                    </tal:accepting_industries>
+                </p>
+                <p class="muted">Production / acceptance varies by economy</p>
             </div>
 
             <!--!<h4>${len(economy_schemas[economy].enabled_industries)} Industries</h4>

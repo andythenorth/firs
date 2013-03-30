@@ -85,6 +85,22 @@ class DocHelper(object):
                 result.append(economy)
         return result
 
+    def cargo_producing_industry_mapping(self, registered_industries, cargo):
+        result  = []
+        for industry in registered_industries:
+            for cargo_label in industry.get_property('prod_cargo_types', None):
+                if cargo.cargo_label == '"' + cargo_label + '"':
+                    result.append(industry)
+        return result
+
+    def cargo_accepting_industry_mapping(self, registered_industries, cargo):
+        result  = []
+        for industry in registered_industries:
+            for cargo_label in industry.get_property('accept_cargo_types', None):
+                if cargo.cargo_label == '"' + cargo_label + '"':
+                    result.append(industry)
+        return result
+
     def get_active_nav(self, doc_name, nav_link):
         return ('','active')[doc_name == nav_link]
 
