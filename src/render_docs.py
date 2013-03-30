@@ -118,7 +118,6 @@ class DocHelper(object):
                 result.append(cargo)
             for economy in economy_schemas:
                 if cargo.cargo_label[1:-1] in industry.get_property('accept_cargo_types', economy):
-                    print 'foo'
                     result.append(cargo)
         return set(result)
 
@@ -129,12 +128,12 @@ class DocHelper(object):
                 result.append(cargo)
             for economy in economy_schemas:
                 if cargo.cargo_label[1:-1] in industry.get_property('prod_cargo_types', economy):
-                    print 'foo'
                     result.append(cargo)
         return set(result)
 
     def get_active_nav(self, doc_name, nav_link):
         return ('','active')[doc_name == nav_link]
+
 
 def render_docs(doc_list, file_type):
     for doc_name in doc_list:
