@@ -88,21 +88,29 @@ class DocHelper(object):
                 result.append(economy)
         return result
 
-    def cargo_producing_industry_mapping(self, registered_industries, cargo):
+    def cargo_producing_industry_mapping(self, economy_schemas, registered_industries, cargo):
         result  = []
         for industry in registered_industries:
             for cargo_label in industry.get_property('prod_cargo_types', None):
                 if cargo.cargo_label[1:-1] == cargo_label:
                     result.append(industry)
-        return result
+            for economy in economy_schemas:
+                for cargo_label in industry.get_property('prod_cargo_types', economy):
+                    if cargo.cargo_label[1:-1] == cargo_label:
+                        result.append(industry)
+        return set(result)
 
-    def cargo_accepting_industry_mapping(self, registered_industries, cargo):
+    def cargo_accepting_industry_mapping(self, economy_schemas, registered_industries, cargo):
         result  = []
         for industry in registered_industries:
             for cargo_label in industry.get_property('accept_cargo_types', None):
                 if cargo.cargo_label[1:-1] == cargo_label:
                     result.append(industry)
-        return result
+            for economy in economy_schemas:
+                for cargo_label in industry.get_property('accept_cargo_types', economy):
+                    if cargo.cargo_label[1:-1] == cargo_label:
+                        result.append(industry)
+        return set(result)
 
     def industry_economy_mapping(self, economy_schemas, industry):
         result = []
