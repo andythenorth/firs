@@ -13,12 +13,11 @@
         <div id="${cargo.id}">
             <div class="page-header" style="overflow:hidden;">
                 <h3>${doc_helper.get_cargo_name(cargo)} <small>Cargo</small></h3>
-                <p class="pull-left muted">Economies:</p>
-                <ul class="pull-left inline">
+                <p class="pull-left">Economies:
                     <tal:industries repeat="cargo_in_economy doc_helper.cargo_economy_mapping(economy_schemas, cargo)">
-                        <li><a href="economies.html#${cargo_in_economy}">${doc_helper.get_economy_name(cargo_in_economy)}</a></li>
+                        <a href="economies.html#${cargo_in_economy}">${doc_helper.get_economy_name(cargo_in_economy)}</a>${(',', '')[repeat.cargo_in_economy.end]}
                     </tal:industries>
-                </ul>
+                </p>
             </div>
 
             <!--!<h4>${len(economy_schemas[economy].enabled_industries)} Industries</h4>
