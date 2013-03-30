@@ -218,7 +218,7 @@ switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(tile_orchard_spritelayout), climate) {
  * tile with house
  * ***************/
 
-spriteset(spriteset_47929, "src/graphics/industries/orchard_piggery_1.png") { tmpl_building_sprite(10, 10, 59, -28) }
+spriteset(spriteset_47929, "src/graphics/industries/orchard_piggery_1.png") { tmpl_building_sprite(150, 10, 59, -28) }
 spritelayout THIS_ID(tile_house_spritelayout) {
 	ground {
 		sprite: 2022;
@@ -257,7 +257,7 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_orchard), TILE_ORCHARD_PIGGERY_1) {
 	}
 }
 
-item(FEAT_INDUSTRYTILES, THIS_ID(tile_house), TILE_ORCHARD_PIGGERY_2) {
+item(FEAT_INDUSTRYTILES, THIS_ID(tile_buildings), TILE_ORCHARD_PIGGERY_2) {
 	property {
 		substitute:       0;
 		accepted_cargos:  [[FMSP, 8]];
@@ -279,21 +279,21 @@ tilelayout tilelayout_blah_5807_1 {
 	0, 1: THIS_ID(tile_orchard);
 	0, 2: THIS_ID(tile_orchard);
 	1, 0: THIS_ID(tile_orchard);
-	1, 1: THIS_ID(tile_orchard);
+	1, 1: THIS_ID(tile_buildings);
 	1, 2: THIS_ID(tile_orchard);
-	2, 1: THIS_ID(tile_orchard);
-	2, 2: THIS_ID(tile_house);
+	2, 1: THIS_ID(tile_buildings);
+	2, 2: THIS_ID(tile_buildings);
 }
 
 tilelayout tilelayout_blah_5807_2 {
 	0, 0: THIS_ID(tile_orchard);
 	0, 1: THIS_ID(tile_orchard);
 	0, 2: THIS_ID(tile_orchard);
-	0, 3: THIS_ID(tile_orchard);
+	0, 3: THIS_ID(tile_buildings);
 	1, 1: THIS_ID(tile_orchard);
 	1, 2: THIS_ID(tile_orchard);
-	1, 3: THIS_ID(tile_orchard);
-	1, 4: THIS_ID(tile_house);
+	1, 3: THIS_ID(tile_buildings);
+	1, 4: THIS_ID(tile_buildings);
 }
 
 tilelayout tilelayout_blah_5807_3 {
@@ -301,10 +301,10 @@ tilelayout tilelayout_blah_5807_3 {
 	0, 1: THIS_ID(tile_orchard);
 	1, 0: THIS_ID(tile_orchard);
 	1, 1: THIS_ID(tile_orchard);
-	2, 0: THIS_ID(tile_orchard);
-	2, 1: THIS_ID(tile_orchard);
+	2, 0: THIS_ID(tile_buildings);
+	2, 1: THIS_ID(tile_buildings);
 	3, 0: THIS_ID(tile_orchard);
-	3, 1: THIS_ID(tile_house);
+	3, 1: THIS_ID(tile_buildings);
 }
 
 tilelayout tilelayout_blah_5807_4 {
@@ -318,12 +318,12 @@ tilelayout tilelayout_blah_5807_4 {
 	1, 4: THIS_ID(tile_orchard);
 	3, 0: THIS_ID(tile_orchard);
 	3, 1: THIS_ID(tile_orchard);
-	3, 3: THIS_ID(tile_orchard);
+	3, 3: THIS_ID(tile_buildings);
 	3, 4: THIS_ID(tile_orchard);
 	4, 0: THIS_ID(tile_orchard);
-	4, 1: THIS_ID(tile_house);
+	4, 1: THIS_ID(tile_buildings);
 	4, 3: THIS_ID(tile_orchard);
-	4, 4: THIS_ID(tile_orchard);
+	4, 4: THIS_ID(tile_buildings);
 }
 
 
