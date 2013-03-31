@@ -35,7 +35,7 @@
             <div class="container">
                 <ul class="nav pull-left">
                     <li class="${doc_helper.get_active_nav(doc_name, 'set_overview')}">
-                        <a href="set_overview.html">Overview</a>
+                        <a href="set_overview.html">Get Started</a>
                     </li>
                     <li class="${doc_helper.get_active_nav(doc_name, 'economies')}">
                         <a href="economies.html">Economies</a>
@@ -63,6 +63,9 @@
             <p class="lead">New Industries and Cargos for OpenTTD</p>
         </div>
     </div>
+    <metal:block define-slot="opt_page_header">
+        <!--!optional-->
+    </metal:block>
     <div class="container">
         <metal:block define-slot="body">
             <p>Ooooops - there is no content for some reason. Something has probably gone nuts in the build. </p>

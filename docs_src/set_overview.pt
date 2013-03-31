@@ -1,101 +1,105 @@
 <tal:main_template define="main_template load: main_template.pt" metal:use-macro="main_template">
+<tal:block metal:fill-slot='opt_page_header'>
+    <div style="background-color:#3878bc; color:#fff; margin-top:-31px; margin-bottom:30px; padding:20px; border-top:solid 1px #444; border-bottom:solid 1px #333;">
+        <div class="container">
+            <ul class="inline">
+                <li><i class="icon-ok-circle icon-white"></i> Multiple 'Economies' - choose simple or complex gameplay</li>
+                <li><i class="icon-ok-circle icon-white"></i> Industries don't close</li>
+                <li><i class="icon-ok-circle icon-white"></i> Parameter for improved station ratings</li>
+                <li><i class="icon-ok-circle icon-white"></i> GPL v2 license</li>
+            </ul>
+        </div>
+    </div>
+</tal:block>
 <div metal:fill-slot='body'>
-    <ul class="inline">
-        <li><i class="icon-ok-circle"></i> Multiple 'Economies' - choose simple or complex gameplay</li>
-        <li><i class="icon-ok-circle"></i> Industries don't close</li>
-        <li><i class="icon-ok-circle"></i> Parameter for improved station ratings</li>
-        <li><i class="icon-ok-circle"></i> GPL v2 license</li>
-    </ul>
-    <p class="alert alert-info">Just one little problem: it's not finished yet ;)</p>
-    <hr />
+    <div class="row">
+        <div class="span3">
+            <ul class="nav nav-list well">
+                <li class="nav-header">Get Started</li>
+                <li><a href="#download-firs">Download FIRS</a></li>
+                <li><a href="#setting-up">Setting up a Game with FIRS</a></li>
+                <li><a href="#firs-gameplay">FIRS Gameplay</a></li>
+            </ul>
+        </div>
+        <div class="span9">
+            <div id="download-firs">
+                <h2 class="page-header">1. Download FIRS</h2>
+                <p class="lead">
+                    FIRS is available from the content service in OpenTTD, as a zip for manual installation,
+                    or as a source checkout for compiling locally (requires mercurial and various python dependencies).
+                </p>
+                <div class="row">
+                    <div class="span3">
+                        <h3>Download in OpenTTD</h3>
+                        <p><strong>Easiest</strong>: get FIRS from the OpenTTD content service.</p>
+                        <a class="btn btn-primary" href="http://wiki.openttd.org/Content_downloading">Instructions</a>
+                    </div>
+                    <div class="span3">
+                        <h3>Download Zip</h3>
+                        <p>Get the latest FIRS release for <a href="http://wiki.openttd.org/Newgrf#Manual_install">manual install</a>.</p>
+                        <a class="btn btn-info" href="http://bundles.openttdcoop.org/firs/releases/LATEST/">Download FIRS</a>
+                    </div>
+                    <div class="span3">
+                        <h3>Download Source</h3>
+                        <p>Checkout source code and compile your own FIRS.</p>
+                        <a class="btn" href="http://bundles.openttdcoop.org/firs/releases/LATEST/">FIRS Source Repo</a>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <br />
+            <div id="setting-up">
+                <h2 class="page-header">2. Setting Up a Game with FIRS</h2>
+                <p class="lead">
+                    A few things to know before setting up a FIRS game...
+                <div class="row">
+                    <div class="span3">
+                        <h3>Conflict Detection</h3>
+                        <p>To avoid conflicts that could break your game, FIRS will disable itself if certain other newgrfs are
+                        detected in the current game.  You'll see a message if this happens.</p>
+                        <p>Conflicting newgrfs include other industry sets, such as ECS and PBI.</p>
+                    </div>
+                    <div class="span3">
+                        <h3>Gameplay Parameters</h3>
+                        <p>FIRS has a number of parameters for gameplay behaviour.
+                        These cover things like economy choice, industry closure and station ratings.
+                        Parameters include help text explaining how they work.</p>
+                        <p><strong>Tip: parameters <a href="http://wiki.openttd.org/Newgrf#Activating_NewGRFs">need to be set</a>
+                         before starting a game.</strong></p>
+                    </div>
+                    <div class="span3">
+                        <h3>Vehicle Support</h3>
+                        <p>Many FIRS cargos are not transportable using the default vehicles.
+                        Fortunately there are lots of great NewGRF vehicle sets with FIRS support.</p>
+                        <p>The in-game content service is a good place to find these.</p>
+                    </div>
+                </div>
+                <p class="muted">FIRS is available in the Temperate, Sub-Arctic and Sub-Tropic climates, but not Toyland.</p>
+            </div>
+            <br />
+            <br />
+            <div id="firs-gameplay">
+                <h2 class="page-header">3. FIRS Gameplay</h2>
 
-    <p>FIRS requires OpenTTD 1.2.0-beta1 or newer (or nightly build > r23667)</p>
-
-    <p>FIRS is available in the Temperate, Arctic and Desert climates.</p>
-
-    <p>For latest information / releases, visit TT-Forums.
-    Release thread. Discussion of FIRS new releases, gameplay tips and bug reports:
-      http://www.tt-forums.net/viewtopic.php?t=44177</p>
-
-    <p>Development thread. Discussion of development, features, ideas and improvements.
-      http://www.tt-forums.net/viewtopic.php?t=41607</p>
-
-    <p>Installing FIRS is easy using the in-game content service.
-    For help with manual installation, try http://wiki.openttd.org/NewGRF</p>
-
-
-    <h3>Setting up a game with FIRS</h3>
-
-    <p>To avoid conflicts, FIRS will disable itself if certain other newgrfs are
-    detected in the current game.  You'll see a message if this happens.</p>
-
-    <p>Conflicting newgrfs include other industry sets, such as ECS and PBI.
-    You can find a full list of errors towards the end of this readme.</p>
-
-
-    <p>FIRS has a number of parameters to control industry behaviour.
-    These cover things like industry production changes, closure and opening.
-    The parameters generally include help text explaining how they work.</p>
-
-    <p>Many FIRS cargos are not transportable using the default vehicles.
-    You'll need newgrf vehicle set(s) that support FIRS cargos.  Fortunately there
-    are lots of great vehicle sets with FIRS support.  The in-game content service
-    is a good place to find these.
-    You can find a list of compatible vehicle sets towards the end of this readme.</p>
-
-
-    <h3>Playing a game with FIRS</h3>
-    You can jump right into FIRS gameplay:
-    - there are familiar industries and cargos you'll recognise from default OpenTTD
-    - FIRS also adds lots of exciting new cargos and industries to play with
-    - primary industries like mines and farms will always produce some cargo
-    - secondary industries like the steel mill and cement plant will always produce
-      some output cargo when an input cargo is delivered.
-
-    <p>For players who want more, FIRS also rewards you by:
-    - increasing primary industry production when you deliver supplies regularly
-    - increasing production at some secondary industries when you deliver more than
-      one input cargo regularly
-    - introducing new industries and cargos as time goes by.</p>
-
-    <h3>More Info / Things to Watch Out For!</h3>
-    <p>- primary industry will not increase production unless supplies are delivered.
-    - primary industry will always produce cargo. There is no need to deliver supplies
-    to get cargo produced, only for production increases.
-    - when small amounts of cargo (less than 8t) are delivered to secondary industries,
-    this will be stored until there is enough to produce a certain amount of output
-    cargo. It can appear that such small amounts of cargo are lost, but they aren't.
-    - some industries are available from year 0. Some industries (and the cargos
-      they use) are only available after a certain date.
-      Intro dates can be found at:
-        http://tt-foundry.com/sets/FIRS/schema/industries
-    - You may find it easier to see industries on the mini-map if you change the
-      map background colour (in advanced options -> interface)
-    - FIRS 0.7 is *not* savegame compatible with FIRS 0.6 or earlier.</p>
-
-
-    <h3>Boosting Primary Production</h3>
-    <p>Primary industries produce raw materials, e.g.
-    - mines, farms, junk yard, oil wells, oil rig etc.</p>
-
-    <p>Many FIRS primary industries accept Engineering Supplies or Farm Supplies.
-    They will only increase production if the correct supplies are delivered.</p>
-
-    <p>Every month there is a chance of a production increase if at least 1t of the
-    correct supplies are delivered.
-    Only 1t of supplies is required - delivering more than 1t of supplies will
-    not make a production increase more likely.</p>
-
-
-    <h3>Industry Closure</h3>
-    <p>Industries won't close unless closure is enabled by parameter.</p>
-
-    <p>If primary industry closure is enabled, there is a chance of closure each
-    month if industry production falls to a low level.  Primary production decrease
-    parameter *must* be enabled if you want primary industries to be able to close.</p>
-
-    <p>If secondary industry closure is enabled, there is a chance of closure each
-    month if no cargo has been delivered in the previous 18 months.</p>
+                <p class="lead">You can jump right into FIRS gameplay.</p>
+                <ul>
+                    <li>There are familiar industries and cargos you'll recognise from default OpenTTD.</li>
+                    <li>FIRS also adds lots of exciting new cargos and industries to play with.</li>
+                    <li>Primary industries like mines and farms will always produce some cargo.</li>
+                    <li>Secondary industries like the steel mill and cement plant will always produce some output cargo when an accepted cargo is delivered.</li>
+                </ul>
+                <h4 class="lead">Things to Know</h4>
+                <ul>
+                    <li>Deliver supplies to primary industries regularly to boost production.</li>
+                    <li>Some secondary industries boost production when more than one accepted cargo is delivered regularly.</li>
+                    <li>Primary industries will never close.</li>
+                    <li>Secondary industry will not close unless the closure parameter is enabled.</li>
+                    <li>Some industries are available from year 0. Some industries (and the cargos
+                        they use) are only available after a certain date.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
 
 
