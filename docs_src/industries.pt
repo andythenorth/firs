@@ -1,78 +1,70 @@
 <tal:page_with_sidebar_template define="page_with_sidebar_template load: page_with_sidebar_template.pt" metal:use-macro="page_with_sidebar_template">
 <div metal:fill-slot='sidebar_nav'>
     <li class="nav-header">Industries (${len(registered_industries)})</li>
-    <tal:economies repeat="industry registered_industries">
-        <li><a href="#${industry.id}">${doc_helper.get_industry_name(industry)}</a></li>
+    <tal:economies repeat="item doc_helper.get_registered_industries_sorted_by_name()">
+        <tal:industry define="name item[0]; industry item[1]">
+            <li><a href="#${industry.id}">${doc_helper.get_industry_name(industry)}</a></li>
+        </tal:industry>
     </tal:economies>
 </div>
 
 <div metal:fill-slot='body'>
     <h2>Industries</h2>
     <br />
-    <tal:economies repeat="industry registered_industries">
-        <div id="${industry.id}" style="clear:both;">
-            <div class="page-header">
-                <h3>${doc_helper.get_industry_name(industry)} <small>Industry</small></h3>
-            </div>
-            <div style="overflow:hidden;">
-                <div class="pull-left" style="width:400px;">
-                    <img src="static/img/industries/${industry.id}.png" alt="${doc_helper.get_industry_name(industry)}" />
+    <tal:economies repeat="item doc_helper.get_registered_industries_sorted_by_name()">
+        <tal:industry define="name item[0]; industry item[1]">
+            <div id="${industry.id}" style="clear:both;">
+                <div class="page-header">
+                    <h3>${doc_helper.get_industry_name(industry)} <small>Industry</small></h3>
                 </div>
-                <div class="span4">
-                    <table class="table table-condensed">
-                        <tbody>
-                            <tr>
-                                <th nowrap="true" style="width:120px; border-top:none; text-align:right;">Economies:</th>
-                                <td style="border-top:none;">
-                                    <tal:economies repeat="industry_in_economy doc_helper.industry_economy_mapping(economy_schemas, industry)">
-                                        <a href="economies.html#${industry_in_economy}">${doc_helper.get_economy_name(industry_in_economy)}</a>${(',', '')[repeat.industry_in_economy.end]}
-                                    </tal:economies>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th nowrap="true" style="width:120px; text-align:right;">Accepted Cargos:</th>
-                                <td tal:define="industry_accepted_cargo_mapping doc_helper.industry_accepted_cargo_mapping(economy_schemas, registered_cargos, industry)">
-                                    <tal:cargos repeat="cargo industry_accepted_cargo_mapping">
-                                        <a href="cargos.html#${cargo.id}">${doc_helper.get_cargo_name(cargo)}</a>${(',', '')[repeat.cargo.end]}
-                                    </tal:cargos>
-                                    <tal:no_cargos condition="len(industry_accepted_cargo_mapping) == 0">
-                                        <span class="muted">None</span>
-                                    </tal:no_cargos>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th nowrap="true" style="text-align:right;">Produced Cargos:</th>
-                                <td tal:define="industry_produced_cargo_mapping doc_helper.industry_produced_cargo_mapping(economy_schemas, registered_cargos, industry)">
-                                    <tal:cargos repeat="cargo industry_produced_cargo_mapping">
-                                        <a href="cargos.html#${cargo.id}">${doc_helper.get_cargo_name(cargo)}</a>${(',', '')[repeat.cargo.end]}
-                                    </tal:cargos>
-                                    <tal:no_cargos condition="len(industry_produced_cargo_mapping) == 0">
-                                        <span class="muted">None</span>
-                                    </tal:no_cargos>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <p class="muted pull-right"><small>Acceptance and production varies by economy.</small></p>
+                <div style="overflow:hidden;">
+                    <div class="pull-left" style="width:400px;">
+                        <img src="static/img/industries/${industry.id}.png" alt="${doc_helper.get_industry_name(industry)}" />
+                    </div>
+                    <div class="span4">
+                        <table class="table table-condensed">
+                            <tbody>
+                                <tr>
+                                    <th nowrap="true" style="width:120px; border-top:none; text-align:right;">Economies:</th>
+                                    <td style="border-top:none;">
+                                        <tal:economies repeat="industry_in_economy doc_helper.industry_economy_mapping(economy_schemas, industry)">
+                                            <a href="economies.html#${industry_in_economy}">${doc_helper.get_economy_name(industry_in_economy)}</a>${(',', '')[repeat.industry_in_economy.end]}
+                                        </tal:economies>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th nowrap="true" style="width:120px; text-align:right;">Accepted Cargos:</th>
+                                    <td tal:define="industry_accepted_cargo_mapping doc_helper.industry_accepted_cargo_mapping(economy_schemas, registered_cargos, industry)">
+                                        <tal:cargos repeat="cargo industry_accepted_cargo_mapping">
+                                            <a href="cargos.html#${cargo.id}">${doc_helper.get_cargo_name(cargo)}</a>${(',', '')[repeat.cargo.end]}
+                                        </tal:cargos>
+                                        <tal:no_cargos condition="len(industry_accepted_cargo_mapping) == 0">
+                                            <span class="muted">None</span>
+                                        </tal:no_cargos>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th nowrap="true" style="text-align:right;">Produced Cargos:</th>
+                                    <td tal:define="industry_produced_cargo_mapping doc_helper.industry_produced_cargo_mapping(economy_schemas, registered_cargos, industry)">
+                                        <tal:cargos repeat="cargo industry_produced_cargo_mapping">
+                                            <a href="cargos.html#${cargo.id}">${doc_helper.get_cargo_name(cargo)}</a>${(',', '')[repeat.cargo.end]}
+                                        </tal:cargos>
+                                        <tal:no_cargos condition="len(industry_produced_cargo_mapping) == 0">
+                                            <span class="muted">None</span>
+                                        </tal:no_cargos>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p class="muted pull-right"><small>Acceptance and production varies by economy.</small></p>
+                    </div>
                 </div>
+                <br />
+                <br />
+                <br />
             </div>
             <br />
-            <br />
-            <br />
-            <!--!<ul class="inline">
-                <tal:industries repeat="cargo economy_schemas[economy].enabled_cargos">
-                    <li>${doc_helper.get_cargo_name(cargo)}</li>
-                </tal:industries>
-            </ul>
-
-            <h4>${len(economy_schemas[economy].enabled_industries)} Industries</h4>
-            <ul class="inline">
-                <tal:industries repeat="industry economy_schemas[economy].enabled_industries">
-                    <li>${doc_helper.get_industry_name(industry, economy)}</li>
-                </tal:industries>
-            </ul>-->
-        </div>
-        <br />
+        </tal:industry>
     </tal:economies>
 </div>
 </tal:page_with_sidebar_template>

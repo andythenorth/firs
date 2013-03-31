@@ -70,6 +70,14 @@ class DocHelper(object):
         string_id = utils.unwrap_nml_string_declaration(name)
         return base_lang_strings.get(string_id, 'NO NAME ' + str(name) + ' ' + industry.id)
 
+    def get_economies_sorted_by_name(self):
+        return sorted(global_constants.economies, key=lambda economy: self.get_economy_name(economy))
+
+    def get_registered_cargo_sorted_by_name(self):
+        # cargos don't store the name as a python attr, but we often need to iterate over their names in A-Z order
+        result = dict((self.get_cargo_name(cargo), cargo) for cargo in registered_cargos)
+        return sorted(result.items())
+
     def get_registered_industries_sorted_by_name(self):
         # industries don't store the name as a python attr, but we often need to iterate over their names in A-Z order
         result = dict((self.get_industry_name(industry), industry) for industry in registered_industries)
@@ -98,7 +106,7 @@ class DocHelper(object):
                 for cargo_label in industry.get_property('prod_cargo_types', economy):
                     if cargo.cargo_label[1:-1] == cargo_label:
                         result.append(industry)
-        return set(result)
+        return sorted(set(result), key=lambda industry: self.get_industry_name(industry))
 
     def cargo_accepting_industry_mapping(self, economy_schemas, registered_industries, cargo):
         result  = []
@@ -110,7 +118,7 @@ class DocHelper(object):
                 for cargo_label in industry.get_property('accept_cargo_types', economy):
                     if cargo.cargo_label[1:-1] == cargo_label:
                         result.append(industry)
-        return set(result)
+        return sorted(set(result), key=lambda industry: self.get_industry_name(industry))
 
     def industry_economy_mapping(self, economy_schemas, industry):
         result = []
@@ -127,7 +135,7 @@ class DocHelper(object):
             for economy in economy_schemas:
                 if cargo.cargo_label[1:-1] in industry.get_property('accept_cargo_types', economy):
                     result.append(cargo)
-        return set(result)
+        return sorted(set(result), key=lambda cargo: self.get_cargo_name(cargo))
 
     def industry_produced_cargo_mapping(self, economy_schemas, registered_cargos, industry):
         result = []
@@ -137,7 +145,7 @@ class DocHelper(object):
             for economy in economy_schemas:
                 if cargo.cargo_label[1:-1] in industry.get_property('prod_cargo_types', economy):
                     result.append(cargo)
-        return set(result)
+        return sorted(set(result), key=lambda cargo: self.get_cargo_name(cargo))
 
     def get_active_nav(self, doc_name, nav_link):
         return ('','active')[doc_name == nav_link]

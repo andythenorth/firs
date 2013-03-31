@@ -24,18 +24,20 @@
                 </tr>
             </thead>
             <tbody>
-                <tal:cargos repeat="cargo registered_cargos">
-                    <tr>
-                        <td>
-                            <a href="cargos.html#${cargo.id}">${doc_helper.get_cargo_name(cargo)}</a>
-                        </td>
-                        <td>${cargo.id}</td>
-                        <td class="number">${cargo.number}d</td>
-                        <td>${cargo.cargo_label}</td>
-                        <td class="number">${cargo.weight}</td>
-                        <td class="number">${cargo.capacity_multiplier}</td>
-                        <td class="number">${cargo.cargo_payment_list_colour}</td>
-                    </tr>
+                <tal:cargos repeat="item doc_helper.get_registered_cargo_sorted_by_name()">
+                    <tal:cargo define="name item[0]; cargo item[1]">
+                        <tr>
+                            <td>
+                                <a href="cargos.html#${cargo.id}">${doc_helper.get_cargo_name(cargo)}</a>
+                            </td>
+                            <td>${cargo.id}</td>
+                            <td class="number">${cargo.number}d</td>
+                            <td>${cargo.cargo_label}</td>
+                            <td class="number">${cargo.weight}</td>
+                            <td class="number">${cargo.capacity_multiplier}</td>
+                            <td class="number">${cargo.cargo_payment_list_colour}</td>
+                        </tr>
+                    </tal:cargo>
                 </tal:cargos>
             </tbody>
         </table>
