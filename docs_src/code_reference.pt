@@ -64,7 +64,7 @@
                     <tal:industry define="name item[0]; industry item[1]">
                         <tr>
                             <td>
-                                <a href="industries.html#${industry.id}">${name}</a>
+                                <a href="industries.html#${industry.id}">${' / '.join(doc_helper.get_industry_all_names(industry))}</a>
                             </td>
                             <td>${industry.id}</td>
                             <td class="number">${global_constants.industry_numeric_ids[industry.id]}d</td>
