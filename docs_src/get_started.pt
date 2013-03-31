@@ -3,9 +3,13 @@
     <div style="background-color:#3878bc; color:#fff; margin-top:-31px; margin-bottom:30px; padding:20px; border-top:solid 1px #444; border-bottom:solid 1px #333;">
         <div class="container">
             <ul class="inline">
-                <li><i class="icon-ok-circle icon-white"></i> Multiple 'Economies' - choose simple or complex gameplay</li>
-                <li><i class="icon-ok-circle icon-white"></i> Industries don't close</li>
+                <li><i class="icon-ok-circle icon-white"></i> ${len(registered_cargos)} cargos</li>
+                <li><i class="icon-ok-circle icon-white"></i> ${len(registered_industries)} industries</li>
+                <li><i class="icon-ok-circle icon-white"></i> ${len(economy_schemas)} economies - choose simple or complex gameplay</li>
+                <li><i class="icon-ok-circle icon-white"></i> Primary industries don't close</li>
+                <li><i class="icon-ok-circle icon-white"></i> Optional secondary industry closure</li>
                 <li><i class="icon-ok-circle icon-white"></i> Parameter for improved station ratings</li>
+                <li><i class="icon-ok-circle icon-white"></i> Beautiful hand-drawn pixels</li>
                 <li><i class="icon-ok-circle icon-white"></i> GPL v2 license</li>
             </ul>
         </div>
