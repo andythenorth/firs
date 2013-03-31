@@ -34,8 +34,8 @@
         <div class="navbar-inner">
             <div class="container">
                 <ul class="nav pull-left">
-                    <li class="${doc_helper.get_active_nav(doc_name, 'set_overview')}">
-                        <a href="set_overview.html">Get Started</a>
+                    <li class="${doc_helper.get_active_nav(doc_name, 'get_started')}">
+                        <a href="get_started.html">Get Started</a>
                     </li>
                     <li class="${doc_helper.get_active_nav(doc_name, 'economies')}">
                         <a href="economies.html">Economies</a>
