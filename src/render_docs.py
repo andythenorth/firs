@@ -86,7 +86,7 @@ class DocHelper(object):
         for economy in economy_schemas:
             if cargo in economy_schemas[economy]['enabled_cargos']:
                 result.append(economy)
-        return sorted(result)
+        return sorted(result, key=lambda economy: self.get_economy_name(economy))
 
     def cargo_producing_industry_mapping(self, economy_schemas, registered_industries, cargo):
         result  = []
@@ -117,7 +117,7 @@ class DocHelper(object):
         for economy in economy_schemas:
             if industry in economy_schemas[economy]['enabled_industries']:
                 result.append(economy)
-        return sorted(result)
+        return sorted(result, key=lambda economy: self.get_economy_name(economy))
 
     def industry_accepted_cargo_mapping(self, economy_schemas, registered_cargos, industry):
         result = []
