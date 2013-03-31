@@ -3,7 +3,7 @@
     <li class="nav-header">Industries (${len(registered_industries)})</li>
     <tal:economies repeat="item doc_helper.get_registered_industries_sorted_by_name()">
         <tal:industry define="name item[0]; industry item[1]">
-            <li><a href="#${industry.id}">${doc_helper.get_industry_name(industry)}</a></li>
+            <li><a href="#${industry.id}">${' / '.join(doc_helper.get_industry_all_names(industry))}</a></li>
         </tal:industry>
     </tal:economies>
 </div>
@@ -15,7 +15,8 @@
         <tal:industry define="name item[0]; industry item[1]">
             <div id="${industry.id}" style="clear:both;">
                 <div class="page-header">
-                    <h3>${doc_helper.get_industry_name(industry)} <small>Industry</small></h3>
+                    <h3>${' / '.join(doc_helper.get_industry_all_names(industry))} <small>Industry</small></h3>
+                    <p class="muted" tal:condition="len(doc_helper.get_industry_all_names(industry)) > 1">Industry name varies by economy.</p>
                 </div>
                 <div style="overflow:hidden;">
                     <div class="pull-left" style="width:400px;">

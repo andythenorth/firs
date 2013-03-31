@@ -70,6 +70,15 @@ class DocHelper(object):
         string_id = utils.unwrap_nml_string_declaration(name)
         return base_lang_strings.get(string_id, 'NO NAME ' + str(name) + ' ' + industry.id)
 
+    def get_industry_all_names(self, industry):
+        # names can vary in each economy
+        result = []
+        for economy in economy_schemas:
+            name = industry.get_property('name', economy)
+            string_id = utils.unwrap_nml_string_declaration(name)
+            result.append(base_lang_strings.get(string_id, 'NO NAME ' + str(name) + ' ' + industry.id))
+        return set(result)
+
     def get_economies_sorted_by_name(self):
         return sorted(global_constants.economies, key=lambda economy: self.get_economy_name(economy))
 
