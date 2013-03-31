@@ -31,7 +31,7 @@
                                 <th style="text-align:right;">Produced by:</th>
                                 <td>
                                     <tal:producing_industries repeat="cargo_produced_by doc_helper.cargo_producing_industry_mapping(economy_schemas, registered_industries, cargo)">
-                                        <a href="industries.html#${cargo_produced_by.id}">${doc_helper.get_industry_name(cargo_produced_by)}</a>${(',', '')[repeat.cargo_produced_by.end]}
+                                        <a href="industries.html#${cargo_produced_by.id}">${' / '.join(doc_helper.get_industry_all_names(cargo_produced_by))}</a>${(',', '')[repeat.cargo_produced_by.end]}
                                     </tal:producing_industries>
                                 </td>
                             </tr>
@@ -39,7 +39,7 @@
                                 <th style="text-align:right;">Accepted by:</th>
                                 <td>
                                     <tal:accepting_industries repeat="cargo_accepted_by doc_helper.cargo_accepting_industry_mapping(economy_schemas, registered_industries, cargo)">
-                                        <a href="industries.html#${cargo_accepted_by.id}">${doc_helper.get_industry_name(cargo_accepted_by)}</a>${(',', '')[repeat.cargo_accepted_by.end]}
+                                        <a href="industries.html#${cargo_accepted_by.id}">${' / '.join(doc_helper.get_industry_all_names(cargo_accepted_by))}</a>${(',', '')[repeat.cargo_accepted_by.end]}
                                     </tal:accepting_industries>
                                 </td>
                             </tr>
