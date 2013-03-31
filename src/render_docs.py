@@ -86,7 +86,7 @@ class DocHelper(object):
         for economy in economy_schemas:
             if cargo in economy_schemas[economy]['enabled_cargos']:
                 result.append(economy)
-        return result
+        return sorted(result)
 
     def cargo_producing_industry_mapping(self, economy_schemas, registered_industries, cargo):
         result  = []
