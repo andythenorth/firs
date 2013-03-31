@@ -18,22 +18,14 @@
                 <p>${doc_helper.get_economy_extra_info(economy)}</p>
             </div>
             <h4>${len(economy_schemas[economy].enabled_cargos)} Cargos</h4>
-            <ul class="inline">
-                <tal:industries repeat="cargo economy_schemas[economy].enabled_cargos">
-                    <li>
-                        <a href="cargos.html#${cargo.id}">${doc_helper.get_cargo_name(cargo)}</a>
-                    </li>
-                </tal:industries>
-            </ul>
+            <tal:industries repeat="cargo economy_schemas[economy].enabled_cargos">
+                <a href="cargos.html#${cargo.id}">${doc_helper.get_cargo_name(cargo)}</a>${(',', '')[repeat.cargo.end]}
+            </tal:industries>
 
             <h4>${len(economy_schemas[economy].enabled_industries)} Industries</h4>
-            <ul class="inline">
-                <tal:industries repeat="industry economy_schemas[economy].enabled_industries">
-                    <li>
-                        <a href="industries.html#${industry.id}">${doc_helper.get_industry_name(industry, economy)}</a>
-                    </li>
-                </tal:industries>
-            </ul>
+            <tal:industries repeat="industry economy_schemas[economy].enabled_industries">
+                <a href="industries.html#${industry.id}">${doc_helper.get_industry_name(industry, economy)}</a>${(',', '')[repeat.industry.end]}
+            </tal:industries>
         </div>
         <br />
     </tal:economies>
