@@ -17,7 +17,6 @@ currentdir = os.curdir
 import sys
 sys.path.append(os.path.join(currentdir, 'src')) # add to the module search path
 
-import codecs # used for writing files - more unicode friendly than standard open() module
 import firs
 
 import render_pnml
