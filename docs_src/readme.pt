@@ -106,9 +106,8 @@ or post the translated file in the FIRS discussion thread at in the tt-forums:
 
 =======
 GRF Name : ${repo_vars.repo_title}
-GRF ID   : ${repo_vars}
 
-This version of FIRS is created using repository version {{REPO_REVISION}}
+This version of FIRS is created using repository version ${repo_vars.repo_version}
 
 Thanks to all OpenTTD devs who provide patches and support for FIRS.
 
