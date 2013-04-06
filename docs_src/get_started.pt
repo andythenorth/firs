@@ -1,20 +1,4 @@
 <tal:main_template define="main_template load: main_template.pt" metal:use-macro="main_template">
-<tal:block metal:fill-slot='opt_page_header'>
-    <div style="background-color:#3878bc; color:#fff; margin-top:-31px; margin-bottom:30px; padding:20px; border-top:solid 1px #444; border-bottom:solid 1px #333;">
-        <div class="container">
-            <ul class="inline">
-                <li><i class="icon-ok-circle icon-white"></i> ${len(registered_cargos)} cargos</li>
-                <li><i class="icon-ok-circle icon-white"></i> ${len(registered_industries)} industries</li>
-                <li><i class="icon-ok-circle icon-white"></i> ${len(economy_schemas)} economies - choose simple or complex gameplay</li>
-                <li><i class="icon-ok-circle icon-white"></i> Primary industries don't close</li>
-                <li><i class="icon-ok-circle icon-white"></i> Optional secondary industry closure</li>
-                <li><i class="icon-ok-circle icon-white"></i> Parameter for improved station ratings</li>
-                <li><i class="icon-ok-circle icon-white"></i> Beautiful hand-drawn pixels</li>
-                <li><i class="icon-ok-circle icon-white"></i> GPL v2 license</li>
-            </ul>
-        </div>
-    </div>
-</tal:block>
 <div metal:fill-slot='body'>
     <div class="row">
         <div class="span3">
@@ -27,6 +11,17 @@
             </ul>
         </div>
         <div class="span9">
+            <ul class="inline">
+                <li><i class="icon-ok-circle"></i> ${len(registered_cargos)} cargos</li>
+                <li><i class="icon-ok-circle"></i> ${len(registered_industries)} industries</li>
+                <li><i class="icon-ok-circle"></i> ${len(economy_schemas)} economies - choose simple or complex gameplay</li>
+                <li><i class="icon-ok-circle"></i> Primary industries don't close</li>
+                <li><i class="icon-ok-circle"></i> Optional secondary industry closure</li>
+                <li><i class="icon-ok-circle"></i> Parameter for improved station ratings</li>
+                <li><i class="icon-ok-circle"></i> Beautiful hand-drawn pixels</li>
+                <li><i class="icon-ok-circle"></i> GPL v2 license</li>
+            </ul>
+            <br />
             <div id="download-firs">
                 <h2 class="page-header">1. Download FIRS</h2>
                 <p class="lead">
