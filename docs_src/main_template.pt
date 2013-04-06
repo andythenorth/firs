@@ -59,8 +59,15 @@
     </div>
     <div class="hero-unit subhead">
         <div class="container">
-            <h1>FIRS Industry Replacement Set</h1>
-            <p class="lead">New Industries and Cargos for OpenTTD</p>
+            <div class="row">
+                <div class="span6">
+                    <h1>FIRS</h1>
+                    <p class="lead">Industry Replacement Set for OpenTTD</p>
+                </div>
+                <div class="span6">
+                    <img class="pull-right" src="static/img/aluminium_plant.png" />
+                </div>
+            </div>
         </div>
     </div>
     <metal:block define-slot="opt_page_header">
