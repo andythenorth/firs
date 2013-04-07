@@ -61,6 +61,7 @@
         <script language="JavaScript">
         function random_img(){
             var images=new Array("aluminium_plant",
+                                 "biorefinery",
                                  "brewery",
                                  "brick_works",
                                  "dairy",
@@ -68,10 +69,11 @@
                                  "dredging_site",
                                  "food_market",
                                  "furniture_factory",
+                                 "lumber_yard",
                                  "recycling_plant");
 
             var random_image=images[Math.floor(Math.random()*images.length)];
-            document.write('<img class="pull-right" style="margin-top:-30px; margin-bottom:0;" src="static/img/industries/'+ random_image +'.png">')
+            document.write('<a href="industries.html#' + random_image + '"><img class="pull-right" style="margin-top:-30px; margin-bottom:0;" src="static/img/industries/'+ random_image +'.png"></a>')
         }
         random_img()
         </script>
