@@ -1,14 +1,14 @@
 <tal:page_with_sidebar_template define="page_with_sidebar_template load: page_with_sidebar_template.pt" metal:use-macro="page_with_sidebar_template">
 <div metal:fill-slot='sidebar_nav'>
     <li class="nav-header">Code Reference</li>
-    <li><a href="#cargos">Cargos Reference</a></li>
-    <li><a href="#industries">Industries Reference</a></li>
+    <li><a href="#cargos">Cargos (${len(registered_cargos)})</a></li>
+    <li><a href="#industries">Industries (${len(registered_industries)})</a></li>
 </div>
 
 <div metal:fill-slot='body'>
     <div id="cargos">
         <div class="page-header">
-            <h2>Cargos <small>Code Reference</small></h2>
+            <h2>Cargos (${len(registered_cargos)}) <small>Code Reference</small></h2>
         </div>
         <p class="pull-right"><a href="http://newgrf-specs.tt-wiki.net/wiki/NML:Cargos#Cargo_IDs">&#187; Reference for NewGRF cargo IDs</a>
         <table class="table table-striped tablesorter">
@@ -47,7 +47,7 @@
 
     <div id="industries">
         <div class="page-header">
-            <h2>Industries <small>Code Reference</small></h2>
+            <h2>Industries (${len(registered_industries)}) <small>Code Reference</small></h2>
         </div>
         <p class="pull-right"><a href="http://newgrf-specs.tt-wiki.net/wiki/IndustryDefaultProps">&#187; Reference for NewGRF industry IDs</a></p>
         <table class="table table-striped tablesorter">
