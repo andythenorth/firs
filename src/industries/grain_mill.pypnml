@@ -86,6 +86,7 @@ switch (FEAT_INDUSTRIES, SELF, ${industry.id}_windmill_layout_only, var[0x86]) {
 }
 
 /** Both types of layouts can appear between 1870 and 1900. */
+/** ! Update the docs if changing graphics dates */
 switch (FEAT_INDUSTRIES, SELF, ${industry.id}_check_date, current_year) {
 	0..1869:    ${industry.id}_windmill_layout_only;
 	1870..1900: ${industry.id}_check_location;

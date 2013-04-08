@@ -17,6 +17,7 @@
                 <div class="page-header">
                     <h3>${' / '.join(doc_helper.get_industry_all_names(industry))} <small>Industry</small></h3>
                     <p class="muted" tal:condition="len(doc_helper.get_industry_all_names(industry)) > 1">Industry name varies by economy.</p>
+                    <p class="muted">${doc_helper.get_industry_extra_info(industry)}</p>
                 </div>
                 <div style="overflow:hidden;">
                     <div class="pull-left" style="width:400px;">

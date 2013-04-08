@@ -98,6 +98,9 @@ class DocHelper(object):
     def get_cargo_extra_info(self, cargo):
         return base_lang_strings.get('CARGO_INFO_' + cargo.id.upper(), '')
 
+    def get_industry_extra_info(self, industry):
+        return base_lang_strings.get('INDUSTRY_INFO_' + industry.id.upper(), '')
+
     def cargo_economy_mapping(self, economy_schemas, cargo):
         result = []
         for economy in economy_schemas:
