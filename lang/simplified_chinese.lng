@@ -58,7 +58,7 @@ STR_CARGO_UNIT_CHEMICALS                                                        
 STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} 粘土
 STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} 箱 工程物资
 STR_CARGO_UNIT_FIBRES                                                           :{SIGNED_WORD} 包 植物纤维
-STR_CARGO_UNIT_FISH                                                             :{WEIGHT}鱼
+STR_CARGO_UNIT_FISH                                                             :{WEIGHT} 鱼
 STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} 箱 农用物资
 STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} 水果
 STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} 木料
@@ -75,26 +75,26 @@ STR_CARGO_UNIT_SUGARCANE                                                        
 STR_CARGO_UNIT_WOOL                                                             :{SIGNED_WORD} 包 羊毛
 
 STR_CID_ALCOHOL                                                                 :{TINYFONT}酒
-STR_CID_BAUXITE                                                                 :{TINYFONT}铝土
-STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}建材
-STR_CID_CHEMICALS                                                               :{TINYFONT}化工
-STR_CID_CLAY                                                                    :{TINYFONT}粘土
-STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}工程
-STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}农具
-STR_CID_FIBRES                                                                  :{TINYFONT}植纤
+STR_CID_BAUXITE                                                                 :{TINYFONT}铝
+STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}建
+STR_CID_CHEMICALS                                                               :{TINYFONT}化
+STR_CID_CLAY                                                                    :{TINYFONT}粘
+STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}程
+STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}农
+STR_CID_FIBRES                                                                  :{TINYFONT}纤
 STR_CID_FISH                                                                    :{TINYFONT}鱼
-STR_CID_LUMBER                                                                  :{TINYFONT}木料
-STR_CID_MANUFACTURING_SUPPLIES                                                  :{TINYFONT}工具
-STR_CID_METAL                                                                   :{TINYFONT}合金
-STR_CID_MILK                                                                    :{TINYFONT}牛奶
-STR_CID_PETROL                                                                  :{TINYFONT}汽油
-STR_CID_RECYCLABLES                                                             :{TINYFONT}回收
-STR_CID_SAND                                                                    :{TINYFONT}沙子
-STR_CID_SCRAP_METAL                                                             :{TINYFONT}废铁
-STR_CID_STONE                                                                   :{TINYFONT}石料
-STR_CID_SUGAR_BEET                                                              :{TINYFONT}甜菜
-STR_CID_SUGARCANE                                                               :{TINYFONT}甘蔗
-STR_CID_WOOL                                                                    :{TINYFONT}羊毛
+STR_CID_LUMBER                                                                  :{TINYFONT}料
+STR_CID_MANUFACTURING_SUPPLIES                                                  :{TINYFONT}工
+STR_CID_METAL                                                                   :{TINYFONT}金
+STR_CID_MILK                                                                    :{TINYFONT}奶
+STR_CID_PETROL                                                                  :{TINYFONT}汽
+STR_CID_RECYCLABLES                                                             :{TINYFONT}回
+STR_CID_SAND                                                                    :{TINYFONT}沙
+STR_CID_SCRAP_METAL                                                             :{TINYFONT}废
+STR_CID_STONE                                                                   :{TINYFONT}石
+STR_CID_SUGAR_BEET                                                              :{TINYFONT}甜
+STR_CID_SUGARCANE                                                               :{TINYFONT}蔗
+STR_CID_WOOL                                                                    :{TINYFONT}毛
 
 STR_ERR_CLIMATE_TOYLAND                                                         :{ORANGE}FIRS不兼容于Toyland climate
 STR_ERR_INCOMPATIBLE_SET                                                        :{ORANGE}E01: {YELLOW}不兼容集: {ORANGE}{STRING} {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
@@ -176,7 +176,7 @@ STR_IND_BASICFARM                                                               
 STR_IND_BAUXITE_MINE                                                            :铝土矿
 STR_IND_BIOREFINERY                                                             :生物炼制厂
 STR_IND_BREWERY                                                                 :酿酒厂
-STR_IND_BREWERY_CIDER_MILL                                                      :苹果榨汁厂
+STR_IND_BREWERY_CIDER_MILL                                                      :苹果酒厂
 STR_IND_BRICK_WORKS                                                             :砖厂
 STR_IND_BUILDERS_YARD                                                           :建筑工地
 STR_IND_CEMENT_PLANT                                                            :水泥厂
@@ -202,7 +202,7 @@ STR_IND_MACHINE_SHOP                                                            
 STR_IND_METAL_FABRICATION_PLANT                                                 :金属加工厂
 STR_IND_METAL_FOUNDRY                                                           :金工工坊
 STR_IND_MIXEDFARM                                                               :综合农场
-STR_IND_ORCHARD_PIGGERY                                                         :猪和果树
+STR_IND_ORCHARD_PIGGERY                                                         :生态农场
 STR_IND_PETROLPUMP                                                              :加油站
 STR_IND_PLASTICS_PLANT                                                          :塑料厂
 STR_IND_PORT                                                                    :港口
