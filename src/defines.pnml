@@ -22,10 +22,6 @@ if (climate == CLIMATE_TROPICAL) { market_tree = MARKET_TREE_TROPICAL; }
 #define GROUNDTILE_SLABS          1420
 #define GROUNDTILE_HALF_BROWN     3962
 
-// supply delivery requirements for primary industry production boost
-#define SUPPLY_BOOST_DOUBLE        21
-#define SUPPLY_BOOST_QUADRUPLE     84
-
 // used for secondary industry production
 #define PRODUCTION_SPAN 30
 

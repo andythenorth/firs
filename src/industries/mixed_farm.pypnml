@@ -59,10 +59,10 @@ CHECK_FOUNDER       (${industry.id}_plastics_plant)
 
 SWITCH_COLOUR_SCHEME1(${industry.id}_colour)
 
+${industry.get_primary_supplies_stuff()}
+
 #include "../src/templates/produce_primary.pnml"
 #include "../src/templates/check_primary_production_level.pnml"
-
-${industry.get_primary_supplies_stuff()}
 
 #include "../src/templates/check_availability.pnml"
 
