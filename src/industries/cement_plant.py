@@ -313,6 +313,7 @@ industry.add_industry_layout(
               (4, 0, 'cement_plant_tile', 'cement_plant_spritelayout_stone_staithe'),
               (4, 1, 'cement_plant_tile', 'cement_plant_spritelayout_11'),
               (4, 2, 'cement_plant_tile', 'cement_plant_spritelayout_8'),
+              (4, 3, 'cement_plant_tile', 'cement_plant_spritelayout_7'),
               (5, 0, 'cement_plant_tile', 'cement_plant_spritelayout_clay_staithe'),
               (5, 1, 'cement_plant_tile', 'cement_plant_spritelayout_10'),
               (5, 2, 'cement_plant_tile', 'cement_plant_spritelayout_9'),
