@@ -3,10 +3,29 @@ FIRS Industry Replacement Set Changelog
 =======================================
 
 --------------
+1.0.1 Release
+--------------
+
+*Fixes*
+- Fix: serious bug with supplies behaviour for primary industries (wrong amounts for supply requirements)
+- Fix: missing tile in one layout for Cement Plant
+
+*New Features / Changes*
+- Updated online docs http://bundles.openttdcoop.org/firs/releases/LATEST/docs
+- Changed url for OpenTTD 'Visit Website' to point to online docs
+
+*Translations*
+- Simplified Chinese (dirace)
+
+*Codechanges*
+- Refactor some CPP templating to use python instead
+- Stop declaring a couple of includes in 22 different industry files, declare them once in a template instead
+
+--------------
 1.0.0 Release
 --------------
 
-*New Features / Changes *
+*New Features / Changes*
 - Feature: it's 1.0.0
 - Feature: show pigs at Orchard and Piggery
 - Feature: online HTML docs: http://bundles.openttdcoop.org/firs/releases/LATEST/docs
@@ -15,11 +34,11 @@ FIRS Industry Replacement Set Changelog
 0.12.0 Release
 --------------
 
-*New Features / Changes *
+*New Features / Changes*
 - HTML docs (unfinished)
 - bumped savegame min version to avoid breaking savegames
 
-*Codechange*
+*Codechanges*
 - make Ranch a separate industry to allow for customised graphics in future
 
 *Translations additions / updates*
