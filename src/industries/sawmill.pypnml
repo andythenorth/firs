@@ -7,7 +7,7 @@
 
 #define THIS_ID(...) ${industry.id}_ ## __VA_ARGS__
 
-item(FEAT_INDUSTRYTILES, THIS_ID(tile_1), 11) {
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile_1, 11) {
 	property {
 		substitute: 11;
 		override: 11;
@@ -16,7 +16,7 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_1), 11) {
 	}
 }
 
-item(FEAT_INDUSTRYTILES, THIS_ID(tile_2), 12) {
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile_2, 12) {
 	property {
 		substitute: 12;
 		override: 12;
@@ -25,7 +25,7 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_2), 12) {
 	}
 }
 
-item(FEAT_INDUSTRYTILES, THIS_ID(tile_3), 13) {
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile_3, 13) {
 	property {
 		substitute: 13;
 		override: 13;
@@ -34,7 +34,7 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_3), 13) {
 	}
 }
 
-item(FEAT_INDUSTRYTILES, THIS_ID(tile_4), 14) {
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile_4, 14) {
 	property {
 		substitute: 14;
 		override: 14;
@@ -43,7 +43,7 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_4), 14) {
 	}
 }
 
-item(FEAT_INDUSTRYTILES, THIS_ID(tile_5), 15) {
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile_5, 15) {
 	property {
 		substitute: 15;
 		override: 15;
@@ -57,35 +57,35 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_5), 15) {
  * *************************************************/
 
 TILE_DISALLOW_NEARBY_CLASS(tile_nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
-TILE_ALLOW_PLAYER         (tile_location_check, THIS_ID(tile_nearby_industry))
+TILE_ALLOW_PLAYER         (tile_location_check, ${industry.id}_tile_nearby_industry)
 
 item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_11, 11) {
 	graphics {
-		tile_check: THIS_ID(tile_location_check);
+		tile_check: ${industry.id}_tile_location_check;
 	}
 }
 
 item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_12, 12) {
 	graphics {
-		tile_check: THIS_ID(tile_location_check);
+		tile_check: ${industry.id}_tile_location_check;
 	}
 }
 
 item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_13, 13) {
 	graphics {
-		tile_check: THIS_ID(tile_location_check);
+		tile_check: ${industry.id}_tile_location_check;
 	}
 }
 
 item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_14, 14) {
 	graphics {
-		tile_check: THIS_ID(tile_location_check);
+		tile_check: ${industry.id}_tile_location_check;
 	}
 }
 
 item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_15, 15) {
 	graphics {
-		tile_check: THIS_ID(tile_location_check);
+		tile_check: ${industry.id}_tile_location_check;
 	}
 }
 /* *************************************************
@@ -113,9 +113,9 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_15, 15) {
 
 
 CHECK_NEARBY_CLUSTER(forest, 16, 60, 5, 4, return CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
-CHECK_FOUNDER       (THIS_ID(forest))
+CHECK_FOUNDER       (${industry.id}_forest)
 
-SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
+SWITCH_COLOUR_SCHEME1(${industry.id}_colour)
 
 #include "../src/templates/produce_secondary.pnml"
 #include "../src/templates/check_secondary_production_level.pnml"
@@ -129,13 +129,13 @@ ${industry.get_industry_properties()}
 
 item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
 	graphics {
-		produce_cargo_arrival:   THIS_ID(produce);
-		construction_probability:THIS_ID(check_availability);
-		location_check:          THIS_ID(check_location);
-		monthly_prod_change:     THIS_ID(check_production_level);
-		random_prod_change:      THIS_ID(check_closure);
-		extra_text_industry:     THIS_ID(extra_text);
-		colour:                  THIS_ID(colour);
+		produce_cargo_arrival:   ${industry.id}_produce;
+		construction_probability:${industry.id}_check_availability;
+		location_check:          ${industry.id}_check_location;
+		monthly_prod_change:     ${industry.id}_check_production_level;
+		random_prod_change:      ${industry.id}_check_closure;
+		extra_text_industry:     ${industry.id}_extra_text;
+		colour:                  ${industry.id}_colour;
 	}
 }
 

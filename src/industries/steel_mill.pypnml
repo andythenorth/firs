@@ -12,72 +12,72 @@
  * *************************************************/
 
 TILE_DISALLOW_NEARBY_CLASS(tile_nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
-TILE_ALLOW_PLAYER         (tile_player_check,                                                            THIS_ID(tile_nearby_industry))
-TILE_DISALLOW_SLOPES      (tile_location_check,                       CB_RESULT_LOCATION_DISALLOW, THIS_ID(tile_player_check))
+TILE_ALLOW_PLAYER         (tile_player_check, ${industry.id}_tile_nearby_industry)
+TILE_DISALLOW_SLOPES      (tile_location_check, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_tile_player_check)
 
-item(FEAT_INDUSTRYTILES, THIS_ID(tile_1), 52) {
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile_1, 52) {
 	property {
 		substitute: 52;
 		override: 52;
 		accepted_cargos: [[IORE, 8], [SCMT, 8], [COAL, 8]];
 	}
 	graphics {
-		tile_check: THIS_ID(tile_location_check);
+		tile_check: ${industry.id}_tile_location_check;
 	}
 }
 
-item(FEAT_INDUSTRYTILES, THIS_ID(tile_2), 53) {
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile_2, 53) {
 	property {
 		substitute: 53;
 		override: 53;
 		accepted_cargos: [[IORE, 8], [SCMT, 8], [COAL, 8]];
 	}
 	graphics {
-		tile_check: THIS_ID(tile_location_check);
+		tile_check: ${industry.id}_tile_location_check;
 	}
 }
 
-item(FEAT_INDUSTRYTILES, THIS_ID(tile_3), 54) {
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile_3, 54) {
 	property {
 		substitute: 54;
 		override: 54;
 		accepted_cargos: [[IORE, 8], [SCMT, 8], [COAL, 8]];
 	}
 	graphics {
-		tile_check: THIS_ID(tile_location_check);
+		tile_check: ${industry.id}_tile_location_check;
 	}
 }
 
-item(FEAT_INDUSTRYTILES, THIS_ID(tile_4), 55) {
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile_4, 55) {
 	property {
 		substitute: 55;
 		override: 55;
 		accepted_cargos: [[IORE, 8], [SCMT, 8], [COAL, 8]];
 	}
 	graphics {
-		tile_check: THIS_ID(tile_location_check);
+		tile_check: ${industry.id}_tile_location_check;
 	}
 }
 
-item(FEAT_INDUSTRYTILES, THIS_ID(tile_5), 56) {
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile_5, 56) {
 	property {
 		substitute: 56;
 		override: 56;
 		accepted_cargos: [[IORE, 8], [SCMT, 8], [COAL, 8]];
 	}
 	graphics {
-		tile_check: THIS_ID(tile_location_check);
+		tile_check: ${industry.id}_tile_location_check;
 	}
 }
 
-item(FEAT_INDUSTRYTILES, THIS_ID(tile_6), 57) {
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile_6, 57) {
 	property {
 		substitute: 57;
 		override: 57;
 		accepted_cargos: [[IORE, 8], [SCMT, 8], [COAL, 8]];
 	}
 	graphics {
-		tile_check: THIS_ID(tile_location_check);
+		tile_check: ${industry.id}_tile_location_check;
 	}
 }
 
@@ -101,12 +101,12 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_6), 57) {
 
 
 CHECK_INCOMPATIBLE  (steel_mill,     56, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
-CHECK_INCOMPATIBLE  (coal_mine,     16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(steel_mill))
-CHECK_INCOMPATIBLE  (iron_ore_mine, 16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(coal_mine))
-CHECK_INCOMPATIBLE  (junk_yard,      16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(iron_ore_mine))
-CHECK_FOUNDER       (THIS_ID(junk_yard))
+CHECK_INCOMPATIBLE  (coal_mine,     16, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_steel_mill)
+CHECK_INCOMPATIBLE  (iron_ore_mine, 16, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_coal_mine)
+CHECK_INCOMPATIBLE  (junk_yard,      16, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_iron_ore_mine)
+CHECK_FOUNDER       (${industry.id}_junk_yard)
 
-SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
+SWITCH_COLOUR_SCHEME1(${industry.id}_colour)
 
 #include "../src/templates/produce_secondary.pnml"
 #include "../src/templates/check_secondary_production_level.pnml"
@@ -120,14 +120,14 @@ ${industry.get_industry_properties()}
 
 item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
 	graphics {
-		produce_cargo_arrival:   THIS_ID(produce);
-		construction_probability:THIS_ID(check_availability);
-		location_check:          THIS_ID(check_location);
-		monthly_prod_change:     THIS_ID(check_production_level);
-		random_prod_change:      THIS_ID(check_closure);
-		extra_text_industry:     THIS_ID(extra_text);
+		produce_cargo_arrival:   ${industry.id}_produce;
+		construction_probability:${industry.id}_check_availability;
+		location_check:          ${industry.id}_check_location;
+		monthly_prod_change:     ${industry.id}_check_production_level;
+		random_prod_change:      ${industry.id}_check_closure;
+		extra_text_industry:     ${industry.id}_extra_text;
 		extra_text_fund:         return string(STR_FUND_AVAILABLE_FROM, THIS_MIN_YEAR);
-		colour:                  THIS_ID(colour);
+		colour:                  ${industry.id}_colour;
 	}
 }
 

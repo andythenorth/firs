@@ -21,10 +21,10 @@ ${industry.get_fence_switches()}
  * *************************************************/
 
 TILE_DISALLOW_NEARBY_CLASS(nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
-TILE_ALLOW_PLAYER         (player_check,                                                            THIS_ID(nearby_industry))
-TILE_DISALLOW_SLOPES      (location_check,                       CB_RESULT_LOCATION_DISALLOW, THIS_ID(player_check))
+TILE_ALLOW_PLAYER         (player_check, ${industry.id}_nearby_industry)
+TILE_DISALLOW_SLOPES      (location_check,                       CB_RESULT_LOCATION_DISALLOW, ${industry.id}_player_check)
 
-item(FEAT_INDUSTRYTILES, THIS_ID(tile), TILE_STOCKYARD_1) {
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile, TILE_STOCKYARD_1) {
 	property {
 		substitute: 0;
 		accepted_cargos: [[LVST, 8], [MNSP, 8]];
@@ -36,8 +36,8 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile), TILE_STOCKYARD_1) {
 	}
 
 	graphics {
-		tile_check:   THIS_ID(location_check);
-		THIS_ID(tile_fences);
+		tile_check:   ${industry.id}_location_check;
+		${industry.id}_tile_fences;
 	}
 }
 
@@ -66,12 +66,12 @@ ${industry.get_industry_layouts_as_tilelayouts()}
 
 
 CHECK_INCOMPATIBLE  (stockyard,     56, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
-CHECK_INCOMPATIBLE  (dairy_farm,    16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(stockyard))
-CHECK_INCOMPATIBLE  (sheep_farm,    16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(dairy_farm))
-CHECK_INCOMPATIBLE  (mixed_farm,    16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(sheep_farm))
-CHECK_FOUNDER       (THIS_ID(mixed_farm))
+CHECK_INCOMPATIBLE  (dairy_farm,    16, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_stockyard)
+CHECK_INCOMPATIBLE  (sheep_farm,    16, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_dairy_farm)
+CHECK_INCOMPATIBLE  (mixed_farm,    16, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_sheep_farm)
+CHECK_FOUNDER       (${industry.id}_mixed_farm)
 
-SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
+SWITCH_COLOUR_SCHEME1(${industry.id}_colour)
 
 #include "../src/templates/produce_secondary.pnml"
 #include "../src/templates/check_secondary_production_level.pnml"
@@ -85,13 +85,13 @@ ${industry.get_industry_properties()}
 
 item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
 	graphics {
-		produce_cargo_arrival:   THIS_ID(produce);
-		construction_probability:THIS_ID(check_availability);
-		location_check:          THIS_ID(check_location);
-		monthly_prod_change:     THIS_ID(check_production_level);
-		random_prod_change:      THIS_ID(check_closure);
-		extra_text_industry:     THIS_ID(extra_text);
-		colour:                  THIS_ID(colour);
+		produce_cargo_arrival:   ${industry.id}_produce;
+		construction_probability:${industry.id}_check_availability;
+		location_check:          ${industry.id}_check_location;
+		monthly_prod_change:     ${industry.id}_check_production_level;
+		random_prod_change:      ${industry.id}_check_closure;
+		extra_text_industry:     ${industry.id}_extra_text;
+		colour:                  ${industry.id}_colour;
 	}
 }
 
