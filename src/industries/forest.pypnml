@@ -342,9 +342,6 @@ SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
 
 ${industry.get_primary_supplies_stuff()}
 
-#include "../src/templates/produce_primary.pnml"
-#include "../src/templates/check_primary_production_level.pnml"
-
 #include "../src/templates/check_availability.pnml"
 
 ${industry.get_industry_properties()}

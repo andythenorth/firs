@@ -111,9 +111,6 @@ ${industry.get_industry_layouts_as_tilelayouts()}
 
 ${industry.get_primary_supplies_stuff()}
 
-#include "../src/templates/produce_primary.pnml"
-#include "../src/templates/check_primary_production_level.pnml"
-
 #include "../src/templates/check_availability.pnml"
 
 CHECK_INCOMPATIBLE  (port, 48, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)

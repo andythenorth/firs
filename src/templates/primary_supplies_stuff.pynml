@@ -22,3 +22,5 @@ switch(FEAT_INDUSTRIES, SELF, THIS_ID(extra_text), LOAD_PERM(var_current_supplie
 	return string(STR_${industry.supply_requirements[2]}_PRODUCTION_1X, ${industry.supply_requirements[0]}, ${industry.supply_requirements[1]});
 }
 
+#include "../src/templates/produce_primary.pnml"
+#include "../src/templates/check_primary_production_level.pnml"
