@@ -11,17 +11,15 @@
     <h2>Code Reference</h2>
     <br />
     <div id="source">
-        <div class="page-header">
-            <h3>Obtaining Source</h3>
-        </div>
+        <h3>Obtaining Source</h3>
         <p>Source checkout available from <a href="${metadata['repo_url']}">the FIRS Repo</a> (mercurial / hg).</p>
         <p>FIRS is licensed under <a href="http://www.gnu.org/licenses/gpl-2.0.html">GPL(v2)</a>.</p>
     </div>
     <br />
+    <hr />
+
     <div id="compiling">
-        <div class="page-header">
-            <h3>Compiling</h3>
-        </div>
+        <h3>Compiling</h3>
         <p>FIRS source includes a makefile for convenient building.  Dependencies include:</p>
         <ul>
             <li>Python 2.6 or 2.7</li>
@@ -29,14 +27,12 @@
             <li><a href="http://newgrf-specs.tt-wiki.net/wiki/NML:Main">NML 0.3 or newer</a> (NewGRF compiler)</li>
             <li><a href="http://chameleon.readthedocs.org/en/latest/">Chameleon</a> (Template Engine)</li>
         </ul>
-
     </div>
     <br />
+    <hr />
 
     <div id="cargos">
-        <div class="page-header">
-            <h3>Cargos (${len(registered_cargos)}) <small>Code Reference</small></h3>
-        </div>
+        <h3>Cargos (${len(registered_cargos)}) <small>Code Reference</small></h3>
         <p class="pull-right"><a href="http://newgrf-specs.tt-wiki.net/wiki/NML:Cargos#Cargo_IDs">&#187; Reference for NewGRF cargo IDs</a>
         <table class="table table-striped tablesorter">
             <thead>
@@ -70,12 +66,11 @@
         </table>
     </div>
     <br />
+    <hr />
     <br />
 
     <div id="industries">
-        <div class="page-header">
-            <h3>Industries (${len(registered_industries)}) <small>Code Reference</small></h3>
-        </div>
+        <h3>Industries (${len(registered_industries)}) <small>Code Reference</small></h3>
         <p class="pull-right"><a href="http://newgrf-specs.tt-wiki.net/wiki/IndustryDefaultProps">&#187; Reference for NewGRF industry IDs</a></p>
         <table class="table table-striped tablesorter">
             <thead>
