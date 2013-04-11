@@ -171,11 +171,11 @@ class DocHelper(object):
             for cargo_label in industry.get_property(accept_or_produce, None):
                 for cargo in economy_schemas[economy]['enabled_cargos']:
                     if cargo_label == cargo.cargo_label[1:-1]:
-                        result.append(cargo_label)
+                        result.append(cargo)
             for cargo_label in industry.get_property(accept_or_produce, economy):
                 for cargo in economy_schemas[economy]['enabled_cargos']:
                     if cargo_label == cargo.cargo_label[1:-1]:
-                        result.append(cargo_label)
+                        result.append(cargo)
         return set(result)
 
     def industry_unique_cargo_combinations(self, industry):
