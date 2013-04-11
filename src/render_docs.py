@@ -168,10 +168,6 @@ class DocHelper(object):
     def industry_find_cargos_active_in_economy(self, industry, economy, accept_or_produce):
         result = []
         if industry in economy_schemas[economy]['enabled_industries']:
-            for cargo_label in industry.get_property(accept_or_produce, None):
-                for cargo in economy_schemas[economy]['enabled_cargos']:
-                    if cargo_label == cargo.cargo_label[1:-1]:
-                        result.append(cargo)
             for cargo_label in industry.get_property(accept_or_produce, economy):
                 for cargo in economy_schemas[economy]['enabled_cargos']:
                     if cargo_label == cargo.cargo_label[1:-1]:

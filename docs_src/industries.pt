@@ -45,7 +45,7 @@
                                                     <a href="cargos.html#${cargo.id}">${doc_helper.get_cargo_name(cargo)}</a>${(',', '')[repeat.cargo.end]}
                                                 </tal:cargos>
                                                 <tal:no_cargos condition="len(industry_accepted_cargo_mapping) == 0">
-                                                    <span class="muted">None</span>
+                                                    <span class="muted">Nothing</span>
                                                 </tal:no_cargos>
                                             </td>
                                         </tr>
@@ -56,7 +56,7 @@
                                                     <a href="cargos.html#${cargo.id}">${doc_helper.get_cargo_name(cargo)}</a>${(',', '')[repeat.cargo.end]}
                                                 </tal:cargos>
                                                 <tal:no_cargos condition="len(industry_produced_cargo_mapping) == 0">
-                                                    <span class="muted">None</span>
+                                                    <span class="muted">Nothing</span>
                                                 </tal:no_cargos>
                                             </td>
                                         </tr>
