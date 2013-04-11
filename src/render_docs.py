@@ -140,10 +140,11 @@ class DocHelper(object):
 
     def industry_find_industries_active_in_economy_for_cargo(self, cargo, economy, accept_or_produce):
         result = []
-        for industry in economy_schemas[economy]['enabled_industries']:
-                for cargo_label in industry.get_property(accept_or_produce, None):
-                    if cargo.cargo_label[1:-1] == cargo_label:
-                        result.append(industry)
+        if cargo in economy_schemas[economy]['enabled_cargos']:
+            for industry in economy_schemas[economy]['enabled_industries']:
+                    for cargo_label in industry.get_property(accept_or_produce, economy):
+                        if cargo.cargo_label[1:-1] == cargo_label:
+                            result.append(industry)
         return set(result)
 
     def cargo_unique_industry_combinations(self, cargo):
