@@ -138,10 +138,31 @@ class DocHelper(object):
                         result.append(industry)
         return sorted(set(result), key=lambda industry: self.get_industry_name(industry))
 
-    def cargo_unique_industry_combinations(self, cargo):
-        return [1]
+    def industry_find_industries_active_in_economy_for_cargo(self, cargo, economy, accept_or_produce):
+        result = []
+        for industry in economy_schemas[economy]['enabled_industries']:
+                for cargo_label in industry.get_property(accept_or_produce, None):
+                    if cargo.cargo_label[1:-1] == cargo_label:
+                        result.append(industry)
+        return set(result)
 
-    def industry_find_cargos_active_in_economy(self, industry, economy, accept_or_produce):
+    def cargo_unique_industry_combinations(self, cargo):
+        result = {}
+        for economy in economy_schemas:
+            economy_industries = []
+            accepted_by = self.industry_find_industries_active_in_economy_for_cargo(cargo, economy, 'accept_cargo_types')
+            produced_by = self.industry_find_industries_active_in_economy_for_cargo(cargo, economy, 'prod_cargo_types')
+            for industry in accepted_by:
+                economy_industries.append(industry)
+            for industry in produced_by:
+                economy_industries.append(industry)
+            if len(economy_industries) > 0:
+                industry_key = tuple(sorted(economy_industries))
+                result.setdefault(industry_key, {'accepted_by': accepted_by, 'produced_by': produced_by})
+                result[industry_key].setdefault('economies',[]).append(economy)
+        return result
+
+    def industry_find_cargos_active_in_economy_for_industry(self, industry, economy, accept_or_produce):
         result = []
         if industry in economy_schemas[economy]['enabled_industries']:
             for cargo_label in industry.get_property(accept_or_produce, economy):
@@ -154,8 +175,8 @@ class DocHelper(object):
         result = {}
         for economy in economy_schemas:
             economy_cargos = []
-            accept_cargo_types = self.industry_find_cargos_active_in_economy(industry, economy, 'accept_cargo_types')
-            prod_cargo_types = self.industry_find_cargos_active_in_economy(industry, economy, 'prod_cargo_types')
+            accept_cargo_types = self.industry_find_cargos_active_in_economy_for_industry(industry, economy, 'accept_cargo_types')
+            prod_cargo_types = self.industry_find_cargos_active_in_economy_for_industry(industry, economy, 'prod_cargo_types')
             for cargo in accept_cargo_types:
                 economy_cargos.append(cargo)
             for cargo in prod_cargo_types:
