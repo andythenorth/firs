@@ -1,0 +1,12 @@
+<tal:page_with_sidebar_template define="page_with_sidebar_template load: page_with_sidebar_template.pt" metal:use-macro="page_with_sidebar_template">
+<div metal:fill-slot='sidebar_nav'>
+    <li class="nav-header">Help Translate FIRS</li>
+    <li><a href="#foo">Foo</a></li>
+</div>
+
+<div metal:fill-slot='body'>
+    <h2>Help Translate FIRS</h2>
+    <br />
+    <p>Foo</p>
+</div>
+</tal:page_with_sidebar_template>

@@ -192,7 +192,7 @@ for economy in global_constants.economies:
     economy_schemas[economy] = {'enabled_cargos':enabled_cargos, 'enabled_industries':enabled_industries}
 
 # render standard docs from a list
-html_docs = ['get_started', 'code_reference','economies', 'cargos', 'industries']
+html_docs = ['get_started', 'code_reference','economies', 'cargos', 'industries', 'translations']
 txt_docs = ['changelog', 'license', 'readme', 'test_docs']
 
 render_docs(html_docs, 'html')
