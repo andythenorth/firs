@@ -138,33 +138,6 @@ class DocHelper(object):
                         result.append(industry)
         return sorted(set(result), key=lambda industry: self.get_industry_name(industry))
 
-    def industry_economy_mapping(self, economy_schemas, industry):
-        result = []
-        for economy in economy_schemas:
-            if industry in economy_schemas[economy]['enabled_industries']:
-                result.append(economy)
-        return sorted(result, key=lambda economy: self.get_economy_name(economy))
-
-    def industry_accepted_cargo_mapping(self, economy_schemas, registered_cargos, industry):
-        result = []
-        for cargo in registered_cargos:
-            if cargo.cargo_label[1:-1] in industry.get_property('accept_cargo_types', None):
-                result.append(cargo)
-            for economy in economy_schemas:
-                if cargo.cargo_label[1:-1] in industry.get_property('accept_cargo_types', economy):
-                    result.append(cargo)
-        return sorted(set(result), key=lambda cargo: self.get_cargo_name(cargo))
-
-    def industry_produced_cargo_mapping(self, economy_schemas, registered_cargos, industry):
-        result = []
-        for cargo in registered_cargos:
-            if cargo.cargo_label[1:-1] in industry.get_property('prod_cargo_types', None):
-                result.append(cargo)
-            for economy in economy_schemas:
-                if cargo.cargo_label[1:-1] in industry.get_property('prod_cargo_types', economy):
-                    result.append(cargo)
-        return sorted(set(result), key=lambda cargo: self.get_cargo_name(cargo))
-
     def industry_find_cargos_active_in_economy(self, industry, economy, accept_or_produce):
         result = []
         if industry in economy_schemas[economy]['enabled_industries']:
