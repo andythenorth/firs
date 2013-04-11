@@ -1,12 +1,48 @@
 <tal:page_with_sidebar_template define="page_with_sidebar_template load: page_with_sidebar_template.pt" metal:use-macro="page_with_sidebar_template">
 <div metal:fill-slot='sidebar_nav'>
     <li class="nav-header">Help Translate FIRS</li>
-    <li><a href="#foo">Foo</a></li>
+    <li><a href="#status">Current Translation Status</a></li>
+    <li><a href="#translating">Get Started with Translating</a></li>
 </div>
 
 <div metal:fill-slot='body'>
     <h2>Help Translate FIRS</h2>
+    <p>FIRS has already been translated into multiple languages, and more translations are always welcome.</p>
+
+    <div id="status">
+        <div class="page-header">
+            <h3>Current Translation Status</h3>
+        </div>
+        <p>See which languages FIRS has been translated into, and how complete each translation is.</p>
+        <a class="btn btn-primary btn-large" href="http://bundles.openttdcoop.org/firs/push/LATEST/translations/">Translation Status Report</a>
+    </div>
     <br />
-    <p>Foo</p>
+
+    <div id="translating">
+        <div class="page-header">
+            <h3>Get Started with Translating</h3>
+        </div>
+        <h4>1. Get the Base Language File</h4>
+        <p>This is a file containing the strings for the English (British) language.</p>
+        <p>The file can be edited in any text editor that supports unicode.</p>
+        <a class="btn btn-primary" href="http://dev.openttdcoop.org/projects/firs/repository/entry/lang/english.lng">Get Base Language File</a>
+        <br />
+        <br />
+        <p><strong>Or</strong> <a href="http://dev.openttdcoop.org/projects/firs/repository/show/lang">get an existing language file</a> if you want to update an existing translation.</p>
+        <br />
+
+        <h4>2. Translate Strings</h4>
+        <p>Change the English strings to appropriate translations for the language.</p>
+        <p><strong>Or</strong> update the existing translation.</p>
+        <br />
+        <h4>3. Post Language File for Inclusion in FIRS</h4>
+        <p>Post translated files into <a href="${metadata['dev_thread_url']}">this TT-forums thread</a>, or upload to the <a href="${metadata['issue_tracker']}">FIRS issue tracker</a>.</p>
+        <br />
+        <h4>4. Have Cake</h4>
+        <p>Someone on the FIRS team will include your translation as soon as they have time.</p>
+        <p>Thanks :)</p>
+        <br />
+    </div>
+
 </div>
 </tal:page_with_sidebar_template>
