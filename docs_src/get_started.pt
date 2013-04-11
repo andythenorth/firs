@@ -11,20 +11,22 @@
             </ul>
         </div>
         <div class="span9">
-            <ul class="inline">
-                <li><i class="icon-ok-circle"></i> ${len(registered_cargos)} cargos</li>
-                <li><i class="icon-ok-circle"></i> ${len(registered_industries)} industries</li>
-                <li><i class="icon-ok-circle"></i> ${len(economy_schemas)} economies - choose simple or complex gameplay</li>
-                <li><i class="icon-ok-circle"></i> Primary industries don't close</li>
-                <li><i class="icon-ok-circle"></i> Optional secondary industry closure</li>
-                <li><i class="icon-ok-circle"></i> Parameter for improved station ratings</li>
-                <li><i class="icon-ok-circle"></i> Snow for buildings above snowline</li>
-                <li><i class="icon-ok-circle"></i> Beautiful hand-drawn pixels</li>
-                <li><i class="icon-ok-circle"></i> GPL v2 license</li>
-            </ul>
-            <br />
+            <div class="page-header">
+                <h2>Get Started</h2>
+                <ul class="inline">
+                    <li><i class="icon-ok-circle"></i> ${len(registered_cargos)} cargos</li>
+                    <li><i class="icon-ok-circle"></i> ${len(registered_industries)} industries</li>
+                    <li><i class="icon-ok-circle"></i> ${len(economy_schemas)} economies - choose simple or complex gameplay</li>
+                    <li><i class="icon-ok-circle"></i> Primary industries don't close</li>
+                    <li><i class="icon-ok-circle"></i> Optional secondary industry closure</li>
+                    <li><i class="icon-ok-circle"></i> Parameter for improved station ratings</li>
+                    <li><i class="icon-ok-circle"></i> Snow for buildings above snowline</li>
+                    <li><i class="icon-ok-circle"></i> Beautiful hand-drawn pixels</li>
+                    <li><i class="icon-ok-circle"></i> GPL v2 license</li>
+                </ul>
+            </div>
             <div id="download-firs">
-                <h2 class="page-header">1. Download FIRS</h2>
+                <h2>1. Download FIRS</h2>
                 <p class="lead">
                     FIRS is available from the content service in OpenTTD, as a zip for manual installation,
                     or as a source checkout for compiling locally (requires mercurial and various python dependencies).
@@ -42,15 +44,16 @@
                     </div>
                     <div class="span3">
                         <h3>Download Source</h3>
-                        <p>Checkout source code and compile your own FIRS.</p>
+                        <p>Checkout source code and <a href="code_reference.html">compile your own FIRS</a>.</p>
                         <a class="btn" href="${metadata['repo_url']}">FIRS Source Repo</a>
                     </div>
                 </div>
             </div>
             <br />
+            <hr />
             <br />
             <div id="setting-up">
-                <h2 class="page-header">2. Setting Up a Game with FIRS</h2>
+                <h2>2. Setting Up a Game with FIRS</h2>
                 <p class="lead">
                     A few things to know before setting up a FIRS game...
                 <div class="row">
@@ -78,10 +81,10 @@
                 <p class="muted">FIRS is available in the Temperate, Sub-Arctic and Sub-Tropic climates.  Toyland is a bad idea.</p>
             </div>
             <br />
+            <hr />
             <br />
             <div id="firs-gameplay">
-                <h2 class="page-header">3. FIRS Gameplay</h2>
-
+                <h2>3. FIRS Gameplay</h2>
                 <p class="lead">You can jump right into FIRS gameplay.</p>
                 <ul>
                     <li>There are familiar industries and cargos you'll recognise from default OpenTTD.</li>
@@ -100,9 +103,10 @@
                 </ul>
             </div>
             <br />
+            <hr />
             <br />
             <div id="what-next">
-                <h2 class="page-header">4. What Next?</h2>
+                <h2>4. What Next?</h2>
 
                 <p class="lead">Find out more about FIRS.  Or try it out in OpenTTD!</p>
                 <a class="btn btn-large btn-primary" href="economies.html">FIRS Economies</a>
@@ -110,6 +114,8 @@
                 <a class="btn btn-large btn-primary" href="industries.html">FIRS Industries</a>
                 <a class="btn btn-large" href="code_reference.html">Code Reference</a>
             </div>
+            <br />
+            <br />
         </div>
     </div>
     <br />
