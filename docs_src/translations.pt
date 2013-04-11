@@ -8,20 +8,18 @@
 <div metal:fill-slot='body'>
     <h2>Help Translate FIRS</h2>
     <p>FIRS has already been translated into multiple languages, and more translations are always welcome.</p>
+    <hr />
 
     <div id="status">
-        <div class="page-header">
-            <h3>Current Translation Status</h3>
-        </div>
+        <h3>Current Translation Status</h3>
         <p>See which languages FIRS has been translated into, and how complete each translation is.</p>
         <a class="btn btn-primary btn-large" href="http://bundles.openttdcoop.org/firs/push/LATEST/translations/">Translation Status Report</a>
     </div>
     <br />
+    <hr />
 
     <div id="translating">
-        <div class="page-header">
-            <h3>Get Started with Translating</h3>
-        </div>
+        <h3>Get Started with Translating</h3>
         <h4>1. Get a Language File</h4>
         <p>Language files can be edited in any text editor that supports unicode.</p>
         <p>To start a new translation from scratch get the base language file, which contains strings for the English (British) language.</p>
