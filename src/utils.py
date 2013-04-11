@@ -28,7 +28,7 @@ def parse_base_lang():
         # this is fragile, playing one line python is silly :)
         return dict((line.split(':',1)[0].strip(), line.split(':',1)[1].strip()) for line in text if ':' in line)
 
-    base_lang_file = codecs.open(os.path.join('lang', 'czech.lng'), 'r','utf8')
+    base_lang_file = codecs.open(os.path.join('lang', 'english.lng'), 'r','utf8')
     strings = split_nml_string_lines(base_lang_file.readlines())
 
     extra_strings_file = codecs.open(os.path.join('docs_src', 'extra_strings.lng'), 'r','utf8')
