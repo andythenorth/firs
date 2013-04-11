@@ -34,7 +34,7 @@
 
     <div id="cargos">
         <div class="page-header">
-            <h3>Cargos (${len(registered_cargos)})</h3>
+            <h3>Cargos (${len(registered_cargos)}) <small>Code Reference</small></h3>
         </div>
         <p class="pull-right"><a href="http://newgrf-specs.tt-wiki.net/wiki/NML:Cargos#Cargo_IDs">&#187; Reference for NewGRF cargo IDs</a>
         <table class="table table-striped tablesorter">
@@ -73,7 +73,7 @@
 
     <div id="industries">
         <div class="page-header">
-            <h3>Industries (${len(registered_industries)})</h3>
+            <h3>Industries (${len(registered_industries)}) <small>Code Reference</small></h3>
         </div>
         <p class="pull-right"><a href="http://newgrf-specs.tt-wiki.net/wiki/IndustryDefaultProps">&#187; Reference for NewGRF industry IDs</a></p>
         <table class="table table-striped tablesorter">
