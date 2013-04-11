@@ -19,12 +19,12 @@
             <br />
             <h4>${len(economy_schemas[economy].enabled_cargos)} Cargos</h4>
             <tal:industries repeat="cargo sorted(economy_schemas[economy].enabled_cargos, key=lambda cargo: doc_helper.get_cargo_name(cargo))">
-                <a href="cargos.html#${cargo.id}">${doc_helper.get_cargo_name(cargo)}</a>${(',', '')[repeat.cargo.end]}
+                <a href="cargos.html#${cargo.id}">${doc_helper.get_cargo_name(cargo)}${(',', '')[repeat.cargo.end]}</a>
             </tal:industries>
 
             <h4>${len(economy_schemas[economy].enabled_industries)} Industries</h4>
             <tal:industries repeat="industry sorted(economy_schemas[economy].enabled_industries, key=lambda industry: doc_helper.get_industry_name(industry))">
-                <a href="industries.html#${industry.id}">${doc_helper.get_industry_name(industry, economy)}</a>${(',', '')[repeat.industry.end]}
+                <a href="industries.html#${industry.id}">${doc_helper.get_industry_name(industry, economy)}${(',', '')[repeat.industry.end]}</a>
             </tal:industries>
         </div>
         <hr />
