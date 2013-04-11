@@ -182,14 +182,16 @@ class DocHelper(object):
         result = {}
         for economy in economy_schemas:
             economy_cargos = []
-            accepted_cargos = self.industry_find_cargos_active_in_economy(industry, economy, 'accept_cargo_types')
-            produced_cargos = self.industry_find_cargos_active_in_economy(industry, economy, 'prod_cargo_types')
-            for cargo in accepted_cargos:
+            accept_cargo_types = self.industry_find_cargos_active_in_economy(industry, economy, 'accept_cargo_types')
+            prod_cargo_types = self.industry_find_cargos_active_in_economy(industry, economy, 'prod_cargo_types')
+            for cargo in accept_cargo_types:
                 economy_cargos.append(cargo)
-            for cargo in produced_cargos:
+            for cargo in prod_cargo_types:
                 economy_cargos.append(cargo)
             if len(economy_cargos) > 0:
-                result.setdefault(tuple(sorted(economy_cargos)),[]).append(economy)
+                cargo_key = tuple(sorted(economy_cargos))
+                result.setdefault(cargo_key, {'accept_cargo_types': accept_cargo_types, 'prod_cargo_types': prod_cargo_types})
+                result[cargo_key].setdefault('economies',[]).append(economy)
         return result
 
     def get_active_nav(self, doc_name, nav_link):
