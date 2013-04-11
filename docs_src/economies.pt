@@ -8,15 +8,15 @@
 </div>
 
 <div metal:fill-slot='body'>
-    <h2>Economies</h2>
-    <p>In FIRS, the Economy parameter setting controls which industries and cargos will be used in the game.</p>
-    <br />
+    <div class="page-header">
+        <h2>Economies</h2>
+        <p>In FIRS, the Economy parameter setting controls which industries and cargos will be used in the game.</p>
+    </div>
     <tal:economies repeat="economy doc_helper.get_economies_sorted_by_name()">
         <div id="${economy}">
-            <div class="page-header">
-                <h3>${doc_helper.get_economy_name(economy)} <small>Economy</small></h3>
-                <p>${doc_helper.get_economy_extra_info(economy)}</p>
-            </div>
+            <h3>${doc_helper.get_economy_name(economy)} <small>Economy</small></h3>
+            <p>${doc_helper.get_economy_extra_info(economy)}</p>
+            <br />
             <h4>${len(economy_schemas[economy].enabled_cargos)} Cargos</h4>
             <tal:industries repeat="cargo sorted(economy_schemas[economy].enabled_cargos, key=lambda cargo: doc_helper.get_cargo_name(cargo))">
                 <a href="cargos.html#${cargo.id}">${doc_helper.get_cargo_name(cargo)}</a>${(',', '')[repeat.cargo.end]}
@@ -27,6 +27,7 @@
                 <a href="industries.html#${industry.id}">${doc_helper.get_industry_name(industry, economy)}</a>${(',', '')[repeat.industry.end]}
             </tal:industries>
         </div>
+        <hr />
         <br />
     </tal:economies>
 </div>
