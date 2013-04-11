@@ -138,6 +138,9 @@ class DocHelper(object):
                         result.append(industry)
         return sorted(set(result), key=lambda industry: self.get_industry_name(industry))
 
+    def cargo_unique_industry_combinations(self, cargo):
+        return [1]
+
     def industry_find_cargos_active_in_economy(self, industry, economy, accept_or_produce):
         result = []
         if industry in economy_schemas[economy]['enabled_industries']:
