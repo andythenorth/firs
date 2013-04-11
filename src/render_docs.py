@@ -179,7 +179,7 @@ class DocHelper(object):
         return set(result)
 
     def industry_unique_cargo_combinations(self, industry):
-        result = []
+        result = {}
         for economy in economy_schemas:
             economy_cargos = []
             accepted_cargos = self.industry_find_cargos_active_in_economy(industry, economy, 'accept_cargo_types')
@@ -189,8 +189,8 @@ class DocHelper(object):
             for cargo in produced_cargos:
                 economy_cargos.append(cargo)
             if len(economy_cargos) > 0:
-                result.append(tuple(sorted(economy_cargos)))
-        return set(result)
+                result.setdefault(tuple(sorted(economy_cargos)),[]).append(economy)
+        return result
 
     def get_active_nav(self, doc_name, nav_link):
         return ('','active')[doc_name == nav_link]
