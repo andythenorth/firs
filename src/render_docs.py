@@ -160,6 +160,8 @@ class DocHelper(object):
                 industry_key = tuple(sorted(economy_industries))
                 result.setdefault(industry_key, {'accepted_by': accepted_by, 'produced_by': produced_by})
                 result[industry_key].setdefault('economies',[]).append(economy)
+                 # convenient to have items sorted
+                result[industry_key]['economies'] = sorted(result[industry_key]['economies'], key=lambda economy: self.get_economy_name(economy))
         return result
 
     def industry_find_cargos_active_in_economy_for_industry(self, industry, economy, accept_or_produce):
@@ -173,7 +175,7 @@ class DocHelper(object):
 
     def industry_unique_cargo_combinations(self, industry):
         result = {}
-        for economy in economy_schemas:
+        for economy in self.get_economies_sorted_by_name():
             economy_cargos = []
             accept_cargo_types = self.industry_find_cargos_active_in_economy_for_industry(industry, economy, 'accept_cargo_types')
             prod_cargo_types = self.industry_find_cargos_active_in_economy_for_industry(industry, economy, 'prod_cargo_types')
@@ -185,6 +187,8 @@ class DocHelper(object):
                 cargo_key = tuple(sorted(economy_cargos))
                 result.setdefault(cargo_key, {'accept_cargo_types': accept_cargo_types, 'prod_cargo_types': prod_cargo_types})
                 result[cargo_key].setdefault('economies',[]).append(economy)
+                 # convenient to have items sorted
+                result[cargo_key]['economies'] = sorted(result[cargo_key]['economies'], key=lambda economy: self.get_economy_name(economy))
         return result
 
     def get_active_nav(self, doc_name, nav_link):
