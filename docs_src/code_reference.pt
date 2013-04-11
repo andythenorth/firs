@@ -1,7 +1,7 @@
 <tal:page_with_sidebar_template define="page_with_sidebar_template load: page_with_sidebar_template.pt" metal:use-macro="page_with_sidebar_template">
 <div metal:fill-slot='sidebar_nav'>
     <li class="nav-header">Code Reference</li>
-    <li><a href="#source">Source Code</a></li>
+    <li><a href="#source">Obtaining Source</a></li>
     <li><a href="#compiling">Compiling</a></li>
     <li><a href="#cargos">Cargos (${len(registered_cargos)})</a></li>
     <li><a href="#industries">Industries (${len(registered_industries)})</a></li>
@@ -12,9 +12,10 @@
     <br />
     <div id="source">
         <div class="page-header">
-            <h3>Source Code</h3>
+            <h3>Obtaining Source</h3>
         </div>
-        <p>FIRS is licensed under <a href="http://www.gnu.org/licenses/gpl-2.0.html">GPL(v2)</a>. Source checkout available from the <a href="${metadata['repo_url']}">FIRS Repo</a> (mercurial / hg).
+        <p>Source checkout available from the <a href="${metadata['repo_url']}">FIRS Repo</a> (mercurial / hg).</p>
+        <p>FIRS is licensed under <a href="http://www.gnu.org/licenses/gpl-2.0.html">GPL(v2)</a>.</p>
     </div>
     <br />
     <div id="compiling">
