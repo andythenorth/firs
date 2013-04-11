@@ -165,6 +165,33 @@ class DocHelper(object):
                     result.append(cargo)
         return sorted(set(result), key=lambda cargo: self.get_cargo_name(cargo))
 
+    def industry_find_cargos_active_in_economy(self, industry, economy, accept_or_produce):
+        result = []
+        if industry in economy_schemas[economy]['enabled_industries']:
+            for cargo_label in industry.get_property(accept_or_produce, None):
+                for cargo in economy_schemas[economy]['enabled_cargos']:
+                    if cargo_label == cargo.cargo_label[1:-1]:
+                        result.append(cargo_label)
+            for cargo_label in industry.get_property(accept_or_produce, economy):
+                for cargo in economy_schemas[economy]['enabled_cargos']:
+                    if cargo_label == cargo.cargo_label[1:-1]:
+                        result.append(cargo_label)
+        return set(result)
+
+    def industry_unique_cargo_combinations(self, industry):
+        result = []
+        for economy in economy_schemas:
+            economy_cargos = []
+            accepted_cargos = self.industry_find_cargos_active_in_economy(industry, economy, 'accept_cargo_types')
+            produced_cargos = self.industry_find_cargos_active_in_economy(industry, economy, 'prod_cargo_types')
+            for cargo in accepted_cargos:
+                economy_cargos.append(cargo)
+            for cargo in produced_cargos:
+                economy_cargos.append(cargo)
+            if len(economy_cargos) > 0:
+                result.append(tuple(sorted(economy_cargos)))
+        return set(result)
+
     def get_active_nav(self, doc_name, nav_link):
         return ('','active')[doc_name == nav_link]
 

@@ -11,7 +11,7 @@
 <div metal:fill-slot='body'>
     <h2>Industries</h2>
     <br />
-    <tal:economies repeat="item doc_helper.get_registered_industries_sorted_by_name()">
+    <tal:industries repeat="item doc_helper.get_registered_industries_sorted_by_name()">
         <tal:industry define="name item[0]; industry item[1]">
             <div id="${industry.id}" style="clear:both;">
                 <div class="page-header">
@@ -58,7 +58,9 @@
                                 </tr>
                             </tbody>
                         </table>
-                        <p class="muted pull-right"><small>Acceptance and production varies by economy.</small></p>
+                        <tal:variations_note condition="len(doc_helper.industry_unique_cargo_combinations(industry)) > 1">
+                            <p class="muted pull-right"><small>Acceptance and production varies by economy.</small></p>
+                        </tal:variations_note>
                     </div>
                 </div>
                 <br />
@@ -67,6 +69,6 @@
             </div>
             <br />
         </tal:industry>
-    </tal:economies>
+    </tal:industries>
 </div>
 </tal:page_with_sidebar_template>
