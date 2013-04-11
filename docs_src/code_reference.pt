@@ -55,6 +55,7 @@
                 <tr>
                     <th>Name</th>
                     <th>NML identifier</th>
+                    <th>Name Strings <span class="muted">(May Vary by Economy)</span</th>
                     <th class="number">ID</th>
                     <th class="number">Map Colour</th>
                 </tr>
@@ -67,6 +68,7 @@
                                 <a href="industries.html#${industry.id}">${' / '.join(doc_helper.get_industry_all_names(industry))}</a>
                             </td>
                             <td>${industry.id}</td>
+                            <td>${', '.join(doc_helper.get_industry_all_name_strings(industry))}</td>
                             <td class="number">${global_constants.industry_numeric_ids[industry.id]}d</td>
                             <td class="number">${industry.get_property('map_colour', None)}</td>
                         </tr>
