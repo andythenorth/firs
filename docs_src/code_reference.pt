@@ -1,14 +1,40 @@
 <tal:page_with_sidebar_template define="page_with_sidebar_template load: page_with_sidebar_template.pt" metal:use-macro="page_with_sidebar_template">
 <div metal:fill-slot='sidebar_nav'>
     <li class="nav-header">Code Reference</li>
+    <li><a href="#source">Source Code</a></li>
+    <li><a href="#compiling">Compiling</a></li>
     <li><a href="#cargos">Cargos (${len(registered_cargos)})</a></li>
     <li><a href="#industries">Industries (${len(registered_industries)})</a></li>
 </div>
 
 <div metal:fill-slot='body'>
+    <h2>Code Reference</h2>
+    <br />
+    <div id="source">
+        <div class="page-header">
+            <h3>Source Code <small>Reference</small></h3>
+        </div>
+        <p>FIRS is licensed under <a href="http://www.gnu.org/licenses/gpl-2.0.html">GPL(v2)</a>. Source checkout available from the <a href="${metadata['repo_url']}">FIRS Repo</a> (mercurial / hg).
+    </div>
+    <br />
+    <div id="compiling">
+        <div class="page-header">
+            <h3>Compiling <small>Reference</small></h3>
+        </div>
+        <p>FIRS source includes a makefile for convenient building.  Dependencies include:</p>
+        <ul>
+            <li>Python 2.6 or 2.7</li>
+            <li>GCC</li>
+            <li><a href="http://newgrf-specs.tt-wiki.net/wiki/NML:Main">NML</a> (NewGRF compiler)</li>
+            <li><a href="http://chameleon.readthedocs.org/en/latest/">Chameleon</a> (Template Engine)</li>
+        </ul>
+
+    </div>
+    <br />
+
     <div id="cargos">
         <div class="page-header">
-            <h2>Cargos (${len(registered_cargos)}) <small>Code Reference</small></h2>
+            <h3>Cargos (${len(registered_cargos)}) <small>Reference</small></h3>
         </div>
         <p class="pull-right"><a href="http://newgrf-specs.tt-wiki.net/wiki/NML:Cargos#Cargo_IDs">&#187; Reference for NewGRF cargo IDs</a>
         <table class="table table-striped tablesorter">
@@ -47,7 +73,7 @@
 
     <div id="industries">
         <div class="page-header">
-            <h2>Industries (${len(registered_industries)}) <small>Code Reference</small></h2>
+            <h3>Industries (${len(registered_industries)}) <small>Reference</small></h3>
         </div>
         <p class="pull-right"><a href="http://newgrf-specs.tt-wiki.net/wiki/IndustryDefaultProps">&#187; Reference for NewGRF industry IDs</a></p>
         <table class="table table-striped tablesorter">
