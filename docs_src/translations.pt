@@ -22,18 +22,18 @@
         <div class="page-header">
             <h3>Get Started with Translating</h3>
         </div>
-        <h4>1. Get the Base Language File</h4>
-        <p>The base language file contains the strings for the English (British) language.</p>
-        <p>The file can be edited in any text editor that supports unicode.</p>
+        <h4>1. Get a Language File</h4>
+        <p>Language files can be edited in any text editor that supports unicode.</p>
+        <p>To start a new translation from scratch get the base language file, which contains strings for the English (British) language.</p>
         <a class="btn btn-primary" href="http://dev.openttdcoop.org/projects/firs/repository/entry/lang/english.lng">Get Base Language File</a>
         <br />
         <br />
-        <p><strong>Or</strong> <a href="http://dev.openttdcoop.org/projects/firs/repository/show/lang">get an existing language file</a> if you want to update an existing translation.</p>
+        <p>To update an existing translation, <a href="http://dev.openttdcoop.org/projects/firs/repository/show/lang">get an existing language file</a>.</p>
         <br />
 
         <h4>2. Translate Strings</h4>
-        <p>Change the English strings to appropriate translations for the language.</p>
-        <p><strong>Or</strong> update the existing translation.</p>
+        <p>Change or update the strings to appropriate translations for the language.</p>
+        <p><a class="btn btn-info" href="http://dev.openttdcoop.org/projects/eints/repository/entry/docs/strings.rst">Detailed Guide to Translating</a></p>
         <br />
         <h4>3. Post Language File for Inclusion in FIRS</h4>
         <p>Post translated files into <a href="${metadata['dev_thread_url']}">this TT-forums thread</a>, or upload to the <a href="${metadata['issue_tracker']}">FIRS issue tracker</a>.</p>
