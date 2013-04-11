@@ -107,37 +107,6 @@ class DocHelper(object):
     def get_industry_extra_info(self, industry):
         return base_lang_strings.get('INDUSTRY_INFO_' + industry.id.upper(), '')
 
-    def cargo_economy_mapping(self, economy_schemas, cargo):
-        result = []
-        for economy in economy_schemas:
-            if cargo in economy_schemas[economy]['enabled_cargos']:
-                result.append(economy)
-        return sorted(result, key=lambda economy: self.get_economy_name(economy))
-
-    def cargo_producing_industry_mapping(self, economy_schemas, registered_industries, cargo):
-        result  = []
-        for industry in registered_industries:
-            for cargo_label in industry.get_property('prod_cargo_types', None):
-                if cargo.cargo_label[1:-1] == cargo_label:
-                    result.append(industry)
-            for economy in economy_schemas:
-                for cargo_label in industry.get_property('prod_cargo_types', economy):
-                    if cargo.cargo_label[1:-1] == cargo_label:
-                        result.append(industry)
-        return sorted(set(result), key=lambda industry: self.get_industry_name(industry))
-
-    def cargo_accepting_industry_mapping(self, economy_schemas, registered_industries, cargo):
-        result  = []
-        for industry in registered_industries:
-            for cargo_label in industry.get_property('accept_cargo_types', None):
-                if cargo.cargo_label[1:-1] == cargo_label:
-                    result.append(industry)
-            for economy in economy_schemas:
-                for cargo_label in industry.get_property('accept_cargo_types', economy):
-                    if cargo.cargo_label[1:-1] == cargo_label:
-                        result.append(industry)
-        return sorted(set(result), key=lambda industry: self.get_industry_name(industry))
-
     def industry_find_industries_active_in_economy_for_cargo(self, cargo, economy, accept_or_produce):
         result = []
         if cargo in economy_schemas[economy]['enabled_cargos']:
