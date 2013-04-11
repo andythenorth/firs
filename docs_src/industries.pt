@@ -9,8 +9,9 @@
 </div>
 
 <div metal:fill-slot='body'>
-    <h2>Industries</h2>
-    <br />
+    <div class="page-header">
+        <h2>Industries</h2>
+    </div>
     <tal:industries repeat="item doc_helper.get_registered_industries_sorted_by_name()">
         <tal:industry define="name item[0]; industry item[1]">
             <div id="${industry.id}" style="clear:both;">

@@ -8,8 +8,9 @@
 </div>
 
 <div metal:fill-slot='body'>
-    <h2>Code Reference</h2>
-    <br />
+    <div class="page-header">
+        <h2>Code Reference</h2>
+    </div>
     <div id="source">
         <h3>Obtaining Source</h3>
         <p>Source checkout available from <a href="${metadata['repo_url']}">the FIRS Repo</a> (mercurial / hg).</p>

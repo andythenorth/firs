@@ -6,9 +6,10 @@
 </div>
 
 <div metal:fill-slot='body'>
-    <h2>Help Translate FIRS</h2>
-    <p>FIRS has already been translated into multiple languages, and more translations are always welcome.</p>
-    <hr />
+    <div class="page-header">
+        <h2>Help Translate FIRS</h2>
+        <p>FIRS has already been translated into multiple languages, and more translations are always welcome.</p>
+    </div>
 
     <div id="status">
         <h3>Current Translation Status</h3>

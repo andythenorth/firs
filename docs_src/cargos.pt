@@ -9,8 +9,9 @@
 </div>
 
 <div metal:fill-slot='body'>
-    <h2>Cargos</h2>
-    <br />
+    <div class="page-header">
+        <h2>Cargos</h2>
+    </div>
     <tal:cargos repeat="item doc_helper.get_registered_cargo_sorted_by_name()">
         <tal:cargo define="name item[0]; cargo item[1]">
             <div id="${cargo.id}">
