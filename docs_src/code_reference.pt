@@ -42,7 +42,7 @@
                 <tr>
                     <th>Name</th>
                     <th>NML Identifier</th>
-                    <th class="number">ID</th>
+                    <th class="number">ID (dec)</th>
                     <th>Label</th>
                     <th class="number">Weight</th>
                     <th class="number">Capacity Multiplier</th>
@@ -57,7 +57,7 @@
                                 <a href="cargos.html#${cargo.id}">${doc_helper.get_cargo_name(cargo)}</a>
                             </td>
                             <td>${cargo.id}</td>
-                            <td class="number">${cargo.number}d</td>
+                            <td class="number">${cargo.number}</td>
                             <td>${cargo.cargo_label}</td>
                             <td class="number">${cargo.weight}</td>
                             <td class="number">${cargo.capacity_multiplier}</td>
@@ -82,7 +82,7 @@
                     <th>Name</th>
                     <th>NML identifier</th>
                     <th>Name Strings <span class="muted">(May Vary by Economy)</span</th>
-                    <th class="number">ID</th>
+                    <th class="number">ID (dec)</th>
                     <th class="number">Map Colour</th>
                 </tr>
             </thead>
@@ -95,7 +95,7 @@
                             </td>
                             <td>${industry.id}</td>
                             <td>${', '.join(doc_helper.get_industry_all_name_strings(industry))}</td>
-                            <td class="number">${global_constants.industry_numeric_ids[industry.id]}d</td>
+                            <td class="number">${global_constants.industry_numeric_ids[industry.id]}</td>
                             <td class="number">${industry.get_property('map_colour', None)}</td>
                         </tr>
                     </tal:industry>
