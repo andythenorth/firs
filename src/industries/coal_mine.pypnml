@@ -7,6 +7,10 @@
 
 #define THIS_ID(...) ${industry.id}_ ## __VA_ARGS__
 
+${industry.get_spritesets()}
+
+${industry.get_spritelayouts()}
+
 /* *************************************************
  * Definition of the industry tiles
  * *************************************************/
@@ -23,6 +27,7 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_1), 0) {
 	}
 	graphics {
 		tile_check: THIS_ID(tile_location_check);
+		default: coal_mine_spritelayout_1;
 	}
 }
 
@@ -34,6 +39,7 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_2), 1) {
 	}
 	graphics {
 		tile_check: THIS_ID(tile_location_check);
+		default: coal_mine_spritelayout_2;
 	}
 }
 
@@ -45,6 +51,7 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_3), 2) {
 	}
 	graphics {
 		tile_check: THIS_ID(tile_location_check);
+		default: coal_mine_spritelayout_3;
 	}
 }
 

@@ -33,5 +33,48 @@ industry = Industry(id='coal_mine',
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True
 
-# industry uses layouts and sprites from default game, no custom layouts etc
+sprite_ground = industry.add_sprite(
+    sprite_number = 'GROUNDTILE_MUD_TRACKS' # ground tile same as overlay tile
+)
+spriteset_ground_overlay = industry.add_spriteset(
+    id = 'coal_mine_spriteset_ground_overlay',
+    type = 'empty'
+)
 
+spriteset_1 = industry.add_spriteset(
+    id = 'coal_mine_spriteset_1',
+    sprites = [(10, 10, 64, 110, -31, -70)],
+    zextent = 48
+)
+spriteset_2 = industry.add_spriteset(
+    id = 'coal_mine_spriteset_2',
+    sprites = [(80, 10, 64, 110, -31, -70)],
+    zextent = 48
+)
+spriteset_3 = industry.add_spriteset(
+    id = 'coal_mine_spriteset_3',
+    sprites = [(150, 10, 64, 64, -31, -70)],
+    zextent = 48
+)
+
+industry.add_spritelayout(
+    id = 'coal_mine_spritelayout_1',
+    ground_sprite = sprite_ground,
+    ground_overlay = spriteset_ground_overlay,
+    building_sprites = [spriteset_1],
+    fences = ['nw','ne','se','sw']
+)
+industry.add_spritelayout(
+    id = 'coal_mine_spritelayout_2',
+    ground_sprite = sprite_ground,
+    ground_overlay = spriteset_ground_overlay,
+    building_sprites = [spriteset_2],
+    fences = ['nw','ne','se','sw']
+)
+industry.add_spritelayout(
+    id = 'coal_mine_spritelayout_3',
+    ground_sprite = sprite_ground,
+    ground_overlay = spriteset_ground_overlay,
+    building_sprites = [spriteset_3],
+    fences = ['nw','ne','se','sw']
+)
