@@ -53,7 +53,7 @@ spriteset_2 = industry.add_spriteset(
 )
 spriteset_3 = industry.add_spriteset(
     id = 'coal_mine_spriteset_3',
-    sprites = [(150, 10, 64, 64, -31, -70)],
+    sprites = [(150, 10, 64, 64, -31, -30)],
     zextent = 48
 )
 
@@ -62,19 +62,16 @@ industry.add_spritelayout(
     ground_sprite = sprite_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_1],
-    fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
     id = 'coal_mine_spritelayout_2',
     ground_sprite = sprite_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_2],
-    fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
     id = 'coal_mine_spritelayout_3',
     ground_sprite = sprite_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_3],
-    fences = ['nw','ne','se','sw']
 )
