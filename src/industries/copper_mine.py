@@ -15,26 +15,20 @@ Some method properties need a string - the templating is then typically directly
 When a string is expected are basically two choices: provide a string directly, or make an object reference and get an id from that object.
 """
 
-industry = Industry(id='oil_rig',
+industry = Industry(id='copper_mine',
                     accept_cargo_types=['ENSP'],
-                    input_multiplier_1='[0, 0]',
-                    input_multiplier_3='[0, 0]',
-                    input_multiplier_2='[0, 0]',
-                    prod_cargo_types=['OIL_', 'PASS'],
-                    prob_in_game='6',
-                    prob_random='6',
-                    prod_multiplier='[29, 4]',
-                    substitute='5',
-                    map_colour='152',
-                    spec_flags='bitmask(IND_FLAG_BUILT_ON_WATER, IND_FLAG_AI_CREATES_AIR_AND_SHIP_ROUTES)',
+                    map_colour='55',
                     prospect_chance='0.75',
-                    name='TTD_STR_INDUSTRY_NAME_OIL_RIG',
-                    fund_cost_multiplier='255',
-                    override='5',
+                    prob_in_game='4',
+                    override='18',
+                    prob_random='7',
+                    prod_multiplier='[19]',
+                    prod_cargo_types=['CORE'],
+                    substitute='18',
+                    name='TTD_STR_INDUSTRY_NAME_COPPER_MINE',
+                    fund_cost_multiplier='232',
                     )
 
-industry.economy_variations['FIRS'].enabled = True
-industry.economy_variations['BASIC_ARCTIC'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
 
 # industry uses layouts and sprites from default game, no custom layouts etc

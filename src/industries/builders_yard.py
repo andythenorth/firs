@@ -40,6 +40,7 @@ industry = Industry(id='builders_yard',
                     )
 
 industry.economy_variations['FIRS'].enabled = True
+industry.economy_variations['MISTAH_KURTZ'].enabled = True
 
 industry.add_tile(id='builders_yard_tile')
 

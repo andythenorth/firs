@@ -66,6 +66,7 @@ from industries import brewery
 from industries import brick_works
 from industries import builders_yard
 from industries import cement_plant
+from industries import copper_mine
 from industries import dairy
 from industries import dairy_farm
 from industries import dredging_site

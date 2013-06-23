@@ -57,6 +57,8 @@ industry.economy_variations['BASIC_TROPIC'].accept_cargo_types = ['FOOD', 'AORE'
 industry.economy_variations['BASIC_TROPIC'].prod_cargo_types = ['STEL', 'MNSP']
 industry.economy_variations['BASIC_TROPIC'].prod_multiplier = '[7, 16]'
 
+industry.economy_variations['MISTAH_KURTZ'].enabled = True
+
 industry.add_tile(id='port_tile')
 
 sprite_ground = industry.add_sprite(
