@@ -21,6 +21,9 @@ from cargos import building_materials
 from cargos import chemicals
 from cargos import clay
 from cargos import coal
+from cargos import coffee
+from cargos import copper_ore
+from cargos import diamonds
 from cargos import engineering_supplies
 from cargos import farm_supplies
 from cargos import fish
@@ -40,9 +43,11 @@ from cargos import passengers
 from cargos import petrol
 from cargos import plant_fibres
 from cargos import recyclables
+from cargos import rubber
 from cargos import sand
 from cargos import scrap_metal
 from cargos import stone
+from cargos import sugar
 from cargos import sugar_beet
 from cargos import sugarcane
 from cargos import wood
