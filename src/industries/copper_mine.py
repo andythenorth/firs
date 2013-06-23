@@ -25,7 +25,7 @@ industry = Industry(id='copper_mine',
                     prod_multiplier='[19]',
                     prod_cargo_types=['CORE'],
                     substitute='18',
-                    name='TTD_STR_INDUSTRY_NAME_COPPER_MINE',
+                    name='TTD_STR_INDUSTRY_NAME_COPPER_ORE_MINE',
                     fund_cost_multiplier='232',
                     )
 
