@@ -21,3 +21,5 @@ cargo = Cargo(id = 'chemicals',
               price_factor = '117.945671082',
               capacity_multiplier = '1',
               icon_indices = (10, 1))
+
+cargo.economy_variations['MISTAH_KURTZ']['disabled'] = True

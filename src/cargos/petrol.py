@@ -23,4 +23,5 @@ cargo = Cargo(id = 'petrol',
               icon_indices = (12, 1))
 
 cargo.economy_variations['BASIC_TEMPERATE']['disabled'] = True
+cargo.economy_variations['MISTAH_KURTZ']['disabled'] = True
 

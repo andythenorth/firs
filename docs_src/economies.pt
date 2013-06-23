@@ -15,7 +15,7 @@
     <tal:economies repeat="economy doc_helper.get_economies_sorted_by_name()">
         <div id="${economy}">
             <h3>${doc_helper.get_economy_name(economy)} <small>Economy</small></h3>
-            <p>${doc_helper.get_economy_extra_info(economy)}</p>
+            <p>${structure:doc_helper.get_economy_extra_info(economy)}</p>
             <br />
             <h4>${len(economy_schemas[economy].enabled_cargos)} Cargos</h4>
             <tal:industries repeat="cargo sorted(economy_schemas[economy].enabled_cargos, key=lambda cargo: doc_helper.get_cargo_name(cargo))">

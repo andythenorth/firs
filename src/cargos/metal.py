@@ -22,3 +22,4 @@ cargo = Cargo(id = 'metal',
               icon_indices = (10, 0))
 
 cargo.economy_variations['BASIC_ARCTIC']['disabled'] = True
+cargo.economy_variations['MISTAH_KURTZ']['disabled'] = True

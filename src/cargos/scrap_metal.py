@@ -24,3 +24,4 @@ cargo = Cargo(id = 'scrap_metal',
 
 cargo.economy_variations['BASIC_ARCTIC']['disabled'] = True
 cargo.economy_variations['BASIC_TROPIC']['disabled'] = True
+cargo.economy_variations['MISTAH_KURTZ']['disabled'] = True
