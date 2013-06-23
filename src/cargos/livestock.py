@@ -21,3 +21,5 @@ cargo = Cargo(id = 'livestock',
               price_factor = '124.073982239',
               capacity_multiplier = '1',
               icon_indices = (4, 0))
+
+cargo.economy_variations['MISTAH_KURTZ']['disabled'] = True
