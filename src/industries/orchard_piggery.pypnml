@@ -274,7 +274,7 @@ item(FEAT_INDUSTRYTILES, ${industry.id}_tile_buildings, TILE_ORCHARD_PIGGERY_2) 
  * Definition of the industry layouts
  * *************************************************/
 
-tilelayout tilelayout_blah_5807_1 {
+tilelayout ${industry.id}_tilelayout_1 {
 	0, 0: ${industry.id}_tile_orchard;
 	0, 1: ${industry.id}_tile_orchard;
 	0, 2: ${industry.id}_tile_orchard;
@@ -285,7 +285,7 @@ tilelayout tilelayout_blah_5807_1 {
 	2, 2: ${industry.id}_tile_buildings;
 }
 
-tilelayout tilelayout_blah_5807_2 {
+tilelayout ${industry.id}_tilelayout_2 {
 	0, 0: ${industry.id}_tile_orchard;
 	0, 1: ${industry.id}_tile_orchard;
 	0, 2: ${industry.id}_tile_orchard;
@@ -296,7 +296,7 @@ tilelayout tilelayout_blah_5807_2 {
 	1, 4: ${industry.id}_tile_buildings;
 }
 
-tilelayout tilelayout_blah_5807_3 {
+tilelayout ${industry.id}_tilelayout_3 {
 	0, 0: ${industry.id}_tile_orchard;
 	0, 1: ${industry.id}_tile_orchard;
 	1, 0: ${industry.id}_tile_orchard;
@@ -307,7 +307,7 @@ tilelayout tilelayout_blah_5807_3 {
 	3, 1: ${industry.id}_tile_buildings;
 }
 
-tilelayout tilelayout_blah_5807_4 {
+tilelayout ${industry.id}_tilelayout_4 {
 	0, 0: ${industry.id}_tile_orchard;
 	0, 1: ${industry.id}_tile_orchard;
 	0, 3: ${industry.id}_tile_orchard;
