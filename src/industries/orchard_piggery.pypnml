@@ -207,7 +207,7 @@ switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_775, terrain_type) {
 	${industry.id}_750;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(tile_orchard_spritelayout), climate) {
+switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_tile_orchard_spritelayout, climate) {
 	CLIMATE_TEMPERATE: ${industry.id}_616;
 	CLIMATE_ARCTIC: ${industry.id}_730;
 	CLIMATE_TROPIC: ${industry.id}_775;
@@ -219,7 +219,7 @@ switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(tile_orchard_spritelayout), climate) {
  * ***************/
 
 spriteset(spriteset_47929, "src/graphics/industries/orchard_piggery_1.png") { tmpl_building_sprite(150, 10, 59, -28) }
-spritelayout THIS_ID(tile_house_spritelayout) {
+spritelayout ${industry.id}_tile_house_spritelayout {
 	ground {
 		sprite: 2022;
 	}
@@ -243,7 +243,7 @@ TILE_ALLOW_PLAYER         (tile_player_check, ${industry.id}_tile_nearby_industr
 TILE_DISALLOW_TERRAIN     (tile_desert_check, TILETYPE_DESERT, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_tile_player_check)
 TILE_CHECK_HEIGHT         (tile_location_check, 0, snowline_height, ${industry.id}_tile_desert_check, return string(STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE))
 
-item(FEAT_INDUSTRYTILES, THIS_ID(tile_orchard), TILE_ORCHARD_PIGGERY_1) {
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile_orchard, TILE_ORCHARD_PIGGERY_1) {
 	property {
 		substitute:       0;
 		accepted_cargos:  [[FMSP, 8]];
@@ -252,12 +252,12 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_orchard), TILE_ORCHARD_PIGGERY_1) {
 	graphics {
 		foundations: return CB_RESULT_NO_FOUNDATIONS;
 		autoslope:   return CB_RESULT_NO_AUTOSLOPE;
-		tile_check:  THIS_ID(tile_location_check);
-		THIS_ID(tile_orchard_spritelayout);
+		tile_check:  ${industry.id}_tile_location_check;
+		${industry.id}_tile_orchard_spritelayout;
 	}
 }
 
-item(FEAT_INDUSTRYTILES, THIS_ID(tile_buildings), TILE_ORCHARD_PIGGERY_2) {
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile_buildings, TILE_ORCHARD_PIGGERY_2) {
 	property {
 		substitute:       0;
 		accepted_cargos:  [[FMSP, 8]];
@@ -265,8 +265,8 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_buildings), TILE_ORCHARD_PIGGERY_2) {
 	}
 	graphics {
 		autoslope:  return CB_RESULT_AUTOSLOPE;
-		tile_check: THIS_ID(tile_location_check);
-		THIS_ID(tile_house_spritelayout);
+		tile_check: ${industry.id}_tile_location_check;
+		${industry.id}_tile_house_spritelayout;
 	}
 }
 
@@ -275,55 +275,55 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_buildings), TILE_ORCHARD_PIGGERY_2) {
  * *************************************************/
 
 tilelayout tilelayout_blah_5807_1 {
-	0, 0: THIS_ID(tile_orchard);
-	0, 1: THIS_ID(tile_orchard);
-	0, 2: THIS_ID(tile_orchard);
-	1, 0: THIS_ID(tile_orchard);
-	1, 1: THIS_ID(tile_buildings);
-	1, 2: THIS_ID(tile_orchard);
-	2, 1: THIS_ID(tile_buildings);
-	2, 2: THIS_ID(tile_buildings);
+	0, 0: ${industry.id}_tile_orchard;
+	0, 1: ${industry.id}_tile_orchard;
+	0, 2: ${industry.id}_tile_orchard;
+	1, 0: ${industry.id}_tile_orchard;
+	1, 1: ${industry.id}_tile_buildings;
+	1, 2: ${industry.id}_tile_orchard;
+	2, 1: ${industry.id}_tile_buildings;
+	2, 2: ${industry.id}_tile_buildings;
 }
 
 tilelayout tilelayout_blah_5807_2 {
-	0, 0: THIS_ID(tile_orchard);
-	0, 1: THIS_ID(tile_orchard);
-	0, 2: THIS_ID(tile_orchard);
-	0, 3: THIS_ID(tile_buildings);
-	1, 1: THIS_ID(tile_orchard);
-	1, 2: THIS_ID(tile_orchard);
-	1, 3: THIS_ID(tile_buildings);
-	1, 4: THIS_ID(tile_buildings);
+	0, 0: ${industry.id}_tile_orchard;
+	0, 1: ${industry.id}_tile_orchard;
+	0, 2: ${industry.id}_tile_orchard;
+	0, 3: ${industry.id}_tile_buildings;
+	1, 1: ${industry.id}_tile_orchard;
+	1, 2: ${industry.id}_tile_orchard;
+	1, 3: ${industry.id}_tile_buildings;
+	1, 4: ${industry.id}_tile_buildings;
 }
 
 tilelayout tilelayout_blah_5807_3 {
-	0, 0: THIS_ID(tile_orchard);
-	0, 1: THIS_ID(tile_orchard);
-	1, 0: THIS_ID(tile_orchard);
-	1, 1: THIS_ID(tile_orchard);
-	2, 0: THIS_ID(tile_buildings);
-	2, 1: THIS_ID(tile_buildings);
-	3, 0: THIS_ID(tile_orchard);
-	3, 1: THIS_ID(tile_buildings);
+	0, 0: ${industry.id}_tile_orchard;
+	0, 1: ${industry.id}_tile_orchard;
+	1, 0: ${industry.id}_tile_orchard;
+	1, 1: ${industry.id}_tile_orchard;
+	2, 0: ${industry.id}_tile_buildings;
+	2, 1: ${industry.id}_tile_buildings;
+	3, 0: ${industry.id}_tile_orchard;
+	3, 1: ${industry.id}_tile_buildings;
 }
 
 tilelayout tilelayout_blah_5807_4 {
-	0, 0: THIS_ID(tile_orchard);
-	0, 1: THIS_ID(tile_orchard);
-	0, 3: THIS_ID(tile_orchard);
-	0, 4: THIS_ID(tile_orchard);
-	1, 0: THIS_ID(tile_orchard);
-	1, 1: THIS_ID(tile_orchard);
-	1, 3: THIS_ID(tile_orchard);
-	1, 4: THIS_ID(tile_orchard);
-	3, 0: THIS_ID(tile_orchard);
-	3, 1: THIS_ID(tile_orchard);
-	3, 3: THIS_ID(tile_buildings);
-	3, 4: THIS_ID(tile_orchard);
-	4, 0: THIS_ID(tile_orchard);
-	4, 1: THIS_ID(tile_buildings);
-	4, 3: THIS_ID(tile_orchard);
-	4, 4: THIS_ID(tile_buildings);
+	0, 0: ${industry.id}_tile_orchard;
+	0, 1: ${industry.id}_tile_orchard;
+	0, 3: ${industry.id}_tile_orchard;
+	0, 4: ${industry.id}_tile_orchard;
+	1, 0: ${industry.id}_tile_orchard;
+	1, 1: ${industry.id}_tile_orchard;
+	1, 3: ${industry.id}_tile_orchard;
+	1, 4: ${industry.id}_tile_orchard;
+	3, 0: ${industry.id}_tile_orchard;
+	3, 1: ${industry.id}_tile_orchard;
+	3, 3: ${industry.id}_tile_buildings;
+	3, 4: ${industry.id}_tile_orchard;
+	4, 0: ${industry.id}_tile_orchard;
+	4, 1: ${industry.id}_tile_buildings;
+	4, 3: ${industry.id}_tile_orchard;
+	4, 4: ${industry.id}_tile_buildings;
 }
 
 
@@ -332,10 +332,10 @@ tilelayout tilelayout_blah_5807_4 {
  * *************************************************/
 
 CHECK_NEARBY_CLUSTER(orchard_piggery, 10, 36, 3, 4, return CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
-CHECK_INCOMPATIBLE  (brewery,          16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(orchard_piggery))
-CHECK_FOUNDER       (THIS_ID(brewery))
+CHECK_INCOMPATIBLE  (brewery,          16, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_orchard_piggery)
+CHECK_FOUNDER       (${industry.id}_brewery)
 
-SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
+SWITCH_COLOUR_SCHEME1(${industry.id}_colour)
 
 ${industry.get_primary_supplies_stuff()}
 
@@ -345,16 +345,16 @@ ${industry.get_industry_properties()}
 
 item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
 	graphics {
-		produce_cargo_arrival:   THIS_ID(produce);
-		construction_probability:THIS_ID(check_availability);
-		location_check:          THIS_ID(check_location);
-		produce_256_ticks:       THIS_ID(produce_256_ticks);
-		monthly_prod_change:     THIS_ID(monthly_update);
+		produce_cargo_arrival:   ${industry.id}_produce;
+		construction_probability:${industry.id}_check_availability;
+		location_check:          ${industry.id}_check_location;
+		produce_256_ticks:       ${industry.id}_produce_256_ticks;
+		monthly_prod_change:     ${industry.id}_monthly_update;
         random_prod_change:      return CB_RESULT_IND_PROD_NO_CHANGE;
 		build_prod_change:       randomise_primary_production_on_build;
 		extra_text_fund:         return string(STR_FUND_ORCHARD_PIGGERY);
-		extra_text_industry:     THIS_ID(extra_text);
-		colour:                  THIS_ID(colour);
+		extra_text_industry:     ${industry.id}_extra_text;
+		colour:                  ${industry.id}_colour;
 	}
 }
 
