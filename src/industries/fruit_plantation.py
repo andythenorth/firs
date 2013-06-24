@@ -364,1064 +364,1064 @@ sprite_ground_4182 = industry.add_sprite(
 )
 
 industry.add_spritelayout(
-    id = 'action2_4597',
+    id = 'fruit_plantation_597',
     ground_sprite = sprite_ground_4164,
     ground_overlay = sprite_ground_4164,
     building_sprites = [building_0, building_1, building_2, building_3],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4598',
+    id = 'fruit_plantation_598',
     ground_sprite = sprite_ground_4165,
     ground_overlay = sprite_ground_4165,
     building_sprites = [building_4, building_1, building_5, building_6],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4599',
+    id = 'fruit_plantation_599',
     ground_sprite = sprite_ground_4166,
     ground_overlay = sprite_ground_4166,
     building_sprites = [building_0, building_7, building_2, building_8],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4600',
+    id = 'fruit_plantation_600',
     ground_sprite = sprite_ground_4167,
     ground_overlay = sprite_ground_4167,
     building_sprites = [building_9, building_10, building_5, building_6],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4601',
+    id = 'fruit_plantation_601',
     ground_sprite = sprite_ground_4168,
     ground_overlay = sprite_ground_4168,
     building_sprites = [building_0, building_10, building_5, building_8],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4602',
+    id = 'fruit_plantation_602',
     ground_sprite = sprite_ground_4169,
     ground_overlay = sprite_ground_4169,
     building_sprites = [building_4, building_7, building_11, building_6],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4603',
+    id = 'fruit_plantation_603',
     ground_sprite = sprite_ground_4170,
     ground_overlay = sprite_ground_4170,
     building_sprites = [building_9, building_10, building_5, building_3],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4604',
+    id = 'fruit_plantation_604',
     ground_sprite = sprite_ground_4171,
     ground_overlay = sprite_ground_4171,
     building_sprites = [building_4, building_1, building_2, building_3],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4605',
+    id = 'fruit_plantation_605',
     ground_sprite = sprite_ground_4172,
     ground_overlay = sprite_ground_4172,
     building_sprites = [building_0, building_10, building_11, building_6],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4606',
+    id = 'fruit_plantation_606',
     ground_sprite = sprite_ground_4173,
     ground_overlay = sprite_ground_4173,
     building_sprites = [building_0, building_10, building_2, building_8],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4607',
+    id = 'fruit_plantation_607',
     ground_sprite = sprite_ground_4174,
     ground_overlay = sprite_ground_4174,
     building_sprites = [building_4, building_1, building_5, building_6],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4608',
+    id = 'fruit_plantation_608',
     ground_sprite = sprite_ground_4175,
     ground_overlay = sprite_ground_4175,
     building_sprites = [building_4, building_10, building_2, building_8],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4609',
+    id = 'fruit_plantation_609',
     ground_sprite = sprite_ground_4176,
     ground_overlay = sprite_ground_4176,
     building_sprites = [building_0, building_10, building_2, building_8],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4610',
+    id = 'fruit_plantation_610',
     ground_sprite = sprite_ground_4177,
     ground_overlay = sprite_ground_4177,
     building_sprites = [building_4, building_1, building_5, building_6],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4611',
+    id = 'fruit_plantation_611',
     ground_sprite = sprite_ground_4178,
     ground_overlay = sprite_ground_4178,
     building_sprites = [building_4, building_1, building_5, building_6],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4612',
+    id = 'fruit_plantation_612',
     ground_sprite = sprite_ground_4179,
     ground_overlay = sprite_ground_4179,
     building_sprites = [building_9, building_7, building_2, building_3],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4613',
+    id = 'fruit_plantation_613',
     ground_sprite = sprite_ground_4180,
     ground_overlay = sprite_ground_4180,
     building_sprites = [building_0, building_1, building_2, building_6],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4614',
+    id = 'fruit_plantation_614',
     ground_sprite = sprite_ground_4181,
     ground_overlay = sprite_ground_4181,
     building_sprites = [building_4, building_7, building_2, building_8],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4615',
+    id = 'fruit_plantation_615',
     ground_sprite = sprite_ground_4182,
     ground_overlay = sprite_ground_4182,
     building_sprites = [building_4, building_10, building_5, building_8],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4620',
+    id = 'fruit_plantation_620',
     ground_sprite = sprite_ground_4164,
     ground_overlay = sprite_ground_4164,
     building_sprites = [building_12, building_13, building_14, building_15],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4621',
+    id = 'fruit_plantation_621',
     ground_sprite = sprite_ground_4165,
     ground_overlay = sprite_ground_4165,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4622',
+    id = 'fruit_plantation_622',
     ground_sprite = sprite_ground_4166,
     ground_overlay = sprite_ground_4166,
     building_sprites = [building_12, building_19, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4623',
+    id = 'fruit_plantation_623',
     ground_sprite = sprite_ground_4167,
     ground_overlay = sprite_ground_4167,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4624',
+    id = 'fruit_plantation_624',
     ground_sprite = sprite_ground_4168,
     ground_overlay = sprite_ground_4168,
     building_sprites = [building_12, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4625',
+    id = 'fruit_plantation_625',
     ground_sprite = sprite_ground_4169,
     ground_overlay = sprite_ground_4169,
     building_sprites = [building_16, building_19, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4626',
+    id = 'fruit_plantation_626',
     ground_sprite = sprite_ground_4170,
     ground_overlay = sprite_ground_4170,
     building_sprites = [building_16, building_13, building_17, building_15],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4627',
+    id = 'fruit_plantation_627',
     ground_sprite = sprite_ground_4171,
     ground_overlay = sprite_ground_4171,
     building_sprites = [building_16, building_13, building_14, building_15],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4628',
+    id = 'fruit_plantation_628',
     ground_sprite = sprite_ground_4172,
     ground_overlay = sprite_ground_4172,
     building_sprites = [building_12, building_13, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4629',
+    id = 'fruit_plantation_629',
     ground_sprite = sprite_ground_4173,
     ground_overlay = sprite_ground_4173,
     building_sprites = [building_12, building_13, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4630',
+    id = 'fruit_plantation_630',
     ground_sprite = sprite_ground_4174,
     ground_overlay = sprite_ground_4174,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4631',
+    id = 'fruit_plantation_631',
     ground_sprite = sprite_ground_4175,
     ground_overlay = sprite_ground_4175,
     building_sprites = [building_16, building_13, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4632',
+    id = 'fruit_plantation_632',
     ground_sprite = sprite_ground_4176,
     ground_overlay = sprite_ground_4176,
     building_sprites = [building_12, building_13, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4633',
+    id = 'fruit_plantation_633',
     ground_sprite = sprite_ground_4177,
     ground_overlay = sprite_ground_4177,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4634',
+    id = 'fruit_plantation_634',
     ground_sprite = sprite_ground_4178,
     ground_overlay = sprite_ground_4178,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4635',
+    id = 'fruit_plantation_635',
     ground_sprite = sprite_ground_4179,
     ground_overlay = sprite_ground_4179,
     building_sprites = [building_16, building_19, building_14, building_15],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4636',
+    id = 'fruit_plantation_636',
     ground_sprite = sprite_ground_4180,
     ground_overlay = sprite_ground_4180,
     building_sprites = [building_12, building_13, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4637',
+    id = 'fruit_plantation_637',
     ground_sprite = sprite_ground_4181,
     ground_overlay = sprite_ground_4181,
     building_sprites = [building_16, building_19, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4638',
+    id = 'fruit_plantation_638',
     ground_sprite = sprite_ground_4182,
     ground_overlay = sprite_ground_4182,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4642',
+    id = 'fruit_plantation_642',
     ground_sprite = sprite_ground_4164,
     ground_overlay = sprite_ground_4164,
     building_sprites = [building_12, building_13, building_14, building_15],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4643',
+    id = 'fruit_plantation_643',
     ground_sprite = sprite_ground_4165,
     ground_overlay = sprite_ground_4165,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4644',
+    id = 'fruit_plantation_644',
     ground_sprite = sprite_ground_4166,
     ground_overlay = sprite_ground_4166,
     building_sprites = [building_12, building_19, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4645',
+    id = 'fruit_plantation_645',
     ground_sprite = sprite_ground_4167,
     ground_overlay = sprite_ground_4167,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4646',
+    id = 'fruit_plantation_646',
     ground_sprite = sprite_ground_4168,
     ground_overlay = sprite_ground_4168,
     building_sprites = [building_12, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4647',
+    id = 'fruit_plantation_647',
     ground_sprite = sprite_ground_4169,
     ground_overlay = sprite_ground_4169,
     building_sprites = [building_16, building_19, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4648',
+    id = 'fruit_plantation_648',
     ground_sprite = sprite_ground_4170,
     ground_overlay = sprite_ground_4170,
     building_sprites = [building_16, building_13, building_17, building_15],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4649',
+    id = 'fruit_plantation_649',
     ground_sprite = sprite_ground_4171,
     ground_overlay = sprite_ground_4171,
     building_sprites = [building_16, building_13, building_14, building_15],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4650',
+    id = 'fruit_plantation_650',
     ground_sprite = sprite_ground_4172,
     ground_overlay = sprite_ground_4172,
     building_sprites = [building_12, building_13, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4651',
+    id = 'fruit_plantation_651',
     ground_sprite = sprite_ground_4173,
     ground_overlay = sprite_ground_4173,
     building_sprites = [building_12, building_13, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4652',
+    id = 'fruit_plantation_652',
     ground_sprite = sprite_ground_4174,
     ground_overlay = sprite_ground_4174,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4653',
+    id = 'fruit_plantation_653',
     ground_sprite = sprite_ground_4175,
     ground_overlay = sprite_ground_4175,
     building_sprites = [building_16, building_13, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4654',
+    id = 'fruit_plantation_654',
     ground_sprite = sprite_ground_4176,
     ground_overlay = sprite_ground_4176,
     building_sprites = [building_12, building_13, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4655',
+    id = 'fruit_plantation_655',
     ground_sprite = sprite_ground_4177,
     ground_overlay = sprite_ground_4177,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4656',
+    id = 'fruit_plantation_656',
     ground_sprite = sprite_ground_4178,
     ground_overlay = sprite_ground_4178,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4657',
+    id = 'fruit_plantation_657',
     ground_sprite = sprite_ground_4179,
     ground_overlay = sprite_ground_4179,
     building_sprites = [building_16, building_19, building_14, building_15],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4658',
+    id = 'fruit_plantation_658',
     ground_sprite = sprite_ground_4180,
     ground_overlay = sprite_ground_4180,
     building_sprites = [building_12, building_13, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4659',
+    id = 'fruit_plantation_659',
     ground_sprite = sprite_ground_4181,
     ground_overlay = sprite_ground_4181,
     building_sprites = [building_16, building_19, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4660',
+    id = 'fruit_plantation_660',
     ground_sprite = sprite_ground_4182,
     ground_overlay = sprite_ground_4182,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4664',
+    id = 'fruit_plantation_664',
     ground_sprite = sprite_ground_4164,
     ground_overlay = sprite_ground_4164,
     building_sprites = [building_12, building_13, building_14, building_15],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4665',
+    id = 'fruit_plantation_665',
     ground_sprite = sprite_ground_4165,
     ground_overlay = sprite_ground_4165,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4666',
+    id = 'fruit_plantation_666',
     ground_sprite = sprite_ground_4166,
     ground_overlay = sprite_ground_4166,
     building_sprites = [building_12, building_19, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4667',
+    id = 'fruit_plantation_667',
     ground_sprite = sprite_ground_4167,
     ground_overlay = sprite_ground_4167,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4668',
+    id = 'fruit_plantation_668',
     ground_sprite = sprite_ground_4168,
     ground_overlay = sprite_ground_4168,
     building_sprites = [building_12, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4669',
+    id = 'fruit_plantation_669',
     ground_sprite = sprite_ground_4169,
     ground_overlay = sprite_ground_4169,
     building_sprites = [building_16, building_19, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4670',
+    id = 'fruit_plantation_670',
     ground_sprite = sprite_ground_4170,
     ground_overlay = sprite_ground_4170,
     building_sprites = [building_16, building_13, building_17, building_15],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4671',
+    id = 'fruit_plantation_671',
     ground_sprite = sprite_ground_4171,
     ground_overlay = sprite_ground_4171,
     building_sprites = [building_16, building_13, building_14, building_15],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4672',
+    id = 'fruit_plantation_672',
     ground_sprite = sprite_ground_4172,
     ground_overlay = sprite_ground_4172,
     building_sprites = [building_12, building_13, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4673',
+    id = 'fruit_plantation_673',
     ground_sprite = sprite_ground_4173,
     ground_overlay = sprite_ground_4173,
     building_sprites = [building_12, building_13, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4674',
+    id = 'fruit_plantation_674',
     ground_sprite = sprite_ground_4174,
     ground_overlay = sprite_ground_4174,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4675',
+    id = 'fruit_plantation_675',
     ground_sprite = sprite_ground_4175,
     ground_overlay = sprite_ground_4175,
     building_sprites = [building_16, building_13, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4676',
+    id = 'fruit_plantation_676',
     ground_sprite = sprite_ground_4176,
     ground_overlay = sprite_ground_4176,
     building_sprites = [building_12, building_13, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4677',
+    id = 'fruit_plantation_677',
     ground_sprite = sprite_ground_4177,
     ground_overlay = sprite_ground_4177,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4678',
+    id = 'fruit_plantation_678',
     ground_sprite = sprite_ground_4178,
     ground_overlay = sprite_ground_4178,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4679',
+    id = 'fruit_plantation_679',
     ground_sprite = sprite_ground_4179,
     ground_overlay = sprite_ground_4179,
     building_sprites = [building_16, building_19, building_14, building_15],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4680',
+    id = 'fruit_plantation_680',
     ground_sprite = sprite_ground_4180,
     ground_overlay = sprite_ground_4180,
     building_sprites = [building_12, building_13, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4681',
+    id = 'fruit_plantation_681',
     ground_sprite = sprite_ground_4181,
     ground_overlay = sprite_ground_4181,
     building_sprites = [building_16, building_19, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4682',
+    id = 'fruit_plantation_682',
     ground_sprite = sprite_ground_4182,
     ground_overlay = sprite_ground_4182,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4686',
+    id = 'fruit_plantation_686',
     ground_sprite = sprite_ground_4164,
     ground_overlay = sprite_ground_4164,
     building_sprites = [building_12, building_13, building_14, building_15],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4687',
+    id = 'fruit_plantation_687',
     ground_sprite = sprite_ground_4165,
     ground_overlay = sprite_ground_4165,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4688',
+    id = 'fruit_plantation_688',
     ground_sprite = sprite_ground_4166,
     ground_overlay = sprite_ground_4166,
     building_sprites = [building_12, building_19, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4689',
+    id = 'fruit_plantation_689',
     ground_sprite = sprite_ground_4167,
     ground_overlay = sprite_ground_4167,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4690',
+    id = 'fruit_plantation_690',
     ground_sprite = sprite_ground_4168,
     ground_overlay = sprite_ground_4168,
     building_sprites = [building_12, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4691',
+    id = 'fruit_plantation_691',
     ground_sprite = sprite_ground_4169,
     ground_overlay = sprite_ground_4169,
     building_sprites = [building_16, building_19, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4692',
+    id = 'fruit_plantation_692',
     ground_sprite = sprite_ground_4170,
     ground_overlay = sprite_ground_4170,
     building_sprites = [building_16, building_13, building_17, building_15],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4693',
+    id = 'fruit_plantation_693',
     ground_sprite = sprite_ground_4171,
     ground_overlay = sprite_ground_4171,
     building_sprites = [building_16, building_13, building_14, building_15],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4694',
+    id = 'fruit_plantation_694',
     ground_sprite = sprite_ground_4172,
     ground_overlay = sprite_ground_4172,
     building_sprites = [building_12, building_13, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4695',
+    id = 'fruit_plantation_695',
     ground_sprite = sprite_ground_4173,
     ground_overlay = sprite_ground_4173,
     building_sprites = [building_12, building_13, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4696',
+    id = 'fruit_plantation_696',
     ground_sprite = sprite_ground_4174,
     ground_overlay = sprite_ground_4174,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4697',
+    id = 'fruit_plantation_697',
     ground_sprite = sprite_ground_4175,
     ground_overlay = sprite_ground_4175,
     building_sprites = [building_16, building_13, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4698',
+    id = 'fruit_plantation_698',
     ground_sprite = sprite_ground_4176,
     ground_overlay = sprite_ground_4176,
     building_sprites = [building_12, building_13, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4699',
+    id = 'fruit_plantation_699',
     ground_sprite = sprite_ground_4177,
     ground_overlay = sprite_ground_4177,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4700',
+    id = 'fruit_plantation_700',
     ground_sprite = sprite_ground_4178,
     ground_overlay = sprite_ground_4178,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4701',
+    id = 'fruit_plantation_701',
     ground_sprite = sprite_ground_4179,
     ground_overlay = sprite_ground_4179,
     building_sprites = [building_16, building_19, building_14, building_15],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4702',
+    id = 'fruit_plantation_702',
     ground_sprite = sprite_ground_4180,
     ground_overlay = sprite_ground_4180,
     building_sprites = [building_12, building_13, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4703',
+    id = 'fruit_plantation_703',
     ground_sprite = sprite_ground_4181,
     ground_overlay = sprite_ground_4181,
     building_sprites = [building_16, building_19, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4704',
+    id = 'fruit_plantation_704',
     ground_sprite = sprite_ground_4182,
     ground_overlay = sprite_ground_4182,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4708',
+    id = 'fruit_plantation_708',
     ground_sprite = sprite_ground_4164,
     ground_overlay = sprite_ground_4164,
     building_sprites = [building_12, building_13, building_14, building_15],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4709',
+    id = 'fruit_plantation_709',
     ground_sprite = sprite_ground_4165,
     ground_overlay = sprite_ground_4165,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4710',
+    id = 'fruit_plantation_710',
     ground_sprite = sprite_ground_4166,
     ground_overlay = sprite_ground_4166,
     building_sprites = [building_12, building_19, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4711',
+    id = 'fruit_plantation_711',
     ground_sprite = sprite_ground_4167,
     ground_overlay = sprite_ground_4167,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4712',
+    id = 'fruit_plantation_712',
     ground_sprite = sprite_ground_4168,
     ground_overlay = sprite_ground_4168,
     building_sprites = [building_12, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4713',
+    id = 'fruit_plantation_713',
     ground_sprite = sprite_ground_4169,
     ground_overlay = sprite_ground_4169,
     building_sprites = [building_16, building_19, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4714',
+    id = 'fruit_plantation_714',
     ground_sprite = sprite_ground_4170,
     ground_overlay = sprite_ground_4170,
     building_sprites = [building_16, building_13, building_17, building_15],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4715',
+    id = 'fruit_plantation_715',
     ground_sprite = sprite_ground_4171,
     ground_overlay = sprite_ground_4171,
     building_sprites = [building_16, building_13, building_14, building_15],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4716',
+    id = 'fruit_plantation_716',
     ground_sprite = sprite_ground_4172,
     ground_overlay = sprite_ground_4172,
     building_sprites = [building_12, building_13, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4717',
+    id = 'fruit_plantation_717',
     ground_sprite = sprite_ground_4173,
     ground_overlay = sprite_ground_4173,
     building_sprites = [building_12, building_13, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4718',
+    id = 'fruit_plantation_718',
     ground_sprite = sprite_ground_4174,
     ground_overlay = sprite_ground_4174,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4719',
+    id = 'fruit_plantation_719',
     ground_sprite = sprite_ground_4175,
     ground_overlay = sprite_ground_4175,
     building_sprites = [building_16, building_13, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4720',
+    id = 'fruit_plantation_720',
     ground_sprite = sprite_ground_4176,
     ground_overlay = sprite_ground_4176,
     building_sprites = [building_12, building_13, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4721',
+    id = 'fruit_plantation_721',
     ground_sprite = sprite_ground_4177,
     ground_overlay = sprite_ground_4177,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4722',
+    id = 'fruit_plantation_722',
     ground_sprite = sprite_ground_4178,
     ground_overlay = sprite_ground_4178,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4723',
+    id = 'fruit_plantation_723',
     ground_sprite = sprite_ground_4179,
     ground_overlay = sprite_ground_4179,
     building_sprites = [building_16, building_19, building_14, building_15],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4724',
+    id = 'fruit_plantation_724',
     ground_sprite = sprite_ground_4180,
     ground_overlay = sprite_ground_4180,
     building_sprites = [building_12, building_13, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4725',
+    id = 'fruit_plantation_725',
     ground_sprite = sprite_ground_4181,
     ground_overlay = sprite_ground_4181,
     building_sprites = [building_16, building_19, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4726',
+    id = 'fruit_plantation_726',
     ground_sprite = sprite_ground_4182,
     ground_overlay = sprite_ground_4182,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4731',
+    id = 'fruit_plantation_731',
     ground_sprite = sprite_ground_4145,
     ground_overlay = sprite_ground_4145,
     building_sprites = [building_20, building_21, building_22, building_23],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4732',
+    id = 'fruit_plantation_732',
     ground_sprite = sprite_ground_4146,
     ground_overlay = sprite_ground_4146,
     building_sprites = [building_24, building_21, building_25, building_26],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4733',
+    id = 'fruit_plantation_733',
     ground_sprite = sprite_ground_4147,
     ground_overlay = sprite_ground_4147,
     building_sprites = [building_20, building_27, building_22, building_28],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4734',
+    id = 'fruit_plantation_734',
     ground_sprite = sprite_ground_4148,
     ground_overlay = sprite_ground_4148,
     building_sprites = [building_29, building_30, building_25, building_26],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4735',
+    id = 'fruit_plantation_735',
     ground_sprite = sprite_ground_4149,
     ground_overlay = sprite_ground_4149,
     building_sprites = [building_20, building_30, building_25, building_28],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4736',
+    id = 'fruit_plantation_736',
     ground_sprite = sprite_ground_4150,
     ground_overlay = sprite_ground_4150,
     building_sprites = [building_24, building_27, building_31, building_26],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4737',
+    id = 'fruit_plantation_737',
     ground_sprite = sprite_ground_4151,
     ground_overlay = sprite_ground_4151,
     building_sprites = [building_29, building_30, building_25, building_23],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4738',
+    id = 'fruit_plantation_738',
     ground_sprite = sprite_ground_4152,
     ground_overlay = sprite_ground_4152,
     building_sprites = [building_24, building_21, building_22, building_23],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4739',
+    id = 'fruit_plantation_739',
     ground_sprite = sprite_ground_4153,
     ground_overlay = sprite_ground_4153,
     building_sprites = [building_20, building_30, building_31, building_26],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4740',
+    id = 'fruit_plantation_740',
     ground_sprite = sprite_ground_4154,
     ground_overlay = sprite_ground_4154,
     building_sprites = [building_20, building_30, building_22, building_28],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4741',
+    id = 'fruit_plantation_741',
     ground_sprite = sprite_ground_4155,
     ground_overlay = sprite_ground_4155,
     building_sprites = [building_24, building_21, building_25, building_26],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4742',
+    id = 'fruit_plantation_742',
     ground_sprite = sprite_ground_4156,
     ground_overlay = sprite_ground_4156,
     building_sprites = [building_24, building_30, building_22, building_28],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4743',
+    id = 'fruit_plantation_743',
     ground_sprite = sprite_ground_4157,
     ground_overlay = sprite_ground_4157,
     building_sprites = [building_20, building_30, building_22, building_28],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4744',
+    id = 'fruit_plantation_744',
     ground_sprite = sprite_ground_4158,
     ground_overlay = sprite_ground_4158,
     building_sprites = [building_24, building_21, building_25, building_26],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4745',
+    id = 'fruit_plantation_745',
     ground_sprite = sprite_ground_4159,
     ground_overlay = sprite_ground_4159,
     building_sprites = [building_24, building_21, building_25, building_26],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4746',
+    id = 'fruit_plantation_746',
     ground_sprite = sprite_ground_4160,
     ground_overlay = sprite_ground_4160,
     building_sprites = [building_29, building_27, building_22, building_23],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4747',
+    id = 'fruit_plantation_747',
     ground_sprite = sprite_ground_4161,
     ground_overlay = sprite_ground_4161,
     building_sprites = [building_20, building_21, building_22, building_26],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4748',
+    id = 'fruit_plantation_748',
     ground_sprite = sprite_ground_4162,
     ground_overlay = sprite_ground_4162,
     building_sprites = [building_24, building_27, building_22, building_28],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4749',
+    id = 'fruit_plantation_749',
     ground_sprite = sprite_ground_4163,
     ground_overlay = sprite_ground_4163,
     building_sprites = [building_24, building_30, building_25, building_28],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4753',
+    id = 'fruit_plantation_753',
     ground_sprite = sprite_ground_4145,
     ground_overlay = sprite_ground_4145,
     building_sprites = [building_20, building_21, building_22, building_23],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4754',
+    id = 'fruit_plantation_754',
     ground_sprite = sprite_ground_4146,
     ground_overlay = sprite_ground_4146,
     building_sprites = [building_24, building_21, building_25, building_26],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4755',
+    id = 'fruit_plantation_755',
     ground_sprite = sprite_ground_4147,
     ground_overlay = sprite_ground_4147,
     building_sprites = [building_20, building_27, building_22, building_28],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4756',
+    id = 'fruit_plantation_756',
     ground_sprite = sprite_ground_4148,
     ground_overlay = sprite_ground_4148,
     building_sprites = [building_29, building_30, building_25, building_26],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4757',
+    id = 'fruit_plantation_757',
     ground_sprite = sprite_ground_4149,
     ground_overlay = sprite_ground_4149,
     building_sprites = [building_20, building_30, building_25, building_28],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4758',
+    id = 'fruit_plantation_758',
     ground_sprite = sprite_ground_4150,
     ground_overlay = sprite_ground_4150,
     building_sprites = [building_24, building_27, building_31, building_26],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4759',
+    id = 'fruit_plantation_759',
     ground_sprite = sprite_ground_4151,
     ground_overlay = sprite_ground_4151,
     building_sprites = [building_29, building_30, building_25, building_23],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4760',
+    id = 'fruit_plantation_760',
     ground_sprite = sprite_ground_4152,
     ground_overlay = sprite_ground_4152,
     building_sprites = [building_24, building_21, building_22, building_23],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4761',
+    id = 'fruit_plantation_761',
     ground_sprite = sprite_ground_4153,
     ground_overlay = sprite_ground_4153,
     building_sprites = [building_20, building_30, building_31, building_26],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4762',
+    id = 'fruit_plantation_762',
     ground_sprite = sprite_ground_4154,
     ground_overlay = sprite_ground_4154,
     building_sprites = [building_20, building_30, building_22, building_28],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4763',
+    id = 'fruit_plantation_763',
     ground_sprite = sprite_ground_4155,
     ground_overlay = sprite_ground_4155,
     building_sprites = [building_24, building_21, building_25, building_26],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4764',
+    id = 'fruit_plantation_764',
     ground_sprite = sprite_ground_4156,
     ground_overlay = sprite_ground_4156,
     building_sprites = [building_24, building_30, building_22, building_28],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4765',
+    id = 'fruit_plantation_765',
     ground_sprite = sprite_ground_4157,
     ground_overlay = sprite_ground_4157,
     building_sprites = [building_20, building_30, building_22, building_28],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4766',
+    id = 'fruit_plantation_766',
     ground_sprite = sprite_ground_4158,
     ground_overlay = sprite_ground_4158,
     building_sprites = [building_24, building_21, building_25, building_26],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4767',
+    id = 'fruit_plantation_767',
     ground_sprite = sprite_ground_4159,
     ground_overlay = sprite_ground_4159,
     building_sprites = [building_24, building_21, building_25, building_26],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4768',
+    id = 'fruit_plantation_768',
     ground_sprite = sprite_ground_4160,
     ground_overlay = sprite_ground_4160,
     building_sprites = [building_29, building_27, building_22, building_23],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4769',
+    id = 'fruit_plantation_769',
     ground_sprite = sprite_ground_4161,
     ground_overlay = sprite_ground_4161,
     building_sprites = [building_20, building_21, building_22, building_26],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4770',
+    id = 'fruit_plantation_770',
     ground_sprite = sprite_ground_4162,
     ground_overlay = sprite_ground_4162,
     building_sprites = [building_24, building_27, building_22, building_28],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_4771',
+    id = 'fruit_plantation_771',
     ground_sprite = sprite_ground_4163,
     ground_overlay = sprite_ground_4163,
     building_sprites = [building_24, building_30, building_25, building_28],
