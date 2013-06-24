@@ -9,209 +9,209 @@
 
 ${industry.get_spritelayouts()}
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_blah_4616, nearby_tile_slope(0,0)) {
-	0: action2_blah_4597;
-	1: action2_blah_4598;
-	2: action2_blah_4599;
-	3: action2_blah_4600;
-	4: action2_blah_4601;
-	5: action2_blah_4602;
-	6: action2_blah_4603;
-	7: action2_blah_4604;
-	8: action2_blah_4605;
-	9: action2_blah_4606;
-	10: action2_blah_4607;
-	11: action2_blah_4608;
-	12: action2_blah_4609;
-	13: action2_blah_4610;
-	14: action2_blah_4611;
-	29: action2_blah_4612;
-	23: action2_blah_4613;
-	27: action2_blah_4614;
-	30: action2_blah_4615;
-	action2_blah_4597;
+switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_616, nearby_tile_slope(0,0)) {
+	0: ${industry.id}_597;
+	1: ${industry.id}_598;
+	2: ${industry.id}_599;
+	3: ${industry.id}_600;
+	4: ${industry.id}_601;
+	5: ${industry.id}_602;
+	6: ${industry.id}_603;
+	7: ${industry.id}_604;
+	8: ${industry.id}_605;
+	9: ${industry.id}_606;
+	10: ${industry.id}_607;
+	11: ${industry.id}_608;
+	12: ${industry.id}_609;
+	13: ${industry.id}_610;
+	14: ${industry.id}_611;
+	29: ${industry.id}_612;
+	23: ${industry.id}_613;
+	27: ${industry.id}_614;
+	30: ${industry.id}_615;
+	${industry.id}_597;
 }
 
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_blah_4639, nearby_tile_slope(0,0)) {
-	0: action2_blah_4620;
-	1: action2_blah_4621;
-	2: action2_blah_4622;
-	3: action2_blah_4623;
-	4: action2_blah_4624;
-	5: action2_blah_4625;
-	6: action2_blah_4626;
-	7: action2_blah_4627;
-	8: action2_blah_4628;
-	9: action2_blah_4629;
-	10: action2_blah_4630;
-	11: action2_blah_4631;
-	12: action2_blah_4632;
-	13: action2_blah_4633;
-	14: action2_blah_4634;
-	29: action2_blah_4635;
-	23: action2_blah_4636;
-	27: action2_blah_4637;
-	30: action2_blah_4638;
-	action2_blah_4620;
+switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_639, nearby_tile_slope(0,0)) {
+	0: ${industry.id}_620;
+	1: ${industry.id}_621;
+	2: ${industry.id}_622;
+	3: ${industry.id}_623;
+	4: ${industry.id}_624;
+	5: ${industry.id}_625;
+	6: ${industry.id}_626;
+	7: ${industry.id}_627;
+	8: ${industry.id}_628;
+	9: ${industry.id}_629;
+	10: ${industry.id}_630;
+	11: ${industry.id}_631;
+	12: ${industry.id}_632;
+	13: ${industry.id}_633;
+	14: ${industry.id}_634;
+	29: ${industry.id}_635;
+	23: ${industry.id}_636;
+	27: ${industry.id}_637;
+	30: ${industry.id}_638;
+	${industry.id}_620;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_blah_4661, nearby_tile_slope(0,0)) {
-	0: action2_blah_4642;
-	1: action2_blah_4643;
-	2: action2_blah_4644;
-	3: action2_blah_4645;
-	4: action2_blah_4646;
-	5: action2_blah_4647;
-	6: action2_blah_4648;
-	7: action2_blah_4649;
-	8: action2_blah_4650;
-	9: action2_blah_4651;
-	10: action2_blah_4652;
-	11: action2_blah_4653;
-	12: action2_blah_4654;
-	13: action2_blah_4655;
-	14: action2_blah_4656;
-	29: action2_blah_4657;
-	23: action2_blah_4658;
-	27: action2_blah_4659;
-	30: action2_blah_4660;
-	action2_blah_4642;
+switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_661, nearby_tile_slope(0,0)) {
+	0: ${industry.id}_642;
+	1: ${industry.id}_643;
+	2: ${industry.id}_644;
+	3: ${industry.id}_645;
+	4: ${industry.id}_646;
+	5: ${industry.id}_647;
+	6: ${industry.id}_648;
+	7: ${industry.id}_649;
+	8: ${industry.id}_650;
+	9: ${industry.id}_651;
+	10: ${industry.id}_652;
+	11: ${industry.id}_653;
+	12: ${industry.id}_654;
+	13: ${industry.id}_655;
+	14: ${industry.id}_656;
+	29: ${industry.id}_657;
+	23: ${industry.id}_658;
+	27: ${industry.id}_659;
+	30: ${industry.id}_660;
+	${industry.id}_642;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_blah_4683, nearby_tile_slope(0,0)) {
-	0: action2_blah_4664;
-	1: action2_blah_4665;
-	2: action2_blah_4666;
-	3: action2_blah_4667;
-	4: action2_blah_4668;
-	5: action2_blah_4669;
-	6: action2_blah_4670;
-	7: action2_blah_4671;
-	8: action2_blah_4672;
-	9: action2_blah_4673;
-	10: action2_blah_4674;
-	11: action2_blah_4675;
-	12: action2_blah_4676;
-	13: action2_blah_4677;
-	14: action2_blah_4678;
-	29: action2_blah_4679;
-	23: action2_blah_4680;
-	27: action2_blah_4681;
-	30: action2_blah_4682;
-	action2_blah_4664;
+switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_683, nearby_tile_slope(0,0)) {
+	0: ${industry.id}_664;
+	1: ${industry.id}_665;
+	2: ${industry.id}_666;
+	3: ${industry.id}_667;
+	4: ${industry.id}_668;
+	5: ${industry.id}_669;
+	6: ${industry.id}_670;
+	7: ${industry.id}_671;
+	8: ${industry.id}_672;
+	9: ${industry.id}_673;
+	10: ${industry.id}_674;
+	11: ${industry.id}_675;
+	12: ${industry.id}_676;
+	13: ${industry.id}_677;
+	14: ${industry.id}_678;
+	29: ${industry.id}_679;
+	23: ${industry.id}_680;
+	27: ${industry.id}_681;
+	30: ${industry.id}_682;
+	${industry.id}_664;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_blah_4705, nearby_tile_slope(0,0)) {
-	0: action2_blah_4686;
-	1: action2_blah_4687;
-	2: action2_blah_4688;
-	3: action2_blah_4689;
-	4: action2_blah_4690;
-	5: action2_blah_4691;
-	6: action2_blah_4692;
-	7: action2_blah_4693;
-	8: action2_blah_4694;
-	9: action2_blah_4695;
-	10: action2_blah_4696;
-	11: action2_blah_4697;
-	12: action2_blah_4698;
-	13: action2_blah_4699;
-	14: action2_blah_4700;
-	29: action2_blah_4701;
-	23: action2_blah_4702;
-	27: action2_blah_4703;
-	30: action2_blah_4704;
-	action2_blah_4686;
+switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_705, nearby_tile_slope(0,0)) {
+	0: ${industry.id}_686;
+	1: ${industry.id}_687;
+	2: ${industry.id}_688;
+	3: ${industry.id}_689;
+	4: ${industry.id}_690;
+	5: ${industry.id}_691;
+	6: ${industry.id}_692;
+	7: ${industry.id}_693;
+	8: ${industry.id}_694;
+	9: ${industry.id}_695;
+	10: ${industry.id}_696;
+	11: ${industry.id}_697;
+	12: ${industry.id}_698;
+	13: ${industry.id}_699;
+	14: ${industry.id}_700;
+	29: ${industry.id}_701;
+	23: ${industry.id}_702;
+	27: ${industry.id}_703;
+	30: ${industry.id}_704;
+	${industry.id}_686;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_blah_4727, nearby_tile_slope(0,0)) {
-	0: action2_blah_4708;
-	1: action2_blah_4709;
-	2: action2_blah_4710;
-	3: action2_blah_4711;
-	4: action2_blah_4712;
-	5: action2_blah_4713;
-	6: action2_blah_4714;
-	7: action2_blah_4715;
-	8: action2_blah_4716;
-	9: action2_blah_4717;
-	10: action2_blah_4718;
-	11: action2_blah_4719;
-	12: action2_blah_4720;
-	13: action2_blah_4721;
-	14: action2_blah_4722;
-	29: action2_blah_4723;
-	23: action2_blah_4724;
-	27: action2_blah_4725;
-	30: action2_blah_4726;
-	action2_blah_4708;
+switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_727, nearby_tile_slope(0,0)) {
+	0: ${industry.id}_708;
+	1: ${industry.id}_709;
+	2: ${industry.id}_710;
+	3: ${industry.id}_711;
+	4: ${industry.id}_712;
+	5: ${industry.id}_713;
+	6: ${industry.id}_714;
+	7: ${industry.id}_715;
+	8: ${industry.id}_716;
+	9: ${industry.id}_717;
+	10: ${industry.id}_718;
+	11: ${industry.id}_719;
+	12: ${industry.id}_720;
+	13: ${industry.id}_721;
+	14: ${industry.id}_722;
+	29: ${industry.id}_723;
+	23: ${industry.id}_724;
+	27: ${industry.id}_725;
+	30: ${industry.id}_726;
+	${industry.id}_708;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_blah_4730, ((nearby_tile_height(0,0) - snowline_height) + 1)) {
-	0..7: action2_blah_4661;
-	8..15: action2_blah_4683;
-	16..23: action2_blah_4705;
-	24..127: action2_blah_4727;
-	action2_blah_4639;
+switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_730, ((nearby_tile_height(0,0) - snowline_height) + 1)) {
+	0..7: ${industry.id}_661;
+	8..15: ${industry.id}_683;
+	16..23: ${industry.id}_705;
+	24..127: ${industry.id}_727;
+	${industry.id}_639;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_blah_4750, nearby_tile_slope(0,0)) {
-	0: action2_blah_4731;
-	1: action2_blah_4732;
-	2: action2_blah_4733;
-	3: action2_blah_4734;
-	4: action2_blah_4735;
-	5: action2_blah_4736;
-	6: action2_blah_4737;
-	7: action2_blah_4738;
-	8: action2_blah_4739;
-	9: action2_blah_4740;
-	10: action2_blah_4741;
-	11: action2_blah_4742;
-	12: action2_blah_4743;
-	13: action2_blah_4744;
-	14: action2_blah_4745;
-	29: action2_blah_4746;
-	23: action2_blah_4747;
-	27: action2_blah_4748;
-	30: action2_blah_4749;
-	action2_blah_4731;
+switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_750, nearby_tile_slope(0,0)) {
+	0: ${industry.id}_731;
+	1: ${industry.id}_732;
+	2: ${industry.id}_733;
+	3: ${industry.id}_734;
+	4: ${industry.id}_735;
+	5: ${industry.id}_736;
+	6: ${industry.id}_737;
+	7: ${industry.id}_738;
+	8: ${industry.id}_739;
+	9: ${industry.id}_740;
+	10: ${industry.id}_741;
+	11: ${industry.id}_742;
+	12: ${industry.id}_743;
+	13: ${industry.id}_744;
+	14: ${industry.id}_745;
+	29: ${industry.id}_746;
+	23: ${industry.id}_747;
+	27: ${industry.id}_748;
+	30: ${industry.id}_749;
+	${industry.id}_731;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_blah_4772, nearby_tile_slope(0,0)) {
-	0: action2_blah_4753;
-	1: action2_blah_4754;
-	2: action2_blah_4755;
-	3: action2_blah_4756;
-	4: action2_blah_4757;
-	5: action2_blah_4758;
-	6: action2_blah_4759;
-	7: action2_blah_4760;
-	8: action2_blah_4761;
-	9: action2_blah_4762;
-	10: action2_blah_4763;
-	11: action2_blah_4764;
-	12: action2_blah_4765;
-	13: action2_blah_4766;
-	14: action2_blah_4767;
-	29: action2_blah_4768;
-	23: action2_blah_4769;
-	27: action2_blah_4770;
-	30: action2_blah_4771;
-	action2_blah_4753;
+switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_772, nearby_tile_slope(0,0)) {
+	0: ${industry.id}_753;
+	1: ${industry.id}_754;
+	2: ${industry.id}_755;
+	3: ${industry.id}_756;
+	4: ${industry.id}_757;
+	5: ${industry.id}_758;
+	6: ${industry.id}_759;
+	7: ${industry.id}_760;
+	8: ${industry.id}_761;
+	9: ${industry.id}_762;
+	10: ${industry.id}_763;
+	11: ${industry.id}_764;
+	12: ${industry.id}_765;
+	13: ${industry.id}_766;
+	14: ${industry.id}_767;
+	29: ${industry.id}_768;
+	23: ${industry.id}_769;
+	27: ${industry.id}_770;
+	30: ${industry.id}_771;
+	${industry.id}_753;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, action2_blah_4775, terrain_type) {
-	TILETYPE_DESERT: action2_blah_4772;
-	action2_blah_4750;
+switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_775, terrain_type) {
+	TILETYPE_DESERT: ${industry.id}_772;
+	${industry.id}_750;
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(tile_orchard_spritelayout), climate) {
-	CLIMATE_TEMPERATE: action2_blah_4616;
-	CLIMATE_ARCTIC: action2_blah_4730;
-	CLIMATE_TROPIC: action2_blah_4775;
-	action2_blah_4616;
+	CLIMATE_TEMPERATE: ${industry.id}_616;
+	CLIMATE_ARCTIC: ${industry.id}_730;
+	CLIMATE_TROPIC: ${industry.id}_775;
+	${industry.id}_616;
 }
 
 /* ***************

@@ -363,1064 +363,1064 @@ sprite_ground_4182 = industry.add_sprite(
 )
 
 industry.add_spritelayout(
-    id = 'action2_blah_4597',
+    id = 'orchard_piggery_597',
     ground_sprite = sprite_ground_4164,
     ground_overlay = sprite_ground_4164,
     building_sprites = [building_0, building_1, building_2, building_3],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4598',
+    id = 'orchard_piggery_598',
     ground_sprite = sprite_ground_4165,
     ground_overlay = sprite_ground_4165,
     building_sprites = [building_4, building_1, building_5, building_6],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4599',
+    id = 'orchard_piggery_599',
     ground_sprite = sprite_ground_4166,
     ground_overlay = sprite_ground_4166,
     building_sprites = [building_0, building_7, building_2, building_8],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4600',
+    id = 'orchard_piggery_600',
     ground_sprite = sprite_ground_4167,
     ground_overlay = sprite_ground_4167,
     building_sprites = [building_9, building_10, building_5, building_6],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4601',
+    id = 'orchard_piggery_601',
     ground_sprite = sprite_ground_4168,
     ground_overlay = sprite_ground_4168,
     building_sprites = [building_0, building_10, building_5, building_8],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4602',
+    id = 'orchard_piggery_602',
     ground_sprite = sprite_ground_4169,
     ground_overlay = sprite_ground_4169,
     building_sprites = [building_4, building_7, building_11, building_6],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4603',
+    id = 'orchard_piggery_603',
     ground_sprite = sprite_ground_4170,
     ground_overlay = sprite_ground_4170,
     building_sprites = [building_9, building_10, building_5, building_3],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4604',
+    id = 'orchard_piggery_604',
     ground_sprite = sprite_ground_4171,
     ground_overlay = sprite_ground_4171,
     building_sprites = [building_4, building_1, building_2, building_3],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4605',
+    id = 'orchard_piggery_605',
     ground_sprite = sprite_ground_4172,
     ground_overlay = sprite_ground_4172,
     building_sprites = [building_0, building_10, building_11, building_6],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4606',
+    id = 'orchard_piggery_606',
     ground_sprite = sprite_ground_4173,
     ground_overlay = sprite_ground_4173,
     building_sprites = [building_0, building_10, building_2, building_8],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4607',
+    id = 'orchard_piggery_607',
     ground_sprite = sprite_ground_4174,
     ground_overlay = sprite_ground_4174,
     building_sprites = [building_4, building_1, building_5, building_6],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4608',
+    id = 'orchard_piggery_608',
     ground_sprite = sprite_ground_4175,
     ground_overlay = sprite_ground_4175,
     building_sprites = [building_4, building_10, building_2, building_8],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4609',
+    id = 'orchard_piggery_609',
     ground_sprite = sprite_ground_4176,
     ground_overlay = sprite_ground_4176,
     building_sprites = [building_0, building_10, building_2, building_8],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4610',
+    id = 'orchard_piggery_610',
     ground_sprite = sprite_ground_4177,
     ground_overlay = sprite_ground_4177,
     building_sprites = [building_4, building_1, building_5, building_6],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4611',
+    id = 'orchard_piggery_611',
     ground_sprite = sprite_ground_4178,
     ground_overlay = sprite_ground_4178,
     building_sprites = [building_4, building_1, building_5, building_6],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4612',
+    id = 'orchard_piggery_612',
     ground_sprite = sprite_ground_4179,
     ground_overlay = sprite_ground_4179,
     building_sprites = [building_9, building_7, building_2, building_3],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4613',
+    id = 'orchard_piggery_613',
     ground_sprite = sprite_ground_4180,
     ground_overlay = sprite_ground_4180,
     building_sprites = [building_0, building_1, building_2, building_6],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4614',
+    id = 'orchard_piggery_614',
     ground_sprite = sprite_ground_4181,
     ground_overlay = sprite_ground_4181,
     building_sprites = [building_4, building_7, building_2, building_8],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4615',
+    id = 'orchard_piggery_615',
     ground_sprite = sprite_ground_4182,
     ground_overlay = sprite_ground_4182,
     building_sprites = [building_4, building_10, building_5, building_8],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4620',
+    id = 'orchard_piggery_620',
     ground_sprite = sprite_ground_4164,
     ground_overlay = sprite_ground_4164,
     building_sprites = [building_12, building_13, building_14, building_15],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4621',
+    id = 'orchard_piggery_621',
     ground_sprite = sprite_ground_4165,
     ground_overlay = sprite_ground_4165,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4622',
+    id = 'orchard_piggery_622',
     ground_sprite = sprite_ground_4166,
     ground_overlay = sprite_ground_4166,
     building_sprites = [building_12, building_19, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4623',
+    id = 'orchard_piggery_623',
     ground_sprite = sprite_ground_4167,
     ground_overlay = sprite_ground_4167,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4624',
+    id = 'orchard_piggery_624',
     ground_sprite = sprite_ground_4168,
     ground_overlay = sprite_ground_4168,
     building_sprites = [building_12, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4625',
+    id = 'orchard_piggery_625',
     ground_sprite = sprite_ground_4169,
     ground_overlay = sprite_ground_4169,
     building_sprites = [building_16, building_19, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4626',
+    id = 'orchard_piggery_626',
     ground_sprite = sprite_ground_4170,
     ground_overlay = sprite_ground_4170,
     building_sprites = [building_16, building_13, building_17, building_15],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4627',
+    id = 'orchard_piggery_627',
     ground_sprite = sprite_ground_4171,
     ground_overlay = sprite_ground_4171,
     building_sprites = [building_16, building_13, building_14, building_15],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4628',
+    id = 'orchard_piggery_628',
     ground_sprite = sprite_ground_4172,
     ground_overlay = sprite_ground_4172,
     building_sprites = [building_12, building_13, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4629',
+    id = 'orchard_piggery_629',
     ground_sprite = sprite_ground_4173,
     ground_overlay = sprite_ground_4173,
     building_sprites = [building_12, building_13, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4630',
+    id = 'orchard_piggery_630',
     ground_sprite = sprite_ground_4174,
     ground_overlay = sprite_ground_4174,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4631',
+    id = 'orchard_piggery_631',
     ground_sprite = sprite_ground_4175,
     ground_overlay = sprite_ground_4175,
     building_sprites = [building_16, building_13, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4632',
+    id = 'orchard_piggery_632',
     ground_sprite = sprite_ground_4176,
     ground_overlay = sprite_ground_4176,
     building_sprites = [building_12, building_13, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4633',
+    id = 'orchard_piggery_633',
     ground_sprite = sprite_ground_4177,
     ground_overlay = sprite_ground_4177,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4634',
+    id = 'orchard_piggery_634',
     ground_sprite = sprite_ground_4178,
     ground_overlay = sprite_ground_4178,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4635',
+    id = 'orchard_piggery_635',
     ground_sprite = sprite_ground_4179,
     ground_overlay = sprite_ground_4179,
     building_sprites = [building_16, building_19, building_14, building_15],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4636',
+    id = 'orchard_piggery_636',
     ground_sprite = sprite_ground_4180,
     ground_overlay = sprite_ground_4180,
     building_sprites = [building_12, building_13, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4637',
+    id = 'orchard_piggery_637',
     ground_sprite = sprite_ground_4181,
     ground_overlay = sprite_ground_4181,
     building_sprites = [building_16, building_19, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4638',
+    id = 'orchard_piggery_638',
     ground_sprite = sprite_ground_4182,
     ground_overlay = sprite_ground_4182,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4642',
+    id = 'orchard_piggery_642',
     ground_sprite = sprite_ground_4164,
     ground_overlay = sprite_ground_4164,
     building_sprites = [building_12, building_13, building_14, building_15],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4643',
+    id = 'orchard_piggery_643',
     ground_sprite = sprite_ground_4165,
     ground_overlay = sprite_ground_4165,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4644',
+    id = 'orchard_piggery_644',
     ground_sprite = sprite_ground_4166,
     ground_overlay = sprite_ground_4166,
     building_sprites = [building_12, building_19, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4645',
+    id = 'orchard_piggery_645',
     ground_sprite = sprite_ground_4167,
     ground_overlay = sprite_ground_4167,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4646',
+    id = 'orchard_piggery_646',
     ground_sprite = sprite_ground_4168,
     ground_overlay = sprite_ground_4168,
     building_sprites = [building_12, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4647',
+    id = 'orchard_piggery_647',
     ground_sprite = sprite_ground_4169,
     ground_overlay = sprite_ground_4169,
     building_sprites = [building_16, building_19, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4648',
+    id = 'orchard_piggery_648',
     ground_sprite = sprite_ground_4170,
     ground_overlay = sprite_ground_4170,
     building_sprites = [building_16, building_13, building_17, building_15],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4649',
+    id = 'orchard_piggery_649',
     ground_sprite = sprite_ground_4171,
     ground_overlay = sprite_ground_4171,
     building_sprites = [building_16, building_13, building_14, building_15],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4650',
+    id = 'orchard_piggery_650',
     ground_sprite = sprite_ground_4172,
     ground_overlay = sprite_ground_4172,
     building_sprites = [building_12, building_13, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4651',
+    id = 'orchard_piggery_651',
     ground_sprite = sprite_ground_4173,
     ground_overlay = sprite_ground_4173,
     building_sprites = [building_12, building_13, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4652',
+    id = 'orchard_piggery_652',
     ground_sprite = sprite_ground_4174,
     ground_overlay = sprite_ground_4174,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4653',
+    id = 'orchard_piggery_653',
     ground_sprite = sprite_ground_4175,
     ground_overlay = sprite_ground_4175,
     building_sprites = [building_16, building_13, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4654',
+    id = 'orchard_piggery_654',
     ground_sprite = sprite_ground_4176,
     ground_overlay = sprite_ground_4176,
     building_sprites = [building_12, building_13, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4655',
+    id = 'orchard_piggery_655',
     ground_sprite = sprite_ground_4177,
     ground_overlay = sprite_ground_4177,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4656',
+    id = 'orchard_piggery_656',
     ground_sprite = sprite_ground_4178,
     ground_overlay = sprite_ground_4178,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4657',
+    id = 'orchard_piggery_657',
     ground_sprite = sprite_ground_4179,
     ground_overlay = sprite_ground_4179,
     building_sprites = [building_16, building_19, building_14, building_15],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4658',
+    id = 'orchard_piggery_658',
     ground_sprite = sprite_ground_4180,
     ground_overlay = sprite_ground_4180,
     building_sprites = [building_12, building_13, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4659',
+    id = 'orchard_piggery_659',
     ground_sprite = sprite_ground_4181,
     ground_overlay = sprite_ground_4181,
     building_sprites = [building_16, building_19, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4660',
+    id = 'orchard_piggery_660',
     ground_sprite = sprite_ground_4182,
     ground_overlay = sprite_ground_4182,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4664',
+    id = 'orchard_piggery_664',
     ground_sprite = sprite_ground_4164,
     ground_overlay = sprite_ground_4164,
     building_sprites = [building_12, building_13, building_14, building_15],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4665',
+    id = 'orchard_piggery_665',
     ground_sprite = sprite_ground_4165,
     ground_overlay = sprite_ground_4165,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4666',
+    id = 'orchard_piggery_666',
     ground_sprite = sprite_ground_4166,
     ground_overlay = sprite_ground_4166,
     building_sprites = [building_12, building_19, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4667',
+    id = 'orchard_piggery_667',
     ground_sprite = sprite_ground_4167,
     ground_overlay = sprite_ground_4167,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4668',
+    id = 'orchard_piggery_668',
     ground_sprite = sprite_ground_4168,
     ground_overlay = sprite_ground_4168,
     building_sprites = [building_12, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4669',
+    id = 'orchard_piggery_669',
     ground_sprite = sprite_ground_4169,
     ground_overlay = sprite_ground_4169,
     building_sprites = [building_16, building_19, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4670',
+    id = 'orchard_piggery_670',
     ground_sprite = sprite_ground_4170,
     ground_overlay = sprite_ground_4170,
     building_sprites = [building_16, building_13, building_17, building_15],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4671',
+    id = 'orchard_piggery_671',
     ground_sprite = sprite_ground_4171,
     ground_overlay = sprite_ground_4171,
     building_sprites = [building_16, building_13, building_14, building_15],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4672',
+    id = 'orchard_piggery_672',
     ground_sprite = sprite_ground_4172,
     ground_overlay = sprite_ground_4172,
     building_sprites = [building_12, building_13, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4673',
+    id = 'orchard_piggery_673',
     ground_sprite = sprite_ground_4173,
     ground_overlay = sprite_ground_4173,
     building_sprites = [building_12, building_13, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4674',
+    id = 'orchard_piggery_674',
     ground_sprite = sprite_ground_4174,
     ground_overlay = sprite_ground_4174,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4675',
+    id = 'orchard_piggery_675',
     ground_sprite = sprite_ground_4175,
     ground_overlay = sprite_ground_4175,
     building_sprites = [building_16, building_13, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4676',
+    id = 'orchard_piggery_676',
     ground_sprite = sprite_ground_4176,
     ground_overlay = sprite_ground_4176,
     building_sprites = [building_12, building_13, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4677',
+    id = 'orchard_piggery_677',
     ground_sprite = sprite_ground_4177,
     ground_overlay = sprite_ground_4177,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4678',
+    id = 'orchard_piggery_678',
     ground_sprite = sprite_ground_4178,
     ground_overlay = sprite_ground_4178,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4679',
+    id = 'orchard_piggery_679',
     ground_sprite = sprite_ground_4179,
     ground_overlay = sprite_ground_4179,
     building_sprites = [building_16, building_19, building_14, building_15],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4680',
+    id = 'orchard_piggery_680',
     ground_sprite = sprite_ground_4180,
     ground_overlay = sprite_ground_4180,
     building_sprites = [building_12, building_13, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4681',
+    id = 'orchard_piggery_681',
     ground_sprite = sprite_ground_4181,
     ground_overlay = sprite_ground_4181,
     building_sprites = [building_16, building_19, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4682',
+    id = 'orchard_piggery_682',
     ground_sprite = sprite_ground_4182,
     ground_overlay = sprite_ground_4182,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4686',
+    id = 'orchard_piggery_686',
     ground_sprite = sprite_ground_4164,
     ground_overlay = sprite_ground_4164,
     building_sprites = [building_12, building_13, building_14, building_15],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4687',
+    id = 'orchard_piggery_687',
     ground_sprite = sprite_ground_4165,
     ground_overlay = sprite_ground_4165,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4688',
+    id = 'orchard_piggery_688',
     ground_sprite = sprite_ground_4166,
     ground_overlay = sprite_ground_4166,
     building_sprites = [building_12, building_19, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4689',
+    id = 'orchard_piggery_689',
     ground_sprite = sprite_ground_4167,
     ground_overlay = sprite_ground_4167,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4690',
+    id = 'orchard_piggery_690',
     ground_sprite = sprite_ground_4168,
     ground_overlay = sprite_ground_4168,
     building_sprites = [building_12, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4691',
+    id = 'orchard_piggery_691',
     ground_sprite = sprite_ground_4169,
     ground_overlay = sprite_ground_4169,
     building_sprites = [building_16, building_19, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4692',
+    id = 'orchard_piggery_692',
     ground_sprite = sprite_ground_4170,
     ground_overlay = sprite_ground_4170,
     building_sprites = [building_16, building_13, building_17, building_15],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4693',
+    id = 'orchard_piggery_693',
     ground_sprite = sprite_ground_4171,
     ground_overlay = sprite_ground_4171,
     building_sprites = [building_16, building_13, building_14, building_15],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4694',
+    id = 'orchard_piggery_694',
     ground_sprite = sprite_ground_4172,
     ground_overlay = sprite_ground_4172,
     building_sprites = [building_12, building_13, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4695',
+    id = 'orchard_piggery_695',
     ground_sprite = sprite_ground_4173,
     ground_overlay = sprite_ground_4173,
     building_sprites = [building_12, building_13, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4696',
+    id = 'orchard_piggery_696',
     ground_sprite = sprite_ground_4174,
     ground_overlay = sprite_ground_4174,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4697',
+    id = 'orchard_piggery_697',
     ground_sprite = sprite_ground_4175,
     ground_overlay = sprite_ground_4175,
     building_sprites = [building_16, building_13, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4698',
+    id = 'orchard_piggery_698',
     ground_sprite = sprite_ground_4176,
     ground_overlay = sprite_ground_4176,
     building_sprites = [building_12, building_13, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4699',
+    id = 'orchard_piggery_699',
     ground_sprite = sprite_ground_4177,
     ground_overlay = sprite_ground_4177,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4700',
+    id = 'orchard_piggery_700',
     ground_sprite = sprite_ground_4178,
     ground_overlay = sprite_ground_4178,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4701',
+    id = 'orchard_piggery_701',
     ground_sprite = sprite_ground_4179,
     ground_overlay = sprite_ground_4179,
     building_sprites = [building_16, building_19, building_14, building_15],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4702',
+    id = 'orchard_piggery_702',
     ground_sprite = sprite_ground_4180,
     ground_overlay = sprite_ground_4180,
     building_sprites = [building_12, building_13, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4703',
+    id = 'orchard_piggery_703',
     ground_sprite = sprite_ground_4181,
     ground_overlay = sprite_ground_4181,
     building_sprites = [building_16, building_19, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4704',
+    id = 'orchard_piggery_704',
     ground_sprite = sprite_ground_4182,
     ground_overlay = sprite_ground_4182,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4708',
+    id = 'orchard_piggery_708',
     ground_sprite = sprite_ground_4164,
     ground_overlay = sprite_ground_4164,
     building_sprites = [building_12, building_13, building_14, building_15],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4709',
+    id = 'orchard_piggery_709',
     ground_sprite = sprite_ground_4165,
     ground_overlay = sprite_ground_4165,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4710',
+    id = 'orchard_piggery_710',
     ground_sprite = sprite_ground_4166,
     ground_overlay = sprite_ground_4166,
     building_sprites = [building_12, building_19, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4711',
+    id = 'orchard_piggery_711',
     ground_sprite = sprite_ground_4167,
     ground_overlay = sprite_ground_4167,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4712',
+    id = 'orchard_piggery_712',
     ground_sprite = sprite_ground_4168,
     ground_overlay = sprite_ground_4168,
     building_sprites = [building_12, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4713',
+    id = 'orchard_piggery_713',
     ground_sprite = sprite_ground_4169,
     ground_overlay = sprite_ground_4169,
     building_sprites = [building_16, building_19, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4714',
+    id = 'orchard_piggery_714',
     ground_sprite = sprite_ground_4170,
     ground_overlay = sprite_ground_4170,
     building_sprites = [building_16, building_13, building_17, building_15],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4715',
+    id = 'orchard_piggery_715',
     ground_sprite = sprite_ground_4171,
     ground_overlay = sprite_ground_4171,
     building_sprites = [building_16, building_13, building_14, building_15],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4716',
+    id = 'orchard_piggery_716',
     ground_sprite = sprite_ground_4172,
     ground_overlay = sprite_ground_4172,
     building_sprites = [building_12, building_13, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4717',
+    id = 'orchard_piggery_717',
     ground_sprite = sprite_ground_4173,
     ground_overlay = sprite_ground_4173,
     building_sprites = [building_12, building_13, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4718',
+    id = 'orchard_piggery_718',
     ground_sprite = sprite_ground_4174,
     ground_overlay = sprite_ground_4174,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4719',
+    id = 'orchard_piggery_719',
     ground_sprite = sprite_ground_4175,
     ground_overlay = sprite_ground_4175,
     building_sprites = [building_16, building_13, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4720',
+    id = 'orchard_piggery_720',
     ground_sprite = sprite_ground_4176,
     ground_overlay = sprite_ground_4176,
     building_sprites = [building_12, building_13, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4721',
+    id = 'orchard_piggery_721',
     ground_sprite = sprite_ground_4177,
     ground_overlay = sprite_ground_4177,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4722',
+    id = 'orchard_piggery_722',
     ground_sprite = sprite_ground_4178,
     ground_overlay = sprite_ground_4178,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4723',
+    id = 'orchard_piggery_723',
     ground_sprite = sprite_ground_4179,
     ground_overlay = sprite_ground_4179,
     building_sprites = [building_16, building_19, building_14, building_15],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4724',
+    id = 'orchard_piggery_724',
     ground_sprite = sprite_ground_4180,
     ground_overlay = sprite_ground_4180,
     building_sprites = [building_12, building_13, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4725',
+    id = 'orchard_piggery_725',
     ground_sprite = sprite_ground_4181,
     ground_overlay = sprite_ground_4181,
     building_sprites = [building_16, building_19, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4726',
+    id = 'orchard_piggery_726',
     ground_sprite = sprite_ground_4182,
     ground_overlay = sprite_ground_4182,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4731',
+    id = 'orchard_piggery_731',
     ground_sprite = sprite_ground_4145,
     ground_overlay = sprite_ground_4145,
     building_sprites = [building_20, building_21, building_22, building_23],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4732',
+    id = 'orchard_piggery_732',
     ground_sprite = sprite_ground_4146,
     ground_overlay = sprite_ground_4146,
     building_sprites = [building_24, building_21, building_25, building_26],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4733',
+    id = 'orchard_piggery_733',
     ground_sprite = sprite_ground_4147,
     ground_overlay = sprite_ground_4147,
     building_sprites = [building_20, building_27, building_22, building_28],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4734',
+    id = 'orchard_piggery_734',
     ground_sprite = sprite_ground_4148,
     ground_overlay = sprite_ground_4148,
     building_sprites = [building_29, building_30, building_25, building_26],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4735',
+    id = 'orchard_piggery_735',
     ground_sprite = sprite_ground_4149,
     ground_overlay = sprite_ground_4149,
     building_sprites = [building_20, building_30, building_25, building_28],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4736',
+    id = 'orchard_piggery_736',
     ground_sprite = sprite_ground_4150,
     ground_overlay = sprite_ground_4150,
     building_sprites = [building_24, building_27, building_31, building_26],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4737',
+    id = 'orchard_piggery_737',
     ground_sprite = sprite_ground_4151,
     ground_overlay = sprite_ground_4151,
     building_sprites = [building_29, building_30, building_25, building_23],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4738',
+    id = 'orchard_piggery_738',
     ground_sprite = sprite_ground_4152,
     ground_overlay = sprite_ground_4152,
     building_sprites = [building_24, building_21, building_22, building_23],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4739',
+    id = 'orchard_piggery_739',
     ground_sprite = sprite_ground_4153,
     ground_overlay = sprite_ground_4153,
     building_sprites = [building_20, building_30, building_31, building_26],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4740',
+    id = 'orchard_piggery_740',
     ground_sprite = sprite_ground_4154,
     ground_overlay = sprite_ground_4154,
     building_sprites = [building_20, building_30, building_22, building_28],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4741',
+    id = 'orchard_piggery_741',
     ground_sprite = sprite_ground_4155,
     ground_overlay = sprite_ground_4155,
     building_sprites = [building_24, building_21, building_25, building_26],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4742',
+    id = 'orchard_piggery_742',
     ground_sprite = sprite_ground_4156,
     ground_overlay = sprite_ground_4156,
     building_sprites = [building_24, building_30, building_22, building_28],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4743',
+    id = 'orchard_piggery_743',
     ground_sprite = sprite_ground_4157,
     ground_overlay = sprite_ground_4157,
     building_sprites = [building_20, building_30, building_22, building_28],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4744',
+    id = 'orchard_piggery_744',
     ground_sprite = sprite_ground_4158,
     ground_overlay = sprite_ground_4158,
     building_sprites = [building_24, building_21, building_25, building_26],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4745',
+    id = 'orchard_piggery_745',
     ground_sprite = sprite_ground_4159,
     ground_overlay = sprite_ground_4159,
     building_sprites = [building_24, building_21, building_25, building_26],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4746',
+    id = 'orchard_piggery_746',
     ground_sprite = sprite_ground_4160,
     ground_overlay = sprite_ground_4160,
     building_sprites = [building_29, building_27, building_22, building_23],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4747',
+    id = 'orchard_piggery_747',
     ground_sprite = sprite_ground_4161,
     ground_overlay = sprite_ground_4161,
     building_sprites = [building_20, building_21, building_22, building_26],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4748',
+    id = 'orchard_piggery_748',
     ground_sprite = sprite_ground_4162,
     ground_overlay = sprite_ground_4162,
     building_sprites = [building_24, building_27, building_22, building_28],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4749',
+    id = 'orchard_piggery_749',
     ground_sprite = sprite_ground_4163,
     ground_overlay = sprite_ground_4163,
     building_sprites = [building_24, building_30, building_25, building_28],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4753',
+    id = 'orchard_piggery_753',
     ground_sprite = sprite_ground_4145,
     ground_overlay = sprite_ground_4145,
     building_sprites = [building_20, building_21, building_22, building_23],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4754',
+    id = 'orchard_piggery_754',
     ground_sprite = sprite_ground_4146,
     ground_overlay = sprite_ground_4146,
     building_sprites = [building_24, building_21, building_25, building_26],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4755',
+    id = 'orchard_piggery_755',
     ground_sprite = sprite_ground_4147,
     ground_overlay = sprite_ground_4147,
     building_sprites = [building_20, building_27, building_22, building_28],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4756',
+    id = 'orchard_piggery_756',
     ground_sprite = sprite_ground_4148,
     ground_overlay = sprite_ground_4148,
     building_sprites = [building_29, building_30, building_25, building_26],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4757',
+    id = 'orchard_piggery_757',
     ground_sprite = sprite_ground_4149,
     ground_overlay = sprite_ground_4149,
     building_sprites = [building_20, building_30, building_25, building_28],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4758',
+    id = 'orchard_piggery_758',
     ground_sprite = sprite_ground_4150,
     ground_overlay = sprite_ground_4150,
     building_sprites = [building_24, building_27, building_31, building_26],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4759',
+    id = 'orchard_piggery_759',
     ground_sprite = sprite_ground_4151,
     ground_overlay = sprite_ground_4151,
     building_sprites = [building_29, building_30, building_25, building_23],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4760',
+    id = 'orchard_piggery_760',
     ground_sprite = sprite_ground_4152,
     ground_overlay = sprite_ground_4152,
     building_sprites = [building_24, building_21, building_22, building_23],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4761',
+    id = 'orchard_piggery_761',
     ground_sprite = sprite_ground_4153,
     ground_overlay = sprite_ground_4153,
     building_sprites = [building_20, building_30, building_31, building_26],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4762',
+    id = 'orchard_piggery_762',
     ground_sprite = sprite_ground_4154,
     ground_overlay = sprite_ground_4154,
     building_sprites = [building_20, building_30, building_22, building_28],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4763',
+    id = 'orchard_piggery_763',
     ground_sprite = sprite_ground_4155,
     ground_overlay = sprite_ground_4155,
     building_sprites = [building_24, building_21, building_25, building_26],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4764',
+    id = 'orchard_piggery_764',
     ground_sprite = sprite_ground_4156,
     ground_overlay = sprite_ground_4156,
     building_sprites = [building_24, building_30, building_22, building_28],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4765',
+    id = 'orchard_piggery_765',
     ground_sprite = sprite_ground_4157,
     ground_overlay = sprite_ground_4157,
     building_sprites = [building_20, building_30, building_22, building_28],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4766',
+    id = 'orchard_piggery_766',
     ground_sprite = sprite_ground_4158,
     ground_overlay = sprite_ground_4158,
     building_sprites = [building_24, building_21, building_25, building_26],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4767',
+    id = 'orchard_piggery_767',
     ground_sprite = sprite_ground_4159,
     ground_overlay = sprite_ground_4159,
     building_sprites = [building_24, building_21, building_25, building_26],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4768',
+    id = 'orchard_piggery_768',
     ground_sprite = sprite_ground_4160,
     ground_overlay = sprite_ground_4160,
     building_sprites = [building_29, building_27, building_22, building_23],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4769',
+    id = 'orchard_piggery_769',
     ground_sprite = sprite_ground_4161,
     ground_overlay = sprite_ground_4161,
     building_sprites = [building_20, building_21, building_22, building_26],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4770',
+    id = 'orchard_piggery_770',
     ground_sprite = sprite_ground_4162,
     ground_overlay = sprite_ground_4162,
     building_sprites = [building_24, building_27, building_22, building_28],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'action2_blah_4771',
+    id = 'orchard_piggery_771',
     ground_sprite = sprite_ground_4163,
     ground_overlay = sprite_ground_4163,
     building_sprites = [building_24, building_30, building_25, building_28],
