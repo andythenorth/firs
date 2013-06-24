@@ -35,6 +35,8 @@ industry = Industry(id='coffee_plantation',
                     substitute='0',
                     )
 
+industry.economy_variations['MISTAH_KURTZ'].enabled = True
+
 building_0 = industry.add_sprite(
     sprite_number = 1633,
     xoffset = 2,
