@@ -218,7 +218,7 @@ switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_tile_orchard_spritelayout, clima
  * tile with house
  * ***************/
 
-spriteset(spriteset_47929, "src/graphics/industries/orchard_piggery_1.png") { tmpl_building_sprite(150, 10, 59, -28) }
+spriteset(spriteset_47929, "src/graphics/industries/${industry.id}_1.png") { tmpl_building_sprite(150, 10, 59, -28) }
 spritelayout ${industry.id}_tile_house_spritelayout {
 	ground {
 		sprite: 2022;
