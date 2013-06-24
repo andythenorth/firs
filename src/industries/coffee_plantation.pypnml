@@ -258,7 +258,6 @@ item(FEAT_INDUSTRYTILES, ${industry.id}_tile_plantation, TILE_COFFEEPLANTATION_1
 }
 
 
-
 TILE_DISALLOW_NEARBY_CLASS(tile_house_nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW,      return CB_RESULT_LOCATION_ALLOW)
 TILE_ALLOW_PLAYER         (tile_house_player_check,                                                                 ${industry.id}_tile_house_nearby_industry)
 TILE_CHECK_WATER          (tile_house_water_check,                          string(STR_ERR_LOCATION_NOT_ON_WATER),  ${industry.id}_tile_house_player_check)
@@ -281,7 +280,7 @@ item(FEAT_INDUSTRYTILES, ${industry.id}_tile_house, TILE_COFFEEPLANTATION_2) {
  * Definition of the industry layouts
  * *************************************************/
 
-tilelayout tilelayout_5807_1 {
+tilelayout ${industry.id}_tilelayout_1 {
 	0, 0: ${industry.id}_tile_plantation;
 	0, 1: ${industry.id}_tile_plantation;
 	0, 2: ${industry.id}_tile_plantation;
@@ -292,7 +291,7 @@ tilelayout tilelayout_5807_1 {
 	2, 2: ${industry.id}_tile_house;
 }
 
-tilelayout tilelayout_5807_2 {
+tilelayout ${industry.id}_tilelayout_2 {
 	0, 0: ${industry.id}_tile_plantation;
 	0, 1: ${industry.id}_tile_plantation;
 	0, 2: ${industry.id}_tile_plantation;
@@ -303,7 +302,7 @@ tilelayout tilelayout_5807_2 {
 	1, 4: ${industry.id}_tile_house;
 }
 
-tilelayout tilelayout_5807_3 {
+tilelayout ${industry.id}_tilelayout_3 {
 	0, 0: ${industry.id}_tile_plantation;
 	0, 1: ${industry.id}_tile_plantation;
 	1, 0: ${industry.id}_tile_plantation;
@@ -314,7 +313,7 @@ tilelayout tilelayout_5807_3 {
 	3, 1: ${industry.id}_tile_house;
 }
 
-tilelayout tilelayout_5807_4 {
+tilelayout ${industry.id}_tilelayout_4 {
 	0, 0: ${industry.id}_tile_plantation;
 	0, 1: ${industry.id}_tile_plantation;
 	0, 3: ${industry.id}_tile_plantation;
@@ -339,8 +338,7 @@ tilelayout tilelayout_5807_4 {
  * *************************************************/
 
 CHECK_NEARBY_CLUSTER(coffee_plantation, 10, 36, 3, 4, return CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
-CHECK_INCOMPATIBLE  (brewery,          16, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_coffee_plantation)
-CHECK_FOUNDER       (${industry.id}_brewery)
+CHECK_FOUNDER       (${industry.id}_coffee_plantation)
 
 SWITCH_COLOUR_SCHEME1(${industry.id}_colour)
 
