@@ -42,6 +42,7 @@ industry = Industry(id='sugar_plantation',
                     )
 
 industry.economy_variations['BASIC_TROPIC'].enabled = True
+industry.economy_variations['MISTAH_KURTZ'].enabled = True
 
 industry.add_tile(id='sugar_plantation_tile')
 

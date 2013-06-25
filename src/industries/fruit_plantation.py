@@ -37,6 +37,7 @@ industry = Industry(id='fruit_plantation',
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_TROPIC'].enabled = True
+industry.economy_variations['MISTAH_KURTZ'].enabled = True
 
 building_0 = industry.add_sprite(
     sprite_number = 1633,
