@@ -70,3 +70,5 @@ industry_numeric_ids = dict(coal_mine = 0x00,
                             #IND_VACANT_ID = 0x3E,
                             builders_yard = 0x3F)
 #3F is last ID to be used (64 industry limit)
+
+chameleon_cache_dir = 'chameleon_cache'
