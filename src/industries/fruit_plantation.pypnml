@@ -18,209 +18,209 @@ item(FEAT_INDUSTRYTILES, ${industry.id}_tile_plantation, 207) {
 ${industry.get_spritelayouts()}
 
 <!--! graphics switches use hard-coded industry id.  using chameleon ${industry.id} substitution results in an 8x increase in render time - reason unknown -->
-switch(FEAT_INDUSTRYTILES, SELF, fruit_plantation_616, nearby_tile_slope(0,0)) {
-	0: fruit_plantation_597;
-	1: fruit_plantation_598;
-	2: fruit_plantation_599;
-	3: fruit_plantation_600;
-	4: fruit_plantation_601;
-	5: fruit_plantation_602;
-	6: fruit_plantation_603;
-	7: fruit_plantation_604;
-	8: fruit_plantation_605;
-	9: fruit_plantation_606;
-	10: fruit_plantation_607;
-	11: fruit_plantation_608;
-	12: fruit_plantation_609;
-	13: fruit_plantation_610;
-	14: fruit_plantation_611;
-	29: fruit_plantation_612;
-	23: fruit_plantation_613;
-	27: fruit_plantation_614;
-	30: fruit_plantation_615;
-	fruit_plantation_597;
+switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_616, nearby_tile_slope(0,0)) {
+	0: ${industry.id}_597;
+	1: ${industry.id}_598;
+	2: ${industry.id}_599;
+	3: ${industry.id}_600;
+	4: ${industry.id}_601;
+	5: ${industry.id}_602;
+	6: ${industry.id}_603;
+	7: ${industry.id}_604;
+	8: ${industry.id}_605;
+	9: ${industry.id}_606;
+	10: ${industry.id}_607;
+	11: ${industry.id}_608;
+	12: ${industry.id}_609;
+	13: ${industry.id}_610;
+	14: ${industry.id}_611;
+	29: ${industry.id}_612;
+	23: ${industry.id}_613;
+	27: ${industry.id}_614;
+	30: ${industry.id}_615;
+	${industry.id}_597;
 }
 
 
-switch(FEAT_INDUSTRYTILES, SELF, fruit_plantation_639, nearby_tile_slope(0,0)) {
-	0: fruit_plantation_620;
-	1: fruit_plantation_621;
-	2: fruit_plantation_622;
-	3: fruit_plantation_623;
-	4: fruit_plantation_624;
-	5: fruit_plantation_625;
-	6: fruit_plantation_626;
-	7: fruit_plantation_627;
-	8: fruit_plantation_628;
-	9: fruit_plantation_629;
-	10: fruit_plantation_630;
-	11: fruit_plantation_631;
-	12: fruit_plantation_632;
-	13: fruit_plantation_633;
-	14: fruit_plantation_634;
-	29: fruit_plantation_635;
-	23: fruit_plantation_636;
-	27: fruit_plantation_637;
-	30: fruit_plantation_638;
-	fruit_plantation_620;
+switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_639, nearby_tile_slope(0,0)) {
+	0: ${industry.id}_620;
+	1: ${industry.id}_621;
+	2: ${industry.id}_622;
+	3: ${industry.id}_623;
+	4: ${industry.id}_624;
+	5: ${industry.id}_625;
+	6: ${industry.id}_626;
+	7: ${industry.id}_627;
+	8: ${industry.id}_628;
+	9: ${industry.id}_629;
+	10: ${industry.id}_630;
+	11: ${industry.id}_631;
+	12: ${industry.id}_632;
+	13: ${industry.id}_633;
+	14: ${industry.id}_634;
+	29: ${industry.id}_635;
+	23: ${industry.id}_636;
+	27: ${industry.id}_637;
+	30: ${industry.id}_638;
+	${industry.id}_620;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, fruit_plantation_661, nearby_tile_slope(0,0)) {
-	0: fruit_plantation_642;
-	1: fruit_plantation_643;
-	2: fruit_plantation_644;
-	3: fruit_plantation_645;
-	4: fruit_plantation_646;
-	5: fruit_plantation_647;
-	6: fruit_plantation_648;
-	7: fruit_plantation_649;
-	8: fruit_plantation_650;
-	9: fruit_plantation_651;
-	10: fruit_plantation_652;
-	11: fruit_plantation_653;
-	12: fruit_plantation_654;
-	13: fruit_plantation_655;
-	14: fruit_plantation_656;
-	29: fruit_plantation_657;
-	23: fruit_plantation_658;
-	27: fruit_plantation_659;
-	30: fruit_plantation_660;
-	fruit_plantation_642;
+switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_661, nearby_tile_slope(0,0)) {
+	0: ${industry.id}_642;
+	1: ${industry.id}_643;
+	2: ${industry.id}_644;
+	3: ${industry.id}_645;
+	4: ${industry.id}_646;
+	5: ${industry.id}_647;
+	6: ${industry.id}_648;
+	7: ${industry.id}_649;
+	8: ${industry.id}_650;
+	9: ${industry.id}_651;
+	10: ${industry.id}_652;
+	11: ${industry.id}_653;
+	12: ${industry.id}_654;
+	13: ${industry.id}_655;
+	14: ${industry.id}_656;
+	29: ${industry.id}_657;
+	23: ${industry.id}_658;
+	27: ${industry.id}_659;
+	30: ${industry.id}_660;
+	${industry.id}_642;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, fruit_plantation_683, nearby_tile_slope(0,0)) {
-	0: fruit_plantation_664;
-	1: fruit_plantation_665;
-	2: fruit_plantation_666;
-	3: fruit_plantation_667;
-	4: fruit_plantation_668;
-	5: fruit_plantation_669;
-	6: fruit_plantation_670;
-	7: fruit_plantation_671;
-	8: fruit_plantation_672;
-	9: fruit_plantation_673;
-	10: fruit_plantation_674;
-	11: fruit_plantation_675;
-	12: fruit_plantation_676;
-	13: fruit_plantation_677;
-	14: fruit_plantation_678;
-	29: fruit_plantation_679;
-	23: fruit_plantation_680;
-	27: fruit_plantation_681;
-	30: fruit_plantation_682;
-	fruit_plantation_664;
+switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_683, nearby_tile_slope(0,0)) {
+	0: ${industry.id}_664;
+	1: ${industry.id}_665;
+	2: ${industry.id}_666;
+	3: ${industry.id}_667;
+	4: ${industry.id}_668;
+	5: ${industry.id}_669;
+	6: ${industry.id}_670;
+	7: ${industry.id}_671;
+	8: ${industry.id}_672;
+	9: ${industry.id}_673;
+	10: ${industry.id}_674;
+	11: ${industry.id}_675;
+	12: ${industry.id}_676;
+	13: ${industry.id}_677;
+	14: ${industry.id}_678;
+	29: ${industry.id}_679;
+	23: ${industry.id}_680;
+	27: ${industry.id}_681;
+	30: ${industry.id}_682;
+	${industry.id}_664;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, fruit_plantation_705, nearby_tile_slope(0,0)) {
-	0: fruit_plantation_686;
-	1: fruit_plantation_687;
-	2: fruit_plantation_688;
-	3: fruit_plantation_689;
-	4: fruit_plantation_690;
-	5: fruit_plantation_691;
-	6: fruit_plantation_692;
-	7: fruit_plantation_693;
-	8: fruit_plantation_694;
-	9: fruit_plantation_695;
-	10: fruit_plantation_696;
-	11: fruit_plantation_697;
-	12: fruit_plantation_698;
-	13: fruit_plantation_699;
-	14: fruit_plantation_700;
-	29: fruit_plantation_701;
-	23: fruit_plantation_702;
-	27: fruit_plantation_703;
-	30: fruit_plantation_704;
-	fruit_plantation_686;
+switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_705, nearby_tile_slope(0,0)) {
+	0: ${industry.id}_686;
+	1: ${industry.id}_687;
+	2: ${industry.id}_688;
+	3: ${industry.id}_689;
+	4: ${industry.id}_690;
+	5: ${industry.id}_691;
+	6: ${industry.id}_692;
+	7: ${industry.id}_693;
+	8: ${industry.id}_694;
+	9: ${industry.id}_695;
+	10: ${industry.id}_696;
+	11: ${industry.id}_697;
+	12: ${industry.id}_698;
+	13: ${industry.id}_699;
+	14: ${industry.id}_700;
+	29: ${industry.id}_701;
+	23: ${industry.id}_702;
+	27: ${industry.id}_703;
+	30: ${industry.id}_704;
+	${industry.id}_686;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, fruit_plantation_727, nearby_tile_slope(0,0)) {
-	0: fruit_plantation_708;
-	1: fruit_plantation_709;
-	2: fruit_plantation_710;
-	3: fruit_plantation_711;
-	4: fruit_plantation_712;
-	5: fruit_plantation_713;
-	6: fruit_plantation_714;
-	7: fruit_plantation_715;
-	8: fruit_plantation_716;
-	9: fruit_plantation_717;
-	10: fruit_plantation_718;
-	11: fruit_plantation_719;
-	12: fruit_plantation_720;
-	13: fruit_plantation_721;
-	14: fruit_plantation_722;
-	29: fruit_plantation_723;
-	23: fruit_plantation_724;
-	27: fruit_plantation_725;
-	30: fruit_plantation_726;
-	fruit_plantation_708;
+switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_727, nearby_tile_slope(0,0)) {
+	0: ${industry.id}_708;
+	1: ${industry.id}_709;
+	2: ${industry.id}_710;
+	3: ${industry.id}_711;
+	4: ${industry.id}_712;
+	5: ${industry.id}_713;
+	6: ${industry.id}_714;
+	7: ${industry.id}_715;
+	8: ${industry.id}_716;
+	9: ${industry.id}_717;
+	10: ${industry.id}_718;
+	11: ${industry.id}_719;
+	12: ${industry.id}_720;
+	13: ${industry.id}_721;
+	14: ${industry.id}_722;
+	29: ${industry.id}_723;
+	23: ${industry.id}_724;
+	27: ${industry.id}_725;
+	30: ${industry.id}_726;
+	${industry.id}_708;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, fruit_plantation_730, ((nearby_tile_height(0,0) - snowline_height) + 1)) {
-	0..7: fruit_plantation_661;
-	8..15: fruit_plantation_683;
-	16..23: fruit_plantation_705;
-	24..127: fruit_plantation_727;
-	fruit_plantation_639;
+switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_730, ((nearby_tile_height(0,0) - snowline_height) + 1)) {
+	0..7: ${industry.id}_661;
+	8..15: ${industry.id}_683;
+	16..23: ${industry.id}_705;
+	24..127: ${industry.id}_727;
+	${industry.id}_639;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, fruit_plantation_750, nearby_tile_slope(0,0)) {
-	0: fruit_plantation_731;
-	1: fruit_plantation_732;
-	2: fruit_plantation_733;
-	3: fruit_plantation_734;
-	4: fruit_plantation_735;
-	5: fruit_plantation_736;
-	6: fruit_plantation_737;
-	7: fruit_plantation_738;
-	8: fruit_plantation_739;
-	9: fruit_plantation_740;
-	10: fruit_plantation_741;
-	11: fruit_plantation_742;
-	12: fruit_plantation_743;
-	13: fruit_plantation_744;
-	14: fruit_plantation_745;
-	29: fruit_plantation_746;
-	23: fruit_plantation_747;
-	27: fruit_plantation_748;
-	30: fruit_plantation_749;
-	fruit_plantation_731;
+switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_750, nearby_tile_slope(0,0)) {
+	0: ${industry.id}_731;
+	1: ${industry.id}_732;
+	2: ${industry.id}_733;
+	3: ${industry.id}_734;
+	4: ${industry.id}_735;
+	5: ${industry.id}_736;
+	6: ${industry.id}_737;
+	7: ${industry.id}_738;
+	8: ${industry.id}_739;
+	9: ${industry.id}_740;
+	10: ${industry.id}_741;
+	11: ${industry.id}_742;
+	12: ${industry.id}_743;
+	13: ${industry.id}_744;
+	14: ${industry.id}_745;
+	29: ${industry.id}_746;
+	23: ${industry.id}_747;
+	27: ${industry.id}_748;
+	30: ${industry.id}_749;
+	${industry.id}_731;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, fruit_plantation_772, nearby_tile_slope(0,0)) {
-	0: fruit_plantation_753;
-	1: fruit_plantation_754;
-	2: fruit_plantation_755;
-	3: fruit_plantation_756;
-	4: fruit_plantation_757;
-	5: fruit_plantation_758;
-	6: fruit_plantation_759;
-	7: fruit_plantation_760;
-	8: fruit_plantation_761;
-	9: fruit_plantation_762;
-	10: fruit_plantation_763;
-	11: fruit_plantation_764;
-	12: fruit_plantation_765;
-	13: fruit_plantation_766;
-	14: fruit_plantation_767;
-	29: fruit_plantation_768;
-	23: fruit_plantation_769;
-	27: fruit_plantation_770;
-	30: fruit_plantation_771;
-	fruit_plantation_753;
+switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_772, nearby_tile_slope(0,0)) {
+	0: ${industry.id}_753;
+	1: ${industry.id}_754;
+	2: ${industry.id}_755;
+	3: ${industry.id}_756;
+	4: ${industry.id}_757;
+	5: ${industry.id}_758;
+	6: ${industry.id}_759;
+	7: ${industry.id}_760;
+	8: ${industry.id}_761;
+	9: ${industry.id}_762;
+	10: ${industry.id}_763;
+	11: ${industry.id}_764;
+	12: ${industry.id}_765;
+	13: ${industry.id}_766;
+	14: ${industry.id}_767;
+	29: ${industry.id}_768;
+	23: ${industry.id}_769;
+	27: ${industry.id}_770;
+	30: ${industry.id}_771;
+	${industry.id}_753;
 }
 
-switch(FEAT_INDUSTRYTILES, SELF, fruit_plantation_775, terrain_type) {
-	TILETYPE_DESERT: fruit_plantation_772;
-	fruit_plantation_750;
+switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_775, terrain_type) {
+	TILETYPE_DESERT: ${industry.id}_772;
+	${industry.id}_750;
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, fruit_plantation_tile_plantation_spritelayout, climate) {
-	CLIMATE_TEMPERATE: fruit_plantation_616;
-	CLIMATE_ARCTIC: fruit_plantation_730;
-	CLIMATE_TROPIC: fruit_plantation_775;
-	fruit_plantation_616;
+	CLIMATE_TEMPERATE: ${industry.id}_616;
+	CLIMATE_ARCTIC: ${industry.id}_730;
+	CLIMATE_TROPIC: ${industry.id}_775;
+	${industry.id}_616;
 }
 
 /* ***************
