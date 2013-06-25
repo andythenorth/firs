@@ -7,11 +7,18 @@
 
 import codecs # used for writing files - more unicode friendly than standard open() module
 
-import os.path
+import os
 currentdir = os.curdir
-
 # add to the module search path
 src_path = os.path.join(currentdir, 'src')
+
+import global_constants
+
+# setting up a cache for compiled chameleon templates can significantly speed up template rendering
+chameleon_cache_path = os.path.join(currentdir, global_constants.chameleon_cache_dir)
+if not os.path.exists(chameleon_cache_path):
+    os.mkdir(chameleon_cache_path)
+os.environ['CHAMELEON_CACHE'] = chameleon_cache_path
 
 from cargos import registered_cargos
 
