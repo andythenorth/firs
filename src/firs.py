@@ -72,6 +72,7 @@ from industries import biorefinery
 from industries import brewery
 from industries import brick_works
 from industries import builders_yard
+from industries import bulk_terminal
 from industries import cement_plant
 from industries import coffee_plantation
 from industries import copper_mine
