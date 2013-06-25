@@ -20,7 +20,7 @@ industry = Industry(id='orchard_piggery',
                     map_colour='86',
                     prospect_chance='0.75',
                     name='string(STR_IND_ORCHARD_PIGGERY)',
-                    layouts='[orchard_piggery_tilelayout_1, orchard_piggery_tilelayout_2, orchard_piggery_tilelayout_3, orchard_piggery_tilelayout_4]',
+                    layouts='AUTO',
                     accept_cargo_types=['FMSP'],
                     prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL',
                     life_type='IND_LIFE_TYPE_ORGANIC',
@@ -1427,4 +1427,59 @@ industry.add_spritelayout(
     fences = [],
 )
 
-
+industry.add_industry_layout(
+    id = 'orchard_piggery_layout_1',
+    layout = [(0, 0, 'orchard_piggery_tile_orchard', 'orchard_piggery_tile_orchard_spritelayout'),
+              (0, 1, 'orchard_piggery_tile_orchard', 'orchard_piggery_tile_orchard_spritelayout'),
+              (0, 2, 'orchard_piggery_tile_orchard', 'orchard_piggery_tile_orchard_spritelayout'),
+              (1, 0, 'orchard_piggery_tile_orchard', 'orchard_piggery_tile_orchard_spritelayout'),
+              (1, 1, 'orchard_piggery_tile_buildings', 'orchard_piggery_tile_house_spritelayout'),
+              (1, 2, 'orchard_piggery_tile_orchard', 'orchard_piggery_tile_orchard_spritelayout'),
+              (2, 1, 'orchard_piggery_tile_buildings', 'orchard_piggery_tile_house_spritelayout'),
+              (2, 2, 'orchard_piggery_tile_buildings', 'orchard_piggery_tile_house_spritelayout'),
+    ]
+)
+industry.add_industry_layout(
+    id = 'orchard_piggery_layout_2',
+    layout = [(0, 0, 'orchard_piggery_tile_orchard', 'orchard_piggery_tile_orchard_spritelayout'),
+              (0, 1, 'orchard_piggery_tile_orchard', 'orchard_piggery_tile_orchard_spritelayout'),
+              (0, 2, 'orchard_piggery_tile_orchard', 'orchard_piggery_tile_orchard_spritelayout'),
+              (0, 3, 'orchard_piggery_tile_buildings', 'orchard_piggery_tile_house_spritelayout'),
+              (1, 1, 'orchard_piggery_tile_orchard', 'orchard_piggery_tile_orchard_spritelayout'),
+              (1, 2, 'orchard_piggery_tile_orchard', 'orchard_piggery_tile_orchard_spritelayout'),
+              (1, 3, 'orchard_piggery_tile_buildings', 'orchard_piggery_tile_house_spritelayout'),
+              (1, 4, 'orchard_piggery_tile_buildings', 'orchard_piggery_tile_house_spritelayout'),
+    ]
+)
+industry.add_industry_layout(
+    id = 'orchard_piggery_layout_3',
+    layout = [(0, 0, 'orchard_piggery_tile_orchard', 'orchard_piggery_tile_orchard_spritelayout'),
+              (0, 1, 'orchard_piggery_tile_orchard', 'orchard_piggery_tile_orchard_spritelayout'),
+              (1, 0, 'orchard_piggery_tile_orchard', 'orchard_piggery_tile_orchard_spritelayout'),
+              (1, 1, 'orchard_piggery_tile_orchard', 'orchard_piggery_tile_orchard_spritelayout'),
+              (2, 0, 'orchard_piggery_tile_buildings', 'orchard_piggery_tile_house_spritelayout'),
+              (2, 1, 'orchard_piggery_tile_buildings', 'orchard_piggery_tile_house_spritelayout'),
+              (3, 0, 'orchard_piggery_tile_orchard', 'orchard_piggery_tile_orchard_spritelayout'),
+              (3, 1, 'orchard_piggery_tile_buildings', 'orchard_piggery_tile_house_spritelayout'),
+    ]
+)
+industry.add_industry_layout(
+    id = 'orchard_piggery_layout_4',
+    layout = [(0, 0, 'orchard_piggery_tile_orchard', 'orchard_piggery_tile_orchard_spritelayout'),
+              (0, 1, 'orchard_piggery_tile_orchard', 'orchard_piggery_tile_orchard_spritelayout'),
+              (0, 3, 'orchard_piggery_tile_orchard', 'orchard_piggery_tile_orchard_spritelayout'),
+              (0, 4, 'orchard_piggery_tile_orchard', 'orchard_piggery_tile_orchard_spritelayout'),
+              (1, 0, 'orchard_piggery_tile_orchard', 'orchard_piggery_tile_orchard_spritelayout'),
+              (1, 1, 'orchard_piggery_tile_orchard', 'orchard_piggery_tile_orchard_spritelayout'),
+              (1, 3, 'orchard_piggery_tile_orchard', 'orchard_piggery_tile_orchard_spritelayout'),
+              (1, 4, 'orchard_piggery_tile_orchard', 'orchard_piggery_tile_orchard_spritelayout'),
+              (3, 0, 'orchard_piggery_tile_orchard', 'orchard_piggery_tile_orchard_spritelayout'),
+              (3, 1, 'orchard_piggery_tile_orchard', 'orchard_piggery_tile_orchard_spritelayout'),
+              (3, 3, 'orchard_piggery_tile_buildings', 'orchard_piggery_tile_house_spritelayout'),
+              (3, 4, 'orchard_piggery_tile_orchard', 'orchard_piggery_tile_orchard_spritelayout'),
+              (4, 0, 'orchard_piggery_tile_orchard', 'orchard_piggery_tile_orchard_spritelayout'),
+              (4, 1, 'orchard_piggery_tile_buildings', 'orchard_piggery_tile_house_spritelayout'),
+              (4, 3, 'orchard_piggery_tile_orchard', 'orchard_piggery_tile_orchard_spritelayout'),
+              (4, 4, 'orchard_piggery_tile_buildings', 'orchard_piggery_tile_house_spritelayout'),
+    ]
+)
