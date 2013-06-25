@@ -7,197 +7,70 @@
 
 #define THIS_ID(...) ${industry.id}_ ## __VA_ARGS__
 
+${industry.get_spritesets()}
+
+${industry.get_spritelayouts()}
+
+${industry.get_industry_layouts_as_graphic_switches()}
+
+${industry.get_fence_switches()}
+
 /* *************************************************
  * Definition of the industry tile and its callbacks
  * *************************************************/
 
-TILE_DISALLOW_NEARBY_CLASS(tile_nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
-TILE_ALLOW_PLAYER         (tile_player_check, THIS_ID(tile_nearby_industry))
-TILE_DISALLOW_SLOPES      (tile_location_check, CB_RESULT_LOCATION_DISALLOW, THIS_ID(tile_player_check))
+TILE_DISALLOW_NEARBY_CLASS(nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
+TILE_ALLOW_PLAYER         (location_check, ${industry.id}_nearby_industry)
 
-item(FEAT_INDUSTRYTILES, THIS_ID(tile_1), 100) {
+switch (FEAT_INDUSTRYTILES, SELF, ${industry.id}_tile_anim_random_delay, (extra_callback_info1 & 3)) {
+	0: return 1;
+	return 34;
+}
+switch (FEAT_INDUSTRYTILES, SELF, ${industry.id}_tile_anim_next_frame, animation_frame) {
+	1..33: return CB_RESULT_NEXT_FRAME; // animation frames
+	34..50: return CB_RESULT_NEXT_FRAME; // spacing frames
+	${industry.id}_tile_anim_random_delay;
+}
+
+random_switch (FEAT_INDUSTRYTILES, SELF, ${industry.id}_tile_anim_random_trigger, bitmask(TRIGGER_INDUSTRYTILE_TILELOOP)) {
+	1: return CB_RESULT_DO_NOTHING;
+}
+
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile, TILE_COPPER_ORE_MINE_1) {
 	property {
-		substitute: 100;
-		override: 100;
+		substitute:       0;
+		accepted_cargos:  [[ENSP, 8]];
+		land_shape_flags: 0;
+		animation_info:     [ANIMATION_LOOPING, 71];
+		animation_speed:    2;
+		animation_triggers: bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE);
+		special_flags:      bitmask(INDTILE_FLAG_RANDOM_ANIMATION);
 	}
 	graphics {
-		tile_check: THIS_ID(tile_location_check);
+		tile_check:   ${industry.id}_location_check;
+		anim_next_frame:    ${industry.id}_tile_anim_next_frame;
+		random_trigger:     ${industry.id}_tile_anim_random_trigger;
+		${industry.id}_tile_fences;
 	}
 }
 
-item(FEAT_INDUSTRYTILES, THIS_ID(tile_2), 101) {
-	property {
-		substitute: 101;
-		override: 101;
-		accepted_cargos: [[ENSP, 8]];
-	}
-	graphics {
-		tile_check: THIS_ID(tile_location_check);
-	}
-}
+/* *************************************************
+ * Definition of the industry layouts
+ * *************************************************/
 
-item(FEAT_INDUSTRYTILES, THIS_ID(tile_3), 102) {
-	property {
-		substitute: 102;
-		override: 102;
-		accepted_cargos: [[ENSP, 8]];
-	}
-	graphics {
-		tile_check: THIS_ID(tile_location_check);
-	}
-}
-
-item(FEAT_INDUSTRYTILES, THIS_ID(tile_4), 103) {
-	property {
-		substitute: 103;
-		override: 103;
-		accepted_cargos: [[ENSP, 8]];
-	}
-	graphics {
-		tile_check: THIS_ID(tile_location_check);
-	}
-}
-
-item(FEAT_INDUSTRYTILES, THIS_ID(tile_5), 104) {
-	property {
-		substitute: 104;
-		override: 104;
-		accepted_cargos: [[ENSP, 8]];
-	}
-	graphics {
-		tile_check: THIS_ID(tile_location_check);
-	}
-}
-
-item(FEAT_INDUSTRYTILES, THIS_ID(tile_6), 105) {
-	property {
-		substitute: 105;
-		override: 105;
-		accepted_cargos: [[ENSP, 8]];
-	}
-	graphics {
-		tile_check: THIS_ID(tile_location_check);
-	}
-}
-
-item(FEAT_INDUSTRYTILES, THIS_ID(tile_7), 106) {
-	property {
-		substitute: 106;
-		override: 106;
-		accepted_cargos: [[ENSP, 8]];
-	}
-	graphics {
-		tile_check: THIS_ID(tile_location_check);
-	}
-}
-
-item(FEAT_INDUSTRYTILES, THIS_ID(tile_8), 107) {
-	property {
-		substitute: 107;
-		override: 107;
-		accepted_cargos: [[ENSP, 8]];
-	}
-	graphics {
-		tile_check: THIS_ID(tile_location_check);
-	}
-}
-
-item(FEAT_INDUSTRYTILES, THIS_ID(tile_9), 108) {
-	property {
-		substitute: 108;
-		override: 108;
-		accepted_cargos: [[ENSP, 8]];
-	}
-	graphics {
-		tile_check: THIS_ID(tile_location_check);
-	}
-}
-
-item(FEAT_INDUSTRYTILES, THIS_ID(tile_10), 109) {
-	property {
-		substitute: 109;
-		override: 109;
-		accepted_cargos: [[ENSP, 8]];
-	}
-	graphics {
-		tile_check: THIS_ID(tile_location_check);
-	}
-}
-
-item(FEAT_INDUSTRYTILES, THIS_ID(tile_11), 110) {
-	property {
-		substitute: 110;
-		override: 110;
-		accepted_cargos: [[ENSP, 8]];
-	}
-	graphics {
-		tile_check: THIS_ID(tile_location_check);
-	}
-}
-
-item(FEAT_INDUSTRYTILES, THIS_ID(tile_12), 111) {
-	property {
-		substitute: 111;
-		override: 111;
-		accepted_cargos: [[ENSP, 8]];
-	}
-	graphics {
-		tile_check: THIS_ID(tile_location_check);
-	}
-}
-
-item(FEAT_INDUSTRYTILES, THIS_ID(tile_13), 112) {
-	property {
-		substitute: 112;
-		override: 112;
-		accepted_cargos: [[ENSP, 8]];
-	}
-	graphics {
-		tile_check: THIS_ID(tile_location_check);
-	}
-}
-
-item(FEAT_INDUSTRYTILES, THIS_ID(tile_14), 113) {
-	property {
-		substitute: 113;
-		override: 113;
-		accepted_cargos: [[ENSP, 8]];
-	}
-	graphics {
-		tile_check: THIS_ID(tile_location_check);
-	}
-}
-
-item(FEAT_INDUSTRYTILES, THIS_ID(tile_15), 114) {
-	property {
-		substitute: 114;
-		override: 114;
-		accepted_cargos: [[ENSP, 8]];
-	}
-	graphics {
-		tile_check: THIS_ID(tile_location_check);
-	}
-}
-
-item(FEAT_INDUSTRYTILES, THIS_ID(tile_16), 115) {
-	property {
-		substitute: 115;
-		override: 115;
-		accepted_cargos: [[ENSP, 8]];
-	}
-	graphics {
-		tile_check: THIS_ID(tile_location_check);
-	}
-}
+${industry.get_industry_layouts_as_tilelayouts()}
 
 /* *************************************************
  * Definition of the industry
  * *************************************************/
 
-CHECK_NEARBY_CLUSTER(copper_mine, 20, 70, 2, 3, return CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
-CHECK_FOUNDER       (THIS_ID(copper_mine))
+/* availability years */
+#define THIS_MIN_YEAR 1923
 
-SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
+CHECK_NEARBY_CLUSTER(copper_mine,    20, 40, 2, 3, return CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
+CHECK_FOUNDER       (${industry.id}_copper_mine)
+
+SWITCH_COLOUR_SCHEME1(${industry.id}_colour)
 
 ${industry.get_primary_supplies_stuff()}
 
@@ -207,16 +80,16 @@ ${industry.get_industry_properties()}
 
 item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
 	graphics {
-		produce_cargo_arrival:   THIS_ID(produce);
-		construction_probability:THIS_ID(check_availability);
-		location_check:          THIS_ID(check_location);
-		produce_256_ticks:       THIS_ID(produce_256_ticks);
-		monthly_prod_change:     THIS_ID(monthly_update);
+		produce_cargo_arrival:   ${industry.id}_produce;
+		construction_probability:${industry.id}_check_availability;
+		location_check:          ${industry.id}_check_location;
+		produce_256_ticks:       ${industry.id}_produce_256_ticks;
+		monthly_prod_change:     ${industry.id}_monthly_update;
         random_prod_change:      return CB_RESULT_IND_PROD_NO_CHANGE;
 		build_prod_change:       randomise_primary_production_on_build;
-		extra_text_industry:     THIS_ID(extra_text);
-		colour:                  THIS_ID(colour);
+		extra_text_industry:     ${industry.id}_extra_text;
+		extra_text_fund:         return string(STR_FUND_AVAILABLE_FROM, THIS_MIN_YEAR);
+		colour:                  ${industry.id}_colour;
 	}
 }
-
 #include "../src/templates/undefs.pnml"
