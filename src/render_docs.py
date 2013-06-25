@@ -12,8 +12,8 @@ import codecs # used for writing files - more unicode friendly than standard ope
 
 import shutil
 import sys
-import os
 import global_constants
+import os
 currentdir = os.curdir
 
 # setting up a cache for compiled chameleon templates can significantly speed up template rendering
