@@ -11,9 +11,16 @@ import codecs # used for writing files - more unicode friendly than standard ope
 
 import shutil
 import sys
-import os.path
+import global_constants
+import os
 currentdir = os.curdir
 src_path = os.path.join(currentdir, 'src')
+
+# setting up a cache for compiled chameleon templates can significantly speed up template rendering
+chameleon_cache_path = os.path.join(currentdir, global_constants.chameleon_cache_dir)
+if not os.path.exists(chameleon_cache_path):
+    os.mkdir(chameleon_cache_path)
+os.environ['CHAMELEON_CACHE'] = chameleon_cache_path
 
 # set output path for generated_pnml, clean it if it exists, create it if it doesn't
 pnml_output_path = os.path.join(currentdir, 'generated_pnml')
