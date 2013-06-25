@@ -31,7 +31,7 @@ industry = Industry(id='coffee_plantation',
                     prob_in_game='3',
                     prob_random='18',
                     fund_cost_multiplier='54',
-                    prod_multiplier='[6, 4]',
+                    prod_multiplier='[7, 4]',
                     substitute='0',
                     )
 
