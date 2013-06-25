@@ -161,7 +161,7 @@ class Industry(object):
         self.spritelayouts = [] # by convention spritelayout is one word :P
         self.industry_layouts = []
         self.default_industry_properties = IndustryProperties(**kwargs)
-        self.supply_requirements = self.set_supply_requirements()
+        self.supply_requirements = kwargs.get('supply_requirements', self.set_supply_requirements_via_magic())
         self.economy_variations = {}
         for economy in global_constants.economies:
             self.add_economy_variation(economy)
@@ -203,13 +203,11 @@ class Industry(object):
     def add_economy_variation(self, economy):
         self.economy_variations[economy] = IndustryProperties()
 
-    def set_supply_requirements(self):
+    def set_supply_requirements_via_magic(self):
         if 'ENSP' in self.default_industry_properties.accept_cargo_types:
             return global_constants.supply_requirements['ENSP']
         elif 'FMSP' in self.default_industry_properties.accept_cargo_types:
             return global_constants.supply_requirements['FMSP']
-        elif self.id == 'port': # what a nasty hard coded hack :)
-            return global_constants.supply_requirements['port']
         else:
             return None
 

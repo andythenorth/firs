@@ -6,6 +6,7 @@
 """
 
 from industry import Industry, Tile, Sprite, Spriteset, SpriteLayout, IndustryLayout
+import global_constants
 
 """
 Notes to self whilst figuring out python-firs (notes will probably rot here forever).
@@ -39,7 +40,8 @@ industry = Industry(id='port',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_IND_PORT))',
                     fund_cost_multiplier='152',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
-                    override_default_construction_states=True)
+                    override_default_construction_states=True,
+                    supply_requirements=global_constants.supply_requirements['import_export'])
 
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True
 industry.economy_variations['BASIC_ARCTIC'].enabled = True
@@ -58,6 +60,8 @@ industry.economy_variations['BASIC_TROPIC'].prod_cargo_types = ['STEL', 'MNSP']
 industry.economy_variations['BASIC_TROPIC'].prod_multiplier = '[7, 16]'
 
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
+industry.economy_variations['MISTAH_KURTZ'].accept_cargo_types = ['WOOD', 'FICR', 'FRVG']
+industry.economy_variations['MISTAH_KURTZ'].prod_cargo_types = ['ENSP', 'MNSP']
 
 industry.add_tile(id='port_tile')
 
