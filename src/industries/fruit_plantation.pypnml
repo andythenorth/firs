@@ -290,6 +290,9 @@ item(FEAT_INDUSTRYTILES, ${industry.id}_tile_house, TILE_FRUITPLANTATION_2) {
  * Definition of the industry layouts
  * *************************************************/
 
+<!--! could use templated layouts here using ${industry.get_industry_layouts_as_tilelayouts()}
+      but there's no gain as the graphics chain doesn't use a layout check (so no repeating of data) -->
+
 tilelayout ${industry.id}_tilelayout_1 {
 	0, 0: ${industry.id}_tile_plantation;
 	0, 1: ${industry.id}_tile_plantation;
