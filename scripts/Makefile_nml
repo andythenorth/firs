@@ -13,6 +13,7 @@
 
 nml: preprocesspy
 	$(_E) "[CPP] $(NML_FILE)"
+	$(_E) "Use TEST_INDUSTRY=industry_name for faster compiles when developing"
 	$(_V) $(CC) -D REPO_REVISION=$(REPO_REVISION) -D TEST_INDUSTRY=$(TEST_INDUSTRY) $(CC_FLAGS) $(MAIN_SRC_FILE) > $(NML_FILE)
 
 preprocesspy:
