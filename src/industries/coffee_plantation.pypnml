@@ -238,10 +238,10 @@ spritelayout ${industry.id}_tile_house_spritelayout {
  * Definition of the industry tiles and their callbacks
  * ***************************************************/
 
-TILE_DISALLOW_NEARBY_CLASS(tile_plantation_nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW,      return CB_RESULT_LOCATION_ALLOW)
-TILE_ALLOW_PLAYER         (tile_plantation_player_check,                                                                 ${industry.id}_tile_plantation_nearby_industry)
-TILE_CHECK_WATER          (tile_plantation_water_check,                          string(STR_ERR_LOCATION_NOT_ON_WATER),  ${industry.id}_tile_plantation_player_check)
-TILE_CHECK_HEIGHT         (tile_plantation_location_check,  0, snowline_height,  ${industry.id}_tile_plantation_water_check,   return string(STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE))
+TILE_DISALLOW_NEARBY_CLASS(tile_plantation_nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
+TILE_ALLOW_PLAYER         (tile_plantation_player_check, ${industry.id}_tile_plantation_nearby_industry)
+TILE_DISALLOW_TERRAIN     (tile_plantation_desert_check, TILETYPE_DESERT, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_tile_plantation_player_check)
+TILE_CHECK_HEIGHT         (tile_plantation_location_check, 0, snowline_height, ${industry.id}_tile_plantation_desert_check, return string(STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE))
 
 item(FEAT_INDUSTRYTILES, ${industry.id}_tile_plantation, TILE_COFFEEPLANTATION_1) {
 	property {
@@ -258,10 +258,10 @@ item(FEAT_INDUSTRYTILES, ${industry.id}_tile_plantation, TILE_COFFEEPLANTATION_1
 }
 
 
-TILE_DISALLOW_NEARBY_CLASS(tile_house_nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW,      return CB_RESULT_LOCATION_ALLOW)
-TILE_ALLOW_PLAYER         (tile_house_player_check,                                                                 ${industry.id}_tile_house_nearby_industry)
-TILE_CHECK_WATER          (tile_house_water_check,                          string(STR_ERR_LOCATION_NOT_ON_WATER),  ${industry.id}_tile_house_player_check)
-TILE_CHECK_HEIGHT         (tile_house_location_check,  0, snowline_height,  ${industry.id}_tile_house_water_check,   return string(STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE))
+TILE_DISALLOW_NEARBY_CLASS(tile_house_nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
+TILE_ALLOW_PLAYER         (tile_house_player_check, ${industry.id}_tile_house_nearby_industry)
+TILE_DISALLOW_TERRAIN     (tile_house_desert_check, TILETYPE_DESERT, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_tile_house_player_check)
+TILE_CHECK_HEIGHT         (tile_house_location_check, 0, snowline_height, ${industry.id}_tile_house_desert_check, return string(STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE))
 
 item(FEAT_INDUSTRYTILES, ${industry.id}_tile_house, TILE_COFFEEPLANTATION_2) {
 	property {
