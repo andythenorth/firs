@@ -29,6 +29,8 @@ disable_item(FEAT_INDUSTRIES, 0, 36);
 
 #include "src/basetiles.pnml"
 
-<tal:industries repeat="industry registered_industries">
-    #include "generated_pnml/${industry.id}.pnml"
+<tal:industries repeat="industry registered_industries" define="test_industry utils.get_repo_vars(sys).get('test_industry', None)">
+    <tal:faster_compiles_when_testing condition="test_industry == '' or test_industry == industry.id">
+        #include "generated_pnml/${industry.id}.pnml"
+    </tal:faster_compiles_when_testing>
 </tal:industries>

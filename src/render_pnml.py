@@ -45,7 +45,7 @@ from industries import registered_industries
 header_items = ['checks','conditions','header','master_control_program','parameters']
 for header_item in header_items:
     template = header_item_templates[header_item + '.pypnml']
-    templated_pnml = utils.unescape_chameleon_output(template(registered_industries=registered_industries, global_constants=global_constants))
+    templated_pnml = utils.unescape_chameleon_output(template(registered_industries=registered_industries, global_constants=global_constants, utils=utils, sys=sys))
     # save the results of templating
     pnml = codecs.open(os.path.join(pnml_output_path, header_item + '.pnml'), 'w','utf8')
     pnml.write(templated_pnml)
