@@ -108,7 +108,7 @@ from industries import stockyard
 from industries import sugar_plantation
 from industries import sugar_refinery
 from industries import textile_mill
-
+from industries import trading_post
 
 # industries which will be hard to convert to python templating, mostly still cpp
 from industries import clay_pit
