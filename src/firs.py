@@ -102,6 +102,7 @@ from industries import plastics_plant
 from industries import ranch
 from industries import recycling_depot
 from industries import recycling_plant
+from industries import rubber_plantation
 from industries import sheep_farm
 from industries import smithy_forge
 from industries import stockyard
