@@ -329,6 +329,6 @@ class Industry(object):
 
     def render_pnml(self):
         industry_template = industry_templates[self.id + '.pypnml']
-        templated_pnml = utils.unescape_chameleon_output(industry_template(industry=self, global_constants=global_constants))
+        templated_pnml = utils.unescape_chameleon_output(industry_template(industry=self, global_constants=global_constants, utils=utils))
         return templated_pnml
 
