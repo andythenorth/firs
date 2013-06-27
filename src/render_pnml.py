@@ -64,4 +64,3 @@ for industry in industries.registered_industries:
     pnml_file = codecs.open(os.path.join(pnml_output_path, industry.id + '.pnml'), 'w','utf8')
     pnml_file.write(pnml)
     pnml_file.close()
-
