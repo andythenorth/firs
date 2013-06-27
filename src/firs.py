@@ -75,12 +75,13 @@ from industries import builders_yard
 from industries import bulk_terminal
 from industries import cement_plant
 from industries import coffee_estate
-from industries import fibre_crop_farm
 from industries import copper_mine
 from industries import dairy
 from industries import dairy_farm
+from industries import diamond_mine
 from industries import dredging_site
 from industries import fertiliser_plant
+from industries import fibre_crop_farm
 from industries import food_market
 from industries import furniture_factory
 from industries import general_store
