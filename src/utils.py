@@ -50,3 +50,5 @@ def unwrap_nml_string_declaration(nml_string=None):
     else:
         return nml_string
 
+def echo_message(message):
+    print message
