@@ -28,7 +28,7 @@ TILE_CHECK_HEIGHT         (tile_height_check, 0, snowline_height, ${industry.id}
 TILE_DISALLOW_TERRAIN     (tile_desert_check, TILETYPE_DESERT, string(STR_ERR_LOCATION_NOT_IN_DESERT), ${industry.id}_tile_height_check)
 TILE_CHECK_WATER          (tile_location_check, string(STR_ERR_LOCATION_NOT_ON_WATER), ${industry.id}_tile_desert_check)
 
-item(FEAT_INDUSTRYTILES, ${industry.id}_tile, TILE_COTTON_PLANTATION_1) {
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile, TILE_FIBRE_CROP_FARM_1) {
 	property {
 		substitute:       0;
 		accepted_cargos:  [[FMSP, 8]];
@@ -51,13 +51,13 @@ ${industry.get_industry_layouts_as_tilelayouts()}
  * Definition of the industry
  * *************************************************/
 
-CHECK_NEARBY_CLUSTER(cotton_plantation,     10, 36, 1, 2, return CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
-<!--!CHECK_INCOMPATIBLE  (textile_mill,   16, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_cotton_plantation)
+CHECK_NEARBY_CLUSTER(fibre_crop_farm,     10, 36, 1, 2, return CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
+<!--!CHECK_INCOMPATIBLE  (textile_mill,   16, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_fibre_crop_farm)
 CHECK_INCOMPATIBLE  (plastics_plant, 16, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_textile_mill)
 CHECK_FOUNDER       (${industry.id}_plastics_plant)-->
 
-${utils.echo_message('Warning: Cotton Plantation location checks disabled')}
-CHECK_FOUNDER       (${industry.id}_cotton_plantation)
+${utils.echo_message('Warning: ' + industry.id + ' location checks disabled')}
+CHECK_FOUNDER       (${industry.id}_fibre_crop_farm)
 
 SWITCH_COLOUR_SCHEME1(${industry.id}_colour)
 
@@ -76,7 +76,7 @@ item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
 		monthly_prod_change:     ${industry.id}_monthly_update;
         random_prod_change:      return CB_RESULT_IND_PROD_NO_CHANGE;
 		build_prod_change:       randomise_primary_production_on_build;
-		extra_text_fund:         return string(STR_FUND_MIXED_FARM);
+		extra_text_fund:         return string(STR_FUND_FIBRE_CROP_FARM);
 		extra_text_industry:     ${industry.id}_extra_text;
 		colour:                  ${industry.id}_colour;
 	}
