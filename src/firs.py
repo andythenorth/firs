@@ -75,6 +75,7 @@ from industries import builders_yard
 from industries import bulk_terminal
 from industries import cement_plant
 from industries import coffee_plantation
+from industries import cotton_plantation
 from industries import copper_mine
 from industries import dairy
 from industries import dairy_farm
