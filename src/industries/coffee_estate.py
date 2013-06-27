@@ -15,12 +15,12 @@ Some method properties need a string - the templating is then typically directly
 When a string is expected are basically two choices: provide a string directly, or make an object reference and get an id from that object.
 """
 
-industry = Industry(id='coffee_plantation',
+industry = Industry(id='coffee_estate',
                     new_ind_msg='TTD_STR_NEWS_INDUSTRY_CONSTRUCTION',
                     map_colour='86',
                     prospect_chance='0.75',
-                    name='string(STR_IND_COFFEE_PLANTATION)',
-                    layouts='[coffee_plantation_tilelayout_1, coffee_plantation_tilelayout_2, coffee_plantation_tilelayout_3, coffee_plantation_tilelayout_4]',
+                    name='string(STR_IND_COFFEE_ESTATE)',
+                    layouts='[coffee_estate_tilelayout_1, coffee_estate_tilelayout_2, coffee_estate_tilelayout_3, coffee_estate_tilelayout_4]',
                     accept_cargo_types=['FMSP'],
                     prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL',
                     life_type='IND_LIFE_TYPE_ORGANIC',
@@ -363,1064 +363,1064 @@ sprite_ground_4182 = industry.add_sprite(
 )
 
 industry.add_spritelayout(
-    id = 'coffee_plantation_597',
+    id = 'coffee_estate_597',
     ground_sprite = sprite_ground_4164,
     ground_overlay = sprite_ground_4164,
     building_sprites = [building_0, building_1, building_2, building_3],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_598',
+    id = 'coffee_estate_598',
     ground_sprite = sprite_ground_4165,
     ground_overlay = sprite_ground_4165,
     building_sprites = [building_4, building_1, building_5, building_6],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_599',
+    id = 'coffee_estate_599',
     ground_sprite = sprite_ground_4166,
     ground_overlay = sprite_ground_4166,
     building_sprites = [building_0, building_7, building_2, building_8],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_600',
+    id = 'coffee_estate_600',
     ground_sprite = sprite_ground_4167,
     ground_overlay = sprite_ground_4167,
     building_sprites = [building_9, building_10, building_5, building_6],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_601',
+    id = 'coffee_estate_601',
     ground_sprite = sprite_ground_4168,
     ground_overlay = sprite_ground_4168,
     building_sprites = [building_0, building_10, building_5, building_8],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_602',
+    id = 'coffee_estate_602',
     ground_sprite = sprite_ground_4169,
     ground_overlay = sprite_ground_4169,
     building_sprites = [building_4, building_7, building_11, building_6],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_603',
+    id = 'coffee_estate_603',
     ground_sprite = sprite_ground_4170,
     ground_overlay = sprite_ground_4170,
     building_sprites = [building_9, building_10, building_5, building_3],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_604',
+    id = 'coffee_estate_604',
     ground_sprite = sprite_ground_4171,
     ground_overlay = sprite_ground_4171,
     building_sprites = [building_4, building_1, building_2, building_3],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_605',
+    id = 'coffee_estate_605',
     ground_sprite = sprite_ground_4172,
     ground_overlay = sprite_ground_4172,
     building_sprites = [building_0, building_10, building_11, building_6],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_606',
+    id = 'coffee_estate_606',
     ground_sprite = sprite_ground_4173,
     ground_overlay = sprite_ground_4173,
     building_sprites = [building_0, building_10, building_2, building_8],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_607',
+    id = 'coffee_estate_607',
     ground_sprite = sprite_ground_4174,
     ground_overlay = sprite_ground_4174,
     building_sprites = [building_4, building_1, building_5, building_6],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_608',
+    id = 'coffee_estate_608',
     ground_sprite = sprite_ground_4175,
     ground_overlay = sprite_ground_4175,
     building_sprites = [building_4, building_10, building_2, building_8],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_609',
+    id = 'coffee_estate_609',
     ground_sprite = sprite_ground_4176,
     ground_overlay = sprite_ground_4176,
     building_sprites = [building_0, building_10, building_2, building_8],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_610',
+    id = 'coffee_estate_610',
     ground_sprite = sprite_ground_4177,
     ground_overlay = sprite_ground_4177,
     building_sprites = [building_4, building_1, building_5, building_6],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_611',
+    id = 'coffee_estate_611',
     ground_sprite = sprite_ground_4178,
     ground_overlay = sprite_ground_4178,
     building_sprites = [building_4, building_1, building_5, building_6],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_612',
+    id = 'coffee_estate_612',
     ground_sprite = sprite_ground_4179,
     ground_overlay = sprite_ground_4179,
     building_sprites = [building_9, building_7, building_2, building_3],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_613',
+    id = 'coffee_estate_613',
     ground_sprite = sprite_ground_4180,
     ground_overlay = sprite_ground_4180,
     building_sprites = [building_0, building_1, building_2, building_6],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_614',
+    id = 'coffee_estate_614',
     ground_sprite = sprite_ground_4181,
     ground_overlay = sprite_ground_4181,
     building_sprites = [building_4, building_7, building_2, building_8],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_615',
+    id = 'coffee_estate_615',
     ground_sprite = sprite_ground_4182,
     ground_overlay = sprite_ground_4182,
     building_sprites = [building_4, building_10, building_5, building_8],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_620',
+    id = 'coffee_estate_620',
     ground_sprite = sprite_ground_4164,
     ground_overlay = sprite_ground_4164,
     building_sprites = [building_12, building_13, building_14, building_15],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_621',
+    id = 'coffee_estate_621',
     ground_sprite = sprite_ground_4165,
     ground_overlay = sprite_ground_4165,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_622',
+    id = 'coffee_estate_622',
     ground_sprite = sprite_ground_4166,
     ground_overlay = sprite_ground_4166,
     building_sprites = [building_12, building_19, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_623',
+    id = 'coffee_estate_623',
     ground_sprite = sprite_ground_4167,
     ground_overlay = sprite_ground_4167,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_624',
+    id = 'coffee_estate_624',
     ground_sprite = sprite_ground_4168,
     ground_overlay = sprite_ground_4168,
     building_sprites = [building_12, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_625',
+    id = 'coffee_estate_625',
     ground_sprite = sprite_ground_4169,
     ground_overlay = sprite_ground_4169,
     building_sprites = [building_16, building_19, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_626',
+    id = 'coffee_estate_626',
     ground_sprite = sprite_ground_4170,
     ground_overlay = sprite_ground_4170,
     building_sprites = [building_16, building_13, building_17, building_15],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_627',
+    id = 'coffee_estate_627',
     ground_sprite = sprite_ground_4171,
     ground_overlay = sprite_ground_4171,
     building_sprites = [building_16, building_13, building_14, building_15],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_628',
+    id = 'coffee_estate_628',
     ground_sprite = sprite_ground_4172,
     ground_overlay = sprite_ground_4172,
     building_sprites = [building_12, building_13, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_629',
+    id = 'coffee_estate_629',
     ground_sprite = sprite_ground_4173,
     ground_overlay = sprite_ground_4173,
     building_sprites = [building_12, building_13, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_630',
+    id = 'coffee_estate_630',
     ground_sprite = sprite_ground_4174,
     ground_overlay = sprite_ground_4174,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_631',
+    id = 'coffee_estate_631',
     ground_sprite = sprite_ground_4175,
     ground_overlay = sprite_ground_4175,
     building_sprites = [building_16, building_13, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_632',
+    id = 'coffee_estate_632',
     ground_sprite = sprite_ground_4176,
     ground_overlay = sprite_ground_4176,
     building_sprites = [building_12, building_13, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_633',
+    id = 'coffee_estate_633',
     ground_sprite = sprite_ground_4177,
     ground_overlay = sprite_ground_4177,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_634',
+    id = 'coffee_estate_634',
     ground_sprite = sprite_ground_4178,
     ground_overlay = sprite_ground_4178,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_635',
+    id = 'coffee_estate_635',
     ground_sprite = sprite_ground_4179,
     ground_overlay = sprite_ground_4179,
     building_sprites = [building_16, building_19, building_14, building_15],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_636',
+    id = 'coffee_estate_636',
     ground_sprite = sprite_ground_4180,
     ground_overlay = sprite_ground_4180,
     building_sprites = [building_12, building_13, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_637',
+    id = 'coffee_estate_637',
     ground_sprite = sprite_ground_4181,
     ground_overlay = sprite_ground_4181,
     building_sprites = [building_16, building_19, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_638',
+    id = 'coffee_estate_638',
     ground_sprite = sprite_ground_4182,
     ground_overlay = sprite_ground_4182,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_642',
+    id = 'coffee_estate_642',
     ground_sprite = sprite_ground_4164,
     ground_overlay = sprite_ground_4164,
     building_sprites = [building_12, building_13, building_14, building_15],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_643',
+    id = 'coffee_estate_643',
     ground_sprite = sprite_ground_4165,
     ground_overlay = sprite_ground_4165,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_644',
+    id = 'coffee_estate_644',
     ground_sprite = sprite_ground_4166,
     ground_overlay = sprite_ground_4166,
     building_sprites = [building_12, building_19, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_645',
+    id = 'coffee_estate_645',
     ground_sprite = sprite_ground_4167,
     ground_overlay = sprite_ground_4167,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_646',
+    id = 'coffee_estate_646',
     ground_sprite = sprite_ground_4168,
     ground_overlay = sprite_ground_4168,
     building_sprites = [building_12, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_647',
+    id = 'coffee_estate_647',
     ground_sprite = sprite_ground_4169,
     ground_overlay = sprite_ground_4169,
     building_sprites = [building_16, building_19, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_648',
+    id = 'coffee_estate_648',
     ground_sprite = sprite_ground_4170,
     ground_overlay = sprite_ground_4170,
     building_sprites = [building_16, building_13, building_17, building_15],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_649',
+    id = 'coffee_estate_649',
     ground_sprite = sprite_ground_4171,
     ground_overlay = sprite_ground_4171,
     building_sprites = [building_16, building_13, building_14, building_15],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_650',
+    id = 'coffee_estate_650',
     ground_sprite = sprite_ground_4172,
     ground_overlay = sprite_ground_4172,
     building_sprites = [building_12, building_13, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_651',
+    id = 'coffee_estate_651',
     ground_sprite = sprite_ground_4173,
     ground_overlay = sprite_ground_4173,
     building_sprites = [building_12, building_13, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_652',
+    id = 'coffee_estate_652',
     ground_sprite = sprite_ground_4174,
     ground_overlay = sprite_ground_4174,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_653',
+    id = 'coffee_estate_653',
     ground_sprite = sprite_ground_4175,
     ground_overlay = sprite_ground_4175,
     building_sprites = [building_16, building_13, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_654',
+    id = 'coffee_estate_654',
     ground_sprite = sprite_ground_4176,
     ground_overlay = sprite_ground_4176,
     building_sprites = [building_12, building_13, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_655',
+    id = 'coffee_estate_655',
     ground_sprite = sprite_ground_4177,
     ground_overlay = sprite_ground_4177,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_656',
+    id = 'coffee_estate_656',
     ground_sprite = sprite_ground_4178,
     ground_overlay = sprite_ground_4178,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_657',
+    id = 'coffee_estate_657',
     ground_sprite = sprite_ground_4179,
     ground_overlay = sprite_ground_4179,
     building_sprites = [building_16, building_19, building_14, building_15],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_658',
+    id = 'coffee_estate_658',
     ground_sprite = sprite_ground_4180,
     ground_overlay = sprite_ground_4180,
     building_sprites = [building_12, building_13, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_659',
+    id = 'coffee_estate_659',
     ground_sprite = sprite_ground_4181,
     ground_overlay = sprite_ground_4181,
     building_sprites = [building_16, building_19, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_660',
+    id = 'coffee_estate_660',
     ground_sprite = sprite_ground_4182,
     ground_overlay = sprite_ground_4182,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_664',
+    id = 'coffee_estate_664',
     ground_sprite = sprite_ground_4164,
     ground_overlay = sprite_ground_4164,
     building_sprites = [building_12, building_13, building_14, building_15],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_665',
+    id = 'coffee_estate_665',
     ground_sprite = sprite_ground_4165,
     ground_overlay = sprite_ground_4165,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_666',
+    id = 'coffee_estate_666',
     ground_sprite = sprite_ground_4166,
     ground_overlay = sprite_ground_4166,
     building_sprites = [building_12, building_19, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_667',
+    id = 'coffee_estate_667',
     ground_sprite = sprite_ground_4167,
     ground_overlay = sprite_ground_4167,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_668',
+    id = 'coffee_estate_668',
     ground_sprite = sprite_ground_4168,
     ground_overlay = sprite_ground_4168,
     building_sprites = [building_12, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_669',
+    id = 'coffee_estate_669',
     ground_sprite = sprite_ground_4169,
     ground_overlay = sprite_ground_4169,
     building_sprites = [building_16, building_19, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_670',
+    id = 'coffee_estate_670',
     ground_sprite = sprite_ground_4170,
     ground_overlay = sprite_ground_4170,
     building_sprites = [building_16, building_13, building_17, building_15],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_671',
+    id = 'coffee_estate_671',
     ground_sprite = sprite_ground_4171,
     ground_overlay = sprite_ground_4171,
     building_sprites = [building_16, building_13, building_14, building_15],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_672',
+    id = 'coffee_estate_672',
     ground_sprite = sprite_ground_4172,
     ground_overlay = sprite_ground_4172,
     building_sprites = [building_12, building_13, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_673',
+    id = 'coffee_estate_673',
     ground_sprite = sprite_ground_4173,
     ground_overlay = sprite_ground_4173,
     building_sprites = [building_12, building_13, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_674',
+    id = 'coffee_estate_674',
     ground_sprite = sprite_ground_4174,
     ground_overlay = sprite_ground_4174,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_675',
+    id = 'coffee_estate_675',
     ground_sprite = sprite_ground_4175,
     ground_overlay = sprite_ground_4175,
     building_sprites = [building_16, building_13, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_676',
+    id = 'coffee_estate_676',
     ground_sprite = sprite_ground_4176,
     ground_overlay = sprite_ground_4176,
     building_sprites = [building_12, building_13, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_677',
+    id = 'coffee_estate_677',
     ground_sprite = sprite_ground_4177,
     ground_overlay = sprite_ground_4177,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_678',
+    id = 'coffee_estate_678',
     ground_sprite = sprite_ground_4178,
     ground_overlay = sprite_ground_4178,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_679',
+    id = 'coffee_estate_679',
     ground_sprite = sprite_ground_4179,
     ground_overlay = sprite_ground_4179,
     building_sprites = [building_16, building_19, building_14, building_15],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_680',
+    id = 'coffee_estate_680',
     ground_sprite = sprite_ground_4180,
     ground_overlay = sprite_ground_4180,
     building_sprites = [building_12, building_13, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_681',
+    id = 'coffee_estate_681',
     ground_sprite = sprite_ground_4181,
     ground_overlay = sprite_ground_4181,
     building_sprites = [building_16, building_19, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_682',
+    id = 'coffee_estate_682',
     ground_sprite = sprite_ground_4182,
     ground_overlay = sprite_ground_4182,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_686',
+    id = 'coffee_estate_686',
     ground_sprite = sprite_ground_4164,
     ground_overlay = sprite_ground_4164,
     building_sprites = [building_12, building_13, building_14, building_15],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_687',
+    id = 'coffee_estate_687',
     ground_sprite = sprite_ground_4165,
     ground_overlay = sprite_ground_4165,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_688',
+    id = 'coffee_estate_688',
     ground_sprite = sprite_ground_4166,
     ground_overlay = sprite_ground_4166,
     building_sprites = [building_12, building_19, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_689',
+    id = 'coffee_estate_689',
     ground_sprite = sprite_ground_4167,
     ground_overlay = sprite_ground_4167,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_690',
+    id = 'coffee_estate_690',
     ground_sprite = sprite_ground_4168,
     ground_overlay = sprite_ground_4168,
     building_sprites = [building_12, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_691',
+    id = 'coffee_estate_691',
     ground_sprite = sprite_ground_4169,
     ground_overlay = sprite_ground_4169,
     building_sprites = [building_16, building_19, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_692',
+    id = 'coffee_estate_692',
     ground_sprite = sprite_ground_4170,
     ground_overlay = sprite_ground_4170,
     building_sprites = [building_16, building_13, building_17, building_15],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_693',
+    id = 'coffee_estate_693',
     ground_sprite = sprite_ground_4171,
     ground_overlay = sprite_ground_4171,
     building_sprites = [building_16, building_13, building_14, building_15],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_694',
+    id = 'coffee_estate_694',
     ground_sprite = sprite_ground_4172,
     ground_overlay = sprite_ground_4172,
     building_sprites = [building_12, building_13, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_695',
+    id = 'coffee_estate_695',
     ground_sprite = sprite_ground_4173,
     ground_overlay = sprite_ground_4173,
     building_sprites = [building_12, building_13, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_696',
+    id = 'coffee_estate_696',
     ground_sprite = sprite_ground_4174,
     ground_overlay = sprite_ground_4174,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_697',
+    id = 'coffee_estate_697',
     ground_sprite = sprite_ground_4175,
     ground_overlay = sprite_ground_4175,
     building_sprites = [building_16, building_13, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_698',
+    id = 'coffee_estate_698',
     ground_sprite = sprite_ground_4176,
     ground_overlay = sprite_ground_4176,
     building_sprites = [building_12, building_13, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_699',
+    id = 'coffee_estate_699',
     ground_sprite = sprite_ground_4177,
     ground_overlay = sprite_ground_4177,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_700',
+    id = 'coffee_estate_700',
     ground_sprite = sprite_ground_4178,
     ground_overlay = sprite_ground_4178,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_701',
+    id = 'coffee_estate_701',
     ground_sprite = sprite_ground_4179,
     ground_overlay = sprite_ground_4179,
     building_sprites = [building_16, building_19, building_14, building_15],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_702',
+    id = 'coffee_estate_702',
     ground_sprite = sprite_ground_4180,
     ground_overlay = sprite_ground_4180,
     building_sprites = [building_12, building_13, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_703',
+    id = 'coffee_estate_703',
     ground_sprite = sprite_ground_4181,
     ground_overlay = sprite_ground_4181,
     building_sprites = [building_16, building_19, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_704',
+    id = 'coffee_estate_704',
     ground_sprite = sprite_ground_4182,
     ground_overlay = sprite_ground_4182,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_708',
+    id = 'coffee_estate_708',
     ground_sprite = sprite_ground_4164,
     ground_overlay = sprite_ground_4164,
     building_sprites = [building_12, building_13, building_14, building_15],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_709',
+    id = 'coffee_estate_709',
     ground_sprite = sprite_ground_4165,
     ground_overlay = sprite_ground_4165,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_710',
+    id = 'coffee_estate_710',
     ground_sprite = sprite_ground_4166,
     ground_overlay = sprite_ground_4166,
     building_sprites = [building_12, building_19, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_711',
+    id = 'coffee_estate_711',
     ground_sprite = sprite_ground_4167,
     ground_overlay = sprite_ground_4167,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_712',
+    id = 'coffee_estate_712',
     ground_sprite = sprite_ground_4168,
     ground_overlay = sprite_ground_4168,
     building_sprites = [building_12, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_713',
+    id = 'coffee_estate_713',
     ground_sprite = sprite_ground_4169,
     ground_overlay = sprite_ground_4169,
     building_sprites = [building_16, building_19, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_714',
+    id = 'coffee_estate_714',
     ground_sprite = sprite_ground_4170,
     ground_overlay = sprite_ground_4170,
     building_sprites = [building_16, building_13, building_17, building_15],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_715',
+    id = 'coffee_estate_715',
     ground_sprite = sprite_ground_4171,
     ground_overlay = sprite_ground_4171,
     building_sprites = [building_16, building_13, building_14, building_15],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_716',
+    id = 'coffee_estate_716',
     ground_sprite = sprite_ground_4172,
     ground_overlay = sprite_ground_4172,
     building_sprites = [building_12, building_13, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_717',
+    id = 'coffee_estate_717',
     ground_sprite = sprite_ground_4173,
     ground_overlay = sprite_ground_4173,
     building_sprites = [building_12, building_13, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_718',
+    id = 'coffee_estate_718',
     ground_sprite = sprite_ground_4174,
     ground_overlay = sprite_ground_4174,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_719',
+    id = 'coffee_estate_719',
     ground_sprite = sprite_ground_4175,
     ground_overlay = sprite_ground_4175,
     building_sprites = [building_16, building_13, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_720',
+    id = 'coffee_estate_720',
     ground_sprite = sprite_ground_4176,
     ground_overlay = sprite_ground_4176,
     building_sprites = [building_12, building_13, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_721',
+    id = 'coffee_estate_721',
     ground_sprite = sprite_ground_4177,
     ground_overlay = sprite_ground_4177,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_722',
+    id = 'coffee_estate_722',
     ground_sprite = sprite_ground_4178,
     ground_overlay = sprite_ground_4178,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_723',
+    id = 'coffee_estate_723',
     ground_sprite = sprite_ground_4179,
     ground_overlay = sprite_ground_4179,
     building_sprites = [building_16, building_19, building_14, building_15],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_724',
+    id = 'coffee_estate_724',
     ground_sprite = sprite_ground_4180,
     ground_overlay = sprite_ground_4180,
     building_sprites = [building_12, building_13, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_725',
+    id = 'coffee_estate_725',
     ground_sprite = sprite_ground_4181,
     ground_overlay = sprite_ground_4181,
     building_sprites = [building_16, building_19, building_14, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_726',
+    id = 'coffee_estate_726',
     ground_sprite = sprite_ground_4182,
     ground_overlay = sprite_ground_4182,
     building_sprites = [building_16, building_13, building_17, building_18],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_731',
+    id = 'coffee_estate_731',
     ground_sprite = sprite_ground_4145,
     ground_overlay = sprite_ground_4145,
     building_sprites = [building_20, building_21, building_22, building_23],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_732',
+    id = 'coffee_estate_732',
     ground_sprite = sprite_ground_4146,
     ground_overlay = sprite_ground_4146,
     building_sprites = [building_24, building_21, building_25, building_26],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_733',
+    id = 'coffee_estate_733',
     ground_sprite = sprite_ground_4147,
     ground_overlay = sprite_ground_4147,
     building_sprites = [building_20, building_27, building_22, building_28],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_734',
+    id = 'coffee_estate_734',
     ground_sprite = sprite_ground_4148,
     ground_overlay = sprite_ground_4148,
     building_sprites = [building_29, building_30, building_25, building_26],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_735',
+    id = 'coffee_estate_735',
     ground_sprite = sprite_ground_4149,
     ground_overlay = sprite_ground_4149,
     building_sprites = [building_20, building_30, building_25, building_28],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_736',
+    id = 'coffee_estate_736',
     ground_sprite = sprite_ground_4150,
     ground_overlay = sprite_ground_4150,
     building_sprites = [building_24, building_27, building_31, building_26],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_737',
+    id = 'coffee_estate_737',
     ground_sprite = sprite_ground_4151,
     ground_overlay = sprite_ground_4151,
     building_sprites = [building_29, building_30, building_25, building_23],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_738',
+    id = 'coffee_estate_738',
     ground_sprite = sprite_ground_4152,
     ground_overlay = sprite_ground_4152,
     building_sprites = [building_24, building_21, building_22, building_23],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_739',
+    id = 'coffee_estate_739',
     ground_sprite = sprite_ground_4153,
     ground_overlay = sprite_ground_4153,
     building_sprites = [building_20, building_30, building_31, building_26],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_740',
+    id = 'coffee_estate_740',
     ground_sprite = sprite_ground_4154,
     ground_overlay = sprite_ground_4154,
     building_sprites = [building_20, building_30, building_22, building_28],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_741',
+    id = 'coffee_estate_741',
     ground_sprite = sprite_ground_4155,
     ground_overlay = sprite_ground_4155,
     building_sprites = [building_24, building_21, building_25, building_26],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_742',
+    id = 'coffee_estate_742',
     ground_sprite = sprite_ground_4156,
     ground_overlay = sprite_ground_4156,
     building_sprites = [building_24, building_30, building_22, building_28],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_743',
+    id = 'coffee_estate_743',
     ground_sprite = sprite_ground_4157,
     ground_overlay = sprite_ground_4157,
     building_sprites = [building_20, building_30, building_22, building_28],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_744',
+    id = 'coffee_estate_744',
     ground_sprite = sprite_ground_4158,
     ground_overlay = sprite_ground_4158,
     building_sprites = [building_24, building_21, building_25, building_26],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_745',
+    id = 'coffee_estate_745',
     ground_sprite = sprite_ground_4159,
     ground_overlay = sprite_ground_4159,
     building_sprites = [building_24, building_21, building_25, building_26],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_746',
+    id = 'coffee_estate_746',
     ground_sprite = sprite_ground_4160,
     ground_overlay = sprite_ground_4160,
     building_sprites = [building_29, building_27, building_22, building_23],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_747',
+    id = 'coffee_estate_747',
     ground_sprite = sprite_ground_4161,
     ground_overlay = sprite_ground_4161,
     building_sprites = [building_20, building_21, building_22, building_26],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_748',
+    id = 'coffee_estate_748',
     ground_sprite = sprite_ground_4162,
     ground_overlay = sprite_ground_4162,
     building_sprites = [building_24, building_27, building_22, building_28],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_749',
+    id = 'coffee_estate_749',
     ground_sprite = sprite_ground_4163,
     ground_overlay = sprite_ground_4163,
     building_sprites = [building_24, building_30, building_25, building_28],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_753',
+    id = 'coffee_estate_753',
     ground_sprite = sprite_ground_4145,
     ground_overlay = sprite_ground_4145,
     building_sprites = [building_20, building_21, building_22, building_23],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_754',
+    id = 'coffee_estate_754',
     ground_sprite = sprite_ground_4146,
     ground_overlay = sprite_ground_4146,
     building_sprites = [building_24, building_21, building_25, building_26],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_755',
+    id = 'coffee_estate_755',
     ground_sprite = sprite_ground_4147,
     ground_overlay = sprite_ground_4147,
     building_sprites = [building_20, building_27, building_22, building_28],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_756',
+    id = 'coffee_estate_756',
     ground_sprite = sprite_ground_4148,
     ground_overlay = sprite_ground_4148,
     building_sprites = [building_29, building_30, building_25, building_26],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_757',
+    id = 'coffee_estate_757',
     ground_sprite = sprite_ground_4149,
     ground_overlay = sprite_ground_4149,
     building_sprites = [building_20, building_30, building_25, building_28],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_758',
+    id = 'coffee_estate_758',
     ground_sprite = sprite_ground_4150,
     ground_overlay = sprite_ground_4150,
     building_sprites = [building_24, building_27, building_31, building_26],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_759',
+    id = 'coffee_estate_759',
     ground_sprite = sprite_ground_4151,
     ground_overlay = sprite_ground_4151,
     building_sprites = [building_29, building_30, building_25, building_23],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_760',
+    id = 'coffee_estate_760',
     ground_sprite = sprite_ground_4152,
     ground_overlay = sprite_ground_4152,
     building_sprites = [building_24, building_21, building_22, building_23],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_761',
+    id = 'coffee_estate_761',
     ground_sprite = sprite_ground_4153,
     ground_overlay = sprite_ground_4153,
     building_sprites = [building_20, building_30, building_31, building_26],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_762',
+    id = 'coffee_estate_762',
     ground_sprite = sprite_ground_4154,
     ground_overlay = sprite_ground_4154,
     building_sprites = [building_20, building_30, building_22, building_28],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_763',
+    id = 'coffee_estate_763',
     ground_sprite = sprite_ground_4155,
     ground_overlay = sprite_ground_4155,
     building_sprites = [building_24, building_21, building_25, building_26],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_764',
+    id = 'coffee_estate_764',
     ground_sprite = sprite_ground_4156,
     ground_overlay = sprite_ground_4156,
     building_sprites = [building_24, building_30, building_22, building_28],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_765',
+    id = 'coffee_estate_765',
     ground_sprite = sprite_ground_4157,
     ground_overlay = sprite_ground_4157,
     building_sprites = [building_20, building_30, building_22, building_28],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_766',
+    id = 'coffee_estate_766',
     ground_sprite = sprite_ground_4158,
     ground_overlay = sprite_ground_4158,
     building_sprites = [building_24, building_21, building_25, building_26],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_767',
+    id = 'coffee_estate_767',
     ground_sprite = sprite_ground_4159,
     ground_overlay = sprite_ground_4159,
     building_sprites = [building_24, building_21, building_25, building_26],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_768',
+    id = 'coffee_estate_768',
     ground_sprite = sprite_ground_4160,
     ground_overlay = sprite_ground_4160,
     building_sprites = [building_29, building_27, building_22, building_23],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_769',
+    id = 'coffee_estate_769',
     ground_sprite = sprite_ground_4161,
     ground_overlay = sprite_ground_4161,
     building_sprites = [building_20, building_21, building_22, building_26],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_770',
+    id = 'coffee_estate_770',
     ground_sprite = sprite_ground_4162,
     ground_overlay = sprite_ground_4162,
     building_sprites = [building_24, building_27, building_22, building_28],
     fences = [],
 )
 industry.add_spritelayout(
-    id = 'coffee_plantation_771',
+    id = 'coffee_estate_771',
     ground_sprite = sprite_ground_4163,
     ground_overlay = sprite_ground_4163,
     building_sprites = [building_24, building_30, building_25, building_28],
