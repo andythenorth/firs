@@ -51,4 +51,6 @@ def unwrap_nml_string_declaration(nml_string=None):
         return nml_string
 
 def echo_message(message):
-    print message
+    # use to raise messages from templates to standard out (can't print directly from template render)
+    # magically wraps these messages in ANSI colour to make them visible - they are only intended for noticeable messages, not general output
+    print '\033[33m' + message + '\033[0m'
