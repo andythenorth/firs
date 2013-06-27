@@ -76,6 +76,8 @@ class DocHelper(object):
         # industries don't store the name directly as a python attr, but in lang - so look it up in base_lang using string id
         name = industry.get_property('name', economy)
         string_id = utils.unwrap_nml_string_declaration(name)
+        if string_id not in base_lang_strings:
+            utils.echo_message('Warning: string ' + string_id + ' missing for docs')
         return base_lang_strings.get(string_id, 'NO NAME ' + str(name) + ' ' + industry.id)
 
     def get_industry_all_name_strings(self, industry):
