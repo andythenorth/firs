@@ -168,80 +168,80 @@ building_19 = industry.add_sprite(
     yextent = 13,
 )
 building_20 = industry.add_sprite(
-    sprite_number = 1831,
+    sprite_number = 1836,
     xoffset = 2,
     yoffset = 2,
     xextent = 13,
     yextent = 13,
 )
 building_21 = industry.add_sprite(
-    sprite_number = 1832,
+    sprite_number = 1864,
     xoffset = 8,
     yoffset = 2,
     xextent = 7,
     yextent = 13,
 )
 building_22 = industry.add_sprite(
-    sprite_number = 1830,
+    sprite_number = 1933,
     yoffset = 7,
     yextent = 8,
 )
 building_23 = industry.add_sprite(
-    sprite_number = 1831,
+    sprite_number = 1836,
     xoffset = 8,
     yoffset = 7,
     xextent = 7,
     yextent = 8,
 )
 building_24 = industry.add_sprite(
-    sprite_number = 1830,
+    sprite_number = 1933,
     xoffset = 2,
     yoffset = 2,
     xextent = 13,
     yextent = 13,
 )
 building_25 = industry.add_sprite(
-    sprite_number = 1831,
+    sprite_number = 1836,
     yoffset = 7,
     yextent = 8,
 )
 building_26 = industry.add_sprite(
-    sprite_number = 1830,
+    sprite_number = 1933,
     xoffset = 8,
     yoffset = 7,
     xextent = 7,
     yextent = 8,
 )
 building_27 = industry.add_sprite(
-    sprite_number = 1831,
+    sprite_number = 1836,
     xoffset = 8,
     yoffset = 2,
     xextent = 7,
     yextent = 13,
 )
 building_28 = industry.add_sprite(
-    sprite_number = 1832,
+    sprite_number = 1864,
     xoffset = 8,
     yoffset = 7,
     xextent = 7,
     yextent = 8,
 )
 building_29 = industry.add_sprite(
-    sprite_number = 1832,
+    sprite_number = 1864,
     xoffset = 2,
     yoffset = 2,
     xextent = 13,
     yextent = 13,
 )
 building_30 = industry.add_sprite(
-    sprite_number = 1830,
+    sprite_number = 1933,
     xoffset = 8,
     yoffset = 2,
     xextent = 7,
     yextent = 13,
 )
 building_31 = industry.add_sprite(
-    sprite_number = 1832,
+    sprite_number = 1864,
     yoffset = 7,
     yextent = 8,
 )
