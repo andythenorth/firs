@@ -17,7 +17,7 @@ When a string is expected are basically two choices: provide a string directly, 
 
 industry = Industry(id='coffee_estate',
                     new_ind_msg='TTD_STR_NEWS_INDUSTRY_CONSTRUCTION',
-                    map_colour='55',
+                    map_colour='71',
                     prospect_chance='0.75',
                     name='string(STR_IND_COFFEE_ESTATE)',
                     layouts='[coffee_estate_tilelayout_1, coffee_estate_tilelayout_2, coffee_estate_tilelayout_3, coffee_estate_tilelayout_4]',
