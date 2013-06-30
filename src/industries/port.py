@@ -17,7 +17,7 @@ When a string is expected are basically two choices: provide a string directly, 
 """
 
 industry = Industry(id='port',
-                    accept_cargo_types=['FOOD', 'FRVG', 'BEER'],
+                    accept_cargo_types=['FOOD', 'FRUT', 'BEER'],
                     input_multiplier_1='[0, 0]',
                     input_multiplier_3='[0, 0]',
                     input_multiplier_2='[0, 0]',
@@ -55,12 +55,12 @@ industry.economy_variations['BASIC_ARCTIC'].accept_cargo_types = ['GOOD', 'BEER'
 industry.economy_variations['BASIC_ARCTIC'].prod_cargo_types = ['ENSP', 'CLAY']
 industry.economy_variations['BASIC_ARCTIC'].prod_multiplier = '[7, 14]'
 
-industry.economy_variations['BASIC_TROPIC'].accept_cargo_types = ['FOOD', 'AORE', 'FRVG']
+industry.economy_variations['BASIC_TROPIC'].accept_cargo_types = ['FOOD', 'AORE', 'FRUT']
 industry.economy_variations['BASIC_TROPIC'].prod_cargo_types = ['STEL', 'MNSP']
 industry.economy_variations['BASIC_TROPIC'].prod_multiplier = '[7, 16]'
 
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
-industry.economy_variations['MISTAH_KURTZ'].accept_cargo_types = ['WOOD', 'FICR', 'FRVG']
+industry.economy_variations['MISTAH_KURTZ'].accept_cargo_types = ['WOOD', 'FICR', 'FRUT']
 industry.economy_variations['MISTAH_KURTZ'].prod_cargo_types = ['ENSP', 'MNSP']
 
 industry.add_tile(id='port_tile')

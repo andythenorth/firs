@@ -44,7 +44,7 @@ switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_tile_anim_control, (extra_callba
 item(FEAT_INDUSTRYTILES, ${industry.id}_tile, TILE_BREWERY_1) {
 	property {
 		substitute:         0;
-		accepted_cargos:    [[FRVG, 8], [GRAI, 8], [MNSP, 8]];
+		accepted_cargos:    [[FRUT, 8], [GRAI, 8], [MNSP, 8]];
 		land_shape_flags:   bitmask(LSF_ONLY_ON_FLAT_LAND);
 		special_flags:      bitmask(INDTILE_FLAG_RANDOM_ANIMATION);
 		animation_info:     [ANIMATION_LOOPING, 71];

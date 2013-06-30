@@ -17,7 +17,7 @@ When a string is expected are basically two choices: provide a string directly, 
 """
 
 industry = Industry(id='bulk_terminal',
-                    accept_cargo_types=['FOOD', 'FRVG', 'BEER'],
+                    accept_cargo_types=['FOOD', 'FRUT', 'BEER'],
                     input_multiplier_1='[0, 0]',
                     input_multiplier_3='[0, 0]',
                     input_multiplier_2='[0, 0]',
