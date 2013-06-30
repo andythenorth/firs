@@ -24,7 +24,8 @@ ${industry.get_fence_switches()}
 TILE_DISALLOW_NEARBY_CLASS(tile_nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
 TILE_DISALLOW_STEEP_SLOPE (tile_slope_check, string(STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE), ${industry.id}_tile_nearby_industry)
 TILE_ALLOW_PLAYER         (tile_player_check, ${industry.id}_tile_slope_check)
-TILE_CHECK_HEIGHT         (tile_height_check, 0, snowline_height, ${industry.id}_tile_player_check, return string(STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE))
+TILE_DISALLOW_TERRAIN     (tile_desert_check, TILETYPE_DESERT, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_tile_player_check)
+TILE_CHECK_HEIGHT         (tile_height_check, 0, snowline_height, ${industry.id}_tile_desert_check, return string(STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE))
 TILE_CHECK_WATER          (tile_location_check, string(STR_ERR_LOCATION_NOT_ON_WATER), ${industry.id}_tile_height_check)
 
 item(FEAT_INDUSTRYTILES, ${industry.id}_tile, TILE_FIBRE_CROP_FARM_1) {
@@ -51,9 +52,12 @@ ${industry.get_industry_layouts_as_tilelayouts()}
  * *************************************************/
 
 CHECK_NEARBY_CLUSTER(fibre_crop_farm,     10, 36, 1, 2, return CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
-CHECK_INCOMPATIBLE  (textile_mill,   16, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_fibre_crop_farm)
+<!--! CHECK_INCOMPATIBLE  (textile_mill,   16, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_fibre_crop_farm)
 CHECK_INCOMPATIBLE  (plastics_plant, 16, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_textile_mill)
-CHECK_FOUNDER       (${industry.id}_plastics_plant)
+CHECK_FOUNDER       (${industry.id}_plastics_plant)-->
+
+${utils.echo_message("fibre crop farm location checks disabled")}
+CHECK_FOUNDER       (${industry.id}_fibre_crop_farm)
 
 SWITCH_COLOUR_SCHEME1(${industry.id}_colour)
 

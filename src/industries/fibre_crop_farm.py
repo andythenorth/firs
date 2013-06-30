@@ -45,15 +45,11 @@ industry.economy_variations['MISTAH_KURTZ'].enabled = True
 
 industry.add_tile(id='fibre_crop_farm_tile')
 
-spriteset_ground = industry.add_spriteset(
-    id = 'fibre_crop_farm_spriteset_ground',
-    type = 'empty'
+sprite_ground = industry.add_sprite(
+    sprite_number = 'GROUNDTILE_MUD_TRACKS'
 )
-sprite_ground_mud = industry.add_sprite(
-    sprite_number = 'GROUNDSPRITE_CLEARED'
-)
-spriteset_ground_overlay = industry.add_spriteset(
-    id = 'fibre_crop_farm_spriteset_ground_overlay',
+sprite_ground_overlay = industry.add_spriteset(
+    id = 'fibre_crop_farm_sprite_ground_overlay',
     type = 'empty'
 )
 spriteset_1 = industry.add_spriteset(
@@ -76,109 +72,56 @@ spriteset_4 = industry.add_spriteset(
     sprites = [(220, 10, 64, 52, -31, -21)],
     zextent = 32
 )
-spriteset_5 = industry.add_spriteset(
-    id = 'fibre_crop_farm_spriteset_5',
-    sprites = [(290, 10, 64, 52, -31, -21)],
-    zextent = 32
-)
-spriteset_6 = industry.add_spriteset(
-    id = 'fibre_crop_farm_spriteset_6',
-    sprites = [(360, 10, 64, 52, -31, -21)],
-    zextent = 32
-)
-spriteset_7 = industry.add_spriteset(
-    id = 'fibre_crop_farm_spriteset_7',
-    sprites = [(430, 10, 64, 52, -31, -21)],
-    zextent = 32
-)
-spriteset_8 = industry.add_spriteset(
-    id = 'fibre_crop_farm_spriteset_8',
-    sprites = [(500, 10, 64, 52, -31, -21)],
-    zextent = 32
-)
 
 industry.add_spritelayout(
     id = 'fibre_crop_farm_spritelayout_1',
-    ground_sprite = spriteset_ground,
-    ground_overlay = spriteset_ground_overlay,
+    ground_sprite = sprite_ground,
+    ground_overlay = sprite_ground_overlay,
     building_sprites = [spriteset_1]
 )
 industry.add_spritelayout(
     id = 'fibre_crop_farm_spritelayout_2',
-    ground_sprite = spriteset_ground,
-    ground_overlay = spriteset_ground_overlay,
+    ground_sprite = sprite_ground,
+    ground_overlay = sprite_ground_overlay,
     building_sprites = [spriteset_2],
 )
 industry.add_spritelayout(
     id = 'fibre_crop_farm_spritelayout_3',
-    ground_sprite = sprite_ground_mud,
-    ground_overlay = spriteset_ground_overlay,
+    ground_sprite = sprite_ground,
+    ground_overlay = sprite_ground_overlay,
     building_sprites = [spriteset_3],
 )
 industry.add_spritelayout(
     id = 'fibre_crop_farm_spritelayout_4',
-    ground_sprite = spriteset_ground,
-    ground_overlay = spriteset_ground_overlay,
+    ground_sprite = sprite_ground,
+    ground_overlay = sprite_ground_overlay,
     building_sprites = [spriteset_4],
-)
-industry.add_spritelayout(
-    id = 'fibre_crop_farm_spritelayout_5',
-    ground_sprite = spriteset_ground,
-    ground_overlay = spriteset_ground_overlay,
-    building_sprites = [spriteset_5],
-)
-industry.add_spritelayout(
-    id = 'fibre_crop_farm_spritelayout_6',
-    ground_sprite = spriteset_ground,
-    ground_overlay = spriteset_ground_overlay,
-    building_sprites = [spriteset_6],
-)
-industry.add_spritelayout(
-    id = 'fibre_crop_farm_spritelayout_7',
-    ground_sprite = spriteset_ground,
-    ground_overlay = spriteset_ground_overlay,
-    building_sprites = [spriteset_7],
-)
-industry.add_spritelayout(
-    id = 'fibre_crop_farm_spritelayout_8',
-    ground_sprite = spriteset_ground,
-    ground_overlay = spriteset_ground_overlay,
-    building_sprites = [spriteset_8],
 )
 
 industry.add_industry_layout(
     id = 'fibre_crop_farm_industry_layout_1',
-    layout = [(0, 2, 'fibre_crop_farm_tile', 'fibre_crop_farm_spritelayout_8'),
+    layout = [(0, 2, 'fibre_crop_farm_tile', 'fibre_crop_farm_spritelayout_2'),
               (0, 3, 'fibre_crop_farm_tile', 'fibre_crop_farm_spritelayout_3'),
               (1, 0, 'fibre_crop_farm_tile', 'fibre_crop_farm_spritelayout_2'),
               (2, 0, 'fibre_crop_farm_tile', 'fibre_crop_farm_spritelayout_1'),
-              (2, 2, 'fibre_crop_farm_tile', 'fibre_crop_farm_spritelayout_5'),
-              (2, 3, 'fibre_crop_farm_tile', 'fibre_crop_farm_spritelayout_7'),
-              (3, 2, 'fibre_crop_farm_tile', 'fibre_crop_farm_spritelayout_6'),
-              (3, 3, 'fibre_crop_farm_tile', 'fibre_crop_farm_spritelayout_4'),
+              (2, 2, 'fibre_crop_farm_tile', 'fibre_crop_farm_spritelayout_4'),
     ]
 )
 industry.add_industry_layout(
     id = 'fibre_crop_farm_industry_layout_2',
     layout = [(0, 0, 'fibre_crop_farm_tile', 'fibre_crop_farm_spritelayout_4'),
-              (0, 2, 'fibre_crop_farm_tile', 'fibre_crop_farm_spritelayout_7'),
-              (0, 3, 'fibre_crop_farm_tile', 'fibre_crop_farm_spritelayout_6'),
-              (1, 0, 'fibre_crop_farm_tile', 'fibre_crop_farm_spritelayout_5'),
-              (1, 3, 'fibre_crop_farm_tile', 'fibre_crop_farm_spritelayout_1'),
-              (2, 0, 'fibre_crop_farm_tile', 'fibre_crop_farm_spritelayout_8'),
+              (0, 2, 'fibre_crop_farm_tile', 'fibre_crop_farm_spritelayout_2'),
+              (1, 1, 'fibre_crop_farm_tile', 'fibre_crop_farm_spritelayout_1'),
+              (2, 0, 'fibre_crop_farm_tile', 'fibre_crop_farm_spritelayout_2'),
               (2, 1, 'fibre_crop_farm_tile', 'fibre_crop_farm_spritelayout_3'),
-              (2, 2, 'fibre_crop_farm_tile', 'fibre_crop_farm_spritelayout_2'),
     ]
 )
 industry.add_industry_layout(
     id = 'fibre_crop_farm_industry_layout_3',
-    layout = [(0, 0, 'fibre_crop_farm_tile', 'fibre_crop_farm_spritelayout_8'),
+    layout = [(0, 0, 'fibre_crop_farm_tile', 'fibre_crop_farm_spritelayout_2'),
               (0, 1, 'fibre_crop_farm_tile', 'fibre_crop_farm_spritelayout_1'),
-              (0, 2, 'fibre_crop_farm_tile', 'fibre_crop_farm_spritelayout_5'),
               (1, 0, 'fibre_crop_farm_tile', 'fibre_crop_farm_spritelayout_2'),
               (1, 2, 'fibre_crop_farm_tile', 'fibre_crop_farm_spritelayout_3'),
-              (2, 0, 'fibre_crop_farm_tile', 'fibre_crop_farm_spritelayout_7'),
-              (3, 0, 'fibre_crop_farm_tile', 'fibre_crop_farm_spritelayout_4'),
-              (3, 2, 'fibre_crop_farm_tile', 'fibre_crop_farm_spritelayout_6'),
+              (2, 0, 'fibre_crop_farm_tile', 'fibre_crop_farm_spritelayout_4'),
     ]
 )
