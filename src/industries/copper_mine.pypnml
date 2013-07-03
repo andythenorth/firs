@@ -64,9 +64,6 @@ ${industry.get_industry_layouts_as_tilelayouts()}
  * Definition of the industry
  * *************************************************/
 
-/* availability years */
-#define THIS_MIN_YEAR 1923
-
 CHECK_NEARBY_CLUSTER(copper_mine,    20, 40, 2, 3, return CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
 CHECK_FOUNDER       (${industry.id}_copper_mine)
 
@@ -88,7 +85,6 @@ item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
         random_prod_change:      return CB_RESULT_IND_PROD_NO_CHANGE;
 		build_prod_change:       randomise_primary_production_on_build;
 		extra_text_industry:     ${industry.id}_extra_text;
-		extra_text_fund:         return string(STR_FUND_AVAILABLE_FROM, THIS_MIN_YEAR);
 		colour:                  ${industry.id}_colour;
 	}
 }
