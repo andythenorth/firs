@@ -1,7 +1,7 @@
 ##grflangid 0x1F
 ##plural 0
 
-STR_GRF_DESC                                                                    :{ORANGE}FIRS Industry Replacement Set{}{BLACK}Door andythenorth, FooBar, planetmaker, Terkhen en Yexo met hulp van vele anderen. {SILVER}Lees de 'readme' voor meer informatie, inclusief hoe je FIRS kunt gebruiken. {BLACK}Licentie: GPL V2.
+STR_GRF_DESC                                                                    :{ORANGE}FIRS Industry Replacement Set{}{BLACK}Gemaakt door andythenorth, FooBar, planetmaker, Terkhen en Yexo met hulp van vele anderen. {SILVER}Lees de 'readme' voor meer informatie, inclusief hoe je FIRS kunt gebruiken. {BLACK}Licentie: GPL V2.
 STR_GRF_NAME                                                                    :{TITLE}
 STR_GRF_URL                                                                     :http://bundles.openttdcoop.org/firs/releases/LATEST/docs/
 
@@ -26,6 +26,7 @@ STR_PARAM_VALUE_ECONOMIES_BASIC_TEMPERATE                                       
 STR_PARAM_VALUE_ECONOMIES_BASIC_ARCTIC                                          :Basiseconomie voor het subarctisch klimaat
 STR_PARAM_VALUE_ECONOMIES_BASIC_TROPIC                                          :Basiseconomie voor het subtropisch klimaat
 STR_PARAM_VALUE_ECONOMIES_FIRS                                                  :FIRS economie
+STR_PARAM_VALUE_ECONOMIES_MISTAH_KURTZ                                          :Heart of Darkness
 STR_PARAM_VALUE_ECONOMIES_TEST_3                                                :Testeconomie 3
 
 STR_CARGO_NAME_ALCOHOL                                                          :Alcohol
@@ -33,6 +34,7 @@ STR_CARGO_NAME_BAUXITE                                                          
 STR_CARGO_NAME_BUILDING_MATERIALS                                               :Bouwmaterialen
 STR_CARGO_NAME_CHEMICALS                                                        :Chemicaliën
 STR_CARGO_NAME_CLAY                                                             :Klei
+STR_CARGO_NAME_COFFEE                                                           :Koffie
 STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :Constructiematerialen
 STR_CARGO_NAME_FIBRES                                                           :Katoen
 STR_CARGO_NAME_FISH                                                             :Vis
@@ -56,6 +58,7 @@ STR_CARGO_UNIT_BAUXITE                                                          
 STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WEIGHT} bouwmaterialen
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} chemicaliën
 STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} klei
+STR_CARGO_UNIT_COFFEE                                                           :{SIGNED_WORD} zak{P 0 "" ken} koffie
 STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} krat{P 0 "" ten} constructiematerialen
 STR_CARGO_UNIT_FIBRES                                                           :{SIGNED_WORD} ba{P 0 al len} katoen
 STR_CARGO_UNIT_FISH                                                             :{WEIGHT} vis
@@ -157,10 +160,14 @@ STR_GENERIC_NEWLINE                                                             
 STR_FUND_BASIC_FARM                                                             :{}{BLACK}Plaats: {YELLOW}Kan niet boven de sneeuwgrens of in woestijnen gebouwd worden.
 STR_FUND_MIXED_FARM                                                             :{}{BLACK}Plaats: {YELLOW}Kan niet boven de sneeuwgrens of in woestijnen gebouwd worden.
 STR_FUND_ARABLE_FARM                                                            :{}{BLACK}Plaats: {YELLOW}Kan niet boven de sneeuwgrens of in woestijnen gebouwd worden.
+STR_FUND_COFFEE_ESTATE                                                          :{}{BLACK}Plaats: {YELLOW}Kan niet boven de sneeuwgrens of in woestijnen gebouwd worden.
 STR_FUND_ORCHARD_PIGGERY                                                        :{}{BLACK}Plaats: {YELLOW}Kan niet boven de sneeuwgrens of in woestijnen gebouwd worden.
 STR_FUND_SUGAR_PLANTATION                                                       :{}{BLACK}Plaats: {YELLOW}Kan niet boven de sneeuwgrens of in woestijnen gebouwd worden.
+STR_FUND_FIBRE_CROP_FARM                                                        :{}{BLACK}Plaats: {YELLOW}Kan niet boven de sneeuwgrens of in woestijnen gebouwd worden.
 STR_FUND_FOREST                                                                 :{}{BLACK}Plaats: {YELLOW}Kan niet in woestijnen gebouwd worden.
 STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}Plaats: {YELLOW}Kan niet boven de sneeuwgrens gebouwd worden.
+STR_FUND_RUBBER_PLANTATION                                                      :{}{BLACK}Plaats: {YELLOW}Kan niet boven de sneeuwgrens of in woestijnen gebouwd worden.
+
 
 STR_FUND_AVAILABLE_FROM                                                         :{}{BLACK}Beschikbaar vanaf: {YELLOW}{COMMA}
 
@@ -179,8 +186,11 @@ STR_IND_BREWERY                                                                 
 STR_IND_BREWERY_CIDER_MILL                                                      :Fruitbierbrouwerij
 STR_IND_BRICK_WORKS                                                             :Steenfabriek
 STR_IND_BUILDERS_YARD                                                           :Aannemeropslagplaats
+STR_IND_BULK_TERMINAL                                                           :Bulk overslag terminal
 STR_IND_CEMENT_PLANT                                                            :Cementfabriek
 STR_IND_CLAY_PIT                                                                :Kleiwinning
+STR_IND_COFFEE_ESTATE                                                           :Koffieplantage
+STR_IND_FIBRE_CROP_FARM                                                         :Vlasboerderij
 STR_IND_DAIRY                                                                   :Zuivelfabriek
 STR_IND_DAIRYFARM                                                               :Melkveehouderij
 STR_IND_DREDGING_SITE                                                           :Baggermolen
@@ -217,3 +227,5 @@ STR_IND_SUGAR_PLANTATION                                                        
 STR_IND_SUGAR_REFINERY                                                          :Suikerfabriek
 STR_IND_SUPERMARKET                                                             :Supermarkt
 STR_IND_TEXTILE_MILL                                                            :Textielfabriek
+STR_IND_TRADING_POST                                                            :Handelspost
+
