@@ -16,9 +16,9 @@ cargo = Cargo(id = 'sugar',
               town_growth_multiplier = '1.0',
               units_of_cargo = '94',
               items_of_cargo = 'TTD_STR_QUANTITY_SUGAR',
-              penalty_lowerbound = '0',
-              single_penalty_length = '24',
-              price_factor = '149.803161621',
+              penalty_lowerbound = '4',
+              single_penalty_length = '27',
+              price_factor = '142',
               capacity_multiplier = '1',
               icon_indices = (12, 0))
 
