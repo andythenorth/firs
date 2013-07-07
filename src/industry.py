@@ -305,11 +305,20 @@ class Industry(object):
         else:
             return property_name + ': ' + value + ';'
 
+    def horrid_cargo_list_magic(self, cargo_list):
+        # magic to deal with special cases in cargo lists
+        return cargo_list
+        # SGBT + SGCN should both be defined when accepted or produced, which can result in an invalid property (too many entries)
+
     def get_accept_cargo_types(self, economy):
-        return '[' + ','.join(self.get_property('accept_cargo_types', economy)) + ']'
+        accept_cargo_types = self.get_property('accept_cargo_types', economy)
+        accept_cargo_types = self.horrid_cargo_list_magic(accept_cargo_types) # pass the cargos through horrid magic
+        return '[' + ','.join(accept_cargo_types) + ']'
 
     def get_prod_cargo_types(self, economy):
-        return '[' + ','.join(self.get_property('prod_cargo_types', economy)) + ']'
+        prod_cargo_types = self.get_property('prod_cargo_types', economy)
+        prod_cargo_types = self.horrid_cargo_list_magic(prod_cargo_types) # pass the cargos through horrid magic
+        return '[' + ','.join(prod_cargo_types) + ']'
 
     def get_conditional_expressions_for_enabled_economies(self):
         # returns a string that can be used as the conditions in nml if() blocks for economy stuff
