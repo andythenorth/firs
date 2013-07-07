@@ -63,7 +63,7 @@ ${industry.get_industry_properties()}
 
 if (${industry.get_conditional_expressions_for_enabled_economies()}) {
    item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
-        /* Economy specific cargo */
+        /* Climate specific cargo */
         INDUSTRY_OUTPUT_CARGO_2(ENABLE_SUGARCANE && ENABLE_GRAIN, GRAI, SGCN)
     }
 }
