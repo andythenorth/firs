@@ -305,6 +305,12 @@ class Industry(object):
         else:
             return property_name + ': ' + value + ';'
 
+    def get_accept_cargo_types(self, economy):
+        return '[' + ','.join(self.get_property('accept_cargo_types', economy)) + ']'
+
+    def get_prod_cargo_types(self, economy):
+        return '[' + ','.join(self.get_property('prod_cargo_types', economy)) + ']'
+
     def get_conditional_expressions_for_enabled_economies(self):
         # returns a string that can be used as the conditions in nml if() blocks for economy stuff
         enabled_economies = []
