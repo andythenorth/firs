@@ -26,6 +26,7 @@ industry = Industry(id='steel_mill',
                     substitute='8',
                     map_colour='9',
                     fund_cost_multiplier='200',
+                    nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_IND_MILLS))',
                     name='TTD_STR_INDUSTRY_NAME_STEEL_MILL',
                     override='8',
                     extra_text_industry='STR_EXTRA_STEELMILL')
