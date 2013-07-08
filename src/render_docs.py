@@ -40,6 +40,7 @@ docs_templates = PageTemplateLoader(os.path.join(currentdir, 'docs_src'), format
 
 import global_constants as global_constants
 import utils as utils
+import markdown
 
 # get args passed by makefile
 repo_vars = utils.get_repo_vars(sys)
@@ -179,17 +180,19 @@ class DocHelper(object):
         return ('','active')[doc_name == nav_link]
 
 
-def render_docs(doc_list, file_type):
+def render_docs(doc_list, file_type, use_markdown=False):
     for doc_name in doc_list:
         template = docs_templates[doc_name + '.pt'] # .pt is the conventional extension for chameleon page templates
         doc = template(registered_cargos=registered_cargos, registered_industries=registered_industries,
                               economy_schemas=economy_schemas, global_constants=global_constants, repo_vars=repo_vars,
                               metadata=metadata, utils=utils, doc_helper=DocHelper(), doc_name=doc_name)
-        # save the results of templating
+        if use_markdown:
+            doc = markdown.markdown(doc) # the template might be in markdown format
         if file_type == 'html':
             subdir = 'html'
         else:
             subdir = ''
+        # save the results of templating
         doc_file = codecs.open(os.path.join(docs_output_path, subdir, doc_name + '.' + file_type), 'w','utf8')
         doc_file.write(doc)
         doc_file.close()
@@ -203,7 +206,13 @@ for economy in global_constants.economies:
 
 # render standard docs from a list
 html_docs = ['get_started', 'code_reference','economies', 'cargos', 'industries', 'translations']
-txt_docs = ['changelog', 'license', 'readme', 'test_docs']
+txt_docs = ['license', 'readme', 'test_docs']
+markdown_docs = ['changelog']
 
 render_docs(html_docs, 'html')
 render_docs(txt_docs, 'txt')
+
+# just render the markdown docs twice to get txt and html versions, simples no?
+render_docs(markdown_docs, 'txt')
+render_docs(markdown_docs, 'html', use_markdown=True)
+
