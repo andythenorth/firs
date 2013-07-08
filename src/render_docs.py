@@ -214,7 +214,6 @@ markdown_docs = ['changelog']
 
 render_docs(html_docs, 'html')
 render_docs(txt_docs, 'txt')
-
 # just render the markdown docs twice to get txt and html versions, simples no?
 render_docs(markdown_docs, 'txt')
 render_docs(markdown_docs, 'html', use_markdown=True)
