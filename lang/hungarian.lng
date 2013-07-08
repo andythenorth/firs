@@ -23,10 +23,11 @@ STR_PARAM_VALUE_STAT_RATING_DEFAULT                                             
 STR_PARAM_VALUE_STAT_RATING_REDUCED_TIME                                        :Kedvező (nagyobb időközöket enged meg a szállítások között)
 STR_PARAM_VALUE_STAT_RATING_100                                                 :Hihetetlenül nagyvonalú (a vélemény mindig 100%)
 
-STR_PARAM_VALUE_ECONOMIES_BASIC_TEMPERATE                                       :Alap mérsékelt égövi gazdaság
-STR_PARAM_VALUE_ECONOMIES_BASIC_ARCTIC                                          :Alap szubarktikus gazdaság
-STR_PARAM_VALUE_ECONOMIES_BASIC_TROPIC                                          :Alap szubtrópusi gazdaság
-STR_PARAM_VALUE_ECONOMIES_FIRS                                                  :FIRS gazdaság
+STR_PARAM_VALUE_ECONOMIES_BASIC_TEMPERATE                                       :Alap mérsékelt égövi
+STR_PARAM_VALUE_ECONOMIES_BASIC_ARCTIC                                          :Alap szubarktikus
+STR_PARAM_VALUE_ECONOMIES_BASIC_TROPIC                                          :Alap szubtrópusi
+STR_PARAM_VALUE_ECONOMIES_FIRS                                                  :FIRS
+STR_PARAM_VALUE_ECONOMIES_MISTAH_KURTZ                                          :A sötétség mélyén
 STR_PARAM_VALUE_ECONOMIES_TEST_3                                                :Teszt gazdaság 3
 
 STR_CARGO_NAME_ALCOHOL                                                          :Szeszes ital
@@ -39,10 +40,12 @@ STR_CARGO_NAME_CHEMICALS                                                        
 STR_CARGO_NAME_CHEMICALS.t                                                      :vegyszert
 STR_CARGO_NAME_CLAY                                                             :Agyag
 STR_CARGO_NAME_CLAY.t                                                           :agyagot
+STR_CARGO_NAME_COFFEE                                                           :Kávé
+STR_CARGO_NAME_COFFEE.t                                                         :kávét
 STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :Ipari segédeszközök
 STR_CARGO_NAME_ENGINEERING_SUPPLIES.t                                           :ipari segédeszközöket
-STR_CARGO_NAME_FIBRES                                                           :Növényi rost
-STR_CARGO_NAME_FIBRES.t                                                         :növényi rostot
+STR_CARGO_NAME_FIBRES                                                           :Rostnövény
+STR_CARGO_NAME_FIBRES.t                                                         :rostnövényt
 STR_CARGO_NAME_FISH                                                             :Hal
 STR_CARGO_NAME_FISH.t                                                           :halat
 STR_CARGO_NAME_FARM_SUPPLIES                                                    :Mezőgazdasági felszerelés
@@ -79,8 +82,9 @@ STR_CARGO_UNIT_BAUXITE                                                          
 STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WEIGHT} építőanyag
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} vegyszer
 STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} agyag
+STR_CARGO_UNIT_COFFEE                                                           :{SIGNED_WORD} zsák kávé
 STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} láda ipari segédeszköz
-STR_CARGO_UNIT_FIBRES                                                           :{SIGNED_WORD} bála növényi rost
+STR_CARGO_UNIT_FIBRES                                                           :{SIGNED_WORD} bála rostnövény
 STR_CARGO_UNIT_FISH                                                             :{WEIGHT} hal
 STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} láda mezőgazdasági felszerelés
 STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} gyümölcs
@@ -95,16 +99,17 @@ STR_CARGO_UNIT_SCRAP_METAL                                                      
 STR_CARGO_UNIT_STONE                                                            :{WEIGHT} kő
 STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} cukorrépa
 STR_CARGO_UNIT_SUGARCANE                                                        :{WEIGHT} cukornád
-STR_CARGO_UNIT_WOOL                                                              :{SIGNED_WORD} bála gyapjú
+STR_CARGO_UNIT_WOOL                                                             :{SIGNED_WORD} bála gyapjú
 
 STR_CID_ALCOHOL                                                                 :{TINYFONT}IT
 STR_CID_BAUXITE                                                                 :{TINYFONT}BX
 STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}ÉA
 STR_CID_CHEMICALS                                                               :{TINYFONT}VS
 STR_CID_CLAY                                                                    :{TINYFONT}AG
+STR_CID_COFFEE                                                                  :{TINYFONT}KV
 STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}IS
 STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}MF
-STR_CID_FIBRES                                                                  :{TINYFONT}NR
+STR_CID_FIBRES                                                                  :{TINYFONT}RN
 STR_CID_FISH                                                                    :{TINYFONT}HL
 STR_CID_LUMBER                                                                  :{TINYFONT}FÜ
 STR_CID_MANUFACTURING_SUPPLIES                                                  :{TINYFONT}GS
@@ -152,11 +157,11 @@ STR_EXTRA_MACHINE_SHOP                                                          
 STR_EXTRA_MEAT_PACKER                                                           :{BLACK}Termelés:{}  3 tonna termelés 8 láda gyártási segédeszköz szállítása esetén{}  5 tonna termelés 8 állat szállítása esetén{}{}A termelés megnő, ha mindkét rakományból érkezik szállítmány egy hónapon belül.
 STR_EXTRA_METAL_FABRICATION_PLANT                                               :{BLACK}Festett fémalkatrészeket gyárt.{}{}{BLACK}Termelés:{}  2 tonna termelés 8.000 liter vegyszer szállítása esetén{}  6 tonna termelés 8 tonna fém szállítása esetén{}{}A termelés megnő, ha mindkét rakományból érkezik szállítmány egy hónapon belül.
 STR_EXTRA_METAL_FOUNDRY                                                         :{BLACK}Fémeszközöket, például konzervdobozokat és háztartási segédeszközöket gyárt.{}{}{BLACK}Termelés:{}  2 láda termelés 8.000 liter vegyszer szállítása esetén{}  6 láda termelés 8 tonna fém szállítása esetén{}{}A termelés megnő, ha mindkét rakományból érkezik szállítmány egy hónapon belül.
-STR_EXTRA_OIL_REFINERY                                                          :{BLACK}Feldolgozza a nyersolajat, üzemanyagot és vegyszereket állít elő.{}{}{BLACK}Termelés:{}  6.000 liter termelés 8.0000 liter olaj szállítása esetén.
+STR_EXTRA_OIL_REFINERY                                                          :{BLACK}Feldolgozza a nyersolajat, üzemanyagot és vegyszereket állít elő.{}{}{BLACK}Termelés:{}  6.000 liter termelés 8.000 liter olaj szállítása esetén.
 STR_EXTRA_PAPER_MILL                                                            :{BLACK}Fát aprít, hogy papírt és kartont gyártson.{}{}{BLACK}Termelés:{}  4 láda termelés 8 tonna fa szállítása esetén{}  2 láda termelés 8 tonna agyag szállítása esetén{}  2 láda termelés 8.000 liter vegyszer szállítása esetén{}{}A termelés megnő, ha legalább két különféle rakományból érkezik szállítmány egy hónapon belül.
 STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}Műanyag termékeket, például csomagolásokat és háztartási cikkeket gyárt.{}{}{BLACK}Termelés:{} {STRING} {STRING}
 STR_EXTRA_PLASTICS_PLANT_CHEMICALS_SUBSTR                                       :6 láda termelés 8.000 liter vegyszer szállítása esetén{}
-STR_EXTRA_PLASTICS_PLANT_PLANT_FIBRES_SUBSTR                                    :6 láda termelés 8 bála növényi rost szállítása esetén{}
+STR_EXTRA_PLASTICS_PLANT_PLANT_FIBRES_SUBSTR                                    :6 láda termelés 8 bála rostnövény szállítása esetén{}
 STR_EXTRA_RECYCLING_PLANT                                                       :{BLACK}Újrahasznosítható termékeket dolgoz fel, hogy azok alkalmasak legyenek ipari felhasználásra.{}{}{BLACK}Termelés:{}  6 tonna termelés 8 tonna újrahasznosítható áru szállítása esetén.
 STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}Úrjahasznosítható termékeket termel a település méretével arányosan.
 STR_EXTRA_SAWMILL                                                               :{BLACK}Feldolgozza a kivágott fákat.{}{}{BLACK}Termelés:{}  6 tonna termelés 8 tonna fa szállítása esetén.
@@ -165,7 +170,7 @@ STR_EXTRA_STEELMILL                                                             
 STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Termelés:{}  3 tonna termelés 8 láda gyártási segédeszköz szállítása esetén{}  5 tonna termelés 8 tonna cukornád szállítása esetén{}{}A termelés megnő, ha legalább két különféle rakományból érkezik szállítmány egy hónapon belül.
 STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Termelés:{}  3 láda termelés 8 láda gyártási segédeszköz szállítása esetén{} {STRING} {STRING} {}A termelés megnő, ha szállítmány érkezik gyártási segédeszközökből és egy másik rakományból egy hónapon belül.
 STR_EXTRA_TEXTILE_MILL_WOOL_SUBSTR                                              :5 láda termelés 8 bála gyapjú szállítása esetén{}
-STR_EXTRA_TEXTILE_MILL_PLANT_FIBRES_SUBSTR                                      :5 láda termelés 8 bála növényi rost szállítása esetén{}
+STR_EXTRA_TEXTILE_MILL_PLANT_FIBRES_SUBSTR                                      :5 láda termelés 8 bála rostnövény szállítása esetén{}
 
 STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ DEBUG ------------{}Termelés ebben a hónapban:{}1. rakomány: {WHITE}{COMMA}{BLACK}{}2. rakomány: {WHITE}{COMMA}{BLACK}{}Eltelt napok az utolsó szállítmány óta: {WHITE}{COMMA}{BLACK}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Elérte a maximális termelést
@@ -180,10 +185,13 @@ STR_GENERIC_NEWLINE                                                             
 STR_FUND_BASIC_FARM                                                             :{}{BLACK}Helyszín: {YELLOW}Nem építhető havas területen és sivatagban.
 STR_FUND_MIXED_FARM                                                             :{}{BLACK}Helyszín: {YELLOW}Nem építhető havas területen és sivatagban.
 STR_FUND_ARABLE_FARM                                                            :{}{BLACK}Helyszín: {YELLOW}Nem építhető havas területen és sivatagban.
+STR_FUND_COFFEE_ESTATE                                                          :{}{BLACK}Helyszín: {YELLOW}Nem építhető havas területen és sivatagban.
 STR_FUND_ORCHARD_PIGGERY                                                        :{}{BLACK}Helyszín: {YELLOW}Nem építhető havas területen és sivatagban.
 STR_FUND_SUGAR_PLANTATION                                                       :{}{BLACK}Helyszín: {YELLOW}Nem építhető havas területen és sivatagban.
+STR_FUND_FIBRE_CROP_FARM                                                        :{}{BLACK}Helyszín: {YELLOW}Nem építhető havas területen és sivatagban.
 STR_FUND_FOREST                                                                 :{}{BLACK}Helyszín: {YELLOW}Nem építhető siatagban.
 STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}Helyszín: {YELLOW}Nem építhető havas területen.
+STR_FUND_RUBBER_PLANTATION                                                      :{}{BLACK}Helyszín: {YELLOW}Nem építhető havas területen és sivatagban.
 
 STR_FUND_AVAILABLE_FROM                                                         :{}{BLACK}Elérhető {YELLOW}{COMMA} {BLACK}után
 STR_FUND_AVAILABLE_UNTIL                                                        :{}{BLACK}Nem elérhető {YELLOW}{COMMA} {BLACK}után
@@ -209,10 +217,16 @@ STR_IND_BRICK_WORKS                                                             
 STR_IND_BRICK_WORKS.t                                                           :téglagyárat
 STR_IND_BUILDERS_YARD                                                           :Építkezés
 STR_IND_BUILDERS_YARD.t                                                         :építkezési területet
+STR_IND_BULK_TERMINAL                                                           :Tömegáru-rakodó
+STR_IND_BULK_TERMINAL.t                                                         :tömegáru-rakodót
 STR_IND_CEMENT_PLANT                                                            :Cementgyár
 STR_IND_CEMENT_PLANT.t                                                          :cementgyárat
 STR_IND_CLAY_PIT                                                                :Agyagbánya
 STR_IND_CLAY_PIT.t                                                              :agyagbányát
+STR_IND_COFFEE_ESTATE                                                           :Kávéültetvény
+STR_IND_COFFEE_ESTATE.t                                                         :kávéültetvényt
+STR_IND_FIBRE_CROP_FARM                                                         :Rostnövény farm
+STR_IND_FIBRE_CROP_FARM.t                                                       :rostnövény farmot
 STR_IND_DAIRY                                                                   :Tejüzem
 STR_IND_DAIRY.t                                                                 :tejüzemet
 STR_IND_DAIRYFARM                                                               :Tehenészet
@@ -285,3 +299,5 @@ STR_IND_SUPERMARKET                                                             
 STR_IND_SUPERMARKET.t                                                           :szupermarketet
 STR_IND_TEXTILE_MILL                                                            :Textilüzem
 STR_IND_TEXTILE_MILL.t                                                          :textilüzemet
+STR_IND_TRADING_POST                                                            :Kereskedelmi állomás
+STR_IND_TRADING_POST.t                                                          :kereskedelmi állomást
