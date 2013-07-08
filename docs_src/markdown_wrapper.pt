@@ -1,0 +1,10 @@
+<tal:main_template define="main_template load: main_template.pt" metal:use-macro="main_template">
+
+<div metal:fill-slot='sidebar_nav'>
+</div>
+
+<div metal:fill-slot='body'>
+    ${structure: content}
+</div>
+</tal:main_template>
+
