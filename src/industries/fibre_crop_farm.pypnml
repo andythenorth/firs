@@ -52,12 +52,9 @@ ${industry.get_industry_layouts_as_tilelayouts()}
  * *************************************************/
 
 CHECK_NEARBY_CLUSTER(fibre_crop_farm,     10, 36, 1, 2, return CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
-<!--! CHECK_INCOMPATIBLE  (textile_mill,   16, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_fibre_crop_farm)
+CHECK_INCOMPATIBLE  (textile_mill,   16, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_fibre_crop_farm)
 CHECK_INCOMPATIBLE  (plastics_plant, 16, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_textile_mill)
-CHECK_FOUNDER       (${industry.id}_plastics_plant)-->
-
-${utils.echo_message("fibre crop farm location checks disabled")}
-CHECK_FOUNDER       (${industry.id}_fibre_crop_farm)
+CHECK_FOUNDER       (${industry.id}_plastics_plant)
 
 SWITCH_COLOUR_SCHEME1(${industry.id}_colour)
 
