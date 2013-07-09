@@ -26,6 +26,7 @@ industry = Industry(id='iron_ore_mine',
                     prod_cargo_types=['IORE'],
                     substitute='18',
                     name='TTD_STR_INDUSTRY_NAME_IRON_ORE_MINE',
+                    nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_MINE))',
                     fund_cost_multiplier='232',
                     )
 

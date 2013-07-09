@@ -36,7 +36,7 @@ industry = Industry(id='fishing_grounds',
                     remove_cost_multiplier='0',
                     prospect_chance='0.75',
                     name='string(STR_IND_FISHING_GROUND)',
-                    nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_IND_FISHING_GROUND))',
+                    nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_WATER))',
                     fund_cost_multiplier='88',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
                     )

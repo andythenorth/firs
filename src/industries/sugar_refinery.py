@@ -36,7 +36,7 @@ industry = Industry(id='sugar_refinery',
                     remove_cost_multiplier='0',
                     prospect_chance='0.75',
                     name='string(STR_IND_SUGAR_REFINERY)',
-                    nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_IND_SUGAR_REFINERY))',
+                    nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_REFINERY))',
                     fund_cost_multiplier='140',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
                     extra_text_industry='STR_EXTRA_SUGAR_REFINERY')

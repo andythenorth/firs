@@ -36,6 +36,7 @@ industry = Industry(id='copper_mine',
                     remove_cost_multiplier='0',
                     prospect_chance='0.75',
                     name='TTD_STR_INDUSTRY_NAME_COPPER_ORE_MINE',
+                    nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_MINE))',
                     fund_cost_multiplier='238',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
                     )

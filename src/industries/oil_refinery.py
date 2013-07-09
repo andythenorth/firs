@@ -28,6 +28,7 @@ industry = Industry(id='oil_refinery',
                     map_colour='191',
                     fund_cost_multiplier='200',
                     name='TTD_STR_INDUSTRY_NAME_OIL_REFINERY',
+                    nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_REFINERY))',
                     override='4',
                     extra_text_industry='STR_EXTRA_OIL_REFINERY')
 
