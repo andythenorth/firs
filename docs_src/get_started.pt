@@ -8,6 +8,7 @@
                 <li><a href="#setting-up">Setting up a Game with FIRS</a></li>
                 <li><a href="#firs-gameplay">FIRS Gameplay</a></li>
                 <li><a href="#what-next">What Next?</a></li>
+                <li><a href="#firs-changes">FIRS Changes</a></li>
             </ul>
         </div>
         <div class="span9">
@@ -48,7 +49,6 @@
                         <a class="btn" href="${metadata['repo_url']}">FIRS Source Repo</a>
                     </div>
                 </div>
-                <p style="margin-top:2em;">&#187; <a href="changelog.html">Changelog for latest FIRS release</a></p>
             </div>
             <br />
             <hr />
@@ -114,6 +114,13 @@
                 <a class="btn btn-large btn-primary" href="cargos.html">FIRS Cargos</a>
                 <a class="btn btn-large btn-primary" href="industries.html">FIRS Industries</a>
                 <a class="btn btn-large" href="code_reference.html">Code Reference</a>
+            </div>
+            <hr />
+            <br />
+            <div id="firs-changes">
+                <h2>5. Changes in FIRS</h2>
+                <p class="lead">FIRS is updated and improved quite often.</p>
+                <p>The <a href="changelog.html"><strong>FIRS changelog</strong></a> keeps track of changes, including new features, bug fixes and updates to translations.</p>
             </div>
             <br />
             <br />
