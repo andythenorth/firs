@@ -308,13 +308,16 @@ class Industry(object):
     def cargo_list_sugar_magic(self, cargo_list):
         # magic to deal with special cases in cargo lists - clean up the list returned to templates etc
         # SGBT + SGCN should both be defined when accepted or produced, they are climate sensitive
-        if "SGBT" in cargo_list and "SGCN" not in cargo_list:
-            utils.echo_message("SGCN missing, SGBT present for " + self.id)
-        if "SGCN" in cargo_list and "SGBT" not in cargo_list:
-            utils.echo_message("SGBT missing, SGCN present for " + self.id)
-        # SGCN and SGBT are special-cased in industry templates where needed
-        # we want both defined, but nml industry properties (action 0) should only set SGBT (otherwise too many cargos can be set - invalid nml)
-        return [cargo for cargo in cargo_list if cargo is not "SGCN"]
+        if len(cargo_list) > 2:
+            if "SGBT" in cargo_list and "SGCN" not in cargo_list:
+                utils.echo_message("SGCN missing, SGBT present for " + self.id)
+            if "SGCN" in cargo_list and "SGBT" not in cargo_list:
+                utils.echo_message("SGBT missing, SGCN present for " + self.id)
+            # SGCN and SGBT are special-cased in industry templates where needed
+            # we want both defined, but nml industry properties (action 0) should only set SGBT (otherwise too many cargos can be set - invalid nml)
+            return [cargo for cargo in cargo_list if cargo is not "SGCN"]
+        else:
+            return cargo_list
 
     def get_accept_cargo_types(self, economy):
         # ! don't call this when rendering docs, the sugar magic causes unwanted results
