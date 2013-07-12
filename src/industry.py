@@ -320,9 +320,7 @@ class Industry(object):
             return cargo_list
 
     def get_accept_cargo_types(self, economy):
-        # ! don't call this when rendering docs, the sugar magic causes unwanted results
         accept_cargo_types = self.get_property('accept_cargo_types', economy)
-        accept_cargo_types = self.cargo_list_sugar_magic(accept_cargo_types) # pass the cargos through horrid magic
         return '[' + ','.join(accept_cargo_types) + ']'
 
     def get_prod_cargo_types(self, economy):
