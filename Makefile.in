@@ -5,30 +5,26 @@
 # See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with NML build framework. If not, see <http://www.gnu.org/licenses/>.
 #
 
-.PHONY: preprocesspy
+.PHONY: firs-pnml
 
-################################################################
-# NML-specific targets and rules
-################################################################
+GENERATE_PNML = firs-pnml
 
-nml: preprocesspy
-	$(_E) "[CPP] $(NML_FILE)"
-	$(_E) "Use TEST_INDUSTRY=industry_name for faster compiles when developing"
-	$(_V) $(CC) -D REPO_REVISION=$(REPO_REVISION) -D TEST_INDUSTRY=$(TEST_INDUSTRY) $(CC_FLAGS) $(MAIN_SRC_FILE) > $(NML_FILE)
+CC_FLAGS ?= -D TEST_INDUSTRY=$(TEST_INDUSTRY) -C -E -nostdinc -x c-header
 
-preprocesspy:
-	mkdir -p generated_pnml
-	$(_V)-touch generated_pnml/_files_here_are_generated.txt
-	python scripts/preprocess.py '${REPO_TITLE}' '${REPO_REVISION}' '${TEST_INDUSTRY}'
+firs-pnml:
+	$(_E) [GENERATE PNML]
+	$(_V) mkdir -p generated_pnml
+	$(_V) touch generated_pnml/_files_here_are_generated.txt
+	$(_V) python scripts/preprocess.py '${REPO_TITLE}' '${REPO_REVISION}' '${TEST_INDUSTRY}'
+	# HUGE hack to use as much default as possible here
+	# TODO: Adjust generation scripts accordingly
+	$(_V) mv generated_pnml/master_control_program.pnml fish.pnml
 
 ################################################################
 # Definitions which extend the common rules
 ################################################################
 clean::
-	$(_E) "[CLEAN NML]"
+	$(_E) "[CLEAN PNML]"
 	$(_V)-rm -rf $(NML_FILE)
 	$(_V)-rm -r chameleon_cache
 	$(_V)-rm -r generated_pnml
-
-test::
-	$(_E) "nml:                          $(NML) $(NML_FLAGS)"
