@@ -51,7 +51,7 @@ base_lang_strings = utils.parse_base_lang()
 metadata = {}
 metadata['dev_thread_url'] = 'http://www.tt-forums.net/viewtopic.php?t=41607'
 metadata['repo_url'] = 'http://dev.openttdcoop.org/projects/firs/repository'
-metadata['issue_tracker'] = 'http://dev.openttdcoop.org/projects/firs/repository'
+metadata['issue_tracker'] = 'http://dev.openttdcoop.org/projects/firs/issues'
 
 import firs
 from cargos import registered_cargos
