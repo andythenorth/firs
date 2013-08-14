@@ -137,14 +137,6 @@ spriteset_14 = industry.add_spriteset(
     id = 'trading_post_spriteset_14',
     sprites = [(220, 110, 64, 39, -27, -12)],
 )
-spriteset_15 = industry.add_spriteset(
-    id = 'trading_post_spriteset_15',
-    sprites = [(290, 110, 64, 39, -15, -11)],
-)
-spriteset_16 = industry.add_spriteset(
-    id = 'trading_post_spriteset_16',
-    sprites = [(360, 110, 64, 39, -45, -15)],
-)
 spriteset_17 = industry.add_spriteset(
     id = 'trading_post_spriteset_17',
     sprites = [(360, 10, 64, 39, -31, 0)],
@@ -305,13 +297,13 @@ industry.add_spritelayout(
     id = 'trading_post_spritelayout_26',
     ground_sprite = sprite_ground,
     ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_15]
+    building_sprites = []
 )
 industry.add_spritelayout(
     id = 'trading_post_spritelayout_27',
     ground_sprite = sprite_ground,
     ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_16]
+    building_sprites = []
 )
 industry.add_spritelayout(
     id = 'trading_post_spritelayout_28',
