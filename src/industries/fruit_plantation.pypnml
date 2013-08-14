@@ -9,7 +9,6 @@
 
 ${industry.get_spritelayouts()}
 
-<!--! graphics switches use hard-coded industry id.  using chameleon ${industry.id} substitution results in an 8x increase in render time - reason unknown -->
 switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_616, nearby_tile_slope(0,0)) {
 	0: ${industry.id}_597;
 	1: ${industry.id}_598;
