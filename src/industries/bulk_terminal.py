@@ -349,6 +349,17 @@ industry.add_industry_layout(
               (1, 4, 'bulk_terminal_tile_2', 'bulk_terminal_slope_switch_2'),
               (2, 1, 'bulk_terminal_tile_1', 'bulk_terminal_spritelayout_24'),
               (2, 2, 'bulk_terminal_tile_1', 'bulk_terminal_spritelayout_24'),
+              (2, 4, 'bulk_terminal_tile_2', 'bulk_terminal_slope_switch_1'),
+              (3, 3, 'bulk_terminal_tile_1', 'bulk_terminal_spritelayout_27'),
+              (3, 4, 'bulk_terminal_tile_2', 'bulk_terminal_slope_switch_1'),
+              (4, 0, '255', 'bulk_terminal_spritelayout_null'),
+              (4, 1, 'bulk_terminal_tile_1', 'bulk_terminal_spritelayout_11'),
+              (4, 2, 'bulk_terminal_tile_1', 'bulk_terminal_spritelayout_29'),
+              (4, 3, 'bulk_terminal_tile_1', 'bulk_terminal_spritelayout_11'),
+              (4, 4, 'bulk_terminal_tile_2', 'bulk_terminal_slope_switch_2'),
+              (5, 1, 'bulk_terminal_tile_1', 'bulk_terminal_spritelayout_24'),
+              (5, 2, 'bulk_terminal_tile_1', 'bulk_terminal_spritelayout_24'),
+              (5, 4, 'bulk_terminal_tile_2', 'bulk_terminal_slope_switch_1'),
     ]
 )
 industry.add_industry_layout(
