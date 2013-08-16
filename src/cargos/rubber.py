@@ -20,7 +20,7 @@ cargo = Cargo(id = 'rubber',
               single_penalty_length = '36',
               capacity_multiplier = '1',
               price_factor = '107.634544373',
-              icon_indices = (3, 1))
+              icon_indices = (2, 2))
 
 cargo.economy_variations['FIRS']['disabled'] = True
 cargo.economy_variations['BASIC_TEMPERATE']['disabled'] = True
