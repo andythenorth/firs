@@ -20,7 +20,7 @@ cargo = Cargo(id = 'sugar',
               single_penalty_length = '27',
               price_factor = '142',
               capacity_multiplier = '1',
-              icon_indices = (12, 0))
+              icon_indices = (0, 2))
 
 cargo.economy_variations['FIRS']['disabled'] = True
 cargo.economy_variations['BASIC_ARCTIC']['disabled'] = True
