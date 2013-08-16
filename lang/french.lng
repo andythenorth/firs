@@ -1,39 +1,66 @@
 ##grflangid 0x03
 ##plural 2
 
-STR_GRF_DESC                                                                    :{ORANGE}FIRS Industry Replacement Set{}{BLACK}Proposé par andythenorth, FooBar, planetmaker, Terkhen et Yexo, avec l'aide de bien d'autres personnes encore. {SILVER}Voir le Lisez-moi pour plus d'informations, y compris sur la façon d'utiliser FIRS.{}{BLACK}Licence{NBSP}: GPL v2
+STR_GRF_DESC                                                                    :{ORANGE}FIRS Industry Replacement Set{}{BLACK}Proposé par andythenorth, FooBar, planetmaker, Terkhen et Yexo, avec l'aide de bien d'autres personnes encore. {SILVER}Voir le Lisez-moi pour plus d'informations, y compris sur la façon d'utiliser FIRS.{}{BLACK}Licence{NBSP}: GPL v2.
 STR_GRF_NAME                                                                    :{TITLE}
 STR_GRF_URL                                                                     :http://bundles.openttdcoop.org/firs/releases/LATEST/docs/
+
+STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :{WHITE}Éloignement côtier maximal des zones de pêche, plates-formes pétrolières et sites de dragage.
+STR_PARAM_DESC_STAT_RATING                                                      :{WHITE}La cote (qualité de service) d'une station influe sur la quantité de marchandises livrées par une industrie{NBSP}: au plus la cote est élevée, au plus des marchandises y seront livrées.{}{}La «{NBSP}{GOLD}Cotation améliorée{WHITE}{NBSP}» réduit l'effet du temps écoulé depuis le dernier enlèvement de marchandises.
+STR_PARAM_DESC_DEBUG                                                            :{WHITE}Pour les développeurs seulement.
+STR_PARAM_DESC_ECONOMIES                                                        :{WHITE}Chaque économie présente des industries et des cargaisons différentes.{}{}Pour les joueurs intéressés par un jeu plus simple, les économies "Basiques" contiennent moins d'industries et de cargaisons que les économies "FIRS".
+STR_PARAM_DESC_NO_OPENINGS                                                      :{WHITE}Par défaut, de nouvelles industries s'ouvriront durant la partie.{}{}Si ce paramètre est activé, de nouvelles industries ne seront pas ouvertes durant la partie, et les joueurs ne pourront ni construire ni prospecter d'industries.
+STR_PARAM_DESC_SECONDARY_NEVER_CLOSE                                            :{WHITE}Par défaut, les industries secondaires ne ferment jamais.{}{}Si ce paramètre est activé, les industries secondaires peuvent fermer si aucune marchandise n'est transportée pendant longtemps. Les industries primaires ne ferment jamais avec FIRS et ne sont pas affectées par ce paramètre.
+STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY                                   :Éloignement côtier maximal des industries maritimes (en nombre de cases)
+STR_PARAM_NAME_DEBUG                                                            :Afficher les textes de débogage.
+STR_PARAM_NAME_ECONOMIES                                                        :Économie
+STR_PARAM_NAME_NO_OPENINGS                                                      :Empêcher l'ouverture d'industries durant la partie
+STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            :Permettre aux industries secondaire de fermer
+STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0                                         :Pas de limite
+STR_PARAM_NAME_STAT_RATING                                                      :Algorithme de cotation des stations
+STR_PARAM_VALUE_STAT_RATING_DEFAULT                                             :Vil et mesquin (le standard OpenTTD)
+STR_PARAM_VALUE_STAT_RATING_REDUCED_TIME                                        :Complaisant (permet des intervalles plus grands entre chaque collecte de marchandises
+STR_PARAM_VALUE_STAT_RATING_100                                                 :Éperdument généreux (toujours 100{NBSP}%)
+
+STR_PARAM_VALUE_ECONOMIES_BASIC_TEMPERATE                                       :Basique - Environnement tempéré
+STR_PARAM_VALUE_ECONOMIES_BASIC_ARCTIC                                          :Basique - Environnement arctique
+STR_PARAM_VALUE_ECONOMIES_BASIC_TROPIC                                          :Basique - Environnement tropical
+STR_PARAM_VALUE_ECONOMIES_FIRS                                                  :FIRS
+STR_PARAM_VALUE_ECONOMIES_MISTAH_KURTZ                                          :Au cœur des ténèbres
+STR_PARAM_VALUE_ECONOMIES_TEST_3                                                :Test Economy 3
 
 STR_CARGO_NAME_ALCOHOL                                                          :Alcool
 STR_CARGO_NAME_BAUXITE                                                          :Bauxite
 STR_CARGO_NAME_BUILDING_MATERIALS                                               :Matériaux de construction
 STR_CARGO_NAME_CHEMICALS                                                        :Produits chimiques
 STR_CARGO_NAME_CLAY                                                             :Argile
+STR_CARGO_NAME_COFFEE                                                           :Café
 STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :Matériel technique
-STR_CARGO_NAME_FARM_SUPPLIES                                                    :Matériel agricole
 STR_CARGO_NAME_FIBRES                                                           :Fibres végétales
 STR_CARGO_NAME_FISH                                                             :Poisson
+STR_CARGO_NAME_FARM_SUPPLIES                                                    :Matériel agricole
 STR_CARGO_NAME_FRUITS                                                           :Fruits
 STR_CARGO_NAME_LUMBER                                                           :Bois d'œuvre
-STR_CARGO_NAME_MANUFACTURING_SUPPLIES                                           :Fournitures industrielles
 STR_CARGO_NAME_METAL                                                            :Métal
 STR_CARGO_NAME_MILK                                                             :Lait
+STR_CARGO_NAME_MANUFACTURING_SUPPLIES                                           :Fournitures industrielles
 STR_CARGO_NAME_PETROL                                                           :Essence
-STR_CARGO_NAME_RECYCLABLES                                                      :Produits recyclés
+STR_CARGO_NAME_RECYCLABLES                                                      :Matériaux recyclables
 STR_CARGO_NAME_SAND                                                             :Sable
 STR_CARGO_NAME_SCRAP_METAL                                                      :Ferraille
 STR_CARGO_NAME_STONE                                                            :Gravier
 STR_CARGO_NAME_SUGAR_BEET                                                       :Betteraves sucrières
-STR_CARGO_NAME_SUGARCANE                                                        :Cannes à sucre
+STR_CARGO_NAME_SUGARCANE                                                        :Canne à sucre
 STR_CARGO_NAME_WOOL                                                             :Laine
+
 STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} d'alcool
 STR_CARGO_UNIT_BAUXITE                                                          :{WEIGHT} de bauxite
 STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WEIGHT} de matériaux de construction
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} de produits chimiques
 STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} d'argile
+STR_CARGO_UNIT_COFFEE                                                           :{SIGNED_WORD} sac{P 0 "" s} de café
 STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} caisse{P 0 "" s} de matériel technique
-STR_CARGO_UNIT_FIBRES                                                           :{WEIGHT} de fibres végétales
+STR_CARGO_UNIT_FIBRES                                                           :{SIGNED_WORD} balle{P 0 "" s} de fibres végétales
 STR_CARGO_UNIT_FISH                                                             :{WEIGHT} de poisson
 STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} caisse{P 0 "" s} de matériel agricole
 STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} de fruits
@@ -48,13 +75,14 @@ STR_CARGO_UNIT_SCRAP_METAL                                                      
 STR_CARGO_UNIT_STONE                                                            :{WEIGHT} de gravier
 STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} de betteraves sucrières
 STR_CARGO_UNIT_SUGARCANE                                                        :{WEIGHT} de cannes à sucre
-STR_CARGO_UNIT_WOOL                                                             :{WEIGHT} de laine
+STR_CARGO_UNIT_WOOL                                                             :{SIGNED_WORD} balle{P 0 "" s} de laine
 
 STR_CID_ALCOHOL                                                                 :{TINYFONT}AL
 STR_CID_BAUXITE                                                                 :{TINYFONT}BX
 STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}MC
 STR_CID_CHEMICALS                                                               :{TINYFONT}PC
 STR_CID_CLAY                                                                    :{TINYFONT}AR
+STR_CID_COFFEE                                                                  :{TINYFONT}CF
 STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}MT
 STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}MA
 STR_CID_FIBRES                                                                  :{TINYFONT}FV
@@ -73,19 +101,23 @@ STR_CID_SUGARCANE                                                               
 STR_CID_WOOL                                                                    :{TINYFONT}LN
 
 STR_ERR_CLIMATE_TOYLAND                                                         :{ORANGE}FIRS n'est pas conçu pour être utilisé avec l'environnement «{NBSP}Monde{NBSP}des{NBSP}Jouets{NBSP}»
+STR_ERR_INCOMPATIBLE_SET                                                        :{ORANGE}E01: {YELLOW}Module incompatible{NBSP}: {ORANGE}{STRING} {YELLOW}Voir le Lisez-moi de FIRS{NBSP}: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 STR_ERR_INCOMPATIBLE_PARAM_CANSET                                               :{ORANGE}E02: {YELLOW}Paramètre incompatible{NBSP}: {ORANGE}le paramètre 2 de CanSet doit être à 0 pour fonctionner avec FIRS. {YELLOW}Voir le Lisez-moi de FIRS{NBSP}: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 STR_ERR_INCOMPATIBLE_PARAM_CITYSET                                              :{ORANGE}E02: {YELLOW}Paramètre incompatible{NBSP}: {ORANGE}le paramètre 2 de NA City Set doit être à 0 pour fonctionner avec FIRS. {YELLOW}Voir le Lisez-moi de FIRS{NBSP}: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
-STR_ERR_INCOMPATIBLE_SET                                                        :{ORANGE}E01: {YELLOW}Module incompatible{NBSP}: {ORANGE}{STRING} {YELLOW}Voir le Lisez-moi de FIRS{NBSP}: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 STR_ERR_INCOMPATIBLE_SET_TTRS_VERSION                                           :{ORANGE}E04: {YELLOW}Version incompatible{NBSP}: {ORANGE}la version de Total Town Replacement Set doit être supérieure ou égale à 3.11. {YELLOW}Voir le Lisez-moi de FIRS{NBSP}: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
-STR_ERR_LOCATION_LIMIT_1_PER_TOWN                                               :Une seule industrie de ce type par ville.
+STR_ERR_OPENTTD_VERSION                                                         :{ORANGE}E00: FIRS nécessite la version OpenTTD 1.2.0 / rev. r22780 ou supérieure. {YELLOW}Voir le Lisez-moi de FIRS{NBSP}: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+
 STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE                                             :doit être placé sous la ligne d'enneigement.
+STR_ERR_LOCATION_NOT_ON_WATER                                                   :doit être placé sur du terrain sec.
 STR_ERR_LOCATION_NOT_IN_DESERT                                                  :ne doit pas être placé dans le désert.
 STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE                                             :ne peut pas être placé sur des pentes abruptes.
-STR_ERR_LOCATION_NOT_ON_WATER                                                   :doit être placé sur du terrain sec.
-STR_ERR_OPENTTD_VERSION                                                         :{ORANGE}E00: FIRS nécessite la version OpenTTD 1.2.0 / rev. r22780 ou supérieure. {YELLOW}Voir le Lisez-moi de FIRS{NBSP}: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_LOCATION_LIMIT_1_PER_TOWN                                               :une seule industrie de ce type par ville.
 
 STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}Marchandises produites{NBSP}:{}  2{NBSP}t pour 8{NBSP}t livrées de bauxite{}  2{NBSP}t pour 8{NBSP}000{NBSP}l livrés de produits chimiques{}  4{NBSP}t pour 8{NBSP}t livrées de ferraille{}{}Il faut au moins 2 types de marchandises livrées dans le même mois pour que la production augmente.
 STR_EXTRA_BIOREFINERY                                                           :{BLACK}Marchandises produites{NBSP}:{}  6{NBSP}000{NBSP}l pour 8{NBSP}t livrées de céréales{}  6{NBSP}000{NBSP}l pour 8{NBSP}t livrées de sucre
+STR_EXTRA_BREWERY                                                               :{BLACK}Marchandises produites{NBSP}:{}  3{NBSP}000{NBSP}l pour 8 caisses de fournitures industrielles livrées{} {STRING} {STRING}{}La production augmente si les fournitures industrielles sont livrées dans le même mois que d'autres marchandises.
+STR_EXTRA_BREWERY_GRAIN_SUBSTR                                                  :5{NBSP}000{NBSP}l pour 8{NBSP}t de grain livrées{}
+STR_EXTRA_BREWERY_FRUIT_SUBSTR                                                  :5{NBSP}000{NBSP}l pour 8{NBSP}t de fruits livrées{}
 STR_EXTRA_BRICKWORKS                                                            :{BLACK}Marchandises produites{NBSP}:{}  2{NBSP}t pour 8{NBSP}t livrées de charbon{}  2{NBSP}t pour 8{NBSP}t livrées de sable{}  4{NBSP}t pour 8{NBSP}t livrées d'argile{}{}Il faut au moins 2 types de marchandises livrées dans le même mois pour que la production augmente.
 STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Marchandises produites{NBSP}:{}  2{NBSP}t pour 8{NBSP}t livrées de charbon{}  2{NBSP}t pour 8{NBSP}t livrées d'argile{}  4{NBSP}t pour 8{NBSP}t livrées de gravier{}{}Il faut au moins 2 types de marchandises livrées dans le même mois pour que la production augmente.
 STR_EXTRA_DAIRY                                                                 :{BLACK}Marchandises produites{NBSP}:{}  3{NBSP}t pour 8{NBSP}caisses livrées de fournitures industrielles{}  5{NBSP}t pour 8{NBSP}000{NBSP}l livrés de lait{}{}La production augmente si les deux marchandises sont livrées dans le même mois.
@@ -98,52 +130,77 @@ STR_EXTRA_IRON_WORKS                                                            
 STR_EXTRA_LIME_KILN                                                             :{BLACK}Marchandises produites{NBSP}:{}  3{NBSP}t pour 8{NBSP}t livrées de gravier{}  3{NBSP}t pour 8{NBSP}t livrées de charbon{}{}La production augmente si les deux marchandises sont livrées dans le même mois.
 STR_EXTRA_LUMBER_YARD                                                           :{BLACK}Produit des objets tels que des poteaux ou des piquets de clôture.{}{}{BLACK}Marchandises produites{NBSP}:{}  2{NBSP}t pour 8{NBSP}000{NBSP}l livrés de produits chimiques{}  6{NBSP}t pour 8{NBSP}t livrées de bois d'œuvre{}{}La production augmente si les deux marchandises sont livrées dans le même mois.
 STR_EXTRA_MACHINE_SHOP                                                          :{BLACK}Construit et entretient des machines.{}{}{BLACK}Marchandises produites{NBSP}:{}  8{NBSP}caisses pour 8{NBSP}000{NBSP}l livrés de pétrole{}  8{NBSP}caisses pour 8{NBSP}t livrées de métal
-STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Production maximum atteinte
 STR_EXTRA_MEAT_PACKER                                                           :{BLACK}Marchandises produites{NBSP}:{}  3{NBSP}t pour 8{NBSP}caisses livrées de fournitures industrielles{}  5{NBSP}t pour 8{NBSP}t livrées de bétail{}{}La production augmente si les deux marchandises sont livrées dans le même mois.
 STR_EXTRA_METAL_FABRICATION_PLANT                                               :{BLACK}Produit des composants métalliques peints.{}{}{BLACK}Marchandises produites{NBSP}:{}  2{NBSP}t pour 8{NBSP}000{NBSP}l livrés de produits chimiques{}  6{NBSP}t pour 8{NBSP}t livrées de métal{}{}La production augmente si les deux marchandises sont livrées dans le même mois.
 STR_EXTRA_METAL_FOUNDRY                                                         :{BLACK}Produit des objets métalliques tels que des boîtes de conserve, des outils ou des articles ménagers.{}{}{BLACK}Marchandises produites{NBSP}:{}  2{NBSP}caisses pour 8{NBSP}000{NBSP}l livrés de produits chimiques{}  6{NBSP}caisses pour 8{NBSP}t livrées de métal{}{}La production augmente si les deux marchandises sont livrées dans le même mois.
 STR_EXTRA_OIL_REFINERY                                                          :{BLACK}Transforme le pétrole brut en essence et en produits chimiques.{}{}{BLACK}Marchandises produites{NBSP}:{}  6{NBSP}000{NBSP}l pour 8{NBSP}000{NBSP}l livrés de pétrole
 STR_EXTRA_PAPER_MILL                                                            :{BLACK}Transforme le bois en pâte pour produire du papier et du carton.{}{}{BLACK}Marchandises produites{NBSP}:{}  4{NBSP}caisses pour 8{NBSP}t livrées de bois{}  2{NBSP}caisses pour 8{NBSP}t livrées d'argile{}  2{NBSP}caisses pour 8{NBSP}000{NBSP}l livrés de produits chimiques{}{}Il faut au moins 2 types de marchandises livrées dans le même mois pour que la production augmente.
-STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}Produit des objets en plastique tels que des emballages ou des articles ménagers.{}{}{BLACK}Marchandises produites{NBSP}:{}  6{NBSP}caisses pour 8{NBSP}t livrées de fibres végétales{}  6{NBSP}caisses pour 8{NBSP}000{NBSP}l livrés de produits chimiques
-STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}La production est proportionnelle à la population de la ville.
+STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}Produit des objets en plastique tels que des emballages ou des articles ménagers.{}{}{BLACK}Marchandises produites{NBSP}:{}  {STRING} {STRING}
+STR_EXTRA_PLASTICS_PLANT_CHEMICALS_SUBSTR                                       :6 caisses pour 8{NBSP}000{NBSP}l de produits chimiques livrés{}
+STR_EXTRA_PLASTICS_PLANT_PLANT_FIBRES_SUBSTR                                    :6 caisses pour 8 balles de fibres végétales livrées{}
 STR_EXTRA_RECYCLING_PLANT                                                       :{BLACK}Produit des matériaux recyclés.{}{}{BLACK}Marchandises produites{NBSP}:{}  6{NBSP}t pour 8{NBSP}t livrées de matériaux recyclables
+STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}La production est proportionnelle à la population de la ville.
 STR_EXTRA_SAWMILL                                                               :{BLACK}Débite du bois.{}{}{BLACK}Marchandises produites{NBSP}:{}  6{NBSP}t pour 8{NBSP}t livrées de bois
-STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Produit des objets métalliques tels que des outils, des charrues, des grilles, des pelles ou des fers à cheval.{}{}{BLACK}Marchandises produites{NBSP}:{}  8{NBSP}t pour 8{NBSP}t livrées de métal
+STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Produit des objets métalliques tels que des outils, des charrues, des grilles, des pelles ou des fers à cheval.{}{}{BLACK}Marchandises produites{NBSP}:{}  8 caisses pour 8{NBSP}t livrées de métal
 STR_EXTRA_STEELMILL                                                             :{BLACK}Marchandises produites{NBSP}:{}  2{NBSP}t pour 8{NBSP}t livrées de minerai de fer{}  2{NBSP}t pour 8{NBSP}t livrées de charbon{}  4{NBSP}t pour 8{NBSP}t livrées de ferraille{}{}Il faut au moins 2 types de marchandises livrées dans le même mois pour que la production augmente.
 STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Marchandises produites{NBSP}:{}  3{NBSP}t pour 8{NBSP}caisses livrées de fournitures industrielles{}  5{NBSP}t pour 8{NBSP}t livrées de sucre{}{}La production augmente si les deux marchandises sont livrées dans le même mois.
+STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Marchandises produites{NBSP}:{}  3{NBSP}caisses pour 8{NBSP}caisses livrées de fournitures industrielles{} {STRING} {STRING} {}La production augmente si des fournitures industrielles sont livrées dans le même mois que d'autres marchandises.
+STR_EXTRA_TEXTILE_MILL_WOOL_SUBSTR                                              :5 caisses pour 8 balles de laine livrées{}
+STR_EXTRA_TEXTILE_MILL_PLANT_FIBRES_SUBSTR                                      :5 caisses pour 8 balles de fibres végétales livrées{}
+
 STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ DEBUG ------------{}Production ce mois-ci{NBSP}:{}Marchandise 1{NBSP}: {WHITE}{COMMA}{BLACK}{}Marchandise 2{NBSP}: {WHITE}{COMMA}{BLACK}{}Jours écoulés depuis la dernière livraison{NBSP}: {WHITE}{COMMA}{BLACK}
-STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Marchandises produites{NBSP}:{}  3{NBSP}caisses pour 8{NBSP}caisses livrées de fournitures industrielles{}  5{NBSP}caisses pour 8{NBSP}t livrées de laine{}  5{NBSP}caisses pour 8{NBSP}t livrées de fibres végétales{}{}La production augmente si des fournitures industrielles sont livrées dans le même mois que d'autres marchandises.
+STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Production maximum atteinte
+STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Production actuelle{NBSP}: {YELLOW}Normale{}{}{BLACK}Pour doubler la production, livrer {SIGNED_WORD} caisses dans les 3{NBSP}mois (ou {SIGNED_WORD} caisses pour quadrupler)
+STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Production actuelle{NBSP}: {YELLOW}Améliorée (2x){}{}{BLACK}Pour maintenir ce niveau de production, livrer {SIGNED_WORD} caisses dans les 3{NBSP}mois (ou {SIGNED_WORD} caisses pour encore doubler)
+STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}Production actuelle{NBSP}: {YELLOW}Gung-ho (4x){}{}{BLACK}Pour maintenir ce niveau de production, livrer {SIGNED_WORD} caisses dans les 3{NBSP}mois
+STR_PORT_PRODUCTION_1X                                                          :{BLACK}Production actuelle{NBSP}: {YELLOW}Normale{}{}{BLACK}Pour doubler la production, livrer {SIGNED_WORD} unités de marchandises nécessaires dans les 3{NBSP}mois (ou {SIGNED_WORD} pour quadrupler)
+STR_PORT_PRODUCTION_2X                                                          :{BLACK}Production actuelle{NBSP}: {YELLOW}Améliorée (2x){}{}{BLACK}Pour maintenir ce niveau de production, livrer {SIGNED_WORD} unités de marchandises nécessaires dans les 3{NBSP}mois (ou {SIGNED_WORD} pour encore doubler)
+STR_PORT_PRODUCTION_4X                                                          :{BLACK}Production actuelle{NBSP}: {YELLOW}Gung-ho (4x){}{}{BLACK}Pour maintenir ce niveau de production, livrer {SIGNED_WORD} unités de marchandises nécessaires dans les 3{NBSP}mois
+STR_GENERIC_NEWLINE                                                             :{}
 
-STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Production actuelle{NBSP}: {YELLOW}normale{}{}{BLACK}Marchandises requises dans les 3{NBSP}mois pour un surplus de production ({SIGNED_WORD}{NBSP}t = 2x, {SIGNED_WORD}{NBSP}t = 4x).
-STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Production actuelle{NBSP}: {YELLOW}améliorée (2x){}{}{BLACK}Marchandises requises dans les 3{NBSP}mois pour un surplus de production ({SIGNED_WORD}{NBSP}t = 2x, {SIGNED_WORD}{NBSP}t = 4x).
+STR_FUND_BASIC_FARM                                                             :{}{BLACK}Emplacement{NBSP}: {YELLOW}Ne peut pas être construite sur de la neige ni dans le désert.
+STR_FUND_MIXED_FARM                                                             :{}{BLACK}Emplacement{NBSP}: {YELLOW}Ne peut pas être construite sur de la neige ni dans le désert.
+STR_FUND_ARABLE_FARM                                                            :{}{BLACK}Emplacement{NBSP}: {YELLOW}Ne peut pas être construite sur de la neige ni dans le désert.
+STR_FUND_COFFEE_ESTATE                                                          :{}{BLACK}Emplacement{NBSP}: {YELLOW}Ne peut pas être construite sur de la neige ni dans le désert.
+STR_FUND_ORCHARD_PIGGERY                                                        :{}{BLACK}Emplacement{NBSP}: {YELLOW}Ne peut pas être construite sur de la neige ni dans le désert.
+STR_FUND_SUGAR_PLANTATION                                                       :{}{BLACK}Emplacement{NBSP}: {YELLOW}Ne peut pas être construite sur de la neige ni dans le désert.
+STR_FUND_FIBRE_CROP_FARM                                                        :{}{BLACK}Emplacement{NBSP}: {YELLOW}Ne peut pas être construite sur de la neige ni dans le désert.
+STR_FUND_FOREST                                                                 :{}{BLACK}Emplacement{NBSP}: {YELLOW}Ne peut pas être placée dans le désert.
+STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}Emplacement{NBSP}: {YELLOW}Ne peut pas être placé sur de la neige.
+STR_FUND_RUBBER_PLANTATION                                                      :{}{BLACK}Emplacement{NBSP}: {YELLOW}Ne peut pas être construite sur de la neige ni dans le désert.
 
-STR_FUND_ARABLE_FARM                                                            :{}{BLACK}Emplacement{NBSP}: {YELLOW}ne peut pas être construite sur de la neige ni dans le désert.
-STR_FUND_FOREST                                                                 :{}{BLACK}Emplacement{NBSP}: {YELLOW}ne peut pas être placée dans le désert.
-STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}Emplacement{NBSP}: {YELLOW}ne peut pas être placé sur de la neige.
-STR_FUND_MIXED_FARM                                                             :{}{BLACK}Emplacement{NBSP}: {YELLOW}ne peut pas être construite sur de la neige ni dans le désert.
 
 STR_FUND_AVAILABLE_FROM                                                         :{}{BLACK}Disponible à partir de{NBSP}:{NBSP}{YELLOW}{COMMA}
+
 STR_FUND_AVAILABLE_UNTIL                                                        :{}{BLACK}Plus disponible après{NBSP}:{NBSP}{YELLOW}{COMMA}
 
-STR_GENERIC_NEWLINE                                                             :{}
+
+STR_TOWN                                                                        :{STRING}
+STR_STATION                                                                     :{STRING} {STRING}
 
 STR_IND_ALUMINIUM_PLANT                                                         :Usine d'aluminium
 STR_IND_ARABLE_FARM                                                             :Ferme céréalière
+STR_IND_BASICFARM                                                               :Ferme
 STR_IND_BAUXITE_MINE                                                            :Mine de bauxite
 STR_IND_BIOREFINERY                                                             :Bioraffinerie
 STR_IND_BREWERY                                                                 :Brasserie
+STR_IND_BREWERY_CIDER_MILL                                                      :Cidrerie
 STR_IND_BRICK_WORKS                                                             :Briqueterie
 STR_IND_BUILDERS_YARD                                                           :Chantier de construction
+STR_IND_BULK_TERMINAL                                                           :Terminal vraquier
 STR_IND_CEMENT_PLANT                                                            :Cimenterie
 STR_IND_CLAY_PIT                                                                :Carrière d'argile
+STR_IND_COFFEE_ESTATE                                                           :Plantation de café
+STR_IND_FIBRE_CROP_FARM                                                         :Exploitation de plantes à fibres
 STR_IND_DAIRY                                                                   :Laiterie
 STR_IND_DAIRYFARM                                                               :Ferme laitière
 STR_IND_DREDGING_SITE                                                           :Site de dragage
 STR_IND_FERTILISER_PLANT                                                        :Usine d'engrais chimiques
 STR_IND_FISHING_GROUND                                                          :Zone de pêche
-STR_IND_FISHING_HARBOUR                                                         :Port de pêche
+STR_IND_FISHING_HARBOUR                                                         :Fishing Harbour
 STR_IND_FOOD_MARKET                                                             :Magasin d'alimentation
 STR_IND_FURNITURE_FACTORY                                                       :Fabrique de meubles
+STR_IND_GENERAL_STORE                                                           :Magasin
 STR_IND_GLASS_WORKS                                                             :Verrerie
 STR_IND_GRAIN_MILL                                                              :Moulin à grains
 STR_IND_HARDWARE_STORE                                                          :Quincaillerie
@@ -156,34 +213,35 @@ STR_IND_MACHINE_SHOP                                                            
 STR_IND_METAL_FABRICATION_PLANT                                                 :Usine métallurgique
 STR_IND_METAL_FOUNDRY                                                           :Fonderie
 STR_IND_MIXEDFARM                                                               :Exploitation agricole mixte
+STR_IND_ORCHARD_PIGGERY                                                         :Verger et élevage de cochons
 STR_IND_PETROLPUMP                                                              :Station d'essence
 STR_IND_PLASTICS_PLANT                                                          :Usine plastique
+STR_IND_PORT                                                                    :Port
 STR_IND_QUARRY                                                                  :Carrière
+STR_IND_RANCH                                                                   :Ranch
 STR_IND_RECYCLING_DEPOT                                                         :Centre de tri des déchets
 STR_IND_RECYCLING_PLANT                                                         :Usine de recyclage
 STR_IND_SHEEPFARM                                                               :Élevage ovin
 STR_IND_SMITHY_FORGE                                                            :Forge
 STR_IND_STOCKYARD                                                               :Boucherie industrielle
+STR_IND_SUGAR_PLANTATION                                                        :Plantation sucrière
 STR_IND_SUGAR_REFINERY                                                          :Raffinerie de sucre
 STR_IND_SUPERMARKET                                                             :Supermarché
 STR_IND_TEXTILE_MILL                                                            :Usine textile
+STR_IND_TRADING_POST                                                            :Comptoir commercial
 
-STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :{WHITE}Éloignement côtier maximal des zones de pêche, plates-formes pétrolières et sites de dragage.
-STR_PARAM_DESC_DEBUG                                                            :{WHITE}Pour les développeurs seulement.
-STR_PARAM_DESC_ECONOMIES                                                        :{WHITE}Lorsque ce sera terminé, FIRS permettra de choisir son économie. Les marchandises et les industries varieront en fonction de l'économie choisie. Les coûts du transport seront différents dans chaque économie. {}{}{SILVER}Actuellement, une seule économie est disponible :)
-STR_PARAM_DESC_NO_OPENINGS                                                      :{WHITE}Par défaut, de nouvelles industries s'ouvriront durant la partie.{}{}Si ce paramètre est activé, de nouvelles industries ne seront pas ouvertes durant la partie, et les joueurs ne pourront ni construire ni prospecter d'industries.
-STR_PARAM_DESC_SECONDARY_NEVER_CLOSE                                            :{WHITE}Par défaut, les industries secondaires ne ferment jamais.{}{}Si ce paramètre est activé, les industries secondaires peuvent fermer si aucune marchandise n'est transportée pendant longtemps.
-STR_PARAM_DESC_STAT_RATING                                                      :{WHITE}La cote (qualité de service) d'une station influe sur la quantité de marchandises livrées par une industrie{NBSP}: au plus la cote est élevée, au plus des marchandises y seront livrées.{}{}La «{NBSP}{GOLD}Cotation améliorée{WHITE}{NBSP}» réduit l'effet du temps écoulé depuis le dernier enlèvement de marchandises.
-STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY                                   :Éloignement côtier maximal des industries maritimes (en nombre de cases)
-STR_PARAM_NAME_DEBUG                                                            :Afficher les textes de débogage.
-STR_PARAM_NAME_ECONOMIES                                                        :Économie
-STR_PARAM_NAME_NO_OPENINGS                                                      :Empêcher l'ouverture d'industries durant la partie
-STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            :Permettre aux industries secondaire de fermer
-STR_PARAM_NAME_STAT_RATING                                                      :Algorithme de cotation des stations
-STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0                                         :Pas de limite
-STR_PARAM_VALUE_STAT_RATING_100                                                 :Toujours 100{NBSP}%
-STR_PARAM_VALUE_STAT_RATING_DEFAULT                                             :Celui par défaut
-STR_PARAM_VALUE_STAT_RATING_REDUCED_TIME                                        :Cotation améliorée
-
-STR_STATION                                                                     :{STRING} {STRING}
-STR_TOWN                                                                        :{STRING}
+STR_STATION_ANIMALS                                                             :Marché aux bestiaux
+STR_STATION_FARM                                                                :Mas
+STR_STATION_FISHMARKET                                                          :Port de pêche
+STR_STATION_HEAVY_INDUSTRY                                                      :Rue Watt
+STR_STATION_INDUSTRY_ESTATE                                                     :Zone industrielle
+STR_STATION_INDUSTRY_HARBOUR                                                    :Port industriel
+STR_STATION_MARKET                                                              :Halle
+STR_STATION_MILL                                                                :Moulin
+STR_STATION_MINE                                                                :Route du puits
+STR_STATION_PIT                                                                 :Le Creux
+STR_STATION_PLANTATION                                                          :Plantation
+STR_STATION_POWERHUNGRY                                                         :Centrale
+STR_STATION_REFINERY                                                            :La Fabrique
+STR_STATION_TOWN                                                                :Place de la Mairie
+STR_STATION_WATER                                                               :Quai Surcouf
