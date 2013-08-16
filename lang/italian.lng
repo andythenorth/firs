@@ -23,17 +23,19 @@ STR_PARAM_VALUE_STAT_RATING_DEFAULT												:Brutto e cattivo (usa il rating 
 STR_PARAM_VALUE_STAT_RATING_REDUCED_TIME										:Più favorevole (accetta un lasso di tempo più lungo fra le prese in consegna delle merci)
 STR_PARAM_VALUE_STAT_RATING_100													:Molto generoso (sempre al 100%)
 
-STR_PARAM_VALUE_ECONOMIES_BASIC_TEMPERATE										:Economia di base (clima temperato)
-STR_PARAM_VALUE_ECONOMIES_BASIC_ARCTIC											:Economia di base (clima artico)
-STR_PARAM_VALUE_ECONOMIES_BASIC_TROPIC											:Economia di base (clima tropicale)
-STR_PARAM_VALUE_ECONOMIES_FIRS													:Economia di FIRS
-STR_PARAM_VALUE_ECONOMIES_TEST_3												:Economia provvisoria 3
+STR_PARAM_VALUE_ECONOMIES_BASIC_TEMPERATE										:Di base (clima temperato)
+STR_PARAM_VALUE_ECONOMIES_BASIC_ARCTIC											:Di base (clima artico)
+STR_PARAM_VALUE_ECONOMIES_BASIC_TROPIC											:Di base (clima tropicale)
+STR_PARAM_VALUE_ECONOMIES_FIRS													:FIRS
+STR_PARAM_VALUE_ECONOMIES_MISTAH_KURTZ                                          :Cuore di tenebra
+STR_PARAM_VALUE_ECONOMIES_TEST_3												:Provvisoria 3
 
 STR_CARGO_NAME_ALCOHOL															:{G=m}Alcoolici
 STR_CARGO_NAME_BAUXITE															:{G=f}Bauxite
 STR_CARGO_NAME_BUILDING_MATERIALS												:{G=m}Materiali per edilizia
 STR_CARGO_NAME_CHEMICALS														:{G=m}Prodotti chimici
 STR_CARGO_NAME_CLAY																:{G=f}Argilla
+STR_CARGO_NAME_COFFEE                                                           :{G=m}Caffé
 STR_CARGO_NAME_ENGINEERING_SUPPLIES												:{G=f}Forniture meccaniche
 STR_CARGO_NAME_FIBRES															:{G=f}Fibre tessili
 STR_CARGO_NAME_FISH																:{G=m}Pesce
@@ -57,6 +59,7 @@ STR_CARGO_UNIT_BAUXITE															:{WEIGHT} di bauxite
 STR_CARGO_UNIT_BUILDING_MATERIALS												:{WEIGHT} di materiali per edilizia
 STR_CARGO_UNIT_CHEMICALS														:{VOLUME} di prodotti chimici
 STR_CARGO_UNIT_CLAY																:{WEIGHT} di argilla
+STR_CARGO_UNIT_COFFEE                                                           :{SIGNED_WORD} sacc{P 0 o hi} di caffé
 STR_CARGO_UNIT_ENGINEERING_SUPPLIES												:{SIGNED_WORD} cass{P 0 a e} di forniture meccaniche
 STR_CARGO_UNIT_FIBRES															:{WEIGHT} ball{P 0 a e} di fibre tessili
 STR_CARGO_UNIT_FISH																:{WEIGHT} di pesce
@@ -80,6 +83,7 @@ STR_CID_BAUXITE																	:{TINYFONT}BX
 STR_CID_BUILDING_MATERIALS														:{TINYFONT}MA
 STR_CID_CHEMICALS																:{TINYFONT}PC
 STR_CID_CLAY																	:{TINYFONT}AR
+STR_CID_COFFEE																	:{TINYFONT}CF
 STR_CID_ENGINEERING_SUPPLIES													:{TINYFONT}FM
 STR_CID_FARM_SUPPLIES															:{TINYFONT}FA
 STR_CID_FIBRES																	:{TINYFONT}FT
@@ -132,14 +136,18 @@ STR_EXTRA_METAL_FABRICATION_PLANT												:{BLACK}Produce parti meccaniche di
 STR_EXTRA_METAL_FOUNDRY															:{BLACK}Produce oggetti metallici, come utensili e parti meccaniche.{}{}{BLACK}Produzione:{}  2 casse ogni 8000l di prodotti chimici consegnati{}  6 casse ogni 8t di metalli consegnate{}{}Il prodotto aumenta se entrambe le merci sono consegnate entro un intervallo inferiore a un mese.
 STR_EXTRA_OIL_REFINERY															:{BLACK}Lavora il petrolio per produrre carburanti e prodotti chimici.{}{}6000l di produzione ogni 8000l consegnati
 STR_EXTRA_PAPER_MILL															:{BLACK}Tritura la legna per produrre carta e imballaggi.{}{}{BLACK}Produzione:{}  4t ogni 8t di legname consegnate{}  2t ogni 8t d'argilla consegnate{}  2t ogni 8000l di prodotti chimici consegnati{}{}Il prodotto aumenta se due o più tipi di merci sono consegnate entro un intervallo inferiore a un mese.
-STR_EXTRA_PLASTICS_PLANT														:{BLACK}Costruisce prodotti in plastica come imballaggi e prodotti di consumo.{}{}Prodouzione:{}  6 casse ogni 8 balle di fibre tessili consegnate{}  6 casse ogni 8000l di prodotti chimici consegnati
+STR_EXTRA_PLASTICS_PLANT														:{BLACK}Costruisce prodotti in plastica come imballaggi e prodotti di consumo.{}{}Prodouzione:{} {STRING} {STRING}
+STR_EXTRA_PLASTICS_PLANT_CHEMICALS_SUBSTR                                       :6 casse ogni 8,000l di prodotti chimici consegnati{}
+STR_EXTRA_PLASTICS_PLANT_PLANT_FIBRES_SUBSTR                                    :6 casse ogni 8 balle di fibre tessili consegnate{}
 STR_EXTRA_RECYCLING_PLANT														:{BLACK}Lavora i prodotti da riciclare garantendo un loro riutilizzo industriale.{}{}Produzione:{}  6t di produzione ogni 8t consegnate.
 STR_EXTRA_RECYCLING_DEPOT														:{BLACK}La quantità di prodtto dipende dalle dimensioni della città.
 STR_EXTRA_SAWMILL																:{BLACK}Taglia la legna.{}{}Produzione:{}   6t ogni 8t di legna consegnate.
-STR_EXTRA_SMITHY_FORGE															:{BLACK}Costruisce oggetti metallici come attrezzi edili e agricoli, e ferri di cavallo.{}{}Produzione:{}  8t ogni 8t di metalli consegnate.
+STR_EXTRA_SMITHY_FORGE															:{BLACK}Costruisce oggetti metallici come attrezzi edili e agricoli, e ferri di cavallo.{}{}Produzione:{}  8 casse ogni 8t di metalli consegnate.
 STR_EXTRA_STEELMILL																:{BLACK}Produzione:{}  2t ogni 8t di minerale di ferro consegnate{}  2t ogni 8t di carbone consegnate{}  4t ogni 8t di metalli di scarto consegnate{}{}Il prodotto aumenta se due o più tipi di merci sono consegnate entro un intervallo inferiore a un mese.
 STR_EXTRA_SUGAR_REFINERY														:{BLACK}Produzione:{}  3t ogni 8t di forniture industriali consegnate{}  5t ogni 8t di canna da zucchero consegnate{}{}Il prodotto aumentase entrambe le merci sono consegnate entro un intervallo inferiore a un mese.
-STR_EXTRA_TEXTILE_MILL															:{BLACK}Produzione:{}  3 casse ogni 8t di forniture industriali consegnate{}  5 casse ogni 8 balle di lana consegnate{}  5 casse ogni 8t di fibre tessili consegnate{}{}Il prodotto aumenta se riceve forniture industriali entro un mese dalla consegna di altre merci.
+STR_EXTRA_TEXTILE_MILL															:{BLACK}Produzione:{}  3 casse ogni 8t di forniture industriali consegnate{} {STRING} {STRING} {}Il prodotto aumenta se riceve forniture industriali entro un mese dalla consegna di altre merci.
+STR_EXTRA_TEXTILE_MILL_WOOL_SUBSTR                                              :5 casse ogni 8 balle di lana consegnate{}
+STR_EXTRA_TEXTILE_MILL_PLANT_FIBRES_SUBSTR                                      :5 casse ogni 8 balle di fibre tessili consegnate{}
 
 STR_EXTRA_TEXT_DEBUG_SECONDARY													:{BLACK}------------ DEBUG ------------{}Produzione questo mese:{}Prodotto 1: {WHITE}{COMMA}{BLACK}{}Prodotto 2: {WHITE}{COMMA}{BLACK}{}Giorni trascorsi dall'ultima consegna: {WHITE}{COMMA}{BLACK}
 STR_EXTRA_MAX_PRODUCTION														:{BLACK}Livello massimo di produzione raggiunto
@@ -152,11 +160,15 @@ STR_PORT_PRODUCTION_4X															:{BLACK}Produzione attuale: {YELLOW}Quadrup
 STR_GENERIC_NEWLINE	:{}
 
 STR_FUND_BASIC_FARM																:{}{BLACK}Luogo: {YELLOW}Non si può fondare sulla neve o nel deserto.
-STR_FUND_MIXED_FARM																:{}{BLACK}Luogo: {YELLOW}Non si può fondare sulla neve, o nel deserto, e neanche su terreno in pendenza.
-STR_FUND_ARABLE_FARM															:{}{BLACK}Luogo: {YELLOW}Non si può fondare sulla neve, o nel deserto, e neanche su terreno in pendenza.
+STR_FUND_MIXED_FARM																:{}{BLACK}Luogo: {YELLOW}Non si può fondare sulla neve o nel deserto.
+STR_FUND_ARABLE_FARM															:{}{BLACK}Luogo: {YELLOW}Non si può fondare sulla neve o nel deserto.
+STR_FUND_COFFEE_ESTATE                                                          :{}{BLACK}Luogo: {YELLOW}Non si può fondare sulla neve o nel deserto.
+STR_FUND_ORCHARD_PIGGERY                                                        :{}{BLACK}Luogo: {YELLOW}Non si può fondare sulla neve o nel deserto.
 STR_FUND_SUGAR_PLANTATION														:{}{BLACK}Luogo: {YELLOW}Non si può fondare sulla neve o nel deserto.
+STR_FUND_FIBRE_CROP_FARM                                                        :{}{BLACK}Luogo: {YELLOW}Non si può fondare sulla neve o nel deserto.
 STR_FUND_FOREST																	:{}{BLACK}Luogo: {YELLOW}Non si può fondare nel deserto.
 STR_FUND_FRUIT_PLANTATION														:{}{BLACK}Luogo: {YELLOW}Non si può fondare sulla neve.
+STR_FUND_RUBBER_PLANTATION                                                      :{}{BLACK}Luogo: {YELLOW}Non si può fondare sulla neve o nel deserto.
 
 STR_FUND_AVAILABLE_FROM															:{}{BLACK}Disponibile da: {YELLOW}{COMMA}
 
@@ -172,18 +184,23 @@ STR_IND_BASICFARM																:{G=f}Fattoria
 STR_IND_BAUXITE_MINE															:{G=f}Miniera di bauxite
 STR_IND_BIOREFINERY																:{G=f}Raffineria di biocombustibili
 STR_IND_BREWERY																	:{G=f}Distilleria
+STR_IND_BREWERY_CIDER_MILL                                                      :{G=f}Distilleria di sidro
 STR_IND_BRICK_WORKS																:{G=f}Fabbrica di mattoni
 STR_IND_BUILDERS_YARD															:{G=m}Cantiere edile
+STR_IND_BULK_TERMINAL                                                           :{G=m}Deposito merci
 STR_IND_CEMENT_PLANT															:{G=f}Fabbrica di cemento
 STR_IND_CLAY_PIT																:{G=f}Cava di argilla
+STR_IND_COFFEE_ESTATE                                                           :{G=f}Piantagione di caffé
 STR_IND_DAIRY																	:{G=f}Azienda casearia
 STR_IND_DAIRYFARM																:{G=m}Allevamento di bovini
 STR_IND_DREDGING_SITE															:{G=m}Sito di dragaggio
 STR_IND_FERTILISER_PLANT														:{G=f}Fabbrica di fertilizzanti
+STR_IND_FIBRE_CROP_FARM                                                         :{G=f}Piantagione di fibre tessili
 STR_IND_FISHING_GROUND															:{G=f}Zona di pesca
 STR_IND_FISHING_HARBOUR															:{G=m}Porto di pesca
 STR_IND_FOOD_MARKET																:{G=m}Mercato alimentare
 STR_IND_FURNITURE_FACTORY														:{G=m}Mobilifico
+STR_IND_GENERAL_STORE                                                           :{G=m}Magazzino generale
 STR_IND_GLASS_WORKS																:{G=f}Fabbrica di prodotti in vetro
 STR_IND_GRAIN_MILL																:{G=m}Forno comunale
 STR_IND_HARDWARE_STORE															:{G=m}Negozio di ferramenta
@@ -196,10 +213,12 @@ STR_IND_MACHINE_SHOP															:{G=f}Fabbrica di macchinari
 STR_IND_METAL_FABRICATION_PLANT													:{G=f}Fabbrica di prodotti in metallo
 STR_IND_METAL_FOUNDRY															:{G=f}Fonderia
 STR_IND_MIXEDFARM																:{G=f}Azienda agricola
+STR_IND_ORCHARD_PIGGERY                                                         :{G=m}Frutteto e porcile
 STR_IND_PETROLPUMP																:{G=f}Pompa di benzina
 STR_IND_PLASTICS_PLANT															:{G=f}Fabbrica di prodotti in plastica
 STR_IND_PORT																	:{G=m}Porto
 STR_IND_QUARRY																	:{G=f}Cava di pietre
+STR_IND_RANCH                                                                   :{G=m}Ranch
 STR_IND_RECYCLING_DEPOT															:{G=m}Deposito di prodotti da riciclare
 STR_IND_RECYCLING_PLANT															:{G=f}Centrale di riciclaggio
 STR_IND_SHEEPFARM																:{G=m}Allevamento di ovini
@@ -209,3 +228,20 @@ STR_IND_SUGAR_PLANTATION														:{G=f}Piantagione di zucchero
 STR_IND_SUGAR_REFINERY															:{G=f}Raffineria di zucchero
 STR_IND_SUPERMARKET																:{G=m}Supermercato
 STR_IND_TEXTILE_MILL															:{G=m}Tessilificio
+STR_IND_TRADING_POST                                                            :{G=m}Emporio commerciale
+
+STR_STATION_ANIMALS                                                             :Mercato del bestiame
+STR_STATION_FARM                                                                :Fattorie
+STR_STATION_FISHMARKET                                                          :Mercato del pesce
+STR_STATION_HEAVY_INDUSTRY                                                      :Via Alessandro Volta
+STR_STATION_INDUSTRY_ESTATE                                                     :Zona industriale
+STR_STATION_INDUSTRY_HARBOUR                                                    :Porto industriale
+STR_STATION_MARKET                                                              :Mercato
+STR_STATION_MILL                                                                :Mulino
+STR_STATION_MINE                                                                :Miniere
+STR_STATION_PIT                                                                 :Scavo
+STR_STATION_PLANTATION                                                          :Piantagioni
+STR_STATION_POWERHUNGRY                                                         :Centrale
+STR_STATION_REFINERY                                                            :Raffinerie
+STR_STATION_TOWN                                                                :Piazza del municipio
+STR_STATION_WATER                                                               :Riva
