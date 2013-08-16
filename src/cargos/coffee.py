@@ -20,7 +20,7 @@ cargo = Cargo(id = 'coffee',
               single_penalty_length = '26',
               price_factor = '140',
               capacity_multiplier = '1',
-              icon_indices = (14, 0))
+              icon_indices = (4, 2))
 
 cargo.economy_variations['FIRS']['disabled'] = True
 cargo.economy_variations['BASIC_ARCTIC']['disabled'] = True
