@@ -20,7 +20,7 @@ cargo = Cargo(id = 'diamonds',
               single_penalty_length = '255',
               price_factor = '152',
               capacity_multiplier = '1',
-              icon_indices = (1, 0))
+              icon_indices = (3, 2))
 
 cargo.economy_variations['FIRS']['disabled'] = True
 cargo.economy_variations['BASIC_ARCTIC']['disabled'] = True
