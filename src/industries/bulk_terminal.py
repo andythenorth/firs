@@ -49,6 +49,17 @@ industry.economy_variations['MISTAH_KURTZ'].prod_cargo_types = ['BDMT', 'GRAI']
 
 industry.add_tile(id='bulk_terminal_tile')
 
+#tanks
+#large crane
+#silos
+#cone silo
+#covered store
+#warehouse LHS
+#warehouse RHS
+#bulk staithe LHS
+#bulk staithe RHS
+#empty tile
+
 sprite_ground = industry.add_sprite(
     sprite_number = 'GROUNDSPRITE_WATER'
 )
