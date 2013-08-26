@@ -49,16 +49,18 @@ industry.economy_variations['MISTAH_KURTZ'].prod_cargo_types = ['BDMT', 'GRAI']
 
 industry.add_tile(id='bulk_terminal_tile')
 
+#empty tile
+#covered store
 #tanks
-#large crane
 #silos
 #cone silo
-#covered store
 #warehouse LHS
 #warehouse RHS
 #bulk staithe LHS
 #bulk staithe RHS
-#empty tile
+#large crane
+#boat 1
+#boat 2
 
 sprite_ground = industry.add_sprite(
     sprite_number = 'GROUNDSPRITE_WATER'
@@ -67,98 +69,84 @@ spriteset_ground_empty = industry.add_spriteset(
     id = 'bulk_terminal_spriteset_ground',
     type = 'empty'
 )
-spriteset_1 = industry.add_spriteset(
+spriteset_concrete = industry.add_spriteset(
     id = 'bulk_terminal_spriteset_1',
     sprites = [(10, 10, 64, 39, -31, -8)],
     always_draw = 1,
 )
-spriteset_2 = industry.add_spriteset(
+spriteset_jetty_se_nw = industry.add_spriteset(
     id = 'bulk_terminal_spriteset_2',
     sprites = [(10, 60, 64, 39, -31, -7)],
     zextent = 7,
     always_draw = 1,
 )
-spriteset_3 = industry.add_spriteset(
+spriteset_jetty_ne_sw = industry.add_spriteset(
     id = 'bulk_terminal_spriteset_3',
     sprites = [(80, 60, 64, 39, -31, -7)],
     zextent = 7,
     always_draw = 1
 )
-spriteset_4 = industry.add_spriteset(
+spriteset_jetty_slope_nw_se = industry.add_spriteset(
     id = 'bulk_terminal_spriteset_4',
     sprites = [(150, 60, 64, 39, -31, -7)],
     zextent = 7
 )
-spriteset_5 = industry.add_spriteset(
+spriteset_jetty_slope_ne_sw = industry.add_spriteset(
     id = 'bulk_terminal_spriteset_5',
     sprites = [(220, 60, 64, 39, -31, -7)],
     zextent = 7
 )
-spriteset_6 = industry.add_spriteset(
+spriteset_jetty_slope_se_nw = industry.add_spriteset(
     id = 'bulk_terminal_spriteset_6',
     sprites = [(290, 60, 64, 39, -31, -7)],
     zextent = 7
 )
-spriteset_7 = industry.add_spriteset(
+spriteset_jetty_slope_sw_ne = industry.add_spriteset(
     id = 'bulk_terminal_spriteset_7',
     sprites = [(360, 60, 64, 39, -31, -7)],
     zextent = 7
 )
-spriteset_8 = industry.add_spriteset(
+spriteset_covered_store = industry.add_spriteset(
     id = 'bulk_terminal_spriteset_8',
+    sprites = [(150, 10, 64, 39, -31, 0)],
+    yoffset = 4,
+    zoffset = 27,
+    yextent = 12,
+
+)
+#bulk_terminal_spriteset_9 unused
+spriteset_tanks = industry.add_spriteset(
+    id = 'bulk_terminal_spriteset_10',
     sprites = [(80, 10, 64, 39, -31, 0)],
     zoffset = 18
 )
-spriteset_9 = industry.add_spriteset(
-    id = 'bulk_terminal_spriteset_9',
-    sprites = [(150, 10, 64, 39, -31, 0)],
-    yoffset = 4,
-    zoffset = 27,
-    yextent = 12,
-
-)
-spriteset_9b = industry.add_spriteset(
-    id = 'bulk_terminal_spriteset_9b',
-    sprites = [(150, 10, 64, 39, -31, 0)],
-    xoffset = 5,
-    zoffset = 40,
-    xextent = 11,
-
-)
-spriteset_10 = industry.add_spriteset(
-    id = 'bulk_terminal_spriteset_10',
-    sprites = [(220, 10, 64, 39, -31, -7)],
-    yoffset = 4,
-    zoffset = 27,
-    yextent = 12,
-)
-spriteset_11 = industry.add_spriteset(
+spriteset_silos = industry.add_spriteset(
     id = 'bulk_terminal_spriteset_11',
-    sprites = [(10, 110, 64, 39, -35, -15)],
+    sprites = [(510, 10, 64, 39, -35, -15)],
 )
-spriteset_12 = industry.add_spriteset(
+spriteset_cone_silo = industry.add_spriteset(
     id = 'bulk_terminal_spriteset_12',
-    sprites = [(80, 110, 64, 39, -31, -14)],
+    sprites = [(580, 10, 64, 39, -31, -14)],
 )
-spriteset_13 = industry.add_spriteset(
+spriteset_warehouse_lhs = industry.add_spriteset(
     id = 'bulk_terminal_spriteset_13',
-    sprites = [(150, 110, 64, 39, -31, -8)],
+    sprites = [(650, 10, 64, 39, -31, -8)],
 )
-spriteset_14 = industry.add_spriteset(
+spriteset_warehouse_rhs = industry.add_spriteset(
     id = 'bulk_terminal_spriteset_14',
-    sprites = [(220, 110, 64, 39, -27, -12)],
+    sprites = [(720, 10, 64, 39, -27, -12)],
 )
-spriteset_15 = industry.add_spriteset(
+spriteset_staithe_lhs = industry.add_spriteset(
     id = 'bulk_terminal_spriteset_15',
-    sprites = [(290, 110, 64, 39, -15, -11)],
+    sprites = [(440, 110, 64, 39, -15, -11)],
 )
-spriteset_16 = industry.add_spriteset(
+spriteset_staithe_rhs = industry.add_spriteset(
     id = 'bulk_terminal_spriteset_16',
-    sprites = [(360, 110, 64, 39, -45, -15)],
+    sprites = [(510, 110, 64, 39, -45, -15)],
 )
-spriteset_17 = industry.add_spriteset(
+spriteset_large_crane = industry.add_spriteset(
     id = 'bulk_terminal_spriteset_17',
-    sprites = [(360, 10, 64, 39, -31, 0)],
+    sprites = [(580, 110, 64, 39, -31, 0)],
     zoffset = 18,
 )
 
@@ -166,181 +154,181 @@ industry.add_spritelayout(
     id = 'bulk_terminal_spritelayout_1',
     ground_sprite = spriteset_ground_empty,
     ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_2, spriteset_1, spriteset_17]
+    building_sprites = [spriteset_jetty_se_nw, spriteset_concrete, spriteset_large_crane]
 )
 industry.add_spritelayout(
     id = 'bulk_terminal_spritelayout_2',
     ground_sprite = spriteset_ground_empty,
     ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_3, spriteset_1, spriteset_17]
+    building_sprites = [spriteset_jetty_ne_sw, spriteset_concrete, spriteset_large_crane]
 )
 industry.add_spritelayout(
     id = 'bulk_terminal_spritelayout_3',
     ground_sprite = spriteset_ground_empty,
     ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_2, spriteset_3, spriteset_1, spriteset_17]
+    building_sprites = [spriteset_jetty_se_nw, spriteset_jetty_ne_sw, spriteset_concrete, spriteset_large_crane]
 )
 industry.add_spritelayout(
     id = 'bulk_terminal_spritelayout_4',
     ground_sprite = spriteset_ground_empty,
     ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_3, spriteset_4, spriteset_1, spriteset_17]
+    building_sprites = [spriteset_jetty_ne_sw, spriteset_jetty_slope_nw_se, spriteset_concrete, spriteset_large_crane]
 )
 industry.add_spritelayout(
     id = 'bulk_terminal_spritelayout_5',
     ground_sprite = spriteset_ground_empty,
     ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_5, spriteset_4, spriteset_1, spriteset_17]
+    building_sprites = [spriteset_jetty_slope_ne_sw, spriteset_jetty_slope_nw_se, spriteset_concrete, spriteset_large_crane]
 )
 industry.add_spritelayout(
     id = 'bulk_terminal_spritelayout_6',
     ground_sprite = spriteset_ground_empty,
     ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_5, spriteset_2, spriteset_1, spriteset_17]
+    building_sprites = [spriteset_jetty_slope_ne_sw, spriteset_jetty_se_nw, spriteset_concrete, spriteset_large_crane]
 )
 industry.add_spritelayout(
     id = 'bulk_terminal_spritelayout_7',
     ground_sprite = spriteset_ground_empty,
     ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_6, spriteset_1, spriteset_17]
+    building_sprites = [spriteset_jetty_slope_se_nw, spriteset_concrete, spriteset_large_crane]
 )
 industry.add_spritelayout(
     id = 'bulk_terminal_spritelayout_8',
     ground_sprite = spriteset_ground_empty,
     ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_6, spriteset_7, spriteset_1, spriteset_17]
+    building_sprites = [spriteset_jetty_slope_se_nw, spriteset_jetty_slope_sw_ne, spriteset_concrete, spriteset_large_crane]
 )
 industry.add_spritelayout(
     id = 'bulk_terminal_spritelayout_9',
     ground_sprite = spriteset_ground_empty,
     ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_7, spriteset_1, spriteset_17]
+    building_sprites = [spriteset_jetty_slope_sw_ne, spriteset_concrete, spriteset_large_crane]
 )
 industry.add_spritelayout(
     id = 'bulk_terminal_spritelayout_10',
     ground_sprite = spriteset_ground_empty,
     ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_1]
+    building_sprites = [spriteset_concrete]
 )
 industry.add_spritelayout(
     id = 'bulk_terminal_spritelayout_11',
     ground_sprite = spriteset_ground_empty,
     ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_2, spriteset_1, spriteset_8]
+    building_sprites = [spriteset_jetty_se_nw, spriteset_concrete, spriteset_tanks]
 )
 industry.add_spritelayout(
     id = 'bulk_terminal_spritelayout_12',
     ground_sprite = spriteset_ground_empty,
     ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_3, spriteset_1, spriteset_8]
+    building_sprites = [spriteset_jetty_ne_sw, spriteset_concrete, spriteset_tanks]
 )
 industry.add_spritelayout(
     id = 'bulk_terminal_spritelayout_13',
     ground_sprite = spriteset_ground_empty,
     ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_2, spriteset_3, spriteset_1, spriteset_8]
+    building_sprites = [spriteset_jetty_se_nw, spriteset_jetty_ne_sw, spriteset_concrete, spriteset_tanks]
 )
 industry.add_spritelayout(
     id = 'bulk_terminal_spritelayout_14',
     ground_sprite = spriteset_ground_empty,
     ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_3, spriteset_4, spriteset_1, spriteset_8]
+    building_sprites = [spriteset_jetty_ne_sw, spriteset_jetty_slope_nw_se, spriteset_concrete, spriteset_tanks]
 )
 industry.add_spritelayout(
     id = 'bulk_terminal_spritelayout_15',
     ground_sprite = spriteset_ground_empty,
     ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_5, spriteset_4, spriteset_1, spriteset_8]
+    building_sprites = [spriteset_jetty_slope_ne_sw, spriteset_jetty_slope_nw_se, spriteset_concrete, spriteset_tanks]
 )
 industry.add_spritelayout(
     id = 'bulk_terminal_spritelayout_16',
     ground_sprite = spriteset_ground_empty,
     ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_5, spriteset_2, spriteset_1, spriteset_8]
+    building_sprites = [spriteset_jetty_slope_ne_sw, spriteset_jetty_se_nw, spriteset_concrete, spriteset_tanks]
 )
 industry.add_spritelayout(
     id = 'bulk_terminal_spritelayout_17',
     ground_sprite = spriteset_ground_empty,
     ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_6, spriteset_1, spriteset_8]
+    building_sprites = [spriteset_jetty_slope_se_nw, spriteset_concrete, spriteset_tanks]
 )
 industry.add_spritelayout(
     id = 'bulk_terminal_spritelayout_18',
     ground_sprite = spriteset_ground_empty,
     ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_6, spriteset_7, spriteset_1, spriteset_8]
+    building_sprites = [spriteset_jetty_slope_se_nw, spriteset_jetty_slope_sw_ne, spriteset_concrete, spriteset_tanks]
 )
 industry.add_spritelayout(
     id = 'bulk_terminal_spritelayout_19',
     ground_sprite = spriteset_ground_empty,
     ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_7, spriteset_1, spriteset_8]
+    building_sprites = [spriteset_jetty_slope_sw_ne, spriteset_concrete, spriteset_tanks]
 )
 industry.add_spritelayout(
     id = 'bulk_terminal_spritelayout_20',
     ground_sprite = spriteset_ground_empty,
     ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_1, spriteset_8]
+    building_sprites = [spriteset_concrete, spriteset_tanks]
 )
 industry.add_spritelayout(
     id = 'bulk_terminal_spritelayout_21',
     ground_sprite = sprite_ground,
     ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_11]
+    building_sprites = [spriteset_silos]
 )
 industry.add_spritelayout(
     id = 'bulk_terminal_spritelayout_22',
     ground_sprite = sprite_ground,
     ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_12]
+    building_sprites = [spriteset_cone_silo]
 )
 industry.add_spritelayout(
     id = 'bulk_terminal_spritelayout_23',
     ground_sprite = sprite_ground,
     ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_13]
+    building_sprites = [spriteset_warehouse_lhs]
 )
 industry.add_spritelayout(
     id = 'bulk_terminal_spritelayout_24',
     ground_sprite = sprite_ground,
     ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_14]
+    building_sprites = [spriteset_warehouse_rhs]
 )
 industry.add_spritelayout(
     id = 'bulk_terminal_spritelayout_25',
     ground_sprite = sprite_ground,
     ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_14]
+    building_sprites = [spriteset_warehouse_rhs]
 )
 industry.add_spritelayout(
     id = 'bulk_terminal_spritelayout_26',
     ground_sprite = sprite_ground,
     ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_15]
+    building_sprites = [spriteset_staithe_lhs]
 )
 industry.add_spritelayout(
     id = 'bulk_terminal_spritelayout_27',
     ground_sprite = sprite_ground,
     ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_16]
+    building_sprites = [spriteset_staithe_rhs]
 )
 industry.add_spritelayout(
     id = 'bulk_terminal_spritelayout_28',
     ground_sprite = spriteset_ground_empty,
     ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_2, spriteset_3, spriteset_1, spriteset_9]
+    building_sprites = [spriteset_jetty_se_nw, spriteset_jetty_ne_sw, spriteset_concrete, spriteset_covered_store]
 )
 industry.add_spritelayout(
     id = 'bulk_terminal_spritelayout_29',
     ground_sprite = spriteset_ground_empty,
     ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_2, spriteset_3, spriteset_1, spriteset_10]
+    building_sprites = [spriteset_jetty_se_nw, spriteset_jetty_ne_sw, spriteset_concrete, spriteset_tanks]
 )
 industry.add_spritelayout(
     id = 'bulk_terminal_spritelayout_30',
     ground_sprite = spriteset_ground_empty,
     ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_2, spriteset_3, spriteset_1, spriteset_9b]
+    building_sprites = [spriteset_jetty_se_nw, spriteset_jetty_ne_sw, spriteset_concrete]
 )
 industry.add_spritelayout(
     id = 'bulk_terminal_spritelayout_null',
