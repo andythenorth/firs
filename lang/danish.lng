@@ -1,0 +1,247 @@
+##grflangid 0x2d
+##plural 0
+
+STR_GRF_DESC                                                                    :{ORANGE}FIRS Industry Replacement Set{}{BLACK}Bragt til dig af andythenorth, FooBar, planetmaker, Terkhen og Yexo, med hjælp fra mange andre. {SILVER}Se "readme"-filen for mere information, inklusiv hvordan man anvender FIRS. {BLACK}Licens: GPL v2.
+STR_GRF_NAME                                                                    :{TITLE}
+STR_GRF_URL                                                                     :http://bundles.openttdcoop.org/firs/releases/LATEST/docs/
+
+STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :Maksimal afstand mellem fiskeområder, boreplatforme og uddybningssteder og kysten i felter.
+STR_PARAM_DESC_STAT_RATING                                                      :Stationsbedømmelse påvirker mængden af last der leveres fra en industri til stationen; jo højere bedømmelse, jo mere leveres til stationen.
+STR_PARAM_DESC_DEBUG                                                            :Kun for udviklere
+STR_PARAM_DESC_ECONOMIES                                                        :Hver økonomi har sin egen kombination af godstyper og industrier.{}{}"Basis" økonomien indeholder færre industrier og godstyper end andre FIRS økonomier, og er velegnet for nye spillere, eller spillere der ønsker et mere simpelt gameplay.
+STR_PARAM_DESC_NO_OPENINGS                                                      :Som standard vil nye FIRS-industrier åbne i løbet af spillet.{}{}hvis 'Forhindre industrier i at åbne under spillet' er slået til, vil industrier ikke åbne i løbet af spillet, og spillere vil heller ikke kunne bygge nye industrier.
+STR_PARAM_DESC_SECONDARY_NEVER_CLOSE                                            :Som standard vil FIRS-industrierne ikke lukke i løbet af spillet.{}{}Hvis 'Tillad sekundære industrier at lukke' er slået til, vil sekundære industrier kunne lukke såfremt ingen varer er leveret i en længere periode. Primære industrier vil andre kunne lukke i FIRS og påvirkes ikke af denne indstilling.
+STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY                                   :Maksimal afstand mellem kysten og marine industrier, i felter
+STR_PARAM_NAME_DEBUG                                                            :Vis debug informationer
+STR_PARAM_NAME_ECONOMIES                                                        :Økonomi
+STR_PARAM_NAME_NO_OPENINGS                                                      :Forhindre industrier i at åbne under spillet
+STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            :Tillad sekundære industrier at lukke
+STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0                                         :Ingen begrænsning
+STR_PARAM_NAME_STAT_RATING                                                      :Algoritme for stationsbedømmelse
+STR_PARAM_VALUE_STAT_RATING_DEFAULT                                             :Hård og ond (Benytter OpenTTD's standardværdi for stationsbedømmelse)
+STR_PARAM_VALUE_STAT_RATING_REDUCED_TIME                                        :Positiv (tillader længere tid mellem afhentning)
+STR_PARAM_VALUE_STAT_RATING_100                                                 :sindssygt generøs (bedømmelse er altid 100%)
+
+STR_PARAM_VALUE_ECONOMIES_BASIC_TEMPERATE                                       :Tempereret basis
+STR_PARAM_VALUE_ECONOMIES_BASIC_ARCTIC                                          :Subarktisk basis
+STR_PARAM_VALUE_ECONOMIES_BASIC_TROPIC                                          :Subtropisk basis
+STR_PARAM_VALUE_ECONOMIES_FIRS                                                  :FIRS
+STR_PARAM_VALUE_ECONOMIES_MISTAH_KURTZ                                          :Heart of Darkness
+STR_PARAM_VALUE_ECONOMIES_TEST_3                                                :Testøkonomi 3
+
+STR_CARGO_NAME_ALCOHOL                                                          :Alkohol
+STR_CARGO_NAME_BAUXITE                                                          :Bauxit
+STR_CARGO_NAME_BUILDING_MATERIALS                                               :Byggematerialer
+STR_CARGO_NAME_CHEMICALS                                                        :Kemikalier
+STR_CARGO_NAME_CLAY                                                             :Ler
+STR_CARGO_NAME_COFFEE                                                           :Kaffe
+STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :Konstruktionsmaterialer
+STR_CARGO_NAME_FIBRES                                                           :Plantefibre
+STR_CARGO_NAME_FISH                                                             :Fisk
+STR_CARGO_NAME_FARM_SUPPLIES                                                    :Landbrugsmaterialer
+STR_CARGO_NAME_FRUITS                                                           :Frugt
+STR_CARGO_NAME_LUMBER                                                           :Tømmer
+STR_CARGO_NAME_METAL                                                            :Metal
+STR_CARGO_NAME_MILK                                                             :Mælk
+STR_CARGO_NAME_MANUFACTURING_SUPPLIES                                           :Produktionsmaterialer
+STR_CARGO_NAME_PETROL                                                           :Benzin
+STR_CARGO_NAME_RECYCLABLES                                                      :Genbrugsmaterialer
+STR_CARGO_NAME_SAND                                                             :Sand
+STR_CARGO_NAME_SCRAP_METAL                                                      :Skrotmetal
+STR_CARGO_NAME_STONE                                                            :Sten
+STR_CARGO_NAME_SUGAR_BEET                                                       :Sukkerroer
+STR_CARGO_NAME_SUGARCANE                                                        :Sukkerrør
+STR_CARGO_NAME_WOOL                                                             :Uld
+
+STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} alkohol
+STR_CARGO_UNIT_BAUXITE                                                          :{WEIGHT} bauxit
+STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WEIGHT} byggematerialer
+STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} kemikalier
+STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} ler
+STR_CARGO_UNIT_COFFEE                                                           :{SIGNED_WORD} sæk{P 0 "" ke} kaffe
+STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} kasse{P 0 "" r} konstruktionsmaterialer
+STR_CARGO_UNIT_FIBRES                                                           :{SIGNED_WORD} bal{P 0 "" le} plantefibre
+STR_CARGO_UNIT_FISH                                                             :{WEIGHT} fisk
+STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} kasse{P 0 "" er} landbrugsmaterialer
+STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} frugt
+STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} tømmer
+STR_CARGO_UNIT_METAL                                                            :{WEIGHT} metal
+STR_CARGO_UNIT_MILK                                                             :{VOLUME} mælk
+STR_CARGO_UNIT_MNSP                                                             :{SIGNED_WORD} kasse{P 0 "" r} produktionsmaterialer
+STR_CARGO_UNIT_PETROL                                                           :{VOLUME} benzin
+STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} genbrugsmaterialer
+STR_CARGO_UNIT_SAND                                                             :{WEIGHT} sand
+STR_CARGO_UNIT_SCRAP_METAL                                                      :{WEIGHT} skrotmetal
+STR_CARGO_UNIT_STONE                                                            :{WEIGHT} sten
+STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} sukkerroer
+STR_CARGO_UNIT_SUGARCANE                                                        :{WEIGHT} sukkerrør
+STR_CARGO_UNIT_WOOL                                                             :{SIGNED_WORD} bal{P 0 "" er} uld
+
+STR_CID_ALCOHOL                                                                 :{TINYFONT}AL
+STR_CID_BAUXITE                                                                 :{TINYFONT}BX
+STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}BM
+STR_CID_CHEMICALS                                                               :{TINYFONT}KE
+STR_CID_CLAY                                                                    :{TINYFONT}LE
+STR_CID_COFFEE                                                                  :{TINYFONT}KA
+STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}KM
+STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}LM
+STR_CID_FIBRES                                                                  :{TINYFONT}PF
+STR_CID_FISH                                                                    :{TINYFONT}FI
+STR_CID_LUMBER                                                                  :{TINYFONT}TØ
+STR_CID_MANUFACTURING_SUPPLIES                                                  :{TINYFONT}PM
+STR_CID_METAL                                                                   :{TINYFONT}MT
+STR_CID_MILK                                                                    :{TINYFONT}MK
+STR_CID_PETROL                                                                  :{TINYFONT}BZ
+STR_CID_RECYCLABLES                                                             :{TINYFONT}GM
+STR_CID_SAND                                                                    :{TINYFONT}SA
+STR_CID_SCRAP_METAL                                                             :{TINYFONT}SM
+STR_CID_STONE                                                                   :{TINYFONT}ST
+STR_CID_SUGAR_BEET                                                              :{TINYFONT}RO
+STR_CID_SUGARCANE                                                               :{TINYFONT}SØ
+STR_CID_WOOL                                                                    :{TINYFONT}UL
+
+STR_ERR_CLIMATE_TOYLAND                                                         :{ORANGE}FIRS er ikke designet til anvendelse i "legetøjs" (Toyland) landskab.
+STR_ERR_INCOMPATIBLE_SET                                                        :{ORANGE}E01: {YELLOW}Inkompetabelt set: {ORANGE}{STRING} {YELLOW}Tjek FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_PARAM_CANSET                                               :{ORANGE}E02: {YELLOW}Inkompetabel parameter: {ORANGE}CanSet parameter 2 skal være 0 for at virke med FIRS. {YELLOW}Tjek FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_PARAM_CITYSET                                              :{ORANGE}E02: {YELLOW}Inkompetabel parameter: {ORANGE}NA City Set parameter 2 skal være 0 for at virke med FIRS. {YELLOW}Tjek FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_SET_TTRS_VERSION                                           :{ORANGE}E04: {YELLOW}Inkompetabel version: {ORANGE}Total Town Replacement Set skal være "release 3.11" eller nyere. {YELLOW}tjek FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_OPENTTD_VERSION                                                         :{ORANGE}E00: FIRS kræver OpenTTD 1.2.0 / trunk r22780 eller nyere. {YELLOW}tjek FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+
+STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE                                             :skal være placeret over snelinjen.
+STR_ERR_LOCATION_NOT_ON_WATER                                                   :skal være placeret på land.
+STR_ERR_LOCATION_NOT_IN_DESERT                                                  :må ikke placeres i ørkenen.
+STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE                                             :kan ikke placeres på skrå felter.
+STR_ERR_LOCATION_LIMIT_1_PER_TOWN                                               :kun en industri af denne type tilladt pr. by.
+
+STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}Fragt produktion:{}  2t per 8t bauxit afleveret{}  2t per 8,000l kemikalier afleveret{}  4t per 8t skrotmetal afleveret{}{}Produktionen stiger hvis to eller flere fragttyper leveres i samme måned.
+STR_EXTRA_BIOREFINERY                                                           :{BLACK}Fragt produktion:{}  6,000l per 8t korn afleveret{}  6,000l per 8t sukker afleveret
+STR_EXTRA_BREWERY                                                               :{BLACK}Fragt produktion:{}  3,000l per 8 kasser konstruktionsmaterialer afleveret{} {STRING} {STRING}{}Produktionen stiger hvis konstruktionsmaterialer afleveres i samme måneder som andre fragttyper.
+STR_EXTRA_BREWERY_GRAIN_SUBSTR                                                  :5,000l per 8t korn afleveret{}
+STR_EXTRA_BREWERY_FRUIT_SUBSTR                                                  :5,000l per 8t frugt afleveret{}
+STR_EXTRA_BRICKWORKS                                                            :{BLACK}Fragt produktion:{}  2t per 8t kul afleveret{}  2t per 8t sand afleveret{}  4t per 8t ler afleveret{}{}Produktionen stiger hvis to eller flere fragttyper leveres i samme måned.
+STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Fragt produktion:{}  2t per 8t kul afleveret{}  2t per 8t ler afleveret{}  4t per 8t sten afleveret{}{}Produktionen stiger hvis to eller flere fragttyper leveres i samme måned.
+STR_EXTRA_DAIRY                                                                 :{BLACK}Fragt produktion:{}  3t per 8 kasser konstruktionsmaterialer afleveret{}  5t per 8,000l mælk afleveret{}{}Produktionen stiger hvis begge fragttyper leveres i samme måned.
+STR_EXTRA_FERTILIZER_PLANT                                                      :{BLACK}Fragt produktion:{}  8 kasser per 8,000l kemikalier afleveret
+STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Fragt produktion:{}  3t per 8 kasser konstruktionsmaterialer afleveret{}  5t per 8t fisk afleveret{}{}Produktionen stiger hvis begge fragttyper leveres i samme måned.
+STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Fragt produktion:{}  3t per 8 kasser konstruktionsmaterialer afleveret{}  5t per 8t tømmer afleveret{}{}Produktionen stiger hvis begge fragttyper leveres i samme måned.
+STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Producerer glasvarer såsom flasker, krukker og glas til vinduer.{}{}{BLACK}Fragt produktion:{}  6t per 8t sand afleveret{}  2t per 8,000l kemikalier afleveret{}{}Produktionen stiger hvis begge fragttyper leveres i samme måned.
+STR_EXTRA_GRAIN_MILL                                                            :{BLACK}Fragt produktion:{}  3t per 8 kasser konstruktionsmaterialer afleveret{}  5t per 8t korn afleveret{}{}Produktionen stiger hvis begge fragttyper leveres i samme måned.
+STR_EXTRA_IRON_WORKS                                                            :{BLACK}Fragt produktion:{}  2t per 8t træ afleveret{}  2t per 8t jernmalm afleveret{}{}Produktionen stiger hvis begge fragttyper leveres i samme måned.
+STR_EXTRA_LIME_KILN                                                             :{BLACK}Fragt produktion:{}  3t per 8t sten afleveret{}  3t per 8t kul afleveret{}{}Produktionen stiger hvis begge fragttyper leveres i samme måned.
+STR_EXTRA_LUMBER_YARD                                                           :{BLACK}Producerer varer som træpæle og hegnspæle.{}{}{BLACK}Fragt produktion:{}  2t per 8,000l kemikalier afleveret{}  6t per 8t tømmer afleveret{}{}Produktionen stiger hvis begge fragttyper leveres i samme måned.
+STR_EXTRA_MACHINE_SHOP                                                          :{BLACK}Bygger og servicerer maskiner.{}{}Fragt produktion:{}  8 kasser per 8,000l benzin afleveret{}  8 kasser per 8t metal afleveret
+STR_EXTRA_MEAT_PACKER                                                           :{BLACK}Fragt produktion:{}  3t per 8 kasser konstruktionsmaterialer afleveret{}  5t per 8t livestock afleveret{}{}Produktionen stiger hvis begge fragttyper leveres i samme måned.
+STR_EXTRA_METAL_FABRICATION_PLANT                                               :{BLACK}Producerer malede metalkomponenter.{}{}{BLACK}Fragt produktion:{}  2t per 8,000l kemikalier afleveret{}  6t per 8t metal afleveret{}{}Produktionen stiger hvis begge fragttyper leveres i samme måned.
+STR_EXTRA_METAL_FOUNDRY                                                         :{BLACK}Producerer pladebaserede metalvarer som konservesdåser, værktøj og husholdningsapparater.{}{}{BLACK}Fragt produktion:{}  2 kasser per 8,000l kemikalier afleveret{}  6 kasser per 8t metal afleveret{}{}Produktionen stiger hvis begge fragttyper leveres i samme måned.
+STR_EXTRA_OIL_REFINERY                                                          :{BLACK}Bearbejder råolie til benzin and kemikalier.{}{}Fragt produktion:{}  6,000l per 8,000l afleveret
+STR_EXTRA_PAPER_MILL                                                            :{BLACK}Presser træ til papir og pap.{}{}{BLACK}Fragt produktion:{}  4 kasser per 8t træ afleveret{}  2 kasser per 8t ler afleveret{}  2 kasser per 8,000l kemikalier afleveret{}{}Produktionen stiger hvis to eller flere fragttyper leveres i samme måned.
+STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}Producerer plastikvarer såsom emballage og husholdningsapparater.{}{}Fragt produktion:{} {STRING} {STRING}
+STR_EXTRA_PLASTICS_PLANT_CHEMICALS_SUBSTR                                       :6 kasser per 8,000l kemikalier afleveret{}
+STR_EXTRA_PLASTICS_PLANT_PLANT_FIBRES_SUBSTR                                    :6 kasser per 8 baller plantefibre afleveret{}
+STR_EXTRA_RECYCLING_PLANT                                                       :{BLACK}Bearbejder genbrugsmaterialer til genbrug.{}{}Fragt produktion:{}  6t per 8t genbrugsmaterialer afleveret
+STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}Produktionen er proportional med byens indbyggertal.
+STR_EXTRA_SAWMILL                                                               :{BLACK}Saver træ.{}{}Fragt produktion:{}  6t per 8t træ afleveret
+STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Producerer metalvarer såsom værktøj, plove, porte, skovle og hestesko.{}{}Fragt produktion:{}  8 kasser per 8t metal afleveret
+STR_EXTRA_STEELMILL                                                             :{BLACK}Fragt produktion:{}  2t per 8t jernmalm afleveret{}  2t per 8t kul afleveret{}  4t per 8t skrotmetal afleveret{}{}Produktionen stiger hvis to eller flere fragttyper leveres i samme måned.
+STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Fragt produktion:{}  3t per 8 kasser konstruktionsmaterialer afleveret{}  5t per 8t sukker afleveret{}{}Produktionen stiger hvis begge fragttyper leveres i samme måned.
+STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Fragt produktion:{}  3 kasser per 8 kasser konstruktionsmaterialer afleveret{} {STRING} {STRING} {}Produktionen stiger hvis konstruktionsmaterialer afleveres i samme måned som andre fragttyper.
+STR_EXTRA_TEXTILE_MILL_WOOL_SUBSTR                                              :5 kasser per 8 baller uld afleveret{}
+STR_EXTRA_TEXTILE_MILL_PLANT_FIBRES_SUBSTR                                      :5 kasser per 8 baller plantefibre afleveret{}
+
+STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ DEBUG ------------{}Produktion denne måned:{}Fragt 1: {WHITE}{COMMA}{BLACK}{}Fragt 2: {WHITE}{COMMA}{BLACK}{}Dage siden sidste aflevering: {WHITE}{COMMA}{BLACK}
+STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Maksimal produktion opnået
+STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Nuværrende produktion: {YELLOW}Normal{}{}{BLACK}For at fordoble produktionen, aflever {SIGNED_WORD} kasser materialer (or {SIGNED_WORD} kasser for firedobble produktionen)
+STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Nuværrende produktion: {YELLOW}Forbedret (dobbelt){}{}{BLACK}For at fastholde dette niveau, aflever {SIGNED_WORD} kasser materialer inden tre måneder, eller {SIGNED_WORD} kasser for at firedobble produktionen
+STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}Nuværrende produktion: {YELLOW}Gung ho (firedobbelt){}{}{BLACK}For at fastholde dette niveau, aflever {SIGNED_WORD} kasser materialer inden tre måneder
+STR_PORT_PRODUCTION_1X                                                          :{BLACK}Nuværrende produktion: {YELLOW}Normal{}{}{BLACK}For at fordoble produktionen, aflever {SIGNED_WORD} enheder af fragt inden tre måneder{}For at firedobble produktionen, aflever {SIGNED_WORD} enheder af fragt inden tre måneder
+STR_PORT_PRODUCTION_2X                                                          :{BLACK}Nuværrende produktion: {YELLOW}Forbedret (dobbelt){}{}{BLACK}For at fastholde dette niveau, aflever {SIGNED_WORD} enheder af fragt inden tre måneder, eller {SIGNED_WORD} enheder af fragt for at opnå firedobbelt produktion
+STR_PORT_PRODUCTION_4X                                                          :{BLACK}Nuværrende produktion: {YELLOW}Gung ho (firedobbelt){}{}{BLACK}For at fastholde dette niveau, aflever {SIGNED_WORD} enheder af fragt inden tre måneder
+STR_GENERIC_NEWLINE                                                             :{}
+
+STR_FUND_BASIC_FARM                                                             :{}{BLACK}Placering: {YELLOW}Kan ikke bygges i sne eller i ørkener.
+STR_FUND_MIXED_FARM                                                             :{}{BLACK}Placering: {YELLOW}Kan ikke bygges i sne eller i ørkener.
+STR_FUND_ARABLE_FARM                                                            :{}{BLACK}Placering: {YELLOW}Kan ikke bygges i sne eller i ørkener.
+STR_FUND_COFFEE_ESTATE                                                          :{}{BLACK}Placering: {YELLOW}Kan ikke bygges i sne eller i ørkener.
+STR_FUND_ORCHARD_PIGGERY                                                        :{}{BLACK}Placering: {YELLOW}Kan ikke bygges i sne eller i ørkener.
+STR_FUND_SUGAR_PLANTATION                                                       :{}{BLACK}Placering: {YELLOW}Kan ikke bygges i sne eller i ørkener.
+STR_FUND_FIBRE_CROP_FARM                                                        :{}{BLACK}Placering: {YELLOW}Kan ikke bygges i sne eller i ørkener.
+STR_FUND_FOREST                                                                 :{}{BLACK}Placering: {YELLOW}Kan ikke bygges i ørkener.
+STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}Placering: {YELLOW}Kan ikke bygges i sne.
+STR_FUND_RUBBER_PLANTATION                                                      :{}{BLACK}Placering: {YELLOW}Kan ikke bygges i sne eller i ørkener.
+
+
+STR_FUND_AVAILABLE_FROM                                                         :{}{BLACK}Tilgængelig fra: {YELLOW}{COMMA}
+
+STR_FUND_AVAILABLE_UNTIL                                                        :{}{BLACK}Ikke tilgængelig efter: {YELLOW}{COMMA}
+
+
+STR_TOWN                                                                        :{STRING}
+STR_STATION                                                                     :{STRING} {STRING}
+
+STR_IND_ALUMINIUM_PLANT                                                         :Aluminiumsværk
+STR_IND_ARABLE_FARM                                                             :Jordbrugsgård
+STR_IND_BASICFARM                                                               :Bondegård
+STR_IND_BAUXITE_MINE                                                            :Bauxitmine
+STR_IND_BIOREFINERY                                                             :Bioraffinaderi
+STR_IND_BREWERY                                                                 :Bryggeri
+STR_IND_BREWERY_CIDER_MILL                                                      :Cider bryggeri
+STR_IND_BRICK_WORKS                                                             :Teglværk
+STR_IND_BUILDERS_YARD                                                           :Byggeplads
+STR_IND_BULK_TERMINAL                                                           :Bulk terminal
+STR_IND_CEMENT_PLANT                                                            :Cementfabrik
+STR_IND_CLAY_PIT                                                                :Lergrav
+STR_IND_COFFEE_ESTATE                                                           :Kaffeplantage
+STR_IND_FIBRE_CROP_FARM                                                         :Fibreafgrødegård
+STR_IND_DAIRY                                                                   :Mejeri
+STR_IND_DAIRYFARM                                                               :Malkegård
+STR_IND_DREDGING_SITE                                                           :Uddybningssted
+STR_IND_FERTILISER_PLANT                                                        :Gødningsfabrik
+STR_IND_FISHING_GROUND                                                          :Fiskeriområder
+STR_IND_FISHING_HARBOUR                                                         :Fiskerihavn
+STR_IND_FOOD_MARKET                                                             :Fødevarebutik
+STR_IND_FURNITURE_FACTORY                                                       :Møbelfabrik
+STR_IND_GENERAL_STORE                                                           :Butik
+STR_IND_GLASS_WORKS                                                             :Glasværk
+STR_IND_GRAIN_MILL                                                              :Mølle
+STR_IND_HARDWARE_STORE                                                          :Isenkræmmer
+STR_IND_HOTEL                                                                   :Hotel
+STR_IND_IRON_WORKS                                                              :Stålværk
+STR_IND_JUNKYARD                                                                :Skrotplads
+STR_IND_LIME_KILN                                                               :Kalkbrænderi
+STR_IND_LUMBER_YARD                                                             :Tømmerplads
+STR_IND_MACHINE_SHOP                                                            :Maskinfabrik
+STR_IND_METAL_FABRICATION_PLANT                                                 :Metalvarefabrik
+STR_IND_METAL_FOUNDRY                                                           :Metalstøberi
+STR_IND_MIXEDFARM                                                               :Bondegård
+STR_IND_ORCHARD_PIGGERY                                                         :Frugthave og svinestald
+STR_IND_PETROLPUMP                                                              :Tankstation
+STR_IND_PLASTICS_PLANT                                                          :Plastikfabrik
+STR_IND_PORT                                                                    :Havn
+STR_IND_QUARRY                                                                  :Grusgrav
+STR_IND_RANCH                                                                   :Ranch
+STR_IND_RECYCLING_DEPOT                                                         :Genbrugsstation
+STR_IND_RECYCLING_PLANT                                                         :Genanvendingsanlæg
+STR_IND_SHEEPFARM                                                               :Fårefarm
+STR_IND_SMITHY_FORGE                                                            :Smedie
+STR_IND_STOCKYARD                                                               :Slagteri
+STR_IND_SUGAR_PLANTATION                                                        :Sukkerplantage
+STR_IND_SUGAR_REFINERY                                                          :Sukkerfabrik
+STR_IND_SUPERMARKET                                                             :Supermarked
+STR_IND_TEXTILE_MILL                                                            :Tekstilfabrik
+STR_IND_TRADING_POST                                                            :Handelsstation
+
+STR_STATION_ANIMALS                                                             :Hestemarked
+STR_STATION_FARM                                                                :Gård
+STR_STATION_FISHMARKET                                                          :Fiskemarked
+STR_STATION_HEAVY_INDUSTRY                                                      :Industriområde
+STR_STATION_INDUSTRY_ESTATE                                                     :Industripark
+STR_STATION_INDUSTRY_HARBOUR                                                    :Trafikhavn
+STR_STATION_MARKET                                                              :Marked
+STR_STATION_MILL                                                                :Mølle
+STR_STATION_MINE                                                                :Mine
+STR_STATION_PIT                                                                 :Grav
+STR_STATION_PLANTATION                                                          :Plantage
+STR_STATION_POWERHUNGRY                                                         :Kraftværk
+STR_STATION_REFINERY                                                            :Raffinaderi
+STR_STATION_TOWN                                                                :Bymidte
+STR_STATION_WATER                                                               :Sandbanke
