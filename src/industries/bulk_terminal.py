@@ -145,22 +145,22 @@ spriteset_staithe_rhs = industry.add_spriteset(
 )
 spriteset_large_crane_nw_se = industry.add_spriteset(
     id = 'bulk_terminal_spriteset_large_crane_nw_se',
-    sprites = [(580, 110, 64, 39, -31, 0)],
+    sprites = [(580, 110, 64, 84, -31, -43)],
     zoffset = 18,
 )
 spriteset_large_crane_ne_sw = industry.add_spriteset(
     id = 'bulk_terminal_spriteset_large_crane_ne_sw',
-    sprites = [(650, 110, 64, 39, -31, 0)],
+    sprites = [(650, 110, 64, 84, -31, -43)],
     zoffset = 18,
 )
 spriteset_large_crane_sw_ne = industry.add_spriteset(
     id = 'bulk_terminal_spriteset_large_crane_sw_ne',
-    sprites = [(720, 110, 64, 39, -31, 0)],
+    sprites = [(720, 110, 64, 84, -31, -43)],
     zoffset = 18,
 )
 spriteset_large_crane_se_nw = industry.add_spriteset(
     id = 'bulk_terminal_spriteset_large_crane_se_nw',
-    sprites = [(790, 110, 64, 39, -31, 0)],
+    sprites = [(790, 110, 64, 84, -31, -43)],
     zoffset = 18,
 )
 spriteset_boat_1 = industry.add_spriteset(
