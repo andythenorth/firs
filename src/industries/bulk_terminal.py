@@ -70,79 +70,54 @@ spriteset_ground_empty = industry.add_spriteset(
     type = 'empty'
 )
 spriteset_concrete = industry.add_spriteset(
-    id = 'bulk_terminal_spriteset_1',
+    id = 'bulk_terminal_spriteset_concrete',
     sprites = [(10, 10, 64, 39, -31, -8)],
     always_draw = 1,
 )
 spriteset_jetty_se_nw = industry.add_spriteset(
-    id = 'bulk_terminal_spriteset_2',
+    id = 'bulk_terminal_spriteset_jetty_se_nw',
     sprites = [(10, 60, 64, 39, -31, -7)],
     zextent = 7,
     always_draw = 1,
 )
 spriteset_jetty_ne_sw = industry.add_spriteset(
-    id = 'bulk_terminal_spriteset_3',
+    id = 'bulk_terminal_spriteset_jetty_ne_sw',
     sprites = [(80, 60, 64, 39, -31, -7)],
     zextent = 7,
     always_draw = 1
 )
 spriteset_jetty_slope_nw_se = industry.add_spriteset(
-    id = 'bulk_terminal_spriteset_4',
+    id = 'bulk_terminal_spriteset_jetty_slope_nw_se',
     sprites = [(150, 60, 64, 39, -31, -7)],
     zextent = 7
 )
 spriteset_jetty_slope_ne_sw = industry.add_spriteset(
-    id = 'bulk_terminal_spriteset_5',
+    id = 'bulk_terminal_spriteset_jetty_slope_ne_sw',
     sprites = [(220, 60, 64, 39, -31, -7)],
     zextent = 7
 )
 spriteset_jetty_slope_se_nw = industry.add_spriteset(
-    id = 'bulk_terminal_spriteset_6',
+    id = 'bulk_terminal_spriteset_jetty_slope_se_nw',
     sprites = [(290, 60, 64, 39, -31, -7)],
     zextent = 7
 )
 spriteset_jetty_slope_sw_ne = industry.add_spriteset(
-    id = 'bulk_terminal_spriteset_7',
+    id = 'bulk_terminal_spriteset_jetty_slope_sw_ne',
     sprites = [(360, 60, 64, 39, -31, -7)],
     zextent = 7
 )
 spriteset_covered_store = industry.add_spriteset(
-    id = 'bulk_terminal_spriteset_8',
+    id = 'bulk_terminal_spriteset_covered_store',
     sprites = [(290, 10, 64, 39, -31, 0)],
     yoffset = 4,
     zoffset = 27,
     yextent = 12,
 
 )
-#bulk_terminal_spriteset_9 unused
 spriteset_tanks = industry.add_spriteset(
-    id = 'bulk_terminal_spriteset_10',
-    sprites = [(80, 10, 64, 39, -31, 0)],
+    id = 'bulk_terminal_spriteset_spriteset_tanks',
+    sprites = [(440, 10, 64, 39, -31, 0)],
     zoffset = 18
-)
-spriteset_boat_1 = industry.add_spriteset(
-    id = 'bulk_terminal_spriteset_boat_1',
-    sprites = [(10, 110, 64, 39, -35, -15)],
-)
-spriteset_boat_2 = industry.add_spriteset(
-    id = 'bulk_terminal_spriteset_boat_2',
-    sprites = [(80, 110, 64, 39, -31, -14)],
-)
-spriteset_boat_3 = industry.add_spriteset(
-    id = 'bulk_terminal_spriteset_boat_3',
-    sprites = [(150, 110, 64, 39, -31, -8)],
-)
-spriteset_boat_4 = industry.add_spriteset(
-    id = 'bulk_terminal_spriteset_boat_4',
-    sprites = [(220, 110, 64, 39, -27, -12)],
-)
-spriteset_boat_5 = industry.add_spriteset(
-    id = 'bulk_terminal_spriteset_boat_5',
-    sprites = [(290, 110, 64, 39, -15, -11)],
-)
-spriteset_boat_6 = industry.add_spriteset(
-    id = 'bulk_terminal_spriteset_boat_6',
-    sprites = [(360, 110, 64, 39, -45, -15)],
 )
 spriteset_silos = industry.add_spriteset(
     id = 'bulk_terminal_spriteset_silos',
@@ -169,24 +144,48 @@ spriteset_staithe_rhs = industry.add_spriteset(
     sprites = [(510, 110, 64, 39, -45, -15)],
 )
 spriteset_large_crane_nw_se = industry.add_spriteset(
-    id = 'bulk_terminal_spriteset_17',
+    id = 'bulk_terminal_spriteset_large_crane_nw_se',
     sprites = [(580, 110, 64, 39, -31, 0)],
     zoffset = 18,
 )
 spriteset_large_crane_ne_sw = industry.add_spriteset(
-    id = 'bulk_terminal_spriteset_18',
+    id = 'bulk_terminal_spriteset_large_crane_ne_sw',
     sprites = [(650, 110, 64, 39, -31, 0)],
     zoffset = 18,
 )
 spriteset_large_crane_sw_ne = industry.add_spriteset(
-    id = 'bulk_terminal_spriteset_19',
+    id = 'bulk_terminal_spriteset_large_crane_sw_ne',
     sprites = [(720, 110, 64, 39, -31, 0)],
     zoffset = 18,
 )
 spriteset_large_crane_se_nw = industry.add_spriteset(
-    id = 'bulk_terminal_spriteset_20',
+    id = 'bulk_terminal_spriteset_large_crane_se_nw',
     sprites = [(790, 110, 64, 39, -31, 0)],
     zoffset = 18,
+)
+spriteset_boat_1 = industry.add_spriteset(
+    id = 'bulk_terminal_spriteset_boat_1',
+    sprites = [(10, 110, 64, 39, -35, -15)],
+)
+spriteset_boat_2 = industry.add_spriteset(
+    id = 'bulk_terminal_spriteset_boat_2',
+    sprites = [(80, 110, 64, 39, -31, -14)],
+)
+spriteset_boat_3 = industry.add_spriteset(
+    id = 'bulk_terminal_spriteset_boat_3',
+    sprites = [(150, 110, 64, 39, -31, -8)],
+)
+spriteset_boat_4 = industry.add_spriteset(
+    id = 'bulk_terminal_spriteset_boat_4',
+    sprites = [(220, 110, 64, 39, -27, -12)],
+)
+spriteset_boat_5 = industry.add_spriteset(
+    id = 'bulk_terminal_spriteset_boat_5',
+    sprites = [(290, 110, 64, 39, -15, -11)],
+)
+spriteset_boat_6 = industry.add_spriteset(
+    id = 'bulk_terminal_spriteset_boat_6',
+    sprites = [(360, 110, 64, 39, -45, -15)],
 )
 
 industry.add_spritelayout(
