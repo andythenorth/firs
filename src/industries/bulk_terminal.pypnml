@@ -14,20 +14,20 @@ ${industry.get_spritelayouts()}
 
 switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_slope_switch_1, nearby_tile_slope(0,0)) {
 	0: ${industry.id}_spritelayout_10;
-	1: ${industry.id}_spritelayout_4;
-	2: ${industry.id}_spritelayout_8;
-	3: ${industry.id}_spritelayout_9;
-	4: ${industry.id}_spritelayout_6;
-	5: ${industry.id}_spritelayout_5;
-	6: ${industry.id}_spritelayout_7;
+	1: ${industry.id}_spritelayout_tanks_4;
+	2: ${industry.id}_spritelayout_tanks_8;
+	3: ${industry.id}_spritelayout_tanks_9;
+	4: ${industry.id}_spritelayout_tanks_6;
+	5: ${industry.id}_spritelayout_tanks_5;
+	6: ${industry.id}_spritelayout_tanks_7;
 	7: ${industry.id}_spritelayout_10;
-	8: ${industry.id}_spritelayout_3;
-	9: ${industry.id}_spritelayout_4;
-	10: ${industry.id}_spritelayout_8;
-	11: ${industry.id}_spritelayout_9;
-	12: ${industry.id}_spritelayout_6;
-	13: ${industry.id}_spritelayout_5;
-	14: ${industry.id}_spritelayout_7;
+	8: ${industry.id}_spritelayout_tanks_3;
+	9: ${industry.id}_spritelayout_tanks_4;
+	10: ${industry.id}_spritelayout_tanks_8;
+	11: ${industry.id}_spritelayout_tanks_9;
+	12: ${industry.id}_spritelayout_tanks_6;
+	13: ${industry.id}_spritelayout_tanks_5;
+	14: ${industry.id}_spritelayout_tanks_7;
 	${industry.id}_spritelayout_10;
 }
 
