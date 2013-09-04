@@ -5,6 +5,8 @@
 # See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with NML build framework. If not, see <http://www.gnu.org/licenses/>.
 #
 
+SHELL=/bin/bash
+
 -include Makefile.config
 
 ##################################################################
@@ -77,7 +79,7 @@ all: $(GENERATE_GRF) $(GENERATE_DOC) bundle_tar
 
 # general definitions (no rules!)
 -include Makefile.dist
-.PHONY: all clean distclean doc test bundle bundle_bsrc bundle_bzip bundle_gsrc bundle_src bundle_tar bundle_xsrc bundle_xz bundle_zip bundle_zsrc check
+.PHONY: all clean distclean doc bundle bundle_bsrc bundle_bzip bundle_gsrc bundle_src bundle_tar bundle_xsrc bundle_xz bundle_zip bundle_zsrc check
 
 # We want to disable the default rules. It's not c/c++ anyway
 .SUFFIXES:
@@ -112,6 +114,8 @@ GREP           ?= grep
 
 HG             ?= $(shell hg st >/dev/null 2>/dev/null && which hg 2>/dev/null)
 
+PYTHON         ?= python
+
 UNIX2DOS       ?= $(shell which unix2dos 2>/dev/null)
 UNIX2DOS_FLAGS ?= $(shell [ -n $(UNIX2DOS) ] && $(UNIX2DOS) -q --version 2>/dev/null && echo "-q" || echo "")
 
@@ -125,8 +129,18 @@ UNIX2DOS_FLAGS ?= $(shell [ -n $(UNIX2DOS) ] && $(UNIX2DOS) -q --version 2>/dev/
 # This must be conditional declarations, or building from the tar.gz won't work anymore
 DEFAULT_BRANCH_NAME ?=
 
+# If no branch version is given, set it to 0. And use simply the date info as newgrf's version
+REPO_BRANCH_VERSION ?= 0
+
 # HG revision
 REPO_REVISION  ?= $(shell $(HG) id -n | cut -d+ -f1)
+
+# HG Hash
+REPO_HASH            ?= $(shell $(HG) id -i | cut -d+ -f1)
+
+# Days of commit since 2000-1-1 00-00
+REPO_DATE            ?= $(shell $(HG) log -r$(REPO_HASH) --template='{time|shortdate}')
+REPO_DAYS_SINCE_2000 ?= $(shell $(PYTHON) -c "from datetime import date; print (date(`echo "$(REPO_DATE)" | sed s/-/,/g | sed s/,0/,/g`)-date(2000,1,1)).days")
 
 # Whether there are local changes
 REPO_MODIFIED  ?= $(shell [ "`$(HG) id | cut -c13`" = "+" ] && echo "M" || echo "")
@@ -138,10 +152,13 @@ REPO_BRANCH    ?= $(shell $(HG) id -b | sed "s/default/$(DEFAULT_BRANCH_NAME)/")
 REPO_TAGS      ?= $(shell $(HG) id -t | grep -v "tip")
 
 # Filename addition, if we're not building the default branch
-REPO_BRANCH_STRING ?= $(shell if [ "$(REPO_BRANCH)" = "$(DEFAULT_BRANCH_NAME)" ]; then echo ""; else echo "$(REPO_BRANCH)-"; fi)
+REPO_BRANCH_STRING ?= $(shell if [ "$(REPO_BRANCH)" = "$(DEFAULT_BRANCH_NAME)" ]; then echo ""; else echo "-$(REPO_BRANCH)"; fi)
+
+# The version reported to OpenTTD. Usually days since 2000 + branch offset
+NEWGRF_VERSION ?= $(shell let x="$(REPO_DAYS_SINCE_2000) + 65536 * $(REPO_BRANCH_VERSION)"; echo "$$x")
 
 # The shown version is either a tag, or in the absence of a tag the revision.
-REPO_VERSION_STRING ?= $(shell [ -n "$(REPO_TAGS)" ] && echo $(REPO_TAGS)$(REPO_MODIFIED) || echo $(REPO_BRANCH_STRING)r$(REPO_REVISION)$(REPO_MODIFIED))
+REPO_VERSION_STRING ?= $(shell [ -n "$(REPO_TAGS)" ] && echo $(REPO_TAGS)$(REPO_MODIFIED) || echo $(REPO_DATE)$(REPO_BRANCH_STRING) \($(NEWGRF_VERSION):$(REPO_HASH)$(REPO_MODIFIED)\))
 
 # The title consists of name and version
 REPO_TITLE     ?= $(REPO_NAME) $(REPO_VERSION_STRING)
@@ -163,7 +180,7 @@ pnml:
 
 nml: $(GENERATE_PNML)
 	$(_E) "[CPP] $(NML_FILE)"
-	$(_V) $(CC) -D REPO_REVISION=$(REPO_REVISION) $(CC_FLAGS) -o $(NML_FILE) $(MAIN_SRC_FILE)
+	$(_V) $(CC) -D REPO_REVISION=$(NEWGRF_VERSION) $(CC_FLAGS) -o $(NML_FILE) $(MAIN_SRC_FILE)
 
 clean::
 	$(_E) "[CLEAN NML]"
@@ -219,9 +236,15 @@ lng: custom_tags.txt
 
 custom_tags.txt: nml
 	$(_E) "[LNG] $@"
-	$(_V) echo "VERSION  :$(REPO_VERSION_STRING)" > $@
-	$(_V) echo "TITLE    :$(REPO_TITLE)" >> $@
-	$(_V) echo "FILENAME :$(GRF_FILE)" >> $@
+	$(_V) echo "VERSION        :$(REPO_VERSION_STRING)" > $@
+	$(_V) echo "VERSION_STRING :$(REPO_VERSION_STRING)" >> $@
+	$(_V) echo "TITLE          :$(REPO_TITLE)" >> $@
+	$(_V) echo "FILENAME       :$(GRF_FILE)" >> $@
+	$(_V) echo "REPO_DATE      :$(REPO_DATE)" >> $@
+	$(_V) echo "REPO_HASH      :$(REPO_HASH)" >> $@
+	$(_V) echo "REPO_BRANCH    :$(REPO_BRANCH)" >> $@
+	$(_V) echo "NEWGRF_VERSION :$(NEWGRF_VERSION)" >> $@
+	$(_V) echo "DAYS_SINCE_2K  :$(REPO_DAYS_SINCE_2000)" >> $@
 
 clean::
 	$(_E) "[CLEAN LNG]"
@@ -321,8 +344,8 @@ GRFID_FLAGS    ?= -m
 # followed by an M, if the source repository is not a clean version.
 
 # Common to all filenames
-DIR_NAME           := $(shell [ -n "$(REPO_TAGS)" ] && echo $(BASE_FILENAME)-$(REPO_VERSION_STRING) || echo $(BASE_FILENAME))
-VERSIONED_FILENAME := $(BASE_FILENAME)-$(REPO_VERSION_STRING)
+DIR_NAME           := $(shell [ -n "$(REPO_TAGS)" ] && echo $(BASE_FILENAME)-$(NEWGRF_VERSION) || echo $(BASE_FILENAME))
+VERSIONED_FILENAME := $(BASE_FILENAME)-$(NEWGRF_VERSION)
 DIR_NAME_SRC       := $(VERSIONED_FILENAME)-source
 
 TAR_FILENAME       := $(DIR_NAME).tar
