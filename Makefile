@@ -294,7 +294,7 @@ maintainer-clean::
 	$(_V) cat $< \
 		| sed -e "s/$(REPLACE_TITLE)/$(REPO_TITLE)/" \
 		| sed -e "s/$(REPLACE_GRFID)/$(GRF_ID)/" \
-		| sed -e "s/$(REPLACE_REVISION)/$(REPO_REVISION)/" \
+		| sed -e "s/$(REPLACE_REVISION)/$(NEWGRF_VERSION)/" \
 		| sed -e "s/$(REPLACE_FILENAME)/$(OUTPUT_FILENAME)/" \
 		> $@
 	$(_V) [ -z "$(UNIX2DOS)" ] || $(UNIX2DOS) $(UNIX2DOS_FLAGS) $@
