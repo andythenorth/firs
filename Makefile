@@ -257,6 +257,10 @@ clean::
 
 $(GRF_FILE): $(GENERATE_GFX) $(GENERATE_NML) $(GENERATE_LNG)
 	$(_E) "[NML] $(GRF_FILE)"
+ifeq ($(NML),)
+	$(_E) "No NML compiler found!"
+	$(_V) false
+endif
 ifdef REQUIRED_NML_BRANCH
 ifneq ($(REQUIRED_NML_BRANCH),$(NML_BRANCH))
 	$(_E) "Wrong NML version. This NewGRF requires an NML from the $(REQUIRED_NML_BRANCH) branch, but $(NML_BRANCH) found."
@@ -299,7 +303,7 @@ maintainer-clean::
 		> $@
 	$(_V) [ -z "$(UNIX2DOS)" ] || $(UNIX2DOS) $(UNIX2DOS_FLAGS) $@
 
-doc: $(DOC_FILES)
+doc: $(DOC_FILES) grf
 
 clean::
 	$(_E) "[CLEAN DOC]"
