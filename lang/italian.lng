@@ -1,233 +1,234 @@
 ##grflangid 0x27
-##gender m f
 ##plural 0
+##gender m f
 
-STR_GRF_DESC																	:{ORANGE}FIRS Industry Replacement Set{}{BLACK}Di andythenorth, FooBar, planetmaker, Terkhen e Yexo, e con il contributo di molti altri. {SILVER}Leggete il file readme per informazioni e per consigli su come usare FIRS. {BLACK}Licenza: GPL v2.
-STR_GRF_NAME																	:{TITLE}
-STR_GRF_URL																		:http://bundles.openttdcoop.org/firs/releases/LATEST/docs/
+STR_GRF_DESC                                                                    :{ORANGE}FIRS Industry Replacement Set{}{BLACK}Di andythenorth, FooBar, planetmaker, Terkhen e Yexo, e con il contributo di molti altri. {SILVER}Leggete il file readme per informazioni e per consigli su come usare FIRS. {BLACK}Licenza: GPL v2.
+STR_GRF_NAME                                                                    :{TITLE}
+STR_GRF_URL                                                                     :http://bundles.openttdcoop.org/firs/releases/LATEST/docs/
 
-STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY									:Distanza massima, in caselle, di zone di pesca, piattaforme petrolifere e siti di dragaggio dalla costa.
-STR_PARAM_DESC_STAT_RATING														:La valutazione del servizio influenza la quantità di merci che le industrie consegnano a una stazione; migliore è la valutazione, maggiore è la quantità di merci consegnate.
-STR_PARAM_DESC_DEBUG															:Solo per sviluppatori!
-STR_PARAM_DESC_ECONOMIES														:Ogni economia dà una combinazione diversa di merci e industrie.{}{}Per uno schema di gioco semplificato, un'economia di 'base' comprende meno industrie e merci rispetto ad altre economie di FIRS.
-STR_PARAM_DESC_NO_OPENINGS														:Di default, durante il gioco apriranno nuove industrie. {}{}Si può impedire la loro apertura durante il gioco; in questo caso, i giocatori non potranno nemmeno fondare o prospettare l'apertura di nuove industrie.
-STR_PARAM_DESC_SECONDARY_NEVER_CLOSE											:Di default, le industrie secondarie non chiudono mai.{}{}Se permetti la loro chiusura, potrebbero chiudere se non ci trasporti merci per un lungo periodo di tempo. Le industrie primarie non chiuderanno mai in ogni caso.
-STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY									:Distanza massima dalla costa, in caselle, delle industrie marine
-STR_PARAM_NAME_DEBUG															:Mostra i testi di debug
-STR_PARAM_NAME_ECONOMIES														:Economia
-STR_PARAM_NAME_NO_OPENINGS														:Impedisci la costruzione di industrie durante il gioco
-STR_PARAM_NAME_SECONDARY_NEVER_CLOSE											:Permetti la chiusura delle industrie secondarie
-STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0											:Illimitata
-STR_PARAM_NAME_STAT_RATING														:Algoritmo delle valutazioni delle stazioni
-STR_PARAM_VALUE_STAT_RATING_DEFAULT												:Brutto e cattivo (usa il rating standard di OTTD)
-STR_PARAM_VALUE_STAT_RATING_REDUCED_TIME										:Più favorevole (accetta un lasso di tempo più lungo fra le prese in consegna delle merci)
-STR_PARAM_VALUE_STAT_RATING_100													:Molto generoso (sempre al 100%)
+STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :Distanza massima, in caselle, di zone di pesca, piattaforme petrolifere e siti di dragaggio dalla costa.
+STR_PARAM_DESC_STAT_RATING                                                      :La valutazione del servizio influenza la quantità di merci che le industrie consegnano a una stazione; migliore è la valutazione, maggiore è la quantità di merci consegnate.
+STR_PARAM_DESC_DEBUG                                                            :Solo per sviluppatori!
+STR_PARAM_DESC_ECONOMIES                                                        :Ogni economia dà una combinazione diversa di merci e industrie.{}{}Per uno schema di gioco semplificato, un'economia di 'base' comprende meno industrie e merci rispetto ad altre economie di FIRS.
+STR_PARAM_DESC_NO_OPENINGS                                                      :Di default, durante il gioco apriranno nuove industrie.{}{}Si può impedire la loro apertura durante il gioco; in questo caso, i giocatori non potranno nemmeno fondare o prospettare l'apertura di nuove industrie.
+STR_PARAM_DESC_SECONDARY_NEVER_CLOSE                                            :Di default, le industrie secondarie non chiudono mai.{}{}Se permetti la loro chiusura, potrebbero chiudere se non ci trasporti merci per un lungo periodo di tempo. Le industrie primarie non chiuderanno mai in ogni caso.
+STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY                                   :Distanza massima dalla costa, in caselle, delle industrie marine
+STR_PARAM_NAME_DEBUG                                                            :Mostra i testi di debug
+STR_PARAM_NAME_ECONOMIES                                                        :Economia
+STR_PARAM_NAME_NO_OPENINGS                                                      :Impedisci la costruzione di industrie durante il gioco
+STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            :Permetti la chiusura delle industrie secondarie
+STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0                                         :Illimitata
+STR_PARAM_NAME_STAT_RATING                                                      :Algoritmo delle valutazioni delle stazioni
+STR_PARAM_VALUE_STAT_RATING_DEFAULT                                             :Brutto e cattivo (usa il rating standard di OTTD)
+STR_PARAM_VALUE_STAT_RATING_REDUCED_TIME                                        :Più favorevole (accetta un lasso di tempo più lungo fra le prese in consegna delle merci)
+STR_PARAM_VALUE_STAT_RATING_100                                                 :Molto generoso (sempre al 100%)
 
-STR_PARAM_VALUE_ECONOMIES_BASIC_TEMPERATE										:Di base (clima temperato)
-STR_PARAM_VALUE_ECONOMIES_BASIC_ARCTIC											:Di base (clima artico)
-STR_PARAM_VALUE_ECONOMIES_BASIC_TROPIC											:Di base (clima tropicale)
-STR_PARAM_VALUE_ECONOMIES_FIRS													:FIRS
+STR_PARAM_VALUE_ECONOMIES_BASIC_TEMPERATE                                       :Di base (clima temperato)
+STR_PARAM_VALUE_ECONOMIES_BASIC_ARCTIC                                          :Di base (clima artico)
+STR_PARAM_VALUE_ECONOMIES_BASIC_TROPIC                                          :Di base (clima tropicale)
+STR_PARAM_VALUE_ECONOMIES_FIRS                                                  :FIRS
 STR_PARAM_VALUE_ECONOMIES_MISTAH_KURTZ                                          :Cuore di tenebra
-STR_PARAM_VALUE_ECONOMIES_TEST_3												:Provvisoria 3
+STR_PARAM_VALUE_ECONOMIES_TEST_3                                                :Provvisoria 3
 
-STR_CARGO_NAME_ALCOHOL															:{G=m}Alcoolici
-STR_CARGO_NAME_BAUXITE															:{G=f}Bauxite
-STR_CARGO_NAME_BUILDING_MATERIALS												:{G=m}Materiali per edilizia
-STR_CARGO_NAME_CHEMICALS														:{G=m}Prodotti chimici
-STR_CARGO_NAME_CLAY																:{G=f}Argilla
+STR_CARGO_NAME_ALCOHOL                                                          :{G=m}Alcoolici
+STR_CARGO_NAME_BAUXITE                                                          :{G=f}Bauxite
+STR_CARGO_NAME_BUILDING_MATERIALS                                               :{G=m}Materiali per edilizia
+STR_CARGO_NAME_CHEMICALS                                                        :{G=m}Prodotti chimici
+STR_CARGO_NAME_CLAY                                                             :{G=f}Argilla
 STR_CARGO_NAME_COFFEE                                                           :{G=m}Caffé
-STR_CARGO_NAME_ENGINEERING_SUPPLIES												:{G=f}Forniture meccaniche
-STR_CARGO_NAME_FIBRES															:{G=f}Fibre tessili
-STR_CARGO_NAME_FISH																:{G=m}Pesce
-STR_CARGO_NAME_FARM_SUPPLIES													:{G=f}Forniture agricole
-STR_CARGO_NAME_FRUITS															:{G=f}Frutta
-STR_CARGO_NAME_LUMBER															:{G=m}Prodotti in legno
-STR_CARGO_NAME_METAL															:{G=m}Metalli
-STR_CARGO_NAME_MILK																:{G=m}Latte
-STR_CARGO_NAME_MANUFACTURING_SUPPLIES											:{G=f}Forniture industriali
-STR_CARGO_NAME_PETROL															:{G=m}Carburante
-STR_CARGO_NAME_RECYCLABLES														:{G=m}Prodotti riciclati
-STR_CARGO_NAME_SAND																:{G=f}Sabbia
-STR_CARGO_NAME_SCRAP_METAL														:{G=m}Metalli di scarto
-STR_CARGO_NAME_STONE															:{G=f}Pietre
-STR_CARGO_NAME_SUGAR_BEET														:{G=f}Barbabietole da zucchero
-STR_CARGO_NAME_SUGARCANE														:{G=f}Canne da zucchero
-STR_CARGO_NAME_WOOL																:{G=f}Lana
+STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :{G=f}Forniture meccaniche
+STR_CARGO_NAME_FIBRES                                                           :{G=f}Fibre tessili
+STR_CARGO_NAME_FISH                                                             :{G=m}Pesce
+STR_CARGO_NAME_FARM_SUPPLIES                                                    :{G=f}Forniture agricole
+STR_CARGO_NAME_FRUITS                                                           :{G=f}Frutta
+STR_CARGO_NAME_LUMBER                                                           :{G=m}Prodotti in legno
+STR_CARGO_NAME_METAL                                                            :{G=m}Metalli
+STR_CARGO_NAME_MILK                                                             :{G=m}Latte
+STR_CARGO_NAME_MANUFACTURING_SUPPLIES                                           :{G=f}Forniture industriali
+STR_CARGO_NAME_PETROL                                                           :{G=m}Carburante
+STR_CARGO_NAME_RECYCLABLES                                                      :{G=m}Prodotti riciclati
+STR_CARGO_NAME_SAND                                                             :{G=f}Sabbia
+STR_CARGO_NAME_SCRAP_METAL                                                      :{G=m}Metalli di scarto
+STR_CARGO_NAME_STONE                                                            :{G=f}Pietre
+STR_CARGO_NAME_SUGAR_BEET                                                       :{G=f}Barbabietole da zucchero
+STR_CARGO_NAME_SUGARCANE                                                        :{G=f}Canne da zucchero
+STR_CARGO_NAME_WOOL                                                             :{G=f}Lana
 
-STR_CARGO_UNIT_ALCOHOL															:{VOLUME} di alcoolici
-STR_CARGO_UNIT_BAUXITE															:{WEIGHT} di bauxite
-STR_CARGO_UNIT_BUILDING_MATERIALS												:{WEIGHT} di materiali per edilizia
-STR_CARGO_UNIT_CHEMICALS														:{VOLUME} di prodotti chimici
-STR_CARGO_UNIT_CLAY																:{WEIGHT} di argilla
+STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} di alcoolici
+STR_CARGO_UNIT_BAUXITE                                                          :{WEIGHT} di bauxite
+STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WEIGHT} di materiali per edilizia
+STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} di prodotti chimici
+STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} di argilla
 STR_CARGO_UNIT_COFFEE                                                           :{SIGNED_WORD} sacc{P 0 o hi} di caffé
-STR_CARGO_UNIT_ENGINEERING_SUPPLIES												:{SIGNED_WORD} cass{P 0 a e} di forniture meccaniche
-STR_CARGO_UNIT_FIBRES															:{WEIGHT} ball{P 0 a e} di fibre tessili
-STR_CARGO_UNIT_FISH																:{WEIGHT} di pesce
-STR_CARGO_UNIT_FMSP																:{SIGNED_WORD} cass{P 0 a e} di forniture agricole
-STR_CARGO_UNIT_FRUITS															:{WEIGHT} di frutta e verdura
-STR_CARGO_UNIT_LUMBER															:{WEIGHT} di prodotti in legno
-STR_CARGO_UNIT_METAL															:{WEIGHT} di metalli
-STR_CARGO_UNIT_MILK																:{VOLUME} di latte
-STR_CARGO_UNIT_MNSP																:{SIGNED_WORD} cass{P 0 a e} di forniture industriali
-STR_CARGO_UNIT_PETROL															:{VOLUME} di benzina
-STR_CARGO_UNIT_RECYCLABLES														:{WEIGHT} di prodotti da riciclare
-STR_CARGO_UNIT_SAND																:{WEIGHT} di sabbia
-STR_CARGO_UNIT_SCRAP_METAL														:{WEIGHT} di metalli di scarto
-STR_CARGO_UNIT_STONE															:{WEIGHT} di pietre
-STR_CARGO_UNIT_SUGAR_BEET														:{WEIGHT} di barbabietola da zucchero
-STR_CARGO_UNIT_SUGARCANE														:{WEIGHT} di canne da zucchero
-STR_CARGO_UNIT_WOOL																:{WEIGHT} ball{P 0 a e} di lana
+STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} cass{P 0 a e} di forniture meccaniche
+STR_CARGO_UNIT_FIBRES                                                           :{WEIGHT} ball{P 0 a e} di fibre tessili
+STR_CARGO_UNIT_FISH                                                             :{WEIGHT} di pesce
+STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} cass{P 0 a e} di forniture agricole
+STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} di frutta e verdura
+STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} di prodotti in legno
+STR_CARGO_UNIT_METAL                                                            :{WEIGHT} di metalli
+STR_CARGO_UNIT_MILK                                                             :{VOLUME} di latte
+STR_CARGO_UNIT_MNSP                                                             :{SIGNED_WORD} cass{P 0 a e} di forniture industriali
+STR_CARGO_UNIT_PETROL                                                           :{VOLUME} di benzina
+STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} di prodotti da riciclare
+STR_CARGO_UNIT_SAND                                                             :{WEIGHT} di sabbia
+STR_CARGO_UNIT_SCRAP_METAL                                                      :{WEIGHT} di metalli di scarto
+STR_CARGO_UNIT_STONE                                                            :{WEIGHT} di pietre
+STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} di barbabietola da zucchero
+STR_CARGO_UNIT_SUGARCANE                                                        :{WEIGHT} di canne da zucchero
+STR_CARGO_UNIT_WOOL                                                             :{WEIGHT} ball{P 0 a e} di lana
 
-STR_CID_ALCOHOL																	:{TINYFONT}AL
-STR_CID_BAUXITE																	:{TINYFONT}BX
-STR_CID_BUILDING_MATERIALS														:{TINYFONT}MA
-STR_CID_CHEMICALS																:{TINYFONT}PC
-STR_CID_CLAY																	:{TINYFONT}AR
-STR_CID_COFFEE																	:{TINYFONT}CF
-STR_CID_ENGINEERING_SUPPLIES													:{TINYFONT}FM
-STR_CID_FARM_SUPPLIES															:{TINYFONT}FA
-STR_CID_FIBRES																	:{TINYFONT}FT
-STR_CID_FISH																	:{TINYFONT}PE
-STR_CID_LUMBER																	:{TINYFONT}PL
-STR_CID_MANUFACTURING_SUPPLIES													:{TINYFONT}FI
-STR_CID_METAL																	:{TINYFONT}ME
-STR_CID_MILK																	:{TINYFONT}LA
-STR_CID_PETROL																	:{TINYFONT}CR
-STR_CID_RECYCLABLES																:{TINYFONT}PR
-STR_CID_SAND																	:{TINYFONT}SA
-STR_CID_SCRAP_METAL																:{TINYFONT}MS
-STR_CID_STONE																	:{TINYFONT}PI
-STR_CID_SUGAR_BEET																:{TINYFONT}BA
-STR_CID_SUGARCANE																:{TINYFONT}CA
-STR_CID_WOOL																	:{TINYFONT}LN
+STR_CID_ALCOHOL                                                                 :{TINYFONT}AL
+STR_CID_BAUXITE                                                                 :{TINYFONT}BX
+STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}MA
+STR_CID_CHEMICALS                                                               :{TINYFONT}PC
+STR_CID_CLAY                                                                    :{TINYFONT}AR
+STR_CID_COFFEE                                                                  :{TINYFONT}CF
+STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}FM
+STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}FA
+STR_CID_FIBRES                                                                  :{TINYFONT}FT
+STR_CID_FISH                                                                    :{TINYFONT}PE
+STR_CID_LUMBER                                                                  :{TINYFONT}PL
+STR_CID_MANUFACTURING_SUPPLIES                                                  :{TINYFONT}FI
+STR_CID_METAL                                                                   :{TINYFONT}ME
+STR_CID_MILK                                                                    :{TINYFONT}LA
+STR_CID_PETROL                                                                  :{TINYFONT}CR
+STR_CID_RECYCLABLES                                                             :{TINYFONT}PR
+STR_CID_SAND                                                                    :{TINYFONT}SA
+STR_CID_SCRAP_METAL                                                             :{TINYFONT}MS
+STR_CID_STONE                                                                   :{TINYFONT}PI
+STR_CID_SUGAR_BEET                                                              :{TINYFONT}BA
+STR_CID_SUGARCANE                                                               :{TINYFONT}CA
+STR_CID_WOOL                                                                    :{TINYFONT}LN
 
-STR_ERR_CLIMATE_TOYLAND															:{ORANGE}FIRS non funziona con Toyland
-STR_ERR_INCOMPATIBLE_SET														:{ORANGE}E01: {YELLOW}Set incompatibile: {ORANGE}{STRING} {YELLOW}Consulta il Leggimi di FIRS: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
-STR_ERR_INCOMPATIBLE_PARAM_CANSET												:{ORANGE}E02: {YELLOW}Parametro incompatibile: {ORANGE}Il parametro n. 2 del CanSet dev'essere impostato a 0 per funzionare con FIRS. {YELLOW}Consulta il Leggimi di FIRS: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
-STR_ERR_INCOMPATIBLE_PARAM_CITYSET												:{ORANGE}E02: {YELLOW}Parametro incompatibile: {ORANGE}Il parametro n. 2 del NA City Set dev'essere impostato a 0 per funzionare con FIRS. {YELLOW}Consulta il Leggimi di FIRS: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
-STR_ERR_INCOMPATIBLE_SET_TTRS_VERSION											:{ORANGE}E04: {YELLOW}Versione incompatibile: {ORANGE}Ci vuole la versione 3.11 o più recente del Total Town Replacement Set. {YELLOW}Consulta il Leggimi di FIRS: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
-STR_ERR_OPENTTD_VERSION															:{ORANGE}E00: FIRS ha bisogno almeno di OpenTTD 1.2.0 / trunk r22780 (o più recente). {YELLOW}Consulta il Leggimi di FIRS: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_CLIMATE_TOYLAND                                                         :{ORANGE}FIRS non funziona con Toyland
+STR_ERR_INCOMPATIBLE_SET                                                        :{ORANGE}E01: {YELLOW}Set incompatibile: {ORANGE}{STRING} {YELLOW}Consulta il Leggimi di FIRS: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_PARAM_CANSET                                               :{ORANGE}E02: {YELLOW}Parametro incompatibile: {ORANGE}Il parametro n. 2 del CanSet dev'essere impostato a 0 per funzionare con FIRS. {YELLOW}Consulta il Leggimi di FIRS: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_PARAM_CITYSET                                              :{ORANGE}E02: {YELLOW}Parametro incompatibile: {ORANGE}Il parametro n. 2 del NA City Set dev'essere impostato a 0 per funzionare con FIRS. {YELLOW}Consulta il Leggimi di FIRS: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_SET_TTRS_VERSION                                           :{ORANGE}E04: {YELLOW}Versione incompatibile: {ORANGE}Ci vuole la versione 3.11 o più recente del Total Town Replacement Set. {YELLOW}Consulta il Leggimi di FIRS: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_OPENTTD_VERSION                                                         :{ORANGE}E00: FIRS ha bisogno almeno di OpenTTD 1.2.0 / trunk r22780 (o più recente). {YELLOW}Consulta il Leggimi di FIRS: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 
-STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE												:dev'essere messo più in basso delle nevi perenni.
-STR_ERR_LOCATION_NOT_ON_WATER													:dev'essere piazzato sulla terra, non sull'acqua.
-STR_ERR_LOCATION_NOT_IN_DESERT													:non può essere messo nel deserto.
-STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE												:non può essere messo su terreno in pendenza.
-STR_ERR_LOCATION_LIMIT_1_PER_TOWN												:si può costruire solo un'industria di questo tipo per ogni città
+STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE                                             :dev'essere messo più in basso delle nevi perenni.
+STR_ERR_LOCATION_NOT_ON_WATER                                                   :dev'essere piazzato sulla terra, non sull'acqua.
+STR_ERR_LOCATION_NOT_IN_DESERT                                                  :non può essere messo nel deserto.
+STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE                                             :non può essere messo su terreno in pendenza.
+STR_ERR_LOCATION_LIMIT_1_PER_TOWN                                               :si può costruire solo un'industria di questo tipo per ogni città
 
-STR_EXTRA_ALUMINUM_PLANT														:{BLACK}Produzione:{}  2t ogni 8t di bauxite consegnate{}  2t ogni 8t di prodotti chimici consegnate{}  4t ogni 8t di metalli di scarto consegnate{}{}Il prodotto aumenta se due o più tipi di merci sono consegnati entro un intervallo inferiore a un mese.
-STR_EXTRA_BIOREFINERY															:{BLACK}Produzione:{}  6000l ogni 8t di grano consegnate{} 6000l ogni 8t di zucchero consegnati
-STR_EXTRA_BREWERY																:{BLACK}Produzione:{}  3000l ogni 8 casse di forniture industriali consegnate{}{STRING} {STRING}{}Il prodotto aumenta se forniture industriali e un altro tipo di merce sono consegnate entro un intervallo inferiore a un mese.
-STR_EXTRA_BREWERY_GRAIN_SUBSTR													:5000l ogni 8t di grano consegnate{}
-STR_EXTRA_BREWERY_FRUIT_SUBSTR													:5000l ogni 8t di frutta consegnate{}
-STR_EXTRA_BRICKWORKS															:{BLACK}Produzione:{}  2t ogni 8t di carbone consegnate{}  2t ogni 8t di sabbia consegnate{}  4t ogni 8t d'argilla consegnate{}{}Il prodotto aumenta se due o più tipi di merci sono consegnate entro un intervallo inferiore a un mese.
-STR_EXTRA_CEMENT_PLANT															:{BLACK}Produzione:{}  2t ogni 8t di carbone consegnate{}  2t ogni 8t d'argilla consegnate{}  4t ogni 8t di pietre consegnate{}{}Il prodotto aumenta se due o più tipi di merci sono consegnate entro un intervallo inferiore a un mese.
-STR_EXTRA_DAIRY																	:{BLACK}Produzione:{}  3t ogni 8t di forniture industriali consegnate{}  5t ogni 8000l di latte consegnati{}{}Il prodotto aumenta se entrambe le merci sono consegnate entro un intervallo inferiore a un mese.
-STR_EXTRA_FERTILIZER_PLANT														:{BLACK}Produzione:{}  8 casse ogni 8000l di prodotti chimici consegnati
-STR_EXTRA_FISHING_HARBOUR														:{BLACK}Produzione:{}  3t ogni 8t di forniture industriali consegnate{}  5t ogni 8t di pesce consegnate{}{}Il prodotto aumenta se entrambe le merci sono consegnate entro un intervallo inferiore a un mese.
-STR_EXTRA_FURNITURE_FACTORY														:{BLACK}Produzione:{}  3t ogni 8t di forniture industriali consegnate{}  5t ogni 8t di prodotti in legno consegnate{}{}Il prodotto aumenta se entrambe le merci sono consegnate entro un intervallo inferiore a un mese.
-STR_EXTRA_GLASS_WORKS															:{BLACK}Produce oggetti in vetro come bottiglie, vasi e finestre.{}{}{BLACK}Produzione:{}  6t ogni 8t di sabbia consegnate{}  2t ogni 8000l di prodotti chimici consegnati{}{}Il prodotto aumenta se entrambe le merci sono consegnate entro un intervallo inferiore a un mese.
-STR_EXTRA_GRAIN_MILL															:{BLACK}Produzione:{}  3t ogni 8 casse di forniture industriali consegnate{}  5t ogni 8t di grano consegnate{}{}La produzionoe aumenta se entrambe le merci sono consegnate entro un intervallo inferiore a un mese.
-STR_EXTRA_IRON_WORKS															:{BLACK}Produzione:{}  2t ogni 8t di legname consegnate{}  2t ogni 8t di minerale di ferro consegnate{}{}Il prodotto aumenta se entrambe le merci sono consegnate entro un intervallo inferiore a un mese.
-STR_EXTRA_LIME_KILN																:{BLACK}Produzione:{}  3t ogni 8t di pietre consegnate{}  3t ogni 8t di carbone consegnate{}{}Il prodotto aumenta se entrambe le merci sono consegnate entro un intervallo inferiore a un mese.
-STR_EXTRA_LUMBER_YARD															:{BLACK}Costruisce oggetti come palizzate, steccati o pali.{}{}{BLACK}Produzione:{}  2t ogni 8t di prodotti chimici consegnate{}  6t ogni 8t di prodotti in legno consegnate{}{}Il prodotto aumenta se entrambe le merci sono consegnate entro un intervallo inferiore a un mese.
-STR_EXTRA_MACHINE_SHOP															:{BLACK}Costruisce e ripara macchinari.{}{}Produzione:{}  8 casse ogni 8000l di carburante consegnati{}  8 casse ogni 8t di metalli consegnate.
-STR_EXTRA_MEAT_PACKER															:{BLACK}Produzione:{}  3t ogni 8t di forniture industriali consegnate{}  5t ogni 8t di bestiame consegnate{}{}Il prodotto aumenta se entrambe le merci sono consegnate entro un intervallo inferiore a un mese.
-STR_EXTRA_METAL_FABRICATION_PLANT												:{BLACK}Produce parti meccaniche di metallo.{}{}{BLACK}Produzione:{}  2t ogni 8000l di prodotti chimici consegnati{}  6t ogni 8t di metalli consegnate{}{}Il prodotto aumenta se entrambe le merci sono consegnate entro un intervallo inferiore a un mese.
-STR_EXTRA_METAL_FOUNDRY															:{BLACK}Produce oggetti metallici, come utensili e parti meccaniche.{}{}{BLACK}Produzione:{}  2 casse ogni 8000l di prodotti chimici consegnati{}  6 casse ogni 8t di metalli consegnate{}{}Il prodotto aumenta se entrambe le merci sono consegnate entro un intervallo inferiore a un mese.
-STR_EXTRA_OIL_REFINERY															:{BLACK}Lavora il petrolio per produrre carburanti e prodotti chimici.{}{}6000l di produzione ogni 8000l consegnati
-STR_EXTRA_PAPER_MILL															:{BLACK}Tritura la legna per produrre carta e imballaggi.{}{}{BLACK}Produzione:{}  4t ogni 8t di legname consegnate{}  2t ogni 8t d'argilla consegnate{}  2t ogni 8000l di prodotti chimici consegnati{}{}Il prodotto aumenta se due o più tipi di merci sono consegnate entro un intervallo inferiore a un mese.
-STR_EXTRA_PLASTICS_PLANT														:{BLACK}Costruisce prodotti in plastica come imballaggi e prodotti di consumo.{}{}Prodouzione:{} {STRING} {STRING}
+STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}Produzione:{}  2t ogni 8t di bauxite consegnate{}  2t ogni 8t di prodotti chimici consegnate{}  4t ogni 8t di metalli di scarto consegnate{}{}Il prodotto aumenta se due o più tipi di merci sono consegnati entro un intervallo inferiore a un mese.
+STR_EXTRA_BIOREFINERY                                                           :{BLACK}Produzione:{}  6000l ogni 8t di grano consegnate{} 6000l ogni 8t di zucchero consegnati
+STR_EXTRA_BREWERY                                                               :{BLACK}Produzione:{}  3000l ogni 8 casse di forniture industriali consegnate{}{STRING} {STRING}{}Il prodotto aumenta se forniture industriali e un altro tipo di merce sono consegnate entro un intervallo inferiore a un mese.
+STR_EXTRA_BREWERY_GRAIN_SUBSTR                                                  :5000l ogni 8t di grano consegnate{}
+STR_EXTRA_BREWERY_FRUIT_SUBSTR                                                  :5000l ogni 8t di frutta consegnate{}
+STR_EXTRA_BRICKWORKS                                                            :{BLACK}Produzione:{}  2t ogni 8t di carbone consegnate{}  2t ogni 8t di sabbia consegnate{}  4t ogni 8t d'argilla consegnate{}{}Il prodotto aumenta se due o più tipi di merci sono consegnate entro un intervallo inferiore a un mese.
+STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Produzione:{}  2t ogni 8t di carbone consegnate{}  2t ogni 8t d'argilla consegnate{}  4t ogni 8t di pietre consegnate{}{}Il prodotto aumenta se due o più tipi di merci sono consegnate entro un intervallo inferiore a un mese.
+STR_EXTRA_DAIRY                                                                 :{BLACK}Produzione:{}  3t ogni 8t di forniture industriali consegnate{}  5t ogni 8000l di latte consegnati{}{}Il prodotto aumenta se entrambe le merci sono consegnate entro un intervallo inferiore a un mese.
+STR_EXTRA_FERTILIZER_PLANT                                                      :{BLACK}Produzione:{}  8 casse ogni 8000l di prodotti chimici consegnati
+STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Produzione:{}  3t ogni 8t di forniture industriali consegnate{}  5t ogni 8t di pesce consegnate{}{}Il prodotto aumenta se entrambe le merci sono consegnate entro un intervallo inferiore a un mese.
+STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Produzione:{}  3t ogni 8t di forniture industriali consegnate{}  5t ogni 8t di prodotti in legno consegnate{}{}Il prodotto aumenta se entrambe le merci sono consegnate entro un intervallo inferiore a un mese.
+STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Produce oggetti in vetro come bottiglie, vasi e finestre.{}{}{BLACK}Produzione:{}  6t ogni 8t di sabbia consegnate{}  2t ogni 8000l di prodotti chimici consegnati{}{}Il prodotto aumenta se entrambe le merci sono consegnate entro un intervallo inferiore a un mese.
+STR_EXTRA_GRAIN_MILL                                                            :{BLACK}Produzione:{}  3t ogni 8 casse di forniture industriali consegnate{}  5t ogni 8t di grano consegnate{}{}La produzionoe aumenta se entrambe le merci sono consegnate entro un intervallo inferiore a un mese.
+STR_EXTRA_IRON_WORKS                                                            :{BLACK}Produzione:{}  2t ogni 8t di legname consegnate{}  2t ogni 8t di minerale di ferro consegnate{}{}Il prodotto aumenta se entrambe le merci sono consegnate entro un intervallo inferiore a un mese.
+STR_EXTRA_LIME_KILN                                                             :{BLACK}Produzione:{}  3t ogni 8t di pietre consegnate{}  3t ogni 8t di carbone consegnate{}{}Il prodotto aumenta se entrambe le merci sono consegnate entro un intervallo inferiore a un mese.
+STR_EXTRA_LUMBER_YARD                                                           :{BLACK}Costruisce oggetti come palizzate, steccati o pali.{}{}{BLACK}Produzione:{}  2t ogni 8t di prodotti chimici consegnate{}  6t ogni 8t di prodotti in legno consegnate{}{}Il prodotto aumenta se entrambe le merci sono consegnate entro un intervallo inferiore a un mese.
+STR_EXTRA_MACHINE_SHOP                                                          :{BLACK}Costruisce e ripara macchinari.{}{}Produzione:{}  8 casse ogni 8000l di carburante consegnati{}  8 casse ogni 8t di metalli consegnate.
+STR_EXTRA_MEAT_PACKER                                                           :{BLACK}Produzione:{}  3t ogni 8t di forniture industriali consegnate{}  5t ogni 8t di bestiame consegnate{}{}Il prodotto aumenta se entrambe le merci sono consegnate entro un intervallo inferiore a un mese.
+STR_EXTRA_METAL_FABRICATION_PLANT                                               :{BLACK}Produce parti meccaniche di metallo.{}{}{BLACK}Produzione:{}  2t ogni 8000l di prodotti chimici consegnati{}  6t ogni 8t di metalli consegnate{}{}Il prodotto aumenta se entrambe le merci sono consegnate entro un intervallo inferiore a un mese.
+STR_EXTRA_METAL_FOUNDRY                                                         :{BLACK}Produce oggetti metallici, come utensili e parti meccaniche.{}{}{BLACK}Produzione:{}  2 casse ogni 8000l di prodotti chimici consegnati{}  6 casse ogni 8t di metalli consegnate{}{}Il prodotto aumenta se entrambe le merci sono consegnate entro un intervallo inferiore a un mese.
+STR_EXTRA_OIL_REFINERY                                                          :{BLACK}Lavora il petrolio per produrre carburanti e prodotti chimici.{}{}6000l di produzione ogni 8000l consegnati
+STR_EXTRA_PAPER_MILL                                                            :{BLACK}Tritura la legna per produrre carta e imballaggi.{}{}{BLACK}Produzione:{}  4t ogni 8t di legname consegnate{}  2t ogni 8t d'argilla consegnate{}  2t ogni 8000l di prodotti chimici consegnati{}{}Il prodotto aumenta se due o più tipi di merci sono consegnate entro un intervallo inferiore a un mese.
+STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}Costruisce prodotti in plastica come imballaggi e prodotti di consumo.{}{}Prodouzione:{} {STRING} {STRING}
 STR_EXTRA_PLASTICS_PLANT_CHEMICALS_SUBSTR                                       :6 casse ogni 8,000l di prodotti chimici consegnati{}
 STR_EXTRA_PLASTICS_PLANT_PLANT_FIBRES_SUBSTR                                    :6 casse ogni 8 balle di fibre tessili consegnate{}
-STR_EXTRA_RECYCLING_PLANT														:{BLACK}Lavora i prodotti da riciclare garantendo un loro riutilizzo industriale.{}{}Produzione:{}  6t di produzione ogni 8t consegnate.
-STR_EXTRA_RECYCLING_DEPOT														:{BLACK}La quantità di prodtto dipende dalle dimensioni della città.
-STR_EXTRA_SAWMILL																:{BLACK}Taglia la legna.{}{}Produzione:{}   6t ogni 8t di legna consegnate.
-STR_EXTRA_SMITHY_FORGE															:{BLACK}Costruisce oggetti metallici come attrezzi edili e agricoli, e ferri di cavallo.{}{}Produzione:{}  8 casse ogni 8t di metalli consegnate.
-STR_EXTRA_STEELMILL																:{BLACK}Produzione:{}  2t ogni 8t di minerale di ferro consegnate{}  2t ogni 8t di carbone consegnate{}  4t ogni 8t di metalli di scarto consegnate{}{}Il prodotto aumenta se due o più tipi di merci sono consegnate entro un intervallo inferiore a un mese.
-STR_EXTRA_SUGAR_REFINERY														:{BLACK}Produzione:{}  3t ogni 8t di forniture industriali consegnate{}  5t ogni 8t di canna da zucchero consegnate{}{}Il prodotto aumentase entrambe le merci sono consegnate entro un intervallo inferiore a un mese.
-STR_EXTRA_TEXTILE_MILL															:{BLACK}Produzione:{}  3 casse ogni 8t di forniture industriali consegnate{} {STRING} {STRING} {}Il prodotto aumenta se riceve forniture industriali entro un mese dalla consegna di altre merci.
+STR_EXTRA_RECYCLING_PLANT                                                       :{BLACK}Lavora i prodotti da riciclare garantendo un loro riutilizzo industriale.{}{}Produzione:{}  6t di produzione ogni 8t consegnate.
+STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}La quantità di prodtto dipende dalle dimensioni della città.
+STR_EXTRA_SAWMILL                                                               :{BLACK}Taglia la legna.{}{}Produzione:{}   6t ogni 8t di legna consegnate.
+STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Costruisce oggetti metallici come attrezzi edili e agricoli, e ferri di cavallo.{}{}Produzione:{}  8 casse ogni 8t di metalli consegnate.
+STR_EXTRA_STEELMILL                                                             :{BLACK}Produzione:{}  2t ogni 8t di minerale di ferro consegnate{}  2t ogni 8t di carbone consegnate{}  4t ogni 8t di metalli di scarto consegnate{}{}Il prodotto aumenta se due o più tipi di merci sono consegnate entro un intervallo inferiore a un mese.
+STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Produzione:{}  3t ogni 8t di forniture industriali consegnate{}  5t ogni 8t di canna da zucchero consegnate{}{}Il prodotto aumentase entrambe le merci sono consegnate entro un intervallo inferiore a un mese.
+STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Produzione:{}  3 casse ogni 8t di forniture industriali consegnate{} {STRING} {STRING}{}Il prodotto aumenta se riceve forniture industriali entro un mese dalla consegna di altre merci.
 STR_EXTRA_TEXTILE_MILL_WOOL_SUBSTR                                              :5 casse ogni 8 balle di lana consegnate{}
 STR_EXTRA_TEXTILE_MILL_PLANT_FIBRES_SUBSTR                                      :5 casse ogni 8 balle di fibre tessili consegnate{}
 
-STR_EXTRA_TEXT_DEBUG_SECONDARY													:{BLACK}------------ DEBUG ------------{}Produzione questo mese:{}Prodotto 1: {WHITE}{COMMA}{BLACK}{}Prodotto 2: {WHITE}{COMMA}{BLACK}{}Giorni trascorsi dall'ultima consegna: {WHITE}{COMMA}{BLACK}
-STR_EXTRA_MAX_PRODUCTION														:{BLACK}Livello massimo di produzione raggiunto
-STR_PRIMARY_PRODUCTION_1X														:{BLACK}Produzione attuale: {YELLOW}Normale{}{}{BLACK}Per raddoppiare la produzione, consegna {SIGNED_WORD} casse di forniture entro 3 mesi (o {SIGNED_WORD} casse per quadruplicare la produzione)
-STR_PRIMARY_PRODUCTION_2X														:{BLACK}Produzione attuale: {YELLOW}Raddoppiata{}{}{BLACK}Per mantenere questo livello di produzione, consegna {SIGNED_WORD} casse di forniture entro 3 mesi (o {SIGNED_WORD} casse per quadruplicare la produzione)
-STR_PRIMARY_PRODUCTION_4X														:{BLACK}Produzione attuale: {YELLOW}Quaruplicata{}{}{BLACK}Per mantenere questo livello di produzione, consegna {SIGNED_WORD} casse di forniture entro 3 mesi
-STR_PORT_PRODUCTION_1X															:{BLACK}Produzione attuale: {YELLOW}Normale{}{}{BLACK}Per raddoppiare la produzione, consegna {SIGNED_WORD} unità di merci entro 3 mesi (o {SIGNED_WORD} unità per quadruplicare la produzione)
-STR_PORT_PRODUCTION_2X															:{BLACK}Produzione attuale: {YELLOW}Raddoppiata{}{}{BLACK}Per mantenere questo livello di produzione, consegna {SIGNED_WORD} unità di merci entro 3 mesi (o {SIGNED_WORD} unità per quadruplicare la produzione)
-STR_PORT_PRODUCTION_4X															:{BLACK}Produzione attuale: {YELLOW}Quadruplicata{}{}{BLACK}Per mantenere questo livello di produzione, consegna {SIGNED_WORD} unità di merci entro 3 mesi
-STR_GENERIC_NEWLINE	:{}
+STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ DEBUG ------------{}Produzione questo mese:{}Prodotto 1: {WHITE}{COMMA}{BLACK}{}Prodotto 2: {WHITE}{COMMA}{BLACK}{}Giorni trascorsi dall'ultima consegna: {WHITE}{COMMA}{BLACK}
+STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Livello massimo di produzione raggiunto
+STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Produzione attuale: {YELLOW}Normale{}{}{BLACK}Per raddoppiare la produzione, consegna {SIGNED_WORD} casse di forniture entro 3 mesi (o {SIGNED_WORD} casse per quadruplicare la produzione)
+STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Produzione attuale: {YELLOW}Raddoppiata{}{}{BLACK}Per mantenere questo livello di produzione, consegna {SIGNED_WORD} casse di forniture entro 3 mesi (o {SIGNED_WORD} casse per quadruplicare la produzione)
+STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}Produzione attuale: {YELLOW}Quaruplicata{}{}{BLACK}Per mantenere questo livello di produzione, consegna {SIGNED_WORD} casse di forniture entro 3 mesi
+STR_PORT_PRODUCTION_1X                                                          :{BLACK}Produzione attuale: {YELLOW}Normale{}{}{BLACK}Per raddoppiare la produzione, consegna {SIGNED_WORD} unità di merci entro 3 mesi (o {SIGNED_WORD} unità per quadruplicare la produzione)
+STR_PORT_PRODUCTION_2X                                                          :{BLACK}Produzione attuale: {YELLOW}Raddoppiata{}{}{BLACK}Per mantenere questo livello di produzione, consegna {SIGNED_WORD} unità di merci entro 3 mesi (o {SIGNED_WORD} unità per quadruplicare la produzione)
+STR_PORT_PRODUCTION_4X                                                          :{BLACK}Produzione attuale: {YELLOW}Quadruplicata{}{}{BLACK}Per mantenere questo livello di produzione, consegna {SIGNED_WORD} unità di merci entro 3 mesi
+STR_GENERIC_NEWLINE                                                             :{}
 
-STR_FUND_BASIC_FARM																:{}{BLACK}Luogo: {YELLOW}Non si può fondare sulla neve o nel deserto.
-STR_FUND_MIXED_FARM																:{}{BLACK}Luogo: {YELLOW}Non si può fondare sulla neve o nel deserto.
-STR_FUND_ARABLE_FARM															:{}{BLACK}Luogo: {YELLOW}Non si può fondare sulla neve o nel deserto.
+STR_FUND_BASIC_FARM                                                             :{}{BLACK}Luogo: {YELLOW}Non si può fondare sulla neve o nel deserto.
+STR_FUND_MIXED_FARM                                                             :{}{BLACK}Luogo: {YELLOW}Non si può fondare sulla neve o nel deserto.
+STR_FUND_ARABLE_FARM                                                            :{}{BLACK}Luogo: {YELLOW}Non si può fondare sulla neve o nel deserto.
 STR_FUND_COFFEE_ESTATE                                                          :{}{BLACK}Luogo: {YELLOW}Non si può fondare sulla neve o nel deserto.
 STR_FUND_ORCHARD_PIGGERY                                                        :{}{BLACK}Luogo: {YELLOW}Non si può fondare sulla neve o nel deserto.
-STR_FUND_SUGAR_PLANTATION														:{}{BLACK}Luogo: {YELLOW}Non si può fondare sulla neve o nel deserto.
+STR_FUND_SUGAR_PLANTATION                                                       :{}{BLACK}Luogo: {YELLOW}Non si può fondare sulla neve o nel deserto.
 STR_FUND_FIBRE_CROP_FARM                                                        :{}{BLACK}Luogo: {YELLOW}Non si può fondare sulla neve o nel deserto.
-STR_FUND_FOREST																	:{}{BLACK}Luogo: {YELLOW}Non si può fondare nel deserto.
-STR_FUND_FRUIT_PLANTATION														:{}{BLACK}Luogo: {YELLOW}Non si può fondare sulla neve.
+STR_FUND_FOREST                                                                 :{}{BLACK}Luogo: {YELLOW}Non si può fondare nel deserto.
+STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}Luogo: {YELLOW}Non si può fondare sulla neve.
 STR_FUND_RUBBER_PLANTATION                                                      :{}{BLACK}Luogo: {YELLOW}Non si può fondare sulla neve o nel deserto.
 
-STR_FUND_AVAILABLE_FROM															:{}{BLACK}Disponibile da: {YELLOW}{COMMA}
 
-STR_FUND_AVAILABLE_UNTIL														:{}{BLACK}Non più disponibile da: {YELLOW}{COMMA}
+STR_FUND_AVAILABLE_FROM                                                         :{}{BLACK}Disponibile da: {YELLOW}{COMMA}
+
+STR_FUND_AVAILABLE_UNTIL                                                        :{}{BLACK}Non più disponibile da: {YELLOW}{COMMA}
 
 
-STR_TOWN																		:{STRING}
-STR_STATION																		:{STRING} {STRING}
+STR_TOWN                                                                        :{STRING}
+STR_STATION                                                                     :{STRING} {STRING}
 
-STR_IND_ALUMINIUM_PLANT															:{G=f}Fabbrica di alluminio
-STR_IND_ARABLE_FARM																:{G=m}Podere agricolo
-STR_IND_BASICFARM																:{G=f}Fattoria
-STR_IND_BAUXITE_MINE															:{G=f}Miniera di bauxite
-STR_IND_BIOREFINERY																:{G=f}Raffineria di biocombustibili
-STR_IND_BREWERY																	:{G=f}Distilleria
+STR_IND_ALUMINIUM_PLANT                                                         :{G=f}Fabbrica di alluminio
+STR_IND_ARABLE_FARM                                                             :{G=m}Podere agricolo
+STR_IND_BASICFARM                                                               :{G=f}Fattoria
+STR_IND_BAUXITE_MINE                                                            :{G=f}Miniera di bauxite
+STR_IND_BIOREFINERY                                                             :{G=f}Raffineria di biocombustibili
+STR_IND_BREWERY                                                                 :{G=f}Distilleria
 STR_IND_BREWERY_CIDER_MILL                                                      :{G=f}Distilleria di sidro
-STR_IND_BRICK_WORKS																:{G=f}Fabbrica di mattoni
-STR_IND_BUILDERS_YARD															:{G=m}Cantiere edile
+STR_IND_BRICK_WORKS                                                             :{G=f}Fabbrica di mattoni
+STR_IND_BUILDERS_YARD                                                           :{G=m}Cantiere edile
 STR_IND_BULK_TERMINAL                                                           :{G=m}Porto mercantile
-STR_IND_CEMENT_PLANT															:{G=f}Fabbrica di cemento
-STR_IND_CLAY_PIT																:{G=f}Cava di argilla
+STR_IND_CEMENT_PLANT                                                            :{G=f}Fabbrica di cemento
+STR_IND_CLAY_PIT                                                                :{G=f}Cava di argilla
 STR_IND_COFFEE_ESTATE                                                           :{G=f}Piantagione di caffé
-STR_IND_DAIRY																	:{G=f}Azienda casearia
-STR_IND_DAIRYFARM																:{G=m}Allevamento di bovini
-STR_IND_DREDGING_SITE															:{G=m}Sito di dragaggio
-STR_IND_FERTILISER_PLANT														:{G=f}Fabbrica di fertilizzanti
 STR_IND_FIBRE_CROP_FARM                                                         :{G=f}Piantagione di fibre tessili
-STR_IND_FISHING_GROUND															:{G=f}Zona di pesca
-STR_IND_FISHING_HARBOUR															:{G=m}Porto di pesca
-STR_IND_FOOD_MARKET																:{G=m}Mercato alimentare
-STR_IND_FURNITURE_FACTORY														:{G=m}Mobilifico
+STR_IND_DAIRY                                                                   :{G=f}Azienda casearia
+STR_IND_DAIRYFARM                                                               :{G=m}Allevamento di bovini
+STR_IND_DREDGING_SITE                                                           :{G=m}Sito di dragaggio
+STR_IND_FERTILISER_PLANT                                                        :{G=f}Fabbrica di fertilizzanti
+STR_IND_FISHING_GROUND                                                          :{G=f}Zona di pesca
+STR_IND_FISHING_HARBOUR                                                         :{G=m}Porto di pesca
+STR_IND_FOOD_MARKET                                                             :{G=m}Mercato alimentare
+STR_IND_FURNITURE_FACTORY                                                       :{G=m}Mobilifico
 STR_IND_GENERAL_STORE                                                           :{G=m}Magazzino generale
-STR_IND_GLASS_WORKS																:{G=f}Fabbrica di prodotti in vetro
-STR_IND_GRAIN_MILL																:{G=m}Forno comunale
-STR_IND_HARDWARE_STORE															:{G=m}Negozio di ferramenta
-STR_IND_HOTEL																	:{G=m}Hotel
-STR_IND_IRON_WORKS																:{G=f}Fucina
-STR_IND_JUNKYARD																:{G=m}Deposito di rottami
-STR_IND_LIME_KILN																:{G=m}Forno per ceramiche
-STR_IND_LUMBER_YARD																:{G=f}Falegnameria
-STR_IND_MACHINE_SHOP															:{G=f}Fabbrica di macchinari
-STR_IND_METAL_FABRICATION_PLANT													:{G=f}Fabbrica di prodotti in metallo
-STR_IND_METAL_FOUNDRY															:{G=f}Fonderia
-STR_IND_MIXEDFARM																:{G=f}Azienda agricola
+STR_IND_GLASS_WORKS                                                             :{G=f}Fabbrica di prodotti in vetro
+STR_IND_GRAIN_MILL                                                              :{G=m}Forno comunale
+STR_IND_HARDWARE_STORE                                                          :{G=m}Negozio di ferramenta
+STR_IND_HOTEL                                                                   :{G=m}Hotel
+STR_IND_IRON_WORKS                                                              :{G=f}Fucina
+STR_IND_JUNKYARD                                                                :{G=m}Deposito di rottami
+STR_IND_LIME_KILN                                                               :{G=m}Forno per ceramiche
+STR_IND_LUMBER_YARD                                                             :{G=f}Falegnameria
+STR_IND_MACHINE_SHOP                                                            :{G=f}Fabbrica di macchinari
+STR_IND_METAL_FABRICATION_PLANT                                                 :{G=f}Fabbrica di prodotti in metallo
+STR_IND_METAL_FOUNDRY                                                           :{G=f}Fonderia
+STR_IND_MIXEDFARM                                                               :{G=f}Azienda agricola
 STR_IND_ORCHARD_PIGGERY                                                         :{G=m}Frutteto e porcile
-STR_IND_PETROLPUMP																:{G=f}Pompa di benzina
-STR_IND_PLASTICS_PLANT															:{G=f}Fabbrica di prodotti in plastica
-STR_IND_PORT																	:{G=m}Porto
-STR_IND_QUARRY																	:{G=f}Cava di pietre
+STR_IND_PETROLPUMP                                                              :{G=f}Pompa di benzina
+STR_IND_PLASTICS_PLANT                                                          :{G=f}Fabbrica di prodotti in plastica
+STR_IND_PORT                                                                    :{G=m}Porto
+STR_IND_QUARRY                                                                  :{G=f}Cava di pietre
 STR_IND_RANCH                                                                   :{G=m}Ranch
-STR_IND_RECYCLING_DEPOT															:{G=m}Deposito di prodotti da riciclare
-STR_IND_RECYCLING_PLANT															:{G=f}Centrale di riciclaggio
-STR_IND_SHEEPFARM																:{G=m}Allevamento di ovini
-STR_IND_SMITHY_FORGE															:{G=f}Piccola fucina
-STR_IND_STOCKYARD																:{G=m}Macello
-STR_IND_SUGAR_PLANTATION														:{G=f}Piantagione di zucchero
-STR_IND_SUGAR_REFINERY															:{G=f}Raffineria di zucchero
-STR_IND_SUPERMARKET																:{G=m}Supermercato
-STR_IND_TEXTILE_MILL															:{G=m}Tessilificio
+STR_IND_RECYCLING_DEPOT                                                         :{G=m}Deposito di prodotti da riciclare
+STR_IND_RECYCLING_PLANT                                                         :{G=f}Centrale di riciclaggio
+STR_IND_SHEEPFARM                                                               :{G=m}Allevamento di ovini
+STR_IND_SMITHY_FORGE                                                            :{G=f}Piccola fucina
+STR_IND_STOCKYARD                                                               :{G=m}Macello
+STR_IND_SUGAR_PLANTATION                                                        :{G=f}Piantagione di zucchero
+STR_IND_SUGAR_REFINERY                                                          :{G=f}Raffineria di zucchero
+STR_IND_SUPERMARKET                                                             :{G=m}Supermercato
+STR_IND_TEXTILE_MILL                                                            :{G=m}Tessilificio
 STR_IND_TRADING_POST                                                            :{G=m}Emporio commerciale
 
 STR_STATION_ANIMALS                                                             :Mercato del bestiame

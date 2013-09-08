@@ -1,9 +1,8 @@
-
 ##grflangid 0x02
-##gender m w n p
 ##plural 0
+##gender m w n p
 
-STR_GRF_DESC                                                                    :{ORANGE}FIRS Industrie-Set{}{BLACK}Von andythenorth, FooBar, planetmaker, Terkhen, Yexo und vielen weiteren Mitwirkenden.{}{SILVER}Siehe Readme für ausführliche Informationen. {BLACK}Lizenz: {SILVER}GPL v2
+STR_GRF_DESC                                                                    :{ORANGE}FIRS Industrie-Set{}{BLACK}Von andythenorth, FooBar, planetmaker, Terkhen, Yexo und vielen weiteren Mitwirkenden.{SILVER}Siehe Readme für ausführliche Informationen. {BLACK}Lizenz: GPL v2
 STR_GRF_NAME                                                                    :{TITLE}
 STR_GRF_URL                                                                     :http://bundles.openttdcoop.org/firs/releases/LATEST/docs/
 
@@ -126,17 +125,17 @@ STR_EXTRA_DAIRY                                                                 
 STR_EXTRA_FERTILIZER_PLANT                                                      :{BLACK}Produktion:{}  8 Kisten pro gelieferter 8,000l Chemikalien
 STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Produktion:{}  3t pro gelieferter 8 Kisten Produktionsgüter{}  5t pro gelieferter 8t Fisch{}{}Produktion steigt, wenn beide Frachtarten innerhalb eines Monats geliefert werden.
 STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Produktion:{}  3t pro gelieferter 8 Kisten Produktionsgüter{}  5t pro gelieferter 8t Schnittholz{}{}Produktion steigt, wenn beide Frachtarten innerhalb eines Monats geliefert werden.
-STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Produziert Glaserzeugnisse wie z.B. Flaschen, Gläser und Fensterscheiben.{}{}{BLACK}Produktion:{}  6t pro gelieferter 8t Sand{}  2t pro gelieferter 8,000l Chemikalien{}{}Produktion steigt, wenn beide Frachtarten innerhalb eines Monats geliefert werden.
+STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Produziert Glaserzeugnisse wie z.B. Flaschen, Gläser und Fensterscheiben.{}{}Produktion:{}  6t pro gelieferter 8t Sand{}  2t pro gelieferter 8,000l Chemikalien{}{}Produktion steigt, wenn beide Frachtarten innerhalb eines Monats geliefert werden.
 STR_EXTRA_GRAIN_MILL                                                            :{BLACK}Produktion:{}  3t pro gelieferter 8 Kisten Produktionsgüter{}  5t pro gelieferter 8t Getreide{}{}Produktion steigt, wenn beide Frachtarten innerhalb eines Monats geliefert werden.
 STR_EXTRA_IRON_WORKS                                                            :{BLACK}Produktion:{}  2t pro gelieferter 8t Holz{}  2t pro gelieferter 8t Eisenerz{}{}Produktion steigt, wenn beide Frachtarten innerhalb eines Monats geliefert werden.
 STR_EXTRA_LIME_KILN                                                             :{BLACK}Produktion:{}  3t pro gelieferter 8t Steine{}  3t pro gelieferter 8t Kohle{}{}Produktion steigt, wenn beide Frachtarten innerhalb eines Monats geliefert werden.
-STR_EXTRA_LUMBER_YARD                                                           :{BLACK}Verarbeitet Schnittholz zu fertigen Holzprodukten.{}{}{BLACK}Produktion:{}  2t pro gelieferter 8,000l Chemikalien{}  6t pro gelieferter 8t Schnittholz{}{}Produktion steigt, wenn beide Frachtarten innerhalb eines Monats geliefert werden.
+STR_EXTRA_LUMBER_YARD                                                           :{BLACK}Verarbeitet Schnittholz zu fertigen Holzprodukten.{}{}Produktion:{}  2t pro gelieferter 8,000l Chemikalien{}  6t pro gelieferter 8t Schnittholz{}{}Produktion steigt, wenn beide Frachtarten innerhalb eines Monats geliefert werden.
 STR_EXTRA_MACHINE_SHOP                                                          :{BLACK}Baut und wartet Maschinen.{}{}Produktion:{} 8 Kisten pro gelieferter 8,000l Treibstoff{} 8 Kisten pro gelieferter 8t Metall
 STR_EXTRA_MEAT_PACKER                                                           :{BLACK}Produziert:{}  3t pro gelieferter 8 Kisten Produktionsgüter{}  5t pro gelieferter 8t Vieh{}{}Produktion steigt, wenn beide Frachtarten innerhalb eines Monats geliefert werden.
-STR_EXTRA_METAL_FABRICATION_PLANT                                               :{BLACK}Produziert lackierte Metallgegenstände.{}{}{BLACK}Produktion:{}2t pro gelieferter 8,000l Chemikalien{}6t pro gelieferter 8t Metall{}{}Produktion steigt, wenn beide Frachtarten innerhalb eines Monats geliefert werden.
+STR_EXTRA_METAL_FABRICATION_PLANT                                               :{BLACK}Produziert lackierte Metallgegenstände.{}{}Produktion:{}2t pro gelieferter 8,000l Chemikalien{}6t pro gelieferter 8t Metall{}{}Produktion steigt, wenn beide Frachtarten innerhalb eines Monats geliefert werden.
 STR_EXTRA_METAL_FOUNDRY                                                         :{BLACK}Produziert Metallgegenstände wie Werkzeuge und Ersatzteile.{}{}2 Kisten pro gelieferter 8,000l Chemikalien{}6 Kisten pro gelieferter 8t Metall{}{}Produktion steigt, wenn beide Frachtarten innerhalb eines Monats geliefert werden.
 STR_EXTRA_OIL_REFINERY                                                          :{BLACK}Verarbeitet Rohöl zu Treibstoff und Chemikalien.{}{}Produktion:{} 6,000l pro gelieferter 8,000l Öl.
-STR_EXTRA_PAPER_MILL                                                            :{BLACK}Zerfasert Holz und stellt daraus Papier und Kartonagen her.{}{}{BLACK}Produktion:{}  4t pro gelieferter 8t Holz{}  2 Kisten pro gelieferter 8t Ton{}  2 Kisten pro gelieferter 8000l Chemikalien{}{}Produktion steigt, wenn zwei oder mehr Frachtarten innerhalb eines Monats geliefert werden.
+STR_EXTRA_PAPER_MILL                                                            :{BLACK}Zerfasert Holz und stellt daraus Papier und Kartonagen her.{}{}Produktion:{}  4t pro gelieferter 8t Holz{}  2 Kisten pro gelieferter 8t Ton{}  2 Kisten pro gelieferter 8000l Chemikalien{}{}Produktion steigt, wenn zwei oder mehr Frachtarten innerhalb eines Monats geliefert werden.
 STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}Produziert Verpackungen und Haushaltswaren aus Kunststoff.{}{}Produktion:{} {STRING} {STRING}
 STR_EXTRA_PLASTICS_PLANT_CHEMICALS_SUBSTR                                       :6 Kisten pro gelieferter 8,000l Chemikalien{}
 STR_EXTRA_PLASTICS_PLANT_PLANT_FIBRES_SUBSTR                                    :6 Kisten pro gelieferter 8 Ballen Pflanzenfasern{}
@@ -146,7 +145,7 @@ STR_EXTRA_SAWMILL                                                               
 STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Verarbeitet Schmiedeeisen zu Gegenständen wie Zäunen, Werkzeugen, Pflügen, Schaufeln und Hufeisen.{}{}Produktion:{} 8 Kisten pro gelieferter 8t Metall
 STR_EXTRA_STEELMILL                                                             :{BLACK}Produktion:{}  2t pro gelieferter 8t Eisenerz{}  2t pro gelieferter 8t Kohle{}  4t pro gelieferter 8t Altmetall{}{}Produktion steigt, wenn zwei oder mehr Frachtarten innerhalb eines Monats geliefert werden.
 STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Produktion:{}  3t pro gelieferter 8 Kisten Produktionsgüter{}  5t pro gelieferter 8t Rohrzucker{}{}Produktion steigt, wenn beide Frachtarten innerhalb eines Monats geliefert werden.
-STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Produktion:{}  3 Kisten pro gelieferter 8 Kisten Produktionsgüter{} {STRING} {STRING} {}Produktion steigt, wenn Produktionsgüter und andere benötigte Güter innerhalb eines Monats  geliefert werden.
+STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Produktion:{}  3 Kisten pro gelieferter 8 Kisten Produktionsgüter{} {STRING} {STRING}{}Produktion steigt, wenn Produktionsgüter und andere benötigte Güter innerhalb eines Monats  geliefert werden.
 STR_EXTRA_TEXTILE_MILL_WOOL_SUBSTR                                              :5 Kisten pro gelieferter 8 Ballen Wolle{}
 STR_EXTRA_TEXTILE_MILL_PLANT_FIBRES_SUBSTR                                      :5 Kisten pro gelieferter 8 Ballen Pflanzenfasern{}
 
@@ -170,6 +169,8 @@ STR_FUND_FIBRE_CROP_FARM                                                        
 STR_FUND_FOREST                                                                 :{}{BLACK}Ort: {YELLOW}Kann nicht in Wüsten errichtet werden.
 STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}Ort: {YELLOW}Kann nicht über der Schneegrenze errichtet werden.
 STR_FUND_RUBBER_PLANTATION                                                      :{}{BLACK}Ort: {YELLOW}Kann nicht über der Schneegrenze oder in Wüsten errichtet werden.
+
+
 STR_FUND_AVAILABLE_FROM                                                         :{}{BLACK}Verfügbar ab:{YELLOW}{COMMA}
 
 STR_FUND_AVAILABLE_UNTIL                                                        :{}{BLACK}Nicht verfügbar nach: {YELLOW}{COMMA}

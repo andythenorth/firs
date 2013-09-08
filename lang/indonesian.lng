@@ -1,14 +1,14 @@
-##grflangid 0x5A
+##grflangid 0x5a
 ##plural 1
 
-STR_GRF_DESC                                                                    :{ORANGE}FIRS Industry Replacement Set - {}{BLACK}Dibuat untuk anda oleh andythenorth, FooBar, planetmaker, Terkhen and Yexo, dan bantuan dari yang lain. {SILVER}Lihat readme untuk informasi lebih lanjut, termasuk cara penggunaan FIRS. {BLACK}Lisensi: GPL v2.
+STR_GRF_DESC                                                                    :{ORANGE}FIRS Industry Replacement Set -{}{BLACK}Dibuat untuk anda oleh andythenorth, FooBar, planetmaker, Terkhen and Yexo, dan bantuan dari yang lain. {SILVER}Lihat readme untuk informasi lebih lanjut, termasuk cara penggunaan FIRS. {BLACK}Lisensi: GPL v2.
 STR_GRF_NAME                                                                    :{TITLE}
 STR_GRF_URL                                                                     :http://bundles.openttdcoop.org/firs/releases/LATEST/docs/
 
 STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :Jarak maksimal untuk area tangkapan ikan, anjungan lepas pantai dan pengerukan pasir laut dari pantai dalam petak.
 STR_PARAM_DESC_STAT_RATING                                                      :Peringkat stasiun mempengaruhi jumlah kargo yang dipasok oleh industri ke suatu stasiun; semakin tinggi peringkat, semakin tinggi jumlah pasokan.
 STR_PARAM_DESC_DEBUG                                                            :Hanya untuk pengembang / developer
-STR_PARAM_DESC_ECONOMIES                                                        :Jika terselesaikan, FIRS akan mempunyai fitur pilihan sistem ekonomi. Kargo dan industri akan berbeda di setiap sistem ekonomi. Pembayaran kargo juga akan berbeda di setiap sistem ekonomi. {}{}{SILVER}Saat ini hanya satu sistem ekonomi tersedia :)
+STR_PARAM_DESC_ECONOMIES                                                        :Setiap ekonomi menyediakan campuran kargo dan industri yang berbeda.{}{}Untuk pemain yang mau main yang gampang, ekonomi 'Dasar' berisi industri dan kargo lebih kurang daripada ekonomi FIRS yang lain.
 STR_PARAM_DESC_NO_OPENINGS                                                      :Secara normal, industri baru akan dibuat dalam permainan.{}{}Jika diaktifkan tidak ada industri dibuat dalam permainan, dan pemain tidak akan bisa membiayai atau memprospek industri.
 STR_PARAM_DESC_SECONDARY_NEVER_CLOSE                                            :Secara normal, industri sekunder dalam FIRS tidak akan tutup.{}{}Jika diaktifkan, industri sekunder mungkin tutup jika tidak ada kargo diantarkan untuk waktu lama.
 STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY                                   :Jarak terjauh untuk industri lepas pantai dari garis pantai dalam blok area
@@ -22,19 +22,19 @@ STR_PARAM_VALUE_STAT_RATING_DEFAULT                                             
 STR_PARAM_VALUE_STAT_RATING_REDUCED_TIME                                        :Perbaikan sistem peringkat - mengurangi efek lama waktu sejak pengambilan terakhir
 STR_PARAM_VALUE_STAT_RATING_100                                                 :Selalu 100%
 
-
-
-
-
-
-
+STR_PARAM_VALUE_ECONOMIES_BASIC_TEMPERATE                                       :Temperata Dasar
+STR_PARAM_VALUE_ECONOMIES_BASIC_ARCTIC                                          :Arktik Dasar
+STR_PARAM_VALUE_ECONOMIES_BASIC_TROPIC                                          :Tropik Dasar
+STR_PARAM_VALUE_ECONOMIES_FIRS                                                  :FIRS
+STR_PARAM_VALUE_ECONOMIES_MISTAH_KURTZ                                          :Hati Kegelapan
+STR_PARAM_VALUE_ECONOMIES_TEST_3                                                :Ekonomi cobaan 3
 
 STR_CARGO_NAME_ALCOHOL                                                          :Bir
 STR_CARGO_NAME_BAUXITE                                                          :Bauksit
 STR_CARGO_NAME_BUILDING_MATERIALS                                               :Material Bangunan
 STR_CARGO_NAME_CHEMICALS                                                        :Bahan Kimia
 STR_CARGO_NAME_CLAY                                                             :Tanah Liat
-
+STR_CARGO_NAME_COFFEE                                                           :Kopi
 STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :Alat Teknik
 STR_CARGO_NAME_FIBRES                                                           :Serat Tanaman
 STR_CARGO_NAME_FISH                                                             :Ikan
@@ -58,7 +58,7 @@ STR_CARGO_UNIT_BAUXITE                                                          
 STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WEIGHT} dari material bangunan
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} dari bahan kimia
 STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} dari tanah liat
-
+STR_CARGO_UNIT_COFFEE                                                           :{SIGNED_WORD} karung kopi
 STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} peti dari alat teknik
 STR_CARGO_UNIT_FIBRES                                                           :{SIGNED_WORD} ikat dari serat tanaman
 STR_CARGO_UNIT_FISH                                                             :{WEIGHT} dari ikan
@@ -82,7 +82,7 @@ STR_CID_BAUXITE                                                                 
 STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}MB
 STR_CID_CHEMICALS                                                               :{TINYFONT}BK
 STR_CID_CLAY                                                                    :{TINYFONT}TL
-
+STR_CID_COFFEE                                                                  :{TINYFONT}KP
 STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}AT
 STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}AP
 STR_CID_FIBRES                                                                  :{TINYFONT}ST
@@ -115,45 +115,60 @@ STR_ERR_LOCATION_LIMIT_1_PER_TOWN                                               
 
 STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}Produksi kargo:{}  2t setiap 8t bauksit diantarkan{}  2t setiap 8t bahan kimia diantarkan{}  4t setiap 8t besi bekas diantarkan{}{}Produksi naik jika dua atau lebih jenis kargo diantarkan dengan jarak kurang dari sebulan.
 STR_EXTRA_BIOREFINERY                                                           :{BLACK}Memproses gandum dan gula menjadi bahan kimia.{}{}6t diproduksi setiap 8t kargo diantarkan.
-
-
-
+STR_EXTRA_BREWERY                                                               :{BLACK}Produksi kargo:{} 3,000l setiap 8 peti alat produksi diantarkan{} {STRING} {STRING}{}Produksi naik jika alat produksi diantarkan dalam sebulan sebelum kargo lain.
+STR_EXTRA_BREWERY_GRAIN_SUBSTR                                                  :5,000l setiap 8t gandum diantarkan{}
+STR_EXTRA_BREWERY_FRUIT_SUBSTR                                                  :5000l diproduksi setiap 8t buah diantarkan.
 STR_EXTRA_BRICKWORKS                                                            :{BLACK}Produksi kargo:{}  2t setiap 8t batubara diantarkan{} 2t setiap 8t pasir diantarkan{} 4t setiap 8t tanah liat diantarkan{}{}Produksi naik jika dua atau lebih jenis kargo diantarkan dengan jarak kurang dari sebulan.
 STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Produksi kargo:{}  2t setiap 8t batubara diantarkan{} 2t setiap 8t tanah liat diantarkan{} 4t setiap 8t batu delivered{}{}Produksi naik jika dua atau lebih jenis kargo diantarkan dengan jarak kurang dari sebulan.
 STR_EXTRA_DAIRY                                                                 :{BLACK}Produksi kargo:{}  3t setiap 8t perlengkapan produksi diantarkan{}  5t setiap 8t susu diantarkan{}{}Bertambah menjadi 8t produksi setiap 8t diantarkan jika kedua kargo diantarkan dengan jarak kurang dari sebulan.
-
+STR_EXTRA_FERTILIZER_PLANT                                                      :{BLACK}Produksi kargo:{} 8 peti setiap 8,000l bahan kimia diantarkan
 STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Produksi kargo:{}  3t setiap 8t perlengkapan produksi diantarkan{}  5t setiap 8t ikan diantarkan{}{}Bertambah menjadi 8t produksi setiap 8t diantarkan jika kedua kargo diantarkan dengan jarak kurang dari sebulan.
 STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Produksi kargo:{}  3t setiap 8t perlengkapan produksi diantarkan{}  5t setiap 8t kayu potong diantarkan{}{}Bertambah menjadi 8t produksi setiap 8t diantarkan jika kedua kargo diantarkan dengan jarak kurang dari sebulan.
-STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Memproduksi barang dari kaca seperti gelas, botol dan kaca jendela.{}{}{BLACK}Produksi kargo:{}  6t setiap 8t pasir diantarkan{}  2t setiap 8t bahan kimia diantarkan{}{}Bertambah menjadi 8t produksi setiap 8t diantarkan jika kedua kargo diantarkan dengan jarak kurang dari sebulan.
+STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Memproduksi barang dari kaca seperti gelas, botol dan kaca jendela.{}{}Produksi kargo:{}  6t setiap 8t pasir diantarkan{}  2t setiap 8t bahan kimia diantarkan{}{}Bertambah menjadi 8t produksi setiap 8t diantarkan jika kedua kargo diantarkan dengan jarak kurang dari sebulan.
 STR_EXTRA_GRAIN_MILL                                                            :{BLACK}Produksi kargo:{}  3t setiap 8t alat produksi diantarkan{}  5t setiap 8t gandum diantarkan{}{}Bertambah menjadi 8t produksi setiap 8t diantarkan jika kedua kargo diantarkan dengan jarak kurang dari sebulan.
 STR_EXTRA_IRON_WORKS                                                            :{BLACK}Produksi kargo:{}  2t setiap 8t kayu diantarkan{}  2t setiap 8t bijih besi diantarkan{}{}Bertambah menjadi 4t produksi setiap 8t diantarkan jika kedua kargo diantarkan dengan jarak kurang dari sebulan.
 STR_EXTRA_LIME_KILN                                                             :{BLACK}Produksi kargo:{}  3t setiap 8t batu diantarkan{}  3t setiap 8t batubara diantarkan{}{}Bertambah menjadi 6t produksi setiap 8t diantarkan jika kedua kargo diantarkan dengan jarak kurang dari sebulan.
-STR_EXTRA_LUMBER_YARD                                                           :{BLACK}Memproduksi barang seperti tiang dan tonggak pagar.{}{}{BLACK}Produksi kargo:{}  2t setiap 8t bahan kimia diantarkan{}  6t setiap 8t kayu potong diantarkan{}{}Bertambah menjadi 8t produksi setiap 8t diantarkan jika kedua kargo diantarkan dengan jarak kurang dari sebulan.
+STR_EXTRA_LUMBER_YARD                                                           :{BLACK}Memproduksi barang seperti tiang dan tonggak pagar.{}{}Produksi kargo:{}  2t setiap 8t bahan kimia diantarkan{}  6t setiap 8t kayu potong diantarkan{}{}Bertambah menjadi 8t produksi setiap 8t diantarkan jika kedua kargo diantarkan dengan jarak kurang dari sebulan.
 STR_EXTRA_MACHINE_SHOP                                                          :{BLACK}Membuat dan meperbaiki mesin.{}{}8t diproduksi setiap 8t diantarkan.
 STR_EXTRA_MEAT_PACKER                                                           :{BLACK}Produksi kargo:{}  3t setiap 8t alat produksi diantarkan{}  5t setiap 8t ternak diantarkan{}{}Bertambah menjadi 8t produksi setiap 8t diantarkan jika kedua kargo diantarkan dengan jarak kurang dari sebulan.
-STR_EXTRA_METAL_FABRICATION_PLANT                                               :{BLACK}Memproduksi komponen besi berwarna.{}{}{BLACK}Produksi kargo:{}  2t setiap 8t bahan kimia diantarkan{}  6t setiap 8t besi diantarkan{}{}Bertambah menjadi 8t produksi setiap 8t diantarkan jika kedua kargo diantarkan dengan jarak kurang dari sebulan.
-STR_EXTRA_METAL_FOUNDRY                                                         :{BLACK}Memproduksi barang dari lembaran besi seperti kaleng, hardware dan alat rumah tangga.{}{}{BLACK}Produksi kargo:{}  2t setiap 8t bahan kimia diantarkan{}  6t setiap 8t besi diantarkan{}{}Bertambah menjadi 8t produksi setiap 8t diantarkan jika kedua kargo diantarkan dengan jarak kurang dari sebulan.
+STR_EXTRA_METAL_FABRICATION_PLANT                                               :{BLACK}Memproduksi komponen besi berwarna.{}{}Produksi kargo:{}  2t setiap 8,000l bahan kimia diantarkan{}  6t setiap 8t besi diantarkan{}{}Produksi naik jika kedua kargo diantarkan dengan jarak kurang dari sebulan.
+STR_EXTRA_METAL_FOUNDRY                                                         :{BLACK}Memproduksi barang dari lembaran besi seperti kaleng, hardware dan alat rumah tangga.{}{}Produksi kargo:{}  2 peti setiap 8,000l bahan kimia diantarkan{}  6 peti setiap 8 peti besi diantarkan{}{}Produksi naik jika kedua kargo diantarkan dengan jarak kurang dari sebulan.
 STR_EXTRA_OIL_REFINERY                                                          :{BLACK}Memproses minyak mentah menjadi bahan bakar dan bahan kimia.{}{}6t diproduksi setiap 8t diantarkan.
-STR_EXTRA_PAPER_MILL                                                            :{BLACK}Mengubah kayu menjadi bubur kayu untuk menghasilkan kertas dan karton.{}{}{BLACK}Produksi kargo:{}  4t setiap 8t kayu diantarkan{}  2t setiap 8t tanah liat diantarkan{}  2t setiap 8t bahan kimia diantarkan{}{}Produksi naik jika dua atau lebih jenis kargo diantarkan dengan jarak kurang dari sebulan.
-STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}Memproduksi benda plastik seperti kemasan dan alat rumah tangga.{}{}6t diproduksi setiap 8t diantarkan.
-
-
+STR_EXTRA_PAPER_MILL                                                            :{BLACK}Mengubah kayu menjadi bubur kayu untuk menghasilkan kertas dan karton.{}{}Produksi kargo:{}  4t setiap 8t kayu diantarkan{}  2t setiap 8t tanah liat diantarkan{}  2t setiap 8t bahan kimia diantarkan{}{}Produksi naik jika dua atau lebih jenis kargo diantarkan dengan jarak kurang dari sebulan.
+STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}Memproduksi benda plastik seperti kemasan dan alat rumah tangga.{}{}Produksi kargo:{} {STRING} {STRING}
+STR_EXTRA_PLASTICS_PLANT_CHEMICALS_SUBSTR                                       :6 peti setiap 8,000l bahan kimia diantarkan{}
+STR_EXTRA_PLASTICS_PLANT_PLANT_FIBRES_SUBSTR                                    :6 peti setiap 8 ikat dari serat tanaman diantarkan{}
 STR_EXTRA_RECYCLING_PLANT                                                       :{BLACK}Memilah sampah untuk didaur ulang.{}{}6t diproduksi setiap 8t diantarkan.
 STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}Memproduksi sampah berdasarkan ukuran kota.
 STR_EXTRA_SAWMILL                                                               :{BLACK}Memotong kayu.{}{}6t diproduksi setiap 8t diantarkan.
 STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Memproduksi alat besi seperti alat perkakas, bajak, pintu pagar, sekop dan tapal kuda.{}{}8t diproduksi setiap 8t diantarkan.
 STR_EXTRA_STEELMILL                                                             :{BLACK}Produksi kargo:{}  2t setiap 8t bijih besi diantarkan{}  2t setiap 8t batubara diantarkan{}  4t setiap 8t besi bekas diantarkan{}{}Produksi naik jika dua atau lebih jenis kargo diantarkan dengan jarak kurang dari sebulan.
 STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Produksi kargo:{}  3t setiap 8t alat produksi diantarkan{}  5t per 8t sugar delivered{}{}Bertambah menjadi 8t produksi setiap 8t diantarkan jika kedua kargo diantarkan dengan jarak kurang dari sebulan.
-STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Produksi kargo:{}  3t setiap 8t alat produksi diantarkan{}  5t setiap 8t wol diantarkan{}  5t setiap 8t serat tanaman diantarkan{}{}Produksi naik jika dua atau lebih jenis kargo diantarkan dengan jarak kurang dari sebulan.
+STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Produksi kargo:{}  3 peti setiap 8 peti alat produksi diantarkan{} {STRING} {STRING}{}Produksi naik jika alat produksi diantarkan dalam sebulan sebelum kargo lain.
+STR_EXTRA_TEXTILE_MILL_WOOL_SUBSTR                                              :5 peti setiap 8 ikat wol diantarkan{}
+STR_EXTRA_TEXTILE_MILL_PLANT_FIBRES_SUBSTR                                      :5 peti setiap 8 ikat dari serat tanaman diantarkan{}
 
 STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ DEBUG ------------{}Produksi bulan ini:{}Kargo 1: {WHITE}{COMMA}{BLACK}{}Kargo 2: {WHITE}{COMMA}{BLACK}{}Lama waktu sejak pengantaran terakhir: {WHITE}{COMMA}{BLACK}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Batas produksi maksimal tercapai
+STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Produksi sekarang: {YELLOW}Normal{}{}{BLACK}Untuk menggandakan produksi antarkan {SIGNED_WORD} peti alat dalam tiga bulan (atau {SIGNED_WORD} peti untuk produksi empat kali lipat)
+STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Produksi sekarang: {YELLOW}Naikkan (ganda){}{}{BLACK}Untuk meneruskan tingkat ini, antarkan {SIGNED_WORD} peti alat dalam tiga bulan, atau {SIGNED_WORD} peti alat untuk naikkan ke produksi empat kali lipat
+STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}Produksi sekarang: {YELLOW}Gung ho (empat kali lipat){}{}{BLACK}Untuk meneruskan tingkat ini, antarkan {SIGNED_WORD} peti alat dalam tiga bulan
+STR_PORT_PRODUCTION_1X                                                          :{BLACK}Produksi sekarang: {YELLOW}Normal{}{}{BLACK}Untuk menggandakan produksi antarkan {SIGNED_WORD} satuan kargo dalam tiga bulan{}Untuk produksi empat kali lipat antarkan {SIGNED_WORD} satuan kargo dalam tiga bulan
+STR_PORT_PRODUCTION_2X                                                          :{BLACK}Produksi sekarang: {YELLOW}Naikkan (ganda){}{}{BLACK}Untuk meneruskan tingkat ini, antarkan {SIGNED_WORD} satuan kargo dalam tiga bulan, atau {SIGNED_WORD} satuan kargo untuk naikkan ke produksi empat kali lipat
+STR_PORT_PRODUCTION_4X                                                          :{BLACK}Produksi sekarang: {YELLOW}Gung ho (empat kali lipat){}{}{BLACK}Untuk meneruskan tingkat ini, antarkan {SIGNED_WORD} satuan kargo dalam tiga bulan
 STR_GENERIC_NEWLINE                                                             :{}
 
+STR_FUND_BASIC_FARM                                                             :{}{BLACK}Lokasi: {YELLOW}Tidak bisa dibuat di salju atau di gurun.
 STR_FUND_MIXED_FARM                                                             :{}{BLACK}Lokasi: {YELLOW}Tidak dapat dibuat di atas garis salju atau di daerah gurun.
 STR_FUND_ARABLE_FARM                                                            :{}{BLACK}Lokasi: {YELLOW}Tidak dapat dibuat di atas garis salju atau di daerah gurun.
+STR_FUND_COFFEE_ESTATE                                                          :{}{BLACK}Lokasi: {YELLOW}Tidak bisa dibuat di salju atau di gurun.
+STR_FUND_ORCHARD_PIGGERY                                                        :{}{BLACK}Lokasi: {YELLOW}Tidak bisa dibuat di salju atau di gurun.
+STR_FUND_SUGAR_PLANTATION                                                       :{}{BLACK}Lokasi: {YELLOW}Tidak bisa dibuat di salju atau di gurun.
+STR_FUND_FIBRE_CROP_FARM                                                        :{}{BLACK}Lokasi: {YELLOW}Tidak bisa dibuat di salju atau di gurun.
 STR_FUND_FOREST                                                                 :{}{BLACK}Lokasi: {YELLOW}Tidak dapat dibuat di daerah gurun.
 STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}Lokasi: {YELLOW}Tidak dapat dibuat di atas garis salju.
+STR_FUND_RUBBER_PLANTATION                                                      :{}{BLACK}Lokasi: {YELLOW}Tidak bisa dibuat di salju atau di gurun.
+
 
 STR_FUND_AVAILABLE_FROM                                                         :{}{BLACK}Dapat dibuat sejak: {YELLOW}{COMMA}
 
@@ -213,5 +228,20 @@ STR_IND_SUGAR_PLANTATION                                                        
 STR_IND_SUGAR_REFINERY                                                          :Pabrik Gula
 STR_IND_SUPERMARKET                                                             :Supermarket
 STR_IND_TEXTILE_MILL                                                            :Pabrik Pakaian
+STR_IND_TRADING_POST                                                            :Tempat Perdagangan
 
-
+STR_STATION_ANIMALS                                                             :Pasar Kuda
+STR_STATION_FARM                                                                :Tanah milik bangsawan
+STR_STATION_FISHMARKET                                                          :Pasar Ikan
+STR_STATION_HEAVY_INDUSTRY                                                      :Jalan James Watt
+STR_STATION_INDUSTRY_ESTATE                                                     :Taman Industri
+STR_STATION_INDUSTRY_HARBOUR                                                    :Pelabuhan Industri
+STR_STATION_MARKET                                                              :Pasar
+STR_STATION_MILL                                                                :Pabrik
+STR_STATION_MINE                                                                :Jalan penyamak kulit
+STR_STATION_PIT                                                                 :Lubang
+STR_STATION_PLANTATION                                                          :Perkebunan
+STR_STATION_POWERHUNGRY                                                         :Pembangkit listrik
+STR_STATION_REFINERY                                                            :Tanah pelabuhan
+STR_STATION_TOWN                                                                :Balai kota tua
+STR_STATION_WATER                                                               :Gosong pasir

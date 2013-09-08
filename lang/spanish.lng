@@ -1,6 +1,6 @@
 ##grflangid 0x04
-##gender m f
 ##plural 0
+##gender m f
 
 STR_GRF_DESC                                                                    :{ORANGE}FIRS Industry Replacement Set{}{BLACK}Creado por andythenorth, FooBar, planetmaker, Terkhen y Yexo, con ayuda de muchos otros.{SILVER}Consulta el leeme para más información, incluyendo instrucciones de como usar FIRS. {BLACK}Licencia: GPL v2.
 STR_GRF_NAME                                                                    :{TITLE}
@@ -10,7 +10,7 @@ STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   
 STR_PARAM_DESC_STAT_RATING                                                      :Las calificaciones de las estaciones influencian la cantidad de carga entregada por la industria a las estaciones; cuanto más alta la calificación, más carga.
 STR_PARAM_DESC_DEBUG                                                            :Sólo para desarrolladores
 STR_PARAM_DESC_ECONOMIES                                                        :Cada economía proporciona una combinación diferente de cargas e industrias.{}{}Para los jugadores que quieran partidas simples, las economías "Básicas" contienen menos industrias y cargas que el resto de economías de FIRS.
-STR_PARAM_DESC_NO_OPENINGS                                                      :No aparecerán nuevas industrias durante la partida. {}No aparecerán nuevas industrias durante la partida, y los jugadores no podrán fundar o prospectar industrias.
+STR_PARAM_DESC_NO_OPENINGS                                                      :No aparecerán nuevas industrias durante la partida.{}No aparecerán nuevas industrias durante la partida, y los jugadores no podrán fundar o prospectar industrias.
 STR_PARAM_DESC_SECONDARY_NEVER_CLOSE                                            :Por defecto, las industrias secundarias nunca cierran en FIRS.{}{}Si esta opción es activada, las industrias secundarias pueden cerrar si no se les entrega carga durante mucho tiempo. Las industrias primarias nunca cierran en FIRS y no se ven afectadas por esta opción.
 STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY                                   :Máxima distancia con la costa para industrias marítimas en casillas
 STR_PARAM_NAME_DEBUG                                                            :Mostrar textos de depuración
@@ -141,7 +141,7 @@ STR_EXTRA_SAWMILL                                                               
 STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Produce objetos de metal forjado como herramientas, puertas, útiles de labranza o cocina y herraduras.{}{}Producción:{} 8t por cada 8t de metal entregadas
 STR_EXTRA_STEELMILL                                                             :{BLACK}Producción:{} 2t por cada 8t de mineral de hierro entregadas{} 2t por cada 8t de carbón entregadas{}  4t por cada 8t de chatarra entregadas{}{}La producción se incrementa si dos o más cargas son entregadas en un intervalo inferior a un mes
 STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Producción:{} 3t por cada 8 cajas de suministros de manufactura entregadas{} 5t por cada 8t de caña de azúcar entregadas{}{}La producción se incrementa si dos o más cargas son entregadas con menos de un mes de diferencia entre ambas
-STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Producción:{}  3 cajas por cada 8 cajas de suministros de manufactura entregadas{} {STRING} {STRING} {}La producción se incrementa si se entregan suministros de manufactura en un intervalo inferior a un mes desde el envío de una de las otras cargas
+STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Producción:{}  3 cajas por cada 8 cajas de suministros de manufactura entregadas{} {STRING} {STRING}{}La producción se incrementa si se entregan suministros de manufactura en un intervalo inferior a un mes desde el envío de una de las otras cargas
 STR_EXTRA_TEXTILE_MILL_WOOL_SUBSTR                                              :5 cajas por cada 8 fardos de lana entregados{}
 STR_EXTRA_TEXTILE_MILL_PLANT_FIBRES_SUBSTR                                      :5 cajas por cada 8t de fibras vegetales entregadas{}
 
@@ -150,7 +150,7 @@ STR_EXTRA_MAX_PRODUCTION                                                        
 STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Producción actual: {YELLOW}normal{}{}{BLACK}Para duplicar la producción, se deben de entregar {SIGNED_WORD} cajas de suministros en un intervalo de tres meses (o {SIGNED_WORD} cajas para cuadriplicarla)
 STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Producción actual: {YELLOW}doble{}{}{BLACK}Para mantener este nivel de producción, se deben de entregar {SIGNED_WORD} cajas de suministros en un intervalo de tres meses, o {SIGNED_WORD} cajas para cuadriplicarla
 STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}Producción actual: {YELLOW}cuádruple{}{}{BLACK}Para mantener este nivel de producción, se deben de entregar {SIGNED_WORD} cajas de suministros en un intervalo de tres meses
-STR_PORT_PRODUCTION_1X                                                          :{BLACK}Producción actual: {YELLOW}normal{}{}{BLACK}Para duplicar la producción, se deben de entregar {SIGNED_WORD} unidades de carga en un intervalo de tres meses {}Para cuadriplicar la producción es necesario entregar {SIGNED_WORD} unidades de carga en un intervalo de tres meses
+STR_PORT_PRODUCTION_1X                                                          :{BLACK}Producción actual: {YELLOW}normal{}{}{BLACK}Para duplicar la producción, se deben de entregar {SIGNED_WORD} unidades de carga en un intervalo de tres meses{}Para cuadriplicar la producción es necesario entregar {SIGNED_WORD} unidades de carga en un intervalo de tres meses
 STR_PORT_PRODUCTION_2X                                                          :{BLACK}Producción actual: {YELLOW}doble{}{}{BLACK}Para mantener este nivel de producción es necesario entregar {SIGNED_WORD} unidades de carga en un intervalo de tres meses, o {SIGNED_WORD} unidades de carga para cuadriplicarla
 STR_PORT_PRODUCTION_4X                                                          :{BLACK}Producción actual: {YELLOW}cuádruple{}{}{BLACK}Para mantener este nivel, es necesario entregar {SIGNED_WORD} unidades de carga en un intervalo de tres meses
 STR_GENERIC_NEWLINE                                                             :{}
@@ -161,6 +161,7 @@ STR_FUND_ARABLE_FARM                                                            
 STR_FUND_SUGAR_PLANTATION                                                       :{}{BLACK}Localización: {YELLOW}No puede ser fundada en desiertos o nieve.
 STR_FUND_FOREST                                                                 :{}{BLACK}Localización: {YELLOW}No puede ser fundada en desiertos.
 STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}Localización: {YELLOW}No puede ser fundada en nieve.
+
 
 STR_FUND_AVAILABLE_FROM                                                         :{}{BLACK}Disponible desde: {YELLOW}{COMMA}
 
@@ -215,3 +216,4 @@ STR_IND_SUGAR_PLANTATION                                                        
 STR_IND_SUGAR_REFINERY                                                          :{G=f}Refinería de Azúcar
 STR_IND_SUPERMARKET                                                             :{G=m}Supermercado
 STR_IND_TEXTILE_MILL                                                            :{G=f}Hilatura Textil
+

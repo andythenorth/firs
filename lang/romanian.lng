@@ -1,16 +1,14 @@
-﻿##grflangid 0x28
+##grflangid 0x28
 ##plural 0
 
-STR_GRF_NAME                                                                    :{TITLE}
-
 STR_GRF_DESC                                                                    :{ORANGE}FIRS Industry Replacement Set{}{BLACK}Publicat de andythenorth, FooBar, planetmaker, Terkhen şi Yexo, cu ajutorul miultor altora. {SILVER}Vezi fişierul readme pentru mai multe informaţii, inclusiv cum să foloseşti FIRS. {BLACK}License: GPL v2.
+STR_GRF_NAME                                                                    :{TITLE}
 STR_GRF_URL                                                                     :http://bundles.openttdcoop.org/firs/releases/LATEST/docs/
-
 
 STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :Distanţa maximă a zonelor de pescuit, a sondelor petroliere şi zonelor de dragare faţă de coastă.
 STR_PARAM_DESC_STAT_RATING                                                      :Cotarea gării are influenţă asupra mărfurilor livrate de un obiectiv industrial acelei gări. Cu cât este mai mare cotarea, cu atât se livrează mai mult.
 STR_PARAM_DESC_DEBUG                                                            :Doar pentru dezvoltatori
-STR_PARAM_DESC_ECONOMIES                                                        :Când va fi gata, FIRS va oferi posibilitatea de a alege industriile. Încărcăturile şi industriile pot varia în fiecare economie. Cotele de plată ale mărfurilor pot fi diferite pentru fiecare economie. {}{}{SILVER}Deocamdată este disponibilă o singură economie. :)
+STR_PARAM_DESC_ECONOMIES                                                        :Când va fi gata, FIRS va oferi posibilitatea de a alege industriile. Încărcăturile şi industriile pot varia în fiecare economie. Cotele de plată ale mărfurilor pot fi diferite pentru fiecare economie.{}{}{SILVER}Deocamdată este disponibilă o singură economie. :)
 STR_PARAM_DESC_NO_OPENINGS                                                      :Cu setările predefinite, noi industrii vor apărea în timpul jocului.{}{}Dacă este activat acest parametru, industriile noi nu vor apărea pe durata jocului iar jucătorii nu vor avea posibilitatea de explorare şi exploatare a acestora.
 STR_PARAM_DESC_SECONDARY_NEVER_CLOSE                                            :Cu setările predefinite, industriile secundare din FIRS nu se vor închide niciodată.{}{}Dacă se activează acest parametru, industriile secundare s-ar putea închide dacă nu vor primi nicio livrare de marfă pentru o lungă perioadă de timp.
 STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY                                   :Distanţa maximă de coastă a industriilor marine
@@ -142,6 +140,7 @@ STR_FUND_ARABLE_FARM                                                            
 STR_FUND_FOREST                                                                 :{}{BLACK}Locaţie: {YELLOW}nu poate fi construitîn deşert.
 STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}Locaţie: {YELLOW}nu poate fi construit pe zăpadă.
 
+
 STR_FUND_AVAILABLE_FROM                                                         :{}{BLACK}Disponibil din: {YELLOW}{COMMA}
 
 STR_FUND_AVAILABLE_UNTIL                                                        :{}{BLACK}Indisponibil după: {YELLOW}{COMMA}
@@ -190,3 +189,4 @@ STR_IND_STOCKYARD                                                               
 STR_IND_SUGAR_REFINERY                                                          :Rafinărie de zahăr
 STR_IND_SUPERMARKET                                                             :Supermarket
 STR_IND_TEXTILE_MILL                                                            :Fabrică de textile
+

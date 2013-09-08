@@ -1,7 +1,7 @@
-﻿##grflangid 0x07
+##grflangid 0x07
 ##plural 6
 ##gender m f n p
-##case m f n p nom gen dat acc abl pre
+##case abl acc dat f gen m n nom p pre
 
 STR_GRF_DESC                                                                    :{ORANGE}Набор FIRS для полной замены предприятий{}{BLACK}Специально для вас от andythenorth, FooBar, planetmaker, Terkhen и Yexo, с помощью многих других. {SILVER}Подробную информацию, включая как пользоваться FIRS, найдёте в инструкции. {BLACK}Лицензия: GPL v2.
 STR_GRF_NAME                                                                    :{TITLE}
@@ -25,71 +25,71 @@ STR_PARAM_VALUE_STAT_RATING_100                                                 
 
 
 STR_CARGO_NAME_ALCOHOL                                                          :{G=n}Спиртное
-STR_CARGO_NAME_ALCOHOL.gen                                                      :спиртного
 STR_CARGO_NAME_ALCOHOL.acc                                                      :спиртное
+STR_CARGO_NAME_ALCOHOL.gen                                                      :спиртного
 STR_CARGO_NAME_BAUXITE                                                          :{G=p}Бокситы
-STR_CARGO_NAME_BAUXITE.gen                                                      :бокситов
 STR_CARGO_NAME_BAUXITE.acc                                                      :бокситы
+STR_CARGO_NAME_BAUXITE.gen                                                      :бокситов
 STR_CARGO_NAME_BUILDING_MATERIALS                                               :{G=p}Стройматериалы
-STR_CARGO_NAME_BUILDING_MATERIALS.gen                                           :стройматериалов
 STR_CARGO_NAME_BUILDING_MATERIALS.acc                                           :стройматериалы
+STR_CARGO_NAME_BUILDING_MATERIALS.gen                                           :стройматериалов
 STR_CARGO_NAME_CHEMICALS                                                        :{G=p}Химикаты
-STR_CARGO_NAME_CHEMICALS.gen                                                    :химикатов
 STR_CARGO_NAME_CHEMICALS.acc                                                    :химикаты
+STR_CARGO_NAME_CHEMICALS.gen                                                    :химикатов
 STR_CARGO_NAME_CLAY                                                             :{G=f}Глина
-STR_CARGO_NAME_CLAY.gen                                                         :глины
 STR_CARGO_NAME_CLAY.acc                                                         :глину
+STR_CARGO_NAME_CLAY.gen                                                         :глины
 STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :{G=n}Оборудование
-STR_CARGO_NAME_ENGINEERING_SUPPLIES.gen                                         :оборудования
 STR_CARGO_NAME_ENGINEERING_SUPPLIES.acc                                         :оборудование
+STR_CARGO_NAME_ENGINEERING_SUPPLIES.gen                                         :оборудования
 STR_CARGO_NAME_FIBRES                                                           :{G=p}Растительные волокна
-STR_CARGO_NAME_FIBRES.gen                                                       :растительных волокон
 STR_CARGO_NAME_FIBRES.acc                                                       :растительные волокна
+STR_CARGO_NAME_FIBRES.gen                                                       :растительных волокон
 STR_CARGO_NAME_FISH                                                             :{G=f}Рыба
-STR_CARGO_NAME_FISH.gen                                                         :рыбы
 STR_CARGO_NAME_FISH.acc                                                         :рыбу
+STR_CARGO_NAME_FISH.gen                                                         :рыбы
 STR_CARGO_NAME_FARM_SUPPLIES                                                    :{G=p}Агротехсредства
-STR_CARGO_NAME_FARM_SUPPLIES.gen                                                :агротехсредств
 STR_CARGO_NAME_FARM_SUPPLIES.acc                                                :агротехсредства
+STR_CARGO_NAME_FARM_SUPPLIES.gen                                                :агротехсредств
 STR_CARGO_NAME_FRUITS                                                           :{G=p}Фрукты
-STR_CARGO_NAME_FRUITS.gen                                                       :фруктов
 STR_CARGO_NAME_FRUITS.acc                                                       :фрукты
+STR_CARGO_NAME_FRUITS.gen                                                       :фруктов
 STR_CARGO_NAME_LUMBER                                                           :{G=p}Лесоматериалы
-STR_CARGO_NAME_LUMBER.gen                                                       :лесоматериалов
 STR_CARGO_NAME_LUMBER.acc                                                       :лесоматериалы
+STR_CARGO_NAME_LUMBER.gen                                                       :лесоматериалов
 STR_CARGO_NAME_METAL                                                            :{G=m}Металл
-STR_CARGO_NAME_METAL.gen                                                        :металла
 STR_CARGO_NAME_METAL.acc                                                        :металл
+STR_CARGO_NAME_METAL.gen                                                        :металла
 STR_CARGO_NAME_MILK                                                             :{G=n}Молоко
-STR_CARGO_NAME_MILK.gen                                                         :молока
 STR_CARGO_NAME_MILK.acc                                                         :молоко
+STR_CARGO_NAME_MILK.gen                                                         :молока
 STR_CARGO_NAME_MANUFACTURING_SUPPLIES                                           :{G=p}Материалы
-STR_CARGO_NAME_MANUFACTURING_SUPPLIES.gen                                       :материалов
 STR_CARGO_NAME_MANUFACTURING_SUPPLIES.acc                                       :материалы
+STR_CARGO_NAME_MANUFACTURING_SUPPLIES.gen                                       :материалов
 STR_CARGO_NAME_PETROL                                                           :{G=m}Бензин
-STR_CARGO_NAME_PETROL.gen                                                       :бензина
 STR_CARGO_NAME_PETROL.acc                                                       :бензин
+STR_CARGO_NAME_PETROL.gen                                                       :бензина
 STR_CARGO_NAME_RECYCLABLES                                                      :{G=n}Вторсырьё
-STR_CARGO_NAME_RECYCLABLES.gen                                                  :вторсырья
 STR_CARGO_NAME_RECYCLABLES.acc                                                  :вторсырьё
+STR_CARGO_NAME_RECYCLABLES.gen                                                  :вторсырья
 STR_CARGO_NAME_SAND                                                             :{G=m}Песок
-STR_CARGO_NAME_SAND.gen                                                         :песка
 STR_CARGO_NAME_SAND.acc                                                         :песок
+STR_CARGO_NAME_SAND.gen                                                         :песка
 STR_CARGO_NAME_SCRAP_METAL                                                      :{G=m}Металлолом
-STR_CARGO_NAME_SCRAP_METAL.gen                                                  :металлолома
 STR_CARGO_NAME_SCRAP_METAL.acc                                                  :металлолом
+STR_CARGO_NAME_SCRAP_METAL.gen                                                  :металлолома
 STR_CARGO_NAME_STONE                                                            :{G=m}Известняк
-STR_CARGO_NAME_STONE.gen                                                        :известняка
 STR_CARGO_NAME_STONE.acc                                                        :известняк
+STR_CARGO_NAME_STONE.gen                                                        :известняка
 STR_CARGO_NAME_SUGAR_BEET                                                       :{G=f}Сахарная свёкла
-STR_CARGO_NAME_SUGAR_BEET.gen                                                   :сахарной свёклы
 STR_CARGO_NAME_SUGAR_BEET.acc                                                   :сахарную свёклу
+STR_CARGO_NAME_SUGAR_BEET.gen                                                   :сахарной свёклы
 STR_CARGO_NAME_SUGARCANE                                                        :{G=m}Сахарный тростник
-STR_CARGO_NAME_SUGARCANE.gen                                                    :сахарного тростника
 STR_CARGO_NAME_SUGARCANE.acc                                                    :сахарный тростник
+STR_CARGO_NAME_SUGARCANE.gen                                                    :сахарного тростника
 STR_CARGO_NAME_WOOL                                                             :{G=f}Шерсть
-STR_CARGO_NAME_WOOL.gen                                                         :шерсти
 STR_CARGO_NAME_WOOL.acc                                                         :шерсть
+STR_CARGO_NAME_WOOL.gen                                                         :шерсти
 
 STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} спиртного
 STR_CARGO_UNIT_BAUXITE                                                          :{WEIGHT} бокситов
@@ -185,8 +185,11 @@ STR_FUND_ARABLE_FARM                                                            
 STR_FUND_FOREST                                                                 :{}{BLACK}Положение: {YELLOW}Нельзя разместить в пустыне.
 STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}Положение: {YELLOW}Нельзя разместить на снегу.
 
+
 STR_FUND_AVAILABLE_FROM                                                         :{}{BLACK}Доступно с: {YELLOW}{COMMA}
+
 STR_FUND_AVAILABLE_UNTIL                                                        :{}{BLACK}Недоступно после: {YELLOW}{COMMA}
+
 
 STR_TOWN                                                                        :{STRING}
 STR_STATION                                                                     :{STRING} {STRING}
@@ -271,3 +274,4 @@ STR_IND_SUPERMARKET                                                             
 STR_IND_SUPERMARKET.gen                                                         :супермаркета
 STR_IND_TEXTILE_MILL                                                            :{G=f}Текстильная фабрика
 STR_IND_TEXTILE_MILL.gen                                                        :текстильной фабрики
+

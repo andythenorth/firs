@@ -1,7 +1,9 @@
 ##grflangid 0x00
 ##plural 0
 
+
 STR_PARAM_VALUE_STAT_RATING_REDUCED_TIME                                        :Favorable (allows longer time between cargo pickups)
+
 
 STR_CARGO_NAME_FIBRES                                                           :Plant Fibers
 STR_CARGO_NAME_LUMBER                                                           :Lumber
@@ -11,14 +13,24 @@ STR_CARGO_UNIT_FIBRES                                                           
 STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} of lumber
 STR_CARGO_UNIT_PETROL                                                           :{VOLUME} of gasoline
 
+
+
+
 STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Cargo production:{}  3t per 8 crates manufacturing supplies delivered{}  5t per 8t lumber delivered{}{}Production steps up if both cargos are delivered within a month of each other.
-STR_EXTRA_LUMBER_YARD                                                           :{BLACK}Produces items such as poles and fence posts.{}{}{BLACK}Cargo production:{}  2t per 8,000l chemicals delivered{}  6t per 8t lumber delivered{}{}Production steps up if both cargos are delivered within a month of each other.
+STR_EXTRA_LUMBER_YARD                                                           :{BLACK}Produces items such as poles and fence posts.{}{}Cargo production:{} 2t per 8,000l chemicals delivered{} 6t per 8t lumber delivered{}{}Production steps up if both cargos are delivered within a month of each other.
 STR_EXTRA_MACHINE_SHOP                                                          :{BLACK}Builds and services machinery.{}{}Cargo production:{}  8 crates per 8,000l gasoline delivered{}  8 crates per 8t metal delivered
 STR_EXTRA_OIL_REFINERY                                                          :{BLACK}Processes crude oil into gasoline and chemicals.{}{}Cargo production:{}  6,000l per 8,000l delivered
 STR_EXTRA_PLASTICS_PLANT_PLANT_FIBRES_SUBSTR                                    :6 crates per 8 bales plant fibers delivered{}
 STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Produces metal items like tools, plows, gates, shovels and horseshoes.{}{}Cargo production:{}  8 crates per 8t metal delivered
-STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Cargo production:{}  3t per 8 crates manufacturing supplies delivered{}  5t per 8t sugar delivered{}{}Increases to 8t per 8t when both cargos are delivered within a month of each other.
+STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Cargo production:{} 3t per 8 crates manufacturing supplies delivered{} 5t per 8t sugar delivered{}{}Production steps up if both cargos are delivered within a month of each other.
 STR_EXTRA_TEXTILE_MILL_PLANT_FIBRES_SUBSTR                                      :5 crates per 8 bales plant fibers delivered{}
+
+
+
+
+
+
+
 
 STR_IND_ALUMINIUM_PLANT                                                         :Aluminum Plant
 STR_IND_FERTILISER_PLANT                                                        :Fertilizer Plant
@@ -27,3 +39,5 @@ STR_IND_FOOD_MARKET                                                             
 STR_IND_JUNKYARD                                                                :Junk Yard
 STR_IND_LUMBER_YARD                                                             :Lumber Yard
 STR_IND_PETROLPUMP                                                              :Gas Station
+
+STR_STATION_INDUSTRY_HARBOUR                                                    :Industrial Harbor

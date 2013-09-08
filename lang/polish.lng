@@ -1,7 +1,7 @@
 ##grflangid 0x30
 ##plural 7
 ##gender m f n
-##case d c b n m w
+##case b c d m n w
 
 STR_GRF_DESC                                                                    :{ORANGE}FIRS Industry Replacement Set{}{BLACK}Autorzy: andythenorth, FooBar, planetmaker, Terkhen, Yexo i inni. {SILVER}Więcej informacji w pliku readme. {BLACK}Licencja: GPL v2.
 STR_GRF_NAME                                                                    :{TITLE}
@@ -10,7 +10,7 @@ STR_GRF_URL                                                                     
 STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :Maksymalna odległość od linii brzegowej dla łowisk, platform wiertniczych i pogłębiarek.
 STR_PARAM_DESC_STAT_RATING                                                      :Ocena stacji uzależniona jest od ilości ładunku dostarczonego przez przemysł; im więcej dostarczono, tym wyższa ocena.
 STR_PARAM_DESC_DEBUG                                                            :Tylko dla deweloperów
-STR_PARAM_DESC_ECONOMIES                                                        :FIRS docelowo ma składać się z kilku ekonomii różniących się przedsiębiorstwami, towarami i cenami. {}{}{SILVER}Na razie tylko jedna ekonomia jest dostępna :)
+STR_PARAM_DESC_ECONOMIES                                                        :FIRS docelowo ma składać się z kilku ekonomii różniących się przedsiębiorstwami, towarami i cenami.{}{}{SILVER}Na razie tylko jedna ekonomia jest dostępna :)
 STR_PARAM_DESC_NO_OPENINGS                                                      :Domyślnie nowe przedsiębiorstwa powstają w trakcie gry.{}{}Jeśli parametr jest włączony to zakłady nie będą otwierane, a gracz nie będzie miał możliwości ich fundowania.
 STR_PARAM_DESC_SECONDARY_NEVER_CLOSE                                            :Domyślnie przedsiębiorstwa przetwórcze nie upadają.{}{}Jeśli parametr jest włączony, spółki do których nie dostarcza się towarów upadają po pewnym czasie.
 STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY                                   :Maksymalny dystans przedsiębiorstw morskich od wybrzeża
@@ -31,71 +31,71 @@ STR_PARAM_VALUE_ECONOMIES_FIRS                                                  
 STR_PARAM_VALUE_ECONOMIES_TEST_3                                                :Ekonomia testowa 3
 
 STR_CARGO_NAME_ALCOHOL                                                          :{G=m}Alkohol
-STR_CARGO_NAME_ALCOHOL.d                                                        :alkoholu
 STR_CARGO_NAME_ALCOHOL.b                                                        :alkohol
+STR_CARGO_NAME_ALCOHOL.d                                                        :alkoholu
 STR_CARGO_NAME_BAUXITE                                                          :{G=m}Boksyt
-STR_CARGO_NAME_BAUXITE.d                                                        :boksytu
 STR_CARGO_NAME_BAUXITE.b                                                        :boksyt
+STR_CARGO_NAME_BAUXITE.d                                                        :boksytu
 STR_CARGO_NAME_BUILDING_MATERIALS                                               :{G=m}Materiały budowlane
-STR_CARGO_NAME_BUILDING_MATERIALS.d                                             :materiałów budowlanych
 STR_CARGO_NAME_BUILDING_MATERIALS.b                                             :materiały budowlane
+STR_CARGO_NAME_BUILDING_MATERIALS.d                                             :materiałów budowlanych
 STR_CARGO_NAME_CHEMICALS                                                        :{G=n}Chemikalia
-STR_CARGO_NAME_CHEMICALS.d                                                      :chemikaliów
 STR_CARGO_NAME_CHEMICALS.b                                                      :chemikalia
+STR_CARGO_NAME_CHEMICALS.d                                                      :chemikaliów
 STR_CARGO_NAME_CLAY                                                             :{G=f}Glina
-STR_CARGO_NAME_CLAY.d                                                           :gliny
 STR_CARGO_NAME_CLAY.b                                                           :glinę
+STR_CARGO_NAME_CLAY.d                                                           :gliny
 STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :{G=f}Maszyny
-STR_CARGO_NAME_ENGINEERING_SUPPLIES.d                                           :maszyn
 STR_CARGO_NAME_ENGINEERING_SUPPLIES.b                                           :maszyny
+STR_CARGO_NAME_ENGINEERING_SUPPLIES.d                                           :maszyn
 STR_CARGO_NAME_FIBRES                                                           :{G=n}Włókna naturalne
-STR_CARGO_NAME_FIBRES.d                                                         :włókien naturalnych
 STR_CARGO_NAME_FIBRES.b                                                         :włókna naturalne
+STR_CARGO_NAME_FIBRES.d                                                         :włókien naturalnych
 STR_CARGO_NAME_FISH                                                             :{G=f}Ryby
-STR_CARGO_NAME_FISH.d                                                           :ryb
 STR_CARGO_NAME_FISH.b                                                           :ryby
+STR_CARGO_NAME_FISH.d                                                           :ryb
 STR_CARGO_NAME_FARM_SUPPLIES                                                    :{G=m}Sprzęt rolniczy
-STR_CARGO_NAME_FARM_SUPPLIES.d                                                  :sprzętu rolniczego
 STR_CARGO_NAME_FARM_SUPPLIES.b                                                  :sprzęt rolniczy
+STR_CARGO_NAME_FARM_SUPPLIES.d                                                  :sprzętu rolniczego
 STR_CARGO_NAME_FRUITS                                                           :{G=m}Owoce
-STR_CARGO_NAME_FRUITS.d                                                         :owoców
 STR_CARGO_NAME_FRUITS.b                                                         :owoce
+STR_CARGO_NAME_FRUITS.d                                                         :owoców
 STR_CARGO_NAME_LUMBER                                                           :{G=f}Deski
-STR_CARGO_NAME_LUMBER.d                                                         :desek
 STR_CARGO_NAME_LUMBER.b                                                         :deski
+STR_CARGO_NAME_LUMBER.d                                                         :desek
 STR_CARGO_NAME_METAL                                                            :{G=m}Metal
-STR_CARGO_NAME_METAL.d                                                          :metalu
 STR_CARGO_NAME_METAL.b                                                          :metal
+STR_CARGO_NAME_METAL.d                                                          :metalu
 STR_CARGO_NAME_MILK                                                             :{G=n}Mleko
-STR_CARGO_NAME_MILK.d                                                           :mleka
 STR_CARGO_NAME_MILK.b                                                           :mleko
+STR_CARGO_NAME_MILK.d                                                           :mleka
 STR_CARGO_NAME_MANUFACTURING_SUPPLIES                                           :{G=n}Opakowania
-STR_CARGO_NAME_MANUFACTURING_SUPPLIES.d                                         :opakowań
 STR_CARGO_NAME_MANUFACTURING_SUPPLIES.b                                         :opakowania
+STR_CARGO_NAME_MANUFACTURING_SUPPLIES.d                                         :opakowań
 STR_CARGO_NAME_PETROL                                                           :{G=n}Paliwo
-STR_CARGO_NAME_PETROL.d                                                         :paliwa
 STR_CARGO_NAME_PETROL.b                                                         :paliwo
+STR_CARGO_NAME_PETROL.d                                                         :paliwa
 STR_CARGO_NAME_RECYCLABLES                                                      :{G=m}Surowce wtórne
-STR_CARGO_NAME_RECYCLABLES.d                                                    :surowców wtórnych
 STR_CARGO_NAME_RECYCLABLES.b                                                    :surowce wtórne
+STR_CARGO_NAME_RECYCLABLES.d                                                    :surowców wtórnych
 STR_CARGO_NAME_SAND                                                             :{G=m}Piasek
-STR_CARGO_NAME_SAND.d                                                           :piasku
 STR_CARGO_NAME_SAND.b                                                           :piasek
+STR_CARGO_NAME_SAND.d                                                           :piasku
 STR_CARGO_NAME_SCRAP_METAL                                                      :{G=m}Złom
-STR_CARGO_NAME_SCRAP_METAL.d                                                    :złomu
 STR_CARGO_NAME_SCRAP_METAL.b                                                    :złom
+STR_CARGO_NAME_SCRAP_METAL.d                                                    :złomu
 STR_CARGO_NAME_STONE                                                            :{G=m}Kamienie
-STR_CARGO_NAME_STONE.d                                                          :kamieni
 STR_CARGO_NAME_STONE.b                                                          :kamienie
+STR_CARGO_NAME_STONE.d                                                          :kamieni
 STR_CARGO_NAME_SUGAR_BEET                                                       :{G=m}Buraki cukrowe
-STR_CARGO_NAME_SUGAR_BEET.d                                                     :buraków cukrowych
 STR_CARGO_NAME_SUGAR_BEET.b                                                     :buraki cukrowe
+STR_CARGO_NAME_SUGAR_BEET.d                                                     :buraków cukrowych
 STR_CARGO_NAME_SUGARCANE                                                        :{G=f}Trzcina cukrowa
-STR_CARGO_NAME_SUGARCANE.d                                                      :trzciny cukrowej
 STR_CARGO_NAME_SUGARCANE.b                                                      :trzcinę cukrową
+STR_CARGO_NAME_SUGARCANE.d                                                      :trzciny cukrowej
 STR_CARGO_NAME_WOOL                                                             :{G=f}Wełna
-STR_CARGO_NAME_WOOL.d                                                           :wełny
 STR_CARGO_NAME_WOOL.b                                                           :wełnę
+STR_CARGO_NAME_WOOL.d                                                           :wełny
 
 STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} alkoholu
 STR_CARGO_UNIT_BAUXITE                                                          :{WEIGHT} boksytu
@@ -186,7 +186,7 @@ STR_EXTRA_SAWMILL                                                               
 STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Produkcja ręcznie kutych podków, narzędzi, bramek i innych drobnych metalowych przedmiotów.{}{}5t z 8t surowców.
 STR_EXTRA_STEELMILL                                                             :{BLACK}Produkcja:{}  2t z 8t rudy żelaza{}  2t z 8t węgla{}  4t z 8t złomu{}{}Produkcja wzrasta, gdy różne surowce są dostarczane w ciągu miesiąca.
 STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Produkcja:{}  3t z 8 skrzyń opakowań{}  5t z 8t buraków cukrowych{}{}Produkcja wzrasta do 8t z 8t, gdy oba surowce są dostarczane w ciągu miesiąca.
-STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Produkcja:{}  3 skrzynie z 8 skrzyń opakowań{} {STRING} {STRING} {}Produkcja wzrasta, gdy opakowania są dostarczane w ciągu miesiąca po innych towarach.
+STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Produkcja:{}  3 skrzynie z 8 skrzyń opakowań{} {STRING} {STRING}{}Produkcja wzrasta, gdy opakowania są dostarczane w ciągu miesiąca po innych towarach.
 STR_EXTRA_TEXTILE_MILL_WOOL_SUBSTR                                              :5 skrzyń na 8 dostarczonych beli wełny{}
 STR_EXTRA_TEXTILE_MILL_PLANT_FIBRES_SUBSTR                                      :5 skrzyń na 8 dostarczonych beli artykułów plastikowych{}
 
@@ -207,6 +207,7 @@ STR_FUND_ORCHARD_PIGGERY                                                        
 STR_FUND_SUGAR_PLANTATION                                                       :{}{BLACK}Lokalizacja: {YELLOW}Nie może być budowane na śniegu ani na pustyni.
 STR_FUND_FOREST                                                                 :{}{BLACK}Lokalizacja: {YELLOW}Nie może być budowane na pustyni.
 STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}Lokalizacja: {YELLOW}Nie może być budowane na śniegu.
+
 
 STR_FUND_AVAILABLE_FROM                                                         :{}{BLACK}Dostępne od: {YELLOW}{COMMA}
 
@@ -287,7 +288,7 @@ STR_IND_PORT.d                                                                  
 STR_IND_QUARRY                                                                  :{G=m}Kamieniołomy
 STR_IND_QUARRY.d                                                                :kamieniołomu
 STR_IND_RANCH                                                                   :{G=n}Ranczo
-STR_IND_RANCH.d                                                                   :rancza
+STR_IND_RANCH.d                                                                 :rancza
 STR_IND_RECYCLING_DEPOT                                                         :{G=n}Wysypisko
 STR_IND_RECYCLING_DEPOT.d                                                       :wysypiska
 STR_IND_RECYCLING_PLANT                                                         :{G=f}Przetwórnia odpadów
@@ -306,5 +307,4 @@ STR_IND_SUPERMARKET                                                             
 STR_IND_SUPERMARKET.d                                                           :supermarketu
 STR_IND_TEXTILE_MILL                                                            :{G=m}Zakłady odzieżowe
 STR_IND_TEXTILE_MILL.d                                                          :zakładu odzieżowego
-
 

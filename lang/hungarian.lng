@@ -1,6 +1,5 @@
-﻿##grflangid 0x24
-
-##case t ba
+##grflangid 0x24
+##case ba t
 
 STR_GRF_DESC                                                                    :{ORANGE}FIRS Industry Replacement Set{}{BLACK}Készítette: andythenorth, FooBar, planetmaker, Terkhen, Yexo és még sokan mások. {SILVER}További információkhoz (például a FIRS használatához) lásd a readme-t. {BLACK}Licenc: GPL v2.
 STR_GRF_NAME                                                                    :{TITLE}
@@ -10,7 +9,7 @@ STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   
 STR_PARAM_DESC_STAT_RATING                                                      :Az állomásokról alkotott vélemény befolyásolja, hogy mennyi rakományt kap az állomás a gazdasági épülettől; magasabb érték esetén az állomás több rakományt kap.
 STR_PARAM_DESC_DEBUG                                                            :Csak fejlesztőknek
 STR_PARAM_DESC_ECONOMIES                                                        :Az egyes gazdaságokban különféle rakományok és gazdasági épületek érhetőek el.{}{}Az egyszerűbb játékmenet érdekében az 'alap' gazdaságok kevesebb rakományt és gazdasági épületet tartalmaznak, mint a FIRS gazdaság.
-STR_PARAM_DESC_NO_OPENINGS                                                      :Hatására nem fognak új gazdasági épületek épülni a játék folyamán. {}A játékosok sem fognak tudni új gazdasági épületeket építtetni. {}A gazdasági épületeket a térképgenerátor fogja elhelyezni a játék elején, a beállításoktól függően.
+STR_PARAM_DESC_NO_OPENINGS                                                      :Hatására nem fognak új gazdasági épületek épülni a játék folyamán.{}A játékosok sem fognak tudni új gazdasági épületeket építtetni.{}A gazdasági épületeket a térképgenerátor fogja elhelyezni a játék elején, a beállításoktól függően.
 STR_PARAM_DESC_SECONDARY_NEVER_CLOSE                                            :Alapértelmezésben a FIRS másodlagos gazdasági épületei nem zárnak be.{}{}Ha ez a beállítás be van kapcsolva, a másodlagos gazdasági épületek bezárhatnak, ha sokáig nem érkezik hozzájuk szállítmány. Az elsődleges gazdasági épületek sosem zárnak be a FIRS-ben, ez a beállítás nem befolyásolja őket.
 STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY                                   :Tengeri gazdasági létesítmények maximális távolsága a parttól
 STR_PARAM_NAME_DEBUG                                                            :Debug szövegek mutatása
@@ -168,18 +167,18 @@ STR_EXTRA_SAWMILL                                                               
 STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Fémeszközöket, például szerszámokat és patkókat gyárt.{}{}{BLACK}Termelés:{}  8 láda termelés 8 tonna fém szállítása esetén.
 STR_EXTRA_STEELMILL                                                             :{BLACK}Termelés:{}  2 tonna termelés 8 tonna vasérc szállítása esetén{}  2 tonna termelés 8 tonna szén szállítása esetén{}  4 tonna termelés 8 tonna fémhulladék szállítása esetén{}{}A termelés megnő, ha legalább két különféle rakományból érkezik szállítmány egy hónapon belül.
 STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Termelés:{}  3 tonna termelés 8 láda gyártási segédeszköz szállítása esetén{}  5 tonna termelés 8 tonna cukornád szállítása esetén{}{}A termelés megnő, ha legalább két különféle rakományból érkezik szállítmány egy hónapon belül.
-STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Termelés:{}  3 láda termelés 8 láda gyártási segédeszköz szállítása esetén{} {STRING} {STRING} {}A termelés megnő, ha szállítmány érkezik gyártási segédeszközökből és egy másik rakományból egy hónapon belül.
+STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Termelés:{}  3 láda termelés 8 láda gyártási segédeszköz szállítása esetén{} {STRING} {STRING}{}A termelés megnő, ha szállítmány érkezik gyártási segédeszközökből és egy másik rakományból egy hónapon belül.
 STR_EXTRA_TEXTILE_MILL_WOOL_SUBSTR                                              :5 láda termelés 8 bála gyapjú szállítása esetén{}
 STR_EXTRA_TEXTILE_MILL_PLANT_FIBRES_SUBSTR                                      :5 láda termelés 8 bála rostnövény szállítása esetén{}
 
 STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ DEBUG ------------{}Termelés ebben a hónapban:{}1. rakomány: {WHITE}{COMMA}{BLACK}{}2. rakomány: {WHITE}{COMMA}{BLACK}{}Eltelt napok az utolsó szállítmány óta: {WHITE}{COMMA}{BLACK}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Elérte a maximális termelést
-STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Jelenlegi termelés: {YELLOW}alapszintű {}{}{BLACK}A termelés megduplázásához {SIGNED_WORD} láda segédeszköz szállítása szükséges 3 hónapon belül (vagy {SIGNED_WORD} láda a termelés megnégyszerezéséhez)
-STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Jelenlegi termelés: {YELLOW}megnövekedett (kétszeres) {}{}{BLACK}A szint fenntartásához {SIGNED_WORD} láda segédeszköz szállítása szükséges 3 hónapon belül, vagy {SIGNED_WORD} láda a négyszeres szint eléréséhez
-STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}Jelenlegi termelés: {YELLOW}maximális (négyszeres) {}{}{BLACK}A szint fenntartásához {SIGNED_WORD} láda segédeszköz szállítása szükséges 3 hónapon belül
-STR_PORT_PRODUCTION_1X                                                          :{BLACK}Jelenlegi termelés: {YELLOW}alapszintű {}{}{BLACK}A termelés megduplázásához {SIGNED_WORD} egység rakomány szállítása szükséges 3 hónapon belül (vagy {SIGNED_WORD} egység a termelés megnégyszerezéséhez)
-STR_PORT_PRODUCTION_2X                                                          :{BLACK}Jelenlegi termelés: {YELLOW}megnövekedett (kétszeres) {}{}{BLACK}A szint fenntartásához {SIGNED_WORD} egység rakomány szállítása szükséges 3 hónapon belül, vagy {SIGNED_WORD} egység a négyszeres szint eléréséhez
-STR_PORT_PRODUCTION_4X                                                          :{BLACK}Jelenlegi termelés: {YELLOW}maximális (négyszeres) {}{}{BLACK}A szint fenntartásához {SIGNED_WORD} egység rakomámy szállítása szükséges 3 hónapon belül
+STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Jelenlegi termelés: {YELLOW}alapszintű{}{}{BLACK}A termelés megduplázásához {SIGNED_WORD} láda segédeszköz szállítása szükséges 3 hónapon belül (vagy {SIGNED_WORD} láda a termelés megnégyszerezéséhez)
+STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Jelenlegi termelés: {YELLOW}megnövekedett (kétszeres){}{}{BLACK}A szint fenntartásához {SIGNED_WORD} láda segédeszköz szállítása szükséges 3 hónapon belül, vagy {SIGNED_WORD} láda a négyszeres szint eléréséhez
+STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}Jelenlegi termelés: {YELLOW}maximális (négyszeres){}{}{BLACK}A szint fenntartásához {SIGNED_WORD} láda segédeszköz szállítása szükséges 3 hónapon belül
+STR_PORT_PRODUCTION_1X                                                          :{BLACK}Jelenlegi termelés: {YELLOW}alapszintű{}{}{BLACK}A termelés megduplázásához {SIGNED_WORD} egység rakomány szállítása szükséges 3 hónapon belül (vagy {SIGNED_WORD} egység a termelés megnégyszerezéséhez)
+STR_PORT_PRODUCTION_2X                                                          :{BLACK}Jelenlegi termelés: {YELLOW}megnövekedett (kétszeres){}{}{BLACK}A szint fenntartásához {SIGNED_WORD} egység rakomány szállítása szükséges 3 hónapon belül, vagy {SIGNED_WORD} egység a négyszeres szint eléréséhez
+STR_PORT_PRODUCTION_4X                                                          :{BLACK}Jelenlegi termelés: {YELLOW}maximális (négyszeres){}{}{BLACK}A szint fenntartásához {SIGNED_WORD} egység rakomámy szállítása szükséges 3 hónapon belül
 STR_GENERIC_NEWLINE                                                             :{}
 
 STR_FUND_BASIC_FARM                                                             :{}{BLACK}Helyszín: {YELLOW}Nem építhető havas területen és sivatagban.
@@ -193,8 +192,11 @@ STR_FUND_FOREST                                                                 
 STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}Helyszín: {YELLOW}Nem építhető havas területen.
 STR_FUND_RUBBER_PLANTATION                                                      :{}{BLACK}Helyszín: {YELLOW}Nem építhető havas területen és sivatagban.
 
+
 STR_FUND_AVAILABLE_FROM                                                         :{}{BLACK}Elérhető {YELLOW}{COMMA} {BLACK}után
+
 STR_FUND_AVAILABLE_UNTIL                                                        :{}{BLACK}Nem elérhető {YELLOW}{COMMA} {BLACK}után
+
 
 STR_TOWN                                                                        :{STRING}
 STR_STATION                                                                     :{STRING} {STRING}
@@ -301,3 +303,4 @@ STR_IND_TEXTILE_MILL                                                            
 STR_IND_TEXTILE_MILL.t                                                          :textilüzemet
 STR_IND_TRADING_POST                                                            :Kereskedelmi állomás
 STR_IND_TRADING_POST.t                                                          :kereskedelmi állomást
+

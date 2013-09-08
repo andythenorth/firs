@@ -1,4 +1,4 @@
-##grflangid 0x1B
+##grflangid 0x1b
 ##plural 0
 
 STR_GRF_DESC                                                                    :{ORANGE}FIRS Nywerheid vervanging stel{}{BLACK}Aan u gebring deur andythenorth, FooBar, planetmaker, Terkhen and Yexo, met help van baie ander. {SILVER}Sien readme vir meer inligting, ingesluit hoe om FIRS te gebruik. {BLACK}Lisensie: GPL v2.
@@ -8,9 +8,9 @@ STR_GRF_URL                                                                     
 STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :Die maksimum afstand teëls wat die vis waters, oliebore en baggerwerk-terreine van die kus af is.
 STR_PARAM_DESC_STAT_RATING                                                      :Stasie graderings beïnvloed die hoeveelheid vrag wat afgelewer word deur 'n nywerheid aan die stasie, hoe hoër die telling, hoe meer word gelewer.
 STR_PARAM_DESC_DEBUG                                                            :Vir developers alleenlik
-STR_PARAM_DESC_ECONOMIES                                                        :Wanneer dit klaar is, sal FIRS beskik oor 'n groot keuse van ekonomieë. Vragte en nywerhede sal wissel in elke ekonomie. Vrag betalings tariewe sal ook verskillend wees in elke ekonomie. {}{}{SILVER}Tans is daar net een ekonomie is beskikbaar :)
-STR_PARAM_DESC_NO_OPENINGS                                                      :By verstek, nuwe nywerhede sal begin tydens spel. {} Indien 'n "verhoed die opening" aangeskakel is sal nywerhede nie oopmaak tydens die spel nie, en die spelers sal nie in staat wees om die vooruitsig vir nywerhede te bevonds nie.
-STR_PARAM_DESC_SECONDARY_NEVER_CLOSE                                            :By verstek, FIRS sekondêre nywerhede sal nooit toemaak {} {} Indien sekondêre sluiting aangeskakel is, sal sekondêre nywerhede sluit indien daar geen vrag vervoer word vir 'n lang tyd.
+STR_PARAM_DESC_ECONOMIES                                                        :Wanneer dit klaar is, sal FIRS beskik oor 'n groot keuse van ekonomieë. Vragte en nywerhede sal wissel in elke ekonomie. Vrag betalings tariewe sal ook verskillend wees in elke ekonomie.{}{}{SILVER}Tans is daar net een ekonomie is beskikbaar :)
+STR_PARAM_DESC_NO_OPENINGS                                                      :By verstek, nuwe nywerhede sal begin tydens spel.{} Indien 'n "verhoed die opening" aangeskakel is sal nywerhede nie oopmaak tydens die spel nie, en die spelers sal nie in staat wees om die vooruitsig vir nywerhede te bevonds nie.
+STR_PARAM_DESC_SECONDARY_NEVER_CLOSE                                            :By verstek, FIRS sekondêre nywerhede sal nooit toemaak{}{} Indien sekondêre sluiting aangeskakel is, sal sekondêre nywerhede sluit indien daar geen vrag vervoer word vir 'n lang tyd.
 STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY                                   :Maksimum kus afstand van mariene nywerhede in teëls
 STR_PARAM_NAME_DEBUG                                                            :Wys debug teks
 STR_PARAM_NAME_ECONOMIES                                                        :Ekonomy
@@ -140,8 +140,11 @@ STR_FUND_ARABLE_FARM                                                            
 STR_FUND_FOREST                                                                 :{}{BLACK}Ligging: {YELLOW}Kannie befonds word in die woestyn.
 STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}Ligging: {YELLOW}Kannie befonds word in sneeu.
 
+
 STR_FUND_AVAILABLE_FROM                                                         :{}{BLACK}Beskikbaar van: {YELLOW}{COMMA}
+
 STR_FUND_AVAILABLE_UNTIL                                                        :{}{BLACK}nie beskikbaar tot: {YELLOW}{COMMA}
+
 
 STR_TOWN                                                                        :{STRING}
 STR_STATION                                                                     :{STRING} {STRING}
@@ -186,5 +189,4 @@ STR_IND_STOCKYARD                                                               
 STR_IND_SUGAR_REFINERY                                                          :Suiker Meule
 STR_IND_SUPERMARKET                                                             :Supermark
 STR_IND_TEXTILE_MILL                                                            :Textiel Fabriek
-
 
