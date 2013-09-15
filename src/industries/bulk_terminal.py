@@ -54,8 +54,7 @@ industry.add_tile(id='bulk_terminal_tile')
 #tanks
 #silos
 #cone silo
-#warehouse LHS
-#warehouse RHS
+#warehouse
 #bulk staithe LHS
 #bulk staithe RHS
 #large crane (4 angles)
@@ -116,14 +115,6 @@ spriteset_jetty_slope_sw_ne = industry.add_spriteset(
     sprites = [(360, 60, 64, 39, -31, -7)],
     zextent = 7
 )
-spriteset_covered_store = industry.add_spriteset(
-    id = 'bulk_terminal_spriteset_covered_store',
-    sprites = [(220, 10, 64, 39, -31, 0)],
-    yoffset = 4,
-    zoffset = 27,
-    yextent = 12,
-
-)
 spriteset_tanks = industry.add_spriteset(
     id = 'bulk_terminal_spriteset_spriteset_tanks',
     sprites = [(440, 10, 64, 84, -31, -43)],
@@ -137,13 +128,9 @@ spriteset_cone_silo = industry.add_spriteset(
     id = 'bulk_terminal_spriteset_cone_silo',
     sprites = [(580, 10, 64, 39, -31, -14)],
 )
-spriteset_warehouse_lhs = industry.add_spriteset(
-    id = 'bulk_terminal_spriteset_warehouse_lhs',
-    sprites = [(650, 10, 64, 39, -31, -8)],
-)
-spriteset_warehouse_rhs = industry.add_spriteset(
-    id = 'bulk_terminal_spriteset_warehouse_rhs',
-    sprites = [(720, 10, 64, 39, -27, -12)],
+spriteset_warehouse = industry.add_spriteset(
+    id = 'bulk_terminal_spriteset_warehouse',
+    sprites = [(650, 10, 64, 84, -31, -61)],
 )
 spriteset_staithe_lhs = industry.add_spriteset(
     id = 'bulk_terminal_spriteset_staithe_lhs',
@@ -364,7 +351,7 @@ industry.add_spritelayout(
     id = 'bulk_terminal_spritelayout_28',
     ground_sprite = spriteset_ground_empty,
     ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_jetty_se_nw, spriteset_jetty_ne_sw, spriteset_concrete, spriteset_covered_store]
+    building_sprites = [spriteset_jetty_se_nw, spriteset_jetty_ne_sw, spriteset_concrete, spriteset_warehouse]
 )
 industry.add_spritelayout(
     id = 'bulk_terminal_spritelayout_29',
