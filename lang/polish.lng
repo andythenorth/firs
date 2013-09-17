@@ -10,7 +10,7 @@ STR_GRF_URL                                                                     
 STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :Maksymalna odległość od linii brzegowej dla łowisk, platform wiertniczych i pogłębiarek.
 STR_PARAM_DESC_STAT_RATING                                                      :Ocena stacji uzależniona jest od ilości ładunku dostarczonego przez przemysł; im więcej dostarczono, tym wyższa ocena.
 STR_PARAM_DESC_DEBUG                                                            :Tylko dla deweloperów
-STR_PARAM_DESC_ECONOMIES                                                        :FIRS docelowo ma składać się z kilku ekonomii różniących się przedsiębiorstwami, towarami i cenami.{}{}{SILVER}Na razie tylko jedna ekonomia jest dostępna :)
+STR_PARAM_DESC_ECONOMIES                                                        :Każda z dostępnych w FIRS ekonomii oferuje inną kombinację towarów i fabryk.{}{}Dla graczy preferujących proste zasady gry zalecany jest wybór ekonomii 'Zwykła'. Zawiera ona mniej fabryk i twarów niż inne ekonomie FIRS.
 STR_PARAM_DESC_NO_OPENINGS                                                      :Domyślnie nowe przedsiębiorstwa powstają w trakcie gry.{}{}Jeśli parametr jest włączony to zakłady nie będą otwierane, a gracz nie będzie miał możliwości ich fundowania.
 STR_PARAM_DESC_SECONDARY_NEVER_CLOSE                                            :Domyślnie przedsiębiorstwa przetwórcze nie upadają.{}{}Jeśli parametr jest włączony, spółki do których nie dostarcza się towarów upadają po pewnym czasie.
 STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY                                   :Maksymalny dystans przedsiębiorstw morskich od wybrzeża
@@ -45,6 +45,9 @@ STR_CARGO_NAME_CHEMICALS.d                                                      
 STR_CARGO_NAME_CLAY                                                             :{G=f}Glina
 STR_CARGO_NAME_CLAY.b                                                           :glinę
 STR_CARGO_NAME_CLAY.d                                                           :gliny
+STR_CARGO_NAME_COFFEE                                                           :{G=n}Kawa
+STR_CARGO_NAME_COFFEE.b                                                         :kawa
+STR_CARGO_NAME_COFFEE.d                                                         :kawy
 STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :{G=f}Maszyny
 STR_CARGO_NAME_ENGINEERING_SUPPLIES.b                                           :maszyny
 STR_CARGO_NAME_ENGINEERING_SUPPLIES.d                                           :maszyn
@@ -102,8 +105,9 @@ STR_CARGO_UNIT_BAUXITE                                                          
 STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WEIGHT} materiałów budowlanych
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} chemikaliów
 STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} gliny
+STR_CARGO_UNIT_COFFEE                                                           :{SIGNED_WORD} wor{P 0 ek ki ków} kawy
 STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} skrzy{P 0 nia nie ń} maszyn
-STR_CARGO_UNIT_FIBRES                                                           :{WEIGHT} włókien naturalnych
+STR_CARGO_UNIT_FIBRES                                                           :{SIGNED_WORD} bel{P 0 a e i} włókien naturalnych
 STR_CARGO_UNIT_FISH                                                             :{WEIGHT} ryb
 STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} skrzy{P 0 nia nie ń} sprzętu rolniczego
 STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} owoców
@@ -118,13 +122,14 @@ STR_CARGO_UNIT_SCRAP_METAL                                                      
 STR_CARGO_UNIT_STONE                                                            :{WEIGHT} kamieni
 STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} buraków cukrowych
 STR_CARGO_UNIT_SUGARCANE                                                        :{WEIGHT} trzciny cukrowej
-STR_CARGO_UNIT_WOOL                                                             :{WEIGHT} wełny
+STR_CARGO_UNIT_WOOL                                                             :{SIGNED_WORD} bel{P 0 a e i} wełny
 
 STR_CID_ALCOHOL                                                                 :{TINYFONT}AL
 STR_CID_BAUXITE                                                                 :{TINYFONT}BX
 STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}MB
 STR_CID_CHEMICALS                                                               :{TINYFONT}CH
 STR_CID_CLAY                                                                    :{TINYFONT}GL
+STR_CID_COFFEE                                                                  :{TINYFONT}CF
 STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}MS
 STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}SR
 STR_CID_FIBRES                                                                  :{TINYFONT}WN
@@ -203,6 +208,7 @@ STR_GENERIC_NEWLINE                                                             
 STR_FUND_BASIC_FARM                                                             :{}{BLACK}Lokalizacja: {YELLOW}Nie może być budowane na śniegu ani na pustyni.
 STR_FUND_MIXED_FARM                                                             :{}{BLACK}Lokalizacja: {YELLOW}Nie może być budowane na śniegu, pustyni i stromych zboczach.
 STR_FUND_ARABLE_FARM                                                            :{}{BLACK}Lokalizacja: {YELLOW}Nie może być budowane na śniegu, pustyni i zboczach.
+STR_FUND_COFFEE_ESTATE                                                          :{}{BLACK}Lokalizacja: {YELLOW}Nie może być budowane na śniegu ani na pustyni.
 STR_FUND_ORCHARD_PIGGERY                                                        :{}{BLACK}Lokalizacja: {YELLOW}Nie może być budowane na śniegu ani na pustyni.
 STR_FUND_SUGAR_PLANTATION                                                       :{}{BLACK}Lokalizacja: {YELLOW}Nie może być budowane na śniegu ani na pustyni.
 STR_FUND_FOREST                                                                 :{}{BLACK}Lokalizacja: {YELLOW}Nie może być budowane na pustyni.
@@ -237,6 +243,8 @@ STR_IND_CEMENT_PLANT                                                            
 STR_IND_CEMENT_PLANT.d                                                          :cementowni
 STR_IND_CLAY_PIT                                                                :{G=f}Kopalnia gliny
 STR_IND_CLAY_PIT.d                                                              :kopalni gliny
+STR_IND_COFFEE_ESTATE                                                           :{G=f}Plantacja kawy
+STR_IND_COFFEE_ESTATE.d                                                         :plantacji kawy
 STR_IND_DAIRY                                                                   :{G=f}Mleczarnia
 STR_IND_DAIRY.d                                                                 :mleczarni
 STR_IND_DAIRYFARM                                                               :{G=f}Ferma krów
