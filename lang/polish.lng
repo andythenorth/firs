@@ -129,7 +129,7 @@ STR_CID_BAUXITE                                                                 
 STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}MB
 STR_CID_CHEMICALS                                                               :{TINYFONT}CH
 STR_CID_CLAY                                                                    :{TINYFONT}GL
-STR_CID_COFFEE                                                                  :{TINYFONT}CF
+STR_CID_COFFEE                                                                  :{TINYFONT}KW
 STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}MS
 STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}SR
 STR_CID_FIBRES                                                                  :{TINYFONT}WN
@@ -211,8 +211,10 @@ STR_FUND_ARABLE_FARM                                                            
 STR_FUND_COFFEE_ESTATE                                                          :{}{BLACK}Lokalizacja: {YELLOW}Nie może być budowane na śniegu ani na pustyni.
 STR_FUND_ORCHARD_PIGGERY                                                        :{}{BLACK}Lokalizacja: {YELLOW}Nie może być budowane na śniegu ani na pustyni.
 STR_FUND_SUGAR_PLANTATION                                                       :{}{BLACK}Lokalizacja: {YELLOW}Nie może być budowane na śniegu ani na pustyni.
+STR_FUND_FIBRE_CROP_FARM                                                        :{}{BLACK}Lokalizacja: {YELLOW}Nie może być budowane na śniegu ani na pustyni.
 STR_FUND_FOREST                                                                 :{}{BLACK}Lokalizacja: {YELLOW}Nie może być budowane na pustyni.
 STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}Lokalizacja: {YELLOW}Nie może być budowane na śniegu.
+STR_FUND_RUBBER_PLANTATION                                                      :{}{BLACK}Lokalizacja: {YELLOW}Nie może być budowane na śniegu ani na pustyni.
 
 
 STR_FUND_AVAILABLE_FROM                                                         :{}{BLACK}Dostępne od: {YELLOW}{COMMA}
@@ -227,6 +229,8 @@ STR_IND_ALUMINIUM_PLANT                                                         
 STR_IND_ALUMINIUM_PLANT.d                                                       :huty aluminium
 STR_IND_ARABLE_FARM                                                             :{G=n}Pole uprawne
 STR_IND_ARABLE_FARM.d                                                           :pola uprawnego
+STR_IND_BASICFARM                                                               :{G=n}Zagroda wiejska
+STR_IND_BASICFARM.d                                                             :zagrody wiejskiej
 STR_IND_BAUXITE_MINE                                                            :{G=f}Kopalnia boksytu
 STR_IND_BAUXITE_MINE.d                                                          :kopalni boksytu
 STR_IND_BIOREFINERY                                                             :{G=f}Biorafineria
@@ -239,12 +243,16 @@ STR_IND_BRICK_WORKS                                                             
 STR_IND_BRICK_WORKS.d                                                           :cegielni
 STR_IND_BUILDERS_YARD                                                           :{G=f}Spółka budowlana
 STR_IND_BUILDERS_YARD.d                                                         :spółki budowlanej
+STR_IND_BULK_TERMINAL                                                           :{G=m}Port handlowy
+STR_IND_BULK_TERMINAL.d                                                         :portu handlowego
 STR_IND_CEMENT_PLANT                                                            :{G=f}Cementownia
 STR_IND_CEMENT_PLANT.d                                                          :cementowni
 STR_IND_CLAY_PIT                                                                :{G=f}Kopalnia gliny
 STR_IND_CLAY_PIT.d                                                              :kopalni gliny
 STR_IND_COFFEE_ESTATE                                                           :{G=f}Plantacja kawy
 STR_IND_COFFEE_ESTATE.d                                                         :plantacji kawy
+STR_IND_FIBRE_CROP_FARM                                                         :{G=n}Plantacja lnu
+STR_IND_FIBRE_CROP_FARM.d                                                       :plantacji lnu
 STR_IND_DAIRY                                                                   :{G=f}Mleczarnia
 STR_IND_DAIRY.d                                                                 :mleczarni
 STR_IND_DAIRYFARM                                                               :{G=f}Ferma krów
@@ -287,6 +295,8 @@ STR_IND_METAL_FOUNDRY                                                           
 STR_IND_METAL_FOUNDRY.d                                                         :warsztatu
 STR_IND_MIXEDFARM                                                               :{G=n}Gospdarstwo rolne
 STR_IND_MIXEDFARM.d                                                             :gospodarstwa rolnego
+STR_IND_ORCHARD_PIGGERY                                                         :{G=f}Sad i hodowla trzody chlewnej
+STR_IND_ORCHARD_PIGGERY.d                                                       :sadu i hodowli trzody chlewnej
 STR_IND_PETROLPUMP                                                              :{G=f}Stacja paliw
 STR_IND_PETROLPUMP.d                                                            :stacji paliw
 STR_IND_PLASTICS_PLANT                                                          :{G=f}Fabryka tworzyw sztucznych
