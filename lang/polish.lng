@@ -28,6 +28,7 @@ STR_PARAM_VALUE_ECONOMIES_BASIC_TEMPERATE                                       
 STR_PARAM_VALUE_ECONOMIES_BASIC_ARCTIC                                          :Zwykła ekonomia dla klimatu arktycznego
 STR_PARAM_VALUE_ECONOMIES_BASIC_TROPIC                                          :Zwykła ekonomia dla klimatu tropikalnego
 STR_PARAM_VALUE_ECONOMIES_FIRS                                                  :Ekonomia FIRS
+STR_PARAM_VALUE_ECONOMIES_MISTAH_KURTZ                                          :Jądro ciemności
 STR_PARAM_VALUE_ECONOMIES_TEST_3                                                :Ekonomia testowa 3
 
 STR_CARGO_NAME_ALCOHOL                                                          :{G=m}Alkohol
@@ -45,7 +46,7 @@ STR_CARGO_NAME_CHEMICALS.d                                                      
 STR_CARGO_NAME_CLAY                                                             :{G=f}Glina
 STR_CARGO_NAME_CLAY.b                                                           :glinę
 STR_CARGO_NAME_CLAY.d                                                           :gliny
-STR_CARGO_NAME_COFFEE                                                           :{G=n}Kawa
+STR_CARGO_NAME_COFFEE                                                           :{G=f}Kawa
 STR_CARGO_NAME_COFFEE.b                                                         :kawa
 STR_CARGO_NAME_COFFEE.d                                                         :kawy
 STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :{G=f}Maszyny
@@ -229,7 +230,7 @@ STR_IND_ALUMINIUM_PLANT                                                         
 STR_IND_ALUMINIUM_PLANT.d                                                       :huty aluminium
 STR_IND_ARABLE_FARM                                                             :{G=n}Pole uprawne
 STR_IND_ARABLE_FARM.d                                                           :pola uprawnego
-STR_IND_BASICFARM                                                               :{G=n}Zagroda wiejska
+STR_IND_BASICFARM                                                               :{G=f}Zagroda wiejska
 STR_IND_BASICFARM.d                                                             :zagrody wiejskiej
 STR_IND_BAUXITE_MINE                                                            :{G=f}Kopalnia boksytu
 STR_IND_BAUXITE_MINE.d                                                          :kopalni boksytu
@@ -251,7 +252,7 @@ STR_IND_CLAY_PIT                                                                
 STR_IND_CLAY_PIT.d                                                              :kopalni gliny
 STR_IND_COFFEE_ESTATE                                                           :{G=f}Plantacja kawy
 STR_IND_COFFEE_ESTATE.d                                                         :plantacji kawy
-STR_IND_FIBRE_CROP_FARM                                                         :{G=n}Plantacja lnu
+STR_IND_FIBRE_CROP_FARM                                                         :{G=f}Plantacja lnu
 STR_IND_FIBRE_CROP_FARM.d                                                       :plantacji lnu
 STR_IND_DAIRY                                                                   :{G=f}Mleczarnia
 STR_IND_DAIRY.d                                                                 :mleczarni
@@ -265,8 +266,8 @@ STR_IND_FISHING_GROUND                                                          
 STR_IND_FISHING_GROUND.d                                                        :łowiska
 STR_IND_FISHING_HARBOUR                                                         :{G=m}Port rybacki
 STR_IND_FISHING_HARBOUR.d                                                       :portu rybackiego
-STR_IND_FOOD_MARKET                                                             :{G=m}Sklep
-STR_IND_FOOD_MARKET.d                                                           :sklepu
+STR_IND_FOOD_MARKET                                                             :{G=m}Sklep spożywczy
+STR_IND_FOOD_MARKET.d                                                           :sklepu spożywczego
 STR_IND_FURNITURE_FACTORY                                                       :{G=f}Fabryka mebli
 STR_IND_FURNITURE_FACTORY.d                                                     :fabryki mebli
 STR_IND_GENERAL_STORE                                                           :{G=m}Sklep
@@ -295,7 +296,7 @@ STR_IND_METAL_FOUNDRY                                                           
 STR_IND_METAL_FOUNDRY.d                                                         :warsztatu
 STR_IND_MIXEDFARM                                                               :{G=n}Gospdarstwo rolne
 STR_IND_MIXEDFARM.d                                                             :gospodarstwa rolnego
-STR_IND_ORCHARD_PIGGERY                                                         :{G=f}Sad i hodowla trzody chlewnej
+STR_IND_ORCHARD_PIGGERY                                                         :{G=m}Sad i hodowla trzody chlewnej
 STR_IND_ORCHARD_PIGGERY.d                                                       :sadu i hodowli trzody chlewnej
 STR_IND_PETROLPUMP                                                              :{G=f}Stacja paliw
 STR_IND_PETROLPUMP.d                                                            :stacji paliw
@@ -325,4 +326,21 @@ STR_IND_SUPERMARKET                                                             
 STR_IND_SUPERMARKET.d                                                           :supermarketu
 STR_IND_TEXTILE_MILL                                                            :{G=m}Zakłady odzieżowe
 STR_IND_TEXTILE_MILL.d                                                          :zakładu odzieżowego
+STR_IND_TRADING_POST                                                            :{G=m}Punkt handlowy
+STR_IND_TRADING_POST.d                                                          :punktu handlowego
 
+STR_STATION_ANIMALS                                                             :Obory
+STR_STATION_FARM                                                                :Sielanka
+STR_STATION_FISHMARKET                                                          :Targ Rybny
+STR_STATION_HEAVY_INDUSTRY                                                      :Huta
+STR_STATION_INDUSTRY_ESTATE                                                     :Fabryka
+STR_STATION_INDUSTRY_HARBOUR                                                    :Nabrzeże
+STR_STATION_MARKET                                                              :Targowisko
+STR_STATION_MILL                                                                :Młyny
+STR_STATION_MINE                                                                :Zagłębie
+STR_STATION_PIT                                                                 :Wyrobisko
+STR_STATION_PLANTATION                                                          :Plantacja
+STR_STATION_POWERHUNGRY                                                         :Elektrownia
+STR_STATION_REFINERY                                                            :Rafineria
+STR_STATION_TOWN                                                                :Stare Miasto
+STR_STATION_WATER                                                               :Zatoka
