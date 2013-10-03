@@ -1,0 +1,248 @@
+##grflangid 0x3a
+##plural 11
+##gender m f
+
+STR_GRF_DESC                                                                    :{ORANGE}FIRS 산업 시설 대체 세트{}{BLACK}andythenorth, FooBar, planetmaker, Terkhen, Yexo 등 많은 분들의 도움을 받아 제공됩니다. {SILVER}FIRS를 사용하는 방법 등을 포함한 자세한 정보는 읽어보기를 참고하세요. {BLACK}라이선스: GPL v2.
+STR_GRF_NAME                                                                    :{TITLE}
+STR_GRF_URL                                                                     :http://bundles.openttdcoop.org/firs/releases/LATEST/docs/
+
+STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :어장, 유전, 준설 부지의 최대 해안 거리 (단위: 칸)
+STR_PARAM_DESC_STAT_RATING                                                      :역 등급은 산업시설이 역에 쌓이는 화물의 양에 영향을 미칩니다. 등급이 높을 수록 더 많은 양이 쌓입니다.
+STR_PARAM_DESC_DEBUG                                                            :개발자 전용
+STR_PARAM_DESC_ECONOMIES                                                        :각 경제는 다양한 조합의 화물과 산업시설을 제공합니다.{}{}간단한 게임 플레이를 원하는 플레이어의 경우, 다른 FIRS 경제에 비해 '기본' 경제가 산업 시설과 화물의 종류가 적으므로 이를 사용하십시오.
+STR_PARAM_DESC_NO_OPENINGS                                                      :기본적으로, 게임 중에 새로운 산업 시설이 건설될 것입니다.{}{}만약 '건설 금지' 옵션을 켠다면 게임 중에 산업 시설이 건설되지 않을 것이고, 플레이어는 산업시설에 투자하거나 산업 시설을 탐사할 수 없게 됩니다.
+STR_PARAM_DESC_SECONDARY_NEVER_CLOSE                                            :기본적으로, FIRS의 2차 산업시설은 절대 폐쇄되지 않습니다.{}{}만약 2차 산업시설 폐쇄 옵션을 켜면, 2차 산업시설은 오랫동안 화물이 수송되지 않을 경우 폐쇄될 수도 있습니다. 1차 산업시설은 FIRS에서 절대 폐쇄되지 않고 이 설정의 영향을 받지도 않습니다.
+STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY                                   :해양 산업 시설의 최대 해안 거리 (단위: 칸)
+STR_PARAM_NAME_DEBUG                                                            :디버그 텍스트 보이기
+STR_PARAM_NAME_ECONOMIES                                                        :경제
+STR_PARAM_NAME_NO_OPENINGS                                                      :게임 플레이 중 산업 시설의 건설을 금지
+STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            :두 번재 산업시설을 가까이에 지을 수 있도록 허용
+STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0                                         :제한 없음
+STR_PARAM_NAME_STAT_RATING                                                      :역 등급 계산 알고리즘
+STR_PARAM_VALUE_STAT_RATING_DEFAULT                                             :기본 (OpenTTD 표준 등급 계산법 사용)
+STR_PARAM_VALUE_STAT_RATING_REDUCED_TIME                                        :좋음 (화물 적재 간격을 더 길게 허용)
+STR_PARAM_VALUE_STAT_RATING_100                                                 :미칠듯이 관대함 (역 등급이 언제나 100%)
+
+STR_PARAM_VALUE_ECONOMIES_BASIC_TEMPERATE                                       :온대 기후 기본
+STR_PARAM_VALUE_ECONOMIES_BASIC_ARCTIC                                          :냉대 기후 기본
+STR_PARAM_VALUE_ECONOMIES_BASIC_TROPIC                                          :아열대 기후 기본
+STR_PARAM_VALUE_ECONOMIES_FIRS                                                  :FIRS
+STR_PARAM_VALUE_ECONOMIES_MISTAH_KURTZ                                          :어둠의 심장
+STR_PARAM_VALUE_ECONOMIES_TEST_3                                                :테스트 경제 3
+
+STR_CARGO_NAME_ALCOHOL                                                          :알코올
+STR_CARGO_NAME_BAUXITE                                                          :보크사이트
+STR_CARGO_NAME_BUILDING_MATERIALS                                               :건축 자재
+STR_CARGO_NAME_CHEMICALS                                                        :화학 약품
+STR_CARGO_NAME_CLAY                                                             :점토
+STR_CARGO_NAME_COFFEE                                                           :커피
+STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :공학 비품
+STR_CARGO_NAME_FIBRES                                                           :섬유 작물
+STR_CARGO_NAME_FISH                                                             :물고기
+STR_CARGO_NAME_FARM_SUPPLIES                                                    :농장 비품
+STR_CARGO_NAME_FRUITS                                                           :과일
+STR_CARGO_NAME_LUMBER                                                           :목재
+STR_CARGO_NAME_METAL                                                            :금속
+STR_CARGO_NAME_MILK                                                             :우유
+STR_CARGO_NAME_MANUFACTURING_SUPPLIES                                           :제조 비품
+STR_CARGO_NAME_PETROL                                                           :휘발유
+STR_CARGO_NAME_RECYCLABLES                                                      :재활용품
+STR_CARGO_NAME_SAND                                                             :모래
+STR_CARGO_NAME_SCRAP_METAL                                                      :고철
+STR_CARGO_NAME_STONE                                                            :암석
+STR_CARGO_NAME_SUGAR_BEET                                                       :사탕무
+STR_CARGO_NAME_SUGARCANE                                                        :사탕수수
+STR_CARGO_NAME_WOOL                                                             :양털
+
+STR_CARGO_UNIT_ALCOHOL                                                          :알코올 {VOLUME}
+STR_CARGO_UNIT_BAUXITE                                                          :보크사이트 {WEIGHT}
+STR_CARGO_UNIT_BUILDING_MATERIALS                                               :건축 자재 {WEIGHT}
+STR_CARGO_UNIT_CHEMICALS                                                        :화학 약품 {VOLUME}
+STR_CARGO_UNIT_CLAY                                                             :점토 {WEIGHT}
+STR_CARGO_UNIT_COFFEE                                                           :커피 {SIGNED_WORD}자루
+STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :공학 비품 {SIGNED_WORD}상자
+STR_CARGO_UNIT_FIBRES                                                           :섬유 작물 {SIGNED_WORD}뭉치
+STR_CARGO_UNIT_FISH                                                             :물고기 {WEIGHT}
+STR_CARGO_UNIT_FMSP                                                             :농장 비품 {SIGNED_WORD}상자
+STR_CARGO_UNIT_FRUITS                                                           :과일 {WEIGHT}
+STR_CARGO_UNIT_LUMBER                                                           :목재 {WEIGHT}
+STR_CARGO_UNIT_METAL                                                            :금속 {WEIGHT}
+STR_CARGO_UNIT_MILK                                                             :우유 {VOLUME}
+STR_CARGO_UNIT_MNSP                                                             :제조 비품 {SIGNED_WORD}상자
+STR_CARGO_UNIT_PETROL                                                           :휘발유  {VOLUME}
+STR_CARGO_UNIT_RECYCLABLES                                                      :재활용품 {WEIGHT}
+STR_CARGO_UNIT_SAND                                                             :모래 {WEIGHT}
+STR_CARGO_UNIT_SCRAP_METAL                                                      :고철 {WEIGHT}
+STR_CARGO_UNIT_STONE                                                            :암석 {WEIGHT}
+STR_CARGO_UNIT_SUGAR_BEET                                                       :사탕무 {WEIGHT}
+STR_CARGO_UNIT_SUGARCANE                                                        :사탕수수 {WEIGHT}
+STR_CARGO_UNIT_WOOL                                                             :양털 {SIGNED_WORD}뭉치
+
+STR_CID_ALCOHOL                                                                 :{TINYFONT}알
+STR_CID_BAUXITE                                                                 :{TINYFONT}보
+STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}건
+STR_CID_CHEMICALS                                                               :{TINYFONT}화
+STR_CID_CLAY                                                                    :{TINYFONT}점
+STR_CID_COFFEE                                                                  :{TINYFONT}커
+STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}공
+STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}농
+STR_CID_FIBRES                                                                  :{TINYFONT}섬
+STR_CID_FISH                                                                    :{TINYFONT}물
+STR_CID_LUMBER                                                                  :{TINYFONT}목
+STR_CID_MANUFACTURING_SUPPLIES                                                  :{TINYFONT}금
+STR_CID_METAL                                                                   :{TINYFONT}금
+STR_CID_MILK                                                                    :{TINYFONT}유
+STR_CID_PETROL                                                                  :{TINYFONT}휘
+STR_CID_RECYCLABLES                                                             :{TINYFONT}활
+STR_CID_SAND                                                                    :{TINYFONT}사
+STR_CID_SCRAP_METAL                                                             :{TINYFONT}고
+STR_CID_STONE                                                                   :{TINYFONT}암
+STR_CID_SUGAR_BEET                                                              :{TINYFONT}무
+STR_CID_SUGARCANE                                                               :{TINYFONT}수
+STR_CID_WOOL                                                                    :{TINYFONT}모
+
+STR_ERR_CLIMATE_TOYLAND                                                         :{ORANGE}FIRS는 장난감나라 기후에서는 사용할 수 없습니다.
+STR_ERR_INCOMPATIBLE_SET                                                        :{ORANGE}E01: {YELLOW}호환 불가능한 세트: {ORANGE}{STRING} {YELLOW}FIRS ReadMe를 참고하세요: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_PARAM_CANSET                                               :{ORANGE}E02: {YELLOW}호환 불가능한 매개 변수: {ORANGE}FIRS를 사용하려면 CanSet의 2번 매개 변숫값이 0이어야 합니다.{YELLOW}FIRS ReadMe를 참고하세요: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_PARAM_CITYSET                                              :{ORANGE}E02: {YELLOW}호환 불가능한 매개 변수: {ORANGE}FIRS를 사용하려면 NA City Set의 2번 매개 변숫값이 0이어야 합니다. {YELLOW}FIRS ReadMe를 참고하세요: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_SET_TTRS_VERSION                                           :{ORANGE}E04: {YELLOW}호환 불가능한 버전: {ORANGE}Total Town Replacement Set의 버전은 3.11 이상이어야 합니다. {YELLOW}FIRS ReadMe를 참고하세요: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_OPENTTD_VERSION                                                         :{ORANGE}E00: FIRS는 OpenTTD 1.2.0나 r22780 이상이 필요합니다. {YELLOW}FIRS ReadMe를 참고하세요: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+
+STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE                                             :설선 아래에 지어야 합니다.
+STR_ERR_LOCATION_NOT_ON_WATER                                                   :마른 땅 위에 지어야 합니다.
+STR_ERR_LOCATION_NOT_IN_DESERT                                                  :사막에 지을 수 없습니다.
+STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE                                             :가파른 경사 위에 지을 수 없습니다.
+STR_ERR_LOCATION_LIMIT_1_PER_TOWN                                               :이 종류의 산업 시설은 한 도시에 하나만 지을 수 있습니다.
+
+STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}화물 생산량:{}  보크사이트 8톤 수송시 2톤{}  화학 약품 8,000리터 수송시 2톤{}    고철 8톤 수송시 4톤{}{}둘 또는 그 이상의 화물이 1개월 이내에 수송되면 생산량이 증가합니다.
+STR_EXTRA_BIOREFINERY                                                           :{BLACK}화물 생산량:{}  곡물 8톤 수송시 6,000리터{}  설탕 8톤 수송시 6,000리터
+STR_EXTRA_BREWERY                                                               :{BLACK}화물 생산량:{}  제조 비품 8상자 수송시 3,000리터{} {STRING} {STRING}{}다른 화물의 1개월 이내에 제조 비품이 수송되면 생산량이 증가합니다.
+STR_EXTRA_BREWERY_GRAIN_SUBSTR                                                  :곡물 8톤 수송시 5,000리터{}
+STR_EXTRA_BREWERY_FRUIT_SUBSTR                                                  :과일 8톤 수송시 5,000리터{}
+STR_EXTRA_BRICKWORKS                                                            :{BLACK}화물 생산량:{}  석탄 8톤 수송시 2톤{}    모래 8톤 수송시 2톤{}    점토 8톤 수송시 4톤{}{}둘 또는 그 이상의 화물이 1개월 이내에 수송되면 생산량이 증가합니다.
+STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}화물 생산량:{}  석탄 8톤 수송시 2톤{}    점토 8톤 수송시 2톤{}    암석 8톤 수송시 4톤{}{}둘 또는 그 이상의 화물이 1개월 이내에 수송되면 생산량이 증가합니다.
+STR_EXTRA_DAIRY                                                                 :{BLACK}화물 생산량:{}  제조 비품 8상자 수송시 3톤{}  우유 8,000리터 수송시 5톤{}{}두 화물이 모두 1개월 이내에 수송되면 생산량이 증가합니다.
+STR_EXTRA_FERTILIZER_PLANT                                                      :{BLACK}화물 생산량:{}  화학 약품 8,000리터 수송시 8상자
+STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}화물 생산량:{}  제조 비품 8상자 수송시 3톤{}    물고기 8톤 수송시 5톤{}{}두 화물이 모두 1개월 이내에 수송되면 생산량이 증가합니다.
+STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}화물 생산량:{}  제조 비품 8상자 수송시 3톤{}    목재 8톤 수송시 5톤{}{}두 화물이 모두 1개월 이내에 수송되면 생산량이 증가합니다.
+STR_EXTRA_GLASS_WORKS                                                           :{BLACK}병, 단지, 창유리 등의 유리 제품을 생산합니다.{}{}화물 생산량:{}    모래 8톤 수송시 6톤{}  화학 약품 8,000리터 수송시 2톤{}{}두 화물이 모두 1개월 이내에 수송되면 생산량이 증가합니다.
+STR_EXTRA_GRAIN_MILL                                                            :{BLACK}화물 생산량:{}  제조 비품 8상자 수송시 3톤{}    곡물 8톤 수송시 5톤{}{}두 화물이 모두 1개월 이내에 수송되면 생산량이 증가합니다.
+STR_EXTRA_IRON_WORKS                                                            :{BLACK}화물 생산량:{}    목재 8톤 수송시 2톤{}    철 광석 8톤 수송시 2톤{}{}두 화물이 모두 1개월 이내에 수송되면 생산량이 증가합니다.
+STR_EXTRA_LIME_KILN                                                             :{BLACK}화물 생산량:{}    암석 8톤 수송시 3톤{}    석탄 8톤 수송시 3톤{}{}두 화물이 모두 1개월 이내에 수송되면 생산량이 증가합니다.
+STR_EXTRA_LUMBER_YARD                                                           :{BLACK}팻말이나 기둥과 같은 제품을 생산합니다.{}{}화물 생산량:{}  화학 약품 8,000리터 수송시 2t{}    목재 8톤 수송시 6톤{}{}두 화물이 모두 1개월 이내에 수송되면 생산량이 증가합니다.
+STR_EXTRA_MACHINE_SHOP                                                          :{BLACK}기계를 만들고 제공합니다.{}{}화물 생산량:{}  휘발유 8,000리터 수송시 8상자{}  금속 8톤 수송시 8상자
+STR_EXTRA_MEAT_PACKER                                                           :{BLACK}화물 생산량:{}  제조 비품 8상자 수송시 3톤{}    가축 8톤 수송시 5톤{}{}두 화물이 모두 1개월 이내에 수송되면 생산량이 증가합니다.
+STR_EXTRA_METAL_FABRICATION_PLANT                                               :{BLACK}도색된 금속 부품을 생산합니다.{}{}화물 생산량:{}  화학 약품 8,000리터 수송시 2톤{}    금속 8톤 수송시 6톤{}{}두 화물이 모두 1개월 이내에 수송되면 생산량이 증가합니다.
+STR_EXTRA_METAL_FOUNDRY                                                         :{BLACK}깡통, 하드웨어, 가정 제품 등 도금한 금속 제품을 생산합니다.{}{}화물 생산량:{}  화학 약품 8,000리터 수송시 2상자{}  금속 8톤 수송시 6상자{}{}두 화물이 모두 1개월 이내에 수송되면 생산량이 증가합니다.
+STR_EXTRA_OIL_REFINERY                                                          :{BLACK}원유를 휘발유와 화학 약품으로 정제합니다.{}{}화물 생산량:{}  8,000리터 수송시 6,000리터
+STR_EXTRA_PAPER_MILL                                                            :{BLACK}목재를 펄프로 만들어 종이와 판지로 만듭니다.{}{}화물 생산량:{}  목재 8톤 수송시 4상자{}  점토 8톤 수송시 2상자{}  화학약품 8,000리터 수송시 2상자{}{}둘 또는 그 이상의 화물이 1개월 이내에 수송되면 생산량이 증가합니다.
+STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}포장지나 가정 제품 등의 플라스틱 제품을 생산합니다.{}{}화물 생산량:{} {STRING} {STRING}
+STR_EXTRA_PLASTICS_PLANT_CHEMICALS_SUBSTR                                       :8,000리터의 화학 약품당 6상자 수송됨
+STR_EXTRA_PLASTICS_PLANT_PLANT_FIBRES_SUBSTR                                    :섬유 작물 8뭉치 수송시 6상자{}
+STR_EXTRA_RECYCLING_PLANT                                                       :{BLACK}재활용품을 처리합니다.{}{}화물 생산량:{}    재활용품 8톤 수송시 6톤
+STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}생산량이 도시 인구에 비례합니다.
+STR_EXTRA_SAWMILL                                                               :{BLACK}목재를 자릅니다.{}{}화물 생산량:{}    목재 8톤 수송시 6톤
+STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}도구, 쟁기, 문, 삽, 말굽 등의 금속 제품을 생산합니다.{}{}화물 생산량:{}  금속 8톤 수송시 8상자
+STR_EXTRA_STEELMILL                                                             :{BLACK}화물 생산량:{}    철 광석 8톤 수송시 2톤{}    석탄 8톤 수송시 2톤{}    고철 8톤 수송시 4톤{}{}둘 또는 그 이상의 화물이 1개월 이내에 수송되면 생산량이 증가합니다.
+STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}화물 생산량:{}  제조 비품 8상자 수송시 3톤{}    설탕 8톤 수송시 5톤{}{}두 화물이 모두 1개월 이내에 수송되면 생산량이 증가합니다.
+STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}화물 생산량:{}  제조 비품 8상자 수송시 3상자{} {STRING} {STRING}{}다른 화물의 1개월 이내에 제조 비품이 수송되면 생산량이 증가합니다.
+STR_EXTRA_TEXTILE_MILL_WOOL_SUBSTR                                              :양털 8뭉치 수송시 5상자{}
+STR_EXTRA_TEXTILE_MILL_PLANT_FIBRES_SUBSTR                                      :섬유 작물 8뭉치 수송시 5상자{}
+
+STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ 디버그 ------------{}이번달 생산량:{}화물 1: {WHITE}{COMMA}{BLACK}{}화물 2: {WHITE}{COMMA}{BLACK}{}지난 수송 이후 지난 날짜: {WHITE}{COMMA}{BLACK}
+STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}최대 생산량에 다다름
+STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}현재 생산량: {YELLOW}보통{}{}{BLACK}생산량을 2배로 늘리려면, 3개월 이내에 {SIGNED_WORD}상자의 공급품을 수송하고, 4배로 늘리려면 {SIGNED_WORD}상자를 수송하십시오.
+STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}현재 생산량: {YELLOW}많음 (2배){}{}{BLACK}현재 수준을 유지하려면, 3개월 이내에 {SIGNED_WORD}상자의 공급품을 수송하고, 4배로 늘리려면 {SIGNED_WORD} 상자를 수송하십시오.
+STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}현재 생산량: {YELLOW}격렬히 많음 (4배){}{}{BLACK}현재 수준을 유지하려면, 3개월 이내에 {SIGNED_WORD}상자의 공급품을 수송하십시오.
+STR_PORT_PRODUCTION_1X                                                          :{BLACK}현재 생산량: {YELLOW}보통{}{}{BLACK}생산량을 2배로 늘리려면, 3개월 이내에 {SIGNED_WORD} 단위의 화물을 수송하십시오.{}4배로 늘리려면 {SIGNED_WORD} 단위의 화물을 수송하십시오.
+STR_PORT_PRODUCTION_2X                                                          :{BLACK}현재 생산량: {YELLOW}많음 (2배){}{}{BLACK}현재 수준을 유지하려면, 3개월 이내에 {SIGNED_WORD} 단위의 화물을 수송하시고, 4배로 늘리려면 {SIGNED_WORD} 단위의 화물을 수송하십시오.
+STR_PORT_PRODUCTION_4X                                                          :{BLACK}현재 생산량: {YELLOW}격렬히 많음 (4배){}{}{BLACK}현재 수준을 유지하려면, 3개월 이내에 {SIGNED_WORD} 단위의 화물을 수송하십시오.
+STR_GENERIC_NEWLINE                                                             :{}
+
+STR_FUND_BASIC_FARM                                                             :{}{BLACK}위치: {YELLOW}눈이나 사막 위에 세울 수 없습니다.
+STR_FUND_MIXED_FARM                                                             :{}{BLACK}위치: {YELLOW}눈이나 사막 위에 세울 수 없습니다.
+STR_FUND_ARABLE_FARM                                                            :{}{BLACK}위치: {YELLOW}눈이나 사막 위에 세울 수 없습니다.
+STR_FUND_COFFEE_ESTATE                                                          :{}{BLACK}위치: {YELLOW}눈이나 사막 위에 세울 수 없습니다.
+STR_FUND_ORCHARD_PIGGERY                                                        :{}{BLACK}위치: {YELLOW}눈이나 사막 위에 세울 수 없습니다.
+STR_FUND_SUGAR_PLANTATION                                                       :{}{BLACK}위치: {YELLOW}눈이나 사막 위에 세울 수 없습니다.
+STR_FUND_FIBRE_CROP_FARM                                                        :{}{BLACK}위치: {YELLOW}눈이나 사막 위에 세울 수 없습니다.
+STR_FUND_FOREST                                                                 :{}{BLACK}위치: {YELLOW}사막 위에 세울 수 없습니다.
+STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}위치: {YELLOW}눈 위에 세울 수 없습니다.
+STR_FUND_RUBBER_PLANTATION                                                      :{}{BLACK}위치: {YELLOW}눈이나 사막 위에 세울 수 없습니다.
+
+
+STR_FUND_AVAILABLE_FROM                                                         :{}{YELLOW}{COMMA}{BLACK}부터 사용 가능
+
+STR_FUND_AVAILABLE_UNTIL                                                        :{}{YELLOW}{COMMA} {BLACK}이후 사용 불가능
+
+
+STR_TOWN                                                                        :{STRING}
+STR_STATION                                                                     :{STRING} {STRING}
+
+STR_IND_ALUMINIUM_PLANT                                                         :알루미늄 공장
+STR_IND_ARABLE_FARM                                                             :경작 농장
+STR_IND_BASICFARM                                                               :농장
+STR_IND_BAUXITE_MINE                                                            :보크사이트 광산
+STR_IND_BIOREFINERY                                                             :바이오 리파이너리
+STR_IND_BREWERY                                                                 :맥주 공장
+STR_IND_BREWERY_CIDER_MILL                                                      :사이다 방앗간
+STR_IND_BRICK_WORKS                                                             :벽돌 공장
+STR_IND_BUILDERS_YARD                                                           :공사장
+STR_IND_BULK_TERMINAL                                                           :선적하물 터미널
+STR_IND_CEMENT_PLANT                                                            :시멘트 공장
+STR_IND_CLAY_PIT                                                                :점토 갱
+STR_IND_COFFEE_ESTATE                                                           :커피 농장
+STR_IND_FIBRE_CROP_FARM                                                         :섬유 작물 농장
+STR_IND_DAIRY                                                                   :유제품 회사
+STR_IND_DAIRYFARM                                                               :낙농장
+STR_IND_DREDGING_SITE                                                           :준설 부지
+STR_IND_FERTILISER_PLANT                                                        :비료 공장
+STR_IND_FISHING_GROUND                                                          :어장
+STR_IND_FISHING_HARBOUR                                                         :어항
+STR_IND_FOOD_MARKET                                                             :반찬 가게
+STR_IND_FURNITURE_FACTORY                                                       :가구 공장
+STR_IND_GENERAL_STORE                                                           :일반 상점
+STR_IND_GLASS_WORKS                                                             :유리 공장
+STR_IND_GRAIN_MILL                                                              :곡물 방앗간
+STR_IND_HARDWARE_STORE                                                          :하드웨어 상점
+STR_IND_HOTEL                                                                   :호텔
+STR_IND_IRON_WORKS                                                              :제철소
+STR_IND_JUNKYARD                                                                :고철 하치장
+STR_IND_LIME_KILN                                                               :석회 가마
+STR_IND_LUMBER_YARD                                                             :저목장
+STR_IND_MACHINE_SHOP                                                            :기계 상점
+STR_IND_METAL_FABRICATION_PLANT                                                 :금속 제조 공장
+STR_IND_METAL_FOUNDRY                                                           :금속 작업장
+STR_IND_MIXEDFARM                                                               :혼합 농장
+STR_IND_ORCHARD_PIGGERY                                                         :과수원 및 양돈장
+STR_IND_PETROLPUMP                                                              :주유소
+STR_IND_PLASTICS_PLANT                                                          :플라스틱 공장
+STR_IND_PORT                                                                    :항구
+STR_IND_QUARRY                                                                  :채석장
+STR_IND_RANCH                                                                   :목장
+STR_IND_RECYCLING_DEPOT                                                         :재활용품 창고
+STR_IND_RECYCLING_PLANT                                                         :재활용품 처리 공장
+STR_IND_SHEEPFARM                                                               :양 농장
+STR_IND_SMITHY_FORGE                                                            :대장간
+STR_IND_STOCKYARD                                                               :가축 수용소
+STR_IND_SUGAR_PLANTATION                                                        :설탕 재배장
+STR_IND_SUGAR_REFINERY                                                          :제당소
+STR_IND_SUPERMARKET                                                             :수퍼마켓
+STR_IND_TEXTILE_MILL                                                            :방직 공장
+STR_IND_TRADING_POST                                                            :교역소
+
+STR_STATION_ANIMALS                                                             :마시장
+STR_STATION_FARM                                                                :저택
+STR_STATION_FISHMARKET                                                          :수산 시장
+STR_STATION_HEAVY_INDUSTRY                                                      :제임스 와트 거리
+STR_STATION_INDUSTRY_ESTATE                                                     :산업 공원
+STR_STATION_INDUSTRY_HARBOUR                                                    :공업항
+STR_STATION_MARKET                                                              :시장
+STR_STATION_MILL                                                                :방앗간
+STR_STATION_MINE                                                                :태너 로
+STR_STATION_PIT                                                                 :갱
+STR_STATION_PLANTATION                                                          :농장
+STR_STATION_POWERHUNGRY                                                         :발전소
+STR_STATION_REFINERY                                                            :포틀랜드
+STR_STATION_TOWN                                                                :구 읍사무소
+STR_STATION_WATER                                                               :모래톱
