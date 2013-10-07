@@ -6,7 +6,7 @@ STR_GRF_NAME                                                                    
 STR_GRF_URL                                                                     :http://bundles.openttdcoop.org/firs/releases/LATEST/docs/
 
 STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :Najveća udaljenost ribarskih polja, naftnih platformi i jaružališta od obale u poljima.
-STR_PARAM_DESC_STAT_RATING                                                      :Rejting stranice utječe na količinu tereta dostavljenu od neke industrije na tu stanicu; veći rejting znači dostavu više tereta.
+STR_PARAM_DESC_STAT_RATING                                                      :Rejting stanice utječe na količinu tereta dostavljenu od neke industrije na tu stanicu; veći rejting znači dostavu više tereta.
 STR_PARAM_DESC_DEBUG                                                            :Samo za programere
 STR_PARAM_DESC_ECONOMIES                                                        :Svaka ekonomija daje različite kombinacije tereta i industrija.{}{}Za igrače koji žele jednostavnost igre, "Osnovne" ekonomije imaju manje industrija i tereta nego druge FIRS ekonomije.
 STR_PARAM_DESC_NO_OPENINGS                                                      :Tijekom igre neće se graditi nove industrije.{}Igrači neće moći financirati ili istraživati industrije.{}Industrije će sagraditi generator mape na početku igre (ovisno o odabranim postavkama mape).
@@ -59,15 +59,15 @@ STR_CARGO_UNIT_BUILDING_MATERIALS                                               
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} kemikalija
 STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} gline
 STR_CARGO_UNIT_COFFEE                                                           :{SIGNED_WORD} vreća{P 0 e,e,e} kave
-STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} kutija{P 0 "" s} inžinjerskih potrepština
+STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} kutija{P 0 e,e,e} inžinjerskih potrepština
 STR_CARGO_UNIT_FIBRES                                                           :{SIGNED_WORD} bala{P 0 e,e,e} biljnih vlakana
 STR_CARGO_UNIT_FISH                                                             :{WEIGHT} ribe
-STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} kutija{P 0 "" s} poljoprivrednih potrepština
+STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} kutija{P 0 e,e,e} poljoprivrednih potrepština
 STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} voća
 STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} drva
 STR_CARGO_UNIT_METAL                                                            :{WEIGHT} metala
 STR_CARGO_UNIT_MILK                                                             :{VOLUME} mlijeka
-STR_CARGO_UNIT_MNSP                                                             :{SIGNED_WORD} kutija{P 0 "" s} proizvodnih potrepština
+STR_CARGO_UNIT_MNSP                                                             :{SIGNED_WORD} kutija{P 0 e,e,e} proizvodnih potrepština
 STR_CARGO_UNIT_PETROL                                                           :{VOLUME} benzina
 STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} reciklažnog materijala
 STR_CARGO_UNIT_SAND                                                             :{WEIGHT} pijeska
@@ -100,11 +100,11 @@ STR_CID_SUGAR_BEET                                                              
 STR_CID_SUGARCANE                                                               :{TINYFONT}SC
 STR_CID_WOOL                                                                    :{TINYFONT}WL
 
-STR_ERR_CLIMATE_TOYLAND                                                         :{ORANGE}FIRS nije predviđen za korištenje u Toyland klimi
-STR_ERR_INCOMPATIBLE_SET                                                        :{ORANGE}E01: {YELLOW}Inkompatibilni set: {ORANGE}{STRING} {YELLOW}Provjerite FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
-STR_ERR_INCOMPATIBLE_PARAM_CANSET                                               :{ORANGE}E02: {YELLOW}Incompatible parameter: {ORANGE}CanSet parametar 2 mora biti 0 da bi radio sa FIRS-om. {YELLOW}Provjerite FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
-STR_ERR_INCOMPATIBLE_PARAM_CITYSET                                              :{ORANGE}E02: {YELLOW}Incompatible parameter: {ORANGE}NA City Set parametar 2 mora biti 0 da bi radio sa FIRS-om. {YELLOW}Provjerite FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
-STR_ERR_INCOMPATIBLE_SET_TTRS_VERSION                                           :{ORANGE}E04: {YELLOW}Incompatible version: {ORANGE}Total Town Replacement Set mora biti verzija 3.11 ili novija. {YELLOW}Provjerite FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_CLIMATE_TOYLAND                                                         :{ORANGE}FIRS nije predviđen za korištenje u Zemlji igračaka
+STR_ERR_INCOMPATIBLE_SET                                                        :{ORANGE}E01: {YELLOW}Nekompatibilni set: {ORANGE}{STRING} {YELLOW}Provjerite FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_PARAM_CANSET                                               :{ORANGE}E02: {YELLOW}Nekompatibilni parametar: {ORANGE}CanSet parametar 2 mora biti 0 da bi radio sa FIRS-om. {YELLOW}Provjerite FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_PARAM_CITYSET                                              :{ORANGE}E02: {YELLOW}Nekompatibilni parametar: {ORANGE}NA City Set parametar 2 mora biti 0 da bi radio sa FIRS-om. {YELLOW}Provjerite FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_SET_TTRS_VERSION                                           :{ORANGE}E04: {YELLOW}Nekompatibilna verzija: {ORANGE}Total Town Replacement Set mora biti verzija 3.11 ili novija. {YELLOW}Provjerite FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 STR_ERR_OPENTTD_VERSION                                                         :{ORANGE}E00: FIRS potrebuje OpenTTD 1.2.0 / trunk r22780 ili više. {YELLOW}Provjerite FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 
 STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE                                             :mora biti smješteno ispod linije snijega.
@@ -183,7 +183,7 @@ STR_IND_ARABLE_FARM                                                             
 STR_IND_BASICFARM                                                               :Farma
 STR_IND_BAUXITE_MINE                                                            :Rudnik boksita
 STR_IND_BIOREFINERY                                                             :Biorafinerija
-STR_IND_BREWERY                                                                 :Pivara
+STR_IND_BREWERY                                                                 :Pivovara
 STR_IND_BREWERY_CIDER_MILL                                                      :Mlin za jabukovaču
 STR_IND_BRICK_WORKS                                                             :Ciglana
 STR_IND_BUILDERS_YARD                                                           :Građevinsko dvorište
