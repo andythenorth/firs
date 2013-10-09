@@ -88,20 +88,21 @@ may not complain about possible problems in FIRS ;)
 Translations
 ------------
 FIRS developers are always happy to receive translations or translation updates
-for this set. Translations are done as easily as grabbing a text file and
-replacing the English text in it by the text in your language
+for this set. Translations are done easily in the web browser of your choice:
 
-The authorative english language file is found at
-  http://dev.openttdcoop.org/projects/firs/repository/entry/lang/english.lng
-all existing translations at
-  http://dev.openttdcoop.org/projects/firs/repository/show/lang
-Grab the existing language file from there, if you want to update a translation.
+  http://translator.openttdcoop.org
 
-The status of the existing translations is logged for each run daily.
-Transcripts are found at
-  http://bundles.openttdcoop.org/firs/nightlies/LATEST/log/
+Select "FIRS Industrial Renewal Set" from the project list and start translating.
 
-New or updated translations go either to our issue tracker at
+Translations are updated daily if changes are made. Nightly builds with updated
+translations are found at
+  http://bundles.openttdcoop.org/firs/nightlies/LATEST/
+
+  The use of the web translator is much preferred as it automatically checks the
+language files for correctness. If you cannot use that for whatever reason,
+grabe the English master file from
+http://dev.openttdcoop.org/projects/firs/repository/entry/lang/english.lng and
+submit your translation to our issue tracker at
   http://dev.openttdcoop.org/projects/firs/issues (just create a new issue)
 or post the translated file in the FIRS discussion thread at in the tt-forums:
   http://www.tt-forums.net/viewtopic.php?t=41607
