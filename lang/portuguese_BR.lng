@@ -1,0 +1,247 @@
+##grflangid 0x37
+##plural 0
+
+STR_GRF_DESC                                                                    :{ORANGE}FIRS Industrial Replacement Set{}{BLACK}Trazido a você por andythenorth, FooBar, planetmaker, Terkhen and Yexo, com a ajuda de muitos outros. {SILVER}Veja o arquivo readme para mais informações, incluindo como usar o FIRS. {BLACK}Licença: GPL v2.
+STR_GRF_NAME                                                                    :{TITLE}
+STR_GRF_URL                                                                     :http://bundles.openttdcoop.org/firs/releases/LATEST/docs/
+
+STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :A distância máxima da costa de zonas de pesca, plataformas de petróleo e campos de dragagem em blocos.
+STR_PARAM_DESC_STAT_RATING                                                      :Classificação da estação influencia a quantidade de cargas entregues por uma indústria para a estação; quanto mais alta é a classificação, mais cargas serão entregues.
+STR_PARAM_DESC_DEBUG                                                            :Somente para desenvolvedores
+STR_PARAM_DESC_ECONOMIES                                                        :Cada economia fornece uma combinação diferente de cargas e indústrias.{}{}Para os jogadores que querem uma jogabilidade simples, economias 'Básica' contém menos indústrias e cargas do que outras economias da FIRS.
+STR_PARAM_DESC_NO_OPENINGS                                                      :Por padrão, novas indústrias abrirão durante o jogo.{}{}Se 'impedir abertura' estiver habilitado, indústrias não abrirão durante o jogo e os jogadores não serão capazes de fundar ou prospectar indústrias.
+STR_PARAM_DESC_SECONDARY_NEVER_CLOSE                                            :Por definição, indústrias secundárias FIRS nunca fecham.{}{}Se o fechamento secundário estiver habilitado, indústrias secundárias poderão fechar se não houver carga transportada por um longo período. Indústrias primárias nunca fecham em FIRS e não são afetadas por esta configuração.
+STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY                                   :Distância máxima costeira das indústrias marinhas em blocos
+STR_PARAM_NAME_DEBUG                                                            :Mostrar textos de depuração
+STR_PARAM_NAME_ECONOMIES                                                        :Economia
+STR_PARAM_NAME_NO_OPENINGS                                                      :Impedir abertura de indústrias durante o jogo
+STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            :Permitir fechamento de indústrias secundárias
+STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0                                         :Sem limite
+STR_PARAM_NAME_STAT_RATING                                                      :Algoritmo de classificação da estação
+STR_PARAM_VALUE_STAT_RATING_DEFAULT                                             :Cruel (usa a classificação padrão do OpenTTD)
+STR_PARAM_VALUE_STAT_RATING_REDUCED_TIME                                        :Favorável (permite mais tempo entre carregamento de carga)
+STR_PARAM_VALUE_STAT_RATING_100                                                 :Generosidade Insana (classificação é sempre 100%)
+
+STR_PARAM_VALUE_ECONOMIES_BASIC_TEMPERATE                                       :Economia Básica Clima Temperado
+STR_PARAM_VALUE_ECONOMIES_BASIC_ARCTIC                                          :Economia Básica Clima Ártico
+STR_PARAM_VALUE_ECONOMIES_BASIC_TROPIC                                          :Economia Básica Clima Tropical
+STR_PARAM_VALUE_ECONOMIES_FIRS                                                  :Economia FIRS
+STR_PARAM_VALUE_ECONOMIES_MISTAH_KURTZ                                          :Coração das Trevas
+STR_PARAM_VALUE_ECONOMIES_TEST_3                                                :Economia Teste 3
+
+STR_CARGO_NAME_ALCOHOL                                                          :Álcool
+STR_CARGO_NAME_BAUXITE                                                          :Bauxita
+STR_CARGO_NAME_BUILDING_MATERIALS                                               :Material de Construção
+STR_CARGO_NAME_CHEMICALS                                                        :Produtos Químicos
+STR_CARGO_NAME_CLAY                                                             :Argila
+STR_CARGO_NAME_COFFEE                                                           :Café
+STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :Peças
+STR_CARGO_NAME_FIBRES                                                           :Fibras Vegetais
+STR_CARGO_NAME_FISH                                                             :Peixe
+STR_CARGO_NAME_FARM_SUPPLIES                                                    :Fertilizantes
+STR_CARGO_NAME_FRUITS                                                           :Frutas
+STR_CARGO_NAME_LUMBER                                                           :Madeira
+STR_CARGO_NAME_METAL                                                            :Metal
+STR_CARGO_NAME_MILK                                                             :Leite
+STR_CARGO_NAME_MANUFACTURING_SUPPLIES                                           :Ferramentas
+STR_CARGO_NAME_PETROL                                                           :Gasolina
+STR_CARGO_NAME_RECYCLABLES                                                      :Material Reciclável
+STR_CARGO_NAME_SAND                                                             :Areia
+STR_CARGO_NAME_SCRAP_METAL                                                      :Sucata
+STR_CARGO_NAME_STONE                                                            :Pedra
+STR_CARGO_NAME_SUGAR_BEET                                                       :Beterraba Sacarina
+STR_CARGO_NAME_SUGARCANE                                                        :Cana de Açúcar
+STR_CARGO_NAME_WOOL                                                             :Lã
+
+STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} de álcool
+STR_CARGO_UNIT_BAUXITE                                                          :{WEIGHT} de bauxita
+STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WEIGHT} de materias de construção
+STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} de produtos químicos
+STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} de argila
+STR_CARGO_UNIT_COFFEE                                                           :{SIGNED_WORD} saca{P 0 "" s} de café
+STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} caixa{P 0 "" s} de peças
+STR_CARGO_UNIT_FIBRES                                                           :{SIGNED_WORD} fardo{P 0 "" s} de fibras vegetais
+STR_CARGO_UNIT_FISH                                                             :{WEIGHT} de peixe
+STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} caixa{P 0 "" s} de fertilizante
+STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} de fruta
+STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} de madeira
+STR_CARGO_UNIT_METAL                                                            :{WEIGHT} de metal
+STR_CARGO_UNIT_MILK                                                             :{VOLUME} de leite
+STR_CARGO_UNIT_MNSP                                                             :{SIGNED_WORD} caixa{P 0 "" s} de ferramentas
+STR_CARGO_UNIT_PETROL                                                           :{VOLUME} de gasolina
+STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} de materiais recicláveis
+STR_CARGO_UNIT_SAND                                                             :{WEIGHT} de areia
+STR_CARGO_UNIT_SCRAP_METAL                                                      :{WEIGHT} de sucata
+STR_CARGO_UNIT_STONE                                                            :{WEIGHT} de pedra
+STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} de beterraba sacarina
+STR_CARGO_UNIT_SUGARCANE                                                        :{WEIGHT} de cana de açúcar
+STR_CARGO_UNIT_WOOL                                                             :{SIGNED_WORD} fardo{P 0 "" s} de lã
+
+STR_CID_ALCOHOL                                                                 :{TINYFONT}AL
+STR_CID_BAUXITE                                                                 :{TINYFONT}BX
+STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}MC
+STR_CID_CHEMICALS                                                               :{TINYFONT}PQ
+STR_CID_CLAY                                                                    :{TINYFONT}AG
+STR_CID_COFFEE                                                                  :{TINYFONT}CF
+STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}PÇ
+STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}FE
+STR_CID_FIBRES                                                                  :{TINYFONT}FV
+STR_CID_FISH                                                                    :{TINYFONT}PX
+STR_CID_LUMBER                                                                  :{TINYFONT}MA
+STR_CID_MANUFACTURING_SUPPLIES                                                  :{TINYFONT}FT
+STR_CID_METAL                                                                   :{TINYFONT}MT
+STR_CID_MILK                                                                    :{TINYFONT}LE
+STR_CID_PETROL                                                                  :{TINYFONT}GA
+STR_CID_RECYCLABLES                                                             :{TINYFONT}MR
+STR_CID_SAND                                                                    :{TINYFONT}AR
+STR_CID_SCRAP_METAL                                                             :{TINYFONT}SU
+STR_CID_STONE                                                                   :{TINYFONT}PE
+STR_CID_SUGAR_BEET                                                              :{TINYFONT}BS
+STR_CID_SUGARCANE                                                               :{TINYFONT}CA
+STR_CID_WOOL                                                                    :{TINYFONT}LÃ
+
+STR_ERR_CLIMATE_TOYLAND                                                         :{ORANGE}FIRS não se destina a ser usado no clima Toyland
+STR_ERR_INCOMPATIBLE_SET                                                        :{ORANGE}E01: {YELLOW}Configuração incompatível: {ORANGE}{STRING} {YELLOW}Consulte FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_PARAM_CANSET                                               :{ORANGE}E02: {YELLOW}Parâmetro incompatível: {ORANGE}CanSet parâmetro 2 deve ser 0 para funcionar com o FIRS. {YELLOW}Consulte FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_PARAM_CITYSET                                              :{ORANGE}E02: {YELLOW}Parâmetro incompatível: {ORANGE}NA City Set parâmetro 2 deve ser 0 para funcionar com o FIRS. {YELLOW}Consulte FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_SET_TTRS_VERSION                                           :{ORANGE}E04: {YELLOW}Versão incompatível: {ORANGE}Total Town Replacement Set deve ter a versão 3.11 ou mais nova. {YELLOW}Consulte FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_OPENTTD_VERSION                                                         :{ORANGE}E00: FIRS requer OpenTTD 1.2.0 / trunk r22780 ou maior. {YELLOW}Consulte FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+
+STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE                                             :deve ser colocado abaixo do nível da neve.
+STR_ERR_LOCATION_NOT_ON_WATER                                                   :deve ser colocado em terra seca.
+STR_ERR_LOCATION_NOT_IN_DESERT                                                  :deve ser colocado no deserto.
+STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE                                             :não pode ser colocado em encostas íngremes.
+STR_ERR_LOCATION_LIMIT_1_PER_TOWN                                               :Apenas uma indústria deste tipo permitida por cidade.
+
+STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}Produção:{}  2t por 8t de bauxita entregues{}  2t por 8,000l de produtos químicos entregues{}  4t por 8t de sucata entregues{}{}Produção incrementada se dois ou mais tipos de cargas forem entregues dentro de um mês.
+STR_EXTRA_BIOREFINERY                                                           :{BLACK}Produção:{}  6,000l por 8t de grão entregues{}  6,000l por 8t de açúcar entregues
+STR_EXTRA_BREWERY                                                               :{BLACK}Produção:{}  3,000l por 8 caixas de ferrementas entregues{} {STRING} {STRING}{}Produção incrementada se ferramentas forem entregues no mesmo mês que outras cargas
+STR_EXTRA_BREWERY_GRAIN_SUBSTR                                                  :5,000l por 8t de grão entregues{}
+STR_EXTRA_BREWERY_FRUIT_SUBSTR                                                  :5,000l por 8t de fruta entregues{}
+STR_EXTRA_BRICKWORKS                                                            :{BLACK}Produção:{}  2t por 8t de carvão entregues{}  2t por 8t de areia entregues{}  4t por 8t de argila entregues{}{}Produção incrementada se dois ou mais tipos de carga forem entregues dentro de um mês.
+STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Produção:{}  2t por 8t de carvão{}  2t por 8t de argila entregues{}  4t por 8t de pedra entregues{}{}Produção incrementada se dois ou mais tipos de cargas são entregues dentro de um mês.
+STR_EXTRA_DAIRY                                                                 :{BLACK}Produção:{}  3t por 8 caixas de ferramentas entregues{}  5t por 8,000l de leite{}{}Produção incrementada se dois ou mais tipos de cargas são entregues dentro de um mês.
+STR_EXTRA_FERTILIZER_PLANT                                                      :{BLACK}Produção:{}  8 caixas por 8,000l de produtos químicos entregues
+STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Produção:{}  3t por 8 caixas de ferramentas entregues{}  5t por 8t de peixe entregues{}{}Produção incrementada se dois ou mais tipos de cargas são entregues dentro de um mês.
+STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Produção:{}  3t por 8 caixas de ferramentas entregues{}  5t por 8t de madeira entregues{}{}Produção incrementada se dois ou mais tipos de cargas são entregues dentro de um mês.
+STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Produz artigos de vidro como garrafas, jarros e janelas.{}{}{BLACK}Produção:{}  6t por 8t de areia entregues{}  2t por 8,000l de produtos químicos entregues{}{}Produção incrementada se dois ou mais tipos de cargas são entregues dentro de um mês.
+STR_EXTRA_GRAIN_MILL                                                            :{BLACK}Produção:{}  3t por 8 caixas de ferramentas entregues{}  5t por 8t de grãos entregues{}{}Produção incrementada se dois ou mais tipos de cargas são entregues dentro de um mês.
+STR_EXTRA_IRON_WORKS                                                            :{BLACK}Produção:{}  2t por 8t de lã entregues{}  2t por 8t de minério de ferro entregues{}{}Produção incrementada se dois ou mais tipos de cargas são entregues dentro de um mês.
+STR_EXTRA_LIME_KILN                                                             :{BLACK}Produção:{}  3t por 8t de pedra entregues{}  3t por 8t carvão entregues{}{}Produção incrementada se dois ou mais tipos de cargas são entregues dentro de um mês.
+STR_EXTRA_LUMBER_YARD                                                           :{BLACK}Produz itens como postes e cercas.{}{}{BLACK}Produção:{}  2t por 8,000l de produtos químicos entregues{}  6t por 8t de madeira entregues{}{}Produção incrementada se dois ou mais tipos de cargas são entregues dentro de um mês.
+STR_EXTRA_MACHINE_SHOP                                                          :{BLACK}Constroi e provisiona maquinários.{}{}Produção:{}  8 caixas por 8,000l de gasolina entregues{}  8 caixas por 8t de metal entregues
+STR_EXTRA_MEAT_PACKER                                                           :{BLACK}Produção:{}  3t per 8 caixas de ferramentas entregues{}  5t por 8t de gado entregues{}{}Produção incrementada se dois ou mais tipos de cargas são entregues dentro de um mês.
+STR_EXTRA_METAL_FABRICATION_PLANT                                               :{BLACK}Produz componentes de metal pintados.{}{}{BLACK}Produção:{}  2t por 8,000l de produtos químicos entregues{}  6t por 8t de metal entregues{}{}Produção incrementada se dois ou mais tipos de cargas são entregues dentro de um mês.
+STR_EXTRA_METAL_FOUNDRY                                                         :{BLACK}Produz artigos de metal banhados, como latas, ferragens e bens domésticos.{}{}{BLACK}Produção:{}  2 caixas por 8,000l de produtos químicos entregues{}  6 caixas por 8t de metal entregues{}{}Produção incrementada se dois ou mais tipos de cargas são entregues dentro de um mês.
+STR_EXTRA_OIL_REFINERY                                                          :{BLACK}Processa petróleo bruto em gasolina e produtos químicos.{}{}Produção:{}  6,000l por 8,000l de petróleo entregues
+STR_EXTRA_PAPER_MILL                                                            :{BLACK}Polpas de madeira para a produção de papel e papelão.{}{}{BLACK}Produção:{}  4 caixas por 8t de madeira entregues{}  2 caixas por 8t de argila entregues{}  2 caixas por 8,000l de produtos químicos entregues{}{}Produção incrementada se dois ou mais tipos de carga forem entregues dentro de um mês.
+STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}Produz artigos de plástico como embalagens e artigos domésticos.{}{}Produção:{} {STRING} {STRING}
+STR_EXTRA_PLASTICS_PLANT_CHEMICALS_SUBSTR                                       :6 caixas por 8,000l de produtos químicos entregues{}
+STR_EXTRA_PLASTICS_PLANT_PLANT_FIBRES_SUBSTR                                    :6 caixas por 8 fardos fibras vegetais entregues{}
+STR_EXTRA_RECYCLING_PLANT                                                       :{BLACK}Processa materiais recicláveis para reuso.{}{}Produção:{}  6t por 8t de materias recicláveis entregues
+STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}Produção é proporcional à população da cidade.
+STR_EXTRA_SAWMILL                                                               :{BLACK}Corta madeira.{}{}Produção:{}  6t por 8t de madeira entregues
+STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Produz artigos de metal, como ferramentas, arados, portões, pás e ferraduras.{}{}Produção:{}  8t por 8t de metal entregues
+STR_EXTRA_STEELMILL                                                             :{BLACK}Produção:{}  2t por 8t de ferro entregues{}  2t por 8t de carvão entregues{}  4t por 8t de sucata entregues{}{}Produção incrementada se dois ou mais tipos de cargas são entregues dentro de um mês.
+STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Produção:{}  3t por 8 caixas de ferramentas entregues{}  5t por 8t de açúcar entregues{}{}Aumenta para 8t por 8t quando os dois tipos de cargas são entregues no mesmo mês.
+STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Produção:{}  3 caixas por 8 caixas de ferramentas entregues{} {STRING} {STRING}{}Produção incrementada se ferramentas forem entregues no mesmo mês que outras cargas.
+STR_EXTRA_TEXTILE_MILL_WOOL_SUBSTR                                              :5 caixas por 8 fardos de lã entregues{}
+STR_EXTRA_TEXTILE_MILL_PLANT_FIBRES_SUBSTR                                      :5 caixas por 8 fardos de fibras vegetais entregues{}
+
+STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ DEPURADOR ------------{}Produção este mês:{}Carga 1: {WHITE}{COMMA}{BLACK}{}Carga 2: {WHITE}{COMMA}{BLACK}{}Dias desde a última entrega: {WHITE}{COMMA}{BLACK}
+STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Produção máxima alcançada
+STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Produção atual: {YELLOW}Normal{}{}{BLACK}Para dobrar a produção entregue {SIGNED_WORD} caixas de suprimentos dentro de três meses (ou {SIGNED_WORD} caixas para quadruplicar a produção)
+STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Produção atual: {YELLOW}Aprimorado (dobra){}{}{BLACK}Para manter este nível, entregar {SIGNED_WORD} unidades de carga dentro de três meses, ou {SIGNED_WORD} unidades de carga para quadruplicar a produção
+STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}Produção atual: {YELLOW}Dedicado (quadruplica){}{}{BLACK}Para manter este nível, entregue {SIGNED_WORD} caixas de suprimentos dentro de três meses
+STR_PORT_PRODUCTION_1X                                                          :{BLACK}Produção atual: {YELLOW}Normal{}{}{BLACK}Para dobrar a produção entregue {SIGNED_WORD} unidades de carga dentro de três meses{}Para quadruplicar a produção entregue {SIGNED_WORD} unidades de carga dentro de três meses
+STR_PORT_PRODUCTION_2X                                                          :{BLACK}Produção atual: {YELLOW}Aprimorado (dobra){}{}{BLACK}Para manter este nível, entregue {SIGNED_WORD} unidades de carga dentro de três meses, ou {SIGNED_WORD} unidades de carga para quadruplicar a produção
+STR_PORT_PRODUCTION_4X                                                          :{BLACK}Produção atual: {YELLOW}Dedicado (quadruplica){}{}{BLACK}Para manter este nível, entregue {SIGNED_WORD} unidades de carga dentro de três meses
+STR_GENERIC_NEWLINE                                                             :{}
+
+STR_FUND_BASIC_FARM                                                             :{}{BLACK}Localização: {YELLOW}Não pode ser fundado na neve ou no deserto.
+STR_FUND_MIXED_FARM                                                             :{}{BLACK}Localização: {YELLOW}Não pode ser fundado na neve ou no deserto.
+STR_FUND_ARABLE_FARM                                                            :{}{BLACK}Localização: {YELLOW}Não pode ser fundado na neve ou no deserto.
+STR_FUND_COFFEE_ESTATE                                                          :{}{BLACK}Localização: {YELLOW}Não pode ser fundado na neve ou no deserto.
+STR_FUND_ORCHARD_PIGGERY                                                        :{}{BLACK}Localização: {YELLOW}Não pode ser fundado na neve ou no deserto.
+STR_FUND_SUGAR_PLANTATION                                                       :{}{BLACK}Localização: {YELLOW}Não pode ser fundado na neve ou no deserto.
+STR_FUND_FIBRE_CROP_FARM                                                        :{}{BLACK}Localização: {YELLOW}Não pode ser fundado na neve ou no deserto.
+STR_FUND_FOREST                                                                 :{}{BLACK}Localização: {YELLOW}Não pode ser fundado no deserto.
+STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}Localização: {YELLOW}Não pode ser fundado na neve.
+STR_FUND_RUBBER_PLANTATION                                                      :{}{BLACK}Localização: {YELLOW}Não pode ser fundado na neve ou no deserto.
+
+
+STR_FUND_AVAILABLE_FROM                                                         :{}{BLACK}Disponível a partir de: {YELLOW}{COMMA}
+
+STR_FUND_AVAILABLE_UNTIL                                                        :{}{BLACK}Não disponível depois de: {YELLOW}{COMMA}
+
+
+STR_TOWN                                                                        :{STRING}
+STR_STATION                                                                     :{STRING} {STRING}
+
+STR_IND_ALUMINIUM_PLANT                                                         :Fábrica de Alumínio
+STR_IND_ARABLE_FARM                                                             :Plantação
+STR_IND_BASICFARM                                                               :Fazenda
+STR_IND_BAUXITE_MINE                                                            :Mina de Bauxita
+STR_IND_BIOREFINERY                                                             :Biorefinaria
+STR_IND_BREWERY                                                                 :Destilaria
+STR_IND_BREWERY_CIDER_MILL                                                      :Destilaria de Sidra
+STR_IND_BRICK_WORKS                                                             :Olaria
+STR_IND_BUILDERS_YARD                                                           :Canteiro de Obras
+STR_IND_BULK_TERMINAL                                                           :Terminal de Granéis
+STR_IND_CEMENT_PLANT                                                            :Fábrica de Cimento
+STR_IND_CLAY_PIT                                                                :Poço de Argila
+STR_IND_COFFEE_ESTATE                                                           :Fazenda de Café
+STR_IND_FIBRE_CROP_FARM                                                         :Fazenda de Fibras Vegetais
+STR_IND_DAIRY                                                                   :Leiteria
+STR_IND_DAIRYFARM                                                               :Fazenda Leiteira
+STR_IND_DREDGING_SITE                                                           :Campo de Dragagem
+STR_IND_FERTILISER_PLANT                                                        :Fábrica de Fertilizantes
+STR_IND_FISHING_GROUND                                                          :Zona de Pesca
+STR_IND_FISHING_HARBOUR                                                         :Atracadouro de Pesca
+STR_IND_FOOD_MARKET                                                             :Mercearia
+STR_IND_FURNITURE_FACTORY                                                       :Marcenaria
+STR_IND_GENERAL_STORE                                                           :Armazém Geral
+STR_IND_GLASS_WORKS                                                             :Vidraçaria
+STR_IND_GRAIN_MILL                                                              :Moinho de Grãos
+STR_IND_HARDWARE_STORE                                                          :Loja de Materias de Construção
+STR_IND_HOTEL                                                                   :Hotel
+STR_IND_IRON_WORKS                                                              :Siderúrgica
+STR_IND_JUNKYARD                                                                :Ferro Velho
+STR_IND_LIME_KILN                                                               :Usina de Cal
+STR_IND_LUMBER_YARD                                                             :Madeireira
+STR_IND_MACHINE_SHOP                                                            :Fábrica de Ferramentas
+STR_IND_METAL_FABRICATION_PLANT                                                 :Indústria de Peças Metálicas
+STR_IND_METAL_FOUNDRY                                                           :Metalúrgica
+STR_IND_MIXEDFARM                                                               :Fazenda Mesclada
+STR_IND_ORCHARD_PIGGERY                                                         :Pomar e Pocilga
+STR_IND_PETROLPUMP                                                              :Posto de Gasolina
+STR_IND_PLASTICS_PLANT                                                          :Fabrica de Plastico
+STR_IND_PORT                                                                    :Porto
+STR_IND_QUARRY                                                                  :Pedreira
+STR_IND_RANCH                                                                   :Rancho
+STR_IND_RECYCLING_DEPOT                                                         :Depósito de Materias Recicláveis
+STR_IND_RECYCLING_PLANT                                                         :Fábrica de Materias Recicláveis
+STR_IND_SHEEPFARM                                                               :Fazenda de Ovelhas
+STR_IND_SMITHY_FORGE                                                            :Serralheria
+STR_IND_STOCKYARD                                                               :Matadouro
+STR_IND_SUGAR_PLANTATION                                                        :Plantação de Cana de Açúcar
+STR_IND_SUGAR_REFINERY                                                          :Refinaria de Açúcar
+STR_IND_SUPERMARKET                                                             :Supermercado
+STR_IND_TEXTILE_MILL                                                            :Indústria Têxtil
+STR_IND_TRADING_POST                                                            :Entreposto Comercial
+
+STR_STATION_ANIMALS                                                             :Haras
+STR_STATION_FARM                                                                :Solar
+STR_STATION_FISHMARKET                                                          :Mercado de Peixe
+STR_STATION_HEAVY_INDUSTRY                                                      :Rua James Watt
+STR_STATION_INDUSTRY_ESTATE                                                     :Parque Industrial
+STR_STATION_INDUSTRY_HARBOUR                                                    :Porto Industrial
+STR_STATION_MARKET                                                              :Mercado
+STR_STATION_MILL                                                                :Moinho
+STR_STATION_MINE                                                                :Estrada Tanner
+STR_STATION_PIT                                                                 :Escavação
+STR_STATION_PLANTATION                                                          :Plantação
+STR_STATION_POWERHUNGRY                                                         :Usina
+STR_STATION_REFINERY                                                            :Portland
+STR_STATION_TOWN                                                                :Câmara Municipal antiga
+STR_STATION_WATER                                                               :Banco de Areia
