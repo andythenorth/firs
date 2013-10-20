@@ -1,0 +1,221 @@
+##grflangid 0x0c
+##plural 1
+
+STR_GRF_DESC                                                                    :{ORANGE}FIRS工業擴展包{}{BLACK}由andythenorth, FooBar, planetmaker, Terkhen and Yexo以及其他貢獻者呈獻。 {SILVER}查看readme獲取更多信息，其中包括怎樣使用FIRS. {BLACK}License: GPL v2.
+STR_GRF_NAME                                                                    :{TITLE}
+STR_GRF_URL                                                                     :http://dev.openttdcoop.org/projects/firs
+
+STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :漁場、鑽井平台、疏浚區距離海岸的最大距離。
+STR_PARAM_DESC_STAT_RATING                                                      :車站評價影響工業對該站點的貨物交付。評價越高，交付越多。
+STR_PARAM_DESC_DEBUG                                                            :僅適用於開發者
+STR_PARAM_DESC_ECONOMIES                                                        :每種經濟模式對應不同的貨物和工業組合。{}{}休閑玩家可以選擇簡單模式，'基礎'經濟模式的貨物和工業種類比'FIRS'經濟模式的種類要少。
+STR_PARAM_DESC_NO_OPENINGS                                                      :遊戲進行時，會修建新的工業。{}{}如果選擇了"禁止新建"，則不會修建新工業，並且玩家不能建立或者勘探工業。
+STR_PARAM_DESC_SECONDARY_NEVER_CLOSE                                            :FIRS次要工業默認不會倒閉。{}{}在本選項打開的情況下，如果長時間不運貨，次要工業可能會倒閉。基本工業在FIRS裏永遠不會關閉，並且不受此選項影響。
+STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY                                   :海洋產業距離海岸的最大距離。
+STR_PARAM_NAME_DEBUG                                                            :顯示debug文本
+STR_PARAM_NAME_ECONOMIES                                                        :經濟
+STR_PARAM_NAME_NO_OPENINGS                                                      :遊戲進行時禁止新建工業
+STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            :允許次要工業關閉
+STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0                                         :無限制
+STR_PARAM_NAME_STAT_RATING                                                      :車站評價算法
+STR_PARAM_VALUE_STAT_RATING_DEFAULT                                             :嚴酷刻薄 (使用標准openttd評價算法)
+STR_PARAM_VALUE_STAT_RATING_REDUCED_TIME                                        :寬容厚道 (允許兩次裝貨間隔時間較長)
+STR_PARAM_VALUE_STAT_RATING_100                                                 :義薄雲天 (車站評價總是100%)
+
+STR_PARAM_VALUE_ECONOMIES_BASIC_TEMPERATE                                       :溫帶基礎經濟模式
+STR_PARAM_VALUE_ECONOMIES_BASIC_ARCTIC                                          :寒帶基礎經濟模式
+STR_PARAM_VALUE_ECONOMIES_BASIC_TROPIC                                          :熱帶基礎經濟模式
+STR_PARAM_VALUE_ECONOMIES_FIRS                                                  :FIRS經濟模式
+STR_PARAM_VALUE_ECONOMIES_TEST_3                                                :測試3經濟模式
+
+STR_CARGO_NAME_ALCOHOL                                                          :酒
+STR_CARGO_NAME_BAUXITE                                                          :鋁土
+STR_CARGO_NAME_BUILDING_MATERIALS                                               :建築材料
+STR_CARGO_NAME_CHEMICALS                                                        :化工品
+STR_CARGO_NAME_CLAY                                                             :粘土
+STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :工程物資
+STR_CARGO_NAME_FIBRES                                                           :植物纖維
+STR_CARGO_NAME_FISH                                                             :魚
+STR_CARGO_NAME_FARM_SUPPLIES                                                    :農用物資
+STR_CARGO_NAME_FRUITS                                                           :水果
+STR_CARGO_NAME_LUMBER                                                           :木料
+STR_CARGO_NAME_METAL                                                            :金屬
+STR_CARGO_NAME_MILK                                                             :牛奶
+STR_CARGO_NAME_MANUFACTURING_SUPPLIES                                           :工業物資
+STR_CARGO_NAME_PETROL                                                           :汽油
+STR_CARGO_NAME_RECYCLABLES                                                      :回收物資
+STR_CARGO_NAME_SAND                                                             :沙子
+STR_CARGO_NAME_SCRAP_METAL                                                      :廢金屬
+STR_CARGO_NAME_STONE                                                            :石料
+STR_CARGO_NAME_SUGAR_BEET                                                       :甜菜
+STR_CARGO_NAME_SUGARCANE                                                        :甘蔗
+STR_CARGO_NAME_WOOL                                                             :羊毛
+
+STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} 酒
+STR_CARGO_UNIT_BAUXITE                                                          :{WEIGHT} 鋁土
+STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WEIGHT} 建築材料
+STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} 化工品
+STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} 粘土
+STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} 箱 工程物資
+STR_CARGO_UNIT_FIBRES                                                           :{SIGNED_WORD} 包 植物纖維
+STR_CARGO_UNIT_FISH                                                             :{WEIGHT} 魚
+STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} 箱 農用物資
+STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} 水果
+STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} 木料
+STR_CARGO_UNIT_METAL                                                            :{WEIGHT} 金屬
+STR_CARGO_UNIT_MILK                                                             :{VOLUME} 牛奶
+STR_CARGO_UNIT_MNSP                                                             :{SIGNED_WORD} 箱 工業物資
+STR_CARGO_UNIT_PETROL                                                           :{VOLUME} 汽油
+STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} 回收物資
+STR_CARGO_UNIT_SAND                                                             :{WEIGHT} 沙子
+STR_CARGO_UNIT_SCRAP_METAL                                                      :{WEIGHT} 廢金屬
+STR_CARGO_UNIT_STONE                                                            :{WEIGHT} 石料
+STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} 甜菜
+STR_CARGO_UNIT_SUGARCANE                                                        :{WEIGHT} 甘蔗
+STR_CARGO_UNIT_WOOL                                                             :{SIGNED_WORD} 包 羊毛
+
+STR_CID_ALCOHOL                                                                 :{TINYFONT}酒
+STR_CID_BAUXITE                                                                 :{TINYFONT}鋁
+STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}建
+STR_CID_CHEMICALS                                                               :{TINYFONT}化
+STR_CID_CLAY                                                                    :{TINYFONT}粘
+STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}程
+STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}農
+STR_CID_FIBRES                                                                  :{TINYFONT}纖
+STR_CID_FISH                                                                    :{TINYFONT}魚
+STR_CID_LUMBER                                                                  :{TINYFONT}料
+STR_CID_MANUFACTURING_SUPPLIES                                                  :{TINYFONT}工
+STR_CID_METAL                                                                   :{TINYFONT}金
+STR_CID_MILK                                                                    :{TINYFONT}奶
+STR_CID_PETROL                                                                  :{TINYFONT}汽
+STR_CID_RECYCLABLES                                                             :{TINYFONT}回
+STR_CID_SAND                                                                    :{TINYFONT}沙
+STR_CID_SCRAP_METAL                                                             :{TINYFONT}廢
+STR_CID_STONE                                                                   :{TINYFONT}石
+STR_CID_SUGAR_BEET                                                              :{TINYFONT}甜
+STR_CID_SUGARCANE                                                               :{TINYFONT}蔗
+STR_CID_WOOL                                                                    :{TINYFONT}毛
+
+STR_ERR_CLIMATE_TOYLAND                                                         :{ORANGE}FIRS不兼容於Toyland climate
+STR_ERR_INCOMPATIBLE_SET                                                        :{ORANGE}E01: {YELLOW}不兼容集: {ORANGE}{STRING} {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_PARAM_CANSET                                               :{ORANGE}E02: {YELLOW}不兼容參數: {ORANGE}CanSet parameter 2 must be 0 to work with FIRS. {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_PARAM_CITYSET                                              :{ORANGE}E02: {YELLOW}不兼容參數: {ORANGE}NA City Set parameter 2 must be 0 to work with FIRS. {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_SET_TTRS_VERSION                                           :{ORANGE}E04: {YELLOW}不兼容版本: {ORANGE}Total Town Replacement Set的版本須3.11以及以上. {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_OPENTTD_VERSION                                                         :{ORANGE}E00: FIRS要求OpenTTD版本是 1.2.0 / trunk r22780或者更高. {YELLOW}Consult FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+
+STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE                                             :須置於雪線以下
+STR_ERR_LOCATION_NOT_ON_WATER                                                   :須置於幹燥土地
+STR_ERR_LOCATION_NOT_IN_DESERT                                                  :不得置於沙漠
+STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE                                             :不能置於陡坡
+STR_ERR_LOCATION_LIMIT_1_PER_TOWN                                               :每城鎮只允許一個該類工業
+
+STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}貨物生產率:{}  每8噸鋁土礦生產2噸{}  每8,000升化工品生產2噸{}  每8噸廢金屬生產4噸{}{}如果一個月內交付兩種或者以上貨物，則產量上升。
+STR_EXTRA_BIOREFINERY                                                           :{BLACK}貨物生產率:{}  每8噸穀物生產6,000升{}  每8噸糖生產6,000升
+STR_EXTRA_BREWERY                                                               :{BLACK}貨物生產率:{}  每8箱工業物資生產3,000升{} {STRING} {STRING}{}如果一個月內同時交付了工業物資和其他貨物，則產量上升。
+STR_EXTRA_BREWERY_GRAIN_SUBSTR                                                  : 每8噸穀物生產5,000升{}
+STR_EXTRA_BREWERY_FRUIT_SUBSTR                                                  : 每8噸水果生產5,000升{}
+STR_EXTRA_BRICKWORKS                                                            :{BLACK}貨物生產率:{}  每8噸煤炭生產2噸{}  每8噸沙子生產2噸{}  每8噸粘土生產4噸{}{}如果一個月內交付兩種或者以上貨物，則產量上升。
+STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}貨物生產率:{}  每8噸煤炭生產2噸{}  每8噸粘土生產2噸{}  每8噸石料生產4噸{}{}如果一個月內交付兩種或者以上貨物，則產量上升。
+STR_EXTRA_DAIRY                                                                 :{BLACK}貨物生產率:{}  每8箱工業物資生產3噸{}  每8,000升牛奶生產5噸{}{}如果一個月內交付了這兩種貨物，則產量上升。
+STR_EXTRA_FERTILIZER_PLANT                                                      :{BLACK}貨物生產率:{}  每8,000升化工品生產8箱
+STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}貨物生產率:{}  每8箱工業物資生產3噸{}  每8噸魚生產5噸{}{}如果一個月內交付了這兩種貨物，則產量上升。
+STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}貨物生產率:{}  每8箱工業物資生產3噸{}  每8噸木料生產5噸{}{}如果一個月內交付了這兩種貨物，則產量上升。
+STR_EXTRA_GLASS_WORKS                                                           :{BLACK}生產玻璃制品如瓶子、罐子和玻璃窗。{}{}{BLACK}貨物生產率:{}  每8噸沙子生產6噸{}  每8,000升化工品生產2噸{}{}如果一個月內交付了這兩種貨物，則產量上升。
+STR_EXTRA_GRAIN_MILL                                                            :{BLACK}貨物生產率:{}  每8箱工業物資生產3噸{}  每8噸穀物生產5噸{}{}如果一個月內交付了這兩種貨物，則產量上升。
+STR_EXTRA_IRON_WORKS                                                            :{BLACK}貨物生產率:{}  每8噸木料生產2噸{}  每8噸鐵礦生產2噸{}{}如果一個月內交付了這兩種貨物，則產量上升。
+STR_EXTRA_LIME_KILN                                                             :{BLACK}貨物生產率:{}  每8箱石料生產3噸{}  每8箱煤炭生產3噸{}{}如果一個月內交付了這兩種貨物，則產量上升。
+STR_EXTRA_LUMBER_YARD                                                           :{BLACK}生產諸如木杆、籬笆欄等事物。{}{}{BLACK}貨物生產率:{}  每8,000升化工品生產2噸{}  每8噸木料生產6噸{}{}如果一個月內交付了這兩種貨物，則產量上升。
+STR_EXTRA_MACHINE_SHOP                                                          :{BLACK}機械制造和維修。{}{}貨物生產率:{}  每8,000升汽油生產8箱{}  每8噸金屬生產8箱
+STR_EXTRA_MEAT_PACKER                                                           :{BLACK}貨物生產率:{}  每8箱工業物資生產3噸{}  每8噸牲畜生產5噸{}{}如果一個月內交付了這兩種貨物，則產量上升。
+STR_EXTRA_METAL_FABRICATION_PLANT                                               :{BLACK}生產噴漆好的金屬部件{}{}{BLACK}貨物生產率:{}  每8,000升化工品生產2噸{}  每8箱金屬生產6噸{}{}如果一個月內交付了這兩種貨物，則產量上升。
+STR_EXTRA_METAL_FOUNDRY                                                         :{BLACK}生產電鍍金屬物件如罐頭、五金器具、家居商品。{}{}{BLACK}貨物生產率:{}  每8,000升化工品生產2箱{}  每8噸金屬生產6箱{}{}如果一個月內交付了這兩種貨物，則產量上升。
+STR_EXTRA_OIL_REFINERY                                                          :{BLACK}原油加工成汽油和化工品。{}{}貨物生產率:{}  每8,000升生產6,000升。
+STR_EXTRA_PAPER_MILL                                                            :{BLACK}紙漿木材生產紙張和紙板箱。{}{}{BLACK}貨物生產率:{}  每8噸木材生產4箱{}  每8噸粘土生產2箱{}  每8,000升噸化工品生產2箱{}{}如果一個月內交付兩種或者以上貨物，則產量上升。
+STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}生產塑料制品如包裝盒和家居品{}{}貨物生產率:{} {STRING} {STRING}
+STR_EXTRA_PLASTICS_PLANT_CHEMICALS_SUBSTR                                       : 每8,000升化工品生產6箱{}
+STR_EXTRA_PLASTICS_PLANT_PLANT_FIBRES_SUBSTR                                    : 每8包植物纖維生產6箱{}
+STR_EXTRA_RECYCLING_PLANT                                                       :{BLACK}處理可回收物品以再循環利用。{}{}貨物生產率:{}  每8噸回收物資生產6噸
+STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}生產量正比於城鎮人口。
+STR_EXTRA_SAWMILL                                                               :{BLACK}加工原木成木料。{}{}貨物生產率:{}  每8噸原木生產6噸
+STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}生產金屬制品如工具、犁、門、鍬和馬蹄鐵等。{}{}貨物生產率:{}  每8噸金屬生產8箱
+STR_EXTRA_STEELMILL                                                             :{BLACK}貨物生產率:{}  每8噸鐵礦石生產2噸{}  每8噸煤炭生產2噸{}  每8噸廢金屬生產4噸{}{}如果一個月內交付兩種或者以上貨物，則產量上升。
+STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}貨物生產率:{}  每8箱工業物資生產3噸{}  每8噸甜菜生產5噸{}{}如果一個月內交付了這兩種貨物，則產量上升。
+STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}貨物生產率:{}  每8箱工業物資生產3箱{} {STRING} {STRING}{}如果月內同時交付了工業物資和其他貨物，則產品上升。
+STR_EXTRA_TEXTILE_MILL_WOOL_SUBSTR                                              : 每8包羊毛生產5箱{}
+STR_EXTRA_TEXTILE_MILL_PLANT_FIBRES_SUBSTR                                      : 每8包植物纖維生產5箱{}
+
+STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ DEBUG ------------{}Production this month:{}Cargo 1: {WHITE}{COMMA}{BLACK}{}Cargo 2: {WHITE}{COMMA}{BLACK}{}Days since last delivery: {WHITE}{COMMA}{BLACK}
+STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}達到最大產量
+STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}當前產量: {YELLOW}標准{}{}{BLACK}欲產量翻倍，須3個月內交付 {SIGNED_WORD} 箱物資 (或交付 {SIGNED_WORD} 箱物資提升產量至4倍)
+STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}當前產量: {YELLOW}提升 (雙倍){}{}{BLACK}為保持此水准，須三個月內交付 {SIGNED_WORD} 箱物資，或者 交付{SIGNED_WORD} 箱物資提升產量至4倍
+STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}當前產量: {YELLOW}工合 (四倍){}{}{BLACK}為保持此水准，須三個月內交付 {SIGNED_WORD} 箱物資
+STR_PORT_PRODUCTION_1X                                                          :{BLACK}當前產量: {YELLOW}標准{}{}{BLACK}欲產量翻倍，須3個月內交付 {SIGNED_WORD} 單位的貨物{}欲4倍產量，須三個月內交付 {SIGNED_WORD} 單位的貨物
+STR_PORT_PRODUCTION_2X                                                          :{BLACK}當前產量: {YELLOW}提升 (雙倍){}{}{BLACK}為保持此水准，須三個月內交付 {SIGNED_WORD} 單位的貨物， 或者 {SIGNED_WORD} 單位的貨物提升產量至四倍
+STR_PORT_PRODUCTION_4X                                                          :{BLACK}當前產量: {YELLOW}工合 (四倍){}{}{BLACK}為保持此水准，須三個月內交付 {SIGNED_WORD} 單位的貨物
+STR_GENERIC_NEWLINE                                                             :{}
+
+STR_FUND_BASIC_FARM                                                             :{}{BLACK}位置: {YELLOW}不得修建於雪地或者沙漠。
+STR_FUND_MIXED_FARM                                                             :{}{BLACK}位置: {YELLOW}不得修建於雪地或者沙漠。
+STR_FUND_ARABLE_FARM                                                            :{}{BLACK}位置: {YELLOW}不得修建於雪地或者沙漠。
+STR_FUND_ORCHARD_PIGGERY                                                        :{}{BLACK}位置: {YELLOW}不得修建於雪地或者沙漠。
+STR_FUND_SUGAR_PLANTATION                                                       :{}{BLACK}位置: {YELLOW}不得修建於雪地或者沙漠。
+STR_FUND_FOREST                                                                 :{}{BLACK}位置: {YELLOW}不得在沙漠修建。
+STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}位置: {YELLOW}不得在雪地修建。
+
+
+STR_FUND_AVAILABLE_FROM                                                         :{}{BLACK}起始於: {YELLOW}{COMMA}
+
+STR_FUND_AVAILABLE_UNTIL                                                        :{}{BLACK}終結於: {YELLOW}{COMMA}
+
+
+STR_TOWN                                                                        :{STRING}
+STR_STATION                                                                     :{STRING} {STRING}
+
+STR_IND_ALUMINIUM_PLANT                                                         :電解鋁廠
+STR_IND_ARABLE_FARM                                                             :種植園
+STR_IND_BASICFARM                                                               :農場
+STR_IND_BAUXITE_MINE                                                            :鋁土礦
+STR_IND_BIOREFINERY                                                             :生物煉制廠
+STR_IND_BREWERY                                                                 :釀酒廠
+STR_IND_BREWERY_CIDER_MILL                                                      :蘋果酒廠
+STR_IND_BRICK_WORKS                                                             :磚廠
+STR_IND_BUILDERS_YARD                                                           :建築工地
+STR_IND_CEMENT_PLANT                                                            :水泥廠
+STR_IND_CLAY_PIT                                                                :粘土礦坑
+STR_IND_DAIRY                                                                   :乳品廠
+STR_IND_DAIRYFARM                                                               :奶牛場
+STR_IND_DREDGING_SITE                                                           :疏浚區
+STR_IND_FERTILISER_PLANT                                                        :化肥廠
+STR_IND_FISHING_GROUND                                                          :漁場
+STR_IND_FISHING_HARBOUR                                                         :漁港
+STR_IND_FOOD_MARKET                                                             :雜貨店
+STR_IND_FURNITURE_FACTORY                                                       :家具廠
+STR_IND_GENERAL_STORE                                                           :綜合商店
+STR_IND_GLASS_WORKS                                                             :玻璃制品廠
+STR_IND_GRAIN_MILL                                                              :磨坊
+STR_IND_HARDWARE_STORE                                                          :五金工具店
+STR_IND_HOTEL                                                                   :旅店
+STR_IND_IRON_WORKS                                                              :煉鐵廠
+STR_IND_JUNKYARD                                                                :廢料場
+STR_IND_LIME_KILN                                                               :石灰窯
+STR_IND_LUMBER_YARD                                                             :木材加工廠
+STR_IND_MACHINE_SHOP                                                            :機械廠
+STR_IND_METAL_FABRICATION_PLANT                                                 :金屬加工廠
+STR_IND_METAL_FOUNDRY                                                           :金工工坊
+STR_IND_MIXEDFARM                                                               :綜合農場
+STR_IND_ORCHARD_PIGGERY                                                         :生態農場
+STR_IND_PETROLPUMP                                                              :加油站
+STR_IND_PLASTICS_PLANT                                                          :塑料廠
+STR_IND_PORT                                                                    :港口
+STR_IND_QUARRY                                                                  :采石場
+STR_IND_RANCH                                                                   :大牧場
+STR_IND_RECYCLING_DEPOT                                                         :回收站
+STR_IND_RECYCLING_PLANT                                                         :回收廠
+STR_IND_SHEEPFARM                                                               :牧羊場
+STR_IND_SMITHY_FORGE                                                            :鐵匠鋪
+STR_IND_STOCKYARD                                                               :肉聯廠
+STR_IND_SUGAR_PLANTATION                                                        :糖料種植園
+STR_IND_SUGAR_REFINERY                                                          :制糖廠
+STR_IND_SUPERMARKET                                                             :超市
+STR_IND_TEXTILE_MILL                                                            :紡織廠
+
