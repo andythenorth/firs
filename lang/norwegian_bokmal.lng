@@ -3,48 +3,105 @@
 ##gender masculine feminine neuter
 ##case small
 
+STR_GRF_NAME                                                                    :{TITLE}
+STR_GRF_URL                                                                     :http://bundles.openttdcoop.org/firs/releases/LATEST/docs/
 
+STR_PARAM_DESC_DEBUG                                                            :Bare for utviklere
 STR_PARAM_NAME_ECONOMIES                                                        :Økonomi
+STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            :Tillat sekundære industrier å stenge
 
 STR_PARAM_VALUE_ECONOMIES_TEST_3                                                :Test økonomi 3
 
 STR_CARGO_NAME_ALCOHOL                                                          :Alkohol
 STR_CARGO_NAME_BUILDING_MATERIALS                                               :Bygningsmaterialer
 STR_CARGO_NAME_CHEMICALS                                                        :Kjemikalier
+STR_CARGO_NAME_COFFEE                                                           :Kaffe
 STR_CARGO_NAME_FIBRES                                                           :Plantefiber
 STR_CARGO_NAME_FISH                                                             :Fisk
 STR_CARGO_NAME_METAL                                                            :Metall
 STR_CARGO_NAME_MILK                                                             :Melk
+STR_CARGO_NAME_PETROL                                                           :Bensin
 STR_CARGO_NAME_STONE                                                            :Stein
+STR_CARGO_NAME_SUGAR_BEET                                                       :Sukkerroe
+STR_CARGO_NAME_SUGARCANE                                                        :Sukkerrør
+STR_CARGO_NAME_WOOL                                                             :Ull
 
+STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} alkohol
+STR_CARGO_UNIT_BAUXITE                                                          :{WEIGHT} bauksitt
+STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} kjemikalier
+STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} kasser{P 0 "" r} med engineering tilbehør
 STR_CARGO_UNIT_FISH                                                             :{WEIGHT} fisk
+STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} kasse{P 0 "" r} med gårdstilbehør
 STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} frukt
+STR_CARGO_UNIT_METAL                                                            :{WEIGHT} metall
 STR_CARGO_UNIT_MILK                                                             :{VOLUME} melk
 STR_CARGO_UNIT_PETROL                                                           :{VOLUME} bensin
+STR_CARGO_UNIT_SCRAP_METAL                                                      :{WEIGHT} skrapmetall
+STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} sukkerroe
 STR_CARGO_UNIT_SUGARCANE                                                        :{WEIGHT} sukkerrør
 
+STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}BM
+STR_CID_CHEMICALS                                                               :{TINYFONT}CH
+STR_CID_FIBRES                                                                  :{TINYFONT}PF
+STR_CID_FISH                                                                    :{TINYFONT}FI
+STR_CID_LUMBER                                                                  :{TINYFONT}LU
+STR_CID_PETROL                                                                  :{TINYFONT}PT
+STR_CID_RECYCLABLES                                                             :{TINYFONT}RC
+STR_CID_SUGAR_BEET                                                              :{TINYFONT}SB
+STR_CID_SUGARCANE                                                               :{TINYFONT}SC
+STR_CID_WOOL                                                                    :{TINYFONT}WL
 
 
+STR_ERR_LOCATION_NOT_ON_WATER                                                   :må plasseres på tørt land.
 STR_ERR_LOCATION_NOT_IN_DESERT                                                  :kan ikke settes i ørken.
 
+STR_EXTRA_BREWERY_GRAIN_SUBSTR                                                  :5,000l pr 8t korn levert{}
+STR_EXTRA_TEXTILE_MILL_WOOL_SUBSTR                                              :5 kasser pr 8 baller ull levert{}
+
+STR_GENERIC_NEWLINE                                                             :{}
+
+STR_FUND_ARABLE_FARM                                                            :{}{BLACK}Lokasjon: {YELLOW}Kan ikke startes i snø eller ørken.
 
 
-
-
+STR_FUND_AVAILABLE_FROM                                                         :{}{BLACK}Tilgjengelig fra: {YELLOW}{COMMA}
 
 
 
 STR_TOWN                                                                        :{STRING}
+STR_STATION                                                                     :{STRING} {STRING}
 
+STR_IND_ALUMINIUM_PLANT                                                         :Aluminiumsverk
+STR_IND_BASICFARM                                                               :Gård
+STR_IND_BREWERY                                                                 :Bryggeri
 STR_IND_CLAY_PIT                                                                :Leirgruve
 STR_IND_COFFEE_ESTATE                                                           :Kaffiplantasje
 STR_IND_DAIRY                                                                   :Meiri
+STR_IND_FERTILISER_PLANT                                                        :Gjødselfabrikk
 STR_IND_FISHING_GROUND                                                          :Fiskebanke
 STR_IND_FISHING_HARBOUR                                                         :Fiskehavn
-STR_IND_GRAIN_MILL                                                              :Mølle
+STR_IND_FURNITURE_FACTORY                                                       :Møbelfabrikk
+STR_IND_GRAIN_MILL                                                              :Kornmølle
+STR_IND_HARDWARE_STORE                                                          :Jernvarehandel
 STR_IND_HOTEL                                                                   :Hotel
+STR_IND_IRON_WORKS                                                              :Jernverk
+STR_IND_JUNKYARD                                                                :Skraphandel
+STR_IND_LIME_KILN                                                               :Kalksteinsbrenneri
+STR_IND_PETROLPUMP                                                              :Bensinstasjon
+STR_IND_PLASTICS_PLANT                                                          :Plastikkfabrikk
+STR_IND_QUARRY                                                                  :Gruve
+STR_IND_RECYCLING_DEPOT                                                         :Gjenvinningsdepot
 STR_IND_RECYCLING_PLANT                                                         :Gjenvinningsstasjon
 STR_IND_SHEEPFARM                                                               :Sauefarm
+STR_IND_SUGAR_PLANTATION                                                        :Sukkerplantasje
+STR_IND_SUGAR_REFINERY                                                          :Sukkerraffineri
+STR_IND_SUPERMARKET                                                             :Supermarked
 STR_IND_TEXTILE_MILL                                                            :Tekstilfabrikk
+STR_IND_TRADING_POST                                                            :Handelsstasjon
 
+STR_STATION_ANIMALS                                                             :Hestemarked
+STR_STATION_FISHMARKET                                                          :Fiskemarked
+STR_STATION_INDUSTRY_ESTATE                                                     :Industripark
+STR_STATION_INDUSTRY_HARBOUR                                                    :Industrihavn
+STR_STATION_MILL                                                                :Mølle
+STR_STATION_PLANTATION                                                          :Plantasje
 STR_STATION_WATER                                                               :Sandbanke
