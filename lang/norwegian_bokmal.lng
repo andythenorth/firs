@@ -13,6 +13,7 @@ STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            
 STR_PARAM_VALUE_ECONOMIES_TEST_3                                                :Test økonomi 3
 
 STR_CARGO_NAME_ALCOHOL                                                          :Alkohol
+STR_CARGO_NAME_BAUXITE                                                          :Bauksitt
 STR_CARGO_NAME_BUILDING_MATERIALS                                               :Bygningsmaterialer
 STR_CARGO_NAME_CHEMICALS                                                        :Kjemikalier
 STR_CARGO_NAME_COFFEE                                                           :Kaffe
@@ -37,11 +38,13 @@ STR_CARGO_UNIT_METAL                                                            
 STR_CARGO_UNIT_MILK                                                             :{VOLUME} melk
 STR_CARGO_UNIT_PETROL                                                           :{VOLUME} bensin
 STR_CARGO_UNIT_SCRAP_METAL                                                      :{WEIGHT} skrapmetall
+STR_CARGO_UNIT_STONE                                                            :{WEIGHT} stein
 STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} sukkerroe
 STR_CARGO_UNIT_SUGARCANE                                                        :{WEIGHT} sukkerrør
 
 STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}BM
 STR_CID_CHEMICALS                                                               :{TINYFONT}CH
+STR_CID_COFFEE                                                                  :{TINYFONT}CF
 STR_CID_FIBRES                                                                  :{TINYFONT}PF
 STR_CID_FISH                                                                    :{TINYFONT}FI
 STR_CID_LUMBER                                                                  :{TINYFONT}LU
@@ -54,8 +57,10 @@ STR_CID_WOOL                                                                    
 
 STR_ERR_LOCATION_NOT_ON_WATER                                                   :må plasseres på tørt land.
 STR_ERR_LOCATION_NOT_IN_DESERT                                                  :kan ikke settes i ørken.
+STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE                                             :kan ikke plasseres på bratte skråninger
 
 STR_EXTRA_BREWERY_GRAIN_SUBSTR                                                  :5,000l pr 8t korn levert{}
+STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}Produksjonen er proporsjonal til byens innbyggertall.
 STR_EXTRA_TEXTILE_MILL_WOOL_SUBSTR                                              :5 kasser pr 8 baller ull levert{}
 
 STR_GENERIC_NEWLINE                                                             :{}
@@ -102,6 +107,8 @@ STR_STATION_ANIMALS                                                             
 STR_STATION_FISHMARKET                                                          :Fiskemarked
 STR_STATION_INDUSTRY_ESTATE                                                     :Industripark
 STR_STATION_INDUSTRY_HARBOUR                                                    :Industrihavn
+STR_STATION_MARKET                                                              :Marked
 STR_STATION_MILL                                                                :Mølle
 STR_STATION_PLANTATION                                                          :Plantasje
+STR_STATION_POWERHUNGRY                                                         :Kraftverk
 STR_STATION_WATER                                                               :Sandbanke
