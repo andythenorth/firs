@@ -26,6 +26,7 @@ STR_PARAM_VALUE_ECONOMIES_BASIC_TEMPERATE                                       
 STR_PARAM_VALUE_ECONOMIES_BASIC_ARCTIC                                          :寒帶基礎經濟模式
 STR_PARAM_VALUE_ECONOMIES_BASIC_TROPIC                                          :熱帶基礎經濟模式
 STR_PARAM_VALUE_ECONOMIES_FIRS                                                  :FIRS經濟模式
+STR_PARAM_VALUE_ECONOMIES_MISTAH_KURTZ                                          :「黑暗之心」經濟模式
 STR_PARAM_VALUE_ECONOMIES_TEST_3                                                :測試3經濟模式
 
 STR_CARGO_NAME_ALCOHOL                                                          :酒
@@ -33,6 +34,7 @@ STR_CARGO_NAME_BAUXITE                                                          
 STR_CARGO_NAME_BUILDING_MATERIALS                                               :建築材料
 STR_CARGO_NAME_CHEMICALS                                                        :化工品
 STR_CARGO_NAME_CLAY                                                             :粘土
+STR_CARGO_NAME_COFFEE                                                           :咖啡
 STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :工程物資
 STR_CARGO_NAME_FIBRES                                                           :植物纖維
 STR_CARGO_NAME_FISH                                                             :魚
@@ -56,6 +58,7 @@ STR_CARGO_UNIT_BAUXITE                                                          
 STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WEIGHT} 建築材料
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} 化工品
 STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} 粘土
+STR_CARGO_UNIT_COFFEE                                                           :{SIGNED_WORD} 袋咖啡
 STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} 箱 工程物資
 STR_CARGO_UNIT_FIBRES                                                           :{SIGNED_WORD} 包 植物纖維
 STR_CARGO_UNIT_FISH                                                             :{WEIGHT} 魚
@@ -79,6 +82,7 @@ STR_CID_BAUXITE                                                                 
 STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}建
 STR_CID_CHEMICALS                                                               :{TINYFONT}化
 STR_CID_CLAY                                                                    :{TINYFONT}粘
+STR_CID_COFFEE                                                                  :{TINYFONT}啡
 STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}程
 STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}農
 STR_CID_FIBRES                                                                  :{TINYFONT}纖
@@ -157,10 +161,13 @@ STR_GENERIC_NEWLINE                                                             
 STR_FUND_BASIC_FARM                                                             :{}{BLACK}位置: {YELLOW}不得修建於雪地或者沙漠。
 STR_FUND_MIXED_FARM                                                             :{}{BLACK}位置: {YELLOW}不得修建於雪地或者沙漠。
 STR_FUND_ARABLE_FARM                                                            :{}{BLACK}位置: {YELLOW}不得修建於雪地或者沙漠。
+STR_FUND_COFFEE_ESTATE                                                          :{}{BLACK}位置: {YELLOW}不得修建於雪地或者沙漠。
 STR_FUND_ORCHARD_PIGGERY                                                        :{}{BLACK}位置: {YELLOW}不得修建於雪地或者沙漠。
 STR_FUND_SUGAR_PLANTATION                                                       :{}{BLACK}位置: {YELLOW}不得修建於雪地或者沙漠。
+STR_FUND_FIBRE_CROP_FARM                                                        :{}{BLACK}位置: {YELLOW}不得修建於雪地或者沙漠。
 STR_FUND_FOREST                                                                 :{}{BLACK}位置: {YELLOW}不得在沙漠修建。
 STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}位置: {YELLOW}不得在雪地修建。
+STR_FUND_RUBBER_PLANTATION                                                      :{}{BLACK}位置: {YELLOW}不得修建於雪地或者沙漠。
 
 
 STR_FUND_AVAILABLE_FROM                                                         :{}{BLACK}起始於: {YELLOW}{COMMA}
@@ -180,8 +187,11 @@ STR_IND_BREWERY                                                                 
 STR_IND_BREWERY_CIDER_MILL                                                      :蘋果酒廠
 STR_IND_BRICK_WORKS                                                             :磚廠
 STR_IND_BUILDERS_YARD                                                           :建築工地
+STR_IND_BULK_TERMINAL                                                           :重型貨運站
 STR_IND_CEMENT_PLANT                                                            :水泥廠
 STR_IND_CLAY_PIT                                                                :粘土礦坑
+STR_IND_COFFEE_ESTATE                                                           :咖啡園
+STR_IND_FIBRE_CROP_FARM                                                         :纖維作物農場
 STR_IND_DAIRY                                                                   :乳品廠
 STR_IND_DAIRYFARM                                                               :奶牛場
 STR_IND_DREDGING_SITE                                                           :疏浚區
@@ -218,4 +228,17 @@ STR_IND_SUGAR_PLANTATION                                                        
 STR_IND_SUGAR_REFINERY                                                          :制糖廠
 STR_IND_SUPERMARKET                                                             :超市
 STR_IND_TEXTILE_MILL                                                            :紡織廠
+STR_IND_TRADING_POST                                                            :貿易站
 
+STR_STATION_ANIMALS                                                             :馬市
+STR_STATION_FARM                                                                :莊園
+STR_STATION_INDUSTRY_ESTATE                                                     :工業園區
+STR_STATION_INDUSTRY_HARBOUR                                                    :貨港
+STR_STATION_MARKET                                                              :市場
+STR_STATION_MILL                                                                :坊
+STR_STATION_PIT                                                                 :礦坑
+STR_STATION_PLANTATION                                                          :種植園
+STR_STATION_POWERHUNGRY                                                         :電站
+STR_STATION_REFINERY                                                            :港口
+STR_STATION_TOWN                                                                :市中心
+STR_STATION_WATER                                                               :沙堤

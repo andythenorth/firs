@@ -16,6 +16,7 @@ STR_CARGO_NAME_ALCOHOL                                                          
 STR_CARGO_NAME_BAUXITE                                                          :Bauksitt
 STR_CARGO_NAME_BUILDING_MATERIALS                                               :Bygningsmaterialer
 STR_CARGO_NAME_CHEMICALS                                                        :Kjemikalier
+STR_CARGO_NAME_CLAY                                                             :Leire
 STR_CARGO_NAME_COFFEE                                                           :Kaffe
 STR_CARGO_NAME_FIBRES                                                           :Plantefiber
 STR_CARGO_NAME_FISH                                                             :Fisk
@@ -29,14 +30,17 @@ STR_CARGO_NAME_WOOL                                                             
 
 STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} alkohol
 STR_CARGO_UNIT_BAUXITE                                                          :{WEIGHT} bauksitt
+STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WEIGHT} bygningsmaterialer
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} kjemikalier
 STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} kasser{P 0 "" r} med engineering tilbehør
+STR_CARGO_UNIT_FIBRES                                                           :{SIGNED_WORD} ball{P 0 "" er} med plantefiber
 STR_CARGO_UNIT_FISH                                                             :{WEIGHT} fisk
 STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} kasse{P 0 "" r} med gårdstilbehør
 STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} frukt
 STR_CARGO_UNIT_METAL                                                            :{WEIGHT} metall
 STR_CARGO_UNIT_MILK                                                             :{VOLUME} melk
 STR_CARGO_UNIT_PETROL                                                           :{VOLUME} bensin
+STR_CARGO_UNIT_SAND                                                             :{WEIGHT} sand
 STR_CARGO_UNIT_SCRAP_METAL                                                      :{WEIGHT} skrapmetall
 STR_CARGO_UNIT_STONE                                                            :{WEIGHT} stein
 STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} sukkerroe
@@ -60,9 +64,13 @@ STR_ERR_LOCATION_NOT_IN_DESERT                                                  
 STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE                                             :kan ikke plasseres på bratte skråninger
 
 STR_EXTRA_BREWERY_GRAIN_SUBSTR                                                  :5,000l pr 8t korn levert{}
+STR_EXTRA_PLASTICS_PLANT_CHEMICALS_SUBSTR                                       :6 kasser pr 8000l kjemikalier levert{}
+STR_EXTRA_PLASTICS_PLANT_PLANT_FIBRES_SUBSTR                                    :6 kasser pr 8 baller plantefiber levert{}
 STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}Produksjonen er proporsjonal til byens innbyggertall.
 STR_EXTRA_TEXTILE_MILL_WOOL_SUBSTR                                              :5 kasser pr 8 baller ull levert{}
 
+STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Maksimal produksjon oppnådd
+STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}Produserer nå: {YELLOW}Gung ho (kvadruppel){}{}{BLACK}For å opprettholde dette, lever {SIGNED_WORD} kasser innen tre måneder
 STR_GENERIC_NEWLINE                                                             :{}
 
 STR_FUND_ARABLE_FARM                                                            :{}{BLACK}Lokasjon: {YELLOW}Kan ikke startes i snø eller ørken.
@@ -77,6 +85,7 @@ STR_STATION                                                                     
 
 STR_IND_ALUMINIUM_PLANT                                                         :Aluminiumsverk
 STR_IND_BASICFARM                                                               :Gård
+STR_IND_BAUXITE_MINE                                                            :Bauksittgruve
 STR_IND_BREWERY                                                                 :Bryggeri
 STR_IND_CLAY_PIT                                                                :Leirgruve
 STR_IND_COFFEE_ESTATE                                                           :Kaffiplantasje
@@ -97,6 +106,7 @@ STR_IND_QUARRY                                                                  
 STR_IND_RECYCLING_DEPOT                                                         :Gjenvinningsdepot
 STR_IND_RECYCLING_PLANT                                                         :Gjenvinningsstasjon
 STR_IND_SHEEPFARM                                                               :Sauefarm
+STR_IND_SMITHY_FORGE                                                            :Smie
 STR_IND_SUGAR_PLANTATION                                                        :Sukkerplantasje
 STR_IND_SUGAR_REFINERY                                                          :Sukkerraffineri
 STR_IND_SUPERMARKET                                                             :Supermarked
