@@ -47,7 +47,7 @@ ${industry.get_industry_layouts_as_tilelayouts()}
  * *************************************************/
 
 /* availability years */
-#define THIS_MIN_YEAR 1878
+#define THIS_MIN_YEAR 1850
 
 CHECK_TOWN_DISTANCE (town_distance, 0, 144, return CB_RESULT_LOCATION_ALLOW)
 CHECK_FOUNDER       (${industry.id}_town_distance)

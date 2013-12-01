@@ -97,7 +97,7 @@ item(FEAT_INDUSTRYTILES, ${industry.id}_tile_6, 57) {
 #define THIS_BOOST_31             4
 #define THIS_BOOST_32             4
 /* availability years */
-#define THIS_MIN_YEAR 1873
+#define THIS_MIN_YEAR 1850
 
 
 CHECK_INCOMPATIBLE  (steel_mill,     56, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
