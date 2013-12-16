@@ -130,23 +130,23 @@ spriteset_warehouse = industry.add_spriteset(
     id = 'bulk_terminal_spriteset_warehouse',
     sprites = [(650, 10, 64, 84, -31, -61)],
 )
-spriteset_large_crane_nw_se = industry.add_spriteset(
-    id = 'bulk_terminal_spriteset_large_crane_nw_se',
-    sprites = [(440, 110, 64, 84, -31, -43)],
-    zoffset = 18,
-)
 spriteset_large_crane_ne_sw = industry.add_spriteset(
     id = 'bulk_terminal_spriteset_large_crane_ne_sw',
-    sprites = [(510, 110, 64, 84, -31, -43)],
+    sprites = [(444, 110, 64, 84, -31, -43)],
     zoffset = 18,
 )
-spriteset_large_crane_sw_ne = industry.add_spriteset(
-    id = 'bulk_terminal_spriteset_large_crane_sw_ne',
-    sprites = [(580, 110, 64, 84, -31, -43)],
+spriteset_large_crane_nw_se = industry.add_spriteset(
+    id = 'bulk_terminal_spriteset_large_crane_nw_se',
+    sprites = [(510, 110, 64, 84, -31, -43)],
     zoffset = 18,
 )
 spriteset_large_crane_se_nw = industry.add_spriteset(
     id = 'bulk_terminal_spriteset_large_crane_se_nw',
+    sprites = [(580, 110, 64, 84, -31, -43)],
+    zoffset = 18,
+)
+spriteset_large_crane_sw_ne = industry.add_spriteset(
+    id = 'bulk_terminal_spriteset_large_crane_sw_ne',
     sprites = [(650, 110, 64, 84, -31, -43)],
     zoffset = 18,
 )
@@ -173,6 +173,10 @@ spriteset_boat_5 = industry.add_spriteset(
 spriteset_boat_6 = industry.add_spriteset(
     id = 'bulk_terminal_spriteset_boat_6',
     sprites = [(360, 110, 64, 39, -25, -20)],
+)
+spriteset_boat_7 = industry.add_spriteset(
+    id = 'bulk_terminal_spriteset_boat_7',
+    sprites = [(360, 110, 64, 39, -29, -5)],
 )
 
 industry.add_spritelayout(
@@ -332,6 +336,12 @@ industry.add_spritelayout(
     building_sprites = [spriteset_boat_6]
 )
 industry.add_spritelayout(
+    id = 'bulk_terminal_spritelayout_water_coaster_se_nw',
+    ground_sprite = sprite_ground,
+    ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_boat_7]
+)
+industry.add_spritelayout(
     id = 'bulk_terminal_spritelayout_28',
     ground_sprite = spriteset_ground_empty,
     ground_overlay = spriteset_ground_empty,
@@ -347,7 +357,25 @@ industry.add_spritelayout(
     id = 'bulk_terminal_spritelayout_crane_nw_se',
     ground_sprite = spriteset_ground_empty,
     ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_jetty_se_nw, spriteset_jetty_ne_sw, spriteset_concrete, spriteset_large_crane_nw_se]
+)
+industry.add_spritelayout(
+    id = 'bulk_terminal_spritelayout_crane_sw_ne',
+    ground_sprite = spriteset_ground_empty,
+    ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_jetty_se_nw, spriteset_jetty_ne_sw, spriteset_concrete, spriteset_large_crane_sw_ne]
+)
+industry.add_spritelayout(
+    id = 'bulk_terminal_spritelayout_crane_ne_sw',
+    ground_sprite = spriteset_ground_empty,
+    ground_overlay = spriteset_ground_empty,
     building_sprites = [spriteset_jetty_se_nw, spriteset_jetty_ne_sw, spriteset_concrete, spriteset_large_crane_ne_sw]
+)
+industry.add_spritelayout(
+    id = 'bulk_terminal_spritelayout_crane_se_nw',
+    ground_sprite = spriteset_ground_empty,
+    ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_jetty_se_nw, spriteset_jetty_ne_sw, spriteset_concrete, spriteset_large_crane_se_nw]
 )
 industry.add_spritelayout(
     id = 'bulk_terminal_spritelayout_jetty_empty',
@@ -366,29 +394,29 @@ industry.add_industry_layout(
     id = 'bulk_terminal_industry_layout_1',
     layout = [
               (0, 0, '255', 'bulk_terminal_spritelayout_null'),
-              (0, 1, 'bulk_terminal_tile_1', 'bulk_terminal_spritelayout_water_barge_nw_se'),
-              (0, 2, 'bulk_terminal_tile_1', 'bulk_terminal_spritelayout_water_barge_nw_se'),
-              (0, 3, 'bulk_terminal_tile_1', 'bulk_terminal_spritelayout_water_barge_nw_se'),
-              (0, 4, 'bulk_terminal_tile_1', 'bulk_terminal_spritelayout_28'),
-              (0, 5, 'bulk_terminal_tile_2', 'bulk_terminal_slope_switch_1'),
+              (0, 1, 'bulk_terminal_tile_1', 'bulk_terminal_spritelayout_water_empty'),
+              (0, 2, 'bulk_terminal_tile_1', 'bulk_terminal_spritelayout_water_coaster_se_nw'),
+              (0, 3, 'bulk_terminal_tile_1', 'bulk_terminal_spritelayout_water_empty'),
+              (0, 4, 'bulk_terminal_tile_1', 'bulk_terminal_spritelayout_crane_se_nw'),
+              (0, 5, 'bulk_terminal_tile_2', 'bulk_terminal_slope_switch_2'),
               (1, 0, '255', 'bulk_terminal_spritelayout_null'),
-              (1, 1, 'bulk_terminal_tile_1', 'bulk_terminal_spritelayout_warehouse_13'),
-              (1, 2, 'bulk_terminal_tile_1', 'bulk_terminal_spritelayout_crane_nw_se'),
+              (1, 1, 'bulk_terminal_tile_1', 'bulk_terminal_spritelayout_crane_rails_nw_se'),
+              (1, 2, 'bulk_terminal_tile_1', 'bulk_terminal_spritelayout_crane_se_nw'),
               (1, 3, 'bulk_terminal_tile_1', 'bulk_terminal_spritelayout_crane_rails_nw_se'),
-              (1, 4, 'bulk_terminal_tile_1', 'bulk_terminal_spritelayout_11'),
-              (1, 5, 'bulk_terminal_tile_2', 'bulk_terminal_slope_switch_1'),
+              (1, 4, 'bulk_terminal_tile_1', 'bulk_terminal_spritelayout_jetty_empty'),
+              (1, 5, 'bulk_terminal_tile_2', 'bulk_terminal_slope_switch_2'),
               (2, 0, '255', 'bulk_terminal_spritelayout_null'),
               (2, 1, 'bulk_terminal_tile_1', 'bulk_terminal_spritelayout_water_barge_nw_se'),
-              (2, 2, 'bulk_terminal_tile_1', 'bulk_terminal_spritelayout_water_barge_nw_se'),
+              (2, 2, 'bulk_terminal_tile_1', 'bulk_terminal_spritelayout_water_empty'),
               (2, 3, 'bulk_terminal_tile_1', 'bulk_terminal_spritelayout_water_barge_nw_se'),
-              (2, 4, 'bulk_terminal_tile_1', 'bulk_terminal_spritelayout_28'),
-              (2, 5, 'bulk_terminal_tile_2', 'bulk_terminal_slope_switch_2'),
+              (2, 4, 'bulk_terminal_tile_1', 'bulk_terminal_spritelayout_cone_silo'),
+              (2, 5, 'bulk_terminal_tile_2', 'bulk_terminal_slope_switch_1'),
               (3, 0, '255', 'bulk_terminal_spritelayout_null'),
-              (3, 1, 'bulk_terminal_tile_1', 'bulk_terminal_spritelayout_warehouse_13'),
-              (3, 2, 'bulk_terminal_tile_1', 'bulk_terminal_spritelayout_crane_nw_se'),
+              (3, 1, 'bulk_terminal_tile_1', 'bulk_terminal_spritelayout_crane_se_nw'),
+              (3, 2, 'bulk_terminal_tile_1', 'bulk_terminal_spritelayout_crane_se_nw'),
               (3, 3, 'bulk_terminal_tile_1', 'bulk_terminal_spritelayout_crane_rails_nw_se'),
               (3, 4, 'bulk_terminal_tile_1', 'bulk_terminal_spritelayout_11'),
-              (3, 5, 'bulk_terminal_tile_2', 'bulk_terminal_slope_switch_2'),
+              (3, 5, 'bulk_terminal_tile_2', 'bulk_terminal_slope_switch_1'),
               (4, 0, '255', 'bulk_terminal_spritelayout_null'),
               (4, 1, '255', 'bulk_terminal_spritelayout_null'),
               (4, 2, '255', 'bulk_terminal_spritelayout_null'),
@@ -424,10 +452,10 @@ industry.add_industry_layout(
               (4, 2, 'bulk_terminal_tile_1', 'bulk_terminal_spritelayout_11'),
               (4, 3, 'bulk_terminal_tile_1', 'bulk_terminal_spritelayout_28'),
               (4, 4, '255', 'bulk_terminal_spritelayout_null'),
-              (5, 0, 'bulk_terminal_tile_2', 'bulk_terminal_slope_switch_2'),
-              (5, 1, 'bulk_terminal_tile_2', 'bulk_terminal_slope_switch_2'),
-              (5, 2, 'bulk_terminal_tile_2', 'bulk_terminal_slope_switch_1'),
-              (5, 3, 'bulk_terminal_tile_2', 'bulk_terminal_slope_switch_1'),
+              (5, 0, 'bulk_terminal_tile_2', 'bulk_terminal_slope_switch_1'),
+              (5, 1, 'bulk_terminal_tile_2', 'bulk_terminal_slope_switch_1'),
+              (5, 2, 'bulk_terminal_tile_2', 'bulk_terminal_slope_switch_2'),
+              (5, 3, 'bulk_terminal_tile_2', 'bulk_terminal_slope_switch_2'),
               (5, 4, '255', 'bulk_terminal_spritelayout_null'),
     ]
 
@@ -436,10 +464,10 @@ industry.add_industry_layout(
     id = 'bulk_terminal_industry_layout_3',
     layout = [
               (0, 0, '255', 'bulk_terminal_spritelayout_null'),
-              (0, 1, 'bulk_terminal_tile_2', 'bulk_terminal_slope_switch_1'),
-              (0, 2, 'bulk_terminal_tile_2', 'bulk_terminal_slope_switch_1'),
-              (0, 3, 'bulk_terminal_tile_2', 'bulk_terminal_slope_switch_2'),
-              (0, 4, 'bulk_terminal_tile_2', 'bulk_terminal_slope_switch_2'),
+              (0, 1, 'bulk_terminal_tile_2', 'bulk_terminal_slope_switch_2'),
+              (0, 2, 'bulk_terminal_tile_2', 'bulk_terminal_slope_switch_2'),
+              (0, 3, 'bulk_terminal_tile_2', 'bulk_terminal_slope_switch_1'),
+              (0, 4, 'bulk_terminal_tile_2', 'bulk_terminal_slope_switch_1'),
               (1, 0, '255', 'bulk_terminal_spritelayout_null'),
               (1, 1, 'bulk_terminal_tile_1', 'bulk_terminal_spritelayout_28'),
               (1, 2, 'bulk_terminal_tile_1', 'bulk_terminal_spritelayout_11'),
