@@ -39,7 +39,7 @@ industry = Industry(id='brewery',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_TOWN))',
                     fund_cost_multiplier='50',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
-                    extra_text_industry='STR_EXTRA_BREWERY, string(STR_EXTRA_BREWERY_GRAIN_SUBSTR), string(STR_EXTRA_BREWERY_FRUIT_SUBSTR)')
+                    extra_text_industry='STR_EXTRA_BREWERY, string(STR_EXTRA_BREWERY_FRUIT_SUBSTR), string(STR_EXTRA_BREWERY_GRAIN_SUBSTR)')
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True
