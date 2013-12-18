@@ -351,12 +351,6 @@ industry.add_spritelayout(
     building_sprites = [spriteset_boat_8]
 )
 industry.add_spritelayout(
-    id = 'bulk_terminal_spritelayout_28',
-    ground_sprite = spriteset_ground_empty,
-    ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_jetty_se_nw, spriteset_jetty_ne_sw, spriteset_concrete, spriteset_warehouse]
-)
-industry.add_spritelayout(
     id = 'bulk_terminal_spritelayout_cone_silo',
     ground_sprite = spriteset_ground_empty,
     ground_overlay = spriteset_ground_empty,
