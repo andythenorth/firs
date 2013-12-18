@@ -19,6 +19,7 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_1), 91) {
 	property {
 		substitute: 91;
 		override: 91;
+		accepted_cargos: [[ENSP, 8]];
 	}
 	graphics {
 		tile_check: THIS_ID(tile_location_check);
