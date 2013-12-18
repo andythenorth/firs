@@ -2,6 +2,41 @@ Changelog
 =========
 
 --------------
+1.3.0 Release
+--------------
+
+*New Features / Changes*
+
+- New economy: Heart of Darkness  
+    - 22 cargos, including new cargos Coffee, Copper Ore, Diamonds, Rubber and Sugar  
+    - 21 industries, including new industries Bulk Terminal, Coffee Estate, Copper Mine, Diamond Mine, Fibre Crop Farm, Rubber Plantation, and Trading Post
+    - best used with Sub-Tropic climate and many rivers
+    - "Mistah Kurtz—he dead"
+- Pre-1906 graphics for Dredging Site (DanMacK)
+- Pre-1928 sprites for Arable Farm (DanMacK)
+- Pre-1920 graphics for Machine Shop (DanMacK, Zephyris)
+- Pre-1935 graphics for Forest (DanMacK)
+- Docs improvements, including making this changelog visible in html as well as markdown text, and multiple fixes
+
+*Fixes*
+
+- Hotels were unexpectedly closing
+- Correct order for cargo information text at Brewery
+- Primary production boost required an incorrect amount of supplies
+- 
+
+*Translations*
+
+- Spanish (SilverSurferZzZ)
+- Finnish (juzza1)
+- 
+
+*Codechanges*
+
+- multiple improvements to compile environment for speed and ease of use
+- refactored some industry templating to be saner
+
+--------------
 1.2.0 Release
 --------------
 
