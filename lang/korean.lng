@@ -30,26 +30,26 @@ STR_PARAM_VALUE_ECONOMIES_FIRS                                                  
 STR_PARAM_VALUE_ECONOMIES_MISTAH_KURTZ                                          :어둠의 심장
 STR_PARAM_VALUE_ECONOMIES_TEST_3                                                :테스트 경제 3
 
-STR_CARGO_NAME_ALCOHOL                                                          :알코올
+STR_CARGO_NAME_ALCOHOL                                                          :주류
 STR_CARGO_NAME_BAUXITE                                                          :보크사이트
 STR_CARGO_NAME_BUILDING_MATERIALS                                               :건축 자재
 STR_CARGO_NAME_CHEMICALS                                                        :화학 약품
 STR_CARGO_NAME_CLAY                                                             :점토
 STR_CARGO_NAME_COFFEE                                                           :커피
-STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :공학 비품
-STR_CARGO_NAME_FIBRES                                                           :섬유 작물
+STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :생산 자재
+STR_CARGO_NAME_FIBRES                                                           :식물 섬유
 STR_CARGO_NAME_FISH                                                             :물고기
-STR_CARGO_NAME_FARM_SUPPLIES                                                    :농장 비품
+STR_CARGO_NAME_FARM_SUPPLIES                                                    :농업 자재
 STR_CARGO_NAME_FRUITS                                                           :과일
 STR_CARGO_NAME_LUMBER                                                           :목재
 STR_CARGO_NAME_METAL                                                            :금속
 STR_CARGO_NAME_MILK                                                             :우유
-STR_CARGO_NAME_MANUFACTURING_SUPPLIES                                           :제조 비품
+STR_CARGO_NAME_MANUFACTURING_SUPPLIES                                           :제조 자재
 STR_CARGO_NAME_PETROL                                                           :휘발유
 STR_CARGO_NAME_RECYCLABLES                                                      :재활용품
 STR_CARGO_NAME_SAND                                                             :모래
 STR_CARGO_NAME_SCRAP_METAL                                                      :고철
-STR_CARGO_NAME_STONE                                                            :암석
+STR_CARGO_NAME_STONE                                                            :석재
 STR_CARGO_NAME_SUGAR_BEET                                                       :사탕무
 STR_CARGO_NAME_SUGARCANE                                                        :사탕수수
 STR_CARGO_NAME_WOOL                                                             :양털
@@ -60,8 +60,8 @@ STR_CARGO_UNIT_BUILDING_MATERIALS                                               
 STR_CARGO_UNIT_CHEMICALS                                                        :화학 약품 {VOLUME}
 STR_CARGO_UNIT_CLAY                                                             :점토 {WEIGHT}
 STR_CARGO_UNIT_COFFEE                                                           :커피 {SIGNED_WORD}자루
-STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :공학 비품 {SIGNED_WORD}상자
-STR_CARGO_UNIT_FIBRES                                                           :섬유 작물 {SIGNED_WORD}뭉치
+STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :생산 자재 {SIGNED_WORD}상자
+STR_CARGO_UNIT_FIBRES                                                           :식물 섬유 {SIGNED_WORD}뭉치
 STR_CARGO_UNIT_FISH                                                             :물고기 {WEIGHT}
 STR_CARGO_UNIT_FMSP                                                             :농장 비품 {SIGNED_WORD}상자
 STR_CARGO_UNIT_FRUITS                                                           :과일 {WEIGHT}
@@ -73,7 +73,7 @@ STR_CARGO_UNIT_PETROL                                                           
 STR_CARGO_UNIT_RECYCLABLES                                                      :재활용품 {WEIGHT}
 STR_CARGO_UNIT_SAND                                                             :모래 {WEIGHT}
 STR_CARGO_UNIT_SCRAP_METAL                                                      :고철 {WEIGHT}
-STR_CARGO_UNIT_STONE                                                            :암석 {WEIGHT}
+STR_CARGO_UNIT_STONE                                                            :석재 {WEIGHT}
 STR_CARGO_UNIT_SUGAR_BEET                                                       :사탕무 {WEIGHT}
 STR_CARGO_UNIT_SUGARCANE                                                        :사탕수수 {WEIGHT}
 STR_CARGO_UNIT_WOOL                                                             :양털 {SIGNED_WORD}뭉치
@@ -84,19 +84,19 @@ STR_CID_BUILDING_MATERIALS                                                      
 STR_CID_CHEMICALS                                                               :{TINYFONT}화
 STR_CID_CLAY                                                                    :{TINYFONT}점
 STR_CID_COFFEE                                                                  :{TINYFONT}커
-STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}공
+STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}생
 STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}농
 STR_CID_FIBRES                                                                  :{TINYFONT}섬
 STR_CID_FISH                                                                    :{TINYFONT}물
 STR_CID_LUMBER                                                                  :{TINYFONT}목
-STR_CID_MANUFACTURING_SUPPLIES                                                  :{TINYFONT}금
+STR_CID_MANUFACTURING_SUPPLIES                                                  :{TINYFONT}제
 STR_CID_METAL                                                                   :{TINYFONT}금
 STR_CID_MILK                                                                    :{TINYFONT}유
 STR_CID_PETROL                                                                  :{TINYFONT}휘
 STR_CID_RECYCLABLES                                                             :{TINYFONT}활
 STR_CID_SAND                                                                    :{TINYFONT}사
 STR_CID_SCRAP_METAL                                                             :{TINYFONT}고
-STR_CID_STONE                                                                   :{TINYFONT}암
+STR_CID_STONE                                                                   :{TINYFONT}석
 STR_CID_SUGAR_BEET                                                              :{TINYFONT}무
 STR_CID_SUGARCANE                                                               :{TINYFONT}수
 STR_CID_WOOL                                                                    :{TINYFONT}모
@@ -133,12 +133,12 @@ STR_EXTRA_LUMBER_YARD                                                           
 STR_EXTRA_MACHINE_SHOP                                                          :{BLACK}기계를 만들고 제공합니다.{}{}화물 생산량:{}  휘발유 8,000리터 수송시 8상자{}  금속 8톤 수송시 8상자
 STR_EXTRA_MEAT_PACKER                                                           :{BLACK}화물 생산량:{}  제조 비품 8상자 수송시 3톤{}    가축 8톤 수송시 5톤{}{}두 화물이 모두 1개월 이내에 수송되면 생산량이 증가합니다.
 STR_EXTRA_METAL_FABRICATION_PLANT                                               :{BLACK}도색된 금속 부품을 생산합니다.{}{}화물 생산량:{}  화학 약품 8,000리터 수송시 2톤{}    금속 8톤 수송시 6톤{}{}두 화물이 모두 1개월 이내에 수송되면 생산량이 증가합니다.
-STR_EXTRA_METAL_FOUNDRY                                                         :{BLACK}깡통, 하드웨어, 가정 제품 등 도금한 금속 제품을 생산합니다.{}{}화물 생산량:{}  화학 약품 8,000리터 수송시 2상자{}  금속 8톤 수송시 6상자{}{}두 화물이 모두 1개월 이내에 수송되면 생산량이 증가합니다.
+STR_EXTRA_METAL_FOUNDRY                                                         :{BLACK}깡통, 철물, 가정 제품 등 도금한 금속 제품을 생산합니다.{}{}화물 생산량:{}  화학 약품 8,000리터 수송시 2상자{}  금속 8톤 수송시 6상자{}{}두 화물이 모두 1개월 이내에 수송되면 생산량이 증가합니다.
 STR_EXTRA_OIL_REFINERY                                                          :{BLACK}원유를 휘발유와 화학 약품으로 정제합니다.{}{}화물 생산량:{}  8,000리터 수송시 6,000리터
 STR_EXTRA_PAPER_MILL                                                            :{BLACK}목재를 펄프로 만들어 종이와 판지로 만듭니다.{}{}화물 생산량:{}  목재 8톤 수송시 4상자{}  점토 8톤 수송시 2상자{}  화학약품 8,000리터 수송시 2상자{}{}둘 또는 그 이상의 화물이 1개월 이내에 수송되면 생산량이 증가합니다.
 STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}포장지나 가정 제품 등의 플라스틱 제품을 생산합니다.{}{}화물 생산량:{} {STRING} {STRING}
 STR_EXTRA_PLASTICS_PLANT_CHEMICALS_SUBSTR                                       :8,000리터의 화학 약품당 6상자 수송됨
-STR_EXTRA_PLASTICS_PLANT_PLANT_FIBRES_SUBSTR                                    :섬유 작물 8뭉치 수송시 6상자{}
+STR_EXTRA_PLASTICS_PLANT_PLANT_FIBRES_SUBSTR                                    :식물 섬유 8뭉치 수송시 6상자{}
 STR_EXTRA_RECYCLING_PLANT                                                       :{BLACK}재활용품을 처리합니다.{}{}화물 생산량:{}    재활용품 8톤 수송시 6톤
 STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}생산량이 도시 인구에 비례합니다.
 STR_EXTRA_SAWMILL                                                               :{BLACK}목재를 자릅니다.{}{}화물 생산량:{}    목재 8톤 수송시 6톤
@@ -147,7 +147,7 @@ STR_EXTRA_STEELMILL                                                             
 STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}화물 생산량:{}  제조 비품 8상자 수송시 3톤{}    설탕 8톤 수송시 5톤{}{}두 화물이 모두 1개월 이내에 수송되면 생산량이 증가합니다.
 STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}화물 생산량:{}  제조 비품 8상자 수송시 3상자{} {STRING} {STRING}{}다른 화물의 1개월 이내에 제조 비품이 수송되면 생산량이 증가합니다.
 STR_EXTRA_TEXTILE_MILL_WOOL_SUBSTR                                              :양털 8뭉치 수송시 5상자{}
-STR_EXTRA_TEXTILE_MILL_PLANT_FIBRES_SUBSTR                                      :섬유 작물 8뭉치 수송시 5상자{}
+STR_EXTRA_TEXTILE_MILL_PLANT_FIBRES_SUBSTR                                      :식물 섬유 8뭉치 수송시 5상자{}
 
 STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ 디버그 ------------{}이번달 생산량:{}화물 1: {WHITE}{COMMA}{BLACK}{}화물 2: {WHITE}{COMMA}{BLACK}{}지난 수송 이후 지난 날짜: {WHITE}{COMMA}{BLACK}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}최대 생산량에 다다름
@@ -179,18 +179,18 @@ STR_FUND_AVAILABLE_UNTIL                                                        
 STR_TOWN                                                                        :{STRING}
 STR_STATION                                                                     :{STRING} {STRING}
 
-STR_IND_ALUMINIUM_PLANT                                                         :알루미늄 공장
+STR_IND_ALUMINIUM_PLANT                                                         :알루미늄 제련소
 STR_IND_ARABLE_FARM                                                             :경작 농장
 STR_IND_BASICFARM                                                               :농장
 STR_IND_BAUXITE_MINE                                                            :보크사이트 광산
 STR_IND_BIOREFINERY                                                             :바이오 리파이너리
-STR_IND_BREWERY                                                                 :맥주 공장
+STR_IND_BREWERY                                                                 :양조장
 STR_IND_BREWERY_CIDER_MILL                                                      :사이다 방앗간
 STR_IND_BRICK_WORKS                                                             :벽돌 공장
 STR_IND_BUILDERS_YARD                                                           :공사장
 STR_IND_BULK_TERMINAL                                                           :선적하물 터미널
 STR_IND_CEMENT_PLANT                                                            :시멘트 공장
-STR_IND_CLAY_PIT                                                                :점토 갱
+STR_IND_CLAY_PIT                                                                :점토 채취장
 STR_IND_COFFEE_ESTATE                                                           :커피 농장
 STR_IND_FIBRE_CROP_FARM                                                         :섬유 작물 농장
 STR_IND_DAIRY                                                                   :유제품 회사
@@ -203,16 +203,16 @@ STR_IND_FOOD_MARKET                                                             
 STR_IND_FURNITURE_FACTORY                                                       :가구 공장
 STR_IND_GENERAL_STORE                                                           :일반 상점
 STR_IND_GLASS_WORKS                                                             :유리 공장
-STR_IND_GRAIN_MILL                                                              :곡물 방앗간
-STR_IND_HARDWARE_STORE                                                          :하드웨어 상점
+STR_IND_GRAIN_MILL                                                              :방앗간
+STR_IND_HARDWARE_STORE                                                          :철물점
 STR_IND_HOTEL                                                                   :호텔
 STR_IND_IRON_WORKS                                                              :제철소
-STR_IND_JUNKYARD                                                                :고철 하치장
+STR_IND_JUNKYARD                                                                :고철 집적소
 STR_IND_LIME_KILN                                                               :석회 가마
 STR_IND_LUMBER_YARD                                                             :저목장
 STR_IND_MACHINE_SHOP                                                            :기계 상점
 STR_IND_METAL_FABRICATION_PLANT                                                 :금속 제조 공장
-STR_IND_METAL_FOUNDRY                                                           :금속 작업장
+STR_IND_METAL_FOUNDRY                                                           :금속 주물 공장
 STR_IND_MIXEDFARM                                                               :혼합 농장
 STR_IND_ORCHARD_PIGGERY                                                         :과수원 및 양돈장
 STR_IND_PETROLPUMP                                                              :주유소

@@ -128,8 +128,8 @@ STR_EXTRA_FURNITURE_FACTORY                                                     
 STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Fabrica productos de cristal tales como botellas, jarras o ventanas.{}{}{BLACK}Producción:{} 6t por cada 8t de arena entregadas{} 2t por cada 8,000l de productos químicos entregados{}{}La producción se incrementa si ambas cargas son entregadas con menos de un mes de diferencia entre ambas
 STR_EXTRA_GRAIN_MILL                                                            :{BLACK}Producción:{} 3t por cada 8 cajas de suministros de manufactura entregadas{}  5t por cada 8t de grano entregadas{}{}La producción se incrementa a 8t por cada 8t si ambas cargas son entregadas en un intervalo inferior a un mes
 STR_EXTRA_IRON_WORKS                                                            :{BLACK}Producción:{} 2t por cada 8t de madera entregadas{}  2t por cada 8t de mineral de hierro entregadas{}{}La producción se incrementa si ambas cargas son entregadas con menos de un mes de diferencia entre ambas
-STR_EXTRA_LIME_KILN                                                             :{BLACK}Producción:{} 3t por cada 8t de piedra entregadas{}  3t por cada 8t de carbón entregadas{}{}La producción se incrementa si ambas cargas son entregadas con menos de un mes de diferencia entre ambas
-STR_EXTRA_LUMBER_YARD                                                           :{BLACK}Produce objetos tales como mástiles y cercas.{}{}{BLACK}Producción:{} 2t por cada 8,000l de productos químicos entregados{} 6t por cada 8t de tablas entregadas{}{}La producción se incrementa si ambas cargas son entregadas con menos de un mes de diferencia entre ambas
+STR_EXTRA_LIME_KILN                                                             :{BLACK}Producción:{} 3t por cada 8t de piedra entregadas{}  3t por cada 8t de carbón entregadas{}{}La producción se incrementa si ambas cargas son entregadas con menos de un mes de diferencia entre sí.
+STR_EXTRA_LUMBER_YARD                                                           :{BLACK}Produce objetos tales como mástiles y cercas.{}{}{BLACK}Producción:{} 2t por cada 8,000l de productos químicos entregados{} 6t por cada 8t de tablas entregadas{}{}La producción se incrementa si ambas cargas son entregadas con menos de un mes de diferencia entre sí.
 STR_EXTRA_MACHINE_SHOP                                                          :{BLACK}Construye y repara maquinaria.{}{}Producción:{} 8 cajas por cada 8,000l de fueloil entregados{} 8 cajas por cada 8t de metal entregadas
 STR_EXTRA_MEAT_PACKER                                                           :{BLACK}Producción:{} 3t por cada 8 cajas de suministros de manufactura entregadas{} 5t por cada 8t de ganado entregadas{}{}La producción se incrementa si ambas cargas son entregadas con menos de un mes de diferencia entre ambas
 STR_EXTRA_METAL_FABRICATION_PLANT                                               :{BLACK}Produce componentes de metal pintado.{}{}{BLACK}Producción:{} 2t por cada 8,000l de productos químicos entregados{} 6t por cada 8t de metal entregadas{}{}La producción se incrementa si ambas cargas son entregadas con menos de un mes de diferencia entre ambas
@@ -229,8 +229,10 @@ STR_IND_SUGAR_PLANTATION                                                        
 STR_IND_SUGAR_REFINERY                                                          :{G=f}Refinería de Azúcar
 STR_IND_SUPERMARKET                                                             :{G=m}Supermercado
 STR_IND_TEXTILE_MILL                                                            :{G=f}Hilatura Textil
+STR_IND_TRADING_POST                                                            :Comercio (ultramarinos, mercancía en general)
 
 STR_STATION_ANIMALS                                                             :Mercado de ganado (caballos, etc...)
+STR_STATION_FARM                                                                :Hacienda (casa rural)
 STR_STATION_HEAVY_INDUSTRY                                                      :Calle James Watt
 STR_STATION_INDUSTRY_ESTATE                                                     :Polígono industrial
 STR_STATION_INDUSTRY_HARBOUR                                                    :Puerto industrial
