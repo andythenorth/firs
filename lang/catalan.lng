@@ -27,6 +27,7 @@ STR_PARAM_VALUE_ECONOMIES_BASIC_TEMPERATE                                       
 STR_PARAM_VALUE_ECONOMIES_BASIC_ARCTIC                                          :Economia Bàsica Àrtica
 STR_PARAM_VALUE_ECONOMIES_BASIC_TROPIC                                          :Economia Bàsica Tropical
 STR_PARAM_VALUE_ECONOMIES_FIRS                                                  :Economia FIRS
+STR_PARAM_VALUE_ECONOMIES_MISTAH_KURTZ                                          :Heart of Darkness
 STR_PARAM_VALUE_ECONOMIES_TEST_3                                                :Economia de Prova 3
 
 STR_CARGO_NAME_ALCOHOL                                                          :{G=Masculin}Alcohol
@@ -115,6 +116,8 @@ STR_ERR_LOCATION_LIMIT_1_PER_TOWN                                               
 
 STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}Producció:{}  2t per cada 8t de bauxita{}  2t per cada 8.000l de productes químics{}  4t per cada 8t de ferralla{}{}La producció augmenta si es reben dues o més càrregues en un mes.
 STR_EXTRA_BIOREFINERY                                                           :{BLACK}Producció:{}  6.000l per cada 8t de gra{}  6.000l per cada 8t de sucre o remolatxa
+STR_EXTRA_BREWERY                                                               :{BLACK}Producció:{}  3.000l per cada 8 caixes de subministraments{} {STRING} {STRING}{}La producció augmenta si es reben caixes de subministraments en un mes.
+STR_EXTRA_BREWERY_FRUIT_SUBSTR                                                  :5.000l per cada 8t de fruita{}
 STR_EXTRA_BRICKWORKS                                                            :{BLACK}Producció:{}  2t per cada 8t de carbó{}  2t per cada 8t de sorra{}  4t per cada 8t d'argila{}{}La producció augmenta si es reben dues o més càrregues en un mes.
 STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Producció:{}  2t per cada 8t de carbó{}  2t per cada 8t d'argila{}  4t per cada 8t de pedres{}{}La producció augmenta si es reben dues o més càrregues en un mes.
 STR_EXTRA_DAIRY                                                                 :{BLACK}Producció:{}  3t per cada 8 caixes de subministraments{}  5t per cada 8.000l de llet{}{}La producció augmenta si es reben en un mes les dues càrregues.
@@ -134,6 +137,7 @@ STR_EXTRA_OIL_REFINERY                                                          
 STR_EXTRA_PAPER_MILL                                                            :{BLACK}Tracta la fusta per a produir paper i cartró.{}{}Producció:{}  4 caixes per cada 8t de fusta{}  2 caixes per cada 8t d'argila{}  2 caixes per cada 8.000l de productes químics{}{}La producció augmenta si es reben dues o més càrregues en un mes.
 STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}Produeix objectes de plàstic com ara envasos i material domèstic.{}{}Producció:{} {STRING} {STRING}
 STR_EXTRA_PLASTICS_PLANT_CHEMICALS_SUBSTR                                       :6 caixes per cada 8,000l de productes químics{}
+STR_EXTRA_PLASTICS_PLANT_PLANT_FIBRES_SUBSTR                                    :6 caixes per cada 8 bales de fibres orgàniques{}
 STR_EXTRA_RECYCLING_PLANT                                                       :{BLACK}Processa les deixalles per a reciclar-les.{}{}Producció:{}  6t per cada 8t de deixalles
 STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}La producció és proporcional a la població de la localitat.
 STR_EXTRA_SAWMILL                                                               :{BLACK}Talla la fusta.{}{}Producció:{}  6t per cada 8t de fusta
@@ -141,20 +145,27 @@ STR_EXTRA_SMITHY_FORGE                                                          
 STR_EXTRA_STEELMILL                                                             :{BLACK}Producció:{}  2t per cada 8t de mineral de ferro{}  2t per cada 8t de carbó{}  4t per cada 8t de ferralla{}{}La producció augmenta si es reben dues o més càrregues en un mes.
 STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Producció:{}  3t per cada 8 caixes de subministraments{}  5t per cada 8t de sucre o remolatxa{}{}Augmenta a 8t per cada 8t si es reben les dues càrregues en un mes.
 STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Producció:{} 3 palets per cada 8 caixes de subministraments{} {STRING} {STRING}{}La producció augmenta si es reben subministraments industrials i una altra càrrega en un mes.
+STR_EXTRA_TEXTILE_MILL_WOOL_SUBSTR                                              :5 palets per cada 8 bales de llana{}
+STR_EXTRA_TEXTILE_MILL_PLANT_FIBRES_SUBSTR                                      :5 caixes per cada 8 bales de fibres orgàniques{}
 
 STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ DEBUG ------------{}Producció d'aquest mes:{}Càrrega 1: {WHITE}{COMMA}{BLACK}{}Càrrega 2: {WHITE}{COMMA}{BLACK}{}Dies des de la darrera entrega: {WHITE}{COMMA}{BLACK}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Assolit el màxim de producció
 STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Producció actual: {YELLOW}normal{}{}{BLACK}Per a doblar la producció cal que lliureu {SIGNED_WORD} caixes de subministraments en tres mesos (o {SIGNED_WORD} caixes per a producció quàdruple)
 STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Producció actual: {YELLOW}millorada (doble){}{}{BLACK}Per a mantenir aquest nivell cal que lliureu {SIGNED_WORD} caixes de subministraments en tres mesos, o {SIGNED_WORD} caixes per aconseguir producció quàdruple
 STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}Producció actual: {YELLOW}entusiasta (quàdruple){}{}{BLACK}Per a mantenir aquest nivell cal que lliureu {SIGNED_WORD} caixes de subministraments en tres mesos
+STR_PORT_PRODUCTION_1X                                                          :{BLACK}Producció actual: {YELLOW}Normal{}{}{BLACK}Per a doblar la producció cal que lliureu {SIGNED_WORD} unitats de càrrega en tres mesos{}Per a quadrupicar-la, lliureu {SIGNED_WORD} unitats de càrrega en tres mesos
 STR_GENERIC_NEWLINE                                                             :{}
 
-STR_FUND_BASIC_FARM                                                             :{}{BLACK}Localització: {YELLOW}No es pot situar a la neu ni al desert.
+STR_FUND_BASIC_FARM                                                             :{}{BLACK}Ubicació: {YELLOW}No es pot fundar en terreny nevat ni en deserts.
 STR_FUND_MIXED_FARM                                                             :{}{BLACK}Localització: {YELLOW}No es pot situar a la neu ni al desert.
 STR_FUND_ARABLE_FARM                                                            :{}{BLACK}Localització: {YELLOW}No es pot situar a la neu ni al desert.
-STR_FUND_SUGAR_PLANTATION                                                       :{}{BLACK}Localització: {YELLOW}No es pot situar a la neu ni al desert.
+STR_FUND_COFFEE_ESTATE                                                          :{}{BLACK}Ubicació: {YELLOW}No es pot fundar en terreny nevat ni en deserts.
+STR_FUND_ORCHARD_PIGGERY                                                        :{}{BLACK}Ubicació: {YELLOW}No es pot fundar en terreny nevat ni en deserts.
+STR_FUND_SUGAR_PLANTATION                                                       :{}{BLACK}Ubicació: {YELLOW}No es pot fundar en terreny nevat ni en deserts.
+STR_FUND_FIBRE_CROP_FARM                                                        :{}{BLACK}Ubicació: {YELLOW}No es pot fundar en terreny nevat ni en deserts.
 STR_FUND_FOREST                                                                 :{}{BLACK}Localització: {YELLOW}No es pot situar al desert.
 STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}Localització: {YELLOW}No es pot situar a la neu.
+STR_FUND_RUBBER_PLANTATION                                                      :{}{BLACK}Ubicació: {YELLOW}No es pot fundar en terreny nevat ni en deserts.
 
 
 STR_FUND_AVAILABLE_FROM                                                         :{}{BLACK}Disponible des de: {YELLOW}{COMMA}
@@ -175,6 +186,8 @@ STR_IND_BRICK_WORKS                                                             
 STR_IND_BUILDERS_YARD                                                           :{G=Femenin}Constructora
 STR_IND_CEMENT_PLANT                                                            :{G=Femenin}Fàbrica de ciment
 STR_IND_CLAY_PIT                                                                :{G=Femenin}Argilera
+STR_IND_COFFEE_ESTATE                                                           :Hisenda de cafè
+STR_IND_FIBRE_CROP_FARM                                                         :Granja de cultius de fibres orgàniques
 STR_IND_DAIRY                                                                   :{G=Femenin}Indústria làctia
 STR_IND_DAIRYFARM                                                               :{G=Femenin}Granja bovina
 STR_IND_DREDGING_SITE                                                           :{G=Femenin}Zona de dragatge
@@ -195,10 +208,12 @@ STR_IND_MACHINE_SHOP                                                            
 STR_IND_METAL_FABRICATION_PLANT                                                 :{G=Femenin}Indústria metal·lúrgica
 STR_IND_METAL_FOUNDRY                                                           :{G=Femenin}Foneria
 STR_IND_MIXEDFARM                                                               :{G=Femenin}Granja mixta
+STR_IND_ORCHARD_PIGGERY                                                         :Arbres fruiters i granja de porcs
 STR_IND_PETROLPUMP                                                              :{G=Femenin}Gasolinera
 STR_IND_PLASTICS_PLANT                                                          :{G=Femenin}Fàbrica de plàstics
 STR_IND_PORT                                                                    :{G=Masculin}Port
 STR_IND_QUARRY                                                                  :{G=Femenin}Pedrera
+STR_IND_RANCH                                                                   :Ranxo
 STR_IND_RECYCLING_DEPOT                                                         :{G=Femenin}Deixalleria
 STR_IND_RECYCLING_PLANT                                                         :{G=Femenin}Planta de reciclatge
 STR_IND_SHEEPFARM                                                               :{G=Femenin}Granja ovina
@@ -209,4 +224,17 @@ STR_IND_SUGAR_REFINERY                                                          
 STR_IND_SUPERMARKET                                                             :{G=Masculin}Supermercat
 STR_IND_TEXTILE_MILL                                                            :{G=Femenin}Fàbrica tèxtil
 
+STR_STATION_ANIMALS                                                             :Mercat de cavalls
+STR_STATION_FARM                                                                :Mansió
+STR_STATION_FISHMARKET                                                          :Llotja de peix
+STR_STATION_HEAVY_INDUSTRY                                                      :Carrer James Watt
+STR_STATION_INDUSTRY_ESTATE                                                     :Parc industrial
+STR_STATION_INDUSTRY_HARBOUR                                                    :Port industrial
+STR_STATION_MARKET                                                              :Mercat
+STR_STATION_MILL                                                                :Molí
+STR_STATION_MINE                                                                :Carrer de l'adoberia
+STR_STATION_PIT                                                                 :Pedrera
 STR_STATION_PLANTATION                                                          :Plantació
+STR_STATION_POWERHUNGRY                                                         :Central elèctrica
+STR_STATION_TOWN                                                                :Antic ajuntament
+STR_STATION_WATER                                                               :Banc de sorra
