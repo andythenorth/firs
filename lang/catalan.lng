@@ -117,6 +117,7 @@ STR_ERR_LOCATION_LIMIT_1_PER_TOWN                                               
 STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}Producció:{}  2t per cada 8t de bauxita{}  2t per cada 8.000l de productes químics{}  4t per cada 8t de ferralla{}{}La producció augmenta si es reben dues o més càrregues en un mes.
 STR_EXTRA_BIOREFINERY                                                           :{BLACK}Producció:{}  6.000l per cada 8t de gra{}  6.000l per cada 8t de sucre o remolatxa
 STR_EXTRA_BREWERY                                                               :{BLACK}Producció:{}  3.000l per cada 8 caixes de subministraments{} {STRING} {STRING}{}La producció augmenta si es reben caixes de subministraments en un mes.
+STR_EXTRA_BREWERY_GRAIN_SUBSTR                                                  :5.000l per cada 8t de gra{}
 STR_EXTRA_BREWERY_FRUIT_SUBSTR                                                  :5.000l per cada 8t de fruita{}
 STR_EXTRA_BRICKWORKS                                                            :{BLACK}Producció:{}  2t per cada 8t de carbó{}  2t per cada 8t de sorra{}  4t per cada 8t d'argila{}{}La producció augmenta si es reben dues o més càrregues en un mes.
 STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Producció:{}  2t per cada 8t de carbó{}  2t per cada 8t d'argila{}  4t per cada 8t de pedres{}{}La producció augmenta si es reben dues o més càrregues en un mes.
@@ -136,8 +137,8 @@ STR_EXTRA_METAL_FOUNDRY                                                         
 STR_EXTRA_OIL_REFINERY                                                          :{BLACK}Processa el petroli cru en gasolina i productes químics.{}{}Producció:{}  6.000l per cada 8.000l de petroli
 STR_EXTRA_PAPER_MILL                                                            :{BLACK}Tracta la fusta per a produir paper i cartró.{}{}Producció:{}  4 caixes per cada 8t de fusta{}  2 caixes per cada 8t d'argila{}  2 caixes per cada 8.000l de productes químics{}{}La producció augmenta si es reben dues o més càrregues en un mes.
 STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}Produeix objectes de plàstic com ara envasos i material domèstic.{}{}Producció:{} {STRING} {STRING}
-STR_EXTRA_PLASTICS_PLANT_CHEMICALS_SUBSTR                                       :6 caixes per cada 8,000l de productes químics{}
-STR_EXTRA_PLASTICS_PLANT_PLANT_FIBRES_SUBSTR                                    :6 caixes per cada 8 bales de fibres orgàniques{}
+STR_EXTRA_PLASTICS_PLANT_CHEMICALS_SUBSTR                                       :6 caixes per cada 8.000l de productes químics{}
+STR_EXTRA_PLASTICS_PLANT_PLANT_FIBRES_SUBSTR                                    :6 caixes per cada 8 bales de fibres vegetals{}
 STR_EXTRA_RECYCLING_PLANT                                                       :{BLACK}Processa les deixalles per a reciclar-les.{}{}Producció:{}  6t per cada 8t de deixalles
 STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}La producció és proporcional a la població de la localitat.
 STR_EXTRA_SAWMILL                                                               :{BLACK}Talla la fusta.{}{}Producció:{}  6t per cada 8t de fusta
@@ -146,7 +147,7 @@ STR_EXTRA_STEELMILL                                                             
 STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Producció:{}  3t per cada 8 caixes de subministraments{}  5t per cada 8t de sucre o remolatxa{}{}Augmenta a 8t per cada 8t si es reben les dues càrregues en un mes.
 STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Producció:{} 3 palets per cada 8 caixes de subministraments{} {STRING} {STRING}{}La producció augmenta si es reben subministraments industrials i una altra càrrega en un mes.
 STR_EXTRA_TEXTILE_MILL_WOOL_SUBSTR                                              :5 palets per cada 8 bales de llana{}
-STR_EXTRA_TEXTILE_MILL_PLANT_FIBRES_SUBSTR                                      :5 caixes per cada 8 bales de fibres orgàniques{}
+STR_EXTRA_TEXTILE_MILL_PLANT_FIBRES_SUBSTR                                      :5 caixes per cada 8 bales de fibres vegetals{}
 
 STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ DEBUG ------------{}Producció d'aquest mes:{}Càrrega 1: {WHITE}{COMMA}{BLACK}{}Càrrega 2: {WHITE}{COMMA}{BLACK}{}Dies des de la darrera entrega: {WHITE}{COMMA}{BLACK}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Assolit el màxim de producció
@@ -154,6 +155,8 @@ STR_PRIMARY_PRODUCTION_1X                                                       
 STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Producció actual: {YELLOW}millorada (doble){}{}{BLACK}Per a mantenir aquest nivell cal que lliureu {SIGNED_WORD} caixes de subministraments en tres mesos, o {SIGNED_WORD} caixes per aconseguir producció quàdruple
 STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}Producció actual: {YELLOW}entusiasta (quàdruple){}{}{BLACK}Per a mantenir aquest nivell cal que lliureu {SIGNED_WORD} caixes de subministraments en tres mesos
 STR_PORT_PRODUCTION_1X                                                          :{BLACK}Producció actual: {YELLOW}Normal{}{}{BLACK}Per a doblar la producció cal que lliureu {SIGNED_WORD} unitats de càrrega en tres mesos{}Per a quadrupicar-la, lliureu {SIGNED_WORD} unitats de càrrega en tres mesos
+STR_PORT_PRODUCTION_2X                                                          :{BLACK}Producció actual: {YELLOW}millorada (doble){}{}{BLACK}Per a mantenir aquest nivell cal que lliureu {SIGNED_WORD} unitats de càrrega en tres mesos, o {SIGNED_WORD} per a quadruplicar-la
+STR_PORT_PRODUCTION_4X                                                          :{BLACK}Producció actual: {YELLOW}Gung ho (quàdruple){}{}{BLACK}Per a mantenir aquest nivell cal que lliureu {SIGNED_WORD} unitats de càrrega en tres mesos
 STR_GENERIC_NEWLINE                                                             :{}
 
 STR_FUND_BASIC_FARM                                                             :{}{BLACK}Ubicació: {YELLOW}No es pot fundar en terreny nevat ni en deserts.
@@ -182,12 +185,14 @@ STR_IND_BASICFARM                                                               
 STR_IND_BAUXITE_MINE                                                            :{G=Femenin}Mina de bauxita
 STR_IND_BIOREFINERY                                                             :{G=Femenin}Biorefineria
 STR_IND_BREWERY                                                                 :{G=Femenin}Cerveseria
+STR_IND_BREWERY_CIDER_MILL                                                      :Molí de sidra
 STR_IND_BRICK_WORKS                                                             :{G=Femenin}Fàbrica de maons
 STR_IND_BUILDERS_YARD                                                           :{G=Femenin}Constructora
+STR_IND_BULK_TERMINAL                                                           :Terminal de mercaderies
 STR_IND_CEMENT_PLANT                                                            :{G=Femenin}Fàbrica de ciment
 STR_IND_CLAY_PIT                                                                :{G=Femenin}Argilera
 STR_IND_COFFEE_ESTATE                                                           :Hisenda de cafè
-STR_IND_FIBRE_CROP_FARM                                                         :Granja de cultius de fibres orgàniques
+STR_IND_FIBRE_CROP_FARM                                                         :Granja de cultius de fibres vegetals
 STR_IND_DAIRY                                                                   :{G=Femenin}Indústria làctia
 STR_IND_DAIRYFARM                                                               :{G=Femenin}Granja bovina
 STR_IND_DREDGING_SITE                                                           :{G=Femenin}Zona de dragatge
@@ -196,6 +201,7 @@ STR_IND_FISHING_GROUND                                                          
 STR_IND_FISHING_HARBOUR                                                         :{G=Masculin}Port pesquer
 STR_IND_FOOD_MARKET                                                             :{G=Masculin}Mercat
 STR_IND_FURNITURE_FACTORY                                                       :{G=Femenin}Fàbrica de mobles
+STR_IND_GENERAL_STORE                                                           :Petit comerç
 STR_IND_GLASS_WORKS                                                             :{G=Femenin}Vidrieria
 STR_IND_GRAIN_MILL                                                              :{G=Masculin}Molí fariner
 STR_IND_HARDWARE_STORE                                                          :{G=Femenin}Ferreteria
@@ -223,6 +229,7 @@ STR_IND_SUGAR_PLANTATION                                                        
 STR_IND_SUGAR_REFINERY                                                          :{G=Femenin}Sucreria
 STR_IND_SUPERMARKET                                                             :{G=Masculin}Supermercat
 STR_IND_TEXTILE_MILL                                                            :{G=Femenin}Fàbrica tèxtil
+STR_IND_TRADING_POST                                                            :Botiga de queviures
 
 STR_STATION_ANIMALS                                                             :Mercat de cavalls
 STR_STATION_FARM                                                                :Mansió
@@ -236,5 +243,6 @@ STR_STATION_MINE                                                                
 STR_STATION_PIT                                                                 :Pedrera
 STR_STATION_PLANTATION                                                          :Plantació
 STR_STATION_POWERHUNGRY                                                         :Central elèctrica
+STR_STATION_REFINERY                                                            :Refineria
 STR_STATION_TOWN                                                                :Antic ajuntament
 STR_STATION_WATER                                                               :Banc de sorra
