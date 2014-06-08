@@ -329,6 +329,12 @@ class Industry(object):
         prod_cargo_types = self.cargo_list_sugar_magic(prod_cargo_types) # pass the cargos through horrid magic
         return '[' + ','.join(prod_cargo_types) + ']'
 
+    def get_another_industry(self, id):
+        for industry in registered_industries:
+            if industry.id == id:
+                return industry
+        # if none found, that's an error, don't handle the error, just blow up
+
     def get_conditional_expressions_for_enabled_economies(self):
         # returns a string that can be used as the conditions in nml if() blocks for economy stuff
         enabled_economies = []
