@@ -42,6 +42,14 @@ from cargos import registered_cargos
 import industries
 from industries import registered_industries
 
+
+def render_industry_nml(industry):
+    # save the results of templating
+    pnml_file = codecs.open(os.path.join(pnml_output_path, industry.id + '.pnml'), 'w','utf8')
+    pnml_file.write(industry.render_pnml())
+    pnml_file.close()
+
+
 header_items = ['checks','conditions','header','firs','parameters']
 for header_item in header_items:
     template = header_item_templates[header_item + '.pypnml']
@@ -59,8 +67,4 @@ pnml.write(templated_pnml)
 pnml.close()
 
 for industry in industries.registered_industries:
-    pnml = industry.render_pnml()
-    # save the results of templating
-    pnml_file = codecs.open(os.path.join(pnml_output_path, industry.id + '.pnml'), 'w','utf8')
-    pnml_file.write(pnml)
-    pnml_file.close()
+    render_industry_nml(industry)
