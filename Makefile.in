@@ -15,7 +15,7 @@ firs-pnml:
 	$(_E) [GENERATE PNML]
 	$(_V) mkdir -p generated_pnml
 	$(_V) touch generated_pnml/_files_here_are_generated.txt
-	$(_V) python scripts/preprocess.py '${REPO_TITLE}' '${REPO_REVISION}' '${TEST_INDUSTRY}'
+	$(_V) python scripts/preprocess.py '${REPO_TITLE}' '${REPO_REVISION}' '${TEST_INDUSTRY}' '${NO_MP}'
 	# HUGE hack to use as much default as possible here
 	# TODO: Adjust generation scripts accordingly
 	$(_V) mv generated_pnml/firs.pnml firs.pnml
