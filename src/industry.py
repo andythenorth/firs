@@ -315,7 +315,7 @@ class Industry(object):
                 utils.echo_message("SGBT missing, SGCN present for " + self.id)
             # SGCN and SGBT are special-cased in industry templates where needed
             # we want both defined, but nml industry properties (action 0) should only set SGBT (otherwise too many cargos can be set - invalid nml)
-            return [cargo for cargo in cargo_list if cargo is not "SGCN"]
+            return [cargo for cargo in cargo_list if cargo != "SGCN"]
         else:
             return cargo_list
 
