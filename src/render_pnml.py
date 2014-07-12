@@ -15,6 +15,7 @@ import global_constants
 import os
 currentdir = os.curdir
 src_path = os.path.join(currentdir, 'src')
+from multiprocessing import Pool
 
 # setting up a cache for compiled chameleon templates can significantly speed up template rendering
 chameleon_cache_path = os.path.join(currentdir, global_constants.chameleon_cache_dir)
@@ -42,6 +43,8 @@ from cargos import registered_cargos
 import industries
 from industries import registered_industries
 
+# get args passed by makefile
+repo_vars = utils.get_repo_vars(sys)
 
 def render_industry_nml(industry):
     # save the results of templating
@@ -67,8 +70,16 @@ def main():
     pnml.write(templated_pnml)
     pnml.close()
 
-    for industry in industries.registered_industries:
-        render_industry_nml(industry)
+    if repo_vars.get('no_mp', None) == 'True':
+        utils.echo_message('Multiprocessing disabled: (NO_MP=True)')
+        for industry in industries.registered_industries:
+            render_industry_nml(industry)
+    else:
+        pool = Pool(processes=16) # 16 is an arbitrary amount that appears to be fast without blocking the system
+        pool.map(render_industry_nml, industries.registered_industries)
+        pool.close()
+        pool.join()
+
 
 if __name__ == '__main__':
     main()
