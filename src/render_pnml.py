@@ -50,21 +50,25 @@ def render_industry_nml(industry):
     pnml_file.close()
 
 
-header_items = ['checks','conditions','header','firs','parameters']
-for header_item in header_items:
-    template = header_item_templates[header_item + '.pypnml']
-    templated_pnml = utils.unescape_chameleon_output(template(registered_industries=registered_industries, global_constants=global_constants, utils=utils, sys=sys))
+def main():
+    header_items = ['checks','conditions','header','firs','parameters']
+    for header_item in header_items:
+        template = header_item_templates[header_item + '.pypnml']
+        templated_pnml = utils.unescape_chameleon_output(template(registered_industries=registered_industries, global_constants=global_constants, utils=utils, sys=sys))
+        # save the results of templating
+        pnml = codecs.open(os.path.join(pnml_output_path, header_item + '.pnml'), 'w','utf8')
+        pnml.write(templated_pnml)
+        pnml.close()
+
+    template = templates['registered_cargos.pypnml']
+    templated_pnml = utils.unescape_chameleon_output(template(registered_cargos=registered_cargos, global_constants=global_constants))
     # save the results of templating
-    pnml = codecs.open(os.path.join(pnml_output_path, header_item + '.pnml'), 'w','utf8')
+    pnml = codecs.open(os.path.join(pnml_output_path, 'registered_cargos.pnml'), 'w','utf8')
     pnml.write(templated_pnml)
     pnml.close()
 
-template = templates['registered_cargos.pypnml']
-templated_pnml = utils.unescape_chameleon_output(template(registered_cargos=registered_cargos, global_constants=global_constants))
-# save the results of templating
-pnml = codecs.open(os.path.join(pnml_output_path, 'registered_cargos.pnml'), 'w','utf8')
-pnml.write(templated_pnml)
-pnml.close()
+    for industry in industries.registered_industries:
+        render_industry_nml(industry)
 
-for industry in industries.registered_industries:
-    render_industry_nml(industry)
+if __name__ == '__main__':
+    main()

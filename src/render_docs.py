@@ -59,6 +59,7 @@ from industries import registered_industries
 # default sort for docs is by id
 registered_cargos = sorted(registered_cargos, key=lambda registered_cargos: registered_cargos.id)
 registered_industries = sorted(registered_industries, key=lambda registered_industries: registered_industries.id)
+economy_schemas = {}
 
 class DocHelper(object):
     # dirty class to help do some doc formatting
@@ -201,20 +202,22 @@ def render_docs(doc_list, file_type, use_markdown=False):
         doc_file.close()
 
 
-economy_schemas = {}
-for economy in global_constants.economies:
-    enabled_cargos = [cargo for cargo in registered_cargos if not cargo.economy_variations[economy].get('disabled')]
-    enabled_industries = [industry for industry in registered_industries if industry.economy_variations[economy].enabled]
-    economy_schemas[economy] = {'enabled_cargos':enabled_cargos, 'enabled_industries':enabled_industries}
+def main():
+    for economy in global_constants.economies:
+        enabled_cargos = [cargo for cargo in registered_cargos if not cargo.economy_variations[economy].get('disabled')]
+        enabled_industries = [industry for industry in registered_industries if industry.economy_variations[economy].enabled]
+        economy_schemas[economy] = {'enabled_cargos':enabled_cargos, 'enabled_industries':enabled_industries}
 
-# render standard docs from a list
-html_docs = ['get_started', 'code_reference','economies', 'cargos', 'industries', 'translations']
-txt_docs = ['license', 'readme', 'test_docs']
-markdown_docs = ['changelog']
+    # render standard docs from a list
+    html_docs = ['get_started', 'code_reference','economies', 'cargos', 'industries', 'translations']
+    txt_docs = ['license', 'readme', 'test_docs']
+    markdown_docs = ['changelog']
 
-render_docs(html_docs, 'html')
-render_docs(txt_docs, 'txt')
-# just render the markdown docs twice to get txt and html versions, simples no?
-render_docs(markdown_docs, 'txt')
-render_docs(markdown_docs, 'html', use_markdown=True)
+    render_docs(html_docs, 'html')
+    render_docs(txt_docs, 'txt')
+    # just render the markdown docs twice to get txt and html versions, simples no?
+    render_docs(markdown_docs, 'txt')
+    render_docs(markdown_docs, 'html', use_markdown=True)
 
+if __name__ == '__main__':
+    main()

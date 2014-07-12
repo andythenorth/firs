@@ -19,8 +19,14 @@ sys.path.append(os.path.join(currentdir, 'src')) # add to the module search path
 
 import firs
 
+# render the docs
+start = time()
 import render_pnml
+render_pnml.main()
+print format((time() - start), '.2f')+'s'
 
+# render the docs
+start = time()
 import render_docs
-
-print (time() - start)
+render_docs.main()
+print format((time() - start), '.2f')+'s'
