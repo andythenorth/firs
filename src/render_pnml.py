@@ -16,6 +16,7 @@ import os
 currentdir = os.curdir
 src_path = os.path.join(currentdir, 'src')
 from multiprocessing import Pool
+import subprocess
 
 import global_constants as global_constants
 import utils as utils
@@ -34,15 +35,32 @@ header_item_templates = PageTemplateLoader(os.path.join(src_path, 'header_items'
 generated_pnml_path = os.path.join(firs.generated_files_path, 'pnml')
 if not os.path.exists(generated_pnml_path):
     os.mkdir(generated_pnml_path)
+generated_nml_path = os.path.join(firs.generated_files_path, 'nml')
+if not os.path.exists(generated_nml_path):
+    os.mkdir(generated_nml_path)
 
 # get args passed by makefile
 repo_vars = utils.get_repo_vars(sys)
 
-def render_industry_nml(industry):
+def render_industry(industry):
     # save the results of templating
     pnml_file = codecs.open(os.path.join(generated_pnml_path, industry.id + '.pnml'), 'w','utf8')
     pnml_file.write(industry.render_pnml())
     pnml_file.close()
+    render_nml(industry.id)
+
+
+def render_nml(filename):
+    gcc_call_args = ['gcc',
+                      '-C',
+                      '-E',
+                      '-nostdinc',
+                      '-x',
+                      'c-header',
+                      'generated/pnml/' + filename + '.pnml',
+                      '-o',
+                      'generated/nml/' + filename + '.nml']
+    subprocess.call(gcc_call_args)
 
 
 def main():
@@ -51,9 +69,11 @@ def main():
         template = header_item_templates[header_item + '.pypnml']
         templated_pnml = utils.unescape_chameleon_output(template(registered_industries=registered_industries, global_constants=global_constants, utils=utils, sys=sys, generated_pnml_path=generated_pnml_path))
         # save the results of templating
-        pnml = codecs.open(os.path.join(generated_pnml_path, header_item + '.pnml'), 'w','utf8')
+        pnml_file_path = os.path.join(generated_pnml_path, header_item + '.pnml')
+        pnml = codecs.open(pnml_file_path, 'w','utf8')
         pnml.write(templated_pnml)
         pnml.close()
+        render_nml(header_item)
 
     template = templates['registered_cargos.pypnml']
     templated_pnml = utils.unescape_chameleon_output(template(registered_cargos=registered_cargos, global_constants=global_constants))
@@ -61,14 +81,15 @@ def main():
     pnml = codecs.open(os.path.join(generated_pnml_path, 'registered_cargos.pnml'), 'w','utf8')
     pnml.write(templated_pnml)
     pnml.close()
+    render_nml('registered_cargos')
 
     if repo_vars.get('no_mp', None) == 'True':
         utils.echo_message('Multiprocessing disabled: (NO_MP=True)')
         for industry in industries.registered_industries:
-            render_industry_nml(industry)
+            render_industry(industry)
     else:
         pool = Pool(processes=16) # 16 is an arbitrary amount that appears to be fast without blocking the system
-        pool.map(render_industry_nml, industries.registered_industries)
+        pool.map(render_industry, industries.registered_industries)
         pool.close()
         pool.join()
 
