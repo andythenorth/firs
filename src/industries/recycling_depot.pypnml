@@ -70,7 +70,7 @@ CHECK_INDUSTRY_TOWN_COUNT   (check_location, recycling_depot, 0, 0, string(STR_E
 
 SWITCH_COLOUR_SCHEME1(${industry.id}_colour)
 
-#include "../src/templates/check_availability.pnml"
+#include "../../src/templates/check_availability.pnml"
 
 
 /* We have a special production code here:
@@ -107,4 +107,4 @@ item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
 	}
 }
 
-#include "../src/templates/undefs.pnml"
+#include "../../src/templates/undefs.pnml"

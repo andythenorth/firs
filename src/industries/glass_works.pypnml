@@ -84,13 +84,13 @@ CHECK_FOUNDER       (${industry.id}_quarry)
 
 SWITCH_COLOUR_SCHEME1(${industry.id}_colour)
 
-#include "../src/templates/produce_secondary.pnml"
-#include "../src/templates/check_secondary_production_level.pnml"
-#include "../src/templates/check_secondary_closure.pnml"
+#include "../../src/templates/produce_secondary.pnml"
+#include "../../src/templates/check_secondary_production_level.pnml"
+#include "../../src/templates/check_secondary_closure.pnml"
 
 ${industry.get_extra_text_secondary()}
 
-#include "../src/templates/check_availability.pnml"
+#include "../../src/templates/check_availability.pnml"
 
 ${industry.get_industry_properties()}
 
@@ -106,4 +106,4 @@ item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
 	}
 }
 
-#include "../src/templates/undefs.pnml"
+#include "../../src/templates/undefs.pnml"

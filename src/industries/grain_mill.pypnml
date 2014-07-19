@@ -5,7 +5,7 @@
   See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
 -->
 
-#include "../src/templates/spritelayouts_groundaware.pnml"
+#include "../../src/templates/spritelayouts_groundaware.pnml"
 
 #define THIS_ID(...) ${industry.id}_ ## __VA_ARGS__
 
@@ -95,13 +95,13 @@ switch (FEAT_INDUSTRIES, SELF, ${industry.id}_check_date, current_year) {
 
 SWITCH_COLOUR_SCHEME1(${industry.id}_colour)
 
-#include "../src/templates/produce_secondary.pnml"
-#include "../src/templates/check_secondary_production_level.pnml"
-#include "../src/templates/check_secondary_closure.pnml"
+#include "../../src/templates/produce_secondary.pnml"
+#include "../../src/templates/check_secondary_production_level.pnml"
+#include "../../src/templates/check_secondary_closure.pnml"
 
 ${industry.get_extra_text_secondary()}
 
-#include "../src/templates/check_availability.pnml"
+#include "../../src/templates/check_availability.pnml"
 
 ${industry.get_industry_properties()}
 
@@ -117,4 +117,4 @@ item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
 	}
 }
 
-#include "../src/templates/undefs.pnml"
+#include "../../src/templates/undefs.pnml"

@@ -1,15 +1,15 @@
-#include "generated_pnml/header.pnml"
+#include "${generated_pnml_path}/header.pnml"
 
-#include "generated_pnml/parameters.pnml"
+#include "${generated_pnml_path}/parameters.pnml"
 
 #include "src/defines.pnml"
 
-#include "generated_pnml/checks.pnml"
-#include "generated_pnml/conditions.pnml"
+#include "${generated_pnml_path}/checks.pnml"
+#include "${generated_pnml_path}/conditions.pnml"
 
 #include "src/header_items/cargo_icon_template.pnml"
 #include "src/header_items/custom_station_ratings.pnml"
-#include "generated_pnml/registered_cargos.pnml"
+#include "${generated_pnml_path}/registered_cargos.pnml"
 
 //disable the default industries
 disable_item(FEAT_INDUSTRIES, 0, 36);
@@ -29,6 +29,6 @@ disable_item(FEAT_INDUSTRIES, 0, 36);
 
 <tal:industries repeat="industry registered_industries" define="test_industry utils.get_repo_vars(sys).get('test_industry', None)">
     <tal:faster_compiles_when_testing condition="test_industry == '' or test_industry == industry.id">
-        #include "generated_pnml/${industry.id}.pnml"
+        #include "${generated_pnml_path}/${industry.id}.pnml"
     </tal:faster_compiles_when_testing>
 </tal:industries>

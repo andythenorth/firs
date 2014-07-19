@@ -932,7 +932,7 @@ SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
 
 ${industry.get_primary_supplies_stuff()}
 
-#include "../src/templates/check_availability.pnml"
+#include "../../src/templates/check_availability.pnml"
 
 ${industry.get_industry_properties()}
 
@@ -949,5 +949,5 @@ item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
 		colour:                  ${industry.id}_colour;
 	}
 }
-#include "../src/templates/undefs.pnml"
+#include "../../src/templates/undefs.pnml"
 

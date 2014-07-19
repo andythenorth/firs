@@ -72,3 +72,9 @@ industry_numeric_ids = dict(coal_mine = 0x00,
 #3F is last ID to be used (64 industry limit)
 
 chameleon_cache_dir = 'chameleon_cache'
+
+# specify location for intermediate files generated during build (nml, graphics, lang etc)
+generated_files_dir = 'generated'
+
+# this is for nml or grfcodec, don't need to use python path module here
+graphics_path = 'generated/graphics/'

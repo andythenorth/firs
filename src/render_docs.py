@@ -16,12 +16,6 @@ import global_constants
 import os
 currentdir = os.curdir
 
-# setting up a cache for compiled chameleon templates can significantly speed up template rendering
-chameleon_cache_path = os.path.join(currentdir, global_constants.chameleon_cache_dir)
-if not os.path.exists(chameleon_cache_path):
-    os.mkdir(chameleon_cache_path)
-os.environ['CHAMELEON_CACHE'] = chameleon_cache_path
-
 docs_src = os.path.join(currentdir, 'docs_src')
 docs_output_path = os.path.join(currentdir, 'docs')
 if os.path.exists(docs_output_path):
