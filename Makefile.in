@@ -7,9 +7,11 @@
 
 CC_FLAGS ?= -D TEST_INDUSTRY=$(TEST_INDUSTRY) -C -E -nostdinc -x c-header
 
-pnml: firs.pnml
+GENERATE_PNML = my_pnml
+
+my_pnml: scripts/preprocess.py
 	$(_E) [GENERATE PNML]
-	$(_V) $(PYTHON) scripts/preprocess.py '${REPO_TITLE}' '${REPO_REVISION}' '${TEST_INDUSTRY}' '${NO_MP}'
+	$(PYTHON) scripts/preprocess.py '${REPO_TITLE}' '${REPO_REVISION}' '${TEST_INDUSTRY}' '${NO_MP}'
 	$(_V) mv generated/pnml/firs.pnml firs.pnml
 
 ################################################################
