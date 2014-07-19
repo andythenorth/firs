@@ -7,18 +7,17 @@
 
 CC_FLAGS ?= -D TEST_INDUSTRY=$(TEST_INDUSTRY) -C -E -nostdinc -x c-header
 
-GENERATE_PNML = my_pnml
+GENERATE_PNML = generated/pnml/firs.pnml
 
-my_pnml: scripts/preprocess.py
+generated/pnml/firs.pnml: scripts/preprocess.py
 	$(_E) [GENERATE PNML]
 	$(PYTHON) scripts/preprocess.py '${REPO_TITLE}' '${REPO_REVISION}' '${TEST_INDUSTRY}' '${NO_MP}'
-	$(_V) mv generated/pnml/firs.pnml firs.pnml
 
 ################################################################
 # Definitions which extend the common rules
 ################################################################
 clean::
 	$(_E) "[CLEAN PNML]"
-	$(_V)-rm -rf $(NML_FILE)
+	$(_V)-rm -rf $(NML_FILE)a
 	$(_V)-rm -r chameleon_cache
 	$(_V)-rm -r generated
