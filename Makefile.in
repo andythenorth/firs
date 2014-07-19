@@ -7,7 +7,7 @@
 
 CC_FLAGS ?= -D TEST_INDUSTRY=$(TEST_INDUSTRY) -C -E -nostdinc -x c-header
 
-MAIN_SRC_FILE:=generated/pnml/firs.pnml
+MAIN_SRC_FILE := generated/pnml/firs.pnml
 NML_FILE := generated/firs.nml
 
 GENERATE_PNML = generated/pnml/firs.pnml
