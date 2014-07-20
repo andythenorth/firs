@@ -42,25 +42,13 @@ if not os.path.exists(generated_nml_path):
 # get args passed by makefile
 repo_vars = utils.get_repo_vars(sys)
 
+
 def render_industry(industry):
     # save the results of templating
     pnml_file = codecs.open(os.path.join(generated_pnml_path, industry.id + '.pnml'), 'w','utf8')
     pnml_file.write(industry.render_pnml())
     pnml_file.close()
-    render_nml(industry.id)
 
-
-def render_nml(filename):
-    gcc_call_args = ['gcc',
-                      '-C',
-                      '-E',
-                      '-nostdinc',
-                      '-x',
-                      'c-header',
-                      'generated/pnml/' + filename + '.pnml',
-                      '-o',
-                      'generated/nml/' + filename + '.nml']
-    subprocess.call(gcc_call_args)
 
 
 def main():
@@ -73,7 +61,6 @@ def main():
         pnml = codecs.open(pnml_file_path, 'w','utf8')
         pnml.write(templated_pnml)
         pnml.close()
-        render_nml(header_item)
 
     template = templates['registered_cargos.pypnml']
     templated_pnml = utils.unescape_chameleon_output(template(registered_cargos=registered_cargos, global_constants=global_constants))
@@ -81,7 +68,6 @@ def main():
     pnml = codecs.open(os.path.join(generated_pnml_path, 'registered_cargos.pnml'), 'w','utf8')
     pnml.write(templated_pnml)
     pnml.close()
-    render_nml('registered_cargos')
 
     if repo_vars.get('no_mp', None) == 'True':
         utils.echo_message('Multiprocessing disabled: (NO_MP=True)')
@@ -92,6 +78,14 @@ def main():
         pool.map(render_industry, industries.registered_industries)
         pool.close()
         pool.join()
+
+    # linker
+    print "Linking"
+    template = header_item_templates['firs.pypnml']
+    firs_pnml = codecs.open(os.path.join(firs.generated_files_path, 'firs.pnml'), 'w','utf8')
+    firs_pnml.write(utils.unescape_chameleon_output(template(registered_industries=registered_industries, global_constants=global_constants,
+                                                utils=utils, sys=sys, generated_pnml_path=generated_pnml_path)))
+    firs_pnml.close()
 
 
 if __name__ == '__main__':
