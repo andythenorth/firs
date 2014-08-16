@@ -28,6 +28,7 @@ STR_CARGO_NAME_BAUXITE                                                          
 STR_CARGO_NAME_BUILDING_MATERIALS                                               :Bou Materiaal
 STR_CARGO_NAME_CHEMICALS                                                        :Chemikalieë
 STR_CARGO_NAME_CLAY                                                             :Klei
+STR_CARGO_NAME_COFFEE                                                           :Koffee
 STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :Ingenieurswese Benodighede
 STR_CARGO_NAME_FIBRES                                                           :Plant Vesels
 STR_CARGO_NAME_FISH                                                             :Vis
@@ -51,6 +52,7 @@ STR_CARGO_UNIT_BAUXITE                                                          
 STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WEIGHT} bou materiaal
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} chemikalieë
 STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} klei
+STR_CARGO_UNIT_COFFEE                                                           :{SIGNED_WORD} sak{P 0 "" ke} koffee
 STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} krat{P 0 "" te} ingenieurswese benodighede
 STR_CARGO_UNIT_FIBRES                                                           :{SIGNED_WORD} ba{P 0 al le} plant vesels
 STR_CARGO_UNIT_FISH                                                             :{WEIGHT} vis
@@ -74,6 +76,7 @@ STR_CID_BAUXITE                                                                 
 STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}BM
 STR_CID_CHEMICALS                                                               :{TINYFONT}CH
 STR_CID_CLAY                                                                    :{TINYFONT}CY
+STR_CID_COFFEE                                                                  :{TINYFONT}CF
 STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}ES
 STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}FS
 STR_CID_FIBRES                                                                  :{TINYFONT}PF
@@ -123,6 +126,8 @@ STR_EXTRA_METAL_FOUNDRY                                                         
 STR_EXTRA_OIL_REFINERY                                                          :{BLACK}Prosesseer ru-olie tot petrol and chemikalieë.{}{}6t produksie per 8t afgelewer.
 STR_EXTRA_PAPER_MILL                                                            :{BLACK}Pulp hout om papier en karton te produseer.{}{}{BLACK}Vrag produksie:{} 4t per 8t wood afgelewer{} 2t per 8t klei afgelewer{} 2t per 8t chemikalieë afgelewer{}{}Produksie neem toe as twee of meer vragte afgelewer word binne 'n maand van mekaar.
 STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}Produseer plastiek items soos as verpakking and huishoudelike goedere.{}{}Vrag produksie:{} {STRING} {STRING}
+STR_EXTRA_PLASTICS_PLANT_CHEMICALS_SUBSTR                                       :6 kratte per 8,000l chemikalieë afgelewer{}
+STR_EXTRA_PLASTICS_PLANT_PLANT_FIBRES_SUBSTR                                    :6 krate per 8 bale plantvesels afgelewer{}
 STR_EXTRA_RECYCLING_PLANT                                                       :{BLACK}Prosesseer herwinbares vir hergebruik in vervaardiging.{}{}6t produksie per 8t afgelewer.
 STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}Produseer herwinbares afhangende van die dorp grootte.
 STR_EXTRA_SAWMILL                                                               :{BLACK}Kap hout.{}{}6t produksie per 8t afgelewer.
@@ -151,11 +156,14 @@ STR_STATION                                                                     
 
 STR_IND_ALUMINIUM_PLANT                                                         :Aluminium Fabriek
 STR_IND_ARABLE_FARM                                                             :Bewerk Plaas
+STR_IND_BASICFARM                                                               :Plaas
 STR_IND_BAUXITE_MINE                                                            :Bauxiet Myn
 STR_IND_BIOREFINERY                                                             :Bioraffinadery
 STR_IND_BREWERY                                                                 :Brouery
+STR_IND_BREWERY_CIDER_MILL                                                      :Sider Meule
 STR_IND_BRICK_WORKS                                                             :Steen Werke
 STR_IND_BUILDERS_YARD                                                           :Bouers Werf
+STR_IND_BULK_TERMINAL                                                           :Bulk Terminaal
 STR_IND_CEMENT_PLANT                                                            :Sement Fabriek
 STR_IND_CLAY_PIT                                                                :Klei Pit
 STR_IND_DAIRY                                                                   :Melk
@@ -181,6 +189,7 @@ STR_IND_MIXEDFARM                                                               
 STR_IND_PETROLPUMP                                                              :Petrol Stasie
 STR_IND_PLASTICS_PLANT                                                          :Plastiese Fabriek
 STR_IND_QUARRY                                                                  :Quarry
+STR_IND_RANCH                                                                   :Plaas
 STR_IND_RECYCLING_DEPOT                                                         :Herwinningsdepot
 STR_IND_RECYCLING_PLANT                                                         :Herwinningsplant
 STR_IND_SHEEPFARM                                                               :Skaap Plaas
@@ -191,3 +200,10 @@ STR_IND_SUPERMARKET                                                             
 STR_IND_TEXTILE_MILL                                                            :Textiel Fabriek
 
 STR_STATION_ANIMALS                                                             :Perde Markte
+STR_STATION_FARM                                                                :Landgoed
+STR_STATION_FISHMARKET                                                          :Vis Mark
+STR_STATION_HEAVY_INDUSTRY                                                      :James Watt Straat
+STR_STATION_PIT                                                                 :Mynskag
+STR_STATION_POWERHUNGRY                                                         :Kragsentrale
+STR_STATION_REFINERY                                                            :Portland
+STR_STATION_TOWN                                                                :Ou Stadsaal
