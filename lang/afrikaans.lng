@@ -8,7 +8,7 @@ STR_GRF_URL                                                                     
 STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :Die maksimum afstand teëls wat die vis waters, oliebore en baggerwerk-terreine van die kus af is.
 STR_PARAM_DESC_STAT_RATING                                                      :Stasie graderings beïnvloed die hoeveelheid vrag wat afgelewer word deur 'n nywerheid aan die stasie, hoe hoër die telling, hoe meer word gelewer.
 STR_PARAM_DESC_DEBUG                                                            :Vir developers alleenlik
-STR_PARAM_DESC_ECONOMIES                                                        :Wanneer dit klaar is, sal FIRS beskik oor 'n groot keuse van ekonomieë. Vragte en nywerhede sal wissel in elke ekonomie. Vrag betalings tariewe sal ook verskillend wees in elke ekonomie.{}{}{SILVER}Tans is daar net een ekonomie is beskikbaar :)
+STR_PARAM_DESC_ECONOMIES                                                        :Elke ekonomie bied 'n ander kombinasie van vragte en nywerhede.{}{} Vir spelers wat 'n eenvoudige spel wil hê, 'basiese' ekonomie bevat minder nywerhede en vragte as ander FIRS ekonomieë.
 STR_PARAM_DESC_NO_OPENINGS                                                      :By verstek, nuwe nywerhede sal begin tydens spel.{} Indien 'n "verhoed die opening" aangeskakel is sal nywerhede nie oopmaak tydens die spel nie, en die spelers sal nie in staat wees om die vooruitsig vir nywerhede te bevonds nie.
 STR_PARAM_DESC_SECONDARY_NEVER_CLOSE                                            :By verstek, FIRS sekondêre nywerhede sal nooit toemaak{}{} Indien sekondêre sluiting aangeskakel is, sal sekondêre nywerhede sluit indien daar geen vrag vervoer word vir 'n lang tyd.
 STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY                                   :Maksimum kus afstand van mariene nywerhede in teëls
@@ -22,6 +22,8 @@ STR_PARAM_VALUE_STAT_RATING_DEFAULT                                             
 STR_PARAM_VALUE_STAT_RATING_REDUCED_TIME                                        :Verbeterde gradering - verminder die effek van tyd sedert die laaste aflewering
 STR_PARAM_VALUE_STAT_RATING_100                                                 :Altyd 100%
 
+STR_PARAM_VALUE_ECONOMIES_BASIC_ARCTIC                                          :Basiese Arkties
+STR_PARAM_VALUE_ECONOMIES_BASIC_TROPIC                                          :Basiese Tropies
 
 STR_CARGO_NAME_ALCOHOL                                                          :Alkohol
 STR_CARGO_NAME_BAUXITE                                                          :Bauxiet
@@ -134,7 +136,8 @@ STR_EXTRA_SAWMILL                                                               
 STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Produseer metaal items soos gereedskap, ploeë, hekke, skoppe en perdeskoene.{}{}8t produksie per 8t afgelewer.
 STR_EXTRA_STEELMILL                                                             :{BLACK}Vrag produksie:{} 2t per 8t yster erts afgelewer{} 2t per 8t steenkool afgelewer{} 4t per 8t skroot metaal afgelewer{}{}Produksie neem toe as twee of meer vragte afgelewer word binne 'n maand van mekaar.
 STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Vrag produksie:{} 3t per 8t vervaardigings benodighede afgelewer{} 5t per 8t suiker afgelewer{}{}Vermeeder tot 8t per 8t wanneer beide vragte afgelewer word binne 'n maand van mekaar.
-STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Vrag produksie:{} 3t per 8t vervaardigings benodighede afgelewer{} 5t per 8t wol afgelewer{} 5t per 8t plant vesels afgelewer{}{}Produksie neem toe as vervaardigings benodighede afgelewer word binne 'n maand van ander vragte.
+STR_EXTRA_TEXTILE_MILL                                                          :{BLACK} Vrag produksie:{} 3 kratte per 8 kratte vervaardiging voorrade gelewer{} {STRING} {STRING}{} Produksie verhoog as vervaardiging voorrade afgelewer word binne 'n maand van ander vragte.
+STR_EXTRA_TEXTILE_MILL_PLANT_FIBRES_SUBSTR                                      :6 krate per 8 bale plantvesels afgelewer{}
 
 STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ DEBUG ------------{}Produksie die maand:{}Vrag 1: {WHITE}{COMMA}{BLACK}{}Vrag 2: {WHITE}{COMMA}{BLACK}{}Dae sedert laaste aflewering: {WHITE}{COMMA}{BLACK}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Maksimum produksie beryk
@@ -144,6 +147,7 @@ STR_FUND_MIXED_FARM                                                             
 STR_FUND_ARABLE_FARM                                                            :{}{BLACK}Ligging: {YELLOW}Kannie befonds word in sneeu of in die woestyn nie.
 STR_FUND_FOREST                                                                 :{}{BLACK}Ligging: {YELLOW}Kannie befonds word in die woestyn.
 STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}Ligging: {YELLOW}Kannie befonds word in sneeu.
+STR_FUND_RUBBER_PLANTATION                                                      :{} {BLACK} Plek: {YELLOW} Kan nie op die sneeu of in woestyne befonds word nie.
 
 
 STR_FUND_AVAILABLE_FROM                                                         :{}{BLACK}Beskikbaar van: {YELLOW}{COMMA}
@@ -186,6 +190,7 @@ STR_IND_MACHINE_SHOP                                                            
 STR_IND_METAL_FABRICATION_PLANT                                                 :Metaal Vervaardiging Fabriek
 STR_IND_METAL_FOUNDRY                                                           :Metaal Werkswinkel
 STR_IND_MIXEDFARM                                                               :Gemende Plaas
+STR_IND_ORCHARD_PIGGERY                                                         :Boord en Varkplaas
 STR_IND_PETROLPUMP                                                              :Petrol Stasie
 STR_IND_PLASTICS_PLANT                                                          :Plastiese Fabriek
 STR_IND_QUARRY                                                                  :Quarry
@@ -195,15 +200,21 @@ STR_IND_RECYCLING_PLANT                                                         
 STR_IND_SHEEPFARM                                                               :Skaap Plaas
 STR_IND_SMITHY_FORGE                                                            :Smeltery
 STR_IND_STOCKYARD                                                               :Bees Plaas
+STR_IND_SUGAR_PLANTATION                                                        :Suiker Plantasie
 STR_IND_SUGAR_REFINERY                                                          :Suiker Meule
 STR_IND_SUPERMARKET                                                             :Supermark
 STR_IND_TEXTILE_MILL                                                            :Textiel Fabriek
+STR_IND_TRADING_POST                                                            :Handelspos
 
 STR_STATION_ANIMALS                                                             :Perde Markte
 STR_STATION_FARM                                                                :Landgoed
 STR_STATION_FISHMARKET                                                          :Vis Mark
 STR_STATION_HEAVY_INDUSTRY                                                      :James Watt Straat
+STR_STATION_MARKET                                                              :Mark
+STR_STATION_MILL                                                                :Meule
+STR_STATION_MINE                                                                :Leerlooiery Straat
 STR_STATION_PIT                                                                 :Mynskag
 STR_STATION_POWERHUNGRY                                                         :Kragsentrale
 STR_STATION_REFINERY                                                            :Portland
 STR_STATION_TOWN                                                                :Ou Stadsaal
+STR_STATION_WATER                                                               :Sandbank
