@@ -13,7 +13,7 @@ STR_PARAM_DESC_NO_OPENINGS                                                      
 STR_PARAM_DESC_SECONDARY_NEVER_CLOSE                                            :By verstek, FIRS sekondêre nywerhede sal nooit toemaak{}{} Indien sekondêre sluiting aangeskakel is, sal sekondêre nywerhede sluit indien daar geen vrag vervoer word vir 'n lang tyd.
 STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY                                   :Maksimum kus afstand van mariene nywerhede in teëls
 STR_PARAM_NAME_DEBUG                                                            :Wys debug teks
-STR_PARAM_NAME_ECONOMIES                                                        :Ekonomy
+STR_PARAM_NAME_ECONOMIES                                                        :Ekonomie
 STR_PARAM_NAME_NO_OPENINGS                                                      :Verhoed dat nywerhede oop maak tydens die spel
 STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            :Laat sekondere nywerhede toe om te sluit.
 STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0                                         :Geen limiet
@@ -22,8 +22,12 @@ STR_PARAM_VALUE_STAT_RATING_DEFAULT                                             
 STR_PARAM_VALUE_STAT_RATING_REDUCED_TIME                                        :Verbeterde gradering - verminder die effek van tyd sedert die laaste aflewering
 STR_PARAM_VALUE_STAT_RATING_100                                                 :Altyd 100%
 
+STR_PARAM_VALUE_ECONOMIES_BASIC_TEMPERATE                                       :Matige Basies
 STR_PARAM_VALUE_ECONOMIES_BASIC_ARCTIC                                          :Basiese Arkties
 STR_PARAM_VALUE_ECONOMIES_BASIC_TROPIC                                          :Basiese Tropies
+STR_PARAM_VALUE_ECONOMIES_FIRS                                                  :FIRS
+STR_PARAM_VALUE_ECONOMIES_MISTAH_KURTZ                                          :Hart van Duisternis
+STR_PARAM_VALUE_ECONOMIES_TEST_3                                                :Toets Ekonomie 3
 
 STR_CARGO_NAME_ALCOHOL                                                          :Alkohol
 STR_CARGO_NAME_BAUXITE                                                          :Bauxiet
@@ -111,9 +115,13 @@ STR_ERR_LOCATION_LIMIT_1_PER_TOWN                                               
 
 STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}Vrag produksie:{} 2t per 8t bauxiet afgelewer{} 2t per 8t chemikalieë afgelewer{} 4t per 8t skroot metaal afgelewer{}{}Produksie neem toe as twee of meer vragte afgelewer word binne 'n maand van mekaar.
 STR_EXTRA_BIOREFINERY                                                           :{BLACK}Prosesseer graan and suiker tot petrol and chemikalieë.{}{}6t produksie per 8t afgelewer.
+STR_EXTRA_BREWERY                                                               :{BLACK}Vrag produksie:{} 3,000l per 8t kratte vervaardiging voorrade afgelewer{} {STRING} {STRING}{}Produksie verhoog as vervaardiging voorrade afgelewer word binne 'n maand van ander vragte
+STR_EXTRA_BREWERY_GRAIN_SUBSTR                                                  :5,000l per 8t graan afgelewer{}
+STR_EXTRA_BREWERY_FRUIT_SUBSTR                                                  :5,000l per 8t vrugte afgelewer{}
 STR_EXTRA_BRICKWORKS                                                            :{BLACK}Vrag produksie:{} 2t per 8t steenkool afgelewer{} 2t per 8t sand afgelewer{} 4t per 8t klei afgelewer{}{}Produksie neem toe as twee of meer vragte afgelewer word binne 'n maand van mekaar.
 STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Vrag produksie:{} 2t per 8t steenkool afgelewer{} 2t per 8t klei afgelewer{} 4t per 8t stene afgelewer{}{}Produksie neem toe as twee of meer vragte afgelewer word binne 'n maand van mekaar.
 STR_EXTRA_DAIRY                                                                 :{BLACK}Vrag produksie:{} 3t per 8t vervaardigings benodighede afgelewer{} 5t per 8t melk afgelewer{}{}Vermeeder to 8t per 8t wanneer beide vragte afgelewer word binne 'n maand van mekaar.
+STR_EXTRA_FERTILIZER_PLANT                                                      :{BLACK}Vrag produksie:{} 8 kratte per 8,000l chemikalieë afgelewer
 STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Vrag produksie:{} 3t per 8t vervaardigings benodighede afgelewer{} 5t per 8t vis afgelewer{}{}Vermeeder tot 8t per 8t wanneer beide vragte afgelewer word binne 'n maand van mekaar.
 STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Vrag produksie:{} 3t per 8t vervaardigings benodighede afgelewer{} 5t per 8t hout afgelewer{}{}Vermeeder tot 8t per 8t wanneer beide vragte afgelewer word binne 'n maand van mekaar.
 STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Produseer glass items soos bottels, flesse en venster glas.{}{}{BLACK}Vrag produksie:{} 6t per 8t sand afgelewer{} 2t per 8t chemikalieë afgelewer{}{}Vermeeder tot 8t per 8t wanneer beide vragte afgelewer word binne 'n maand van mekaar.
@@ -137,17 +145,29 @@ STR_EXTRA_SMITHY_FORGE                                                          
 STR_EXTRA_STEELMILL                                                             :{BLACK}Vrag produksie:{} 2t per 8t yster erts afgelewer{} 2t per 8t steenkool afgelewer{} 4t per 8t skroot metaal afgelewer{}{}Produksie neem toe as twee of meer vragte afgelewer word binne 'n maand van mekaar.
 STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Vrag produksie:{} 3t per 8t vervaardigings benodighede afgelewer{} 5t per 8t suiker afgelewer{}{}Vermeeder tot 8t per 8t wanneer beide vragte afgelewer word binne 'n maand van mekaar.
 STR_EXTRA_TEXTILE_MILL                                                          :{BLACK} Vrag produksie:{} 3 kratte per 8 kratte vervaardiging voorrade gelewer{} {STRING} {STRING}{} Produksie verhoog as vervaardiging voorrade afgelewer word binne 'n maand van ander vragte.
+STR_EXTRA_TEXTILE_MILL_WOOL_SUBSTR                                              :5 kratte per 8 bale wol afgelewer{}
 STR_EXTRA_TEXTILE_MILL_PLANT_FIBRES_SUBSTR                                      :6 krate per 8 bale plantvesels afgelewer{}
 
 STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ DEBUG ------------{}Produksie die maand:{}Vrag 1: {WHITE}{COMMA}{BLACK}{}Vrag 2: {WHITE}{COMMA}{BLACK}{}Dae sedert laaste aflewering: {WHITE}{COMMA}{BLACK}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Maksimum produksie beryk
+STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Huidige produksie: {YELLOW}Normaal{}{}{BLACK}Om die vlak te verhoog, Lewer {SIGNED_WORD} eenhede vrag af binne drie maande (of {SIGNED_WORD}eenhede vrag om produksie viervoudig te verhoog)
+STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Huidige produksie: {YELLOW}Verbeterde (dubbel){}{}{BLACK}Om hierdie vlak te handhaaf, lewer {SIGNED_WORD} kratte voorraad af binne drie maande, of {SIGNED_WORD} kratte voorraad om produksie viervoudig te verhoog
+STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}Huidige produksie: {YELLOW}VGung ho (viervoudig){}{}{BLACK}Om hierdie vlak te handhaaf, lewer {SIGNED_WORD} kratte voorraad af binne drie maande
+STR_PORT_PRODUCTION_1X                                                          :{BLACK}Huidige produksie: {YELLOW}Normaal{}{}{BLACK}Om die vlak te verhoog, Lewer {SIGNED_WORD} eenhede vrag af binne drie maande{}Vir viervoudige produksie, lewer {SIGNED_WORD} eenhede vrag af binne drie maande
+STR_PORT_PRODUCTION_2X                                                          :{BLACK}Huidige produksie: {YELLOW}Verbeterde (dubbel){}{}{BLACK}Om hierdie vlak te handhaaf, lewer {SIGNED_WORD} eenhede vrag af binne drie maande, of {SIGNED_WORD}eenhede vrag  om produksie viervoudig te verhoog
+STR_PORT_PRODUCTION_4X                                                          :{BLACK}Huidige produksie: {YELLOW}VGung ho (viervoudig){}{}{BLACK}Om hierdie vlak te handhaaf, lewer {SIGNED_WORD} kratte voorraad af binne drie maande
 STR_GENERIC_NEWLINE                                                             :{}
 
+STR_FUND_BASIC_FARM                                                             :{}{BLACK}Plek: {YELLOW}Kan nie op die sneeu of in woestyne befonds word.
 STR_FUND_MIXED_FARM                                                             :{}{BLACK}Ligging: {YELLOW}Kannie befonds word in sneeu of in die woestyn nie.
 STR_FUND_ARABLE_FARM                                                            :{}{BLACK}Ligging: {YELLOW}Kannie befonds word in sneeu of in die woestyn nie.
+STR_FUND_COFFEE_ESTATE                                                          :{}{BLACK}Plek: {YELLOW}Kan nie op die sneeu of in woestyne befonds word.
+STR_FUND_ORCHARD_PIGGERY                                                        :{}{BLACK}Plek: {YELLOW}Kan nie op die sneeu of in woestyne befonds word.
+STR_FUND_SUGAR_PLANTATION                                                       :{}{BLACK}Plek: {YELLOW}Kan nie op die sneeu of in woestyne befonds word.
+STR_FUND_FIBRE_CROP_FARM                                                        :{}{BLACK}Plek: {YELLOW}Kan nie op die sneeu of in woestyne befonds word.
 STR_FUND_FOREST                                                                 :{}{BLACK}Ligging: {YELLOW}Kannie befonds word in die woestyn.
 STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}Ligging: {YELLOW}Kannie befonds word in sneeu.
-STR_FUND_RUBBER_PLANTATION                                                      :{} {BLACK} Plek: {YELLOW} Kan nie op die sneeu of in woestyne befonds word nie.
+STR_FUND_RUBBER_PLANTATION                                                      :{}{BLACK}Plek: {YELLOW}Kan nie op die sneeu of in woestyne befonds word.
 
 
 STR_FUND_AVAILABLE_FROM                                                         :{}{BLACK}Beskikbaar van: {YELLOW}{COMMA}
@@ -170,6 +190,8 @@ STR_IND_BUILDERS_YARD                                                           
 STR_IND_BULK_TERMINAL                                                           :Bulk Terminaal
 STR_IND_CEMENT_PLANT                                                            :Sement Fabriek
 STR_IND_CLAY_PIT                                                                :Klei Pit
+STR_IND_COFFEE_ESTATE                                                           :Koffee Landgoed
+STR_IND_FIBRE_CROP_FARM                                                         :Vesel saaiplaas
 STR_IND_DAIRY                                                                   :Melk
 STR_IND_DAIRYFARM                                                               :Melk Plaas
 STR_IND_DREDGING_SITE                                                           :Baggerwerk terrein
@@ -178,6 +200,7 @@ STR_IND_FISHING_GROUND                                                          
 STR_IND_FISHING_HARBOUR                                                         :Vis Hawe
 STR_IND_FOOD_MARKET                                                             :Kruidenierswinkel
 STR_IND_FURNITURE_FACTORY                                                       :Meubelfabriek
+STR_IND_GENERAL_STORE                                                           :Algemene Handelaar
 STR_IND_GLASS_WORKS                                                             :Glas Werke
 STR_IND_GRAIN_MILL                                                              :Graan Meule
 STR_IND_HARDWARE_STORE                                                          :Hardewarewinkel
@@ -193,6 +216,7 @@ STR_IND_MIXEDFARM                                                               
 STR_IND_ORCHARD_PIGGERY                                                         :Boord en Varkplaas
 STR_IND_PETROLPUMP                                                              :Petrol Stasie
 STR_IND_PLASTICS_PLANT                                                          :Plastiese Fabriek
+STR_IND_PORT                                                                    :Hawe
 STR_IND_QUARRY                                                                  :Quarry
 STR_IND_RANCH                                                                   :Plaas
 STR_IND_RECYCLING_DEPOT                                                         :Herwinningsdepot
@@ -210,10 +234,13 @@ STR_STATION_ANIMALS                                                             
 STR_STATION_FARM                                                                :Landgoed
 STR_STATION_FISHMARKET                                                          :Vis Mark
 STR_STATION_HEAVY_INDUSTRY                                                      :James Watt Straat
+STR_STATION_INDUSTRY_ESTATE                                                     :Industriële Park
+STR_STATION_INDUSTRY_HARBOUR                                                    :Industriële Hawe
 STR_STATION_MARKET                                                              :Mark
 STR_STATION_MILL                                                                :Meule
 STR_STATION_MINE                                                                :Leerlooiery Straat
 STR_STATION_PIT                                                                 :Mynskag
+STR_STATION_PLANTATION                                                          :Plantasie
 STR_STATION_POWERHUNGRY                                                         :Kragsentrale
 STR_STATION_REFINERY                                                            :Portland
 STR_STATION_TOWN                                                                :Ou Stadsaal
