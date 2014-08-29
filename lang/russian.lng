@@ -5,6 +5,7 @@
 
 STR_GRF_DESC                                                                    :{ORANGE}Набор FIRS для полной замены предприятий{}{BLACK}Специально для вас от andythenorth, FooBar, planetmaker, Terkhen и Yexo, с помощью многих других. {SILVER}Подробную информацию, включая как пользоваться FIRS, найдёте в инструкции. {BLACK}Лицензия: GPL v2.
 STR_GRF_NAME                                                                    :{TITLE}
+STR_GRF_URL                                                                     :http://bundles.openttdcoop.org/firs/releases/LATEST/docs/
 
 STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :Максимальная удалённость местоположения рыболовных промыслов, нефтянных вышек и участков углубления дна от побережья в клетках.
 STR_PARAM_DESC_STAT_RATING                                                      :Рейтинг на станции влияет на количество поставляемого предприятиями на станцию груза. Чем выше рейтинг, тем больше груза будет поставлено.
@@ -23,6 +24,8 @@ STR_PARAM_VALUE_STAT_RATING_DEFAULT                                             
 STR_PARAM_VALUE_STAT_RATING_REDUCED_TIME                                        :снижен эффект "времени с момента последней погрузки"
 STR_PARAM_VALUE_STAT_RATING_100                                                 :всегда 100%
 
+STR_PARAM_VALUE_ECONOMIES_FIRS                                                  :FIRS
+STR_PARAM_VALUE_ECONOMIES_TEST_3                                                :Пробная Экономика 3
 
 STR_CARGO_NAME_ALCOHOL                                                          :{G=n}Спиртное
 STR_CARGO_NAME_ALCOHOL.acc                                                      :спиртное
@@ -156,6 +159,7 @@ STR_ERR_LOCATION_LIMIT_1_PER_TOWN                                               
 
 STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}Производство груза:{}  {SILVER}2/8{BLACK} за единицу бокситов{}  {SILVER}2/8{BLACK} за единицу химикатов{}  {SILVER}4/8{BLACK} за единицу металлолома{}{}Производство возрастёт, если в течении месяца будут доставлены любые два или более грузов.
 STR_EXTRA_BIOREFINERY                                                           :{BLACK}Перерабатывается зерно и сахар в бензин и химикаты.{}{}{SILVER}6/8{BLACK} продукции за единицу доставленного груза.
+STR_EXTRA_BREWERY                                                               :{BLACK}Производство груза:{} 3 000 л. за 8 единиц материалов{} {STRING} {STRING}{}Производство возрастёт, если в течении месяца среди прочих грузов будут доставлены материалы.
 STR_EXTRA_BRICKWORKS                                                            :{BLACK}Производство груза:{}  {SILVER}2/8{BLACK} за единицу угля{}  {SILVER}2/8{BLACK} за единицу песка{}  {SILVER}4/8{BLACK} за единицу глины{}{}Производство возрастёт, если в течении месяца будут доставлены любые два или более грузов.
 STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Производство груза:{}  {SILVER}2/8{BLACK} за единицу угля{}  {SILVER}2/8{BLACK} за единицу глины{}  {SILVER}4/8{BLACK} за единицу известняка{}{}Производство возрастёт, если в течении месяца будут доставлены любые два или более грузов.
 STR_EXTRA_DAIRY                                                                 :{BLACK}Производство груза:{}  {SILVER}3/8{BLACK} за единицу материалов{}  {SILVER}5/8{BLACK} за единицу молока{}{}Вырастет до {SILVER}8/8{BLACK} за единицу, если в течении месяца будут доставлены оба груза.
@@ -173,6 +177,7 @@ STR_EXTRA_METAL_FOUNDRY                                                         
 STR_EXTRA_OIL_REFINERY                                                          :{BLACK}Перерабатывает сырую нефть в бензин и химикаты.{}{}{SILVER}6/8{BLACK} продукции за единицу доставленного груза.
 STR_EXTRA_PAPER_MILL                                                            :{BLACK}Перерабатывается древесина для производства бумаги и картона.{}{}{BLACK}Производство груза:{}  {SILVER}4/8{BLACK} за единицу древесины{}  {SILVER}2/8{BLACK} за единицу глины{}  {SILVER}2/8{BLACK} за единицу химикатов{}{}Производство возрастёт, если в течении месяца будут доставлены любые два или более грузов.
 STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}Производятся предметы из пластмассы, такие как упаковочные материалы и товары для дома.{}{}{SILVER}6/8{BLACK} продукции за единицу доставленного груза.
+STR_EXTRA_PLASTICS_PLANT_PLANT_FIBRES_SUBSTR                                    :6 ящиков за 8 тюков доставленных растительных волокон
 STR_EXTRA_RECYCLING_PLANT                                                       :{BLACK}Перерабатывается вторсырьё для повторного использования в производстве.{}{}{SILVER}6/8{BLACK} продукции за единицу доставленного груза.
 STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}Производит вторсырьё в зависимости от размера города.
 STR_EXTRA_SAWMILL                                                               :{BLACK}Распиливается древесина.{}{}{SILVER}6/8{BLACK} продукции за единицу доставленного груза.
@@ -183,10 +188,15 @@ STR_EXTRA_TEXTILE_MILL                                                          
 
 STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}----------- ОТЛАДКА -----------{}Произведено в этом месяце:{}Груз 1: {WHITE}{COMMA}{BLACK}{}Груз 2: {WHITE}{COMMA}{BLACK}{}Дней с момента последней доставки: {WHITE}{COMMA}{BLACK}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Достигнут максимальный уровень производства
+STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Уровень производства: {YELLOW}Улучшеный (удвоеный){}{}{BLACK}Для поддержки данного уровня доставте {SIGNED_WORD} ящик{P "" а ов} материалов в течении трех месяцев, или {SIGNED_WORD} ящик{P "" а ов} для учетверения производства
+STR_PORT_PRODUCTION_2X                                                          :{BLACK}Уровень производства: {YELLOW}Улучшеный (удвоеный){}{}{BLACK}Для поддержки данного уровня доставте {SIGNED_WORD} ящик{P "" а ов} материалов в течении трех месяцев, или {SIGNED_WORD} ящик{P "" а ов} для учетверения производства
+STR_PORT_PRODUCTION_4X                                                          :{BLACK}Уровень производства: {YELLOW}Лучший (учетвененный){}{}{BLACK}Для поддержки данного уровня доставте {SIGNED_WORD} ящик{P "" а ов} материалов в течении трех месяцев
 STR_GENERIC_NEWLINE                                                             :{}
 
+STR_FUND_BASIC_FARM                                                             :{}{BLACK}Местность: {YELLOW}Не может быть построено на снегу или в пустыне.
 STR_FUND_MIXED_FARM                                                             :{}{BLACK}Положение: {YELLOW}Нельзя разместить на снегу или в пустыне.
 STR_FUND_ARABLE_FARM                                                            :{}{BLACK}Положение: {YELLOW}Нельзя разместить на снегу или в пустыне.
+STR_FUND_FIBRE_CROP_FARM                                                        :{}{BLACK}Местность: {YELLOW}Не может быть построено на снегу или в пустыне.
 STR_FUND_FOREST                                                                 :{}{BLACK}Положение: {YELLOW}Нельзя разместить в пустыне.
 STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}Положение: {YELLOW}Нельзя разместить на снегу.
 
@@ -203,6 +213,7 @@ STR_IND_ALUMINIUM_PLANT                                                         
 STR_IND_ALUMINIUM_PLANT.gen                                                     :алюминиевого завода
 STR_IND_ARABLE_FARM                                                             :{G=n}Земледельческое хозяйство
 STR_IND_ARABLE_FARM.gen                                                         :земледельческого хозяйства
+STR_IND_BASICFARM                                                               :{G=n}Фермерское хозяйство
 STR_IND_BAUXITE_MINE                                                            :{G=m}Бокситовый рудник
 STR_IND_BAUXITE_MINE.gen                                                        :бокситового рудника
 STR_IND_BIOREFINERY                                                             :{G=m}Биоперерабатывающий завод
@@ -213,10 +224,13 @@ STR_IND_BRICK_WORKS                                                             
 STR_IND_BRICK_WORKS.gen                                                         :кирпичного завода
 STR_IND_BUILDERS_YARD                                                           :{G=m}Склад стройматериалов
 STR_IND_BUILDERS_YARD.gen                                                       :склада стройматериалов
+STR_IND_BULK_TERMINAL                                                           :Портовый Грузовой Терминал
 STR_IND_CEMENT_PLANT                                                            :{G=m}Цементный завод
 STR_IND_CEMENT_PLANT.gen                                                        :цементного завода
 STR_IND_CLAY_PIT                                                                :{G=m}Глиняный карьер
 STR_IND_CLAY_PIT.gen                                                            :глиняного карьера
+STR_IND_COFFEE_ESTATE                                                           :{G=f}Кофейная плантация
+STR_IND_FIBRE_CROP_FARM                                                         :{G=n}Волокняное хозяйство
 STR_IND_DAIRY                                                                   :{G=m}Молокозавод
 STR_IND_DAIRY.gen                                                               :молокозавода
 STR_IND_DAIRYFARM                                                               :{G=n}Молочное хозяйство
@@ -233,6 +247,7 @@ STR_IND_FOOD_MARKET                                                             
 STR_IND_FOOD_MARKET.gen                                                         :продовольственного магазина
 STR_IND_FURNITURE_FACTORY                                                       :{G=f}Мебельная фабрика
 STR_IND_FURNITURE_FACTORY.gen                                                   :мебельной фабрики
+STR_IND_GENERAL_STORE                                                           :{G=m}Магазин
 STR_IND_GLASS_WORKS                                                             :{G=m}Стекольный завод
 STR_IND_GLASS_WORKS.gen                                                         :стекольного завода
 STR_IND_GRAIN_MILL                                                              :{G=f}Пекарня
@@ -261,8 +276,10 @@ STR_IND_PETROLPUMP                                                              
 STR_IND_PETROLPUMP.gen                                                          :заправочной станции
 STR_IND_PLASTICS_PLANT                                                          :{G=m}Пластмассовый завод
 STR_IND_PLASTICS_PLANT.gen                                                      :пластмассового завода
+STR_IND_PORT                                                                    :Порт
 STR_IND_QUARRY                                                                  :{G=m}Карьер
 STR_IND_QUARRY.gen                                                              :карьера
+STR_IND_RANCH                                                                   :{G=n}Животноводческое хозяйство
 STR_IND_RECYCLING_DEPOT                                                         :{G=m}Пункт приёма отходов
 STR_IND_RECYCLING_DEPOT.gen                                                     :пункта приёма отходов
 STR_IND_RECYCLING_PLANT                                                         :{G=m}Завод по переработке отходов
@@ -281,3 +298,8 @@ STR_IND_SUPERMARKET.gen                                                         
 STR_IND_TEXTILE_MILL                                                            :{G=f}Текстильная фабрика
 STR_IND_TEXTILE_MILL.gen                                                        :текстильной фабрики
 
+STR_STATION_FISHMARKET                                                          :{G=m}Рыбный Рынок
+STR_STATION_HEAVY_INDUSTRY                                                      :{G=f}Грузовая
+STR_STATION_INDUSTRY_ESTATE                                                     :Промзона
+STR_STATION_MARKET                                                              :{G=m}Рынок
+STR_STATION_WATER                                                               :{G=f}Песчаная Набережная
