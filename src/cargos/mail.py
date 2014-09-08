@@ -9,7 +9,7 @@ cargo = Cargo(id = 'mail',
               weight = '0.25',
               station_list_colour = '15',
               cargo_payment_list_colour = '15',
-              is_freight = '1',
+              is_freight = '0', # mail is not freight - consistent with default mail (setting '1' gives 'wrong' livery for mail cars)
               cargo_classes = 'bitmask(CC_MAIL)',
               cargo_label = '"MAIL"',
               town_growth_effect = 'TOWNGROWTH_MAIL',
