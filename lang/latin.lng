@@ -1,0 +1,118 @@
+##grflangid 0x66
+##plural 0
+##gender m f n mp fp np
+##case abl acc dat gen
+
+STR_GRF_NAME                                                                    :{TITLE}
+STR_GRF_URL                                                                     :http://bundles.openttdcoop.org/firs/releases/LATEST/docs/
+
+STR_PARAM_DESC_DEBUG                                                            :Tantum est iis qui satis docti sunt
+STR_PARAM_NAME_DEBUG                                                            :Monstrare nuntia emendationis
+STR_PARAM_NAME_ECONOMIES                                                        :Oeconomia
+STR_PARAM_NAME_NO_OPENINGS                                                      :Vetare industrias fortuitas aperire in ludo
+STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            :Sinere industrias secundas claudere
+STR_PARAM_NAME_STAT_RATING                                                      :Algorithmus ad censiones stationum
+
+
+STR_CARGO_NAME_ALCOHOL                                                          :{G=n}Alcohol
+STR_CARGO_NAME_ALCOHOL.acc                                                      :Alcohol
+STR_CARGO_NAME_ALCOHOL.dat                                                      :Alcoholi
+STR_CARGO_NAME_ALCOHOL.gen                                                      :alcoholis
+STR_CARGO_NAME_BAUXITE                                                          :{G=m}Bauxitis
+STR_CARGO_NAME_BAUXITE.acc                                                      :Bauxitem
+STR_CARGO_NAME_BAUXITE.dat                                                      :Bauxiti
+STR_CARGO_NAME_BAUXITE.gen                                                      :bauxitis
+STR_CARGO_NAME_CHEMICALS                                                        :{G=np}Chemica
+STR_CARGO_NAME_CHEMICALS.acc                                                    :Chemica
+STR_CARGO_NAME_CHEMICALS.dat                                                    :Chemicis
+STR_CARGO_NAME_CHEMICALS.gen                                                    :chemicorum
+STR_CARGO_NAME_CLAY                                                             :{G=f}Argilla
+STR_CARGO_NAME_CLAY.acc                                                         :Argillam
+STR_CARGO_NAME_CLAY.dat                                                         :Argillae
+STR_CARGO_NAME_CLAY.gen                                                         :argillae
+STR_CARGO_NAME_COFFEE                                                           :{G=f}Cafea
+STR_CARGO_NAME_COFFEE.acc                                                       :Cafeam
+STR_CARGO_NAME_COFFEE.dat                                                       :Cafeae
+STR_CARGO_NAME_COFFEE.gen                                                       :cafeae
+STR_CARGO_NAME_FISH                                                             :{G=mp}Pisces
+STR_CARGO_NAME_FISH.acc                                                         :Pisces
+STR_CARGO_NAME_FISH.dat                                                         :Piscibus
+STR_CARGO_NAME_FISH.gen                                                         :piscium
+STR_CARGO_NAME_FRUITS                                                           :{G=mp}Fructus
+STR_CARGO_NAME_FRUITS.acc                                                       :Fructus
+STR_CARGO_NAME_FRUITS.dat                                                       :Fructibus
+STR_CARGO_NAME_FRUITS.gen                                                       :fructuum
+STR_CARGO_NAME_METAL                                                            :{G=n}Metallum
+STR_CARGO_NAME_METAL.acc                                                        :Metallum
+STR_CARGO_NAME_METAL.dat                                                        :Metallo
+STR_CARGO_NAME_METAL.gen                                                        :metalli
+STR_CARGO_NAME_MILK                                                             :{G=n}Lac
+STR_CARGO_NAME_MILK.acc                                                         :Lac
+STR_CARGO_NAME_MILK.dat                                                         :Lacti
+STR_CARGO_NAME_MILK.gen                                                         :lactis
+STR_CARGO_NAME_PETROL                                                           :{G=n}Benzinum
+STR_CARGO_NAME_PETROL.acc                                                       :Benzinum
+STR_CARGO_NAME_PETROL.dat                                                       :Benzino
+STR_CARGO_NAME_PETROL.gen                                                       :benzini
+STR_CARGO_NAME_SAND                                                             :{G=f}Harena
+STR_CARGO_NAME_SAND.acc                                                         :Harenam
+STR_CARGO_NAME_SAND.dat                                                         :Harenae
+STR_CARGO_NAME_SAND.gen                                                         :harenae
+STR_CARGO_NAME_STONE                                                            :{G=fp}Petrae
+STR_CARGO_NAME_STONE.acc                                                        :Petras
+STR_CARGO_NAME_STONE.dat                                                        :Petris
+STR_CARGO_NAME_STONE.gen                                                        :petrarum
+STR_CARGO_NAME_WOOL                                                             :{G=f}Lana
+STR_CARGO_NAME_WOOL.acc                                                         :Lanam
+STR_CARGO_NAME_WOOL.dat                                                         :Lanae
+STR_CARGO_NAME_WOOL.gen                                                         :lanae
+
+STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} alcoholis
+STR_CARGO_UNIT_BAUXITE                                                          :{WEIGHT} bauxitis
+STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} chemicorum
+STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} argillae
+STR_CARGO_UNIT_COFFEE                                                           :{SIGNED_WORD} sacc{P 0 us i} cafeae
+STR_CARGO_UNIT_FISH                                                             :{WEIGHT} piscium
+STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} fructus
+STR_CARGO_UNIT_METAL                                                            :{WEIGHT} metalli
+STR_CARGO_UNIT_MILK                                                             :{VOLUME} lactis
+STR_CARGO_UNIT_PETROL                                                           :{VOLUME} benzini
+STR_CARGO_UNIT_SAND                                                             :{WEIGHT} harenae
+STR_CARGO_UNIT_STONE                                                            :{WEIGHT} petrarum
+
+STR_CID_ALCOHOL                                                                 :{TINYFONT}AL
+STR_CID_BAUXITE                                                                 :{TINYFONT}BX
+STR_CID_CHEMICALS                                                               :{TINYFONT}CH
+STR_CID_CLAY                                                                    :{TINYFONT}AR
+STR_CID_COFFEE                                                                  :{TINYFONT}CF
+STR_CID_FISH                                                                    :{TINYFONT}PS
+STR_CID_METAL                                                                   :{TINYFONT}MT
+STR_CID_MILK                                                                    :{TINYFONT}LC
+STR_CID_PETROL                                                                  :{TINYFONT}BZ
+STR_CID_SAND                                                                    :{TINYFONT}HA
+STR_CID_STONE                                                                   :{TINYFONT}PT
+STR_CID_WOOL                                                                    :{TINYFONT}LA
+
+STR_ERR_CLIMATE_TOYLAND                                                         :{ORANGE}FIRS non convenit terrae ludicrorum
+STR_ERR_OPENTTD_VERSION                                                         :{ORANGE}E00: FIRS poscit OpenTTD 1.2.0 / r22780 noviorve. {YELLOW}Vide LegeMe FIRS: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+
+STR_ERR_LOCATION_NOT_IN_DESERT                                                  :non licet in desertis struere.
+STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE                                             :non licet struere in clivis arduis.
+STR_ERR_LOCATION_LIMIT_1_PER_TOWN                                               :tantum licet unam industriam huius generis adesse apud quidque oppidum.
+
+
+STR_GENERIC_NEWLINE                                                             :{}
+
+STR_FUND_FOREST                                                                 :{}{BLACK}Locus: {YELLOW}Non licet struere in desertis.
+
+
+
+STR_FUND_AVAILABLE_UNTIL                                                        :{}{BLACK}Non parabilis est post: {YELLOW}{COMMA}
+
+
+
+STR_IND_HOTEL                                                                   :{G=n}Deversorium
+STR_IND_HOTEL.abl                                                               :Deversorio
+STR_IND_HOTEL.acc                                                               :Deversorium
+STR_IND_HOTEL.gen                                                               :deversorii
+
