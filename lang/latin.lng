@@ -12,7 +12,16 @@ STR_PARAM_NAME_ECONOMIES                                                        
 STR_PARAM_NAME_NO_OPENINGS                                                      :Vetare industrias fortuitas aperire in ludo
 STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            :Sinere industrias secundas claudere
 STR_PARAM_NAME_STAT_RATING                                                      :Algorithmus ad censiones stationum
+STR_PARAM_VALUE_STAT_RATING_DEFAULT                                             :Avarus et maestus (algorithmus OpenTTD solitus)
+STR_PARAM_VALUE_STAT_RATING_REDUCED_TIME                                        :Benignus (sinit tempus longius inter adventus vehiculorum)
+STR_PARAM_VALUE_STAT_RATING_100                                                 :Maxime largus (semper 100%)
 
+STR_PARAM_VALUE_ECONOMIES_BASIC_TEMPERATE                                       :Temperata Simplex
+STR_PARAM_VALUE_ECONOMIES_BASIC_ARCTIC                                          :Arctica Simplex
+STR_PARAM_VALUE_ECONOMIES_BASIC_TROPIC                                          :Tropica Simplex
+STR_PARAM_VALUE_ECONOMIES_FIRS                                                  :FIRS
+STR_PARAM_VALUE_ECONOMIES_MISTAH_KURTZ                                          :Cor Tenebrarum
+STR_PARAM_VALUE_ECONOMIES_TEST_3                                                :Tentamentum 3
 
 STR_CARGO_NAME_ALCOHOL                                                          :{G=n}Alcohol
 STR_CARGO_NAME_ALCOHOL.acc                                                      :Alcohol
@@ -22,6 +31,10 @@ STR_CARGO_NAME_BAUXITE                                                          
 STR_CARGO_NAME_BAUXITE.acc                                                      :Bauxitem
 STR_CARGO_NAME_BAUXITE.dat                                                      :Bauxiti
 STR_CARGO_NAME_BAUXITE.gen                                                      :bauxitis
+STR_CARGO_NAME_BUILDING_MATERIALS                                               :{G=fp}Materiae
+STR_CARGO_NAME_BUILDING_MATERIALS.acc                                           :Materias
+STR_CARGO_NAME_BUILDING_MATERIALS.dat                                           :Materiis
+STR_CARGO_NAME_BUILDING_MATERIALS.gen                                           :materiarum
 STR_CARGO_NAME_CHEMICALS                                                        :{G=np}Chemica
 STR_CARGO_NAME_CHEMICALS.acc                                                    :Chemica
 STR_CARGO_NAME_CHEMICALS.dat                                                    :Chemicis
@@ -42,6 +55,10 @@ STR_CARGO_NAME_FRUITS                                                           
 STR_CARGO_NAME_FRUITS.acc                                                       :Fructus
 STR_CARGO_NAME_FRUITS.dat                                                       :Fructibus
 STR_CARGO_NAME_FRUITS.gen                                                       :fructuum
+STR_CARGO_NAME_LUMBER                                                           :{G=n}Tignum
+STR_CARGO_NAME_LUMBER.acc                                                       :Tignum
+STR_CARGO_NAME_LUMBER.dat                                                       :Tigno
+STR_CARGO_NAME_LUMBER.gen                                                       :tigni
 STR_CARGO_NAME_METAL                                                            :{G=n}Metallum
 STR_CARGO_NAME_METAL.acc                                                        :Metallum
 STR_CARGO_NAME_METAL.dat                                                        :Metallo
@@ -62,6 +79,10 @@ STR_CARGO_NAME_STONE                                                            
 STR_CARGO_NAME_STONE.acc                                                        :Petras
 STR_CARGO_NAME_STONE.dat                                                        :Petris
 STR_CARGO_NAME_STONE.gen                                                        :petrarum
+STR_CARGO_NAME_SUGARCANE                                                        :{G=f}Harundo Saccharifera
+STR_CARGO_NAME_SUGARCANE.acc                                                    :Harundinem Sacchariferam
+STR_CARGO_NAME_SUGARCANE.dat                                                    :Harundini Sacchariferae
+STR_CARGO_NAME_SUGARCANE.gen                                                    :harundinis sacchariferae
 STR_CARGO_NAME_WOOL                                                             :{G=f}Lana
 STR_CARGO_NAME_WOOL.acc                                                         :Lanam
 STR_CARGO_NAME_WOOL.dat                                                         :Lanae
@@ -69,50 +90,114 @@ STR_CARGO_NAME_WOOL.gen                                                         
 
 STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} alcoholis
 STR_CARGO_UNIT_BAUXITE                                                          :{WEIGHT} bauxitis
+STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WEIGHT} materiarum
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} chemicorum
 STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} argillae
 STR_CARGO_UNIT_COFFEE                                                           :{SIGNED_WORD} sacc{P 0 us i} cafeae
 STR_CARGO_UNIT_FISH                                                             :{WEIGHT} piscium
 STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} fructus
+STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} tigni
 STR_CARGO_UNIT_METAL                                                            :{WEIGHT} metalli
 STR_CARGO_UNIT_MILK                                                             :{VOLUME} lactis
 STR_CARGO_UNIT_PETROL                                                           :{VOLUME} benzini
 STR_CARGO_UNIT_SAND                                                             :{WEIGHT} harenae
 STR_CARGO_UNIT_STONE                                                            :{WEIGHT} petrarum
+STR_CARGO_UNIT_SUGARCANE                                                        :{WEIGHT} harundinis sacchariferae
 
 STR_CID_ALCOHOL                                                                 :{TINYFONT}AL
 STR_CID_BAUXITE                                                                 :{TINYFONT}BX
+STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}MA
 STR_CID_CHEMICALS                                                               :{TINYFONT}CH
 STR_CID_CLAY                                                                    :{TINYFONT}AR
 STR_CID_COFFEE                                                                  :{TINYFONT}CF
 STR_CID_FISH                                                                    :{TINYFONT}PS
+STR_CID_LUMBER                                                                  :{TINYFONT}TG
 STR_CID_METAL                                                                   :{TINYFONT}MT
 STR_CID_MILK                                                                    :{TINYFONT}LC
 STR_CID_PETROL                                                                  :{TINYFONT}BZ
 STR_CID_SAND                                                                    :{TINYFONT}HA
 STR_CID_STONE                                                                   :{TINYFONT}PT
+STR_CID_SUGARCANE                                                               :{TINYFONT}HS
 STR_CID_WOOL                                                                    :{TINYFONT}LA
 
 STR_ERR_CLIMATE_TOYLAND                                                         :{ORANGE}FIRS non convenit terrae ludicrorum
 STR_ERR_OPENTTD_VERSION                                                         :{ORANGE}E00: FIRS poscit OpenTTD 1.2.0 / r22780 noviorve. {YELLOW}Vide LegeMe FIRS: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 
+STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE                                             :non licet struere supra lineam nivis.
+STR_ERR_LOCATION_NOT_ON_WATER                                                   :non licet struere in aqua.
 STR_ERR_LOCATION_NOT_IN_DESERT                                                  :non licet in desertis struere.
 STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE                                             :non licet struere in clivis arduis.
 STR_ERR_LOCATION_LIMIT_1_PER_TOWN                                               :tantum licet unam industriam huius generis adesse apud quidque oppidum.
 
+STR_EXTRA_SAWMILL                                                               :{BLACK}Lignum serrat.{}{}Productio:{}  6t ex 8t ligni traditis
 
+STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Productio maxima est
 STR_GENERIC_NEWLINE                                                             :{}
 
+STR_FUND_BASIC_FARM                                                             :{}{BLACK}Locus: {YELLOW}Non licet struere in nive vel desertis.
+STR_FUND_MIXED_FARM                                                             :{}{BLACK}Locus: {YELLOW}Non licet struere in nive vel desertis.
+STR_FUND_ARABLE_FARM                                                            :{}{BLACK}Locus: {YELLOW}Non licet struere in nive vel desertis.
+STR_FUND_COFFEE_ESTATE                                                          :{}{BLACK}Locus: {YELLOW}Non licet struere in nive vel desertis.
+STR_FUND_ORCHARD_PIGGERY                                                        :{}{BLACK}Locus: {YELLOW}Non licet struere in nive vel desertis.
+STR_FUND_SUGAR_PLANTATION                                                       :{}{BLACK}Locus: {YELLOW}Non licet struere in nive vel desertis.
+STR_FUND_FIBRE_CROP_FARM                                                        :{}{BLACK}Locus: {YELLOW}Non licet struere in nive vel desertis.
 STR_FUND_FOREST                                                                 :{}{BLACK}Locus: {YELLOW}Non licet struere in desertis.
+STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}Locus: {YELLOW}Non licet struere in nive.
+STR_FUND_RUBBER_PLANTATION                                                      :{}{BLACK}Locus: {YELLOW}Non licet struere in nive vel desertis.
 
 
+STR_FUND_AVAILABLE_FROM                                                         :{}{BLACK}Parabilis post: {YELLOW}{COMMA}
 
 STR_FUND_AVAILABLE_UNTIL                                                        :{}{BLACK}Non parabilis est post: {YELLOW}{COMMA}
 
 
 
+STR_IND_BASICFARM                                                               :{G=m}Fundus
+STR_IND_BASICFARM.abl                                                           :Fundo
+STR_IND_BASICFARM.acc                                                           :Fundum
+STR_IND_BASICFARM.gen                                                           :fundi
+STR_IND_BAUXITE_MINE                                                            :{G=f}Bauxitifodina
+STR_IND_BAUXITE_MINE.abl                                                        :Bauxitifodina
+STR_IND_BAUXITE_MINE.acc                                                        :Bauxitifodinam
+STR_IND_BAUXITE_MINE.gen                                                        :bauxitifodinae
+STR_IND_BREWERY                                                                 :{G=f}Bracina
+STR_IND_BREWERY.abl                                                             :Bracina
+STR_IND_BREWERY.acc                                                             :Bracinam
+STR_IND_BREWERY.gen                                                             :bracinae
+STR_IND_FOOD_MARKET                                                             :{G=n}Macellum
+STR_IND_FOOD_MARKET.abl                                                         :Macello
+STR_IND_FOOD_MARKET.acc                                                         :Macellum
+STR_IND_FOOD_MARKET.gen                                                         :macelli
+STR_IND_FURNITURE_FACTORY                                                       :{G=f}Fabrica Supellectilis
+STR_IND_FURNITURE_FACTORY.abl                                                   :Fabrica Supellectilis
+STR_IND_FURNITURE_FACTORY.acc                                                   :Fabricam Supellectilis
+STR_IND_FURNITURE_FACTORY.gen                                                   :fabricae supellectilis
+STR_IND_GRAIN_MILL                                                              :{G=fp}Molae Frumenti
+STR_IND_GRAIN_MILL.abl                                                          :Molis Frumenti
+STR_IND_GRAIN_MILL.acc                                                          :Molas Frumenti
+STR_IND_GRAIN_MILL.gen                                                          :molarum frumenti
 STR_IND_HOTEL                                                                   :{G=n}Deversorium
 STR_IND_HOTEL.abl                                                               :Deversorio
 STR_IND_HOTEL.acc                                                               :Deversorium
 STR_IND_HOTEL.gen                                                               :deversorii
+STR_IND_LIME_KILN                                                               :{G=f}Calcaria
+STR_IND_LIME_KILN.abl                                                           :Calcaria
+STR_IND_LIME_KILN.acc                                                           :Calcariam
+STR_IND_LIME_KILN.gen                                                           :calcariae
+STR_IND_PORT                                                                    :{G=m}Portus
+STR_IND_PORT.abl                                                                :Portu
+STR_IND_PORT.acc                                                                :Portum
+STR_IND_PORT.gen                                                                :portus
+STR_IND_SHEEPFARM                                                               :{G=m}Fundus Ovillus
+STR_IND_SHEEPFARM.abl                                                           :Fundo Ovillo
+STR_IND_SHEEPFARM.acc                                                           :Fundum Ovillum
+STR_IND_SHEEPFARM.gen                                                           :fundi ovilli
+STR_IND_SMITHY_FORGE                                                            :{G=f}Officina Ferraria
+STR_IND_SMITHY_FORGE.abl                                                        :Officina Ferraria
+STR_IND_SMITHY_FORGE.acc                                                        :Officinam Ferrariam
+STR_IND_SMITHY_FORGE.gen                                                        :officinae ferrariae
 
+STR_STATION_FARM                                                                :Villa
+STR_STATION_FISHMARKET                                                          :Forum Piscarium
+STR_STATION_MARKET                                                              :Forum
+STR_STATION_PIT                                                                 :Cavum
