@@ -133,23 +133,23 @@ DEFAULT_BRANCH_NAME ?=
 REPO_BRANCH_VERSION ?= 0
 
 # HG revision
-REPO_REVISION  ?= $(shell $(HG) id -n | cut -d+ -f1)
+REPO_REVISION  ?= $(shell HGPLAIN= $(HG) id -n | cut -d+ -f1)
 
 # HG Hash
-REPO_HASH            ?= $(shell $(HG) id -i | cut -d+ -f1)
+REPO_HASH            ?= $(shell HGPLAIN= $(HG) id -i | cut -d+ -f1)
 
 # Days of commit since 2000-1-1 00-00
-REPO_DATE            ?= $(shell $(HG) log -r$(REPO_HASH) --template='{time|shortdate}')
+REPO_DATE            ?= $(shell HGPLAIN= $(HG) log -r$(REPO_HASH) --template='{time|shortdate}')
 REPO_DAYS_SINCE_2000 ?= $(shell $(PYTHON) -c "from datetime import date; print (date(`echo "$(REPO_DATE)" | sed s/-/,/g | sed s/,0/,/g`)-date(2000,1,1)).days")
 
 # Whether there are local changes
-REPO_MODIFIED  ?= $(shell [ "`$(HG) id | cut -c13`" = "+" ] && echo "M" || echo "")
+REPO_MODIFIED  ?= $(shell [ "`HGPLAIN= $(HG) id | cut -c13`" = "+" ] && echo "M" || echo "")
 
 # Branch name
-REPO_BRANCH    ?= $(shell $(HG) id -b | sed "s/default/$(DEFAULT_BRANCH_NAME)/")
+REPO_BRANCH    ?= $(shell HGPLAIN= $(HG) id -b | sed "s/default/$(DEFAULT_BRANCH_NAME)/")
 
 # Any tag which is not 'tip'
-REPO_TAGS      ?= $(shell $(HG) id -t | grep -v "tip")
+REPO_TAGS      ?= $(shell HGPLAIN= $(HG) id -t | grep -v "tip")
 
 # Filename addition, if we're not building the default branch
 REPO_BRANCH_STRING ?= $(shell if [ "$(REPO_BRANCH)" = "$(DEFAULT_BRANCH_NAME)" ]; then echo ""; else echo "-$(REPO_BRANCH)"; fi)
