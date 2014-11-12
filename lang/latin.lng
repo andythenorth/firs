@@ -27,10 +27,10 @@ STR_CARGO_NAME_ALCOHOL                                                          
 STR_CARGO_NAME_ALCOHOL.acc                                                      :Alcohol
 STR_CARGO_NAME_ALCOHOL.dat                                                      :Alcoholi
 STR_CARGO_NAME_ALCOHOL.gen                                                      :alcoholis
-STR_CARGO_NAME_BAUXITE                                                          :{G=m}Bauxitis
-STR_CARGO_NAME_BAUXITE.acc                                                      :Bauxitem
-STR_CARGO_NAME_BAUXITE.dat                                                      :Bauxiti
-STR_CARGO_NAME_BAUXITE.gen                                                      :bauxitis
+STR_CARGO_NAME_BAUXITE                                                          :{G=f}Bauxites
+STR_CARGO_NAME_BAUXITE.acc                                                      :Bauxitam
+STR_CARGO_NAME_BAUXITE.dat                                                      :Bauxitae
+STR_CARGO_NAME_BAUXITE.gen                                                      :bauxitae
 STR_CARGO_NAME_BUILDING_MATERIALS                                               :{G=fp}Materiae
 STR_CARGO_NAME_BUILDING_MATERIALS.acc                                           :Materias
 STR_CARGO_NAME_BUILDING_MATERIALS.dat                                           :Materiis
@@ -71,6 +71,10 @@ STR_CARGO_NAME_PETROL                                                           
 STR_CARGO_NAME_PETROL.acc                                                       :Benzinum
 STR_CARGO_NAME_PETROL.dat                                                       :Benzino
 STR_CARGO_NAME_PETROL.gen                                                       :benzini
+STR_CARGO_NAME_RECYCLABLES                                                      :{G=np}Regyrabilia
+STR_CARGO_NAME_RECYCLABLES.acc                                                  :Regyrabilia
+STR_CARGO_NAME_RECYCLABLES.dat                                                  :Regyrabilibus
+STR_CARGO_NAME_RECYCLABLES.gen                                                  :regyrabilium
 STR_CARGO_NAME_SAND                                                             :{G=f}Harena
 STR_CARGO_NAME_SAND.acc                                                         :Harenam
 STR_CARGO_NAME_SAND.dat                                                         :Harenae
@@ -93,7 +97,7 @@ STR_CARGO_NAME_WOOL.dat                                                         
 STR_CARGO_NAME_WOOL.gen                                                         :lanae
 
 STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} alcoholis
-STR_CARGO_UNIT_BAUXITE                                                          :{WEIGHT} bauxitis
+STR_CARGO_UNIT_BAUXITE                                                          :{WEIGHT} bauxitae
 STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WEIGHT} materiarum
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} chemicorum
 STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} argillae
@@ -104,6 +108,7 @@ STR_CARGO_UNIT_LUMBER                                                           
 STR_CARGO_UNIT_METAL                                                            :{WEIGHT} metalli
 STR_CARGO_UNIT_MILK                                                             :{VOLUME} lactis
 STR_CARGO_UNIT_PETROL                                                           :{VOLUME} benzini
+STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} regyrabilium
 STR_CARGO_UNIT_SAND                                                             :{WEIGHT} harenae
 STR_CARGO_UNIT_STONE                                                            :{WEIGHT} petrarum
 STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} betae sacchariferae
@@ -120,8 +125,10 @@ STR_CID_LUMBER                                                                  
 STR_CID_METAL                                                                   :{TINYFONT}MT
 STR_CID_MILK                                                                    :{TINYFONT}LC
 STR_CID_PETROL                                                                  :{TINYFONT}BZ
+STR_CID_RECYCLABLES                                                             :{TINYFONT}RG
 STR_CID_SAND                                                                    :{TINYFONT}HA
 STR_CID_STONE                                                                   :{TINYFONT}PT
+STR_CID_SUGAR_BEET                                                              :{TINYFONT}BS
 STR_CID_SUGARCANE                                                               :{TINYFONT}HS
 STR_CID_WOOL                                                                    :{TINYFONT}LA
 
@@ -189,6 +196,10 @@ STR_IND_LIME_KILN                                                               
 STR_IND_LIME_KILN.abl                                                           :Calcaria
 STR_IND_LIME_KILN.acc                                                           :Calcariam
 STR_IND_LIME_KILN.gen                                                           :calcariae
+STR_IND_PETROLPUMP                                                              :{G=f}Statio Benzinaria
+STR_IND_PETROLPUMP.abl                                                          :Statione Benzinaria
+STR_IND_PETROLPUMP.acc                                                          :Stationem Benzinariam
+STR_IND_PETROLPUMP.gen                                                          :stationis benzinariae
 STR_IND_PORT                                                                    :{G=m}Portus
 STR_IND_PORT.abl                                                                :Portu
 STR_IND_PORT.acc                                                                :Portum
