@@ -7,10 +7,14 @@ STR_GRF_NAME                                                                    
 STR_GRF_URL                                                                     :http://bundles.openttdcoop.org/firs/releases/LATEST/docs/
 
 STR_PARAM_DESC_DEBUG                                                            :Tantum est iis qui satis docti sunt
+STR_PARAM_DESC_NO_OPENINGS                                                      :Solite, novae industriae aperiunt intra ludum.{}{}Si optas 'vetare aperire' industriae non aperient, et lusores non poterunt industrias condere prospicereve.
+STR_PARAM_DESC_SECONDARY_NEVER_CLOSE                                            :Solite, industriae secundariae FIRS numquam claudent.{}{}Si sinis secondarias claudere, industriae secondariae claudant si diu nulla onera tradantur. Industriae primariae FIRS numquam claudunt et non afficiuntur ab hac electione.
+STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY                                   :Numerus tegularum maximus a littore ad industrias marinas struendas
 STR_PARAM_NAME_DEBUG                                                            :Monstrare nuntia emendationis
 STR_PARAM_NAME_ECONOMIES                                                        :Oeconomia
 STR_PARAM_NAME_NO_OPENINGS                                                      :Vetare industrias fortuitas aperire in ludo
 STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            :Sinere industrias secundas claudere
+STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0                                         :Infinitus
 STR_PARAM_NAME_STAT_RATING                                                      :Algorithmus ad censiones stationum
 STR_PARAM_VALUE_STAT_RATING_DEFAULT                                             :Avarus et maestus (algorithmus OpenTTD solitus)
 STR_PARAM_VALUE_STAT_RATING_REDUCED_TIME                                        :Benignus (sinit tempus longius inter adventus vehiculorum)
@@ -133,7 +137,11 @@ STR_CID_SUGARCANE                                                               
 STR_CID_WOOL                                                                    :{TINYFONT}LA
 
 STR_ERR_CLIMATE_TOYLAND                                                         :{ORANGE}FIRS non convenit terrae ludicrorum
-STR_ERR_OPENTTD_VERSION                                                         :{ORANGE}E00: FIRS poscit OpenTTD 1.2.0 / r22780 noviorve. {YELLOW}Vide LegeMe FIRS: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_SET                                                        :{ORANGE}E01: {YELLOW}NewGRF incompatibile: {ORANGE}{STRING} {YELLOW}Vide LegeMe FIRS: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_PARAM_CANSET                                               :{ORANGE}E02: {YELLOW}Parametrum incompatibile: {ORANGE}CanSet parametrum 2 oportet esse 0 ut consit FIRS. {YELLOW}Vide LegeMe FIRS: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_PARAM_CITYSET                                              :{ORANGE}E02: {YELLOW}Parametrum incompatibile: {ORANGE}NA City Set parametrum 2 oportet esse 0 ut consit FIRS. {YELLOW}Vide LegeMe FIRS: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_SET_TTRS_VERSION                                           :{ORANGE}E04: {YELLOW}Editio incompatibilis: {ORANGE}Oportet editionem TTRS esse 3.11 novioremve ut consit FIRS. {YELLOW}Vide LegeMe FIRS: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_OPENTTD_VERSION                                                         :{ORANGE}E00: FIRS poscit editionem OpenTTD 1.2.0 / r22780 novioremve. {YELLOW}Vide LegeMe FIRS: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 
 STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE                                             :non licet struere supra lineam nivis.
 STR_ERR_LOCATION_NOT_ON_WATER                                                   :non licet struere in aqua.
@@ -141,7 +149,7 @@ STR_ERR_LOCATION_NOT_IN_DESERT                                                  
 STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE                                             :non licet struere in clivis arduis.
 STR_ERR_LOCATION_LIMIT_1_PER_TOWN                                               :tantum licet unam industriam huius generis adesse apud quidque oppidum.
 
-STR_EXTRA_SAWMILL                                                               :{BLACK}Lignum serrat.{}{}Productio:{}  6t ex 8t ligni traditis
+STR_EXTRA_SAWMILL                                                               :{BLACK}Serrat lignum.{}{}Productio:{}  6t ex 8t ligni traditis
 
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Productio maxima est
 STR_GENERIC_NEWLINE                                                             :{}
