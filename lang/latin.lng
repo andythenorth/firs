@@ -51,10 +51,18 @@ STR_CARGO_NAME_COFFEE                                                           
 STR_CARGO_NAME_COFFEE.acc                                                       :Cafeam
 STR_CARGO_NAME_COFFEE.dat                                                       :Cafeae
 STR_CARGO_NAME_COFFEE.gen                                                       :cafeae
+STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :{G=mp}Apparatus Ingeniarii
+STR_CARGO_NAME_ENGINEERING_SUPPLIES.acc                                         :Apparatus Ingeniarios
+STR_CARGO_NAME_ENGINEERING_SUPPLIES.dat                                         :Apparatibus Ingeniariis
+STR_CARGO_NAME_ENGINEERING_SUPPLIES.gen                                         :apparatuum ingeniariorum
 STR_CARGO_NAME_FISH                                                             :{G=mp}Pisces
 STR_CARGO_NAME_FISH.acc                                                         :Pisces
 STR_CARGO_NAME_FISH.dat                                                         :Piscibus
 STR_CARGO_NAME_FISH.gen                                                         :piscium
+STR_CARGO_NAME_FARM_SUPPLIES                                                    :{G=mp}Apparatus Agricolares
+STR_CARGO_NAME_FARM_SUPPLIES.acc                                                :Apparatus Agricolares
+STR_CARGO_NAME_FARM_SUPPLIES.dat                                                :Apparatibus Agricolaribus
+STR_CARGO_NAME_FARM_SUPPLIES.gen                                                :apparatuum agricolarium
 STR_CARGO_NAME_FRUITS                                                           :{G=mp}Fructus
 STR_CARGO_NAME_FRUITS.acc                                                       :Fructus
 STR_CARGO_NAME_FRUITS.dat                                                       :Fructibus
@@ -106,7 +114,9 @@ STR_CARGO_UNIT_BUILDING_MATERIALS                                               
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} chemicorum
 STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} argillae
 STR_CARGO_UNIT_COFFEE                                                           :{SIGNED_WORD} sacc{P 0 us i} cafeae
+STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} capsa{P 0 "" e} apparatuum ingeniariorum
 STR_CARGO_UNIT_FISH                                                             :{WEIGHT} piscium
+STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} capsa{P 0 "" e} apparatuum agricolarium
 STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} fructus
 STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} tigni
 STR_CARGO_UNIT_METAL                                                            :{WEIGHT} metalli
@@ -118,12 +128,14 @@ STR_CARGO_UNIT_STONE                                                            
 STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} betae sacchariferae
 STR_CARGO_UNIT_SUGARCANE                                                        :{WEIGHT} harundinis sacchariferae
 
-STR_CID_ALCOHOL                                                                 :{TINYFONT}AL
+STR_CID_ALCOHOL                                                                 :{TINYFONT}AC
 STR_CID_BAUXITE                                                                 :{TINYFONT}BX
 STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}MA
 STR_CID_CHEMICALS                                                               :{TINYFONT}CH
 STR_CID_CLAY                                                                    :{TINYFONT}AR
 STR_CID_COFFEE                                                                  :{TINYFONT}CF
+STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}AI
+STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}AA
 STR_CID_FISH                                                                    :{TINYFONT}PS
 STR_CID_LUMBER                                                                  :{TINYFONT}TG
 STR_CID_METAL                                                                   :{TINYFONT}MT
