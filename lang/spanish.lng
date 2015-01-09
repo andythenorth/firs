@@ -10,7 +10,7 @@ STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   
 STR_PARAM_DESC_STAT_RATING                                                      :Las calificaciones de las estaciones influyen en la cantidad de carga entregada por la industria a las estaciones; Cuanto más alta la calificación, más carga.
 STR_PARAM_DESC_DEBUG                                                            :Sólo para desarrolladores
 STR_PARAM_DESC_ECONOMIES                                                        :Cada economía proporciona una combinación diferente de cargas e industrias.{}{}Para los jugadores que quieran partidas simples, las economías "Básicas" contienen menos industrias y cargas que el resto de economías de FIRS.
-STR_PARAM_DESC_NO_OPENINGS                                                      :No aparecerán nuevas industrias durante la partida.{}No aparecerán nuevas industrias durante la partida, y los jugadores no podrán fundar o prospectar industrias.
+STR_PARAM_DESC_NO_OPENINGS                                                      :Por defecto, se crearán nuevas industrias durante la partida.{}{}Si está activada la "Prevención de apertura" no se crearán nuevas industrias durante la partida, y los jugadores no podrán fundar o prospectar industrias.
 STR_PARAM_DESC_SECONDARY_NEVER_CLOSE                                            :Por defecto, las industrias secundarias nunca cierran en FIRS.{}{}Si esta opción es activada, las industrias secundarias pueden cerrar si no se les entrega carga durante mucho tiempo. Las industrias primarias nunca cierran en FIRS y no se ven afectadas por esta opción.
 STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY                                   :Máxima distancia con la costa para industrias marítimas en casillas
 STR_PARAM_NAME_DEBUG                                                            :Mostrar textos de depuración
@@ -57,7 +57,7 @@ STR_CARGO_NAME_WOOL                                                             
 STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} de alcohol
 STR_CARGO_UNIT_BAUXITE                                                          :{WEIGHT} de bauxita
 STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WEIGHT} de materiales de construcción
-STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} de productos químicas
+STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} de productos químicos
 STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} de arcilla
 STR_CARGO_UNIT_COFFEE                                                           :{SIGNED_WORD} saco{P 0 "" s} de café
 STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} caja{P 0 "" s} de suministros de ingeniería
@@ -106,7 +106,7 @@ STR_ERR_INCOMPATIBLE_SET                                                        
 STR_ERR_INCOMPATIBLE_PARAM_CANSET                                               :{ORANGE}E02: {YELLOW}Parámetro incompatible: {ORANGE}El parámetro 2 de CanSet debe de ser 0 para funcionar con FIRS. {YELLOW}Consulta el Leeme de FIRS: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 STR_ERR_INCOMPATIBLE_PARAM_CITYSET                                              :{ORANGE}E02: {YELLOW}Parámetro incompatible: {ORANGE}El parámetro 2 de NA City Set debe de ser 0 para funcionar con FIRS. {YELLOW}Consulta el Leeme de FIRS: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 STR_ERR_INCOMPATIBLE_SET_TTRS_VERSION                                           :{ORANGE}E04: {YELLOW}Versión incompatible: {ORANGE}Se debe de usar una versión de Total Town Replacement Set superior a 3.11. {YELLOW}Consulta el Leeme de FIRS: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
-STR_ERR_OPENTTD_VERSION                                                         :{ORANGE}E00: FIRS requiere OpenTTD 1.2.0 / r22780 o superior. {YELLOW}Consulta el Leeme de FIRS: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_OPENTTD_VERSION                                                         :{ORANGE}E00: FIRS requiere OpenTTD 1.2.0 / r22780 ó superior. {YELLOW}Consulta el Leeme de FIRS: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 
 STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE                                             :debe ser colocada por debajo de la línea de nieve.
 STR_ERR_LOCATION_NOT_ON_WATER                                                   :debe ser colocada en tierra firme.
@@ -134,14 +134,14 @@ STR_EXTRA_MACHINE_SHOP                                                          
 STR_EXTRA_MEAT_PACKER                                                           :{BLACK}Producción:{} 3t por cada 8 cajas de suministros de manufactura entregadas{} 5t por cada 8t de ganado entregadas{}{}La producción se incrementa si ambas cargas son entregadas con menos de un mes de diferencia entre ambas
 STR_EXTRA_METAL_FABRICATION_PLANT                                               :{BLACK}Produce componentes de metal pintado.{}{}{BLACK}Producción:{} 2t por cada 8,000l de productos químicos entregados{} 6t por cada 8t de metal entregadas{}{}La producción se incrementa si ambas cargas son entregadas con menos de un mes de diferencia entre ambas
 STR_EXTRA_METAL_FOUNDRY                                                         :{BLACK}Produce elementos metálicos tales como latas, herramientas o piezas.{}{}{BLACK}Producción:{} 2 cajas por cada 8,000l de productos químicos entregados{} 6 cajas por cada 8t de metal entregadas{}{}La producción se incrementa si ambas cargas son entregadas con menos de un mes de diferencia entre ambas
-STR_EXTRA_OIL_REFINERY                                                          :{BLACK}Procesa petróleo crudo en fueloil y productos químicos.{}{}6,000l producidps por cada 8,000l entregados
+STR_EXTRA_OIL_REFINERY                                                          :{BLACK}Procesa petróleo crudo en fueloil y productos químicos.{}{}Producción:{} 6,000l por cada 8,000l entregados
 STR_EXTRA_PAPER_MILL                                                            :{BLACK}Convierte madera en pulpa para hacer papel y cartón.{}{}{BLACK}Producción:{} 4 cajas por cada 8t de madera entregadas{} 2 cajas por cada 8t de arcilla entregadas{}  2 cajas por cada 8,000l de productos químicos entregados{}{}La producción se incrementa si dos o más cargas son entregadas con menos de un mes de diferencia entre ambas
-STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}Fabrica productos de plástico tales como embalaje o productos del hogar.{}{}Producción:{} {STRING} {STRING}
+STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}Fabrica productos de plástico tales como embalajes o productos del hogar.{}{}Producción:{} {STRING} {STRING}
 STR_EXTRA_PLASTICS_PLANT_CHEMICALS_SUBSTR                                       :6 cajas por cada 8,000l de productos químicos entregados{}
 STR_EXTRA_PLASTICS_PLANT_PLANT_FIBRES_SUBSTR                                    :6 cajas por cada 8 fardos de fibras vegetales entregados{}
-STR_EXTRA_RECYCLING_PLANT                                                       :{BLACK}Procesa productos reciclables para ser reutilizados.{}{}Producción:{} 6t producidas por cada 8t de reciclables entregadas
+STR_EXTRA_RECYCLING_PLANT                                                       :{BLACK}Procesa productos reciclables para ser reutilizados.{}{}Producción:{} 6t por cada 8t de reciclables entregadas
 STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}La producción es proporcional a la población del pueblo
-STR_EXTRA_SAWMILL                                                               :{BLACK}Aserra madera.{}{}Producción:{} 6t producidas por cada 8t de madera entregadas
+STR_EXTRA_SAWMILL                                                               :{BLACK}Aserradero.{}{}Producción:{} 6t por cada 8t de madera entregadas
 STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Produce objetos de metal forjado como herramientas, puertas, útiles de labranza o cocina y herraduras.{}{}Producción:{} 8t por cada 8t de metal entregadas
 STR_EXTRA_STEELMILL                                                             :{BLACK}Producción:{} 2t por cada 8t de mineral de hierro entregadas{} 2t por cada 8t de carbón entregadas{}  4t por cada 8t de chatarra entregadas{}{}La producción se incrementa si dos o más cargas son entregadas en un intervalo inferior a un mes
 STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Producción:{} 3t por cada 8 cajas de suministros de manufactura entregadas{} 5t por cada 8t de caña de azúcar entregadas{}{}La producción se incrementa si dos o más cargas son entregadas con menos de un mes de diferencia entre ambas
@@ -186,7 +186,7 @@ STR_IND_BAUXITE_MINE                                                            
 STR_IND_BIOREFINERY                                                             :{G=f}Biorrefinería
 STR_IND_BREWERY                                                                 :{G=f}Destilería
 STR_IND_BREWERY_CIDER_MILL                                                      :Molino de sidra
-STR_IND_BRICK_WORKS                                                             :{G=f}Fábrica de Ladrillo
+STR_IND_BRICK_WORKS                                                             :{G=f}Fábrica de Ladrillos
 STR_IND_BUILDERS_YARD                                                           :{G=m}Almacén de Construcción
 STR_IND_BULK_TERMINAL                                                           :Terminal de carga a granel
 STR_IND_CEMENT_PLANT                                                            :{G=f}Planta de Cemento
