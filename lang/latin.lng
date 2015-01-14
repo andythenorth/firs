@@ -79,6 +79,10 @@ STR_CARGO_NAME_MILK                                                             
 STR_CARGO_NAME_MILK.acc                                                         :Lac
 STR_CARGO_NAME_MILK.dat                                                         :Lacti
 STR_CARGO_NAME_MILK.gen                                                         :lactis
+STR_CARGO_NAME_MANUFACTURING_SUPPLIES                                           :{G=mp}Apparatus Fabricationis
+STR_CARGO_NAME_MANUFACTURING_SUPPLIES.acc                                       :Apparatus Fabricationis
+STR_CARGO_NAME_MANUFACTURING_SUPPLIES.dat                                       :Apparatibus Fabricationis
+STR_CARGO_NAME_MANUFACTURING_SUPPLIES.gen                                       :apparatuum fabricationis
 STR_CARGO_NAME_PETROL                                                           :{G=n}Benzinum
 STR_CARGO_NAME_PETROL.acc                                                       :Benzinum
 STR_CARGO_NAME_PETROL.dat                                                       :Benzino
@@ -121,6 +125,7 @@ STR_CARGO_UNIT_FRUITS                                                           
 STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} tigni
 STR_CARGO_UNIT_METAL                                                            :{WEIGHT} metalli
 STR_CARGO_UNIT_MILK                                                             :{VOLUME} lactis
+STR_CARGO_UNIT_MNSP                                                             :{SIGNED_WORD} capsa{P 0 "" e} apparatuum fabricationis
 STR_CARGO_UNIT_PETROL                                                           :{VOLUME} benzini
 STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} regyrabilium
 STR_CARGO_UNIT_SAND                                                             :{WEIGHT} harenae
@@ -138,6 +143,7 @@ STR_CID_ENGINEERING_SUPPLIES                                                    
 STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}AA
 STR_CID_FISH                                                                    :{TINYFONT}PS
 STR_CID_LUMBER                                                                  :{TINYFONT}TG
+STR_CID_MANUFACTURING_SUPPLIES                                                  :{TINYFONT}AF
 STR_CID_METAL                                                                   :{TINYFONT}MT
 STR_CID_MILK                                                                    :{TINYFONT}LC
 STR_CID_PETROL                                                                  :{TINYFONT}BZ
@@ -161,7 +167,10 @@ STR_ERR_LOCATION_NOT_IN_DESERT                                                  
 STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE                                             :non licet struere in clivis arduis.
 STR_ERR_LOCATION_LIMIT_1_PER_TOWN                                               :tantum licet unam industriam huius generis adesse apud quidque oppidum.
 
-STR_EXTRA_SAWMILL                                                               :{BLACK}Serrat lignum.{}{}Productio:{}  6t ex 8t ligni traditis
+STR_EXTRA_DAIRY                                                                 :{BLACK}Oneris productio:{} 3 tonnae ex 8 capsis apparatuum fabricationis traditis{} 5 tonnae ex 8,000 litris lactis traditis{}{}Productio auget si ambo onera tradita sint intra unum mensem.
+STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Oneris productio:{} 3 tonnae ex 8 capsis apparatuum fabricationis traditis{} 5 tonnae ex 8 tonnis piscium traditis{}{}Productio auget si ambo onera tradita sint intra unum mensem.
+STR_EXTRA_SAWMILL                                                               :{BLACK}Serrat lignum.{}{}Oneris productio:{} 6 tonnae ex 8 tonnis ligni traditis
+STR_EXTRA_STEELMILL                                                             :{BLACK}Oneris productio:{} 2 tonnae ex 8 tonnis ferri traditis{} 2 tonnae ex 8 tonnis carbonis traditis{}{}Productio auget si ambo onera tradita sint intra unum mensem.
 
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Productio maxima est
 STR_GENERIC_NEWLINE                                                             :{}
