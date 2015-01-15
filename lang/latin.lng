@@ -95,6 +95,10 @@ STR_CARGO_NAME_SAND                                                             
 STR_CARGO_NAME_SAND.acc                                                         :Harenam
 STR_CARGO_NAME_SAND.dat                                                         :Harenae
 STR_CARGO_NAME_SAND.gen                                                         :harenae
+STR_CARGO_NAME_SCRAP_METAL                                                      :{G=np}Scruta Metallica
+STR_CARGO_NAME_SCRAP_METAL.acc                                                  :Scruta Metallica
+STR_CARGO_NAME_SCRAP_METAL.dat                                                  :Scrutis Metallicis
+STR_CARGO_NAME_SCRAP_METAL.gen                                                  :scrutorum metallicorum
 STR_CARGO_NAME_STONE                                                            :{G=fp}Petrae
 STR_CARGO_NAME_STONE.acc                                                        :Petras
 STR_CARGO_NAME_STONE.dat                                                        :Petris
@@ -129,9 +133,10 @@ STR_CARGO_UNIT_MNSP                                                             
 STR_CARGO_UNIT_PETROL                                                           :{VOLUME} benzini
 STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} regyrabilium
 STR_CARGO_UNIT_SAND                                                             :{WEIGHT} harenae
+STR_CARGO_UNIT_SCRAP_METAL                                                      :{WEIGHT} scrutorum metallicorum
 STR_CARGO_UNIT_STONE                                                            :{WEIGHT} petrarum
 STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} betae sacchariferae
-STR_CARGO_UNIT_SUGARCANE                                                        :{WEIGHT} harundinis sacchariferae
+STR_CARGO_UNIT_SUGARCANE                                                        :{WEIGHT} cannae sacchariferae
 
 STR_CID_ALCOHOL                                                                 :{TINYFONT}AC
 STR_CID_BAUXITE                                                                 :{TINYFONT}BX
@@ -149,6 +154,7 @@ STR_CID_MILK                                                                    
 STR_CID_PETROL                                                                  :{TINYFONT}BZ
 STR_CID_RECYCLABLES                                                             :{TINYFONT}RG
 STR_CID_SAND                                                                    :{TINYFONT}HA
+STR_CID_SCRAP_METAL                                                             :{TINYFONT}SM
 STR_CID_STONE                                                                   :{TINYFONT}PT
 STR_CID_SUGAR_BEET                                                              :{TINYFONT}BS
 STR_CID_SUGARCANE                                                               :{TINYFONT}HS
@@ -167,11 +173,23 @@ STR_ERR_LOCATION_NOT_IN_DESERT                                                  
 STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE                                             :non licet struere in clivis arduis.
 STR_ERR_LOCATION_LIMIT_1_PER_TOWN                                               :tantum licet unam industriam huius generis adesse apud quidque oppidum.
 
+STR_EXTRA_BIOREFINERY                                                           :{BLACK}Oneris productio:{} 6,000 litra ex 8 tonnis frumenti traditis{} 6,000 litra ex 8 tonnis sacchari traditis
+STR_EXTRA_BREWERY_GRAIN_SUBSTR                                                  :5,000 litra ex 8 tonnis frumenti traditis{}
+STR_EXTRA_BREWERY_FRUIT_SUBSTR                                                  :5,000 litra ex 8 tonnis fructuum traditis{}
 STR_EXTRA_DAIRY                                                                 :{BLACK}Oneris productio:{} 3 tonnae ex 8 capsis apparatuum fabricationis traditis{} 5 tonnae ex 8,000 litris lactis traditis{}{}Productio auget si ambo onera tradita sint intra unum mensem.
+STR_EXTRA_FERTILIZER_PLANT                                                      :{BLACK}Oneris productio:{} 8 capsae ex 8,000 litris chemicorum traditis
 STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Oneris productio:{} 3 tonnae ex 8 capsis apparatuum fabricationis traditis{} 5 tonnae ex 8 tonnis piscium traditis{}{}Productio auget si ambo onera tradita sint intra unum mensem.
+STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Oneris productio:{} 3 tonnae ex 8 capsis apparatuum fabricationis traditis{} 5 tonnae ex 8 tonnis tigni traditis{}{}Productio auget si ambo onera tradita sint intra unum mensem.
+STR_EXTRA_GRAIN_MILL                                                            :{BLACK}Oneris productio:{} 3 tonnae ex 8 capsis apparatuum fabricationis traditis{} 5 tonnae ex 8 tonnis frumenti traditis{}{}Productio auget si ambo onera tradita sint intra unum mensem.
+STR_EXTRA_LIME_KILN                                                             :{BLACK}Oneris productio:{} 3 tonnae ex 8 tonnis petrarum traditis{} 3 tonnae ex 8 tonnis carbonis traditis{}{}Productio auget si ambo onera tradita sint intra unum mensem.
+STR_EXTRA_MEAT_PACKER                                                           :{BLACK}Oneris productio:{} 3 tonnae ex 8 capsis apparatuum fabricationis traditis{} 5 tonnae ex 8 pecoribus traditis{}{}Productio auget si ambo onera tradita sint intra unum mensem.
+STR_EXTRA_PLASTICS_PLANT_CHEMICALS_SUBSTR                                       :6 capsae ex 8,000 litris chemicorum traditis{}
 STR_EXTRA_SAWMILL                                                               :{BLACK}Serrat lignum.{}{}Oneris productio:{} 6 tonnae ex 8 tonnis ligni traditis
 STR_EXTRA_STEELMILL                                                             :{BLACK}Oneris productio:{} 2 tonnae ex 8 tonnis ferri traditis{} 2 tonnae ex 8 tonnis carbonis traditis{}{}Productio auget si ambo onera tradita sint intra unum mensem.
+STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Oneris productio:{} 3 tonnae ex 8 capsis apparatuum fabricationis traditis{} 5 tonnae ex 8 tonnis sacchari traditis{}{}Productio auget si ambo onera tradita sint intra unum mensem.
+STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Oneris productio:{} 3 capsae ex 8 capsis apparatuum fabricationis traditis{} {STRING} {STRING}{}Productio auget si apparatus traditi sint intra eundem mensem quam alia onera.
 
+STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ EMENDATIO ------------{}Productio huius mensis:{}Onus I: {WHITE}{COMMA}{BLACK}{}Onus II: {WHITE}{COMMA}{BLACK}{}Dies postquam onus traditum est: {WHITE}{COMMA}{BLACK}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Productio maxima est
 STR_GENERIC_NEWLINE                                                             :{}
 
