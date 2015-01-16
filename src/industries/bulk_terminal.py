@@ -47,6 +47,7 @@ industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['FIRS'].accept_cargo_types = ['BDMT', 'GRAI', 'FRUT']
 industry.economy_variations['FIRS'].prod_cargo_types = ['FMSP', 'AORE']
 industry.economy_variations['FIRS'].prod_multiplier = '[7, 16]'
+industry.economy_variations['FIRS'].prob_random = '3'
 
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].accept_cargo_types = ['OIL_', 'CORE', 'SUGR']

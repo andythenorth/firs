@@ -47,6 +47,7 @@ industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['FIRS'].accept_cargo_types = ['FOOD', 'GOOD', 'BEER']
 industry.economy_variations['FIRS'].prod_cargo_types = ['ENSP', 'MNSP']
 industry.economy_variations['FIRS'].prod_multiplier = '[9, 12]'
+industry.economy_variations['FIRS'].prob_random = '3'
 
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True
 industry.economy_variations['BASIC_TEMPERATE'].accept_cargo_types = ['CLAY', 'FOOD', 'GOOD']
