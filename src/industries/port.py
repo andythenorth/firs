@@ -44,9 +44,9 @@ industry = Industry(id='port',
                     supply_requirements=global_constants.supply_requirements['import_export'])
 
 industry.economy_variations['FIRS'].enabled = True
-industry.economy_variations['FIRS'].accept_cargo_types = ['FOOD', 'GOOD', 'BEER']
-industry.economy_variations['FIRS'].prod_cargo_types = ['ENSP', 'MNSP']
-industry.economy_variations['FIRS'].prod_multiplier = '[9, 12]'
+industry.economy_variations['FIRS'].accept_cargo_types = ['GOOD', 'FRUT', 'WOOL']
+industry.economy_variations['FIRS'].prod_cargo_types = ['ENSP']
+industry.economy_variations['FIRS'].prod_multiplier = '[9]'
 industry.economy_variations['FIRS'].prob_random = '3'
 
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True
