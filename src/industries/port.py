@@ -43,18 +43,22 @@ industry = Industry(id='port',
                     override_default_construction_states=True,
                     supply_requirements=global_constants.supply_requirements['import_export'])
 
-industry.economy_variations['BASIC_TEMPERATE'].enabled = True
-industry.economy_variations['BASIC_ARCTIC'].enabled = True
-industry.economy_variations['BASIC_TROPIC'].enabled = True
+industry.economy_variations['FIRS'].enabled = True
+industry.economy_variations['FIRS'].accept_cargo_types = ['FOOD', 'GOOD', 'BEER']
+industry.economy_variations['FIRS'].prod_cargo_types = ['ENSP', 'MNSP']
+industry.economy_variations['FIRS'].prod_multiplier = '[9, 12]'
 
+industry.economy_variations['BASIC_TEMPERATE'].enabled = True
 industry.economy_variations['BASIC_TEMPERATE'].accept_cargo_types = ['CLAY', 'FOOD', 'GOOD']
 industry.economy_variations['BASIC_TEMPERATE'].prod_cargo_types = ['RFPR', 'ENSP']
 industry.economy_variations['BASIC_TEMPERATE'].prod_multiplier = '[19, 7]'
 
+industry.economy_variations['BASIC_ARCTIC'].enabled = True
 industry.economy_variations['BASIC_ARCTIC'].accept_cargo_types = ['GOOD', 'BEER', 'PETR']
 industry.economy_variations['BASIC_ARCTIC'].prod_cargo_types = ['ENSP', 'CLAY']
 industry.economy_variations['BASIC_ARCTIC'].prod_multiplier = '[7, 14]'
 
+industry.economy_variations['BASIC_TROPIC'].enabled = True
 industry.economy_variations['BASIC_TROPIC'].accept_cargo_types = ['FOOD', 'AORE', 'FRUT']
 industry.economy_variations['BASIC_TROPIC'].prod_cargo_types = ['STEL', 'MNSP']
 industry.economy_variations['BASIC_TROPIC'].prod_multiplier = '[7, 16]'
