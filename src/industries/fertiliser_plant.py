@@ -43,7 +43,6 @@ industry = Industry(id='fertiliser_plant',
                     extra_text_industry='STR_EXTRA_FERTILIZER_PLANT')
 
 industry.economy_variations['FIRS'].enabled = True
-industry.economy_variations['BASIC_TEMPERATE'].enabled = True
 industry.economy_variations['BASIC_ARCTIC'].enabled = True
 
 industry.add_tile(id='fertiliser_plant_tile')
