@@ -62,12 +62,19 @@ spriteset_2 = industry.add_spriteset(
     sprites = [(80, 10, 64, 80, -31, -49)],
     zextent = 48
 )
+sprite_smoke = industry.add_smoke_sprite(
+    smoke_type = 'dark_smoke_small',
+    xoffset= 0,
+    yoffset= 1,
+    zoffset= 44,
+)
 
 industry.add_spritelayout(
     id = 'smithy_forge_spritelayout_1',
     ground_sprite = sprite_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_1],
+    smoke_sprites = [sprite_smoke],
     fences = ['se','sw']
 )
 industry.add_spritelayout(
