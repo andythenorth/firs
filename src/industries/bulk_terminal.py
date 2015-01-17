@@ -49,6 +49,11 @@ industry.economy_variations['FIRS'].prod_cargo_types = ['FMSP', 'RFPR']
 industry.economy_variations['FIRS'].prod_multiplier = '[7, 16]'
 industry.economy_variations['FIRS'].prob_random = '3'
 
+industry.economy_variations['BASIC_ARCTIC'].enabled = True
+industry.economy_variations['BASIC_ARCTIC'].accept_cargo_types = ['GRAI', 'IORE', 'PETR']
+industry.economy_variations['BASIC_ARCTIC'].prod_cargo_types = ['FMSP', 'CLAY']
+industry.economy_variations['BASIC_ARCTIC'].prod_multiplier = '[7, 12]'
+
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].accept_cargo_types = ['OIL_', 'CORE', 'SUGR']
 industry.economy_variations['MISTAH_KURTZ'].prod_cargo_types = ['BDMT', 'GRAI']

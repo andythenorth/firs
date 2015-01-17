@@ -50,6 +50,7 @@ from cargos import manufacturing_supplies
 from cargos import metal
 from cargos import milk
 from cargos import oil
+from cargos import paper
 from cargos import passengers
 from cargos import petrol
 from cargos import plant_fibres

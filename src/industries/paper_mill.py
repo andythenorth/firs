@@ -33,6 +33,7 @@ industry = Industry(id='paper_mill',
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_ARCTIC'].enabled = True
+industry.economy_variations['BASIC_ARCTIC'].prod_cargo_types=['PAPR', 'MNSP']
 
 # industry uses layouts and sprites from default game, no custom layouts etc
 
