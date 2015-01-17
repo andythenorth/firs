@@ -108,17 +108,17 @@ spriteset_9 = industry.add_spriteset(
 )
 spriteset_9b = industry.add_spriteset(
     id = 'trading_post_spriteset_9b',
-    sprites = [(150, 10, 64, 39, -31, 0)],
-    xoffset = 5,
-    zoffset = 40,
+    sprites = [(150, 10, 64, 39, -31, -7)],
+    xoffset = 0,
+    zoffset = 12,
     xextent = 11,
 
 )
 spriteset_10 = industry.add_spriteset(
     id = 'trading_post_spriteset_10',
     sprites = [(220, 10, 64, 39, -31, -7)],
-    yoffset = 4,
-    zoffset = 27,
+    yoffset = 0,
+    zoffset = 12,
     yextent = 12,
 )
 spriteset_11 = industry.add_spriteset(
@@ -360,13 +360,13 @@ industry.add_industry_layout(
 )
 industry.add_industry_layout(
     id = 'trading_post_industry_layout_3',
-    layout = [(0, 0, 'trading_post_tile_2', 'trading_post_slope_switch_1'),
+    layout = [(0, 0, 'trading_post_tile_2', 'trading_post_slope_switch_2'),
               (0, 1, 'trading_post_tile_2', 'trading_post_slope_switch_2'),
-              (0, 2, 'trading_post_tile_2', 'trading_post_slope_switch_2'),
+              (0, 2, 'trading_post_tile_2', 'trading_post_slope_switch_1'),
               (1, 0, 'trading_post_tile_1', 'trading_post_spritelayout_24'),
-              (1, 2, 'trading_post_tile_1', 'trading_post_spritelayout_2'),
+              (1, 2, 'trading_post_tile_1', 'trading_post_spritelayout_30'),
               (2, 1, 'trading_post_tile_1', 'trading_post_spritelayout_26'),
-              (2, 2, 'trading_post_tile_1', 'trading_post_spritelayout_28'),
+              (2, 2, 'trading_post_tile_1', 'trading_post_spritelayout_29'),
               (2, 3, 'trading_post_tile_1', 'trading_post_spritelayout_22'),
               (2, 4, '255', 'trading_post_spritelayout_null'),
               (3, 2, '255', 'trading_post_spritelayout_null'),
@@ -375,11 +375,11 @@ industry.add_industry_layout(
 )
 industry.add_industry_layout(
     id = 'trading_post_industry_layout_4',
-    layout = [(0, 0, 'trading_post_tile_1', 'trading_post_spritelayout_30'),
+    layout = [(0, 0, 'trading_post_tile_2', 'trading_post_slope_switch_2'),
               (0, 1, '255', 'trading_post_spritelayout_null'),
               (1, 0, 'trading_post_tile_2', 'trading_post_slope_switch_2'),
-              (1, 1, 'trading_post_tile_1', 'trading_post_spritelayout_1'),
-              (1, 2, 'trading_post_tile_1', 'trading_post_spritelayout_29'),
+              (1, 1, 'trading_post_tile_1', 'trading_post_spritelayout_29'),
+              (1, 2, 'trading_post_tile_1', 'trading_post_spritelayout_30'),
               (1, 3, '255', 'trading_post_spritelayout_null'),
               (2, 0, 'trading_post_tile_2', 'trading_post_slope_switch_1'),
               (2, 1, 'trading_post_tile_1', 'trading_post_spritelayout_25'),
@@ -391,11 +391,11 @@ industry.add_industry_layout(
 industry.add_industry_layout(
     id = 'trading_post_industry_layout_5',
     layout = [(0, 0, 'trading_post_tile_2', 'trading_post_slope_switch_1'),
-              (1, 0, 'trading_post_tile_2', 'trading_post_slope_switch_1'),
+              (1, 0, 'trading_post_tile_2', 'trading_post_slope_switch_2'),
               (1, 2, '255', 'trading_post_spritelayout_null'),
-              (2, 0, 'trading_post_tile_1', 'trading_post_spritelayout_3'),
+              (2, 0, 'trading_post_tile_1', 'trading_post_spritelayout_13'),
               (2, 1, 'trading_post_tile_1', 'trading_post_spritelayout_29'),
-              (2, 2, 'trading_post_tile_1', 'trading_post_spritelayout_13'),
+              (2, 2, 'trading_post_tile_1', 'trading_post_spritelayout_30'),
               (2, 3, '255', 'trading_post_spritelayout_null'),
               (3, 255, '255', 'trading_post_spritelayout_null'),
               (3, 0, 'trading_post_tile_1', 'trading_post_spritelayout_24'),
