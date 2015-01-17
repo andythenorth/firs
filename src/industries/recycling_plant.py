@@ -142,13 +142,35 @@ industry.add_spritelayout(
 )
 
 industry.add_industry_layout(
-    id = 'recycling_plant_industry_layout',
+    id = 'recycling_plant_industry_layout_1',
     layout = [(0, 0, 'recycling_plant_tile', 'recycling_plant_spritelayout_2'),
               (0, 1, 'recycling_plant_tile', 'recycling_plant_spritelayout_3'),
               (1, 0, 'recycling_plant_tile', 'recycling_plant_spritelayout_1'),
               (1, 1, 'recycling_plant_tile', 'recycling_plant_spritelayout_4'),
               (2, 0, 'recycling_plant_tile', 'recycling_plant_spritelayout_5'),
               (2, 1, 'recycling_plant_tile', 'recycling_plant_spritelayout_6')
+    ]
+)
+
+industry.add_industry_layout(
+    id = 'recycling_plant_industry_layout_2',
+    layout = [(0, 0, 'recycling_plant_tile', 'recycling_plant_spritelayout_2'),
+              (0, 1, 'recycling_plant_tile', 'recycling_plant_spritelayout_3'),
+              (0, 2, 'recycling_plant_tile', 'recycling_plant_spritelayout_5'),
+              (1, 0, 'recycling_plant_tile', 'recycling_plant_spritelayout_1'),
+              (1, 1, 'recycling_plant_tile', 'recycling_plant_spritelayout_4'),
+              (1, 2, 'recycling_plant_tile', 'recycling_plant_spritelayout_6')
+    ]
+)
+
+industry.add_industry_layout(
+    id = 'recycling_plant_industry_layout_3',
+    layout = [(0, 0, 'recycling_plant_tile', 'recycling_plant_spritelayout_5'),
+              (0, 1, 'recycling_plant_tile', 'recycling_plant_spritelayout_3'),
+              (0, 2, 'recycling_plant_tile', 'recycling_plant_spritelayout_2'),
+              (1, 0, 'recycling_plant_tile', 'recycling_plant_spritelayout_6'),
+              (1, 1, 'recycling_plant_tile', 'recycling_plant_spritelayout_4'),
+              (1, 2, 'recycling_plant_tile', 'recycling_plant_spritelayout_1')
     ]
 )
 
