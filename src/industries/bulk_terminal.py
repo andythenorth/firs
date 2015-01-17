@@ -431,7 +431,6 @@ industry.add_industry_layout(
               (4, 2, '255', 'bulk_terminal_spritelayout_null'),
               (4, 3, '255', 'bulk_terminal_spritelayout_null'),
               (4, 4, '255', 'bulk_terminal_spritelayout_null'),
-              (4, 5, '255', 'bulk_terminal_spritelayout_null'),
     ]
 )
 industry.add_industry_layout(
@@ -465,14 +464,12 @@ industry.add_industry_layout(
               (5, 1, 'bulk_terminal_tile_2', 'bulk_terminal_slope_switch_1'),
               (5, 2, 'bulk_terminal_tile_2', 'bulk_terminal_slope_switch_2'),
               (5, 3, 'bulk_terminal_tile_2', 'bulk_terminal_slope_switch_2'),
-              (5, 4, '255', 'bulk_terminal_spritelayout_null'),
     ]
 
 )
 industry.add_industry_layout(
     id = 'bulk_terminal_industry_layout_3',
     layout = [
-              (0, 0, '255', 'bulk_terminal_spritelayout_null'),
               (0, 1, 'bulk_terminal_tile_2', 'bulk_terminal_slope_switch_2'),
               (0, 2, 'bulk_terminal_tile_2', 'bulk_terminal_slope_switch_2'),
               (0, 3, 'bulk_terminal_tile_2', 'bulk_terminal_slope_switch_1'),
@@ -530,7 +527,6 @@ industry.add_industry_layout(
               (3, 3, 'bulk_terminal_tile_1', 'bulk_terminal_spritelayout_water_empty'),
               (3, 4, 'bulk_terminal_tile_1', 'bulk_terminal_spritelayout_water_barge_nw_se'),
               (3, 5, '255', 'bulk_terminal_spritelayout_null'),
-              (4, 0, '255', 'bulk_terminal_spritelayout_null'),
               (4, 1, '255', 'bulk_terminal_spritelayout_null'),
               (4, 2, '255', 'bulk_terminal_spritelayout_null'),
               (4, 3, '255', 'bulk_terminal_spritelayout_null'),
