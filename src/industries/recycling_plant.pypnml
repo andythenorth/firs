@@ -28,6 +28,10 @@ item(FEAT_INDUSTRYTILES, ${industry.id}_tile, TILE_RECYCLINGPLANT_1) {
 		substitute:       0;
 		accepted_cargos:  [[RCYC, 8]];
 		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
+		special_flags:      bitmask(INDTILE_FLAG_RANDOM_ANIMATION);
+		animation_info:   [ANIMATION_LOOPING, 71];
+		animation_speed:  2;
+		animation_triggers: bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE);
 	}
 	graphics {
 		tile_check: ${industry.id}_tile_location_check;
@@ -62,8 +66,8 @@ ${industry.get_industry_layouts_as_tilelayouts()}
 
 
 CHECK_INCOMPATIBLE  (recycling_plant, 56, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
-CHECK_INCOMPATIBLE  (recycling_depot, 16, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_recycling_plant)
-CHECK_FOUNDER       (${industry.id}_recycling_depot)
+/*CHECK_INCOMPATIBLE  (recycling_depot, 16, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_recycling_plant)*/
+CHECK_FOUNDER       (${industry.id}_recycling_plant)
 
 SWITCH_COLOUR_SCHEME1(${industry.id}_colour)
 

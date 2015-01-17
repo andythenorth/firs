@@ -83,6 +83,19 @@ spriteset_6 = industry.add_spriteset(
     sprites = [(360, 10, 64, 63, -31, -32)],
     zextent = 48
 )
+sprite_smoke_1 = industry.add_smoke_sprite(
+    smoke_type = 'white_smoke_small',
+    xoffset= -5,
+    yoffset= 0,
+    zoffset= 40,
+    animation_frame_offset = 8,
+)
+sprite_smoke_2 = industry.add_smoke_sprite(
+    smoke_type = 'white_smoke_small',
+    xoffset= -5,
+    yoffset= 5,
+    zoffset= 40,
+)
 
 industry.add_spritelayout(
     id = 'recycling_plant_spritelayout_1',
@@ -96,6 +109,7 @@ industry.add_spritelayout(
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_2],
+    smoke_sprites = [sprite_smoke_1, sprite_smoke_2],
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
