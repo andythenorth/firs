@@ -172,12 +172,7 @@ spriteset_17 = industry.add_spriteset(
     zoffset = 18,
 )
 
-industry.add_spritelayout(
-    id = 'port_spritelayout_1',
-    ground_sprite = spriteset_ground_empty,
-    ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_2, spriteset_1, spriteset_17]
-)
+# port_spritelayout_1 fell out of use and was removed
 industry.add_spritelayout(
     id = 'port_spritelayout_2',
     ground_sprite = spriteset_ground_empty,

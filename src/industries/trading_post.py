@@ -143,18 +143,8 @@ spriteset_17 = industry.add_spriteset(
     zoffset = 18,
 )
 
-industry.add_spritelayout(
-    id = 'trading_post_spritelayout_1',
-    ground_sprite = spriteset_ground_empty,
-    ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_2, spriteset_1, spriteset_17]
-)
-industry.add_spritelayout(
-    id = 'trading_post_spritelayout_2',
-    ground_sprite = spriteset_ground_empty,
-    ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_3, spriteset_1, spriteset_17]
-)
+# trading_post_spritelayout_1 fell out of use and was removed
+# trading_post_spritelayout_2 fell out of use and was removed
 industry.add_spritelayout(
     id = 'trading_post_spritelayout_3',
     ground_sprite = spriteset_ground_empty,
@@ -305,12 +295,7 @@ industry.add_spritelayout(
     ground_overlay = spriteset_ground_empty,
     building_sprites = []
 )
-industry.add_spritelayout(
-    id = 'trading_post_spritelayout_28',
-    ground_sprite = spriteset_ground_empty,
-    ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_2, spriteset_3, spriteset_1, spriteset_9]
-)
+# trading_post_spritelayout_28 fell out of use and was removed
 industry.add_spritelayout(
     id = 'trading_post_spritelayout_29',
     ground_sprite = spriteset_ground_empty,
