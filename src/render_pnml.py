@@ -44,12 +44,14 @@ repo_vars = utils.get_repo_vars(sys)
 
 
 def render_industry(industry):
-    # save the results of templating
     pnml_file = codecs.open(os.path.join(generated_pnml_path, industry.id + '.pnml'), 'w','utf8')
-    pnml_file.write(industry.render_pnml())
+    only_build_test_industry = repo_vars.get('test_industry', None)
+    if not only_build_test_industry or only_build_test_industry == industry.id:
+        result = industry.render_pnml()
+    else:
+        result = ''
+    pnml_file.write(result)
     pnml_file.close()
-
-
 
 def main():
     header_items = ['checks','conditions','header','firs','parameters']
