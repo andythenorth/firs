@@ -116,7 +116,7 @@ spriteset_7 = industry.add_spriteset(
 )
 spriteset_8 = industry.add_spriteset(
     id = 'port_spriteset_8',
-    sprites = [(80, 10, 64, 39, -31, 0)],
+    sprites = [(440, 10, 64, 74, -31, -34)],
     zoffset = 18
 )
 spriteset_9 = industry.add_spriteset(
