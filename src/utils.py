@@ -32,7 +32,7 @@ def parse_base_lang():
     base_lang_file = codecs.open(os.path.join('lang', 'english.lng'), 'r','utf8')
     strings = split_nml_string_lines(base_lang_file.readlines())
 
-    extra_strings_file = codecs.open(os.path.join('docs_src', 'extra_strings.lng'), 'r','utf8')
+    extra_strings_file = codecs.open(os.path.join('src', 'docs_templates', 'extra_strings.lng'), 'r','utf8')
     extra_strings = split_nml_string_lines(extra_strings_file.readlines())
     for i in extra_strings:
         strings[i] = extra_strings[i]
