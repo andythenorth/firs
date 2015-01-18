@@ -2,14 +2,34 @@ Changelog
 =========
 
 --------------
+1.4.0 Release
+--------------
+
+*Translation Updates*
+
+- Afrikaans
+- Catalan
+- Chinese (Simplified)
+- Chinese (Traditional)
+- Finnish
+- French
+- Latin
+- Norwegian (Bokmal)
+- Polish
+- Russian
+- Scottish Gaelic
+- Spanish
+- Swedish
+
+--------------
 1.3.0 Release
 --------------
 
 *New Features / Changes*
 
-- New economy: Heart of Darkness  
+- New economy: Heart of Darkness
     - "Mistah Kurtz - he dead"
-    - 22 cargos, including new cargos Coffee, Copper Ore, Diamonds, Rubber and Sugar  
+    - 22 cargos, including new cargos Coffee, Copper Ore, Diamonds, Rubber and Sugar
     - 21 industries, including new industries Bulk Terminal, Coffee Estate, Copper Mine, Diamond Mine, Fibre Crop Farm, Rubber Plantation, and Trading Post
     - best used with Sub-Tropic climate and many rivers
 - Pre-1906 graphics for Dredging Site (DanMacK)
@@ -22,26 +42,26 @@ Changelog
 
 - Hotels were unexpectedly closing
 - Correct order for cargo information text at Brewery
-- Primary production boost required an incorrect amount of supplies 
+- Primary production boost required an incorrect amount of supplies
 
 *Translations*
 
-- Brazilian Portuguese (squallzinn)
-- Croatian (Voyager1)
-- Dutch (Alberth)
-- Finnish (juzza1)
-- German (planetmaker)
-- Hungarian (Brumi(
-- Italian (Snail)
-- Korean (Telk)
-- Norwegian (bokmal) (Trond)
-- Polish (TadeuszD)
-- Portugese (vesgo)
-- Russian (George)
-- Spanish (SilverSurferZzZ)
-- Swedish (Zuu)
-- simplified Chinese (siu238X)
-- traditional Chinese (siu238X, zderx)
+- Brazilian Portuguese
+- Croatian
+- Dutch
+- Finnish
+- German
+- Hungarian
+- Italian
+- Korean
+- Norwegian
+- Polish
+- Portugese
+- Russian
+- Spanish
+- Swedish
+- simplified Chinese
+- traditional Chinese
 
 *Codechanges*
 
@@ -71,7 +91,7 @@ Changelog
 
 *Translations*
 
-- German (planetmaker)
+- German
 
 --------------
 1.0.1 Release
@@ -89,7 +109,7 @@ Changelog
 
 *Translations*
 
-- Simplified Chinese (dirace)
+- Simplified Chinese
 
 *Codechanges*
 
@@ -119,9 +139,9 @@ Changelog
 
 - make Ranch a separate industry to allow for customised graphics in future
 
-*Translations additions / updates*
+*Translations Updates*
 
-- Update: Swedish (JoelA)
+- Update: Swedish
 
 --------------
 0.11.0 Release
@@ -138,11 +158,11 @@ Changelog
 
 - Custom station rating (set by parameter) wasn't used for some cargos
 
-*Translations additions / updates*
+*Translations Updates*
 
-- Update: Dutch (Hyronymus)
-- Update: Hungarian (Brumi)
-- Update: US English (Supercheese)
+- Update: Dutch
+- Update: Hungarian
+- Update: US English
 - Change: Polish - improve cargo requirements string for Sugar Refinery (wojteks86)
 
 
@@ -167,16 +187,16 @@ Changelog
 - Fix: Grain Mill couldn't be built by player at all before 1870, and layout handling on construction for windmill variant was broken
 - Fix: use 'crates' instead of 't' for text about Smithy Forge output cargo
 
-*Translations additions / updates*
+*Translations Updates*
 
-- Change: tweaks to various English strings (Joel A)
+- Change: tweaks to various English strings
 - Change: remove strings from multiple languages to suppress build warnings
 - Fix: Typo in string command of Polish language file.
 - Fix: Italian lang file had wrong lang ID
-- Change: update Dutch translation (Alberth, Hyronymous)
-- Change: update Spanish translation (Terkhen)
-- Change: update Swedish translation (NGC3982)
-- Change: update Polish translation (wojteks86)
+- Change: update Dutch translation
+- Change: update Spanish translation
+- Change: update Swedish translation
+- Change: update Polish translation
 
 
 --------------
@@ -188,14 +208,14 @@ Changelog
 - Fix: capacity multiplier for pax should be 4 not 1
 - Fix: Sugar Refinery had outdated string; also extraneous space in another string
 - Fix: string for Brewery shouldn't mention Fruit in Arctic Basic economy (no fruit there)
-- Change: update Croatian translation (Voyager One)
-- Change: update Dutch translation (Alberth)
-- Change: update German translation (planetmaker)
-- Change: update Hungarian translation (Brumi)
-- Change: update Italian translation (Snail)
-- Change: update Polish translation (wojteks86)
-- Change: update Spanish translation (Terkhen)
-- Change: update US English translation (Supercheese)
+- Change: update Croatian translation
+- Change: update Dutch translation
+- Change: update German translation
+- Change: update Hungarian translation
+- Change: update Italian translation
+- Change: update Polish translation
+- Change: update Spanish translation
+- Change: update US English translation
 
 
 **0.9.2**
@@ -221,14 +241,14 @@ Changelog
 - Fix: prevent flickering graphics at Fishing Harbour
 - Fix: sprites out of place at Cement Works
 
-*Translations additions / updates*
+*Translations Updates*
 
-- Change: update Catalan translation (bassals)
+- Change: update Catalan translation
 - Fix: bad control string in german lang file
 - Change: plural forms in NML are now decimal like in OpenTTD lang files. Adopt the Slovakian lang file accordingly
-- Change: update Hungarian translation (Brumi)
+- Change: update Hungarian translation
 - Add: Slovak language file.
-- Change: update US English translation (Supercheese)
+- Change: update US English translation
 
 --------------
 0.8.x Releases
@@ -245,8 +265,8 @@ Changelog
 - Change: rename Sugarcane Plantation to Sugar Plantation as it produces Sugar Beet in non-Tropic climates
 - Fix: remove Sugar Plantation from main FIRS economy (shouldn't be there)
 - Fix: double 'per' in Biorefinery industry window text
-- Portugese translation (squallzinn)
-- Updated translations for Dutch (Alberth), German (planetmaker) and Spanish (Terkhen)
+- Portugese translation
+- Updated translations for Dutch, German and Spanish
 
 
 **0.8.2**
@@ -312,18 +332,18 @@ Changelog
 - Missing 'chemicals' in Fertiliser Plant extra text string (alberth)
 - [Makefile] Adopt NML version check to NML's new version output
 
-*Translations additions / updates*
+*Translations Updates*
 
-- Afrikaans (telanus)
-- Catalan (Bassals)
-- Dutch (Alberth)
-- Finnish (alluke)
-- French (OliTTD)
-- Hungarian (Brumi)
-- Indonesian (Yoursnotmine)
-- Romanian (Stef Ionesco)
-- Spanish (Terkhen)
-- Swedish (Joel_A)
+- Afrikaans
+- Catalan
+- Dutch
+- Finnish
+- French
+- Hungarian
+- Indonesian
+- Romanian
+- Spanish
+- Swedish
 
 --------------
 0.7.x Releases
@@ -353,11 +373,11 @@ Changelog
 - maximum construction dates for Iron Works (1901) and Smithy Forge (1948)
 - Iron Works and Lumber Yard can now locate on slopes
 
-*Translations additions / updates*
+*Translations Updates*
 
-- French (OliTTD)
-- Russian (akasoft)
-- Spanish (Terkhen)
+- French
+- Russian
+- Spanish
 
 
 **0.7.4**
@@ -386,14 +406,14 @@ Changelog
 - additional layout for Metal Fabrication Plant; improved existing layouts
 - add 'Available from' dates for industries that have availability restricted by date
 
-*Translations additions / updates*
+*Translations Updates*
 
-- Dutch (Alberth)
-- English US (PaulC / andythenorth / supercheese)
-- English GB (PaulC)
-- English AU (PaulC)
-- French (OliTTD)
-- Hungarian (Brumi)
+- Dutch
+- English US
+- English GB
+- English AU
+- French
+- Hungarian
 
 
 **0.7.3**
@@ -415,13 +435,13 @@ Minimum compatible version bumped to r2734 (will break compatibility with older 
 - station name will match industry name (except for original industries) (patch by Eddi)
 - added some explanatory text to readme about small cargo amounts and primary production
 
-*Translations additions / updates*
+*Translations Updates*
 
-- Dutch (Alberth)
-- Italian (Snail)
-- French (OliTTD)
-- Polish (Radmir)
-- Spanish (Terkhen)
+- Dutch
+- Italian
+- French
+- Polish
+- Spanish
 
 
 **0.7.2**
@@ -434,13 +454,13 @@ Minimum compatible version bumped to r2734 (will break compatibility with older 
 
 - improved appearance of Quarry and Clay Pit
 
-*Translations additions / updates*
+*Translations Updates*
 
-- Dutch (Foobar)
-- Finnish (jpx_)
-- French (OliTTD)
-- Hungarian, Welsh, Serbian (Foobar)
-- Polish (Radmir)
+- Dutch
+- Finnish
+- French
+- Hungarian, Welsh, Serbian
+- Polish
 
 **0.7.1**
 
@@ -460,11 +480,11 @@ Minimum compatible version bumped to r2734 (will break compatibility with older 
 - improved appearance of Quarry / Clay Pit graphics
 - make use of CC_NON_POURABLE cargo class (Scrap Metal, Sugarcane)
 
-*Translations additions / updates*
+*Translations Updates*
 
-- German (planetmaker)
-- Russian (akasoft)
-- Polish (Radmir)
+- German
+- Russian
+- Polish
 
 **0.7.0**
 
@@ -572,18 +592,18 @@ Several hundred changes since FIRS 0.6.4
 - Replaced all pcx graphics files with png files
 - Update to grf v8
 
-*Translations additions / updates*
+*Translations Updates*
 
-- Hungarian translation (Brumi)
-- Italian translation (Snail)
-- Polish translation (Radmir)
-- Russian translation (akasoft, kvwrd)
-- Serbian translation (Etran)
-- Welsh translation (kazzie)
-- Update Croation translation (Voyager1)
-- Update Dutch translation (Alberth)
-- Update Spanish translation (Terkhen)
-- Update German translation (Eddi / Planetmaker)
+- Hungarian translation
+- Italian translation
+- Polish translation
+- Russian translation
+- Serbian translation
+- Welsh translation
+- Update Croation translation
+- Update Dutch translation
+- Update Spanish translation
+- Update German translation
 - !! translations framework changed, translations require updating for 0.7.x
 - Updated script to log missing strings: http://bundles.openttdcoop.org/firs/nightlies/LATEST/log/
 
@@ -608,7 +628,7 @@ Several hundred changes since FIRS 0.6.4
 
 **0.6.3**
 
-- Updated translations for Czech, Serbian, Spanish (Nargon, etran, Terkhen)
+- Updated translations for Czech, Serbian, Spanish
 - Use a better 'mud' ground tile for multiple industries
 - Lime Kiln uses 'mud' ground tile instead of concrete (looks better)
 - Graphical improvements to Clay Pit and Quarry so they fit better with stations
@@ -629,7 +649,7 @@ Several hundred changes since FIRS 0.6.4
 - Improved appearance of Plastics Plant (uses company colours)
 - Improved appearance of Brickworks (additional layouts, uses more company colours)
 - Improved appearance of Lime Kiln (additional layouts, better graphics,
-- Updated translations for Dutch, Serbian, Spanish (Alberth, etran, Terkhen)
+- Updated translations for Dutch, Serbian, Spanish
 - Windmill graphics for Grain Mill (work in progress, DanMacK)
 - Sawmills will try to locate close to Forests (with random chance of success) - helps link an industry chain in  games played before fast vehicles are available (Iron Works and Fishing Harbour already do this)
 - Fixed missing cargo amount string for Fruit and Vegetables cargo
@@ -654,7 +674,7 @@ Between releases:
 - Improve position of Dredging Site sprites
 - Dredging Site shows intro date in fund menu
 - Fix numerous industries that weren't using placement checks correctly
-- Updated translations for German and Serbian (planetmaker, etran)
+- Updated translations for German and Serbian
 
 
 **0.6**
