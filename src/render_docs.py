@@ -115,6 +115,10 @@ class DocHelper(object):
 
     def industry_find_industries_active_in_economy_for_cargo(self, cargo, economy, accept_or_produce):
         result = []
+        # hmm, pretty certain this could be changed to use industry.get_prod_cargo_types or accept equivalent
+        # needs to pass economy, AND climate (from list defined in global_constants)
+        # climate is required for those functions, and can be used (note in brackets) to show when a cargo is climate special-cased (only SGBT/SGCN are)
+        # for non-special-cased cargos, don't bother showing any extra info about climates
         if cargo in economy_schemas[economy]['enabled_cargos']:
             for industry in economy_schemas[economy]['enabled_industries']:
                     for cargo_label in industry.get_property(accept_or_produce, economy):
