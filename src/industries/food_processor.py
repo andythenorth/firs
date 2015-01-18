@@ -15,13 +15,13 @@ Some method properties need a string - the templating is then typically directly
 When a string is expected are basically two choices: provide a string directly, or make an object reference and get an id from that object.
 """
 
-industry = Industry(id='plastics_plant',
-                    accept_cargo_types=['RFPR', 'FICR'],
+industry = Industry(id='food_processor',
+                    accept_cargo_types=['BEAN', 'FRUT'],
                     input_multiplier_1='[0, 0]',
                     input_multiplier_3='[0, 0]',
                     input_multiplier_2='[0, 0]',
                     prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL',
-                    prod_cargo_types=['GOOD', 'MNSP'],
+                    prod_cargo_types=['FOOD'],
                     layouts='AUTO',
                     prob_in_game='3',
                     prob_random='5',
@@ -35,135 +35,135 @@ industry = Industry(id='plastics_plant',
                     spec_flags='0',
                     remove_cost_multiplier='0',
                     prospect_chance='0.75',
-                    name='string(STR_IND_PLASTICS_PLANT)',
-                    nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_IND_PLASTICS_PLANT))',
+                    name='string(STR_IND_FOOD_PROCESSOR)',
+                    nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_IND_FOOD_PROCESSOR))',
                     fund_cost_multiplier='125',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
-                    extra_text_industry='STR_EXTRA_PLASTICS_PLANT, string(STR_EXTRA_PLASTICS_PLANT_CHEMICALS_SUBSTR), string(STR_EXTRA_PLASTICS_PLANT_PLANT_FIBRES_SUBSTR)')
+                    extra_text_industry='STR_EXTRA_SUGAR_REFINERY')
 
-industry.economy_variations['FIRS'].enabled = True
+industry.economy_variations['BASIC_TROPIC'].enabled = True
 
-industry.add_tile(id='plastics_plant_tile')
+industry.add_tile(id='food_processor_tile')
 
 spriteset_ground = industry.add_spriteset(
-    id = 'plastics_plant_spriteset_ground',
+    id = 'food_processor_spriteset_ground',
     type = 'concrete'
 )
 spriteset_ground_overlay = industry.add_spriteset(
-    id = 'plastics_plant_spriteset_ground_overlay',
+    id = 'food_processor_spriteset_ground_overlay',
     type = 'empty'
 )
 spriteset_1 = industry.add_spriteset(
-    id = 'plastics_plant_spriteset_1',
+    id = 'food_processor_spriteset_1',
     sprites = [(10, 10, 64, 62, -31, -31)],
     zextent = 32
 )
 spriteset_2 = industry.add_spriteset(
-    id = 'plastics_plant_spriteset_2',
+    id = 'food_processor_spriteset_2',
     sprites = [(80, 10, 64, 62, -31, -31)],
     zextent = 32
 )
 spriteset_3 = industry.add_spriteset(
-    id = 'plastics_plant_spriteset_3',
+    id = 'food_processor_spriteset_3',
     sprites = [(150, 10, 64, 55, -31, -24)],
     zextent = 32
 )
 spriteset_4 = industry.add_spriteset(
-    id = 'plastics_plant_spriteset_4',
+    id = 'food_processor_spriteset_4',
     sprites = [(220, 10, 64, 55, -31, -24)],
     zextent = 32
 )
 spriteset_5 = industry.add_spriteset(
-    id = 'plastics_plant_spriteset_5',
+    id = 'food_processor_spriteset_5',
     sprites = [(290, 10, 64, 55, -31, -24)],
     zextent = 32
 )
 spriteset_6 = industry.add_spriteset(
-    id = 'plastics_plant_spriteset_6',
+    id = 'food_processor_spriteset_6',
     sprites = [(360, 10, 64, 87, -31, -56)],
     zextent = 52
 )
 spriteset_7 = industry.add_spriteset(
-    id = 'plastics_plant_spriteset_7',
+    id = 'food_processor_spriteset_7',
     sprites = [(430, 10, 64, 87, -31, -56)],
     zextent = 52
 )
 spriteset_8 = industry.add_spriteset(
-    id = 'plastics_plant_spriteset_8',
+    id = 'food_processor_spriteset_8',
     sprites = [(500, 10, 64, 87, -31, -56)],
     zextent = 52
 )
 spriteset_9 = industry.add_spriteset(
-    id = 'plastics_plant_spriteset_9',
+    id = 'food_processor_spriteset_9',
     sprites = [(570, 10, 64, 55, -31, -24)],
     zextent = 32
 )
 
 industry.add_spritelayout(
-    id = 'plastics_plant_spritelayout_1',
+    id = 'food_processor_spritelayout_1',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_1],
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
-    id = 'plastics_plant_spritelayout_2',
+    id = 'food_processor_spritelayout_2',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_2],
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
-    id = 'plastics_plant_spritelayout_3',
+    id = 'food_processor_spritelayout_3',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_3],
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
-    id = 'plastics_plant_spritelayout_4',
+    id = 'food_processor_spritelayout_4',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_4],
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
-    id = 'plastics_plant_spritelayout_5',
+    id = 'food_processor_spritelayout_5',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_5],
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
-    id = 'plastics_plant_spritelayout_6',
+    id = 'food_processor_spritelayout_6',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_6],
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
-    id = 'plastics_plant_spritelayout_7',
+    id = 'food_processor_spritelayout_7',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_7],
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
-    id = 'plastics_plant_spritelayout_8',
+    id = 'food_processor_spritelayout_8',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_8],
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
-    id = 'plastics_plant_spritelayout_9',
+    id = 'food_processor_spritelayout_9',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_9],
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
-    id = 'plastics_plant_spritelayout_10',
+    id = 'food_processor_spritelayout_10',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [],
@@ -171,57 +171,57 @@ industry.add_spritelayout(
 )
 
 industry.add_industry_layout(
-    id = 'plastics_plant_industry_layout_1',
-    layout = [(0, 0, 'plastics_plant_tile', 'plastics_plant_spritelayout_2'),
-              (0, 1, 'plastics_plant_tile', 'plastics_plant_spritelayout_1'),
-              (0, 2, 'plastics_plant_tile', 'plastics_plant_spritelayout_10'),
-              (1, 0, 'plastics_plant_tile', 'plastics_plant_spritelayout_2'),
-              (1, 1, 'plastics_plant_tile', 'plastics_plant_spritelayout_1'),
-              (1, 2, 'plastics_plant_tile', 'plastics_plant_spritelayout_10'),
-              (2, 0, 'plastics_plant_tile', 'plastics_plant_spritelayout_10'),
-              (2, 1, 'plastics_plant_tile', 'plastics_plant_spritelayout_7'),
-              (2, 2, 'plastics_plant_tile', 'plastics_plant_spritelayout_9'),
-              (3, 0, 'plastics_plant_tile', 'plastics_plant_spritelayout_8'),
-              (3, 1, 'plastics_plant_tile', 'plastics_plant_spritelayout_6'),
-              (3, 2, 'plastics_plant_tile', 'plastics_plant_spritelayout_10'),
-              (4, 0, 'plastics_plant_tile', 'plastics_plant_spritelayout_5'),
-              (4, 1, 'plastics_plant_tile', 'plastics_plant_spritelayout_4'),
-              (4, 2, 'plastics_plant_tile', 'plastics_plant_spritelayout_3')
+    id = 'food_processor_industry_layout_1',
+    layout = [(0, 0, 'food_processor_tile', 'food_processor_spritelayout_2'),
+              (0, 1, 'food_processor_tile', 'food_processor_spritelayout_1'),
+              (0, 2, 'food_processor_tile', 'food_processor_spritelayout_10'),
+              (1, 0, 'food_processor_tile', 'food_processor_spritelayout_2'),
+              (1, 1, 'food_processor_tile', 'food_processor_spritelayout_1'),
+              (1, 2, 'food_processor_tile', 'food_processor_spritelayout_10'),
+              (2, 0, 'food_processor_tile', 'food_processor_spritelayout_10'),
+              (2, 1, 'food_processor_tile', 'food_processor_spritelayout_7'),
+              (2, 2, 'food_processor_tile', 'food_processor_spritelayout_9'),
+              (3, 0, 'food_processor_tile', 'food_processor_spritelayout_8'),
+              (3, 1, 'food_processor_tile', 'food_processor_spritelayout_6'),
+              (3, 2, 'food_processor_tile', 'food_processor_spritelayout_10'),
+              (4, 0, 'food_processor_tile', 'food_processor_spritelayout_5'),
+              (4, 1, 'food_processor_tile', 'food_processor_spritelayout_4'),
+              (4, 2, 'food_processor_tile', 'food_processor_spritelayout_3')
     ]
 )
 industry.add_industry_layout(
-    id = 'plastics_plant_industry_layout_2',
-    layout = [(0, 0, 'plastics_plant_tile', 'plastics_plant_spritelayout_8'),
-              (0, 1, 'plastics_plant_tile', 'plastics_plant_spritelayout_7'),
-              (0, 2, 'plastics_plant_tile', 'plastics_plant_spritelayout_9'),
-              (1, 0, 'plastics_plant_tile', 'plastics_plant_spritelayout_8'),
-              (1, 1, 'plastics_plant_tile', 'plastics_plant_spritelayout_6'),
-              (1, 2, 'plastics_plant_tile', 'plastics_plant_spritelayout_10'),
-              (2, 0, 'plastics_plant_tile', 'plastics_plant_spritelayout_5'),
-              (2, 1, 'plastics_plant_tile', 'plastics_plant_spritelayout_4'),
-              (2, 2, 'plastics_plant_tile', 'plastics_plant_spritelayout_3'),
-              (3, 0, 'plastics_plant_tile', 'plastics_plant_spritelayout_2'),
-              (3, 1, 'plastics_plant_tile', 'plastics_plant_spritelayout_1'),
-              (3, 2, 'plastics_plant_tile', 'plastics_plant_spritelayout_10')
+    id = 'food_processor_industry_layout_2',
+    layout = [(0, 0, 'food_processor_tile', 'food_processor_spritelayout_8'),
+              (0, 1, 'food_processor_tile', 'food_processor_spritelayout_7'),
+              (0, 2, 'food_processor_tile', 'food_processor_spritelayout_9'),
+              (1, 0, 'food_processor_tile', 'food_processor_spritelayout_8'),
+              (1, 1, 'food_processor_tile', 'food_processor_spritelayout_6'),
+              (1, 2, 'food_processor_tile', 'food_processor_spritelayout_10'),
+              (2, 0, 'food_processor_tile', 'food_processor_spritelayout_5'),
+              (2, 1, 'food_processor_tile', 'food_processor_spritelayout_4'),
+              (2, 2, 'food_processor_tile', 'food_processor_spritelayout_3'),
+              (3, 0, 'food_processor_tile', 'food_processor_spritelayout_2'),
+              (3, 1, 'food_processor_tile', 'food_processor_spritelayout_1'),
+              (3, 2, 'food_processor_tile', 'food_processor_spritelayout_10')
     ]
 )
 industry.add_industry_layout(
-    id = 'plastics_plant_industry_layout_3',
-    layout = [(0, 0, 'plastics_plant_tile', 'plastics_plant_spritelayout_2'),
-              (0, 1, 'plastics_plant_tile', 'plastics_plant_spritelayout_1'),
-              (0, 2, 'plastics_plant_tile', 'plastics_plant_spritelayout_10'),
-              (0, 3, 'plastics_plant_tile', 'plastics_plant_spritelayout_7'),
-              (0, 4, 'plastics_plant_tile', 'plastics_plant_spritelayout_9'),
-              (1, 0, 'plastics_plant_tile', 'plastics_plant_spritelayout_2'),
-              (1, 1, 'plastics_plant_tile', 'plastics_plant_spritelayout_1'),
-              (1, 2, 'plastics_plant_tile', 'plastics_plant_spritelayout_8'),
-              (1, 3, 'plastics_plant_tile', 'plastics_plant_spritelayout_6'),
-              (1, 4, 'plastics_plant_tile', 'plastics_plant_spritelayout_10'),
-              (2, 0, 'plastics_plant_tile', 'plastics_plant_spritelayout_2'),
-              (2, 1, 'plastics_plant_tile', 'plastics_plant_spritelayout_1'),
-              (2, 2, 'plastics_plant_tile', 'plastics_plant_spritelayout_5'),
-              (2, 3, 'plastics_plant_tile', 'plastics_plant_spritelayout_4'),
-              (2, 4, 'plastics_plant_tile', 'plastics_plant_spritelayout_3')
+    id = 'food_processor_industry_layout_3',
+    layout = [(0, 0, 'food_processor_tile', 'food_processor_spritelayout_2'),
+              (0, 1, 'food_processor_tile', 'food_processor_spritelayout_1'),
+              (0, 2, 'food_processor_tile', 'food_processor_spritelayout_10'),
+              (0, 3, 'food_processor_tile', 'food_processor_spritelayout_7'),
+              (0, 4, 'food_processor_tile', 'food_processor_spritelayout_9'),
+              (1, 0, 'food_processor_tile', 'food_processor_spritelayout_2'),
+              (1, 1, 'food_processor_tile', 'food_processor_spritelayout_1'),
+              (1, 2, 'food_processor_tile', 'food_processor_spritelayout_8'),
+              (1, 3, 'food_processor_tile', 'food_processor_spritelayout_6'),
+              (1, 4, 'food_processor_tile', 'food_processor_spritelayout_10'),
+              (2, 0, 'food_processor_tile', 'food_processor_spritelayout_2'),
+              (2, 1, 'food_processor_tile', 'food_processor_spritelayout_1'),
+              (2, 2, 'food_processor_tile', 'food_processor_spritelayout_5'),
+              (2, 3, 'food_processor_tile', 'food_processor_spritelayout_4'),
+              (2, 4, 'food_processor_tile', 'food_processor_spritelayout_3')
     ]
 )
 

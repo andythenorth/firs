@@ -46,7 +46,7 @@ ${industry.get_industry_layouts_as_tilelayouts()}
  * Definition of the industry
  * *************************************************/
 
-CHECK_NEARBY_CLUSTER(arable_farm,    10, 36, 1, 2, return CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
+CHECK_NEARBY_CLUSTER(arable_farm,    16, 42, 1, 2, return CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
 CHECK_INCOMPATIBLE  (grain_mill,     16, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_arable_farm)
 CHECK_INCOMPATIBLE  (brewery,        16, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_grain_mill)
 CHECK_INCOMPATIBLE  (sugar_refinery, 16, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_brewery)
@@ -60,13 +60,6 @@ ${industry.get_primary_supplies_stuff()}
 #include                "../../src/templates/check_availability.pnml"
 
 ${industry.get_industry_properties()}
-
-if (${industry.get_conditional_expressions_for_enabled_economies()}) {
-   item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
-        /* Climate specific cargo */
-        INDUSTRY_OUTPUT_CARGO_2(ENABLE_SUGARCANE && ENABLE_GRAIN, GRAI, SGCN)
-    }
-}
 
 item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
     graphics {

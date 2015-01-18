@@ -44,7 +44,7 @@ industry = Industry(id='port',
                     supply_requirements=global_constants.supply_requirements['import_export'])
 
 industry.economy_variations['FIRS'].enabled = True
-industry.economy_variations['FIRS'].accept_cargo_types = ['GOOD', 'BEER', 'FOOD']
+industry.economy_variations['FIRS'].accept_cargo_types = ['GOOD', 'FRUT', 'MNSP']
 industry.economy_variations['FIRS'].prod_cargo_types = ['ENSP']
 industry.economy_variations['FIRS'].prod_multiplier = '[9]'
 industry.economy_variations['FIRS'].prob_random = '3'
@@ -60,9 +60,9 @@ industry.economy_variations['BASIC_ARCTIC'].prod_cargo_types = ['ENSP', 'GOOD']
 industry.economy_variations['BASIC_ARCTIC'].prod_multiplier = '[7, 16]'
 
 industry.economy_variations['BASIC_TROPIC'].enabled = True
-industry.economy_variations['BASIC_TROPIC'].accept_cargo_types = ['FOOD', 'AORE', 'FRUT']
-industry.economy_variations['BASIC_TROPIC'].prod_cargo_types = ['STEL', 'MNSP']
-industry.economy_variations['BASIC_TROPIC'].prod_multiplier = '[7, 16]'
+industry.economy_variations['BASIC_TROPIC'].accept_cargo_types = ['GOOD', 'RFPR']
+industry.economy_variations['BASIC_TROPIC'].prod_cargo_types = ['MNSP']
+industry.economy_variations['BASIC_TROPIC'].prod_multiplier = '[19, 0]'
 
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].accept_cargo_types = ['WOOD', 'FICR', 'FRUT']

@@ -44,7 +44,6 @@ industry = Industry(id='fishing_harbour',
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_ARCTIC'].enabled = True
-industry.economy_variations['BASIC_TROPIC'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
 
 sprite_ground = industry.add_sprite(

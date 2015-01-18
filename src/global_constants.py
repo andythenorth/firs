@@ -61,7 +61,7 @@ industry_numeric_ids = dict(coal_mine = 0x00,
                             rubber_plantation = 0x35,
                             fibre_crop_farm = 0x36,
                             diamond_mine = 0x37,
-                            #IND_VACANT_ID = 0x38,
+                            food_processor = 0x38,
                             hardware_store = 0x39,
                             hotel = 0x3A,
                             food_market = 0x3B,
@@ -78,3 +78,5 @@ generated_files_dir = 'generated'
 
 # this is for nml or grfcodec, don't need to use python path module here
 graphics_path = 'generated/graphics/'
+
+openttd_climates = ["CLIMATE_TEMPERATE", "CLIMATE_ARCTIC", "CLIMATE_TROPIC", "CLIMATE_TOYLAND"]

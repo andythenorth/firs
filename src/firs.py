@@ -30,6 +30,7 @@ from cargos import alcohol
 from cargos import bauxite
 from cargos import building_materials
 from cargos import chemicals
+from cargos import beans
 from cargos import clay
 from cargos import coal
 from cargos import coffee
@@ -88,6 +89,7 @@ from industries import dredging_site
 from industries import fertiliser_plant
 from industries import fibre_crop_farm
 from industries import food_market
+from industries import food_processor
 from industries import furniture_factory
 from industries import general_store
 from industries import glass_works

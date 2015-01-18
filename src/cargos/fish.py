@@ -23,4 +23,5 @@ cargo = Cargo(id = 'fish',
               icon_indices = (15, 0))
 
 cargo.economy_variations['BASIC_TEMPERATE']['disabled'] = True
+cargo.economy_variations['BASIC_TROPIC']['disabled'] = True
 
