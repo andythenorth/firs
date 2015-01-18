@@ -21,7 +21,7 @@ industry = Industry(id='arable_farm',
                     input_multiplier_3='[0, 0]',
                     input_multiplier_2='[0, 0]',
                     prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_FARM',
-                    prod_cargo_types=['GRAI', 'SGBT', 'SGCN'],
+                    prod_cargo_types=['GRAI', 'SGBT'], # SGBT will be swapped to SGCN in tropic by magic in compile
                     layouts='AUTO',
                     prob_in_game='4',
                     prob_random='24',
@@ -42,6 +42,8 @@ industry = Industry(id='arable_farm',
                     graphics_change_dates = [1928])
 
 industry.economy_variations['FIRS'].enabled = True
+industry.economy_variations['BASIC_TROPIC'].enabled = True
+industry.economy_variations['BASIC_TROPIC'].prod_cargo_types = ['BEAN', 'SGBT']
 
 industry.add_tile(id='arable_farm_tile')
 

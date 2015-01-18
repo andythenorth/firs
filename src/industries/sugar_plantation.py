@@ -21,7 +21,7 @@ industry = Industry(id='sugar_plantation',
                     input_multiplier_3='[0, 0]',
                     input_multiplier_2='[0, 0]',
                     prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_FARM',
-                    prod_cargo_types=['SGCN', 'SGBT'],
+                    prod_cargo_types=['SGBT'], # SGBT will be swapped to SGCN in tropic by magic in compile
                     layouts='AUTO',
                     prob_in_game='4',
                     prob_random='24',
@@ -41,7 +41,6 @@ industry = Industry(id='sugar_plantation',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
                     )
 
-industry.economy_variations['BASIC_TROPIC'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
 
 industry.add_tile(id='sugar_plantation_tile')

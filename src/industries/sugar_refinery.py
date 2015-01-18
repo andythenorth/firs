@@ -16,7 +16,7 @@ When a string is expected are basically two choices: provide a string directly, 
 """
 
 industry = Industry(id='sugar_refinery',
-                    accept_cargo_types=['MNSP', 'SGBT', 'SGCN'],
+                    accept_cargo_types=['MNSP', 'SGBT'], # SGBT will be swapped to SGCN in tropic by magic in compile
                     input_multiplier_1='[0, 0]',
                     input_multiplier_3='[0, 0]',
                     input_multiplier_2='[0, 0]',
@@ -43,6 +43,7 @@ industry = Industry(id='sugar_refinery',
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_TROPIC'].enabled = True
+industry.economy_variations['BASIC_TROPIC'].prod_cargo_types = ['FOOD', 'PETR']
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].prod_cargo_types = ['SUGR']
 

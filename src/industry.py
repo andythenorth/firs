@@ -305,28 +305,32 @@ class Industry(object):
         else:
             return property_name + ': ' + value + ';'
 
-    def cargo_list_sugar_magic(self, cargo_list):
+    def cargo_list_sugar_magic(self, cargo_list, economy, climate):
         # magic to deal with special cases in cargo lists - clean up the list returned to templates etc
         # SGBT + SGCN should both be defined when accepted or produced, they are climate sensitive
-        if len(cargo_list) > 2:
-            if "SGBT" in cargo_list and "SGCN" not in cargo_list:
-                utils.echo_message("SGCN missing, SGBT present for " + self.id)
-            if "SGCN" in cargo_list and "SGBT" not in cargo_list:
-                utils.echo_message("SGBT missing, SGCN present for " + self.id)
-            # SGCN and SGBT are special-cased in industry templates where needed
-            # we want both defined, but nml industry properties (action 0) should only set SGBT (otherwise too many cargos can be set - invalid nml)
-            return [cargo for cargo in cargo_list if cargo != "SGCN"]
-        else:
-            return cargo_list
+        if climate == "CLIMATE_TROPIC":
+            cargo_list = ["SGCN" if cargo=="SGBT" else cargo for cargo in cargo_list]
+        if climate != "CLIMATE_TROPIC":
+            cargo_list = ["SGBT" if cargo=="SGCN" else cargo for cargo in cargo_list]
+        if cargo_list.count("SGCN") > 1 or cargo_list.count("SGBT") > 1:
+            utils.echo_message("Too much SGBT or SGCN for " + self.id + ' in economy ' + economy)
+        return cargo_list
 
-    def get_accept_cargo_types(self, economy):
+    def get_accept_cargo_types(self, economy, climate):
         accept_cargo_types = self.get_property('accept_cargo_types', economy)
+        accept_cargo_types = self.cargo_list_sugar_magic(accept_cargo_types, economy, climate)
+        # guard against too many cargos being defined
+        if len(accept_cargo_types) > 3:
+            utils.echo_message("Too many accepted cargos defined for " + self.id + ' in economy ' + economy)
         return '[' + ','.join(accept_cargo_types) + ']'
 
-    def get_prod_cargo_types(self, economy):
+    def get_prod_cargo_types(self, economy, climate):
         # ! don't call this when rendering docs, the sugar magic causes unwanted results
         prod_cargo_types = self.get_property('prod_cargo_types', economy)
-        prod_cargo_types = self.cargo_list_sugar_magic(prod_cargo_types) # pass the cargos through horrid magic
+        prod_cargo_types = self.cargo_list_sugar_magic(prod_cargo_types, economy, climate) # pass the cargos through horrid magic
+        # guard against too many cargos being defined
+        if len(prod_cargo_types) > 2:
+            utils.echo_message("Too many produced cargos defined for " + self.id + ' in economy ' + economy)
         return '[' + ','.join(prod_cargo_types) + ']'
 
     def get_another_industry(self, id):
