@@ -5,6 +5,45 @@ Changelog
 1.4.0 Release
 --------------
 
+**FIRS 1.4.0 is not savegame-compatible with any previous FIRS versions**
+
+*New Features / Changes*
+
+- Full FIRS economy
+    - added Port, providing a direct source of Engineering Supplies
+    - added Bulk Terminal, providing a direct source of Farm Supplies
+- Temperate Basic economy
+    - added Bulk Terminal, providing Farm Supplies, solving issue that Farm Supplies were unavailable in this economy before 1927
+    - adjusted Port cargos for balance against Bulk Terminal
+    - removed Fertiliser Plant, replaced by Bulk Terminal
+- Arctic Basic economy
+    - new cargo Paper (roughly identical to Paper cargo in default OpenTTD)
+    - Paper Mill now produces Paper instead of Goods in this economy
+    - removed Grain Mill industry
+    - added Bulk Terminal, providing Farm Supplies, solving issue that Farm Supplies were unavailable in this economy before 1927
+    - adjusted Port cargos for balance against Bulk Terminal
+    - Goods is now an import cargo rather than an export cargo
+    - added Iron Ore cargo and Iron Ore Mine
+- Introduce some industries earlier for game balance:
+    - Fertiliser Plant now 1890
+    - Machine Shop now 1790, to ensure Engineering Supplies and Farm Supplies available in Tropic Basic economy from a sensible date
+    - Metal Fabrication Plant now 1832
+    - Petrol Pump now 1900
+- improved Port graphics, now looks clearly different to Fishing Harbour
+- improved Recycling Plant with smoke, improved sprites, and two new layouts
+- improved Trading Post graphics
+- smoke for Smithy Forge
+- explain about Reycling Plant randomisation in docs, keeps catching people out
+
+*Fixes*
+
+- Bulk Terminal and Trading Post
+    - now easier for players to build (reduced water tile checks)
+    - construction states fixed
+- Port construction states fixed
+- Mail cargo no longer sets 'is_freight' flag to 1, caused issues with livery for mail cars and was inconsistent with default mail
+- bad comparison in magic that figures out whether to use Sugar Cane or Sugar Beet
+
 *Translation Updates*
 
 - Afrikaans
@@ -20,6 +59,16 @@ Changelog
 - Scottish Gaelic
 - Spanish
 - Swedish
+
+*Codechanges*
+
+- better structure for generated files in compile
+- use python multiprocessing for faster python templating step
+- use the PYTHON variable of the Makefile to refer to the Python interpreter (planetmaker)
+- cleanup Makefile.in
+- suppress Mercurial default arguments (planetmaker)
+- moved docs_src to src/docs_templates, consistent with Iron Horse, Road Hog etc
+- removed dead string STR_IND_SUPERMARKET
 
 --------------
 1.3.0 Release
