@@ -44,7 +44,7 @@ industry = Industry(id='bulk_terminal',
                     supply_requirements=global_constants.supply_requirements['import_export'])
 
 industry.economy_variations['FIRS'].enabled = True
-industry.economy_variations['FIRS'].accept_cargo_types = ['BDMT', 'GRAI', 'FOOD']
+industry.economy_variations['FIRS'].accept_cargo_types = ['BDMT', 'PETR', 'FOOD']
 industry.economy_variations['FIRS'].prod_cargo_types = ['FMSP', 'RFPR']
 industry.economy_variations['FIRS'].prod_multiplier = '[7, 16]'
 industry.economy_variations['FIRS'].prob_random = '3'
