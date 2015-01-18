@@ -3,9 +3,11 @@
 ##gender m f n mp fp np
 ##case abl acc dat gen
 
+STR_GRF_DESC                                                                    :{ORANGE}FIRS Industriarum Redemptionis Sarcina{}{BLACK}Auctores sunt andythenorth, FooBar, planetifex, Terkhen ac Yexo, et multi alii adiuverunt. {SILVER}Vide LegeMe in quo plura indicia est. {BLACK}Licentia: GPL v2.
 STR_GRF_NAME                                                                    :{TITLE}
 STR_GRF_URL                                                                     :http://bundles.openttdcoop.org/firs/releases/LATEST/docs/
 
+STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :Numerus tegularum maximus a littore ad zonas piscarias, suggestus petrolearios, et situs effosionis struendos.
 STR_PARAM_DESC_STAT_RATING                                                      :Censiones stationum afficit copiam oneris stationi traditam; censione magna, plura onera tradita sunt.
 STR_PARAM_DESC_DEBUG                                                            :Tantum est iis qui satis docti sunt
 STR_PARAM_DESC_ECONOMIES                                                        :Oeconomiae produnt varia onera et variae industriae.{}{}Ei qui vult ludum simplicem habere debet eligere oeconomiam simplicem, nam habent pauciores industrias oneraque quam aliae oeconomiae.
@@ -57,6 +59,10 @@ STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             
 STR_CARGO_NAME_ENGINEERING_SUPPLIES.acc                                         :Apparatus Ingeniarios
 STR_CARGO_NAME_ENGINEERING_SUPPLIES.dat                                         :Apparatibus Ingeniariis
 STR_CARGO_NAME_ENGINEERING_SUPPLIES.gen                                         :apparatuum ingeniariorum
+STR_CARGO_NAME_FIBRES                                                           :{G=fp}Fibrae Stirpium
+STR_CARGO_NAME_FIBRES.acc                                                       :Fibras Stirpium
+STR_CARGO_NAME_FIBRES.dat                                                       :Fibris Stirpium
+STR_CARGO_NAME_FIBRES.gen                                                       :fibrarum stirpium
 STR_CARGO_NAME_FISH                                                             :{G=mp}Pisces
 STR_CARGO_NAME_FISH.acc                                                         :Pisces
 STR_CARGO_NAME_FISH.dat                                                         :Piscibus
@@ -125,6 +131,7 @@ STR_CARGO_UNIT_CHEMICALS                                                        
 STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} argillae
 STR_CARGO_UNIT_COFFEE                                                           :{SIGNED_WORD} sacc{P 0 us i} cafeae
 STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} capsa{P 0 "" e} apparatuum ingeniariorum
+STR_CARGO_UNIT_FIBRES                                                           :{SIGNED_WORD} sarcina{P 0 "" e} fibrarum stirpium
 STR_CARGO_UNIT_FISH                                                             :{WEIGHT} piscium
 STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} capsa{P 0 "" e} apparatuum agricolarium
 STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} fructus
@@ -149,6 +156,7 @@ STR_CID_CLAY                                                                    
 STR_CID_COFFEE                                                                  :{TINYFONT}CF
 STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}AI
 STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}AA
+STR_CID_FIBRES                                                                  :{TINYFONT}FS
 STR_CID_FISH                                                                    :{TINYFONT}PS
 STR_CID_LUMBER                                                                  :{TINYFONT}TG
 STR_CID_MANUFACTURING_SUPPLIES                                                  :{TINYFONT}AF
@@ -187,19 +195,38 @@ STR_EXTRA_DAIRY                                                                 
 STR_EXTRA_FERTILIZER_PLANT                                                      :{BLACK}Oneris productio:{} 8 capsae ex 8,000 litris chemicorum traditis
 STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Oneris productio:{} 3 tonnae ex 8 capsis apparatuum fabricationis traditis{} 5 tonnae ex 8 tonnis piscium traditis{}{}Productio auget si ambo onera tradita sunt intra unum mensem.
 STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Oneris productio:{} 3 tonnae ex 8 capsis apparatuum fabricationis traditis{} 5 tonnae ex 8 tonnis tigni traditis{}{}Productio auget si ambo onera tradita sunt intra unum mensem.
+STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Efficit res vitreas sicut ampullas, vasa, et fenestras.{}{}Oneris productio:{} 6 tonnae ex 8 tonnis harenae traditis{} 2 tonnae ex 8,000 litris chemicorum traditis{}{}Productio auget si ambo onera tradita sunt intra unum mensem.
 STR_EXTRA_GRAIN_MILL                                                            :{BLACK}Oneris productio:{} 3 tonnae ex 8 capsis apparatuum fabricationis traditis{} 5 tonnae ex 8 tonnis frumenti traditis{}{}Productio auget si ambo onera tradita sunt intra unum mensem.
+STR_EXTRA_IRON_WORKS                                                            :{BLACK}Oneris productio:{} 2 tonnae ex 8 tonnis ligni traditis{} 2 tonnae ex 8 tonnis ferri traditis{}{}Productio auget si ambo onera tradita sunt intra unum mensem.
 STR_EXTRA_LIME_KILN                                                             :{BLACK}Oneris productio:{} 3 tonnae ex 8 tonnis petrarum traditis{} 3 tonnae ex 8 tonnis carbonis traditis{}{}Productio auget si ambo onera tradita sunt intra unum mensem.
+STR_EXTRA_LUMBER_YARD                                                           :{BLACK}Efficit res sicut asseres et postes.{}{}Oneris productio:{} 2 tonnae ex 8,000 litris chemicorum traditis{} 6 tonnae ex 8 tonnis tigni traditis{}{}Productio auget si ambo onera tradita sunt intra unum mensem.
+STR_EXTRA_MACHINE_SHOP                                                          :{BLACK}Efficit et ministrat machinas.{}{}Oneris productio:{} 8 capsae ex 8,000 litris benzini traditis{} 8 capsae ex 8 tonnis metalli traditis
 STR_EXTRA_MEAT_PACKER                                                           :{BLACK}Oneris productio:{} 3 tonnae ex 8 capsis apparatuum fabricationis traditis{} 5 tonnae ex 8 pecoribus traditis{}{}Productio auget si ambo onera tradita sunt intra unum mensem.
+STR_EXTRA_METAL_FABRICATION_PLANT                                               :{BLACK}Efficit res metallicas pictas.{}{}Oneris productio:{} 2 tonnae ex 8,000 litris chemicorum traditis{} 6 tonnae ex 8 tonnis metalli traditis{}{}Productio auget si ambo onera tradita sunt intra unum mensem.
+STR_EXTRA_METAL_FOUNDRY                                                         :{BLACK}Efficit res metallicas sicut pyxides stanneas et vasa mercesque domesticas.{}{}Oneris productio:{} 2 capsae ex 8,000 litris chemicorum traditis{} 6 capsae ex 8 tonnis metalli traditis{}{}Productio auget si ambo onera tradita sunt intra unum mensem.
 STR_EXTRA_OIL_REFINERY                                                          :{BLACK}Facit petroleum in benzinum et chemica.{}{}Oneris productio:{} 6,000 litra ex 8,000 litris traditis
+STR_EXTRA_PAPER_MILL                                                            :{BLACK}Facit lignum in res chartaceas sicut folia chartacea et chartam crassam.{}{}Oneris productio:{} 4 capsae ex 8 tonnis ligni traditis{} 2 capsae ex 8 tonnis argillae traditis{} 2 capsae ex 8,000 litris chemicorum traditis{}{}Productio auget si duo plurave onera tradita sunt intra unum mensem.
+STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}Efficit res plasticas sicut involucra et merces domesticas.{}{}Oneris productio:{} {STRING} {STRING}
 STR_EXTRA_PLASTICS_PLANT_CHEMICALS_SUBSTR                                       :6 capsae ex 8,000 litris chemicorum traditis{}
+STR_EXTRA_PLASTICS_PLANT_PLANT_FIBRES_SUBSTR                                    :6 capsae ex 8 sarcinis fibrarum stirpium traditis{}
 STR_EXTRA_RECYCLING_PLANT                                                       :{BLACK}Renovat regyrabilia ut iterum utiles sint.{}{}Oneris productio:{} 6 tonnae ex 8 tonnis regyrabilium traditis
+STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}Productio crescit pro portione numeri incolarum oppidi.
 STR_EXTRA_SAWMILL                                                               :{BLACK}Serrat lignum.{}{}Oneris productio:{} 6 tonnae ex 8 tonnis ligni traditis
+STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Efficit res metallicas sicut ferramenta, aratra, fores, rutra, et soleas ferreas.{}{}Oneris productio:{} 8 capsae ex 8 tonnis metalli traditis
 STR_EXTRA_STEELMILL                                                             :{BLACK}Oneris productio:{} 2 tonnae ex 8 tonnis ferri traditis{} 2 tonnae ex 8 tonnis carbonis traditis{} 4 tonnae ex 8 tonnis metallicorum scrutorum traditis{}{}Productio auget si duo plurave onera tradita sunt intra unum mensem.
 STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Oneris productio:{} 3 tonnae ex 8 capsis apparatuum fabricationis traditis{} 5 tonnae ex 8 tonnis sacchari traditis{}{}Productio auget si ambo onera tradita sunt intra unum mensem.
 STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Oneris productio:{} 3 capsae ex 8 capsis apparatuum fabricationis traditis{} {STRING} {STRING}{}Productio auget si apparatus traditi sunt intra eundem mensem quam alia onera.
+STR_EXTRA_TEXTILE_MILL_WOOL_SUBSTR                                              :5 capsae ex 8 sarcinis lanae traditis{}
+STR_EXTRA_TEXTILE_MILL_PLANT_FIBRES_SUBSTR                                      :5 capsae ex 8 sarcinis fibrarum stirpium traditis{}
 
 STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ EMENDATIO ------------{}Productio huius mensis:{}Onus I: {WHITE}{COMMA}{BLACK}{}Onus II: {WHITE}{COMMA}{BLACK}{}Dies postquam onus traditum est: {WHITE}{COMMA}{BLACK}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Productio maxima est
+STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Productio currens: {YELLOW}Mediocris{}{}{BLACK}Trade {SIGNED_WORD} capsas apparatuum intra tres menses ut productio duplicetur (sive {SIGNED_WORD} capsas ut productio quadruplicetur)
+STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Productio currens: {YELLOW}Aucta (duplicata){}{}{BLACK}Trade {SIGNED_WORD} capsas apparatuum intra tres menses ut productio contineatur, sive {SIGNED_WORD} capsas ut productio iterum duplicetur
+STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}Productio currens: {YELLOW}Maxima (quadruplicata){}{}{BLACK}Trade {SIGNED_WORD} capsas apparatuum intra tres menses ut productio contineatur
+STR_PORT_PRODUCTION_1X                                                          :{BLACK}Productio currens: {YELLOW}Mediocris{}{}{BLACK}Trade {SIGNED_WORD} unitates oneris intra tres menses ut productio duplicetur, sive {SIGNED_WORD} unitates ut productio quadruplicetur
+STR_PORT_PRODUCTION_2X                                                          :{BLACK}Productio currens: {YELLOW}Aucta (duplicata){}{}{BLACK}Trade {SIGNED_WORD} unitates oneris intra tres menses ut productio contineatur, sive {SIGNED_WORD} unitates ut productio iterum duplicetur
+STR_PORT_PRODUCTION_4X                                                          :{BLACK}Productio currens: {YELLOW}Maxima (quadruplicata){}{}{BLACK}Trade {SIGNED_WORD} unitates oneris intra tres menses ut productio contineatur
 STR_GENERIC_NEWLINE                                                             :{}
 
 STR_FUND_BASIC_FARM                                                             :{}{BLACK}Locus: {YELLOW}Non licet struere in nive vel desertis.
@@ -219,8 +246,17 @@ STR_FUND_AVAILABLE_FROM                                                         
 STR_FUND_AVAILABLE_UNTIL                                                        :{}{BLACK}Non parabilis est post: {YELLOW}{COMMA}
 
 
+STR_TOWN                                                                        :{STRING}
 STR_STATION                                                                     :{STRING} {STRING}
 
+STR_IND_ALUMINIUM_PLANT                                                         :{G=f}Fabrica Aluminii
+STR_IND_ALUMINIUM_PLANT.abl                                                     :Fabrica Aluminii
+STR_IND_ALUMINIUM_PLANT.acc                                                     :Fabricam Aluminii
+STR_IND_ALUMINIUM_PLANT.gen                                                     :fabricae aluminii
+STR_IND_ARABLE_FARM                                                             :{G=m}Fundus Arabilis
+STR_IND_ARABLE_FARM.abl                                                         :Fundo Arabile
+STR_IND_ARABLE_FARM.acc                                                         :Fundum Arabilem
+STR_IND_ARABLE_FARM.gen                                                         :fundi arabilis
 STR_IND_BASICFARM                                                               :{G=m}Fundus
 STR_IND_BASICFARM.abl                                                           :Fundo
 STR_IND_BASICFARM.acc                                                           :Fundum
@@ -229,14 +265,66 @@ STR_IND_BAUXITE_MINE                                                            
 STR_IND_BAUXITE_MINE.abl                                                        :Bauxitifodina
 STR_IND_BAUXITE_MINE.acc                                                        :Bauxitifodinam
 STR_IND_BAUXITE_MINE.gen                                                        :bauxitifodinae
+STR_IND_BIOREFINERY                                                             :{G=n}Ergasterium Biochemicorum
+STR_IND_BIOREFINERY.abl                                                         :Ergasterio Biochemicorum
+STR_IND_BIOREFINERY.acc                                                         :Ergasterium Biochemicorum
+STR_IND_BIOREFINERY.gen                                                         :ergasterii biochemicorum
 STR_IND_BREWERY                                                                 :{G=f}Bracina
 STR_IND_BREWERY.abl                                                             :Bracina
 STR_IND_BREWERY.acc                                                             :Bracinam
 STR_IND_BREWERY.gen                                                             :bracinae
+STR_IND_BREWERY_CIDER_MILL                                                      :{G=fp}Molae Sicerae
+STR_IND_BREWERY_CIDER_MILL.abl                                                  :Molis Sicerae
+STR_IND_BREWERY_CIDER_MILL.acc                                                  :Molas Sicerae
+STR_IND_BREWERY_CIDER_MILL.gen                                                  :molarum sicerae
+STR_IND_BRICK_WORKS                                                             :{G=f}Lateraria
+STR_IND_BRICK_WORKS.abl                                                         :Lateraria
+STR_IND_BRICK_WORKS.acc                                                         :Laterariam
+STR_IND_BRICK_WORKS.gen                                                         :laterariae
+STR_IND_BUILDERS_YARD                                                           :{G=n}Horreum Aedificatorum
+STR_IND_BUILDERS_YARD.abl                                                       :Horreo Aedificatorum
+STR_IND_BUILDERS_YARD.acc                                                       :Horreum Aedificatorum
+STR_IND_BUILDERS_YARD.gen                                                       :horrei aedificatorum
+STR_IND_BULK_TERMINAL                                                           :{G=np}Navalia
+STR_IND_BULK_TERMINAL.abl                                                       :Navalibus
+STR_IND_BULK_TERMINAL.acc                                                       :Navalia
+STR_IND_BULK_TERMINAL.gen                                                       :navalium
+STR_IND_CEMENT_PLANT                                                            :{G=f}Fabrica Caementi
+STR_IND_CEMENT_PLANT.abl                                                        :Fabrica Caementi
+STR_IND_CEMENT_PLANT.acc                                                        :Fabricam Caementi
+STR_IND_CEMENT_PLANT.gen                                                        :fabricae caementi
+STR_IND_CLAY_PIT                                                                :{G=n}Cavum Argillosum
+STR_IND_CLAY_PIT.abl                                                            :Cavo Argilloso
+STR_IND_CLAY_PIT.acc                                                            :Cavum Argillosum
+STR_IND_CLAY_PIT.gen                                                            :cavi argillosi
+STR_IND_COFFEE_ESTATE                                                           :{G=f}Villa Cafearia
+STR_IND_COFFEE_ESTATE.abl                                                       :Villa Cafearia
+STR_IND_COFFEE_ESTATE.acc                                                       :Villam Cafeariam
+STR_IND_COFFEE_ESTATE.gen                                                       :villae cafeariae
+STR_IND_FIBRE_CROP_FARM                                                         :{G=m}Fundus Fibrarum
+STR_IND_FIBRE_CROP_FARM.abl                                                     :Fundo Fibrarum
+STR_IND_FIBRE_CROP_FARM.acc                                                     :Fundum Fibrarum
+STR_IND_FIBRE_CROP_FARM.gen                                                     :fundi fibrarum
+STR_IND_DAIRY                                                                   :{G=n}Lactarium
+STR_IND_DAIRY.abl                                                               :Lactario
+STR_IND_DAIRY.acc                                                               :Lactarium
+STR_IND_DAIRY.gen                                                               :Lactarii
 STR_IND_DAIRYFARM                                                               :{G=m}Fundus Vaccinus
 STR_IND_DAIRYFARM.abl                                                           :Fundo Vaccino
 STR_IND_DAIRYFARM.acc                                                           :Fundum Vaccinum
 STR_IND_DAIRYFARM.gen                                                           :fundi vaccini
+STR_IND_DREDGING_SITE                                                           :{G=m}Situs Effossionis
+STR_IND_DREDGING_SITE.abl                                                       :Situ Effossionis
+STR_IND_DREDGING_SITE.acc                                                       :Situm Effossionis
+STR_IND_DREDGING_SITE.gen                                                       :situs effossionis
+STR_IND_FERTILISER_PLANT                                                        :{G=n}Ergasterium Laetaminis
+STR_IND_FERTILISER_PLANT.abl                                                    :Ergasterio Laetaminis
+STR_IND_FERTILISER_PLANT.acc                                                    :Ergasterium Laetaminis
+STR_IND_FERTILISER_PLANT.gen                                                    :ergasterii laetaminis
+STR_IND_FISHING_GROUND                                                          :{G=f}Zona Piscaria
+STR_IND_FISHING_GROUND.abl                                                      :Zona Piscaria
+STR_IND_FISHING_GROUND.acc                                                      :Zonam Piscariam
+STR_IND_FISHING_GROUND.gen                                                      :zonae piscariae
 STR_IND_FISHING_HARBOUR                                                         :{G=m}Portus Piscarius
 STR_IND_FISHING_HARBOUR.abl                                                     :Portu Piscario
 STR_IND_FISHING_HARBOUR.acc                                                     :Portum Piscarium
@@ -249,26 +337,90 @@ STR_IND_FURNITURE_FACTORY                                                       
 STR_IND_FURNITURE_FACTORY.abl                                                   :Fabrica Supellectilis
 STR_IND_FURNITURE_FACTORY.acc                                                   :Fabricam Supellectilis
 STR_IND_FURNITURE_FACTORY.gen                                                   :fabricae supellectilis
+STR_IND_GENERAL_STORE                                                           :{G=f}Taberna Generalis
+STR_IND_GENERAL_STORE.abl                                                       :Taberna Generale
+STR_IND_GENERAL_STORE.acc                                                       :Tabernam Generalem
+STR_IND_GENERAL_STORE.gen                                                       :tabernae generalis
+STR_IND_GLASS_WORKS                                                             :{G=n}Vitrarium
+STR_IND_GLASS_WORKS.abl                                                         :Vitrario
+STR_IND_GLASS_WORKS.acc                                                         :Vitrarium
+STR_IND_GLASS_WORKS.gen                                                         :vitrarii
 STR_IND_GRAIN_MILL                                                              :{G=fp}Molae Frumenti
 STR_IND_GRAIN_MILL.abl                                                          :Molis Frumenti
 STR_IND_GRAIN_MILL.acc                                                          :Molas Frumenti
 STR_IND_GRAIN_MILL.gen                                                          :molarum frumenti
+STR_IND_HARDWARE_STORE                                                          :{G=f}Taberna Ferraria
+STR_IND_HARDWARE_STORE.abl                                                      :Taberna Ferraria
+STR_IND_HARDWARE_STORE.acc                                                      :Tabernam Ferrariam
+STR_IND_HARDWARE_STORE.gen                                                      :tabernae ferrariae
 STR_IND_HOTEL                                                                   :{G=n}Deversorium
 STR_IND_HOTEL.abl                                                               :Deversorio
 STR_IND_HOTEL.acc                                                               :Deversorium
 STR_IND_HOTEL.gen                                                               :deversorii
+STR_IND_IRON_WORKS                                                              :{G=f}Fabrica Ferraria
+STR_IND_IRON_WORKS.abl                                                          :Fabrica Ferraria
+STR_IND_IRON_WORKS.acc                                                          :Fabricam Ferrariam
+STR_IND_IRON_WORKS.gen                                                          :fabricae ferrariae
+STR_IND_JUNKYARD                                                                :{G=n}Scrutarium
+STR_IND_JUNKYARD.abl                                                            :Scrutario
+STR_IND_JUNKYARD.acc                                                            :Scrutarium
+STR_IND_JUNKYARD.gen                                                            :scrutarii
 STR_IND_LIME_KILN                                                               :{G=f}Calcaria
 STR_IND_LIME_KILN.abl                                                           :Calcaria
 STR_IND_LIME_KILN.acc                                                           :Calcariam
 STR_IND_LIME_KILN.gen                                                           :calcariae
+STR_IND_LUMBER_YARD                                                             :{G=n}Horreum Tignarium
+STR_IND_LUMBER_YARD.abl                                                         :Horreo Tignario
+STR_IND_LUMBER_YARD.acc                                                         :Horreum Tignarium
+STR_IND_LUMBER_YARD.gen                                                         :horrei tignarii
+STR_IND_MACHINE_SHOP                                                            :{G=f}Fabrica Machinaria
+STR_IND_MACHINE_SHOP.abl                                                        :Fabrica Machinaria
+STR_IND_MACHINE_SHOP.acc                                                        :Fabricam Machinariam
+STR_IND_MACHINE_SHOP.gen                                                        :fabricae machinariae
+STR_IND_METAL_FABRICATION_PLANT                                                 :{G=f}Metalli Officina
+STR_IND_METAL_FABRICATION_PLANT.abl                                             :Metalli Officina
+STR_IND_METAL_FABRICATION_PLANT.acc                                             :Metalli Officinam
+STR_IND_METAL_FABRICATION_PLANT.gen                                             :metalli officinae
+STR_IND_METAL_FOUNDRY                                                           :{G=f}Metalli Fabrica
+STR_IND_METAL_FOUNDRY.abl                                                       :Metalli Fabrica
+STR_IND_METAL_FOUNDRY.acc                                                       :Metalli Fabricam
+STR_IND_METAL_FOUNDRY.gen                                                       :metalli fabricae
+STR_IND_MIXEDFARM                                                               :{G=m}Fundus Mixtus
+STR_IND_MIXEDFARM.abl                                                           :Fundo Mixto
+STR_IND_MIXEDFARM.acc                                                           :Fundum Mixtum
+STR_IND_MIXEDFARM.gen                                                           :fundi mixti
+STR_IND_ORCHARD_PIGGERY                                                         :{G=n}Pomarium et Porcinarium
+STR_IND_ORCHARD_PIGGERY.abl                                                     :Pomario et Porcinario
+STR_IND_ORCHARD_PIGGERY.acc                                                     :Pomarium et Porcinarium
+STR_IND_ORCHARD_PIGGERY.gen                                                     :pomarii et porcinarii
 STR_IND_PETROLPUMP                                                              :{G=f}Statio Benzinaria
 STR_IND_PETROLPUMP.abl                                                          :Statione Benzinaria
 STR_IND_PETROLPUMP.acc                                                          :Stationem Benzinariam
 STR_IND_PETROLPUMP.gen                                                          :stationis benzinariae
+STR_IND_PLASTICS_PLANT                                                          :{G=f}Fabrica Plasticarum
+STR_IND_PLASTICS_PLANT.abl                                                      :Fabrica Plasticarum
+STR_IND_PLASTICS_PLANT.acc                                                      :Fabricam Plasticarum
+STR_IND_PLASTICS_PLANT.gen                                                      :fabricae plasticarum
 STR_IND_PORT                                                                    :{G=m}Portus
 STR_IND_PORT.abl                                                                :Portu
 STR_IND_PORT.acc                                                                :Portum
 STR_IND_PORT.gen                                                                :portus
+STR_IND_QUARRY                                                                  :{G=fp}Lapicidinae
+STR_IND_QUARRY.abl                                                              :Lapicidinis
+STR_IND_QUARRY.acc                                                              :Lapicidinas
+STR_IND_QUARRY.gen                                                              :lapicidinarum
+STR_IND_RANCH                                                                   :{G=m}Fundus Pecuarius
+STR_IND_RANCH.abl                                                               :Fundo Pecuario
+STR_IND_RANCH.acc                                                               :Fundum Pecuarium
+STR_IND_RANCH.gen                                                               :fundi pecuarii
+STR_IND_RECYCLING_DEPOT                                                         :{G=n}Receptaculum Regyrabilium
+STR_IND_RECYCLING_DEPOT.abl                                                     :Receptaculo Regyrabilium
+STR_IND_RECYCLING_DEPOT.acc                                                     :Receptaculum Regyrabilium
+STR_IND_RECYCLING_DEPOT.gen                                                     :receptaculi regyrabilium
+STR_IND_RECYCLING_PLANT                                                         :{G=n}Ergasterium Regyrabilium
+STR_IND_RECYCLING_PLANT.abl                                                     :Ergasterio Regyrabilium
+STR_IND_RECYCLING_PLANT.acc                                                     :Ergasterium Regyrabilium
+STR_IND_RECYCLING_PLANT.gen                                                     :ergasterii regyrabilium
 STR_IND_SHEEPFARM                                                               :{G=m}Fundus Ovillus
 STR_IND_SHEEPFARM.abl                                                           :Fundo Ovillo
 STR_IND_SHEEPFARM.acc                                                           :Fundum Ovillum
@@ -277,8 +429,39 @@ STR_IND_SMITHY_FORGE                                                            
 STR_IND_SMITHY_FORGE.abl                                                        :Officina Ferraria
 STR_IND_SMITHY_FORGE.acc                                                        :Officinam Ferrariam
 STR_IND_SMITHY_FORGE.gen                                                        :officinae ferrariae
+STR_IND_STOCKYARD                                                               :{G=n}Confectorium
+STR_IND_STOCKYARD.abl                                                           :Confectorio
+STR_IND_STOCKYARD.acc                                                           :Confectorium
+STR_IND_STOCKYARD.gen                                                           :confectorii
+STR_IND_SUGAR_PLANTATION                                                        :{G=n}Arbustum Sacchari
+STR_IND_SUGAR_PLANTATION.abl                                                    :Arbusto Sacchari
+STR_IND_SUGAR_PLANTATION.acc                                                    :Arbustum Sacchari
+STR_IND_SUGAR_PLANTATION.gen                                                    :arbusti sacchari
+STR_IND_SUGAR_REFINERY                                                          :{G=n}Ergasterium Sacchari
+STR_IND_SUGAR_REFINERY.abl                                                      :Ergasterio Sacchari
+STR_IND_SUGAR_REFINERY.acc                                                      :Ergasterium Sacchari
+STR_IND_SUGAR_REFINERY.gen                                                      :ergasterii sacchari
+STR_IND_TEXTILE_MILL                                                            :{G=f}Fabrica Textoria
+STR_IND_TEXTILE_MILL.abl                                                        :Fabrica Textoria
+STR_IND_TEXTILE_MILL.acc                                                        :Fabricam Textoriam
+STR_IND_TEXTILE_MILL.gen                                                        :fabricae textoriae
+STR_IND_TRADING_POST                                                            :{G=m}Mercatus
+STR_IND_TRADING_POST.abl                                                        :Mercatu
+STR_IND_TRADING_POST.acc                                                        :Mercatum
+STR_IND_TRADING_POST.gen                                                        :mercatus
 
+STR_STATION_ANIMALS                                                             :Forum Boarium
 STR_STATION_FARM                                                                :Villa
 STR_STATION_FISHMARKET                                                          :Forum Piscarium
+STR_STATION_HEAVY_INDUSTRY                                                      :Via Wattensis
+STR_STATION_INDUSTRY_ESTATE                                                     :Zona Industrialis
+STR_STATION_INDUSTRY_HARBOUR                                                    :Portus Industrialis
 STR_STATION_MARKET                                                              :Forum
+STR_STATION_MILL                                                                :Pistrinum
+STR_STATION_MINE                                                                :Fodina
 STR_STATION_PIT                                                                 :Cavum
+STR_STATION_PLANTATION                                                          :Arbustum
+STR_STATION_POWERHUNGRY                                                         :Electrificina
+STR_STATION_REFINERY                                                            :Ergasterium
+STR_STATION_TOWN                                                                :Curia
+STR_STATION_WATER                                                               :Lacuna
