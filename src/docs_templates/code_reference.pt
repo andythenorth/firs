@@ -57,7 +57,7 @@
                             </td>
                             <td>${cargo.id}</td>
                             <td class="number">${cargo.number}</td>
-                            <td>${cargo.cargo_label}</td>
+                            <td>${cargo.cargo_label} ${'/ "SGCN"' if cargo.id is 'sugar_beet' else None}</td>
                             <td class="number">${cargo.weight}</td>
                             <td class="number">${cargo.capacity_multiplier}</td>
                             <td class="number">${cargo.cargo_payment_list_colour}</td>
