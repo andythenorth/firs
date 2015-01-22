@@ -39,6 +39,10 @@ STR_CARGO_NAME_BAUXITE                                                          
 STR_CARGO_NAME_BAUXITE.acc                                                      :Bauxitam
 STR_CARGO_NAME_BAUXITE.dat                                                      :Bauxitae
 STR_CARGO_NAME_BAUXITE.gen                                                      :bauxitae
+STR_CARGO_NAME_BEANS                                                            :{G=fp}Fabae
+STR_CARGO_NAME_BEANS.acc                                                        :Fabas
+STR_CARGO_NAME_BEANS.dat                                                        :Fabis
+STR_CARGO_NAME_BEANS.gen                                                        :fabarum
 STR_CARGO_NAME_BUILDING_MATERIALS                                               :{G=fp}Materiae
 STR_CARGO_NAME_BUILDING_MATERIALS.acc                                           :Materias
 STR_CARGO_NAME_BUILDING_MATERIALS.dat                                           :Materiis
@@ -126,6 +130,7 @@ STR_CARGO_NAME_WOOL.gen                                                         
 
 STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} alcoholis
 STR_CARGO_UNIT_BAUXITE                                                          :{WEIGHT} bauxitae
+STR_CARGO_UNIT_BEANS                                                            :{WEIGHT} fabarum
 STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WEIGHT} materiarum
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} chemicorum
 STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} argillae
@@ -150,6 +155,7 @@ STR_CARGO_UNIT_WOOL                                                             
 
 STR_CID_ALCOHOL                                                                 :{TINYFONT}AC
 STR_CID_BAUXITE                                                                 :{TINYFONT}BX
+STR_CID_BEANS                                                                   :{TINYFONT}FB
 STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}MA
 STR_CID_CHEMICALS                                                               :{TINYFONT}CH
 STR_CID_CLAY                                                                    :{TINYFONT}AR
@@ -184,28 +190,28 @@ STR_ERR_LOCATION_NOT_IN_DESERT                                                  
 STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE                                             :non licet struere in clivis arduis.
 STR_ERR_LOCATION_LIMIT_1_PER_TOWN                                               :tantum licet unam industriam huius generis adesse apud quidque oppidum.
 
-STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}Oneris productio:{} 2 tonnae ex 8 tonnis bauxitae traditis{} 2 tonnae ex 8,000 litris chemicorum traditis{} 4 tonnae ex 8 tonnis metallicorum scrutorum traditis{}{}Productio auget si duo plurave onera tradita sunt intra unum mensem.
+STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}Oneris productio:{} 2 tonnae ex 8 tonnis bauxitae traditis{} 2 tonnae ex 8,000 litris chemicorum traditis{} 4 tonnae ex 8 tonnis metallicorum scrutorum traditis{}{}Productio auget si duo plurave onera traduntur intra unum mensem.
 STR_EXTRA_BIOREFINERY                                                           :{BLACK}Oneris productio:{} 6,000 litra ex 8 tonnis frumenti traditis{} 6,000 litra ex 8 tonnis sacchari traditis
-STR_EXTRA_BREWERY                                                               :{BLACK}Oneris productio:{} 3,000 litra ex 8 capsis apparatuum fabricationis traditis{} {STRING} {STRING}{}Productio auget si apparatus traditi sunt intra eundem mensem quam alia onera.
+STR_EXTRA_BREWERY                                                               :{BLACK}Oneris productio:{} 3,000 litra ex 8 capsis apparatuum fabricationis traditis{} {STRING} {STRING}{}Productio auget si apparatus traduntur intra eundem mensem quam alia onera.
 STR_EXTRA_BREWERY_GRAIN_SUBSTR                                                  :5,000 litra ex 8 tonnis frumenti traditis{}
 STR_EXTRA_BREWERY_FRUIT_SUBSTR                                                  :5,000 litra ex 8 tonnis fructuum traditis{}
-STR_EXTRA_BRICKWORKS                                                            :{BLACK}Oneris productio:{} 2 tonnae ex 8 tonnis carbonis traditis{} 2 tonnae ex 8 tonnis harenae traditis{} 4 tonnae ex 8 tonnis argillae traditis{}{}Productio auget si duo plurave onera tradita sunt intra unum mensem.
-STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Oneris productio:{} 2 tonnae ex 8 tonnis carbonis traditis{} 2 tonnae ex 8 tonnis argillae traditis{} 4 tonnae ex 8 tonnis petrarum traditis{}{}Productio auget si duo plurave onera tradita sunt intra unum mensem.
-STR_EXTRA_DAIRY                                                                 :{BLACK}Oneris productio:{} 3 tonnae ex 8 capsis apparatuum fabricationis traditis{} 5 tonnae ex 8,000 litris lactis traditis{}{}Productio auget si ambo onera tradita sunt intra unum mensem.
+STR_EXTRA_BRICKWORKS                                                            :{BLACK}Oneris productio:{} 2 tonnae ex 8 tonnis carbonis traditis{} 2 tonnae ex 8 tonnis harenae traditis{} 4 tonnae ex 8 tonnis argillae traditis{}{}Productio auget si duo plurave onera traduntur intra unum mensem.
+STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Oneris productio:{} 2 tonnae ex 8 tonnis carbonis traditis{} 2 tonnae ex 8 tonnis argillae traditis{} 4 tonnae ex 8 tonnis petrarum traditis{}{}Productio auget si duo plurave onera traduntur intra unum mensem.
+STR_EXTRA_DAIRY                                                                 :{BLACK}Oneris productio:{} 3 tonnae ex 8 capsis apparatuum fabricationis traditis{} 5 tonnae ex 8,000 litris lactis traditis{}{}Productio auget si ambo onera traduntur intra unum mensem.
 STR_EXTRA_FERTILIZER_PLANT                                                      :{BLACK}Oneris productio:{} 8 capsae ex 8,000 litris chemicorum traditis
-STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Oneris productio:{} 3 tonnae ex 8 capsis apparatuum fabricationis traditis{} 5 tonnae ex 8 tonnis piscium traditis{}{}Productio auget si ambo onera tradita sunt intra unum mensem.
-STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Oneris productio:{} 3 tonnae ex 8 capsis apparatuum fabricationis traditis{} 5 tonnae ex 8 tonnis tigni traditis{}{}Productio auget si ambo onera tradita sunt intra unum mensem.
-STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Efficit res vitreas sicut ampullas, vasa, et fenestras.{}{}Oneris productio:{} 6 tonnae ex 8 tonnis harenae traditis{} 2 tonnae ex 8,000 litris chemicorum traditis{}{}Productio auget si ambo onera tradita sunt intra unum mensem.
-STR_EXTRA_GRAIN_MILL                                                            :{BLACK}Oneris productio:{} 3 tonnae ex 8 capsis apparatuum fabricationis traditis{} 5 tonnae ex 8 tonnis frumenti traditis{}{}Productio auget si ambo onera tradita sunt intra unum mensem.
-STR_EXTRA_IRON_WORKS                                                            :{BLACK}Oneris productio:{} 2 tonnae ex 8 tonnis ligni traditis{} 2 tonnae ex 8 tonnis ferri traditis{}{}Productio auget si ambo onera tradita sunt intra unum mensem.
-STR_EXTRA_LIME_KILN                                                             :{BLACK}Oneris productio:{} 3 tonnae ex 8 tonnis petrarum traditis{} 3 tonnae ex 8 tonnis carbonis traditis{}{}Productio auget si ambo onera tradita sunt intra unum mensem.
-STR_EXTRA_LUMBER_YARD                                                           :{BLACK}Efficit res sicut asseres et postes.{}{}Oneris productio:{} 2 tonnae ex 8,000 litris chemicorum traditis{} 6 tonnae ex 8 tonnis tigni traditis{}{}Productio auget si ambo onera tradita sunt intra unum mensem.
+STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Oneris productio:{} 3 tonnae ex 8 capsis apparatuum fabricationis traditis{} 5 tonnae ex 8 tonnis piscium traditis{}{}Productio auget si ambo onera traduntur intra unum mensem.
+STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Oneris productio:{} 3 tonnae ex 8 capsis apparatuum fabricationis traditis{} 5 tonnae ex 8 tonnis tigni traditis{}{}Productio auget si ambo onera traduntur intra unum mensem.
+STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Efficit res vitreas sicut ampullas, vasa, et fenestras.{}{}Oneris productio:{} 6 tonnae ex 8 tonnis harenae traditis{} 2 tonnae ex 8,000 litris chemicorum traditis{}{}Productio auget si ambo onera traduntur intra unum mensem.
+STR_EXTRA_GRAIN_MILL                                                            :{BLACK}Oneris productio:{} 3 tonnae ex 8 capsis apparatuum fabricationis traditis{} 5 tonnae ex 8 tonnis frumenti traditis{}{}Productio auget si ambo onera traduntur intra unum mensem.
+STR_EXTRA_IRON_WORKS                                                            :{BLACK}Oneris productio:{} 2 tonnae ex 8 tonnis ligni traditis{} 2 tonnae ex 8 tonnis ferri traditis{}{}Productio auget si ambo onera traduntur intra unum mensem.
+STR_EXTRA_LIME_KILN                                                             :{BLACK}Oneris productio:{} 3 tonnae ex 8 tonnis petrarum traditis{} 3 tonnae ex 8 tonnis carbonis traditis{}{}Productio auget si ambo onera traduntur intra unum mensem.
+STR_EXTRA_LUMBER_YARD                                                           :{BLACK}Efficit res sicut asseres et postes.{}{}Oneris productio:{} 2 tonnae ex 8,000 litris chemicorum traditis{} 6 tonnae ex 8 tonnis tigni traditis{}{}Productio auget si ambo onera traduntur intra unum mensem.
 STR_EXTRA_MACHINE_SHOP                                                          :{BLACK}Efficit et ministrat machinas.{}{}Oneris productio:{} 8 capsae ex 8,000 litris benzini traditis{} 8 capsae ex 8 tonnis metalli traditis
-STR_EXTRA_MEAT_PACKER                                                           :{BLACK}Oneris productio:{} 3 tonnae ex 8 capsis apparatuum fabricationis traditis{} 5 tonnae ex 8 pecoribus traditis{}{}Productio auget si ambo onera tradita sunt intra unum mensem.
-STR_EXTRA_METAL_FABRICATION_PLANT                                               :{BLACK}Efficit res metallicas pictas.{}{}Oneris productio:{} 2 tonnae ex 8,000 litris chemicorum traditis{} 6 tonnae ex 8 tonnis metalli traditis{}{}Productio auget si ambo onera tradita sunt intra unum mensem.
-STR_EXTRA_METAL_FOUNDRY                                                         :{BLACK}Efficit res metallicas sicut pyxides stanneas et vasa mercesque domesticas.{}{}Oneris productio:{} 2 capsae ex 8,000 litris chemicorum traditis{} 6 capsae ex 8 tonnis metalli traditis{}{}Productio auget si ambo onera tradita sunt intra unum mensem.
+STR_EXTRA_MEAT_PACKER                                                           :{BLACK}Oneris productio:{} 3 tonnae ex 8 capsis apparatuum fabricationis traditis{} 5 tonnae ex 8 pecoribus traditis{}{}Productio auget si ambo onera traduntur intra unum mensem.
+STR_EXTRA_METAL_FABRICATION_PLANT                                               :{BLACK}Efficit res metallicas pictas.{}{}Oneris productio:{} 2 tonnae ex 8,000 litris chemicorum traditis{} 6 tonnae ex 8 tonnis metalli traditis{}{}Productio auget si ambo onera traduntur intra unum mensem.
+STR_EXTRA_METAL_FOUNDRY                                                         :{BLACK}Efficit res metallicas sicut pyxides stanneas et vasa mercesque domesticas.{}{}Oneris productio:{} 2 capsae ex 8,000 litris chemicorum traditis{} 6 capsae ex 8 tonnis metalli traditis{}{}Productio auget si ambo onera traduntur intra unum mensem.
 STR_EXTRA_OIL_REFINERY                                                          :{BLACK}Facit petroleum in benzinum et chemica.{}{}Oneris productio:{} 6,000 litra ex 8,000 litris traditis
-STR_EXTRA_PAPER_MILL                                                            :{BLACK}Facit lignum in res chartaceas sicut folia chartacea et chartam crassam.{}{}Oneris productio:{} 4 capsae ex 8 tonnis ligni traditis{} 2 capsae ex 8 tonnis argillae traditis{} 2 capsae ex 8,000 litris chemicorum traditis{}{}Productio auget si duo plurave onera tradita sunt intra unum mensem.
+STR_EXTRA_PAPER_MILL                                                            :{BLACK}Facit lignum in res chartaceas sicut folia chartacea et chartam crassam.{}{}Oneris productio:{} 4 capsae ex 8 tonnis ligni traditis{} 2 capsae ex 8 tonnis argillae traditis{} 2 capsae ex 8,000 litris chemicorum traditis{}{}Productio auget si duo plurave onera traduntur intra unum mensem.
 STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}Efficit res plasticas sicut involucra et merces domesticas.{}{}Oneris productio:{} {STRING} {STRING}
 STR_EXTRA_PLASTICS_PLANT_CHEMICALS_SUBSTR                                       :6 capsae ex 8,000 litris chemicorum traditis{}
 STR_EXTRA_PLASTICS_PLANT_PLANT_FIBRES_SUBSTR                                    :6 capsae ex 8 sarcinis fibrarum stirpium traditis{}
@@ -213,9 +219,9 @@ STR_EXTRA_RECYCLING_PLANT                                                       
 STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}Productio crescit pro portione numeri incolarum oppidi.
 STR_EXTRA_SAWMILL                                                               :{BLACK}Serrat lignum.{}{}Oneris productio:{} 6 tonnae ex 8 tonnis ligni traditis
 STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Efficit res metallicas sicut ferramenta, aratra, fores, rutra, et soleas ferreas.{}{}Oneris productio:{} 8 capsae ex 8 tonnis metalli traditis
-STR_EXTRA_STEELMILL                                                             :{BLACK}Oneris productio:{} 2 tonnae ex 8 tonnis ferri traditis{} 2 tonnae ex 8 tonnis carbonis traditis{} 4 tonnae ex 8 tonnis metallicorum scrutorum traditis{}{}Productio auget si duo plurave onera tradita sunt intra unum mensem.
-STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Oneris productio:{} 3 tonnae ex 8 capsis apparatuum fabricationis traditis{} 5 tonnae ex 8 tonnis sacchari traditis{}{}Productio auget si ambo onera tradita sunt intra unum mensem.
-STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Oneris productio:{} 3 capsae ex 8 capsis apparatuum fabricationis traditis{} {STRING} {STRING}{}Productio auget si apparatus traditi sunt intra eundem mensem quam alia onera.
+STR_EXTRA_STEELMILL                                                             :{BLACK}Oneris productio:{} 2 tonnae ex 8 tonnis ferri traditis{} 2 tonnae ex 8 tonnis carbonis traditis{} 4 tonnae ex 8 tonnis metallicorum scrutorum traditis{}{}Productio auget si duo plurave onera traduntur intra unum mensem.
+STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Oneris productio:{} 3 tonnae ex 8 capsis apparatuum fabricationis traditis{} 5 tonnae ex 8 tonnis sacchari traditis{}{}Productio auget si ambo onera traduntur intra unum mensem.
+STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Oneris productio:{} 3 capsae ex 8 capsis apparatuum fabricationis traditis{} {STRING} {STRING}{}Productio auget si apparatus traduntur intra eundem mensem quam alia onera.
 STR_EXTRA_TEXTILE_MILL_WOOL_SUBSTR                                              :5 capsae ex 8 sarcinis lanae traditis{}
 STR_EXTRA_TEXTILE_MILL_PLANT_FIBRES_SUBSTR                                      :5 capsae ex 8 sarcinis fibrarum stirpium traditis{}
 
@@ -333,6 +339,10 @@ STR_IND_FOOD_MARKET                                                             
 STR_IND_FOOD_MARKET.abl                                                         :Macello
 STR_IND_FOOD_MARKET.acc                                                         :Macellum
 STR_IND_FOOD_MARKET.gen                                                         :macelli
+STR_IND_FOOD_PROCESSOR                                                          :{G=f}Fabrica Cibaria
+STR_IND_FOOD_PROCESSOR.abl                                                      :Fabrica Cibaria
+STR_IND_FOOD_PROCESSOR.acc                                                      :Fabricam Cibariam
+STR_IND_FOOD_PROCESSOR.gen                                                      :fabricae cibariae
 STR_IND_FURNITURE_FACTORY                                                       :{G=f}Fabrica Supellectilis
 STR_IND_FURNITURE_FACTORY.abl                                                   :Fabrica Supellectilis
 STR_IND_FURNITURE_FACTORY.acc                                                   :Fabricam Supellectilis
