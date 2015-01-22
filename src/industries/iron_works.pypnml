@@ -51,7 +51,7 @@ switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_tile_anim_2_control, (extra_call
 item(FEAT_INDUSTRYTILES, ${industry.id}_tile, TILE_IRONWORKS_1) {
 	property {
 		substitute:         0;
-		accepted_cargos:    [[IORE, 8], [WOOD, 8]];
+		accepted_cargos:    [[IORE, 8], [WOOD, 8], [SAND, 8]];
 		land_shape_flags:   0;
 	}
 
@@ -67,7 +67,7 @@ TILE_DISALLOW_SLOPES      (tile2_location_check, CB_RESULT_LOCATION_DISALLOW, ${
 item(FEAT_INDUSTRYTILES, ${industry.id}_tile_anim_1, TILE_IRONWORKS_2) {
 	property {
 		substitute:         0;
-		accepted_cargos:    [[IORE, 8], [WOOD, 8]];
+		accepted_cargos:    [[IORE, 8], [WOOD, 8], [SAND, 8]];
 		land_shape_flags:   bitmask(LSF_ONLY_ON_FLAT_LAND);
 		special_flags:      bitmask(INDTILE_FLAG_RANDOM_ANIMATION);
 		animation_info:     [ANIMATION_LOOPING, 180];
@@ -85,7 +85,7 @@ item(FEAT_INDUSTRYTILES, ${industry.id}_tile_anim_1, TILE_IRONWORKS_2) {
 item(FEAT_INDUSTRYTILES, ${industry.id}_tile_anim_2, TILE_IRONWORKS_3) {
 	property {
 		substitute:         0;
-		accepted_cargos:    [[IORE, 8], [WOOD, 8]];
+		accepted_cargos:    [[IORE, 8], [WOOD, 8], [SAND, 8]];
 		land_shape_flags:   bitmask(LSF_ONLY_ON_FLAT_LAND);
 		special_flags:      bitmask(INDTILE_FLAG_RANDOM_ANIMATION);
 		animation_info:     [ANIMATION_LOOPING, 3];
@@ -113,15 +113,15 @@ ${industry.get_industry_layouts_as_tilelayouts()}
 
 /* for secondary production template */
 #define THIS_NUM_OUTPUT_CARGOS    1
-#define THIS_PROD_RATIO_CARGO1    2
-#define THIS_PROD_RATIO_CARGO2    2
-#define THIS_PROD_RATIO_CARGO3    1
-#define THIS_BOOST_12             1
-#define THIS_BOOST_13             0
-#define THIS_BOOST_21             2
-#define THIS_BOOST_23             0
-#define THIS_BOOST_31             0
-#define THIS_BOOST_32             0
+#define THIS_PROD_RATIO_CARGO1    3
+#define THIS_PROD_RATIO_CARGO2    3
+#define THIS_PROD_RATIO_CARGO3    2
+#define THIS_BOOST_12             3
+#define THIS_BOOST_13             3
+#define THIS_BOOST_21             3
+#define THIS_BOOST_23             3
+#define THIS_BOOST_31             2
+#define THIS_BOOST_32             2
 #define THIS_STR_DEBUG_TEXT       STR_EXTRA_TEXT_DEBUG_SECONDARY
 /* availability years */
 #define THIS_MAX_YEAR 1901
