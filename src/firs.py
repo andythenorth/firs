@@ -63,6 +63,7 @@ from cargos import stone
 from cargos import sugar
 from cargos import sugar_beet
 from cargos import sugarcane
+from cargos import vehicle_parts
 from cargos import wood
 from cargos import wool
 
