@@ -31,6 +31,7 @@ STR_PARAM_VALUE_ECONOMIES_TEST_3                                                
 
 STR_CARGO_NAME_ALCOHOL                                                          :Alcohol
 STR_CARGO_NAME_BAUXITE                                                          :Bauxiet
+STR_CARGO_NAME_BEANS                                                            :Bonen
 STR_CARGO_NAME_BUILDING_MATERIALS                                               :Bouwmaterialen
 STR_CARGO_NAME_CHEMICALS                                                        :Chemicaliën
 STR_CARGO_NAME_CLAY                                                             :Klei
@@ -55,6 +56,7 @@ STR_CARGO_NAME_WOOL                                                             
 
 STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} alcohol
 STR_CARGO_UNIT_BAUXITE                                                          :{WEIGHT} bauxiet
+STR_CARGO_UNIT_BEANS                                                            :{WEIGHT} van bonen
 STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WEIGHT} bouwmaterialen
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} chemicaliën
 STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} klei
@@ -79,6 +81,7 @@ STR_CARGO_UNIT_WOOL                                                             
 
 STR_CID_ALCOHOL                                                                 :{TINYFONT}AL
 STR_CID_BAUXITE                                                                 :{TINYFONT}BX
+STR_CID_BEANS                                                                   :{TINYFONT}BN
 STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}BM
 STR_CID_CHEMICALS                                                               :{TINYFONT}CM
 STR_CID_CLAY                                                                    :{TINYFONT}KL
@@ -126,7 +129,7 @@ STR_EXTRA_FISHING_HARBOUR                                                       
 STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Productie:{}  3t voor iedere 8 kratten afgeleverde productiematerialen{}  5t voor iedere 8t afgeleverd gezaagd hout{}{}Productie wordt verhoogd als beide vrachtsoorten binnen een maand van elkaar worden afgeleverd.
 STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Maakt glasproducten zoals flessen, potten, en vensterglas.{}{}Productie:{} 6t voor iedere 8t afgeleverd zand{} 2t voor iedere 8.000l afgeleverde chemicaliën{}{}Productie wordt verhoogd als beide vrachtsoorten binnen een maand van elkaar worden afgeleverd.
 STR_EXTRA_GRAIN_MILL                                                            :{BLACK}Productie:{}  3t voor iedere 8 kratten afgeleverde productiematerialen{}  5t voor iedere 8t afgeleverd graan{}{}Productie wordt verhoogd als beide vrachtsoorten binnen een maand van elkaar worden afgeleverd.
-STR_EXTRA_IRON_WORKS                                                            :{BLACK}Productie:{}  2t voor iedere 8t afgeleverd hout{}  2t voor iedere 8t afgeleverd ijzererts{}{}Productie wordt verhoogd als beide vrachtsoorten binnen een maand van elkaar worden afgeleverd.
+STR_EXTRA_IRON_WORKS                                                            :{BLACK}Productie:{}  3t voor iedere 8t afgeleverd ijzererts{}  3t voor iedere 8t afgeleverd hout{}  2t voor iedere 8t afgeleverd zand{}{}Productie wordt verhoogd als beide vrachtsoorten binnen een maand van elkaar worden afgeleverd.
 STR_EXTRA_LIME_KILN                                                             :{BLACK}Productie:{}  3t voor iedere 8t afgeleverd grind{}  3t voor iedere 8t afgeleverde kolen{}{}Productie wordt verhoogd als beide vrachtsoorten binnen een maand van elkaar worden afgeleverd.
 STR_EXTRA_LUMBER_YARD                                                           :{BLACK}Maakt houtproducten zoals schuttingpalen en schuttingdelen.{}{}Productie:{}  2t voor iedere 8.000l afgeleverde chemicaliën{} 6t voor iedere 8t afgeleverd gezaagd hout{}{}Productie wordt verhoogd als beide vrachtsoorten binnen een maand van elkaar worden afgeleverd.
 STR_EXTRA_MACHINE_SHOP                                                          :{BLACK}Bouwt en onderhoudt machines.{}{}Productie:{} 8 kratten voor iedere 8.000l afgeleverde benzine{} 8 kratten voor elke 8t afgeleverd metaal.
@@ -142,7 +145,7 @@ STR_EXTRA_RECYCLING_PLANT                                                       
 STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}Productie is evenredig met het aantal inwoners in the stad.
 STR_EXTRA_SAWMILL                                                               :{BLACK}Zaagt hout.{}{}Productie:{} 6t voor iedere 8t afgeleverd hout
 STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Maakt smeedijzeren produkten zoals hekken, roosters, gereedschappen, ploegen, scheppen en hoefijzers.{}{}Productie:{} 8t voor iedere 8t afgeleverd metaal
-STR_EXTRA_STEELMILL                                                             :{BLACK}Productie:{}  2t voor iedere 8t afgeleverd ijzererts{}  2t voor iedere 8t afgeleverde kolen{}  4t voor iedere 8t afgeleverd schroot{}{}Productie wordt verhoogd als twee of meer vrachtsoorten binnen een maand van elkaar worden afgeleverd.
+STR_EXTRA_STEELMILL                                                             :{BLACK}Productie:{}  3t voor iedere 8t afgeleverd ijzererts{}  2t voor iedere 8t afgeleverde kolen{}  3t voor iedere 8t afgeleverd schroot{}{}Productie wordt verhoogd als twee of meer vrachtsoorten binnen een maand van elkaar worden afgeleverd.
 STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Productie:{}  3t voor iedere 8 kratten afgeleverde productiematerialen{}  5t voor iedere 8t afgeleverd suikerriet{}{}Productie wordt verhoogd tot 8t voor iedere 8t als beide vrachtsoorten binnen een maand van elkaar worden afgeleverd.
 STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Productie:{}  3 kratten voor iedere 8 kratten afgeleverde productiematerialen{} {STRING} {STRING}{}Productie wordt verhoogd als productiematerialen binnen een maand van andere vracht worden afgeleverd.
 STR_EXTRA_TEXTILE_MILL_WOOL_SUBSTR                                              :5 kratten voor iedere 8 balen afgeleverd wol{}
@@ -199,6 +202,7 @@ STR_IND_FERTILISER_PLANT                                                        
 STR_IND_FISHING_GROUND                                                          :Visgebied
 STR_IND_FISHING_HARBOUR                                                         :Vissershaven
 STR_IND_FOOD_MARKET                                                             :Kruidenier
+STR_IND_FOOD_PROCESSOR                                                          :Voedselfabriek
 STR_IND_FURNITURE_FACTORY                                                       :Meubelfabriek
 STR_IND_GENERAL_STORE                                                           :Winkel
 STR_IND_GLASS_WORKS                                                             :Glasfabriek
