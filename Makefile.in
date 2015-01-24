@@ -11,8 +11,11 @@ MAIN_SRC_FILE := generated/pnml/firs.pnml
 NML_FILE := generated/firs.nml
 
 GENERATE_PNML = $(MAIN_SRC_FILE)
+INDUSTRY_PY_SRC = $(wildcard src/industries/[a-z]*.py)
+INDUSTRY_PYPNML_SRC = $(INDUSTRY_PY_SRC:.py=.pypnml)
+INDUSTRY_SOURCES = $(INDUSTRY_PY_SRC) $(INDUSTRY_PYPNML_SRC)
 
-generated/pnml/firs.pnml: scripts/preprocess.py
+generated/pnml/firs.pnml: scripts/preprocess.py $(INDUSTRY_SOURCES)
 	$(_E) [GENERATE PNML]
 	$(PYTHON) scripts/preprocess.py '${REPO_TITLE}' '${REPO_REVISION}' '${TEST_INDUSTRY}' '${NO_MP}'
 
