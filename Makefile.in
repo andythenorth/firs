@@ -25,7 +25,7 @@ generated/pnml/firs.pnml: scripts/preprocess.py $(INDUSTRY_SOURCES) $(CARGO_SOUR
 	$(_E) [GENERATE PNML]
 	$(_V) PYTHONPATH=${PYTHONPATH2} ${PYTHON2} scripts/preprocess.py '${REPO_TITLE}' '${REPO_REVISION}' '${TEST_INDUSTRY}' '${NO_MP}'
 
-docs: src/render_docs.py $(DOCS)
+docs: src/render_docs.py $(DOCS) $(INDUSTRY_SOURCES) $(CARGO_SOURCES) $(CONSTANTS) $(MODULES)
 	$(_E) "[DOCS]"
 	$(_V) PYTHONPATH=${PYTHONPATH2} ${PYTHON2} src/render_docs.py '${REPO_TITLE}' '${REPO_REVISION}' '${TEST_INDUSTRY}' '${NO_MP}'
 
