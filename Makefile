@@ -25,7 +25,7 @@ REPO_NAME           ?= My NewGRF
 BASE_FILENAME       ?= mynewgrf
 
 # Documentation files
-DOC_FILES ?= docs/readme.txt docs/license.txt docs/changelog.txt
+#DOC_FILES ?= docs/readme.txt docs/license.txt docs/changelog.txt
 
 # Directory structure
 SCRIPT_DIR          ?= build-common
