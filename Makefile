@@ -140,7 +140,7 @@ REPO_HASH            ?= $(shell HGPLAIN= $(HG) id -i | cut -d+ -f1)
 
 # Days of commit since 2000-1-1 00-00
 REPO_DATE            ?= $(shell HGPLAIN= $(HG) log -r$(REPO_HASH) --template='{time|shortdate}')
-REPO_DAYS_SINCE_2000 ?= $(shell $(PYTHON) -c "from datetime import date; print (date(`echo "$(REPO_DATE)" | sed s/-/,/g | sed s/,0/,/g`)-date(2000,1,1)).days")
+REPO_DAYS_SINCE_2000 ?= $(shell $(PYTHON2) -c "from datetime import date; print (date(`echo "$(REPO_DATE)" | sed s/-/,/g | sed s/,0/,/g`)-date(2000,1,1)).days")
 
 # Whether there are local changes
 REPO_MODIFIED  ?= $(shell [ "`HGPLAIN= $(HG) id | cut -c13`" = "+" ] && echo "M" || echo "")
