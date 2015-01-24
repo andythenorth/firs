@@ -61,8 +61,8 @@ industry.economy_variations['BASIC_ARCTIC'].prod_multiplier = '[7, 16]'
 
 industry.economy_variations['BASIC_TROPIC'].enabled = True
 industry.economy_variations['BASIC_TROPIC'].accept_cargo_types = ['GOOD', 'RFPR']
-industry.economy_variations['BASIC_TROPIC'].prod_cargo_types = ['MNSP']
-industry.economy_variations['BASIC_TROPIC'].prod_multiplier = '[19, 0]'
+industry.economy_variations['BASIC_TROPIC'].prod_cargo_types = ['MNSP', 'VPTS']
+industry.economy_variations['BASIC_TROPIC'].prod_multiplier = '[17, 17]'
 
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].accept_cargo_types = ['WOOD', 'FICR', 'FRUT']

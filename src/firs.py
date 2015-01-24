@@ -95,6 +95,7 @@ from industries import furniture_factory
 from industries import general_store
 from industries import glass_works
 from industries import grain_mill
+from industries import guano_mine
 from industries import hardware_store
 from industries import hotel
 from industries import iron_works
@@ -120,6 +121,7 @@ from industries import sugar_plantation
 from industries import sugar_refinery
 from industries import textile_mill
 from industries import trading_post
+from industries import vehicle_factory
 
 # industries which will be hard to convert to python templating, mostly still cpp
 from industries import clay_pit

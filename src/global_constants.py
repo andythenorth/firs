@@ -51,6 +51,7 @@ industry_numeric_ids = dict(coal_mine = 0x00,
                             cement_plant = 0x2B,
                             clay_pit = 0x2C,
                             brick_works = 0x2D,
+                            guano_mine = 0x2D, # reuse of this ID, ran out of IDs
                             biorefinery = 0x2E,
                             orchard_piggery = 0x2F,
                             ranch = 0x30,
@@ -67,7 +68,7 @@ industry_numeric_ids = dict(coal_mine = 0x00,
                             food_market = 0x3B,
                             petrol_pump = 0x3C,
                             general_store = 0x3D,
-                            #IND_VACANT_ID = 0x3E,
+                            vehicle_factory = 0x3E,
                             builders_yard = 0x3F)
 #3F is last ID to be used (64 industry limit)
 
