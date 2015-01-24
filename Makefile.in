@@ -18,14 +18,17 @@ CARGO_SOURCES = $(wildcard src/cargos/[a-z]*.py)
 TEMPLATES = $(wildcard src/templates/*)
 CONSTANTS = src/defines.pnml src/global_constants.py
 MODULES = src/cargo.py src/firs.py src/industry.py src/render_pnml.py src/utils.py
-# docs not actually in any way a dep for firs.pnml, but for current configuration, this is only way to get docs build reliably by makefile
-DOCS_SRC = $(wildcard src/docs_templates/*)
-DOCS_SOURCES = src/render_docs.py $(DOCS_SRC)
 
 generated/pnml/firs.pnml: $(INDUSTRY_SOURCES) $(CARGO_SOURCES) $(TEMPLATES) $(CONSTANTS) $(MODULES)
 	$(_E) [GENERATE PNML]
 	$(_V) PYTHONPATH=${PYTHONPATH2} ${PYTHON2} src/render_pnml.py '${REPO_TITLE}' '${REPO_REVISION}' '${TEST_INDUSTRY}' '${NO_MP}'
 
+DOCS_SRC = $(wildcard src/docs_templates/*)
+DOCS_SOURCES = src/render_docs.py $(DOCS_SRC)
+
+# !! Makefile already has a 'doc' target and DOC_FILES, not same as 'docs'
+# 'doc' provides not-useful code for the way FIRS generates docs
+# 'doc' could be refactored and made useful for FIRS, and 'docs' then removed
 docs: $(DOCS_SOURCES) $(INDUSTRY_SOURCES) $(CARGO_SOURCES) $(CONSTANTS) $(MODULES)
 	$(_E) "[DOCS]"
 	$(_V) PYTHONPATH=${PYTHONPATH2} ${PYTHON2} src/render_docs.py '${REPO_TITLE}' '${REPO_REVISION}' '${TEST_INDUSTRY}' '${NO_MP}'
