@@ -37,3 +37,5 @@ clean::
 	$(_V)-rm -rf $(NML_FILE)a
 	$(_V)-rm -r chameleon_cache
 	$(_V)-rm -r generated
+	$(_E) "[CLEAN DOCS]"
+	$(_V)-rm -r docs
