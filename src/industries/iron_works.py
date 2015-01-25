@@ -70,6 +70,11 @@ spriteset_3 = industry.add_spriteset(
     sprites = [(150, 10, 64, 70, -31, -39)],
     zextent = 32
 )
+spriteset_4 = industry.add_spriteset(
+    id = 'iron_works_spriteset_4',
+    sprites = [(430, 10, 64, 70, -31, -39)],
+    zextent = 24
+)
 spriteset_iron_pigs_anim = industry.add_spriteset(
     id = 'iron_works_spriteset_iron_pigs_1',
     sprites = [(220, 10, 64, 70, -31, -39), (290, 10, 64, 70, -31, -39), (360, 10, 64, 70, -31, -39)],
@@ -123,6 +128,13 @@ industry.add_spritelayout(
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
+    id = 'iron_works_spritelayout_staithes',
+    ground_sprite = spriteset_ground,
+    ground_overlay = spriteset_ground_overlay,
+    building_sprites = [spriteset_4],
+    fences = ['nw','ne','se']
+)
+industry.add_spritelayout(
     id = 'iron_works_spritelayout_empty',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
@@ -138,7 +150,7 @@ industry.add_industry_layout(
               (1, 1, 'iron_works_tile_anim_1', 'iron_works_spritelayout_furnace_anim'),
               (1, 2, 'iron_works_tile_anim_2', 'iron_works_spritelayout_iron_pigs_anim'),
               (2, 0, 'iron_works_tile', 'iron_works_spritelayout_large_shed'),
-              (2, 1, 'iron_works_tile', 'iron_works_spritelayout_empty'),
+              (2, 1, 'iron_works_tile', 'iron_works_spritelayout_staithes'),
               (2, 2, 'iron_works_tile', 'iron_works_spritelayout_empty')
     ]
 )
