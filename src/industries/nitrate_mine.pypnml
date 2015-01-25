@@ -25,7 +25,7 @@ switch(FEAT_INDUSTRYTILES, PARENT, ${industry.id}_industry_master_graphics_switc
 TILE_DISALLOW_NEARBY_CLASS(tile_nearby_industry,  TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
 TILE_ALLOW_PLAYER         (tile_location_check, ${industry.id}_tile_nearby_industry)
 
-item(FEAT_INDUSTRYTILES, ${industry.id}_tile, TILE_GUANOMINE_1) {
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile, TILE_NITRATEMINE_1) {
 	property {
 		substitute:       0;
 		accepted_cargos:  [[ENSP, 8]];
@@ -59,11 +59,8 @@ tilelayout tilelayout_nitrate_mine_1 {
  * Definition of the industry
  * *************************************************/
 
-/* availability years */
-#define THIS_MIN_YEAR 1825
-
-CHECK_INCOMPATIBLE  (guano_mine, 56, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
-CHECK_COAST_DISTANCE(coastal_distance, 0, param_max_coastal_distance, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_guano_mine)
+CHECK_INCOMPATIBLE  (nitrate_mine, 56, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
+CHECK_COAST_DISTANCE(coastal_distance, 0, param_max_coastal_distance, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_nitrate_mine)
 CHECK_FOUNDER       (${industry.id}_coastal_distance)
 
 SWITCH_COLOUR_SCHEME1(${industry.id}_colour)
@@ -74,7 +71,7 @@ ${industry.get_primary_supplies_stuff()}
 
 ${industry.get_industry_properties()}
 
-item(FEAT_INDUSTRIES, guano_mine, ${industry.get_numeric_id()}) {
+item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
 	graphics {
 		produce_cargo_arrival:   ${industry.id}_produce;
 		construction_probability:${industry.id}_check_availability;
@@ -84,7 +81,6 @@ item(FEAT_INDUSTRIES, guano_mine, ${industry.get_numeric_id()}) {
         random_prod_change:      return CB_RESULT_IND_PROD_NO_CHANGE;
 		build_prod_change:       randomise_primary_production_on_build;
 		extra_text_industry:     ${industry.id}_extra_text;
-		extra_text_fund:         return string(STR_FUND_AVAILABLE_FROM, THIS_MIN_YEAR);
 		colour:                  ${industry.id}_colour;
 	}
 }

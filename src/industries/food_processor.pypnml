@@ -71,9 +71,6 @@ ${industry.get_industry_layouts_as_tilelayouts()}
 #define THIS_BOOST_32             0
 
 #define THIS_STR_DEBUG_TEXT       STR_EXTRA_TEXT_DEBUG_SECONDARY
-/* availability years */
-#define THIS_MIN_YEAR 1931
-
 
 CHECK_INCOMPATIBLE  (food_processor, 56, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
 CHECK_INCOMPATIBLE  (mixed_farm, 16, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_food_processor)
@@ -99,7 +96,6 @@ item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
 		monthly_prod_change:     ${industry.id}_check_production_level;
 		random_prod_change:      ${industry.id}_check_closure;
 		extra_text_industry:     ${industry.id}_extra_text;
-		extra_text_fund:         return string(STR_FUND_AVAILABLE_FROM, THIS_MIN_YEAR);
 		colour:                  ${industry.id}_colour;
 	}
 }

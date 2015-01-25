@@ -65,7 +65,7 @@ ${industry.get_industry_layouts_as_tilelayouts()}
  * *************************************************/
 
 /* availability years */
-#define THIS_MIN_YEAR 1923
+#define THIS_MIN_YEAR 1900
 
 CHECK_NEARBY_CLUSTER(bauxite_mine,    20, 40, 2, 3, return CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
 CHECK_INCOMPATIBLE  (aluminium_plant, 16, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_bauxite_mine)
