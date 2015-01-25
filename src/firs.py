@@ -50,6 +50,7 @@ from cargos import mail
 from cargos import manufacturing_supplies
 from cargos import metal
 from cargos import milk
+from cargos import nitrates
 from cargos import oil
 from cargos import paper
 from cargos import passengers
@@ -81,6 +82,7 @@ from industries import brick_works
 from industries import builders_yard
 from industries import bulk_terminal
 from industries import cement_plant
+from industries import chemical_plant
 from industries import coffee_estate
 from industries import copper_mine
 from industries import dairy
@@ -95,7 +97,6 @@ from industries import furniture_factory
 from industries import general_store
 from industries import glass_works
 from industries import grain_mill
-from industries import guano_mine
 from industries import hardware_store
 from industries import hotel
 from industries import iron_works
@@ -106,6 +107,7 @@ from industries import machine_shop
 from industries import metal_fabrication_plant
 from industries import metal_workshop
 from industries import mixed_farm
+from industries import nitrate_mine
 from industries import oil_wells
 from industries import orchard_piggery
 from industries import petrol_pump

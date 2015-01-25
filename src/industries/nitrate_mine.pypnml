@@ -15,7 +15,7 @@ switch(FEAT_INDUSTRYTILES, PARENT, ${industry.id}_industry_master_graphics_switc
 	${industry.id}_spritelayout_1; // default
 }
 
-<!--! guano site has one layout only, don't bother inserting templated industry layouts etc -->
+<!--! nitrate mine has one layout only, don't bother inserting templated industry layouts etc -->
 <!--! ${industry.get_industry_layouts_as_graphic_switches()} -->
 
 /* *************************************************
@@ -42,7 +42,7 @@ item(FEAT_INDUSTRYTILES, ${industry.id}_tile, TILE_GUANOMINE_1) {
  * Definition of the industry layouts
  * *************************************************/
 
-tilelayout tilelayout_guano_mine_1 {
+tilelayout tilelayout_nitrate_mine_1 {
 	0, 0: 255;
 	0, 1: 24;
 	0, 2: 24;

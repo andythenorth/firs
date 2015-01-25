@@ -43,7 +43,7 @@ industry = Industry(id='sugar_refinery',
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_TROPIC'].enabled = True
-industry.economy_variations['BASIC_TROPIC'].prod_cargo_types = ['FOOD', 'PETR']
+industry.economy_variations['BASIC_TROPIC'].prod_cargo_types = ['FOOD', 'RFPR']
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].prod_cargo_types = ['SUGR']
 

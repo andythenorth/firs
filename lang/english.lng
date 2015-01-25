@@ -45,6 +45,7 @@ STR_CARGO_NAME_LUMBER                                                           
 STR_CARGO_NAME_METAL                                                            :Metal
 STR_CARGO_NAME_MILK                                                             :Milk
 STR_CARGO_NAME_MANUFACTURING_SUPPLIES                                           :Manufacturing Supplies
+STR_CARGO_NAME_NITRATES                                                         :Nitrates
 STR_CARGO_NAME_PETROL                                                           :Petrol
 STR_CARGO_NAME_RECYCLABLES                                                      :Recyclables
 STR_CARGO_NAME_SAND                                                             :Sand
@@ -70,6 +71,7 @@ STR_CARGO_UNIT_FRUITS                                                           
 STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} of timber
 STR_CARGO_UNIT_METAL                                                            :{WEIGHT} of metal
 STR_CARGO_UNIT_MILK                                                             :{VOLUME} of milk
+STR_CARGO_UNIT_NITRATES                                                         :{WEIGHT} of nitrates
 STR_CARGO_UNIT_MNSP                                                             :{SIGNED_WORD} crate{P 0 "" s} of manufacturing supplies
 STR_CARGO_UNIT_PETROL                                                           :{VOLUME} of petrol
 STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} of recyclables
@@ -96,6 +98,7 @@ STR_CID_LUMBER                                                                  
 STR_CID_MANUFACTURING_SUPPLIES                                                  :{TINYFONT}MS
 STR_CID_METAL                                                                   :{TINYFONT}MT
 STR_CID_MILK                                                                    :{TINYFONT}MK
+STR_CID_NITRATES                                                                :{TINYFONT}NI
 STR_CID_PETROL                                                                  :{TINYFONT}PT
 STR_CID_RECYCLABLES                                                             :{TINYFONT}RC
 STR_CID_SAND                                                                    :{TINYFONT}SA
@@ -126,6 +129,7 @@ STR_EXTRA_BREWERY_GRAIN_SUBSTR                                                  
 STR_EXTRA_BREWERY_FRUIT_SUBSTR                                                  :5,000l per 8t fruit delivered{}
 STR_EXTRA_BRICKWORKS                                                            :{BLACK}Cargo production:{}  2t per 8t coal delivered{}  2t per 8t sand delivered{}  4t per 8t clay delivered{}{}Production steps up if two or more cargos are delivered within a month of each other.
 STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Cargo production:{}  2t per 8t coal delivered{}  2t per 8t clay delivered{}  4t per 8t stone delivered{}{}Production steps up if two or more cargos are delivered within a month of each other.
+STR_EXTRA_CHEMICAL_PLANT                                                        :TODO
 STR_EXTRA_DAIRY                                                                 :{BLACK}Cargo production:{}  3t per 8 crates manufacturing supplies delivered{}  5t per 8,000l milk delivered{}{}Production steps up if both cargos are delivered within a month of each other.
 STR_EXTRA_FERTILIZER_PLANT                                                      :{BLACK}Cargo production:{}  8 crates per 8,000l chemicals delivered
 STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Cargo production:{}  3t per 8 crates manufacturing supplies delivered{}  5t per 8t fish delivered{}{}Production steps up if both cargos are delivered within a month of each other.
@@ -196,6 +200,7 @@ STR_IND_BRICK_WORKS                                                             
 STR_IND_BUILDERS_YARD                                                           :Builders Yard
 STR_IND_BULK_TERMINAL                                                           :Bulk Terminal
 STR_IND_CEMENT_PLANT                                                            :Cement Plant
+STR_IND_CHEMICAL_PLANT                                                          :Chemical Plant
 STR_IND_CLAY_PIT                                                                :Clay Pit
 STR_IND_COFFEE_ESTATE                                                           :Coffee Estate
 STR_IND_FIBRE_CROP_FARM                                                         :Fibre Crop Farm
@@ -211,7 +216,6 @@ STR_IND_FURNITURE_FACTORY                                                       
 STR_IND_GENERAL_STORE                                                           :General Store
 STR_IND_GLASS_WORKS                                                             :Glass Works
 STR_IND_GRAIN_MILL                                                              :Grain Mill
-STR_IND_GUANO_MINE                                                              :Guano Mine
 STR_IND_HARDWARE_STORE                                                          :Hardware Store
 STR_IND_HOTEL                                                                   :Hotel
 STR_IND_IRON_WORKS                                                              :Iron Works
@@ -223,6 +227,7 @@ STR_IND_METAL_FABRICATION_PLANT                                                 
 STR_IND_METAL_FOUNDRY                                                           :Metal Workshop
 STR_IND_MIXEDFARM                                                               :Mixed Farm
 STR_IND_ORCHARD_PIGGERY                                                         :Orchard and Piggery
+STR_IND_NITRATE_MINE                                                            :Nitrate Mine
 STR_IND_PETROLPUMP                                                              :Petrol Station
 STR_IND_PLASTICS_PLANT                                                          :Plastics Plant
 STR_IND_PORT                                                                    :Port

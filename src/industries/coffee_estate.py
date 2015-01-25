@@ -37,6 +37,8 @@ industry = Industry(id='coffee_estate',
                     )
 
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
+industry.economy_variations['BASIC_TROPIC'].enabled = True
+industry.economy_variations['BASIC_TROPIC'].prod_multiplier = '[9, 9]'
 
 building_0 = industry.add_sprite(
     sprite_number = 1633,

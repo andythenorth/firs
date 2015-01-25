@@ -1,7 +1,7 @@
 from cargo import Cargo
 
 cargo = Cargo(id = 'coffee',
-              number = '15',
+              number = '10',
               type_name = 'string(STR_CARGO_NAME_COFFEE)',
               unit_name = 'string(STR_CARGO_NAME_COFFEE)',
               type_abbreviation = 'string(STR_CID_COFFEE)',
@@ -24,5 +24,4 @@ cargo = Cargo(id = 'coffee',
 
 cargo.economy_variations['FIRS']['disabled'] = True
 cargo.economy_variations['BASIC_ARCTIC']['disabled'] = True
-cargo.economy_variations['BASIC_TROPIC']['disabled'] = True
 cargo.economy_variations['BASIC_TEMPERATE']['disabled'] = True

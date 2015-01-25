@@ -42,7 +42,6 @@ industry = Industry(id='petrol_pump',
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_ARCTIC'].enabled = True
-industry.economy_variations['BASIC_TROPIC'].enabled = True
 
 industry.add_tile(id='petrol_pump_tile')
 
