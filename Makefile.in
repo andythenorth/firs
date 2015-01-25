@@ -11,7 +11,7 @@ MAIN_SRC_FILE := generated/pnml/firs.pnml
 NML_FILE := generated/firs.nml
 
 GENERATE_PNML = $(MAIN_SRC_FILE)
-GENERATE_DOC  = doc html_docs
+GENERATE_DOC  = html_docs
 INDUSTRY_PY_SRC = $(wildcard src/industries/[a-z]*.py)
 INDUSTRY_PYPNML_SRC = $(INDUSTRY_PY_SRC:.py=.pypnml)
 INDUSTRY_SOURCES = $(INDUSTRY_PY_SRC) $(INDUSTRY_PYPNML_SRC)
@@ -33,6 +33,8 @@ DOCS_SOURCES = src/render_docs.py $(DOCS_SRC)
 html_docs: $(DOCS_SOURCES) $(INDUSTRY_SOURCES) $(CARGO_SOURCES) $(CONSTANTS) $(MODULES)
 	$(_E) "[HTML DOCS]"
 	$(_V) PYTHONPATH=${PYTHONPATH2} ${PYTHON2} src/render_docs.py '${REPO_TITLE}' '${REPO_REVISION}' '${TEST_INDUSTRY}' '${NO_MP}'
+
+$(DOC_FILES): html_docs
 
 ################################################################
 # Definitions which extend the common rules
