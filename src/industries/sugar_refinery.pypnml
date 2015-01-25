@@ -50,6 +50,12 @@ ${industry.get_industry_layouts_as_tilelayouts()}
  * Definition of the industry
  * *************************************************/
 
+CHECK_INCOMPATIBLE(sugar_refinery, 56, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
+CHECK_INCOMPATIBLE(arable_farm,    16, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_sugar_refinery)
+CHECK_FOUNDER     (${industry.id}_arable_farm)
+
+SWITCH_COLOUR_SCHEME1(${industry.id}_colour)
+
 /* for secondary production template */
 #define THIS_NUM_OUTPUT_CARGOS    1
 #define THIS_PROD_RATIO_CARGO1    3
@@ -62,13 +68,6 @@ ${industry.get_industry_layouts_as_tilelayouts()}
 #define THIS_BOOST_31             5
 #define THIS_BOOST_32             0
 #define THIS_STR_DEBUG_TEXT       STR_EXTRA_TEXT_DEBUG_SECONDARY
-
-
-CHECK_INCOMPATIBLE(sugar_refinery, 56, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
-CHECK_INCOMPATIBLE(arable_farm,    16, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_sugar_refinery)
-CHECK_FOUNDER     (${industry.id}_arable_farm)
-
-SWITCH_COLOUR_SCHEME1(${industry.id}_colour)
 
 #include "../../src/templates/produce_secondary.pnml"
 #include "../../src/templates/check_secondary_production_level.pnml"
