@@ -20,7 +20,7 @@ cargo = Cargo(id = 'nitrates',
               single_penalty_length = '255',
               price_factor = '82.5862884521',
               capacity_multiplier = '1',
-              icon_indices = (13, 1))
+              icon_indices = (6, 2))
 
 cargo.economy_variations['FIRS']['disabled'] = True
 cargo.economy_variations['BASIC_TEMPERATE']['disabled'] = True
