@@ -58,7 +58,7 @@ STR_CARGO_NAME_WOOL                                                             
 
 STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} de alcohol
 STR_CARGO_UNIT_BAUXITE                                                          :{WEIGHT} de bauxita
-STR_CARGO_UNIT_BEANS                                                            :{WEIGHT} de Judías
+STR_CARGO_UNIT_BEANS                                                            :{WEIGHT} de judías
 STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WEIGHT} de materiales de construcción
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} de productos químicos
 STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} de arcilla
@@ -121,7 +121,7 @@ STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE                                             
 STR_ERR_LOCATION_LIMIT_1_PER_TOWN                                               :solamente se permite una industria de este tipo por pueblo.
 
 STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}Producción:{} 2t por cada 8t de bauxita entregadas{} 2t por cada 8000l de productos químicos entregados{} 4t por cada 8t de chatarra entregadas{}{}La producción se incrementa si dos o más cargas son entregadas en un intervalo inferior a un mes.
-STR_EXTRA_BIOREFINERY                                                           :{BLACK}Producción:{} 6,000l por cada 8t de grano entregadas{} 6,000l por cada 8t de azúcar entregadas
+STR_EXTRA_BIOREFINERY                                                           :{BLACK}Producción:{} 6,000l por cada 8t de grano entregadas{} 6,000l por cada 8t de remolacha azucarera entregadas
 STR_EXTRA_BREWERY                                                               :{BLACK}Producción:{} 3,000l por cada 8 cajas de suministros de manufactura entregadas{} {STRING} {STRING}{}La producción se incrementa si se entregan suministros de manufactura con menos de un mes de diferencia desde el envío de una de las otras cargas.
 STR_EXTRA_BREWERY_GRAIN_SUBSTR                                                  :5,000l por cada 8t de grano entregadas{}
 STR_EXTRA_BREWERY_FRUIT_SUBSTR                                                  :5,000l por cada 8t de frutas entregadas{}
@@ -154,6 +154,7 @@ STR_EXTRA_SUGAR_REFINERY                                                        
 STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Producción:{} 3 cajas por cada 8 cajas de suministros de manufactura entregadas{} {STRING} {STRING}{}La producción se incrementa si se entregan suministros de manufactura con menos de un mes de diferencia desde el envío de una de las otras cargas.
 STR_EXTRA_TEXTILE_MILL_WOOL_SUBSTR                                              :5 cajas por cada 8 fardos de lana entregados{}
 STR_EXTRA_TEXTILE_MILL_PLANT_FIBRES_SUBSTR                                      :5 cajas por cada 8t de fibras vegetales entregadas{}
+STR_EXTRA_VEHICLE_FACTORY                                                       :Por Hacer :( En breves disponible :)
 
 STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ DEBUG ------------{}Producción este mes:{}Carga 1: {WHITE}{COMMA}{BLACK}{}Carga 2: {WHITE}{COMMA}{BLACK}{}Días desde la última entrega: {WHITE}{COMMA}{BLACK}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Producción máxima alcanzada
@@ -236,19 +237,20 @@ STR_IND_SUGAR_PLANTATION                                                        
 STR_IND_SUGAR_REFINERY                                                          :{G=f}Refinería de Azúcar
 STR_IND_TEXTILE_MILL                                                            :{G=f}Hilatura Textil
 STR_IND_TRADING_POST                                                            :Comercio (ultramarinos, mercancía en general)
+STR_IND_VEHICLE_FACTORY                                                         :Fábrica de Vehículos
 
-STR_STATION_ANIMALS                                                             :Mercado de ganado (caballos, etc...)
-STR_STATION_FARM                                                                :Hacienda (casa rural)
-STR_STATION_FISHMARKET                                                          :Pescadería (lonja)
+STR_STATION_ANIMALS                                                             :Mercado de ganado (Caballos, etc...)
+STR_STATION_FARM                                                                :Hacienda (Casa rural)
+STR_STATION_FISHMARKET                                                          :Pescadería (Lonja)
 STR_STATION_HEAVY_INDUSTRY                                                      :Calle James Watt
 STR_STATION_INDUSTRY_ESTATE                                                     :Polígono industrial
 STR_STATION_INDUSTRY_HARBOUR                                                    :Puerto industrial
 STR_STATION_MARKET                                                              :Mercado
 STR_STATION_MILL                                                                :Molino
 STR_STATION_MINE                                                                :Carretera Tanner (Minas)
-STR_STATION_PIT                                                                 :Pozo (cantera)
+STR_STATION_PIT                                                                 :Pozo (Cantera)
 STR_STATION_PLANTATION                                                          :Plantación
 STR_STATION_POWERHUNGRY                                                         :Central eléctrica
-STR_STATION_REFINERY                                                            :Refinería (zona portuaria)
+STR_STATION_REFINERY                                                            :Refinería (Zona portuaria)
 STR_STATION_TOWN                                                                :Antiguo Ayuntamiento
-STR_STATION_WATER                                                               :Pequeño arenal (costa, orilla)
+STR_STATION_WATER                                                               :Pequeño arenal (Costa, orilla, etc...)

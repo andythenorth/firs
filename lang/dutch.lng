@@ -52,6 +52,7 @@ STR_CARGO_NAME_SCRAP_METAL                                                      
 STR_CARGO_NAME_STONE                                                            :Grind
 STR_CARGO_NAME_SUGAR_BEET                                                       :Suikerbieten
 STR_CARGO_NAME_SUGARCANE                                                        :Suikerriet
+STR_CARGO_NAME_VEHICLE_PARTS                                                    :Voertuigonderdelen
 STR_CARGO_NAME_WOOL                                                             :Wol
 
 STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} alcohol
@@ -77,6 +78,7 @@ STR_CARGO_UNIT_SCRAP_METAL                                                      
 STR_CARGO_UNIT_STONE                                                            :{WEIGHT} grind
 STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} suikerbieten
 STR_CARGO_UNIT_SUGARCANE                                                        :{WEIGHT} suikerriet
+STR_CARGO_UNIT_VEHICLE_PARTS                                                    :{SIGNED_WORD} krat{P 0 "" ten} voertuigonderdelen
 STR_CARGO_UNIT_WOOL                                                             :{SIGNED_WORD} ba{P 0 al len} wol
 
 STR_CID_ALCOHOL                                                                 :{TINYFONT}AL
@@ -101,6 +103,7 @@ STR_CID_SCRAP_METAL                                                             
 STR_CID_STONE                                                                   :{TINYFONT}GD
 STR_CID_SUGAR_BEET                                                              :{TINYFONT}SB
 STR_CID_SUGARCANE                                                               :{TINYFONT}SR
+STR_CID_VEHICLE_PARTS                                                           :{TINYFONT}VO
 STR_CID_WOOL                                                                    :{TINYFONT}WL
 
 STR_ERR_CLIMATE_TOYLAND                                                         :{ORANGE}FIRS is niet ontworpen om in het speelgoedlandschap gebruikt te worden.
@@ -150,6 +153,7 @@ STR_EXTRA_SUGAR_REFINERY                                                        
 STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Productie:{}  3 kratten voor iedere 8 kratten afgeleverde productiematerialen{} {STRING} {STRING}{}Productie wordt verhoogd als productiematerialen binnen een maand van andere vracht worden afgeleverd.
 STR_EXTRA_TEXTILE_MILL_WOOL_SUBSTR                                              :5 kratten voor iedere 8 balen afgeleverd wol{}
 STR_EXTRA_TEXTILE_MILL_PLANT_FIBRES_SUBSTR                                      :5 kratten voor iedere 8 balen afgeleverd katoen{}
+STR_EXTRA_VEHICLE_FACTORY                                                       :Nog te doen
 
 STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ DEBUG ------------{}productie deze maand:{}Goederen 1: {WHITE}{COMMA}{BLACK}{}Goederen 2: {WHITE}{COMMA}{BLACK}{}Dagen sinds laatste levering: {WHITE}{COMMA}{BLACK}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Maximale productiecapaciteit bereikt.
@@ -232,6 +236,7 @@ STR_IND_SUGAR_PLANTATION                                                        
 STR_IND_SUGAR_REFINERY                                                          :Suikerfabriek
 STR_IND_TEXTILE_MILL                                                            :Textielfabriek
 STR_IND_TRADING_POST                                                            :Handelspost
+STR_IND_VEHICLE_FACTORY                                                         :Autofabriek
 
 STR_STATION_ANIMALS                                                             :Paardenmarkt
 STR_STATION_FARM                                                                :Landhuis
