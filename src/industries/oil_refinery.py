@@ -34,7 +34,6 @@ industry = Industry(id='oil_refinery',
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_ARCTIC'].enabled = True
-industry.economy_variations['BASIC_TROPIC'].enabled = True
 
 # industry uses layouts and sprites from default game, no custom layouts etc
 
