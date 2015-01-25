@@ -28,7 +28,7 @@ industry = Industry(id='food_processor',
                     prod_multiplier='[0, 0]',
                     substitute='0',
                     new_ind_msg='TTD_STR_NEWS_INDUSTRY_CONSTRUCTION',
-                    map_colour='36',
+                    map_colour='35',
                     prod_decrease_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_GENERAL',
                     life_type='IND_LIFE_TYPE_PROCESSING',
                     min_cargo_distr='5',
@@ -39,7 +39,7 @@ industry = Industry(id='food_processor',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_IND_FOOD_PROCESSOR))',
                     fund_cost_multiplier='125',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
-                    extra_text_industry='STR_EXTRA_SUGAR_REFINERY')
+                    extra_text_industry='STR_EXTRA_FOOD_PROCESSING_PLANT')
 
 industry.economy_variations['BASIC_TROPIC'].enabled = True
 
