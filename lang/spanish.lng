@@ -46,6 +46,7 @@ STR_CARGO_NAME_LUMBER                                                           
 STR_CARGO_NAME_METAL                                                            :{G=m}Metal
 STR_CARGO_NAME_MILK                                                             :{G=f}Leche
 STR_CARGO_NAME_MANUFACTURING_SUPPLIES                                           :{G=m}Suministros de Manufactura
+STR_CARGO_NAME_NITRATES                                                         :Nitratos
 STR_CARGO_NAME_PETROL                                                           :{G=m}Fueloil
 STR_CARGO_NAME_RECYCLABLES                                                      :{G=m}Reciclables
 STR_CARGO_NAME_SAND                                                             :{G=f}Arena
@@ -71,6 +72,7 @@ STR_CARGO_UNIT_FRUITS                                                           
 STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} de tablas
 STR_CARGO_UNIT_METAL                                                            :{WEIGHT} de metal
 STR_CARGO_UNIT_MILK                                                             :{VOLUME} de leche
+STR_CARGO_UNIT_NITRATES                                                         :{WEIGHT} de nitratos
 STR_CARGO_UNIT_MNSP                                                             :{SIGNED_WORD} caja{P 0 "" s} de suministros de manufactura
 STR_CARGO_UNIT_PETROL                                                           :{VOLUME} de fueloil
 STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} de reciclables
@@ -97,6 +99,7 @@ STR_CID_LUMBER                                                                  
 STR_CID_MANUFACTURING_SUPPLIES                                                  :{TINYFONT}MS
 STR_CID_METAL                                                                   :{TINYFONT}ML
 STR_CID_MILK                                                                    :{TINYFONT}LC
+STR_CID_NITRATES                                                                :{TINYFONT}NI
 STR_CID_PETROL                                                                  :{TINYFONT}FO
 STR_CID_RECYCLABLES                                                             :{TINYFONT}RC
 STR_CID_SAND                                                                    :{TINYFONT}AR
@@ -127,9 +130,11 @@ STR_EXTRA_BREWERY_GRAIN_SUBSTR                                                  
 STR_EXTRA_BREWERY_FRUIT_SUBSTR                                                  :5,000l por cada 8t de frutas entregadas{}
 STR_EXTRA_BRICKWORKS                                                            :{BLACK}Producción:{} 2t por cada 8t de carbón entregadas{} 2t por cada 8t de arena entregadas{} 4t por cada 8t de arcilla entregadas{}{}La producción se incrementa si dos o más cargas son entregadas en un intervalo inferior a un mes.
 STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Producción:{} 2t por cada 8t de carbón entregadas{} 2t por cada 8t de arcilla entregadas{} 4t por cada 8t de piedra entregadas{}{}La producción se incrementa si dos o más cargas son entregadas en un intervalo inferior a un mes.
+STR_EXTRA_CHEMICAL_PLANT                                                        :{BLACK}Producción:{} 6,000l por cada 8,000l de petróleo entregados{} 6,000l por cada 8t de nitratos entregadas
 STR_EXTRA_DAIRY                                                                 :{BLACK}Producción:{} 3t por cada 8 cajas de suministros de manufactura entregadas{} 5t por cada 8,000l de leche entregados{}{}La producción se incrementa si ambas cargas son entregadas con menos de un mes de diferencia entre sí.
 STR_EXTRA_FERTILIZER_PLANT                                                      :{BLACK}Producción:{} 8 cajas por cada 8,000l de productos químicos entregados
 STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Producción:{} 3t por cada 8 cajas de suministros de manufactura entregadas{} 5t por cada 8t de pescado entregadas{}{}La producción se incrementa si ambas cargas son entregadas con menos de un mes de diferencia entre sí.
+STR_EXTRA_FOOD_PROCESSING_PLANT                                                 :{BLACK}Producción:{} 6t por cada 8t de judías entregadas{} 6t por cada 8t de frutas entregadas
 STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Producción:{} 3t por cada 8 cajas de suministros de manufactura entregadas{} 5t por cada 8t de tablas entregadas{}{}La producción se incrementa si ambas cargas son entregadas con menos de un mes de diferencia entre sí.
 STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Produce productos de cristal tales como botellas, jarras o ventanas.{}{}Producción:{} 6t por cada 8t de arena entregadas{} 2t por cada 8,000l de productos químicos entregados{}{}La producción se incrementa si ambas cargas son entregadas con menos de un mes de diferencia entre sí.
 STR_EXTRA_GRAIN_MILL                                                            :{BLACK}Producción:{} 3t por cada 8 cajas de suministros de manufactura entregadas{} 5t por cada 8t de grano entregadas{}{}La producción se incrementa si ambas cargas son entregadas con menos de un mes de diferencia entre sí.
@@ -150,11 +155,11 @@ STR_EXTRA_RECYCLING_DEPOT                                                       
 STR_EXTRA_SAWMILL                                                               :{BLACK}Aserradero.{}{}Producción:{} 6t por cada 8t de madera entregadas
 STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Produce objetos de metal forjado como herramientas, puertas, útiles de labranza, palas y herraduras.{}{}Producción:{} 8 cajas por cada 8t de metal entregadas
 STR_EXTRA_STEELMILL                                                             :{BLACK}Producción:{} 3t por cada 8t de mineral de hierro entregadas{} 2t por cada 8t de carbón entregadas{} 3t por cada 8t de chatarra entregadas{}{}La producción se incrementa si dos o más cargas son entregadas en un intervalo inferior a un mes.
-STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Producción:{} 3t por cada 8 cajas de suministros de manufactura entregadas{} 5t por cada 8t de caña de azúcar entregadas{}{}La producción se incrementa si dos o más cargas son entregadas en un intervalo inferior a un mes.
+STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Producción:{} 3t por cada 8 cajas de suministros de manufactura entregadas{} 5t por cada 8t de azúcar (aún sin refinar y recibida como remolacha azucarera o bien como caña de azúcar) entregadas{}{}La producción se incrementa si dos o más cargas son entregadas en un intervalo inferior a un mes.
 STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Producción:{} 3 cajas por cada 8 cajas de suministros de manufactura entregadas{} {STRING} {STRING}{}La producción se incrementa si se entregan suministros de manufactura con menos de un mes de diferencia desde el envío de una de las otras cargas.
 STR_EXTRA_TEXTILE_MILL_WOOL_SUBSTR                                              :5 cajas por cada 8 fardos de lana entregados{}
 STR_EXTRA_TEXTILE_MILL_PLANT_FIBRES_SUBSTR                                      :5 cajas por cada 8t de fibras vegetales entregadas{}
-STR_EXTRA_VEHICLE_FACTORY                                                       :Por Hacer :( En breves disponible :)
+STR_EXTRA_VEHICLE_FACTORY                                                       :{BLACK}Producción:{} 8 cajas por cada 8 cajas de piezas de vehículos entregadas{} 8 cajas por cada 8 cajas de suministros de manufactura entregadas
 
 STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ DEBUG ------------{}Producción este mes:{}Carga 1: {WHITE}{COMMA}{BLACK}{}Carga 2: {WHITE}{COMMA}{BLACK}{}Días desde la última entrega: {WHITE}{COMMA}{BLACK}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Producción máxima alcanzada
@@ -197,6 +202,7 @@ STR_IND_BRICK_WORKS                                                             
 STR_IND_BUILDERS_YARD                                                           :{G=m}Almacén de Construcción
 STR_IND_BULK_TERMINAL                                                           :Terminal de carga a granel
 STR_IND_CEMENT_PLANT                                                            :{G=f}Planta de Cemento
+STR_IND_CHEMICAL_PLANT                                                          :Planta Química
 STR_IND_CLAY_PIT                                                                :{G=f}Cantera de Arcilla
 STR_IND_COFFEE_ESTATE                                                           :Cafetal (plantación de cafés o cafetos)
 STR_IND_FIBRE_CROP_FARM                                                         :Granja-cosechadora de fibras
@@ -223,6 +229,7 @@ STR_IND_METAL_FABRICATION_PLANT                                                 
 STR_IND_METAL_FOUNDRY                                                           :{G=m}Fundición
 STR_IND_MIXEDFARM                                                               :{G=f}Granja Mixta
 STR_IND_ORCHARD_PIGGERY                                                         :Huerta y criaderos de ganado (porcino, mayormente)
+STR_IND_NITRATE_MINE                                                            :Mina de Nitratos
 STR_IND_PETROLPUMP                                                              :{G=f}Gasolinera
 STR_IND_PLASTICS_PLANT                                                          :{G=f}Fábrica de Plásticos
 STR_IND_PORT                                                                    :{G=m}Puerto

@@ -32,6 +32,7 @@ STR_PARAM_VALUE_ECONOMIES_TEST_3                                                
 
 STR_CARGO_NAME_ALCOHOL                                                          :{G=p}Spirituosen
 STR_CARGO_NAME_BAUXITE                                                          :{G=n}Bauxit
+STR_CARGO_NAME_BEANS                                                            :Bohnen
 STR_CARGO_NAME_BUILDING_MATERIALS                                               :{G=p}Baustoffe
 STR_CARGO_NAME_CHEMICALS                                                        :{G=p}Chemikalien
 STR_CARGO_NAME_CLAY                                                             :{G=p}Ton
@@ -45,6 +46,7 @@ STR_CARGO_NAME_LUMBER                                                           
 STR_CARGO_NAME_METAL                                                            :{G=n}Metall
 STR_CARGO_NAME_MILK                                                             :{G=w}Milch
 STR_CARGO_NAME_MANUFACTURING_SUPPLIES                                           :{G=p}Produktionsgüter
+STR_CARGO_NAME_NITRATES                                                         :Nitrate
 STR_CARGO_NAME_PETROL                                                           :{G=m}Treibstoff
 STR_CARGO_NAME_RECYCLABLES                                                      :{G=p}Wertstoffe
 STR_CARGO_NAME_SAND                                                             :{G=m}Sand
@@ -52,10 +54,12 @@ STR_CARGO_NAME_SCRAP_METAL                                                      
 STR_CARGO_NAME_STONE                                                            :{G=p}Steine
 STR_CARGO_NAME_SUGAR_BEET                                                       :{G=p}Zuckerrüben
 STR_CARGO_NAME_SUGARCANE                                                        :{G=n}Zuckerrohr
+STR_CARGO_NAME_VEHICLE_PARTS                                                    :Fahrzeugteile
 STR_CARGO_NAME_WOOL                                                             :{G=w}Wolle
 
 STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} Spirituosen
 STR_CARGO_UNIT_BAUXITE                                                          :{WEIGHT} Bauxit
+STR_CARGO_UNIT_BEANS                                                            :{WEIGHT} Bohnen
 STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WEIGHT} Baustoffe
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} Chemikalien
 STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} Ton
@@ -68,6 +72,7 @@ STR_CARGO_UNIT_FRUITS                                                           
 STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} Schnittholz
 STR_CARGO_UNIT_METAL                                                            :{WEIGHT} Metall
 STR_CARGO_UNIT_MILK                                                             :{VOLUME} Milch
+STR_CARGO_UNIT_NITRATES                                                         :{WEIGHT} Nitrate
 STR_CARGO_UNIT_MNSP                                                             :{SIGNED_WORD} Kiste{P 0 "" n} Produktionsgüter
 STR_CARGO_UNIT_PETROL                                                           :{VOLUME} Treibstoff
 STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} Wertstoffe
@@ -76,10 +81,12 @@ STR_CARGO_UNIT_SCRAP_METAL                                                      
 STR_CARGO_UNIT_STONE                                                            :{WEIGHT} Steine
 STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} Zuckerrüben
 STR_CARGO_UNIT_SUGARCANE                                                        :{WEIGHT} Zuckerrohr
+STR_CARGO_UNIT_VEHICLE_PARTS                                                    :{SIGNED_WORD} Kiste{P 0 "" n} Fahrzeugteile
 STR_CARGO_UNIT_WOOL                                                             :{SIGNED_WORD} Ballen Wolle
 
 STR_CID_ALCOHOL                                                                 :{TINYFONT}AL
 STR_CID_BAUXITE                                                                 :{TINYFONT}BX
+STR_CID_BEANS                                                                   :{TINYFONT}BN
 STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}BS
 STR_CID_CHEMICALS                                                               :{TINYFONT}CH
 STR_CID_CLAY                                                                    :{TINYFONT}TN
@@ -92,6 +99,7 @@ STR_CID_LUMBER                                                                  
 STR_CID_MANUFACTURING_SUPPLIES                                                  :{TINYFONT}PG
 STR_CID_METAL                                                                   :{TINYFONT}ME
 STR_CID_MILK                                                                    :{TINYFONT}ML
+STR_CID_NITRATES                                                                :{TINYFONT}NI
 STR_CID_PETROL                                                                  :{TINYFONT}TS
 STR_CID_RECYCLABLES                                                             :{TINYFONT}WS
 STR_CID_SAND                                                                    :{TINYFONT}SD
@@ -99,6 +107,7 @@ STR_CID_SCRAP_METAL                                                             
 STR_CID_STONE                                                                   :{TINYFONT}ST
 STR_CID_SUGAR_BEET                                                              :{TINYFONT}ZU
 STR_CID_SUGARCANE                                                               :{TINYFONT}ZR
+STR_CID_VEHICLE_PARTS                                                           :{TINYFONT}FT
 STR_CID_WOOL                                                                    :{TINYFONT}WL
 
 STR_ERR_CLIMATE_TOYLAND                                                         :{ORANGE}FIRS ist nicht für die Nutzung mit dem Spielzeugland ausgelegt.
@@ -121,13 +130,15 @@ STR_EXTRA_BREWERY_GRAIN_SUBSTR                                                  
 STR_EXTRA_BREWERY_FRUIT_SUBSTR                                                  :5,000l pro gelieferter 8t Früchte{}
 STR_EXTRA_BRICKWORKS                                                            :{BLACK}Produktion:{}  2t pro gelieferter 8t Kohle{}  2t pro gelieferter 8t Sand{}  4t pro gelieferter 8t Ton{}{}Produktion steigt, wenn zwei oder mehr Frachtarten innerhalb eines Monats geliefert werden.
 STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Produktion:{}  2t pro gelieferter 8t Kohle{}  2t pro gelieferter 8t Ton{}  4t pro gelieferter 8t Steine{}{}Produktion steigt, wenn zwei oder mehr Frachtarten innerhalb eines Monats geliefert werden.
+STR_EXTRA_CHEMICAL_PLANT                                                        :{BLACK}Produktion:{}  6,000l pro gelieferter 8,000l Öl{}  6,000l pro gelieferter 8t Nitrate
 STR_EXTRA_DAIRY                                                                 :{BLACK}Produktion:{}  3t pro gelieferter 8 Kisten Produktionsgüter{}  5t pro gelieferter 8,000l Milch{}{}Produktion steigt, wenn beide Frachtarten innerhalb eines Monats geliefert werden.
 STR_EXTRA_FERTILIZER_PLANT                                                      :{BLACK}Produktion:{}  8 Kisten pro gelieferter 8,000l Chemikalien
 STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Produktion:{}  3t pro gelieferter 8 Kisten Produktionsgüter{}  5t pro gelieferter 8t Fisch{}{}Produktion steigt, wenn beide Frachtarten innerhalb eines Monats geliefert werden.
+STR_EXTRA_FOOD_PROCESSING_PLANT                                                 :{BLACK}Produktion:{}  6t pro gelieferter 8t Bohnen{}  6t pro gelieferter 8t Früchte
 STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Produktion:{}  3t pro gelieferter 8 Kisten Produktionsgüter{}  5t pro gelieferter 8t Schnittholz{}{}Produktion steigt, wenn beide Frachtarten innerhalb eines Monats geliefert werden.
 STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Produziert Glaserzeugnisse wie z.B. Flaschen, Gläser und Fensterscheiben.{}{}Produktion:{}  6t pro gelieferter 8t Sand{}  2t pro gelieferter 8,000l Chemikalien{}{}Produktion steigt, wenn beide Frachtarten innerhalb eines Monats geliefert werden.
 STR_EXTRA_GRAIN_MILL                                                            :{BLACK}Produktion:{}  3t pro gelieferter 8 Kisten Produktionsgüter{}  5t pro gelieferter 8t Getreide{}{}Produktion steigt, wenn beide Frachtarten innerhalb eines Monats geliefert werden.
-STR_EXTRA_IRON_WORKS                                                            :{BLACK}Produktion:{}  2t pro gelieferter 8t Holz{}  2t pro gelieferter 8t Eisenerz{}{}Produktion steigt, wenn beide Frachtarten innerhalb eines Monats geliefert werden.
+STR_EXTRA_IRON_WORKS                                                            :{BLACK}Produktion:{}  3t pro gelieferter 8t Eisenerz{} 3t pro gelieferter 8t Holz{} 2t pro gelieferter 8t Sand{}{}Produktion steigt, wenn zwei oder mehr Frachtarten innerhalb eines Monats geliefert werden.
 STR_EXTRA_LIME_KILN                                                             :{BLACK}Produktion:{}  3t pro gelieferter 8t Steine{}  3t pro gelieferter 8t Kohle{}{}Produktion steigt, wenn beide Frachtarten innerhalb eines Monats geliefert werden.
 STR_EXTRA_LUMBER_YARD                                                           :{BLACK}Verarbeitet Schnittholz zu fertigen Holzprodukten.{}{}Produktion:{}  2t pro gelieferter 8,000l Chemikalien{}  6t pro gelieferter 8t Schnittholz{}{}Produktion steigt, wenn beide Frachtarten innerhalb eines Monats geliefert werden.
 STR_EXTRA_MACHINE_SHOP                                                          :{BLACK}Baut und wartet Maschinen.{}{}Produktion:{} 8 Kisten pro gelieferter 8,000l Treibstoff{} 8 Kisten pro gelieferter 8t Metall
@@ -143,11 +154,12 @@ STR_EXTRA_RECYCLING_PLANT                                                       
 STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}Produktion ist proportional zur Einwohnerzahl der Stadt
 STR_EXTRA_SAWMILL                                                               :{BLACK}Sägt Holz.{}{}Produktion:{} 6t pro gelieferter 8t Holz
 STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Verarbeitet Schmiedeeisen zu Gegenständen wie Zäunen, Werkzeugen, Pflügen, Schaufeln und Hufeisen.{}{}Produktion:{} 8 Kisten pro gelieferter 8t Metall
-STR_EXTRA_STEELMILL                                                             :{BLACK}Produktion:{}  2t pro gelieferter 8t Eisenerz{}  2t pro gelieferter 8t Kohle{}  4t pro gelieferter 8t Altmetall{}{}Produktion steigt, wenn zwei oder mehr Frachtarten innerhalb eines Monats geliefert werden.
+STR_EXTRA_STEELMILL                                                             :{BLACK}Produktion:{} 3t pro gelieferter 8t Eisenerz{} 2t pro gelieferter 8t Kohle{} 3t pro gelieferter 8t Altmetall{}  4t pro gelieferter 8t Altmetall{}{}Produktion steigt, wenn zwei oder mehr Frachtarten innerhalb eines Monats geliefert werden.
 STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Produktion:{}  3t pro gelieferter 8 Kisten Produktionsgüter{}  5t pro gelieferter 8t Rohrzucker{}{}Produktion steigt, wenn beide Frachtarten innerhalb eines Monats geliefert werden.
 STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Produktion:{}  3 Kisten pro gelieferter 8 Kisten Produktionsgüter{} {STRING} {STRING}{}Produktion steigt, wenn Produktionsgüter und andere benötigte Güter innerhalb eines Monats  geliefert werden.
 STR_EXTRA_TEXTILE_MILL_WOOL_SUBSTR                                              :5 Kisten pro gelieferter 8 Ballen Wolle{}
 STR_EXTRA_TEXTILE_MILL_PLANT_FIBRES_SUBSTR                                      :5 Kisten pro gelieferter 8 Ballen Pflanzenfasern{}
+STR_EXTRA_VEHICLE_FACTORY                                                       :{BLACK}Produktion:{}  8 Kisten pro gelieferter 8 Kisten Fahrzeugteile{}  8 Kisten pro gelieferter  8 Kisten Produktionsgüter
 
 STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ DEBUG ------------{}Produktion diesen Monat:{}Fracht 1: {WHITE}{COMMA}{BLACK}{}Fracht 2: {WHITE}{COMMA}{BLACK}{}Tage seit letzter Lieferung: {WHITE}{COMMA}{BLACK}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Maximale Produktion erreicht
@@ -190,6 +202,7 @@ STR_IND_BRICK_WORKS                                                             
 STR_IND_BUILDERS_YARD                                                           :{G=m}Bauhof
 STR_IND_BULK_TERMINAL                                                           :{G=m}Überseehafen
 STR_IND_CEMENT_PLANT                                                            :{G=w}Zementfabrik
+STR_IND_CHEMICAL_PLANT                                                          :Chemiefabrik
 STR_IND_CLAY_PIT                                                                :{G=w}Tongrube
 STR_IND_COFFEE_ESTATE                                                           :{G=w}Kaffeeplantage
 STR_IND_FIBRE_CROP_FARM                                                         :{G=w}Sisalplantage
@@ -200,6 +213,7 @@ STR_IND_FERTILISER_PLANT                                                        
 STR_IND_FISHING_GROUND                                                          :{G=p}Fischgründe
 STR_IND_FISHING_HARBOUR                                                         :{G=m}Fischereihafen
 STR_IND_FOOD_MARKET                                                             :{G=m}Lebensmittelladen
+STR_IND_FOOD_PROCESSOR                                                          :Lebensmittelfabrik
 STR_IND_FURNITURE_FACTORY                                                       :{G=w}Möbelfabrik
 STR_IND_GENERAL_STORE                                                           :{G=m}Laden
 STR_IND_GLASS_WORKS                                                             :{G=w}Glashütte
@@ -215,6 +229,7 @@ STR_IND_METAL_FABRICATION_PLANT                                                 
 STR_IND_METAL_FOUNDRY                                                           :{G=w}Gießerei
 STR_IND_MIXEDFARM                                                               :{G=m}Bauernhof
 STR_IND_ORCHARD_PIGGERY                                                         :{G=m}Obstgarten und Schweinezucht
+STR_IND_NITRATE_MINE                                                            :Nitrat-Mine
 STR_IND_PETROLPUMP                                                              :{G=w}Tankstelle
 STR_IND_PLASTICS_PLANT                                                          :{G=w}Plastikfabrik
 STR_IND_PORT                                                                    :{G=m}Hafen
@@ -229,6 +244,7 @@ STR_IND_SUGAR_PLANTATION                                                        
 STR_IND_SUGAR_REFINERY                                                          :{G=w}Zuckerraffinerie
 STR_IND_TEXTILE_MILL                                                            :{G=w}Textilfabrik
 STR_IND_TRADING_POST                                                            :{G=m}Handelsposten
+STR_IND_VEHICLE_FACTORY                                                         :Fahrzeugfabrik
 
 STR_STATION_ANIMALS                                                             :Viehmarkt
 STR_STATION_FARM                                                                :Landsitz
