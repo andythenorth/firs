@@ -116,14 +116,14 @@ industry.add_spritelayout(
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_2],
-    fences = ['nw','ne','se','sw']
+    fences = []
 )
 industry.add_spritelayout(
     id = 'iron_works_spritelayout_large_shed_clerestory_roof',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_3],
-    fences = ['nw','ne','se','sw']
+    fences = []
 )
 industry.add_spritelayout(
     id = 'iron_works_spritelayout_iron_pigs_anim',
@@ -137,7 +137,7 @@ industry.add_spritelayout(
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_4],
-    fences = ['nw','ne','se']
+    fences = ['nw','ne']
 )
 industry.add_spritelayout(
     id = 'iron_works_spritelayout_logs',
@@ -185,12 +185,12 @@ industry.add_industry_layout(
               (0, 1, 'iron_works_tile_anim_2', 'iron_works_spritelayout_iron_pigs_anim'),
               (0, 2, 'iron_works_tile_anim_1', 'iron_works_spritelayout_furnace_anim'),
               (0, 3, 'iron_works_tile_anim_2', 'iron_works_spritelayout_iron_pigs_anim'),
-              (0, 4, 'iron_works_tile', 'iron_works_spritelayout_large_shed_clerestory_roof'),
-              (1, 0, 'iron_works_tile', 'iron_works_spritelayout_large_shed'),
+              (0, 4, 'iron_works_tile', 'iron_works_spritelayout_large_shed'),
+              (1, 0, 'iron_works_tile', 'iron_works_spritelayout_large_shed_clerestory_roof'),
               (1, 1, 'iron_works_tile', 'iron_works_spritelayout_staithes'),
-              (1, 2, 'iron_works_tile', 'iron_works_spritelayout_staithes'),
-              (1, 3, 'iron_works_tile', 'iron_works_spritelayout_empty'),
-              (1, 4, 'iron_works_tile', 'iron_works_spritelayout_logs')
+              (1, 2, 'iron_works_tile', 'iron_works_spritelayout_large_shed_clerestory_roof'),
+              (1, 3, 'iron_works_tile', 'iron_works_spritelayout_logs'),
+              (1, 4, 'iron_works_tile', 'iron_works_spritelayout_empty')
     ]
 )
 industry.add_industry_layout(
@@ -207,4 +207,27 @@ industry.add_industry_layout(
               (4, 1, 'iron_works_tile', 'iron_works_spritelayout_empty')
     ]
 )
-
+industry.add_industry_layout(
+    id = 'iron_works_industry_layout_5',
+    layout = [(0, 0, 'iron_works_tile_anim_1', 'iron_works_spritelayout_furnace_anim'),
+              (0, 1, 'iron_works_tile_anim_2', 'iron_works_spritelayout_iron_pigs_anim'),
+              (1, 0, 'iron_works_tile_anim_1', 'iron_works_spritelayout_furnace_anim'),
+              (1, 1, 'iron_works_tile_anim_2', 'iron_works_spritelayout_iron_pigs_anim'),
+              (2, 0, 'iron_works_tile', 'iron_works_spritelayout_logs'),
+              (2, 1, 'iron_works_tile', 'iron_works_spritelayout_staithes'),
+              (3, 0, 'iron_works_tile', 'iron_works_spritelayout_large_shed_clerestory_roof'),
+              (3, 1, 'iron_works_tile', 'iron_works_spritelayout_large_shed')
+    ]
+)
+industry.add_industry_layout(
+    id = 'iron_works_industry_layout_6',
+    layout = [(0, 0, 'iron_works_tile', 'iron_works_spritelayout_large_shed'),
+              (0, 1, 'iron_works_tile', 'iron_works_spritelayout_staithes'),
+              (0, 2, 'iron_works_tile', 'iron_works_spritelayout_logs'),
+              (0, 3, 'iron_works_tile', 'iron_works_spritelayout_large_shed_clerestory_roof'),
+              (1, 0, 'iron_works_tile_anim_1', 'iron_works_spritelayout_furnace_anim'),
+              (1, 1, 'iron_works_tile_anim_2', 'iron_works_spritelayout_iron_pigs_anim'),
+              (1, 2, 'iron_works_tile_anim_1', 'iron_works_spritelayout_furnace_anim'),
+              (1, 3, 'iron_works_tile_anim_2', 'iron_works_spritelayout_iron_pigs_anim')
+    ]
+)
