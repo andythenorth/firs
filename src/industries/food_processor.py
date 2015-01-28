@@ -55,47 +55,22 @@ spriteset_ground_overlay = industry.add_spriteset(
 )
 spriteset_1 = industry.add_spriteset(
     id = 'food_processor_spriteset_1',
-    sprites = [(10, 10, 64, 62, -31, -31)],
-    zextent = 32
+    sprites = [(10, 10, 64, 87, -31, -56)],
+    zextent = 64
 )
 spriteset_2 = industry.add_spriteset(
     id = 'food_processor_spriteset_2',
-    sprites = [(80, 10, 64, 62, -31, -31)],
-    zextent = 32
+    sprites = [(80, 10, 64, 87, -31, -56)],
+    zextent = 64
 )
 spriteset_3 = industry.add_spriteset(
     id = 'food_processor_spriteset_3',
-    sprites = [(150, 10, 64, 55, -31, -24)],
+    sprites = [(150, 10, 64, 87, -31, -56)],
     zextent = 32
 )
 spriteset_4 = industry.add_spriteset(
     id = 'food_processor_spriteset_4',
-    sprites = [(220, 10, 64, 55, -31, -24)],
-    zextent = 32
-)
-spriteset_5 = industry.add_spriteset(
-    id = 'food_processor_spriteset_5',
-    sprites = [(290, 10, 64, 55, -31, -24)],
-    zextent = 32
-)
-spriteset_6 = industry.add_spriteset(
-    id = 'food_processor_spriteset_6',
-    sprites = [(360, 10, 64, 87, -31, -56)],
-    zextent = 52
-)
-spriteset_7 = industry.add_spriteset(
-    id = 'food_processor_spriteset_7',
-    sprites = [(430, 10, 64, 87, -31, -56)],
-    zextent = 52
-)
-spriteset_8 = industry.add_spriteset(
-    id = 'food_processor_spriteset_8',
-    sprites = [(500, 10, 64, 87, -31, -56)],
-    zextent = 52
-)
-spriteset_9 = industry.add_spriteset(
-    id = 'food_processor_spriteset_9',
-    sprites = [(570, 10, 64, 55, -31, -24)],
+    sprites = [(220, 10, 64, 87, -31, -56)],
     zextent = 32
 )
 
@@ -127,99 +102,57 @@ industry.add_spritelayout(
     building_sprites = [spriteset_4],
     fences = ['nw','ne','se','sw']
 )
-industry.add_spritelayout(
-    id = 'food_processor_spritelayout_5',
-    ground_sprite = spriteset_ground,
-    ground_overlay = spriteset_ground_overlay,
-    building_sprites = [spriteset_5],
-    fences = ['nw','ne','se','sw']
-)
-industry.add_spritelayout(
-    id = 'food_processor_spritelayout_6',
-    ground_sprite = spriteset_ground,
-    ground_overlay = spriteset_ground_overlay,
-    building_sprites = [spriteset_6],
-    fences = ['nw','ne','se','sw']
-)
-industry.add_spritelayout(
-    id = 'food_processor_spritelayout_7',
-    ground_sprite = spriteset_ground,
-    ground_overlay = spriteset_ground_overlay,
-    building_sprites = [spriteset_7],
-    fences = ['nw','ne','se','sw']
-)
-industry.add_spritelayout(
-    id = 'food_processor_spritelayout_8',
-    ground_sprite = spriteset_ground,
-    ground_overlay = spriteset_ground_overlay,
-    building_sprites = [spriteset_8],
-    fences = ['nw','ne','se','sw']
-)
-industry.add_spritelayout(
-    id = 'food_processor_spritelayout_9',
-    ground_sprite = spriteset_ground,
-    ground_overlay = spriteset_ground_overlay,
-    building_sprites = [spriteset_9],
-    fences = ['nw','ne','se','sw']
-)
-industry.add_spritelayout(
-    id = 'food_processor_spritelayout_10',
-    ground_sprite = spriteset_ground,
-    ground_overlay = spriteset_ground_overlay,
-    building_sprites = [],
-    fences = ['nw','ne','se','sw']
-)
 
 industry.add_industry_layout(
     id = 'food_processor_industry_layout_1',
     layout = [(0, 0, 'food_processor_tile', 'food_processor_spritelayout_2'),
               (0, 1, 'food_processor_tile', 'food_processor_spritelayout_1'),
-              (0, 2, 'food_processor_tile', 'food_processor_spritelayout_10'),
+              (0, 2, 'food_processor_tile', 'food_processor_spritelayout_4'),
               (1, 0, 'food_processor_tile', 'food_processor_spritelayout_2'),
               (1, 1, 'food_processor_tile', 'food_processor_spritelayout_1'),
-              (1, 2, 'food_processor_tile', 'food_processor_spritelayout_10'),
-              (2, 0, 'food_processor_tile', 'food_processor_spritelayout_10'),
-              (2, 1, 'food_processor_tile', 'food_processor_spritelayout_7'),
-              (2, 2, 'food_processor_tile', 'food_processor_spritelayout_9'),
-              (3, 0, 'food_processor_tile', 'food_processor_spritelayout_8'),
-              (3, 1, 'food_processor_tile', 'food_processor_spritelayout_6'),
-              (3, 2, 'food_processor_tile', 'food_processor_spritelayout_10'),
-              (4, 0, 'food_processor_tile', 'food_processor_spritelayout_5'),
+              (1, 2, 'food_processor_tile', 'food_processor_spritelayout_4'),
+              (2, 0, 'food_processor_tile', 'food_processor_spritelayout_4'),
+              (2, 1, 'food_processor_tile', 'food_processor_spritelayout_4'),
+              (2, 2, 'food_processor_tile', 'food_processor_spritelayout_4'),
+              (3, 0, 'food_processor_tile', 'food_processor_spritelayout_4'),
+              (3, 1, 'food_processor_tile', 'food_processor_spritelayout_4'),
+              (3, 2, 'food_processor_tile', 'food_processor_spritelayout_4'),
+              (4, 0, 'food_processor_tile', 'food_processor_spritelayout_4'),
               (4, 1, 'food_processor_tile', 'food_processor_spritelayout_4'),
               (4, 2, 'food_processor_tile', 'food_processor_spritelayout_3')
     ]
 )
 industry.add_industry_layout(
     id = 'food_processor_industry_layout_2',
-    layout = [(0, 0, 'food_processor_tile', 'food_processor_spritelayout_8'),
-              (0, 1, 'food_processor_tile', 'food_processor_spritelayout_7'),
-              (0, 2, 'food_processor_tile', 'food_processor_spritelayout_9'),
-              (1, 0, 'food_processor_tile', 'food_processor_spritelayout_8'),
-              (1, 1, 'food_processor_tile', 'food_processor_spritelayout_6'),
-              (1, 2, 'food_processor_tile', 'food_processor_spritelayout_10'),
-              (2, 0, 'food_processor_tile', 'food_processor_spritelayout_5'),
+    layout = [(0, 0, 'food_processor_tile', 'food_processor_spritelayout_4'),
+              (0, 1, 'food_processor_tile', 'food_processor_spritelayout_4'),
+              (0, 2, 'food_processor_tile', 'food_processor_spritelayout_4'),
+              (1, 0, 'food_processor_tile', 'food_processor_spritelayout_4'),
+              (1, 1, 'food_processor_tile', 'food_processor_spritelayout_4'),
+              (1, 2, 'food_processor_tile', 'food_processor_spritelayout_4'),
+              (2, 0, 'food_processor_tile', 'food_processor_spritelayout_4'),
               (2, 1, 'food_processor_tile', 'food_processor_spritelayout_4'),
               (2, 2, 'food_processor_tile', 'food_processor_spritelayout_3'),
               (3, 0, 'food_processor_tile', 'food_processor_spritelayout_2'),
               (3, 1, 'food_processor_tile', 'food_processor_spritelayout_1'),
-              (3, 2, 'food_processor_tile', 'food_processor_spritelayout_10')
+              (3, 2, 'food_processor_tile', 'food_processor_spritelayout_4')
     ]
 )
 industry.add_industry_layout(
     id = 'food_processor_industry_layout_3',
     layout = [(0, 0, 'food_processor_tile', 'food_processor_spritelayout_2'),
               (0, 1, 'food_processor_tile', 'food_processor_spritelayout_1'),
-              (0, 2, 'food_processor_tile', 'food_processor_spritelayout_10'),
-              (0, 3, 'food_processor_tile', 'food_processor_spritelayout_7'),
-              (0, 4, 'food_processor_tile', 'food_processor_spritelayout_9'),
+              (0, 2, 'food_processor_tile', 'food_processor_spritelayout_4'),
+              (0, 3, 'food_processor_tile', 'food_processor_spritelayout_4'),
+              (0, 4, 'food_processor_tile', 'food_processor_spritelayout_4'),
               (1, 0, 'food_processor_tile', 'food_processor_spritelayout_2'),
               (1, 1, 'food_processor_tile', 'food_processor_spritelayout_1'),
-              (1, 2, 'food_processor_tile', 'food_processor_spritelayout_8'),
-              (1, 3, 'food_processor_tile', 'food_processor_spritelayout_6'),
-              (1, 4, 'food_processor_tile', 'food_processor_spritelayout_10'),
+              (1, 2, 'food_processor_tile', 'food_processor_spritelayout_4'),
+              (1, 3, 'food_processor_tile', 'food_processor_spritelayout_4'),
+              (1, 4, 'food_processor_tile', 'food_processor_spritelayout_4'),
               (2, 0, 'food_processor_tile', 'food_processor_spritelayout_2'),
               (2, 1, 'food_processor_tile', 'food_processor_spritelayout_1'),
-              (2, 2, 'food_processor_tile', 'food_processor_spritelayout_5'),
+              (2, 2, 'food_processor_tile', 'food_processor_spritelayout_4'),
               (2, 3, 'food_processor_tile', 'food_processor_spritelayout_4'),
               (2, 4, 'food_processor_tile', 'food_processor_spritelayout_3')
     ]
