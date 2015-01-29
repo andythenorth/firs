@@ -101,7 +101,7 @@ sprite_smoke_1 = industry.add_smoke_sprite(
     smoke_type = 'white_smoke_big',
     xoffset= 8,
     yoffset= 2,
-    zoffset= 71,
+    zoffset= 70,
 )
 
 industry.add_spritelayout(
