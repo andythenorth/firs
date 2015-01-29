@@ -11,25 +11,25 @@ ${industry.get_spritesets()}
 
 ${industry.get_spritelayouts()}
 
-switch(FEAT_INDUSTRYTILES, PARENT, ${industry.id}_industry_master_graphics_switch, STORE_TEMP(random_bits, 0)) {
-	${industry.id}_spritelayout_1; // default
-}
+${industry.get_industry_layouts_as_graphic_switches()}
 
-<!--! nitrate mine has one layout only, don't bother inserting templated industry layouts etc -->
-<!--! ${industry.get_industry_layouts_as_graphic_switches()} -->
+${industry.get_fence_switches()}
 
 /* *************************************************
  * Definition of the industry tile and its callbacks
  * *************************************************/
 
 TILE_DISALLOW_NEARBY_CLASS(tile_nearby_industry,  TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
-TILE_ALLOW_PLAYER         (tile_location_check, ${industry.id}_tile_nearby_industry)
+TILE_ALLOW_PLAYER         (tile_player_check, ${industry.id}_tile_nearby_industry)
+TILE_DISALLOW_SLOPES      (tile_location_check, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_tile_player_check)
 
 item(FEAT_INDUSTRYTILES, ${industry.id}_tile, TILE_NITRATEMINE_1) {
 	property {
 		substitute:       0;
 		accepted_cargos:  [[ENSP, 8]];
 		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
+		animation_info:     [ANIMATION_LOOPING, 7];
+		animation_speed:    3;
 	}
 
 	graphics {
@@ -42,26 +42,14 @@ item(FEAT_INDUSTRYTILES, ${industry.id}_tile, TILE_NITRATEMINE_1) {
  * Definition of the industry layouts
  * *************************************************/
 
-tilelayout tilelayout_nitrate_mine_1 {
-	0, 0: 255;
-	0, 1: 24;
-	0, 2: 24;
-	0, 4: 255;
-	1, 0: 255;
-	1, 4: 255;
-	2, 0: 255;
-	2, 2: 255;
-	2, 3: ${industry.id}_tile;
-	2, 4: 255;
-}
+${industry.get_industry_layouts_as_tilelayouts()}
 
 /* *************************************************
  * Definition of the industry
  * *************************************************/
 
 CHECK_INCOMPATIBLE  (nitrate_mine, 56, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
-CHECK_COAST_DISTANCE(coastal_distance, 0, param_max_coastal_distance, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_nitrate_mine)
-CHECK_FOUNDER       (${industry.id}_coastal_distance)
+CHECK_FOUNDER       (${industry.id}_nitrate_mine)
 
 SWITCH_COLOUR_SCHEME1(${industry.id}_colour)
 
