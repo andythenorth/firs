@@ -48,8 +48,9 @@ ${industry.get_industry_layouts_as_tilelayouts()}
  * Definition of the industry
  * *************************************************/
 
-CHECK_INCOMPATIBLE  (nitrate_mine, 56, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
-CHECK_FOUNDER       (${industry.id}_nitrate_mine)
+CHECK_NEARBY_CLUSTER(nitrate_mine,    20, 60, 2, 3, return CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
+CHECK_INCOMPATIBLE  (chemical_plant,  56, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_nitrate_mine)
+CHECK_FOUNDER       (${industry.id}_chemical_plant)
 
 SWITCH_COLOUR_SCHEME1(${industry.id}_colour)
 
