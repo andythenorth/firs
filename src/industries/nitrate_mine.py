@@ -92,11 +92,16 @@ spriteset_8 = industry.add_spriteset(
     sprites = [(500, 10, 64, 64, -31, -31)],
     zextent = 32
 )
+spriteset_9 = industry.add_spriteset(
+    id = 'nitrate_mine_spriteset_9',
+    sprites = [(570, 10, 64, 64, -31, -31)],
+    zextent = 32
+)
 sprite_smoke_1 = industry.add_smoke_sprite(
     smoke_type = 'white_smoke_big',
     xoffset= 8,
-    yoffset= 3,
-    zoffset= 76,
+    yoffset= 2,
+    zoffset= 71,
 )
 
 industry.add_spritelayout(
@@ -160,25 +165,25 @@ industry.add_spritelayout(
     id = 'nitrate_mine_spritelayout_empty',
     ground_sprite = sprite_ground,
     ground_overlay = spriteset_ground_overlay,
-    building_sprites = [],
+    building_sprites = [spriteset_9],
     fences = ['nw','ne','se','sw']
 )
 
 industry.add_industry_layout(
     id = 'nitrate_mine_industry_layout_1',
-    layout = [(0, 0, 'nitrate_mine_tile', 'nitrate_mine_spritelayout_empty'),
+    layout = [(0, 0, 'nitrate_mine_tile', 'nitrate_mine_spritelayout_chimney'),
               (0, 1, 'nitrate_mine_tile', 'nitrate_mine_spritelayout_raised_shed'),
               (0, 2, 'nitrate_mine_tile', 'nitrate_mine_spritelayout_hut'),
-              (1, 0, 'nitrate_mine_tile', 'nitrate_mine_spritelayout_empty'),
+              (1, 0, 'nitrate_mine_tile', 'nitrate_mine_spritelayout_raised_tanks'),
               (1, 1, 'nitrate_mine_tile', 'nitrate_mine_spritelayout_raised_tanks'),
               (1, 2, 'nitrate_mine_tile', 'nitrate_mine_spritelayout_empty'),
-              (2, 0, 'nitrate_mine_tile', 'nitrate_mine_spritelayout_chimney'),
+              (2, 0, 'nitrate_mine_tile', 'nitrate_mine_spritelayout_processor'),
               (2, 1, 'nitrate_mine_tile', 'nitrate_mine_spritelayout_processor'),
               (2, 2, 'nitrate_mine_tile', 'nitrate_mine_spritelayout_empty'),
-              (3, 0, 'nitrate_mine_tile', 'nitrate_mine_spritelayout_empty'),
+              (3, 0, 'nitrate_mine_tile', 'nitrate_mine_spritelayout_conveyors'),
               (3, 1, 'nitrate_mine_tile', 'nitrate_mine_spritelayout_conveyors'),
               (3, 2, 'nitrate_mine_tile', 'nitrate_mine_spritelayout_empty'),
-              (4, 0, 'nitrate_mine_tile', 'nitrate_mine_spritelayout_empty'),
+              (4, 0, 'nitrate_mine_tile', 'nitrate_mine_spritelayout_large_shed'),
               (4, 1, 'nitrate_mine_tile', 'nitrate_mine_spritelayout_large_shed'),
               (4, 2, 'nitrate_mine_tile', 'nitrate_mine_spritelayout_machinery'),
     ]
