@@ -105,56 +105,52 @@ industry.add_spritelayout(
 
 industry.add_industry_layout(
     id = 'food_processor_industry_layout_1',
-    layout = [(0, 0, 'food_processor_tile', 'food_processor_spritelayout_2'),
+    layout = [(0, 0, 'food_processor_tile', 'food_processor_spritelayout_1'),
               (0, 1, 'food_processor_tile', 'food_processor_spritelayout_1'),
-              (0, 2, 'food_processor_tile', 'food_processor_spritelayout_4'),
-              (1, 0, 'food_processor_tile', 'food_processor_spritelayout_2'),
+              (0, 2, 'food_processor_tile', 'food_processor_spritelayout_3'),
+              (1, 0, 'food_processor_tile', 'food_processor_spritelayout_1'),
               (1, 1, 'food_processor_tile', 'food_processor_spritelayout_1'),
-              (1, 2, 'food_processor_tile', 'food_processor_spritelayout_4'),
-              (2, 0, 'food_processor_tile', 'food_processor_spritelayout_4'),
-              (2, 1, 'food_processor_tile', 'food_processor_spritelayout_4'),
+              (1, 2, 'food_processor_tile', 'food_processor_spritelayout_3'),
+              (2, 0, 'food_processor_tile', 'food_processor_spritelayout_2'),
+              (2, 1, 'food_processor_tile', 'food_processor_spritelayout_2'),
               (2, 2, 'food_processor_tile', 'food_processor_spritelayout_4'),
               (3, 0, 'food_processor_tile', 'food_processor_spritelayout_4'),
               (3, 1, 'food_processor_tile', 'food_processor_spritelayout_4'),
               (3, 2, 'food_processor_tile', 'food_processor_spritelayout_4'),
-              (4, 0, 'food_processor_tile', 'food_processor_spritelayout_4'),
-              (4, 1, 'food_processor_tile', 'food_processor_spritelayout_4'),
-              (4, 2, 'food_processor_tile', 'food_processor_spritelayout_3')
     ]
 )
 industry.add_industry_layout(
     id = 'food_processor_industry_layout_2',
-    layout = [(0, 0, 'food_processor_tile', 'food_processor_spritelayout_4'),
-              (0, 1, 'food_processor_tile', 'food_processor_spritelayout_4'),
-              (0, 2, 'food_processor_tile', 'food_processor_spritelayout_4'),
-              (1, 0, 'food_processor_tile', 'food_processor_spritelayout_4'),
+    layout = [(0, 0, 'food_processor_tile', 'food_processor_spritelayout_2'),
+              (0, 1, 'food_processor_tile', 'food_processor_spritelayout_3'),
+              (0, 2, 'food_processor_tile', 'food_processor_spritelayout_1'),
+              (0, 3, 'food_processor_tile', 'food_processor_spritelayout_3'),
+              (1, 0, 'food_processor_tile', 'food_processor_spritelayout_1'),
               (1, 1, 'food_processor_tile', 'food_processor_spritelayout_4'),
-              (1, 2, 'food_processor_tile', 'food_processor_spritelayout_4'),
-              (2, 0, 'food_processor_tile', 'food_processor_spritelayout_4'),
+              (1, 2, 'food_processor_tile', 'food_processor_spritelayout_1'),
+              (1, 3, 'food_processor_tile', 'food_processor_spritelayout_3'),
+              (2, 0, 'food_processor_tile', 'food_processor_spritelayout_2'),
               (2, 1, 'food_processor_tile', 'food_processor_spritelayout_4'),
-              (2, 2, 'food_processor_tile', 'food_processor_spritelayout_3'),
+              (2, 2, 'food_processor_tile', 'food_processor_spritelayout_1'),
               (3, 0, 'food_processor_tile', 'food_processor_spritelayout_2'),
-              (3, 1, 'food_processor_tile', 'food_processor_spritelayout_1'),
-              (3, 2, 'food_processor_tile', 'food_processor_spritelayout_4')
+              (3, 1, 'food_processor_tile', 'food_processor_spritelayout_4'),
+              (3, 2, 'food_processor_tile', 'food_processor_spritelayout_1')
     ]
 )
 industry.add_industry_layout(
     id = 'food_processor_industry_layout_3',
-    layout = [(0, 0, 'food_processor_tile', 'food_processor_spritelayout_2'),
+    layout = [(0, 0, 'food_processor_tile', 'food_processor_spritelayout_1'),
               (0, 1, 'food_processor_tile', 'food_processor_spritelayout_1'),
-              (0, 2, 'food_processor_tile', 'food_processor_spritelayout_4'),
-              (0, 3, 'food_processor_tile', 'food_processor_spritelayout_4'),
-              (0, 4, 'food_processor_tile', 'food_processor_spritelayout_4'),
-              (1, 0, 'food_processor_tile', 'food_processor_spritelayout_2'),
+              (0, 2, 'food_processor_tile', 'food_processor_spritelayout_2'),
+              (0, 3, 'food_processor_tile', 'food_processor_spritelayout_3'),
+              (1, 0, 'food_processor_tile', 'food_processor_spritelayout_1'),
               (1, 1, 'food_processor_tile', 'food_processor_spritelayout_1'),
-              (1, 2, 'food_processor_tile', 'food_processor_spritelayout_4'),
-              (1, 3, 'food_processor_tile', 'food_processor_spritelayout_4'),
-              (1, 4, 'food_processor_tile', 'food_processor_spritelayout_4'),
-              (2, 0, 'food_processor_tile', 'food_processor_spritelayout_2'),
+              (1, 2, 'food_processor_tile', 'food_processor_spritelayout_2'),
+              (1, 3, 'food_processor_tile', 'food_processor_spritelayout_3'),
+              (2, 0, 'food_processor_tile', 'food_processor_spritelayout_1'),
               (2, 1, 'food_processor_tile', 'food_processor_spritelayout_1'),
               (2, 2, 'food_processor_tile', 'food_processor_spritelayout_4'),
               (2, 3, 'food_processor_tile', 'food_processor_spritelayout_4'),
-              (2, 4, 'food_processor_tile', 'food_processor_spritelayout_3')
     ]
 )
 
