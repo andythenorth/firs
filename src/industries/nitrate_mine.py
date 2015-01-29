@@ -188,3 +188,19 @@ industry.add_industry_layout(
               (4, 2, 'nitrate_mine_tile', 'nitrate_mine_spritelayout_machinery'),
     ]
 )
+industry.add_industry_layout(
+    id = 'nitrate_mine_industry_layout_2',
+    layout = [(0, 0, 'nitrate_mine_tile', 'nitrate_mine_spritelayout_raised_tanks'),
+              (0, 1, 'nitrate_mine_tile', 'nitrate_mine_spritelayout_processor'),
+              (0, 2, 'nitrate_mine_tile', 'nitrate_mine_spritelayout_processor'),
+              (0, 3, 'nitrate_mine_tile', 'nitrate_mine_spritelayout_raised_shed'),
+              (1, 0, 'nitrate_mine_tile', 'nitrate_mine_spritelayout_chimney'),
+              (1, 1, 'nitrate_mine_tile', 'nitrate_mine_spritelayout_conveyors'),
+              (1, 2, 'nitrate_mine_tile', 'nitrate_mine_spritelayout_conveyors'),
+              (1, 3, 'nitrate_mine_tile', 'nitrate_mine_spritelayout_empty'),
+              (2, 0, 'nitrate_mine_tile', 'nitrate_mine_spritelayout_machinery'),
+              (2, 1, 'nitrate_mine_tile', 'nitrate_mine_spritelayout_large_shed'),
+              (2, 2, 'nitrate_mine_tile', 'nitrate_mine_spritelayout_large_shed'),
+              (2, 3, 'nitrate_mine_tile', 'nitrate_mine_spritelayout_hut'),
+    ]
+)
