@@ -51,7 +51,7 @@ if (climate == CLIMATE_TROPICAL) { market_tree = MARKET_TREE_TROPICAL; }
 //                                 13 // unused
 //                                 14 // unused
 
-#define var_closure_counter        15
+#define var_closure_counter        15 // not used, primary industry doesn't close
 
 /* **************************************************************************
  * persistent storage for secondary industries (template produce_secondary)
