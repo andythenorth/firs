@@ -39,7 +39,8 @@ industry = Industry(id='vehicle_factory',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_HEAVY_INDUSTRY))',
                     fund_cost_multiplier='145',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
-                    extra_text_industry='STR_EXTRA_VEHICLE_FACTORY')
+                    extra_text_industry='STR_EXTRA_VEHICLE_FACTORY',
+                    graphics_change_dates = [1920])
 
 industry.economy_variations['BASIC_TROPIC'].enabled = True
 
