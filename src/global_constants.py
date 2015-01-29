@@ -50,8 +50,8 @@ industry_numeric_ids = dict(coal_mine = 0x00,
                             textile_mill = 0x2A,
                             cement_plant = 0x2B,
                             clay_pit = 0x2C,
+                            nitrate_mine = 0x2C, # reuse of this ID, ran out of IDs
                             brick_works = 0x2D,
-                            nitrate_mine = 0x2D, # reuse of this ID, ran out of IDs
                             biorefinery = 0x2E,
                             chemical_plant = 0x2E, # reuse of this ID, ran out of IDs
                             orchard_piggery = 0x2F,
