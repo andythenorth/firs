@@ -44,9 +44,15 @@ industry.economy_variations['BASIC_TROPIC'].enabled = True
 
 industry.add_tile(id='nitrate_mine_tile')
 
+spriteset_ground = industry.add_spriteset(
+    id = 'nitrate_mine_spriteset_ground',
+    type = 'empty'
+)
+"""
 sprite_ground = industry.add_sprite(
     sprite_number = 'GROUNDTILE_MUD_TRACKS' # ground tile same as overlay tile
 )
+"""
 spriteset_ground_overlay = industry.add_spriteset(
     id = 'nitrate_mine_spriteset_ground_overlay',
     type = 'empty'
@@ -106,7 +112,7 @@ sprite_smoke_1 = industry.add_smoke_sprite(
 
 industry.add_spritelayout(
     id = 'nitrate_mine_spritelayout_chimney',
-    ground_sprite = sprite_ground,
+    ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_1],
     smoke_sprites = [sprite_smoke_1],
@@ -114,56 +120,56 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id = 'nitrate_mine_spritelayout_large_shed',
-    ground_sprite = sprite_ground,
+    ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_2],
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
     id = 'nitrate_mine_spritelayout_conveyors',
-    ground_sprite = sprite_ground,
+    ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_3],
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
     id = 'nitrate_mine_spritelayout_processor',
-    ground_sprite = sprite_ground,
+    ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_4],
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
     id = 'nitrate_mine_spritelayout_raised_tanks',
-    ground_sprite = sprite_ground,
+    ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_5],
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
     id = 'nitrate_mine_spritelayout_raised_shed',
-    ground_sprite = sprite_ground,
+    ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_6],
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
     id = 'nitrate_mine_spritelayout_machinery',
-    ground_sprite = sprite_ground,
+    ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_7],
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
     id = 'nitrate_mine_spritelayout_hut',
-    ground_sprite = sprite_ground,
+    ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_8],
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
     id = 'nitrate_mine_spritelayout_empty',
-    ground_sprite = sprite_ground,
+    ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_9],
     fences = ['nw','ne','se','sw']

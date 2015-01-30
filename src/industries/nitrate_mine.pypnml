@@ -34,7 +34,7 @@ item(FEAT_INDUSTRYTILES, ${industry.id}_tile, TILE_NITRATEMINE_1) {
 
 	graphics {
 		tile_check: ${industry.id}_tile_location_check;
-		${industry.id}_industry_master_graphics_switch;
+		${industry.id}_tile_fences;
 	}
 }
 
