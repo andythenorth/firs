@@ -45,6 +45,7 @@ STR_CARGO_NAME_LUMBER                                                           
 STR_CARGO_NAME_METAL                                                            :Metaal
 STR_CARGO_NAME_MILK                                                             :Melk
 STR_CARGO_NAME_MANUFACTURING_SUPPLIES                                           :Productiematerialen
+STR_CARGO_NAME_NITRATES                                                         :Nitraten
 STR_CARGO_NAME_PETROL                                                           :Benzine
 STR_CARGO_NAME_RECYCLABLES                                                      :Kringloopgoederen
 STR_CARGO_NAME_SAND                                                             :Zand
@@ -70,6 +71,7 @@ STR_CARGO_UNIT_FRUITS                                                           
 STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} gezaagd hout
 STR_CARGO_UNIT_METAL                                                            :{WEIGHT} metaal
 STR_CARGO_UNIT_MILK                                                             :{VOLUME} melk
+STR_CARGO_UNIT_NITRATES                                                         :{WEIGHT} nitraten
 STR_CARGO_UNIT_MNSP                                                             :{SIGNED_WORD} krat{P 0 "" ten} productiematerialen
 STR_CARGO_UNIT_PETROL                                                           :{VOLUME} benzine
 STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} kringloopgoederen
@@ -96,6 +98,7 @@ STR_CID_LUMBER                                                                  
 STR_CID_MANUFACTURING_SUPPLIES                                                  :{TINYFONT}PH
 STR_CID_METAL                                                                   :{TINYFONT}MT
 STR_CID_MILK                                                                    :{TINYFONT}ML
+STR_CID_NITRATES                                                                :{TINYFONT}NI
 STR_CID_PETROL                                                                  :{TINYFONT}BZ
 STR_CID_RECYCLABLES                                                             :{TINYFONT}KG
 STR_CID_SAND                                                                    :{TINYFONT}ZD
@@ -126,9 +129,11 @@ STR_EXTRA_BREWERY_GRAIN_SUBSTR                                                  
 STR_EXTRA_BREWERY_FRUIT_SUBSTR                                                  :5.000l voor iedere 8t afgeleverd groente en fruit{}
 STR_EXTRA_BRICKWORKS                                                            :{BLACK}Productie:{}  2t voor iedere 8t afgeleverde kolen{}  2t voor iedere 8t afgeleverd zand{}  4t voor iedere 8t afgeleverd klei{}{}Productie wordt verhoogd als twee of meer vrachtsoorten binnen een maand van elkaar worden afgeleverd.
 STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Productie:{}  2t voor iedere 8t afgeleverde kolen{}  2t voor iedere 8t afgeleverd klei{}  4t voor iedere 8t afgeleverd grind{}{}Productie wordt verhoogd als twee of meer vrachtsoorten binnen een maand van elkaar worden afgeleverd.
+STR_EXTRA_CHEMICAL_PLANT                                                        :{BLACK}Productie:{} 6.000l voor iedere 8.000l afgeleverde olie{} 6.000l voor iedere 8t afgeleverde nitraten
 STR_EXTRA_DAIRY                                                                 :{BLACK}Productie:{}  3t voor iedere 8 kratten afgeleverde productiematerialen{}  5t voor iedere 8.000l afgeleverde melk{}{}Productie wordt verhoogd als beide vrachtsoorten binnen een maand van elkaar worden afgeleverd.
 STR_EXTRA_FERTILIZER_PLANT                                                      :{BLACK}Productie:{}  8 kratten voor iedere 8.000l afafgeleverde chemicaliën
 STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Productie:{}  3t voor iedere 8 kratten afgeleverde productiematerialen{}  5t voor iedere 8t afgeleverd vis{}{}Productie wordt verhoogd als beide vrachtsoorten binnen een maand van elkaar worden afgeleverd.
+STR_EXTRA_FOOD_PROCESSING_PLANT                                                 :{BLACK}Productie:{} 6t voor iedere 8t afgeleverde bonen{} 6t voor iedere 8t afgeleverd fruit
 STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Productie:{}  3t voor iedere 8 kratten afgeleverde productiematerialen{}  5t voor iedere 8t afgeleverd gezaagd hout{}{}Productie wordt verhoogd als beide vrachtsoorten binnen een maand van elkaar worden afgeleverd.
 STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Maakt glasproducten zoals flessen, potten, en vensterglas.{}{}Productie:{} 6t voor iedere 8t afgeleverd zand{} 2t voor iedere 8.000l afgeleverde chemicaliën{}{}Productie wordt verhoogd als beide vrachtsoorten binnen een maand van elkaar worden afgeleverd.
 STR_EXTRA_GRAIN_MILL                                                            :{BLACK}Productie:{}  3t voor iedere 8 kratten afgeleverde productiematerialen{}  5t voor iedere 8t afgeleverd graan{}{}Productie wordt verhoogd als beide vrachtsoorten binnen een maand van elkaar worden afgeleverd.
@@ -153,7 +158,7 @@ STR_EXTRA_SUGAR_REFINERY                                                        
 STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Productie:{}  3 kratten voor iedere 8 kratten afgeleverde productiematerialen{} {STRING} {STRING}{}Productie wordt verhoogd als productiematerialen binnen een maand van andere vracht worden afgeleverd.
 STR_EXTRA_TEXTILE_MILL_WOOL_SUBSTR                                              :5 kratten voor iedere 8 balen afgeleverd wol{}
 STR_EXTRA_TEXTILE_MILL_PLANT_FIBRES_SUBSTR                                      :5 kratten voor iedere 8 balen afgeleverd katoen{}
-STR_EXTRA_VEHICLE_FACTORY                                                       :Nog te doen
+STR_EXTRA_VEHICLE_FACTORY                                                       :{BLACK}Productie:{} 8 kratten voor iedere 8 kratten afgeleverde voeruigonderdelen{} 8 kratten voor iedere 8 kratten productiematerialen
 
 STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ DEBUG ------------{}productie deze maand:{}Goederen 1: {WHITE}{COMMA}{BLACK}{}Goederen 2: {WHITE}{COMMA}{BLACK}{}Dagen sinds laatste levering: {WHITE}{COMMA}{BLACK}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Maximale productiecapaciteit bereikt.
@@ -196,6 +201,7 @@ STR_IND_BRICK_WORKS                                                             
 STR_IND_BUILDERS_YARD                                                           :Aannemeropslagplaats
 STR_IND_BULK_TERMINAL                                                           :Bulk overslag terminal
 STR_IND_CEMENT_PLANT                                                            :Cementfabriek
+STR_IND_CHEMICAL_PLANT                                                          :Chemische fabriek
 STR_IND_CLAY_PIT                                                                :Kleiwinning
 STR_IND_COFFEE_ESTATE                                                           :Koffieplantage
 STR_IND_FIBRE_CROP_FARM                                                         :Vlasboerderij
@@ -222,6 +228,7 @@ STR_IND_METAL_FABRICATION_PLANT                                                 
 STR_IND_METAL_FOUNDRY                                                           :Metaalwerkplaats
 STR_IND_MIXEDFARM                                                               :Gemengd boerenbedrijf
 STR_IND_ORCHARD_PIGGERY                                                         :Boomgaard en varkensstallen
+STR_IND_NITRATE_MINE                                                            :Nitraatmijn
 STR_IND_PETROLPUMP                                                              :Tankstation
 STR_IND_PLASTICS_PLANT                                                          :Kunststoffabriek
 STR_IND_PORT                                                                    :Haven
