@@ -31,6 +31,7 @@ STR_PARAM_VALUE_ECONOMIES_TEST_3                                                
 
 STR_CARGO_NAME_ALCOHOL                                                          :Alcool
 STR_CARGO_NAME_BAUXITE                                                          :Bauxite
+STR_CARGO_NAME_BEANS                                                            :Haricots
 STR_CARGO_NAME_BUILDING_MATERIALS                                               :Matériaux de construction
 STR_CARGO_NAME_CHEMICALS                                                        :Produits chimiques
 STR_CARGO_NAME_CLAY                                                             :Argile
@@ -44,6 +45,7 @@ STR_CARGO_NAME_LUMBER                                                           
 STR_CARGO_NAME_METAL                                                            :Métal
 STR_CARGO_NAME_MILK                                                             :Lait
 STR_CARGO_NAME_MANUFACTURING_SUPPLIES                                           :Fournitures industrielles
+STR_CARGO_NAME_NITRATES                                                         :Nitrates
 STR_CARGO_NAME_PETROL                                                           :Essence
 STR_CARGO_NAME_RECYCLABLES                                                      :Matériaux recyclables
 STR_CARGO_NAME_SAND                                                             :Sable
@@ -51,10 +53,12 @@ STR_CARGO_NAME_SCRAP_METAL                                                      
 STR_CARGO_NAME_STONE                                                            :Gravier
 STR_CARGO_NAME_SUGAR_BEET                                                       :Betterave sucrière
 STR_CARGO_NAME_SUGARCANE                                                        :Canne à sucre
+STR_CARGO_NAME_VEHICLE_PARTS                                                    :Pièces détachées
 STR_CARGO_NAME_WOOL                                                             :Laine
 
 STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} d'alcool
 STR_CARGO_UNIT_BAUXITE                                                          :{WEIGHT} de bauxite
+STR_CARGO_UNIT_BEANS                                                            :{WEIGHT} de haricots
 STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WEIGHT} de matériaux de construction
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} de produits chimiques
 STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} d'argile
@@ -67,6 +71,7 @@ STR_CARGO_UNIT_FRUITS                                                           
 STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} de bois d'œuvre
 STR_CARGO_UNIT_METAL                                                            :{WEIGHT} de métal
 STR_CARGO_UNIT_MILK                                                             :{VOLUME} de lait
+STR_CARGO_UNIT_NITRATES                                                         :{WEIGHT} de nitrates
 STR_CARGO_UNIT_MNSP                                                             :{SIGNED_WORD} caisse{P 0 "" s} de fournitures industrielles
 STR_CARGO_UNIT_PETROL                                                           :{VOLUME} d'essence
 STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} de matériaux recyclables
@@ -75,10 +80,12 @@ STR_CARGO_UNIT_SCRAP_METAL                                                      
 STR_CARGO_UNIT_STONE                                                            :{WEIGHT} de gravier
 STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} de betterave sucrière
 STR_CARGO_UNIT_SUGARCANE                                                        :{WEIGHT} de canne à sucre
+STR_CARGO_UNIT_VEHICLE_PARTS                                                    :{SIGNED_WORD} caisse{P 0 "" s} de pièces détachées
 STR_CARGO_UNIT_WOOL                                                             :{SIGNED_WORD} balle{P 0 "" s} de laine
 
 STR_CID_ALCOHOL                                                                 :{TINYFONT}AL
 STR_CID_BAUXITE                                                                 :{TINYFONT}BX
+STR_CID_BEANS                                                                   :{TINYFONT}HA
 STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}MC
 STR_CID_CHEMICALS                                                               :{TINYFONT}PC
 STR_CID_CLAY                                                                    :{TINYFONT}AR
@@ -91,6 +98,7 @@ STR_CID_LUMBER                                                                  
 STR_CID_MANUFACTURING_SUPPLIES                                                  :{TINYFONT}FI
 STR_CID_METAL                                                                   :{TINYFONT}ML
 STR_CID_MILK                                                                    :{TINYFONT}LT
+STR_CID_NITRATES                                                                :{TINYFONT}NI
 STR_CID_PETROL                                                                  :{TINYFONT}ES
 STR_CID_RECYCLABLES                                                             :{TINYFONT}MR
 STR_CID_SAND                                                                    :{TINYFONT}SA
@@ -98,6 +106,7 @@ STR_CID_SCRAP_METAL                                                             
 STR_CID_STONE                                                                   :{TINYFONT}GV
 STR_CID_SUGAR_BEET                                                              :{TINYFONT}BS
 STR_CID_SUGARCANE                                                               :{TINYFONT}CS
+STR_CID_VEHICLE_PARTS                                                           :{TINYFONT}PD
 STR_CID_WOOL                                                                    :{TINYFONT}LN
 
 STR_ERR_CLIMATE_TOYLAND                                                         :{ORANGE}FIRS n'est pas conçu pour être utilisé avec l'environnement «{NBSP}Monde{NBSP}des{NBSP}Jouets{NBSP}»
@@ -120,13 +129,15 @@ STR_EXTRA_BREWERY_GRAIN_SUBSTR                                                  
 STR_EXTRA_BREWERY_FRUIT_SUBSTR                                                  :5{NBSP}000{NBSP}l pour 8{NBSP}t de fruits livrées{}
 STR_EXTRA_BRICKWORKS                                                            :{BLACK}Marchandises produites{NBSP}:{}  2{NBSP}t pour 8{NBSP}t livrées de charbon{}  2{NBSP}t pour 8{NBSP}t livrées de sable{}  4{NBSP}t pour 8{NBSP}t livrées d'argile{}{}Il faut au moins 2 types de marchandises livrées dans le même mois pour que la production augmente.
 STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Marchandises produites{NBSP}:{}  2{NBSP}t pour 8{NBSP}t livrées de charbon{}  2{NBSP}t pour 8{NBSP}t livrées d'argile{}  4{NBSP}t pour 8{NBSP}t livrées de gravier{}{}Il faut au moins 2 types de marchandises livrées dans le même mois pour que la production augmente.
+STR_EXTRA_CHEMICAL_PLANT                                                        :{BLACK}Marchandises produites{NBSP}:{} 6{NBSP}000{NBSP}l pour 8{NBSP}000{NBSP}l livrés de pétrole{} 6{NBSP}000{NBSP}l pour 8{NBSP}t livrées de nitrates
 STR_EXTRA_DAIRY                                                                 :{BLACK}Marchandises produites{NBSP}:{}  3{NBSP}t pour 8{NBSP}caisses livrées de fournitures industrielles{}  5{NBSP}t pour 8{NBSP}000{NBSP}l livrés de lait{}{}La production augmente si les deux marchandises sont livrées dans le même mois.
 STR_EXTRA_FERTILIZER_PLANT                                                      :{BLACK}Marchandises produites{NBSP}:{}  8{NBSP}caisses pour 8{NBSP}000{NBSP}l livrés de produits chimiques
 STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Marchandises produites{NBSP}:{}  3{NBSP}t pour 8{NBSP}caisses livrées de fournitures industrielles{}  5{NBSP}t pour 8{NBSP}t livrées de poisson{}{}La production augmente si les deux marchandises sont livrées dans le même mois.
+STR_EXTRA_FOOD_PROCESSING_PLANT                                                 :{BLACK}Marchandises produites{NBSP}:{} 6{NBSP}t pour 8{NBSP}t livrées de haricots{} 6{NBSP}t pour 8{NBSP}t livrées de fruits
 STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Marchandises produites{NBSP}:{}  3{NBSP}t pour 8{NBSP}caisses livrées de fournitures industrielles{}  5{NBSP}t pour 8{NBSP}t livrées de bois d'œuvre{}{}La production augmente si les deux marchandises sont livrées dans le même mois.
 STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Produit des objets en verre tels que des bouteilles, des bocaux ou des vitres.{}{}Marchandises produites{NBSP}:{}  6{NBSP}t pour 8{NBSP}t livrées de sable{}  2{NBSP}t pour 8{NBSP}000{NBSP}l livrés de produits chimiques{}{}La production augmente si les deux marchandises sont livrées dans le même mois.
 STR_EXTRA_GRAIN_MILL                                                            :{BLACK}Marchandises produites{NBSP}:{}  3{NBSP}t pour 8{NBSP}caisses livrées de fournitures industrielles{}  5{NBSP}t pour 8{NBSP}t livrées de céréales{}{}La production augmente si les deux marchandises sont livrées dans le même mois.
-STR_EXTRA_IRON_WORKS                                                            :{BLACK}Marchandises produites{NBSP}:{}  2{NBSP}t pour 8{NBSP}t livrées de bois{}  2{NBSP}t pour 8{NBSP}t livrées de minerai de fer{}{}La production augmente si les deux marchandises sont livrées dans le même mois.
+STR_EXTRA_IRON_WORKS                                                            :{BLACK}Marchandises produites{NBSP}:{} 3{NBSP}t pour 8{NBSP}t livrées de minerai de fer{} 3{NBSP}t pour 8{NBSP}t livrées de bois{} 2{NBSP}t pour 8{NBSP}t livrées de sable{}{}La production augmente si les deux marchandises sont livrées dans le même mois.
 STR_EXTRA_LIME_KILN                                                             :{BLACK}Marchandises produites{NBSP}:{}  3{NBSP}t pour 8{NBSP}t livrées de gravier{}  3{NBSP}t pour 8{NBSP}t livrées de charbon{}{}La production augmente si les deux marchandises sont livrées dans le même mois.
 STR_EXTRA_LUMBER_YARD                                                           :{BLACK}Produit des objets tels que des poteaux ou des piquets de clôture.{}{}Marchandises produites{NBSP}:{}  2{NBSP}t pour 8{NBSP}000{NBSP}l livrés de produits chimiques{}  6{NBSP}t pour 8{NBSP}t livrées de bois d'œuvre{}{}La production augmente si les deux marchandises sont livrées dans le même mois.
 STR_EXTRA_MACHINE_SHOP                                                          :{BLACK}Construit et entretient des machines.{}{}Marchandises produites{NBSP}:{}  8{NBSP}caisses pour 8{NBSP}000{NBSP}l livrés de pétrole{}  8{NBSP}caisses pour 8{NBSP}t livrées de métal
@@ -142,11 +153,12 @@ STR_EXTRA_RECYCLING_PLANT                                                       
 STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}La production est proportionnelle à la population de la ville.
 STR_EXTRA_SAWMILL                                                               :{BLACK}Débite du bois.{}{}Marchandises produites{NBSP}:{}  6{NBSP}t pour 8{NBSP}t livrées de bois
 STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Produit des objets métalliques tels que des outils, des charrues, des grilles, des pelles ou des fers à cheval.{}{}Marchandises produites{NBSP}:{}  8 caisses pour 8{NBSP}t livrées de métal
-STR_EXTRA_STEELMILL                                                             :{BLACK}Marchandises produites{NBSP}:{}  2{NBSP}t pour 8{NBSP}t livrées de minerai de fer{}  2{NBSP}t pour 8{NBSP}t livrées de charbon{}  4{NBSP}t pour 8{NBSP}t livrées de ferraille{}{}Il faut au moins 2 types de marchandises livrées dans le même mois pour que la production augmente.
+STR_EXTRA_STEELMILL                                                             :{BLACK}Marchandises produites{NBSP}:{}  3{NBSP}t pour 8{NBSP}t livrées de minerai de fer{}  2{NBSP}t pour 8{NBSP}t livrées de charbon{}  3{NBSP}t pour 8{NBSP}t livrées de ferraille{}{}Il faut au moins 2 types de marchandises livrées dans le même mois pour que la production augmente.
 STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Marchandises produites{NBSP}:{}  3{NBSP}t pour 8{NBSP}caisses livrées de fournitures industrielles{}  5{NBSP}t pour 8{NBSP}t livrées de sucre{}{}La production augmente si les deux marchandises sont livrées dans le même mois.
 STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Marchandises produites{NBSP}:{}  3{NBSP}caisses pour 8{NBSP}caisses livrées de fournitures industrielles{} {STRING} {STRING}{}La production augmente si des fournitures industrielles sont livrées dans le même mois que d'autres marchandises.
 STR_EXTRA_TEXTILE_MILL_WOOL_SUBSTR                                              :5 caisses pour 8 balles de laine livrées{}
 STR_EXTRA_TEXTILE_MILL_PLANT_FIBRES_SUBSTR                                      :5 caisses pour 8 balles de fibres végétales livrées{}
+STR_EXTRA_VEHICLE_FACTORY                                                       :{BLACK}Marchandises produites{NBSP}:{} 8{NBSP}caisses pour 8{NBSP}caisses livrées de pièces détachées{} 8{NBSP}caisses pour 8{NBSP}caisses livrées de fournitures industrielles
 
 STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ DEBUG ------------{}Production ce mois-ci{NBSP}:{}Marchandise 1{NBSP}: {WHITE}{COMMA}{BLACK}{}Marchandise 2{NBSP}: {WHITE}{COMMA}{BLACK}{}Jours écoulés depuis la dernière livraison{NBSP}: {WHITE}{COMMA}{BLACK}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Production maximum atteinte
@@ -189,6 +201,7 @@ STR_IND_BRICK_WORKS                                                             
 STR_IND_BUILDERS_YARD                                                           :Chantier de construction
 STR_IND_BULK_TERMINAL                                                           :Port de commerce
 STR_IND_CEMENT_PLANT                                                            :Cimenterie
+STR_IND_CHEMICAL_PLANT                                                          :Usine chimique
 STR_IND_CLAY_PIT                                                                :Carrière d'argile
 STR_IND_COFFEE_ESTATE                                                           :Plantation de café
 STR_IND_FIBRE_CROP_FARM                                                         :Exploitation de plantes à fibres
@@ -199,6 +212,7 @@ STR_IND_FERTILISER_PLANT                                                        
 STR_IND_FISHING_GROUND                                                          :Zone de pêche
 STR_IND_FISHING_HARBOUR                                                         :Port de pêche
 STR_IND_FOOD_MARKET                                                             :Magasin d'alimentation
+STR_IND_FOOD_PROCESSOR                                                          :Usine agroalimentaire
 STR_IND_FURNITURE_FACTORY                                                       :Fabrique de meubles
 STR_IND_GENERAL_STORE                                                           :Magasin
 STR_IND_GLASS_WORKS                                                             :Verrerie
@@ -214,6 +228,7 @@ STR_IND_METAL_FABRICATION_PLANT                                                 
 STR_IND_METAL_FOUNDRY                                                           :Fonderie
 STR_IND_MIXEDFARM                                                               :Exploitation agricole mixte
 STR_IND_ORCHARD_PIGGERY                                                         :Verger et élevage de cochons
+STR_IND_NITRATE_MINE                                                            :Mine de nitrates
 STR_IND_PETROLPUMP                                                              :Station d'essence
 STR_IND_PLASTICS_PLANT                                                          :Usine de plastiques
 STR_IND_PORT                                                                    :Port
@@ -228,6 +243,7 @@ STR_IND_SUGAR_PLANTATION                                                        
 STR_IND_SUGAR_REFINERY                                                          :Raffinerie de sucre
 STR_IND_TEXTILE_MILL                                                            :Usine textile
 STR_IND_TRADING_POST                                                            :Comptoir commercial
+STR_IND_VEHICLE_FACTORY                                                         :Usine de véhicules
 
 STR_STATION_ANIMALS                                                             :Marché aux bestiaux
 STR_STATION_FARM                                                                :Mas

@@ -33,6 +33,7 @@ STR_CARGO_NAME_ALCOHOL                                                          
 STR_CARGO_NAME_ALCOHOL.t                                                        :szeszes italt
 STR_CARGO_NAME_BAUXITE                                                          :Bauxit
 STR_CARGO_NAME_BAUXITE.t                                                        :bauxitot
+STR_CARGO_NAME_BEANS                                                            :Bab
 STR_CARGO_NAME_BUILDING_MATERIALS                                               :Építőanyag
 STR_CARGO_NAME_BUILDING_MATERIALS.t                                             :építőanyagot
 STR_CARGO_NAME_CHEMICALS                                                        :Vegyszer
@@ -59,6 +60,8 @@ STR_CARGO_NAME_MILK                                                             
 STR_CARGO_NAME_MILK.t                                                           :tejet
 STR_CARGO_NAME_MANUFACTURING_SUPPLIES                                           :Gyártási segédeszközök
 STR_CARGO_NAME_MANUFACTURING_SUPPLIES.t                                         :gyártási segédeszközöket
+STR_CARGO_NAME_NITRATES                                                         :Salétrom
+STR_CARGO_NAME_NITRATES.t                                                       :salétromot
 STR_CARGO_NAME_PETROL                                                           :Üzemanyag
 STR_CARGO_NAME_PETROL.t                                                         :üzemanyagot
 STR_CARGO_NAME_RECYCLABLES                                                      :Újrahasznosítható áru
@@ -73,11 +76,14 @@ STR_CARGO_NAME_SUGAR_BEET                                                       
 STR_CARGO_NAME_SUGAR_BEET.t                                                     :cukorrépát
 STR_CARGO_NAME_SUGARCANE                                                        :Cukornád
 STR_CARGO_NAME_SUGARCANE.t                                                      :cukornádat
+STR_CARGO_NAME_VEHICLE_PARTS                                                    :Járműalkatrész
+STR_CARGO_NAME_VEHICLE_PARTS.t                                                  :járműalkatrészt
 STR_CARGO_NAME_WOOL                                                             :Gyapjú
 STR_CARGO_NAME_WOOL.t                                                           :gyapjút
 
 STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} szeszes ital
 STR_CARGO_UNIT_BAUXITE                                                          :{WEIGHT} bauxit
+STR_CARGO_UNIT_BEANS                                                            :{WEIGHT} bab
 STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WEIGHT} építőanyag
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} vegyszer
 STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} agyag
@@ -90,6 +96,7 @@ STR_CARGO_UNIT_FRUITS                                                           
 STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} fűrészáru
 STR_CARGO_UNIT_METAL                                                            :{WEIGHT} fém
 STR_CARGO_UNIT_MILK                                                             :{VOLUME} tej
+STR_CARGO_UNIT_NITRATES                                                         :{WEIGHT} salétrom
 STR_CARGO_UNIT_MNSP                                                             :{SIGNED_WORD} láda gyártási segédeszköz
 STR_CARGO_UNIT_PETROL                                                           :{VOLUME} üzemanyag
 STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} újrahasznosítható áru
@@ -98,10 +105,12 @@ STR_CARGO_UNIT_SCRAP_METAL                                                      
 STR_CARGO_UNIT_STONE                                                            :{WEIGHT} kő
 STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} cukorrépa
 STR_CARGO_UNIT_SUGARCANE                                                        :{WEIGHT} cukornád
+STR_CARGO_UNIT_VEHICLE_PARTS                                                    :{SIGNED_WORD} láda járműalkatrész
 STR_CARGO_UNIT_WOOL                                                             :{SIGNED_WORD} bála gyapjú
 
 STR_CID_ALCOHOL                                                                 :{TINYFONT}IT
 STR_CID_BAUXITE                                                                 :{TINYFONT}BX
+STR_CID_BEANS                                                                   :{TINYFONT}BB
 STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}ÉA
 STR_CID_CHEMICALS                                                               :{TINYFONT}VS
 STR_CID_CLAY                                                                    :{TINYFONT}AG
@@ -114,6 +123,7 @@ STR_CID_LUMBER                                                                  
 STR_CID_MANUFACTURING_SUPPLIES                                                  :{TINYFONT}GS
 STR_CID_METAL                                                                   :{TINYFONT}FM
 STR_CID_MILK                                                                    :{TINYFONT}TJ
+STR_CID_NITRATES                                                                :{TINYFONT}SL
 STR_CID_PETROL                                                                  :{TINYFONT}ÜA
 STR_CID_RECYCLABLES                                                             :{TINYFONT}ÚÁ
 STR_CID_SAND                                                                    :{TINYFONT}HM
@@ -121,6 +131,7 @@ STR_CID_SCRAP_METAL                                                             
 STR_CID_STONE                                                                   :{TINYFONT}KÖ
 STR_CID_SUGAR_BEET                                                              :{TINYFONT}CR
 STR_CID_SUGARCANE                                                               :{TINYFONT}CN
+STR_CID_VEHICLE_PARTS                                                           :{TINYFONT}JA
 STR_CID_WOOL                                                                    :{TINYFONT}GY
 
 STR_ERR_CLIMATE_TOYLAND                                                         :{ORANGE}A FIRS nem a játékvilág tájhoz lett tervezve.
@@ -143,13 +154,15 @@ STR_EXTRA_BREWERY_GRAIN_SUBSTR                                                  
 STR_EXTRA_BREWERY_FRUIT_SUBSTR                                                  :5.000 liter termelés 8 tonna gyümölcs szállítása esetén{}
 STR_EXTRA_BRICKWORKS                                                            :{BLACK}Termelés:{}  2 tonna termelés 8 tonna szén szállítása esetén{}  2 tonna termelés 8 tonna homok szállítása esetén{}  4 tonna termelés 8 tonna agyag szállítása esetén{}{}A termelés megnő, ha legalább két különféle rakományból érkezik szállítmány egy hónapon belül.
 STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Termelés:{}  2 tonna termelés 8 tonna szén szállítása esetén{}  2 tonna termelés 8 tonna agyag szállítása esetén{}  4 tonna termelés 8 tonna kő szállítása esetén{}{}A termelés megnő, ha legalább két különféle rakományból érkezik szállítmány egy hónapon belül.
+STR_EXTRA_CHEMICAL_PLANT                                                        :{BLACK}Termelés:{}  6.000 liter termelés 8.000 liter olaj szállítása esetén{}  6.000 liter termelés 8 tonna salétrom szállítása esetén.
 STR_EXTRA_DAIRY                                                                 :{BLACK}Termelés:{}  3 tonna termelés 8 láda gyártási segédeszköz szállítása esetén{}  5 tonna termelés 8.000 liter tej szállítása esetén{}{}A termelés megnő, ha mindkét rakományból érkezik szállítmány egy hónapon belül.
 STR_EXTRA_FERTILIZER_PLANT                                                      :{BLACK}Termelés:{}  8 láda termelés 8.000 liter vegyszer szállítása esetén
 STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Termelés:{}  3 tonna termelés 8 láda gyártási segédeszköz szállítása esetén{}  5 tonna termelés 8 tonna hal szállítása esetén{}{}A termelés megnő, ha mindkét rakományból érkezik szállítmány egy hónapon belül.
+STR_EXTRA_FOOD_PROCESSING_PLANT                                                 :{BLACK}Termelés:{}  6 tonna termelés 8 tonna bab szállítása esetén{}  6 tonna termelés 8 tonna gyümölcs szállítása esetén.
 STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Termelés:{}  3 láda termelés 8 láda gyártási segédeszköz szállítása esetén{}  5 láda termelés 8 tonna fűrészáru szállítása esetén{}{}A termelés megnő, ha mindkét rakományból érkezik szállítmány egy hónapon belül.
 STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Üveg termékeket, például ablaküvegeket és befőttes üvegeket gyárt.{}{}{BLACK}Termelés:{}  6 tonna termelés 8 tonna homok szállítása esetén{}  2 tonna termelés 8.000 liter vegyszer szállítása esetén{}{}A termelés megnő, ha mindkét rakományból érkezik szállítmány egy hónapon belül.
 STR_EXTRA_GRAIN_MILL                                                            :{BLACK}Termelés:{}  3 tonna termelés 8 láda gyártási segédeszköz szállítása esetén{}  5 tonna termelés 8 tonna búza szállítása esetén{}{}A termelés megnő, ha mindkét rakományból érkezik szállítmány egy hónapon belül.
-STR_EXTRA_IRON_WORKS                                                            :{BLACK}Termelés:{}  1 tonna termelés 8 tonna fa szállítása esetén{}  2 tonna termelés 8 tonna vasérc szállítása esetén{}{}A termelés megnő, ha mindkét rakományból érkezik szállítmány egy hónapon belül.
+STR_EXTRA_IRON_WORKS                                                            :{BLACK}Termelés:{}  3 tonna termelés 8 tonna vasérc szállítása esetén{}  3 tonna termelés 8 tonna fa szállítása esetén{}  2 tonna termelés 8 tonna homok szállítása esetén{}{}A termelés megnő, ha legalább két különféle rakományból érkezik szállítmány egy hónapon belül.
 STR_EXTRA_LIME_KILN                                                             :{BLACK}Termelés:{}  3 tonna termelés 8 tonna kő szállítása esetén{}  3 tonna termelés 8 tonna szén szállítása esetén{}{}A termelés megnő, ha mindkét rakományból érkezik szállítmány egy hónapon belül.
 STR_EXTRA_LUMBER_YARD                                                           :{BLACK}Fából készült termékeket, például oszlopokat és kerítéseket gyárt.{}{}{BLACK}Termelés:{}  2 tonna termelés 8.000 liter vegyszer szállítása esetén{}  6 tonna termelés 8 tonna fűrészáru szállítása esetén{}{}A termelés megnő, ha mindkét rakományból érkezik szállítmány egy hónapon belül.
 STR_EXTRA_MACHINE_SHOP                                                          :{BLACK}Gépjárműveket épít és javít.{}{}{BLACK}Termelés:{}  8 láda termelés 8.000 liter üzemanyag szállítása esetén{}  8 láda termelés 8 tonna fém szállítása esetén.
@@ -165,11 +178,12 @@ STR_EXTRA_RECYCLING_PLANT                                                       
 STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}Úrjahasznosítható termékeket termel a település méretével arányosan.
 STR_EXTRA_SAWMILL                                                               :{BLACK}Feldolgozza a kivágott fákat.{}{}{BLACK}Termelés:{}  6 tonna termelés 8 tonna fa szállítása esetén.
 STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Fémeszközöket, például szerszámokat és patkókat gyárt.{}{}{BLACK}Termelés:{}  8 láda termelés 8 tonna fém szállítása esetén.
-STR_EXTRA_STEELMILL                                                             :{BLACK}Termelés:{}  2 tonna termelés 8 tonna vasérc szállítása esetén{}  2 tonna termelés 8 tonna szén szállítása esetén{}  4 tonna termelés 8 tonna fémhulladék szállítása esetén{}{}A termelés megnő, ha legalább két különféle rakományból érkezik szállítmány egy hónapon belül.
+STR_EXTRA_STEELMILL                                                             :{BLACK}Termelés:{}  3 tonna termelés 8 tonna vasérc szállítása esetén{}  2 tonna termelés 8 tonna szén szállítása esetén{}  3 tonna termelés 8 tonna fémhulladék szállítása esetén{}{}A termelés megnő, ha legalább két különféle rakományból érkezik szállítmány egy hónapon belül.
 STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Termelés:{}  3 tonna termelés 8 láda gyártási segédeszköz szállítása esetén{}  5 tonna termelés 8 tonna cukornád szállítása esetén{}{}A termelés megnő, ha legalább két különféle rakományból érkezik szállítmány egy hónapon belül.
 STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Termelés:{}  3 láda termelés 8 láda gyártási segédeszköz szállítása esetén{} {STRING} {STRING}{}A termelés megnő, ha szállítmány érkezik gyártási segédeszközökből és egy másik rakományból egy hónapon belül.
 STR_EXTRA_TEXTILE_MILL_WOOL_SUBSTR                                              :5 láda termelés 8 bála gyapjú szállítása esetén{}
 STR_EXTRA_TEXTILE_MILL_PLANT_FIBRES_SUBSTR                                      :5 láda termelés 8 bála rostnövény szállítása esetén{}
+STR_EXTRA_VEHICLE_FACTORY                                                       :{BLACK}Termelés:{}  8 láda termelés 8 láda járműalkatrész szállítása esetén{}  8 láda termelés 8 láda gyártási segédeszköz szállítása esetén.
 
 STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ DEBUG ------------{}Termelés ebben a hónapban:{}1. rakomány: {WHITE}{COMMA}{BLACK}{}2. rakomány: {WHITE}{COMMA}{BLACK}{}Eltelt napok az utolsó szállítmány óta: {WHITE}{COMMA}{BLACK}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Elérte a maximális termelést
@@ -223,6 +237,8 @@ STR_IND_BULK_TERMINAL                                                           
 STR_IND_BULK_TERMINAL.t                                                         :tömegáru-rakodót
 STR_IND_CEMENT_PLANT                                                            :Cementgyár
 STR_IND_CEMENT_PLANT.t                                                          :cementgyárat
+STR_IND_CHEMICAL_PLANT                                                          :Vegyi üzem
+STR_IND_CHEMICAL_PLANT.t                                                        :vegyi üzemet
 STR_IND_CLAY_PIT                                                                :Agyagbánya
 STR_IND_CLAY_PIT.t                                                              :agyagbányát
 STR_IND_COFFEE_ESTATE                                                           :Kávéültetvény
@@ -243,6 +259,8 @@ STR_IND_FISHING_HARBOUR                                                         
 STR_IND_FISHING_HARBOUR.t                                                       :halászkikötőt
 STR_IND_FOOD_MARKET                                                             :Élelmiszerbolt
 STR_IND_FOOD_MARKET.t                                                           :élelmiszerboltot
+STR_IND_FOOD_PROCESSOR                                                          :Konzervgyár
+STR_IND_FOOD_PROCESSOR.t                                                        :konzervgyárat
 STR_IND_FURNITURE_FACTORY                                                       :Bútorgyár
 STR_IND_FURNITURE_FACTORY.t                                                     :bútorgyárat
 STR_IND_GENERAL_STORE                                                           :Áruház
@@ -273,6 +291,8 @@ STR_IND_MIXEDFARM                                                               
 STR_IND_MIXEDFARM.t                                                             :vegyes farmot
 STR_IND_ORCHARD_PIGGERY                                                         :Gyümölcs- és állatgazdaság
 STR_IND_ORCHARD_PIGGERY.t                                                       :gyümölcs- és állatgazdaságot
+STR_IND_NITRATE_MINE                                                            :Salétrombánya
+STR_IND_NITRATE_MINE.t                                                          :salétrombányát
 STR_IND_PETROLPUMP                                                              :Benzinkút
 STR_IND_PETROLPUMP.t                                                            :benzinkutat
 STR_IND_PLASTICS_PLANT                                                          :Műanyaggyár
@@ -301,6 +321,8 @@ STR_IND_TEXTILE_MILL                                                            
 STR_IND_TEXTILE_MILL.t                                                          :textilüzemet
 STR_IND_TRADING_POST                                                            :Kereskedelmi állomás
 STR_IND_TRADING_POST.t                                                          :kereskedelmi állomást
+STR_IND_VEHICLE_FACTORY                                                         :Járműgyár
+STR_IND_VEHICLE_FACTORY.t                                                       :járműgyárat
 
 STR_STATION_ANIMALS                                                             :Lópiac
 STR_STATION_FARM                                                                :Majorság

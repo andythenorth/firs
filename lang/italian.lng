@@ -46,6 +46,7 @@ STR_CARGO_NAME_LUMBER                                                           
 STR_CARGO_NAME_METAL                                                            :{G=m}Metalli
 STR_CARGO_NAME_MILK                                                             :{G=m}Latte
 STR_CARGO_NAME_MANUFACTURING_SUPPLIES                                           :{G=f}Forniture industriali
+STR_CARGO_NAME_NITRATES                                                         :Nitrati
 STR_CARGO_NAME_PETROL                                                           :{G=m}Carburante
 STR_CARGO_NAME_RECYCLABLES                                                      :{G=m}Prodotti riciclati
 STR_CARGO_NAME_SAND                                                             :{G=f}Sabbia
@@ -53,6 +54,7 @@ STR_CARGO_NAME_SCRAP_METAL                                                      
 STR_CARGO_NAME_STONE                                                            :{G=f}Pietre
 STR_CARGO_NAME_SUGAR_BEET                                                       :{G=f}Barbabietole da zucchero
 STR_CARGO_NAME_SUGARCANE                                                        :{G=f}Canne da zucchero
+STR_CARGO_NAME_VEHICLE_PARTS                                                    :Parti per veicoli
 STR_CARGO_NAME_WOOL                                                             :{G=f}Lana
 
 STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} di alcoolici
@@ -70,6 +72,7 @@ STR_CARGO_UNIT_FRUITS                                                           
 STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} di prodotti in legno
 STR_CARGO_UNIT_METAL                                                            :{WEIGHT} di metalli
 STR_CARGO_UNIT_MILK                                                             :{VOLUME} di latte
+STR_CARGO_UNIT_NITRATES                                                         :{WEIGHT} di nitrati
 STR_CARGO_UNIT_MNSP                                                             :{SIGNED_WORD} cass{P 0 a e} di forniture industriali
 STR_CARGO_UNIT_PETROL                                                           :{VOLUME} di benzina
 STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} di prodotti da riciclare
@@ -78,6 +81,7 @@ STR_CARGO_UNIT_SCRAP_METAL                                                      
 STR_CARGO_UNIT_STONE                                                            :{WEIGHT} di pietre
 STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} di barbabietola da zucchero
 STR_CARGO_UNIT_SUGARCANE                                                        :{WEIGHT} di canne da zucchero
+STR_CARGO_UNIT_VEHICLE_PARTS                                                    :{SIGNED_WORD} cass{P 0 a e} di parti per veicoli
 STR_CARGO_UNIT_WOOL                                                             :{SIGNED_WORD} ball{P 0 a e} di lana
 
 STR_CID_ALCOHOL                                                                 :{TINYFONT}AL
@@ -95,6 +99,7 @@ STR_CID_LUMBER                                                                  
 STR_CID_MANUFACTURING_SUPPLIES                                                  :{TINYFONT}FI
 STR_CID_METAL                                                                   :{TINYFONT}ME
 STR_CID_MILK                                                                    :{TINYFONT}LA
+STR_CID_NITRATES                                                                :{TINYFONT}NI
 STR_CID_PETROL                                                                  :{TINYFONT}CR
 STR_CID_RECYCLABLES                                                             :{TINYFONT}PR
 STR_CID_SAND                                                                    :{TINYFONT}SA
@@ -102,6 +107,7 @@ STR_CID_SCRAP_METAL                                                             
 STR_CID_STONE                                                                   :{TINYFONT}PI
 STR_CID_SUGAR_BEET                                                              :{TINYFONT}BA
 STR_CID_SUGARCANE                                                               :{TINYFONT}CA
+STR_CID_VEHICLE_PARTS                                                           :{TINYFONT}VP
 STR_CID_WOOL                                                                    :{TINYFONT}LN
 
 STR_ERR_CLIMATE_TOYLAND                                                         :{ORANGE}FIRS non funziona con Toyland
@@ -124,13 +130,15 @@ STR_EXTRA_BREWERY_GRAIN_SUBSTR                                                  
 STR_EXTRA_BREWERY_FRUIT_SUBSTR                                                  :5000l ogni 8t di frutta consegnate{}
 STR_EXTRA_BRICKWORKS                                                            :{BLACK}Produzione:{}  2t ogni 8t di carbone consegnate{}  2t ogni 8t di sabbia consegnate{}  4t ogni 8t d'argilla consegnate{}{}Il prodotto aumenta se due o più tipi di merci sono consegnate entro un intervallo inferiore a un mese.
 STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Produzione:{}  2t ogni 8t di carbone consegnate{}  2t ogni 8t d'argilla consegnate{}  4t ogni 8t di pietre consegnate{}{}Il prodotto aumenta se due o più tipi di merci sono consegnate entro un intervallo inferiore a un mese.
+STR_EXTRA_CHEMICAL_PLANT                                                        :{BLACK}Produzione:{}  6,000l ogni 8,000l di petrolio consegnato{} 6,000l ogni 8t di nitrati consegnati
 STR_EXTRA_DAIRY                                                                 :{BLACK}Produzione:{}  3t ogni 8t di forniture industriali consegnate{}  5t ogni 8000l di latte consegnati{}{}Il prodotto aumenta se entrambe le merci sono consegnate entro un intervallo inferiore a un mese.
 STR_EXTRA_FERTILIZER_PLANT                                                      :{BLACK}Produzione:{}  8 casse ogni 8000l di prodotti chimici consegnati
 STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Produzione:{}  3t ogni 8t di forniture industriali consegnate{}  5t ogni 8t di pesce consegnate{}{}Il prodotto aumenta se entrambe le merci sono consegnate entro un intervallo inferiore a un mese.
+STR_EXTRA_FOOD_PROCESSING_PLANT                                                 :{BLACK}Produzione:{} 6t ogni 8 tonnellate di fagioli consegnate{} 6t ogni 8t di frutta consegnata
 STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Produzione:{}  3t ogni 8t di forniture industriali consegnate{}  5t ogni 8t di prodotti in legno consegnate{}{}Il prodotto aumenta se entrambe le merci sono consegnate entro un intervallo inferiore a un mese.
 STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Produce oggetti in vetro come bottiglie, vasi e finestre.{}{}Produzione:{}  6t ogni 8t di sabbia consegnate{}  2t ogni 8000l di prodotti chimici consegnati{}{}Il prodotto aumenta se entrambe le merci sono consegnate entro un intervallo inferiore a un mese.
 STR_EXTRA_GRAIN_MILL                                                            :{BLACK}Produzione:{}  3t ogni 8 casse di forniture industriali consegnate{}  5t ogni 8t di grano consegnate{}{}La produzionoe aumenta se entrambe le merci sono consegnate entro un intervallo inferiore a un mese.
-STR_EXTRA_IRON_WORKS                                                            :{BLACK}Produzione:{}  2t ogni 8t di legname consegnate{}  2t ogni 8t di minerale di ferro consegnate{}{}Il prodotto aumenta se entrambe le merci sono consegnate entro un intervallo inferiore a un mese.
+STR_EXTRA_IRON_WORKS                                                            :{BLACK}Produzione:{} 3t ogni 8t di minerale di ferro consegnate{} 3t ogni 8t di legname consegnate{} 2t ogni 8t di sabbia consegnata{}{}Il prodotto aumenta se due o piú tipi di merci sono consegnate entro un intervallo inferiore a un mese.
 STR_EXTRA_LIME_KILN                                                             :{BLACK}Produzione:{}  3t ogni 8t di pietre consegnate{}  3t ogni 8t di carbone consegnate{}{}Il prodotto aumenta se entrambe le merci sono consegnate entro un intervallo inferiore a un mese.
 STR_EXTRA_LUMBER_YARD                                                           :{BLACK}Costruisce oggetti come palizzate, steccati o pali.{}{}Produzione:{}  2t ogni 8t di prodotti chimici consegnate{}  6t ogni 8t di prodotti in legno consegnate{}{}Il prodotto aumenta se entrambe le merci sono consegnate entro un intervallo inferiore a un mese.
 STR_EXTRA_MACHINE_SHOP                                                          :{BLACK}Costruisce e ripara macchinari.{}{}Produzione:{}  8 casse ogni 8000l di carburante consegnati{}  8 casse ogni 8t di metalli consegnate.
@@ -146,11 +154,12 @@ STR_EXTRA_RECYCLING_PLANT                                                       
 STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}La quantità di prodtto dipende dalle dimensioni della città.
 STR_EXTRA_SAWMILL                                                               :{BLACK}Taglia la legna.{}{}Produzione:{}   6t ogni 8t di legna consegnate.
 STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Costruisce oggetti metallici come attrezzi edili e agricoli, e ferri di cavallo.{}{}Produzione:{}  8 casse ogni 8t di metalli consegnate.
-STR_EXTRA_STEELMILL                                                             :{BLACK}Produzione:{}  2t ogni 8t di minerale di ferro consegnate{}  2t ogni 8t di carbone consegnate{}  4t ogni 8t di metalli di scarto consegnate{}{}Il prodotto aumenta se due o più tipi di merci sono consegnate entro un intervallo inferiore a un mese.
+STR_EXTRA_STEELMILL                                                             :{BLACK}Produzione:{} 3t ogni 8t di minerale di ferro consegnate{} 2t ogni 8t di carbone consegnate{} 3t ogni 8t di metalli di scarto consegnate{}{}Il prodotto aumenta se due o più tipi di merci sono consegnate entro un intervallo inferiore a un mese.
 STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Produzione:{}  3t ogni 8t di forniture industriali consegnate{}  5t ogni 8t di canna da zucchero consegnate{}{}Il prodotto aumentase entrambe le merci sono consegnate entro un intervallo inferiore a un mese.
 STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Produzione:{}  3 casse ogni 8t di forniture industriali consegnate{} {STRING} {STRING}{}Il prodotto aumenta se riceve forniture industriali entro un mese dalla consegna di altre merci.
 STR_EXTRA_TEXTILE_MILL_WOOL_SUBSTR                                              :5 casse ogni 8 balle di lana consegnate{}
 STR_EXTRA_TEXTILE_MILL_PLANT_FIBRES_SUBSTR                                      :5 casse ogni 8 balle di fibre tessili consegnate{}
+STR_EXTRA_VEHICLE_FACTORY                                                       :{BLACK}Produzione:{} 8 casse ogni 8 casse di parti per veicoli consegnate{} 8 casse ogni 8 casse di forniture industriali consegnate
 
 STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ DEBUG ------------{}Produzione questo mese:{}Prodotto 1: {WHITE}{COMMA}{BLACK}{}Prodotto 2: {WHITE}{COMMA}{BLACK}{}Giorni trascorsi dall'ultima consegna: {WHITE}{COMMA}{BLACK}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Livello massimo di produzione raggiunto
@@ -193,6 +202,7 @@ STR_IND_BRICK_WORKS                                                             
 STR_IND_BUILDERS_YARD                                                           :{G=m}Cantiere edile
 STR_IND_BULK_TERMINAL                                                           :{G=m}Porto mercantile
 STR_IND_CEMENT_PLANT                                                            :{G=f}Fabbrica di cemento
+STR_IND_CHEMICAL_PLANT                                                          :Impianto chimico
 STR_IND_CLAY_PIT                                                                :{G=f}Cava di argilla
 STR_IND_COFFEE_ESTATE                                                           :{G=f}Piantagione di caffé
 STR_IND_FIBRE_CROP_FARM                                                         :{G=f}Piantagione di fibre tessili
@@ -219,6 +229,7 @@ STR_IND_METAL_FABRICATION_PLANT                                                 
 STR_IND_METAL_FOUNDRY                                                           :{G=f}Fonderia
 STR_IND_MIXEDFARM                                                               :{G=f}Azienda agricola
 STR_IND_ORCHARD_PIGGERY                                                         :{G=m}Frutteto e porcile
+STR_IND_NITRATE_MINE                                                            :Miniera di nitrati
 STR_IND_PETROLPUMP                                                              :{G=f}Pompa di benzina
 STR_IND_PLASTICS_PLANT                                                          :{G=f}Fabbrica di prodotti in plastica
 STR_IND_PORT                                                                    :{G=m}Porto
@@ -233,6 +244,7 @@ STR_IND_SUGAR_PLANTATION                                                        
 STR_IND_SUGAR_REFINERY                                                          :{G=f}Raffineria di zucchero
 STR_IND_TEXTILE_MILL                                                            :{G=m}Tessilificio
 STR_IND_TRADING_POST                                                            :{G=m}Emporio commerciale
+STR_IND_VEHICLE_FACTORY                                                         :Fabbrica di veicoli
 
 STR_STATION_ANIMALS                                                             :Mercato del bestiame
 STR_STATION_FARM                                                                :Fattorie
