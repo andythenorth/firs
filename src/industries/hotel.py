@@ -39,7 +39,7 @@ industry = Industry(id='hotel',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_TOWN))',
                     fund_cost_multiplier='101',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
-                    )
+                    snakebite=True)
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True

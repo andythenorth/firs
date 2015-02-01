@@ -165,6 +165,7 @@ class Industry(object):
         self.economy_variations = {}
         for economy in global_constants.economies:
             self.add_economy_variation(economy)
+        self.snakebite = kwargs.get('snakebite', False)
         self.register()
 
     def register(self):
@@ -362,7 +363,10 @@ class Industry(object):
             return getattr(sprite_or_spriteset, 'sprite_number' + suffix)
 
     def render_pnml(self):
-        industry_template = industry_templates[self.id + '.pypnml']
+        if self.snakebite == True:
+            industry_template = industry_templates[self.id + '.pypnml']
+        else:
+            industry_template = industry_templates[self.id + '.pypnml']
         templated_pnml = utils.unescape_chameleon_output(industry_template(industry=self, global_constants=global_constants, utils=utils))
         return templated_pnml
 
