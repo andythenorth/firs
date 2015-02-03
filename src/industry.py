@@ -25,6 +25,14 @@ class Tile(object):
     """ Base class to hold industry tiles"""
     def __init__(self, id):
         self.id = id
+        self.numeric_id = global_constants.tile_numeric_ids.get(self.id, None) # use of get() here is temporary during migrations, not needed otherwise
+
+    def get_expression_for_tile_acceptance(self, industry, economy=None):
+        result = []
+        for cargo in industry.get_property('accept_cargo_types', economy):
+            result.append('[' + cargo + ', 8]')
+        return ','.join(result)
+
 
 class Sprite(object):
     """Base class to hold simple sprites (using numbers from a base set)"""

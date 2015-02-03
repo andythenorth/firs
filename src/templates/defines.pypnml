@@ -127,5 +127,5 @@ if (climate == CLIMATE_TROPICAL) { market_tree = MARKET_TREE_TROPICAL; }
  * **************************************************************************/
 
 <tal:tile_ids repeat="tile_id_mapping global_constants.tile_numeric_ids.items()">
-    #define ${tile_id_mapping[0]} ${tile_id_mapping[1]}
+    #define ${tile_id_mapping[0].upper()} ${tile_id_mapping[1]}
 </tal:tile_ids>

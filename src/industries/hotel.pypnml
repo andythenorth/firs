@@ -17,17 +17,20 @@ ${industry.get_industry_layouts_as_graphic_switches()}
  * Definition of the industry tile and its callbacks
  * *************************************************/
 
-item(FEAT_INDUSTRYTILES, ${industry.id}_tile, TILE_HOTEL_1) {
-	property {
-		substitute:       0;
-		accepted_cargos:  [[FOOD, 8], [BEER, 8], [PASS, 8]];
-		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
-	}
+<tal:tiles repeat="tile industry.tiles">
+    item(FEAT_INDUSTRYTILES, ${tile.id}, ${tile.numeric_id}) {
+        property {
+            substitute:       0;
+            accepted_cargos:  [${tile.get_expression_for_tile_acceptance(industry)}];
+            land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
+        }
 
-	graphics {
-		${industry.id}_industry_master_graphics_switch;
-	}
-}
+        graphics {
+            ${industry.id}_industry_master_graphics_switch;
+        }
+    }
+</tal:tiles>
+
 
 /* *************************************************
  * Definition of the industry layouts
