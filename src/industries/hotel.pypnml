@@ -18,10 +18,10 @@ ${industry.get_industry_layouts_as_graphic_switches()}
  * *************************************************/
 
 <tal:tiles repeat="tile industry.tiles">
+    <!--! tile properties that are same for all economies -->
     item(FEAT_INDUSTRYTILES, ${tile.id}, ${tile.numeric_id}) {
         property {
             substitute:       0;
-            accepted_cargos:  [${tile.get_expression_for_tile_acceptance(industry)}];
             land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
         }
 
@@ -29,8 +29,19 @@ ${industry.get_industry_layouts_as_graphic_switches()}
             ${industry.id}_industry_master_graphics_switch;
         }
     }
+    <!--! tile properties that vary by economy -->
+    <tal:economies repeat="economy global_constants.economies">
+        if (economy==${repeat.economy.index}) {
+            <tal:industry_on_or_off condition="industry.get_property('enabled', economy) == True">
+                item(FEAT_INDUSTRYTILES, ${tile.id}, ${tile.numeric_id}) {
+                    property {
+                        accepted_cargos:  [${tile.get_expression_for_tile_acceptance(industry, economy)}];
+                    }
+                }
+            </tal:industry_on_or_off>
+        }
+    </tal:economies>
 </tal:tiles>
-
 
 /* *************************************************
  * Definition of the industry layouts
