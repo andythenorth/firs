@@ -21,10 +21,12 @@ industry_templates = PageTemplateLoader(os.path.join(src_path, 'industries'), fo
 
 from industries import registered_industries
 
+
 class Tile(object):
     """ Base class to hold industry tiles"""
     def __init__(self, id):
         self.id = id
+
 
 class Sprite(object):
     """Base class to hold simple sprites (using numbers from a base set)"""
@@ -39,6 +41,7 @@ class Sprite(object):
         self.yextent = yextent
         self.zextent = zextent
         self.always_draw = always_draw
+
 
 class SmokeSprite(object):
     """Base class to handle smoke sprites (using smoke sprite numbers from a base set)"""
@@ -111,6 +114,13 @@ class IndustryLayout(object):
         self.id = id
         self.layout = layout # a list of 4-tuples (SE offset from N tile, SW offset from N tile, tile identifier, identifier of spriteset or next nml switch)
 
+
+class IndustryLocationChecks(object):
+    """class to hold location checks for an industry"""
+    def __init__(self, **kwargs):
+        pass
+
+
 class IndustryProperties(object):
     """Base class to hold properties corresponding to nml industry item properties"""
     def __init__(self, **kwargs):
@@ -146,7 +156,6 @@ class IndustryProperties(object):
         # nml properties we want to prevent being set for one reason or another
         if 'conflicting_ind_types' in kwargs:
             raise Exception("Don't set conflicting_ind_types property; use the FIRS location checks for conflicting industry (these are more flexible).")
-
 
 
 class Industry(object):
