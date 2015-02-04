@@ -21,6 +21,7 @@ industry_templates = PageTemplateLoader(os.path.join(src_path, 'industries'), fo
 
 from industries import registered_industries
 
+
 class Tile(object):
     """ Base class to hold industry tiles"""
     def __init__(self, id):
@@ -32,6 +33,7 @@ class Tile(object):
         for cargo in industry.get_property('accept_cargo_types', economy):
             result.append('[' + cargo + ', 8]')
         return ','.join(result)
+
 
 
 class Sprite(object):
@@ -120,6 +122,47 @@ class IndustryLayout(object):
         self.id = id
         self.layout = layout # a list of 4-tuples (SE offset from N tile, SW offset from N tile, tile identifier, identifier of spriteset or next nml switch)
 
+
+class IndustryLocationChecks(object):
+    """class to hold location checks for an industry"""
+    def __init__(self, **kwargs):
+        self.incompatible = kwargs.get('incompatible', {})
+
+    def get_render_tree(self, switch_prefix):
+        result = [LocationCheckFounder()]
+        for industry_type, distance in self.incompatible.items():
+            result.append(LocationCheckIncompatible(industry_type, distance))
+        prev = None
+        for lc in reversed(result):
+            if prev is not None:
+                lc.switch_result = switch_prefix + prev.switch_entry_point
+            prev = lc
+        return list(reversed(result))
+
+
+class LocationCheckIncompatible(object):
+    """prevent locating near incompatible industry types"""
+    def __init__(self, industry_type, distance):
+        self.industry_type = industry_type
+        self.distance = distance
+        self.switch_result = 'return CB_RESULT_LOCATION_ALLOW' # default result, value may also be id for next switch
+        self.switch_entry_point = self.industry_type
+
+    def render(self):
+        return 'CHECK_INCOMPATIBLE (' + self.industry_type + ', ' + str(self.distance) + ', CB_RESULT_LOCATION_DISALLOW, ' + self.switch_result + ')'
+
+
+class LocationCheckFounder(object):
+    """ensures player can build irrespective of _industry_ location checks (tile checks still apply)"""
+    def __init__(self):
+        self.switch_result = 'return CB_RESULT_LOCATION_ALLOW' # default result, value may also be id for next switch
+        self.switch_entry_point = 'check_founder'
+
+    def render(self):
+        return 'CHECK_FOUNDER (' + self.switch_result + ')'
+
+
+
 class IndustryProperties(object):
     """Base class to hold properties corresponding to nml industry item properties"""
     def __init__(self, **kwargs):
@@ -157,7 +200,6 @@ class IndustryProperties(object):
             raise Exception("Don't set conflicting_ind_types property; use the FIRS location checks for conflicting industry (these are more flexible).")
 
 
-
 class Industry(object):
     """Base class for all types of industry"""
     def __init__(self, id, graphics_change_dates=[], **kwargs):
@@ -171,6 +213,7 @@ class Industry(object):
         self.industry_layouts = []
         self.default_industry_properties = IndustryProperties(**kwargs)
         self.supply_requirements = kwargs.get('supply_requirements', self.set_supply_requirements_via_magic())
+        self.location_checks = kwargs.get('location_checks')
         self.economy_variations = {}
         for economy in global_constants.economies:
             self.add_economy_variation(economy)
