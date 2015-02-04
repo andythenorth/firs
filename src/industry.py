@@ -48,6 +48,7 @@ class Sprite(object):
         self.zextent = zextent
         self.always_draw = always_draw
 
+
 class SmokeSprite(object):
     """Base class to handle smoke sprites (using smoke sprite numbers from a base set)"""
     def __init__(self, smoke_type, xoffset=0, yoffset=0, zoffset=0, hide_sprite=0, animation_frame_offset=0):
