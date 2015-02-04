@@ -62,12 +62,4 @@ CHECK_FOUNDER       (${industry.id}_hotel)
 
 ${industry.get_industry_properties()}
 
-item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
-	graphics {
-		construction_probability: ${industry.id}_check_availability;
-		build_prod_change:        randomise_primary_production_on_build;
-		location_check:           ${industry.id}_check_location;
-	}
-}
-
 #include "../../src/templates/undefs.pnml"
