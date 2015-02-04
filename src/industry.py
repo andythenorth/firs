@@ -118,7 +118,41 @@ class IndustryLayout(object):
 class IndustryLocationChecks(object):
     """class to hold location checks for an industry"""
     def __init__(self, **kwargs):
-        pass
+        self.incompatible = kwargs.get('incompatible', {})
+
+    def get_render_tree(self, switch_prefix):
+        result = [LocationCheckFounder()]
+        for industry_type, distance in self.incompatible.items():
+            result.append(LocationCheckIncompatible(industry_type, distance))
+        prev = None
+        for lc in reversed(result):
+            if prev is not None:
+                lc.switch_result = switch_prefix + prev.switch_entry_point
+            prev = lc
+        return list(reversed(result))
+
+
+class LocationCheckIncompatible(object):
+    """prevent locating near incompatible industry types"""
+    def __init__(self, industry_type, distance):
+        self.industry_type = industry_type
+        self.distance = distance
+        self.switch_result = 'return CB_RESULT_LOCATION_ALLOW' # default result, value may also be id for next switch
+        self.switch_entry_point = self.industry_type
+
+    def render(self):
+        return 'CHECK_INCOMPATIBLE (' + self.industry_type + ', ' + str(self.distance) + ', CB_RESULT_LOCATION_DISALLOW, ' + self.switch_result + ')'
+
+
+class LocationCheckFounder(object):
+    """ensures player can build irrespective of _industry_ location checks (tile checks still apply)"""
+    def __init__(self):
+        self.switch_result = 'return CB_RESULT_LOCATION_ALLOW' # default result, value may also be id for next switch
+        self.switch_entry_point = 'check_founder'
+
+    def render(self):
+        return 'CHECK_FOUNDER (' + self.switch_result + ')'
+
 
 
 class IndustryProperties(object):
@@ -171,6 +205,7 @@ class Industry(object):
         self.industry_layouts = []
         self.default_industry_properties = IndustryProperties(**kwargs)
         self.supply_requirements = kwargs.get('supply_requirements', self.set_supply_requirements_via_magic())
+        self.location_checks = kwargs.get('location_checks')
         self.economy_variations = {}
         for economy in global_constants.economies:
             self.add_economy_variation(economy)

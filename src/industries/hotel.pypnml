@@ -41,10 +41,9 @@ ${industry.get_industry_layouts_as_tilelayouts()}
 
 #include "../../src/templates/check_availability.pnml"
 
-CHECK_INCOMPATIBLE  (petrol_pump, 16, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
-CHECK_INCOMPATIBLE  (food_market, 16, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_petrol_pump)
-CHECK_INCOMPATIBLE  (hotel, 20, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_food_market)
-CHECK_FOUNDER       (${industry.id}_hotel)
+<tal:location_checks define="location_checks industry.location_checks.get_render_tree(industry.id+'_')" repeat="location_check location_checks">
+    ${location_check.render()}
+</tal:location_checks>
 
 ${industry.get_industry_properties()}
 
