@@ -78,8 +78,8 @@ def main():
     pnml.write(templated_pnml)
     pnml.close()
 
-    if repo_vars.get('no_mp', None) == 'True':
-        utils.echo_message('Multiprocessing disabled: (NO_MP=True)')
+    if repo_vars.get('no_mp', None) != 'False':
+        utils.echo_message('Multiprocessing disabled: (use NO_MP=False to enable it)')
         for industry in industries.registered_industries:
             render_industry(industry)
     else:
