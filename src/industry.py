@@ -418,7 +418,7 @@ class Industry(object):
 
     def render_pnml(self):
         if self.snakebite == True:
-            industry_template = industry_templates[self.id + '.pypnml']
+            industry_template = templates[self.template]
         else:
             industry_template = industry_templates[self.id + '.pypnml']
         templated_pnml = utils.unescape_chameleon_output(industry_template(industry=self, global_constants=global_constants, utils=utils))
@@ -429,5 +429,5 @@ class IndustryTertiary(Industry):
     """ industries that consume cargo and don't produce much (or anything), typically black holes in or near towns """
     def __init__(self, **kwargs):
         super(IndustryTertiary, self).__init__(**kwargs)
-        self.template = 'tertiary.pynml'
+        self.template = 'industry_tertiary.pypnml'
 
