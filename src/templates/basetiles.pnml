@@ -2,24 +2,6 @@
  * Spriteset to be used in many industries as ground tiles
  * *******************************************************/
 
-/* Dirty tracks */
-spriteset(spriteset_ground_track_normal) {
-	tmpl_building_sprite_filename(150, 10, 43, -13, "src/graphics/industries/buildersyard.png")
-	tmpl_building_sprite_filename(150, 10, 43, -13, "src/graphics/industries/buildersyard.png")
-}
-
-/* Icy tracks */
-spriteset(spriteset_ground_track_snow) {
-	tmpl_building_sprite_filename(150, 10, 43, -13, "src/graphics/industries/buildersyard_snow.png")
-	tmpl_building_sprite_filename(150, 10, 43, -13, "src/graphics/industries/buildersyard_snow.png")
-}
-
-/* No overlay. To be used when custom ground is snowed */
-spriteset(spriteset_empty) {
-	[80,10,1,1,0,0, "src/graphics/industries/groundtiles.png"]
-	[80,10,1,1,0,0, "src/graphics/industries/groundtiles.png"]
-}
-
 /* Construction states */
 spriteset(spriteset_default_construction_states) {
 	tmpl_building_sprite_filename(10, 10, 64, -33, "src/graphics/other/default_construction_states.png")
