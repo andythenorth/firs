@@ -1,0 +1,25 @@
+<tal:tiles repeat="tile industry.tiles">
+    <!--! tile properties that are same for all economies -->
+    item(FEAT_INDUSTRYTILES, ${tile.id}, ${tile.numeric_id}) {
+        property {
+            substitute:       0;
+            land_shape_flags: ${tile.land_shape_flags};
+        }
+
+        graphics {
+            ${industry.id}_industry_master_graphics_switch;
+        }
+    }
+    <!--! tile properties that vary by economy -->
+    <tal:economies repeat="economy global_constants.economies">
+        if (economy==${repeat.economy.index}) {
+            <tal:industry_on_or_off condition="industry.get_property('enabled', economy) == True">
+                item(FEAT_INDUSTRYTILES, ${tile.id}, ${tile.numeric_id}) {
+                    property {
+                        accepted_cargos:  [${tile.get_expression_for_tile_acceptance(industry, economy)}];
+                    }
+                }
+            </tal:industry_on_or_off>
+        }
+    </tal:economies>
+</tal:tiles>

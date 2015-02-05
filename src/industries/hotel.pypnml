@@ -7,51 +7,25 @@
 
 #define THIS_ID(...) ${industry.id}_ ## __VA_ARGS__
 
+/* ******************************************************************
+ * Definition of the industry tile, its callbacks, and graphics chain
+ * ******************************************************************/
+
 ${industry.get_spritesets()}
 
 ${industry.get_spritelayouts()}
 
 ${industry.get_industry_layouts_as_graphic_switches()}
 
-/* *************************************************
- * Definition of the industry tile and its callbacks
- * *************************************************/
+<tal:include metal:use-macro="load: ../templates/tile_properties.pynml" />
 
-<tal:tiles repeat="tile industry.tiles">
-    <!--! tile properties that are same for all economies -->
-    item(FEAT_INDUSTRYTILES, ${tile.id}, ${tile.numeric_id}) {
-        property {
-            substitute:       0;
-            land_shape_flags: ${tile.land_shape_flags};
-        }
 
-        graphics {
-            ${industry.id}_industry_master_graphics_switch;
-        }
-    }
-    <!--! tile properties that vary by economy -->
-    <tal:economies repeat="economy global_constants.economies">
-        if (economy==${repeat.economy.index}) {
-            <tal:industry_on_or_off condition="industry.get_property('enabled', economy) == True">
-                item(FEAT_INDUSTRYTILES, ${tile.id}, ${tile.numeric_id}) {
-                    property {
-                        accepted_cargos:  [${tile.get_expression_for_tile_acceptance(industry, economy)}];
-                    }
-                }
-            </tal:industry_on_or_off>
-        }
-    </tal:economies>
-</tal:tiles>
-
-/* *************************************************
- * Definition of the industry layouts
- * *************************************************/
-
-${industry.get_industry_layouts_as_tilelayouts()}
 
 /* *************************************************
  * Definition of the industry
  * *************************************************/
+
+<tal:include metal:use-macro="load: ../templates/industry_layout_tilelayouts.pynml" />
 
 #include "../../src/templates/check_availability.pnml"
 
@@ -59,6 +33,6 @@ ${industry.get_industry_layouts_as_tilelayouts()}
     ${location_check.render()}
 </tal:location_checks>
 
-${industry.get_industry_properties()}
+<tal:include metal:use-macro="load: ../templates/industry_properties.pynml" />
 
 #include "../../src/templates/undefs.pnml"
