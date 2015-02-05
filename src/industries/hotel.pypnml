@@ -11,14 +11,13 @@
  * Definition of the industry tile, its callbacks, and graphics chain
  * ******************************************************************/
 
-${industry.get_spritesets()}
+<tal:include metal:use-macro="load: ../templates/spritesets.pynml" />
 
-${industry.get_spritelayouts()}
+<tal:include metal:use-macro="load: ../templates/spritelayouts.pynml" />
 
-${industry.get_industry_layouts_as_graphic_switches()}
+<tal:include metal:use-macro="load: ../templates/industry_layout_graphics_switches.pynml" />
 
 <tal:include metal:use-macro="load: ../templates/tile_properties.pynml" />
-
 
 
 /* *************************************************
