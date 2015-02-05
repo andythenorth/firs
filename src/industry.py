@@ -318,7 +318,7 @@ class Industry(object):
             return
 
     def get_industry_layouts_as_graphic_switches(self):
-        template = templates['industry_layout_graphics_switches.pynml']
+        template = templates['layout_graphics_switches.pynml']
         return utils.unescape_chameleon_output(template(industry=self))
 
     def get_fence_switches(self):
