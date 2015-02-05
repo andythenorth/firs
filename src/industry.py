@@ -423,3 +423,10 @@ class Industry(object):
         templated_pnml = utils.unescape_chameleon_output(industry_template(industry=self, global_constants=global_constants, utils=utils))
         return templated_pnml
 
+
+class IndustryTertiary(Industry):
+    """ industries that consume cargo and don't produce much (or anything), typically black holes in or near towns """
+    def __init__(self, **kwargs):
+        super(IndustryTertiary, self).__init__(**kwargs)
+        self.template = 'tertiary.pynml'
+

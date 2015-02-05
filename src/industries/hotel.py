@@ -5,7 +5,7 @@
   See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
 """
 
-from industry import Industry, Tile, Sprite, Spriteset, SpriteLayout, IndustryLayout, IndustryLocationChecks
+from industry import IndustryTertiary, Tile, Sprite, Spriteset, SpriteLayout, IndustryLayout, IndustryLocationChecks
 
 """
 Notes to self whilst figuring out python-firs (notes will probably rot here forever).
@@ -15,7 +15,7 @@ Some method properties need a string - the templating is then typically directly
 When a string is expected are basically two choices: provide a string directly, or make an object reference and get an id from that object.
 """
 
-industry = Industry(id='hotel',
+industry = IndustryTertiary(id='hotel',
                     accept_cargo_types=['FOOD', 'BEER', 'PASS'],
                     input_multiplier_1='[0, 0]',
                     input_multiplier_3='[0, 0]',
