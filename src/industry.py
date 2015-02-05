@@ -24,9 +24,10 @@ from industries import registered_industries
 
 class Tile(object):
     """ Base class to hold industry tiles"""
-    def __init__(self, id):
+    def __init__(self, id, **kwargs):
         self.id = id
         self.numeric_id = global_constants.tile_numeric_ids.get(self.id, None) # use of get() here is temporary during migrations, not needed otherwise
+        self.land_shape_flags = kwargs.get('land_shape_flags', '0')
 
     def get_expression_for_tile_acceptance(self, industry, economy=None):
         result = []
