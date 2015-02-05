@@ -309,8 +309,9 @@ class Industry(object):
         # supports auto-magic layouts from layout objects, or layouts simply declared as a string for nml
         # or no layout declaration if over-riding a default industry
         if self.default_industry_properties.layouts == 'AUTO':
-            template = templates['industry_layout_property.pynml'] # automagic case
-            return 'layouts: ' + utils.unescape_chameleon_output(template(industry=self))
+            # automagic case
+            result = [industry_layout.id + '_tilelayout' for industry_layout in self.industry_layouts]
+            return 'layouts: [' + ','.join(result) + '];'
         elif self.default_industry_properties.layouts != None:
             return 'layouts: ' + self.default_industry_properties.layouts + ';' # simple case
         else:
