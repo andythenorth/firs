@@ -302,7 +302,7 @@ class Industry(object):
         return utils.unescape_chameleon_output(template(industry=self))
 
     def get_industry_layouts_as_tilelayouts(self):
-        template = templates['industry_layout_tilelayouts.pynml']
+        template = templates['industry_layouts.pynml']
         return utils.unescape_chameleon_output(template(industry=self))
 
     def get_industry_layouts_as_property(self):

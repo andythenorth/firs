@@ -25,7 +25,7 @@ ${industry.get_industry_layouts_as_graphic_switches()}
  * Definition of the industry
  * *************************************************/
 
-<tal:include metal:use-macro="load: ../templates/industry_layout_tilelayouts.pynml" />
+<tal:include metal:use-macro="load: ../templates/industry_layouts.pynml" />
 
 #include "../../src/templates/check_availability.pnml"
 
