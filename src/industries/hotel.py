@@ -5,7 +5,7 @@
   See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
 """
 
-from industry import IndustryTertiary, Tile, Sprite, Spriteset, SpriteLayout, IndustryLayout, IndustryLocationChecks
+from industry import IndustryTertiary, Tile, TileLocationChecks, Sprite, Spriteset, SpriteLayout, IndustryLayout, IndustryLocationChecks
 
 """
 Notes to self whilst figuring out python-firs (notes will probably rot here forever).
@@ -51,7 +51,8 @@ industry.economy_variations['BASIC_TROPIC'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
 
 industry.add_tile(id='hotel_tile_1',
-                  land_shape_flags='bitmask(LSF_ONLY_ON_FLAT_LAND)')
+                  land_shape_flags='bitmask(LSF_ONLY_ON_FLAT_LAND)',
+                  location_checks=TileLocationChecks())
 
 sprite_ground = industry.add_sprite(
     sprite_number = 'GROUNDSPRITE_CLEARED'

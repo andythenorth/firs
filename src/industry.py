@@ -36,6 +36,11 @@ class Tile(object):
         return ','.join(result)
 
 
+class TileLocationChecks(object):
+    """ Class to hold location checks for a tile """
+    def __init__(self, **kwargs):
+        pass
+
 
 class Sprite(object):
     """Base class to hold simple sprites (using numbers from a base set)"""
