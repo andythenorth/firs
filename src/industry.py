@@ -28,6 +28,7 @@ class Tile(object):
         self.id = id
         self.numeric_id = global_constants.tile_numeric_ids.get(self.id, None) # use of get() here is temporary during migrations, not needed otherwise
         self.land_shape_flags = kwargs.get('land_shape_flags', '0')
+        self.location_checks = kwargs.get('location_checks')
 
     def get_expression_for_tile_acceptance(self, industry, economy=None):
         result = []
@@ -40,6 +41,32 @@ class TileLocationChecks(object):
     """ Class to hold location checks for a tile """
     def __init__(self, **kwargs):
         pass
+
+    def get_render_tree(self, switch_prefix):
+        result = [TileLocationCheckFounder()]
+        """
+        for industry_type, distance in self.incompatible.items():
+            result.append(LocationCheckIncompatible(industry_type, distance))
+        prev = None
+        for lc in reversed(result):
+            if prev is not None:
+                lc.switch_result = switch_prefix + prev.switch_entry_point
+            prev = lc
+        """
+        return list(reversed(result))
+
+
+class TileLocationCheckFounder(object):
+    """
+        used to over-ride non-essential checks when player is building;
+        some tile checks relating to landscape are essential and cannot be over-ridden by player
+    """
+    def __init__(self):
+        self.switch_result = 'return CB_RESULT_LOCATION_ALLOW' # default result, value may also be id for next switch
+        self.switch_entry_point = 'terrain_check'
+
+    def render(self):
+        return 'TILE_ALLOW_PLAYER (' + self.switch_entry_point + ',' + self.switch_result + ')'
 
 
 class Sprite(object):
@@ -135,9 +162,9 @@ class IndustryLocationChecks(object):
         self.incompatible = kwargs.get('incompatible', {})
 
     def get_render_tree(self, switch_prefix):
-        result = [LocationCheckFounder()]
+        result = [IndustryLocationCheckFounder()]
         for industry_type, distance in self.incompatible.items():
-            result.append(LocationCheckIncompatible(industry_type, distance))
+            result.append(IndustryLocationCheckIncompatible(industry_type, distance))
         prev = None
         for lc in reversed(result):
             if prev is not None:
@@ -146,7 +173,7 @@ class IndustryLocationChecks(object):
         return list(reversed(result))
 
 
-class LocationCheckIncompatible(object):
+class IndustryLocationCheckIncompatible(object):
     """prevent locating near incompatible industry types"""
     def __init__(self, industry_type, distance):
         self.industry_type = industry_type
@@ -158,7 +185,7 @@ class LocationCheckIncompatible(object):
         return 'CHECK_INCOMPATIBLE (' + self.industry_type + ', ' + str(self.distance) + ', CB_RESULT_LOCATION_DISALLOW, ' + self.switch_result + ')'
 
 
-class LocationCheckFounder(object):
+class IndustryLocationCheckFounder(object):
     """ensures player can build irrespective of _industry_ location checks (tile checks still apply)"""
     def __init__(self):
         self.switch_result = 'return CB_RESULT_LOCATION_ALLOW' # default result, value may also be id for next switch

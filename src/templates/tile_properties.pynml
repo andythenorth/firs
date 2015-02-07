@@ -7,6 +7,7 @@
         }
 
         graphics {
+    		tile_check: ${industry.id}_terrain_check;
             ${industry.id}_industry_master_graphics_switch;
         }
     }
