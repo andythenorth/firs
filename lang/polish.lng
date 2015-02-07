@@ -76,6 +76,12 @@ STR_CARGO_NAME_MILK.d                                                           
 STR_CARGO_NAME_MANUFACTURING_SUPPLIES                                           :{G=n}Opakowania
 STR_CARGO_NAME_MANUFACTURING_SUPPLIES.b                                         :opakowania
 STR_CARGO_NAME_MANUFACTURING_SUPPLIES.d                                         :opakowań
+STR_CARGO_NAME_NITRATES                                                         :Saletra
+STR_CARGO_NAME_NITRATES.b                                                       :Saletrę
+STR_CARGO_NAME_NITRATES.c                                                       :Saletrze
+STR_CARGO_NAME_NITRATES.d                                                       :Saletry
+STR_CARGO_NAME_NITRATES.m                                                       :Saletry
+STR_CARGO_NAME_NITRATES.n                                                       :Saletrą
 STR_CARGO_NAME_PETROL                                                           :{G=n}Paliwo
 STR_CARGO_NAME_PETROL.b                                                         :paliwo
 STR_CARGO_NAME_PETROL.d                                                         :paliwa
@@ -115,6 +121,7 @@ STR_CARGO_UNIT_FRUITS                                                           
 STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} desek
 STR_CARGO_UNIT_METAL                                                            :{WEIGHT} metalu
 STR_CARGO_UNIT_MILK                                                             :{VOLUME} mleka
+STR_CARGO_UNIT_NITRATES                                                         :{WEIGHT} saletry
 STR_CARGO_UNIT_MNSP                                                             :{SIGNED_WORD} skrzy{P 0 nia nie ń} opakowań
 STR_CARGO_UNIT_PETROL                                                           :{VOLUME} paliwa
 STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} surowców wtórnych
@@ -139,6 +146,7 @@ STR_CID_LUMBER                                                                  
 STR_CID_MANUFACTURING_SUPPLIES                                                  :{TINYFONT}OP
 STR_CID_METAL                                                                   :{TINYFONT}MT
 STR_CID_MILK                                                                    :{TINYFONT}MK
+STR_CID_NITRATES                                                                :{TINYFONT}SL
 STR_CID_PETROL                                                                  :{TINYFONT}PW
 STR_CID_RECYCLABLES                                                             :{TINYFONT}SW
 STR_CID_SAND                                                                    :{TINYFONT}PK
@@ -174,7 +182,7 @@ STR_EXTRA_FISHING_HARBOUR                                                       
 STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Produkcja:{}  3t z 8t opakowań{}  5t z 8t desek{}{}Produkcja wzrasta do 8t z 8t, gdy oba surowce są dostarczane w ciągu miesiąca.
 STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Produkuje butelki, słoje, szyby i inne rzeczy ze szkła.{}{}{BLACK}Produkcja:{}  6t z 8t piasku{}  2t z 8t chemikaliów{}{}Produkcja wzrasta do 8t z 8t, gdy oba surowce są dostarczane w ciągu miesiąca.
 STR_EXTRA_GRAIN_MILL                                                            :{BLACK}Produkcja:{}  3t z 8t opakowań{}  5t z 8t zboża{}{}Produkcja wzrasta do 8t z 8t, gdy oba surowce są dostarczane w ciągu miesiąca.
-STR_EXTRA_IRON_WORKS                                                            :{BLACK}Produkcja:{}  2t z 8t drewna{}  2t z 8t rudy żelaza{}{}Produkcja wzrasta do 4t z 8t, gdy oba surowce są dostarczane w ciągu miesiąca.
+STR_EXTRA_IRON_WORKS                                                            :{BLACK}Produkcja:{} 3t z 8t rudy żelaza{} 3t z 8t drewna{} 2t z 8t piasku{}{}Produkcja wzrasta, gdy różne surowce są dostarczane w ciągu miesiąca.
 STR_EXTRA_LIME_KILN                                                             :{BLACK}Produkcja:{}  3t z 8t kamieni{}  3t z 8t węgla{}{}Produkcja wzrasta do 6t z 8t, gdy oba surowce są dostarczane w ciągu miesiąca.
 STR_EXTRA_LUMBER_YARD                                                           :{BLACK}Produkuje płoty, słupy itp.{}{}{BLACK}Produkcja:{}  2t z 8t chemikaliów{}  6t z 8t desek{}{}Produkcja wzrasta do 8t z 8t, gdy oba surowce są dostarczane w ciągu miesiąca.
 STR_EXTRA_MACHINE_SHOP                                                          :{BLACK}Produkuje różnego rodzaju maszyny.{}{}8t z 8t surowców.
@@ -190,7 +198,7 @@ STR_EXTRA_RECYCLING_PLANT                                                       
 STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}Poziom produkcji zależy od wielkości pobliskiego miasta.
 STR_EXTRA_SAWMILL                                                               :{BLACK}Drzewo się rżnie. Jest deska, jest sęk.{}{}6t z 8t surowców.
 STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Produkcja ręcznie kutych podków, narzędzi, bramek i innych drobnych metalowych przedmiotów.{}{}5t z 8t surowców.
-STR_EXTRA_STEELMILL                                                             :{BLACK}Produkcja:{}  2t z 8t rudy żelaza{}  2t z 8t węgla{}  4t z 8t złomu{}{}Produkcja wzrasta, gdy różne surowce są dostarczane w ciągu miesiąca.
+STR_EXTRA_STEELMILL                                                             :{BLACK}Produkcja:{} 3t z 8t rudy żelaza{} 2t z 8t węgla{} 3t z 8t złomu{}{}Produkcja wzrasta, gdy różne surowce są dostarczane w ciągu miesiąca.
 STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Produkcja:{}  3t z 8 skrzyń opakowań{}  5t z 8t buraków cukrowych{}{}Produkcja wzrasta do 8t z 8t, gdy oba surowce są dostarczane w ciągu miesiąca.
 STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Produkcja:{}  3 skrzynie z 8 skrzyń opakowań{} {STRING} {STRING}{}Produkcja wzrasta, gdy opakowania są dostarczane w ciągu miesiąca po innych towarach.
 STR_EXTRA_TEXTILE_MILL_WOOL_SUBSTR                                              :5 skrzyń na 8 dostarczonych beli wełny{}
@@ -248,6 +256,12 @@ STR_IND_BULK_TERMINAL                                                           
 STR_IND_BULK_TERMINAL.d                                                         :portu handlowego
 STR_IND_CEMENT_PLANT                                                            :{G=f}Cementownia
 STR_IND_CEMENT_PLANT.d                                                          :cementowni
+STR_IND_CHEMICAL_PLANT                                                          :Zakłady chemiczne
+STR_IND_CHEMICAL_PLANT.b                                                        :Zakłady chemiczne
+STR_IND_CHEMICAL_PLANT.c                                                        :Zakładom chemicznym
+STR_IND_CHEMICAL_PLANT.d                                                        :Zakładów chemicznych
+STR_IND_CHEMICAL_PLANT.m                                                        :Zakładami chemicznymi
+STR_IND_CHEMICAL_PLANT.n                                                        :Zakładami chemicznymi
 STR_IND_CLAY_PIT                                                                :{G=f}Kopalnia gliny
 STR_IND_CLAY_PIT.d                                                              :kopalni gliny
 STR_IND_COFFEE_ESTATE                                                           :{G=f}Plantacja kawy

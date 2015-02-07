@@ -45,6 +45,7 @@ STR_CARGO_NAME_LUMBER                                                           
 STR_CARGO_NAME_METAL                                                            :Metaal
 STR_CARGO_NAME_MILK                                                             :Melk
 STR_CARGO_NAME_MANUFACTURING_SUPPLIES                                           :Vervaardigings Benodighede
+STR_CARGO_NAME_NITRATES                                                         :Nitrate
 STR_CARGO_NAME_PETROL                                                           :Petrol
 STR_CARGO_NAME_RECYCLABLES                                                      :Herwinbaares
 STR_CARGO_NAME_SAND                                                             :Sand
@@ -70,6 +71,7 @@ STR_CARGO_UNIT_FRUITS                                                           
 STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} timmerhout
 STR_CARGO_UNIT_METAL                                                            :{WEIGHT} metaal
 STR_CARGO_UNIT_MILK                                                             :{VOLUME} melk
+STR_CARGO_UNIT_NITRATES                                                         :{WEIGHT} nitrate
 STR_CARGO_UNIT_MNSP                                                             :{SIGNED_WORD} krat{P 0 "" te} vervaardigings benodighede
 STR_CARGO_UNIT_PETROL                                                           :{VOLUME} petrol
 STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} herwinbares
@@ -96,6 +98,7 @@ STR_CID_LUMBER                                                                  
 STR_CID_MANUFACTURING_SUPPLIES                                                  :{TINYFONT}MS
 STR_CID_METAL                                                                   :{TINYFONT}MT
 STR_CID_MILK                                                                    :{TINYFONT}MK
+STR_CID_NITRATES                                                                :{TINYFONT}NI
 STR_CID_PETROL                                                                  :{TINYFONT}PT
 STR_CID_RECYCLABLES                                                             :{TINYFONT}RC
 STR_CID_SAND                                                                    :{TINYFONT}SA
@@ -126,9 +129,11 @@ STR_EXTRA_BREWERY_GRAIN_SUBSTR                                                  
 STR_EXTRA_BREWERY_FRUIT_SUBSTR                                                  :5,000l per 8t vrugte afgelewer{}
 STR_EXTRA_BRICKWORKS                                                            :{BLACK}Vrag produksie:{} 2t per 8t steenkool afgelewer{} 2t per 8t sand afgelewer{} 4t per 8t klei afgelewer{}{}Produksie neem toe as twee of meer vragte afgelewer word binne 'n maand van mekaar.
 STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Vrag produksie:{} 2t per 8t steenkool afgelewer{} 2t per 8t klei afgelewer{} 4t per 8t stene afgelewer{}{}Produksie neem toe as twee of meer vragte afgelewer word binne 'n maand van mekaar.
+STR_EXTRA_CHEMICAL_PLANT                                                        :{BLACK}Vrag produksie:{}  6,000l per 8,000l olie afgelewer{}  6,000l per 8t nitrate afgelewer
 STR_EXTRA_DAIRY                                                                 :{BLACK}Vrag produksie:{} 3t per 8t vervaardigings benodighede afgelewer{} 5t per 8t melk afgelewer{}{}Vermeeder to 8t per 8t wanneer beide vragte afgelewer word binne 'n maand van mekaar.
 STR_EXTRA_FERTILIZER_PLANT                                                      :{BLACK}Vrag produksie:{} 8 kratte per 8,000l chemikalieë afgelewer
 STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Vrag produksie:{} 3t per 8t vervaardigings benodighede afgelewer{} 5t per 8t vis afgelewer{}{}Vermeeder tot 8t per 8t wanneer beide vragte afgelewer word binne 'n maand van mekaar.
+STR_EXTRA_FOOD_PROCESSING_PLANT                                                 :{BLACK}Vrag produksie:{}  6t per 8 t bone afgelewer{}  6t per 8t vrugte afgelewer
 STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Vrag produksie:{} 3t per 8t vervaardigings benodighede afgelewer{} 5t per 8t hout afgelewer{}{}Vermeeder tot 8t per 8t wanneer beide vragte afgelewer word binne 'n maand van mekaar.
 STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Produseer glass items soos bottels, flesse en venster glas.{}{}{BLACK}Vrag produksie:{} 6t per 8t sand afgelewer{} 2t per 8t chemikalieë afgelewer{}{}Vermeeder tot 8t per 8t wanneer beide vragte afgelewer word binne 'n maand van mekaar.
 STR_EXTRA_GRAIN_MILL                                                            :{BLACK}Vrag produksie:{} 3t per 8t vervaardigings benodighede afgelewer{} 5t per 8t graan afgelewer{}{}Vermeeder tot 8t per 8t wanneer beide vragte afgelewer word binne 'n maand van mekaar.
@@ -153,6 +158,7 @@ STR_EXTRA_SUGAR_REFINERY                                                        
 STR_EXTRA_TEXTILE_MILL                                                          :{BLACK} Vrag produksie:{} 3 kratte per 8 kratte vervaardiging voorrade gelewer{} {STRING} {STRING}{} Produksie verhoog as vervaardiging voorrade afgelewer word binne 'n maand van ander vragte.
 STR_EXTRA_TEXTILE_MILL_WOOL_SUBSTR                                              :5 kratte per 8 bale wol afgelewer{}
 STR_EXTRA_TEXTILE_MILL_PLANT_FIBRES_SUBSTR                                      :6 krate per 8 bale plantvesels afgelewer{}
+STR_EXTRA_VEHICLE_FACTORY                                                       :{BLACK}Vrag produksie:{}  8 kratte per 8 kratte voertuig parte afgelewer{}  8 kratte per 8 kratte vervaardigings benodighede afgelewer
 
 STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ DEBUG ------------{}Produksie die maand:{}Vrag 1: {WHITE}{COMMA}{BLACK}{}Vrag 2: {WHITE}{COMMA}{BLACK}{}Dae sedert laaste aflewering: {WHITE}{COMMA}{BLACK}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Maksimum produksie beryk
@@ -195,6 +201,7 @@ STR_IND_BRICK_WORKS                                                             
 STR_IND_BUILDERS_YARD                                                           :Bouers Werf
 STR_IND_BULK_TERMINAL                                                           :Bulk Terminaal
 STR_IND_CEMENT_PLANT                                                            :Sement Fabriek
+STR_IND_CHEMICAL_PLANT                                                          :Chemiese Aanleg
 STR_IND_CLAY_PIT                                                                :Klei Pit
 STR_IND_COFFEE_ESTATE                                                           :Koffee Landgoed
 STR_IND_FIBRE_CROP_FARM                                                         :Vesel saaiplaas
@@ -221,6 +228,7 @@ STR_IND_METAL_FABRICATION_PLANT                                                 
 STR_IND_METAL_FOUNDRY                                                           :Metaal Werkswinkel
 STR_IND_MIXEDFARM                                                               :Gemende Plaas
 STR_IND_ORCHARD_PIGGERY                                                         :Boord en Varkplaas
+STR_IND_NITRATE_MINE                                                            :Nitrate Myn
 STR_IND_PETROLPUMP                                                              :Petrol Stasie
 STR_IND_PLASTICS_PLANT                                                          :Plastiese Fabriek
 STR_IND_PORT                                                                    :Hawe
