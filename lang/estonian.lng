@@ -1,0 +1,677 @@
+##grflangid 0x34
+##plural 0
+##case g in sü
+
+STR_GRF_DESC                                                                    :{ORANGE}FIRS Industry Replacement Set{}{BLACK}Toodud Teieni andythenorth, FooBar, planetmaker, Terkhen and Yexo ja paljude teiste poolt{SILVER}Rohkem infot "read me"-s, ka see kuidas kasutada FIRS-i. {BLACK}Litsents: GPL v2.
+STR_GRF_DESC.g                                                                  :{ORANGE}FIRS Industry Replacement Set{}{BLACK}Toodud Teieni andythenorth, FooBar, planetmaker, Terkhen and Yexo ja paljude teiste poolt{SILVER}Rohkem infot "read me"-s, ka see kuidas kasutada FIRS-i. {BLACK}Litsents: GPL v2.
+STR_GRF_DESC.in                                                                 :{ORANGE}FIRS Industry Replacement Set{}{BLACK}Toodud Teieni andythenorth, FooBar, planetmaker, Terkhen and Yexo ja paljude teiste poolt{SILVER}Rohkem infot "read me"-s, ka see kuidas kasutada FIRS-i. {BLACK}Litsents: GPL v2.
+STR_GRF_DESC.sü                                                                 :{ORANGE}FIRS Industry Replacement Set{}{BLACK}Toodud Teieni andythenorth, FooBar, planetmaker, Terkhen and Yexo ja paljude teiste poolt{SILVER}Rohkem infot "read me"-s, ka see kuidas kasutada FIRS-i. {BLACK}Litsents: GPL v2.
+STR_GRF_NAME                                                                    :{TITLE}
+STR_GRF_URL                                                                     :http://bundles.openttdcoop.org/firs/releases/LATEST/docs/
+
+STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :Maksimum kaugus kaldast kalapüügi väljadest, nafta puurtornidest ja süvenduskohtadest.
+STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY.g                                 :Maksimum kaugus kaldast kalapüügi väljadest, nafta puurtornidest ja süvenduskohtadest.
+STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY.in                                :Maksimum kaugus kaldast kalapüügi väljadest, nafta puurtornidest ja süvenduskohtadest.
+STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY.sü                                :Maksimum kaugus kaldast kalapüügi väljadest, nafta puurtornidest ja süvenduskohtadest.
+STR_PARAM_DESC_STAT_RATING                                                      :Jaama reitingu suurust mõjutab kogus mis on tarnitud tööstuse poolt jaama; mida kõrgem reiting, seda rohkem on kohale toimetatud.
+STR_PARAM_DESC_STAT_RATING.g                                                    :Jaama reitingu suurust mõjutab kogus mis on tarnitud tööstuse poolt jaama; mida kõrgem reiting, seda rohkem on kohale toimetatud.
+STR_PARAM_DESC_STAT_RATING.in                                                   :Jaama reitingu suurust mõjutab kogus mis on tarnitud tööstuse poolt jaama; mida kõrgem reiting, seda rohkem on kohale toimetatud.
+STR_PARAM_DESC_STAT_RATING.sü                                                   :Jaama reitingu suurust mõjutab kogus mis on tarnitud tööstuse poolt jaama; mida kõrgem reiting, seda rohkem on kohale toimetatud.
+STR_PARAM_DESC_DEBUG                                                            :Ainult arendajatele
+STR_PARAM_DESC_DEBUG.g                                                          :Ainult arendajatele
+STR_PARAM_DESC_DEBUG.in                                                         :Ainult arendajatele
+STR_PARAM_DESC_DEBUG.sü                                                         :Ainult arendajatele
+STR_PARAM_DESC_ECONOMIES                                                        :Iga majandusharu annab erinevate kaupade ja tööstusharudes majanduse.{}{} Mängijatele, kes tahavad lihtsat mängu, "Tavaline" sisaldab vähem tööstusi ja kaupu kui teised FIRS majandusharud.
+STR_PARAM_DESC_ECONOMIES.g                                                      :Iga majandusharu annab erinevate kaupade ja tööstusharudes majanduse.{}{} Mängijatele, kes tahavad lihtsat mängu, "Tavaline" sisaldab vähem tööstusi ja kaupu kui teised FIRS majandusharud.
+STR_PARAM_DESC_ECONOMIES.in                                                     :Iga majandusharu annab erinevate kaupade ja tööstusharudes majanduse.{}{} Mängijatele, kes tahavad lihtsat mängu, "Tavaline" sisaldab vähem tööstusi ja kaupu kui teised FIRS majandusharud.
+STR_PARAM_DESC_ECONOMIES.sü                                                     :Iga majandusharu annab erinevate kaupade ja tööstusharudes majanduse.{}{} Mängijatele, kes tahavad lihtsat mängu, "Tavaline" sisaldab vähem tööstusi ja kaupu kui teised FIRS majandusharud.
+STR_PARAM_DESC_NO_OPENINGS                                                      :Vaikimisi uute tööstusharude avamine mängu ajal.{}{} Kui " vältida avamist" on sisse lülitatud siis tööstused ei avane mängu ajal ja mängijad ei saa luua tööstusi või rahastada geoloogilisi uuringuid.
+STR_PARAM_DESC_NO_OPENINGS.g                                                    :Vaikimisi uute tööstusharude avamine mängu ajal.{}{} Kui " vältida avamist" on sisse lülitatud siis tööstused ei avane mängu ajal ja mängijad ei saa luua tööstusi või rahastada geoloogilisi uuringuid.
+STR_PARAM_DESC_NO_OPENINGS.in                                                   :Vaikimisi uute tööstusharude avamine mängu ajal.{}{} Kui " vältida avamist" on sisse lülitatud siis tööstused ei avane mängu ajal ja mängijad ei saa luua tööstusi või rahastada geoloogilisi uuringuid.
+STR_PARAM_DESC_NO_OPENINGS.sü                                                   :Vaikimisi uute tööstusharude avamine mängu ajal.{}{} Kui " vältida avamist" on sisse lülitatud siis tööstused ei avane mängu ajal ja mängijad ei saa luua tööstusi või rahastada geoloogilisi uuringuid.
+STR_PARAM_DESC_SECONDARY_NEVER_CLOSE                                            :Vaikimisi, FIRS teise järgu tööstused kunagi ei sulgu{}{}Kui teise järgu sulgemine on sisse lülitatud, siis nad võivad sulgeda ennast kui sinna pole kaua kaupu transporditud. Peamised tööstused kunagi ei sulge ja ei ole mõjutatud sellest seadest.
+STR_PARAM_DESC_SECONDARY_NEVER_CLOSE.g                                          :Vaikimisi, FIRS teise järgu tööstused kunagi ei sulgu{}{}Kui teise järgu sulgemine on sisse lülitatud, siis nad võivad sulgeda ennast kui sinna pole kaua kaupu transporditud. Peamised tööstused kunagi ei sulge ja ei ole mõjutatud sellest seadest.
+STR_PARAM_DESC_SECONDARY_NEVER_CLOSE.in                                         :Vaikimisi, FIRS teise järgu tööstused kunagi ei sulgu{}{}Kui teise järgu sulgemine on sisse lülitatud, siis nad võivad sulgeda ennast kui sinna pole kaua kaupu transporditud. Peamised tööstused kunagi ei sulge ja ei ole mõjutatud sellest seadest.
+STR_PARAM_DESC_SECONDARY_NEVER_CLOSE.sü                                         :Vaikimisi, FIRS teise järgu tööstused kunagi ei sulgu{}{}Kui teise järgu sulgemine on sisse lülitatud, siis nad võivad sulgeda ennast kui sinna pole kaua kaupu transporditud. Peamised tööstused kunagi ei sulge ja ei ole mõjutatud sellest seadest.
+STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY                                   :Maksimum ranniku distants meretööstuste vahel ruutudes
+STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY.g                                 :Maksimum ranniku distants meretööstuste vahel ruutudes
+STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY.in                                :Maksimum ranniku distants meretööstuste vahel ruutudes
+STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY.sü                                :Maksimum ranniku distants meretööstuste vahel ruutudes
+STR_PARAM_NAME_DEBUG                                                            :Näita veaeemaldamise tekste
+STR_PARAM_NAME_DEBUG.g                                                          :Näita veaeemaldamise tekste
+STR_PARAM_NAME_DEBUG.in                                                         :Näita veaeemaldamise tekste
+STR_PARAM_NAME_DEBUG.sü                                                         :Näita veaeemaldamise tekste
+STR_PARAM_NAME_ECONOMIES                                                        :Majandus
+STR_PARAM_NAME_ECONOMIES.g                                                      :Majandus
+STR_PARAM_NAME_ECONOMIES.in                                                     :Majandus
+STR_PARAM_NAME_ECONOMIES.sü                                                     :Majandus
+STR_PARAM_NAME_NO_OPENINGS                                                      :Väista tööstuste rajamise mängimise ajal
+STR_PARAM_NAME_NO_OPENINGS.g                                                    :Väista tööstuste rajamise mängimise ajal
+STR_PARAM_NAME_NO_OPENINGS.in                                                   :Väista tööstuste rajamise mängimise ajal
+STR_PARAM_NAME_NO_OPENINGS.sü                                                   :Väista tööstuste rajamise mängimise ajal
+STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            :Luba teise järgu tööstustel sulgeda
+STR_PARAM_NAME_SECONDARY_NEVER_CLOSE.g                                          :Luba teise järgu tööstustel sulgeda
+STR_PARAM_NAME_SECONDARY_NEVER_CLOSE.in                                         :Luba teise järgu tööstustel sulgeda
+STR_PARAM_NAME_SECONDARY_NEVER_CLOSE.sü                                         :Luba teise järgu tööstustel sulgeda
+STR_PARAM_NAME_STAT_RATING                                                      :Jaama reitingu algoritm
+STR_PARAM_NAME_STAT_RATING.g                                                    :Jaama reitingu algoritm
+STR_PARAM_NAME_STAT_RATING.in                                                   :Jaama reitingu algoritm
+STR_PARAM_NAME_STAT_RATING.sü                                                   :Jaama reitingu algoritm
+STR_PARAM_VALUE_STAT_RATING_DEFAULT                                             :Sünge ja kuri (kasutab tavalist OpenTTD teitingut)
+STR_PARAM_VALUE_STAT_RATING_DEFAULT.g                                           :Sünge ja kuri (kasutab tavalist OpenTTD teitingut)
+STR_PARAM_VALUE_STAT_RATING_DEFAULT.in                                          :Sünge ja kuri (kasutab tavalist OpenTTD teitingut)
+STR_PARAM_VALUE_STAT_RATING_DEFAULT.sü                                          :Sünge ja kuri (kasutab tavalist OpenTTD teitingut)
+STR_PARAM_VALUE_STAT_RATING_REDUCED_TIME                                        :Soodne (lubab pikemat aega kauba laadimiste vahel)
+STR_PARAM_VALUE_STAT_RATING_REDUCED_TIME.g                                      :Soodne (lubab pikemat aega kauba laadimiste vahel)
+STR_PARAM_VALUE_STAT_RATING_REDUCED_TIME.in                                     :Soodne (lubab pikemat aega kauba laadimiste vahel)
+STR_PARAM_VALUE_STAT_RATING_REDUCED_TIME.sü                                     :Soodne (lubab pikemat aega kauba laadimiste vahel)
+STR_PARAM_VALUE_STAT_RATING_100                                                 :Väga helde (määr on lati 100%)
+STR_PARAM_VALUE_STAT_RATING_100.g                                               :Väga helde (määr on lati 100%)
+STR_PARAM_VALUE_STAT_RATING_100.in                                              :Väga helde (määr on lati 100%)
+STR_PARAM_VALUE_STAT_RATING_100.sü                                              :Väga helde (määr on lati 100%)
+
+STR_PARAM_VALUE_ECONOMIES_BASIC_ARCTIC                                          :Tavaline Arktika
+STR_PARAM_VALUE_ECONOMIES_BASIC_ARCTIC.g                                        :Tavaline Arktika
+STR_PARAM_VALUE_ECONOMIES_BASIC_ARCTIC.in                                       :Tavaline Arktika
+STR_PARAM_VALUE_ECONOMIES_BASIC_ARCTIC.sü                                       :Tavaline Arktika
+STR_PARAM_VALUE_ECONOMIES_BASIC_TROPIC                                          :Tavaline troopiline
+STR_PARAM_VALUE_ECONOMIES_BASIC_TROPIC.g                                        :Tavaline troopiline
+STR_PARAM_VALUE_ECONOMIES_BASIC_TROPIC.in                                       :Tavaline troopiline
+STR_PARAM_VALUE_ECONOMIES_BASIC_TROPIC.sü                                       :Tavaline troopiline
+STR_PARAM_VALUE_ECONOMIES_FIRS                                                  :FIRS
+STR_PARAM_VALUE_ECONOMIES_MISTAH_KURTZ                                          :Pimeduse süda
+STR_PARAM_VALUE_ECONOMIES_MISTAH_KURTZ.g                                        :Pimeduse süda
+STR_PARAM_VALUE_ECONOMIES_MISTAH_KURTZ.in                                       :Pimeduse süda
+STR_PARAM_VALUE_ECONOMIES_MISTAH_KURTZ.sü                                       :Pimeduse süda
+
+STR_CARGO_NAME_ALCOHOL                                                          :Alkohol
+STR_CARGO_NAME_ALCOHOL.g                                                        :Alkohol
+STR_CARGO_NAME_ALCOHOL.in                                                       :Alkohol
+STR_CARGO_NAME_ALCOHOL.sü                                                       :Alkohol
+STR_CARGO_NAME_BEANS                                                            :Oad
+STR_CARGO_NAME_BEANS.g                                                          :Oad
+STR_CARGO_NAME_BEANS.in                                                         :Oad
+STR_CARGO_NAME_BEANS.sü                                                         :Oad
+STR_CARGO_NAME_BUILDING_MATERIALS                                               :Ehitusmaterjalid
+STR_CARGO_NAME_BUILDING_MATERIALS.g                                             :Ehitusmaterjalid
+STR_CARGO_NAME_BUILDING_MATERIALS.in                                            :Ehitusmaterjalid
+STR_CARGO_NAME_BUILDING_MATERIALS.sü                                            :Ehitusmaterjalid
+STR_CARGO_NAME_CHEMICALS                                                        :Kemikaalid
+STR_CARGO_NAME_CHEMICALS.g                                                      :Kemikaalid
+STR_CARGO_NAME_CHEMICALS.in                                                     :Kemikaalid
+STR_CARGO_NAME_CHEMICALS.sü                                                     :Kemikaalid
+STR_CARGO_NAME_CLAY                                                             :Savi
+STR_CARGO_NAME_COFFEE                                                           :Kohvi
+STR_CARGO_NAME_COFFEE.g                                                         :Kohvi
+STR_CARGO_NAME_COFFEE.in                                                        :Kohvi
+STR_CARGO_NAME_COFFEE.sü                                                        :Kohvi
+STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :Ehitustarvikuid
+STR_CARGO_NAME_ENGINEERING_SUPPLIES.g                                           :Ehitustarvikuid
+STR_CARGO_NAME_ENGINEERING_SUPPLIES.in                                          :Ehitustarvikuid
+STR_CARGO_NAME_ENGINEERING_SUPPLIES.sü                                          :Ehitustarvikuid
+STR_CARGO_NAME_FISH                                                             :Kala
+STR_CARGO_NAME_FISH.g                                                           :Kala
+STR_CARGO_NAME_FISH.in                                                          :Kala
+STR_CARGO_NAME_FISH.sü                                                          :Kala
+STR_CARGO_NAME_LUMBER                                                           :Puit
+STR_CARGO_NAME_LUMBER.g                                                         :Puit
+STR_CARGO_NAME_LUMBER.in                                                        :Puit
+STR_CARGO_NAME_LUMBER.sü                                                        :Puit
+STR_CARGO_NAME_METAL                                                            :Metall
+STR_CARGO_NAME_METAL.g                                                          :Metall
+STR_CARGO_NAME_METAL.in                                                         :Metall
+STR_CARGO_NAME_METAL.sü                                                         :Metall
+STR_CARGO_NAME_MILK                                                             :Piim
+STR_CARGO_NAME_MILK.g                                                           :Piim
+STR_CARGO_NAME_MILK.in                                                          :Piim
+STR_CARGO_NAME_MILK.sü                                                          :Piim
+STR_CARGO_NAME_MANUFACTURING_SUPPLIES                                           :Tootmisetarvikud
+STR_CARGO_NAME_MANUFACTURING_SUPPLIES.g                                         :Tootmisetarvikud
+STR_CARGO_NAME_MANUFACTURING_SUPPLIES.in                                        :Tootmisetarvikud
+STR_CARGO_NAME_MANUFACTURING_SUPPLIES.sü                                        :Tootmisetarvikud
+STR_CARGO_NAME_NITRATES                                                         :Nitraadid
+STR_CARGO_NAME_NITRATES.g                                                       :Nitraadid
+STR_CARGO_NAME_NITRATES.in                                                      :Nitraadid
+STR_CARGO_NAME_NITRATES.sü                                                      :Nitraadid
+STR_CARGO_NAME_PETROL                                                           :Bensiin
+STR_CARGO_NAME_PETROL.g                                                         :Bensiin
+STR_CARGO_NAME_PETROL.in                                                        :Bensiin
+STR_CARGO_NAME_PETROL.sü                                                        :Bensiin
+STR_CARGO_NAME_RECYCLABLES                                                      :Taaskasutatavad
+STR_CARGO_NAME_RECYCLABLES.g                                                    :Taaskasutatavad
+STR_CARGO_NAME_RECYCLABLES.in                                                   :Taaskasutatavad
+STR_CARGO_NAME_RECYCLABLES.sü                                                   :Taaskasutatavad
+STR_CARGO_NAME_SCRAP_METAL                                                      :Vanametall
+STR_CARGO_NAME_SCRAP_METAL.g                                                    :Vanametall
+STR_CARGO_NAME_SCRAP_METAL.in                                                   :Vanametall
+STR_CARGO_NAME_SCRAP_METAL.sü                                                   :Vanametall
+STR_CARGO_NAME_STONE                                                            :Kivi
+STR_CARGO_NAME_STONE.g                                                          :Kivi
+STR_CARGO_NAME_STONE.in                                                         :Kivi
+STR_CARGO_NAME_STONE.sü                                                         :Kivi
+STR_CARGO_NAME_SUGAR_BEET                                                       :Suhkrupeet
+STR_CARGO_NAME_SUGAR_BEET.g                                                     :Suhkrupeet
+STR_CARGO_NAME_SUGAR_BEET.in                                                    :Suhkrupeet
+STR_CARGO_NAME_SUGAR_BEET.sü                                                    :Suhkrupeet
+STR_CARGO_NAME_SUGARCANE                                                        :Suhkruroog
+STR_CARGO_NAME_SUGARCANE.g                                                      :Suhkruroog
+STR_CARGO_NAME_SUGARCANE.in                                                     :Suhkruroog
+STR_CARGO_NAME_SUGARCANE.sü                                                     :Suhkruroog
+STR_CARGO_NAME_VEHICLE_PARTS                                                    :Sõidukiosad
+STR_CARGO_NAME_VEHICLE_PARTS.g                                                  :Sõidukiosad
+STR_CARGO_NAME_VEHICLE_PARTS.in                                                 :Sõidukiosad
+STR_CARGO_NAME_VEHICLE_PARTS.sü                                                 :Sõidukiosad
+STR_CARGO_NAME_WOOL                                                             :Vill
+STR_CARGO_NAME_WOOL.g                                                           :Vill
+STR_CARGO_NAME_WOOL.in                                                          :Vill
+STR_CARGO_NAME_WOOL.sü                                                          :Vill
+
+STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} alkoholi
+STR_CARGO_UNIT_ALCOHOL.g                                                        :{VOLUME} alkoholi
+STR_CARGO_UNIT_ALCOHOL.in                                                       :{VOLUME} alkoholi
+STR_CARGO_UNIT_ALCOHOL.sü                                                       :{VOLUME} alkoholi
+STR_CARGO_UNIT_BEANS                                                            :{WEIGHT} ube
+STR_CARGO_UNIT_BEANS.g                                                          :{WEIGHT} ube
+STR_CARGO_UNIT_BEANS.in                                                         :{WEIGHT} ube
+STR_CARGO_UNIT_BEANS.sü                                                         :{WEIGHT} ube
+STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WEIGHT} ehitusmaterjale
+STR_CARGO_UNIT_BUILDING_MATERIALS.g                                             :{WEIGHT} ehitusmaterjale
+STR_CARGO_UNIT_BUILDING_MATERIALS.in                                            :{WEIGHT} ehitusmaterjale
+STR_CARGO_UNIT_BUILDING_MATERIALS.sü                                            :{WEIGHT} ehitusmaterjale
+STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} kemikaale
+STR_CARGO_UNIT_CHEMICALS.g                                                      :{VOLUME} kemikaale
+STR_CARGO_UNIT_CHEMICALS.in                                                     :{VOLUME} kemikaale
+STR_CARGO_UNIT_CHEMICALS.sü                                                     :{VOLUME} kemikaale
+STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} savi
+STR_CARGO_UNIT_CLAY.g                                                           :{WEIGHT} savi
+STR_CARGO_UNIT_CLAY.in                                                          :{WEIGHT} savi
+STR_CARGO_UNIT_CLAY.sü                                                          :{WEIGHT} savi
+STR_CARGO_UNIT_COFFEE                                                           :{SIGNED_WORD} kott{P 0 "" s} kohvi
+STR_CARGO_UNIT_COFFEE.g                                                         :{SIGNED_WORD} kott{P 0 "" s} kohvi
+STR_CARGO_UNIT_COFFEE.in                                                        :{SIGNED_WORD} kott{P 0 "" s} kohvi
+STR_CARGO_UNIT_COFFEE.sü                                                        :{SIGNED_WORD} kott{P 0 "" s} kohvi
+STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} kasti{P 0 "" s} ehitustarvikuid
+STR_CARGO_UNIT_ENGINEERING_SUPPLIES.g                                           :{SIGNED_WORD} kasti{P 0 "" s} ehitustarvikuid
+STR_CARGO_UNIT_ENGINEERING_SUPPLIES.in                                          :{SIGNED_WORD} kasti{P 0 "" s} ehitustarvikuid
+STR_CARGO_UNIT_ENGINEERING_SUPPLIES.sü                                          :{SIGNED_WORD} kasti{P 0 "" s} ehitustarvikuid
+STR_CARGO_UNIT_FIBRES                                                           :{SIGNED_WORD} palli{P 0 "" s} taimekiudu
+STR_CARGO_UNIT_FIBRES.g                                                         :{SIGNED_WORD} palli{P 0 "" s} taimekiudu
+STR_CARGO_UNIT_FIBRES.in                                                        :{SIGNED_WORD} palli{P 0 "" s} taimekiudu
+STR_CARGO_UNIT_FIBRES.sü                                                        :{SIGNED_WORD} palli{P 0 "" s} taimekiudu
+STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD}kasti{P 0 "" s} talunduse tarvikuid
+STR_CARGO_UNIT_FMSP.g                                                           :{SIGNED_WORD}kasti{P 0 "" s} talunduse tarvikuid
+STR_CARGO_UNIT_FMSP.in                                                          :{SIGNED_WORD}kasti{P 0 "" s} talunduse tarvikuid
+STR_CARGO_UNIT_FMSP.sü                                                          :{SIGNED_WORD}kasti{P 0 "" s} talunduse tarvikuid
+STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} palke
+STR_CARGO_UNIT_LUMBER.g                                                         :{WEIGHT} palke
+STR_CARGO_UNIT_LUMBER.in                                                        :{WEIGHT} palke
+STR_CARGO_UNIT_LUMBER.sü                                                        :{WEIGHT} palke
+STR_CARGO_UNIT_MILK                                                             :{VOLUME} piima
+STR_CARGO_UNIT_MILK.g                                                           :{VOLUME} piima
+STR_CARGO_UNIT_MILK.in                                                          :{VOLUME} piima
+STR_CARGO_UNIT_MILK.sü                                                          :{VOLUME} piima
+STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} Taaskasutatavad tooteid
+STR_CARGO_UNIT_RECYCLABLES.g                                                    :{WEIGHT} Taaskasutatavad tooteid
+STR_CARGO_UNIT_RECYCLABLES.in                                                   :{WEIGHT} Taaskasutatavad tooteid
+STR_CARGO_UNIT_RECYCLABLES.sü                                                   :{WEIGHT} Taaskasutatavad tooteid
+STR_CARGO_UNIT_SAND                                                             :{WEIGHT} liiva
+STR_CARGO_UNIT_SAND.g                                                           :{WEIGHT} liiva
+STR_CARGO_UNIT_SAND.in                                                          :{WEIGHT} liiva
+STR_CARGO_UNIT_SAND.sü                                                          :{WEIGHT} liiva
+STR_CARGO_UNIT_SCRAP_METAL                                                      :{WEIGHT} vanametalli
+STR_CARGO_UNIT_SCRAP_METAL.g                                                    :{WEIGHT} vanametalli
+STR_CARGO_UNIT_SCRAP_METAL.in                                                   :{WEIGHT} vanametalli
+STR_CARGO_UNIT_SCRAP_METAL.sü                                                   :{WEIGHT} vanametalli
+STR_CARGO_UNIT_STONE                                                            :{WEIGHT} kive
+STR_CARGO_UNIT_STONE.g                                                          :{WEIGHT} kive
+STR_CARGO_UNIT_STONE.in                                                         :{WEIGHT} kive
+STR_CARGO_UNIT_STONE.sü                                                         :{WEIGHT} kive
+STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT}suhkrupeeti
+STR_CARGO_UNIT_SUGAR_BEET.g                                                     :{WEIGHT}suhkrupeeti
+STR_CARGO_UNIT_SUGAR_BEET.in                                                    :{WEIGHT}suhkrupeeti
+STR_CARGO_UNIT_SUGAR_BEET.sü                                                    :{WEIGHT}suhkrupeeti
+STR_CARGO_UNIT_SUGARCANE                                                        :{WEIGHT} suhkruroogu
+STR_CARGO_UNIT_SUGARCANE.g                                                      :{WEIGHT} suhkruroogu
+STR_CARGO_UNIT_SUGARCANE.in                                                     :{WEIGHT} suhkruroogu
+STR_CARGO_UNIT_SUGARCANE.sü                                                     :{WEIGHT} suhkruroogu
+STR_CARGO_UNIT_VEHICLE_PARTS                                                    :{SIGNED_WORD} kasti{P 0 "" s} sõidukiosi
+STR_CARGO_UNIT_VEHICLE_PARTS.g                                                  :{SIGNED_WORD} kasti{P 0 "" s} sõidukiosi
+STR_CARGO_UNIT_VEHICLE_PARTS.in                                                 :{SIGNED_WORD} kasti{P 0 "" s} sõidukiosi
+STR_CARGO_UNIT_VEHICLE_PARTS.sü                                                 :{SIGNED_WORD} kasti{P 0 "" s} sõidukiosi
+
+STR_CID_BEANS                                                                   :{TINYFONT}BN
+STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}BM
+STR_CID_CLAY                                                                    :{TINYFONT}CY
+STR_CID_COFFEE                                                                  :{TINYFONT}CF
+STR_CID_COFFEE.g                                                                :{TINYFONT}CF
+STR_CID_COFFEE.in                                                               :{TINYFONT}CF
+STR_CID_COFFEE.sü                                                               :{TINYFONT}CF
+STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}ES
+STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}FS
+STR_CID_FISH                                                                    :{TINYFONT}FI
+STR_CID_FISH.g                                                                  :{TINYFONT}FI
+STR_CID_FISH.in                                                                 :{TINYFONT}FI
+STR_CID_FISH.sü                                                                 :{TINYFONT}FI
+STR_CID_LUMBER                                                                  :{TINYFONT}LU
+STR_CID_LUMBER.g                                                                :{TINYFONT}LU
+STR_CID_LUMBER.in                                                               :{TINYFONT}LU
+STR_CID_LUMBER.sü                                                               :{TINYFONT}LU
+STR_CID_MANUFACTURING_SUPPLIES                                                  :{TINYFONT}MS
+STR_CID_METAL                                                                   :{TINYFONT}MT
+STR_CID_NITRATES                                                                :{TINYFONT}NI
+STR_CID_PETROL                                                                  :{TINYFONT}PT
+STR_CID_PETROL.g                                                                :{TINYFONT}PT
+STR_CID_PETROL.in                                                               :{TINYFONT}PT
+STR_CID_PETROL.sü                                                               :{TINYFONT}PT
+STR_CID_SAND                                                                    :{TINYFONT}SA
+STR_CID_SCRAP_METAL                                                             :{TINYFONT}SM
+STR_CID_STONE                                                                   :{TINYFONT}ST
+STR_CID_VEHICLE_PARTS                                                           :{TINYFONT}VP
+STR_CID_WOOL                                                                    :{TINYFONT}WL
+
+STR_ERR_CLIMATE_TOYLAND                                                         :{ORANGE}FIRS ei ole mõeldud kasutamiseks "Toyland" kliimas
+STR_ERR_CLIMATE_TOYLAND.g                                                       :{ORANGE}FIRS ei ole mõeldud kasutamiseks "Toyland" kliimas
+STR_ERR_CLIMATE_TOYLAND.in                                                      :{ORANGE}FIRS ei ole mõeldud kasutamiseks "Toyland" kliimas
+STR_ERR_CLIMATE_TOYLAND.sü                                                      :{ORANGE}FIRS ei ole mõeldud kasutamiseks "Toyland" kliimas
+STR_ERR_INCOMPATIBLE_SET                                                        :{ORANGE}E01: {YELLOW}Kokkusobimatud komplekt: {ORANGE}{STRING} {YELLOW}Loe FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_SET.g                                                      :{ORANGE}E01: {YELLOW}Kokkusobimatud komplekt: {ORANGE}{STRING} {YELLOW}Loe FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_SET.in                                                     :{ORANGE}E01: {YELLOW}Kokkusobimatud komplekt: {ORANGE}{STRING} {YELLOW}Loe FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_SET.sü                                                     :{ORANGE}E01: {YELLOW}Kokkusobimatud komplekt: {ORANGE}{STRING} {YELLOW}Loe FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_PARAM_CANSET                                               :ORANGE}E02: {YELLOW}Kokkusobimatu parameeter: {ORANGE}CanSet parameeter 2 peab olema 0 et töötaks koos FIRS-ga. {YELLOW}Vaata FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_PARAM_CANSET.g                                             :ORANGE}E02: {YELLOW}Kokkusobimatu parameeter: {ORANGE}CanSet parameeter 2 peab olema 0 et töötaks koos FIRS-ga. {YELLOW}Vaata FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_PARAM_CANSET.in                                            :ORANGE}E02: {YELLOW}Kokkusobimatu parameeter: {ORANGE}CanSet parameeter 2 peab olema 0 et töötaks koos FIRS-ga. {YELLOW}Vaata FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_PARAM_CANSET.sü                                            :ORANGE}E02: {YELLOW}Kokkusobimatu parameeter: {ORANGE}CanSet parameeter 2 peab olema 0 et töötaks koos FIRS-ga. {YELLOW}Vaata FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_PARAM_CITYSET                                              :{ORANGE}E02: {YELLOW}Kokkusobimatu parameeter: {ORANGE}NA City Set parameeter 2 peab olema 0 et töötaks koos FIRS-ga. {YELLOW}VaataFIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_PARAM_CITYSET.g                                            :{ORANGE}E02: {YELLOW}Kokkusobimatu parameeter: {ORANGE}NA City Set parameeter 2 peab olema 0 et töötaks koos FIRS-ga. {YELLOW}VaataFIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_PARAM_CITYSET.in                                           :{ORANGE}E02: {YELLOW}Kokkusobimatu parameeter: {ORANGE}NA City Set parameeter 2 peab olema 0 et töötaks koos FIRS-ga. {YELLOW}VaataFIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_PARAM_CITYSET.sü                                           :{ORANGE}E02: {YELLOW}Kokkusobimatu parameeter: {ORANGE}NA City Set parameeter 2 peab olema 0 et töötaks koos FIRS-ga. {YELLOW}VaataFIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_SET_TTRS_VERSION                                           :{ORANGE}E04: {YELLOW}Kokkusobimatu versioon: {ORANGE}Total Town Replacement Set peab olema versioon 3.11 või uuem. {YELLOW}vaata FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_SET_TTRS_VERSION.g                                         :{ORANGE}E04: {YELLOW}Kokkusobimatu versioon: {ORANGE}Total Town Replacement Set peab olema versioon 3.11 või uuem. {YELLOW}vaata FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_SET_TTRS_VERSION.in                                        :{ORANGE}E04: {YELLOW}Kokkusobimatu versioon: {ORANGE}Total Town Replacement Set peab olema versioon 3.11 või uuem. {YELLOW}vaata FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_SET_TTRS_VERSION.sü                                        :{ORANGE}E04: {YELLOW}Kokkusobimatu versioon: {ORANGE}Total Town Replacement Set peab olema versioon 3.11 või uuem. {YELLOW}vaata FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+
+STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE                                             :tuleb asetada allapoole lumepiiri
+STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE.g                                           :tuleb asetada allapoole lumepiiri
+STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE.in                                          :tuleb asetada allapoole lumepiiri
+STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE.sü                                          :tuleb asetada allapoole lumepiiri
+STR_ERR_LOCATION_NOT_ON_WATER                                                   :peab olema asetatud kuivale maale
+STR_ERR_LOCATION_NOT_ON_WATER.g                                                 :peab olema asetatud kuivale maale
+STR_ERR_LOCATION_NOT_ON_WATER.in                                                :peab olema asetatud kuivale maale
+STR_ERR_LOCATION_NOT_ON_WATER.sü                                                :peab olema asetatud kuivale maale
+STR_ERR_LOCATION_NOT_IN_DESERT                                                  :ei tohi asetada kõrbesse
+STR_ERR_LOCATION_NOT_IN_DESERT.g                                                :ei tohi asetada kõrbesse
+STR_ERR_LOCATION_NOT_IN_DESERT.in                                               :ei tohi asetada kõrbesse
+STR_ERR_LOCATION_NOT_IN_DESERT.sü                                               :ei tohi asetada kõrbesse
+STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE                                             :ei saa piagutada järskudele nõlvadele
+STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE.g                                           :ei saa piagutada järskudele nõlvadele
+STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE.in                                          :ei saa piagutada järskudele nõlvadele
+STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE.sü                                          :ei saa piagutada järskudele nõlvadele
+STR_ERR_LOCATION_LIMIT_1_PER_TOWN                                               :ainult üks seda tüüpi tööstus lubatud linna kohta
+STR_ERR_LOCATION_LIMIT_1_PER_TOWN.g                                             :ainult üks seda tüüpi tööstus lubatud linna kohta
+STR_ERR_LOCATION_LIMIT_1_PER_TOWN.in                                            :ainult üks seda tüüpi tööstus lubatud linna kohta
+STR_ERR_LOCATION_LIMIT_1_PER_TOWN.sü                                            :ainult üks seda tüüpi tööstus lubatud linna kohta
+
+STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}Kauba toodang:{} 2t iga 8t boksiidi kohale toimetamise kohta{} 2t iga 8,000l kemikaalide kohale toime kohta{} 4t iga 8t vanametalli kohale toimetamise kohta{}{}Tootmine kasvab kui kaks või rohkem erinevat kaupa tuuakse kohale vähem kui ühe kuu jooksul
+STR_EXTRA_ALUMINUM_PLANT.g                                                      :{BLACK}Kauba toodang:{} 2t iga 8t boksiidi kohale toimetamise kohta{} 2t iga 8,000l kemikaalide kohale toime kohta{} 4t iga 8t vanametalli kohale toimetamise kohta{}{}Tootmine kasvab kui kaks või rohkem erinevat kaupa tuuakse kohale vähem kui ühe kuu jooksul
+STR_EXTRA_ALUMINUM_PLANT.in                                                     :{BLACK}Kauba toodang:{} 2t iga 8t boksiidi kohale toimetamise kohta{} 2t iga 8,000l kemikaalide kohale toime kohta{} 4t iga 8t vanametalli kohale toimetamise kohta{}{}Tootmine kasvab kui kaks või rohkem erinevat kaupa tuuakse kohale vähem kui ühe kuu jooksul
+STR_EXTRA_ALUMINUM_PLANT.sü                                                     :{BLACK}Kauba toodang:{} 2t iga 8t boksiidi kohale toimetamise kohta{} 2t iga 8,000l kemikaalide kohale toime kohta{} 4t iga 8t vanametalli kohale toimetamise kohta{}{}Tootmine kasvab kui kaks või rohkem erinevat kaupa tuuakse kohale vähem kui ühe kuu jooksul
+STR_EXTRA_BIOREFINERY                                                           :{BLACK}Kauba toodang:{} 6,000l iga 8t kohale toimetatud teraviljas kohta{} 6,000l iga 8t kohale toimetatud suhkru kohta.
+STR_EXTRA_BIOREFINERY.g                                                         :{BLACK}Kauba toodang:{} 6,000l iga 8t kohale toimetatud teraviljas kohta{} 6,000l iga 8t kohale toimetatud suhkru kohta.
+STR_EXTRA_BIOREFINERY.in                                                        :{BLACK}Kauba toodang:{} 6,000l iga 8t kohale toimetatud teraviljas kohta{} 6,000l iga 8t kohale toimetatud suhkru kohta.
+STR_EXTRA_BIOREFINERY.sü                                                        :{BLACK}Kauba toodang:{} 6,000l iga 8t kohale toimetatud teraviljas kohta{} 6,000l iga 8t kohale toimetatud suhkru kohta.
+STR_EXTRA_BREWERY_GRAIN_SUBSTR                                                  :5,000l iga 8t kohale toimetatud teravilja kohta{}
+STR_EXTRA_BREWERY_GRAIN_SUBSTR.g                                                :5,000l iga 8t kohale toimetatud teravilja kohta{}
+STR_EXTRA_BREWERY_GRAIN_SUBSTR.in                                               :5,000l iga 8t kohale toimetatud teravilja kohta{}
+STR_EXTRA_BREWERY_GRAIN_SUBSTR.sü                                               :5,000l iga 8t kohale toimetatud teravilja kohta{}
+STR_EXTRA_BREWERY_FRUIT_SUBSTR                                                  :5,000l iga 8t kohale toimetatud puuviljade kohta{}
+STR_EXTRA_BREWERY_FRUIT_SUBSTR.g                                                :5,000l iga 8t kohale toimetatud puuviljade kohta{}
+STR_EXTRA_BREWERY_FRUIT_SUBSTR.in                                               :5,000l iga 8t kohale toimetatud puuviljade kohta{}
+STR_EXTRA_BREWERY_FRUIT_SUBSTR.sü                                               :5,000l iga 8t kohale toimetatud puuviljade kohta{}
+STR_EXTRA_BRICKWORKS                                                            :{BLACK}Kauba tootlus:{} 2t iga 8t söe kohale toimetamise kohta{} 2t iga 8t liiva kohale toimetamise kohta{} 4t iga 8t savi kohale toimetamise kohta{}{}Tootmine kasvab kui kaks või rohkem erinevat kaupa tuuakse kohale vähem kui ühe kuu jooksul
+STR_EXTRA_BRICKWORKS.g                                                          :{BLACK}Kauba tootlus:{} 2t iga 8t söe kohale toimetamise kohta{} 2t iga 8t liiva kohale toimetamise kohta{} 4t iga 8t savi kohale toimetamise kohta{}{}Tootmine kasvab kui kaks või rohkem erinevat kaupa tuuakse kohale vähem kui ühe kuu jooksul
+STR_EXTRA_BRICKWORKS.in                                                         :{BLACK}Kauba tootlus:{} 2t iga 8t söe kohale toimetamise kohta{} 2t iga 8t liiva kohale toimetamise kohta{} 4t iga 8t savi kohale toimetamise kohta{}{}Tootmine kasvab kui kaks või rohkem erinevat kaupa tuuakse kohale vähem kui ühe kuu jooksul
+STR_EXTRA_BRICKWORKS.sü                                                         :{BLACK}Kauba tootlus:{} 2t iga 8t söe kohale toimetamise kohta{} 2t iga 8t liiva kohale toimetamise kohta{} 4t iga 8t savi kohale toimetamise kohta{}{}Tootmine kasvab kui kaks või rohkem erinevat kaupa tuuakse kohale vähem kui ühe kuu jooksul
+STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Kauba tootlus:{} 2t iga 8t söe kohale toimetamise kohta{} 2t iga 8t savi kohale toimetamise kohta{} 4t iga 8t kivide kohale toimetamise kohta{}{}Tootmine kasvab kui kaks või rohkem erinevat kaupa tuuakse kohale vähem kui ühe kuu jooksul
+STR_EXTRA_CEMENT_PLANT.g                                                        :{BLACK}Kauba tootlus:{} 2t iga 8t söe kohale toimetamise kohta{} 2t iga 8t savi kohale toimetamise kohta{} 4t iga 8t kivide kohale toimetamise kohta{}{}Tootmine kasvab kui kaks või rohkem erinevat kaupa tuuakse kohale vähem kui ühe kuu jooksul
+STR_EXTRA_CEMENT_PLANT.in                                                       :{BLACK}Kauba tootlus:{} 2t iga 8t söe kohale toimetamise kohta{} 2t iga 8t savi kohale toimetamise kohta{} 4t iga 8t kivide kohale toimetamise kohta{}{}Tootmine kasvab kui kaks või rohkem erinevat kaupa tuuakse kohale vähem kui ühe kuu jooksul
+STR_EXTRA_CEMENT_PLANT.sü                                                       :{BLACK}Kauba tootlus:{} 2t iga 8t söe kohale toimetamise kohta{} 2t iga 8t savi kohale toimetamise kohta{} 4t iga 8t kivide kohale toimetamise kohta{}{}Tootmine kasvab kui kaks või rohkem erinevat kaupa tuuakse kohale vähem kui ühe kuu jooksul
+STR_EXTRA_DAIRY                                                                 :{BLACK}kauba tootmine:{} 3t iga 8 kasti tootmistarvikute kohta{} 5t iga 8,000l piima kohale toimetamise kohta{}{}Toodang kasvab kui mõlemaid kaupu on koos tarnitud ühe kuu jooksul.
+STR_EXTRA_DAIRY.g                                                               :{BLACK}kauba tootmine:{} 3t iga 8 kasti tootmistarvikute kohta{} 5t iga 8,000l piima kohale toimetamise kohta{}{}Toodang kasvab kui mõlemaid kaupu on koos tarnitud ühe kuu jooksul.
+STR_EXTRA_DAIRY.in                                                              :{BLACK}kauba tootmine:{} 3t iga 8 kasti tootmistarvikute kohta{} 5t iga 8,000l piima kohale toimetamise kohta{}{}Toodang kasvab kui mõlemaid kaupu on koos tarnitud ühe kuu jooksul.
+STR_EXTRA_DAIRY.sü                                                              :{BLACK}kauba tootmine:{} 3t iga 8 kasti tootmistarvikute kohta{} 5t iga 8,000l piima kohale toimetamise kohta{}{}Toodang kasvab kui mõlemaid kaupu on koos tarnitud ühe kuu jooksul.
+STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Kauba tootmine:{}3t iga kohale toimetatud 8 kasti tootmistarvikute kohta{}5t iga kohale toimetatud 8t puidu kohta{}{}Toodang kasvab kui mõlemaid kaupu on koos tarnitud ühe kuu jooksul.
+STR_EXTRA_FURNITURE_FACTORY.g                                                   :{BLACK}Kauba tootmine:{}3t iga kohale toimetatud 8 kasti tootmistarvikute kohta{}5t iga kohale toimetatud 8t puidu kohta{}{}Toodang kasvab kui mõlemaid kaupu on koos tarnitud ühe kuu jooksul.
+STR_EXTRA_FURNITURE_FACTORY.in                                                  :{BLACK}Kauba tootmine:{}3t iga kohale toimetatud 8 kasti tootmistarvikute kohta{}5t iga kohale toimetatud 8t puidu kohta{}{}Toodang kasvab kui mõlemaid kaupu on koos tarnitud ühe kuu jooksul.
+STR_EXTRA_FURNITURE_FACTORY.sü                                                  :{BLACK}Kauba tootmine:{}3t iga kohale toimetatud 8 kasti tootmistarvikute kohta{}5t iga kohale toimetatud 8t puidu kohta{}{}Toodang kasvab kui mõlemaid kaupu on koos tarnitud ühe kuu jooksul.
+STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Toodab klaasist esemeid, nagu näiteks pudelid, purke ja aknaklaase.{}{}Kauba tootlus:{} 6t iga 8t kohale toimetatud liiva kohta{} 2t iga 8,000l kemikaalide kohale toimetamise kohta{}{}Tootlus kasvab kui mõlemaid kaupu on koos kohale toimetatud ühe kuu sees.
+STR_EXTRA_GLASS_WORKS.g                                                         :{BLACK}Toodab klaasist esemeid, nagu näiteks pudelid, purke ja aknaklaase.{}{}Kauba tootlus:{} 6t iga 8t kohale toimetatud liiva kohta{} 2t iga 8,000l kemikaalide kohale toimetamise kohta{}{}Tootlus kasvab kui mõlemaid kaupu on koos kohale toimetatud ühe kuu sees.
+STR_EXTRA_GLASS_WORKS.in                                                        :{BLACK}Toodab klaasist esemeid, nagu näiteks pudelid, purke ja aknaklaase.{}{}Kauba tootlus:{} 6t iga 8t kohale toimetatud liiva kohta{} 2t iga 8,000l kemikaalide kohale toimetamise kohta{}{}Tootlus kasvab kui mõlemaid kaupu on koos kohale toimetatud ühe kuu sees.
+STR_EXTRA_GLASS_WORKS.sü                                                        :{BLACK}Toodab klaasist esemeid, nagu näiteks pudelid, purke ja aknaklaase.{}{}Kauba tootlus:{} 6t iga 8t kohale toimetatud liiva kohta{} 2t iga 8,000l kemikaalide kohale toimetamise kohta{}{}Tootlus kasvab kui mõlemaid kaupu on koos kohale toimetatud ühe kuu sees.
+STR_EXTRA_GRAIN_MILL                                                            :{BLACK}Kauba tootmine:{}3t iga kohale toimetatud 8 kasti tootmistarvikute kohta{}5t iga kohale toimetatud 8t teravilja kohta{}{}Toodang kasvab kui mõlemaid kaupu on koos tarnitud ühe kuu jooksul.
+STR_EXTRA_GRAIN_MILL.g                                                          :{BLACK}Kauba tootmine:{}3t iga kohale toimetatud 8 kasti tootmistarvikute kohta{} 5t iga kohale toimetatud 8t teravilja kohta{}{}Toodang kasvab kui mõlemaid kaupu on koos tarnitud ühe kuu jooksul.
+STR_EXTRA_GRAIN_MILL.in                                                         :{BLACK}Kauba tootmine:{}3t iga kohale toimetatud 8 kasti tootmistarvikute kohta{} 5t iga kohale toimetatud 8t teravilja kohta{}{}Toodang kasvab kui mõlemaid kaupu on koos tarnitud ühe kuu jooksul.
+STR_EXTRA_GRAIN_MILL.sü                                                         :{BLACK}Kauba tootmine:{}3t iga kohale toimetatud 8 kasti tootmistarvikute kohta{} 5t iga kohale toimetatud 8t teravilja kohta{}{}Toodang kasvab kui mõlemaid kaupu on koos tarnitud ühe kuu jooksul.
+STR_EXTRA_IRON_WORKS                                                            :{BLACK}Kauba tootang:{} 3t iga 8t rauamaagi kohale toimetamise kohta{} 3t iga 8t puidu kohale toimetamise kohta{} 2t iga 8t liiva kohale toimetamise kohta{}{}Tootmine kasvab kui kaks või rohkem erinevat kaupa tuuakse kohale vähem kui ühe kuu jooksul
+STR_EXTRA_IRON_WORKS.g                                                          :{BLACK}Kauba tootang:{} 3t iga 8t rauamaagi kohale toimetamise kohta{} 3t iga 8t puidu kohale toimetamise kohta{} 2t iga 8t liiva kohale toimetamise kohta{}{}Tootmine kasvab kui kaks või rohkem erinevat kaupa tuuakse kohale vähem kui ühe kuu jooksul
+STR_EXTRA_IRON_WORKS.in                                                         :{BLACK}Kauba tootang:{} 3t iga 8t rauamaagi kohale toimetamise kohta{} 3t iga 8t puidu kohale toimetamise kohta{} 2t iga 8t liiva kohale toimetamise kohta{}{}Tootmine kasvab kui kaks või rohkem erinevat kaupa tuuakse kohale vähem kui ühe kuu jooksul
+STR_EXTRA_IRON_WORKS.sü                                                         :{BLACK}Kauba tootang:{} 3t iga 8t rauamaagi kohale toimetamise kohta{} 3t iga 8t puidu kohale toimetamise kohta{} 2t iga 8t liiva kohale toimetamise kohta{}{}Tootmine kasvab kui kaks või rohkem erinevat kaupa tuuakse kohale vähem kui ühe kuu jooksul
+STR_EXTRA_LIME_KILN                                                             :{BLACK}Kauba tootlus:{} 3t iga 8t kivide kohale toimetamise kohta{} 3t iga 8t söe kohale toimetamise kohta{}{}Tootmine kasvab kui mõlemaid kaupu on koos koahe toodud ühe kuu jooksul.
+STR_EXTRA_LIME_KILN.g                                                           :{BLACK}Kauba tootlus:{} 3t iga 8t kivide kohale toimetamise kohta{} 3t iga 8t söe kohale toimetamise kohta{}{}Tootmine kasvab kui mõlemaid kaupu on koos koahe toodud ühe kuu jooksul.
+STR_EXTRA_LIME_KILN.in                                                          :{BLACK}Kauba tootlus:{} 3t iga 8t kivide kohale toimetamise kohta{} 3t iga 8t söe kohale toimetamise kohta{}{}Tootmine kasvab kui mõlemaid kaupu on koos koahe toodud ühe kuu jooksul.
+STR_EXTRA_LIME_KILN.sü                                                          :{BLACK}Kauba tootlus:{} 3t iga 8t kivide kohale toimetamise kohta{} 3t iga 8t söe kohale toimetamise kohta{}{}Tootmine kasvab kui mõlemaid kaupu on koos koahe toodud ühe kuu jooksul.
+STR_EXTRA_MEAT_PACKER                                                           :{BLACK}Kauba tootmine:{}3t iga kohale toimetatud 8 kasti tootmistarvikute kohta{}5t iga kohale toimetatud 8t elusloomade kohta{}{}Toodang kasvab kui mõlemaid kaupu on koos tarnitud ühe kuu jooksul.
+STR_EXTRA_MEAT_PACKER.g                                                         :{BLACK}Kauba tootmine:{}3t iga kohale toimetatud 8 kasti tootmistarvikute kohta{}5t iga kohale toimetatud 8t elusloomade kohta{}{}Toodang kasvab kui mõlemaid kaupu on koos tarnitud ühe kuu jooksul.
+STR_EXTRA_MEAT_PACKER.in                                                        :{BLACK}Kauba tootmine:{}3t iga kohale toimetatud 8 kasti tootmistarvikute kohta{}5t iga kohale toimetatud 8t elusloomade kohta{}{}Toodang kasvab kui mõlemaid kaupu on koos tarnitud ühe kuu jooksul.
+STR_EXTRA_MEAT_PACKER.sü                                                        :{BLACK}Kauba tootmine:{}3t iga kohale toimetatud 8 kasti tootmistarvikute kohta{}5t iga kohale toimetatud 8t elusloomade kohta{}{}Toodang kasvab kui mõlemaid kaupu on koos tarnitud ühe kuu jooksul.
+STR_EXTRA_METAL_FOUNDRY                                                         :{BLACK}Toodab pinnakattega metalle nagu konservikarpe, raua - ja majapidamis kaupu.{}{}Kauba tootlus:{} 2 kasti iga 8,000l kohale toimetatud kemikaalide kohta{} 6 kasti iga 8t kohale toimetatud metalli kohta{}{}Tootlus kasvab kui mõlemaid kaupu on koos kohale toimetatud ühe kuu sees.
+STR_EXTRA_METAL_FOUNDRY.g                                                       :{BLACK}Toodab pinnakattega metalle nagu konservikarpe, raua - ja majapidamis kaupu.{}{}Kauba tootlus:{} 2 kasti iga 8,000l kohale toimetatud kemikaalide kohta{} 6 kasti iga 8t kohale toimetatud metalli kohta{}{}Tootlus kasvab kui mõlemaid kaupu on koos kohale toimetatud ühe kuu sees.
+STR_EXTRA_METAL_FOUNDRY.in                                                      :{BLACK}Toodab pinnakattega metalle nagu konservikarpe, raua - ja majapidamis kaupu.{}{}Kauba tootlus:{} 2 kasti iga 8,000l kohale toimetatud kemikaalide kohta{} 6 kasti iga 8t kohale toimetatud metalli kohta{}{}Tootlus kasvab kui mõlemaid kaupu on koos kohale toimetatud ühe kuu sees.
+STR_EXTRA_METAL_FOUNDRY.sü                                                      :{BLACK}Toodab pinnakattega metalle nagu konservikarpe, raua - ja majapidamis kaupu.{}{}Kauba tootlus:{} 2 kasti iga 8,000l kohale toimetatud kemikaalide kohta{} 6 kasti iga 8t kohale toimetatud metalli kohta{}{}Tootlus kasvab kui mõlemaid kaupu on koos kohale toimetatud ühe kuu sees.
+STR_EXTRA_OIL_REFINERY                                                          :{BLACK}Toodab toornaftat bensiiniks ja kemikaalideks.{}{}Kauba toodang:{} 6,000l iga 8,000l kohta mis kohale tuuakse.
+STR_EXTRA_OIL_REFINERY.g                                                        :{BLACK}Toodab toornaftat bensiiniks ja kemikaalideks.{}{}Kauba toodang:{} 6,000l iga 8,000l kohta mis kohale tuuakse.
+STR_EXTRA_OIL_REFINERY.in                                                       :{BLACK}Toodab toornaftat bensiiniks ja kemikaalideks.{}{}Kauba toodang:{} 6,000l iga 8,000l kohta mis kohale tuuakse.
+STR_EXTRA_OIL_REFINERY.sü                                                       :{BLACK}Toodab toornaftat bensiiniks ja kemikaalideks.{}{}Kauba toodang:{} 6,000l iga 8,000l kohta mis kohale tuuakse.
+STR_EXTRA_PAPER_MILL                                                            :{BLACK}Hakkepuit, et toota paberit ja pappi.{}{}Kauba toodang:{} 4 kasti iga 8t puidu kohale toimetades{} 2 kasti iga 8t savi kohale toimetades{} 2 kasti iga 8,000l kemikaalide kohale toimetades{}{}Toodang kasvab kui kahte või rohkemat kaupa on tarnitud koos ühe kuu jooksul.
+STR_EXTRA_PAPER_MILL.g                                                          :{BLACK}Hakkepuit, et toota paberit ja pappi.{}{}Kauba toodang:{} 4 kasti iga 8t puidu kohale toimetades{} 2 kasti iga 8t savi kohale toimetades{} 2 kasti iga 8,000l kemikaalide kohale toimetades{}{}Toodang kasvab kui kahte või rohkemat kaupa on tarnitud koos ühe kuu jooksul.
+STR_EXTRA_PAPER_MILL.in                                                         :{BLACK}Hakkepuit, et toota paberit ja pappi.{}{}Kauba toodang:{} 4 kasti iga 8t puidu kohale toimetades{} 2 kasti iga 8t savi kohale toimetades{} 2 kasti iga 8,000l kemikaalide kohale toimetades{}{}Toodang kasvab kui kahte või rohkemat kaupa on tarnitud koos ühe kuu jooksul.
+STR_EXTRA_PAPER_MILL.sü                                                         :{BLACK}Hakkepuit, et toota paberit ja pappi.{}{}Kauba toodang:{} 4 kasti iga 8t puidu kohale toimetades{} 2 kasti iga 8t savi kohale toimetades{} 2 kasti iga 8,000l kemikaalide kohale toimetades{}{}Toodang kasvab kui kahte või rohkemat kaupa on tarnitud koos ühe kuu jooksul.
+STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}Toodab plastikust tooteid nagu pakendeid ja majapidamistarbeid.{}{}Kauba tootmine:{} {STRING} {STRING}
+STR_EXTRA_PLASTICS_PLANT.g                                                      :{BLACK}Toodab plastikust tooteid nagu pakendeid ja majapidamistarbeid.{}{}Kauba tootmine:{} {STRING} {STRING}
+STR_EXTRA_PLASTICS_PLANT.in                                                     :{BLACK}Toodab plastikust tooteid nagu pakendeid ja majapidamistarbeid.{}{}Kauba tootmine:{} {STRING} {STRING}
+STR_EXTRA_PLASTICS_PLANT.sü                                                     :{BLACK}Toodab plastikust tooteid nagu pakendeid ja majapidamistarbeid.{}{}Kauba tootmine:{} {STRING} {STRING}
+STR_EXTRA_PLASTICS_PLANT_CHEMICALS_SUBSTR                                       :6 kasti iga 8,000l kemikaalide kohta{}
+STR_EXTRA_PLASTICS_PLANT_CHEMICALS_SUBSTR.g                                     :6 kasti iga 8,000l kemikaalide kohta{}
+STR_EXTRA_PLASTICS_PLANT_CHEMICALS_SUBSTR.in                                    :6 kasti iga 8,000l kemikaalide kohta{}
+STR_EXTRA_PLASTICS_PLANT_CHEMICALS_SUBSTR.sü                                    :6 kasti iga 8,000l kemikaalide kohta{}
+STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}Tootmine on võrdeline linna elanikkonnaga.
+STR_EXTRA_RECYCLING_DEPOT.g                                                     :{BLACK}Tootmine on võrdeline linna elanikkonnaga.
+STR_EXTRA_RECYCLING_DEPOT.in                                                    :{BLACK}Tootmine on võrdeline linna elanikkonnaga.
+STR_EXTRA_RECYCLING_DEPOT.sü                                                    :{BLACK}Tootmine on võrdeline linna elanikkonnaga.
+STR_EXTRA_SAWMILL                                                               :{BLACK}Lõhutud puud.{}{}Kauba tootmine:{} 6t iga 8t puidu kohta.
+STR_EXTRA_SAWMILL.g                                                             :{BLACK}Lõhutud puud.{}{}Kauba tootmine:{} 6t iga 8t puidu kohta.
+STR_EXTRA_SAWMILL.in                                                            :{BLACK}Lõhutud puud.{}{}Kauba tootmine:{} 6t iga 8t puidu kohta.
+STR_EXTRA_SAWMILL.sü                                                            :{BLACK}Lõhutud puud.{}{}Kauba tootmine:{} 6t iga 8t puidu kohta.
+STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Toodab metallist tooteid nagu tööriistad, adrad, väravad, labidad ja hobuserauad.{}{}Kauba tootlus: 8 kasti 8t kohaletoodud metalli kohta.
+STR_EXTRA_SMITHY_FORGE.g                                                        :{BLACK}Toodab metallist tooteid nagu tööriistad, adrad, väravad, labidad ja hobuserauad.{}{}Kauba tootlus: 8 kasti 8t kohaletoodud metalli kohta.
+STR_EXTRA_SMITHY_FORGE.in                                                       :{BLACK}Toodab metallist tooteid nagu tööriistad, adrad, väravad, labidad ja hobuserauad.{}{}Kauba tootlus: 8 kasti 8t kohaletoodud metalli kohta.
+STR_EXTRA_SMITHY_FORGE.sü                                                       :{BLACK}Toodab metallist tooteid nagu tööriistad, adrad, väravad, labidad ja hobuserauad.{}{}Kauba tootlus: 8 kasti 8t kohaletoodud metalli kohta.
+STR_EXTRA_STEELMILL                                                             :{BLACK}Kauba tootang:{} 3t iga 8t rauamaagi kohale toimetamise kohta{} 2t iga 8t söe kohale toimetamise kohta{} 3t iga 8t vanaraua kohale toimetamise kohta{}{}Tootmine kasvab kui kaks või rohkem erinevat kaupa tuuakse kohale vähem kui ühe kuu jooksul
+STR_EXTRA_STEELMILL.g                                                           :{BLACK}Kauba tootang:{} 3t iga 8t rauamaagi kohale toimetamise kohta{} 2t iga 8t söe kohale toimetamise kohta{} 3t iga 8t vanaraua kohale toimetamise kohta{}{}Tootmine kasvab kui kaks või rohkem erinevat kaupa tuuakse kohale vähem kui ühe kuu jooksul
+STR_EXTRA_STEELMILL.in                                                          :{BLACK}Kauba tootang:{} 3t iga 8t rauamaagi kohale toimetamise kohta{} 2t iga 8t söe kohale toimetamise kohta{} 3t iga 8t vanaraua kohale toimetamise kohta{}{}Tootmine kasvab kui kaks või rohkem erinevat kaupa tuuakse kohale vähem kui ühe kuu jooksul
+STR_EXTRA_STEELMILL.sü                                                          :{BLACK}Kauba tootang:{} 3t iga 8t rauamaagi kohale toimetamise kohta{} 2t iga 8t söe kohale toimetamise kohta{} 3t iga 8t vanaraua kohale toimetamise kohta{}{}Tootmine kasvab kui kaks või rohkem erinevat kaupa tuuakse kohale vähem kui ühe kuu jooksul
+STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Kauba tootmine:{}3t iga kohale toimetatud 8 kasti tootmistarvikute kohta{}5t iga kohale toimetatud 8t suhkru kohta{}{}Toodang kasvab kui mõlemaid kaupu on koos tarnitud ühe kuu jooksul.
+STR_EXTRA_SUGAR_REFINERY.g                                                      :{BLACK}Kauba tootmine:{}3t iga kohale toimetatud 8 kasti tootmistarvikute kohta{}5t iga kohale toimetatud 8t suhkru kohta{}{}Toodang kasvab kui mõlemaid kaupu on koos tarnitud ühe kuu jooksul.
+STR_EXTRA_SUGAR_REFINERY.in                                                     :{BLACK}Kauba tootmine:{}3t iga kohale toimetatud 8 kasti tootmistarvikute kohta{}5t iga kohale toimetatud 8t suhkru kohta{}{}Toodang kasvab kui mõlemaid kaupu on koos tarnitud ühe kuu jooksul.
+STR_EXTRA_SUGAR_REFINERY.sü                                                     :{BLACK}Kauba tootmine:{}3t iga kohale toimetatud 8 kasti tootmistarvikute kohta{}5t iga kohale toimetatud 8t suhkru kohta{}{}Toodang kasvab kui mõlemaid kaupu on koos tarnitud ühe kuu jooksul.
+STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Kauba tootmine:{} 3 kasti iga 8 kasti tootmistarvikute kohta{} {STRING} {STRING}{}Tootmine kasvab kui tootmistarvikuid tuuakse kuu aja jooksul koos teiste kaupadega.
+STR_EXTRA_TEXTILE_MILL.g                                                        :{BLACK}Kauba tootmine:{} 3 kasti iga 8 kasti tootmistarvikute kohta{} {STRING} {STRING}{}Tootmine kasvab kui tootmistarvikuid tuuakse kuu aja jooksul koos teiste kaupadega.
+STR_EXTRA_TEXTILE_MILL.in                                                       :{BLACK}Kauba tootmine:{} 3 kasti iga 8 kasti tootmistarvikute kohta{} {STRING} {STRING}{}Tootmine kasvab kui tootmistarvikuid tuuakse kuu aja jooksul koos teiste kaupadega.
+STR_EXTRA_TEXTILE_MILL.sü                                                       :{BLACK}Kauba tootmine:{} 3 kasti iga 8 kasti tootmistarvikute kohta{} {STRING} {STRING}{}Tootmine kasvab kui tootmistarvikuid tuuakse kuu aja jooksul koos teiste kaupadega.
+STR_EXTRA_TEXTILE_MILL_PLANT_FIBRES_SUBSTR                                      :5 kasti iga 8 kohaletoimetatud taimekiu palli kohta{}
+STR_EXTRA_TEXTILE_MILL_PLANT_FIBRES_SUBSTR.g                                    :5 kasti iga 8 kohaletoimetatud taimekiu palli kohta{}
+STR_EXTRA_TEXTILE_MILL_PLANT_FIBRES_SUBSTR.in                                   :5 kasti iga 8 kohaletoimetatud taimekiu palli kohta{}
+STR_EXTRA_TEXTILE_MILL_PLANT_FIBRES_SUBSTR.sü                                   :5 kasti iga 8 kohaletoimetatud taimekiu palli kohta{}
+
+STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Jõutud maksimaalse tootmiseni
+STR_EXTRA_MAX_PRODUCTION.g                                                      :{BLACK}Jõutud maksimaalse tootmiseni
+STR_EXTRA_MAX_PRODUCTION.in                                                     :{BLACK}Jõutud maksimaalse tootmiseni
+STR_EXTRA_MAX_PRODUCTION.sü                                                     :{BLACK}Jõutud maksimaalse tootmiseni
+STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Praegune tootlus: {YELLOW}Normaalne{}{}{BLACK}Topelt tootmise jaoks toimeta {SIGNED_WORD} kasti tarvikuid kolme kuu jooksul (või {SIGNED_WORD} kasti neljakordse tootluse jaoks)
+STR_PRIMARY_PRODUCTION_1X.g                                                     :{BLACK}Praegune tootlus: {YELLOW}Normaalne{}{}{BLACK}Topelt tootmise jaoks toimeta {SIGNED_WORD} kasti tarvikuid kolme kuu jooksul (või {SIGNED_WORD} kasti neljakordse tootluse jaoks)
+STR_PRIMARY_PRODUCTION_1X.in                                                    :{BLACK}Praegune tootlus: {YELLOW}Normaalne{}{}{BLACK}Topelt tootmise jaoks toimeta {SIGNED_WORD} kasti tarvikuid kolme kuu jooksul (või {SIGNED_WORD} kasti neljakordse tootluse jaoks)
+STR_PRIMARY_PRODUCTION_1X.sü                                                    :{BLACK}Praegune tootlus: {YELLOW}Normaalne{}{}{BLACK}Topelt tootmise jaoks toimeta {SIGNED_WORD} kasti tarvikuid kolme kuu jooksul (või {SIGNED_WORD} kasti neljakordse tootluse jaoks)
+STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Praegune tootlus: {YELLOW}Tõusnud (topelt){}{}{BLACK}Et hoida seda taset, toimeta {SIGNED_WORD} ühikut kaupa kolme kuu jooksul, või {SIGNED_WORD} ühikut kaupa, et tõsta tootlus neljakordseks
+STR_PRIMARY_PRODUCTION_2X.g                                                     :{BLACK}Praegune tootlus: {YELLOW}Tõusnud (topelt){}{}{BLACK}Et hoida seda taset, toimeta {SIGNED_WORD} ühikut kaupa kolme kuu jooksul, või {SIGNED_WORD} ühikut kaupa, et tõsta tootlus neljakordseks
+STR_PRIMARY_PRODUCTION_2X.in                                                    :{BLACK}Praegune tootlus: {YELLOW}Tõusnud (topelt){}{}{BLACK}Et hoida seda taset, toimeta {SIGNED_WORD} ühikut kaupa kolme kuu jooksul, või {SIGNED_WORD} ühikut kaupa, et tõsta tootlus neljakordseks
+STR_PRIMARY_PRODUCTION_2X.sü                                                    :{BLACK}Praegune tootlus: {YELLOW}Tõusnud (topelt){}{}{BLACK}Et hoida seda taset, toimeta {SIGNED_WORD} ühikut kaupa kolme kuu jooksul, või {SIGNED_WORD} ühikut kaupa, et tõsta tootlus neljakordseks
+STR_PORT_PRODUCTION_1X                                                          :{BLACK}Praegune tootlus: {YELLOW}normaalne{}{}{BLACK}Topelt tootmise jaoks toimeta  {SIGNED_WORD} ühikut kaupa kolme kuu jooksu{}neljakordse tootluse jaoks {SIGNED_WORD} ühikut tarvikuid kolme kuu jooksu
+STR_PORT_PRODUCTION_1X.g                                                        :{BLACK}Praegune tootlus: {YELLOW}normaalne{}{}{BLACK}Topelt tootmise jaoks toimeta  {SIGNED_WORD} ühikut kaupa kolme kuu jooksu{}neljakordse tootluse jaoks {SIGNED_WORD} ühikut tarvikuid kolme kuu jooksu
+STR_PORT_PRODUCTION_1X.in                                                       :{BLACK}Praegune tootlus: {YELLOW}normaalne{}{}{BLACK}Topelt tootmise jaoks toimeta  {SIGNED_WORD} ühikut kaupa kolme kuu jooksu{}neljakordse tootluse jaoks {SIGNED_WORD} ühikut tarvikuid kolme kuu jooksu
+STR_PORT_PRODUCTION_1X.sü                                                       :{BLACK}Praegune tootlus: {YELLOW}normaalne{}{}{BLACK}Topelt tootmise jaoks toimeta  {SIGNED_WORD} ühikut kaupa kolme kuu jooksu{}neljakordse tootluse jaoks {SIGNED_WORD} ühikut tarvikuid kolme kuu jooksu
+STR_PORT_PRODUCTION_2X                                                          :{BLACK}Praegune tootlus: {YELLOW}Tõusnud (topelt){}{}{BLACK}Et hoida seda taset, toimeta {SIGNED_WORD} ühikut kaupa kolme kuu jooksul, või {SIGNED_WORD} ühikut kaupa, et tõsta tootlus neljakordseks
+STR_PORT_PRODUCTION_2X.g                                                        :{BLACK}Praegune tootlus: {YELLOW}Tõusnud (topelt){}{}{BLACK}Et hoida seda taset, toimeta {SIGNED_WORD} ühikut kaupa kolme kuu jooksul, või {SIGNED_WORD} ühikut kaupa, et tõsta tootlus neljakordseks
+STR_PORT_PRODUCTION_2X.in                                                       :{BLACK}Praegune tootlus: {YELLOW}Tõusnud (topelt){}{}{BLACK}Et hoida seda taset, toimeta {SIGNED_WORD} ühikut kaupa kolme kuu jooksul, või {SIGNED_WORD} ühikut kaupa, et tõsta tootlus neljakordseks
+STR_PORT_PRODUCTION_2X.sü                                                       :{BLACK}Praegune tootlus: {YELLOW}Tõusnud (topelt){}{}{BLACK}Et hoida seda taset, toimeta {SIGNED_WORD} ühikut kaupa kolme kuu jooksul, või {SIGNED_WORD} ühikut kaupa, et tõsta tootlus neljakordseks
+STR_PORT_PRODUCTION_4X                                                          :BLACK}Praegune toodang: {YELLOW}Gung ho (neljakordne){}{}{BLACK}Et hoida seda taset {SIGNED_WORD} ühikut kaupa kolme kuu jooksu
+STR_PORT_PRODUCTION_4X.g                                                        :BLACK}Praegune toodang: {YELLOW}Gung ho (neljakordne){}{}{BLACK}Et hoida seda taset {SIGNED_WORD} ühikut kaupa kolme kuu jooksu
+STR_PORT_PRODUCTION_4X.in                                                       :BLACK}Praegune toodang: {YELLOW}Gung ho (neljakordne){}{}{BLACK}Et hoida seda taset {SIGNED_WORD} ühikut kaupa kolme kuu jooksu
+STR_PORT_PRODUCTION_4X.sü                                                       :BLACK}Praegune toodang: {YELLOW}Gung ho (neljakordne){}{}{BLACK}Et hoida seda taset {SIGNED_WORD} ühikut kaupa kolme kuu jooksu
+STR_GENERIC_NEWLINE                                                             :{}
+
+STR_FUND_BASIC_FARM                                                             :{}{BLACK}Asukoht: {YELLOW}ei saa rahastada lumel ja kõrbes.
+STR_FUND_BASIC_FARM.g                                                           :{}{BLACK}Asukoht: {YELLOW}ei saa rahastada lumel ja kõrbes.
+STR_FUND_BASIC_FARM.in                                                          :{}{BLACK}Asukoht: {YELLOW}ei saa rahastada lumel ja kõrbes.
+STR_FUND_BASIC_FARM.sü                                                          :{}{BLACK}Asukoht: {YELLOW}ei saa rahastada lumel ja kõrbes.
+STR_FUND_MIXED_FARM                                                             :{}{BLACK}Asukoht: {YELLOW}ei saa rahastada lumel ja kõrbes.
+STR_FUND_MIXED_FARM.g                                                           :{}{BLACK}Asukoht: {YELLOW}ei saa rahastada lumel ja kõrbes.
+STR_FUND_MIXED_FARM.in                                                          :{}{BLACK}Asukoht: {YELLOW}ei saa rahastada lumel ja kõrbes.
+STR_FUND_MIXED_FARM.sü                                                          :{}{BLACK}Asukoht: {YELLOW}ei saa rahastada lumel ja kõrbes.
+STR_FUND_ORCHARD_PIGGERY                                                        :{}{BLACK}Asukoht: {YELLOW}ei saa rahastada lumel ja kõrbes.
+STR_FUND_ORCHARD_PIGGERY.g                                                      :{}{BLACK}Asukoht: {YELLOW}ei saa rahastada lumel ja kõrbes.
+STR_FUND_ORCHARD_PIGGERY.in                                                     :{}{BLACK}Asukoht: {YELLOW}ei saa rahastada lumel ja kõrbes.
+STR_FUND_ORCHARD_PIGGERY.sü                                                     :{}{BLACK}Asukoht: {YELLOW}ei saa rahastada lumel ja kõrbes.
+STR_FUND_SUGAR_PLANTATION                                                       :}{BLACK}Asukoht: {YELLOW}ei saa rahastada lumel ja kõrbes.
+STR_FUND_SUGAR_PLANTATION.g                                                     :}{BLACK}Asukoht: {YELLOW}ei saa rahastada lumel ja kõrbes.
+STR_FUND_SUGAR_PLANTATION.in                                                    :}{BLACK}Asukoht: {YELLOW}ei saa rahastada lumel ja kõrbes.
+STR_FUND_SUGAR_PLANTATION.sü                                                    :}{BLACK}Asukoht: {YELLOW}ei saa rahastada lumel ja kõrbes.
+STR_FUND_FIBRE_CROP_FARM                                                        :{}{BLACK}Asukoht: {YELLOW}ei saa rahastada lumel ja kõrbes.
+STR_FUND_FIBRE_CROP_FARM.g                                                      :{}{BLACK}Asukoht: {YELLOW}ei saa rahastada lumel ja kõrbes.
+STR_FUND_FIBRE_CROP_FARM.in                                                     :{}{BLACK}Asukoht: {YELLOW}ei saa rahastada lumel ja kõrbes.
+STR_FUND_FIBRE_CROP_FARM.sü                                                     :{}{BLACK}Asukoht: {YELLOW}ei saa rahastada lumel ja kõrbes.
+STR_FUND_FOREST                                                                 :{}{BLACK}Asukoht: {YELLOW}ei saa rahastada kõrbes.
+STR_FUND_FOREST.g                                                               :{}{BLACK}Asukoht: {YELLOW}ei saa rahastada kõrbes.
+STR_FUND_FOREST.in                                                              :{}{BLACK}Asukoht: {YELLOW}ei saa rahastada kõrbes.
+STR_FUND_FOREST.sü                                                              :{}{BLACK}Asukoht: {YELLOW}ei saa rahastada kõrbes.
+STR_FUND_RUBBER_PLANTATION                                                      :{}{BLACK}Asukoht: {YELLOW}ei saa rahastada lumel ja kõrbes.
+STR_FUND_RUBBER_PLANTATION.g                                                    :{}{BLACK}Asukoht: {YELLOW}ei saa rahastada lumel ja kõrbes.
+STR_FUND_RUBBER_PLANTATION.in                                                   :{}{BLACK}Asukoht: {YELLOW}ei saa rahastada lumel ja kõrbes.
+STR_FUND_RUBBER_PLANTATION.sü                                                   :{}{BLACK}Asukoht: {YELLOW}ei saa rahastada lumel ja kõrbes.
+
+
+STR_FUND_AVAILABLE_FROM                                                         :{}{BLACK}Saadaval alates: {YELLOW}{COMMA}
+STR_FUND_AVAILABLE_FROM.g                                                       :{}{BLACK}Saadaval alates: {YELLOW}{COMMA}
+STR_FUND_AVAILABLE_FROM.in                                                      :{}{BLACK}Saadaval alates: {YELLOW}{COMMA}
+STR_FUND_AVAILABLE_FROM.sü                                                      :{}{BLACK}Saadaval alates: {YELLOW}{COMMA}
+
+STR_FUND_AVAILABLE_UNTIL                                                        :{}{BLACK}Pole saadaval pärast: {YELLOW}{COMMA}
+STR_FUND_AVAILABLE_UNTIL.g                                                      :{}{BLACK}Pole saadaval pärast: {YELLOW}{COMMA}
+STR_FUND_AVAILABLE_UNTIL.in                                                     :{}{BLACK}Pole saadaval pärast: {YELLOW}{COMMA}
+STR_FUND_AVAILABLE_UNTIL.sü                                                     :{}{BLACK}Pole saadaval pärast: {YELLOW}{COMMA}
+
+
+STR_TOWN                                                                        :{STRING}
+STR_STATION                                                                     :{STRING} {STRING}
+
+STR_IND_ARABLE_FARM                                                             :Viljakandev farm
+STR_IND_ARABLE_FARM.g                                                           :Viljakandev farm
+STR_IND_ARABLE_FARM.in                                                          :Viljakandev farm
+STR_IND_ARABLE_FARM.sü                                                          :Viljakandev farm
+STR_IND_BIOREFINERY                                                             :Biorafineerimistehas
+STR_IND_BIOREFINERY.g                                                           :Biorafineerimistehas
+STR_IND_BIOREFINERY.in                                                          :Biorafineerimistehas
+STR_IND_BIOREFINERY.sü                                                          :Biorafineerimistehas
+STR_IND_BREWERY                                                                 :Pruulikoda
+STR_IND_BREWERY.g                                                               :Pruulikoda
+STR_IND_BREWERY.in                                                              :Pruulikoda
+STR_IND_BREWERY.sü                                                              :Pruulikoda
+STR_IND_BRICK_WORKS                                                             :Tellistetehas
+STR_IND_BRICK_WORKS.g                                                           :Tellistetehas
+STR_IND_BRICK_WORKS.in                                                          :Tellistetehas
+STR_IND_BRICK_WORKS.sü                                                          :Tellistetehas
+STR_IND_BUILDERS_YARD                                                           :Ehitajate hoov
+STR_IND_BUILDERS_YARD.g                                                         :Ehitajate hoov
+STR_IND_BUILDERS_YARD.in                                                        :Ehitajate hoov
+STR_IND_BUILDERS_YARD.sü                                                        :Ehitajate hoov
+STR_IND_CEMENT_PLANT                                                            :Tsemenditehases
+STR_IND_CEMENT_PLANT.g                                                          :Tsemenditehases
+STR_IND_CEMENT_PLANT.in                                                         :Tsemenditehases
+STR_IND_CEMENT_PLANT.sü                                                         :Tsemenditehases
+STR_IND_CHEMICAL_PLANT                                                          :Keemiatehas
+STR_IND_CHEMICAL_PLANT.g                                                        :Keemiatehas
+STR_IND_CHEMICAL_PLANT.in                                                       :Keemiatehas
+STR_IND_CHEMICAL_PLANT.sü                                                       :Keemiatehas
+STR_IND_COFFEE_ESTATE                                                           :Kohvi Mõis
+STR_IND_COFFEE_ESTATE.g                                                         :Kohvi Mõis
+STR_IND_COFFEE_ESTATE.in                                                        :Kohvi Mõis
+STR_IND_COFFEE_ESTATE.sü                                                        :Kohvi Mõis
+STR_IND_FIBRE_CROP_FARM                                                         :Puuvilla talu
+STR_IND_FIBRE_CROP_FARM.g                                                       :Puuvilla talu
+STR_IND_FIBRE_CROP_FARM.in                                                      :Puuvilla talu
+STR_IND_FIBRE_CROP_FARM.sü                                                      :Puuvilla talu
+STR_IND_DAIRY                                                                   :Meierei
+STR_IND_DAIRY.g                                                                 :Meierei
+STR_IND_DAIRY.in                                                                :Meierei
+STR_IND_DAIRY.sü                                                                :Meierei
+STR_IND_DREDGING_SITE                                                           :Süvendamise plats
+STR_IND_DREDGING_SITE.g                                                         :Süvendamise plats
+STR_IND_DREDGING_SITE.in                                                        :Süvendamise plats
+STR_IND_DREDGING_SITE.sü                                                        :Süvendamise plats
+STR_IND_FERTILISER_PLANT                                                        :Väetisetehas
+STR_IND_FERTILISER_PLANT.g                                                      :Väetisetehas
+STR_IND_FERTILISER_PLANT.in                                                     :Väetisetehas
+STR_IND_FERTILISER_PLANT.sü                                                     :Väetisetehas
+STR_IND_FISHING_GROUND                                                          :Kalapüügiala
+STR_IND_FISHING_GROUND.g                                                        :Kalapüügiala
+STR_IND_FISHING_GROUND.in                                                       :Kalapüügiala
+STR_IND_FISHING_GROUND.sü                                                       :Kalapüügiala
+STR_IND_FURNITURE_FACTORY                                                       :Mööblivabrik
+STR_IND_FURNITURE_FACTORY.g                                                     :Mööblivabrik
+STR_IND_FURNITURE_FACTORY.in                                                    :Mööblivabrik
+STR_IND_FURNITURE_FACTORY.sü                                                    :Mööblivabrik
+STR_IND_GENERAL_STORE                                                           :Üldkaupade kauplus
+STR_IND_GENERAL_STORE.g                                                         :Üldkaupade kauplus
+STR_IND_GENERAL_STORE.in                                                        :Üldkaupade kauplus
+STR_IND_GENERAL_STORE.sü                                                        :Üldkaupade kauplus
+STR_IND_HARDWARE_STORE                                                          :Ehitusmaterjalide kauplus
+STR_IND_HARDWARE_STORE.g                                                        :Ehitusmaterjalide kauplus
+STR_IND_HARDWARE_STORE.in                                                       :Ehitusmaterjalide kauplus
+STR_IND_HARDWARE_STORE.sü                                                       :Ehitusmaterjalide kauplus
+STR_IND_IRON_WORKS                                                              :Rauatöökoda
+STR_IND_IRON_WORKS.g                                                            :Rauatöökoda
+STR_IND_IRON_WORKS.in                                                           :Rauatöökoda
+STR_IND_IRON_WORKS.sü                                                           :Rauatöökoda
+STR_IND_JUNKYARD                                                                :Lammutuskoda
+STR_IND_JUNKYARD.g                                                              :Lammutuskoda
+STR_IND_JUNKYARD.in                                                             :Lammutuskoda
+STR_IND_JUNKYARD.sü                                                             :Lammutuskoda
+STR_IND_LUMBER_YARD                                                             :Saeveski
+STR_IND_LUMBER_YARD.g                                                           :Saeveski
+STR_IND_LUMBER_YARD.in                                                          :Saeveski
+STR_IND_LUMBER_YARD.sü                                                          :Saeveski
+STR_IND_MACHINE_SHOP                                                            :Masinapood
+STR_IND_MACHINE_SHOP.g                                                          :Masinapood
+STR_IND_MACHINE_SHOP.in                                                         :Masinapood
+STR_IND_MACHINE_SHOP.sü                                                         :Masinapood
+STR_IND_METAL_FABRICATION_PLANT                                                 :Metalli valmistamise tehas
+STR_IND_METAL_FABRICATION_PLANT.g                                               :Metalli valmistamise tehas
+STR_IND_METAL_FABRICATION_PLANT.in                                              :Metalli valmistamise tehas
+STR_IND_METAL_FABRICATION_PLANT.sü                                              :Metalli valmistamise tehas
+STR_IND_METAL_FOUNDRY                                                           :Metallitöökoda
+STR_IND_METAL_FOUNDRY.g                                                         :Metallitöökoda
+STR_IND_METAL_FOUNDRY.in                                                        :Metallitöökoda
+STR_IND_METAL_FOUNDRY.sü                                                        :Metallitöökoda
+STR_IND_MIXEDFARM                                                               :Segatalu
+STR_IND_MIXEDFARM.g                                                             :Segatalu
+STR_IND_MIXEDFARM.in                                                            :Segatalu
+STR_IND_MIXEDFARM.sü                                                            :Segatalu
+STR_IND_ORCHARD_PIGGERY                                                         :Viljapuuaed ja sigala
+STR_IND_ORCHARD_PIGGERY.g                                                       :Viljapuuaed ja sigala
+STR_IND_ORCHARD_PIGGERY.in                                                      :Viljapuuaed ja sigala
+STR_IND_ORCHARD_PIGGERY.sü                                                      :Viljapuuaed ja sigala
+STR_IND_NITRATE_MINE                                                            :Nitraatide kaevanduse
+STR_IND_NITRATE_MINE.g                                                          :Nitraatide kaevanduse
+STR_IND_NITRATE_MINE.in                                                         :Nitraatide kaevanduse
+STR_IND_NITRATE_MINE.sü                                                         :Nitraatide kaevanduse
+STR_IND_PETROLPUMP                                                              :Bensiinijaam
+STR_IND_PETROLPUMP.g                                                            :Bensiinijaam
+STR_IND_PETROLPUMP.in                                                           :Bensiinijaam
+STR_IND_PETROLPUMP.sü                                                           :Bensiinijaam
+STR_IND_PLASTICS_PLANT                                                          :Plastmassitehas
+STR_IND_PLASTICS_PLANT.g                                                        :Plastmassitehas
+STR_IND_PLASTICS_PLANT.in                                                       :Plastmassitehas
+STR_IND_PLASTICS_PLANT.sü                                                       :Plastmassitehas
+STR_IND_PORT                                                                    :Sadam
+STR_IND_PORT.g                                                                  :Sadam
+STR_IND_PORT.in                                                                 :Sadam
+STR_IND_PORT.sü                                                                 :Sadam
+STR_IND_QUARRY                                                                  :Kivimurd
+STR_IND_QUARRY.g                                                                :Kivimurd
+STR_IND_QUARRY.in                                                               :Kivimurd
+STR_IND_QUARRY.sü                                                               :Kivimurd
+STR_IND_RECYCLING_DEPOT                                                         :Ümbertöötluse depoo
+STR_IND_RECYCLING_DEPOT.g                                                       :Ümbertöötluse depoo
+STR_IND_RECYCLING_DEPOT.in                                                      :Ümbertöötluse depoo
+STR_IND_RECYCLING_DEPOT.sü                                                      :Ümbertöötluse depoo
+STR_IND_RECYCLING_PLANT                                                         :Ümbertöötlustehas
+STR_IND_RECYCLING_PLANT.g                                                       :Ümbertöötlustehas
+STR_IND_RECYCLING_PLANT.in                                                      :Ümbertöötlustehas
+STR_IND_RECYCLING_PLANT.sü                                                      :Ümbertöötlustehas
+STR_IND_SHEEPFARM                                                               :Lambakasvatus
+STR_IND_SHEEPFARM.g                                                             :Lambakasvatus
+STR_IND_SHEEPFARM.in                                                            :Lambakasvatus
+STR_IND_SHEEPFARM.sü                                                            :Lambakasvatus
+STR_IND_SMITHY_FORGE                                                            :Sepikoda
+STR_IND_SMITHY_FORGE.g                                                          :Sepikoda
+STR_IND_SMITHY_FORGE.in                                                         :Sepikoda
+STR_IND_SMITHY_FORGE.sü                                                         :Sepikoda
+STR_IND_STOCKYARD                                                               :Loomakasvatusesaadused
+STR_IND_STOCKYARD.g                                                             :Loomakasvatusesaadused
+STR_IND_STOCKYARD.in                                                            :Loomakasvatusesaadused
+STR_IND_STOCKYARD.sü                                                            :Loomakasvatusesaadused
+STR_IND_SUGAR_PLANTATION                                                        :Suhkru istandus
+STR_IND_SUGAR_PLANTATION.g                                                      :Suhkru istandus
+STR_IND_SUGAR_PLANTATION.in                                                     :Suhkru istandus
+STR_IND_SUGAR_PLANTATION.sü                                                     :Suhkru istandus
+STR_IND_SUGAR_REFINERY                                                          :Suhkru rafineerimistehas
+STR_IND_SUGAR_REFINERY.g                                                        :Suhkru rafineerimistehas
+STR_IND_SUGAR_REFINERY.in                                                       :Suhkru rafineerimistehas
+STR_IND_SUGAR_REFINERY.sü                                                       :Suhkru rafineerimistehas
+STR_IND_TRADING_POST                                                            :Kaubavahetus post
+STR_IND_TRADING_POST.g                                                          :Kaubavahetus post
+STR_IND_TRADING_POST.in                                                         :Kaubavahetus post
+STR_IND_TRADING_POST.sü                                                         :Kaubavahetus post
+STR_IND_VEHICLE_FACTORY                                                         :Sõidukivabrik
+STR_IND_VEHICLE_FACTORY.g                                                       :Sõidukivabrik
+STR_IND_VEHICLE_FACTORY.in                                                      :Sõidukivabrik
+STR_IND_VEHICLE_FACTORY.sü                                                      :Sõidukivabrik
+
+STR_STATION_FARM                                                                :Mõisahoone
+STR_STATION_FARM.g                                                              :Mõisahoone
+STR_STATION_FARM.in                                                             :Mõisahoone
+STR_STATION_FARM.sü                                                             :Mõisahoone
+STR_STATION_FISHMARKET                                                          :Kalaturg
+STR_STATION_FISHMARKET.g                                                        :Kalaturg
+STR_STATION_FISHMARKET.in                                                       :Kalaturg
+STR_STATION_FISHMARKET.sü                                                       :Kalaturg
+STR_STATION_INDUSTRY_ESTATE                                                     :Tööstuspark
+STR_STATION_INDUSTRY_ESTATE.g                                                   :Tööstuspark
+STR_STATION_INDUSTRY_ESTATE.in                                                  :Tööstuspark
+STR_STATION_INDUSTRY_ESTATE.sü                                                  :Tööstuspark
+STR_STATION_INDUSTRY_HARBOUR                                                    :Tööstussadam
+STR_STATION_INDUSTRY_HARBOUR.g                                                  :Tööstussadam
+STR_STATION_INDUSTRY_HARBOUR.in                                                 :Tööstussadam
+STR_STATION_INDUSTRY_HARBOUR.sü                                                 :Tööstussadam
+STR_STATION_MILL                                                                :Veski
+STR_STATION_MILL.g                                                              :Veski
+STR_STATION_MILL.in                                                             :Veski
+STR_STATION_MILL.sü                                                             :Veski
+STR_STATION_PIT                                                                 :Kaevis
+STR_STATION_PIT.g                                                               :Kaevis
+STR_STATION_PIT.in                                                              :Kaevis
+STR_STATION_PIT.sü                                                              :Kaevis
+STR_STATION_PLANTATION                                                          :Istandus
+STR_STATION_PLANTATION.g                                                        :Istandus
+STR_STATION_PLANTATION.in                                                       :Istandus
+STR_STATION_PLANTATION.sü                                                       :Istandus
+STR_STATION_POWERHUNGRY                                                         :Elektrijaam
+STR_STATION_POWERHUNGRY.g                                                       :Elektrijaam
+STR_STATION_POWERHUNGRY.in                                                      :Elektrijaam
+STR_STATION_POWERHUNGRY.sü                                                      :Elektrijaam
+STR_STATION_REFINERY                                                            :Portland
+STR_STATION_REFINERY.g                                                          :Portland
+STR_STATION_REFINERY.in                                                         :Portland
+STR_STATION_REFINERY.sü                                                         :Portland
+STR_STATION_WATER                                                               :leetseljak
+STR_STATION_WATER.g                                                             :leetseljak
+STR_STATION_WATER.in                                                            :leetseljak
+STR_STATION_WATER.sü                                                            :leetseljak
