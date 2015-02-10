@@ -51,7 +51,6 @@ class Cargo(object):
             self.add_economy_variation(economy)
         # icon indices relate to position of icon in cargo icons spritesheet
         self.icon_indices = kwargs['icon_indices']
-        self.register()
 
     def add_economy_variation(self, economy):
         self.economy_variations[economy] = {'disabled': False}
