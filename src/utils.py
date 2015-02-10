@@ -18,7 +18,7 @@ def unescape_chameleon_output(escaped_nml):
 
 
 def parse_base_lang():
-    print "[PARSE BASE LANG & EXTRA STRINGS] utils.py"
+    print("[PARSE BASE LANG & EXTRA STRINGS] utils.py")
 
     import os.path
     currentdir = os.curdir
@@ -54,4 +54,4 @@ def unwrap_nml_string_declaration(nml_string=None):
 def echo_message(message):
     # use to raise messages from templates to standard out (can't print directly from template render)
     # magically wraps these messages in ANSI colour to make them visible - they are only intended for noticeable messages, not general output
-    print '\033[33m' + message + '\033[0m'
+    print('\033[33m' + message + '\033[0m')

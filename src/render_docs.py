@@ -6,7 +6,7 @@
   FIRS is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
   See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
 """
-print "[PYTHON] render docs"
+print("[PYTHON] render docs")
 
 import codecs # used for writing files - more unicode friendly than standard open() module
 

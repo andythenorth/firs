@@ -5,7 +5,7 @@
   See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
 """
 
-print "[PYTHON] render pnml"
+print("[PYTHON] render pnml")
 
 import codecs # used for writing files - more unicode friendly than standard open() module
 
@@ -89,7 +89,7 @@ def main():
         pool.join()
 
     # linker
-    print "Linking"
+    print("Linking pnml")
     template = header_item_templates['firs.pypnml']
     firs_pnml = codecs.open(os.path.join(firs.generated_files_path, 'firs.pnml'), 'w','utf8')
     firs_pnml.write(utils.unescape_chameleon_output(template(registered_industries=registered_industries, global_constants=global_constants,
