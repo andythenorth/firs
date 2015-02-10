@@ -251,7 +251,6 @@ class Industry(object):
         for economy in global_constants.economies:
             self.add_economy_variation(economy)
         self.snakebite = kwargs.get('snakebite', False)
-        self.register()
 
     def register(self):
         registered_industries.append(self)

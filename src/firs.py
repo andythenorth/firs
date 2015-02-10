@@ -73,127 +73,140 @@ import industry
 from industries import registered_industries
 
 # keep these alphabetised for ease of reading
-# the asserts are just to stop pyflakes generating unhelpful warnings about unused imports
 from industries import aluminium_plant
-assert aluminium_plant
+aluminium_plant.industry.register()
 from industries import arable_farm
-assert arable_farm
+arable_farm.industry.register()
 from industries import basic_farm
-assert basic_farm
+basic_farm.industry.register()
 from industries import bauxite_mine
-assert bauxite_mine
+bauxite_mine.industry.register()
 from industries import biorefinery
-assert biorefinery
+biorefinery.industry.register()
 from industries import brewery
-assert brewery
+brewery.industry.register()
 from industries import brick_works
-assert brick_works
+brick_works.industry.register()
 from industries import builders_yard
-assert builders_yard
+builders_yard.industry.register()
 from industries import bulk_terminal
-assert bulk_terminal
+bulk_terminal.industry.register()
 from industries import cement_plant
-assert cement_plant
+cement_plant.industry.register()
 from industries import chemical_plant
-assert chemical_plant
+chemical_plant.industry.register()
 from industries import coffee_estate
-assert coffee_estate
+coffee_estate.industry.register()
 from industries import copper_mine
-assert copper_mine
+copper_mine.industry.register()
 from industries import dairy
-assert dairy
+dairy.industry.register()
 from industries import dairy_farm
-assert dairy_farm
+dairy_farm.industry.register()
 from industries import diamond_mine
-assert diamond_mine
+diamond_mine.industry.register()
 from industries import dredging_site
-assert dredging_site
+dredging_site.industry.register()
 from industries import fertiliser_plant
-assert fertiliser_plant
+fertiliser_plant.industry.register()
 from industries import fibre_crop_farm
-assert fibre_crop_farm
+fibre_crop_farm.industry.register()
 from industries import food_market
-assert food_market
+food_market.industry.register()
 from industries import food_processor
-assert food_processor
+food_processor.industry.register()
 from industries import furniture_factory
-assert furniture_factory
+furniture_factory.industry.register()
 from industries import general_store
-assert general_store
+general_store.industry.register()
 from industries import glass_works
-assert glass_works
+glass_works.industry.register()
 from industries import grain_mill
-assert grain_mill
+grain_mill.industry.register()
 from industries import hardware_store
-assert hardware_store
+hardware_store.industry.register()
 from industries import hotel
-assert hotel
+hotel.industry.register()
 from industries import iron_works
-assert iron_works
+iron_works.industry.register()
 from industries import junk_yard
-assert junk_yard
+junk_yard.industry.register()
 from industries import lime_kiln
-assert lime_kiln
+lime_kiln.industry.register()
 from industries import lumber_yard
-assert lumber_yard
+lumber_yard.industry.register()
 from industries import machine_shop
-assert machine_shop
+machine_shop.industry.register()
 from industries import metal_fabrication_plant
-assert metal_fabrication_plant
+metal_fabrication_plant.industry.register()
 from industries import metal_workshop
-assert metal_workshop
+metal_workshop.industry.register()
 from industries import mixed_farm
-assert mixed_farm
+mixed_farm.industry.register()
 from industries import nitrate_mine
-assert nitrate_mine
+nitrate_mine.industry.register()
 from industries import oil_wells
-assert oil_wells
+oil_wells.industry.register()
 from industries import orchard_piggery
-assert orchard_piggery
+orchard_piggery.industry.register()
 from industries import petrol_pump
-assert petrol_pump
+petrol_pump.industry.register()
 from industries import plastics_plant
-assert plastics_plant
+plastics_plant.industry.register()
 from industries import ranch
-assert ranch
+ranch.industry.register()
 from industries import recycling_depot
-assert recycling_depot
+recycling_depot.industry.register()
 from industries import recycling_plant
-assert recycling_plant
+recycling_plant.industry.register()
 from industries import rubber_plantation
-assert rubber_plantation
+rubber_plantation.industry.register()
 from industries import sheep_farm
-assert sheep_farm
+sheep_farm.industry.register()
 from industries import smithy_forge
-assert smithy_forge
+smithy_forge.industry.register()
 from industries import stockyard
-assert stockyard
+stockyard.industry.register()
 from industries import sugar_plantation
-assert sugar_plantation
+sugar_plantation.industry.register()
 from industries import sugar_refinery
-assert sugar_refinery
+sugar_refinery.industry.register()
 from industries import textile_mill
-assert textile_mill
+textile_mill.industry.register()
 from industries import trading_post
-assert trading_post
+trading_post.industry.register()
 from industries import vehicle_factory
-assert vehicle_factory
+vehicle_factory.industry.register()
 
 # industries which will be hard to convert to python templating, mostly still cpp
 from industries import clay_pit
+clay_pit.industry.register()
 from industries import fishing_grounds
+fishing_grounds.industry.register()
 from industries import fishing_harbour
+fishing_harbour.industry.register()
 from industries import forest
+forest.industry.register()
 from industries import fruit_plantation
+fruit_plantation.industry.register()
 from industries import port
+port.industry.register()
 from industries import quarry
+quarry.industry.register()
 
 # industries reusing default industry graphics (and possibly default layouts)
 from industries import coal_mine
+coal_mine.industry.register()
 from industries import iron_ore_mine
+iron_ore_mine.industry.register()
 from industries import oil_refinery
+oil_refinery.industry.register()
 from industries import oil_rig
+oil_rig.industry.register()
 from industries import paper_mill
+paper_mill.industry.register()
 from industries import sawmill
+sawmill.industry.register()
 from industries import steel_mill
+steel_mill.industry.register()
 
