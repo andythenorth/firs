@@ -5,7 +5,7 @@
   See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
 """
 
-from industry import IndustryTertiary, Tile, TileLocationChecks, Sprite, Spriteset, SpriteLayout, IndustryLayout, IndustryLocationChecks
+from industry import IndustryTertiary,  TileLocationChecks, IndustryLayout, IndustryLocationChecks
 
 """
 Notes to self whilst figuring out python-firs (notes will probably rot here forever).
