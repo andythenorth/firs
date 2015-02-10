@@ -22,6 +22,8 @@ generated_files_path = os.path.join(currentdir, global_constants.generated_files
 if not os.path.exists(generated_files_path):
     os.mkdir(generated_files_path)
 
+# cargos
+
 from cargos import alcohol
 alcohol.cargo.register()
 
@@ -350,3 +352,7 @@ from industries import steel_mill
 steel_mill.industry.register()
 
 
+import cargos
+registered_cargos = cargos.registered_cargos
+import industries
+registered_industries = industries.registered_industries

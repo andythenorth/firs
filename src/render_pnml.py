@@ -9,22 +9,17 @@ print("[PYTHON] render pnml")
 
 import codecs # used for writing files - more unicode friendly than standard open() module
 
-import shutil
 import sys
-import global_constants
 import os
 currentdir = os.curdir
 src_path = os.path.join(currentdir, 'src')
 from multiprocessing import Pool
-import subprocess
 
-import global_constants as global_constants
-import utils as utils
+import global_constants
+import utils
 import firs
-import cargos
-from cargos import registered_cargos
-import industries
-from industries import registered_industries
+registered_cargos = firs.registered_cargos
+registered_industries = firs.registered_industries
 
 from chameleon import PageTemplateLoader # chameleon used in most template cases
 # setup the places we look for templates
@@ -80,11 +75,11 @@ def main():
 
     if repo_vars.get('no_mp', None) != 'False':
         utils.echo_message('Multiprocessing disabled: (use NO_MP=False to enable it)')
-        for industry in industries.registered_industries:
+        for industry in registered_industries:
             render_industry(industry)
     else:
         pool = Pool(processes=16) # 16 is an arbitrary amount that appears to be fast without blocking the system
-        pool.map(render_industry, industries.registered_industries)
+        pool.map(render_industry, registered_industries)
         pool.close()
         pool.join()
 

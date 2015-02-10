@@ -12,7 +12,6 @@ import codecs # used for writing files - more unicode friendly than standard ope
 
 import shutil
 import sys
-import global_constants
 import os
 currentdir = os.curdir
 
@@ -48,11 +47,9 @@ metadata['repo_url'] = 'http://dev.openttdcoop.org/projects/firs/repository'
 metadata['issue_tracker'] = 'http://dev.openttdcoop.org/projects/firs/issues'
 
 import firs
-from cargos import registered_cargos
-from industries import registered_industries
 # default sort for docs is by id
-registered_cargos = sorted(registered_cargos, key=lambda registered_cargos: registered_cargos.id)
-registered_industries = sorted(registered_industries, key=lambda registered_industries: registered_industries.id)
+registered_cargos = sorted(firs.registered_cargos, key=lambda registered_cargos: registered_cargos.id)
+registered_industries = sorted(firs.registered_industries, key=lambda registered_industries: registered_industries.id)
 economy_schemas = {}
 
 class DocHelper(object):
