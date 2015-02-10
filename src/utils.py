@@ -21,7 +21,6 @@ def parse_base_lang():
     print("[PARSE BASE LANG & EXTRA STRINGS] utils.py")
 
     import os.path
-    currentdir = os.curdir
 
     import codecs # used for writing files - more unicode friendly than standard open() module
 
