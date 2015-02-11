@@ -114,7 +114,7 @@ class DocHelper(object):
         return base_lang_strings.get('INDUSTRY_INFO_' + industry.id.upper(), '')
 
     def industry_find_industries_active_in_economy_for_cargo(self, cargo, economy, accept_or_produce):
-        result = []
+        result = set()
         # hmm, pretty certain this could be changed to use industry.get_prod_cargo_types or accept equivalent
         # needs to pass economy, AND climate (from list defined in global_constants)
         # climate is required for those functions, and can be used (note in brackets) to show when a cargo is climate special-cased (only SGBT/SGCN are)
@@ -123,27 +123,20 @@ class DocHelper(object):
             for industry in economy_schemas[economy]['enabled_industries']:
                     for cargo_label in industry.get_property(accept_or_produce, economy):
                         if cargo.cargo_label[1:-1] == cargo_label:
-                            result.append(industry)
-        return set(result)
+                            result.add(industry)
+        return result
 
-    def cargo_unique_industry_combinations(self, cargo):
+    def industries_using_cargo(self, cargo):
+        # segmented by economy
         result = {}
         for economy in self.get_economies_sorted_by_name():
-            economy_industries = []
             accepted_by = self.industry_find_industries_active_in_economy_for_cargo(cargo, economy, 'accept_cargo_types')
             produced_by = self.industry_find_industries_active_in_economy_for_cargo(cargo, economy, 'prod_cargo_types')
-            for industry in accepted_by:
-                economy_industries.append(industry)
-            for industry in produced_by:
-                economy_industries.append(industry)
-            if len(economy_industries) > 0:
-                industry_key = tuple(sorted(economy_industries))
-                result.setdefault(industry_key, {'accepted_by': accepted_by, 'produced_by': produced_by})
-                result[industry_key].setdefault('economies',[]).append(economy)
-                 # convenient to have items sorted
-                result[industry_key]['economies'] = sorted(result[industry_key]['economies'], key=lambda economy: self.get_economy_name(economy))
-        # return a list, sorted by economies (only need first economy entry in each list of economies)
-        return sorted(result.values(), key = lambda combo: self.get_economy_name(combo['economies'][0]))
+            accepted_by = sorted(accepted_by, key=self.get_industry_name)
+            produced_by = sorted(produced_by, key=self.get_industry_name)
+            if len(list(accepted_by) + list(produced_by)) > 0:
+                result[economy] = {'accepted_by':accepted_by, 'produced_by':produced_by}
+        return result
 
 
     def industry_find_cargos_active_in_economy_for_industry(self, industry, economy, accept_or_produce):
@@ -154,6 +147,20 @@ class DocHelper(object):
                     if cargo_label == cargo.cargo_label[1:-1]:
                         result.append(cargo)
         return set(result)
+
+
+    def cargos_used_by_industry(self, industry):
+        # segmented by economy
+        result = {}
+        for economy in self.get_economies_sorted_by_name():
+            accept_cargo_types = self.industry_find_cargos_active_in_economy_for_industry(industry, economy, 'accept_cargo_types')
+            prod_cargo_types = self.industry_find_cargos_active_in_economy_for_industry(industry, economy, 'prod_cargo_types')
+            accept_cargo_types = sorted(accept_cargo_types, key=self.get_cargo_name)
+            prod_cargo_types = sorted(prod_cargo_types, key=self.get_cargo_name)
+            if len(list(accept_cargo_types) + list(prod_cargo_types)) > 0:
+                result[economy] = {'accept_cargo_types':accept_cargo_types, 'prod_cargo_types':prod_cargo_types}
+        return result
+
 
     def industry_unique_cargo_combinations(self, industry):
         result = {}
