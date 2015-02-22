@@ -32,7 +32,7 @@ STR_PARAM_VALUE_ECONOMIES_TEST_3                                                
 
 STR_CARGO_NAME_ALCOHOL                                                          :{G=m}Alcoolici
 STR_CARGO_NAME_BAUXITE                                                          :{G=f}Bauxite
-STR_CARGO_NAME_BEANS                                                            :Fagioli
+STR_CARGO_NAME_BEANS                                                            :{G=m}Fagioli
 STR_CARGO_NAME_BUILDING_MATERIALS                                               :{G=m}Materiali per edilizia
 STR_CARGO_NAME_CHEMICALS                                                        :{G=m}Prodotti chimici
 STR_CARGO_NAME_CLAY                                                             :{G=f}Argilla
@@ -46,7 +46,7 @@ STR_CARGO_NAME_LUMBER                                                           
 STR_CARGO_NAME_METAL                                                            :{G=m}Metalli
 STR_CARGO_NAME_MILK                                                             :{G=m}Latte
 STR_CARGO_NAME_MANUFACTURING_SUPPLIES                                           :{G=f}Forniture industriali
-STR_CARGO_NAME_NITRATES                                                         :Nitrati
+STR_CARGO_NAME_NITRATES                                                         :{G=m}Nitrati
 STR_CARGO_NAME_PETROL                                                           :{G=m}Carburante
 STR_CARGO_NAME_RECYCLABLES                                                      :{G=m}Prodotti riciclati
 STR_CARGO_NAME_SAND                                                             :{G=f}Sabbia
@@ -54,7 +54,7 @@ STR_CARGO_NAME_SCRAP_METAL                                                      
 STR_CARGO_NAME_STONE                                                            :{G=f}Pietre
 STR_CARGO_NAME_SUGAR_BEET                                                       :{G=f}Barbabietole da zucchero
 STR_CARGO_NAME_SUGARCANE                                                        :{G=f}Canne da zucchero
-STR_CARGO_NAME_VEHICLE_PARTS                                                    :Parti per veicoli
+STR_CARGO_NAME_VEHICLE_PARTS                                                    :{G=m}Parti di veicoli
 STR_CARGO_NAME_WOOL                                                             :{G=f}Lana
 
 STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} di alcoolici
@@ -86,7 +86,7 @@ STR_CARGO_UNIT_WOOL                                                             
 
 STR_CID_ALCOHOL                                                                 :{TINYFONT}AL
 STR_CID_BAUXITE                                                                 :{TINYFONT}BX
-STR_CID_BEANS                                                                   :{TINYFONT}BN
+STR_CID_BEANS                                                                   :{TINYFONT}FG
 STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}MA
 STR_CID_CHEMICALS                                                               :{TINYFONT}PC
 STR_CID_CLAY                                                                    :{TINYFONT}AR
@@ -107,7 +107,7 @@ STR_CID_SCRAP_METAL                                                             
 STR_CID_STONE                                                                   :{TINYFONT}PI
 STR_CID_SUGAR_BEET                                                              :{TINYFONT}BA
 STR_CID_SUGARCANE                                                               :{TINYFONT}CA
-STR_CID_VEHICLE_PARTS                                                           :{TINYFONT}VP
+STR_CID_VEHICLE_PARTS                                                           :{TINYFONT}PV
 STR_CID_WOOL                                                                    :{TINYFONT}LN
 
 STR_ERR_CLIMATE_TOYLAND                                                         :{ORANGE}FIRS non funziona con Toyland
@@ -117,10 +117,10 @@ STR_ERR_INCOMPATIBLE_PARAM_CITYSET                                              
 STR_ERR_INCOMPATIBLE_SET_TTRS_VERSION                                           :{ORANGE}E04: {YELLOW}Versione incompatibile: {ORANGE}Ci vuole la versione 3.11 o più recente del Total Town Replacement Set. {YELLOW}Consulta il Leggimi di FIRS: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 STR_ERR_OPENTTD_VERSION                                                         :{ORANGE}E00: FIRS ha bisogno almeno di OpenTTD 1.2.0 / trunk r22780 (o più recente). {YELLOW}Consulta il Leggimi di FIRS: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 
-STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE                                             :dev'essere messo più in basso delle nevi perenni.
-STR_ERR_LOCATION_NOT_ON_WATER                                                   :dev'essere piazzato sulla terra, non sull'acqua.
-STR_ERR_LOCATION_NOT_IN_DESERT                                                  :non può essere messo nel deserto.
-STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE                                             :non può essere messo su terreno in pendenza.
+STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE                                             :deve stare più in basso delle nevi perenni.
+STR_ERR_LOCATION_NOT_ON_WATER                                                   :deve stare sulla terra, non sull'acqua.
+STR_ERR_LOCATION_NOT_IN_DESERT                                                  :non può stare nel deserto.
+STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE                                             :non può stare su terreno in pendenza.
 STR_ERR_LOCATION_LIMIT_1_PER_TOWN                                               :si può costruire solo un'industria di questo tipo per ogni città
 
 STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}Produzione:{}  2t ogni 8t di bauxite consegnate{}  2t ogni 8t di prodotti chimici consegnate{}  4t ogni 8t di metalli di scarto consegnate{}{}Il prodotto aumenta se due o più tipi di merci sono consegnati entro un intervallo inferiore a un mese.
@@ -151,7 +151,7 @@ STR_EXTRA_PLASTICS_PLANT                                                        
 STR_EXTRA_PLASTICS_PLANT_CHEMICALS_SUBSTR                                       :6 casse ogni 8,000l di prodotti chimici consegnati{}
 STR_EXTRA_PLASTICS_PLANT_PLANT_FIBRES_SUBSTR                                    :6 casse ogni 8 balle di fibre tessili consegnate{}
 STR_EXTRA_RECYCLING_PLANT                                                       :{BLACK}Lavora i prodotti da riciclare garantendo un loro riutilizzo industriale.{}{}Produzione:{}  6t di produzione ogni 8t consegnate.
-STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}La quantità di prodtto dipende dalle dimensioni della città.
+STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}La quantità di prodotto dipende dalle dimensioni della città.
 STR_EXTRA_SAWMILL                                                               :{BLACK}Taglia la legna.{}{}Produzione:{}   6t ogni 8t di legna consegnate.
 STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Costruisce oggetti metallici come attrezzi edili e agricoli, e ferri di cavallo.{}{}Produzione:{}  8 casse ogni 8t di metalli consegnate.
 STR_EXTRA_STEELMILL                                                             :{BLACK}Produzione:{} 3t ogni 8t di minerale di ferro consegnate{} 2t ogni 8t di carbone consegnate{} 3t ogni 8t di metalli di scarto consegnate{}{}Il prodotto aumenta se due o più tipi di merci sono consegnate entro un intervallo inferiore a un mese.
@@ -196,13 +196,13 @@ STR_IND_ARABLE_FARM                                                             
 STR_IND_BASICFARM                                                               :{G=f}Fattoria
 STR_IND_BAUXITE_MINE                                                            :{G=f}Miniera di bauxite
 STR_IND_BIOREFINERY                                                             :{G=f}Raffineria di biocombustibili
-STR_IND_BREWERY                                                                 :{G=f}Distilleria
+STR_IND_BREWERY                                                                 :{G=f}Birrificio
 STR_IND_BREWERY_CIDER_MILL                                                      :{G=f}Distilleria di sidro
 STR_IND_BRICK_WORKS                                                             :{G=f}Fabbrica di mattoni
 STR_IND_BUILDERS_YARD                                                           :{G=m}Cantiere edile
 STR_IND_BULK_TERMINAL                                                           :{G=m}Porto mercantile
 STR_IND_CEMENT_PLANT                                                            :{G=f}Fabbrica di cemento
-STR_IND_CHEMICAL_PLANT                                                          :Impianto chimico
+STR_IND_CHEMICAL_PLANT                                                          :{G=m}Stabilimento chimico
 STR_IND_CLAY_PIT                                                                :{G=f}Cava di argilla
 STR_IND_COFFEE_ESTATE                                                           :{G=f}Piantagione di caffé
 STR_IND_FIBRE_CROP_FARM                                                         :{G=f}Piantagione di fibre tessili
@@ -213,7 +213,7 @@ STR_IND_FERTILISER_PLANT                                                        
 STR_IND_FISHING_GROUND                                                          :{G=f}Zona di pesca
 STR_IND_FISHING_HARBOUR                                                         :{G=m}Porto di pesca
 STR_IND_FOOD_MARKET                                                             :{G=m}Mercato alimentare
-STR_IND_FOOD_PROCESSOR                                                          :Fabbrica di produzione alimentare
+STR_IND_FOOD_PROCESSOR                                                          :{G=f}Fabbrica di alimenti
 STR_IND_FURNITURE_FACTORY                                                       :{G=m}Mobilifico
 STR_IND_GENERAL_STORE                                                           :{G=m}Magazzino generale
 STR_IND_GLASS_WORKS                                                             :{G=f}Fabbrica di prodotti in vetro
@@ -229,7 +229,7 @@ STR_IND_METAL_FABRICATION_PLANT                                                 
 STR_IND_METAL_FOUNDRY                                                           :{G=f}Fonderia
 STR_IND_MIXEDFARM                                                               :{G=f}Azienda agricola
 STR_IND_ORCHARD_PIGGERY                                                         :{G=m}Frutteto e porcile
-STR_IND_NITRATE_MINE                                                            :Miniera di nitrati
+STR_IND_NITRATE_MINE                                                            :{G=f}Miniera di nitrati
 STR_IND_PETROLPUMP                                                              :{G=f}Pompa di benzina
 STR_IND_PLASTICS_PLANT                                                          :{G=f}Fabbrica di prodotti in plastica
 STR_IND_PORT                                                                    :{G=m}Porto
@@ -244,7 +244,7 @@ STR_IND_SUGAR_PLANTATION                                                        
 STR_IND_SUGAR_REFINERY                                                          :{G=f}Raffineria di zucchero
 STR_IND_TEXTILE_MILL                                                            :{G=m}Tessilificio
 STR_IND_TRADING_POST                                                            :{G=m}Emporio commerciale
-STR_IND_VEHICLE_FACTORY                                                         :Fabbrica di veicoli
+STR_IND_VEHICLE_FACTORY                                                         :{G=f}Fabbrica di veicoli
 
 STR_STATION_ANIMALS                                                             :Mercato del bestiame
 STR_STATION_FARM                                                                :Fattorie
