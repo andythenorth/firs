@@ -37,6 +37,12 @@ STR_CARGO_NAME_ALCOHOL.d                                                        
 STR_CARGO_NAME_BAUXITE                                                          :{G=m}Boksyt
 STR_CARGO_NAME_BAUXITE.b                                                        :boksyt
 STR_CARGO_NAME_BAUXITE.d                                                        :boksytu
+STR_CARGO_NAME_BEANS                                                            :{G=f}Soja
+STR_CARGO_NAME_BEANS.b                                                          :soi
+STR_CARGO_NAME_BEANS.c                                                          :Soi
+STR_CARGO_NAME_BEANS.d                                                          :soi
+STR_CARGO_NAME_BEANS.m                                                          :Soi
+STR_CARGO_NAME_BEANS.n                                                          :Soją
 STR_CARGO_NAME_BUILDING_MATERIALS                                               :{G=m}Materiały budowlane
 STR_CARGO_NAME_BUILDING_MATERIALS.b                                             :materiały budowlane
 STR_CARGO_NAME_BUILDING_MATERIALS.d                                             :materiałów budowlanych
@@ -76,10 +82,10 @@ STR_CARGO_NAME_MILK.d                                                           
 STR_CARGO_NAME_MANUFACTURING_SUPPLIES                                           :{G=n}Opakowania
 STR_CARGO_NAME_MANUFACTURING_SUPPLIES.b                                         :opakowania
 STR_CARGO_NAME_MANUFACTURING_SUPPLIES.d                                         :opakowań
-STR_CARGO_NAME_NITRATES                                                         :Saletra
-STR_CARGO_NAME_NITRATES.b                                                       :Saletrę
+STR_CARGO_NAME_NITRATES                                                         :{G=f}Saletra
+STR_CARGO_NAME_NITRATES.b                                                       :saletrę
 STR_CARGO_NAME_NITRATES.c                                                       :Saletrze
-STR_CARGO_NAME_NITRATES.d                                                       :Saletry
+STR_CARGO_NAME_NITRATES.d                                                       :saletry
 STR_CARGO_NAME_NITRATES.m                                                       :Saletry
 STR_CARGO_NAME_NITRATES.n                                                       :Saletrą
 STR_CARGO_NAME_PETROL                                                           :{G=n}Paliwo
@@ -103,12 +109,16 @@ STR_CARGO_NAME_SUGAR_BEET.d                                                     
 STR_CARGO_NAME_SUGARCANE                                                        :{G=f}Trzcina cukrowa
 STR_CARGO_NAME_SUGARCANE.b                                                      :trzcinę cukrową
 STR_CARGO_NAME_SUGARCANE.d                                                      :trzciny cukrowej
+STR_CARGO_NAME_VEHICLE_PARTS                                                    :{G=f} Części zamienne
+STR_CARGO_NAME_VEHICLE_PARTS.b                                                  :części zamienne
+STR_CARGO_NAME_VEHICLE_PARTS.d                                                  :części zamiennych
 STR_CARGO_NAME_WOOL                                                             :{G=f}Wełna
 STR_CARGO_NAME_WOOL.b                                                           :wełnę
 STR_CARGO_NAME_WOOL.d                                                           :wełny
 
 STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} alkoholu
 STR_CARGO_UNIT_BAUXITE                                                          :{WEIGHT} boksytu
+STR_CARGO_UNIT_BEANS                                                            :{WEIGHT} soi
 STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WEIGHT} materiałów budowlanych
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} chemikaliów
 STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} gliny
@@ -130,10 +140,12 @@ STR_CARGO_UNIT_SCRAP_METAL                                                      
 STR_CARGO_UNIT_STONE                                                            :{WEIGHT} kamieni
 STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} buraków cukrowych
 STR_CARGO_UNIT_SUGARCANE                                                        :{WEIGHT} trzciny cukrowej
+STR_CARGO_UNIT_VEHICLE_PARTS                                                    :{SIGNED_WORD} skrzy{P 0 nia nie ń} części zamiennych
 STR_CARGO_UNIT_WOOL                                                             :{SIGNED_WORD} bel{P 0 a e i} wełny
 
 STR_CID_ALCOHOL                                                                 :{TINYFONT}AL
 STR_CID_BAUXITE                                                                 :{TINYFONT}BX
+STR_CID_BEANS                                                                   :{TINYFONT}SA
 STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}MB
 STR_CID_CHEMICALS                                                               :{TINYFONT}CH
 STR_CID_CLAY                                                                    :{TINYFONT}GL
@@ -154,6 +166,7 @@ STR_CID_SCRAP_METAL                                                             
 STR_CID_STONE                                                                   :{TINYFONT}KM
 STR_CID_SUGAR_BEET                                                              :{TINYFONT}BC
 STR_CID_SUGARCANE                                                               :{TINYFONT}TC
+STR_CID_VEHICLE_PARTS                                                           :{TINYFONT}CZ
 STR_CID_WOOL                                                                    :{TINYFONT}WE
 
 STR_ERR_CLIMATE_TOYLAND                                                         :{ORANGE}FIRS nie został zaprojektowany do użycia z klimatem zabawkowym
@@ -176,9 +189,11 @@ STR_EXTRA_BREWERY_GRAIN_SUBSTR                                                  
 STR_EXTRA_BREWERY_FRUIT_SUBSTR                                                  :5,000l na 8t dostarczonych owoców{}
 STR_EXTRA_BRICKWORKS                                                            :{BLACK}Produkcja:{}  2t z 8t węgla{}  2t z 8t piasku{}  4t z 8t gliny{}{}Produkcja wzrasta, gdy różne surowce są dostarczane w ciągu miesiąca.
 STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Produkcja:{}  2t z 8t węgla{}  2t z 8t gliny{}  4t z 8t kamieni{}{}Produkcja wzrasta, gdy różne surowce są dostarczane w ciągu miesiąca.
+STR_EXTRA_CHEMICAL_PLANT                                                        :{BLACK}Produkcja:{}  6,000l na 8,000l dostarczonej ropy{}  6,000l na 8t dostarczonej saletry
 STR_EXTRA_DAIRY                                                                 :{BLACK}Produkcja:{}  3t z 8t opakowań{}  5t z 8t mleka{}{}Produkcja wzrasta do 8t z 8t, gdy oba surowce są dostarczane w ciągu miesiąca.
 STR_EXTRA_FERTILIZER_PLANT                                                      :{BLACK}Produkcja:{}  8 skrzyń na 8,000l dostarczonych chemikaliów.
 STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Produkcja:{}  3t z 8t opakowań{}  5t z 8t ryb{}{}Produkcja wzrasta do 8t z 8t, gdy oba surowce są dostarczane w ciągu miesiąca.
+STR_EXTRA_FOOD_PROCESSING_PLANT                                                 :{BLACK}Produkcja:{}  6t z 8 ton dostarczonej soi{}  6t z 8 ton dostarczonych owoców
 STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Produkcja:{}  3t z 8t opakowań{}  5t z 8t desek{}{}Produkcja wzrasta do 8t z 8t, gdy oba surowce są dostarczane w ciągu miesiąca.
 STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Produkuje butelki, słoje, szyby i inne rzeczy ze szkła.{}{}{BLACK}Produkcja:{}  6t z 8t piasku{}  2t z 8t chemikaliów{}{}Produkcja wzrasta do 8t z 8t, gdy oba surowce są dostarczane w ciągu miesiąca.
 STR_EXTRA_GRAIN_MILL                                                            :{BLACK}Produkcja:{}  3t z 8t opakowań{}  5t z 8t zboża{}{}Produkcja wzrasta do 8t z 8t, gdy oba surowce są dostarczane w ciągu miesiąca.
@@ -203,6 +218,7 @@ STR_EXTRA_SUGAR_REFINERY                                                        
 STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Produkcja:{}  3 skrzynie z 8 skrzyń opakowań{} {STRING} {STRING}{}Produkcja wzrasta, gdy opakowania są dostarczane w ciągu miesiąca po innych towarach.
 STR_EXTRA_TEXTILE_MILL_WOOL_SUBSTR                                              :5 skrzyń na 8 dostarczonych beli wełny{}
 STR_EXTRA_TEXTILE_MILL_PLANT_FIBRES_SUBSTR                                      :5 skrzyń na 8 dostarczonych beli artykułów plastikowych{}
+STR_EXTRA_VEHICLE_FACTORY                                                       :{BLACK}Produkcja:{}  8 skrzyń na 8 dostarczonych skrzyń części samochodowych{}  8 skrzyń na 8 dostarczonych skrzyń opakowań
 
 STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}--------- DEBUGOWANIE ---------{}Produkcja w tym miesiącu:{}Ładunek 1: {WHITE}{COMMA}{BLACK}{}Ładunek 2: {WHITE}{COMMA}{BLACK}{}Dni od ostatniej dostawy: {WHITE}{COMMA}{BLACK}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Osiągnięto maksymalny poziom produkcji
@@ -256,10 +272,10 @@ STR_IND_BULK_TERMINAL                                                           
 STR_IND_BULK_TERMINAL.d                                                         :portu handlowego
 STR_IND_CEMENT_PLANT                                                            :{G=f}Cementownia
 STR_IND_CEMENT_PLANT.d                                                          :cementowni
-STR_IND_CHEMICAL_PLANT                                                          :Zakłady chemiczne
-STR_IND_CHEMICAL_PLANT.b                                                        :Zakłady chemiczne
+STR_IND_CHEMICAL_PLANT                                                          :{G=m}Zakłady chemiczne
+STR_IND_CHEMICAL_PLANT.b                                                        :zakłady chemiczne
 STR_IND_CHEMICAL_PLANT.c                                                        :Zakładom chemicznym
-STR_IND_CHEMICAL_PLANT.d                                                        :Zakładów chemicznych
+STR_IND_CHEMICAL_PLANT.d                                                        :zakładów chemicznych
 STR_IND_CHEMICAL_PLANT.m                                                        :Zakładami chemicznymi
 STR_IND_CHEMICAL_PLANT.n                                                        :Zakładami chemicznymi
 STR_IND_CLAY_PIT                                                                :{G=f}Kopalnia gliny
@@ -282,6 +298,8 @@ STR_IND_FISHING_HARBOUR                                                         
 STR_IND_FISHING_HARBOUR.d                                                       :portu rybackiego
 STR_IND_FOOD_MARKET                                                             :{G=m}Sklep spożywczy
 STR_IND_FOOD_MARKET.d                                                           :sklepu spożywczego
+STR_IND_FOOD_PROCESSOR                                                          :{G=f}Przetwórnia żywności
+STR_IND_FOOD_PROCESSOR.d                                                        :przetwórni żywności
 STR_IND_FURNITURE_FACTORY                                                       :{G=f}Fabryka mebli
 STR_IND_FURNITURE_FACTORY.d                                                     :fabryki mebli
 STR_IND_GENERAL_STORE                                                           :{G=m}Sklep
@@ -312,6 +330,8 @@ STR_IND_MIXEDFARM                                                               
 STR_IND_MIXEDFARM.d                                                             :gospodarstwa rolnego
 STR_IND_ORCHARD_PIGGERY                                                         :{G=m}Sad i hodowla trzody chlewnej
 STR_IND_ORCHARD_PIGGERY.d                                                       :sadu i hodowli trzody chlewnej
+STR_IND_NITRATE_MINE                                                            :{G=f}Kopalnia saletry
+STR_IND_NITRATE_MINE.d                                                          :kopalni saletry
 STR_IND_PETROLPUMP                                                              :{G=f}Stacja paliw
 STR_IND_PETROLPUMP.d                                                            :stacji paliw
 STR_IND_PLASTICS_PLANT                                                          :{G=f}Fabryka tworzyw sztucznych
@@ -340,8 +360,10 @@ STR_IND_TEXTILE_MILL                                                            
 STR_IND_TEXTILE_MILL.d                                                          :zakładu odzieżowego
 STR_IND_TRADING_POST                                                            :{G=m}Punkt handlowy
 STR_IND_TRADING_POST.d                                                          :punktu handlowego
+STR_IND_VEHICLE_FACTORY                                                         :{G=f}Wytwórnia pojazdów
+STR_IND_VEHICLE_FACTORY.d                                                       :Wytwórni pojazdów
 
-STR_STATION_ANIMALS                                                             :Obory
+STR_STATION_ANIMALS                                                             :Oborniki
 STR_STATION_FARM                                                                :Folwark
 STR_STATION_FISHMARKET                                                          :Targ Rybny
 STR_STATION_HEAVY_INDUSTRY                                                      :Montownia
