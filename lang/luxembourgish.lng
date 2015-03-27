@@ -1,111 +1,262 @@
 ##grflangid 0x23
 ##plural 0
 
+STR_GRF_DESC                                                                    :{ORANGE}FIRS Industry Replacement Set{}{BLACK}Codéiert vum andythenorth, FooBar, planetmaker, Terkhen an Yexo, mat der Hëllef vun villen aneren. {SILVER}Lies de readme fir méi Informatiounen iwwert d'Benotzung vun FIRS. {BLACK}Lizenz: GPL v2.
 STR_GRF_NAME                                                                    :{TITLE}
+STR_GRF_URL                                                                     :http://bundles.openttdcoop.org/firs/releases/LATEST/docs/
 
+STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :Maximalen Ofstand vun Fëschgrënn, Buerinselen an Baggerweiheren vun der Küst a Felder ausgedréckt.
+STR_PARAM_DESC_STAT_RATING                                                      :Bewertungen vun de Statiounen hunn Auswierkungen op d'Unzuel u Gidder déi vun Industrien op déi Statioun geliwwert ginn; wat d'Bewertung méi héich ass, wat méi geliwwert gëtt.
+STR_PARAM_DESC_DEBUG                                                            :Nëmmen fir Entwéckler
 STR_PARAM_DESC_ECONOMIES                                                        :All Wiertschaftstyp stellt verschidden Industrien an Frachtarten bereed.{}{}De Wiertschaftstyp 'Einfach' bidd manner Industrien an Frachtarten un wéi déi aner Wiertschaftstypen.
-STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY                                   :Maximalen Ofstand vun Fëschgrënn an Baggerweihere vun der Küst a Felder ausgedréckt
+STR_PARAM_DESC_NO_OPENINGS                                                      :Standardméisseg ginn nei Industrie während dem Spill opgemet.{}{}Wann 'net opmaachen' ugewielt ass, maachen keng nei Industrien während dem Spill op, an d'Spiller kënnen och keng nei Industrien bauen oder fördern.
+STR_PARAM_DESC_SECONDARY_NEVER_CLOSE                                            :Standardméisseg ginn sekundär FIRS Industrien nie zougemet.{}{}Wann sekundär Industrien zoumaachen ugeschalt ass, kënnen se zougemet ginn wann se eng laang Zäit net beliwwert ginn. Primär Industrien ginn am FIRS nie zougemet an ginn net vun dëser Astellung beaflosst.
+STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY                                   :Maximalen Ofstand vun Séindustrien vun der Küst a Felder ausgedréckt
+STR_PARAM_NAME_DEBUG                                                            :Debugtexter uweisen
+STR_PARAM_NAME_ECONOMIES                                                        :Wiertschaftstyp
+STR_PARAM_NAME_NO_OPENINGS                                                      :Verhënner, datt nei Industrien während dem Spill gegrënnt ginn
+STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            :Erlab sekundär Industrien zouzemaachen
+STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0                                         :Ouni Limite
+STR_PARAM_NAME_STAT_RATING                                                      :Algorithmus fir d'Bewertung vu Statiounen
+STR_PARAM_VALUE_STAT_RATING_DEFAULT                                             :Pingeleg (Standard OpenTTD)
+STR_PARAM_VALUE_STAT_RATING_REDUCED_TIME                                        :Grousszügeg (erlabt méi Zäit tëschent dem Ofhuele vu Gidder)
+STR_PARAM_VALUE_STAT_RATING_100                                                 :Iwwerdriwwen generéis (Bewertung ass ëmmer 100%)
 
+STR_PARAM_VALUE_ECONOMIES_BASIC_TEMPERATE                                       :Geméissegt Klima (Einfach)
+STR_PARAM_VALUE_ECONOMIES_BASIC_ARCTIC                                          :Arktesch (Einfach)
+STR_PARAM_VALUE_ECONOMIES_BASIC_TROPIC                                          :Tropesch (Einfach)
+STR_PARAM_VALUE_ECONOMIES_FIRS                                                  :FIRS
+STR_PARAM_VALUE_ECONOMIES_MISTAH_KURTZ                                          :Häerz vun der Däischtert
+STR_PARAM_VALUE_ECONOMIES_TEST_3                                                :Test Wiertschaft 3
 
 STR_CARGO_NAME_ALCOHOL                                                          :Alkohol
+STR_CARGO_NAME_BAUXITE                                                          :Bauxit
+STR_CARGO_NAME_BEANS                                                            :Bounen
 STR_CARGO_NAME_BUILDING_MATERIALS                                               :Baumaterial
+STR_CARGO_NAME_CHEMICALS                                                        :Chemikalien
 STR_CARGO_NAME_CLAY                                                             :Toun
+STR_CARGO_NAME_COFFEE                                                           :Kaffi
 STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :Ersatzdeeler
+STR_CARGO_NAME_FIBRES                                                           :Planzefaser
+STR_CARGO_NAME_FISH                                                             :Fësch
+STR_CARGO_NAME_FARM_SUPPLIES                                                    :Akerbaumëttel
 STR_CARGO_NAME_FRUITS                                                           :Friichten
+STR_CARGO_NAME_LUMBER                                                           :Holzbrieder
 STR_CARGO_NAME_METAL                                                            :Metall
 STR_CARGO_NAME_MILK                                                             :Mëllech
 STR_CARGO_NAME_MANUFACTURING_SUPPLIES                                           :Handwierksgeschier
+STR_CARGO_NAME_NITRATES                                                         :Nitrater
 STR_CARGO_NAME_PETROL                                                           :Pëtrol
 STR_CARGO_NAME_RECYCLABLES                                                      :Recyclingmaterial
 STR_CARGO_NAME_SAND                                                             :Sand
+STR_CARGO_NAME_SCRAP_METAL                                                      :Schrott
+STR_CARGO_NAME_STONE                                                            :Steng
+STR_CARGO_NAME_SUGAR_BEET                                                       :Zockerrommelen
+STR_CARGO_NAME_SUGARCANE                                                        :Zockerrouer
 STR_CARGO_NAME_VEHICLE_PARTS                                                    :Autosdeeler
+STR_CARGO_NAME_WOOL                                                             :Woll
 
+STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} Alkohol
+STR_CARGO_UNIT_BAUXITE                                                          :{WEIGHT} Bauxit
+STR_CARGO_UNIT_BEANS                                                            :{WEIGHT} Bounen
 STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WEIGHT} Baumaterial
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} Chemikalien
+STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} Toun
 STR_CARGO_UNIT_COFFEE                                                           :{SIGNED_WORD} S{P 0 ak äck} Kaffi
+STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} Këscht{P 0 "" en} Ersatzdeeler
 STR_CARGO_UNIT_FIBRES                                                           :{SIGNED_WORD} Ballen Planzefaser
+STR_CARGO_UNIT_FISH                                                             :{WEIGHT} Fësch
+STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} Këscht{P 0 "" en} Akerbaumëttel
 STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} Friichten
+STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} Holzbrieder
+STR_CARGO_UNIT_METAL                                                            :{WEIGHT} Metall
 STR_CARGO_UNIT_MILK                                                             :{VOLUME} Mëllech
+STR_CARGO_UNIT_NITRATES                                                         :{WEIGHT} Nitrater
 STR_CARGO_UNIT_MNSP                                                             :{SIGNED_WORD} Këscht{P 0 "" en} Handwierksgeschier
 STR_CARGO_UNIT_PETROL                                                           :{VOLUME} Pëtrol
 STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} Recyclingmaterial
+STR_CARGO_UNIT_SAND                                                             :{WEIGHT} Sand
 STR_CARGO_UNIT_SCRAP_METAL                                                      :{WEIGHT} Schrott
 STR_CARGO_UNIT_STONE                                                            :{WEIGHT} Steng
+STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} Zockerrommelen
 STR_CARGO_UNIT_SUGARCANE                                                        :{WEIGHT} Zockerrouer
 STR_CARGO_UNIT_VEHICLE_PARTS                                                    :{SIGNED_WORD} Këscht{P 0 "" en} Autosdeeler
+STR_CARGO_UNIT_WOOL                                                             :{SIGNED_WORD} Wollballen
 
 STR_CID_ALCOHOL                                                                 :{TINYFONT}AL
+STR_CID_BAUXITE                                                                 :{TINYFONT}BX
 STR_CID_BEANS                                                                   :{TINYFONT}BN
 STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}BM
+STR_CID_CHEMICALS                                                               :{TINYFONT}CH
+STR_CID_CLAY                                                                    :{TINYFONT}TN
 STR_CID_COFFEE                                                                  :{TINYFONT}KF
 STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}ED
+STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}AM
+STR_CID_FIBRES                                                                  :{TINYFONT}PF
+STR_CID_FISH                                                                    :{TINYFONT}FE
+STR_CID_LUMBER                                                                  :{TINYFONT}HO
+STR_CID_MANUFACTURING_SUPPLIES                                                  :{TINYFONT}HG
+STR_CID_METAL                                                                   :{TINYFONT}MT
 STR_CID_MILK                                                                    :{TINYFONT}ML
 STR_CID_NITRATES                                                                :{TINYFONT}NI
+STR_CID_PETROL                                                                  :{TINYFONT}PT
+STR_CID_RECYCLABLES                                                             :{TINYFONT}RC
+STR_CID_SAND                                                                    :{TINYFONT}SA
+STR_CID_SCRAP_METAL                                                             :{TINYFONT}SC
+STR_CID_STONE                                                                   :{TINYFONT}ST
+STR_CID_SUGAR_BEET                                                              :{TINYFONT}ZR
 STR_CID_SUGARCANE                                                               :{TINYFONT}ZR
 STR_CID_VEHICLE_PARTS                                                           :{TINYFONT}AD
+STR_CID_WOOL                                                                    :{TINYFONT}WL
 
 STR_ERR_CLIMATE_TOYLAND                                                         :{ORANGE}FIRS kann net mam Spillsaacheland benotzt ginn
 STR_ERR_INCOMPATIBLE_SET                                                        :{ORANGE}E01: {YELLOW}Inkompatibelt Set: {ORANGE}{STRING} {YELLOW}Lies de FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_PARAM_CANSET                                               :{ORANGE}E02: {YELLOW}Inkompatibele Parameter: {ORANGE}CanSet Parameter 2 muss 0 sinn fir mat FIRS ze fonktionéieren. {YELLOW}Lies de FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_PARAM_CITYSET                                              :{ORANGE}E02: {YELLOW}Inkompatibele Parameter: {ORANGE}NA City Set Parameter 2 muss 0 sinn, fir mat FIRS ze fonktionéieren. {YELLOW}Lies de FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 STR_ERR_INCOMPATIBLE_SET_TTRS_VERSION                                           :{ORANGE}E04: {YELLOW}Inkompatibel Versioun: {ORANGE}Total Town Replacement Set muss Versioun 3.11 oder méi nei sinn. {YELLOW}Lies de FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 STR_ERR_OPENTTD_VERSION                                                         :{ORANGE}E00: FIRS braucht OpenTTD 1.2.0 / trunk r22780 oder méi héich. {YELLOW}Lies de FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 
+STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE                                             :muss ënnert der Schnéilinn gebaut ginn.
+STR_ERR_LOCATION_NOT_ON_WATER                                                   :dierf net op Waasser gebaut ginn.
 STR_ERR_LOCATION_NOT_IN_DESERT                                                  :dierf net d'Wüst gesat ginn.
+STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE                                             :kann net op schiefen Häng gebaut ginn.
+STR_ERR_LOCATION_LIMIT_1_PER_TOWN                                               :nëmmen eng Industrie vun dësem Typ ass pro Stad erlabt
 
-STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}Produktioun:{}  2t pro 8t geliwwertem Bauxit{}  2t pro 8,000l geliwwerte Chemikalien{}  4t pro 8t geliwwertem Schrott{}{}Produktioun geet an d'Lut wann zwee oder méi Gidder innerhalb engem Mount zesumme geliwwert ginn.
+STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}Produktioun:{} 2t pro 8t geliwwertem Bauxit{} 2t pro 8,000l geliwwerte Chemikalien{} 4t pro 8t geliwwertem Schrott{}{}Produktioun geet an d'Lut wann zwee oder méi Gidder innerhalb engem Mount zesumme geliwwert ginn.
 STR_EXTRA_BIOREFINERY                                                           :{BLACK}Produktioun:{}  6,000l pro 8t geliwwertem Kar{}  6,000l pro 8t geliwwertem Zocker
-STR_EXTRA_BREWERY_FRUIT_SUBSTR                                                  :5,000l pro 8t geliwwert Friichten{}
-STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Produktioun:{}  2t pro 8t geliwwerter Kuel{}  2t pro 8t geliwwertem Toun{}  4t pro 8t geliwwerten Steng{}{}Produktioun geet an d'Luut wann zwee oder méi Gidder innerhalb engem Mount zesumme geliwwert ginn.
+STR_EXTRA_BREWERY                                                               :{BLACK}Produktioun:{}  3,000l pro 8 Këschten geliwwertem Handwierksgeschier{} {STRING} {STRING}{}Produktioun geet an d'Lut wann Handwierksgeschier innerhalb engem Mount mat anere Gidder geliwwert ginn.
+STR_EXTRA_BREWERY_GRAIN_SUBSTR                                                  :5,000l pro 8t geliwwertem Kar{}
+STR_EXTRA_BREWERY_FRUIT_SUBSTR                                                  :5,000l pro 8t geliwwerte Friichten{}
+STR_EXTRA_BRICKWORKS                                                            :{BLACK}Produktioun:{} 2t pro 8t geliwwerter Kuel{} 2t pro 8t geliwwertem Sand{} 4t pro 8t geliwwertem Toun{}{}Produktioun geet an d'Lut wann zwee oder méi Gidder innerhalb engem Mount zesumme geliwwert ginn.
+STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Produktioun:{}  2t pro 8t geliwwerter Kuel{}  2t pro 8t geliwwertem Toun{}  4t pro 8t geliwwerten Steng{}{}Produktioun geet an d'Lut wann zwee oder méi Gidder innerhalb engem Mount zesumme geliwwert ginn.
+STR_EXTRA_CHEMICAL_PLANT                                                        :{BLACK}Produktioun:{} 6,000l pro 8,000l geliwwertem Ueleg{} 6,000l pro 8t geliwwerten Nitrater
+STR_EXTRA_DAIRY                                                                 :{BLACK}Produktioun:{} 3t pro 8 Këschte geliwwerten Handwierksgeschier{} 5t pro 8,000l geliwwerter Mëllech{}{}Produktioun geet an d'Lut wa béid Gidder innerhalb engem Mount zesumme geliwwert ginn.
 STR_EXTRA_FERTILIZER_PLANT                                                      :{BLACK}Produktioun:{}  8 Këschte pro 8,000l geliwwerte Chemikalien
 STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Produktioun:{}  3t pro 8 Këschte geliwwerten Handwierksgeschier{}  5t pro 8t geliwwertem Fësch{}{}Produktioun geet an d'Lut wa béid Gidder innerhalb engem Mount zesumme geliwwert ginn.
-STR_EXTRA_IRON_WORKS                                                            :{BLACK}Produktioun:{}  3t pro 8t geliwwertem Eisenäerz{}  3t pro 8t geliwwerten Wollballen{}  2t pro 8t geliwwertem Sand{}{}Produktioun geet an d'Luut wa zwee oder méi Gidder innerhalb engem Mount zesumme geliwwert ginn.
-STR_EXTRA_LIME_KILN                                                             :{BLACK}Produktioun:{}  3t pro 8t geliwwerte Steng{}  3t pro 8t geliwwerte Kuelen{}{}Produktioun geet an d'Luut wa béid Gidder innerhalb engem Mount zesumme geliwwert ginn.
+STR_EXTRA_FOOD_PROCESSING_PLANT                                                 :{BLACK}Produktioun:{}  6t pro 8t geliwwerte Bounen{}  6t pro 8t geliwwerte Friichten
+STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Produktioun:{} 3t pro 8 geliwwerte Këschte mat Handwierksgeschier{} 5t pro 8t geliwwerten Holzbrieder{}{}Produktioun geet an d'Lut wa béid Gidder innerhalb engem Mount zesumme geliwwert ginn.
+STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Produzéiert gliese Saachen wéi Fläschen, Schosselen an Fënsteren.{}{}Produktioun:{}  6t pro 8t geliwwertem Sand{}  2t pro 8,000l geliwwerten Chemikalen{}{}Produktioun geet an d'Lut wa béid Gidder innerhalb engem Mount zesumme geliwwert ginn.
+STR_EXTRA_GRAIN_MILL                                                            :{BLACK}Produktioun:{} 3t pro 8 geliwwerte Këschte mat Handwierksgeschier{} 5t pro 8t geliwwertem Kar{}{}Produktioun geet an d'Lut wa béid Gidder innerhalb engem Mount zesumme geliwwert ginn.
+STR_EXTRA_IRON_WORKS                                                            :{BLACK}Produktioun:{}  3t pro 8t geliwwertem Eisenäerz{}  3t pro 8t geliwwerten Wollballen{}  2t pro 8t geliwwertem Sand{}{}Produktioun geet an d'Lut wann zwee oder méi Gidder innerhalb engem Mount zesumme geliwwert ginn.
+STR_EXTRA_LIME_KILN                                                             :{BLACK}Produktioun:{} 3t pro 8t geliwwerte Steng{} 3t pro 8t geliwwerte Kuelen{}{}Produktioun geet an d'Lut wa béid Gidder innerhalb engem Mount zesumme geliwwert ginn.
+STR_EXTRA_LUMBER_YARD                                                           :{BLACK}Produzéiert holze Saachen wéi Potoën a Glänner.{}{}Produktioun:{}  2t pro 8,000l geliwwerte Chemikalen{}  6t pro 8t geliwwerten Holzbrieder{}{}Produktioun geet an d'Lut wa béid Gidder innerhalb engem Mount zesumme geliwwert ginn.
+STR_EXTRA_MACHINE_SHOP                                                          :{BLACK}Baut Maschinen an mécht de Vidange.{}{}Produktioun:{} 8 Këschte pro 8,000l geliwwertem Pëtrol{} 8 Këschte pro 8t geliwwertem Metall
 STR_EXTRA_MEAT_PACKER                                                           :{BLACK}Produktioun:{} 3t pro 8 geliwwerte Këschte mat Handwierksgeschier{}  5t pro 8t geliwwertem Véi{}{}Produktioun geet an d'Lut wa béid Gidder innerhalb engem Mount zesumme geliwwert ginn.
-STR_EXTRA_METAL_FOUNDRY                                                         :{BLACK}Produzéiert Metallsaachen wéi Dousen, Geschier an Haushaltsutensilien.{}{}Produktioun:{}  2 Këschten pro 8,000l geliwwerte Chemikalien{}  6 Këschte pro 8t geliwwertem Metall{}{}Produktioun geet an d'Luut wa béid Gidder innerhalb engem Mount zesumme geliwwert ginn.
-STR_EXTRA_RECYCLING_PLANT                                                       :{BLACK}Verarbëscht recycléierbart Material.{}{}Produktioun:{}  6t pro 8t geliwwert Material
+STR_EXTRA_METAL_FABRICATION_PLANT                                               :{BLACK}Produzéiert verarbescht Metallsaachen.{}{}Produktioun:{} 2 Këschte pro 8,000l geliwwerte Chemikalien{} 6t pro 8t geliwwertem Metall{}{}Produktioun geet an d'Lut wa béid Gidder innerhalb engem Mount zesumme geliwwert ginn.
+STR_EXTRA_METAL_FOUNDRY                                                         :{BLACK}Produzéiert Metallsaachen wéi Dousen, Geschier an Haushaltsutensilien.{}{}Produktioun:{}  2 Këschte pro 8,000l geliwwerte Chemikalien{}  6 Këschte pro 8t geliwwertem Metall{}{}Produktioun geet an d'Lut wa béid Gidder innerhalb engem Mount zesumme geliwwert ginn.
+STR_EXTRA_OIL_REFINERY                                                          :{BLACK}Verschafft Réiueleg zu Pëtrol an Chemikalien.{}{}Produktioun:{}  6,000l pro geliwwerten 8,000l
+STR_EXTRA_PAPER_MILL                                                            :{BLACK}Zerfasert Holz fir doraus Pabeier an Kartong ze man.{}{}Produktioun:{} 4 Këschte pro 8t geliwwertem Holz{} 2 Këschte pro 8t geliwwertem Toun{} 2 Këschten pro 8,000l geliwwerte Chemikalien{}{}Produktioun geet an d'Lut wann zwee oder méi Gidder innerhalb engem Mount zesumme geliwwert ginn.
+STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}Produzéiert Plastiksaachen wéi Verpackung an Haushaltsartikelen.{}{}Produktioun:{} {STRING} {STRING}
+STR_EXTRA_PLASTICS_PLANT_CHEMICALS_SUBSTR                                       :6 Këschten pro 8,000l geliwwerten Chemikalien{}
+STR_EXTRA_PLASTICS_PLANT_PLANT_FIBRES_SUBSTR                                    :6 Këschte pro 8 geliwwerte Balle Planzefaser{}
+STR_EXTRA_RECYCLING_PLANT                                                       :{BLACK}Verarbëscht recycléierbart Material.{}{}Produktioun:{}  6t pro 8t geliwwertem Material
 STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}D'Produktioun ass proportional zur Awunnerzuel vun der Stad.
+STR_EXTRA_SAWMILL                                                               :{BLACK}Schneid Beem.{}{}Produktioun:{}  6t pro 8t geliwwerte Beem
+STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Produzéiert Metallwueren wéi Geschier, Pléi, Paarten, Schëppen an Huffeisen.{}{}Produktioun:{}  8 Këschte pro 8t geliwwertem Metall
+STR_EXTRA_STEELMILL                                                             :{BLACK}Produktioun:{} 3t pro 8t geliwwertem Eisenäerz{} 2t pro 8t geliwwerter Kuel{} 3t pro 8t geliwwertem Schrott{}{}Produktioun geet an d'Lut wann zwee oder méi Gidder innerhalb engem Mount zesumme geliwwert ginn.
 STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Produktioun:{}  3t pro 8 geliwwerte Këschte mat Handwierksgeschier{}  5t pro 8t geliwwertem Zocker{}{}Produktioun geet an d'Lut wa béid Gidder innerhalb engem Mount zesumme geliwwert ginn.
-STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Produktioun:{}  3 Këschten pro 8 geliwwert Këschten mat Handwierksgeschier{} {STRING} {STRING}{}Produktioun geet an d'Luut wann Handwierksgeschier innerhalb engem Mount mat anere Gidder geliwwert ginn.
-STR_EXTRA_TEXTILE_MILL_WOOL_SUBSTR                                              :5 Këschten pro 8 geliwwert Wollballen{}
+STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Produktioun:{} 3 Këschte pro 8 geliwwerte Këschte mat Handwierksgeschier{} {STRING} {STRING}{}Produktioun geet an d'Lut wann Handwierksgeschier innerhalb engem Mount mat anere Gidder geliwwert ginn.
+STR_EXTRA_TEXTILE_MILL_WOOL_SUBSTR                                              :5 Këschte pro 8 geliwwerte Wollballen{}
+STR_EXTRA_TEXTILE_MILL_PLANT_FIBRES_SUBSTR                                      :5 Këschte pro 8 geliwwerte Balle Planzefaser{}
 STR_EXTRA_VEHICLE_FACTORY                                                       :{BLACK}Produktioun:{}  8 Këschte pro 8 geliwwerte Këschte mat Autosdeeler{}  8 Këschte pro 8 geliwwerten Këschte mat Handwierksgeschier
 
-STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Aktuell Produktioun: {YELLOW}Erweidert (duebel){}{}{BLACK}Fir dësen Niveau ze halen, liwwer {SIGNED_WORD} Eenheete Gidder innerhalb dräi Méint, oder {SIGNED_WORD} Këschte fir eng véierfach Produktioun.
+STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ DEBUG ------------{}Produktioun dësen Mount:{}Gidder 1: {WHITE}{COMMA}{BLACK}{}Gidder 2: {WHITE}{COMMA}{BLACK}{}Deeg säit leschter Liwwerung: {WHITE}{COMMA}{BLACK}
+STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Maximal Produktioun erreecht
+STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Aktuell Produktioun: {YELLOW}Normal{}{}{BLACK}Fir d'Produktioun ze verduebelen, liwwer {SIGNED_WORD} Këschten innerhalb dräi Méint (oder {SIGNED_WORD} Këschte fir eng véierfach Produktioun)
+STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Aktuell Produktioun: {YELLOW}Erweidert (duebel){}{}{BLACK}Fir dësen Niveau ze halen, liwwer {SIGNED_WORD} Eenheete Gidder innerhalb dräi Méint, oder {SIGNED_WORD} Këschte fir eng véierfach Produktioun
+STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}Aktuell Produktioun: {YELLOW}Enorm (véierfach){}{}{BLACK}Fir dësen Niveau ze halen, liwwer {SIGNED_WORD} Këschte Material innerhalb dräi Méint
 STR_PORT_PRODUCTION_1X                                                          :{BLACK}Aktuell Produktioun: {YELLOW}Normal{}{}{BLACK}Fir d'Produktioun ze verduebelen, liwwer {SIGNED_WORD} Eenheete Gidder innerhalb dräi Méint{}Fir eng véierfach Produktioun, liwwer {SIGNED_WORD} Eenheete Gidder innerhalb dräi Méint
-STR_PORT_PRODUCTION_4X                                                          :{BLACK}Aktuell Produktioun: {YELLOW}Gung ho (véierfach){}{}{BLACK}Fir dësen Niveau ze halen, liwwer {SIGNED_WORD} Eenheete Gidder innerhalb dräi Méint
+STR_PORT_PRODUCTION_2X                                                          :{BLACK}Aktuell Produktioun: {YELLOW}Erweidert (duebel){}{}{BLACK}Fir dësen Niveau ze halen, liwwer {SIGNED_WORD} Eenheete Gidder innerhalb dräi Méint, oder {SIGNED_WORD} Eenheete Gidder fir eng véierfach Produktioun
+STR_PORT_PRODUCTION_4X                                                          :{BLACK}Aktuell Produktioun: {YELLOW}Enorm (véierfach){}{}{BLACK}Fir dësen Niveau ze halen, liwwer {SIGNED_WORD} Eenheete Gidder innerhalb dräi Méint
+STR_GENERIC_NEWLINE                                                             :{}
 
 STR_FUND_BASIC_FARM                                                             :{}{BLACK}Plaz: {YELLOW}Kann net op Schnéi oder an der Wüst gebaut ginn.
 STR_FUND_MIXED_FARM                                                             :{}{BLACK}Plaz: {YELLOW}Kann net op Schnéi oder an der Wüst gebaut ginn.
+STR_FUND_ARABLE_FARM                                                            :{}{BLACK}Plaz: {YELLOW}Kann net op Schnéi oder an der Wüst gebaut ginn.
 STR_FUND_COFFEE_ESTATE                                                          :{}{BLACK}Plaz: {YELLOW}Kann net op Schnéi oder an der Wüst gebaut ginn.
 STR_FUND_ORCHARD_PIGGERY                                                        :{}{BLACK}Plaz: {YELLOW}Kann net op Schnéi oder an der Wüst gebaut ginn.
+STR_FUND_SUGAR_PLANTATION                                                       :{}{BLACK}Plaz: {YELLOW}Kann net op Schnéi oder an der Wüst gebaut ginn.
+STR_FUND_FIBRE_CROP_FARM                                                        :{}{BLACK}Plaz: {YELLOW}Kann net op Schnéi oder an der Wüst gebaut ginn.
+STR_FUND_FOREST                                                                 :{}{BLACK}Plaz: {YELLOW}Kann net an der Wüst gebaut ginn.
+STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}Plaz: {YELLOW}Kann net op Schnéi gebaut ginn.
+STR_FUND_RUBBER_PLANTATION                                                      :{}{BLACK}Plaz: {YELLOW}Kann net op Schnéi oder an der Wüst gebaut ginn.
 
 
+STR_FUND_AVAILABLE_FROM                                                         :{}{BLACK}Verfügbar ab: {YELLOW}{COMMA}
 
 STR_FUND_AVAILABLE_UNTIL                                                        :{}{BLACK}Nëmmi verfügbar no: {YELLOW}{COMMA}
 
 
+STR_TOWN                                                                        :{STRING}
+STR_STATION                                                                     :{STRING} {STRING}
 
+STR_IND_ALUMINIUM_PLANT                                                         :Aluminiumfabrik
 STR_IND_ARABLE_FARM                                                             :Bauerenhaff (Akerbau)
 STR_IND_BASICFARM                                                               :Haff
 STR_IND_BAUXITE_MINE                                                            :Bauxitminn
 STR_IND_BIOREFINERY                                                             :Bioraffinerie
+STR_IND_BREWERY                                                                 :Brauerei
+STR_IND_BREWERY_CIDER_MILL                                                      :Brennerei
+STR_IND_BRICK_WORKS                                                             :Zillebäcker
+STR_IND_BUILDERS_YARD                                                           :Ponts et Chaussées
+STR_IND_BULK_TERMINAL                                                           :Gidderterminal
+STR_IND_CEMENT_PLANT                                                            :Zementfabrik
+STR_IND_CHEMICAL_PLANT                                                          :Chemiepark
+STR_IND_CLAY_PIT                                                                :Toungruef
 STR_IND_COFFEE_ESTATE                                                           :Kaffisplantage
+STR_IND_FIBRE_CROP_FARM                                                         :Faserplanzefarm
 STR_IND_DAIRY                                                                   :Molkerei
 STR_IND_DAIRYFARM                                                               :Mëllechbetrib
 STR_IND_DREDGING_SITE                                                           :Baggersite
+STR_IND_FERTILISER_PLANT                                                        :Düngerfabrik
+STR_IND_FISHING_GROUND                                                          :Fëschgrënn
 STR_IND_FISHING_HARBOUR                                                         :Fëscherhafen
 STR_IND_FOOD_MARKET                                                             :Epicerie
+STR_IND_FOOD_PROCESSOR                                                          :Liewensmëttelfabrik
+STR_IND_FURNITURE_FACTORY                                                       :Miwwelfabrik
+STR_IND_GENERAL_STORE                                                           :Buttek
 STR_IND_GLASS_WORKS                                                             :Glasmécherbetrib
+STR_IND_GRAIN_MILL                                                              :Millen
 STR_IND_HARDWARE_STORE                                                          :Baumaart
 STR_IND_HOTEL                                                                   :Hotel
+STR_IND_IRON_WORKS                                                              :Eisewierk
 STR_IND_JUNKYARD                                                                :Schrottplaz
+STR_IND_LIME_KILN                                                               :Kallekbrennerei
+STR_IND_LUMBER_YARD                                                             :Holzverarbëschtung
+STR_IND_MACHINE_SHOP                                                            :Maschinnebuttek
+STR_IND_METAL_FABRICATION_PLANT                                                 :Metallfabrik
+STR_IND_METAL_FOUNDRY                                                           :Schmelz
+STR_IND_MIXEDFARM                                                               :Gemëschten Haff
+STR_IND_ORCHARD_PIGGERY                                                         :Bongert a Schwéngshaff
+STR_IND_NITRATE_MINE                                                            :Nitratstollen
+STR_IND_PETROLPUMP                                                              :Tankstell
+STR_IND_PLASTICS_PLANT                                                          :Plastikfabrik
+STR_IND_PORT                                                                    :Hafen
 STR_IND_QUARRY                                                                  :Steebroch
 STR_IND_RANCH                                                                   :Ranch
+STR_IND_RECYCLING_DEPOT                                                         :Recyclingcenter
+STR_IND_RECYCLING_PLANT                                                         :Recyclingfabrik
 STR_IND_SHEEPFARM                                                               :Schofshaff
+STR_IND_SMITHY_FORGE                                                            :Schmëtt
 STR_IND_STOCKYARD                                                               :Schluechthaus
+STR_IND_SUGAR_PLANTATION                                                        :Zockerplantage
 STR_IND_SUGAR_REFINERY                                                          :Zockerraffinerie
 STR_IND_TEXTILE_MILL                                                            :Textilfabrik
+STR_IND_TRADING_POST                                                            :Handelsposten
+STR_IND_VEHICLE_FACTORY                                                         :Autosfabrik
 
+STR_STATION_ANIMALS                                                             :Véimaart
+STR_STATION_FARM                                                                :Landsëtz
 STR_STATION_FISHMARKET                                                          :Fëschmaart
+STR_STATION_HEAVY_INDUSTRY                                                      :Industriegebitt
 STR_STATION_INDUSTRY_ESTATE                                                     :Industriepark
 STR_STATION_INDUSTRY_HARBOUR                                                    :Industriehafen
+STR_STATION_MARKET                                                              :Maart
 STR_STATION_MILL                                                                :Millen
+STR_STATION_MINE                                                                :Stollen
+STR_STATION_PIT                                                                 :Gruef
+STR_STATION_PLANTATION                                                          :Plantage
+STR_STATION_POWERHUNGRY                                                         :Kraaftwierk
+STR_STATION_REFINERY                                                            :Raffinerie
 STR_STATION_TOWN                                                                :Aal Märei
+STR_STATION_WATER                                                               :Sandbänk
