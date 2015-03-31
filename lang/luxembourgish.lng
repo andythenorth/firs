@@ -7,8 +7,8 @@ STR_GRF_URL                                                                     
 
 STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :Maximalen Ofstand vun Fëschgrënn, Buerinselen an Baggerweiheren vun der Küst a Felder ausgedréckt.
 STR_PARAM_DESC_STAT_RATING                                                      :Bewertungen vun de Statiounen hunn Auswierkungen op d'Unzuel u Gidder déi vun Industrien op déi Statioun geliwwert ginn; wat d'Bewertung méi héich ass, wat méi geliwwert gëtt.
-STR_PARAM_DESC_DEBUG                                                            :Nëmmen fir Entwéckler
-STR_PARAM_DESC_ECONOMIES                                                        :All Wiertschaftstyp stellt verschidden Industrien an Frachtarten bereed.{}{}De Wiertschaftstyp 'Einfach' bidd manner Industrien an Frachtarten un wéi déi aner Wiertschaftstypen.
+STR_PARAM_DESC_DEBUG                                                            :Nëmme fir Entwéckler
+STR_PARAM_DESC_ECONOMIES                                                        :All Wiertschaftstyp stellt verschidden Industrien a Frachtarten bereed.{}{}De Wiertschaftstyp 'Einfach' bidd manner Industrien a Frachtarten un, wéi déi aner Wiertschaftstypen.
 STR_PARAM_DESC_NO_OPENINGS                                                      :Standardméisseg ginn nei Industrie während dem Spill opgemet.{}{}Wann 'net opmaachen' ugewielt ass, maachen keng nei Industrien während dem Spill op, an d'Spiller kënnen och keng nei Industrien bauen oder fördern.
 STR_PARAM_DESC_SECONDARY_NEVER_CLOSE                                            :Standardméisseg ginn sekundär FIRS Industrien nie zougemet.{}{}Wann sekundär Industrien zoumaachen ugeschalt ass, kënnen se zougemet ginn wann se eng laang Zäit net beliwwert ginn. Primär Industrien ginn am FIRS nie zougemet an ginn net vun dëser Astellung beaflosst.
 STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY                                   :Maximalen Ofstand vun Séindustrien vun der Küst a Felder ausgedréckt
@@ -19,7 +19,7 @@ STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            
 STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0                                         :Ouni Limite
 STR_PARAM_NAME_STAT_RATING                                                      :Algorithmus fir d'Bewertung vu Statiounen
 STR_PARAM_VALUE_STAT_RATING_DEFAULT                                             :Pingeleg (Standard OpenTTD)
-STR_PARAM_VALUE_STAT_RATING_REDUCED_TIME                                        :Grousszügeg (erlabt méi Zäit tëschent dem Ofhuele vu Gidder)
+STR_PARAM_VALUE_STAT_RATING_REDUCED_TIME                                        :Generéis (erlabt méi Zäit tëschent dem Ofhuele vu Gidder)
 STR_PARAM_VALUE_STAT_RATING_100                                                 :Iwwerdriwwen generéis (Bewertung ass ëmmer 100%)
 
 STR_PARAM_VALUE_ECONOMIES_BASIC_TEMPERATE                                       :Geméissegt Klima (Einfach)
@@ -64,7 +64,7 @@ STR_CARGO_UNIT_CHEMICALS                                                        
 STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} Toun
 STR_CARGO_UNIT_COFFEE                                                           :{SIGNED_WORD} S{P 0 ak äck} Kaffi
 STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} Këscht{P 0 "" en} Ersatzdeeler
-STR_CARGO_UNIT_FIBRES                                                           :{SIGNED_WORD} Ballen Planzefaser
+STR_CARGO_UNIT_FIBRES                                                           :{SIGNED_WORD} Balle Planzefaser
 STR_CARGO_UNIT_FISH                                                             :{WEIGHT} Fësch
 STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} Këscht{P 0 "" en} Akerbaumëttel
 STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} Friichten
@@ -105,7 +105,7 @@ STR_CID_SAND                                                                    
 STR_CID_SCRAP_METAL                                                             :{TINYFONT}SC
 STR_CID_STONE                                                                   :{TINYFONT}ST
 STR_CID_SUGAR_BEET                                                              :{TINYFONT}ZR
-STR_CID_SUGARCANE                                                               :{TINYFONT}ZR
+STR_CID_SUGARCANE                                                               :{TINYFONT}ZO
 STR_CID_VEHICLE_PARTS                                                           :{TINYFONT}AD
 STR_CID_WOOL                                                                    :{TINYFONT}WL
 
@@ -146,7 +146,7 @@ STR_EXTRA_METAL_FABRICATION_PLANT                                               
 STR_EXTRA_METAL_FOUNDRY                                                         :{BLACK}Produzéiert Metallsaachen wéi Dousen, Geschier an Haushaltsutensilien.{}{}Produktioun:{}  2 Këschte pro 8,000l geliwwerte Chemikalien{}  6 Këschte pro 8t geliwwertem Metall{}{}Produktioun geet an d'Lut wa béid Gidder innerhalb engem Mount zesumme geliwwert ginn.
 STR_EXTRA_OIL_REFINERY                                                          :{BLACK}Verschafft Réiueleg zu Pëtrol an Chemikalien.{}{}Produktioun:{}  6,000l pro geliwwerten 8,000l
 STR_EXTRA_PAPER_MILL                                                            :{BLACK}Zerfasert Holz fir doraus Pabeier an Kartong ze man.{}{}Produktioun:{} 4 Këschte pro 8t geliwwertem Holz{} 2 Këschte pro 8t geliwwertem Toun{} 2 Këschten pro 8,000l geliwwerte Chemikalien{}{}Produktioun geet an d'Lut wann zwee oder méi Gidder innerhalb engem Mount zesumme geliwwert ginn.
-STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}Produzéiert Plastiksaachen wéi Verpackung an Haushaltsartikelen.{}{}Produktioun:{} {STRING} {STRING}
+STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}Produzéiert Plastiksaache wéi Verpackungen an Haushaltsartikelen.{}{}Produktioun:{} {STRING} {STRING}
 STR_EXTRA_PLASTICS_PLANT_CHEMICALS_SUBSTR                                       :6 Këschten pro 8,000l geliwwerten Chemikalien{}
 STR_EXTRA_PLASTICS_PLANT_PLANT_FIBRES_SUBSTR                                    :6 Këschte pro 8 geliwwerte Balle Planzefaser{}
 STR_EXTRA_RECYCLING_PLANT                                                       :{BLACK}Verarbëscht recycléierbart Material.{}{}Produktioun:{}  6t pro 8t geliwwertem Material
@@ -197,7 +197,7 @@ STR_IND_BAUXITE_MINE                                                            
 STR_IND_BIOREFINERY                                                             :Bioraffinerie
 STR_IND_BREWERY                                                                 :Brauerei
 STR_IND_BREWERY_CIDER_MILL                                                      :Brennerei
-STR_IND_BRICK_WORKS                                                             :Zillebäcker
+STR_IND_BRICK_WORKS                                                             :Zillebäckerei
 STR_IND_BUILDERS_YARD                                                           :Ponts et Chaussées
 STR_IND_BULK_TERMINAL                                                           :Gidderterminal
 STR_IND_CEMENT_PLANT                                                            :Zementfabrik
