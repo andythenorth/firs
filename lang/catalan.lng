@@ -32,6 +32,7 @@ STR_PARAM_VALUE_ECONOMIES_TEST_3                                                
 
 STR_CARGO_NAME_ALCOHOL                                                          :{G=Masculin}Alcohol
 STR_CARGO_NAME_BAUXITE                                                          :{G=Femenin}Bauxita
+STR_CARGO_NAME_BEANS                                                            :Bajoques
 STR_CARGO_NAME_BUILDING_MATERIALS                                               :{G=Masculin}Materials de construcció
 STR_CARGO_NAME_CHEMICALS                                                        :{G=Masculin}Productes químics
 STR_CARGO_NAME_CLAY                                                             :{G=Femenin}Argila
@@ -45,6 +46,7 @@ STR_CARGO_NAME_LUMBER                                                           
 STR_CARGO_NAME_METAL                                                            :{G=Masculin}Metall
 STR_CARGO_NAME_MILK                                                             :{G=Femenin}Llet
 STR_CARGO_NAME_MANUFACTURING_SUPPLIES                                           :{G=Masculin}Subministraments industrials
+STR_CARGO_NAME_NITRATES                                                         :Nitrats
 STR_CARGO_NAME_PETROL                                                           :{G=Femenin}Gasolina
 STR_CARGO_NAME_RECYCLABLES                                                      :{G=Femenin}Deixalles
 STR_CARGO_NAME_SAND                                                             :{G=Femenin}Sorra
@@ -52,10 +54,12 @@ STR_CARGO_NAME_SCRAP_METAL                                                      
 STR_CARGO_NAME_STONE                                                            :{G=Femenin}Pedres
 STR_CARGO_NAME_SUGAR_BEET                                                       :{G=Femenin}Remolatxa
 STR_CARGO_NAME_SUGARCANE                                                        :{G=Femenin}Canya de sucre
+STR_CARGO_NAME_VEHICLE_PARTS                                                    :Parts de vehicles
 STR_CARGO_NAME_WOOL                                                             :{G=Femenin}Llana
 
 STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} d'alcohol
 STR_CARGO_UNIT_BAUXITE                                                          :{WEIGHT} de bauxita
+STR_CARGO_UNIT_BEANS                                                            :{WEIGHT} de bajoques
 STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WEIGHT} de materials de construcció
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} de productes químics
 STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} d'argila
@@ -68,6 +72,7 @@ STR_CARGO_UNIT_FRUITS                                                           
 STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} de taulons
 STR_CARGO_UNIT_METAL                                                            :{WEIGHT} de metall
 STR_CARGO_UNIT_MILK                                                             :{VOLUME} de llet
+STR_CARGO_UNIT_NITRATES                                                         :{WEIGHT} de nitrats
 STR_CARGO_UNIT_MNSP                                                             :{SIGNED_WORD} caix{P 0 a es} de subministraments industrials
 STR_CARGO_UNIT_PETROL                                                           :{VOLUME} de gasolina
 STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} de deixalles
@@ -76,10 +81,12 @@ STR_CARGO_UNIT_SCRAP_METAL                                                      
 STR_CARGO_UNIT_STONE                                                            :{WEIGHT} de pedres
 STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} de remolatxa
 STR_CARGO_UNIT_SUGARCANE                                                        :{WEIGHT} de canya de sucre
+STR_CARGO_UNIT_VEHICLE_PARTS                                                    :{SIGNED_WORD} caix{P 0 a es} de parts de vehicles
 STR_CARGO_UNIT_WOOL                                                             :{SIGNED_WORD} bal{P 0 a es} de llana
 
 STR_CID_ALCOHOL                                                                 :{TINYFONT}AL
 STR_CID_BAUXITE                                                                 :{TINYFONT}BX
+STR_CID_BEANS                                                                   :{TINYFONT}BJ
 STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}MC
 STR_CID_CHEMICALS                                                               :{TINYFONT}PQ
 STR_CID_CLAY                                                                    :{TINYFONT}AR
@@ -92,6 +99,7 @@ STR_CID_LUMBER                                                                  
 STR_CID_MANUFACTURING_SUPPLIES                                                  :{TINYFONT}SI
 STR_CID_METAL                                                                   :{TINYFONT}MT
 STR_CID_MILK                                                                    :{TINYFONT}LE
+STR_CID_NITRATES                                                                :{TINYFONT}NI
 STR_CID_PETROL                                                                  :{TINYFONT}GA
 STR_CID_RECYCLABLES                                                             :{TINYFONT}DE
 STR_CID_SAND                                                                    :{TINYFONT}SO
@@ -99,6 +107,7 @@ STR_CID_SCRAP_METAL                                                             
 STR_CID_STONE                                                                   :{TINYFONT}PE
 STR_CID_SUGAR_BEET                                                              :{TINYFONT}RE
 STR_CID_SUGARCANE                                                               :{TINYFONT}CN
+STR_CID_VEHICLE_PARTS                                                           :{TINYFONT}PV
 STR_CID_WOOL                                                                    :{TINYFONT}LA
 
 STR_ERR_CLIMATE_TOYLAND                                                         :{ORANGE}FIRS no està dissenyat per al paisatge de joguines
@@ -121,13 +130,15 @@ STR_EXTRA_BREWERY_GRAIN_SUBSTR                                                  
 STR_EXTRA_BREWERY_FRUIT_SUBSTR                                                  :5.000 L per cada 8 t de fruita{}
 STR_EXTRA_BRICKWORKS                                                            :{BLACK}Producció:{} 2 t per cada 8 t de carbó{} 2 t per cada 8 t de sorra{} 4 t per cada 8 t d'argila{}{}La producció augmenta si es reben dues o més càrregues en un mes.
 STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Producció:{} 2 t per cada 8 t de carbó{} 2 t per cada 8 t d'argila{} 4 t per cada 8 t de pedres{}{}La producció augmenta si es reben dues o més càrregues en un mes.
+STR_EXTRA_CHEMICAL_PLANT                                                        :{BLACK}Producció:{} 6.000 L per cada 8.000 L de petroli{} 6.000 L per 8 t de nitrats
 STR_EXTRA_DAIRY                                                                 :{BLACK}Producció:{} 3 t per cada 8 caixes de subministraments{} 5 t per cada 8.000 L de llet{}{}La producció augmenta si es reben en un mes les dues càrregues.
 STR_EXTRA_FERTILIZER_PLANT                                                      :{BLACK}Producció:{} 8 caixes per cada 8.000 L de productes químics
 STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Producció:{} 3 t per cada 8 caixes de subministraments{} 5 t per cada 8 t de peix{}{}La producció augmenta si es reben en un mes les dues càrregues.
+STR_EXTRA_FOOD_PROCESSING_PLANT                                                 :{BLACK}Producció:{} 6 t per cada 8 t de bajoques.{} 6 t per cada 8 t de fruita
 STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Producció:{} 3 palets per cada 8 caixes de subministraments{} 5 palets per cada 8 t de taulons{}{}La producció augmenta si es reben en un mes les dues càrregues.
 STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Fabrica objectes de vidre com ara ampolles, gerres i plafons.{}{}Producció:{} 6 t per cada 8 t de sorra{} 2 t per cada 8.000 L de productes químics{}{}La producció augmenta si es reben en un mes les dues càrregues.
 STR_EXTRA_GRAIN_MILL                                                            :{BLACK}Producció:{} 3 t per cada 8 caixes de subministraments{} 5 t per cada 8 t de gra{}{}La producció augmenta si es reben en un mes les dues càrregues.
-STR_EXTRA_IRON_WORKS                                                            :{BLACK}Producció:{} 2 t per cada 8 t de fusta{} 2 t per cada 8 t de mineral de ferro{}{}La producció augmenta si es reben en un mes les dues càrregues.
+STR_EXTRA_IRON_WORKS                                                            :{BLACK}Producció:{} 3 t per cada 8 t de mineral de ferro{} 3 t per cada 8 t de fusta{} 2 t per cada 8 t de sorra{}{}La producció augmenta si es reben en un mes les dues càrregues.
 STR_EXTRA_LIME_KILN                                                             :{BLACK}Producció:{} 3 t per cada 8 t de pedres{} 3 t per cada 8 t de carbó{}{}La producció augmenta si es reben en un mes les dues càrregues.
 STR_EXTRA_LUMBER_YARD                                                           :{BLACK}Fabrica objectes com ara perxes, astes, tanques i baranes.{}{}Producció:{} 2 t per cada 8.000 L de productes químics{} 6 t per cada 8 t de taulons{}{}La producció augmenta si es reben en un mes les dues càrregues.
 STR_EXTRA_MACHINE_SHOP                                                          :{BLACK}Construeix i prepara màquines diverses.{}{}Producció:{} 8 caixes per cada 8.000 L de gasolina{} 8 caixes per cada 8 t de metall
@@ -143,11 +154,12 @@ STR_EXTRA_RECYCLING_PLANT                                                       
 STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}La producció és proporcional a la població de la localitat.
 STR_EXTRA_SAWMILL                                                               :{BLACK}Talla la fusta.{}{}Producció:{} 6 t per cada 8 t de fusta
 STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Produeix objectes de metall com ara pales, aixades, eines, portes i ferradures.{}{}Producció:{} 8 caixes per cada 8 t de metall
-STR_EXTRA_STEELMILL                                                             :{BLACK}Producció:{} 2 t per cada 8 t de mineral de ferro{} 2 t per cada 8 t de carbó{} 4 t per cada 8 t de ferralla{}{}La producció augmenta si es reben dues o més càrregues en un mes.
+STR_EXTRA_STEELMILL                                                             :{BLACK}Producció:{} 3 t per cada 8 t de mineral de ferro{} 2 t per cada 8 t de carbó{} 3 t per cada 8 t de ferralla{}{}La producció augmenta si es reben dues o més càrregues en un mes.
 STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Producció:{} 3 t per cada 8 caixes de subministraments{} 5 t per cada 8 t de sucre o remolatxa{}{}Augmenta a 8 t per cada 8 t si es reben les dues càrregues en un mes.
 STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Producció:{} 3 palets per cada 8 caixes de subministraments{} {STRING} {STRING}{}La producció augmenta si es reben subministraments industrials i una altra càrrega en un mes.
 STR_EXTRA_TEXTILE_MILL_WOOL_SUBSTR                                              :5 palets per cada 8 bales de llana{}
 STR_EXTRA_TEXTILE_MILL_PLANT_FIBRES_SUBSTR                                      :5 caixes per cada 8 bales de fibres vegetals{}
+STR_EXTRA_VEHICLE_FACTORY                                                       :{BLACK}Producció:{} 8 caixes per cada 8 caixes de parts de vehicles{} 8 caixes per cada 8 caixes de subministraments industrials
 
 STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ DEBUG ------------{}Producció d'aquest mes:{}Càrrega 1: {WHITE}{COMMA}{BLACK}{}Càrrega 2: {WHITE}{COMMA}{BLACK}{}Dies des de la darrera entrega: {WHITE}{COMMA}{BLACK}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Assolit el màxim de producció
@@ -190,6 +202,7 @@ STR_IND_BRICK_WORKS                                                             
 STR_IND_BUILDERS_YARD                                                           :{G=Femenin}Constructora
 STR_IND_BULK_TERMINAL                                                           :Terminal de mercaderies voluminoses
 STR_IND_CEMENT_PLANT                                                            :{G=Femenin}Fàbrica de ciment
+STR_IND_CHEMICAL_PLANT                                                          :{G=Femenin}Planta química
 STR_IND_CLAY_PIT                                                                :{G=Femenin}Argilera
 STR_IND_COFFEE_ESTATE                                                           :Hisenda de cafè
 STR_IND_FIBRE_CROP_FARM                                                         :Granja de cultius de fibres vegetals
@@ -200,6 +213,7 @@ STR_IND_FERTILISER_PLANT                                                        
 STR_IND_FISHING_GROUND                                                          :{G=Masculin}Calador de pesca
 STR_IND_FISHING_HARBOUR                                                         :{G=Masculin}Port pesquer
 STR_IND_FOOD_MARKET                                                             :{G=Masculin}Mercat
+STR_IND_FOOD_PROCESSOR                                                          :{G=Femenin}Planta de processament d'aliments
 STR_IND_FURNITURE_FACTORY                                                       :{G=Femenin}Fàbrica de mobles
 STR_IND_GENERAL_STORE                                                           :Petit comerç
 STR_IND_GLASS_WORKS                                                             :{G=Femenin}Vidrieria
@@ -215,6 +229,7 @@ STR_IND_METAL_FABRICATION_PLANT                                                 
 STR_IND_METAL_FOUNDRY                                                           :{G=Femenin}Foneria
 STR_IND_MIXEDFARM                                                               :{G=Femenin}Granja mixta
 STR_IND_ORCHARD_PIGGERY                                                         :Arbres fruiters i granja de porcs
+STR_IND_NITRATE_MINE                                                            :{G=Femenin}Mina de nitrats
 STR_IND_PETROLPUMP                                                              :{G=Femenin}Gasolinera
 STR_IND_PLASTICS_PLANT                                                          :{G=Femenin}Fàbrica de plàstics
 STR_IND_PORT                                                                    :{G=Masculin}Port
@@ -229,6 +244,7 @@ STR_IND_SUGAR_PLANTATION                                                        
 STR_IND_SUGAR_REFINERY                                                          :{G=Femenin}Sucreria
 STR_IND_TEXTILE_MILL                                                            :{G=Femenin}Fàbrica tèxtil
 STR_IND_TRADING_POST                                                            :Botiga de queviures
+STR_IND_VEHICLE_FACTORY                                                         :Fàbrica de vehicles
 
 STR_STATION_ANIMALS                                                             :Mercat de cavalls
 STR_STATION_FARM                                                                :Mansió
