@@ -44,6 +44,7 @@ class TileLocationChecks(object):
 
     def get_render_tree(self, switch_prefix):
         result = [TileLocationCheckFounder()]
+        # commented because this is a copy-paste from *industry* location check (needs adjusting for tiles)
         """
         for industry_type, distance in self.incompatible.items():
             result.append(LocationCheckIncompatible(industry_type, distance))
