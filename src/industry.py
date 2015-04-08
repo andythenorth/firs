@@ -76,7 +76,7 @@ class TileLocationCheckRoadAdjacent(object):
         requires road on adjacent tile(s), with configurable directions
     """
     def __init__(self, direction):
-        self.direction_map = {'nw': (0, -1), 'ne': (-1, 0), 'sw': (0, 1), 'se': (1, 0)}
+        self.direction_map = {'nw': (0, -1), 'se': (0, 1), 'ne': (-1, 0), 'sw': (1, 0)}
         self.direction = direction
         self.switch_result = 'return CB_RESULT_LOCATION_DISALLOW' # default result, value may also be id for next switch
         self.switch_entry_point = direction
