@@ -45,7 +45,7 @@ class Tile(object):
 class TileLocationChecks(object):
     """ Class to hold location checks for a tile """
     def __init__(self, **kwargs):
-        pass
+        self.road_adjacent = kwargs.get('road_adjacent', [])
 
     def get_render_tree(self, switch_prefix):
         result = [TileLocationCheckFounder()]
@@ -74,6 +74,19 @@ class TileLocationCheckFounder(object):
     def render(self):
         return 'TILE_ALLOW_PLAYER (' + self.switch_entry_point + ',' + self.switch_result + ')'
 
+
+class TileLocationCheckRoadAdjacent(object):
+    """
+        ronseal
+    """
+    def __init__(self):
+        self.switch_result = 'return CB_RESULT_LOCATION_ALLOW' # default result, value may also be id for next switch
+        self.switch_entry_point = 'terrain_check'
+
+    def render(self):
+        return 'TILE_ALLOW_PLAYER (' + self.switch_entry_point + ',' + self.switch_result + ')'
+
+#CHECK_ROAD_ADJACENT(tile_road_adjacent_1, 0, 1, ${industry.id}_tile_road_adjacent_2)
 
 class Sprite(object):
     """Base class to hold simple sprites (using numbers from a base set)"""
