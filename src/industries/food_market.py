@@ -5,7 +5,7 @@
   See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
 """
 
-from industry import Industry
+from industry import IndustryTertiary, TileLocationChecks, IndustryLocationChecks
 
 """
 Notes to self whilst figuring out python-firs (notes will probably rot here forever).
@@ -15,7 +15,7 @@ Some method properties need a string - the templating is then typically directly
 When a string is expected are basically two choices: provide a string directly, or make an object reference and get an id from that object.
 """
 
-industry = Industry(id='food_market',
+industry = IndustryTertiary(id='food_market',
                     accept_cargo_types=['FOOD', 'FRUT', 'BEER'],
                     input_multiplier_1='[0, 0]',
                     input_multiplier_3='[0, 0]',
@@ -33,18 +33,23 @@ industry = Industry(id='food_market',
                     life_type='IND_LIFE_TYPE_BLACK_HOLE',
                     min_cargo_distr='2',
                     spec_flags='bitmask(IND_FLAG_ONLY_IN_TOWNS)',
+                    location_checks=IndustryLocationChecks(incompatible={'food_market': 20,
+                                                                         'petrol_pump': 16,
+                                                                         'hotel': 16}),
                     remove_cost_multiplier='0',
                     prospect_chance='0.75',
                     name='string(STR_IND_FOOD_MARKET)',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_TOWN))',
                     fund_cost_multiplier='15',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
-                    )
+                    snakebite=True)
 
 industry.economy_variations['FIRS'].enabled = True
 
 
-industry.add_tile(id='food_market_tile')
+industry.add_tile(id='food_market_tile_1',
+                  land_shape_flags='bitmask(LSF_ONLY_ON_FLAT_LAND)',
+                  location_checks=TileLocationChecks(road_adjacent=['nw', 'ne', 'sw', 'se']))
 
 spriteset_ground = industry.add_spriteset(
     id = 'food_market_spriteset_ground',
@@ -81,5 +86,5 @@ industry.add_spritelayout(
 )
 industry.add_industry_layout(
     id = 'food_market_industry_layout',
-    layout = [(0, 0, 'food_market_tile', 'food_market_spritelayout')]
+    layout = [(0, 0, 'food_market_tile_1', 'food_market_spritelayout')]
 )
