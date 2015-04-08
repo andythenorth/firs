@@ -51,6 +51,7 @@ class TileLocationChecks(object):
         self.road_adjacent = kwargs.get('road_adjacent', [])
 
     def get_render_tree(self, switch_prefix, industry_id):
+        # !! might be better done as collections.deque? (makes appendleft available, amongst other benefits)
         result = [TileLocationCheckFounder()]
 
         for direction in self.road_adjacent:
