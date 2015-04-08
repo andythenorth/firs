@@ -22,10 +22,13 @@ industry_templates = PageTemplateLoader(os.path.join(src_path, 'industries'), fo
 from industries import registered_industries
 
 def get_another_industry(id):
+    # utility function so that we can provide numeric ids in nml output, rather than relying identifiers
+    # this enables compiling single-industries without nml barfing on missing identifiers (in location checks and such)
     for industry in registered_industries:
         if industry.id == id:
             return industry
     # if none found, that's an error, don't handle the error, just blow up
+
 
 class Tile(object):
     """ Base class to hold industry tiles"""
@@ -68,33 +71,19 @@ class TileLocationChecks(object):
 
         return list(reversed(result))
 
-"""
-class IndustryLocationCheckIncompatible(object):
-    def __init__(self, industry_type, distance):
-        self.industry_type = industry_type
-        # use the numeric_id so that we can do single-industry compiles without nml barfing on missing identifiers
-        self.industry_type_numeric_id = get_another_industry(industry_type).get_numeric_id()
-        self.distance = distance
-        self.switch_result = 'return CB_RESULT_LOCATION_ALLOW' # default result, value may also be id for next switch
-        self.switch_entry_point = str(self.industry_type_numeric_id)
-
-    def render(self):
-        return 'CHECK_INCOMPATIBLE (' + str(self.industry_type_numeric_id) + ', ' + str(self.distance) + ', CB_RESULT_LOCATION_DISALLOW, ' + self.switch_result + ')'
-"""
-
 class TileLocationCheckRoadAdjacent(object):
     """
-        ronseal
+        requires road on adjacent tile(s), with configurable directions
     """
     def __init__(self, direction):
+        self.direction_map = {'nw': (0, -1), 'ne': (-1, 0), 'sw': (0, 1), 'se': (1, 0)}
         self.direction = direction
-        self.switch_result = 'return CB_RESULT_LOCATION_ALLOW' # default result, value may also be id for next switch
+        self.switch_result = 'return CB_RESULT_LOCATION_DISALLOW' # default result, value may also be id for next switch
         self.switch_entry_point = direction
 
     def render(self):
-        return 'CHECK_ROAD_ADJACENT(' + self.switch_entry_point + ', 0, 1,' + self.switch_result + ')'
-
-#CHECK_ROAD_ADJACENT(tile_road_adjacent_1, 0, 1, ${industry.id}_tile_road_adjacent_2)
+        x_y_string = ','.join([str(offset) for offset in self.direction_map[self.direction]])
+        return 'CHECK_ROAD_ADJACENT(' + self.switch_entry_point + ', ' + x_y_string + ',' + self.switch_result + ')'
 
 
 class TileLocationCheckFounder(object):
