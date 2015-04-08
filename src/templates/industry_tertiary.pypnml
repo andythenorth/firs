@@ -34,6 +34,10 @@
 
 <tal:include metal:use-macro="load: industry_layouts.pynml" />
 
+<!--! snakebite migration support, the CPP template that needs this define *could* be rewritten to python -->
+<tal:intro_year condition="industry.intro_year is not None">
+    #define THIS_MIN_YEAR ${industry.intro_year}
+</tal:intro_year>
 #include "../../src/templates/check_availability.pnml"
 
 <tal:industry_location_checks define="location_checks industry.location_checks.get_render_tree(industry.id+'_')" repeat="location_check location_checks">

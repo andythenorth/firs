@@ -279,6 +279,7 @@ class Industry(object):
         self.default_industry_properties = IndustryProperties(**kwargs)
         self.supply_requirements = kwargs.get('supply_requirements', self.set_supply_requirements_via_magic())
         self.location_checks = kwargs.get('location_checks')
+        self.intro_year = kwargs.get('intro_year', None)
         self.economy_variations = {}
         for economy in global_constants.economies:
             self.add_economy_variation(economy)

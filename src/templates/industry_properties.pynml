@@ -36,6 +36,9 @@
                     construction_probability: ${industry.id}_check_availability;
                     build_prod_change:        randomise_primary_production_on_build;
                     location_check:           ${industry.id}_check_location;
+                    <tal:intro_year condition="industry.intro_year is not None">
+                		extra_text_fund:         return string(STR_FUND_AVAILABLE_FROM, ${industry.intro_year});
+                	</tal:intro_year>
                 }
             }
         </tal:graphics_block>
