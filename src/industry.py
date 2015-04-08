@@ -56,6 +56,8 @@ class TileLocationChecks(object):
         for direction in self.road_adjacent:
             result.append(TileLocationCheckRoadAdjacent(direction))
         prev = None
+        # !! aren't the entry points / results just incrememented numerically according to position in tree?
+        # why bugger about setting meaningful names for them?
         for lc in reversed(result):
             if prev is not None:
                 lc.switch_result = industry_id + '_' + switch_prefix + prev.switch_entry_point
@@ -63,7 +65,7 @@ class TileLocationChecks(object):
 
         prev = None
         for lc in result:
-            # nasty hack because tile id not trivially in scope when setting up location check objects
+            # !! nasty hack because tile id not trivially in scope when setting up location check objects
             # once snakebite is complete, this could be simplified by modifying the CPP macro
             if prev is not None:
                 lc.switch_entry_point = switch_prefix + lc.switch_entry_point
