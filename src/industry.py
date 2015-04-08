@@ -40,11 +40,12 @@ class Tile(object):
 class TileLocationChecks(object):
     """ Class to hold location checks for a tile """
     def __init__(self, **kwargs):
+        self.incompatible = kwargs.get('incompatible', {})
         pass
 
     def get_render_tree(self, switch_prefix):
         result = [TileLocationCheckFounder()]
-        """
+
         for industry_type, distance in self.incompatible.items():
             result.append(LocationCheckIncompatible(industry_type, distance))
         prev = None
@@ -52,7 +53,7 @@ class TileLocationChecks(object):
             if prev is not None:
                 lc.switch_result = switch_prefix + prev.switch_entry_point
             prev = lc
-        """
+
         return list(reversed(result))
 
 
