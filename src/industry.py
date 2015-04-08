@@ -47,19 +47,54 @@ class TileLocationChecks(object):
     def __init__(self, **kwargs):
         self.road_adjacent = kwargs.get('road_adjacent', [])
 
-    def get_render_tree(self, switch_prefix):
+    def get_render_tree(self, switch_prefix, industry_id):
         result = [TileLocationCheckFounder()]
-        # commented because this is a copy-paste from *industry* location check (needs adjusting for tiles)
-        """
-        for industry_type, distance in self.incompatible.items():
-            result.append(LocationCheckIncompatible(industry_type, distance))
+
+        for direction in self.road_adjacent:
+            result.append(TileLocationCheckRoadAdjacent(direction))
         prev = None
         for lc in reversed(result):
             if prev is not None:
-                lc.switch_result = switch_prefix + prev.switch_entry_point
+                lc.switch_result = industry_id + '_' + switch_prefix + prev.switch_entry_point
             prev = lc
-        """
+
+        prev = None
+        for lc in result:
+            # nasty hack because tile id not trivially in scope when setting up location check objects
+            # once snakebite is complete, this could be simplified by modifying the CPP macro
+            if prev is not None:
+                lc.switch_entry_point = switch_prefix + lc.switch_entry_point
+            prev =lc
+
         return list(reversed(result))
+
+"""
+class IndustryLocationCheckIncompatible(object):
+    def __init__(self, industry_type, distance):
+        self.industry_type = industry_type
+        # use the numeric_id so that we can do single-industry compiles without nml barfing on missing identifiers
+        self.industry_type_numeric_id = get_another_industry(industry_type).get_numeric_id()
+        self.distance = distance
+        self.switch_result = 'return CB_RESULT_LOCATION_ALLOW' # default result, value may also be id for next switch
+        self.switch_entry_point = str(self.industry_type_numeric_id)
+
+    def render(self):
+        return 'CHECK_INCOMPATIBLE (' + str(self.industry_type_numeric_id) + ', ' + str(self.distance) + ', CB_RESULT_LOCATION_DISALLOW, ' + self.switch_result + ')'
+"""
+
+class TileLocationCheckRoadAdjacent(object):
+    """
+        ronseal
+    """
+    def __init__(self, direction):
+        self.direction = direction
+        self.switch_result = 'return CB_RESULT_LOCATION_ALLOW' # default result, value may also be id for next switch
+        self.switch_entry_point = direction
+
+    def render(self):
+        return 'CHECK_ROAD_ADJACENT(' + self.switch_entry_point + ', 0, 1,' + self.switch_result + ')'
+
+#CHECK_ROAD_ADJACENT(tile_road_adjacent_1, 0, 1, ${industry.id}_tile_road_adjacent_2)
 
 
 class TileLocationCheckFounder(object):
@@ -74,19 +109,6 @@ class TileLocationCheckFounder(object):
     def render(self):
         return 'TILE_ALLOW_PLAYER (' + self.switch_entry_point + ',' + self.switch_result + ')'
 
-
-class TileLocationCheckRoadAdjacent(object):
-    """
-        ronseal
-    """
-    def __init__(self):
-        self.switch_result = 'return CB_RESULT_LOCATION_ALLOW' # default result, value may also be id for next switch
-        self.switch_entry_point = 'terrain_check'
-
-    def render(self):
-        return 'TILE_ALLOW_PLAYER (' + self.switch_entry_point + ',' + self.switch_result + ')'
-
-#CHECK_ROAD_ADJACENT(tile_road_adjacent_1, 0, 1, ${industry.id}_tile_road_adjacent_2)
 
 class Sprite(object):
     """Base class to hold simple sprites (using numbers from a base set)"""
