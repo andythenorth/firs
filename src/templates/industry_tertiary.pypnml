@@ -17,6 +17,8 @@
 
 <tal:include metal:use-macro="load: layout_graphics_switches.pynml" />
 
+<tal:include metal:use-macro="load: fence_switches.pynml" />
+
 <tal:tile_location_checks repeat="tile industry.tiles">
     <tal:tile define="location_checks tile.location_checks.get_render_tree(tile.id+'_')" repeat="location_check location_checks">
         ${location_check.render()}
