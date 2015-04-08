@@ -21,6 +21,11 @@ industry_templates = PageTemplateLoader(os.path.join(src_path, 'industries'), fo
 
 from industries import registered_industries
 
+def get_another_industry(id):
+    for industry in registered_industries:
+        if industry.id == id:
+            return industry
+    # if none found, that's an error, don't handle the error, just blow up
 
 class Tile(object):
     """ Base class to hold industry tiles"""
@@ -178,12 +183,14 @@ class IndustryLocationCheckIncompatible(object):
     """prevent locating near incompatible industry types"""
     def __init__(self, industry_type, distance):
         self.industry_type = industry_type
+        # use the numeric_id so that we can do single-industry compiles without nml barfing on missing identifiers
+        self.industry_type_numeric_id = get_another_industry(industry_type).get_numeric_id()
         self.distance = distance
         self.switch_result = 'return CB_RESULT_LOCATION_ALLOW' # default result, value may also be id for next switch
-        self.switch_entry_point = self.industry_type
+        self.switch_entry_point = str(self.industry_type_numeric_id)
 
     def render(self):
-        return 'CHECK_INCOMPATIBLE (' + self.industry_type + ', ' + str(self.distance) + ', CB_RESULT_LOCATION_DISALLOW, ' + self.switch_result + ')'
+        return 'CHECK_INCOMPATIBLE (' + str(self.industry_type_numeric_id) + ', ' + str(self.distance) + ', CB_RESULT_LOCATION_DISALLOW, ' + self.switch_result + ')'
 
 
 class IndustryLocationCheckFounder(object):
@@ -421,10 +428,7 @@ class Industry(object):
         return '[' + ','.join(prod_cargo_types) + ']'
 
     def get_another_industry(self, id):
-        for industry in registered_industries:
-            if industry.id == id:
-                return industry
-        # if none found, that's an error, don't handle the error, just blow up
+        return get_another_industry(id)
 
     def get_conditional_expressions_for_enabled_economies(self):
         # returns a string that can be used as the conditions in nml if() blocks for economy stuff
