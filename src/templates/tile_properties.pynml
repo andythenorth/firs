@@ -7,7 +7,7 @@
         }
 
         graphics {
-    		tile_check: ${industry.id}_terrain_check;
+    		tile_check: ${industry.id}_${tile.id}_lc_0;
             ${industry.id}_tile_fences;
         }
     }

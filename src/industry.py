@@ -50,27 +50,21 @@ class TileLocationChecks(object):
     def __init__(self, **kwargs):
         self.road_adjacent = kwargs.get('road_adjacent', [])
 
-    def get_render_tree(self, switch_prefix, industry_id):
+    def get_render_tree(self, tile_id, industry_id):
+        switch_prefix = tile_id + '_lc_'
         # !! might be better done as collections.deque? (makes appendleft available, amongst other benefits)
         result = [TileLocationCheckFounder()]
 
         for direction in self.road_adjacent:
             result.append(TileLocationCheckRoadAdjacent(direction))
-        prev = None
-        # !! aren't the entry points / results just incrememented numerically according to position in tree?
-        # why bugger about setting meaningful names for them?
-        for lc in reversed(result):
-            if prev is not None:
-                lc.switch_result = industry_id + '_' + switch_prefix + prev.switch_entry_point
-            prev = lc
 
-        prev = None
-        for lc in result:
-            # !! nasty hack because tile id not trivially in scope when setting up location check objects
-            # once snakebite is complete, this could be simplified by modifying the CPP macro
-            if prev is not None:
-                lc.switch_entry_point = switch_prefix + lc.switch_entry_point
-            prev =lc
+        # walk the tree, setting entry points and results (id of next switch) for each switch
+        for count, lc in enumerate(result):
+            lc.switch_entry_point = switch_prefix + str(count)
+            # don't set the result for the last item - use the check's default allow/disallow value
+            if count < len(result) - 1:
+                # nasty hack with industry id due to not wanting to disturb CPP templating until snakebite is done
+                lc.switch_result = industry_id + '_' + switch_prefix + str(count + 1)
 
         return list(reversed(result))
 
@@ -82,7 +76,7 @@ class TileLocationCheckRoadAdjacent(object):
         self.direction_map = {'nw': (0, -1), 'se': (0, 1), 'ne': (-1, 0), 'sw': (1, 0)}
         self.direction = direction
         self.switch_result = 'return CB_RESULT_LOCATION_DISALLOW' # default result, value may also be id for next switch
-        self.switch_entry_point = direction
+        self.switch_entry_point = None
 
     def render(self):
         x_y_string = ','.join([str(offset) for offset in self.direction_map[self.direction]])
@@ -96,7 +90,7 @@ class TileLocationCheckFounder(object):
     """
     def __init__(self):
         self.switch_result = 'return CB_RESULT_LOCATION_ALLOW' # default result, value may also be id for next switch
-        self.switch_entry_point = 'terrain_check'
+        self.switch_entry_point = None
 
     def render(self):
         return 'TILE_ALLOW_PLAYER (' + self.switch_entry_point + ',' + self.switch_result + ')'
