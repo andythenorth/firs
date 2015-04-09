@@ -34,12 +34,14 @@ industry = IndustrySecondary(id='plastics_plant',
                     fund_cost_multiplier='125',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
                     extra_text_industry='STR_EXTRA_PLASTICS_PLANT, string(STR_EXTRA_PLASTICS_PLANT_CHEMICALS_SUBSTR), string(STR_EXTRA_PLASTICS_PLANT_PLANT_FIBRES_SUBSTR)',
+                    intro_year='1931',
                     snakebite=True)
 
 industry.economy_variations['FIRS'].enabled = True
 
 industry.add_tile(id='plastics_plant_tile_1',
-                  location_checks=TileLocationChecks(disallow_industry_adjacent=True))
+                  location_checks=TileLocationChecks(disallow_slopes=True,
+                                                     disallow_industry_adjacent=True))
 
 spriteset_ground = industry.add_spriteset(
     id = 'plastics_plant_spriteset_ground',
