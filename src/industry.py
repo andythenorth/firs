@@ -449,6 +449,7 @@ class Industry(object):
         return utils.unescape_chameleon_output(template(industry=self, global_constants=global_constants))
 
     def get_extra_text_secondary(self):
+        # !! this can be removed once snakebite is done
         template = templates['extra_text_secondary.pynml']
         return utils.unescape_chameleon_output(template(industry=self, global_constants=global_constants))
 
@@ -556,6 +557,11 @@ class IndustrySecondary(Industry):
             return 0
         else:
             return self.processed_cargos_and_output_ratios[cargo_num - 1][1]
+
+    def get_boost(self, supplied_cargo, boosted_cargo):
+        # not implemented
+        print('get_boost() not implemented yet - returning 0')
+        return 0
 
 class IndustryTertiary(Industry):
     """ Industries that consume cargo and don't produce much (or anything), typically black holes in or near towns """
