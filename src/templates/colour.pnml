@@ -29,24 +29,3 @@ switch(FEAT_INDUSTRIES, SELF, name, colour) { \
 	15: return 14; \
 	return 0; \
 }
-
-#define SWITCH_COLOUR_SCHEME2(name) \
-switch(FEAT_INDUSTRIES, SELF, name, colour) { \
-	0: return 5; \
-	1: return 1; \
-	2: return 2; \
-	3: return 3; \
-	4: return 2; \
-	5: return 5; \
-	6: return 1; \
-	7: return 7; \
-	8: return 5; \
-	9: return 14; \
-	10: return 10; \
-	11: return 10; \
-	12: return 3; \
-	13: return 13; \
-	14: return 14; \
-	15: return 15; \
-	return 0; \
-}
