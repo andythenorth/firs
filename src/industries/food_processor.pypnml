@@ -70,7 +70,7 @@ ${industry.get_industry_layouts_as_tilelayouts()}
 #define THIS_BOOST_31             0
 #define THIS_BOOST_32             0
 
-#define THIS_STR_DEBUG_TEXT       STR_EXTRA_TEXT_DEBUG_SECONDARY
+
 
 CHECK_INCOMPATIBLE  (food_processor, 56, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
 CHECK_INCOMPATIBLE  (mixed_farm, 16, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_food_processor)
