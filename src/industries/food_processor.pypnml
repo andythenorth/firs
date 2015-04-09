@@ -76,7 +76,7 @@ CHECK_INCOMPATIBLE  (food_processor, 56, CB_RESULT_LOCATION_DISALLOW, return CB_
 CHECK_INCOMPATIBLE  (mixed_farm, 16, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_food_processor)
 CHECK_FOUNDER       (${industry.id}_mixed_farm)
 
-SWITCH_COLOUR_SCHEME2(${industry.id}_colour)
+SWITCH_COLOUR_SCHEME1(${industry.id}_colour)
 
 #include "../../src/templates/produce_secondary.pnml"
 #include "../../src/templates/check_secondary_production_level.pnml"
