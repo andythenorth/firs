@@ -5,6 +5,8 @@
   See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
 """
 
+from collections import deque
+
 import os.path
 currentdir = os.curdir
 
@@ -48,13 +50,15 @@ class Tile(object):
 class TileLocationChecks(object):
     """ Class to hold location checks for a tile """
     def __init__(self, **kwargs):
+        self.disallow_slopes = kwargs.get('disallow_slopes', False)
         self.road_adjacent = kwargs.get('road_adjacent', [])
 
     def get_render_tree(self, tile_id, industry_id):
         switch_prefix = tile_id + '_lc_'
         # !! might be better done as collections.deque? (makes appendleft available, amongst other benefits)
-        result = [TileLocationCheckFounder()]
-
+        result = deque([TileLocationCheckFounder()])
+        if self.disallow_slopes:
+            result.appendleft(TileLocationCheckDisallowSlopes())
         for direction in self.road_adjacent:
             result.append(TileLocationCheckRoadAdjacent(direction))
 
@@ -71,7 +75,7 @@ class TileLocationChecks(object):
 
 class TileLocationCheckDisallowSlopes(object):
     """ Prevent building on slopes (not steep slopes) """
-    def __init__(self, direction):
+    def __init__(self):
         self.switch_result = None # no default value for this check, it may not be the last check in a chain
         self.switch_entry_point = None
 

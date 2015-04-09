@@ -42,7 +42,8 @@ industry.economy_variations['BASIC_ARCTIC'].enabled = True
 
 industry.add_tile(id='petrol_pump_tile_1',
                   land_shape_flags='bitmask(LSF_ONLY_ON_FLAT_LAND)',
-                  location_checks=TileLocationChecks(road_adjacent=['nw', 'ne', 'sw', 'se']))
+                  location_checks=TileLocationChecks(disallow_slopes=True,
+                                                     road_adjacent=['nw', 'ne', 'sw', 'se']))
 
 sprite_ground = industry.add_sprite(
     sprite_number = 'GROUNDTILE_SLABS',
