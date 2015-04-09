@@ -70,9 +70,7 @@ class TileLocationChecks(object):
 
 
 class TileLocationCheckRoadAdjacent(object):
-    """
-        requires road on adjacent tile(s), with configurable directions
-    """
+    """ Requires road on adjacent tile(s), with configurable directions """
     def __init__(self, direction):
         self.direction_map = {'nw': (0, -1), 'se': (0, 1), 'ne': (-1, 0), 'sw': (1, 0)}
         self.direction = direction
@@ -86,7 +84,7 @@ class TileLocationCheckRoadAdjacent(object):
 
 class TileLocationCheckFounder(object):
     """
-        used to over-ride non-essential checks when player is building;
+        Used to over-ride non-essential checks when player is building;
         some tile checks relating to landscape are essential and cannot be over-ridden by player
     """
     def __init__(self):
@@ -113,7 +111,7 @@ class Sprite(object):
 
 
 class SmokeSprite(object):
-    """Base class to handle smoke sprites (using smoke sprite numbers from a base set)"""
+    """ Base class to handle smoke sprites (using smoke sprite numbers from a base set) """
     def __init__(self, smoke_type, xoffset=0, yoffset=0, zoffset=0, hide_sprite=0, animation_frame_offset=0):
         # animation_frame_offset can be used to desynchronise animations in the same tile (or in some cases within the same industry as an alternative to animation triggers)
         # defaults
@@ -144,7 +142,7 @@ class SmokeSprite(object):
 
 
 class Spriteset(object):
-    """Base class to hold industry spritesets"""
+    """ Base class to hold industry spritesets """
     # !! arguably this should be two different classes, one for building/feature spritesets, and one for ground spritesets
     def __init__(self, id, sprites=[], type='', xoffset=0, yoffset=0, zoffset=0, xextent=16, yextent=16,
                  zextent=16, animation_rate = 0, always_draw=0, num_sprites_to_autofill = 1):
@@ -167,7 +165,7 @@ class Spriteset(object):
 
 
 class SpriteLayout(object):
-    """Base class to hold spritelayouts for industry spritelayouts"""
+    """ Base class to hold spritelayouts for industry spritelayouts """
     def __init__(self, id, ground_sprite, ground_overlay, building_sprites, smoke_sprites=[], fences=[]):
         self.id = id
         self.ground_sprite = ground_sprite
@@ -178,14 +176,14 @@ class SpriteLayout(object):
 
 
 class IndustryLayout(object):
-    """Base class to hold industry layouts"""
+    """ Base class to hold industry layouts """
     def __init__(self, id, layout):
         self.id = id
         self.layout = layout # a list of 4-tuples (SE offset from N tile, SW offset from N tile, tile identifier, identifier of spriteset or next nml switch)
 
 
 class IndustryLocationChecks(object):
-    """class to hold location checks for an industry"""
+    """ Class to hold location checks for an industry """
     def __init__(self, **kwargs):
         self.incompatible = kwargs.get('incompatible', {})
 
@@ -203,7 +201,7 @@ class IndustryLocationChecks(object):
 
 
 class IndustryLocationCheckIncompatible(object):
-    """prevent locating near incompatible industry types"""
+    """ Prevent locating near incompatible industry types """
     def __init__(self, industry_type, distance):
         self.industry_type = industry_type
         # use the numeric_id so that we can do single-industry compiles without nml barfing on missing identifiers
@@ -217,7 +215,7 @@ class IndustryLocationCheckIncompatible(object):
 
 
 class IndustryLocationCheckFounder(object):
-    """ensures player can build irrespective of _industry_ location checks (tile checks still apply)"""
+    """ Ensures player can build irrespective of _industry_ location checks (tile checks still apply) """
     def __init__(self):
         self.switch_result = 'return CB_RESULT_LOCATION_ALLOW' # default result, value may also be id for next switch
         self.switch_entry_point = 'check_founder'
@@ -228,7 +226,7 @@ class IndustryLocationCheckFounder(object):
 
 
 class IndustryProperties(object):
-    """Base class to hold properties corresponding to nml industry item properties"""
+    """ Base class to hold properties corresponding to nml industry item properties """
     def __init__(self, **kwargs):
         # nml item properties, most of these should be provided as strings for insertion into nml.  See nml docs for meaning + acceptable values.
         self.substitute = kwargs.get('substitute', None)
@@ -265,7 +263,7 @@ class IndustryProperties(object):
 
 
 class Industry(object):
-    """Base class for all types of industry"""
+    """ Base class for all types of industry """
     def __init__(self, id, graphics_change_dates=[], **kwargs):
         self.id = id
         self.graphics_change_dates = graphics_change_dates # 0-based, ordered list of dates for which graphics should change, match to graphics suffixed _1, _2, _3 etc.
@@ -486,7 +484,7 @@ class Industry(object):
 
 
 class IndustryTertiary(Industry):
-    """ industries that consume cargo and don't produce much (or anything), typically black holes in or near towns """
+    """ Industries that consume cargo and don't produce much (or anything), typically black holes in or near towns """
     def __init__(self, **kwargs):
         super(IndustryTertiary, self).__init__(**kwargs)
         self.template = 'industry_tertiary.pypnml'
