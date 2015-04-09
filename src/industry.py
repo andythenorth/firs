@@ -190,6 +190,7 @@ class IndustryLocationChecks(object):
         self.incompatible = kwargs.get('incompatible', {})
 
     def get_render_tree(self, switch_prefix):
+        # this could be reimplemented to just use numeric switch suffixes, as per tile location check
         result = [IndustryLocationCheckFounder()]
         for industry_type, distance in self.incompatible.items():
             result.append(IndustryLocationCheckIncompatible(industry_type, distance))
