@@ -31,10 +31,10 @@
 <tal:include metal:use-macro="load: industry_layouts.pynml" />
 
 /* for secondary production template */
-#define THIS_NUM_OUTPUT_CARGOS    2
-#define THIS_PROD_RATIO_CARGO1    6
-#define THIS_PROD_RATIO_CARGO2    6
-#define THIS_PROD_RATIO_CARGO3    0
+#define THIS_NUM_OUTPUT_CARGOS    ${industry.get_num_output_cargos()}
+#define THIS_PROD_RATIO_CARGO1    ${industry.get_prod_ratio(1)}
+#define THIS_PROD_RATIO_CARGO2    ${industry.get_prod_ratio(2)}
+#define THIS_PROD_RATIO_CARGO3    ${industry.get_prod_ratio(3)}
 #define THIS_BOOST_12             0
 #define THIS_BOOST_13             0
 #define THIS_BOOST_21             0

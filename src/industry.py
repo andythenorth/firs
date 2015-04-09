@@ -547,6 +547,15 @@ class IndustrySecondary(Industry):
         super(IndustrySecondary, self).__init__(**kwargs)
         self.template = 'industry_secondary.pypnml'
 
+    def get_num_output_cargos(self):
+        # !! no economy support currently, CPP templating doesn't handle it, but will be needed after snakebite
+        return len(self.get_property('prod_cargo_types', None))
+
+    def get_prod_ratio(self, cargo_num):
+        if cargo_num > len(self.processed_cargos_and_output_ratios):
+            return 0
+        else:
+            return self.processed_cargos_and_output_ratios[cargo_num - 1][1]
 
 class IndustryTertiary(Industry):
     """ Industries that consume cargo and don't produce much (or anything), typically black holes in or near towns """
