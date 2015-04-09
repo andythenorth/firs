@@ -104,7 +104,7 @@ class TileLocationCheckDisallowIndustryAdjacent(object):
         2. Not necessary for most town industries
     """
     def __init__(self):
-        self.switch_result = 'return CB_RESULT_LOCATION_DISALLOW' # default result, value may also be id for next switch
+        self.switch_result = 'return CB_RESULT_LOCATION_ALLOW' # default result, value may also be id for next switch
         self.switch_entry_point = None
 
     def render(self):
