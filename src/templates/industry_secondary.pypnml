@@ -30,7 +30,6 @@
 
 <tal:include metal:use-macro="load: industry_layouts.pynml" />
 
-
 /* for secondary production template */
 #define THIS_NUM_OUTPUT_CARGOS    2
 #define THIS_PROD_RATIO_CARGO1    6
@@ -45,7 +44,7 @@
 
 #define THIS_STR_DEBUG_TEXT       STR_EXTRA_TEXT_DEBUG_SECONDARY
 
-SWITCH_COLOUR_SCHEME2(${industry.id}_colour)
+SWITCH_COLOUR_SCHEME1(${industry.id}_colour)
 
 #include "../../src/templates/produce_secondary.pnml"
 #include "../../src/templates/check_secondary_production_level.pnml"
@@ -63,14 +62,29 @@ ${industry.get_extra_text_secondary()}
 
 <tal:include metal:use-macro="load: industry_properties.pynml" />
 
-item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
-	graphics {
-		produce_cargo_arrival:   ${industry.id}_produce;
-		monthly_prod_change:     ${industry.id}_check_production_level;
-		random_prod_change:      ${industry.id}_check_closure;
-		extra_text_industry:     ${industry.id}_extra_text;
-		colour:                  ${industry.id}_colour;
-	}
-}
+<!--! graphics block defined explicitly per industry subclass, to avoid too much fiddly conditional stuff -->
+<tal:build_economies repeat="economy global_constants.economies">
+    if (economy==${repeat.economy.index}) {
+        <tal:industry_on_or_off condition="industry.get_property('enabled', economy) == True">
+            item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
+                graphics {
+                    construction_probability: ${industry.id}_check_availability;
+                    build_prod_change:        randomise_primary_production_on_build;
+                    produce_cargo_arrival:    ${industry.id}_produce;
+                    monthly_prod_change:      ${industry.id}_check_production_level;
+                    random_prod_change:       ${industry.id}_check_closure;
+                    location_check:           ${industry.id}_check_location;
+                    <tal:intro_year condition="industry.intro_year is not None">
+                        extra_text_fund:          return string(STR_FUND_AVAILABLE_FROM, ${industry.intro_year});
+                    </tal:intro_year>
+                    <tal:extra_text_industry condition="industry.get_property('extra_text_industry', economy) is not None">
+                        extra_text_industry:      ${industry.id}_extra_text;
+                    </tal:extra_text_industry>
+                    colour:                   ${industry.id}_colour;
+                }
+            }
+        </tal:industry_on_or_off>
+    }
+</tal:build_economies>
 
 #include "../../src/templates/undefs.pnml"

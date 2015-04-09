@@ -40,4 +40,22 @@
 
 <tal:include metal:use-macro="load: industry_properties.pynml" />
 
+<!--! graphics block defined explicitly per industry subclass, to avoid too much fiddly conditional stuff -->
+<tal:build_economies repeat="economy global_constants.economies">
+    if (economy==${repeat.economy.index}) {
+        <tal:industry_on_or_off condition="industry.get_property('enabled', economy) == True">
+            item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
+                graphics {
+                    construction_probability: ${industry.id}_check_availability;
+                    build_prod_change:        randomise_primary_production_on_build;
+                    location_check:           ${industry.id}_check_location;
+                    <tal:intro_year condition="industry.intro_year is not None">
+                        extra_text_fund:         return string(STR_FUND_AVAILABLE_FROM, ${industry.intro_year});
+                    </tal:intro_year>
+                }
+            }
+        </tal:industry_on_or_off>
+    }
+</tal:build_economies>
+
 #include "../../src/templates/undefs.pnml"
