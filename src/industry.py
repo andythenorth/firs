@@ -536,6 +536,13 @@ class Industry(object):
         return templated_pnml
 
 
+class IndustrySecondary(Industry):
+    """ Processing industries: input cargo(s) -> output cargo(s) """
+    def __init__(self, **kwargs):
+        super(IndustrySecondary, self).__init__(**kwargs)
+        self.template = 'industry_secondary.pypnml'
+
+
 class IndustryTertiary(Industry):
     """ Industries that consume cargo and don't produce much (or anything), typically black holes in or near towns """
     def __init__(self, **kwargs):
