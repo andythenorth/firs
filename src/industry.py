@@ -541,6 +541,10 @@ class IndustrySecondary(Industry):
     def __init__(self, **kwargs):
         super(IndustrySecondary, self).__init__(**kwargs)
         self.template = 'industry_secondary.pypnml'
+        #  input multipliers are 0 for all secondary industries, set these explicitly, don't rely on sensible defaults
+        self.input_multiplier_1 = '[0, 0]'
+        self.input_multiplier_3 = '[0, 0]'
+        self.input_multiplier_2 = '[0, 0]'
 
 
 class IndustryTertiary(Industry):
