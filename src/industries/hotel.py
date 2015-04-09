@@ -24,7 +24,7 @@ industry = IndustryTertiary(id='hotel',
                     prod_decrease_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_GENERAL',
                     life_type='IND_LIFE_TYPE_BLACK_HOLE',
                     min_cargo_distr='2',
-                    spec_flags='bitmask(IND_FLAG_BUILT_NEAR_TOWN)',
+                    spec_flags='0',
                     location_checks=IndustryLocationChecks(incompatible={'hotel': 20,
                                                                          'petrol_pump': 16,
                                                                          'food_market': 16}),
@@ -44,7 +44,8 @@ industry.economy_variations['MISTAH_KURTZ'].enabled = True
 
 industry.add_tile(id='hotel_tile_1',
                   land_shape_flags='bitmask(LSF_ONLY_ON_FLAT_LAND)',
-                  location_checks=TileLocationChecks(disallow_slopes=True))
+                  location_checks=TileLocationChecks(disallow_slopes=True,
+                                                     require_houses_nearby=True))
 
 sprite_ground = industry.add_sprite(
     sprite_number = 'GROUNDSPRITE_CLEARED'
