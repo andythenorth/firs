@@ -286,14 +286,15 @@ class IndustryProperties(object):
         self.override = kwargs.get('override', None)
         self.name = kwargs.get('name', None)
         self.nearby_station_name = kwargs.get('nearby_station_name', None)
-        self.layouts = kwargs.get('layouts', None) # !! automatic layout handling can be specified for this using 'AUTO' as the value
+        self.layouts = kwargs.get('layouts', None) # automatic layout handling can be specified for this using 'AUTO' as the value
         self.accept_cargo_types = kwargs.get('accept_cargo_types', None)
         self.prod_cargo_types = kwargs.get('prod_cargo_types', None)
         self.prod_multiplier = kwargs.get('prod_multiplier', None)
         self.min_cargo_distr = kwargs.get('min_cargo_distr', None)
-        self.input_multiplier_1 = kwargs.get('input_multiplier_1', None)
-        self.input_multiplier_2 = kwargs.get('input_multiplier_2', None)
-        self.input_multiplier_3 = kwargs.get('input_multiplier_3', None)
+        #  input multipliers must be explicitly 0 unless set, don't rely on sensible defaults
+        self.input_multiplier_1 = kwargs.get('input_multiplier_1', '[0, 0]')
+        self.input_multiplier_2 = kwargs.get('input_multiplier_2', '[0, 0]')
+        self.input_multiplier_3 = kwargs.get('input_multiplier_3', '[0, 0]')
         self.prod_increase_msg = kwargs.get('prod_increase_msg', None)
         self.prod_decrease_msg = kwargs.get('prod_decrease_msg', None)
         self.new_ind_msg = kwargs.get('new_ind_msg', None)
@@ -309,7 +310,7 @@ class IndustryProperties(object):
         # not nml properties
         self.enabled = kwargs.get('enabled', False)
         self.override_default_construction_states = kwargs.get('override_default_construction_states', False)
-        self.extra_text_industry = kwargs.get('extra_text_industry', None) # value is string(s) to return for corresponding nml cb, use 'STR_GENERIC_NEWLINE' in default property declaration if no string needed
+        self.extra_text_industry = kwargs.get('extra_text_industry', None) # value is string(s) to return for corresponding nml cb
         # nml properties we want to prevent being set for one reason or another
         if 'conflicting_ind_types' in kwargs:
             raise Exception("Don't set conflicting_ind_types property; use the FIRS location checks for conflicting industry (these are more flexible).")
@@ -539,12 +540,12 @@ class Industry(object):
 class IndustrySecondary(Industry):
     """ Processing industries: input cargo(s) -> output cargo(s) """
     def __init__(self, **kwargs):
+        # !! this will need to handle economy variations also...might be non-viable in current form
+        # - do that after snakebite, the CPP templating doesn't handle economy variations either
+        self.processed_cargos_and_output_ratios = kwargs['processed_cargos_and_output_ratios'] # this kw is required, error if missing - no .get()
+        kwargs['accept_cargo_types'] = [i[0] for i in self.processed_cargos_and_output_ratios]
         super(IndustrySecondary, self).__init__(**kwargs)
         self.template = 'industry_secondary.pypnml'
-        #  input multipliers are 0 for all secondary industries, set these explicitly, don't rely on sensible defaults
-        self.input_multiplier_1 = '[0, 0]'
-        self.input_multiplier_3 = '[0, 0]'
-        self.input_multiplier_2 = '[0, 0]'
 
 
 class IndustryTertiary(Industry):
