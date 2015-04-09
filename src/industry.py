@@ -69,6 +69,16 @@ class TileLocationChecks(object):
         return list(reversed(result))
 
 
+class TileLocationCheckDisallowSlopes(object):
+    """ Prevent building on slopes (not steep slopes) """
+    def __init__(self, direction):
+        self.switch_result = None # no default value for this check, it may not be the last check in a chain
+        self.switch_entry_point = None
+
+    def render(self):
+        return 'TILE_DISALLOW_SLOPES(' + self.switch_entry_point + ', CB_RESULT_LOCATION_DISALLOW,' + self.switch_result + ')'
+
+
 class TileLocationCheckRoadAdjacent(object):
     """ Requires road on adjacent tile(s), with configurable directions """
     def __init__(self, direction):
