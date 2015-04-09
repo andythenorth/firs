@@ -60,13 +60,13 @@ SWITCH_COLOUR_SCHEME1(${industry.id}_colour)
 #define THIS_NUM_OUTPUT_CARGOS    1
 #define THIS_PROD_RATIO_CARGO1    3
 #define THIS_PROD_RATIO_CARGO2    5
-#define THIS_PROD_RATIO_CARGO3    5
+#define THIS_PROD_RATIO_CARGO3    5  <!--! looks wrong -->
 #define THIS_BOOST_12             3
 #define THIS_BOOST_13             3
 #define THIS_BOOST_21             5
-#define THIS_BOOST_23             0
+#define THIS_BOOST_23             0  <!--! looks wrong -->
 #define THIS_BOOST_31             5
-#define THIS_BOOST_32             0
+#define THIS_BOOST_32             0  <!--! looks wrong -->
 
 
 #include "../../src/templates/produce_secondary.pnml"
