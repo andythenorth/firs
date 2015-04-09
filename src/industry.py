@@ -68,6 +68,7 @@ class TileLocationChecks(object):
 
         return list(reversed(result))
 
+
 class TileLocationCheckRoadAdjacent(object):
     """
         requires road on adjacent tile(s), with configurable directions
