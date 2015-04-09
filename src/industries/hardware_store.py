@@ -40,7 +40,7 @@ industry.economy_variations['FIRS'].enabled = True
 
 industry.add_tile(id='hardware_store_tile_1',
                   land_shape_flags='bitmask(LSF_ONLY_ON_FLAT_LAND)',
-                  location_checks=TileLocationChecks(road_adjacent=['nw', 'ne', 'sw', 'se']))
+                  location_checks=TileLocationChecks(require_road_adjacent=['nw', 'ne', 'sw', 'se']))
 
 hardware_store_spriteset_ground = industry.add_spriteset(
     id = 'hardware_store_spriteset_ground',

@@ -51,7 +51,7 @@ class TileLocationChecks(object):
     """ Class to hold location checks for a tile """
     def __init__(self, **kwargs):
         self.disallow_slopes = kwargs.get('disallow_slopes', False)
-        self.road_adjacent = kwargs.get('road_adjacent', [])
+        self.require_road_adjacent = kwargs.get('require_road_adjacent', [])
 
     def get_render_tree(self, tile_id, industry_id):
         switch_prefix = tile_id + '_lc_'
@@ -59,8 +59,8 @@ class TileLocationChecks(object):
         result = deque([TileLocationCheckFounder()])
         if self.disallow_slopes:
             result.appendleft(TileLocationCheckDisallowSlopes())
-        for direction in self.road_adjacent:
-            result.append(TileLocationCheckRoadAdjacent(direction))
+        for direction in self.require_road_adjacent:
+            result.append(TileLocationCheckRequireRoadAdjacent(direction))
 
         # walk the tree, setting entry points and results (id of next switch) for each switch
         for count, lc in enumerate(result):
@@ -83,7 +83,7 @@ class TileLocationCheckDisallowSlopes(object):
         return 'TILE_DISALLOW_SLOPES(' + self.switch_entry_point + ', CB_RESULT_LOCATION_DISALLOW,' + self.switch_result + ')'
 
 
-class TileLocationCheckRoadAdjacent(object):
+class TileLocationCheckRequireRoadAdjacent(object):
     """ Requires road on adjacent tile(s), with configurable directions """
     def __init__(self, direction):
         self.direction_map = {'nw': (0, -1), 'se': (0, 1), 'ne': (-1, 0), 'sw': (1, 0)}
