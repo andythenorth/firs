@@ -80,8 +80,9 @@
                     <th>Name</th>
                     <th>NML identifier</th>
                     <th>Name Strings <span class="muted">(May Vary by Economy)</span</th>
-                    <th class="number">ID (dec)</th>
-                    <th class="number">Map Colour</th>
+                    <th nowrap="true" class="number">ID (dec)</th>
+                    <th nowrap="true" class="number">Map Colour</th>
+                    <th>Snakebite?</th>
                 </tr>
             </thead>
             <tbody>
@@ -95,6 +96,7 @@
                             <td>${', '.join(doc_helper.get_industry_all_name_strings(industry))}</td>
                             <td class="number">${global_constants.industry_numeric_ids[industry.id]}</td>
                             <td class="number">${industry.get_property('map_colour', None)}</td>
+                            <td>${getattr(industry, 'snakebite', False)}</td>
                         </tr>
                     </tal:industry>
                 </tal:industries>
