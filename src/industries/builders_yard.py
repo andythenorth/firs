@@ -5,9 +5,9 @@
   See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
 """
 
-from industry import Industry
+from industry import IndustryTertiary, TileLocationChecks, IndustryLocationChecks
 
-industry = Industry(id='builders_yard',
+industry = IndustryTertiary(id='builders_yard',
                     accept_cargo_types=['BDMT'],
                     input_multiplier_1='[0, 0]',
                     input_multiplier_3='[0, 0]',
@@ -24,18 +24,22 @@ industry = Industry(id='builders_yard',
                     prod_decrease_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_GENERAL',
                     life_type='IND_LIFE_TYPE_BLACK_HOLE',
                     min_cargo_distr='0',
+                    location_checks=IndustryLocationChecks(incompatible={'builders_yard': 20,
+                                                                         'hardware_store': 16}),
                     remove_cost_multiplier='0',
                     prospect_chance='0.75',
                     name='string(STR_IND_BUILDERS_YARD)',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_MILL))',
                     fund_cost_multiplier='16',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
-                    )
+                    snakebite=True)
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
 
-industry.add_tile(id='builders_yard_tile')
+industry.add_tile(id='builders_yard_tile_1',
+                  location_checks=TileLocationChecks(require_houses_nearby=True,
+                                                     disallow_industry_adjacent=True))
 
 sprite_ground = industry.add_sprite(
     sprite_number = 'GROUNDTILE_MUD_TRACKS'
@@ -70,13 +74,13 @@ industry.add_spritelayout(
 
 industry.add_industry_layout(
     id = 'builders_yard_industry_layout_1',
-    layout = [(0, 0, 'builders_yard_tile', 'builders_yard_spritelayout_1'),
-              (0, 1, 'builders_yard_tile', 'builders_yard_spritelayout_2'),
+    layout = [(0, 0, 'builders_yard_tile_1', 'builders_yard_spritelayout_1'),
+              (0, 1, 'builders_yard_tile_1', 'builders_yard_spritelayout_2'),
     ]
 )
 industry.add_industry_layout(
     id = 'builders_yard_industry_layout_2',
-    layout = [(0, 0, 'builders_yard_tile', 'builders_yard_spritelayout_1'),
-              (1, 0, 'builders_yard_tile', 'builders_yard_spritelayout_2'),
+    layout = [(0, 0, 'builders_yard_tile_1', 'builders_yard_spritelayout_1'),
+              (1, 0, 'builders_yard_tile_1', 'builders_yard_spritelayout_2'),
     ]
 )

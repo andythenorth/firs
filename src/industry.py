@@ -51,14 +51,28 @@ class TileLocationChecks(object):
     """ Class to hold location checks for a tile """
     def __init__(self, **kwargs):
         self.disallow_slopes = kwargs.get('disallow_slopes', False)
+        self.disallow_industry_adjacent = kwargs.get('disallow_industry_adjacent', False)
+        self.require_houses_nearby = kwargs.get('require_houses_nearby', False)
         self.require_road_adjacent = kwargs.get('require_road_adjacent', [])
 
     def get_render_tree(self, tile_id, industry_id):
         switch_prefix = tile_id + '_lc_'
-        # !! might be better done as collections.deque? (makes appendleft available, amongst other benefits)
         result = deque([TileLocationCheckFounder()])
+
         if self.disallow_slopes:
             result.appendleft(TileLocationCheckDisallowSlopes())
+
+        if self.disallow_industry_adjacent:
+            result.append(TileLocationCheckDisallowIndustryAdjacent())
+
+        if self.require_houses_nearby:
+            # !! possibly could be done simpler with a town zone check instead of a tile search
+            # but didn't want to unpick CPP templating as part of snakebite
+            search_points = [(0, 3), (3, 0), (0, -3), (-3, 0), (2, 2), (2, -2), (-2, 2), (3, 3),
+                             (3, -3), (-3, 3), (-3, -3), (4, 4), (4, -4), (-4, 4), (-4, 4)]
+            for search_offsets in search_points:
+                result.append(TileLocationCheckRequireHousesNearby(search_offsets))
+
         for direction in self.require_road_adjacent:
             result.append(TileLocationCheckRequireRoadAdjacent(direction))
 
@@ -83,6 +97,31 @@ class TileLocationCheckDisallowSlopes(object):
         return 'TILE_DISALLOW_SLOPES(' + self.switch_entry_point + ', CB_RESULT_LOCATION_DISALLOW,' + self.switch_result + ')'
 
 
+class TileLocationCheckDisallowIndustryAdjacent(object):
+    """
+        Prevent directly adjacent to another industry, used by most industries, but not all
+        1. Makes it too hard for the game to find a location for some types (typically large flat industries)
+        2. Not necessary for most town industries
+    """
+    def __init__(self):
+        self.switch_result = 'return CB_RESULT_LOCATION_DISALLOW' # default result, value may also be id for next switch
+        self.switch_entry_point = None
+
+    def render(self):
+        return 'TILE_DISALLOW_NEARBY_CLASS(' + self.switch_entry_point + ', TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW,' + self.switch_result + ')'
+
+
+class TileLocationCheckRequireHousesNearby(object):
+    """ Requires houses at offset x, y (to be fed by circular tile search) """
+    def __init__(self, search_offsets):
+        self.search_offsets = search_offsets
+        self.switch_result = 'return CB_RESULT_LOCATION_DISALLOW' # default result, value may also be id for next switch
+        self.switch_entry_point = None
+
+    def render(self):
+        return 'CHECK_HOUSES_NEARBY(' + self.switch_entry_point + ',' + ','.join(str(i) for i in self.search_offsets) + ',' + self.switch_result + ')'
+
+
 class TileLocationCheckRequireRoadAdjacent(object):
     """ Requires road on adjacent tile(s), with configurable directions """
     def __init__(self, direction):
@@ -98,8 +137,8 @@ class TileLocationCheckRequireRoadAdjacent(object):
 
 class TileLocationCheckFounder(object):
     """
-        Used to over-ride non-essential checks when player is building;
-        some tile checks relating to landscape are essential and cannot be over-ridden by player
+        Used to over-ride non-essential checks when player is building
+        Some tile checks relating to landscape are essential and are placed before player check
     """
     def __init__(self):
         self.switch_result = 'return CB_RESULT_LOCATION_ALLOW' # default result, value may also be id for next switch
