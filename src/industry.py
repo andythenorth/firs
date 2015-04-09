@@ -547,6 +547,7 @@ class IndustrySecondary(Industry):
         kwargs['accept_cargo_types'] = [i[0] for i in self.processed_cargos_and_output_ratios]
         super(IndustrySecondary, self).__init__(**kwargs)
         self.template = 'industry_secondary.pypnml'
+        self.combined_cargos_boost_prod = kwargs.get('combined_cargos_boost_prod', False)
 
     def get_num_output_cargos(self):
         # !! no economy support currently, CPP templating doesn't handle it, but will be needed after snakebite
@@ -558,10 +559,12 @@ class IndustrySecondary(Industry):
         else:
             return self.processed_cargos_and_output_ratios[cargo_num - 1][1]
 
-    def get_boost(self, supplied_cargo, boosted_cargo):
-        # not implemented
-        print('get_boost() not implemented yet - returning 0')
-        return 0
+    def get_boost(self, supplied_cargo_num, boosted_cargo_num):
+        if not self.combined_cargos_boost_prod:
+            return 0
+        if boosted_cargo_num > len(self.processed_cargos_and_output_ratios):
+            return 0
+        return self.get_prod_ratio(supplied_cargo_num)
 
 class IndustryTertiary(Industry):
     """ Industries that consume cargo and don't produce much (or anything), typically black holes in or near towns """
