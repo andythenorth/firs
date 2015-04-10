@@ -486,6 +486,7 @@ class Industry(object):
     def cargo_list_sugar_magic(self, cargo_list, economy, climate):
         # magic to deal with special cases in cargo lists - clean up the list returned to templates etc
         # SGBT + SGCN should both be defined when accepted or produced, they are climate sensitive
+        # !! KILL THE CLIMATE STUFF IN V2 - not needed, make it less complex, fewer LOC (do it by economy instead)
         if climate == "CLIMATE_TROPIC":
             cargo_list = ["SGCN" if cargo=="SGBT" else cargo for cargo in cargo_list]
         if climate != "CLIMATE_TROPIC":

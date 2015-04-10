@@ -18,6 +18,7 @@
           Tile properties that vary by economy.
           Additional super-jank handling per climate for SGBT / SGCN being climate specific.
           It was easiest to handle SGBT / SGCN jank generically even though it's only a single case
+          !! KILL THE CLIMATE STUFF IN V2 - not needed, make it less complex, fewer LOC
     -->
     <tal:economies repeat="economy global_constants.economies">
         <tal:climates repeat="climate global_constants.openttd_climates">
