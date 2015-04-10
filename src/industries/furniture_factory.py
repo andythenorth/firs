@@ -9,6 +9,7 @@ from industry import IndustrySecondary, TileLocationChecks, IndustryLocationChec
 
 industry = IndustrySecondary(id='furniture_factory',
                     processed_cargos_and_output_ratios=[('MNSP', 3), ('WDPR', 5)],
+                    combined_cargos_boost_prod=True,
                     prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL',
                     prod_cargo_types=['GOOD'],
                     layouts='AUTO',
