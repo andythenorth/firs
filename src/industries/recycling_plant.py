@@ -9,9 +9,6 @@ from industry import Industry
 
 industry = Industry(id='recycling_plant',
                     accept_cargo_types=['RCYC'],
-                    input_multiplier_1='[0, 0]',
-                    input_multiplier_3='[0, 0]',
-                    input_multiplier_2='[0, 0]',
                     prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL',
                     prod_cargo_types=['SCMT', 'MNSP'],
                     layouts='AUTO',

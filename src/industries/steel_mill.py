@@ -9,9 +9,6 @@ from industry import Industry
 
 industry = Industry(id='steel_mill',
                     accept_cargo_types=['IORE', 'COAL', 'SCMT'],
-                    input_multiplier_1='[0, 0]',
-                    input_multiplier_3='[0, 0]',
-                    input_multiplier_2='[0, 0]',
                     prob_in_game='2',
                     prob_random='5',
                     prod_cargo_types=['STEL'],

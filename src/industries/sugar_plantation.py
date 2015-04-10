@@ -9,9 +9,6 @@ from industry import Industry
 
 industry = Industry(id='sugar_plantation',
                     accept_cargo_types=['FMSP'],
-                    input_multiplier_1='[0, 0]',
-                    input_multiplier_3='[0, 0]',
-                    input_multiplier_2='[0, 0]',
                     prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_FARM',
                     prod_cargo_types=['SGBT'], # SGBT will be swapped to SGCN in tropic by magic in compile
                     layouts='AUTO',

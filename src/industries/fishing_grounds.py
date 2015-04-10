@@ -9,9 +9,6 @@ from industry import Industry
 
 industry = Industry(id='fishing_grounds',
                     accept_cargo_types=[],
-                    input_multiplier_1='[0, 0]',
-                    input_multiplier_3='[0, 0]',
-                    input_multiplier_2='[0, 0]',
                     prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL',
                     prod_cargo_types=['FISH'],
                     layouts='[tilelayout_fishing_grounds_1, tilelayout_fishing_grounds_2, tilelayout_fishing_grounds_3, tilelayout_fishing_grounds_4]',

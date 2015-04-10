@@ -9,9 +9,6 @@ from industry import Industry
 
 industry = Industry(id='oil_rig',
                     accept_cargo_types=['ENSP'],
-                    input_multiplier_1='[0, 0]',
-                    input_multiplier_3='[0, 0]',
-                    input_multiplier_2='[0, 0]',
                     prod_cargo_types=['OIL_', 'PASS'],
                     prob_in_game='6',
                     prob_random='6',
