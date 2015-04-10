@@ -148,7 +148,7 @@ tile_numeric_ids = dict(TILE_ARABLEFARM_1 = 160,
                         TILE_FOODPROCESSOR_1 = 229,
                         TILE_NITRATEMINE_1 = 230,
                         TILE_CHEMICALPLANT_1 = 231,
-                        TILE_VEHICLE_FACTORY_1 = 232)
+                        vehicle_factory_tile_1 = 232)
 
 chameleon_cache_dir =  'chameleon_cache'
 
