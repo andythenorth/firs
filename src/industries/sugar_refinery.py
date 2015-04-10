@@ -5,10 +5,11 @@
   See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
 """
 
-from industry import Industry
+from industry import IndustrySecondary, TileLocationChecks, IndustryLocationChecks
 
-industry = Industry(id='sugar_refinery',
-                    accept_cargo_types=['MNSP', 'SGBT'], # SGBT will be swapped to SGCN in tropic by magic in compile
+industry = IndustrySecondary(id='sugar_refinery',
+                    processed_cargos_and_output_ratios=[('MNSP', 3), ('SGBT', 5)], # SGBT will be swapped to SGCN in tropic by magic in compile
+                    combined_cargos_boost_prod=True,
                     prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL',
                     prod_cargo_types=['FOOD'],
                     layouts='AUTO',
@@ -22,13 +23,16 @@ industry = Industry(id='sugar_refinery',
                     life_type='4',
                     min_cargo_distr='5',
                     spec_flags='bitmask(IND_FLAG_MILITARY_AIRPLANE_CAN_EXPLODE)',
+                    location_checks=IndustryLocationChecks(incompatible={'sugar_refinery': 56,
+                                                                         'arable_farm': 16}),
                     remove_cost_multiplier='0',
                     prospect_chance='0.75',
                     name='string(STR_IND_SUGAR_REFINERY)',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_REFINERY))',
                     fund_cost_multiplier='140',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
-                    extra_text_industry='STR_EXTRA_SUGAR_REFINERY')
+                    extra_text_industry='STR_EXTRA_SUGAR_REFINERY',
+                    snakebite=True)
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_TROPIC'].enabled = True
@@ -36,7 +40,12 @@ industry.economy_variations['BASIC_TROPIC'].prod_cargo_types = ['FOOD']
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].prod_cargo_types = ['SUGR']
 
-industry.add_tile(id='sugar_refinery_tile')
+industry.add_tile(id='sugar_refinery_tile_1',
+                  animation_length=7,
+                  animation_looping=True,
+                  animation_speed=3,
+                  location_checks=TileLocationChecks(disallow_slopes=True,
+                                                     disallow_industry_adjacent=True))
 
 spriteset_ground = industry.add_spriteset(
     id = 'sugar_refinery_spriteset_ground',
@@ -167,18 +176,18 @@ industry.add_spritelayout(
 
 industry.add_industry_layout(
     id = 'sugar_refinery_industry_layout_1',
-    layout = [(0, 0, 'sugar_refinery_tile', 'sugar_refinery_spritelayout_4'),
-              (0, 1, 'sugar_refinery_tile', 'sugar_refinery_spritelayout_4'),
-              (0, 2, 'sugar_refinery_tile', 'sugar_refinery_spritelayout_4'),
-              (1, 0, 'sugar_refinery_tile', 'sugar_refinery_spritelayout_8'),
-              (1, 1, 'sugar_refinery_tile', 'sugar_refinery_spritelayout_3'),
-              (1, 2, 'sugar_refinery_tile', 'sugar_refinery_spritelayout_1'),
-              (2, 0, 'sugar_refinery_tile', 'sugar_refinery_spritelayout_6'),
-              (2, 1, 'sugar_refinery_tile', 'sugar_refinery_spritelayout_9'),
-              (2, 2, 'sugar_refinery_tile', 'sugar_refinery_spritelayout_2'),
-              (3, 0, 'sugar_refinery_tile', 'sugar_refinery_spritelayout_7'),
-              (3, 1, 'sugar_refinery_tile', 'sugar_refinery_spritelayout_7'),
-              (3, 2, 'sugar_refinery_tile', 'sugar_refinery_spritelayout_5')
+    layout = [(0, 0, 'sugar_refinery_tile_1', 'sugar_refinery_spritelayout_4'),
+              (0, 1, 'sugar_refinery_tile_1', 'sugar_refinery_spritelayout_4'),
+              (0, 2, 'sugar_refinery_tile_1', 'sugar_refinery_spritelayout_4'),
+              (1, 0, 'sugar_refinery_tile_1', 'sugar_refinery_spritelayout_8'),
+              (1, 1, 'sugar_refinery_tile_1', 'sugar_refinery_spritelayout_3'),
+              (1, 2, 'sugar_refinery_tile_1', 'sugar_refinery_spritelayout_1'),
+              (2, 0, 'sugar_refinery_tile_1', 'sugar_refinery_spritelayout_6'),
+              (2, 1, 'sugar_refinery_tile_1', 'sugar_refinery_spritelayout_9'),
+              (2, 2, 'sugar_refinery_tile_1', 'sugar_refinery_spritelayout_2'),
+              (3, 0, 'sugar_refinery_tile_1', 'sugar_refinery_spritelayout_7'),
+              (3, 1, 'sugar_refinery_tile_1', 'sugar_refinery_spritelayout_7'),
+              (3, 2, 'sugar_refinery_tile_1', 'sugar_refinery_spritelayout_5')
     ]
 )
 

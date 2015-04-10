@@ -44,10 +44,11 @@ class Tile(object):
         self.animation_speed = kwargs.get('animation_speed', 0)
         self.animation_triggers = kwargs.get('animation_triggers', 'bitmask()') # only needed if anim_control cb is used
 
-
-    def get_expression_for_tile_acceptance(self, industry, economy=None):
+    def get_expression_for_tile_acceptance(self, industry, economy, climate):
         result = []
-        for cargo in industry.get_property('accept_cargo_types', economy):
+        accept_cargo_types = industry.get_property('accept_cargo_types', economy)
+        accept_cargo_types = industry.cargo_list_sugar_magic(accept_cargo_types, economy, climate)
+        for cargo in accept_cargo_types:
             result.append('[' + cargo + ', 8]')
         return ','.join(result)
 
@@ -554,6 +555,7 @@ class IndustrySecondary(Industry):
         super(IndustrySecondary, self).__init__(**kwargs)
         self.template = 'industry_secondary.pypnml'
         self.combined_cargos_boost_prod = kwargs.get('combined_cargos_boost_prod', False)
+        self.mnsp_boosts_production_jank = kwargs.get('mnsp_boosts_production_jank', False) # jank jank jank
 
     def get_num_output_cargos(self):
         # !! no economy support currently, CPP templating doesn't handle it, but will be needed after snakebite
@@ -566,11 +568,22 @@ class IndustrySecondary(Industry):
             return self.processed_cargos_and_output_ratios[cargo_num - 1][1]
 
     def get_boost(self, supplied_cargo_num, boosted_cargo_num):
-        if not self.combined_cargos_boost_prod:
-            return 0
-        if boosted_cargo_num > len(self.processed_cargos_and_output_ratios):
-            return 0
-        return self.get_prod_ratio(supplied_cargo_num)
+        # jank for MNSP first, this is due to design choices I now regret :|
+        # some industries boost only in combination with MNSP, rather than any/all accepted cargos, ugh
+        if self.mnsp_boosts_production_jank:
+            if self.processed_cargos_and_output_ratios[supplied_cargo_num - 1][0] == 'MNSP':
+                return self.get_prod_ratio(supplied_cargo_num)
+            elif self.processed_cargos_and_output_ratios[boosted_cargo_num - 1][0] == 'MNSP':
+                return self.get_prod_ratio(supplied_cargo_num)
+            else:
+                return 0
+        # not jank, proper
+        if self.combined_cargos_boost_prod:
+            if boosted_cargo_num > len(self.processed_cargos_and_output_ratios):
+                return 0
+            else:
+                return self.get_prod_ratio(supplied_cargo_num)
+        return 0
 
 class IndustryTertiary(Industry):
     """ Industries that consume cargo and don't produce much (or anything), typically black holes in or near towns """
