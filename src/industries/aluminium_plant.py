@@ -45,7 +45,6 @@ industry.add_tile(id='aluminium_plant_tile_1',
                   location_checks=TileLocationChecks(disallow_slopes=True,
                                                      disallow_industry_adjacent=True))
 
-
 spriteset_ground = industry.add_spriteset(
     id = 'aluminium_plant_spriteset_ground',
     type='concrete',
