@@ -5,10 +5,10 @@
   See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
 """
 
-from industry import Industry
+from industry import IndustrySecondary, TileLocationChecks, IndustryLocationChecks
 
-industry = Industry(id='smithy_forge',
-                    accept_cargo_types=['STEL'],
+industry = IndustrySecondary(id='smithy_forge',
+                    processed_cargos_and_output_ratios=[('STEL', 2)],
                     prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL',
                     prod_cargo_types=['ENSP', 'FMSP'],
                     layouts='AUTO',
@@ -22,17 +22,25 @@ industry = Industry(id='smithy_forge',
                     life_type='IND_LIFE_TYPE_PROCESSING',
                     min_cargo_distr='5',
                     spec_flags='bitmask(IND_FLAG_ONLY_IN_TOWNS)',
+                    location_checks=IndustryLocationChecks(incompatible={'smithy_forge': 56}),
                     remove_cost_multiplier='0',
                     prospect_chance='0.75',
                     name='string(STR_IND_SMITHY_FORGE)',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_INDUSTRY_ESTATE))',
                     fund_cost_multiplier='63',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
-                    extra_text_industry='STR_EXTRA_SMITHY_FORGE')
+                    extra_text_industry='STR_EXTRA_SMITHY_FORGE',
+                    expiry_year=1948,
+                    snakebite=True)
 
 industry.economy_variations['FIRS'].enabled = True
 
-industry.add_tile(id='smithy_forge_tile')
+industry.add_tile(id='smithy_forge_tile_1',
+                  animation_length=47,
+                  animation_looping=True,
+                  animation_speed=2,
+                  location_checks=TileLocationChecks(disallow_slopes=True,
+                                                     disallow_industry_adjacent=True))
 
 sprite_ground = industry.add_sprite(
     sprite_number = 'GROUNDTILE_MUD_TRACKS',
@@ -75,8 +83,8 @@ industry.add_spritelayout(
 )
 industry.add_industry_layout(
     id = 'smithy_forge_industry_layout',
-    layout = [(0, 0, 'smithy_forge_tile', 'smithy_forge_spritelayout_2'),
-              (1, 0, 'smithy_forge_tile', 'smithy_forge_spritelayout_1'),
+    layout = [(0, 0, 'smithy_forge_tile_1', 'smithy_forge_spritelayout_2'),
+              (1, 0, 'smithy_forge_tile_1', 'smithy_forge_spritelayout_1'),
     ]
 )
 
