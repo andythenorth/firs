@@ -39,10 +39,10 @@ class Tile(object):
         self.numeric_id = global_constants.tile_numeric_ids.get(self.id, None) # use of get() here is temporary during migrations, not needed otherwise
         self.land_shape_flags = kwargs.get('land_shape_flags', '0')
         self.location_checks = kwargs.get('location_checks')
-        self.animation_length = kwargs.get('animation_length', 1)
+        self.animation_length = kwargs.get('animation_length', 1) # allowed values 1-253
         self.animation_looping = kwargs.get('animation_looping', False)
         self.animation_speed = kwargs.get('animation_speed', 0)
-        self.animation_triggers = kwargs.get('animation_triggers', 'bitmask()')
+        self.animation_triggers = kwargs.get('animation_triggers', 'bitmask()') # only needed if anim_control cb is used
 
 
     def get_expression_for_tile_acceptance(self, industry, economy=None):
@@ -58,7 +58,7 @@ class TileLocationChecks(object):
         self.disallow_slopes = kwargs.get('disallow_slopes', False)
         self.disallow_industry_adjacent = kwargs.get('disallow_industry_adjacent', False)
         self.require_houses_nearby = kwargs.get('require_houses_nearby', False)
-        self.require_road_adjacent = kwargs.get('require_road_adjacent', [])
+        self.require_road_adjacent = kwargs.get('require_road_adjacent', []) # any of ['nw', 'ne', 'se', 'nw']
 
     def get_render_tree(self, tile_id, industry_id):
         switch_prefix = tile_id + '_lc_'
