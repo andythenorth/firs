@@ -39,7 +39,7 @@ class Tile(object):
         self.numeric_id = global_constants.tile_numeric_ids.get(self.id, None) # use of get() here is temporary during migrations, not needed otherwise
         self.land_shape_flags = kwargs.get('land_shape_flags', '0')
         self.location_checks = kwargs.get('location_checks')
-        self.animation_length = kwargs.get('animation_length', 0)
+        self.animation_length = kwargs.get('animation_length', 1)
         self.animation_looping = kwargs.get('animation_looping', False)
         self.animation_speed = kwargs.get('animation_speed', 0)
         self.animation_triggers = kwargs.get('animation_triggers', 'bitmask()')
