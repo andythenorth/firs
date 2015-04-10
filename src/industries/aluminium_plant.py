@@ -41,7 +41,6 @@ industry.add_tile(id='aluminium_plant_tile_1',
                   animation_length=47,
                   animation_looping=True,
                   animation_speed=2,
-                  animation_triggers='bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE)',
                   location_checks=TileLocationChecks(disallow_slopes=True,
                                                      disallow_industry_adjacent=True))
 
