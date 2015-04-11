@@ -145,7 +145,7 @@ tile_numeric_ids = dict(TILE_ARABLEFARM_1 = 160,
                         TILE_TRADING_POST_2 = 226,
                         TILE_RUBBER_PLANTATION_1 = 227,
                         TILE_RUBBER_PLANTATION_2 = 228,
-                        TILE_FOODPROCESSOR_1 = 229,
+                        food_processor_tile_1 = 229,
                         TILE_NITRATEMINE_1 = 230,
                         chemical_plant_tile_1 = 231,
                         vehicle_factory_tile_1 = 232)
