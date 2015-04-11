@@ -23,6 +23,8 @@ TILE_DISALLOW_NEARBY_CLASS(tile_nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_
 TILE_ALLOW_PLAYER         (tile_player_check,                                                            ${industry.id}_tile_nearby_industry)
 TILE_DISALLOW_SLOPES      (tile_location_check,                       CB_RESULT_LOCATION_DISALLOW, ${industry.id}_tile_player_check)
 
+<!--! why is this bothering to randomise on construction state change?  Other industries with this smoke don't bother -->
+<!--! also the flag isn't animated :| (Dairy is) -->
 /* Return a random animation frame from the extra_callback_info1 */
 switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_tile_anim_control, (extra_callback_info1 & 14)) {
 	0: return 0;
