@@ -42,7 +42,7 @@ class Tile(object):
         self.animation_length = kwargs.get('animation_length', 1) # allowed values 1-253
         self.animation_looping = kwargs.get('animation_looping', False)
         self.animation_speed = kwargs.get('animation_speed', 0)
-        self.animation_triggers = kwargs.get('animation_triggers', 'bitmask()') # only needed if anim_control cb is used
+        self.custom_animation_control = kwargs.get('custom_animation_control', None) # will cause animation
 
     def get_expression_for_tile_acceptance(self, industry, economy, climate):
         result = []
@@ -51,6 +51,16 @@ class Tile(object):
         for cargo in accept_cargo_types:
             result.append('[' + cargo + ', 8]')
         return ','.join(result)
+
+    def get_animation_triggers(self):
+        if self.custom_animation_control is None:
+            return 'bitmask()'
+        else:
+            return self.custom_animation_control['animation_triggers']
+
+    def animation_macros(self):
+        template = templates["animation_macros.pynml"]
+        return template.macros
 
 
 class TileLocationChecks(object):
@@ -585,6 +595,7 @@ class IndustrySecondary(Industry):
             else:
                 return self.get_prod_ratio(supplied_cargo_num)
         return 0
+
 
 class IndustryTertiary(Industry):
     """ Industries that consume cargo and don't produce much (or anything), typically black holes in or near towns """

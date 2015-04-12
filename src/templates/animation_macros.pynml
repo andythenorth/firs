@@ -1,0 +1,14 @@
+<metal:random_first_frame metal:define-macro="random_first_frame">
+    <!--!
+        Randomises the start frame of the animation.
+        Use to desync animations between tiles that are repeated in an industry
+        - avoids a horrible-looking synchronised effect for smoke, etc.
+        Set animation_triggers to 'bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE)'.
+    -->
+    switch(FEAT_INDUSTRYTILES, SELF, ${tile.id}_anim_control, (extra_callback_info1 & ${tile.animation_length})) {
+        <tal:frames repeat="frame range(tile.animation_length)">
+            ${repeat.frame.index}: return ${repeat.frame.index};
+        </tal:frames>
+        return CB_RESULT_NEXT_FRAME;
+    }
+</metal:random_first_frame>

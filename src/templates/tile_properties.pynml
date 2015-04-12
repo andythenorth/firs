@@ -6,11 +6,14 @@
             land_shape_flags:   ${tile.land_shape_flags};
             animation_info:     [${'ANIMATION_LOOPING' if tile.animation_looping else 'ANIMATION_NON_LOOPING'}, ${tile.animation_length}];
             animation_speed:    ${tile.animation_speed};
-            animation_triggers: ${tile.animation_triggers};
+            animation_triggers: ${tile.get_animation_triggers()};
         }
 
         graphics {
     		tile_check: ${industry.id}_${tile.id}_lc_0;
+    		<tal:anim_control condition="tile.custom_animation_control is not None">
+    		    anim_control: ${tile.id}_anim_control;
+    		</tal:anim_control>
             ${industry.id}_tile_fences;
         }
     }
