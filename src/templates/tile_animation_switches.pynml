@@ -1,3 +1,4 @@
 <tal:tile_location_checks repeat="tile industry.tiles">
-    <tal:conditional_macro_call condition="tile.custom_animation_control is not None" metal:use-macro="tile.animation_macros()['test']" />
+    <tal:conditional_macro_call condition="tile.custom_animation_control is not None"
+                                metal:use-macro="tile.animation_macros()[tile.custom_animation_control['macro']]" />
 </tal:tile_location_checks>

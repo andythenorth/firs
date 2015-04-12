@@ -39,10 +39,21 @@ class Tile(object):
         self.numeric_id = global_constants.tile_numeric_ids.get(self.id, None) # use of get() here is temporary during migrations, not needed otherwise
         self.land_shape_flags = kwargs.get('land_shape_flags', '0')
         self.location_checks = kwargs.get('location_checks')
+        # animation length (int), looping (bool), speed (int) should be set for all animations
+        # basic tile animation plays consecutive-frames from the spriteset
+        # spriteset can offset frames when multiple animations are used *on the same* tile (to avoid odd-looking sync effects)
+        # for extended control, the anim_control cb is used, e.g.
+        # - start/stop animation on conditions
+        # - play non-consecutive frames
+        # - de-sync animation for tiles that are repeated in an industry layout
+        # switches for this are provided as macros defined in animation_macros.pynml
+        # tiles should then set custom_anim_control={'macro':[MACRO NAME], 'triggers': 'bitmask([TRIGGERS])'}
+        # generally macros åre shared across industries, because animation has common cases
+        # industry-specific macros are ok if really required
         self.animation_length = kwargs.get('animation_length', 1) # allowed values 1-253
         self.animation_looping = kwargs.get('animation_looping', False)
         self.animation_speed = kwargs.get('animation_speed', 0)
-        self.custom_animation_control = kwargs.get('custom_animation_control', None) # will cause animation
+        self.custom_animation_control = kwargs.get('custom_animation_control', None)
 
     def get_expression_for_tile_acceptance(self, industry, economy, climate):
         result = []
