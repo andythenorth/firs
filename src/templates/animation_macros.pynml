@@ -5,7 +5,7 @@
         - avoids a horrible-looking synchronised effect for smoke, etc.
         Set animation_triggers to 'bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE)'.
     -->
-    switch(FEAT_INDUSTRYTILES, SELF, ${tile.id}_anim_control, (extra_callback_info1 & ${tile.animation_length})) {
+    switch(FEAT_INDUSTRYTILES, SELF, ${tile.id}_anim_control, (extra_callback_info1 % ${tile.animation_length})) {
         <tal:frames repeat="frame range(tile.animation_length)">
             ${repeat.frame.index}: return ${repeat.frame.index};
         </tal:frames>
