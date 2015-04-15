@@ -78,7 +78,7 @@ industry_numeric_ids = dict(coal_mine = 0x00,
 # tiles 0-159 currently vacant
 tile_numeric_ids = dict(TILE_ARABLEFARM_1 = 160,
                         brewery_tile_1 = 161,
-                        cement_plant_tile_1 = 162,
+                        brewery_tile_2 = 162,
                         fertiliser_plant_tile_1 = 163,
                         builders_yard_tile_1 = 164,
                         brick_works_tile_1 = 165,
@@ -148,7 +148,8 @@ tile_numeric_ids = dict(TILE_ARABLEFARM_1 = 160,
                         food_processor_tile_1 = 229,
                         TILE_NITRATEMINE_1 = 230,
                         chemical_plant_tile_1 = 231,
-                        vehicle_factory_tile_1 = 232)
+                        vehicle_factory_tile_1 = 232,
+                        cement_plant_tile_1 = 233)
 
 chameleon_cache_dir =  'chameleon_cache'
 
