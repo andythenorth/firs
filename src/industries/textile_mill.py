@@ -9,7 +9,7 @@ from industry import IndustrySecondary, TileLocationChecks, IndustryLocationChec
 
 industry = IndustrySecondary(id='textile_mill',
                     processed_cargos_and_output_ratios=[('MNSP', 3), ('WOOL', 5), ('FICR', 5)],
-                    mnsp_boosts_production_jank=True, # this is jank, supports a legacy design that ought to be changed
+                    mnsp_boosts_production_jank=True, # this is jank we have to live with
                     accept_cargo_types=['MNSP', '', 'FICR'],
                     prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL',
                     prod_cargo_types=['GOOD'],
