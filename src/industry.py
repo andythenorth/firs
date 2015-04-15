@@ -266,10 +266,13 @@ class IndustryLocationChecks(object):
     """ Class to hold location checks for an industry """
     def __init__(self, **kwargs):
         self.incompatible = kwargs.get('incompatible', {})
+        self.town_distance = kwargs.get('town_distance', None)
 
     def get_render_tree(self, switch_prefix):
         # this could be reimplemented to just use numeric switch suffixes, as per tile location check
         result = [IndustryLocationCheckFounder()]
+        if self.town_distance:
+            result.append(IndustryLocationCheckTownDistance(self.town_distance))
         for industry_type, distance in self.incompatible.items():
             result.append(IndustryLocationCheckIncompatible(industry_type, distance))
         prev = None
@@ -278,6 +281,18 @@ class IndustryLocationChecks(object):
                 lc.switch_result = switch_prefix + prev.switch_entry_point
             prev = lc
         return list(reversed(result))
+
+
+class IndustryLocationCheckTownDistance(object):
+    """ Require location within min, max distance of a town """
+    def __init__(self, town_distance):
+        self.min_distance = town_distance[0]
+        self.max_distance = town_distance[1]
+        self.switch_result = 'return CB_RESULT_LOCATION_ALLOW' # default result, value may also be id for next switch
+        self.switch_entry_point = 'town_distance'
+
+    def render(self):
+        return 'CHECK_TOWN_DISTANCE (' + self.switch_entry_point + ', ' + str(self.min_distance) + ',' + str(self.max_distance) + ',' + self.switch_result + ')'
 
 
 class IndustryLocationCheckIncompatible(object):
@@ -302,7 +317,6 @@ class IndustryLocationCheckFounder(object):
 
     def render(self):
         return 'CHECK_FOUNDER (' + self.switch_result + ')'
-
 
 
 class IndustryProperties(object):
