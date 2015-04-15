@@ -79,27 +79,11 @@ ${industry.get_extra_text_secondary()}
 
 #include "../../src/templates/check_availability.pnml"
 
-/* Decide randomly on cargo output:
- * First cargo is always MNSP, 2nd is randomly a choice of 4,
- * 3rd cargo is not allowed nor defined */
-random_switch (FEAT_INDUSTRIES, SELF, ${industry.id}_random_output_cargo) {
-	1: return SCMT;   // scrap metal
-	1: return RFPR;   // chemicals
-	1: return BDMT;   // building materials
-	1: return FMSP;   // farm supplies
-}
-switch(FEAT_INDUSTRIES, SELF, ${industry.id}_cargo_output, (extra_callback_info1 & 255)) {
-	0: return MNSP;                   // first output cargo
-	1: ${industry.id}_random_output_cargo;  // 2nd output cargo: randomly
-	return 0xFF;                      // terminate callback
-}
-
 ${industry.get_industry_properties()}
 
 item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
 	graphics {
 		produce_cargo_arrival:   ${industry.id}_produce;
-		cargo_output:            ${industry.id}_cargo_output;
 		construction_probability:${industry.id}_check_availability;
 		location_check:          ${industry.id}_check_location;
 		monthly_prod_change:     ${industry.id}_check_production_level;
