@@ -47,6 +47,14 @@ industry.economy_variations['BASIC_TEMPERATE'].name = 'string(STR_IND_BREWERY_CI
 industry.economy_variations['BASIC_ARCTIC'].extra_text_industry = 'STR_EXTRA_BREWERY, string(STR_EXTRA_BREWERY_GRAIN_SUBSTR)'
 
 industry.add_tile(id='brewery_tile_1',
+                  animation_length=6,
+                  animation_looping=True,
+                  animation_speed=3,
+                  custom_animation_control={'macro':'random_first_frame',
+                                            'animation_triggers': 'bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE)'},
+                  location_checks=TileLocationChecks(disallow_slopes=True,
+                                                     disallow_industry_adjacent=True))
+industry.add_tile(id='brewery_tile_2',
                   animation_length=71,
                   animation_looping=True,
                   animation_speed=2,
@@ -66,10 +74,23 @@ spriteset_1 = industry.add_spriteset(
     sprites = [(10, 60, 64, 91, -31, -60)],
     zextent = 48
 )
-spriteset_2 = industry.add_spriteset(
-    id = 'brewery_spriteset_2',
-    sprites = [(80, 60, 64, 91, -31, -60)],
-    zextent = 48
+# building with animated flags
+spriteset_2_anim = industry.add_spriteset(
+    id = 'brewery_spriteset_2_anim',
+    sprites = [(80, 390, 64, 91, -31, -60), (80, 60, 64, 91, -31, -60), (80, 170, 64, 91, -31, -60),
+               (80, 280, 64, 91, -31, -60), (80, 170, 64, 91, -31, -60), (80, 60, 64, 91, -31, -60)],
+    zextent = 48,
+    animation_rate = 1
+)
+spriteset_ground_anim = industry.add_spriteset(
+    id = 'brewery_spriteset_ground_anim',
+    type = 'cobble',
+    num_sprites_to_autofill = len(spriteset_2_anim.sprites), # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
+)
+spriteset_ground_overlay_anim = industry.add_spriteset(
+    id = 'brewery_spriteset_ground_overlay_anim',
+    type = 'empty',
+    num_sprites_to_autofill = len(spriteset_2_anim.sprites), # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
 )
 spriteset_3 = industry.add_spriteset(
     id = 'brewery_spriteset_3',
@@ -93,9 +114,9 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id = 'brewery_spritelayout_2',
-    ground_sprite = spriteset_ground,
-    ground_overlay = spriteset_ground_overlay,
-    building_sprites = [spriteset_2],
+    ground_sprite = spriteset_ground_anim,
+    ground_overlay = spriteset_ground_overlay_anim,
+    building_sprites = [spriteset_2_anim],
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
@@ -109,7 +130,7 @@ industry.add_spritelayout(
 industry.add_industry_layout(
     id = 'brewery_industry_layout_1',
     layout = [(0, 2, 'brewery_tile_1', 'brewery_spritelayout_3'),
-              (1, 0, 'brewery_tile_1', 'brewery_spritelayout_1_anim'),
+              (1, 0, 'brewery_tile_2', 'brewery_spritelayout_1_anim'),
               (1, 2, 'brewery_tile_1', 'brewery_spritelayout_2')
     ]
 )
@@ -117,19 +138,19 @@ industry.add_industry_layout(
     id = 'brewery_industry_layout_2',
     layout = [(0, 0, 'brewery_tile_1', 'brewery_spritelayout_3'),
               (1, 0, 'brewery_tile_1', 'brewery_spritelayout_2'),
-              (2, 0, 'brewery_tile_1', 'brewery_spritelayout_1_anim')
+              (2, 0, 'brewery_tile_2', 'brewery_spritelayout_1_anim')
     ]
 )
 industry.add_industry_layout(
     id = 'brewery_industry_layout_3',
     layout = [(0, 1, 'brewery_tile_1', 'brewery_spritelayout_3'),
-              (1, 0, 'brewery_tile_1', 'brewery_spritelayout_1_anim'),
+              (1, 0, 'brewery_tile_2', 'brewery_spritelayout_1_anim'),
               (1, 1, 'brewery_tile_1', 'brewery_spritelayout_2')
     ]
 )
 industry.add_industry_layout(
     id = 'brewery_industry_layout_4',
-    layout = [(0, 0, 'brewery_tile_1', 'brewery_spritelayout_1_anim'),
+    layout = [(0, 0, 'brewery_tile_2', 'brewery_spritelayout_1_anim'),
               (1, 0, 'brewery_tile_1', 'brewery_spritelayout_3'),
               (2, 0, 'brewery_tile_1', 'brewery_spritelayout_2')
     ]
@@ -140,7 +161,7 @@ industry.add_industry_layout(
               (0, 1, 'brewery_tile_1', 'brewery_spritelayout_3'),
               (1, 0, 'brewery_tile_1', 'brewery_spritelayout_2'),
               (1, 1, 'brewery_tile_1', 'brewery_spritelayout_2'),
-              (2, 0, 'brewery_tile_1', 'brewery_spritelayout_1_anim')
+              (2, 0, 'brewery_tile_2', 'brewery_spritelayout_1_anim')
     ]
 )
 
