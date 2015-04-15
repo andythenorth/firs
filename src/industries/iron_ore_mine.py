@@ -5,9 +5,9 @@
   See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
 """
 
-from industry import Industry
+from industry import IndustryPrimary, TileLocationChecks, IndustryLocationChecks
 
-industry = Industry(id='iron_ore_mine',
+industry = IndustryPrimary(id='iron_ore_mine',
                     accept_cargo_types=['ENSP'],
                     map_colour='55',
                     prospect_chance='0.75',

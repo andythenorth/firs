@@ -581,6 +581,13 @@ class Industry(object):
         return templated_pnml
 
 
+class IndustryPrimary(Industry):
+    """ Industries that produce cargo and (optionally) boost production if supplies are delivered """
+    def __init__(self, **kwargs):
+        super(IndustryPrimary, self).__init__(**kwargs)
+        self.template = 'industry_primary.pypnml'
+
+
 class IndustrySecondary(Industry):
     """ Processing industries: input cargo(s) -> output cargo(s) """
     def __init__(self, **kwargs):

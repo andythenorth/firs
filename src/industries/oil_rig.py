@@ -5,9 +5,9 @@
   See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
 """
 
-from industry import Industry
+from industry import IndustryPrimary, TileLocationChecks, IndustryLocationChecks
 
-industry = Industry(id='oil_rig',
+industry = IndustryPrimary(id='oil_rig',
                     accept_cargo_types=['ENSP'],
                     prod_cargo_types=['OIL_', 'PASS'],
                     prob_in_game='6',
