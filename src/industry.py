@@ -48,7 +48,7 @@ class Tile(object):
         # - de-sync animation for tiles that are repeated in an industry layout
         # switches for this are provided as macros defined in animation_macros.pynml
         # tiles should then set custom_anim_control={'macro':[MACRO NAME], 'triggers': 'bitmask([TRIGGERS])'}
-        # generally macros åre shared across industries, because animation has common cases
+        # generally macros are shared across industries, because animation has common cases
         # industry-specific macros are ok if really required
         self.animation_length = kwargs.get('animation_length', 1) # allowed values 1-253
         self.animation_looping = kwargs.get('animation_looping', False)
