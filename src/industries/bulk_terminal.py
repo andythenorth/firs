@@ -5,10 +5,10 @@
   See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
 """
 
-from industry import Industry
+from industry import IndustryPrimaryPort, TileLocationChecks, IndustryLocationChecks
 import global_constants
 
-industry = Industry(id='bulk_terminal',
+industry = IndustryPrimaryPort(id='bulk_terminal',
                     accept_cargo_types=['FOOD', 'FRUT', 'BEER'],
                     prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL',
                     prod_cargo_types=[],

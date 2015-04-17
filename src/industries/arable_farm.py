@@ -5,9 +5,9 @@
   See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
 """
 
-from industry import IndustryPrimary, TileLocationChecks, IndustryLocationChecks
+from industry import IndustryPrimaryOrganic, TileLocationChecks, IndustryLocationChecks
 
-industry = IndustryPrimary(id='arable_farm',
+industry = IndustryPrimaryOrganic(id='arable_farm',
                     accept_cargo_types=['FMSP'],
                     prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_FARM',
                     prod_cargo_types=['GRAI', 'SGBT'], # SGBT will be swapped to SGCN in tropic by magic in compile

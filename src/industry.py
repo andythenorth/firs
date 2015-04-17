@@ -588,6 +588,36 @@ class IndustryPrimary(Industry):
         self.template = 'industry_primary.pypnml'
 
 
+class IndustryPrimaryExtractive(Industry):
+    """
+        Industry that is extractive AND has production boosted by delivery of ENSP (mines and similar)
+        Sparse subclass of IndustryPrimary, do not add much to this, it's subclassed once already
+    """
+    def __init__(self, **kwargs):
+        super(IndustryPrimaryExtractive, self).__init__(**kwargs)
+        self.template = 'industry_primary.pypnml'
+
+
+class IndustryPrimaryOrganic(Industry):
+    """
+        Industry that is organic AND has production boosted by delivery of FMSP (farms and similar)
+        Sparse subclass of IndustryPrimary, do not add much to this, it's subclassed once already
+    """
+    def __init__(self, **kwargs):
+        super(IndustryPrimaryOrganic, self).__init__(**kwargs)
+        self.template = 'industry_primary.pypnml'
+
+
+class IndustryPrimaryPort(Industry):
+    """
+        Industry that is import-export AND has production boosted by delivery of arbitrary cargos (ports and similar)
+        Sparse subclass of IndustryPrimary, do not add much to this, it's subclassed once already
+    """
+    def __init__(self, **kwargs):
+        super(IndustryPrimaryPort, self).__init__(**kwargs)
+        self.template = 'industry_primary.pypnml'
+
+
 class IndustrySecondary(Industry):
     """ Processing industries: input cargo(s) -> output cargo(s) """
     def __init__(self, **kwargs):
