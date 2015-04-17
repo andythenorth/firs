@@ -589,7 +589,7 @@ class IndustryPrimaryExtractive(Industry):
         kwargs['accept_cargo_types'] = ['ENSP']
         super(IndustryPrimaryExtractive, self).__init__(**kwargs)
         self.template = 'industry_primary.pypnml'
-        self.supply_requirements = global_constants.supply_requirements['ENSP']
+        self.supply_requirements = [21, 84, 'PRIMARY'] # janky use of a un-named list for historical reasons (3rd item is string prefix)
 
 
 class IndustryPrimaryOrganic(Industry):
@@ -601,7 +601,7 @@ class IndustryPrimaryOrganic(Industry):
         kwargs['accept_cargo_types'] = ['FMSP']
         super(IndustryPrimaryOrganic, self).__init__(**kwargs)
         self.template = 'industry_primary.pypnml'
-        self.supply_requirements = global_constants.supply_requirements['FMSP']
+        self.supply_requirements = [14, 56, 'PRIMARY'] # janky use of a un-named list for historical reasons (3rd item is string prefix)
 
 
 class IndustryPrimaryPort(Industry):
@@ -612,7 +612,7 @@ class IndustryPrimaryPort(Industry):
     def __init__(self, **kwargs):
         super(IndustryPrimaryPort, self).__init__(**kwargs)
         self.template = 'industry_primary.pypnml'
-        self.supply_requirements = global_constants.supply_requirements['import_export']
+        self.supply_requirements = [56, 224, 'PORT'] # janky use of a un-named list for historical reasons (3rd item is string prefix)
 
 
 class IndustrySecondary(Industry):

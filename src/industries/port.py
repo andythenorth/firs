@@ -29,8 +29,7 @@ industry = IndustryPrimaryPort(id='port',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_IND_PORT))',
                     fund_cost_multiplier='152',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
-                    override_default_construction_states=True,
-                    supply_requirements=global_constants.supply_requirements['import_export'])
+                    override_default_construction_states=True)
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['FIRS'].accept_cargo_types = ['GOOD', 'FRUT', 'MNSP']
