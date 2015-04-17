@@ -8,7 +8,6 @@
 from industry import IndustryPrimaryOrganic, TileLocationChecks, IndustryLocationChecks
 
 industry = IndustryPrimaryOrganic(id='arable_farm',
-                    accept_cargo_types=['FMSP'],
                     prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_FARM',
                     prod_cargo_types=['GRAI', 'SGBT'], # SGBT will be swapped to SGCN in tropic by magic in compile
                     layouts='AUTO',

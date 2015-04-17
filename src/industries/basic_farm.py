@@ -8,7 +8,6 @@
 from industry import IndustryPrimaryOrganic, TileLocationChecks, IndustryLocationChecks
 
 industry = IndustryPrimaryOrganic(id='basic_farm',
-                    accept_cargo_types=['FMSP'],
                     prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_FARM',
                     prod_cargo_types=['GRAI', 'LVST'],
                     layouts='AUTO',

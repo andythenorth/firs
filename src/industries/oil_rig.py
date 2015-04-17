@@ -8,7 +8,6 @@
 from industry import IndustryPrimaryExtractive, TileLocationChecks, IndustryLocationChecks
 
 industry = IndustryPrimaryExtractive(id='oil_rig',
-                    accept_cargo_types=['ENSP'],
                     prod_cargo_types=['OIL_', 'PASS'],
                     prob_in_game='6',
                     prob_random='6',

@@ -8,7 +8,6 @@
 from industry import IndustryPrimaryExtractive, TileLocationChecks, IndustryLocationChecks
 
 industry = IndustryPrimaryExtractive(id='clay_pit',
-                    accept_cargo_types=['ENSP'],
                     prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL',
                     prod_cargo_types=['CLAY'],
                     layouts='[tilelayout_clay_pit_1, tilelayout_clay_pit_2]',

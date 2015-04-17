@@ -8,7 +8,6 @@
 from industry import IndustryPrimaryExtractive, TileLocationChecks, IndustryLocationChecks
 
 industry = IndustryPrimaryExtractive(id='diamond_mine',
-                    accept_cargo_types=['ENSP'],
                     map_colour='55',
                     prospect_chance='0.75',
                     prob_in_game='4',

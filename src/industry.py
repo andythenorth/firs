@@ -586,6 +586,7 @@ class IndustryPrimaryExtractive(Industry):
         Sparse subclass of IndustryPrimary, do not add much to this, it's subclassed once already
     """
     def __init__(self, **kwargs):
+        kwargs['accept_cargo_types'] = ['ENSP']
         super(IndustryPrimaryExtractive, self).__init__(**kwargs)
         self.template = 'industry_primary.pypnml'
         self.supply_requirements = global_constants.supply_requirements['ENSP']
@@ -597,6 +598,7 @@ class IndustryPrimaryOrganic(Industry):
         Sparse subclass of IndustryPrimary, do not add much to this, it's subclassed once already
     """
     def __init__(self, **kwargs):
+        kwargs['accept_cargo_types'] = ['FMSP']
         super(IndustryPrimaryOrganic, self).__init__(**kwargs)
         self.template = 'industry_primary.pypnml'
         self.supply_requirements = global_constants.supply_requirements['FMSP']
