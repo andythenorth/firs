@@ -369,7 +369,6 @@ class Industry(object):
         self.spritelayouts = [] # by convention spritelayout is one word :P
         self.industry_layouts = []
         self.default_industry_properties = IndustryProperties(**kwargs)
-        self.supply_requirements = kwargs.get('supply_requirements', self.set_supply_requirements_via_magic())
         self.location_checks = kwargs.get('location_checks')
         self.intro_year = kwargs.get('intro_year', None) # ! possibly should be variable by economy?
         self.expiry_year = kwargs.get('expiry_year', None) # ! possibly should be variable by economy?
@@ -413,14 +412,6 @@ class Industry(object):
 
     def add_economy_variation(self, economy):
         self.economy_variations[economy] = IndustryProperties()
-
-    def set_supply_requirements_via_magic(self):
-        if 'ENSP' in self.default_industry_properties.accept_cargo_types:
-            return global_constants.supply_requirements['ENSP']
-        elif 'FMSP' in self.default_industry_properties.accept_cargo_types:
-            return global_constants.supply_requirements['FMSP']
-        else:
-            return None
 
     def get_numeric_id(self):
         return global_constants.industry_numeric_ids[self.id]
@@ -586,6 +577,7 @@ class IndustryPrimary(Industry):
     def __init__(self, **kwargs):
         super(IndustryPrimary, self).__init__(**kwargs)
         self.template = 'industry_primary.pypnml'
+        self.supply_requirements = None # default None, set appropriately by subclasses
 
 
 class IndustryPrimaryExtractive(Industry):
@@ -596,6 +588,7 @@ class IndustryPrimaryExtractive(Industry):
     def __init__(self, **kwargs):
         super(IndustryPrimaryExtractive, self).__init__(**kwargs)
         self.template = 'industry_primary.pypnml'
+        self.supply_requirements = global_constants.supply_requirements['ENSP']
 
 
 class IndustryPrimaryOrganic(Industry):
@@ -606,6 +599,7 @@ class IndustryPrimaryOrganic(Industry):
     def __init__(self, **kwargs):
         super(IndustryPrimaryOrganic, self).__init__(**kwargs)
         self.template = 'industry_primary.pypnml'
+        self.supply_requirements = global_constants.supply_requirements['FMSP']
 
 
 class IndustryPrimaryPort(Industry):
@@ -616,6 +610,7 @@ class IndustryPrimaryPort(Industry):
     def __init__(self, **kwargs):
         super(IndustryPrimaryPort, self).__init__(**kwargs)
         self.template = 'industry_primary.pypnml'
+        self.supply_requirements = global_constants.supply_requirements['import_export']
 
 
 class IndustrySecondary(Industry):
