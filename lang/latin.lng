@@ -142,17 +142,17 @@ STR_CARGO_UNIT_BEANS                                                            
 STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WEIGHT} materiarum
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} chemicorum
 STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} argillae
-STR_CARGO_UNIT_COFFEE                                                           :{SIGNED_WORD} sacc{P 0 us i} cafeae
-STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} capsa{P 0 "" e} apparatuum ingeniariorum
-STR_CARGO_UNIT_FIBRES                                                           :{SIGNED_WORD} sarcina{P 0 "" e} fibrarum stirpium
+STR_CARGO_UNIT_COFFEE                                                           :{G=mp}{SIGNED_WORD} sacc{P 0 us i} cafeae
+STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{G=fp}{SIGNED_WORD} capsa{P 0 "" e} apparatuum ingeniariorum
+STR_CARGO_UNIT_FIBRES                                                           :{G=fp}{SIGNED_WORD} sarcina{P 0 "" e} fibrarum stirpium
 STR_CARGO_UNIT_FISH                                                             :{WEIGHT} piscium
-STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} capsa{P 0 "" e} apparatuum agricolarium
+STR_CARGO_UNIT_FMSP                                                             :{G=fp}{SIGNED_WORD} capsa{P 0 "" e} apparatuum agricolarium
 STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} fructuum
 STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} tigni
 STR_CARGO_UNIT_METAL                                                            :{WEIGHT} metalli
 STR_CARGO_UNIT_MILK                                                             :{VOLUME} lactis
 STR_CARGO_UNIT_NITRATES                                                         :{WEIGHT} nitratorum
-STR_CARGO_UNIT_MNSP                                                             :{SIGNED_WORD} capsa{P 0 "" e} apparatuum fabricationis
+STR_CARGO_UNIT_MNSP                                                             :{G=fp}{SIGNED_WORD} capsa{P 0 "" e} apparatuum fabricationis
 STR_CARGO_UNIT_PETROL                                                           :{VOLUME} benzini
 STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} regyrabilium
 STR_CARGO_UNIT_SAND                                                             :{WEIGHT} harenae
@@ -160,8 +160,8 @@ STR_CARGO_UNIT_SCRAP_METAL                                                      
 STR_CARGO_UNIT_STONE                                                            :{WEIGHT} petrarum
 STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} betae sacchariferae
 STR_CARGO_UNIT_SUGARCANE                                                        :{WEIGHT} cannae sacchariferae
-STR_CARGO_UNIT_VEHICLE_PARTS                                                    :{SIGNED_WORD} capsa{P 0 "" e} partium vehiculariarum
-STR_CARGO_UNIT_WOOL                                                             :{SIGNED_WORD} sarcina{P 0 "" e} lanae
+STR_CARGO_UNIT_VEHICLE_PARTS                                                    :{G=fp}{SIGNED_WORD} capsa{P 0 "" e} partium vehiculariarum
+STR_CARGO_UNIT_WOOL                                                             :{G=fp}{SIGNED_WORD} sarcina{P 0 "" e} lanae
 
 STR_CID_ALCOHOL                                                                 :{TINYFONT}AC
 STR_CID_BAUXITE                                                                 :{TINYFONT}BX
