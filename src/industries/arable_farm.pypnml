@@ -25,10 +25,6 @@ ${industry.get_industry_layouts_as_tilelayouts()}
  * Definition of the industry
  * *************************************************/
 
-CHECK_NEARBY_CLUSTER(arable_farm,    16, 42, 1, 2, return CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
-
-SWITCH_COLOUR_SCHEME1(${industry.id}_colour)
-
 ${industry.get_primary_supplies_stuff()}
 
 #include                "../../src/templates/check_availability.pnml"

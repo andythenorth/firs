@@ -72,7 +72,6 @@ SWITCH_COLOUR_SCHEME1(${industry.id}_colour)
             item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
                 graphics {
                     construction_probability: ${industry.id}_check_availability;
-                    build_prod_change:        randomise_primary_production_on_build;
                     produce_cargo_arrival:    ${industry.id}_produce;
                     monthly_prod_change:      ${industry.id}_check_production_level;
                     random_prod_change:       ${industry.id}_check_closure;

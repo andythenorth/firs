@@ -267,10 +267,13 @@ class IndustryLocationChecks(object):
     def __init__(self, **kwargs):
         self.incompatible = kwargs.get('incompatible', {})
         self.town_distance = kwargs.get('town_distance', None)
+        self.require_cluster = kwargs.get('require_cluster', None)
 
     def get_render_tree(self, switch_prefix):
         # this could be reimplemented to just use numeric switch suffixes, as per tile location check
         result = [IndustryLocationCheckFounder()]
+        if self.require_cluster:
+            result.append(IndustryLocationCheckRequireCluster(self.require_cluster))
         if self.town_distance:
             result.append(IndustryLocationCheckTownDistance(self.town_distance))
         for industry_type, distance in self.incompatible.items():
@@ -293,6 +296,20 @@ class IndustryLocationCheckTownDistance(object):
 
     def render(self):
         return 'CHECK_TOWN_DISTANCE (' + self.switch_entry_point + ', ' + str(self.min_distance) + ',' + str(self.max_distance) + ',' + self.switch_result + ')'
+
+
+class IndustryLocationCheckRequireCluster(object):
+    """ Require industries to locate in n clusters """
+    def __init__(self, require_cluster):
+        self.industry_type = require_cluster[0]
+        # use the numeric_id so that we can do single-industry compiles without nml barfing on missing identifiers
+        self.industry_type_numeric_id = get_another_industry(self.industry_type).get_numeric_id()
+        self.arbitrary_numbers = require_cluster[1]
+        self.switch_result = 'return CB_RESULT_LOCATION_ALLOW' # default result, value may also be id for next switch
+        self.switch_entry_point = str(self.industry_type_numeric_id)
+
+    def render(self):
+        return 'CHECK_NEARBY_CLUSTER(' + str(self.industry_type_numeric_id) + ', ' +  ','.join([str(i) for i in self.arbitrary_numbers]) + ',' + 'return CB_RESULT_LOCATION_DISALLOW,' + self.switch_result + ')'
 
 
 class IndustryLocationCheckIncompatible(object):
@@ -588,6 +605,7 @@ class IndustryPrimaryExtractive(IndustryPrimary):
     def __init__(self, **kwargs):
         kwargs['accept_cargo_types'] = ['ENSP']
         kwargs['life_type'] = 'IND_LIFE_TYPE_EXTRACTIVE'
+        kwargs['extra_text_industry'] = True # slight hax, actual text string is determined by templated cb
         super(IndustryPrimaryExtractive, self).__init__(**kwargs)
         self.supply_requirements = [21, 84, 'PRIMARY'] # janky use of a un-named list for historical reasons (3rd item is string prefix)
 
@@ -600,6 +618,7 @@ class IndustryPrimaryOrganic(IndustryPrimary):
     def __init__(self, **kwargs):
         kwargs['accept_cargo_types'] = ['FMSP']
         kwargs['life_type'] = 'IND_LIFE_TYPE_BLACK_HOLE'
+        kwargs['extra_text_industry'] = True # slight hax, actual text string is determined by templated cb
         super(IndustryPrimaryOrganic, self).__init__(**kwargs)
         self.supply_requirements = [14, 56, 'PRIMARY'] # janky use of a un-named list for historical reasons (3rd item is string prefix)
 
@@ -611,6 +630,7 @@ class IndustryPrimaryPort(IndustryPrimary):
     """
     def __init__(self, **kwargs):
         kwargs['life_type'] = 'IND_LIFE_TYPE_BLACK_HOLE'
+        kwargs['extra_text_industry'] = True # slight hax, actual text string is determined by templated cb
         super(IndustryPrimaryPort, self).__init__(**kwargs)
         self.supply_requirements = [56, 224, 'PORT'] # janky use of a un-named list for historical reasons (3rd item is string prefix)
 

@@ -24,3 +24,58 @@
 
 <tal:include metal:use-macro="load: tile_properties.pynml" />
 
+
+/* *************************************************
+ * Definition of the industry
+ * *************************************************/
+
+<tal:include metal:use-macro="load: industry_layouts.pynml" />
+
+SWITCH_COLOUR_SCHEME1(${industry.id}_colour)
+
+${industry.get_primary_supplies_stuff()}
+
+<!--! snakebite migration support, the CPP template that needs this define *could* be rewritten to python -->
+<tal:intro_year condition="industry.intro_year is not None">
+    #define THIS_MIN_YEAR ${industry.intro_year}
+</tal:intro_year>
+<tal:expiry_year condition="industry.expiry_year is not None">
+    #define THIS_MAX_YEAR ${industry.expiry_year}
+</tal:expiry_year>
+#include "../../src/templates/check_availability.pnml"
+
+<tal:include metal:use-macro="load: industry_location_checks.pynml" />
+
+<tal:include metal:use-macro="load: industry_properties.pynml" />
+
+<!--! graphics block defined explicitly per industry subclass, to avoid too much fiddly conditional stuff -->
+<tal:build_economies repeat="economy global_constants.economies">
+    if (economy==${repeat.economy.index}) {
+        <tal:industry_on_or_off condition="industry.get_property('enabled', economy) == True">
+            item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
+                graphics {
+                    construction_probability: ${industry.id}_check_availability;
+                    build_prod_change:       randomise_primary_production_on_build;
+                    produce_cargo_arrival:    ${industry.id}_produce;
+                    produce_256_ticks:        ${industry.id}_produce_256_ticks;
+                    monthly_prod_change:      ${industry.id}_monthly_update;
+                    random_prod_change:      return CB_RESULT_IND_PROD_NO_CHANGE;
+                    location_check:           ${industry.id}_check_location;
+                    <!--! no provision for an industry using both intro and expiry dates, could be extended, seems unnecessary -->
+                    <tal:intro_year condition="industry.intro_year is not None">
+                        extra_text_fund:          return string(STR_FUND_AVAILABLE_FROM, ${industry.intro_year});
+                    </tal:intro_year>
+                    <tal:expiry_year condition="industry.expiry_year is not None">
+                        extra_text_fund:          return string(STR_FUND_AVAILABLE_UNTIL, ${industry.expiry_year});
+                    </tal:expiry_year>
+                    <tal:extra_text_industry condition="industry.get_property('extra_text_industry', economy) is not None">
+                        extra_text_industry:      ${industry.id}_extra_text;
+                    </tal:extra_text_industry>
+                    colour:                   ${industry.id}_colour;
+                }
+            }
+        </tal:industry_on_or_off>
+    }
+</tal:build_economies>
+
+#include "../../src/templates/undefs.pnml"
