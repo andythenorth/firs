@@ -369,6 +369,7 @@ class IndustryProperties(object):
         self.enabled = kwargs.get('enabled', False)
         self.override_default_construction_states = kwargs.get('override_default_construction_states', False)
         self.extra_text_industry = kwargs.get('extra_text_industry', None) # value is string(s) to return for corresponding nml cb
+        self.extra_text_fund = kwargs.get('extra_text_fund', None)
         # nml properties we want to prevent being set for one reason or another
         if 'conflicting_ind_types' in kwargs:
             raise Exception("Don't set conflicting_ind_types property; use the FIRS location checks for conflicting industry (these are more flexible).")
@@ -497,6 +498,28 @@ class Industry(object):
     def get_industry_properties(self):
         template = templates['industry_properties.pynml']
         return utils.unescape_chameleon_output(template(industry=self, global_constants=global_constants))
+
+    def get_extra_text_fund(self, economy):
+        # some fund text options are orthogonal, there is no support for combining them currently
+        # support for combined fund text could be added, it's just a substr tree eh?
+        result = [] # use a list, because I want to warn if industry tries to set more than one result
+        if self.intro_year is not None:
+            result.append('string(STR_FUND_AVAILABLE_FROM, ' + str(self.intro_year) + ')')
+        if self.expiry_year is not None:
+            result.append('string(STR_FUND_AVAILABLE_UNTIL, ' + str(self.expiry_year) + ')')
+
+        if self.get_property('extra_text_fund', economy) is not None:
+            result.append(self.get_property('extra_text_fund', economy))
+
+        # integrity check, no handling of multiple results currently so alert on that at compile time
+        if len(result) > 1:
+            utils.echo_message('Industry ' + self.id + ' wants more than one string for extra_text_fund, only one is supported currently')
+
+        # if no text is needed...
+        if len(result) == 0:
+            result.append('CB_RESULT_NO_TEXT')
+
+        return 'return ' + result[0]
 
     def get_extra_text_secondary(self):
         # !! this can be removed once snakebite is done

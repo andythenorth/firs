@@ -76,13 +76,7 @@ SWITCH_COLOUR_SCHEME1(${industry.id}_colour)
                     monthly_prod_change:      ${industry.id}_check_production_level;
                     random_prod_change:       ${industry.id}_check_closure;
                     location_check:           ${industry.id}_check_location;
-                    <!--! no provision for an industry using both intro and expiry dates, could be extended, seems unnecessary -->
-                    <tal:intro_year condition="industry.intro_year is not None">
-                        extra_text_fund:          return string(STR_FUND_AVAILABLE_FROM, ${industry.intro_year});
-                    </tal:intro_year>
-                    <tal:expiry_year condition="industry.expiry_year is not None">
-                        extra_text_fund:          return string(STR_FUND_AVAILABLE_UNTIL, ${industry.expiry_year});
-                    </tal:expiry_year>
+                    extra_text_fund:          ${industry.get_extra_text_fund(economy)};
                     <tal:extra_text_industry condition="industry.get_property('extra_text_industry', economy) is not None">
                         extra_text_industry:      ${industry.id}_extra_text;
                     </tal:extra_text_industry>
