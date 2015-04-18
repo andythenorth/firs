@@ -580,7 +580,7 @@ class IndustryPrimary(Industry):
         self.supply_requirements = None # default None, set appropriately by subclasses
 
 
-class IndustryPrimaryExtractive(Industry):
+class IndustryPrimaryExtractive(IndustryPrimary):
     """
         Industry that is extractive AND has production boosted by delivery of ENSP (mines and similar)
         Sparse subclass of IndustryPrimary, do not add much to this, it's subclassed once already
@@ -592,7 +592,7 @@ class IndustryPrimaryExtractive(Industry):
         self.supply_requirements = [21, 84, 'PRIMARY'] # janky use of a un-named list for historical reasons (3rd item is string prefix)
 
 
-class IndustryPrimaryOrganic(Industry):
+class IndustryPrimaryOrganic(IndustryPrimary):
     """
         Industry that is organic AND has production boosted by delivery of FMSP (farms and similar)
         Sparse subclass of IndustryPrimary, do not add much to this, it's subclassed once already
@@ -604,7 +604,7 @@ class IndustryPrimaryOrganic(Industry):
         self.supply_requirements = [14, 56, 'PRIMARY'] # janky use of a un-named list for historical reasons (3rd item is string prefix)
 
 
-class IndustryPrimaryPort(Industry):
+class IndustryPrimaryPort(IndustryPrimary):
     """
         Industry that is import-export AND has production boosted by delivery of arbitrary cargos (ports and similar)
         Sparse subclass of IndustryPrimary, do not add much to this, it's subclassed once already
