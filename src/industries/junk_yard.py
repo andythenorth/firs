@@ -20,19 +20,23 @@ industry = IndustryPrimaryExtractive(id='junk_yard',
                     prod_decrease_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_GENERAL',
                     min_cargo_distr='5',
                     spec_flags='0',
+                    location_checks=IndustryLocationChecks(town_distance=(0, 144)),
                     remove_cost_multiplier='0',
                     prospect_chance='0.75',
                     name='string(STR_IND_JUNKYARD)',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_INDUSTRY_ESTATE))',
                     fund_cost_multiplier='101',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
-                    extra_text_industry='',
-                    graphics_change_dates = [1949, 1960, 1980, 2000])
+                    graphics_change_dates = [1949, 1960, 1980, 2000],
+                    intro_year=1850,
+                    snakebite=True)
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True
 
-industry.add_tile(id='junk_yard_tile')
+industry.add_tile(id='junk_yard_tile_1',
+                  location_checks=TileLocationChecks(disallow_steep_slopes=True,
+                                                     disallow_industry_adjacent=True))
 
 sprite_ground = industry.add_sprite(
     sprite_number = 'GROUNDTILE_MUD_TRACKS'
@@ -144,40 +148,40 @@ industry.add_spritelayout(
 
 industry.add_industry_layout(
     id = 'junk_yard_industry_layout_1',
-    layout = [(0, 2, 'junk_yard_tile', 'junk_yard_spritelayout_2'),
-              (1, 1, 'junk_yard_tile', 'junk_yard_spritelayout_2'),
-              (1, 2, 'junk_yard_tile', 'junk_yard_spritelayout_9'),
-              (2, 1, 'junk_yard_tile', 'junk_yard_spritelayout_1'),
-              (2, 2, 'junk_yard_tile', 'junk_yard_spritelayout_8'),
-              (3, 1, 'junk_yard_tile', 'junk_yard_spritelayout_4'),
-              (3, 2, 'junk_yard_tile', 'junk_yard_spritelayout_7'),
-              (4, 0, 'junk_yard_tile', 'junk_yard_spritelayout_5'),
-              (4, 1, 'junk_yard_tile', 'junk_yard_spritelayout_3'),
-              (4, 2, 'junk_yard_tile', 'junk_yard_spritelayout_6'),
+    layout = [(0, 2, 'junk_yard_tile_1', 'junk_yard_spritelayout_2'),
+              (1, 1, 'junk_yard_tile_1', 'junk_yard_spritelayout_2'),
+              (1, 2, 'junk_yard_tile_1', 'junk_yard_spritelayout_9'),
+              (2, 1, 'junk_yard_tile_1', 'junk_yard_spritelayout_1'),
+              (2, 2, 'junk_yard_tile_1', 'junk_yard_spritelayout_8'),
+              (3, 1, 'junk_yard_tile_1', 'junk_yard_spritelayout_4'),
+              (3, 2, 'junk_yard_tile_1', 'junk_yard_spritelayout_7'),
+              (4, 0, 'junk_yard_tile_1', 'junk_yard_spritelayout_5'),
+              (4, 1, 'junk_yard_tile_1', 'junk_yard_spritelayout_3'),
+              (4, 2, 'junk_yard_tile_1', 'junk_yard_spritelayout_6'),
     ]
 )
 industry.add_industry_layout(
     id = 'junk_yard_industry_layout_2',
-    layout = [(0, 1, 'junk_yard_tile', 'junk_yard_spritelayout_7'),
-              (1, 1, 'junk_yard_tile', 'junk_yard_spritelayout_1'),
-              (1, 2, 'junk_yard_tile', 'junk_yard_spritelayout_8'),
-              (2, 0, 'junk_yard_tile', 'junk_yard_spritelayout_5'),
-              (2, 1, 'junk_yard_tile', 'junk_yard_spritelayout_3'),
-              (2, 2, 'junk_yard_tile', 'junk_yard_spritelayout_6'),
+    layout = [(0, 1, 'junk_yard_tile_1', 'junk_yard_spritelayout_7'),
+              (1, 1, 'junk_yard_tile_1', 'junk_yard_spritelayout_1'),
+              (1, 2, 'junk_yard_tile_1', 'junk_yard_spritelayout_8'),
+              (2, 0, 'junk_yard_tile_1', 'junk_yard_spritelayout_5'),
+              (2, 1, 'junk_yard_tile_1', 'junk_yard_spritelayout_3'),
+              (2, 2, 'junk_yard_tile_1', 'junk_yard_spritelayout_6'),
     ]
 )
 industry.add_industry_layout(
     id = 'junk_yard_industry_layout_3',
-    layout = [(0, 3, 'junk_yard_tile', 'junk_yard_spritelayout_2'),
-              (1, 1, 'junk_yard_tile', 'junk_yard_spritelayout_2'),
-              (1, 3, 'junk_yard_tile', 'junk_yard_spritelayout_9'),
-              (2, 1, 'junk_yard_tile', 'junk_yard_spritelayout_1'),
-              (2, 3, 'junk_yard_tile', 'junk_yard_spritelayout_8'),
-              (3, 1, 'junk_yard_tile', 'junk_yard_spritelayout_4'),
-              (3, 3, 'junk_yard_tile', 'junk_yard_spritelayout_7'),
-              (4, 0, 'junk_yard_tile', 'junk_yard_spritelayout_5'),
-              (4, 1, 'junk_yard_tile', 'junk_yard_spritelayout_3'),
-              (4, 3, 'junk_yard_tile', 'junk_yard_spritelayout_6'),
+    layout = [(0, 3, 'junk_yard_tile_1', 'junk_yard_spritelayout_2'),
+              (1, 1, 'junk_yard_tile_1', 'junk_yard_spritelayout_2'),
+              (1, 3, 'junk_yard_tile_1', 'junk_yard_spritelayout_9'),
+              (2, 1, 'junk_yard_tile_1', 'junk_yard_spritelayout_1'),
+              (2, 3, 'junk_yard_tile_1', 'junk_yard_spritelayout_8'),
+              (3, 1, 'junk_yard_tile_1', 'junk_yard_spritelayout_4'),
+              (3, 3, 'junk_yard_tile_1', 'junk_yard_spritelayout_7'),
+              (4, 0, 'junk_yard_tile_1', 'junk_yard_spritelayout_5'),
+              (4, 1, 'junk_yard_tile_1', 'junk_yard_spritelayout_3'),
+              (4, 3, 'junk_yard_tile_1', 'junk_yard_spritelayout_6'),
     ]
 )
 
