@@ -20,17 +20,24 @@ industry = IndustryPrimaryExtractive(id='copper_mine',
                     prod_decrease_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_GENERAL',
                     min_cargo_distr='5',
                     spec_flags='0',
+                    location_checks=IndustryLocationChecks(require_cluster=['copper_mine', [20, 40, 1, 2]]),
                     remove_cost_multiplier='0',
                     prospect_chance='0.75',
                     name='TTD_STR_INDUSTRY_NAME_COPPER_ORE_MINE',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_MINE))',
                     fund_cost_multiplier='238',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
-                    )
+                    snakebite=True)
 
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
 
-industry.add_tile(id='copper_mine_tile')
+industry.add_tile(id='copper_mine_tile_1',
+                  animation_length=71,
+                  animation_looping=True,
+                  animation_speed=2,
+                  custom_animation_control={'macro':'random_first_frame',
+                                            'animation_triggers': 'bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE)'},
+                  location_checks=TileLocationChecks(disallow_industry_adjacent=True))
 
 sprite_ground = industry.add_sprite(
     sprite_number = 'GROUNDTILE_MUD_TRACKS' # ground tile same as overlay tile
@@ -105,15 +112,15 @@ industry.add_spritelayout(
 
 industry.add_industry_layout(
     id = 'copper_mine_industry_layout_1',
-    layout = [(0, 0, 'copper_mine_tile', 'copper_mine_spritelayout_1'),
-              (0, 1, 'copper_mine_tile', 'copper_mine_spritelayout_1'),
-              (0, 2, 'copper_mine_tile', 'copper_mine_spritelayout_1'),
-              (2, 0, 'copper_mine_tile', 'copper_mine_spritelayout_5'),
-              (2, 1, 'copper_mine_tile', 'copper_mine_spritelayout_3_anim'),
-              (2, 2, 'copper_mine_tile', 'copper_mine_spritelayout_4'),
-              (3, 0, 'copper_mine_tile', 'copper_mine_spritelayout_1'),
-              (3, 1, 'copper_mine_tile', 'copper_mine_spritelayout_1'),
-              (3, 2, 'copper_mine_tile', 'copper_mine_spritelayout_2'),
-              (4, 1, 'copper_mine_tile', 'copper_mine_spritelayout_1'),
+    layout = [(0, 0, 'copper_mine_tile_1', 'copper_mine_spritelayout_1'),
+              (0, 1, 'copper_mine_tile_1', 'copper_mine_spritelayout_1'),
+              (0, 2, 'copper_mine_tile_1', 'copper_mine_spritelayout_1'),
+              (2, 0, 'copper_mine_tile_1', 'copper_mine_spritelayout_5'),
+              (2, 1, 'copper_mine_tile_1', 'copper_mine_spritelayout_3_anim'),
+              (2, 2, 'copper_mine_tile_1', 'copper_mine_spritelayout_4'),
+              (3, 0, 'copper_mine_tile_1', 'copper_mine_spritelayout_1'),
+              (3, 1, 'copper_mine_tile_1', 'copper_mine_spritelayout_1'),
+              (3, 2, 'copper_mine_tile_1', 'copper_mine_spritelayout_2'),
+              (4, 1, 'copper_mine_tile_1', 'copper_mine_spritelayout_1'),
     ]
 )
