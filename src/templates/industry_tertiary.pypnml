@@ -1,0 +1,61 @@
+/*
+ * This file is part of FIRS Industry Set for OpenTTD.
+ * FIRS is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 2.
+ * FIRS is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+#define THIS_ID(...) ${industry.id}_ ## __VA_ARGS__
+
+/* ******************************************************************
+ * Definition of the industry tile, its callbacks, and graphics chain
+ * ******************************************************************/
+
+<tal:include metal:use-macro="load: spritesets.pynml" />
+
+<tal:include metal:use-macro="load: spritelayouts.pynml" />
+
+<tal:include metal:use-macro="load: layout_graphics_switches.pynml" />
+
+<tal:include metal:use-macro="load: fence_switches.pynml" />
+
+<tal:include metal:use-macro="load: tile_location_checks.pynml" />
+
+<tal:include metal:use-macro="load: tile_properties.pynml" />
+
+
+/* *************************************************
+ * Definition of the industry
+ * *************************************************/
+
+<tal:include metal:use-macro="load: industry_layouts.pynml" />
+
+<!--! snakebite migration support, the CPP template that needs this define *could* be rewritten to python -->
+<tal:intro_year condition="industry.intro_year is not None">
+    #define THIS_MIN_YEAR ${industry.intro_year}
+</tal:intro_year>
+#include "../../src/templates/check_availability.pnml"
+
+<tal:include metal:use-macro="load: industry_location_checks.pynml" />
+
+<tal:include metal:use-macro="load: industry_properties.pynml" />
+
+<!--! graphics block defined explicitly per industry subclass, to avoid too much fiddly conditional stuff -->
+<tal:build_economies repeat="economy global_constants.economies">
+    if (economy==${repeat.economy.index}) {
+        <tal:industry_on_or_off condition="industry.get_property('enabled', economy) == True">
+            item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
+                graphics {
+                    construction_probability: ${industry.id}_check_availability;
+                    build_prod_change:        randomise_primary_production_on_build;
+                    location_check:           ${industry.id}_check_location;
+                    <tal:intro_year condition="industry.intro_year is not None">
+                        extra_text_fund:         return string(STR_FUND_AVAILABLE_FROM, ${industry.intro_year});
+                    </tal:intro_year>
+                }
+            }
+        </tal:industry_on_or_off>
+    }
+</tal:build_economies>
+
+#include "../../src/templates/undefs.pnml"

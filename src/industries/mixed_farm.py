@@ -5,21 +5,9 @@
   See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
 """
 
-from industry import Industry, Tile, Sprite, Spriteset, SpriteLayout, IndustryLayout
+from industry import IndustryPrimaryOrganic, TileLocationChecks, IndustryLocationChecks
 
-"""
-Notes to self whilst figuring out python-firs (notes will probably rot here forever).
-By convention, ids for use in nml have industry name prefix, local python object ids don't bother with industry name prefix.
-Some method properties expect object references, and the templating then uses properties from that object.
-Some method properties need a string - the templating is then typically directly writing out an nml identifier.
-When a string is expected are basically two choices: provide a string directly, or make an object reference and get an id from that object.
-"""
-
-industry = Industry(id='mixed_farm',
-                    accept_cargo_types=['FMSP'],
-                    input_multiplier_1='[0, 0]',
-                    input_multiplier_3='[0, 0]',
-                    input_multiplier_2='[0, 0]',
+industry = IndustryPrimaryOrganic(id='mixed_farm',
                     prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_FARM',
                     prod_cargo_types=['LVST', 'FICR'],
                     layouts='AUTO',
@@ -30,20 +18,29 @@ industry = Industry(id='mixed_farm',
                     new_ind_msg='TTD_STR_NEWS_INDUSTRY_CONSTRUCTION',
                     map_colour='7',
                     prod_decrease_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_GENERAL',
-                    life_type='IND_LIFE_TYPE_ORGANIC',
                     min_cargo_distr='1',
                     spec_flags='bitmask(IND_FLAG_PLANT_FIELDS_PERIODICALLY, IND_FLAG_PLANT_FIELDS_WHEN_BUILT)',
+                    location_checks=IndustryLocationChecks(require_cluster=['mixed_farm', [16, 42, 1, 2]],
+                                                           incompatible={'stockyard': 16,
+                                                                         'textile_mill': 16,
+                                                                         'plastics_plant': 16}),
                     remove_cost_multiplier='0',
                     prospect_chance='0.75',
                     name='string(STR_IND_MIXEDFARM)',
+                    extra_text_fund='string(STR_FUND_MIXED_FARM)',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_FARM))',
                     fund_cost_multiplier='49',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
-                    )
+                    snakebite=True)
 
 industry.economy_variations['FIRS'].enabled = True
 
-industry.add_tile(id='mixed_farm_tile')
+industry.add_tile(id='mixed_farm_tile_1',
+                  location_checks=TileLocationChecks(disallow_steep_slopes=True,
+                                                     disallow_above_snowline=True,
+                                                     disallow_desert=True,
+                                                     disallow_coast=True,
+                                                     disallow_industry_adjacent=True))
 
 spriteset_ground = industry.add_spriteset(
     id = 'mixed_farm_spriteset_ground',
@@ -148,37 +145,37 @@ industry.add_spritelayout(
 
 industry.add_industry_layout(
     id = 'mixed_farm_industry_layout_1',
-    layout = [(0, 2, 'mixed_farm_tile', 'mixed_farm_spritelayout_8'),
-              (0, 3, 'mixed_farm_tile', 'mixed_farm_spritelayout_3'),
-              (1, 0, 'mixed_farm_tile', 'mixed_farm_spritelayout_2'),
-              (2, 0, 'mixed_farm_tile', 'mixed_farm_spritelayout_1'),
-              (2, 2, 'mixed_farm_tile', 'mixed_farm_spritelayout_5'),
-              (2, 3, 'mixed_farm_tile', 'mixed_farm_spritelayout_7'),
-              (3, 2, 'mixed_farm_tile', 'mixed_farm_spritelayout_6'),
-              (3, 3, 'mixed_farm_tile', 'mixed_farm_spritelayout_4'),
+    layout = [(0, 2, 'mixed_farm_tile_1', 'mixed_farm_spritelayout_8'),
+              (0, 3, 'mixed_farm_tile_1', 'mixed_farm_spritelayout_3'),
+              (1, 0, 'mixed_farm_tile_1', 'mixed_farm_spritelayout_2'),
+              (2, 0, 'mixed_farm_tile_1', 'mixed_farm_spritelayout_1'),
+              (2, 2, 'mixed_farm_tile_1', 'mixed_farm_spritelayout_5'),
+              (2, 3, 'mixed_farm_tile_1', 'mixed_farm_spritelayout_7'),
+              (3, 2, 'mixed_farm_tile_1', 'mixed_farm_spritelayout_6'),
+              (3, 3, 'mixed_farm_tile_1', 'mixed_farm_spritelayout_4'),
     ]
 )
 industry.add_industry_layout(
     id = 'mixed_farm_industry_layout_2',
-    layout = [(0, 0, 'mixed_farm_tile', 'mixed_farm_spritelayout_4'),
-              (0, 2, 'mixed_farm_tile', 'mixed_farm_spritelayout_7'),
-              (0, 3, 'mixed_farm_tile', 'mixed_farm_spritelayout_6'),
-              (1, 0, 'mixed_farm_tile', 'mixed_farm_spritelayout_5'),
-              (1, 3, 'mixed_farm_tile', 'mixed_farm_spritelayout_1'),
-              (2, 0, 'mixed_farm_tile', 'mixed_farm_spritelayout_8'),
-              (2, 1, 'mixed_farm_tile', 'mixed_farm_spritelayout_3'),
-              (2, 2, 'mixed_farm_tile', 'mixed_farm_spritelayout_2'),
+    layout = [(0, 0, 'mixed_farm_tile_1', 'mixed_farm_spritelayout_4'),
+              (0, 2, 'mixed_farm_tile_1', 'mixed_farm_spritelayout_7'),
+              (0, 3, 'mixed_farm_tile_1', 'mixed_farm_spritelayout_6'),
+              (1, 0, 'mixed_farm_tile_1', 'mixed_farm_spritelayout_5'),
+              (1, 3, 'mixed_farm_tile_1', 'mixed_farm_spritelayout_1'),
+              (2, 0, 'mixed_farm_tile_1', 'mixed_farm_spritelayout_8'),
+              (2, 1, 'mixed_farm_tile_1', 'mixed_farm_spritelayout_3'),
+              (2, 2, 'mixed_farm_tile_1', 'mixed_farm_spritelayout_2'),
     ]
 )
 industry.add_industry_layout(
     id = 'mixed_farm_industry_layout_3',
-    layout = [(0, 0, 'mixed_farm_tile', 'mixed_farm_spritelayout_8'),
-              (0, 1, 'mixed_farm_tile', 'mixed_farm_spritelayout_1'),
-              (0, 2, 'mixed_farm_tile', 'mixed_farm_spritelayout_5'),
-              (1, 0, 'mixed_farm_tile', 'mixed_farm_spritelayout_2'),
-              (1, 2, 'mixed_farm_tile', 'mixed_farm_spritelayout_3'),
-              (2, 0, 'mixed_farm_tile', 'mixed_farm_spritelayout_7'),
-              (3, 0, 'mixed_farm_tile', 'mixed_farm_spritelayout_4'),
-              (3, 2, 'mixed_farm_tile', 'mixed_farm_spritelayout_6'),
+    layout = [(0, 0, 'mixed_farm_tile_1', 'mixed_farm_spritelayout_8'),
+              (0, 1, 'mixed_farm_tile_1', 'mixed_farm_spritelayout_1'),
+              (0, 2, 'mixed_farm_tile_1', 'mixed_farm_spritelayout_5'),
+              (1, 0, 'mixed_farm_tile_1', 'mixed_farm_spritelayout_2'),
+              (1, 2, 'mixed_farm_tile_1', 'mixed_farm_spritelayout_3'),
+              (2, 0, 'mixed_farm_tile_1', 'mixed_farm_spritelayout_7'),
+              (3, 0, 'mixed_farm_tile_1', 'mixed_farm_spritelayout_4'),
+              (3, 2, 'mixed_farm_tile_1', 'mixed_farm_spritelayout_6'),
     ]
 )

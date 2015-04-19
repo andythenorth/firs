@@ -5,18 +5,9 @@
   See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
 """
 
-from industry import Industry, Tile, Sprite, Spriteset, SpriteLayout, IndustryLayout
+from industry import IndustryPrimaryExtractive, TileLocationChecks, IndustryLocationChecks
 
-"""
-Notes to self whilst figuring out python-firs (notes will probably rot here forever).
-By convention, ids for use in nml have industry name prefix, local python object ids don't bother with industry name prefix.
-Some method properties expect object references, and the templating then uses properties from that object.
-Some method properties need a string - the templating is then typically directly writing out an nml identifier.
-When a string is expected are basically two choices: provide a string directly, or make an object reference and get an id from that object.
-"""
-
-industry = Industry(id='diamond_mine',
-                    accept_cargo_types=['ENSP'],
+industry = IndustryPrimaryExtractive(id='diamond_mine',
                     map_colour='55',
                     prospect_chance='0.75',
                     prob_in_game='4',

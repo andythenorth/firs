@@ -5,21 +5,11 @@
   See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
 """
 
-from industry import Industry, Tile, Sprite, Spriteset, SpriteLayout, IndustryLayout
+from industry import IndustrySecondary, TileLocationChecks, IndustryLocationChecks
 
-"""
-Notes to self whilst figuring out python-firs (notes will probably rot here forever).
-By convention, ids for use in nml have industry name prefix, local python object ids don't bother with industry name prefix.
-Some method properties expect object references, and the templating then uses properties from that object.
-Some method properties need a string - the templating is then typically directly writing out an nml identifier.
-When a string is expected are basically two choices: provide a string directly, or make an object reference and get an id from that object.
-"""
-
-industry = Industry(id='lime_kiln',
-                    accept_cargo_types=['GRVL', 'COAL'],
-                    input_multiplier_1='[0, 0]',
-                    input_multiplier_3='[0, 0]',
-                    input_multiplier_2='[0, 0]',
+industry = IndustrySecondary(id='lime_kiln',
+                    processed_cargos_and_output_ratios=[('GRVL', 3), ('COAL', 3)],
+                    combined_cargos_boost_prod=True,
                     prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL',
                     prod_cargo_types=['RFPR', 'FMSP'],
                     layouts='AUTO',
@@ -33,6 +23,9 @@ industry = Industry(id='lime_kiln',
                     life_type='IND_LIFE_TYPE_PROCESSING',
                     min_cargo_distr='5',
                     spec_flags='0',
+                    location_checks=IndustryLocationChecks(incompatible={'lime_kiln': 56,
+                                                                         'coal_mine': 16,
+                                                                         'quarry': 16}),
                     remove_cost_multiplier='0',
                     prospect_chance='0.75',
                     name='string(STR_IND_LIME_KILN)',
@@ -40,11 +33,17 @@ industry = Industry(id='lime_kiln',
                     fund_cost_multiplier='45',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
                     extra_text_industry='STR_EXTRA_LIME_KILN',
-                    graphics_change_dates = [1952, 1978])
+                    graphics_change_dates = [1952, 1978],
+                    snakebite=True)
 
 industry.economy_variations['FIRS'].enabled = True
 
-industry.add_tile(id='lime_kiln_tile')
+industry.add_tile(id='lime_kiln_tile_1',
+                  animation_length=7,
+                  animation_looping=True,
+                  animation_speed=3,
+                  location_checks=TileLocationChecks(disallow_slopes=True,
+                                                     disallow_industry_adjacent=True))
 
 sprite_ground = industry.add_sprite(
     sprite_number = 'GROUNDTILE_MUD_TRACKS' # ground tile same as overlay tile
@@ -145,33 +144,33 @@ industry.add_spritelayout(
 
 industry.add_industry_layout(
     id = 'lime_kiln_industry_layout_1',
-    layout = [(0, 0, 'lime_kiln_tile', 'lime_kiln_spritelayout_2'),
-              (0, 1, 'lime_kiln_tile', 'lime_kiln_spritelayout_1'),
-              (0, 2, 'lime_kiln_tile', 'lime_kiln_spritelayout_6'),
-              (1, 0, 'lime_kiln_tile', 'lime_kiln_spritelayout_4'),
-              (1, 1, 'lime_kiln_tile', 'lime_kiln_spritelayout_5'),
-              (1, 2, 'lime_kiln_tile', 'lime_kiln_spritelayout_3'),
+    layout = [(0, 0, 'lime_kiln_tile_1', 'lime_kiln_spritelayout_2'),
+              (0, 1, 'lime_kiln_tile_1', 'lime_kiln_spritelayout_1'),
+              (0, 2, 'lime_kiln_tile_1', 'lime_kiln_spritelayout_6'),
+              (1, 0, 'lime_kiln_tile_1', 'lime_kiln_spritelayout_4'),
+              (1, 1, 'lime_kiln_tile_1', 'lime_kiln_spritelayout_5'),
+              (1, 2, 'lime_kiln_tile_1', 'lime_kiln_spritelayout_3'),
     ]
 )
 industry.add_industry_layout(
     id = 'lime_kiln_industry_layout_2',
-    layout = [(0, 0, 'lime_kiln_tile', 'lime_kiln_spritelayout_2'),
-              (0, 1, 'lime_kiln_tile', 'lime_kiln_spritelayout_1'),
-              (1, 0, 'lime_kiln_tile', 'lime_kiln_spritelayout_4'),
-              (1, 1, 'lime_kiln_tile', 'lime_kiln_spritelayout_5'),
-              (2, 0, 'lime_kiln_tile', 'lime_kiln_spritelayout_6'),
-              (2, 1, 'lime_kiln_tile', 'lime_kiln_spritelayout_3'),
+    layout = [(0, 0, 'lime_kiln_tile_1', 'lime_kiln_spritelayout_2'),
+              (0, 1, 'lime_kiln_tile_1', 'lime_kiln_spritelayout_1'),
+              (1, 0, 'lime_kiln_tile_1', 'lime_kiln_spritelayout_4'),
+              (1, 1, 'lime_kiln_tile_1', 'lime_kiln_spritelayout_5'),
+              (2, 0, 'lime_kiln_tile_1', 'lime_kiln_spritelayout_6'),
+              (2, 1, 'lime_kiln_tile_1', 'lime_kiln_spritelayout_3'),
     ]
 )
 industry.add_industry_layout(
     id = 'lime_kiln_industry_layout_3',
-    layout = [(0, 0, 'lime_kiln_tile', 'lime_kiln_spritelayout_2'),
-              (0, 1, 'lime_kiln_tile', 'lime_kiln_spritelayout_1'),
-              (0, 2, 'lime_kiln_tile', 'lime_kiln_spritelayout_6'),
-              (0, 3, 'lime_kiln_tile', 'lime_kiln_spritelayout_6'),
-              (1, 0, 'lime_kiln_tile', 'lime_kiln_spritelayout_4'),
-              (1, 1, 'lime_kiln_tile', 'lime_kiln_spritelayout_5'),
-              (1, 2, 'lime_kiln_tile', 'lime_kiln_spritelayout_3'),
-              (1, 3, 'lime_kiln_tile', 'lime_kiln_spritelayout_6'),
+    layout = [(0, 0, 'lime_kiln_tile_1', 'lime_kiln_spritelayout_2'),
+              (0, 1, 'lime_kiln_tile_1', 'lime_kiln_spritelayout_1'),
+              (0, 2, 'lime_kiln_tile_1', 'lime_kiln_spritelayout_6'),
+              (0, 3, 'lime_kiln_tile_1', 'lime_kiln_spritelayout_6'),
+              (1, 0, 'lime_kiln_tile_1', 'lime_kiln_spritelayout_4'),
+              (1, 1, 'lime_kiln_tile_1', 'lime_kiln_spritelayout_5'),
+              (1, 2, 'lime_kiln_tile_1', 'lime_kiln_spritelayout_3'),
+              (1, 3, 'lime_kiln_tile_1', 'lime_kiln_spritelayout_6'),
     ]
 )

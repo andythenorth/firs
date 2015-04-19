@@ -17,12 +17,12 @@ INDUSTRY_PYPNML_SRC = $(INDUSTRY_PY_SRC:.py=.pypnml)
 INDUSTRY_SOURCES = $(INDUSTRY_PY_SRC) $(INDUSTRY_PYPNML_SRC)
 CARGO_SOURCES = $(wildcard src/cargos/[a-z]*.py)
 TEMPLATES = $(wildcard src/templates/*)
-CONSTANTS = src/defines.pnml src/global_constants.py
+CONSTANTS = src/templates/defines.pypnml src/global_constants.py
 MODULES = src/cargo.py src/firs.py src/industry.py src/render_pnml.py src/utils.py
 
 generated/pnml/firs.pnml: $(INDUSTRY_SOURCES) $(CARGO_SOURCES) $(TEMPLATES) $(CONSTANTS) $(MODULES)
 	$(_E) [GENERATE PNML]
-	$(_V) PYTHONPATH=${PYTHONPATH2} ${PYTHON2} src/render_pnml.py '${REPO_TITLE}' '${REPO_REVISION}' '${TEST_INDUSTRY}' '${NO_MP}'
+	$(_V) python src/render_pnml.py '${REPO_TITLE}' '${REPO_REVISION}' '${TEST_INDUSTRY}' '${NO_MP}'
 
 DOCS_SRC = $(wildcard src/docs_templates/*)
 DOCS_SOURCES = src/render_docs.py $(DOCS_SRC)
@@ -32,7 +32,7 @@ DOCS_SOURCES = src/render_docs.py $(DOCS_SRC)
 # 'doc' could be refactored and made useful for FIRS, and 'docs' then removed
 html_docs: $(DOCS_SOURCES) $(INDUSTRY_SOURCES) $(CARGO_SOURCES) $(CONSTANTS) $(MODULES)
 	$(_E) "[HTML DOCS]"
-	$(_V) PYTHONPATH=${PYTHONPATH2} ${PYTHON2} src/render_docs.py '${REPO_TITLE}' '${REPO_REVISION}' '${TEST_INDUSTRY}' '${NO_MP}'
+	$(_V) python src/render_docs.py '${REPO_TITLE}' '${REPO_REVISION}' '${TEST_INDUSTRY}' '${NO_MP}'
 
 $(DOC_FILES): html_docs
 

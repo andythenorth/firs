@@ -5,21 +5,11 @@
   See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
 """
 
-from industry import Industry, Tile, Sprite, Spriteset, SpriteLayout, IndustryLayout
+from industry import IndustrySecondary, TileLocationChecks, IndustryLocationChecks
 
-"""
-Notes to self whilst figuring out python-firs (notes will probably rot here forever).
-By convention, ids for use in nml have industry name prefix, local python object ids don't bother with industry name prefix.
-Some method properties expect object references, and the templating then uses properties from that object.
-Some method properties need a string - the templating is then typically directly writing out an nml identifier.
-When a string is expected are basically two choices: provide a string directly, or make an object reference and get an id from that object.
-"""
-
-industry = Industry(id='brick_works',
-                    accept_cargo_types=['COAL', 'SAND', 'CLAY'],
-                    input_multiplier_1='[0, 0]',
-                    input_multiplier_3='[0, 0]',
-                    input_multiplier_2='[0, 0]',
+industry = IndustrySecondary(id='brick_works',
+                    processed_cargos_and_output_ratios=[('COAL', 2), ('SAND', 2), ('CLAY', 4)],
+                    combined_cargos_boost_prod=True,
                     prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL',
                     prod_cargo_types=['BDMT'],
                     layouts='AUTO',
@@ -33,17 +23,29 @@ industry = Industry(id='brick_works',
                     life_type='4',
                     min_cargo_distr='5',
                     spec_flags='bitmask(IND_FLAG_MILITARY_HELICOPTER_CAN_EXPLODE)',
+                    location_checks=IndustryLocationChecks(incompatible={'brick_works': 56,
+                                                                         'coal_mine': 16,
+                                                                         'quarry': 16,
+                                                                         'clay_pit': 16}),
                     remove_cost_multiplier='0',
                     prospect_chance='0.75',
                     name='string(STR_IND_BRICK_WORKS)',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_MILL))',
                     fund_cost_multiplier='120',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
-                    extra_text_industry='STR_EXTRA_BRICKWORKS')
+                    extra_text_industry='STR_EXTRA_BRICKWORKS',
+                    snakebite=True)
 
 industry.economy_variations['FIRS'].enabled = True
 
-industry.add_tile(id='brick_works_tile')
+industry.add_tile(id='brick_works_tile_1',
+                  animation_length=7,
+                  animation_looping=True,
+                  animation_speed=3,
+                  custom_animation_control={'macro':'random_first_frame',
+                                            'animation_triggers': 'bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE)'},
+                  location_checks=TileLocationChecks(disallow_slopes=True,
+                                                     disallow_industry_adjacent=True))
 
 spriteset_ground = industry.add_spriteset(
     id = 'brick_works_spriteset_ground',
@@ -144,37 +146,37 @@ industry.add_spritelayout(
 
 industry.add_industry_layout(
     id = 'brick_works_industry_layout_1',
-    layout = [(0, 0, 'brick_works_tile', 'brick_works_spritelayout_4'),
-              (0, 1, 'brick_works_tile', 'brick_works_spritelayout_4'),
-              (1, 0, 'brick_works_tile', 'brick_works_spritelayout_3'),
-              (1, 1, 'brick_works_tile', 'brick_works_spritelayout_3'),
-              (2, 0, 'brick_works_tile', 'brick_works_spritelayout_2'),
-              (2, 1, 'brick_works_tile', 'brick_works_spritelayout_1'),
-              (3, 0, 'brick_works_tile', 'brick_works_spritelayout_clay_staithe'),
-              (3, 1, 'brick_works_tile', 'brick_works_spritelayout_sand_staithe'),
+    layout = [(0, 0, 'brick_works_tile_1', 'brick_works_spritelayout_4'),
+              (0, 1, 'brick_works_tile_1', 'brick_works_spritelayout_4'),
+              (1, 0, 'brick_works_tile_1', 'brick_works_spritelayout_3'),
+              (1, 1, 'brick_works_tile_1', 'brick_works_spritelayout_3'),
+              (2, 0, 'brick_works_tile_1', 'brick_works_spritelayout_2'),
+              (2, 1, 'brick_works_tile_1', 'brick_works_spritelayout_1'),
+              (3, 0, 'brick_works_tile_1', 'brick_works_spritelayout_clay_staithe'),
+              (3, 1, 'brick_works_tile_1', 'brick_works_spritelayout_sand_staithe'),
     ]
 )
 industry.add_industry_layout(
     id = 'brick_works_industry_layout_2',
-    layout = [(0, 0, 'brick_works_tile', 'brick_works_spritelayout_4'),
-              (0, 1, 'brick_works_tile', 'brick_works_spritelayout_4'),
-              (1, 0, 'brick_works_tile', 'brick_works_spritelayout_3'),
-              (1, 1, 'brick_works_tile', 'brick_works_spritelayout_3'),
-              (2, 0, 'brick_works_tile', 'brick_works_spritelayout_2'),
-              (2, 1, 'brick_works_tile', 'brick_works_spritelayout_clay_staithe'),
-              (3, 0, 'brick_works_tile', 'brick_works_spritelayout_1'),
-              (3, 1, 'brick_works_tile', 'brick_works_spritelayout_sand_staithe'),
+    layout = [(0, 0, 'brick_works_tile_1', 'brick_works_spritelayout_4'),
+              (0, 1, 'brick_works_tile_1', 'brick_works_spritelayout_4'),
+              (1, 0, 'brick_works_tile_1', 'brick_works_spritelayout_3'),
+              (1, 1, 'brick_works_tile_1', 'brick_works_spritelayout_3'),
+              (2, 0, 'brick_works_tile_1', 'brick_works_spritelayout_2'),
+              (2, 1, 'brick_works_tile_1', 'brick_works_spritelayout_clay_staithe'),
+              (3, 0, 'brick_works_tile_1', 'brick_works_spritelayout_1'),
+              (3, 1, 'brick_works_tile_1', 'brick_works_spritelayout_sand_staithe'),
     ]
 )
 industry.add_industry_layout(
     id = 'brick_works_industry_layout_3',
-    layout = [(0, 0, 'brick_works_tile', 'brick_works_spritelayout_4'),
-              (0, 1, 'brick_works_tile', 'brick_works_spritelayout_4'),
-              (0, 2, 'brick_works_tile', 'brick_works_spritelayout_1'),
-              (0, 3, 'brick_works_tile', 'brick_works_spritelayout_clay_staithe'),
-              (1, 0, 'brick_works_tile', 'brick_works_spritelayout_3'),
-              (1, 1, 'brick_works_tile', 'brick_works_spritelayout_3'),
-              (1, 2, 'brick_works_tile', 'brick_works_spritelayout_2'),
-              (1, 3, 'brick_works_tile', 'brick_works_spritelayout_sand_staithe'),
+    layout = [(0, 0, 'brick_works_tile_1', 'brick_works_spritelayout_4'),
+              (0, 1, 'brick_works_tile_1', 'brick_works_spritelayout_4'),
+              (0, 2, 'brick_works_tile_1', 'brick_works_spritelayout_1'),
+              (0, 3, 'brick_works_tile_1', 'brick_works_spritelayout_clay_staithe'),
+              (1, 0, 'brick_works_tile_1', 'brick_works_spritelayout_3'),
+              (1, 1, 'brick_works_tile_1', 'brick_works_spritelayout_3'),
+              (1, 2, 'brick_works_tile_1', 'brick_works_spritelayout_2'),
+              (1, 3, 'brick_works_tile_1', 'brick_works_spritelayout_sand_staithe'),
     ]
 )

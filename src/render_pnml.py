@@ -5,26 +5,21 @@
   See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
 """
 
-print "[PYTHON] render pnml"
+print("[PYTHON] render pnml")
 
 import codecs # used for writing files - more unicode friendly than standard open() module
 
-import shutil
 import sys
-import global_constants
 import os
 currentdir = os.curdir
 src_path = os.path.join(currentdir, 'src')
 from multiprocessing import Pool
-import subprocess
 
-import global_constants as global_constants
-import utils as utils
+import global_constants
+import utils
 import firs
-import cargos
-from cargos import registered_cargos
-import industries
-from industries import registered_industries
+registered_cargos = firs.registered_cargos
+registered_industries = firs.registered_industries
 
 from chameleon import PageTemplateLoader # chameleon used in most template cases
 # setup the places we look for templates
@@ -64,6 +59,13 @@ def main():
         pnml.write(templated_pnml)
         pnml.close()
 
+    template = templates['defines.pypnml']
+    templated_pnml = utils.unescape_chameleon_output(template(global_constants=global_constants))
+    # save the results of templating
+    pnml = codecs.open(os.path.join(generated_pnml_path, 'defines.pnml'), 'w','utf8')
+    pnml.write(templated_pnml)
+    pnml.close()
+
     template = templates['registered_cargos.pypnml']
     templated_pnml = utils.unescape_chameleon_output(template(registered_cargos=registered_cargos, global_constants=global_constants))
     # save the results of templating
@@ -71,18 +73,18 @@ def main():
     pnml.write(templated_pnml)
     pnml.close()
 
-    if repo_vars.get('no_mp', None) == 'True':
-        utils.echo_message('Multiprocessing disabled: (NO_MP=True)')
-        for industry in industries.registered_industries:
+    if repo_vars.get('no_mp', None) != 'False':
+        utils.echo_message('Multiprocessing disabled: (use NO_MP=False to enable it)')
+        for industry in registered_industries:
             render_industry(industry)
     else:
         pool = Pool(processes=16) # 16 is an arbitrary amount that appears to be fast without blocking the system
-        pool.map(render_industry, industries.registered_industries)
+        pool.map(render_industry, registered_industries)
         pool.close()
         pool.join()
 
     # linker
-    print "Linking"
+    print("Linking pnml")
     template = header_item_templates['firs.pypnml']
     firs_pnml = codecs.open(os.path.join(firs.generated_files_path, 'firs.pnml'), 'w','utf8')
     firs_pnml.write(utils.unescape_chameleon_output(template(registered_industries=registered_industries, global_constants=global_constants,

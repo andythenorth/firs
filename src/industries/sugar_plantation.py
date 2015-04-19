@@ -5,21 +5,9 @@
   See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
 """
 
-from industry import Industry, Tile, Sprite, Spriteset, SpriteLayout, IndustryLayout
+from industry import IndustryPrimaryOrganic, TileLocationChecks, IndustryLocationChecks
 
-"""
-Notes to self whilst figuring out python-firs (notes will probably rot here forever).
-By convention, ids for use in nml have industry name prefix, local python object ids don't bother with industry name prefix.
-Some method properties expect object references, and the templating then uses properties from that object.
-Some method properties need a string - the templating is then typically directly writing out an nml identifier.
-When a string is expected are basically two choices: provide a string directly, or make an object reference and get an id from that object.
-"""
-
-industry = Industry(id='sugar_plantation',
-                    accept_cargo_types=['FMSP'],
-                    input_multiplier_1='[0, 0]',
-                    input_multiplier_3='[0, 0]',
-                    input_multiplier_2='[0, 0]',
+industry = IndustryPrimaryOrganic(id='sugar_plantation',
                     prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_FARM',
                     prod_cargo_types=['SGBT'], # SGBT will be swapped to SGCN in tropic by magic in compile
                     layouts='AUTO',
@@ -30,20 +18,27 @@ industry = Industry(id='sugar_plantation',
                     new_ind_msg='TTD_STR_NEWS_INDUSTRY_CONSTRUCTION',
                     map_colour='208',
                     prod_decrease_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_FARM',
-                    life_type='IND_LIFE_TYPE_ORGANIC',
                     min_cargo_distr='1',
                     spec_flags='bitmask(IND_FLAG_PLANT_FIELDS_PERIODICALLY, IND_FLAG_PLANT_FIELDS_WHEN_BUILT)',
+                    location_checks=IndustryLocationChecks(require_cluster=['sugar_plantation', [16, 42, 1, 2]],
+                                                           incompatible={'sugar_refinery': 16,
+                                                                         'biorefinery': 16}),
                     remove_cost_multiplier='0',
                     prospect_chance='0.75',
                     name='string(STR_IND_SUGAR_PLANTATION)',
+                    extra_text_fund='string(STR_FUND_SUGAR_PLANTATION)',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_PLANTATION))',
                     fund_cost_multiplier='55',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
-                    )
+                    snakebite=True)
 
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
 
-industry.add_tile(id='sugar_plantation_tile')
+industry.add_tile(id='sugar_plantation_tile_1',
+                  location_checks=TileLocationChecks(disallow_slopes=True,
+                                                     disallow_above_snowline=True,
+                                                     disallow_desert=True,
+                                                     disallow_industry_adjacent=True))
 
 sprite_ground = industry.add_sprite(
     sprite_number = 'GROUNDTILE_MUD_TRACKS'
@@ -115,28 +110,28 @@ industry.add_spritelayout(
 
 industry.add_industry_layout(
     id = 'sugar_plantation_industry_layout_1',
-    layout = [(0, 1, 'sugar_plantation_tile', 'sugar_plantation_spritelayout_5'),
-              (0, 2, 'sugar_plantation_tile', 'sugar_plantation_spritelayout_3'),
-              (1, 0, 'sugar_plantation_tile', 'sugar_plantation_spritelayout_1'),
-              (1, 1, 'sugar_plantation_tile', 'sugar_plantation_spritelayout_2'),
-              (2, 1, 'sugar_plantation_tile', 'sugar_plantation_spritelayout_4'),
+    layout = [(0, 1, 'sugar_plantation_tile_1', 'sugar_plantation_spritelayout_5'),
+              (0, 2, 'sugar_plantation_tile_1', 'sugar_plantation_spritelayout_3'),
+              (1, 0, 'sugar_plantation_tile_1', 'sugar_plantation_spritelayout_1'),
+              (1, 1, 'sugar_plantation_tile_1', 'sugar_plantation_spritelayout_2'),
+              (2, 1, 'sugar_plantation_tile_1', 'sugar_plantation_spritelayout_4'),
     ]
 )
 industry.add_industry_layout(
     id = 'sugar_plantation_industry_layout_2',
-    layout = [(0, 0, 'sugar_plantation_tile', 'sugar_plantation_spritelayout_5'),
-              (0, 1, 'sugar_plantation_tile', 'sugar_plantation_spritelayout_4'),
-              (1, 0, 'sugar_plantation_tile', 'sugar_plantation_spritelayout_1'),
-              (1, 1, 'sugar_plantation_tile', 'sugar_plantation_spritelayout_2'),
-              (2, 0, 'sugar_plantation_tile', 'sugar_plantation_spritelayout_3'),
+    layout = [(0, 0, 'sugar_plantation_tile_1', 'sugar_plantation_spritelayout_5'),
+              (0, 1, 'sugar_plantation_tile_1', 'sugar_plantation_spritelayout_4'),
+              (1, 0, 'sugar_plantation_tile_1', 'sugar_plantation_spritelayout_1'),
+              (1, 1, 'sugar_plantation_tile_1', 'sugar_plantation_spritelayout_2'),
+              (2, 0, 'sugar_plantation_tile_1', 'sugar_plantation_spritelayout_3'),
     ]
 )
 industry.add_industry_layout(
     id = 'sugar_plantation_industry_layout_3',
-    layout = [(0, 0, 'sugar_plantation_tile', 'sugar_plantation_spritelayout_1'),
-              (0, 1, 'sugar_plantation_tile', 'sugar_plantation_spritelayout_2'),
-              (1, 0, 'sugar_plantation_tile', 'sugar_plantation_spritelayout_5'),
-              (2, 0, 'sugar_plantation_tile', 'sugar_plantation_spritelayout_4'),
-              (2, 1, 'sugar_plantation_tile', 'sugar_plantation_spritelayout_3'),
+    layout = [(0, 0, 'sugar_plantation_tile_1', 'sugar_plantation_spritelayout_1'),
+              (0, 1, 'sugar_plantation_tile_1', 'sugar_plantation_spritelayout_2'),
+              (1, 0, 'sugar_plantation_tile_1', 'sugar_plantation_spritelayout_5'),
+              (2, 0, 'sugar_plantation_tile_1', 'sugar_plantation_spritelayout_4'),
+              (2, 1, 'sugar_plantation_tile_1', 'sugar_plantation_spritelayout_3'),
     ]
 )
