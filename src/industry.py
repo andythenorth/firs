@@ -83,6 +83,7 @@ class TileLocationChecks(object):
         self.require_road_adjacent = kwargs.get('require_road_adjacent', []) # any of ['nw', 'ne', 'se', 'nw']
         self.disallow_above_snowline = kwargs.get('disallow_above_snowline', False)
         self.disallow_desert = kwargs.get('disallow_desert', False)
+        self.disallow_coast = kwargs.get('disallow_coast', False)
 
     def get_render_tree(self, tile_id, industry_id):
         switch_prefix = tile_id + '_lc_'
@@ -110,6 +111,9 @@ class TileLocationChecks(object):
 
         if self.disallow_desert:
             result.appendleft(TileLocationCheckDisallowDesert())
+
+        if self.disallow_coast:
+            result.appendleft(TileLocationCheckDisallowCoast())
 
         # walk the tree, setting entry points and results (id of next switch) for each switch
         for count, lc in enumerate(result):
@@ -178,6 +182,16 @@ class TileLocationCheckDisallowDesert(object):
 
     def render(self):
         return 'TILE_DISALLOW_TERRAIN(' + self.switch_entry_point + ',TILETYPE_DESERT, CB_RESULT_LOCATION_DISALLOW, ' + self.switch_result + ')'
+
+
+class TileLocationCheckDisallowCoast(object):
+    """ Prevent building on desert tiles """
+    def __init__(self):
+        self.switch_result = None # no default value for this check, it may not be the last check in a chain
+        self.switch_entry_point = None
+
+    def render(self):
+        return 'TILE_DISALLOW_COAST('  + self.switch_entry_point + ', CB_RESULT_LOCATION_DISALLOW, ' + self.switch_result + ')'
 
 
 class TileLocationCheckDisallowAboveSnowline(object):
