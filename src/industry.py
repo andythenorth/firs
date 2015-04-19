@@ -78,6 +78,7 @@ class TileLocationChecks(object):
     """ Class to hold location checks for a tile """
     def __init__(self, **kwargs):
         self.disallow_slopes = kwargs.get('disallow_slopes', False)
+        self.disallow_steep_slopes = kwargs.get('disallow_steep_slopes', False)
         self.disallow_industry_adjacent = kwargs.get('disallow_industry_adjacent', False)
         self.require_houses_nearby = kwargs.get('require_houses_nearby', False)
         self.require_road_adjacent = kwargs.get('require_road_adjacent', []) # any of ['nw', 'ne', 'se', 'nw']
@@ -91,6 +92,9 @@ class TileLocationChecks(object):
 
         if self.disallow_slopes:
             result.appendleft(TileLocationCheckDisallowSlopes())
+
+        if self.disallow_steep_slopes:
+            result.appendleft(TileLocationCheckDisallowSteepSlopes())
 
         if self.disallow_industry_adjacent:
             result.append(TileLocationCheckDisallowIndustryAdjacent())
@@ -127,13 +131,23 @@ class TileLocationChecks(object):
 
 
 class TileLocationCheckDisallowSlopes(object):
-    """ Prevent building on slopes (not steep slopes) """
+    """ Prevent building on all slopes """
     def __init__(self):
         self.switch_result = None # no default value for this check, it may not be the last check in a chain
         self.switch_entry_point = None
 
     def render(self):
         return 'TILE_DISALLOW_SLOPES(' + self.switch_entry_point + ', CB_RESULT_LOCATION_DISALLOW,' + self.switch_result + ')'
+
+
+class TileLocationCheckDisallowSteepSlopes(object):
+    """ Prevent building on steep slopes (but not normal slopes) """
+    def __init__(self):
+        self.switch_result = None # no default value for this check, it may not be the last check in a chain
+        self.switch_entry_point = None
+
+    def render(self):
+        return 'TILE_DISALLOW_STEEP_SLOPE(' + self.switch_entry_point + ', string(STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE),' + self.switch_result + ')'
 
 
 class TileLocationCheckDisallowIndustryAdjacent(object):
