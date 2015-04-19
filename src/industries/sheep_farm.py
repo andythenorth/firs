@@ -20,17 +20,22 @@ industry = IndustryPrimaryOrganic(id='sheep_farm',
                     prod_decrease_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_GENERAL',
                     min_cargo_distr='1',
                     spec_flags='0',
+                    location_checks=IndustryLocationChecks(require_cluster=['sheep_farm', [16, 42, 1, 2]],
+                                                           incompatible={'stockyard': 16,
+                                                                         'textile_mill': 16}),
                     remove_cost_multiplier='0',
                     prospect_chance='0.75',
                     name='string(STR_IND_SHEEPFARM)',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_FARM))',
                     fund_cost_multiplier='45',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
-                    )
+                    snakebite=True)
 
 industry.economy_variations['FIRS'].enabled = True
 
-industry.add_tile(id='sheep_farm_tile')
+industry.add_tile(id='sheep_farm_tile_1',
+                  location_checks=TileLocationChecks(disallow_coast=True,
+                                                     disallow_industry_adjacent=True))
 
 spriteset_ground = industry.add_spriteset(
     id = 'sheep_farm_spriteset_ground',
@@ -99,20 +104,20 @@ industry.add_spritelayout(
 
 industry.add_industry_layout(
     id = 'sheep_farm_industry_layout_1',
-    layout = [(0, 0, 'sheep_farm_tile', 'sheep_farm_spritelayout_3'),
-              (1, 0, 'sheep_farm_tile', 'sheep_farm_spritelayout_2'),
-              (1, 2, 'sheep_farm_tile', 'sheep_farm_spritelayout_4'),
-              (3, 0, 'sheep_farm_tile', 'sheep_farm_spritelayout_1'),
-              (3, 1, 'sheep_farm_tile', 'sheep_farm_spritelayout_5'),
+    layout = [(0, 0, 'sheep_farm_tile_1', 'sheep_farm_spritelayout_3'),
+              (1, 0, 'sheep_farm_tile_1', 'sheep_farm_spritelayout_2'),
+              (1, 2, 'sheep_farm_tile_1', 'sheep_farm_spritelayout_4'),
+              (3, 0, 'sheep_farm_tile_1', 'sheep_farm_spritelayout_1'),
+              (3, 1, 'sheep_farm_tile_1', 'sheep_farm_spritelayout_5'),
     ]
 )
 industry.add_industry_layout(
     id = 'sheep_farm_industry_layout_2',
-    layout = [(0, 0, 'sheep_farm_tile', 'sheep_farm_spritelayout_2'),
-              (0, 1, 'sheep_farm_tile', 'sheep_farm_spritelayout_1'),
-              (0, 2, 'sheep_farm_tile', 'sheep_farm_spritelayout_4'),
-              (2, 0, 'sheep_farm_tile', 'sheep_farm_spritelayout_3'),
-              (2, 2, 'sheep_farm_tile', 'sheep_farm_spritelayout_5'),
+    layout = [(0, 0, 'sheep_farm_tile_1', 'sheep_farm_spritelayout_2'),
+              (0, 1, 'sheep_farm_tile_1', 'sheep_farm_spritelayout_1'),
+              (0, 2, 'sheep_farm_tile_1', 'sheep_farm_spritelayout_4'),
+              (2, 0, 'sheep_farm_tile_1', 'sheep_farm_spritelayout_3'),
+              (2, 2, 'sheep_farm_tile_1', 'sheep_farm_spritelayout_5'),
     ]
 )
 
