@@ -81,6 +81,7 @@ class TileLocationChecks(object):
         self.disallow_industry_adjacent = kwargs.get('disallow_industry_adjacent', False)
         self.require_houses_nearby = kwargs.get('require_houses_nearby', False)
         self.require_road_adjacent = kwargs.get('require_road_adjacent', []) # any of ['nw', 'ne', 'se', 'nw']
+        self.require_height_range = kwargs.get('require_height_range', False)
 
     def get_render_tree(self, tile_id, industry_id):
         switch_prefix = tile_id + '_lc_'
@@ -136,6 +137,8 @@ class TileLocationCheckDisallowIndustryAdjacent(object):
 
     def render(self):
         return 'TILE_DISALLOW_NEARBY_CLASS(' + self.switch_entry_point + ', TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW,' + self.switch_result + ')'
+
+"""TILE_CHECK_HEIGHT         (tile_location_check, 0, snowline_height, ${industry.id}_tile_desert_check, return string(STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE))"""
 
 
 class TileLocationCheckRequireHousesNearby(object):
@@ -304,7 +307,7 @@ class IndustryLocationCheckRequireCluster(object):
         self.industry_type = require_cluster[0]
         # use the numeric_id so that we can do single-industry compiles without nml barfing on missing identifiers
         self.industry_type_numeric_id = get_another_industry(self.industry_type).get_numeric_id()
-        self.arbitrary_numbers = require_cluster[1]
+        self.arbitrary_numbers = require_cluster[1] # not really arbitrary, I'm just being pissy because I don't know what div/mult do
         self.switch_result = 'return CB_RESULT_LOCATION_ALLOW' # default result, value may also be id for next switch
         self.switch_entry_point = str(self.industry_type_numeric_id)
 
