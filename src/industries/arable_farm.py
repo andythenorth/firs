@@ -41,6 +41,7 @@ industry.economy_variations['BASIC_TROPIC'].prod_cargo_types = ['BEAN', 'SGBT']
 
 industry.add_tile(id='arable_farm_tile_1',
                   location_checks=TileLocationChecks(disallow_slopes=True,
+                                                     disallow_above_snowline=True,
                                                      disallow_industry_adjacent=True))
 
 sprite_ground = industry.add_sprite(

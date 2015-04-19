@@ -81,7 +81,7 @@ class TileLocationChecks(object):
         self.disallow_industry_adjacent = kwargs.get('disallow_industry_adjacent', False)
         self.require_houses_nearby = kwargs.get('require_houses_nearby', False)
         self.require_road_adjacent = kwargs.get('require_road_adjacent', []) # any of ['nw', 'ne', 'se', 'nw']
-        self.require_height_range = kwargs.get('require_height_range', False)
+        self.disallow_above_snowline = kwargs.get('disallow_above_snowline', False)
 
     def get_render_tree(self, tile_id, industry_id):
         switch_prefix = tile_id + '_lc_'
@@ -103,6 +103,9 @@ class TileLocationChecks(object):
 
         for direction in self.require_road_adjacent:
             result.append(TileLocationCheckRequireRoadAdjacent(direction))
+
+        if self.disallow_above_snowline:
+            result.appendleft(TileLocationCheckDisallowAboveSnowline())
 
         # walk the tree, setting entry points and results (id of next switch) for each switch
         for count, lc in enumerate(result):
@@ -138,8 +141,6 @@ class TileLocationCheckDisallowIndustryAdjacent(object):
     def render(self):
         return 'TILE_DISALLOW_NEARBY_CLASS(' + self.switch_entry_point + ', TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW,' + self.switch_result + ')'
 
-"""TILE_CHECK_HEIGHT         (tile_location_check, 0, snowline_height, ${industry.id}_tile_desert_check, return string(STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE))"""
-
 
 class TileLocationCheckRequireHousesNearby(object):
     """ Requires houses at offset x, y (to be fed by circular tile search) """
@@ -163,6 +164,16 @@ class TileLocationCheckRequireRoadAdjacent(object):
     def render(self):
         x_y_string = ','.join([str(offset) for offset in self.direction_map[self.direction]])
         return 'CHECK_ROAD_ADJACENT(' + self.switch_entry_point + ', ' + x_y_string + ',' + self.switch_result + ')'
+
+
+class TileLocationCheckDisallowAboveSnowline(object):
+    """ Prevent building above snowline """
+    def __init__(self):
+        self.switch_result = None # no default value for this check, it may not be the last check in a chain
+        self.switch_entry_point = None
+
+    def render(self):
+        return 'TILE_CHECK_HEIGHT(' + self.switch_entry_point + ', 0, snowline_height, ' + self.switch_result + ', return string(STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE))'
 
 
 class TileLocationCheckFounder(object):
