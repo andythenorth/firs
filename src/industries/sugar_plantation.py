@@ -20,17 +20,25 @@ industry = IndustryPrimaryOrganic(id='sugar_plantation',
                     prod_decrease_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_FARM',
                     min_cargo_distr='1',
                     spec_flags='bitmask(IND_FLAG_PLANT_FIELDS_PERIODICALLY, IND_FLAG_PLANT_FIELDS_WHEN_BUILT)',
+                    location_checks=IndustryLocationChecks(require_cluster=['sugar_plantation', [16, 42, 1, 2]],
+                                                           incompatible={'sugar_refinery': 16,
+                                                                         'biorefinery': 16}),
                     remove_cost_multiplier='0',
                     prospect_chance='0.75',
                     name='string(STR_IND_SUGAR_PLANTATION)',
+                    extra_text_fund='string(STR_FUND_SUGAR_PLANTATION)',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_PLANTATION))',
                     fund_cost_multiplier='55',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
-                    )
+                    snakebite=True)
 
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
 
-industry.add_tile(id='sugar_plantation_tile')
+industry.add_tile(id='sugar_plantation_tile_1',
+                  location_checks=TileLocationChecks(disallow_slopes=True,
+                                                     disallow_above_snowline=True,
+                                                     disallow_desert=True,
+                                                     disallow_industry_adjacent=True))
 
 sprite_ground = industry.add_sprite(
     sprite_number = 'GROUNDTILE_MUD_TRACKS'
@@ -102,28 +110,28 @@ industry.add_spritelayout(
 
 industry.add_industry_layout(
     id = 'sugar_plantation_industry_layout_1',
-    layout = [(0, 1, 'sugar_plantation_tile', 'sugar_plantation_spritelayout_5'),
-              (0, 2, 'sugar_plantation_tile', 'sugar_plantation_spritelayout_3'),
-              (1, 0, 'sugar_plantation_tile', 'sugar_plantation_spritelayout_1'),
-              (1, 1, 'sugar_plantation_tile', 'sugar_plantation_spritelayout_2'),
-              (2, 1, 'sugar_plantation_tile', 'sugar_plantation_spritelayout_4'),
+    layout = [(0, 1, 'sugar_plantation_tile_1', 'sugar_plantation_spritelayout_5'),
+              (0, 2, 'sugar_plantation_tile_1', 'sugar_plantation_spritelayout_3'),
+              (1, 0, 'sugar_plantation_tile_1', 'sugar_plantation_spritelayout_1'),
+              (1, 1, 'sugar_plantation_tile_1', 'sugar_plantation_spritelayout_2'),
+              (2, 1, 'sugar_plantation_tile_1', 'sugar_plantation_spritelayout_4'),
     ]
 )
 industry.add_industry_layout(
     id = 'sugar_plantation_industry_layout_2',
-    layout = [(0, 0, 'sugar_plantation_tile', 'sugar_plantation_spritelayout_5'),
-              (0, 1, 'sugar_plantation_tile', 'sugar_plantation_spritelayout_4'),
-              (1, 0, 'sugar_plantation_tile', 'sugar_plantation_spritelayout_1'),
-              (1, 1, 'sugar_plantation_tile', 'sugar_plantation_spritelayout_2'),
-              (2, 0, 'sugar_plantation_tile', 'sugar_plantation_spritelayout_3'),
+    layout = [(0, 0, 'sugar_plantation_tile_1', 'sugar_plantation_spritelayout_5'),
+              (0, 1, 'sugar_plantation_tile_1', 'sugar_plantation_spritelayout_4'),
+              (1, 0, 'sugar_plantation_tile_1', 'sugar_plantation_spritelayout_1'),
+              (1, 1, 'sugar_plantation_tile_1', 'sugar_plantation_spritelayout_2'),
+              (2, 0, 'sugar_plantation_tile_1', 'sugar_plantation_spritelayout_3'),
     ]
 )
 industry.add_industry_layout(
     id = 'sugar_plantation_industry_layout_3',
-    layout = [(0, 0, 'sugar_plantation_tile', 'sugar_plantation_spritelayout_1'),
-              (0, 1, 'sugar_plantation_tile', 'sugar_plantation_spritelayout_2'),
-              (1, 0, 'sugar_plantation_tile', 'sugar_plantation_spritelayout_5'),
-              (2, 0, 'sugar_plantation_tile', 'sugar_plantation_spritelayout_4'),
-              (2, 1, 'sugar_plantation_tile', 'sugar_plantation_spritelayout_3'),
+    layout = [(0, 0, 'sugar_plantation_tile_1', 'sugar_plantation_spritelayout_1'),
+              (0, 1, 'sugar_plantation_tile_1', 'sugar_plantation_spritelayout_2'),
+              (1, 0, 'sugar_plantation_tile_1', 'sugar_plantation_spritelayout_5'),
+              (2, 0, 'sugar_plantation_tile_1', 'sugar_plantation_spritelayout_4'),
+              (2, 1, 'sugar_plantation_tile_1', 'sugar_plantation_spritelayout_3'),
     ]
 )
