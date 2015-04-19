@@ -20,18 +20,27 @@ industry = IndustryPrimaryOrganic(id='dairy_farm',
                     prod_decrease_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_GENERAL',
                     min_cargo_distr='1',
                     spec_flags='0',
+                    location_checks=IndustryLocationChecks(require_cluster=['dairy_farm', [16, 42, 1, 2]],
+                                                           incompatible={'stockyard': 16,
+                                                                         'dairy': 16}),
                     remove_cost_multiplier='0',
                     prospect_chance='0.75',
                     name='string(STR_IND_DAIRYFARM)',
+                    extra_text_fund='string(STR_FUND_DAIRY_FARM)',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_FARM))',
                     fund_cost_multiplier='60',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
-                    )
+                    snakebite=True)
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True
 
-industry.add_tile(id='dairy_farm_tile')
+industry.add_tile(id='dairy_farm_tile_1',
+                  location_checks=TileLocationChecks(disallow_steep_slopes=True,
+                                                     disallow_above_snowline=True,
+                                                     disallow_desert=True,
+                                                     disallow_coast=True,
+                                                     disallow_industry_adjacent=True))
 
 sprite_ground = industry.add_sprite(
     sprite_number = 'GROUNDTILE_MUD_TRACKS'
@@ -126,37 +135,37 @@ industry.add_spritelayout(
 
 industry.add_industry_layout(
     id = 'dairy_farm_industry_layout_1',
-    layout = [(0, 0, 'dairy_farm_tile', 'dairy_farm_spritelayout_cows_brown'),
-              (0, 1, 'dairy_farm_tile', 'dairy_farm_spritelayout_cows_bw'),
-              (0, 2, 'dairy_farm_tile', 'dairy_farm_spritelayout_house'),
-              (2, 0, 'dairy_farm_tile', 'dairy_farm_spritelayout_silo'),
-              (2, 1, 'dairy_farm_tile', 'dairy_farm_spritelayout_cows_bw_dirt'),
-              (3, 0, 'dairy_farm_tile', 'dairy_farm_spritelayout_barn1'),
-              (3, 1, 'dairy_farm_tile', 'dairy_farm_spritelayout_cows_brown_dirt'),
-              (3, 2, 'dairy_farm_tile', 'dairy_farm_spritelayout_barn2'),
+    layout = [(0, 0, 'dairy_farm_tile_1', 'dairy_farm_spritelayout_cows_brown'),
+              (0, 1, 'dairy_farm_tile_1', 'dairy_farm_spritelayout_cows_bw'),
+              (0, 2, 'dairy_farm_tile_1', 'dairy_farm_spritelayout_house'),
+              (2, 0, 'dairy_farm_tile_1', 'dairy_farm_spritelayout_silo'),
+              (2, 1, 'dairy_farm_tile_1', 'dairy_farm_spritelayout_cows_bw_dirt'),
+              (3, 0, 'dairy_farm_tile_1', 'dairy_farm_spritelayout_barn1'),
+              (3, 1, 'dairy_farm_tile_1', 'dairy_farm_spritelayout_cows_brown_dirt'),
+              (3, 2, 'dairy_farm_tile_1', 'dairy_farm_spritelayout_barn2'),
     ]
 )
 industry.add_industry_layout(
     id = 'dairy_farm_industry_layout_2',
-    layout = [(0, 0, 'dairy_farm_tile', 'dairy_farm_spritelayout_cows_brown_dirt'),
-              (0, 1, 'dairy_farm_tile', 'dairy_farm_spritelayout_cows_bw_dirt'),
-              (0, 2, 'dairy_farm_tile', 'dairy_farm_spritelayout_barn1'),
-              (1, 1, 'dairy_farm_tile', 'dairy_farm_spritelayout_barn2'),
-              (1, 2, 'dairy_farm_tile', 'dairy_farm_spritelayout_silo'),
-              (2, 0, 'dairy_farm_tile', 'dairy_farm_spritelayout_cows_bw'),
-              (2, 1, 'dairy_farm_tile', 'dairy_farm_spritelayout_cows_brown'),
-              (2, 2, 'dairy_farm_tile', 'dairy_farm_spritelayout_house'),
+    layout = [(0, 0, 'dairy_farm_tile_1', 'dairy_farm_spritelayout_cows_brown_dirt'),
+              (0, 1, 'dairy_farm_tile_1', 'dairy_farm_spritelayout_cows_bw_dirt'),
+              (0, 2, 'dairy_farm_tile_1', 'dairy_farm_spritelayout_barn1'),
+              (1, 1, 'dairy_farm_tile_1', 'dairy_farm_spritelayout_barn2'),
+              (1, 2, 'dairy_farm_tile_1', 'dairy_farm_spritelayout_silo'),
+              (2, 0, 'dairy_farm_tile_1', 'dairy_farm_spritelayout_cows_bw'),
+              (2, 1, 'dairy_farm_tile_1', 'dairy_farm_spritelayout_cows_brown'),
+              (2, 2, 'dairy_farm_tile_1', 'dairy_farm_spritelayout_house'),
     ]
 )
 industry.add_industry_layout(
     id = 'dairy_farm_industry_layout_3',
-    layout = [(0, 1, 'dairy_farm_tile', 'dairy_farm_spritelayout_barn1'),
-              (0, 3, 'dairy_farm_tile', 'dairy_farm_spritelayout_house'),
-              (1, 0, 'dairy_farm_tile', 'dairy_farm_spritelayout_barn2'),
-              (1, 1, 'dairy_farm_tile', 'dairy_farm_spritelayout_cows_brown_dirt'),
-              (1, 3, 'dairy_farm_tile', 'dairy_farm_spritelayout_cows_bw'),
-              (2, 0, 'dairy_farm_tile', 'dairy_farm_spritelayout_silo'),
-              (2, 1, 'dairy_farm_tile', 'dairy_farm_spritelayout_cows_bw_dirt'),
-              (2, 3, 'dairy_farm_tile', 'dairy_farm_spritelayout_cows_brown'),
+    layout = [(0, 1, 'dairy_farm_tile_1', 'dairy_farm_spritelayout_barn1'),
+              (0, 3, 'dairy_farm_tile_1', 'dairy_farm_spritelayout_house'),
+              (1, 0, 'dairy_farm_tile_1', 'dairy_farm_spritelayout_barn2'),
+              (1, 1, 'dairy_farm_tile_1', 'dairy_farm_spritelayout_cows_brown_dirt'),
+              (1, 3, 'dairy_farm_tile_1', 'dairy_farm_spritelayout_cows_bw'),
+              (2, 0, 'dairy_farm_tile_1', 'dairy_farm_spritelayout_silo'),
+              (2, 1, 'dairy_farm_tile_1', 'dairy_farm_spritelayout_cows_bw_dirt'),
+              (2, 3, 'dairy_farm_tile_1', 'dairy_farm_spritelayout_cows_brown'),
     ]
 )
