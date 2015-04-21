@@ -28,7 +28,9 @@ industry = IndustryPrimaryPort(id='port',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_IND_PORT))',
                     fund_cost_multiplier='152',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
-                    override_default_construction_states=True)
+                    override_default_construction_states=True,
+                    template="refactor_port.pypnml",
+                    snakebite=True)
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['FIRS'].accept_cargo_types = ['GOOD', 'FRUT', 'MNSP']
