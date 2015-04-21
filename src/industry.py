@@ -672,7 +672,7 @@ class IndustryPrimary(Industry):
     """ Industries that produce cargo and (optionally) boost production if supplies are delivered """
     def __init__(self, **kwargs):
         super(IndustryPrimary, self).__init__(**kwargs)
-        self.template = 'industry_primary.pypnml'
+        self.template = kwargs.get('template', 'industry_primary.pypnml')
         self.supply_requirements = None # default None, set appropriately by subclasses
 
 
