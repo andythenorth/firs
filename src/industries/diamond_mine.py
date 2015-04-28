@@ -19,7 +19,8 @@ industry = IndustryPrimaryExtractive(id='diamond_mine',
                     name='TTD_STR_INDUSTRY_NAME_DIAMOND_MINE',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_MINE))',
                     fund_cost_multiplier='232',
-                    )
+                    template="refactor_diamond_mine.pypnml",
+                    snakebite=True)
 
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
 
