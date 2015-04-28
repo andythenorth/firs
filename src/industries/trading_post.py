@@ -5,8 +5,7 @@
   See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
 """
 
-from industry import IndustryPrimaryPort, TileLocationChecks, IndustryLocationChecks
-import global_constants
+from industry import IndustryPrimaryPort
 
 industry = IndustryPrimaryPort(id='trading_post',
                     accept_cargo_types=['FOOD', 'FRUT', 'BEER'],
