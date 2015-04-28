@@ -5,10 +5,10 @@
   See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
 """
 
-from industry import Industry
+from industry import IndustrySecondary
 
-industry = Industry(id='oil_refinery',
-                    accept_cargo_types=['OIL_'],
+industry = IndustrySecondary(id='oil_refinery',
+                    processed_cargos_and_output_ratios=[('OIL_', 6)],
                     spec_flags='0',
                     prod_cargo_types=['RFPR', 'PETR'],
                     prob_in_game='2',
@@ -19,7 +19,9 @@ industry = Industry(id='oil_refinery',
                     name='TTD_STR_INDUSTRY_NAME_OIL_REFINERY',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_REFINERY))',
                     override='4',
-                    extra_text_industry='STR_EXTRA_OIL_REFINERY')
+                    extra_text_industry='STR_EXTRA_OIL_REFINERY',
+                    template="refactor_oil_refinery.pypnml",
+                    snakebite=True)
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_ARCTIC'].enabled = True
