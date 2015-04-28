@@ -722,7 +722,7 @@ class IndustrySecondary(Industry):
         self.processed_cargos_and_output_ratios = kwargs['processed_cargos_and_output_ratios'] # this kw is required, error if missing - no .get()
         kwargs['accept_cargo_types'] = [i[0] for i in self.processed_cargos_and_output_ratios]
         super(IndustrySecondary, self).__init__(**kwargs)
-        self.template = 'industry_secondary.pypnml'
+        self.template = kwargs.get('template', 'industry_secondary.pypnml')
         self.combined_cargos_boost_prod = kwargs.get('combined_cargos_boost_prod', False)
         self.mnsp_boosts_production_jank = kwargs.get('mnsp_boosts_production_jank', False) # jank jank jank
 

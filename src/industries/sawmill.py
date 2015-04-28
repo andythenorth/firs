@@ -5,10 +5,10 @@
   See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
 """
 
-from industry import Industry
+from industry import IndustrySecondary
 
-industry = Industry(id='sawmill',
-                    accept_cargo_types=['WOOD'],
+industry = IndustrySecondary(id='sawmill',
+                    processed_cargos_and_output_ratios=[('WOOD', 6)],
                     prod_cargo_types=['WDPR'],
                     prob_in_game='2',
                     prob_random='5',
@@ -17,7 +17,9 @@ industry = Industry(id='sawmill',
                     fund_cost_multiplier='97',
                     name='TTD_STR_INDUSTRY_NAME_SAWMILL',
                     override='2',
-                    extra_text_industry='STR_EXTRA_SAWMILL')
+                    extra_text_industry='STR_EXTRA_SAWMILL',
+                    template='refactor_sawmill.pypnml',
+                    snakebite=True)
 
 industry.economy_variations['FIRS'].enabled = True
 
