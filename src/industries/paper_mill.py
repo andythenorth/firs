@@ -5,10 +5,10 @@
   See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
 """
 
-from industry import Industry
+from industry import IndustrySecondary
 
-industry = Industry(id='paper_mill',
-                    accept_cargo_types=['CLAY', 'WOOD', 'RFPR'],
+industry = IndustrySecondary(id='paper_mill',
+                    processed_cargos_and_output_ratios=[('CLAY', 2), ('WOOD', 4), ('RFPR', 2)],
                     prod_cargo_types=['GOOD', 'MNSP'],
                     prob_in_game='2',
                     prob_random='5',
@@ -18,7 +18,9 @@ industry = Industry(id='paper_mill',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_MILL))',
                     name='TTD_STR_INDUSTRY_NAME_PAPER_MILL',
                     override='14',
-                    extra_text_industry='STR_EXTRA_PAPER_MILL')
+                    extra_text_industry='STR_EXTRA_PAPER_MILL',
+                    template="refactor_paper_mill.pypnml",
+                    snakebite=True)
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_ARCTIC'].enabled = True
