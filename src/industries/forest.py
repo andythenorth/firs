@@ -5,7 +5,7 @@
   See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
 """
 
-from industry import IndustryPrimaryOrganic, TileLocationChecks, IndustryLocationChecks
+from industry import IndustryPrimaryOrganic
 
 industry = IndustryPrimaryOrganic(id='forest',
                     new_ind_msg='TTD_STR_NEWS_INDUSTRY_CONSTRUCTION',
@@ -22,7 +22,9 @@ industry = IndustryPrimaryOrganic(id='forest',
                     fund_cost_multiplier='95',
                     prod_multiplier='[19]',
                     substitute='INDUSTRYTYPE_FOREST',
-                    graphics_change_dates = [1935])
+                    graphics_change_dates = [1935],
+                    template="refactor_forest.pypnml",
+                    snakebite=True)
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_ARCTIC'].enabled = True
