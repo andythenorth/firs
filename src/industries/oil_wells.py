@@ -23,7 +23,8 @@ industry = IndustryPrimaryExtractive(id='oil_wells',
                     fund_cost_multiplier='230',
                     prod_multiplier='[28]',
                     substitute='0',
-                    )
+                    template="refactor_oil_wells.pypnml",
+                    snakebite=True)
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_ARCTIC'].enabled = True
