@@ -20,7 +20,8 @@ industry = IndustryPrimaryExtractive(id='coal_mine',
                     name='TTD_STR_INDUSTRY_NAME_COAL_MINE',
                     fund_cost_multiplier='252',
                     override='0',
-                    )
+                    template="refactor_coal_mine.pypnml",
+                    snakebite=True)
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True
