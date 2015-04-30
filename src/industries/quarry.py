@@ -26,6 +26,7 @@ industry = IndustryPrimaryExtractive(id='quarry',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_IND_QUARRY))',
                     fund_cost_multiplier='210',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
-                    )
+                    template="refactor_quarry.pypnml",
+                    snakebite=True)
 
 industry.economy_variations['FIRS'].enabled = True

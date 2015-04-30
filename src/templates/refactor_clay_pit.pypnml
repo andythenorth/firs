@@ -1,0 +1,954 @@
+/*
+ * This file is part of FIRS industry set.
+ * FIRS industry set is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 2.
+ * FIRS industry set is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS industry set. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+#define THIS_ID(...) ${industry.id}_ ## __VA_ARGS__
+
+spriteset(THIS_ID(spriteset_1)) {
+	[10, 10, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1.png"]
+	[10, 10, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1_snow.png"]
+}
+
+spriteset(THIS_ID(spriteset_2)) {
+	[80, 10, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1.png"]
+	[80, 10, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1_snow.png"]
+}
+
+spriteset(THIS_ID(spriteset_3)) {
+	[150, 10, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1.png"]
+	[150, 10, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1_snow.png"]
+}
+
+spriteset(THIS_ID(spriteset_4)) {
+	[220, 10, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1.png"]
+	[220, 10, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1_snow.png"]
+}
+
+spriteset(THIS_ID(spriteset_5)) {
+	[290, 10, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1.png"]
+	[290, 10, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1_snow.png"]
+}
+
+spriteset(THIS_ID(spriteset_6)) {
+	[360, 10, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1.png"]
+	[360, 10, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1_snow.png"]
+}
+
+spriteset(THIS_ID(spriteset_7)) {
+	[10, 50, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1.png"]
+	[10, 50, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1_snow.png"]
+}
+
+spriteset(THIS_ID(spriteset_8)) {
+	[80, 50, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1.png"]
+	[80, 50, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1_snow.png"]
+}
+
+spriteset(THIS_ID(spriteset_9)) {
+	[150, 50, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1.png"]
+	[150, 50, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1_snow.png"]
+}
+
+spriteset(THIS_ID(spriteset_10)) {
+	[220, 50, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1.png"]
+	[220, 50, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1_snow.png"]
+}
+
+spriteset(THIS_ID(spriteset_11)) {
+	[290, 50, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1.png"]
+	[290, 50, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1_snow.png"]
+}
+
+spriteset(THIS_ID(spriteset_12)) {
+	[360, 50, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1.png"]
+	[360, 50, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1_snow.png"]
+}
+
+spriteset(THIS_ID(spriteset_13)) {
+	[10, 90, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1.png"]
+	[10, 90, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1_snow.png"]
+}
+
+spriteset(THIS_ID(spriteset_14)) {
+	[80, 90, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1.png"]
+	[80, 90, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1_snow.png"]
+}
+
+spriteset(THIS_ID(spriteset_15)) {
+	[150, 90, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1.png"]
+	[150, 90, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1_snow.png"]
+}
+
+spriteset(THIS_ID(spriteset_16)) {
+	[220, 90, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1.png"]
+	[220, 90, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1_snow.png"]
+}
+
+spriteset(THIS_ID(spriteset_17)) {
+	[290, 90, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1.png"]
+	[290, 90, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1_snow.png"]
+}
+
+spriteset(THIS_ID(spriteset_18)) {
+	[360, 90, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1.png"]
+	[360, 90, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1_snow.png"]
+}
+
+spriteset(THIS_ID(spriteset_19)) {
+	[10, 130, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1.png"]
+	[10, 130, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1_snow.png"]
+}
+
+spriteset(THIS_ID(spriteset_20)) {
+	[80, 130, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1.png"]
+	[80, 130, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1_snow.png"]
+}
+
+spriteset(THIS_ID(spriteset_21)) {
+	[150, 130, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1.png"]
+	[150, 130, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1_snow.png"]
+}
+
+spriteset(THIS_ID(spriteset_22)) {
+	[220, 130, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1.png"]
+	[220, 130, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1_snow.png"]
+}
+
+spriteset(THIS_ID(spriteset_23)) {
+	[290, 130, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1.png"]
+	[290, 130, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1_snow.png"]
+}
+
+spriteset(THIS_ID(spriteset_24)) {
+	[360, 130, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1.png"]
+	[360, 130, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1_snow.png"]
+}
+
+spriteset(THIS_ID(spriteset_25)) {
+	[440, 10, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1.png"]
+	[440, 10, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1_snow.png"]
+}
+
+spriteset(THIS_ID(spriteset_26)) {
+	[510, 10, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1.png"]
+	[510, 10, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1_snow.png"]
+}
+
+spriteset(THIS_ID(spriteset_27)) {
+	[580, 10, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1.png"]
+	[580, 10, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1_snow.png"]
+}
+
+spriteset(THIS_ID(spriteset_28)) {
+	[650, 10, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1.png"]
+	[650, 10, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1_snow.png"]
+}
+
+spriteset(THIS_ID(spriteset_29)) {
+	[440, 50, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1.png"]
+	[440, 50, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1_snow.png"]
+}
+
+spriteset(THIS_ID(spriteset_30)) {
+	[510, 50, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1.png"]
+	[510, 50, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1_snow.png"]
+}
+
+spriteset(THIS_ID(spriteset_31)) {
+	[580, 50, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1.png"]
+	[580, 50, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1_snow.png"]
+}
+
+spriteset(THIS_ID(spriteset_32)) {
+	[650, 50, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1.png"]
+	[650, 50, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1_snow.png"]
+}
+
+spriteset(THIS_ID(spriteset_33)) {
+	[580, 90, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1.png"]
+	[580, 90, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1_snow.png"]
+}
+
+spriteset(THIS_ID(spriteset_34)) {
+	[650, 90, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1.png"]
+	[650, 90, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1_snow.png"]
+}
+
+spriteset(THIS_ID(spriteset_35)) {
+	[730, 10, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1.png"]
+	[730, 10, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1_snow.png"]
+}
+
+spriteset(THIS_ID(spriteset_36)) {
+	[800, 10, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1.png"]
+	[800, 10, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1_snow.png"]
+}
+
+spriteset(THIS_ID(spriteset_37)) {
+	[870, 10, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1.png"]
+	[870, 10, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1_snow.png"]
+}
+
+spriteset(THIS_ID(spriteset_38)) {
+	[940, 10, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1.png"]
+	[940, 10, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1_snow.png"]
+}
+
+spriteset(THIS_ID(spriteset_39)) {
+	[1010, 10, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1.png"]
+	[1010, 10, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1_snow.png"]
+}
+
+spriteset(THIS_ID(spriteset_40)) {
+	[1080, 10, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1.png"]
+	[1080, 10, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1_snow.png"]
+}
+
+spriteset(THIS_ID(spriteset_41)) {
+	[1150, 10, 64, 34, -31, -3, "src/graphics/industries/clay_pit_1.png"]
+	[1150, 10, 64, 34, -31, -3, "src/graphics/industries/clay_pit_1_snow.png"]
+}
+
+spriteset(THIS_ID(spriteset_42)) {
+	[1220, 10, 64, 33, -31, -2, "src/graphics/industries/clay_pit_1.png"]
+	[1220, 10, 64, 33, -31, -2, "src/graphics/industries/clay_pit_1_snow.png"]
+}
+
+spriteset(THIS_ID(spriteset_43)) {
+	[1290, 10, 64, 34, -31, -3, "src/graphics/industries/clay_pit_1.png"]
+	[1290, 10, 64, 34, -31, -3, "src/graphics/industries/clay_pit_1_snow.png"]
+}
+
+spriteset(THIS_ID(spriteset_44)) {
+	[1360, 10, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1.png"]
+	[1360, 10, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1_snow.png"]
+}
+
+spriteset(THIS_ID(spriteset_45)) {
+	[800, 50, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1.png"]
+	[800, 50, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1_snow.png"]
+}
+
+spriteset(THIS_ID(spriteset_46)) {
+	[870, 50, 64, 51, -31, -20, ANIM, "src/graphics/industries/clay_pit_1.png"]
+	[870, 50, 64, 51, -31, -20, ANIM, "src/graphics/industries/clay_pit_1_snow.png"]
+}
+
+spriteset(THIS_ID(spriteset_47)) {
+	[1010, 50, 64, 64, -31, -35, "src/graphics/industries/clay_pit_1.png"]
+	[1010, 50, 64, 64, -31, -35, "src/graphics/industries/clay_pit_1_snow.png"]
+}
+
+spriteset(THIS_ID(spriteset_48)) {
+	[1080, 50, 64, 49, -31, -18, "src/graphics/industries/clay_pit_1.png"]
+	[1080, 50, 64, 49, -31, -18, "src/graphics/industries/clay_pit_1_snow.png"]
+}
+
+spriteset(THIS_ID(spriteset_49)) {
+	[1150, 50, 64, 57, -31, -26, "src/graphics/industries/clay_pit_1.png"]
+	[1150, 50, 64, 57, -31, -26, "src/graphics/industries/clay_pit_1_snow.png"]
+}
+
+spriteset(THIS_ID(spriteset_50)) {
+	[730, 140, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1.png"]
+	[730, 140, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1_snow.png"]
+}
+
+spriteset(THIS_ID(spriteset_51)) {
+	[800, 140, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1.png"]
+	[800, 140, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1_snow.png"]
+}
+
+spriteset(THIS_ID(spriteset_52)) {
+	[940, 140, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1.png"]
+	[940, 140, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1_snow.png"]
+}
+
+spriteset(THIS_ID(spriteset_53)) {
+	[730, 80, 64, 51, -31, -20, ANIM, "src/graphics/industries/clay_pit_1.png"]
+	[730, 80, 64, 51, -31, -20, ANIM, "src/graphics/industries/clay_pit_1_snow.png"]
+}
+
+spriteset(THIS_ID(spriteset_54)) {
+	[800, 100, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1.png"]
+	[800, 100, 64, 31, -31, 0, ANIM, "src/graphics/industries/clay_pit_1_snow.png"]
+}
+
+spriteset(THIS_ID(spriteset_55)) {
+	[940, 90, 64, 47, -31, -16, "src/graphics/industries/clay_pit_1.png"]
+	[940, 90, 64, 47, -31, -16, "src/graphics/industries/clay_pit_1_snow.png"]
+}
+
+spritelayout THIS_ID(spritelayout_1) {
+	ground {
+		sprite: (terrain_type != TILETYPE_SNOW) ? GROUNDSPRITE_NORMAL : GROUNDSPRITE_SNOW;
+	}
+	building {
+		sprite: THIS_ID(spriteset_1(terrain_type == TILETYPE_SNOW));
+		always_draw: 1;
+		xextent: 8;
+		yextent: 8;
+		zextent: 12;
+	}
+	building {
+		sprite: THIS_ID(spriteset_25(terrain_type == TILETYPE_SNOW));
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		zextent: 12;
+	}
+}
+
+spritelayout THIS_ID(spritelayout_2) {
+	ground {
+		sprite: (terrain_type != TILETYPE_SNOW) ? GROUNDSPRITE_NORMAL : GROUNDSPRITE_SNOW;
+	}
+	building {
+		sprite: THIS_ID(spriteset_2(terrain_type == TILETYPE_SNOW));
+		always_draw: 1;
+		xextent: 8;
+		yextent: 8;
+		zextent: 12;
+	}
+	building {
+		sprite: THIS_ID(spriteset_26(terrain_type == TILETYPE_SNOW));
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		zextent: 12;
+	}
+}
+
+spritelayout THIS_ID(spritelayout_3) {
+	ground {
+		sprite: (terrain_type != TILETYPE_SNOW) ? GROUNDSPRITE_NORMAL : GROUNDSPRITE_SNOW;
+	}
+	building {
+		sprite: THIS_ID(spriteset_3(terrain_type == TILETYPE_SNOW));
+		always_draw: 1;
+		xextent: 8;
+		yextent: 8;
+		zextent: 12;
+	}
+	building {
+		sprite: THIS_ID(spriteset_27(terrain_type == TILETYPE_SNOW));
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		zextent: 12;
+	}
+}
+
+spritelayout THIS_ID(spritelayout_4) {
+	ground {
+		sprite: (terrain_type != TILETYPE_SNOW) ? GROUNDSPRITE_NORMAL : GROUNDSPRITE_SNOW;
+	}
+	building {
+		sprite: THIS_ID(spriteset_4(terrain_type == TILETYPE_SNOW));
+		always_draw: 1;
+		xextent: 8;
+		yextent: 8;
+		zextent: 12;
+	}
+	building {
+		sprite: THIS_ID(spriteset_28(terrain_type == TILETYPE_SNOW));
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		xextent: 11;
+		zextent: 42;
+	}
+}
+
+spritelayout THIS_ID(spritelayout_5) {
+	ground {
+		sprite: (terrain_type != TILETYPE_SNOW) ? GROUNDSPRITE_NORMAL : GROUNDSPRITE_SNOW;
+	}
+	building {
+		sprite: THIS_ID(spriteset_5(terrain_type == TILETYPE_SNOW));
+		always_draw: 1;
+		zextent: 4;
+	}
+}
+
+spritelayout THIS_ID(spritelayout_6) {
+	ground {
+		sprite: (terrain_type != TILETYPE_SNOW) ? GROUNDSPRITE_NORMAL : GROUNDSPRITE_SNOW;
+	}
+	building {
+		sprite: THIS_ID(spriteset_6(terrain_type == TILETYPE_SNOW));
+		always_draw: 1;
+		zextent: 4;
+	}
+}
+
+spritelayout THIS_ID(spritelayout_7) {
+	ground {
+		sprite: (terrain_type != TILETYPE_SNOW) ? GROUNDSPRITE_NORMAL : GROUNDSPRITE_SNOW;
+	}
+	building {
+		sprite: THIS_ID(spriteset_7(terrain_type == TILETYPE_SNOW));
+		always_draw: 1;
+		zextent: 32;
+	}
+	building {
+		sprite: THIS_ID(spriteset_29(terrain_type == TILETYPE_SNOW));
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		zextent: 32;
+	}
+}
+
+spritelayout THIS_ID(spritelayout_8) {
+	ground {
+		sprite: (terrain_type != TILETYPE_SNOW) ? GROUNDSPRITE_NORMAL : GROUNDSPRITE_SNOW;
+	}
+	building {
+		sprite: THIS_ID(spriteset_8(terrain_type == TILETYPE_SNOW));
+		always_draw: 1;
+		xextent: 8;
+		yextent: 8;
+		zextent: 12;
+	}
+	building {
+		sprite: THIS_ID(spriteset_30(terrain_type == TILETYPE_SNOW));
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		zextent: 32;
+	}
+}
+
+spritelayout THIS_ID(spritelayout_9) {
+	ground {
+		sprite: (terrain_type != TILETYPE_SNOW) ? GROUNDSPRITE_NORMAL : GROUNDSPRITE_SNOW;
+	}
+	building {
+		sprite: THIS_ID(spriteset_9(terrain_type == TILETYPE_SNOW));
+		always_draw: 1;
+		zextent: 6;
+	}
+}
+
+spritelayout THIS_ID(spritelayout_10) {
+	ground {
+		sprite: THIS_ID(spriteset_10(terrain_type == TILETYPE_SNOW));
+	}
+	building {
+		sprite: THIS_ID(spriteset_31);
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		zextent: 32;
+	}
+}
+
+spritelayout THIS_ID(spritelayout_11) {
+	ground {
+		sprite: THIS_ID(spriteset_11(terrain_type == TILETYPE_SNOW));
+	}
+	building {
+		sprite: THIS_ID(spriteset_32(terrain_type == TILETYPE_SNOW));
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		zextent: 32;
+	}
+}
+
+spritelayout THIS_ID(spritelayout_12) {
+	ground {
+		sprite: (terrain_type != TILETYPE_SNOW) ? GROUNDSPRITE_NORMAL : GROUNDSPRITE_SNOW;
+	}
+	building {
+		sprite: THIS_ID(spriteset_12(terrain_type == TILETYPE_SNOW));
+		always_draw: 1;
+		zextent: 6;
+	}
+}
+
+spritelayout THIS_ID(spritelayout_13) {
+	ground {
+		sprite: (terrain_type != TILETYPE_SNOW) ? GROUNDSPRITE_NORMAL : GROUNDSPRITE_SNOW;
+	}
+	building {
+		sprite: THIS_ID(spriteset_13(terrain_type == TILETYPE_SNOW));
+		always_draw: 1;
+		zextent: 6;
+	}
+}
+
+spritelayout THIS_ID(spritelayout_14) {
+	ground {
+		sprite: (terrain_type != TILETYPE_SNOW) ? GROUNDSPRITE_NORMAL : GROUNDSPRITE_SNOW;
+	}
+	building {
+		sprite: THIS_ID(spriteset_14(terrain_type == TILETYPE_SNOW));
+		always_draw: 1;
+		zextent: 6;
+	}
+}
+
+spritelayout THIS_ID(spritelayout_15) {
+	ground {
+		sprite: (terrain_type != TILETYPE_SNOW) ? GROUNDSPRITE_NORMAL : GROUNDSPRITE_SNOW;
+	}
+	building {
+		sprite: THIS_ID(spriteset_15(terrain_type == TILETYPE_SNOW));
+		always_draw: 1;
+		zextent: 6;
+	}
+}
+
+spritelayout THIS_ID(spritelayout_16) {
+	ground {
+		sprite: THIS_ID(spriteset_16(terrain_type == TILETYPE_SNOW));
+	}
+	building {
+		sprite: THIS_ID(spriteset_33(terrain_type == TILETYPE_SNOW));
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		zextent: 32;
+	}
+}
+
+spritelayout THIS_ID(spritelayout_17) {
+	ground {
+		sprite: THIS_ID(spriteset_17(terrain_type == TILETYPE_SNOW));
+	}
+	building {
+		sprite: THIS_ID(spriteset_34(terrain_type == TILETYPE_SNOW));
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		zextent: 32;
+	}
+}
+
+spritelayout THIS_ID(spritelayout_18) {
+	ground {
+		sprite: (terrain_type != TILETYPE_SNOW) ? GROUNDSPRITE_NORMAL : GROUNDSPRITE_SNOW;
+	}
+	building {
+		sprite: THIS_ID(spriteset_18(terrain_type == TILETYPE_SNOW));
+		always_draw: 1;
+		zextent: 6;
+	}
+}
+
+spritelayout THIS_ID(spritelayout_19) {
+	ground {
+		sprite: (terrain_type != TILETYPE_SNOW) ? GROUNDSPRITE_NORMAL : GROUNDSPRITE_SNOW;
+	}
+	building {
+		sprite: THIS_ID(spriteset_19(terrain_type == TILETYPE_SNOW));
+		always_draw: 1;
+		zextent: 6;
+	}
+}
+
+spritelayout THIS_ID(spritelayout_20) {
+	ground {
+		sprite: (terrain_type != TILETYPE_SNOW) ? GROUNDSPRITE_NORMAL : GROUNDSPRITE_SNOW;
+	}
+	building {
+		sprite: THIS_ID(spriteset_20(terrain_type == TILETYPE_SNOW));
+		always_draw: 1;
+		zextent: 6;
+	}
+}
+
+spritelayout THIS_ID(spritelayout_21) {
+	ground {
+		sprite: (terrain_type != TILETYPE_SNOW) ? GROUNDSPRITE_NORMAL : GROUNDSPRITE_SNOW;
+	}
+	building {
+		sprite: THIS_ID(spriteset_21(terrain_type == TILETYPE_SNOW));
+		always_draw: 1;
+		zextent: 6;
+	}
+}
+
+spritelayout THIS_ID(spritelayout_22) {
+	ground {
+		sprite: (terrain_type != TILETYPE_SNOW) ? GROUNDSPRITE_NORMAL : GROUNDSPRITE_SNOW;
+	}
+	building {
+		sprite: THIS_ID(spriteset_22(terrain_type == TILETYPE_SNOW));
+		always_draw: 1;
+		zextent: 6;
+	}
+}
+
+spritelayout THIS_ID(spritelayout_23) {
+	ground {
+		sprite: (terrain_type != TILETYPE_SNOW) ? GROUNDSPRITE_NORMAL : GROUNDSPRITE_SNOW;
+	}
+	building {
+		sprite: THIS_ID(spriteset_23(terrain_type == TILETYPE_SNOW));
+		always_draw: 1;
+		zextent: 6;
+	}
+}
+
+spritelayout THIS_ID(spritelayout_24) {
+	ground {
+		sprite: (terrain_type != TILETYPE_SNOW) ? GROUNDSPRITE_NORMAL : GROUNDSPRITE_SNOW;
+	}
+	building {
+		sprite: THIS_ID(spriteset_24(terrain_type == TILETYPE_SNOW));
+		always_draw: 1;
+		zextent: 6;
+	}
+}
+
+spritelayout THIS_ID(spritelayout_35) {
+	ground {
+		sprite: THIS_ID(spriteset_35(terrain_type == TILETYPE_SNOW));
+	}
+}
+
+spritelayout THIS_ID(spritelayout_36) {
+	ground {
+		sprite: THIS_ID(spriteset_36(terrain_type == TILETYPE_SNOW));
+	}
+	building {
+		sprite: THIS_ID(spriteset_45(terrain_type == TILETYPE_SNOW));
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+	}
+}
+
+spritelayout THIS_ID(spritelayout_37) {
+	ground {
+		sprite: THIS_ID(spriteset_37(terrain_type == TILETYPE_SNOW));
+	}
+	building {
+		sprite: THIS_ID(spriteset_46(terrain_type == TILETYPE_SNOW));
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		zextent: 32;
+	}
+}
+
+spritelayout THIS_ID(spritelayout_38) {
+	ground {
+		sprite: (terrain_type != TILETYPE_SNOW) ? GROUNDSPRITE_NORMAL : GROUNDSPRITE_SNOW;
+	}
+	building {
+		sprite: THIS_ID(spriteset_38(terrain_type == TILETYPE_SNOW));
+		always_draw: 1;
+		zextent: 4;
+	}
+}
+
+spritelayout THIS_ID(spritelayout_39) {
+	ground {
+		sprite: THIS_ID(spriteset_39(terrain_type == TILETYPE_SNOW));
+	}
+	building {
+		sprite: THIS_ID(spriteset_47(terrain_type == TILETYPE_SNOW));
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		zextent: 48;
+	}
+}
+
+spritelayout THIS_ID(spritelayout_40) {
+	ground {
+		sprite: THIS_ID(spriteset_40(terrain_type == TILETYPE_SNOW));
+	}
+	building {
+		sprite: THIS_ID(spriteset_48(terrain_type == TILETYPE_SNOW));
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		zextent: 32;
+	}
+}
+
+spritelayout THIS_ID(spritelayout_41) {
+	ground {
+		sprite: THIS_ID(spriteset_41(terrain_type == TILETYPE_SNOW));
+	}
+	building {
+		sprite: THIS_ID(spriteset_49(terrain_type == TILETYPE_SNOW));
+		zextent: 48;
+	}
+}
+
+spritelayout THIS_ID(spritelayout_42) {
+	ground {
+		sprite: (terrain_type != TILETYPE_SNOW) ? GROUNDSPRITE_NORMAL : GROUNDSPRITE_SNOW;
+	}
+	building {
+		sprite: THIS_ID(spriteset_42(terrain_type == TILETYPE_SNOW));
+		always_draw: 1;
+		zextent: 4;
+	}
+}
+
+spritelayout THIS_ID(spritelayout_43) {
+	ground {
+		sprite: (terrain_type != TILETYPE_SNOW) ? GROUNDSPRITE_NORMAL : GROUNDSPRITE_SNOW;
+	}
+	building {
+		sprite: THIS_ID(spriteset_43(terrain_type == TILETYPE_SNOW));
+		always_draw: 1;
+		zextent: 4;
+	}
+}
+
+spritelayout THIS_ID(spritelayout_44) {
+	ground {
+		sprite: (terrain_type != TILETYPE_SNOW) ? GROUNDSPRITE_NORMAL : GROUNDSPRITE_SNOW;
+	}
+	building {
+		sprite: THIS_ID(spriteset_44(terrain_type == TILETYPE_SNOW));
+		always_draw: 1;
+		zextent: 4;
+	}
+}
+
+spritelayout THIS_ID(spritelayout_50) {
+	ground {
+		sprite: THIS_ID(spriteset_50(terrain_type == TILETYPE_SNOW));
+	}
+	building {
+		sprite: THIS_ID(spriteset_53(terrain_type == TILETYPE_SNOW));
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		zextent: 32;
+	}
+}
+
+spritelayout THIS_ID(spritelayout_51) {
+	ground {
+		sprite: (terrain_type != TILETYPE_SNOW) ? GROUNDSPRITE_NORMAL : GROUNDSPRITE_SNOW;
+	}
+	building {
+		sprite: THIS_ID(spriteset_51(terrain_type == TILETYPE_SNOW));
+		always_draw: 1;
+		zextent: 8;
+	}
+	building {
+		sprite: THIS_ID(spriteset_54(terrain_type == TILETYPE_SNOW));
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		zextent: 8;
+	}
+}
+
+spritelayout THIS_ID(spritelayout_52) {
+	ground {
+		sprite: THIS_ID(spriteset_52(terrain_type == TILETYPE_SNOW));
+	}
+	building {
+		sprite: THIS_ID(spriteset_55(terrain_type == TILETYPE_SNOW));
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+		zextent: 32;
+	}
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_1), relative_pos) {
+	relative_coord(5, 3): THIS_ID(spritelayout_1);
+	relative_coord(4, 3): THIS_ID(spritelayout_2);
+	relative_coord(3, 3): THIS_ID(spritelayout_3);
+	relative_coord(2, 3): THIS_ID(spritelayout_4);
+	relative_coord(1, 3): THIS_ID(spritelayout_5);
+	relative_coord(0, 3): THIS_ID(spritelayout_6);
+	relative_coord(5, 2): THIS_ID(spritelayout_7);
+	relative_coord(4, 2): THIS_ID(spritelayout_8);
+	relative_coord(3, 2): THIS_ID(spritelayout_9);
+	relative_coord(2, 2): THIS_ID(spritelayout_10);
+	relative_coord(1, 2): THIS_ID(spritelayout_11);
+	relative_coord(0, 2): THIS_ID(spritelayout_12);
+	relative_coord(5, 1): THIS_ID(spritelayout_13);
+	relative_coord(4, 1): THIS_ID(spritelayout_14);
+	relative_coord(3, 1): THIS_ID(spritelayout_15);
+	relative_coord(2, 1): THIS_ID(spritelayout_16);
+	relative_coord(1, 1): THIS_ID(spritelayout_17);
+	relative_coord(0, 1): THIS_ID(spritelayout_18);
+	relative_coord(5, 0): THIS_ID(spritelayout_19);
+	relative_coord(4, 0): THIS_ID(spritelayout_20);
+	relative_coord(3, 0): THIS_ID(spritelayout_21);
+	relative_coord(2, 0): THIS_ID(spritelayout_22);
+	relative_coord(1, 0): THIS_ID(spritelayout_23);
+	relative_coord(0, 0): THIS_ID(spritelayout_24);
+	relative_coord(8, 2): THIS_ID(spritelayout_35);
+	relative_coord(7, 2): THIS_ID(spritelayout_36);
+	relative_coord(6, 2): THIS_ID(spritelayout_37);
+	relative_coord(6, 3): THIS_ID(spritelayout_38);
+	relative_coord(8, 1): THIS_ID(spritelayout_39);
+	relative_coord(7, 1): THIS_ID(spritelayout_40);
+	relative_coord(6, 1): THIS_ID(spritelayout_41);
+	relative_coord(7, 0): THIS_ID(spritelayout_42);
+	relative_coord(8, 0): THIS_ID(spritelayout_43);
+	THIS_ID(spritelayout_44);
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(layout_2), relative_pos) {
+	relative_coord(5, 4): THIS_ID(spritelayout_1);
+	relative_coord(4, 4): THIS_ID(spritelayout_2);
+	relative_coord(3, 4): THIS_ID(spritelayout_3);
+	relative_coord(2, 4): THIS_ID(spritelayout_4);
+	relative_coord(1, 4): THIS_ID(spritelayout_5);
+	relative_coord(0, 4): THIS_ID(spritelayout_6);
+	relative_coord(5, 3): THIS_ID(spritelayout_7);
+	relative_coord(4, 3): THIS_ID(spritelayout_8);
+	relative_coord(3, 3): THIS_ID(spritelayout_9);
+	relative_coord(2, 3): THIS_ID(spritelayout_10);
+	relative_coord(1, 3): THIS_ID(spritelayout_11);
+	relative_coord(0, 3): THIS_ID(spritelayout_12);
+	relative_coord(5, 2): THIS_ID(spritelayout_13);
+	relative_coord(4, 2): THIS_ID(spritelayout_14);
+	relative_coord(3, 2): THIS_ID(spritelayout_15);
+	relative_coord(2, 2): THIS_ID(spritelayout_16);
+	relative_coord(1, 2): THIS_ID(spritelayout_17);
+	relative_coord(0, 2): THIS_ID(spritelayout_18);
+	relative_coord(5, 1): THIS_ID(spritelayout_19);
+	relative_coord(4, 1): THIS_ID(spritelayout_20);
+	relative_coord(3, 1): THIS_ID(spritelayout_21);
+	relative_coord(2, 1): THIS_ID(spritelayout_22);
+	relative_coord(1, 1): THIS_ID(spritelayout_23);
+	relative_coord(0, 1): THIS_ID(spritelayout_24);
+	relative_coord(6, 0): THIS_ID(spritelayout_39);
+	relative_coord(6, 1): THIS_ID(spritelayout_52);
+	relative_coord(6, 2): THIS_ID(spritelayout_41);
+	relative_coord(6, 3): THIS_ID(spritelayout_50);
+	THIS_ID(spritelayout_51);
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, THIS_ID(layout), layout_num) {
+	1: THIS_ID(layout_1);
+	2: THIS_ID(layout_2);
+	THIS_ID(spritelayout_1);
+}
+
+/* *************************************************
+ * Definition of the industry tile and its callbacks
+ * *************************************************/
+
+/* tile_check is disabled; if it's enabled OpenTTD won't terraform for this industry, which makes it unlikely to be built on steep maps.
+// This means that this industry will locate adjacent to others, blocking routes.  It's the lesser of two evils.
+TILE_DISALLOW_NEARBY_CLASS(tile1_nearby_industry,  TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
+TILE_ALLOW_PLAYER         (tile1_player_check,                                                             THIS_ID(tile1_nearby_industry))
+TILE_DISALLOW_TERRAIN     (tile1_disallow_terrain, TILETYPE_DESERT,     CB_RESULT_LOCATION_DISALLOW, THIS_ID(tile1_player_check))
+TILE_DISALLOW_SLOPES      (tile1_location_check,                        CB_RESULT_LOCATION_DISALLOW, THIS_ID(tile1_disallow_terrain))
+*/
+
+item(FEAT_INDUSTRYTILES, THIS_ID(tile), TILE_CLAYPIT_1) {
+	property {
+		substitute:       0;
+		accepted_cargos:  [[ENSP, 8]];
+		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
+	}
+
+	graphics {
+		foundations:  return CB_RESULT_NO_FOUNDATIONS;
+		autoslope:    return CB_RESULT_NO_AUTOSLOPE;
+		/*tile_check:   THIS_ID(tile1_location_check); // disabled to permit terraforming, see note above*/
+		THIS_ID(layout);
+	}
+}
+
+/* *************************************************
+ * Definition of the industry layouts
+ * *************************************************/
+
+tilelayout tilelayout_clay_pit_1 {
+	0, 0: THIS_ID(tile);
+	1, 0: THIS_ID(tile);
+	2, 0: THIS_ID(tile);
+	3, 0: THIS_ID(tile);
+	4, 0: THIS_ID(tile);
+	5, 0: THIS_ID(tile);
+	6, 0: THIS_ID(tile);
+	7, 0: THIS_ID(tile);
+	8, 0: THIS_ID(tile);
+	0, 1: THIS_ID(tile);
+	1, 1: THIS_ID(tile);
+	2, 1: THIS_ID(tile);
+	3, 1: THIS_ID(tile);
+	4, 1: THIS_ID(tile);
+	5, 1: THIS_ID(tile);
+	6, 1: THIS_ID(tile);
+	7, 1: THIS_ID(tile);
+	8, 1: THIS_ID(tile);
+	0, 2: THIS_ID(tile);
+	1, 2: THIS_ID(tile);
+	2, 2: THIS_ID(tile);
+	3, 2: THIS_ID(tile);
+	4, 2: THIS_ID(tile);
+	5, 2: THIS_ID(tile);
+	6, 2: THIS_ID(tile);
+	7, 2: THIS_ID(tile);
+	8, 2: THIS_ID(tile);
+	0, 3: THIS_ID(tile);
+	1, 3: THIS_ID(tile);
+	2, 3: THIS_ID(tile);
+	3, 3: THIS_ID(tile);
+	4, 3: THIS_ID(tile);
+	5, 3: THIS_ID(tile);
+	6, 3: THIS_ID(tile);
+}
+
+tilelayout tilelayout_clay_pit_2 {
+	6, 0: THIS_ID(tile);
+	0, 1: THIS_ID(tile);
+	1, 1: THIS_ID(tile);
+	2, 1: THIS_ID(tile);
+	3, 1: THIS_ID(tile);
+	4, 1: THIS_ID(tile);
+	5, 1: THIS_ID(tile);
+	6, 1: THIS_ID(tile);
+	0, 2: THIS_ID(tile);
+	1, 2: THIS_ID(tile);
+	2, 2: THIS_ID(tile);
+	3, 2: THIS_ID(tile);
+	4, 2: THIS_ID(tile);
+	5, 2: THIS_ID(tile);
+	6, 2: THIS_ID(tile);
+	0, 3: THIS_ID(tile);
+	1, 3: THIS_ID(tile);
+	2, 3: THIS_ID(tile);
+	3, 3: THIS_ID(tile);
+	4, 3: THIS_ID(tile);
+	5, 3: THIS_ID(tile);
+	6, 3: THIS_ID(tile);
+	0, 4: THIS_ID(tile);
+	1, 4: THIS_ID(tile);
+	2, 4: THIS_ID(tile);
+	3, 4: THIS_ID(tile);
+	4, 4: THIS_ID(tile);
+	5, 4: THIS_ID(tile);
+	6, 4: THIS_ID(tile);
+}
+
+/* *************************************************
+ * Definition of the industry
+ * *************************************************/
+
+CHECK_INCOMPATIBLE  (paper_mill,   16, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
+CHECK_INCOMPATIBLE  (cement_plant, 16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(paper_mill))
+CHECK_INCOMPATIBLE  (brick_works,  16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(cement_plant))
+CHECK_FOUNDER       (THIS_ID(brick_works))
+
+SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
+
+${industry.get_primary_supplies_stuff()}
+
+#include "../../src/templates/check_availability.pnml"
+
+${industry.get_industry_properties()}
+
+item(FEAT_INDUSTRIES, clay_pit, ${industry.get_numeric_id()}) {
+	graphics {
+		produce_cargo_arrival:   THIS_ID(produce);
+		construction_probability:THIS_ID(check_availability);
+		location_check:          THIS_ID(check_location);
+		produce_256_ticks:       THIS_ID(produce_256_ticks);
+		monthly_prod_change:     THIS_ID(monthly_update);
+        random_prod_change:      return CB_RESULT_IND_PROD_NO_CHANGE;
+		build_prod_change:       randomise_primary_production_on_build;
+		extra_text_industry:     THIS_ID(extra_text);
+		colour:                  THIS_ID(colour);
+	}
+}
+
+#include "../../src/templates/undefs.pnml"
