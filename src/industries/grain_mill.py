@@ -5,10 +5,11 @@
   See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
 """
 
-from industry import Industry
+from industry import IndustrySecondary
 
-industry = Industry(id='grain_mill',
-                    accept_cargo_types=['MNSP', 'GRAI'],
+industry = IndustrySecondary(id='grain_mill',
+                    processed_cargos_and_output_ratios=[('MNSP', 5), ('GRAI', 3)],
+                    combined_cargos_boost_prod=True,
                     prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL',
                     prod_cargo_types=['FOOD'],
                     layouts='AUTO',
@@ -28,7 +29,9 @@ industry = Industry(id='grain_mill',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_MILL))',
                     fund_cost_multiplier='44',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
-                    extra_text_industry='STR_EXTRA_GRAIN_MILL')
+                    extra_text_industry='STR_EXTRA_GRAIN_MILL',
+                    template="refactor_grain_mill.pypnml",
+                    snakebite=True)
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
