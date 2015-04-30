@@ -28,7 +28,7 @@ industry = IndustryPrimary(id='fishing_grounds',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_WATER))',
                     fund_cost_multiplier='88',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
-                    templates="refactor_fishing_grounds.pypnml",
+                    template="refactor_fishing_grounds.pypnml",
                     snakebite=True)
 
 industry.economy_variations['FIRS'].enabled = True
