@@ -24,7 +24,8 @@ industry = IndustryPrimaryOrganic(id='coffee_estate',
                     fund_cost_multiplier='54',
                     prod_multiplier='[7, 4]',
                     substitute='0',
-                    )
+                    template="refactor_coffee_estate.pypnml",
+                    snakebite=True)
 
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
 industry.economy_variations['BASIC_TROPIC'].enabled = True
