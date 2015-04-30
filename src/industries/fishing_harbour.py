@@ -29,7 +29,9 @@ industry = Industry(id='fishing_harbour',
                     fund_cost_multiplier='150',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
                     extra_text_industry='STR_EXTRA_FISHING_HARBOUR',
-                    override_default_construction_states=True)
+                    override_default_construction_states=True,
+                    template="refactor_fishing_harbour.pypnml",
+                    snakebite=True)
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_ARCTIC'].enabled = True
