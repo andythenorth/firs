@@ -5,21 +5,10 @@
   See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
 """
 
-from industry import Industry, Tile, Sprite, Spriteset, SpriteLayout, IndustryLayout
+from industry import IndustrySecondary
 
-"""
-Notes to self whilst figuring out python-firs (notes will probably rot here forever).
-By convention, ids for use in nml have industry name prefix, local python object ids don't bother with industry name prefix.
-Some method properties expect object references, and the templating then uses properties from that object.
-Some method properties need a string - the templating is then typically directly writing out an nml identifier.
-When a string is expected are basically two choices: provide a string directly, or make an object reference and get an id from that object.
-"""
-
-industry = Industry(id='steel_mill',
-                    accept_cargo_types=['IORE', 'COAL', 'SCMT'],
-                    input_multiplier_1='[0, 0]',
-                    input_multiplier_3='[0, 0]',
-                    input_multiplier_2='[0, 0]',
+industry = IndustrySecondary(id='steel_mill',
+                    processed_cargos_and_output_ratios=[('IORE', 3), ('COAL', 2), ('SCMT', 3)],
                     prob_in_game='2',
                     prob_random='5',
                     prod_cargo_types=['STEL'],
@@ -29,7 +18,8 @@ industry = Industry(id='steel_mill',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_POWERHUNGRY))',
                     name='TTD_STR_INDUSTRY_NAME_STEEL_MILL',
                     override='8',
-                    extra_text_industry='STR_EXTRA_STEELMILL')
+                    extra_text_industry='STR_EXTRA_STEELMILL',
+                    template="refactor_steel_mill.pypnml" )
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True

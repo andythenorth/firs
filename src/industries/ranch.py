@@ -5,21 +5,9 @@
   See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
 """
 
-from industry import Industry, Tile, Sprite, Spriteset, SpriteLayout, IndustryLayout
+from industry import IndustryPrimaryOrganic, TileLocationChecks, IndustryLocationChecks
 
-"""
-Notes to self whilst figuring out python-firs (notes will probably rot here forever).
-By convention, ids for use in nml have industry name prefix, local python object ids don't bother with industry name prefix.
-Some method properties expect object references, and the templating then uses properties from that object.
-Some method properties need a string - the templating is then typically directly writing out an nml identifier.
-When a string is expected are basically two choices: provide a string directly, or make an object reference and get an id from that object.
-"""
-
-industry = Industry(id='ranch',
-                    accept_cargo_types=['FMSP'],
-                    input_multiplier_1='[0, 0]',
-                    input_multiplier_3='[0, 0]',
-                    input_multiplier_2='[0, 0]',
+industry = IndustryPrimaryOrganic(id='ranch',
                     prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_FARM',
                     prod_cargo_types=['LVST', 'WOOL'],
                     layouts='AUTO',
@@ -30,20 +18,23 @@ industry = Industry(id='ranch',
                     new_ind_msg='TTD_STR_NEWS_INDUSTRY_CONSTRUCTION',
                     map_colour='14',
                     prod_decrease_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_GENERAL',
-                    life_type='IND_LIFE_TYPE_ORGANIC',
                     min_cargo_distr='1',
                     spec_flags='0',
+                    location_checks=IndustryLocationChecks(require_cluster=['ranch', [16, 42, 1, 2]],
+                                                           incompatible={'stockyard': 16,
+                                                                         'textile_mill': 16}),
                     remove_cost_multiplier='0',
                     prospect_chance='0.75',
                     name='string(STR_IND_RANCH)',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_FARM))',
                     fund_cost_multiplier='45',
-                    closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
-                    )
+                    closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS' )
 
 industry.economy_variations['BASIC_TROPIC'].enabled = True
 
-industry.add_tile(id='ranch_tile')
+industry.add_tile(id='ranch_tile_1',
+                  location_checks=TileLocationChecks(disallow_coast=True,
+                                                     disallow_industry_adjacent=True))
 
 spriteset_ground = industry.add_spriteset(
     id = 'ranch_spriteset_ground',
@@ -112,20 +103,20 @@ industry.add_spritelayout(
 
 industry.add_industry_layout(
     id = 'ranch_industry_layout_1',
-    layout = [(0, 0, 'ranch_tile', 'ranch_spritelayout_3'),
-              (1, 0, 'ranch_tile', 'ranch_spritelayout_2'),
-              (1, 2, 'ranch_tile', 'ranch_spritelayout_4'),
-              (3, 0, 'ranch_tile', 'ranch_spritelayout_1'),
-              (3, 1, 'ranch_tile', 'ranch_spritelayout_5'),
+    layout = [(0, 0, 'ranch_tile_1', 'ranch_spritelayout_3'),
+              (1, 0, 'ranch_tile_1', 'ranch_spritelayout_2'),
+              (1, 2, 'ranch_tile_1', 'ranch_spritelayout_4'),
+              (3, 0, 'ranch_tile_1', 'ranch_spritelayout_1'),
+              (3, 1, 'ranch_tile_1', 'ranch_spritelayout_5'),
     ]
 )
 industry.add_industry_layout(
     id = 'ranch_industry_layout_2',
-    layout = [(0, 0, 'ranch_tile', 'ranch_spritelayout_2'),
-              (0, 1, 'ranch_tile', 'ranch_spritelayout_1'),
-              (0, 2, 'ranch_tile', 'ranch_spritelayout_4'),
-              (2, 0, 'ranch_tile', 'ranch_spritelayout_3'),
-              (2, 2, 'ranch_tile', 'ranch_spritelayout_5'),
+    layout = [(0, 0, 'ranch_tile_1', 'ranch_spritelayout_2'),
+              (0, 1, 'ranch_tile_1', 'ranch_spritelayout_1'),
+              (0, 2, 'ranch_tile_1', 'ranch_spritelayout_4'),
+              (2, 0, 'ranch_tile_1', 'ranch_spritelayout_3'),
+              (2, 2, 'ranch_tile_1', 'ranch_spritelayout_5'),
     ]
 )
 

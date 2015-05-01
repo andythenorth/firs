@@ -1,40 +1,43 @@
 <tal:build_economies repeat="economy global_constants.economies">
     if (economy==${repeat.economy.index}) {
         <tal:industry_on_or_off condition="industry.get_property('enabled', economy) == True">
-        item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
-            property {
-                <!--! following props are always same for all economies -->
-                ${industry.get_property_declaration('substitute')}
-                ${industry.get_property_declaration('override')}
-                ${industry.get_property_declaration('life_type')}
-                ${industry.get_property_declaration('closure_msg')}
-                ${industry.get_property_declaration('prod_increase_msg')}
-                ${industry.get_property_declaration('prod_decrease_msg')}
-                ${industry.get_property_declaration('new_ind_msg')}
-                ${industry.get_property_declaration('min_cargo_distr')}
-                ${industry.get_property_declaration('map_colour')}
-                ${industry.get_property_declaration('spec_flags')}
-                ${industry.get_industry_layouts_as_property()}
-                conflicting_ind_types: []; // set this prop empty, FIRS has it's own better checks for this
-                <!--! following props may optionally vary per economy, or use industry default -->
-                ${industry.get_property_declaration('name', economy)}
-                ${industry.get_property_declaration('nearby_station_name', economy)}
-                ${industry.get_property_declaration('prod_multiplier', economy)}
-                ${industry.get_property_declaration('input_multiplier_1', economy)}
-                ${industry.get_property_declaration('input_multiplier_2', economy)}
-                ${industry.get_property_declaration('input_multiplier_3', economy)}
-                ${industry.get_property_declaration('prob_random', economy)}
-                ${industry.get_property_declaration('prob_in_game', economy)}
-                ${industry.get_property_declaration('prospect_chance', economy)}
-                ${industry.get_property_declaration('fund_cost_multiplier', economy)}
-                ${industry.get_property_declaration('remove_cost_multiplier', economy)}
+            item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
+                property {
+                    <!--! following props are always same for all economies -->
+                    ${industry.get_property_declaration('substitute')}
+                    ${industry.get_property_declaration('override')}
+                    ${industry.get_property_declaration('life_type')}
+                    ${industry.get_property_declaration('closure_msg')}
+                    ${industry.get_property_declaration('prod_increase_msg')}
+                    ${industry.get_property_declaration('prod_decrease_msg')}
+                    ${industry.get_property_declaration('new_ind_msg')}
+                    ${industry.get_property_declaration('min_cargo_distr')}
+                    ${industry.get_property_declaration('map_colour')}
+                    ${industry.get_property_declaration('spec_flags')}
+                    ${industry.get_industry_layouts_as_property()}
+                    conflicting_ind_types: []; // set this prop empty, FIRS has it's own better checks for this
+                    <!--! following props may optionally vary per economy, or use industry default -->
+                    ${industry.get_property_declaration('name', economy)}
+                    ${industry.get_property_declaration('nearby_station_name', economy)}
+                    ${industry.get_property_declaration('prod_multiplier', economy)}
+                    ${industry.get_property_declaration('input_multiplier_1', economy)}
+                    ${industry.get_property_declaration('input_multiplier_2', economy)}
+                    ${industry.get_property_declaration('input_multiplier_3', economy)}
+                    ${industry.get_property_declaration('prob_random', economy)}
+                    ${industry.get_property_declaration('prob_in_game', economy)}
+                    ${industry.get_property_declaration('prospect_chance', economy)}
+                    ${industry.get_property_declaration('fund_cost_multiplier', economy)}
+                    ${industry.get_property_declaration('remove_cost_multiplier', economy)}
+                }
             }
-        }
         </tal:industry_on_or_off>
     }
-    <!--! Set properties again, per climate for accept & prod cargos.
+    <!--!
+          Set properties again, per climate for accept & prod cargos.
           This is handling special case for SGBT / SGCN being climate specific.
-          It was easier to handle this generically even though it's only a single case  -->
+          It was easier to handle this generically even though it's only a single case
+          !! KILL THE CLIMATE STUFF IN V2 - not needed, make it less complex, fewer LOC
+    -->
     <tal:climates repeat="climate global_constants.openttd_climates">
         if (economy==${repeat.economy.index} && climate == ${climate}) {
             <tal:industry_on_or_off condition="industry.get_property('enabled', economy) == True">

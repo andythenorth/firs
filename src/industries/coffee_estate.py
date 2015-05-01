@@ -5,25 +5,15 @@
   See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
 """
 
-from industry import Industry, Tile, Sprite, Spriteset, SpriteLayout, IndustryLayout
+from industry import IndustryPrimaryOrganic
 
-"""
-Notes to self whilst figuring out python-firs (notes will probably rot here forever).
-By convention, ids for use in nml have industry name prefix, local python object ids don't bother with industry name prefix.
-Some method properties expect object references, and the templating then uses properties from that object.
-Some method properties need a string - the templating is then typically directly writing out an nml identifier.
-When a string is expected are basically two choices: provide a string directly, or make an object reference and get an id from that object.
-"""
-
-industry = Industry(id='coffee_estate',
+industry = IndustryPrimaryOrganic(id='coffee_estate',
                     new_ind_msg='TTD_STR_NEWS_INDUSTRY_CONSTRUCTION',
                     map_colour='71',
                     prospect_chance='0.75',
                     name='string(STR_IND_COFFEE_ESTATE)',
                     layouts='[coffee_estate_tilelayout_1, coffee_estate_tilelayout_2, coffee_estate_tilelayout_3, coffee_estate_tilelayout_4, coffee_estate_tilelayout_5]',
-                    accept_cargo_types=['FMSP'],
                     prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL',
-                    life_type='IND_LIFE_TYPE_ORGANIC',
                     prod_decrease_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_GENERAL',
                     spec_flags='0',
                     prod_cargo_types=['JAVA', 'FRUT'],
@@ -34,7 +24,7 @@ industry = Industry(id='coffee_estate',
                     fund_cost_multiplier='54',
                     prod_multiplier='[7, 4]',
                     substitute='0',
-                    )
+                    template="refactor_coffee_estate.pypnml" )
 
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
 industry.economy_variations['BASIC_TROPIC'].enabled = True

@@ -1,0 +1,228 @@
+/*
+ * This file is part of FIRS industry set.
+ * FIRS industry set is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 2.
+ * FIRS industry set is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS industry set. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+<!--!
+    Iron Ore Mine uses base set sprites currently.
+    When new sprites are ready, convert to primary template and bin this.
+-->
+
+#define THIS_ID(...) ${industry.id}_ ## __VA_ARGS__
+
+/* *************************************************
+ * Definition of the industry tile and its callbacks
+ * *************************************************/
+
+TILE_DISALLOW_NEARBY_CLASS(tile_nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
+TILE_ALLOW_PLAYER         (tile_player_check, THIS_ID(tile_nearby_industry))
+TILE_DISALLOW_SLOPES      (tile_location_check, CB_RESULT_LOCATION_DISALLOW, THIS_ID(tile_player_check))
+
+item(FEAT_INDUSTRYTILES, THIS_ID(tile_1), 100) {
+	property {
+		substitute: 100;
+		override: 100;
+	}
+	graphics {
+		tile_check: THIS_ID(tile_location_check);
+	}
+}
+
+item(FEAT_INDUSTRYTILES, THIS_ID(tile_2), 101) {
+	property {
+		substitute: 101;
+		override: 101;
+		accepted_cargos: [[ENSP, 8]];
+	}
+	graphics {
+		tile_check: THIS_ID(tile_location_check);
+	}
+}
+
+item(FEAT_INDUSTRYTILES, THIS_ID(tile_3), 102) {
+	property {
+		substitute: 102;
+		override: 102;
+		accepted_cargos: [[ENSP, 8]];
+	}
+	graphics {
+		tile_check: THIS_ID(tile_location_check);
+	}
+}
+
+item(FEAT_INDUSTRYTILES, THIS_ID(tile_4), 103) {
+	property {
+		substitute: 103;
+		override: 103;
+		accepted_cargos: [[ENSP, 8]];
+	}
+	graphics {
+		tile_check: THIS_ID(tile_location_check);
+	}
+}
+
+item(FEAT_INDUSTRYTILES, THIS_ID(tile_5), 104) {
+	property {
+		substitute: 104;
+		override: 104;
+		accepted_cargos: [[ENSP, 8]];
+	}
+	graphics {
+		tile_check: THIS_ID(tile_location_check);
+	}
+}
+
+item(FEAT_INDUSTRYTILES, THIS_ID(tile_6), 105) {
+	property {
+		substitute: 105;
+		override: 105;
+		accepted_cargos: [[ENSP, 8]];
+	}
+	graphics {
+		tile_check: THIS_ID(tile_location_check);
+	}
+}
+
+item(FEAT_INDUSTRYTILES, THIS_ID(tile_7), 106) {
+	property {
+		substitute: 106;
+		override: 106;
+		accepted_cargos: [[ENSP, 8]];
+	}
+	graphics {
+		tile_check: THIS_ID(tile_location_check);
+	}
+}
+
+item(FEAT_INDUSTRYTILES, THIS_ID(tile_8), 107) {
+	property {
+		substitute: 107;
+		override: 107;
+		accepted_cargos: [[ENSP, 8]];
+	}
+	graphics {
+		tile_check: THIS_ID(tile_location_check);
+	}
+}
+
+item(FEAT_INDUSTRYTILES, THIS_ID(tile_9), 108) {
+	property {
+		substitute: 108;
+		override: 108;
+		accepted_cargos: [[ENSP, 8]];
+	}
+	graphics {
+		tile_check: THIS_ID(tile_location_check);
+	}
+}
+
+item(FEAT_INDUSTRYTILES, THIS_ID(tile_10), 109) {
+	property {
+		substitute: 109;
+		override: 109;
+		accepted_cargos: [[ENSP, 8]];
+	}
+	graphics {
+		tile_check: THIS_ID(tile_location_check);
+	}
+}
+
+item(FEAT_INDUSTRYTILES, THIS_ID(tile_11), 110) {
+	property {
+		substitute: 110;
+		override: 110;
+		accepted_cargos: [[ENSP, 8]];
+	}
+	graphics {
+		tile_check: THIS_ID(tile_location_check);
+	}
+}
+
+item(FEAT_INDUSTRYTILES, THIS_ID(tile_12), 111) {
+	property {
+		substitute: 111;
+		override: 111;
+		accepted_cargos: [[ENSP, 8]];
+	}
+	graphics {
+		tile_check: THIS_ID(tile_location_check);
+	}
+}
+
+item(FEAT_INDUSTRYTILES, THIS_ID(tile_13), 112) {
+	property {
+		substitute: 112;
+		override: 112;
+		accepted_cargos: [[ENSP, 8]];
+	}
+	graphics {
+		tile_check: THIS_ID(tile_location_check);
+	}
+}
+
+item(FEAT_INDUSTRYTILES, THIS_ID(tile_14), 113) {
+	property {
+		substitute: 113;
+		override: 113;
+		accepted_cargos: [[ENSP, 8]];
+	}
+	graphics {
+		tile_check: THIS_ID(tile_location_check);
+	}
+}
+
+item(FEAT_INDUSTRYTILES, THIS_ID(tile_15), 114) {
+	property {
+		substitute: 114;
+		override: 114;
+		accepted_cargos: [[ENSP, 8]];
+	}
+	graphics {
+		tile_check: THIS_ID(tile_location_check);
+	}
+}
+
+item(FEAT_INDUSTRYTILES, THIS_ID(tile_16), 115) {
+	property {
+		substitute: 115;
+		override: 115;
+		accepted_cargos: [[ENSP, 8]];
+	}
+	graphics {
+		tile_check: THIS_ID(tile_location_check);
+	}
+}
+
+/* *************************************************
+ * Definition of the industry
+ * *************************************************/
+
+CHECK_NEARBY_CLUSTER(iron_ore_mine, 20, 70, 2, 3, return CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
+CHECK_INCOMPATIBLE  (steel_mill,     16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(iron_ore_mine))
+CHECK_FOUNDER       (THIS_ID(steel_mill))
+
+SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
+
+${industry.get_primary_supplies_stuff()}
+
+#include "../../src/templates/check_availability.pnml"
+
+${industry.get_industry_properties()}
+
+item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
+	graphics {
+		produce_cargo_arrival:   THIS_ID(produce);
+		construction_probability:THIS_ID(check_availability);
+		location_check:          THIS_ID(check_location);
+		produce_256_ticks:       THIS_ID(produce_256_ticks);
+		monthly_prod_change:     THIS_ID(monthly_update);
+        random_prod_change:      return CB_RESULT_IND_PROD_NO_CHANGE;
+		build_prod_change:       randomise_primary_production_on_build;
+		extra_text_industry:     THIS_ID(extra_text);
+		colour:                  THIS_ID(colour);
+	}
+}
+
+#include "../../src/templates/undefs.pnml"

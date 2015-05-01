@@ -1,0 +1,120 @@
+<!--!
+  This file is part of FIRS Industry Set for OpenTTD.
+  FIRS is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 2.
+  FIRS is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+  See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+#include "../../src/templates/spritelayouts_groundaware.pnml"
+
+#define THIS_ID(...) ${industry.id}_ ## __VA_ARGS__
+
+${industry.get_spritesets()}
+
+${industry.get_spritelayouts()}
+
+${industry.get_industry_layouts_as_graphic_switches()}
+
+${industry.get_fence_switches()}
+
+/* *************************************************
+ * Definition of the industry tile and its callbacks
+ * *************************************************/
+
+TILE_DISALLOW_NEARBY_CLASS(tile1_nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
+TILE_ALLOW_PLAYER         (tile1_player_check, ${industry.id}_tile1_nearby_industry)
+TILE_DISALLOW_SLOPES      (tile1_location_check, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_tile1_player_check)
+
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile, TILE_GRAINMILL_1) {
+	property {
+		substitute:       0;
+		accepted_cargos:  [[GRAI, 8], [MNSP, 8]];
+		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
+		animation_info:   [ANIMATION_LOOPING, 6];
+		animation_speed:  3;
+	}
+
+	graphics {
+		tile_check:   ${industry.id}_tile1_location_check;
+		${industry.id}_tile_fences;
+	}
+}
+
+/* *************************************************
+ * Definition of the industry layouts
+ * *************************************************/
+
+${industry.get_industry_layouts_as_tilelayouts()}
+
+/* *************************************************
+ * Definition of the industry
+ * *************************************************/
+
+/* for secondary production template */
+#define THIS_NUM_OUTPUT_CARGOS    1
+#define THIS_PROD_RATIO_CARGO1    3
+#define THIS_PROD_RATIO_CARGO2    5
+#define THIS_PROD_RATIO_CARGO3    1  <!--! looks wrong -->
+#define THIS_BOOST_12             3
+#define THIS_BOOST_13             0
+#define THIS_BOOST_21             5
+#define THIS_BOOST_23             0
+#define THIS_BOOST_31             0
+#define THIS_BOOST_32             0
+
+CHECK_INCOMPATIBLE  (grain_mill,    56, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
+CHECK_INCOMPATIBLE  (brewery,       16, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_grain_mill)
+CHECK_INCOMPATIBLE  (arable_farm,   16, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_brewery)
+CHECK_TOWN_DISTANCE (town_distance,  0,144, ${industry.id}_arable_farm)
+CHECK_FOUNDER       (${industry.id}_town_distance)
+
+/** After 1900, windmills only appear during map generation. */
+switch (FEAT_INDUSTRIES, SELF, ${industry.id}_brick_layouts_only_check_layout, var[0x86]) {
+	3: return CB_RESULT_LOCATION_DISALLOW;
+	${industry.id}_check_location;
+}
+
+switch (FEAT_INDUSTRIES, SELF, ${industry.id}_brick_layouts_only, extra_callback_info2) {
+	IND_CREATION_GENERATION: ${industry.id}_check_location;
+	${industry.id}_brick_layouts_only_check_layout;
+}
+
+/** Before 1870, only windmills appear. */
+switch (FEAT_INDUSTRIES, SELF, ${industry.id}_windmill_layout_only, var[0x86]) {
+	3: ${industry.id}_check_location;
+	return CB_RESULT_LOCATION_DISALLOW;
+}
+
+/** Both types of layouts can appear between 1870 and 1900. */
+/** ! Update the docs if changing graphics dates */
+switch (FEAT_INDUSTRIES, SELF, ${industry.id}_check_date, current_year) {
+	0..1869:    ${industry.id}_windmill_layout_only;
+	1870..1900: ${industry.id}_check_location;
+	${industry.id}_brick_layouts_only;
+}
+
+SWITCH_COLOUR_SCHEME1(${industry.id}_colour)
+
+#include "../../src/templates/produce_secondary.pnml"
+#include "../../src/templates/check_secondary_production_level.pnml"
+#include "../../src/templates/check_secondary_closure.pnml"
+
+${industry.get_extra_text_secondary()}
+
+#include "../../src/templates/check_availability.pnml"
+
+${industry.get_industry_properties()}
+
+item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
+	graphics {
+		produce_cargo_arrival:   ${industry.id}_produce;
+		construction_probability:${industry.id}_check_availability;
+		location_check:          ${industry.id}_check_date;
+		monthly_prod_change:     ${industry.id}_check_production_level;
+		random_prod_change:      ${industry.id}_check_closure;
+		extra_text_industry:     ${industry.id}_extra_text;
+		colour:                  ${industry.id}_colour;
+	}
+}
+
+#include "../../src/templates/undefs.pnml"

@@ -1,0 +1,131 @@
+/*
+ * This file is part of FIRS industry set.
+ * FIRS industry set is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 2.
+ * FIRS industry set is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS industry set. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+#define SPRITE_TREE 1593
+#define SPRITE_TREE_DEAD 1596
+
+#define SPRITE_TREE2 1586
+
+#define MARKET_TREE_TEMPERATE 1639
+#define MARKET_TREE_TROPICAL 1891
+#define MARKET_TREE_ARCTIC 1737
+market_tree = MARKET_TREE_TEMPERATE;
+if (climate == CLIMATE_ARCTIC) { market_tree = MARKET_TREE_ARCTIC; }
+if (climate == CLIMATE_TROPICAL) { market_tree = MARKET_TREE_TROPICAL; }
+#define MARKET_TREE_SNOW 1793
+
+#define GROUNDTILE_MUD_TRACKS     2022
+#define GROUNDTILE_SLABS          1420
+#define GROUNDTILE_HALF_BROWN     3962
+
+// used for secondary industry production
+#define PRODUCTION_SPAN 30
+
+/* Permanent storage locations - uses different defines for different classes of industry */
+// on 10th Nov 2012 I verified that all permanent storage operations were using identifiers for storage, not numbers - Andy
+
+/* **************************************************************************
+ * persistent storage for primary industries (template produce_primary)
+ * **************************************************************************/
+#define var_num_supplies_delivered  0 // amount of supplies delivered this month
+#define var_num_supplies_delivered_last 1
+#define var_num_supplies_delivered_bef_last 2
+#define var_current_supplies_prod_factor 3
+
+//                                  3 // unused
+//                                  4 // unused
+//                                  5 // unused
+//                                  6 // unused
+//                                  7 // unused
+//                                  8 // unused
+//                                  9 // unused
+
+#define var_date_received_supplies 10 // date the last time supplies were delivered
+
+//                                 11 // unused
+//                                 12 // unused
+//                                 13 // unused
+//                                 14 // unused
+
+#define var_closure_counter        15 // not used, primary industry doesn't close
+
+/* **************************************************************************
+ * persistent storage for secondary industries (template produce_secondary)
+ * **************************************************************************/
+//                                  0 // unused
+
+#define var_ratio_cargo_1           1 // output per 8 units input of cargo 1; can be made temporary
+#define var_ratio_cargo_2           2 // output per 8 units input of cargo 2; can be made temporary
+#define var_ratio_cargo_3           3 // output per 8 units input of cargo 3; can be made temporary
+
+#define var_leftover_cargo_1        4 // non-processed cargo 1
+#define var_leftover_cargo_2        5 // non-processed cargo 2
+#define var_leftover_cargo_3        6 // non-processed cargo 3
+
+#define var_input_cargo_1           7 // stores only last processed input; for debugging only
+#define var_input_cargo_2           8 // stores only last processed input; for debugging only
+#define var_input_cargo_3           9 // stores only last processed input; for debugging only
+
+#define var_date_received_1        10 // date of last cargo 1 delivered
+#define var_date_received_2        11 // date of last cargo 2 delivered
+#define var_date_received_3        12 // date of last cargo 3 delivered
+#define var_production_span        13 // time to consider a cargo usable for production boost (not yet used)
+
+//                                 14 // unused
+//#define var_closure_counter      15 // months without delivery, same as primary industries
+
+
+/* **************************************************************************
+ * persistent storage for blackhole industries (template produce_blackhole)
+ * **************************************************************************/
+//                                  0 // unused
+//                                  1 // unused
+//                                  2 // unused
+//                                  3 // unused
+//                                  4 // unused
+//                                  5 // unused
+//                                  6 // unused
+//                                  7 // unused
+//                                  8 // unused
+//                                  9 // unused
+
+// #define var_date_received_1     10 // date of last cargo 1 delivered, same as secondary industries
+// #define var_date_received_2     11 // date of last cargo 2 delivered, same as secondary industries
+// #define var_date_received_3     12 // date of last cargo 3 delivered, same as secondary industries
+
+//                                 13 // unused
+//                                 14 // unused
+
+// #define var_closure_counter     15 // months without delivery, same as primary industries
+
+
+/* **************************************************************************
+ * temporary storage for sprite layout templates
+ * **************************************************************************/
+
+#define var_default_ground          0 // sprite ID of default ground tile in the place of the tile
+
+#define var_fencesprite_ne          1 // fence sprite to use on the NE border
+#define var_fencesprite_nw          2 // fence sprite to use on the NW border
+#define var_fencesprite_se          3 // fence sprite to use on the SE border
+#define var_fencesprite_sw          4 // fence sprite to use on the SW border
+#define var_fence_offset_ne         5 // y-offset for fence sprite to use on the NE border
+#define var_fence_offset_nw         6 // y-offset for fence sprite to use on the NW border
+#define var_fence_offset_se         7 // y-offset for fence sprite to use on the SE border
+#define var_fence_offset_sw         8 // y-offset for fence sprite to use on the SW border
+#define var_use_fence_ne            9 // draw fence in the NE
+#define var_use_fence_nw           10 // draw fence in the NW
+#define var_use_fence_se           11 // draw fence in the SE
+#define var_use_fence_sw           12 // draw fence in the SW
+
+/* **************************************************************************
+ * values below here generated by python templating
+ * **************************************************************************/
+
+<tal:tile_ids repeat="tile_id_mapping global_constants.tile_numeric_ids.items()">
+    #define ${tile_id_mapping[0].upper()} ${tile_id_mapping[1]}
+</tal:tile_ids>

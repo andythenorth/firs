@@ -1,0 +1,139 @@
+/*
+ * This file is part of FIRS industry set.
+ * FIRS industry set is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 2.
+ * FIRS industry set is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS industry set. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+<!--!
+    Steel Mill uses base set sprites currently.
+    When new sprites are ready, convert to standard template and bin this.
+-->
+
+#define THIS_ID(...) ${industry.id}_ ## __VA_ARGS__
+
+/* *************************************************
+ * Definition of the industry tile and its callbacks
+ * *************************************************/
+
+TILE_DISALLOW_NEARBY_CLASS(tile_nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
+TILE_ALLOW_PLAYER         (tile_player_check, ${industry.id}_tile_nearby_industry)
+TILE_DISALLOW_SLOPES      (tile_location_check, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_tile_player_check)
+
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile_1, 52) {
+	property {
+		substitute: 52;
+		override: 52;
+		accepted_cargos: [[IORE, 8], [SCMT, 8], [COAL, 8]];
+	}
+	graphics {
+		tile_check: ${industry.id}_tile_location_check;
+	}
+}
+
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile_2, 53) {
+	property {
+		substitute: 53;
+		override: 53;
+		accepted_cargos: [[IORE, 8], [SCMT, 8], [COAL, 8]];
+	}
+	graphics {
+		tile_check: ${industry.id}_tile_location_check;
+	}
+}
+
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile_3, 54) {
+	property {
+		substitute: 54;
+		override: 54;
+		accepted_cargos: [[IORE, 8], [SCMT, 8], [COAL, 8]];
+	}
+	graphics {
+		tile_check: ${industry.id}_tile_location_check;
+	}
+}
+
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile_4, 55) {
+	property {
+		substitute: 55;
+		override: 55;
+		accepted_cargos: [[IORE, 8], [SCMT, 8], [COAL, 8]];
+	}
+	graphics {
+		tile_check: ${industry.id}_tile_location_check;
+	}
+}
+
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile_5, 56) {
+	property {
+		substitute: 56;
+		override: 56;
+		accepted_cargos: [[IORE, 8], [SCMT, 8], [COAL, 8]];
+	}
+	graphics {
+		tile_check: ${industry.id}_tile_location_check;
+	}
+}
+
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile_6, 57) {
+	property {
+		substitute: 57;
+		override: 57;
+		accepted_cargos: [[IORE, 8], [SCMT, 8], [COAL, 8]];
+	}
+	graphics {
+		tile_check: ${industry.id}_tile_location_check;
+	}
+}
+
+/* *************************************************
+ * Definition of the industry
+ * *************************************************/
+
+/* for secondary production template */
+#define THIS_NUM_OUTPUT_CARGOS    1
+#define THIS_PROD_RATIO_CARGO1    3
+#define THIS_PROD_RATIO_CARGO2    2
+#define THIS_PROD_RATIO_CARGO3    3
+#define THIS_BOOST_12             3
+#define THIS_BOOST_13             3
+#define THIS_BOOST_21             2
+#define THIS_BOOST_23             2
+#define THIS_BOOST_31             3
+#define THIS_BOOST_32             3
+/* availability years */
+#define THIS_MIN_YEAR 1850
+
+
+CHECK_INCOMPATIBLE  (steel_mill,     56, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
+CHECK_INCOMPATIBLE  (coal_mine,     16, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_steel_mill)
+CHECK_INCOMPATIBLE  (iron_ore_mine, 16, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_coal_mine)
+CHECK_INCOMPATIBLE  (junk_yard,      16, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_iron_ore_mine)
+CHECK_FOUNDER       (${industry.id}_junk_yard)
+
+SWITCH_COLOUR_SCHEME1(${industry.id}_colour)
+
+#include "../../src/templates/produce_secondary.pnml"
+#include "../../src/templates/check_secondary_production_level.pnml"
+#include "../../src/templates/check_secondary_closure.pnml"
+
+${industry.get_extra_text_secondary()}
+
+#include "../../src/templates/check_availability.pnml"
+
+${industry.get_industry_properties()}
+
+item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
+	graphics {
+		produce_cargo_arrival:   ${industry.id}_produce;
+		construction_probability:${industry.id}_check_availability;
+		location_check:          ${industry.id}_check_location;
+		monthly_prod_change:     ${industry.id}_check_production_level;
+		random_prod_change:      ${industry.id}_check_closure;
+		extra_text_industry:     ${industry.id}_extra_text;
+		extra_text_fund:         return string(STR_FUND_AVAILABLE_FROM, THIS_MIN_YEAR);
+		colour:                  ${industry.id}_colour;
+	}
+}
+
+#include "../../src/templates/undefs.pnml"

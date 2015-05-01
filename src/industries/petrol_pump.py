@@ -5,21 +5,10 @@
   See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
 """
 
-from industry import Industry, Tile, Sprite, Spriteset, SpriteLayout, IndustryLayout
+from industry import IndustryTertiary, TileLocationChecks, IndustryLocationChecks
 
-"""
-Notes to self whilst figuring out python-firs (notes will probably rot here forever).
-By convention, ids for use in nml have industry name prefix, local python object ids don't bother with industry name prefix.
-Some method properties expect object references, and the templating then uses properties from that object.
-Some method properties need a string - the templating is then typically directly writing out an nml identifier.
-When a string is expected are basically two choices: provide a string directly, or make an object reference and get an id from that object.
-"""
-
-industry = Industry(id='petrol_pump',
+industry = IndustryTertiary(id='petrol_pump',
                     accept_cargo_types=['FOOD', 'GOOD', 'PETR'],
-                    input_multiplier_1='[0, 0]',
-                    input_multiplier_3='[0, 0]',
-                    input_multiplier_2='[0, 0]',
                     prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL',
                     layouts='AUTO',
                     prod_cargo_types=[],
@@ -33,17 +22,24 @@ industry = Industry(id='petrol_pump',
                     life_type='IND_LIFE_TYPE_BLACK_HOLE',
                     min_cargo_distr='2',
                     spec_flags='0',
+                    location_checks=IndustryLocationChecks(incompatible={'petrol_pump': 20,
+                                                                         'hotel': 16,
+                                                                         'hardware_store': 16,
+                                                                         'food_market': 16}),
                     remove_cost_multiplier='0',
                     prospect_chance='0.75',
                     name='string(STR_IND_PETROLPUMP)',
                     fund_cost_multiplier='8',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
-                    )
+                    intro_year=1900 )
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_ARCTIC'].enabled = True
 
-industry.add_tile(id='petrol_pump_tile')
+industry.add_tile(id='petrol_pump_tile_1',
+                  land_shape_flags='bitmask(LSF_ONLY_ON_FLAT_LAND)',
+                  location_checks=TileLocationChecks(disallow_slopes=True,
+                                                     require_road_adjacent=['nw', 'ne', 'sw', 'se']))
 
 sprite_ground = industry.add_sprite(
     sprite_number = 'GROUNDTILE_SLABS',
@@ -77,14 +73,14 @@ industry.add_spritelayout(
 
 industry.add_industry_layout(
     id = 'petrol_pump_industry_layout_1',
-    layout = [(0, 0, 'petrol_pump_tile', 'petrol_pump_spritelayout_1'),
-              (0, 1, 'petrol_pump_tile', 'petrol_pump_spritelayout_2')
+    layout = [(0, 0, 'petrol_pump_tile_1', 'petrol_pump_spritelayout_1'),
+              (0, 1, 'petrol_pump_tile_1', 'petrol_pump_spritelayout_2')
     ]
 )
 industry.add_industry_layout(
     id = 'petrol_pump_industry_layout_2',
-    layout = [(0, 0, 'petrol_pump_tile', 'petrol_pump_spritelayout_1'),
-              (1, 0, 'petrol_pump_tile', 'petrol_pump_spritelayout_2')
+    layout = [(0, 0, 'petrol_pump_tile_1', 'petrol_pump_spritelayout_1'),
+              (1, 0, 'petrol_pump_tile_1', 'petrol_pump_spritelayout_2')
     ]
 )
 

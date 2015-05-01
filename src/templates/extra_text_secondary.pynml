@@ -38,9 +38,6 @@ switch (FEAT_INDUSTRIES, SELF, ${industry.id}_extra_text_debug, [
 	return string(THIS_STR_DEBUG_TEXT);
 }
 switch (FEAT_INDUSTRIES, SELF, THIS_ID(extra_text), [
-#ifdef THIS_STR_EXTRA_TEXT_PARAM0
-			STORE_TEMP(THIS_STR_EXTRA_TEXT_PARAM0, 256),
-#endif
 			show_debug_texts
 			]) {
 	1: ${industry.id}_extra_text_debug;

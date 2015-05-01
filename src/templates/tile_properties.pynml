@@ -1,0 +1,39 @@
+<tal:tiles repeat="tile industry.tiles">
+    <!--! tile properties that are same for all economies -->
+    item(FEAT_INDUSTRYTILES, ${tile.id}, ${tile.numeric_id}) {
+        property {
+            substitute:         0;
+            land_shape_flags:   ${tile.land_shape_flags};
+            animation_info:     [${'ANIMATION_LOOPING' if tile.animation_looping else 'ANIMATION_NON_LOOPING'}, ${tile.animation_length}];
+            animation_speed:    ${tile.animation_speed};
+            animation_triggers: ${tile.get_animation_triggers()};
+        }
+
+        graphics {
+    		tile_check: ${industry.id}_${tile.id}_lc_0;
+    		<tal:anim_control condition="tile.custom_animation_control is not None">
+    		    anim_control: ${tile.id}_anim_control;
+    		</tal:anim_control>
+            ${industry.id}_tile_fences;
+        }
+    }
+    <!--!
+          Tile properties that vary by economy.
+          Additional super-jank handling per climate for SGBT / SGCN being climate specific.
+          It was easiest to handle SGBT / SGCN jank generically even though it's only a single case
+          !! KILL THE CLIMATE STUFF IN V2 - not needed, make it less complex, fewer LOC
+    -->
+    <tal:economies repeat="economy global_constants.economies">
+        <tal:climates repeat="climate global_constants.openttd_climates">
+            if (economy==${repeat.economy.index} && climate == ${climate}) {
+                <tal:industry_on_or_off condition="industry.get_property('enabled', economy) == True">
+                    item(FEAT_INDUSTRYTILES, ${tile.id}, ${tile.numeric_id}) {
+                        property {
+                            accepted_cargos:  [${tile.get_expression_for_tile_acceptance(industry, economy, climate)}];
+                        }
+                    }
+                </tal:industry_on_or_off>
+            }
+        </tal:climates>
+    </tal:economies>
+</tal:tiles>
