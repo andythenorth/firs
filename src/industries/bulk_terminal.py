@@ -28,8 +28,7 @@ industry = IndustryPrimaryPort(id='bulk_terminal',
                     fund_cost_multiplier='152',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
                     override_default_construction_states=True,
-                    template="refactor_bulk_terminal.pypnml",
-                    snakebite=True)
+                    template="refactor_bulk_terminal.pypnml" )
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['FIRS'].accept_cargo_types = ['BDMT', 'PETR', 'FOOD']

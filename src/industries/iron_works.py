@@ -32,8 +32,7 @@ industry = IndustrySecondary(id='iron_works',
                     fund_cost_multiplier='69',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
                     extra_text_industry='STR_EXTRA_IRON_WORKS',
-                    expiry_year=1901,
-                    snakebite=True)
+                    expiry_year=1901 )
 
 industry.economy_variations['FIRS'].enabled = True
 

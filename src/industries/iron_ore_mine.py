@@ -19,8 +19,7 @@ industry = IndustryPrimaryExtractive(id='iron_ore_mine',
                     name='TTD_STR_INDUSTRY_NAME_IRON_ORE_MINE',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_MINE))',
                     fund_cost_multiplier='232',
-                    template='refactor_iron_ore_mine.pypnml',
-                    snakebite=True)
+                    template='refactor_iron_ore_mine.pypnml' )
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_ARCTIC'].enabled = True

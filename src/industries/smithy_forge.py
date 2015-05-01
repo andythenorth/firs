@@ -30,8 +30,7 @@ industry = IndustrySecondary(id='smithy_forge',
                     fund_cost_multiplier='63',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
                     extra_text_industry='STR_EXTRA_SMITHY_FORGE',
-                    expiry_year=1948,
-                    snakebite=True)
+                    expiry_year=1948 )
 
 industry.economy_variations['FIRS'].enabled = True
 

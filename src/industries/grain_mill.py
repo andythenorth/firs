@@ -30,8 +30,7 @@ industry = IndustrySecondary(id='grain_mill',
                     fund_cost_multiplier='44',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
                     extra_text_industry='STR_EXTRA_GRAIN_MILL',
-                    template="refactor_grain_mill.pypnml",
-                    snakebite=True)
+                    template="refactor_grain_mill.pypnml" )
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].enabled = True

@@ -27,8 +27,7 @@ industry = IndustryPrimaryExtractive(id='dredging_site',
                     fund_cost_multiplier='180',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
                     graphics_change_dates = [1906, 1945],
-                    template="refactor_dredging_site.pypnml",
-                    snakebite=True)
+                    template="refactor_dredging_site.pypnml" )
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True

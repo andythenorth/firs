@@ -31,8 +31,7 @@ industry = IndustrySecondary(id='metal_workshop',
                     fund_cost_multiplier='120',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
                     extra_text_industry='STR_EXTRA_METAL_FOUNDRY',
-                    intro_year=1762,
-                    snakebite=True)
+                    intro_year=1762 )
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True

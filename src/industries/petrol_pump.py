@@ -31,8 +31,7 @@ industry = IndustryTertiary(id='petrol_pump',
                     name='string(STR_IND_PETROLPUMP)',
                     fund_cost_multiplier='8',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
-                    intro_year=1900,
-                    snakebite=True)
+                    intro_year=1900 )
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_ARCTIC'].enabled = True

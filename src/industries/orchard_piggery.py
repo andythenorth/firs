@@ -24,8 +24,7 @@ industry = IndustryPrimaryOrganic(id='orchard_piggery',
                     fund_cost_multiplier='54',
                     prod_multiplier='[6, 5]',
                     substitute='0',
-                    template="refactor_orchard_piggery.pypnml",
-                    snakebite=True)
+                    template="refactor_orchard_piggery.pypnml" )
 
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True
 

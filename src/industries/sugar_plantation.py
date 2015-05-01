@@ -29,8 +29,7 @@ industry = IndustryPrimaryOrganic(id='sugar_plantation',
                     extra_text_fund='string(STR_FUND_SUGAR_PLANTATION)',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_PLANTATION))',
                     fund_cost_multiplier='55',
-                    closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
-                    snakebite=True)
+                    closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS' )
 
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
 

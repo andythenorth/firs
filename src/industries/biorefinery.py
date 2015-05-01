@@ -31,8 +31,7 @@ industry = IndustrySecondary(id='biorefinery',
                     fund_cost_multiplier='170',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
                     extra_text_industry='STR_EXTRA_BIOREFINERY',
-                    intro_year=2001,
-                    snakebite=True)
+                    intro_year=2001 )
 
 industry.economy_variations['FIRS'].enabled = True
 

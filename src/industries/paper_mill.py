@@ -19,8 +19,7 @@ industry = IndustrySecondary(id='paper_mill',
                     name='TTD_STR_INDUSTRY_NAME_PAPER_MILL',
                     override='14',
                     extra_text_industry='STR_EXTRA_PAPER_MILL',
-                    template="refactor_paper_mill.pypnml",
-                    snakebite=True)
+                    template="refactor_paper_mill.pypnml" )
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_ARCTIC'].enabled = True

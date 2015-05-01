@@ -31,8 +31,7 @@ industry = IndustrySecondary(id='machine_shop',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
                     extra_text_industry='STR_EXTRA_MACHINE_SHOP',
                     intro_year=1790,
-                    graphics_change_dates = [1920, 1945, 1970, 1990, 2010],
-                    snakebite=True)
+                    graphics_change_dates = [1920, 1945, 1970, 1990, 2010] )
 
 industry.economy_variations['FIRS'].enabled = True
 

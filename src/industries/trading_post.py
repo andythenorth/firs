@@ -28,8 +28,7 @@ industry = IndustryPrimaryPort(id='trading_post',
                     fund_cost_multiplier='152',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
                     override_default_construction_states=True,
-                    template='refactor_trading_post.pypnml',
-                    snakebite=True)
+                    template='refactor_trading_post.pypnml' )
 
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].accept_cargo_types = ['DIAM', 'JAVA', 'RUBR']

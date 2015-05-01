@@ -31,8 +31,7 @@ industry = IndustrySecondary(id='fertiliser_plant',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
                     extra_text_industry='STR_EXTRA_FERTILIZER_PLANT',
                     intro_year=1890,
-                    graphics_change_dates = [1952],
-                    snakebite=True)
+                    graphics_change_dates = [1952] )
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_ARCTIC'].enabled = True

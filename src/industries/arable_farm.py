@@ -32,8 +32,7 @@ industry = IndustryPrimaryOrganic(id='arable_farm',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_FARM))',
                     fund_cost_multiplier='55',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
-                    graphics_change_dates = [1928],
-                    snakebite=True)
+                    graphics_change_dates = [1928] )
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_TROPIC'].enabled = True

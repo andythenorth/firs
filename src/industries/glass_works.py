@@ -31,8 +31,7 @@ industry = IndustrySecondary(id='glass_works',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_INDUSTRY_ESTATE))',
                     fund_cost_multiplier='95',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
-                    extra_text_industry='STR_EXTRA_GLASS_WORKS',
-                    snakebite=True)
+                    extra_text_industry='STR_EXTRA_GLASS_WORKS' )
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True

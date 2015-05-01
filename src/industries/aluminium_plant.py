@@ -33,8 +33,7 @@ industry = IndustrySecondary(id='aluminium_plant',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
                     extra_text_industry='STR_EXTRA_ALUMINUM_PLANT',
                     intro_year=1900,
-                    graphics_change_dates = [1942, 1980],
-                    snakebite=True)
+                    graphics_change_dates = [1942, 1980] )
 
 industry.economy_variations['FIRS'].enabled = True
 

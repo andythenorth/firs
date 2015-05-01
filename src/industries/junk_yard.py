@@ -28,8 +28,7 @@ industry = IndustryPrimaryExtractive(id='junk_yard',
                     fund_cost_multiplier='101',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
                     graphics_change_dates = [1949, 1960, 1980, 2000],
-                    intro_year=1850,
-                    snakebite=True)
+                    intro_year=1850 )
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True

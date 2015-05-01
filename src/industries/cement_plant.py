@@ -33,8 +33,7 @@ industry = IndustrySecondary(id='cement_plant',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_INDUSTRY_ESTATE))',
                     fund_cost_multiplier='203',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
-                    extra_text_industry='STR_EXTRA_CEMENT_PLANT',
-                    snakebite=True)
+                    extra_text_industry='STR_EXTRA_CEMENT_PLANT' )
 
 industry.economy_variations['FIRS'].enabled = True
 

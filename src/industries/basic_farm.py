@@ -30,8 +30,7 @@ industry = IndustryPrimaryOrganic(id='basic_farm',
                     extra_text_fund='string(STR_FUND_BASIC_FARM)',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_FARM))',
                     fund_cost_multiplier='49',
-                    closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
-                    snakebite=True)
+                    closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS' )
 
 industry.economy_variations['BASIC_ARCTIC'].enabled = True
 

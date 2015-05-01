@@ -30,8 +30,7 @@ industry = IndustrySecondary(id='vehicle_factory',
                     fund_cost_multiplier='145',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
                     extra_text_industry='STR_EXTRA_VEHICLE_FACTORY',
-                    graphics_change_dates = [1920],
-                    snakebite=True)
+                    graphics_change_dates = [1920] )
 
 industry.economy_variations['BASIC_TROPIC'].enabled = True
 

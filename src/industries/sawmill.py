@@ -18,8 +18,7 @@ industry = IndustrySecondary(id='sawmill',
                     name='TTD_STR_INDUSTRY_NAME_SAWMILL',
                     override='2',
                     extra_text_industry='STR_EXTRA_SAWMILL',
-                    template='refactor_sawmill.pypnml',
-                    snakebite=True)
+                    template='refactor_sawmill.pypnml' )
 
 industry.economy_variations['FIRS'].enabled = True
 

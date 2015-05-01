@@ -31,8 +31,7 @@ industry = IndustrySecondary(id='plastics_plant',
                     fund_cost_multiplier='125',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
                     extra_text_industry='STR_EXTRA_PLASTICS_PLANT, string(STR_EXTRA_PLASTICS_PLANT_CHEMICALS_SUBSTR), string(STR_EXTRA_PLASTICS_PLANT_PLANT_FIBRES_SUBSTR)',
-                    intro_year='1931',
-                    snakebite=True)
+                    intro_year='1931' )
 
 industry.economy_variations['FIRS'].enabled = True
 

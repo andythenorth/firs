@@ -28,8 +28,7 @@ industry = IndustryPrimaryExtractive(id='bauxite_mine',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_MINE))',
                     fund_cost_multiplier='238',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
-                    intro_year=1900,
-                    snakebite=True)
+                    intro_year=1900 )
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_TROPIC'].enabled = True

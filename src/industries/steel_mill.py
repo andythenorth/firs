@@ -19,8 +19,7 @@ industry = IndustrySecondary(id='steel_mill',
                     name='TTD_STR_INDUSTRY_NAME_STEEL_MILL',
                     override='8',
                     extra_text_industry='STR_EXTRA_STEELMILL',
-                    template="refactor_steel_mill.pypnml",
-                    snakebite=True)
+                    template="refactor_steel_mill.pypnml" )
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True

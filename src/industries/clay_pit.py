@@ -26,8 +26,7 @@ industry = IndustryPrimaryExtractive(id='clay_pit',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_PIT))',
                     fund_cost_multiplier='200',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
-                    template="refactor_clay_pit.pypnml",
-                    snakebite=True)
+                    template="refactor_clay_pit.pypnml" )
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True

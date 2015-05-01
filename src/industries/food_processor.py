@@ -29,8 +29,7 @@ industry = IndustrySecondary(id='food_processor',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_IND_FOOD_PROCESSOR))',
                     fund_cost_multiplier='125',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
-                    extra_text_industry='STR_EXTRA_FOOD_PROCESSING_PLANT',
-                    snakebite=True)
+                    extra_text_industry='STR_EXTRA_FOOD_PROCESSING_PLANT' )
 
 industry.economy_variations['BASIC_TROPIC'].enabled = True
 

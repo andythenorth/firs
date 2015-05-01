@@ -20,8 +20,7 @@ industry = IndustryPrimaryExtractive(id='oil_rig',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_WATER))',
                     fund_cost_multiplier='255',
                     override='5',
-                    template="refactor_oil_rig.pypnml",
-                    snakebite=True)
+                    template="refactor_oil_rig.pypnml" )
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_ARCTIC'].enabled = True
