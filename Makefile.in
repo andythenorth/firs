@@ -13,8 +13,7 @@ NML_FILE := generated/firs.nml
 GENERATE_PNML = $(MAIN_SRC_FILE)
 GENERATE_DOC  = html_docs
 INDUSTRY_PY_SRC = $(wildcard src/industries/[a-z]*.py)
-INDUSTRY_PYPNML_SRC = $(INDUSTRY_PY_SRC:.py=.pypnml)
-INDUSTRY_SOURCES = $(INDUSTRY_PY_SRC) $(INDUSTRY_PYPNML_SRC)
+INDUSTRY_SOURCES = $(INDUSTRY_PY_SRC)
 CARGO_SOURCES = $(wildcard src/cargos/[a-z]*.py)
 TEMPLATES = $(wildcard src/templates/*)
 CONSTANTS = src/templates/defines.pypnml src/global_constants.py
