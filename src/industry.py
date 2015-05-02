@@ -547,10 +547,6 @@ class Industry(object):
         template = templates['fence_switches.pynml']
         return utils.unescape_chameleon_output(template(industry=self))
 
-    def get_primary_supplies_stuff(self):
-        template = templates['primary_supplies_stuff.pynml']
-        return utils.unescape_chameleon_output(template(industry=self))
-
     def get_industry_properties(self):
         template = templates['industry_properties.pynml']
         return utils.unescape_chameleon_output(template(industry=self, global_constants=global_constants))

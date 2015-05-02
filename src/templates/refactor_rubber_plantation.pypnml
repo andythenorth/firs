@@ -391,7 +391,7 @@ tilelayout ${industry.id}_tilelayout_5 {
 CHECK_NEARBY_CLUSTER(rubber_plantation, 10, 36, 3, 4, return CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
 CHECK_FOUNDER       (${industry.id}_rubber_plantation)
 
-${industry.get_primary_supplies_stuff()}
+<tal:include metal:use-macro="load: primary_supplies_stuff.pynml" />
 
 <tal:include metal:use-macro="load: check_availability.pynml" />
 

@@ -929,7 +929,7 @@ CHECK_INCOMPATIBLE  (cement_plant, 16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(pape
 CHECK_INCOMPATIBLE  (brick_works,  16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(cement_plant))
 CHECK_FOUNDER       (THIS_ID(brick_works))
 
-${industry.get_primary_supplies_stuff()}
+<tal:include metal:use-macro="load: primary_supplies_stuff.pynml" />
 
 <tal:include metal:use-macro="load: check_availability.pynml" />
 
