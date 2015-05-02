@@ -38,7 +38,7 @@ item(FEAT_INDUSTRYTILES, ${industry.id}_tile, TILE_QUARRY_1) {
  * Definition of the industry layouts
  * *************************************************/
 
-tilelayout tilelayout_quarry_1 {
+tilelayout tilelayout_${industry.id}_1 {
 	0, 0: ${industry.id}_tile;
 	1, 0: ${industry.id}_tile;
 	2, 0: ${industry.id}_tile;
@@ -75,7 +75,7 @@ tilelayout tilelayout_quarry_1 {
 	6, 3: ${industry.id}_tile;
 }
 
-tilelayout tilelayout_quarry_2 {
+tilelayout tilelayout_${industry.id}_2 {
 	6, 0: ${industry.id}_tile;
 	0, 1: ${industry.id}_tile;
 	1, 1: ${industry.id}_tile;
