@@ -10,79 +10,79 @@
     When new sprites are ready, convert to standard template and bin this.
 -->
 
-#define THIS_ID(...) ${industry.id} ## __VA_ARGS__
+#define THIS_ID(...) ${industry.id}_ ## __VA_ARGS__
 
 /* *************************************************
  * Definition of the industry tile and its callbacks
  * *************************************************/
 
 TILE_DISALLOW_NEARBY_CLASS(tile_nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
-TILE_ALLOW_PLAYER         (tile_player_check,                                                            THIS_ID(tile_nearby_industry))
-TILE_DISALLOW_SLOPES      (tile_location_check,                       CB_RESULT_LOCATION_DISALLOW, THIS_ID(tile_player_check))
+TILE_ALLOW_PLAYER         (tile_player_check, ${industry.id}_tile_nearby_industry)
+TILE_DISALLOW_SLOPES      (tile_location_check, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_tile_player_check)
 
-item(FEAT_INDUSTRYTILES, THIS_ID(tile_1), 18) {
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile_1, 18) {
 	property {
 		substitute: 18;
 		override: 18;
 		accepted_cargos: [[OIL_, 8]];
 	}
 	graphics {
-		tile_check: THIS_ID(tile_location_check);
+		tile_check: ${industry.id}_tile_location_check;
 	}
 }
 
-item(FEAT_INDUSTRYTILES, THIS_ID(tile_2), 19) {
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile_2, 19) {
 	property {
 		substitute: 19;
 		override: 19;
 		accepted_cargos: [[OIL_, 8]];
 	}
 	graphics {
-		tile_check: THIS_ID(tile_location_check);
+		tile_check: ${industry.id}_tile_location_check;
 	}
 }
 
-item(FEAT_INDUSTRYTILES, THIS_ID(tile_3), 20) {
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile_3, 20) {
 	property {
 		substitute: 20;
 		override: 20;
 		accepted_cargos: [[OIL_, 8]];
 	}
 	graphics {
-		tile_check: THIS_ID(tile_location_check);
+		tile_check: ${industry.id}_tile_location_check;
 	}
 }
 
-item(FEAT_INDUSTRYTILES, THIS_ID(tile_4), 21) {
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile_4, 21) {
 	property {
 		substitute: 21;
 		override: 21;
 		accepted_cargos: [[OIL_, 8]];
 	}
 	graphics {
-		tile_check: THIS_ID(tile_location_check);
+		tile_check: ${industry.id}_tile_location_check;
 	}
 }
 
-item(FEAT_INDUSTRYTILES, THIS_ID(tile_5), 22) {
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile_5, 22) {
 	property {
 		substitute: 22;
 		override: 22;
 		accepted_cargos: [[OIL_, 8]];
 	}
 	graphics {
-		tile_check: THIS_ID(tile_location_check);
+		tile_check: ${industry.id}_tile_location_check;
 	}
 }
 
-item(FEAT_INDUSTRYTILES, THIS_ID(tile_6), 23) {
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile_6, 23) {
 	property {
 		substitute: 23;
 		override: 23;
 		accepted_cargos: [[OIL_, 8]];
 	}
 	graphics {
-		tile_check: THIS_ID(tile_location_check);
+		tile_check: ${industry.id}_tile_location_check;
 	}
 }
 
@@ -102,14 +102,11 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_6), 23) {
 #define THIS_BOOST_31             0
 #define THIS_BOOST_32             0
 
-CHECK_INCOMPATIBLE  (oil_refinery,   56, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
-CHECK_INCOMPATIBLE  (oil_wells,      16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(oil_refinery))
-CHECK_INCOMPATIBLE  (oil_rig,        16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(oil_wells))
-CHECK_FOUNDER       (THIS_ID(oil_rig))
-
 #include "../../src/templates/produce_secondary.pnml"
 
 <tal:include metal:use-macro="load: extra_text_secondary.pynml" />
+
+<tal:include metal:use-macro="load: industry_location_checks.pynml" />
 
 <tal:include metal:use-macro="load: check_availability.pynml" />
 
@@ -117,14 +114,14 @@ CHECK_FOUNDER       (THIS_ID(oil_rig))
 
 item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
 	graphics {
-		produce_cargo_arrival:   THIS_ID(produce);
-		construction_probability:THIS_ID(check_availability);
-		location_check:          THIS_ID(check_location);
-		monthly_prod_change:     check_secondary_production_level;
-		random_prod_change:      check_secondary_closure;
-		extra_text_industry:     THIS_ID(extra_text);
-		extra_text_fund:         return string(STR_FUND_AVAILABLE_FROM, ${industry.intro_year});
-		colour:                  switch_colour;
+		produce_cargo_arrival:    ${industry.id}_produce;
+		construction_probability: ${industry.id}_check_availability;
+		location_check:           ${industry.id}_check_location;
+		monthly_prod_change:      check_secondary_production_level;
+		random_prod_change:       check_secondary_closure;
+		extra_text_industry:      ${industry.id}_extra_text;
+		extra_text_fund:          return string(STR_FUND_AVAILABLE_FROM, ${industry.intro_year});
+		colour:                   switch_colour;
 	}
 }
 
