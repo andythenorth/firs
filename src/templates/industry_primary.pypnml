@@ -31,8 +31,6 @@
 
 <tal:include metal:use-macro="load: industry_layouts.pynml" />
 
-SWITCH_COLOUR_SCHEME1(${industry.id}_colour)
-
 ${industry.get_primary_supplies_stuff()}
 
 <!--! snakebite migration support, the CPP template that needs this define *could* be rewritten to python -->
@@ -65,7 +63,7 @@ ${industry.get_primary_supplies_stuff()}
                     <tal:extra_text_industry condition="industry.get_property('extra_text_industry', economy) is not None">
                         extra_text_industry:      ${industry.id}_extra_text;
                     </tal:extra_text_industry>
-                    colour:                   ${industry.id}_colour;
+                    colour:                   switch_colour;
                 }
             }
         </tal:industry_on_or_off>

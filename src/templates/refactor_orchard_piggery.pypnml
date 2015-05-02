@@ -284,8 +284,6 @@ CHECK_NEARBY_CLUSTER(orchard_piggery, 10, 36, 3, 4, return CB_RESULT_LOCATION_DI
 CHECK_INCOMPATIBLE  (brewery,          16, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_orchard_piggery)
 CHECK_FOUNDER       (${industry.id}_brewery)
 
-SWITCH_COLOUR_SCHEME1(${industry.id}_colour)
-
 ${industry.get_primary_supplies_stuff()}
 
 #include "../../src/templates/check_availability.pnml"
@@ -303,7 +301,7 @@ item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
 		build_prod_change:       randomise_primary_production_on_build;
 		extra_text_fund:         return string(STR_FUND_ORCHARD_PIGGERY);
 		extra_text_industry:     ${industry.id}_extra_text;
-		colour:                  ${industry.id}_colour;
+		colour:                  switch_colour;
 	}
 }
 

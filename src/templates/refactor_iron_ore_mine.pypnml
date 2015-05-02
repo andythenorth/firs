@@ -203,8 +203,6 @@ CHECK_NEARBY_CLUSTER(iron_ore_mine, 20, 70, 2, 3, return CB_RESULT_LOCATION_DISA
 CHECK_INCOMPATIBLE  (steel_mill,     16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(iron_ore_mine))
 CHECK_FOUNDER       (THIS_ID(steel_mill))
 
-SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
-
 ${industry.get_primary_supplies_stuff()}
 
 #include "../../src/templates/check_availability.pnml"
@@ -221,7 +219,7 @@ item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
         random_prod_change:      return CB_RESULT_IND_PROD_NO_CHANGE;
 		build_prod_change:       randomise_primary_production_on_build;
 		extra_text_industry:     THIS_ID(extra_text);
-		colour:                  THIS_ID(colour);
+		colour:                  switch_colour;
 	}
 }
 

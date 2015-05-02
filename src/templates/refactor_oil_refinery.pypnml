@@ -109,8 +109,6 @@ CHECK_INCOMPATIBLE  (oil_wells,      16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(oi
 CHECK_INCOMPATIBLE  (oil_rig,        16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(oil_wells))
 CHECK_FOUNDER       (THIS_ID(oil_rig))
 
-SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
-
 #include "../../src/templates/produce_secondary.pnml"
 
 ${industry.get_extra_text_secondary()}
@@ -128,7 +126,7 @@ item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
 		random_prod_change:      check_secondary_closure;
 		extra_text_industry:     THIS_ID(extra_text);
 		extra_text_fund:         return string(STR_FUND_AVAILABLE_FROM, THIS_MIN_YEAR);
-		colour:                  THIS_ID(colour);
+		colour:                  switch_colour;
 	}
 }
 

@@ -14,13 +14,13 @@
 //disable the default industries
 disable_item(FEAT_INDUSTRIES, 0, 36);
 
+#include "../../src/templates/sprite_templates.pnml"
 #include "../../src/templates/tile_fences.pnml"
 #include "../../src/templates/tile_location.pnml"
 #include "../../src/templates/tile_ground_sprite.pnml"
 
-#include "../../src/templates/sprite_templates.pnml"
+<tal:include metal:use-macro="load: ../templates/colour.pynml" />
 #include "../../src/templates/industry_location.pnml"
-#include "../../src/templates/colour.pnml"
 #include "../../src/templates/randomise_primary_production_on_build.pnml"
 <tal:include metal:use-macro="load: ../templates/check_secondary_production_level.pynml" />
 <tal:include metal:use-macro="load: ../templates/check_secondary_closure.pynml" />

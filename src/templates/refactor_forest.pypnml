@@ -338,8 +338,6 @@ CHECK_INCOMPATIBLE  (sawmill,      16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(fore
 CHECK_INCOMPATIBLE  (paper_mill,   16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(sawmill))
 CHECK_FOUNDER       (THIS_ID(paper_mill))
 
-SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
-
 ${industry.get_primary_supplies_stuff()}
 
 #include "../../src/templates/check_availability.pnml"
@@ -357,7 +355,7 @@ item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
 		build_prod_change:       randomise_primary_production_on_build;
 		extra_text_fund:         return string(STR_FUND_FOREST);
 		extra_text_industry:     THIS_ID(extra_text);
-		colour:                  THIS_ID(colour);
+		colour:                  switch_colour;
 	}
 }
 

@@ -343,8 +343,6 @@ CHECK_INCOMPATIBLE  (fishing_harbour,  16, CB_RESULT_LOCATION_DISALLOW, ${indust
 CHECK_COAST_DISTANCE(coastal_distance, 0, param_max_coastal_distance, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_fishing_harbour)
 CHECK_FOUNDER       (${industry.id}_coastal_distance)
 
-SWITCH_COLOUR_SCHEME1(${industry.id}_colour)
-
 #include "../../src/templates/check_availability.pnml"
 
 /* industry specific switch to randomise initial production; as Fishing Grounds never changes production, go for a wide range of productions*/
@@ -370,7 +368,7 @@ item(FEAT_INDUSTRIES, fishing_grounds, ${industry.get_numeric_id()}) {
 		random_prod_change:      return CB_RESULT_IND_PROD_NO_CHANGE;
 		build_prod_change:       ${industry.id}_randomise_primary_production_on_build; // initial production customised to Fishing Grounds
 //		extra_text_industry:     // no extra text. No production increase by means of FMSP
-		colour:                  ${industry.id}_colour;
+		colour:                  switch_colour;
 	}
 }
 

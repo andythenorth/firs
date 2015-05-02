@@ -44,8 +44,6 @@
 #define THIS_BOOST_31             ${industry.get_boost(3,1)}
 #define THIS_BOOST_32             ${industry.get_boost(3,2)}
 
-SWITCH_COLOUR_SCHEME1(${industry.id}_colour)
-
 #include "../../src/templates/produce_secondary.pnml"
 
 <tal:include metal:use-macro="load: extra_text_secondary.pynml" />
@@ -78,7 +76,7 @@ SWITCH_COLOUR_SCHEME1(${industry.id}_colour)
                     <tal:extra_text_industry condition="industry.get_property('extra_text_industry', economy) is not None">
                         extra_text_industry:      ${industry.id}_extra_text;
                     </tal:extra_text_industry>
-                    colour:                   ${industry.id}_colour;
+                    colour:                   switch_colour;
                 }
             }
         </tal:industry_on_or_off>

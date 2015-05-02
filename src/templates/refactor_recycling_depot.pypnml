@@ -68,8 +68,6 @@ CHECK_INCOMPATIBLE  (recycling_depot, 20, CB_RESULT_LOCATION_DISALLOW, ${industr
 CHECK_INDUSTRY_TOWN_COUNT   (check_location, recycling_depot, 0, 0, string(STR_ERR_LOCATION_LIMIT_1_PER_TOWN), ${industry.id}_recycling_depot)
 /* Don't use founder check for this industry, there is a hard limit of 1 per town irrespective of funding type */
 
-SWITCH_COLOUR_SCHEME1(${industry.id}_colour)
-
 #include "../../src/templates/check_availability.pnml"
 
 
@@ -103,7 +101,7 @@ item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
 		random_prod_change:      CB_RESULT_IND_PROD_NO_CHANGE;
 		extra_text_industry:     return string(STR_EXTRA_RECYCLING_DEPOT);
 		extra_text_fund:         return string(STR_FUND_AVAILABLE_FROM, THIS_MIN_YEAR);
-		colour:                  ${industry.id}_colour;
+		colour:                  switch_colour;
 	}
 }
 

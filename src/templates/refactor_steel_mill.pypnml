@@ -111,8 +111,6 @@ CHECK_INCOMPATIBLE  (iron_ore_mine, 16, CB_RESULT_LOCATION_DISALLOW, ${industry.
 CHECK_INCOMPATIBLE  (junk_yard,      16, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_iron_ore_mine)
 CHECK_FOUNDER       (${industry.id}_junk_yard)
 
-SWITCH_COLOUR_SCHEME1(${industry.id}_colour)
-
 #include "../../src/templates/produce_secondary.pnml"
 
 ${industry.get_extra_text_secondary()}
@@ -130,7 +128,7 @@ item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
 		random_prod_change:      check_secondary_closure;
 		extra_text_industry:     ${industry.id}_extra_text;
 		extra_text_fund:         return string(STR_FUND_AVAILABLE_FROM, THIS_MIN_YEAR);
-		colour:                  ${industry.id}_colour;
+		colour:                  switch_colour;
 	}
 }
 

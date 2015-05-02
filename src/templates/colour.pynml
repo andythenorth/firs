@@ -9,8 +9,7 @@
  * Template which maps the random colour of an industry to an actual
  * colour
  */
-#define SWITCH_COLOUR_SCHEME1(name) \
-switch(FEAT_INDUSTRIES, SELF, name, colour) { \
+switch(FEAT_INDUSTRIES, SELF, switch_colour, colour) { \
 	0: return 0; \
 	1: return 1; \
 	2: return 2; \

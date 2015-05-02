@@ -93,8 +93,6 @@ switch (FEAT_INDUSTRIES, SELF, ${industry.id}_check_date, current_year) {
 	${industry.id}_brick_layouts_only;
 }
 
-SWITCH_COLOUR_SCHEME1(${industry.id}_colour)
-
 #include "../../src/templates/produce_secondary.pnml"
 
 ${industry.get_extra_text_secondary()}
@@ -111,7 +109,7 @@ item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
 		monthly_prod_change:     check_secondary_production_level;
 		random_prod_change:      check_secondary_closure;
 		extra_text_industry:     ${industry.id}_extra_text;
-		colour:                  ${industry.id}_colour;
+		colour:                  switch_colour;
 	}
 }
 

@@ -128,8 +128,6 @@ CHECK_INCOMPATIBLE  (forest,       16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(pape
 CHECK_INCOMPATIBLE  (clay_pit,     16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(forest))
 CHECK_FOUNDER       (THIS_ID(clay_pit))
 
-SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
-
 #include "../../src/templates/produce_secondary.pnml"
 
 ${industry.get_extra_text_secondary()}
@@ -146,7 +144,7 @@ item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
 		monthly_prod_change:     check_secondary_production_level;
 		random_prod_change:      check_secondary_closure;
 		extra_text_industry:     THIS_ID(extra_text);
-		colour:                  THIS_ID(colour);
+		colour:                  switch_colour;
 	}
 }
 

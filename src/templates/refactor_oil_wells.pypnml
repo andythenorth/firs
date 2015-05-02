@@ -113,8 +113,6 @@ ${industry.get_industry_layouts_as_tilelayouts()}
 CHECK_INCOMPATIBLE  (oil_refinery, 16, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
 CHECK_FOUNDER       (${industry.id}_oil_refinery)
 
-SWITCH_COLOUR_SCHEME1(${industry.id}_colour)
-
 ${industry.get_primary_supplies_stuff()}
 
 #include "../../src/templates/check_availability.pnml"
@@ -132,7 +130,7 @@ item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
 		build_prod_change:       randomise_primary_production_on_build;
 		extra_text_industry:     ${industry.id}_extra_text;
 		extra_text_fund:         return string(STR_FUND_AVAILABLE_FROM, THIS_MIN_YEAR);
-		colour:                  ${industry.id}_colour;
+		colour:                  switch_colour;
 	}
 }
 #include "../../src/templates/undefs.pnml"
