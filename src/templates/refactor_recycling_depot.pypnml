@@ -60,9 +60,6 @@ ${industry.get_industry_layouts_as_tilelayouts()}
  * Definition of the industry
  * *************************************************/
 
-/* availability years */
-#define THIS_MIN_YEAR 1997
-
 CHECK_INCOMPATIBLE  (recycling_plant, 16, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
 CHECK_INCOMPATIBLE  (recycling_depot, 20, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_recycling_plant)
 CHECK_INDUSTRY_TOWN_COUNT   (check_location, recycling_depot, 0, 0, string(STR_ERR_LOCATION_LIMIT_1_PER_TOWN), ${industry.id}_recycling_depot)
@@ -100,7 +97,7 @@ item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
 		monthly_prod_change:     CB_RESULT_IND_PROD_NO_CHANGE;
 		random_prod_change:      CB_RESULT_IND_PROD_NO_CHANGE;
 		extra_text_industry:     return string(STR_EXTRA_RECYCLING_DEPOT);
-		extra_text_fund:         return string(STR_FUND_AVAILABLE_FROM, THIS_MIN_YEAR);
+		extra_text_fund:         return string(STR_FUND_AVAILABLE_FROM, ${industry.intro_year});
 		colour:                  switch_colour;
 	}
 }

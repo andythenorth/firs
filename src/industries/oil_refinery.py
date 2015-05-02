@@ -20,7 +20,8 @@ industry = IndustrySecondary(id='oil_refinery',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_REFINERY))',
                     override='4',
                     extra_text_industry='STR_EXTRA_OIL_REFINERY',
-                    template="refactor_oil_refinery.pypnml" )
+                    template="refactor_oil_refinery.pypnml",
+                    intro_year=1830)
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_ARCTIC'].enabled = True

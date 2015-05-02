@@ -101,8 +101,6 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_6), 23) {
 #define THIS_BOOST_23             0
 #define THIS_BOOST_31             0
 #define THIS_BOOST_32             0
-/* availability years */
-#define THIS_MIN_YEAR 1830
 
 CHECK_INCOMPATIBLE  (oil_refinery,   56, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
 CHECK_INCOMPATIBLE  (oil_wells,      16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(oil_refinery))
@@ -125,7 +123,7 @@ item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
 		monthly_prod_change:     check_secondary_production_level;
 		random_prod_change:      check_secondary_closure;
 		extra_text_industry:     THIS_ID(extra_text);
-		extra_text_fund:         return string(STR_FUND_AVAILABLE_FROM, THIS_MIN_YEAR);
+		extra_text_fund:         return string(STR_FUND_AVAILABLE_FROM, ${industry.intro_year});
 		colour:                  switch_colour;
 	}
 }

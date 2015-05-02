@@ -101,8 +101,6 @@ item(FEAT_INDUSTRYTILES, ${industry.id}_tile_6, 57) {
 #define THIS_BOOST_23             2
 #define THIS_BOOST_31             3
 #define THIS_BOOST_32             3
-/* availability years */
-#define THIS_MIN_YEAR 1850
 
 
 CHECK_INCOMPATIBLE  (steel_mill,     56, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
@@ -127,7 +125,7 @@ item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
 		monthly_prod_change:     check_secondary_production_level;
 		random_prod_change:      check_secondary_closure;
 		extra_text_industry:     ${industry.id}_extra_text;
-		extra_text_fund:         return string(STR_FUND_AVAILABLE_FROM, THIS_MIN_YEAR);
+		extra_text_fund:         return string(STR_FUND_AVAILABLE_FROM, ${industry.intro_year});
 		colour:                  switch_colour;
 	}
 }
