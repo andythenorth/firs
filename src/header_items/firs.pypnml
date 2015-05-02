@@ -22,8 +22,8 @@ disable_item(FEAT_INDUSTRIES, 0, 36);
 #include "../../src/templates/industry_location.pnml"
 #include "../../src/templates/colour.pnml"
 #include "../../src/templates/randomise_primary_production_on_build.pnml"
-#include "../../src/templates/check_secondary_production_level.pnml"
-#include "../../src/templates/check_secondary_closure.pnml"
+<tal:include metal:use-macro="load: ../templates/check_secondary_production_level.pynml" />
+<tal:include metal:use-macro="load: ../templates/check_secondary_closure.pynml" />
 
 #include "../../src/templates/construction_states.pnml"
 
