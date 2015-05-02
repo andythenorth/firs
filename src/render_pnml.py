@@ -26,7 +26,6 @@ from chameleon import PageTemplateLoader # chameleon used in most template cases
 # setup the places we look for templates
 templates = PageTemplateLoader(os.path.join(src_path, 'templates'), format='text')
 industry_templates = PageTemplateLoader(os.path.join(src_path, 'industries'), format='text')
-header_item_templates = PageTemplateLoader(os.path.join(src_path, 'header_items'), format='text')
 
 generated_pnml_path = os.path.join(firs.generated_files_path, 'pnml')
 if not os.path.exists(generated_pnml_path):
@@ -51,22 +50,15 @@ def render_industry(industry):
 
 def main():
     start = time()
-    header_items = ['checks','conditions','header','firs','parameters']
+    header_items = ['defines', 'checks','conditions','header','firs','parameters']
     for header_item in header_items:
-        template = header_item_templates[header_item + '.pypnml']
+        template = templates[header_item + '.pypnml']
         templated_pnml = utils.unescape_chameleon_output(template(registered_industries=registered_industries, global_constants=global_constants, utils=utils, sys=sys, generated_pnml_path=generated_pnml_path))
         # save the results of templating
         pnml_file_path = os.path.join(generated_pnml_path, header_item + '.pnml')
         pnml = codecs.open(pnml_file_path, 'w','utf8')
         pnml.write(templated_pnml)
         pnml.close()
-
-    template = templates['defines.pypnml']
-    templated_pnml = utils.unescape_chameleon_output(template(global_constants=global_constants))
-    # save the results of templating
-    pnml = codecs.open(os.path.join(generated_pnml_path, 'defines.pnml'), 'w','utf8')
-    pnml.write(templated_pnml)
-    pnml.close()
 
     template = templates['registered_cargos.pypnml']
     templated_pnml = utils.unescape_chameleon_output(template(registered_cargos=registered_cargos, global_constants=global_constants))
@@ -87,7 +79,7 @@ def main():
 
     # linker
     print("Linking pnml")
-    template = header_item_templates['firs.pypnml']
+    template = templates['firs.pypnml']
     firs_pnml = codecs.open(os.path.join(firs.generated_files_path, 'firs.pnml'), 'w','utf8')
     firs_pnml.write(utils.unescape_chameleon_output(template(registered_industries=registered_industries, global_constants=global_constants,
                                                 utils=utils, sys=sys, generated_pnml_path=generated_pnml_path)))
