@@ -333,10 +333,7 @@ tilelayout tilelayout_forest_3 {
  * Definition of the industry
  * *************************************************/
 
-CHECK_NEARBY_CLUSTER(forest,       15, 80, 3, 4, return CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
-CHECK_INCOMPATIBLE  (sawmill,      16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(forest))
-CHECK_INCOMPATIBLE  (paper_mill,   16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(sawmill))
-CHECK_FOUNDER       (THIS_ID(paper_mill))
+<tal:include metal:use-macro="load: industry_location_checks.pynml" />
 
 <tal:include metal:use-macro="load: primary_supplies_stuff.pynml" />
 

@@ -123,8 +123,7 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_9), 99) {
  * Definition of the industry
  * *************************************************/
 
-CHECK_NEARBY_CLUSTER(diamond_mine, 20, 70, 2, 3, return CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
-CHECK_FOUNDER       (THIS_ID(diamond_mine))
+<tal:include metal:use-macro="load: industry_location_checks.pynml" />
 
 <tal:include metal:use-macro="load: primary_supplies_stuff.pynml" />
 
