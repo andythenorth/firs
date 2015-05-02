@@ -114,13 +114,9 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_15, 15) {
 #define THIS_BOOST_31             0
 #define THIS_BOOST_32             0
 
-
-
-
-CHECK_NEARBY_CLUSTER(forest, 16, 60, 5, 4, return CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
-CHECK_FOUNDER       (${industry.id}_forest)
-
 #include "../../src/templates/produce_secondary.pnml"
+
+<tal:include metal:use-macro="load: industry_location_checks.pynml" />
 
 <tal:include metal:use-macro="load: extra_text_secondary.pynml" />
 
