@@ -444,8 +444,8 @@ class Industry(object):
         self.industry_layouts = []
         self.default_industry_properties = IndustryProperties(**kwargs)
         self.location_checks = kwargs.get('location_checks')
-        self.intro_year = kwargs.get('intro_year', None) # ! possibly should be variable by economy?
-        self.expiry_year = kwargs.get('expiry_year', None) # ! possibly should be variable by economy?
+        self.intro_year = kwargs.get('intro_year', 0) # ! possibly should be variable by economy?
+        self.expiry_year = kwargs.get('expiry_year', global_constants.max_game_date) #  ! possibly should be variable by economy?
         self.economy_variations = {}
         for economy in global_constants.economies:
             self.add_economy_variation(economy)
@@ -559,9 +559,9 @@ class Industry(object):
         # some fund text options are orthogonal, there is no support for combining them currently
         # support for combined fund text could be added, it's just a substr tree eh?
         result = [] # use a list, because I want to warn if industry tries to set more than one result
-        if self.intro_year is not None:
+        if self.intro_year != 0:
             result.append('string(STR_FUND_AVAILABLE_FROM, ' + str(self.intro_year) + ')')
-        if self.expiry_year is not None:
+        if self.expiry_year != global_constants.max_game_date:
             result.append('string(STR_FUND_AVAILABLE_UNTIL, ' + str(self.expiry_year) + ')')
 
         if self.get_property('extra_text_fund', economy) is not None:
@@ -570,6 +570,7 @@ class Industry(object):
         # integrity check, no handling of multiple results currently so alert on that at compile time
         if len(result) > 1:
             utils.echo_message('Industry ' + self.id + ' wants more than one string for extra_text_fund, only one is supported currently')
+            utils.echo_message(str(self.intro_year) + ' ' + str(self.expiry_year))
 
         # if no text is needed...
         if len(result) == 0:

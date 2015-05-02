@@ -68,7 +68,7 @@ CHECK_INCOMPATIBLE  (recycling_depot, 20, CB_RESULT_LOCATION_DISALLOW, ${industr
 CHECK_INDUSTRY_TOWN_COUNT   (check_location, recycling_depot, 0, 0, string(STR_ERR_LOCATION_LIMIT_1_PER_TOWN), ${industry.id}_recycling_depot)
 /* Don't use founder check for this industry, there is a hard limit of 1 per town irrespective of funding type */
 
-#include "../../src/templates/check_availability.pnml"
+<tal:include metal:use-macro="load: check_availability.pynml" />
 
 
 /* We have a special production code here:

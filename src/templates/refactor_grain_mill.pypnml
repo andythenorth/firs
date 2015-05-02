@@ -97,7 +97,7 @@ switch (FEAT_INDUSTRIES, SELF, ${industry.id}_check_date, current_year) {
 
 ${industry.get_extra_text_secondary()}
 
-#include "../../src/templates/check_availability.pnml"
+<tal:include metal:use-macro="load: check_availability.pynml" />
 
 ${industry.get_industry_properties()}
 

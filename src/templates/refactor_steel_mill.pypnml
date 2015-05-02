@@ -115,7 +115,7 @@ CHECK_FOUNDER       (${industry.id}_junk_yard)
 
 ${industry.get_extra_text_secondary()}
 
-#include "../../src/templates/check_availability.pnml"
+<tal:include metal:use-macro="load: check_availability.pynml" />
 
 ${industry.get_industry_properties()}
 

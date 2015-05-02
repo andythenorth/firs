@@ -111,7 +111,7 @@ ${industry.get_industry_layouts_as_tilelayouts()}
 
 ${industry.get_primary_supplies_stuff()}
 
-#include "../../src/templates/check_availability.pnml"
+<tal:include metal:use-macro="load: check_availability.pynml" />
 
 CHECK_INCOMPATIBLE  (port, 48, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
 CHECK_FOUNDER       (${industry.id}_port)

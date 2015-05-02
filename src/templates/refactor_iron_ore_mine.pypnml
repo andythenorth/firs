@@ -205,7 +205,7 @@ CHECK_FOUNDER       (THIS_ID(steel_mill))
 
 ${industry.get_primary_supplies_stuff()}
 
-#include "../../src/templates/check_availability.pnml"
+<tal:include metal:use-macro="load: check_availability.pynml" />
 
 ${industry.get_industry_properties()}
 

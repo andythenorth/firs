@@ -157,3 +157,6 @@ generated_files_dir =  'generated'
 graphics_path =  'generated/graphics/'
 
 openttd_climates =  ["CLIMATE_TEMPERATE", "CLIMATE_ARCTIC", "CLIMATE_TROPIC", "CLIMATE_TOYLAND"]
+
+# OpenTTD's max date
+max_game_date = 5000000
