@@ -5,16 +5,15 @@
  * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
  */
 
-
 #define THIS_ID(...) ${industry.id}_ ## __VA_ARGS__
 
-${industry.get_spritesets()}
+<tal:include metal:use-macro="load: spritesets.pynml" />
 
-${industry.get_spritelayouts()}
+<tal:include metal:use-macro="load: spritelayouts.pynml" />
 
-${industry.get_industry_layouts_as_graphic_switches()}
+<tal:include metal:use-macro="load: layout_graphics_switches.pynml" />
 
-${industry.get_fence_switches()}
+<tal:include metal:use-macro="load: fence_switches.pynml" />
 
 /* *************************************************
  * Definition of the industry tile and its callbacks
@@ -54,7 +53,7 @@ item(FEAT_INDUSTRYTILES, ${industry.id}_tile, TILE_RECYCLINGDEPOT_1) {
  * Definition of the industry layouts
  * *************************************************/
 
-${industry.get_industry_layouts_as_tilelayouts()}
+<tal:include metal:use-macro="load: industry_layouts.pynml" />
 
 /* *************************************************
  * Definition of the industry
@@ -66,7 +65,6 @@ CHECK_INDUSTRY_TOWN_COUNT   (check_location, recycling_depot, 0, 0, string(STR_E
 /* Don't use founder check for this industry, there is a hard limit of 1 per town irrespective of funding type */
 
 <tal:include metal:use-macro="load: check_availability.pynml" />
-
 
 /* We have a special production code here:
  * Production depends on the town population: population / 12 is output

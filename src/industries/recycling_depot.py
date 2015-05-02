@@ -5,9 +5,9 @@
   See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
 """
 
-from industry import Industry
+from industry import IndustryPrimaryTownProducer
 
-industry = Industry(id='recycling_depot',
+industry = IndustryPrimaryTownProducer(id='recycling_depot',
                     accept_cargo_types=[],
                     prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL',
                     prod_cargo_types=['RCYC'],
@@ -28,7 +28,6 @@ industry = Industry(id='recycling_depot',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_INDUSTRY_ESTATE))',
                     fund_cost_multiplier='118',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
-                    template="refactor_recycling_depot.pypnml",
                     intro_year=1997)
 
 industry.economy_variations['FIRS'].enabled = True

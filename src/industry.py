@@ -708,6 +708,13 @@ class IndustryPrimaryPort(IndustryPrimary):
         self.supply_requirements = [56, 224, 'PORT'] # janky use of a un-named list for historical reasons (3rd item is string prefix)
 
 
+class IndustryPrimaryTownProducer(Industry):
+    """ Industry that locates near towns, with production amount related to town population """
+    def __init__(self, **kwargs):
+        super(IndustryPrimaryTownProducer, self).__init__(**kwargs)
+        self.template = kwargs.get('template', 'industry_primary_town_producer.pypnml')
+        self.supply_requirements = None # supplies do not boost this type of primary
+
 class IndustrySecondary(Industry):
     """ Processing industries: input cargo(s) -> output cargo(s) """
     def __init__(self, **kwargs):
