@@ -124,12 +124,7 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_7), 6) {
  * Definition of the industry
  * *************************************************/
 
-CHECK_NEARBY_CLUSTER(coal_mine,    20, 70, 2, 3, return CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
-CHECK_INCOMPATIBLE  (brick_works,  16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(coal_mine))
-CHECK_INCOMPATIBLE  (cement_plant, 16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(brick_works))
-CHECK_INCOMPATIBLE  (steel_mill,    16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(cement_plant))
-CHECK_INCOMPATIBLE  (lime_kiln,    16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(steel_mill))
-CHECK_FOUNDER       (THIS_ID(lime_kiln))
+<tal:include metal:use-macro="load: industry_location_checks.pynml" />
 
 <tal:include metal:use-macro="load: primary_supplies_stuff.pynml" />
 

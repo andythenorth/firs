@@ -5,7 +5,7 @@
   See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
 """
 
-from industry import IndustryPrimaryExtractive
+from industry import IndustryPrimaryExtractive, TileLocationChecks, IndustryLocationChecks
 
 industry = IndustryPrimaryExtractive(id='coal_mine',
                     input_multiplier_1='[0, 0]',
@@ -15,6 +15,11 @@ industry = IndustryPrimaryExtractive(id='coal_mine',
                     prod_cargo_types=['COAL'],
                     substitute='0',
                     map_colour='1',
+                    location_checks=IndustryLocationChecks(require_cluster=['coal_mine', [20, 70, 2, 3]],
+                                                           incompatible={'brick_works': 16,
+                                                                         'lime_kiln': 16,
+                                                                         'steel_mill': 16,
+                                                                         'cement_plant': 16}),
                     prospect_chance='0.75',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_MINE))',
                     name='TTD_STR_INDUSTRY_NAME_COAL_MINE',

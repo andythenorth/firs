@@ -113,8 +113,7 @@ item(FEAT_INDUSTRYTILES, ${industry.id}_tile_2, TILE_BULK_TERMINAL_2) {
 
 <tal:include metal:use-macro="load: check_availability.pynml" />
 
-CHECK_INCOMPATIBLE  (bulk_terminal, 48, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
-CHECK_FOUNDER       (${industry.id}_bulk_terminal)
+<tal:include metal:use-macro="load: industry_location_checks.pynml" />
 
 <tal:include metal:use-macro="load: industry_properties.pynml" />
 

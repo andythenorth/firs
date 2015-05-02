@@ -113,10 +113,7 @@ tilelayout tilelayout_${industry.id}_2 {
  * Definition of the industry
  * *************************************************/
 
-CHECK_INCOMPATIBLE  (paper_mill,   16, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
-CHECK_INCOMPATIBLE  (cement_plant, 16, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_paper_mill)
-CHECK_INCOMPATIBLE  (brick_works,  16, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_cement_plant)
-CHECK_FOUNDER       (${industry.id}_brick_works)
+<tal:include metal:use-macro="load: industry_location_checks.pynml" />
 
 <tal:include metal:use-macro="load: primary_supplies_stuff.pynml" />
 

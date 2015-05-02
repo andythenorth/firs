@@ -5,7 +5,7 @@
   See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
 """
 
-from industry import Industry
+from industry import Industry, TileLocationChecks, IndustryLocationChecks
 
 industry = Industry(id='fishing_harbour',
                     accept_cargo_types=['MNSP', 'FISH'],

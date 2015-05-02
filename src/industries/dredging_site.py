@@ -5,7 +5,7 @@
   See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
 """
 
-from industry import IndustryPrimaryExtractive
+from industry import IndustryPrimaryExtractive, TileLocationChecks, IndustryLocationChecks
 
 industry = IndustryPrimaryExtractive(id='dredging_site',
                     prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL',
