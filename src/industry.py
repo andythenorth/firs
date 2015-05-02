@@ -515,18 +515,6 @@ class Industry(object):
         else:
             return "|| (current_year + " + random_offset + ") < " + str(self.graphics_change_dates[date_variation_index - 1]) + " || (current_year + " + random_offset + ") >= " + str(self.graphics_change_dates[date_variation_index])
 
-    def get_spritesets(self):
-        template = templates['spritesets.pynml']
-        return utils.unescape_chameleon_output(template(industry=self))
-
-    def get_spritelayouts(self):
-        template = templates['spritelayouts.pynml']
-        return utils.unescape_chameleon_output(template(industry=self))
-
-    def get_industry_layouts_as_tilelayouts(self):
-        template = templates['industry_layouts.pynml']
-        return utils.unescape_chameleon_output(template(industry=self))
-
     def get_industry_layouts_as_property(self):
         # supports auto-magic layouts from layout objects, or layouts simply declared as a string for nml
         # or no layout declaration if over-riding a default industry
@@ -538,18 +526,6 @@ class Industry(object):
             return 'layouts: ' + self.default_industry_properties.layouts + ';' # simple case
         else:
             return
-
-    def get_industry_layouts_as_graphic_switches(self):
-        template = templates['layout_graphics_switches.pynml']
-        return utils.unescape_chameleon_output(template(industry=self))
-
-    def get_fence_switches(self):
-        template = templates['fence_switches.pynml']
-        return utils.unescape_chameleon_output(template(industry=self))
-
-    def get_industry_properties(self):
-        template = templates['industry_properties.pynml']
-        return utils.unescape_chameleon_output(template(industry=self, global_constants=global_constants))
 
     def get_extra_text_fund(self, economy):
         # some fund text options are orthogonal, there is no support for combining them currently

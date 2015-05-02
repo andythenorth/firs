@@ -7,7 +7,7 @@
 
 #define THIS_ID(...) fruit_plantation_ ## __VA_ARGS__
 
-${industry.get_spritelayouts()}
+<tal:include metal:use-macro="load: spritelayouts.pynml" />
 
 switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_616, nearby_tile_slope(0,0)) {
 	0: ${industry.id}_597;
@@ -281,7 +281,7 @@ item(FEAT_INDUSTRYTILES, ${industry.id}_tile_house, TILE_FRUITPLANTATION_2) {
  * Definition of the industry layouts
  * *************************************************/
 
-<!--! could use templated layouts here using ${industry.get_industry_layouts_as_tilelayouts()}
+<!--! could use templated layouts here using <tal:include metal:use-macro="load: industry_layouts.pynml" />
       but there's no gain as the graphics chain doesn't use a layout check (so no repeating of data) -->
 
 tilelayout ${industry.id}_tilelayout_1 {
@@ -395,7 +395,7 @@ CHECK_FOUNDER       (${industry.id}_brewery)
 
 <tal:include metal:use-macro="load: check_availability.pynml" />
 
-${industry.get_industry_properties()}
+<tal:include metal:use-macro="load: industry_properties.pynml" />
 
 item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
 	graphics {

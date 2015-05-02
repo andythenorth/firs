@@ -8,13 +8,13 @@
 
 #define THIS_ID(...) ${industry.id}_ ## __VA_ARGS__
 
-${industry.get_spritesets()}
+<tal:include metal:use-macro="load: spritesets.pynml" />
 
-${industry.get_spritelayouts()}
+<tal:include metal:use-macro="load: spritelayouts.pynml" />
 
-${industry.get_industry_layouts_as_graphic_switches()}
+<tal:include metal:use-macro="load: layout_graphics_switches.pynml" />
 
-${industry.get_fence_switches()}
+<tal:include metal:use-macro="load: fence_switches.pynml" />
 
 /* ***************************************************
  * Definition of the industry tiles and their callbacks
@@ -101,7 +101,7 @@ item(FEAT_INDUSTRYTILES, oil_wells_tile_building, TILE_OILWELLS_2) {
  * Definition of the industry layouts
  * *************************************************/
 
-${industry.get_industry_layouts_as_tilelayouts()}
+<tal:include metal:use-macro="load: industry_layouts.pynml" />
 
 /* *************************************************
  * Definition of the industry
@@ -114,7 +114,7 @@ CHECK_FOUNDER       (${industry.id}_oil_refinery)
 
 <tal:include metal:use-macro="load: check_availability.pynml" />
 
-${industry.get_industry_properties()}
+<tal:include metal:use-macro="load: industry_properties.pynml" />
 
 item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
 	graphics {

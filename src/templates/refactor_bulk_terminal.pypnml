@@ -8,9 +8,9 @@
 
 #define THIS_ID(...) ${industry.id}_ ## __VA_ARGS__
 
-${industry.get_spritesets()}
+<tal:include metal:use-macro="load: spritesets.pynml" />
 
-${industry.get_spritelayouts()}
+<tal:include metal:use-macro="load: spritelayouts.pynml" />
 
 switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_slope_switch_1, nearby_tile_slope(0,0)) {
 	0: ${industry.id}_spritelayout_tanks_10;
@@ -50,7 +50,7 @@ switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_slope_switch_2, nearby_tile_slop
 	${industry.id}_spritelayout_warehouse_20;
 }
 
-${industry.get_industry_layouts_as_graphic_switches()}
+<tal:include metal:use-macro="load: layout_graphics_switches.pynml" />
 
 /* *************************************************
  * Definition of the industry tile and its callbacks
@@ -103,7 +103,7 @@ item(FEAT_INDUSTRYTILES, ${industry.id}_tile_2, TILE_BULK_TERMINAL_2) {
  * Definition of the industry layouts
  * *************************************************/
 
-${industry.get_industry_layouts_as_tilelayouts()}
+<tal:include metal:use-macro="load: industry_layouts.pynml" />
 
 /* *************************************************
  * Definition of the industry
@@ -116,7 +116,7 @@ ${industry.get_industry_layouts_as_tilelayouts()}
 CHECK_INCOMPATIBLE  (bulk_terminal, 48, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
 CHECK_FOUNDER       (${industry.id}_bulk_terminal)
 
-${industry.get_industry_properties()}
+<tal:include metal:use-macro="load: industry_properties.pynml" />
 
 item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
 	graphics {

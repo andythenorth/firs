@@ -207,7 +207,7 @@ CHECK_FOUNDER       (THIS_ID(steel_mill))
 
 <tal:include metal:use-macro="load: check_availability.pynml" />
 
-${industry.get_industry_properties()}
+<tal:include metal:use-macro="load: industry_properties.pynml" />
 
 item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
 	graphics {

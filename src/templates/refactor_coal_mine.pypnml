@@ -7,9 +7,9 @@
 
 #define THIS_ID(...) ${industry.id}_ ## __VA_ARGS__
 
-${industry.get_spritesets()}
+<tal:include metal:use-macro="load: spritesets.pynml" />
 
-${industry.get_spritelayouts()}
+<tal:include metal:use-macro="load: spritelayouts.pynml" />
 
 /* animation is a big hack, possibly should have used the FIRS industry graphics framework instead of reusing default industry */
 switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_winding_house_1, (animation_frame & 1)) {
@@ -135,7 +135,7 @@ CHECK_FOUNDER       (THIS_ID(lime_kiln))
 
 <tal:include metal:use-macro="load: check_availability.pynml" />
 
-${industry.get_industry_properties()}
+<tal:include metal:use-macro="load: industry_properties.pynml" />
 
 item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
 	graphics {

@@ -9,7 +9,7 @@
 
 /* uses templated spritesets, but not templated layouts - no need for snow, construction states etc */
 
-${industry.get_spritesets()}
+<tal:include metal:use-macro="load: spritesets.pynml" />
 
 spritelayout fishing_grounds_spritelayout_1 {
 	ground {
@@ -358,7 +358,7 @@ random_switch(FEAT_INDUSTRIES, SELF, ${industry.id}_randomise_primary_production
 	1: return 40;
 }
 
-${industry.get_industry_properties()}
+<tal:include metal:use-macro="load: industry_properties.pynml" />
 
 item(FEAT_INDUSTRIES, fishing_grounds, ${industry.get_numeric_id()}) {
 	graphics {
