@@ -9,16 +9,16 @@
  * Checks for transported and received cargo the last month and increases the 'closure counter'
  * if nothing was transported or received. Otherwise it resets the closure_counter.
  *
- * switch name:  THIS_ID(check_production_level)
+ * switch name:  check_secondary_production_level
  */
 
-switch(FEAT_INDUSTRIES, SELF, THIS_ID(increase_closure_counter), STORE_PERM((1 + LOAD_PERM(var_closure_counter)), var_closure_counter)) {
+switch(FEAT_INDUSTRIES, SELF, secondary_increase_closure_counter, STORE_PERM((1 + LOAD_PERM(var_closure_counter)), var_closure_counter)) {
 	return 0;
 }
-switch(FEAT_INDUSTRIES, SELF, THIS_ID(reset_closure_counter), [STORE_PERM(0, var_closure_counter), 1]) {
+switch(FEAT_INDUSTRIES, SELF, secondary_reset_closure_counter, [STORE_PERM(0, var_closure_counter), 1]) {
 	return 0;
 }
-switch(FEAT_INDUSTRIES, SELF, THIS_ID(check_production_level), [
+switch(FEAT_INDUSTRIES, SELF, check_secondary_production_level, [
 			STORE_PERM(0, var_input_cargo_1),
 			STORE_PERM(0, var_input_cargo_2),
 			STORE_PERM(0, var_input_cargo_3),
@@ -29,7 +29,7 @@ switch(FEAT_INDUSTRIES, SELF, THIS_ID(check_production_level), [
 			(current_date - LOAD_PERM(var_date_received_3)) < 30
 			]
 		) {
-	0: THIS_ID(increase_closure_counter);
-	THIS_ID(reset_closure_counter);
+	0: secondary_increase_closure_counter;
+	secondary_reset_closure_counter;
 }
 

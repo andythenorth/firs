@@ -131,8 +131,6 @@ CHECK_FOUNDER       (THIS_ID(clay_pit))
 SWITCH_COLOUR_SCHEME1(THIS_ID(colour))
 
 #include "../../src/templates/produce_secondary.pnml"
-#include "../../src/templates/check_secondary_production_level.pnml"
-
 
 ${industry.get_extra_text_secondary()}
 
@@ -145,7 +143,7 @@ item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
 		produce_cargo_arrival:   THIS_ID(produce);
 		construction_probability:THIS_ID(check_availability);
 		location_check:          THIS_ID(check_location);
-		monthly_prod_change:     THIS_ID(check_production_level);
+		monthly_prod_change:     check_secondary_production_level;
 		random_prod_change:      check_secondary_closure;
 		extra_text_industry:     THIS_ID(extra_text);
 		colour:                  THIS_ID(colour);
