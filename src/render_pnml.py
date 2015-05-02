@@ -14,6 +14,7 @@ import os
 currentdir = os.curdir
 src_path = os.path.join(currentdir, 'src')
 from multiprocessing import Pool
+from time import time
 
 import global_constants
 import utils
@@ -49,6 +50,7 @@ def render_industry(industry):
     pnml_file.close()
 
 def main():
+    start = time()
     header_items = ['checks','conditions','header','firs','parameters']
     for header_item in header_items:
         template = header_item_templates[header_item + '.pypnml']
@@ -90,7 +92,8 @@ def main():
     firs_pnml.write(utils.unescape_chameleon_output(template(registered_industries=registered_industries, global_constants=global_constants,
                                                 utils=utils, sys=sys, generated_pnml_path=generated_pnml_path)))
     firs_pnml.close()
-
+    # eh, how long does this take anyway?
+    print(format((time() - start), '.2f')+'s')
 
 if __name__ == '__main__':
     main()
