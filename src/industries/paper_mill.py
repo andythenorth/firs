@@ -5,13 +5,16 @@
   See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
 """
 
-from industry import IndustrySecondary
+from industry import IndustrySecondary, TileLocationChecks, IndustryLocationChecks
 
 industry = IndustrySecondary(id='paper_mill',
                     processed_cargos_and_output_ratios=[('CLAY', 2), ('WOOD', 4), ('RFPR', 2)],
                     prod_cargo_types=['GOOD', 'MNSP'],
                     prob_in_game='2',
                     prob_random='5',
+                    location_checks=IndustryLocationChecks(incompatible={'paper_mill': 56,
+                                                                         'forest': 16,
+                                                                         'clay_pit': 16}),
                     substitute='14',
                     map_colour='184',
                     fund_cost_multiplier='120',

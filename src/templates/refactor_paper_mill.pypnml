@@ -123,12 +123,9 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_8), 71) {
 #define THIS_BOOST_31             2
 #define THIS_BOOST_32             2
 
-CHECK_INCOMPATIBLE  (paper_mill,   56, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
-CHECK_INCOMPATIBLE  (forest,       16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(paper_mill))
-CHECK_INCOMPATIBLE  (clay_pit,     16, CB_RESULT_LOCATION_DISALLOW, THIS_ID(forest))
-CHECK_FOUNDER       (THIS_ID(clay_pit))
-
 #include "../../src/templates/produce_secondary.pnml"
+
+<tal:include metal:use-macro="load: industry_location_checks.pynml" />
 
 <tal:include metal:use-macro="load: extra_text_secondary.pynml" />
 
