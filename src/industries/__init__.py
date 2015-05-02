@@ -157,8 +157,6 @@ trading_post.industry.register()
 from industries import vehicle_factory
 vehicle_factory.industry.register()
 
-
-# industries which will be hard to convert to python templating, mostly still cpp
 from industries import clay_pit
 clay_pit.industry.register()
 
@@ -180,8 +178,6 @@ port.industry.register()
 from industries import quarry
 quarry.industry.register()
 
-
-# industries reusing default industry graphics (and possibly default layouts)
 from industries import coal_mine
 coal_mine.industry.register()
 
