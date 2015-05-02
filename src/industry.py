@@ -550,11 +550,6 @@ class Industry(object):
 
         return 'return ' + result[0]
 
-    def get_extra_text_secondary(self):
-        # !! this can be removed once snakebite is done
-        template = templates['extra_text_secondary.pynml']
-        return utils.unescape_chameleon_output(template(industry=self, global_constants=global_constants))
-
     def get_property(self, property_name, economy):
         # does magic to get the property from the defaults if not set
         # that enables economies to over-ride selected properties and not bother setting others

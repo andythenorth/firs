@@ -122,7 +122,7 @@ CHECK_FOUNDER       (${industry.id}_forest)
 
 #include "../../src/templates/produce_secondary.pnml"
 
-${industry.get_extra_text_secondary()}
+<tal:include metal:use-macro="load: extra_text_secondary.pynml" />
 
 <tal:include metal:use-macro="load: check_availability.pynml" />
 
