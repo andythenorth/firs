@@ -388,8 +388,7 @@ tilelayout ${industry.id}_tilelayout_5 {
  * Definition of the industry
  * *************************************************/
 
-CHECK_NEARBY_CLUSTER(rubber_plantation, 10, 36, 3, 4, return CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
-CHECK_FOUNDER       (${industry.id}_rubber_plantation)
+<tal:include metal:use-macro="load: industry_location_checks.pynml" />
 
 <tal:include metal:use-macro="load: primary_supplies_stuff.pynml" />
 

@@ -5,7 +5,7 @@
   See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
 """
 
-from industry import IndustryPrimaryOrganic
+from industry import IndustryPrimaryOrganic, TileLocationChecks, IndustryLocationChecks
 
 industry = IndustryPrimaryOrganic(id='rubber_plantation',
                     new_ind_msg='TTD_STR_NEWS_INDUSTRY_CONSTRUCTION',
@@ -17,6 +17,7 @@ industry = IndustryPrimaryOrganic(id='rubber_plantation',
                     prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL',
                     prod_decrease_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_GENERAL',
                     spec_flags='0',
+                    location_checks=IndustryLocationChecks(require_cluster=['coal_mine', [10, 36, 3, 4]]),
                     prod_cargo_types=['RUBR'],
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
                     prob_in_game='3',
