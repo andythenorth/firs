@@ -1,0 +1,150 @@
+/*
+ * This file is part of FIRS industry set.
+ * FIRS industry set is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 2.
+ * FIRS industry set is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS industry set. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+#define THIS_ID(...) ${industry.id}_ ## __VA_ARGS__
+
+<tal:include metal:use-macro="load: spritesets.pynml" />
+
+<tal:include metal:use-macro="load: spritelayouts.pynml" />
+
+/* animation is a big hack, possibly should have used the FIRS industry graphics framework instead of reusing default industry */
+switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_winding_house_1, (animation_frame & 1)) {
+	1: coal_mine_spritelayout_1b;
+	coal_mine_spritelayout_1c; // default
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_winding_house_anim_graphics_switch, animation_frame) {
+	0..63: ${industry.id}_winding_house_1;
+	coal_mine_spritelayout_1a; // default
+}
+
+// this desyncs the animation between adjacent tiles (only works for relative_x case, relative_y not considered)
+switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_winding_house_anim_control_switch, (relative_x & 1)) {
+	1:160;
+	0; // default
+}
+
+/* *************************************************
+ * Definition of the industry tiles
+ * *************************************************/
+
+TILE_DISALLOW_NEARBY_CLASS(tile_nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
+TILE_ALLOW_PLAYER         (tile_player_check,                                                            THIS_ID(tile_nearby_industry))
+TILE_DISALLOW_SLOPES      (tile_location_check,                       CB_RESULT_LOCATION_DISALLOW, THIS_ID(tile_player_check))
+
+item(FEAT_INDUSTRYTILES, THIS_ID(tile_1), 0) {
+	property {
+		substitute: 0;
+		override: 0;
+		accepted_cargos: [[ENSP, 8]];
+		animation_info: [ANIMATION_LOOPING, 253];
+		animation_speed: 1;
+		animation_triggers: bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE);
+	}
+	graphics {
+		tile_check: THIS_ID(tile_location_check);
+		default: ${industry.id}_winding_house_anim_graphics_switch;
+	    anim_control: ${industry.id}_winding_house_anim_control_switch;
+	}
+}
+
+item(FEAT_INDUSTRYTILES, THIS_ID(tile_2), 1) {
+	property {
+		substitute: 1;
+		override: 1;
+		accepted_cargos: [[ENSP, 8]];
+	}
+	graphics {
+		tile_check: THIS_ID(tile_location_check);
+	}
+}
+
+item(FEAT_INDUSTRYTILES, THIS_ID(tile_3), 2) {
+	property {
+		substitute: 2;
+		override: 2;
+		accepted_cargos: [[ENSP, 8]];
+	}
+	graphics {
+		tile_check: THIS_ID(tile_location_check);
+		default: coal_mine_spritelayout_2;
+	}
+}
+
+item(FEAT_INDUSTRYTILES, THIS_ID(tile_4), 3) {
+	property {
+		substitute: 3;
+		override: 3;
+		accepted_cargos: [[ENSP, 8]];
+	}
+	graphics {
+		tile_check: THIS_ID(tile_location_check);
+		default: coal_mine_spritelayout_3;
+	}
+}
+
+item(FEAT_INDUSTRYTILES, THIS_ID(tile_5), 4) {
+	property {
+		substitute: 4;
+		override: 4;
+		accepted_cargos: [[ENSP, 8]];
+	}
+	graphics {
+		tile_check: THIS_ID(tile_location_check);
+	}
+}
+
+item(FEAT_INDUSTRYTILES, THIS_ID(tile_6), 5) {
+	property {
+		substitute: 5;
+		override: 5;
+		accepted_cargos: [[ENSP, 8]];
+	}
+	graphics {
+		tile_check: THIS_ID(tile_location_check);
+	}
+}
+
+item(FEAT_INDUSTRYTILES, THIS_ID(tile_7), 6) {
+	property {
+		substitute: 6;
+		override: 6;
+		accepted_cargos: [[ENSP, 8]];
+	}
+	graphics {
+		tile_check: THIS_ID(tile_location_check);
+	}
+}
+
+/* *************************************************
+ * Definition of the industry
+ * *************************************************/
+
+<tal:include metal:use-macro="load: industry_location_checks.pynml" />
+
+<tal:include metal:use-macro="load: primary_supplies_stuff.pynml" />
+
+<tal:include metal:use-macro="load: check_availability.pynml" />
+
+<tal:include metal:use-macro="load: industry_properties.pynml" />
+
+item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
+	graphics {
+		produce_cargo_arrival:   THIS_ID(produce);
+		construction_probability:THIS_ID(check_availability);
+		location_check:          THIS_ID(check_location);
+		produce_256_ticks:       THIS_ID(produce_256_ticks);
+		monthly_prod_change:     THIS_ID(monthly_update);
+        random_prod_change:      return CB_RESULT_IND_PROD_NO_CHANGE;
+		build_prod_change:       randomise_primary_production_on_build;
+		extra_text_industry:     THIS_ID(extra_text);
+		colour:                  switch_colour;
+	}
+}
+
+#include "../../src/templates/undefs.pnml"
+

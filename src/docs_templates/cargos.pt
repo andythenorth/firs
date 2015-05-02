@@ -17,38 +17,37 @@
             <div id="${cargo.id}">
                 <h3>${doc_helper.get_cargo_name(cargo)} <small>Cargo</small></h3>
                 <p class="muted">${doc_helper.get_cargo_extra_info(cargo)}</p>
-                <tal:unique_industry_combinations repeat="unique_industry_combinations doc_helper.cargo_unique_industry_combinations(cargo)">
+                <tal:industries_using_cargo define="industries_using_cargo doc_helper.industries_using_cargo(cargo)"
+                                            repeat="economy industries_using_cargo">
                     <table class="table table-bordered table-striped table-condensed">
                         <tbody>
                             <tr>
                                 <th style="border-top:none; text-align:right; width:120px;">
-                                    ${('Economy','Economies')[len(unique_industry_combinations['economies']) > 1]}:
+                                    Economy:
                                 </th>
                                 <td style="border-top:none;">
-                                    <tal:economies repeat="cargo_in_economy unique_industry_combinations['economies']">
-                                        <strong><a href="economies.html#${cargo_in_economy}">${doc_helper.get_economy_name(cargo_in_economy)}${(',', '')[repeat.cargo_in_economy.end]}</a></strong>
-                                    </tal:economies>
+                                    <strong><a href="economies.html#${economy}">${doc_helper.get_economy_name(economy)}</a></strong>
                                 </td>
                             </tr>
                             <tr>
                                 <th style="text-align:right; font-weight:normal;">Produced by:</th>
                                 <td>
-                                    <tal:producing_industries repeat="produced_by unique_industry_combinations['produced_by']">
+                                    <tal:produced_by repeat="produced_by industries_using_cargo[economy]['produced_by']">
                                         <a href="industries.html#${produced_by.id}">${' / '.join(doc_helper.get_industry_all_names(produced_by))}${(',', '')[repeat.produced_by.end]}</a>
-                                    </tal:producing_industries>
+                                    </tal:produced_by>
                                 </td>
                             </tr>
                             <tr>
                                 <th style="text-align:right; font-weight:normal;">Accepted by:</th>
                                 <td>
-                                    <tal:accepting_industries repeat="accepted_by unique_industry_combinations['accepted_by']">
+                                    <tal:accepting_industries repeat="accepted_by industries_using_cargo[economy]['accepted_by']">
                                         <a href="industries.html#${accepted_by.id}">${' / '.join(doc_helper.get_industry_all_names(accepted_by))}${(',', '')[repeat.accepted_by.end]}</a>
                                     </tal:accepting_industries>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
-                </tal:unique_industry_combinations>
+                </tal:industries_using_cargo>
             </div>
             <br />
         </tal:cargo>

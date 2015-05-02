@@ -5,6 +5,8 @@
   See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
 """
 
+from collections import deque
+
 import os.path
 currentdir = os.curdir
 
@@ -21,11 +23,212 @@ industry_templates = PageTemplateLoader(os.path.join(src_path, 'industries'), fo
 
 from industries import registered_industries
 
+def get_another_industry(id):
+    # utility function so that we can provide numeric ids in nml output, rather than relying identifiers
+    # this enables compiling single-industries without nml barfing on missing identifiers (in location checks and such)
+    for industry in registered_industries:
+        if industry.id == id:
+            return industry
+    # if none found, that's an error, don't handle the error, just blow up
+
 
 class Tile(object):
     """ Base class to hold industry tiles"""
-    def __init__(self, id):
+    def __init__(self, id, **kwargs):
         self.id = id
+        self.numeric_id = global_constants.tile_numeric_ids.get(self.id, None) # use of get() here is temporary during migrations, not needed otherwise
+        self.land_shape_flags = kwargs.get('land_shape_flags', '0')
+        self.location_checks = kwargs.get('location_checks')
+        # animation length (int), looping (bool), speed (int) should be set for all animations
+        # basic tile animation plays consecutive-frames from the spriteset
+        # spriteset can offset frames when multiple animations are used *on the same* tile (to avoid odd-looking sync effects)
+        # for extended control, the anim_control cb is used, e.g.
+        # - start/stop animation on conditions
+        # - play non-consecutive frames
+        # - de-sync animation for tiles that are repeated in an industry layout
+        # switches for this are provided as macros defined in animation_macros.pynml
+        # tiles should then set custom_anim_control={'macro':[MACRO NAME], 'triggers': 'bitmask([TRIGGERS])'}
+        # generally macros are shared across industries, because animation has common cases
+        # industry-specific macros are ok if really required
+        self.animation_length = kwargs.get('animation_length', 1) # allowed values 1-253
+        self.animation_looping = kwargs.get('animation_looping', False)
+        self.animation_speed = kwargs.get('animation_speed', 0)
+        self.custom_animation_control = kwargs.get('custom_animation_control', None)
+
+    def get_expression_for_tile_acceptance(self, industry, economy, climate):
+        result = []
+        accept_cargo_types = industry.get_property('accept_cargo_types', economy)
+        accept_cargo_types = industry.cargo_list_sugar_magic(accept_cargo_types, economy, climate)
+        for cargo in accept_cargo_types:
+            result.append('[' + cargo + ', 8]')
+        return ','.join(result)
+
+    def get_animation_triggers(self):
+        if self.custom_animation_control is None:
+            return 'bitmask()'
+        else:
+            return self.custom_animation_control['animation_triggers']
+
+    def animation_macros(self):
+        template = templates["animation_macros.pynml"]
+        return template.macros
+
+
+class TileLocationChecks(object):
+    """ Class to hold location checks for a tile """
+    def __init__(self, **kwargs):
+        self.disallow_slopes = kwargs.get('disallow_slopes', False)
+        self.disallow_steep_slopes = kwargs.get('disallow_steep_slopes', False)
+        self.disallow_industry_adjacent = kwargs.get('disallow_industry_adjacent', False)
+        self.require_houses_nearby = kwargs.get('require_houses_nearby', False)
+        self.require_road_adjacent = kwargs.get('require_road_adjacent', []) # any of ['nw', 'ne', 'se', 'nw']
+        self.disallow_above_snowline = kwargs.get('disallow_above_snowline', False)
+        self.disallow_desert = kwargs.get('disallow_desert', False)
+        self.disallow_coast = kwargs.get('disallow_coast', False)
+
+    def get_render_tree(self, tile_id, industry_id):
+        switch_prefix = tile_id + '_lc_'
+        result = deque([TileLocationCheckFounder()])
+
+        if self.disallow_slopes:
+            result.appendleft(TileLocationCheckDisallowSlopes())
+
+        if self.disallow_steep_slopes:
+            result.appendleft(TileLocationCheckDisallowSteepSlopes())
+
+        if self.disallow_industry_adjacent:
+            result.append(TileLocationCheckDisallowIndustryAdjacent())
+
+        if self.require_houses_nearby:
+            # !! possibly could be done simpler with a town zone check instead of a tile search
+            # but didn't want to unpick CPP templating as part of snakebite
+            search_points = [(0, 3), (3, 0), (0, -3), (-3, 0), (2, 2), (2, -2), (-2, 2), (3, 3),
+                             (3, -3), (-3, 3), (-3, -3), (4, 4), (4, -4), (-4, 4), (-4, 4)]
+            for search_offsets in search_points:
+                result.append(TileLocationCheckRequireHousesNearby(search_offsets))
+
+        for direction in self.require_road_adjacent:
+            result.append(TileLocationCheckRequireRoadAdjacent(direction))
+
+        if self.disallow_above_snowline:
+            result.appendleft(TileLocationCheckDisallowAboveSnowline())
+
+        if self.disallow_desert:
+            result.appendleft(TileLocationCheckDisallowDesert())
+
+        if self.disallow_coast:
+            result.appendleft(TileLocationCheckDisallowCoast())
+
+        # walk the tree, setting entry points and results (id of next switch) for each switch
+        for count, lc in enumerate(result):
+            lc.switch_entry_point = switch_prefix + str(count)
+            # don't set the result for the last item - use the check's default allow/disallow value
+            if count < len(result) - 1:
+                # nasty hack with industry id due to not wanting to disturb CPP templating until snakebite is done
+                lc.switch_result = industry_id + '_' + switch_prefix + str(count + 1)
+
+        return list(reversed(result))
+
+
+class TileLocationCheckDisallowSlopes(object):
+    """ Prevent building on all slopes """
+    def __init__(self):
+        self.switch_result = None # no default value for this check, it may not be the last check in a chain
+        self.switch_entry_point = None
+
+    def render(self):
+        return 'TILE_DISALLOW_SLOPES(' + self.switch_entry_point + ', CB_RESULT_LOCATION_DISALLOW,' + self.switch_result + ')'
+
+
+class TileLocationCheckDisallowSteepSlopes(object):
+    """ Prevent building on steep slopes (but not normal slopes) """
+    def __init__(self):
+        self.switch_result = None # no default value for this check, it may not be the last check in a chain
+        self.switch_entry_point = None
+
+    def render(self):
+        return 'TILE_DISALLOW_STEEP_SLOPE(' + self.switch_entry_point + ', string(STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE),' + self.switch_result + ')'
+
+
+class TileLocationCheckDisallowIndustryAdjacent(object):
+    """
+        Prevent directly adjacent to another industry, used by most industries, but not all
+        1. Makes it too hard for the game to find a location for some types (typically large flat industries)
+        2. Not necessary for most town industries
+    """
+    def __init__(self):
+        self.switch_result = 'return CB_RESULT_LOCATION_ALLOW' # default result, value may also be id for next switch
+        self.switch_entry_point = None
+
+    def render(self):
+        return 'TILE_DISALLOW_NEARBY_CLASS(' + self.switch_entry_point + ', TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW,' + self.switch_result + ')'
+
+
+class TileLocationCheckRequireHousesNearby(object):
+    """ Requires houses at offset x, y (to be fed by circular tile search) """
+    def __init__(self, search_offsets):
+        self.search_offsets = search_offsets
+        self.switch_result = 'return CB_RESULT_LOCATION_DISALLOW' # default result, value may also be id for next switch
+        self.switch_entry_point = None
+
+    def render(self):
+        return 'CHECK_HOUSES_NEARBY(' + self.switch_entry_point + ',' + ','.join(str(i) for i in self.search_offsets) + ',' + self.switch_result + ')'
+
+
+class TileLocationCheckRequireRoadAdjacent(object):
+    """ Requires road on adjacent tile(s), with configurable directions """
+    def __init__(self, direction):
+        self.direction_map = {'nw': (0, -1), 'se': (0, 1), 'ne': (-1, 0), 'sw': (1, 0)}
+        self.direction = direction
+        self.switch_result = 'return CB_RESULT_LOCATION_DISALLOW' # default result, value may also be id for next switch
+        self.switch_entry_point = None
+
+    def render(self):
+        x_y_string = ','.join([str(offset) for offset in self.direction_map[self.direction]])
+        return 'CHECK_ROAD_ADJACENT(' + self.switch_entry_point + ', ' + x_y_string + ',' + self.switch_result + ')'
+
+
+class TileLocationCheckDisallowDesert(object):
+    """ Prevent building on desert tiles """
+    def __init__(self):
+        self.switch_result = None # no default value for this check, it may not be the last check in a chain
+        self.switch_entry_point = None
+
+    def render(self):
+        return 'TILE_DISALLOW_TERRAIN(' + self.switch_entry_point + ',TILETYPE_DESERT, CB_RESULT_LOCATION_DISALLOW, ' + self.switch_result + ')'
+
+
+class TileLocationCheckDisallowCoast(object):
+    """ Prevent building on desert tiles """
+    def __init__(self):
+        self.switch_result = None # no default value for this check, it may not be the last check in a chain
+        self.switch_entry_point = None
+
+    def render(self):
+        return 'TILE_DISALLOW_COAST('  + self.switch_entry_point + ', CB_RESULT_LOCATION_DISALLOW, ' + self.switch_result + ')'
+
+
+class TileLocationCheckDisallowAboveSnowline(object):
+    """ Prevent building above snowline """
+    def __init__(self):
+        self.switch_result = None # no default value for this check, it may not be the last check in a chain
+        self.switch_entry_point = None
+
+    def render(self):
+        return 'TILE_CHECK_HEIGHT(' + self.switch_entry_point + ', 0, snowline_height, ' + self.switch_result + ', return string(STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE))'
+
+
+class TileLocationCheckFounder(object):
+    """
+        Used to over-ride non-essential checks when player is building
+        Some tile checks relating to landscape are essential and are placed before player check
+    """
+    def __init__(self):
+        self.switch_result = 'return CB_RESULT_LOCATION_ALLOW' # default result, value may also be id for next switch
+        self.switch_entry_point = None
+
+    def render(self):
+        return 'TILE_ALLOW_PLAYER (' + self.switch_entry_point + ',' + self.switch_result + ')'
 
 
 class Sprite(object):
@@ -44,7 +247,7 @@ class Sprite(object):
 
 
 class SmokeSprite(object):
-    """Base class to handle smoke sprites (using smoke sprite numbers from a base set)"""
+    """ Base class to handle smoke sprites (using smoke sprite numbers from a base set) """
     def __init__(self, smoke_type, xoffset=0, yoffset=0, zoffset=0, hide_sprite=0, animation_frame_offset=0):
         # animation_frame_offset can be used to desynchronise animations in the same tile (or in some cases within the same industry as an alternative to animation triggers)
         # defaults
@@ -75,7 +278,7 @@ class SmokeSprite(object):
 
 
 class Spriteset(object):
-    """Base class to hold industry spritesets"""
+    """ Base class to hold industry spritesets """
     # !! arguably this should be two different classes, one for building/feature spritesets, and one for ground spritesets
     def __init__(self, id, sprites=[], type='', xoffset=0, yoffset=0, zoffset=0, xextent=16, yextent=16,
                  zextent=16, animation_rate = 0, always_draw=0, num_sprites_to_autofill = 1):
@@ -98,7 +301,7 @@ class Spriteset(object):
 
 
 class SpriteLayout(object):
-    """Base class to hold spritelayouts for industry spritelayouts"""
+    """ Base class to hold spritelayouts for industry spritelayouts """
     def __init__(self, id, ground_sprite, ground_overlay, building_sprites, smoke_sprites=[], fences=[]):
         self.id = id
         self.ground_sprite = ground_sprite
@@ -109,21 +312,28 @@ class SpriteLayout(object):
 
 
 class IndustryLayout(object):
-    """Base class to hold industry layouts"""
+    """ Base class to hold industry layouts """
     def __init__(self, id, layout):
         self.id = id
         self.layout = layout # a list of 4-tuples (SE offset from N tile, SW offset from N tile, tile identifier, identifier of spriteset or next nml switch)
 
 
 class IndustryLocationChecks(object):
-    """class to hold location checks for an industry"""
+    """ Class to hold location checks for an industry """
     def __init__(self, **kwargs):
         self.incompatible = kwargs.get('incompatible', {})
+        self.town_distance = kwargs.get('town_distance', None)
+        self.require_cluster = kwargs.get('require_cluster', None)
 
     def get_render_tree(self, switch_prefix):
-        result = [LocationCheckFounder()]
+        # this could be reimplemented to just use numeric switch suffixes, as per tile location check
+        result = [IndustryLocationCheckFounder()]
+        if self.require_cluster:
+            result.append(IndustryLocationCheckRequireCluster(self.require_cluster))
+        if self.town_distance:
+            result.append(IndustryLocationCheckTownDistance(self.town_distance))
         for industry_type, distance in self.incompatible.items():
-            result.append(LocationCheckIncompatible(industry_type, distance))
+            result.append(IndustryLocationCheckIncompatible(industry_type, distance))
         prev = None
         for lc in reversed(result):
             if prev is not None:
@@ -132,20 +342,48 @@ class IndustryLocationChecks(object):
         return list(reversed(result))
 
 
-class LocationCheckIncompatible(object):
-    """prevent locating near incompatible industry types"""
-    def __init__(self, industry_type, distance):
-        self.industry_type = industry_type
-        self.distance = distance
+class IndustryLocationCheckTownDistance(object):
+    """ Require location within min, max distance of a town """
+    def __init__(self, town_distance):
+        self.min_distance = town_distance[0]
+        self.max_distance = town_distance[1]
         self.switch_result = 'return CB_RESULT_LOCATION_ALLOW' # default result, value may also be id for next switch
-        self.switch_entry_point = self.industry_type
+        self.switch_entry_point = 'town_distance'
 
     def render(self):
-        return 'CHECK_INCOMPATIBLE (' + self.industry_type + ', ' + str(self.distance) + ', CB_RESULT_LOCATION_DISALLOW, ' + self.switch_result + ')'
+        return 'CHECK_TOWN_DISTANCE (' + self.switch_entry_point + ', ' + str(self.min_distance) + ',' + str(self.max_distance) + ',' + self.switch_result + ')'
 
 
-class LocationCheckFounder(object):
-    """ensures player can build irrespective of _industry_ location checks (tile checks still apply)"""
+class IndustryLocationCheckRequireCluster(object):
+    """ Require industries to locate in n clusters """
+    def __init__(self, require_cluster):
+        self.industry_type = require_cluster[0]
+        # use the numeric_id so that we can do single-industry compiles without nml barfing on missing identifiers
+        self.industry_type_numeric_id = get_another_industry(self.industry_type).get_numeric_id()
+        self.arbitrary_numbers = require_cluster[1] # not really arbitrary, I'm just being pissy because I don't know what div/mult do
+        self.switch_result = 'return CB_RESULT_LOCATION_ALLOW' # default result, value may also be id for next switch
+        self.switch_entry_point = str(self.industry_type_numeric_id)
+
+    def render(self):
+        return 'CHECK_NEARBY_CLUSTER(' + str(self.industry_type_numeric_id) + ', ' +  ','.join([str(i) for i in self.arbitrary_numbers]) + ',' + 'return CB_RESULT_LOCATION_DISALLOW,' + self.switch_result + ')'
+
+
+class IndustryLocationCheckIncompatible(object):
+    """ Prevent locating near incompatible industry types """
+    def __init__(self, industry_type, distance):
+        self.industry_type = industry_type
+        # use the numeric_id so that we can do single-industry compiles without nml barfing on missing identifiers
+        self.industry_type_numeric_id = get_another_industry(industry_type).get_numeric_id()
+        self.distance = distance
+        self.switch_result = 'return CB_RESULT_LOCATION_ALLOW' # default result, value may also be id for next switch
+        self.switch_entry_point = str(self.industry_type_numeric_id)
+
+    def render(self):
+        return 'CHECK_INCOMPATIBLE (' + str(self.industry_type_numeric_id) + ', ' + str(self.distance) + ', CB_RESULT_LOCATION_DISALLOW, ' + self.switch_result + ')'
+
+
+class IndustryLocationCheckFounder(object):
+    """ Ensures player can build irrespective of _industry_ location checks (tile checks still apply) """
     def __init__(self):
         self.switch_result = 'return CB_RESULT_LOCATION_ALLOW' # default result, value may also be id for next switch
         self.switch_entry_point = 'check_founder'
@@ -154,23 +392,23 @@ class LocationCheckFounder(object):
         return 'CHECK_FOUNDER (' + self.switch_result + ')'
 
 
-
 class IndustryProperties(object):
-    """Base class to hold properties corresponding to nml industry item properties"""
+    """ Base class to hold properties corresponding to nml industry item properties """
     def __init__(self, **kwargs):
         # nml item properties, most of these should be provided as strings for insertion into nml.  See nml docs for meaning + acceptable values.
         self.substitute = kwargs.get('substitute', None)
         self.override = kwargs.get('override', None)
         self.name = kwargs.get('name', None)
         self.nearby_station_name = kwargs.get('nearby_station_name', None)
-        self.layouts = kwargs.get('layouts', None) # !! automatic layout handling can be specified for this using 'AUTO' as the value
+        self.layouts = kwargs.get('layouts', None) # automatic layout handling can be specified for this using 'AUTO' as the value
         self.accept_cargo_types = kwargs.get('accept_cargo_types', None)
         self.prod_cargo_types = kwargs.get('prod_cargo_types', None)
         self.prod_multiplier = kwargs.get('prod_multiplier', None)
         self.min_cargo_distr = kwargs.get('min_cargo_distr', None)
-        self.input_multiplier_1 = kwargs.get('input_multiplier_1', None)
-        self.input_multiplier_2 = kwargs.get('input_multiplier_2', None)
-        self.input_multiplier_3 = kwargs.get('input_multiplier_3', None)
+        #  input multipliers must be explicitly 0 unless set, don't rely on sensible defaults
+        self.input_multiplier_1 = kwargs.get('input_multiplier_1', '[0, 0]')
+        self.input_multiplier_2 = kwargs.get('input_multiplier_2', '[0, 0]')
+        self.input_multiplier_3 = kwargs.get('input_multiplier_3', '[0, 0]')
         self.prod_increase_msg = kwargs.get('prod_increase_msg', None)
         self.prod_decrease_msg = kwargs.get('prod_decrease_msg', None)
         self.new_ind_msg = kwargs.get('new_ind_msg', None)
@@ -186,14 +424,15 @@ class IndustryProperties(object):
         # not nml properties
         self.enabled = kwargs.get('enabled', False)
         self.override_default_construction_states = kwargs.get('override_default_construction_states', False)
-        self.extra_text_industry = kwargs.get('extra_text_industry', None) # value is string(s) to return for corresponding nml cb, use 'STR_GENERIC_NEWLINE' in default property declaration if no string needed
+        self.extra_text_industry = kwargs.get('extra_text_industry', None) # value is string(s) to return for corresponding nml cb
+        self.extra_text_fund = kwargs.get('extra_text_fund', None)
         # nml properties we want to prevent being set for one reason or another
         if 'conflicting_ind_types' in kwargs:
             raise Exception("Don't set conflicting_ind_types property; use the FIRS location checks for conflicting industry (these are more flexible).")
 
 
 class Industry(object):
-    """Base class for all types of industry"""
+    """ Base class for all types of industry """
     def __init__(self, id, graphics_change_dates=[], **kwargs):
         self.id = id
         self.graphics_change_dates = graphics_change_dates # 0-based, ordered list of dates for which graphics should change, match to graphics suffixed _1, _2, _3 etc.
@@ -204,12 +443,13 @@ class Industry(object):
         self.spritelayouts = [] # by convention spritelayout is one word :P
         self.industry_layouts = []
         self.default_industry_properties = IndustryProperties(**kwargs)
-        self.supply_requirements = kwargs.get('supply_requirements', self.set_supply_requirements_via_magic())
         self.location_checks = kwargs.get('location_checks')
+        self.intro_year = kwargs.get('intro_year', 0) # ! possibly should be variable by economy?
+        self.expiry_year = kwargs.get('expiry_year', global_constants.max_game_date) #  ! possibly should be variable by economy?
         self.economy_variations = {}
         for economy in global_constants.economies:
             self.add_economy_variation(economy)
-        self.register()
+        self.template = kwargs.get('template', None)
 
     def register(self):
         registered_industries.append(self)
@@ -247,14 +487,6 @@ class Industry(object):
     def add_economy_variation(self, economy):
         self.economy_variations[economy] = IndustryProperties()
 
-    def set_supply_requirements_via_magic(self):
-        if 'ENSP' in self.default_industry_properties.accept_cargo_types:
-            return global_constants.supply_requirements['ENSP']
-        elif 'FMSP' in self.default_industry_properties.accept_cargo_types:
-            return global_constants.supply_requirements['FMSP']
-        else:
-            return None
-
     def get_numeric_id(self):
         return global_constants.industry_numeric_ids[self.id]
 
@@ -283,48 +515,40 @@ class Industry(object):
         else:
             return "|| (current_year + " + random_offset + ") < " + str(self.graphics_change_dates[date_variation_index - 1]) + " || (current_year + " + random_offset + ") >= " + str(self.graphics_change_dates[date_variation_index])
 
-    def get_spritesets(self):
-        template = templates['spritesets.pynml']
-        return utils.unescape_chameleon_output(template(industry=self))
-
-    def get_spritelayouts(self):
-        template = templates['spritelayouts.pynml']
-        return utils.unescape_chameleon_output(template(industry=self))
-
-    def get_industry_layouts_as_tilelayouts(self):
-        template = templates['industry_layout_tilelayouts.pynml']
-        return utils.unescape_chameleon_output(template(industry=self))
-
     def get_industry_layouts_as_property(self):
         # supports auto-magic layouts from layout objects, or layouts simply declared as a string for nml
         # or no layout declaration if over-riding a default industry
         if self.default_industry_properties.layouts == 'AUTO':
-            template = templates['industry_layout_property.pynml'] # automagic case
-            return 'layouts: ' + utils.unescape_chameleon_output(template(industry=self))
+            # automagic case
+            result = [industry_layout.id + '_tilelayout' for industry_layout in self.industry_layouts]
+            return 'layouts: [' + ','.join(result) + '];'
         elif self.default_industry_properties.layouts != None:
             return 'layouts: ' + self.default_industry_properties.layouts + ';' # simple case
         else:
             return
 
-    def get_industry_layouts_as_graphic_switches(self):
-        template = templates['industry_layout_graphics_switches.pynml']
-        return utils.unescape_chameleon_output(template(industry=self))
+    def get_extra_text_fund(self, economy):
+        # some fund text options are orthogonal, there is no support for combining them currently
+        # support for combined fund text could be added, it's just a substr tree eh?
+        result = [] # use a list, because I want to warn if industry tries to set more than one result
+        if self.intro_year != 0:
+            result.append('string(STR_FUND_AVAILABLE_FROM, ' + str(self.intro_year) + ')')
+        if self.expiry_year != global_constants.max_game_date:
+            result.append('string(STR_FUND_AVAILABLE_UNTIL, ' + str(self.expiry_year) + ')')
 
-    def get_fence_switches(self):
-        template = templates['fence_switches.pynml']
-        return utils.unescape_chameleon_output(template(industry=self))
+        if self.get_property('extra_text_fund', economy) is not None:
+            result.append(self.get_property('extra_text_fund', economy))
 
-    def get_primary_supplies_stuff(self):
-        template = templates['primary_supplies_stuff.pynml']
-        return utils.unescape_chameleon_output(template(industry=self))
+        # integrity check, no handling of multiple results currently so alert on that at compile time
+        if len(result) > 1:
+            utils.echo_message('Industry ' + self.id + ' wants more than one string for extra_text_fund, only one is supported currently')
+            utils.echo_message(str(self.intro_year) + ' ' + str(self.expiry_year))
 
-    def get_industry_properties(self):
-        template = templates['industry_properties.pynml']
-        return utils.unescape_chameleon_output(template(industry=self, global_constants=global_constants))
+        # if no text is needed...
+        if len(result) == 0:
+            result.append('CB_RESULT_NO_TEXT')
 
-    def get_extra_text_secondary(self):
-        template = templates['extra_text_secondary.pynml']
-        return utils.unescape_chameleon_output(template(industry=self, global_constants=global_constants))
+        return 'return ' + result[0]
 
     def get_property(self, property_name, economy):
         # does magic to get the property from the defaults if not set
@@ -352,6 +576,7 @@ class Industry(object):
     def cargo_list_sugar_magic(self, cargo_list, economy, climate):
         # magic to deal with special cases in cargo lists - clean up the list returned to templates etc
         # SGBT + SGCN should both be defined when accepted or produced, they are climate sensitive
+        # !! KILL THE CLIMATE STUFF IN V2 - not needed, make it less complex, fewer LOC (do it by economy instead)
         if climate == "CLIMATE_TROPIC":
             cargo_list = ["SGCN" if cargo=="SGBT" else cargo for cargo in cargo_list]
         if climate != "CLIMATE_TROPIC":
@@ -378,10 +603,7 @@ class Industry(object):
         return '[' + ','.join(prod_cargo_types) + ']'
 
     def get_another_industry(self, id):
-        for industry in registered_industries:
-            if industry.id == id:
-                return industry
-        # if none found, that's an error, don't handle the error, just blow up
+        return get_another_industry(id)
 
     def get_conditional_expressions_for_enabled_economies(self):
         # returns a string that can be used as the conditions in nml if() blocks for economy stuff
@@ -406,7 +628,108 @@ class Industry(object):
             return getattr(sprite_or_spriteset, 'sprite_number' + suffix)
 
     def render_pnml(self):
-        industry_template = industry_templates[self.id + '.pypnml']
+        industry_template = templates[self.template]
         templated_pnml = utils.unescape_chameleon_output(industry_template(industry=self, global_constants=global_constants, utils=utils))
         return templated_pnml
+
+
+class IndustryPrimary(Industry):
+    """ Industries that produce cargo and (optionally) boost production if supplies are delivered """
+    def __init__(self, **kwargs):
+        super(IndustryPrimary, self).__init__(**kwargs)
+        self.template = kwargs.get('template', 'industry_primary.pypnml')
+        self.supply_requirements = None # default None, set appropriately by subclasses
+
+
+class IndustryPrimaryExtractive(IndustryPrimary):
+    """
+        Industry that is extractive AND has production boosted by delivery of ENSP (mines and similar)
+        Sparse subclass of IndustryPrimary, do not add much to this, it's subclassed once already
+    """
+    def __init__(self, **kwargs):
+        kwargs['accept_cargo_types'] = ['ENSP']
+        kwargs['life_type'] = 'IND_LIFE_TYPE_EXTRACTIVE'
+        kwargs['extra_text_industry'] = True # slight hax, actual text string is determined by templated cb
+        super(IndustryPrimaryExtractive, self).__init__(**kwargs)
+        self.supply_requirements = [21, 84, 'PRIMARY'] # janky use of a un-named list for historical reasons (3rd item is string prefix)
+
+
+class IndustryPrimaryOrganic(IndustryPrimary):
+    """
+        Industry that is organic AND has production boosted by delivery of FMSP (farms and similar)
+        Sparse subclass of IndustryPrimary, do not add much to this, it's subclassed once already
+    """
+    def __init__(self, **kwargs):
+        kwargs['accept_cargo_types'] = ['FMSP']
+        kwargs['life_type'] = 'IND_LIFE_TYPE_BLACK_HOLE'
+        kwargs['extra_text_industry'] = True # slight hax, actual text string is determined by templated cb
+        super(IndustryPrimaryOrganic, self).__init__(**kwargs)
+        self.supply_requirements = [14, 56, 'PRIMARY'] # janky use of a un-named list for historical reasons (3rd item is string prefix)
+
+
+class IndustryPrimaryPort(IndustryPrimary):
+    """
+        Industry that is import-export AND has production boosted by delivery of arbitrary cargos (ports and similar)
+        Sparse subclass of IndustryPrimary, do not add much to this, it's subclassed once already
+    """
+    def __init__(self, **kwargs):
+        kwargs['life_type'] = 'IND_LIFE_TYPE_BLACK_HOLE'
+        kwargs['extra_text_industry'] = True # slight hax, actual text string is determined by templated cb
+        super(IndustryPrimaryPort, self).__init__(**kwargs)
+        self.supply_requirements = [56, 224, 'PORT'] # janky use of a un-named list for historical reasons (3rd item is string prefix)
+
+
+class IndustryPrimaryTownProducer(Industry):
+    """ Industry that locates near towns, with production amount related to town population """
+    def __init__(self, **kwargs):
+        super(IndustryPrimaryTownProducer, self).__init__(**kwargs)
+        self.template = kwargs.get('template', 'industry_primary_town_producer.pypnml')
+        self.supply_requirements = None # supplies do not boost this type of primary
+
+class IndustrySecondary(Industry):
+    """ Processing industries: input cargo(s) -> output cargo(s) """
+    def __init__(self, **kwargs):
+        # !! this will need to handle economy variations also...might be non-viable in current form
+        # - do that after snakebite, the CPP templating doesn't handle economy variations either
+        self.processed_cargos_and_output_ratios = kwargs['processed_cargos_and_output_ratios'] # this kw is required, error if missing - no .get()
+        kwargs['accept_cargo_types'] = [i[0] for i in self.processed_cargos_and_output_ratios]
+        super(IndustrySecondary, self).__init__(**kwargs)
+        self.template = kwargs.get('template', 'industry_secondary.pypnml')
+        self.combined_cargos_boost_prod = kwargs.get('combined_cargos_boost_prod', False)
+        self.mnsp_boosts_production_jank = kwargs.get('mnsp_boosts_production_jank', False) # jank jank jank
+
+    def get_num_output_cargos(self):
+        # !! no economy support currently, CPP templating doesn't handle it, but will be needed after snakebite
+        return len(self.get_property('prod_cargo_types', None))
+
+    def get_prod_ratio(self, cargo_num):
+        if cargo_num > len(self.processed_cargos_and_output_ratios):
+            return 0
+        else:
+            return self.processed_cargos_and_output_ratios[cargo_num - 1][1]
+
+    def get_boost(self, supplied_cargo_num, boosted_cargo_num):
+        # jank for MNSP first, this is due to design choices I now regret :|
+        # some industries boost only in combination with MNSP, rather than any/all accepted cargos, ugh
+        if self.mnsp_boosts_production_jank:
+            if self.processed_cargos_and_output_ratios[supplied_cargo_num - 1][0] == 'MNSP':
+                return self.get_prod_ratio(supplied_cargo_num)
+            elif self.processed_cargos_and_output_ratios[boosted_cargo_num - 1][0] == 'MNSP':
+                return self.get_prod_ratio(supplied_cargo_num)
+            else:
+                return 0
+        # not jank, proper
+        if self.combined_cargos_boost_prod:
+            if boosted_cargo_num > len(self.processed_cargos_and_output_ratios):
+                return 0
+            else:
+                return self.get_prod_ratio(supplied_cargo_num)
+        return 0
+
+
+class IndustryTertiary(Industry):
+    """ Industries that consume cargo and don't produce much (or anything), typically black holes in or near towns """
+    def __init__(self, **kwargs):
+        super(IndustryTertiary, self).__init__(**kwargs)
+        self.template = 'industry_tertiary.pypnml'
 

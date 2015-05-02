@@ -5,21 +5,9 @@
   See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
 """
 
-from industry import Industry, Tile, Sprite, Spriteset, SpriteLayout, IndustryLayout
+from industry import IndustryPrimaryExtractive, TileLocationChecks, IndustryLocationChecks
 
-"""
-Notes to self whilst figuring out python-firs (notes will probably rot here forever).
-By convention, ids for use in nml have industry name prefix, local python object ids don't bother with industry name prefix.
-Some method properties expect object references, and the templating then uses properties from that object.
-Some method properties need a string - the templating is then typically directly writing out an nml identifier.
-When a string is expected are basically two choices: provide a string directly, or make an object reference and get an id from that object.
-"""
-
-industry = Industry(id='nitrate_mine',
-                    accept_cargo_types=['ENSP'],
-                    input_multiplier_1='[0, 0]',
-                    input_multiplier_3='[0, 0]',
-                    input_multiplier_2='[0, 0]',
+industry = IndustryPrimaryExtractive(id='nitrate_mine',
                     prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL',
                     prod_cargo_types=['FMSP', 'NITR'],
                     layouts='AUTO',
@@ -30,19 +18,25 @@ industry = Industry(id='nitrate_mine',
                     new_ind_msg='TTD_STR_NEWS_INDUSTRY_CONSTRUCTION',
                     map_colour='164',
                     prod_decrease_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_GENERAL',
-                    life_type='IND_LIFE_TYPE_EXTRACTIVE',
                     min_cargo_distr='5',
                     spec_flags='0',
+                    location_checks=IndustryLocationChecks(require_cluster=['nitrate_mine', [20, 70, 2, 3]],
+                                                           incompatible={'chemical_plant': 56}),
                     remove_cost_multiplier='0',
                     prospect_chance='0.75',
                     name='string(STR_IND_NITRATE_MINE)',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_WATER))',
                     fund_cost_multiplier='180',
-                    closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS')
+                    closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS' )
 
 industry.economy_variations['BASIC_TROPIC'].enabled = True
 
-industry.add_tile(id='nitrate_mine_tile')
+industry.add_tile(id='nitrate_mine_tile_1',
+                  animation_length=7,
+                  animation_looping=True,
+                  animation_speed=3,
+                  location_checks=TileLocationChecks(disallow_slopes=True,
+                                                     disallow_industry_adjacent=True))
 
 spriteset_ground = industry.add_spriteset(
     id = 'nitrate_mine_spriteset_ground',
@@ -177,36 +171,36 @@ industry.add_spritelayout(
 
 industry.add_industry_layout(
     id = 'nitrate_mine_industry_layout_1',
-    layout = [(0, 0, 'nitrate_mine_tile', 'nitrate_mine_spritelayout_chimney'),
-              (0, 1, 'nitrate_mine_tile', 'nitrate_mine_spritelayout_raised_shed'),
-              (0, 2, 'nitrate_mine_tile', 'nitrate_mine_spritelayout_hut'),
-              (1, 0, 'nitrate_mine_tile', 'nitrate_mine_spritelayout_raised_tanks'),
-              (1, 1, 'nitrate_mine_tile', 'nitrate_mine_spritelayout_raised_tanks'),
-              (1, 2, 'nitrate_mine_tile', 'nitrate_mine_spritelayout_empty'),
-              (2, 0, 'nitrate_mine_tile', 'nitrate_mine_spritelayout_processor'),
-              (2, 1, 'nitrate_mine_tile', 'nitrate_mine_spritelayout_processor'),
-              (2, 2, 'nitrate_mine_tile', 'nitrate_mine_spritelayout_empty'),
-              (3, 0, 'nitrate_mine_tile', 'nitrate_mine_spritelayout_conveyors'),
-              (3, 1, 'nitrate_mine_tile', 'nitrate_mine_spritelayout_conveyors'),
-              (3, 2, 'nitrate_mine_tile', 'nitrate_mine_spritelayout_empty'),
-              (4, 0, 'nitrate_mine_tile', 'nitrate_mine_spritelayout_large_shed'),
-              (4, 1, 'nitrate_mine_tile', 'nitrate_mine_spritelayout_large_shed'),
-              (4, 2, 'nitrate_mine_tile', 'nitrate_mine_spritelayout_machinery'),
+    layout = [(0, 0, 'nitrate_mine_tile_1', 'nitrate_mine_spritelayout_chimney'),
+              (0, 1, 'nitrate_mine_tile_1', 'nitrate_mine_spritelayout_raised_shed'),
+              (0, 2, 'nitrate_mine_tile_1', 'nitrate_mine_spritelayout_hut'),
+              (1, 0, 'nitrate_mine_tile_1', 'nitrate_mine_spritelayout_raised_tanks'),
+              (1, 1, 'nitrate_mine_tile_1', 'nitrate_mine_spritelayout_raised_tanks'),
+              (1, 2, 'nitrate_mine_tile_1', 'nitrate_mine_spritelayout_empty'),
+              (2, 0, 'nitrate_mine_tile_1', 'nitrate_mine_spritelayout_processor'),
+              (2, 1, 'nitrate_mine_tile_1', 'nitrate_mine_spritelayout_processor'),
+              (2, 2, 'nitrate_mine_tile_1', 'nitrate_mine_spritelayout_empty'),
+              (3, 0, 'nitrate_mine_tile_1', 'nitrate_mine_spritelayout_conveyors'),
+              (3, 1, 'nitrate_mine_tile_1', 'nitrate_mine_spritelayout_conveyors'),
+              (3, 2, 'nitrate_mine_tile_1', 'nitrate_mine_spritelayout_empty'),
+              (4, 0, 'nitrate_mine_tile_1', 'nitrate_mine_spritelayout_large_shed'),
+              (4, 1, 'nitrate_mine_tile_1', 'nitrate_mine_spritelayout_large_shed'),
+              (4, 2, 'nitrate_mine_tile_1', 'nitrate_mine_spritelayout_machinery'),
     ]
 )
 industry.add_industry_layout(
     id = 'nitrate_mine_industry_layout_2',
-    layout = [(0, 0, 'nitrate_mine_tile', 'nitrate_mine_spritelayout_raised_tanks'),
-              (0, 1, 'nitrate_mine_tile', 'nitrate_mine_spritelayout_processor'),
-              (0, 2, 'nitrate_mine_tile', 'nitrate_mine_spritelayout_processor'),
-              (0, 3, 'nitrate_mine_tile', 'nitrate_mine_spritelayout_raised_shed'),
-              (1, 0, 'nitrate_mine_tile', 'nitrate_mine_spritelayout_chimney'),
-              (1, 1, 'nitrate_mine_tile', 'nitrate_mine_spritelayout_conveyors'),
-              (1, 2, 'nitrate_mine_tile', 'nitrate_mine_spritelayout_conveyors'),
-              (1, 3, 'nitrate_mine_tile', 'nitrate_mine_spritelayout_empty'),
-              (2, 0, 'nitrate_mine_tile', 'nitrate_mine_spritelayout_machinery'),
-              (2, 1, 'nitrate_mine_tile', 'nitrate_mine_spritelayout_large_shed'),
-              (2, 2, 'nitrate_mine_tile', 'nitrate_mine_spritelayout_large_shed'),
-              (2, 3, 'nitrate_mine_tile', 'nitrate_mine_spritelayout_hut'),
+    layout = [(0, 0, 'nitrate_mine_tile_1', 'nitrate_mine_spritelayout_raised_tanks'),
+              (0, 1, 'nitrate_mine_tile_1', 'nitrate_mine_spritelayout_processor'),
+              (0, 2, 'nitrate_mine_tile_1', 'nitrate_mine_spritelayout_processor'),
+              (0, 3, 'nitrate_mine_tile_1', 'nitrate_mine_spritelayout_raised_shed'),
+              (1, 0, 'nitrate_mine_tile_1', 'nitrate_mine_spritelayout_chimney'),
+              (1, 1, 'nitrate_mine_tile_1', 'nitrate_mine_spritelayout_conveyors'),
+              (1, 2, 'nitrate_mine_tile_1', 'nitrate_mine_spritelayout_conveyors'),
+              (1, 3, 'nitrate_mine_tile_1', 'nitrate_mine_spritelayout_empty'),
+              (2, 0, 'nitrate_mine_tile_1', 'nitrate_mine_spritelayout_machinery'),
+              (2, 1, 'nitrate_mine_tile_1', 'nitrate_mine_spritelayout_large_shed'),
+              (2, 2, 'nitrate_mine_tile_1', 'nitrate_mine_spritelayout_large_shed'),
+              (2, 3, 'nitrate_mine_tile_1', 'nitrate_mine_spritelayout_hut'),
     ]
 )

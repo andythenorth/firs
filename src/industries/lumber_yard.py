@@ -5,21 +5,11 @@
   See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
 """
 
-from industry import Industry, Tile, Sprite, Spriteset, SpriteLayout, IndustryLayout
+from industry import IndustrySecondary, TileLocationChecks, IndustryLocationChecks
 
-"""
-Notes to self whilst figuring out python-firs (notes will probably rot here forever).
-By convention, ids for use in nml have industry name prefix, local python object ids don't bother with industry name prefix.
-Some method properties expect object references, and the templating then uses properties from that object.
-Some method properties need a string - the templating is then typically directly writing out an nml identifier.
-When a string is expected are basically two choices: provide a string directly, or make an object reference and get an id from that object.
-"""
-
-industry = Industry(id='lumber_yard',
-                    accept_cargo_types=['WDPR', 'RFPR'],
-                    input_multiplier_1='[0, 0]',
-                    input_multiplier_3='[0, 0]',
-                    input_multiplier_2='[0, 0]',
+industry = IndustrySecondary(id='lumber_yard',
+                    processed_cargos_and_output_ratios=[('WDPR', 6), ('RFPR', 2)],
+                    combined_cargos_boost_prod=True,
                     prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL',
                     prod_cargo_types=['ENSP', 'BDMT'],
                     layouts='AUTO',
@@ -33,17 +23,28 @@ industry = Industry(id='lumber_yard',
                     life_type='IND_LIFE_TYPE_PROCESSING',
                     min_cargo_distr='5',
                     spec_flags='0',
+                    location_checks=IndustryLocationChecks(incompatible={'lumber_yard': 56}),
                     remove_cost_multiplier='0',
                     prospect_chance='0.75',
                     name='string(STR_IND_LUMBER_YARD)',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_INDUSTRY_ESTATE))',
                     fund_cost_multiplier='35',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
-                    extra_text_industry='STR_EXTRA_LUMBER_YARD')
+                    extra_text_industry='STR_EXTRA_LUMBER_YARD' )
 
 industry.economy_variations['FIRS'].enabled = True
 
-industry.add_tile(id='lumber_yard_tile')
+# non-animated tile, allowed on slopes
+industry.add_tile(id='lumber_yard_tile_1',
+                  location_checks=TileLocationChecks(disallow_industry_adjacent=True))
+
+# animated kiln-building tile, graphics break if built on slopes
+industry.add_tile(id='lumber_yard_tile_2',
+                  animation_length=71,
+                  animation_looping=True,
+                  animation_speed=2,
+                  location_checks=TileLocationChecks(disallow_slopes=True,
+                                                     disallow_industry_adjacent=True))
 
 sprite_ground = industry.add_sprite(
     sprite_number = 'GROUNDTILE_MUD_TRACKS'
@@ -142,62 +143,62 @@ industry.add_spritelayout(
 
 industry.add_industry_layout(
     id = 'lumber_yard_industry_layout_1',
-    layout = [(0, 0, 'lumber_yard_tile', 'lumber_yard_spritelayout_2'),
-              (0, 1, 'lumber_yard_tile', 'lumber_yard_spritelayout_1'),
-              (0, 2, 'lumber_yard_tile', 'lumber_yard_spritelayout_5'),
-              (1, 0, 'lumber_yard_tile', 'lumber_yard_spritelayout_6'),
-              (1, 1, 'lumber_yard_tile', 'lumber_yard_spritelayout_4'),
-              (1, 2, 'lumber_yard_tile', 'lumber_yard_spritelayout_8'),
-              (2, 0, 'lumber_yard_tile', 'lumber_yard_spritelayout_8'),
-              (2, 1, 'lumber_yard_tile', 'lumber_yard_spritelayout_4'),
-              (2, 2, 'lumber_yard_tile', 'lumber_yard_spritelayout_7'),
-              (3, 0, 'lumber_yard_tile', 'lumber_yard_spritelayout_6'),
-              (3, 1, 'lumber_yard_tile', 'lumber_yard_spritelayout_5'),
-              (3, 2, 'lumber_yard_tile', 'lumber_yard_spritelayout_6')
+    layout = [(0, 0, 'lumber_yard_tile_2', 'lumber_yard_spritelayout_2'),
+              (0, 1, 'lumber_yard_tile_2', 'lumber_yard_spritelayout_1'),
+              (0, 2, 'lumber_yard_tile_1', 'lumber_yard_spritelayout_5'),
+              (1, 0, 'lumber_yard_tile_1', 'lumber_yard_spritelayout_6'),
+              (1, 1, 'lumber_yard_tile_1', 'lumber_yard_spritelayout_4'),
+              (1, 2, 'lumber_yard_tile_1', 'lumber_yard_spritelayout_8'),
+              (2, 0, 'lumber_yard_tile_1', 'lumber_yard_spritelayout_8'),
+              (2, 1, 'lumber_yard_tile_1', 'lumber_yard_spritelayout_4'),
+              (2, 2, 'lumber_yard_tile_1', 'lumber_yard_spritelayout_7'),
+              (3, 0, 'lumber_yard_tile_1', 'lumber_yard_spritelayout_6'),
+              (3, 1, 'lumber_yard_tile_1', 'lumber_yard_spritelayout_5'),
+              (3, 2, 'lumber_yard_tile_1', 'lumber_yard_spritelayout_6')
     ]
 )
 industry.add_industry_layout(
     id = 'lumber_yard_industry_layout_2',
-    layout = [(0, 0, 'lumber_yard_tile', 'lumber_yard_spritelayout_2'),
-              (0, 1, 'lumber_yard_tile', 'lumber_yard_spritelayout_1'),
-              (0, 2, 'lumber_yard_tile', 'lumber_yard_spritelayout_5'),
-              (0, 3, 'lumber_yard_tile', 'lumber_yard_spritelayout_6'),
-              (1, 0, 'lumber_yard_tile', 'lumber_yard_spritelayout_8'),
-              (1, 1, 'lumber_yard_tile', 'lumber_yard_spritelayout_8'),
-              (1, 2, 'lumber_yard_tile', 'lumber_yard_spritelayout_4'),
-              (1, 3, 'lumber_yard_tile', 'lumber_yard_spritelayout_6'),
-              (2, 0, 'lumber_yard_tile', 'lumber_yard_spritelayout_5'),
-              (2, 1, 'lumber_yard_tile', 'lumber_yard_spritelayout_6'),
-              (2, 2, 'lumber_yard_tile', 'lumber_yard_spritelayout_4'),
-              (2, 3, 'lumber_yard_tile', 'lumber_yard_spritelayout_7')
+    layout = [(0, 0, 'lumber_yard_tile_2', 'lumber_yard_spritelayout_2'),
+              (0, 1, 'lumber_yard_tile_2', 'lumber_yard_spritelayout_1'),
+              (0, 2, 'lumber_yard_tile_1', 'lumber_yard_spritelayout_5'),
+              (0, 3, 'lumber_yard_tile_1', 'lumber_yard_spritelayout_6'),
+              (1, 0, 'lumber_yard_tile_1', 'lumber_yard_spritelayout_8'),
+              (1, 1, 'lumber_yard_tile_1', 'lumber_yard_spritelayout_8'),
+              (1, 2, 'lumber_yard_tile_1', 'lumber_yard_spritelayout_4'),
+              (1, 3, 'lumber_yard_tile_1', 'lumber_yard_spritelayout_6'),
+              (2, 0, 'lumber_yard_tile_1', 'lumber_yard_spritelayout_5'),
+              (2, 1, 'lumber_yard_tile_1', 'lumber_yard_spritelayout_6'),
+              (2, 2, 'lumber_yard_tile_1', 'lumber_yard_spritelayout_4'),
+              (2, 3, 'lumber_yard_tile_1', 'lumber_yard_spritelayout_7')
     ]
 )
 industry.add_industry_layout(
     id = 'lumber_yard_industry_layout_3',
-    layout = [(0, 0, 'lumber_yard_tile', 'lumber_yard_spritelayout_6'),
-              (0, 1, 'lumber_yard_tile', 'lumber_yard_spritelayout_4'),
-              (0, 2, 'lumber_yard_tile', 'lumber_yard_spritelayout_2'),
-              (0, 3, 'lumber_yard_tile', 'lumber_yard_spritelayout_1'),
-              (0, 4, 'lumber_yard_tile', 'lumber_yard_spritelayout_8'),
-              (1, 0, 'lumber_yard_tile', 'lumber_yard_spritelayout_8'),
-              (1, 1, 'lumber_yard_tile', 'lumber_yard_spritelayout_4'),
-              (1, 2, 'lumber_yard_tile', 'lumber_yard_spritelayout_6'),
-              (1, 3, 'lumber_yard_tile', 'lumber_yard_spritelayout_5'),
-              (1, 4, 'lumber_yard_tile', 'lumber_yard_spritelayout_7')
+    layout = [(0, 0, 'lumber_yard_tile_1', 'lumber_yard_spritelayout_6'),
+              (0, 1, 'lumber_yard_tile_1', 'lumber_yard_spritelayout_4'),
+              (0, 2, 'lumber_yard_tile_2', 'lumber_yard_spritelayout_2'),
+              (0, 3, 'lumber_yard_tile_2', 'lumber_yard_spritelayout_1'),
+              (0, 4, 'lumber_yard_tile_1', 'lumber_yard_spritelayout_8'),
+              (1, 0, 'lumber_yard_tile_1', 'lumber_yard_spritelayout_8'),
+              (1, 1, 'lumber_yard_tile_1', 'lumber_yard_spritelayout_4'),
+              (1, 2, 'lumber_yard_tile_1', 'lumber_yard_spritelayout_6'),
+              (1, 3, 'lumber_yard_tile_1', 'lumber_yard_spritelayout_5'),
+              (1, 4, 'lumber_yard_tile_1', 'lumber_yard_spritelayout_7')
     ]
 )
 industry.add_industry_layout(
     id = 'lumber_yard_industry_layout_4',
-    layout = [(0, 0, 'lumber_yard_tile', 'lumber_yard_spritelayout_4'),
-              (0, 1, 'lumber_yard_tile', 'lumber_yard_spritelayout_7'),
-              (1, 0, 'lumber_yard_tile', 'lumber_yard_spritelayout_4'),
-              (1, 1, 'lumber_yard_tile', 'lumber_yard_spritelayout_6'),
-              (2, 0, 'lumber_yard_tile', 'lumber_yard_spritelayout_2'),
-              (2, 1, 'lumber_yard_tile', 'lumber_yard_spritelayout_1'),
-              (3, 0, 'lumber_yard_tile', 'lumber_yard_spritelayout_8'),
-              (3, 1, 'lumber_yard_tile', 'lumber_yard_spritelayout_6'),
-              (4, 0, 'lumber_yard_tile', 'lumber_yard_spritelayout_5'),
-              (4, 1, 'lumber_yard_tile', 'lumber_yard_spritelayout_6')
+    layout = [(0, 0, 'lumber_yard_tile_1', 'lumber_yard_spritelayout_4'),
+              (0, 1, 'lumber_yard_tile_1', 'lumber_yard_spritelayout_7'),
+              (1, 0, 'lumber_yard_tile_1', 'lumber_yard_spritelayout_4'),
+              (1, 1, 'lumber_yard_tile_1', 'lumber_yard_spritelayout_6'),
+              (2, 0, 'lumber_yard_tile_2', 'lumber_yard_spritelayout_2'),
+              (2, 1, 'lumber_yard_tile_2', 'lumber_yard_spritelayout_1'),
+              (3, 0, 'lumber_yard_tile_1', 'lumber_yard_spritelayout_8'),
+              (3, 1, 'lumber_yard_tile_1', 'lumber_yard_spritelayout_6'),
+              (4, 0, 'lumber_yard_tile_1', 'lumber_yard_spritelayout_5'),
+              (4, 1, 'lumber_yard_tile_1', 'lumber_yard_spritelayout_6')
     ]
 )
 

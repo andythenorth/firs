@@ -25,44 +25,41 @@
                         <img src="static/img/industries/${industry.id}.png" alt="${doc_helper.get_industry_name(industry)}" />
                     </div>
                     <div class="span4">
-                        <tal:unique_cargo_combinations repeat="unique_cargo_combinations doc_helper.industry_unique_cargo_combinations(industry)">
-                            <table class="table table-striped table-bordered table-condensed">
+                        <tal:industries_using_cargo define="cargos_used_by_industry doc_helper.cargos_used_by_industry(industry)"
+                                                    repeat="economy cargos_used_by_industry">
+                            <table class="table table-bordered table-striped table-condensed">
                                 <tbody>
                                     <tr>
                                         <th nowrap="true" style="width:120px; border-top:none; text-align:right;">
-                                            ${('Economy','Economies')[len(unique_cargo_combinations['economies']) > 1]}:
+                                            Economy:
                                         </th>
                                         <td style="border-top:none;">
-                                            <tal:economies repeat="industry_in_economy unique_cargo_combinations['economies']">
-                                                <strong><a href="economies.html#${industry_in_economy}">${doc_helper.get_economy_name(industry_in_economy)}${(',', '')[repeat.industry_in_economy.end]}</a></strong>
-                                            </tal:economies>
+                                            <strong><a href="economies.html#${economy}">${doc_helper.get_economy_name(economy)}</a></strong>
                                         </td>
                                     </tr>
                                     <tr>
                                         <th nowrap="true" style="width:120px; text-align:right; font-weight:normal;">Accepts:</th>
-                                        <td tal:define="industry_accepted_cargo_mapping unique_cargo_combinations['accept_cargo_types']">
-                                            <tal:cargos repeat="cargo industry_accepted_cargo_mapping">
+                                        <td>
+                                            <tal:cargos repeat="cargo cargos_used_by_industry[economy]['accept_cargo_types']">
                                                 <a href="cargos.html#${cargo.id}">${doc_helper.get_cargo_name(cargo)}${(',', '')[repeat.cargo.end]}</a>
                                             </tal:cargos>
-                                            <tal:no_cargos condition="len(industry_accepted_cargo_mapping) == 0">
+                                            <tal:no_cargos condition="len(cargos_used_by_industry[economy]['accept_cargo_types']) == 0">
                                                 <span class="muted">Nothing</span>
                                             </tal:no_cargos>
                                         </td>
                                     </tr>
-                                    <tr>
                                         <th nowrap="true" style="text-align:right; font-weight:normal;">Produces:</th>
-                                        <td tal:define="industry_produced_cargo_mapping unique_cargo_combinations['prod_cargo_types']">
-                                            <tal:cargos repeat="cargo industry_produced_cargo_mapping">
+                                        <td>
+                                            <tal:cargos repeat="cargo cargos_used_by_industry[economy]['prod_cargo_types']">
                                                 <a href="cargos.html#${cargo.id}">${doc_helper.get_cargo_name(cargo)}${(',', '')[repeat.cargo.end]}</a>
                                             </tal:cargos>
-                                            <tal:no_cargos condition="len(industry_produced_cargo_mapping) == 0">
+                                            <tal:no_cargos condition="len(cargos_used_by_industry[economy]['prod_cargo_types']) == 0">
                                                 <span class="muted">Nothing</span>
                                             </tal:no_cargos>
                                         </td>
-                                    </tr>
                                 </tbody>
                             </table>
-                        </tal:unique_cargo_combinations>
+                        </tal:industries_using_cargo>
                     </div>
                 </div>
             </div>
