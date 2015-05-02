@@ -10,21 +10,21 @@
  *
  * used permanent storage: var_closure_counter (15)
  */
- 
+
 /* 50 : 50 chance that we actually close down (extra_callback_info2 contains random bits) */
-switch(FEAT_INDUSTRIES, SELF, THIS_ID(close_random), (extra_callback_info2 & 32)) {
+switch(FEAT_INDUSTRIES, SELF, secondary_close_random, (extra_callback_info2 & 32)) {
 	0: return CB_RESULT_IND_PROD_CLOSE;
 	return CB_RESULT_IND_PROD_NO_CHANGE;
 }
 
 /* Check whether sufficient time expired to close it */
-switch(FEAT_INDUSTRIES, SELF, THIS_ID(had_produced_check), LOAD_PERM(var_closure_counter)) {
+switch(FEAT_INDUSTRIES, SELF, secondary_had_produced_check, LOAD_PERM(var_closure_counter)) {
 	0..60: return CB_RESULT_IND_PROD_NO_CHANGE;     // 60 month we accept receiving or delivering nothing
-	THIS_ID(close_random);
+	secondary_close_random;
 }
 
 /* Check whether we may close industries at all */
-switch(FEAT_INDUSTRIES, SELF, THIS_ID(check_closure), allow_close_secondary) {
-	1..255: THIS_ID(had_produced_check;)
+switch(FEAT_INDUSTRIES, SELF, check_secondary_closure, allow_close_secondary) {
+	1..255: secondary_had_produced_check;
 	return CB_RESULT_IND_PROD_NO_CHANGE;
 }

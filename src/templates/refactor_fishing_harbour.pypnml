@@ -119,7 +119,7 @@ SWITCH_COLOUR_SCHEME1(${industry.id}_colour)
 
 #include "../../src/templates/produce_secondary.pnml"
 #include "../../src/templates/check_secondary_production_level.pnml"
-#include "../../src/templates/check_secondary_closure.pnml"
+
 
 ${industry.get_extra_text_secondary()}
 
@@ -133,7 +133,7 @@ item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
 		construction_probability:${industry.id}_check_availability;
 		location_check:          ${industry.id}_check_location;
 		monthly_prod_change:     ${industry.id}_check_production_level;
-		random_prod_change:      ${industry.id}_check_closure;
+		random_prod_change:      check_secondary_closure;
 		extra_text_industry:     ${industry.id}_extra_text;
 		colour:                  ${industry.id}_colour;
 	}
