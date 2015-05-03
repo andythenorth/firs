@@ -16,7 +16,7 @@ switch(FEAT_INDUSTRYTILES, PARENT, ${industry.id}_industry_master_graphics_switc
 }
 
 <!--! dredging site has one layout only, don't bother inserting templated industry layouts etc -->
-<!--! <tal:include metal:use-macro="load: layout_graphics_switches.pynml" /> -->
+<!--! <tal:include metal:use-macro="load: graphics_switches.pynml" /> -->
 
 /* *************************************************
  * Definition of the industry tile and its callbacks

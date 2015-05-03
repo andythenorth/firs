@@ -14,9 +14,8 @@
 
 <tal:include metal:use-macro="load: spritelayouts.pynml" />
 
-<tal:include metal:use-macro="load: layout_graphics_switches.pynml" />
+<tal:include metal:use-macro="load: graphics_switches.pynml" />
 
-<tal:include metal:use-macro="load: fence_switches.pynml" />
 
 <tal:include metal:use-macro="load: tile_location_checks.pynml" />
 

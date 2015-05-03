@@ -29,3 +29,9 @@ switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_industry_construction_state_grap
 switch(FEAT_INDUSTRYTILES, PARENT, ${industry.id}_industry_master_graphics_switch, STORE_TEMP(random_bits, 0)) {
 	${industry.id}_industry_construction_state_graphics_switch; // default
 }
+
+<!--! at time of writing this comment, it was easier to leave the CPP varact 2 chain untouched for fences -->
+
+FENCES_EXCLUDE_BY_CLASS     ( ${industry.id}_tile_fence_station,  ${industry.id}_industry_master_graphics_switch,   TILE_CLASS_STATION)
+FENCES_EXCLUDE_SAME_INDUSTRY( ${industry.id}_tile_fence_industry, ${industry.id}_tile_fence_station)
+ADD_FLAT_FENCES             ( ${industry.id}_tile_fences,         ${industry.id}_tile_fence_industry, 1, 1, 1, 1)

@@ -50,7 +50,7 @@ switch(FEAT_INDUSTRYTILES, SELF, port_slope_switch_2, nearby_tile_slope(0,0)) {
 	${industry.id}_spritelayout_20;
 }
 
-<tal:include metal:use-macro="load: layout_graphics_switches.pynml" />
+<tal:include metal:use-macro="load: graphics_switches.pynml" />
 
 /* *************************************************
  * Definition of the industry tile and its callbacks
