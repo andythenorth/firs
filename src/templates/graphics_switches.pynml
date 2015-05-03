@@ -5,6 +5,46 @@
   See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
 -->
 
+<tal:port_slope_switches condition="getattr(industry, 'use_port_slope_switches', False)">
+    switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_slope_switch_1, nearby_tile_slope(0,0)) {
+        0: ${industry.id}_spritelayout_land_tile_1_1;
+        1: ${industry.id}_spritelayout_land_tile_1_4;
+        2: ${industry.id}_spritelayout_land_tile_1_8;
+        3: ${industry.id}_spritelayout_land_tile_1_2;
+        4: ${industry.id}_spritelayout_land_tile_1_6;
+        5: ${industry.id}_spritelayout_land_tile_1_5;
+        6: ${industry.id}_spritelayout_land_tile_1_7;
+        7: ${industry.id}_spritelayout_land_tile_1_1;
+        8: ${industry.id}_spritelayout_land_tile_1_3;
+        9: ${industry.id}_spritelayout_land_tile_1_4;
+        10: ${industry.id}_spritelayout_land_tile_1_8;
+        11: ${industry.id}_spritelayout_land_tile_1_2;
+        12: ${industry.id}_spritelayout_land_tile_1_6;
+        13: ${industry.id}_spritelayout_land_tile_1_5;
+        14: ${industry.id}_spritelayout_land_tile_1_7;
+        ${industry.id}_spritelayout_land_tile_1_1;
+    }
+
+    switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_slope_switch_2, nearby_tile_slope(0,0)) {
+        0: ${industry.id}_spritelayout_land_tile_2_2;
+        1: ${industry.id}_spritelayout_land_tile_2_4;
+        2: ${industry.id}_spritelayout_land_tile_2_8;
+        3: ${industry.id}_spritelayout_land_tile_2_1;
+        4: ${industry.id}_spritelayout_land_tile_2_6;
+        5: ${industry.id}_spritelayout_land_tile_2_5;
+        6: ${industry.id}_spritelayout_land_tile_2_7;
+        7: ${industry.id}_spritelayout_land_tile_2_2;
+        8: ${industry.id}_spritelayout_land_tile_2_3;
+        9: ${industry.id}_spritelayout_land_tile_2_4;
+        10: ${industry.id}_spritelayout_land_tile_2_8;
+        11: ${industry.id}_spritelayout_land_tile_2_1;
+        12: ${industry.id}_spritelayout_land_tile_2_6;
+        13: ${industry.id}_spritelayout_land_tile_2_5;
+        14: ${industry.id}_spritelayout_land_tile_2_7;
+        ${industry.id}_spritelayout_land_tile_2_2;
+    }
+</tal:port_slope_switches>
+
 <tal:build_industry_layouts_graphic_switches repeat="industry_layout python:industry.industry_layouts">
     switch(FEAT_INDUSTRYTILES, SELF, ${industry_layout.id}_graphics_switch, relative_pos) {
         <tal:build_industry_layout repeat="layout industry_layout.layout">

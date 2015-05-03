@@ -204,106 +204,106 @@ industry.add_spritelayout(
     building_sprites = [spriteset_jetty_se_nw, spriteset_jetty_ne_sw, spriteset_concrete, spriteset_crane_rails_ne_sw]
 )
 industry.add_spritelayout(
-    id = 'bulk_terminal_spritelayout_tanks_3',
+    id = 'bulk_terminal_spritelayout_land_tile_1_1',
     ground_sprite = spriteset_ground_empty,
     ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_jetty_se_nw, spriteset_jetty_ne_sw, spriteset_concrete, spriteset_tanks]
+    building_sprites = [spriteset_concrete, spriteset_tanks]
 )
 industry.add_spritelayout(
-    id = 'bulk_terminal_spritelayout_tanks_4',
-    ground_sprite = spriteset_ground_empty,
-    ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_jetty_ne_sw, spriteset_jetty_slope_nw_se, spriteset_concrete, spriteset_tanks]
-)
-industry.add_spritelayout(
-    id = 'bulk_terminal_spritelayout_tanks_5',
-    ground_sprite = spriteset_ground_empty,
-    ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_jetty_slope_ne_sw, spriteset_jetty_slope_nw_se, spriteset_concrete, spriteset_tanks]
-)
-industry.add_spritelayout(
-    id = 'bulk_terminal_spritelayout_tanks_6',
-    ground_sprite = spriteset_ground_empty,
-    ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_jetty_slope_ne_sw, spriteset_jetty_se_nw, spriteset_concrete, spriteset_tanks]
-)
-industry.add_spritelayout(
-    id = 'bulk_terminal_spritelayout_tanks_7',
-    ground_sprite = spriteset_ground_empty,
-    ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_jetty_slope_se_nw, spriteset_concrete, spriteset_tanks]
-)
-industry.add_spritelayout(
-    id = 'bulk_terminal_spritelayout_tanks_8',
-    ground_sprite = spriteset_ground_empty,
-    ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_jetty_slope_se_nw, spriteset_jetty_slope_sw_ne, spriteset_concrete, spriteset_tanks]
-)
-industry.add_spritelayout(
-    id = 'bulk_terminal_spritelayout_tanks_9',
+    id = 'bulk_terminal_spritelayout_land_tile_1_2',
     ground_sprite = spriteset_ground_empty,
     ground_overlay = spriteset_ground_empty,
     building_sprites = [spriteset_jetty_slope_sw_ne, spriteset_concrete, spriteset_tanks]
 )
 industry.add_spritelayout(
-    id = 'bulk_terminal_spritelayout_tanks_10',
+    id = 'bulk_terminal_spritelayout_land_tile_1_3',
     ground_sprite = spriteset_ground_empty,
     ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_concrete, spriteset_tanks]
+    building_sprites = [spriteset_jetty_se_nw, spriteset_jetty_ne_sw, spriteset_concrete, spriteset_tanks]
+)
+industry.add_spritelayout(
+    id = 'bulk_terminal_spritelayout_land_tile_1_4',
+    ground_sprite = spriteset_ground_empty,
+    ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_jetty_ne_sw, spriteset_jetty_slope_nw_se, spriteset_concrete, spriteset_tanks]
+)
+industry.add_spritelayout(
+    id = 'bulk_terminal_spritelayout_land_tile_1_5',
+    ground_sprite = spriteset_ground_empty,
+    ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_jetty_slope_ne_sw, spriteset_jetty_slope_nw_se, spriteset_concrete, spriteset_tanks]
+)
+industry.add_spritelayout(
+    id = 'bulk_terminal_spritelayout_land_tile_1_6',
+    ground_sprite = spriteset_ground_empty,
+    ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_jetty_slope_ne_sw, spriteset_jetty_se_nw, spriteset_concrete, spriteset_tanks]
+)
+industry.add_spritelayout(
+    id = 'bulk_terminal_spritelayout_land_tile_1_7',
+    ground_sprite = spriteset_ground_empty,
+    ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_jetty_slope_se_nw, spriteset_concrete, spriteset_tanks]
+)
+industry.add_spritelayout(
+    id = 'bulk_terminal_spritelayout_land_tile_1_8',
+    ground_sprite = spriteset_ground_empty,
+    ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_jetty_slope_se_nw, spriteset_jetty_slope_sw_ne, spriteset_concrete, spriteset_tanks]
+)
+industry.add_spritelayout(
+    id = 'bulk_terminal_spritelayout_land_tile_2_1',
+    ground_sprite = spriteset_ground_empty,
+    ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_jetty_slope_sw_ne, spriteset_concrete, spriteset_warehouse]
+)
+industry.add_spritelayout(
+    id = 'bulk_terminal_spritelayout_land_tile_2_2',
+    ground_sprite = spriteset_ground_empty,
+    ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_concrete, spriteset_warehouse, spriteset_warehouse]
+)
+industry.add_spritelayout(
+    id = 'bulk_terminal_spritelayout_land_tile_2_3',
+    ground_sprite = spriteset_ground_empty,
+    ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_jetty_se_nw, spriteset_jetty_ne_sw, spriteset_concrete, spriteset_warehouse]
+)
+industry.add_spritelayout(
+    id = 'bulk_terminal_spritelayout_land_tile_2_4',
+    ground_sprite = spriteset_ground_empty,
+    ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_jetty_ne_sw, spriteset_jetty_slope_nw_se, spriteset_concrete, spriteset_warehouse]
+)
+industry.add_spritelayout(
+    id = 'bulk_terminal_spritelayout_land_tile_2_5',
+    ground_sprite = spriteset_ground_empty,
+    ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_jetty_slope_ne_sw, spriteset_jetty_slope_nw_se, spriteset_concrete, spriteset_warehouse]
+)
+industry.add_spritelayout(
+    id = 'bulk_terminal_spritelayout_land_tile_2_6',
+    ground_sprite = spriteset_ground_empty,
+    ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_jetty_slope_ne_sw, spriteset_jetty_se_nw, spriteset_concrete, spriteset_warehouse]
+)
+industry.add_spritelayout(
+    id = 'bulk_terminal_spritelayout_land_tile_2_7',
+    ground_sprite = spriteset_ground_empty,
+    ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_jetty_slope_se_nw, spriteset_concrete, spriteset_warehouse]
+)
+industry.add_spritelayout(
+    id = 'bulk_terminal_spritelayout_land_tile_2_8',
+    ground_sprite = spriteset_ground_empty,
+    ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_jetty_slope_se_nw, spriteset_jetty_slope_sw_ne, spriteset_concrete, spriteset_warehouse]
 )
 industry.add_spritelayout(
     id = 'bulk_terminal_spritelayout_11',
     ground_sprite = spriteset_ground_empty,
     ground_overlay = spriteset_ground_empty,
     building_sprites = [spriteset_jetty_se_nw, spriteset_concrete, spriteset_silos]
-)
-industry.add_spritelayout(
-    id = 'bulk_terminal_spritelayout_warehouse_13',
-    ground_sprite = spriteset_ground_empty,
-    ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_jetty_se_nw, spriteset_jetty_ne_sw, spriteset_concrete, spriteset_warehouse]
-)
-industry.add_spritelayout(
-    id = 'bulk_terminal_spritelayout_warehouse_14',
-    ground_sprite = spriteset_ground_empty,
-    ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_jetty_ne_sw, spriteset_jetty_slope_nw_se, spriteset_concrete, spriteset_warehouse]
-)
-industry.add_spritelayout(
-    id = 'bulk_terminal_spritelayout_warehouse_15',
-    ground_sprite = spriteset_ground_empty,
-    ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_jetty_slope_ne_sw, spriteset_jetty_slope_nw_se, spriteset_concrete, spriteset_warehouse]
-)
-industry.add_spritelayout(
-    id = 'bulk_terminal_spritelayout_warehouse_16',
-    ground_sprite = spriteset_ground_empty,
-    ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_jetty_slope_ne_sw, spriteset_jetty_se_nw, spriteset_concrete, spriteset_warehouse]
-)
-industry.add_spritelayout(
-    id = 'bulk_terminal_spritelayout_warehouse_17',
-    ground_sprite = spriteset_ground_empty,
-    ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_jetty_slope_se_nw, spriteset_concrete, spriteset_warehouse]
-)
-industry.add_spritelayout(
-    id = 'bulk_terminal_spritelayout_warehouse_18',
-    ground_sprite = spriteset_ground_empty,
-    ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_jetty_slope_se_nw, spriteset_jetty_slope_sw_ne, spriteset_concrete, spriteset_warehouse]
-)
-industry.add_spritelayout(
-    id = 'bulk_terminal_spritelayout_warehouse_19',
-    ground_sprite = spriteset_ground_empty,
-    ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_jetty_slope_sw_ne, spriteset_concrete, spriteset_warehouse]
-)
-industry.add_spritelayout(
-    id = 'bulk_terminal_spritelayout_warehouse_20',
-    ground_sprite = spriteset_ground_empty,
-    ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_concrete, spriteset_warehouse, spriteset_warehouse]
 )
 industry.add_spritelayout(
     id = 'bulk_terminal_spritelayout_water_barge_sw_ne',

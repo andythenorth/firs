@@ -131,55 +131,102 @@ spriteset_17 = industry.add_spriteset(
     zoffset = 18,
 )
 
-# trading_post_spritelayout_1 fell out of use and was removed
 # trading_post_spritelayout_2 fell out of use and was removed
 industry.add_spritelayout(
-    id = 'trading_post_spritelayout_3',
+    id = 'trading_post_spritelayout_land_tile_1_1',
     ground_sprite = spriteset_ground_empty,
     ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_2, spriteset_3, spriteset_1, spriteset_17]
+    building_sprites = [spriteset_1]
 )
 industry.add_spritelayout(
-    id = 'trading_post_spritelayout_4',
-    ground_sprite = spriteset_ground_empty,
-    ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_3, spriteset_4, spriteset_1, spriteset_17]
-)
-industry.add_spritelayout(
-    id = 'trading_post_spritelayout_5',
-    ground_sprite = spriteset_ground_empty,
-    ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_5, spriteset_4, spriteset_1, spriteset_17]
-)
-industry.add_spritelayout(
-    id = 'trading_post_spritelayout_6',
-    ground_sprite = spriteset_ground_empty,
-    ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_5, spriteset_2, spriteset_1, spriteset_17]
-)
-industry.add_spritelayout(
-    id = 'trading_post_spritelayout_7',
-    ground_sprite = spriteset_ground_empty,
-    ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_6, spriteset_1, spriteset_17]
-)
-industry.add_spritelayout(
-    id = 'trading_post_spritelayout_8',
-    ground_sprite = spriteset_ground_empty,
-    ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_6, spriteset_7, spriteset_1, spriteset_17]
-)
-industry.add_spritelayout(
-    id = 'trading_post_spritelayout_9',
+    id = 'trading_post_spritelayout_land_tile_1_2',
     ground_sprite = spriteset_ground_empty,
     ground_overlay = spriteset_ground_empty,
     building_sprites = [spriteset_7, spriteset_1, spriteset_17]
 )
 industry.add_spritelayout(
-    id = 'trading_post_spritelayout_10',
+    id = 'trading_post_spritelayout_land_tile_1_3',
     ground_sprite = spriteset_ground_empty,
     ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_1]
+    building_sprites = [spriteset_2, spriteset_3, spriteset_1, spriteset_17]
+)
+industry.add_spritelayout(
+    id = 'trading_post_spritelayout_land_tile_1_4',
+    ground_sprite = spriteset_ground_empty,
+    ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_3, spriteset_4, spriteset_1, spriteset_17]
+)
+industry.add_spritelayout(
+    id = 'trading_post_spritelayout_land_tile_1_5',
+    ground_sprite = spriteset_ground_empty,
+    ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_5, spriteset_4, spriteset_1, spriteset_17]
+)
+industry.add_spritelayout(
+    id = 'trading_post_spritelayout_land_tile_1_6',
+    ground_sprite = spriteset_ground_empty,
+    ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_5, spriteset_2, spriteset_1, spriteset_17]
+)
+industry.add_spritelayout(
+    id = 'trading_post_spritelayout_land_tile_1_7',
+    ground_sprite = spriteset_ground_empty,
+    ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_6, spriteset_1, spriteset_17]
+)
+industry.add_spritelayout(
+    id = 'trading_post_spritelayout_land_tile_1_8',
+    ground_sprite = spriteset_ground_empty,
+    ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_6, spriteset_7, spriteset_1, spriteset_17]
+)
+industry.add_spritelayout(
+    id = 'trading_post_spritelayout_land_tile_2_1',
+    ground_sprite = spriteset_ground_empty,
+    ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_7, spriteset_1, spriteset_8]
+)
+industry.add_spritelayout(
+    id = 'trading_post_spritelayout_land_tile_2_2',
+    ground_sprite = spriteset_ground_empty,
+    ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_1, spriteset_8]
+)
+industry.add_spritelayout(
+    id = 'trading_post_spritelayout_land_tile_2_3',
+    ground_sprite = spriteset_ground_empty,
+    ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_2, spriteset_3, spriteset_1, spriteset_8]
+)
+industry.add_spritelayout(
+    id = 'trading_post_spritelayout_land_tile_2_4',
+    ground_sprite = spriteset_ground_empty,
+    ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_3, spriteset_4, spriteset_1, spriteset_8]
+)
+industry.add_spritelayout(
+    id = 'trading_post_spritelayout_land_tile_2_5',
+    ground_sprite = spriteset_ground_empty,
+    ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_5, spriteset_4, spriteset_1, spriteset_8]
+)
+industry.add_spritelayout(
+    id = 'trading_post_spritelayout_land_tile_2_6',
+    ground_sprite = spriteset_ground_empty,
+    ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_5, spriteset_2, spriteset_1, spriteset_8]
+)
+industry.add_spritelayout(
+    id = 'trading_post_spritelayout_land_tile_2_7',
+    ground_sprite = spriteset_ground_empty,
+    ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_6, spriteset_1, spriteset_8]
+)
+industry.add_spritelayout(
+    id = 'trading_post_spritelayout_land_tile_2_8',
+    ground_sprite = spriteset_ground_empty,
+    ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_6, spriteset_7, spriteset_1, spriteset_8]
 )
 industry.add_spritelayout(
     id = 'trading_post_spritelayout_11',
@@ -198,48 +245,6 @@ industry.add_spritelayout(
     ground_sprite = spriteset_ground_empty,
     ground_overlay = spriteset_ground_empty,
     building_sprites = [spriteset_2, spriteset_3, spriteset_1, spriteset_8]
-)
-industry.add_spritelayout(
-    id = 'trading_post_spritelayout_14',
-    ground_sprite = spriteset_ground_empty,
-    ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_3, spriteset_4, spriteset_1, spriteset_8]
-)
-industry.add_spritelayout(
-    id = 'trading_post_spritelayout_15',
-    ground_sprite = spriteset_ground_empty,
-    ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_5, spriteset_4, spriteset_1, spriteset_8]
-)
-industry.add_spritelayout(
-    id = 'trading_post_spritelayout_16',
-    ground_sprite = spriteset_ground_empty,
-    ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_5, spriteset_2, spriteset_1, spriteset_8]
-)
-industry.add_spritelayout(
-    id = 'trading_post_spritelayout_17',
-    ground_sprite = spriteset_ground_empty,
-    ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_6, spriteset_1, spriteset_8]
-)
-industry.add_spritelayout(
-    id = 'trading_post_spritelayout_18',
-    ground_sprite = spriteset_ground_empty,
-    ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_6, spriteset_7, spriteset_1, spriteset_8]
-)
-industry.add_spritelayout(
-    id = 'trading_post_spritelayout_19',
-    ground_sprite = spriteset_ground_empty,
-    ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_7, spriteset_1, spriteset_8]
-)
-industry.add_spritelayout(
-    id = 'trading_post_spritelayout_20',
-    ground_sprite = spriteset_ground_empty,
-    ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_1, spriteset_8]
 )
 industry.add_spritelayout(
     id = 'trading_post_spritelayout_21',

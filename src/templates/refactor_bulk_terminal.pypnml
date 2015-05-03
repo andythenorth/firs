@@ -12,44 +12,6 @@
 
 <tal:include metal:use-macro="load: spritelayouts.pynml" />
 
-switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_slope_switch_1, nearby_tile_slope(0,0)) {
-	0: ${industry.id}_spritelayout_tanks_10;
-	1: ${industry.id}_spritelayout_tanks_4;
-	2: ${industry.id}_spritelayout_tanks_8;
-	3: ${industry.id}_spritelayout_tanks_9;
-	4: ${industry.id}_spritelayout_tanks_6;
-	5: ${industry.id}_spritelayout_tanks_5;
-	6: ${industry.id}_spritelayout_tanks_7;
-	7: ${industry.id}_spritelayout_tanks_10;
-	8: ${industry.id}_spritelayout_tanks_3;
-	9: ${industry.id}_spritelayout_tanks_4;
-	10: ${industry.id}_spritelayout_tanks_8;
-	11: ${industry.id}_spritelayout_tanks_9;
-	12: ${industry.id}_spritelayout_tanks_6;
-	13: ${industry.id}_spritelayout_tanks_5;
-	14: ${industry.id}_spritelayout_tanks_7;
-	${industry.id}_spritelayout_tanks_10;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_slope_switch_2, nearby_tile_slope(0,0)) {
-	0: ${industry.id}_spritelayout_warehouse_20;
-	1: ${industry.id}_spritelayout_warehouse_14;
-	2: ${industry.id}_spritelayout_warehouse_18;
-	3: ${industry.id}_spritelayout_warehouse_19;
-	4: ${industry.id}_spritelayout_warehouse_16;
-	5: ${industry.id}_spritelayout_warehouse_15;
-	6: ${industry.id}_spritelayout_warehouse_17;
-	7: ${industry.id}_spritelayout_warehouse_20;
-	8: ${industry.id}_spritelayout_warehouse_13;
-	9: ${industry.id}_spritelayout_warehouse_14;
-	10: ${industry.id}_spritelayout_warehouse_18;
-	11: ${industry.id}_spritelayout_warehouse_19;
-	12: ${industry.id}_spritelayout_warehouse_16;
-	13: ${industry.id}_spritelayout_warehouse_15;
-	14: ${industry.id}_spritelayout_warehouse_17;
-	${industry.id}_spritelayout_warehouse_20;
-}
-
 <tal:include metal:use-macro="load: graphics_switches.pynml" />
 
 /* *************************************************

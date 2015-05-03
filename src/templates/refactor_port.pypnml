@@ -12,44 +12,6 @@
 
 <tal:include metal:use-macro="load: spritelayouts.pynml" />
 
-switch(FEAT_INDUSTRYTILES, SELF, port_slope_switch_1, nearby_tile_slope(0,0)) {
-	0: ${industry.id}_spritelayout_10;
-	1: ${industry.id}_spritelayout_4;
-	2: ${industry.id}_spritelayout_8;
-	3: ${industry.id}_spritelayout_9;
-	4: ${industry.id}_spritelayout_6;
-	5: ${industry.id}_spritelayout_5;
-	6: ${industry.id}_spritelayout_7;
-	7: ${industry.id}_spritelayout_10;
-	8: ${industry.id}_spritelayout_3;
-	9: ${industry.id}_spritelayout_4;
-	10: ${industry.id}_spritelayout_8;
-	11: ${industry.id}_spritelayout_9;
-	12: ${industry.id}_spritelayout_6;
-	13: ${industry.id}_spritelayout_5;
-	14: ${industry.id}_spritelayout_7;
-	${industry.id}_spritelayout_10;
-}
-
-switch(FEAT_INDUSTRYTILES, SELF, port_slope_switch_2, nearby_tile_slope(0,0)) {
-	0: ${industry.id}_spritelayout_20;
-	1: ${industry.id}_spritelayout_14;
-	2: ${industry.id}_spritelayout_18;
-	3: ${industry.id}_spritelayout_19;
-	4: ${industry.id}_spritelayout_16;
-	5: ${industry.id}_spritelayout_15;
-	6: ${industry.id}_spritelayout_17;
-	7: ${industry.id}_spritelayout_20;
-	8: ${industry.id}_spritelayout_13;
-	9: ${industry.id}_spritelayout_14;
-	10: ${industry.id}_spritelayout_18;
-	11: ${industry.id}_spritelayout_19;
-	12: ${industry.id}_spritelayout_16;
-	13: ${industry.id}_spritelayout_15;
-	14: ${industry.id}_spritelayout_17;
-	${industry.id}_spritelayout_20;
-}
-
 <tal:include metal:use-macro="load: graphics_switches.pynml" />
 
 /* *************************************************

@@ -159,61 +159,108 @@ spriteset_17 = industry.add_spriteset(
     sprites = [(360, 10, 64, 39, -31, 0)],
     zoffset = 18,
 )
-
-# port_spritelayout_1 fell out of use and was removed
 industry.add_spritelayout(
-    id = 'port_spritelayout_2',
+    id = 'port_spritelayout_land_tile_1_1',
     ground_sprite = spriteset_ground_empty,
     ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_3, spriteset_1, spriteset_17]
+    building_sprites = [spriteset_1]
 )
 industry.add_spritelayout(
-    id = 'port_spritelayout_3',
-    ground_sprite = spriteset_ground_empty,
-    ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_2, spriteset_3, spriteset_1, spriteset_17]
-)
-industry.add_spritelayout(
-    id = 'port_spritelayout_4',
-    ground_sprite = spriteset_ground_empty,
-    ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_3, spriteset_4, spriteset_1, spriteset_17]
-)
-industry.add_spritelayout(
-    id = 'port_spritelayout_5',
-    ground_sprite = spriteset_ground_empty,
-    ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_5, spriteset_4, spriteset_1, spriteset_17]
-)
-industry.add_spritelayout(
-    id = 'port_spritelayout_6',
-    ground_sprite = spriteset_ground_empty,
-    ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_5, spriteset_2, spriteset_1, spriteset_17]
-)
-industry.add_spritelayout(
-    id = 'port_spritelayout_7',
-    ground_sprite = spriteset_ground_empty,
-    ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_6, spriteset_1, spriteset_17]
-)
-industry.add_spritelayout(
-    id = 'port_spritelayout_8',
-    ground_sprite = spriteset_ground_empty,
-    ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_6, spriteset_7, spriteset_1, spriteset_17]
-)
-industry.add_spritelayout(
-    id = 'port_spritelayout_9',
+    id = 'port_spritelayout_land_tile_1_2',
     ground_sprite = spriteset_ground_empty,
     ground_overlay = spriteset_ground_empty,
     building_sprites = [spriteset_7, spriteset_1, spriteset_17]
 )
 industry.add_spritelayout(
-    id = 'port_spritelayout_10',
+    id = 'port_spritelayout_land_tile_1_3',
     ground_sprite = spriteset_ground_empty,
     ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_1]
+    building_sprites = [spriteset_2, spriteset_3, spriteset_1, spriteset_17]
+)
+industry.add_spritelayout(
+    id = 'port_spritelayout_land_tile_1_4',
+    ground_sprite = spriteset_ground_empty,
+    ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_3, spriteset_4, spriteset_1, spriteset_17]
+)
+industry.add_spritelayout(
+    id = 'port_spritelayout_land_tile_1_5',
+    ground_sprite = spriteset_ground_empty,
+    ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_5, spriteset_4, spriteset_1, spriteset_17]
+)
+industry.add_spritelayout(
+    id = 'port_spritelayout_land_tile_1_6',
+    ground_sprite = spriteset_ground_empty,
+    ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_5, spriteset_2, spriteset_1, spriteset_17]
+)
+industry.add_spritelayout(
+    id = 'port_spritelayout_land_tile_1_7',
+    ground_sprite = spriteset_ground_empty,
+    ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_6, spriteset_1, spriteset_17]
+)
+industry.add_spritelayout(
+    id = 'port_spritelayout_land_tile_1_8',
+    ground_sprite = spriteset_ground_empty,
+    ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_6, spriteset_7, spriteset_1, spriteset_17]
+)
+industry.add_spritelayout(
+    id = 'port_spritelayout_land_tile_2_1',
+    ground_sprite = spriteset_ground_empty,
+    ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_7, spriteset_1, spriteset_8]
+)
+industry.add_spritelayout(
+    id = 'port_spritelayout_land_tile_2_2',
+    ground_sprite = spriteset_ground_empty,
+    ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_1, spriteset_8]
+)
+industry.add_spritelayout(
+    id = 'port_spritelayout_land_tile_2_3',
+    ground_sprite = spriteset_ground_empty,
+    ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_2, spriteset_3, spriteset_1, spriteset_8]
+)
+industry.add_spritelayout(
+    id = 'port_spritelayout_land_tile_2_4',
+    ground_sprite = spriteset_ground_empty,
+    ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_3, spriteset_4, spriteset_1, spriteset_8]
+)
+industry.add_spritelayout(
+    id = 'port_spritelayout_land_tile_2_5',
+    ground_sprite = spriteset_ground_empty,
+    ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_5, spriteset_4, spriteset_1, spriteset_8]
+)
+industry.add_spritelayout(
+    id = 'port_spritelayout_land_tile_2_6',
+    ground_sprite = spriteset_ground_empty,
+    ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_5, spriteset_2, spriteset_1, spriteset_8]
+)
+industry.add_spritelayout(
+    id = 'port_spritelayout_land_tile_2_7',
+    ground_sprite = spriteset_ground_empty,
+    ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_6, spriteset_1, spriteset_8]
+)
+industry.add_spritelayout(
+    id = 'port_spritelayout_land_tile_2_8',
+    ground_sprite = spriteset_ground_empty,
+    ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_6, spriteset_7, spriteset_1, spriteset_8]
+)
+# spritelayout numbers have gaps for historical reasons
+industry.add_spritelayout(
+    id = 'port_spritelayout_2',
+    ground_sprite = spriteset_ground_empty,
+    ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_2, spriteset_3, spriteset_1, spriteset_17]
 )
 industry.add_spritelayout(
     id = 'port_spritelayout_11',
@@ -232,48 +279,6 @@ industry.add_spritelayout(
     ground_sprite = spriteset_ground_empty,
     ground_overlay = spriteset_ground_empty,
     building_sprites = [spriteset_2, spriteset_3, spriteset_1, spriteset_8]
-)
-industry.add_spritelayout(
-    id = 'port_spritelayout_14',
-    ground_sprite = spriteset_ground_empty,
-    ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_3, spriteset_4, spriteset_1, spriteset_8]
-)
-industry.add_spritelayout(
-    id = 'port_spritelayout_15',
-    ground_sprite = spriteset_ground_empty,
-    ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_5, spriteset_4, spriteset_1, spriteset_8]
-)
-industry.add_spritelayout(
-    id = 'port_spritelayout_16',
-    ground_sprite = spriteset_ground_empty,
-    ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_5, spriteset_2, spriteset_1, spriteset_8]
-)
-industry.add_spritelayout(
-    id = 'port_spritelayout_17',
-    ground_sprite = spriteset_ground_empty,
-    ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_6, spriteset_1, spriteset_8]
-)
-industry.add_spritelayout(
-    id = 'port_spritelayout_18',
-    ground_sprite = spriteset_ground_empty,
-    ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_6, spriteset_7, spriteset_1, spriteset_8]
-)
-industry.add_spritelayout(
-    id = 'port_spritelayout_19',
-    ground_sprite = spriteset_ground_empty,
-    ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_7, spriteset_1, spriteset_8]
-)
-industry.add_spritelayout(
-    id = 'port_spritelayout_20',
-    ground_sprite = spriteset_ground_empty,
-    ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_1, spriteset_8]
 )
 industry.add_spritelayout(
     id = 'port_spritelayout_21',
@@ -389,9 +394,9 @@ industry.add_industry_layout(
 industry.add_industry_layout(
     id = 'port_industry_layout_4',
     layout = [(0, 0, 'port_tile_2', 'port_slope_switch_2'),
-              (0, 1, 'port_tile_1', 'port_spritelayout_3'),
+              (0, 1, 'port_tile_1', 'port_spritelayout_2'),
               (0, 2, 'port_tile_1', 'port_spritelayout_29'),
-              (0, 3, 'port_tile_1', 'port_spritelayout_13'),
+              (0, 3, 'port_tile_1', 'port_spritelayout_11'),
               (0, 4, 'port_tile_1', 'port_spritelayout_28'),
               (0, 5, '255', 'port_spritelayout_null'),
               (1, 0, 'port_tile_2', 'port_slope_switch_2'),
@@ -407,14 +412,14 @@ industry.add_industry_layout(
 industry.add_industry_layout(
     id = 'port_industry_layout_5',
     layout = [(0, 0, 'port_tile_2', 'port_slope_switch_2'),
-              (1, 0, 'port_tile_1', 'port_spritelayout_13'),
+              (1, 0, 'port_tile_1', 'port_spritelayout_12'),
               (1, 2, '255', 'port_spritelayout_null'),
-              (2, 0, 'port_tile_1', 'port_spritelayout_13'),
+              (2, 0, 'port_tile_1', 'port_spritelayout_12'),
               (2, 1, 'port_tile_1', 'port_spritelayout_29'),
               (2, 2, 'port_tile_1', 'port_spritelayout_28'),
               (2, 3, '255', 'port_spritelayout_null'),
-              (3, 0, 'port_tile_1', 'port_spritelayout_13'),
-              (3, 1, 'port_tile_1', 'port_spritelayout_3'),
+              (3, 0, 'port_tile_1', 'port_spritelayout_12'),
+              (3, 1, 'port_tile_1', 'port_spritelayout_2'),
               (3, 2, 'port_tile_1', 'port_spritelayout_28'),
               (3, 3, '255', 'port_spritelayout_null'),
               (4, 255, '255', 'port_spritelayout_null'),

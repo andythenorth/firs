@@ -2,7 +2,7 @@
 economies = ["FIRS", "BASIC_TEMPERATE", "BASIC_ARCTIC", "BASIC_TROPIC", "MISTAH_KURTZ"]
 
 # Definition of numeric IDs for industries
-industry_numeric_ids = dict(coal_mine = 0,
+industry_numeric_ids = dict(coal_mine = 65,
                             lime_kiln = 1,
                             metal_fabrication_plant = 2,
                             sugar_plantation = 3,
