@@ -24,3 +24,5 @@ cargo = Cargo(id = 'sugar_beet',
 
 cargo.economy_variations['BASIC_TEMPERATE']['disabled'] = True
 cargo.economy_variations['BASIC_ARCTIC']['disabled'] = True
+cargo.economy_variations['BASIC_TROPIC']['disabled'] = True
+cargo.economy_variations['MISTAH_KURTZ']['disabled'] = True
