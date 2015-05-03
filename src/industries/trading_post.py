@@ -28,8 +28,7 @@ industry = IndustryPrimaryPort(id='trading_post',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_INDUSTRY_HARBOUR))',
                     fund_cost_multiplier='152',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
-                    override_default_construction_states=True,
-                    template='refactor_trading_post.pypnml' )
+                    override_default_construction_states=True)
 
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].accept_cargo_types = ['DIAM', 'JAVA', 'RUBR']
