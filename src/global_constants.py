@@ -156,7 +156,5 @@ generated_files_dir =  'generated'
 # this is for nml or grfcodec, don't need to use python path module here
 graphics_path =  'generated/graphics/'
 
-openttd_climates =  ["CLIMATE_TEMPERATE", "CLIMATE_ARCTIC", "CLIMATE_TROPIC", "CLIMATE_TOYLAND"]
-
 # OpenTTD's max date
 max_game_date = 5000000

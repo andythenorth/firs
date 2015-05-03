@@ -20,9 +20,7 @@ cargo = Cargo(id = 'sugar_beet',
               single_penalty_length = '30',
               price_factor = '116.194725037',
               capacity_multiplier = '1',
-              disabled_climates = ['CLIMATE_TROPICAL'],
               icon_indices = (14, 1))
 
 cargo.economy_variations['BASIC_TEMPERATE']['disabled'] = True
 cargo.economy_variations['BASIC_ARCTIC']['disabled'] = True
-# SGBT is typically enabled in TROPIC economies because SGBT / SGCN have a nice-but-explosive climate dependency

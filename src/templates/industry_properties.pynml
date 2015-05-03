@@ -28,26 +28,13 @@
                     ${industry.get_property_declaration('prospect_chance', economy)}
                     ${industry.get_property_declaration('fund_cost_multiplier', economy)}
                     ${industry.get_property_declaration('remove_cost_multiplier', economy)}
+                    <!--! The declaring of these props doesn't follow the standard pattern;
+                          That's just a hangover from removing sugar beet / sugarcane magic
+                          and they could be converted to standard pattern -->
+                    accept_cargo_types: ${industry.get_accept_cargo_types(economy)};
+                    prod_cargo_types: ${industry.get_prod_cargo_types(economy)};
                 }
             }
         </tal:industry_on_or_off>
     }
-    <!--!
-          Set properties again, per climate for accept & prod cargos.
-          This is handling special case for SGBT / SGCN being climate specific.
-          It was easier to handle this generically even though it's only a single case
-          !! KILL THE CLIMATE STUFF IN V2 - not needed, make it less complex, fewer LOC
-    -->
-    <tal:climates repeat="climate global_constants.openttd_climates">
-        if (economy==${repeat.economy.index} && climate == ${climate}) {
-            <tal:industry_on_or_off condition="industry.get_property('enabled', economy) == True">
-            item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
-                property {
-                    accept_cargo_types: ${industry.get_accept_cargo_types(economy, climate)};
-                    prod_cargo_types: ${industry.get_prod_cargo_types(economy, climate)};
-                }
-            }
-            </tal:industry_on_or_off>
-        }
-    </tal:climates>
 </tal:build_economies>

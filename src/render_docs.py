@@ -61,13 +61,7 @@ class DocHelper(object):
         # cargos don't store the name directly as a python attr, but in lang - so look it up in base_lang using string id
         name = cargo.type_name
         string_id = utils.unwrap_nml_string_declaration(name)
-        result = base_lang_strings.get(string_id, 'NO NAME ' + str(name) + ' ' + cargo.id)
-        #!! KILL THE SUGAR STUFF IN V2 - not needed, make it less complex, fewer LOC
-        if cargo.id == 'sugar_beet':
-            result = result + " / " + base_lang_strings['STR_CARGO_NAME_SUGARCANE']
-        if cargo.id == 'sugarcane':
-            result = result + " / " + base_lang_strings['STR_CARGO_NAME_SUGAR_BEET']
-        return result
+        return base_lang_strings.get(string_id, 'NO NAME ' + str(name) + ' ' + cargo.id)
 
     def get_industry_name(self, industry, economy=None):
         # industries don't store the name directly as a python attr, but in lang - so look it up in base_lang using string id
@@ -97,7 +91,7 @@ class DocHelper(object):
 
     def get_registered_cargo_sorted_by_name(self):
         # cargos don't store the name as a python attr, but we often need to iterate over their names in A-Z order
-        result = dict((self.get_cargo_name(cargo), cargo) for cargo in registered_cargos if cargo.id is not 'sugarcane')
+        result = dict((self.get_cargo_name(cargo), cargo) for cargo in registered_cargos)
         return sorted(result.items())
 
     def get_registered_industries_sorted_by_name(self):
@@ -117,10 +111,6 @@ class DocHelper(object):
     def industry_find_industries_active_in_economy_for_cargo(self, cargo, economy, accept_or_produce):
         result = set()
         # hmm, pretty certain this could be changed to use industry.get_prod_cargo_types or accept equivalent
-        # needs to pass economy, AND climate (from list defined in global_constants)
-        # climate is required for those functions, and can be used (note in brackets) to show when a cargo is climate special-cased (only SGBT/SGCN are)
-        # for non-special-cased cargos, don't bother showing any extra info about climates
-        #!! KILL THE CLIMATE STUFF IN V2 - not needed, make it less complex, fewer LOC
         if cargo in economy_schemas[economy]['enabled_cargos']:
             for industry in economy_schemas[economy]['enabled_industries']:
                     for cargo_label in industry.get_property(accept_or_produce, economy):
@@ -211,8 +201,7 @@ def render_docs(doc_list, file_type, use_markdown=False):
 
 def main():
     for economy in global_constants.economies:
-        # !! KILL THE SUGARCANE STUFF IN V2 - not needed, make it less complex, fewer LOC
-        enabled_cargos = [cargo for cargo in registered_cargos if not cargo.economy_variations[economy].get('disabled') and cargo.id is not 'sugarcane']
+        enabled_cargos = [cargo for cargo in registered_cargos if not cargo.economy_variations[economy].get('disabled')]
         enabled_industries = [industry for industry in registered_industries if industry.economy_variations[economy].enabled]
         economy_schemas[economy] = {'enabled_cargos':enabled_cargos, 'enabled_industries':enabled_industries}
 

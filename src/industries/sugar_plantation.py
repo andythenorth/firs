@@ -9,7 +9,7 @@ from industry import IndustryPrimaryOrganic, TileLocationChecks, IndustryLocatio
 
 industry = IndustryPrimaryOrganic(id='sugar_plantation',
                     prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_FARM',
-                    prod_cargo_types=['SGBT'], # SGBT will be swapped to SGCN in tropic by magic in compile
+                    prod_cargo_types=['SGCN'],
                     layouts='AUTO',
                     prob_in_game='4',
                     prob_random='24',

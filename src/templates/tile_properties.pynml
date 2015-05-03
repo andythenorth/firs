@@ -19,21 +19,16 @@
     }
     <!--!
           Tile properties that vary by economy.
-          Additional super-jank handling per climate for SGBT / SGCN being climate specific.
-          It was easiest to handle SGBT / SGCN jank generically even though it's only a single case
-          !! KILL THE CLIMATE STUFF IN V2 - not needed, make it less complex, fewer LOC
     -->
     <tal:economies repeat="economy global_constants.economies">
-        <tal:climates repeat="climate global_constants.openttd_climates">
-            if (economy==${repeat.economy.index} && climate == ${climate}) {
-                <tal:industry_on_or_off condition="industry.get_property('enabled', economy) == True">
-                    item(FEAT_INDUSTRYTILES, ${tile.id}, ${tile.numeric_id}) {
-                        property {
-                            accepted_cargos:  [${tile.get_expression_for_tile_acceptance(industry, economy, climate)}];
-                        }
+        if (economy==${repeat.economy.index}) {
+            <tal:industry_on_or_off condition="industry.get_property('enabled', economy) == True">
+                item(FEAT_INDUSTRYTILES, ${tile.id}, ${tile.numeric_id}) {
+                    property {
+                        accepted_cargos:  [${tile.get_expression_for_tile_acceptance(industry, economy)}];
                     }
-                </tal:industry_on_or_off>
-            }
-        </tal:climates>
+                }
+            </tal:industry_on_or_off>
+        }
     </tal:economies>
 </tal:tiles>

@@ -20,7 +20,6 @@ cargo = Cargo(id = 'sugarcane',
               single_penalty_length = '30',
               price_factor = '116.194725037',
               capacity_multiplier = '1',
-              disabled_climates = ['CLIMATE_TEMPERATE', 'CLIMATE_ARCTIC', 'CLIMATE_TOYLAND'],
               icon_indices = (15, 1))
 
 cargo.economy_variations['BASIC_TEMPERATE']['disabled'] = True

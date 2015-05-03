@@ -8,8 +8,8 @@
 from industry import IndustrySecondary, TileLocationChecks, IndustryLocationChecks
 
 industry = IndustrySecondary(id='sugar_refinery',
-                    processed_cargos_and_output_ratios=[('MNSP', 3), ('SGBT', 5)], # SGBT will be swapped to SGCN in tropic by magic in compile
-                    combined_cargos_boost_prod=True,
+                    processed_cargos_and_output_ratios=[('MNSP', 3), ('SGBT', 5), ('SGCN', 5)],
+                    mnsp_boosts_production_jank=True, # this is jank we have to live with
                     prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL',
                     prod_cargo_types=['FOOD'],
                     layouts='AUTO',

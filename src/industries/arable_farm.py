@@ -9,7 +9,7 @@ from industry import IndustryPrimaryOrganic, TileLocationChecks, IndustryLocatio
 
 industry = IndustryPrimaryOrganic(id='arable_farm',
                     prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_FARM',
-                    prod_cargo_types=['GRAI', 'SGBT'], # SGBT will be swapped to SGCN in tropic by magic in compile
+                    prod_cargo_types=['GRAI', 'SGBT'],
                     layouts='AUTO',
                     prob_in_game='4',
                     prob_random='24',
@@ -36,7 +36,7 @@ industry = IndustryPrimaryOrganic(id='arable_farm',
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_TROPIC'].enabled = True
-industry.economy_variations['BASIC_TROPIC'].prod_cargo_types = ['BEAN', 'SGBT']
+industry.economy_variations['BASIC_TROPIC'].prod_cargo_types = ['BEAN', 'SGCN']
 
 industry.add_tile(id='arable_farm_tile_1',
                   location_checks=TileLocationChecks(disallow_slopes=True,

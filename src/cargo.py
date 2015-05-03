@@ -44,7 +44,6 @@ class Cargo(object):
         self.single_penalty_length = kwargs['single_penalty_length']
         self.price_factor = kwargs['price_factor']
         self.capacity_multiplier = kwargs['capacity_multiplier']
-        self.disabled_climates = kwargs.get('disabled_climates', [])
         # not nml properties
         self.economy_variations = {}
         for economy in global_constants.economies:
@@ -61,14 +60,6 @@ class Cargo(object):
 
     def get_property_declaration(self, property_name):
         return property_name + ': ' + getattr(self, property_name) + ';'
-
-    def get_conditional_expressions_for_cargo_climates(self):
-        # returns a string that can be used as the conditions in nml if() blocks for cargo stuff
-        enabled_climates = []
-        for climate in ['CLIMATE_TEMPERATE', 'CLIMATE_ARCTIC', 'CLIMATE_TROPIC']:
-            if climate not in self.disabled_climates:
-                enabled_climates.append(climate)
-        return ' || '.join(['climate ==' + str(i) for i in enabled_climates])
 
     def register(self):
         registered_cargos.append(self)
