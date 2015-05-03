@@ -28,7 +28,7 @@ TILE_CHECK_WATERCLASS(tile2_location_check, WATER_CLASS_SEA,  ${industry.id}_til
 <tal:build_economies repeat="economy global_constants.economies">
     if (economy==${repeat.economy.index}) {
         <tal:industry_on_or_off condition="industry.get_property('enabled', economy) == True">
-        item(FEAT_INDUSTRYTILES, ${industry.id}_tile_1, TILE_PORT_1) {
+        item(FEAT_INDUSTRYTILES, ${industry.id}_tile_1, ${global_constants.tile_numeric_ids['port_tile_1']}) {
             property {
                 substitute:       0;
                 land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
@@ -36,7 +36,7 @@ TILE_CHECK_WATERCLASS(tile2_location_check, WATER_CLASS_SEA,  ${industry.id}_til
                 accepted_cargos: [${','.join(['['+ i +', 8]' for i in industry.get_property('accept_cargo_types', economy)])}];
             }
         }
-        item(FEAT_INDUSTRYTILES, ${industry.id}_tile_2, TILE_PORT_2) {
+        item(FEAT_INDUSTRYTILES, ${industry.id}_tile_2, ${global_constants.tile_numeric_ids['port_tile_2']}) {
             property {
                 substitute:       0;
                 land_shape_flags: bitmask(LSF_ALLOW_ON_WATER);
@@ -49,12 +49,12 @@ TILE_CHECK_WATERCLASS(tile2_location_check, WATER_CLASS_SEA,  ${industry.id}_til
 </tal:build_economies>
 
 
-item(FEAT_INDUSTRYTILES, ${industry.id}_tile_1, TILE_PORT_1) {
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile_1, ${global_constants.tile_numeric_ids['port_tile_1']}) {
 	graphics {
 		${industry.id}_industry_master_graphics_switch;
 	}
 }
-item(FEAT_INDUSTRYTILES, ${industry.id}_tile_2, TILE_PORT_2) {
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile_2, ${global_constants.tile_numeric_ids['port_tile_2']}) {
 	graphics {
 		foundations: return CB_RESULT_NO_FOUNDATIONS;
 		tile_check:  ${industry.id}_tile2_location_check;
