@@ -332,7 +332,7 @@ class IndustryLocationChecks(object):
             result.append(IndustryLocationCheckRequireCluster(self.require_cluster))
         if self.town_distance:
             result.append(IndustryLocationCheckTownDistance(self.town_distance))
-        if self.town_distance:
+        if self.coast_distance:
             result.append(IndustryLocationCheckCoastDistance())
         for industry_type, distance in self.incompatible.items():
             result.append(IndustryLocationCheckIncompatible(industry_type, distance))
@@ -401,7 +401,7 @@ class IndustryLocationCheckCoastDistance(object):
         self.switch_entry_point = 'coast_distance'
 
     def render(self):
-        return 'CHECK_COAST_DISTANCE(' + self.switch_entry_point + ', 0, param_max_coastal_distance, CB_RESULT_LOCATION_DISALLOW' + self.switch_result + ')'
+        return 'CHECK_COAST_DISTANCE(' + self.switch_entry_point + ', 0, param_max_coastal_distance, CB_RESULT_LOCATION_DISALLOW,' + self.switch_result + ')'
 
 
 class IndustryProperties(object):
