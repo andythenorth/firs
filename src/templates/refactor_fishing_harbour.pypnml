@@ -63,7 +63,7 @@ item(FEAT_INDUSTRYTILES, ${industry.id}_tile_1, TILE_FISHINGHARBOUR_1) {
 	}
 
 	graphics {
-		${industry.id}_industry_master_graphics_switch;
+		${industry.id}_tile_fences;
 	}
 }
 
@@ -84,7 +84,7 @@ item(FEAT_INDUSTRYTILES, ${industry.id}_tile_2, TILE_FISHINGHARBOUR_2) {
 	graphics {
 		foundations: return CB_RESULT_NO_FOUNDATIONS;
 		tile_check:  ${industry.id}_tile2_location_check;
-		${industry.id}_industry_master_graphics_switch;
+		${industry.id}_tile_fences;
 	}
 }
 
