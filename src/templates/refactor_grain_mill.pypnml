@@ -5,9 +5,14 @@
   See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
 -->
 
-#include "../../src/templates/spritelayouts_groundaware.pnml"
-
 #define THIS_ID(...) ${industry.id}_ ## __VA_ARGS__
+
+/* *************************************************
+ * Definition of the industry tile and its callbacks
+ * *************************************************/
+
+// possibly legacy, only in limited use, ground awareness can probably be folded into standard spritelayouts?
+#include "../../src/templates/spritelayouts_groundaware.pnml"
 
 <tal:include metal:use-macro="load: spritesets.pynml" />
 
@@ -15,39 +20,18 @@
 
 <tal:include metal:use-macro="load: graphics_switches.pynml" />
 
+<tal:include metal:use-macro="load: tile_location_checks.pynml" />
 
-/* *************************************************
- * Definition of the industry tile and its callbacks
- * *************************************************/
+<tal:include metal:use-macro="load: tile_animation_switches.pynml" />
 
-TILE_DISALLOW_NEARBY_CLASS(tile1_nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
-TILE_ALLOW_PLAYER         (tile1_player_check, ${industry.id}_tile1_nearby_industry)
-TILE_DISALLOW_SLOPES      (tile1_location_check, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_tile1_player_check)
+<tal:include metal:use-macro="load: tile_properties.pynml" />
 
-item(FEAT_INDUSTRYTILES, ${industry.id}_tile, TILE_GRAINMILL_1) {
-	property {
-		substitute:       0;
-		accepted_cargos:  [[GRAI, 8], [MNSP, 8]];
-		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
-		animation_info:   [ANIMATION_LOOPING, 6];
-		animation_speed:  3;
-	}
-
-	graphics {
-		tile_check:   ${industry.id}_tile1_location_check;
-		${industry.id}_tile_fences;
-	}
-}
-
-/* *************************************************
- * Definition of the industry layouts
- * *************************************************/
-
-<tal:include metal:use-macro="load: industry_layouts.pynml" />
 
 /* *************************************************
  * Definition of the industry
  * *************************************************/
+
+<tal:include metal:use-macro="load: industry_layouts.pynml" />
 
 /* for secondary production template */
 #define THIS_NUM_OUTPUT_CARGOS    1

@@ -5,7 +5,7 @@
   See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
 """
 
-from industry import IndustrySecondary
+from industry import IndustrySecondary, TileLocationChecks, IndustryLocationChecks
 
 industry = IndustrySecondary(id='grain_mill',
                     processed_cargos_and_output_ratios=[('MNSP', 5), ('GRAI', 3)],
@@ -23,6 +23,7 @@ industry = IndustrySecondary(id='grain_mill',
                     life_type='IND_LIFE_TYPE_PROCESSING',
                     min_cargo_distr='5',
                     spec_flags='0',
+                    location_checks=IndustryLocationChecks(),
                     remove_cost_multiplier='0',
                     prospect_chance='0.75',
                     name='string(STR_IND_GRAIN_MILL)',
@@ -30,12 +31,17 @@ industry = IndustrySecondary(id='grain_mill',
                     fund_cost_multiplier='44',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
                     extra_text_industry='STR_EXTRA_GRAIN_MILL',
-                    template="refactor_grain_mill.pypnml" )
+                    template="refactor_grain_mill.pypnml")
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
 
-industry.add_tile(id='grain_mill_tile')
+industry.add_tile(id='grain_mill_tile_1',
+                  animation_length=6,
+                  animation_looping=True,
+                  animation_speed=3,
+                  location_checks=TileLocationChecks(disallow_slopes=True,
+                                                     disallow_industry_adjacent=True))
 
 spriteset_ground_bakery = industry.add_spriteset(
     id = 'grain_mill_spriteset_ground_bakery',
@@ -131,36 +137,36 @@ industry.add_spritelayout(
 
 industry.add_industry_layout(
     id = 'grain_mill_industry_layout_1',
-    layout = [(0, 0, 'grain_mill_tile', 'grain_mill_spritelayout_brickbakery_3'),
-              (0, 1, 'grain_mill_tile', 'grain_mill_spritelayout_brickbakery_4'),
-              (1, 0, 'grain_mill_tile', 'grain_mill_spritelayout_brickbakery_1'),
-              (1, 1, 'grain_mill_tile','grain_mill_spritelayout_brickbakery_2')
+    layout = [(0, 0, 'grain_mill_tile_1', 'grain_mill_spritelayout_brickbakery_3'),
+              (0, 1, 'grain_mill_tile_1', 'grain_mill_spritelayout_brickbakery_4'),
+              (1, 0, 'grain_mill_tile_1', 'grain_mill_spritelayout_brickbakery_1'),
+              (1, 1, 'grain_mill_tile_1','grain_mill_spritelayout_brickbakery_2')
     ]
 )
 industry.add_industry_layout(
     id = 'grain_mill_industry_layout_2',
-    layout = [(0, 0, 'grain_mill_tile', 'grain_mill_spritelayout_brickbakery_3'),
-              (0, 1, 'grain_mill_tile', 'grain_mill_spritelayout_brickbakery_4'),
-              (1, 0, 'grain_mill_tile', 'grain_mill_spritelayout_brickbakery_3'),
-              (1, 1, 'grain_mill_tile', 'grain_mill_spritelayout_brickbakery_4'),
-              (2, 0, 'grain_mill_tile', 'grain_mill_spritelayout_brickbakery_1'),
-              (2, 1, 'grain_mill_tile', 'grain_mill_spritelayout_brickbakery_2')
+    layout = [(0, 0, 'grain_mill_tile_1', 'grain_mill_spritelayout_brickbakery_3'),
+              (0, 1, 'grain_mill_tile_1', 'grain_mill_spritelayout_brickbakery_4'),
+              (1, 0, 'grain_mill_tile_1', 'grain_mill_spritelayout_brickbakery_3'),
+              (1, 1, 'grain_mill_tile_1', 'grain_mill_spritelayout_brickbakery_4'),
+              (2, 0, 'grain_mill_tile_1', 'grain_mill_spritelayout_brickbakery_1'),
+              (2, 1, 'grain_mill_tile_1', 'grain_mill_spritelayout_brickbakery_2')
     ]
 )
 industry.add_industry_layout(
     id = 'grain_mill_industry_layout_3',
-    layout = [(0, 0, 'grain_mill_tile', 'grain_mill_spritelayout_brickbakery_3'),
-              (0, 1, 'grain_mill_tile', 'grain_mill_spritelayout_brickbakery_4'),
-              (0, 2, 'grain_mill_tile', 'grain_mill_spritelayout_brickbakery_3'),
-              (0, 3, 'grain_mill_tile', 'grain_mill_spritelayout_brickbakery_4'),
-              (1, 0, 'grain_mill_tile', 'grain_mill_spritelayout_brickbakery_1'),
-              (1, 1, 'grain_mill_tile', 'grain_mill_spritelayout_brickbakery_2'),
-              (1, 2, 'grain_mill_tile', 'grain_mill_spritelayout_brickbakery_1'),
-              (1, 3, 'grain_mill_tile', 'grain_mill_spritelayout_brickbakery_2')
+    layout = [(0, 0, 'grain_mill_tile_1', 'grain_mill_spritelayout_brickbakery_3'),
+              (0, 1, 'grain_mill_tile_1', 'grain_mill_spritelayout_brickbakery_4'),
+              (0, 2, 'grain_mill_tile_1', 'grain_mill_spritelayout_brickbakery_3'),
+              (0, 3, 'grain_mill_tile_1', 'grain_mill_spritelayout_brickbakery_4'),
+              (1, 0, 'grain_mill_tile_1', 'grain_mill_spritelayout_brickbakery_1'),
+              (1, 1, 'grain_mill_tile_1', 'grain_mill_spritelayout_brickbakery_2'),
+              (1, 2, 'grain_mill_tile_1', 'grain_mill_spritelayout_brickbakery_1'),
+              (1, 3, 'grain_mill_tile_1', 'grain_mill_spritelayout_brickbakery_2')
     ]
 )
 industry.add_industry_layout(
     id = 'grain_mill_industry_layout_4',
-    layout = [(0, 0, 'grain_mill_tile', 'grain_mill_spritelayout_windmill_anim')]
+    layout = [(0, 0, 'grain_mill_tile_1', 'grain_mill_spritelayout_windmill_anim')]
 )
 

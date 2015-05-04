@@ -7,6 +7,9 @@
 
 #define THIS_ID(...) ${industry.id}_ ## __VA_ARGS__
 
+// possibly legacy, only in limited use, ground awareness can probably be folded into standard spritelayouts?
+#include "../../src/templates/spritelayouts_groundaware.pnml"
+
 /* **************
  * tile_trees
  * *************/
