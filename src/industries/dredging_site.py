@@ -10,7 +10,7 @@ from industry import IndustryPrimaryExtractive, TileLocationChecks, IndustryLoca
 industry = IndustryPrimaryExtractive(id='dredging_site',
                     prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL',
                     prod_cargo_types=['SAND', 'GRVL'],
-                    layouts='[tilelayout_dredging_site_1]',
+                    layouts='AUTO',
                     prob_in_game='3',
                     prob_random='5',
                     prod_multiplier='[13, 13]',
@@ -28,11 +28,13 @@ industry = IndustryPrimaryExtractive(id='dredging_site',
                     fund_cost_multiplier='180',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
                     graphics_change_dates = [1906, 1945],
-                    template="refactor_dredging_site.pypnml",
                     intro_year=1825)
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True
+
+industry.add_tile(id='dredging_site_tile_1',
+                  location_checks=TileLocationChecks(disallow_industry_adjacent=True))
 
 sprite_ground = industry.add_sprite(
     sprite_number = 'GROUNDSPRITE_WATER',
@@ -59,13 +61,30 @@ spriteset_crane_animated = industry.add_spriteset(
     zextent= 39
 )
 
-
 industry.add_spritelayout(
     id = 'dredging_site_spritelayout_1',
     ground_sprite = sprite_ground,
     ground_overlay = spriteset_platform,
     building_sprites = [spriteset_crane_animated, spriteset_greeble]
 )
+industry.add_spritelayout(
+    id = 'dredging_site_spritelayout_null',
+    ground_sprite = sprite_ground,
+    ground_overlay = sprite_ground,
+    building_sprites = []
+)
 
-# dredging site has one layout only, don't bother inserting templated industry layouts etc
-
+industry.add_industry_layout(
+    id = 'dredging_site_industry_layout_1',
+    layout = [(0, 0, '255', 'dredging_site_spritelayout_null'),
+              (0, 1, '255', 'dredging_site_spritelayout_null'),
+              (0, 2, '255', 'dredging_site_spritelayout_null'),
+              (0, 4, '255', 'dredging_site_spritelayout_null'),
+              (1, 0, '255', 'dredging_site_spritelayout_null'),
+              (1, 4, '255', 'dredging_site_spritelayout_null'),
+              (2, 0, '255', 'dredging_site_spritelayout_null'),
+              (2, 2, '255', 'dredging_site_spritelayout_null'),
+              (2, 3, 'dredging_site_tile_1', 'dredging_site_spritelayout_1'),
+              (2, 4, '255', 'dredging_site_spritelayout_null'),
+    ]
+)
