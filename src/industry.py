@@ -322,6 +322,7 @@ class IndustryLocationChecks(object):
     def __init__(self, **kwargs):
         self.incompatible = kwargs.get('incompatible', {})
         self.town_distance = kwargs.get('town_distance', None)
+        self.coast_distance = kwargs.get('coast_distance', None)
         self.require_cluster = kwargs.get('require_cluster', None)
 
     def get_render_tree(self, switch_prefix):
@@ -331,6 +332,8 @@ class IndustryLocationChecks(object):
             result.append(IndustryLocationCheckRequireCluster(self.require_cluster))
         if self.town_distance:
             result.append(IndustryLocationCheckTownDistance(self.town_distance))
+        if self.town_distance:
+            result.append(IndustryLocationCheckCoastDistance())
         for industry_type, distance in self.incompatible.items():
             result.append(IndustryLocationCheckIncompatible(industry_type, distance))
         prev = None
@@ -389,6 +392,16 @@ class IndustryLocationCheckFounder(object):
 
     def render(self):
         return 'CHECK_FOUNDER (' + self.switch_result + ')'
+
+
+class IndustryLocationCheckCoastDistance(object):
+    """ Maximum distance to coast (player can vary this with parameter) """
+    def __init__(self):
+        self.switch_result = 'return CB_RESULT_LOCATION_ALLOW' # default result, value may also be id for next switch
+        self.switch_entry_point = 'coast_distance'
+
+    def render(self):
+        return 'CHECK_COAST_DISTANCE(' + self.switch_entry_point + ', 0, param_max_coastal_distance, CB_RESULT_LOCATION_DISALLOW' + self.switch_result + ')'
 
 
 class IndustryProperties(object):
