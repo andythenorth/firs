@@ -1,3 +1,3 @@
 <tal:industry_location_checks define="location_checks industry.location_checks.get_render_tree(industry.id+'_')" repeat="location_check location_checks">
-    ${location_check.render()}
+    ${location_check.render(industry=industry)}
 </tal:industry_location_checks>

@@ -45,42 +45,13 @@
 #define THIS_BOOST_31             0
 #define THIS_BOOST_32             0
 
-CHECK_INCOMPATIBLE  (grain_mill,    56, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
-CHECK_INCOMPATIBLE  (brewery,       16, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_grain_mill)
-CHECK_INCOMPATIBLE  (arable_farm,   16, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_brewery)
-CHECK_TOWN_DISTANCE (town_distance,  0,144, ${industry.id}_arable_farm)
-CHECK_FOUNDER       (${industry.id}_town_distance)
-
-/** After 1900, windmills only appear during map generation. */
-switch (FEAT_INDUSTRIES, SELF, ${industry.id}_brick_layouts_only_check_layout, var[0x86]) {
-	3: return CB_RESULT_LOCATION_DISALLOW;
-	${industry.id}_check_location;
-}
-
-switch (FEAT_INDUSTRIES, SELF, ${industry.id}_brick_layouts_only, extra_callback_info2) {
-	IND_CREATION_GENERATION: ${industry.id}_check_location;
-	${industry.id}_brick_layouts_only_check_layout;
-}
-
-/** Before 1870, only windmills appear. */
-switch (FEAT_INDUSTRIES, SELF, ${industry.id}_windmill_layout_only, var[0x86]) {
-	3: ${industry.id}_check_location;
-	return CB_RESULT_LOCATION_DISALLOW;
-}
-
-/** Both types of layouts can appear between 1870 and 1900. */
-/** ! Update the docs if changing graphics dates */
-switch (FEAT_INDUSTRIES, SELF, ${industry.id}_check_date, current_year) {
-	0..1869:    ${industry.id}_windmill_layout_only;
-	1870..1900: ${industry.id}_check_location;
-	${industry.id}_brick_layouts_only;
-}
-
 #include "../../src/templates/produce_secondary.pnml"
 
 <tal:include metal:use-macro="load: extra_text_secondary.pynml" />
 
 <tal:include metal:use-macro="load: check_availability.pynml" />
+
+<tal:include metal:use-macro="load: industry_location_checks.pynml" />
 
 <tal:include metal:use-macro="load: industry_properties.pynml" />
 
