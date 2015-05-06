@@ -177,12 +177,13 @@ switch (FEAT_INDUSTRIES, SELF, THIS_ID(name), town_zone(0, 0)) { \
  * switch name:  THIS_ID(check_location)
  *
  * Parameters:
+ * name          name of this switch. Suggested: town_distance
  * next          name of next switch or "return CB_RESULT_LOCATION_ALLOW"
  */
 
 /* founder == FOUNDER_GAME means founded by the game, 0 .. 15 are player companies */
-#define CHECK_FOUNDER(next) \
-switch (FEAT_INDUSTRIES, SELF, THIS_ID(check_location), ( \
+#define CHECK_FOUNDER(name, next) \
+switch (FEAT_INDUSTRIES, SELF, THIS_ID(name), ( \
 			(extra_callback_info2 == IND_CREATION_FUND) || \
 			(extra_callback_info2 == IND_CREATION_PROSPECT) \
 			) \

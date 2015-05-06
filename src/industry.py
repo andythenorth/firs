@@ -345,6 +345,7 @@ class IndustryLocationChecks(object):
             if prev is not None:
                 lc.switch_result = switch_prefix + prev.switch_entry_point
             prev = lc
+        result[0].switch_entry_point='check_location'
         return list(reversed(result))
 
 
@@ -392,10 +393,10 @@ class IndustryLocationCheckFounder(object):
     """ Ensures player can build irrespective of _industry_ location checks (tile checks still apply) """
     def __init__(self):
         self.switch_result = 'return CB_RESULT_LOCATION_ALLOW' # default result, value may also be id for next switch
-        self.switch_entry_point = 'check_location' # should be check_founder, but isn't, for historical reasons (refactor?)
+        self.switch_entry_point = 'check_founder'
 
     def render(self, **kwargs):
-        return 'CHECK_FOUNDER (' + self.switch_result + ')'
+        return 'CHECK_FOUNDER (' + self.switch_entry_point + ',' + self.switch_result + ')'
 
 
 class IndustryLocationCheckCoastDistance(object):

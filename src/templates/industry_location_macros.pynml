@@ -16,7 +16,7 @@
         ${switch_result};
     }
     switch (FEAT_INDUSTRIES, SELF, ${industry.id}_brick_layouts_only, extra_callback_info2) {
-        IND_CREATION_GENERATION: ${industry.id}_check_location;
+        IND_CREATION_GENERATION: ${switch_result};
         ${industry.id}_brick_layouts_only_check_layout;
     }
     <!--! Before 1870, only windmills will be built. -->
