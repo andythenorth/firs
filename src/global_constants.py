@@ -2,13 +2,12 @@
 economies = ["FIRS", "BASIC_TEMPERATE", "BASIC_ARCTIC", "BASIC_TROPIC", "MISTAH_KURTZ"]
 
 # Definition of numeric IDs for industries
-industry_numeric_ids = dict(coal_mine = 65,
+industry_numeric_ids = dict(coal_mine = 0,
                             lime_kiln = 1,
                             metal_fabrication_plant = 2,
                             sugar_plantation = 3,
                             iron_ore_mine = 4,
                             bauxite_mine = 5,
-                            copper_mine = 5, # reuse of this ID, ran out of IDs
                             smithy_forge = 6,
                             steel_mill = 7,
                             aluminium_plant = 8,
@@ -48,7 +47,6 @@ industry_numeric_ids = dict(coal_mine = 65,
                             textile_mill = 42,
                             cement_plant = 43,
                             clay_pit = 44,
-                            nitrate_mine = 44, # reuse of this ID, ran out of IDs
                             brick_works = 45,
                             biorefinery = 46,
                             orchard_piggery = 47,
@@ -67,8 +65,10 @@ industry_numeric_ids = dict(coal_mine = 65,
                             petrol_pump = 60,
                             general_store = 61,
                             vehicle_factory = 62,
-                            builders_yard = 63)
-#63 is last ID to be used (64 industry limit, zero-based)
+                            builders_yard = 63,
+                            copper_mine = 64,
+                            nitrate_mine = 65)
+#127 is last ID to be used (128 industry limit, zero-based)
 
 
 # Definition of industry tile numeric IDs
