@@ -22,4 +22,4 @@ cargo = Cargo(id = 'oil',
               capacity_multiplier = '1',
               icon_indices = (3, 0))
 
-cargo.economy_variations['BASIC_TEMPERATE']['disabled'] = True
+

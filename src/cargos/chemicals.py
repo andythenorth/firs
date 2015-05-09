@@ -22,4 +22,4 @@ cargo = Cargo(id = 'chemicals',
               capacity_multiplier = '1',
               icon_indices = (10, 1))
 
-cargo.economy_variations['MISTAH_KURTZ']['disabled'] = True
+

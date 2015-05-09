@@ -22,5 +22,5 @@ cargo = Cargo(id = 'grain',
               capacity_multiplier = '1',
               icon_indices = (6, 0))
 
-cargo.economy_variations['BASIC_TEMPERATE']['disabled'] = True
-cargo.economy_variations['BASIC_TROPIC']['disabled'] = True
+
+

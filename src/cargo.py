@@ -48,24 +48,17 @@ class Cargo(object):
         # not nml properties
         self.economy_variations = {}
         for economy in registered_economies:
-            self.add_economy_variation(economy)
+            if self.id in economy.cargos:
+                self.economy_variations[economy] = {}
         # icon indices relate to position of icon in cargo icons spritesheet
         self.icon_indices = kwargs['icon_indices']
 
-    def add_economy_variation(self, economy):
-        self.economy_variations[economy.id] = {'disabled': False}
-
     def get_property(self, property_name, economy):
         # straightforward lookup of a property, doesn't try to handle failure case of property not found; don't look up props that don't exist
-        return self.economy_variations[economy.id].get(property_name)
+        return self.economy_variations[economy].get(property_name)
 
     def get_property_declaration(self, property_name):
         return property_name + ': ' + getattr(self, property_name) + ';'
 
     def register(self):
         registered_cargos.append(self)
-
-    def render_pnml(self):
-        cargo_template = templates['cargo_props.pypnml']
-        templated_pnml = utils.unescape_chameleon_output(cargo_template(cargo=self, economies=registered_economies))
-        return templated_pnml

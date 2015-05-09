@@ -1,5 +1,3 @@
-<!--! wrapper for writing cargotable and all cargo definitions to one pnml file -->
-
 cargotable {
 <tal:build_cargo_table repeat="cargo registered_cargos">
     ${cargo.cargo_label.replace('"','')},
@@ -11,14 +9,14 @@ disable_item(FEAT_CARGOS, 0, 29);
 // don't disable 30, it's used by NARS 2 for regearing and disabling it breaks NARS 2
 disable_item(FEAT_CARGOS, 31, 31);
 
-<tal:build_cargo_properties repeat="cargo registered_cargos">
+<tal:cargos repeat="cargo registered_cargos">
     cargo_icon_template(cargoicon_${cargo.id}, ${cargo.icon_indices[0]}, ${cargo.icon_indices[1]})
 
-    <tal:build_economies repeat="economy economies">
+    <tal:economies repeat="economy economies">
         if (economy==${repeat.economy.index}) {
-            <tal:cargo_on_or_off condition="cargo.get_property('disabled', economy) != True">
-                ${cargo.render_pnml()}
-            </tal:cargo_on_or_off>
+            <tal:cargo_props condition="cargo.id in economy.cargos">
+                <tal:include metal:use-macro="load: cargo_props.pynml" />
+            </tal:cargo_props>
         }
-    </tal:build_economies>
-</tal:build_cargo_properties>
+    </tal:economies>
+</tal:cargos>

@@ -22,7 +22,7 @@ cargo = Cargo(id = 'nitrates',
               capacity_multiplier = '1',
               icon_indices = (6, 2))
 
-cargo.economy_variations['FIRS']['disabled'] = True
-cargo.economy_variations['BASIC_TEMPERATE']['disabled'] = True
-cargo.economy_variations['BASIC_ARCTIC']['disabled'] = True
-cargo.economy_variations['MISTAH_KURTZ']['disabled'] = True
+
+
+
+

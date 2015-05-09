@@ -22,6 +22,6 @@ cargo = Cargo(id = 'coffee',
               capacity_multiplier = '1',
               icon_indices = (4, 2))
 
-cargo.economy_variations['FIRS']['disabled'] = True
-cargo.economy_variations['BASIC_ARCTIC']['disabled'] = True
-cargo.economy_variations['BASIC_TEMPERATE']['disabled'] = True
+
+
+

@@ -22,6 +22,6 @@ cargo = Cargo(id = 'milk',
               price_factor = '134.579658508',
               icon_indices = (13, 0))
 
-cargo.economy_variations['BASIC_ARCTIC']['disabled'] = True
-cargo.economy_variations['BASIC_TROPIC']['disabled'] = True
-cargo.economy_variations['MISTAH_KURTZ']['disabled'] = True
+
+
+

@@ -22,6 +22,6 @@ cargo = Cargo(id = 'sand',
               price_factor = '73.2479095459',
               icon_indices = (0, 1))
 
-cargo.economy_variations['BASIC_ARCTIC']['disabled'] = True
-cargo.economy_variations['BASIC_TROPIC']['disabled'] = True
-cargo.economy_variations['MISTAH_KURTZ']['disabled'] = True
+
+
+

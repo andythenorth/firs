@@ -9,7 +9,7 @@
 
 #include "../../src/templates/cargo_icon_template.pnml"
 #include "../../src/templates/custom_station_ratings.pnml"
-#include "registered_cargos.pnml"
+#include "cargos.pnml"
 
 //disable the default industries
 disable_item(FEAT_INDUSTRIES, 0, 36);

@@ -22,4 +22,4 @@ cargo = Cargo(id = 'fruits',
               capacity_multiplier = '1',
               icon_indices = (14, 0))
 
-cargo.economy_variations['BASIC_ARCTIC']['disabled'] = True
+

@@ -22,6 +22,6 @@ cargo = Cargo(id = 'coal',
               capacity_multiplier = '1',
               icon_indices = (1, 0))
 
-cargo.economy_variations['BASIC_ARCTIC']['disabled'] = True
-cargo.economy_variations['BASIC_TROPIC']['disabled'] = True
-cargo.economy_variations['MISTAH_KURTZ']['disabled'] = True
+
+
+

@@ -22,5 +22,5 @@ cargo = Cargo(id = 'clay',
               capacity_multiplier = '1',
               icon_indices = (9, 1))
 
-cargo.economy_variations['BASIC_TROPIC']['disabled'] = True
-cargo.economy_variations['MISTAH_KURTZ']['disabled'] = True
+
+

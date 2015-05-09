@@ -214,7 +214,7 @@ def render_docs(doc_list, file_type, use_markdown=False):
 
 def main():
     for economy in registered_economies:
-        enabled_cargos = [cargo for cargo in registered_cargos if not cargo.economy_variations[economy.id].get('disabled')]
+        enabled_cargos = [cargo for cargo in registered_cargos if cargo.id in economy.cargos]
         enabled_industries = [industry for industry in registered_industries if industry.economy_variations[economy.id].enabled]
         economy_schemas[economy] = {'enabled_cargos':enabled_cargos, 'enabled_industries':enabled_industries}
 

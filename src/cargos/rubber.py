@@ -22,7 +22,7 @@ cargo = Cargo(id = 'rubber',
               price_factor = '107.634544373',
               icon_indices = (2, 2))
 
-cargo.economy_variations['FIRS']['disabled'] = True
-cargo.economy_variations['BASIC_TEMPERATE']['disabled'] = True
-cargo.economy_variations['BASIC_ARCTIC']['disabled'] = True
-cargo.economy_variations['BASIC_TROPIC']['disabled'] = True
+
+
+
+

@@ -22,7 +22,7 @@ cargo = Cargo(id = 'paper',
               capacity_multiplier = '1',
               icon_indices = (5, 2))
 
-cargo.economy_variations['FIRS']['disabled'] = True
-cargo.economy_variations['BASIC_TEMPERATE']['disabled'] = True
-cargo.economy_variations['BASIC_TROPIC']['disabled'] = True
-cargo.economy_variations['MISTAH_KURTZ']['disabled'] = True
+
+
+
+

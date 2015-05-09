@@ -22,7 +22,7 @@ cargo = Cargo(id = 'copper_ore',
               capacity_multiplier = '1',
               icon_indices = (1, 2))
 
-cargo.economy_variations['FIRS']['disabled'] = True
-cargo.economy_variations['BASIC_ARCTIC']['disabled'] = True
-cargo.economy_variations['BASIC_TROPIC']['disabled'] = True
-cargo.economy_variations['BASIC_TEMPERATE']['disabled'] = True
+
+
+
+

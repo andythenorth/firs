@@ -23,7 +23,7 @@ cargo = Cargo(id = 'recyclables',
               price_factor = '104.570388794',
               icon_indices = (11, 0))
 
-cargo.economy_variations['BASIC_TEMPERATE']['disabled'] = True
-cargo.economy_variations['BASIC_ARCTIC']['disabled'] = True
-cargo.economy_variations['BASIC_TROPIC']['disabled'] = True
-cargo.economy_variations['MISTAH_KURTZ']['disabled'] = True
+
+
+
+

@@ -22,7 +22,7 @@ cargo = Cargo(id = 'stone',
               capacity_multiplier = '1',
               icon_indices = (5, 1))
 
-cargo.economy_variations['BASIC_TEMPERATE']['disabled'] = True
-cargo.economy_variations['BASIC_ARCTIC']['disabled'] = True
-cargo.economy_variations['BASIC_TROPIC']['disabled'] = True
-cargo.economy_variations['MISTAH_KURTZ']['disabled'] = True
+
+
+
+

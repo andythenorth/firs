@@ -66,12 +66,12 @@ def main():
         pnml.write(templated_pnml)
         pnml.close()
 
-    template = templates['registered_cargos.pypnml']
+    template = templates['cargos.pypnml']
     templated_pnml = utils.unescape_chameleon_output(template(registered_cargos=registered_cargos,
                                                               economies=registered_economies,
                                                               global_constants=global_constants))
     # save the results of templating
-    pnml = codecs.open(os.path.join(generated_pnml_path, 'registered_cargos.pnml'), 'w','utf8')
+    pnml = codecs.open(os.path.join(generated_pnml_path, 'cargos.pnml'), 'w','utf8')
     pnml.write(templated_pnml)
     pnml.close()
 
