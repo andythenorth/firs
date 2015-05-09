@@ -1,11 +1,8 @@
 registered_economies = []
 
-# keep these alphabetised for ease of maintaining
-#from industries import aluminium_plant
-#aluminium_plant.industry.register()
-
 # changing the order of items in economy list breaks savegames, don't do it.
 # this could be solved by having the economy mapped to the parameter number it uses
+# would be better to be able to alphabetise these for ease of maintaining
 from economies import firs
 firs.economy.register()
 
