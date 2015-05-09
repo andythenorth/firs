@@ -53,7 +53,12 @@ def main():
     header_items = ['defines', 'checks','conditions','header','firs','parameters']
     for header_item in header_items:
         template = templates[header_item + '.pypnml']
-        templated_pnml = utils.unescape_chameleon_output(template(registered_industries=registered_industries, global_constants=global_constants, utils=utils, sys=sys, generated_pnml_path=generated_pnml_path))
+        templated_pnml = utils.unescape_chameleon_output(template(registered_industries=registered_industries,
+                                                                  global_constants=global_constants,
+                                                                  economies=global_constants.economies,
+                                                                  utils=utils,
+                                                                  sys=sys,
+                                                                  generated_pnml_path=generated_pnml_path))
         # save the results of templating
         pnml_file_path = os.path.join(generated_pnml_path, header_item + '.pnml')
         pnml = codecs.open(pnml_file_path, 'w','utf8')
@@ -61,7 +66,9 @@ def main():
         pnml.close()
 
     template = templates['registered_cargos.pypnml']
-    templated_pnml = utils.unescape_chameleon_output(template(registered_cargos=registered_cargos, global_constants=global_constants))
+    templated_pnml = utils.unescape_chameleon_output(template(registered_cargos=registered_cargos,
+                                                              economies=global_constants.economies,
+                                                              global_constants=global_constants))
     # save the results of templating
     pnml = codecs.open(os.path.join(generated_pnml_path, 'registered_cargos.pnml'), 'w','utf8')
     pnml.write(templated_pnml)

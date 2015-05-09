@@ -14,7 +14,7 @@ disable_item(FEAT_CARGOS, 31, 31);
 <tal:build_cargo_properties repeat="cargo registered_cargos">
     cargo_icon_template(cargoicon_${cargo.id}, ${cargo.icon_indices[0]}, ${cargo.icon_indices[1]})
 
-    <tal:build_economies repeat="economy global_constants.economies">
+    <tal:build_economies repeat="economy economies">
         if (economy==${repeat.economy.index}) {
             <tal:cargo_on_or_off condition="cargo.get_property('disabled', economy) != True">
                 ${cargo.render_pnml()}
