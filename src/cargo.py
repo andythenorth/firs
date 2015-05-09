@@ -53,11 +53,11 @@ class Cargo(object):
         self.icon_indices = kwargs['icon_indices']
 
     def add_economy_variation(self, economy):
-        self.economy_variations[economy] = {'disabled': False}
+        self.economy_variations[economy.id] = {'disabled': False}
 
     def get_property(self, property_name, economy):
         # straightforward lookup of a property, doesn't try to handle failure case of property not found; don't look up props that don't exist
-        return self.economy_variations[economy].get(property_name)
+        return self.economy_variations[economy.id].get(property_name)
 
     def get_property_declaration(self, property_name):
         return property_name + ': ' + getattr(self, property_name) + ';'

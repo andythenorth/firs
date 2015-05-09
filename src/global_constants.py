@@ -1,5 +1,11 @@
 # changing the order of items in econmy list breaks savegames, don't do it.
-economies = ["FIRS", "BASIC_TEMPERATE", "BASIC_ARCTIC", "BASIC_TROPIC", "MISTAH_KURTZ"]
+from economy import Economy
+economies = [Economy("FIRS"),
+             Economy("BASIC_TEMPERATE"),
+             Economy("BASIC_ARCTIC"),
+             Economy("BASIC_TROPIC"),
+             Economy("MISTAH_KURTZ")]
+
 
 # Definition of numeric IDs for industries
 industry_numeric_ids = dict(coal_mine = 0,

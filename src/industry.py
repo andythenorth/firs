@@ -517,7 +517,7 @@ class Industry(object):
         return new_industry_layout # returning the new obj isn't essential, but permits the caller giving it a reference for use elsewhere
 
     def add_economy_variation(self, economy):
-        self.economy_variations[economy] = IndustryProperties()
+        self.economy_variations[economy.id] = IndustryProperties()
 
     def get_numeric_id(self):
         return global_constants.industry_numeric_ids[self.id]
@@ -590,7 +590,7 @@ class Industry(object):
         if economy is None:
             value = default_value
         else:
-            economy_value = getattr(self.economy_variations[economy], property_name)
+            economy_value = getattr(self.economy_variations[economy.id], property_name)
             if economy_value is not None:
                 value = economy_value
             else:
@@ -609,14 +609,14 @@ class Industry(object):
         accept_cargo_types = self.get_property('accept_cargo_types', economy)
         # guard against too many cargos being defined
         if len(accept_cargo_types) > 3:
-            utils.echo_message("Too many accepted cargos defined for " + self.id + ' in economy ' + economy)
+            utils.echo_message("Too many accepted cargos defined for " + self.id + ' in economy ' + economy.id)
         return '[' + ','.join(accept_cargo_types) + ']'
 
     def get_prod_cargo_types(self, economy):
         prod_cargo_types = self.get_property('prod_cargo_types', economy)
         # guard against too many cargos being defined
         if len(prod_cargo_types) > 2:
-            utils.echo_message("Too many produced cargos defined for " + self.id + ' in economy ' + economy)
+            utils.echo_message("Too many produced cargos defined for " + self.id + ' in economy ' + economy.id)
         return '[' + ','.join(prod_cargo_types) + ']'
 
     def get_another_industry(self, id):
@@ -626,7 +626,7 @@ class Industry(object):
         # returns a string that can be used as the conditions in nml if() blocks for economy stuff
         enabled_economies = []
         for i, economy in enumerate(economies):
-            if self.economy_variations[economy].enabled:
+            if self.economy_variations[economy.id].enabled:
                 enabled_economies.append('economy==' + str(i))
         return ' || '.join(enabled_economies)
 

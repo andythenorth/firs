@@ -13,7 +13,7 @@ grf {
 			max_value: ${len(economies)-1};
 			names: {
 			    <tal:build_economies repeat="economy economies">
-                    ${repeat.economy.index}: string(STR_PARAM_VALUE_ECONOMIES_${economy});
+                    ${repeat.economy.index}: string(STR_PARAM_VALUE_ECONOMIES_${economy.id});
 			    </tal:build_economies>
 			};
 		}

@@ -54,8 +54,8 @@ economy_schemas = {}
 class DocHelper(object):
     # dirty class to help do some doc formatting
     def get_economy_name(self, economy):
-        string_id = "STR_PARAM_VALUE_ECONOMIES_" + economy
-        name_string = base_lang_strings.get(string_id, 'NO_NAME ' + economy)
+        string_id = "STR_PARAM_VALUE_ECONOMIES_" + economy.id
+        name_string = base_lang_strings.get(string_id, 'NO_NAME ' + economy.id)
         return name_string.split(' Economy')[0] # name strings contain 'economy', I don't want that in docs
 
     def get_cargo_name(self, cargo):
@@ -101,7 +101,7 @@ class DocHelper(object):
         return sorted(result.items())
 
     def get_economy_extra_info(self, economy):
-        return base_lang_strings.get('ECONOMY_INFO_' + economy, '')
+        return base_lang_strings.get('ECONOMY_INFO_' + economy.id, '')
 
     def get_cargo_extra_info(self, cargo):
         return base_lang_strings.get('CARGO_INFO_' + cargo.id.upper(), '')
@@ -214,8 +214,8 @@ def render_docs(doc_list, file_type, use_markdown=False):
 
 def main():
     for economy in economies:
-        enabled_cargos = [cargo for cargo in registered_cargos if not cargo.economy_variations[economy].get('disabled')]
-        enabled_industries = [industry for industry in registered_industries if industry.economy_variations[economy].enabled]
+        enabled_cargos = [cargo for cargo in registered_cargos if not cargo.economy_variations[economy.id].get('disabled')]
+        enabled_industries = [industry for industry in registered_industries if industry.economy_variations[economy.id].enabled]
         economy_schemas[economy] = {'enabled_cargos':enabled_cargos, 'enabled_industries':enabled_industries}
 
     # render standard docs from a list
