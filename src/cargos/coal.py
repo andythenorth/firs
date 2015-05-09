@@ -1,7 +1,6 @@
 from cargo import Cargo
 
 cargo = Cargo(id = 'coal',
-              number = '1',
               type_name = 'TTD_STR_CARGO_PLURAL_COAL',
               unit_name = 'TTD_STR_CARGO_SINGULAR_COAL',
               type_abbreviation = 'TTD_STR_ABBREV_COAL',

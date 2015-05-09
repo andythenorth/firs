@@ -1,6 +1,7 @@
-item(FEAT_CARGOS, ${cargo.id}, ${cargo.number}) {
+<!--! some props can vary by economy, some cannot -->
+item(FEAT_CARGOS, ${cargo.id}_${economy.id}, ${cargo.get_numeric_id(economy)}) {
     property {
-        ${cargo.get_property_declaration('number')}
+        <!--! standard props -->
         ${cargo.get_property_declaration('type_name')}
         ${cargo.get_property_declaration('unit_name')}
         ${cargo.get_property_declaration('type_abbreviation')}
@@ -11,14 +12,16 @@ item(FEAT_CARGOS, ${cargo.id}, ${cargo.number}) {
         ${cargo.get_property_declaration('is_freight')}
         ${cargo.get_property_declaration('cargo_classes')}
         ${cargo.get_property_declaration('cargo_label')}
-        ${cargo.get_property_declaration('town_growth_effect')}
-        ${cargo.get_property_declaration('town_growth_multiplier')}
+        ${cargo.get_property_declaration('town_growth_effect', economy)}
+        ${cargo.get_property_declaration('town_growth_multiplier', economy)}
         ${cargo.get_property_declaration('units_of_cargo')}
         ${cargo.get_property_declaration('items_of_cargo')}
-        ${cargo.get_property_declaration('penalty_lowerbound')}
-        ${cargo.get_property_declaration('single_penalty_length')}
-        ${cargo.get_property_declaration('price_factor')}
+        ${cargo.get_property_declaration('penalty_lowerbound', economy)}
+        ${cargo.get_property_declaration('single_penalty_length', economy)}
+        ${cargo.get_property_declaration('price_factor', economy)}
         ${cargo.get_property_declaration('capacity_multiplier')}
+        <!--! props that can't be fetched with standard methods -->
+        number: ${cargo.get_numeric_id(economy)};
     }
     graphics {
         station_rating: switch_station_rating;

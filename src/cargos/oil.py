@@ -1,7 +1,6 @@
 from cargo import Cargo
 
 cargo = Cargo(id = 'oil',
-              number = '3',
               type_name = 'TTD_STR_CARGO_PLURAL_OIL',
               unit_name = 'TTD_STR_CARGO_SINGULAR_OIL',
               type_abbreviation = 'TTD_STR_ABBREV_OIL',

@@ -1,6 +1,6 @@
 from cargo import Cargo
+
 cargo = Cargo(id = 'metal',
-              number = '9',
               type_name = 'string(STR_CARGO_NAME_METAL)',
               unit_name = 'string(STR_CARGO_NAME_METAL)',
               type_abbreviation = 'string(STR_CID_METAL)',

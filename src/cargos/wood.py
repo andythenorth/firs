@@ -1,7 +1,6 @@
 from cargo import Cargo
 
 cargo = Cargo(id = 'wood',
-              number = '7',
               type_name = 'TTD_STR_CARGO_PLURAL_WOOD',
               unit_name = 'TTD_STR_CARGO_SINGULAR_WOOD',
               type_abbreviation = 'TTD_STR_ABBREV_WOOD',

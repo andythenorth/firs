@@ -1,7 +1,6 @@
 from cargo import Cargo
 
 cargo = Cargo(id = 'mail',
-              number = '2',
               type_name = 'TTD_STR_CARGO_PLURAL_MAIL',
               unit_name = 'TTD_STR_CARGO_SINGULAR_MAIL',
               type_abbreviation = 'TTD_STR_ABBREV_MAIL',

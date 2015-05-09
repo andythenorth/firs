@@ -1,7 +1,6 @@
 from cargo import Cargo
 
 cargo = Cargo(id = 'iron_ore',
-              number = '8',
               type_name = 'TTD_STR_CARGO_PLURAL_IRON_ORE',
               unit_name = 'TTD_STR_CARGO_SINGULAR_IRON_ORE',
               type_abbreviation = 'TTD_STR_ABBREV_IRON_ORE',

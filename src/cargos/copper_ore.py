@@ -1,7 +1,6 @@
 from cargo import Cargo
 
 cargo = Cargo(id = 'copper_ore',
-              number = '8',
               type_name = 'TTD_STR_CARGO_PLURAL_COPPER_ORE',
               unit_name = 'TTD_STR_CARGO_SINGULAR_COPPER_ORE',
               type_abbreviation = 'TTD_STR_ABBREV_COPPER_ORE',

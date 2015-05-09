@@ -1,7 +1,6 @@
 from cargo import Cargo
 
 cargo = Cargo(id = 'diamonds',
-              number = '1',
               type_name = 'TTD_STR_CARGO_PLURAL_DIAMONDS',
               unit_name = 'TTD_STR_CARGO_SINGULAR_DIAMOND',
               type_abbreviation = 'TTD_STR_ABBREV_DIAMONDS',

@@ -1,7 +1,6 @@
 from cargo import Cargo
 
 cargo = Cargo(id = 'petrol',
-              number = '25',
               type_name = 'string(STR_CARGO_NAME_PETROL)',
               unit_name = 'string(STR_CARGO_NAME_PETROL)',
               type_abbreviation = 'string(STR_CID_PETROL)',

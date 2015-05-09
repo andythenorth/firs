@@ -41,7 +41,6 @@
                 <tr>
                     <th>Name</th>
                     <th>NML Identifier</th>
-                    <th class="number">ID (dec)</th>
                     <th>Label</th>
                     <th class="number">Weight</th>
                     <th class="number">Capacity Multiplier</th>
@@ -56,7 +55,6 @@
                                 <a href="cargos.html#${cargo.id}">${doc_helper.get_cargo_name(cargo)}</a>
                             </td>
                             <td>${cargo.id}</td>
-                            <td class="number">${cargo.number}</td>
                             <td>${cargo.cargo_label}</td>
                             <td class="number">${cargo.weight}</td>
                             <td class="number">${cargo.capacity_multiplier}</td>

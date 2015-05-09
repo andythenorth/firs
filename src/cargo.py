@@ -27,7 +27,6 @@ class Cargo(object):
     def __init__(self, id, **kwargs):
         self.id = id
         self.cargo_label = kwargs['cargo_label']
-        self.number = kwargs['number']
         self.type_name = kwargs['type_name']
         self.unit_name = kwargs['unit_name']
         self.type_abbreviation = kwargs['type_abbreviation']
@@ -49,16 +48,24 @@ class Cargo(object):
         self.economy_variations = {}
         for economy in registered_economies:
             if self.id in economy.cargos:
-                self.economy_variations[economy] = {}
+                self.economy_variations[economy] = {'numeric_id': economy.cargos.index(self.id)}
+
         # icon indices relate to position of icon in cargo icons spritesheet
         self.icon_indices = kwargs['icon_indices']
 
+    def get_numeric_id(self, economy):
+        return self.economy_variations[economy].get('numeric_id')
+
     def get_property(self, property_name, economy):
         # straightforward lookup of a property, doesn't try to handle failure case of property not found; don't look up props that don't exist
-        return self.economy_variations[economy].get(property_name)
+        if economy is not None and property_name in self.economy_variations[economy]:
+            return self.economy_variations[economy].get(property_name)
+        else:
+            return getattr(self, property_name)
 
-    def get_property_declaration(self, property_name):
-        return property_name + ': ' + getattr(self, property_name) + ';'
+    def get_property_declaration(self, property_name, economy=None):
+        value = self.get_property(property_name, economy)
+        return property_name + ': ' + str(value) + ';'
 
     def register(self):
         registered_cargos.append(self)
