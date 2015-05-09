@@ -19,7 +19,7 @@ from chameleon import PageTemplateLoader # chameleon used in most template cases
 templates = PageTemplateLoader(os.path.join(src_path, 'templates'), format='text')
 industry_templates = PageTemplateLoader(os.path.join(src_path, 'industries'), format='text')
 
-economies = global_constants.economies
+from economies import registered_economies
 from cargos import registered_cargos
 
 class Cargo(object):
@@ -47,7 +47,7 @@ class Cargo(object):
         self.capacity_multiplier = kwargs['capacity_multiplier']
         # not nml properties
         self.economy_variations = {}
-        for economy in economies:
+        for economy in registered_economies:
             self.add_economy_variation(economy)
         # icon indices relate to position of icon in cargo icons spritesheet
         self.icon_indices = kwargs['icon_indices']
@@ -67,5 +67,5 @@ class Cargo(object):
 
     def render_pnml(self):
         cargo_template = templates['cargo_props.pypnml']
-        templated_pnml = utils.unescape_chameleon_output(cargo_template(cargo=self, economies=economies))
+        templated_pnml = utils.unescape_chameleon_output(cargo_template(cargo=self, economies=registered_economies))
         return templated_pnml

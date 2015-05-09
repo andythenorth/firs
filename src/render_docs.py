@@ -48,7 +48,7 @@ import firs
 # default sort for docs is by id
 registered_cargos = sorted(firs.registered_cargos, key=lambda registered_cargos: registered_cargos.id)
 registered_industries = sorted(firs.registered_industries, key=lambda registered_industries: registered_industries.id)
-economies = global_constants.economies
+registered_economies = firs.registered_economies
 economy_schemas = {}
 
 class DocHelper(object):
@@ -88,7 +88,7 @@ class DocHelper(object):
         return set(result)
 
     def get_economies_sorted_by_name(self):
-        return sorted(economies, key=lambda economy: self.get_economy_name(economy))
+        return sorted(registered_economies, key=lambda economy: self.get_economy_name(economy))
 
     def get_registered_cargo_sorted_by_name(self):
         # cargos don't store the name as a python attr, but we often need to iterate over their names in A-Z order
@@ -184,7 +184,7 @@ def render_docs(doc_list, file_type, use_markdown=False):
         template = docs_templates[doc_name + '.pt'] # .pt is the conventional extension for chameleon page templates
         doc = template(registered_cargos=registered_cargos,
                        registered_industries=registered_industries,
-                       economies=economies,
+                       economies=registered_economies,
                        economy_schemas=economy_schemas,
                        global_constants=global_constants,
                        repo_vars=repo_vars,
@@ -213,7 +213,7 @@ def render_docs(doc_list, file_type, use_markdown=False):
 
 
 def main():
-    for economy in economies:
+    for economy in registered_economies:
         enabled_cargos = [cargo for cargo in registered_cargos if not cargo.economy_variations[economy.id].get('disabled')]
         enabled_industries = [industry for industry in registered_industries if industry.economy_variations[economy.id].enabled]
         economy_schemas[economy] = {'enabled_cargos':enabled_cargos, 'enabled_industries':enabled_industries}

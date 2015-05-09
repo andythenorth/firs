@@ -26,3 +26,5 @@ import cargos
 registered_cargos = cargos.registered_cargos
 import industries
 registered_industries = industries.registered_industries
+import economies
+registered_economies = economies.registered_economies
