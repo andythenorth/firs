@@ -21,7 +21,7 @@
 #endif
 
 switch (FEAT_INDUSTRIES, SELF, ${industry.id}_extra_text_non_debug, economy) {
-    <tal:build_economies repeat="economy global_constants.economies">
+    <tal:build_economies repeat="economy economies">
     ${repeat.economy.index}: string(${industry.get_property('extra_text_industry', economy)});
     </tal:build_economies>
 	return string(${industry.default_industry_properties.extra_text_industry});

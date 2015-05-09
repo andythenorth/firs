@@ -24,7 +24,7 @@ TILE_CHECK_FLAT      (tile2_flat_check, return CB_RESULT_LOCATION_DISALLOW, retu
 TILE_CHECK_WATERCLASS(tile2_land_check,     WATER_CLASS_NONE, ${industry.id}_tile2_flat_check, return CB_RESULT_LOCATION_DISALLOW)
 TILE_CHECK_WATERCLASS(tile2_location_check, WATER_CLASS_SEA,  ${industry.id}_tile2_flat_check, ${industry.id}_tile2_land_check)
 
-<tal:build_economies repeat="economy global_constants.economies">
+<tal:build_economies repeat="economy economies">
     if (economy==${repeat.economy.index}) {
         <tal:industry_on_or_off condition="industry.get_property('enabled', economy) == True">
         item(FEAT_INDUSTRYTILES, ${industry.id}_tile_1, ${global_constants.tile_numeric_ids[industry.id + '_tile_1']}) {

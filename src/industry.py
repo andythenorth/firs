@@ -21,6 +21,7 @@ from chameleon import PageTemplateLoader # chameleon used in most template cases
 templates = PageTemplateLoader(os.path.join(src_path, 'templates'), format='text')
 industry_templates = PageTemplateLoader(os.path.join(src_path, 'industries'), format='text')
 
+economies = global_constants.economies
 from industries import registered_industries
 
 def get_another_industry(id):
@@ -478,7 +479,7 @@ class Industry(object):
         self.intro_year = kwargs.get('intro_year', 0) # ! possibly should be variable by economy?
         self.expiry_year = kwargs.get('expiry_year', global_constants.max_game_date) #  ! possibly should be variable by economy?
         self.economy_variations = {}
-        for economy in global_constants.economies:
+        for economy in economies:
             self.add_economy_variation(economy)
         self.template = kwargs.get('template', None)
 
@@ -624,7 +625,7 @@ class Industry(object):
     def get_conditional_expressions_for_enabled_economies(self):
         # returns a string that can be used as the conditions in nml if() blocks for economy stuff
         enabled_economies = []
-        for i, economy in enumerate(global_constants.economies):
+        for i, economy in enumerate(economies):
             if self.economy_variations[economy].enabled:
                 enabled_economies.append('economy==' + str(i))
         return ' || '.join(enabled_economies)
@@ -645,7 +646,10 @@ class Industry(object):
 
     def render_pnml(self):
         industry_template = templates[self.template]
-        templated_pnml = utils.unescape_chameleon_output(industry_template(industry=self, global_constants=global_constants, utils=utils))
+        templated_pnml = utils.unescape_chameleon_output(industry_template(industry=self,
+                                                         global_constants=global_constants,
+                                                         economies=economies,
+                                                         utils=utils))
         return templated_pnml
 
 
