@@ -1,5 +1,6 @@
 from economy import Economy
 economy = Economy(id = "BASIC_TROPIC",
+                  # keep cargos alphabetised - bump the min. compatible version if list changed
                   cargos = ['bauxite',
                             'beans',
                             'chemicals',

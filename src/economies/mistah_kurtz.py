@@ -1,5 +1,6 @@
 from economy import Economy
 economy = Economy(id = "MISTAH_KURTZ",
+                  # keep cargos alphabetised - bump the min. compatible version if list changed
                   cargos = ['alcohol',
                             'building_materials',
                             'coffee',
