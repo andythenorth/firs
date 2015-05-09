@@ -13,10 +13,10 @@ disable_item(FEAT_CARGOS, 31, 31);
     cargo_icon_template(cargoicon_${cargo.id}, ${cargo.icon_indices[0]}, ${cargo.icon_indices[1]})
 
     <tal:economies repeat="economy economies">
-        if (economy==${repeat.economy.index}) {
-            <tal:cargo_props condition="cargo.id in economy.cargos">
+        <tal:cargo_props condition="cargo.id in economy.cargos">
+            if (economy==${repeat.economy.index}) {
                 <tal:include metal:use-macro="load: cargo_props.pynml" />
-            </tal:cargo_props>
-        }
+            }
+        </tal:cargo_props>
     </tal:economies>
 </tal:cargos>
