@@ -21,6 +21,7 @@ import utils
 import firs
 registered_cargos = firs.registered_cargos
 registered_industries = firs.registered_industries
+economies = global_constants.economies
 
 from chameleon import PageTemplateLoader # chameleon used in most template cases
 # setup the places we look for templates
@@ -55,7 +56,7 @@ def main():
         template = templates[header_item + '.pypnml']
         templated_pnml = utils.unescape_chameleon_output(template(registered_industries=registered_industries,
                                                                   global_constants=global_constants,
-                                                                  economies=global_constants.economies,
+                                                                  economies=economies,
                                                                   utils=utils,
                                                                   sys=sys,
                                                                   generated_pnml_path=generated_pnml_path))
@@ -67,7 +68,7 @@ def main():
 
     template = templates['registered_cargos.pypnml']
     templated_pnml = utils.unescape_chameleon_output(template(registered_cargos=registered_cargos,
-                                                              economies=global_constants.economies,
+                                                              economies=economies,
                                                               global_constants=global_constants))
     # save the results of templating
     pnml = codecs.open(os.path.join(generated_pnml_path, 'registered_cargos.pnml'), 'w','utf8')

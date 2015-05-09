@@ -48,6 +48,7 @@ import firs
 # default sort for docs is by id
 registered_cargos = sorted(firs.registered_cargos, key=lambda registered_cargos: registered_cargos.id)
 registered_industries = sorted(firs.registered_industries, key=lambda registered_industries: registered_industries.id)
+economies = global_constants.economies
 economy_schemas = {}
 
 class DocHelper(object):
@@ -87,7 +88,7 @@ class DocHelper(object):
         return set(result)
 
     def get_economies_sorted_by_name(self):
-        return sorted(global_constants.economies, key=lambda economy: self.get_economy_name(economy))
+        return sorted(economies, key=lambda economy: self.get_economy_name(economy))
 
     def get_registered_cargo_sorted_by_name(self):
         # cargos don't store the name as a python attr, but we often need to iterate over their names in A-Z order
@@ -181,14 +182,26 @@ class DocHelper(object):
 def render_docs(doc_list, file_type, use_markdown=False):
     for doc_name in doc_list:
         template = docs_templates[doc_name + '.pt'] # .pt is the conventional extension for chameleon page templates
-        doc = template(registered_cargos=registered_cargos, registered_industries=registered_industries,
-                              economy_schemas=economy_schemas, global_constants=global_constants, repo_vars=repo_vars,
-                              metadata=metadata, utils=utils, doc_helper=DocHelper(), doc_name=doc_name)
+        doc = template(registered_cargos=registered_cargos,
+                       registered_industries=registered_industries,
+                       economies=economies,
+                       economy_schemas=economy_schemas,
+                       global_constants=global_constants,
+                       repo_vars=repo_vars,
+                       metadata=metadata,
+                       utils=utils,
+                       doc_helper=DocHelper(),
+                       doc_name=doc_name)
         if use_markdown:
             # the doc might be in markdown format, if so we need to render markdown to html, and wrap the result in some boilerplate html
             markdown_wrapper = docs_templates['markdown_wrapper.pt']
-            doc = markdown_wrapper(content=markdown.markdown(doc), global_constants=global_constants, repo_vars=repo_vars,
-                              metadata=metadata, utils=utils, doc_helper=DocHelper(), doc_name=doc_name)
+            doc = markdown_wrapper(content=markdown.markdown(doc),
+                                   global_constants=global_constants,
+                                   repo_vars=repo_vars,
+                                   metadata=metadata,
+                                   utils=utils,
+                                   doc_helper=DocHelper(),
+                                   doc_name=doc_name)
         if file_type == 'html':
             subdir = 'html'
         else:
@@ -200,7 +213,7 @@ def render_docs(doc_list, file_type, use_markdown=False):
 
 
 def main():
-    for economy in global_constants.economies:
+    for economy in economies:
         enabled_cargos = [cargo for cargo in registered_cargos if not cargo.economy_variations[economy].get('disabled')]
         enabled_industries = [industry for industry in registered_industries if industry.economy_variations[economy].enabled]
         economy_schemas[economy] = {'enabled_cargos':enabled_cargos, 'enabled_industries':enabled_industries}
