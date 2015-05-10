@@ -17,105 +17,105 @@
  * *************************************************/
 
 TILE_DISALLOW_NEARBY_CLASS(tile_nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
-TILE_ALLOW_PLAYER         (tile_player_check, THIS_ID(tile_nearby_industry))
-TILE_DISALLOW_SLOPES      (tile_location_check, CB_RESULT_LOCATION_DISALLOW, THIS_ID(tile_player_check))
+TILE_ALLOW_PLAYER         (tile_player_check, ${industry.id}_tile_nearby_industry)
+TILE_DISALLOW_SLOPES      (tile_location_check, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_tile_player_check)
 
-item(FEAT_INDUSTRYTILES, THIS_ID(tile_1), 91) {
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile_1, 91) {
 	property {
 		substitute: 91;
 		override: 91;
 		accepted_cargos: [[ENSP, 8]];
 	}
 	graphics {
-		tile_check: THIS_ID(tile_location_check);
+		tile_check: ${industry.id}_tile_location_check;
 	}
 }
 
-item(FEAT_INDUSTRYTILES, THIS_ID(tile_2), 92) {
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile_2, 92) {
 	property {
 		substitute: 92;
 		override: 92;
 		accepted_cargos: [[ENSP, 8]];
 	}
 	graphics {
-		tile_check: THIS_ID(tile_location_check);
+		tile_check: ${industry.id}_tile_location_check;
 	}
 }
 
-item(FEAT_INDUSTRYTILES, THIS_ID(tile_3), 93) {
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile_3, 93) {
 	property {
 		substitute: 93;
 		override: 93;
 		accepted_cargos: [[ENSP, 8]];
 	}
 	graphics {
-		tile_check: THIS_ID(tile_location_check);
+		tile_check: ${industry.id}_tile_location_check;
 	}
 }
 
-item(FEAT_INDUSTRYTILES, THIS_ID(tile_4), 94) {
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile_4, 94) {
 	property {
 		substitute: 94;
 		override: 94;
 		accepted_cargos: [[ENSP, 8]];
 	}
 	graphics {
-		tile_check: THIS_ID(tile_location_check);
+		tile_check: ${industry.id}_tile_location_check;
 	}
 }
 
-item(FEAT_INDUSTRYTILES, THIS_ID(tile_5), 95) {
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile_5, 95) {
 	property {
 		substitute: 95;
 		override: 95;
 		accepted_cargos: [[ENSP, 8]];
 	}
 	graphics {
-		tile_check: THIS_ID(tile_location_check);
+		tile_check: ${industry.id}_tile_location_check;
 	}
 }
 
-item(FEAT_INDUSTRYTILES, THIS_ID(tile_6), 96) {
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile_6, 96) {
 	property {
 		substitute: 96;
 		override: 96;
 		accepted_cargos: [[ENSP, 8]];
 	}
 	graphics {
-		tile_check: THIS_ID(tile_location_check);
+		tile_check: ${industry.id}_tile_location_check;
 	}
 }
 
-item(FEAT_INDUSTRYTILES, THIS_ID(tile_7), 97) {
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile_7, 97) {
 	property {
 		substitute: 97;
 		override: 97;
 		accepted_cargos: [[ENSP, 8]];
 	}
 	graphics {
-		tile_check: THIS_ID(tile_location_check);
+		tile_check: ${industry.id}_tile_location_check;
 	}
 }
 
-item(FEAT_INDUSTRYTILES, THIS_ID(tile_8), 98) {
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile_8, 98) {
 	property {
 		substitute: 98;
 		override: 98;
 		accepted_cargos: [[ENSP, 8]];
 	}
 	graphics {
-		tile_check: THIS_ID(tile_location_check);
+		tile_check: ${industry.id}_tile_location_check;
 	}
 }
 
-item(FEAT_INDUSTRYTILES, THIS_ID(tile_9), 99) {
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile_9, 99) {
 	property {
 		substitute: 99;
 		override: 99;
 		accepted_cargos: [[ENSP, 8]];
 	}
 	graphics {
-		tile_check: THIS_ID(tile_location_check);
+		tile_check: ${industry.id}_tile_location_check;
 	}
 }
 
@@ -135,14 +135,14 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_9), 99) {
 
 item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
 	graphics {
-		produce_cargo_arrival:   THIS_ID(produce);
-		construction_probability:THIS_ID(check_availability);
-		location_check:          THIS_ID(check_location);
-		produce_256_ticks:       THIS_ID(produce_256_ticks);
-		monthly_prod_change:     THIS_ID(monthly_update);
+		produce_cargo_arrival:   ${industry.id}_produce;
+		construction_probability:${industry.id}_check_availability;
+		location_check:          ${industry.id}_check_location;
+		produce_256_ticks:       ${industry.id}_produce_256_ticks;
+		monthly_prod_change:     ${industry.id}_monthly_update;
         random_prod_change:      return CB_RESULT_IND_PROD_NO_CHANGE;
 		build_prod_change:       randomise_primary_production_on_build;
-		extra_text_industry:     THIS_ID(extra_text);
+		extra_text_industry:     ${industry.id}_extra_text;
 		colour:                  switch_colour;
 	}
 }
