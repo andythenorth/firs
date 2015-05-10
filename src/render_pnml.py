@@ -51,7 +51,7 @@ def render_industry(industry):
 
 def main():
     start = time()
-    header_items = ['defines', 'checks','conditions','header','firs','parameters']
+    header_items = ['defines', 'checks','header','firs','parameters']
     for header_item in header_items:
         template = templates[header_item + '.pypnml']
         templated_pnml = utils.unescape_chameleon_output(template(registered_industries=registered_industries,
