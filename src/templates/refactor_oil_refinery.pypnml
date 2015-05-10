@@ -102,7 +102,7 @@ item(FEAT_INDUSTRYTILES, ${industry.id}_tile_6, 23) {
 #define THIS_BOOST_31             0
 #define THIS_BOOST_32             0
 
-#include "../../src/templates/produce_secondary.pnml"
+<tal:include metal:use-macro="load: produce_secondary.pypnml" />
 
 <tal:include metal:use-macro="load: extra_text_secondary.pynml" />
 

@@ -115,7 +115,7 @@ item(FEAT_INDUSTRYTILES, ${industry.id}_tile_2, TILE_FISHINGHARBOUR_2) {
 CHECK_NEARBY_CLUSTER(fishing_grounds, 16, 60, 5, 4, return CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
 CHECK_FOUNDER       (check_location, ${industry.id}_fishing_grounds)
 
-#include "../../src/templates/produce_secondary.pnml"
+<tal:include metal:use-macro="load: produce_secondary.pypnml" />
 
 <tal:include metal:use-macro="load: extra_text_secondary.pynml" />
 

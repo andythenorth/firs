@@ -114,7 +114,7 @@ item(FEAT_INDUSTRYTILES, item_FEAT_INDUSTRYTILES_15, 15) {
 #define THIS_BOOST_31             0
 #define THIS_BOOST_32             0
 
-#include "../../src/templates/produce_secondary.pnml"
+<tal:include metal:use-macro="load: produce_secondary.pypnml" />
 
 <tal:include metal:use-macro="load: industry_location_checks.pynml" />
 

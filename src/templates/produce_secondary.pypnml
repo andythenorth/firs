@@ -47,7 +47,7 @@
 #define var_received_timely_2       1
 #define var_received_timely_3       2
 
-produce (THIS_ID(simple_produce), waiting_cargo_1, waiting_cargo_2, waiting_cargo_3,
+produce (${industry.id}_simple_produce, waiting_cargo_1, waiting_cargo_2, waiting_cargo_3,
 			LOAD_PERM(var_leftover_cargo_1) / MAX_SUM_PROD_RATIO / THIS_NUM_OUTPUT_CARGOS * LOAD_PERM(var_ratio_cargo_1) +
 			LOAD_PERM(var_leftover_cargo_2) / MAX_SUM_PROD_RATIO / THIS_NUM_OUTPUT_CARGOS * LOAD_PERM(var_ratio_cargo_2) +
 			LOAD_PERM(var_leftover_cargo_3) / MAX_SUM_PROD_RATIO / THIS_NUM_OUTPUT_CARGOS * LOAD_PERM(var_ratio_cargo_3),
@@ -64,7 +64,7 @@ produce (THIS_ID(simple_produce), waiting_cargo_1, waiting_cargo_2, waiting_carg
 			]
 );
 
-switch (FEAT_INDUSTRIES, SELF, THIS_ID(produce),
+switch (FEAT_INDUSTRIES, SELF, ${industry.id}_produce,
 			[
 			/* Update the 'last delivery date' for the three input cargos */
 			STORE_PERM( max(LOAD_PERM(var_date_received_1),(waiting_cargo_1 > 0) * current_date), var_date_received_1),
@@ -107,7 +107,7 @@ switch (FEAT_INDUSTRIES, SELF, THIS_ID(produce),
 
 			1
 			]) {
-	THIS_ID(simple_produce);
+	${industry.id}_simple_produce;
 }
 
 #undef MAX_SUM_PROD_RATIO
