@@ -10,7 +10,10 @@ disable_item(FEAT_CARGOS, 0, 29);
 disable_item(FEAT_CARGOS, 31, 31);
 
 <tal:cargos repeat="cargo registered_cargos">
-    cargo_icon_template(cargoicon_${cargo.id}, ${cargo.icon_indices[0]}, ${cargo.icon_indices[1]})
+    spriteset(cargoicon_${cargo.id}) {
+        [10 + 20 * ${cargo.icon_indices[0]}, 10 + 20 * ${cargo.icon_indices[1]}, 10, 10, 0, 0, "src/graphics/other/cargoicons.png"]
+    }
+
 
     <tal:economies repeat="economy economies">
         <tal:cargo_props condition="cargo.id in economy.cargos">
