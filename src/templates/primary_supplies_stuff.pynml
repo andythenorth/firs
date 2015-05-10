@@ -15,12 +15,5 @@
 #define SUPPLY_BOOST_DOUBLE     ${industry.supply_requirements[0]}
 #define SUPPLY_BOOST_QUADRUPLE  ${industry.supply_requirements[1]}
 
-/* extra text */
-switch(FEAT_INDUSTRIES, SELF, THIS_ID(extra_text), LOAD_PERM(var_current_supplies_prod_factor)) {
-	3: return string(STR_${industry.supply_requirements[2]}_PRODUCTION_4X, ${industry.supply_requirements[1]});
-	1: return string(STR_${industry.supply_requirements[2]}_PRODUCTION_2X, ${industry.supply_requirements[0]}, ${industry.supply_requirements[1]});
-	return string(STR_${industry.supply_requirements[2]}_PRODUCTION_1X, ${industry.supply_requirements[0]}, ${industry.supply_requirements[1]});
-}
-
 #include "../../src/templates/produce_primary.pnml"
 #include "../../src/templates/check_primary_production_level.pnml"

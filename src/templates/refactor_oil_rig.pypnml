@@ -51,6 +51,8 @@ CHECK_COAST_DISTANCE(coastal_distance, 0, param_max_coastal_distance, CB_RESULT_
 CHECK_INCOMPATIBLE  (oil_refinery,    16, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_coastal_distance)
 CHECK_FOUNDER       (check_location, ${industry.id}_oil_refinery)
 
+<tal:include metal:use-macro="load: extra_text_primary.pynml" />
+
 <tal:include metal:use-macro="load: primary_supplies_stuff.pynml" />
 
 <tal:include metal:use-macro="load: check_availability.pynml" />

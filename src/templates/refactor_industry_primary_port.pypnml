@@ -70,6 +70,8 @@ item(FEAT_INDUSTRYTILES, ${industry.id}_tile_2, ${global_constants.tile_numeric_
  * Definition of the industry
  * *************************************************/
 
+<tal:include metal:use-macro="load: extra_text_primary.pynml" />
+
 <tal:include metal:use-macro="load: primary_supplies_stuff.pynml" />
 
 <tal:include metal:use-macro="load: check_availability.pynml" />

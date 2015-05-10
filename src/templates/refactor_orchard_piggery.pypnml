@@ -282,6 +282,8 @@ item(FEAT_INDUSTRYTILES, ${industry.id}_tile_buildings, TILE_ORCHARD_PIGGERY_2) 
 
 <tal:include metal:use-macro="load: industry_location_checks.pynml" />
 
+<tal:include metal:use-macro="load: extra_text_primary.pynml" />
+
 <tal:include metal:use-macro="load: primary_supplies_stuff.pynml" />
 
 <tal:include metal:use-macro="load: check_availability.pynml" />
