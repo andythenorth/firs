@@ -5,25 +5,13 @@
  * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS industry set. If not, see <http://www.gnu.org/licenses/>.
  */
 
-// for each industry
-#undef THIS_ID
-
-// from secondary production template
-#undef THIS_NUM_OUTPUT_CARGOS
-#undef THIS_PROD_RATIO_CARGO1
-#undef THIS_PROD_RATIO_CARGO2
-#undef THIS_PROD_RATIO_CARGO3
-#undef THIS_BOOST_12
-#undef THIS_BOOST_13
-#undef THIS_BOOST_21
-#undef THIS_BOOST_23
-#undef THIS_BOOST_31
-#undef THIS_BOOST_32
-
-/* from extra text template for secondary industries */
-#undef THIS_STR_EXTRA_TEXT
-
-/* from extra text template for primary industries */
-#undef THIS_STR_EXTRA_SUPPLIES
-/* from extra text template for blackhole industries */
-#undef THIS_STR_EXTRA_NORMAL
+/* First fill the stack for the string parameters before actually
+ * returning the string
+ */
+switch (FEAT_INDUSTRIES, SELF, switch_extra_text_debug, [
+			STORE_TEMP(produced_this_month_1,256),
+			STORE_TEMP(produced_this_month_2,257),
+			STORE_TEMP(current_date - max( max(LOAD_PERM(var_date_received_1), LOAD_PERM(var_date_received_2)), LOAD_PERM(var_date_received_3)), 258)
+			]) {
+	return string(STR_EXTRA_TEXT_DEBUG_SECONDARY);
+}
