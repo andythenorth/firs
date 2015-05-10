@@ -15,25 +15,25 @@
  */
 
 /* Check for restriction via parameter */
-switch(FEAT_INDUSTRIES, SELF, THIS_ID(check_availability_param), restrict_open_during_gameplay) {
+switch(FEAT_INDUSTRIES, SELF, ${industry.id}_check_availability_param, restrict_open_during_gameplay) {
 	1..255: return CB_RESULT_IND_NO_CONSTRUCTION;         // disallow when restrictions in place
 	return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;       // we may build
 }
 
 /* Allow always during map gen */
-switch (FEAT_INDUSTRIES, SELF, THIS_ID(check_map_gen), extra_callback_info2 == IND_CREATION_GENERATION) {
+switch (FEAT_INDUSTRIES, SELF, ${industry.id}_check_map_gen, extra_callback_info2 == IND_CREATION_GENERATION) {
 	1: return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
-	THIS_ID(check_availability_param);
+	${industry.id}_check_availability_param;
 }
 /* Allow always in the scenario editor */
-switch (FEAT_INDUSTRIES, SELF, THIS_ID(available_game_mode), game_mode == GAMEMODE_GAME) {
-	1: THIS_ID(check_map_gen);
+switch (FEAT_INDUSTRIES, SELF, ${industry.id}_available_game_mode, game_mode == GAMEMODE_GAME) {
+	1: ${industry.id}_check_map_gen;
 	return CB_RESULT_IND_PROBABILITY_FROM_PROPERTY;
 }
 
 /* Allow only within the availability years */
-switch (FEAT_INDUSTRIES, SELF, THIS_ID(check_availability), current_date) {
-	date(${industry.intro_year},1,1) .. date(${industry.expiry_year},12,31): THIS_ID(available_game_mode);
+switch (FEAT_INDUSTRIES, SELF, ${industry.id}_check_availability, current_date) {
+	date(${industry.intro_year},1,1) .. date(${industry.expiry_year},12,31): ${industry.id}_available_game_mode;
 	return CB_RESULT_IND_NO_CONSTRUCTION;
 }
 

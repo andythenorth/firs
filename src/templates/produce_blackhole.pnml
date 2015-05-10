@@ -5,7 +5,7 @@
  * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS industry set. If not, see <http://www.gnu.org/licenses/>.
  */
 
-produce(THIS_ID(production), 9999, 9999, 9999, 0, 0, 0);
+produce(${industry.id}_production, 9999, 9999, 9999, 0, 0, 0);
 
 switch(FEAT_INDUSTRIES, SELF, THIS_ID(produce),
 			[
@@ -16,5 +16,5 @@ switch(FEAT_INDUSTRIES, SELF, THIS_ID(produce),
 
 			1
 			]) {
-	THIS_ID(production);
+	${industry.id}_production;
 }

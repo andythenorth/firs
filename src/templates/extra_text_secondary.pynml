@@ -23,7 +23,7 @@ switch (FEAT_INDUSTRIES, SELF, ${industry.id}_extra_text_non_debug, economy) {
 	return string(${industry.default_industry_properties.extra_text_industry});
 }
 
-switch (FEAT_INDUSTRIES, SELF, THIS_ID(extra_text), [
+switch (FEAT_INDUSTRIES, SELF, ${industry.id}_extra_text, [
 			show_debug_texts
 			]) {
 	1: switch_extra_text_debug;
