@@ -5,6 +5,13 @@
  * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
  */
 
+/*
+   I had a look at this May 2015 to see if it could be removed, as it was only used by Forest.
+   I tested making all spritelayouts slope aware, but there are multiple problems with that, including
+   - conflict with foundations: sprite position, also looks weird
+   - farm fenced tiles would need sloped fences drawing
+*/
+
 /* Defines a sloped, ground aware spritelayout for an industry tile.
  * Ground sprite overlays and buildings must be defined separately.
  *
