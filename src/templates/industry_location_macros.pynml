@@ -26,7 +26,7 @@
     }
     <!--! Both types of layouts can appear between 1870 and 1900.
           Update the docs if changing graphics dates -->
-    switch (FEAT_INDUSTRIES, SELF, ${industry.id}_${switch_entry_point}, current_year) {
+    switch (FEAT_INDUSTRIES, SELF, ${switch_entry_point}, current_year) {
         0..1869:    ${industry.id}_windmill_layout_only;
         1870..1900: ${switch_result};
         ${industry.id}_brick_layouts_only;

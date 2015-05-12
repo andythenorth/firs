@@ -60,7 +60,7 @@ item(FEAT_INDUSTRYTILES, ${industry.id}_tile, TILE_RECYCLINGDEPOT_1) {
 
 CHECK_INCOMPATIBLE  (${industry.id}_recycling_plant, recycling_plant, 16, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
 CHECK_INCOMPATIBLE  (${industry.id}_recycling_depot, recycling_depot, 20, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_recycling_plant)
-CHECK_INDUSTRY_TOWN_COUNT   (check_location, recycling_depot, 0, 0, string(STR_ERR_LOCATION_LIMIT_1_PER_TOWN), ${industry.id}_recycling_depot)
+CHECK_INDUSTRY_TOWN_COUNT   (${industry.id}_check_location, recycling_depot, 0, 0, string(STR_ERR_LOCATION_LIMIT_1_PER_TOWN), ${industry.id}_recycling_depot)
 /* Don't use founder check for this industry, there is a hard limit of 1 per town irrespective of funding type */
 
 <tal:include metal:use-macro="load: check_availability.pynml" />

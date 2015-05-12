@@ -340,8 +340,8 @@ tilelayout tilelayout_fishing_grounds_4 {
 
 CHECK_NEARBY_CLUSTER(${industry.id}_fishing_grounds, fishing_grounds,  16, 60, 3, 4, return CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
 CHECK_INCOMPATIBLE  (${industry.id}_fishing_harbour, fishing_harbour,  16, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_fishing_grounds)
-CHECK_COAST_DISTANCE(coastal_distance, 0, param_max_coastal_distance, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_fishing_harbour)
-CHECK_FOUNDER       (check_location, ${industry.id}_coastal_distance)
+CHECK_COAST_DISTANCE(${industry.id}_coastal_distance, 0, param_max_coastal_distance, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_fishing_harbour)
+CHECK_FOUNDER       (${industry.id}_check_location, ${industry.id}_coastal_distance)
 
 <tal:include metal:use-macro="load: check_availability.pynml" />
 

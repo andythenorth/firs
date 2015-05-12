@@ -350,7 +350,7 @@ item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
 	graphics {
 		produce_cargo_arrival:   THIS_ID(produce);
 		construction_probability:THIS_ID(check_availability);
-		location_check:          THIS_ID(check_location);
+		location_check:          ${industry.id}_check_location;
 		produce_256_ticks:       THIS_ID(produce_256_ticks);
 		monthly_prod_change:     THIS_ID(monthly_update);
         random_prod_change:      return CB_RESULT_IND_PROD_NO_CHANGE;
