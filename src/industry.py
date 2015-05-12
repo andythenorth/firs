@@ -343,10 +343,11 @@ class IndustryLocationChecks(object):
             result.append(IndustryLocationCheckIncompatible(industry_type, distance))
         prev = None
         for lc in reversed(result):
+            lc.switch_entry_point = switch_prefix + lc.switch_entry_point
             if prev is not None:
-                lc.switch_result = switch_prefix + prev.switch_entry_point
+                lc.switch_result = prev.switch_entry_point
             prev = lc
-        result[0].switch_entry_point='check_location'
+        result[0].switch_entry_point = switch_prefix + 'check_location'
         return list(reversed(result))
 
 
@@ -373,7 +374,7 @@ class IndustryLocationCheckRequireCluster(object):
         self.switch_entry_point = str(self.industry_type_numeric_id)
 
     def render(self, **kwargs):
-        return 'CHECK_NEARBY_CLUSTER(' + str(self.industry_type_numeric_id) + ', ' +  ','.join([str(i) for i in self.arbitrary_numbers]) + ',' + 'return CB_RESULT_LOCATION_DISALLOW,' + self.switch_result + ')'
+        return 'CHECK_NEARBY_CLUSTER(' + self.switch_entry_point + ', ' + str(self.industry_type_numeric_id) + ', ' +  ','.join([str(i) for i in self.arbitrary_numbers]) + ',' + 'return CB_RESULT_LOCATION_DISALLOW,' + self.switch_result + ')'
 
 
 class IndustryLocationCheckIncompatible(object):
@@ -387,7 +388,7 @@ class IndustryLocationCheckIncompatible(object):
         self.switch_entry_point = str(self.industry_type_numeric_id)
 
     def render(self, **kwargs):
-        return 'CHECK_INCOMPATIBLE (' + str(self.industry_type_numeric_id) + ', ' + str(self.distance) + ', CB_RESULT_LOCATION_DISALLOW, ' + self.switch_result + ')'
+        return 'CHECK_INCOMPATIBLE(' + self.switch_entry_point + ', ' + str(self.industry_type_numeric_id) + ', ' + str(self.distance) + ', CB_RESULT_LOCATION_DISALLOW, ' + self.switch_result + ')'
 
 
 class IndustryLocationCheckFounder(object):

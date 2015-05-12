@@ -48,7 +48,7 @@ item(FEAT_INDUSTRYTILES, ${industry.id}_tile_4, 28) {
  * *************************************************/
 
 CHECK_COAST_DISTANCE(coastal_distance, 0, param_max_coastal_distance, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
-CHECK_INCOMPATIBLE  (oil_refinery,    16, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_coastal_distance)
+CHECK_INCOMPATIBLE  (oil_refinery, oil_refinery,    16, CB_RESULT_LOCATION_DISALLOW, ${industry.id}_coastal_distance)
 CHECK_FOUNDER       (check_location, ${industry.id}_oil_refinery)
 
 <tal:include metal:use-macro="load: extra_text_primary.pynml" />
