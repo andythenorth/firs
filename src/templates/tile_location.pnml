@@ -28,10 +28,10 @@
  *
  * List of templates:
  * TILE_CHECK_HEIGHT         (name, minh, maxh,  inrange, outrange)
- * TILE_CHECK_WATERCLASS     (name, class,       yes,     no)
  * TILE_CHECK_WATER          (name,              water,   land)
  * TILE_CHECK_FLAT           (name,              flat,    sloped)
  *
+ * TILE_REQUIRE_SEA          (name,                       next)
  * TILE_DISALLOW_COAST       (name,              errtext, next)
  * TILE_DISALLOW_TERRAIN     (name, terraintype, errtext, next)
  * TILE_DISALLOW_NEARBY_CLASS(name, class,       errtext, next)
@@ -78,10 +78,11 @@ switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(name), UCMP(nearby_tile_height(0, 0) - 
  *        where <value> is a string, CB_RESULT_LOCATION_DISALLOW or CB_RESULT_LOCATION_ALLOW
  */
 
-#define TILE_CHECK_WATERCLASS(name, class, yes, no) \
-switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(name), nearby_tile_water_class(0,0) == class) { \
-	1: yes; \
-	no; \
+#define TILE_REQUIRE_SEA(name, next) \
+switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(name), nearby_tile_water_class(0,0)) { \
+	WATER_CLASS_SEA: next; \
+	WATER_CLASS_NONE: next; \
+	return CB_RESULT_LOCATION_DISALLOW; \
 }
 
 /*

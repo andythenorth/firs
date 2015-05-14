@@ -77,18 +77,23 @@ class Tile(object):
 class TileLocationChecks(object):
     """ Class to hold location checks for a tile """
     def __init__(self, **kwargs):
+        self.always_allow_founder = kwargs.get('always_allow_founder', True) # occasionally this needs to be set False, e.g. for tiles that demand specific land shape
         self.disallow_slopes = kwargs.get('disallow_slopes', False)
         self.disallow_steep_slopes = kwargs.get('disallow_steep_slopes', False)
         self.disallow_industry_adjacent = kwargs.get('disallow_industry_adjacent', False)
         self.require_houses_nearby = kwargs.get('require_houses_nearby', False)
         self.require_road_adjacent = kwargs.get('require_road_adjacent', []) # any of ['nw', 'ne', 'se', 'nw']
+        self.require_coast = kwargs.get('require_coast', False)
         self.disallow_above_snowline = kwargs.get('disallow_above_snowline', False)
         self.disallow_desert = kwargs.get('disallow_desert', False)
         self.disallow_coast = kwargs.get('disallow_coast', False)
 
     def get_render_tree(self, tile_id, industry_id):
         switch_prefix = tile_id + '_lc_'
-        result = deque([TileLocationCheckFounder()])
+        result = deque([])
+
+        if self.always_allow_founder:
+            result.appendleft(TileLocationCheckFounder())
 
         if self.disallow_slopes:
             result.appendleft(TileLocationCheckDisallowSlopes())
@@ -98,6 +103,10 @@ class TileLocationChecks(object):
 
         if self.disallow_industry_adjacent:
             result.append(TileLocationCheckDisallowIndustryAdjacent())
+
+        if self.require_coast:
+            result.append(TileLocationCheckRequireSea())
+            result.append(TileLocationCheckRequireSlope())
 
         if self.require_houses_nearby:
             # !! possibly could be done simpler with a town zone check instead of a tile search
@@ -186,6 +195,24 @@ class TileLocationCheckRequireRoadAdjacent(object):
     def render(self):
         x_y_string = ','.join([str(offset) for offset in self.direction_map[self.direction]])
         return 'CHECK_ROAD_ADJACENT(' + self.switch_entry_point + ', ' + x_y_string + ',' + self.switch_result + ')'
+
+
+class TileLocationCheckRequireSea(object):
+    def __init__(self):
+        self.switch_result = 'return CB_RESULT_LOCATION_ALLOW' # default result, value may also be id for next switch
+        self.switch_entry_point = None
+
+    def render(self):
+        return 'TILE_REQUIRE_SEA(' + self.switch_entry_point + ', ' + self.switch_result + ')'
+
+
+class TileLocationCheckRequireSlope(object):
+    def __init__(self):
+        self.switch_result = 'return CB_RESULT_LOCATION_ALLOW' # default result, value may also be id for next switch
+        self.switch_entry_point = None
+
+    def render(self):
+        return 'TILE_CHECK_FLAT(' + self.switch_entry_point + ', return CB_RESULT_LOCATION_DISALLOW, ' + self.switch_result + ')'
 
 
 class TileLocationCheckDisallowDesert(object):

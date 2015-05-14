@@ -34,8 +34,9 @@ industry.economy_variations['MISTAH_KURTZ'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].accept_cargo_types = ['DIAM', 'JAVA', 'RUBR']
 industry.economy_variations['MISTAH_KURTZ'].prod_cargo_types = ['GOOD', 'FMSP']
 
-industry.add_tile(id='trading_post_tile')
-
+industry.add_tile(id='trading_post_tile_2',
+                  location_checks=TileLocationChecks(always_allow_founder=False,
+                                                     require_coast=True))
 sprite_ground = industry.add_sprite(
     sprite_number = 'GROUNDSPRITE_WATER'
 )

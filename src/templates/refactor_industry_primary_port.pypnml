@@ -13,16 +13,11 @@
 
 <tal:include metal:use-macro="load: graphics_switches.pynml" />
 
+<tal:include metal:use-macro="load: tile_location_checks.pynml" />
+
 /* *************************************************
  * Definition of the industry tile and its callbacks
  * *************************************************/
-
-/* It must not be a flat tile */
-TILE_CHECK_FLAT      (tile2_flat_check, return CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
-
-/* We allow on sea shores and on normal slopes - but not rivers and canals */
-TILE_CHECK_WATERCLASS(tile2_land_check,     WATER_CLASS_NONE, ${industry.id}_tile2_flat_check, return CB_RESULT_LOCATION_DISALLOW)
-TILE_CHECK_WATERCLASS(tile2_location_check, WATER_CLASS_SEA,  ${industry.id}_tile2_flat_check, ${industry.id}_tile2_land_check)
 
 <tal:build_economies repeat="economy economies">
     if (economy==${repeat.economy.index}) {
@@ -56,7 +51,7 @@ item(FEAT_INDUSTRYTILES, ${industry.id}_tile_1, ${global_constants.tile_numeric_
 item(FEAT_INDUSTRYTILES, ${industry.id}_tile_2, ${global_constants.tile_numeric_ids[industry.id + '_tile_2']}) {
 	graphics {
 		foundations: return CB_RESULT_NO_FOUNDATIONS;
-		tile_check:  ${industry.id}_tile2_location_check;
+        tile_check: ${industry.id}_${industry.id}_tile_2_lc_0; <!--! double ID jank because...reasons -->
 		${industry.id}_tile_fences;
 	}
 }
