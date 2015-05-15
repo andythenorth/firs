@@ -10,10 +10,15 @@
         }
 
         graphics {
-    		tile_check: ${industry.id}_${tile.id}_lc_0;
+    		<tal:tile_check_location condition="len(tile.location_checks.get_render_tree(tile.id, industry.id)) > 0">
+    		    tile_check: ${industry.id}_${tile.id}_lc_0;
+            </tal:tile_check_location>
     		<tal:anim_control condition="tile.custom_animation_control is not None">
     		    anim_control: ${tile.id}_anim_control;
     		</tal:anim_control>
+    		<tal:foundations condition="tile.foundations is not None">
+                foundations: ${tile.foundations};
+            </tal:foundations>
             ${industry.id}_tile_fences;
         }
     }

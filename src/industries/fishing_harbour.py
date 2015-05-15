@@ -37,6 +37,7 @@ industry.economy_variations['BASIC_ARCTIC'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
 
 industry.add_tile(id='fishing_harbour_tile_2',
+                  foundations='return CB_RESULT_NO_FOUNDATIONS',
                   location_checks=TileLocationChecks(always_allow_founder=False,
                                                      require_coast=True))
 

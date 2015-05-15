@@ -55,7 +55,10 @@ industry.economy_variations['MISTAH_KURTZ'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].accept_cargo_types = ['WOOD', 'FICR', 'FRUT']
 industry.economy_variations['MISTAH_KURTZ'].prod_cargo_types = ['ENSP', 'MNSP']
 
+industry.add_tile(id='port_tile_1',
+                  location_checks=TileLocationChecks(always_allow_founder=False))
 industry.add_tile(id='port_tile_2',
+                  foundations='return CB_RESULT_NO_FOUNDATIONS',
                   location_checks=TileLocationChecks(always_allow_founder=False,
                                                      require_coast=True))
 sprite_ground = industry.add_sprite(

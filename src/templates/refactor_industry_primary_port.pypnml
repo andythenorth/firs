@@ -7,6 +7,10 @@
 
 #define THIS_ID(...) ${industry.id}_ ## __VA_ARGS__
 
+/* ******************************************************************
+ * Definition of the industry tile, its callbacks, and graphics chain
+ * ******************************************************************/
+
 <tal:include metal:use-macro="load: spritesets.pynml" />
 
 <tal:include metal:use-macro="load: spritelayouts.pynml" />
@@ -15,55 +19,16 @@
 
 <tal:include metal:use-macro="load: tile_location_checks.pynml" />
 
-/* *************************************************
- * Definition of the industry tile and its callbacks
- * *************************************************/
+<tal:include metal:use-macro="load: tile_animation_switches.pynml" />
 
-<tal:build_economies repeat="economy economies">
-    if (economy==${repeat.economy.index}) {
-        <tal:industry_on_or_off condition="industry.get_property('enabled', economy) == True">
-        item(FEAT_INDUSTRYTILES, ${industry.id}_tile_1, ${global_constants.tile_numeric_ids[industry.id + '_tile_1']}) {
-            property {
-                substitute:       0;
-                land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
-                <!--! don't use declaration magic for these props that use lists -->
-                accepted_cargos: [${','.join(['['+ i +', 8]' for i in industry.get_property('accept_cargo_types', economy)])}];
-            }
-        }
-        item(FEAT_INDUSTRYTILES, ${industry.id}_tile_2, ${global_constants.tile_numeric_ids[industry.id + '_tile_2']}) {
-            property {
-                substitute:       0;
-                land_shape_flags: bitmask(LSF_ALLOW_ON_WATER);
-                <!--! don't use declaration magic for these props that use lists -->
-                accepted_cargos: [${','.join(['['+ i +', 8]' for i in industry.get_property('accept_cargo_types', economy)])}];
-            }
-        }
-        </tal:industry_on_or_off>
-    }
-</tal:build_economies>
+<tal:include metal:use-macro="load: tile_properties.pynml" />
 
-
-item(FEAT_INDUSTRYTILES, ${industry.id}_tile_1, ${global_constants.tile_numeric_ids[industry.id + '_tile_1']}) {
-	graphics {
-		${industry.id}_tile_fences;
-	}
-}
-item(FEAT_INDUSTRYTILES, ${industry.id}_tile_2, ${global_constants.tile_numeric_ids[industry.id + '_tile_2']}) {
-	graphics {
-		foundations: return CB_RESULT_NO_FOUNDATIONS;
-        tile_check: ${industry.id}_${industry.id}_tile_2_lc_0; <!--! double ID jank because...reasons -->
-		${industry.id}_tile_fences;
-	}
-}
-/* *************************************************
- * Definition of the industry layouts
- * *************************************************/
-
-<tal:include metal:use-macro="load: industry_layouts.pynml" />
 
 /* *************************************************
  * Definition of the industry
  * *************************************************/
+
+<tal:include metal:use-macro="load: industry_layouts.pynml" />
 
 <tal:include metal:use-macro="load: extra_text_primary.pynml" />
 

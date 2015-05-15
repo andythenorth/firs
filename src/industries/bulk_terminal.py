@@ -55,7 +55,10 @@ industry.economy_variations['MISTAH_KURTZ'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].accept_cargo_types = ['OIL_', 'CORE', 'SUGR']
 industry.economy_variations['MISTAH_KURTZ'].prod_cargo_types = ['BDMT', 'GRAI']
 
+industry.add_tile(id='bulk_terminal_tile_1',
+                  location_checks=TileLocationChecks(always_allow_founder=False))
 industry.add_tile(id='bulk_terminal_tile_2',
+                  foundations='return CB_RESULT_NO_FOUNDATIONS',
                   location_checks=TileLocationChecks(always_allow_founder=False,
                                                      require_coast=True))
 

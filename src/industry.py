@@ -40,6 +40,7 @@ class Tile(object):
         self.numeric_id = global_constants.tile_numeric_ids.get(self.id, None) # use of get() here is temporary during migrations, not needed otherwise
         self.land_shape_flags = kwargs.get('land_shape_flags', '0')
         self.location_checks = kwargs.get('location_checks')
+        self.foundations = kwargs.get('foundations', None)
         # animation length (int), looping (bool), speed (int) should be set for all animations
         # basic tile animation plays consecutive-frames from the spriteset
         # spriteset can offset frames when multiple animations are used *on the same* tile (to avoid odd-looking sync effects)
