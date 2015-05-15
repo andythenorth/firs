@@ -51,6 +51,8 @@ switch(FEAT_INDUSTRYTILES, SELF, fishing_harbour_slope_switch_2, nearby_tile_slo
 
 <tal:include metal:use-macro="load: graphics_switches.pynml" />
 
+<tal:include metal:use-macro="load: tile_location_checks.pynml" />
+
 /* *************************************************
  * Definition of the industry tile and its callbacks
  * *************************************************/
@@ -67,12 +69,6 @@ item(FEAT_INDUSTRYTILES, ${industry.id}_tile_1, TILE_FISHINGHARBOUR_1) {
 	}
 }
 
-/* It must not be a flat tile */
-TILE_CHECK_FLAT      (tile2_flat_check, return CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
-
-/* We allow on sea shores - but not rivers and canals */
-TILE_REQUIRE_SEA(tile2_location_check, ${industry.id}_tile2_flat_check)
-
 item(FEAT_INDUSTRYTILES, ${industry.id}_tile_2, TILE_FISHINGHARBOUR_2) {
 	property {
 		substitute:       0;
@@ -82,7 +78,7 @@ item(FEAT_INDUSTRYTILES, ${industry.id}_tile_2, TILE_FISHINGHARBOUR_2) {
 
 	graphics {
 		foundations: return CB_RESULT_NO_FOUNDATIONS;
-		tile_check:  ${industry.id}_tile2_location_check;
+        tile_check: ${industry.id}_${industry.id}_tile_2_lc_0; <!--! double ID jank because...reasons -->
 		${industry.id}_tile_fences;
 	}
 }

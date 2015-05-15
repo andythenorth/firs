@@ -36,6 +36,10 @@ industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_ARCTIC'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
 
+industry.add_tile(id='fishing_harbour_tile_2',
+                  location_checks=TileLocationChecks(always_allow_founder=False,
+                                                     require_coast=True))
+
 sprite_ground = industry.add_sprite(
     sprite_number = 'GROUNDSPRITE_WATER'
 )
