@@ -111,18 +111,6 @@ item(FEAT_INDUSTRYTILES, THIS_ID(tile_8), 71) {
  * Definition of the industry
  * *************************************************/
 
-/* for secondary production template */
-#define THIS_NUM_OUTPUT_CARGOS    2
-#define THIS_PROD_RATIO_CARGO1    2
-#define THIS_PROD_RATIO_CARGO2    4
-#define THIS_PROD_RATIO_CARGO3    2
-#define THIS_BOOST_12             2
-#define THIS_BOOST_13             2
-#define THIS_BOOST_21             4
-#define THIS_BOOST_23             4
-#define THIS_BOOST_31             2
-#define THIS_BOOST_32             2
-
 <tal:include metal:use-macro="load: produce_secondary.pypnml" />
 
 <tal:include metal:use-macro="load: industry_location_checks.pynml" />

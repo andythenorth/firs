@@ -48,6 +48,18 @@
 #define var_received_timely_3       2
 #define var_num_output_cargos       3
 
+/* for secondary production template */
+#define THIS_NUM_OUTPUT_CARGOS    ${industry.get_num_output_cargos()}
+#define THIS_PROD_RATIO_CARGO1    ${industry.get_prod_ratio(1)}
+#define THIS_PROD_RATIO_CARGO2    ${industry.get_prod_ratio(2)}
+#define THIS_PROD_RATIO_CARGO3    ${industry.get_prod_ratio(3)}
+#define THIS_BOOST_12             ${industry.get_boost(1,2)}
+#define THIS_BOOST_13             ${industry.get_boost(1,3)}
+#define THIS_BOOST_21             ${industry.get_boost(2,1)}
+#define THIS_BOOST_23             ${industry.get_boost(2,3)}
+#define THIS_BOOST_31             ${industry.get_boost(3,1)}
+#define THIS_BOOST_32             ${industry.get_boost(3,2)}
+
 produce (${industry.id}_simple_produce, waiting_cargo_1, waiting_cargo_2, waiting_cargo_3,
 			LOAD_PERM(var_leftover_cargo_1) / MAX_SUM_PROD_RATIO / LOAD_TEMP(var_num_output_cargos) * LOAD_PERM(var_ratio_cargo_1) +
 			LOAD_PERM(var_leftover_cargo_2) / MAX_SUM_PROD_RATIO / LOAD_TEMP(var_num_output_cargos) * LOAD_PERM(var_ratio_cargo_2) +
