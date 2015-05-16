@@ -56,6 +56,7 @@ industry.economy_variations['MISTAH_KURTZ'].accept_cargo_types = ['WOOD', 'FICR'
 industry.economy_variations['MISTAH_KURTZ'].prod_cargo_types = ['ENSP', 'MNSP']
 
 industry.add_tile(id='port_tile_1',
+                  land_shape_flags='bitmask(LSF_ONLY_ON_FLAT_LAND)',
                   location_checks=TileLocationChecks(always_allow_founder=False))
 industry.add_tile(id='port_tile_2',
                   foundations='return CB_RESULT_NO_FOUNDATIONS',

@@ -35,6 +35,7 @@ industry.economy_variations['MISTAH_KURTZ'].accept_cargo_types = ['DIAM', 'JAVA'
 industry.economy_variations['MISTAH_KURTZ'].prod_cargo_types = ['GOOD', 'FMSP']
 
 industry.add_tile(id='trading_post_tile_1',
+                  land_shape_flags='bitmask(LSF_ONLY_ON_FLAT_LAND)',
                   location_checks=TileLocationChecks(always_allow_founder=False))
 industry.add_tile(id='trading_post_tile_2',
                   foundations='return CB_RESULT_NO_FOUNDATIONS',
