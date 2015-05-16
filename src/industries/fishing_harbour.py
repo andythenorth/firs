@@ -5,10 +5,11 @@
   See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
 """
 
-from industry import Industry, TileLocationChecks, IndustryLocationChecks
+from industry import IndustrySecondary, TileLocationChecks, IndustryLocationChecks
 
-industry = Industry(id='fishing_harbour',
-                    accept_cargo_types=['MNSP', 'FISH'],
+industry = IndustrySecondary(id='fishing_harbour',
+                    processed_cargos_and_output_ratios=[('MNSP', 3), ('FISH', 5)],
+                    combined_cargos_boost_prod=True,
                     prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL',
                     prod_cargo_types=['FOOD'],
                     layouts='AUTO',
@@ -31,8 +32,7 @@ industry = Industry(id='fishing_harbour',
                     fund_cost_multiplier='150',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
                     extra_text_industry='STR_EXTRA_FISHING_HARBOUR',
-                    override_default_construction_states=True,
-                    template="refactor_fishing_harbour.pypnml" )
+                    override_default_construction_states=True)
 
 # jank and hax for graphics switches, no 'proper' way yet for industries to set non-standard graphics via macros
 # there isn't even kwargs support for setting this flag right now, so do it horribly here
