@@ -725,7 +725,6 @@ class IndustryPrimaryPort(IndustryPrimary):
         kwargs['life_type'] = 'IND_LIFE_TYPE_BLACK_HOLE'
         kwargs['extra_text_industry'] = True # slight hax, actual text string is determined by templated cb
         super(IndustryPrimaryPort, self).__init__(**kwargs)
-        self.template = kwargs.get('template', 'refactor_industry_primary_port.pypnml')
         self.use_port_slope_switches = True # jank and hax for graphics switches, no 'proper' way yet for industries to set non-standard graphics via macros
         self.supply_requirements = [56, 224, 'PORT'] # janky use of a un-named list for historical reasons (3rd item is string prefix)
 
