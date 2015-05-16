@@ -7,6 +7,10 @@
 
 #define THIS_ID(...) ${industry.id}_ ## __VA_ARGS__
 
+/* ******************************************************************
+ * Definition of the industry tile, its callbacks, and graphics chain
+ * ******************************************************************/
+
 <tal:include metal:use-macro="load: spritesets.pynml" />
 
 <tal:include metal:use-macro="load: spritelayouts.pynml" />
@@ -15,45 +19,16 @@
 
 <tal:include metal:use-macro="load: tile_location_checks.pynml" />
 
-/* *************************************************
- * Definition of the industry tile and its callbacks
- * *************************************************/
+<tal:include metal:use-macro="load: tile_animation_switches.pynml" />
 
-item(FEAT_INDUSTRYTILES, ${industry.id}_tile_1, TILE_FISHINGHARBOUR_1) {
-	property {
-		substitute:       0;
-		accepted_cargos:  [[MNSP, 8], [FISH, 8]];
-		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
-	}
+<tal:include metal:use-macro="load: tile_properties.pynml" />
 
-	graphics {
-		${industry.id}_tile_fences;
-	}
-}
-
-item(FEAT_INDUSTRYTILES, ${industry.id}_tile_2, TILE_FISHINGHARBOUR_2) {
-	property {
-		substitute:       0;
-		accepted_cargos:  [[MNSP, 8], [FISH, 8]];
-		land_shape_flags: bitmask(LSF_ALLOW_ON_WATER);
-	}
-
-	graphics {
-		foundations: return CB_RESULT_NO_FOUNDATIONS;
-        tile_check: ${industry.id}_${industry.id}_tile_2_lc_0; <!--! double ID jank because...reasons -->
-		${industry.id}_tile_fences;
-	}
-}
-
-/* *************************************************
- * Definition of the industry layouts
- * *************************************************/
-
-<tal:include metal:use-macro="load: industry_layouts.pynml" />
 
 /* *************************************************
  * Definition of the industry
  * *************************************************/
+
+<tal:include metal:use-macro="load: industry_layouts.pynml" />
 
 /* for secondary production template */
 #define THIS_NUM_OUTPUT_CARGOS    1

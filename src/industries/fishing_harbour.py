@@ -42,6 +42,9 @@ industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_ARCTIC'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
 
+industry.add_tile(id='fishing_harbour_tile_1',
+                  land_shape_flags='bitmask(LSF_ONLY_ON_FLAT_LAND)',
+                  location_checks=TileLocationChecks(always_allow_founder=False))
 industry.add_tile(id='fishing_harbour_tile_2',
                   foundations='return CB_RESULT_NO_FOUNDATIONS',
                   location_checks=TileLocationChecks(always_allow_founder=False,
