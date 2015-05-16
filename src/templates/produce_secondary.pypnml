@@ -42,27 +42,32 @@
 /* granularity of production. That amount of input (per cargo) is needed in order to be processed */
 #define MAX_SUM_PROD_RATIO 8
 
-/* Temporary variables used within this template */
+/* Temporary variables used within this template (these are the temp register numbers) */
 #define var_received_timely_1       0
 #define var_received_timely_2       1
 #define var_received_timely_3       2
+#define var_num_output_cargos       3
 
 produce (${industry.id}_simple_produce, waiting_cargo_1, waiting_cargo_2, waiting_cargo_3,
-			LOAD_PERM(var_leftover_cargo_1) / MAX_SUM_PROD_RATIO / THIS_NUM_OUTPUT_CARGOS * LOAD_PERM(var_ratio_cargo_1) +
-			LOAD_PERM(var_leftover_cargo_2) / MAX_SUM_PROD_RATIO / THIS_NUM_OUTPUT_CARGOS * LOAD_PERM(var_ratio_cargo_2) +
-			LOAD_PERM(var_leftover_cargo_3) / MAX_SUM_PROD_RATIO / THIS_NUM_OUTPUT_CARGOS * LOAD_PERM(var_ratio_cargo_3),
+			LOAD_PERM(var_leftover_cargo_1) / MAX_SUM_PROD_RATIO / LOAD_TEMP(var_num_output_cargos) * LOAD_PERM(var_ratio_cargo_1) +
+			LOAD_PERM(var_leftover_cargo_2) / MAX_SUM_PROD_RATIO / LOAD_TEMP(var_num_output_cargos) * LOAD_PERM(var_ratio_cargo_2) +
+			LOAD_PERM(var_leftover_cargo_3) / MAX_SUM_PROD_RATIO / LOAD_TEMP(var_num_output_cargos) * LOAD_PERM(var_ratio_cargo_3),
 
-			LOAD_PERM(var_leftover_cargo_1) / MAX_SUM_PROD_RATIO / THIS_NUM_OUTPUT_CARGOS * LOAD_PERM(var_ratio_cargo_1) +
-			LOAD_PERM(var_leftover_cargo_2) / MAX_SUM_PROD_RATIO / THIS_NUM_OUTPUT_CARGOS * LOAD_PERM(var_ratio_cargo_2) +
-			LOAD_PERM(var_leftover_cargo_3) / MAX_SUM_PROD_RATIO / THIS_NUM_OUTPUT_CARGOS * LOAD_PERM(var_ratio_cargo_3),
+			LOAD_PERM(var_leftover_cargo_1) / MAX_SUM_PROD_RATIO / LOAD_TEMP(var_num_output_cargos) * LOAD_PERM(var_ratio_cargo_1) +
+			LOAD_PERM(var_leftover_cargo_2) / MAX_SUM_PROD_RATIO / LOAD_TEMP(var_num_output_cargos) * LOAD_PERM(var_ratio_cargo_2) +
+			LOAD_PERM(var_leftover_cargo_3) / MAX_SUM_PROD_RATIO / LOAD_TEMP(var_num_output_cargos) * LOAD_PERM(var_ratio_cargo_3),
 			[
 			/* Remove any remainder */
-			STORE_PERM( LOAD_PERM(var_leftover_cargo_1) % (MAX_SUM_PROD_RATIO * THIS_NUM_OUTPUT_CARGOS), var_leftover_cargo_1),
-			STORE_PERM( LOAD_PERM(var_leftover_cargo_2) % (MAX_SUM_PROD_RATIO * THIS_NUM_OUTPUT_CARGOS), var_leftover_cargo_2),
-			STORE_PERM( LOAD_PERM(var_leftover_cargo_3) % (MAX_SUM_PROD_RATIO * THIS_NUM_OUTPUT_CARGOS), var_leftover_cargo_3),
+			STORE_PERM( LOAD_PERM(var_leftover_cargo_1) % (MAX_SUM_PROD_RATIO * LOAD_TEMP(var_num_output_cargos)), var_leftover_cargo_1),
+			STORE_PERM( LOAD_PERM(var_leftover_cargo_2) % (MAX_SUM_PROD_RATIO * LOAD_TEMP(var_num_output_cargos)), var_leftover_cargo_2),
+			STORE_PERM( LOAD_PERM(var_leftover_cargo_3) % (MAX_SUM_PROD_RATIO * LOAD_TEMP(var_num_output_cargos)), var_leftover_cargo_3),
 			0
 			]
 );
+
+switch(FEAT_INDUSTRIES, SELF, ${industry.id}_num_output_cargos, [STORE_TEMP(${industry.get_expression_for_num_output_cargos_per_economy()}, var_num_output_cargos)]) {
+	${industry.id}_simple_produce;
+}
 
 switch (FEAT_INDUSTRIES, SELF, ${industry.id}_produce,
 			[
@@ -107,7 +112,7 @@ switch (FEAT_INDUSTRIES, SELF, ${industry.id}_produce,
 
 			1
 			]) {
-	${industry.id}_simple_produce;
+	${industry.id}_num_output_cargos;
 }
 
 #undef MAX_SUM_PROD_RATIO

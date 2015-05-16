@@ -659,6 +659,19 @@ class Industry(object):
                 enabled_economies.append('economy==' + str(i))
         return ' || '.join(enabled_economies)
 
+    def get_expression_for_num_output_cargos_per_economy(self):
+        # returns a string that is used to push 1 or 2 to temp storage as the number of industry output cargos
+        # (secondary industries may have 1 or 2 output cargos; 0 is not a relevant option here)
+        result = []
+        for i, economy in enumerate(registered_economies):
+            if self.economy_variations[economy.id].enabled:
+                if len(self.get_property('prod_cargo_types', economy)) == 2:
+                    result.append('economy==' + str(i))
+        if len(result) == 0:
+            return 1
+        else:
+            return '(' + ' || '.join(result) + ') ? 2 : 1'
+
     def unpack_sprite_or_spriteset(self, sprite_or_spriteset, construction_state_num=3, terrain_type='', date_variation_num='0'):
         date_variation_suffix = '_' + str(date_variation_num)
         if terrain_type != '':
