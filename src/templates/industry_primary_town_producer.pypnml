@@ -86,17 +86,24 @@ switch(FEAT_INDUSTRIES, PARENT, ${industry.id}_produce, [STORE_TEMP(((population
 
 <tal:include metal:use-macro="load: industry_properties.pynml" />
 
-item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
-	graphics {
-		produce_256_ticks:       ${industry.id}_produce;
-		construction_probability:${industry.id}_check_availability;
-		location_check:          ${industry.id}_check_location;
-		monthly_prod_change:     CB_RESULT_IND_PROD_NO_CHANGE;
-		random_prod_change:      CB_RESULT_IND_PROD_NO_CHANGE;
-		extra_text_industry:     return string(STR_EXTRA_RECYCLING_DEPOT);
-		extra_text_fund:         return string(STR_FUND_AVAILABLE_FROM, ${industry.intro_year});
-		colour:                  switch_colour;
-	}
-}
+<!--! graphics block defined explicitly per industry subclass, to avoid too much fiddly conditional stuff -->
+<tal:build_economies repeat="economy economies">
+    if (economy==${repeat.economy.index}) {
+        <tal:industry_on_or_off condition="industry.get_property('enabled', economy) == True">
+            item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
+                graphics {
+                    produce_256_ticks:       ${industry.id}_produce;
+                    construction_probability:${industry.id}_check_availability;
+                    location_check:          ${industry.id}_check_location;
+                    monthly_prod_change:     CB_RESULT_IND_PROD_NO_CHANGE;
+                    random_prod_change:      CB_RESULT_IND_PROD_NO_CHANGE;
+                    extra_text_fund:          ${industry.get_extra_text_fund(economy)};
+                    extra_text_industry:     return string(STR_EXTRA_RECYCLING_DEPOT);
+                    colour:                  switch_colour;
+                }
+            }
+        </tal:industry_on_or_off>
+    }
+</tal:build_economies>
 
 #include "../../src/templates/undefs.pnml"
