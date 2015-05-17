@@ -35,11 +35,17 @@ def get_another_industry(id):
 
 class Tile(object):
     """ Base class to hold industry tiles"""
-    def __init__(self, id, **kwargs):
+    def __init__(self, industry_id, id, **kwargs):
         self.id = id
         self.numeric_id = global_constants.tile_numeric_ids.get(self.id, None) # use of get() here is temporary during migrations, not needed otherwise
         self.land_shape_flags = kwargs.get('land_shape_flags', '0')
         self.location_checks = kwargs.get('location_checks')
+        # check for setting both land_shape_flags and location_checks
+        # it's a cause of coder-error when I forget that land_shape_flags will be ignored when location_check is used
+        # 'janky_industry_id_string' because an industry ID is needed, and I don't trivially have one here
+        if self.land_shape_flags is not '0' and len(self.location_checks.get_render_tree(self.id, industry_id)) > 0:
+            raise Exception("Tile " + self.id + ": land_shape_flags are set but will be ignored because the tile also uses location_checks cb.  Only set one of these attributes.")
+
         self.foundations = kwargs.get('foundations', None)
         # animation length (int), looping (bool), speed (int) should be set for all animations
         # basic tile animation plays consecutive-frames from the spriteset
@@ -516,7 +522,7 @@ class Industry(object):
         registered_industries.append(self)
 
     def add_tile(self, *args, **kwargs):
-        new_tile = Tile(*args, **kwargs)
+        new_tile = Tile(self.id, *args, **kwargs)
         self.tiles.append(new_tile)
         return new_tile
 
