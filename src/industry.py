@@ -343,7 +343,7 @@ class SpriteLayout(object):
         self.building_sprites = building_sprites
         self.smoke_sprites = smoke_sprites
         self.fences = fences # a simple list of keywords.  Valid values: 'ne', 'se', 'sw', 'nw'.  Order is arbitrary.
-        self.terrain_aware_ground = terrain_aware_ground
+        self.terrain_aware_ground = terrain_aware_ground # we don't draw terrain (and climate) aware ground unless explicitly required by the spritelayout, it makes nml compiles slower
 
 class IndustryLayout(object):
     """ Base class to hold industry layouts """

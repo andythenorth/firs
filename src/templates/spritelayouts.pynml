@@ -7,7 +7,7 @@
 <tal:build_spritelayouts repeat="spritelayout python:industry.spritelayouts">
     spritelayout ${spritelayout.id} {
         <tal:optional_terrain_aware_ground condition="spritelayout.terrain_aware_ground">
-            // generic ground (terrain aware / climate aware)
+            <!--! we don't draw terrain (and climate) aware ground unless explicitly required by the spritelayout, it makes nml compiles slower -->
             ground {
                 sprite: GROUNDSPRITE_NORMAL ;
                 recolour_mode: RECOLOUR_REMAP;
