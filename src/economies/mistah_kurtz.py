@@ -1,8 +1,14 @@
 from economy import Economy
 economy = Economy(id = "MISTAH_KURTZ",
-                  # keep cargos alphabetised - bump the min. compatible version if list changed
-                  cargos = ['alcohol',
+                  # as of May 2015 the following cargos must have fixed positions if used by an economy:
+                  # passengers: 0, mail: 2, goods 5, food 11
+                  # keep the rest of the cargos alphabetised
+                  # bump the min. compatible version if this list changes
+                  cargos = ['passengers',
+                            'alcohol',
+                            'mail',
                             'building_materials',
+                            'goods',
                             'coffee',
                             'copper_ore',
                             'diamonds',
@@ -11,12 +17,9 @@ economy = Economy(id = "MISTAH_KURTZ",
                             'fish',
                             'food',
                             'fruits',
-                            'goods',
                             'grain',
-                            'mail',
                             'manufacturing_supplies',
                             'oil',
-                            'passengers',
                             'plant_fibres',
                             'rubber',
                             'sugar',

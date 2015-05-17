@@ -48,7 +48,13 @@ class Cargo(object):
         self.economy_variations = {}
         for economy in registered_economies:
             if self.id in economy.cargos:
-                self.economy_variations[economy] = {'numeric_id': economy.cargos.index(self.id)}
+                numeric_id = economy.cargos.index(self.id)
+                # As of May 2015, OTTD requires some cargos in specific slots, otherwise default houses break
+                mandatory_numeric_ids = {'PASS': 0, 'MAIL': 2, 'GOODS': 5, 'FOOD': 11}
+                for key, value in mandatory_numeric_ids.items():
+                    if self.cargo_label == key and numeric_id != value:
+                        raise Exception("Economy " + economy.id + ": has cargo " + self.id + " in position " + str(numeric_id) + "; needs to be in position " + str(value))
+                self.economy_variations[economy] = {'numeric_id': numeric_id}
 
         # icon indices relate to position of icon in cargo icons spritesheet
         self.icon_indices = kwargs['icon_indices']

@@ -1,28 +1,31 @@
 from economy import Economy
 economy = Economy(id = "FIRS",
-                  # keep cargos alphabetised - bump the min. compatible version if list changed
-                  cargos = ['alcohol',
+                  # as of May 2015 the following cargos must have fixed positions if used by an economy:
+                  # passengers: 0, mail: 2, goods 5, food 11
+                  # keep the rest of the cargos alphabetised
+                  # bump the min. compatible version if this list changes
+                  cargos = ['passengers',
+                            'alcohol',
+                            'mail',
                             'bauxite',
                             'building_materials',
+                            'goods',
                             'chemicals',
                             'clay',
                             'coal',
                             'engineering_supplies',
                             'farm_supplies',
-                            'fish',
                             'food',
+                            'fish',
                             'fruits',
-                            'goods',
                             'grain',
                             'iron_ore',
                             'livestock',
                             'lumber',
-                            'mail',
                             'manufacturing_supplies',
                             'metal',
                             'milk',
                             'oil',
-                            'passengers',
                             'petrol',
                             'plant_fibres',
                             'recyclables',

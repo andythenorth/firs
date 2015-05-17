@@ -115,7 +115,7 @@ class DocHelper(object):
         if cargo in economy_schemas[economy]['enabled_cargos']:
             for industry in economy_schemas[economy]['enabled_industries']:
                     for cargo_label in industry.get_property(accept_or_produce, economy):
-                        if cargo.cargo_label[1:-1] == cargo_label:
+                        if cargo.cargo_label == cargo_label:
                             result.add(industry)
         return result
 
@@ -137,7 +137,7 @@ class DocHelper(object):
         if industry in economy_schemas[economy]['enabled_industries']:
             for cargo_label in industry.get_property(accept_or_produce, economy):
                 for cargo in economy_schemas[economy]['enabled_cargos']:
-                    if cargo_label == cargo.cargo_label[1:-1]:
+                    if cargo_label == cargo.cargo_label:
                         result.append(cargo)
         return set(result)
 

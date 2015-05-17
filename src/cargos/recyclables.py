@@ -11,7 +11,7 @@ cargo = Cargo(id = 'recyclables',
               is_freight = '1',
               # eh, are these classes a mistake?  The commit history suggests they were just copied unchanged from WOOL
               cargo_classes = 'bitmask(CC_PIECE_GOODS, CC_COVERED)',
-              cargo_label = '"RCYC"',
+              cargo_label = 'RCYC',
               town_growth_effect = 'TOWNGROWTH_NONE',
               town_growth_multiplier = '1.0',
               units_of_cargo = '80',
