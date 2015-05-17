@@ -336,14 +336,14 @@ class Spriteset(object):
 
 class SpriteLayout(object):
     """ Base class to hold spritelayouts for industry spritelayouts """
-    def __init__(self, id, ground_sprite, ground_overlay, building_sprites, smoke_sprites=[], fences=[]):
+    def __init__(self, id, ground_sprite, ground_overlay, building_sprites, smoke_sprites=[], fences=[], terrain_aware_ground=False):
         self.id = id
         self.ground_sprite = ground_sprite
         self.ground_overlay = ground_overlay
         self.building_sprites = building_sprites
         self.smoke_sprites = smoke_sprites
         self.fences = fences # a simple list of keywords.  Valid values: 'ne', 'se', 'sw', 'nw'.  Order is arbitrary.
-
+        self.terrain_aware_ground = terrain_aware_ground
 
 class IndustryLayout(object):
     """ Base class to hold industry layouts """

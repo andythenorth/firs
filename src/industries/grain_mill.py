@@ -135,7 +135,8 @@ industry.add_spritelayout(
     ground_sprite = spriteset_ground_windmill,
     ground_overlay = spriteset_ground_overlay_windmill,
     building_sprites = [spriteset_windmill_anim],
-    fences = ['nw','ne','se','sw']
+    fences = ['nw','ne','se','sw'],
+    terrain_aware_ground = True
 )
 
 industry.add_industry_layout(

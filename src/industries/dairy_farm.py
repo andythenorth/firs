@@ -106,18 +106,21 @@ industry.add_spritelayout(
     ground_sprite = spriteset_ground_empty,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_house],
+    terrain_aware_ground = True
 )
 industry.add_spritelayout(
     id = 'dairy_farm_spritelayout_cows_bw',
     ground_sprite = spriteset_ground_empty,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_cows_bw],
+    terrain_aware_ground = True
 )
 industry.add_spritelayout(
     id = 'dairy_farm_spritelayout_cows_brown',
     ground_sprite = spriteset_ground_empty,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_cows_brown],
+    terrain_aware_ground = True
 )
 industry.add_spritelayout(
     id = 'dairy_farm_spritelayout_cows_bw_dirt',

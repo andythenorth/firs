@@ -97,13 +97,15 @@ industry.add_spritelayout(
     id = 'basic_farm_spritelayout_1',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
-    building_sprites = [spriteset_1]
+    building_sprites = [spriteset_1],
+    terrain_aware_ground = True
 )
 industry.add_spritelayout(
     id = 'basic_farm_spritelayout_2',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_2],
+    terrain_aware_ground = True
 )
 industry.add_spritelayout(
     id = 'basic_farm_spritelayout_3',
@@ -116,30 +118,35 @@ industry.add_spritelayout(
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_4],
+    terrain_aware_ground = True
 )
 industry.add_spritelayout(
     id = 'basic_farm_spritelayout_5',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_5],
+    terrain_aware_ground = True
 )
 industry.add_spritelayout(
     id = 'basic_farm_spritelayout_6',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_6],
+    terrain_aware_ground = True
 )
 industry.add_spritelayout(
     id = 'basic_farm_spritelayout_7',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_7],
+    terrain_aware_ground = True
 )
 industry.add_spritelayout(
     id = 'basic_farm_spritelayout_8',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_8],
+    terrain_aware_ground = True
 )
 
 industry.add_industry_layout(

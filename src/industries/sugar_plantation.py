@@ -87,12 +87,14 @@ industry.add_spritelayout(
     ground_sprite = spriteset_ground_empty,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_2],
+    terrain_aware_ground = True
 )
 industry.add_spritelayout(
     id = 'sugar_plantation_spritelayout_3',
     ground_sprite = spriteset_ground_empty,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_3],
+    terrain_aware_ground = True
 )
 industry.add_spritelayout(
     id = 'sugar_plantation_spritelayout_4',
