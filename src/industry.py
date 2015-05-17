@@ -510,7 +510,7 @@ class Industry(object):
         self.economy_variations = {}
         for economy in registered_economies:
             self.add_economy_variation(economy)
-        self.template = kwargs.get('template', None)
+        self.template = kwargs.get('template', None) # template will be set by subcass, and/or by individual industry instances
 
     def register(self):
         registered_industries.append(self)
