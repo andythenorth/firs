@@ -46,6 +46,7 @@
                     <tal:intro_year condition="industry.intro_year is not None">
                         extra_text_fund:         return string(STR_FUND_AVAILABLE_FROM, ${industry.intro_year});
                     </tal:intro_year>
+                    colour:                   switch_colour;
                 }
             }
         </tal:industry_on_or_off>
