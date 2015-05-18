@@ -67,7 +67,7 @@ class Tile(object):
         result = []
         accept_cargo_types = industry.get_property('accept_cargo_types', economy)
         for cargo in accept_cargo_types:
-            result.append('[' + cargo + ', 8]')
+            result.append('[cargotype("' + cargo + '"), 8]')
         return ','.join(result)
 
     def get_animation_triggers(self):
@@ -641,14 +641,14 @@ class Industry(object):
             return property_name + ': ' + value + ';'
 
     def get_accept_cargo_types(self, economy):
-        accept_cargo_types = self.get_property('accept_cargo_types', economy)
+        accept_cargo_types = ['cargotype("' + label + '")' for label in self.get_property('accept_cargo_types', economy)]
         # guard against too many cargos being defined
         if len(accept_cargo_types) > 3:
             utils.echo_message("Too many accepted cargos defined for " + self.id + ' in economy ' + economy.id)
         return '[' + ','.join(accept_cargo_types) + ']'
 
     def get_prod_cargo_types(self, economy):
-        prod_cargo_types = self.get_property('prod_cargo_types', economy)
+        prod_cargo_types = ['cargotype("' + label + '")' for label in self.get_property('prod_cargo_types', economy)]
         # guard against too many cargos being defined
         if len(prod_cargo_types) > 2:
             utils.echo_message("Too many produced cargos defined for " + self.id + ' in economy ' + economy.id)

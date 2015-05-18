@@ -11,7 +11,6 @@ item(FEAT_CARGOS, ${cargo.id}_${economy.id}, ${cargo.get_numeric_id(economy)}) {
         ${cargo.get_property_declaration('cargo_payment_list_colour')}
         ${cargo.get_property_declaration('is_freight')}
         ${cargo.get_property_declaration('cargo_classes')}
-        ${cargo.get_property_declaration('cargo_label')}
         ${cargo.get_property_declaration('town_growth_effect', economy)}
         ${cargo.get_property_declaration('town_growth_multiplier', economy)}
         ${cargo.get_property_declaration('units_of_cargo')}
@@ -21,6 +20,7 @@ item(FEAT_CARGOS, ${cargo.id}_${economy.id}, ${cargo.get_numeric_id(economy)}) {
         ${cargo.get_property_declaration('price_factor', economy)}
         ${cargo.get_property_declaration('capacity_multiplier')}
         <!--! props that can't be fetched with standard methods -->
+        cargo_label: ${cargo.get_cargo_label()};
         number: ${cargo.get_numeric_id(economy)};
     }
     graphics {

@@ -62,6 +62,10 @@ class Cargo(object):
     def get_numeric_id(self, economy):
         return self.economy_variations[economy].get('numeric_id')
 
+    def get_cargo_label(self):
+        # wrap cargo labels in " chars because nml needs them as string literals (we store them - by design - as python strings)
+        return '"' + self.cargo_label + '"'
+
     def get_property(self, property_name, economy):
         # straightforward lookup of a property, doesn't try to handle failure case of property not found; don't look up props that don't exist
         if economy is not None and property_name in self.economy_variations[economy]:
