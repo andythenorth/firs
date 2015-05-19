@@ -699,6 +699,12 @@ class Industry(object):
         else:
             return '(' + ' || '.join(result) + ') ? 2 : 1'
 
+    def unpack_switch_or_spritelayout(self, switch_or_spritelayout):
+        if isinstance(switch_or_spritelayout, GraphicsSwitch):
+            return switch_or_spritelayout.id
+        else:
+            return switch_or_spritelayout
+
     def unpack_sprite_or_spriteset(self, sprite_or_spriteset, construction_state_num=3, terrain_type='', date_variation_num='0'):
         date_variation_suffix = '_' + str(date_variation_num)
         if terrain_type != '':

@@ -27,9 +27,9 @@
     switch(FEAT_INDUSTRYTILES, SELF, ${industry_layout.id}_graphics_switch, relative_pos) {
         <tal:build_industry_layout repeat="layout industry_layout.layout">
             <!--!relative_coord(${layout[0]}, ${layout[1]}): ${industry.id}_spritelayout_switch_${layout[3]};-->
-            relative_coord(${layout[0]}, ${layout[1]}): ${layout[3]};
+            relative_coord(${layout[0]}, ${layout[1]}): ${industry.unpack_switch_or_spritelayout(layout[3])};
         </tal:build_industry_layout>
-        ${industry_layout.layout[0][3]}; // a default is needed, but should never be reached, layout definitions are explicit
+        ${industry.unpack_switch_or_spritelayout(industry_layout.layout[0][3])}; // a default is needed, but should never be reached, layout definitions are explicit
     }
 </tal:industry_layouts_graphic_switches>
 
