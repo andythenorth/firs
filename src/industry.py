@@ -346,10 +346,16 @@ class SpriteLayout(object):
         self.terrain_aware_ground = terrain_aware_ground # we don't draw terrain (and climate) aware ground unless explicitly required by the spritelayout, it makes nml compiles slower
 
 
-class GraphicsSwitchSlopes(object):
+class GraphicsSwitch(object):
+    """ base class for extra graphics switches - used to make special-case handling in templates easier via type-checking """
+    def __init__(self, id, **kwargs):
+        self.id = id
+
+
+class GraphicsSwitchSlopes(GraphicsSwitch):
     """ Class from which a slope-checking graphics switch can be generated, routing to appropriate spritelayout per slope type """
     def __init__(self, id, slope_spritelayout_mapping, default_result):
-        self.id = id
+        super(GraphicsSwitchSlopes, self).__init__(id)
         self.slope_spritelayout_mapping = slope_spritelayout_mapping
         self.default_result = default_result
 
