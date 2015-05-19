@@ -6,7 +6,8 @@
 -->
 
 <tal:spritelayout_switches repeat="spritelayout python:industry.spritelayouts">
-    switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_spritelayout_switch_${spritelayout.id}, 0) {
+    switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_spritelayout_switch_${spritelayout.id},
+            [STORE_TEMP(terrain_type == TILETYPE_SNOW, 1)]) {
         ${spritelayout.id};
     }
 </tal:spritelayout_switches>

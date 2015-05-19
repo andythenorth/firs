@@ -67,14 +67,14 @@
             sprite: ${industry.unpack_sprite_or_spriteset(spritelayout.ground_sprite)};
             recolour_mode: RECOLOUR_REMAP;
             palette: PALETTE_USE_DEFAULT;
-            hide_sprite: (terrain_type == TILETYPE_SNOW);
+            hide_sprite: (LOAD_TEMP(1));
             always_draw: 1;
         }
         childsprite {
             sprite: ${industry.unpack_sprite_or_spriteset(spritelayout.ground_overlay)};
             recolour_mode: RECOLOUR_REMAP;
             palette: PALETTE_USE_DEFAULT;
-            hide_sprite: (terrain_type == TILETYPE_SNOW);
+            hide_sprite: (LOAD_TEMP(1));
             always_draw: 1;
         }
         // snow
@@ -82,14 +82,14 @@
             sprite: ${industry.unpack_sprite_or_spriteset(spritelayout.ground_sprite, terrain_type='snow')};
             recolour_mode: RECOLOUR_REMAP;
             palette: PALETTE_USE_DEFAULT;
-            hide_sprite: (terrain_type != TILETYPE_SNOW);
+            hide_sprite: (!LOAD_TEMP(1));
             always_draw: 1;
         }
         childsprite {
             sprite: ${industry.unpack_sprite_or_spriteset(spritelayout.ground_overlay, terrain_type='snow')};
             recolour_mode: RECOLOUR_REMAP;
             palette: PALETTE_USE_DEFAULT;
-            hide_sprite: (terrain_type != TILETYPE_SNOW);
+            hide_sprite: (!LOAD_TEMP(1));
             always_draw: 1;
         }
         // fences NE and NW
@@ -179,7 +179,7 @@
                     yextent: ${building_sprite.yextent};
                     zextent: ${building_sprite.zextent};
                     always_draw: ${building_sprite.always_draw};
-                    hide_sprite: (construction_state != 3) || (terrain_type == TILETYPE_SNOW) ${industry.get_date_conditions_for_hide_sprites(repeat.date_variation_num.index)};
+                    hide_sprite: (construction_state != 3) || (LOAD_TEMP(1)) ${industry.get_date_conditions_for_hide_sprites(repeat.date_variation_num.index)};
                 }
                 building {
                     sprite: ${industry.unpack_sprite_or_spriteset(building_sprite, construction_state_num=3, terrain_type='snow', date_variation_num=date_variation_num)};
@@ -192,7 +192,7 @@
                     yextent: ${building_sprite.yextent};
                     zextent: ${building_sprite.zextent};
                     always_draw: ${building_sprite.always_draw};
-                    hide_sprite: (construction_state != 3) || (terrain_type != TILETYPE_SNOW) ${industry.get_date_conditions_for_hide_sprites(repeat.date_variation_num.index)};
+                    hide_sprite: (construction_state != 3) || (!LOAD_TEMP(1)) ${industry.get_date_conditions_for_hide_sprites(repeat.date_variation_num.index)};
                 }
             </tal:build_building_sprites>
         </tal:date_variations>
