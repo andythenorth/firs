@@ -345,6 +345,15 @@ class SpriteLayout(object):
         self.fences = fences # a simple list of keywords.  Valid values: 'ne', 'se', 'sw', 'nw'.  Order is arbitrary.
         self.terrain_aware_ground = terrain_aware_ground # we don't draw terrain (and climate) aware ground unless explicitly required by the spritelayout, it makes nml compiles slower
 
+
+class GraphicsSwitchSlopes(object):
+    """ Class from which a slope-checking graphics switch can be generated, routing to appropriate spritelayout per slope type """
+    def __init__(self, id, slope_spritelayout_mapping, default_result):
+        self.id = id
+        self.slope_spritelayout_mapping = slope_spritelayout_mapping
+        self.default_result = default_result
+
+
 class IndustryLayout(object):
     """ Base class to hold industry layouts """
     def __init__(self, id, layout):
@@ -508,6 +517,7 @@ class Industry(object):
         self.smoke_sprites = []
         self.spritesets = []
         self.spritelayouts = [] # by convention spritelayout is one word :P
+        self.extra_graphics_switches = []
         self.industry_layouts = []
         self.default_industry_properties = IndustryProperties(**kwargs)
         self.location_checks = kwargs.get('location_checks')
@@ -545,6 +555,11 @@ class Industry(object):
         new_spritelayout = SpriteLayout(*args, **kwargs)
         self.spritelayouts.append(new_spritelayout)
         return new_spritelayout # returning the new obj isn't essential, but permits the caller giving it a reference for use elsewhere
+
+    def add_slope_graphics_switch(self, *args, **kwargs):
+        new_graphics_switch = GraphicsSwitchSlopes(*args, **kwargs)
+        self.extra_graphics_switches.append(new_graphics_switch)
+        return new_graphics_switch # returning the new obj isn't essential, but permits the caller giving it a reference for use elsewhere
 
     def add_industry_layout(self, *args, **kwargs):
         new_industry_layout = IndustryLayout(*args, **kwargs)
@@ -744,7 +759,6 @@ class IndustryPrimaryPort(IndustryPrimary):
         kwargs['life_type'] = 'IND_LIFE_TYPE_BLACK_HOLE'
         kwargs['extra_text_industry'] = True # slight hax, actual text string is determined by templated cb
         super(IndustryPrimaryPort, self).__init__(**kwargs)
-        self.use_port_slope_switches = True # jank and hax for graphics switches, no 'proper' way yet for industries to set non-standard graphics via macros
         self.supply_requirements = [56, 224, 'PORT'] # janky use of a un-named list for historical reasons (3rd item is string prefix)
 
 

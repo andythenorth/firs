@@ -407,6 +407,42 @@ industry.add_spritelayout(
     building_sprites = []
 )
 
+industry.add_slope_graphics_switch('bulk_terminal_slope_switch_1',
+                                   slope_spritelayout_mapping={0: 'bulk_terminal_spritelayout_land_tile_1_1',
+                                                               1: 'bulk_terminal_spritelayout_land_tile_1_4',
+                                                               2: 'bulk_terminal_spritelayout_land_tile_1_8',
+                                                               3: 'bulk_terminal_spritelayout_land_tile_1_2',
+                                                               4: 'bulk_terminal_spritelayout_land_tile_1_6',
+                                                               5: 'bulk_terminal_spritelayout_land_tile_1_5',
+                                                               6: 'bulk_terminal_spritelayout_land_tile_1_7',
+                                                               7: 'bulk_terminal_spritelayout_land_tile_1_1',
+                                                               8: 'bulk_terminal_spritelayout_land_tile_1_3',
+                                                               9: 'bulk_terminal_spritelayout_land_tile_1_4',
+                                                               10: 'bulk_terminal_spritelayout_land_tile_1_8',
+                                                               11: 'bulk_terminal_spritelayout_land_tile_1_2',
+                                                               12: 'bulk_terminal_spritelayout_land_tile_1_6',
+                                                               13: 'bulk_terminal_spritelayout_land_tile_1_5',
+                                                               14: 'bulk_terminal_spritelayout_land_tile_1_7'},
+                                   default_result='bulk_terminal_spritelayout_land_tile_1_1')
+
+industry.add_slope_graphics_switch('bulk_terminal_slope_switch_2',
+                                   slope_spritelayout_mapping={0: 'bulk_terminal_spritelayout_land_tile_2_2',
+                                                               1: 'bulk_terminal_spritelayout_land_tile_2_4',
+                                                               2: 'bulk_terminal_spritelayout_land_tile_2_8',
+                                                               3: 'bulk_terminal_spritelayout_land_tile_2_1',
+                                                               4: 'bulk_terminal_spritelayout_land_tile_2_6',
+                                                               5: 'bulk_terminal_spritelayout_land_tile_2_5',
+                                                               6: 'bulk_terminal_spritelayout_land_tile_2_7',
+                                                               7: 'bulk_terminal_spritelayout_land_tile_2_2',
+                                                               8: 'bulk_terminal_spritelayout_land_tile_2_3',
+                                                               9: 'bulk_terminal_spritelayout_land_tile_2_4',
+                                                               10: 'bulk_terminal_spritelayout_land_tile_2_8',
+                                                               11: 'bulk_terminal_spritelayout_land_tile_2_1',
+                                                               12: 'bulk_terminal_spritelayout_land_tile_2_6',
+                                                               13: 'bulk_terminal_spritelayout_land_tile_2_5',
+                                                               14: 'bulk_terminal_spritelayout_land_tile_2_7'},
+                                   default_result='bulk_terminal_spritelayout_land_tile_2_2')
+
 industry.add_industry_layout(
     id = 'bulk_terminal_industry_layout_1',
     layout = [

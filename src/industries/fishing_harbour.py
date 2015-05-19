@@ -34,10 +34,6 @@ industry = IndustrySecondary(id='fishing_harbour',
                     extra_text_industry='STR_EXTRA_FISHING_HARBOUR',
                     override_default_construction_states=True)
 
-# jank and hax for graphics switches, no 'proper' way yet for industries to set non-standard graphics via macros
-# there isn't even kwargs support for setting this flag right now, so do it horribly here
-industry.use_port_slope_switches = True
-
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_ARCTIC'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
@@ -367,6 +363,42 @@ industry.add_spritelayout(
     ground_overlay = sprite_ground,
     building_sprites = []
 )
+
+industry.add_slope_graphics_switch('fishing_harbour_slope_switch_1',
+                                   slope_spritelayout_mapping={0: 'fishing_harbour_spritelayout_land_tile_1_1',
+                                                               1: 'fishing_harbour_spritelayout_land_tile_1_4',
+                                                               2: 'fishing_harbour_spritelayout_land_tile_1_8',
+                                                               3: 'fishing_harbour_spritelayout_land_tile_1_2',
+                                                               4: 'fishing_harbour_spritelayout_land_tile_1_6',
+                                                               5: 'fishing_harbour_spritelayout_land_tile_1_5',
+                                                               6: 'fishing_harbour_spritelayout_land_tile_1_7',
+                                                               7: 'fishing_harbour_spritelayout_land_tile_1_1',
+                                                               8: 'fishing_harbour_spritelayout_land_tile_1_3',
+                                                               9: 'fishing_harbour_spritelayout_land_tile_1_4',
+                                                               10: 'fishing_harbour_spritelayout_land_tile_1_8',
+                                                               11: 'fishing_harbour_spritelayout_land_tile_1_2',
+                                                               12: 'fishing_harbour_spritelayout_land_tile_1_6',
+                                                               13: 'fishing_harbour_spritelayout_land_tile_1_5',
+                                                               14: 'fishing_harbour_spritelayout_land_tile_1_7'},
+                                   default_result='fishing_harbour_spritelayout_land_tile_1_1')
+
+industry.add_slope_graphics_switch('fishing_harbour_slope_switch_2',
+                                   slope_spritelayout_mapping={0: 'fishing_harbour_spritelayout_land_tile_2_2',
+                                                               1: 'fishing_harbour_spritelayout_land_tile_2_4',
+                                                               2: 'fishing_harbour_spritelayout_land_tile_2_8',
+                                                               3: 'fishing_harbour_spritelayout_land_tile_2_1',
+                                                               4: 'fishing_harbour_spritelayout_land_tile_2_6',
+                                                               5: 'fishing_harbour_spritelayout_land_tile_2_5',
+                                                               6: 'fishing_harbour_spritelayout_land_tile_2_7',
+                                                               7: 'fishing_harbour_spritelayout_land_tile_2_2',
+                                                               8: 'fishing_harbour_spritelayout_land_tile_2_3',
+                                                               9: 'fishing_harbour_spritelayout_land_tile_2_4',
+                                                               10: 'fishing_harbour_spritelayout_land_tile_2_8',
+                                                               11: 'fishing_harbour_spritelayout_land_tile_2_1',
+                                                               12: 'fishing_harbour_spritelayout_land_tile_2_6',
+                                                               13: 'fishing_harbour_spritelayout_land_tile_2_5',
+                                                               14: 'fishing_harbour_spritelayout_land_tile_2_7'},
+                                   default_result='fishing_harbour_spritelayout_land_tile_2_2')
 
 industry.add_industry_layout(
     id = 'fishing_harbour_industry_layout_1',

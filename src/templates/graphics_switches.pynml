@@ -5,59 +5,38 @@
   See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
 -->
 
-<tal:port_slope_switches condition="getattr(industry, 'use_port_slope_switches', False)">
-    switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_slope_switch_1, nearby_tile_slope(0,0)) {
-        0: ${industry.id}_spritelayout_land_tile_1_1;
-        1: ${industry.id}_spritelayout_land_tile_1_4;
-        2: ${industry.id}_spritelayout_land_tile_1_8;
-        3: ${industry.id}_spritelayout_land_tile_1_2;
-        4: ${industry.id}_spritelayout_land_tile_1_6;
-        5: ${industry.id}_spritelayout_land_tile_1_5;
-        6: ${industry.id}_spritelayout_land_tile_1_7;
-        7: ${industry.id}_spritelayout_land_tile_1_1;
-        8: ${industry.id}_spritelayout_land_tile_1_3;
-        9: ${industry.id}_spritelayout_land_tile_1_4;
-        10: ${industry.id}_spritelayout_land_tile_1_8;
-        11: ${industry.id}_spritelayout_land_tile_1_2;
-        12: ${industry.id}_spritelayout_land_tile_1_6;
-        13: ${industry.id}_spritelayout_land_tile_1_5;
-        14: ${industry.id}_spritelayout_land_tile_1_7;
-        ${industry.id}_spritelayout_land_tile_1_1;
+<tal:extra_graphics_switches repeat="graphics_switch industry.extra_graphics_switches">
+    <!--! if more extra graphics switch types are added, this would need conditional tal wrapped around each type -->
+    switch(FEAT_INDUSTRYTILES, SELF, ${graphics_switch.id}, nearby_tile_slope(0,0)) {
+        <tal:slope_spritelayout_mapping repeat="slope_spritelayout graphics_switch.slope_spritelayout_mapping.items()">
+            ${slope_spritelayout[0]}: ${slope_spritelayout[1]};
+        </tal:slope_spritelayout_mapping>
+        ${graphics_switch.default_result};
     }
+</tal:extra_graphics_switches>
 
-    switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_slope_switch_2, nearby_tile_slope(0,0)) {
-        0: ${industry.id}_spritelayout_land_tile_2_2;
-        1: ${industry.id}_spritelayout_land_tile_2_4;
-        2: ${industry.id}_spritelayout_land_tile_2_8;
-        3: ${industry.id}_spritelayout_land_tile_2_1;
-        4: ${industry.id}_spritelayout_land_tile_2_6;
-        5: ${industry.id}_spritelayout_land_tile_2_5;
-        6: ${industry.id}_spritelayout_land_tile_2_7;
-        7: ${industry.id}_spritelayout_land_tile_2_2;
-        8: ${industry.id}_spritelayout_land_tile_2_3;
-        9: ${industry.id}_spritelayout_land_tile_2_4;
-        10: ${industry.id}_spritelayout_land_tile_2_8;
-        11: ${industry.id}_spritelayout_land_tile_2_1;
-        12: ${industry.id}_spritelayout_land_tile_2_6;
-        13: ${industry.id}_spritelayout_land_tile_2_5;
-        14: ${industry.id}_spritelayout_land_tile_2_7;
-        ${industry.id}_spritelayout_land_tile_2_2;
+<!--! standard switches -->
+
+<!--!<tal:spritelayout_switches repeat="spritelayout python:industry.spritelayouts">
+    switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_spritelayout_switch_${spritelayout.id}, 0) {
+        ${spritelayout.id};
     }
-</tal:port_slope_switches>
+</tal:spritelayout_switches>-->
 
-<tal:build_industry_layouts_graphic_switches repeat="industry_layout python:industry.industry_layouts">
+<tal:industry_layouts_graphic_switches repeat="industry_layout python:industry.industry_layouts">
     switch(FEAT_INDUSTRYTILES, SELF, ${industry_layout.id}_graphics_switch, relative_pos) {
         <tal:build_industry_layout repeat="layout industry_layout.layout">
+            <!--!relative_coord(${layout[0]}, ${layout[1]}): ${industry.id}_spritelayout_switch_${layout[3]};-->
             relative_coord(${layout[0]}, ${layout[1]}): ${layout[3]};
         </tal:build_industry_layout>
         ${industry_layout.layout[0][3]}; // a default is needed, but should never be reached, layout definitions are explicit
     }
-</tal:build_industry_layouts_graphic_switches>
+</tal:industry_layouts_graphic_switches>
 
 switch(FEAT_INDUSTRYTILES, PARENT, ${industry.id}_industry_graphics_switch_layouts, layout_num) {
-    <tal:build_available_industry_layouts repeat="layout_num range(len(industry.industry_layouts))">
+    <tal:available_industry_layouts repeat="layout_num range(len(industry.industry_layouts))">
 	    ${layout_num+1}: ${industry.industry_layouts[layout_num].id}_graphics_switch;
-	</tal:build_available_industry_layouts>
+	</tal:available_industry_layouts>
 	${industry.industry_layouts[0].id}_graphics_switch; // default
 }
 
