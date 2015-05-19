@@ -5,31 +5,30 @@
   See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
 -->
 
+<tal:spritelayout_switches repeat="spritelayout python:industry.spritelayouts">
+    switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_spritelayout_switch_${spritelayout.id}, 0) {
+        ${spritelayout.id};
+    }
+</tal:spritelayout_switches>
+
+<!--! industries can make use of optional extra graphics switches if needed -->
 <tal:extra_graphics_switches repeat="graphics_switch industry.extra_graphics_switches">
     <!--! if more extra graphics switch types are added, this would need conditional tal wrapped around each type -->
     switch(FEAT_INDUSTRYTILES, SELF, ${graphics_switch.id}, nearby_tile_slope(0,0)) {
         <tal:slope_spritelayout_mapping repeat="slope_spritelayout graphics_switch.slope_spritelayout_mapping.items()">
-            ${slope_spritelayout[0]}: ${slope_spritelayout[1]};
+            ${slope_spritelayout[0]}: ${industry.id}_spritelayout_switch_${slope_spritelayout[1]};
         </tal:slope_spritelayout_mapping>
         ${graphics_switch.default_result};
     }
 </tal:extra_graphics_switches>
 
-<!--! standard switches -->
-
-<!--!<tal:spritelayout_switches repeat="spritelayout python:industry.spritelayouts">
-    switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_spritelayout_switch_${spritelayout.id}, 0) {
-        ${spritelayout.id};
-    }
-</tal:spritelayout_switches>-->
-
 <tal:industry_layouts_graphic_switches repeat="industry_layout python:industry.industry_layouts">
     switch(FEAT_INDUSTRYTILES, SELF, ${industry_layout.id}_graphics_switch, relative_pos) {
         <tal:build_industry_layout repeat="layout industry_layout.layout">
             <!--!relative_coord(${layout[0]}, ${layout[1]}): ${industry.id}_spritelayout_switch_${layout[3]};-->
-            relative_coord(${layout[0]}, ${layout[1]}): ${industry.unpack_switch_or_spritelayout(layout[3])};
+            relative_coord(${layout[0]}, ${layout[1]}): ${industry.unpack_switch_or_spritelayout(layout[3], industry)};
         </tal:build_industry_layout>
-        ${industry.unpack_switch_or_spritelayout(industry_layout.layout[0][3])}; // a default is needed, but should never be reached, layout definitions are explicit
+        ${industry.unpack_switch_or_spritelayout(industry_layout.layout[0][3], industry)}; // a default is needed, but should never be reached, layout definitions are explicit
     }
 </tal:industry_layouts_graphic_switches>
 
