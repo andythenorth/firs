@@ -5,19 +5,12 @@
   See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
 -->
 
-<tal:spritelayout_switches repeat="spritelayout python:industry.spritelayouts">
-    switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_spritelayout_switch_${spritelayout.id},
-            [STORE_TEMP(terrain_type == TILETYPE_SNOW, 1)]) {
-        ${spritelayout.id};
-    }
-</tal:spritelayout_switches>
-
 <!--! industries can make use of optional extra graphics switches if needed -->
 <tal:extra_graphics_switches repeat="graphics_switch industry.extra_graphics_switches">
     <!--! if more extra graphics switch types are added, this would need conditional tal wrapped around each type -->
     switch(FEAT_INDUSTRYTILES, SELF, ${graphics_switch.id}, nearby_tile_slope(0,0)) {
         <tal:slope_spritelayout_mapping repeat="slope_spritelayout graphics_switch.slope_spritelayout_mapping.items()">
-            ${slope_spritelayout[0]}: ${industry.id}_spritelayout_switch_${slope_spritelayout[1]};
+            ${slope_spritelayout[0]}: ${slope_spritelayout[1]};
         </tal:slope_spritelayout_mapping>
         ${graphics_switch.default_result};
     }
@@ -45,8 +38,24 @@ switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_industry_construction_state_grap
 	${industry.id}_industry_graphics_switch_layouts; // default
 }
 
+switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_store_temp_vars,
+        [STORE_TEMP(terrain_type == TILETYPE_SNOW, 13)
+            <tal:date_variations repeat="date_variation_num range(len(industry.graphics_change_dates)+1)"><!--! +1 because we need to run repeat at least once -->
+                , STORE_TEMP(${industry.get_date_conditions_for_hide_sprites(repeat.date_variation_num.index)},
+                             ${255 - date_variation_num}) <!--! dangerous counting down for these registers :D -->
+                , STORE_TEMP(construction_state != 3 ? 1 : LOAD_TEMP(${255 - date_variation_num}),
+                             ${255 - date_variation_num})
+                , STORE_TEMP(LOAD_TEMP(13) == 0 ? 1 : LOAD_TEMP(${255 - date_variation_num}), <!--! copy a register for snow case -->
+                             ${245 - date_variation_num}) <!--! eh, these count down from 245, max 10 date variations is plenty -->
+                , STORE_TEMP(LOAD_TEMP(13) == 1 ? 1 : LOAD_TEMP(${255 - date_variation_num}), <!--! non-snow case -->
+                             ${255 - date_variation_num})
+            </tal:date_variations>
+        ]) {
+    ${industry.id}_industry_construction_state_graphics_switch; // default
+}
+
 switch(FEAT_INDUSTRYTILES, PARENT, ${industry.id}_industry_master_graphics_switch, STORE_TEMP(random_bits, 0)) {
-	${industry.id}_industry_construction_state_graphics_switch; // default
+	${industry.id}_store_temp_vars; // default
 }
 
 <!--! at time of writing this comment, it was easier to leave the CPP varact 2 chain untouched for fences -->
