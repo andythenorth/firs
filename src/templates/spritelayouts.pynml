@@ -10,7 +10,7 @@
             <!--! we don't draw terrain (and climate) aware ground unless explicitly required by the spritelayout, it makes nml compiles slower -->
             <!--!
                 moving the climate + terrain expressions to a switch and temp registers
-                would likely compile faster (did when tested roughly), nml docs have examples
+                would likely compile a couple of seconds faster (did when tested roughly), nml docs have examples
             -->
             ground {
                 sprite: GROUNDSPRITE_NORMAL ;
