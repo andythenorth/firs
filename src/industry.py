@@ -50,6 +50,7 @@ class Tile(object):
         # animation length (int), looping (bool), speed (int) should be set for all animations
         # basic tile animation plays consecutive-frames from the spriteset
         # spriteset can offset frames when multiple animations are used *on the same* tile (to avoid odd-looking sync effects)
+        # spriteset can also be given custom rules to choose which sprite to show per animation_frame (used in the graphics chain)
         # for extended control, the anim_control cb is used, e.g.
         # - start/stop animation on conditions
         # - play non-consecutive frames
@@ -61,6 +62,8 @@ class Tile(object):
         self.animation_length = kwargs.get('animation_length', 1) # allowed values 1-253
         self.animation_looping = kwargs.get('animation_looping', False)
         self.animation_speed = kwargs.get('animation_speed', 0)
+        self.custom_animation_frame_sprite_rule = kwargs.get('custom_animation_frame_sprite_rule', None)
+        self.custom_animation_next_frame = kwargs.get('custom_animation_next_frame', None)
         self.custom_animation_control = kwargs.get('custom_animation_control', None)
 
     def get_expression_for_tile_acceptance(self, industry, economy):
@@ -75,6 +78,20 @@ class Tile(object):
             return 'bitmask()'
         else:
             return self.custom_animation_control['animation_triggers']
+
+    def get_expression_for_animation_next_frame(self):
+        if self.custom_animation_next_frame:
+            return 'return ' + self.custom_animation_next_frame
+        else:
+            return 'return animation_frame'
+
+    def get_expression_for_animation_frame_sprite(self):
+        # choose a sprite number against custom rules (using ternary op, which can be stacked if needed)...
+        # or just use the animation frame
+        if self.custom_animation_frame_sprite_rule:
+            return 'return ' + self.custom_animation_frame_sprite_rule
+        else:
+            return 'return CB_RESULT_NEXT_FRAME'
 
     def animation_macros(self):
         template = templates["animation_macros.pynml"]
@@ -713,7 +730,7 @@ class Industry(object):
             suffix = ''
         if isinstance(sprite_or_spriteset, Spriteset):
             if construction_state_num == 3 or self.default_industry_properties.override_default_construction_states == False:
-                return sprite_or_spriteset.id + date_variation_suffix + suffix  + '(' + str(sprite_or_spriteset.animation_rate) + '* animation_frame)'
+                return sprite_or_spriteset.id + date_variation_suffix + suffix  + '(' + str(sprite_or_spriteset.animation_rate) + '* LOAD_TEMP(var_animation_frame))'
             else:
                 return sprite_or_spriteset.id + '_spriteset_default_construction_state_' + str(construction_state_num) + '(' + str(sprite_or_spriteset.animation_rate) + '* LOAD_TEMP(var_animation_frame))'
         if isinstance(sprite_or_spriteset, Sprite):

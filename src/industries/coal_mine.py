@@ -36,11 +36,13 @@ industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True
 
 industry.add_tile(id='coal_mine_tile_1',
-                  animation_length=3,
+                  animation_length=81,
                   animation_looping=True,
                   animation_speed=1,
-                  custom_animation_control={'macro':'random_first_frame',
-                                            'animation_triggers': 'bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE)'},
+                  custom_animation_next_frame='((animation_frame == 80) ? CB_RESULT_STOP_ANIMATION : CB_RESULT_NEXT_FRAME)',
+                  custom_animation_frame_sprite_rule='(animation_frame % 3)',
+                  custom_animation_control={'macro':'mine_winding_wheels',
+                                            'animation_triggers': 'bitmask(ANIM_TRIGGER_INDTILE_TILE_LOOP)'},
                   location_checks=TileLocationChecks(disallow_slopes=True,
                                                      disallow_industry_adjacent=True))
 
