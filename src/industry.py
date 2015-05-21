@@ -715,7 +715,7 @@ class Industry(object):
             if construction_state_num == 3 or self.default_industry_properties.override_default_construction_states == False:
                 return sprite_or_spriteset.id + date_variation_suffix + suffix  + '(' + str(sprite_or_spriteset.animation_rate) + '* animation_frame)'
             else:
-                return sprite_or_spriteset.id + '_spriteset_default_construction_state_' + str(construction_state_num) + '(' + str(sprite_or_spriteset.animation_rate) + '* animation_frame)'
+                return sprite_or_spriteset.id + '_spriteset_default_construction_state_' + str(construction_state_num) + '(' + str(sprite_or_spriteset.animation_rate) + '* LOAD_TEMP(var_animation_frame))'
         if isinstance(sprite_or_spriteset, Sprite):
             return getattr(sprite_or_spriteset, 'sprite_number' + suffix)
 
