@@ -67,14 +67,14 @@
             sprite: ${industry.unpack_sprite_or_spriteset(spritelayout.ground_sprite)};
             recolour_mode: RECOLOUR_REMAP;
             palette: PALETTE_USE_DEFAULT;
-            hide_sprite: (LOAD_TEMP(13));
+            hide_sprite: (LOAD_TEMP(var_terrain_is_snow));
             always_draw: 1;
         }
         childsprite {
             sprite: ${industry.unpack_sprite_or_spriteset(spritelayout.ground_overlay)};
             recolour_mode: RECOLOUR_REMAP;
             palette: PALETTE_USE_DEFAULT;
-            hide_sprite: (LOAD_TEMP(13));
+            hide_sprite: (LOAD_TEMP(var_terrain_is_snow));
             always_draw: 1;
         }
         // snow
@@ -82,14 +82,14 @@
             sprite: ${industry.unpack_sprite_or_spriteset(spritelayout.ground_sprite, terrain_type='snow')};
             recolour_mode: RECOLOUR_REMAP;
             palette: PALETTE_USE_DEFAULT;
-            hide_sprite: (!LOAD_TEMP(13));
+            hide_sprite: (!LOAD_TEMP(var_terrain_is_snow));
             always_draw: 1;
         }
         childsprite {
             sprite: ${industry.unpack_sprite_or_spriteset(spritelayout.ground_overlay, terrain_type='snow')};
             recolour_mode: RECOLOUR_REMAP;
             palette: PALETTE_USE_DEFAULT;
-            hide_sprite: (!LOAD_TEMP(13));
+            hide_sprite: (!LOAD_TEMP(var_terrain_is_snow));
             always_draw: 1;
         }
         // fences NE and NW

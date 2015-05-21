@@ -45,9 +45,9 @@ switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_store_temp_vars,
                              ${255 - date_variation_num}) <!--! dangerous counting down for these registers :D -->
                 , STORE_TEMP(construction_state != 3 ? 1 : LOAD_TEMP(${255 - date_variation_num}),
                              ${255 - date_variation_num})
-                , STORE_TEMP(LOAD_TEMP(13) == 0 ? 1 : LOAD_TEMP(${255 - date_variation_num}), <!--! copy a register for snow case -->
+                , STORE_TEMP(LOAD_TEMP(var_terrain_is_snow) == 0 ? 1 : LOAD_TEMP(${255 - date_variation_num}), <!--! copy a register for snow case -->
                              ${245 - date_variation_num}) <!--! eh, these count down from 245, max 10 date variations is plenty -->
-                , STORE_TEMP(LOAD_TEMP(13) == 1 ? 1 : LOAD_TEMP(${255 - date_variation_num}), <!--! non-snow case -->
+                , STORE_TEMP(LOAD_TEMP(var_terrain_is_snow) == 1 ? 1 : LOAD_TEMP(${255 - date_variation_num}), <!--! non-snow case -->
                              ${255 - date_variation_num})
             </tal:date_variations>
         ]) {
