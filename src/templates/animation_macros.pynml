@@ -1,3 +1,5 @@
+<!--! macros are not currently combinable, this is a bit limited, a tree parser (similar to location checks) would be better -->
+
 <metal:random_first_frame metal:define-macro="random_first_frame">
     <!--!
         Randomises the start frame of the animation.
@@ -20,6 +22,7 @@
 </metal:random_first_frame>
 
 <metal:mine_winding_wheels metal:define-macro="mine_winding_wheels">
+    <!--! starts animation on first frame, intended to be called by periodic tile loop -->
     switch(FEAT_INDUSTRYTILES, SELF, ${tile.id}_anim_control, 0) {
         return 0;
     }
