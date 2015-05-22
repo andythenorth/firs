@@ -40,7 +40,6 @@ industry.add_tile(id='coal_mine_tile_1',
                   animation_looping=True,
                   animation_speed=1,
                   custom_animation_next_frame='((animation_frame == 80) ? CB_RESULT_STOP_ANIMATION : CB_RESULT_NEXT_FRAME)',
-                  custom_animation_frame_sprite_rule='(animation_frame % 3)',
                   custom_animation_control={'macro':'mine_winding_wheels',
                                             'animation_triggers': 'bitmask(ANIM_TRIGGER_INDTILE_TILE_LOOP)'},
                   location_checks=TileLocationChecks(disallow_slopes=True,
@@ -60,7 +59,8 @@ spriteset_1 = industry.add_spriteset(
     id = 'coal_mine_spriteset_1a',
     sprites = [(10, 10, 64, 110, -31, -70), (10, 130, 64, 110, -31, -70), (10, 250, 64, 110, -31, -70)],
     zextent = 48,
-    animation_rate = 1
+    animation_rate = 1,
+    custom_sprite_selector = '(animation_frame % 3)',
 )
 spriteset_2 = industry.add_spriteset(
     id = 'coal_mine_spriteset_2',

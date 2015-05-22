@@ -39,8 +39,7 @@ switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_industry_construction_state_grap
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_store_temp_vars,
-        [STORE_TEMP((animation_frame % 3), var_animation_frame),
-         STORE_TEMP(terrain_type == TILETYPE_SNOW, var_terrain_is_snow)
+        [STORE_TEMP(terrain_type == TILETYPE_SNOW, var_terrain_is_snow)
             <tal:date_variations repeat="date_variation_num range(len(industry.graphics_change_dates)+1)"><!--! +1 because we need to run repeat at least once -->
                 , STORE_TEMP(${industry.get_date_conditions_for_hide_sprites(repeat.date_variation_num.index)},
                              ${255 - date_variation_num}) <!--! dangerous counting down for these registers :D -->

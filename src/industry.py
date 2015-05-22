@@ -50,7 +50,7 @@ class Tile(object):
         # animation length (int), looping (bool), speed (int) should be set for all animations
         # basic tile animation plays consecutive-frames from the spriteset
         # spriteset can offset frames when multiple animations are used *on the same* tile (to avoid odd-looking sync effects)
-        # spriteset can also be given custom rules to choose which sprite to show per animation_frame (used in the graphics chain)
+        # spriteset can also be given custom rules to choose which sprite to show per animation_frame
         # for extended control, the anim_control cb is used, e.g.
         # - start/stop animation on conditions
         # - play non-consecutive frames
@@ -62,7 +62,6 @@ class Tile(object):
         self.animation_length = kwargs.get('animation_length', 1) # allowed values 1-253
         self.animation_looping = kwargs.get('animation_looping', False)
         self.animation_speed = kwargs.get('animation_speed', 0)
-        self.custom_animation_frame_sprite_rule = kwargs.get('custom_animation_frame_sprite_rule', None)
         self.custom_animation_next_frame = kwargs.get('custom_animation_next_frame', None)
         self.custom_animation_control = kwargs.get('custom_animation_control', None)
 
@@ -78,20 +77,6 @@ class Tile(object):
             return 'bitmask()'
         else:
             return self.custom_animation_control['animation_triggers']
-
-    def get_expression_for_animation_next_frame(self):
-        if self.custom_animation_next_frame:
-            return 'return ' + self.custom_animation_next_frame
-        else:
-            return 'return animation_frame'
-
-    def get_expression_for_animation_frame_sprite(self):
-        # choose a sprite number against custom rules (using ternary op, which can be stacked if needed)...
-        # or just use the animation frame
-        if self.custom_animation_frame_sprite_rule:
-            return 'return ' + self.custom_animation_frame_sprite_rule
-        else:
-            return 'return CB_RESULT_NEXT_FRAME'
 
     def animation_macros(self):
         template = templates["animation_macros.pynml"]
@@ -332,11 +317,12 @@ class Spriteset(object):
     """ Base class to hold industry spritesets """
     # !! arguably this should be two different classes, one for building/feature spritesets, and one for ground spritesets
     def __init__(self, id, sprites=[], type='', xoffset=0, yoffset=0, zoffset=0, xextent=16, yextent=16,
-                 zextent=16, animation_rate = 0, always_draw=0, num_sprites_to_autofill = 1):
+                 zextent=16, animation_rate=0, custom_sprite_selector=None, always_draw=0, num_sprites_to_autofill=1):
         self.id = id
         self.sprites = sprites # a list of sprites 6-tuples in format (x, y, w, h, xoffs, yoffs)
         self.type = type # set to ground or other special types, or omit for default (building, greeble, foundations etc - graphics from png named same as industry)
         self.animation_rate = animation_rate # (must be int) optional multiplier to tile's animation rate, set to 1 for same as tile, >1 for faster; leave default (0) to disable animation; < 1 isn't valid and nml won't compile it
+        self.custom_sprite_selector = custom_sprite_selector
         self.num_sprites_to_autofill = num_sprites_to_autofill # create n sprites per sprite passed (optional convenience method for use where spriteset sizes must match; set value to same as size of largest spriteset)
         # optional parameters for offsets and extents for the *spritelayout* to use with this sprite (read nml spritelayout docs to see use)
         self.xoffset = xoffset
@@ -729,10 +715,18 @@ class Industry(object):
         else:
             suffix = ''
         if isinstance(sprite_or_spriteset, Spriteset):
-            if construction_state_num == 3 or self.default_industry_properties.override_default_construction_states == False:
-                return sprite_or_spriteset.id + date_variation_suffix + suffix  + '(' + str(sprite_or_spriteset.animation_rate) + '* LOAD_TEMP(var_animation_frame))'
+            # tiny optimisation, don't use an animation sprite selector if there is no animation
+            if sprite_or_spriteset.animation_rate > 0:
+                if sprite_or_spriteset.custom_sprite_selector:
+                    sprite_selector = str(sprite_or_spriteset.animation_rate) + '*' + sprite_or_spriteset.custom_sprite_selector
+                else:
+                     sprite_selector = str(sprite_or_spriteset.animation_rate) + '* (animation_frame)'
             else:
-                return sprite_or_spriteset.id + '_spriteset_default_construction_state_' + str(construction_state_num) + '(' + str(sprite_or_spriteset.animation_rate) + '* LOAD_TEMP(var_animation_frame))'
+                sprite_selector = '0'
+            if construction_state_num == 3 or self.default_industry_properties.override_default_construction_states == False:
+                return sprite_or_spriteset.id + date_variation_suffix + suffix  + '(' + sprite_selector + ')'
+            else:
+                return sprite_or_spriteset.id + '_spriteset_default_construction_state_' + str(construction_state_num) + '(' + sprite_selector + ')'
         if isinstance(sprite_or_spriteset, Sprite):
             return getattr(sprite_or_spriteset, 'sprite_number' + suffix)
 
