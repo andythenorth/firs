@@ -9,7 +9,7 @@ from industry import IndustrySecondary, TileLocationChecks, IndustryLocationChec
 
 industry = IndustrySecondary(id='steel_mill',
                     processed_cargos_and_output_ratios=[('IORE', 3), ('COAL', 2), ('SCMT', 3)],
-                    prob_in_game='2',
+                    prob_in_game='3',
                     prob_random='5',
                     location_checks=IndustryLocationChecks(incompatible={'steel_mill': 56,
                                                                          'junk_yard': 16,
