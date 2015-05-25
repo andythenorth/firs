@@ -218,13 +218,27 @@ switch(FEAT_INDUSTRYTILES, SELF, rubber_plantation_tile_plantation_spritelayout,
  * tile with house
  * ***************/
 
-spriteset(${industry.id}_792, "src/graphics/industries/${industry.id}_1.png") { tmpl_building_sprite(10, 10, 59, -28) }
+spriteset(${industry.id}_house, "src/graphics/industries/${industry.id}_1.png") { tmpl_building_sprite(10, 10, 59, -28) }
 spritelayout ${industry.id}_tile_house_spritelayout {
 	ground {
 		sprite: 2022;
 	}
 	building {
-		sprite: ${industry.id}_792;
+		sprite: ${industry.id}_house;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		xextent: 7;
+		yextent: 7;
+		zextent: 7;
+	}
+}
+spriteset(${industry.id}_shed, "src/graphics/industries/${industry.id}_1.png") { tmpl_building_sprite(80, 10, 59, -28) }
+spritelayout ${industry.id}_tile_shed_spritelayout {
+	ground {
+		sprite: 2022;
+	}
+	building {
+		sprite: ${industry.id}_shed;
 		recolour_mode: RECOLOUR_REMAP;
 		palette: 0;
 		xextent: 7;
@@ -276,6 +290,20 @@ item(FEAT_INDUSTRYTILES, ${industry.id}_tile_house, TILE_RUBBER_PLANTATION_2) {
 		${industry.id}_tile_house_spritelayout;
 	}
 }
+<!--! HAX - this additional tile is only used because I wanted to avoid layout checks
+      house + shed can share same tile once refactore to standard layout methods -->
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile_shed, TILE_RUBBER_PLANTATION_3) {
+	property {
+		substitute:       0;
+		accepted_cargos:  [[FMSP, 8]];
+		land_shape_flags: 0;
+	}
+	graphics {
+		autoslope:  return CB_RESULT_AUTOSLOPE;
+		tile_check: ${industry.id}_tile_house_location_check;
+		${industry.id}_tile_shed_spritelayout;
+	}
+}
 
 /* *************************************************
  * Definition of the industry layouts
@@ -290,7 +318,7 @@ tilelayout ${industry.id}_tilelayout_1 {
 	0, 2: ${industry.id}_tile_plantation;
 	1, 0: ${industry.id}_tile_plantation;
 	1, 1: ${industry.id}_tile_plantation;
-	1, 2: ${industry.id}_tile_plantation;
+	1, 2: ${industry.id}_tile_shed;
 	2, 1: ${industry.id}_tile_plantation;
 	2, 2: ${industry.id}_tile_house;
 }
@@ -298,7 +326,7 @@ tilelayout ${industry.id}_tilelayout_1 {
 tilelayout ${industry.id}_tilelayout_2 {
 	0, 0: ${industry.id}_tile_plantation;
 	0, 1: ${industry.id}_tile_plantation;
-	0, 2: ${industry.id}_tile_plantation;
+	0, 2: ${industry.id}_tile_shed;
 	0, 3: ${industry.id}_tile_plantation;
 	1, 1: ${industry.id}_tile_plantation;
 	1, 2: ${industry.id}_tile_plantation;
@@ -313,8 +341,10 @@ tilelayout ${industry.id}_tilelayout_3 {
 	1, 1: ${industry.id}_tile_plantation;
 	2, 0: ${industry.id}_tile_plantation;
 	2, 1: ${industry.id}_tile_plantation;
-	3, 0: ${industry.id}_tile_plantation;
-	3, 1: ${industry.id}_tile_house;
+	3, 0: ${industry.id}_tile_shed;
+	3, 1: ${industry.id}_tile_plantation;
+	4, 0: ${industry.id}_tile_plantation;
+	4, 1: ${industry.id}_tile_house;
 }
 
 tilelayout ${industry.id}_tilelayout_4 {
@@ -327,7 +357,7 @@ tilelayout ${industry.id}_tilelayout_4 {
 	1, 3: ${industry.id}_tile_plantation;
 	1, 4: ${industry.id}_tile_plantation;
 	3, 0: ${industry.id}_tile_plantation;
-	3, 1: ${industry.id}_tile_plantation;
+	3, 1: ${industry.id}_tile_shed;
 	3, 3: ${industry.id}_tile_plantation;
 	3, 4: ${industry.id}_tile_plantation;
 	4, 0: ${industry.id}_tile_plantation;
@@ -343,16 +373,16 @@ tilelayout ${industry.id}_tilelayout_5 {
 	0, 5: ${industry.id}_tile_plantation;
 	1, 0: ${industry.id}_tile_plantation;
 	1, 1: ${industry.id}_tile_plantation;
-	1, 2: ${industry.id}_tile_plantation;
+	1, 2: ${industry.id}_tile_shed;
 	1, 4: ${industry.id}_tile_plantation;
 	1, 5: ${industry.id}_tile_plantation;
 	1, 6: ${industry.id}_tile_plantation;
 	2, 0: ${industry.id}_tile_plantation;
 	2, 1: ${industry.id}_tile_plantation;
-	2, 2: ${industry.id}_tile_plantation;
+	2, 2: ${industry.id}_tile_house;
 	2, 4: ${industry.id}_tile_plantation;
 	2, 5: ${industry.id}_tile_plantation;
-	2, 6: ${industry.id}_tile_house;
+	2, 6: ${industry.id}_tile_plantation;
 	3, 1: ${industry.id}_tile_plantation;
 	3, 2: ${industry.id}_tile_plantation;
 	3, 4: ${industry.id}_tile_plantation;
