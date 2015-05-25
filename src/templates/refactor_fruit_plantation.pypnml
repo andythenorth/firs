@@ -337,51 +337,28 @@ tilelayout ${industry.id}_tilelayout_4 {
 }
 
 tilelayout ${industry.id}_tilelayout_5 {
-	0, 0: ${industry.id}_tile_plantation;
 	0, 1: ${industry.id}_tile_plantation;
 	0, 2: ${industry.id}_tile_plantation;
 	0, 3: ${industry.id}_tile_plantation;
+	0, 4: ${industry.id}_tile_plantation;
 	1, 0: ${industry.id}_tile_plantation;
 	1, 1: ${industry.id}_tile_plantation;
 	1, 2: ${industry.id}_tile_plantation;
 	1, 3: ${industry.id}_tile_plantation;
-	2, 0: ${industry.id}_tile_plantation;
-	2, 1: ${industry.id}_tile_plantation;
-	2, 2: ${industry.id}_tile_plantation;
-	2, 3: ${industry.id}_tile_plantation;
-	4, 0: ${industry.id}_tile_plantation;
+	1, 4: ${industry.id}_tile_plantation;
+	1, 5: ${industry.id}_tile_plantation;
+	3, 0: ${industry.id}_tile_plantation;
+	3, 1: ${industry.id}_tile_plantation;
+	3, 2: ${industry.id}_tile_plantation;
+	3, 3: ${industry.id}_tile_plantation;
+	3, 4: ${industry.id}_tile_plantation;
+	3, 5: ${industry.id}_tile_house;
 	4, 1: ${industry.id}_tile_plantation;
 	4, 2: ${industry.id}_tile_plantation;
 	4, 3: ${industry.id}_tile_plantation;
-	5, 0: ${industry.id}_tile_plantation;
-	5, 1: ${industry.id}_tile_plantation;
-	5, 2: ${industry.id}_tile_plantation;
-	5, 3: ${industry.id}_tile_plantation;
-	6, 0: ${industry.id}_tile_plantation;
-	6, 1: ${industry.id}_tile_plantation;
-	6, 2: ${industry.id}_tile_plantation;
-	6, 3: ${industry.id}_tile_plantation;
-	1, 5: ${industry.id}_tile_plantation;
-	1, 6: ${industry.id}_tile_plantation;
-	1, 7: ${industry.id}_tile_plantation;
-	1, 8: ${industry.id}_tile_plantation;
-	2, 5: ${industry.id}_tile_plantation;
-	2, 6: ${industry.id}_tile_plantation;
-	2, 7: ${industry.id}_tile_plantation;
-	2, 8: ${industry.id}_tile_house;
-	3, 5: ${industry.id}_tile_plantation;
-	3, 6: ${industry.id}_tile_plantation;
-	3, 7: ${industry.id}_tile_plantation;
-	3, 8: ${industry.id}_tile_plantation;
-	4, 5: ${industry.id}_tile_plantation;
-	4, 6: ${industry.id}_tile_plantation;
-	4, 7: ${industry.id}_tile_plantation;
-	4, 8: ${industry.id}_tile_plantation;
-	5, 5: ${industry.id}_tile_plantation;
-	5, 6: ${industry.id}_tile_plantation;
-	5, 7: ${industry.id}_tile_plantation;
-	5, 8: ${industry.id}_tile_plantation;
+	4, 4: ${industry.id}_tile_plantation;
 }
+
 
 /* *************************************************
  * Definition of the industry
