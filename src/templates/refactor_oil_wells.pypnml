@@ -100,7 +100,7 @@ item(FEAT_INDUSTRYTILES, oil_wells_tile_building, TILE_OILWELLS_2) {
  * Definition of the industry layouts
  * *************************************************/
 
-<tal:include metal:use-macro="load: industry_layouts.pynml" />
+<tal:include metal:use-macro="load: layouts.pynml" />
 
 /* *************************************************
  * Definition of the industry

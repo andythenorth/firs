@@ -274,7 +274,7 @@ item(FEAT_INDUSTRYTILES, ${industry.id}_tile_buildings, TILE_ORCHARD_PIGGERY_2) 
  * Definition of the industry layouts
  * *************************************************/
 
-<tal:include metal:use-macro="load: industry_layouts.pynml" />
+<tal:include metal:use-macro="load: layouts.pynml" />
 
 /* *************************************************
  * Definition of the industry

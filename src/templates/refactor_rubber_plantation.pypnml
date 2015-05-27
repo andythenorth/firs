@@ -309,7 +309,7 @@ item(FEAT_INDUSTRYTILES, ${industry.id}_tile_shed, TILE_RUBBER_PLANTATION_3) {
  * Definition of the industry layouts
  * *************************************************/
 
-<!--! could use templated layouts here using <tal:include metal:use-macro="load: industry_layouts.pynml" />
+<!--! could use templated layouts here using <tal:include metal:use-macro="load: layouts.pynml" />
       but there's no gain as the graphics chain doesn't use a layout check (so no repeating of data) -->
 
 tilelayout ${industry.id}_tilelayout_1 {

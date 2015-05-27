@@ -26,7 +26,7 @@
  * Definition of the industry
  * *************************************************/
 
-<tal:include metal:use-macro="load: industry_layouts.pynml" />
+<tal:include metal:use-macro="load: layouts.pynml" />
 
 <tal:include metal:use-macro="load: check_availability.pynml" />
 
