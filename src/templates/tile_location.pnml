@@ -269,6 +269,12 @@ switch (FEAT_INDUSTRYTILES, SELF, THIS_ID(name), nearby_tile_slope(0,0) == SLOPE
  * next          name of next switch or "return CB_RESULT_LOCATION_ALLOW"
  */
 
+/* The check looks really complex, but is simple:
+ * - get the tile height of n tile (lowest corner), add 0, 1, or 2 depending on slope (flat, slope, steep slope)
+ * - do same for current tile
+ * - if the results match, allow building
+ * The stacked ternary operators make it look more complicated than it is.
+ */
 #define TILE_REQUIRE_EFFECTIVELY_FLAT(name, errtext, next) \
 switch (FEAT_INDUSTRYTILES, SELF, THIS_ID(name),  \
                                                   ( \
