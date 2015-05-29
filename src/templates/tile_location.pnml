@@ -256,6 +256,37 @@ switch (FEAT_INDUSTRYTILES, SELF, THIS_ID(name), nearby_tile_slope(0,0) == SLOPE
 	return errtext; \
 }
 
+
+/*
+ * Check whether highest corner of a tile is same as highest corner of industry north tile
+ *
+ * switch name:  THIS_ID(name)
+ *               tilename ## name
+ *
+ * Parameters:
+ * name          name of this switch
+ * errtext:      deny construction: text for error message or CB_RESULT_LOCATION_DISALLOW
+ * next          name of next switch or "return CB_RESULT_LOCATION_ALLOW"
+ */
+
+#define TILE_REQUIRE_EFFECTIVELY_FLAT(name, errtext, next) \
+switch (FEAT_INDUSTRYTILES, SELF, THIS_ID(name),  \
+                                                  ( \
+                                                  nearby_tile_height(-relative_x, -relative_y) \
+                                                  + (nearby_tile_slope(-relative_x, -relative_y) \
+                                                  == SLOPE_FLAT ? 0 : \
+                                                  nearby_tile_slope(-relative_x, -relative_y) == bitmask(IS_STEEP_SLOPE) ? 2 : 1 \
+                                                  )) == (nearby_tile_height(0, 0) \
+                                                  + (nearby_tile_slope(0, 0) \
+                                                  == SLOPE_FLAT ? 0 : \
+                                                  nearby_tile_slope(0, 0) == bitmask(IS_STEEP_SLOPE) ? 2 : 1)) \
+                                                  ) { \
+	1: next; \
+	return errtext; \
+}
+
+
+
 /*
  * Check whether an industry *tile* is within a certain distance of houses
  * *

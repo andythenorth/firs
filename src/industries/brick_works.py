@@ -43,7 +43,7 @@ industry.add_tile(id='brick_works_tile_1',
                   animation_speed=3,
                   custom_animation_control={'macro':'random_first_frame',
                                             'animation_triggers': 'bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE)'},
-                  location_checks=TileLocationChecks(disallow_slopes=True,
+                  location_checks=TileLocationChecks(require_effectively_flat=True,
                                                      disallow_industry_adjacent=True))
 
 spriteset_ground = industry.add_spriteset(

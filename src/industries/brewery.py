@@ -52,13 +52,13 @@ industry.add_tile(id='brewery_tile_1',
                   animation_speed=3,
                   custom_animation_control={'macro':'random_first_frame',
                                             'animation_triggers': 'bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE)'},
-                  location_checks=TileLocationChecks(disallow_slopes=True,
+                  location_checks=TileLocationChecks(require_effectively_flat=True,
                                                      disallow_industry_adjacent=True))
 industry.add_tile(id='brewery_tile_2',
                   animation_length=71,
                   animation_looping=True,
                   animation_speed=2,
-                  location_checks=TileLocationChecks(disallow_slopes=True,
+                  location_checks=TileLocationChecks(require_effectively_flat=True,
                                                      disallow_industry_adjacent=True))
 
 spriteset_ground = industry.add_spriteset(

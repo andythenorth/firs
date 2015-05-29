@@ -35,7 +35,7 @@ industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_ARCTIC'].enabled = True
 
 industry.add_tile(id='oil_refinery_tile_1',
-                  location_checks=TileLocationChecks(disallow_slopes=True,
+                  location_checks=TileLocationChecks(require_effectively_flat=True,
                                                      disallow_industry_adjacent=True))
 
 spriteset_ground = industry.add_spriteset(

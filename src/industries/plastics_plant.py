@@ -36,7 +36,7 @@ industry = IndustrySecondary(id='plastics_plant',
 industry.economy_variations['FIRS'].enabled = True
 
 industry.add_tile(id='plastics_plant_tile_1',
-                  location_checks=TileLocationChecks(disallow_slopes=True,
+                  location_checks=TileLocationChecks(require_effectively_flat=True,
                                                      disallow_industry_adjacent=True))
 
 spriteset_ground = industry.add_spriteset(

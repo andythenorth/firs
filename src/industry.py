@@ -90,6 +90,7 @@ class TileLocationChecks(object):
         self.disallow_slopes = kwargs.get('disallow_slopes', False)
         self.disallow_steep_slopes = kwargs.get('disallow_steep_slopes', False)
         self.disallow_industry_adjacent = kwargs.get('disallow_industry_adjacent', False)
+        self.require_effectively_flat = kwargs.get('require_effectively_flat', False)
         self.require_houses_nearby = kwargs.get('require_houses_nearby', False)
         self.require_road_adjacent = kwargs.get('require_road_adjacent', []) # any of ['nw', 'ne', 'se', 'nw']
         self.require_coast = kwargs.get('require_coast', False)
@@ -112,6 +113,9 @@ class TileLocationChecks(object):
 
         if self.disallow_industry_adjacent:
             result.append(TileLocationCheckDisallowIndustryAdjacent())
+
+        if self.require_effectively_flat:
+            result.appendleft(TileLocationCheckRequireEffectivelyFlat())
 
         if self.require_coast:
             result.append(TileLocationCheckRequireSea())
@@ -149,7 +153,10 @@ class TileLocationChecks(object):
 
 
 class TileLocationCheckDisallowSlopes(object):
-    """ Prevent building on all slopes """
+    """
+        Prevent building on all slopes
+        Not to be confused with TileLocationCheckRequireEffectivelyFlat
+    """
     def __init__(self):
         self.switch_result = None # no default value for this check, it may not be the last check in a chain
         self.switch_entry_point = None
@@ -180,6 +187,21 @@ class TileLocationCheckDisallowIndustryAdjacent(object):
 
     def render(self):
         return 'TILE_DISALLOW_NEARBY_CLASS(' + self.switch_entry_point + ', TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW,' + self.switch_result + ')'
+
+
+class TileLocationCheckRequireEffectivelyFlat(object):
+    """
+        Check that the highest corner of all tiles is equal to the highest corner of the north tile
+        This permits building on slopes with foundations,
+        but prevents industry graphics being 'broken' by being drawn at different height levels.
+        Not to be confused with TileLocationCheckDisallowSlopes
+    """
+    def __init__(self):
+        self.switch_result = None # no default value for this check, it may not be the last check in a chain
+        self.switch_entry_point = None
+
+    def render(self):
+        return 'TILE_REQUIRE_EFFECTIVELY_FLAT(' + self.switch_entry_point + ', CB_RESULT_LOCATION_DISALLOW,' + self.switch_result + ')'
 
 
 class TileLocationCheckRequireHousesNearby(object):

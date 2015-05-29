@@ -38,7 +38,7 @@ industry.add_tile(id='smithy_forge_tile_1',
                   animation_length=47,
                   animation_looping=True,
                   animation_speed=2,
-                  location_checks=TileLocationChecks(disallow_slopes=True,
+                  location_checks=TileLocationChecks(require_effectively_flat=True,
                                                      disallow_industry_adjacent=True))
 
 sprite_ground = industry.add_sprite(

@@ -43,7 +43,7 @@ industry.add_tile(id='grain_mill_tile_1',
                   animation_length=6,
                   animation_looping=True,
                   animation_speed=3,
-                  location_checks=TileLocationChecks(disallow_slopes=True,
+                  location_checks=TileLocationChecks(require_effectively_flat=True,
                                                      disallow_industry_adjacent=True))
 
 spriteset_ground_bakery = industry.add_spriteset(

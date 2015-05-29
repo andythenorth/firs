@@ -46,7 +46,7 @@ industry.add_tile(id='iron_works_tile_2',
                   animation_speed=2,
                   custom_animation_control={'macro':'random_first_frame',
                                             'animation_triggers': 'bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE)'},
-                  location_checks=TileLocationChecks(disallow_slopes=True,
+                  location_checks=TileLocationChecks(require_effectively_flat=True,
                                                      disallow_industry_adjacent=True))
 industry.add_tile(id='iron_works_tile_3',
                   animation_length=3,
@@ -54,7 +54,7 @@ industry.add_tile(id='iron_works_tile_3',
                   animation_speed=8,
                   custom_animation_control={'macro':'random_first_frame',
                                             'animation_triggers': 'bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE)'},
-                  location_checks=TileLocationChecks(disallow_slopes=True,
+                  location_checks=TileLocationChecks(require_effectively_flat=True,
                                                      disallow_industry_adjacent=True))
 
 

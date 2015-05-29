@@ -39,7 +39,7 @@ industry.economy_variations['BASIC_TROPIC'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
 
 industry.add_tile(id='hotel_tile_1',
-                  location_checks=TileLocationChecks(disallow_slopes=True))
+                  location_checks=TileLocationChecks(require_effectively_flat=True))
 
 sprite_ground = industry.add_sprite(
     sprite_number = 'GROUNDSPRITE_CLEARED'

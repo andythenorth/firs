@@ -34,7 +34,7 @@ industry = IndustrySecondary(id='food_processor',
 industry.economy_variations['BASIC_TROPIC'].enabled = True
 
 industry.add_tile(id='food_processor_tile_1',
-                  location_checks=TileLocationChecks(disallow_slopes=True,
+                  location_checks=TileLocationChecks(require_effectively_flat=True,
                                                      disallow_industry_adjacent=True))
 
 spriteset_ground = industry.add_spriteset(
