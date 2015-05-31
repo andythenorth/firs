@@ -114,16 +114,6 @@ spriteset_14 = industry.add_spriteset(
     sprites = [(80, 90, 64, 31, -31, 0)],
     zextent = 32
 )
-spriteset_16 = industry.add_spriteset(
-    id = 'clay_pit_spriteset_16',
-    sprites = [(220, 90, 64, 31, -31, 0)],
-    zextent = 32
-)
-spriteset_17 = industry.add_spriteset(
-    id = 'clay_pit_spriteset_17',
-    sprites = [(290, 90, 64, 31, -31, 0)],
-    zextent = 32
-)
 spriteset_18 = industry.add_spriteset(
     id = 'clay_pit_spriteset_18',
     sprites = [(360, 90, 64, 31, -31, 0)],
@@ -154,54 +144,9 @@ spriteset_24 = industry.add_spriteset(
     sprites = [(360, 130, 64, 31, -31, 0)],
     zextent = 32
 )
-spriteset_25 = industry.add_spriteset(
-    id = 'clay_pit_spriteset_25',
-    sprites = [(440, 10, 64, 31, -31, 0)],
-    zextent = 32
-)
-spriteset_26 = industry.add_spriteset(
-    id = 'clay_pit_spriteset_26',
-    sprites = [(510, 10, 64, 31, -31, 0)],
-    zextent = 32
-)
-spriteset_27 = industry.add_spriteset(
-    id = 'clay_pit_spriteset_27',
-    sprites = [(580, 10, 64, 31, -31, 0)],
-    zextent = 32
-)
-spriteset_28 = industry.add_spriteset(
-    id = 'clay_pit_spriteset_28',
-    sprites = [(650, 10, 64, 31, -31, 0)],
-    zextent = 32
-)
-spriteset_29 = industry.add_spriteset(
-    id = 'clay_pit_spriteset_29',
-    sprites = [(440, 50, 64, 31, -31, 0)],
-    zextent = 32
-)
-spriteset_30 = industry.add_spriteset(
-    id = 'clay_pit_spriteset_30',
-    sprites = [(510, 50, 64, 31, -31, 0)],
-    zextent = 32
-)
-spriteset_31 = industry.add_spriteset(
-    id = 'clay_pit_spriteset_31',
-    sprites = [(580, 50, 64, 31, -31, 0)],
-    zextent = 32
-)
-spriteset_32 = industry.add_spriteset(
-    id = 'clay_pit_spriteset_32',
-    sprites = [(650, 50, 64, 31, -31, 0)],
-    zextent = 32
-)
-spriteset_33 = industry.add_spriteset(
-    id = 'clay_pit_spriteset_33',
-    sprites = [(580, 90, 64, 31, -31, 0)],
-    zextent = 32
-)
-spriteset_34 = industry.add_spriteset(
-    id = 'clay_pit_spriteset_34',
-    sprites = [(650, 90, 64, 31, -31, 0)],
+spriteset_crane_1 = industry.add_spriteset(
+    id = 'clay_pit_spriteset_crane_1',
+    sprites = [(650, 10, 64, 71, -48, -55)],
     zextent = 32
 )
 spriteset_35 = industry.add_spriteset(
@@ -234,99 +179,108 @@ spriteset_41 = industry.add_spriteset(
     sprites = [(1150, 10, 64, 34, -31, -3)],
     zextent = 32
 )
-spriteset_45 = industry.add_spriteset(
-    id = 'clay_pit_spriteset_45',
+spriteset_loader_and_hut = industry.add_spriteset(
+    id = 'clay_pit_spriteset_loader_and_hut',
     sprites = [(800, 50, 64, 31, -31, 0)],
     zextent = 32
 )
-spriteset_46 = industry.add_spriteset(
-    id = 'clay_pit_spriteset_46',
+spriteset_conveyor_1 = industry.add_spriteset(
+    id = 'clay_pit_spriteset_conveyor_1',
     sprites = [(870, 50, 64, 51, -31, -20)],
     zextent = 32
 )
-spriteset_47 = industry.add_spriteset(
-    id = 'clay_pit_spriteset_47',
+spriteset_silo = industry.add_spriteset(
+    id = 'clay_pit_spriteset_silo',
     sprites = [(1010, 50, 64, 64, -31, -35)],
     zextent = 32
 )
-spriteset_48 = industry.add_spriteset(
-    id = 'clay_pit_spriteset_48',
+spriteset_conveyor_2 = industry.add_spriteset(
+    id = 'clay_pit_spriteset_conveyor_2',
     sprites = [(1080, 50, 64, 49, -31, -18)],
     zextent = 32
 )
-spriteset_49 = industry.add_spriteset(
-    id = 'clay_pit_spriteset_49',
+spriteset_crusher = industry.add_spriteset(
+    id = 'clay_pit_spriteset_crusher',
     sprites = [(1150, 50, 64, 57, -31, -26)],
     zextent = 32
 )
-
-
 
 industry.add_spritelayout(
     id = 'clay_pit_spritelayout_1',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_1,
-    building_sprites = [spriteset_25],
+    building_sprites = [],
+    terrain_aware_ground = True
 )
 industry.add_spritelayout(
     id = 'clay_pit_spritelayout_2',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_2,
-    building_sprites = [spriteset_26],
+    building_sprites = [],
+    terrain_aware_ground = True
 )
 industry.add_spritelayout(
     id = 'clay_pit_spritelayout_4',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_4,
-    building_sprites = [spriteset_29],
+    building_sprites = [spriteset_crane_1],
+    terrain_aware_ground = True
 )
 industry.add_spritelayout(
     id = 'clay_pit_spritelayout_5',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_5,
     building_sprites = [],
+    terrain_aware_ground = True
 )
 industry.add_spritelayout(
     id = 'clay_pit_spritelayout_6',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_6,
     building_sprites = [],
+    terrain_aware_ground = True
 )
 industry.add_spritelayout(
     id = 'clay_pit_spritelayout_7',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_7,
-    building_sprites = [spriteset_29],
+    building_sprites = [],
+    terrain_aware_ground = True
 )
 industry.add_spritelayout(
     id = 'clay_pit_spritelayout_8',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_8,
-    building_sprites = [spriteset_30],
+    building_sprites = [],
+    terrain_aware_ground = True
 )
 industry.add_spritelayout(
     id = 'clay_pit_spritelayout_10',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_10,
-    building_sprites = [spriteset_31],
+    building_sprites = [],
+    terrain_aware_ground = True
 )
 industry.add_spritelayout(
     id = 'clay_pit_spritelayout_11',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_11,
-    building_sprites = [spriteset_32],
+    building_sprites = [],
+    terrain_aware_ground = True
 )
 industry.add_spritelayout(
     id = 'clay_pit_spritelayout_12',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_12,
     building_sprites = [],
+    terrain_aware_ground = True
 )
 industry.add_spritelayout(
     id = 'clay_pit_spritelayout_13',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_13,
     building_sprites = [],
+    terrain_aware_ground = True
 )
 industry.add_spritelayout(
     id = 'clay_pit_spritelayout_14',
@@ -337,13 +291,13 @@ industry.add_spritelayout(
 industry.add_spritelayout(
     id = 'clay_pit_spritelayout_16',
     ground_sprite = spriteset_ground,
-    ground_overlay = spriteset_16,
-    building_sprites = [spriteset_33],
+    ground_overlay = spriteset_14,
+    building_sprites = [],
 )
 industry.add_spritelayout(
     id = 'clay_pit_spritelayout_17',
     ground_sprite = spriteset_ground,
-    ground_overlay = spriteset_17,
+    ground_overlay = spriteset_14,
     building_sprites = [],
 )
 industry.add_spritelayout(
@@ -351,36 +305,42 @@ industry.add_spritelayout(
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_18,
     building_sprites = [],
+    terrain_aware_ground = True
 )
 industry.add_spritelayout(
     id = 'clay_pit_spritelayout_19',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_19,
     building_sprites = [],
+    terrain_aware_ground = True
 )
 industry.add_spritelayout(
     id = 'clay_pit_spritelayout_20',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_20,
     building_sprites = [],
+    terrain_aware_ground = True
 )
 industry.add_spritelayout(
     id = 'clay_pit_spritelayout_22',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_22,
     building_sprites = [],
+    terrain_aware_ground = True
 )
 industry.add_spritelayout(
     id = 'clay_pit_spritelayout_23',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_23,
     building_sprites = [],
+    terrain_aware_ground = True
 )
 industry.add_spritelayout(
     id = 'clay_pit_spritelayout_24',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_24,
     building_sprites = [],
+    terrain_aware_ground = True
 )
 industry.add_spritelayout(
     id = 'clay_pit_spritelayout_35',
@@ -392,31 +352,31 @@ industry.add_spritelayout(
     id = 'clay_pit_spritelayout_36',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_36,
-    building_sprites = [spriteset_45],
+    building_sprites = [spriteset_loader_and_hut],
 )
 industry.add_spritelayout(
     id = 'clay_pit_spritelayout_37',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_37,
-    building_sprites = [spriteset_46],
+    building_sprites = [spriteset_conveyor_1],
 )
 industry.add_spritelayout(
     id = 'clay_pit_spritelayout_39',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_39,
-    building_sprites = [spriteset_47],
+    building_sprites = [spriteset_silo],
 )
 industry.add_spritelayout(
     id = 'clay_pit_spritelayout_40',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_40,
-    building_sprites = [spriteset_48],
+    building_sprites = [spriteset_conveyor_2],
 )
 industry.add_spritelayout(
     id = 'clay_pit_spritelayout_41',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_41,
-    building_sprites = [spriteset_49],
+    building_sprites = [spriteset_crusher],
 )
 
 

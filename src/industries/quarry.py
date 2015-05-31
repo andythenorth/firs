@@ -50,6 +50,337 @@ industry.add_tile(id='quarry_tile_2',
                                                      disallow_coast=True,
                                                      disallow_industry_adjacent=True))
 
+spriteset_ground = industry.add_spriteset(
+    id = 'quarry_spriteset_ground',
+    type = 'empty'
+)
+spriteset_1 = industry.add_spriteset(
+    id = 'quarry_spriteset_1',
+    sprites = [(10, 10, 64, 31, -31, 0)],
+    zextent = 32
+)
+spriteset_2 = industry.add_spriteset(
+    id = 'quarry_spriteset_2',
+    sprites = [(80, 10, 64, 31, -31, 0)],
+    zextent = 32
+)
+spriteset_4 = industry.add_spriteset(
+    id = 'quarry_spriteset_4',
+    sprites = [(220, 10, 64, 31, -31, 0)],
+    zextent = 32
+)
+spriteset_5 = industry.add_spriteset(
+    id = 'quarry_spriteset_5',
+    sprites = [(290, 10, 64, 31, -31, 0)],
+    zextent = 32
+)
+spriteset_6 = industry.add_spriteset(
+    id = 'quarry_spriteset_6',
+    sprites = [(360, 10, 64, 31, -31, 0)],
+    zextent = 32
+)
+spriteset_7 = industry.add_spriteset(
+    id = 'quarry_spriteset_7',
+    sprites = [(10, 50, 64, 31, -31, 0)],
+    zextent = 32
+)
+spriteset_8 = industry.add_spriteset(
+    id = 'quarry_spriteset_8',
+    sprites = [(80, 50, 64, 31, -31, 0)],
+    zextent = 32
+)
+spriteset_10 = industry.add_spriteset(
+    id = 'quarry_spriteset_10',
+    sprites = [(220, 50, 64, 31, -31, 0)],
+    zextent = 32
+)
+spriteset_11 = industry.add_spriteset(
+    id = 'quarry_spriteset_11',
+    sprites = [(290, 50, 64, 31, -31, 0)],
+    zextent = 32
+)
+spriteset_12 = industry.add_spriteset(
+    id = 'quarry_spriteset_12',
+    sprites = [(360, 50, 64, 31, -31, 0)],
+    zextent = 32
+)
+spriteset_13 = industry.add_spriteset(
+    id = 'quarry_spriteset_13',
+    sprites = [(10, 90, 64, 31, -31, 0)],
+    zextent = 32
+)
+spriteset_14 = industry.add_spriteset(
+    id = 'quarry_spriteset_14',
+    sprites = [(80, 90, 64, 31, -31, 0)],
+    zextent = 32
+)
+spriteset_18 = industry.add_spriteset(
+    id = 'quarry_spriteset_18',
+    sprites = [(360, 90, 64, 31, -31, 0)],
+    zextent = 32
+)
+spriteset_19 = industry.add_spriteset(
+    id = 'quarry_spriteset_19',
+    sprites = [(10, 130, 64, 31, -31, 0)],
+    zextent = 32
+)
+spriteset_20 = industry.add_spriteset(
+    id = 'quarry_spriteset_20',
+    sprites = [(80, 130, 64, 31, -31, 0)],
+    zextent = 32
+)
+spriteset_22 = industry.add_spriteset(
+    id = 'quarry_spriteset_22',
+    sprites = [(220, 130, 64, 31, -31, 0)],
+    zextent = 32
+)
+spriteset_23 = industry.add_spriteset(
+    id = 'quarry_spriteset_23',
+    sprites = [(290, 130, 64, 31, -31, 0)],
+    zextent = 32
+)
+spriteset_24 = industry.add_spriteset(
+    id = 'quarry_spriteset_24',
+    sprites = [(360, 130, 64, 31, -31, 0)],
+    zextent = 32
+)
+spriteset_crane_1 = industry.add_spriteset(
+    id = 'quarry_spriteset_crane_1',
+    sprites = [(650, 10, 64, 71, -48, -55)],
+    zextent = 32
+)
+spriteset_35 = industry.add_spriteset(
+    id = 'quarry_spriteset_35',
+    sprites = [(730, 10, 64, 31, -31, 0)],
+    zextent = 32
+)
+spriteset_36 = industry.add_spriteset(
+    id = 'quarry_spriteset_36',
+    sprites = [(800, 10, 64, 31, -31, 0)],
+    zextent = 32
+)
+spriteset_37 = industry.add_spriteset(
+    id = 'quarry_spriteset_37',
+    sprites = [(870, 10, 64, 31, -31, 0)],
+    zextent = 32
+)
+spriteset_39 = industry.add_spriteset(
+    id = 'quarry_spriteset_39',
+    sprites = [(1010, 10, 64, 31, -31, 0)],
+    zextent = 32
+)
+spriteset_40 = industry.add_spriteset(
+    id = 'quarry_spriteset_40',
+    sprites = [(1080, 10, 64, 31, -31, 0)],
+    zextent = 32
+)
+spriteset_41 = industry.add_spriteset(
+    id = 'quarry_spriteset_41',
+    sprites = [(1150, 10, 64, 34, -31, -3)],
+    zextent = 32
+)
+spriteset_loader_and_hut = industry.add_spriteset(
+    id = 'quarry_spriteset_loader_and_hut',
+    sprites = [(800, 50, 64, 31, -31, 0)],
+    zextent = 32
+)
+spriteset_conveyor_1 = industry.add_spriteset(
+    id = 'quarry_spriteset_conveyor_1',
+    sprites = [(870, 50, 64, 51, -31, -20)],
+    zextent = 32
+)
+spriteset_silo = industry.add_spriteset(
+    id = 'quarry_spriteset_silo',
+    sprites = [(1010, 50, 64, 64, -31, -35)],
+    zextent = 32
+)
+spriteset_conveyor_2 = industry.add_spriteset(
+    id = 'quarry_spriteset_conveyor_2',
+    sprites = [(1080, 50, 64, 49, -31, -18)],
+    zextent = 32
+)
+spriteset_crusher = industry.add_spriteset(
+    id = 'quarry_spriteset_crusher',
+    sprites = [(1150, 50, 64, 57, -31, -26)],
+    zextent = 32
+)
+
+industry.add_spritelayout(
+    id = 'quarry_spritelayout_1',
+    ground_sprite = spriteset_ground,
+    ground_overlay = spriteset_1,
+    building_sprites = [],
+    terrain_aware_ground = True
+)
+industry.add_spritelayout(
+    id = 'quarry_spritelayout_2',
+    ground_sprite = spriteset_ground,
+    ground_overlay = spriteset_2,
+    building_sprites = [],
+    terrain_aware_ground = True
+)
+industry.add_spritelayout(
+    id = 'quarry_spritelayout_4',
+    ground_sprite = spriteset_ground,
+    ground_overlay = spriteset_4,
+    building_sprites = [spriteset_crane_1],
+    terrain_aware_ground = True
+)
+industry.add_spritelayout(
+    id = 'quarry_spritelayout_5',
+    ground_sprite = spriteset_ground,
+    ground_overlay = spriteset_5,
+    building_sprites = [],
+    terrain_aware_ground = True
+)
+industry.add_spritelayout(
+    id = 'quarry_spritelayout_6',
+    ground_sprite = spriteset_ground,
+    ground_overlay = spriteset_6,
+    building_sprites = [],
+    terrain_aware_ground = True
+)
+industry.add_spritelayout(
+    id = 'quarry_spritelayout_7',
+    ground_sprite = spriteset_ground,
+    ground_overlay = spriteset_7,
+    building_sprites = [],
+    terrain_aware_ground = True
+)
+industry.add_spritelayout(
+    id = 'quarry_spritelayout_8',
+    ground_sprite = spriteset_ground,
+    ground_overlay = spriteset_8,
+    building_sprites = [],
+    terrain_aware_ground = True
+)
+industry.add_spritelayout(
+    id = 'quarry_spritelayout_10',
+    ground_sprite = spriteset_ground,
+    ground_overlay = spriteset_10,
+    building_sprites = [],
+    terrain_aware_ground = True
+)
+industry.add_spritelayout(
+    id = 'quarry_spritelayout_11',
+    ground_sprite = spriteset_ground,
+    ground_overlay = spriteset_11,
+    building_sprites = [],
+    terrain_aware_ground = True
+)
+industry.add_spritelayout(
+    id = 'quarry_spritelayout_12',
+    ground_sprite = spriteset_ground,
+    ground_overlay = spriteset_12,
+    building_sprites = [],
+    terrain_aware_ground = True
+)
+industry.add_spritelayout(
+    id = 'quarry_spritelayout_13',
+    ground_sprite = spriteset_ground,
+    ground_overlay = spriteset_13,
+    building_sprites = [],
+    terrain_aware_ground = True
+)
+industry.add_spritelayout(
+    id = 'quarry_spritelayout_14',
+    ground_sprite = spriteset_ground,
+    ground_overlay = spriteset_14,
+    building_sprites = [],
+)
+industry.add_spritelayout(
+    id = 'quarry_spritelayout_16',
+    ground_sprite = spriteset_ground,
+    ground_overlay = spriteset_14,
+    building_sprites = [],
+)
+industry.add_spritelayout(
+    id = 'quarry_spritelayout_17',
+    ground_sprite = spriteset_ground,
+    ground_overlay = spriteset_14,
+    building_sprites = [],
+)
+industry.add_spritelayout(
+    id = 'quarry_spritelayout_18',
+    ground_sprite = spriteset_ground,
+    ground_overlay = spriteset_18,
+    building_sprites = [],
+    terrain_aware_ground = True
+)
+industry.add_spritelayout(
+    id = 'quarry_spritelayout_19',
+    ground_sprite = spriteset_ground,
+    ground_overlay = spriteset_19,
+    building_sprites = [],
+    terrain_aware_ground = True
+)
+industry.add_spritelayout(
+    id = 'quarry_spritelayout_20',
+    ground_sprite = spriteset_ground,
+    ground_overlay = spriteset_20,
+    building_sprites = [],
+    terrain_aware_ground = True
+)
+industry.add_spritelayout(
+    id = 'quarry_spritelayout_22',
+    ground_sprite = spriteset_ground,
+    ground_overlay = spriteset_22,
+    building_sprites = [],
+    terrain_aware_ground = True
+)
+industry.add_spritelayout(
+    id = 'quarry_spritelayout_23',
+    ground_sprite = spriteset_ground,
+    ground_overlay = spriteset_23,
+    building_sprites = [],
+    terrain_aware_ground = True
+)
+industry.add_spritelayout(
+    id = 'quarry_spritelayout_24',
+    ground_sprite = spriteset_ground,
+    ground_overlay = spriteset_24,
+    building_sprites = [],
+    terrain_aware_ground = True
+)
+industry.add_spritelayout(
+    id = 'quarry_spritelayout_35',
+    ground_sprite = spriteset_ground,
+    ground_overlay = spriteset_35,
+    building_sprites = [],
+)
+industry.add_spritelayout(
+    id = 'quarry_spritelayout_36',
+    ground_sprite = spriteset_ground,
+    ground_overlay = spriteset_36,
+    building_sprites = [spriteset_loader_and_hut],
+)
+industry.add_spritelayout(
+    id = 'quarry_spritelayout_37',
+    ground_sprite = spriteset_ground,
+    ground_overlay = spriteset_37,
+    building_sprites = [spriteset_conveyor_1],
+)
+industry.add_spritelayout(
+    id = 'quarry_spritelayout_39',
+    ground_sprite = spriteset_ground,
+    ground_overlay = spriteset_39,
+    building_sprites = [spriteset_silo],
+)
+industry.add_spritelayout(
+    id = 'quarry_spritelayout_40',
+    ground_sprite = spriteset_ground,
+    ground_overlay = spriteset_40,
+    building_sprites = [spriteset_conveyor_2],
+)
+industry.add_spritelayout(
+    id = 'quarry_spritelayout_41',
+    ground_sprite = spriteset_ground,
+    ground_overlay = spriteset_41,
+    building_sprites = [spriteset_crusher],
+)
+
+
+
 industry.add_industry_layout(
     id = 'quarry_layout_1',
     layout = [(0, 0, 'quarry_tile_2', 'quarry_spritelayout_24'),
