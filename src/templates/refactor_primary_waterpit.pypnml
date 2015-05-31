@@ -32,8 +32,6 @@ item(FEAT_INDUSTRYTILES, ${industry.id}_tile_1, ${global_constants.tile_numeric_
 	}
 
 	graphics {
-		/*foundations:  return CB_RESULT_NO_FOUNDATIONS;*/
-		autoslope:    return CB_RESULT_NO_AUTOSLOPE;
 		tile_check:   ${industry.id}_tile_1_location_check;
 		${industry.id}_layout;
 	}
