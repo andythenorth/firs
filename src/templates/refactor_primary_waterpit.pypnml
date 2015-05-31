@@ -9,6 +9,8 @@
 
 <tal:include metal:use-macro="load: waterpit_sprites.pynml" />
 
+<tal:include metal:use-macro="load: graphics_switches.pynml" />
+
 /* *************************************************
  * Definition of the industry tile and its callbacks
  * *************************************************/
@@ -33,7 +35,7 @@ item(FEAT_INDUSTRYTILES, ${industry.id}_tile_1, ${global_constants.tile_numeric_
 
 	graphics {
 		tile_check:   ${industry.id}_tile_1_location_check;
-		${industry.id}_layout;
+		${industry.id}_tile_fences;
 	}
 }
 
@@ -48,104 +50,15 @@ item(FEAT_INDUSTRYTILES, ${industry.id}_tile_2, ${global_constants.tile_numeric_
 		foundations:  return CB_RESULT_NO_FOUNDATIONS;
 		autoslope:    return CB_RESULT_NO_AUTOSLOPE;
 	    tile_check:   ${industry.id}_tile_2_location_check;
-		${industry.id}_layout;
+		${industry.id}_tile_fences;
 	}
-}
-
-/* *************************************************
- * Definition of the industry layouts
- * *************************************************/
-
-tilelayout tilelayout_${industry.id}_1 {
-	0, 0: ${industry.id}_tile_2;
-	0, 1: ${industry.id}_tile_2;
-	0, 2: ${industry.id}_tile_2;
-	0, 3: ${industry.id}_tile_2;
-	1, 0: ${industry.id}_tile_2;
-	1, 1: ${industry.id}_tile_1;
-	1, 2: ${industry.id}_tile_1;
-	1, 3: ${industry.id}_tile_2;
-	2, 0: ${industry.id}_tile_2;
-	2, 1: ${industry.id}_tile_1;
-	2, 2: ${industry.id}_tile_1;
-	2, 3: ${industry.id}_tile_2;
-	3, 0: ${industry.id}_tile_2;
-	3, 1: ${industry.id}_tile_1;
-	3, 2: ${industry.id}_tile_1;
-	3, 3: ${industry.id}_tile_2;
-	4, 0: ${industry.id}_tile_2;
-	4, 1: ${industry.id}_tile_2;
-	4, 2: ${industry.id}_tile_2;
-	4, 3: ${industry.id}_tile_2;
-	6, 1: ${industry.id}_tile_1;
-	6, 2: ${industry.id}_tile_1;
-	7, 2: ${industry.id}_tile_1;
-	7, 1: ${industry.id}_tile_1;
-	8, 1: ${industry.id}_tile_1;
-	8, 2: ${industry.id}_tile_1;
-}
-
-tilelayout tilelayout_${industry.id}_2 {
-	0, 3: ${industry.id}_tile_2;
-	0, 4: ${industry.id}_tile_2;
-	0, 5: ${industry.id}_tile_2;
-	0, 6: ${industry.id}_tile_2;
-	1, 0: ${industry.id}_tile_1;
-	1, 1: ${industry.id}_tile_1;
-	1, 3: ${industry.id}_tile_2;
-	1, 4: ${industry.id}_tile_1;
-	1, 5: ${industry.id}_tile_1;
-	1, 6: ${industry.id}_tile_2;
-	2, 0: ${industry.id}_tile_1;
-	2, 1: ${industry.id}_tile_1;
-	2, 3: ${industry.id}_tile_2;
-	2, 4: ${industry.id}_tile_1;
-	2, 5: ${industry.id}_tile_1;
-	2, 6: ${industry.id}_tile_2;
-	3, 0: ${industry.id}_tile_1;
-	3, 1: ${industry.id}_tile_1;
-	3, 3: ${industry.id}_tile_2;
-	3, 4: ${industry.id}_tile_1;
-	3, 5: ${industry.id}_tile_1;
-	3, 6: ${industry.id}_tile_2;
-	4, 3: ${industry.id}_tile_2;
-	4, 4: ${industry.id}_tile_2;
-	4, 5: ${industry.id}_tile_2;
-	4, 6: ${industry.id}_tile_2;
-}
-
-tilelayout tilelayout_${industry.id}_3 {
-	0, 0: ${industry.id}_tile_2;
-	0, 1: ${industry.id}_tile_2;
-	0, 2: ${industry.id}_tile_2;
-	0, 3: ${industry.id}_tile_2;
-	1, 0: ${industry.id}_tile_2;
-	1, 1: ${industry.id}_tile_1;
-	1, 2: ${industry.id}_tile_1;
-	1, 3: ${industry.id}_tile_2;
-	1, 5: ${industry.id}_tile_1;
-	1, 6: ${industry.id}_tile_1;
-	2, 0: ${industry.id}_tile_2;
-	2, 1: ${industry.id}_tile_1;
-	2, 2: ${industry.id}_tile_1;
-	2, 3: ${industry.id}_tile_2;
-	2, 5: ${industry.id}_tile_1;
-	2, 6: ${industry.id}_tile_1;
-	3, 0: ${industry.id}_tile_2;
-	3, 1: ${industry.id}_tile_1;
-	3, 2: ${industry.id}_tile_1;
-	3, 3: ${industry.id}_tile_2;
-	3, 5: ${industry.id}_tile_1;
-	3, 6: ${industry.id}_tile_1;
-	4, 0: ${industry.id}_tile_2;
-	4, 1: ${industry.id}_tile_2;
-	4, 2: ${industry.id}_tile_2;
-	4, 3: ${industry.id}_tile_2;
 }
 
 /* *************************************************
  * Definition of the industry
  * *************************************************/
+
+<tal:include metal:use-macro="load: layouts.pynml" />
 
 <tal:include metal:use-macro="load: industry_location_checks.pynml" />
 
