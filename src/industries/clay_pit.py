@@ -50,6 +50,377 @@ industry.add_tile(id='clay_pit_tile_2',
                                                      disallow_coast=True,
                                                      disallow_industry_adjacent=True))
 
+spriteset_ground = industry.add_spriteset(
+    id = 'clay_pit_spriteset_ground',
+    type = 'empty'
+)
+spriteset_1 = industry.add_spriteset(
+    id = 'clay_pit_spriteset_1',
+    sprites = [(10, 10, 64, 31, -31, 0)],
+    zextent = 32
+)
+spriteset_2 = industry.add_spriteset(
+    id = 'clay_pit_spriteset_2',
+    sprites = [(80, 10, 64, 31, -31, 0)],
+    zextent = 32
+)
+spriteset_4 = industry.add_spriteset(
+    id = 'clay_pit_spriteset_4',
+    sprites = [(220, 10, 64, 31, -31, 0)],
+    zextent = 32
+)
+spriteset_5 = industry.add_spriteset(
+    id = 'clay_pit_spriteset_5',
+    sprites = [(290, 10, 64, 31, -31, 0)],
+    zextent = 32
+)
+spriteset_6 = industry.add_spriteset(
+    id = 'clay_pit_spriteset_6',
+    sprites = [(360, 10, 64, 31, -31, 0)],
+    zextent = 32
+)
+spriteset_7 = industry.add_spriteset(
+    id = 'clay_pit_spriteset_7',
+    sprites = [(10, 50, 64, 31, -31, 0)],
+    zextent = 32
+)
+spriteset_8 = industry.add_spriteset(
+    id = 'clay_pit_spriteset_8',
+    sprites = [(80, 50, 64, 31, -31, 0)],
+    zextent = 32
+)
+spriteset_10 = industry.add_spriteset(
+    id = 'clay_pit_spriteset_10',
+    sprites = [(220, 50, 64, 31, -31, 0)],
+    zextent = 32
+)
+spriteset_11 = industry.add_spriteset(
+    id = 'clay_pit_spriteset_11',
+    sprites = [(290, 50, 64, 31, -31, 0)],
+    zextent = 32
+)
+spriteset_12 = industry.add_spriteset(
+    id = 'clay_pit_spriteset_12',
+    sprites = [(360, 50, 64, 31, -31, 0)],
+    zextent = 32
+)
+spriteset_13 = industry.add_spriteset(
+    id = 'clay_pit_spriteset_13',
+    sprites = [(10, 90, 64, 31, -31, 0)],
+    zextent = 32
+)
+spriteset_14 = industry.add_spriteset(
+    id = 'clay_pit_spriteset_14',
+    sprites = [(80, 90, 64, 31, -31, 0)],
+    zextent = 32
+)
+spriteset_16 = industry.add_spriteset(
+    id = 'clay_pit_spriteset_16',
+    sprites = [(220, 90, 64, 31, -31, 0)],
+    zextent = 32
+)
+spriteset_17 = industry.add_spriteset(
+    id = 'clay_pit_spriteset_17',
+    sprites = [(290, 90, 64, 31, -31, 0)],
+    zextent = 32
+)
+spriteset_18 = industry.add_spriteset(
+    id = 'clay_pit_spriteset_18',
+    sprites = [(360, 90, 64, 31, -31, 0)],
+    zextent = 32
+)
+spriteset_19 = industry.add_spriteset(
+    id = 'clay_pit_spriteset_19',
+    sprites = [(10, 130, 64, 31, -31, 0)],
+    zextent = 32
+)
+spriteset_20 = industry.add_spriteset(
+    id = 'clay_pit_spriteset_20',
+    sprites = [(80, 130, 64, 31, -31, 0)],
+    zextent = 32
+)
+spriteset_22 = industry.add_spriteset(
+    id = 'clay_pit_spriteset_22',
+    sprites = [(220, 130, 64, 31, -31, 0)],
+    zextent = 32
+)
+spriteset_23 = industry.add_spriteset(
+    id = 'clay_pit_spriteset_23',
+    sprites = [(290, 130, 64, 31, -31, 0)],
+    zextent = 32
+)
+spriteset_24 = industry.add_spriteset(
+    id = 'clay_pit_spriteset_24',
+    sprites = [(360, 130, 64, 31, -31, 0)],
+    zextent = 32
+)
+spriteset_25 = industry.add_spriteset(
+    id = 'clay_pit_spriteset_25',
+    sprites = [(440, 10, 64, 31, -31, 0)],
+    zextent = 32
+)
+spriteset_26 = industry.add_spriteset(
+    id = 'clay_pit_spriteset_26',
+    sprites = [(510, 10, 64, 31, -31, 0)],
+    zextent = 32
+)
+spriteset_27 = industry.add_spriteset(
+    id = 'clay_pit_spriteset_27',
+    sprites = [(580, 10, 64, 31, -31, 0)],
+    zextent = 32
+)
+spriteset_28 = industry.add_spriteset(
+    id = 'clay_pit_spriteset_28',
+    sprites = [(650, 10, 64, 31, -31, 0)],
+    zextent = 32
+)
+spriteset_29 = industry.add_spriteset(
+    id = 'clay_pit_spriteset_29',
+    sprites = [(440, 50, 64, 31, -31, 0)],
+    zextent = 32
+)
+spriteset_30 = industry.add_spriteset(
+    id = 'clay_pit_spriteset_30',
+    sprites = [(510, 50, 64, 31, -31, 0)],
+    zextent = 32
+)
+spriteset_31 = industry.add_spriteset(
+    id = 'clay_pit_spriteset_31',
+    sprites = [(580, 50, 64, 31, -31, 0)],
+    zextent = 32
+)
+spriteset_32 = industry.add_spriteset(
+    id = 'clay_pit_spriteset_32',
+    sprites = [(650, 50, 64, 31, -31, 0)],
+    zextent = 32
+)
+spriteset_33 = industry.add_spriteset(
+    id = 'clay_pit_spriteset_33',
+    sprites = [(580, 90, 64, 31, -31, 0)],
+    zextent = 32
+)
+spriteset_34 = industry.add_spriteset(
+    id = 'clay_pit_spriteset_34',
+    sprites = [(650, 90, 64, 31, -31, 0)],
+    zextent = 32
+)
+spriteset_35 = industry.add_spriteset(
+    id = 'clay_pit_spriteset_35',
+    sprites = [(730, 10, 64, 31, -31, 0)],
+    zextent = 32
+)
+spriteset_36 = industry.add_spriteset(
+    id = 'clay_pit_spriteset_36',
+    sprites = [(800, 10, 64, 31, -31, 0)],
+    zextent = 32
+)
+spriteset_37 = industry.add_spriteset(
+    id = 'clay_pit_spriteset_37',
+    sprites = [(870, 10, 64, 31, -31, 0)],
+    zextent = 32
+)
+spriteset_39 = industry.add_spriteset(
+    id = 'clay_pit_spriteset_39',
+    sprites = [(1010, 10, 64, 31, -31, 0)],
+    zextent = 32
+)
+spriteset_40 = industry.add_spriteset(
+    id = 'clay_pit_spriteset_40',
+    sprites = [(1080, 10, 64, 31, -31, 0)],
+    zextent = 32
+)
+spriteset_41 = industry.add_spriteset(
+    id = 'clay_pit_spriteset_41',
+    sprites = [(1150, 10, 64, 34, -31, -3)],
+    zextent = 32
+)
+spriteset_45 = industry.add_spriteset(
+    id = 'clay_pit_spriteset_45',
+    sprites = [(800, 50, 64, 31, -31, 0)],
+    zextent = 32
+)
+spriteset_46 = industry.add_spriteset(
+    id = 'clay_pit_spriteset_46',
+    sprites = [(870, 50, 64, 51, -31, -20)],
+    zextent = 32
+)
+spriteset_47 = industry.add_spriteset(
+    id = 'clay_pit_spriteset_47',
+    sprites = [(1010, 50, 64, 64, -31, -35)],
+    zextent = 32
+)
+spriteset_48 = industry.add_spriteset(
+    id = 'clay_pit_spriteset_48',
+    sprites = [(1080, 50, 64, 49, -31, -18)],
+    zextent = 32
+)
+spriteset_49 = industry.add_spriteset(
+    id = 'clay_pit_spriteset_49',
+    sprites = [(1150, 50, 64, 57, -31, -26)],
+    zextent = 32
+)
+
+
+
+industry.add_spritelayout(
+    id = 'clay_pit_spritelayout_1',
+    ground_sprite = spriteset_ground,
+    ground_overlay = spriteset_1,
+    building_sprites = [spriteset_25],
+)
+industry.add_spritelayout(
+    id = 'clay_pit_spritelayout_2',
+    ground_sprite = spriteset_ground,
+    ground_overlay = spriteset_2,
+    building_sprites = [spriteset_26],
+)
+industry.add_spritelayout(
+    id = 'clay_pit_spritelayout_4',
+    ground_sprite = spriteset_ground,
+    ground_overlay = spriteset_4,
+    building_sprites = [spriteset_29],
+)
+industry.add_spritelayout(
+    id = 'clay_pit_spritelayout_5',
+    ground_sprite = spriteset_ground,
+    ground_overlay = spriteset_5,
+    building_sprites = [],
+)
+industry.add_spritelayout(
+    id = 'clay_pit_spritelayout_6',
+    ground_sprite = spriteset_ground,
+    ground_overlay = spriteset_6,
+    building_sprites = [],
+)
+industry.add_spritelayout(
+    id = 'clay_pit_spritelayout_7',
+    ground_sprite = spriteset_ground,
+    ground_overlay = spriteset_7,
+    building_sprites = [spriteset_29],
+)
+industry.add_spritelayout(
+    id = 'clay_pit_spritelayout_8',
+    ground_sprite = spriteset_ground,
+    ground_overlay = spriteset_8,
+    building_sprites = [spriteset_30],
+)
+industry.add_spritelayout(
+    id = 'clay_pit_spritelayout_10',
+    ground_sprite = spriteset_ground,
+    ground_overlay = spriteset_10,
+    building_sprites = [spriteset_31],
+)
+industry.add_spritelayout(
+    id = 'clay_pit_spritelayout_11',
+    ground_sprite = spriteset_ground,
+    ground_overlay = spriteset_11,
+    building_sprites = [spriteset_32],
+)
+industry.add_spritelayout(
+    id = 'clay_pit_spritelayout_12',
+    ground_sprite = spriteset_ground,
+    ground_overlay = spriteset_12,
+    building_sprites = [],
+)
+industry.add_spritelayout(
+    id = 'clay_pit_spritelayout_13',
+    ground_sprite = spriteset_ground,
+    ground_overlay = spriteset_13,
+    building_sprites = [],
+)
+industry.add_spritelayout(
+    id = 'clay_pit_spritelayout_14',
+    ground_sprite = spriteset_ground,
+    ground_overlay = spriteset_14,
+    building_sprites = [],
+)
+industry.add_spritelayout(
+    id = 'clay_pit_spritelayout_16',
+    ground_sprite = spriteset_ground,
+    ground_overlay = spriteset_16,
+    building_sprites = [spriteset_33],
+)
+industry.add_spritelayout(
+    id = 'clay_pit_spritelayout_17',
+    ground_sprite = spriteset_ground,
+    ground_overlay = spriteset_17,
+    building_sprites = [],
+)
+industry.add_spritelayout(
+    id = 'clay_pit_spritelayout_18',
+    ground_sprite = spriteset_ground,
+    ground_overlay = spriteset_18,
+    building_sprites = [],
+)
+industry.add_spritelayout(
+    id = 'clay_pit_spritelayout_19',
+    ground_sprite = spriteset_ground,
+    ground_overlay = spriteset_19,
+    building_sprites = [],
+)
+industry.add_spritelayout(
+    id = 'clay_pit_spritelayout_20',
+    ground_sprite = spriteset_ground,
+    ground_overlay = spriteset_20,
+    building_sprites = [],
+)
+industry.add_spritelayout(
+    id = 'clay_pit_spritelayout_22',
+    ground_sprite = spriteset_ground,
+    ground_overlay = spriteset_22,
+    building_sprites = [],
+)
+industry.add_spritelayout(
+    id = 'clay_pit_spritelayout_23',
+    ground_sprite = spriteset_ground,
+    ground_overlay = spriteset_23,
+    building_sprites = [],
+)
+industry.add_spritelayout(
+    id = 'clay_pit_spritelayout_24',
+    ground_sprite = spriteset_ground,
+    ground_overlay = spriteset_24,
+    building_sprites = [],
+)
+industry.add_spritelayout(
+    id = 'clay_pit_spritelayout_35',
+    ground_sprite = spriteset_ground,
+    ground_overlay = spriteset_35,
+    building_sprites = [],
+)
+industry.add_spritelayout(
+    id = 'clay_pit_spritelayout_36',
+    ground_sprite = spriteset_ground,
+    ground_overlay = spriteset_36,
+    building_sprites = [spriteset_45],
+)
+industry.add_spritelayout(
+    id = 'clay_pit_spritelayout_37',
+    ground_sprite = spriteset_ground,
+    ground_overlay = spriteset_37,
+    building_sprites = [spriteset_46],
+)
+industry.add_spritelayout(
+    id = 'clay_pit_spritelayout_39',
+    ground_sprite = spriteset_ground,
+    ground_overlay = spriteset_39,
+    building_sprites = [spriteset_47],
+)
+industry.add_spritelayout(
+    id = 'clay_pit_spritelayout_40',
+    ground_sprite = spriteset_ground,
+    ground_overlay = spriteset_40,
+    building_sprites = [spriteset_48],
+)
+industry.add_spritelayout(
+    id = 'clay_pit_spritelayout_41',
+    ground_sprite = spriteset_ground,
+    ground_overlay = spriteset_41,
+    building_sprites = [spriteset_49],
+)
+
+
+
 industry.add_industry_layout(
     id = 'clay_pit_layout_1',
     layout = [(0, 0, 'clay_pit_tile_2', 'clay_pit_spritelayout_24'),

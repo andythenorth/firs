@@ -11,12 +11,9 @@
  * Definition of the industry tile, its callbacks, and graphics chain
  * ******************************************************************/
 
-<!--!<tal:include metal:use-macro="load: spritesets.pynml" />
+<tal:include metal:use-macro="load: spritesets.pynml" />
 
-<tal:include metal:use-macro="load: spritelayouts.pynml" />-->
-
-
-<tal:include metal:use-macro="load: waterpit_sprites.pynml" />
+<tal:include metal:use-macro="load: spritelayouts.pynml" />
 
 
 <tal:include metal:use-macro="load: tile_location_checks.pynml" />
