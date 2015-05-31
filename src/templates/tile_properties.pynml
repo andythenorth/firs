@@ -27,6 +27,9 @@
     		<tal:foundations condition="tile.foundations is not None">
                 foundations: ${tile.foundations};
             </tal:foundations>
+    		<tal:autoslope condition="tile.autoslope is not None">
+                autoslope: ${tile.autoslope};
+            </tal:autoslope>
             ${industry.id}_tile_fences;
         }
     }

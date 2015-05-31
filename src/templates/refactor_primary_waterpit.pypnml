@@ -7,52 +7,26 @@
 
 #define THIS_ID(...) ${industry.id}_ ## __VA_ARGS__
 
+/* ******************************************************************
+ * Definition of the industry tile, its callbacks, and graphics chain
+ * ******************************************************************/
+
+<!--!<tal:include metal:use-macro="load: spritesets.pynml" />
+
+<tal:include metal:use-macro="load: spritelayouts.pynml" />-->
+
+
 <tal:include metal:use-macro="load: waterpit_sprites.pynml" />
+
+
+<tal:include metal:use-macro="load: tile_location_checks.pynml" />
+
+
 
 <tal:include metal:use-macro="load: graphics_switches.pynml" />
 
-/* *************************************************
- * Definition of the industry tile and its callbacks
- * *************************************************/
+<tal:include metal:use-macro="load: tile_properties.pynml" />
 
-TILE_DISALLOW_NEARBY_CLASS(tile_1_nearby_industry,  TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
-TILE_ALLOW_PLAYER         (tile_1_player_check,                                                             ${industry.id}_tile_1_nearby_industry)
-TILE_DISALLOW_TERRAIN     (tile_1_disallow_terrain, TILETYPE_DESERT,     CB_RESULT_LOCATION_DISALLOW, ${industry.id}_tile_1_player_check)
-TILE_REQUIRE_EFFECTIVELY_FLAT (tile_1_location_check,                        CB_RESULT_LOCATION_DISALLOW, ${industry.id}_tile_1_disallow_terrain)
-
-TILE_DISALLOW_NEARBY_CLASS(tile_2_nearby_industry,  TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
-TILE_ALLOW_PLAYER         (tile_2_player_check,                                                             ${industry.id}_tile_2_nearby_industry)
-TILE_DISALLOW_TERRAIN     (tile_2_disallow_terrain, TILETYPE_DESERT,     CB_RESULT_LOCATION_DISALLOW, ${industry.id}_tile_2_player_check)
-TILE_DISALLOW_SLOPES (tile_2_location_check,                        CB_RESULT_LOCATION_DISALLOW, ${industry.id}_tile_2_disallow_terrain)
-
-
-item(FEAT_INDUSTRYTILES, ${industry.id}_tile_1, ${global_constants.tile_numeric_ids[industry.id + '_tile_1']}) {
-	property {
-		substitute:       0;
-		accepted_cargos:  [[ENSP, 8]];
-		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
-	}
-
-	graphics {
-		tile_check:   ${industry.id}_tile_1_location_check;
-		${industry.id}_tile_fences;
-	}
-}
-
-item(FEAT_INDUSTRYTILES, ${industry.id}_tile_2, ${global_constants.tile_numeric_ids[industry.id + '_tile_2']}) {
-	property {
-		substitute:       0;
-		accepted_cargos:  [[ENSP, 8]];
-		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
-	}
-
-	graphics {
-		foundations:  return CB_RESULT_NO_FOUNDATIONS;
-		autoslope:    return CB_RESULT_NO_AUTOSLOPE;
-	    tile_check:   ${industry.id}_tile_2_location_check;
-		${industry.id}_tile_fences;
-	}
-}
 
 /* *************************************************
  * Definition of the industry
@@ -65,6 +39,7 @@ item(FEAT_INDUSTRYTILES, ${industry.id}_tile_2, ${global_constants.tile_numeric_
 <tal:include metal:use-macro="load: extra_text_primary.pynml" />
 
 <tal:include metal:use-macro="load: produce_primary.pypnml" />
+
 <tal:include metal:use-macro="load: check_primary_supplies_delivered.pypnml" />
 
 <tal:include metal:use-macro="load: check_availability.pynml" />

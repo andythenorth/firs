@@ -36,6 +36,20 @@ industry = IndustryPrimaryExtractive(id='clay_pit',
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True
 
+# 2 tiles for this industry: pit outer tile cannot be on slopes; pit inner tiles and processor tiles can be
+# cases for both tiles ensure that tiles can only be built at same height as north tile
+industry.add_tile(id='clay_pit_tile_1',
+                  location_checks=TileLocationChecks(require_effectively_flat=True,
+                                                     disallow_desert=True,
+                                                     disallow_industry_adjacent=True))
+industry.add_tile(id='clay_pit_tile_2',
+		          foundations='return CB_RESULT_NO_FOUNDATIONS', # might not be needed, cargo-culted from previous code, didn't test; may be needed to stop rear foundations showing in some cases?
+                  autoslope='return CB_RESULT_NO_AUTOSLOPE',
+                  location_checks=TileLocationChecks(disallow_slopes=True,
+                                                     disallow_desert=True,
+                                                     disallow_coast=True,
+                                                     disallow_industry_adjacent=True))
+
 industry.add_industry_layout(
     id = 'clay_pit_layout_1',
     layout = [(0, 0, 'clay_pit_tile_2', 'clay_pit_spritelayout_24'),

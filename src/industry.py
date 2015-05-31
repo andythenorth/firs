@@ -47,6 +47,7 @@ class Tile(object):
             raise Exception("Tile " + self.id + ": land_shape_flags are set but will be ignored because the tile also uses location_checks cb.  Only set one of these attributes.")
 
         self.foundations = kwargs.get('foundations', None)
+        self.autoslope = kwargs.get('autoslope', None)
         # animation length (int), looping (bool), speed (int) should be set for all animations
         # basic tile animation plays consecutive-frames from the spriteset
         # spriteset can offset frames when multiple animations are used *on the same* tile (to avoid odd-looking sync effects)
