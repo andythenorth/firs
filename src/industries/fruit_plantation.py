@@ -24,7 +24,7 @@ industry = IndustryPrimaryOrganic(id='fruit_plantation',
                     prod_cargo_types=['FRUT'],
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
                     fund_cost_multiplier='54',
-                    prod_multiplier='[9]',
+                    prod_multiplier='[16]',
                     substitute='0',
                     template="refactor_fruit_plantation.pypnml" )
 

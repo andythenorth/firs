@@ -23,7 +23,7 @@ industry = IndustryPrimaryOrganic(id='coffee_estate',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_PLANTATION))',
                     fund_cost_multiplier='54',
-                    prod_multiplier='[8, 5]',
+                    prod_multiplier='[11, 8]',
                     substitute='0',
                     template="refactor_coffee_estate.pypnml" )
 

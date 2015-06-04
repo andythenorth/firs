@@ -23,7 +23,7 @@ industry = IndustryPrimaryOrganic(id='rubber_plantation',
                     prod_cargo_types=['RUBR'],
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
                     fund_cost_multiplier='54',
-                    prod_multiplier='[10]',
+                    prod_multiplier='[16]',
                     substitute='0',
                     template="refactor_rubber_plantation.pypnml" )
 
