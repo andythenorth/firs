@@ -57,7 +57,7 @@ sheds_2 = industry.add_spriteset(
 )
 silo = industry.add_spriteset(
     id = 'builders_yard_spriteset_3',
-    sprites = [(220, 10, 64, 64, -31, -32)],
+    sprites = [(220, 10, 64, 64, -31, -34)],
     zextent = 16
 )
 
