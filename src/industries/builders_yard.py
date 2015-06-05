@@ -46,12 +46,12 @@ spriteset_ground_overlay = industry.add_spriteset(
     id = 'builders_yard_spriteset_ground_overlay',
     type = 'empty'
 )
-sheds_1 = industry.add_spriteset(
+stacks_1 = industry.add_spriteset(
     id = 'builders_yard_spriteset_1',
     sprites = [(10, 10, 64, 56, -31, -26)],
     zextent = 16
 )
-sheds_2 = industry.add_spriteset(
+shed = industry.add_spriteset(
     id = 'builders_yard_spriteset_2',
     sprites = [(80, 10, 64, 56, -31, -26)],
     zextent = 16
@@ -61,19 +61,23 @@ silo = industry.add_spriteset(
     sprites = [(220, 10, 64, 64, -31, -34)],
     zextent = 16
 )
-
+stacks_2 = industry.add_spriteset(
+    id = 'builders_yard_spriteset_4',
+    sprites = [(150, 10, 64, 56, -31, -26)],
+    zextent = 16
+)
 industry.add_spritelayout(
     id = 'builders_yard_spritelayout_1',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
-    building_sprites = [sheds_1],
+    building_sprites = [stacks_1],
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
     id = 'builders_yard_spritelayout_2',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
-    building_sprites = [sheds_2],
+    building_sprites = [shed],
 )
 industry.add_spritelayout(
     id = 'builders_yard_spritelayout_3',
@@ -81,11 +85,17 @@ industry.add_spritelayout(
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [silo],
 )
+industry.add_spritelayout(
+    id = 'builders_yard_spritelayout_4',
+    ground_sprite = spriteset_ground,
+    ground_overlay = spriteset_ground_overlay,
+    building_sprites = [stacks_2],
+)
 
 industry.add_industry_layout(
     id = 'builders_yard_industry_layout_1',
     layout = [(0, 0, 'builders_yard_tile_1', 'builders_yard_spritelayout_3'),
-              (0, 1, 'builders_yard_tile_1', 'builders_yard_spritelayout_1'),
+              (0, 1, 'builders_yard_tile_1', 'builders_yard_spritelayout_4'),
               (1, 0, 'builders_yard_tile_1', 'builders_yard_spritelayout_2'),
               (1, 1, 'builders_yard_tile_1', 'builders_yard_spritelayout_1'),
     ]
@@ -94,7 +104,7 @@ industry.add_industry_layout(
     id = 'builders_yard_industry_layout_2',
     layout = [(0, 0, 'builders_yard_tile_1', 'builders_yard_spritelayout_2'),
               (0, 1, 'builders_yard_tile_1', 'builders_yard_spritelayout_3'),
-              (1, 0, 'builders_yard_tile_1', 'builders_yard_spritelayout_1'),
+              (1, 0, 'builders_yard_tile_1', 'builders_yard_spritelayout_4'),
               (1, 1, 'builders_yard_tile_1', 'builders_yard_spritelayout_1'),
     ]
 )
@@ -103,7 +113,7 @@ industry.add_industry_layout(
     layout = [(0, 0, 'builders_yard_tile_1', 'builders_yard_spritelayout_3'),
               (0, 1, 'builders_yard_tile_1', 'builders_yard_spritelayout_2'),
               (1, 0, 'builders_yard_tile_1', 'builders_yard_spritelayout_1'),
-              (1, 1, 'builders_yard_tile_1', 'builders_yard_spritelayout_1'),
+              (1, 1, 'builders_yard_tile_1', 'builders_yard_spritelayout_4'),
     ]
 )
 industry.add_industry_layout(
@@ -111,6 +121,6 @@ industry.add_industry_layout(
     layout = [(0, 0, 'builders_yard_tile_1', 'builders_yard_spritelayout_2'),
               (0, 1, 'builders_yard_tile_1', 'builders_yard_spritelayout_1'),
               (1, 0, 'builders_yard_tile_1', 'builders_yard_spritelayout_3'),
-              (1, 1, 'builders_yard_tile_1', 'builders_yard_spritelayout_1'),
+              (1, 1, 'builders_yard_tile_1', 'builders_yard_spritelayout_4'),
     ]
 )
