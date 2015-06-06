@@ -161,3 +161,47 @@ industry.add_industry_layout(
               (2, 2, 'coal_mine_tile_1', 'coal_mine_spritelayout_5')
     ]
 )
+industry.add_industry_layout(
+    id = 'coal_mine_industry_layout_4',
+    layout = [(0, 0, 'coal_mine_tile_1', 'coal_mine_spritelayout_3'),
+              (0, 1, 'coal_mine_tile_1', 'coal_mine_spritelayout_4'),
+              (0, 2, 'coal_mine_tile_1', 'coal_mine_spritelayout_4'),
+              (1, 0, 'coal_mine_tile_1', 'coal_mine_spritelayout_3'),
+              (1, 1, 'coal_mine_tile_1', 'coal_mine_spritelayout_1'),
+              (1, 2, 'coal_mine_tile_1', 'coal_mine_spritelayout_2'),
+              (2, 0, 'coal_mine_tile_1', 'coal_mine_spritelayout_1'),
+              (2, 1, 'coal_mine_tile_1', 'coal_mine_spritelayout_2'),
+              (2, 2, 'coal_mine_tile_1', 'coal_mine_spritelayout_6'),
+              (3, 0, 'coal_mine_tile_1', 'coal_mine_spritelayout_3'),
+              (3, 1, 'coal_mine_tile_1', 'coal_mine_spritelayout_4'),
+              (3, 2, 'coal_mine_tile_1', 'coal_mine_spritelayout_5')
+    ]
+)
+industry.add_industry_layout(
+    id = 'coal_mine_industry_layout_5',
+    layout = [(0, 0, 'coal_mine_tile_1', 'coal_mine_spritelayout_4'),
+              (0, 1, 'coal_mine_tile_1', 'coal_mine_spritelayout_6'),
+              (1, 0, 'coal_mine_tile_1', 'coal_mine_spritelayout_3'),
+              (1, 1, 'coal_mine_tile_1', 'coal_mine_spritelayout_5'),
+              (2, 0, 'coal_mine_tile_1', 'coal_mine_spritelayout_1'),
+              (2, 1, 'coal_mine_tile_1', 'coal_mine_spritelayout_2'),
+              (3, 0, 'coal_mine_tile_1', 'coal_mine_spritelayout_1'),
+              (3, 1, 'coal_mine_tile_1', 'coal_mine_spritelayout_2'),
+              (4, 0, 'coal_mine_tile_1', 'coal_mine_spritelayout_3'),
+              (4, 1, 'coal_mine_tile_1', 'coal_mine_spritelayout_4'),
+    ]
+)
+industry.add_industry_layout(
+    id = 'coal_mine_industry_layout_6',
+    layout = [(0, 0, 'coal_mine_tile_1', 'coal_mine_spritelayout_1'),
+              (0, 1, 'coal_mine_tile_1', 'coal_mine_spritelayout_2'),
+              (0, 2, 'coal_mine_tile_1', 'coal_mine_spritelayout_1'),
+              (0, 3, 'coal_mine_tile_1', 'coal_mine_spritelayout_2'),
+              (0, 4, 'coal_mine_tile_1', 'coal_mine_spritelayout_6'),
+              (1, 0, 'coal_mine_tile_1', 'coal_mine_spritelayout_3'),
+              (1, 1, 'coal_mine_tile_1', 'coal_mine_spritelayout_4'),
+              (1, 2, 'coal_mine_tile_1', 'coal_mine_spritelayout_3'),
+              (1, 3, 'coal_mine_tile_1', 'coal_mine_spritelayout_4'),
+              (1, 4, 'coal_mine_tile_1', 'coal_mine_spritelayout_5')
+    ]
+)
