@@ -51,9 +51,6 @@ sprite_ground = industry.add_sprite(
 sprite_ground_overlay = industry.add_sprite(
     sprite_number = 'GROUNDTILE_MUD_TRACKS'
 )
-sprite_ground_coal = industry.add_sprite(
-    sprite_number = '2025'
-)
 
 spriteset_1 = industry.add_spriteset(
     id = 'coal_mine_spriteset_1a',
@@ -72,6 +69,24 @@ spriteset_3 = industry.add_spriteset(
     id = 'coal_mine_spriteset_3',
     sprites = [(150, 10, 64, 64, -31, -30)],
     zextent = 48,
+    num_sprites_to_autofill = len(spriteset_1.sprites), # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
+)
+spriteset_4 = industry.add_spriteset(
+    id = 'coal_mine_spriteset_4',
+    sprites = [(220, 10, 64, 64, -31, -33)],
+    zextent = 16,
+    num_sprites_to_autofill = len(spriteset_1.sprites), # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
+)
+spriteset_5 = industry.add_spriteset(
+    id = 'coal_mine_spriteset_5',
+    sprites = [(290, 10, 64, 64, -31, -33)],
+    zextent = 16,
+    num_sprites_to_autofill = len(spriteset_1.sprites), # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
+)
+spriteset_6 = industry.add_spriteset(
+    id = 'coal_mine_spriteset_6',
+    sprites = [(360, 10, 64, 64, -31, -33)],
+    zextent = 16,
     num_sprites_to_autofill = len(spriteset_1.sprites), # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
 )
 
@@ -96,8 +111,20 @@ industry.add_spritelayout(
 industry.add_spritelayout(
     id = 'coal_mine_spritelayout_4',
     ground_sprite = sprite_ground,
-    ground_overlay = sprite_ground_coal,
-    building_sprites = [],
+    ground_overlay = sprite_ground_overlay,
+    building_sprites = [spriteset_4],
+)
+industry.add_spritelayout(
+    id = 'coal_mine_spritelayout_5',
+    ground_sprite = sprite_ground,
+    ground_overlay = sprite_ground_overlay,
+    building_sprites = [spriteset_5],
+)
+industry.add_spritelayout(
+    id = 'coal_mine_spritelayout_6',
+    ground_sprite = sprite_ground,
+    ground_overlay = sprite_ground_overlay,
+    building_sprites = [spriteset_6],
 )
 
 industry.add_industry_layout(
@@ -105,11 +132,11 @@ industry.add_industry_layout(
     layout = [(0, 1, 'coal_mine_tile_1', 'coal_mine_spritelayout_1'),
               (0, 2, 'coal_mine_tile_1', 'coal_mine_spritelayout_2'),
               (0, 3, 'coal_mine_tile_1', 'coal_mine_spritelayout_4'),
-              (1, 0, 'coal_mine_tile_1', 'coal_mine_spritelayout_4'),
+              (1, 0, 'coal_mine_tile_1', 'coal_mine_spritelayout_6'),
               (1, 1, 'coal_mine_tile_1', 'coal_mine_spritelayout_1'),
               (1, 2, 'coal_mine_tile_1', 'coal_mine_spritelayout_2'),
               (1, 3, 'coal_mine_tile_1', 'coal_mine_spritelayout_3'),
-              (2, 0, 'coal_mine_tile_1', 'coal_mine_spritelayout_4'),
+              (2, 0, 'coal_mine_tile_1', 'coal_mine_spritelayout_5'),
               (2, 1, 'coal_mine_tile_1', 'coal_mine_spritelayout_4'),
               (2, 2, 'coal_mine_tile_1', 'coal_mine_spritelayout_3')
     ]
@@ -118,10 +145,10 @@ industry.add_industry_layout(
     id = 'coal_mine_industry_layout_2',
     layout = [(0, 0, 'coal_mine_tile_1', 'coal_mine_spritelayout_1'),
               (0, 1, 'coal_mine_tile_1', 'coal_mine_spritelayout_2'),
-              (0, 2, 'coal_mine_tile_1', 'coal_mine_spritelayout_4'),
+              (0, 2, 'coal_mine_tile_1', 'coal_mine_spritelayout_6'),
               (1, 0, 'coal_mine_tile_1', 'coal_mine_spritelayout_3'),
               (1, 1, 'coal_mine_tile_1', 'coal_mine_spritelayout_3'),
-              (1, 2, 'coal_mine_tile_1', 'coal_mine_spritelayout_4')
+              (1, 2, 'coal_mine_tile_1', 'coal_mine_spritelayout_5')
     ]
 )
 industry.add_industry_layout(
@@ -130,7 +157,7 @@ industry.add_industry_layout(
               (1, 0, 'coal_mine_tile_1', 'coal_mine_spritelayout_4'),
               (1, 1, 'coal_mine_tile_1', 'coal_mine_spritelayout_1'),
               (1, 2, 'coal_mine_tile_1', 'coal_mine_spritelayout_2'),
-              (2, 0, 'coal_mine_tile_1', 'coal_mine_spritelayout_3'),
-              (2, 2, 'coal_mine_tile_1', 'coal_mine_spritelayout_3')
+              (2, 0, 'coal_mine_tile_1', 'coal_mine_spritelayout_6'),
+              (2, 2, 'coal_mine_tile_1', 'coal_mine_spritelayout_5')
     ]
 )
