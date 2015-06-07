@@ -171,6 +171,7 @@ industry.add_industry_layout(
 )
 industry.add_industry_layout(
     id = 'grain_mill_industry_layout_4',
-    layout = [(0, 0, 'grain_mill_tile_1', 'grain_mill_spritelayout_windmill_anim')]
+    layout = [(0, 0, 'grain_mill_tile_1', 'grain_mill_spritelayout_windmill_anim'),
+              (1, 2, 'grain_mill_tile_1', 'grain_mill_spritelayout_windmill_anim')]
 )
 
