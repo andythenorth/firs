@@ -12,7 +12,7 @@
 
     <!--! After 1900, windmills will only be built during map generation, not during gameplay (fake history). -->
     switch (FEAT_INDUSTRIES, SELF, ${industry.id}_brick_layouts_only_check_layout, var[0x86]) {
-        3: return CB_RESULT_LOCATION_DISALLOW;
+        3..5: return CB_RESULT_LOCATION_DISALLOW;
         ${switch_result};
     }
     switch (FEAT_INDUSTRIES, SELF, ${industry.id}_brick_layouts_only, extra_callback_info2) {
@@ -21,7 +21,7 @@
     }
     <!--! Before 1870, only windmills will be built. -->
     switch (FEAT_INDUSTRIES, SELF, ${industry.id}_windmill_layout_only, var[0x86]) {
-        3: ${switch_result};
+        3..5: ${switch_result};
         return CB_RESULT_LOCATION_DISALLOW;
     }
     <!--! Both types of layouts can appear between 1870 and 1900.
