@@ -40,7 +40,7 @@ industry.add_tile(id='builders_yard_tile_1',
 
 spriteset_ground = industry.add_spriteset(
     id = 'builders_yard_spriteset_ground',
-    type = 'cobble',
+    type = 'concrete',
 )
 spriteset_ground_overlay = industry.add_spriteset(
     id = 'builders_yard_spriteset_ground_overlay',
