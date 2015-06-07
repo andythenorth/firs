@@ -36,7 +36,7 @@ industry.economy_variations['FIRS'].enabled = True
 
 
 industry.add_tile(id='food_market_tile_1',
-                  location_checks=TileLocationChecks(require_road_adjacent=['nw', 'ne', 'sw', 'se']))
+                  location_checks=TileLocationChecks(require_road_adjacent=True))
 
 spriteset_ground = industry.add_spriteset(
     id = 'food_market_spriteset_ground',

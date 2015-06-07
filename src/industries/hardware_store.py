@@ -35,7 +35,7 @@ industry = IndustryTertiary(id='hardware_store',
 industry.economy_variations['FIRS'].enabled = True
 
 industry.add_tile(id='hardware_store_tile_1',
-                  location_checks=TileLocationChecks(require_road_adjacent=['nw', 'ne', 'sw', 'se']))
+                  location_checks=TileLocationChecks(require_road_adjacent=True))
 
 hardware_store_spriteset_ground = industry.add_spriteset(
     id = 'hardware_store_spriteset_ground',

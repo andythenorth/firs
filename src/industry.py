@@ -93,7 +93,7 @@ class TileLocationChecks(object):
         self.disallow_industry_adjacent = kwargs.get('disallow_industry_adjacent', False)
         self.require_effectively_flat = kwargs.get('require_effectively_flat', False)
         self.require_houses_nearby = kwargs.get('require_houses_nearby', False)
-        self.require_road_adjacent = kwargs.get('require_road_adjacent', []) # any of ['nw', 'ne', 'se', 'nw']
+        self.require_road_adjacent = kwargs.get('require_road_adjacent', False)
         self.require_coast = kwargs.get('require_coast', False)
         self.disallow_above_snowline = kwargs.get('disallow_above_snowline', False)
         self.disallow_desert = kwargs.get('disallow_desert', False)
@@ -130,8 +130,8 @@ class TileLocationChecks(object):
             for search_offsets in search_points:
                 result.append(TileLocationCheckRequireHousesNearby(search_offsets))
 
-        for direction in self.require_road_adjacent:
-            result.append(TileLocationCheckRequireRoadAdjacent(direction))
+        if self.require_road_adjacent:
+            result.append(TileLocationCheckRequireRoadAdjacent())
 
         if self.disallow_above_snowline:
             result.appendleft(TileLocationCheckDisallowAboveSnowline())
@@ -218,15 +218,12 @@ class TileLocationCheckRequireHousesNearby(object):
 
 class TileLocationCheckRequireRoadAdjacent(object):
     """ Requires road on adjacent tile(s), with configurable directions """
-    def __init__(self, direction):
-        self.direction_map = {'nw': (0, -1), 'se': (0, 1), 'ne': (-1, 0), 'sw': (1, 0)}
-        self.direction = direction
-        self.switch_result = 'return CB_RESULT_LOCATION_DISALLOW' # default result, value may also be id for next switch
+    def __init__(self):
+        self.switch_result = 'return CB_RESULT_LOCATION_ALLOW' # default result, value may also be id for next switch
         self.switch_entry_point = None
 
     def render(self):
-        x_y_string = ','.join([str(offset) for offset in self.direction_map[self.direction]])
-        return 'CHECK_ROAD_ADJACENT(' + self.switch_entry_point + ', ' + x_y_string + ',' + self.switch_result + ')'
+        return 'CHECK_ROAD_ADJACENT(' + self.switch_entry_point + ', ' + self.switch_result + ')'
 
 
 class TileLocationCheckRequireSea(object):

@@ -320,11 +320,17 @@ switch (FEAT_INDUSTRYTILES, SELF, THIS_ID(name), nearby_tile_class(x, y)) { \
  * name          name of this switch. Suggested: tile_road_adjacent
  * x             x offset from north tile of industry
  * y             y offset from north tile of industry
- * next          name of next switch or "return CB_RESULT_LOCATION_DISALLOW"
+ * next          name of next switch or "return CB_RESULT_LOCATION_ALLOW"
  */
 
-#define CHECK_ROAD_ADJACENT(name, x, y, next) \
-switch (FEAT_INDUSTRYTILES, SELF, THIS_ID(name), nearby_tile_class(x, y)) { \
-    TILE_CLASS_ROAD: return CB_RESULT_LOCATION_ALLOW; \
-    next; \
+#define CHECK_ROAD_ADJACENT(name, next) \
+switch (FEAT_INDUSTRYTILES, SELF, THIS_ID(name), \
+                                                  ( \
+                                                  nearby_tile_class(0, -1) == TILE_CLASS_ROAD ? 1 : \
+                                                  (nearby_tile_class(0, 1) == TILE_CLASS_ROAD ? 1 : \
+                                                  (nearby_tile_class(-1, 0) == TILE_CLASS_ROAD ? 1 : \
+                                                  (nearby_tile_class(1, 0) == TILE_CLASS_ROAD ? 1 : 0 \
+                                                  ))))) { \
+    1: next; \
+    return CB_RESULT_LOCATION_DISALLOW; \
 }
