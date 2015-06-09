@@ -23,7 +23,7 @@ if (climate == CLIMATE_TROPICAL) { market_tree = MARKET_TREE_TROPICAL; }
 #define GROUNDTILE_HALF_BROWN     3962
 
 // used for secondary industry production
-#define PRODUCTION_SPAN 30
+#define PRODUCTION_SPAN 90
 
 /* Permanent storage locations - uses different defines for different classes of industry */
 // on 10th Nov 2012 I verified that all permanent storage operations were using identifiers for storage, not numbers - Andy
