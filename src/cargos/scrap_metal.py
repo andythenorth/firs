@@ -1,7 +1,6 @@
 from cargo import Cargo
 
 cargo = Cargo(id = 'scrap_metal',
-              number = '20',
               type_name = 'string(STR_CARGO_NAME_SCRAP_METAL)',
               unit_name = 'string(STR_CARGO_NAME_SCRAP_METAL)',
               type_abbreviation = 'string(STR_CID_SCRAP_METAL)',
@@ -11,7 +10,7 @@ cargo = Cargo(id = 'scrap_metal',
               cargo_payment_list_colour = '106',
               is_freight = '1',
               cargo_classes = 'bitmask(CC_BULK, CC_NON_POURABLE)',
-              cargo_label = '"SCMT"',
+              cargo_label = 'SCMT',
               town_growth_effect = 'TOWNGROWTH_NONE',
               town_growth_multiplier = '1.0',
               units_of_cargo = '80',
@@ -22,6 +21,6 @@ cargo = Cargo(id = 'scrap_metal',
               price_factor = '126.846313477',
               icon_indices = (2, 1))
 
-cargo.economy_variations['BASIC_ARCTIC']['disabled'] = True
-cargo.economy_variations['BASIC_TROPIC']['disabled'] = True
-cargo.economy_variations['MISTAH_KURTZ']['disabled'] = True
+
+
+

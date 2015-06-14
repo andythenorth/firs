@@ -1,0 +1,5 @@
+<tal:tile_location_checks repeat="tile industry.tiles">
+    <tal:tile define="location_checks tile.location_checks.get_render_tree(tile.id, industry.id)" repeat="location_check location_checks">
+        ${location_check.render()}
+    </tal:tile>
+</tal:tile_location_checks>

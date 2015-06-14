@@ -1,7 +1,6 @@
 from cargo import Cargo
 
 cargo = Cargo(id = 'building_materials',
-              number = '28',
               type_name = 'string(STR_CARGO_NAME_BUILDING_MATERIALS)',
               unit_name = 'string(STR_CARGO_NAME_BUILDING_MATERIALS)',
               type_abbreviation = 'string(STR_CID_BUILDING_MATERIALS)',
@@ -11,7 +10,7 @@ cargo = Cargo(id = 'building_materials',
               cargo_payment_list_colour = '184',
               is_freight = '1',
               cargo_classes = 'bitmask(CC_PIECE_GOODS, CC_BULK)',
-              cargo_label = '"BDMT"',
+              cargo_label = 'BDMT',
               town_growth_effect = 'TOWNGROWTH_NONE',
               town_growth_multiplier = '1.0',
               units_of_cargo = '80',
@@ -22,6 +21,6 @@ cargo = Cargo(id = 'building_materials',
               capacity_multiplier = '1',
               icon_indices = (1, 1))
 
-cargo.economy_variations['BASIC_TEMPERATE']['disabled'] = True
-cargo.economy_variations['BASIC_ARCTIC']['disabled'] = True
-cargo.economy_variations['BASIC_TROPIC']['disabled'] = True
+
+
+

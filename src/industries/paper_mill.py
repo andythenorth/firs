@@ -5,31 +5,24 @@
   See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
 """
 
-from industry import Industry, Tile, Sprite, Spriteset, SpriteLayout, IndustryLayout
+from industry import IndustrySecondary, TileLocationChecks, IndustryLocationChecks
 
-"""
-Notes to self whilst figuring out python-firs (notes will probably rot here forever).
-By convention, ids for use in nml have industry name prefix, local python object ids don't bother with industry name prefix.
-Some method properties expect object references, and the templating then uses properties from that object.
-Some method properties need a string - the templating is then typically directly writing out an nml identifier.
-When a string is expected are basically two choices: provide a string directly, or make an object reference and get an id from that object.
-"""
-
-industry = Industry(id='paper_mill',
-                    accept_cargo_types=['CLAY', 'WOOD', 'RFPR'],
-                    input_multiplier_1='[0, 0]',
-                    input_multiplier_3='[0, 0]',
-                    input_multiplier_2='[0, 0]',
+industry = IndustrySecondary(id='paper_mill',
+                    processed_cargos_and_output_ratios=[('CLAY', 2), ('WOOD', 4), ('RFPR', 2)],
                     prod_cargo_types=['GOOD', 'MNSP'],
-                    prob_in_game='2',
+                    prob_in_game='3',
                     prob_random='5',
+                    location_checks=IndustryLocationChecks(incompatible={'paper_mill': 56,
+                                                                         'forest': 16,
+                                                                         'clay_pit': 16}),
                     substitute='14',
                     map_colour='184',
                     fund_cost_multiplier='120',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_MILL))',
                     name='TTD_STR_INDUSTRY_NAME_PAPER_MILL',
                     override='14',
-                    extra_text_industry='STR_EXTRA_PAPER_MILL')
+                    extra_text_industry='STR_EXTRA_PAPER_MILL',
+                    template="refactor_paper_mill.pypnml" )
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_ARCTIC'].enabled = True

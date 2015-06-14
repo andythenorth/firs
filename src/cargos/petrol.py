@@ -1,7 +1,6 @@
 from cargo import Cargo
 
 cargo = Cargo(id = 'petrol',
-              number = '25',
               type_name = 'string(STR_CARGO_NAME_PETROL)',
               unit_name = 'string(STR_CARGO_NAME_PETROL)',
               type_abbreviation = 'string(STR_CID_PETROL)',
@@ -11,7 +10,7 @@ cargo = Cargo(id = 'petrol',
               cargo_payment_list_colour = '175',
               is_freight = '1',
               cargo_classes = 'bitmask(CC_LIQUID)',
-              cargo_label = '"PETR"',
+              cargo_label = 'PETR',
               town_growth_effect = 'TOWNGROWTH_GOODS',
               town_growth_multiplier = '1.0',
               units_of_cargo = '82',
@@ -22,7 +21,7 @@ cargo = Cargo(id = 'petrol',
               price_factor = '126.749038696',
               icon_indices = (12, 1))
 
-cargo.economy_variations['BASIC_TEMPERATE']['disabled'] = True
-cargo.economy_variations['BASIC_TROPIC']['disabled'] = True
-cargo.economy_variations['MISTAH_KURTZ']['disabled'] = True
+
+
+
 

@@ -1,7 +1,6 @@
 from cargo import Cargo
 
 cargo = Cargo(id = 'sand',
-              number = '17',
               type_name = 'string(STR_CARGO_NAME_SAND)',
               unit_name = 'string(STR_CARGO_NAME_SAND)',
               type_abbreviation = 'string(STR_CID_SAND)',
@@ -11,7 +10,7 @@ cargo = Cargo(id = 'sand',
               cargo_payment_list_colour = '190',
               is_freight = '1',
               cargo_classes = 'bitmask(CC_BULK)',
-              cargo_label = '"SAND"',
+              cargo_label = 'SAND',
               town_growth_effect = 'TOWNGROWTH_NONE',
               town_growth_multiplier = '1.0',
               units_of_cargo = '80',
@@ -22,6 +21,6 @@ cargo = Cargo(id = 'sand',
               price_factor = '73.2479095459',
               icon_indices = (0, 1))
 
-cargo.economy_variations['BASIC_ARCTIC']['disabled'] = True
-cargo.economy_variations['BASIC_TROPIC']['disabled'] = True
-cargo.economy_variations['MISTAH_KURTZ']['disabled'] = True
+
+
+

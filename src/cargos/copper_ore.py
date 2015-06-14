@@ -1,7 +1,6 @@
 from cargo import Cargo
 
 cargo = Cargo(id = 'copper_ore',
-              number = '8',
               type_name = 'TTD_STR_CARGO_PLURAL_COPPER_ORE',
               unit_name = 'TTD_STR_CARGO_SINGULAR_COPPER_ORE',
               type_abbreviation = 'TTD_STR_ABBREV_COPPER_ORE',
@@ -11,7 +10,7 @@ cargo = Cargo(id = 'copper_ore',
               cargo_payment_list_colour = '186',
               is_freight = '1',
               cargo_classes = 'bitmask(CC_BULK)',
-              cargo_label = '"CORE"',
+              cargo_label = 'CORE',
               town_growth_effect = 'TOWNGROWTH_NONE',
               town_growth_multiplier = '1.0',
               units_of_cargo = 'TTD_STR_TONS',
@@ -22,7 +21,7 @@ cargo = Cargo(id = 'copper_ore',
               capacity_multiplier = '1',
               icon_indices = (1, 2))
 
-cargo.economy_variations['FIRS']['disabled'] = True
-cargo.economy_variations['BASIC_ARCTIC']['disabled'] = True
-cargo.economy_variations['BASIC_TROPIC']['disabled'] = True
-cargo.economy_variations['BASIC_TEMPERATE']['disabled'] = True
+
+
+
+

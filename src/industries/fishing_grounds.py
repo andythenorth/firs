@@ -5,27 +5,16 @@
   See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
 """
 
-from industry import Industry, Tile, Sprite, Spriteset, SpriteLayout, IndustryLayout
+from industry import IndustryPrimary, IndustryLocationChecks
 
-"""
-Notes to self whilst figuring out python-firs (notes will probably rot here forever).
-By convention, ids for use in nml have industry name prefix, local python object ids don't bother with industry name prefix.
-Some method properties expect object references, and the templating then uses properties from that object.
-Some method properties need a string - the templating is then typically directly writing out an nml identifier.
-When a string is expected are basically two choices: provide a string directly, or make an object reference and get an id from that object.
-"""
-
-industry = Industry(id='fishing_grounds',
+industry = IndustryPrimary(id='fishing_grounds',
                     accept_cargo_types=[],
-                    input_multiplier_1='[0, 0]',
-                    input_multiplier_3='[0, 0]',
-                    input_multiplier_2='[0, 0]',
                     prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL',
                     prod_cargo_types=['FISH'],
                     layouts='[tilelayout_fishing_grounds_1, tilelayout_fishing_grounds_2, tilelayout_fishing_grounds_3, tilelayout_fishing_grounds_4]',
-                    prob_in_game='20',
-                    prob_random='20',
-                    prod_multiplier='[5, 0]',
+                    prob_in_game='14',
+                    prob_random='14',
+                    prod_multiplier='[7, 0]',
                     substitute='5',
                     new_ind_msg='TTD_STR_NEWS_INDUSTRY_CONSTRUCTION',
                     map_colour='158',
@@ -33,13 +22,16 @@ industry = Industry(id='fishing_grounds',
                     life_type='IND_LIFE_TYPE_EXTRACTIVE',
                     min_cargo_distr='2',
                     spec_flags='bitmask(IND_FLAG_BUILT_ON_WATER, IND_FLAG_NO_PRODUCTION_INCREASE, IND_FLAG_AI_CREATES_AIR_AND_SHIP_ROUTES)',
+                    location_checks=IndustryLocationChecks(require_cluster=['fishing_grounds', [20, 84, 1, 5]],
+                                                           incompatible={'fishing_harbour': 16},
+                                                           coast_distance=True),
                     remove_cost_multiplier='0',
                     prospect_chance='0.75',
                     name='string(STR_IND_FISHING_GROUND)',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_WATER))',
                     fund_cost_multiplier='88',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
-                    )
+                    template="industry_fishing_grounds.pypnml" )
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_ARCTIC'].enabled = True

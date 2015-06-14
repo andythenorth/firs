@@ -28,10 +28,10 @@
  *
  * List of templates:
  * TILE_CHECK_HEIGHT         (name, minh, maxh,  inrange, outrange)
- * TILE_CHECK_WATERCLASS     (name, class,       yes,     no)
  * TILE_CHECK_WATER          (name,              water,   land)
  * TILE_CHECK_FLAT           (name,              flat,    sloped)
  *
+ * TILE_REQUIRE_SEA          (name,                       next)
  * TILE_DISALLOW_COAST       (name,              errtext, next)
  * TILE_DISALLOW_TERRAIN     (name, terraintype, errtext, next)
  * TILE_DISALLOW_NEARBY_CLASS(name, class,       errtext, next)
@@ -78,10 +78,11 @@ switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(name), UCMP(nearby_tile_height(0, 0) - 
  *        where <value> is a string, CB_RESULT_LOCATION_DISALLOW or CB_RESULT_LOCATION_ALLOW
  */
 
-#define TILE_CHECK_WATERCLASS(name, class, yes, no) \
-switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(name), nearby_tile_water_class(0,0) == class) { \
-	1: yes; \
-	no; \
+#define TILE_REQUIRE_SEA(name, next) \
+switch(FEAT_INDUSTRYTILES, SELF, THIS_ID(name), nearby_tile_water_class(0,0)) { \
+	WATER_CLASS_SEA: next; \
+	WATER_CLASS_NONE: next; \
+	return CB_RESULT_LOCATION_DISALLOW; \
 }
 
 /*
@@ -253,4 +254,83 @@ switch (FEAT_INDUSTRYTILES, SELF, THIS_ID(name), nearby_tile_slope(0,0) & bitmas
 switch (FEAT_INDUSTRYTILES, SELF, THIS_ID(name), nearby_tile_slope(0,0) == SLOPE_FLAT) { \
 	1: next; \
 	return errtext; \
+}
+
+
+/*
+ * Check whether highest corner of a tile is same as highest corner of industry north tile
+ *
+ * switch name:  THIS_ID(name)
+ *               tilename ## name
+ *
+ * Parameters:
+ * name          name of this switch
+ * errtext:      deny construction: text for error message or CB_RESULT_LOCATION_DISALLOW
+ * next          name of next switch or "return CB_RESULT_LOCATION_ALLOW"
+ */
+
+/* The check looks really complex, but is simple:
+ * - get the tile height of n tile (lowest corner), add 0, 1, or 2 depending on slope (flat, slope, steep slope)
+ * - do same for current tile
+ * - if the results match, allow building
+ * The stacked ternary operators make it look more complicated than it is.
+ */
+#define TILE_REQUIRE_EFFECTIVELY_FLAT(name, errtext, next) \
+switch (FEAT_INDUSTRYTILES, SELF, THIS_ID(name),  \
+                                                  ( \
+                                                  nearby_tile_height(-relative_x, -relative_y) \
+                                                  + (nearby_tile_slope(-relative_x, -relative_y) \
+                                                  == SLOPE_FLAT ? 0 : \
+                                                  nearby_tile_slope(-relative_x, -relative_y) == bitmask(IS_STEEP_SLOPE) ? 2 : 1 \
+                                                  )) == (nearby_tile_height(0, 0) \
+                                                  + (nearby_tile_slope(0, 0) \
+                                                  == SLOPE_FLAT ? 0 : \
+                                                  nearby_tile_slope(0, 0) == bitmask(IS_STEEP_SLOPE) ? 2 : 1)) \
+                                                  ) { \
+	1: next; \
+	return errtext; \
+}
+
+
+
+/*
+ * Check whether an industry *tile* is within a certain distance of houses
+ * *
+ * Usage:        CHECK_HOUSES_NEARBY(switchname, x, y next)
+ *
+ * Parameters:
+ * name          name of this switch. Suggested: tile_houses_nearby
+ * x             x offset from north tile of industry
+ * y             y offset from north tile of industry
+ * next          name of next switch or "return CB_RESULT_LOCATION_DISALLOW"
+ */
+
+#define CHECK_HOUSES_NEARBY(name, x, y, next) \
+switch (FEAT_INDUSTRYTILES, SELF, THIS_ID(name), nearby_tile_class(x, y)) { \
+    TILE_CLASS_HOUSE: return CB_RESULT_LOCATION_ALLOW; \
+    next; \
+}
+
+/*
+ * Check whether an industry *tile* is within a certain distance of road
+ * *
+ * Usage:        CHECK_ROAD_ADJACENT(switchname, next)
+ *
+ * Parameters:
+ * name          name of this switch. Suggested: tile_road_adjacent
+ * x             x offset from north tile of industry
+ * y             y offset from north tile of industry
+ * next          name of next switch or "return CB_RESULT_LOCATION_ALLOW"
+ */
+
+#define CHECK_ROAD_ADJACENT(name, next) \
+switch (FEAT_INDUSTRYTILES, SELF, THIS_ID(name), \
+                                                  ( \
+                                                  nearby_tile_class(0, -1) == TILE_CLASS_ROAD ? 1 : \
+                                                  (nearby_tile_class(0, 1) == TILE_CLASS_ROAD ? 1 : \
+                                                  (nearby_tile_class(-1, 0) == TILE_CLASS_ROAD ? 1 : \
+                                                  (nearby_tile_class(1, 0) == TILE_CLASS_ROAD ? 1 : 0 \
+                                                  ))))) { \
+    1: next; \
+    return CB_RESULT_LOCATION_DISALLOW; \
 }

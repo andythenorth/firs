@@ -1,0 +1,25 @@
+cargotable {
+<tal:build_cargo_table repeat="cargo registered_cargos">
+    ${cargo.cargo_label},
+</tal:build_cargo_table>
+}
+
+/* disable all default cargos, will then re-enable the ones we need explicitly */
+disable_item(FEAT_CARGOS, 0, 29);
+// don't disable 30, it's used by NARS 2 for regearing and disabling it breaks NARS 2
+disable_item(FEAT_CARGOS, 31, 31);
+
+<tal:cargos repeat="cargo registered_cargos">
+    spriteset(cargoicon_${cargo.id}) {
+        [10 + 20 * ${cargo.icon_indices[0]}, 10 + 20 * ${cargo.icon_indices[1]}, 10, 10, 0, 0, "src/graphics/other/cargoicons.png"]
+    }
+
+
+    <tal:economies repeat="economy economies">
+        <tal:cargo_props condition="cargo.id in economy.cargos">
+            if (economy==${repeat.economy.index}) {
+                <tal:include metal:use-macro="load: cargo_props.pynml" />
+            }
+        </tal:cargo_props>
+    </tal:economies>
+</tal:cargos>

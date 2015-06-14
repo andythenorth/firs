@@ -1,0 +1,134 @@
+/*
+ * This file is part of FIRS industry set.
+ * FIRS industry set is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 2.
+ * FIRS industry set is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS industry set. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+
+#define THIS_ID(...) ${industry.id}_ ## __VA_ARGS__
+
+<tal:include metal:use-macro="load: spritesets.pynml" />
+
+<tal:include metal:use-macro="load: spritelayouts.pynml" />
+
+<tal:include metal:use-macro="load: graphics_switches.pynml" />
+
+
+/* ***************************************************
+ * Definition of the industry tiles and their callbacks
+ * ***************************************************/
+
+TILE_DISALLOW_NEARBY_CLASS(tile_nearby_industry, TILE_CLASS_INDUSTRY, CB_RESULT_LOCATION_DISALLOW, return CB_RESULT_LOCATION_ALLOW)
+TILE_ALLOW_PLAYER         (tile_location_check, ${industry.id}_tile_nearby_industry)
+
+
+switch (FEAT_INDUSTRYTILES, SELF, ${industry.id}_tile_oil_well_stop_anim, animation_frame) {
+	1: return 11; // jump to the 'stop animation cycle' when triggered and currently animated
+	2: return 12;
+	3: return 13;
+	4: return 14;
+	5: return 15;
+	6: return 16;
+	7: return 17;
+	8: return 18;
+	9: return 19;
+	10: return 20;
+	return CB_RESULT_DO_NOTHING;
+}
+
+switch (FEAT_INDUSTRYTILES, SELF, ${industry.id}_tile_oil_well_start_anim, animation_frame) {
+	11: return 1;
+	12: return 2;
+	13: return 3;
+	14: return 4;
+	15: return 5;
+	16: return 6;
+	17: return 7;
+	18: return 8;
+	19: return 9;
+	20: return 10;
+	return CB_RESULT_START_ANIMATION;
+}
+
+
+random_switch (FEAT_INDUSTRYTILES, SELF, ${industry.id}_tile_oil_well_random_trigger, bitmask(TRIGGER_INDUSTRYTILE_TILELOOP)) {
+	1: return ${industry.id}_tile_oil_well_stop_anim;
+	1: return ${industry.id}_tile_oil_well_start_anim;
+}
+
+switch (FEAT_INDUSTRYTILES, SELF, ${industry.id}_tile_oil_well_anim_next_frame, animation_frame) {
+	10: return 1;
+	11: return CB_RESULT_STOP_ANIMATION; // Don't actually stop animation, just keep looping the same frame over and over.
+	20: return 11;
+	return CB_RESULT_NEXT_FRAME;
+}
+
+item(FEAT_INDUSTRYTILES, oil_wells_tile_pump, TILE_OILWELLS_1) {
+	property {
+		substitute:         0;
+		accepted_cargos:    [[ENSP, 8]];
+		land_shape_flags:   0;
+		/* Animation. */
+		animation_info:     [ANIMATION_LOOPING, 20];
+		animation_speed:    3;
+		animation_triggers: bitmask(ANIM_TRIGGER_INDTILE_TILE_LOOP);
+		special_flags:      bitmask(INDTILE_FLAG_RANDOM_ANIMATION);
+	}
+	graphics {
+		tile_check:         ${industry.id}_tile_location_check;
+		anim_control:       ${industry.id}_tile_oil_well_random_trigger;
+		anim_next_frame:    ${industry.id}_tile_oil_well_anim_next_frame;
+		random_trigger:     ${industry.id}_tile_oil_well_random_trigger;
+		${industry.id}_tile_fences;
+	}
+}
+
+item(FEAT_INDUSTRYTILES, oil_wells_tile_building, TILE_OILWELLS_2) {
+	property {
+		substitute:       0;
+		accepted_cargos:  [[ENSP, 8]];
+		land_shape_flags: 0;
+	}
+	graphics {
+		tile_check:   ${industry.id}_tile_location_check;
+		${industry.id}_tile_fences;
+	}
+}
+
+/* *************************************************
+ * Definition of the industry layouts
+ * *************************************************/
+
+<tal:include metal:use-macro="load: layouts.pynml" />
+
+/* *************************************************
+ * Definition of the industry
+ * *************************************************/
+
+<tal:include metal:use-macro="load: industry_location_checks.pynml" />
+
+<tal:include metal:use-macro="load: extra_text_primary.pynml" />
+
+<tal:include metal:use-macro="load: produce_primary.pypnml" />
+<tal:include metal:use-macro="load: check_primary_supplies_delivered.pypnml" />
+
+<tal:include metal:use-macro="load: check_availability.pynml" />
+
+<tal:include metal:use-macro="load: industry_properties.pynml" />
+
+item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
+	graphics {
+		produce_cargo_arrival:   ${industry.id}_produce;
+		construction_probability:${industry.id}_check_availability;
+		location_check:          ${industry.id}_check_location;
+		produce_256_ticks:       ${industry.id}_produce_256_ticks;
+		monthly_prod_change:     ${industry.id}_monthly_update;
+        random_prod_change:      return CB_RESULT_IND_PROD_NO_CHANGE;
+		build_prod_change:       randomise_primary_production_on_build;
+		extra_text_industry:     ${industry.id}_extra_text;
+		extra_text_fund:         return string(STR_FUND_AVAILABLE_FROM, ${industry.intro_year});
+		colour:                  switch_colour;
+	}
+}
+#include "../../src/templates/undefs.pnml"

@@ -1,7 +1,6 @@
 from cargo import Cargo
 
 cargo = Cargo(id = 'beans',
-              number = '6',
               type_name = 'string(STR_CARGO_NAME_BEANS)',
               unit_name = 'string(STR_CARGO_NAME_BEANS)',
               type_abbreviation = 'string(STR_CID_BEANS)',
@@ -11,7 +10,7 @@ cargo = Cargo(id = 'beans',
               cargo_payment_list_colour = '191',
               is_freight = '1',
               cargo_classes = 'bitmask(CC_BULK)',
-              cargo_label = '"BEAN"',
+              cargo_label = 'BEAN',
               town_growth_effect = 'TOWNGROWTH_NONE',
               town_growth_multiplier = '1.0',
               units_of_cargo = 'TTD_STR_TONS',
@@ -22,7 +21,7 @@ cargo = Cargo(id = 'beans',
               capacity_multiplier = '1',
               icon_indices = (6, 2))
 
-cargo.economy_variations['FIRS']['disabled'] = True
-cargo.economy_variations['BASIC_ARCTIC']['disabled'] = True
-cargo.economy_variations['BASIC_TEMPERATE']['disabled'] = True
-cargo.economy_variations['MISTAH_KURTZ']['disabled'] = True
+
+
+
+

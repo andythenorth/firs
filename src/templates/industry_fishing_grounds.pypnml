@@ -1,0 +1,372 @@
+/*
+ * This file is part of FIRS Industry Set for OpenTTD.
+ * FIRS is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 2.
+ * FIRS is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+#define THIS_ID(...) ${industry.id}_ ## __VA_ARGS__
+
+/* uses templated spritesets, but not templated layouts - no need for snow, construction states etc */
+
+<tal:include metal:use-macro="load: spritesets.pynml" />
+
+spritelayout fishing_grounds_spritelayout_1 {
+	ground {
+		sprite: GROUNDSPRITE_WATER;
+	}
+	building {
+		sprite: fishing_grounds_spriteset_1_0;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+}
+spritelayout fishing_grounds_spritelayout_2 {
+	ground {
+		sprite: GROUNDSPRITE_WATER;
+	}
+	building {
+		sprite: fishing_grounds_spriteset_2_0;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+}
+spritelayout fishing_grounds_spritelayout_3 {
+	ground {
+		sprite: GROUNDSPRITE_WATER;
+	}
+	building {
+		sprite: fishing_grounds_spriteset_3_0;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+}
+spritelayout ${industry.id}_spritelayout_4 {
+	ground {
+		sprite: GROUNDSPRITE_WATER;
+	}
+	childsprite {
+		sprite: ${industry.id}_spriteset_5_0;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+		always_draw: 1;
+	}
+	building {
+		sprite: ${industry.id}_spriteset_4_0;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: 0;
+	}
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_layout_1, relative_pos) {
+	relative_coord(3, 2): ${industry.id}_spritelayout_1;
+	relative_coord(3, 3): ${industry.id}_spritelayout_4;
+	relative_coord(3, 4): ${industry.id}_spritelayout_2;
+	${industry.id}_spritelayout_3;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_layout_2, relative_pos) {
+	relative_coord(3, 2): ${industry.id}_spritelayout_1;
+	relative_coord(3, 3): ${industry.id}_spritelayout_2;
+	relative_coord(3, 4): ${industry.id}_spritelayout_4;
+	${industry.id}_spritelayout_3;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_layout_3, relative_pos) {
+	relative_coord(2, 3): ${industry.id}_spritelayout_3;
+	relative_coord(5, 3): ${industry.id}_spritelayout_4;
+	${industry.id}_spritelayout_2;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, ${industry.id}_layout_4, relative_pos) {
+	relative_coord(3, 5): ${industry.id}_spritelayout_1;
+	relative_coord(3, 3): ${industry.id}_spritelayout_4;
+	relative_coord(3, 2): ${industry.id}_spritelayout_2;
+	${industry.id}_spritelayout_3;
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, ${industry.id}_layout, layout_num) {
+	1: ${industry.id}_layout_1;
+	2: ${industry.id}_layout_2;
+	3: ${industry.id}_layout_3;
+	4: ${industry.id}_layout_4;
+	${industry.id}_spritelayout_1;
+}
+
+/* *************************************************
+ * Definition of the industry tile and its callbacks
+ * *************************************************/
+
+item(FEAT_INDUSTRYTILES, ${industry.id}_tile, TILE_FISHINGGROUNDS_1) {
+	property {
+		substitute:       0;
+		accepted_cargos:  [];
+		land_shape_flags: bitmask(LSF_ONLY_ON_FLAT_LAND);
+	}
+
+	graphics {
+		${industry.id}_layout;
+	}
+}
+
+/* *************************************************
+ * Definition of the industry layouts
+ * *************************************************/
+
+tilelayout tilelayout_fishing_grounds_1 {
+	0, 0: 255;
+	0, 1: 255;
+	0, 2: 255;
+	0, 3: 255;
+	0, 4: 255;
+	0, 5: 255;
+	0, 6: 255;
+	1, 0: 255;
+	1, 1: 255;
+	1, 2: 255;
+	1, 3: 255;
+	1, 4: 255;
+	1, 5: 255;
+	1, 6: 255;
+	2, 0: 255;
+	2, 1: 255;
+	2, 2: 24;
+	2, 3: 24;
+	2, 4: 255;
+	2, 5: 255;
+	2, 6: 255;
+	3, 0: 255;
+	3, 1: 255;
+	3, 2: ${industry.id}_tile;
+	3, 3: ${industry.id}_tile;
+	3, 4: ${industry.id}_tile;
+	3, 5: 255;
+	3, 6: 255;
+	4, 0: 255;
+	4, 1: 255;
+	4, 2: 255;
+	4, 3: ${industry.id}_tile;
+	4, 4: 255;
+	4, 5: 255;
+	4, 6: 255;
+	5, 0: 255;
+	5, 1: 255;
+	5, 2: 255;
+	5, 3: 255;
+	5, 4: 255;
+	5, 5: 255;
+	5, 6: 255;
+	6, 0: 255;
+	6, 1: 255;
+	6, 2: 255;
+	6, 3: 255;
+	6, 4: 255;
+	6, 5: 255;
+	6, 6: 255;
+}
+
+tilelayout tilelayout_fishing_grounds_2 {
+	0, 0: 255;
+	0, 1: 255;
+	0, 2: 255;
+	0, 3: 255;
+	0, 4: 255;
+	0, 5: 255;
+	0, 6: 255;
+	1, 0: 255;
+	1, 1: 255;
+	1, 2: 255;
+	1, 3: 255;
+	1, 4: 255;
+	1, 5: 255;
+	1, 6: 255;
+	2, 0: 255;
+	2, 1: 255;
+	2, 2: 255;
+	2, 3: 24;
+	2, 4: 24;
+	2, 5: 255;
+	2, 6: 255;
+	3, 0: 255;
+	3, 1: 255;
+	3, 2: ${industry.id}_tile;
+	3, 3: ${industry.id}_tile;
+	3, 4: ${industry.id}_tile;
+	3, 5: 255;
+	3, 6: 255;
+	4, 0: 255;
+	4, 1: 255;
+	4, 2: 255;
+	4, 3: 255;
+	4, 4: ${industry.id}_tile;
+	4, 5: 255;
+	4, 6: 255;
+	5, 0: 255;
+	5, 1: 255;
+	5, 2: 255;
+	5, 3: 255;
+	5, 4: ${industry.id}_tile;
+	5, 5: 255;
+	5, 6: 255;
+	6, 0: 255;
+	6, 1: 255;
+	6, 2: 255;
+	6, 3: 255;
+	6, 4: 255;
+	6, 5: 255;
+	6, 6: 255;
+	7, 0: 255;
+	7, 1: 255;
+	7, 2: 255;
+	7, 3: 255;
+	7, 4: 255;
+	7, 5: 255;
+	7, 6: 255;
+}
+
+tilelayout tilelayout_fishing_grounds_3 {
+	0, 0: 255;
+	0, 1: 255;
+	0, 2: 255;
+	0, 3: 255;
+	0, 4: 255;
+	0, 5: 255;
+	0, 6: 255;
+	1, 0: 255;
+	1, 1: 255;
+	1, 2: 255;
+	1, 3: 255;
+	1, 4: 255;
+	1, 5: 255;
+	1, 6: 255;
+	2, 0: 255;
+	2, 1: 255;
+	2, 2: 255;
+	2, 3: ${industry.id}_tile;
+	2, 4: 255;
+	2, 5: 255;
+	2, 6: 255;
+	3, 0: 255;
+	3, 1: 255;
+	3, 2: 255;
+	3, 3: 255;
+	3, 4: 255;
+	3, 5: 255;
+	3, 6: 255;
+	4, 0: 255;
+	4, 1: 255;
+	4, 2: 24;
+	4, 3: 24;
+	4, 4: 255;
+	4, 5: 255;
+	4, 6: 255;
+	5, 0: 255;
+	5, 1: 255;
+	5, 2: ${industry.id}_tile;
+	5, 3: ${industry.id}_tile;
+	5, 4: ${industry.id}_tile;
+	5, 5: 255;
+	5, 6: 255;
+	6, 0: 255;
+	6, 1: 255;
+	6, 2: 255;
+	6, 3: 255;
+	6, 4: 255;
+	6, 5: 255;
+	6, 6: 255;
+	7, 0: 255;
+	7, 1: 255;
+	7, 2: 255;
+	7, 3: 255;
+	7, 4: 255;
+	7, 5: 255;
+	7, 6: 255;
+}
+
+tilelayout tilelayout_fishing_grounds_4 {
+	0, 0: 255;
+	0, 1: 255;
+	0, 2: 255;
+	0, 3: 255;
+	0, 4: 255;
+	0, 5: 255;
+	0, 6: 255;
+	0, 7: 255;
+	1, 0: 255;
+	1, 1: 255;
+	1, 2: 255;
+	1, 3: 255;
+	1, 4: 255;
+	1, 5: 255;
+	1, 6: 255;
+	1, 7: 255;
+	2, 0: 255;
+	2, 1: 255;
+	2, 2: 24;
+	2, 3: 24;
+	2, 4: 255;
+	2, 5: ${industry.id}_tile;
+	2, 6: 255;
+	2, 7: 255;
+	3, 0: 255;
+	3, 1: 255;
+	3, 2: ${industry.id}_tile;
+	3, 3: ${industry.id}_tile;
+	3, 4: ${industry.id}_tile;
+	3, 5: ${industry.id}_tile;
+	3, 6: 255;
+	3, 7: 255;
+	4, 0: 255;
+	4, 1: 255;
+	4, 2: 255;
+	4, 3: 255;
+	4, 4: 255;
+	4, 5: 255;
+	4, 6: 255;
+	4, 7: 255;
+	5, 0: 255;
+	5, 1: 255;
+	5, 2: 255;
+	5, 3: 255;
+	5, 4: 255;
+	5, 5: 255;
+	5, 6: 255;
+	5, 7: 255;
+}
+
+/* *************************************************
+ * Definition of the industry
+ * *************************************************/
+
+<tal:include metal:use-macro="load: check_availability.pynml" />
+
+<tal:include metal:use-macro="load: industry_location_checks.pynml" />
+
+/* industry specific switch to randomise initial production; as Fishing Grounds never changes production, go for a wide range of productions*/
+random_switch(FEAT_INDUSTRIES, SELF, ${industry.id}_randomise_primary_production_on_build) {
+	1: return 8;
+	1: return 12;
+	3: return 16;
+	2: return 20;
+	2: return 24;
+	1: return 28;
+	1: return 32;
+	1: return 36;
+	1: return 40;
+}
+
+<tal:include metal:use-macro="load: industry_properties.pynml" />
+
+item(FEAT_INDUSTRIES, fishing_grounds, ${industry.get_numeric_id()}) {
+	graphics {
+		construction_probability:${industry.id}_check_availability;
+		location_check:          ${industry.id}_check_location;
+		monthly_prod_change:     return CB_RESULT_IND_PROD_NO_CHANGE;
+		random_prod_change:      return CB_RESULT_IND_PROD_NO_CHANGE;
+		build_prod_change:       ${industry.id}_randomise_primary_production_on_build; // initial production customised to Fishing Grounds
+//		extra_text_industry:     // no extra text. No production increase by means of FMSP
+		colour:                  switch_colour;
+	}
+}
+
+#include "../../src/templates/undefs.pnml"

@@ -1,6 +1,6 @@
 from cargo import Cargo
+
 cargo = Cargo(id = 'metal',
-              number = '9',
               type_name = 'string(STR_CARGO_NAME_METAL)',
               unit_name = 'string(STR_CARGO_NAME_METAL)',
               type_abbreviation = 'string(STR_CID_METAL)',
@@ -10,7 +10,7 @@ cargo = Cargo(id = 'metal',
               cargo_payment_list_colour = '10',
               is_freight = '1',
               cargo_classes = 'bitmask(CC_PIECE_GOODS)',
-              cargo_label = '"STEL"', # 'stel' stands in for generic metal; this ensures easy cargo support
+              cargo_label = 'STEL', # 'stel' stands in for generic metal; this ensures easy cargo support
               town_growth_effect = 'TOWNGROWTH_NONE',
               town_growth_multiplier = '1.0',
               units_of_cargo = '80',
@@ -21,6 +21,6 @@ cargo = Cargo(id = 'metal',
               price_factor = '126.165390015',
               icon_indices = (10, 0))
 
-cargo.economy_variations['BASIC_ARCTIC']['disabled'] = True
-cargo.economy_variations['BASIC_TROPIC']['disabled'] = True
-cargo.economy_variations['MISTAH_KURTZ']['disabled'] = True
+
+
+

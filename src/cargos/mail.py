@@ -1,7 +1,6 @@
 from cargo import Cargo
 
 cargo = Cargo(id = 'mail',
-              number = '2',
               type_name = 'TTD_STR_CARGO_PLURAL_MAIL',
               unit_name = 'TTD_STR_CARGO_SINGULAR_MAIL',
               type_abbreviation = 'TTD_STR_ABBREV_MAIL',
@@ -11,7 +10,7 @@ cargo = Cargo(id = 'mail',
               cargo_payment_list_colour = '15',
               is_freight = '0', # mail is not freight - consistent with default mail (setting '1' gives 'wrong' livery for mail cars)
               cargo_classes = 'bitmask(CC_MAIL)',
-              cargo_label = '"MAIL"',
+              cargo_label = 'MAIL',
               town_growth_effect = 'TOWNGROWTH_MAIL',
               town_growth_multiplier = '1.0',
               units_of_cargo = 'TTD_STR_BAGS',

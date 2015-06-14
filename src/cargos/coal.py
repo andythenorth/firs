@@ -1,7 +1,6 @@
 from cargo import Cargo
 
 cargo = Cargo(id = 'coal',
-              number = '1',
               type_name = 'TTD_STR_CARGO_PLURAL_COAL',
               unit_name = 'TTD_STR_CARGO_SINGULAR_COAL',
               type_abbreviation = 'TTD_STR_ABBREV_COAL',
@@ -11,7 +10,7 @@ cargo = Cargo(id = 'coal',
               cargo_payment_list_colour = '0',
               is_freight = '1',
               cargo_classes = 'bitmask(CC_BULK)',
-              cargo_label = '"COAL"',
+              cargo_label = 'COAL',
               town_growth_effect = 'TOWNGROWTH_NONE',
               town_growth_multiplier = '1.0',
               units_of_cargo = 'TTD_STR_TONS',
@@ -22,6 +21,6 @@ cargo = Cargo(id = 'coal',
               capacity_multiplier = '1',
               icon_indices = (1, 0))
 
-cargo.economy_variations['BASIC_ARCTIC']['disabled'] = True
-cargo.economy_variations['BASIC_TROPIC']['disabled'] = True
-cargo.economy_variations['MISTAH_KURTZ']['disabled'] = True
+
+
+

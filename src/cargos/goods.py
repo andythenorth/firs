@@ -1,7 +1,6 @@
 from cargo import Cargo
 
 cargo = Cargo(id = 'goods',
-              number = '5',
               type_name = 'TTD_STR_CARGO_PLURAL_GOODS',
               unit_name = 'TTD_STR_CARGO_SINGULAR_GOODS',
               type_abbreviation = 'TTD_STR_ABBREV_GOODS',
@@ -11,7 +10,7 @@ cargo = Cargo(id = 'goods',
               cargo_payment_list_colour = '194',
               is_freight = '1',
               cargo_classes = 'bitmask(CC_EXPRESS)',
-              cargo_label = '"GOOD"',
+              cargo_label = 'GOOD',
               town_growth_effect = 'TOWNGROWTH_WATER',
               town_growth_multiplier = '1.0',
               units_of_cargo = 'TTD_STR_CRATES',

@@ -5,21 +5,11 @@
   See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
 """
 
-from industry import Industry, Tile, Sprite, Spriteset, SpriteLayout, IndustryLayout
+from industry import IndustrySecondary, TileLocationChecks, IndustryLocationChecks
 
-"""
-Notes to self whilst figuring out python-firs (notes will probably rot here forever).
-By convention, ids for use in nml have industry name prefix, local python object ids don't bother with industry name prefix.
-Some method properties expect object references, and the templating then uses properties from that object.
-Some method properties need a string - the templating is then typically directly writing out an nml identifier.
-When a string is expected are basically two choices: provide a string directly, or make an object reference and get an id from that object.
-"""
-
-industry = Industry(id='stockyard',
-                    accept_cargo_types=['MNSP', 'LVST'],
-                    input_multiplier_1='[0, 0]',
-                    input_multiplier_3='[0, 0]',
-                    input_multiplier_2='[0, 0]',
+industry = IndustrySecondary(id='stockyard',
+                    processed_cargos_and_output_ratios=[('MNSP', 3), ('LVST', 5)],
+                    combined_cargos_boost_prod=True,
                     prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL',
                     prod_cargo_types=['FOOD'],
                     layouts='AUTO',
@@ -33,20 +23,29 @@ industry = Industry(id='stockyard',
                     life_type='IND_LIFE_TYPE_PROCESSING',
                     min_cargo_distr='5',
                     spec_flags='bitmask(IND_FLAG_MILITARY_HELICOPTER_CAN_EXPLODE)',
+                    location_checks=IndustryLocationChecks(incompatible={'stockyard': 56,
+                                                                         'mixed_farm': 16,
+                                                                         'sheep_farm': 16,
+                                                                         'dairy_farm': 16}),
                     remove_cost_multiplier='0',
                     prospect_chance='0.75',
                     name='string(STR_IND_STOCKYARD)',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_ANIMALS))',
                     fund_cost_multiplier='145',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
-                    extra_text_industry='STR_EXTRA_MEAT_PACKER')
+                    extra_text_industry='STR_EXTRA_MEAT_PACKER' )
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True
 industry.economy_variations['BASIC_ARCTIC'].enabled = True
 industry.economy_variations['BASIC_TROPIC'].enabled = True
 
-industry.add_tile(id='stockyard_tile')
+industry.add_tile(id='stockyard_tile_1',
+                  animation_length=7,
+                  animation_looping=True,
+                  animation_speed=3,
+                  location_checks=TileLocationChecks(require_effectively_flat=True,
+                                                     disallow_industry_adjacent=True))
 
 spriteset_ground = industry.add_spriteset(
     id = 'stockyard_spriteset_ground',
@@ -213,22 +212,22 @@ industry.add_spritelayout(
 
 industry.add_industry_layout(
     id = 'stockyard_industry_layout_1',
-    layout = [(0, 0, 'stockyard_tile', 'stockyard_spritelayout_12'),
-              (0, 1, 'stockyard_tile', 'stockyard_spritelayout_12'),
-              (0, 2, 'stockyard_tile', 'stockyard_spritelayout_11'),
-              (0, 3, 'stockyard_tile', 'stockyard_spritelayout_12'),
-              (1, 0, 'stockyard_tile', 'stockyard_spritelayout_12'),
-              (1, 1, 'stockyard_tile', 'stockyard_spritelayout_8'),
-              (1, 2, 'stockyard_tile', 'stockyard_spritelayout_9'),
-              (1, 3, 'stockyard_tile', 'stockyard_spritelayout_10'),
-              (3, 0, 'stockyard_tile', 'stockyard_spritelayout_12'),
-              (3, 1, 'stockyard_tile', 'stockyard_spritelayout_5'),
-              (3, 2, 'stockyard_tile', 'stockyard_spritelayout_6'),
-              (3, 3, 'stockyard_tile', 'stockyard_spritelayout_7'),
-              (4, 0, 'stockyard_tile', 'stockyard_spritelayout_1'),
-              (4, 1, 'stockyard_tile', 'stockyard_spritelayout_2'),
-              (4, 2, 'stockyard_tile', 'stockyard_spritelayout_3'),
-              (4, 3, 'stockyard_tile', 'stockyard_spritelayout_4'),
+    layout = [(0, 0, 'stockyard_tile_1', 'stockyard_spritelayout_12'),
+              (0, 1, 'stockyard_tile_1', 'stockyard_spritelayout_12'),
+              (0, 2, 'stockyard_tile_1', 'stockyard_spritelayout_11'),
+              (0, 3, 'stockyard_tile_1', 'stockyard_spritelayout_12'),
+              (1, 0, 'stockyard_tile_1', 'stockyard_spritelayout_12'),
+              (1, 1, 'stockyard_tile_1', 'stockyard_spritelayout_8'),
+              (1, 2, 'stockyard_tile_1', 'stockyard_spritelayout_9'),
+              (1, 3, 'stockyard_tile_1', 'stockyard_spritelayout_10'),
+              (3, 0, 'stockyard_tile_1', 'stockyard_spritelayout_12'),
+              (3, 1, 'stockyard_tile_1', 'stockyard_spritelayout_5'),
+              (3, 2, 'stockyard_tile_1', 'stockyard_spritelayout_6'),
+              (3, 3, 'stockyard_tile_1', 'stockyard_spritelayout_7'),
+              (4, 0, 'stockyard_tile_1', 'stockyard_spritelayout_1'),
+              (4, 1, 'stockyard_tile_1', 'stockyard_spritelayout_2'),
+              (4, 2, 'stockyard_tile_1', 'stockyard_spritelayout_3'),
+              (4, 3, 'stockyard_tile_1', 'stockyard_spritelayout_4'),
     ]
 )
 

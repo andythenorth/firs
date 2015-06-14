@@ -1,7 +1,7 @@
 <tal:page_with_sidebar_template define="page_with_sidebar_template load: page_with_sidebar_template.pt" metal:use-macro="page_with_sidebar_template">
 
 <div metal:fill-slot='sidebar_nav'>
-    <li class="nav-header">Economies (${len(global_constants.economies)})</li>
+    <li class="nav-header">Economies (${len(economies)})</li>
     <tal:economies repeat="economy doc_helper.get_economies_sorted_by_name()">
         <li><a href="#${economy}">${doc_helper.get_economy_name(economy)}</a></li>
     </tal:economies>
@@ -18,12 +18,12 @@
             <p>${structure:doc_helper.get_economy_extra_info(economy)}</p>
             <br />
             <h4>${len(economy_schemas[economy].enabled_cargos)} Cargos</h4>
-            <tal:industries repeat="cargo sorted(economy_schemas[economy].enabled_cargos, key=lambda cargo: doc_helper.get_cargo_name(cargo))">
+            <tal:industries repeat="cargo sorted(economy_schemas[economy].enabled_cargos, key=doc_helper.get_cargo_name)">
                 <a href="cargos.html#${cargo.id}">${doc_helper.get_cargo_name(cargo)}${(',', '')[repeat.cargo.end]}</a>
             </tal:industries>
 
             <h4>${len(economy_schemas[economy].enabled_industries)} Industries</h4>
-            <tal:industries repeat="industry sorted(economy_schemas[economy].enabled_industries, key=lambda industry: doc_helper.get_industry_name(industry))">
+            <tal:industries repeat="industry sorted(economy_schemas[economy].enabled_industries, key=doc_helper.get_industry_name)">
                 <a href="industries.html#${industry.id}">${doc_helper.get_industry_name(industry, economy)}${(',', '')[repeat.industry.end]}</a>
             </tal:industries>
         </div>

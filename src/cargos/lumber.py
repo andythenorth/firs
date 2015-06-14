@@ -1,7 +1,6 @@
 from cargo import Cargo
 
 cargo = Cargo(id = 'lumber',
-              number = '19',
               type_name = 'string(STR_CARGO_NAME_LUMBER)',
               unit_name = 'string(STR_CARGO_NAME_LUMBER)',
               type_abbreviation = 'string(STR_CID_LUMBER)',
@@ -11,7 +10,7 @@ cargo = Cargo(id = 'lumber',
               cargo_payment_list_colour = '58',
               is_freight = '1',
               cargo_classes = 'bitmask(CC_BULK, CC_PIECE_GOODS)',
-              cargo_label = '"WDPR"',
+              cargo_label = 'WDPR',
               town_growth_effect = 'TOWNGROWTH_NONE',
               town_growth_multiplier = '1.0',
               units_of_cargo = '80',
@@ -22,9 +21,9 @@ cargo = Cargo(id = 'lumber',
               capacity_multiplier = '1',
               icon_indices = (6, 1))
 
-cargo.economy_variations['BASIC_TEMPERATE']['disabled'] = True
-cargo.economy_variations['BASIC_ARCTIC']['disabled'] = True
-cargo.economy_variations['BASIC_TROPIC']['disabled'] = True
-cargo.economy_variations['MISTAH_KURTZ']['disabled'] = True
+
+
+
+
 
 

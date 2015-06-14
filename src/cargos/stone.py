@@ -1,7 +1,6 @@
 from cargo import Cargo
 
 cargo = Cargo(id = 'stone',
-              number = '26',
               type_name = 'string(STR_CARGO_NAME_STONE)',
               unit_name = 'string(STR_CARGO_NAME_STONE)',
               type_abbreviation = 'string(STR_CID_STONE)',
@@ -11,7 +10,7 @@ cargo = Cargo(id = 'stone',
               cargo_payment_list_colour = '16',
               is_freight = '1',
               cargo_classes = 'bitmask(CC_BULK)',
-              cargo_label = '"GRVL"',
+              cargo_label = 'GRVL',
               town_growth_effect = 'TOWNGROWTH_NONE',
               town_growth_multiplier = '1.0',
               units_of_cargo = '80',
@@ -22,7 +21,7 @@ cargo = Cargo(id = 'stone',
               capacity_multiplier = '1',
               icon_indices = (5, 1))
 
-cargo.economy_variations['BASIC_TEMPERATE']['disabled'] = True
-cargo.economy_variations['BASIC_ARCTIC']['disabled'] = True
-cargo.economy_variations['BASIC_TROPIC']['disabled'] = True
-cargo.economy_variations['MISTAH_KURTZ']['disabled'] = True
+
+
+
+

@@ -5,73 +5,30 @@
  * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
  */
 
-/* ========= Tile Checks ========== */
-
-/*
- * Check whether an industry *tile* is within a certain distance of houses
- * *
- * Usage:        CHECK_HOUSES_NEARBY(switchname, x, y next)
- *
- * Parameters:
- * name          name of this switch. Suggested: tile_houses_nearby
- * x             x offset from north tile of industry
- * y             y offset from north tile of industry
- * next          name of next switch or "return CB_RESULT_LOCATION_DISALLOW"
- */
-
-#define CHECK_HOUSES_NEARBY(name, x, y, next) \
-switch (FEAT_INDUSTRYTILES, SELF, THIS_ID(name), nearby_tile_class(x, y)) { \
-    TILE_CLASS_HOUSE: return CB_RESULT_LOCATION_ALLOW; \
-    next; \
-}
-
-/*
- * Check whether an industry *tile* is within a certain distance of road
- * *
- * Usage:        CHECK_ROAD_ADJACENT(switchname, next)
- *
- * Parameters:
- * name          name of this switch. Suggested: tile_road_adjacent
- * x             x offset from north tile of industry
- * y             y offset from north tile of industry
- * next          name of next switch or "return CB_RESULT_LOCATION_DISALLOW"
- */
-
-#define CHECK_ROAD_ADJACENT(name, x, y, next) \
-switch (FEAT_INDUSTRYTILES, SELF, THIS_ID(name), nearby_tile_class(x, y)) { \
-    TILE_CLASS_ROAD: return CB_RESULT_LOCATION_ALLOW; \
-    next; \
-}
-
-
 /* ========= Industry Checks ========== */
 
 /*
  * Check for minimum distance to the coast
  *
- * switch name:  THIS_ID(name)
- *               industryname ## name
  *
  * Parameters:
- * name:         Name of this switch
+ * switchname:   Name of this switch
  * mindistance:  Minimum distance from coast
  * maxdistance:  Maximum distance from coast
  * errtext:      deny construction: text for error message or CB_RESULT_LOCATION_DISALLOW
  * next:         allow construction: name of next switch or "return CB_RESULT_LOCATION_ALLOW"
  */
-#define CHECK_COAST_DISTANCE(name, mindistance, maxdistance, errtext, next) \
-switch (FEAT_INDUSTRIES, SELF, THIS_ID(name), water_distance) { \
+#define CHECK_COAST_DISTANCE(switchname, mindistance, maxdistance, errtext, next) \
+switch (FEAT_INDUSTRIES, SELF, switchname, water_distance) { \
 	mindistance .. maxdistance: next; \
 	return errtext; \
 }
 
 /*
  * Check for ratio to related industry cluster
- *
- * switch name:  THIS_ID(related)
- *               industyname ## incompatible_industryname
- *
+ * *
  * Parameters:
+ * switchname:   Name of this switch
  * related:      name of industry to check
  * mindistance:  minimum required separation
  * maxdistance:  maximum allowed separation
@@ -79,8 +36,8 @@ switch (FEAT_INDUSTRIES, SELF, THIS_ID(name), water_distance) { \
  * errtext:      deny construction: text for error message or "return CB_RESULT_LOCATION_DISALLOW"
  */
 
-#define CHECK_NEARBY_CLUSTER(related, mindistance, maxdistance, mult, div, errtext, next) \
-switch (FEAT_INDUSTRIES, SELF, THIS_ID(related), \
+#define CHECK_NEARBY_CLUSTER(switchname, related, mindistance, maxdistance, mult, div, errtext, next) \
+switch (FEAT_INDUSTRIES, SELF, switchname, \
 			industry_count(related) * mult / div / industry_clusters != 0 && \
 			(	industry_distance(related) < mindistance || \
 				industry_distance(related) > maxdistance) \
@@ -93,18 +50,16 @@ switch (FEAT_INDUSTRIES, SELF, THIS_ID(related), \
 /*
  * Check for a minimum distance to another industry type
  *
- * switch name:  THIS_ID(param1)
- *               industyname ## incompatible_industryname
- *
  * Parameters:
+ * switchname:   name of this switch
  * incompatible: name of conflicting industry
  * distance:     minimum required separation
  * errtext:      return value: text for error message or CB_RESULT_LOCATION_DISALLOW
  * next:         name of next switch or "return CB_RESULT_LOCATION_ALLOW"
  */
 
-#define CHECK_INCOMPATIBLE(incompatible, distance, errtext, next) \
-switch (FEAT_INDUSTRIES, SELF, THIS_ID(incompatible), industry_distance(incompatible)) { \
+#define CHECK_INCOMPATIBLE(switchname, incompatible, distance, errtext, next) \
+switch (FEAT_INDUSTRIES, SELF, switchname, industry_distance(incompatible)) { \
 	0 .. distance: return errtext; \
 	next; \
 }
@@ -125,7 +80,7 @@ switch (FEAT_INDUSTRIES, SELF, THIS_ID(incompatible), industry_distance(incompat
  */
 
 #define CHECK_INDUSTRY_TOWN_COUNT(switchname, industry_type, mincount, maxcount, errtext, next) \
-switch (FEAT_INDUSTRIES, SELF, THIS_ID(switchname), industry_town_count(industry_type)) { \
+switch (FEAT_INDUSTRIES, SELF, switchname, industry_town_count(industry_type)) { \
 	mincount .. maxcount: next; \
 	return errtext; \
 }
@@ -143,8 +98,8 @@ switch (FEAT_INDUSTRIES, SELF, THIS_ID(switchname), industry_town_count(industry
  * maxdistance   maximum distance to town centre
  */
 
-#define CHECK_TOWN_DISTANCE(name, mindistance, maxdistance, next) \
-switch (FEAT_INDUSTRIES, SELF, THIS_ID(name), town_euclidean_dist(0, 0)) { \
+#define CHECK_TOWN_DISTANCE(switchname, mindistance, maxdistance, next) \
+switch (FEAT_INDUSTRIES, SELF, switchname, town_euclidean_dist(0, 0)) { \
 	mindistance .. maxdistance: next; \
 	return CB_RESULT_LOCATION_DISALLOW; \
 }
@@ -162,8 +117,8 @@ switch (FEAT_INDUSTRIES, SELF, THIS_ID(name), town_euclidean_dist(0, 0)) { \
  * maxzone       maximum zone
  */
 
-#define CHECK_TOWN_ZONE(name, minzone, maxzone, next) \
-switch (FEAT_INDUSTRIES, SELF, THIS_ID(name), town_zone(0, 0)) { \
+#define CHECK_TOWN_ZONE(switchname, minzone, maxzone, next) \
+switch (FEAT_INDUSTRIES, SELF, switchname, town_zone(0, 0)) { \
     minzone .. maxzone: next; \
 	return CB_RESULT_LOCATION_DISALLOW; \
 }
@@ -171,18 +126,15 @@ switch (FEAT_INDUSTRIES, SELF, THIS_ID(name), town_zone(0, 0)) { \
 /*
  * Check whether a certain location is suitable for building the industry
  * Restrictions apply only to industries funded by the game.
- *
- * This switch should be called directly from the callback as THIS_ID(check_location)
- *
- * switch name:  THIS_ID(check_location)
- *
+ * *
  * Parameters:
+ * switchname          name of this switch.
  * next          name of next switch or "return CB_RESULT_LOCATION_ALLOW"
  */
 
 /* founder == FOUNDER_GAME means founded by the game, 0 .. 15 are player companies */
-#define CHECK_FOUNDER(next) \
-switch (FEAT_INDUSTRIES, SELF, THIS_ID(check_location), ( \
+#define CHECK_FOUNDER(switchname, next) \
+switch (FEAT_INDUSTRIES, SELF, switchname, ( \
 			(extra_callback_info2 == IND_CREATION_FUND) || \
 			(extra_callback_info2 == IND_CREATION_PROSPECT) \
 			) \

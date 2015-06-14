@@ -1,7 +1,6 @@
 from cargo import Cargo
 
 cargo = Cargo(id = 'paper',
-              number = '13',
               type_name = 'TTD_STR_CARGO_PLURAL_PAPER',
               unit_name = 'TTD_STR_CARGO_SINGULAR_PAPER',
               type_abbreviation = 'TTD_STR_ABBREV_PAPER',
@@ -11,7 +10,7 @@ cargo = Cargo(id = 'paper',
               cargo_payment_list_colour = '20',
               is_freight = '1',
               cargo_classes = 'bitmask(CC_PIECE_GOODS)',
-              cargo_label = '"PAPR"',
+              cargo_label = 'PAPR',
               town_growth_effect = 'TOWNGROWTH_NONE',
               town_growth_multiplier = '1.0',
               units_of_cargo = 'TTD_STR_TONS',
@@ -22,7 +21,7 @@ cargo = Cargo(id = 'paper',
               capacity_multiplier = '1',
               icon_indices = (5, 2))
 
-cargo.economy_variations['FIRS']['disabled'] = True
-cargo.economy_variations['BASIC_TEMPERATE']['disabled'] = True
-cargo.economy_variations['BASIC_TROPIC']['disabled'] = True
-cargo.economy_variations['MISTAH_KURTZ']['disabled'] = True
+
+
+
+

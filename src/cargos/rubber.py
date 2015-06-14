@@ -1,7 +1,6 @@
 from cargo import Cargo
 
 cargo = Cargo(id = 'rubber',
-              number = '27',
               type_name = 'TTD_STR_CARGO_PLURAL_RUBBER',
               unit_name = 'TTD_STR_CARGO_SINGULAR_RUBBER',
               type_abbreviation = 'TTD_STR_ABBREV_RUBBER',
@@ -11,7 +10,7 @@ cargo = Cargo(id = 'rubber',
               cargo_payment_list_colour = '06',
               is_freight = '1',
               cargo_classes = 'bitmask(CC_LIQUID)',
-              cargo_label = '"RUBR"',
+              cargo_label = 'RUBR',
               town_growth_effect = 'TOWNGROWTH_NONE',
               town_growth_multiplier = '1.0',
               units_of_cargo = '80',
@@ -22,7 +21,7 @@ cargo = Cargo(id = 'rubber',
               price_factor = '107.634544373',
               icon_indices = (2, 2))
 
-cargo.economy_variations['FIRS']['disabled'] = True
-cargo.economy_variations['BASIC_TEMPERATE']['disabled'] = True
-cargo.economy_variations['BASIC_ARCTIC']['disabled'] = True
-cargo.economy_variations['BASIC_TROPIC']['disabled'] = True
+
+
+
+

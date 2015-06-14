@@ -1,7 +1,6 @@
 from cargo import Cargo
 
 cargo = Cargo(id = 'manufacturing_supplies',
-              number = '18',
               type_name = 'string(STR_CARGO_NAME_MANUFACTURING_SUPPLIES)',
               unit_name = 'string(STR_CARGO_NAME_MANUFACTURING_SUPPLIES)',
               type_abbreviation = 'string(STR_CID_MANUFACTURING_SUPPLIES)',
@@ -11,7 +10,7 @@ cargo = Cargo(id = 'manufacturing_supplies',
               cargo_payment_list_colour = '146',
               is_freight = '1',
               cargo_classes = 'bitmask(CC_EXPRESS, CC_PIECE_GOODS)',
-              cargo_label = '"MNSP"',
+              cargo_label = 'MNSP',
               town_growth_effect = 'TOWNGROWTH_NONE',
               town_growth_multiplier = '1.0',
               units_of_cargo = '84',

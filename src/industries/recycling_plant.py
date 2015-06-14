@@ -5,21 +5,10 @@
   See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
 """
 
-from industry import Industry, Tile, Sprite, Spriteset, SpriteLayout, IndustryLayout
+from industry import IndustrySecondary, TileLocationChecks, IndustryLocationChecks
 
-"""
-Notes to self whilst figuring out python-firs (notes will probably rot here forever).
-By convention, ids for use in nml have industry name prefix, local python object ids don't bother with industry name prefix.
-Some method properties expect object references, and the templating then uses properties from that object.
-Some method properties need a string - the templating is then typically directly writing out an nml identifier.
-When a string is expected are basically two choices: provide a string directly, or make an object reference and get an id from that object.
-"""
-
-industry = Industry(id='recycling_plant',
-                    accept_cargo_types=['RCYC'],
-                    input_multiplier_1='[0, 0]',
-                    input_multiplier_3='[0, 0]',
-                    input_multiplier_2='[0, 0]',
+industry = IndustrySecondary(id='recycling_plant',
+                    processed_cargos_and_output_ratios=[('RCYC', 6)],
                     prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL',
                     prod_cargo_types=['SCMT', 'MNSP'],
                     layouts='AUTO',
@@ -33,17 +22,25 @@ industry = Industry(id='recycling_plant',
                     life_type='IND_LIFE_TYPE_PROCESSING',
                     min_cargo_distr='5',
                     spec_flags='0',
+                    location_checks=IndustryLocationChecks(incompatible={'recycling_plant': 56,
+                                                                         'recycling_depot': 16}),
                     remove_cost_multiplier='0',
                     prospect_chance='0.75',
                     name='string(STR_IND_RECYCLING_PLANT)',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_INDUSTRY_ESTATE))',
                     fund_cost_multiplier='118',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
-                    extra_text_industry='STR_EXTRA_RECYCLING_PLANT')
+                    extra_text_industry='STR_EXTRA_RECYCLING_PLANT',
+                    intro_year=1978 )
 
 industry.economy_variations['FIRS'].enabled = True
 
-industry.add_tile(id='recycling_plant_tile')
+industry.add_tile(id='recycling_plant_tile_1',
+                  animation_length=71,
+                  animation_looping=True,
+                  animation_speed=2,
+                  location_checks=TileLocationChecks(require_effectively_flat=True,
+                                                     disallow_industry_adjacent=True))
 
 spriteset_ground = industry.add_spriteset(
     id = 'recycling_plant_spriteset_ground',
@@ -143,34 +140,34 @@ industry.add_spritelayout(
 
 industry.add_industry_layout(
     id = 'recycling_plant_industry_layout_1',
-    layout = [(0, 0, 'recycling_plant_tile', 'recycling_plant_spritelayout_2'),
-              (0, 1, 'recycling_plant_tile', 'recycling_plant_spritelayout_3'),
-              (1, 0, 'recycling_plant_tile', 'recycling_plant_spritelayout_1'),
-              (1, 1, 'recycling_plant_tile', 'recycling_plant_spritelayout_4'),
-              (2, 0, 'recycling_plant_tile', 'recycling_plant_spritelayout_5'),
-              (2, 1, 'recycling_plant_tile', 'recycling_plant_spritelayout_6')
+    layout = [(0, 0, 'recycling_plant_tile_1', 'recycling_plant_spritelayout_2'),
+              (0, 1, 'recycling_plant_tile_1', 'recycling_plant_spritelayout_3'),
+              (1, 0, 'recycling_plant_tile_1', 'recycling_plant_spritelayout_1'),
+              (1, 1, 'recycling_plant_tile_1', 'recycling_plant_spritelayout_4'),
+              (2, 0, 'recycling_plant_tile_1', 'recycling_plant_spritelayout_5'),
+              (2, 1, 'recycling_plant_tile_1', 'recycling_plant_spritelayout_6')
     ]
 )
 
 industry.add_industry_layout(
     id = 'recycling_plant_industry_layout_2',
-    layout = [(0, 0, 'recycling_plant_tile', 'recycling_plant_spritelayout_2'),
-              (0, 1, 'recycling_plant_tile', 'recycling_plant_spritelayout_3'),
-              (0, 2, 'recycling_plant_tile', 'recycling_plant_spritelayout_5'),
-              (1, 0, 'recycling_plant_tile', 'recycling_plant_spritelayout_1'),
-              (1, 1, 'recycling_plant_tile', 'recycling_plant_spritelayout_4'),
-              (1, 2, 'recycling_plant_tile', 'recycling_plant_spritelayout_6')
+    layout = [(0, 0, 'recycling_plant_tile_1', 'recycling_plant_spritelayout_2'),
+              (0, 1, 'recycling_plant_tile_1', 'recycling_plant_spritelayout_3'),
+              (0, 2, 'recycling_plant_tile_1', 'recycling_plant_spritelayout_5'),
+              (1, 0, 'recycling_plant_tile_1', 'recycling_plant_spritelayout_1'),
+              (1, 1, 'recycling_plant_tile_1', 'recycling_plant_spritelayout_4'),
+              (1, 2, 'recycling_plant_tile_1', 'recycling_plant_spritelayout_6')
     ]
 )
 
 industry.add_industry_layout(
     id = 'recycling_plant_industry_layout_3',
-    layout = [(0, 0, 'recycling_plant_tile', 'recycling_plant_spritelayout_5'),
-              (0, 1, 'recycling_plant_tile', 'recycling_plant_spritelayout_3'),
-              (0, 2, 'recycling_plant_tile', 'recycling_plant_spritelayout_2'),
-              (1, 0, 'recycling_plant_tile', 'recycling_plant_spritelayout_6'),
-              (1, 1, 'recycling_plant_tile', 'recycling_plant_spritelayout_4'),
-              (1, 2, 'recycling_plant_tile', 'recycling_plant_spritelayout_1')
+    layout = [(0, 0, 'recycling_plant_tile_1', 'recycling_plant_spritelayout_5'),
+              (0, 1, 'recycling_plant_tile_1', 'recycling_plant_spritelayout_3'),
+              (0, 2, 'recycling_plant_tile_1', 'recycling_plant_spritelayout_2'),
+              (1, 0, 'recycling_plant_tile_1', 'recycling_plant_spritelayout_6'),
+              (1, 1, 'recycling_plant_tile_1', 'recycling_plant_spritelayout_4'),
+              (1, 2, 'recycling_plant_tile_1', 'recycling_plant_spritelayout_1')
     ]
 )
 

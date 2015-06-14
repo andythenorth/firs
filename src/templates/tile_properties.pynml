@@ -1,0 +1,50 @@
+<tal:tiles repeat="tile industry.tiles">
+    <!--! tile properties that are same for all economies -->
+    item(FEAT_INDUSTRYTILES, ${tile.id}, ${tile.numeric_id}) {
+        property {
+            substitute:         0;
+            land_shape_flags:   ${tile.land_shape_flags};
+            <!--! conditionally setting animation props might result in undefined behaviour? -->
+            <tal:animation_info condition="tile.animation_length > 1">
+                animation_info:     [${'ANIMATION_LOOPING' if tile.animation_looping else 'ANIMATION_NON_LOOPING'}, ${tile.animation_length}];
+            </tal:animation_info>
+            <tal:animation_speed condition="tile.animation_speed > 0">
+                animation_speed:    ${tile.animation_speed};
+            </tal:animation_speed>
+            animation_triggers: ${tile.get_animation_triggers()};
+        }
+
+        graphics {
+    		<tal:tile_check_location condition="len(tile.location_checks.get_render_tree(tile.id, industry.id)) > 0">
+    		    tile_check: ${industry.id}_${tile.id}_lc_0;
+            </tal:tile_check_location>
+            <tal:anim_next_frame condition="tile.custom_animation_next_frame">
+                anim_next_frame: return ${tile.custom_animation_next_frame};
+            </tal:anim_next_frame>
+    		<tal:anim_control condition="tile.custom_animation_control is not None">
+    		    anim_control: ${tile.id}_anim_control;
+    		</tal:anim_control>
+    		<tal:foundations condition="tile.foundations is not None">
+                foundations: ${tile.foundations};
+            </tal:foundations>
+    		<tal:autoslope condition="tile.autoslope is not None">
+                autoslope: ${tile.autoslope};
+            </tal:autoslope>
+            ${industry.id}_tile_fences;
+        }
+    }
+    <!--!
+          Tile properties that vary by economy.
+    -->
+    <tal:economies repeat="economy economies">
+        if (economy==${repeat.economy.index}) {
+            <tal:industry_on_or_off condition="industry.get_property('enabled', economy) == True">
+                item(FEAT_INDUSTRYTILES, ${tile.id}, ${tile.numeric_id}) {
+                    property {
+                        accepted_cargos:  [${tile.get_expression_for_tile_acceptance(industry, economy)}];
+                    }
+                }
+            </tal:industry_on_or_off>
+        }
+    </tal:economies>
+</tal:tiles>

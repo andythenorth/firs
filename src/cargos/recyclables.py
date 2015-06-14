@@ -1,7 +1,6 @@
 from cargo import Cargo
 
 cargo = Cargo(id = 'recyclables',
-              number = '31',
               type_name = 'string(STR_CARGO_NAME_RECYCLABLES)',
               unit_name = 'string(STR_CARGO_NAME_RECYCLABLES)',
               type_abbreviation = 'string(STR_CID_RECYCLABLES)',
@@ -10,8 +9,8 @@ cargo = Cargo(id = 'recyclables',
               station_list_colour = '181',
               cargo_payment_list_colour = '181',
               is_freight = '1',
-              cargo_classes = 'bitmask(CC_PIECE_GOODS, CC_COVERED)',
-              cargo_label = '"RCYC"',
+              cargo_classes = 'bitmask(CC_BULK, CC_PIECE_GOODS)',
+              cargo_label = 'RCYC',
               town_growth_effect = 'TOWNGROWTH_NONE',
               town_growth_multiplier = '1.0',
               units_of_cargo = '80',
@@ -22,7 +21,7 @@ cargo = Cargo(id = 'recyclables',
               price_factor = '104.570388794',
               icon_indices = (11, 0))
 
-cargo.economy_variations['BASIC_TEMPERATE']['disabled'] = True
-cargo.economy_variations['BASIC_ARCTIC']['disabled'] = True
-cargo.economy_variations['BASIC_TROPIC']['disabled'] = True
-cargo.economy_variations['MISTAH_KURTZ']['disabled'] = True
+
+
+
+

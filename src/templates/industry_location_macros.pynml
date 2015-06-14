@@ -1,0 +1,34 @@
+<!--!
+      Not actually chameleon macros because I couldn't figure out
+      the implementation to call them from python without a use-macro in a template,
+      and I didn't want to read chameleon source, so they're conditionals.
+  -->
+
+<tal:grain_mill_layouts_by_date condition="'grain_mill_layouts_by_date' in conditions">
+    <!--!
+        Grain Mill restricts layouts by date.
+        This could be made more generic if needed.
+    -->
+
+    <!--! After 1900, windmills will only be built during map generation, not during gameplay (fake history). -->
+    switch (FEAT_INDUSTRIES, SELF, ${industry.id}_brick_layouts_only_check_layout, var[0x86]) {
+        3..5: return CB_RESULT_LOCATION_DISALLOW;
+        ${switch_result};
+    }
+    switch (FEAT_INDUSTRIES, SELF, ${industry.id}_brick_layouts_only, extra_callback_info2) {
+        IND_CREATION_GENERATION: ${switch_result};
+        ${industry.id}_brick_layouts_only_check_layout;
+    }
+    <!--! Before 1870, only windmills will be built. -->
+    switch (FEAT_INDUSTRIES, SELF, ${industry.id}_windmill_layout_only, var[0x86]) {
+        3..5: ${switch_result};
+        return CB_RESULT_LOCATION_DISALLOW;
+    }
+    <!--! Both types of layouts can appear between 1870 and 1900.
+          Update the docs if changing graphics dates -->
+    switch (FEAT_INDUSTRIES, SELF, ${switch_entry_point}, current_year) {
+        0..1869:    ${industry.id}_windmill_layout_only;
+        1870..1900: ${switch_result};
+        ${industry.id}_brick_layouts_only;
+    }
+</tal:grain_mill_layouts_by_date>

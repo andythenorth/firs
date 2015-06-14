@@ -1,7 +1,6 @@
 from cargo import Cargo
 
 cargo = Cargo(id = 'diamonds',
-              number = '1',
               type_name = 'TTD_STR_CARGO_PLURAL_DIAMONDS',
               unit_name = 'TTD_STR_CARGO_SINGULAR_DIAMOND',
               type_abbreviation = 'TTD_STR_ABBREV_DIAMONDS',
@@ -11,7 +10,7 @@ cargo = Cargo(id = 'diamonds',
               cargo_payment_list_colour = '202',
               is_freight = '1',
               cargo_classes = 'bitmask(CC_ARMOURED)',
-              cargo_label = '"DIAM"',
+              cargo_label = 'DIAM',
               town_growth_effect = 'TOWNGROWTH_NONE',
               town_growth_multiplier = '1.0',
               units_of_cargo = 'TTD_STR_TONS',
@@ -22,7 +21,7 @@ cargo = Cargo(id = 'diamonds',
               capacity_multiplier = '1',
               icon_indices = (3, 2))
 
-cargo.economy_variations['FIRS']['disabled'] = True
-cargo.economy_variations['BASIC_ARCTIC']['disabled'] = True
-cargo.economy_variations['BASIC_TROPIC']['disabled'] = True
-cargo.economy_variations['BASIC_TEMPERATE']['disabled'] = True
+
+
+
+

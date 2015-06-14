@@ -5,36 +5,28 @@
   See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
 """
 
-from industry import Industry, Tile, Sprite, Spriteset, SpriteLayout, IndustryLayout
+from industry import IndustryPrimaryOrganic, TileLocationChecks, IndustryLocationChecks
 
-"""
-Notes to self whilst figuring out python-firs (notes will probably rot here forever).
-By convention, ids for use in nml have industry name prefix, local python object ids don't bother with industry name prefix.
-Some method properties expect object references, and the templating then uses properties from that object.
-Some method properties need a string - the templating is then typically directly writing out an nml identifier.
-When a string is expected are basically two choices: provide a string directly, or make an object reference and get an id from that object.
-"""
-
-industry = Industry(id='fruit_plantation',
+industry = IndustryPrimaryOrganic(id='fruit_plantation',
                     new_ind_msg='TTD_STR_NEWS_INDUSTRY_CONSTRUCTION',
                     map_colour='86',
+                    prob_in_game='4',
+                    prob_random='10',
                     prospect_chance='0.75',
                     name='TTD_STR_INDUSTRY_NAME_FRUIT_PLANTATION',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_PLANTATION))',
                     layouts='[fruit_plantation_tilelayout_1, fruit_plantation_tilelayout_2, fruit_plantation_tilelayout_3, fruit_plantation_tilelayout_4, fruit_plantation_tilelayout_5]',
-                    accept_cargo_types=['FMSP'],
                     prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL',
-                    life_type='IND_LIFE_TYPE_ORGANIC',
                     prod_decrease_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_GENERAL',
                     spec_flags='0',
+                    location_checks=IndustryLocationChecks(require_cluster=['fruit_plantation', [20, 72, 1, 4]],
+                                                           incompatible={'brewery': 16}),
                     prod_cargo_types=['FRUT'],
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
-                    prob_in_game='3',
-                    prob_random='18',
                     fund_cost_multiplier='54',
-                    prod_multiplier='[6]',
+                    prod_multiplier='[16]',
                     substitute='0',
-                    )
+                    template="refactor_fruit_plantation.pypnml" )
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].enabled = True

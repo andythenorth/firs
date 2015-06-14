@@ -1,7 +1,6 @@
 from cargo import Cargo
 
 cargo = Cargo(id = 'oil',
-              number = '3',
               type_name = 'TTD_STR_CARGO_PLURAL_OIL',
               unit_name = 'TTD_STR_CARGO_SINGULAR_OIL',
               type_abbreviation = 'TTD_STR_ABBREV_OIL',
@@ -11,7 +10,7 @@ cargo = Cargo(id = 'oil',
               cargo_payment_list_colour = '172',
               is_freight = '1',
               cargo_classes = 'bitmask(CC_LIQUID)',
-              cargo_label = '"OIL_"',
+              cargo_label = 'OIL_',
               town_growth_effect = 'TOWNGROWTH_NONE',
               town_growth_multiplier = '1.0',
               units_of_cargo = 'TTD_STR_LITERS',
@@ -22,4 +21,4 @@ cargo = Cargo(id = 'oil',
               capacity_multiplier = '1',
               icon_indices = (3, 0))
 
-cargo.economy_variations['BASIC_TEMPERATE']['disabled'] = True
+

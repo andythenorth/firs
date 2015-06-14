@@ -1,18 +1,15 @@
-#!/usr/bin/env python
-
 """
   This file is part of FIRS Industry Set for OpenTTD.
   FIRS is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 2.
   FIRS is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
   See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
 """
-print "[PYTHON] render docs"
+print("[PYTHON] render docs")
 
 import codecs # used for writing files - more unicode friendly than standard open() module
 
 import shutil
 import sys
-import global_constants
 import os
 currentdir = os.curdir
 
@@ -48,30 +45,24 @@ metadata['repo_url'] = 'http://dev.openttdcoop.org/projects/firs/repository'
 metadata['issue_tracker'] = 'http://dev.openttdcoop.org/projects/firs/issues'
 
 import firs
-from cargos import registered_cargos
-from industries import registered_industries
 # default sort for docs is by id
-registered_cargos = sorted(registered_cargos, key=lambda registered_cargos: registered_cargos.id)
-registered_industries = sorted(registered_industries, key=lambda registered_industries: registered_industries.id)
+registered_cargos = sorted(firs.registered_cargos, key=lambda registered_cargos: registered_cargos.id)
+registered_industries = sorted(firs.registered_industries, key=lambda registered_industries: registered_industries.id)
+registered_economies = firs.registered_economies
 economy_schemas = {}
 
 class DocHelper(object):
     # dirty class to help do some doc formatting
     def get_economy_name(self, economy):
-        string_id = "STR_PARAM_VALUE_ECONOMIES_" + economy
-        name_string = base_lang_strings.get(string_id, 'NO_NAME ' + economy)
+        string_id = "STR_PARAM_VALUE_ECONOMIES_" + economy.id
+        name_string = base_lang_strings.get(string_id, 'NO_NAME ' + economy.id)
         return name_string.split(' Economy')[0] # name strings contain 'economy', I don't want that in docs
 
     def get_cargo_name(self, cargo):
         # cargos don't store the name directly as a python attr, but in lang - so look it up in base_lang using string id
         name = cargo.type_name
         string_id = utils.unwrap_nml_string_declaration(name)
-        result = base_lang_strings.get(string_id, 'NO NAME ' + str(name) + ' ' + cargo.id)
-        if cargo.id == 'sugar_beet':
-            result = result + " / " + base_lang_strings['STR_CARGO_NAME_SUGARCANE']
-        if cargo.id == 'sugarcane':
-            result = result + " / " + base_lang_strings['STR_CARGO_NAME_SUGAR_BEET']
-        return result
+        return base_lang_strings.get(string_id, 'NO NAME ' + str(name) + ' ' + cargo.id)
 
     def get_industry_name(self, industry, economy=None):
         # industries don't store the name directly as a python attr, but in lang - so look it up in base_lang using string id
@@ -97,11 +88,11 @@ class DocHelper(object):
         return set(result)
 
     def get_economies_sorted_by_name(self):
-        return sorted(global_constants.economies, key=lambda economy: self.get_economy_name(economy))
+        return sorted(registered_economies, key=lambda economy: self.get_economy_name(economy))
 
     def get_registered_cargo_sorted_by_name(self):
         # cargos don't store the name as a python attr, but we often need to iterate over their names in A-Z order
-        result = dict((self.get_cargo_name(cargo), cargo) for cargo in registered_cargos if cargo.id is not 'sugarcane')
+        result = dict((self.get_cargo_name(cargo), cargo) for cargo in registered_cargos)
         return sorted(result.items())
 
     def get_registered_industries_sorted_by_name(self):
@@ -110,7 +101,7 @@ class DocHelper(object):
         return sorted(result.items())
 
     def get_economy_extra_info(self, economy):
-        return base_lang_strings.get('ECONOMY_INFO_' + economy, '')
+        return base_lang_strings.get('ECONOMY_INFO_' + economy.id, '')
 
     def get_cargo_extra_info(self, cargo):
         return base_lang_strings.get('CARGO_INFO_' + cargo.id.upper(), '')
@@ -119,36 +110,26 @@ class DocHelper(object):
         return base_lang_strings.get('INDUSTRY_INFO_' + industry.id.upper(), '')
 
     def industry_find_industries_active_in_economy_for_cargo(self, cargo, economy, accept_or_produce):
-        result = []
+        result = set()
         # hmm, pretty certain this could be changed to use industry.get_prod_cargo_types or accept equivalent
-        # needs to pass economy, AND climate (from list defined in global_constants)
-        # climate is required for those functions, and can be used (note in brackets) to show when a cargo is climate special-cased (only SGBT/SGCN are)
-        # for non-special-cased cargos, don't bother showing any extra info about climates
         if cargo in economy_schemas[economy]['enabled_cargos']:
             for industry in economy_schemas[economy]['enabled_industries']:
                     for cargo_label in industry.get_property(accept_or_produce, economy):
-                        if cargo.cargo_label[1:-1] == cargo_label:
-                            result.append(industry)
-        return set(result)
+                        if cargo.cargo_label == cargo_label:
+                            result.add(industry)
+        return result
 
-    def cargo_unique_industry_combinations(self, cargo):
+    def industries_using_cargo(self, cargo):
+        # segmented by economy
         result = {}
         for economy in self.get_economies_sorted_by_name():
-            economy_industries = []
             accepted_by = self.industry_find_industries_active_in_economy_for_cargo(cargo, economy, 'accept_cargo_types')
             produced_by = self.industry_find_industries_active_in_economy_for_cargo(cargo, economy, 'prod_cargo_types')
-            for industry in accepted_by:
-                economy_industries.append(industry)
-            for industry in produced_by:
-                economy_industries.append(industry)
-            if len(economy_industries) > 0:
-                industry_key = tuple(sorted(economy_industries))
-                result.setdefault(industry_key, {'accepted_by': accepted_by, 'produced_by': produced_by})
-                result[industry_key].setdefault('economies',[]).append(economy)
-                 # convenient to have items sorted
-                result[industry_key]['economies'] = sorted(result[industry_key]['economies'], key=lambda economy: self.get_economy_name(economy))
-        # return a list, sorted by economies (only need first economy entry in each list of economies)
-        return sorted(result.values(), key = lambda combo: self.get_economy_name(combo['economies'][0]))
+            accepted_by = sorted(accepted_by, key=self.get_industry_name)
+            produced_by = sorted(produced_by, key=self.get_industry_name)
+            if len(list(accepted_by) + list(produced_by)) > 0:
+                result[economy] = {'accepted_by':accepted_by, 'produced_by':produced_by}
+        return result
 
 
     def industry_find_cargos_active_in_economy_for_industry(self, industry, economy, accept_or_produce):
@@ -156,9 +137,23 @@ class DocHelper(object):
         if industry in economy_schemas[economy]['enabled_industries']:
             for cargo_label in industry.get_property(accept_or_produce, economy):
                 for cargo in economy_schemas[economy]['enabled_cargos']:
-                    if cargo_label == cargo.cargo_label[1:-1]:
+                    if cargo_label == cargo.cargo_label:
                         result.append(cargo)
         return set(result)
+
+
+    def cargos_used_by_industry(self, industry):
+        # segmented by economy
+        result = {}
+        for economy in self.get_economies_sorted_by_name():
+            accept_cargo_types = self.industry_find_cargos_active_in_economy_for_industry(industry, economy, 'accept_cargo_types')
+            prod_cargo_types = self.industry_find_cargos_active_in_economy_for_industry(industry, economy, 'prod_cargo_types')
+            accept_cargo_types = sorted(accept_cargo_types, key=self.get_cargo_name)
+            prod_cargo_types = sorted(prod_cargo_types, key=self.get_cargo_name)
+            if len(list(accept_cargo_types) + list(prod_cargo_types)) > 0:
+                result[economy] = {'accept_cargo_types':accept_cargo_types, 'prod_cargo_types':prod_cargo_types}
+        return result
+
 
     def industry_unique_cargo_combinations(self, industry):
         result = {}
@@ -187,14 +182,26 @@ class DocHelper(object):
 def render_docs(doc_list, file_type, use_markdown=False):
     for doc_name in doc_list:
         template = docs_templates[doc_name + '.pt'] # .pt is the conventional extension for chameleon page templates
-        doc = template(registered_cargos=registered_cargos, registered_industries=registered_industries,
-                              economy_schemas=economy_schemas, global_constants=global_constants, repo_vars=repo_vars,
-                              metadata=metadata, utils=utils, doc_helper=DocHelper(), doc_name=doc_name)
+        doc = template(registered_cargos=registered_cargos,
+                       registered_industries=registered_industries,
+                       economies=registered_economies,
+                       economy_schemas=economy_schemas,
+                       global_constants=global_constants,
+                       repo_vars=repo_vars,
+                       metadata=metadata,
+                       utils=utils,
+                       doc_helper=DocHelper(),
+                       doc_name=doc_name)
         if use_markdown:
             # the doc might be in markdown format, if so we need to render markdown to html, and wrap the result in some boilerplate html
             markdown_wrapper = docs_templates['markdown_wrapper.pt']
-            doc = markdown_wrapper(content=markdown.markdown(doc), global_constants=global_constants, repo_vars=repo_vars,
-                              metadata=metadata, utils=utils, doc_helper=DocHelper(), doc_name=doc_name)
+            doc = markdown_wrapper(content=markdown.markdown(doc),
+                                   global_constants=global_constants,
+                                   repo_vars=repo_vars,
+                                   metadata=metadata,
+                                   utils=utils,
+                                   doc_helper=DocHelper(),
+                                   doc_name=doc_name)
         if file_type == 'html':
             subdir = 'html'
         else:
@@ -206,9 +213,9 @@ def render_docs(doc_list, file_type, use_markdown=False):
 
 
 def main():
-    for economy in global_constants.economies:
-        enabled_cargos = [cargo for cargo in registered_cargos if not cargo.economy_variations[economy].get('disabled') and cargo.id is not 'sugarcane']
-        enabled_industries = [industry for industry in registered_industries if industry.economy_variations[economy].enabled]
+    for economy in registered_economies:
+        enabled_cargos = [cargo for cargo in registered_cargos if cargo.id in economy.cargos]
+        enabled_industries = [industry for industry in registered_industries if industry.economy_variations[economy.id].enabled]
         economy_schemas[economy] = {'enabled_cargos':enabled_cargos, 'enabled_industries':enabled_industries}
 
     # render standard docs from a list

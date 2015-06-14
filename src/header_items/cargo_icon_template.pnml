@@ -1,6 +1,0 @@
-/* template for cargo icons
- * cargoicon_id is the ID of the spriteset.
- * x and y indices are zero-based indices in the cargo icons png file.
- */
-#define cargo_icon_template(cargoicon_id, x_index, y_index) \
-spriteset(cargoicon_id) { [10 + 20 * x_index, 10 + 20 * y_index, 10, 10, 0, 0, "src/graphics/other/cargoicons.png"] }

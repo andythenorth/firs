@@ -1,7 +1,6 @@
 from cargo import Cargo
 
 cargo = Cargo(id = 'coffee',
-              number = '10',
               type_name = 'string(STR_CARGO_NAME_COFFEE)',
               unit_name = 'string(STR_CARGO_NAME_COFFEE)',
               type_abbreviation = 'string(STR_CID_COFFEE)',
@@ -11,7 +10,7 @@ cargo = Cargo(id = 'coffee',
               cargo_payment_list_colour = '84',
               is_freight = '1',
               cargo_classes = 'bitmask(CC_PIECE_GOODS)',
-              cargo_label = '"JAVA"',
+              cargo_label = 'JAVA',
               town_growth_effect = 'TOWNGROWTH_NONE',
               town_growth_multiplier = '1.0',
               units_of_cargo = '80',
@@ -22,6 +21,6 @@ cargo = Cargo(id = 'coffee',
               capacity_multiplier = '1',
               icon_indices = (4, 2))
 
-cargo.economy_variations['FIRS']['disabled'] = True
-cargo.economy_variations['BASIC_ARCTIC']['disabled'] = True
-cargo.economy_variations['BASIC_TEMPERATE']['disabled'] = True
+
+
+

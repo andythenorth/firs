@@ -5,21 +5,11 @@
   See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS. If not, see <http://www.gnu.org/licenses/>.
 """
 
-from industry import Industry, Tile, Sprite, Spriteset, SpriteLayout, IndustryLayout
+from industry import IndustrySecondary, TileLocationChecks, IndustryLocationChecks
 
-"""
-Notes to self whilst figuring out python-firs (notes will probably rot here forever).
-By convention, ids for use in nml have industry name prefix, local python object ids don't bother with industry name prefix.
-Some method properties expect object references, and the templating then uses properties from that object.
-Some method properties need a string - the templating is then typically directly writing out an nml identifier.
-When a string is expected are basically two choices: provide a string directly, or make an object reference and get an id from that object.
-"""
-
-industry = Industry(id='metal_workshop',
-                    accept_cargo_types=['STEL', 'RFPR'],
-                    input_multiplier_1='[0, 0]',
-                    input_multiplier_3='[0, 0]',
-                    input_multiplier_2='[0, 0]',
+industry = IndustrySecondary(id='metal_workshop',
+                    processed_cargos_and_output_ratios=[('STEL', 2), ('RFPR', 2)],
+                    combined_cargos_boost_prod=True,
                     prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL',
                     prod_cargo_types=['GOOD', 'MNSP'],
                     layouts='AUTO',
@@ -33,18 +23,25 @@ industry = Industry(id='metal_workshop',
                     life_type='IND_LIFE_TYPE_PROCESSING',
                     min_cargo_distr='5',
                     spec_flags='0',
+                    location_checks=IndustryLocationChecks(incompatible={'metal_workshop': 56}),
                     remove_cost_multiplier='0',
                     prospect_chance='0.75',
                     name='string(STR_IND_METAL_FOUNDRY)',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_INDUSTRY_ESTATE))',
                     fund_cost_multiplier='120',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
-                    extra_text_industry='STR_EXTRA_METAL_FOUNDRY')
+                    extra_text_industry='STR_EXTRA_METAL_FOUNDRY',
+                    intro_year=1762 )
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True
 
-industry.add_tile(id='metal_workshop_tile')
+industry.add_tile(id='metal_workshop_tile_1',
+                  animation_length=47,
+                  animation_looping=True,
+                  animation_speed=2,
+                  location_checks=TileLocationChecks(require_effectively_flat=True,
+                                                     disallow_industry_adjacent=True))
 
 spriteset_ground = industry.add_spriteset(
     id = 'metal_workshop_spriteset_ground',
@@ -149,38 +146,38 @@ industry.add_spritelayout(
 
 industry.add_industry_layout(
     id = 'metal_workshop_industry_layout_1',
-    layout = [(0, 0, 'metal_workshop_tile', 'metal_workshop_spritelayout_3'),
-              (0, 1, 'metal_workshop_tile', 'metal_workshop_spritelayout_3'),
-              (0, 2, 'metal_workshop_tile', 'metal_workshop_spritelayout_5'),
-              (0, 3, 'metal_workshop_tile', 'metal_workshop_spritelayout_4'),
-              (0, 4, 'metal_workshop_tile', 'metal_workshop_spritelayout_5'),
-              (1, 0, 'metal_workshop_tile', 'metal_workshop_spritelayout_3'),
-              (1, 1, 'metal_workshop_tile', 'metal_workshop_spritelayout_3'),
-              (1, 2, 'metal_workshop_tile', 'metal_workshop_spritelayout_5'),
-              (1, 3, 'metal_workshop_tile', 'metal_workshop_spritelayout_4'),
-              (1, 4, 'metal_workshop_tile', 'metal_workshop_spritelayout_6'),
-              (2, 0, 'metal_workshop_tile', 'metal_workshop_spritelayout_3'),
-              (2, 1, 'metal_workshop_tile', 'metal_workshop_spritelayout_1'),
-              (2, 2, 'metal_workshop_tile', 'metal_workshop_spritelayout_2'),
-              (2, 3, 'metal_workshop_tile', 'metal_workshop_spritelayout_7'),
-              (2, 4, 'metal_workshop_tile', 'metal_workshop_spritelayout_7'),
+    layout = [(0, 0, 'metal_workshop_tile_1', 'metal_workshop_spritelayout_3'),
+              (0, 1, 'metal_workshop_tile_1', 'metal_workshop_spritelayout_3'),
+              (0, 2, 'metal_workshop_tile_1', 'metal_workshop_spritelayout_5'),
+              (0, 3, 'metal_workshop_tile_1', 'metal_workshop_spritelayout_4'),
+              (0, 4, 'metal_workshop_tile_1', 'metal_workshop_spritelayout_5'),
+              (1, 0, 'metal_workshop_tile_1', 'metal_workshop_spritelayout_3'),
+              (1, 1, 'metal_workshop_tile_1', 'metal_workshop_spritelayout_3'),
+              (1, 2, 'metal_workshop_tile_1', 'metal_workshop_spritelayout_5'),
+              (1, 3, 'metal_workshop_tile_1', 'metal_workshop_spritelayout_4'),
+              (1, 4, 'metal_workshop_tile_1', 'metal_workshop_spritelayout_6'),
+              (2, 0, 'metal_workshop_tile_1', 'metal_workshop_spritelayout_3'),
+              (2, 1, 'metal_workshop_tile_1', 'metal_workshop_spritelayout_1'),
+              (2, 2, 'metal_workshop_tile_1', 'metal_workshop_spritelayout_2'),
+              (2, 3, 'metal_workshop_tile_1', 'metal_workshop_spritelayout_7'),
+              (2, 4, 'metal_workshop_tile_1', 'metal_workshop_spritelayout_7'),
     ]
 )
 industry.add_industry_layout(
     id = 'metal_workshop_industry_layout_2',
-    layout = [(0, 2, 'metal_workshop_tile', 'metal_workshop_spritelayout_3'),
-              (0, 3, 'metal_workshop_tile', 'metal_workshop_spritelayout_3'),
-              (1, 0, 'metal_workshop_tile', 'metal_workshop_spritelayout_1'),
-              (1, 1, 'metal_workshop_tile', 'metal_workshop_spritelayout_2'),
-              (1, 2, 'metal_workshop_tile', 'metal_workshop_spritelayout_3'),
-              (1, 3, 'metal_workshop_tile', 'metal_workshop_spritelayout_3'),
-              (2, 0, 'metal_workshop_tile', 'metal_workshop_spritelayout_4'),
-              (2, 1, 'metal_workshop_tile', 'metal_workshop_spritelayout_7'),
-              (2, 2, 'metal_workshop_tile', 'metal_workshop_spritelayout_6'),
-              (2, 3, 'metal_workshop_tile', 'metal_workshop_spritelayout_6'),
-              (3, 0, 'metal_workshop_tile', 'metal_workshop_spritelayout_4'),
-              (3, 1, 'metal_workshop_tile', 'metal_workshop_spritelayout_5'),
-              (3, 2, 'metal_workshop_tile', 'metal_workshop_spritelayout_4'),
-              (3, 3, 'metal_workshop_tile', 'metal_workshop_spritelayout_3'),
+    layout = [(0, 2, 'metal_workshop_tile_1', 'metal_workshop_spritelayout_3'),
+              (0, 3, 'metal_workshop_tile_1', 'metal_workshop_spritelayout_3'),
+              (1, 0, 'metal_workshop_tile_1', 'metal_workshop_spritelayout_1'),
+              (1, 1, 'metal_workshop_tile_1', 'metal_workshop_spritelayout_2'),
+              (1, 2, 'metal_workshop_tile_1', 'metal_workshop_spritelayout_3'),
+              (1, 3, 'metal_workshop_tile_1', 'metal_workshop_spritelayout_3'),
+              (2, 0, 'metal_workshop_tile_1', 'metal_workshop_spritelayout_4'),
+              (2, 1, 'metal_workshop_tile_1', 'metal_workshop_spritelayout_7'),
+              (2, 2, 'metal_workshop_tile_1', 'metal_workshop_spritelayout_6'),
+              (2, 3, 'metal_workshop_tile_1', 'metal_workshop_spritelayout_6'),
+              (3, 0, 'metal_workshop_tile_1', 'metal_workshop_spritelayout_4'),
+              (3, 1, 'metal_workshop_tile_1', 'metal_workshop_spritelayout_5'),
+              (3, 2, 'metal_workshop_tile_1', 'metal_workshop_spritelayout_4'),
+              (3, 3, 'metal_workshop_tile_1', 'metal_workshop_spritelayout_3'),
     ]
 )

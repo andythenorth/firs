@@ -1,7 +1,6 @@
 from cargo import Cargo
 
 cargo = Cargo(id = 'fruits',
-              number = '13',
               type_name = 'string(STR_CARGO_NAME_FRUITS)',
               unit_name = 'string(STR_CARGO_NAME_FRUITS)',
               type_abbreviation = 'TTD_STR_ABBREV_FRUIT',
@@ -11,7 +10,7 @@ cargo = Cargo(id = 'fruits',
               cargo_payment_list_colour = '82',
               is_freight = '1',
               cargo_classes = 'bitmask(CC_EXPRESS, CC_PIECE_GOODS, CC_REFRIGERATED)',
-              cargo_label = '"FRUT"',
+              cargo_label = 'FRUT',
               town_growth_effect = 'TOWNGROWTH_NONE',
               town_growth_multiplier = '1.0',
               units_of_cargo = '80',
@@ -22,4 +21,4 @@ cargo = Cargo(id = 'fruits',
               capacity_multiplier = '1',
               icon_indices = (14, 0))
 
-cargo.economy_variations['BASIC_ARCTIC']['disabled'] = True
+

@@ -25,10 +25,10 @@ REPO_NAME           ?= My NewGRF
 BASE_FILENAME       ?= mynewgrf
 
 # Documentation files
-DOC_FILES ?= docs/readme.txt docs/license.txt docs/changelog.txt
+DOC_FILES := docs/readme.txt docs/license.txt docs/changelog.txt
 
 # Directory structure
-SCRIPT_DIR          ?= build-common
+SCRIPT_DIR          := build-common
 
 # Uncomment in order to make use of gimp scripting. See the file
 # for a description of the format
@@ -55,7 +55,7 @@ MAIN_SRC_FILE       := $(BASE_FILENAME).pnml
 # grf file: the above defined grf file, usualls $(GRF_FILE)
 # Add any additional, not usual files here, too, including
 # their relative path to the root of the repository
-BUNDLE_FILES           ?= $(GRF_FILE) $(DOC_FILES)
+BUNDLE_FILES           := $(GRF_FILE) $(DOC_FILES)
 
 # Replacement strings in the source and in the documentation
 # You may only change the values, not add new definitions
@@ -65,12 +65,12 @@ REPLACE_GRFID       := {{GRF_ID}}
 REPLACE_REVISION    := {{REPO_REVISION}}
 REPLACE_FILENAME    := {{FILENAME}}
 
-GENERATE_GRF  ?= grf
-GENERATE_PNML ?= pnml
-GENERATE_NML  ?= nml
-GENERATE_GFX  ?= gfx
-GENERATE_DOC  ?= doc
-GENERATE_LNG  ?= lng
+GENERATE_GRF  := grf
+GENERATE_PNML := pnml
+GENERATE_NML  := nml
+GENERATE_GFX  := gfx
+GENERATE_DOC  := doc
+GENERATE_LNG  := lng
 
 # target 'all' must be first target
 all: $(GENERATE_GRF) $(GENERATE_DOC) bundle_tar
@@ -91,11 +91,11 @@ all: $(GENERATE_GRF) $(GENERATE_DOC) bundle_tar
 ################################################################
 # Programme definitions / search paths
 ################################################################
-MAKE           ?= make
-MAKE_FLAGS     ?= -r
+MAKE           := make
+MAKE_FLAGS     := -r
 
-NML            ?= $(shell which nmlc 2>/dev/null)
-NML_FLAGS      ?= -c
+NML            := time $(shell which nmlc 2>/dev/null)
+NML_FLAGS      := -c
 ifdef REQUIRED_NML_BRANCH
 	NML_BRANCH = $(shell nmlc --version | head -n1 | cut -d. -f1-2)
 endif
@@ -104,20 +104,20 @@ ifdef MIN_NML_REVISION
 endif
 
 ifdef MAIN_SRC_FILE
-	CC             ?= $(shell which gcc 2>/dev/null)
-	CC_FLAGS       ?= -C -E -nostdinc -x c-header
+	CC             := $(shell which gcc 2>/dev/null)
+	CC_FLAGS       := -C -E -nostdinc -x c-header
 endif
 
-AWK            ?= awk
+AWK            := awk
 
-GREP           ?= grep
+GREP           := grep
 
-HG             ?= $(shell hg st >/dev/null 2>/dev/null && which hg 2>/dev/null)
+HG             := $(shell hg st >/dev/null 2>/dev/null && which hg 2>/dev/null)
 
-PYTHON         ?= python
+PYTHON         := python
 
-UNIX2DOS       ?= $(shell which unix2dos 2>/dev/null)
-UNIX2DOS_FLAGS ?= $(shell [ -n $(UNIX2DOS) ] && $(UNIX2DOS) -q --version 2>/dev/null && echo "-q" || echo "")
+UNIX2DOS       := $(shell which unix2dos 2>/dev/null)
+UNIX2DOS_FLAGS := $(shell [ -n $(UNIX2DOS) ] && $(UNIX2DOS) -q --version 2>/dev/null && echo "-q" || echo "")
 
 ################################################################
 # Get the Repository revision, tags and the modified status
@@ -133,35 +133,35 @@ DEFAULT_BRANCH_NAME ?=
 REPO_BRANCH_VERSION ?= 0
 
 # HG revision
-REPO_REVISION  ?= $(shell HGPLAIN= $(HG) id -n | cut -d+ -f1)
+REPO_REVISION  := $(shell HGPLAIN= $(HG) id -n | cut -d+ -f1)
 
 # HG Hash
-REPO_HASH            ?= $(shell HGPLAIN= $(HG) id -i | cut -d+ -f1)
+REPO_HASH            := $(shell HGPLAIN= $(HG) id -i | cut -d+ -f1)
 
 # Days of commit since 2000-1-1 00-00
-REPO_DATE            ?= $(shell HGPLAIN= $(HG) log -r$(REPO_HASH) --template='{time|shortdate}')
-REPO_DAYS_SINCE_2000 ?= $(shell $(PYTHON2) -c "from datetime import date; print (date(`echo "$(REPO_DATE)" | sed s/-/,/g | sed s/,0/,/g`)-date(2000,1,1)).days")
+REPO_DATE            := $(shell HGPLAIN= $(HG) log -r$(REPO_HASH) --template='{time|shortdate}')
+REPO_DAYS_SINCE_2000 := $(shell $(PYTHON2) -c "from datetime import date; print (date(`echo "$(REPO_DATE)" | sed s/-/,/g | sed s/,0/,/g`)-date(2000,1,1)).days")
 
 # Whether there are local changes
-REPO_MODIFIED  ?= $(shell [ "`HGPLAIN= $(HG) id | cut -c13`" = "+" ] && echo "M" || echo "")
+REPO_MODIFIED  := $(shell [ "`HGPLAIN= $(HG) id | cut -c13`" = "+" ] && echo "M" || echo "")
 
 # Branch name
-REPO_BRANCH    ?= $(shell HGPLAIN= $(HG) id -b | sed "s/default/$(DEFAULT_BRANCH_NAME)/")
+REPO_BRANCH    := $(shell HGPLAIN= $(HG) id -b | sed "s/default/$(DEFAULT_BRANCH_NAME)/")
 
 # Any tag which is not 'tip'
-REPO_TAGS      ?= $(shell HGPLAIN= $(HG) id -t | grep -v "tip")
+REPO_TAGS      := $(shell HGPLAIN= $(HG) id -t | grep -v "tip")
 
 # Filename addition, if we're not building the default branch
-REPO_BRANCH_STRING ?= $(shell if [ "$(REPO_BRANCH)" = "$(DEFAULT_BRANCH_NAME)" ]; then echo ""; else echo "-$(REPO_BRANCH)"; fi)
+REPO_BRANCH_STRING := $(shell if [ "$(REPO_BRANCH)" = "$(DEFAULT_BRANCH_NAME)" ]; then echo ""; else echo "-$(REPO_BRANCH)"; fi)
 
 # The version reported to OpenTTD. Usually days since 2000 + branch offset
-NEWGRF_VERSION ?= $(shell let x="$(REPO_DAYS_SINCE_2000) + 65536 * $(REPO_BRANCH_VERSION)"; echo "$$x")
+NEWGRF_VERSION := $(shell let x="$(REPO_DAYS_SINCE_2000) + 65536 * $(REPO_BRANCH_VERSION)"; echo "$$x")
 
 # The shown version is either a tag, or in the absence of a tag the revision.
-REPO_VERSION_STRING ?= $(shell [ -n "$(REPO_TAGS)" ] && echo $(REPO_TAGS)$(REPO_MODIFIED) || echo $(REPO_DATE)$(REPO_BRANCH_STRING) \($(NEWGRF_VERSION):$(REPO_HASH)$(REPO_MODIFIED)\))
+REPO_VERSION_STRING := $(shell [ -n "$(REPO_TAGS)" ] && echo $(REPO_TAGS)$(REPO_MODIFIED) || echo $(REPO_DATE)$(REPO_BRANCH_STRING) \($(NEWGRF_VERSION):$(REPO_HASH)$(REPO_MODIFIED)\))
 
 # The title consists of name and version
-REPO_TITLE     ?= $(REPO_NAME) $(REPO_VERSION_STRING)
+REPO_TITLE     := $(REPO_NAME) $(REPO_VERSION_STRING)
 
 # Remove the @ when you want a more verbose output.
 _V ?= @

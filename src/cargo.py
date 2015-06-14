@@ -19,6 +19,7 @@ from chameleon import PageTemplateLoader # chameleon used in most template cases
 templates = PageTemplateLoader(os.path.join(src_path, 'templates'), format='text')
 industry_templates = PageTemplateLoader(os.path.join(src_path, 'industries'), format='text')
 
+from economies import registered_economies
 from cargos import registered_cargos
 
 class Cargo(object):
@@ -26,7 +27,6 @@ class Cargo(object):
     def __init__(self, id, **kwargs):
         self.id = id
         self.cargo_label = kwargs['cargo_label']
-        self.number = kwargs['number']
         self.type_name = kwargs['type_name']
         self.unit_name = kwargs['unit_name']
         self.type_abbreviation = kwargs['type_abbreviation']
@@ -44,37 +44,38 @@ class Cargo(object):
         self.single_penalty_length = kwargs['single_penalty_length']
         self.price_factor = kwargs['price_factor']
         self.capacity_multiplier = kwargs['capacity_multiplier']
-        self.disabled_climates = kwargs.get('disabled_climates', [])
         # not nml properties
         self.economy_variations = {}
-        for economy in global_constants.economies:
-            self.add_economy_variation(economy)
+        for economy in registered_economies:
+            if self.id in economy.cargos:
+                numeric_id = economy.cargos.index(self.id)
+                # As of May 2015, OTTD requires some cargos in specific slots, otherwise default houses break
+                mandatory_numeric_ids = {'PASS': 0, 'MAIL': 2, 'GOOD': 5, 'FOOD': 11}
+                for key, value in mandatory_numeric_ids.items():
+                    if self.cargo_label == key and numeric_id != value:
+                        raise Exception("Economy " + economy.id + ": has cargo " + self.id + " in position " + str(numeric_id) + "; needs to be in position " + str(value))
+                self.economy_variations[economy] = {'numeric_id': numeric_id}
+
         # icon indices relate to position of icon in cargo icons spritesheet
         self.icon_indices = kwargs['icon_indices']
-        self.register()
 
-    def add_economy_variation(self, economy):
-        self.economy_variations[economy] = {'disabled': False}
+    def get_numeric_id(self, economy):
+        return self.economy_variations[economy].get('numeric_id')
+
+    def get_cargo_label(self):
+        # wrap cargo labels in " chars because nml needs them as string literals (we store them - by design - as python strings)
+        return '"' + self.cargo_label + '"'
 
     def get_property(self, property_name, economy):
         # straightforward lookup of a property, doesn't try to handle failure case of property not found; don't look up props that don't exist
-        return self.economy_variations[economy].get(property_name)
+        if economy is not None and property_name in self.economy_variations[economy]:
+            return self.economy_variations[economy].get(property_name)
+        else:
+            return getattr(self, property_name)
 
-    def get_property_declaration(self, property_name):
-        return property_name + ': ' + getattr(self, property_name) + ';'
-
-    def get_conditional_expressions_for_cargo_climates(self):
-        # returns a string that can be used as the conditions in nml if() blocks for cargo stuff
-        enabled_climates = []
-        for climate in ['CLIMATE_TEMPERATE', 'CLIMATE_ARCTIC', 'CLIMATE_TROPIC']:
-            if climate not in self.disabled_climates:
-                enabled_climates.append(climate)
-        return ' || '.join(['climate ==' + str(i) for i in enabled_climates])
+    def get_property_declaration(self, property_name, economy=None):
+        value = self.get_property(property_name, economy)
+        return property_name + ': ' + str(value) + ';'
 
     def register(self):
         registered_cargos.append(self)
-
-    def render_pnml(self):
-        cargo_template = templates['cargo_props.pypnml']
-        templated_pnml = utils.unescape_chameleon_output(cargo_template(cargo=self))
-        return templated_pnml
