@@ -77,8 +77,8 @@ industry.add_spritelayout(
 industry.add_industry_layout(
     id = 'dredging_site_industry_layout_1',
     layout = [(0, 0, '255', 'dredging_site_spritelayout_null'),
-              (0, 1, '255', 'dredging_site_spritelayout_null'),
-              (0, 2, '255', 'dredging_site_spritelayout_null'),
+              (0, 1, '24', 'dredging_site_spritelayout_null'),
+              (0, 2, '24', 'dredging_site_spritelayout_null'),
               (0, 4, '255', 'dredging_site_spritelayout_null'),
               (1, 0, '255', 'dredging_site_spritelayout_null'),
               (1, 4, '255', 'dredging_site_spritelayout_null'),
