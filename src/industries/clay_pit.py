@@ -196,12 +196,12 @@ spriteset_silo = industry.add_spriteset(
 )
 spriteset_conveyor_2 = industry.add_spriteset(
     id = 'clay_pit_spriteset_conveyor_2',
-    sprites = [(1080, 50, 64, 49, -31, -18)],
+    sprites = [(1080, 50, 64, 64, -31, -35)],
     zextent = 32
 )
 spriteset_crusher = industry.add_spriteset(
     id = 'clay_pit_spriteset_crusher',
-    sprites = [(1150, 50, 64, 57, -31, -26)],
+    sprites = [(1150, 50, 64, 64, -31, -33)],
     zextent = 32
 )
 
