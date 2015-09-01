@@ -27,8 +27,7 @@ industry = IndustryPrimaryExtractive(id='dredging_site',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_WATER))',
                     fund_cost_multiplier='180',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
-                    graphics_change_dates = [1906, 1945],
-                    intro_year=1825)
+                    graphics_change_dates = [1906, 1945])
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True
