@@ -32,6 +32,7 @@ switch (FEAT_INDUSTRIES, SELF, ${industry.id}_available_game_mode, game_mode == 
 }
 
 /* Allow only within the availability years */
+/* ! To-do: no support for economies here yet */
 switch (FEAT_INDUSTRIES, SELF, ${industry.id}_check_availability, current_date) {
 	date(${industry.get_property('intro_year', None)},1,1) .. date(${industry.get_property('expiry_year', None)},12,31): ${industry.id}_available_game_mode;
 	return CB_RESULT_IND_NO_CONSTRUCTION;
