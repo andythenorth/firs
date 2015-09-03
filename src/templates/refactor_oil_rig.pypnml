@@ -70,7 +70,7 @@ item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
         random_prod_change:      return CB_RESULT_IND_PROD_NO_CHANGE;
 		build_prod_change:       randomise_primary_production_on_build;
 		extra_text_industry:     ${industry.id}_extra_text;
-		extra_text_fund:         return string(STR_FUND_AVAILABLE_FROM, ${industry.intro_year});
+		extra_text_fund:         return string(STR_FUND_AVAILABLE_FROM, ${industry.get_property('intro_year', None)});
 		colour:                  switch_colour;
 	}
 }

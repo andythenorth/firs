@@ -505,6 +505,8 @@ class IndustryProperties(object):
         self.override = kwargs.get('override', None)
         self.name = kwargs.get('name', None)
         self.nearby_station_name = kwargs.get('nearby_station_name', None)
+        self.intro_year = kwargs.get('intro_year', 0)
+        self.expiry_year = kwargs.get('expiry_year', global_constants.max_game_date)
         self.layouts = kwargs.get('layouts', None) # automatic layout handling can be specified for this using 'AUTO' as the value
         self.accept_cargo_types = kwargs.get('accept_cargo_types', None)
         self.prod_cargo_types = kwargs.get('prod_cargo_types', None)
@@ -550,8 +552,6 @@ class Industry(object):
         self.industry_layouts = []
         self.default_industry_properties = IndustryProperties(**kwargs)
         self.location_checks = kwargs.get('location_checks')
-        self.intro_year = kwargs.get('intro_year', 0) # ! possibly should be variable by economy?
-        self.expiry_year = kwargs.get('expiry_year', global_constants.max_game_date) #  ! possibly should be variable by economy?
         self.economy_variations = {}
         for economy in registered_economies:
             self.add_economy_variation(economy)
@@ -642,10 +642,10 @@ class Industry(object):
         # some fund text options are orthogonal, there is no support for combining them currently
         # support for combined fund text could be added, it's just a substr tree eh?
         result = [] # use a list, because I want to warn if industry tries to set more than one result
-        if self.intro_year != 0:
-            result.append('string(STR_FUND_AVAILABLE_FROM, ' + str(self.intro_year) + ')')
-        if self.expiry_year != global_constants.max_game_date:
-            result.append('string(STR_FUND_AVAILABLE_UNTIL, ' + str(self.expiry_year) + ')')
+        if self.get_property('intro_year', economy) != 0:
+            result.append('string(STR_FUND_AVAILABLE_FROM, ' + str(self.get_property('intro_year', economy)) + ')')
+        if self.get_property('expiry_year', economy) != global_constants.max_game_date:
+            result.append('string(STR_FUND_AVAILABLE_UNTIL, ' + str(self.get_property('expiry_year', economy)) + ')')
 
         if self.get_property('extra_text_fund', economy) is not None:
             result.append(self.get_property('extra_text_fund', economy))
@@ -653,7 +653,7 @@ class Industry(object):
         # integrity check, no handling of multiple results currently so alert on that at compile time
         if len(result) > 1:
             utils.echo_message('Industry ' + self.id + ' wants more than one string for extra_text_fund, only one is supported currently')
-            utils.echo_message(str(self.intro_year) + ' ' + str(self.expiry_year))
+            utils.echo_message(str(self.get_property('intro_year', economy)) + ' ' + str(self.get_property('expiry_year', economy)))
 
         # if no text is needed...
         if len(result) == 0:

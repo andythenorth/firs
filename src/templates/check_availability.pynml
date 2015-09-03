@@ -7,7 +7,7 @@
 
 /*
  * Template which checks availability of an industry for building
- * - Allow in industry.intro_year ... industry.expiry_year
+ * - Allow in intro_year ... expiry_year
  * - Always allow in SE
  * - Never allow when NewGRF parameter forbids building
  * - Always allow otherwise
@@ -33,7 +33,7 @@ switch (FEAT_INDUSTRIES, SELF, ${industry.id}_available_game_mode, game_mode == 
 
 /* Allow only within the availability years */
 switch (FEAT_INDUSTRIES, SELF, ${industry.id}_check_availability, current_date) {
-	date(${industry.intro_year},1,1) .. date(${industry.expiry_year},12,31): ${industry.id}_available_game_mode;
+	date(${industry.get_property('intro_year', None)},1,1) .. date(${industry.get_property('expiry_year', None)},12,31): ${industry.id}_available_game_mode;
 	return CB_RESULT_IND_NO_CONSTRUCTION;
 }
 
