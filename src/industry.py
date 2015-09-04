@@ -506,7 +506,7 @@ class IndustryProperties(object):
         self.name = kwargs.get('name', None)
         self.nearby_station_name = kwargs.get('nearby_station_name', None)
         self.intro_year = kwargs.get('intro_year', None)
-        self.expiry_year = kwargs.get('expiry_year', global_constants.max_game_date)
+        self.expiry_year = kwargs.get('expiry_year', None)
         self.layouts = kwargs.get('layouts', None) # automatic layout handling can be specified for this using 'AUTO' as the value
         self.accept_cargo_types = kwargs.get('accept_cargo_types', None)
         self.prod_cargo_types = kwargs.get('prod_cargo_types', None)
@@ -644,8 +644,8 @@ class Industry(object):
         result = [] # use a list, because I want to warn if industry tries to set more than one result
         if self.get_intro_year(economy) != 0:
             result.append('string(STR_FUND_AVAILABLE_FROM, ' + str(self.get_intro_year(economy)) + ')')
-        if self.get_property('expiry_year', economy) != global_constants.max_game_date:
-            result.append('string(STR_FUND_AVAILABLE_UNTIL, ' + str(self.get_property('expiry_year', economy)) + ')')
+        if self.get_expiry_year(economy) != global_constants.max_game_date:
+            result.append('string(STR_FUND_AVAILABLE_UNTIL, ' + str(self.get_expiry_year(economy)) + ')')
 
         if self.get_property('extra_text_fund', economy) is not None:
             result.append(self.get_property('extra_text_fund', economy))
@@ -653,7 +653,7 @@ class Industry(object):
         # integrity check, no handling of multiple results currently so alert on that at compile time
         if len(result) > 1:
             utils.echo_message('Industry ' + self.id + ' wants more than one string for extra_text_fund, only one is supported currently')
-            utils.echo_message(str(self.get_intro_year(economy)) + ' ' + str(self.get_property('expiry_year', economy)))
+            utils.echo_message(str(self.get_intro_year(economy)) + ' ' + str(self.get_expiry_year(economy)))
 
         # if no text is needed...
         if len(result) == 0:
@@ -666,6 +666,14 @@ class Industry(object):
         result = self.get_property('intro_year', economy)
         if result == None:
             return 0
+        else:
+            return result
+
+    def get_expiry_year(self, economy):
+        # simple wrapper to get_property(), which sanitises expiry from None to max game date if unspecified by economy
+        result = self.get_property('expiry_year', economy)
+        if result == None:
+            return global_constants.max_game_date
         else:
             return result
 
