@@ -100,17 +100,23 @@ item(FEAT_INDUSTRYTILES, ${industry.id}_tile_6, 57) {
 
 <tal:include metal:use-macro="load: industry_properties.pynml" />
 
-item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
-	graphics {
-		produce_cargo_arrival:   ${industry.id}_produce;
-		construction_probability:${industry.id}_check_availability;
-		location_check:          ${industry.id}_check_location;
-		monthly_prod_change:     check_secondary_production_level;
-		random_prod_change:      check_secondary_closure;
-		extra_text_industry:     ${industry.id}_extra_text;
-		extra_text_fund:         return string(STR_FUND_AVAILABLE_FROM, ${industry.get_intro_year(None)});
-		colour:                  switch_colour;
-	}
-}
+<tal:build_economies repeat="economy economies">
+    if (economy==${repeat.economy.index}) {
+        <tal:industry_on_or_off condition="industry.get_property('enabled', economy) == True">
+            item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
+                graphics {
+                    produce_cargo_arrival:   ${industry.id}_produce;
+                    construction_probability:${industry.id}_check_availability;
+                    location_check:          ${industry.id}_check_location;
+                    monthly_prod_change:     check_secondary_production_level;
+                    random_prod_change:      check_secondary_closure;
+                    extra_text_industry:     ${industry.id}_extra_text;
+                    extra_text_fund:         return string(STR_FUND_AVAILABLE_FROM, ${industry.get_intro_year(economy)});
+                    colour:                  switch_colour;
+                }
+            }
+        </tal:industry_on_or_off>
+    }
+</tal:build_economies>
 
 #include "../../src/templates/undefs.pnml"
