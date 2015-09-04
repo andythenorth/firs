@@ -93,7 +93,7 @@
                             <td>${industry.id}</td>
                             <td>${structure: '&lt;br /&gt;'.join(doc_helper.get_industry_all_name_strings(industry))}</td>
                             <td class="number">${global_constants.industry_numeric_ids[industry.id]}</td>
-                            <td class="number">${industry.get_property('intro_year', None)}</td>
+                            <td class="number">${industry.get_intro_year(None)}</td>
                             <td class="number">${industry.get_property('map_colour', None)}</td>
                         </tr>
                     </tal:industry>

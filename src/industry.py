@@ -505,7 +505,7 @@ class IndustryProperties(object):
         self.override = kwargs.get('override', None)
         self.name = kwargs.get('name', None)
         self.nearby_station_name = kwargs.get('nearby_station_name', None)
-        self.intro_year = kwargs.get('intro_year', 0)
+        self.intro_year = kwargs.get('intro_year', None)
         self.expiry_year = kwargs.get('expiry_year', global_constants.max_game_date)
         self.layouts = kwargs.get('layouts', None) # automatic layout handling can be specified for this using 'AUTO' as the value
         self.accept_cargo_types = kwargs.get('accept_cargo_types', None)
@@ -642,8 +642,8 @@ class Industry(object):
         # some fund text options are orthogonal, there is no support for combining them currently
         # support for combined fund text could be added, it's just a substr tree eh?
         result = [] # use a list, because I want to warn if industry tries to set more than one result
-        if self.get_property('intro_year', economy) != 0:
-            result.append('string(STR_FUND_AVAILABLE_FROM, ' + str(self.get_property('intro_year', economy)) + ')')
+        if self.get_intro_year(economy) != 0:
+            result.append('string(STR_FUND_AVAILABLE_FROM, ' + str(self.get_intro_year(economy)) + ')')
         if self.get_property('expiry_year', economy) != global_constants.max_game_date:
             result.append('string(STR_FUND_AVAILABLE_UNTIL, ' + str(self.get_property('expiry_year', economy)) + ')')
 
@@ -653,13 +653,21 @@ class Industry(object):
         # integrity check, no handling of multiple results currently so alert on that at compile time
         if len(result) > 1:
             utils.echo_message('Industry ' + self.id + ' wants more than one string for extra_text_fund, only one is supported currently')
-            utils.echo_message(str(self.get_property('intro_year', economy)) + ' ' + str(self.get_property('expiry_year', economy)))
+            utils.echo_message(str(self.get_intro_year(economy)) + ' ' + str(self.get_property('expiry_year', economy)))
 
         # if no text is needed...
         if len(result) == 0:
             result.append('CB_RESULT_NO_TEXT')
 
         return 'return ' + result[0]
+
+    def get_intro_year(self, economy):
+        # simple wrapper to get_property(), which sanitises intro_year from None to 0 if unspecified by economy
+        result = self.get_property('intro_year', economy)
+        if result == None:
+            return 0
+        else:
+            return result
 
     def get_property(self, property_name, economy):
         # does magic to get the property from the defaults if not set

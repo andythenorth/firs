@@ -29,6 +29,7 @@ industry = IndustrySecondary(id='steel_mill',
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True
+industry.economy_variations['BASIC_TEMPERATE'].intro_year = 1800
 
 # industry uses layouts and sprites from default game, no custom layouts etc
 

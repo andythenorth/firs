@@ -108,7 +108,7 @@ item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
 		monthly_prod_change:     check_secondary_production_level;
 		random_prod_change:      check_secondary_closure;
 		extra_text_industry:     ${industry.id}_extra_text;
-		extra_text_fund:         return string(STR_FUND_AVAILABLE_FROM, ${industry.get_property('intro_year', None)});
+		extra_text_fund:         return string(STR_FUND_AVAILABLE_FROM, ${industry.get_intro_year(None)});
 		colour:                  switch_colour;
 	}
 }
