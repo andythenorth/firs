@@ -121,6 +121,9 @@ petrol_pump.industry.register()
 from industries import plastics_plant
 plastics_plant.industry.register()
 
+from industries import power_plant
+power_plant.industry.register()
+
 from industries import ranch
 ranch.industry.register()
 
