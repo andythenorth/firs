@@ -210,137 +210,157 @@ industry.add_spritelayout(
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_1,
     building_sprites = [],
-    terrain_aware_ground = True
+    terrain_aware_ground = True,
+    fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
     id = 'clay_pit_spritelayout_2',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_2,
     building_sprites = [],
-    terrain_aware_ground = True
+    terrain_aware_ground = True,
+    fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
     id = 'clay_pit_spritelayout_4',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_4,
     building_sprites = [spriteset_crane_1],
-    terrain_aware_ground = True
+    terrain_aware_ground = True,
+    fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
     id = 'clay_pit_spritelayout_5',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_5,
     building_sprites = [],
-    terrain_aware_ground = True
+    terrain_aware_ground = True,
+    fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
     id = 'clay_pit_spritelayout_6',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_6,
     building_sprites = [],
-    terrain_aware_ground = True
+    terrain_aware_ground = True,
+    fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
     id = 'clay_pit_spritelayout_7',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_7,
     building_sprites = [],
-    terrain_aware_ground = True
+    terrain_aware_ground = True,
+    fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
     id = 'clay_pit_spritelayout_8',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_8,
     building_sprites = [],
-    terrain_aware_ground = True
+    terrain_aware_ground = True,
+    fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
     id = 'clay_pit_spritelayout_10',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_10,
     building_sprites = [],
-    terrain_aware_ground = True
+    terrain_aware_ground = True,
+    fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
     id = 'clay_pit_spritelayout_11',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_11,
     building_sprites = [],
-    terrain_aware_ground = True
+    terrain_aware_ground = True,
+    fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
     id = 'clay_pit_spritelayout_12',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_12,
     building_sprites = [],
-    terrain_aware_ground = True
+    terrain_aware_ground = True,
+    fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
     id = 'clay_pit_spritelayout_13',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_13,
     building_sprites = [],
-    terrain_aware_ground = True
+    terrain_aware_ground = True,
+    fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
     id = 'clay_pit_spritelayout_14',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_14,
     building_sprites = [],
+    fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
     id = 'clay_pit_spritelayout_16',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_14,
     building_sprites = [],
+    fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
     id = 'clay_pit_spritelayout_17',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_14,
     building_sprites = [],
+    fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
     id = 'clay_pit_spritelayout_18',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_18,
     building_sprites = [],
-    terrain_aware_ground = True
+    terrain_aware_ground = True,
+    fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
     id = 'clay_pit_spritelayout_19',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_19,
     building_sprites = [],
-    terrain_aware_ground = True
+    terrain_aware_ground = True,
+    fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
     id = 'clay_pit_spritelayout_20',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_20,
     building_sprites = [],
-    terrain_aware_ground = True
+    terrain_aware_ground = True,
+    fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
     id = 'clay_pit_spritelayout_22',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_22,
     building_sprites = [],
-    terrain_aware_ground = True
+    terrain_aware_ground = True,
+    fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
     id = 'clay_pit_spritelayout_23',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_23,
     building_sprites = [],
-    terrain_aware_ground = True
+    terrain_aware_ground = True,
+    fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
     id = 'clay_pit_spritelayout_24',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_24,
     building_sprites = [],
-    terrain_aware_ground = True
+    terrain_aware_ground = True,
+    fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
     id = 'clay_pit_spritelayout_35',
