@@ -179,14 +179,14 @@ spriteset_41 = industry.add_spriteset(
     sprites = [(1150, 10, 64, 34, -31, -3)],
     zextent = 32
 )
-spriteset_loader_and_hut = industry.add_spriteset(
-    id = 'quarry_spriteset_loader_and_hut',
-    sprites = [(800, 50, 64, 31, -31, 0)],
-    zextent = 32
-)
 spriteset_conveyor_1 = industry.add_spriteset(
     id = 'quarry_spriteset_conveyor_1',
-    sprites = [(870, 50, 64, 51, -31, -20)],
+    sprites = [(870, 50, 64, 64, -31, -20)],
+    zextent = 32
+)
+spriteset_small_silos = industry.add_spriteset(
+    id = 'quarry_spriteset_small_silos',
+    sprites = [(940, 50, 64, 64, -31, -35)],
     zextent = 32
 )
 spriteset_silo = industry.add_spriteset(
@@ -373,7 +373,7 @@ industry.add_spritelayout(
     id = 'quarry_spritelayout_36',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_36,
-    building_sprites = [spriteset_loader_and_hut],
+    building_sprites = [spriteset_small_silos],
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
@@ -388,7 +388,7 @@ industry.add_spritelayout(
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_39,
     building_sprites = [spriteset_silo],
-    fences = ['nw','ne','se']
+    fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
     id = 'quarry_spritelayout_40',
