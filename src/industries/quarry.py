@@ -291,43 +291,6 @@ industry.add_spritelayout(
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
-    id = 'quarry_spritelayout_13',
-    ground_sprite = spriteset_ground,
-    ground_overlay = spriteset_13,
-    building_sprites = [],
-    terrain_aware_ground = True,
-    fences = ['nw','ne','se','sw']
-)
-industry.add_spritelayout(
-    id = 'quarry_spritelayout_14',
-    ground_sprite = spriteset_ground,
-    ground_overlay = spriteset_14,
-    building_sprites = [],
-    fences = ['nw','ne','se','sw']
-)
-industry.add_spritelayout(
-    id = 'quarry_spritelayout_16',
-    ground_sprite = spriteset_ground,
-    ground_overlay = spriteset_14,
-    building_sprites = [],
-    fences = ['nw','ne','se','sw']
-)
-industry.add_spritelayout(
-    id = 'quarry_spritelayout_17',
-    ground_sprite = spriteset_ground,
-    ground_overlay = spriteset_14,
-    building_sprites = [],
-    fences = ['nw','ne','se','sw']
-)
-industry.add_spritelayout(
-    id = 'quarry_spritelayout_18',
-    ground_sprite = spriteset_ground,
-    ground_overlay = spriteset_18,
-    building_sprites = [],
-    terrain_aware_ground = True,
-    fences = ['nw','ne','se','sw']
-)
-industry.add_spritelayout(
     id = 'quarry_spritelayout_19',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_19,
