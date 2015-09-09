@@ -40,7 +40,7 @@ industry.add_tile(id='coal_mine_tile_1',
                   animation_looping=True,
                   animation_speed=1,
                   custom_animation_next_frame='((animation_frame == 80) ? CB_RESULT_STOP_ANIMATION : CB_RESULT_NEXT_FRAME)',
-                  custom_animation_control={'macro':'mine_winding_wheels',
+                  custom_animation_control={'macro':'first_frame_is_0',
                                             'animation_triggers': 'bitmask(ANIM_TRIGGER_INDTILE_TILE_LOOP)'},
                   location_checks=TileLocationChecks(require_effectively_flat=True,
                                                      disallow_industry_adjacent=True))
