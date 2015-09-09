@@ -21,6 +21,7 @@
     }
 </metal:random_first_frame>
 
+
 <metal:first_frame_is_0 metal:define-macro="first_frame_is_0">
     <!--! starts animation on first frame, intended to be called by periodic tile loop -->
     switch(FEAT_INDUSTRYTILES, SELF, ${tile.id}_anim_control, 0) {
