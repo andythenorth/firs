@@ -182,6 +182,12 @@ spriteset_24 = industry.add_spriteset(
     zextent = 32,
     num_sprites_to_autofill = len(spriteset_animated_dozer.sprites), # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
 )
+spriteset_pile = industry.add_spriteset(
+    id = 'clay_pit_spriteset_pile',
+    sprites = [(360, 50, 64, 31, -63, -16)],
+    zextent = 32,
+    num_sprites_to_autofill = len(spriteset_animated_dozer.sprites), # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
+)
 spriteset_crane_1 = industry.add_spriteset(
     id = 'clay_pit_spriteset_crane_1',
     sprites = [(440, 10, 64, 71, -48, -55), (440, 10, 64, 71, -48, -55), (510, 10, 64, 71, -48, -55),
@@ -281,7 +287,7 @@ industry.add_spritelayout(
     id = 'clay_pit_spritelayout_5',
     ground_sprite = spriteset_ground_animated_tile,
     ground_overlay = spriteset_5,
-    building_sprites = [spriteset_crane_1],
+    building_sprites = [spriteset_crane_1, spriteset_pile],
     terrain_aware_ground = True,
     fences = ['nw','ne','se','sw']
 )
