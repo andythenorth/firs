@@ -381,32 +381,8 @@ industry.add_spritelayout(
 )
 
 
-
 industry.add_industry_layout(
     id = 'quarry_layout_1',
-    layout = [(0, 0, 'quarry_tile_2', 'quarry_spritelayout_24'),
-              (0, 1, 'quarry_tile_2', 'quarry_spritelayout_12'),
-              (0, 2, 'quarry_tile_2', 'quarry_spritelayout_6'),
-              (1, 0, 'quarry_tile_2', 'quarry_spritelayout_23'),
-              (1, 1, 'quarry_tile_1', 'quarry_spritelayout_11'),
-              (1, 2, 'quarry_tile_2', 'quarry_spritelayout_5'),
-              (2, 0, 'quarry_tile_2', 'quarry_spritelayout_22'),
-              (2, 1, 'quarry_tile_1', 'quarry_spritelayout_10'),
-              (2, 2, 'quarry_tile_2', 'quarry_spritelayout_4'),
-              (3, 0, 'quarry_tile_2', 'quarry_spritelayout_20'),
-              (3, 1, 'quarry_tile_2', 'quarry_spritelayout_8'),
-              (3, 2, 'quarry_tile_2', 'quarry_spritelayout_2'),
-              (4, 0, 'quarry_tile_2', 'quarry_spritelayout_19'),
-              (4, 1, 'quarry_tile_2', 'quarry_spritelayout_7'),
-              (4, 2, 'quarry_tile_2', 'quarry_spritelayout_1'),
-              (5, 1, 'quarry_tile_1', 'quarry_spritelayout_41'),
-              (6, 1, 'quarry_tile_1', 'quarry_spritelayout_40'),
-              (7, 1, 'quarry_tile_1', 'quarry_spritelayout_39'),
-    ]
-)
-
-industry.add_industry_layout(
-    id = 'quarry_layout_2',
     layout = [(0, 1, 'quarry_tile_2', 'quarry_spritelayout_24'),
               (0, 2, 'quarry_tile_2', 'quarry_spritelayout_12'),
               (0, 3, 'quarry_tile_2', 'quarry_spritelayout_6'),
@@ -429,7 +405,7 @@ industry.add_industry_layout(
 )
 
 industry.add_industry_layout(
-    id = 'quarry_layout_3',
+    id = 'quarry_layout_2',
     layout = [(0, 0, 'quarry_tile_2', 'quarry_spritelayout_24'),
               (0, 1, 'quarry_tile_2', 'quarry_spritelayout_12'),
               (0, 2, 'quarry_tile_2', 'quarry_spritelayout_6'),
