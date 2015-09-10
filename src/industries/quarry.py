@@ -374,27 +374,6 @@ industry.add_spritelayout(
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
-    id = 'quarry_spritelayout_35',
-    ground_sprite = spriteset_ground,
-    ground_overlay = spriteset_35,
-    building_sprites = [spriteset_small_truck],
-    fences = ['nw','ne','se','sw']
-)
-industry.add_spritelayout(
-    id = 'quarry_spritelayout_36',
-    ground_sprite = spriteset_ground,
-    ground_overlay = spriteset_36,
-    building_sprites = [spriteset_small_silos],
-    fences = ['nw','ne','se','sw']
-)
-industry.add_spritelayout(
-    id = 'quarry_spritelayout_37',
-    ground_sprite = spriteset_ground,
-    ground_overlay = spriteset_37,
-    building_sprites = [spriteset_conveyor_1],
-    fences = ['nw','ne','se','sw']
-)
-industry.add_spritelayout(
     id = 'quarry_spritelayout_39',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_39,
@@ -435,38 +414,32 @@ industry.add_industry_layout(
               (4, 0, 'quarry_tile_2', 'quarry_spritelayout_19'),
               (4, 1, 'quarry_tile_2', 'quarry_spritelayout_7'),
               (4, 2, 'quarry_tile_2', 'quarry_spritelayout_1'),
-              (6, 1, 'quarry_tile_1', 'quarry_spritelayout_41'),
-              (6, 2, 'quarry_tile_1', 'quarry_spritelayout_37'),
-              (7, 1, 'quarry_tile_1', 'quarry_spritelayout_40'),
-              (7, 2, 'quarry_tile_1', 'quarry_spritelayout_36'),
-              (8, 1, 'quarry_tile_1', 'quarry_spritelayout_39'),
-              (8, 2, 'quarry_tile_1', 'quarry_spritelayout_35'),
+              (5, 1, 'quarry_tile_1', 'quarry_spritelayout_41'),
+              (6, 1, 'quarry_tile_1', 'quarry_spritelayout_40'),
+              (7, 1, 'quarry_tile_1', 'quarry_spritelayout_39'),
     ]
 )
 
 industry.add_industry_layout(
     id = 'quarry_layout_2',
-    layout = [(0, 3, 'quarry_tile_2', 'quarry_spritelayout_24'),
-              (0, 4, 'quarry_tile_2', 'quarry_spritelayout_12'),
-              (0, 5, 'quarry_tile_2', 'quarry_spritelayout_6'),
-              (1, 1, 'quarry_tile_1', 'quarry_spritelayout_37'),
+    layout = [(0, 1, 'quarry_tile_2', 'quarry_spritelayout_24'),
+              (0, 2, 'quarry_tile_2', 'quarry_spritelayout_12'),
+              (0, 3, 'quarry_tile_2', 'quarry_spritelayout_6'),
               (1, 0, 'quarry_tile_1', 'quarry_spritelayout_41'),
-              (1, 3, 'quarry_tile_2', 'quarry_spritelayout_23'),
-              (1, 4, 'quarry_tile_1', 'quarry_spritelayout_11'),
-              (1, 5, 'quarry_tile_2', 'quarry_spritelayout_5'),
+              (1, 1, 'quarry_tile_2', 'quarry_spritelayout_23'),
+              (1, 2, 'quarry_tile_1', 'quarry_spritelayout_11'),
+              (1, 3, 'quarry_tile_2', 'quarry_spritelayout_5'),
               (2, 0, 'quarry_tile_1', 'quarry_spritelayout_40'),
-              (2, 1, 'quarry_tile_1', 'quarry_spritelayout_36'),
-              (2, 3, 'quarry_tile_2', 'quarry_spritelayout_22'),
-              (2, 4, 'quarry_tile_1', 'quarry_spritelayout_10'),
-              (2, 5, 'quarry_tile_2', 'quarry_spritelayout_4'),
+              (2, 1, 'quarry_tile_2', 'quarry_spritelayout_22'),
+              (2, 2, 'quarry_tile_1', 'quarry_spritelayout_10'),
+              (2, 3, 'quarry_tile_2', 'quarry_spritelayout_4'),
               (3, 0, 'quarry_tile_1', 'quarry_spritelayout_39'),
-              (3, 1, 'quarry_tile_1', 'quarry_spritelayout_35'),
-              (3, 3, 'quarry_tile_2', 'quarry_spritelayout_20'),
-              (3, 4, 'quarry_tile_2', 'quarry_spritelayout_8'),
-              (3, 5, 'quarry_tile_2', 'quarry_spritelayout_2'),
-              (4, 3, 'quarry_tile_2', 'quarry_spritelayout_19'),
-              (4, 4, 'quarry_tile_2', 'quarry_spritelayout_7'),
-              (4, 5, 'quarry_tile_2', 'quarry_spritelayout_1'),
+              (3, 1, 'quarry_tile_2', 'quarry_spritelayout_20'),
+              (3, 2, 'quarry_tile_2', 'quarry_spritelayout_8'),
+              (3, 3, 'quarry_tile_2', 'quarry_spritelayout_2'),
+              (4, 1, 'quarry_tile_2', 'quarry_spritelayout_19'),
+              (4, 2, 'quarry_tile_2', 'quarry_spritelayout_7'),
+              (4, 3, 'quarry_tile_2', 'quarry_spritelayout_1'),
     ]
 )
 
@@ -478,18 +451,15 @@ industry.add_industry_layout(
               (1, 0, 'quarry_tile_2', 'quarry_spritelayout_23'),
               (1, 1, 'quarry_tile_1', 'quarry_spritelayout_11'),
               (1, 2, 'quarry_tile_2', 'quarry_spritelayout_5'),
-              (1, 4, 'quarry_tile_1', 'quarry_spritelayout_41'),
-              (1, 5, 'quarry_tile_1', 'quarry_spritelayout_37'),
+              (1, 3, 'quarry_tile_1', 'quarry_spritelayout_41'),
               (2, 0, 'quarry_tile_2', 'quarry_spritelayout_22'),
               (2, 1, 'quarry_tile_1', 'quarry_spritelayout_10'),
               (2, 2, 'quarry_tile_2', 'quarry_spritelayout_4'),
-              (2, 4, 'quarry_tile_1', 'quarry_spritelayout_40'),
-              (2, 5, 'quarry_tile_1', 'quarry_spritelayout_36'),
+              (2, 3, 'quarry_tile_1', 'quarry_spritelayout_40'),
               (3, 0, 'quarry_tile_2', 'quarry_spritelayout_20'),
               (3, 1, 'quarry_tile_2', 'quarry_spritelayout_8'),
               (3, 2, 'quarry_tile_2', 'quarry_spritelayout_2'),
-              (3, 4, 'quarry_tile_1', 'quarry_spritelayout_39'),
-              (3, 5, 'quarry_tile_1', 'quarry_spritelayout_35'),
+              (3, 3, 'quarry_tile_1', 'quarry_spritelayout_39'),
               (4, 0, 'quarry_tile_2', 'quarry_spritelayout_19'),
               (4, 1, 'quarry_tile_2', 'quarry_spritelayout_7'),
               (4, 2, 'quarry_tile_2', 'quarry_spritelayout_1'),
