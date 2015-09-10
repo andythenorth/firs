@@ -7,60 +7,58 @@ Changelog
 
 *New Features / Changes*
 
-- Quarry and Clay Pit
-    - improved graphics, including animation
-    - revised industry layouts to be smaller and easier to place on the map
-    - the map generator can now reliably place these industries at game start (previously these industry types were often missing)
-    - restored the standard 1-tile gap between these industry types and any other industry
-- Processing industries that combine cargo now have a three-month delivery window instead of one month
+- adjusted clustering behaviour for most primary industries
+    - clusters are less dense, making it much easier to place stations
+    - especially easier for placing supply delivery stations that should not overlap multiple industries
+- adjusted industry production rates for most primary industries
+    - production is generally adjusted upwards, especially for farms
+    - revised production allows pickup of sensible amounts from a single industry instead of needing to aggregate several industries
+- industry probability revised to better distribute numbers of each industry type
+- processing industries that combine cargo now have a three-month delivery window instead of one month for increased output
     - this supports a wider range of transport types and play-styles, for example infrequent deliveries with ships
-- Dredging Site now available from year 0, consistent with Quarry, and fixing broken cargo chains in some economies
-- remove dubious Sugar Beet / Sugarcane magic climate shenanigans
-    - Sugar Beet or Sugarcane is now specified solely by the economy, and won't change per climate
+- Sugar Beet or Sugarcane cargo is now specified solely by the economy, and will no longer change per climate (eh, that was daft)
+- Recyclables cargo - removed covered class, added bulk class
 - Full FIRS economy
     - added Power Plant accepting Coal
         - currently works identically to default OpenTTD Power Station, there are no special features planned for this industry
     - try it with the Busy Bee Game Script which provides cargo delivery goals
 - Tropic Basic economy
     - Sugar Refinery now also produces chemicals in this economy
-- updated online docs with images for new and changed industries
+- Dredging Site now available from year 0, consistent with Quarry, which fixes broken cargo chains in some economies
+- Dairies no longer need to locate near towns
+- Quarry and Clay Pit
+    - improved graphics, including animation
+    - revised industry layouts to be smaller and easier to place on the map
+    - the map generator can now reliably place the quarry and clay pit at game start (previously these industry types were often missing)
+    - restored the standard 1-tile gap between these industry types and any other industry
+- Recycling Plant
+    - no longer randomises cargos at construction time, that was the source of too many bug reports and confusions
+    - now introduced in 1978, for higher chance of seeing it in a game before getting bored
+- Oil Refinery no longer uses graphics from base set, and has additional layouts
 - improved Builders Yard with new graphics and layouts
 - improved Coal Mine with additional layouts, snow and improved graphics
 - improved Grain Mill with revised graphics and layout for windmill version
 - improved Iron Works with additional layouts, snow and improved graphics
-- improved layouts and graphics for Coffee Estate, Fruit Plantation, Rubber Plantation
+- improved layouts and graphics for Coffee Estate, Fruit Plantation, and Rubber Plantation
 - animated the Brewery flag
 - additional layouts for Sawmill
-- stopped locating Dairies near towns, it's not necessary
-- Recycling Plant
-    - no longer randomises cargos at construction time, that was the source of too many bug reports and confusions
-    - now introduced in 1978, for more chance of seeing it in a game before getting bored
-- Oil Refinery no longer uses graphics from base set, and has additional layouts
-- adjust clustering behaviour and industry production rates for most primary industries
-    - clusters are less dense, making it much easier to place stations
-    - especially easier to place supply delivery stations that should not overlap multiple industries
-    - production is generally adjusted upwards, especially for farms,
-    - revised production allows pickup of sensible amounts from a single industry instead of needing to aggregate several industries
-- industry probability revised to better distribute numbers of each industry type
-- Recyclables cargo - remove covered class, add bulk class
-- update readme.txt with newer vehicle sets.
+- updated online docs with images for new and changed industries
+- updated readme.txt with newer vehicle sets.
 
 *Fixes*
 
+- for many industries, allow location on a wider range of slopes, for better distribution on map gen
+    - instead of simply disallowing all slopes, require that highest corner of each tile is equal to highest corner of north tile
+    - resulting in 'effectively level' graphics, with foundations
+    - industries are no longer mostly crowded into flat valleys by map generator
+- added missing boost behaviour at some processing industries
 - Temperate Basic economy
     - adjusted Steel Mill and Metal Workshop intro dates to 1800, fixing broken metal cargo chain before 1850
+- explicitly preserve cargo slots for passengers, mail, goods and food, default OTTD houses need them
 - flashing pixels removed from 1st generation graphics for Dredging Site
-- for many industries, allow location on a wider range of slopes
-    - instead of simply disallowing slopes, require tile highest corner to be equal to highest corner of north tile
-    - resulting in 'effectively level' graphics, with foundations
-    - purpose is to ease industry location restrictions, for better distribution on map gen
-    - industries are no longer mostly crowded into flat valleys by map generator
-- explicitly set cargo slots for passengers, mail, goods and food, default OTTD houses need them
 - 'crates' not 't' in extra text string for Furniture Factory
-- Lumber Yard kiln building was broken if built on slopes
-- missing boost behaviour at some processing industries
+- Lumber Yard kiln building was broken when built on slopes
 - Hotels now build near any houses, rather than being restricted to 'near town sign', which could limit hotel construction in larger cities
-
 
 *Translations*
 
@@ -71,9 +69,8 @@ Changelog
 - converted significant number of legacy C-Pre-Processor templates to python templates
 - removed a large number of redundant industry templates, code is now much easier to maintain
 - reduced compile time substantially (from > 2 mins to < 1 min on the test machine)
-- support for single-industry compiles using make argument 'TEST_INDUSTRY=foo' where foo is 'clay_pit' or such
+- support for single-industry compiles using make argument 'TEST_INDUSTRY=clay_pit' (swap 'clay_pit' to the required industry id)
     - single-industry compiles take around 5s on the test machine
-    - have to run 'make clean' before running a single-industry compile for the first
 - take advantage of increased industry limit in OpenTTD and stop trying to stuff > 64 industries into 64 slots
 
 --------------
