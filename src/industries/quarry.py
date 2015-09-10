@@ -180,6 +180,30 @@ spriteset_crane_1 = industry.add_spriteset(
     animation_rate = 1,
     custom_sprite_selector = '(animation_frame > 32) ? (animation_frame % 12) : 0',
 )
+spriteset_pit_conveyor_1 = industry.add_spriteset(
+    id = 'quarry_spriteset_pit_conveyor_1',
+    sprites = [(80, 130, 64, 64, -31, -22)],
+    zextent = 64,
+    num_sprites_to_autofill = len(spriteset_animated_dozer.sprites), # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
+)
+spriteset_pit_conveyor_2 = industry.add_spriteset(
+    id = 'quarry_spriteset_pit_conveyor_2',
+    sprites = [(150, 130, 64, 64, -31, -22)],
+    zextent = 64,
+    num_sprites_to_autofill = len(spriteset_animated_dozer.sprites), # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
+)
+spriteset_pit_conveyor_3 = industry.add_spriteset(
+    id = 'quarry_spriteset_pit_conveyor_3',
+    sprites = [(220, 130, 64, 64, -31, -22)],
+    zextent = 64,
+    num_sprites_to_autofill = len(spriteset_animated_dozer.sprites), # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
+)
+spriteset_pit_conveyor_4 = industry.add_spriteset(
+    id = 'quarry_spriteset_pit_conveyor_4',
+    sprites = [(290, 130, 64, 64, -31, -22)],
+    zextent = 64,
+    num_sprites_to_autofill = len(spriteset_animated_dozer.sprites), # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
+)
 spriteset_39 = industry.add_spriteset(
     id = 'quarry_spriteset_39',
     sprites = [(870, 10, 64, 31, -31, 0)],
@@ -303,7 +327,7 @@ industry.add_spritelayout(
     id = 'quarry_spritelayout_20',
     ground_sprite = spriteset_ground_animated_tile,
     ground_overlay = spriteset_20,
-    building_sprites = [],
+    building_sprites = [spriteset_pit_conveyor_1],
     terrain_aware_ground = True,
     fences = ['nw','ne','se','sw']
 )
@@ -311,7 +335,7 @@ industry.add_spritelayout(
     id = 'quarry_spritelayout_22',
     ground_sprite = spriteset_ground_animated_tile,
     ground_overlay = spriteset_22,
-    building_sprites = [],
+    building_sprites = [spriteset_pit_conveyor_2],
     terrain_aware_ground = True,
     fences = ['nw','ne','se','sw']
 )
@@ -319,7 +343,7 @@ industry.add_spritelayout(
     id = 'quarry_spritelayout_23',
     ground_sprite = spriteset_ground_animated_tile,
     ground_overlay = spriteset_23,
-    building_sprites = [],
+    building_sprites = [spriteset_pit_conveyor_3],
     terrain_aware_ground = True,
     fences = ['nw','ne','se','sw']
 )
@@ -327,7 +351,7 @@ industry.add_spritelayout(
     id = 'quarry_spritelayout_24',
     ground_sprite = spriteset_ground_animated_tile,
     ground_overlay = spriteset_24,
-    building_sprites = [],
+    building_sprites = [spriteset_pit_conveyor_4],
     terrain_aware_ground = True,
     fences = ['nw','ne','se','sw']
 )
