@@ -134,24 +134,6 @@ spriteset_12 = industry.add_spriteset(
     zextent = 32,
     num_sprites_to_autofill = len(spriteset_animated_dozer.sprites), # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
 )
-spriteset_13 = industry.add_spriteset(
-    id = 'clay_pit_spriteset_13',
-    sprites = [(10, 90, 64, 31, -31, 0)],
-    zextent = 32,
-    num_sprites_to_autofill = len(spriteset_animated_dozer.sprites), # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
-)
-spriteset_14 = industry.add_spriteset(
-    id = 'clay_pit_spriteset_14',
-    sprites = [(80, 90, 64, 31, -31, 0)],
-    zextent = 32,
-    num_sprites_to_autofill = len(spriteset_animated_dozer.sprites), # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
-)
-spriteset_18 = industry.add_spriteset(
-    id = 'clay_pit_spriteset_18',
-    sprites = [(290, 90, 64, 31, -31, 0)],
-    zextent = 32,
-    num_sprites_to_autofill = len(spriteset_animated_dozer.sprites), # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
-)
 spriteset_19 = industry.add_spriteset(
     id = 'clay_pit_spriteset_19',
     sprites = [(10, 10, 64, 31, -31, 0)],
@@ -185,7 +167,7 @@ spriteset_24 = industry.add_spriteset(
 spriteset_pile = industry.add_spriteset(
     id = 'clay_pit_spriteset_pile',
     sprites = [(360, 50, 64, 31, -63, -16)],
-    zextent = 32,
+    zextent = 64,
     num_sprites_to_autofill = len(spriteset_animated_dozer.sprites), # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
 )
 spriteset_crane_1 = industry.add_spriteset(
@@ -194,24 +176,9 @@ spriteset_crane_1 = industry.add_spriteset(
                (580, 10, 64, 71, -48, -55), (650, 10, 64, 71, -48, -55), (650, 10, 64, 71, -48, -55),
                (650, 10, 64, 71, -48, -55), (580, 10, 64, 71, -48, -55), (510, 10, 64, 71, -48, -55),
                (440, 10, 64, 71, -48, -55), (440, 10, 64, 71, -48, -55), (440, 10, 64, 71, -48, -55)],
-    zextent = 32,
+    zextent = 64,
     animation_rate = 1,
     custom_sprite_selector = '(animation_frame > 32) ? (animation_frame % 12) : 0',
-)
-spriteset_35 = industry.add_spriteset(
-    id = 'clay_pit_spriteset_35',
-    sprites = [(730, 10, 64, 31, -31, 0)],
-    zextent = 32
-)
-spriteset_36 = industry.add_spriteset(
-    id = 'clay_pit_spriteset_36',
-    sprites = [(800, 10, 64, 31, -31, 0)],
-    zextent = 32
-)
-spriteset_37 = industry.add_spriteset(
-    id = 'clay_pit_spriteset_37',
-    sprites = [(870, 10, 64, 31, -31, 0)],
-    zextent = 32
 )
 spriteset_39 = industry.add_spriteset(
     id = 'clay_pit_spriteset_39',
@@ -226,21 +193,6 @@ spriteset_40 = industry.add_spriteset(
 spriteset_41 = industry.add_spriteset(
     id = 'clay_pit_spriteset_41',
     sprites = [(1010, 10, 64, 34, -31, -3)],
-    zextent = 32
-)
-spriteset_conveyor_1 = industry.add_spriteset(
-    id = 'clay_pit_spriteset_conveyor_1',
-    sprites = [(870, 50, 64, 64, -31, -20)],
-    zextent = 32
-)
-spriteset_small_truck = industry.add_spriteset(
-    id = 'clay_pit_spriteset_small_truck',
-    sprites = [(730, 50, 64, 64, -31, -35)],
-    zextent = 32
-)
-spriteset_small_silos = industry.add_spriteset(
-    id = 'clay_pit_spriteset_small_silos',
-    sprites = [(800, 50, 64, 64, -31, -35)],
     zextent = 32
 )
 spriteset_silo = industry.add_spriteset(
@@ -384,6 +336,7 @@ industry.add_spritelayout(
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_39,
     building_sprites = [spriteset_silo],
+    terrain_aware_ground = True,
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
@@ -391,6 +344,7 @@ industry.add_spritelayout(
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_40,
     building_sprites = [spriteset_conveyor_2],
+    terrain_aware_ground = True,
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
@@ -398,6 +352,7 @@ industry.add_spritelayout(
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_41,
     building_sprites = [spriteset_crusher],
+    terrain_aware_ground = True,
     fences = ['nw','ne','se','sw']
 )
 
