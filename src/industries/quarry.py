@@ -180,6 +180,12 @@ spriteset_crane_1 = industry.add_spriteset(
     animation_rate = 1,
     custom_sprite_selector = '(animation_frame > 32) ? (animation_frame % 12) : 0',
 )
+spriteset_pit_conveyor_0 = industry.add_spriteset(
+    id = 'quarry_spriteset_pit_conveyor_0',
+    sprites = [(10, 130, 64, 64, -31, -22)],
+    zextent = 64,
+    num_sprites_to_autofill = len(spriteset_animated_dozer.sprites), # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
+)
 spriteset_pit_conveyor_1 = industry.add_spriteset(
     id = 'quarry_spriteset_pit_conveyor_1',
     sprites = [(80, 130, 64, 64, -31, -22)],
@@ -247,7 +253,7 @@ industry.add_spritelayout(
     id = 'quarry_spritelayout_2',
     ground_sprite = spriteset_ground_animated_tile,
     ground_overlay = spriteset_2,
-    building_sprites = [],
+    building_sprites = [spriteset_pit_conveyor_0],
     terrain_aware_ground = True,
     fences = ['nw','ne','se','sw']
 )
