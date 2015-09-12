@@ -67,14 +67,14 @@ sprite_smoke_1 = industry.add_smoke_sprite(
 )
 
 industry.add_spritelayout(
-    id = 'power_plant_spritelayout_1',
+    id = 'power_plant_spritelayout_cooling_tower',
     ground_sprite = sprite_ground,
     ground_overlay = sprite_ground_overlay,
     building_sprites = [sprite_1],
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
-    id = 'power_plant_spritelayout_2',
+    id = 'power_plant_spritelayout_large_building',
     ground_sprite = sprite_ground,
     ground_overlay = sprite_ground_overlay,
     building_sprites = [sprite_2],
@@ -82,14 +82,14 @@ industry.add_spritelayout(
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
-    id = 'power_plant_spritelayout_3',
+    id = 'power_plant_spritelayout_small_building',
     ground_sprite = sprite_ground,
     ground_overlay = sprite_ground_overlay,
     building_sprites = [sprite_3],
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
-    id = 'power_plant_spritelayout_4',
+    id = 'power_plant_spritelayout_substation',
     ground_sprite = sprite_ground,
     ground_overlay = sprite_ground_overlay,
     building_sprites = [sprite_4],
@@ -97,10 +97,34 @@ industry.add_spritelayout(
 )
 
 industry.add_industry_layout(
-    id = 'power_plant_industry_layout',
-    layout = [(0, 0, 'power_plant_tile_1', 'power_plant_spritelayout_1'),
-              (1, 0, 'power_plant_tile_1', 'power_plant_spritelayout_2'),
-              (2, 0, 'power_plant_tile_1', 'power_plant_spritelayout_3'),
-              (3, 0, 'power_plant_tile_1', 'power_plant_spritelayout_4')]
+    id = 'power_plant_industry_layout_1',
+    layout = [(0, 0, 'power_plant_tile_1', 'power_plant_spritelayout_cooling_tower'),
+              (0, 1, 'power_plant_tile_1', 'power_plant_spritelayout_small_building'),
+              (1, 0, 'power_plant_tile_1', 'power_plant_spritelayout_cooling_tower'),
+              (1, 1, 'power_plant_tile_1', 'power_plant_spritelayout_large_building'),
+              (2, 0, 'power_plant_tile_1', 'power_plant_spritelayout_cooling_tower'),
+              (2, 1, 'power_plant_tile_1', 'power_plant_spritelayout_large_building'),
+              (3, 0, 'power_plant_tile_1', 'power_plant_spritelayout_substation'),
+              (3, 1, 'power_plant_tile_1', 'power_plant_spritelayout_substation')]
+)
+industry.add_industry_layout(
+    id = 'power_plant_industry_layout_2',
+    layout = [(0, 1, 'power_plant_tile_1', 'power_plant_spritelayout_cooling_tower'),
+              (0, 2, 'power_plant_tile_1', 'power_plant_spritelayout_cooling_tower'),
+              (1, 0, 'power_plant_tile_1', 'power_plant_spritelayout_large_building'),
+              (1, 1, 'power_plant_tile_1', 'power_plant_spritelayout_large_building'),
+              (1, 2, 'power_plant_tile_1', 'power_plant_spritelayout_cooling_tower'),
+              (2, 0, 'power_plant_tile_1', 'power_plant_spritelayout_small_building'),
+              (2, 1, 'power_plant_tile_1', 'power_plant_spritelayout_substation'),
+              (2, 2, 'power_plant_tile_1', 'power_plant_spritelayout_small_building')]
+)
+industry.add_industry_layout(
+    id = 'power_plant_industry_layout_3',
+    layout = [(0, 0, 'power_plant_tile_1', 'power_plant_spritelayout_cooling_tower'),
+              (0, 1, 'power_plant_tile_1', 'power_plant_spritelayout_cooling_tower'),
+              (1, 0, 'power_plant_tile_1', 'power_plant_spritelayout_small_building'),
+              (1, 1, 'power_plant_tile_1', 'power_plant_spritelayout_large_building'),
+              (2, 0, 'power_plant_tile_1', 'power_plant_spritelayout_substation'),
+              (2, 1, 'power_plant_tile_1', 'power_plant_spritelayout_small_building')]
 )
 
