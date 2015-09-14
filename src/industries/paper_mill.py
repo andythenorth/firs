@@ -9,6 +9,7 @@ from industry import IndustrySecondary, TileLocationChecks, IndustryLocationChec
 
 industry = IndustrySecondary(id='paper_mill',
                     processed_cargos_and_output_ratios=[('CLAY', 2), ('WOOD', 4), ('RFPR', 2)],
+                    combined_cargos_boost_prod=True,
                     prod_cargo_types=['GOOD', 'MNSP'],
                     prob_in_game='3',
                     prob_random='5',
