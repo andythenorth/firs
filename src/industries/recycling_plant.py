@@ -31,7 +31,7 @@ industry = IndustrySecondary(id='recycling_plant',
                     fund_cost_multiplier='118',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
                     extra_text_industry='STR_EXTRA_RECYCLING_PLANT',
-                    intro_year=1978 )
+                    intro_year=1978)
 
 industry.economy_variations['FIRS'].enabled = True
 

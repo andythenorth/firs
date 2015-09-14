@@ -28,7 +28,7 @@ industry = IndustryPrimaryTownProducer(id='recycling_depot',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_INDUSTRY_ESTATE))',
                     fund_cost_multiplier='118',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
-                    intro_year=1997)
+                    intro_year=1978)
 
 industry.economy_variations['FIRS'].enabled = True
 
