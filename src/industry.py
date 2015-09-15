@@ -803,7 +803,7 @@ class IndustryPrimaryOrganic(IndustryPrimary):
     """
     def __init__(self, **kwargs):
         kwargs['accept_cargo_types'] = ['FMSP']
-        kwargs['life_type'] = 'IND_LIFE_TYPE_BLACK_HOLE'
+        kwargs['life_type'] = 'IND_LIFE_TYPE_ORGANIC'
         kwargs['extra_text_industry'] = True # slight hax, actual text string is determined by templated cb
         super(IndustryPrimaryOrganic, self).__init__(**kwargs)
         self.supply_requirements = [14, 56, 'PRIMARY'] # janky use of a un-named list for historical reasons (3rd item is string prefix)
