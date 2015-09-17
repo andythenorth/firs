@@ -88,7 +88,7 @@ switch (FEAT_INDUSTRIES, SELF, ${industry.id}_produce,
 			STORE_PERM( max(LOAD_PERM(var_date_received_2),(waiting_cargo_2 > 0) * current_date), var_date_received_2),
 			STORE_PERM( max(LOAD_PERM(var_date_received_3),(waiting_cargo_3 > 0) * current_date), var_date_received_3),
 			/* Reset the closure countdown */
-			STORE_PERM( (waiting_cargo_1 == 0 && waiting_cargo_1 == 0 && waiting_cargo_3 == 0) * LOAD_PERM(var_closure_counter), var_closure_counter),
+			STORE_PERM( (waiting_cargo_1 == 0 && waiting_cargo_2 == 0 && waiting_cargo_3 == 0) * LOAD_PERM(var_closure_counter), var_closure_counter),
 
 			/* Store the delivered cargo permanently (for debugging purposes only, reset at beginning of month) */
 			STORE_PERM( LOAD_PERM(var_input_cargo_1) + waiting_cargo_1, var_input_cargo_1),
