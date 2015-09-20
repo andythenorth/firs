@@ -9,36 +9,28 @@
     <div class="page-header">
         <h2>Help Translate FIRS</h2>
         <p>FIRS has already been translated into multiple languages, and more translations are always welcome.</p>
+        <p>FIRS translations use the <a href="https://translator.openttdcoop.org">Web Translator</a> from #openttdcoop.</p>
     </div>
 
     <div id="status">
         <h3>Current Translation Status</h3>
         <p>See which languages FIRS has been translated into, and how complete each translation is.</p>
-        <a class="btn btn-primary btn-large" href="http://bundles.openttdcoop.org/firs/push/LATEST/translations/">Translation Status Report</a>
+        <a class="btn btn-info" href="https://translator.openttdcoop.org/project/firs">Translation Status Report</a>
     </div>
     <br />
     <hr />
 
     <div id="translating">
         <h3>Get Started with Translating</h3>
-        <h4>1. Get a Language File</h4>
-        <p>Language files can be edited in any text editor that supports unicode.</p>
-        <p>To start a new translation from scratch get the base language file, which contains strings for the English (British) language.</p>
-        <a class="btn btn-primary" href="http://dev.openttdcoop.org/projects/firs/repository/entry/lang/english.lng">Get Base Language File</a>
-        <br />
-        <br />
-        <p>To update an existing translation, <a href="http://dev.openttdcoop.org/projects/firs/repository/show/lang">get an existing language file</a>.</p>
-        <br />
+        <h4>1. Get a Web Translator account.</h4>
+        <p>If you don't have a Web Translator account, follow the links from <a href="https://translator.openttdcoop.org">the Web Translator home page</a> to get one.</p>
 
         <h4>2. Translate Strings</h4>
-        <p>Change or update the strings to appropriate translations for the language.</p>
-        <p><a class="btn btn-info" href="http://dev.openttdcoop.org/projects/eints/repository/entry/docs/strings.rst">Detailed Guide to Translating</a></p>
+        <p>Change or update FIRS strings to appropriate translations for the language.</p>
+        <p><a class="btn btn-primary btn-large" href="https://translator.openttdcoop.org/project/firs">Translate FIRS</a></p>
         <br />
-        <h4>3. Post Language File for Inclusion in FIRS</h4>
-        <p>Post translated files into <a href="${metadata['dev_thread_url']}">this TT-forums thread</a>, or upload to the <a href="${metadata['issue_tracker']}">FIRS issue tracker</a>.</p>
-        <br />
-        <h4>4. Have Cake</h4>
-        <p>Someone on the FIRS team will include your translation as soon as they have time.</p>
+        <h4>3. Have Cake</h4>
+        <p>The translations will be featured in the next release of FIRS.  There's no timetable for releases, it might be days or it might be months, but it <strong>will</strong> be released eventually.</p>
         <p>Thanks :)</p>
         <br />
     </div>
