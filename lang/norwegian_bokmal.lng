@@ -33,6 +33,7 @@ STR_PARAM_VALUE_ECONOMIES_TEST_3                                                
 
 STR_CARGO_NAME_ALCOHOL                                                          :Alkohol
 STR_CARGO_NAME_BAUXITE                                                          :Bauksitt
+STR_CARGO_NAME_BEANS                                                            :Bønner
 STR_CARGO_NAME_BUILDING_MATERIALS                                               :Bygningsmaterialer
 STR_CARGO_NAME_CHEMICALS                                                        :Kjemikalier
 STR_CARGO_NAME_CLAY                                                             :Leire
@@ -46,6 +47,7 @@ STR_CARGO_NAME_LUMBER                                                           
 STR_CARGO_NAME_METAL                                                            :Metall
 STR_CARGO_NAME_MILK                                                             :Melk
 STR_CARGO_NAME_MANUFACTURING_SUPPLIES                                           :Manufakturtilbehør
+STR_CARGO_NAME_NITRATES                                                         :Nitrater
 STR_CARGO_NAME_PETROL                                                           :Bensin
 STR_CARGO_NAME_RECYCLABLES                                                      :Resikulerbare varer
 STR_CARGO_NAME_SAND                                                             :Sand
@@ -57,6 +59,7 @@ STR_CARGO_NAME_WOOL                                                             
 
 STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} alkohol
 STR_CARGO_UNIT_BAUXITE                                                          :{WEIGHT} bauksitt
+STR_CARGO_UNIT_BEANS                                                            :{WEIGHT} bønner
 STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WEIGHT} bygningsmaterialer
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} kjemikalier
 STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} leire
@@ -69,6 +72,7 @@ STR_CARGO_UNIT_FRUITS                                                           
 STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} trelast
 STR_CARGO_UNIT_METAL                                                            :{WEIGHT} metall
 STR_CARGO_UNIT_MILK                                                             :{VOLUME} melk
+STR_CARGO_UNIT_NITRATES                                                         :{WEIGHT} nitrater
 STR_CARGO_UNIT_MNSP                                                             :{SIGNED_WORD} kasse{P 0 "" r} med manufakturtilbehør
 STR_CARGO_UNIT_PETROL                                                           :{VOLUME} bensin
 STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} med resikulerbare varer
@@ -81,6 +85,7 @@ STR_CARGO_UNIT_WOOL                                                             
 
 STR_CID_ALCOHOL                                                                 :{TINYFONT}AL
 STR_CID_BAUXITE                                                                 :{TINYFONT}BX
+STR_CID_BEANS                                                                   :{TINYFONT}BN
 STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}BM
 STR_CID_CHEMICALS                                                               :{TINYFONT}CH
 STR_CID_CLAY                                                                    :{TINYFONT}CY
@@ -93,6 +98,7 @@ STR_CID_LUMBER                                                                  
 STR_CID_MANUFACTURING_SUPPLIES                                                  :{TINYFONT}MS
 STR_CID_METAL                                                                   :{TINYFONT}MT
 STR_CID_MILK                                                                    :{TINYFONT}MK
+STR_CID_NITRATES                                                                :{TINYFONT}NI
 STR_CID_PETROL                                                                  :{TINYFONT}PT
 STR_CID_RECYCLABLES                                                             :{TINYFONT}RC
 STR_CID_SAND                                                                    :{TINYFONT}SA
@@ -115,28 +121,30 @@ STR_ERR_LOCATION_NOT_IN_DESERT                                                  
 STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE                                             :kan ikke plasseres på bratte skråninger
 STR_ERR_LOCATION_LIMIT_1_PER_TOWN                                               :kun en industri av denne typen tillatt pr. by.
 
-STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}Vareproduksjon:{}  2t pr 8t bauksitt levert{}  2t pr 8.000l kjemikalier levert{}  4t pr 8t skrapmetall levert{}{}Produksjonen øker om to eller fler sorter leveres innen en måned etter hverandre.
+STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}Vareproduksjon:{}  2t pr 8t bauksitt levert{}  2t pr 8.000l kjemikalier levert{}  4t pr 8t skrapmetall levert{}{}Produksjonen øker om to eller fler sorter leveres innen tre måneder etter hverandre.
 STR_EXTRA_BIOREFINERY                                                           :{BLACK}Vareproduksjon:{} 6,000l pr 8t korn levert{} 6,000l pr 8t sukker levert
-STR_EXTRA_BREWERY                                                               :{BLACK}Vareproduksjon:{} 3000l pr 8 kasser manufakturtilbehør levert{} {STRING} {STRING}{}Produksjonen øker om manufakturtilbehør blir levert innen en måned før eller etter andre varer.
+STR_EXTRA_BREWERY                                                               :{BLACK}Vareproduksjon:{} 3000l pr 8 kasser manufakturtilbehør levert{} {STRING} {STRING}{}Produksjonen øker om manufakturtilbehør blir levert innen tre måneder før eller etter andre varer.
 STR_EXTRA_BREWERY_GRAIN_SUBSTR                                                  :5000l pr 8t korn levert{}
 STR_EXTRA_BREWERY_FRUIT_SUBSTR                                                  :5000l pr. 8t frukt levert{}
-STR_EXTRA_BRICKWORKS                                                            :{BLACK}Vareproduksjon:{}  2t pr 8t kull levert{}  2t pr 8t sand levert{}  4t pr 8t leire levert{}{}Produksjonen øker om to eller fler sorter leveres innen en måned etter hverandre.
-STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Vareproduksjon:{}  2t pr 8t kull levert{}  2t per 8t leire levert{}  4t pr 8t stein levert{}{}Produksjonen øker om to eller fler sorter leveres innen en måned etter hverandre.
-STR_EXTRA_DAIRY                                                                 :{BLACK}Vareproduksjon:{} 3t pr 8 kasser Manufakturtilbehør levert{} 5t pr 8,000l melk levert{}{}Produksjonen øker om begge varene blir levert innnefor 1 måned av hverandre.
+STR_EXTRA_BRICKWORKS                                                            :{BLACK}Vareproduksjon:{}  2t pr 8t kull levert{}  2t pr 8t sand levert{}  4t pr 8t leire levert{}{}Produksjonen øker om to eller fler sorter leveres innen tre måneder etter hverandre.
+STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Vareproduksjon:{}  2t pr 8t kull levert{}  2t per 8t leire levert{}  4t pr 8t stein levert{}{}Produksjonen øker om to eller fler sorter leveres under tre måneder etter hverandre.
+STR_EXTRA_CHEMICAL_PLANT                                                        :{BLACK}Vareproduksjon:{}  6,000l per 8,000l olje levert{}  6,000l per 8t nitrater levert
+STR_EXTRA_DAIRY                                                                 :{BLACK}Vareproduksjon:{} 3t pr 8 kasser Manufakturtilbehør levert{} 5t pr 8,000l melk levert{}{}Produksjonen øker om begge varene blir levert innnefor tre måneder.
 STR_EXTRA_FERTILIZER_PLANT                                                      :{BLACK}Vareproduksjon:{}  8 kasser pr 8.000l kjemikalier levert
-STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Vareproduksjon:{}  3t pr 8 kasser manufakturtilbehør levert{}  5t pr 8t fisk levert{}{}Produksjonen øker om begge varene leveres innen en måned etter hverandre
-STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Vareproduksjon:{}  3t pr 8 kasser manufakturtilbehør levert{}  5t per 8t trelast levert{}{}Produksjonen øker om begge varene leveres innen en måned etter hverandre
-STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Produserer glassvarer som flasker, krukker og vindusruter.{}{}Vareproduksjon:{}  6t pr 8t sand levert{}  2t pr 8.000l kjemikalier levert{}{}Produksjonen øker om begge varene leveres innen en måned etter hverandre.
-STR_EXTRA_GRAIN_MILL                                                            :{BLACK}Vareproduksjon:{}  3t pr 8 kasser manufakturtilbehør{}  5t per 8t korn levert{}{}Produksjonen øker om begge varene leveres innen en måned etter hverandre.
-STR_EXTRA_IRON_WORKS                                                            :{BLACK}Vareproduksjon:{} 2t pr 8t tømmer levert{} 2t pr 8t jernmalm levert{}{}Produksjonen øker dersom begge varene blir levert innen en måned etter hverandre.
-STR_EXTRA_LIME_KILN                                                             :{BLACK}Vareproduksjon:{}  3tpr 8t stein levert{}  3t pr 8t kull levert{}{}Produksjonen øker dersom begge varene blir levert innen en måned etter hverandre.
-STR_EXTRA_LUMBER_YARD                                                           :{BLACK}Lager slike ting som stolper og gjerdestolper.{}{}Vareproduksjon:{}  2t pr 8.000l kjemikalier levert{}  6t pr 8t trelast levert{}{}Produksjonen øker dersom begge varene blir levert innen en måned etter hverandre.
+STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Vareproduksjon:{}  3t pr 8 kasser manufakturtilbehør levert{}  5t pr 8t fisk levert{}{}Produksjonen øker om begge varene leveres innen tre måneder etter hverandre.
+STR_EXTRA_FOOD_PROCESSING_PLANT                                                 :{BLACK}Vareproduksjon:{}  6t per 8 tonn bønner levert{}  6t per 8t frukt levert
+STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Vareproduksjon:{}  3t pr 8 kasser manufakturtilbehør levert{}  5t per 8t trelast levert{}{}Produksjonen øker om begge varene leveres innen tre måneder etter hverandre.
+STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Produserer glassvarer som flasker, krukker og vindusruter.{}{}Vareproduksjon:{}  6t pr 8t sand levert{}  2t pr 8.000l kjemikalier levert{}{}Produksjonen øker om begge varene leveres under tre måneder etter hverandre.
+STR_EXTRA_GRAIN_MILL                                                            :{BLACK}Vareproduksjon:{}  3t pr 8 kasser manufakturtilbehør{}  5t per 8t korn levert{}{}Produksjonen øker om begge varene leveres innen tre måneder etter hverandre.
+STR_EXTRA_IRON_WORKS                                                            :{BLACK}Vareproduksjon:{} 2t pr 8t tømmer levert{} 2t pr 8t jernmalm levert{}{}Produksjonen øker dersom begge varene blir levert  under tre måneder etter hverandre.
+STR_EXTRA_LIME_KILN                                                             :{BLACK}Vareproduksjon:{}  3tpr 8t stein levert{}  3t pr 8t kull levert{}{}Produksjonen øker dersom begge varene blir levert under tre måneder etter hverandre.
+STR_EXTRA_LUMBER_YARD                                                           :{BLACK}Lager slike ting som stolper og gjerdestolper.{}{}Vareproduksjon:{}  2t pr 8.000l kjemikalier levert{}  6t pr 8t trelast levert{}{}Produksjonen øker dersom begge varene blir levert under tre måneder etter hverandre.
 STR_EXTRA_MACHINE_SHOP                                                          :{BLACK}Lager og vedlikeholder maskineri.{}{}Vareproduksjon:{}  8 kasser pr 8.000l bensin levert{}  8 kasser pr 8t metall levert
-STR_EXTRA_MEAT_PACKER                                                           :{BLACK}Vareproduksjon:{} 3t pr 8 kasser Manufakturtilbehør levert{} 5t pr 8t buskap levert{}{}Produksjonen øker om begge varene blir levert innenfor 1 måned av hverandre.
-STR_EXTRA_METAL_FABRICATION_PLANT                                               :{BLACK}Produserer lakkerte metalldeler.{}{}Vareproduksjon:{}  2t pr 8.000l kjemikalier levert{}  6t pr 8t metall levert{}{}Produksjonen øker dersom begge varene blir levert innen en måned etter hverandre.
-STR_EXTRA_METAL_FOUNDRY                                                         :{BLACK}Lager varer som hermetikkbokser og jernvarer.{}{}Vareproduksjon:{}  2 kasser pr 8.000l kjemikalier levert{}  6 kasser pr 8t metall levert{}{}Produksjonen øker dersom begge varene blir levert innen en måned etter hverandre.
+STR_EXTRA_MEAT_PACKER                                                           :{BLACK}Vareproduksjon:{} 3t pr 8 kasser Manufakturtilbehør levert{} 5t pr 8t buskap levert{}{}Produksjonen øker om begge varene blir levert under tre måneder etter hverandre.
+STR_EXTRA_METAL_FABRICATION_PLANT                                               :{BLACK}Produserer lakkerte metalldeler.{}{}Vareproduksjon:{}  2t pr 8.000l kjemikalier levert{}  6t pr 8t metall levert{}{}Produksjonen øker dersom begge varene blir levert innen tre måneder etter hverandre.
+STR_EXTRA_METAL_FOUNDRY                                                         :{BLACK}Lager varer som hermetikkbokser og jernvarer.{}{}Vareproduksjon:{}  2 kasser pr 8.000l kjemikalier levert{}  6 kasser pr 8t metall levert{}{}Produksjonen øker dersom begge varene blir levert innen tre måneder etter hverandre.
 STR_EXTRA_OIL_REFINERY                                                          :{BLACK}Bearbeider råolje til bensin og kjemikalier.{}{}Vareproduksjon:{} 6,000l pr 8,000l levert
-STR_EXTRA_PAPER_MILL                                                            :{BLACK}Lager papir og papp av tømmer.{}{}Vareproduksjon:{}  4 kasser pr 8t tømmer levert{}  2 kasser pr 8t leire levert{}  2 kasser pr 8.000l kjemikalier levert{}{}Produksjonen øker om to eller fler varer leveres innen en måned etter hverandre.
+STR_EXTRA_PAPER_MILL                                                            :{BLACK}Lager papir og papp av tømmer.{}{}Vareproduksjon:{}  4 kasser pr 8t tømmer levert{}  2 kasser pr 8t leire levert{}  2 kasser pr 8.000l kjemikalier levert{}{}Produksjonen øker om to eller fler varer leveres innen tre måneder etter hverandre.
 STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}Produserer plastvarer sånn som handleposer og andre hverdagslige ting{}{}Vareproduksjon:{} {STRING} {STRING}
 STR_EXTRA_PLASTICS_PLANT_CHEMICALS_SUBSTR                                       :6 kasser pr 8000l kjemikalier levert{}
 STR_EXTRA_PLASTICS_PLANT_PLANT_FIBRES_SUBSTR                                    :6 kasser pr 8 baller plantefiber levert{}
@@ -144,9 +152,9 @@ STR_EXTRA_RECYCLING_PLANT                                                       
 STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}Produksjonen er proporsjonal til byens innbyggertall.
 STR_EXTRA_SAWMILL                                                               :{BLACK}Sager tømmerstokker.{}{}Vareproduskjon:{}  6t pr 8t tømmer levert
 STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Produserer metallting som verktøy, ploger, porter, spader og hestesko.{}{}Vareproduksjon:{}  8 kasser pr 8t metall levert
-STR_EXTRA_STEELMILL                                                             :{BLACK}Vareproduksjon:{}  2t pr 8t jernmalm levert{}  2t pr 8t kull levert{}  4t pr 8t skrapmetall levert{}{}Produksjonen øker om to eller fler varer leveres innen en måned etter hverandre.
-STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Vareproduksjon:{}  3t pr 8 kasser manufakturtilbehør levert{}  5t pr 8t sukker levert{}{}Produksjonen øker dersom begge varene blir levert innen en måned etter hverandre.
-STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Vareproduksjon:{}  3 kasser pr 8 kasser manufakturtilbehør levert{} {STRING} {STRING}{}Produksjonen øker hvis manufakturtilbehør leveres innen en måned etter andre varer.
+STR_EXTRA_STEELMILL                                                             :{BLACK}Vareproduksjon:{}  2t pr 8t jernmalm levert{}  2t pr 8t kull levert{}  4t pr 8t skrapmetall levert{}{}Produksjonen øker om to eller fler varer leveres under tre måneder etter hverandre.
+STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Vareproduksjon:{}  3t pr 8 kasser manufakturtilbehør levert{}  5t pr 8t sukker levert{}{}Produksjonen øker dersom begge varene blir levert under tre måneder etter hverandre.
+STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Vareproduksjon:{}  3 kasser pr 8 kasser manufakturtilbehør levert{} {STRING} {STRING}{}Produksjonen øker hvis manufakturtilbehør leveres innen tre måneder etter andre varer.
 STR_EXTRA_TEXTILE_MILL_WOOL_SUBSTR                                              :5 kasser pr 8 baller ull levert{}
 STR_EXTRA_TEXTILE_MILL_PLANT_FIBRES_SUBSTR                                      :5 kasser pr 8 baller plantefiber levert{}
 
@@ -163,6 +171,7 @@ STR_GENERIC_NEWLINE                                                             
 STR_FUND_BASIC_FARM                                                             :{}{BLACK}Sted: {YELLOW}Kan ikke startes på snø eller i ørken.
 STR_FUND_MIXED_FARM                                                             :{}{BLACK}Location: {YELLOW}Kan ikke startes på snø eller i ørken.
 STR_FUND_ARABLE_FARM                                                            :{}{BLACK}Lokasjon: {YELLOW}Kan ikke startes i snø eller ørken.
+STR_FUND_DAIRY_FARM                                                             :{}{BLACK}Location: {YELLOW}Kan ikke startes på snø eller i ørken.
 STR_FUND_COFFEE_ESTATE                                                          :{}{BLACK}Location: {YELLOW}Kan ikke startes på snø eller i ørken.
 STR_FUND_ORCHARD_PIGGERY                                                        :{}{BLACK}Sted: {YELLOW}Kan ikke startes i snø eller ørken.
 STR_FUND_SUGAR_PLANTATION                                                       :{}{BLACK}Location: {YELLOW}Kan ikke startes på snø eller i ørken.
@@ -191,6 +200,7 @@ STR_IND_BRICK_WORKS                                                             
 STR_IND_BUILDERS_YARD                                                           :Byggevareforretning
 STR_IND_BULK_TERMINAL                                                           :Bulkterminal
 STR_IND_CEMENT_PLANT                                                            :Sementfabrikk
+STR_IND_CHEMICAL_PLANT                                                          :Kjemisk fabrikk
 STR_IND_CLAY_PIT                                                                :Leirgruve
 STR_IND_COFFEE_ESTATE                                                           :Kaffiplantasje
 STR_IND_FIBRE_CROP_FARM                                                         :Gård med fibervekster
@@ -201,6 +211,7 @@ STR_IND_FERTILISER_PLANT                                                        
 STR_IND_FISHING_GROUND                                                          :Fiskebanke
 STR_IND_FISHING_HARBOUR                                                         :Fiskehavn
 STR_IND_FOOD_MARKET                                                             :Matbutikk
+STR_IND_FOOD_PROCESSOR                                                          :Hermetikkfabrikk
 STR_IND_FURNITURE_FACTORY                                                       :Møbelfabrikk
 STR_IND_GENERAL_STORE                                                           :Landhandel
 STR_IND_GLASS_WORKS                                                             :Glassverk
@@ -216,9 +227,11 @@ STR_IND_METAL_FABRICATION_PLANT                                                 
 STR_IND_METAL_FOUNDRY                                                           :Metallstøperi
 STR_IND_MIXEDFARM                                                               :Blandingsgård
 STR_IND_ORCHARD_PIGGERY                                                         :Frukt- og grisegård
+STR_IND_NITRATE_MINE                                                            :Nitratgruve
 STR_IND_PETROLPUMP                                                              :Bensinstasjon
 STR_IND_PLASTICS_PLANT                                                          :Plastikkfabrikk
 STR_IND_PORT                                                                    :Havn
+STR_IND_POWER_PLANT                                                             :Kraftverk
 STR_IND_QUARRY                                                                  :Steinbrudd
 STR_IND_RANCH                                                                   :Ranch
 STR_IND_RECYCLING_DEPOT                                                         :Gjenvinningsstasjon
