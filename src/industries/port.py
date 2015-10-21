@@ -47,8 +47,8 @@ industry.economy_variations['BASIC_ARCTIC'].prod_cargo_types = ['ENSP', 'GOOD']
 industry.economy_variations['BASIC_ARCTIC'].prod_multiplier = '[7, 16]'
 
 industry.economy_variations['BASIC_TROPIC'].enabled = True
-industry.economy_variations['BASIC_TROPIC'].accept_cargo_types = ['GOOD', 'JAVA', 'FOOD']
-industry.economy_variations['BASIC_TROPIC'].prod_cargo_types = ['VPTS']
+industry.economy_variations['BASIC_TROPIC'].accept_cargo_types = ['WOOL', 'JAVA', 'COPR']
+industry.economy_variations['BASIC_TROPIC'].prod_cargo_types = ['ENSP', 'GOOD']
 industry.economy_variations['BASIC_TROPIC'].prod_multiplier = '[17, 17]'
 
 industry.economy_variations['MISTAH_KURTZ'].enabled = True

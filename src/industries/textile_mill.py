@@ -35,8 +35,6 @@ industry = IndustrySecondary(id='textile_mill',
                     extra_text_industry='STR_EXTRA_TEXTILE_MILL, string(STR_EXTRA_TEXTILE_MILL_WOOL_SUBSTR), string(STR_EXTRA_TEXTILE_MILL_PLANT_FIBRES_SUBSTR)' )
 
 industry.economy_variations['FIRS'].enabled = True
-industry.economy_variations['BASIC_TROPIC'].enabled = True
-industry.economy_variations['BASIC_TROPIC'].extra_text_industry = 'STR_EXTRA_TEXTILE_MILL, string(STR_EXTRA_TEXTILE_MILL_WOOL_SUBSTR)'
 
 industry.add_tile(id='textile_mill_tile_1',
                   animation_length=7,

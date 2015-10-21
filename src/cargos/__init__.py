@@ -25,6 +25,9 @@ coal.cargo.register()
 from cargos import coffee
 coffee.cargo.register()
 
+from cargos import copper
+copper.cargo.register()
+
 from cargos import copper_ore
 copper_ore.cargo.register()
 

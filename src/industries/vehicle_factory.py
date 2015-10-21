@@ -32,7 +32,9 @@ industry = IndustrySecondary(id='vehicle_factory',
                     extra_text_industry='STR_EXTRA_VEHICLE_FACTORY',
                     graphics_change_dates = [1920] )
 
-industry.economy_variations['BASIC_TROPIC'].enabled = True
+# currently disabled in all economies
+# !! also not imported in __init__.py (to avoid spurious compile errors)
+#industry.economy_variations['BASIC_TROPIC'].enabled = True
 
 industry.add_tile(id='vehicle_factory_tile_1',
                   animation_length=71,

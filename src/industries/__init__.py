@@ -40,6 +40,9 @@ coffee_estate.industry.register()
 from industries import copper_mine
 copper_mine.industry.register()
 
+from industries import copper_refinery
+copper_refinery.industry.register()
+
 from industries import dairy
 dairy.industry.register()
 
@@ -156,9 +159,6 @@ textile_mill.industry.register()
 
 from industries import trading_post
 trading_post.industry.register()
-
-from industries import vehicle_factory
-vehicle_factory.industry.register()
 
 from industries import clay_pit
 clay_pit.industry.register()
