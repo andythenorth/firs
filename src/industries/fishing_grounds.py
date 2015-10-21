@@ -35,6 +35,7 @@ industry = IndustryPrimary(id='fishing_grounds',
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_ARCTIC'].enabled = True
+industry.economy_variations['BASIC_TROPIC'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
 
 spriteset_1 = industry.add_spriteset(
