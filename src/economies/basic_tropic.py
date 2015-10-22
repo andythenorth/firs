@@ -22,4 +22,5 @@ economy = Economy(id = "BASIC_TROPIC",
                             'nitrates',
                             'oil',
                             'sugarcane',
-                            'wool'])
+                            'wool',
+                            'copper_ore']) # out of order because I was in the middle of a test game, and didn't want to break cargos in that game
