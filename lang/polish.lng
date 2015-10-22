@@ -174,7 +174,7 @@ STR_ERR_INCOMPATIBLE_SET                                                        
 STR_ERR_INCOMPATIBLE_PARAM_CANSET                                               :{ORANGE}E02: {YELLOW}Niekompatybilny parametr: {ORANGE}Parametr 2 CanSet musi być ustawiony na 0 by działać z FIRS. {YELLOW}Przeczytaj FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 STR_ERR_INCOMPATIBLE_PARAM_CITYSET                                              :{ORANGE}E02: {YELLOW}Niekompatybilny parametr: {ORANGE}Parametr 2 NA City Set musi być ustawiony na 0 by działać z FIRS. {YELLOW}Przeczytaj FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 STR_ERR_INCOMPATIBLE_SET_TTRS_VERSION                                           :{ORANGE}E04: {YELLOW}Niekompatybilna wersja: {ORANGE}Total Town Replacement Set musi być w wersji 3.11 lub nowszej. {YELLOW}Przeczytaj FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
-STR_ERR_OPENTTD_VERSION                                                         :{ORANGE}E00: FIRS wymaga OpenTTD 1.2.0 / trunk r22780 lub nowszy. {YELLOW}Przeczytaj FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_OPENTTD_VERSION                                                         :{ORANGE}E00: FIRS wymaga OpenTTD 1.6.0 / trunk r27279 lub nowszy. {YELLOW}Przeczytaj FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 
 STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE                                             :musi być ustawione poniżej linii śniegu.
 STR_ERR_LOCATION_NOT_ON_WATER                                                   :musi być ustawione na suchym lądzie.
@@ -182,30 +182,30 @@ STR_ERR_LOCATION_NOT_IN_DESERT                                                  
 STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE                                             :nie może być ustawione na stromym zboczu.
 STR_ERR_LOCATION_LIMIT_1_PER_TOWN                                               :dozwolone tylko jedno przedsiębiorstwo tego typu na jedno miasto.
 
-STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}Produkcja:{}  2t z 8t boksytu{}  2t z 8,000l chemikaliów{}  4t z 8t złomu{}{}Produkcja wzrasta, gdy 2 lub więcej surowców jest dostarczonych w ciągu miesiąca.
+STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}Produkcja:{}  2t z 8t boksytu{}  2t z 8,000l chemikaliów{}  4t z 8t złomu{}{}Produkcja wzrasta, gdy dwa lub więcej surowców dostarczanych jest w ciągu trzech miesięcy.
 STR_EXTRA_BIOREFINERY                                                           :{BLACK}Produkcja:{} 6,000l na 8t dostarczonego zboża{}  6,000l na 8t dostarczonego cukru.
-STR_EXTRA_BREWERY                                                               :{BLACK}Produkcja:{}  3,000l na 8 skrzyń dostarczonych opakowań{} {STRING} {STRING}{}Produkcja wzrasta, jeśli opakowania są dostarczone w tym samym miesiącu, co pozostałe surowce.
+STR_EXTRA_BREWERY                                                               :{BLACK}Produkcja:{}  3,000l na 8 skrzyń dostarczonych opakowań{} {STRING} {STRING}{}Produkcja wzrasta, jeśli opakowania są dostarczone w ciągu trzech miesięcy po innych surowcach.
 STR_EXTRA_BREWERY_GRAIN_SUBSTR                                                  :5,000l na 8t dostarczonego zboża{}
 STR_EXTRA_BREWERY_FRUIT_SUBSTR                                                  :5,000l na 8t dostarczonych owoców{}
-STR_EXTRA_BRICKWORKS                                                            :{BLACK}Produkcja:{}  2t z 8t węgla{}  2t z 8t piasku{}  4t z 8t gliny{}{}Produkcja wzrasta, gdy różne surowce są dostarczane w ciągu miesiąca.
-STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Produkcja:{}  2t z 8t węgla{}  2t z 8t gliny{}  4t z 8t kamieni{}{}Produkcja wzrasta, gdy różne surowce są dostarczane w ciągu miesiąca.
+STR_EXTRA_BRICKWORKS                                                            :{BLACK}Produkcja:{}  2t z 8t węgla{}  2t z 8t piasku{}  4t z 8t gliny{}{}Produkcja wzrasta, gdy różne surowce są dostarczane w ciągu trzech miesięcy.
+STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Produkcja:{}  2t z 8t węgla{}  2t z 8t gliny{}  4t z 8t kamieni{}{}Produkcja wzrasta, gdy dwa lub więcej surowców dostarczanych jest w ciągu trzech miesięcy.
 STR_EXTRA_CHEMICAL_PLANT                                                        :{BLACK}Produkcja:{}  6,000l na 8,000l dostarczonej ropy{}  6,000l na 8t dostarczonej saletry
-STR_EXTRA_DAIRY                                                                 :{BLACK}Produkcja:{}  3t z 8t opakowań{}  5t z 8t mleka{}{}Produkcja wzrasta do 8t z 8t, gdy oba surowce są dostarczane w ciągu miesiąca.
+STR_EXTRA_DAIRY                                                                 :{BLACK}Produkcja:{}  3t z 8t opakowań{}  5t z 8000l mleka{}{}Produkcja wzrasta do 8t z 8t, gdy oba surowce są dostarczane w ciągu trzech miesięcy..
 STR_EXTRA_FERTILIZER_PLANT                                                      :{BLACK}Produkcja:{}  8 skrzyń na 8,000l dostarczonych chemikaliów.
-STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Produkcja:{}  3t z 8t opakowań{}  5t z 8t ryb{}{}Produkcja wzrasta do 8t z 8t, gdy oba surowce są dostarczane w ciągu miesiąca.
+STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Produkcja:{}  3t z 8t opakowań{}  5t z 8t ryb{}{}Produkcja wzrasta, gdy oba surowce są dostarczane w ciągu miesiąca.
 STR_EXTRA_FOOD_PROCESSING_PLANT                                                 :{BLACK}Produkcja:{}  6t z 8 ton dostarczonej soi{}  6t z 8 ton dostarczonych owoców
-STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Produkcja:{}  3 skrzynie z 8t opakowań{}  5 skrzyń z 8t desek{}{}Produkcja wzrasta do 8 skrzyń z 8t, gdy oba surowce są dostarczane w ciągu miesiąca.
-STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Produkuje butelki, słoje, szyby i inne rzeczy ze szkła.{}{}{BLACK}Produkcja:{}  6t z 8t piasku{}  2t z 8t chemikaliów{}{}Produkcja wzrasta do 8t z 8t, gdy oba surowce są dostarczane w ciągu miesiąca.
-STR_EXTRA_GRAIN_MILL                                                            :{BLACK}Produkcja:{}  3t z 8t opakowań{}  5t z 8t zboża{}{}Produkcja wzrasta do 8t z 8t, gdy oba surowce są dostarczane w ciągu miesiąca.
-STR_EXTRA_IRON_WORKS                                                            :{BLACK}Produkcja:{} 3t z 8t rudy żelaza{} 3t z 8t drewna{} 2t z 8t piasku{}{}Produkcja wzrasta, gdy różne surowce są dostarczane w ciągu miesiąca.
-STR_EXTRA_LIME_KILN                                                             :{BLACK}Produkcja:{}  3t z 8t kamieni{}  3t z 8t węgla{}{}Produkcja wzrasta do 6t z 8t, gdy oba surowce są dostarczane w ciągu miesiąca.
-STR_EXTRA_LUMBER_YARD                                                           :{BLACK}Produkuje płoty, słupy itp.{}{}{BLACK}Produkcja:{}  2t z 8t chemikaliów{}  6t z 8t desek{}{}Produkcja wzrasta do 8t z 8t, gdy oba surowce są dostarczane w ciągu miesiąca.
+STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Produkcja:{}  3 skrzynie z 8t opakowań{}  5 skrzyń z 8t desek{}{}Produkcja wzrasta do 8 skrzyń z 8t, gdy oba surowce są dostarczane w ciągu trzech miesięcy.
+STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Produkuje butelki, słoje, szyby i inne rzeczy ze szkła.{}{}{BLACK}Produkcja:{}  6t z 8t piasku{}  2t z 8000l chemikaliów{}{}Produkcja wzrasta, gdy oba surowce są dostarczane w ciągu trzech miesięcy.
+STR_EXTRA_GRAIN_MILL                                                            :{BLACK}Produkcja:{}  3t z 8t opakowań{}  5t z 8t zboża{}{}Produkcja wzrasta do 8t z 8t, gdy oba surowce są dostarczane w ciągu trzech miesięcy.
+STR_EXTRA_IRON_WORKS                                                            :{BLACK}Produkcja:{} 3t z 8t rudy żelaza{} 3t z 8t drewna{} 2t z 8t piasku{}{}Produkcja wzrasta, gdy dwa lub więcej surowców dostarczanych jest w ciągu trzech miesięcy
+STR_EXTRA_LIME_KILN                                                             :{BLACK}Produkcja:{}  3t z 8t kamieni{}  3t z 8t węgla{}{}Produkcja wzrasta do 6t z 8t, gdy oba surowce są dostarczane w ciągu trzech miesięcy.
+STR_EXTRA_LUMBER_YARD                                                           :{BLACK}Produkuje płoty, słupy itp.{}{}Produkcja:{}  2t z 8000l chemikaliów{}  6t z 8t desek{}{}Produkcja wzrasta do 8t z 8t desek, gdy oba surowce są dostarczane w ciągu trzech miesięcy.
 STR_EXTRA_MACHINE_SHOP                                                          :{BLACK}Produkuje różnego rodzaju maszyny.{}{}8t z 8t surowców.
-STR_EXTRA_MEAT_PACKER                                                           :{BLACK}Produkcja:{}  3t z 8t opakowań{}  5t z 8t żywca{}{}Produkcja wzrasta do 8t z 8t, gdy oba surowce są dostarczane w ciągu miesiąca.
-STR_EXTRA_METAL_FABRICATION_PLANT                                               :{BLACK}Produkują armaturę i różne elementy malowane.{}{}{BLACK}Produkcja:{}  2t z 8t chemikaliów{}  6t z 8t metalu{}{}Produkcja wzrasta do 8t z 8t, gdy oba surowce są dostarczane w ciągu miesiąca.
-STR_EXTRA_METAL_FOUNDRY                                                         :{BLACK}Produkują galwanizowane puszki, narzędzia i części.{}{}{BLACK}Produkcja:{}  2t z 8t chemikaliów{}  6t z 8t metalu{}{}Produkcja wzrasta do 8t z 8t, gdy oba surowce są dostarczane w ciągu miesiąca.
+STR_EXTRA_MEAT_PACKER                                                           :{BLACK}Produkcja:{}  3t z 8t opakowań{}  5t z 8t żywca{}{}Produkcja wzrasta do 8t z 8t, gdy oba surowce są dostarczane w ciągu trzech miesięcy.
+STR_EXTRA_METAL_FABRICATION_PLANT                                               :{BLACK}Produkują armaturę i różne elementy malowane.{}{}{BLACK}Produkcja:{}  2t z 8000l chemikaliów{}  6t z 8t metalu{}{}Produkcja wzrasta, gdy oba surowce są dostarczane w ciągu trzech miesięcy.
+STR_EXTRA_METAL_FOUNDRY                                                         :{BLACK}Produkują galwanizowane puszki, narzędzia i części.{}{}{BLACK}Produkcja:{}  2t z 8000l chemikaliów{}  6t z 8t metalu{}{}Produkcja wzrasta, gdy oba surowce są dostarczane w ciągu trzech miesięcy.
 STR_EXTRA_OIL_REFINERY                                                          :{BLACK}W procesie rafinacji produkuje paliwo i chemikalia.{}{}6t z 8t surowców.
-STR_EXTRA_PAPER_MILL                                                            :{BLACK}Przerabia drewno na papier i karton.{}{}{BLACK}Produkcja:{}  4t z 8t drewna{}  2t z 8t gliny{}  2t z 8t chemikaliów{}{}Produkcja wzrasta, gdy różne surowce są dostarczane w ciągu miesiąca.
+STR_EXTRA_PAPER_MILL                                                            :{BLACK}Przerabia drewno na papier i karton.{}{}{BLACK}Produkcja:{}  4t z 8t drewna{}  2t z 8t gliny{}  2t z 8000l chemikaliów{}{}Produkcja wzrasta, gdy dwa lub więcej surowców dostarczanych jest w ciągu trzech miesięcy.
 STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}Produkuje artykuły plastikowe na użytek przedsiębiorstw i gospodarstw domowych.{}{}Produkcja:{} {STRING} {STRING}
 STR_EXTRA_PLASTICS_PLANT_CHEMICALS_SUBSTR                                       :6 skrzyń na 8,000l dostarczonych chemikaliów{}
 STR_EXTRA_PLASTICS_PLANT_PLANT_FIBRES_SUBSTR                                    :6 skrzyń na 8 beli dostarczonych artykułów plastikowych{}
@@ -213,9 +213,9 @@ STR_EXTRA_RECYCLING_PLANT                                                       
 STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}Poziom produkcji zależy od wielkości pobliskiego miasta.
 STR_EXTRA_SAWMILL                                                               :{BLACK}Drzewo się rżnie. Jest deska, jest sęk.{}{}6t z 8t surowców.
 STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Produkcja ręcznie kutych podków, narzędzi, bramek i innych drobnych metalowych przedmiotów.{}{}5t z 8t surowców.
-STR_EXTRA_STEELMILL                                                             :{BLACK}Produkcja:{} 3t z 8t rudy żelaza{} 2t z 8t węgla{} 3t z 8t złomu{}{}Produkcja wzrasta, gdy różne surowce są dostarczane w ciągu miesiąca.
-STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Produkcja:{}  3t z 8 skrzyń opakowań{}  5t z 8t buraków cukrowych{}{}Produkcja wzrasta do 8t z 8t, gdy oba surowce są dostarczane w ciągu miesiąca.
-STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Produkcja:{}  3 skrzynie z 8 skrzyń opakowań{} {STRING} {STRING}{}Produkcja wzrasta, gdy opakowania są dostarczane w ciągu miesiąca po innych towarach.
+STR_EXTRA_STEELMILL                                                             :{BLACK}Produkcja:{} 3t z 8t rudy żelaza{} 2t z 8t węgla{} 3t z 8t złomu{}{}Produkcja wzrasta, gdy dwa lub więcej surowców dostarczanych jest w ciągu trzech miesięcy.
+STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Produkcja:{}  3t z 8 skrzyń opakowań{}  5t z 8t buraków cukrowych{}{}Produkcja wzrasta do 8t z 8t, gdy oba surowce są dostarczane w ciągu trzech miesięcy.
+STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Produkcja:{}  3 skrzynie z 8 skrzyń opakowań{} {STRING} {STRING}{}Produkcja wzrasta, gdy opakowania są dostarczane w ciągu trzech miesięcy po innych towarach.
 STR_EXTRA_TEXTILE_MILL_WOOL_SUBSTR                                              :5 skrzyń na 8 dostarczonych beli wełny{}
 STR_EXTRA_TEXTILE_MILL_PLANT_FIBRES_SUBSTR                                      :5 skrzyń na 8 dostarczonych beli artykułów plastikowych{}
 STR_EXTRA_VEHICLE_FACTORY                                                       :{BLACK}Produkcja:{}  8 skrzyń na 8 dostarczonych skrzyń części samochodowych{}  8 skrzyń na 8 dostarczonych skrzyń opakowań
@@ -233,6 +233,7 @@ STR_GENERIC_NEWLINE                                                             
 STR_FUND_BASIC_FARM                                                             :{}{BLACK}Lokalizacja: {YELLOW}Nie może być budowane na śniegu ani na pustyni.
 STR_FUND_MIXED_FARM                                                             :{}{BLACK}Lokalizacja: {YELLOW}Nie może być budowane na śniegu, pustyni i stromych zboczach.
 STR_FUND_ARABLE_FARM                                                            :{}{BLACK}Lokalizacja: {YELLOW}Nie może być budowane na śniegu, pustyni i zboczach.
+STR_FUND_DAIRY_FARM                                                             :{}{BLACK}Lokalizacja: {YELLOW}Nie może być budowane na śniegu ani na pustyni.
 STR_FUND_COFFEE_ESTATE                                                          :{}{BLACK}Lokalizacja: {YELLOW}Nie może być budowane na śniegu ani na pustyni.
 STR_FUND_ORCHARD_PIGGERY                                                        :{}{BLACK}Lokalizacja: {YELLOW}Nie może być budowane na śniegu ani na pustyni.
 STR_FUND_SUGAR_PLANTATION                                                       :{}{BLACK}Lokalizacja: {YELLOW}Nie może być budowane na śniegu ani na pustyni.
@@ -338,6 +339,7 @@ STR_IND_PLASTICS_PLANT                                                          
 STR_IND_PLASTICS_PLANT.d                                                        :fabryki tworzyw sztucznych
 STR_IND_PORT                                                                    :{G=m}Port
 STR_IND_PORT.d                                                                  :portu
+STR_IND_POWER_PLANT                                                             :Elektrownia
 STR_IND_QUARRY                                                                  :{G=m}Kamieniołomy
 STR_IND_QUARRY.d                                                                :kamieniołomu
 STR_IND_RANCH                                                                   :{G=n}Ranczo
