@@ -12,11 +12,11 @@ economy = Economy(id = "BASIC_TROPIC",
                             'goods',
                             'coffee',
                             'copper',
-                            'copper_ore'
+                            'copper_ore',
                             'engineering_supplies',
                             'farm_supplies',
-                            'fish',
                             'food', # has to be out of order for compatibility
+                            'fish',
                             'fruits',
                             'livestock',
                             'manufacturing_supplies',

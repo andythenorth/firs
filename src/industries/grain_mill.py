@@ -37,6 +37,7 @@ industry = IndustrySecondary(id='grain_mill',
                     extra_text_industry='STR_EXTRA_GRAIN_MILL')
 
 industry.economy_variations['FIRS'].enabled = True
+industry.economy_variations['BASIC_TROPIC'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
 
 industry.add_tile(id='grain_mill_tile_1',

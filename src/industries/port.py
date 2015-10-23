@@ -47,7 +47,7 @@ industry.economy_variations['BASIC_ARCTIC'].prod_cargo_types = ['ENSP', 'GOOD']
 industry.economy_variations['BASIC_ARCTIC'].prod_multiplier = '[7, 16]'
 
 industry.economy_variations['BASIC_TROPIC'].enabled = True
-industry.economy_variations['BASIC_TROPIC'].accept_cargo_types = ['WOOL', 'JAVA', 'COPR']
+industry.economy_variations['BASIC_TROPIC'].accept_cargo_types = ['COPR', 'JAVA', 'WOOL']
 industry.economy_variations['BASIC_TROPIC'].prod_cargo_types = ['ENSP', 'GOOD']
 industry.economy_variations['BASIC_TROPIC'].prod_multiplier = '[8, 17]'
 
