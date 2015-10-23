@@ -5,13 +5,14 @@ economy = Economy(id = "BASIC_TROPIC",
                   # keep the rest of the cargos alphabetised
                   # bump the min. compatible version if this list changes
                   cargos = ['passengers',
-                            'bauxite',
+                            'alcohol',
                             'mail',
                             'beans',
                             'chemicals',
                             'goods',
                             'coffee',
                             'copper',
+                            'copper_ore'
                             'engineering_supplies',
                             'farm_supplies',
                             'fish',
@@ -21,6 +22,4 @@ economy = Economy(id = "BASIC_TROPIC",
                             'manufacturing_supplies',
                             'nitrates',
                             'oil',
-                            'sugarcane',
-                            'wool',
-                            'copper_ore']) # out of order because I was in the middle of a test game, and didn't want to break cargos in that game
+                            'wool'])

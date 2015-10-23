@@ -31,7 +31,6 @@ industry = IndustryPrimaryExtractive(id='bauxite_mine',
                     intro_year=1900 )
 
 industry.economy_variations['FIRS'].enabled = True
-industry.economy_variations['BASIC_TROPIC'].enabled = True
 
 industry.add_tile(id='bauxite_mine_tile_1',
                   animation_length=71,

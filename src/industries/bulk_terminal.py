@@ -47,7 +47,7 @@ industry.economy_variations['BASIC_ARCTIC'].prod_cargo_types = ['FMSP', 'CLAY']
 industry.economy_variations['BASIC_ARCTIC'].prod_multiplier = '[7, 12]'
 
 industry.economy_variations['BASIC_TROPIC'].enabled = True
-industry.economy_variations['BASIC_TROPIC'].accept_cargo_types = ['AORE', 'RFPR', 'FOOD']
+industry.economy_variations['BASIC_TROPIC'].accept_cargo_types = ['BEER', 'RFPR', 'FOOD']
 industry.economy_variations['BASIC_TROPIC'].prod_cargo_types = ['FMSP', 'MNSP']
 industry.economy_variations['BASIC_TROPIC'].prod_multiplier = '[7, 19]'
 

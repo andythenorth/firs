@@ -202,4 +202,7 @@ sawmill.industry.register()
 from industries import steel_mill
 steel_mill.industry.register()
 
+from industries import vineyard
+vineyard.industry.register()
+
 
