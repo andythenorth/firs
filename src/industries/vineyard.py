@@ -9,7 +9,7 @@ from industry import IndustryPrimaryOrganic, TileLocationChecks, IndustryLocatio
 
 industry = IndustryPrimaryOrganic(id='vineyard',
                     new_ind_msg='TTD_STR_NEWS_INDUSTRY_CONSTRUCTION',
-                    map_colour='71',
+                    map_colour='86',
                     prob_in_game='3',
                     prob_random='10',
                     prospect_chance='0.75',
