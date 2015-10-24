@@ -818,7 +818,7 @@ class IndustryPrimaryPort(IndustryPrimary):
         kwargs['life_type'] = 'IND_LIFE_TYPE_BLACK_HOLE'
         kwargs['extra_text_industry'] = True # slight hax, actual text string is determined by templated cb
         super(IndustryPrimaryPort, self).__init__(**kwargs)
-        self.supply_requirements = [56, 224, 'PORT'] # janky use of a un-named list for historical reasons (3rd item is string prefix)
+        self.supply_requirements = [160, 640, 'PORT'] # janky use of a un-named list for historical reasons (3rd item is string prefix)
 
 
 class IndustryPrimaryTownProducer(Industry):
