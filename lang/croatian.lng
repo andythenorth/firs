@@ -36,6 +36,7 @@ STR_CARGO_NAME_BUILDING_MATERIALS                                               
 STR_CARGO_NAME_CHEMICALS                                                        :Kemikalije
 STR_CARGO_NAME_CLAY                                                             :Glina
 STR_CARGO_NAME_COFFEE                                                           :Kava
+STR_CARGO_NAME_COPPER                                                           :Bakar
 STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :Inžinjerske potrepštine
 STR_CARGO_NAME_FIBRES                                                           :Biljna vlakna
 STR_CARGO_NAME_FISH                                                             :Riba
@@ -63,6 +64,7 @@ STR_CARGO_UNIT_BUILDING_MATERIALS                                               
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} kemikalija
 STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} gline
 STR_CARGO_UNIT_COFFEE                                                           :{SIGNED_WORD} vreć{P a e e} kave
+STR_CARGO_UNIT_COPPER                                                           :{WEIGHT} bakra
 STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} kutij{P 0 a e e} inžinjerskih potrepština
 STR_CARGO_UNIT_FIBRES                                                           :{SIGNED_WORD} bal{P 0 a e e} biljnih vlakana
 STR_CARGO_UNIT_FISH                                                             :{WEIGHT} ribe
@@ -90,6 +92,7 @@ STR_CID_BUILDING_MATERIALS                                                      
 STR_CID_CHEMICALS                                                               :{TINYFONT}CH
 STR_CID_CLAY                                                                    :{TINYFONT}CL
 STR_CID_COFFEE                                                                  :{TINYFONT}CF
+STR_CID_COPPER                                                                  :{TINYFONT}CR
 STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}ES
 STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}FS
 STR_CID_FIBRES                                                                  :{TINYFONT}PF
@@ -130,6 +133,7 @@ STR_EXTRA_BREWERY_FRUIT_SUBSTR                                                  
 STR_EXTRA_BRICKWORKS                                                            :{BLACK}Proizvodnja tereta:{} 2t od 8t dostavljenog ugljena{} 2t od 8t dostavljenog pijeska{} 4t od 8t dostavljene gline{}{}Proizvodnja se povećava ako su dva ili više tereta dostavljena unutar 3 mjeseca jedan od drugog.
 STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Proizvodnja tereta:{} 2t od 8t dostavljenog ugljena{} 2t od 8t dostavljene gline{} 4t od 8t dostavljenog kamena{}{}Proizvodnja se povećava ako su dva ili više tereta dostavljena unutar 3 mjeseca jedan od drugog.
 STR_EXTRA_CHEMICAL_PLANT                                                        :{BLACK}Proizvodnja tereta:{} 6,000l za 8,000l dostavljene nafte{} 6,000l za 8t dostavljenih nitrata
+STR_EXTRA_COPPER_REFINERY                                                       :{BLACK}Proizvodnja tereta:{}  5t od 8t dostavljenog bakra{}  3t od 8,000l dostavljenih kemikalija{}{}Proizvodnja se povećava ako su dva ili više tereta dostavljena unutar 3 mjeseca jedan od drugog.
 STR_EXTRA_DAIRY                                                                 :{BLACK}Proizvodnja tereta:{}  3t od 8t dostavljenih proizvodnih potrepština{}  5t od 8t dostavljenog mlijeka{}{}Povećanje na 8t od 8t ako oba tereta budu dostavljena unutar 3 mjeseca jedan od drugog.
 STR_EXTRA_FERTILIZER_PLANT                                                      :{BLACK}Proizvodnja tereta:{}  8 kutija za 8,000l dostavljenih kemikalija
 STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Proizvodnja tereta:{} 3t od 8 kutija dostavljenih proizvodnih potrepština{} 5t od 8t dostavljene ribe{}{}Proizvodnja se povećava ako su oba tereta dostavljena unutar 3 mjeseca jedan od drugog.
@@ -181,6 +185,7 @@ STR_FUND_FIBRE_CROP_FARM                                                        
 STR_FUND_FOREST                                                                 :{}{BLACK}Lokacija: {YELLOW}Ne može se financirati u pustinji.
 STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}Lokacija: {YELLOW}Ne može se financirati na snijegu.
 STR_FUND_RUBBER_PLANTATION                                                      :{}{BLACK}Lokacija: {YELLOW}Ne može biti financirano na snijegu ili u pustinjama.
+STR_FUND_VINEYARD                                                               :{}{BLACK}Lokacija: {YELLOW}Ne može biti financirano na snijegu ili u pustinjama.
 
 
 STR_FUND_AVAILABLE_FROM                                                         :{}{BLACK}Dostupno od: {YELLOW}{COMMA}
@@ -205,6 +210,7 @@ STR_IND_CEMENT_PLANT                                                            
 STR_IND_CHEMICAL_PLANT                                                          :Kemijsko postrojenje
 STR_IND_CLAY_PIT                                                                :Kop gline
 STR_IND_COFFEE_ESTATE                                                           :Plantaža kave
+STR_IND_COPPER_REFINERY                                                         :Rafinerija bakra
 STR_IND_FIBRE_CROP_FARM                                                         :Farma vlaknastih usjeva
 STR_IND_DAIRY                                                                   :Mljekara
 STR_IND_DAIRYFARM                                                               :Mliječna farma
@@ -246,6 +252,7 @@ STR_IND_SUGAR_REFINERY                                                          
 STR_IND_TEXTILE_MILL                                                            :Tvornica tekstila
 STR_IND_TRADING_POST                                                            :Trgovačka kuća
 STR_IND_VEHICLE_FACTORY                                                         :Tvornica vozila
+STR_IND_VINEYARD                                                                :Vinograd
 
 STR_STATION_ANIMALS                                                             :Tržnica konja
 STR_STATION_FARM                                                                :Imanje
