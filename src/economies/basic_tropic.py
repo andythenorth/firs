@@ -18,9 +18,9 @@ economy = Economy(id = "BASIC_TROPIC",
                             'food', # has to be out of order for compatibility
                             'fish',
                             'fruits',
+                            'grain',
                             'livestock',
                             'manufacturing_supplies',
                             'nitrates',
                             'oil',
-                            'wool',
-                            'grain']) # added last to avoid breaking my savegame when testing
+                            'wool'])
