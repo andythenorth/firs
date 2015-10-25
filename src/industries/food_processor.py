@@ -27,7 +27,7 @@ industry = IndustrySecondary(id='food_processor',
                     prospect_chance='0.75',
                     name='TTD_STR_INDUSTRY_NAME_FOOD_PROCESSING_PLANT',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_IND_FOOD_PROCESSOR))',
-                    fund_cost_multiplier='125',
+                    fund_cost_multiplier='65',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
                     extra_text_industry='STR_EXTRA_FOOD_PROCESSING_PLANT' )
 

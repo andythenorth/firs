@@ -31,7 +31,7 @@ industry = IndustrySecondary(id='stockyard',
                     prospect_chance='0.75',
                     name='string(STR_IND_STOCKYARD)',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_ANIMALS))',
-                    fund_cost_multiplier='145',
+                    fund_cost_multiplier='115',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
                     extra_text_industry='STR_EXTRA_MEAT_PACKER' )
 
