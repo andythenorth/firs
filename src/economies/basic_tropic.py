@@ -22,4 +22,5 @@ economy = Economy(id = "BASIC_TROPIC",
                             'manufacturing_supplies',
                             'nitrates',
                             'oil',
-                            'wool'])
+                            'wool',
+                            'grain']) # added last to avoid breaking my savegame when testing
