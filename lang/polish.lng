@@ -55,6 +55,7 @@ STR_CARGO_NAME_CLAY.d                                                           
 STR_CARGO_NAME_COFFEE                                                           :{G=f}Kawa
 STR_CARGO_NAME_COFFEE.b                                                         :kawa
 STR_CARGO_NAME_COFFEE.d                                                         :kawy
+STR_CARGO_NAME_COPPER                                                           :Miedź
 STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :{G=f}Maszyny
 STR_CARGO_NAME_ENGINEERING_SUPPLIES.b                                           :maszyny
 STR_CARGO_NAME_ENGINEERING_SUPPLIES.d                                           :maszyn
@@ -123,7 +124,8 @@ STR_CARGO_UNIT_BUILDING_MATERIALS                                               
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} chemikaliów
 STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} gliny
 STR_CARGO_UNIT_COFFEE                                                           :{SIGNED_WORD} wor{P 0 ek ki ków} kawy
-STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} skrzy{P 0 nia nie ń} maszyn
+STR_CARGO_UNIT_COPPER                                                           :{WEIGHT} miedzi
+STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} maszy{P 0 na ny n}
 STR_CARGO_UNIT_FIBRES                                                           :{SIGNED_WORD} bel{P 0 a e i} włókien naturalnych
 STR_CARGO_UNIT_FISH                                                             :{WEIGHT} ryb
 STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} skrzy{P 0 nia nie ń} sprzętu rolniczego
@@ -150,6 +152,7 @@ STR_CID_BUILDING_MATERIALS                                                      
 STR_CID_CHEMICALS                                                               :{TINYFONT}CH
 STR_CID_CLAY                                                                    :{TINYFONT}GL
 STR_CID_COFFEE                                                                  :{TINYFONT}KW
+STR_CID_COPPER                                                                  :{TINYFONT}MI
 STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}MS
 STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}SR
 STR_CID_FIBRES                                                                  :{TINYFONT}WN
@@ -190,6 +193,7 @@ STR_EXTRA_BREWERY_FRUIT_SUBSTR                                                  
 STR_EXTRA_BRICKWORKS                                                            :{BLACK}Produkcja:{}  2t z 8t węgla{}  2t z 8t piasku{}  4t z 8t gliny{}{}Produkcja wzrasta, gdy różne surowce są dostarczane w ciągu trzech miesięcy.
 STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Produkcja:{}  2t z 8t węgla{}  2t z 8t gliny{}  4t z 8t kamieni{}{}Produkcja wzrasta, gdy dwa lub więcej surowców dostarczanych jest w ciągu trzech miesięcy.
 STR_EXTRA_CHEMICAL_PLANT                                                        :{BLACK}Produkcja:{}  6,000l na 8,000l dostarczonej ropy{}  6,000l na 8t dostarczonej saletry
+STR_EXTRA_COPPER_REFINERY                                                       :{BLACK}Produkcja:{}  5t z 8t rudy miedzi{}  3t z 8,000l chemikaliów{}{}Produkcja wzrasta, gdy oba surowce są dostarczane w ciągu trzech miesięcy.
 STR_EXTRA_DAIRY                                                                 :{BLACK}Produkcja:{}  3t z 8t opakowań{}  5t z 8000l mleka{}{}Produkcja wzrasta do 8t z 8t, gdy oba surowce są dostarczane w ciągu trzech miesięcy..
 STR_EXTRA_FERTILIZER_PLANT                                                      :{BLACK}Produkcja:{}  8 skrzyń na 8,000l dostarczonych chemikaliów.
 STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Produkcja:{}  3t z 8t opakowań{}  5t z 8t ryb{}{}Produkcja wzrasta, gdy oba surowce są dostarczane w ciągu miesiąca.
@@ -222,11 +226,11 @@ STR_EXTRA_VEHICLE_FACTORY                                                       
 
 STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}--------- DEBUGOWANIE ---------{}Produkcja w tym miesiącu:{}Ładunek 1: {WHITE}{COMMA}{BLACK}{}Ładunek 2: {WHITE}{COMMA}{BLACK}{}Dni od ostatniej dostawy: {WHITE}{COMMA}{BLACK}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Osiągnięto maksymalny poziom produkcji
-STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Aktualna produkcja: {YELLOW}normalna{}{}{BLACK}By podwoić produkcję, dostarcz {SIGNED_WORD} skrzyń surowców w ciągu 3 miesięcy (lub {SIGNED_WORD} skrzyń by produkcja wzrosła czterokrotnie)
-STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Aktualna produkcja: {YELLOW}ulepszona (podwójna){}{}{BLACK}By utrzymać ten poziom, dostarcz {SIGNED_WORD} skrzyń surowców w ciągu 3 miesięcy, lub {SIGNED_WORD} skrzyń by produkcja wzrosła czterokrotnie
-STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}Aktualna produkcja: {YELLOW}niewiarygodna (poczwórna){}{}{BLACK}By utrzymać ten poziom, dostarcz {SIGNED_WORD} skrzyń surowców w ciągu 3 miesięcy
+STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Aktualna produkcja: {YELLOW}normalna{}{}{BLACK}By podwoić produkcję, dostarcz {SIGNED_WORD} skrzyń zaopatrzenia w ciągu 3 miesięcy (lub {SIGNED_WORD} skrzyń by produkcja wzrosła czterokrotnie)
+STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Aktualna produkcja: {YELLOW}ulepszona (podwójna){}{}{BLACK}By utrzymać ten poziom, dostarcz {SIGNED_WORD} skrzyń zaopatrzenia w ciągu 3 miesięcy, lub {SIGNED_WORD} skrzyń by produkcja wzrosła czterokrotnie
+STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}Aktualna produkcja: {YELLOW}niewiarygodna (poczwórna){}{}{BLACK}By utrzymać ten poziom, dostarcz {SIGNED_WORD} skrzyń zaopatrzenia w ciągu 3 miesięcy
 STR_PORT_PRODUCTION_1X                                                          :{BLACK}Aktualna produkcja: {YELLOW}normalna{}{}{BLACK}By podwoić produkcję, dostarcz {SIGNED_WORD} jedostek w ciągu 3 miesięcy{}By osiągnąć poczwórny poziom produkcji, dostarcz {SIGNED_WORD} jednostek w ciągu 3 miesięcy
-STR_PORT_PRODUCTION_2X                                                          :{BLACK}Aktualna produkcja: {YELLOW}ulepszona (podwójna){}{}{BLACK}By utrzymać ten poziom, dostarcz {SIGNED_WORD} jedostek w ciągu 3 miesięcy, lub {SIGNED_WORD} jednostek, by osiągnąć poczwórny poziom produkcji
+STR_PORT_PRODUCTION_2X                                                          :{BLACK}Aktualna produkcja: {YELLOW}ulepszona (podwójna){}{}{BLACK}By utrzymać ten poziom, dostarcz {SIGNED_WORD} jednostek w ciągu 3 miesięcy, lub {SIGNED_WORD} jednostek, by osiągnąć poczwórny poziom produkcji
 STR_PORT_PRODUCTION_4X                                                          :{BLACK}Aktualna produkcja: {YELLOW}niewiarygodna (poczwórna){}{}{BLACK}By utrzymać ten poziom, dostarcz {SIGNED_WORD} jednostek w ciągu 3 miesięcy
 STR_GENERIC_NEWLINE                                                             :{}
 
@@ -241,6 +245,7 @@ STR_FUND_FIBRE_CROP_FARM                                                        
 STR_FUND_FOREST                                                                 :{}{BLACK}Lokalizacja: {YELLOW}Nie może być budowane na pustyni.
 STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}Lokalizacja: {YELLOW}Nie może być budowane na śniegu.
 STR_FUND_RUBBER_PLANTATION                                                      :{}{BLACK}Lokalizacja: {YELLOW}Nie może być budowane na śniegu ani na pustyni.
+STR_FUND_VINEYARD                                                               :{}{BLACK}Lokalizacja: {YELLOW}Nie może być budowane na śniegu ani na pustyni.
 
 
 STR_FUND_AVAILABLE_FROM                                                         :{}{BLACK}Dostępne od: {YELLOW}{COMMA}
@@ -283,6 +288,7 @@ STR_IND_CLAY_PIT                                                                
 STR_IND_CLAY_PIT.d                                                              :kopalni gliny
 STR_IND_COFFEE_ESTATE                                                           :{G=f}Plantacja kawy
 STR_IND_COFFEE_ESTATE.d                                                         :plantacji kawy
+STR_IND_COPPER_REFINERY                                                         :Elektrolizernia miedzi
 STR_IND_FIBRE_CROP_FARM                                                         :{G=f}Plantacja lnu
 STR_IND_FIBRE_CROP_FARM.d                                                       :plantacji lnu
 STR_IND_DAIRY                                                                   :{G=f}Mleczarnia
@@ -364,6 +370,7 @@ STR_IND_TRADING_POST                                                            
 STR_IND_TRADING_POST.d                                                          :punktu handlowego
 STR_IND_VEHICLE_FACTORY                                                         :{G=f}Wytwórnia pojazdów
 STR_IND_VEHICLE_FACTORY.d                                                       :Wytwórni pojazdów
+STR_IND_VINEYARD                                                                :Winnice
 
 STR_STATION_ANIMALS                                                             :Oborniki
 STR_STATION_FARM                                                                :Folwark
