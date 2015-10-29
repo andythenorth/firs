@@ -73,12 +73,12 @@ spriteset_4 = industry.add_spriteset(
 )
 spriteset_5 = industry.add_spriteset(
     id = 'chemical_plant_spriteset_5',
-    sprites = [(360, 10, 64, 66, -31, -35)],
+    sprites = [(360, 10, 64, 114, -31, -83)],
     zextent = 48
 )
 spriteset_6 = industry.add_spriteset(
     id = 'chemical_plant_spriteset_6',
-    sprites = [(430, 10, 64, 66, -31, -35)],
+    sprites = [(430, 10, 64, 114, -31, -83)],
     zextent = 48
 )
 spriteset_7 = industry.add_spriteset(
@@ -149,14 +149,14 @@ industry.add_spritelayout(
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_5],
-    fences = ['nw','ne']
+    fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
     id = 'chemical_plant_spritelayout_6',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_6],
-    fences = ['nw','ne']
+    fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
     id = 'chemical_plant_spritelayout_7',
