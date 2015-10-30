@@ -37,6 +37,7 @@ STR_CARGO_NAME_BUILDING_MATERIALS                                               
 STR_CARGO_NAME_CHEMICALS                                                        :{G=m}Productos Químicos
 STR_CARGO_NAME_CLAY                                                             :{G=f}Arcilla
 STR_CARGO_NAME_COFFEE                                                           :Café
+STR_CARGO_NAME_COPPER                                                           :Cobre
 STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :{G=m}Suministros de Ingeniería
 STR_CARGO_NAME_FIBRES                                                           :{G=f}Fibras Vegetales
 STR_CARGO_NAME_FISH                                                             :{G=m}Pescado
@@ -64,6 +65,7 @@ STR_CARGO_UNIT_BUILDING_MATERIALS                                               
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} de productos químicos
 STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} de arcilla
 STR_CARGO_UNIT_COFFEE                                                           :{SIGNED_WORD} saco{P 0 "" s} de café
+STR_CARGO_UNIT_COPPER                                                           :{WEIGHT} de cobre
 STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} caja{P 0 "" s} de suministros de ingeniería
 STR_CARGO_UNIT_FIBRES                                                           :{SIGNED_WORD} fardo{P 0 "" s} de fibras vegetales
 STR_CARGO_UNIT_FISH                                                             :{WEIGHT} de pescado
@@ -132,6 +134,7 @@ STR_EXTRA_BREWERY_FRUIT_SUBSTR                                                  
 STR_EXTRA_BRICKWORKS                                                            :{BLACK}Producción:{} 2t por cada 8t de carbón entregadas{} 2t por cada 8t de arena entregadas{} 4t por cada 8t de arcilla entregadas{}{}La producción se incrementa si dos o más cargas son entregadas en un intervalo inferior a un trimestre.
 STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Producción:{} 2t por cada 8t de carbón entregadas{} 2t por cada 8t de arcilla entregadas{} 4t por cada 8t de piedra entregadas{}{}La producción se incrementa si dos o más cargas son entregadas en un intervalo inferior a un trimestre.
 STR_EXTRA_CHEMICAL_PLANT                                                        :{BLACK}Producción:{} 6,000l por cada 8,000l de petróleo entregados{} 6,000l por cada 8t de nitratos entregadas
+STR_EXTRA_COPPER_REFINERY                                                       :{BLACK}Producción:{} 5t por cada 8t de mineral de cobre entregadas{} 3t por cada 8,000l de productos químicos entregados{}{}La producción se incrementa si dos o más cargas son entregadas en un intervalo inferior a un trimestre.
 STR_EXTRA_DAIRY                                                                 :{BLACK}Producción:{} 3t por cada 8 cajas de suministros de manufactura entregadas{} 5t por cada 8,000l de leche entregados{}{}La producción se incrementa si ambas cargas son entregadas con menos de un trimestre de diferencia entre sí.
 STR_EXTRA_FERTILIZER_PLANT                                                      :{BLACK}Producción:{} 8 cajas por cada 8,000l de productos químicos entregados
 STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Producción:{} 3t por cada 8 cajas de suministros de manufactura entregadas{} 5t por cada 8t de pescado entregadas{}{}La producción se incrementa si ambas cargas son entregadas con menos de un trimestre de diferencia entre sí.
@@ -208,6 +211,7 @@ STR_IND_CEMENT_PLANT                                                            
 STR_IND_CHEMICAL_PLANT                                                          :Planta Química
 STR_IND_CLAY_PIT                                                                :{G=f}Cantera de Arcilla
 STR_IND_COFFEE_ESTATE                                                           :Cafetal (plantación de cafés o cafetos)
+STR_IND_COPPER_REFINERY                                                         :Refinería de Cobre
 STR_IND_FIBRE_CROP_FARM                                                         :Granja-cosechadora de fibras
 STR_IND_DAIRY                                                                   :{G=f}Industria Láctea
 STR_IND_DAIRYFARM                                                               :{G=f}Granja Lechera
