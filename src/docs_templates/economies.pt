@@ -3,7 +3,7 @@
 <div metal:fill-slot='sidebar_nav'>
     <li class="nav-header">Economies (${len(economies)})</li>
     <tal:economies repeat="economy doc_helper.get_economies_sorted_by_name()">
-        <li><a href="#${economy}">${doc_helper.get_economy_name(economy)}</a></li>
+        <li><a href="#${doc_helper.get_economy_name_dom_safe(economy)}">${doc_helper.get_economy_name(economy)}</a></li>
     </tal:economies>
 </div>
 
@@ -13,7 +13,7 @@
         <p>In FIRS, the Economy parameter setting controls which industries and cargos will be used in the game.</p>
     </div>
     <tal:economies repeat="economy doc_helper.get_economies_sorted_by_name()">
-        <div id="${economy}">
+        <div id="${doc_helper.get_economy_name_dom_safe(economy)}">
             <h3>${doc_helper.get_economy_name(economy)} <small>Economy</small></h3>
             <p>${structure:doc_helper.get_economy_extra_info(economy)}</p>
             <br />

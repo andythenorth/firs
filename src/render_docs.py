@@ -58,6 +58,9 @@ class DocHelper(object):
         name_string = base_lang_strings.get(string_id, 'NO_NAME ' + economy.id)
         return name_string.split(' Economy')[0] # name strings contain 'economy', I don't want that in docs
 
+    def get_economy_name_dom_safe(self, economy):
+        return self.get_economy_name(economy).replace(' ', '-').lower()
+
     def get_cargo_name(self, cargo):
         # cargos don't store the name directly as a python attr, but in lang - so look it up in base_lang using string id
         name = cargo.type_name
