@@ -2,16 +2,36 @@
     #${industry.id} polygon {
         <tal:lifetype tal:switch="industry.default_industry_properties.life_type">
             <tal:primary tal:case="'IND_LIFE_TYPE_EXTRACTIVE'">
-                fill: #aaffbb;
+                fill: #d49c20;
+                stroke: #d49c20;
             </tal:primary>
             <tal:primary tal:case="'IND_LIFE_TYPE_ORGANIC'">
-                fill: red;
+                fill: #40700c;
+                stroke: #40700c;
             </tal:primary>
             <tal:primary tal:case="'IND_LIFE_TYPE_PROCESSING'">
-                fill: #ffcc55;
+                fill: #1c448c;
+                stroke: #1c448c;
             </tal:primary>
             <tal:primary tal:case="'IND_LIFE_TYPE_BLACK_HOLE'">
-                fill: #88ccff;
+                fill: #882034;
+                stroke: #882034;
+            </tal:primary>
+        </tal:lifetype>
+    }
+    #${industry.id} text {
+        <tal:lifetype tal:switch="industry.default_industry_properties.life_type">
+            <tal:primary tal:case="'IND_LIFE_TYPE_EXTRACTIVE'">
+                fill: white;
+            </tal:primary>
+            <tal:primary tal:case="'IND_LIFE_TYPE_ORGANIC'">
+                fill: white;
+            </tal:primary>
+            <tal:primary tal:case="'IND_LIFE_TYPE_PROCESSING'">
+                fill: white;
+            </tal:primary>
+            <tal:primary tal:case="'IND_LIFE_TYPE_BLACK_HOLE'">
+                fill: #fff;
             </tal:primary>
         </tal:lifetype>
     }
