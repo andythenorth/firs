@@ -225,12 +225,14 @@ def main():
     html_docs = ['get_started', 'code_reference','economies', 'cargos', 'industries', 'translations']
     txt_docs = ['license', 'readme', 'test_docs']
     markdown_docs = ['changelog']
+    graph_docs = ['cargoflow']
 
     render_docs(html_docs, 'html')
     render_docs(txt_docs, 'txt')
     # just render the markdown docs twice to get txt and html versions, simples no?
     render_docs(markdown_docs, 'txt')
     render_docs(markdown_docs, 'html', use_markdown=True)
+    render_docs(graph_docs, 'dotall')
 
 if __name__ == '__main__':
     main()
