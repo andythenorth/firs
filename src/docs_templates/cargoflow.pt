@@ -38,7 +38,7 @@ digraph ${economy.id} {
                     C_${cargo.id} -> I_${industry.id}
                 </tal:not_banned>
                 <tal:banned condition="cargo.id in banned_cargos">
-                    CI_${industry.id}_${cargo.id} [label="${doc_helper.get_cargo_name(cargo)}" href="cargos.html#${cargo.id}" target="_top" fontname="sans-serif"]
+                    CI_${industry.id}_${cargo.id} [label="${doc_helper.get_cargo_name(cargo)}" href="cargos.html#${cargo.id}" target="_top" fontname="sans-serif" id="${cargo.id}"]
                     CI_${industry.id}_${cargo.id} -> I_${industry.id}
                 </tal:banned>
             </tal:cargos>
@@ -47,7 +47,7 @@ digraph ${economy.id} {
                     I_${industry.id} -> C_${cargo.id}
                 </tal:not_banned>
                 <tal:banned condition="cargo.id in banned_cargos">
-                    CI_${industry.id}_${cargo.id} [label="${doc_helper.get_cargo_name(cargo)}" href="cargos.html#${cargo.id}" target="_top" fontname="sans-serif"]
+                    CI_${industry.id}_${cargo.id} [label="${doc_helper.get_cargo_name(cargo)}" href="cargos.html#${cargo.id}" target="_top" fontname="sans-serif" id="${cargo.id}"]
                     I_${industry.id} -> CI_${industry.id}_${cargo.id}
                 </tal:banned>
             </tal:cargos>

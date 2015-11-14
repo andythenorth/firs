@@ -14,8 +14,8 @@
                 stroke: #a04000;
             </tal:block>
             <tal:block tal:case="'IND_LIFE_TYPE_BLACK_HOLE'">
-                fill: #00698C;
-                stroke: #00698C;
+                fill: #4A5F6D;
+                stroke: #4A5F6D;
             </tal:block>
         </tal:lifetype>
     }
@@ -38,14 +38,12 @@
 </tal:industries>
 
 <tal:cargos repeat="cargo registered_cargos">
-    <tal:cargo condition="cargo.id not in doc_helper.get_cargoflow_banned_cargos()">
-        #${cargo.id} ellipse {
-            fill: #D8DBE2;
-            stroke: #D8DBE2;
-            <tal:supplies condition="cargo.id in doc_helper.get_cargoflow_supply_cargos()">
-                fill: #E0E2DB;
-                stroke: #E0E2DB;
-            </tal:supplies>
-        }
-    <tal:cargo>
+    #${cargo.id} ellipse {
+        fill: #D8DBE2;
+        stroke: #D8DBE2;
+        <tal:supplies condition="cargo.id in doc_helper.get_cargoflow_supply_cargos()">
+            fill: #C5E5F4;
+            stroke: #C5E5F4;
+        </tal:supplies>
+    }
 </tal:cargos>
