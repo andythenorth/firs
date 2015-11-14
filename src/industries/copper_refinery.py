@@ -20,7 +20,6 @@ industry = IndustrySecondary(id='copper_refinery',
                     new_ind_msg='TTD_STR_NEWS_INDUSTRY_CONSTRUCTION',
                     map_colour='64',
                     prod_decrease_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_GENERAL',
-                    life_type='IND_LIFE_TYPE_PROCESSING',
                     min_cargo_distr='5',
                     spec_flags='0',
                     location_checks=IndustryLocationChecks(incompatible={'copper_refinery': 56,
@@ -32,10 +31,11 @@ industry = IndustrySecondary(id='copper_refinery',
                     fund_cost_multiplier='200',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
                     extra_text_industry='STR_EXTRA_COPPER_REFINERY',
-                    intro_year=1900,
+                    intro_year=1800,
                     graphics_change_dates = [] )
 
 industry.economy_variations['BASIC_TROPIC'].enabled = True
+industry.economy_variations['MISTAH_KURTZ'].enabled = True
 
 industry.add_tile(id='copper_refinery_tile_1',
                   animation_length=47,
