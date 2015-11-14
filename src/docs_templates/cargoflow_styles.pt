@@ -48,7 +48,16 @@
     }
 </tal:cargos>
 
-path {
+g.edge path {
     stroke: black;
-    stroke-width: 2;
+    stroke-width: 4;
+}
+g.edge:hover path {
+    stroke: #3890e8;
+    stroke-width: 6;
+}
+g.edge:hover polygon {
+    fill: #3890e8;
+    stroke: #3890e8;
+    stroke-width: 6;
 }
