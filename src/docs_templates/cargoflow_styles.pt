@@ -2,12 +2,12 @@
     #${industry.id} polygon {
         <tal:lifetype tal:switch="industry.default_industry_properties.life_type">
             <tal:primary tal:case="'IND_LIFE_TYPE_EXTRACTIVE'">
-                fill: #d49c20;
-                stroke: #d49c20;
+                fill: #00560D;
+                stroke: #00560D;
             </tal:primary>
             <tal:primary tal:case="'IND_LIFE_TYPE_ORGANIC'">
-                fill: #40700c;
-                stroke: #40700c;
+                fill: #00560D;
+                stroke: #00560D;
             </tal:primary>
             <tal:primary tal:case="'IND_LIFE_TYPE_PROCESSING'">
                 fill: #1c448c;
@@ -36,3 +36,16 @@
         </tal:lifetype>
     }
 </tal:industries>
+
+<tal:cargos repeat="cargo registered_cargos">
+    <tal:cargo condition="cargo.id not in doc_helper.get_cargoflow_banned_cargos()">
+        #${cargo.id} ellipse {
+            fill: #ccd0dc;
+            stroke: #ccd0dc;
+            <tal:supplies condition="cargo.id in doc_helper.get_cargoflow_supply_cargos()">
+                fill: #CFE8EF;
+                stroke: #CFE8EF;
+            </tal:supplies>
+        }
+    <tal:cargo>
+</tal:cargos>

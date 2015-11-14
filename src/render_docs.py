@@ -177,6 +177,11 @@ class DocHelper(object):
         # return a list, sorted by economies (only need first economy entry in each list of economies)
         return sorted(result.values(), key = lambda combo: self.get_economy_name(combo['economies'][0]))
 
+    def get_cargoflow_banned_cargos(self):
+        return ['mail', 'passengers']
+
+    def get_cargoflow_supply_cargos(self):
+        return ['farm_supplies', 'engineering_supplies', 'manufacturing_supplies']
 
     def get_active_nav(self, doc_name, nav_link):
         return ('','active')[doc_name == nav_link]

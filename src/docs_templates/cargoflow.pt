@@ -1,5 +1,5 @@
 <tal:economies repeat="economy doc_helper.get_economies_sorted_by_name()"
-               define="banned_cargos {'mail', 'passengers'}; supply_cargos {'farm_supplies', 'engineering_supplies', 'manufacturing_supplies'}">
+               define="banned_cargos doc_helper.get_cargoflow_banned_cargos(); supply_cargos doc_helper.get_cargoflow_supply_cargos()">
 digraph ${economy.id} {
     fontname="sans-serif"
     stylesheet="cargoflow_styles.css"
@@ -10,10 +10,7 @@ digraph ${economy.id} {
     <tal:cargos repeat="cargo sorted(economy_schemas[economy].enabled_cargos, key=doc_helper.get_cargo_name)">
         <tal:not_banned condition="cargo.id not in banned_cargos">
             C_${cargo.id} [label="${doc_helper.get_cargo_name(cargo)}" href="cargos.html#${cargo.id}" target="_top" fontname="sans-serif"
-                <tal:supplies condition="cargo.id in supply_cargos">
-                    style="filled"
-                    fillcolor="#ddaaff"
-                </tal:supplies>
+                id="${cargo.id}"
             ]
         </tal:not_banned>
     </tal:cargos>
