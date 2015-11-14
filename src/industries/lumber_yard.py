@@ -32,6 +32,9 @@ industry = IndustrySecondary(id='lumber_yard',
                     extra_text_industry='STR_EXTRA_LUMBER_YARD' )
 
 industry.economy_variations['FIRS'].enabled = True
+industry.economy_variations['MISTAH_KURTZ'].enabled = True
+industry.economy_variations['MISTAH_KURTZ'].prob_random = '1'
+industry.economy_variations['MISTAH_KURTZ'].prob_in_game = '20'
 
 # non-animated tile, allowed on slopes
 industry.add_tile(id='lumber_yard_tile_1',
