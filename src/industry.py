@@ -831,6 +831,7 @@ class IndustryPrimaryTownProducer(Industry):
 class IndustrySecondary(Industry):
     """ Processing industries: input cargo(s) -> output cargo(s) """
     def __init__(self, **kwargs):
+        kwargs['life_type'] = 'IND_LIFE_TYPE_PROCESSING'
         # !! this will need to handle economy variations also...might be non-viable in current form
         # - do that after snakebite, the CPP templating doesn't handle economy variations either
         self.processed_cargos_and_output_ratios = kwargs['processed_cargos_and_output_ratios'] # this kw is required, error if missing - no .get()
