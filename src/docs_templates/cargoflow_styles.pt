@@ -1,0 +1,18 @@
+<tal:industries repeat="industry registered_industries">
+    #${industry.id} polygon {
+        <tal:lifetype tal:switch="industry.default_industry_properties.life_type">
+            <tal:primary tal:case="'IND_LIFE_TYPE_EXTRACTIVE'">
+                fill: #aaffbb;
+            </tal:primary>
+            <tal:primary tal:case="'IND_LIFE_TYPE_ORGANIC'">
+                fill: red;
+            </tal:primary>
+            <tal:primary tal:case="'IND_LIFE_TYPE_PROCESSING'">
+                fill: #ffcc55;
+            </tal:primary>
+            <tal:primary tal:case="'IND_LIFE_TYPE_BLACK_HOLE'">
+                fill: #88ccff;
+            </tal:primary>
+        </tal:lifetype>
+    }
+</tal:industries>

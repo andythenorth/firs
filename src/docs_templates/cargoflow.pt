@@ -2,6 +2,7 @@
                define="banned_cargos {'mail', 'passengers'}; supply_cargos {'farm_supplies', 'engineering_supplies', 'manufacturing_supplies'}">
 digraph ${economy.id} {
     fontname="sans-serif"
+    stylesheet="cargoflow_styles.css"
     #labelloc=t
     #labeljust=l
     #label="Economy: ${doc_helper.get_economy_name(economy)}"
@@ -29,29 +30,12 @@ digraph ${economy.id} {
                     </tal:cargos>
                 </table>
             >
+            id="${industry.id}"
             href="industries.html#${industry.id}" target="_top" fontname="sans-serif"
             tooltip="${doc_helper.get_industry_name(industry, economy)}"
-            <tal:lifetype tal:switch="industry.default_industry_properties.life_type">
-                <tal:primary tal:case="'IND_LIFE_TYPE_EXTRACTIVE'">
-                    style="filled"
-                    fillcolor="#aaffbb"
-                </tal:primary>
-                <tal:primary tal:case="'IND_LIFE_TYPE_ORGANIC'">
-                    style="filled"
-                    fillcolor="#aaffbb"
-                </tal:primary>
-                <tal:primary tal:case="'IND_LIFE_TYPE_PROCESSING'">
-                    style="filled"
-                    fillcolor="#ffcc55"
-                </tal:primary>
-                <tal:primary tal:case="'IND_LIFE_TYPE_BLACK_HOLE'">
-                    style="filled"
-                    fillcolor="#88ccff"
-                </tal:primary>
-            </tal:lifetype>
             ]
             #<tr><td><img width="100%" src="static/img/industries/${industry.id}.png"/></td></tr>
-    
+
             <tal:cargos repeat="cargo cargos_used_by_industry[economy]['accept_cargo_types']">
                 <tal:not_banned condition="(cargo.id not in banned_cargos) and (cargo.id not in supply_cargos)">
                     C_${cargo.id} -> I_${industry.id}

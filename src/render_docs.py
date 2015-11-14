@@ -207,6 +207,8 @@ def render_docs(doc_list, file_type, use_markdown=False):
                                    doc_name=doc_name)
         if file_type == 'html':
             subdir = 'html'
+        elif file_type == 'css':
+            subdir = 'html' # don't put generated files into static dir, it's a bit confusing, dump them in with the html
         else:
             subdir = ''
         # save the results of templating
@@ -226,6 +228,7 @@ def main():
     txt_docs = ['license', 'readme', 'test_docs']
     markdown_docs = ['changelog']
     graph_docs = ['cargoflow']
+    stylesheets = ['cargoflow_styles']
 
     render_docs(html_docs, 'html')
     render_docs(txt_docs, 'txt')
@@ -233,6 +236,7 @@ def main():
     render_docs(markdown_docs, 'txt')
     render_docs(markdown_docs, 'html', use_markdown=True)
     render_docs(graph_docs, 'dotall')
+    render_docs(stylesheets, 'css')
 
 if __name__ == '__main__':
     main()
