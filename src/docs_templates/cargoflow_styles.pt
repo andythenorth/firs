@@ -1,38 +1,38 @@
 <tal:industries repeat="industry registered_industries">
     #${industry.id} polygon {
         <tal:lifetype tal:switch="industry.default_industry_properties.life_type">
-            <tal:primary tal:case="'IND_LIFE_TYPE_EXTRACTIVE'">
-                fill: #00560D;
-                stroke: #00560D;
-            </tal:primary>
-            <tal:primary tal:case="'IND_LIFE_TYPE_ORGANIC'">
-                fill: #00560D;
-                stroke: #00560D;
-            </tal:primary>
-            <tal:primary tal:case="'IND_LIFE_TYPE_PROCESSING'">
-                fill: #1c448c;
-                stroke: #1c448c;
-            </tal:primary>
-            <tal:primary tal:case="'IND_LIFE_TYPE_BLACK_HOLE'">
-                fill: #882034;
-                stroke: #882034;
-            </tal:primary>
+            <tal:block tal:case="'IND_LIFE_TYPE_EXTRACTIVE'">
+                fill: #2A7234;
+                stroke: #2A7234;
+            </tal:block>
+            <tal:block tal:case="'IND_LIFE_TYPE_ORGANIC'">
+                fill: #2A7234;
+                stroke: #2A7234;
+            </tal:block>
+            <tal:block tal:case="'IND_LIFE_TYPE_PROCESSING'">
+                fill: #C13424;
+                stroke: #C13424;
+            </tal:block>
+            <tal:block tal:case="'IND_LIFE_TYPE_BLACK_HOLE'">
+                fill: #00698C;
+                stroke: #00698C;
+            </tal:block>
         </tal:lifetype>
     }
     #${industry.id} text {
         <tal:lifetype tal:switch="industry.default_industry_properties.life_type">
-            <tal:primary tal:case="'IND_LIFE_TYPE_EXTRACTIVE'">
+            <tal:block tal:case="'IND_LIFE_TYPE_EXTRACTIVE'">
                 fill: white;
-            </tal:primary>
-            <tal:primary tal:case="'IND_LIFE_TYPE_ORGANIC'">
+            </tal:block>
+            <tal:block tal:case="'IND_LIFE_TYPE_ORGANIC'">
                 fill: white;
-            </tal:primary>
-            <tal:primary tal:case="'IND_LIFE_TYPE_PROCESSING'">
+            </tal:block>
+            <tal:block tal:case="'IND_LIFE_TYPE_PROCESSING'">
                 fill: white;
-            </tal:primary>
-            <tal:primary tal:case="'IND_LIFE_TYPE_BLACK_HOLE'">
+            </tal:block>
+            <tal:block tal:case="'IND_LIFE_TYPE_BLACK_HOLE'">
                 fill: #fff;
-            </tal:primary>
+            </tal:block>
         </tal:lifetype>
     }
 </tal:industries>
@@ -40,11 +40,11 @@
 <tal:cargos repeat="cargo registered_cargos">
     <tal:cargo condition="cargo.id not in doc_helper.get_cargoflow_banned_cargos()">
         #${cargo.id} ellipse {
-            fill: #ccd0dc;
-            stroke: #ccd0dc;
+            fill: #D8DBE2;
+            stroke: #D8DBE2;
             <tal:supplies condition="cargo.id in doc_helper.get_cargoflow_supply_cargos()">
-                fill: #CFE8EF;
-                stroke: #CFE8EF;
+                fill: #E0E2DB;
+                stroke: #E0E2DB;
             </tal:supplies>
         }
     <tal:cargo>
