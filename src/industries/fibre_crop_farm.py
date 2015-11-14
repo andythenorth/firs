@@ -31,7 +31,7 @@ industry = IndustryPrimaryOrganic(id='fibre_crop_farm',
                     fund_cost_multiplier='49',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS' )
 
-industry.economy_variations['MISTAH_KURTZ'].enabled = True
+# currently not used in any economy
 
 industry.add_tile(id='fibre_crop_farm_tile_1',
                   location_checks=TileLocationChecks(disallow_steep_slopes=True,
