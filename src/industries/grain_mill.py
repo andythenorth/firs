@@ -13,8 +13,8 @@ industry = IndustrySecondary(id='grain_mill',
                     prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL',
                     prod_cargo_types=['FOOD'],
                     layouts='AUTO',
-                    prob_in_game='10',
                     prob_random='10',
+                    prob_in_game='10',
                     prod_multiplier='[0, 0]',
                     substitute='0',
                     new_ind_msg='TTD_STR_NEWS_INDUSTRY_CONSTRUCTION',
@@ -38,6 +38,8 @@ industry = IndustrySecondary(id='grain_mill',
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_TROPIC'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
+industry.economy_variations['MISTAH_KURTZ'].prob_random = '1'
+industry.economy_variations['MISTAH_KURTZ'].prob_in_game = '20'
 
 industry.add_tile(id='grain_mill_tile_1',
                   animation_length=6,

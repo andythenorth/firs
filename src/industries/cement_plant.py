@@ -35,6 +35,9 @@ industry = IndustrySecondary(id='cement_plant',
                     extra_text_industry='STR_EXTRA_CEMENT_PLANT' )
 
 industry.economy_variations['FIRS'].enabled = True
+industry.economy_variations['MISTAH_KURTZ'].enabled = True
+industry.economy_variations['MISTAH_KURTZ'].prob_random = '1'
+industry.economy_variations['MISTAH_KURTZ'].prob_in_game = '20'
 
 industry.add_tile(id='cement_plant_tile_1',
                   animation_length=7,

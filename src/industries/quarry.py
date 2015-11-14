@@ -35,6 +35,9 @@ industry = IndustryPrimaryExtractive(id='quarry',
                     template="refactor_primary_waterpit.pypnml" )
 
 industry.economy_variations['FIRS'].enabled = True
+industry.economy_variations['MISTAH_KURTZ'].enabled = True
+industry.economy_variations['MISTAH_KURTZ'].prob_random = '1'
+industry.economy_variations['MISTAH_KURTZ'].prob_in_game = '20'
 
 # 2 tiles for this industry: pit outer tile cannot be on slopes; pit inner tiles and processor tiles can be
 # cases for both tiles ensure that tiles can only be built at same height as north tile
