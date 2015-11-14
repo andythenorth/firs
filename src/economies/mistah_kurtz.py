@@ -29,4 +29,6 @@ economy = Economy(id = "MISTAH_KURTZ",
                             'clay', # adding to end, fix later
                             'coal',
                             'copper',
+                            'livestock',
+                            'sand',
                             'stone'])

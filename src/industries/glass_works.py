@@ -36,6 +36,10 @@ industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True
 industry.economy_variations['BASIC_TEMPERATE'].prod_cargo_types = ['GOOD', 'MNSP']
 
+industry.economy_variations['MISTAH_KURTZ'].enabled = True
+industry.economy_variations['MISTAH_KURTZ'].prob_random = '1'
+industry.economy_variations['MISTAH_KURTZ'].prob_in_game = '20'
+
 industry.add_tile(id='glass_works_tile_1',
                   animation_length=71,
                   animation_looping=True,
