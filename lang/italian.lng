@@ -37,6 +37,7 @@ STR_CARGO_NAME_BUILDING_MATERIALS                                               
 STR_CARGO_NAME_CHEMICALS                                                        :{G=m}Prodotti chimici
 STR_CARGO_NAME_CLAY                                                             :{G=f}Argilla
 STR_CARGO_NAME_COFFEE                                                           :{G=m}Caffé
+STR_CARGO_NAME_COPPER                                                           :Rame
 STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :{G=f}Forniture meccaniche
 STR_CARGO_NAME_FIBRES                                                           :{G=f}Fibre tessili
 STR_CARGO_NAME_FISH                                                             :{G=m}Pesce
@@ -64,6 +65,7 @@ STR_CARGO_UNIT_BUILDING_MATERIALS                                               
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} di prodotti chimici
 STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} di argilla
 STR_CARGO_UNIT_COFFEE                                                           :{SIGNED_WORD} sacc{P 0 o hi} di caffé
+STR_CARGO_UNIT_COPPER                                                           :{WEIGHT} di rame
 STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} cass{P 0 a e} di forniture meccaniche
 STR_CARGO_UNIT_FIBRES                                                           :{SIGNED_WORD} ball{P 0 a e} di fibre tessili
 STR_CARGO_UNIT_FISH                                                             :{WEIGHT} di pesce
@@ -91,6 +93,7 @@ STR_CID_BUILDING_MATERIALS                                                      
 STR_CID_CHEMICALS                                                               :{TINYFONT}PC
 STR_CID_CLAY                                                                    :{TINYFONT}AR
 STR_CID_COFFEE                                                                  :{TINYFONT}CF
+STR_CID_COPPER                                                                  :{TINYFONT}RA
 STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}FM
 STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}FA
 STR_CID_FIBRES                                                                  :{TINYFONT}FT
@@ -115,7 +118,7 @@ STR_ERR_INCOMPATIBLE_SET                                                        
 STR_ERR_INCOMPATIBLE_PARAM_CANSET                                               :{ORANGE}E02: {YELLOW}Parametro incompatibile: {ORANGE}Il parametro n. 2 del CanSet dev'essere impostato a 0 per funzionare con FIRS. {YELLOW}Consulta il Leggimi di FIRS: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 STR_ERR_INCOMPATIBLE_PARAM_CITYSET                                              :{ORANGE}E02: {YELLOW}Parametro incompatibile: {ORANGE}Il parametro n. 2 del NA City Set dev'essere impostato a 0 per funzionare con FIRS. {YELLOW}Consulta il Leggimi di FIRS: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 STR_ERR_INCOMPATIBLE_SET_TTRS_VERSION                                           :{ORANGE}E04: {YELLOW}Versione incompatibile: {ORANGE}Ci vuole la versione 3.11 o più recente del Total Town Replacement Set. {YELLOW}Consulta il Leggimi di FIRS: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
-STR_ERR_OPENTTD_VERSION                                                         :{ORANGE}E00: FIRS ha bisogno almeno di OpenTTD 1.2.0 / trunk r22780 (o più recente). {YELLOW}Consulta il Leggimi di FIRS: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_OPENTTD_VERSION                                                         :{ORANGE}E00: FIRS ha bisogno almeno di OpenTTD 1.6.0 / trunk r27279 (o più recente). {YELLOW}Consulta il Leggimi di FIRS: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 
 STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE                                             :deve stare più in basso delle nevi perenni.
 STR_ERR_LOCATION_NOT_ON_WATER                                                   :deve stare sulla terra, non sull'acqua.
@@ -123,30 +126,31 @@ STR_ERR_LOCATION_NOT_IN_DESERT                                                  
 STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE                                             :non può stare su terreno in pendenza.
 STR_ERR_LOCATION_LIMIT_1_PER_TOWN                                               :si può costruire solo un'industria di questo tipo per ogni città
 
-STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}Produzione:{}  2t ogni 8t di bauxite consegnate{}  2t ogni 8t di prodotti chimici consegnate{}  4t ogni 8t di metalli di scarto consegnate{}{}Il prodotto aumenta se due o più tipi di merci sono consegnati entro un intervallo inferiore a un mese.
+STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}Produzione:{}  2t ogni 8t di bauxite consegnate{}  2t ogni 8t di prodotti chimici consegnate{}  4t ogni 8t di metalli di scarto consegnate{}{}Il prodotto aumenta se due o più tipi di merci sono consegnati entro un intervallo inferiore a tre mesi.
 STR_EXTRA_BIOREFINERY                                                           :{BLACK}Produzione:{}  6000l ogni 8t di grano consegnate{} 6000l ogni 8t di zucchero consegnati
-STR_EXTRA_BREWERY                                                               :{BLACK}Produzione:{}  3000l ogni 8 casse di forniture industriali consegnate{}{STRING} {STRING}{}Il prodotto aumenta se forniture industriali e un altro tipo di merce sono consegnate entro un intervallo inferiore a un mese.
+STR_EXTRA_BREWERY                                                               :{BLACK}Produzione:{}  3000l ogni 8 casse di forniture industriali consegnate{}{STRING} {STRING}{}Il prodotto aumenta se forniture industriali e un altro tipo di merce sono consegnate entro un intervallo inferiore a tre mesi.
 STR_EXTRA_BREWERY_GRAIN_SUBSTR                                                  :5000l ogni 8t di grano consegnate{}
 STR_EXTRA_BREWERY_FRUIT_SUBSTR                                                  :5000l ogni 8t di frutta consegnate{}
-STR_EXTRA_BRICKWORKS                                                            :{BLACK}Produzione:{}  2t ogni 8t di carbone consegnate{}  2t ogni 8t di sabbia consegnate{}  4t ogni 8t d'argilla consegnate{}{}Il prodotto aumenta se due o più tipi di merci sono consegnate entro un intervallo inferiore a un mese.
-STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Produzione:{}  2t ogni 8t di carbone consegnate{}  2t ogni 8t d'argilla consegnate{}  4t ogni 8t di pietre consegnate{}{}Il prodotto aumenta se due o più tipi di merci sono consegnate entro un intervallo inferiore a un mese.
+STR_EXTRA_BRICKWORKS                                                            :{BLACK}Produzione:{}  2t ogni 8t di carbone consegnate{}  2t ogni 8t di sabbia consegnate{}  4t ogni 8t d'argilla consegnate{}{}Il prodotto aumenta se due o più tipi di merci sono consegnate entro un intervallo inferiore a tre mesi.
+STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Produzione:{}  2t ogni 8t di carbone consegnate{}  2t ogni 8t d'argilla consegnate{}  4t ogni 8t di pietre consegnate{}{}Il prodotto aumenta se due o più tipi di merci sono consegnate entro un intervallo inferiore a tre mesi.
 STR_EXTRA_CHEMICAL_PLANT                                                        :{BLACK}Produzione:{}  6,000l ogni 8,000l di petrolio consegnato{} 6,000l ogni 8t di nitrati consegnati
-STR_EXTRA_DAIRY                                                                 :{BLACK}Produzione:{}  3t ogni 8t di forniture industriali consegnate{}  5t ogni 8000l di latte consegnati{}{}Il prodotto aumenta se entrambe le merci sono consegnate entro un intervallo inferiore a un mese.
+STR_EXTRA_COPPER_REFINERY                                                       :{BLACK}Produzione:{} 5t ogni 8t di rame consegnate{} 3t ogni 8000l di prodotti chimici consegnati{}{}Il prodotto aumenta se due o più tipi di merci sono consegnati entro un intervallo inferiore a tre mesi.
+STR_EXTRA_DAIRY                                                                 :{BLACK}Produzione:{}  3t ogni 8t di forniture industriali consegnate{}  5t ogni 8000l di latte consegnati{}{}Il prodotto aumenta se entrambe le merci sono consegnate entro un intervallo inferiore a tre mesi.
 STR_EXTRA_FERTILIZER_PLANT                                                      :{BLACK}Produzione:{}  8 casse ogni 8000l di prodotti chimici consegnati
-STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Produzione:{}  3t ogni 8t di forniture industriali consegnate{}  5t ogni 8t di pesce consegnate{}{}Il prodotto aumenta se entrambe le merci sono consegnate entro un intervallo inferiore a un mese.
+STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Produzione:{}  3t ogni 8t di forniture industriali consegnate{}  5t ogni 8t di pesce consegnate{}{}Il prodotto aumenta se entrambe le merci sono consegnate entro un intervallo inferiore a tre mesi.
 STR_EXTRA_FOOD_PROCESSING_PLANT                                                 :{BLACK}Produzione:{} 6t ogni 8 tonnellate di fagioli consegnate{} 6t ogni 8t di frutta consegnata
-STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Produzione:{} 3 casse ogni 8 casse di forniture industriali consegnate{} 5 casse ogni 8t di prodotti in legno consegnate{}{}Il prodotto aumenta se entrambe le merci sono consegnate entro un intervallo inferiore a un mese.
-STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Produce oggetti in vetro come bottiglie, vasi e finestre.{}{}Produzione:{}  6t ogni 8t di sabbia consegnate{}  2t ogni 8000l di prodotti chimici consegnati{}{}Il prodotto aumenta se entrambe le merci sono consegnate entro un intervallo inferiore a un mese.
-STR_EXTRA_GRAIN_MILL                                                            :{BLACK}Produzione:{}  3t ogni 8 casse di forniture industriali consegnate{}  5t ogni 8t di grano consegnate{}{}La produzionoe aumenta se entrambe le merci sono consegnate entro un intervallo inferiore a un mese.
-STR_EXTRA_IRON_WORKS                                                            :{BLACK}Produzione:{} 3t ogni 8t di minerale di ferro consegnate{} 3t ogni 8t di legname consegnate{} 2t ogni 8t di sabbia consegnata{}{}Il prodotto aumenta se due o piú tipi di merci sono consegnate entro un intervallo inferiore a un mese.
-STR_EXTRA_LIME_KILN                                                             :{BLACK}Produzione:{}  3t ogni 8t di pietre consegnate{}  3t ogni 8t di carbone consegnate{}{}Il prodotto aumenta se entrambe le merci sono consegnate entro un intervallo inferiore a un mese.
-STR_EXTRA_LUMBER_YARD                                                           :{BLACK}Costruisce oggetti come palizzate, steccati o pali.{}{}Produzione:{}  2t ogni 8t di prodotti chimici consegnate{}  6t ogni 8t di prodotti in legno consegnate{}{}Il prodotto aumenta se entrambe le merci sono consegnate entro un intervallo inferiore a un mese.
+STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Produzione:{} 3 casse ogni 8 casse di forniture industriali consegnate{} 5 casse ogni 8t di prodotti in legno consegnate{}{}Il prodotto aumenta se entrambe le merci sono consegnate entro un intervallo inferiore a tre mesi.
+STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Produce oggetti in vetro come bottiglie, vasi e finestre.{}{}Produzione:{}  6t ogni 8t di sabbia consegnate{}  2t ogni 8000l di prodotti chimici consegnati{}{}Il prodotto aumenta se entrambe le merci sono consegnate entro un intervallo inferiore a tre mesi.
+STR_EXTRA_GRAIN_MILL                                                            :{BLACK}Produzione:{}  3t ogni 8 casse di forniture industriali consegnate{}  5t ogni 8t di grano consegnate{}{}La produzionoe aumenta se entrambe le merci sono consegnate entro un intervallo inferiore a tre mesi.
+STR_EXTRA_IRON_WORKS                                                            :{BLACK}Produzione:{} 3t ogni 8t di minerale di ferro consegnate{} 3t ogni 8t di legname consegnate{} 2t ogni 8t di sabbia consegnata{}{}Il prodotto aumenta se due o piú tipi di merci sono consegnate entro un intervallo inferiore a tre mesi.
+STR_EXTRA_LIME_KILN                                                             :{BLACK}Produzione:{}  3t ogni 8t di pietre consegnate{}  3t ogni 8t di carbone consegnate{}{}Il prodotto aumenta se entrambe le merci sono consegnate entro un intervallo inferiore a tre mesi.
+STR_EXTRA_LUMBER_YARD                                                           :{BLACK}Costruisce oggetti come palizzate, steccati o pali.{}{}Produzione:{}  2t ogni 8t di prodotti chimici consegnate{}  6t ogni 8t di prodotti in legno consegnate{}{}Il prodotto aumenta se entrambe le merci sono consegnate entro un intervallo inferiore a tre mesi.
 STR_EXTRA_MACHINE_SHOP                                                          :{BLACK}Costruisce e ripara macchinari.{}{}Produzione:{}  8 casse ogni 8000l di carburante consegnati{}  8 casse ogni 8t di metalli consegnate.
-STR_EXTRA_MEAT_PACKER                                                           :{BLACK}Produzione:{}  3t ogni 8t di forniture industriali consegnate{}  5t ogni 8t di bestiame consegnate{}{}Il prodotto aumenta se entrambe le merci sono consegnate entro un intervallo inferiore a un mese.
-STR_EXTRA_METAL_FABRICATION_PLANT                                               :{BLACK}Produce parti meccaniche di metallo.{}{}Produzione:{}  2t ogni 8000l di prodotti chimici consegnati{}  6t ogni 8t di metalli consegnate{}{}Il prodotto aumenta se entrambe le merci sono consegnate entro un intervallo inferiore a un mese.
-STR_EXTRA_METAL_FOUNDRY                                                         :{BLACK}Produce oggetti metallici, come utensili e parti meccaniche.{}{}Produzione:{}  2 casse ogni 8000l di prodotti chimici consegnati{}  6 casse ogni 8t di metalli consegnate{}{}Il prodotto aumenta se entrambe le merci sono consegnate entro un intervallo inferiore a un mese.
+STR_EXTRA_MEAT_PACKER                                                           :{BLACK}Produzione:{}  3t ogni 8t di forniture industriali consegnate{}  5t ogni 8t di bestiame consegnate{}{}Il prodotto aumenta se entrambe le merci sono consegnate entro un intervallo inferiore a tre mesi.
+STR_EXTRA_METAL_FABRICATION_PLANT                                               :{BLACK}Produce parti meccaniche di metallo.{}{}Produzione:{}  2t ogni 8000l di prodotti chimici consegnati{}  6t ogni 8t di metalli consegnate{}{}Il prodotto aumenta se entrambe le merci sono consegnate entro un intervallo inferiore a tre mesi.
+STR_EXTRA_METAL_FOUNDRY                                                         :{BLACK}Produce oggetti metallici, come utensili e parti meccaniche.{}{}Produzione:{}  2 casse ogni 8000l di prodotti chimici consegnati{}  6 casse ogni 8t di metalli consegnate{}{}Il prodotto aumenta se entrambe le merci sono consegnate entro un intervallo inferiore a tre mesi.
 STR_EXTRA_OIL_REFINERY                                                          :{BLACK}Lavora il petrolio per produrre carburanti e prodotti chimici.{}{}6000l di produzione ogni 8000l consegnati
-STR_EXTRA_PAPER_MILL                                                            :{BLACK}Tritura la legna per produrre carta e imballaggi.{}{}Produzione:{}  4t ogni 8t di legname consegnate{}  2t ogni 8t d'argilla consegnate{}  2t ogni 8000l di prodotti chimici consegnati{}{}Il prodotto aumenta se due o più tipi di merci sono consegnate entro un intervallo inferiore a un mese.
+STR_EXTRA_PAPER_MILL                                                            :{BLACK}Tritura la legna per produrre carta e imballaggi.{}{}Produzione:{}  4t ogni 8t di legname consegnate{}  2t ogni 8t d'argilla consegnate{}  2t ogni 8000l di prodotti chimici consegnati{}{}Il prodotto aumenta se due o più tipi di merci sono consegnate entro un intervallo inferiore a tre　mesi.
 STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}Costruisce prodotti in plastica come imballaggi e prodotti di consumo.{}{}Prodouzione:{} {STRING} {STRING}
 STR_EXTRA_PLASTICS_PLANT_CHEMICALS_SUBSTR                                       :6 casse ogni 8,000l di prodotti chimici consegnati{}
 STR_EXTRA_PLASTICS_PLANT_PLANT_FIBRES_SUBSTR                                    :6 casse ogni 8 balle di fibre tessili consegnate{}
@@ -154,9 +158,9 @@ STR_EXTRA_RECYCLING_PLANT                                                       
 STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}La quantità di prodotto dipende dalle dimensioni della città.
 STR_EXTRA_SAWMILL                                                               :{BLACK}Taglia la legna.{}{}Produzione:{}   6t ogni 8t di legna consegnate.
 STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Costruisce oggetti metallici come attrezzi edili e agricoli, e ferri di cavallo.{}{}Produzione:{}  8 casse ogni 8t di metalli consegnate.
-STR_EXTRA_STEELMILL                                                             :{BLACK}Produzione:{} 3t ogni 8t di minerale di ferro consegnate{} 2t ogni 8t di carbone consegnate{} 3t ogni 8t di metalli di scarto consegnate{}{}Il prodotto aumenta se due o più tipi di merci sono consegnate entro un intervallo inferiore a un mese.
-STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Produzione:{}  3t ogni 8t di forniture industriali consegnate{}  5t ogni 8t di canna da zucchero consegnate{}{}Il prodotto aumentase entrambe le merci sono consegnate entro un intervallo inferiore a un mese.
-STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Produzione:{}  3 casse ogni 8t di forniture industriali consegnate{} {STRING} {STRING}{}Il prodotto aumenta se riceve forniture industriali entro un mese dalla consegna di altre merci.
+STR_EXTRA_STEELMILL                                                             :{BLACK}Produzione:{} 3t ogni 8t di minerale di ferro consegnate{} 2t ogni 8t di carbone consegnate{} 3t ogni 8t di metalli di scarto consegnate{}{}Il prodotto aumenta se due o più tipi di merci sono consegnate entro un intervallo inferiore a tre mesi.
+STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Produzione:{}  3t ogni 8t di forniture industriali consegnate{}  5t ogni 8t di canna da zucchero consegnate{}{}Il prodotto aumentase entrambe le merci sono consegnate entro un intervallo inferiore a tre mesi.
+STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Produzione:{}  3 casse ogni 8t di forniture industriali consegnate{} {STRING} {STRING}{}Il prodotto aumenta se riceve forniture industriali entro tre mesi dalla consegna di altre merci.
 STR_EXTRA_TEXTILE_MILL_WOOL_SUBSTR                                              :5 casse ogni 8 balle di lana consegnate{}
 STR_EXTRA_TEXTILE_MILL_PLANT_FIBRES_SUBSTR                                      :5 casse ogni 8 balle di fibre tessili consegnate{}
 STR_EXTRA_VEHICLE_FACTORY                                                       :{BLACK}Produzione:{} 8 casse ogni 8 casse di parti per veicoli consegnate{} 8 casse ogni 8 casse di forniture industriali consegnate
@@ -182,6 +186,7 @@ STR_FUND_FIBRE_CROP_FARM                                                        
 STR_FUND_FOREST                                                                 :{}{BLACK}Luogo: {YELLOW}Non si può fondare nel deserto.
 STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}Luogo: {YELLOW}Non si può fondare sulla neve.
 STR_FUND_RUBBER_PLANTATION                                                      :{}{BLACK}Luogo: {YELLOW}Non si può fondare sulla neve o nel deserto.
+STR_FUND_VINEYARD                                                               :{}{BLACK}Luogo: {YELLOW}Non si può fondare sulla neve o nel deserto.
 
 
 STR_FUND_AVAILABLE_FROM                                                         :{}{BLACK}Disponibile da: {YELLOW}{COMMA}
@@ -206,6 +211,7 @@ STR_IND_CEMENT_PLANT                                                            
 STR_IND_CHEMICAL_PLANT                                                          :{G=m}Stabilimento chimico
 STR_IND_CLAY_PIT                                                                :{G=f}Cava di argilla
 STR_IND_COFFEE_ESTATE                                                           :{G=f}Piantagione di caffé
+STR_IND_COPPER_REFINERY                                                         :{G=f}Raffineria di rame
 STR_IND_FIBRE_CROP_FARM                                                         :{G=f}Piantagione di fibre tessili
 STR_IND_DAIRY                                                                   :{G=f}Azienda casearia
 STR_IND_DAIRYFARM                                                               :{G=m}Allevamento di bovini
@@ -247,6 +253,7 @@ STR_IND_SUGAR_REFINERY                                                          
 STR_IND_TEXTILE_MILL                                                            :{G=m}Tessilificio
 STR_IND_TRADING_POST                                                            :{G=m}Emporio commerciale
 STR_IND_VEHICLE_FACTORY                                                         :{G=f}Fabbrica di veicoli
+STR_IND_VINEYARD                                                                :Vigna
 
 STR_STATION_ANIMALS                                                             :Mercato del bestiame
 STR_STATION_FARM                                                                :Fattorie

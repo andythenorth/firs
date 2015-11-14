@@ -37,6 +37,7 @@ STR_CARGO_NAME_BUILDING_MATERIALS                                               
 STR_CARGO_NAME_CHEMICALS                                                        :{G=p}Chemikalien
 STR_CARGO_NAME_CLAY                                                             :{G=p}Ton
 STR_CARGO_NAME_COFFEE                                                           :{G=m}Kaffee
+STR_CARGO_NAME_COPPER                                                           :{G=n}Kupfer
 STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :{G=p}Ersatzteile
 STR_CARGO_NAME_FIBRES                                                           :{G=p}Pflanzenfasern
 STR_CARGO_NAME_FISH                                                             :{G=m}Fisch
@@ -64,6 +65,7 @@ STR_CARGO_UNIT_BUILDING_MATERIALS                                               
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} Chemikalien
 STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} Ton
 STR_CARGO_UNIT_COFFEE                                                           :{SIGNED_WORD} S{P 0 ack äcke} Kaffee
+STR_CARGO_UNIT_COPPER                                                           :{WEIGHT} Kupfer
 STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} Kiste{P 0 "" n} Ersatzteile
 STR_CARGO_UNIT_FIBRES                                                           :{SIGNED_WORD} Ballen Pflanzenfasern
 STR_CARGO_UNIT_FISH                                                             :{WEIGHT} Fisch
@@ -91,6 +93,7 @@ STR_CID_BUILDING_MATERIALS                                                      
 STR_CID_CHEMICALS                                                               :{TINYFONT}CH
 STR_CID_CLAY                                                                    :{TINYFONT}TN
 STR_CID_COFFEE                                                                  :{TINYFONT}KF
+STR_CID_COPPER                                                                  :{TINYFONT}KP
 STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}ET
 STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}LB
 STR_CID_FIBRES                                                                  :{TINYFONT}PF
@@ -115,7 +118,7 @@ STR_ERR_INCOMPATIBLE_SET                                                        
 STR_ERR_INCOMPATIBLE_PARAM_CANSET                                               :{ORANGE}E02: {YELLOW}Inkompatible Parameter: {ORANGE}CanSet: Parameter 2 muss für Kompatibilität mit FIRS 0 sein. {YELLOW}Siehe FIRS Readme: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 STR_ERR_INCOMPATIBLE_PARAM_CITYSET                                              :{ORANGE}E02: {YELLOW}Inkompatible Parameter: {ORANGE}NA City-Set: Parameter 2 muss für Kompatibilität mit FIRS 0 sein. {YELLOW}Siehe FIRS Readme: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 STR_ERR_INCOMPATIBLE_SET_TTRS_VERSION                                           :{ORANGE}E04: {YELLOW}Inkompatible Version: {ORANGE}Total Town Replacement Set: Für FIRS-Kompatibilität Version 3.11 oder höher erforderlich. {YELLOW}Siehe FIRS Readme: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
-STR_ERR_OPENTTD_VERSION                                                         :{ORANGE}E00: FIRS benötigt mindestens OpenTTD 1.2.0 / trunk r22780. {YELLOW}Siehe FIRS Readme: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_OPENTTD_VERSION                                                         :{ORANGE}E00: FIRS benötigt mindestens OpenTTD 1.6.0 / trunk r27279. {YELLOW}Siehe FIRS Readme: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 
 STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE                                             :muss unterhalb der Schneegrenze errichtet werden.
 STR_ERR_LOCATION_NOT_ON_WATER                                                   :muss an Land errichtet werden.
@@ -123,30 +126,31 @@ STR_ERR_LOCATION_NOT_IN_DESERT                                                  
 STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE                                             :kann nicht an Steilhängen errichtet werden.
 STR_ERR_LOCATION_LIMIT_1_PER_TOWN                                               :pro Stadt ist nur eine Industrie dieses Typs erlaubt
 
-STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}Produktion:{}  2t pro gelieferter 8t Bauxit{}  2t pro gelieferter 8,000l Chemikalien{}  4t pro gelieferter 8t Altmetall{}{}Produktion steigt, wenn zwei oder mehr Frachtarten innerhalb eines Monats geliefert werden.
+STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}Produktion:{}  2t pro gelieferter 8t Bauxit{}  2t pro gelieferter 8,000l Chemikalien{}  4t pro gelieferter 8t Altmetall{}{}Produktion steigt, wenn zwei oder mehr Frachtarten innerhalb von drei Monaten geliefert werden.
 STR_EXTRA_BIOREFINERY                                                           :{BLACK}Produktion:{}  6,000l Produktion pro gelieferter 8t Getreide. 6,000l pro gelieferter 8t Zucker
-STR_EXTRA_BREWERY                                                               :{BLACK}Produktion:{}  3,000l pro gelieferter 8 Kisten Produktionsgüter{} {STRING} {STRING}{}Produktion steigt, wenn Produktionsgüter und andere benötigte Güter innerhalb von zwei Monaten geliefert werden.
+STR_EXTRA_BREWERY                                                               :{BLACK}Produktion:{}  3,000l pro gelieferter 8 Kisten Produktionsgüter{} {STRING} {STRING}{}Produktion steigt, wenn Produktionsgüter und andere benötigte Güter innerhalb von drei Monaten geliefert werden.
 STR_EXTRA_BREWERY_GRAIN_SUBSTR                                                  :5,000l pro gelieferter 8t Getreide{}
 STR_EXTRA_BREWERY_FRUIT_SUBSTR                                                  :5,000l pro gelieferter 8t Früchte{}
-STR_EXTRA_BRICKWORKS                                                            :{BLACK}Produktion:{}  2t pro gelieferter 8t Kohle{}  2t pro gelieferter 8t Sand{}  4t pro gelieferter 8t Ton{}{}Produktion steigt, wenn zwei oder mehr Frachtarten innerhalb eines Monats geliefert werden.
-STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Produktion:{}  2t pro gelieferter 8t Kohle{}  2t pro gelieferter 8t Ton{}  4t pro gelieferter 8t Steine{}{}Produktion steigt, wenn zwei oder mehr Frachtarten innerhalb eines Monats geliefert werden.
+STR_EXTRA_BRICKWORKS                                                            :{BLACK}Produktion:{}  2t pro gelieferter 8t Kohle{}  2t pro gelieferter 8t Sand{}  4t pro gelieferter 8t Ton{}{}Produktion steigt, wenn zwei oder mehr Frachtarten innerhalb von drei Monaten geliefert werden.
+STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Produktion:{}  2t pro gelieferter 8t Kohle{}  2t pro gelieferter 8t Ton{}  4t pro gelieferter 8t Steine{}{}Produktion steigt, wenn zwei oder mehr Frachtarten innerhalb von drei Monaten geliefert werden.
 STR_EXTRA_CHEMICAL_PLANT                                                        :{BLACK}Produktion:{}  6,000l pro gelieferter 8,000l Öl{}  6,000l pro gelieferter 8t Nitrate
-STR_EXTRA_DAIRY                                                                 :{BLACK}Produktion:{}  3t pro gelieferter 8 Kisten Produktionsgüter{}  5t pro gelieferter 8,000l Milch{}{}Produktion steigt, wenn beide Frachtarten innerhalb eines Monats geliefert werden.
+STR_EXTRA_COPPER_REFINERY                                                       :{BLACK}Produktion:{} 5t pro gelieferter 8t Kupfererz{} 3t pro gelieferter 8,000l Chemikalien{}{} Produktion steigt, wenn zwei oder mehr Frachtarten innerhalb von drei Monaten geliefert werden.
+STR_EXTRA_DAIRY                                                                 :{BLACK}Produktion:{}  3t pro gelieferter 8 Kisten Produktionsgüter{}  5t pro gelieferter 8,000l Milch{}{}Produktion steigt, wenn beide Frachtarten innerhalb von drei Monaten geliefert werden.
 STR_EXTRA_FERTILIZER_PLANT                                                      :{BLACK}Produktion:{}  8 Kisten pro gelieferter 8,000l Chemikalien
-STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Produktion:{}  3t pro gelieferter 8 Kisten Produktionsgüter{}  5t pro gelieferter 8t Fisch{}{}Produktion steigt, wenn beide Frachtarten innerhalb eines Monats geliefert werden.
+STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Produktion:{}  3t pro gelieferter 8 Kisten Produktionsgüter{}  5t pro gelieferter 8t Fisch{}{}Produktion steigt, wenn beide Frachtarten innerhalb von drei Monaten geliefert werden.
 STR_EXTRA_FOOD_PROCESSING_PLANT                                                 :{BLACK}Produktion:{}  6t pro gelieferter 8t Bohnen{}  6t pro gelieferter 8t Früchte
-STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Produktion:{}  3 Kisten pro gelieferter 8 Kisten Produktionsgüter{}  5t pro gelieferter 8t Schnittholz{}{}Produktion steigt, wenn beide Frachtarten innerhalb eines Monats geliefert werden.
-STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Produziert Glaserzeugnisse wie z.B. Flaschen, Gläser und Fensterscheiben.{}{}Produktion:{}  6t pro gelieferter 8t Sand{}  2t pro gelieferter 8,000l Chemikalien{}{}Produktion steigt, wenn beide Frachtarten innerhalb eines Monats geliefert werden.
-STR_EXTRA_GRAIN_MILL                                                            :{BLACK}Produktion:{}  3t pro gelieferter 8 Kisten Produktionsgüter{}  5t pro gelieferter 8t Getreide{}{}Produktion steigt, wenn beide Frachtarten innerhalb eines Monats geliefert werden.
-STR_EXTRA_IRON_WORKS                                                            :{BLACK}Produktion:{}  3t pro gelieferter 8t Eisenerz{} 3t pro gelieferter 8t Holz{} 2t pro gelieferter 8t Sand{}{}Produktion steigt, wenn zwei oder mehr Frachtarten innerhalb eines Monats geliefert werden.
-STR_EXTRA_LIME_KILN                                                             :{BLACK}Produktion:{}  3t pro gelieferter 8t Steine{}  3t pro gelieferter 8t Kohle{}{}Produktion steigt, wenn beide Frachtarten innerhalb eines Monats geliefert werden.
-STR_EXTRA_LUMBER_YARD                                                           :{BLACK}Verarbeitet Schnittholz zu fertigen Holzprodukten.{}{}Produktion:{}  2t pro gelieferter 8,000l Chemikalien{}  6t pro gelieferter 8t Schnittholz{}{}Produktion steigt, wenn beide Frachtarten innerhalb eines Monats geliefert werden.
+STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Produktion:{}  3 Kisten pro gelieferter 8 Kisten Produktionsgüter{}  5t pro gelieferter 8t Schnittholz{}{}Produktion steigt, wenn beide Frachtarten innerhalb von drei Monaten geliefert werden.
+STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Produziert Glaserzeugnisse wie z.B. Flaschen, Gläser und Fensterscheiben.{}{}Produktion:{}  6t pro gelieferter 8t Sand{}  2t pro gelieferter 8,000l Chemikalien{}{}Produktion steigt, wenn beide Frachtarten innerhalb von drei Monaten geliefert werden.
+STR_EXTRA_GRAIN_MILL                                                            :{BLACK}Produktion:{}  3t pro gelieferter 8 Kisten Produktionsgüter{}  5t pro gelieferter 8t Getreide{}{}Produktion steigt, wenn beide Frachtarten innerhalb von drei Monaten geliefert werden.
+STR_EXTRA_IRON_WORKS                                                            :{BLACK}Produktion:{}  3t pro gelieferter 8t Eisenerz{} 3t pro gelieferter 8t Holz{} 2t pro gelieferter 8t Sand{}{}Produktion steigt, wenn zwei oder mehr Frachtarten innerhalb von drei Monaten geliefert werden.
+STR_EXTRA_LIME_KILN                                                             :{BLACK}Produktion:{}  3t pro gelieferter 8t Steine{}  3t pro gelieferter 8t Kohle{}{}Produktion steigt, wenn beide Frachtarten innerhalb von drei Monaten geliefert werden.
+STR_EXTRA_LUMBER_YARD                                                           :{BLACK}Verarbeitet Schnittholz zu fertigen Holzprodukten.{}{}Produktion:{}  2t pro gelieferter 8,000l Chemikalien{}  6t pro gelieferter 8t Schnittholz{}{}Produktion steigt, wenn beide Frachtarten innerhalb von drei Monaten geliefert werden.
 STR_EXTRA_MACHINE_SHOP                                                          :{BLACK}Baut und wartet Maschinen.{}{}Produktion:{} 8 Kisten pro gelieferter 8,000l Treibstoff{} 8 Kisten pro gelieferter 8t Metall
-STR_EXTRA_MEAT_PACKER                                                           :{BLACK}Produziert:{}  3t pro gelieferter 8 Kisten Produktionsgüter{}  5t pro gelieferter 8t Vieh{}{}Produktion steigt, wenn beide Frachtarten innerhalb eines Monats geliefert werden.
-STR_EXTRA_METAL_FABRICATION_PLANT                                               :{BLACK}Produziert lackierte Metallgegenstände.{}{}Produktion:{}2t pro gelieferter 8,000l Chemikalien{}6t pro gelieferter 8t Metall{}{}Produktion steigt, wenn beide Frachtarten innerhalb eines Monats geliefert werden.
-STR_EXTRA_METAL_FOUNDRY                                                         :{BLACK}Produziert Metallgegenstände wie Werkzeuge und Ersatzteile.{}{}2 Kisten pro gelieferter 8,000l Chemikalien{}6 Kisten pro gelieferter 8t Metall{}{}Produktion steigt, wenn beide Frachtarten innerhalb eines Monats geliefert werden.
+STR_EXTRA_MEAT_PACKER                                                           :{BLACK}Produziert:{}  3t pro gelieferter 8 Kisten Produktionsgüter{}  5t pro gelieferter 8t Vieh{}{}Produktion steigt, wenn beide Frachtarten innerhalb von drei Monaten geliefert werden.
+STR_EXTRA_METAL_FABRICATION_PLANT                                               :{BLACK}Produziert lackierte Metallgegenstände.{}{}Produktion:{}2t pro gelieferter 8,000l Chemikalien{}6t pro gelieferter 8t Metall{}{}Produktion steigt, wenn beide Frachtarten innerhalb von drei Monaten geliefert werden.
+STR_EXTRA_METAL_FOUNDRY                                                         :{BLACK}Produziert Metallgegenstände wie Werkzeuge und Ersatzteile.{}{}Produktion:{}2 Kisten pro gelieferter 8,000l Chemikalien{}6 Kisten pro gelieferter 8t Metall{}{}Produktion steigt, wenn beide Frachtarten innerhalb von drei Monaten geliefert werden.
 STR_EXTRA_OIL_REFINERY                                                          :{BLACK}Verarbeitet Rohöl zu Treibstoff und Chemikalien.{}{}Produktion:{} 6,000l pro gelieferter 8,000l Öl.
-STR_EXTRA_PAPER_MILL                                                            :{BLACK}Zerfasert Holz und stellt daraus Papier und Kartonagen her.{}{}Produktion:{}  4t pro gelieferter 8t Holz{}  2 Kisten pro gelieferter 8t Ton{}  2 Kisten pro gelieferter 8000l Chemikalien{}{}Produktion steigt, wenn zwei oder mehr Frachtarten innerhalb eines Monats geliefert werden.
+STR_EXTRA_PAPER_MILL                                                            :{BLACK}Zerfasert Holz und stellt daraus Papier und Kartonagen her.{}{}Produktion:{}  4t pro gelieferter 8t Holz{}  2 Kisten pro gelieferter 8t Ton{}  2 Kisten pro gelieferter 8000l Chemikalien{}{}Produktion steigt, wenn zwei oder mehr Frachtarten innerhalb von drei Monaten geliefert werden.
 STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}Produziert Verpackungen und Haushaltswaren aus Kunststoff.{}{}Produktion:{} {STRING} {STRING}
 STR_EXTRA_PLASTICS_PLANT_CHEMICALS_SUBSTR                                       :6 Kisten pro gelieferter 8,000l Chemikalien{}
 STR_EXTRA_PLASTICS_PLANT_PLANT_FIBRES_SUBSTR                                    :6 Kisten pro gelieferter 8 Ballen Pflanzenfasern{}
@@ -154,9 +158,9 @@ STR_EXTRA_RECYCLING_PLANT                                                       
 STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}Produktion ist proportional zur Einwohnerzahl der Stadt
 STR_EXTRA_SAWMILL                                                               :{BLACK}Sägt Holz.{}{}Produktion:{} 6t pro gelieferter 8t Holz
 STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Verarbeitet Schmiedeeisen zu Gegenständen wie Zäunen, Werkzeugen, Pflügen, Schaufeln und Hufeisen.{}{}Produktion:{} 8 Kisten pro gelieferter 8t Metall
-STR_EXTRA_STEELMILL                                                             :{BLACK}Produktion:{} 3t pro gelieferter 8t Eisenerz{} 2t pro gelieferter 8t Kohle{} 3t pro gelieferter 8t Altmetall{}  4t pro gelieferter 8t Altmetall{}{}Produktion steigt, wenn zwei oder mehr Frachtarten innerhalb eines Monats geliefert werden.
-STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Produktion:{}  3t pro gelieferter 8 Kisten Produktionsgüter{}  5t pro gelieferter 8t Rohrzucker{}{}Produktion steigt, wenn beide Frachtarten innerhalb eines Monats geliefert werden.
-STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Produktion:{}  3 Kisten pro gelieferter 8 Kisten Produktionsgüter{} {STRING} {STRING}{}Produktion steigt, wenn Produktionsgüter und andere benötigte Güter innerhalb eines Monats  geliefert werden.
+STR_EXTRA_STEELMILL                                                             :{BLACK}Produktion:{} 3t pro gelieferter 8t Eisenerz{} 2t pro gelieferter 8t Kohle{} 3t pro gelieferter 8t Altmetall{}{}Produktion steigt, wenn zwei oder mehr Frachtarten innerhalb von drei Monaten geliefert werden.
+STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Produktion:{}  3t pro gelieferter 8 Kisten Produktionsgüter{}  5t pro gelieferter 8t Rohrzucker{}{}Produktion steigt, wenn beide Frachtarten innerhalb von drei Monaten geliefert werden.
+STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Produktion:{}  3 Kisten pro gelieferter 8 Kisten Produktionsgüter{} {STRING} {STRING}{}Produktion steigt, wenn Produktionsgüter und andere benötigte Güter innerhalb von drei Monaten geliefert werden.
 STR_EXTRA_TEXTILE_MILL_WOOL_SUBSTR                                              :5 Kisten pro gelieferter 8 Ballen Wolle{}
 STR_EXTRA_TEXTILE_MILL_PLANT_FIBRES_SUBSTR                                      :5 Kisten pro gelieferter 8 Ballen Pflanzenfasern{}
 STR_EXTRA_VEHICLE_FACTORY                                                       :{BLACK}Produktion:{}  8 Kisten pro gelieferter 8 Kisten Fahrzeugteile{}  8 Kisten pro gelieferter  8 Kisten Produktionsgüter
@@ -174,6 +178,7 @@ STR_GENERIC_NEWLINE                                                             
 STR_FUND_BASIC_FARM                                                             :{}{BLACK}Ort: {YELLOW}Kann nicht über der Schneegrenze oder in Wüsten errichtet werden.
 STR_FUND_MIXED_FARM                                                             :{}{BLACK}Ort: {YELLOW}Kann nicht über der Schneegrenze oder in Wüsten errichtet werden.
 STR_FUND_ARABLE_FARM                                                            :{}{BLACK}Ort: {YELLOW}Kann nicht über der Schneegrenze oder in Wüsten errichtet werden.
+STR_FUND_DAIRY_FARM                                                             :{}{BLACK}Ort: {YELLOW}Kann nicht über der Schneegrenze oder in Wüsten errichtet werden.
 STR_FUND_COFFEE_ESTATE                                                          :{}{BLACK}Ort: {YELLOW}Kann nicht über der Schneegrenze oder in Wüsten errichtet werden.
 STR_FUND_ORCHARD_PIGGERY                                                        :{}{BLACK}Ort: {YELLOW}Kann nicht über der Schneegrenze oder in Wüsten errichtet werden.
 STR_FUND_SUGAR_PLANTATION                                                       :{}{BLACK}Ort: {YELLOW}Kann nicht über der Schneegrenze oder in Wüsten errichtet werden.
@@ -181,6 +186,7 @@ STR_FUND_FIBRE_CROP_FARM                                                        
 STR_FUND_FOREST                                                                 :{}{BLACK}Ort: {YELLOW}Kann nicht in Wüsten errichtet werden.
 STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}Ort: {YELLOW}Kann nicht über der Schneegrenze errichtet werden.
 STR_FUND_RUBBER_PLANTATION                                                      :{}{BLACK}Ort: {YELLOW}Kann nicht über der Schneegrenze oder in Wüsten errichtet werden.
+STR_FUND_VINEYARD                                                               :{}{BLACK}Ort: {YELLOW}Kann nicht über der Schneegrenze oder in Wüsten errichtet werden.
 
 
 STR_FUND_AVAILABLE_FROM                                                         :{}{BLACK}Verfügbar ab:{YELLOW}{COMMA}
@@ -205,6 +211,7 @@ STR_IND_CEMENT_PLANT                                                            
 STR_IND_CHEMICAL_PLANT                                                          :Chemiefabrik
 STR_IND_CLAY_PIT                                                                :{G=w}Tongrube
 STR_IND_COFFEE_ESTATE                                                           :{G=w}Kaffeeplantage
+STR_IND_COPPER_REFINERY                                                         :{G=w}Kupferraffinerie
 STR_IND_FIBRE_CROP_FARM                                                         :{G=w}Sisalplantage
 STR_IND_DAIRY                                                                   :{G=w}Molkerei
 STR_IND_DAIRYFARM                                                               :{G=m}Bauernhof (Milchviehhaltung)
@@ -233,6 +240,7 @@ STR_IND_NITRATE_MINE                                                            
 STR_IND_PETROLPUMP                                                              :{G=w}Tankstelle
 STR_IND_PLASTICS_PLANT                                                          :{G=w}Plastikfabrik
 STR_IND_PORT                                                                    :{G=m}Hafen
+STR_IND_POWER_PLANT                                                             :Kraftwerk
 STR_IND_QUARRY                                                                  :{G=m}Steinbruch
 STR_IND_RANCH                                                                   :{G=w}Ranch
 STR_IND_RECYCLING_DEPOT                                                         :{G=m}Wertstoffhof
@@ -245,6 +253,7 @@ STR_IND_SUGAR_REFINERY                                                          
 STR_IND_TEXTILE_MILL                                                            :{G=w}Textilfabrik
 STR_IND_TRADING_POST                                                            :{G=m}Handelsposten
 STR_IND_VEHICLE_FACTORY                                                         :Fahrzeugfabrik
+STR_IND_VINEYARD                                                                :Weinberg
 
 STR_STATION_ANIMALS                                                             :Viehmarkt
 STR_STATION_FARM                                                                :Landsitz
