@@ -31,7 +31,7 @@ industry = IndustryPrimaryOrganic(id='sugar_plantation',
                     fund_cost_multiplier='55',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS' )
 
-industry.economy_variations['MISTAH_KURTZ'].enabled = True
+# currently not enabled in any economy
 
 industry.add_tile(id='sugar_plantation_tile_1',
                   location_checks=TileLocationChecks(disallow_slopes=True,

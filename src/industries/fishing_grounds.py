@@ -37,6 +37,8 @@ industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_ARCTIC'].enabled = True
 industry.economy_variations['BASIC_TROPIC'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
+industry.economy_variations['MISTAH_KURTZ'].prob_random = '5'
+industry.economy_variations['MISTAH_KURTZ'].prob_in_game = '20'
 
 spriteset_1 = industry.add_spriteset(
     id = 'fishing_grounds_spriteset_1',

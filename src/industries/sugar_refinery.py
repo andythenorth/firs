@@ -34,8 +34,6 @@ industry = IndustrySecondary(id='sugar_refinery',
                     extra_text_industry='STR_EXTRA_SUGAR_REFINERY' )
 
 industry.economy_variations['FIRS'].enabled = True
-industry.economy_variations['MISTAH_KURTZ'].enabled = True
-industry.economy_variations['MISTAH_KURTZ'].prod_cargo_types = ['SUGR']
 
 industry.add_tile(id='sugar_refinery_tile_1',
                   animation_length=7,

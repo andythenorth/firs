@@ -23,12 +23,11 @@ economy = Economy(id = "MISTAH_KURTZ",
                             'manufacturing_supplies',
                             'oil',
                             'rubber',
-                            'sugar',
-                            'sugarcane',
                             'wood',
                             'clay', # adding to end, fix later
                             'coal',
                             'copper',
+                            'iron_ore',
                             'livestock',
                             'sand',
                             'stone'])
