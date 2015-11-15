@@ -34,20 +34,20 @@ digraph ${doc_helper.get_economy_name_char_safe(economy)} {
 
             <tal:cargos repeat="cargo cargos_used_by_industry[economy]['accept_cargo_types']">
                 <tal:not_banned condition="(cargo.id not in banned_cargos) and (cargo.id not in supply_cargos)">
-                    C_${cargo.id} -> I_${industry.id}
+                    C_${cargo.id} -> I_${industry.id} [tooltip="${doc_helper.get_cargo_name(cargo)} -> ${doc_helper.get_industry_name(industry, economy)}"]
                 </tal:not_banned>
                 <tal:banned condition="cargo.id in banned_cargos">
                     CI_${industry.id}_${cargo.id} [shape="ellipse" label="${doc_helper.get_cargo_name(cargo)}" href="cargos.html#${cargo.id}" target="_top" fontname="sans-serif" id="${cargo.id}"]
-                    CI_${industry.id}_${cargo.id} -> I_${industry.id} [tailclip="true" headclip="true"]
+                    CI_${industry.id}_${cargo.id} -> I_${industry.id} [tooltip="${doc_helper.get_cargo_name(cargo)} -> ${doc_helper.get_industry_name(industry, economy)}"]
                 </tal:banned>
             </tal:cargos>
             <tal:cargos repeat="cargo cargos_used_by_industry[economy]['prod_cargo_types']">
                 <tal:not_banned condition="cargo.id not in banned_cargos">
-                    I_${industry.id} -> C_${cargo.id}
+                    I_${industry.id} -> C_${cargo.id} [tooltip="${doc_helper.get_industry_name(industry, economy)} -> ${doc_helper.get_cargo_name(cargo)}"]
                 </tal:not_banned>
                 <tal:banned condition="cargo.id in banned_cargos">
                     CI_${industry.id}_${cargo.id} [shape="ellipse" label="${doc_helper.get_cargo_name(cargo)}" href="cargos.html#${cargo.id}" target="_top" fontname="sans-serif" id="${cargo.id}"]
-                    I_${industry.id} -> CI_${industry.id}_${cargo.id} [tailclip="true" headclip="true"]
+                    I_${industry.id} -> CI_${industry.id}_${cargo.id} [tooltip="${doc_helper.get_industry_name(industry, economy)} -> ${doc_helper.get_cargo_name(cargo)}"]
                 </tal:banned>
             </tal:cargos>
         </tal:industry>
