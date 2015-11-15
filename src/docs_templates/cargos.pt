@@ -17,7 +17,7 @@
             <div id="${cargo.id}" tal:define="industries_using_cargo doc_helper.industries_using_cargo(cargo)">
                 <h3>${doc_helper.get_cargo_name(cargo)} <small>Cargo</small></h3>
                 <p class="muted">${doc_helper.get_cargo_extra_info(cargo)}</p>
-                <tal:unused condition="len(industries_using_cargo) == 0">
+                <tal:unused condition="len(industries_using_cargo) == 0 and cargo.id != 'mail'">
                     <p>This cargo is currently unused in FIRS</p>
                 </tal:unused>
                 <tal:industries_using_cargo repeat="economy industries_using_cargo">
