@@ -32,7 +32,8 @@
                 <object style="max-width:100%;" data="${doc_helper.get_economy_name_char_safe(economy)}.dot.svg" type="image/svg+xml"></object>
             </div>
 
-            <a class="btn" href="${doc_helper.get_economy_name_char_safe(economy)}.dot.svg">View Cargo Flow Larger</a> <a class="btn" href="${doc_helper.get_economy_name_char_safe(economy)}.dot">Download Cargo Flow as .dot</a>
+            <a class="btn" href="${doc_helper.get_economy_name_char_safe(economy)}.dot.svg">View Cargo Flow Larger</a>
+            <a class="btn" href="${doc_helper.get_economy_name_char_safe(economy)}.dot">Download Cargo Flow as .dot</a>
         </div>
         <hr />
         <br />
