@@ -3,9 +3,7 @@
 digraph ${economy.id} {
     fontname="sans-serif"
     stylesheet="cargoflow_styles.css"
-    #labelloc=t
-    #labeljust=l
-    #label="Economy: ${doc_helper.get_economy_name(economy)}"
+    rankdir="LR"
 
     <tal:cargos repeat="cargo sorted(economy_schemas[economy].enabled_cargos, key=doc_helper.get_cargo_name)">
         <tal:not_banned condition="cargo.id not in banned_cargos">
