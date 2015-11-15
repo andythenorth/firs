@@ -27,8 +27,8 @@
                 <a href="industries.html#${industry.id}">${doc_helper.get_industry_name(industry, economy)}${(',', '')[repeat.industry.end]}</a>
             </tal:industries>
 
-            <div style="margin-top: 10px; margin-bottom: 10px; height: 300px;">
-                <object style="max-width:100%; max-height:300px;" data="${economy.id}.dot.svg" type="image/svg+xml"></object>
+            <div style="margin-top: 10px; margin-bottom: 10px;">
+                <object style="max-width:100%;" data="${economy.id}.dot.svg" type="image/svg+xml"></object>
             </div>
 
             <a href="${economy.id}.dot.svg">View Larger</a> | <a href="${economy.id}.dot">Download Graph as .dot</a>
