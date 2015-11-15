@@ -14,11 +14,13 @@
     </div>
     <tal:cargos repeat="item doc_helper.get_registered_cargo_sorted_by_name()">
         <tal:cargo define="name item[0]; cargo item[1]">
-            <div id="${cargo.id}">
+            <div id="${cargo.id}" tal:define="industries_using_cargo doc_helper.industries_using_cargo(cargo)">
                 <h3>${doc_helper.get_cargo_name(cargo)} <small>Cargo</small></h3>
                 <p class="muted">${doc_helper.get_cargo_extra_info(cargo)}</p>
-                <tal:industries_using_cargo define="industries_using_cargo doc_helper.industries_using_cargo(cargo)"
-                                            repeat="economy industries_using_cargo">
+                <tal:unused condition="len(industries_using_cargo) == 0">
+                    <p>This cargo is currently unused in FIRS</p>
+                </tal:unused>
+                <tal:industries_using_cargo repeat="economy industries_using_cargo">
                     <table class="table table-bordered table-striped table-condensed">
                         <tbody>
                             <tr>
