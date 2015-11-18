@@ -44,6 +44,8 @@ industry.economy_variations['MISTAH_KURTZ'].enabled = True
 industry.economy_variations['BASIC_TEMPERATE'].extra_text_industry = 'STR_EXTRA_BREWERY, string(STR_EXTRA_BREWERY_FRUIT_SUBSTR)'
 industry.economy_variations['BASIC_TEMPERATE'].name = 'string(STR_IND_BREWERY_CIDER_MILL)'
 industry.economy_variations['BASIC_ARCTIC'].extra_text_industry = 'STR_EXTRA_BREWERY, string(STR_EXTRA_BREWERY_GRAIN_SUBSTR)'
+industry.economy_variations['MISTAH_KURTZ'].processed_cargos_and_output_ratios=[('MNSP', 3), ('FRUT', 5), ('MAIZ', 5)]
+industry.economy_variations['MISTAH_KURTZ'].extra_text_industry = 'STR_EXTRA_BREWERY, string(STR_EXTRA_BREWERY_FRUIT_SUBSTR), string(STR_EXTRA_BREWERY_MAIZE_SUBSTR)'
 
 industry.add_tile(id='brewery_tile_1',
                   animation_length=6,

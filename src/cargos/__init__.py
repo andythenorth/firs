@@ -67,6 +67,9 @@ lumber.cargo.register()
 from cargos import mail
 mail.cargo.register()
 
+from cargos import maize
+maize.cargo.register()
+
 from cargos import manufacturing_supplies
 manufacturing_supplies.cargo.register()
 
