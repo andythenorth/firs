@@ -35,6 +35,7 @@ industry = IndustrySecondary(id='aluminium_plant',
                     graphics_change_dates = [1942, 1980] )
 
 industry.economy_variations['FIRS'].enabled = True
+industry.economy_variations['BASIC_ARCTIC'].enabled = True
 
 industry.add_tile(id='aluminium_plant_tile_1',
                   animation_length=47,

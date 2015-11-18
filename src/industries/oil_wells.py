@@ -29,7 +29,6 @@ industry = IndustryPrimaryExtractive(id='oil_wells',
                     intro_year=1830)
 
 industry.economy_variations['FIRS'].enabled = True
-industry.economy_variations['BASIC_ARCTIC'].enabled = True
 industry.economy_variations['BASIC_TROPIC'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
 
