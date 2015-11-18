@@ -168,13 +168,22 @@ class DocHelper(object):
                     result.append(cargo)
         return result
 
+    def filter_cargos_by_active_in_economy(self, cargo_list, economy):
+        result = []
+        for cargo in cargo_list:
+            if cargo in economy_schemas[economy]['enabled_cargos']:
+                result.append(cargo)
+        return result
+
     def cargos_produced_by_industry(self, industry, economy):
         result = self.get_cargo_objects_from_labels(industry.get_prod_cargo_types(economy))
+        result = self.filter_cargos_by_active_in_economy(result, economy)
         result = sorted(result, key=self.get_cargo_name)
         return result
 
     def cargos_accepted_by_industry(self, industry, economy):
         result = self.get_cargo_objects_from_labels(industry.get_accept_cargo_types(economy))
+        result = self.filter_cargos_by_active_in_economy(result, economy)
         result = sorted(result, key=self.get_cargo_name)
         return result
 
