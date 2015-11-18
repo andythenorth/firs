@@ -19,7 +19,7 @@ digraph ${doc_helper.get_economy_name_char_safe(economy)} {
             I_${industry.id} [shape=box label=<
                 <table border="0" cellborder="0">
                     <tr><td>${doc_helper.get_industry_name(industry, economy)}</td></tr>
-                    <tal:cargos repeat="cargo cargos_used_by_industry[economy]['accept_cargo_types']">
+                    <tal:cargos repeat="cargo cargos_used_by_industry.get('economy', {'accept_cargo_types':None})['accept_cargo_types']">
                         <tal:supplies condition="cargo.id in supply_cargos">
                             <tr><td>[${doc_helper.get_cargo_name(cargo)}]</td></tr>
                         </tal:supplies>
@@ -32,7 +32,7 @@ digraph ${doc_helper.get_economy_name_char_safe(economy)} {
             ]
             #<tr><td><img width="100%" src="static/img/industries/${industry.id}.png"/></td></tr>
 
-            <tal:cargos repeat="cargo cargos_used_by_industry[economy]['accept_cargo_types']">
+            <tal:cargos repeat="cargo cargos_used_by_industry.get('economy', {'accept_cargo_types':[]})['accept_cargo_types']">
                 <tal:not_banned condition="(cargo.id not in banned_cargos) and (cargo.id not in supply_cargos)">
                     C_${cargo.id} -> I_${industry.id} [tooltip="${doc_helper.get_cargo_name(cargo)} -> ${doc_helper.get_industry_name(industry, economy)}"]
                 </tal:not_banned>
@@ -41,7 +41,7 @@ digraph ${doc_helper.get_economy_name_char_safe(economy)} {
                     CI_${industry.id}_${cargo.id} -> I_${industry.id} [tooltip="${doc_helper.get_cargo_name(cargo)} -> ${doc_helper.get_industry_name(industry, economy)}"]
                 </tal:banned>
             </tal:cargos>
-            <tal:cargos repeat="cargo cargos_used_by_industry[economy]['prod_cargo_types']">
+            <tal:cargos repeat="cargo cargos_used_by_industry.get('economy', {'prod_cargo_types':[]})['prod_cargo_types']">
                 <tal:not_banned condition="cargo.id not in banned_cargos">
                     I_${industry.id} -> C_${cargo.id} [tooltip="${doc_helper.get_industry_name(industry, economy)} -> ${doc_helper.get_cargo_name(cargo)}"]
                 </tal:not_banned>

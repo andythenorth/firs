@@ -28,11 +28,10 @@
                     ${industry.get_property_declaration('prospect_chance', economy)}
                     ${industry.get_property_declaration('fund_cost_multiplier', economy)}
                     ${industry.get_property_declaration('remove_cost_multiplier', economy)}
-                    <!--! The declaring of these props doesn't follow the standard pattern;
-                          That's just a hangover from removing sugar beet / sugarcane magic
-                          and they could be converted to standard pattern -->
-                    accept_cargo_types: ${industry.get_accept_cargo_types(economy)};
-                    prod_cargo_types: ${industry.get_prod_cargo_types(economy)};
+                    ${industry.get_property_declaration('remove_cost_multiplier', economy)}
+                    <!--! special handling -->
+                    ${industry.get_accept_cargo_types_declaration(economy)}
+                    ${industry.get_prod_cargo_types_declaration(economy)}
                 }
             }
         </tal:industry_on_or_off>

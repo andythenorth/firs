@@ -118,7 +118,11 @@ class DocHelper(object):
         # hmm, pretty certain this could be changed to use industry.get_prod_cargo_types or accept equivalent
         if cargo in economy_schemas[economy]['enabled_cargos']:
             for industry in economy_schemas[economy]['enabled_industries']:
-                    for cargo_label in industry.get_property(accept_or_produce, economy):
+                if accept_or_produce == 'accept_cargo_types':
+                    cargo_list = industry.get_accept_cargo_types(economy)
+                elif accept_or_produce == 'prod_cargo_types':
+                    cargo_list = industry.get_prod_cargo_types(economy)
+                    for cargo_label in cargo_list:
                         if cargo.cargo_label == cargo_label:
                             result.add(industry)
         return result
@@ -138,8 +142,13 @@ class DocHelper(object):
 
     def industry_find_cargos_active_in_economy_for_industry(self, industry, economy, accept_or_produce):
         result = []
+        if accept_or_produce == 'accept_cargo_types':
+            cargo_list = industry.get_accept_cargo_types(economy)
+        elif accept_or_produce == 'prod_cargo_types':
+            cargo_list = industry.get_prod_cargo_types(economy)
+
         if industry in economy_schemas[economy]['enabled_industries']:
-            for cargo_label in industry.get_property(accept_or_produce, economy):
+            for cargo_label in cargo_list:
                 for cargo in economy_schemas[economy]['enabled_cargos']:
                     if cargo_label == cargo.cargo_label:
                         result.append(cargo)

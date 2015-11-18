@@ -68,7 +68,7 @@ class Tile(object):
 
     def get_expression_for_tile_acceptance(self, industry, economy):
         result = []
-        accept_cargo_types = industry.get_property('accept_cargo_types', economy)
+        accept_cargo_types = industry.get_accept_cargo_types(economy)
         for cargo in accept_cargo_types:
             result.append('[cargotype("' + cargo + '"), 8]')
         return ','.join(result)
@@ -530,6 +530,7 @@ class IndustryProperties(object):
         self.remove_cost_multiplier = kwargs.get('remove_cost_multiplier', None)
         # not nml properties
         self.enabled = kwargs.get('enabled', False)
+        self.processed_cargos_and_output_ratios = kwargs.get('processed_cargos_and_output_ratios', None)
         self.override_default_construction_states = kwargs.get('override_default_construction_states', False)
         self.extra_text_industry = kwargs.get('extra_text_industry', None) # value is string(s) to return for corresponding nml cb
         self.extra_text_fund = kwargs.get('extra_text_fund', None)
@@ -700,19 +701,39 @@ class Industry(object):
         else:
             return property_name + ': ' + value + ';'
 
+    def get_accept_cargo_types_declaration(self, economy):
+        # special handling to reformat python list as nml property declaration
+        result = ','.join(['cargotype("' + label + '")' for label in self.get_accept_cargo_types(economy)])
+        return 'accept_cargo_types: [' + result + '];'
+
+    def get_prod_cargo_types_declaration(self, economy):
+        # special handling to reformat python list as nml property declaration
+        result = ','.join(['cargotype("' + label + '")' for label in self.get_prod_cargo_types(economy)])
+        return 'prod_cargo_types: [' + result + '];'
+
     def get_accept_cargo_types(self, economy):
-        accept_cargo_types = ['cargotype("' + label + '")' for label in self.get_property('accept_cargo_types', economy)]
-        # guard against too many cargos being defined
-        if len(accept_cargo_types) > 3:
-            utils.echo_message("Too many accepted cargos defined for " + self.id + ' in economy ' + economy.id)
-        return '[' + ','.join(accept_cargo_types) + ']'
+        # method used here for (1) guarding against invalid values (2) so that it can be over-ridden by industry subclasses as needed
+        result = self.get_property('accept_cargo_types', economy)
+        if result is None:
+            # returning None causes some things to explode in docs, which I should fix, but haven't, this patches it with jank
+            return []
+        else:
+            # guard against too many cargos being defined
+            if len(result) > 3:
+                utils.echo_message("Too many accepted cargos defined for " + self.id + ' in economy ' + economy.id)
+            return result
 
     def get_prod_cargo_types(self, economy):
-        prod_cargo_types = ['cargotype("' + label + '")' for label in self.get_property('prod_cargo_types', economy)]
-        # guard against too many cargos being defined
-        if len(prod_cargo_types) > 2:
-            utils.echo_message("Too many produced cargos defined for " + self.id + ' in economy ' + economy.id)
-        return '[' + ','.join(prod_cargo_types) + ']'
+        # method used here for (1) guarding against invalid values (2) so that it can be over-ridden by industry subclasses as needed
+        result = self.get_property('prod_cargo_types', economy)
+        if result is None:
+            # returning None causes some things to explode in docs, which I should fix, but haven't, this patches it with jank
+            return []
+        else:
+            # guard against too many cargos being defined
+            if len(result) > 2:
+                utils.echo_message("Too many produced cargos defined for " + self.id + ' in economy ' + economy.id)
+            return result
 
     def get_another_industry(self, id):
         return get_another_industry(id)
@@ -834,8 +855,10 @@ class IndustrySecondary(Industry):
         kwargs['life_type'] = 'IND_LIFE_TYPE_PROCESSING'
         # !! this will need to handle economy variations also...might be non-viable in current form
         # - do that after snakebite, the CPP templating doesn't handle economy variations either
+        """
         self.processed_cargos_and_output_ratios = kwargs['processed_cargos_and_output_ratios'] # this kw is required, error if missing - no .get()
         kwargs['accept_cargo_types'] = [i[0] for i in self.processed_cargos_and_output_ratios]
+        """
         super(IndustrySecondary, self).__init__(**kwargs)
         self.template = kwargs.get('template', 'industry_secondary.pypnml')
         self.combined_cargos_boost_prod = kwargs.get('combined_cargos_boost_prod', False)
@@ -846,24 +869,34 @@ class IndustrySecondary(Industry):
         return len(self.get_property('prod_cargo_types', None))
 
     def get_prod_ratio(self, cargo_num):
-        if cargo_num > len(self.processed_cargos_and_output_ratios):
+        print("prod_ratio doesnt respect secondary cargos varying by economy")
+        if cargo_num > len(self.get_property('processed_cargos_and_output_ratios', None)):
             return 0
         else:
-            return self.processed_cargos_and_output_ratios[cargo_num - 1][1]
+            return self.get_property('processed_cargos_and_output_ratios', None)[cargo_num - 1][1]
+
+    def get_accept_cargo_types(self, economy):
+        # method used here for (1) guarding against invalid values (2) so that it can be over-ridden by industry subclasses as needed
+        accept_cargo_types = [i[0] for i in self.get_property('processed_cargos_and_output_ratios', economy)]
+        # guard against too many cargos being defined
+        if len(accept_cargo_types) > 3:
+            utils.echo_message("Too many accepted cargos defined for " + self.id + ' in economy ' + economy.id)
+        return accept_cargo_types
 
     def get_boost(self, supplied_cargo_num, boosted_cargo_num):
         # jank for MNSP first, this is due to design choices I now regret :|
         # some industries boost only in combination with MNSP, rather than any/all accepted cargos, ugh
+        print("get_boost doesn't respect cargos varying by economy")
         if self.mnsp_boosts_production_jank:
-            if self.processed_cargos_and_output_ratios[supplied_cargo_num - 1][0] == 'MNSP':
+            if self.get_property('processed_cargos_and_output_ratios', None)[supplied_cargo_num - 1][0] == 'MNSP':
                 return self.get_prod_ratio(supplied_cargo_num)
-            elif self.processed_cargos_and_output_ratios[boosted_cargo_num - 1][0] == 'MNSP':
+            elif self.get_property('processed_cargos_and_output_ratios', None)[boosted_cargo_num - 1][0] == 'MNSP':
                 return self.get_prod_ratio(supplied_cargo_num)
             else:
                 return 0
         # not jank, proper
         if self.combined_cargos_boost_prod:
-            if boosted_cargo_num > len(self.processed_cargos_and_output_ratios):
+            if boosted_cargo_num > len(self.get_property('processed_cargos_and_output_ratios', None)):
                 return 0
             else:
                 return self.get_prod_ratio(supplied_cargo_num)
