@@ -122,9 +122,9 @@ class DocHelper(object):
                     cargo_list = industry.get_accept_cargo_types(economy)
                 elif accept_or_produce == 'prod_cargo_types':
                     cargo_list = industry.get_prod_cargo_types(economy)
-                    for cargo_label in cargo_list:
-                        if cargo.cargo_label == cargo_label:
-                            result.add(industry)
+                for cargo_label in cargo_list:
+                    if cargo.cargo_label == cargo_label:
+                        result.add(industry)
         return result
 
     def industries_using_cargo(self, cargo):
