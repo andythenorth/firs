@@ -15,42 +15,40 @@ digraph ${doc_helper.get_economy_name_char_safe(economy)} {
     </tal:cargos>
 
     <tal:industries repeat="industry sorted(economy_schemas[economy].enabled_industries, key=doc_helper.get_industry_name)">
-        <tal:industry define="cargos_used_by_industry doc_helper.cargos_used_by_industry(industry)">
-            I_${industry.id} [shape=box label=<
-                <table border="0" cellborder="0">
-                    <tr><td>${doc_helper.get_industry_name(industry, economy)}</td></tr>
-                    <tal:cargos repeat="cargo cargos_used_by_industry.get('economy', {'accept_cargo_types':None})['accept_cargo_types']">
-                        <tal:supplies condition="cargo.id in supply_cargos">
-                            <tr><td>[${doc_helper.get_cargo_name(cargo)}]</td></tr>
-                        </tal:supplies>
-                    </tal:cargos>
-                </table>
-            >
-            id="${industry.id}"
-            href="industries.html#${industry.id}" target="_top" fontname="sans-serif"
-            tooltip="${doc_helper.get_industry_name(industry, economy)}"
-            ]
-            #<tr><td><img width="100%" src="static/img/industries/${industry.id}.png"/></td></tr>
+        I_${industry.id} [shape=box label=<
+            <table border="0" cellborder="0">
+                <tr><td>${doc_helper.get_industry_name(industry, economy)}</td></tr>
+                <tal:cargos repeat="cargo doc_helper.cargos_accepted_by_industry(industry, economy)">
+                    <tal:supplies condition="cargo.id in supply_cargos">
+                        <tr><td>[${doc_helper.get_cargo_name(cargo)}]</td></tr>
+                    </tal:supplies>
+                </tal:cargos>
+            </table>
+        >
+        id="${industry.id}"
+        href="industries.html#${industry.id}" target="_top" fontname="sans-serif"
+        tooltip="${doc_helper.get_industry_name(industry, economy)}"
+        ]
+        #<tr><td><img width="100%" src="static/img/industries/${industry.id}.png"/></td></tr>
 
-            <tal:cargos repeat="cargo cargos_used_by_industry.get('economy', {'accept_cargo_types':[]})['accept_cargo_types']">
-                <tal:not_banned condition="(cargo.id not in banned_cargos) and (cargo.id not in supply_cargos)">
-                    C_${cargo.id} -> I_${industry.id} [tooltip="${doc_helper.get_cargo_name(cargo)} -> ${doc_helper.get_industry_name(industry, economy)}"]
-                </tal:not_banned>
-                <tal:banned condition="cargo.id in banned_cargos">
-                    CI_${industry.id}_${cargo.id} [shape="ellipse" label="${doc_helper.get_cargo_name(cargo)}" href="cargos.html#${cargo.id}" target="_top" fontname="sans-serif" id="${cargo.id}"]
-                    CI_${industry.id}_${cargo.id} -> I_${industry.id} [tooltip="${doc_helper.get_cargo_name(cargo)} -> ${doc_helper.get_industry_name(industry, economy)}"]
-                </tal:banned>
-            </tal:cargos>
-            <tal:cargos repeat="cargo cargos_used_by_industry.get('economy', {'prod_cargo_types':[]})['prod_cargo_types']">
-                <tal:not_banned condition="cargo.id not in banned_cargos">
-                    I_${industry.id} -> C_${cargo.id} [tooltip="${doc_helper.get_industry_name(industry, economy)} -> ${doc_helper.get_cargo_name(cargo)}"]
-                </tal:not_banned>
-                <tal:banned condition="cargo.id in banned_cargos">
-                    CI_${industry.id}_${cargo.id} [shape="ellipse" label="${doc_helper.get_cargo_name(cargo)}" href="cargos.html#${cargo.id}" target="_top" fontname="sans-serif" id="${cargo.id}"]
-                    I_${industry.id} -> CI_${industry.id}_${cargo.id} [tooltip="${doc_helper.get_industry_name(industry, economy)} -> ${doc_helper.get_cargo_name(cargo)}"]
-                </tal:banned>
-            </tal:cargos>
-        </tal:industry>
+        <tal:accepted_cargos repeat="cargo doc_helper.cargos_accepted_by_industry(industry, economy)">
+            <tal:not_banned condition="(cargo.id not in banned_cargos) and (cargo.id not in supply_cargos)">
+                C_${cargo.id} -> I_${industry.id} [tooltip="${doc_helper.get_cargo_name(cargo)} -> ${doc_helper.get_industry_name(industry, economy)}"]
+            </tal:not_banned>
+            <tal:banned condition="cargo.id in banned_cargos">
+                CI_${industry.id}_${cargo.id} [shape="ellipse" label="${doc_helper.get_cargo_name(cargo)}" href="cargos.html#${cargo.id}" target="_top" fontname="sans-serif" id="${cargo.id}"]
+                CI_${industry.id}_${cargo.id} -> I_${industry.id} [tooltip="${doc_helper.get_cargo_name(cargo)} -> ${doc_helper.get_industry_name(industry, economy)}"]
+            </tal:banned>
+        </tal:accepted_cargos>
+        <tal:produced_cargos repeat="cargo doc_helper.cargos_produced_by_industry(industry, economy)">
+            <tal:not_banned condition="cargo.id not in banned_cargos">
+                I_${industry.id} -> C_${cargo.id} [tooltip="${doc_helper.get_industry_name(industry, economy)} -> ${doc_helper.get_cargo_name(cargo)}"]
+            </tal:not_banned>
+            <tal:banned condition="cargo.id in banned_cargos">
+                CI_${industry.id}_${cargo.id} [shape="ellipse" label="${doc_helper.get_cargo_name(cargo)}" href="cargos.html#${cargo.id}" target="_top" fontname="sans-serif" id="${cargo.id}"]
+                I_${industry.id} -> CI_${industry.id}_${cargo.id} [tooltip="${doc_helper.get_industry_name(industry, economy)} -> ${doc_helper.get_cargo_name(cargo)}"]
+            </tal:banned>
+        </tal:produced_cargos>
     </tal:industries>
 }
 </tal:economies>

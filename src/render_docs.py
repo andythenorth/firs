@@ -113,35 +113,39 @@ class DocHelper(object):
     def get_industry_extra_info(self, industry):
         return base_lang_strings.get('INDUSTRY_INFO_' + industry.id.upper(), '')
 
-    def industry_find_industries_active_in_economy_for_cargo(self, cargo, economy, accept_or_produce):
+    def industry_is_unused(self, industry, economy):
+        if industry in economy_schemas[economy]['enabled_industries']:
+            return False
+        else:
+            return True
+
+    def industries_producing_cargo(self, cargo, economy):
         result = set()
-        # hmm, pretty certain this could be changed to use industry.get_prod_cargo_types or accept equivalent
         if cargo in economy_schemas[economy]['enabled_cargos']:
             for industry in economy_schemas[economy]['enabled_industries']:
-                if accept_or_produce == 'accept_cargo_types':
-                    cargo_list = industry.get_accept_cargo_types(economy)
-                elif accept_or_produce == 'prod_cargo_types':
-                    cargo_list = industry.get_prod_cargo_types(economy)
+                cargo_list = industry.get_prod_cargo_types(economy)
                 for cargo_label in cargo_list:
                     if cargo.cargo_label == cargo_label:
                         result.add(industry)
+        result = sorted(result, key=self.get_industry_name)
         return result
 
-    def industries_producing_cargo(self, cargo, economy):
-        produced_by = self.industry_find_industries_active_in_economy_for_cargo(cargo, economy, 'prod_cargo_types')
-        produced_by = sorted(produced_by, key=self.get_industry_name)
-        return produced_by
-
     def industries_accepting_cargo(self, cargo, economy):
-        accepted_by = self.industry_find_industries_active_in_economy_for_cargo(cargo, economy, 'accept_cargo_types')
-        accepted_by = sorted(accepted_by, key=self.get_industry_name)
-        return accepted_by
+        result = set()
+        if cargo in economy_schemas[economy]['enabled_cargos']:
+            for industry in economy_schemas[economy]['enabled_industries']:
+                cargo_list = industry.get_accept_cargo_types(economy)
+                for cargo_label in cargo_list:
+                    if cargo.cargo_label == cargo_label:
+                        result.add(industry)
+        result = sorted(result, key=self.get_industry_name)
+        return result
 
     def cargo_is_unused_in_any_economy(self, cargo):
         result = 0
         for economy in self.get_economies_sorted_by_name():
-            result += len(self.industry_find_industries_active_in_economy_for_cargo(cargo, economy, 'accept_cargo_types'))
-            result += len(self.industry_find_industries_active_in_economy_for_cargo(cargo, economy, 'prod_cargo_types'))
+            result += len(self.industries_accepting_cargo(cargo, economy))
+            result += len(self.industries_producing_cargo(cargo, economy))
         if result == 0:
             return True
         else:
@@ -149,59 +153,30 @@ class DocHelper(object):
 
     def cargo_is_unused(self, cargo, economy):
         result = 0
-        result += len(self.industry_find_industries_active_in_economy_for_cargo(cargo, economy, 'accept_cargo_types'))
-        result += len(self.industry_find_industries_active_in_economy_for_cargo(cargo, economy, 'prod_cargo_types'))
+        result += len(self.industries_accepting_cargo(cargo, economy))
+        result += len(self.industries_producing_cargo(cargo, economy))
         if result == 0:
             return True
         else:
             return False
 
-    def industry_find_cargos_active_in_economy_for_industry(self, industry, economy, accept_or_produce):
+    def get_cargo_objects_from_labels(self, cargo_list):
         result = []
-        if accept_or_produce == 'accept_cargo_types':
-            cargo_list = industry.get_accept_cargo_types(economy)
-        elif accept_or_produce == 'prod_cargo_types':
-            cargo_list = industry.get_prod_cargo_types(economy)
-
-        if industry in economy_schemas[economy]['enabled_industries']:
-            for cargo_label in cargo_list:
-                for cargo in economy_schemas[economy]['enabled_cargos']:
-                    if cargo_label == cargo.cargo_label:
-                        result.append(cargo)
-        return set(result)
-
-
-    def cargos_used_by_industry(self, industry):
-        # segmented by economy
-        result = {}
-        for economy in self.get_economies_sorted_by_name():
-            accept_cargo_types = self.industry_find_cargos_active_in_economy_for_industry(industry, economy, 'accept_cargo_types')
-            prod_cargo_types = self.industry_find_cargos_active_in_economy_for_industry(industry, economy, 'prod_cargo_types')
-            accept_cargo_types = sorted(accept_cargo_types, key=self.get_cargo_name)
-            prod_cargo_types = sorted(prod_cargo_types, key=self.get_cargo_name)
-            if len(list(accept_cargo_types) + list(prod_cargo_types)) > 0:
-                result[economy] = {'accept_cargo_types':accept_cargo_types, 'prod_cargo_types':prod_cargo_types}
+        for cargo_label in cargo_list:
+            for cargo in registered_cargos:
+                if cargo_label == cargo.cargo_label:
+                    result.append(cargo)
         return result
 
+    def cargos_produced_by_industry(self, industry, economy):
+        result = self.get_cargo_objects_from_labels(industry.get_prod_cargo_types(economy))
+        result = sorted(result, key=self.get_cargo_name)
+        return result
 
-    def industry_unique_cargo_combinations(self, industry):
-        result = {}
-        for economy in self.get_economies_sorted_by_name():
-            economy_cargos = []
-            accept_cargo_types = self.industry_find_cargos_active_in_economy_for_industry(industry, economy, 'accept_cargo_types')
-            prod_cargo_types = self.industry_find_cargos_active_in_economy_for_industry(industry, economy, 'prod_cargo_types')
-            for cargo in accept_cargo_types:
-                economy_cargos.append(cargo)
-            for cargo in prod_cargo_types:
-                economy_cargos.append(cargo)
-            if len(economy_cargos) > 0:
-                cargo_key = tuple(sorted(economy_cargos))
-                result.setdefault(cargo_key, {'accept_cargo_types': accept_cargo_types, 'prod_cargo_types': prod_cargo_types})
-                result[cargo_key].setdefault('economies',[]).append(economy)
-                 # convenient to have items sorted
-                result[cargo_key]['economies'] = sorted(result[cargo_key]['economies'], key=lambda economy: self.get_economy_name(economy))
-        # return a list, sorted by economies (only need first economy entry in each list of economies)
-        return sorted(result.values(), key = lambda combo: self.get_economy_name(combo['economies'][0]))
+    def cargos_accepted_by_industry(self, industry, economy):
+        result = self.get_cargo_objects_from_labels(industry.get_accept_cargo_types(economy))
+        result = sorted(result, key=self.get_cargo_name)
+        return result
 
     def get_cargoflow_banned_cargos(self):
         return ['mail', 'passengers']
