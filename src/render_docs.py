@@ -169,6 +169,7 @@ class DocHelper(object):
         return result
 
     def filter_cargos_by_active_in_economy(self, cargo_list, economy):
+        # For industries, OpenTTD automatically filters non-active cargos in-game, but the docs need to do it manually
         result = []
         for cargo in cargo_list:
             if cargo in economy_schemas[economy]['enabled_cargos']:
