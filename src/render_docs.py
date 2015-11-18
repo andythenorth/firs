@@ -127,8 +127,7 @@ class DocHelper(object):
                         result.add(industry)
         return result
 
-    def industries_using_cargo(self, cargo):
-        # segmented by economy
+    def industries_using_cargo_in_economy(self, cargo, economy):
         result = {}
         for economy in self.get_economies_sorted_by_name():
             accepted_by = self.industry_find_industries_active_in_economy_for_cargo(cargo, economy, 'accept_cargo_types')
@@ -136,9 +135,18 @@ class DocHelper(object):
             accepted_by = sorted(accepted_by, key=self.get_industry_name)
             produced_by = sorted(produced_by, key=self.get_industry_name)
             if len(list(accepted_by) + list(produced_by)) > 0:
-                result[economy] = {'accepted_by':accepted_by, 'produced_by':produced_by}
+                result = {'accepted_by':accepted_by, 'produced_by':produced_by}
         return result
 
+    def cargo_is_unused(self, cargo):
+        result = 0
+        for economy in self.get_economies_sorted_by_name():
+            result += len(self.industry_find_industries_active_in_economy_for_cargo(cargo, economy, 'accept_cargo_types'))
+            result += len(self.industry_find_industries_active_in_economy_for_cargo(cargo, economy, 'prod_cargo_types'))
+        if result == 0:
+            return True
+        else:
+            return False
 
     def industry_find_cargos_active_in_economy_for_industry(self, industry, economy, accept_or_produce):
         result = []

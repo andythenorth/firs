@@ -25,7 +25,7 @@
                         <img src="static/img/industries/${industry.id}.png" alt="${doc_helper.get_industry_name(industry)}" />
                     </div>
                     <div class="span4">
-                        <tal:industries_using_cargo define="cargos_used_by_industry doc_helper.cargos_used_by_industry(industry)"
+                        <tal:industry_cargos define="cargos_used_by_industry doc_helper.cargos_used_by_industry(industry)"
                                                     repeat="economy cargos_used_by_industry">
                             <table class="table table-bordered table-striped table-condensed">
                                 <tbody>
@@ -63,7 +63,7 @@
                                         </td>
                                 </tbody>
                             </table>
-                        </tal:industries_using_cargo>
+                        </tal:industry_cargos>
                     </div>
                 </div>
             </div>
