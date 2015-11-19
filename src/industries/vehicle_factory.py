@@ -8,9 +8,9 @@
 from industry import IndustrySecondary, TileLocationChecks, IndustryLocationChecks
 
 industry = IndustrySecondary(id='vehicle_factory',
-                    processed_cargos_and_output_ratios=[('VPTS', 8), ('MNSP', 8)],
+                    processed_cargos_and_output_ratios=[('VPTS', 8), ('STEL', 8)],
                     prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL',
-                    prod_cargo_types=['GOOD', 'ENSP'],
+                    prod_cargo_types=['VEHI'],
                     layouts='AUTO',
                     prob_in_game='3',
                     prob_random='5',
@@ -31,9 +31,7 @@ industry = IndustrySecondary(id='vehicle_factory',
                     extra_text_industry='STR_EXTRA_VEHICLE_FACTORY',
                     graphics_change_dates = [1920] )
 
-# currently disabled in all economies
-# !! also not imported in __init__.py (to avoid spurious compile errors)
-#industry.economy_variations['BASIC_TROPIC'].enabled = True
+industry.economy_variations['BASIC_ARCTIC'].enabled = True
 
 industry.add_tile(id='vehicle_factory_tile_1',
                   animation_length=71,

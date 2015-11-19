@@ -124,6 +124,9 @@ sugarcane.cargo.register()
 from cargos import vehicle_parts
 vehicle_parts.cargo.register()
 
+from cargos import vehicles
+vehicles.cargo.register()
+
 from cargos import wood
 wood.cargo.register()
 

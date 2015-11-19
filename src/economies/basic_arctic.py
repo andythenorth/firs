@@ -22,4 +22,6 @@ economy = Economy(id="BASIC_ARCTIC",
                             'paper',
                             'petrol',
                             'scrap_metal',
+                            'vehicle_parts',
+                            'vehicles',
                             'wood'])
