@@ -42,7 +42,7 @@ industry.economy_variations['BASIC_TEMPERATE'].prod_cargo_types = ['ENSP']
 industry.economy_variations['BASIC_TEMPERATE'].prod_multiplier = '[19, 0]'
 
 industry.economy_variations['BASIC_ARCTIC'].enabled = True
-industry.economy_variations['BASIC_ARCTIC'].accept_cargo_types = ['PAPR', 'MNSP', 'ENSP']
+industry.economy_variations['BASIC_ARCTIC'].accept_cargo_types = ['PAPR', 'VEHI', 'ENSP']
 industry.economy_variations['BASIC_ARCTIC'].prod_cargo_types = ['SCMT', 'VPTS']
 industry.economy_variations['BASIC_ARCTIC'].prod_multiplier = '[7, 16]'
 
