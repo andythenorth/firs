@@ -869,7 +869,9 @@ class IndustrySecondary(Industry):
         return len(self.get_property('prod_cargo_types', None))
 
     def get_prod_ratio(self, cargo_num):
-        print("prod_ratio doesnt respect secondary cargos varying by economy")
+        # there is no support for varying prod_ratio by economy, and I don't intend to provide any
+        # it would require the CPP templating for secondary production to be rewritten, and that is not necessary currently
+        # prod_ratios must be constant across all economies for each industry
         if cargo_num > len(self.get_property('processed_cargos_and_output_ratios', None)):
             return 0
         else:
@@ -886,7 +888,7 @@ class IndustrySecondary(Industry):
     def get_boost(self, supplied_cargo_num, boosted_cargo_num):
         # jank for MNSP first, this is due to design choices I now regret :|
         # some industries boost only in combination with MNSP, rather than any/all accepted cargos, ugh
-        print("get_boost doesn't respect cargos varying by economy")
+        # there is no support for varying boost behaviour by economy, and no intention to provide it (limited by CPP templating that I don't want to rewrite)
         if self.mnsp_boosts_production_jank:
             if self.get_property('processed_cargos_and_output_ratios', None)[supplied_cargo_num - 1][0] == 'MNSP':
                 return self.get_prod_ratio(supplied_cargo_num)

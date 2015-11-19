@@ -9,7 +9,7 @@
  *
  * Delivery period to consider a cargo for production ratios is the the last var_production_span days
  *
- * It accepts up to three input cargos and produes up to two output cargos
+ * It accepts up to three input cargos and produces up to two output cargos
  * It uses the following permanent storages:
  *
  * var_date_received_1, var_date_received_2, var_date_received_3
@@ -28,6 +28,10 @@
  * How cargos boost eachother (give in units of 1/MAX_SUM_PROD_RATIO)
  * It should be noted that THIS_PROD_RATIO_CARGO1 + THIS_BOOST_21 + THIS_BOOST_31 never should exceed MAX_SUM_PROD_RATIO
  * and similar for the other two cargos
+ *
+ * ! IMPORTANT ! - there is no support for varying ratios by economy.
+ * The cargos can be varied, but the ratios are constant across all economies for each industry.
+ *
  * THIS_BOOST_12
  * THIS_BOOST_13
  * THIS_BOOST_21
