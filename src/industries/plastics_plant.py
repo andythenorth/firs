@@ -33,6 +33,8 @@ industry = IndustrySecondary(id='plastics_plant',
                     intro_year='1931' )
 
 industry.economy_variations['FIRS'].enabled = True
+industry.economy_variations['BASIC_ARCTIC'].enabled = True
+industry.economy_variations['BASIC_ARCTIC'].processed_cargos_and_output_ratios=[('RFPR', 6)]
 
 industry.add_tile(id='plastics_plant_tile_1',
                   location_checks=TileLocationChecks(require_effectively_flat=True,

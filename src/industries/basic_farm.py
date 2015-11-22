@@ -33,6 +33,7 @@ industry = IndustryPrimaryOrganic(id='basic_farm',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS' )
 
 industry.economy_variations['BASIC_ARCTIC'].enabled = True
+industry.economy_variations['BASIC_ARCTIC'].prod_cargo_types=['FOOD']
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].prob_random = '1'
 industry.economy_variations['MISTAH_KURTZ'].prob_in_game = '20'
