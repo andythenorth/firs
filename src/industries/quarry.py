@@ -35,6 +35,8 @@ industry = IndustryPrimaryExtractive(id='quarry',
                     template="refactor_primary_waterpit.pypnml" )
 
 industry.economy_variations['FIRS'].enabled = True
+industry.economy_variations['BASIC_ARCTIC'].enabled = True
+industry.economy_variations['BASIC_ARCTIC'].prod_cargo_types = ['SAND']
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].prob_random = '1'
 industry.economy_variations['MISTAH_KURTZ'].prob_in_game = '20'

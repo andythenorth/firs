@@ -205,6 +205,9 @@ steel_mill.industry.register()
 from industries import supply_yard
 supply_yard.industry.register()
 
+from industries import tyre_plant
+tyre_plant.industry.register()
+
 from industries import vehicle_factory
 vehicle_factory.industry.register()
 

@@ -166,6 +166,7 @@ STR_EXTRA_SUPPLY_YARD                                                           
 STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Cargo production:{}  3 crates per 8 crates manufacturing supplies delivered{} {STRING} {STRING} {}Production steps up if manufacturing supplies delivered within three months of other cargos.
 STR_EXTRA_TEXTILE_MILL_WOOL_SUBSTR                                              :5 crates per 8 bales wool delivered{}
 STR_EXTRA_TEXTILE_MILL_PLANT_FIBRES_SUBSTR                                      :5 crates per 8 bales plant fibres delivered{}
+STR_EXTRA_TYRE_PLANT                                                            :{BLACK}Cargo production:{}  6 crates per 8 litres rubber parts delivered{}  2 crates per 8 litres chemicals delivered{}{}Production steps up if both cargos are delivered within three months of each other.
 STR_EXTRA_VEHICLE_FACTORY                                                       :{BLACK}Cargo production:{}  3 vehicles per 8 crates vehicle parts delivered{}  3 vehicles per 8 crates metal delivered{}  2 vehicles per 8 crates manufacturing supplies delivered{}{}Production steps up if two or more cargos are delivered within three months of each other.
 
 STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ DEBUG ------------{}Production this month:{}Cargo 1: {WHITE}{COMMA}{BLACK}{}Cargo 2: {WHITE}{COMMA}{BLACK}{}Days since last delivery: {WHITE}{COMMA}{BLACK}
@@ -256,6 +257,7 @@ STR_IND_SUGAR_REFINERY                                                          
 STR_IND_SUPPLY_YARD                                                             :Supply Yard
 STR_IND_TEXTILE_MILL                                                            :Textile Mill
 STR_IND_TRADING_POST                                                            :Trading Post
+STR_IND_TYRE_PLANT                                                              :Tyre Plant
 STR_IND_VEHICLE_FACTORY                                                         :Vehicle Factory
 STR_IND_VINEYARD                                                                :Vineyard
 

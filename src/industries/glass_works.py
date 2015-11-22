@@ -33,8 +33,12 @@ industry = IndustrySecondary(id='glass_works',
                     extra_text_industry='STR_EXTRA_GLASS_WORKS' )
 
 industry.economy_variations['FIRS'].enabled = True
+
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True
 industry.economy_variations['BASIC_TEMPERATE'].prod_cargo_types = ['GOOD', 'MNSP']
+
+industry.economy_variations['BASIC_ARCTIC'].enabled = True
+industry.economy_variations['BASIC_ARCTIC'].prod_cargo_types = ['GOOD', 'VPTS']
 
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].prob_random = '1'

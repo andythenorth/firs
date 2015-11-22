@@ -43,7 +43,7 @@ industry.economy_variations['BASIC_TEMPERATE'].prod_multiplier = '[19, 0]'
 
 industry.economy_variations['BASIC_ARCTIC'].enabled = True
 industry.economy_variations['BASIC_ARCTIC'].accept_cargo_types = ['PAPR', 'VEHI', 'ENSP']
-industry.economy_variations['BASIC_ARCTIC'].prod_cargo_types = ['SCMT', 'VPTS']
+industry.economy_variations['BASIC_ARCTIC'].prod_cargo_types = ['SCMT', 'RUBR']
 industry.economy_variations['BASIC_ARCTIC'].prod_multiplier = '[7, 16]'
 
 industry.economy_variations['BASIC_TROPIC'].enabled = True
