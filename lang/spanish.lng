@@ -83,6 +83,7 @@ STR_CARGO_UNIT_STONE                                                            
 STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} de remolacha azucarera
 STR_CARGO_UNIT_SUGARCANE                                                        :{WEIGHT} de caña de azúcar
 STR_CARGO_UNIT_VEHICLE_PARTS                                                    :{SIGNED_WORD} caja{P 0 "" s} de piezas de vehículos
+STR_CARGO_UNIT_VEHICLES                                                         :{SIGNED_WORD} vehículo{P 0 "" s}
 STR_CARGO_UNIT_WOOL                                                             :{SIGNED_WORD} fardo{P 0 "" s} de lana
 
 STR_CID_ALCOHOL                                                                 :{TINYFONT}AL
@@ -110,6 +111,7 @@ STR_CID_STONE                                                                   
 STR_CID_SUGAR_BEET                                                              :{TINYFONT}RA
 STR_CID_SUGARCANE                                                               :{TINYFONT}CA
 STR_CID_VEHICLE_PARTS                                                           :{TINYFONT}VP
+STR_CID_VEHICLES                                                                :{TINYFONT}VS
 STR_CID_WOOL                                                                    :{TINYFONT}LN
 
 STR_ERR_CLIMATE_TOYLAND                                                         :{ORANGE}FIRS no está diseñado para ser usado en el clima de Juguetelandia
@@ -163,7 +165,7 @@ STR_EXTRA_SUGAR_REFINERY                                                        
 STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Producción:{} 3 cajas por cada 8 cajas de suministros de manufactura entregadas{} {STRING} {STRING}{}La producción se incrementa si se entregan suministros de manufactura con menos de un trimestre de diferencia desde el envío de una de las otras cargas.
 STR_EXTRA_TEXTILE_MILL_WOOL_SUBSTR                                              :5 cajas por cada 8 fardos de lana entregados{}
 STR_EXTRA_TEXTILE_MILL_PLANT_FIBRES_SUBSTR                                      :5 cajas por cada 8t de fibras vegetales entregadas{}
-STR_EXTRA_VEHICLE_FACTORY                                                       :{BLACK}Producción:{} 8 cajas por cada 8 cajas de piezas de vehículos entregadas{} 8 cajas por cada 8 cajas de suministros de manufactura entregadas
+STR_EXTRA_VEHICLE_FACTORY                                                       :{BLACK}Producción:{} 3 vehículos por cada 8 cajas de piezas de vehículos entregadas{} 3 vehículos por cada 8 cajas de metal entregadas{} 2 vehículos por cada 8 cajas de suministros de manufactura entregadas{}{}La producción se incrementa si dos o más cargas son entregadas en un intervalo inferior a un trimestre.
 
 STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ DEBUG ------------{}Producción este mes:{}Carga 1: {WHITE}{COMMA}{BLACK}{}Carga 2: {WHITE}{COMMA}{BLACK}{}Días desde la última entrega: {WHITE}{COMMA}{BLACK}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Producción máxima alcanzada
