@@ -47,7 +47,7 @@ STR_CARGO_NAME_METAL                                                            
 STR_CARGO_NAME_MILK                                                             :{G=f}Leche
 STR_CARGO_NAME_MANUFACTURING_SUPPLIES                                           :{G=m}Suministros de Manufactura
 STR_CARGO_NAME_NITRATES                                                         :Nitratos
-STR_CARGO_NAME_PETROL                                                           :{G=m}Fueloil
+STR_CARGO_NAME_PETROL                                                           :{G=m}Gasolina
 STR_CARGO_NAME_RECYCLABLES                                                      :{G=m}Reciclables
 STR_CARGO_NAME_SAND                                                             :{G=f}Arena
 STR_CARGO_NAME_SCRAP_METAL                                                      :{G=f}Chatarra
@@ -75,7 +75,7 @@ STR_CARGO_UNIT_METAL                                                            
 STR_CARGO_UNIT_MILK                                                             :{VOLUME} de leche
 STR_CARGO_UNIT_NITRATES                                                         :{WEIGHT} de nitratos
 STR_CARGO_UNIT_MNSP                                                             :{SIGNED_WORD} caja{P 0 "" s} de suministros de manufactura
-STR_CARGO_UNIT_PETROL                                                           :{VOLUME} de fueloil
+STR_CARGO_UNIT_PETROL                                                           :{VOLUME} de gasolina
 STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} de reciclables
 STR_CARGO_UNIT_SAND                                                             :{WEIGHT} de arena
 STR_CARGO_UNIT_SCRAP_METAL                                                      :{WEIGHT} de chatarra
@@ -125,7 +125,7 @@ STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE                                             
 STR_ERR_LOCATION_NOT_ON_WATER                                                   :debe ser colocada en tierra firme.
 STR_ERR_LOCATION_NOT_IN_DESERT                                                  :no puede ser colocada en el desierto.
 STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE                                             :no puede ser colocada en zonas en pendiente.
-STR_ERR_LOCATION_LIMIT_1_PER_TOWN                                               :solamente se permite una industria de este tipo por pueblo.
+STR_ERR_LOCATION_LIMIT_1_PER_TOWN                                               :únicamente se permite una industria de este tipo por localidad.
 
 STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}Producción:{} 2t por cada 8t de bauxita entregadas{} 2t por cada 8000l de productos químicos entregados{} 4t por cada 8t de chatarra entregadas{}{}La producción se incrementa si dos o más cargas son entregadas en un intervalo inferior a un trimestre.
 STR_EXTRA_BIOREFINERY                                                           :{BLACK}Producción:{} 6,000l por cada 8t de grano entregadas{} 6,000l por cada 8t de remolacha azucarera entregadas
@@ -147,11 +147,11 @@ STR_EXTRA_GRAIN_MILL                                                            
 STR_EXTRA_IRON_WORKS                                                            :{BLACK}Producción:{} 3t por cada 8t de mineral de hierro entregadas{} 3t por cada 8t de madera entregadas{} 2t por cada 8t de arena entregadas{}{}La producción se incrementa si dos o más cargas son entregadas en un intervalo inferior a un trimestre.
 STR_EXTRA_LIME_KILN                                                             :{BLACK}Producción:{} 3t por cada 8t de piedra entregadas{}  3t por cada 8t de carbón entregadas{}{}La producción se incrementa si ambas cargas son entregadas con menos de un trimestre de diferencia entre sí.
 STR_EXTRA_LUMBER_YARD                                                           :{BLACK}Produce objetos tales como mástiles y cercas.{}{}Producción:{} 2t por cada 8,000l de productos químicos entregados{} 6t por cada 8t de tablas entregadas{}{}La producción se incrementa si ambas cargas son entregadas con menos de un trimestre de diferencia entre sí.
-STR_EXTRA_MACHINE_SHOP                                                          :{BLACK}Construye y repara maquinaria.{}{}Producción:{} 8 cajas por cada 8,000l de fueloil entregados{} 8 cajas por cada 8t de metal entregadas
+STR_EXTRA_MACHINE_SHOP                                                          :{BLACK}Construye y repara maquinaria.{}{}Producción:{} 8 cajas por cada 8,000l de gasolina entregados{} 8 cajas por cada 8t de metal entregadas
 STR_EXTRA_MEAT_PACKER                                                           :{BLACK}Producción:{} 3t por cada 8 cajas de suministros de manufactura entregadas{} 5t por cada 8t de ganado entregadas{}{}La producción se incrementa si ambas cargas son entregadas con menos de un trimestre de diferencia entre sí.
 STR_EXTRA_METAL_FABRICATION_PLANT                                               :{BLACK}Produce componentes de metal pintado.{}{}Producción:{} 2t por cada 8,000l de productos químicos entregados{} 6t por cada 8t de metal entregadas{}{}La producción se incrementa si ambas cargas son entregadas con menos de un trimestre de diferencia entre sí.
 STR_EXTRA_METAL_FOUNDRY                                                         :{BLACK}Produce elementos metálicos tales como latas, herramientas y artículos para el hogar.{}{}Producción:{} 2 cajas por cada 8,000l de productos químicos entregados{} 6 cajas por cada 8t de metal entregadas{}{}La producción se incrementa si ambas cargas son entregadas con menos de un trimestre de diferencia entre sí.
-STR_EXTRA_OIL_REFINERY                                                          :{BLACK}Procesa petróleo crudo en fueloil y productos químicos.{}{}Producción:{} 6,000l por cada 8,000l entregados
+STR_EXTRA_OIL_REFINERY                                                          :{BLACK}Procesa petróleo crudo en gasolina y productos químicos.{}{}Producción:{} 6,000l por cada 8,000l entregados
 STR_EXTRA_PAPER_MILL                                                            :{BLACK}Convierte madera en pulpa para hacer papel y cartón.{}{}Producción:{} 4 cajas por cada 8t de madera entregadas{} 2 cajas por cada 8t de arcilla entregadas{} 2 cajas por cada 8,000l de productos químicos entregados{}{}La producción se incrementa si dos o más cargas son entregadas en un intervalo inferior a un trimestre.
 STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}Fabrica productos de plástico tales como embalajes o artículos para el hogar.{}{}Producción:{} {STRING} {STRING}
 STR_EXTRA_PLASTICS_PLANT_CHEMICALS_SUBSTR                                       :6 cajas por cada 8,000l de productos químicos entregados{}
@@ -162,6 +162,7 @@ STR_EXTRA_SAWMILL                                                               
 STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Produce objetos de metal forjado como herramientas, puertas, útiles de labranza, palas y herraduras.{}{}Producción:{} 8 cajas por cada 8t de metal entregadas
 STR_EXTRA_STEELMILL                                                             :{BLACK}Producción:{} 3t por cada 8t de mineral de hierro entregadas{} 2t por cada 8t de carbón entregadas{} 3t por cada 8t de chatarra entregadas{}{}La producción se incrementa si dos o más cargas son entregadas en un intervalo inferior a un trimestre.
 STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Producción:{} 3t por cada 8 cajas de suministros de manufactura entregadas{} 5t por cada 8t de azúcar (aún sin refinar y recibida como remolacha azucarera o bien como caña de azúcar) entregadas{}{}La producción se incrementa si dos o más cargas son entregadas en un intervalo inferior a un trimestre.
+STR_EXTRA_SUPPLY_YARD                                                           :{BLACK}Producción:{} 8 cajas por cada 8,000l de gasolina entregados{} 8 cajas por cada 8 vehículos entregados{} 8 cajas por cada 8t de mercancías entregadas
 STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Producción:{} 3 cajas por cada 8 cajas de suministros de manufactura entregadas{} {STRING} {STRING}{}La producción se incrementa si se entregan suministros de manufactura con menos de un trimestre de diferencia desde el envío de una de las otras cargas.
 STR_EXTRA_TEXTILE_MILL_WOOL_SUBSTR                                              :5 cajas por cada 8 fardos de lana entregados{}
 STR_EXTRA_TEXTILE_MILL_PLANT_FIBRES_SUBSTR                                      :5 cajas por cada 8t de fibras vegetales entregadas{}
