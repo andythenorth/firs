@@ -47,6 +47,7 @@ STR_CARGO_NAME_MILK                                                             
 STR_CARGO_NAME_MANUFACTURING_SUPPLIES                                           :Manufacturing Supplies
 STR_CARGO_NAME_NITRATES                                                         :Nitrates
 STR_CARGO_NAME_PETROL                                                           :Petrol
+STR_CARGO_NAME_PYRITE_ORE                                                       :Pyrite Ore
 STR_CARGO_NAME_RECYCLABLES                                                      :Recyclables
 STR_CARGO_NAME_SAND                                                             :Sand
 STR_CARGO_NAME_SCRAP_METAL                                                      :Scrap Metal
@@ -76,6 +77,7 @@ STR_CARGO_UNIT_MILK                                                             
 STR_CARGO_UNIT_NITRATES                                                         :{WEIGHT} of nitrates
 STR_CARGO_UNIT_MNSP                                                             :{SIGNED_WORD} crate{P 0 "" s} of manufacturing supplies
 STR_CARGO_UNIT_PETROL                                                           :{VOLUME} of petrol
+STR_CARGO_UNIT_PYRITE_ORE                                                       :{WEIGHT} of pyrite ore
 STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} of recyclables
 STR_CARGO_UNIT_SAND                                                             :{WEIGHT} of sand
 STR_CARGO_UNIT_SCRAP_METAL                                                      :{WEIGHT} of scrap metal
@@ -104,6 +106,7 @@ STR_CID_METAL                                                                   
 STR_CID_MILK                                                                    :{TINYFONT}MK
 STR_CID_NITRATES                                                                :{TINYFONT}NI
 STR_CID_PETROL                                                                  :{TINYFONT}PT
+STR_CID_PYRITE_ORE                                                              :{TINYFONT}PY
 STR_CID_RECYCLABLES                                                             :{TINYFONT}RC
 STR_CID_SAND                                                                    :{TINYFONT}SA
 STR_CID_SCRAP_METAL                                                             :{TINYFONT}SM
@@ -156,6 +159,7 @@ STR_EXTRA_PAPER_MILL                                                            
 STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}Produces plastic items such as packaging and household goods.{}{}Cargo production:{} {STRING} {STRING}
 STR_EXTRA_PLASTICS_PLANT_CHEMICALS_SUBSTR                                       :6 crates per 8,000l chemicals delivered{}
 STR_EXTRA_PLASTICS_PLANT_PLANT_FIBRES_SUBSTR                                    :6 crates per 8 bales plant fibres delivered{}
+STR_EXTRA_PYRITE_SMELTER                                                        :{BLACK}Processes pyrite ore into metal and chemicals.{}{}Cargo production:{}  4t + 4,000l per 8t delivered
 STR_EXTRA_RECYCLING_PLANT                                                       :{BLACK}Processes recyclables for reuse.{}{}Cargo production:{}  6t per 8t recyclables delivered
 STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}Production is proportional to town population.
 STR_EXTRA_SAWMILL                                                               :{BLACK}Chops wood.{}{}Cargo production:{}  6t per 8t wood delivered
@@ -244,6 +248,8 @@ STR_IND_NITRATE_MINE                                                            
 STR_IND_PETROLPUMP                                                              :Petrol Station
 STR_IND_PLASTICS_PLANT                                                          :Plastics Plant
 STR_IND_PORT                                                                    :Port
+STR_IND_PYRITE_MINE                                                             :Pyrite Mine
+STR_IND_PYRITE_SMELTER                                                          :Pyrite Smelter
 STR_IND_POWER_PLANT                                                             :Power Plant
 STR_IND_QUARRY                                                                  :Quarry
 STR_IND_RANCH                                                                   :Ranch

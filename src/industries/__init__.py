@@ -196,6 +196,12 @@ oil_rig.industry.register()
 from industries import paper_mill
 paper_mill.industry.register()
 
+from industries import pyrite_mine
+pyrite_mine.industry.register()
+
+from industries import pyrite_smelter
+pyrite_smelter.industry.register()
+
 from industries import sawmill
 sawmill.industry.register()
 
