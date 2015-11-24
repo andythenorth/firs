@@ -26,7 +26,7 @@ STR_PARAM_VALUE_ECONOMIES_BASIC_TEMPERATE                                       
 STR_PARAM_VALUE_ECONOMIES_BASIC_ARCTIC                                          :Pohjoinen ilmasto, pelkistetty
 STR_PARAM_VALUE_ECONOMIES_BASIC_TROPIC                                          :Trooppinen, pelkistetty
 STR_PARAM_VALUE_ECONOMIES_FIRS                                                  :FIRS
-STR_PARAM_VALUE_ECONOMIES_MISTAH_KURTZ                                          :Pimeyden sydän
+STR_PARAM_VALUE_ECONOMIES_MISTAH_KURTZ                                          :Toivoja ja Esteitä
 
 STR_CARGO_NAME_ALCOHOL                                                          :Alkoholi
 STR_CARGO_NAME_BAUXITE                                                          :Bauksiitti
@@ -35,6 +35,7 @@ STR_CARGO_NAME_BUILDING_MATERIALS                                               
 STR_CARGO_NAME_CHEMICALS                                                        :Kemikaalit
 STR_CARGO_NAME_CLAY                                                             :Savi
 STR_CARGO_NAME_COFFEE                                                           :Kahvi
+STR_CARGO_NAME_COPPER                                                           :Kupari
 STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :Tekniset tarvikkeet
 STR_CARGO_NAME_FIBRES                                                           :Kasvikuidut
 STR_CARGO_NAME_FISH                                                             :Kala
@@ -53,6 +54,7 @@ STR_CARGO_NAME_STONE                                                            
 STR_CARGO_NAME_SUGAR_BEET                                                       :Sokerijuurikas
 STR_CARGO_NAME_SUGARCANE                                                        :Sokeriruoko
 STR_CARGO_NAME_VEHICLE_PARTS                                                    :Ajoneuvojen osat
+STR_CARGO_NAME_VEHICLES                                                         :Ajoneuvoja
 STR_CARGO_NAME_WOOL                                                             :Villa
 
 STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} alkoholia
@@ -62,6 +64,7 @@ STR_CARGO_UNIT_BUILDING_MATERIALS                                               
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} kemikaaleja
 STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} savea
 STR_CARGO_UNIT_COFFEE                                                           :{SIGNED_WORD} säkki{P 0 "" ä} kahvia
+STR_CARGO_UNIT_COPPER                                                           :{WEIGHT} kuparia
 STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} laatikko{P 0 "" a} teknisiä tarvikkeita
 STR_CARGO_UNIT_FIBRES                                                           :{SIGNED_WORD} paali{P 0 "" a} kasvikuituja
 STR_CARGO_UNIT_FISH                                                             :{WEIGHT} kalaa
@@ -80,6 +83,7 @@ STR_CARGO_UNIT_STONE                                                            
 STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} sokerijuurikasta
 STR_CARGO_UNIT_SUGARCANE                                                        :{WEIGHT} sokeriruokoa
 STR_CARGO_UNIT_VEHICLE_PARTS                                                    :{SIGNED_WORD} laatikko{P 0 "" a} ajoneuvojen osia
+STR_CARGO_UNIT_VEHICLES                                                         :{SIGNED_WORD} ajoneuvo{P 0 "" a}
 STR_CARGO_UNIT_WOOL                                                             :{SIGNED_WORD} paali{P 0 "" a} villaa
 
 STR_CID_ALCOHOL                                                                 :{TINYFONT}AL
@@ -89,6 +93,7 @@ STR_CID_BUILDING_MATERIALS                                                      
 STR_CID_CHEMICALS                                                               :{TINYFONT}KM
 STR_CID_CLAY                                                                    :{TINYFONT}SV
 STR_CID_COFFEE                                                                  :{TINYFONT}KA
+STR_CID_COPPER                                                                  :{TINYFONT}KU
 STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}TK
 STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}MT
 STR_CID_FIBRES                                                                  :{TINYFONT}KK
@@ -106,6 +111,7 @@ STR_CID_STONE                                                                   
 STR_CID_SUGAR_BEET                                                              :{TINYFONT}SJ
 STR_CID_SUGARCANE                                                               :{TINYFONT}SR
 STR_CID_VEHICLE_PARTS                                                           :{TINYFONT}AO
+STR_CID_VEHICLES                                                                :{TINYFONT}AJ
 STR_CID_WOOL                                                                    :{TINYFONT}VL
 
 STR_ERR_CLIMATE_TOYLAND                                                         :{ORANGE}FIRS:iä ei ole suunniteltu toimivaksi Lelumaassa
@@ -113,7 +119,7 @@ STR_ERR_INCOMPATIBLE_SET                                                        
 STR_ERR_INCOMPATIBLE_PARAM_CANSET                                               :{ORANGE}E02: {YELLOW}Epäyhteensopiva parametri: {ORANGE}CanSet parameterin 2 täytyy olla 0 FIRS:n kanssa. {YELLOW}Lue lisää FIRS:n readme-tiedostosta: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 STR_ERR_INCOMPATIBLE_PARAM_CITYSET                                              :{ORANGE}E02: {YELLOW}Epäyhteensopiva parametri: {ORANGE}NA City Set parameterin 2 täytyy oll 0 FIRS:n kanssa. {YELLOW}Lue lisää FIRS:n readme-tiedostosta: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 STR_ERR_INCOMPATIBLE_SET_TTRS_VERSION                                           :{ORANGE}E04: {YELLOW}Epäyhteensopiva versio: {ORANGE}Total Town Replacement Set täytyy olla versio 3.11 tai uudempi. {YELLOW}Lue lisää FIRS:n readme-tiedostosta: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
-STR_ERR_OPENTTD_VERSION                                                         :{ORANGE}E00: FIRS vaatii OpenTTD 1.2.0 / trunk r22780 tai uudemman. {YELLOW}Lue lisää FIRS:n readme-tiedostosta: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_OPENTTD_VERSION                                                         :{ORANGE}E00: FIRS vaatii OpenTTD 1.6.0 / trunk r27279 tai uudemman. {YELLOW}Lue lisää FIRS:n readme-tiedostosta: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 
 STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE                                             :sijoitettava lumirajan alapuolelle.
 STR_ERR_LOCATION_NOT_ON_WATER                                                   :sijoitettava kuivalle maalle.
@@ -126,9 +132,11 @@ STR_EXTRA_BIOREFINERY                                                           
 STR_EXTRA_BREWERY                                                               :{BLACK}Rahdin tuotanto:{} 3,000l per 8 laatikkoa kuljetettuja tuotantotarvikkeita{} {STRING} {STRING}{}Tuotanto kasvaa, jos tuotantotarvikkeita kuljetetaan kolmen kuukauden sisällä muista rahdeista.
 STR_EXTRA_BREWERY_FRUIT_SUBSTR                                                  :5,000l per 8t kuljetettuja hedelmiä{}
 STR_EXTRA_BREWERY_GRAIN_SUBSTR                                                  :5,000l per 8t kuljetettua viljaa{}
+STR_EXTRA_BREWERY_MAIZE_SUBSTR                                                  :5,000l per 8t kuljetettua maissia{}
 STR_EXTRA_BRICKWORKS                                                            :{BLACK}Rahdin tuotanto:{}  2t per 8t kuljetettua hiiltä{}  2t per 8t kuljetettua hiekkaa{}  4t per 8t kuljetettua savea{}{}Tuotanto kasvaa jos kahta tai useampaa rahtia kuljetetaan kolmen kuukauden aikana.
 STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Rahdin tuotanto:{}  2t per 8t kuljetettua hiiltä{}  2t per 8t kuljetettua savea{}  4t per 8t kuljetettua kiveä{}{}Tuotanto kasvaa jos kahta tai useampaa rahtia kuljetetaan kolmen kuukauden aikana.
 STR_EXTRA_CHEMICAL_PLANT                                                        :{BLACK}Rahdin tuotanto:{} 6,000l per 8,000l kuljetettua öljyä{} 6,000l per 8t nitraatteja
+STR_EXTRA_COPPER_REFINERY                                                       :{BLACK}Rahdin tuotanto:{} 5t per 8t kuljetettua kuparimalmia{} 3t per 8,000 litraa kuljetettuja kemikaaleja{}{}Tuotanto kasvaa jos kahta tai useampaa rahtia kuljetetaan kolmen kuukauden aikana.
 STR_EXTRA_DAIRY                                                                 :{BLACK}Rahdin tuotanto:{}  3t per 8 laatikkoa kuljetettuja tuotantotarvikkeita{}  5t per 8,000 litraa kuljetettua maitoa{}{}Kasvaa 8t per 8t kuljetettu kun molempia rahteja kuljetetaan kolmen kuukauden aikana.
 STR_EXTRA_FERTILIZER_PLANT                                                      :{BLACK}Rahdin tuotanto:{}  8 laatikkoa per 8,000l kuljetettuja kemikaaleja
 STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Rahdin tuotanto:{}  3t per 8t kuljetettuja tuotantotarvikkeita{}  5t per 8t kuljetettua kalaa{}{}Kasvaa 8t per 8t kuljetettu kun molempia rahteja kuljetetaan kolmen kuukauden aikana.
@@ -154,10 +162,12 @@ STR_EXTRA_SAWMILL                                                               
 STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Tuottaa metalliesineitä kuten työkaluja, auroja, portteja, lapioita ja hevosenkenkiä.{}{}5t tuotantoa per 8t kuljetettu.
 STR_EXTRA_STEELMILL                                                             :{BLACK}Rahdin tuotanto:{} 3t per 8t kuljetettua rautamalmia{} 2t per 8t kuljetettua hiiltä{} 3t per 8t kuljetettua romumetallia{}{}Tuotanto kasvaa, jos kahta tai useampaa rahtia kuljetetaan kolmen kuukauden aikana.
 STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Rahdin tuotanto:{}  3t per 8 laatikkoa kuljetettuja tuotantotarvikkeita{}  5t per 8t kuljetettua sokeriruokoa{}{}Kasvaa 8t per 8t kun molempia rahteja kuljetetaan kolmen kuukauden aikana.
+STR_EXTRA_SUPPLY_YARD                                                           :{BLACK}Rahdin tuotanto:{} 8 laatikkoa per 8,000l kuljetettua bensiiniä{} 8 laatikkoa per 8 kuljetettua ajoneuvoa{} 8 laatikkoa per 8t kuljetettuja tavaroita
 STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Rahdin tuotanto:{} 3 laatikkoa per 8 laatikkoa kuljetettuja tuotantotarvikkeita{} {STRING} {STRING}{}Tuotanto kasvaa, jos tuotantotarvikkeita ja muuta rahtia kuljetetaan kolmen kuukauden aikana.
 STR_EXTRA_TEXTILE_MILL_WOOL_SUBSTR                                              :5 laatikkoa per 8 kuljetettua villapaalia{}
 STR_EXTRA_TEXTILE_MILL_PLANT_FIBRES_SUBSTR                                      :5 laatikkoa per 8 kuljetettua kasvikuitupaalia{}
-STR_EXTRA_VEHICLE_FACTORY                                                       :{BLACK}Rahdin tuotanto:{}  8 laatikkoa per 8 laatikkoa kuljetettuja ajoneuvojen osia{}  8 laatikkoa per 8 laatikkoa kuljetettuja tuotantotarvikkeita
+STR_EXTRA_TYRE_PLANT                                                            :{BLACK}Rahdin tuotanto:{} 6 laatikkoa per 8 litraa kuljetettua kumia{} 2 laatikkoa per 8 litraa kuljetettuja kemikaaleja{}{}Tuotanto kasvaa jos molempia rahteja kuljetetaan kolmen kuukauden aikana.
+STR_EXTRA_VEHICLE_FACTORY                                                       :{BLACK}Rahdin tuotanto:{}  3 laatikkoa per 8 laatikkoa kuljetettuja ajoneuvojen osia{} 3 ajoneuvoa per 8 laatikkoa kuljetettua metallia{} 2 ajoneuvoa per 8 laatikkoa kuljetettuja tuotantotarvikkeita{}{}Tuotanto kasvaa jos kahta tai useampaa rahtia kuljetetaan kolmen kuukauden aikana.
 
 STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ VIANETSINT√Ñ ------------{}Tuotanto tässä kuussa:{}Rahti 1: {WHITE}{COMMA}{BLACK}{}Rahti 2: {WHITE}{COMMA}{BLACK}{}Päiviä edellisestä kuljetuksesta: {WHITE}{COMMA}{BLACK}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Suurin mahdollinen tuotanto saavutettu
@@ -169,17 +179,18 @@ STR_PORT_PRODUCTION_2X                                                          
 STR_PORT_PRODUCTION_4X                                                          :{BLACK}Nykyinen tuotanto: {YELLOW}Gung ho (nelinkertainen){}{}{BLACK}Kuljeta {SIGNED_WORD} yksikköä tavaroita kolmen kuukauden sisällä pitääksesi tämän tason
 STR_GENERIC_NEWLINE                                                             :{}
 
-STR_FUND_BASIC_FARM                                                             :{}{BLACK}Sijainti: {YELLOW}Ei voida rahoittaa lumella tai aavikolla.
+STR_FUND_BASIC_FARM                                                             :{}{BLACK}Sijainti: {YELLOW}Ei voida rahoittaa lumelle tai aavikolle.
 STR_FUND_MIXED_FARM                                                             :{}{BLACK}Sijainti: {YELLOW}Ei voida sijoittaa lumeen, aavikoille eikä jyrkkiin rinteisiin.
 STR_FUND_ARABLE_FARM                                                            :{}{BLACK}Sijainti: {YELLOW}Ei voida sijoittaa lumeen, aavikoille eikä rinteisiin.
-STR_FUND_DAIRY_FARM                                                             :{}{BLACK}Sijainti: {YELLOW}Ei voida rahoittaa lumella tai aavikolla.
-STR_FUND_COFFEE_ESTATE                                                          :{}{BLACK}Sijainti: {YELLOW}Ei voida rahoittaa lumella tai aavikolla.
-STR_FUND_ORCHARD_PIGGERY                                                        :{}{BLACK}Sijainti: {YELLOW}Ei voida rahoittaa lumella tai aavikolla.
-STR_FUND_SUGAR_PLANTATION                                                       :{}{BLACK}Sijainti: {YELLOW}Ei voida rahoittaa lumella tai aavikolla.
-STR_FUND_FIBRE_CROP_FARM                                                        :{}{BLACK}Sijainti: {YELLOW}Ei voida rahoittaa lumella tai aavikolla.
+STR_FUND_DAIRY_FARM                                                             :{}{BLACK}Sijainti: {YELLOW}Ei voida rahoittaa lumelle tai aavikolle.
+STR_FUND_COFFEE_ESTATE                                                          :{}{BLACK}Sijainti: {YELLOW}Ei voida rahoittaa lumelle tai aavikolle.
+STR_FUND_ORCHARD_PIGGERY                                                        :{}{BLACK}Sijainti: {YELLOW}Ei voida rahoittaa lumelle tai aavikolle.
+STR_FUND_SUGAR_PLANTATION                                                       :{}{BLACK}Sijainti: {YELLOW}Ei voida rahoittaa lumelle tai aavikolle.
+STR_FUND_FIBRE_CROP_FARM                                                        :{}{BLACK}Sijainti: {YELLOW}Ei voida rahoittaa lumelle tai aavikolle.
 STR_FUND_FOREST                                                                 :{}{BLACK}Sijainti: {YELLOW}Ei voida sijoittaa aavikoille.
 STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}Sijainti: {YELLOW}Ei voida sijoittaa lumeen.
-STR_FUND_RUBBER_PLANTATION                                                      :{}{BLACK}Sijainti: {YELLOW}Ei voida rahoittaa lumella tai aavikolla.
+STR_FUND_RUBBER_PLANTATION                                                      :{}{BLACK}Sijainti: {YELLOW}Ei voida rahoittaa lumelle tai aavikolle.
+STR_FUND_VINEYARD                                                               :{}{BLACK}Sijainti: {YELLOW}Ei voida rahoittaa lumelle tai aavikolle.
 
 
 STR_FUND_AVAILABLE_FROM                                                         :{}{BLACK}Saatavilla alkaen: {YELLOW}{COMMA}
@@ -191,19 +202,20 @@ STR_TOWN                                                                        
 STR_STATION                                                                     :{STRING} {STRING}
 
 STR_IND_ALUMINIUM_PLANT                                                         :Alumiinitehdas
-STR_IND_ARABLE_FARM                                                             :Viljelyskelpoinen maa
+STR_IND_ARABLE_FARM                                                             :Viljelytila
 STR_IND_BASICFARM                                                               :Maatila
 STR_IND_BAUXITE_MINE                                                            :Bauksiittikaivos
 STR_IND_BIOREFINERY                                                             :Biojalostamo
 STR_IND_BREWERY                                                                 :Panimo
 STR_IND_BREWERY_CIDER_MILL                                                      :Siiderimylly
 STR_IND_BRICK_WORKS                                                             :Tiilitehdas
-STR_IND_BUILDERS_YARD                                                           :Paja
+STR_IND_BUILDERS_YARD                                                           :Rakennustarvikevarasto
 STR_IND_BULK_TERMINAL                                                           :Bulkkiterminaali
 STR_IND_CEMENT_PLANT                                                            :Sementtitehdas
 STR_IND_CHEMICAL_PLANT                                                          :Kemiantehdas
-STR_IND_CLAY_PIT                                                                :Savimonttu
+STR_IND_CLAY_PIT                                                                :Savenottoalue
 STR_IND_COFFEE_ESTATE                                                           :Kahvitila
+STR_IND_COPPER_REFINERY                                                         :Kuparinjalostamo
 STR_IND_FIBRE_CROP_FARM                                                         :Kasvikuitutila
 STR_IND_DAIRY                                                                   :Meijeri
 STR_IND_DAIRYFARM                                                               :Maitotila
@@ -222,42 +234,45 @@ STR_IND_HOTEL                                                                   
 STR_IND_IRON_WORKS                                                              :Rautaruukki
 STR_IND_JUNKYARD                                                                :Romuttamo
 STR_IND_LIME_KILN                                                               :Kalkkiuuni
-STR_IND_LUMBER_YARD                                                             :Lautatarha
+STR_IND_LUMBER_YARD                                                             :Taapeli
 STR_IND_MACHINE_SHOP                                                            :Konepaja
 STR_IND_METAL_FABRICATION_PLANT                                                 :Metallituotetehdas
 STR_IND_METAL_FOUNDRY                                                           :Metallipaja
 STR_IND_MIXEDFARM                                                               :Maatila
 STR_IND_ORCHARD_PIGGERY                                                         :Hedelmätarha ja sikala
 STR_IND_NITRATE_MINE                                                            :Nitraattikaivos
-STR_IND_PETROLPUMP                                                              :Bensa-asema
+STR_IND_PETROLPUMP                                                              :Huoltoasema
 STR_IND_PLASTICS_PLANT                                                          :Muovitehdas
 STR_IND_PORT                                                                    :Satama
-STR_IND_POWER_PLANT                                                             :Sähkölaitos
-STR_IND_QUARRY                                                                  :Hiekkakuoppa
+STR_IND_POWER_PLANT                                                             :Voimalaitos
+STR_IND_QUARRY                                                                  :Hiekanottoalue
 STR_IND_RANCH                                                                   :Karjatila
-STR_IND_RECYCLING_DEPOT                                                         :Kierrätysvarikko
+STR_IND_RECYCLING_DEPOT                                                         :Kierrätyskeskus
 STR_IND_RECYCLING_PLANT                                                         :Kierrätyslaitos
 STR_IND_SHEEPFARM                                                               :Lammastila
-STR_IND_SMITHY_FORGE                                                            :Sepän paja
+STR_IND_SMITHY_FORGE                                                            :Takomo
 STR_IND_STOCKYARD                                                               :Teurastamo
 STR_IND_SUGAR_PLANTATION                                                        :Sokeriplantaasi
 STR_IND_SUGAR_REFINERY                                                          :Sokerinjalostamo
+STR_IND_SUPPLY_YARD                                                             :Tarvikevarasto
 STR_IND_TEXTILE_MILL                                                            :Tekstiilitehdas
 STR_IND_TRADING_POST                                                            :Kauppa-asema
+STR_IND_TYRE_PLANT                                                              :Rengastehdas
 STR_IND_VEHICLE_FACTORY                                                         :Ajoneuvotehdas
+STR_IND_VINEYARD                                                                :Viinitarha
 
 STR_STATION_ANIMALS                                                             :, hevostori
-STR_STATION_FARM                                                                :, maakartano
+STR_STATION_FARM                                                                :, tila
 STR_STATION_FISHMARKET                                                          :, kalatori
-STR_STATION_HEAVY_INDUSTRY                                                      :, James Watin katu
+STR_STATION_HEAVY_INDUSTRY                                                      :, raskaan teollisuuden alue
 STR_STATION_INDUSTRY_ESTATE                                                     :, teollisuusalue
 STR_STATION_INDUSTRY_HARBOUR                                                    :, teollisuussatama
 STR_STATION_MARKET                                                              :, tori
 STR_STATION_MILL                                                                :, mylly
-STR_STATION_MINE                                                                :, Peltolantie
+STR_STATION_MINE                                                                :, kaivos
 STR_STATION_PIT                                                                 :, monttu
 STR_STATION_PLANTATION                                                          :, plantaasi
 STR_STATION_POWERHUNGRY                                                         :, voimalaitos
-STR_STATION_REFINERY                                                            :, satamakatu
+STR_STATION_REFINERY                                                            :, jalostamo
 STR_STATION_TOWN                                                                :, vanha kaupungintalo
 STR_STATION_WATER                                                               :, hiekkasärkkä
