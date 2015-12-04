@@ -96,7 +96,7 @@ industry.add_spritelayout(
     id = 'tyre_plant_spritelayout_1',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
-    building_sprites = [spriteset_2],
+    building_sprites = [spriteset_1],
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
@@ -146,11 +146,11 @@ industry.add_spritelayout(
 industry.add_industry_layout(
     id = 'tyre_plant_industry_layout_1',
     layout = [(0, 0, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_3'),
-              (0, 1, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_3'),
+              (0, 1, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_1'),
               (0, 2, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_4'),
               (0, 3, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_6'),
               (0, 4, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_5'),
-              (1, 0, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_3'),
+              (1, 0, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_1'),
               (1, 1, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_3'),
               (1, 2, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_7'),
               (1, 3, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_6'),
@@ -164,11 +164,11 @@ industry.add_industry_layout(
 )
 industry.add_industry_layout(
     id = 'tyre_plant_industry_layout_2',
-    layout = [(0, 2, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_3'),
+    layout = [(0, 2, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_1'),
               (0, 3, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_3'),
               (1, 0, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_1'),
               (1, 1, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_2'),
-              (1, 2, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_3'),
+              (1, 2, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_1'),
               (1, 3, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_3'),
               (2, 0, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_7'),
               (2, 1, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_7'),
@@ -182,18 +182,18 @@ industry.add_industry_layout(
 )
 industry.add_industry_layout(
     id = 'tyre_plant_industry_layout_3',
-    layout = [(0, 0, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_3'),
+    layout = [(0, 0, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_1'),
               (0, 1, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_3'),
-              (1, 0, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_3'),
+              (1, 0, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_1'),
               (1, 1, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_3'),
               (1, 2, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_4'),
-              (3, 0, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_5'),
-              (3, 1, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_1'),
-              (3, 2, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_2'),
-              (3, 3, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_7'),
-              (4, 0, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_3'),
-              (4, 1, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_4'),
-              (4, 2, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_7'),
-              (4, 3, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_6'),
+              (2, 0, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_5'),
+              (2, 1, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_1'),
+              (2, 2, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_2'),
+              (2, 3, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_7'),
+              (3, 0, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_1'),
+              (3, 1, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_4'),
+              (3, 2, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_7'),
+              (3, 3, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_6'),
     ]
 )
