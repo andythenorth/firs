@@ -154,7 +154,7 @@ industry.add_industry_layout(
               (1, 1, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_3'),
               (1, 2, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_7'),
               (1, 3, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_6'),
-              (1, 4, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_5'),
+              (1, 4, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_3'),
               (2, 0, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_3'),
               (2, 1, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_1'),
               (2, 2, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_2'),
@@ -175,8 +175,8 @@ industry.add_industry_layout(
               (2, 2, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_6'),
               (2, 3, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_6'),
               (3, 0, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_4'),
-              (3, 1, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_5'),
-              (3, 2, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_5'),
+              (3, 1, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_3'),
+              (3, 2, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_3'),
               (3, 3, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_5'),
     ]
 )
@@ -191,7 +191,7 @@ industry.add_industry_layout(
               (3, 1, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_1'),
               (3, 2, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_2'),
               (3, 3, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_7'),
-              (4, 0, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_5'),
+              (4, 0, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_3'),
               (4, 1, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_4'),
               (4, 2, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_7'),
               (4, 3, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_6'),
