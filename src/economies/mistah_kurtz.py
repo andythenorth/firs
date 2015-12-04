@@ -30,5 +30,7 @@ economy = Economy(id = "MISTAH_KURTZ",
                             'livestock',
                             'maize',
                             'petrol',
+                            'phosphate',
                             'sand',
-                            'stone'])
+                            'stone',
+                            'vehicles'])

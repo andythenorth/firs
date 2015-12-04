@@ -31,7 +31,7 @@ industry = IndustryPrimaryPort(id='trading_post',
                     override_default_construction_states=True)
 
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
-industry.economy_variations['MISTAH_KURTZ'].accept_cargo_types = ['DIAM', 'JAVA']
+industry.economy_variations['MISTAH_KURTZ'].accept_cargo_types = ['DIAM', 'JAVA', 'RUBR']
 industry.economy_variations['MISTAH_KURTZ'].prod_cargo_types = ['GOOD', 'FMSP']
 
 industry.add_tile(id='trading_post_tile_1',

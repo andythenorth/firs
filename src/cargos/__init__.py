@@ -94,6 +94,9 @@ passengers.cargo.register()
 from cargos import petrol
 petrol.cargo.register()
 
+from cargos import phosphate
+phosphate.cargo.register()
+
 from cargos import plant_fibres
 plant_fibres.cargo.register()
 
