@@ -46,6 +46,7 @@
                     <th class="number">Weight</th>
                     <th class="number">Capacity Multiplier</th>
                     <th class="number">Chart Colour</th>
+                    <th class="text">Town Growth Effect</th>
                 </tr>
             </thead>
             <tbody>
@@ -60,6 +61,7 @@
                             <td class="number">${cargo.weight}</td>
                             <td class="number">${cargo.capacity_multiplier}</td>
                             <td class="number">${cargo.cargo_payment_list_colour}</td>
+                            <td class="text">${cargo.town_growth_effect}</td>
                         </tr>
                     </tal:cargo>
                 </tal:cargos>
