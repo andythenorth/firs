@@ -47,6 +47,8 @@ STR_CARGO_NAME_MILK                                                             
 STR_CARGO_NAME_MANUFACTURING_SUPPLIES                                           :Tuotantotarvikkeet
 STR_CARGO_NAME_NITRATES                                                         :Nitraatit
 STR_CARGO_NAME_PETROL                                                           :Bensiini
+STR_CARGO_NAME_PHOSPHATE                                                        :Fosfaatti
+STR_CARGO_NAME_PYRITE_ORE                                                       :Pyriittimalmi
 STR_CARGO_NAME_RECYCLABLES                                                      :Kierrätystavara
 STR_CARGO_NAME_SAND                                                             :Hiekka
 STR_CARGO_NAME_SCRAP_METAL                                                      :Romumetalli
@@ -76,6 +78,8 @@ STR_CARGO_UNIT_MILK                                                             
 STR_CARGO_UNIT_NITRATES                                                         :{WEIGHT} nitraatteja
 STR_CARGO_UNIT_MNSP                                                             :{SIGNED_WORD} laatikko{P 0 "" a} tuotantotarvikkeita
 STR_CARGO_UNIT_PETROL                                                           :{VOLUME} bensiiniä
+STR_CARGO_UNIT_PHOSPHATE                                                        :{WEIGHT} fosfaattia
+STR_CARGO_UNIT_PYRITE_ORE                                                       :{WEIGHT} pyriittimalmia
 STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} kierrätystavaraa
 STR_CARGO_UNIT_SAND                                                             :{WEIGHT} hiekkaa
 STR_CARGO_UNIT_SCRAP_METAL                                                      :{WEIGHT} romumetallia
@@ -104,6 +108,8 @@ STR_CID_METAL                                                                   
 STR_CID_MILK                                                                    :{TINYFONT}MA
 STR_CID_NITRATES                                                                :{TINYFONT}NI
 STR_CID_PETROL                                                                  :{TINYFONT}BN
+STR_CID_PHOSPHATE                                                               :{TINYFONT}FO
+STR_CID_PYRITE_ORE                                                              :{TINYFONT}PY
 STR_CID_RECYCLABLES                                                             :{TINYFONT}KT
 STR_CID_SAND                                                                    :{TINYFONT}HK
 STR_CID_SCRAP_METAL                                                             :{TINYFONT}RM
@@ -127,7 +133,7 @@ STR_ERR_LOCATION_NOT_IN_DESERT                                                  
 STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE                                             :ei voida sijoittaa jyrkkiin rinteisiin.
 STR_ERR_LOCATION_LIMIT_1_PER_TOWN                                               :yhtä kaupunkia kohden sallitaan vain yksi tämän tyypin teollisuus.
 
-STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}Rahdin tuotanto:{}  2t per 8t kuljetettua bauksiittia{}  2t per 8,000 litraa kuljetettuja kemikaaleja{}  4t per 8t kuljetettua metalliromua{}{}Tuotanto kasvaa jos kahta tai useampaa rahtia kuljetetaan kolmen kuukauden aikana.
+STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}Rahdin tuotanto:{}  2t per 8t kuljetettua bauksiittia{}  2t per 8000 litraa kuljetettuja kemikaaleja{} 4t per 8t kuljetettua metalliromua{}{}Tuotanto kasvaa jos kahta tai useampaa rahtia kuljetetaan kolmen kuukauden aikana.
 STR_EXTRA_BIOREFINERY                                                           :{BLACK}Valmistaa viljasta ja sokerista bensiiniä ja kemikaaleja.{}{}6t tuotantoa per 8t kuljetettu.
 STR_EXTRA_BREWERY                                                               :{BLACK}Rahdin tuotanto:{} 3,000l per 8 laatikkoa kuljetettuja tuotantotarvikkeita{} {STRING} {STRING}{}Tuotanto kasvaa, jos tuotantotarvikkeita kuljetetaan kolmen kuukauden sisällä muista rahdeista.
 STR_EXTRA_BREWERY_FRUIT_SUBSTR                                                  :5,000l per 8t kuljetettuja hedelmiä{}
@@ -135,34 +141,35 @@ STR_EXTRA_BREWERY_GRAIN_SUBSTR                                                  
 STR_EXTRA_BREWERY_MAIZE_SUBSTR                                                  :5,000l per 8t kuljetettua maissia{}
 STR_EXTRA_BRICKWORKS                                                            :{BLACK}Rahdin tuotanto:{}  2t per 8t kuljetettua hiiltä{}  2t per 8t kuljetettua hiekkaa{}  4t per 8t kuljetettua savea{}{}Tuotanto kasvaa jos kahta tai useampaa rahtia kuljetetaan kolmen kuukauden aikana.
 STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Rahdin tuotanto:{}  2t per 8t kuljetettua hiiltä{}  2t per 8t kuljetettua savea{}  4t per 8t kuljetettua kiveä{}{}Tuotanto kasvaa jos kahta tai useampaa rahtia kuljetetaan kolmen kuukauden aikana.
-STR_EXTRA_CHEMICAL_PLANT                                                        :{BLACK}Rahdin tuotanto:{} 6,000l per 8,000l kuljetettua öljyä{} 6,000l per 8t nitraatteja
-STR_EXTRA_COPPER_REFINERY                                                       :{BLACK}Rahdin tuotanto:{} 5t per 8t kuljetettua kuparimalmia{} 3t per 8,000 litraa kuljetettuja kemikaaleja{}{}Tuotanto kasvaa jos kahta tai useampaa rahtia kuljetetaan kolmen kuukauden aikana.
-STR_EXTRA_DAIRY                                                                 :{BLACK}Rahdin tuotanto:{}  3t per 8 laatikkoa kuljetettuja tuotantotarvikkeita{}  5t per 8,000 litraa kuljetettua maitoa{}{}Kasvaa 8t per 8t kuljetettu kun molempia rahteja kuljetetaan kolmen kuukauden aikana.
-STR_EXTRA_FERTILIZER_PLANT                                                      :{BLACK}Rahdin tuotanto:{}  8 laatikkoa per 8,000l kuljetettuja kemikaaleja
-STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Rahdin tuotanto:{}  3t per 8t kuljetettuja tuotantotarvikkeita{}  5t per 8t kuljetettua kalaa{}{}Kasvaa 8t per 8t kuljetettu kun molempia rahteja kuljetetaan kolmen kuukauden aikana.
+STR_EXTRA_CHEMICAL_PLANT                                                        :{BLACK}Rahdin tuotanto:{} 6000l per 8000l kuljetettua öljyä{} 6000l per 8t nitraatteja
+STR_EXTRA_COPPER_REFINERY                                                       :{BLACK}Rahdin tuotanto:{} 5t per 8t kuljetettua kuparimalmia{} 3t per 8000 litraa kuljetettuja kemikaaleja{}{}Tuotanto kasvaa jos kahta tai useampaa rahtia kuljetetaan kolmen kuukauden aikana.
+STR_EXTRA_DAIRY                                                                 :{BLACK}Rahdin tuotanto:{}  3t per 8 laatikkoa kuljetettuja tuotantotarvikkeita{} 5t per 8000 litraa kuljetettua maitoa{}{}Tuotanto kasvaa jos molempia rahteja kuljetetaan kolmen kuukauden aikana.
+STR_EXTRA_FERTILIZER_PLANT                                                      :{BLACK}Rahdin tuotanto:{} 8 laatikkoa per 8000l kuljetettuja kemikaaleja
+STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Rahdin tuotanto:{} 3t per 8t kuljetettuja tuotantotarvikkeita{} 5t per 8t kuljetettua kalaa{}{}Tuotanto kasvaa jos molempia rahteja kuljetetaan kolmen kuukauden aikana.
 STR_EXTRA_FOOD_PROCESSING_PLANT                                                 :{BLACK}Rahdin tuotanto:{} 6t per 8t kuljetettuja papuja{} 6t per 8t kuljetettuja hedelmiä
-STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Rahdin tuotanto:{} 3 laatikkoa per 8 laatikkoa kuljetettuja tuotantotarvikkeita{} 5 laatikkoa per 8t kuljetettua puutavaraa{}{}Kasvaa 8t per 8t kuljetettu kun molempia rahteja kuljetetaan kolmen kuukauden aikana.
-STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Tuottaa lasiesineitä kuten pulloja, purkkeja ja ikkunalasia.{}{}Rahdin tuotanto:{}  6t per 8t kuljetettua hiekkaa{}  2t per 8,000 litraa kuljetettuja kemikaaleja{}{}Kasvaa 8t per 8t kuljetettu kun molempia rahteja kuljetetaan kolmen kuukauden aikana.
-STR_EXTRA_GRAIN_MILL                                                            :{BLACK}Rahdin tuotanto:{}  3t per 8 laatikkoa kuljetettuja tuotantotarvikkeita{}  5t per 8t kuljetettua viljaa{}{}Kasvaa 8t per 8t kun molempia rahteja kuljetetaan kolmen kuukauden aikana.
+STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Rahdin tuotanto:{} 3 laatikkoa per 8 laatikkoa kuljetettuja tuotantotarvikkeita{} 5 laatikkoa per 8t kuljetettua puutavaraa{}{}Tuotanto kasvaa jos molempia rahteja kuljetetaan kolmen kuukauden aikana.
+STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Tuottaa lasiesineitä kuten pulloja, purkkeja ja ikkunalasia.{}{}Rahdin tuotanto:{}  6t per 8t kuljetettua hiekkaa{} 2t per 8000 litraa kuljetettuja kemikaaleja{}{}Kasvaa 8t per 8t kuljetettu kun molempia rahteja kuljetetaan kolmen kuukauden aikana.
+STR_EXTRA_GRAIN_MILL                                                            :{BLACK}Rahdin tuotanto:{} 3t per 8 laatikkoa kuljetettuja tuotantotarvikkeita{} 5t per 8t kuljetettua viljaa{}{}Tuotanto kasvaa jos molempia rahteja kuljetetaan kolmen kuukauden aikana.
 STR_EXTRA_IRON_WORKS                                                            :{BLACK}Rahdin tuotanto:{} 3t per 8t kuljetettua rautamalmia{} 3t per 8t kuljetettua puuta{} 2t per 8t kuljetettua hiekkaa{}{}Tuotanto kasvaa, jos kahta tai useampaa rahtia kuljetetaan kolmen kuukauden aikana.
 STR_EXTRA_LIME_KILN                                                             :{BLACK}Rahdin tuotanto:{}  3t per 8t kuljetettua kiveä{}  3t per 8t kuljetettua hiiltä{}{}Kasvaa 6t per 8t kuljetettu kun molempia rahteja kuljetetaan kolmen kuukauden aikana.
-STR_EXTRA_LUMBER_YARD                                                           :{BLACK}Tuottaa tuotteita kuten pylväitä ja aitoja.{}{}Rahdin tuotanto:{}  2t per 8,000 litraa kuljetettuja kemikaaleja{}  6t per 8t kuljetettua puutavaraa{}{}Kasvaa 8t per 8t kuljetettu kun molempia rahteja kuljetetaan kolmen kuukauden aikana.
-STR_EXTRA_MACHINE_SHOP                                                          :{BLACK}Rakentaa ja huoltaa koneita.{}{}8t tuotantoa per 8t kuljetettu.
-STR_EXTRA_MEAT_PACKER                                                           :{BLACK}Rahdin tuotanto:{}  3t per 8 laatikkoa kuljetettuja tuotantotarvikkeita{}  5t per 8 erää kuljetettua karjaa{}{}Kasvaa 8t per 8t kuljetettu kun molempia rahteja kuljetetaan kolmen kuukauden aikana.
-STR_EXTRA_METAL_FABRICATION_PLANT                                               :{BLACK}Tuottaa maalattuja metallikomponentteja.{}{}Rahdin tuotanto:{}2t per 8,000 litraa kuljetettuja kemikaaleja{}6t per 8t kuljetettua metallia{}{}Kasvaa 8t per 8t kuljetettu kun molempia rahteja kuljetetaan kolmen kuukauden aikana.
-STR_EXTRA_METAL_FOUNDRY                                                         :{BLACK}Tuottaa pinnoitettuja metallituotteita kuten säilyketölkkejä, rautatavaraa ja kotitaloustarvikkeita.{}{}Rahdin tuotanto:{}2t per 8,000 litraa kuljetettuja kemikaaleja{}6t per 8t kuljetettua metallia{}{}Kasvaa 8t per 8t kuljetettu kun molempia rahteja kuljetetaan kolmen kuukauden aikana.
+STR_EXTRA_LUMBER_YARD                                                           :{BLACK}Tuottaa tuotteita kuten pylväitä ja aitoja.{}{}Rahdin tuotanto:{} 2t per 8000 litraa kuljetettuja kemikaaleja{}  6t per 8t kuljetettua puutavaraa{}{}Tuotanto kasvaa jos molempia rahteja kuljetetaan kolmen kuukauden aikana.
+STR_EXTRA_MACHINE_SHOP                                                          :{BLACK}Rakentaa ja huoltaa koneita.{}{}Rahdin tuotanto:{} 8 laatikkoa per 8000l kuljetettua bensiiniä{} 8 laatikkoa per 8 t kuljetettua metallia
+STR_EXTRA_MEAT_PACKER                                                           :{BLACK}Rahdin tuotanto:{} 3t per 8 laatikkoa kuljetettuja tuotantotarvikkeita{} 5t per 8 erää kuljetettua karjaa{}{}Tuotanto kasvaa jos molempia rahteja kuljetetaan kolmen kuukauden aikana.
+STR_EXTRA_METAL_FABRICATION_PLANT                                               :{BLACK}Tuottaa maalattuja metallikomponentteja.{}{}Rahdin tuotanto:{} 2t per 8000 litraa kuljetettuja kemikaaleja{}6t per 8t kuljetettua metallia{}{}Kasvaa 8t per 8t kuljetettu kun molempia rahteja kuljetetaan kolmen kuukauden aikana.
+STR_EXTRA_METAL_FOUNDRY                                                         :{BLACK}Tuottaa pinnoitettuja metallituotteita kuten säilyketölkkejä, rautatavaraa ja kotitaloustarvikkeita.{}{}Rahdin tuotanto:{} 2 laatikkoa per 8000 litraa kuljetettuja kemikaaleja{}6 laatikkoa per 8t kuljetettua metallia{}{}Tuotanto kasvaa jos molempia rahteja kuljetetaan kolmen kuukauden aikana.
 STR_EXTRA_OIL_REFINERY                                                          :{BLACK}Tuottaa raakaöljystä bensiiniä ja kemikaaleja.{}{}6t tuotantoa per 8t kuljetettu.
-STR_EXTRA_PAPER_MILL                                                            :{BLACK}Tuottaa puusta paperia ja pahvia.{}{}Rahdin tuotanto:{} 4 laatikkoa per 8t kuljetettua puuta{}  2 laatikkoa per 8t kuljetettua savea{}  2 laatikkoa per 8,000 litraa kuljetettuja kemikaaleja{}{}Tuotanto kasvaa jos kahta tai useampaa rahtia kuljetetaan kolmen kuukauden aikana.
+STR_EXTRA_PAPER_MILL                                                            :{BLACK}Tuottaa puusta paperia ja pahvia.{}{}Rahdin tuotanto:{} 4 laatikkoa per 8t kuljetettua puuta{} 2 laatikkoa per 8t kuljetettua savea{} 2 laatikkoa per 8000 litraa kuljetettuja kemikaaleja{}{}Tuotanto kasvaa jos kahta tai useampaa rahtia kuljetetaan kolmen kuukauden aikana.
 STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}Tuottaa muoviesineitä kuten pakkauksia ja kotitaloustuotteita.{}{}Rahdin tuotanto:{} {STRING} {STRING}
-STR_EXTRA_PLASTICS_PLANT_CHEMICALS_SUBSTR                                       :6 laatikkoa per 8,000l kuljetettuja kemikaaleja{}
+STR_EXTRA_PLASTICS_PLANT_CHEMICALS_SUBSTR                                       :6 laatikkoa per 8000l kuljetettuja kemikaaleja{}
 STR_EXTRA_PLASTICS_PLANT_PLANT_FIBRES_SUBSTR                                    :6 laatikkoa per 8 kuljetettua kasvikuitupaalia{}
+STR_EXTRA_PYRITE_SMELTER                                                        :{BLACK}Prosessoi pyriittimalmin metalliksi ja kemikaaleiksi.{}{}Rahdin tuotanto:{}4t metallia ja 4000 litraa kuljetettuja kemikaaleja per 8t kuljetettua pyriittimalmia
 STR_EXTRA_RECYCLING_PLANT                                                       :{BLACK}Kierrättää kierrätystavaroita uudelleenkäytettäväksi.{}{}6t tuotantoa per 8t kuljetettu.
 STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}Tuottaa kierrätystavaraa kaupungin koon mukaan.
 STR_EXTRA_SAWMILL                                                               :{BLACK}Sahaa raakapuusta lautoja sekä muuta puutavaraa.{}{}6t tuotantoa per 8t kuljetettu.
 STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Tuottaa metalliesineitä kuten työkaluja, auroja, portteja, lapioita ja hevosenkenkiä.{}{}5t tuotantoa per 8t kuljetettu.
 STR_EXTRA_STEELMILL                                                             :{BLACK}Rahdin tuotanto:{} 3t per 8t kuljetettua rautamalmia{} 2t per 8t kuljetettua hiiltä{} 3t per 8t kuljetettua romumetallia{}{}Tuotanto kasvaa, jos kahta tai useampaa rahtia kuljetetaan kolmen kuukauden aikana.
-STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Rahdin tuotanto:{}  3t per 8 laatikkoa kuljetettuja tuotantotarvikkeita{}  5t per 8t kuljetettua sokeriruokoa{}{}Kasvaa 8t per 8t kun molempia rahteja kuljetetaan kolmen kuukauden aikana.
-STR_EXTRA_SUPPLY_YARD                                                           :{BLACK}Rahdin tuotanto:{} 8 laatikkoa per 8,000l kuljetettua bensiiniä{} 8 laatikkoa per 8 kuljetettua ajoneuvoa{} 8 laatikkoa per 8t kuljetettuja tavaroita
+STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Rahdin tuotanto:{}  3t per 8 laatikkoa kuljetettuja tuotantotarvikkeita{}  5t per 8t kuljetettua sokeriruokoa{}{}Tuotanto kasvaa jos molempia rahteja kuljetetaan kolmen kuukauden aikana.
+STR_EXTRA_SUPPLY_YARD                                                           :{BLACK}Rahdin tuotanto:{} 8 laatikkoa per 8000l kuljetettua bensiiniä{} 8 laatikkoa per 8 kuljetettua ajoneuvoa{} 8 laatikkoa per 8t kuljetettuja tavaroita
 STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Rahdin tuotanto:{} 3 laatikkoa per 8 laatikkoa kuljetettuja tuotantotarvikkeita{} {STRING} {STRING}{}Tuotanto kasvaa, jos tuotantotarvikkeita ja muuta rahtia kuljetetaan kolmen kuukauden aikana.
 STR_EXTRA_TEXTILE_MILL_WOOL_SUBSTR                                              :5 laatikkoa per 8 kuljetettua villapaalia{}
 STR_EXTRA_TEXTILE_MILL_PLANT_FIBRES_SUBSTR                                      :5 laatikkoa per 8 kuljetettua kasvikuitupaalia{}
@@ -242,8 +249,11 @@ STR_IND_MIXEDFARM                                                               
 STR_IND_ORCHARD_PIGGERY                                                         :Hedelmätarha ja sikala
 STR_IND_NITRATE_MINE                                                            :Nitraattikaivos
 STR_IND_PETROLPUMP                                                              :Huoltoasema
+STR_IND_PHOSPHATE_MINE                                                          :Fosfaattikaivos
 STR_IND_PLASTICS_PLANT                                                          :Muovitehdas
 STR_IND_PORT                                                                    :Satama
+STR_IND_PYRITE_MINE                                                             :Pyriittikaivos
+STR_IND_PYRITE_SMELTER                                                          :Pyriittipasuttamo
 STR_IND_POWER_PLANT                                                             :Voimalaitos
 STR_IND_QUARRY                                                                  :Hiekanottoalue
 STR_IND_RANCH                                                                   :Karjatila
