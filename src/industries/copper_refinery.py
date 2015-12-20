@@ -69,7 +69,7 @@ spriteset_3 = industry.add_spriteset(
 )
 spriteset_4 = industry.add_spriteset(
     id = 'copper_refinery_spriteset_4',
-    sprites = [(220, 10, 64, 90, -31, -61)],
+    sprites = [(220, 10, 64, 128, -31, -95)],
     zextent = 64
 )
 spriteset_5 = industry.add_spriteset(
