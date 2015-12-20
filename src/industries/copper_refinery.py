@@ -227,11 +227,11 @@ industry.add_industry_layout(
               (3, 3, 'copper_refinery_tile_1', 'copper_refinery_spritelayout_8'),
               (4, 0, 'copper_refinery_tile_1', 'copper_refinery_spritelayout_1'),
               (4, 1, 'copper_refinery_tile_1', 'copper_refinery_spritelayout_1'),
-              (4, 2, 'copper_refinery_tile_1', 'copper_refinery_spritelayout_1'),
+              (4, 2, 'copper_refinery_tile_1', 'copper_refinery_spritelayout_4'),
               (4, 3, 'copper_refinery_tile_1', 'copper_refinery_spritelayout_2'),
               (5, 0, 'copper_refinery_tile_1', 'copper_refinery_spritelayout_1'),
               (5, 1, 'copper_refinery_tile_1', 'copper_refinery_spritelayout_1'),
-              (5, 2, 'copper_refinery_tile_1', 'copper_refinery_spritelayout_1'),
+              (5, 2, 'copper_refinery_tile_1', 'copper_refinery_spritelayout_4'),
               (5, 3, 'copper_refinery_tile_1', 'copper_refinery_spritelayout_7'),
               (7, 1, 'copper_refinery_tile_1', 'copper_refinery_spritelayout_transformer'),
     ]
