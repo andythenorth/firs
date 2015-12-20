@@ -46,7 +46,7 @@ industry.add_tile(id='copper_refinery_tile_1',
 
 spriteset_ground = industry.add_spriteset(
     id = 'copper_refinery_spriteset_ground',
-    type='concrete',
+    type='cobble',
 )
 spriteset_ground_overlay = industry.add_spriteset(
     id = 'copper_refinery_spriteset_ground_overlay',
