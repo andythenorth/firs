@@ -65,7 +65,7 @@ spriteset_1 = industry.add_spriteset(
 spriteset_2 = industry.add_spriteset(
     id = 'copper_refinery_spriteset_2',
     sprites = [(80, 10, 64, 64, -31, -26)],
-    zextent = 90
+    zextent = 64
 )
 spriteset_3 = industry.add_spriteset(
     id = 'copper_refinery_spriteset_3',
@@ -75,17 +75,17 @@ spriteset_3 = industry.add_spriteset(
 spriteset_4 = industry.add_spriteset(
     id = 'copper_refinery_spriteset_4',
     sprites = [(220, 10, 64, 128, -31, -95)],
-    zextent = 64
+    zextent = 128
 )
 spriteset_5 = industry.add_spriteset(
     id = 'copper_refinery_spriteset_5',
     sprites = [(290, 10, 64, 128, -31, -95)],
-    zextent = 64
+    zextent = 55
 )
 spriteset_6 = industry.add_spriteset(
     id = 'copper_refinery_spriteset_6',
     sprites = [(360, 10, 64, 128, -31, -95)],
-    zextent = 64
+    zextent = 55
 )
 spriteset_7 = industry.add_spriteset(
     id = 'copper_refinery_spriteset_7',
@@ -99,8 +99,8 @@ spriteset_8 = industry.add_spriteset(
 )
 spriteset_9 = industry.add_spriteset(
     id = 'copper_refinery_spriteset_9',
-    sprites = [(570, 10, 64, 110, -31, -61)],
-    zextent = 90
+    sprites = [(570, 10, 64, 64, -31, -31)],
+    zextent = 64
 )
 spriteset_10 = industry.add_spriteset(
     id = 'copper_refinery_spriteset_10',
@@ -116,11 +116,25 @@ sprite_transformer = industry.add_sprite(
     sprite_number = 2054,
     zextent= 90
 )
-sprite_smoke = industry.add_smoke_sprite(
-    smoke_type = 'dark_smoke_small',
-    xoffset= 5,
+sprite_smoke_1 = industry.add_smoke_sprite(
+    smoke_type = 'white_smoke_big',
+    xoffset= 1,
     yoffset= 0,
-    zoffset= 64,
+    zoffset= 72,
+)
+sprite_smoke_2 = industry.add_smoke_sprite(
+    smoke_type = 'white_smoke_big',
+    xoffset= -12,
+    yoffset= 0,
+    zoffset= 56,
+    animation_frame_offset = 1
+)
+sprite_smoke_3 = industry.add_smoke_sprite(
+    smoke_type = 'white_smoke_big',
+    xoffset= 0,
+    yoffset= 0,
+    zoffset= 56,
+    animation_frame_offset = 2
 )
 
 industry.add_spritelayout(
@@ -149,7 +163,7 @@ industry.add_spritelayout(
     ground_sprite = sprite_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_4],
-    smoke_sprites = [sprite_smoke],
+    smoke_sprites = [sprite_smoke_1],
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
@@ -157,6 +171,7 @@ industry.add_spritelayout(
     ground_sprite = sprite_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_5],
+    smoke_sprites = [sprite_smoke_2, sprite_smoke_3],
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
@@ -181,7 +196,7 @@ industry.add_spritelayout(
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
-    id = 'copper_refinery_spritelayout_9',
+    id = 'copper_refinery_spritelayout_open_shed',
     ground_sprite = sprite_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_9],
@@ -221,11 +236,11 @@ industry.add_industry_layout(
     layout = [(0, 0, 'copper_refinery_tile_1', 'copper_refinery_spritelayout_transformer'),
               (0, 1, 'copper_refinery_tile_1', 'copper_refinery_spritelayout_big_shed'),
               (0, 2, 'copper_refinery_tile_1', 'copper_refinery_spritelayout_big_shed'),
-              (0, 3, 'copper_refinery_tile_1', 'copper_refinery_spritelayout_7'),
+              (0, 3, 'copper_refinery_tile_1', 'copper_refinery_spritelayout_open_shed'),
               (1, 0, 'copper_refinery_tile_1', 'copper_refinery_spritelayout_ore_handling_rear'),
               (1, 1, 'copper_refinery_tile_1', 'copper_refinery_spritelayout_tanks'),
               (1, 2, 'copper_refinery_tile_1', 'copper_refinery_spritelayout_ground'),
-              (1, 3, 'copper_refinery_tile_1', 'copper_refinery_spritelayout_ground'),
+              (1, 3, 'copper_refinery_tile_1', 'copper_refinery_spritelayout_7'),
               (2, 0, 'copper_refinery_tile_1', 'copper_refinery_spritelayout_ore_handling_front'),
               (2, 1, 'copper_refinery_tile_1', 'copper_refinery_spritelayout_tanks'),
               (2, 2, 'copper_refinery_tile_1', 'copper_refinery_spritelayout_ground'),
