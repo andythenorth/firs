@@ -26,7 +26,7 @@ STR_PARAM_VALUE_ECONOMIES_BASIC_TEMPERATE                                       
 STR_PARAM_VALUE_ECONOMIES_BASIC_ARCTIC                                          :Pohjoinen ilmasto, pelkistetty
 STR_PARAM_VALUE_ECONOMIES_BASIC_TROPIC                                          :Trooppinen, pelkistetty
 STR_PARAM_VALUE_ECONOMIES_FIRS                                                  :FIRS
-STR_PARAM_VALUE_ECONOMIES_MISTAH_KURTZ                                          :Toivoja ja Esteitä
+STR_PARAM_VALUE_ECONOMIES_MISTAH_KURTZ                                          :Toivoja ja esteitä
 
 STR_CARGO_NAME_ALCOHOL                                                          :Alkoholi
 STR_CARGO_NAME_BAUXITE                                                          :Bauksiitti
@@ -173,7 +173,7 @@ STR_EXTRA_SUPPLY_YARD                                                           
 STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Rahdin tuotanto:{} 3 laatikkoa per 8 laatikkoa kuljetettuja tuotantotarvikkeita{} {STRING} {STRING}{}Tuotanto kasvaa, jos tuotantotarvikkeita ja muuta rahtia kuljetetaan kolmen kuukauden aikana.
 STR_EXTRA_TEXTILE_MILL_WOOL_SUBSTR                                              :5 laatikkoa per 8 kuljetettua villapaalia{}
 STR_EXTRA_TEXTILE_MILL_PLANT_FIBRES_SUBSTR                                      :5 laatikkoa per 8 kuljetettua kasvikuitupaalia{}
-STR_EXTRA_TYRE_PLANT                                                            :{BLACK}Rahdin tuotanto:{} 6 laatikkoa per 8 litraa kuljetettua kumia{} 2 laatikkoa per 8 litraa kuljetettuja kemikaaleja{}{}Tuotanto kasvaa jos molempia rahteja kuljetetaan kolmen kuukauden aikana.
+STR_EXTRA_TYRE_PLANT                                                            :{BLACK}Rahdin tuotanto:{} 6 laatikkoa per 8,000 litraa kuljetettua kumia{} 2 laatikkoa per 8,000 litraa kuljetettuja kemikaaleja{}{}Tuotanto kasvaa jos molempia rahteja kuljetetaan kolmen kuukauden aikana.
 STR_EXTRA_VEHICLE_FACTORY                                                       :{BLACK}Rahdin tuotanto:{}  3 laatikkoa per 8 laatikkoa kuljetettuja ajoneuvojen osia{} 3 ajoneuvoa per 8 laatikkoa kuljetettua metallia{} 2 ajoneuvoa per 8 laatikkoa kuljetettuja tuotantotarvikkeita{}{}Tuotanto kasvaa jos kahta tai useampaa rahtia kuljetetaan kolmen kuukauden aikana.
 
 STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ VIANETSINT√Ñ ------------{}Tuotanto tässä kuussa:{}Rahti 1: {WHITE}{COMMA}{BLACK}{}Rahti 2: {WHITE}{COMMA}{BLACK}{}Päiviä edellisestä kuljetuksesta: {WHITE}{COMMA}{BLACK}
@@ -220,7 +220,7 @@ STR_IND_BUILDERS_YARD                                                           
 STR_IND_BULK_TERMINAL                                                           :Bulkkiterminaali
 STR_IND_CEMENT_PLANT                                                            :Sementtitehdas
 STR_IND_CHEMICAL_PLANT                                                          :Kemiantehdas
-STR_IND_CLAY_PIT                                                                :Savenottoalue
+STR_IND_CLAY_PIT                                                                :Savimonttu
 STR_IND_COFFEE_ESTATE                                                           :Kahvitila
 STR_IND_COPPER_REFINERY                                                         :Kuparinjalostamo
 STR_IND_FIBRE_CROP_FARM                                                         :Kasvikuitutila
@@ -241,7 +241,7 @@ STR_IND_HOTEL                                                                   
 STR_IND_IRON_WORKS                                                              :Rautaruukki
 STR_IND_JUNKYARD                                                                :Romuttamo
 STR_IND_LIME_KILN                                                               :Kalkkiuuni
-STR_IND_LUMBER_YARD                                                             :Taapeli
+STR_IND_LUMBER_YARD                                                             :Lautatarha
 STR_IND_MACHINE_SHOP                                                            :Konepaja
 STR_IND_METAL_FABRICATION_PLANT                                                 :Metallituotetehdas
 STR_IND_METAL_FOUNDRY                                                           :Metallipaja
@@ -255,9 +255,9 @@ STR_IND_PORT                                                                    
 STR_IND_PYRITE_MINE                                                             :Pyriittikaivos
 STR_IND_PYRITE_SMELTER                                                          :Pyriittipasuttamo
 STR_IND_POWER_PLANT                                                             :Voimalaitos
-STR_IND_QUARRY                                                                  :Hiekanottoalue
+STR_IND_QUARRY                                                                  :Hiekkakuoppa
 STR_IND_RANCH                                                                   :Karjatila
-STR_IND_RECYCLING_DEPOT                                                         :Kierrätyskeskus
+STR_IND_RECYCLING_DEPOT                                                         :Kierrätysvarikko
 STR_IND_RECYCLING_PLANT                                                         :Kierrätyslaitos
 STR_IND_SHEEPFARM                                                               :Lammastila
 STR_IND_SMITHY_FORGE                                                            :Takomo
