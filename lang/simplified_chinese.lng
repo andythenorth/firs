@@ -26,7 +26,7 @@ STR_PARAM_VALUE_ECONOMIES_BASIC_TEMPERATE                                       
 STR_PARAM_VALUE_ECONOMIES_BASIC_ARCTIC                                          :寒带基础经济模式
 STR_PARAM_VALUE_ECONOMIES_BASIC_TROPIC                                          :热带基础经济模式
 STR_PARAM_VALUE_ECONOMIES_FIRS                                                  :FIRS经济模式
-STR_PARAM_VALUE_ECONOMIES_MISTAH_KURTZ                                          :”黑暗之心”经济模式
+STR_PARAM_VALUE_ECONOMIES_MISTAH_KURTZ                                          :希望与困境
 
 STR_CARGO_NAME_ALCOHOL                                                          :酒
 STR_CARGO_NAME_BAUXITE                                                          :铝土
@@ -47,6 +47,8 @@ STR_CARGO_NAME_MILK                                                             
 STR_CARGO_NAME_MANUFACTURING_SUPPLIES                                           :工业物资
 STR_CARGO_NAME_NITRATES                                                         :硝酸盐
 STR_CARGO_NAME_PETROL                                                           :汽油
+STR_CARGO_NAME_PHOSPHATE                                                        :磷酸矿
+STR_CARGO_NAME_PYRITE_ORE                                                       :黄铁矿
 STR_CARGO_NAME_RECYCLABLES                                                      :回收物资
 STR_CARGO_NAME_SAND                                                             :沙子
 STR_CARGO_NAME_SCRAP_METAL                                                      :废金属
@@ -54,6 +56,7 @@ STR_CARGO_NAME_STONE                                                            
 STR_CARGO_NAME_SUGAR_BEET                                                       :甜菜
 STR_CARGO_NAME_SUGARCANE                                                        :甘蔗
 STR_CARGO_NAME_VEHICLE_PARTS                                                    :车辆零件
+STR_CARGO_NAME_VEHICLES                                                         :车辆
 STR_CARGO_NAME_WOOL                                                             :羊毛
 
 STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} 酒
@@ -75,6 +78,8 @@ STR_CARGO_UNIT_MILK                                                             
 STR_CARGO_UNIT_NITRATES                                                         :{WEIGHT} 吨硝酸盐
 STR_CARGO_UNIT_MNSP                                                             :{SIGNED_WORD} 箱 工业物资
 STR_CARGO_UNIT_PETROL                                                           :{VOLUME} 汽油
+STR_CARGO_UNIT_PHOSPHATE                                                        :{WEIGHT} 吨磷酸盐
+STR_CARGO_UNIT_PYRITE_ORE                                                       :{WEIGHT} 吨黄铁矿
 STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} 回收物资
 STR_CARGO_UNIT_SAND                                                             :{WEIGHT} 沙子
 STR_CARGO_UNIT_SCRAP_METAL                                                      :{WEIGHT} 废金属
@@ -82,6 +87,7 @@ STR_CARGO_UNIT_STONE                                                            
 STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} 甜菜
 STR_CARGO_UNIT_SUGARCANE                                                        :{WEIGHT} 甘蔗
 STR_CARGO_UNIT_VEHICLE_PARTS                                                    :{SIGNED_WORD} 箱车辆零件
+STR_CARGO_UNIT_VEHICLES                                                         :{SIGNED_WORD} 车辆
 STR_CARGO_UNIT_WOOL                                                             :{SIGNED_WORD} 包 羊毛
 
 STR_CID_ALCOHOL                                                                 :{TINYFONT}酒
@@ -102,6 +108,8 @@ STR_CID_METAL                                                                   
 STR_CID_MILK                                                                    :{TINYFONT}奶
 STR_CID_NITRATES                                                                :{TINYFONT}硝
 STR_CID_PETROL                                                                  :{TINYFONT}汽
+STR_CID_PHOSPHATE                                                               :{TINYFONT}磷
+STR_CID_PYRITE_ORE                                                              :{TINYFONT}黄
 STR_CID_RECYCLABLES                                                             :{TINYFONT}回
 STR_CID_SAND                                                                    :{TINYFONT}沙
 STR_CID_SCRAP_METAL                                                             :{TINYFONT}废
@@ -109,6 +117,7 @@ STR_CID_STONE                                                                   
 STR_CID_SUGAR_BEET                                                              :{TINYFONT}甜
 STR_CID_SUGARCANE                                                               :{TINYFONT}蔗
 STR_CID_VEHICLE_PARTS                                                           :{TINYFONT}零
+STR_CID_VEHICLES                                                                :{TINYFONT}车
 STR_CID_WOOL                                                                    :{TINYFONT}毛
 
 STR_ERR_CLIMATE_TOYLAND                                                         :{ORANGE}FIRS不兼容于Toyland climate
@@ -129,6 +138,7 @@ STR_EXTRA_BIOREFINERY                                                           
 STR_EXTRA_BREWERY                                                               :{BLACK}货物生产率:{}  每8箱工业物资生产3,000升{} {STRING} {STRING}{}如果3个月内同时交付了工业物资和其他货物，则产量上升。
 STR_EXTRA_BREWERY_FRUIT_SUBSTR                                                  : 每8吨水果生产5,000升{}
 STR_EXTRA_BREWERY_GRAIN_SUBSTR                                                  : 每8吨谷物生产5,000升{}
+STR_EXTRA_BREWERY_MAIZE_SUBSTR                                                  :每8吨玉米生产 5,000升{}
 STR_EXTRA_BRICKWORKS                                                            :{BLACK}货物生产率:{}  每8吨煤炭生产2吨{}  每8吨沙子生产2吨{}  每8吨粘土生产4吨{}{}如果3个月内交付两种或者以上货物，则产量上升。
 STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}货物生产率:{}  每8吨煤炭生产2吨{}  每8吨粘土生产2吨{}  每8吨石料生产4吨{}{}如果3个月内交付两种或者以上货物，则产量上升。
 STR_EXTRA_CHEMICAL_PLANT                                                        :{BLACK}货物生产率:{} 每8,000升原油生产6,000升{}  每8吨硝酸盐生产6,000l
@@ -152,16 +162,19 @@ STR_EXTRA_PAPER_MILL                                                            
 STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}生产塑料制品如包装盒和家居品{}{}货物生产率:{} {STRING} {STRING}
 STR_EXTRA_PLASTICS_PLANT_CHEMICALS_SUBSTR                                       : 每8,000升化工品生产6箱{}
 STR_EXTRA_PLASTICS_PLANT_PLANT_FIBRES_SUBSTR                                    : 每8包植物纤维生产6箱{}
+STR_EXTRA_PYRITE_SMELTER                                                        :{BLACK}将黄铁矿加工成金属和化工品.{}{}货物生产率:{}  每8吨黄铁矿生产4吨金属和4,000升化工品.
 STR_EXTRA_RECYCLING_PLANT                                                       :{BLACK}处理可回收物品以再循环利用。{}{}货物生产率:{}  每8吨回收物资生产6吨
 STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}生产量正比于城镇人口。
 STR_EXTRA_SAWMILL                                                               :{BLACK}加工原木成木料。{}{}货物生产率:{}  每8吨原木生产6吨
 STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}生产金属制品如工具、犁、门、锹和马蹄铁等。{}{}货物生产率:{}  每8吨金属生产8箱
 STR_EXTRA_STEELMILL                                                             :{BLACK}货物生产率:{}  每8吨铁矿石生产3吨{}  每8吨煤炭生产2吨{}  每8吨废金属生产3吨{}{}如果3个月内交付两种或者以上货物，则产量上升。
 STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}货物生产率:{}  每8箱工业物资生产3吨{}  每8吨甜菜生产5吨{}{}如果3个月内交付了这两种货物，则产量上升。
+STR_EXTRA_SUPPLY_YARD                                                           :{BLACK}货物生产率:{}  每8,000升汽油生产8箱{}  每8车辆生产8箱{}  每8吨货物生产8箱
 STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}货物生产率:{}  每8箱工业物资生产3箱{} {STRING} {STRING}{}如果3月内同时交付了工业物资和其他货物，则产品上升。
 STR_EXTRA_TEXTILE_MILL_WOOL_SUBSTR                                              : 每8包羊毛生产5箱{}
 STR_EXTRA_TEXTILE_MILL_PLANT_FIBRES_SUBSTR                                      : 每8包植物纤维生产5箱{}
-STR_EXTRA_VEHICLE_FACTORY                                                       :{BLACK}货物生产率:{}  每8箱车辆零件生产8箱{}  每8箱工业物资生产8箱
+STR_EXTRA_TYRE_PLANT                                                            :{BLACK}货物生产率:{}  每8,000升橡胶生产6箱{}  每8,000升化工品胜场2箱{}{}如果3个月内交付了这两种货物，则产量上升。
+STR_EXTRA_VEHICLE_FACTORY                                                       :{BLACK}货物生产率:{}  每8箱车辆零件生产3辆{}  每8箱金属生产3辆{} 每8箱工业物资生产2辆{}
 
 STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ DEBUG ------------{}Production this month:{}Cargo 1: {WHITE}{COMMA}{BLACK}{}Cargo 2: {WHITE}{COMMA}{BLACK}{}Days since last delivery: {WHITE}{COMMA}{BLACK}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}达到最大产量
@@ -236,8 +249,11 @@ STR_IND_MIXEDFARM                                                               
 STR_IND_ORCHARD_PIGGERY                                                         :生态农场
 STR_IND_NITRATE_MINE                                                            :硝酸盐矿山
 STR_IND_PETROLPUMP                                                              :加油站
+STR_IND_PHOSPHATE_MINE                                                          :磷矿山
 STR_IND_PLASTICS_PLANT                                                          :塑料厂
 STR_IND_PORT                                                                    :港口
+STR_IND_PYRITE_MINE                                                             :黄铁矿山
+STR_IND_PYRITE_SMELTER                                                          :黄铁矿冶炼厂
 STR_IND_POWER_PLANT                                                             :发电厂
 STR_IND_QUARRY                                                                  :采石场
 STR_IND_RANCH                                                                   :大牧场
@@ -248,8 +264,10 @@ STR_IND_SMITHY_FORGE                                                            
 STR_IND_STOCKYARD                                                               :肉联厂
 STR_IND_SUGAR_PLANTATION                                                        :糖料种植园
 STR_IND_SUGAR_REFINERY                                                          :制糖厂
+STR_IND_SUPPLY_YARD                                                             :供货场
 STR_IND_TEXTILE_MILL                                                            :纺织厂
 STR_IND_TRADING_POST                                                            :贸易站
+STR_IND_TYRE_PLANT                                                              :轮胎工厂
 STR_IND_VEHICLE_FACTORY                                                         :车辆厂
 STR_IND_VINEYARD                                                                :葡萄园
 
