@@ -57,15 +57,18 @@ STR_CID_BAUXITE                                                                 
 STR_CID_BEANS                                                                   :{TINYFONT}FA
 STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}YM
 STR_CID_CHEMICALS                                                               :{TINYFONT}KM
+STR_CID_CLAY                                                                    :{TINYFONT}KL
 STR_CID_COFFEE                                                                  :{TINYFONT}KA
 STR_CID_COPPER                                                                  :{TINYFONT}BA
 STR_CID_FISH                                                                    :{TINYFONT}BA
 STR_CID_LUMBER                                                                  :{TINYFONT}KE
 STR_CID_MILK                                                                    :{TINYFONT}ST
 STR_CID_NITRATES                                                                :{TINYFONT}NI
+STR_CID_PHOSPHATE                                                               :{TINYFONT}FO
 STR_CID_SAND                                                                    :{TINYFONT}KU
 STR_CID_SCRAP_METAL                                                             :{TINYFONT}HM
 STR_CID_STONE                                                                   :{TINYFONT}TŞ
+STR_CID_SUGARCANE                                                               :{TINYFONT}SK
 STR_CID_WOOL                                                                    :{TINYFONT}YN
 
 STR_ERR_CLIMATE_TOYLAND                                                         :{ORANGE}FIRS Oyuncak yer biçeminde kullanılamaz
@@ -74,7 +77,10 @@ STR_ERR_CLIMATE_TOYLAND                                                         
 STR_EXTRA_BREWERY_FRUIT_SUBSTR                                                  :Her 8 ton meyve için 5.000 litre{}
 STR_EXTRA_BREWERY_GRAIN_SUBSTR                                                  :Her 8 ton tahıl için 5.000 litre{}
 STR_EXTRA_BREWERY_MAIZE_SUBSTR                                                  :Her 8 ton mısır için 5.000 litre{}
-STR_EXTRA_IRON_WORKS                                                            :{BLACK}Cargo production:{}  3t per 8t iron ore delivered{}  3t per 8t wood delivered{}  2t per 8t sand delivered{}{}Production steps up if two or more cargos are delivered within three months of each other.
+STR_EXTRA_BRICKWORKS                                                            :{BLACK}Üretim artışı:{}  Her 8 ton kömür için 2 ton{}  Her 8 ton kum için 2 ton{}  Her 8 ton kil için 4 ton{}{}Üç ay içinde bir hammadde birden fazla kez teslim edilmişse üretim katlanır.
+STR_EXTRA_COPPER_REFINERY                                                       :{BLACK}Üretim artışı:{}  Her 8 ton bakır için 5 ton{}  Her 8,000 litre kimyasal için 3 ton{}{}Üç ay içinde bir hammadde birden fazla kez teslim edilmişse üretim katlanır.
+STR_EXTRA_IRON_WORKS                                                            :{BLACK}Üretim artışı:{}  Her 8 ton demir için 3 ton{}  Her 8 ton odun için 3 ton{}  Her 8 ton kum için 2 ton{}{}Üç ay içinde bir hammadde birden fazla kez teslim edilmişse üretim katlanır.
+STR_EXTRA_STEELMILL                                                             :{BLACK}Üretim artışı:{}  Her 8 ton demir için 3 ton{}  Her 8 ton kömür için 2 ton{}  Her 8 ton hurda metal için 3 ton{}{}Üç ay içinde bir hammadde birden fazla kez teslim edilmişse üretim katlanır.
 
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Maksimum üretime ulaşıldı
 
@@ -95,6 +101,7 @@ STR_IND_GRAIN_MILL                                                              
 STR_IND_HARDWARE_STORE                                                          :Hırdavatçısı
 STR_IND_HOTEL                                                                   :Oteli
 STR_IND_JUNKYARD                                                                :Hurdacısı
+STR_IND_LUMBER_YARD                                                             :Kereste Deposu
 STR_IND_NITRATE_MINE                                                            :Nitrat Madeni
 STR_IND_PETROLPUMP                                                              :Benzin İstasyonu
 STR_IND_PYRITE_MINE                                                             :Pirit Madeni
