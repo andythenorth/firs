@@ -36,7 +36,7 @@ industry.economy_variations['BASIC_TEMPERATE'].enabled = True
 industry.economy_variations['BASIC_ARCTIC'].enabled = True
 industry.economy_variations['BASIC_TROPIC'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
-industry.economy_variations['MISTAH_KURTZ'].prob_random='14',
+industry.economy_variations['MISTAH_KURTZ'].prob_random = '14'
 
 industry.add_tile(id='general_store_tile_1',
                   location_checks=TileLocationChecks(road_adjacent=['nw', 'ne', 'sw', 'se']))
