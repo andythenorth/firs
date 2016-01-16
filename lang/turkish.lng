@@ -6,6 +6,7 @@ STR_GRF_NAME                                                                    
 STR_GRF_URL                                                                     :http://bundles.openttdcoop.org/firs/releases/LATEST/docs/
 
 
+STR_PARAM_VALUE_ECONOMIES_BASIC_TEMPERATE                                       :Basit Ilıman
 STR_PARAM_VALUE_ECONOMIES_FIRS                                                  :FIRS
 
 STR_CARGO_NAME_ALCOHOL                                                          :Alkol
@@ -16,11 +17,13 @@ STR_CARGO_NAME_CHEMICALS                                                        
 STR_CARGO_NAME_CLAY                                                             :Kil
 STR_CARGO_NAME_COFFEE                                                           :Kahve
 STR_CARGO_NAME_COPPER                                                           :Bakır
+STR_CARGO_NAME_FIBRES                                                           :Bitkisel Elyaf
 STR_CARGO_NAME_FISH                                                             :Balık
 STR_CARGO_NAME_FRUITS                                                           :Meyve
 STR_CARGO_NAME_LUMBER                                                           :Kereste
 STR_CARGO_NAME_METAL                                                            :Metal
 STR_CARGO_NAME_MILK                                                             :Süt
+STR_CARGO_NAME_MANUFACTURING_SUPPLIES                                           :Üretim Malzemesi
 STR_CARGO_NAME_NITRATES                                                         :Nitrat
 STR_CARGO_NAME_PETROL                                                           :Benzin
 STR_CARGO_NAME_PHOSPHATE                                                        :Fosfat
@@ -29,27 +32,35 @@ STR_CARGO_NAME_SAND                                                             
 STR_CARGO_NAME_SCRAP_METAL                                                      :Hurda Metal
 STR_CARGO_NAME_STONE                                                            :Taş
 STR_CARGO_NAME_SUGARCANE                                                        :Şeker Kamışı
+STR_CARGO_NAME_VEHICLE_PARTS                                                    :Yedek Parça
+STR_CARGO_NAME_VEHICLES                                                         :Araç
 STR_CARGO_NAME_WOOL                                                             :Yün
 
 STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} alkol
 STR_CARGO_UNIT_BAUXITE                                                          :{WEIGHT} boksit
 STR_CARGO_UNIT_BEANS                                                            :{WEIGHT} fasulye
+STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WEIGHT} yapı malzemesi
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} kimyasal
 STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} kil
 STR_CARGO_UNIT_COFFEE                                                           :{SIGNED_WORD} çuval kahve
 STR_CARGO_UNIT_COPPER                                                           :{WEIGHT} bakır
+STR_CARGO_UNIT_FIBRES                                                           :{SIGNED_WORD} bitkisel elyaf
 STR_CARGO_UNIT_FISH                                                             :{WEIGHT} balık
 STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} meyve
 STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} kereste
 STR_CARGO_UNIT_METAL                                                            :{WEIGHT} metal
 STR_CARGO_UNIT_MILK                                                             :{VOLUME} süt
 STR_CARGO_UNIT_NITRATES                                                         :{WEIGHT} nitrat
+STR_CARGO_UNIT_MNSP                                                             :{SIGNED_WORD} kasa üretim malzemesi
 STR_CARGO_UNIT_PETROL                                                           :{VOLUME} benzin
 STR_CARGO_UNIT_PHOSPHATE                                                        :{WEIGHT} fosfat
+STR_CARGO_UNIT_PYRITE_ORE                                                       :{WEIGHT} pirit
 STR_CARGO_UNIT_SAND                                                             :{WEIGHT} kum
 STR_CARGO_UNIT_SCRAP_METAL                                                      :{WEIGHT} hurda metal
 STR_CARGO_UNIT_STONE                                                            :{WEIGHT} taş
 STR_CARGO_UNIT_SUGARCANE                                                        :{WEIGHT} şeker kamışı
+STR_CARGO_UNIT_VEHICLE_PARTS                                                    :{SIGNED_WORD} kasa yedek parça
+STR_CARGO_UNIT_VEHICLES                                                         :{SIGNED_WORD} araç
 STR_CARGO_UNIT_WOOL                                                             :{SIGNED_WORD} balya yün
 
 STR_CID_ALCOHOL                                                                 :{TINYFONT}AL
@@ -60,8 +71,11 @@ STR_CID_CHEMICALS                                                               
 STR_CID_CLAY                                                                    :{TINYFONT}KL
 STR_CID_COFFEE                                                                  :{TINYFONT}KA
 STR_CID_COPPER                                                                  :{TINYFONT}BA
+STR_CID_FIBRES                                                                  :{TINYFONT}EL
 STR_CID_FISH                                                                    :{TINYFONT}BA
 STR_CID_LUMBER                                                                  :{TINYFONT}KE
+STR_CID_MANUFACTURING_SUPPLIES                                                  :{TINYFONT}ÜM
+STR_CID_METAL                                                                   :{TINYFONT}ME
 STR_CID_MILK                                                                    :{TINYFONT}ST
 STR_CID_NITRATES                                                                :{TINYFONT}NI
 STR_CID_PHOSPHATE                                                               :{TINYFONT}FO
@@ -69,18 +83,23 @@ STR_CID_SAND                                                                    
 STR_CID_SCRAP_METAL                                                             :{TINYFONT}HM
 STR_CID_STONE                                                                   :{TINYFONT}TŞ
 STR_CID_SUGARCANE                                                               :{TINYFONT}SK
+STR_CID_VEHICLE_PARTS                                                           :{TINYFONT}YP
 STR_CID_WOOL                                                                    :{TINYFONT}YN
 
 STR_ERR_CLIMATE_TOYLAND                                                         :{ORANGE}FIRS Oyuncak yer biçeminde kullanılamaz
 
 
+STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}Üretim artışı:{} Her 8 ton boksit için 2 ton{} Her 8000 litre kimyasal için 2 ton{} Her 8 ton hurda metal için 4 ton{}{}Üç ay içinde bir hammadde birden fazla kez teslim edilmişse üretim katlanır.
 STR_EXTRA_BREWERY_FRUIT_SUBSTR                                                  :Her 8 ton meyve için 5.000 litre{}
 STR_EXTRA_BREWERY_GRAIN_SUBSTR                                                  :Her 8 ton tahıl için 5.000 litre{}
 STR_EXTRA_BREWERY_MAIZE_SUBSTR                                                  :Her 8 ton mısır için 5.000 litre{}
 STR_EXTRA_BRICKWORKS                                                            :{BLACK}Üretim artışı:{}  Her 8 ton kömür için 2 ton{}  Her 8 ton kum için 2 ton{}  Her 8 ton kil için 4 ton{}{}Üç ay içinde bir hammadde birden fazla kez teslim edilmişse üretim katlanır.
 STR_EXTRA_COPPER_REFINERY                                                       :{BLACK}Üretim artışı:{}  Her 8 ton bakır için 5 ton{}  Her 8,000 litre kimyasal için 3 ton{}{}Üç ay içinde bir hammadde birden fazla kez teslim edilmişse üretim katlanır.
+STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Üretim artışı:{} Her 8 kasa üretim malzemesi için 3 kasa{} Her 8 ton kereste için 5 kasa{}{}Üç ay içinde bir hammadde birden fazla kez teslim edilmişse üretim katlanır.
 STR_EXTRA_IRON_WORKS                                                            :{BLACK}Üretim artışı:{}  Her 8 ton demir için 3 ton{}  Her 8 ton odun için 3 ton{}  Her 8 ton kum için 2 ton{}{}Üç ay içinde bir hammadde birden fazla kez teslim edilmişse üretim katlanır.
+STR_EXTRA_SAWMILL                                                               :{BLACK}İşlenmiş odun.{}{}Üretim artışı:{} Her 8 ton odun için 6 ton
 STR_EXTRA_STEELMILL                                                             :{BLACK}Üretim artışı:{}  Her 8 ton demir için 3 ton{}  Her 8 ton kömür için 2 ton{}  Her 8 ton hurda metal için 3 ton{}{}Üç ay içinde bir hammadde birden fazla kez teslim edilmişse üretim katlanır.
+STR_EXTRA_TEXTILE_MILL_PLANT_FIBRES_SUBSTR                                      :Her 8 balya bitkisel elyaf için 8 kasa{}
 
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Maksimum üretime ulaşıldı
 
@@ -96,7 +115,9 @@ STR_IND_BREWERY                                                                 
 STR_IND_CEMENT_PLANT                                                            :Çimentocusu
 STR_IND_CHEMICAL_PLANT                                                          :Kimya Tesisi
 STR_IND_CLAY_PIT                                                                :Kil Çukuru
+STR_IND_COPPER_REFINERY                                                         :Bakır Rafinerisi
 STR_IND_DAIRYFARM                                                               :Süthanesi
+STR_IND_FURNITURE_FACTORY                                                       :Mobilya Fabrikası
 STR_IND_GRAIN_MILL                                                              :Tahıl Değirmeni
 STR_IND_HARDWARE_STORE                                                          :Hırdavatçısı
 STR_IND_HOTEL                                                                   :Oteli
@@ -104,8 +125,10 @@ STR_IND_JUNKYARD                                                                
 STR_IND_LUMBER_YARD                                                             :Kereste Deposu
 STR_IND_NITRATE_MINE                                                            :Nitrat Madeni
 STR_IND_PETROLPUMP                                                              :Benzin İstasyonu
+STR_IND_PHOSPHATE_MINE                                                          :Fosfat Madeni
 STR_IND_PYRITE_MINE                                                             :Pirit Madeni
 STR_IND_QUARRY                                                                  :Taş ve Kum Ocağı
 STR_IND_SHEEPFARM                                                               :Kuzu Çiftliği
+STR_IND_SUGAR_REFINERY                                                          :Şeker Rafinerisi
 STR_IND_TEXTILE_MILL                                                            :Tekstil Atölyesi
 
