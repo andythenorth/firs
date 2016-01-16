@@ -32,6 +32,7 @@ industry = IndustryTertiary(id='power_plant',
                     intro_year=1900)
 
 industry.economy_variations['FIRS'].enabled = True
+industry.economy_variations['MISTAH_KURTZ'].enabled = True
 
 industry.add_tile(id='power_plant_tile_1',
                   animation_length=7,
