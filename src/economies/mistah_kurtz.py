@@ -33,4 +33,5 @@ economy = Economy(id = "MISTAH_KURTZ",
                             'phosphate',
                             'sand',
                             'stone',
-                            'vehicles'])
+                            'vehicles',
+                            'edible_oil'])

@@ -32,7 +32,6 @@ industry = IndustrySecondary(id='oil_refinery',
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_ARCTIC'].enabled = True
-industry.economy_variations['MISTAH_KURTZ'].enabled = True
 
 industry.add_tile(id='oil_refinery_tile_1',
                   location_checks=TileLocationChecks(require_effectively_flat=True,

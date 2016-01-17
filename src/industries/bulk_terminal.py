@@ -54,7 +54,7 @@ industry.economy_variations['BASIC_TROPIC'].prod_multiplier = '[19]'
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].accept_cargo_types = ['IORE', 'PHOS', 'BDMT']
 industry.economy_variations['MISTAH_KURTZ'].prod_cargo_types = ['FMSP', 'FOOD']
-industry.economy_variations['BASIC_ARCTIC'].prod_multiplier = '[12, 12]'
+industry.economy_variations['MISTAH_KURTZ'].prod_multiplier = '[12, 12]'
 
 industry.add_tile(id='bulk_terminal_tile_1',
                   land_shape_flags='bitmask(LSF_ONLY_ON_FLAT_LAND)',

@@ -34,6 +34,9 @@ copper_ore.cargo.register()
 from cargos import diamonds
 diamonds.cargo.register()
 
+from cargos import edible_oil
+edible_oil.cargo.register()
+
 from cargos import engineering_supplies
 engineering_supplies.cargo.register()
 
