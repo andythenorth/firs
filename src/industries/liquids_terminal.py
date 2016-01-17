@@ -186,40 +186,88 @@ industry.add_spritelayout(
     id = 'liquids_terminal_spritelayout_land_tile_2_2',
     ground_sprite = spriteset_ground_empty,
     ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_concrete, spriteset_spherical_tank]
+    building_sprites = [spriteset_concrete, spriteset_office]
 )
 industry.add_spritelayout(
     id = 'liquids_terminal_spritelayout_land_tile_2_3',
     ground_sprite = spriteset_ground_empty,
     ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_jetty_se_nw, spriteset_jetty_ne_sw, spriteset_concrete, spriteset_spherical_tank]
+    building_sprites = [spriteset_jetty_se_nw, spriteset_jetty_ne_sw, spriteset_concrete, spriteset_office]
 )
 industry.add_spritelayout(
     id = 'liquids_terminal_spritelayout_land_tile_2_4',
     ground_sprite = spriteset_ground_empty,
     ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_jetty_ne_sw, spriteset_jetty_slope_nw_se, spriteset_concrete, spriteset_spherical_tank]
+    building_sprites = [spriteset_jetty_ne_sw, spriteset_jetty_slope_nw_se, spriteset_concrete, spriteset_office]
 )
 industry.add_spritelayout(
     id = 'liquids_terminal_spritelayout_land_tile_2_5',
     ground_sprite = spriteset_ground_empty,
     ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_jetty_slope_ne_sw, spriteset_jetty_slope_nw_se, spriteset_concrete, spriteset_spherical_tank]
+    building_sprites = [spriteset_jetty_slope_ne_sw, spriteset_jetty_slope_nw_se, spriteset_concrete, spriteset_office]
 )
 industry.add_spritelayout(
     id = 'liquids_terminal_spritelayout_land_tile_2_6',
     ground_sprite = spriteset_ground_empty,
     ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_jetty_slope_ne_sw, spriteset_jetty_se_nw, spriteset_concrete, spriteset_spherical_tank]
+    building_sprites = [spriteset_jetty_slope_ne_sw, spriteset_jetty_se_nw, spriteset_concrete, spriteset_office]
 )
 industry.add_spritelayout(
     id = 'liquids_terminal_spritelayout_land_tile_2_7',
     ground_sprite = spriteset_ground_empty,
     ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_jetty_slope_se_nw, spriteset_concrete, spriteset_spherical_tank]
+    building_sprites = [spriteset_jetty_slope_se_nw, spriteset_concrete, spriteset_office]
 )
 industry.add_spritelayout(
     id = 'liquids_terminal_spritelayout_land_tile_2_8',
+    ground_sprite = spriteset_ground_empty,
+    ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_jetty_slope_se_nw, spriteset_jetty_slope_sw_ne, spriteset_concrete, spriteset_office]
+)
+industry.add_spritelayout(
+    id = 'liquids_terminal_spritelayout_land_tile_3_1',
+    ground_sprite = spriteset_ground_empty,
+    ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_jetty_slope_sw_ne, spriteset_concrete]
+)
+industry.add_spritelayout(
+    id = 'liquids_terminal_spritelayout_land_tile_3_2',
+    ground_sprite = spriteset_ground_empty,
+    ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_concrete, spriteset_spherical_tank]
+)
+industry.add_spritelayout(
+    id = 'liquids_terminal_spritelayout_land_tile_3_3',
+    ground_sprite = spriteset_ground_empty,
+    ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_jetty_se_nw, spriteset_jetty_ne_sw, spriteset_concrete, spriteset_spherical_tank]
+)
+industry.add_spritelayout(
+    id = 'liquids_terminal_spritelayout_land_tile_3_4',
+    ground_sprite = spriteset_ground_empty,
+    ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_jetty_ne_sw, spriteset_jetty_slope_nw_se, spriteset_concrete, spriteset_spherical_tank]
+)
+industry.add_spritelayout(
+    id = 'liquids_terminal_spritelayout_land_tile_3_5',
+    ground_sprite = spriteset_ground_empty,
+    ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_jetty_slope_ne_sw, spriteset_jetty_slope_nw_se, spriteset_concrete, spriteset_spherical_tank]
+)
+industry.add_spritelayout(
+    id = 'liquids_terminal_spritelayout_land_tile_3_6',
+    ground_sprite = spriteset_ground_empty,
+    ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_jetty_slope_ne_sw, spriteset_jetty_se_nw, spriteset_concrete, spriteset_spherical_tank]
+)
+industry.add_spritelayout(
+    id = 'liquids_terminal_spritelayout_land_tile_3_7',
+    ground_sprite = spriteset_ground_empty,
+    ground_overlay = spriteset_ground_empty,
+    building_sprites = [spriteset_jetty_slope_se_nw, spriteset_concrete, spriteset_spherical_tank]
+)
+industry.add_spritelayout(
+    id = 'liquids_terminal_spritelayout_land_tile_3_8',
     ground_sprite = spriteset_ground_empty,
     ground_overlay = spriteset_ground_empty,
     building_sprites = [spriteset_jetty_slope_se_nw, spriteset_jetty_slope_sw_ne, spriteset_concrete, spriteset_spherical_tank]
@@ -327,6 +375,23 @@ slope_switch_2 = industry.add_slope_graphics_switch('liquids_terminal_slope_swit
                                                                                 14: 'liquids_terminal_spritelayout_land_tile_2_7'},
                                                     default_result='liquids_terminal_spritelayout_land_tile_2_2')
 
+slope_switch_3 = industry.add_slope_graphics_switch('liquids_terminal_slope_switch_3',
+                                                    slope_spritelayout_mapping={0: 'liquids_terminal_spritelayout_land_tile_3_2',
+                                                                                1: 'liquids_terminal_spritelayout_land_tile_3_4',
+                                                                                2: 'liquids_terminal_spritelayout_land_tile_3_8',
+                                                                                3: 'liquids_terminal_spritelayout_land_tile_3_1',
+                                                                                4: 'liquids_terminal_spritelayout_land_tile_3_6',
+                                                                                5: 'liquids_terminal_spritelayout_land_tile_3_5',
+                                                                                6: 'liquids_terminal_spritelayout_land_tile_3_7',
+                                                                                7: 'liquids_terminal_spritelayout_land_tile_3_2',
+                                                                                8: 'liquids_terminal_spritelayout_land_tile_3_3',
+                                                                                9: 'liquids_terminal_spritelayout_land_tile_3_4',
+                                                                                10: 'liquids_terminal_spritelayout_land_tile_3_8',
+                                                                                11: 'liquids_terminal_spritelayout_land_tile_3_1',
+                                                                                12: 'liquids_terminal_spritelayout_land_tile_3_6',
+                                                                                13: 'liquids_terminal_spritelayout_land_tile_3_5',
+                                                                                14: 'liquids_terminal_spritelayout_land_tile_3_7'},
+                                                    default_result='liquids_terminal_spritelayout_land_tile_3_2')
 industry.add_industry_layout(
     id = 'liquids_terminal_industry_layout_1',
     layout = [
@@ -433,25 +498,26 @@ industry.add_industry_layout(
     id = 'liquids_terminal_industry_layout_4',
     layout = [(0, 0, 'liquids_terminal_tile_2', slope_switch_1),
               (0, 1, 'liquids_terminal_tile_1', 'liquids_terminal_spritelayout_large_cylinder_tank'),
-              (0, 2, 'liquids_terminal_tile_1', 'liquids_terminal_spritelayout_large_cylinder_tank'),
-              (0, 3, 'liquids_terminal_tile_1', 'liquids_terminal_spritelayout_large_cylinder_tank'),
+              (0, 2, 'liquids_terminal_tile_1', 'liquids_terminal_spritelayout_water_empty'),
+              (0, 3, 'liquids_terminal_tile_1', 'liquids_terminal_spritelayout_water_empty'),
               (0, 4, '255', 'liquids_terminal_spritelayout_null'),
               (1, 0, 'liquids_terminal_tile_2', slope_switch_1),
               (1, 1, 'liquids_terminal_tile_1', 'liquids_terminal_spritelayout_large_cylinder_tank'),
               (1, 2, 'liquids_terminal_tile_1', 'liquids_terminal_spritelayout_large_cylinder_tank'),
               (1, 3, 'liquids_terminal_tile_1', 'liquids_terminal_spritelayout_large_cylinder_tank'),
               (1, 4, '255', 'liquids_terminal_spritelayout_null'),
-              (2, 0, 'liquids_terminal_tile_2', slope_switch_2),
-              (2, 1, 'liquids_terminal_tile_1', 'liquids_terminal_spritelayout_jetty_empty'),
-              (2, 2, 'liquids_terminal_tile_1', 'liquids_terminal_spritelayout_small_tanks'),
-              (2, 3, 'liquids_terminal_tile_1', 'liquids_terminal_spritelayout_small_tanks'),
+              (2, 0, 'liquids_terminal_tile_2', slope_switch_1),
+              (2, 1, 'liquids_terminal_tile_1', 'liquids_terminal_spritelayout_large_cylinder_tank'),
+              (2, 2, 'liquids_terminal_tile_1', 'liquids_terminal_spritelayout_water_barge_nw_se'),
+              (2, 3, 'liquids_terminal_tile_1', 'liquids_terminal_spritelayout_water_empty'),
               (2, 4, '255', 'liquids_terminal_spritelayout_null'),
               (3, 0, 'liquids_terminal_tile_2', slope_switch_2),
-              (3, 1, 'liquids_terminal_tile_1', 'liquids_terminal_spritelayout_office'),
-              (3, 2, 'liquids_terminal_tile_1', 'liquids_terminal_spritelayout_water_barge_nw_se'),
-              (3, 3, 'liquids_terminal_tile_1', 'liquids_terminal_spritelayout_water_empty'),
+              (3, 1, 'liquids_terminal_tile_1', 'liquids_terminal_spritelayout_jetty_empty'),
+              (3, 2, 'liquids_terminal_tile_1', 'liquids_terminal_spritelayout_small_tanks'),
+              (3, 3, 'liquids_terminal_tile_1', 'liquids_terminal_spritelayout_small_tanks'),
               (3, 4, '255', 'liquids_terminal_spritelayout_null'),
-              (4, 1, '255', 'liquids_terminal_spritelayout_null'),
+              (4, 0, 'liquids_terminal_tile_2', slope_switch_3),
+              (4, 1, 'liquids_terminal_tile_1', 'liquids_terminal_spritelayout_office'),
               (4, 2, '255', 'liquids_terminal_spritelayout_null'),
               (4, 3, '255', 'liquids_terminal_spritelayout_null'),
               (4, 4, '255', 'liquids_terminal_spritelayout_null'),
