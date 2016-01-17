@@ -27,7 +27,7 @@ STR_PARAM_VALUE_ECONOMIES_BASIC_TEMPERATE                                       
 STR_PARAM_VALUE_ECONOMIES_BASIC_ARCTIC                                          :Economía Básica Subártica
 STR_PARAM_VALUE_ECONOMIES_BASIC_TROPIC                                          :Economía Básica Subtropical
 STR_PARAM_VALUE_ECONOMIES_FIRS                                                  :Economía FIRS
-STR_PARAM_VALUE_ECONOMIES_MISTAH_KURTZ                                          :Esperanzas e Impedimentos
+STR_PARAM_VALUE_ECONOMIES_MISTAH_KURTZ                                          :En Un País Caliente
 
 STR_CARGO_NAME_ALCOHOL                                                          :{G=m}Alcohol
 STR_CARGO_NAME_BAUXITE                                                          :{G=f}Bauxita
@@ -37,6 +37,7 @@ STR_CARGO_NAME_CHEMICALS                                                        
 STR_CARGO_NAME_CLAY                                                             :{G=f}Arcilla
 STR_CARGO_NAME_COFFEE                                                           :Café
 STR_CARGO_NAME_COPPER                                                           :Cobre
+STR_CARGO_NAME_EDIBLE_OIL                                                       :Aceite de Cocina
 STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :{G=m}Suministros de Ingeniería
 STR_CARGO_NAME_FIBRES                                                           :{G=f}Fibras Vegetales
 STR_CARGO_NAME_FISH                                                             :{G=m}Pescado
@@ -68,6 +69,7 @@ STR_CARGO_UNIT_CHEMICALS                                                        
 STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} de arcilla
 STR_CARGO_UNIT_COFFEE                                                           :{SIGNED_WORD} saco{P 0 "" s} de café
 STR_CARGO_UNIT_COPPER                                                           :{WEIGHT} de cobre
+STR_CARGO_UNIT_EDIBLE_OIL                                                       :{VOLUME} de aceite de cocina
 STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} caja{P 0 "" s} de suministros de ingeniería
 STR_CARGO_UNIT_FIBRES                                                           :{SIGNED_WORD} fardo{P 0 "" s} de fibras vegetales
 STR_CARGO_UNIT_FISH                                                             :{WEIGHT} de pescado
@@ -99,6 +101,7 @@ STR_CID_CHEMICALS                                                               
 STR_CID_CLAY                                                                    :{TINYFONT}AC
 STR_CID_COFFEE                                                                  :{TINYFONT}CF
 STR_CID_COPPER                                                                  :{TINYFONT}CR
+STR_CID_EDIBLE_OIL                                                              :{TINYFONT}EO
 STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}SI
 STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}SA
 STR_CID_FIBRES                                                                  :{TINYFONT}FV
@@ -242,6 +245,7 @@ STR_IND_HOTEL                                                                   
 STR_IND_IRON_WORKS                                                              :{G=f}Herrería
 STR_IND_JUNKYARD                                                                :{G=m}Desguace
 STR_IND_LIME_KILN                                                               :{G=m}Horno de Cal
+STR_IND_LIQUIDS_TERMINAL                                                        :Terminal de Líquidos
 STR_IND_LUMBER_YARD                                                             :{G=f}Planta de Tratamiento de Madera
 STR_IND_MACHINE_SHOP                                                            :{G=f}Fábrica de Maquinaria
 STR_IND_METAL_FABRICATION_PLANT                                                 :{G=f}Planta de Fabricación de Metal
