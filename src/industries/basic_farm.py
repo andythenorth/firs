@@ -36,6 +36,7 @@ industry.economy_variations['BASIC_ARCTIC'].enabled = True
 industry.economy_variations['BASIC_ARCTIC'].prod_cargo_types=['FOOD']
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].prod_cargo_types=['MAIZ', 'LVST']
+industry.economy_variations['MISTAH_KURTZ'].prob_random = '14'
 
 industry.add_tile(id='basic_farm_tile_1',
                   location_checks=TileLocationChecks(disallow_steep_slopes=True,
