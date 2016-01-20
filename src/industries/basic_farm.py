@@ -61,9 +61,19 @@ spriteset_1 = industry.add_spriteset(
     sprites = [(10, 10, 64, 52, -31, -21)],
     zextent = 32
 )
+spriteset_1_ground = industry.add_spriteset(
+    id = 'basic_farm_spriteset_1_ground',
+    sprites = [(10, 70, 64, 52, -31, -21)],
+    zextent = 32
+)
 spriteset_2 = industry.add_spriteset(
     id = 'basic_farm_spriteset_2',
     sprites = [(80, 10, 64, 52, -31, -21)],
+    zextent = 32
+)
+spriteset_2_ground = industry.add_spriteset(
+    id = 'basic_farm_spriteset_2_ground',
+    sprites = [(80, 70, 64, 52, -31, -21)],
     zextent = 32
 )
 spriteset_3 = industry.add_spriteset(
@@ -71,9 +81,19 @@ spriteset_3 = industry.add_spriteset(
     sprites = [(150, 10, 64, 52, -31, -21)],
     zextent = 32
 )
+spriteset_3_ground = industry.add_spriteset(
+    id = 'basic_farm_spriteset_3_ground',
+    sprites = [(150, 70, 64, 52, -31, -21)],
+    zextent = 32
+)
 spriteset_4 = industry.add_spriteset(
     id = 'basic_farm_spriteset_4',
     sprites = [(220, 10, 64, 52, -31, -21)],
+    zextent = 32
+)
+spriteset_4_ground = industry.add_spriteset(
+    id = 'basic_farm_spriteset_4_ground',
+    sprites = [(220, 70, 64, 52, -31, -21)],
     zextent = 32
 )
 spriteset_5 = industry.add_spriteset(
@@ -100,27 +120,27 @@ spriteset_8 = industry.add_spriteset(
 industry.add_spritelayout(
     id = 'basic_farm_spritelayout_1',
     ground_sprite = spriteset_ground,
-    ground_overlay = spriteset_ground_overlay,
+    ground_overlay = spriteset_1_ground,
     building_sprites = [spriteset_1],
     terrain_aware_ground = True
 )
 industry.add_spritelayout(
     id = 'basic_farm_spritelayout_2',
     ground_sprite = spriteset_ground,
-    ground_overlay = spriteset_ground_overlay,
+    ground_overlay = spriteset_2_ground,
     building_sprites = [spriteset_2],
     terrain_aware_ground = True
 )
 industry.add_spritelayout(
     id = 'basic_farm_spritelayout_3',
     ground_sprite = sprite_ground_mud,
-    ground_overlay = spriteset_ground_overlay,
+    ground_overlay = spriteset_3_ground,
     building_sprites = [spriteset_3],
 )
 industry.add_spritelayout(
     id = 'basic_farm_spritelayout_4',
     ground_sprite = spriteset_ground,
-    ground_overlay = spriteset_ground_overlay,
+    ground_overlay = spriteset_4_ground,
     building_sprites = [spriteset_4],
     terrain_aware_ground = True
 )
