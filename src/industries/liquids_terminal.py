@@ -273,12 +273,6 @@ industry.add_spritelayout(
     building_sprites = [spriteset_jetty_slope_se_nw, spriteset_jetty_slope_sw_ne, spriteset_concrete, spriteset_spherical_tank]
 )
 industry.add_spritelayout(
-    id = 'liquids_terminal_spritelayout_spherical_tank',
-    ground_sprite = spriteset_ground_empty,
-    ground_overlay = spriteset_ground_empty,
-    building_sprites = [spriteset_jetty_se_nw, spriteset_concrete, spriteset_spherical_tank]
-)
-industry.add_spritelayout(
     id = 'liquids_terminal_spritelayout_water_barge_sw_ne',
     ground_sprite = sprite_ground,
     ground_overlay = spriteset_ground_empty,
