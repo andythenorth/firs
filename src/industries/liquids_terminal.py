@@ -522,7 +522,6 @@ industry.add_industry_layout(
               (4, 2, 'liquids_terminal_tile_1', 'liquids_terminal_spritelayout_water_barge_ne_sw'),
               (4, 3, 'liquids_terminal_tile_1', 'liquids_terminal_spritelayout_water_empty'),
               (4, 4, '255', 'liquids_terminal_spritelayout_null'),
-              (5, 1, '255', 'liquids_terminal_spritelayout_null'),
               (5, 2, '255', 'liquids_terminal_spritelayout_null'),
               (5, 3, '255', 'liquids_terminal_spritelayout_null'),
               (5, 4, '255', 'liquids_terminal_spritelayout_null'),
