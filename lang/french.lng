@@ -26,7 +26,7 @@ STR_PARAM_VALUE_ECONOMIES_BASIC_TEMPERATE                                       
 STR_PARAM_VALUE_ECONOMIES_BASIC_ARCTIC                                          :Basique - Environnement arctique
 STR_PARAM_VALUE_ECONOMIES_BASIC_TROPIC                                          :Basique - Environnement tropical
 STR_PARAM_VALUE_ECONOMIES_FIRS                                                  :FIRS
-STR_PARAM_VALUE_ECONOMIES_MISTAH_KURTZ                                          :Hopes and Impediments (Espoirs et Entraves)
+STR_PARAM_VALUE_ECONOMIES_MISTAH_KURTZ                                          :Dans un pays chaud
 
 STR_CARGO_NAME_ALCOHOL                                                          :Alcool
 STR_CARGO_NAME_BAUXITE                                                          :Bauxite
@@ -36,6 +36,7 @@ STR_CARGO_NAME_CHEMICALS                                                        
 STR_CARGO_NAME_CLAY                                                             :Argile
 STR_CARGO_NAME_COFFEE                                                           :Café
 STR_CARGO_NAME_COPPER                                                           :Cuivre
+STR_CARGO_NAME_EDIBLE_OIL                                                       :Huile végétale
 STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :Matériel technique
 STR_CARGO_NAME_FIBRES                                                           :Fibres végétales
 STR_CARGO_NAME_FISH                                                             :Poisson
@@ -67,6 +68,7 @@ STR_CARGO_UNIT_CHEMICALS                                                        
 STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} d'argile
 STR_CARGO_UNIT_COFFEE                                                           :{SIGNED_WORD} sac{P 0 "" s} de café
 STR_CARGO_UNIT_COPPER                                                           :{WEIGHT} de cuivre
+STR_CARGO_UNIT_EDIBLE_OIL                                                       :{VOLUME} d'huile végétale
 STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} caisse{P 0 "" s} de matériel technique
 STR_CARGO_UNIT_FIBRES                                                           :{SIGNED_WORD} balle{P 0 "" s} de fibres végétales
 STR_CARGO_UNIT_FISH                                                             :{WEIGHT} de poisson
@@ -98,6 +100,7 @@ STR_CID_CHEMICALS                                                               
 STR_CID_CLAY                                                                    :{TINYFONT}AR
 STR_CID_COFFEE                                                                  :{TINYFONT}CF
 STR_CID_COPPER                                                                  :{TINYFONT}CU
+STR_CID_EDIBLE_OIL                                                              :{TINYFONT}HV
 STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}MT
 STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}MA
 STR_CID_FIBRES                                                                  :{TINYFONT}FV
@@ -241,6 +244,7 @@ STR_IND_HOTEL                                                                   
 STR_IND_IRON_WORKS                                                              :Haut fourneau
 STR_IND_JUNKYARD                                                                :Marchand de ferraille
 STR_IND_LIME_KILN                                                               :Four à chaux
+STR_IND_LIQUIDS_TERMINAL                                                        :Terminal de vracs liquides
 STR_IND_LUMBER_YARD                                                             :Dépôt de bois
 STR_IND_MACHINE_SHOP                                                            :Atelier mécanique
 STR_IND_METAL_FABRICATION_PLANT                                                 :Usine métallurgique
