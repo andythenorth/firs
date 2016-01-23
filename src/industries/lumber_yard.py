@@ -33,7 +33,7 @@ industry = IndustrySecondary(id='lumber_yard',
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
-industry.economy_variations['MISTAH_KURTZ'].prod_cargo_types = ['FMSP', 'BDMT']
+industry.economy_variations['MISTAH_KURTZ'].prod_cargo_types = ['BDMT']
 
 # non-animated tile, allowed on slopes
 industry.add_tile(id='lumber_yard_tile_1',
