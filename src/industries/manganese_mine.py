@@ -7,24 +7,23 @@
 
 from industry import IndustryPrimaryExtractive, TileLocationChecks, IndustryLocationChecks
 
-industry = IndustryPrimaryExtractive(id='iron_ore_mine',
-                    map_colour='55',
+industry = IndustryPrimaryExtractive(id='manganese_mine',
+                    map_colour='16',
                     prospect_chance='0.75',
                     prob_in_game='4',
                     override='18',
                     prob_random='7',
-                    location_checks=IndustryLocationChecks(require_cluster=['iron_ore_mine', [20, 70, 1, 3]],
-                                                           incompatible={'steel_mill': 16}),
+                    location_checks=IndustryLocationChecks(require_cluster=['manganese_mine', [20, 70, 1, 3]],
+                                                           incompatible={'bulk_terminal': 16}),
                     prod_multiplier='[20]',
-                    prod_cargo_types=['IORE'],
+                    prod_cargo_types=['MNO2'],
                     substitute='18',
-                    name='TTD_STR_INDUSTRY_NAME_IRON_ORE_MINE',
+                    name='string(STR_IND_MANGANESE_MINE)',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_MINE))',
                     fund_cost_multiplier='232',
                     template='refactor_iron_ore_mine.pypnml' )
 
-industry.economy_variations['FIRS'].enabled = True
-industry.economy_variations['BASIC_TEMPERATE'].enabled = True
+industry.economy_variations['MISTAH_KURTZ'].enabled = True
 
 # industry uses layouts and sprites from default game, no custom layouts etc
 

@@ -103,6 +103,9 @@ lumber_yard.industry.register()
 from industries import machine_shop
 machine_shop.industry.register()
 
+from industries import manganese_mine
+manganese_mine.industry.register()
+
 from industries import metal_fabrication_plant
 metal_fabrication_plant.industry.register()
 

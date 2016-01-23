@@ -76,6 +76,9 @@ mail.cargo.register()
 from cargos import maize
 maize.cargo.register()
 
+from cargos import manganese
+manganese.cargo.register()
+
 from cargos import manufacturing_supplies
 manufacturing_supplies.cargo.register()
 
