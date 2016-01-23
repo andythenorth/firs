@@ -14,7 +14,7 @@ industry = IndustryPrimaryPort(id='trading_post',
                     layouts='AUTO',
                     prob_in_game='3',
                     prob_random='5',
-                    prod_multiplier='[9, 6]',
+                    prod_multiplier='[7, 6]',
                     substitute='0',
                     new_ind_msg='TTD_STR_NEWS_INDUSTRY_CONSTRUCTION',
                     map_colour='36',
@@ -32,7 +32,7 @@ industry = IndustryPrimaryPort(id='trading_post',
 
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].accept_cargo_types = ['DIAM', 'JAVA', 'RUBR']
-industry.economy_variations['MISTAH_KURTZ'].prod_cargo_types = ['GOOD', 'FMSP']
+industry.economy_variations['MISTAH_KURTZ'].prod_cargo_types = ['ENSP', 'FMSP']
 
 industry.add_tile(id='trading_post_tile_1',
                   land_shape_flags='bitmask(LSF_ONLY_ON_FLAT_LAND)',
