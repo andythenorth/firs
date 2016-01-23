@@ -10,6 +10,9 @@ bauxite.cargo.register()
 from cargos import building_materials
 building_materials.cargo.register()
 
+from cargos import cassava
+cassava.cargo.register()
+
 from cargos import chemicals
 chemicals.cargo.register()
 

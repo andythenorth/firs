@@ -36,7 +36,6 @@ industry = IndustrySecondary(id='fishing_harbour',
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True
 industry.economy_variations['BASIC_TROPIC'].enabled = True
-industry.economy_variations['MISTAH_KURTZ'].enabled = True
 
 industry.add_tile(id='fishing_harbour_tile_1',
                   land_shape_flags='bitmask(LSF_ONLY_ON_FLAT_LAND)',

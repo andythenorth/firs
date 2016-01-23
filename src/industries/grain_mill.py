@@ -8,8 +8,8 @@
 from industry import IndustrySecondary, TileLocationChecks, IndustryLocationChecks
 
 industry = IndustrySecondary(id='grain_mill',
-                    processed_cargos_and_output_ratios=[('MNSP', 5), ('GRAI', 3)],
-                    combined_cargos_boost_prod=True,
+                    processed_cargos_and_output_ratios=[('MNSP', 3), ('GRAI', 5), ('MAIZ', 5)],
+                    mnsp_boosts_production_jank=True, # this is jank we have to live with
                     prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL',
                     prod_cargo_types=['FOOD'],
                     layouts='AUTO',
@@ -38,7 +38,7 @@ industry = IndustrySecondary(id='grain_mill',
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_TROPIC'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
-industry.economy_variations['MISTAH_KURTZ'].processed_cargos_and_output_ratios = [('MNSP', 5), ('MAIZ', 3)]
+industry.economy_variations['MISTAH_KURTZ'].processed_cargos_and_output_ratios = [('MNSP', 3), ('MAIZ', 5), ('CASS', 5)]
 
 industry.add_tile(id='grain_mill_tile_1',
                   animation_length=6,
