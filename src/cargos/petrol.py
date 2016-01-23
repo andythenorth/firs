@@ -1,5 +1,7 @@
 from cargo import Cargo
 
+# the EN GB lang string for this was changed to 'Petroleum Fuels' Jan 2016, it feels more widely usable as a cargo
+
 cargo = Cargo(id = 'petrol',
               type_name = 'string(STR_CARGO_NAME_PETROL)',
               unit_name = 'string(STR_CARGO_NAME_PETROL)',
