@@ -29,10 +29,12 @@ industry = IndustrySecondary(id='supply_yard',
                     fund_cost_multiplier='145',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
                     intro_year=1800,
-                    extra_text_industry='STR_EXTRA_SUPPLY_YARD')
+                    extra_text_industry='STR_EXTRA_SUPPLY_YARD, string(STR_EXTRA_SUPPLY_YARD_GOODS_SUBSTR)')
 
 industry.economy_variations['BASIC_ARCTIC'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
+industry.economy_variations['MISTAH_KURTZ'].processed_cargos_and_output_ratios = [('VEHI', 8), ('PETR', 8), ('BDMT', 8)]
+industry.economy_variations['MISTAH_KURTZ'].extra_text_industry = 'STR_EXTRA_SUPPLY_YARD, string(STR_EXTRA_SUPPLY_YARD_BUILDING_MATERIALS_SUBSTR)'
 
 industry.add_tile(id='supply_yard_tile_1',
                   animation_length=71,
