@@ -33,5 +33,4 @@ economy = Economy(id = "MISTAH_KURTZ",
                             'rubber',
                             'sand',
                             'stone',
-                            'vehicles',
                             'wood'])
