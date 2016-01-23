@@ -32,10 +32,12 @@ industry = IndustrySecondary(id='cement_plant',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_INDUSTRY_ESTATE))',
                     fund_cost_multiplier='203',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
-                    extra_text_industry='STR_EXTRA_CEMENT_PLANT' )
+                    extra_text_industry='STR_EXTRA_CEMENT_PLANT, string(STR_EXTRA_CEMENT_PLANT_COAL_SUBSTR)')
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
+industry.economy_variations['MISTAH_KURTZ'].processed_cargos_and_output_ratios=[('PETR', 2), ('CLAY', 2), ('GRVL', 4)]
+industry.economy_variations['MISTAH_KURTZ'].extra_text_industry='STR_EXTRA_CEMENT_PLANT, string(STR_EXTRA_CEMENT_PLANT_PETROL_SUBSTR)'
 
 industry.add_tile(id='cement_plant_tile_1',
                   animation_length=7,
