@@ -47,7 +47,7 @@ STR_CARGO_NAME_METAL                                                            
 STR_CARGO_NAME_MILK                                                             :Milk
 STR_CARGO_NAME_MANUFACTURING_SUPPLIES                                           :Manufacturing Supplies
 STR_CARGO_NAME_NITRATES                                                         :Nitrates
-STR_CARGO_NAME_PETROL                                                           :Petrol
+STR_CARGO_NAME_PETROL                                                           :Petroleum Fuels
 STR_CARGO_NAME_PHOSPHATE                                                        :Phosphate
 STR_CARGO_NAME_PYRITE_ORE                                                       :Pyrite Ore
 STR_CARGO_NAME_RECYCLABLES                                                      :Recyclables
@@ -79,7 +79,7 @@ STR_CARGO_UNIT_METAL                                                            
 STR_CARGO_UNIT_MILK                                                             :{VOLUME} of milk
 STR_CARGO_UNIT_NITRATES                                                         :{WEIGHT} of nitrates
 STR_CARGO_UNIT_MNSP                                                             :{SIGNED_WORD} crate{P 0 "" s} of manufacturing supplies
-STR_CARGO_UNIT_PETROL                                                           :{VOLUME} of petrol
+STR_CARGO_UNIT_PETROL                                                           :{VOLUME} of petroleum fuels
 STR_CARGO_UNIT_PHOSPHATE                                                        :{WEIGHT} of phosphate
 STR_CARGO_UNIT_PYRITE_ORE                                                       :{WEIGHT} of pyrite ore
 STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} of recyclables
@@ -143,7 +143,9 @@ STR_EXTRA_BREWERY_FRUIT_SUBSTR                                                  
 STR_EXTRA_BREWERY_GRAIN_SUBSTR                                                  :5,000l per 8t grain delivered{}
 STR_EXTRA_BREWERY_MAIZE_SUBSTR                                                  :5,000l per 8t maize delivered{}
 STR_EXTRA_BRICKWORKS                                                            :{BLACK}Cargo production:{}  2t per 8t coal delivered{}  2t per 8t sand delivered{}  4t per 8t clay delivered{}{}Production steps up if two or more cargos are delivered within three months of each other.
-STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Cargo production:{}  2t per 8t coal delivered{}  2t per 8t clay delivered{}  4t per 8t stone delivered{}{}Production steps up if two or more cargos are delivered within three months of each other.
+STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Cargo production:{}  {STRING}  2t per 8t clay delivered{}  4t per 8t stone delivered{}{}Production steps up if two or more cargos are delivered within three months of each other.
+STR_EXTRA_CEMENT_PLANT_COAL_SUBSTR                                              :2t per 8t coal delivered{}
+STR_EXTRA_CEMENT_PLANT_PETROL_SUBSTR                                            :2t per 8,000l petroleum fuels delivered{}
 STR_EXTRA_CHEMICAL_PLANT                                                        :{BLACK}Cargo production:{}  6,000l per 8,000l oil delivered{}  6,000l per 8t nitrates delivered
 STR_EXTRA_COPPER_REFINERY                                                       :{BLACK}Cargo production:{}  5t per 8t copper ore delivered{}  3t per 8,000l chemicals delivered{}{}Production steps up if two or more cargos are delivered within three months of each other.
 STR_EXTRA_DAIRY                                                                 :{BLACK}Cargo production:{}  3t per 8 crates manufacturing supplies delivered{}  5t per 8,000l milk delivered{}{}Production steps up if both cargos are delivered within three months of each other.
@@ -156,11 +158,11 @@ STR_EXTRA_GRAIN_MILL                                                            
 STR_EXTRA_IRON_WORKS                                                            :{BLACK}Cargo production:{}  3t per 8t iron ore delivered{}  3t per 8t wood delivered{}  2t per 8t sand delivered{}{}Production steps up if two or more cargos are delivered within three months of each other.
 STR_EXTRA_LIME_KILN                                                             :{BLACK}Cargo production:{}  3t per 8t stone delivered{}  3t per 8t coal delivered{}{}Production steps up if both cargos are delivered within three months of each other.
 STR_EXTRA_LUMBER_YARD                                                           :{BLACK}Produces items such as poles and fence posts.{}{}Cargo production:{}  2t per 8,000l chemicals delivered{}  6t per 8t timber delivered{}{}Production steps up if both cargos are delivered within three months of each other.
-STR_EXTRA_MACHINE_SHOP                                                          :{BLACK}Builds and services machinery.{}{}Cargo production:{}  8 crates per 8,000l petrol delivered{}  8 crates per 8t metal delivered
+STR_EXTRA_MACHINE_SHOP                                                          :{BLACK}Builds and services machinery.{}{}Cargo production:{}  8 crates per 8,000l petroleum fuels delivered{}  8 crates per 8t metal delivered
 STR_EXTRA_MEAT_PACKER                                                           :{BLACK}Cargo production:{}  3t per 8 crates manufacturing supplies delivered{}  5t per 8t livestock delivered{}{}Production steps up if both cargos are delivered within three months of each other.
 STR_EXTRA_METAL_FABRICATION_PLANT                                               :{BLACK}Produces painted metal components.{}{}Cargo production:{}  2t per 8,000l chemicals delivered{}  6t per 8t metal delivered{}{}Production steps up if both cargos are delivered within three months of each other.
 STR_EXTRA_METAL_FOUNDRY                                                         :{BLACK}Produces plated metal items such as tin cans, hardware and household goods.{}{}Cargo production:{}  2 crates per 8,000l chemicals delivered{}  6 crates per 8t metal delivered{}{}Production steps up if both cargos are delivered within three months of each other.
-STR_EXTRA_OIL_REFINERY                                                          :{BLACK}Processes crude oil into petrol and chemicals.{}{}Cargo production:{}  6,000l per 8,000l delivered
+STR_EXTRA_OIL_REFINERY                                                          :{BLACK}Processes crude oil into petroleum fuels and chemicals.{}{}Cargo production:{}  6,000l per 8,000l delivered
 STR_EXTRA_PAPER_MILL                                                            :{BLACK}Pulps wood to produce paper and cardboard.{}{}Cargo production:{}  4 crates per 8t wood delivered{}  2 crates per 8t clay delivered{}  2 crates per 8,000l chemicals delivered{}{}Production steps up if two or more cargos are delivered within three months of each other.
 STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}Produces plastic items such as packaging and household goods.{}{}Cargo production:{} {STRING} {STRING}
 STR_EXTRA_PLASTICS_PLANT_CHEMICALS_SUBSTR                                       :6 crates per 8,000l chemicals delivered{}
@@ -172,7 +174,7 @@ STR_EXTRA_SAWMILL                                                               
 STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Produces metal items like tools, ploughs, gates, shovels and horseshoes.{}{}Cargo production:{}  8 crates per 8t metal delivered
 STR_EXTRA_STEELMILL                                                             :{BLACK}Cargo production:{}  3t per 8t iron ore delivered{}  2t per 8t coal delivered{}  3t per 8t scrap metal delivered{}{}Production steps up if two or more cargos are delivered within three months of each other.
 STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Cargo production:{}  3t per 8 crates manufacturing supplies delivered{}  5t per 8t sugar delivered{}{}Production steps up if both cargos are delivered within three months of each other.
-STR_EXTRA_SUPPLY_YARD                                                           :{BLACK}Cargo production:{}  8 crates per 8,000l petrol delivered{}  8 crates per 8 vehicles delivered{}  8 crates per 8t goods delivered
+STR_EXTRA_SUPPLY_YARD                                                           :{BLACK}Cargo production:{}  8 crates per 8,000l petroleum fuels delivered{}  8 crates per 8 vehicles delivered{}  8 crates per 8t goods delivered
 STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Cargo production:{}  3 crates per 8 crates manufacturing supplies delivered{} {STRING} {STRING} {}Production steps up if manufacturing supplies delivered within three months of other cargos.
 STR_EXTRA_TEXTILE_MILL_WOOL_SUBSTR                                              :5 crates per 8 bales wool delivered{}
 STR_EXTRA_TEXTILE_MILL_PLANT_FIBRES_SUBSTR                                      :5 crates per 8 bales plant fibres delivered{}
