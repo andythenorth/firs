@@ -48,6 +48,7 @@ STR_CARGO_NAME_METAL                                                            
 STR_CARGO_NAME_MILK                                                             :Milk
 STR_CARGO_NAME_MANUFACTURING_SUPPLIES                                           :Manufacturing Supplies
 STR_CARGO_NAME_NITRATES                                                         :Nitrates
+STR_CARGO_NAME_NUTS                                                             :Nuts
 STR_CARGO_NAME_PETROL                                                           :Petroleum Fuels
 STR_CARGO_NAME_PHOSPHATE                                                        :Phosphate
 STR_CARGO_NAME_PYRITE_ORE                                                       :Pyrite Ore
@@ -80,6 +81,7 @@ STR_CARGO_UNIT_LUMBER                                                           
 STR_CARGO_UNIT_METAL                                                            :{WEIGHT} of metal
 STR_CARGO_UNIT_MILK                                                             :{VOLUME} of milk
 STR_CARGO_UNIT_NITRATES                                                         :{WEIGHT} of nitrates
+STR_CARGO_UNIT_NUTS                                                             :{SIGNED_WORD} sack{P 0 "" s}  of nuts
 STR_CARGO_UNIT_MNSP                                                             :{SIGNED_WORD} crate{P 0 "" s} of manufacturing supplies
 STR_CARGO_UNIT_PETROL                                                           :{VOLUME} of petroleum fuels
 STR_CARGO_UNIT_PHOSPHATE                                                        :{WEIGHT} of phosphate
@@ -113,6 +115,7 @@ STR_CID_MANUFACTURING_SUPPLIES                                                  
 STR_CID_METAL                                                                   :{TINYFONT}MT
 STR_CID_MILK                                                                    :{TINYFONT}MK
 STR_CID_NITRATES                                                                :{TINYFONT}NI
+STR_CID_NUTS                                                                    :{TINYFONT}NT
 STR_CID_PETROL                                                                  :{TINYFONT}PT
 STR_CID_PHOSPHATE                                                               :{TINYFONT}PH
 STR_CID_PYRITE_ORE                                                              :{TINYFONT}PY
@@ -154,7 +157,9 @@ STR_EXTRA_COPPER_REFINERY                                                       
 STR_EXTRA_DAIRY                                                                 :{BLACK}Cargo production:{}  3t per 8 crates manufacturing supplies delivered{}  5t per 8,000l milk delivered{}{}Production steps up if both cargos are delivered within three months of each other.
 STR_EXTRA_FERTILIZER_PLANT                                                      :{BLACK}Cargo production:{}  8 crates per 8,000l chemicals delivered
 STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Cargo production:{}  3t per 8 crates manufacturing supplies delivered{}  5t per 8t fish delivered{}{}Production steps up if both cargos are delivered within three months of each other.
-STR_EXTRA_FOOD_PROCESSING_PLANT                                                 :{BLACK}Cargo production:{}  6t per 8 tonnes beans delivered{}  6t per 8t fruit delivered
+STR_EXTRA_FOOD_PROCESSING_PLANT                                                 :{BLACK}Cargo production:{}  {STRING}  6t per 8t fruit delivered
+STR_EXTRA_FOOD_PROCESSING_PLANT_BEANS_SUBSTR                                    :6t per 8 tonnes beans delivered{}
+STR_EXTRA_FOOD_PROCESSING_PLANT_NUTS_SUBSTR                                     :6t per 8 tonnes nuts delivered{}
 STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Cargo production:{}  3 crates per 8 crates manufacturing supplies delivered{}  5 crates per 8t timber delivered{}{}Production steps up if both cargos are delivered within three months of each other.
 STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Produces glass items such as bottles, jars and window panes.{}{}Cargo production:{}  6t per 8t sand delivered{}  2t per 8,000l chemicals delivered{}{}Production steps up if both cargos are delivered within three months of each other.
 STR_EXTRA_GRAIN_MILL                                                            :{BLACK}Cargo production:{}  3t per 8 crates manufacturing supplies delivered{}  5t per 8t grain delivered{}{}Production steps up if both cargos are delivered within three months of each other.

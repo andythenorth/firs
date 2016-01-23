@@ -38,7 +38,7 @@ industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_TROPIC'].enabled = True
 industry.economy_variations['BASIC_TROPIC'].prod_cargo_types = ['GRAI', 'BEAN']
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
-industry.economy_variations['MISTAH_KURTZ'].prod_cargo_types = ['CASS', 'BEAN']
+industry.economy_variations['MISTAH_KURTZ'].prod_cargo_types = ['CASS', 'NUTS']
 
 industry.add_tile(id='arable_farm_tile_1',
                   location_checks=TileLocationChecks(disallow_slopes=True,

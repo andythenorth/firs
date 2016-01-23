@@ -88,6 +88,9 @@ milk.cargo.register()
 from cargos import nitrates
 nitrates.cargo.register()
 
+from cargos import nuts
+nuts.cargo.register()
+
 from cargos import oil
 oil.cargo.register()
 
