@@ -32,7 +32,6 @@ industry = IndustrySecondary(id='food_processor',
 
 industry.economy_variations['BASIC_TROPIC'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
-industry.economy_variations['MISTAH_KURTZ'].processed_cargos_and_output_ratios=[('FRUT', 5)]
 industry.economy_variations['MISTAH_KURTZ'].prod_cargo_types = ['EOIL', 'FOOD']
 
 industry.add_tile(id='food_processor_tile_1',
