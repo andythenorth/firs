@@ -39,6 +39,7 @@ industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_TROPIC'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].processed_cargos_and_output_ratios = [('MNSP', 3), ('MAIZ', 5), ('CASS', 5)]
+industry.economy_variations['MISTAH_KURTZ'].name = 'string(STR_IND_FLOUR_MILL)'
 
 industry.add_tile(id='grain_mill_tile_1',
                   animation_length=6,
