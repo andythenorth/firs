@@ -54,7 +54,7 @@ industry.economy_variations['BASIC_TROPIC'].prod_multiplier = '[8, 17]'
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].accept_cargo_types = ['WDPR', 'COPR', 'FRUT']
 industry.economy_variations['MISTAH_KURTZ'].prod_cargo_types = ['GOOD', 'MNSP']
-industry.economy_variations['BASIC_TROPIC'].prod_multiplier = '[12, 12]'
+industry.economy_variations['BASIC_TROPIC'].prod_multiplier = '[14, 12]'
 
 industry.add_tile(id='port_tile_1',
                   land_shape_flags='bitmask(LSF_ONLY_ON_FLAT_LAND)',
