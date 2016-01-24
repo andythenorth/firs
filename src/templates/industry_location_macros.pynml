@@ -4,7 +4,7 @@
       and I didn't want to read chameleon source, so they're conditionals.
   -->
 
-<tal:grain_mill_layouts_by_date condition="'grain_mill_layouts_by_date' in conditions">
+<tal:flour_mill_layouts_by_date condition="'flour_mill_layouts_by_date' in conditions">
     <!--!
         Grain Mill restricts layouts by date.
         This could be made more generic if needed.
@@ -31,4 +31,4 @@
         1870..1900: ${switch_result};
         ${industry.id}_brick_layouts_only;
     }
-</tal:grain_mill_layouts_by_date>
+</tal:flour_mill_layouts_by_date>

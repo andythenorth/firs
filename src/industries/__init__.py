@@ -61,6 +61,9 @@ fertiliser_plant.industry.register()
 from industries import fibre_crop_farm
 fibre_crop_farm.industry.register()
 
+from industries import flour_mill
+flour_mill.industry.register()
+
 from industries import food_market
 food_market.industry.register()
 
@@ -75,9 +78,6 @@ general_store.industry.register()
 
 from industries import glass_works
 glass_works.industry.register()
-
-from industries import grain_mill
-grain_mill.industry.register()
 
 from industries import hardware_store
 hardware_store.industry.register()
