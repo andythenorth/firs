@@ -97,6 +97,7 @@ STR_CID_ALCOHOL                                                                 
 STR_CID_BAUXITE                                                                 :{TINYFONT}BX
 STR_CID_BEANS                                                                   :{TINYFONT}BN
 STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}MC
+STR_CID_CASSAVA                                                                 :{TINYFONT}CA
 STR_CID_CHEMICALS                                                               :{TINYFONT}PQ
 STR_CID_CLAY                                                                    :{TINYFONT}AC
 STR_CID_COFFEE                                                                  :{TINYFONT}CF
@@ -111,6 +112,7 @@ STR_CID_MANUFACTURING_SUPPLIES                                                  
 STR_CID_METAL                                                                   :{TINYFONT}ML
 STR_CID_MILK                                                                    :{TINYFONT}LC
 STR_CID_NITRATES                                                                :{TINYFONT}NI
+STR_CID_NUTS                                                                    :{TINYFONT}NT
 STR_CID_PETROL                                                                  :{TINYFONT}FO
 STR_CID_PHOSPHATE                                                               :{TINYFONT}PH
 STR_CID_PYRITE_ORE                                                              :{TINYFONT}PY
@@ -144,16 +146,17 @@ STR_EXTRA_BREWERY_FRUIT_SUBSTR                                                  
 STR_EXTRA_BREWERY_GRAIN_SUBSTR                                                  :5,000l por cada 8t de grano entregadas{}
 STR_EXTRA_BREWERY_MAIZE_SUBSTR                                                  :5,000l por cada 8t de maíz entregadas{}
 STR_EXTRA_BRICKWORKS                                                            :{BLACK}Producción:{} 2t por cada 8t de carbón entregadas{} 2t por cada 8t de arena entregadas{} 4t por cada 8t de arcilla entregadas{}{}La producción se incrementa si dos o más cargas son entregadas en un intervalo inferior a un trimestre.
-STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Producción:{} 2t por cada 8t de carbón entregadas{} 2t por cada 8t de arcilla entregadas{} 4t por cada 8t de piedra entregadas{}{}La producción se incrementa si dos o más cargas son entregadas en un intervalo inferior a un trimestre.
+STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Producción:{} {STRING} 2t por cada 8t de arcilla entregadas{} 4t por cada 8t de piedra entregadas{}{}La producción se incrementa si dos o más cargas son entregadas en un intervalo inferior a un trimestre.
 STR_EXTRA_CHEMICAL_PLANT                                                        :{BLACK}Producción:{} 6,000l por cada 8,000l de petróleo entregados{} 6,000l por cada 8t de nitratos entregadas
 STR_EXTRA_COPPER_REFINERY                                                       :{BLACK}Producción:{} 5t por cada 8t de mineral de cobre entregadas{} 3t por cada 8,000l de productos químicos entregados{}{}La producción se incrementa si dos o más cargas son entregadas en un intervalo inferior a un trimestre.
 STR_EXTRA_DAIRY                                                                 :{BLACK}Producción:{} 3t por cada 8 cajas de suministros de manufactura entregadas{} 5t por cada 8,000l de leche entregados{}{}La producción se incrementa si ambas cargas son entregadas con menos de un trimestre de diferencia entre sí.
 STR_EXTRA_FERTILIZER_PLANT                                                      :{BLACK}Producción:{} 8 cajas por cada 8,000l de productos químicos entregados
 STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Producción:{} 3t por cada 8 cajas de suministros de manufactura entregadas{} 5t por cada 8t de pescado entregadas{}{}La producción se incrementa si ambas cargas son entregadas con menos de un trimestre de diferencia entre sí.
+STR_EXTRA_FLOUR_MILL                                                            :{BLACK}Producción:{} 3t por cada 8 cajas de suministros de manufactura entregadas{} 5t por cada 8t de grano entregadas{}{}La producción se incrementa si ambas cargas son entregadas con menos de un trimestre de diferencia entre sí.
 STR_EXTRA_FOOD_PROCESSING_PLANT                                                 :{BLACK}Producción:{} {STRING} 6t por cada 8t de frutas entregadas
+STR_EXTRA_FOOD_PROCESSING_PLANT_BEANS_SUBSTR                                    :6t por cada 8t de judías entregadas{}
 STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Producción:{} 3 cajas por cada 8 cajas de suministros de manufactura entregadas{} 5 cajas por cada 8t de tablas entregadas{}{}La producción se incrementa si ambas cargas son entregadas con menos de un trimestre de diferencia entre sí.
 STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Produce objetos de cristal tales como botellas, jarras o ventanas.{}{}Producción:{} 6t por cada 8t de arena entregadas{} 2t por cada 8,000l de productos químicos entregados{}{}La producción se incrementa si ambas cargas son entregadas con menos de un trimestre de diferencia entre sí.
-STR_EXTRA_FLOUR_MILL                                                            :{BLACK}Producción:{} 3t por cada 8 cajas de suministros de manufactura entregadas{} 5t por cada 8t de grano entregadas{}{}La producción se incrementa si ambas cargas son entregadas con menos de un trimestre de diferencia entre sí.
 STR_EXTRA_IRON_WORKS                                                            :{BLACK}Producción:{} 3t por cada 8t de mineral de hierro entregadas{} 3t por cada 8t de madera entregadas{} 2t por cada 8t de arena entregadas{}{}La producción se incrementa si dos o más cargas son entregadas en un intervalo inferior a un trimestre.
 STR_EXTRA_LIME_KILN                                                             :{BLACK}Producción:{} 3t por cada 8t de piedra entregadas{}  3t por cada 8t de carbón entregadas{}{}La producción se incrementa si ambas cargas son entregadas con menos de un trimestre de diferencia entre sí.
 STR_EXTRA_LUMBER_YARD                                                           :{BLACK}Produce objetos tales como mástiles y cercas.{}{}Producción:{} 2t por cada 8,000l de productos químicos entregados{} 6t por cada 8t de tablas entregadas{}{}La producción se incrementa si ambas cargas son entregadas con menos de un trimestre de diferencia entre sí.
@@ -173,7 +176,7 @@ STR_EXTRA_SAWMILL                                                               
 STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Produce objetos de metal forjado como herramientas, puertas, útiles de labranza, palas y herraduras.{}{}Producción:{} 8 cajas por cada 8t de metal entregadas
 STR_EXTRA_STEELMILL                                                             :{BLACK}Producción:{} 3t por cada 8t de mineral de hierro entregadas{} 2t por cada 8t de carbón entregadas{} 3t por cada 8t de chatarra entregadas{}{}La producción se incrementa si dos o más cargas son entregadas en un intervalo inferior a un trimestre.
 STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Producción:{} 3t por cada 8 cajas de suministros de manufactura entregadas{} 5t por cada 8t de azúcar (aún sin refinar y recibida como remolacha azucarera o bien como caña de azúcar) entregadas{}{}La producción se incrementa si dos o más cargas son entregadas en un intervalo inferior a un trimestre.
-STR_EXTRA_SUPPLY_YARD                                                           :{BLACK}Producción:{} 8 cajas por cada 8,000l de gasolina entregados{} 8 cajas por cada 8 vehículos entregados{} 8 cajas por cada 8t de mercancías entregadas
+STR_EXTRA_SUPPLY_YARD                                                           :{BLACK}Producción:{} 8 cajas por cada 8t de mercancías entregadas{} 8 cajas por cada 8,000l de combustibles petrolíferos entregados{} {STRING}
 STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Producción:{} 3 cajas por cada 8 cajas de suministros de manufactura entregadas{} {STRING} {STRING}{}La producción se incrementa si se entregan suministros de manufactura con menos de un trimestre de diferencia desde el envío de una de las otras cargas.
 STR_EXTRA_TEXTILE_MILL_WOOL_SUBSTR                                              :5 cajas por cada 8 fardos de lana entregados{}
 STR_EXTRA_TEXTILE_MILL_PLANT_FIBRES_SUBSTR                                      :5 cajas por cada 8t de fibras vegetales entregadas{}
@@ -239,7 +242,6 @@ STR_IND_FOOD_PROCESSOR                                                          
 STR_IND_FURNITURE_FACTORY                                                       :{G=f}Fábrica de Muebles
 STR_IND_GENERAL_STORE                                                           :{G=f}Tienda General
 STR_IND_GLASS_WORKS                                                             :{G=f}Cristalería
-STR_IND_GRAIN_MILL                                                              :{G=m}Molino de Grano
 STR_IND_HARDWARE_STORE                                                          :{G=f}Ferretería
 STR_IND_HOTEL                                                                   :{G=m}Hotel
 STR_IND_IRON_WORKS                                                              :{G=f}Herrería
