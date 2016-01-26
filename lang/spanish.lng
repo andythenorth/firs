@@ -48,6 +48,7 @@ STR_CARGO_NAME_METAL                                                            
 STR_CARGO_NAME_MILK                                                             :{G=f}Leche
 STR_CARGO_NAME_MANUFACTURING_SUPPLIES                                           :{G=m}Suministros de Manufactura
 STR_CARGO_NAME_NITRATES                                                         :Nitratos
+STR_CARGO_NAME_NUTS                                                             :Nueces
 STR_CARGO_NAME_PETROL                                                           :{G=m}Combustibles Petrolíferos
 STR_CARGO_NAME_PHOSPHATE                                                        :Fosfato
 STR_CARGO_NAME_PYRITE_ORE                                                       :Mineral de Pirita
@@ -79,6 +80,7 @@ STR_CARGO_UNIT_LUMBER                                                           
 STR_CARGO_UNIT_METAL                                                            :{WEIGHT} de metal
 STR_CARGO_UNIT_MILK                                                             :{VOLUME} de leche
 STR_CARGO_UNIT_NITRATES                                                         :{WEIGHT} de nitratos
+STR_CARGO_UNIT_NUTS                                                             :{SIGNED_WORD} saco{P 0 "" s} de nueces
 STR_CARGO_UNIT_MNSP                                                             :{SIGNED_WORD} caja{P 0 "" s} de suministros de manufactura
 STR_CARGO_UNIT_PETROL                                                           :{VOLUME} de combustibles petrolíferos
 STR_CARGO_UNIT_PHOSPHATE                                                        :{WEIGHT} de fosfato
@@ -152,7 +154,8 @@ STR_EXTRA_COPPER_REFINERY                                                       
 STR_EXTRA_DAIRY                                                                 :{BLACK}Producción:{} 3t por cada 8 cajas de suministros de manufactura entregadas{} 5t por cada 8,000l de leche entregados{}{}La producción se incrementa si ambas cargas son entregadas con menos de un trimestre de diferencia entre sí.
 STR_EXTRA_FERTILIZER_PLANT                                                      :{BLACK}Producción:{} 8 cajas por cada 8,000l de productos químicos entregados
 STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Producción:{} 3t por cada 8 cajas de suministros de manufactura entregadas{} 5t por cada 8t de pescado entregadas{}{}La producción se incrementa si ambas cargas son entregadas con menos de un trimestre de diferencia entre sí.
-STR_EXTRA_FLOUR_MILL                                                            :{BLACK}Producción:{} 3t por cada 8 cajas de suministros de manufactura entregadas{} 5t por cada 8t de grano entregadas{}{}La producción se incrementa si ambas cargas son entregadas con menos de un trimestre de diferencia entre sí.
+STR_EXTRA_FLOUR_MILL                                                            :{BLACK}Producción:{} 3t por cada 8 cajas de suministros de manufactura entregadas{} {STRING} {STRING}{}La producción se incrementa si se entregan suministros de manufactura con menos de un trimestre de diferencia desde el envío de una de las otras cargas.
+STR_EXTRA_FLOUR_MILL_GRAIN_SUBSTR                                               :5t por cada 8t de grano entregadas{}
 STR_EXTRA_FOOD_PROCESSING_PLANT                                                 :{BLACK}Producción:{} {STRING} 6t por cada 8t de frutas entregadas
 STR_EXTRA_FOOD_PROCESSING_PLANT_BEANS_SUBSTR                                    :6t por cada 8t de judías entregadas{}
 STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Producción:{} 3 cajas por cada 8 cajas de suministros de manufactura entregadas{} 5 cajas por cada 8t de tablas entregadas{}{}La producción se incrementa si ambas cargas son entregadas con menos de un trimestre de diferencia entre sí.
