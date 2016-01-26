@@ -19,7 +19,7 @@ cargo = Cargo(id = 'manganese',
               single_penalty_length = '255',
               price_factor = '75.4852294922',
               capacity_multiplier = '1',
-              icon_indices = (9, 0))
+              icon_indices = (9, 2))
 
 
 
