@@ -19,7 +19,7 @@ cargo = Cargo(id = 'cassava',
               single_penalty_length = '40',
               price_factor = '116.194725037',
               capacity_multiplier = '1',
-              icon_indices = (6, 2))
+              icon_indices = (11, 2))
 
 
 
