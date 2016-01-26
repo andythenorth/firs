@@ -74,7 +74,8 @@ industry_numeric_ids = dict(coal_mine = 0,
                             pyrite_smelter = 72,
                             phosphate_mine = 73,
                             liquids_terminal = 74,
-                            manganese_mine = 75)
+                            manganese_mine = 75,
+                            fishing_village = 76)
 #127 is last ID to be used (128 industry limit, zero-based)
 
 
@@ -171,7 +172,9 @@ tile_numeric_ids = dict(arable_farm_tile_1 = 160,
                         pyrite_mine_tile_1 = 248,
                         pyrite_smelter_tile_1 = 249,
                         liquids_terminal_tile_1 = 250,
-                        liquids_terminal_tile_2 = 251)
+                        liquids_terminal_tile_2 = 251,
+                        fishing_village_tile_1 = 252,
+                        fishing_village_tile_2 = 253)
 
 chameleon_cache_dir =  'chameleon_cache'
 

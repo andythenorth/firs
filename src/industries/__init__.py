@@ -61,6 +61,9 @@ fertiliser_plant.industry.register()
 from industries import fibre_crop_farm
 fibre_crop_farm.industry.register()
 
+from industries import fishing_village
+fishing_village.industry.register()
+
 from industries import flour_mill
 flour_mill.industry.register()
 
