@@ -46,6 +46,7 @@ STR_CARGO_NAME_FRUITS                                                           
 STR_CARGO_NAME_LUMBER                                                           :{G=f}Tablas
 STR_CARGO_NAME_METAL                                                            :{G=m}Metal
 STR_CARGO_NAME_MILK                                                             :{G=f}Leche
+STR_CARGO_NAME_MANGANESE                                                        :Manganeso
 STR_CARGO_NAME_MANUFACTURING_SUPPLIES                                           :{G=m}Suministros de Manufactura
 STR_CARGO_NAME_NITRATES                                                         :Nitratos
 STR_CARGO_NAME_NUTS                                                             :Nueces
@@ -77,6 +78,7 @@ STR_CARGO_UNIT_FISH                                                             
 STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} caja{P 0 "" s} de suministros agrarios
 STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} de fruta
 STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} de tablas
+STR_CARGO_UNIT_MANGANESE                                                        :{WEIGHT} de manganeso
 STR_CARGO_UNIT_METAL                                                            :{WEIGHT} de metal
 STR_CARGO_UNIT_MILK                                                             :{VOLUME} de leche
 STR_CARGO_UNIT_NITRATES                                                         :{WEIGHT} de nitratos
@@ -180,6 +182,7 @@ STR_EXTRA_SMITHY_FORGE                                                          
 STR_EXTRA_STEELMILL                                                             :{BLACK}Producción:{} 3t por cada 8t de mineral de hierro entregadas{} 2t por cada 8t de carbón entregadas{} 3t por cada 8t de chatarra entregadas{}{}La producción se incrementa si dos o más cargas son entregadas en un intervalo inferior a un trimestre.
 STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Producción:{} 3t por cada 8 cajas de suministros de manufactura entregadas{} 5t por cada 8t de azúcar (aún sin refinar y recibida como remolacha azucarera o bien como caña de azúcar) entregadas{}{}La producción se incrementa si dos o más cargas son entregadas en un intervalo inferior a un trimestre.
 STR_EXTRA_SUPPLY_YARD                                                           :{BLACK}Producción:{} 8 cajas por cada 8t de mercancías entregadas{} 8 cajas por cada 8,000l de combustibles petrolíferos entregados{} {STRING}
+STR_EXTRA_SUPPLY_YARD_BUILDING_MATERIALS_SUBSTR                                 :8 cajas por cada 8t de materiales de construcción entregadas
 STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Producción:{} 3 cajas por cada 8 cajas de suministros de manufactura entregadas{} {STRING} {STRING}{}La producción se incrementa si se entregan suministros de manufactura con menos de un trimestre de diferencia desde el envío de una de las otras cargas.
 STR_EXTRA_TEXTILE_MILL_WOOL_SUBSTR                                              :5 cajas por cada 8 fardos de lana entregados{}
 STR_EXTRA_TEXTILE_MILL_PLANT_FIBRES_SUBSTR                                      :5 cajas por cada 8t de fibras vegetales entregadas{}
