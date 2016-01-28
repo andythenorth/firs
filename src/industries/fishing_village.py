@@ -30,8 +30,9 @@ industry = IndustryPrimaryPort(id='fishing_village',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
                     override_default_construction_states=True)
 
-
-industry.economy_variations['MISTAH_KURTZ'].enabled = True
+# not currently enabled in any economy, not convinced by this industry yet
+# I think it's probably good, but needs sprites and playtesting, no time to do that for v2
+#industry.economy_variations['MISTAH_KURTZ'].enabled = True
 
 industry.add_tile(id='fishing_village_tile_1',
                   land_shape_flags='bitmask(LSF_ONLY_ON_FLAT_LAND)',
