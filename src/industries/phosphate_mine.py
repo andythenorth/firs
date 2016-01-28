@@ -22,9 +22,7 @@ industry = IndustryPrimaryExtractive(id='phosphate_mine',
                     spec_flags='0',
                     # allow longer distance on clustering than usual, and more clusters, as industry is hard to locate
                     location_checks=IndustryLocationChecks(require_cluster=['phosphate_mine', [20, 90, 1, 4]],
-                                                           incompatible={'brick_works': 16,
-                                                                         'paper_mill': 16,
-                                                                         'cement_plant': 16}),
+                                                           incompatible={'bulk_terminal': 16}),
                     remove_cost_multiplier='0',
                     prospect_chance='0.75',
                     name='string(STR_IND_PHOSPHATE_MINE)',
@@ -39,7 +37,6 @@ industry.economy_variations['MISTAH_KURTZ'].enabled = True
 # cases for both tiles ensure that tiles can only be built at same height as north tile
 industry.add_tile(id='phosphate_mine_tile_1',
                   location_checks=TileLocationChecks(require_effectively_flat=True,
-                                                     disallow_desert=True,
                                                      disallow_industry_adjacent=True))
 industry.add_tile(id='phosphate_mine_tile_2',
                   animation_length=56,
@@ -50,7 +47,6 @@ industry.add_tile(id='phosphate_mine_tile_2',
 		          foundations='return CB_RESULT_NO_FOUNDATIONS', # might not be needed, cargo-culted from previous code, didn't test; may be needed to stop rear foundations showing in some cases?
                   autoslope='return CB_RESULT_NO_AUTOSLOPE',
                   location_checks=TileLocationChecks(disallow_slopes=True,
-                                                     disallow_desert=True,
                                                      disallow_coast=True,
                                                      disallow_industry_adjacent=True))
 
