@@ -117,12 +117,12 @@ industry.add_industry_layout(
     layout = [(0, 0, 'copper_mine_tile_1', 'copper_mine_spritelayout_1'),
               (0, 1, 'copper_mine_tile_1', 'copper_mine_spritelayout_1'),
               (0, 2, 'copper_mine_tile_1', 'copper_mine_spritelayout_1'),
-              (2, 0, 'copper_mine_tile_1', 'copper_mine_spritelayout_5'),
-              (2, 1, 'copper_mine_tile_1', 'copper_mine_spritelayout_3_anim'),
-              (2, 2, 'copper_mine_tile_1', 'copper_mine_spritelayout_4'),
-              (3, 0, 'copper_mine_tile_1', 'copper_mine_spritelayout_1'),
+              (1, 0, 'copper_mine_tile_1', 'copper_mine_spritelayout_5'),
+              (1, 1, 'copper_mine_tile_1', 'copper_mine_spritelayout_3_anim'),
+              (1, 2, 'copper_mine_tile_1', 'copper_mine_spritelayout_4'),
+              (2, 0, 'copper_mine_tile_1', 'copper_mine_spritelayout_1'),
+              (2, 1, 'copper_mine_tile_1', 'copper_mine_spritelayout_1'),
+              (2, 2, 'copper_mine_tile_1', 'copper_mine_spritelayout_2'),
               (3, 1, 'copper_mine_tile_1', 'copper_mine_spritelayout_1'),
-              (3, 2, 'copper_mine_tile_1', 'copper_mine_spritelayout_2'),
-              (4, 1, 'copper_mine_tile_1', 'copper_mine_spritelayout_1'),
     ]
 )
