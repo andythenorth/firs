@@ -237,3 +237,26 @@ industry.add_industry_layout(
               (3, 3, 'copper_refinery_tile_1', 'copper_refinery_spritelayout_ground'),
     ]
 )
+
+industry.add_industry_layout(
+    id = 'copper_refinery_industry_layout_2',
+    layout = [(0, 0, 'copper_refinery_tile_1', 'copper_refinery_spritelayout_ore_handling_rear'),
+              (0, 1, 'copper_refinery_tile_1', 'copper_refinery_spritelayout_stack_vent_thing'),
+              (0, 2, 'copper_refinery_tile_1', 'copper_refinery_spritelayout_tanks'),
+              (0, 3, 'copper_refinery_tile_1', 'copper_refinery_spritelayout_flue_stack'),
+              (0, 4, 'copper_refinery_tile_1', 'copper_refinery_spritelayout_tanks'),
+              (0, 5, 'copper_refinery_tile_1', 'copper_refinery_spritelayout_open_shed'),
+              (1, 0, 'copper_refinery_tile_1', 'copper_refinery_spritelayout_ore_handling_front'),
+              (1, 1, 'copper_refinery_tile_1', 'copper_refinery_spritelayout_stack_vent_thing'),
+              (1, 2, 'copper_refinery_tile_1', 'copper_refinery_spritelayout_big_shed'),
+              (1, 3, 'copper_refinery_tile_1', 'copper_refinery_spritelayout_big_shed'),
+              (1, 4, 'copper_refinery_tile_1', 'copper_refinery_spritelayout_big_shed'),
+              (1, 5, 'copper_refinery_tile_1', 'copper_refinery_spritelayout_7'),
+              (2, 0, 'copper_refinery_tile_1', 'copper_refinery_spritelayout_transformer'),
+              (2, 1, 'copper_refinery_tile_1', 'copper_refinery_spritelayout_open_shed'),
+              (2, 2, 'copper_refinery_tile_1', 'copper_refinery_spritelayout_thickening_tank'),
+              (2, 3, 'copper_refinery_tile_1', 'copper_refinery_spritelayout_thickening_tank'),
+              (2, 4, 'copper_refinery_tile_1', 'copper_refinery_spritelayout_7'),
+              (2, 5, 'copper_refinery_tile_1', 'copper_refinery_spritelayout_ground'),
+    ]
+)
