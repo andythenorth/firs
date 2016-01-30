@@ -189,13 +189,6 @@ industry.add_spritelayout(
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
-    id = 'copper_refinery_spritelayout_8',
-    ground_sprite = sprite_ground,
-    ground_overlay = spriteset_ground_overlay,
-    building_sprites = [spriteset_8],
-    fences = ['nw','ne','se','sw']
-)
-industry.add_spritelayout(
     id = 'copper_refinery_spritelayout_open_shed',
     ground_sprite = sprite_ground,
     ground_overlay = spriteset_ground_overlay,
@@ -207,13 +200,6 @@ industry.add_spritelayout(
     ground_sprite = sprite_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_10],
-    fences = ['nw','ne','se','sw']
-)
-industry.add_spritelayout(
-    id = 'copper_refinery_spritelayout_11',
-    ground_sprite = sprite_ground,
-    ground_overlay = spriteset_ground_overlay,
-    building_sprites = [spriteset_11],
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
