@@ -10,8 +10,11 @@ arable_farm.industry.register()
 from industries import basic_farm
 basic_farm.industry.register()
 
+"""
+# not currently used
 from industries import bauxite_mine
 bauxite_mine.industry.register()
+"""
 
 from industries import biorefinery
 biorefinery.industry.register()
@@ -58,11 +61,17 @@ dredging_site.industry.register()
 from industries import fertiliser_plant
 fertiliser_plant.industry.register()
 
+"""
+# not currently used
 from industries import fibre_crop_farm
 fibre_crop_farm.industry.register()
+"""
 
+"""
+# not currently used
 from industries import fishing_village
 fishing_village.industry.register()
+"""
 
 from industries import flour_mill
 flour_mill.industry.register()
@@ -157,8 +166,11 @@ smithy_forge.industry.register()
 from industries import stockyard
 stockyard.industry.register()
 
+"""
+# not currently used
 from industries import sugar_plantation
 sugar_plantation.industry.register()
+"""
 
 from industries import sugar_refinery
 sugar_refinery.industry.register()
