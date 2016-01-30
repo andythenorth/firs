@@ -30,7 +30,8 @@ industry = IndustryPrimaryExtractive(id='bauxite_mine',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
                     intro_year=1900 )
 
-industry.economy_variations['FIRS'].enabled = True
+# currently disabled by design
+#industry.economy_variations['FIRS'].enabled = True
 
 industry.add_tile(id='bauxite_mine_tile_1',
                   animation_length=71,

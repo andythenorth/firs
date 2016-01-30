@@ -32,8 +32,8 @@ industry = IndustryPrimaryPort(id='bulk_terminal',
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['FIRS'].accept_cargo_types = ['BDMT', 'PETR', 'FOOD']
-industry.economy_variations['FIRS'].prod_cargo_types = ['FMSP', 'RFPR']
-industry.economy_variations['FIRS'].prod_multiplier = '[7, 16]'
+industry.economy_variations['FIRS'].prod_cargo_types = ['AORE', 'RFPR']
+industry.economy_variations['FIRS'].prod_multiplier = '[16, 16]'
 industry.economy_variations['FIRS'].prob_random = '3'
 
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True
