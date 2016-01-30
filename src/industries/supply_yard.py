@@ -137,3 +137,16 @@ industry.add_industry_layout(
               (1, 3, 'supply_yard_tile_1', 'supply_yard_spritelayout_2'),
     ]
 )
+
+industry.add_industry_layout(
+    id = 'supply_yard_industry_layout_2',
+    layout = [(0, 0, 'supply_yard_tile_1', 'supply_yard_spritelayout_1'),
+              (0, 1, 'supply_yard_tile_1', 'supply_yard_spritelayout_1'),
+              (1, 0, 'supply_yard_tile_1', 'supply_yard_spritelayout_2'),
+              (1, 1, 'supply_yard_tile_1', 'supply_yard_spritelayout_2'),
+              (1, 2, 'supply_yard_tile_1', 'supply_yard_spritelayout_6'),
+              (2, 0, 'supply_yard_tile_1', 'supply_yard_spritelayout_5'),
+              (2, 1, 'supply_yard_tile_1', 'supply_yard_spritelayout_4'),
+              (2, 2, 'supply_yard_tile_1', 'supply_yard_spritelayout_3'),
+    ]
+)
