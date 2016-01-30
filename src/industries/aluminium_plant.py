@@ -213,7 +213,8 @@ industry.add_spritelayout(
 
 industry.add_industry_layout(
     id = 'aluminium_plant_industry_layout_1',
-    layout = [(0, 2, 'aluminium_plant_tile_1', 'aluminium_plant_spritelayout_concrete'),
+    layout = [(0, 1, 'aluminium_plant_tile_1', 'aluminium_plant_spritelayout_transformer'),
+              (0, 2, 'aluminium_plant_tile_1', 'aluminium_plant_spritelayout_concrete'),
               (0, 3, 'aluminium_plant_tile_1', 'aluminium_plant_spritelayout_11'),
               (1, 2, 'aluminium_plant_tile_1', 'aluminium_plant_spritelayout_9'),
               (1, 3, 'aluminium_plant_tile_1', 'aluminium_plant_spritelayout_10'),
@@ -233,7 +234,6 @@ industry.add_industry_layout(
               (5, 1, 'aluminium_plant_tile_1', 'aluminium_plant_spritelayout_1'),
               (5, 2, 'aluminium_plant_tile_1', 'aluminium_plant_spritelayout_1'),
               (5, 3, 'aluminium_plant_tile_1', 'aluminium_plant_spritelayout_7'),
-              (7, 1, 'aluminium_plant_tile_1', 'aluminium_plant_spritelayout_transformer'),
     ]
 )
 industry.add_industry_layout(
