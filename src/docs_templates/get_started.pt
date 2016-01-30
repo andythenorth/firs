@@ -58,25 +58,27 @@
                 <p class="lead">
                     A few things to know before setting up a FIRS game...
                 <div class="row">
-                    <div class="span3">
+                    <div class="span4">
                         <h3>Conflict Detection</h3>
                         <p>To avoid conflicts that could break your game, FIRS will disable itself if certain other newgrfs are
                         detected in the current game.  You'll see a message if this happens.</p>
                         <p>Conflicting newgrfs include other industry sets, such as ECS and PBI.</p>
                     </div>
-                    <div class="span3">
+                    <div class="span4 offset1">
+                        <h3>Vehicle Support</h3>
+                        <p>Many FIRS cargos are not transportable using the default vehicles.
+                        Fortunately there are lots of great NewGRF vehicle sets with FIRS support.</p>
+                        <p>The in-game content service is a good place to find these.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="span9">
                         <h3>Gameplay Parameters</h3>
                         <p>FIRS has a number of parameters for gameplay behaviour.
                         These cover things like economy choice, industry closure and station ratings.
                         Parameters include help text explaining how they work.</p>
                         <p><strong>Tip: parameters <a href="http://wiki.openttd.org/Newgrf#Activating_NewGRFs">need to be set</a>
                          before starting a game.</strong></p>
-                    </div>
-                    <div class="span3">
-                        <h3>Vehicle Support</h3>
-                        <p>Many FIRS cargos are not transportable using the default vehicles.
-                        Fortunately there are lots of great NewGRF vehicle sets with FIRS support.</p>
-                        <p>The in-game content service is a good place to find these.</p>
                     </div>
                 </div>
                 <p class="muted">FIRS is available in the Temperate, Sub-Arctic and Sub-Tropic climates.  Toyland is a bad idea.</p>
