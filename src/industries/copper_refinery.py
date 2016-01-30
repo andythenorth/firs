@@ -256,7 +256,7 @@ industry.add_industry_layout(
               (2, 1, 'copper_refinery_tile_1', 'copper_refinery_spritelayout_small_shed'),
               (2, 2, 'copper_refinery_tile_1', 'copper_refinery_spritelayout_thickening_tank'),
               (2, 3, 'copper_refinery_tile_1', 'copper_refinery_spritelayout_thickening_tank'),
-              (2, 4, 'copper_refinery_tile_1', 'copper_refinery_spritelayout_copper_forklift'),
+              (2, 4, 'copper_refinery_tile_1', 'copper_refinery_spritelayout_ground'),
               (2, 5, 'copper_refinery_tile_1', 'copper_refinery_spritelayout_ground'),
     ]
 )
