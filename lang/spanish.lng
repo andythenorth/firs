@@ -33,6 +33,7 @@ STR_CARGO_NAME_ALCOHOL                                                          
 STR_CARGO_NAME_BAUXITE                                                          :{G=f}Bauxita
 STR_CARGO_NAME_BEANS                                                            :Judías
 STR_CARGO_NAME_BUILDING_MATERIALS                                               :{G=m}Materiales de Construcción
+STR_CARGO_NAME_CASSAVA                                                          :Mandioca
 STR_CARGO_NAME_CHEMICALS                                                        :{G=m}Productos Químicos
 STR_CARGO_NAME_CLAY                                                             :{G=f}Arcilla
 STR_CARGO_NAME_COFFEE                                                           :Café
@@ -167,6 +168,7 @@ STR_EXTRA_FLOUR_MILL_CASSAVA_SUBSTR                                             
 STR_EXTRA_FLOUR_MILL_MAIZE_SUBSTR                                               :5t por cada 8t de maíz entregadas{}
 STR_EXTRA_FOOD_PROCESSING_PLANT                                                 :{BLACK}Producción:{} {STRING} 6t por cada 8t de frutas entregadas
 STR_EXTRA_FOOD_PROCESSING_PLANT_BEANS_SUBSTR                                    :6t por cada 8t de judías entregadas{}
+STR_EXTRA_FOOD_PROCESSING_PLANT_NUTS_SUBSTR                                     :6t por cada 8t de nueces entregadas{}
 STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Producción:{} 3 cajas por cada 8 cajas de suministros de manufactura entregadas{} 5 cajas por cada 8t de tablas entregadas{}{}La producción se incrementa si ambas cargas son entregadas con menos de un trimestre de diferencia entre sí.
 STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Produce objetos de cristal tales como botellas, jarras o ventanas.{}{}Producción:{} 6t por cada 8t de arena entregadas{} 2t por cada 8,000l de productos químicos entregados{}{}La producción se incrementa si ambas cargas son entregadas con menos de un trimestre de diferencia entre sí.
 STR_EXTRA_IRON_WORKS                                                            :{BLACK}Producción:{} 3t por cada 8t de mineral de hierro entregadas{} 3t por cada 8t de madera entregadas{} 2t por cada 8t de arena entregadas{}{}La producción se incrementa si dos o más cargas son entregadas en un intervalo inferior a un trimestre.
@@ -195,7 +197,7 @@ STR_EXTRA_TEXTILE_MILL                                                          
 STR_EXTRA_TEXTILE_MILL_WOOL_SUBSTR                                              :5 cajas por cada 8 fardos de lana entregados{}
 STR_EXTRA_TEXTILE_MILL_PLANT_FIBRES_SUBSTR                                      :5 cajas por cada 8t de fibras vegetales entregadas{}
 STR_EXTRA_TYRE_PLANT                                                            :{BLACK}Producción:{} 6 cajas por cada 8,000l de caucho entregados{} 2 cajas por cada 8,000l de productos químicos entregados{}{}La producción se incrementa si ambas cargas son entregadas con menos de un trimestre de diferencia entre sí.
-STR_EXTRA_VEHICLE_FACTORY                                                       :{BLACK}Producción:{} 3 vehículos por cada 8 cajas de piezas de vehículos entregadas{} 3 vehículos por cada 8 cajas de metal entregadas{} 2 vehículos por cada 8 cajas de suministros de manufactura entregadas{}{}La producción se incrementa si dos o más cargas son entregadas en un intervalo inferior a un trimestre.
+STR_EXTRA_VEHICLE_FACTORY                                                       :{BLACK}Producción:{} 3 vehículos por cada 8 cajas de piezas de vehículos entregadas{} 3 vehículos por cada 8 cajas de metal entregadas{} 2 vehículos por cada 8,000l de productos químicos entregados{}{}La producción se incrementa si dos o más cargas son entregadas en un intervalo inferior a un trimestre.
 
 STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ DEBUG ------------{}Producción este mes:{}Carga 1: {WHITE}{COMMA}{BLACK}{}Carga 2: {WHITE}{COMMA}{BLACK}{}Días desde la última entrega: {WHITE}{COMMA}{BLACK}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Producción máxima alcanzada
