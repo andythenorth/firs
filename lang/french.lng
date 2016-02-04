@@ -32,6 +32,7 @@ STR_CARGO_NAME_ALCOHOL                                                          
 STR_CARGO_NAME_BAUXITE                                                          :Bauxite
 STR_CARGO_NAME_BEANS                                                            :Légumineuses
 STR_CARGO_NAME_BUILDING_MATERIALS                                               :Matériaux de construction
+STR_CARGO_NAME_CASSAVA                                                          :Manioc
 STR_CARGO_NAME_CHEMICALS                                                        :Produits chimiques
 STR_CARGO_NAME_CLAY                                                             :Argile
 STR_CARGO_NAME_COFFEE                                                           :Café
@@ -45,8 +46,10 @@ STR_CARGO_NAME_FRUITS                                                           
 STR_CARGO_NAME_LUMBER                                                           :Bois d'œuvre
 STR_CARGO_NAME_METAL                                                            :Métal
 STR_CARGO_NAME_MILK                                                             :Lait
+STR_CARGO_NAME_MANGANESE                                                        :Manganèse
 STR_CARGO_NAME_MANUFACTURING_SUPPLIES                                           :Fournitures industrielles
 STR_CARGO_NAME_NITRATES                                                         :Nitrates
+STR_CARGO_NAME_NUTS                                                             :Noix
 STR_CARGO_NAME_PETROL                                                           :Essence
 STR_CARGO_NAME_PHOSPHATE                                                        :Phosphate
 STR_CARGO_NAME_PYRITE_ORE                                                       :Minerai de pyrite
@@ -63,6 +66,7 @@ STR_CARGO_NAME_WOOL                                                             
 STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} d'alcool
 STR_CARGO_UNIT_BAUXITE                                                          :{WEIGHT} de bauxite
 STR_CARGO_UNIT_BEANS                                                            :{WEIGHT} de légumineuses
+STR_CARGO_UNIT_CASSAVA                                                          :{WEIGHT} de manioc
 STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WEIGHT} de matériaux de construction
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} de produits chimiques
 STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} d'argile
@@ -75,9 +79,11 @@ STR_CARGO_UNIT_FISH                                                             
 STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} caisse{P 0 "" s} de matériel agricole
 STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} de fruits
 STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} de bois d'œuvre
+STR_CARGO_UNIT_MANGANESE                                                        :{WEIGHT} de manganèse
 STR_CARGO_UNIT_METAL                                                            :{WEIGHT} de métal
 STR_CARGO_UNIT_MILK                                                             :{VOLUME} de lait
 STR_CARGO_UNIT_NITRATES                                                         :{WEIGHT} de nitrates
+STR_CARGO_UNIT_NUTS                                                             :{SIGNED_WORD} sac{P 0 "" s}  de noix
 STR_CARGO_UNIT_MNSP                                                             :{SIGNED_WORD} caisse{P 0 "" s} de fournitures industrielles
 STR_CARGO_UNIT_PETROL                                                           :{VOLUME} d'essence
 STR_CARGO_UNIT_PHOSPHATE                                                        :{WEIGHT} de phosphate
@@ -96,6 +102,7 @@ STR_CID_ALCOHOL                                                                 
 STR_CID_BAUXITE                                                                 :{TINYFONT}BX
 STR_CID_BEANS                                                                   :{TINYFONT}LG
 STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}MC
+STR_CID_CASSAVA                                                                 :{TINYFONT}MO
 STR_CID_CHEMICALS                                                               :{TINYFONT}PC
 STR_CID_CLAY                                                                    :{TINYFONT}AR
 STR_CID_COFFEE                                                                  :{TINYFONT}CF
@@ -106,10 +113,12 @@ STR_CID_FARM_SUPPLIES                                                           
 STR_CID_FIBRES                                                                  :{TINYFONT}FV
 STR_CID_FISH                                                                    :{TINYFONT}PO
 STR_CID_LUMBER                                                                  :{TINYFONT}BV
+STR_CID_MANGANESE                                                               :{TINYFONT}MN
 STR_CID_MANUFACTURING_SUPPLIES                                                  :{TINYFONT}FI
 STR_CID_METAL                                                                   :{TINYFONT}ML
 STR_CID_MILK                                                                    :{TINYFONT}LT
 STR_CID_NITRATES                                                                :{TINYFONT}NI
+STR_CID_NUTS                                                                    :{TINYFONT}NX
 STR_CID_PETROL                                                                  :{TINYFONT}ES
 STR_CID_PHOSPHATE                                                               :{TINYFONT}PH
 STR_CID_PYRITE_ORE                                                              :{TINYFONT}PY
@@ -143,20 +152,28 @@ STR_EXTRA_BREWERY_FRUIT_SUBSTR                                                  
 STR_EXTRA_BREWERY_GRAIN_SUBSTR                                                  :5{NBSP}000{NBSP}L pour 8{NBSP}t de grain livrées{}
 STR_EXTRA_BREWERY_MAIZE_SUBSTR                                                  :5{NBSP}000{NBSP}L pour 8{NBSP}t de maïs livrées{}
 STR_EXTRA_BRICKWORKS                                                            :{BLACK}Marchandises produites{NBSP}:{}  2{NBSP}t pour 8{NBSP}t de charbon livrées{}  2{NBSP}t pour 8{NBSP}t de sable livrées{}  4{NBSP}t pour 8{NBSP}t d'argile livrées{}{}La production augmente si deux matières premières (ou plus) sont livrées à moins de trois mois d'intervalle.
-STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Marchandises produites{NBSP}:{}  2{NBSP}t pour 8{NBSP}t de charbon livrées{}  2{NBSP}t pour 8{NBSP}t d'argile livrées{}  4{NBSP}t pour 8{NBSP}t de pierre livrées{}{}La production augmente si deux matières premières (ou plus) sont livrées à moins de trois mois d'intervalle.
+STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Marchandises produites{NBSP}:{} {STRING} 2{NBSP}t pour 8{NBSP}t d'argile livrées{}  4{NBSP}t pour 8{NBSP}t de pierre livrées{}{}La production augmente si au moins deux matières premières sont livrées à moins de trois mois d'intervalle.
+STR_EXTRA_CEMENT_PLANT_COAL_SUBSTR                                              :2{NBSP}t pour 8{NBSP}t de charbon livrées{}
+STR_EXTRA_CEMENT_PLANT_PETROL_SUBSTR                                            :2{NBSP}t pour 8{NBSP}000{NBSP}L de pétrole livrés{}
 STR_EXTRA_CHEMICAL_PLANT                                                        :{BLACK}Marchandises produites{NBSP}:{} 6{NBSP}000{NBSP}L pour 8{NBSP}000{NBSP}L de pétrole livrés{} 6{NBSP}000{NBSP}L pour 8{NBSP}t de nitrates livrées
 STR_EXTRA_COPPER_REFINERY                                                       :{BLACK}Marchandises produites{NBSP}:{}  5{NBSP}t pour 8{NBSP}t de minerai de cuivre livrées{}  3{NBSP}t pour 8{NBSP}000{NBSP}L de produits chimiques livrés{}{}La production augmente si deux matières premières (ou plus) sont livrées à moins de trois mois d'intervalle.
 STR_EXTRA_DAIRY                                                                 :{BLACK}Marchandises produites{NBSP}:{}  3{NBSP}t pour 8 caisses de fournitures industrielles livrées{}  5{NBSP}t pour 8{NBSP}000{NBSP}L de lait livrés{}{}La production augmente si les deux matières premières sont livrées à moins de trois mois d'intervalle.
 STR_EXTRA_FERTILIZER_PLANT                                                      :{BLACK}Marchandises produites{NBSP}:{}  8 caisses pour 8{NBSP}000{NBSP}L de produits chimiques livrés
 STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Marchandises produites{NBSP}:{}  3{NBSP}t pour 8 caisses de fournitures industrielles livrées{}  5{NBSP}t pour 8{NBSP}t de poisson livrées{}{}La production augmente si les deux matières premières sont livrées à moins de trois mois d'intervalle.
-STR_EXTRA_FLOUR_MILL                                                            :{BLACK}Marchandises produites{NBSP}:{}  3{NBSP}t pour 8 caisses de fournitures industrielles livrées{}  5{NBSP}t pour 8{NBSP}t de céréales livrées{}{}La production augmente si les deux matières premières sont livrées à moins de trois mois d'intervalle.
-STR_EXTRA_FOOD_PROCESSING_PLANT                                                 :{BLACK}Marchandises produites{NBSP}:{} 6{NBSP}t pour 8{NBSP}t de légumineuses livrées{} 6{NBSP}t pour 8{NBSP}t de fruits livrées
+STR_EXTRA_FLOUR_MILL                                                            :{BLACK}Marchandises produites{NBSP}:{} 3{NBSP}t pour 8 caisses de fournitures industrielles livrées{} {STRING} {STRING}{}La production augmente si des fournitures industrielles sont livrées à moins de trois mois d'intervalle d'autres matières premières.
+STR_EXTRA_FLOUR_MILL_GRAIN_SUBSTR                                               :5{NBSP}000{NBSP}t pour 8{NBSP}t de grain livrées{}
+STR_EXTRA_FLOUR_MILL_EMPTY_SUBSTR                                               :{}
+STR_EXTRA_FLOUR_MILL_CASSAVA_SUBSTR                                             :5{NBSP}t pour 8{NBSP}t de manioc livrées{}
+STR_EXTRA_FLOUR_MILL_MAIZE_SUBSTR                                               :5{NBSP}t pour 8{NBSP}t de maïs livrées{}
+STR_EXTRA_FOOD_PROCESSING_PLANT                                                 :{BLACK}Marchandises produites{NBSP}:{} {STRING} 6{NBSP}t pour 8{NBSP}t de fruits livrées
+STR_EXTRA_FOOD_PROCESSING_PLANT_BEANS_SUBSTR                                    :6{NBSP}t pour 8{NBSP}t de légumineuses livrées{}
+STR_EXTRA_FOOD_PROCESSING_PLANT_NUTS_SUBSTR                                     :6{NBSP}t pour 8{NBSP}t de noix livrées
 STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Marchandises produites{NBSP}:{}  3 caisses pour 8 caisses de fournitures industrielles livrées{}  5 caisses pour 8{NBSP}t de bois d'œuvre livrées{}{}La production augmente si les deux matières premières sont livrées à moins de trois mois d'intervalle.
 STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Produit des objets en verre tels que des bouteilles, des bocaux ou des vitres.{}{}Marchandises produites{NBSP}:{}  6{NBSP}t pour 8{NBSP}t de sable livrées{}  2{NBSP}t pour 8{NBSP}000{NBSP}L de produits chimiques livrés{}{}La production augmente si les deux matières premières sont livrées à moins de trois mois d'intervalle.
 STR_EXTRA_IRON_WORKS                                                            :{BLACK}Marchandises produites{NBSP}:{} 3{NBSP}t pour 8{NBSP}t de minerai de fer livrées{} 3{NBSP}t pour 8{NBSP}t de bois livrées{} 2{NBSP}t pour 8{NBSP}t de sable livrées{}{}La production augmente si deux matières premières (ou plus) sont livrées à moins de trois d'intervalle.
 STR_EXTRA_LIME_KILN                                                             :{BLACK}Marchandises produites{NBSP}:{}  3{NBSP}t pour 8{NBSP}t de pierre livrées{}  3{NBSP}t pour 8{NBSP}t de charbon livrées{}{}La production augmente si les deux matières premières sont livrées à moins de trois mois d'intervalle.
 STR_EXTRA_LUMBER_YARD                                                           :{BLACK}Produit des objets tels que des poteaux ou des piquets de clôture.{}{}Marchandises produites{NBSP}:{}  2{NBSP}t pour 8{NBSP}000{NBSP}L de produits chimiques livrés{}  6{NBSP}t pour 8{NBSP}t de bois d'œuvre livrées{}{}La production augmente si les deux matières premières sont livrées à moins de trois mois d'intervalle.
-STR_EXTRA_MACHINE_SHOP                                                          :{BLACK}Construit et entretient des machines.{}{}Marchandises produites{NBSP}:{}  8 caisses pour 8{NBSP}000{NBSP}L de pétrole livrés{}  8 caisses pour 8{NBSP}t de métal livrées
+STR_EXTRA_MACHINE_SHOP                                                          :{BLACK}Construit et entretient des machines.{}{}Marchandises produites{NBSP}:{}  8 caisses pour 8{NBSP}000{NBSP}L d'essence livrés{}  8 caisses pour 8{NBSP}t de métal livrées
 STR_EXTRA_MEAT_PACKER                                                           :{BLACK}Marchandises produites{NBSP}:{}  3{NBSP}t pour 8{NBSP}caisses de fournitures industrielles livrées{}  5{NBSP}t pour 8 têtes de bétail livrées{}{}La production augmente si les deux matières premières sont livrées à moins de trois mois d'intervalle.
 STR_EXTRA_METAL_FABRICATION_PLANT                                               :{BLACK}Produit des composants métalliques peints.{}{}Marchandises produites{NBSP}:{}  2{NBSP}t pour 8{NBSP}000{NBSP}L de produits chimiques livrés{}  6{NBSP}t pour 8{NBSP}t de métal livrées{}{}La production augmente si les deux matières premières sont livrées à moins de trois mois d'intervalle.
 STR_EXTRA_METAL_FOUNDRY                                                         :{BLACK}Produit des objets métalliques tels que des boîtes de conserve, des outils ou des articles ménagers.{}{}Marchandises produites{NBSP}:{}  2 caisses pour 8{NBSP}000{NBSP}L de produits chimiques livrés{}  6 caisses pour 8{NBSP}t de métal livrées{}{}La production augmente si les deux matières premières sont livrées à moins de trois mois d'intervalle.
@@ -172,21 +189,23 @@ STR_EXTRA_SAWMILL                                                               
 STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Produit des objets métalliques tels que des outils, des charrues, des grilles, des pelles ou des fers à cheval.{}{}Marchandises produites{NBSP}:{}  8 caisses pour 8{NBSP}t de métal livrées
 STR_EXTRA_STEELMILL                                                             :{BLACK}Marchandises produites{NBSP}:{}  3{NBSP}t pour 8{NBSP}t de minerai de fer livrées{}  2{NBSP}t pour 8{NBSP}t de charbon livrées{}  3{NBSP}t pour 8{NBSP}t de ferraille livrées{}{}La production augmente si deux matières premières (ou plus) sont livrées à moins de trois mois d'intervalle.
 STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Marchandises produites{NBSP}:{}  3{NBSP}t pour 8 caisses de fournitures industrielles livrées{}  5{NBSP}t pour 8{NBSP}t de sucre livrées{}{}La production augmente si les deux matières premières sont livrées à moins de trois mois d'intervalle.
-STR_EXTRA_SUPPLY_YARD                                                           :{BLACK}Marchandises produites{NBSP}:{}  8 caisses pour 8{NBSP}000{NBSP}L d'essence livrés{}  8 caisses pour 8 véhicules livrés{}  8 caisses pour 8{NBSP}t de marchandises livrées
+STR_EXTRA_SUPPLY_YARD                                                           :{BLACK}Marchandises produites{NBSP}:{}  8 caisses pour 8{NBSP}t de biens livrées{}  8 caisses pour 8{NBSP}000{NBSP}L d'essence livrés{} {STRING}
+STR_EXTRA_SUPPLY_YARD_VEHICLES_SUBSTR                                           :8 caisses pour 8 véhicules livrés
+STR_EXTRA_SUPPLY_YARD_BUILDING_MATERIALS_SUBSTR                                 :8 caisses pour 8{NBSP}t de matériaux de construction livrées
 STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Marchandises produites{NBSP}:{}  3 caisses pour 8 caisses de fournitures industrielles livrées{} {STRING} {STRING}{}La production augmente si des fournitures industrielles sont livrées à moins de trois mois d'intervalle d'autres matières premières.
 STR_EXTRA_TEXTILE_MILL_WOOL_SUBSTR                                              :5 caisses pour 8 balles de laine livrées{}
 STR_EXTRA_TEXTILE_MILL_PLANT_FIBRES_SUBSTR                                      :5 caisses pour 8 balles de fibres végétales livrées{}
 STR_EXTRA_TYRE_PLANT                                                            :{BLACK}Marchandises produites{NBSP}:{}  6 caisses pour 8{NBSP}000{NBSP}L de latex livrés{}  2 caisses pour 8{NBSP}000{NBSP}L de produits chimiques livrés{}{}La production augmente si les deux matières premières sont livrées à moins de trois mois d'intervalle.
-STR_EXTRA_VEHICLE_FACTORY                                                       :{BLACK}Marchandises produites{NBSP}:{}  3 véhicules pour 8 caisses de pièces détachées livrées{}  3 véhicules pour 8 caisses de métal livrées{}  2 véhicules pour 8 caisses de fournitures industrielles livrées{}{}La production augmente si deux matières premières (ou plus) sont livrées à moins de trois mois d'intervalle.
+STR_EXTRA_VEHICLE_FACTORY                                                       :{BLACK}Marchandises produites{NBSP}:{}  3 véhicules pour 8 caisses de pièces détachées livrées{}  3 véhicules pour 8 caisses de métal livrées{}  2 véhicules pour 8{NBSP}000{NBSP}L de produits chimiques livrées{}{}La production augmente si au moins deux matières premières sont livrées à moins de trois mois d'intervalle.
 
 STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ DEBUG ------------{}Production ce mois-ci{NBSP}:{}Marchandise 1{NBSP}: {WHITE}{COMMA}{BLACK}{}Marchandise 2{NBSP}: {WHITE}{COMMA}{BLACK}{}Jours écoulés depuis la dernière livraison{NBSP}: {WHITE}{COMMA}{BLACK}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Production maximum atteinte
 STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Production actuelle{NBSP}: {YELLOW}Normale{}{}{BLACK}Pour doubler la production, livrer {SIGNED_WORD} caisses dans les 3{NBSP}mois (ou {SIGNED_WORD} caisses pour quadrupler)
 STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Production actuelle{NBSP}: {YELLOW}Améliorée (2x){}{}{BLACK}Pour maintenir ce niveau de production, livrer {SIGNED_WORD} caisses dans les 3{NBSP}mois (ou {SIGNED_WORD} caisses pour encore doubler)
-STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}Production actuelle{NBSP}: {YELLOW}Gung-ho (4x){}{}{BLACK}Pour maintenir ce niveau de production, livrer {SIGNED_WORD} caisses dans les 3{NBSP}mois
+STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}Production actuelle{NBSP}: {YELLOW}à fond les manettes{NBSP}! (4x){}{}{BLACK}Pour maintenir ce niveau de production, livrer {SIGNED_WORD} caisses dans les 3{NBSP}mois
 STR_PORT_PRODUCTION_1X                                                          :{BLACK}Production actuelle{NBSP}: {YELLOW}Normale{}{}{BLACK}Pour doubler la production, livrer {SIGNED_WORD} unités de marchandises nécessaires dans les 3{NBSP}mois (ou {SIGNED_WORD} pour quadrupler)
 STR_PORT_PRODUCTION_2X                                                          :{BLACK}Production actuelle{NBSP}: {YELLOW}Améliorée (2x){}{}{BLACK}Pour maintenir ce niveau de production, livrer {SIGNED_WORD} unités de marchandises nécessaires dans les 3{NBSP}mois (ou {SIGNED_WORD} pour encore doubler)
-STR_PORT_PRODUCTION_4X                                                          :{BLACK}Production actuelle{NBSP}: {YELLOW}Gung-ho (4x){}{}{BLACK}Pour maintenir ce niveau de production, livrer {SIGNED_WORD} unités de marchandises nécessaires dans les 3{NBSP}mois
+STR_PORT_PRODUCTION_4X                                                          :{BLACK}Production actuelle{NBSP}: {YELLOW}à fond les manettes{NBSP}! (4x){}{}{BLACK}Pour maintenir ce niveau de production, livrer {SIGNED_WORD} unités de marchandises nécessaires dans les 3{NBSP}mois
 STR_GENERIC_NEWLINE                                                             :{}
 
 STR_FUND_BASIC_FARM                                                             :{}{BLACK}Emplacement{NBSP}: {YELLOW}Ne peut pas être construite sur de la neige ni dans le désert.
@@ -233,6 +252,8 @@ STR_IND_DREDGING_SITE                                                           
 STR_IND_FERTILISER_PLANT                                                        :Usine d'engrais chimiques
 STR_IND_FISHING_GROUND                                                          :Zone de pêche
 STR_IND_FISHING_HARBOUR                                                         :Port de pêche
+STR_IND_FISHING_VILLAGE                                                         :Village de pêcheurs
+STR_IND_FLOUR_MILL                                                              :Moulin à farine
 STR_IND_FOOD_MARKET                                                             :Magasin d'alimentation
 STR_IND_FOOD_PROCESSOR                                                          :Usine agroalimentaire
 STR_IND_FURNITURE_FACTORY                                                       :Fabrique de meubles
@@ -246,6 +267,7 @@ STR_IND_LIME_KILN                                                               
 STR_IND_LIQUIDS_TERMINAL                                                        :Terminal de vracs liquides
 STR_IND_LUMBER_YARD                                                             :Dépôt de bois
 STR_IND_MACHINE_SHOP                                                            :Atelier mécanique
+STR_IND_MANGANESE_MINE                                                          :Mine de manganèse
 STR_IND_METAL_FABRICATION_PLANT                                                 :Usine métallurgique
 STR_IND_METAL_FOUNDRY                                                           :Fonderie
 STR_IND_MIXEDFARM                                                               :Exploitation agricole mixte
