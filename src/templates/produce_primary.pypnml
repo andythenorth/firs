@@ -7,16 +7,13 @@
 
 /* Primary production which is boosted by supplies */
 
-#define SUPPLY_BOOST_DOUBLE     ${industry.supply_requirements[0]}
-#define SUPPLY_BOOST_QUADRUPLE  ${industry.supply_requirements[1]}
-
 produce(${industry.id}_production, 9999, 9999, 9999, 0, 0, 0);
 
 switch(FEAT_INDUSTRIES, SELF, ${industry.id}_produce, STORE_PERM(waiting_cargo_1 + waiting_cargo_2 + waiting_cargo_3 + LOAD_PERM(var_num_supplies_delivered), var_num_supplies_delivered)) {
 	${industry.id}_production;
 }
 
-produce(${industry.id}_production_256, 0, 0, 0, LOAD_TEMP(9) * production_rate_1, LOAD_TEMP(9) * production_rate_2, 0);
+produce(${industry.id}_production_256, 0, 0, 0, LOAD_TEMP(9) * production_rate_1 / 100, LOAD_TEMP(9) * production_rate_2 / 100, 0);
 
 switch(FEAT_INDUSTRIES, SELF, ${industry.id}_produce_256_ticks,
 		[STORE_TEMP(
@@ -24,7 +21,8 @@ switch(FEAT_INDUSTRIES, SELF, ${industry.id}_produce_256_ticks,
 			LOAD_PERM(var_num_supplies_delivered_last) +
 			LOAD_PERM(var_num_supplies_delivered_bef_last),
 		8),
-		STORE_TEMP((LOAD_TEMP(8) >= SUPPLY_BOOST_QUADRUPLE) ? 3 : ((LOAD_TEMP(8) >= SUPPLY_BOOST_DOUBLE) ? 1 : 0), 9),
+		STORE_TEMP((LOAD_TEMP(8) * 100 >= ${industry.supply_requirements[0]} * primary_level2_requirement) ? primary_level2_bonus :
+		           (LOAD_TEMP(8) * 100 >= ${industry.supply_requirements[0]} * primary_level1_requirement) ? primary_level1_bonus : 0, 9),
 		STORE_PERM(LOAD_TEMP(9), var_current_supplies_prod_factor)
 		]) {
 	${industry.id}_production_256;

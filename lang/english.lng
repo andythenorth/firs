@@ -22,6 +22,13 @@ STR_PARAM_VALUE_STAT_RATING_DEFAULT                                             
 STR_PARAM_VALUE_STAT_RATING_REDUCED_TIME                                        :Favourable (allows longer time between cargo pickups)
 STR_PARAM_VALUE_STAT_RATING_100                                                 :Insanely generous (rating is always 100%)
 
+STR_PARAM_NAME_PRIMARY_LEVEL1_REQUIREMENT                                       :Adjust cargo requirement for production at 'enhanced level' (%)
+STR_PARAM_NAME_PRIMARY_LEVEL2_REQUIREMENT                                       :Adjust cargo requirement for production at 'gung ho' (%)
+STR_PARAM_DESC_PRIMARY_LEVEL_REQUIREMENT                                        :The amount of supplies required depends on the industry type and this multiplier in percent
+STR_PARAM_NAME_PRIMARY_LEVEL1_BONUS                                             :Bonus production at enhanced production level
+STR_PARAM_NAME_PRIMARY_LEVEL2_BONUS                                             :Bonus production at gung ho production level
+STR_PARAM_DESC_PRIMARY_LEVEL_BONUS                                              :The percentage that industry production increases, when the supply requirements are fulfilled
+
 STR_PARAM_VALUE_ECONOMIES_BASIC_TEMPERATE                                       :Temperate Basic
 STR_PARAM_VALUE_ECONOMIES_BASIC_ARCTIC                                          :Arctic Basic
 STR_PARAM_VALUE_ECONOMIES_BASIC_TROPIC                                          :Tropic Basic
@@ -200,12 +207,12 @@ STR_EXTRA_VEHICLE_FACTORY                                                       
 
 STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ DEBUG ------------{}Production this month:{}Cargo 1: {WHITE}{COMMA}{BLACK}{}Cargo 2: {WHITE}{COMMA}{BLACK}{}Days since last delivery: {WHITE}{COMMA}{BLACK}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Maximum production reached
-STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Current production: {YELLOW}Normal{}{}{BLACK}To double production deliver {SIGNED_WORD} crates supplies within three months (or {SIGNED_WORD} crates for quadruple production)
-STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Current production: {YELLOW}Enhanced (double){}{}{BLACK}To keep this level, deliver {SIGNED_WORD} crates supplies within three months, or {SIGNED_WORD} crates for quadruple production
-STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}Current production: {YELLOW}Gung ho (quadruple){}{}{BLACK}To keep this level, deliver {SIGNED_WORD} crates supplies within three months
-STR_PORT_PRODUCTION_1X                                                          :{BLACK}Current production: {YELLOW}Normal{}{}{BLACK}To double production deliver {SIGNED_WORD} units of cargo within three months{}For quadruple production deliver {SIGNED_WORD} units of cargo within three months
-STR_PORT_PRODUCTION_2X                                                          :{BLACK}Current production: {YELLOW}Enhanced (double){}{}{BLACK}To keep this level, deliver {SIGNED_WORD} units of cargo within three months, or {SIGNED_WORD} units of cargo to raise to quadruple production
-STR_PORT_PRODUCTION_4X                                                          :{BLACK}Current production: {YELLOW}Gung ho (quadruple){}{}{BLACK}To keep this level, deliver {SIGNED_WORD} units of cargo within three months
+STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Current production: {YELLOW}Normal ({SIGNED_WORD} %){}{}{BLACK}To increase production to {SIGNED_WORD} % deliver {SIGNED_WORD} crates of supplies within three months{}To increase to {SIGNED_WORD} % deliver {SIGNED_WORD} crates
+STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Current production: {YELLOW}Enhanced ({SIGNED_WORD} %){}{}{BLACK}To keep this level, deliver {SKIP}{SIGNED_WORD} crates of supplies within three months{}To increase to {SIGNED_WORD} % deliver {SIGNED_WORD} crates
+STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}Current production: {YELLOW}Gung ho ({SIGNED_WORD} %){}{}{BLACK}To keep this level, deliver {SKIP}{SKIP}{SKIP}{SIGNED_WORD} crates of supplies within three months
+STR_PORT_PRODUCTION_1X                                                          :{BLACK}Current production: {YELLOW}Normal ({SIGNED_WORD} %){}{}{BLACK}To increase production to {SIGNED_WORD} % deliver {SIGNED_WORD} units of cargo within three months{}To increase to {SIGNED_WORD} % deliver {SIGNED_WORD} units
+STR_PORT_PRODUCTION_2X                                                          :{BLACK}Current production: {YELLOW}Enhanced ({SIGNED_WORD} %){}{}{BLACK}To keep this level, deliver {SKIP}{SIGNED_WORD} units of cargo within three months{}To increase to {SIGNED_WORD} % deliver {SIGNED_WORD} units
+STR_PORT_PRODUCTION_4X                                                          :{BLACK}Current production: {YELLOW}Gung ho ({SIGNED_WORD} %){}{}{BLACK}To keep this level, deliver {SKIP}{SKIP}{SKIP}{SIGNED_WORD} units of cargo within three months
 STR_GENERIC_NEWLINE                                                             :{}
 
 STR_FUND_BASIC_FARM                                                             :{}{BLACK}Location: {YELLOW}Cannot be funded on snow or in deserts.
