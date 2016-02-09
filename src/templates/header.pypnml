@@ -125,3 +125,9 @@ basecost {
 	PR_BUILD_INDUSTRY_RAW : 2;  // Building primary industries is also expensive
 	PR_CLEAR_INDUSTRY : 2;      // Deleting industries must also be expensive
 }
+
+/* Old default values for old savegames */
+if (param[6] == 0) { param[6] = 100; }
+if (param[7] == 0) { param[7] = 100; }
+if (param[8] == 0) { param[8] = 400; }
+if (param[9] == 0) { param[9] = 300; }
