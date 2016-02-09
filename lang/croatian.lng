@@ -22,6 +22,12 @@ STR_PARAM_VALUE_STAT_RATING_DEFAULT                                             
 STR_PARAM_VALUE_STAT_RATING_REDUCED_TIME                                        :Posljedica "vrijeme od posljednjeg preuzimanja tereta" je umanjena
 STR_PARAM_VALUE_STAT_RATING_100                                                 :Uvijek 100%
 
+STR_PARAM_NAME_PRIMARY_LEVEL1_REQUIREMENT                                       :Prilagodi potrebe dostave tereta za proizvodnju na "unaprijeđenom nivou" (%)
+STR_PARAM_NAME_PRIMARY_LEVEL2_REQUIREMENT                                       :Prilagodi potrebe dostave tereta za proizvodnju na "masovnom nivou" (%)
+STR_PARAM_DESC_PRIMARY_LEVEL_REQUIREMENT                                        :Količina potrebne dostave ovisi o vrsti industrije i o ovom parametru u postotku
+STR_PARAM_NAME_PRIMARY_LEVEL1_BONUS                                             :Dodatna proizvodnja na unaprijeđenom nivou proizvodnje
+STR_PARAM_NAME_PRIMARY_LEVEL2_BONUS                                             :Dodatna proizvodnja na masovnom nivou proizvodnje
+STR_PARAM_DESC_PRIMARY_LEVEL_BONUS                                              :Postotak za koji se povećava industrijska proizvodnja ako su potrebe dostave zadovoljene
 
 STR_PARAM_VALUE_ECONOMIES_BASIC_TEMPERATE                                       :Osnovna - umjerena klima
 STR_PARAM_VALUE_ECONOMIES_BASIC_ARCTIC                                          :Osnovna - arktička klima
@@ -201,12 +207,12 @@ STR_EXTRA_VEHICLE_FACTORY                                                       
 
 STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ ISPRAVLJANJE ------------{}Proizvodnja ovog mjeseca:{}Teret 1: {WHITE}{COMMA}{BLACK}{}Teret 2: {WHITE}{COMMA}{BLACK}{}Dana od posljednje dostave: {WHITE}{COMMA}{BLACK}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Dostignuta maksimalna proizvodnja
-STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Trenutna proizvodnja: {YELLOW}Normalna{}{}{BLACK}Za udvostručavanje proizvodnje dostavite {SIGNED_WORD} kutija potrepština unutar tri mjeseca ili {SIGNED_WORD} kutija za podizanje na četverostruku proizvodnju
-STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Trenutna proizvodnja: {YELLOW}Unaprijeđena (dvostruka){}{}{BLACK}Za zadržavanje ovog nivoa, dostavite {SIGNED_WORD} kutija potrepština unutar tri mjeseca ili {SIGNED_WORD} kutija za podizanje na četverostruku proizvodnju
-STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}Trenutna proizvodnja: {YELLOW}Masovna (četverostruka){}{}{BLACK}Za zadržavanje ovog nivoa, dostavite {SIGNED_WORD} kutija potrepština unutar tri mjeseca
-STR_PORT_PRODUCTION_1X                                                          :{BLACK}Trenutna proizvodnja: {YELLOW}Normalna{}{}{BLACK}Za udvostručavanje proizvodnje dostavite {SIGNED_WORD} jedinica tereta unutar tri mjeseca{}Za učetverostručavanje proizvodnje dostavite {SIGNED_WORD} jedinica tereta unutar tri mjeseca
-STR_PORT_PRODUCTION_2X                                                          :{BLACK}Trenutna proizvodnja: {YELLOW}Unaprijeđena (dvostruka){}{}{BLACK}Za zadržavanje ovog nivoa, dostavite {SIGNED_WORD} jedinica tereta unutar tri mjeseca ili {SIGNED_WORD} jedinica tereta za podizanje na četverostruku proizvodnju
-STR_PORT_PRODUCTION_4X                                                          :{BLACK}Trenutna proizvodnja: {YELLOW}Masovna (četverostruka){}{}{BLACK}Za zadržavanje ovog nivoa, dostavite {SIGNED_WORD} jedinica tereta unutar tri mjeseca
+STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Trenutna proizvodnja: {YELLOW}Normalna ({SIGNED_WORD} %){}{}{BLACK}Za povećavanje proizvodnje na {SIGNED_WORD} % dostavite {SIGNED_WORD} kutija potrepština unutar tri mjeseca{} Za povećavanje na {SIGNED_WORD} % dostavite {SIGNED_WORD} kutija
+STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Trenutna proizvodnja: {YELLOW}Unaprijeđena ({SIGNED_WORD} %){}{}{BLACK}Za zadržavanje ovog nivoa, dostavite {SKIP}{SIGNED_WORD} kutija potrepština unutar tri mjeseca{} Za povećavanje na {SIGNED_WORD} % dostavite {SIGNED_WORD} kutija
+STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}Trenutna proizvodnja: {YELLOW}Masovna ({SIGNED_WORD} %){}{}{BLACK}Za zadržavanje ovog nivoa, dostavite {SKIP}{SKIP}{SKIP}{SIGNED_WORD} kutija potrepština unutar tri mjeseca
+STR_PORT_PRODUCTION_1X                                                          :{BLACK}Trenutna proizvodnja: {YELLOW}Normalna ({SIGNED_WORD} %){}{}{BLACK}Za povećavanje proizvodnje na {SIGNED_WORD} % dostavite {SIGNED_WORD} jedinica tereta unutar tri mjeseca{} Za povećavanje na {SIGNED_WORD} % dostavite {SIGNED_WORD} jedinica tereta
+STR_PORT_PRODUCTION_2X                                                          :{BLACK}Trenutna proizvodnja: {YELLOW}Unaprijeđena ({SIGNED_WORD} %){}{}{BLACK}Za zadržavanje ovog nivoa, dostavite {SKIP}{SIGNED_WORD} jedinica tereta unutar tri mjeseca{} Za povećavanje na {SIGNED_WORD} % dostavite {SIGNED_WORD} jedinica tereta
+STR_PORT_PRODUCTION_4X                                                          :{BLACK}Trenutna proizvodnja: {YELLOW}Masovna ({SIGNED_WORD} %){}{}{BLACK}Za zadržavanje ovog nivoa, dostavite {SKIP}{SKIP}{SKIP}{SIGNED_WORD} jedinica tereta unutar tri mjeseca
 STR_GENERIC_NEWLINE                                                             :{}
 
 STR_FUND_BASIC_FARM                                                             :{}{BLACK}Lokacija: {YELLOW}Ne može biti financirano na snijegu ili u pustinjama.
