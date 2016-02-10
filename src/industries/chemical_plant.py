@@ -235,14 +235,19 @@ industry.add_industry_layout(
 industry.add_industry_layout(
     id = 'chemical_plant_industry_layout_2',
     layout = [(0, 1, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_drop_tower_and_thin_chimney'),
-              (1, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_vertical_tanks'),
+              (0, 2, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_horizontal_tanks'),
+              (0, 3, 'chemical_plant_tile_2', 'chemical_plant_spritelayout_fat_chimney'),
+              (0, 4, 'chemical_plant_tile_2', 'chemical_plant_spritelayout_fat_chimney'),
+              (1, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_horizontal_tanks'),
               (1, 1, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_frac_columns'),
-              (1, 2, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_spherical_tanks'),
-              (1, 3, 'chemical_plant_tile_2', 'chemical_plant_spritelayout_fat_chimney'),
-              (2, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_barrels'),
-              (2, 1, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_horizontal_tanks'),
-              (2, 2, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_horizontal_tanks'),
-              (2, 3, 'chemical_plant_tile_2', 'chemical_plant_spritelayout_large_building'),
+              (1, 2, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_horizontal_tanks'),
+              (1, 3, 'chemical_plant_tile_2', 'chemical_plant_spritelayout_large_building'),
+              (1, 4, 'chemical_plant_tile_2', 'chemical_plant_spritelayout_large_building'),
+              (2, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_vertical_tanks'),
+              (2, 1, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_vertical_tanks'),
+              (2, 2, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_barrels'),
+              (2, 3, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_spherical_tanks'),
+              (2, 4, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_spherical_tanks'),
     ]
 )
 industry.add_industry_layout(
