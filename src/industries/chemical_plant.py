@@ -61,27 +61,27 @@ spriteset_ground_overlay = industry.add_spriteset(
 spriteset_horizontal_tanks = industry.add_spriteset(
     id = 'chemical_plant_spriteset_horizontal_tanks',
     sprites = [(150, 10, 64, 114, -31, -83)],
-    zextent = 48
+    zextent = 70
 )
 spriteset_frac_columns = industry.add_spriteset(
     id = 'chemical_plant_spriteset_frac_columns',
     sprites = [(220, 10, 64, 114, -31, -83)],
-    zextent = 48
+    zextent = 95
 )
 spriteset_drop_tower_and_thin_chimney = industry.add_spriteset(
     id = 'chemical_plant_spriteset_drop_tower_and_thin_chimney',
     sprites = [(290, 10, 64, 114, -31, -83)],
-    zextent = 48
+    zextent = 127
 )
 spriteset_large_building = industry.add_spriteset(
     id = 'chemical_plant_spriteset_large_building',
     sprites = [(360, 10, 64, 114, -31, -83)],
-    zextent = 48
+    zextent = 70
 )
 spriteset_fat_chimney = industry.add_spriteset(
     id = 'chemical_plant_spriteset_fat_chimney',
     sprites = [(430, 10, 64, 114, -31, -83)],
-    zextent = 48
+    zextent = 90
 )
 spriteset_spherical_tanks = industry.add_spriteset(
     id = 'chemical_plant_spriteset_spherical_tanks',
@@ -100,9 +100,9 @@ spriteset_barrels = industry.add_spriteset(
 )
 sprite_smoke_1 = industry.add_smoke_sprite(
     smoke_type = 'white_smoke_big',
-    xoffset = -8,
-    yoffset = 2,
-    zoffset = 76,
+    xoffset = 0,
+    yoffset = 0,
+    zoffset = 81,
 )
 sprite_smoke_2 = industry.add_smoke_sprite(
     smoke_type = 'white_smoke_small',
@@ -255,20 +255,20 @@ industry.add_industry_layout(
 )
 industry.add_industry_layout(
     id = 'chemical_plant_industry_layout_4',
-    layout = [(0, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_drop_tower_and_thin_chimney'),
-              (0, 1, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_spherical_tanks'),
+    layout = [(0, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_vertical_tanks'),
+              (0, 1, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_vertical_tanks'),
               (1, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_frac_columns'),
-              (1, 1, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_spherical_tanks'),
+              (1, 1, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_frac_columns'),
               (2, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_horizontal_tanks'),
-              (2, 1, 'chemical_plant_tile_2', 'chemical_plant_spritelayout_fat_chimney'),
-              (3, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_horizontal_tanks'),
-              (3, 1, 'chemical_plant_tile_2', 'chemical_plant_spritelayout_large_building'),
-              (4, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_vertical_tanks'),
-              (4, 1, 'chemical_plant_tile_2', 'chemical_plant_spritelayout_fat_chimney'),
-              (5, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_vertical_tanks'),
-              (5, 1, 'chemical_plant_tile_2', 'chemical_plant_spritelayout_large_building'),
-              (6, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_barrels'),
-              (6, 1, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_barrels'),
+              (2, 1, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_horizontal_tanks'),
+              (3, 0, 'chemical_plant_tile_2', 'chemical_plant_spritelayout_fat_chimney'),
+              (3, 1, 'chemical_plant_tile_2', 'chemical_plant_spritelayout_fat_chimney'),
+              (4, 0, 'chemical_plant_tile_2', 'chemical_plant_spritelayout_large_building'),
+              (4, 1, 'chemical_plant_tile_2', 'chemical_plant_spritelayout_large_building'),
+              (5, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_drop_tower_and_thin_chimney'),
+              (5, 1, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_barrels'),
+              (6, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_spherical_tanks'),
+              (6, 1, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_spherical_tanks'),
     ]
 )
 industry.add_industry_layout(
