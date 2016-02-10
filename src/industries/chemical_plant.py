@@ -102,24 +102,16 @@ spriteset_10 = industry.add_spriteset(
 )
 sprite_smoke_1 = industry.add_smoke_sprite(
     smoke_type = 'white_smoke_big',
-    xoffset= 5,
-    yoffset= 0,
-    zoffset= 69,
+    xoffset= -8,
+    yoffset= 2,
+    zoffset= 76,
     animation_frame_offset = 1
 )
-sprite_smoke_2 = industry.add_smoke_sprite(
-    smoke_type = 'white_smoke_big',
-    xoffset= 9,
-    yoffset= 0,
-    zoffset= 69,
-)
-
 industry.add_spritelayout(
     id = 'chemical_plant_spritelayout_1',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_1],
-    smoke_sprites = [sprite_smoke_1, sprite_smoke_2],
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
@@ -141,6 +133,7 @@ industry.add_spritelayout(
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_4],
+    smoke_sprites = [sprite_smoke_1],
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
