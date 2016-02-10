@@ -193,24 +193,9 @@ industry.add_spritelayout(
     fences = ['nw','ne','se','sw']
 )
 
+
 industry.add_industry_layout(
     id = 'chemical_plant_industry_layout_1',
-    layout = [(0, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_1'),
-              (0, 1, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_4'),
-              (0, 2, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_8'),
-              (1, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_6'),
-              (1, 1, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_3'),
-              (1, 2, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_9'),
-              (2, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_5'),
-              (2, 1, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_2'),
-              (2, 2, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_7'),
-              (3, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_10'),
-              (3, 1, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_concrete'),
-              (3, 2, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_7'),
-    ]
-)
-industry.add_industry_layout(
-    id = 'chemical_plant_industry_layout_2',
     layout = [(0, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_1'),
               (0, 1, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_6'),
               (1, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_4'),
@@ -224,7 +209,7 @@ industry.add_industry_layout(
     ]
 )
 industry.add_industry_layout(
-    id = 'chemical_plant_industry_layout_3',
+    id = 'chemical_plant_industry_layout_2',
     layout = [(0, 1, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_4'),
               (1, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_8'),
               (1, 1, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_3'),
@@ -237,7 +222,7 @@ industry.add_industry_layout(
     ]
 )
 industry.add_industry_layout(
-    id = 'chemical_plant_industry_layout_4',
+    id = 'chemical_plant_industry_layout_3',
     layout = [(0, 1, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_4'),
               (1, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_1'),
               (1, 1, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_3'),
@@ -250,67 +235,39 @@ industry.add_industry_layout(
     ]
 )
 industry.add_industry_layout(
-    id = 'chemical_plant_industry_layout_5',
-    layout = [(0, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_4'),
-              (0, 2, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_7'),
-              (1, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_3'),
-              (1, 2, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_7'),
-              (2, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_2'),
-              (2, 2, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_6'),
-              (3, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_1'),
-              (3, 2, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_5'),
-              (4, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_8'),
-              (4, 2, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_6'),
-              (5, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_8'),
-              (5, 2, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_5'),
-              (6, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_9'),
-              (6, 2, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_10'),
-    ]
-)
-industry.add_industry_layout(
-    id = 'chemical_plant_industry_layout_6',
-    layout = [(0, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_4'),
-              (0, 2, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_8'),
-              (0, 3, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_8'),
-              (1, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_3'),
-              (1, 2, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_6'),
-              (1, 3, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_6'),
-              (2, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_2'),
-              (2, 2, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_5'),
-              (2, 3, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_5'),
-              (3, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_1'),
-              (3, 2, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_10'),
-              (3, 3, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_concrete'),
-              (4, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_7'),
-              (4, 2, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_7'),
-              (4, 3, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_9'),
-    ]
-)
-industry.add_industry_layout(
-    id = 'chemical_plant_industry_layout_7',
+    id = 'chemical_plant_industry_layout_4',
     layout = [(0, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_4'),
               (0, 1, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_7'),
-              (0, 2, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_1'),
-              (0, 5, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_8'),
-              (0, 6, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_10'),
               (1, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_3'),
               (1, 1, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_7'),
-              (1, 2, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_6'),
-              (1, 5, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_8'),
-              (1, 6, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_6'),
               (2, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_2'),
-              (2, 1, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_concrete'),
+              (2, 1, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_6'),
+              (3, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_1'),
+              (3, 1, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_5'),
+              (4, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_8'),
+              (4, 1, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_6'),
+              (5, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_8'),
+              (5, 1, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_5'),
+              (6, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_9'),
+              (6, 1, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_10'),
+    ]
+)
+industry.add_industry_layout(
+    id = 'chemical_plant_industry_layout_5',
+    layout = [(0, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_4'),
+              (0, 1, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_8'),
+              (0, 2, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_8'),
+              (1, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_3'),
+              (1, 1, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_6'),
+              (1, 2, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_6'),
+              (2, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_2'),
+              (2, 1, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_5'),
               (2, 2, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_5'),
-              (2, 5, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_9'),
-              (2, 6, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_5'),
+              (3, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_1'),
+              (3, 1, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_10'),
+              (3, 2, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_concrete'),
               (4, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_7'),
               (4, 1, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_7'),
               (4, 2, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_9'),
-              (4, 5, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_8'),
-              (4, 6, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_10'),
-              (5, 1, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_7'),
-              (5, 2, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_10'),
-              (5, 5, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_8'),
-              (5, 6, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_9'),
     ]
 )
