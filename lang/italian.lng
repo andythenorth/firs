@@ -54,7 +54,9 @@ STR_CARGO_NAME_METAL                                                            
 STR_CARGO_NAME_MILK                                                             :{G=m}Latte
 STR_CARGO_NAME_MANUFACTURING_SUPPLIES                                           :{G=f}Forniture industriali
 STR_CARGO_NAME_NITRATES                                                         :{G=m}Nitrati
+STR_CARGO_NAME_NUTS                                                             :{G=f}Noci
 STR_CARGO_NAME_PETROL                                                           :{G=m}Carburante
+STR_CARGO_NAME_PHOSPHATE                                                        :Fosfato
 STR_CARGO_NAME_PYRITE_ORE                                                       :Minerale di pirite
 STR_CARGO_NAME_RECYCLABLES                                                      :{G=m}Prodotti riciclati
 STR_CARGO_NAME_SAND                                                             :{G=f}Sabbia
@@ -69,6 +71,7 @@ STR_CARGO_NAME_WOOL                                                             
 STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} di alcoolici
 STR_CARGO_UNIT_BAUXITE                                                          :{WEIGHT} di bauxite
 STR_CARGO_UNIT_BEANS                                                            :{WEIGHT} di fagioli
+STR_CARGO_UNIT_CASSAVA                                                          :{WEIGHT} di manioca
 STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WEIGHT} di materiali per edilizia
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} di prodotti chimici
 STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} di argilla
@@ -96,6 +99,7 @@ STR_CARGO_UNIT_STONE                                                            
 STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} di barbabietola da zucchero
 STR_CARGO_UNIT_SUGARCANE                                                        :{WEIGHT} di canne da zucchero
 STR_CARGO_UNIT_VEHICLE_PARTS                                                    :{SIGNED_WORD} cass{P 0 a e} di parti per veicoli
+STR_CARGO_UNIT_VEHICLES                                                         :{SIGNED_WORD} veicol{P 0 o i}
 STR_CARGO_UNIT_WOOL                                                             :{SIGNED_WORD} ball{P 0 a e} di lana
 
 STR_CID_ALCOHOL                                                                 :{TINYFONT}AL
@@ -117,6 +121,8 @@ STR_CID_METAL                                                                   
 STR_CID_MILK                                                                    :{TINYFONT}LA
 STR_CID_NITRATES                                                                :{TINYFONT}NI
 STR_CID_PETROL                                                                  :{TINYFONT}CR
+STR_CID_PHOSPHATE                                                               :{TINYFONT}FO
+STR_CID_PYRITE_ORE                                                              :{TINYFONT}MP
 STR_CID_RECYCLABLES                                                             :{TINYFONT}PR
 STR_CID_SAND                                                                    :{TINYFONT}SA
 STR_CID_SCRAP_METAL                                                             :{TINYFONT}MS
@@ -145,9 +151,11 @@ STR_EXTRA_BIOREFINERY                                                           
 STR_EXTRA_BREWERY                                                               :{BLACK}Produzione:{}  3000l ogni 8 casse di forniture industriali consegnate{}{STRING} {STRING}{}Il prodotto aumenta se forniture industriali e un altro tipo di merce sono consegnate entro un intervallo inferiore a tre mesi.
 STR_EXTRA_BREWERY_FRUIT_SUBSTR                                                  :5000l ogni 8t di frutta consegnate{}
 STR_EXTRA_BREWERY_GRAIN_SUBSTR                                                  :5000l ogni 8t di grano consegnate{}
+STR_EXTRA_BREWERY_MAIZE_SUBSTR                                                  :5000l ogni 8t di mais consegnate{}
 STR_EXTRA_BRICKWORKS                                                            :{BLACK}Produzione:{}  2t ogni 8t di carbone consegnate{}  2t ogni 8t di sabbia consegnate{}  4t ogni 8t d'argilla consegnate{}{}Il prodotto aumenta se due o più tipi di merci sono consegnate entro un intervallo inferiore a tre mesi.
 STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Produzione:{}  2t ogni 8t di carbone consegnate{}  2t ogni 8t d'argilla consegnate{}  4t ogni 8t di pietre consegnate{}{}Il prodotto aumenta se due o più tipi di merci sono consegnate entro un intervallo inferiore a tre mesi.
 STR_EXTRA_CEMENT_PLANT_COAL_SUBSTR                                              :2t ogni 8t di carbone consegnate{}
+STR_EXTRA_CEMENT_PLANT_PETROL_SUBSTR                                            :2t ogni 8000l di carburanti consegnati{}
 STR_EXTRA_CHEMICAL_PLANT                                                        :{BLACK}Produzione:{}  6,000l ogni 8,000l di petrolio consegnato{} 6,000l ogni 8t di nitrati consegnati
 STR_EXTRA_COPPER_REFINERY                                                       :{BLACK}Produzione:{} 5t ogni 8t di rame consegnate{} 3t ogni 8000l di prodotti chimici consegnati{}{}Il prodotto aumenta se due o più tipi di merci sono consegnati entro un intervallo inferiore a tre mesi.
 STR_EXTRA_DAIRY                                                                 :{BLACK}Produzione:{}  3t ogni 8t di forniture industriali consegnate{}  5t ogni 8000l di latte consegnati{}{}La produzione aumenta se entrambe le merci sono consegnate entro un intervallo inferiore a tre mesi.
@@ -263,6 +271,7 @@ STR_IND_MIXEDFARM                                                               
 STR_IND_NITRATE_MINE                                                            :{G=f}Miniera di nitrati
 STR_IND_ORCHARD_PIGGERY                                                         :{G=m}Frutteto e porcile
 STR_IND_PETROLPUMP                                                              :{G=f}Pompa di benzina
+STR_IND_PHOSPHATE_MINE                                                          :Miniera di fosfato
 STR_IND_PLASTICS_PLANT                                                          :{G=f}Fabbrica di prodotti in plastica
 STR_IND_PORT                                                                    :{G=m}Porto
 STR_IND_PYRITE_MINE                                                             :{G=f}Miniera di pirite
