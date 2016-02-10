@@ -305,7 +305,7 @@ class Sprite(object):
 class SmokeSprite(object):
     """ Base class to handle smoke sprites (using smoke sprite numbers from a base set) """
     def __init__(self, smoke_type, xoffset=0, yoffset=0, zoffset=0, hide_sprite=0, animation_frame_offset=0):
-        # animation_frame_offset can be used to desynchronise animations in the same tile (or in some cases within the same industry as an alternative to animation triggers)
+        # animation_frame_offset can be used (in some cases) to desynchronise animations in the same tile (or in some cases within the same industry as an alternative to animation triggers)
         # defaults
         self.xoffset = xoffset
         self.yoffset = yoffset
