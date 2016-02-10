@@ -58,43 +58,43 @@ spriteset_ground_overlay = industry.add_spriteset(
     type='empty',
 )
 
-spriteset_2 = industry.add_spriteset(
-    id = 'chemical_plant_spriteset_2',
+spriteset_horizontal_tanks = industry.add_spriteset(
+    id = 'chemical_plant_spriteset_horizontal_tanks',
     sprites = [(150, 10, 64, 114, -31, -83)],
     zextent = 48
 )
-spriteset_3 = industry.add_spriteset(
-    id = 'chemical_plant_spriteset_3',
+spriteset_frac_columns = industry.add_spriteset(
+    id = 'chemical_plant_spriteset_frac_columns',
     sprites = [(220, 10, 64, 114, -31, -83)],
     zextent = 48
 )
-spriteset_4 = industry.add_spriteset(
-    id = 'chemical_plant_spriteset_4',
+spriteset_drop_tower_and_thin_chimney = industry.add_spriteset(
+    id = 'chemical_plant_spriteset_drop_tower_and_thin_chimney',
     sprites = [(290, 10, 64, 114, -31, -83)],
     zextent = 48
 )
-spriteset_5 = industry.add_spriteset(
-    id = 'chemical_plant_spriteset_5',
+spriteset_large_building = industry.add_spriteset(
+    id = 'chemical_plant_spriteset_large_building',
     sprites = [(360, 10, 64, 114, -31, -83)],
     zextent = 48
 )
-spriteset_6 = industry.add_spriteset(
-    id = 'chemical_plant_spriteset_6',
+spriteset_fat_chimney = industry.add_spriteset(
+    id = 'chemical_plant_spriteset_fat_chimney',
     sprites = [(430, 10, 64, 114, -31, -83)],
     zextent = 48
 )
-spriteset_7 = industry.add_spriteset(
-    id = 'chemical_plant_spriteset_7',
+spriteset_spherical_tanks = industry.add_spriteset(
+    id = 'chemical_plant_spriteset_spherical_tanks',
     sprites = [(500, 10, 64, 66, -31, -35)],
     zextent = 48
 )
-spriteset_8 = industry.add_spriteset(
-    id = 'chemical_plant_spriteset_8',
+spriteset_vertical_tanks = industry.add_spriteset(
+    id = 'chemical_plant_spriteset_vertical_tanks',
     sprites = [(570, 10, 64, 66, -31, -35)],
     zextent = 48
 )
-spriteset_9 = industry.add_spriteset(
-    id = 'chemical_plant_spriteset_9',
+spriteset_barrels = industry.add_spriteset(
+    id = 'chemical_plant_spriteset_barrels',
     sprites = [(710, 10, 64, 66, -31, -35)],
     zextent = 48
 )
@@ -153,140 +153,140 @@ sprite_smoke_9 = industry.add_smoke_sprite(
     zoffset = 60,
 )
 industry.add_spritelayout(
-    id = 'chemical_plant_spritelayout_2',
+    id = 'chemical_plant_spritelayout_horizontal_tanks',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
-    building_sprites = [spriteset_2],
+    building_sprites = [spriteset_horizontal_tanks],
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
-    id = 'chemical_plant_spritelayout_3',
+    id = 'chemical_plant_spritelayout_frac_columns',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
-    building_sprites = [spriteset_3],
+    building_sprites = [spriteset_frac_columns],
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
-    id = 'chemical_plant_spritelayout_4',
+    id = 'chemical_plant_spritelayout_drop_tower_and_thin_chimney',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
-    building_sprites = [spriteset_4],
+    building_sprites = [spriteset_drop_tower_and_thin_chimney],
     smoke_sprites = [sprite_smoke_1],
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
-    id = 'chemical_plant_spritelayout_5',
+    id = 'chemical_plant_spritelayout_large_building',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
-    building_sprites = [spriteset_5],
+    building_sprites = [spriteset_large_building],
     smoke_sprites = [sprite_smoke_2, sprite_smoke_3, sprite_smoke_4, sprite_smoke_5],
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
-    id = 'chemical_plant_spritelayout_6',
+    id = 'chemical_plant_spritelayout_fat_chimney',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
-    building_sprites = [spriteset_6],
+    building_sprites = [spriteset_fat_chimney],
     smoke_sprites = [sprite_smoke_6, sprite_smoke_7, sprite_smoke_8, sprite_smoke_9],
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
-    id = 'chemical_plant_spritelayout_7',
+    id = 'chemical_plant_spritelayout_spherical_tanks',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
-    building_sprites = [spriteset_7],
+    building_sprites = [spriteset_spherical_tanks],
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
-    id = 'chemical_plant_spritelayout_8',
+    id = 'chemical_plant_spritelayout_vertical_tanks',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
-    building_sprites = [spriteset_8],
+    building_sprites = [spriteset_vertical_tanks],
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
-    id = 'chemical_plant_spritelayout_9',
+    id = 'chemical_plant_spritelayout_barrels',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
-    building_sprites = [spriteset_9],
+    building_sprites = [spriteset_barrels],
     fences = ['nw','ne','se','sw']
 )
 
 
 industry.add_industry_layout(
     id = 'chemical_plant_industry_layout_1',
-    layout = [(0, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_2'),
-              (0, 1, 'chemical_plant_tile_2', 'chemical_plant_spritelayout_6'),
-              (1, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_4'),
-              (1, 1, 'chemical_plant_tile_2', 'chemical_plant_spritelayout_5'),
-              (2, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_3'),
-              (2, 1, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_9'),
-              (3, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_2'),
-              (3, 1, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_7'),
-              (4, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_8'),
-              (4, 1, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_9'),
+    layout = [(0, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_horizontal_tanks'),
+              (0, 1, 'chemical_plant_tile_2', 'chemical_plant_spritelayout_fat_chimney'),
+              (1, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_drop_tower_and_thin_chimney'),
+              (1, 1, 'chemical_plant_tile_2', 'chemical_plant_spritelayout_large_building'),
+              (2, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_frac_columns'),
+              (2, 1, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_barrels'),
+              (3, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_horizontal_tanks'),
+              (3, 1, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_spherical_tanks'),
+              (4, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_vertical_tanks'),
+              (4, 1, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_barrels'),
     ]
 )
 industry.add_industry_layout(
     id = 'chemical_plant_industry_layout_2',
-    layout = [(0, 1, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_4'),
-              (1, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_8'),
-              (1, 1, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_3'),
-              (1, 2, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_7'),
-              (1, 3, 'chemical_plant_tile_2', 'chemical_plant_spritelayout_6'),
-              (2, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_9'),
-              (2, 1, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_2'),
-              (2, 2, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_2'),
-              (2, 3, 'chemical_plant_tile_2', 'chemical_plant_spritelayout_5'),
+    layout = [(0, 1, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_drop_tower_and_thin_chimney'),
+              (1, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_vertical_tanks'),
+              (1, 1, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_frac_columns'),
+              (1, 2, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_spherical_tanks'),
+              (1, 3, 'chemical_plant_tile_2', 'chemical_plant_spritelayout_fat_chimney'),
+              (2, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_barrels'),
+              (2, 1, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_horizontal_tanks'),
+              (2, 2, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_horizontal_tanks'),
+              (2, 3, 'chemical_plant_tile_2', 'chemical_plant_spritelayout_large_building'),
     ]
 )
 industry.add_industry_layout(
     id = 'chemical_plant_industry_layout_3',
-    layout = [(0, 1, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_4'),
-              (1, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_2'),
-              (1, 1, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_3'),
-              (1, 2, 'chemical_plant_tile_2', 'chemical_plant_spritelayout_6'),
-              (1, 3, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_8'),
-              (2, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_7'),
-              (2, 1, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_2'),
-              (2, 2, 'chemical_plant_tile_2', 'chemical_plant_spritelayout_5'),
-              (2, 3, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_9'),
+    layout = [(0, 1, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_drop_tower_and_thin_chimney'),
+              (1, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_horizontal_tanks'),
+              (1, 1, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_frac_columns'),
+              (1, 2, 'chemical_plant_tile_2', 'chemical_plant_spritelayout_fat_chimney'),
+              (1, 3, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_vertical_tanks'),
+              (2, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_spherical_tanks'),
+              (2, 1, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_horizontal_tanks'),
+              (2, 2, 'chemical_plant_tile_2', 'chemical_plant_spritelayout_large_building'),
+              (2, 3, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_barrels'),
     ]
 )
 industry.add_industry_layout(
     id = 'chemical_plant_industry_layout_4',
-    layout = [(0, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_4'),
-              (0, 1, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_7'),
-              (1, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_3'),
-              (1, 1, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_7'),
-              (2, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_2'),
-              (2, 1, 'chemical_plant_tile_2', 'chemical_plant_spritelayout_6'),
-              (3, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_2'),
-              (3, 1, 'chemical_plant_tile_2', 'chemical_plant_spritelayout_5'),
-              (4, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_8'),
-              (4, 1, 'chemical_plant_tile_2', 'chemical_plant_spritelayout_6'),
-              (5, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_8'),
-              (5, 1, 'chemical_plant_tile_2', 'chemical_plant_spritelayout_5'),
-              (6, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_9'),
-              (6, 1, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_9'),
+    layout = [(0, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_drop_tower_and_thin_chimney'),
+              (0, 1, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_spherical_tanks'),
+              (1, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_frac_columns'),
+              (1, 1, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_spherical_tanks'),
+              (2, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_horizontal_tanks'),
+              (2, 1, 'chemical_plant_tile_2', 'chemical_plant_spritelayout_fat_chimney'),
+              (3, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_horizontal_tanks'),
+              (3, 1, 'chemical_plant_tile_2', 'chemical_plant_spritelayout_large_building'),
+              (4, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_vertical_tanks'),
+              (4, 1, 'chemical_plant_tile_2', 'chemical_plant_spritelayout_fat_chimney'),
+              (5, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_vertical_tanks'),
+              (5, 1, 'chemical_plant_tile_2', 'chemical_plant_spritelayout_large_building'),
+              (6, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_barrels'),
+              (6, 1, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_barrels'),
     ]
 )
 industry.add_industry_layout(
     id = 'chemical_plant_industry_layout_5',
-    layout = [(0, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_4'),
-              (0, 1, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_8'),
-              (0, 2, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_8'),
-              (1, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_3'),
-              (1, 1, 'chemical_plant_tile_2', 'chemical_plant_spritelayout_6'),
-              (1, 2, 'chemical_plant_tile_2', 'chemical_plant_spritelayout_6'),
-              (2, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_2'),
-              (2, 1, 'chemical_plant_tile_2', 'chemical_plant_spritelayout_5'),
-              (2, 2, 'chemical_plant_tile_2', 'chemical_plant_spritelayout_5'),
-              (3, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_2'),
-              (3, 1, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_9'),
-              (3, 2, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_9'),
-              (4, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_7'),
-              (4, 1, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_7'),
-              (4, 2, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_9'),
+    layout = [(0, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_drop_tower_and_thin_chimney'),
+              (0, 1, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_vertical_tanks'),
+              (0, 2, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_vertical_tanks'),
+              (1, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_frac_columns'),
+              (1, 1, 'chemical_plant_tile_2', 'chemical_plant_spritelayout_fat_chimney'),
+              (1, 2, 'chemical_plant_tile_2', 'chemical_plant_spritelayout_fat_chimney'),
+              (2, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_horizontal_tanks'),
+              (2, 1, 'chemical_plant_tile_2', 'chemical_plant_spritelayout_large_building'),
+              (2, 2, 'chemical_plant_tile_2', 'chemical_plant_spritelayout_large_building'),
+              (3, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_horizontal_tanks'),
+              (3, 1, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_barrels'),
+              (3, 2, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_barrels'),
+              (4, 0, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_spherical_tanks'),
+              (4, 1, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_spherical_tanks'),
+              (4, 2, 'chemical_plant_tile_1', 'chemical_plant_spritelayout_barrels'),
     ]
 )
