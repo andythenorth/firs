@@ -21,13 +21,20 @@ STR_PARAM_VALUE_STAT_RATING_DEFAULT                                             
 STR_PARAM_VALUE_STAT_RATING_REDUCED_TIME                                        :Smanjen uticaj "vremena od poslednjeg preuzimanja tovara"
 STR_PARAM_VALUE_STAT_RATING_100                                                 :Uvek 100%
 
+STR_PARAM_NAME_PRIMARY_LEVEL1_REQUIREMENT                                       :Prilagodi potrebe dostave tereta za proizvodnju na "unapređenom nivou" (%)
+STR_PARAM_DESC_PRIMARY_LEVEL_REQUIREMENT                                        :Količina potrebne dostave zavisi o vrsti industrije i o ovom parametru u procentu
+STR_PARAM_NAME_PRIMARY_LEVEL1_BONUS                                             :Dodatna proizvodnja na unapređenom nivou proizvodnje
 
+STR_PARAM_VALUE_ECONOMIES_MISTAH_KURTZ                                          :U vrućoj državi
 
 STR_CARGO_NAME_ALCOHOL                                                          :{G=muški}alkohol
 STR_CARGO_NAME_BAUXITE                                                          :{G=muški}boksit
+STR_CARGO_NAME_BEANS                                                            :Pasulj
 STR_CARGO_NAME_BUILDING_MATERIALS                                               :{G=muški}građevinski materijali
+STR_CARGO_NAME_CASSAVA                                                          :Maniok
 STR_CARGO_NAME_CHEMICALS                                                        :{G=muški}hemijski proizvodi
 STR_CARGO_NAME_CLAY                                                             :{G=ženski}glina
+STR_CARGO_NAME_COPPER                                                           :{G=muški}Bakar
 STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :{G=ženski}tehnička oprema
 STR_CARGO_NAME_FIBRES                                                           :{G=srednji}biljna vlakna
 STR_CARGO_NAME_FISH                                                             :{G=ženski}riba
@@ -37,7 +44,11 @@ STR_CARGO_NAME_LUMBER                                                           
 STR_CARGO_NAME_METAL                                                            :{G=muški}metali
 STR_CARGO_NAME_MILK                                                             :{G=srednji}mleko
 STR_CARGO_NAME_MANUFACTURING_SUPPLIES                                           :{G=muški}proizvodni materijali
-STR_CARGO_NAME_PETROL                                                           :{G=muški}benzin
+STR_CARGO_NAME_NITRATES                                                         :Nitrati
+STR_CARGO_NAME_NUTS                                                             :Orasi
+STR_CARGO_NAME_PETROL                                                           :{G=ženski}benzinska goriva
+STR_CARGO_NAME_PHOSPHATE                                                        :Fosfati
+STR_CARGO_NAME_PYRITE_ORE                                                       :Ruda pirita
 STR_CARGO_NAME_RECYCLABLES                                                      :{G=muški}reciklažni materijal
 STR_CARGO_NAME_SAND                                                             :{G=muški}pesak
 STR_CARGO_NAME_SCRAP_METAL                                                      :{G=muški}metalni otpaci
@@ -48,25 +59,33 @@ STR_CARGO_NAME_WOOL                                                             
 
 STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} alkohola
 STR_CARGO_UNIT_BAUXITE                                                          :{WEIGHT} boksita
+STR_CARGO_UNIT_BEANS                                                            :{WEIGHT} pasulja
+STR_CARGO_UNIT_CASSAVA                                                          :{WEIGHT}manioke
 STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WEIGHT} građevinskog materijala
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} hemijskog proizvoda
 STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} gline
+STR_CARGO_UNIT_COFFEE                                                           :{SIGNED_WORD} VREĆ{P a e e} kafe
+STR_CARGO_UNIT_COPPER                                                           :{WEIGHT} bakra
+STR_CARGO_UNIT_EDIBLE_OIL                                                       :{VOLUME} jestivog ulja
 STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} sanduka tehničke opreme
-STR_CARGO_UNIT_FIBRES                                                           :{WEIGHT} biljnih vlakna
+STR_CARGO_UNIT_FIBRES                                                           :{SIGNED_WORD} bala biljnih vlakana
 STR_CARGO_UNIT_FISH                                                             :{WEIGHT} ribe
 STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} sanduka poljoprivredne opreme
 STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} voća i povrća
 STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} drvne grede
 STR_CARGO_UNIT_METAL                                                            :{WEIGHT} metala
 STR_CARGO_UNIT_MILK                                                             :{VOLUME} mleka
+STR_CARGO_UNIT_NUTS                                                             :{SIGNED_WORD} vreć{P a e e} oraha
 STR_CARGO_UNIT_MNSP                                                             :{SIGNED_WORD} sanduka proizvodnih materijala
 STR_CARGO_UNIT_PETROL                                                           :{VOLUME} benzina
+STR_CARGO_UNIT_PYRITE_ORE                                                       :{WEIGHT}rude pirita
 STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} reciklažnog materijala
 STR_CARGO_UNIT_SAND                                                             :{WEIGHT} peska
 STR_CARGO_UNIT_SCRAP_METAL                                                      :{WEIGHT} metalnih otpadaka
 STR_CARGO_UNIT_STONE                                                            :{WEIGHT} kamena
 STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} šećerne repe
 STR_CARGO_UNIT_SUGARCANE                                                        :{WEIGHT} šećerne trske
+STR_CARGO_UNIT_VEHICLES                                                         :{SIGNED_WORD}Vozil{P o a a}
 STR_CARGO_UNIT_WOOL                                                             :{WEIGHT} vune
 
 STR_CID_ALCOHOL                                                                 :{TINYFONT}AL
@@ -74,14 +93,18 @@ STR_CID_BAUXITE                                                                 
 STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}GM
 STR_CID_CHEMICALS                                                               :{TINYFONT}HE
 STR_CID_CLAY                                                                    :{TINYFONT}GL
+STR_CID_COPPER                                                                  :{TINYFONT}CR
+STR_CID_EDIBLE_OIL                                                              :{TINYFONT}EO
 STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}TP
 STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}PP
 STR_CID_FIBRES                                                                  :{TINYFONT}BV
 STR_CID_FISH                                                                    :{TINYFONT}RI
 STR_CID_LUMBER                                                                  :{TINYFONT}DG
+STR_CID_MANGANESE                                                               :{TINYFONT}MN
 STR_CID_MANUFACTURING_SUPPLIES                                                  :{TINYFONT}PM
 STR_CID_METAL                                                                   :{TINYFONT}MT
 STR_CID_MILK                                                                    :{TINYFONT}ML
+STR_CID_NITRATES                                                                :{TINYFONT}NI
 STR_CID_PETROL                                                                  :{TINYFONT}BZ
 STR_CID_RECYCLABLES                                                             :{TINYFONT}RC
 STR_CID_SAND                                                                    :{TINYFONT}PK
@@ -89,6 +112,8 @@ STR_CID_SCRAP_METAL                                                             
 STR_CID_STONE                                                                   :{TINYFONT}KA
 STR_CID_SUGAR_BEET                                                              :{TINYFONT}ŠR
 STR_CID_SUGARCANE                                                               :{TINYFONT}ŠT
+STR_CID_VEHICLE_PARTS                                                           :{TINYFONT}VP
+STR_CID_VEHICLES                                                                :{TINYFONT}VS
 STR_CID_WOOL                                                                    :{TINYFONT}VN
 
 STR_ERR_CLIMATE_TOYLAND                                                         :{ORANGE}FIRS nije namenjen za Zemlju igračaka
@@ -105,11 +130,19 @@ STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE                                             
 
 STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}Proizvodni odnos:{}  2t po 8t dostavljenog boksita{}  2t po 8t dostavljenih hemijskih proizvoda{}  4t po 8t dostavljenih metalnih otpadaka{}{}Proizvodnja se povećava ukoliko se dve ili više vrsta potrebnog tovara dostavi u roku od mesec dana.
 STR_EXTRA_BIOREFINERY                                                           :{BLACK}Prerađuje žitarice i šećer u benzin i hemijske proizvode.{}{}6t proizvoda po 8t isporučenog tovara.
+STR_EXTRA_BREWERY_GRAIN_SUBSTR                                                  :5,000l po 8t dostavljenih žitarica
 STR_EXTRA_BRICKWORKS                                                            :{BLACK}Proizvodni odnos:{}  2t po 8t dostavljenog uglja{}  2t po 8t dostavljenog peska{}  4t po 8t dostavljene gline{}{}Proizvodnja se povećava ukoliko se dve ili više vrsta potrebnog tovara dostavi u roku od mesec dana.
 STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Proizvodni odnos:{}  2t po 8t dostavljenog uglja{}  2t po 8t dostavljene gline{}  4t po 8t dostavljenog kamena{}{}Proizvodnja se povećava ukoliko se dve ili više vrsta potrebnog tovara dostavi u roku od mesec dana.
+STR_EXTRA_COPPER_REFINERY                                                       :{BLACK}Proizvodni odnos:{} 5t po 8t dostavljene rude bakra{} 3t po 8,000l dostavljenih hemijskih proizvoda{}{}Proizvodnja se povećava ukoliko se dve ili više vrsta potrebnog tovara dostavi u roku od tri meseca
 STR_EXTRA_DAIRY                                                                 :{BLACK}Proizvodni odnos:{}  3t po 8t dostavljenog proizvodnog materijala{}  5t po 8t dostavljenog mleka{}{}Proizvodnja se poboljšava na 8t po 8t kada su obe vrste potrebnog tovara dostavljene u roku od mesec dana.
+STR_EXTRA_FERTILIZER_PLANT                                                      :{BLACK}Proizvodni odnos:{} 8 sanduka po 8,000l dostavljenih hemijskih proizvoda
 STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Proizvodni odnos:{}  3t po 8t dostavljenog proizvodnog materijala{}  5t po 8t dostavljene ribe{}{}Proizvodnja se poboljšava na 8t po 8t kada su obe vrste potrebnog tovara dostavljene u roku od mesec dana.
 STR_EXTRA_FLOUR_MILL                                                            :{BLACK}Proizvodni odnos:{}  3t po 8t dostavljenog proizvodnog materijala{}  5t po 8t dostavljenih žitarica{}{}Proizvodnja se poboljšava na 8t po 8t kada su obe vrste potrebnog tovara dostavljene u roku od mesec dana.
+STR_EXTRA_FLOUR_MILL_GRAIN_SUBSTR                                               :5t po 8t dostavljenih žitarica{}
+STR_EXTRA_FLOUR_MILL_EMPTY_SUBSTR                                               :{}
+STR_EXTRA_FLOUR_MILL_MAIZE_SUBSTR                                               :5t po 8t dostavljenog kukuruza{}
+STR_EXTRA_FOOD_PROCESSING_PLANT                                                 :{BLACK}Proizvodni odnos:{} {STRING} 6t po 8t dostavljenog voća
+STR_EXTRA_FOOD_PROCESSING_PLANT_BEANS_SUBSTR                                    :6t po 8t dostavljenog pasulja
 STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Proizvodni odnos:{}  3t po 8t dostavljenog proizvodnog materijala{}  5t po 8t dostavljenih drvnih greda{}{}Proizvodnja se poboljšava na 8t po 8t kada su obe vrste potrebnog tovara dostavljene u roku od mesec dana.
 STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Proizvodi staklenu ambalažu, prozore i druge staklene proizvode.{}{}{BLACK}Proizvodni odnos:{}  6t po 8t dostavljenog peska{}  2t po 8t dostavljenih hemijskih proizvoda{}{}Proizvodnja se poboljšava na 8t po 8t kada su obe vrste potrebnog tovara dostavljene u roku od mesec dana.
 STR_EXTRA_IRON_WORKS                                                            :{BLACK}Proizvodni odnos:{}  1t po 8t dostavljenih drva{}  2t po 8t dostavljene rude gvožđa{}{}Proizvodnja se poboljšava na 3t po 8t kada su obe vrste potrebnog tovara dostavljene u roku od mesec dana.
@@ -127,31 +160,52 @@ STR_EXTRA_SAWMILL                                                               
 STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Proizvodi robu od metala kao što su alatke, lopate, potkovice, plugovi i gvozdene kapije.{}{}5t proizvoda po 8t isporučenog tovara.
 STR_EXTRA_STEELMILL                                                             :{BLACK}Proizvodni odnos:{}  2t po 8t dostavljene rude gvožđa{}  2t po 8t dostavljenog uglja{}  4t po 8t dostavljenih metalnih otpadaka{}{}Proizvodnja se povećava ukoliko se dve ili više vrsta potrebnog tovara dostavi u roku od mesec dana.
 STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Proizvodni odnos:{}  3t po 8t dostavljenog proizvodnog materijala{}  5t po 8t dostavljene šećerne trske{}{}Proizvodnja se poboljšava na 8t po 8t kada su obe vrste potrebnog tovara dostavljene u roku od mesec dana.
+STR_EXTRA_SUPPLY_YARD                                                           :{BLACK}Proizvodni odnos:{} 8 sanduka po 8t dostavljene robe{} 8 sanduka po 8,000l dostavljenih benzinskih goriva{} {STRING}
 STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Proizvodni odnos:{}  3t po 8t dostavljenog proizvodnog materijala{}  5t po 8t dostavljene vune{}  5t po 8t dostavljenih biljnih vlakana{}{}Proizvodnja se poboljšava ako se proizvodni materijal dostavlja u roku od mesec dana u odnosu na dostavu ostalih potraživanja.
+STR_EXTRA_TEXTILE_MILL_PLANT_FIBRES_SUBSTR                                      :5 sanduka za dostavljenih 8 bala biljnih vlakana{}
+STR_EXTRA_TYRE_PLANT                                                            :{BLACK}Proizvodni odnos:{} 6 sanduka po 8,000l dostavljene gume{} 2 sanduka po 8,000l hemijskih proizvoda{}{}Proizvodnja se poboljšava kada su obe vrste potrebnog tovara dostavljene u roku tri meseca
 
 STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ KOREKCIJA ------------{}Proizvodnja ovog meseca:{}Tovar 1: {WHITE}{COMMA}{BLACK}{}Tovar 2: {WHITE}{COMMA}{BLACK}{}Dana od zadnje dostave: {WHITE}{COMMA}{BLACK}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Dostignut je najviši nivo proizvodnje
+STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Trenutna proizvodnja: {YELLOW}Normalna ({SIGNED_WORD}%){}{}{BLACK}Za povećanje nivoa proizvodnje na {SIGNED_WORD} % dostavite {SIGNED_WORD} sanduka proizvodnog materijala u roku od tri meseca{}Za povećanje na {SIGNED_WORD} % dostavite {SIGNED_WORD} sanduka proizvodnog materijala
+STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Trenutna proizvodnja: {YELLOW}Poboljšana ({SIGNED_WORD}%){}{}{BLACK}Za zadržavanje ovog nivoa proizvodnje, dostavite {SKIP}{SIGNED_WORD} sanduka proizvodnog materijala u roku od tri meseca{}Za povećanje na {SIGNED_WORD} % dostavite {SIGNED_WORD} sanduka
+STR_PORT_PRODUCTION_1X                                                          :{BLACK}Trenutna proizvodnja: {YELLOW}Normalna ({SIGNED_WORD}%){}{}{BLACK}Za povećanje nivoa proizvodnje na {SIGNED_WORD} % dostavite {SIGNED_WORD} jedinica proizvodnog materijala u roku od tri meseca{}Za povećanje na {SIGNED_WORD} % dostavite {SIGNED_WORD} jedinica proizvodnog materijala
+STR_PORT_PRODUCTION_2X                                                          :{BLACK}Trenutna proizvodnja: {YELLOW}Poboljšana ({SIGNED_WORD}%){}{}{BLACK}Za zadržavanje ovog nivoa proizvodnje, dostavite {SKIP}{SIGNED_WORD} jedinica proizvodnog materijala u roku od tri meseca{}Za povećanje na {SIGNED_WORD} % dostavite {SIGNED_WORD} jedinica proizvodnog materijala
+STR_PORT_PRODUCTION_4X                                                          :{BLACK}Trenutna proizvodnja: {YELLOW}Masovna ({SIGNED_WORD} %){}{}{BLACK}Za zadržavanje ovog nivoa proizvodnje, dostavite {SKIP}{SKIP}{SKIP}{SIGNED_WORD} jedinica proizvodnog materijala u roku od tri meseca
 STR_GENERIC_NEWLINE                                                             :{}
 
 STR_FUND_MIXED_FARM                                                             :{}{BLACK}Lokacija: {YELLOW}Ne može se graditi u snežnom/pustinjskom pojasu i na kosinama.
 STR_FUND_ARABLE_FARM                                                            :{}{BLACK}Lokacija: {YELLOW}Ne može se graditi u snežnom/pustinjskom pojasu i na kosinama.
+STR_FUND_DAIRY_FARM                                                             :{}{BLACK}Lokacija: {YELLOW} Ne može se graditi na snegu i u pustinjama
+STR_FUND_ORCHARD_PIGGERY                                                        :{}{BLACK}Lokacija: {YELLOW} Ne može se graditi na snegu i u pustinjama
+STR_FUND_SUGAR_PLANTATION                                                       :{}{BLACK}Lokacija: {YELLOW} Ne može se graditi na snegu i u pustinjama
+STR_FUND_FIBRE_CROP_FARM                                                        :{}{BLACK}Lokacija: {YELLOW} Ne može se graditi na snegu i u pustinjama
 STR_FUND_FOREST                                                                 :{}{BLACK}Lokacija: {YELLOW}Ne može se graditi u pustinjskom pojasu.
 STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}Lokacija: {YELLOW}Ne može se graditi u snežnom pojasu.
+STR_FUND_RUBBER_PLANTATION                                                      :{}{BLACK}Lokacija: {YELLOW} Ne može se graditi na snegu i u pustinjama
 
 
+STR_FUND_AVAILABLE_FROM                                                         :{}{BLACK}Dostupno od: {YELLOW}{COMMA}
 
+STR_FUND_AVAILABLE_UNTIL                                                        :{}{BLACK}Nije dostupno od: {YELLOW}{COMMA}
 
 
 
 STR_IND_ALUMINIUM_PLANT                                                         :{G=muški}Kombinat aluminijuma
 STR_IND_ARABLE_FARM                                                             :{G=ženski}Agrarna farma
+STR_IND_BASICFARM                                                               :Farma
 STR_IND_BAUXITE_MINE                                                            :{G=muški}Rudnik boksita
 STR_IND_BIOREFINERY                                                             :{G=ženski}Biorafinerija
 STR_IND_BREWERY                                                                 :{G=ženski}Pivara
+STR_IND_BREWERY_CIDER_MILL                                                      :{G=ženski}Tvornica jabukovače
 STR_IND_BRICK_WORKS                                                             :{G=ženski}Ciglana
 STR_IND_BUILDERS_YARD                                                           :{G=srednji}Građevinsko skladište
 STR_IND_CEMENT_PLANT                                                            :{G=ženski}Cementara
+STR_IND_CHEMICAL_PLANT                                                          :Hemijsko postrojenje
 STR_IND_CLAY_PIT                                                                :{G=muški}Kop gline
+STR_IND_COFFEE_ESTATE                                                           :{G=ženski}Plantaža kafe
+STR_IND_COPPER_REFINERY                                                         :Rafinerija bakra
+STR_IND_FIBRE_CROP_FARM                                                         :Farma vlaknastih useva
 STR_IND_DAIRY                                                                   :{G=ženski}Mlekara
 STR_IND_DAIRYFARM                                                               :{G=ženski}Stočna farma
 STR_IND_DREDGING_SITE                                                           :{G=muški}Iskop
@@ -159,6 +213,7 @@ STR_IND_FERTILISER_PLANT                                                        
 STR_IND_FISHING_GROUND                                                          :{G=ženski}Ribarska lovišta
 STR_IND_FISHING_HARBOUR                                                         :{G=ženski}Ribarska luka
 STR_IND_FOOD_MARKET                                                             :{G=ženski}Prodavnica
+STR_IND_FOOD_PROCESSOR                                                          :Kombinat za preradu hrane
 STR_IND_FURNITURE_FACTORY                                                       :{G=muški}Kombinat nameštaja
 STR_IND_GLASS_WORKS                                                             :{G=ženski}Staklara
 STR_IND_HARDWARE_STORE                                                          :{G=ženski}Gvožđarska radnja
@@ -166,19 +221,39 @@ STR_IND_HOTEL                                                                   
 STR_IND_IRON_WORKS                                                              :{G=ženski}Železara
 STR_IND_JUNKYARD                                                                :{G=muški}Otpad
 STR_IND_LIME_KILN                                                               :{G=ženski}Krečana
+STR_IND_LIQUIDS_TERMINAL                                                        :Terminal za tečnosti
 STR_IND_LUMBER_YARD                                                             :{G=ženski}Drvara
 STR_IND_MACHINE_SHOP                                                            :{G=ženski}Mašinska radionica
 STR_IND_METAL_FABRICATION_PLANT                                                 :{G=ženski}Fabrika metalnih proizvoda
 STR_IND_METAL_FOUNDRY                                                           :{G=ženski}Livnica metala
 STR_IND_MIXEDFARM                                                               :{G=ženski}Farma
 STR_IND_PETROLPUMP                                                              :{G=ženski}Benzinska pumpa
+STR_IND_PHOSPHATE_MINE                                                          :Rudnik fosfata
 STR_IND_PLASTICS_PLANT                                                          :{G=muški}Kombinat plastike
+STR_IND_PORT                                                                    :Luka
+STR_IND_PYRITE_SMELTER                                                          :Talionica pirita
 STR_IND_QUARRY                                                                  :{G=muški}Kamenolom
+STR_IND_RANCH                                                                   :Ranč
 STR_IND_RECYCLING_DEPOT                                                         :{G=srednji}Skladište za reciklažu
 STR_IND_RECYCLING_PLANT                                                         :{G=srednji}Postrojenje za reciklažu
 STR_IND_SHEEPFARM                                                               :{G=ženski}Farma ovaca
 STR_IND_SMITHY_FORGE                                                            :{G=ženski}Kovačnica
 STR_IND_STOCKYARD                                                               :{G=muški}Mesni kombinat
+STR_IND_SUGAR_PLANTATION                                                        :{G=ženski}Plantaža šećera
 STR_IND_SUGAR_REFINERY                                                          :{G=ženski}Šećerana
 STR_IND_TEXTILE_MILL                                                            :{G=muški}Tekstilni kombinat
+STR_IND_TRADING_POST                                                            :Trgovačka kuća
+STR_IND_TYRE_PLANT                                                              :Fabrika guma
+STR_IND_VEHICLE_FACTORY                                                         :Fabrika vozila
+STR_IND_VINEYARD                                                                :Vinograd
 
+STR_STATION_ANIMALS                                                             :Pazar konja
+STR_STATION_FARM                                                                :Imanje
+STR_STATION_HEAVY_INDUSTRY                                                      :Ulica Đejmsa Vata
+STR_STATION_INDUSTRY_ESTATE                                                     :Industrijski park
+STR_STATION_INDUSTRY_HARBOUR                                                    :{G=ženski}Industrijska luka
+STR_STATION_MARKET                                                              :Pazar
+STR_STATION_MILL                                                                :{G=muški}Mlin
+STR_STATION_MINE                                                                :Cesta
+STR_STATION_REFINERY                                                            :Portland
+STR_STATION_WATER                                                               :Sprud
