@@ -52,32 +52,42 @@ spriteset_ground_overlay = industry.add_spriteset(
 )
 spriteset_1 = industry.add_spriteset(
     id = 'tyre_plant_spriteset_1',
-    sprites = [(10, 60, 64, 90, -31, -58)],
+    sprites = [(10, 10, 64, 90, -31, -58)],
     zextent = 32
 )
 spriteset_2 = industry.add_spriteset(
     id = 'tyre_plant_spriteset_2',
-    sprites = [(80, 60, 64, 90, -31, -58)],
+    sprites = [(80, 10, 64, 90, -31, -58)],
     zextent = 32
 )
 spriteset_3 = industry.add_spriteset(
     id = 'tyre_plant_spriteset_3',
-    sprites = [(150, 60, 64, 90, -31, -58)],
+    sprites = [(150, 10, 64, 90, -31, -58)],
     zextent = 32
 )
 spriteset_4 = industry.add_spriteset(
     id = 'tyre_plant_spriteset_4',
-    sprites = [(220, 60, 64, 90, -31, -58)],
+    sprites = [(220, 10, 64, 90, -31, -58)],
     zextent = 32
 )
 spriteset_5 = industry.add_spriteset(
     id = 'tyre_plant_spriteset_5',
-    sprites = [(290, 60, 64, 64, -31, -32)],
+    sprites = [(290, 10, 64, 64, -31, -32)],
+    zextent = 32
+)
+spriteset_6 = industry.add_spriteset(
+    id = 'tyre_plant_spriteset_6',
+    sprites = [(360, 10, 64, 64, -31, -32)],
     zextent = 32
 )
 spriteset_7 = industry.add_spriteset(
     id = 'tyre_plant_spriteset_7',
-    sprites = [(430, 60, 64, 31, -31, 0)],
+    sprites = [(430, 10, 64, 31, -31, 0)],
+    zextent = 32
+)
+spriteset_8 = industry.add_spriteset(
+    id = 'tyre_plant_spriteset_8',
+    sprites = [(500, 10, 64, 31, -31, 0)],
     zextent = 32
 )
 sprite_smoke = industry.add_smoke_sprite(
@@ -124,10 +134,24 @@ industry.add_spritelayout(
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
+    id = 'tyre_plant_spritelayout_6',
+    ground_sprite = spriteset_ground,
+    ground_overlay = spriteset_ground_overlay,
+    building_sprites = [spriteset_6],
+    fences = ['nw','ne','se','sw']
+)
+industry.add_spritelayout(
     id = 'tyre_plant_spritelayout_tyres_1',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_7],
+    fences = ['nw','ne','se','sw']
+)
+industry.add_spritelayout(
+    id = 'tyre_plant_spritelayout_tyres_2',
+    ground_sprite = spriteset_ground,
+    ground_overlay = spriteset_ground_overlay,
+    building_sprites = [spriteset_8],
     fences = ['nw','ne','se','sw']
 )
 
@@ -140,10 +164,10 @@ industry.add_industry_layout(
               (1, 0, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_2'),
               (1, 1, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_2'),
               (1, 2, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_horizontal_tanks'),
-              (1, 3, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_tyres_1'),
+              (1, 3, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_6'),
               (2, 0, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_3'),
               (2, 1, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_1'),
               (2, 2, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_tyres_1'),
-              (2, 3, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_tyres_1'),
+              (2, 3, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_tyres_2'),
     ]
 )
