@@ -67,17 +67,12 @@ spriteset_3 = industry.add_spriteset(
 )
 spriteset_4 = industry.add_spriteset(
     id = 'tyre_plant_spriteset_4',
-    sprites = [(220, 60, 64, 51, -31, -23)],
+    sprites = [(220, 60, 64, 90, -31, -58)],
     zextent = 32
 )
 spriteset_5 = industry.add_spriteset(
     id = 'tyre_plant_spriteset_5',
     sprites = [(290, 60, 64, 64, -31, -32)],
-    zextent = 32
-)
-spriteset_6 = industry.add_spriteset(
-    id = 'tyre_plant_spriteset_6',
-    sprites = [(360, 60, 64, 31, -31, 0)],
     zextent = 32
 )
 spriteset_7 = industry.add_spriteset(
@@ -122,21 +117,14 @@ industry.add_spritelayout(
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
-    id = 'tyre_plant_spritelayout_5',
+    id = 'tyre_plant_spritelayout_horizontal_tanks',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_5],
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
-    id = 'tyre_plant_spritelayout_6',
-    ground_sprite = spriteset_ground,
-    ground_overlay = spriteset_ground_overlay,
-    building_sprites = [spriteset_6],
-    fences = ['nw','ne','se','sw']
-)
-industry.add_spritelayout(
-    id = 'tyre_plant_spritelayout_7',
+    id = 'tyre_plant_spritelayout_tyres_1',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_7],
@@ -145,20 +133,17 @@ industry.add_spritelayout(
 
 industry.add_industry_layout(
     id = 'tyre_plant_industry_layout_1',
-    layout = [(0, 0, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_2'),
-              (0, 1, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_2'),
+    layout = [(0, 0, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_3'),
+              (0, 1, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_3'),
               (0, 2, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_4'),
-              (0, 3, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_6'),
-              (0, 4, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_5'),
-              (1, 0, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_3'),
-              (1, 1, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_3'),
-              (1, 2, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_7'),
-              (1, 3, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_6'),
-              (1, 4, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_6'),
-              (2, 0, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_2'),
-              (2, 1, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_2'),
-              (2, 2, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_7'),
-              (2, 3, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_7'),
-              (2, 4, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_6'),
+              (0, 3, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_tyres_1'),
+              (1, 0, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_2'),
+              (1, 1, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_2'),
+              (1, 2, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_horizontal_tanks'),
+              (1, 3, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_tyres_1'),
+              (2, 0, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_3'),
+              (2, 1, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_1'),
+              (2, 2, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_tyres_1'),
+              (2, 3, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_tyres_1'),
     ]
 )
