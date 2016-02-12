@@ -196,3 +196,21 @@ industry.add_industry_layout(
               (4, 2, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_gatehouse'),
     ]
 )
+industry.add_industry_layout(
+    id = 'tyre_plant_industry_layout_3',
+    layout = [(0, 0, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_building_large_door'),
+              (0, 1, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_building_large_door'),
+              (0, 2, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_building_large_door'),
+              (0, 3, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_boilerhouse'),
+              (0, 4, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_tyres_1'),
+              (1, 0, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_silos'),
+              (1, 1, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_building_roof_chimneys'),
+              (1, 2, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_building_roof_chimneys'),
+              (1, 3, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_horizontal_tanks'),
+              (1, 4, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_tyres_1'),
+              (2, 0, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_tyres_1'),
+              (2, 1, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_tyres_2'),
+              (2, 2, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_gatehouse'),
+              (2, 3, 'tyre_plant_tile_1', 'tyre_plant_spritelayout_tyres_2'),
+    ]
+)
