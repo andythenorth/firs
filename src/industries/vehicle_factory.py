@@ -146,14 +146,35 @@ industry.add_spritelayout(
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
+    id = 'vehicle_factory_spritelayout_chemicals_handling',
+    ground_sprite = spriteset_ground,
+    ground_overlay = spriteset_ground_overlay,
+    building_sprites = [spriteset_7],
+    fences = ['nw','ne','se','sw']
+)
+industry.add_spritelayout(
+    id = 'vehicle_factory_spritelayout_offices',
+    ground_sprite = spriteset_ground,
+    ground_overlay = spriteset_ground_overlay,
+    building_sprites = [spriteset_8],
+    fences = ['nw','ne','se','sw']
+)
+industry.add_spritelayout(
     id = 'vehicle_factory_spritelayout_vehicles_1',
+    ground_sprite = spriteset_ground,
+    ground_overlay = spriteset_ground_overlay,
+    building_sprites = [spriteset_9],
+    fences = ['nw','ne','se','sw']
+)
+industry.add_spritelayout(
+    id = 'vehicle_factory_spritelayout_vehicles_2',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_10],
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
-    id = 'vehicle_factory_spritelayout_vehicles_2',
+    id = 'vehicle_factory_spritelayout_vehicles_3',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_11],
@@ -165,7 +186,7 @@ industry.add_industry_layout(
     layout = [(0, 0, 'vehicle_factory_tile_1', 'vehicle_factory_spritelayout_rear_assembly_hall_windows'),
               (0, 1, 'vehicle_factory_tile_1', 'vehicle_factory_spritelayout_central_assembly_hall'),
               (0, 2, 'vehicle_factory_tile_1', 'vehicle_factory_spritelayout_front_assembly_hall_doors'),
-              (0, 3, 'vehicle_factory_tile_1', 'vehicle_factory_spritelayout_vehicles_1'),
+              (0, 3, 'vehicle_factory_tile_1', 'vehicle_factory_spritelayout_vehicles_3'),
               (1, 0, 'vehicle_factory_tile_1', 'vehicle_factory_spritelayout_rear_assembly_hall_windows'),
               (1, 1, 'vehicle_factory_tile_1', 'vehicle_factory_spritelayout_central_assembly_hall'),
               (1, 2, 'vehicle_factory_tile_1', 'vehicle_factory_spritelayout_front_assembly_hall_windows'),
@@ -173,14 +194,14 @@ industry.add_industry_layout(
               (2, 0, 'vehicle_factory_tile_1', 'vehicle_factory_spritelayout_rear_assembly_hall_windows'),
               (2, 1, 'vehicle_factory_tile_1', 'vehicle_factory_spritelayout_central_assembly_hall'),
               (2, 2, 'vehicle_factory_tile_1', 'vehicle_factory_spritelayout_front_assembly_hall_doors'),
-              (2, 3, 'vehicle_factory_tile_1', 'vehicle_factory_spritelayout_vehicles_1'),
-              (3, 0, 'vehicle_factory_tile_1', 'vehicle_factory_spritelayout_vehicles_2'),
-              (3, 1, 'vehicle_factory_tile_1', 'vehicle_factory_spritelayout_vehicles_1'),
-              (3, 2, 'vehicle_factory_tile_1', 'vehicle_factory_spritelayout_vehicles_1'),
-              (3, 3, 'vehicle_factory_tile_1', 'vehicle_factory_spritelayout_vehicles_2'),
-              (4, 0, 'vehicle_factory_tile_1', 'vehicle_factory_spritelayout_vehicles_1'),
+              (2, 3, 'vehicle_factory_tile_1', 'vehicle_factory_spritelayout_vehicles_3'),
+              (3, 0, 'vehicle_factory_tile_1', 'vehicle_factory_spritelayout_offices'),
+              (3, 1, 'vehicle_factory_tile_1', 'vehicle_factory_spritelayout_offices'),
+              (3, 2, 'vehicle_factory_tile_1', 'vehicle_factory_spritelayout_vehicles_2'),
+              (3, 3, 'vehicle_factory_tile_1', 'vehicle_factory_spritelayout_vehicles_3'),
+              (4, 0, 'vehicle_factory_tile_1', 'vehicle_factory_spritelayout_chemicals_handling'),
               (4, 1, 'vehicle_factory_tile_1', 'vehicle_factory_spritelayout_vehicles_2'),
-              (4, 2, 'vehicle_factory_tile_1', 'vehicle_factory_spritelayout_vehicles_2'),
+              (4, 2, 'vehicle_factory_tile_1', 'vehicle_factory_spritelayout_vehicles_1'),
               (4, 3, 'vehicle_factory_tile_1', 'vehicle_factory_spritelayout_vehicles_1'),
     ]
 )
