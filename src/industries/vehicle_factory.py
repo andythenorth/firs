@@ -78,6 +78,31 @@ spriteset_6 = industry.add_spriteset(
     sprites = [(360, 10, 64, 80, -31, -49)],
     zextent = 32
 )
+spriteset_7 = industry.add_spriteset(
+    id = 'vehicle_factory_spriteset_7',
+    sprites = [(430, 10, 64, 80, -31, -49)],
+    zextent = 32
+)
+spriteset_8 = industry.add_spriteset(
+    id = 'vehicle_factory_spriteset_8',
+    sprites = [(500, 10, 64, 80, -31, -49)],
+    zextent = 32
+)
+spriteset_9 = industry.add_spriteset(
+    id = 'vehicle_factory_spriteset_9',
+    sprites = [(570, 10, 64, 80, -31, -49)],
+    zextent = 32
+)
+spriteset_10 = industry.add_spriteset(
+    id = 'vehicle_factory_spriteset_10',
+    sprites = [(640, 10, 64, 80, -31, -49)],
+    zextent = 32
+)
+spriteset_11 = industry.add_spriteset(
+    id = 'vehicle_factory_spriteset_11',
+    sprites = [(710, 10, 64, 80, -31, -49)],
+    zextent = 32
+)
 sprite_smoke = industry.add_smoke_sprite(
     smoke_type = 'dark_smoke_small',
     xoffset= 13,
@@ -86,69 +111,76 @@ sprite_smoke = industry.add_smoke_sprite(
 )
 
 industry.add_spritelayout(
-    id = 'vehicle_factory_spritelayout_1',
+    id = 'vehicle_factory_spritelayout_rear_assembly_hall_windows',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_1],
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
-    id = 'vehicle_factory_spritelayout_2',
+    id = 'vehicle_factory_spritelayout_rear_assembly_hall_doors',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_2],
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
-    id = 'vehicle_factory_spritelayout_3',
+    id = 'vehicle_factory_spritelayout_central_assembly_hall',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_3],
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
-    id = 'vehicle_factory_spritelayout_4',
+    id = 'vehicle_factory_spritelayout_front_assembly_hall_windows',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_4],
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
-    id = 'vehicle_factory_spritelayout_5',
+    id = 'vehicle_factory_spritelayout_front_assembly_hall_doors',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
     building_sprites = [spriteset_5],
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
-    id = 'vehicle_factory_spritelayout_6',
+    id = 'vehicle_factory_spritelayout_vehicles_1',
     ground_sprite = spriteset_ground,
     ground_overlay = spriteset_ground_overlay,
-    building_sprites = [spriteset_6],
+    building_sprites = [spriteset_10],
+    fences = ['nw','ne','se','sw']
+)
+industry.add_spritelayout(
+    id = 'vehicle_factory_spritelayout_vehicles_2',
+    ground_sprite = spriteset_ground,
+    ground_overlay = spriteset_ground_overlay,
+    building_sprites = [spriteset_11],
     fences = ['nw','ne','se','sw']
 )
 
 industry.add_industry_layout(
     id = 'vehicle_factory_industry_layout_1',
-    layout = [(0, 0, 'vehicle_factory_tile_1', 'vehicle_factory_spritelayout_4'),
-              (0, 1, 'vehicle_factory_tile_1', 'vehicle_factory_spritelayout_3'),
-              (0, 2, 'vehicle_factory_tile_1', 'vehicle_factory_spritelayout_2'),
-              (0, 3, 'vehicle_factory_tile_1', 'vehicle_factory_spritelayout_6'),
-              (1, 0, 'vehicle_factory_tile_1', 'vehicle_factory_spritelayout_4'),
-              (1, 1, 'vehicle_factory_tile_1', 'vehicle_factory_spritelayout_3'),
-              (1, 2, 'vehicle_factory_tile_1', 'vehicle_factory_spritelayout_4'),
-              (1, 3, 'vehicle_factory_tile_1', 'vehicle_factory_spritelayout_5'),
-              (2, 0, 'vehicle_factory_tile_1', 'vehicle_factory_spritelayout_4'),
-              (2, 1, 'vehicle_factory_tile_1', 'vehicle_factory_spritelayout_3'),
-              (2, 2, 'vehicle_factory_tile_1', 'vehicle_factory_spritelayout_2'),
-              (2, 3, 'vehicle_factory_tile_1', 'vehicle_factory_spritelayout_5'),
-              (3, 0, 'vehicle_factory_tile_1', 'vehicle_factory_spritelayout_1'),
-              (3, 1, 'vehicle_factory_tile_1', 'vehicle_factory_spritelayout_6'),
-              (3, 2, 'vehicle_factory_tile_1', 'vehicle_factory_spritelayout_5'),
-              (3, 3, 'vehicle_factory_tile_1', 'vehicle_factory_spritelayout_6'),
-              (4, 0, 'vehicle_factory_tile_1', 'vehicle_factory_spritelayout_1'),
-              (4, 1, 'vehicle_factory_tile_1', 'vehicle_factory_spritelayout_5'),
-              (4, 2, 'vehicle_factory_tile_1', 'vehicle_factory_spritelayout_6'),
-              (4, 3, 'vehicle_factory_tile_1', 'vehicle_factory_spritelayout_5'),
+    layout = [(0, 0, 'vehicle_factory_tile_1', 'vehicle_factory_spritelayout_rear_assembly_hall_windows'),
+              (0, 1, 'vehicle_factory_tile_1', 'vehicle_factory_spritelayout_central_assembly_hall'),
+              (0, 2, 'vehicle_factory_tile_1', 'vehicle_factory_spritelayout_front_assembly_hall_doors'),
+              (0, 3, 'vehicle_factory_tile_1', 'vehicle_factory_spritelayout_vehicles_1'),
+              (1, 0, 'vehicle_factory_tile_1', 'vehicle_factory_spritelayout_rear_assembly_hall_windows'),
+              (1, 1, 'vehicle_factory_tile_1', 'vehicle_factory_spritelayout_central_assembly_hall'),
+              (1, 2, 'vehicle_factory_tile_1', 'vehicle_factory_spritelayout_front_assembly_hall_windows'),
+              (1, 3, 'vehicle_factory_tile_1', 'vehicle_factory_spritelayout_vehicles_2'),
+              (2, 0, 'vehicle_factory_tile_1', 'vehicle_factory_spritelayout_rear_assembly_hall_windows'),
+              (2, 1, 'vehicle_factory_tile_1', 'vehicle_factory_spritelayout_central_assembly_hall'),
+              (2, 2, 'vehicle_factory_tile_1', 'vehicle_factory_spritelayout_front_assembly_hall_doors'),
+              (2, 3, 'vehicle_factory_tile_1', 'vehicle_factory_spritelayout_vehicles_1'),
+              (3, 0, 'vehicle_factory_tile_1', 'vehicle_factory_spritelayout_vehicles_2'),
+              (3, 1, 'vehicle_factory_tile_1', 'vehicle_factory_spritelayout_vehicles_1'),
+              (3, 2, 'vehicle_factory_tile_1', 'vehicle_factory_spritelayout_vehicles_1'),
+              (3, 3, 'vehicle_factory_tile_1', 'vehicle_factory_spritelayout_vehicles_2'),
+              (4, 0, 'vehicle_factory_tile_1', 'vehicle_factory_spritelayout_vehicles_1'),
+              (4, 1, 'vehicle_factory_tile_1', 'vehicle_factory_spritelayout_vehicles_2'),
+              (4, 2, 'vehicle_factory_tile_1', 'vehicle_factory_spritelayout_vehicles_2'),
+              (4, 3, 'vehicle_factory_tile_1', 'vehicle_factory_spritelayout_vehicles_1'),
     ]
 )
