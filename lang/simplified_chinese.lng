@@ -22,22 +22,29 @@ STR_PARAM_VALUE_STAT_RATING_DEFAULT                                             
 STR_PARAM_VALUE_STAT_RATING_REDUCED_TIME                                        :宽容厚道 (允许两次装货间隔时间较长)
 STR_PARAM_VALUE_STAT_RATING_100                                                 :义薄云天 (车站评价总是100%)
 
+STR_PARAM_NAME_PRIMARY_LEVEL1_REQUIREMENT                                       :调整“较高生产水平”的货物需求率(%)
 STR_PARAM_NAME_PRIMARY_LEVEL2_REQUIREMENT                                       :为“工合”产率调整货物需求(%)
+STR_PARAM_DESC_PRIMARY_LEVEL_REQUIREMENT                                        :所需的供应量取决于产业类型和这个乘数的百分比
+STR_PARAM_NAME_PRIMARY_LEVEL1_BONUS                                             :在较高生产水平上有额外产能
+STR_PARAM_NAME_PRIMARY_LEVEL2_BONUS                                             :在“工合”生产水平有额外产率加成。
+STR_PARAM_DESC_PRIMARY_LEVEL_BONUS                                              :当需求满足时，工业产率上升。
 
 STR_PARAM_VALUE_ECONOMIES_BASIC_TEMPERATE                                       :温带基础经济模式
 STR_PARAM_VALUE_ECONOMIES_BASIC_ARCTIC                                          :寒带基础经济模式
 STR_PARAM_VALUE_ECONOMIES_BASIC_TROPIC                                          :热带基础经济模式
 STR_PARAM_VALUE_ECONOMIES_FIRS                                                  :FIRS经济模式
-STR_PARAM_VALUE_ECONOMIES_MISTAH_KURTZ                                          :希望与困境
+STR_PARAM_VALUE_ECONOMIES_MISTAH_KURTZ                                          :炎热国度
 
 STR_CARGO_NAME_ALCOHOL                                                          :酒
 STR_CARGO_NAME_BAUXITE                                                          :铝土
 STR_CARGO_NAME_BEANS                                                            :大豆
 STR_CARGO_NAME_BUILDING_MATERIALS                                               :建筑材料
+STR_CARGO_NAME_CASSAVA                                                          :木薯
 STR_CARGO_NAME_CHEMICALS                                                        :化工品
 STR_CARGO_NAME_CLAY                                                             :粘土
 STR_CARGO_NAME_COFFEE                                                           :咖啡
 STR_CARGO_NAME_COPPER                                                           :铜
+STR_CARGO_NAME_EDIBLE_OIL                                                       :食用油
 STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :工程物资
 STR_CARGO_NAME_FIBRES                                                           :植物纤维
 STR_CARGO_NAME_FISH                                                             :鱼
@@ -46,9 +53,11 @@ STR_CARGO_NAME_FRUITS                                                           
 STR_CARGO_NAME_LUMBER                                                           :木料
 STR_CARGO_NAME_METAL                                                            :金属
 STR_CARGO_NAME_MILK                                                             :牛奶
+STR_CARGO_NAME_MANGANESE                                                        :锰矿
 STR_CARGO_NAME_MANUFACTURING_SUPPLIES                                           :工业物资
 STR_CARGO_NAME_NITRATES                                                         :硝酸盐
-STR_CARGO_NAME_PETROL                                                           :汽油
+STR_CARGO_NAME_NUTS                                                             :坚果
+STR_CARGO_NAME_PETROL                                                           :石油燃料
 STR_CARGO_NAME_PHOSPHATE                                                        :磷酸矿
 STR_CARGO_NAME_PYRITE_ORE                                                       :黄铁矿
 STR_CARGO_NAME_RECYCLABLES                                                      :回收物资
@@ -64,22 +73,26 @@ STR_CARGO_NAME_WOOL                                                             
 STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} 酒
 STR_CARGO_UNIT_BAUXITE                                                          :{WEIGHT} 铝土
 STR_CARGO_UNIT_BEANS                                                            :{WEIGHT} 吨大豆
+STR_CARGO_UNIT_CASSAVA                                                          :{WEIGHT} 吨木薯
 STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WEIGHT} 建筑材料
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} 化工品
 STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} 粘土
 STR_CARGO_UNIT_COFFEE                                                           :{SIGNED_WORD} 袋咖啡
 STR_CARGO_UNIT_COPPER                                                           :{WEIGHT} 吨铜
+STR_CARGO_UNIT_EDIBLE_OIL                                                       :{VOLUME} 升食用油
 STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} 箱 工程物资
 STR_CARGO_UNIT_FIBRES                                                           :{SIGNED_WORD} 包 植物纤维
 STR_CARGO_UNIT_FISH                                                             :{WEIGHT} 鱼
 STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} 箱 农用物资
 STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} 水果
 STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} 木料
+STR_CARGO_UNIT_MANGANESE                                                        :{WEIGHT} 吨锰矿
 STR_CARGO_UNIT_METAL                                                            :{WEIGHT} 金属
 STR_CARGO_UNIT_MILK                                                             :{VOLUME} 牛奶
 STR_CARGO_UNIT_NITRATES                                                         :{WEIGHT} 吨硝酸盐
+STR_CARGO_UNIT_NUTS                                                             :{SIGNED_WORD} 麻袋坚果
 STR_CARGO_UNIT_MNSP                                                             :{SIGNED_WORD} 箱 工业物资
-STR_CARGO_UNIT_PETROL                                                           :{VOLUME} 汽油
+STR_CARGO_UNIT_PETROL                                                           :{VOLUME} 升石油燃料
 STR_CARGO_UNIT_PHOSPHATE                                                        :{WEIGHT} 吨磷酸盐
 STR_CARGO_UNIT_PYRITE_ORE                                                       :{WEIGHT} 吨黄铁矿
 STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} 回收物资
@@ -96,19 +109,23 @@ STR_CID_ALCOHOL                                                                 
 STR_CID_BAUXITE                                                                 :{TINYFONT}铝
 STR_CID_BEANS                                                                   :{TINYFONT}豆
 STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}建
+STR_CID_CASSAVA                                                                 :{TINYFONT}薯
 STR_CID_CHEMICALS                                                               :{TINYFONT}化
 STR_CID_CLAY                                                                    :{TINYFONT}粘
 STR_CID_COFFEE                                                                  :{TINYFONT}啡
 STR_CID_COPPER                                                                  :{TINYFONT}铜
+STR_CID_EDIBLE_OIL                                                              :{TINYFONT}脂
 STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}程
 STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}农
 STR_CID_FIBRES                                                                  :{TINYFONT}纤
 STR_CID_FISH                                                                    :{TINYFONT}鱼
 STR_CID_LUMBER                                                                  :{TINYFONT}料
+STR_CID_MANGANESE                                                               :{TINYFONT}锰
 STR_CID_MANUFACTURING_SUPPLIES                                                  :{TINYFONT}工
 STR_CID_METAL                                                                   :{TINYFONT}金
 STR_CID_MILK                                                                    :{TINYFONT}奶
 STR_CID_NITRATES                                                                :{TINYFONT}硝
+STR_CID_NUTS                                                                    :{TINYFONT}坚
 STR_CID_PETROL                                                                  :{TINYFONT}汽
 STR_CID_PHOSPHATE                                                               :{TINYFONT}磷
 STR_CID_PYRITE_ORE                                                              :{TINYFONT}黄
@@ -142,16 +159,22 @@ STR_EXTRA_BREWERY_FRUIT_SUBSTR                                                  
 STR_EXTRA_BREWERY_GRAIN_SUBSTR                                                  : 每8吨谷物生产5,000升{}
 STR_EXTRA_BREWERY_MAIZE_SUBSTR                                                  :每8吨玉米生产 5,000升{}
 STR_EXTRA_BRICKWORKS                                                            :{BLACK}货物生产率:{}  每8吨煤炭生产2吨{}  每8吨沙子生产2吨{}  每8吨粘土生产4吨{}{}如果3个月内交付两种或者以上货物，则产量上升。
-STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}货物生产率:{}  每8吨煤炭生产2吨{}  每8吨粘土生产2吨{}  每8吨石料生产4吨{}{}如果3个月内交付两种或者以上货物，则产量上升。
+STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}货物生产率:{}  {STRING}  每8吨粘土生产2吨{}  每8吨石料生产4吨{}{}如果3个月内交付两种或者以上货物，则产率上升。
 STR_EXTRA_CEMENT_PLANT_COAL_SUBSTR                                              :每8吨煤炭生产2吨{}
+STR_EXTRA_CEMENT_PLANT_PETROL_SUBSTR                                            :每8,000升石油燃料生产2吨{}
 STR_EXTRA_CHEMICAL_PLANT                                                        :{BLACK}货物生产率:{} 每8,000升原油生产6,000升{}  每8吨硝酸盐生产6,000l
 STR_EXTRA_COPPER_REFINERY                                                       :{BLACK}货物生产率:{}  每8吨铜矿生产5吨{}  每8000升化工品生产3吨{}{}如果3个月内交付两种或者以上货物，则产量上升。
 STR_EXTRA_DAIRY                                                                 :{BLACK}货物生产率:{}  每8箱工业物资生产3吨{}  每8,000升牛奶生产5吨{}{}如果3个月内交付了这两种货物，则产量上升。
 STR_EXTRA_FERTILIZER_PLANT                                                      :{BLACK}货物生产率:{}  每8,000升化工品生产8箱
 STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}货物生产率:{}  每8箱工业物资生产3吨{}  每8吨鱼生产5吨{}{}如果3个月内交付了这两种货物，则产量上升。
-STR_EXTRA_FLOUR_MILL                                                            :{BLACK}货物生产率:{}  每8箱工业物资生产3吨{}  每8吨谷物生产5吨{}{}如果3个月内交付了这两种货物，则产量上升。
+STR_EXTRA_FLOUR_MILL                                                            :{BLACK}货物生产率:{}  每8箱工业物资生产3吨{}  {STRING}{STRING}{}如果3个月内交付了工业物资和其他物资，则产量上升。
 STR_EXTRA_FLOUR_MILL_GRAIN_SUBSTR                                               :每8吨谷物生产5吨{}
-STR_EXTRA_FOOD_PROCESSING_PLANT                                                 :{BLACK}货物生产率:{}  每8吨大豆生产6吨{}  每8吨水果生产6吨
+STR_EXTRA_FLOUR_MILL_EMPTY_SUBSTR                                               :{}
+STR_EXTRA_FLOUR_MILL_CASSAVA_SUBSTR                                             :每8吨木薯生产5吨{}
+STR_EXTRA_FLOUR_MILL_MAIZE_SUBSTR                                               :每8吨玉米生产5吨{}
+STR_EXTRA_FOOD_PROCESSING_PLANT                                                 :{BLACK}货物产率:{}  {STRING}  每8吨水果生产6吨
+STR_EXTRA_FOOD_PROCESSING_PLANT_BEANS_SUBSTR                                    :每8吨豆子生产6吨{}
+STR_EXTRA_FOOD_PROCESSING_PLANT_NUTS_SUBSTR                                     :每8吨坚果生产6吨{}
 STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}货物生产率:{}  每8箱工业物资生产3箱{}  每8吨木料生产5箱{}{}如果3个月内交付了这两种货物，则产量上升。
 STR_EXTRA_GLASS_WORKS                                                           :{BLACK}生产玻璃制品如瓶子、罐子和窗户玻璃。{}{}{BLACK}货物生产率:{}  每交付8吨沙子生产6吨{}  每交付8,000升化工品生产2吨{}{}如果3月内交付了这两种货物，则产量上升。
 STR_EXTRA_IRON_WORKS                                                            :{BLACK}货物生产率:{} 每8吨铁矿石生产3吨{}  每8吨木料生产3吨{} 每8吨沙子生产2吨{}{}如果3个月内交付了两种或以上货物，则产量上升。
@@ -173,22 +196,23 @@ STR_EXTRA_SAWMILL                                                               
 STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}生产金属制品如工具、犁、门、锹和马蹄铁等。{}{}货物生产率:{}  每8吨金属生产8箱
 STR_EXTRA_STEELMILL                                                             :{BLACK}货物生产率:{}  每8吨铁矿石生产3吨{}  每8吨煤炭生产2吨{}  每8吨废金属生产3吨{}{}如果3个月内交付两种或者以上货物，则产量上升。
 STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}货物生产率:{}  每8箱工业物资生产3吨{}  每8吨甜菜生产5吨{}{}如果3个月内交付了这两种货物，则产量上升。
-STR_EXTRA_SUPPLY_YARD                                                           :{BLACK}货物生产率:{}  每8,000升汽油生产8箱{}  每8车辆生产8箱{}  每8吨货物生产8箱
+STR_EXTRA_SUPPLY_YARD                                                           :{BLACK}货物生产率:{}  每8吨货物生产8箱{}  每8,000升汽油生产8箱{}  {STRING}
 STR_EXTRA_SUPPLY_YARD_VEHICLES_SUBSTR                                           :每8辆生产8箱
+STR_EXTRA_SUPPLY_YARD_BUILDING_MATERIALS_SUBSTR                                 :每8吨建筑材料生产8箱。
 STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}货物生产率:{}  每8箱工业物资生产3箱{} {STRING} {STRING}{}如果3月内同时交付了工业物资和其他货物，则产品上升。
 STR_EXTRA_TEXTILE_MILL_WOOL_SUBSTR                                              : 每8包羊毛生产5箱{}
 STR_EXTRA_TEXTILE_MILL_PLANT_FIBRES_SUBSTR                                      : 每8包植物纤维生产5箱{}
 STR_EXTRA_TYRE_PLANT                                                            :{BLACK}货物生产率:{}  每8,000升橡胶生产6箱{}  每8,000升化工品胜场2箱{}{}如果3个月内交付了这两种货物，则产量上升。
-STR_EXTRA_VEHICLE_FACTORY                                                       :{BLACK}货物生产率:{}  每8箱车辆零件生产3辆{}  每8箱金属生产3辆{} 每8箱工业物资生产2辆{}
+STR_EXTRA_VEHICLE_FACTORY                                                       :{BLACK}货物生产率:{}  每8箱车辆零件生产3辆{}  每8箱金属生产3辆{} 每8000升化工品生产2辆{}{}三个月内交付两种或者三种货物，则产率上升。
 
 STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ DEBUG ------------{}Production this month:{}Cargo 1: {WHITE}{COMMA}{BLACK}{}Cargo 2: {WHITE}{COMMA}{BLACK}{}Days since last delivery: {WHITE}{COMMA}{BLACK}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}达到最大产量
-STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}当前产量: {YELLOW}标准{}{}{BLACK}欲产量翻倍，须3个月内交付 {SIGNED_WORD} 箱物资 (或交付 {SIGNED_WORD} 箱物资提升产量至4倍)
-STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}当前产量: {YELLOW}提升 (双倍){}{}{BLACK}为保持此水准，须三个月内交付 {SIGNED_WORD} 箱物资，或者 交付{SIGNED_WORD} 箱物资提升产量至4倍
-STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}当前产量: {YELLOW}工合 (四倍){}{}{BLACK}为保持此水准，须三个月内交付 {SIGNED_WORD} 箱物资
-STR_PORT_PRODUCTION_1X                                                          :{BLACK}当前产量: {YELLOW}标准{}{}{BLACK}欲产量翻倍，须3个月内交付 {SIGNED_WORD} 单位的货物{}欲4倍产量，须三个月内交付 {SIGNED_WORD} 单位的货物
-STR_PORT_PRODUCTION_2X                                                          :{BLACK}当前产量: {YELLOW}提升 (双倍){}{}{BLACK}为保持此水准，须三个月内交付 {SIGNED_WORD} 单位的货物， 或者 {SIGNED_WORD} 单位的货物提升产量至四倍
-STR_PORT_PRODUCTION_4X                                                          :{BLACK}当前产量: {YELLOW}工合 (四倍){}{}{BLACK}为保持此水准，须三个月内交付 {SIGNED_WORD} 单位的货物
+STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}当前产率: {YELLOW}标准({SIGNED_WORD} %){}{}{BLACK}为提产产率至 {SIGNED_WORD} % 需三个月内交付 {SIGNED_WORD} 箱物资{}T提升至 {SIGNED_WORD} % 需交付 {SIGNED_WORD} 箱
+STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}当前产率: {YELLOW}增强 ({SIGNED_WORD} %){}{}{BLACK}为保持此水准，需三个月内交付 {SKIP}{SIGNED_WORD} 箱物资{}提升至 {SIGNED_WORD} % 需交付 {SIGNED_WORD} 箱
+STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}当前产率: {YELLOW}工合 ({SIGNED_WORD} %){}{}{BLACK}为保持此产率, 需三个月内交付 {SKIP}{SKIP}{SKIP}{SIGNED_WORD} 箱物资
+STR_PORT_PRODUCTION_1X                                                          :{BLACK}当前产率: {YELLOW}标准({SIGNED_WORD} %){}{}{BLACK}欲提升产率至 {SIGNED_WORD} % 需三个月内交付 {SIGNED_WORD} 单位货物{}提升至 {SIGNED_WORD} % 需交付 {SIGNED_WORD} 单位
+STR_PORT_PRODUCTION_2X                                                          :{BLACK}当前产率: {YELLOW}增强 ({SIGNED_WORD} %){}{}{BLACK}为保持此产率, 三个月内需交付 {SKIP}{SIGNED_WORD} 单位货物{}提升至 {SIGNED_WORD} % 需交付 {SIGNED_WORD} 单位
+STR_PORT_PRODUCTION_4X                                                          :{BLACK}当前产率: {YELLOW}工合 ({SIGNED_WORD} %){}{}{BLACK}为保持此产率，需三个月内交付 {SKIP}{SKIP}{SKIP}{SIGNED_WORD} 单位货物
 STR_GENERIC_NEWLINE                                                             :{}
 
 STR_FUND_BASIC_FARM                                                             :{}{BLACK}位置: {YELLOW}不得修建于雪地或者沙漠。
@@ -222,7 +246,7 @@ STR_IND_BREWERY                                                                 
 STR_IND_BREWERY_CIDER_MILL                                                      :苹果酒厂
 STR_IND_BRICK_WORKS                                                             :砖厂
 STR_IND_BUILDERS_YARD                                                           :建筑工地
-STR_IND_BULK_TERMINAL                                                           :重型货运站
+STR_IND_BULK_TERMINAL                                                           :散装固体货运站
 STR_IND_CEMENT_PLANT                                                            :水泥厂
 STR_IND_CHEMICAL_PLANT                                                          :化工厂
 STR_IND_CLAY_PIT                                                                :粘土矿坑
@@ -235,6 +259,8 @@ STR_IND_DREDGING_SITE                                                           
 STR_IND_FERTILISER_PLANT                                                        :化肥厂
 STR_IND_FISHING_GROUND                                                          :渔场
 STR_IND_FISHING_HARBOUR                                                         :渔港
+STR_IND_FISHING_VILLAGE                                                         :渔村
+STR_IND_FLOUR_MILL                                                              :磨坊
 STR_IND_FOOD_MARKET                                                             :杂货店
 STR_IND_FOOD_PROCESSOR                                                          :食品加工厂
 STR_IND_FURNITURE_FACTORY                                                       :家具厂
@@ -245,8 +271,10 @@ STR_IND_HOTEL                                                                   
 STR_IND_IRON_WORKS                                                              :炼铁厂
 STR_IND_JUNKYARD                                                                :废料场
 STR_IND_LIME_KILN                                                               :石灰窑
+STR_IND_LIQUIDS_TERMINAL                                                        :液体货运站
 STR_IND_LUMBER_YARD                                                             :木材加工厂
 STR_IND_MACHINE_SHOP                                                            :机械厂
+STR_IND_MANGANESE_MINE                                                          :锰矿
 STR_IND_METAL_FABRICATION_PLANT                                                 :金属加工厂
 STR_IND_METAL_FOUNDRY                                                           :金工工坊
 STR_IND_MIXEDFARM                                                               :综合农场
