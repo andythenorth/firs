@@ -22,6 +22,12 @@ STR_PARAM_VALUE_STAT_RATING_DEFAULT                                             
 STR_PARAM_VALUE_STAT_RATING_REDUCED_TIME                                        :Complaisant (permet des intervalles plus grands entre chaque collecte de marchandises
 STR_PARAM_VALUE_STAT_RATING_100                                                 :Éperdument généreux (toujours 100{NBSP}%)
 
+STR_PARAM_NAME_PRIMARY_LEVEL1_REQUIREMENT                                       :Marchandises nécessaires pour atteindre la production 'améliorée' (%)
+STR_PARAM_NAME_PRIMARY_LEVEL2_REQUIREMENT                                       :Marchandises nécessaires pour atteindre la production 'à fond les manettes{NBSP}!' (%)
+STR_PARAM_DESC_PRIMARY_LEVEL_REQUIREMENT                                        :La quantité de marchandises nécessaire dépend du type d'industrie et de ce pourcentage
+STR_PARAM_NAME_PRIMARY_LEVEL1_BONUS                                             :Bonus de production 'améliorée'
+STR_PARAM_NAME_PRIMARY_LEVEL2_BONUS                                             :Bonus de production 'à fond les manettes{NBSP}!'
+STR_PARAM_DESC_PRIMARY_LEVEL_BONUS                                              :Le taux d'augmentation de la production des industries, quand les besoins en matières premières sont satisfaits.
 
 STR_PARAM_VALUE_ECONOMIES_BASIC_TEMPERATE                                       :Basique - Environnement tempéré
 STR_PARAM_VALUE_ECONOMIES_BASIC_ARCTIC                                          :Basique - Environnement arctique
@@ -51,7 +57,7 @@ STR_CARGO_NAME_MANGANESE                                                        
 STR_CARGO_NAME_MANUFACTURING_SUPPLIES                                           :Fournitures industrielles
 STR_CARGO_NAME_NITRATES                                                         :Nitrates
 STR_CARGO_NAME_NUTS                                                             :Noix
-STR_CARGO_NAME_PETROL                                                           :Essence
+STR_CARGO_NAME_PETROL                                                           :Carburant
 STR_CARGO_NAME_PHOSPHATE                                                        :Phosphate
 STR_CARGO_NAME_PYRITE_ORE                                                       :Minerai de pyrite
 STR_CARGO_NAME_RECYCLABLES                                                      :Matériaux recyclables
@@ -86,7 +92,7 @@ STR_CARGO_UNIT_MILK                                                             
 STR_CARGO_UNIT_NITRATES                                                         :{WEIGHT} de nitrates
 STR_CARGO_UNIT_NUTS                                                             :{SIGNED_WORD} sac{P 0 "" s}  de noix
 STR_CARGO_UNIT_MNSP                                                             :{SIGNED_WORD} caisse{P 0 "" s} de fournitures industrielles
-STR_CARGO_UNIT_PETROL                                                           :{VOLUME} d'essence
+STR_CARGO_UNIT_PETROL                                                           :{VOLUME} de carburant
 STR_CARGO_UNIT_PHOSPHATE                                                        :{WEIGHT} de phosphate
 STR_CARGO_UNIT_PYRITE_ORE                                                       :{WEIGHT} de minerai de pyrite
 STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} de matériaux recyclables
@@ -120,7 +126,7 @@ STR_CID_METAL                                                                   
 STR_CID_MILK                                                                    :{TINYFONT}LT
 STR_CID_NITRATES                                                                :{TINYFONT}NI
 STR_CID_NUTS                                                                    :{TINYFONT}NX
-STR_CID_PETROL                                                                  :{TINYFONT}ES
+STR_CID_PETROL                                                                  :{TINYFONT}CB
 STR_CID_PHOSPHATE                                                               :{TINYFONT}PH
 STR_CID_PYRITE_ORE                                                              :{TINYFONT}PY
 STR_CID_RECYCLABLES                                                             :{TINYFONT}MR
@@ -178,7 +184,7 @@ STR_EXTRA_MACHINE_SHOP                                                          
 STR_EXTRA_MEAT_PACKER                                                           :{BLACK}Marchandises produites{NBSP}:{}  3{NBSP}t pour 8{NBSP}caisses de fournitures industrielles livrées{}  5{NBSP}t pour 8 têtes de bétail livrées{}{}La production augmente si les deux matières premières sont livrées à moins de trois mois d'intervalle.
 STR_EXTRA_METAL_FABRICATION_PLANT                                               :{BLACK}Produit des composants métalliques peints.{}{}Marchandises produites{NBSP}:{}  2{NBSP}t pour 8{NBSP}000{NBSP}L de produits chimiques livrés{}  6{NBSP}t pour 8{NBSP}t de métal livrées{}{}La production augmente si les deux matières premières sont livrées à moins de trois mois d'intervalle.
 STR_EXTRA_METAL_FOUNDRY                                                         :{BLACK}Produit des objets métalliques tels que des boîtes de conserve, des outils ou des articles ménagers.{}{}Marchandises produites{NBSP}:{}  2 caisses pour 8{NBSP}000{NBSP}L de produits chimiques livrés{}  6 caisses pour 8{NBSP}t de métal livrées{}{}La production augmente si les deux matières premières sont livrées à moins de trois mois d'intervalle.
-STR_EXTRA_OIL_REFINERY                                                          :{BLACK}Transforme le pétrole brut en essence et en produits chimiques.{}{}Marchandises produites{NBSP}:{}  6{NBSP}000{NBSP}L pour 8{NBSP}000{NBSP}L de pétrole livrés
+STR_EXTRA_OIL_REFINERY                                                          :{BLACK}Transforme le pétrole brut en carburant et en produits chimiques.{}{}Marchandises produites{NBSP}:{}  6{NBSP}000{NBSP}L pour 8{NBSP}000{NBSP}L de pétrole livrés
 STR_EXTRA_PAPER_MILL                                                            :{BLACK}Transforme le bois en pâte pour produire du papier et du carton.{}{}Marchandises produites{NBSP}:{}  4 caisses pour 8{NBSP}t de bois livrées{}  2 caisses pour 8{NBSP}t d'argile livrées{}  2 caisses pour 8{NBSP}000{NBSP}L de produits chimiques livrés{}{}La production augmente si deux matières premières (ou plus) sont livrées à moins de trois mois d'intervalle.
 STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}Produit des objets en plastique tels que des emballages ou des articles ménagers.{}{}Marchandises produites{NBSP}:{}  {STRING} {STRING}
 STR_EXTRA_PLASTICS_PLANT_CHEMICALS_SUBSTR                                       :6 caisses pour 8{NBSP}000{NBSP}L de produits chimiques livrés{}
@@ -201,12 +207,12 @@ STR_EXTRA_VEHICLE_FACTORY                                                       
 
 STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ DEBUG ------------{}Production ce mois-ci{NBSP}:{}Marchandise 1{NBSP}: {WHITE}{COMMA}{BLACK}{}Marchandise 2{NBSP}: {WHITE}{COMMA}{BLACK}{}Jours écoulés depuis la dernière livraison{NBSP}: {WHITE}{COMMA}{BLACK}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Production maximum atteinte
-STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Production actuelle{NBSP}: {YELLOW}Normale{}{}{BLACK}Pour doubler la production, livrer {SIGNED_WORD} caisses dans les 3{NBSP}mois (ou {SIGNED_WORD} caisses pour quadrupler)
-STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Production actuelle{NBSP}: {YELLOW}Améliorée (2x){}{}{BLACK}Pour maintenir ce niveau de production, livrer {SIGNED_WORD} caisses dans les 3{NBSP}mois (ou {SIGNED_WORD} caisses pour encore doubler)
-STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}Production actuelle{NBSP}: {YELLOW}à fond les manettes{NBSP}! (4x){}{}{BLACK}Pour maintenir ce niveau de production, livrer {SIGNED_WORD} caisses dans les 3{NBSP}mois
-STR_PORT_PRODUCTION_1X                                                          :{BLACK}Production actuelle{NBSP}: {YELLOW}Normale{}{}{BLACK}Pour doubler la production, livrer {SIGNED_WORD} unités de marchandises nécessaires dans les 3{NBSP}mois (ou {SIGNED_WORD} pour quadrupler)
-STR_PORT_PRODUCTION_2X                                                          :{BLACK}Production actuelle{NBSP}: {YELLOW}Améliorée (2x){}{}{BLACK}Pour maintenir ce niveau de production, livrer {SIGNED_WORD} unités de marchandises nécessaires dans les 3{NBSP}mois (ou {SIGNED_WORD} pour encore doubler)
-STR_PORT_PRODUCTION_4X                                                          :{BLACK}Production actuelle{NBSP}: {YELLOW}à fond les manettes{NBSP}! (4x){}{}{BLACK}Pour maintenir ce niveau de production, livrer {SIGNED_WORD} unités de marchandises nécessaires dans les 3{NBSP}mois
+STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Production actuelle{NBSP}: {YELLOW}Normale ({SIGNED_WORD}{NBSP}%){}{}{BLACK}Pour atteindre {SIGNED_WORD}{NBSP}%, livrer {SIGNED_WORD} caisses dans les 3{NBSP}mois{}Pour atteindre {SIGNED_WORD}{NBSP}%, livrer {SIGNED_WORD} caisses
+STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Production actuelle{NBSP}: {YELLOW}Améliorée ({SIGNED_WORD}{NBSP}%){}{}{BLACK}Pour maintenir ce niveau de production, livrer {SKIP}{SIGNED_WORD} caisses dans les 3{NBSP}mois{}Pour atteindre {SIGNED_WORD}{NBSP}%, livrer {SIGNED_WORD} caisses
+STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}Production actuelle{NBSP}: {YELLOW}à fond les manettes{NBSP}! ({SIGNED_WORD}{NBSP}%){}{}{BLACK}Pour maintenir ce niveau de production, livrer {SKIP}{SKIP}{SKIP}{SIGNED_WORD} caisses dans les 3{NBSP}mois
+STR_PORT_PRODUCTION_1X                                                          :{BLACK}Production actuelle{NBSP}: {YELLOW}Normale ({SIGNED_WORD}{NBSP}%){}{}{BLACK}Pour atteindre {SIGNED_WORD}{NBSP}%, livrer {SIGNED_WORD} unités de marchandises nécessaires dans les 3{NBSP}mois{}Pour atteindre {SIGNED_WORD}{NBSP}%, livrer {SIGNED_WORD} unités
+STR_PORT_PRODUCTION_2X                                                          :{BLACK}Production actuelle{NBSP}: {YELLOW}Améliorée ({SIGNED_WORD}{NBSP}%){}{}{BLACK}Pour maintenir ce niveau de production, livrer {SKIP}{SIGNED_WORD} unités de marchandises nécessaires dans les 3{NBSP}mois{}Pour atteindre {SIGNED_WORD}{NBSP}%, livrer {SIGNED_WORD} unités
+STR_PORT_PRODUCTION_4X                                                          :{BLACK}Production actuelle{NBSP}: {YELLOW}à fond les manettes{NBSP}! ({SIGNED_WORD}{NBSP}%){}{}{BLACK}Pour maintenir ce niveau de production, livrer {SKIP}{SKIP}{SKIP}{SIGNED_WORD} unités de marchandises nécessaires dans les 3{NBSP}mois
 STR_GENERIC_NEWLINE                                                             :{}
 
 STR_FUND_BASIC_FARM                                                             :{}{BLACK}Emplacement{NBSP}: {YELLOW}Ne peut pas être construite sur de la neige ni dans le désert.
