@@ -45,7 +45,7 @@ industry.add_tile(id='pyrite_smelter_tile_1',
 
 spriteset_ground = industry.add_spriteset(
     id = 'pyrite_smelter_spriteset_ground',
-    type='cobble',
+    type='concrete',
 )
 spriteset_ground_overlay = industry.add_spriteset(
     id = 'pyrite_smelter_spriteset_ground_overlay',
@@ -181,9 +181,12 @@ industry.add_industry_layout(
               (0, 2, 'pyrite_smelter_tile_1', 'pyrite_smelter_spritelayout_roaster_1'),
               (0, 3, 'pyrite_smelter_tile_1', 'pyrite_smelter_spritelayout_roaster_2'),
               (0, 4, 'pyrite_smelter_tile_1', 'pyrite_smelter_spritelayout_chimney'),
-              (0, 5, 'pyrite_smelter_tile_1', 'pyrite_smelter_spritelayout_acid_plant_1'),
-              (0, 6, 'pyrite_smelter_tile_1', 'pyrite_smelter_spritelayout_acid_plant_2'),
+              (0, 5, 'pyrite_smelter_tile_1', 'pyrite_smelter_spritelayout_acid_plant_2'),
+              (0, 6, 'pyrite_smelter_tile_1', 'pyrite_smelter_spritelayout_acid_plant_1'),
               (0, 7, 'pyrite_smelter_tile_1', 'pyrite_smelter_spritelayout_metal_1'),
               (0, 8, 'pyrite_smelter_tile_1', 'pyrite_smelter_spritelayout_metal_2'),
+              (1, 6, 'pyrite_smelter_tile_1', 'pyrite_smelter_spritelayout_acid_plant_1'),
+              (1, 7, 'pyrite_smelter_tile_1', 'pyrite_smelter_spritelayout_metal_1'),
+              (1, 8, 'pyrite_smelter_tile_1', 'pyrite_smelter_spritelayout_metal_2'),
     ]
 )
