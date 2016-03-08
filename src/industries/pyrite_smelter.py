@@ -50,6 +50,11 @@ sprite_ground_overlay = industry.add_spriteset(
     id = 'pyrite_smelter_sprite_ground_overlay',
     type='empty',
 )
+spriteset_greeble = industry.add_spriteset(
+    id = 'pyrite_smelter_spriteset_greeble',
+    sprites = [(570, 10, 64, 122, -31, -90)],
+    zextent = 12
+)
 spriteset_crusher_1 = industry.add_spriteset(
     id = 'pyrite_smelter_spriteset_crusher_1',
     sprites = [(10, 10, 64, 122, -31, -90)],
@@ -73,7 +78,7 @@ spriteset_roaster_2 = industry.add_spriteset(
 spriteset_chimney = industry.add_spriteset(
     id = 'pyrite_smelter_spriteset_chimney',
     sprites = [(220, 10, 64, 130, -31, -110)],
-    zextent = 12
+    zextent = 130
 )
 spriteset_acid_plant_1 = industry.add_spriteset(
     id = 'pyrite_smelter_spriteset_acid_plant_1',
@@ -95,19 +100,26 @@ spriteset_metal_2 = industry.add_spriteset(
     sprites = [(500, 10, 64, 122, -31, -90)],
     zextent = 12
 )
-sprite_smoke_boilerhouse = industry.add_smoke_sprite(
+sprite_smoke_big_chimney = industry.add_smoke_sprite(
     smoke_type = 'white_smoke_big',
-    xoffset= 8,
+    xoffset= 7,
     yoffset= 0,
-    zoffset= 70,
+    zoffset= 116,
 )
-sprite_smoke_kiln = industry.add_smoke_sprite(
+sprite_smoke_roaster = industry.add_smoke_sprite(
     smoke_type = 'white_smoke_big',
     xoffset= 0,
-    yoffset= 8,
-    zoffset= 58,
+    yoffset= 0,
+    zoffset= 86,
 )
 
+industry.add_spritelayout(
+    id = 'pyrite_smelter_spritelayout_greeble',
+    ground_sprite = sprite_ground,
+    ground_overlay = sprite_ground_overlay,
+    building_sprites = [spriteset_greeble],
+    fences = ['nw','ne','se','sw']
+)
 industry.add_spritelayout(
     id = 'pyrite_smelter_spritelayout_crusher_1',
     ground_sprite = sprite_ground,
@@ -127,7 +139,6 @@ industry.add_spritelayout(
     ground_sprite = sprite_ground,
     ground_overlay = sprite_ground_overlay,
     building_sprites = [spriteset_roaster_1],
-    smoke_sprites = [sprite_smoke_kiln],
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
@@ -135,6 +146,7 @@ industry.add_spritelayout(
     ground_sprite = sprite_ground,
     ground_overlay = sprite_ground_overlay,
     building_sprites = [spriteset_roaster_2],
+    smoke_sprites = [sprite_smoke_roaster],
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
@@ -142,6 +154,7 @@ industry.add_spritelayout(
     ground_sprite = sprite_ground,
     ground_overlay = sprite_ground_overlay,
     building_sprites = [spriteset_chimney],
+    smoke_sprites = [sprite_smoke_big_chimney],
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
@@ -187,5 +200,22 @@ industry.add_industry_layout(
               (2, 3, 'pyrite_smelter_tile_1', 'pyrite_smelter_spritelayout_chimney'),
               (3, 2, 'pyrite_smelter_tile_1', 'pyrite_smelter_spritelayout_acid_plant_1'),
               (3, 3, 'pyrite_smelter_tile_1', 'pyrite_smelter_spritelayout_acid_plant_2'),
+    ]
+)
+
+industry.add_industry_layout(
+    id = 'pyrite_smelter_industry_layout_2',
+    layout = [(0, 0, 'pyrite_smelter_tile_1', 'pyrite_smelter_spritelayout_chimney'),
+              (0, 1, 'pyrite_smelter_tile_1', 'pyrite_smelter_spritelayout_metal_1'),
+              (0, 2, 'pyrite_smelter_tile_1', 'pyrite_smelter_spritelayout_metal_1'),
+              (0, 3, 'pyrite_smelter_tile_1', 'pyrite_smelter_spritelayout_roaster_2'),
+              (0, 4, 'pyrite_smelter_tile_1', 'pyrite_smelter_spritelayout_roaster_1'),
+              (0, 5, 'pyrite_smelter_tile_1', 'pyrite_smelter_spritelayout_crusher_2'),
+              (1, 0, 'pyrite_smelter_tile_1', 'pyrite_smelter_spritelayout_metal_2'),
+              (1, 1, 'pyrite_smelter_tile_1', 'pyrite_smelter_spritelayout_metal_2'),
+              (1, 2, 'pyrite_smelter_tile_1', 'pyrite_smelter_spritelayout_greeble'),
+              (1, 3, 'pyrite_smelter_tile_1', 'pyrite_smelter_spritelayout_acid_plant_1'),
+              (1, 4, 'pyrite_smelter_tile_1', 'pyrite_smelter_spritelayout_acid_plant_2'),
+              (1, 5, 'pyrite_smelter_tile_1', 'pyrite_smelter_spritelayout_crusher_1'),
     ]
 )
