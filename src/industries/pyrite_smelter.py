@@ -199,3 +199,42 @@ industry.add_industry_layout(
               (2, 4, 'pyrite_smelter_tile_1', 'pyrite_smelter_spritelayout_acid_plant_2'),
     ]
 )
+industry.add_industry_layout(
+    id = 'pyrite_smelter_industry_layout_2',
+    layout = [(0, 0, 'pyrite_smelter_tile_1', 'pyrite_smelter_spritelayout_roaster_1'),
+              (0, 1, 'pyrite_smelter_tile_1', 'pyrite_smelter_spritelayout_roaster_1'),
+              (0, 2, 'pyrite_smelter_tile_1', 'pyrite_smelter_spritelayout_empty'),
+              (0, 3, 'pyrite_smelter_tile_1', 'pyrite_smelter_spritelayout_chimney'),
+              (1, 0, 'pyrite_smelter_tile_1', 'pyrite_smelter_spritelayout_roaster_2'),
+              (1, 1, 'pyrite_smelter_tile_1', 'pyrite_smelter_spritelayout_roaster_2'),
+              (1, 2, 'pyrite_smelter_tile_1', 'pyrite_smelter_spritelayout_empty'),
+              (1, 3, 'pyrite_smelter_tile_1', 'pyrite_smelter_spritelayout_acid_plant_2'),
+              (2, 0, 'pyrite_smelter_tile_1', 'pyrite_smelter_spritelayout_metal_1'),
+              (2, 1, 'pyrite_smelter_tile_1', 'pyrite_smelter_spritelayout_metal_1'),
+              (2, 2, 'pyrite_smelter_tile_1', 'pyrite_smelter_spritelayout_empty'),
+              (2, 3, 'pyrite_smelter_tile_1', 'pyrite_smelter_spritelayout_acid_plant_1'),
+              (3, 0, 'pyrite_smelter_tile_1', 'pyrite_smelter_spritelayout_metal_2'),
+              (3, 1, 'pyrite_smelter_tile_1', 'pyrite_smelter_spritelayout_greeble'),
+              (3, 2, 'pyrite_smelter_tile_1', 'pyrite_smelter_spritelayout_empty'),
+              (3, 3, 'pyrite_smelter_tile_1', 'pyrite_smelter_spritelayout_office'),
+    ]
+)
+industry.add_industry_layout(
+    id = 'pyrite_smelter_industry_layout_3',
+    layout = [(0, 0, 'pyrite_smelter_tile_1', 'pyrite_smelter_spritelayout_roaster_1'),
+              (0, 1, 'pyrite_smelter_tile_1', 'pyrite_smelter_spritelayout_empty'),
+              (0, 2, 'pyrite_smelter_tile_1', 'pyrite_smelter_spritelayout_chimney'),
+              (1, 0, 'pyrite_smelter_tile_1', 'pyrite_smelter_spritelayout_roaster_2'),
+              (1, 1, 'pyrite_smelter_tile_1', 'pyrite_smelter_spritelayout_empty'),
+              (1, 2, 'pyrite_smelter_tile_1', 'pyrite_smelter_spritelayout_acid_plant_1'),
+              (2, 0, 'pyrite_smelter_tile_1', 'pyrite_smelter_spritelayout_metal_1'),
+              (2, 1, 'pyrite_smelter_tile_1', 'pyrite_smelter_spritelayout_roaster_2'),
+              (2, 2, 'pyrite_smelter_tile_1', 'pyrite_smelter_spritelayout_acid_plant_2'),
+              (3, 0, 'pyrite_smelter_tile_1', 'pyrite_smelter_spritelayout_metal_1'),
+              (3, 1, 'pyrite_smelter_tile_1', 'pyrite_smelter_spritelayout_roaster_1'),
+              (3, 2, 'pyrite_smelter_tile_1', 'pyrite_smelter_spritelayout_office'),
+              (4, 0, 'pyrite_smelter_tile_1', 'pyrite_smelter_spritelayout_metal_2'),
+              (4, 1, 'pyrite_smelter_tile_1', 'pyrite_smelter_spritelayout_greeble'),
+              (4, 2, 'pyrite_smelter_tile_1', 'pyrite_smelter_spritelayout_empty'),
+    ]
+)
