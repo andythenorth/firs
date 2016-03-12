@@ -1,4 +1,4 @@
-<tal:economies repeat="economy doc_helper.get_economies_sorted_by_name()"
+<tal:economies repeat="economy registered_economies"
                define="banned_cargos doc_helper.get_cargoflow_banned_cargos(); supply_cargos doc_helper.get_cargoflow_supply_cargos()">
 digraph ${doc_helper.get_economy_name_char_safe(economy)} {
     fontname="sans-serif"

@@ -1,10 +1,7 @@
 registered_economies = []
 
-# changing the order of items in economy list breaks savegames, don't do it.
-# this could be solved by having the economy mapped to the parameter number it uses
-# would be better to be able to alphabetise these for ease of maintaining
-from economies import firs
-firs.economy.register()
+# specify economies in the order that they should appear in parameter list in-game (and also in docs)
+# economies have a numeric ID which maps parameter values and avoids breaking savegames when this list changes
 
 from economies import basic_temperate
 basic_temperate.economy.register()
@@ -17,3 +14,6 @@ basic_tropic.economy.register()
 
 from economies import mistah_kurtz
 mistah_kurtz.economy.register()
+
+from economies import firs
+firs.economy.register()

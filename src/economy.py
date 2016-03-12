@@ -4,6 +4,7 @@ class Economy(object):
     """ class to hold economies, this comment is pointless eh? """
     def __init__(self, id, **kwargs):
         self.id = id
+        self.numeric_id = kwargs.get('numeric_id')
         self.cargos = kwargs.get('cargos')
 
     def register(self):

@@ -91,9 +91,6 @@ class DocHelper(object):
             result.append(base_lang_strings.get(name_string, 'NO NAME ' + name_string + ' ' + industry.id))
         return set(result)
 
-    def get_economies_sorted_by_name(self):
-        return sorted(registered_economies, key=lambda economy: self.get_economy_name(economy))
-
     def get_registered_cargo_sorted_by_name(self):
         # cargos don't store the name as a python attr, but we often need to iterate over their names in A-Z order
         result = dict((self.get_cargo_name(cargo), cargo) for cargo in registered_cargos)
@@ -143,7 +140,7 @@ class DocHelper(object):
 
     def cargo_is_unused_in_any_economy(self, cargo):
         result = 0
-        for economy in self.get_economies_sorted_by_name():
+        for economy in registered_economies:
             result += len(self.industries_accepting_cargo(cargo, economy))
             result += len(self.industries_producing_cargo(cargo, economy))
         if result == 0:
@@ -203,7 +200,7 @@ def render_docs(doc_list, file_type, use_markdown=False):
         template = docs_templates[doc_name + '.pt'] # .pt is the conventional extension for chameleon page templates
         doc = template(registered_cargos=registered_cargos,
                        registered_industries=registered_industries,
-                       economies=registered_economies,
+                       registered_economies=registered_economies,
                        economy_schemas=economy_schemas,
                        global_constants=global_constants,
                        repo_vars=repo_vars,

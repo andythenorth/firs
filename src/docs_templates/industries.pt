@@ -1,11 +1,11 @@
 <tal:page_with_sidebar_template define="page_with_sidebar_template load: page_with_sidebar_template.pt" metal:use-macro="page_with_sidebar_template">
 <div metal:fill-slot='sidebar_nav'>
     <li class="nav-header">Industries (${len(registered_industries)})</li>
-    <tal:economies repeat="item doc_helper.get_registered_industries_sorted_by_name()">
+    <tal:industries repeat="item doc_helper.get_registered_industries_sorted_by_name()">
         <tal:industry define="name item[0]; industry item[1]">
             <li><a href="#${industry.id}">${' / '.join(doc_helper.get_industry_all_names(industry))}</a></li>
         </tal:industry>
-    </tal:economies>
+    </tal:industries>
 </div>
 
 <div metal:fill-slot='body'>
@@ -25,7 +25,7 @@
                         <img src="static/img/industries/${industry.id}.png" alt="${doc_helper.get_industry_name(industry)}" />
                     </div>
                     <div class="span4">
-                        <tal:industry_cargos repeat="economy economies">
+                        <tal:industry_cargos repeat="economy registered_economies">
                             <table class="table table-bordered table-striped table-condensed" tal:condition="not: doc_helper.industry_is_unused(industry, economy)">
                                 <tbody>
                                     <tr>

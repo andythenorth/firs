@@ -20,7 +20,7 @@
                 <tal:unused condition="doc_helper.cargo_is_unused_in_any_economy(cargo) and cargo.id != 'mail'">
                     <p>This cargo is currently unused in FIRS</p>
                 </tal:unused>
-                <tal:economy repeat="economy economies">
+                <tal:economy repeat="economy registered_economies">
                     <table class="table table-bordered table-striped table-condensed" tal:condition="not: doc_helper.cargo_is_unused(cargo, economy)">
                         <tbody>
                             <tr>

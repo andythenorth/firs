@@ -1,4 +1,4 @@
-<tal:build_economies repeat="economy economies">
+<tal:build_economies repeat="economy registered_economies">
 **Economy: ${economy}**
 *${len(economy_schemas[economy].enabled_cargos)} Cargos*
 ${', '.join([cargo.id for cargo in economy_schemas[economy].enabled_cargos])}
