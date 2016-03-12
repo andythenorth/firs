@@ -17,7 +17,7 @@ disable_item(FEAT_CARGOS, 31, 31);
 
     <tal:economies repeat="economy economies">
         <tal:cargo_props condition="cargo.id in economy.cargos">
-            if (economy==${repeat.economy.index}) {
+            if (economy==${economy.numeric_id}) {
                 <tal:include metal:use-macro="load: cargo_props.pynml" />
             }
         </tal:cargo_props>

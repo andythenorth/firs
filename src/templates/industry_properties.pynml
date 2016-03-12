@@ -1,5 +1,5 @@
 <tal:build_economies repeat="economy economies">
-    if (economy==${repeat.economy.index}) {
+    if (economy==${economy.numeric_id}) {
         <tal:industry_on_or_off condition="industry.get_property('enabled', economy) == True">
             item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
                 property {

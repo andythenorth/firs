@@ -6,8 +6,16 @@ relative_map_size = map_size / (256 * 256);
 // number of industry closures is proportional to map size
 industry_clusters = (relative_map_size / 2) + 1;
 
-
 param_max_coastal_distance = marine_industry_max_coastal_distance;
 if (marine_industry_max_coastal_distance == 0) {
 	param_max_coastal_distance = 255;
 }
+
+// I want to specify the order of the economies in parameter menu without worrying about breaking savegames etc
+// but action 14 can't separate parameter value and position in menu for economies
+// so here we remap selected economy to actual numeric value
+<tal:economy_param repeat="economy economies">
+    if (economy_selection == ${repeat.economy.index}) {
+        economy = ${economy.numeric_id};
+    }
+</tal:economy_param>

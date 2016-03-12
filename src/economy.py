@@ -1,4 +1,5 @@
 from economies import registered_economies
+import utils
 
 class Economy(object):
     """ class to hold economies, this comment is pointless eh? """
@@ -8,4 +9,8 @@ class Economy(object):
         self.cargos = kwargs.get('cargos')
 
     def register(self):
+        # guard, duplicate numeric IDs don't work :P
+        for economy in registered_economies:
+            if self.numeric_id == economy.numeric_id:
+                raise Exception("Economy " + self.id + " has same numeric ID as economy " + economy.id)
         registered_economies.append(self)

@@ -6,7 +6,8 @@ grf {
 	version: REPO_REVISION;
 	min_compatible_version: 4904;
 	param 0 {
-		economy {
+	    <!--! 'economy_selection' is remapped to 'economy' later because we can't control order and value separately here -->
+		economy_selection {
 			name: string(STR_PARAM_NAME_ECONOMIES);
 			desc: string(STR_PARAM_DESC_ECONOMIES);
 			min_value: 0;
