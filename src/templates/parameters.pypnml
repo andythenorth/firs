@@ -19,3 +19,8 @@ if (marine_industry_max_coastal_distance == 0) {
         economy = ${economy.numeric_id};
     }
 </tal:economy_param>
+
+// production bonuses are expressed as absolute % of base production in parameters menu,
+// but we need them as bonus amounts, to be added on top of base production, so net off 100
+primary_level1_bonus = primary_level1_produced_percent - 100;
+primary_level2_bonus = primary_level2_produced_percent - 100;
