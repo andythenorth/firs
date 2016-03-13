@@ -15,6 +15,10 @@ switch(FEAT_INDUSTRIES, SELF, ${industry.id}_produce, STORE_PERM(waiting_cargo_1
 
 produce(${industry.id}_production_256, 0, 0, 0, LOAD_TEMP(9) * production_rate_1 / 100, LOAD_TEMP(9) * production_rate_2 / 100, 0);
 
+/* This switch got janky March 2016, port behaviour diverged from mines and farms w.r.t parameter settings
+ * There are some ugly hacks to allow ports to ignore parameter setting.
+ */
+
 switch(FEAT_INDUSTRIES, SELF, ${industry.id}_produce_256_ticks,
 		[STORE_TEMP(
 			LOAD_PERM(var_num_supplies_delivered) +
