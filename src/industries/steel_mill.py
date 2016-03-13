@@ -10,27 +10,208 @@ from industry import IndustrySecondary, TileLocationChecks, IndustryLocationChec
 industry = IndustrySecondary(id='steel_mill',
                     processed_cargos_and_output_ratios=[('IORE', 3), ('COAL', 2), ('SCMT', 3)],
                     combined_cargos_boost_prod=True,
+                    prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL',
+                    prod_cargo_types=['STEL'],
+                    layouts='AUTO',
                     prob_in_game='3',
                     prob_random='5',
+                    prod_multiplier='[0, 0]',
+                    substitute='0',
+                    new_ind_msg='TTD_STR_NEWS_INDUSTRY_CONSTRUCTION',
+                    map_colour='9',
+                    prod_decrease_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_DECREASE_GENERAL',
+                    min_cargo_distr='5',
+                    spec_flags='bitmask()',
                     location_checks=IndustryLocationChecks(incompatible={'steel_mill': 56,
                                                                          'junk_yard': 16,
                                                                          'coal_mine': 16,
                                                                          'iron_ore_mine': 16,
                                                                          'junk_yard': 16}),
-                    prod_cargo_types=['STEL'],
-                    substitute='8',
-                    map_colour='9',
-                    fund_cost_multiplier='200',
-                    nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_POWERHUNGRY))',
+                    remove_cost_multiplier='0',
                     name='TTD_STR_INDUSTRY_NAME_STEEL_MILL',
-                    override='8',
+                    nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_POWERHUNGRY))',
+                    fund_cost_multiplier='200',
+                    closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
                     extra_text_industry='STR_EXTRA_STEELMILL',
-                    template="refactor_steel_mill.pypnml",
                     intro_year=1850)
+
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True
 industry.economy_variations['BASIC_TEMPERATE'].intro_year = 1800
 
-# industry uses layouts and sprites from default game, no custom layouts etc
+industry.add_tile(id='steel_mill_tile_1',
+                  animation_length=7,
+                  animation_looping=True,
+                  animation_speed=3,
+                  custom_animation_control={'macro':'random_first_frame',
+                                            'animation_triggers': 'bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE)'},
+                  location_checks=TileLocationChecks(require_effectively_flat=True,
+                                                     disallow_industry_adjacent=True))
 
+sprite_ground = industry.add_sprite(
+    sprite_number = 'GROUNDTILE_MUD_TRACKS' # ground tile same as overlay tile
+)
+sprite_ground_overlay = industry.add_spriteset(
+    id = 'steel_mill_sprite_ground_overlay',
+    type='empty',
+)
+spriteset_ground_tile_dark = industry.add_spriteset(
+    id = 'steel_mill_spriteset_ground_tile_dark',
+    sprites = [(500, 10, 64, 122, -31, -90)],
+    zextent = 12
+)
+spriteset_greeble = industry.add_spriteset(
+    id = 'steel_mill_spriteset_greeble',
+    sprites = [(150, 10, 64, 122, -31, -90)],
+    zextent = 12
+)
+spriteset_blast_furnace_2 = industry.add_spriteset(
+    id = 'steel_mill_spriteset_blast_furnace_2',
+    sprites = [(10, 10, 64, 144, -31, -90)],
+    zextent = 12
+)
+spriteset_blast_furnace_1 = industry.add_spriteset(
+    id = 'steel_mill_spriteset_blast_furnace_1',
+    sprites = [(80, 10, 64, 122, -31, -90)],
+    zextent = 12
+)
+spriteset_small_shed = industry.add_spriteset(
+    id = 'steel_mill_spriteset_small_shed',
+    sprites = [(220, 10, 64, 122, -31, -90)],
+    zextent = 130
+)
+spriteset_ladle_transporter = industry.add_spriteset(
+    id = 'steel_mill_spriteset_ladle_transporter',
+    sprites = [(290, 10, 64, 122, -31, -90)],
+    zextent = 12
+)
+spriteset_brick_building = industry.add_spriteset(
+    id = 'steel_mill_spriteset_brick_building',
+    sprites = [(360, 10, 64, 122, -31, -90)],
+    zextent = 12
+)
+spriteset_small_tanks = industry.add_spriteset(
+    id = 'steel_mill_spriteset_small_tanks',
+    sprites = [(430, 10, 64, 122, -31, -90)],
+    zextent = 12
+)
+spriteset_large_shed_rear_part = industry.add_spriteset(
+    id = 'steel_mill_spriteset_large_shed_rear_part',
+    sprites = [(570, 10, 64, 122, -31, -90)],
+    zextent = 12
+)
+spriteset_large_shed_front_part = industry.add_spriteset(
+    id = 'steel_mill_spriteset_large_shed_front_part',
+    sprites = [(10, 160, 64, 122, -31, -90)],
+    zextent = 12
+)
+spriteset_casting_shed = industry.add_spriteset(
+    id = 'steel_mill_spriteset_casting_shed',
+    sprites = [(10, 310, 64, 122, -31, -90)],
+    zextent = 12
+)
+sprite_smoke = industry.add_smoke_sprite(
+    smoke_type = 'white_smoke_big',
+    xoffset= 5,
+    yoffset= 6,
+    zoffset= 68,
+)
+
+industry.add_spritelayout(
+    id = 'steel_mill_spritelayout_empty',
+    ground_sprite = sprite_ground,
+    ground_overlay = sprite_ground_overlay,
+    building_sprites = [],
+    fences = ['nw','ne','se','sw']
+)
+industry.add_spritelayout(
+    id = 'steel_mill_spritelayout_greeble',
+    ground_sprite = sprite_ground,
+    ground_overlay = sprite_ground_overlay,
+    building_sprites = [spriteset_greeble],
+    fences = ['nw','ne','se','sw']
+)
+industry.add_spritelayout(
+    id = 'steel_mill_spritelayout_blast_furnace_1',
+    ground_sprite = sprite_ground,
+    ground_overlay = sprite_ground_overlay,
+    building_sprites = [spriteset_blast_furnace_1],
+    smoke_sprites = [sprite_smoke],
+    fences = ['nw','ne','se','sw']
+)
+industry.add_spritelayout(
+    id = 'steel_mill_spritelayout_blast_furnace_2',
+    ground_sprite = sprite_ground,
+    ground_overlay = sprite_ground_overlay,
+    building_sprites = [spriteset_blast_furnace_2],
+    fences = ['nw','ne','se','sw']
+)
+industry.add_spritelayout(
+    id = 'steel_mill_spritelayout_small_shed',
+    ground_sprite = sprite_ground,
+    ground_overlay = sprite_ground_overlay,
+    building_sprites = [spriteset_small_shed],
+    fences = ['nw','ne','se','sw']
+)
+industry.add_spritelayout(
+    id = 'steel_mill_spritelayout_ladle_transporter',
+    ground_sprite = sprite_ground,
+    ground_overlay = sprite_ground_overlay,
+    building_sprites = [spriteset_ladle_transporter],
+    fences = ['nw','ne','se','sw']
+)
+industry.add_spritelayout(
+    id = 'steel_mill_spritelayout_brick_building',
+    ground_sprite = sprite_ground,
+    ground_overlay = sprite_ground_overlay,
+    building_sprites = [spriteset_brick_building],
+    fences = ['nw','ne','se','sw']
+)
+industry.add_spritelayout(
+    id = 'steel_mill_spritelayout_small_tanks',
+    ground_sprite = sprite_ground,
+    ground_overlay = sprite_ground_overlay,
+    building_sprites = [spriteset_small_tanks],
+    fences = ['nw','ne','se','sw']
+)
+industry.add_spritelayout(
+    id = 'steel_mill_spritelayout_large_shed_rear_part',
+    ground_sprite = sprite_ground,
+    ground_overlay = sprite_ground_overlay,
+    building_sprites = [spriteset_large_shed_rear_part],
+    fences = ['nw','ne','se','sw']
+)
+industry.add_spritelayout(
+    id = 'steel_mill_spritelayout_large_shed_front_part',
+    ground_sprite = sprite_ground,
+    ground_overlay = sprite_ground_overlay,
+    building_sprites = [spriteset_large_shed_front_part],
+    fences = ['nw','ne','se','sw']
+)
+industry.add_spritelayout(
+    id = 'steel_mill_spritelayout_casting_shed',
+    ground_sprite = sprite_ground,
+    ground_overlay = sprite_ground_overlay,
+    building_sprites = [spriteset_casting_shed],
+    fences = ['nw','ne','se','sw']
+)
+industry.add_industry_layout(
+    id = 'steel_mill_industry_layout_1',
+    layout = [(0, 0, 'steel_mill_tile_1', 'steel_mill_spritelayout_small_shed'),
+              (0, 1, 'steel_mill_tile_1', 'steel_mill_spritelayout_empty'),
+              (0, 2, 'steel_mill_tile_1', 'steel_mill_spritelayout_large_shed_rear_part'),
+              (1, 0, 'steel_mill_tile_1', 'steel_mill_spritelayout_small_tanks'),
+              (1, 1, 'steel_mill_tile_1', 'steel_mill_spritelayout_casting_shed'),
+              (1, 2, 'steel_mill_tile_1', 'steel_mill_spritelayout_large_shed_front_part'),
+              (2, 0, 'steel_mill_tile_1', 'steel_mill_spritelayout_blast_furnace_1'),
+              (2, 1, 'steel_mill_tile_1', 'steel_mill_spritelayout_blast_furnace_2'),
+              (2, 2, 'steel_mill_tile_1', 'steel_mill_spritelayout_small_shed'),
+              (3, 0, 'steel_mill_tile_1', 'steel_mill_spritelayout_blast_furnace_1'),
+              (3, 1, 'steel_mill_tile_1', 'steel_mill_spritelayout_blast_furnace_2'),
+              (3, 2, 'steel_mill_tile_1', 'steel_mill_spritelayout_greeble'),
+              (4, 0, 'steel_mill_tile_1', 'steel_mill_spritelayout_small_tanks'),
+              (4, 1, 'steel_mill_tile_1', 'steel_mill_spritelayout_brick_building'),
+              (4, 2, 'steel_mill_tile_1', 'steel_mill_spritelayout_ladle_transporter'),
+    ]
+)
