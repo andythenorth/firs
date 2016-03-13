@@ -32,7 +32,16 @@ grf {
 		primary_level1_requirement {
 			name: string(STR_PARAM_NAME_PRIMARY_LEVEL1_REQUIREMENT);
 			desc: string(STR_PARAM_DESC_PRIMARY_LEVEL_REQUIREMENT);
-			def_value: 100;
+			def_value: ${global_constants.FARM_MINE_SUPPLY_REQUIREMENT};
+			min_value: 1;
+			max_value: 10000;
+		}
+	}
+	param 8 {
+		primary_level2_requirement {
+			name: string(STR_PARAM_NAME_PRIMARY_LEVEL2_REQUIREMENT);
+			desc: string(STR_PARAM_DESC_PRIMARY_LEVEL_REQUIREMENT);
+			def_value: ${8 * global_constants.FARM_MINE_SUPPLY_REQUIREMENT};
 			min_value: 1;
 			max_value: 10000;
 		}
@@ -44,15 +53,6 @@ grf {
 			def_value: 40;
 			min_value: 1;
 			max_value: 1000;
-		}
-	}
-	param 8 {
-		primary_level2_requirement {
-			name: string(STR_PARAM_NAME_PRIMARY_LEVEL2_REQUIREMENT);
-			desc: string(STR_PARAM_DESC_PRIMARY_LEVEL_REQUIREMENT);
-			def_value: 1000;
-			min_value: 1;
-			max_value: 10000;
 		}
 	}
 	param 9 {

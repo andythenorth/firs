@@ -1,10 +1,7 @@
 /* extra text */
 switch(FEAT_INDUSTRIES, SELF, ${industry.id}_extra_text, [
-	STORE_TEMP((100 + LOAD_PERM(var_current_supplies_prod_factor)                    ) |
-	           (100 + primary_level1_bonus                                           ) << 16, 0x100),
-	STORE_TEMP((${industry.supply_requirements[0]} * primary_level1_requirement / 100) |
-	           (100 + primary_level2_bonus                                           ) << 16, 0x101),
-	STORE_TEMP((${industry.supply_requirements[0]} * primary_level2_requirement / 100), 0x102),
+	STORE_TEMP((${industry.supply_requirements[0]} + (primary_level1_requirement * ${industry.supply_requirements[2]})) |
+	(${3 * industry.supply_requirements[0]} + (primary_level2_requirement * ${industry.supply_requirements[2]})) << 16, 0x100),
 	LOAD_PERM(var_current_supplies_prod_factor)
 ]) {
 	primary_level2_bonus: return string(STR_${industry.supply_requirements[1]}_PRODUCTION_4X);

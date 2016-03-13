@@ -187,3 +187,6 @@ graphics_path =  'generated/graphics/'
 
 # OpenTTD's max date
 max_game_date = 5000000
+
+# amount of cargo required to trigger 'enhanced' production at primary industries
+FARM_MINE_SUPPLY_REQUIREMENT = 16

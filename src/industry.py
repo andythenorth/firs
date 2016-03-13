@@ -814,7 +814,7 @@ class IndustryPrimaryExtractive(IndustryPrimary):
         kwargs['life_type'] = 'IND_LIFE_TYPE_EXTRACTIVE'
         kwargs['extra_text_industry'] = True # slight hax, actual text string is determined by templated cb
         super(IndustryPrimaryExtractive, self).__init__(**kwargs)
-        self.supply_requirements = [21, 'PRIMARY'] # janky use of a un-named list for historical reasons (3rd item is string prefix)
+        self.supply_requirements = [0, 'PRIMARY', 1] # janky use of a un-named list for historical reasons (2nd item is string prefix, 3rd is multiplier of requirements parameters)
 
 
 class IndustryPrimaryOrganic(IndustryPrimary):
@@ -827,7 +827,7 @@ class IndustryPrimaryOrganic(IndustryPrimary):
         kwargs['life_type'] = 'IND_LIFE_TYPE_ORGANIC'
         kwargs['extra_text_industry'] = True # slight hax, actual text string is determined by templated cb
         super(IndustryPrimaryOrganic, self).__init__(**kwargs)
-        self.supply_requirements = [14, 'PRIMARY'] # janky use of a un-named list for historical reasons (3rd item is string prefix)
+        self.supply_requirements = [0, 'PRIMARY', 1] # janky use of a un-named list for historical reasons (2nd item is string prefix, 3rd is multiplier of requirements parameters)
 
 
 class IndustryPrimaryPort(IndustryPrimary):
@@ -839,7 +839,7 @@ class IndustryPrimaryPort(IndustryPrimary):
         kwargs['life_type'] = 'IND_LIFE_TYPE_BLACK_HOLE'
         kwargs['extra_text_industry'] = True # slight hax, actual text string is determined by templated cb
         super(IndustryPrimaryPort, self).__init__(**kwargs)
-        self.supply_requirements = [160, 'PORT'] # janky use of a un-named list for historical reasons (3rd item is string prefix)
+        self.supply_requirements = [160, 'PORT', 0] # janky use of a un-named list for historical reasons (2nd item is string prefix, 3rd is multiplier of requirements parameters)
 
 
 class IndustryPrimaryTownProducer(Industry):
