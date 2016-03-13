@@ -7,7 +7,6 @@ STR_GRF_NAME                                                                    
 STR_GRF_URL                                                                     :http://bundles.openttdcoop.org/firs/releases/LATEST/docs/
 
 STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :Màxima distància en caselles des de caladors de pesca, plataformes petrolíferes i zones de dragatge fins la costa.
-STR_PARAM_DESC_STAT_RATING                                                      :El rati de les estacions influencia la quantitat de càrrega que rep per part d'una indústria, a ratis més elevats més carregament rep.
 STR_PARAM_DESC_DEBUG                                                            :Només per a desenvolupadors
 STR_PARAM_DESC_ECONOMIES                                                        :Cada model d'economia ofereix una combinació diferent de càrregues i indústries.{}{}Per als jugadors que cerquin un estil de joc senzill, les economies "bàsiques" contenen menys tipus d'indústries i de càrregues.
 STR_PARAM_DESC_NO_OPENINGS                                                      :Per defecte, durant el joc s'aniran obrint noves indústries.{}{}Si activeu l'impediment d'aparició d'indústries, no se n'obriran durant el joc, i els jugadors no podran financiar-ne ni prospeccionar-ne de noves.
@@ -18,11 +17,6 @@ STR_PARAM_NAME_ECONOMIES                                                        
 STR_PARAM_NAME_NO_OPENINGS                                                      :Impedeix l'aparició d'indústries durant el joc
 STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            :Permet el tancament d'indústries secundàries
 STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0                                         :Sense límit
-STR_PARAM_NAME_STAT_RATING                                                      :Algorisme de ratis d'estació
-STR_PARAM_VALUE_STAT_RATING_DEFAULT                                             :Dur (ratis estàndards de l'OpenTTD)
-STR_PARAM_VALUE_STAT_RATING_REDUCED_TIME                                        :Favorable (permet més temps entre càrregues)
-STR_PARAM_VALUE_STAT_RATING_100                                                 :Increïblement generós (el rati és sempre del 100%)
-
 
 STR_PARAM_VALUE_ECONOMIES_BASIC_TEMPERATE                                       :Economia Bàsica Temperada
 STR_PARAM_VALUE_ECONOMIES_BASIC_ARCTIC                                          :Economia Bàsica Àrtica

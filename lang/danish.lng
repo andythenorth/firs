@@ -6,7 +6,6 @@ STR_GRF_NAME                                                                    
 STR_GRF_URL                                                                     :http://bundles.openttdcoop.org/firs/releases/LATEST/docs/
 
 STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :Maksimal afstand mellem fiskeområder, boreplatforme og uddybningssteder og kysten i felter.
-STR_PARAM_DESC_STAT_RATING                                                      :Stationsbedømmelse påvirker mængden af last der leveres fra en industri til stationen; jo højere bedømmelse, jo mere leveres til stationen.
 STR_PARAM_DESC_DEBUG                                                            :Kun for udviklere
 STR_PARAM_DESC_ECONOMIES                                                        :Hver økonomi har sin egen kombination af godstyper og industrier.{}{}"Basis" økonomien indeholder færre industrier og godstyper end andre FIRS økonomier, og er velegnet for nye spillere, eller spillere der ønsker et mere simpelt gameplay.
 STR_PARAM_DESC_NO_OPENINGS                                                      :Som standard vil nye FIRS-industrier åbne i løbet af spillet.{}{}hvis 'Forhindre industrier i at åbne under spillet' er slået til, vil industrier ikke åbne i løbet af spillet, og spillere vil heller ikke kunne bygge nye industrier.
@@ -17,11 +16,6 @@ STR_PARAM_NAME_ECONOMIES                                                        
 STR_PARAM_NAME_NO_OPENINGS                                                      :Forhindre industrier i at åbne under spillet
 STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            :Tillad sekundære industrier at lukke
 STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0                                         :Ingen begrænsning
-STR_PARAM_NAME_STAT_RATING                                                      :Algoritme for stationsbedømmelse
-STR_PARAM_VALUE_STAT_RATING_DEFAULT                                             :Hård og ond (Benytter OpenTTD's standardværdi for stationsbedømmelse)
-STR_PARAM_VALUE_STAT_RATING_REDUCED_TIME                                        :Positiv (tillader længere tid mellem afhentning)
-STR_PARAM_VALUE_STAT_RATING_100                                                 :sindssygt generøs (bedømmelse er altid 100%)
-
 
 STR_PARAM_VALUE_ECONOMIES_BASIC_TEMPERATE                                       :Tempereret basis
 STR_PARAM_VALUE_ECONOMIES_BASIC_ARCTIC                                          :Subarktisk basis

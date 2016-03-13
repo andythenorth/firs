@@ -6,7 +6,6 @@ STR_GRF_NAME                                                                    
 STR_GRF_URL                                                                     :http://bundles.openttdcoop.org/firs/releases/LATEST/docs/
 
 STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :A halászterületek, olajfúró tornyok és mederkotrások maximális távolsága a parttól.
-STR_PARAM_DESC_STAT_RATING                                                      :Az állomásokról alkotott vélemény befolyásolja, hogy mennyi rakományt kap az állomás a gazdasági épülettől; magasabb érték esetén az állomás több rakományt kap.
 STR_PARAM_DESC_DEBUG                                                            :Csak fejlesztőknek
 STR_PARAM_DESC_ECONOMIES                                                        :Az egyes gazdaságokban különféle rakományok és gazdasági épületek érhetőek el.{}{}Az egyszerűbb játékmenet érdekében az 'alap' gazdaságok kevesebb rakományt és gazdasági épületet tartalmaznak, mint a FIRS gazdaság.
 STR_PARAM_DESC_NO_OPENINGS                                                      :Hatására nem fognak új gazdasági épületek épülni a játék folyamán.{}A játékosok sem fognak tudni új gazdasági épületeket építtetni.{}A gazdasági épületeket a térképgenerátor fogja elhelyezni a játék elején, a beállításoktól függően.
@@ -17,11 +16,6 @@ STR_PARAM_NAME_ECONOMIES                                                        
 STR_PARAM_NAME_NO_OPENINGS                                                      :Új gazdasági épületek nyitásának meggátlása
 STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            :Másodlagos gazdasági épületek bezárásának engedélyezése
 STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0                                         :Nincs határ
-STR_PARAM_NAME_STAT_RATING                                                      :Algoritmus az állomásokról alkotott vélemény meghatározására
-STR_PARAM_VALUE_STAT_RATING_DEFAULT                                             :Szigorú (az OpenTTD alapértelmezett algoritmusa)
-STR_PARAM_VALUE_STAT_RATING_REDUCED_TIME                                        :Kedvező (nagyobb időközöket enged meg a szállítások között)
-STR_PARAM_VALUE_STAT_RATING_100                                                 :Hihetetlenül nagyvonalú (a vélemény mindig 100%)
-
 
 STR_PARAM_VALUE_ECONOMIES_BASIC_TEMPERATE                                       :Alap mérsékelt égövi
 STR_PARAM_VALUE_ECONOMIES_BASIC_ARCTIC                                          :Alap szubarktikus

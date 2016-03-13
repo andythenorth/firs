@@ -8,7 +8,6 @@ STR_GRF_NAME                                                                    
 STR_GRF_URL                                                                     :http://bundles.openttdcoop.org/firs/releases/LATEST/docs/
 
 STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :Максимальная удалённость местоположения рыболовных промыслов, нефтянных вышек и участков углубления дна от побережья в клетках.
-STR_PARAM_DESC_STAT_RATING                                                      :Рейтинг на станции влияет на количество поставляемого предприятиями на станцию груза. Чем выше рейтинг, тем больше груза будет поставлено.
 STR_PARAM_DESC_DEBUG                                                            :Только для разработчиков
 STR_PARAM_DESC_ECONOMIES                                                        :Грузы и предприятия различны в каждой экономике.{}{}Тарифы на оплату перевозки в каждой экономике также отличаются. Для игроков желающих играть в упрощенный вариант, 'Простая' экономика содержит меньше грузов и предприятий чем другие FIRS экономики.
 STR_PARAM_DESC_NO_OPENINGS                                                      :Без создания новых предприятий во время игры.{}Игроки не смогут профинансировать или разведать предприятия.{}Предприятия будут созданы в начале игры при создании мира (в зависимости от использованных настроек).
@@ -19,11 +18,6 @@ STR_PARAM_NAME_ECONOMIES                                                        
 STR_PARAM_NAME_NO_OPENINGS                                                      :Запретить создание предприятий во время игры
 STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            :Разрешить закрытие обрабатывающих предприятий
 STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0                                         :без ограничений
-STR_PARAM_NAME_STAT_RATING                                                      :Алгоритм рейтинга на станции
-STR_PARAM_VALUE_STAT_RATING_DEFAULT                                             :стандартный
-STR_PARAM_VALUE_STAT_RATING_REDUCED_TIME                                        :снижен эффект "времени с момента последней погрузки"
-STR_PARAM_VALUE_STAT_RATING_100                                                 :всегда 100%
-
 
 STR_PARAM_VALUE_ECONOMIES_BASIC_TEMPERATE                                       :Умеренная Простая
 STR_PARAM_VALUE_ECONOMIES_BASIC_ARCTIC                                          :Арктическая Простая

@@ -6,7 +6,6 @@ STR_GRF_NAME                                                                    
 STR_GRF_URL                                                                     :http://bundles.openttdcoop.org/firs/releases/LATEST/docs/
 
 STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :Maximum distance of fishing grounds, oil rigs and dredging sites from the coast in tiles.
-STR_PARAM_DESC_STAT_RATING                                                      :Station ratings influence the amount of cargo delivered by an industry to the station; the higher the rating, the more is delivered.
 STR_PARAM_DESC_DEBUG                                                            :For developers only
 STR_PARAM_DESC_ECONOMIES                                                        :Each economy provides a different combination of cargos and industries.{}{}For players who want simple gameplay, 'Basic' economies contain fewer industries and cargos than other FIRS economies.{}{}The FIRS website provides detailed information about each economy.
 STR_PARAM_DESC_NO_OPENINGS                                                      :By default, new industries will open during the game.{}{}If 'prevent opening' is turned on industries will not open during game, and players will not be able to fund or prospect for industries.
@@ -17,10 +16,6 @@ STR_PARAM_NAME_ECONOMIES                                                        
 STR_PARAM_NAME_NO_OPENINGS                                                      :Prevent industries opening during gameplay
 STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            :Allow secondary industries to close
 STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0                                         :No limit
-STR_PARAM_NAME_STAT_RATING                                                      :Station rating algorithm
-STR_PARAM_VALUE_STAT_RATING_DEFAULT                                             :Grim and mean (uses standard OpenTTD rating)
-STR_PARAM_VALUE_STAT_RATING_REDUCED_TIME                                        :Favourable (allows longer time between cargo pickups)
-STR_PARAM_VALUE_STAT_RATING_100                                                 :Insanely generous (rating is always 100%)
 
 STR_PARAM_NAME_PRIMARY_LEVEL1_REQUIREMENT                                       :Adjust cargo requirement for production at 'enhanced level' (%)
 STR_PARAM_NAME_PRIMARY_LEVEL2_REQUIREMENT                                       :Adjust cargo requirement for production at 'gung ho' (%)

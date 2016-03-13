@@ -6,7 +6,6 @@ STR_GRF_NAME                                                                    
 STR_GRF_URL                                                                     :http://bundles.openttdcoop.org/firs/releases/LATEST/docs/
 
 STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :Éloignement côtier maximal des zones de pêche, plates-formes pétrolières et sites de dragage.
-STR_PARAM_DESC_STAT_RATING                                                      :La cote (qualité de service) d'une station influe sur la quantité de marchandises livrées par une industrie{NBSP}: plus la cote est élevée, plus des marchandises y seront livrées.
 STR_PARAM_DESC_DEBUG                                                            :Pour les développeurs seulement.
 STR_PARAM_DESC_ECONOMIES                                                        :Chaque économie présente des industries et des cargaisons différentes.{}{}Pour les joueurs intéressés par un jeu plus simple, les économies "Basiques" contiennent moins d'industries et de cargaisons que les économies "FIRS".
 STR_PARAM_DESC_NO_OPENINGS                                                      :Par défaut, de nouvelles industries ouvriront pendant la partie.{}{}Si ce paramètre est activé, de nouvelles industries n'ouvriront pas pendant la partie, et les joueurs ne pourront ni construire ni prospecter d'industries.
@@ -17,10 +16,6 @@ STR_PARAM_NAME_ECONOMIES                                                        
 STR_PARAM_NAME_NO_OPENINGS                                                      :Empêcher l'ouverture d'industries durant la partie
 STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            :Permettre aux industries secondaire de fermer
 STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0                                         :Pas de limite
-STR_PARAM_NAME_STAT_RATING                                                      :Algorithme de cotation des stations
-STR_PARAM_VALUE_STAT_RATING_DEFAULT                                             :Vil et mesquin (le standard OpenTTD)
-STR_PARAM_VALUE_STAT_RATING_REDUCED_TIME                                        :Complaisant (permet des intervalles plus grands entre chaque collecte de marchandises
-STR_PARAM_VALUE_STAT_RATING_100                                                 :Éperdument généreux (toujours 100{NBSP}%)
 
 STR_PARAM_NAME_PRIMARY_LEVEL1_REQUIREMENT                                       :Marchandises nécessaires pour atteindre la production 'améliorée' (%)
 STR_PARAM_NAME_PRIMARY_LEVEL2_REQUIREMENT                                       :Marchandises nécessaires pour atteindre la production 'à fond les manettes{NBSP}!' (%)

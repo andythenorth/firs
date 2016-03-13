@@ -6,7 +6,6 @@ STR_GRF_NAME                                                                    
 STR_GRF_URL                                                                     :http://dev.openttdcoop.org/projects/firs
 
 STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :漁場、鑽井平台、疏浚區距離海岸的最大距離。
-STR_PARAM_DESC_STAT_RATING                                                      :車站評價影響工業對該站點的貨物交付。評價越高，交付越多。
 STR_PARAM_DESC_DEBUG                                                            :僅適用於開發者
 STR_PARAM_DESC_ECONOMIES                                                        :每種經濟模式對應不同的貨物和工業組合。{}{}休閑玩家可以選擇簡單模式，'基礎'經濟模式的貨物和工業種類比'FIRS'經濟模式的種類要少。
 STR_PARAM_DESC_NO_OPENINGS                                                      :遊戲進行時，會修建新的工業。{}{}如果選擇了"禁止新建"，則不會修建新工業，並且玩家不能建立或者勘探工業。
@@ -17,11 +16,6 @@ STR_PARAM_NAME_ECONOMIES                                                        
 STR_PARAM_NAME_NO_OPENINGS                                                      :遊戲進行時禁止新建工業
 STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            :允許次要工業關閉
 STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0                                         :無限制
-STR_PARAM_NAME_STAT_RATING                                                      :車站評價算法
-STR_PARAM_VALUE_STAT_RATING_DEFAULT                                             :嚴酷刻薄 (使用標准openttd評價算法)
-STR_PARAM_VALUE_STAT_RATING_REDUCED_TIME                                        :寬容厚道 (允許兩次裝貨間隔時間較長)
-STR_PARAM_VALUE_STAT_RATING_100                                                 :義薄雲天 (車站評價總是100%)
-
 
 STR_PARAM_VALUE_ECONOMIES_BASIC_TEMPERATE                                       :溫帶基礎經濟模式
 STR_PARAM_VALUE_ECONOMIES_BASIC_ARCTIC                                          :寒帶基礎經濟模式

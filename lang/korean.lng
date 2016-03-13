@@ -7,7 +7,6 @@ STR_GRF_NAME                                                                    
 STR_GRF_URL                                                                     :http://bundles.openttdcoop.org/firs/releases/LATEST/docs/
 
 STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :어장, 유전, 준설 부지의 최대 해안 거리 (단위: 칸)
-STR_PARAM_DESC_STAT_RATING                                                      :역 등급은 산업시설이 역에 쌓이는 화물의 양에 영향을 미칩니다. 등급이 높을 수록 더 많은 양이 쌓입니다.
 STR_PARAM_DESC_DEBUG                                                            :개발자 전용
 STR_PARAM_DESC_ECONOMIES                                                        :각 경제는 다양한 조합의 화물과 산업시설을 제공합니다.{}{}간단한 게임 플레이를 원하는 플레이어의 경우, 다른 FIRS 경제에 비해 '기본' 경제가 산업 시설과 화물의 종류가 적으므로 이를 사용하십시오.
 STR_PARAM_DESC_NO_OPENINGS                                                      :기본적으로, 게임 중에 새로운 산업 시설이 건설될 것입니다.{}{}만약 '건설 금지' 옵션을 켠다면 게임 중에 산업 시설이 건설되지 않을 것이고, 플레이어는 산업시설에 투자하거나 산업 시설을 탐사할 수 없게 됩니다.
@@ -18,11 +17,6 @@ STR_PARAM_NAME_ECONOMIES                                                        
 STR_PARAM_NAME_NO_OPENINGS                                                      :게임 플레이 중 산업 시설의 건설을 금지
 STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            :두 번재 산업시설을 가까이에 지을 수 있도록 허용
 STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0                                         :제한 없음
-STR_PARAM_NAME_STAT_RATING                                                      :역 등급 계산 알고리즘
-STR_PARAM_VALUE_STAT_RATING_DEFAULT                                             :기본 (OpenTTD 표준 등급 계산법 사용)
-STR_PARAM_VALUE_STAT_RATING_REDUCED_TIME                                        :좋음 (화물 적재 간격을 더 길게 허용)
-STR_PARAM_VALUE_STAT_RATING_100                                                 :미칠듯이 관대함 (역 등급이 언제나 100%)
-
 
 STR_PARAM_VALUE_ECONOMIES_BASIC_TEMPERATE                                       :온대 기후 기본
 STR_PARAM_VALUE_ECONOMIES_BASIC_ARCTIC                                          :냉대 기후 기본

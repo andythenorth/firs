@@ -7,7 +7,6 @@ STR_GRF_NAME                                                                    
 STR_GRF_URL                                                                     :http://bundles.openttdcoop.org/firs/releases/LATEST/docs/
 
 STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :Maximaler Abstand von Fischgründen und Baggerseen von der Küste in Feldern
-STR_PARAM_DESC_STAT_RATING                                                      :Die Bahnhofsbewertung beeinflusst die Anzahl zum Bahnhof gelieferter Güter; je höher die Bewertung ist, desto mehr Güter werden zum Bahnhof geliefert.
 STR_PARAM_DESC_DEBUG                                                            :Nur für Entwickler
 STR_PARAM_DESC_ECONOMIES                                                        :Jeder Wirtschaftstyp stellt verschiedene Industrien und Frachtarten bereit.{}{}Der Wirtschaftstyp 'Einfach' bietet weniger Industrien und Frachtarten als die anderen Wirtschaftstypen.
 STR_PARAM_DESC_NO_OPENINGS                                                      :Standardmäßig werden neue Industrien im Laufe der Zeit gegründet.{}{}Wenn 'Neue Industrien öffnen' ausgeschaltet ist, werden keine neuen Industrien auftauchen und Spieler können auch keine finanzieren oder prospektieren.
@@ -18,11 +17,6 @@ STR_PARAM_NAME_ECONOMIES                                                        
 STR_PARAM_NAME_NO_OPENINGS                                                      :Bau von Industrien verbieten (nicht vollständig)
 STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            :Sekundärindustrien dürfen schließen
 STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0                                         :Kein Limit
-STR_PARAM_NAME_STAT_RATING                                                      :Algorithmus für Stationsbewertung
-STR_PARAM_VALUE_STAT_RATING_DEFAULT                                             :pingelig (Standard OpenTTD)
-STR_PARAM_VALUE_STAT_RATING_REDUCED_TIME                                        :großzügig (erlaubt große zeitliche Abstände zwischen Frachtaufnahmen)
-STR_PARAM_VALUE_STAT_RATING_100                                                 :wahnsinnig großzügig (immer 100%)
-
 
 STR_PARAM_VALUE_ECONOMIES_BASIC_TEMPERATE                                       :einfach, für gemäßigtes Klima
 STR_PARAM_VALUE_ECONOMIES_BASIC_ARCTIC                                          :einfach, für arktisches Klima

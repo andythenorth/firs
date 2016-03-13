@@ -24,7 +24,6 @@ item(FEAT_CARGOS, ${cargo.id}_${economy.id}, ${cargo.get_numeric_id(economy)}) {
         number: ${cargo.get_numeric_id(economy)};
     }
     graphics {
-        station_rating: switch_station_rating;
         cargoicon_${cargo.id};
     }
 }

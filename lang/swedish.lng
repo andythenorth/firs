@@ -6,7 +6,6 @@ STR_GRF_NAME                                                                    
 STR_GRF_URL                                                                     :http://bundles.openttdcoop.org/firs/releases/LATEST/docs/
 
 STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :Maximalt avstånd mellan fångstområden, oljeriggar och mudderverk, och kusten, i antal rutor.
-STR_PARAM_DESC_STAT_RATING                                                      :Stationsvärderingarna påverkar hur mycket last som levereras av en industri till stationen; ju högre värdering, desto mer levereras.
 STR_PARAM_DESC_DEBUG                                                            :Endast för utvecklare
 STR_PARAM_DESC_ECONOMIES                                                        :Varje ekonomi har egen kombination av godstyper och industrier.{}{}För spelare som vill ha en mer okomplicerad spelupplevelse innehåller bas-ekonomierna färre industrier och godstyper än andra FIRS-ekonomier.
 STR_PARAM_DESC_NO_OPENINGS                                                      :FIRS är förinställt att låta nya industrier öppna under spelets gång.{}{}Om 'förhindra öppning' slås på kommer inga industrier öppnas och spelare kommer inte ha möjlighet att bygga eller prospektera för nya industrier.
@@ -17,11 +16,6 @@ STR_PARAM_NAME_ECONOMIES                                                        
 STR_PARAM_NAME_NO_OPENINGS                                                      :Förhindra att industrier öppnar under spelets gång
 STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            :Tillåt sekundära industrier att stänga
 STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0                                         :Ingen begränsning
-STR_PARAM_NAME_STAT_RATING                                                      :Algoritm för stationsvärdering
-STR_PARAM_VALUE_STAT_RATING_DEFAULT                                             :Strikt och hård (använder OpenTTD:s standardvärdering)
-STR_PARAM_VALUE_STAT_RATING_REDUCED_TIME                                        :Välvillig (accepterar längre väntetid mellan hämtningar av last)
-STR_PARAM_VALUE_STAT_RATING_100                                                 :Galet generös (värderingen är alltid 100%)
-
 
 STR_PARAM_VALUE_ECONOMIES_BASIC_TEMPERATE                                       :Tempererad bas-ekonomi
 STR_PARAM_VALUE_ECONOMIES_BASIC_ARCTIC                                          :Arktisk bas-ekonomi

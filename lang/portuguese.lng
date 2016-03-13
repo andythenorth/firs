@@ -6,7 +6,6 @@ STR_GRF_NAME                                                                    
 STR_GRF_URL                                                                     :http://bundles.openttdcoop.org/firs/releases/LATEST/docs/
 
 STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :A distância máxima da costa de zonas de pesca, plataformas de petróleo e campos de dragagem em blocos.
-STR_PARAM_DESC_STAT_RATING                                                      :Classificação da estação influencia a quantidade de cargas entregues por uma indústria para a estação; quanto mais alta é a classificação, mais cargas serão entregues.
 STR_PARAM_DESC_DEBUG                                                            :Somente para desenvolvedores
 STR_PARAM_DESC_ECONOMIES                                                        :Cada economia fornece uma combinação diferente de cargas e indústrias.{}{}Para os jogadores que querem uma jogabilidade simples, economias 'Básica' contém menos indústrias e cargas do que outras economias da FIRS.
 STR_PARAM_DESC_NO_OPENINGS                                                      :Por padrão, novas indústrias abrirão durante o jogo.{}{}Se 'impedir abertura' estiver habilitado, indústrias não abrirão durante o jogo e os jogadores não serão capazes de fundar ou prospectar indústrias.
@@ -17,11 +16,6 @@ STR_PARAM_NAME_ECONOMIES                                                        
 STR_PARAM_NAME_NO_OPENINGS                                                      :Impedir abertura de indústrias durante o jogo
 STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            :Permitir fechamento de indústrias secundárias
 STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0                                         :Sem limite
-STR_PARAM_NAME_STAT_RATING                                                      :Algoritmo de classificação da estação
-STR_PARAM_VALUE_STAT_RATING_DEFAULT                                             :Cruel (usa a classificação padrão do OpenTTD)
-STR_PARAM_VALUE_STAT_RATING_REDUCED_TIME                                        :Favorável (permite mais tempo entre carregamento de carga)
-STR_PARAM_VALUE_STAT_RATING_100                                                 :Generosidade Insana (classificação é sempre 100%)
-
 
 STR_PARAM_VALUE_ECONOMIES_BASIC_TEMPERATE                                       :Economia Básica Clima Temperado
 STR_PARAM_VALUE_ECONOMIES_BASIC_ARCTIC                                          :Economia Básica Clima Ártico

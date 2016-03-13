@@ -8,7 +8,6 @@ STR_GRF_NAME                                                                    
 STR_GRF_URL                                                                     :http://bundles.openttdcoop.org/firs/releases/LATEST/docs/
 
 STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :Maksimal avstand for fiskebanker, oleplatformer og mudderbanker fra kysten (i brikker).
-STR_PARAM_DESC_STAT_RATING                                                      :Vurderingen av stasjonen påvirker hvor mye last industrien leverer; jo bedre vurdering, jo mer leveres.
 STR_PARAM_DESC_DEBUG                                                            :Bare for utviklere
 STR_PARAM_DESC_ECONOMIES                                                        :De ulike økonomiene gir forskjellige kombinasjoner av varer og industrier.{}{}For spillere som vil ha et enklere spill, har basisøkonomiene færre industrier og varer enn andre økonomier.
 STR_PARAM_DESC_NO_OPENINGS                                                      :Ved standardinnstillinger, vil nye industrier åpne i spillet.{}{}Om 'Forhindre at industrier åpner' er slått på, vil ikke nye industrier åpne under spillets gang, og spillerene kan ikke sponse eller prospektere nye industrier.
@@ -19,11 +18,6 @@ STR_PARAM_NAME_ECONOMIES                                                        
 STR_PARAM_NAME_NO_OPENINGS                                                      :Forhindre at industrier åpner under spillet
 STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            :Tillat sekundære industrier å stenge
 STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0                                         :Ingen begrensning
-STR_PARAM_NAME_STAT_RATING                                                      :Algoritme for å vurdere stasjoner
-STR_PARAM_VALUE_STAT_RATING_DEFAULT                                             :Fæl (bruker standard openTTD rangering)
-STR_PARAM_VALUE_STAT_RATING_REDUCED_TIME                                        :Fordelaktig (tillater lengre tid mellom henting av varer)
-STR_PARAM_VALUE_STAT_RATING_100                                                 :Sykt generøst (alltid 100% rating)
-
 
 STR_PARAM_VALUE_ECONOMIES_BASIC_TEMPERATE                                       :Temperert basis
 STR_PARAM_VALUE_ECONOMIES_BASIC_ARCTIC                                          :Arktisk basis
