@@ -49,6 +49,15 @@ industry.add_tile(id='steel_mill_tile_1',
                   location_checks=TileLocationChecks(require_effectively_flat=True,
                                                      disallow_industry_adjacent=True))
 
+industry.add_tile(id='steel_mill_tile_2',
+                  animation_length=40,
+                  animation_looping=True,
+                  animation_speed=4,
+                  custom_animation_control={'macro':'random_first_frame',
+                                            'animation_triggers': 'bitmask(ANIM_TRIGGER_INDTILE_CONSTRUCTION_STATE)'},
+                  location_checks=TileLocationChecks(require_effectively_flat=True,
+                                                     disallow_industry_adjacent=True))
+
 sprite_ground = industry.add_sprite(
     sprite_number = 'GROUNDTILE_MUD_TRACKS' # ground tile same as overlay tile
 )
@@ -59,7 +68,6 @@ sprite_ground_overlay = industry.add_spriteset(
 spriteset_ground_tile_dark = industry.add_spriteset(
     id = 'steel_mill_spriteset_ground_tile_dark',
     sprites = [(500, 10, 64, 122, -31, -90)],
-    zextent = 12
 )
 spriteset_greeble = industry.add_spriteset(
     id = 'steel_mill_spriteset_greeble',
@@ -101,10 +109,20 @@ spriteset_large_shed_rear_part = industry.add_spriteset(
     sprites = [(570, 10, 64, 122, -31, -90)],
     zextent = 12
 )
-spriteset_large_shed_front_part = industry.add_spriteset(
-    id = 'steel_mill_spriteset_large_shed_front_part',
-    sprites = [(10, 160, 64, 122, -31, -90)],
-    zextent = 12
+spriteset_large_shed_front_part_animated = industry.add_spriteset(
+    id = 'steel_mill_spriteset_large_shed_front_part_animated',
+    sprites = [(10, 160, 64, 122, -31, -90), (80, 160, 64, 122, -31, -90), (150, 160, 64, 122, -31, -90),
+               (220, 160, 64, 122, -31, -90), (290, 160, 64, 122, -31, -90), (360, 160, 64, 122, -31, -90),
+               (430, 160, 64, 122, -31, -90), (500, 160, 64, 122, -31, -90), (570, 160, 64, 122, -31, -90),
+               (640, 160, 64, 122, -31, -90)],
+    zextent = 32,
+    animation_rate = 1,
+    custom_sprite_selector = '(animation_frame < 10) ? (animation_frame % 10) : 0',
+)
+spriteset_ground_tile_dark_animated = industry.add_spriteset(
+    id = 'steel_mill_spriteset_ground_tile_dark_animated',
+    sprites = [(500, 10, 64, 122, -31, -90)],
+    num_sprites_to_autofill = len(spriteset_large_shed_front_part_animated.sprites), # autofills number of frames to match another spriteset which is animated etc (can get frame count from the other spriteset if defined already)
 )
 spriteset_casting_shed = industry.add_spriteset(
     id = 'steel_mill_spriteset_casting_shed',
@@ -184,9 +202,9 @@ industry.add_spritelayout(
 )
 industry.add_spritelayout(
     id = 'steel_mill_spritelayout_large_shed_front_part',
-    ground_sprite = sprite_ground,
-    ground_overlay = sprite_ground_overlay,
-    building_sprites = [spriteset_large_shed_front_part],
+    ground_sprite = spriteset_ground_tile_dark_animated,
+    ground_overlay = spriteset_ground_tile_dark_animated,
+    building_sprites = [spriteset_large_shed_front_part_animated],
     fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
@@ -203,7 +221,7 @@ industry.add_industry_layout(
               (0, 2, 'steel_mill_tile_1', 'steel_mill_spritelayout_large_shed_rear_part'),
               (1, 0, 'steel_mill_tile_1', 'steel_mill_spritelayout_small_tanks'),
               (1, 1, 'steel_mill_tile_1', 'steel_mill_spritelayout_casting_shed'),
-              (1, 2, 'steel_mill_tile_1', 'steel_mill_spritelayout_large_shed_front_part'),
+              (1, 2, 'steel_mill_tile_2', 'steel_mill_spritelayout_large_shed_front_part'),
               (2, 0, 'steel_mill_tile_1', 'steel_mill_spritelayout_blast_furnace_1'),
               (2, 1, 'steel_mill_tile_1', 'steel_mill_spritelayout_blast_furnace_2'),
               (2, 2, 'steel_mill_tile_1', 'steel_mill_spritelayout_small_shed'),
