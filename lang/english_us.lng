@@ -7,7 +7,7 @@
 
 STR_CARGO_NAME_FIBRES                                                           :Plant Fibers
 STR_CARGO_NAME_LUMBER                                                           :Lumber
-STR_CARGO_NAME_PETROL                                                           :Gasoline
+STR_CARGO_NAME_PETROL                                                           :Petroleum Fuels
 
 STR_CARGO_UNIT_COFFEE                                                           :{SIGNED_WORD} sack{P 0 "" s} of coffee
 STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} crate{P 0 "" s} of engineering supplies
@@ -15,24 +15,31 @@ STR_CARGO_UNIT_FIBRES                                                           
 STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} crate{P 0 "" s} of farm supplies
 STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} of lumber
 STR_CARGO_UNIT_MNSP                                                             :{SIGNED_WORD} crate{P 0 "" s} of manufacturing supplies
-STR_CARGO_UNIT_PETROL                                                           :{VOLUME} of gasoline
+STR_CARGO_UNIT_PETROL                                                           :{VOLUME} of petroleum fuels
 STR_CARGO_UNIT_VEHICLE_PARTS                                                    :{SIGNED_WORD} crate{P 0 "" s} of vehicle parts
 STR_CARGO_UNIT_WOOL                                                             :{SIGNED_WORD} bale{P 0 "" s} of wool
 
+STR_CID_CASSAVA                                                                 :{TINYFONT}CA
+STR_CID_VEHICLES                                                                :{TINYFONT}VH
+
+STR_ERR_CLIMATE_TOYLAND                                                         :{ORANGE}FIRS is not designed to be used with Toyland climate
 
 
-
-STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Cargo production:{} 3 crates per 8 crates manufacturing supplies delivered{} 5 crates per 8t lumber delivered{}{}Production steps up if both cargos are delivered within a month of each other.
-STR_EXTRA_LUMBER_YARD                                                           :{BLACK}Produces items such as poles and fence posts.{}{}Cargo production:{} 2t per 8,000l chemicals delivered{} 6t per 8t lumber delivered{}{}Production steps up if both cargos are delivered within a month of each other.
-STR_EXTRA_MACHINE_SHOP                                                          :{BLACK}Builds and services machinery.{}{}Cargo production:{}  8 crates per 8,000l gasoline delivered{}  8 crates per 8t metal delivered
-STR_EXTRA_MEAT_PACKER                                                           :{BLACK}Cargo production:{} 3t per 8 crates manufacturing supplies delivered{} 5t per 8 head of livestock delivered{}{}Production steps up if both cargos are delivered within a month of each other.
-STR_EXTRA_OIL_REFINERY                                                          :{BLACK}Processes crude oil into gasoline and chemicals.{}{}Cargo production:{}  6,000l per 8,000l delivered
+STR_EXTRA_FOOD_PROCESSING_PLANT                                                 :{BLACK}Cargo production:{}  {STRING}  6t per 8t fruit delivered
+STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Cargo production:{}  3 crates per 8 crates manufacturing supplies delivered{}  5 crates per 8t lumber delivered{}{}Production steps up if both cargos are delivered within three months of each other.
+STR_EXTRA_LUMBER_YARD                                                           :{BLACK}Produces items such as poles and fence posts.{}{}Cargo production:{}  2t per 8,000l chemicals delivered{}  6t per 8t lumber delivered{}{}Production steps up if both cargos are delivered within three months of each other.
+STR_EXTRA_MACHINE_SHOP                                                          :{BLACK}Builds and services machinery.{}{}Cargo production:{}  8 crates per 8,000l petroleum fuels delivered{}  8 crates per 8t metal delivered
+STR_EXTRA_MEAT_PACKER                                                           :{BLACK}Cargo production:{}  3t per 8 crates manufacturing supplies delivered{}  5t per 8 head of livestock delivered{}{}Production steps up if both cargos are delivered within three months of each other.
+STR_EXTRA_OIL_REFINERY                                                          :{BLACK}Processes crude oil into petroleum fuels and chemicals.{}{}Cargo production:{}  6,000l per 8,000l delivered
 STR_EXTRA_PLASTICS_PLANT_PLANT_FIBRES_SUBSTR                                    :6 crates per 8 bales plant fibers delivered{}
+STR_EXTRA_PYRITE_SMELTER                                                        :{BLACK}Processes pyrite ore into metal and chemicals.{}{}Cargo production:{}  4t metal and 4,000l chemicals per 8t pyrite ore delivered
 STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Produces metal items like tools, plows, gates, shovels and horseshoes.{}{}Cargo production:{}  8 crates per 8t metal delivered
-STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Cargo production:{} 3t per 8 crates manufacturing supplies delivered{} 5t per 8t sugar delivered{}{}Production steps up if both cargos are delivered within a month of each other.
+STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Cargo production:{} 3t per 8 crates manufacturing supplies delivered{}  5t per 8t sugar delivered{}{}Production steps up if both cargos are delivered within three months of each other.
 STR_EXTRA_TEXTILE_MILL_PLANT_FIBRES_SUBSTR                                      :5 crates per 8 bales plant fibers delivered{}
 
+STR_PORT_PRODUCTION_1X                                                          :{BLACK}Current production: {YELLOW}Normal{}{}{BLACK}For 'Enhanced' production deliver {SIGNED_WORD} units of cargo of supplies within three months{}For 'Gung ho' production deliver {SIGNED_WORD} units
 
+STR_FUND_FOREST                                                                 :{}{BLACK}Location: {YELLOW}Cannot be funded in deserts.
 
 
 
@@ -40,11 +47,15 @@ STR_EXTRA_TEXTILE_MILL_PLANT_FIBRES_SUBSTR                                      
 
 
 STR_IND_ALUMINIUM_PLANT                                                         :Aluminum Plant
+STR_IND_DREDGING_SITE                                                           :Dredging Site
 STR_IND_FERTILISER_PLANT                                                        :Fertilizer Plant
 STR_IND_FISHING_HARBOUR                                                         :Fishing Harbor
 STR_IND_FOOD_MARKET                                                             :Grocery Store
 STR_IND_JUNKYARD                                                                :Junk Yard
 STR_IND_LUMBER_YARD                                                             :Lumber Yard
+STR_IND_MACHINE_SHOP                                                            :Machine Shop
 STR_IND_PETROLPUMP                                                              :Gas Station
+STR_IND_POWER_PLANT                                                             :Power Plant
+STR_IND_TYRE_PLANT                                                              :Tire Plant
 
 STR_STATION_INDUSTRY_HARBOUR                                                    :Industrial Harbor

@@ -32,6 +32,7 @@ STR_CARGO_NAME_CHEMICALS                                                        
 STR_CARGO_NAME_CLAY                                                             :Savi
 STR_CARGO_NAME_COFFEE                                                           :Kahvi
 STR_CARGO_NAME_COPPER                                                           :Kupari
+STR_CARGO_NAME_EDIBLE_OIL                                                       :Ruokaöljyä
 STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :Tekniset tarvikkeet
 STR_CARGO_NAME_FIBRES                                                           :Kasvikuidut
 STR_CARGO_NAME_FISH                                                             :Kala
@@ -42,6 +43,7 @@ STR_CARGO_NAME_METAL                                                            
 STR_CARGO_NAME_MILK                                                             :Maito
 STR_CARGO_NAME_MANUFACTURING_SUPPLIES                                           :Tuotantotarvikkeet
 STR_CARGO_NAME_NITRATES                                                         :Nitraatit
+STR_CARGO_NAME_NUTS                                                             :Pähkinöitä
 STR_CARGO_NAME_PETROL                                                           :Bensiini
 STR_CARGO_NAME_PHOSPHATE                                                        :Fosfaatti
 STR_CARGO_NAME_PYRITE_ORE                                                       :Pyriittimalmi
@@ -63,6 +65,7 @@ STR_CARGO_UNIT_CHEMICALS                                                        
 STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} savea
 STR_CARGO_UNIT_COFFEE                                                           :{SIGNED_WORD} säkki{P 0 "" ä} kahvia
 STR_CARGO_UNIT_COPPER                                                           :{WEIGHT} kuparia
+STR_CARGO_UNIT_EDIBLE_OIL                                                       :{VOLUME} ruokaöljyä
 STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} laatikko{P 0 "" a} teknisiä tarvikkeita
 STR_CARGO_UNIT_FIBRES                                                           :{SIGNED_WORD} paali{P 0 "" a} kasvikuituja
 STR_CARGO_UNIT_FISH                                                             :{WEIGHT} kalaa
@@ -72,6 +75,7 @@ STR_CARGO_UNIT_LUMBER                                                           
 STR_CARGO_UNIT_METAL                                                            :{WEIGHT} metallia
 STR_CARGO_UNIT_MILK                                                             :{VOLUME} maitoa
 STR_CARGO_UNIT_NITRATES                                                         :{WEIGHT} nitraatteja
+STR_CARGO_UNIT_NUTS                                                             :{SIGNED_WORD} säkki{P 0 "" ä} of pähkinöitä
 STR_CARGO_UNIT_MNSP                                                             :{SIGNED_WORD} laatikko{P 0 "" a} tuotantotarvikkeita
 STR_CARGO_UNIT_PETROL                                                           :{VOLUME} bensiiniä
 STR_CARGO_UNIT_PHOSPHATE                                                        :{WEIGHT} fosfaattia
@@ -137,13 +141,19 @@ STR_EXTRA_BREWERY_GRAIN_SUBSTR                                                  
 STR_EXTRA_BREWERY_MAIZE_SUBSTR                                                  :5,000l per 8t kuljetettua maissia{}
 STR_EXTRA_BRICKWORKS                                                            :{BLACK}Rahdin tuotanto:{}  2t per 8t kuljetettua hiiltä{}  2t per 8t kuljetettua hiekkaa{}  4t per 8t kuljetettua savea{}{}Tuotanto kasvaa jos kahta tai useampaa rahtia kuljetetaan kolmen kuukauden aikana.
 STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Rahdin tuotanto:{}  2t per 8t kuljetettua hiiltä{}  2t per 8t kuljetettua savea{}  4t per 8t kuljetettua kiveä{}{}Tuotanto kasvaa jos kahta tai useampaa rahtia kuljetetaan kolmen kuukauden aikana.
+STR_EXTRA_CEMENT_PLANT_COAL_SUBSTR                                              :2t per 8t kuljetettua hiiltä
 STR_EXTRA_CHEMICAL_PLANT                                                        :{BLACK}Rahdin tuotanto:{} 6000l per 8000l kuljetettua öljyä{} 6000l per 8t nitraatteja
 STR_EXTRA_COPPER_REFINERY                                                       :{BLACK}Rahdin tuotanto:{} 5t per 8t kuljetettua kuparimalmia{} 3t per 8000 litraa kuljetettuja kemikaaleja{}{}Tuotanto kasvaa jos kahta tai useampaa rahtia kuljetetaan kolmen kuukauden aikana.
 STR_EXTRA_DAIRY                                                                 :{BLACK}Rahdin tuotanto:{}  3t per 8 laatikkoa kuljetettuja tuotantotarvikkeita{} 5t per 8000 litraa kuljetettua maitoa{}{}Tuotanto kasvaa jos molempia rahteja kuljetetaan kolmen kuukauden aikana.
 STR_EXTRA_FERTILIZER_PLANT                                                      :{BLACK}Rahdin tuotanto:{} 8 laatikkoa per 8000l kuljetettuja kemikaaleja
 STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Rahdin tuotanto:{} 3t per 8t kuljetettuja tuotantotarvikkeita{} 5t per 8t kuljetettua kalaa{}{}Tuotanto kasvaa jos molempia rahteja kuljetetaan kolmen kuukauden aikana.
 STR_EXTRA_FLOUR_MILL                                                            :{BLACK}Rahdin tuotanto:{} 3t per 8 laatikkoa kuljetettuja tuotantotarvikkeita{} 5t per 8t kuljetettua viljaa{}{}Tuotanto kasvaa jos molempia rahteja kuljetetaan kolmen kuukauden aikana.
+STR_EXTRA_FLOUR_MILL_GRAIN_SUBSTR                                               :5t per 8t kuljetettua viljaa{}
+STR_EXTRA_FLOUR_MILL_EMPTY_SUBSTR                                               :{}
+STR_EXTRA_FLOUR_MILL_MAIZE_SUBSTR                                               :5t per 8t kuljetettua maissia{}
 STR_EXTRA_FOOD_PROCESSING_PLANT                                                 :{BLACK}Rahdin tuotanto:{} 6t per 8t kuljetettuja papuja{} 6t per 8t kuljetettuja hedelmiä
+STR_EXTRA_FOOD_PROCESSING_PLANT_BEANS_SUBSTR                                    :6t per 8t kuljetettuja papuja{}
+STR_EXTRA_FOOD_PROCESSING_PLANT_NUTS_SUBSTR                                     :6t per 8t kuljetettuja pähkinöitä{}
 STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Rahdin tuotanto:{} 3 laatikkoa per 8 laatikkoa kuljetettuja tuotantotarvikkeita{} 5 laatikkoa per 8t kuljetettua puutavaraa{}{}Tuotanto kasvaa jos molempia rahteja kuljetetaan kolmen kuukauden aikana.
 STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Tuottaa lasiesineitä kuten pulloja, purkkeja ja ikkunalasia.{}{}Rahdin tuotanto:{}  6t per 8t kuljetettua hiekkaa{} 2t per 8000 litraa kuljetettuja kemikaaleja{}{}Kasvaa 8t per 8t kuljetettu kun molempia rahteja kuljetetaan kolmen kuukauden aikana.
 STR_EXTRA_IRON_WORKS                                                            :{BLACK}Rahdin tuotanto:{} 3t per 8t kuljetettua rautamalmia{} 3t per 8t kuljetettua puuta{} 2t per 8t kuljetettua hiekkaa{}{}Tuotanto kasvaa, jos kahta tai useampaa rahtia kuljetetaan kolmen kuukauden aikana.
@@ -166,6 +176,8 @@ STR_EXTRA_SMITHY_FORGE                                                          
 STR_EXTRA_STEELMILL                                                             :{BLACK}Rahdin tuotanto:{} 3t per 8t kuljetettua rautamalmia{} 2t per 8t kuljetettua hiiltä{} 3t per 8t kuljetettua romumetallia{}{}Tuotanto kasvaa, jos kahta tai useampaa rahtia kuljetetaan kolmen kuukauden aikana.
 STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Rahdin tuotanto:{}  3t per 8 laatikkoa kuljetettuja tuotantotarvikkeita{}  5t per 8t kuljetettua sokeriruokoa{}{}Tuotanto kasvaa jos molempia rahteja kuljetetaan kolmen kuukauden aikana.
 STR_EXTRA_SUPPLY_YARD                                                           :{BLACK}Rahdin tuotanto:{} 8 laatikkoa per 8000l kuljetettua bensiiniä{} 8 laatikkoa per 8 kuljetettua ajoneuvoa{} 8 laatikkoa per 8t kuljetettuja tavaroita
+STR_EXTRA_SUPPLY_YARD_VEHICLES_SUBSTR                                           :8 laatikkoa per 8 kuljetettua ajoneuvoa
+STR_EXTRA_SUPPLY_YARD_BUILDING_MATERIALS_SUBSTR                                 :8 laatikkoa per 8t kuljetettuja rakennustarvikkeita
 STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Rahdin tuotanto:{} 3 laatikkoa per 8 laatikkoa kuljetettuja tuotantotarvikkeita{} {STRING} {STRING}{}Tuotanto kasvaa, jos tuotantotarvikkeita ja muuta rahtia kuljetetaan kolmen kuukauden aikana.
 STR_EXTRA_TEXTILE_MILL_WOOL_SUBSTR                                              :5 laatikkoa per 8 kuljetettua villapaalia{}
 STR_EXTRA_TEXTILE_MILL_PLANT_FIBRES_SUBSTR                                      :5 laatikkoa per 8 kuljetettua kasvikuitupaalia{}
@@ -210,7 +222,7 @@ STR_IND_BASICFARM                                                               
 STR_IND_BAUXITE_MINE                                                            :Bauksiittikaivos
 STR_IND_BIOREFINERY                                                             :Biojalostamo
 STR_IND_BREWERY                                                                 :Panimo
-STR_IND_BREWERY_CIDER_MILL                                                      :Siiderimylly
+STR_IND_BREWERY_CIDER_MILL                                                      :Panimo
 STR_IND_BRICK_WORKS                                                             :Tiilitehdas
 STR_IND_BUILDERS_YARD                                                           :Rakennustarvikevarasto
 STR_IND_BULK_TERMINAL                                                           :Bulkkiterminaali
@@ -226,6 +238,8 @@ STR_IND_DREDGING_SITE                                                           
 STR_IND_FERTILISER_PLANT                                                        :Lannoitetehdas
 STR_IND_FISHING_GROUND                                                          :Kalastusalue
 STR_IND_FISHING_HARBOUR                                                         :Kalasatama
+STR_IND_FISHING_VILLAGE                                                         :Kalastajakylä
+STR_IND_FLOUR_MILL                                                              :Jauhomylly
 STR_IND_FOOD_MARKET                                                             :Ruokakauppa
 STR_IND_FOOD_PROCESSOR                                                          :Ruokatehdas
 STR_IND_FURNITURE_FACTORY                                                       :Huonekalutehdas

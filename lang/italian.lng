@@ -8,7 +8,7 @@ STR_GRF_URL                                                                     
 
 STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :Distanza massima, in caselle, di zone di pesca, piattaforme petrolifere e siti di dragaggio dalla costa.
 STR_PARAM_DESC_DEBUG                                                            :Solo per sviluppatori!
-STR_PARAM_DESC_ECONOMIES                                                        :Ogni economia dà una combinazione diversa di merci e industrie.{}{}Per uno schema di gioco semplificato, un'economia di 'base' comprende meno industrie e merci rispetto ad altre economie di FIRS.
+STR_PARAM_DESC_ECONOMIES                                                        :Ogni economia dà una combinazione diversa di merci e industrie.{}{}Per uno schema di gioco semplificato, un'economia di 'base' comprende meno industrie e merci rispetto ad altre economie di FIRS.{}{}Sul sito web di FIRS si trovano informazioni dettagliate su ogni economia.
 STR_PARAM_DESC_NO_OPENINGS                                                      :Di default, durante il gioco apriranno nuove industrie.{}{}Si può impedire la loro apertura durante il gioco; in questo caso, i giocatori non potranno nemmeno fondare o prospettare l'apertura di nuove industrie.
 STR_PARAM_DESC_SECONDARY_NEVER_CLOSE                                            :Di default, le industrie secondarie non chiudono mai.{}{}Se permetti la loro chiusura, potrebbero chiudere se non ci trasporti merci per un lungo periodo di tempo. Le industrie primarie non chiuderanno mai in ogni caso.
 STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY                                   :Distanza massima dalla costa, in caselle, delle industrie marine
@@ -18,17 +18,17 @@ STR_PARAM_NAME_NO_OPENINGS                                                      
 STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            :Permetti la chiusura delle industrie secondarie
 STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0                                         :Illimitata
 
-STR_PARAM_NAME_PRIMARY_LEVEL1_REQUIREMENT                                       :Cambia la quantità di merce richiesta per produzione a livello elevato
-STR_PARAM_NAME_PRIMARY_LEVEL2_REQUIREMENT                                       :Cambia la quantità di merce richiesta per produzione a livello 'gung ho' (%)
-STR_PARAM_DESC_PRIMARY_LEVEL_REQUIREMENT                                        :La quantità di forniture richieste dipende dal tipo di industria e da questo moltiplicatore (in percentuale)
-STR_PARAM_NAME_PRIMARY_LEVEL1_BONUS                                             :Bonus di produzione a regime di lavoro elevato
-STR_PARAM_NAME_PRIMARY_LEVEL2_BONUS                                             :Bonus di produzione a regime di lavoro gung ho
-STR_PARAM_DESC_PRIMARY_LEVEL_BONUS                                              :Se le merci richieste vengono fornite, la produzione aumenta di questa percentuale
+STR_PARAM_NAME_PRIMARY_LEVEL1_REQUIREMENT                                       :Casse di forniture necessarie per il livello di produzione 'Elevato' (valore predefinito: 16)
+STR_PARAM_NAME_PRIMARY_LEVEL2_REQUIREMENT                                       :Casse di forniture necessarie per il livello di produzione 'Gung ho' (valore predefinito: 128)
+STR_PARAM_DESC_PRIMARY_LEVEL_REQUIREMENT                                        :La produzione delle fattorie, miniere e industrie simili raggiungerà il livello 'Elevato', e poi il livello 'Gung ho', se viene consegnato un numero sufficiente di casse.{}{}I valori di default sono già ottimizzati, ma possono essere modificati qui.{}{}Non ha effetto su porti e industrie simili.
+STR_PARAM_NAME_PRIMARY_LEVEL1_BONUS                                             :Livello di produzione 'Elevato' per industrie primarie (%)
+STR_PARAM_NAME_PRIMARY_LEVEL2_BONUS                                             :Livello di produzione 'Gung ho' per industrie primarie (%)
+STR_PARAM_DESC_PRIMARY_LEVEL_BONUS                                              :Produzione delle fattorie, miniere e industrie simili, quando le merci richieste vengono consegnate (espresso in percentuale del valore normale di produzione).
 
 STR_PARAM_VALUE_ECONOMIES_BASIC_TEMPERATE                                       :Di base (clima temperato)
 STR_PARAM_VALUE_ECONOMIES_BASIC_ARCTIC                                          :Di base (clima artico)
 STR_PARAM_VALUE_ECONOMIES_BASIC_TROPIC                                          :Di base (clima tropicale)
-STR_PARAM_VALUE_ECONOMIES_FIRS                                                  :FIRS
+STR_PARAM_VALUE_ECONOMIES_FIRS                                                  :Enorme
 STR_PARAM_VALUE_ECONOMIES_MISTAH_KURTZ                                          :In un Paese caldo
 
 STR_CARGO_NAME_ALCOHOL                                                          :{G=m}Alcoolici
@@ -203,12 +203,12 @@ STR_EXTRA_VEHICLE_FACTORY                                                       
 
 STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ DEBUG ------------{}Produzione questo mese:{}Prodotto 1: {WHITE}{COMMA}{BLACK}{}Prodotto 2: {WHITE}{COMMA}{BLACK}{}Giorni trascorsi dall'ultima consegna: {WHITE}{COMMA}{BLACK}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Livello massimo di produzione raggiunto
-STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Produzione attuale: {YELLOW}Normale ({SIGNED_WORD} %){}{}{BLACK}Per aumentare la produzione fino al {SIGNED_WORD} %,  consegna {SIGNED_WORD} casse di forniture entro 3 mesi{}Per salire al {SIGNED_WORD} % consegna {SIGNED_WORD} casse
-STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Produzione attuale: {YELLOW}Elevata ({SIGNED_WORD} %){}{}{BLACK}Per mantenere questo livello di produzione, consegna {SKIP}{SIGNED_WORD} casse di forniture entro 3 mesi{}Per salire al {SIGNED_WORD} % consegna {SIGNED_WORD} casse
-STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}Produzione attuale: {YELLOW}Gung ho ({SIGNED_WORD} %){}{}{BLACK}Per mantenere questo livello di produzione, consegna {SKIP}{SKIP}{SKIP}{SIGNED_WORD} casse di forniture entro 3 mesi
-STR_PORT_PRODUCTION_1X                                                          :{BLACK}Produzione attuale: {YELLOW}Normale ({SIGNED_WORD} %){}{}{BLACK}Per aumentare la produzione al {SIGNED_WORD} %, consegna {SIGNED_WORD} unità di merci entro 3 mesi{}Per salire al {SIGNED_WORD} %, consegna {SIGNED_WORD} unità
-STR_PORT_PRODUCTION_2X                                                          :{BLACK}Produzione attuale: {YELLOW}Elevata ({SIGNED_WORD} %){}{}{BLACK}Per mantenere questo livello di produzione, consegna {SKIP}{SIGNED_WORD} unità di merci entro 3 mesi{}Per salire al {SIGNED_WORD} % consegna {SIGNED_WORD} unità
-STR_PORT_PRODUCTION_4X                                                          :{BLACK}Produzione attuale: {YELLOW}Gung ho ({SIGNED_WORD} %){}{}{BLACK}Per mantenere questo livello di produzione, consegna {SKIP}{SKIP}{SKIP}{SIGNED_WORD} unità di merci entro 3 mesi
+STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Produzione attuale: {YELLOW}Normale{}{}{BLACK}Il livello di produzione 'Elevato' si raggiunge consegnando {SIGNED_WORD} casse di forniture entro 3 mesi{}Per salire al livello 'Gung ho' si devono consegnare {SIGNED_WORD} casse
+STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Produzione attuale: {YELLOW}Elevata{}{}{BLACK}Per mantenere questo livello di produzione, consegna {SIGNED_WORD} casse di forniture entro 3 mesi{}Per salire al livello 'Gung ho' consegna {SIGNED_WORD} casse
+STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}Produzione attuale: {YELLOW}Gung ho{}{}{BLACK}Per mantenere questo livello di produzione, consegna {SKIP}{SIGNED_WORD} casse di forniture entro 3 mesi
+STR_PORT_PRODUCTION_1X                                                          :{BLACK}Produzione attuale: {YELLOW}Normale{}{}{BLACK}Il livello di produzione 'Elevato' si raggiunge consegnando {SIGNED_WORD} unità di forniture entro 3 mesi{}Per salire al livello 'Gung ho' si devono consegnare {SIGNED_WORD} unità
+STR_PORT_PRODUCTION_2X                                                          :{BLACK}Produzione attuale: {YELLOW}Elevata{}{}{BLACK}Per mantenere questo livello di produzione, consegna {SIGNED_WORD} unità di merci entro 3 mesi{}Per salire al livello 'Gung ho', consegna {SIGNED_WORD} unità
+STR_PORT_PRODUCTION_4X                                                          :{BLACK}Produzione attuale: {YELLOW}Gung ho{}{}{BLACK}Per mantenere questo livello di produzione, consegna {SKIP}{SIGNED_WORD} unità di merci entro 3 mesi
 STR_GENERIC_NEWLINE                                                             :{}
 
 STR_FUND_BASIC_FARM                                                             :{}{BLACK}Luogo: {YELLOW}Non si può fondare sulla neve o nel deserto.
