@@ -35,7 +35,7 @@ switch (FEAT_INDUSTRIES, SELF, ${industry.id}_available_game_mode, game_mode == 
 
 <tal:economy_dates repeat="economy economies">
     /* ${industry.get_intro_year(economy)} */
-    switch (FEAT_INDUSTRIES, SELF, ${industry.id}_check_availability_${repeat.economy.index}, current_date) {
+    switch (FEAT_INDUSTRIES, SELF, ${industry.id}_check_availability_${economy.numeric_id}, current_date) {
         date(${industry.get_intro_year(economy)},1,1) .. date(${industry.get_expiry_year(economy)},12,31): ${industry.id}_available_game_mode;
         return CB_RESULT_IND_NO_CONSTRUCTION;
     }
@@ -43,7 +43,7 @@ switch (FEAT_INDUSTRIES, SELF, ${industry.id}_available_game_mode, game_mode == 
 
 switch (FEAT_INDUSTRIES, SELF, ${industry.id}_check_availability, economy) {
     <tal:economy_switches repeat="economy economies">
-        ${repeat.economy.index}: ${industry.id}_check_availability_${repeat.economy.index};
+        ${economy.numeric_id}: ${industry.id}_check_availability_${economy.numeric_id};
     </tal:economy_switches>
 }
 
