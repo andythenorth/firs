@@ -7,7 +7,7 @@ STR_GRF_URL                                                                     
 
 STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :Najveća udaljenost ribarskih polja, naftnih platformi i jaružališta od obale u poljima.
 STR_PARAM_DESC_DEBUG                                                            :Samo za programere
-STR_PARAM_DESC_ECONOMIES                                                        :Svaka ekonomija daje različite kombinacije tereta i industrija.{}{}Za igrače koji žele jednostavnost igre, "Osnovne" ekonomije imaju manje industrija i tereta nego druge FIRS ekonomije.
+STR_PARAM_DESC_ECONOMIES                                                        :Svaka ekonomija daje različite kombinacije tereta i industrija.{}{}Za igrače koji žele jednostavnost igre, "Osnovne" ekonomije imaju manje industrija i tereta nego druge FIRS ekonomije.{}{}Na FIRS web stranici se nalaze detaljne informacije o svakoj vrsti ekonomije.
 STR_PARAM_DESC_NO_OPENINGS                                                      :Tijekom igre neće se graditi nove industrije.{}Igrači neće moći financirati ili istraživati industrije.{}Industrije će sagraditi generator mape na početku igre (ovisno o odabranim postavkama mape).
 STR_PARAM_DESC_SECONDARY_NEVER_CLOSE                                            :Po standardnim postavkama, FIRS sekundarne industrije se neće nikada zatvarati.{}{}Ako se uključi zatvaranje sekundarnih industrija, one se mogu zatvoriti ako se nikakav teret ne preveze tijekom dužeg vremena.
 STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY                                   :Najveća udaljenost od obale za pomorske industrije u poljima
@@ -17,17 +17,17 @@ STR_PARAM_NAME_NO_OPENINGS                                                      
 STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            :Dozvoli zatvaranje sekundarnih industrija
 STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0                                         :Bez limita
 
-STR_PARAM_NAME_PRIMARY_LEVEL1_REQUIREMENT                                       :Prilagodi potrebe dostave tereta za proizvodnju na "unaprijeđenom nivou" (%)
-STR_PARAM_NAME_PRIMARY_LEVEL2_REQUIREMENT                                       :Prilagodi potrebe dostave tereta za proizvodnju na "masovnom nivou" (%)
-STR_PARAM_DESC_PRIMARY_LEVEL_REQUIREMENT                                        :Količina potrebne dostave ovisi o vrsti industrije i o ovom parametru u postotku
-STR_PARAM_NAME_PRIMARY_LEVEL1_BONUS                                             :Dodatna proizvodnja na unaprijeđenom nivou proizvodnje
-STR_PARAM_NAME_PRIMARY_LEVEL2_BONUS                                             :Dodatna proizvodnja na masovnom nivou proizvodnje
-STR_PARAM_DESC_PRIMARY_LEVEL_BONUS                                              :Postotak za koji se povećava industrijska proizvodnja ako su potrebe dostave zadovoljene
+STR_PARAM_NAME_PRIMARY_LEVEL1_REQUIREMENT                                       :Kutije potrepština potrebne za "Unaprijeđenu" primarnu proizvodnju (osnovna postavka 16)
+STR_PARAM_NAME_PRIMARY_LEVEL2_REQUIREMENT                                       :Kutije potrepština potrebne za "Masovnu" primarnu proizvodnju (osnovna postavka 128)
+STR_PARAM_DESC_PRIMARY_LEVEL_REQUIREMENT                                        :Farme, rudnici i slične industrije će povećati proizvodnju kada su kutije potrepština dostavljene, prvo na "Unaprijeđenu", a onda na "Masovnu" proizvodnju, ako je dostavljeno dovoljno kutija.{}{}Osnovne postavke su dovoljno dobre ali ako trebate, možete ih promijeniti ovdje.{}{}Ova postavka ne utječe na tipove industrija u lukama.
+STR_PARAM_NAME_PRIMARY_LEVEL1_BONUS                                             :Nivo "Unaprijeđene" primarne proizvodnje (%)
+STR_PARAM_NAME_PRIMARY_LEVEL2_BONUS                                             :Nivo "Masovne" primarne proizvodnje (%)
+STR_PARAM_DESC_PRIMARY_LEVEL_BONUS                                              :Proizvodnja na farmama, u rudnicima i sličnim industrijama kada su potrebe dostave zadovoljene (kao postotak "Normalnog" nivoa proizvodnje).
 
 STR_PARAM_VALUE_ECONOMIES_BASIC_TEMPERATE                                       :Osnovna - umjerena klima
 STR_PARAM_VALUE_ECONOMIES_BASIC_ARCTIC                                          :Osnovna - arktička klima
 STR_PARAM_VALUE_ECONOMIES_BASIC_TROPIC                                          :Osnovna - tropska klima
-STR_PARAM_VALUE_ECONOMIES_FIRS                                                  :FIRS
+STR_PARAM_VALUE_ECONOMIES_FIRS                                                  :Ekstremno
 STR_PARAM_VALUE_ECONOMIES_MISTAH_KURTZ                                          :U vrućoj zemlji
 
 STR_CARGO_NAME_ALCOHOL                                                          :Alkohol
@@ -198,16 +198,16 @@ STR_EXTRA_TEXTILE_MILL                                                          
 STR_EXTRA_TEXTILE_MILL_WOOL_SUBSTR                                              :5 kutija od 8 dostavljenih bala vune{}
 STR_EXTRA_TEXTILE_MILL_PLANT_FIBRES_SUBSTR                                      :5 kutija od 8 dostavljenih bala biljnih vlakana{}
 STR_EXTRA_TYRE_PLANT                                                            :{BLACK}Proizvodnja tereta:{} 6 kutija od 8,000l dostavljene gume{} 2 kutije od 8,000l dostavljenih kemikalija{}{}Proizvodnja se povećava ako su oba tereta dostavljena unutar 3 mjeseca jedan od drugog.
-STR_EXTRA_VEHICLE_FACTORY                                                       :{BLACK}Proizvodnja tereta:{} 3 vozila od 8 kutija dostavljenih dijelova za vozila{} 3 vozila od 8 kutija dostavljenog metala{} 2 vozila od 8,000l dostavljenih kemikalija{}{}Proizvodnja se povećava ako su dva ili više tereta dostavljena unutar 3 mjeseca jedan od drugog.
+STR_EXTRA_VEHICLE_FACTORY                                                       :{BLACK}Proizvodnja tereta:{} 3 vozila od 8 kutija dostavljenih dijelova za vozila{} 3 vozila od 8t dostavljenog metala{} 2 vozila od 8,000l dostavljenih kemikalija{}{}Proizvodnja se povećava ako su dva ili više tereta dostavljena unutar 3 mjeseca jedan od drugog.
 
 STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ ISPRAVLJANJE ------------{}Proizvodnja ovog mjeseca:{}Teret 1: {WHITE}{COMMA}{BLACK}{}Teret 2: {WHITE}{COMMA}{BLACK}{}Dana od posljednje dostave: {WHITE}{COMMA}{BLACK}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Dostignuta maksimalna proizvodnja
-STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Trenutna proizvodnja: {YELLOW}Normalna ({SIGNED_WORD} %){}{}{BLACK}Za povećavanje proizvodnje na {SIGNED_WORD} % dostavite {SIGNED_WORD} kutija potrepština unutar tri mjeseca{} Za povećavanje na {SIGNED_WORD} % dostavite {SIGNED_WORD} kutija
-STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Trenutna proizvodnja: {YELLOW}Unaprijeđena ({SIGNED_WORD} %){}{}{BLACK}Za zadržavanje ovog nivoa, dostavite {SKIP}{SIGNED_WORD} kutija potrepština unutar tri mjeseca{} Za povećavanje na {SIGNED_WORD} % dostavite {SIGNED_WORD} kutija
-STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}Trenutna proizvodnja: {YELLOW}Masovna ({SIGNED_WORD} %){}{}{BLACK}Za zadržavanje ovog nivoa, dostavite {SKIP}{SKIP}{SKIP}{SIGNED_WORD} kutija potrepština unutar tri mjeseca
-STR_PORT_PRODUCTION_1X                                                          :{BLACK}Trenutna proizvodnja: {YELLOW}Normalna ({SIGNED_WORD} %){}{}{BLACK}Za povećavanje proizvodnje na {SIGNED_WORD} % dostavite {SIGNED_WORD} jedinica tereta unutar tri mjeseca{} Za povećavanje na {SIGNED_WORD} % dostavite {SIGNED_WORD} jedinica tereta
-STR_PORT_PRODUCTION_2X                                                          :{BLACK}Trenutna proizvodnja: {YELLOW}Unaprijeđena ({SIGNED_WORD} %){}{}{BLACK}Za zadržavanje ovog nivoa, dostavite {SKIP}{SIGNED_WORD} jedinica tereta unutar tri mjeseca{} Za povećavanje na {SIGNED_WORD} % dostavite {SIGNED_WORD} jedinica tereta
-STR_PORT_PRODUCTION_4X                                                          :{BLACK}Trenutna proizvodnja: {YELLOW}Masovna ({SIGNED_WORD} %){}{}{BLACK}Za zadržavanje ovog nivoa, dostavite {SKIP}{SKIP}{SKIP}{SIGNED_WORD} jedinica tereta unutar tri mjeseca
+STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Trenutna proizvodnja: {YELLOW}Normalna{}{}{BLACK}Za povećavanje proizvodnje na "Unaprijeđenu" dostavite {SIGNED_WORD} kutija potrepština unutar tri mjeseca{}Za povećavanje proizvodnje na "Masovnu" dostavite {SIGNED_WORD} kutija
+STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Trenutna proizvodnja: {YELLOW}Unaprijeđena{}{}{BLACK}Za zadržavanje ovog nivoa, dostavite {SIGNED_WORD} kutija potrepština unutar tri mjeseca{}Za povećavanje proizvodnje na "Masovnu" dostavite {SIGNED_WORD} kutija
+STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}Trenutna proizvodnja: {YELLOW}Masovna{}{}{BLACK}Za zadržavanje ovog nivoa, dostavite {SKIP}{SIGNED_WORD} kutija potrepština unutar tri mjeseca
+STR_PORT_PRODUCTION_1X                                                          :{BLACK}Trenutna proizvodnja: {YELLOW}Normalna{}{}{BLACK}Za povećavanje proizvodnje na "Unaprijeđenu" dostavite {SIGNED_WORD} jedinica tereta unutar tri mjeseca{}Za povećavanje proizvodnje na "Masovnu" dostavite {SIGNED_WORD} jedinica tereta
+STR_PORT_PRODUCTION_2X                                                          :{BLACK}Trenutna proizvodnja: {YELLOW}Unaprijeđena{}{}{BLACK}Za zadržavanje ovog nivoa, dostavite {SIGNED_WORD} jedinica tereta unutar tri mjeseca{}Za povećavanje proizvodnje na "Masovnu" dostavite {SIGNED_WORD} jedinica tereta
+STR_PORT_PRODUCTION_4X                                                          :{BLACK}Trenutna proizvodnja: {YELLOW}Masovna{}{}{BLACK}Za zadržavanje ovog nivoa, dostavite {SKIP}{SIGNED_WORD} jedinica tereta unutar tri mjeseca
 STR_GENERIC_NEWLINE                                                             :{}
 
 STR_FUND_BASIC_FARM                                                             :{}{BLACK}Lokacija: {YELLOW}Ne može biti financirano na snijegu ili u pustinjama.
