@@ -19,51 +19,6 @@ grf {
 			};
 		}
 	}
-    // deprecated param 1
-	/* param 1 {
-		allow_primary_production_change {
-			name: string(STR_PARAM_NAME_PRIMARY_PRODUCTION_CHANGE);
-			desc: string(STR_PARAM_DESC_PRIMARY_PRODUCTION_CHANGE);
-			type: bool;
-			bit: 0;
-		}
-	} */
-	param 6 {
-		primary_level1_requirement {
-			name: string(STR_PARAM_NAME_PRIMARY_LEVEL1_REQUIREMENT);
-			desc: string(STR_PARAM_DESC_PRIMARY_LEVEL_REQUIREMENT);
-			def_value: ${global_constants.FARM_MINE_SUPPLY_REQUIREMENT};
-			min_value: 1;
-			max_value: 10000;
-		}
-	}
-	param 8 {
-		primary_level2_requirement {
-			name: string(STR_PARAM_NAME_PRIMARY_LEVEL2_REQUIREMENT);
-			desc: string(STR_PARAM_DESC_PRIMARY_LEVEL_REQUIREMENT);
-			def_value: ${8 * global_constants.FARM_MINE_SUPPLY_REQUIREMENT};
-			min_value: 1;
-			max_value: 10000;
-		}
-	}
-	param 7 {
-		primary_level1_produced_percent {
-			name: string(STR_PARAM_NAME_PRIMARY_LEVEL1_BONUS);
-			desc: string(STR_PARAM_DESC_PRIMARY_LEVEL_BONUS);
-			def_value: 150;
-			min_value: 100;
-			max_value: 1000;
-		}
-	}
-	param 9 {
-		primary_level2_produced_percent {
-			name: string(STR_PARAM_NAME_PRIMARY_LEVEL2_BONUS);
-			desc: string(STR_PARAM_DESC_PRIMARY_LEVEL_BONUS);
-			def_value: 300;
-			min_value: 100;
-			max_value: 1000;
-		}
-	}
 	param 2 {
 		// primary closure deprecated
 		/*allow_close_primary {
@@ -83,6 +38,51 @@ grf {
 			desc: string(STR_PARAM_DESC_NO_OPENINGS);
 			type: bool;
 			bit: 2;
+		}
+	}
+	// deprecated param 1
+	/* param 1 {
+		allow_primary_production_change {
+			name: string(STR_PARAM_NAME_PRIMARY_PRODUCTION_CHANGE);
+			desc: string(STR_PARAM_DESC_PRIMARY_PRODUCTION_CHANGE);
+			type: bool;
+			bit: 0;
+		}
+	} */
+	param 7 {
+		primary_level1_produced_percent {
+			name: string(STR_PARAM_NAME_PRIMARY_LEVEL1_BONUS);
+			desc: string(STR_PARAM_DESC_PRIMARY_LEVEL_BONUS);
+			def_value: 150;
+			min_value: 100;
+			max_value: 1000;
+		}
+	}
+	param 9 {
+		primary_level2_produced_percent {
+			name: string(STR_PARAM_NAME_PRIMARY_LEVEL2_BONUS);
+			desc: string(STR_PARAM_DESC_PRIMARY_LEVEL_BONUS);
+			def_value: 300;
+			min_value: 100;
+			max_value: 1000;
+		}
+	}
+	param 6 {
+		primary_level1_requirement {
+			name: string(STR_PARAM_NAME_PRIMARY_LEVEL1_REQUIREMENT);
+			desc: string(STR_PARAM_DESC_PRIMARY_LEVEL_REQUIREMENT);
+			def_value: ${global_constants.FARM_MINE_SUPPLY_REQUIREMENT};
+			min_value: 1;
+			max_value: 10000;
+		}
+	}
+	param 8 {
+		primary_level2_requirement {
+			name: string(STR_PARAM_NAME_PRIMARY_LEVEL2_REQUIREMENT);
+			desc: string(STR_PARAM_DESC_PRIMARY_LEVEL_REQUIREMENT);
+			def_value: ${5 * global_constants.FARM_MINE_SUPPLY_REQUIREMENT};
+			min_value: 1;
+			max_value: 10000;
 		}
 	}
 	param 4 {

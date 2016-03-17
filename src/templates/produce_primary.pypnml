@@ -25,8 +25,8 @@ switch(FEAT_INDUSTRIES, SELF, ${industry.id}_produce_256_ticks,
 			LOAD_PERM(var_num_supplies_delivered_last) +
 			LOAD_PERM(var_num_supplies_delivered_bef_last),
 		8),
-		STORE_TEMP((LOAD_TEMP(8) >= ${3 * industry.supply_requirements[0]} + (${industry.supply_requirements[2]} * primary_level2_requirement)) ? primary_level2_bonus :
-		           (LOAD_TEMP(8) >= ${industry.supply_requirements[0]} + (${industry.supply_requirements[2]} * primary_level1_requirement)) ? primary_level1_bonus : 0, 9),
+		STORE_TEMP((LOAD_TEMP(8) >= (${industry.supply_requirements[2]} * primary_level2_requirement)) ? primary_level2_bonus :
+		           (LOAD_TEMP(8) >= (${industry.supply_requirements[2]} * primary_level1_requirement)) ? primary_level1_bonus : 0, 9),
 		STORE_PERM(LOAD_TEMP(9), var_current_supplies_prod_factor)
 		]) {
 	${industry.id}_production_256;
