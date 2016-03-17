@@ -94,14 +94,18 @@ STR_CARGO_NAME_MILK                                                             
 STR_CARGO_NAME_MILK.acc                                                         :Lac
 STR_CARGO_NAME_MILK.dat                                                         :Lacti
 STR_CARGO_NAME_MILK.gen                                                         :lactis
+STR_CARGO_NAME_MANGANESE                                                        :{G=n}Manganum
+STR_CARGO_NAME_MANGANESE.acc                                                    :Manganum
+STR_CARGO_NAME_MANGANESE.dat                                                    :Mangano
+STR_CARGO_NAME_MANGANESE.gen                                                    :mangani
 STR_CARGO_NAME_MANUFACTURING_SUPPLIES                                           :{G=mp}Apparatus Fabricationis
 STR_CARGO_NAME_MANUFACTURING_SUPPLIES.acc                                       :Apparatus Fabricationis
 STR_CARGO_NAME_MANUFACTURING_SUPPLIES.dat                                       :Apparatibus Fabricationis
 STR_CARGO_NAME_MANUFACTURING_SUPPLIES.gen                                       :apparatuum fabricationis
-STR_CARGO_NAME_NITRATES                                                         :{G=np}Nitrata
-STR_CARGO_NAME_NITRATES.acc                                                     :Nitrata
-STR_CARGO_NAME_NITRATES.dat                                                     :Nitratis
-STR_CARGO_NAME_NITRATES.gen                                                     :nitratorum
+STR_CARGO_NAME_NITRATES                                                         :{G=mp}Nitrates
+STR_CARGO_NAME_NITRATES.acc                                                     :Nitrates
+STR_CARGO_NAME_NITRATES.dat                                                     :Nitratibus
+STR_CARGO_NAME_NITRATES.gen                                                     :nitratum
 STR_CARGO_NAME_NUTS                                                             :{G=fp}Nuces
 STR_CARGO_NAME_NUTS.acc                                                         :Nuces
 STR_CARGO_NAME_NUTS.dat                                                         :Nucibus
@@ -110,6 +114,10 @@ STR_CARGO_NAME_PETROL                                                           
 STR_CARGO_NAME_PETROL.acc                                                       :Benzinum
 STR_CARGO_NAME_PETROL.dat                                                       :Benzino
 STR_CARGO_NAME_PETROL.gen                                                       :benzini
+STR_CARGO_NAME_PHOSPHATE                                                        :{G=m}Phosphas
+STR_CARGO_NAME_PHOSPHATE.acc                                                    :Phosphatem
+STR_CARGO_NAME_PHOSPHATE.dat                                                    :Phosphati
+STR_CARGO_NAME_PHOSPHATE.gen                                                    :phosphatis
 STR_CARGO_NAME_RECYCLABLES                                                      :{G=np}Regyrabilia
 STR_CARGO_NAME_RECYCLABLES.acc                                                  :Regyrabilia
 STR_CARGO_NAME_RECYCLABLES.dat                                                  :Regyrabilibus
@@ -162,12 +170,14 @@ STR_CARGO_UNIT_FISH                                                             
 STR_CARGO_UNIT_FMSP                                                             :{G=fp}{SIGNED_WORD} capsa{P 0 "" e} apparatuum agricolarium
 STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} fructuum
 STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} tigni
+STR_CARGO_UNIT_MANGANESE                                                        :{WEIGHT} mangani
 STR_CARGO_UNIT_METAL                                                            :{WEIGHT} metalli
 STR_CARGO_UNIT_MILK                                                             :{VOLUME} lactis
-STR_CARGO_UNIT_NITRATES                                                         :{WEIGHT} nitratorum
+STR_CARGO_UNIT_NITRATES                                                         :{WEIGHT} nitratum
 STR_CARGO_UNIT_NUTS                                                             :{G=mp}{SIGNED_WORD} sacc{P 0 us i} nucum
 STR_CARGO_UNIT_MNSP                                                             :{G=fp}{SIGNED_WORD} capsa{P 0 "" e} apparatuum fabricationis
 STR_CARGO_UNIT_PETROL                                                           :{VOLUME} benzini
+STR_CARGO_UNIT_PHOSPHATE                                                        :{WEIGHT} phosphatis
 STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} regyrabilium
 STR_CARGO_UNIT_SAND                                                             :{WEIGHT} harenae
 STR_CARGO_UNIT_SCRAP_METAL                                                      :{WEIGHT} scrutorum metallicorum
@@ -192,12 +202,14 @@ STR_CID_FARM_SUPPLIES                                                           
 STR_CID_FIBRES                                                                  :{TINYFONT}FS
 STR_CID_FISH                                                                    :{TINYFONT}PS
 STR_CID_LUMBER                                                                  :{TINYFONT}TG
+STR_CID_MANGANESE                                                               :{TINYFONT}MN
 STR_CID_MANUFACTURING_SUPPLIES                                                  :{TINYFONT}AF
 STR_CID_METAL                                                                   :{TINYFONT}MT
 STR_CID_MILK                                                                    :{TINYFONT}LC
 STR_CID_NITRATES                                                                :{TINYFONT}NT
 STR_CID_NUTS                                                                    :{TINYFONT}NU
 STR_CID_PETROL                                                                  :{TINYFONT}BZ
+STR_CID_PHOSPHATE                                                               :{TINYFONT}PH
 STR_CID_RECYCLABLES                                                             :{TINYFONT}RG
 STR_CID_SAND                                                                    :{TINYFONT}HA
 STR_CID_SCRAP_METAL                                                             :{TINYFONT}SM
@@ -231,7 +243,7 @@ STR_EXTRA_BRICKWORKS                                                            
 STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Oneris productio:{} {STRING} 2 tonnae ex 8 tonnis argillae traditis{} 4 tonnae ex 8 tonnis petrarum traditis{}{}Productio auget si duo plurave onera traduntur intra tres menses.
 STR_EXTRA_CEMENT_PLANT_COAL_SUBSTR                                              :2 tonnae ex 8 tonnis carbonis traditis{}
 STR_EXTRA_CEMENT_PLANT_PETROL_SUBSTR                                            :2 tonnae ex 8,000 litris benzini traditis{}
-STR_EXTRA_CHEMICAL_PLANT                                                        :{BLACK}Oneris productio:{} 6,000 litra ex 8,000 litris petrolei traditis{} 6,000 litra ex 8 tonnis nitratorum traditis
+STR_EXTRA_CHEMICAL_PLANT                                                        :{BLACK}Oneris productio:{} 6,000 litra ex 8,000 litris petrolei traditis{} 6,000 litra ex 8 tonnis nitratum traditis
 STR_EXTRA_COPPER_REFINERY                                                       :{BLACK}Oneris productio:{} 5 tonnae ex 8 tonnis aeris traditis{} 3 tonnae ex 8,000 litris chemicorum traditis{}{}Productio auget si duo plurave onera traduntur intra tres menses.
 STR_EXTRA_DAIRY                                                                 :{BLACK}Oneris productio:{} 3 tonnae ex 8 capsis apparatuum fabricationis traditis{} 5 tonnae ex 8,000 litris lactis traditis{}{}Productio auget si ambo onera traduntur intra tres menses.
 STR_EXTRA_FERTILIZER_PLANT                                                      :{BLACK}Oneris productio:{} 8 capsae ex 8,000 litris chemicorum traditis
@@ -438,6 +450,10 @@ STR_IND_MACHINE_SHOP                                                            
 STR_IND_MACHINE_SHOP.abl                                                        :Fabrica Machinaria
 STR_IND_MACHINE_SHOP.acc                                                        :Fabricam Machinariam
 STR_IND_MACHINE_SHOP.gen                                                        :fabricae machinariae
+STR_IND_MANGANESE_MINE                                                          :{G=f}Manganifodina
+STR_IND_MANGANESE_MINE.abl                                                      :Manganifodina
+STR_IND_MANGANESE_MINE.acc                                                      :Manganifodinam
+STR_IND_MANGANESE_MINE.gen                                                      :manganifodinae
 STR_IND_METAL_FABRICATION_PLANT                                                 :{G=f}Metalli Officina
 STR_IND_METAL_FABRICATION_PLANT.abl                                             :Metalli Officina
 STR_IND_METAL_FABRICATION_PLANT.acc                                             :Metalli Officinam
@@ -462,6 +478,10 @@ STR_IND_PETROLPUMP                                                              
 STR_IND_PETROLPUMP.abl                                                          :Statione Benzinaria
 STR_IND_PETROLPUMP.acc                                                          :Stationem Benzinariam
 STR_IND_PETROLPUMP.gen                                                          :stationis benzinariae
+STR_IND_PHOSPHATE_MINE                                                          :{G=f}Phosphatifodina
+STR_IND_PHOSPHATE_MINE.abl                                                      :Phosphatifodina
+STR_IND_PHOSPHATE_MINE.acc                                                      :Phosphatifodinam
+STR_IND_PHOSPHATE_MINE.gen                                                      :phosphatifodinae
 STR_IND_PLASTICS_PLANT                                                          :{G=f}Fabrica Plasticarum
 STR_IND_PLASTICS_PLANT.abl                                                      :Fabrica Plasticarum
 STR_IND_PLASTICS_PLANT.acc                                                      :Fabricam Plasticarum

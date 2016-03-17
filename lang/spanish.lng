@@ -21,7 +21,7 @@ STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0                                         
 STR_PARAM_NAME_PRIMARY_LEVEL1_REQUIREMENT                                       :Ajuste de los requisitos de carga para el Nivel de Producción Mejorada (%)
 STR_PARAM_NAME_PRIMARY_LEVEL2_REQUIREMENT                                       :Ajuste de los requisitos de carga para el Nivel de Producción Gung Ho (%)
 STR_PARAM_DESC_PRIMARY_LEVEL_REQUIREMENT                                        :La cantidad de suministros requeridos depende del tipo de industria y de este multiplicador en porcentaje
-STR_PARAM_NAME_PRIMARY_LEVEL1_BONUS                                             :Bonus de producción en el Nivel de Producción Mejorada
+STR_PARAM_NAME_PRIMARY_LEVEL1_BONUS                                             :Nivel de producción primario 'Mejorado' (%)
 STR_PARAM_NAME_PRIMARY_LEVEL2_BONUS                                             :Nivel de producción primario 'Gung ho' (%)
 STR_PARAM_DESC_PRIMARY_LEVEL_BONUS                                              :Porcentaje que aumenta la producción de la industria, cuando se cumple con todos los suministros requeridos
 
@@ -199,7 +199,7 @@ STR_EXTRA_TEXTILE_MILL                                                          
 STR_EXTRA_TEXTILE_MILL_WOOL_SUBSTR                                              :5 cajas por cada 8 fardos de lana entregados{}
 STR_EXTRA_TEXTILE_MILL_PLANT_FIBRES_SUBSTR                                      :5 cajas por cada 8t de fibras vegetales entregadas{}
 STR_EXTRA_TYRE_PLANT                                                            :{BLACK}Producción:{} 6 cajas por cada 8,000l de caucho entregados{} 2 cajas por cada 8,000l de productos químicos entregados{}{}La producción se incrementa si ambas cargas son entregadas con menos de un trimestre de diferencia entre sí.
-STR_EXTRA_VEHICLE_FACTORY                                                       :{BLACK}Producción:{} 3 vehículos por cada 8 cajas de piezas de vehículos entregadas{} 3 vehículos por cada 8 cajas de metal entregadas{} 2 vehículos por cada 8,000l de productos químicos entregados{}{}La producción se incrementa si dos o más cargas son entregadas en un intervalo inferior a un trimestre.
+STR_EXTRA_VEHICLE_FACTORY                                                       :{BLACK}Producción:{} 3 vehículos por cada 8 cajas de piezas de vehículos entregadas{} 3 vehículos por cada 8t de metal entregadas{} 2 vehículos por cada 8,000l de productos químicos entregados{}{}La producción se incrementa si dos o más cargas son entregadas en un intervalo inferior a un trimestre.
 
 STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ DEBUG ------------{}Producción este mes:{}Carga 1: {WHITE}{COMMA}{BLACK}{}Carga 2: {WHITE}{COMMA}{BLACK}{}Días desde la última entrega: {WHITE}{COMMA}{BLACK}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Producción máxima alcanzada
