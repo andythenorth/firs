@@ -74,7 +74,7 @@ spriteset_greeble = industry.add_spriteset(
 )
 spriteset_blast_furnace_2 = industry.add_spriteset(
     id = 'steel_mill_spriteset_blast_furnace_2',
-    sprites = [(10, 10, 64, 144, -31, -115)],
+    sprites = [(10, 10, 64, 144, -31, -114)],
     zextent = 130
 )
 spriteset_blast_furnace_1 = industry.add_spriteset(
