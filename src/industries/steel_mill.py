@@ -144,14 +144,12 @@ industry.add_spritelayout(
     ground_sprite = sprite_ground,
     ground_overlay = sprite_ground_overlay,
     building_sprites = [],
-    #fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
     id = 'steel_mill_spritelayout_greeble',
     ground_sprite = sprite_ground,
     ground_overlay = sprite_ground_overlay,
     building_sprites = [spriteset_greeble],
-    #fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
     id = 'steel_mill_spritelayout_blast_furnace_1',
@@ -159,63 +157,54 @@ industry.add_spritelayout(
     ground_overlay = sprite_ground_overlay,
     building_sprites = [spriteset_blast_furnace_1],
     smoke_sprites = [sprite_smoke],
-    #fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
     id = 'steel_mill_spritelayout_blast_furnace_2',
     ground_sprite = sprite_ground,
     ground_overlay = sprite_ground_overlay,
     building_sprites = [spriteset_blast_furnace_2],
-    #fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
     id = 'steel_mill_spritelayout_small_shed',
     ground_sprite = sprite_ground,
     ground_overlay = sprite_ground_overlay,
     building_sprites = [spriteset_small_shed],
-    #fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
     id = 'steel_mill_spritelayout_ladle_transporter',
     ground_sprite = sprite_ground,
     ground_overlay = sprite_ground_overlay,
     building_sprites = [spriteset_ladle_transporter],
-    #fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
     id = 'steel_mill_spritelayout_brick_building',
     ground_sprite = sprite_ground,
     ground_overlay = sprite_ground_overlay,
     building_sprites = [spriteset_brick_building],
-    #fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
     id = 'steel_mill_spritelayout_small_tanks',
     ground_sprite = sprite_ground,
     ground_overlay = sprite_ground_overlay,
     building_sprites = [spriteset_small_tanks],
-    #fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
     id = 'steel_mill_spritelayout_large_shed_rear_part',
     ground_sprite = sprite_ground,
     ground_overlay = sprite_ground_overlay,
     building_sprites = [spriteset_large_shed_rear_part],
-    #fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
     id = 'steel_mill_spritelayout_large_shed_front_part',
     ground_sprite = spriteset_ground_tile_dark_animated,
     ground_overlay = spriteset_ground_tile_dark_animated,
     building_sprites = [spriteset_large_shed_front_part_animated],
-    #fences = ['nw','ne','se','sw']
 )
 industry.add_spritelayout(
     id = 'steel_mill_spritelayout_casting_shed',
     ground_sprite = spriteset_ground_tile_dark_animated,
     ground_overlay = spriteset_ground_tile_dark_animated,
     building_sprites = [spriteset_casting_shed_animated],
-    #fences = ['nw','ne','se','sw']
 )
 industry.add_industry_layout(
     id = 'steel_mill_industry_layout_1',
