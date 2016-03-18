@@ -9,8 +9,8 @@ STR_GRF_URL                                                                     
 
 STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :Numerus tegularum maximus a littore ad zonas piscarias, suggestus petrolearios, et situs effosionis struendos.
 STR_PARAM_DESC_DEBUG                                                            :Tantum est iis qui satis docti sunt
-STR_PARAM_DESC_ECONOMIES                                                        :Oeconomiae produnt varia onera et variae industriae.{}{}Ei qui vult ludum simplicem habere debet eligere oeconomiam simplicem, nam habent pauciores industrias oneraque quam aliae oeconomiae.{}{}Situs Interretialis FIRS habet plures descriptiones oeconomiarum.
-STR_PARAM_DESC_NO_OPENINGS                                                      :Solite, novae industriae aperiunt intra ludum.{}{}Si optas 'vetare aperire' industriae non aperient, et lusores non poterunt industrias condere prospicereve.
+STR_PARAM_DESC_ECONOMIES                                                        :Oeconomiae produnt varia onera et variae industriae.{}{}Ei qui vult ludum simplicem habere debet eligere oeconomiam {SILVER}simplicem{BLACK}, nam habent pauciores industrias oneraque quam aliae oeconomiae.{}{}Situs Interretialis FIRS habet plures descriptiones oeconomiarum.
+STR_PARAM_DESC_NO_OPENINGS                                                      :Solite, novae industriae aperiunt intra ludum.{}{}Si optas {SILVER}vetare aperire{BLACK} industriae non aperient, etiam lusores non poterunt industrias condere prospicereve.
 STR_PARAM_DESC_SECONDARY_NEVER_CLOSE                                            :Solite, industriae secundariae FIRS numquam claudent.{}{}Si sinis secondarias claudere, industriae secondariae claudant si diu nulla onera tradantur. Industriae primariae FIRS numquam claudunt et non afficiuntur ab hac electione.
 STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY                                   :Numerus tegularum maximus a littore ad industrias marinas struendas
 STR_PARAM_NAME_DEBUG                                                            :Monstrare nuntia emendationis
@@ -19,12 +19,16 @@ STR_PARAM_NAME_NO_OPENINGS                                                      
 STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            :Sinere industrias secundas claudere
 STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0                                         :Infinitus
 
+STR_PARAM_DESC_PRIMARY_LEVEL_REQUIREMENT                                        :Productio fundorum, fodinarum, et ceterarum industriarum augetur dum necessarii apparatus traditi sunt, primum {SILVER}aucta{BLACK}, demum {SILVER}maxima{BLACK}, satis apparatibus traditis.{}{}Valores soliti sat boni sunt, sed si vis, potes eos mutare.{}{}Portus et industriae similes postulant decemplicem quantitatem.
+STR_PARAM_NAME_PRIMARY_LEVEL1_BONUS                                             :Productio aucta (%)
+STR_PARAM_NAME_PRIMARY_LEVEL2_BONUS                                             :Productio maxima (%)
+STR_PARAM_DESC_PRIMARY_LEVEL_BONUS                                              :Productio fundorum, fodinarum, et ceterarum, dum apparatus necessarii traditi sunt (% productionis {SILVER}mediocris{BLACK})
 
 STR_PARAM_VALUE_ECONOMIES_BASIC_TEMPERATE                                       :Temperata Simplex
 STR_PARAM_VALUE_ECONOMIES_BASIC_ARCTIC                                          :Arctica Simplex
 STR_PARAM_VALUE_ECONOMIES_BASIC_TROPIC                                          :Tropica Simplex
 STR_PARAM_VALUE_ECONOMIES_FIRS                                                  :Immanis
-STR_PARAM_VALUE_ECONOMIES_MISTAH_KURTZ                                          :Cor Tenebrarum
+STR_PARAM_VALUE_ECONOMIES_MISTAH_KURTZ                                          :In Terra Calida
 
 STR_CARGO_NAME_ALCOHOL                                                          :{G=n}Alcohol
 STR_CARGO_NAME_ALCOHOL.acc                                                      :Alcohol
@@ -42,6 +46,10 @@ STR_CARGO_NAME_BUILDING_MATERIALS                                               
 STR_CARGO_NAME_BUILDING_MATERIALS.acc                                           :Materias
 STR_CARGO_NAME_BUILDING_MATERIALS.dat                                           :Materiis
 STR_CARGO_NAME_BUILDING_MATERIALS.gen                                           :materiarum
+STR_CARGO_NAME_CASSAVA                                                          :{G=f}Mandioca
+STR_CARGO_NAME_CASSAVA.acc                                                      :Mandiocam
+STR_CARGO_NAME_CASSAVA.dat                                                      :Mandiocae
+STR_CARGO_NAME_CASSAVA.gen                                                      :mandiocae
 STR_CARGO_NAME_CHEMICALS                                                        :{G=np}Chemica
 STR_CARGO_NAME_CHEMICALS.acc                                                    :Chemica
 STR_CARGO_NAME_CHEMICALS.dat                                                    :Chemicis
@@ -158,6 +166,7 @@ STR_CARGO_NAME_WOOL.gen                                                         
 STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} alcoholis
 STR_CARGO_UNIT_BAUXITE                                                          :{WEIGHT} bauxitae
 STR_CARGO_UNIT_BEANS                                                            :{WEIGHT} fabarum
+STR_CARGO_UNIT_CASSAVA                                                          :{WEIGHT} mandiocae
 STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WEIGHT} materiarum
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} chemicorum
 STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} argillae
@@ -192,6 +201,7 @@ STR_CID_ALCOHOL                                                                 
 STR_CID_BAUXITE                                                                 :{TINYFONT}BX
 STR_CID_BEANS                                                                   :{TINYFONT}FB
 STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}MA
+STR_CID_CASSAVA                                                                 :{TINYFONT}MD
 STR_CID_CHEMICALS                                                               :{TINYFONT}CH
 STR_CID_CLAY                                                                    :{TINYFONT}AR
 STR_CID_COFFEE                                                                  :{TINYFONT}CF
@@ -251,6 +261,7 @@ STR_EXTRA_FISHING_HARBOUR                                                       
 STR_EXTRA_FLOUR_MILL                                                            :{BLACK}Oneris productio:{} 3 tonnae ex 8 capsis apparatuum fabricationis traditis{} {STRING} {STRING}{}Productio auget si apparatus traduntur intra eosdem tres menses quam alia onera.
 STR_EXTRA_FLOUR_MILL_GRAIN_SUBSTR                                               :5 tonnae ex 8 tonnis frumenti traditis{}
 STR_EXTRA_FLOUR_MILL_EMPTY_SUBSTR                                               :{}
+STR_EXTRA_FLOUR_MILL_CASSAVA_SUBSTR                                             :5 tonnae ex 8 tonnis mandiocae traditis{}
 STR_EXTRA_FLOUR_MILL_MAIZE_SUBSTR                                               :5 tonnae ex 8 tonnis maizii traditis{}
 STR_EXTRA_FOOD_PROCESSING_PLANT                                                 :{BLACK}Oneris productio:{} {STRING} 6 tonnae ex 8 tonnis fructuum traditis
 STR_EXTRA_FOOD_PROCESSING_PLANT_BEANS_SUBSTR                                    :6 tonnae ex 8 tonnis fabarum traditis{}
@@ -280,15 +291,15 @@ STR_EXTRA_SUPPLY_YARD_BUILDING_MATERIALS_SUBSTR                                 
 STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Oneris productio:{} 3 capsae ex 8 capsis apparatuum fabricationis traditis{} {STRING} {STRING}{}Productio auget si apparatus traduntur intra eosdem tres menses quam alia onera.
 STR_EXTRA_TEXTILE_MILL_WOOL_SUBSTR                                              :5 capsae ex 8 sarcinis lanae traditis{}
 STR_EXTRA_TEXTILE_MILL_PLANT_FIBRES_SUBSTR                                      :5 capsae ex 8 sarcinis fibrarum stirpium traditis{}
-STR_EXTRA_VEHICLE_FACTORY                                                       :{BLACK}Oneris productio:{} 8 capsae ex 8 capsis partium vehiculariarum traditis{} 8 capsae ex 8 capsis apparatuum fabricationis traditis
+STR_EXTRA_VEHICLE_FACTORY                                                       :{BLACK}Oneris productio:{} 3 vehicula ex 8 capsis partium vehiculariarum traditis{} 3 vehicula ex 8 tonnis metalli traditis{} 2 vehicula ex 8,000 litris chemicorum traditis{}{}Productio auget si duo plurave onera traduntur intra tres menses.
 
 STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ EMENDATIO ------------{}Productio huius mensis:{}Onus I: {WHITE}{COMMA}{BLACK}{}Onus II: {WHITE}{COMMA}{BLACK}{}Dies postquam onus traditum est: {WHITE}{COMMA}{BLACK}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Productio maxima est
-STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Productio currens: {YELLOW}Mediocris{}{}{BLACK}Trade {SIGNED_WORD} capsas apparatuum intra tres menses ut productio augeatur, sive {SIGNED_WORD} capsas ut productio maxime augeatur
-STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Productio currens: {YELLOW}Aucta{}{}{BLACK}Trade {SIGNED_WORD} capsas apparatuum intra tres menses ut productio contineatur.{}Ut iterum augeatur, trade {SIGNED_WORD} capsas
-STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}Productio currens: {YELLOW}Maxima (quadruplicata){}{}{BLACK}Trade {SKIP}{SIGNED_WORD} capsas apparatuum intra tres menses ut productio contineatur
-STR_PORT_PRODUCTION_1X                                                          :{BLACK}Productio currens: {YELLOW}Mediocris{}{}{BLACK}Trade {SIGNED_WORD} unitates oneris intra tres menses ut productio augeatur, sive {SIGNED_WORD} unitates ut productio maxime augeatur
-STR_PORT_PRODUCTION_2X                                                          :{BLACK}Productio currens: {YELLOW}Aucta{}{}{BLACK}Trade {SIGNED_WORD} unitates oneris intra tres menses ut productio contineatur{}Ut iterum augeatur, trade {SIGNED_WORD} unitates
+STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Productio currens: {YELLOW}Mediocris{}{}{BLACK}Trade {SIGNED_WORD} capsas apparatuum intra tres menses ut productio {WHITE}augeatur{BLACK}, sive {SIGNED_WORD} capsas ut productio {WHITE}maxime{BLACK} augeatur
+STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Productio currens: {YELLOW}Aucta{}{}{BLACK}Trade {SIGNED_WORD} capsas apparatuum intra tres menses ut productio contineatur.{}Ut {WHITE}maxime{BLACK} augeatur, trade {SIGNED_WORD} capsas
+STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}Productio currens: {YELLOW}Maxima{}{}{BLACK}Trade {SKIP}{SIGNED_WORD} capsas apparatuum intra tres menses ut productio contineatur
+STR_PORT_PRODUCTION_1X                                                          :{BLACK}Productio currens: {YELLOW}Mediocris{}{}{BLACK}Trade {SIGNED_WORD} unitates oneris intra tres menses ut productio {WHITE}augeatur{BLACK}, sive {SIGNED_WORD} unitates ut productio {WHITE}maxime{BLACK} augeatur
+STR_PORT_PRODUCTION_2X                                                          :{BLACK}Productio currens: {YELLOW}Aucta{}{}{BLACK}Trade {SIGNED_WORD} unitates oneris intra tres menses ut productio contineatur{}Ut {WHITE}maxime{BLACK} augeatur, trade {SIGNED_WORD} unitates
 STR_PORT_PRODUCTION_4X                                                          :{BLACK}Productio currens: {YELLOW}Maxima{}{}{BLACK}Trade {SKIP}{SIGNED_WORD} unitates oneris intra tres menses ut productio contineatur
 STR_GENERIC_NEWLINE                                                             :{}
 
@@ -370,6 +381,10 @@ STR_IND_COFFEE_ESTATE                                                           
 STR_IND_COFFEE_ESTATE.abl                                                       :Villa Cafearia
 STR_IND_COFFEE_ESTATE.acc                                                       :Villam Cafeariam
 STR_IND_COFFEE_ESTATE.gen                                                       :villae cafeariae
+STR_IND_COPPER_REFINERY                                                         :{G=fp}Molae Cupri
+STR_IND_COPPER_REFINERY.abl                                                     :Molis Cupri
+STR_IND_COPPER_REFINERY.acc                                                     :Molas Cupri
+STR_IND_COPPER_REFINERY.gen                                                     :molarum cupri
 STR_IND_FIBRE_CROP_FARM                                                         :{G=m}Fundus Fibrarum
 STR_IND_FIBRE_CROP_FARM.abl                                                     :Fundo Fibrarum
 STR_IND_FIBRE_CROP_FARM.acc                                                     :Fundum Fibrarum
