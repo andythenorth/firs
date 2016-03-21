@@ -19,6 +19,8 @@ STR_PARAM_NAME_NO_OPENINGS                                                      
 STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            :Sinere industrias secundas claudere
 STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0                                         :Infinitus
 
+STR_PARAM_NAME_PRIMARY_LEVEL1_REQUIREMENT                                       :Quot capsae necessariae sunt ad productionem augendam (16 est solitus)
+STR_PARAM_NAME_PRIMARY_LEVEL2_REQUIREMENT                                       :Quot capsae necessariae sunt ad productionem maxime augendam (80 est solitus)
 STR_PARAM_DESC_PRIMARY_LEVEL_REQUIREMENT                                        :Productio fundorum, fodinarum, et ceterarum industriarum augetur dum necessarii apparatus traditi sunt, primum {SILVER}aucta{BLACK}, demum {SILVER}maxima{BLACK}, satis apparatibus traditis.{}{}Valores soliti sat boni sunt, sed si vis, potes eos mutare.{}{}Portus et industriae similes postulant decemplicem quantitatem.
 STR_PARAM_NAME_PRIMARY_LEVEL1_BONUS                                             :Productio aucta (%)
 STR_PARAM_NAME_PRIMARY_LEVEL2_BONUS                                             :Productio maxima (%)
@@ -62,10 +64,10 @@ STR_CARGO_NAME_COFFEE                                                           
 STR_CARGO_NAME_COFFEE.acc                                                       :Cafeam
 STR_CARGO_NAME_COFFEE.dat                                                       :Cafeae
 STR_CARGO_NAME_COFFEE.gen                                                       :cafeae
-STR_CARGO_NAME_COPPER                                                           :{G=n}Aes
-STR_CARGO_NAME_COPPER.acc                                                       :Aes
-STR_CARGO_NAME_COPPER.dat                                                       :Aeri
-STR_CARGO_NAME_COPPER.gen                                                       :aeris
+STR_CARGO_NAME_COPPER                                                           :{G=n}Cuprum
+STR_CARGO_NAME_COPPER.acc                                                       :Cuprum
+STR_CARGO_NAME_COPPER.dat                                                       :Cupro
+STR_CARGO_NAME_COPPER.gen                                                       :cupri
 STR_CARGO_NAME_EDIBLE_OIL                                                       :{G=n}Oleum Edule
 STR_CARGO_NAME_EDIBLE_OIL.acc                                                   :Oleum Edule
 STR_CARGO_NAME_EDIBLE_OIL.dat                                                   :Oleo Eduli
@@ -126,6 +128,10 @@ STR_CARGO_NAME_PHOSPHATE                                                        
 STR_CARGO_NAME_PHOSPHATE.acc                                                    :Phosphatem
 STR_CARGO_NAME_PHOSPHATE.dat                                                    :Phosphati
 STR_CARGO_NAME_PHOSPHATE.gen                                                    :phosphatis
+STR_CARGO_NAME_PYRITE_ORE                                                       :{G=m}Pyrites
+STR_CARGO_NAME_PYRITE_ORE.acc                                                   :Pyriten
+STR_CARGO_NAME_PYRITE_ORE.dat                                                   :Pyritae
+STR_CARGO_NAME_PYRITE_ORE.gen                                                   :pyritae
 STR_CARGO_NAME_RECYCLABLES                                                      :{G=np}Regyrabilia
 STR_CARGO_NAME_RECYCLABLES.acc                                                  :Regyrabilia
 STR_CARGO_NAME_RECYCLABLES.dat                                                  :Regyrabilibus
@@ -171,7 +177,7 @@ STR_CARGO_UNIT_BUILDING_MATERIALS                                               
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} chemicorum
 STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} argillae
 STR_CARGO_UNIT_COFFEE                                                           :{G=mp}{SIGNED_WORD} sacc{P 0 us i} cafeae
-STR_CARGO_UNIT_COPPER                                                           :{WEIGHT} aeris
+STR_CARGO_UNIT_COPPER                                                           :{WEIGHT} cupri
 STR_CARGO_UNIT_EDIBLE_OIL                                                       :{VOLUME} olei edulis
 STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{G=fp}{SIGNED_WORD} capsa{P 0 "" e} apparatuum ingeniariorum
 STR_CARGO_UNIT_FIBRES                                                           :{G=fp}{SIGNED_WORD} sarcina{P 0 "" e} fibrarum stirpium
@@ -187,6 +193,7 @@ STR_CARGO_UNIT_NUTS                                                             
 STR_CARGO_UNIT_MNSP                                                             :{G=fp}{SIGNED_WORD} capsa{P 0 "" e} apparatuum fabricationis
 STR_CARGO_UNIT_PETROL                                                           :{VOLUME} benzini
 STR_CARGO_UNIT_PHOSPHATE                                                        :{WEIGHT} phosphatis
+STR_CARGO_UNIT_PYRITE_ORE                                                       :{WEIGHT} pyritae
 STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} regyrabilium
 STR_CARGO_UNIT_SAND                                                             :{WEIGHT} harenae
 STR_CARGO_UNIT_SCRAP_METAL                                                      :{WEIGHT} scrutorum metallicorum
@@ -205,7 +212,7 @@ STR_CID_CASSAVA                                                                 
 STR_CID_CHEMICALS                                                               :{TINYFONT}CH
 STR_CID_CLAY                                                                    :{TINYFONT}AR
 STR_CID_COFFEE                                                                  :{TINYFONT}CF
-STR_CID_COPPER                                                                  :{TINYFONT}AE
+STR_CID_COPPER                                                                  :{TINYFONT}CU
 STR_CID_EDIBLE_OIL                                                              :{TINYFONT}OE
 STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}AI
 STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}AA
@@ -220,6 +227,7 @@ STR_CID_NITRATES                                                                
 STR_CID_NUTS                                                                    :{TINYFONT}NU
 STR_CID_PETROL                                                                  :{TINYFONT}BZ
 STR_CID_PHOSPHATE                                                               :{TINYFONT}PH
+STR_CID_PYRITE_ORE                                                              :{TINYFONT}PY
 STR_CID_RECYCLABLES                                                             :{TINYFONT}RG
 STR_CID_SAND                                                                    :{TINYFONT}HA
 STR_CID_SCRAP_METAL                                                             :{TINYFONT}SM
@@ -254,7 +262,7 @@ STR_EXTRA_CEMENT_PLANT                                                          
 STR_EXTRA_CEMENT_PLANT_COAL_SUBSTR                                              :2 tonnae ex 8 tonnis carbonis traditis{}
 STR_EXTRA_CEMENT_PLANT_PETROL_SUBSTR                                            :2 tonnae ex 8,000 litris benzini traditis{}
 STR_EXTRA_CHEMICAL_PLANT                                                        :{BLACK}Oneris productio:{} 6,000 litra ex 8,000 litris petrolei traditis{} 6,000 litra ex 8 tonnis nitratum traditis
-STR_EXTRA_COPPER_REFINERY                                                       :{BLACK}Oneris productio:{} 5 tonnae ex 8 tonnis aeris traditis{} 3 tonnae ex 8,000 litris chemicorum traditis{}{}Productio auget si duo plurave onera traduntur intra tres menses.
+STR_EXTRA_COPPER_REFINERY                                                       :{BLACK}Oneris productio:{} 5 tonnae ex 8 tonnis aeris rudis traditis{} 3 tonnae ex 8,000 litris chemicorum traditis{}{}Productio auget si duo plurave onera traduntur intra tres menses.
 STR_EXTRA_DAIRY                                                                 :{BLACK}Oneris productio:{} 3 tonnae ex 8 capsis apparatuum fabricationis traditis{} 5 tonnae ex 8,000 litris lactis traditis{}{}Productio auget si ambo onera traduntur intra tres menses.
 STR_EXTRA_FERTILIZER_PLANT                                                      :{BLACK}Oneris productio:{} 8 capsae ex 8,000 litris chemicorum traditis
 STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Oneris productio:{} 3 tonnae ex 8 capsis apparatuum fabricationis traditis{} 5 tonnae ex 8 tonnis piscium traditis{}{}Productio auget si ambo onera traduntur intra tres menses.
@@ -268,7 +276,7 @@ STR_EXTRA_FOOD_PROCESSING_PLANT_BEANS_SUBSTR                                    
 STR_EXTRA_FOOD_PROCESSING_PLANT_NUTS_SUBSTR                                     :6 tonnae ex 8 tonnis nucum traditis{}
 STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Oneris productio:{} 3 capsae ex 8 capsis apparatuum fabricationis traditis{} 5 capsae ex 8 tonnis tigni traditis{}{}Productio auget si ambo onera traduntur intra tres menses.
 STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Efficit res vitreas sicut ampullas, vasa, et fenestras.{}{}Oneris productio:{} 6 tonnae ex 8 tonnis harenae traditis{} 2 tonnae ex 8,000 litris chemicorum traditis{}{}Productio auget si ambo onera traduntur intra tres menses.
-STR_EXTRA_IRON_WORKS                                                            :{BLACK}Oneris productio:{} 3 tonnae ex 8 tonnis ligni traditis{} 3 tonnae ex 8 tonnis ferri traditis{} 2 tonnae ex 8 tonnis harenae traditis{}{}Productio auget si duo plurave onera traduntur intra tres menses.
+STR_EXTRA_IRON_WORKS                                                            :{BLACK}Oneris productio:{} 3 tonnae ex 8 tonnis ligni traditis{} 3 tonnae ex 8 tonnis ferri rudis traditis{} 2 tonnae ex 8 tonnis harenae traditis{}{}Productio auget si duo plurave onera traduntur intra tres menses.
 STR_EXTRA_LIME_KILN                                                             :{BLACK}Oneris productio:{} 3 tonnae ex 8 tonnis petrarum traditis{} 3 tonnae ex 8 tonnis carbonis traditis{}{}Productio auget si ambo onera traduntur intra tres menses.
 STR_EXTRA_LUMBER_YARD                                                           :{BLACK}Efficit res sicut asseres et postes.{}{}Oneris productio:{} 2 tonnae ex 8,000 litris chemicorum traditis{} 6 tonnae ex 8 tonnis tigni traditis{}{}Productio auget si ambo onera traduntur intra tres menses.
 STR_EXTRA_MACHINE_SHOP                                                          :{BLACK}Efficit et ministrat machinas.{}{}Oneris productio:{} 8 capsae ex 8,000 litris benzini traditis{} 8 capsae ex 8 tonnis metalli traditis
@@ -280,17 +288,19 @@ STR_EXTRA_PAPER_MILL                                                            
 STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}Efficit res plasticas sicut involucra et merces domesticas.{}{}Oneris productio:{} {STRING} {STRING}
 STR_EXTRA_PLASTICS_PLANT_CHEMICALS_SUBSTR                                       :6 capsae ex 8,000 litris chemicorum traditis{}
 STR_EXTRA_PLASTICS_PLANT_PLANT_FIBRES_SUBSTR                                    :6 capsae ex 8 sarcinis fibrarum stirpium traditis{}
+STR_EXTRA_PYRITE_SMELTER                                                        :{BLACK}Facit pyriten in metallum et chemica.{}{}Oneris productio:{} 4 tonnae metalli et 4,000 litra chemicorum ex 8 tonnis pyritae traditis
 STR_EXTRA_RECYCLING_PLANT                                                       :{BLACK}Renovat regyrabilia ut iterum utiles sint.{}{}Oneris productio:{} 6 tonnae ex 8 tonnis regyrabilium traditis
 STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}Productio crescit pro portione numeri incolarum oppidi.
 STR_EXTRA_SAWMILL                                                               :{BLACK}Serrat lignum.{}{}Oneris productio:{} 6 tonnae ex 8 tonnis ligni traditis
 STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Efficit res metallicas sicut ferramenta, aratra, fores, rutra, et soleas ferreas.{}{}Oneris productio:{} 8 capsae ex 8 tonnis metalli traditis
-STR_EXTRA_STEELMILL                                                             :{BLACK}Oneris productio:{} 3 tonnae ex 8 tonnis ferri traditis{} 2 tonnae ex 8 tonnis carbonis traditis{} 3 tonnae ex 8 tonnis metallicorum scrutorum traditis{}{}Productio auget si duo plurave onera traduntur intra tres menses.
+STR_EXTRA_STEELMILL                                                             :{BLACK}Oneris productio:{} 3 tonnae ex 8 tonnis ferri rudis traditis{} 2 tonnae ex 8 tonnis carbonis traditis{} 3 tonnae ex 8 tonnis metallicorum scrutorum traditis{}{}Productio auget si duo plurave onera traduntur intra tres menses.
 STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Oneris productio:{} 3 tonnae ex 8 capsis apparatuum fabricationis traditis{} 5 tonnae ex 8 tonnis sacchari traditis{}{}Productio auget si ambo onera traduntur intra tres menses.
 STR_EXTRA_SUPPLY_YARD_VEHICLES_SUBSTR                                           :8 capsae ex 8 vehiculis traditis
 STR_EXTRA_SUPPLY_YARD_BUILDING_MATERIALS_SUBSTR                                 :8 capsae ex 8 tonnis materiarum traditis
 STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Oneris productio:{} 3 capsae ex 8 capsis apparatuum fabricationis traditis{} {STRING} {STRING}{}Productio auget si apparatus traduntur intra eosdem tres menses quam alia onera.
 STR_EXTRA_TEXTILE_MILL_WOOL_SUBSTR                                              :5 capsae ex 8 sarcinis lanae traditis{}
 STR_EXTRA_TEXTILE_MILL_PLANT_FIBRES_SUBSTR                                      :5 capsae ex 8 sarcinis fibrarum stirpium traditis{}
+STR_EXTRA_TYRE_PLANT                                                            :{BLACK}Oneris productio:{} 6 capsae ex 8,000 litris gummis traditis{} 2 capsae ex 8,000 litris chemicorum traditis{}{}Productio auget si ambo onera traduntur intra tres menses.
 STR_EXTRA_VEHICLE_FACTORY                                                       :{BLACK}Oneris productio:{} 3 vehicula ex 8 capsis partium vehiculariarum traditis{} 3 vehicula ex 8 tonnis metalli traditis{} 2 vehicula ex 8,000 litris chemicorum traditis{}{}Productio auget si duo plurave onera traduntur intra tres menses.
 
 STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ EMENDATIO ------------{}Productio huius mensis:{}Onus I: {WHITE}{COMMA}{BLACK}{}Onus II: {WHITE}{COMMA}{BLACK}{}Dies postquam onus traditum est: {WHITE}{COMMA}{BLACK}
@@ -413,6 +423,10 @@ STR_IND_FISHING_HARBOUR                                                         
 STR_IND_FISHING_HARBOUR.abl                                                     :Portu Piscario
 STR_IND_FISHING_HARBOUR.acc                                                     :Portum Piscarium
 STR_IND_FISHING_HARBOUR.gen                                                     :portus piscarii
+STR_IND_FISHING_VILLAGE                                                         :{G=m}Vicus Piscarius
+STR_IND_FISHING_VILLAGE.abl                                                     :Vico Piscario
+STR_IND_FISHING_VILLAGE.acc                                                     :Vicum Piscarium
+STR_IND_FISHING_VILLAGE.gen                                                     :vici piscarii
 STR_IND_FLOUR_MILL                                                              :{G=fp}Molae Frumenti
 STR_IND_FLOUR_MILL.abl                                                          :Molis Frumenti
 STR_IND_FLOUR_MILL.acc                                                          :Molas Frumenti
@@ -457,6 +471,10 @@ STR_IND_LIME_KILN                                                               
 STR_IND_LIME_KILN.abl                                                           :Calcaria
 STR_IND_LIME_KILN.acc                                                           :Calcariam
 STR_IND_LIME_KILN.gen                                                           :calcariae
+STR_IND_LIQUIDS_TERMINAL                                                        :{G=m}Portus Liquorum
+STR_IND_LIQUIDS_TERMINAL.abl                                                    :Portu Liquorum
+STR_IND_LIQUIDS_TERMINAL.acc                                                    :Portum Liquorum
+STR_IND_LIQUIDS_TERMINAL.gen                                                    :portus liquorum
 STR_IND_LUMBER_YARD                                                             :{G=n}Horreum Tignarium
 STR_IND_LUMBER_YARD.abl                                                         :Horreo Tignario
 STR_IND_LUMBER_YARD.acc                                                         :Horreum Tignarium
@@ -505,6 +523,14 @@ STR_IND_PORT                                                                    
 STR_IND_PORT.abl                                                                :Portu
 STR_IND_PORT.acc                                                                :Portum
 STR_IND_PORT.gen                                                                :portus
+STR_IND_PYRITE_MINE                                                             :{G=f}Pyritifodina
+STR_IND_PYRITE_MINE.abl                                                         :Pyritifodina
+STR_IND_PYRITE_MINE.acc                                                         :Pyritifodinam
+STR_IND_PYRITE_MINE.gen                                                         :pyritifodinae
+STR_IND_PYRITE_SMELTER                                                          :{G=fp}Molae Pyritae
+STR_IND_PYRITE_SMELTER.abl                                                      :Molis Pyritae
+STR_IND_PYRITE_SMELTER.acc                                                      :Molas Pyritae
+STR_IND_PYRITE_SMELTER.gen                                                      :molarum pyritae
 STR_IND_POWER_PLANT                                                             :{G=f}Electrificina
 STR_IND_POWER_PLANT.abl                                                         :Electrificina
 STR_IND_POWER_PLANT.acc                                                         :Electrificinam
@@ -545,6 +571,10 @@ STR_IND_SUGAR_REFINERY                                                          
 STR_IND_SUGAR_REFINERY.abl                                                      :Ergasterio Sacchari
 STR_IND_SUGAR_REFINERY.acc                                                      :Ergasterium Sacchari
 STR_IND_SUGAR_REFINERY.gen                                                      :ergasterii sacchari
+STR_IND_SUPPLY_YARD                                                             :{G=n}Horreum Apparatuum
+STR_IND_SUPPLY_YARD.abl                                                         :Horreo Apparatuum
+STR_IND_SUPPLY_YARD.acc                                                         :Horreum Apparatuum
+STR_IND_SUPPLY_YARD.gen                                                         :horrei apparatuum
 STR_IND_TEXTILE_MILL                                                            :{G=f}Fabrica Textoria
 STR_IND_TEXTILE_MILL.abl                                                        :Fabrica Textoria
 STR_IND_TEXTILE_MILL.acc                                                        :Fabricam Textoriam
@@ -553,6 +583,10 @@ STR_IND_TRADING_POST                                                            
 STR_IND_TRADING_POST.abl                                                        :Mercatu
 STR_IND_TRADING_POST.acc                                                        :Mercatum
 STR_IND_TRADING_POST.gen                                                        :mercatus
+STR_IND_TYRE_PLANT                                                              :{G=f}Fabrica Canthorum
+STR_IND_TYRE_PLANT.abl                                                          :Fabrica Canthorum
+STR_IND_TYRE_PLANT.acc                                                          :Fabricam Canthorum
+STR_IND_TYRE_PLANT.gen                                                          :fabricae canthorum
 STR_IND_VEHICLE_FACTORY                                                         :{G=f}Fabrica Vehicularia
 STR_IND_VEHICLE_FACTORY.abl                                                     :Fabrica Vehicularia
 STR_IND_VEHICLE_FACTORY.acc                                                     :Fabricam Vehiculariam
