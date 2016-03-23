@@ -146,6 +146,7 @@ Changelog
 - support for single-industry compiles using make argument 'TEST_INDUSTRY=clay_pit' (swap 'clay_pit' to the required industry id)
     - single-industry compiles take around 5s on the test machine
 - take advantage of increased industry limit in OpenTTD and stop trying to stuff > 64 industries into 64 slots
+- grfid bumped, v2 is different enough to v1 to justify a new grfid
 
 --------------
 1.4.4 Release
