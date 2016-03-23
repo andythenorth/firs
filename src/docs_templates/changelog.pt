@@ -5,7 +5,104 @@ Changelog
 2.0.0 Release
 --------------
 
-*New Features / Changes*
+FIRS 2, all new, better, faster, stronger.
+
+*Improved Economies*
+
+- 'Extreme' economy
+    - renamed 'FIRS' to 'Extreme'
+    - added Power Plant
+    - tip: try 'Extreme' with the Busy Bee Game Script which provides cargo delivery goals
+- 'Temperate Basic' economy
+    - added Fish chain, it's important for South West UK, which this economy is inspired by
+    - adjusted Steel Mill and Metal Workshop intro dates to 1800, fixing broken metal cargo chain before 1850
+- 'Arctic Basic' economy
+    - totally reworked, inspired by Scandinavia (previously generic sub-Arctic regions)
+    - highly industrial economy, dominated by Chemicals chain
+    - recommended start date: 1950
+    - multiple new chains, including Pyrites, Vehicles and Vehicle Parts chains
+- 'Tropic Basic' economy
+    - partially reworked, inspired directly by Argentina, Chile and Peru (previously generic South American)
+    - this economy focuses mostly on agriculture, and a couple of extractive industry types
+    - removed Bauxite and Vehicles chains
+    - added Alcohol, Copper and Fish chains
+- 'In a Hot Country'
+    - replaces 'Heart of Darkness' economy
+    - inspired by central-western Africa
+    - best used with sub-Tropic climate
+    - a complex economy with 30 cargos and 32 industries
+    - highly focussed on exporting primary cargos
+    - multiple new chains and cargo types, including Cassava, Edible Oil, Nuts, Phosphate and Manganese
+
+
+*Improved Industries*
+
+- Brewery: animated the flag :)
+- Builders Yard: new graphics and layouts
+- Chemical Plant: new graphics and layouts
+- Coal Mine: additional layouts, snow and improved graphics
+- Coffee Estate: improved layouts and graphics
+- Copper Refinery: new industry type
+- Dairies: no longer need to locate near towns
+- Dredging Site:
+    - now available from year 0, consistent with Quarry, which fixes broken cargo chains in some economies
+    - flashing pixels removed from 1st generation graphics
+- Food Processing Plant: improved graphics
+- Fruit Plantation: improved layouts and graphics
+- Furniture Factory: 'crates' not 't' in extra text string for
+- Grain Mill:
+    - renamed to Flour Mill
+    - windmill version has improved graphics and layout
+- Hotels: now build near any houses, rather than being restricted to 'near town sign', which could limit hotel construction in larger cities
+- Iron Works: additional layouts, snow and improved graphics
+- Liquids Terminal: new industry type
+- Lumber Yard: kiln building was broken when built on slopes
+- Manganese Mine: new industry type
+- Nitrate Mine: fixed station name
+- Oil Refinery: no longer uses graphics from base set, and has additional layouts
+- Phosphate Mine: new industry type
+- Power Plant:
+    - new industry type
+    - works identically to default OpenTTD Power Station, just consumes coal (no interesting new behaviour)
+- Pyrite Mine: new industry type
+- Pyrite Smelter: new industry type
+- Quarry and Clay Pit:
+    - improved graphics, including animation
+    - revised industry layouts to be smaller and easier to place on the map
+    - the map generator can now reliably place the quarry and clay pit at game start (previously these industry types were often missing)
+    - restored the standard 1-tile gap between these industry types and any other industry
+- Recycling Plant:
+    - no longer randomises cargos at construction time, that was the source of too many bug reports and confusions
+    - now introduced in 1978, for higher chance of seeing it in a game before getting bored
+- Rubber Plantation: improved layouts and graphics
+- Sawmill: additional layouts
+- Steel Mill: new graphics and layouts
+- Supply Yard: new industry type
+- Tyre Plant: new industry type
+- Vehicle Factory: new graphics and layouts
+- Vineyard: new industry type
+
+*Improved Cargos*
+
+- Cassava: new cargo type
+- Copper: new cargo type
+- Edible Oil: new cargo type
+- Engineering Supplies: new cargo icon
+- Maize: new cargo type
+- Manganese: new cargo type
+- Nuts: new cargo type
+- Petrol: now named Petroleum Fuels, better reflects actual use in-game
+- Phosphate: new cargo type
+- Pyrite Ore: new cargo type
+- Vehicles: new cargo type
+- Recyclables: removed covered class, added bulk class
+- Sugar Beet and Sugarcane:
+    - removed the daft magic where Sugarcane was only in Tropic climate, and otherwise Sugarbeet was used
+    - these two cargos are now completely independent from each other, don't change per climate
+    - Sugar Beet appears in some economies, Sugarcane in others
+
+
+*General Improvements*
 
 - adjusted clustering behaviour for most primary industries
     - clusters are less dense, making it much easier to place stations
@@ -13,52 +110,26 @@ Changelog
 - adjusted industry production rates for most primary industries
     - production is generally adjusted upwards, especially for farms
     - revised production allows pickup of sensible amounts from a single industry instead of needing to aggregate several industries
+    - amount of supplies required now same for farms and mines
 - industry probability revised to better distribute numbers of each industry type
 - processing industries that combine cargo now have a three-month delivery window instead of one month for increased output
     - this supports a wider range of transport types and play-styles, for example infrequent deliveries with ships
-- Sugar Beet or Sugarcane cargo is now specified solely by the economy, and will no longer change per climate (eh, that was daft)
-- Recyclables cargo - removed covered class, added bulk class
-- Full FIRS economy
-    - added Power Plant accepting Coal
-        - currently works identically to default OpenTTD Power Station, there are no special features planned for this industry
-    - try it with the Busy Bee Game Script which provides cargo delivery goals
-- Tropic Basic economy
-    - Sugar Refinery now also produces chemicals in this economy
-- Dredging Site now available from year 0, consistent with Quarry, which fixes broken cargo chains in some economies
-- Dairies no longer need to locate near towns
-- Quarry and Clay Pit
-    - improved graphics, including animation
-    - revised industry layouts to be smaller and easier to place on the map
-    - the map generator can now reliably place the quarry and clay pit at game start (previously these industry types were often missing)
-    - restored the standard 1-tile gap between these industry types and any other industry
-- Recycling Plant
-    - no longer randomises cargos at construction time, that was the source of too many bug reports and confusions
-    - now introduced in 1978, for higher chance of seeing it in a game before getting bored
-- Oil Refinery no longer uses graphics from base set, and has additional layouts
-- improved Builders Yard with new graphics and layouts
-- improved Coal Mine with additional layouts, snow and improved graphics
-- improved Grain Mill with revised graphics and layout for windmill version
-- improved Iron Works with additional layouts, snow and improved graphics
-- improved layouts and graphics for Coffee Estate, Fruit Plantation, and Rubber Plantation
-- animated the Brewery flag
-- additional layouts for Sawmill
-- updated online docs with images for new and changed industries
-- updated readme.txt with newer vehicle sets.
-
-*Fixes*
-
 - for many industries, allow location on a wider range of slopes, for better distribution on map gen
     - instead of simply disallowing all slopes, require that highest corner of each tile is equal to highest corner of north tile
     - resulting in 'effectively level' graphics, with foundations
     - industries are no longer mostly crowded into flat valleys by map generator
+- removed gaps in layouts from multiple industries, they look unsightly and aren't actually useful for building routes/stations
 - added missing boost behaviour at some processing industries
-- Temperate Basic economy
-    - adjusted Steel Mill and Metal Workshop intro dates to 1800, fixing broken metal cargo chain before 1850
-- explicitly preserve cargo slots for passengers, mail, goods and food, default OTTD houses need them
-- flashing pixels removed from 1st generation graphics for Dredging Site
-- 'crates' not 't' in extra text string for Furniture Factory
-- Lumber Yard kiln building was broken when built on slopes
-- Hotels now build near any houses, rather than being restricted to 'near town sign', which could limit hotel construction in larger cities
+- explicitly preserve cargo slots (IDs) for passengers, mail, goods and food, default OTTD houses need them
+- removed custom station rating parameter
+- added parameters for adjusting 'Enhanced' and 'Gung-Ho' production behaviour at industries
+- alphabetise the order of economies in parameter menu and docs
+- updated online docs with images for new and changed industries
+- docs now include charts showing cargo flow
+- docs had some broken html, fixed
+- updated translations page of docs, linking to newgrf translator
+- updated readme.txt with newer vehicle sets
+
 
 *Translations*
 
