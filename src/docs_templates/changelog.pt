@@ -117,16 +117,19 @@ Changelog
 - industry probability revised to better distribute numbers of each industry type
 - processing industries that combine cargo now have a three-month delivery window instead of one month for increased output
     - this supports a wider range of transport types and play-styles, for example infrequent deliveries with ships
-- for many industries, allow location on a wider range of slopes, for better distribution on map gen
-    - instead of simply disallowing all slopes, require that highest corner of each tile is equal to highest corner of north tile
-    - resulting in 'effectively level' graphics, with foundations
-    - industries are no longer mostly crowded into flat valleys by map generator
-- removed gaps in layouts from multiple industries, they look unsightly and aren't actually useful for building routes/stations
 - added missing boost behaviour at some processing industries
+- for many industries, allow location on a wider range of slopes, for better distribution on map gen
+    - instead of simply disallowing all slopes, require 'effectively level' land, where only the highest corner of each tile must match the highest corner of the industry north tile
+    - the benefit of this is that industries are no longer mostly crowded into flat valleys by map generator
+- removed gaps in layouts from multiple industries, they look unsightly and aren't actually useful for building routes/stations
 - explicitly preserve cargo slots (IDs) for passengers, mail, goods and food, default OTTD houses need them
 - removed custom station rating parameter
-- added parameters for adjusting 'Enhanced' and 'Gung-Ho' production behaviour at industries
-- explicitly set the order of economies in parameter menu and docs (progression from basic to more complex)
+- added parameters for adjusting 'Enhanced' and 'Gung-Ho' production behaviour at primary industries
+    - amount of supplies required for each level can be set
+    - increased production at each level can be set
+    - affects farm-type and mine-type industries
+    - port-type industries are also affected, with requirements at 10x the parameter value
+- explicitly set the order of economies in parameter menu and docs (progression is from basic to more complex)
 - updated online docs with images for new and changed industries
 - docs now include charts showing cargo flow
 - docs had some broken html
