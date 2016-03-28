@@ -17,20 +17,24 @@ STR_PARAM_NAME_NO_OPENINGS                                                      
 STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            :Secundaire industrieën kunnen sluiten
 STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0                                         :Geen limiet
 
-STR_PARAM_NAME_PRIMARY_LEVEL1_REQUIREMENT                                       :Pas goedereneis aan voor verhoogd produktie niveau (%)
-STR_PARAM_NAME_PRIMARY_LEVEL2_BONUS                                             :Bonus produktie op het gepassioneerde produktie niveau
-STR_PARAM_DESC_PRIMARY_LEVEL_BONUS                                              :Het percentage van produktieverhoging bij het vervullen van de bevoorradingseisen
+STR_PARAM_NAME_PRIMARY_LEVEL1_REQUIREMENT                                       :Aantal benodigde kratten voor verhoogde productie (standaard 16)
+STR_PARAM_NAME_PRIMARY_LEVEL2_REQUIREMENT                                       :Aantal benodigde kratten voor gepassioneerde productie (standaard 80)
+STR_PARAM_DESC_PRIMARY_LEVEL_REQUIREMENT                                        :Boerderijen, mijnen en soortgelijke industrieën verhogen naar {SILVER}verhoogd{BLACK} productieniveau als er kratten goederen worden afgeleverd. Bij voldoende leveringen wordt het prudctieniveau gewijzigd naar {SILVER}gepassioneerd{BLACK}.{}{}De standaard waardes zijn goed werkbaar, maar indien nodig kunnen ze hier veranderd worden.{}{}Goedereneisen van havens-achtige industrieën zijn 10 keer zo hoog als de getallen die hier opgegeven worden.
+STR_PARAM_NAME_PRIMARY_LEVEL1_BONUS                                             :Productieniveau van verhoogde productie (%)
+STR_PARAM_NAME_PRIMARY_LEVEL2_BONUS                                             :Productieniveau van gepassioneerde productie (%)
+STR_PARAM_DESC_PRIMARY_LEVEL_BONUS                                              :Productie van boerderijen, mijnen en soortgelijke industrieën bij het vervullen van de bevoorradingseisen (als percentage van {SILVER}normale{BLACK} productie).
 
 STR_PARAM_VALUE_ECONOMIES_BASIC_TEMPERATE                                       :Basiseconomie voor het gematigde klimaat
 STR_PARAM_VALUE_ECONOMIES_BASIC_ARCTIC                                          :Basiseconomie voor het subarctisch klimaat
 STR_PARAM_VALUE_ECONOMIES_BASIC_TROPIC                                          :Basiseconomie voor het subtropisch klimaat
-STR_PARAM_VALUE_ECONOMIES_FIRS                                                  :FIRS economie
-STR_PARAM_VALUE_ECONOMIES_MISTAH_KURTZ                                          :Hoop en hindernissen
+STR_PARAM_VALUE_ECONOMIES_FIRS                                                  :eXXtreem
+STR_PARAM_VALUE_ECONOMIES_MISTAH_KURTZ                                          :In een heet land
 
 STR_CARGO_NAME_ALCOHOL                                                          :Alcohol
 STR_CARGO_NAME_BAUXITE                                                          :Bauxiet
 STR_CARGO_NAME_BEANS                                                            :Bonen
 STR_CARGO_NAME_BUILDING_MATERIALS                                               :Bouwmaterialen
+STR_CARGO_NAME_CASSAVA                                                          :Cassave
 STR_CARGO_NAME_CHEMICALS                                                        :Chemicaliën
 STR_CARGO_NAME_CLAY                                                             :Klei
 STR_CARGO_NAME_COFFEE                                                           :Koffie
@@ -152,10 +156,11 @@ STR_EXTRA_BREWERY_MAIZE_SUBSTR                                                  
 STR_EXTRA_BRICKWORKS                                                            :{BLACK}Productie:{}  2t voor iedere 8t afgeleverde kolen{}  2t voor iedere 8t afgeleverd zand{}  4t voor iedere 8t afgeleverd klei{}{}Productie wordt verhoogd als twee of meer vrachtsoorten binnen drie maanden van elkaar worden afgeleverd.
 STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Productie:{}  {STRING} 2t voor iedere 8t afgeleverde klei{} 4t voor iedere 8t afgeleverd steen{}{}Productie wordt verhoogd als twee of meer vrachtsoorten binnen drie maanden van elkaar worden afgeleverd.
 STR_EXTRA_CEMENT_PLANT_COAL_SUBSTR                                              :2t voor iedere 8t afgeleverde kolen{}
+STR_EXTRA_CEMENT_PLANT_PETROL_SUBSTR                                            :2t voor iedere 8,000l afgeleverde benzine{}
 STR_EXTRA_CHEMICAL_PLANT                                                        :{BLACK}Productie:{} 6.000l voor iedere 8.000l afgeleverde olie{} 6.000l voor iedere 8t afgeleverde nitraten
 STR_EXTRA_COPPER_REFINERY                                                       :{BLACK}Productie:{} 5t voor iedere 8t afgeleverd kopererts{} 3t voor iedere 8.000l afgeleverde chemicaliën{}{}Productie wordt verhoogd als twee of meer vrachtsoorten binnen drie maanden van elkaar worden afgeleverd.
 STR_EXTRA_DAIRY                                                                 :{BLACK}Productie:{}  3t voor iedere 8 kratten afgeleverde productiematerialen{}  5t voor iedere 8.000l afgeleverde melk{}{}Productie wordt verhoogd als beide vrachtsoorten binnen drie maanden van elkaar worden afgeleverd.
-STR_EXTRA_FERTILIZER_PLANT                                                      :{BLACK}Productie:{}  8 kratten voor iedere 8.000l afafgeleverde chemicaliën
+STR_EXTRA_FERTILIZER_PLANT                                                      :{BLACK}Productie:{}  8 kratten voor iedere 8.000l afgeleverde chemicaliën
 STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Productie:{}  3t voor iedere 8 kratten afgeleverde productiematerialen{}  5t voor iedere 8t afgeleverd vis{}{}Productie wordt verhoogd als beide vrachtsoorten binnen drie maanden van elkaar worden afgeleverd.
 STR_EXTRA_FLOUR_MILL                                                            :{BLACK}Productie:{} 3t voor iedere 8 kratten afgeleverde productiematerialen{} {STRING} {STRING}{}Productie wordt verhoogd als productiematerialen binnen drie maanden van de andere goederen worden afgeleverd.
 STR_EXTRA_FLOUR_MILL_GRAIN_SUBSTR                                               :5t voor iedere 8t afgeleverd graan{}
@@ -193,16 +198,16 @@ STR_EXTRA_TEXTILE_MILL                                                          
 STR_EXTRA_TEXTILE_MILL_WOOL_SUBSTR                                              :5 kratten voor iedere 8 balen afgeleverd wol{}
 STR_EXTRA_TEXTILE_MILL_PLANT_FIBRES_SUBSTR                                      :5 kratten voor iedere 8 balen afgeleverd katoen{}
 STR_EXTRA_TYRE_PLANT                                                            :{BLACK}Productie:{} 6 kratten voor iedere 8.000 liter afgeleverd rubber{} 2 kratten voor iedere 8.000 liter afgeleverde chemicaliën{}{}Productie wordt verhoogd als beide vrachtsoorten binnen drie maanden van elkaar worden afgeleverd.
-STR_EXTRA_VEHICLE_FACTORY                                                       :{BLACK}Productie:{} 3 voertuigen voor iedere 8 kratten afgeleverde voeruigonderdelen{} 3 voertuigen voor ieder 8 kratten afgeleverd mateel{} 2 voertuigen voor iedere 8 kratten productiematerialen}{}Productie wordt verhoogd als twee of meer vrachtsoorten binnen drie maanden van elkaar worden afgeleverd.
+STR_EXTRA_VEHICLE_FACTORY                                                       :{BLACK}Productie:{} 3 voertuigen voor iedere 8 kratten afgeleverde voeruigonderdelen{} 3 voertuigen voor ieder 8,000l chemicaliën{}{}Productie wordt verhoogd als twee of meer vrachtsoorten binnen drie maanden van elkaar worden afgeleverd.
 
 STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ DEBUG ------------{}productie deze maand:{}Goederen 1: {WHITE}{COMMA}{BLACK}{}Goederen 2: {WHITE}{COMMA}{BLACK}{}Dagen sinds laatste levering: {WHITE}{COMMA}{BLACK}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Maximale productiecapaciteit bereikt.
-STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Huidige productie: {YELLOW}Normaal{}{}{BLACK}Lever binnen drie maanden {SIGNED_WORD} kratten constructie-, landbouw- of productiematerialen af om het productieniveau te verdubbelen (of {SIGNED_WORD} kratten om het productieniveau te verviervoudigen).
-STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Huidige productie: {YELLOW}Verhoogd (verdubbeld){}{}{BLACK}Lever binnen drie maanden {SIGNED_WORD} kratten constructie-, landbouw- of productiematerialen af om dit productieniveau te handhaven (of {SIGNED_WORD} kratten om het productieniveau te verviervoudigen).
-STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}Huidige productie: {YELLOW}Gepassioneerd (verviervoudigd){}{}{BLACK}Lever binnen drie maanden {SIGNED_WORD} kratten constructie-, landbouw- of productiematerialen af om dit productieniveau te handhaven.
-STR_PORT_PRODUCTION_1X                                                          :{BLACK}Huidige productie: {YELLOW}Normaal{}{}{BLACK}Lever binnen drie maanden {SIGNED_WORD} eenheden vracht om het productieniveau te verdubbelen (of {SIGNED_WORD} eenheden vracht om het productieniveau te verviervoudigen).
-STR_PORT_PRODUCTION_2X                                                          :{BLACK}Huidige productie: {YELLOW}Verhoogd (verdubbeld){}{}{BLACK}Lever binnen drie maanden {SIGNED_WORD} eenheden vracht om dit productieniveau te handhaven (of {SIGNED_WORD} eenheden vracht om het productieniveau te verviervoudigen).
-STR_PORT_PRODUCTION_4X                                                          :{BLACK}Huidige productie: {YELLOW}Gepassioneerd (verviervoudigd){}{}{BLACK}Lever binnen drie maanden {SIGNED_WORD} eenheden vracht om dit productieniveau te handhaven.
+STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Huidige productie: {YELLOW}Normaal{}{}{BLACK}Lever binnen drie maanden {SIGNED_WORD} eenheden vracht om {WHITE}verhoogd{BLACK} productieniveau te verkrijgen{}Lever {SIGNED_WORD} eenheden vracht voor {WHITE}gepassioneerde{BLACK} productie
+STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Huidige productie: {YELLOW}Verhoogd{}{}{BLACK}Lever binnen drie maanden {SIGNED_WORD} kratten constructie-, landbouw- of productiematerialen af om dit productieniveau te handhaven{}Voor {WHITE}gepassioneerde{BLACK} productie, lever {SIGNED_WORD} eenheden
+STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}Huidige productie: {YELLOW}Gepassioneerd{}{}{BLACK}Lever binnen drie maanden {SKIP}{SIGNED_WORD} kratten constructie-, landbouw- of productiematerialen af om dit productieniveau te handhaven.
+STR_PORT_PRODUCTION_1X                                                          :{BLACK}Huidige productie: {YELLOW}Normaal{}{}{BLACK}Lever binnen drie maanden {SIGNED_WORD} eenheden vracht om {WHITE}verhoogd{BLACK} productieniveau te verkrijgen{}Lever {SIGNED_WORD} eenheden vracht voor {WHITE}gepassioneerde{BLACK} productie
+STR_PORT_PRODUCTION_2X                                                          :{BLACK}Huidige productie: {YELLOW}Verhoogd{}{}{BLACK}Lever binnen drie maanden {SIGNED_WORD} eenheden vracht om dit productieniveau te handhaven{}Voor {WHITE}gepassioneerde{BLACK} productie, lever {SIGNED_WORD} eenheden
+STR_PORT_PRODUCTION_4X                                                          :{BLACK}Huidige productie: {YELLOW}Gepassioneerd{}{}{BLACK}Lever binnen drie maanden {SKIP}{SIGNED_WORD} eenheden vracht om dit productieniveau te handhaven.
 STR_GENERIC_NEWLINE                                                             :{}
 
 STR_FUND_BASIC_FARM                                                             :{}{BLACK}Plaats: {YELLOW}Kan niet boven de sneeuwgrens of in woestijnen gebouwd worden.
