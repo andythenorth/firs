@@ -18,9 +18,14 @@ STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0                                         
 
 STR_CARGO_NAME_ALCOHOL                                                          :Alkohol
 STR_CARGO_NAME_BAUXITE                                                          :Bauxit
+STR_CARGO_NAME_BEANS                                                            :Fazole
 STR_CARGO_NAME_BUILDING_MATERIALS                                               :Stavební materiály
+STR_CARGO_NAME_CASSAVA                                                          :Maniok
 STR_CARGO_NAME_CHEMICALS                                                        :Chemikálie
 STR_CARGO_NAME_CLAY                                                             :Jíl
+STR_CARGO_NAME_COFFEE                                                           :Káva
+STR_CARGO_NAME_COPPER                                                           :Měď
+STR_CARGO_NAME_EDIBLE_OIL                                                       :Potravinářský olej
 STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :Strojírenské potřeby
 STR_CARGO_NAME_FIBRES                                                           :Rostlinná vlákna
 STR_CARGO_NAME_FISH                                                             :Ryby
@@ -29,33 +34,50 @@ STR_CARGO_NAME_FRUITS                                                           
 STR_CARGO_NAME_LUMBER                                                           :Řezivo
 STR_CARGO_NAME_METAL                                                            :Kov
 STR_CARGO_NAME_MILK                                                             :Mléko
+STR_CARGO_NAME_MANGANESE                                                        :Mangan
 STR_CARGO_NAME_MANUFACTURING_SUPPLIES                                           :Výrobní suroviny
+STR_CARGO_NAME_NITRATES                                                         :Ledek
+STR_CARGO_NAME_NUTS                                                             :Ořechy
 STR_CARGO_NAME_PETROL                                                           :Benzín
+STR_CARGO_NAME_PHOSPHATE                                                        :Fosfát
+STR_CARGO_NAME_PYRITE_ORE                                                       :Pyrit
+STR_CARGO_NAME_RECYCLABLES                                                      :Recyklovatelné materiály
 STR_CARGO_NAME_SAND                                                             :Písek
 STR_CARGO_NAME_SCRAP_METAL                                                      :Kovový šrot
 STR_CARGO_NAME_STONE                                                            :Kámen
-STR_CARGO_NAME_SUGARCANE                                                        :Cukrová řepa
+STR_CARGO_NAME_SUGAR_BEET                                                       :Cukrová řepa
+STR_CARGO_NAME_SUGARCANE                                                        :Cukrová třtina
 STR_CARGO_NAME_WOOL                                                             :Vlna
 
 STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} alkoholu
 STR_CARGO_UNIT_BAUXITE                                                          :{WEIGHT} bauxitu
+STR_CARGO_UNIT_BEANS                                                            :{WEIGHT} fazolí
+STR_CARGO_UNIT_CASSAVA                                                          :{WEIGHT} manioku
 STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WEIGHT} stavebních materiálů
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} chemikálií
 STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} jílu
+STR_CARGO_UNIT_COPPER                                                           :{WEIGHT} mědi
+STR_CARGO_UNIT_EDIBLE_OIL                                                       :{VOLUME} potravinářského oleje
 STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} beden strojírenských potřeb
 STR_CARGO_UNIT_FIBRES                                                           :{WEIGHT} rostlinných vláken
 STR_CARGO_UNIT_FISH                                                             :{WEIGHT} ryb
 STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} beden zemědělských potřeb
 STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} ovoce a zeleniny
 STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} řeziva
+STR_CARGO_UNIT_MANGANESE                                                        :{WEIGHT} manganu
 STR_CARGO_UNIT_METAL                                                            :{WEIGHT} kovu
 STR_CARGO_UNIT_MILK                                                             :{VOLUME} mléka
+STR_CARGO_UNIT_NITRATES                                                         :{WEIGHT} ledku
 STR_CARGO_UNIT_MNSP                                                             :{SIGNED_WORD} beden výrobních surovin
 STR_CARGO_UNIT_PETROL                                                           :{VOLUME} benzínu
+STR_CARGO_UNIT_PHOSPHATE                                                        :{WEIGHT} fosfátu
+STR_CARGO_UNIT_PYRITE_ORE                                                       :{WEIGHT} pyritu
+STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} recyklovatelných materiálů
 STR_CARGO_UNIT_SAND                                                             :{WEIGHT} písku
 STR_CARGO_UNIT_SCRAP_METAL                                                      :{WEIGHT} kovového šrotu
 STR_CARGO_UNIT_STONE                                                            :{WEIGHT} kamenů
 STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} cukrové řepy
+STR_CARGO_UNIT_SUGARCANE                                                        :{WEIGHT} cukrové třtiny
 STR_CARGO_UNIT_WOOL                                                             :{WEIGHT} vlny
 
 STR_CID_ALCOHOL                                                                 :{TINYFONT}AL
@@ -78,6 +100,7 @@ STR_CID_STONE                                                                   
 STR_CID_SUGARCANE                                                               :{TINYFONT}SB
 STR_CID_WOOL                                                                    :{TINYFONT}WL
 
+STR_ERR_OPENTTD_VERSION                                                         :{ORANGE}E00: FIRS vyžaduje verzi OpenTTD 1.6.0 / trunk r27279 nebo vyšší. {YELLOW}Viz FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 
 
 STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}Produkce :{}  2t za 8t dodaného bauxitu{}  2t za 8t dodaných chemikálií{}  4t za 8t dodaného kovového šrotu{}{}Produkce se zvýší pokud jsou 2 různé suroviny doručeny během jednoho měsíce.
@@ -147,3 +170,4 @@ STR_IND_STOCKYARD                                                               
 STR_IND_SUGAR_REFINERY                                                          :Cukrovar
 STR_IND_TEXTILE_MILL                                                            :Tkalcovna
 
+STR_STATION_PLANTATION                                                          :Plantáž
