@@ -1,6 +1,7 @@
 ##grflangid 0x15
 
 STR_GRF_DESC                                                                    :{ORANGE}FIRS Industry Replacement Set{}{BLACK}By {SILVER}andythenorth{BLACK} and {SILVER}FooBar{BLACK}.{}{BLACK}'1,000 commits and counting...'{BLACK}{}{}Website: {SILVER}www.tt-foundry.com/sets/FIRS{BLACK}.License: {SILVER}GPL v2{BLACK}.Special thanks to {SILVER}Ammler{BLACK}, {SILVER}Core Xii{BLACK}, {SILVER}Irwe{BLACK}, {SILVER}planetmaker{BLACK} and {SILVER}Zephyris{BLACK}.Uses parts of {SILVER}eGRVTS{BLACK}, {SILVER}ISR{BLACK} and {SILVER}OpenGFX{BLACK}.
+STR_GRF_NAME                                                                    :{TITLE}
 
 STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :Maximální vzdálenost loviště ryb a těžby podvodních sedimentů od pobřeží.
 STR_PARAM_DESC_DEBUG                                                            :Pouze pro vývojáře
@@ -100,16 +101,30 @@ STR_CID_STONE                                                                   
 STR_CID_SUGARCANE                                                               :{TINYFONT}SB
 STR_CID_WOOL                                                                    :{TINYFONT}WL
 
+STR_ERR_CLIMATE_TOYLAND                                                         :{ORANGE}FIRS není navržen pro použití v Zemi hraček
+STR_ERR_INCOMPATIBLE_SET                                                        :{ORANGE}E01: {YELLOW}INekompatibilní set: {ORANGE}{STRING} {YELLOW}Viz FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_SET_TTRS_VERSION                                           :{ORANGE}E04: {YELLOW}Nekompatibilní verze: {ORANGE}Total Town Replacement Set musí být ve verzi 3.11 nebo novější. {YELLOW}Viz FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 STR_ERR_OPENTTD_VERSION                                                         :{ORANGE}E00: FIRS vyžaduje verzi OpenTTD 1.6.0 / trunk r27279 nebo vyšší. {YELLOW}Viz FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 
+STR_ERR_LOCATION_LIMIT_1_PER_TOWN                                               :povolen pouze jeden průmysl tohoto typu na město.
 
 STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}Produkce :{}  2t za 8t dodaného bauxitu{}  2t za 8t dodaných chemikálií{}  4t za 8t dodaného kovového šrotu{}{}Produkce se zvýší pokud jsou 2 různé suroviny doručeny během jednoho měsíce.
 STR_EXTRA_BIOREFINERY                                                           :{BLACK}Zpracovává zrní a cukr na benzín a chemikálie.{}{}6t produkce na 8t dodaných.
+STR_EXTRA_BREWERY_FRUIT_SUBSTR                                                  :5 000l na 8t dodaného ovoce{}
+STR_EXTRA_BREWERY_MAIZE_SUBSTR                                                  :5 000l na 8t dodané kukuřice{}
 STR_EXTRA_BRICKWORKS                                                            :{BLACK}Produkce :{}  2t za 8t dodaného uhlí{}  2t za 8t dodaného písku{}  4t za 8t dodaného jílu{}{}Produkce se zvýší pokud jsou 2 různé suroviny doručeny během jednoho měsíce.
 STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Produkce :{}  2t za 8t dodaného uhlí{}  2t za 8t dodaného jílu{}  4t za 8t dodaného kamene{}{}Produkce se zvýší pokud jsou 2 různé suroviny doručeny během jednoho měsíce.
+STR_EXTRA_CEMENT_PLANT_COAL_SUBSTR                                              :2t na 8t dodaného uhlí{}
+STR_EXTRA_CHEMICAL_PLANT                                                        :{BLACK}Produkce:{}  6 000l na 8 000l dodané ropy{}  6 000l na 8t dodaného ledku
 STR_EXTRA_DAIRY                                                                 :{BLACK}Produkce :{}  3t za 8t dodaných výrobních surovin{}  5t za 8t dodaného mléka{}{}Zvýší se na 8t za každých 8t obou nákladů přivezených během jednoho měsíce od sebe.
 STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Produkce :{}  3t za 8t dodaných výrobních surovin{}  5t za 8t dodaných ryb{}{}Zvýší se na 8t za každých 8t obou nákladů přivezených během jednoho měsíce od sebe.
 STR_EXTRA_FLOUR_MILL                                                            :{BLACK}Produkce :{}  3t za 8t dodaných výrobních surovin{}  5t za 8t dodaného zrní{}{}Zvýší se na 8t za každých 8t obou nákladů přivezených během jednoho měsíce od sebe.
+STR_EXTRA_FLOUR_MILL_GRAIN_SUBSTR                                               :5t na 8t dodaného zrní{}
+STR_EXTRA_FLOUR_MILL_EMPTY_SUBSTR                                               :{}
+STR_EXTRA_FLOUR_MILL_CASSAVA_SUBSTR                                             :5t na 8t dodaného manioku{}
+STR_EXTRA_FLOUR_MILL_MAIZE_SUBSTR                                               :5t na 8t dodané kukuřice{}
+STR_EXTRA_FOOD_PROCESSING_PLANT                                                 :{BLACK}Produkce:{}  {STRING}  6t na 8t dodaného ovoce
+STR_EXTRA_FOOD_PROCESSING_PLANT_BEANS_SUBSTR                                    :6t na 8t dodaných fazolí{}
 STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Produkce :{}  3t za 8t dodaných výrobních surovin{}  5t za 8t dodaného řeziva{}{}Zvýší se na 8t za každých 8t obou nákladů přivezených během jednoho měsíce od sebe.
 STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Vyrábí skleněné výrobky (lahve, vázy, okenní tabulky).{}{}{BLACK}Produkce :{}  6t za 8t dodaného písku{}  2t za 8t dodaných chemikálií{}{}Zvýší se na 8t za každých 8t obou nákladů přivezených během jednoho měsíce od sebe.
 STR_EXTRA_IRON_WORKS                                                            :{BLACK}Produkce :{}  1t za 8t dodaného dřeva{}  2t za 8t dodané železné rudy{}{}Zvýší se na 3t za každých 8t obou nákladů přivezených během jednoho měsíce od sebe.
@@ -121,29 +136,40 @@ STR_EXTRA_METAL_FOUNDRY                                                         
 STR_EXTRA_OIL_REFINERY                                                          :{BLACK}Zpracovává ropu na benzín a chemikálie.{}{}6t produkce na 8t dodaných.
 STR_EXTRA_PAPER_MILL                                                            :{BLACK}Drtí dřevo a vyrábí papír a karton.{}{}{BLACK}Produkce :{}  4t za 8t dodaného dřeva{}  2t za 8t dodaného jílu{}  2t za 8t dodaných chemikálií{}{}Produkce se zvýší pokud jsou 2 různé suroviny doručeny během jednoho měsíce.
 STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}Vyrábí plastové věci jako např. obaly a domácí potřeby.{}{}6t produkce na 8t dodaných.
+STR_EXTRA_RECYCLING_PLANT                                                       :{BLACK}Zpracovává recyklovatelné materiály pro další použití{}{}Produkce:{}  6t na 8t dodaných recyklovatelných materiálů
+STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}Produkce je úměrná městské populaci.
 STR_EXTRA_SAWMILL                                                               :{BLACK}Zpracovává dřevo.{}{}6t produkce na 8t dodaných.
 STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Vyrábí kované výrobky jako např. brány, nářadí, pluhy, atd.{}{}5t produkce na 8t dodaných.
 STR_EXTRA_STEELMILL                                                             :{BLACK}Produkce :{}  2t za 8t dodané železné rudy{}  2t za 8t dodaného uhlí{}  4t za 8t dodaného kovového šrotu{}{}Produkce se zvýší pokud jsou 2 různé suroviny doručeny během jednoho měsíce.
 STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Produkce :{}  3t za 8t dodaných výrobních surovin{}  5t za 8t dodaného cukru{}{}Zvýší se na 8t za každých 8t obou nákladů přivezených během jednoho měsíce od sebe.
 STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Produkce :{}  3t za 8t dodaných výrobních surovin{}  5t za 8t dodané vlny{}  5t za 8t dodaných rostliných vláken{}{}Produkce se zvýší pokud byly výrobní suroviny doručeny během měsíce od ostatních surovin.
+STR_EXTRA_TYRE_PLANT                                                            :{BLACK}Produkce:{}  6 beden na 8 000l dodaného kaučuku{}  2 bedny na 8 000l dodaných chemikálií{}Produkce se zvýší pokud jsou obě suroviny doručeny během jednoho měsíce.
 
+STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ DEBUG ------------{}Produkce tento měsíc:{}Náklad 1: {WHITE}{COMMA}{BLACK}{}Náklad 2: {WHITE}{COMMA}{BLACK}{}Dní od poslední dodávky: {WHITE}{COMMA}{BLACK}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Maximální produkce dosažena
 STR_GENERIC_NEWLINE                                                             :{}
 
+STR_FUND_FOREST                                                                 :{}{BLACK}Poloha: {YELLOW}Nelze založit v poušti
+STR_FUND_RUBBER_PLANTATION                                                      :{}{BLACK}Poloha: {YELLOW}Nelze založit na sněhu nebo v poušti
 
 
 
+STR_FUND_AVAILABLE_UNTIL                                                        :{}{BLACK}Není k dispozici po: {YELLOW}{COMMA}
 
 
+STR_TOWN                                                                        :{STRING}
+STR_STATION                                                                     :{STRING} {STRING}
 
 STR_IND_ALUMINIUM_PLANT                                                         :Hliníková huť
 STR_IND_ARABLE_FARM                                                             :Rostlinná farma
+STR_IND_BASICFARM                                                               :Farma
 STR_IND_BAUXITE_MINE                                                            :Bauxitový důl
 STR_IND_BIOREFINERY                                                             :Biorafinerie
 STR_IND_BREWERY                                                                 :Pivovar
 STR_IND_BRICK_WORKS                                                             :Cihelna
 STR_IND_BUILDERS_YARD                                                           :Stavebniny
 STR_IND_CEMENT_PLANT                                                            :Cementárna
+STR_IND_CHEMICAL_PLANT                                                          :Chemička
 STR_IND_CLAY_PIT                                                                :Jílový důl
 STR_IND_DAIRY                                                                   :Mlékárna
 STR_IND_DAIRYFARM                                                               :Mléčná farma
@@ -151,6 +177,7 @@ STR_IND_DREDGING_SITE                                                           
 STR_IND_FERTILISER_PLANT                                                        :Továrna na hnojivo
 STR_IND_FISHING_GROUND                                                          :Loviště ryb
 STR_IND_FISHING_HARBOUR                                                         :Rybí trh
+STR_IND_FLOUR_MILL                                                              :Mlýn
 STR_IND_FOOD_MARKET                                                             :Obchod
 STR_IND_FURNITURE_FACTORY                                                       :Truhlářství
 STR_IND_GLASS_WORKS                                                             :Sklárna
@@ -159,15 +186,22 @@ STR_IND_JUNKYARD                                                                
 STR_IND_LIME_KILN                                                               :Vápenka
 STR_IND_LUMBER_YARD                                                             :Řezárna
 STR_IND_MACHINE_SHOP                                                            :Obchod se stroji
+STR_IND_METAL_FABRICATION_PLANT                                                 :Kovovýrobný závod
 STR_IND_METAL_FOUNDRY                                                           :Slévárna
 STR_IND_MIXEDFARM                                                               :Smíšená farma
 STR_IND_PETROLPUMP                                                              :Benzínová stanice
 STR_IND_PLASTICS_PLANT                                                          :Továrna na plasty
+STR_IND_PYRITE_MINE                                                             :Pyritový důl
+STR_IND_PYRITE_SMELTER                                                          :Pyritová huť
 STR_IND_QUARRY                                                                  :Kamenolom
+STR_IND_RECYCLING_PLANT                                                         :Třídírna odpadů
 STR_IND_SHEEPFARM                                                               :Ovčí farma
 STR_IND_SMITHY_FORGE                                                            :Kovárna
 STR_IND_STOCKYARD                                                               :Masokombinát
 STR_IND_SUGAR_REFINERY                                                          :Cukrovar
 STR_IND_TEXTILE_MILL                                                            :Tkalcovna
+STR_IND_TYRE_PLANT                                                              :Továrna na pneumatiky
 
+STR_STATION_INDUSTRY_ESTATE                                                     :Průmyslová zóna
 STR_STATION_PLANTATION                                                          :Plantáž
+STR_STATION_TOWN                                                                :Stará radnice
