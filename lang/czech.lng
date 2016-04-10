@@ -1,4 +1,7 @@
 ##grflangid 0x15
+##plural 10
+##gender fp map f mnp m n np
+##case acc nom loc big voc ins dat small gen
 
 STR_GRF_DESC                                                                    :{ORANGE}FIRS Industry Replacement Set{}{BLACK}By {SILVER}andythenorth{BLACK} and {SILVER}FooBar{BLACK}.{}{BLACK}'1,000 commits and counting...'{BLACK}{}{}Website: {SILVER}www.tt-foundry.com/sets/FIRS{BLACK}.License: {SILVER}GPL v2{BLACK}.Special thanks to {SILVER}Ammler{BLACK}, {SILVER}Core Xii{BLACK}, {SILVER}Irwe{BLACK}, {SILVER}planetmaker{BLACK} and {SILVER}Zephyris{BLACK}.Uses parts of {SILVER}eGRVTS{BLACK}, {SILVER}ISR{BLACK} and {SILVER}OpenGFX{BLACK}.
 STR_GRF_NAME                                                                    :{TITLE}
@@ -57,6 +60,7 @@ STR_CARGO_UNIT_CASSAVA                                                          
 STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WEIGHT} stavebních materiálů
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} chemikálií
 STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} jílu
+STR_CARGO_UNIT_COFFEE                                                           :{SIGNED_WORD} pyt{P 0 el le lů} kávy
 STR_CARGO_UNIT_COPPER                                                           :{WEIGHT} mědi
 STR_CARGO_UNIT_EDIBLE_OIL                                                       :{VOLUME} potravinářského oleje
 STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} beden strojírenských potřeb
@@ -120,7 +124,6 @@ STR_EXTRA_DAIRY                                                                 
 STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Produkce :{}  3t za 8t dodaných výrobních surovin{}  5t za 8t dodaných ryb{}{}Zvýší se na 8t za každých 8t obou nákladů přivezených během jednoho měsíce od sebe.
 STR_EXTRA_FLOUR_MILL                                                            :{BLACK}Produkce :{}  3t za 8t dodaných výrobních surovin{}  5t za 8t dodaného zrní{}{}Zvýší se na 8t za každých 8t obou nákladů přivezených během jednoho měsíce od sebe.
 STR_EXTRA_FLOUR_MILL_GRAIN_SUBSTR                                               :5t na 8t dodaného zrní{}
-STR_EXTRA_FLOUR_MILL_EMPTY_SUBSTR                                               :{}
 STR_EXTRA_FLOUR_MILL_CASSAVA_SUBSTR                                             :5t na 8t dodaného manioku{}
 STR_EXTRA_FLOUR_MILL_MAIZE_SUBSTR                                               :5t na 8t dodané kukuřice{}
 STR_EXTRA_FOOD_PROCESSING_PLANT                                                 :{BLACK}Produkce:{}  {STRING}  6t na 8t dodaného ovoce

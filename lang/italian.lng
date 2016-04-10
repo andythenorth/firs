@@ -1,6 +1,7 @@
 ##grflangid 0x27
 ##plural 0
 ##gender m f
+##case fp fs mp ms
 
 STR_GRF_DESC                                                                    :{ORANGE}FIRS Industry Replacement Set{}{BLACK}Di andythenorth, FooBar, planetmaker, Terkhen e Yexo, e con il contributo di molti altri. {SILVER}Leggete il file readme per informazioni e per consigli su come usare FIRS. {BLACK}Licenza: GPL v2.
 STR_GRF_NAME                                                                    :{TITLE}
@@ -165,7 +166,6 @@ STR_EXTRA_FERTILIZER_PLANT                                                      
 STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Produzione:{}  3t ogni 8t di forniture industriali consegnate{}  5t ogni 8t di pesce consegnate{}{}Il prodotto aumenta se entrambe le merci sono consegnate entro un intervallo inferiore a tre mesi.
 STR_EXTRA_FLOUR_MILL                                                            :{BLACK}Produzione:{}  3t ogni 8 casse di forniture industriali consegnate{}  {STRING} {STRING}{}La produzionoe aumenta se le forniture industriali e gli altri tipi di merci sono consegnati entro un intervallo inferiore a tre mesi.
 STR_EXTRA_FLOUR_MILL_GRAIN_SUBSTR                                               :5t ogni 8t di grano consegnate{}
-STR_EXTRA_FLOUR_MILL_EMPTY_SUBSTR                                               :{}
 STR_EXTRA_FLOUR_MILL_CASSAVA_SUBSTR                                             :5t ogni 8t di manioca consegnate{}
 STR_EXTRA_FLOUR_MILL_MAIZE_SUBSTR                                               :5t ogni 8t di mais consegnate{}
 STR_EXTRA_FOOD_PROCESSING_PLANT                                                 :{BLACK}Produzione:{} {STRING} 6t ogni 8 tonnellate di frutta consegnate
