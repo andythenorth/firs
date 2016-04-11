@@ -6,6 +6,7 @@
 STR_GRF_DESC                                                                    :{ORANGE}FIRS Zamjenski Industrijski Set{}{BLACK}Od {SILVER}andythenorth{BLACK} i {SILVER}FooBar{BLACK}.{}{BLACK}'1,000 obaveza i dalje...'{BLACK}{}{}Website: {SILVER}www.tt-foundry.com/sets/FIRS{BLACK}.Licenca: {SILVER}GPL v2{BLACK}.Posebne zahvale {SILVER}Ammler{BLACK}, {SILVER}Core Xii{BLACK}, {SILVER}Irwe{BLACK}, {SILVER}planetmaker{BLACK} i {SILVER}Zephyris{BLACK}.Koristi dijelove od {SILVER}eGRVTS{BLACK}, {SILVER}ISR{BLACK} i {SILVER}OpenGFX{BLACK}.
 STR_GRF_NAME                                                                    :{TITLE}
 STR_GRF_URL                                                                     :http://bundles.openttdcoop.org/firs/releases/LATEST/docs/
+STR_EMPTY                                                                       :{}
 
 STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :Najveća udaljenost ribarskih polja, naftnih platformi i jaružališta od obale u poljima.
 STR_PARAM_DESC_DEBUG                                                            :Samo za programere
@@ -21,7 +22,7 @@ STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0                                         
 
 STR_PARAM_NAME_PRIMARY_LEVEL1_REQUIREMENT                                       :Kutije potrepština potrebne za Unaprijeđenu primarnu proizvodnju (osnovna postavka 16)
 STR_PARAM_NAME_PRIMARY_LEVEL2_REQUIREMENT                                       :Kutije potrepština potrebne za Masovnu primarnu proizvodnju (osnovna postavka 80)
-STR_PARAM_DESC_PRIMARY_LEVEL_REQUIREMENT                                        :Farme, rudnici i slične industrije će povećati proizvodnju kada su kutije potrepština dostavljene, prvo na {SILVER}Unaprijeđenu{BLACK}, a onda na {SILVER}Masovnu{BLACK} proizvodnju, ako je dostavljeno dovoljno kutija.{}{}Osnovne postavke su dovoljno dobre ali ako trebate, možete ih promijeniti ovdje.{}{}Potrebe dostave tereta la industrije u lukama će biti 10x veće od vrijednosti postavljenih ovdje.
+STR_PARAM_DESC_PRIMARY_LEVEL_REQUIREMENT                                        :Farme, rudnici i slične industrije će povećati proizvodnju kada su kutije potrepština dostavljene, prvo na {SILVER}Unaprijeđenu{BLACK}, a onda na {SILVER}Masovnu{BLACK} proizvodnju, ako je dostavljeno dovoljno kutija.{}{}Osnovne postavke su dovoljno dobre ali ako trebate, možete ih promijeniti ovdje.{}{}Potrebe dostave tereta za industrije u lukama će biti 8x veće od vrijednosti postavljenih ovdje.
 STR_PARAM_NAME_PRIMARY_LEVEL1_BONUS                                             :Nivo Unaprijeđene primarne proizvodnje (%)
 STR_PARAM_NAME_PRIMARY_LEVEL2_BONUS                                             :Nivo Masovne primarne proizvodnje (%)
 STR_PARAM_DESC_PRIMARY_LEVEL_BONUS                                              :Proizvodnja na farmama, u rudnicima i sličnim industrijama kada su potrebe dostave zadovoljene (kao postotak {SILVER}Normalnog {BLACK} nivoa proizvodnje).
