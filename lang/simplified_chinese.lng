@@ -4,6 +4,7 @@
 STR_GRF_DESC                                                                    :{ORANGE}FIRS工业扩展包{}{BLACK}由andythenorth, FooBar, planetmaker, Terkhen and Yexo以及其他贡献者呈献。 {SILVER}查看readme获取更多信息，其中包括怎样使用FIRS. {BLACK}License: GPL v2.
 STR_GRF_NAME                                                                    :{TITLE}
 STR_GRF_URL                                                                     :http://dev.openttdcoop.org/projects/firs
+STR_EMPTY                                                                       :{}
 
 STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :渔场、钻井平台、疏浚区距离海岸的最大距离。
 STR_PARAM_DESC_DEBUG                                                            :仅适用于开发者
@@ -19,10 +20,10 @@ STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0                                         
 
 STR_PARAM_NAME_PRIMARY_LEVEL1_REQUIREMENT                                       :调整“较高生产水平”的货物需求率(%)
 STR_PARAM_NAME_PRIMARY_LEVEL2_REQUIREMENT                                       :为“工合”产率调整货物需求(%)
-STR_PARAM_DESC_PRIMARY_LEVEL_REQUIREMENT                                        :所需的供应量取决于产业类型和这个乘数的百分比
+STR_PARAM_DESC_PRIMARY_LEVEL_REQUIREMENT                                        :农场、矿场和相似工业，在得到供给后，产量上升，如果供给充足，则进阶为 {SILVER}增强{BLACK}, 然后可达 {SILVER}工合{BLACK}.{}{}默认值比较合适，但你仍然可以在这里修改默认值.{}{}出口型工业的需求是本值的8倍.
 STR_PARAM_NAME_PRIMARY_LEVEL1_BONUS                                             :在较高生产水平上有额外产能
 STR_PARAM_NAME_PRIMARY_LEVEL2_BONUS                                             :在“工合”生产水平有额外产率加成。
-STR_PARAM_DESC_PRIMARY_LEVEL_BONUS                                              :当需求满足时，工业产率上升。
+STR_PARAM_DESC_PRIMARY_LEVEL_BONUS                                              :当需求满足，在农场、矿场以及相似工业产出(作为百分比{SILVER}正常 {BLACK}产率).
 
 STR_PARAM_VALUE_ECONOMIES_BASIC_TEMPERATE                                       :温带基础经济模式
 STR_PARAM_VALUE_ECONOMIES_BASIC_ARCTIC                                          :寒带基础经济模式
@@ -203,10 +204,10 @@ STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}达到最大产量
 STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}当前产率: {YELLOW}标准({SIGNED_WORD} %){}{}{BLACK}为提产产率至 {SIGNED_WORD} % 需三个月内交付 {SIGNED_WORD} 箱物资{}T提升至 {SIGNED_WORD} % 需交付 {SIGNED_WORD} 箱
 STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}当前产率: {YELLOW}增强 ({SIGNED_WORD} %){}{}{BLACK}为保持此水准，需三个月内交付 {SKIP}{SIGNED_WORD} 箱物资{}提升至 {SIGNED_WORD} % 需交付 {SIGNED_WORD} 箱
-STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}当前产率: {YELLOW}工合 ({SIGNED_WORD} %){}{}{BLACK}为保持此产率, 需三个月内交付 {SKIP}{SKIP}{SKIP}{SIGNED_WORD} 箱物资
+STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}当前产率: {YELLOW}工合{}{} {BLACK}为保持此产率, 需三个月内交付 {SKIP}{SIGNED_WORD} 箱物资
 STR_PORT_PRODUCTION_1X                                                          :{BLACK}当前产率: {YELLOW}标准({SIGNED_WORD} %){}{}{BLACK}欲提升产率至 {SIGNED_WORD} % 需三个月内交付 {SIGNED_WORD} 单位货物{}提升至 {SIGNED_WORD} % 需交付 {SIGNED_WORD} 单位
 STR_PORT_PRODUCTION_2X                                                          :{BLACK}当前产率: {YELLOW}增强 ({SIGNED_WORD} %){}{}{BLACK}为保持此产率, 三个月内需交付 {SKIP}{SIGNED_WORD} 单位货物{}提升至 {SIGNED_WORD} % 需交付 {SIGNED_WORD} 单位
-STR_PORT_PRODUCTION_4X                                                          :{BLACK}当前产率: {YELLOW}工合 ({SIGNED_WORD} %){}{}{BLACK}为保持此产率，需三个月内交付 {SKIP}{SKIP}{SKIP}{SIGNED_WORD} 单位货物
+STR_PORT_PRODUCTION_4X                                                          :{BLACK}当前产率: {YELLOW}工合{}{}{BLACK}为保持此产率，需三个月内交付{SKIP}{SIGNED_WORD} 单位货物
 STR_GENERIC_NEWLINE                                                             :{}
 
 STR_FUND_BASIC_FARM                                                             :{}{BLACK}位置: {YELLOW}不得修建于雪地或者沙漠。
