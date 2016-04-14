@@ -41,6 +41,7 @@ STR_CARGO_NAME_FRUITS                                                           
 STR_CARGO_NAME_LUMBER                                                           :Puutavara
 STR_CARGO_NAME_METAL                                                            :Metalli
 STR_CARGO_NAME_MILK                                                             :Maito
+STR_CARGO_NAME_MANGANESE                                                        :Mangaania
 STR_CARGO_NAME_MANUFACTURING_SUPPLIES                                           :Tuotantotarvikkeet
 STR_CARGO_NAME_NITRATES                                                         :Nitraatit
 STR_CARGO_NAME_NUTS                                                             :Pähkinöitä
@@ -181,7 +182,7 @@ STR_EXTRA_TEXTILE_MILL                                                          
 STR_EXTRA_TEXTILE_MILL_WOOL_SUBSTR                                              :5 laatikkoa per 8 kuljetettua villapaalia{}
 STR_EXTRA_TEXTILE_MILL_PLANT_FIBRES_SUBSTR                                      :5 laatikkoa per 8 kuljetettua kasvikuitupaalia{}
 STR_EXTRA_TYRE_PLANT                                                            :{BLACK}Rahdin tuotanto:{} 6 laatikkoa per 8,000 litraa kuljetettua kumia{} 2 laatikkoa per 8,000 litraa kuljetettuja kemikaaleja{}{}Tuotanto kasvaa jos molempia rahteja kuljetetaan kolmen kuukauden aikana.
-STR_EXTRA_VEHICLE_FACTORY                                                       :{BLACK}Rahdin tuotanto:{}  3 laatikkoa per 8 laatikkoa kuljetettuja ajoneuvojen osia{} 3 ajoneuvoa per 8 laatikkoa kuljetettua metallia{} 2 ajoneuvoa per 8 laatikkoa kuljetettuja tuotantotarvikkeita{}{}Tuotanto kasvaa jos kahta tai useampaa rahtia kuljetetaan kolmen kuukauden aikana.
+STR_EXTRA_VEHICLE_FACTORY                                                       :{BLACK}Rahdin tuotanto:{}  3 laatikkoa per 8 laatikkoa kuljetettuja ajoneuvojen osia{} 3 ajoneuvoa per 8 laatikkoa kuljetettua metallia{} 2 ajoneuvoa per 8,000 litraa kuljetettuja kemikaaleja{}{}Tuotanto kasvaa jos kahta tai useampaa rahtia kuljetetaan kolmen kuukauden aikana.
 
 STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ VIANETSINT√Ñ ------------{}Tuotanto tässä kuussa:{}Rahti 1: {WHITE}{COMMA}{BLACK}{}Rahti 2: {WHITE}{COMMA}{BLACK}{}Päiviä edellisestä kuljetuksesta: {WHITE}{COMMA}{BLACK}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Suurin mahdollinen tuotanto saavutettu
@@ -251,6 +252,7 @@ STR_IND_JUNKYARD                                                                
 STR_IND_LIME_KILN                                                               :Kalkkiuuni
 STR_IND_LUMBER_YARD                                                             :Taapeli
 STR_IND_MACHINE_SHOP                                                            :Konepaja
+STR_IND_MANGANESE_MINE                                                          :Mangaanikaivos
 STR_IND_METAL_FABRICATION_PLANT                                                 :Metallituotetehdas
 STR_IND_METAL_FOUNDRY                                                           :Metallipaja
 STR_IND_MIXEDFARM                                                               :Maatila
