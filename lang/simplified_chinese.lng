@@ -8,8 +8,8 @@ STR_EMPTY                                                                       
 
 STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :渔场、钻井平台、疏浚区距离海岸的最大距离。
 STR_PARAM_DESC_DEBUG                                                            :仅适用于开发者
-STR_PARAM_DESC_ECONOMIES                                                        :每种经济模式对应不同的货物和工业组合。{}{}休闲玩家可以选择简单模式，'基础'经济模式的货物和工业种类比'FIRS'经济模式的种类要少。
-STR_PARAM_DESC_NO_OPENINGS                                                      :游戏进行时，会修建新的工业。{}{}如果选择了"禁止新建"，则不会修建新工业，并且玩家不能建立或者勘探工业。
+STR_PARAM_DESC_ECONOMIES                                                        :每种经济模式对应不同的货物和工业组合。{}{}休闲玩家可以选择简单模式，{SILVER}'基础'{BLACK}经济模式的货物和工业种类比'FIRS'经济模式的种类要少。{}{}FIRS主页提供了每种经济模式更详细的介绍。
+STR_PARAM_DESC_NO_OPENINGS                                                      :默认的, 游戏进行时，可以新建工业.{}{}如果{SILVER}阻止新建 {BLACK}选项打开，则在游戏时不能新建工业。
 STR_PARAM_DESC_SECONDARY_NEVER_CLOSE                                            :FIRS次要工业默认不会倒闭。{}{}在本选项打开的情况下，如果长时间不运货，次要工业可能会倒闭。基本工业在FIRS里永远不会关闭，并且不受此选项影响。
 STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY                                   :海洋产业距离海岸的最大距离。
 STR_PARAM_NAME_DEBUG                                                            :显示debug文本
@@ -22,13 +22,13 @@ STR_PARAM_NAME_PRIMARY_LEVEL1_REQUIREMENT                                       
 STR_PARAM_NAME_PRIMARY_LEVEL2_REQUIREMENT                                       :为“工合”产率调整货物需求(%)
 STR_PARAM_DESC_PRIMARY_LEVEL_REQUIREMENT                                        :农场、矿场和相似工业，在得到供给后，产量上升，如果供给充足，则进阶为 {SILVER}增强{BLACK}, 然后可达 {SILVER}工合{BLACK}.{}{}默认值比较合适，但你仍然可以在这里修改默认值.{}{}出口型工业的需求是本值的8倍.
 STR_PARAM_NAME_PRIMARY_LEVEL1_BONUS                                             :在较高生产水平上有额外产能
-STR_PARAM_NAME_PRIMARY_LEVEL2_BONUS                                             :在“工合”生产水平有额外产率加成。
+STR_PARAM_NAME_PRIMARY_LEVEL2_BONUS                                             :在“工合”生产水平产率(%)。
 STR_PARAM_DESC_PRIMARY_LEVEL_BONUS                                              :当需求满足，在农场、矿场以及相似工业产出(作为百分比{SILVER}正常 {BLACK}产率).
 
 STR_PARAM_VALUE_ECONOMIES_BASIC_TEMPERATE                                       :温带基础经济模式
 STR_PARAM_VALUE_ECONOMIES_BASIC_ARCTIC                                          :寒带基础经济模式
 STR_PARAM_VALUE_ECONOMIES_BASIC_TROPIC                                          :热带基础经济模式
-STR_PARAM_VALUE_ECONOMIES_FIRS                                                  :FIRS经济模式
+STR_PARAM_VALUE_ECONOMIES_FIRS                                                  :严酷
 STR_PARAM_VALUE_ECONOMIES_MISTAH_KURTZ                                          :炎热国度
 
 STR_CARGO_NAME_ALCOHOL                                                          :酒
@@ -202,11 +202,11 @@ STR_EXTRA_VEHICLE_FACTORY                                                       
 
 STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ DEBUG ------------{}Production this month:{}Cargo 1: {WHITE}{COMMA}{BLACK}{}Cargo 2: {WHITE}{COMMA}{BLACK}{}Days since last delivery: {WHITE}{COMMA}{BLACK}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}达到最大产量
-STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}当前产率: {YELLOW}标准({SIGNED_WORD} %){}{}{BLACK}为提产产率至 {SIGNED_WORD} % 需三个月内交付 {SIGNED_WORD} 箱物资{}T提升至 {SIGNED_WORD} % 需交付 {SIGNED_WORD} 箱
-STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}当前产率: {YELLOW}增强 ({SIGNED_WORD} %){}{}{BLACK}为保持此水准，需三个月内交付 {SKIP}{SIGNED_WORD} 箱物资{}提升至 {SIGNED_WORD} % 需交付 {SIGNED_WORD} 箱
+STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}当前产率: {YELLOW}标准{}{}{BLACK}为达到{WHITE}增强{BLACK}需三个月内交付 {SIGNED_WORD}箱物资。{}为达到{WHITE}工合 {BLACK}需交付 {SIGNED_WORD} 箱
+STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}当前产率: {YELLOW}增强{}{}{BLACK}为保持此水准，需三个月内交付 {SIGNED_WORD}{}为保持{WHITE}工合 {BLACK}需交付 {SIGNED_WORD}箱
 STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}当前产率: {YELLOW}工合{}{} {BLACK}为保持此产率, 需三个月内交付 {SKIP}{SIGNED_WORD} 箱物资
-STR_PORT_PRODUCTION_1X                                                          :{BLACK}当前产率: {YELLOW}标准({SIGNED_WORD} %){}{}{BLACK}欲提升产率至 {SIGNED_WORD} % 需三个月内交付 {SIGNED_WORD} 单位货物{}提升至 {SIGNED_WORD} % 需交付 {SIGNED_WORD} 单位
-STR_PORT_PRODUCTION_2X                                                          :{BLACK}当前产率: {YELLOW}增强 ({SIGNED_WORD} %){}{}{BLACK}为保持此产率, 三个月内需交付 {SKIP}{SIGNED_WORD} 单位货物{}提升至 {SIGNED_WORD} % 需交付 {SIGNED_WORD} 单位
+STR_PORT_PRODUCTION_1X                                                          :{BLACK}当前产率: {YELLOW}标准{}{}{BLACK}为达到{WHITE}增强{BLACK}需三个月内交付 {SIGNED_WORD} 单位货物{}为达到{WHITE}工合 {BLACK}需交付 {SIGNED_WORD} 单位
+STR_PORT_PRODUCTION_2X                                                          :{BLACK}当前产率: {YELLOW}增强{}{}{BLACK}为保持次水准，需三个月内交付{SIGNED_WORD} 单位货物。{}为达到{WHITE}工合 {BLACK}需交付 {SIGNED_WORD} 单位
 STR_PORT_PRODUCTION_4X                                                          :{BLACK}当前产率: {YELLOW}工合{}{}{BLACK}为保持此产率，需三个月内交付{SKIP}{SIGNED_WORD} 单位货物
 STR_GENERIC_NEWLINE                                                             :{}
 
