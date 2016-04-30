@@ -6,6 +6,7 @@
 STR_GRF_DESC                                                                    :{ORANGE}FIRS Industri Erstatnings-sett{}{BLACK}Bringes til deg av andythenorth, FooBar, planetmaker, Terkhen og Yexo, med hjelp fra mange andre. {SILVER}Se readme for mer informasjon, inkludert hvordan man bruker FIRS. {BLACK}Lisens: GPL v2.
 STR_GRF_NAME                                                                    :{TITLE}
 STR_GRF_URL                                                                     :http://bundles.openttdcoop.org/firs/releases/LATEST/docs/
+STR_EMPTY                                                                       :{}
 
 STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :Største avstand for fiskebanker, oljeplattformer og mudderbanker fra kysten (i brikker).
 STR_PARAM_DESC_DEBUG                                                            :Bare for utviklere
@@ -21,7 +22,7 @@ STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0                                         
 
 STR_PARAM_NAME_PRIMARY_LEVEL1_REQUIREMENT                                       :Antall kasser utstyr for Forbedret primær produksjon (standard 16)
 STR_PARAM_NAME_PRIMARY_LEVEL2_REQUIREMENT                                       :Antall kasser utstyr for Gung-ho primær produksjon (standard 80)
-STR_PARAM_DESC_PRIMARY_LEVEL_REQUIREMENT                                        :Gårder, gruver og lignende industrier vil øke produksjonen hvis det blir levert utstyr, først til {SILVER}Forbedret{BLACK}, deretter til {SILVER}Gung-ho{BLACK} hvis mange nok kasser blir levert.{}{}Forhåndsinnstillingene er gode, men kan om nødvendig endres her.{}{}Varebehov for havneindustrier vil være 10 ganger de verdiene som angis her.
+STR_PARAM_DESC_PRIMARY_LEVEL_REQUIREMENT                                        :Gårder, gruver og lignende industrier vil øke produksjonen hvis det blir levert utstyr, først til {SILVER}Forbedret{BLACK}, deretter til {SILVER}Gung-ho{BLACK} hvis mange nok kasser blir levert.{}{}Forhåndsinnstillingene er gode, men kan om nødvendig endres her.{}{}Varebehov for havneindustrier vil være 8 ganger de verdiene som angis her.
 STR_PARAM_NAME_PRIMARY_LEVEL1_BONUS                                             :Forbedret primært produksjonsnivå (%)
 STR_PARAM_NAME_PRIMARY_LEVEL2_BONUS                                             :Gung-ho primært produksjonsnivå (%)
 STR_PARAM_DESC_PRIMARY_LEVEL_BONUS                                              :Produksjon ved gårder, gruver og lignende industrier når krav til utstyr er innfridd (som prosentandel av {SILVER}Normalt{BLACK} produksjonsnivå).
@@ -173,7 +174,7 @@ STR_EXTRA_FOOD_PROCESSING_PLANT_BEANS_SUBSTR                                    
 STR_EXTRA_FOOD_PROCESSING_PLANT_NUTS_SUBSTR                                     :6t pr 8t nøtter levert{}
 STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Vareproduksjon:{}  3t pr 8 kasser emballasje levert{}  5t per 8t trelast levert{}{}Produksjonen øker om begge varene leveres innen tre måneder etter hverandre.
 STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Produserer glassvarer som flasker, krukker og vindusruter.{}{}Vareproduksjon:{}  6t pr 8t sand levert{}  2t pr 8.000l kjemikalier levert{}{}Produksjonen øker om begge varene leveres under tre måneder etter hverandre.
-STR_EXTRA_IRON_WORKS                                                            :{BLACK}Vareproduksjon:{} 2t pr 8t tømmer levert{} 2t pr 8t jernmalm levert{}{}Produksjonen øker dersom begge varene blir levert  under tre måneder etter hverandre.
+STR_EXTRA_IRON_WORKS                                                            :{BLACK}Vareproduksjon:{} 3t pr 8t jernmalm levert{} 3t pr 8t tømmer levert{} 2t pr 8t sand levert{}{}Produksjonen øker dersom to eller fler vareslag blir levert  under tre måneder etter hverandre.
 STR_EXTRA_LIME_KILN                                                             :{BLACK}Vareproduksjon:{}  3t pr 8t stein levert{}  3t pr 8t kull levert{}{}Produksjonen øker dersom begge varene blir levert under tre måneder etter hverandre.
 STR_EXTRA_LUMBER_YARD                                                           :{BLACK}Lager slike ting som stolper og gjerdestolper.{}{}Vareproduksjon:{}  2t pr 8.000l kjemikalier levert{}  6t pr 8t trelast levert{}{}Produksjonen øker dersom begge varene blir levert under tre måneder etter hverandre.
 STR_EXTRA_MACHINE_SHOP                                                          :{BLACK}Bygger og vedlikeholder maskineri.{}{}Vareproduksjon:{}  8 kasser pr 8.000l bensin levert{}  8 kasser pr 8t metall levert
