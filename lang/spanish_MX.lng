@@ -1,0 +1,88 @@
+##grflangid 0x55
+##plural 0
+##gender m f
+
+
+
+
+STR_PARAM_VALUE_ECONOMIES_BASIC_ARCTIC                                          :Básica Subártico
+STR_PARAM_VALUE_ECONOMIES_BASIC_TROPIC                                          :Básica Tropical
+STR_PARAM_VALUE_ECONOMIES_MISTAH_KURTZ                                          :En un país cálido
+
+STR_CARGO_NAME_ALCOHOL                                                          :{G=m}Alcohol
+STR_CARGO_NAME_BAUXITE                                                          :{G=f}Bauxita
+STR_CARGO_NAME_BEANS                                                            :{G=m}Frijoles
+STR_CARGO_NAME_CHEMICALS                                                        :{G=m}Químicos
+STR_CARGO_NAME_EDIBLE_OIL                                                       :{G=m}Aceite comestible
+STR_CARGO_NAME_PETROL                                                           :{G=f}Gasolina
+
+STR_CARGO_UNIT_COFFEE                                                           :{SIGNED_WORD} costal{P 0 "" es} de café
+STR_CARGO_UNIT_COPPER                                                           :{WEIGHT} de cobre
+STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} caja{P 0 "" s} de suministros agrícolas
+STR_CARGO_UNIT_MANGANESE                                                        :{WEIGHT} de manganeso
+STR_CARGO_UNIT_METAL                                                            :{WEIGHT} de metal
+STR_CARGO_UNIT_NUTS                                                             :{SIGNED_WORD} costal{P 0 "" es} de nueces
+STR_CARGO_UNIT_PETROL                                                           :{VOLUME} de gasolina
+STR_CARGO_UNIT_PHOSPHATE                                                        :{WEIGHT} de fosfato
+STR_CARGO_UNIT_WOOL                                                             :{SIGNED_WORD} paca{P 0 "" s} de lana
+
+STR_CID_COPPER                                                                  :{TINYFONT}CB
+STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}SM
+STR_CID_FIBRES                                                                  :{TINYFONT}ZA
+STR_CID_LUMBER                                                                  :{TINYFONT}MA
+STR_CID_METAL                                                                   :{TINYFONT}MT
+STR_CID_MILK                                                                    :{TINYFONT}LC
+STR_CID_NITRATES                                                                :{TINYFONT}NI
+STR_CID_PETROL                                                                  :{TINYFONT}GS
+STR_CID_VEHICLES                                                                :{TINYFONT}VE
+
+STR_ERR_INCOMPATIBLE_SET_TTRS_VERSION                                           :{ORANGE}E04: {YELLOW}Versión no compatible: {ORANGE}Se debe usar una versión de Total Town Replacement Set igual o superior a la 3.11. {YELLOW}Consulta el archivo Léeme de FIRS: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+
+STR_ERR_LOCATION_NOT_ON_WATER                                                   :se debe colocar sobre tierra seca.
+
+STR_EXTRA_BREWERY_FRUIT_SUBSTR                                                  :5,000 l por cada 8 t de fruta entregadas{}
+STR_EXTRA_BREWERY_GRAIN_SUBSTR                                                  :5,000 L por cada 8 t de grano entregadas{}
+STR_EXTRA_BRICKWORKS                                                            :{BLACK}Producción:{} 2 t por cada 8 t de carbón entregadas{} 2 t por cada 8 t de arena entregadas{} 4 t por cada 8 t de carbón entregadas entregadas{}{}La producción sube si se entregan dos o más materiales con menos de tres meses de diferencia.
+STR_EXTRA_CHEMICAL_PLANT                                                        :{BLACK}Producción:{} 6,000 L por cada 8,000 L de petróleo entregados{} 6,000 L por cada 8 t de nitratos entregadas
+STR_EXTRA_FLOUR_MILL_CASSAVA_SUBSTR                                             :5 t por cada 8 t de tapioca entregadas{}
+STR_EXTRA_FLOUR_MILL_MAIZE_SUBSTR                                               :5 t por cada 8 t de maíz entregadas{}
+STR_EXTRA_LIME_KILN                                                             :{BLACK}Producción:{} 3 t por cada 8 t de piedra entregadas{} 3 t por cada 8 t de carbón entregadas{}{}La producción sube si se entregan ambos materiales con menos de tres meses de diferencia.
+STR_EXTRA_PAPER_MILL                                                            :{BLACK}Convierte la madera en celulosa para fabricar papel y cartón.{}{}Producción:{} 4 cajas por cada 8 t de madera entregadas{} 2 cajas por cada 8 t de arcilla entregadas{} 2 cajas por cada 8,000 L de químicos entregados{}{}La producción sube si se entregan dos o más materiales con menos de tres meses de diferencia.
+STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}Produce artículos de plástico para empaquetado y enseres domésticos.{}{}Producción:{} {STRING} {STRING}
+STR_EXTRA_PYRITE_SMELTER                                                        :{BLACK}Procesa mineral de pirita metal and químicos.{}{}Producción:{} 4 t de metal y 4,000 L de químicos por cada 8 t de mineral de pirita entregadas
+STR_EXTRA_TEXTILE_MILL_PLANT_FIBRES_SUBSTR                                      :5 cajas por cada 8 pacas de zacate entragadas{}
+STR_EXTRA_VEHICLE_FACTORY                                                       :{BLACK}Producción:{} 3 vehículos por cada 8 cajas de piezas de vehículos{} 3 vehículos por cada 8 t de metal entregadas{} 2 vehículos por cada 8,0000 L de químicos entregados{}{}La producción sube si se entregan dos o más materiales con menos de tres meses de diferencia.
+
+STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Producción máxima alcanzada
+
+STR_FUND_COFFEE_ESTATE                                                          :{}{BLACK}Ubicación: {YELLOW}No se puede fundar sobre nieve o desierto.
+STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}Ubicación: {YELLOW}No se puede fundar sobre nieve.
+STR_FUND_VINEYARD                                                               :{}{BLACK}Ubicación: {YELLOW}No se puede fundar sobre nieve o desierto.
+
+
+
+
+
+
+STR_IND_BULK_TERMINAL                                                           :Terminal granelera
+STR_IND_FOOD_MARKET                                                             :Tienda de abarrotes
+STR_IND_LUMBER_YARD                                                             :{G=f}Maderería
+STR_IND_NITRATE_MINE                                                            :{G=f}Mina de nitratos
+STR_IND_PETROLPUMP                                                              :{G=f}Gasolinera
+STR_IND_PHOSPHATE_MINE                                                          :{G=f}Mina de fosfato
+STR_IND_PORT                                                                    :Puerto
+STR_IND_POWER_PLANT                                                             :Central eléctrica
+STR_IND_SHEEPFARM                                                               :Rancho ovino
+STR_IND_STOCKYARD                                                               :Rastro
+STR_IND_TEXTILE_MILL                                                            :Maquiladora textil
+STR_IND_TRADING_POST                                                            :Establecimiento comercial
+STR_IND_TYRE_PLANT                                                              :Fábrica de llantas
+STR_IND_VEHICLE_FACTORY                                                         :{G=f}Planta automotriz
+STR_IND_VINEYARD                                                                :Viñedo
+
+STR_STATION_HEAVY_INDUSTRY                                                      :Calle James Watt
+STR_STATION_INDUSTRY_ESTATE                                                     :Parque industrial
+STR_STATION_INDUSTRY_HARBOUR                                                    :Puerto industrial
+STR_STATION_PLANTATION                                                          :Plantación
+STR_STATION_POWERHUNGRY                                                         :Central eléctrica
+STR_STATION_TOWN                                                                :Antiguo Ayuntamiento
