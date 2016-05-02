@@ -81,7 +81,10 @@ industry_numeric_ids = dict(coal_mine = 0,
 
 # Definition of industry tile numeric IDs
 # tiles 0-159 currently vacant
-tile_numeric_ids = dict(steel_mill_tile_1 = 158,
+tile_numeric_ids = dict(manganese_mine_tile_1 = 155,
+                        manganese_mine_tile_2 = 156,
+                        manganese_mine_tile_3 = 157,
+                        steel_mill_tile_1 = 158,
                         steel_mill_tile_2 = 159,
                         arable_farm_tile_1 = 160,
                         brewery_tile_1 = 161,
