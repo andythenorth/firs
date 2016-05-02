@@ -2,61 +2,151 @@
 ##plural 0
 ##gender m f
 
+STR_GRF_DESC                                                                    :{ORANGE}FIRS Industry Replacement Set{}{BLACK}Creado por andythenorth, FooBar, planetmaker, Terkhen y Yexo, con colaboración de muchos otros. {SILVER}Consulta el archivo Léeme para más información, incluyendo cómo usar FIRS. {BLACK}Licencia: GPL v2.
+STR_GRF_NAME                                                                    :{TITLE}
+STR_EMPTY                                                                       :{}
 
+STR_PARAM_DESC_DEBUG                                                            :Solo para desarrolladores
+STR_PARAM_DESC_NO_OPENINGS                                                      :De forma predeterminada, durante el juego se crearán nuevas industrias.{}{}Si la opción {SILVER}No construir nuevas industrias {BLACK}está activada, no se crearán nuevas industrias durante el juego y los jugadores no podrán fundarlas ni prospectarlas.
+STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY                                   :Máxima distancia en casillas desde industrias marítimas hasta la costa.
+STR_PARAM_NAME_DEBUG                                                            :Mostrar información de depuración
+STR_PARAM_NAME_ECONOMIES                                                        :Economía
+STR_PARAM_NAME_NO_OPENINGS                                                      :No construir nuevas industrias durante el juego
 
+STR_PARAM_NAME_PRIMARY_LEVEL2_REQUIREMENT                                       :Cajas de suministros necesarias para producción primaria Abundante (80 por defecto)
+STR_PARAM_NAME_PRIMARY_LEVEL1_BONUS                                             :Nivel de producción primaria Aumentada (%)
+STR_PARAM_NAME_PRIMARY_LEVEL2_BONUS                                             :Nivel de producción primaria Abundante (%)
 
 STR_PARAM_VALUE_ECONOMIES_BASIC_ARCTIC                                          :Básica Subártico
 STR_PARAM_VALUE_ECONOMIES_BASIC_TROPIC                                          :Básica Tropical
+STR_PARAM_VALUE_ECONOMIES_FIRS                                                  :Extrema
 STR_PARAM_VALUE_ECONOMIES_MISTAH_KURTZ                                          :En un país cálido
 
 STR_CARGO_NAME_ALCOHOL                                                          :{G=m}Alcohol
 STR_CARGO_NAME_BAUXITE                                                          :{G=f}Bauxita
 STR_CARGO_NAME_BEANS                                                            :{G=m}Frijoles
+STR_CARGO_NAME_BUILDING_MATERIALS                                               :Materiales de construcción
+STR_CARGO_NAME_CASSAVA                                                          :{G=f}Tapioca
 STR_CARGO_NAME_CHEMICALS                                                        :{G=m}Químicos
+STR_CARGO_NAME_COFFEE                                                           :{G=m}Café
+STR_CARGO_NAME_COPPER                                                           :{G=m}Cobre
 STR_CARGO_NAME_EDIBLE_OIL                                                       :{G=m}Aceite comestible
+STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :Suplementos de maquinaria
+STR_CARGO_NAME_FISH                                                             :{G=m}Pescado
+STR_CARGO_NAME_FRUITS                                                           :{G=f}Fruta
+STR_CARGO_NAME_LUMBER                                                           :{G=f}Madera
+STR_CARGO_NAME_METAL                                                            :{G=m}Metal
+STR_CARGO_NAME_MILK                                                             :{G=f}Leche
+STR_CARGO_NAME_NITRATES                                                         :{G=m}Nitratos
 STR_CARGO_NAME_PETROL                                                           :{G=f}Gasolina
+STR_CARGO_NAME_PYRITE_ORE                                                       :{G=m}Mineral de pirita
+STR_CARGO_NAME_RECYCLABLES                                                      :Reciclables
+STR_CARGO_NAME_SAND                                                             :Arena
+STR_CARGO_NAME_STONE                                                            :{G=f}Piedra
+STR_CARGO_NAME_SUGARCANE                                                        :{G=f}Caña de azúcar
+STR_CARGO_NAME_WOOL                                                             :{G=f}Lana
 
+STR_CARGO_UNIT_BAUXITE                                                          :{WEIGHT} de bauxita
+STR_CARGO_UNIT_CASSAVA                                                          :{WEIGHT} de tapioca
+STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WEIGHT} de materiales de construcción
+STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} of arcilla
 STR_CARGO_UNIT_COFFEE                                                           :{SIGNED_WORD} costal{P 0 "" es} de café
 STR_CARGO_UNIT_COPPER                                                           :{WEIGHT} de cobre
+STR_CARGO_UNIT_FIBRES                                                           :{SIGNED_WORD} paca{P 0 "" s} de zacate
 STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} caja{P 0 "" s} de suministros agrícolas
+STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} de fruta
+STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} de madera
 STR_CARGO_UNIT_MANGANESE                                                        :{WEIGHT} de manganeso
 STR_CARGO_UNIT_METAL                                                            :{WEIGHT} de metal
 STR_CARGO_UNIT_NUTS                                                             :{SIGNED_WORD} costal{P 0 "" es} de nueces
 STR_CARGO_UNIT_PETROL                                                           :{VOLUME} de gasolina
 STR_CARGO_UNIT_PHOSPHATE                                                        :{WEIGHT} de fosfato
+STR_CARGO_UNIT_PYRITE_ORE                                                       :{WEIGHT} de mineral de pirita
+STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} de reciclables
+STR_CARGO_UNIT_SAND                                                             :{WEIGHT} de arena
+STR_CARGO_UNIT_SCRAP_METAL                                                      :{WEIGHT} de chatarra
+STR_CARGO_UNIT_SUGARCANE                                                        :{WEIGHT} de caña de azúcar
+STR_CARGO_UNIT_VEHICLES                                                         :{SIGNED_WORD} vehículo{P 0 "" s}
 STR_CARGO_UNIT_WOOL                                                             :{SIGNED_WORD} paca{P 0 "" s} de lana
 
+STR_CID_BAUXITE                                                                 :{TINYFONT}BX
+STR_CID_BEANS                                                                   :{TINYFONT}FJ
+STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}MC
+STR_CID_CASSAVA                                                                 :{TINYFONT}TA
+STR_CID_CHEMICALS                                                               :{TINYFONT}QM
+STR_CID_CLAY                                                                    :{TINYFONT}AR
+STR_CID_COFFEE                                                                  :{TINYFONT}CF
 STR_CID_COPPER                                                                  :{TINYFONT}CB
 STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}SM
+STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}SA
 STR_CID_FIBRES                                                                  :{TINYFONT}ZA
+STR_CID_FISH                                                                    :{TINYFONT}PE
 STR_CID_LUMBER                                                                  :{TINYFONT}MA
+STR_CID_MANGANESE                                                               :{TINYFONT}MN
 STR_CID_METAL                                                                   :{TINYFONT}MT
 STR_CID_MILK                                                                    :{TINYFONT}LC
 STR_CID_NITRATES                                                                :{TINYFONT}NI
+STR_CID_NUTS                                                                    :{TINYFONT}NU
 STR_CID_PETROL                                                                  :{TINYFONT}GS
+STR_CID_PYRITE_ORE                                                              :{TINYFONT}MP
+STR_CID_SAND                                                                    :{TINYFONT}AN
+STR_CID_SCRAP_METAL                                                             :{TINYFONT}CH
+STR_CID_SUGAR_BEET                                                              :{TINYFONT}CA
+STR_CID_VEHICLE_PARTS                                                           :{TINYFONT}PV
 STR_CID_VEHICLES                                                                :{TINYFONT}VE
+STR_CID_WOOL                                                                    :{TINYFONT}LN
 
+STR_ERR_INCOMPATIBLE_PARAM_CANSET                                               :{ORANGE}E02: {YELLOW}Parámetro no compatible: {ORANGE}El valor del parámetro 2 de CanSet debe ser 0 para que funcione con firs. {YELLOW}Consulta el archivo Léeme de FIRS: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_INCOMPATIBLE_PARAM_CITYSET                                              :{ORANGE}E02: {YELLOW}Parámetro no compatible: {ORANGE}El valor del parámetro 2 de NA City Set debe ser 0 para que funcione con FIRS. {YELLOW}Consulta el archivo Léeme de FIRS: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 STR_ERR_INCOMPATIBLE_SET_TTRS_VERSION                                           :{ORANGE}E04: {YELLOW}Versión no compatible: {ORANGE}Se debe usar una versión de Total Town Replacement Set igual o superior a la 3.11. {YELLOW}Consulta el archivo Léeme de FIRS: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 
+STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE                                             :se debe colocar debajo del nivel de nieve.
 STR_ERR_LOCATION_NOT_ON_WATER                                                   :se debe colocar sobre tierra seca.
+STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE                                             :no se puede colocar sobre pendientes.
+STR_ERR_LOCATION_LIMIT_1_PER_TOWN                                               :solo se puede tener una industria de este tipo por pueblo.
 
+STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}Producción:{} 2 t por cada 8 t de bauxita entregadas{} 2 t por cada 8,000 L de químicos entregados{} 4 t por cada 8 t de chatarra entregadas{}{}La producción sube si se entregan dos o más cargamentos con menos de tres meses de diferencia.
 STR_EXTRA_BREWERY_FRUIT_SUBSTR                                                  :5,000 l por cada 8 t de fruta entregadas{}
 STR_EXTRA_BREWERY_GRAIN_SUBSTR                                                  :5,000 L por cada 8 t de grano entregadas{}
-STR_EXTRA_BRICKWORKS                                                            :{BLACK}Producción:{} 2 t por cada 8 t de carbón entregadas{} 2 t por cada 8 t de arena entregadas{} 4 t por cada 8 t de carbón entregadas entregadas{}{}La producción sube si se entregan dos o más materiales con menos de tres meses de diferencia.
+STR_EXTRA_BRICKWORKS                                                            :{BLACK}Producción:{} 2 t por cada 8 t de carbón entregadas{} 2 t por cada 8 t de arena entregadas{} 4 t por cada 8 t de carbón entregadas entregadas{}{}La producción sube si se entregan dos o más cargamentos con menos de tres meses de diferencia.
+STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Producción:{}  {STRING} 2 t por cada 8 t de arcilla entregadas{} 4 t por cada 8 t de piedra entregadas{}{}La producción sube si se entregan dos o más cargamentos con menos de tres meses de diferencia.
+STR_EXTRA_CEMENT_PLANT_COAL_SUBSTR                                              :2 t por cada 8 t de carbón entregadas{}
+STR_EXTRA_CEMENT_PLANT_PETROL_SUBSTR                                            :2 t por cada 8,000 L de gasolina entregados{}
 STR_EXTRA_CHEMICAL_PLANT                                                        :{BLACK}Producción:{} 6,000 L por cada 8,000 L de petróleo entregados{} 6,000 L por cada 8 t de nitratos entregadas
+STR_EXTRA_COPPER_REFINERY                                                       :{BLACK}Producción:{} 5 t por cada 8 t de mineral de cobre entregadas{} 3 t por cada 8,000 L de químicos entregados{}{}La producción sube si se entregan dos o más cargamentos con menos de tres meses de diferencia.
+STR_EXTRA_FLOUR_MILL                                                            :{BLACK}Producción:{} 3 t por cada 8 cajas de suministros de manufactura entregadas{}  {STRING} {STRING}{}La producción sube si se entregan suministros con menos de tres meses de diferencia respecto a otros cargamentos.
+STR_EXTRA_FLOUR_MILL_GRAIN_SUBSTR                                               :5 t por cada 8 t de grano entregadas{}
 STR_EXTRA_FLOUR_MILL_CASSAVA_SUBSTR                                             :5 t por cada 8 t de tapioca entregadas{}
 STR_EXTRA_FLOUR_MILL_MAIZE_SUBSTR                                               :5 t por cada 8 t de maíz entregadas{}
+STR_EXTRA_FOOD_PROCESSING_PLANT                                                 :{BLACK}Producción:{} {STRING} 6 t por cada 8 t de fruta entregadas
+STR_EXTRA_FOOD_PROCESSING_PLANT_BEANS_SUBSTR                                    :6 t por cada 8 t de frijoles entregadas{}
+STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Produce artículos de cristal tales como botellas, jarras y ventanas.{}{}Producción:{} 6 t por cada 8 t de arena entregadas{} 2 t por cada 8,000 L de químicos entregados{}{}La producción sube si se entregan ambos cargamentos con menos de tres meses de diferencia.
+STR_EXTRA_IRON_WORKS                                                            :{BLACK}Producción:{} 3 t por cada 8 t de mineral de hierro entregadas{} 3 t por cada 8 t de madera entregadas{} 2 t por cada 8 t de arena entregadas{}{}La producción sube si se entregan dos o más cargamentos con menos de tres meses de diferencia.
 STR_EXTRA_LIME_KILN                                                             :{BLACK}Producción:{} 3 t por cada 8 t de piedra entregadas{} 3 t por cada 8 t de carbón entregadas{}{}La producción sube si se entregan ambos materiales con menos de tres meses de diferencia.
-STR_EXTRA_PAPER_MILL                                                            :{BLACK}Convierte la madera en celulosa para fabricar papel y cartón.{}{}Producción:{} 4 cajas por cada 8 t de madera entregadas{} 2 cajas por cada 8 t de arcilla entregadas{} 2 cajas por cada 8,000 L de químicos entregados{}{}La producción sube si se entregan dos o más materiales con menos de tres meses de diferencia.
+STR_EXTRA_METAL_FABRICATION_PLANT                                               :{BLACK}Produce piezas de metal pintado.{}{}Producción:{} 2 t por cada 8,000 L de químicos{}  6 t por cada 8 t de metal entregadas{}{}La producción sube si se entregan ambos cargamentos con menos de tres meses de diferencia.
+STR_EXTRA_METAL_FOUNDRY                                                         :{BLACK}Produce metal cormado tales como latas, herramientas y enseres domésticos.{}{}Producción:{} 2 cajas por cada 8,000 L de químicos entregados{} 6 cajas por cada 8 t de metal entregadas{}{}La producción sube si se entregan ambos cargamentos con menos de tres meses de diferencia.
+STR_EXTRA_PAPER_MILL                                                            :{BLACK}Convierte la madera en celulosa para fabricar papel y cartón.{}{}Producción:{} 4 cajas por cada 8 t de madera entregadas{} 2 cajas por cada 8 t de arcilla entregadas{} 2 cajas por cada 8,000 L de químicos entregados{}{}La producción sube si se entregan dos o más cargamentos con menos de tres meses de diferencia.
 STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}Produce artículos de plástico para empaquetado y enseres domésticos.{}{}Producción:{} {STRING} {STRING}
 STR_EXTRA_PYRITE_SMELTER                                                        :{BLACK}Procesa mineral de pirita metal and químicos.{}{}Producción:{} 4 t de metal y 4,000 L de químicos por cada 8 t de mineral de pirita entregadas
+STR_EXTRA_RECYCLING_PLANT                                                       :{BLACK}Procesa material reciclable para reutilización.{}{}Producción:{} 6 t por cada 8 t de reciclables entregados
+STR_EXTRA_SAWMILL                                                               :{BLACK}Aserradero.{}{}Producción:{} 6 t por cada 8 t de madera entregadas
+STR_EXTRA_STEELMILL                                                             :{BLACK}Producción:{} 3 t por cada 8 t de mineral de hierro entregadas{} 2 t por cada 8 t de carbón entregadas{} 3 t por cada 8 t de chatarra entregadas{}{} La producción sube si se entregan dos o más cargamentos con menos de tres meses de diferencia.
+STR_EXTRA_SUPPLY_YARD_VEHICLES_SUBSTR                                           :8 cajas por cada 8 vehículos entregados
+STR_EXTRA_SUPPLY_YARD_BUILDING_MATERIALS_SUBSTR                                 :8 cajas por cada 8 t de materiales de construcción entregadas
 STR_EXTRA_TEXTILE_MILL_PLANT_FIBRES_SUBSTR                                      :5 cajas por cada 8 pacas de zacate entragadas{}
-STR_EXTRA_VEHICLE_FACTORY                                                       :{BLACK}Producción:{} 3 vehículos por cada 8 cajas de piezas de vehículos{} 3 vehículos por cada 8 t de metal entregadas{} 2 vehículos por cada 8,0000 L de químicos entregados{}{}La producción sube si se entregan dos o más materiales con menos de tres meses de diferencia.
+STR_EXTRA_VEHICLE_FACTORY                                                       :{BLACK}Producción:{} 3 vehículos por cada 8 cajas de piezas de vehículos{} 3 vehículos por cada 8 t de metal entregadas{} 2 vehículos por cada 8,000 L de químicos entregados{}{}La producción sube si se entregan dos o más cargamentos con menos de tres meses de diferencia.
 
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Producción máxima alcanzada
+STR_PORT_PRODUCTION_2X                                                          :{BLACK}Producción actual: {YELLOW}Aumentada{}{}{BLACK}Se deben entregar {SIGNED_WORD} unidades de cargamento dentro de tres meses para mantener este nivel{}Para una producción {WHITE}Abundante {BLACK}se deben entregar {SIGNED_WORD} unidades
 
+STR_FUND_MIXED_FARM                                                             :{}{BLACK}Ubicación: {YELLOW}No se puede fundar sobre nieve o desierto.
+STR_FUND_ARABLE_FARM                                                            :{}{BLACK}Ubicación: {YELLOW}No se puede fundar sobre nieve o desierto.
 STR_FUND_COFFEE_ESTATE                                                          :{}{BLACK}Ubicación: {YELLOW}No se puede fundar sobre nieve o desierto.
+STR_FUND_SUGAR_PLANTATION                                                       :{}{BLACK}Ubicación: {YELLOW}No se puede fundar sobre nieve o desierto.
+STR_FUND_FIBRE_CROP_FARM                                                        :{}{BLACK}Ubicación: {YELLOW}No se puede fundar sobre nieve o desierto.
+STR_FUND_FOREST                                                                 :{}{BLACK}Ubicación: {YELLOW}No se puede fundar sobre desierto.
 STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}Ubicación: {YELLOW}No se puede fundar sobre nieve.
+STR_FUND_RUBBER_PLANTATION                                                      :{}{BLACK}Ubicación: {YELLOW}No se puede fundar sobre nieve o desierto.
 STR_FUND_VINEYARD                                                               :{}{BLACK}Ubicación: {YELLOW}No se puede fundar sobre nieve o desierto.
 
 
@@ -64,14 +154,42 @@ STR_FUND_VINEYARD                                                               
 
 
 
+STR_IND_ALUMINIUM_PLANT                                                         :{G=f}Planta de aluminio
+STR_IND_ARABLE_FARM                                                             :{G=f}Granja de cultivo
+STR_IND_BAUXITE_MINE                                                            :{G=f}Mina de bauxita
+STR_IND_BREWERY_CIDER_MILL                                                      :{G=f}Sidrería
+STR_IND_BRICK_WORKS                                                             :{G=f}Ladrillera
+STR_IND_BUILDERS_YARD                                                           :{G=f}Casa de materiales de construcción
 STR_IND_BULK_TERMINAL                                                           :Terminal granelera
+STR_IND_CEMENT_PLANT                                                            :{G=f}Cementera
+STR_IND_CHEMICAL_PLANT                                                          :{G=f}Planta química
+STR_IND_CLAY_PIT                                                                :{G=f}Cantera de arcilla
+STR_IND_COFFEE_ESTATE                                                           :{G=m}Cafetal
+STR_IND_COPPER_REFINERY                                                         :{G=f}Refinería de cobre
+STR_IND_FIBRE_CROP_FARM                                                         :{G=f}Granja de fibras vegetales
+STR_IND_DAIRY                                                                   :{G=f}Productora de lácteos
+STR_IND_DREDGING_SITE                                                           :{G=f}Zona de dragado
+STR_IND_FISHING_GROUND                                                          :{G=f}Zona pesquera
+STR_IND_FISHING_HARBOUR                                                         :{G=m}Puerto de pesca
+STR_IND_FISHING_VILLAGE                                                         :{G=m}Pueblo pesquero
+STR_IND_FLOUR_MILL                                                              :{G=f}Harinera
 STR_IND_FOOD_MARKET                                                             :Tienda de abarrotes
+STR_IND_GLASS_WORKS                                                             :{G=f}Cristalería
+STR_IND_HARDWARE_STORE                                                          :{G=m}Ferretería
+STR_IND_IRON_WORKS                                                              :{G=f}Herrería
 STR_IND_LUMBER_YARD                                                             :{G=f}Maderería
+STR_IND_MANGANESE_MINE                                                          :{G=f}Mina de manganeso
+STR_IND_METAL_FOUNDRY                                                           :{G=m}Fundidora
+STR_IND_MIXEDFARM                                                               :Granja mixta
 STR_IND_NITRATE_MINE                                                            :{G=f}Mina de nitratos
 STR_IND_PETROLPUMP                                                              :{G=f}Gasolinera
 STR_IND_PHOSPHATE_MINE                                                          :{G=f}Mina de fosfato
+STR_IND_PLASTICS_PLANT                                                          :{G=f}Fábrica de plásticos
 STR_IND_PORT                                                                    :Puerto
+STR_IND_PYRITE_SMELTER                                                          :{G=f}Fundidora de pirita
 STR_IND_POWER_PLANT                                                             :Central eléctrica
+STR_IND_QUARRY                                                                  :{G=f}Cantera
+STR_IND_RECYCLING_PLANT                                                         :{G=f}Planta recicladora
 STR_IND_SHEEPFARM                                                               :Rancho ovino
 STR_IND_STOCKYARD                                                               :Rastro
 STR_IND_TEXTILE_MILL                                                            :Maquiladora textil
@@ -80,9 +198,16 @@ STR_IND_TYRE_PLANT                                                              
 STR_IND_VEHICLE_FACTORY                                                         :{G=f}Planta automotriz
 STR_IND_VINEYARD                                                                :Viñedo
 
+STR_STATION_ANIMALS                                                             :Mercado de ganado
+STR_STATION_FISHMARKET                                                          :Mercado de pescados
 STR_STATION_HEAVY_INDUSTRY                                                      :Calle James Watt
 STR_STATION_INDUSTRY_ESTATE                                                     :Parque industrial
 STR_STATION_INDUSTRY_HARBOUR                                                    :Puerto industrial
+STR_STATION_MARKET                                                              :Mercado
+STR_STATION_MILL                                                                :Manufacturera
+STR_STATION_MINE                                                                :Camino Tanner
 STR_STATION_PLANTATION                                                          :Plantación
 STR_STATION_POWERHUNGRY                                                         :Central eléctrica
+STR_STATION_REFINERY                                                            :Zona portuaria
 STR_STATION_TOWN                                                                :Antiguo Ayuntamiento
+STR_STATION_WATER                                                               :{G=f}Arenera
