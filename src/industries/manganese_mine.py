@@ -52,7 +52,7 @@ industry.add_tile(id='manganese_mine_tile_2',
                                                      disallow_industry_adjacent=True))
 
 industry.add_tile(id='manganese_mine_tile_3',
-                  animation_length=81,
+                  animation_length=200,
                   animation_looping=True,
                   animation_speed=3,
                   custom_animation_next_frame='((animation_frame == 18) ? CB_RESULT_STOP_ANIMATION : CB_RESULT_NEXT_FRAME)',
