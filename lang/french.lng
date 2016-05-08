@@ -5,11 +5,12 @@
 STR_GRF_DESC                                                                    :{ORANGE}FIRS Industry Replacement Set{}{BLACK}Proposé par andythenorth, FooBar, planetmaker, Terkhen et Yexo, avec l'aide de bien d'autres personnes encore. {SILVER}Voir le Lisez-moi pour plus d'informations, y compris sur la façon d'utiliser FIRS.{}{BLACK}Licence{NBSP}: GPL v2.
 STR_GRF_NAME                                                                    :{TITLE}
 STR_GRF_URL                                                                     :http://bundles.openttdcoop.org/firs/releases/LATEST/docs/
+STR_EMPTY                                                                       :{}
 
 STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :Éloignement côtier maximal des zones de pêche, plates-formes pétrolières et sites de dragage.
 STR_PARAM_DESC_DEBUG                                                            :Pour les développeurs seulement.
 STR_PARAM_DESC_ECONOMIES                                                        :Chaque modèle économique présente des industries et des cargaisons différentes.{}{}Pour les joueurs intéressés par un jeu plus simple, les économies {SILVER}"Basiques"{BLACK} contiennent moins d'industries et de cargaisons que les autres économies "FIRS".{}{}Le site web de FIRS procure des informations détaillées sur chaque modèle économique.
-STR_PARAM_DESC_NO_OPENINGS                                                      :Par défaut, de nouvelles industries ouvriront pendant la partie.{}{}Si ce paramètre est activé, de nouvelles industries n'ouvriront pas pendant la partie, et les joueurs ne pourront ni construire ni prospecter d'industries.
+STR_PARAM_DESC_NO_OPENINGS                                                      :Par défaut, de nouvelles industries ouvriront pendant la partie.{}{}Si {SILVER}empêcher l'ouverture{BLACK} est activé, aucune industrie n'apparaîtra pendant la partie, et les joueurs ne pourront ni en construire, ni prospecter.
 STR_PARAM_DESC_SECONDARY_NEVER_CLOSE                                            :Par défaut, les industries secondaires ne ferment jamais.{}{}Si ce paramètre est activé, les industries secondaires risquent de fermer si aucune marchandise n'est transportée pendant longtemps. Avec FIRS, les industries primaires ne ferment jamais, elles ne sont pas affectées par ce paramètre.
 STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY                                   :Éloignement côtier maximal des industries maritimes (en nombre de cases)
 STR_PARAM_NAME_DEBUG                                                            :Afficher les textes de débogage.
@@ -18,17 +19,17 @@ STR_PARAM_NAME_NO_OPENINGS                                                      
 STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            :Permettre aux industries secondaire de fermer
 STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0                                         :Pas de limite
 
-STR_PARAM_NAME_PRIMARY_LEVEL1_REQUIREMENT                                       :Marchandises nécessaires pour atteindre la production 'améliorée' (%)
-STR_PARAM_NAME_PRIMARY_LEVEL2_REQUIREMENT                                       :Marchandises nécessaires pour atteindre la production 'à fond les manettes{NBSP}!' (%)
-STR_PARAM_DESC_PRIMARY_LEVEL_REQUIREMENT                                        :La quantité de marchandises nécessaire dépend du type d'industrie et de ce pourcentage
-STR_PARAM_NAME_PRIMARY_LEVEL1_BONUS                                             :Bonus de production 'améliorée'
-STR_PARAM_NAME_PRIMARY_LEVEL2_BONUS                                             :Bonus de production 'à fond les manettes{NBSP}!'
-STR_PARAM_DESC_PRIMARY_LEVEL_BONUS                                              :Le taux d'augmentation de la production des industries, quand les besoins en matières premières sont satisfaits.
+STR_PARAM_NAME_PRIMARY_LEVEL1_REQUIREMENT                                       :Ind. Primaires{NBSP}: Marchandises nécessaires pour la production 'améliorée' (par défaut{NBSP}: 16)
+STR_PARAM_NAME_PRIMARY_LEVEL2_REQUIREMENT                                       :Ind. Primaires{NBSP}: Marchandises nécessaires pour la produire 'à fond les manettes{NBSP}!' (par défaut{NBSP}: 80)
+STR_PARAM_DESC_PRIMARY_LEVEL_REQUIREMENT                                        :Lorsque des caisses de marchandises sont livrées aux fermes, mines et industries similaires, leur production augmente. La production est d'abord {SILVER}améliorée{BLACK}, puis {SILVER}à fond les manettes{NBSP}!{BLACK} si la quantité de caisses le permet.{}{}Ce réglage permet d'ajuster (si nécessaire) la quantité de caisses requise pour changer la production.{}{}La quantité requise par les industries portuaires est 8 x la quantité fixée ici.
+STR_PARAM_NAME_PRIMARY_LEVEL1_BONUS                                             :Ind. Primaires{NBSP}: Bonus production 'améliorée' (%)
+STR_PARAM_NAME_PRIMARY_LEVEL2_BONUS                                             :Ind. Primaires{NBSP}: Bonus production 'à fond les manettes{NBSP}!' (%)
+STR_PARAM_DESC_PRIMARY_LEVEL_BONUS                                              :Production des fermes, mines et industries similaires, quand les besoins en matières premières sont satisfaits (% du niveau {SILVER}Normal{BLACK}).
 
 STR_PARAM_VALUE_ECONOMIES_BASIC_TEMPERATE                                       :Basique - Environnement tempéré
 STR_PARAM_VALUE_ECONOMIES_BASIC_ARCTIC                                          :Basique - Environnement arctique
 STR_PARAM_VALUE_ECONOMIES_BASIC_TROPIC                                          :Basique - Environnement tropical
-STR_PARAM_VALUE_ECONOMIES_FIRS                                                  :FIRS
+STR_PARAM_VALUE_ECONOMIES_FIRS                                                  :Extrême
 STR_PARAM_VALUE_ECONOMIES_MISTAH_KURTZ                                          :Dans un pays chaud
 
 STR_CARGO_NAME_ALCOHOL                                                          :Alcool
@@ -191,23 +192,23 @@ STR_EXTRA_SAWMILL                                                               
 STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Produit des objets métalliques tels que des outils, des charrues, des grilles, des pelles ou des fers à cheval.{}{}Marchandises produites{NBSP}:{}  8 caisses pour 8{NBSP}t de métal livrées
 STR_EXTRA_STEELMILL                                                             :{BLACK}Marchandises produites{NBSP}:{}  3{NBSP}t pour 8{NBSP}t de minerai de fer livrées{}  2{NBSP}t pour 8{NBSP}t de charbon livrées{}  3{NBSP}t pour 8{NBSP}t de ferraille livrées{}{}La production augmente si deux matières premières (ou plus) sont livrées à moins de trois mois d'intervalle.
 STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Marchandises produites{NBSP}:{}  3{NBSP}t pour 8 caisses de fournitures industrielles livrées{}  5{NBSP}t pour 8{NBSP}t de sucre livrées{}{}La production augmente si les deux matières premières sont livrées à moins de trois mois d'intervalle.
-STR_EXTRA_SUPPLY_YARD                                                           :{BLACK}Marchandises produites{NBSP}:{}  8 caisses pour 8{NBSP}t de biens livrées{}  8 caisses pour 8{NBSP}000{NBSP}L d'essence livrés{} {STRING}
+STR_EXTRA_SUPPLY_YARD                                                           :{BLACK}Marchandises produites{NBSP}:{}  8 caisses pour 8 caisses de biens livrées{}  8 caisses pour 8{NBSP}000{NBSP}L d'essence livrés{} {STRING}
 STR_EXTRA_SUPPLY_YARD_VEHICLES_SUBSTR                                           :8 caisses pour 8 véhicules livrés
 STR_EXTRA_SUPPLY_YARD_BUILDING_MATERIALS_SUBSTR                                 :8 caisses pour 8{NBSP}t de matériaux de construction livrées
 STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Marchandises produites{NBSP}:{}  3 caisses pour 8 caisses de fournitures industrielles livrées{} {STRING} {STRING}{}La production augmente si des fournitures industrielles sont livrées à moins de trois mois d'intervalle d'autres matières premières.
 STR_EXTRA_TEXTILE_MILL_WOOL_SUBSTR                                              :5 caisses pour 8 balles de laine livrées{}
 STR_EXTRA_TEXTILE_MILL_PLANT_FIBRES_SUBSTR                                      :5 caisses pour 8 balles de fibres végétales livrées{}
 STR_EXTRA_TYRE_PLANT                                                            :{BLACK}Marchandises produites{NBSP}:{}  6 caisses pour 8{NBSP}000{NBSP}L de latex livrés{}  2 caisses pour 8{NBSP}000{NBSP}L de produits chimiques livrés{}{}La production augmente si les deux matières premières sont livrées à moins de trois mois d'intervalle.
-STR_EXTRA_VEHICLE_FACTORY                                                       :{BLACK}Marchandises produites{NBSP}:{}  3 véhicules pour 8 caisses de pièces détachées livrées{}  3 véhicules pour 8 caisses de métal livrées{}  2 véhicules pour 8{NBSP}000{NBSP}L de produits chimiques livrées{}{}La production augmente si au moins deux matières premières sont livrées à moins de trois mois d'intervalle.
+STR_EXTRA_VEHICLE_FACTORY                                                       :{BLACK}Marchandises produites{NBSP}:{}  3 véhicules pour 8 caisses de pièces détachées livrées{}  3 véhicules pour 8{NBSP}t de métal livrées{}  2 véhicules pour 8{NBSP}000{NBSP}L de produits chimiques livrées{}{}La production augmente si au moins deux matières premières sont livrées à moins de trois mois d'intervalle.
 
 STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ DEBUG ------------{}Production ce mois-ci{NBSP}:{}Marchandise 1{NBSP}: {WHITE}{COMMA}{BLACK}{}Marchandise 2{NBSP}: {WHITE}{COMMA}{BLACK}{}Jours écoulés depuis la dernière livraison{NBSP}: {WHITE}{COMMA}{BLACK}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Production maximum atteinte
-STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Production actuelle{NBSP}: {YELLOW}Normale ({SIGNED_WORD}{NBSP}%){}{}{BLACK}Pour atteindre {SIGNED_WORD}{NBSP}%, livrer {SIGNED_WORD} caisses dans les 3{NBSP}mois{}Pour atteindre {SIGNED_WORD}{NBSP}%, livrer {SIGNED_WORD} caisses
-STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Production actuelle{NBSP}: {YELLOW}Améliorée ({SIGNED_WORD}{NBSP}%){}{}{BLACK}Pour maintenir ce niveau de production, livrer {SKIP}{SIGNED_WORD} caisses dans les 3{NBSP}mois{}Pour atteindre {SIGNED_WORD}{NBSP}%, livrer {SIGNED_WORD} caisses
-STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}Production actuelle{NBSP}: {YELLOW}à fond les manettes{NBSP}! ({SIGNED_WORD}{NBSP}%){}{}{BLACK}Pour maintenir ce niveau de production, livrer {SKIP}{SKIP}{SKIP}{SIGNED_WORD} caisses dans les 3{NBSP}mois
-STR_PORT_PRODUCTION_1X                                                          :{BLACK}Production actuelle{NBSP}: {YELLOW}Normale ({SIGNED_WORD}{NBSP}%){}{}{BLACK}Pour atteindre {SIGNED_WORD}{NBSP}%, livrer {SIGNED_WORD} unités de marchandises nécessaires dans les 3{NBSP}mois{}Pour atteindre {SIGNED_WORD}{NBSP}%, livrer {SIGNED_WORD} unités
-STR_PORT_PRODUCTION_2X                                                          :{BLACK}Production actuelle{NBSP}: {YELLOW}Améliorée ({SIGNED_WORD}{NBSP}%){}{}{BLACK}Pour maintenir ce niveau de production, livrer {SKIP}{SIGNED_WORD} unités de marchandises nécessaires dans les 3{NBSP}mois{}Pour atteindre {SIGNED_WORD}{NBSP}%, livrer {SIGNED_WORD} unités
-STR_PORT_PRODUCTION_4X                                                          :{BLACK}Production actuelle{NBSP}: {YELLOW}à fond les manettes{NBSP}! ({SIGNED_WORD}{NBSP}%){}{}{BLACK}Pour maintenir ce niveau de production, livrer {SKIP}{SKIP}{SKIP}{SIGNED_WORD} unités de marchandises nécessaires dans les 3{NBSP}mois
+STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Production actuelle{NBSP}: {YELLOW}Normale{}{}{BLACK}Pour atteindre la production {WHITE}améliorée{BLACK}, livrer {SIGNED_WORD} caisses dans les 3{NBSP}mois{}Pour produire {WHITE}à fond les manettes{NBSP}!{BLACK}, livrer {SIGNED_WORD} caisses
+STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Production actuelle{NBSP}: {YELLOW}Améliorée{}{}{BLACK}Pour maintenir ce niveau de production, livrer {SIGNED_WORD} caisses dans les 3{NBSP}mois{}Pour produire {WHITE}à fond les manettes{NBSP}!{BLACK}, livrer {SIGNED_WORD} caisses
+STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}Production actuelle{NBSP}: {YELLOW}à fond les manettes{NBSP}!{}{}{BLACK}Pour maintenir ce niveau de production, livrer {SKIP}{SIGNED_WORD} caisses dans les 3{NBSP}mois
+STR_PORT_PRODUCTION_1X                                                          :{BLACK}Production actuelle{NBSP}: {YELLOW}Normale{}{}{BLACK}Pour une production {WHITE}améliorée{BLACK}, livrer {SIGNED_WORD} unités de marchandises nécessaires dans les 3{NBSP}mois{}Pour produire {WHITE}à fond les manettes{NBSP}!{BLACK}, livrer {SIGNED_WORD} unités
+STR_PORT_PRODUCTION_2X                                                          :{BLACK}Production actuelle{NBSP}: {YELLOW}Améliorée{}{}{BLACK}Pour maintenir ce niveau de production, livrer {SIGNED_WORD} unités de marchandises nécessaires dans les 3{NBSP}mois{}Pour produire {WHITE}à fond les manettes{NBSP}!{BLACK}, livrer {SIGNED_WORD} unités
+STR_PORT_PRODUCTION_4X                                                          :{BLACK}Production actuelle{NBSP}: {YELLOW}à fond les manettes{NBSP}!{}{}{BLACK}Pour maintenir ce niveau de production, livrer {SKIP}{SIGNED_WORD} unités de marchandises nécessaires dans les 3{NBSP}mois
 STR_GENERIC_NEWLINE                                                             :{}
 
 STR_FUND_BASIC_FARM                                                             :{}{BLACK}Emplacement{NBSP}: {YELLOW}Ne peut pas être construite sur de la neige ni dans le désert.
