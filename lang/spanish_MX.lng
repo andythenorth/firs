@@ -151,7 +151,7 @@ STR_ERR_LOCATION_LIMIT_1_PER_TOWN                                               
 
 STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}Producción:{} 2 t por cada 8 t de bauxita entregadas{} 2 t por cada 8,000 L de químicos entregados{} 4 t por cada 8 t de chatarra entregadas{}{}La producción sube si se entregan dos o más cargamentos con menos de tres meses de diferencia.
 STR_EXTRA_BIOREFINERY                                                           :{BLACK}Producción:{} 6,000 L por cada 8 t de grano entregadas{} 6,000 L por cada 8 t de azúcar entregadas
-STR_EXTRA_BREWERY                                                               :{BLACK}Producción:{} 3,000 L por cada 8 cajas de suministros de manufactura entregadas{}{STRING} {STRING}{}La producción sube si se entregan suministros de manufactura dentro de tres meses de diferencia.
+STR_EXTRA_BREWERY                                                               :{BLACK}Producción:{} 3,000 L por cada 8 cajas de suministros de manufactura entregadas{} {STRING} {STRING}{}La producción sube si se entregan suministros de manufactura dentro de tres meses de diferencia.
 STR_EXTRA_BREWERY_FRUIT_SUBSTR                                                  :5,000 L por cada 8 t de fruta entregadas{}
 STR_EXTRA_BREWERY_GRAIN_SUBSTR                                                  :5,000 L por cada 8 t de grano entregadas{}
 STR_EXTRA_BREWERY_MAIZE_SUBSTR                                                  :5,000 L por cada 8 t de maíz entregadas{}
@@ -179,7 +179,7 @@ STR_EXTRA_LUMBER_YARD                                                           
 STR_EXTRA_MACHINE_SHOP                                                          :{BLACK}Construye y da servicio a maquinaria.{}{}Producción:{} 8 cajas por cada 8,000 L de gasolina entregados{} 8 cajas por cada 8 t de metal entregadas
 STR_EXTRA_MEAT_PACKER                                                           :{BLACK}Producción:{} 3 t por cada 8 cajas de suministros de manufactura entregadas{} 5 t por cada 8 cabezas de ganado entregadas{}{}La producción sube si se entregan ambos cargamentos con menos de tres meses de diferencia.
 STR_EXTRA_METAL_FABRICATION_PLANT                                               :{BLACK}Produce piezas de metal pintado.{}{}Producción:{} 2 t por cada 8,000 L de químicos{}  6 t por cada 8 t de metal entregadas{}{}La producción sube si se entregan ambos cargamentos con menos de tres meses de diferencia.
-STR_EXTRA_METAL_FOUNDRY                                                         :{BLACK}Produce metal cormado tales como latas, herramientas y enseres domésticos.{}{}Producción:{} 2 cajas por cada 8,000 L de químicos entregados{} 6 cajas por cada 8 t de metal entregadas{}{}La producción sube si se entregan ambos cargamentos con menos de tres meses de diferencia.
+STR_EXTRA_METAL_FOUNDRY                                                         :{BLACK}Produce metal cromado tales como latas, herramientas y enseres domésticos.{}{}Producción:{} 2 cajas por cada 8,000 L de químicos entregados{} 6 cajas por cada 8 t de metal entregadas{}{}La producción sube si se entregan ambos cargamentos con menos de tres meses de diferencia.
 STR_EXTRA_OIL_REFINERY                                                          :{BLACK}Convierte petróleo crudo en gasolina y químicos.{}{}Producción:{} 6,000 L por cada 8,000 L entregados
 STR_EXTRA_PAPER_MILL                                                            :{BLACK}Convierte la madera en celulosa para fabricar papel y cartón.{}{}Producción:{} 4 cajas por cada 8 t de madera entregadas{} 2 cajas por cada 8 t de arcilla entregadas{} 2 cajas por cada 8,000 L de químicos entregados{}{}La producción sube si se entregan dos o más cargamentos con menos de tres meses de diferencia.
 STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}Produce artículos de plástico para empaquetado y enseres domésticos.{}{}Producción:{} {STRING} {STRING}
@@ -187,7 +187,7 @@ STR_EXTRA_PLASTICS_PLANT_CHEMICALS_SUBSTR                                       
 STR_EXTRA_PLASTICS_PLANT_PLANT_FIBRES_SUBSTR                                    :6 cajas por cada 8 pacas de fibras vegetales entregadas{}
 STR_EXTRA_PYRITE_SMELTER                                                        :{BLACK}Convierte mineral de pirita en metal y químicos.{}{}Producción:{} 4 t de metal y 4,000 L de químicos por cada 8 t de mineral de pirita entregadas
 STR_EXTRA_RECYCLING_PLANT                                                       :{BLACK}Procesa material reciclable para reutilización.{}{}Producción:{} 6 t por cada 8 t de reciclables entregados
-STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}El nivel de producción es porporcional al tamaño de cada pueblo.
+STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}La producción es proporcional al tamaño de cada pueblo.
 STR_EXTRA_SAWMILL                                                               :{BLACK}Aserradero.{}{}Producción:{} 6 t por cada 8 t de madera entregadas
 STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Produce objetos de metal forjado tales como herramientas, utensilios de campo, rejas, palas y herraduras.{}{}Producción:{} 8 cajas por cada 8 t de metal entregadas
 STR_EXTRA_STEELMILL                                                             :{BLACK}Producción:{} 3 t por cada 8 t de mineral de hierro entregadas{} 2 t por cada 8 t de carbón entregadas{} 3 t por cada 8 t de chatarra entregadas{}{} La producción sube si se entregan dos o más cargamentos con menos de tres meses de diferencia.
@@ -197,7 +197,7 @@ STR_EXTRA_SUPPLY_YARD_VEHICLES_SUBSTR                                           
 STR_EXTRA_SUPPLY_YARD_BUILDING_MATERIALS_SUBSTR                                 :8 cajas por cada 8 t de materiales de construcción entregadas
 STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Producción:{} 3 cajas por cada 8 cajas de suministros de manufactura entregadas{} {STRING} {STRING}{}La producción sube si se entregan suministros con menos de tres meses de diferencia respecto a otros cargamentos.
 STR_EXTRA_TEXTILE_MILL_WOOL_SUBSTR                                              :5 cajas por cada 8 pacas de lana entregadas{}
-STR_EXTRA_TEXTILE_MILL_PLANT_FIBRES_SUBSTR                                      :5 cajas por cada 8 pacas de fibras vegetales entragadas{}
+STR_EXTRA_TEXTILE_MILL_PLANT_FIBRES_SUBSTR                                      :5 cajas por cada 8 pacas de fibras vegetales entregadas{}
 STR_EXTRA_TYRE_PLANT                                                            :{BLACK}Producción:{} 6 cajas por cada 8,000 L de caucho entregados{} 2 cajas por cada 8,000L de químicos entregados{}{}La producción sube si se entregan ambos cargamentos con menos de tres meses de diferencia.
 STR_EXTRA_VEHICLE_FACTORY                                                       :{BLACK}Producción:{} 3 vehículos por cada 8 cajas de piezas de vehículos{} 3 vehículos por cada 8 t de metal entregadas{} 2 vehículos por cada 8,000 L de químicos entregados{}{}La producción sube si se entregan dos o más cargamentos con menos de tres meses de diferencia.
 
@@ -290,7 +290,7 @@ STR_IND_RECYCLING_PLANT                                                         
 STR_IND_SHEEPFARM                                                               :{G=f}Granja ovina
 STR_IND_SMITHY_FORGE                                                            :{G=f}Fragua
 STR_IND_STOCKYARD                                                               :{G=m}Rastro
-STR_IND_SUGAR_PLANTATION                                                        :{G=f}Plantación de azucar
+STR_IND_SUGAR_PLANTATION                                                        :{G=f}Plantación de azúcar
 STR_IND_SUGAR_REFINERY                                                          :{G=f}Refinería de azúcar
 STR_IND_SUPPLY_YARD                                                             :{G=m}Almacén de suministros
 STR_IND_TEXTILE_MILL                                                            :{G=f}Maquiladora textil
