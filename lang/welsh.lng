@@ -17,12 +17,14 @@ STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            
 STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0                                         :Dim terfyn
 
 
+STR_PARAM_VALUE_ECONOMIES_FIRS                                                  :Eithafol
 
 STR_CARGO_NAME_ALCOHOL                                                          :Alcohol
 STR_CARGO_NAME_BAUXITE                                                          :Bawcsit
 STR_CARGO_NAME_BUILDING_MATERIALS                                               :Deunyddiau Adeiladu
 STR_CARGO_NAME_CHEMICALS                                                        :Cemegion
 STR_CARGO_NAME_CLAY                                                             :Clai
+STR_CARGO_NAME_COPPER                                                           :Copr
 STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :Deunyddiau Peirianneg
 STR_CARGO_NAME_FIBRES                                                           :Ffibrau Planhigion
 STR_CARGO_NAME_FISH                                                             :Pysgod
@@ -31,6 +33,7 @@ STR_CARGO_NAME_FRUITS                                                           
 STR_CARGO_NAME_LUMBER                                                           :Pren
 STR_CARGO_NAME_METAL                                                            :Metel
 STR_CARGO_NAME_MILK                                                             :Llefrith
+STR_CARGO_NAME_MANGANESE                                                        :Manganîs
 STR_CARGO_NAME_MANUFACTURING_SUPPLIES                                           :Deunyddiau Gweithgynhyrchu
 STR_CARGO_NAME_PETROL                                                           :Petrol
 STR_CARGO_NAME_RECYCLABLES                                                      :Deunyddiau Ailgylchadwy
@@ -69,6 +72,7 @@ STR_CID_BAUXITE                                                                 
 STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}ADL
 STR_CID_CHEMICALS                                                               :{TINYFONT}CEM
 STR_CID_CLAY                                                                    :{TINYFONT}CLI
+STR_CID_COPPER                                                                  :{TINYFONT}CR
 STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}PEI
 STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}FRM
 STR_CID_FIBRES                                                                  :{TINYFONT}FBR
@@ -102,9 +106,11 @@ STR_EXTRA_ALUMINUM_PLANT                                                        
 STR_EXTRA_BIOREFINERY                                                           :{BLACK}Yn prosesu grawn a siwgr i fewn i betrol a chemegion.{}{}6t o gynnyrch am bob 8t a ddanfonir.
 STR_EXTRA_BRICKWORKS                                                            :{BLACK}Cynnyrch llwythi:{}  2t am bob 8t o lo a ddanfonir{}  2t am bob 8t o dywod a ddanfonir{}  4t am bob 8t o glai a ddanfonir{}{}Mae cynnyrch yn cynyddu os y danfonir mwy nag un math o lwyth o fewn mis.
 STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Cynnyrch llwythi:{}  2t am bob 8t o lo a ddanfonir{}  2t am bob 8t o glai a ddanfonir{}  4t am bob 8t o garreg a ddanfonir{}{}Mae cynnyrch yn cynyddu os y danfonir mwy nag un math o lwyth o fewn mis.
+STR_EXTRA_CEMENT_PLANT_COAL_SUBSTR                                              :2t am bob 8t o lo a ddanfonir{}
 STR_EXTRA_DAIRY                                                                 :{BLACK}Cynnyrch llwythi:{}  3t am bob 8t o ddeunyddiau gweithgynhyrchu a ddanfonir{}  5t am bob 8t o lefrith a ddanfonir{}{}Cynyddai at 8t am bob 8t os y daw y ddau fath o lwyth o fewn mis.
 STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Cynnyrch llwythi:{}  3t am bob 8t o ddeunyddiau gweithgynhyrchu a ddanfonir{}  5t am bob 8t o bysgod a ddanfonir{}{}Cynyddai at 8t am bob 8t os y daw y ddau fath o lwyth o fewn mis.
 STR_EXTRA_FLOUR_MILL                                                            :{BLACK}Cynnyrch llwythi:{}  3t am bob 8t o ddeunyddiau gweithgynhyrchu a ddanfonir{}  5t am bob 8t o rawn a ddanfonir{}{}Cynyddai at 8t am bob 8t os y daw y ddau fath o lwyth o fewn mis.
+STR_EXTRA_FLOUR_MILL_GRAIN_SUBSTR                                               :5t am bob 8t o rawn a ddanfonir{}
 STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Cynnyrch llwythi:{}  3t am bob 8t o ddeunyddiau gweithgynhyrchu a ddanfonir{}  5t am bob 8t o bren a ddanfonir{}{}Cynyddai at 8t am bob 8t os y daw y ddau fath o lwyth o fewn mis.
 STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Yn cynhyrchu eitemau gwydr fel poteli, jariau a ffenestri.{}{}{BLACK}Cynnyrch llwythi:{}  6t am bob 8t o dywod a ddanfonir{}  2t am bob 8t o gemegion a ddanfonir{}{}Cynyddai at 8t am bob 8t os y daw y ddau fath o lwyth o fewn mis.
 STR_EXTRA_IRON_WORKS                                                            :{BLACK}Cynnyrch llwythi:{}  1t am bob 8t o bren a ddanfonir{}  2t am bob 8t o fwyn haearn a ddanfonir{}{}Cynyddai at 3t am bob 8t os y daw y ddau fath o lwyth o fewn mis.
@@ -118,6 +124,7 @@ STR_EXTRA_OIL_REFINERY                                                          
 STR_EXTRA_PAPER_MILL                                                            :{BLACK}Yn mathru coed i creu papur a chardfwrdd.{}{}{BLACK}Cynnyrch llwythi:{}  4t am bob 8t o goed a ddanfonir{}  2t am bob 8t o glai a ddanfonir{}  2t am bob 8t o gemegion a ddanfonir{}{}Mae cynnyrch yn cynyddu os y danfonir mwy nag un math o lwyth o fewn mis.
 STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}Yn creu eitemau plastig fel pecynnau a nwyddau cartref.{}{}6t o gynnyrch am bob 8t a ddanfonir.
 STR_EXTRA_RECYCLING_PLANT                                                       :{BLACK}Yn prosesu deunyddiau ailgylchadwy ar gyfer aildefnydd mewn diwydiant.{}{}6t o gynnyrch am bob 8t a danfonir.
+STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}Cynhyrchiant mewn cyfrannedd â phoblogaeth y dref.
 STR_EXTRA_SAWMILL                                                               :{BLACK}Yn llifo coed.{}{}6t o gynnyrch am bob 8t a ddanfonir.
 STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Yn cynhyrchu eitemau metel fel arfau, paladuron, giatiau, rhawiau a phedolau.{}{}5t o gynnyrch am bob 8t a ddanfonir.
 STR_EXTRA_STEELMILL                                                             :{BLACK}Cynnyrch llwythi:{}  2t am bob 8t o fwyn haearn a ddanfonir{}  2t am bob 8t o lo a ddanfonir{}  4t am bob 8t o fetel sgrap a ddanfonir{}{}Mae cynnyrch yn cynyddu os y danfonir mwy nag un math o lwyth o fewn mis.
@@ -126,14 +133,17 @@ STR_EXTRA_TEXTILE_MILL                                                          
 
 STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ DADNAMU ------------{}Cynnyrch y mis yma:{}Cargo 1: {WHITE}{COMMA}{BLACK}{}Cargo 2: {WHITE}{COMMA}{BLACK}{}Diwrnodau ers y danfoniad diwethaf: {WHITE}{COMMA}{BLACK}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Cyrhaeddwyd yr uchafswm cynhyrchu
+STR_PORT_PRODUCTION_4X                                                          :{BLACK}Cynnyrch presennol: {YELLOW}Gung-ho{}{}{BLACK}I gadw'r lefel yma, rhaid anfon {SKIP}{SIGNED_WORD} uned o gargo o fewn tair mis
 STR_GENERIC_NEWLINE                                                             :{}
 
 STR_FUND_MIXED_FARM                                                             :{}{BLACK}Lleoliad: {YELLOW}Ni ellir ei ariannu ar eira, mewn anialwch nac ar lethrau serth.
 STR_FUND_ARABLE_FARM                                                            :{}{BLACK}Location: {YELLOW}Ni ellir ei ariannu ar eira, mewn anialwch nac ar lethrau.
 STR_FUND_FOREST                                                                 :{}{BLACK}Location: {YELLOW}Ni ellir ei ariannu mewn anialwch.
 STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}Location: {YELLOW}Ni ellir ei ariannu ar eira.
+STR_FUND_VINEYARD                                                               :{}{BLACK}Lleoliad: {YELLOW}Ni ellir ei ariannu ar eira neu anialwch.
 
 
+STR_FUND_AVAILABLE_FROM                                                         :{}{BLACK}Ar gael o: {YELLOW}{COMMA}
 
 
 
@@ -145,6 +155,7 @@ STR_IND_BIOREFINERY                                                             
 STR_IND_BREWERY                                                                 :Bragdy
 STR_IND_BRICK_WORKS                                                             :Gwaith Brics
 STR_IND_BUILDERS_YARD                                                           :Iard Adeiladu
+STR_IND_BULK_TERMINAL                                                           :Terfynfa Swmpiau
 STR_IND_CEMENT_PLANT                                                            :Gwaith Sment
 STR_IND_CLAY_PIT                                                                :Pwll Clai
 STR_IND_DAIRY                                                                   :Hufenfa
@@ -161,19 +172,24 @@ STR_IND_HOTEL                                                                   
 STR_IND_IRON_WORKS                                                              :Gwaith Haearn
 STR_IND_JUNKYARD                                                                :Iard Sgrap
 STR_IND_LIME_KILN                                                               :Cylyn Calch
+STR_IND_LIQUIDS_TERMINAL                                                        :Terfynfa Hylifau
 STR_IND_LUMBER_YARD                                                             :Iard Goed
 STR_IND_MACHINE_SHOP                                                            :Siop Beirianwaith
 STR_IND_METAL_FABRICATION_PLANT                                                 :Gweithdy Metelau
 STR_IND_METAL_FOUNDRY                                                           :Ffowndri
 STR_IND_MIXEDFARM                                                               :Fferm Cymysg
+STR_IND_NITRATE_MINE                                                            :Mwynglawdd Nitradau
 STR_IND_PETROLPUMP                                                              :Pwmp Petrol
 STR_IND_PLASTICS_PLANT                                                          :Gwaith Plastigion
+STR_IND_PORT                                                                    :Porthladd
 STR_IND_QUARRY                                                                  :Chwarel
 STR_IND_RECYCLING_DEPOT                                                         :Depo Ailgylchu
 STR_IND_RECYCLING_PLANT                                                         :Gwaith Ailgylchu
 STR_IND_SHEEPFARM                                                               :Fferm Ddefaid
 STR_IND_SMITHY_FORGE                                                            :Gefail
 STR_IND_STOCKYARD                                                               :Iard Nwyddau
+STR_IND_SUGAR_PLANTATION                                                        :Planhigfa Siwgr
 STR_IND_SUGAR_REFINERY                                                          :Purfa Siwgr
 STR_IND_TEXTILE_MILL                                                            :Melin Wlân
 
+STR_STATION_POWERHUNGRY                                                         :Gorsaf Bŵer
