@@ -4,6 +4,7 @@
 STR_GRF_DESC                                                                    :{ORANGE}FIRS Industry Replacement Set{}{BLACK}Skapat av andythenorth, FooBar, planetmaker, Terkhen och Yexo, med hjälp av många andra. {SILVER}Se "readme"-filen för mer information, inklusive om hur man använder FIRS. {BLACK}Licens: GPL v2.
 STR_GRF_NAME                                                                    :{TITLE}
 STR_GRF_URL                                                                     :http://bundles.openttdcoop.org/firs/releases/LATEST/docs/
+STR_EMPTY                                                                       :{}
 
 STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :Maximalt avstånd mellan fångstområden, oljeriggar och mudderverk, och kusten, i antal rutor.
 STR_PARAM_DESC_DEBUG                                                            :Endast för utvecklare
@@ -17,6 +18,9 @@ STR_PARAM_NAME_NO_OPENINGS                                                      
 STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            :Tillåt sekundära industrier att stänga
 STR_PARAM_VALUE_SECONDARY_NEVER_CLOSE_0                                         :Ingen begränsning
 
+STR_PARAM_NAME_PRIMARY_LEVEL1_REQUIREMENT                                       :Antal lådor som krävs för förhöjd primär produktion (standard är 16)
+STR_PARAM_DESC_PRIMARY_LEVEL_REQUIREMENT                                        :När lådor med materiel levereras till bondgårdar, gruvor och liknande industrier, kommer produktionen först att ändras till {SILVER}Förhöjd (dubbel){BLACK} och sedan till {SILVER}Gung-ho{BLACK} ifall det levereras tillräckligt med lådor.{}{}Standardvärdet är bra men du kan ändra det här ifall behov skulle uppstå.{}{}Behovet av antal lådor som fraktas till hamnliknande industrier kommer att bli 8x högre och det värdet kan ändras här.
+STR_PARAM_DESC_PRIMARY_LEVEL_BONUS                                              :Produktion på bondgårdar, gruvor och liknande industrier när leveranskraven är uppnådda (i procent av {SILVER}Normal {BLACK} produktionsnivå).
 
 STR_PARAM_VALUE_ECONOMIES_BASIC_TEMPERATE                                       :Tempererad bas-ekonomi
 STR_PARAM_VALUE_ECONOMIES_BASIC_ARCTIC                                          :Arktisk bas-ekonomi
@@ -30,6 +34,7 @@ STR_CARGO_NAME_BUILDING_MATERIALS                                               
 STR_CARGO_NAME_CHEMICALS                                                        :Kemikalier
 STR_CARGO_NAME_CLAY                                                             :Lera
 STR_CARGO_NAME_COFFEE                                                           :Kaffe
+STR_CARGO_NAME_COPPER                                                           :Koppar
 STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :Ingenjörsmateriel
 STR_CARGO_NAME_FIBRES                                                           :Växtfibrer
 STR_CARGO_NAME_FISH                                                             :Fisk
@@ -39,7 +44,9 @@ STR_CARGO_NAME_LUMBER                                                           
 STR_CARGO_NAME_METAL                                                            :Metall
 STR_CARGO_NAME_MILK                                                             :Mjölk
 STR_CARGO_NAME_MANUFACTURING_SUPPLIES                                           :Produktionsmateriel
+STR_CARGO_NAME_NITRATES                                                         :Nitrat
 STR_CARGO_NAME_PETROL                                                           :Bensin
+STR_CARGO_NAME_PHOSPHATE                                                        :Fosfat
 STR_CARGO_NAME_RECYCLABLES                                                      :Returmaterial
 STR_CARGO_NAME_SAND                                                             :Sand
 STR_CARGO_NAME_SCRAP_METAL                                                      :Metallskrot
@@ -50,10 +57,12 @@ STR_CARGO_NAME_WOOL                                                             
 
 STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} alkohol
 STR_CARGO_UNIT_BAUXITE                                                          :{WEIGHT} bauxit
+STR_CARGO_UNIT_CASSAVA                                                          :{WEIGHT} av kassava
 STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WEIGHT} byggmaterial
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} kemikalier
 STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} lera
 STR_CARGO_UNIT_COFFEE                                                           :{SIGNED_WORD} säck{P 0 "" ar} med kaffe
+STR_CARGO_UNIT_COPPER                                                           :{WEIGHT} av koppar
 STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} låd{P 0 a or} med ingenjörsmateriel
 STR_CARGO_UNIT_FIBRES                                                           :{SIGNED_WORD} bal{P 0 "" ar} med växtfibrer
 STR_CARGO_UNIT_FISH                                                             :{WEIGHT} fisk
@@ -62,6 +71,7 @@ STR_CARGO_UNIT_FRUITS                                                           
 STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} virke
 STR_CARGO_UNIT_METAL                                                            :{WEIGHT} metall
 STR_CARGO_UNIT_MILK                                                             :{VOLUME} mjölk
+STR_CARGO_UNIT_NITRATES                                                         :{WEIGHT} av nitrat
 STR_CARGO_UNIT_MNSP                                                             :{SIGNED_WORD} låd{P 0 a or} med produktionsmateriel
 STR_CARGO_UNIT_PETROL                                                           :{VOLUME} bensin
 STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} returmaterial
@@ -70,10 +80,13 @@ STR_CARGO_UNIT_SCRAP_METAL                                                      
 STR_CARGO_UNIT_STONE                                                            :{WEIGHT} sten
 STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} sockerbetor
 STR_CARGO_UNIT_SUGARCANE                                                        :{WEIGHT} sockerrör
+STR_CARGO_UNIT_VEHICLE_PARTS                                                    :{SIGNED_WORD} låd{P 0 a or} av fordonsdelar
+STR_CARGO_UNIT_VEHICLES                                                         :{SIGNED_WORD} fordon{P 0 "" ""}
 STR_CARGO_UNIT_WOOL                                                             :{SIGNED_WORD} bal{P 0 "" ar} med ull
 
 STR_CID_ALCOHOL                                                                 :{TINYFONT}AL
 STR_CID_BAUXITE                                                                 :{TINYFONT}BX
+STR_CID_BEANS                                                                   :{TINYFONT}BN
 STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}BM
 STR_CID_CHEMICALS                                                               :{TINYFONT}KE
 STR_CID_CLAY                                                                    :{TINYFONT}LE
@@ -93,6 +106,7 @@ STR_CID_SCRAP_METAL                                                             
 STR_CID_STONE                                                                   :{TINYFONT}ST
 STR_CID_SUGAR_BEET                                                              :{TINYFONT}SB
 STR_CID_SUGARCANE                                                               :{TINYFONT}SR
+STR_CID_VEHICLES                                                                :{TINYFONT}FN
 STR_CID_WOOL                                                                    :{TINYFONT}UL
 
 STR_ERR_CLIMATE_TOYLAND                                                         :{ORANGE}FIRS är inte ämnat att användas ihop med leksakslandskap
@@ -108,28 +122,29 @@ STR_ERR_LOCATION_NOT_IN_DESERT                                                  
 STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE                                             :kan inte placeras på branta sluttningar.
 STR_ERR_LOCATION_LIMIT_1_PER_TOWN                                               :bara en industri av den här typen är tillåten per stad.
 
-STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}Lastproduktion:{}  2 t per 8 t levererad bauxit{}  2 t per 8,000l levererade kemikalier{}  4 t per 8 t levererat metallskrot{}{}Produktionen ökar om två eller flera godstyper levereras inom en månad av varandra.
+STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}Lastproduktion:{}  2 t per 8 t levererad bauxit{}  2 t per 8,000l levererade kemikalier{}  4 t per 8 t levererat metallskrot{}{}Produktionen ökar om två eller flera godstyper levereras inom tre månader av varandra.
 STR_EXTRA_BIOREFINERY                                                           :{BLACK}Lastproduktion:{} 6,000l per 8t levererad spannmål{} 6,000l per 8t levererat socker
 STR_EXTRA_BREWERY                                                               :{BLACK}Varuproduktion:{} 3,000l per 8 lådor levererat produktionsmateriel{} {STRING} {STRING}{}Produktionen ökar om produktionsmateriel levereras inom en månad av andra godstyper.
 STR_EXTRA_BREWERY_FRUIT_SUBSTR                                                  :5,000l per 8t levererad frukt{}
 STR_EXTRA_BREWERY_GRAIN_SUBSTR                                                  :5,000l per 8t levererat spannmål{}
-STR_EXTRA_BRICKWORKS                                                            :{BLACK}Lastproduktion:{}  2t per 8t levererat kol{}  2t per 8t levererad sand{}  4t per 8t levererad lera{}{}Produktionen ökar om två eller flera godstyper levereras inom en månad av varandra.
-STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Lastproduktion:{}  2t per 8t levererat kol{}  2t per 8t levererad lera{}  4t per 8t levererad sten{}{}Produktionen ökar om två eller flera godstyper levereras inom en månad av varandra.
-STR_EXTRA_DAIRY                                                                 :{BLACK}Lastproduktion:{}  3t per 8 lådor levererad produktionsmateriel{}  5t per 8,000l levererad mjölk{}{}Produktionen ökar när båda godstyperna levereras inom en månad av varandra.
+STR_EXTRA_BRICKWORKS                                                            :{BLACK}Lastproduktion:{}  2t per 8t levererat kol{}  2t per 8t levererad sand{}  4t per 8t levererad lera{}{}Produktionen ökar om två eller flera godstyper levereras inom tre månader av varandra.
+STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Lastproduktion:{} {STRING} 2t per 8t levererad lera{} 4t per 8t levererad sten{}{}Produktionen ökar om två eller flera godstyper levereras inom tre månader av varandra.
+STR_EXTRA_DAIRY                                                                 :{BLACK}Lastproduktion:{}  3t per 8 lådor levererad produktionsmateriel{}  5t per 8,000l levererad mjölk{}{}Produktionen ökar när båda godstyperna levereras inom tre månader av varandra.
 STR_EXTRA_FERTILIZER_PLANT                                                      :{BLACK}Lastproduktion:{}  8 lådor per 8,000l levererade kemikalier
-STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Lastproduktion:{}  3t per 8t levererad produktionsmateriel{}  5t per 8t levererad fisk{}{}Produktionen ökar om båda godstyperna levereras inom en månad av varandra.
-STR_EXTRA_FLOUR_MILL                                                            :{BLACK}Lastproduktion:{}  3t per 8 lådor levererad produktionsmateriel{}  5t per 8t levererad spannmål{}{}Produktionen ökar om båda godstyperna levereras inom en månad av varandra.
-STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Lastproduktion:{}  3t per 8t levererad produktionsmateriel{}  5t per 8t levererat virke{}{}Produktionen ökar om båda godstyperna levereras inom en månad av varandra.
-STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Producerar glasföremål som flaskor, burkar och fönsterrutor.{}{}{BLACK}Lastproduktion:{}  6t per 8t levererad sand{}  2t per 8,000l levererade kemikalier{}{}Produktionen ökar om båda godstyperna levereras inom en månad av varandra.
-STR_EXTRA_IRON_WORKS                                                            :{BLACK}Lastproduktion:{}  2t per 8t levererat timmer{}  2t per 8t levererad järnmalm{}{}Produktionen ökar om båda godstyperna levereras inom en månad av varandra.
+STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Lastproduktion:{}  3t per 8t levererad produktionsmateriel{}  5t per 8t levererad fisk{}{}Produktionen ökar om båda godstyperna levereras inom tre månader av varandra.
+STR_EXTRA_FLOUR_MILL                                                            :{BLACK}Lastproduktion:{}  3t per 8 lådor levererad produktionsmateriel{}  5t per 8t levererad spannmål{} {STRING} {STRING}{}Produktionen ökar om båda godstyperna levereras inom tre månader av varandra.
+STR_EXTRA_FOOD_PROCESSING_PLANT                                                 :{BLACK}Lastproduktion:{} {STRING} 6t per 8t levererad frukt
+STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Lastproduktion:{}  3t per 8t levererad produktionsmateriel{}  5t per 8t levererat virke{}{}Produktionen ökar om båda godstyperna levereras inom tre månader av varandra.
+STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Producerar glasföremål som flaskor, burkar och fönsterrutor.{}{}Lastproduktion:{}  6t per 8t levererad sand{}  2t per 8,000l levererade kemikalier{}{}Produktionen ökar om båda godstyperna levereras inom tre månader av varandra.
+STR_EXTRA_IRON_WORKS                                                            :{BLACK}Lastproduktion:{}  3t per 8t levererat järnmalm{}  3t per 8t levererat timmer{}  2t per 8t levererad sand{}{}Produktionen ökar om båda godstyperna levereras inom tre månader av varandra.
 STR_EXTRA_LIME_KILN                                                             :{BLACK}Lastproduktion:{}  3t per 8t levererad sten{}  3t per 8t levererat kol{}{}Produktionen ökar om båda godstyperna levereras inom en månad av varandra.
-STR_EXTRA_LUMBER_YARD                                                           :{BLACK}Producerar föremål som pålar och staketstolpar.{}{}{BLACK}Lastproduktion:{}  2t per 8,000l levererade kemikalier{}  6t per 8t levererat virke{}{}Produktionen ökar om båda godstyperna levereras inom en månad av varandra.
+STR_EXTRA_LUMBER_YARD                                                           :{BLACK}Producerar föremål som pålar och staketstolpar.{}{}Lastproduktion:{}  2t per 8,000l levererade kemikalier{}  6t per 8t levererat virke{}{}Produktionen ökar om båda godstyperna levereras inom tre månader av varandra.
 STR_EXTRA_MACHINE_SHOP                                                          :{BLACK}Bygger och servar maskiner.{}{}Lastproduktion:{}  8 lådor per 8,000l levererad bensin{}  8 lådor per 8t levererad metall
-STR_EXTRA_MEAT_PACKER                                                           :{BLACK}Lastproduktion:{}  3t per 8 lådor levererad produktionsmateriel{}  5t per 8t levererad boskap{}{}Produktionen ökar om båda godstyperna levereras inom en månad av varandra.
-STR_EXTRA_METAL_FABRICATION_PLANT                                               :{BLACK}Producerar målade metalldelar.{}{}{BLACK}Lastproduktion:{}  2t per 8,000l levererade kemikalier{}  6t per 8t levererad metall{}{}Produktionen ökar om båda godstyperna levereras inom en månad av varandra.
-STR_EXTRA_METAL_FOUNDRY                                                         :{BLACK}Producerar pläterade metallföremål som konservburkar, verktyg och husgeråd.{}{}{BLACK}Lastproduktion:{}  2t per 8,000l levererade kemikalier{}  6 lådor per 8t levererad metall{}{}Produktionen ökar om båda godstyperna levereras inom en månad av varandra.
+STR_EXTRA_MEAT_PACKER                                                           :{BLACK}Lastproduktion:{}  3t per 8 lådor levererad produktionsmateriel{}  5t per 8t levererad boskap{}{}Produktionen ökar om båda godstyperna levereras inom tre månader av varandra.
+STR_EXTRA_METAL_FABRICATION_PLANT                                               :{BLACK}Producerar målade metalldelar.{}{}Lastproduktion:{}  2t per 8,000l levererade kemikalier{}  6t per 8t levererad metall{}{}Produktionen ökar om båda godstyperna levereras inom tre månader av varandra.
+STR_EXTRA_METAL_FOUNDRY                                                         :{BLACK}Producerar pläterade metallföremål som konservburkar, verktyg och husgeråd.{}{}Lastproduktion:{}  2t per 8,000l levererade kemikalier{}  6 lådor per 8t levererad metall{}{}Produktionen ökar om båda godstyperna levereras inom tre månader av varandra.
 STR_EXTRA_OIL_REFINERY                                                          :{BLACK}Förädlar råolja till bensin och kemikalier.{}{}Lastproduktion:{}  6,000l per 8,000l levererade
-STR_EXTRA_PAPER_MILL                                                            :{BLACK}Gör timmer till pappersmassa och producerar papper och kartong.{}{}{BLACK}Lastproduktion:{}  4 lådor per 8t levererat timmer{}  2 lådor per 8t levererad lera{}  2 lådor per 8,000l levererade kemikalier{}{}Produktionen ökar om två eller flera godstyper levereras inom en månad av varandra.
+STR_EXTRA_PAPER_MILL                                                            :{BLACK}Gör timmer till pappersmassa och producerar papper och kartong.{}{}Lastproduktion:{}  4 lådor per 8t levererat timmer{}  2 lådor per 8t levererad lera{}  2 lådor per 8,000l levererade kemikalier{}{}Produktionen ökar om två eller flera godstyper levereras inom tre månader av varandra.
 STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}Producerar plastföremål som förpackningar och husgeråd.{}{}Lastproduktion:{} {STRING} {STRING}
 STR_EXTRA_PLASTICS_PLANT_CHEMICALS_SUBSTR                                       :6 lådor per 8,000l levererade kemikalier{}
 STR_EXTRA_PLASTICS_PLANT_PLANT_FIBRES_SUBSTR                                    :6 lådor per 8 levererade balar med växtfibrer{}
@@ -137,11 +152,12 @@ STR_EXTRA_RECYCLING_PLANT                                                       
 STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}Produktionen är proportionell mot stadens befolkningstal.
 STR_EXTRA_SAWMILL                                                               :{BLACK}Sågar upp timmer.{}{}Lastproduktion:{}  6t per 8t levererat timmer
 STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Producerar metallföremål som redskap, plogar, grindar, skyfflar och hästskor.{}{}Lastproduktion:{} 8 lådor per 8t levererad metall
-STR_EXTRA_STEELMILL                                                             :{BLACK}Lastproduktion:{}  2t per 8t levererad järnmalm{}  2t per 8t levererat kol{}  4t per 8t levererat metallskrot{}{}Produktionen ökar om två eller flera godstyper levereras inom en månad av varandra.
-STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Lastproduktion:{}  3t per 8 lådor levererad produktionsmateriel{}  5t per 8t levererat socker{}{}Produktionen ökar om båda godstyperna levereras inom en månad av varandra.
-STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Lastproduktion:{}  3 lådor per 8 lådor levererad produktionsmateriel{} {STRING} {STRING}{}Produktionen ökar om produktionsmateriel levereras inom en månad av andra godstyper.
+STR_EXTRA_STEELMILL                                                             :{BLACK}Lastproduktion:{}  2t per 8t levererad järnmalm{}  2t per 8t levererat kol{}  4t per 8t levererat metallskrot{}{}Produktionen ökar om två eller flera godstyper levereras inom tre månader av varandra.
+STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Lastproduktion:{}  3t per 8 lådor levererad produktionsmateriel{}  5t per 8t levererat socker{}{}Produktionen ökar om båda godstyperna levereras inom tre månader av varandra.
+STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Lastproduktion:{}  3 lådor per 8 lådor levererad produktionsmateriel{} {STRING} {STRING}{}Produktionen ökar om produktionsmateriel levereras inom tre månader av andra godstyper.
 STR_EXTRA_TEXTILE_MILL_WOOL_SUBSTR                                              :5 lådor per 8 levererade balar med ull{}
 STR_EXTRA_TEXTILE_MILL_PLANT_FIBRES_SUBSTR                                      :5 lådor per 8 levererade balar med växtfibrer{}
+STR_EXTRA_TYRE_PLANT                                                            :{BLACK}Lastproduktion:{} 6 lådor per 8000l levererad gummi{} 2 lådor per 8000l levererade kemikalier{}{}Om båda godstyperna levereras inom tre månader så kommer produktionen att öka.
 
 STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ FELSÖKNING ------------{}Produktion denna månad:{}Last 1: {WHITE}{COMMA}{BLACK}{}Last 2: {WHITE}{COMMA}{BLACK}{}Dagar sedan senaste leverans: {WHITE}{COMMA}{BLACK}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Maximal produktion uppnådd
@@ -193,6 +209,7 @@ STR_IND_DREDGING_SITE                                                           
 STR_IND_FERTILISER_PLANT                                                        :Gödningsfabrik
 STR_IND_FISHING_GROUND                                                          :Fångstområde
 STR_IND_FISHING_HARBOUR                                                         :Fiskehamn
+STR_IND_FLOUR_MILL                                                              :Mjölkvarn
 STR_IND_FOOD_MARKET                                                             :Matbutik
 STR_IND_FURNITURE_FACTORY                                                       :Möbelfabrik
 STR_IND_GENERAL_STORE                                                           :Affär
@@ -207,6 +224,7 @@ STR_IND_MACHINE_SHOP                                                            
 STR_IND_METAL_FABRICATION_PLANT                                                 :Plåtverkstad
 STR_IND_METAL_FOUNDRY                                                           :Metallgjuteri
 STR_IND_MIXEDFARM                                                               :Blandjordbruk
+STR_IND_NITRATE_MINE                                                            :Nitratgruva
 STR_IND_ORCHARD_PIGGERY                                                         :Fruktträdgård och svinfarm
 STR_IND_PETROLPUMP                                                              :Bensinstation
 STR_IND_PLASTICS_PLANT                                                          :Plastfabrik
@@ -220,8 +238,12 @@ STR_IND_SMITHY_FORGE                                                            
 STR_IND_STOCKYARD                                                               :Slakteri
 STR_IND_SUGAR_PLANTATION                                                        :Sockerodling
 STR_IND_SUGAR_REFINERY                                                          :Sockerbruk
+STR_IND_SUPPLY_YARD                                                             :Materielförråd
 STR_IND_TEXTILE_MILL                                                            :Textilfabrik
 STR_IND_TRADING_POST                                                            :Handelshamn
+STR_IND_TYRE_PLANT                                                              :Däcksfabrik
+STR_IND_VEHICLE_FACTORY                                                         :Fordonsfabrik
+STR_IND_VINEYARD                                                                :Vingård
 
 STR_STATION_ANIMALS                                                             :Hästmarknad
 STR_STATION_FARM                                                                :Herrgård
