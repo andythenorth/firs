@@ -36,7 +36,7 @@ STR_PARAM_VALUE_ECONOMIES_MISTAH_KURTZ                                          
 STR_CARGO_NAME_ALCOHOL                                                          :Alkohol
 STR_CARGO_NAME_BAUXITE                                                          :Bauksitt
 STR_CARGO_NAME_BEANS                                                            :Bønner
-STR_CARGO_NAME_BUILDING_MATERIALS                                               :Bygningsmaterialer
+STR_CARGO_NAME_BUILDING_MATERIALS                                               :Byggematerialer
 STR_CARGO_NAME_CASSAVA                                                          :Kassava
 STR_CARGO_NAME_CHEMICALS                                                        :Kjemikalier
 STR_CARGO_NAME_CLAY                                                             :Leire
@@ -58,7 +58,7 @@ STR_CARGO_NAME_NUTS                                                             
 STR_CARGO_NAME_PETROL                                                           :Bensin
 STR_CARGO_NAME_PHOSPHATE                                                        :Fosfat
 STR_CARGO_NAME_PYRITE_ORE                                                       :Pyrittmalm
-STR_CARGO_NAME_RECYCLABLES                                                      :Resirkulerbare varer
+STR_CARGO_NAME_RECYCLABLES                                                      :Returgods
 STR_CARGO_NAME_SAND                                                             :Sand
 STR_CARGO_NAME_SCRAP_METAL                                                      :Skrapmetall
 STR_CARGO_NAME_STONE                                                            :Stein
@@ -72,7 +72,7 @@ STR_CARGO_UNIT_ALCOHOL                                                          
 STR_CARGO_UNIT_BAUXITE                                                          :{WEIGHT} bauksitt
 STR_CARGO_UNIT_BEANS                                                            :{WEIGHT} bønner
 STR_CARGO_UNIT_CASSAVA                                                          :{WEIGHT} kassava
-STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WEIGHT} bygningsmaterialer
+STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WEIGHT} byggematerialer
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} kjemikalier
 STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} leire
 STR_CARGO_UNIT_COFFEE                                                           :{SIGNED_WORD} sekk{P 0 "" er} kaffe
@@ -93,7 +93,7 @@ STR_CARGO_UNIT_MNSP                                                             
 STR_CARGO_UNIT_PETROL                                                           :{VOLUME} bensin
 STR_CARGO_UNIT_PHOSPHATE                                                        :{WEIGHT} fosfat
 STR_CARGO_UNIT_PYRITE_ORE                                                       :{WEIGHT} pyrittmalm
-STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} resirkulerbare varer
+STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} returgods
 STR_CARGO_UNIT_SAND                                                             :{WEIGHT} sand
 STR_CARGO_UNIT_SCRAP_METAL                                                      :{WEIGHT} skrapmetall
 STR_CARGO_UNIT_STONE                                                            :{WEIGHT} stein
@@ -161,8 +161,8 @@ STR_EXTRA_CEMENT_PLANT                                                          
 STR_EXTRA_CEMENT_PLANT_COAL_SUBSTR                                              :2t pr 8t kull levert{}
 STR_EXTRA_CEMENT_PLANT_PETROL_SUBSTR                                            :2t pr 8.000l bensin levert{}
 STR_EXTRA_CHEMICAL_PLANT                                                        :{BLACK}Vareproduksjon:{}  6.000l per 8.000l olje levert{}  6.000l per 8t nitrater levert
-STR_EXTRA_COPPER_REFINERY                                                       :{BLACK}Vareproduksjon:{}  5t pr 8t kobbermalm levert{}  3t pr 8.000l kjemikalier levert{}{}Produksjonen øker om begge vareslag leveres under tre måneder etter hverandre.
-STR_EXTRA_DAIRY                                                                 :{BLACK}Vareproduksjon:{} 3t pr 8 kasser manufakturutstyr levert{} 5t pr 8.000l melk levert{}{}Produksjonen øker om begge varene blir levert under tre måneder etter hverandre.
+STR_EXTRA_COPPER_REFINERY                                                       :{BLACK}Vareproduksjon:{}  5t pr 8t kobbermalm levert{}  3t pr 8.000l kjemikalier levert{}{}Produksjonen øker om begge vareslag leveres innen tre måneder etter hverandre.
+STR_EXTRA_DAIRY                                                                 :{BLACK}Vareproduksjon:{} 3t pr 8 kasser manufakturutstyr levert{} 5t pr 8.000l melk levert{}{}Produksjonen øker om begge varene blir levert innen tre måneder etter hverandre.
 STR_EXTRA_FERTILIZER_PLANT                                                      :{BLACK}Vareproduksjon:{}  8 kasser pr 8.000l kjemikalier levert
 STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Vareproduksjon:{}  3t pr 8 kasser emballasje levert{}  5t pr 8t fisk levert{}{}Produksjonen øker om begge varene leveres innen tre måneder etter hverandre.
 STR_EXTRA_FLOUR_MILL                                                            :{BLACK}Vareproduksjon:{}  3t pr 8 kasser emballasje levert{}{STRING} {STRING}{}Produksjonen øker hvis emballasje blir levert innen tre måneder før eller etter andre vareslag.
@@ -173,10 +173,10 @@ STR_EXTRA_FOOD_PROCESSING_PLANT                                                 
 STR_EXTRA_FOOD_PROCESSING_PLANT_BEANS_SUBSTR                                    :6t pr 8t bønner levert{}
 STR_EXTRA_FOOD_PROCESSING_PLANT_NUTS_SUBSTR                                     :6t pr 8t nøtter levert{}
 STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Vareproduksjon:{}  3t pr 8 kasser emballasje levert{}  5t per 8t trelast levert{}{}Produksjonen øker om begge varene leveres innen tre måneder etter hverandre.
-STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Produserer glassvarer som flasker, krukker og vindusruter.{}{}Vareproduksjon:{}  6t pr 8t sand levert{}  2t pr 8.000l kjemikalier levert{}{}Produksjonen øker om begge varene leveres under tre måneder etter hverandre.
-STR_EXTRA_IRON_WORKS                                                            :{BLACK}Vareproduksjon:{} 3t pr 8t jernmalm levert{} 3t pr 8t tømmer levert{} 2t pr 8t sand levert{}{}Produksjonen øker dersom to eller fler vareslag blir levert  under tre måneder etter hverandre.
-STR_EXTRA_LIME_KILN                                                             :{BLACK}Vareproduksjon:{}  3t pr 8t stein levert{}  3t pr 8t kull levert{}{}Produksjonen øker dersom begge varene blir levert under tre måneder etter hverandre.
-STR_EXTRA_LUMBER_YARD                                                           :{BLACK}Lager slike ting som stolper og gjerdestolper.{}{}Vareproduksjon:{}  2t pr 8.000l kjemikalier levert{}  6t pr 8t trelast levert{}{}Produksjonen øker dersom begge varene blir levert under tre måneder etter hverandre.
+STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Produserer glassvarer som flasker, krukker og vindusruter.{}{}Vareproduksjon:{}  6t pr 8t sand levert{}  2t pr 8.000l kjemikalier levert{}{}Produksjonen øker om begge varene leveres innen tre måneder etter hverandre.
+STR_EXTRA_IRON_WORKS                                                            :{BLACK}Vareproduksjon:{} 3t pr 8t jernmalm levert{} 3t pr 8t tømmer levert{} 2t pr 8t sand levert{}{}Produksjonen øker dersom to eller fler vareslag blir levert  innen tre måneder etter hverandre.
+STR_EXTRA_LIME_KILN                                                             :{BLACK}Vareproduksjon:{}  3t pr 8t stein levert{}  3t pr 8t kull levert{}{}Produksjonen øker dersom begge varene blir levert innen tre måneder etter hverandre.
+STR_EXTRA_LUMBER_YARD                                                           :{BLACK}Lager slike ting som stolper og gjerdestolper.{}{}Vareproduksjon:{}  2t pr 8.000l kjemikalier levert{}  6t pr 8t trelast levert{}{}Produksjonen øker dersom begge varene blir levert innen tre måneder etter hverandre.
 STR_EXTRA_MACHINE_SHOP                                                          :{BLACK}Bygger og vedlikeholder maskineri.{}{}Vareproduksjon:{}  8 kasser pr 8.000l bensin levert{}  8 kasser pr 8t metall levert
 STR_EXTRA_MEAT_PACKER                                                           :{BLACK}Vareproduksjon:{} 3t pr 8 kasser emballasje levert{} 5t pr 8 enheter buskap levert{}{}Produksjonen øker om begge varene blir levert innen tre måneder etter hverandre.
 STR_EXTRA_METAL_FABRICATION_PLANT                                               :{BLACK}Produserer lakkerte metalldeler.{}{}Vareproduksjon:{}  2t pr 8.000l kjemikalier levert{}  6t pr 8t metall levert{}{}Produksjonen øker dersom begge varene blir levert innen tre måneder etter hverandre.
@@ -187,7 +187,7 @@ STR_EXTRA_PLASTICS_PLANT                                                        
 STR_EXTRA_PLASTICS_PLANT_CHEMICALS_SUBSTR                                       :6 kasser pr 8.000l kjemikalier levert{}
 STR_EXTRA_PLASTICS_PLANT_PLANT_FIBRES_SUBSTR                                    :6 kasser pr 8 baller plantefiber levert{}
 STR_EXTRA_PYRITE_SMELTER                                                        :{BLACK}Bearbeider pyrittmalm til metall og kjemikalier.{}{}Vareproduksjon:{}  4t metall og 4.000l kjemikalier pr 8t pyrittmalm levert.
-STR_EXTRA_RECYCLING_PLANT                                                       :{BLACK}Bearbeider resirkulerbare varer for gjenbruk.{}{}Vareproduksjon:{} 6t pr 8t resirkulerbare varer levert
+STR_EXTRA_RECYCLING_PLANT                                                       :{BLACK}Bearbeider returgods for gjenbruk.{}{}Vareproduksjon:{} 6t pr 8t returgods levert
 STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}Produksjonen er proporsjonal med byens innbyggertall.
 STR_EXTRA_SAWMILL                                                               :{BLACK}Sager tømmer.{}{}Vareproduksjon:{}  6t pr 8t tømmer levert
 STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Produserer metallting som verktøy, ploger, porter, spader og hestesko.{}{}Vareproduksjon:{}  8 kasser pr 8t metall levert
@@ -286,7 +286,7 @@ STR_IND_PYRITE_SMELTER                                                          
 STR_IND_POWER_PLANT                                                             :{G=neuter}Kraftverk
 STR_IND_QUARRY                                                                  :{G=neuter}Steinbrudd
 STR_IND_RANCH                                                                   :{G=masculine}Ranch
-STR_IND_RECYCLING_DEPOT                                                         :{G=masculine}Gjenvinningsstasjon
+STR_IND_RECYCLING_DEPOT                                                         :{G=masculine}Miljøstasjon
 STR_IND_RECYCLING_PLANT                                                         :{G=neuter}Gjenvinningsverk
 STR_IND_SHEEPFARM                                                               :{G=masculine}Sauegård
 STR_IND_SMITHY_FORGE                                                            :{G=feminine}Smie
