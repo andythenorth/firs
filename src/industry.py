@@ -738,14 +738,6 @@ class Industry(object):
     def get_another_industry(self, id):
         return get_another_industry(id)
 
-    def get_conditional_expressions_for_enabled_economies(self):
-        # returns a string that can be used as the conditions in nml if() blocks for economy stuff
-        enabled_economies = []
-        for i, economy in enumerate(registered_economies):
-            if self.economy_variations[economy.id].enabled:
-                enabled_economies.append('economy==' + str(i))
-        return ' || '.join(enabled_economies)
-
     def get_expression_for_num_output_cargos_per_economy(self):
         # returns a string that is used to push 1 or 2 to temp storage as the number of industry output cargos
         # (secondary industries may have 1 or 2 output cargos; 0 is not a relevant option here)
