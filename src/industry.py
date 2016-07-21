@@ -742,10 +742,10 @@ class Industry(object):
         # returns a string that is used to push 1 or 2 to temp storage as the number of industry output cargos
         # (secondary industries may have 1 or 2 output cargos; 0 is not a relevant option here)
         result = []
-        for i, economy in enumerate(registered_economies):
+        for economy in registered_economies:
             if self.economy_variations[economy.id].enabled:
                 if len(self.get_property('prod_cargo_types', economy)) == 2:
-                    result.append('economy==' + str(i))
+                    result.append('economy==' + str(economy.numeric_id))
         if len(result) == 0:
             return 1
         else:
