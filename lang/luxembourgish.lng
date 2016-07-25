@@ -8,7 +8,7 @@ STR_EMPTY                                                                       
 
 STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :Maximalen Ofstand vun Fëschgrënn, Buerinselen an Baggerweiheren vun der Küst a Felder ausgedréckt.
 STR_PARAM_DESC_DEBUG                                                            :Nëmme fir Entwéckler
-STR_PARAM_DESC_ECONOMIES                                                        :All Wiertschaftstyp stellt verschidden Industrien a Frachtarten bereed.{}{}De Wiertschaftstyp 'Einfach' bidd manner Industrien a Frachtarten un, wéi déi aner Wiertschaftstypen.
+STR_PARAM_DESC_ECONOMIES                                                        :All Wiertschaftstyp stellt verschidden Industrien a Frachtarten bereed.{}{}De Wiertschaftstyp {SILVER}Einfach {BLACK}bidd manner Industrien a Frachtarten un, wéi déi aner Wiertschaftstypen.{}{}Op der FIRS Websäit kann een weider Informatiounen iwwer déi verschidden Wiertschaftstypen noliesen.
 STR_PARAM_DESC_NO_OPENINGS                                                      :Standardméisseg ginn nei Industrie während dem Spill opgemet.{}{}Wann 'net opmaachen' ugewielt ass, maachen keng nei Industrien während dem Spill op, an d'Spiller kënnen och keng nei Industrien bauen oder fördern.
 STR_PARAM_DESC_SECONDARY_NEVER_CLOSE                                            :Standardméisseg ginn sekundär FIRS Industrien nie zougemet.{}{}Wann sekundär Industrien zoumaachen ugeschalt ass, kënnen se zougemet ginn wann se eng laang Zäit net beliwwert ginn. Primär Industrien ginn am FIRS nie zougemet an ginn net vun dëser Astellung beaflosst.
 STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY                                   :Maximalen Ofstand vun Séindustrien vun der Küst a Felder ausgedréckt
@@ -52,6 +52,7 @@ STR_CARGO_NAME_MANUFACTURING_SUPPLIES                                           
 STR_CARGO_NAME_NITRATES                                                         :Nitrater
 STR_CARGO_NAME_NUTS                                                             :Nëss
 STR_CARGO_NAME_PETROL                                                           :Pëtrol
+STR_CARGO_NAME_PYRITE_ORE                                                       :Pyritäerz
 STR_CARGO_NAME_RECYCLABLES                                                      :Recyclingmaterial
 STR_CARGO_NAME_SAND                                                             :Sand
 STR_CARGO_NAME_SCRAP_METAL                                                      :Schrott
@@ -148,16 +149,19 @@ STR_EXTRA_BIOREFINERY                                                           
 STR_EXTRA_BREWERY                                                               :{BLACK}Produktioun:{}  3,000l pro 8 Këschten geliwwertem Handwierksgeschier{} {STRING} {STRING}{}Produktioun geet an d'Lut wann Handwierksgeschier innerhalb engem Mount mat anere Gidder geliwwert ginn.
 STR_EXTRA_BREWERY_FRUIT_SUBSTR                                                  :5,000l pro 8t geliwwerte Friichten{}
 STR_EXTRA_BREWERY_GRAIN_SUBSTR                                                  :5,000l pro 8t geliwwertem Kar{}
+STR_EXTRA_BREWERY_MAIZE_SUBSTR                                                  :5,000l pro 8t geliwwertem Mais{}
 STR_EXTRA_BRICKWORKS                                                            :{BLACK}Produktioun:{} 2t pro 8t geliwwerter Kuel{} 2t pro 8t geliwwertem Sand{} 4t pro 8t geliwwertem Toun{}{}Produktioun geet an d'Lut wann zwee oder méi Gidder innerhalb engem Mount zesumme geliwwert ginn.
 STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Produktioun:{}  2t pro 8t geliwwerter Kuel{}  2t pro 8t geliwwertem Toun{}  4t pro 8t geliwwerten Steng{}{}Produktioun geet an d'Lut wann zwee oder méi Gidder innerhalb engem Mount zesumme geliwwert ginn.
 STR_EXTRA_CEMENT_PLANT_COAL_SUBSTR                                              :2t pro 8t geliwwerter Kuel{}
 STR_EXTRA_CEMENT_PLANT_PETROL_SUBSTR                                            :2t pro 8,000l geliwwertem Petrol{}
 STR_EXTRA_CHEMICAL_PLANT                                                        :{BLACK}Produktioun:{} 6,000l pro 8,000l geliwwertem Ueleg{} 6,000l pro 8t geliwwerten Nitrater
+STR_EXTRA_COPPER_REFINERY                                                       :{BLACK}Produktioun:{} 5t pro 8t geliwwertem Kofferäerz{} 3t pro 8,000l geliwwerte Chemikalien{}{}Produktioun geet an d'Lut wann zwee oder méi Gidder innerhalb engem Mount zesumme geliwwert ginn.
 STR_EXTRA_DAIRY                                                                 :{BLACK}Produktioun:{} 3t pro 8 Këschte geliwwerten Handwierksgeschier{} 5t pro 8,000l geliwwerter Mëllech{}{}Produktioun geet an d'Lut wa béid Gidder innerhalb dräi Méint zesumme geliwwert ginn.
 STR_EXTRA_FERTILIZER_PLANT                                                      :{BLACK}Produktioun:{}  8 Këschte pro 8,000l geliwwerte Chemikalien
 STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Produktioun:{}  3t pro 8 Këschte geliwwerten Handwierksgeschier{}  5t pro 8t geliwwertem Fësch{}{}Produktioun geet an d'Lut wa béid Gidder innerhalb engem Mount zesumme geliwwert ginn.
 STR_EXTRA_FLOUR_MILL                                                            :{BLACK}Produktioun:{} 3t pro 8 geliwwerte Këschte mat Handwierksgeschier{} 5t pro 8t geliwwertem Kar{}{}Produktioun geet an d'Lut wa béid Gidder innerhalb engem Mount zesumme geliwwert ginn.
 STR_EXTRA_FLOUR_MILL_GRAIN_SUBSTR                                               :5t pro 8t geliwwertem Kar{}
+STR_EXTRA_FLOUR_MILL_CASSAVA_SUBSTR                                             :5t pro 8t geliwwertem Maniok{}
 STR_EXTRA_FLOUR_MILL_MAIZE_SUBSTR                                               :5t pro 8t geliwwertem Mais{}
 STR_EXTRA_FOOD_PROCESSING_PLANT                                                 :{BLACK}Produktioun:{}  6t pro 8t geliwwerte Bounen{}  6t pro 8t geliwwerte Friichten
 STR_EXTRA_FOOD_PROCESSING_PLANT_BEANS_SUBSTR                                    :6t pro 8t geliwwerte Bounen{}
@@ -194,10 +198,10 @@ STR_EXTRA_VEHICLE_FACTORY                                                       
 
 STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ DEBUG ------------{}Produktioun dësen Mount:{}Gidder 1: {WHITE}{COMMA}{BLACK}{}Gidder 2: {WHITE}{COMMA}{BLACK}{}Deeg säit leschter Liwwerung: {WHITE}{COMMA}{BLACK}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Maximal Produktioun erreecht
-STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Aktuell Produktioun: {YELLOW}Normal{}{}{BLACK}Fir d'Produktioun ze verduebelen, liwwer {SIGNED_WORD} Këschten innerhalb dräi Méint (oder {SIGNED_WORD} Këschte fir eng véierfach Produktioun)
+STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Aktuell Produktioun: {YELLOW}Normal{}{}{BLACK}Fir d'Produktioun op {WHITE}erweidert{BLACK} ze hiewen, liwwer {SIGNED_WORD} Këschten innerhalb dräi Méint{}Fir d'Produktioun op {WHITE}extrem{BLACK} ze hiewen, liwwer {SIGNED_WORD} Këschten
 STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Aktuell Produktioun: {YELLOW}Erweidert (duebel){}{}{BLACK}Fir dësen Niveau ze halen, liwwer {SIGNED_WORD} Eenheete Gidder innerhalb dräi Méint, oder {SIGNED_WORD} Këschte fir eng véierfach Produktioun
 STR_PRIMARY_PRODUCTION_4X                                                       :{BLACK}Aktuell Produktioun: {YELLOW}Enorm (véierfach){}{}{BLACK}Fir dësen Niveau ze halen, liwwer {SIGNED_WORD} Këschte Material innerhalb dräi Méint
-STR_PORT_PRODUCTION_1X                                                          :{BLACK}Aktuell Produktioun: {YELLOW}Normal{}{}{BLACK}Fir d'Produktioun ze verduebelen, liwwer {SIGNED_WORD} Eenheete Gidder innerhalb dräi Méint{}Fir eng véierfach Produktioun, liwwer {SIGNED_WORD} Eenheete Gidder innerhalb dräi Méint
+STR_PORT_PRODUCTION_1X                                                          :{BLACK}Aktuell Produktioun: {YELLOW}Normal{}{}{BLACK}Fir eng {WHITE}erweidert {BLACK}Produktioun, liwwer {SIGNED_WORD} Eenheete Gidder innerhalb dräi Méint{}Fir eng {WHITE}extrem {BLACK}Produktioun, liwwer {SIGNED_WORD} Eenheete Gidder
 STR_PORT_PRODUCTION_2X                                                          :{BLACK}Aktuell Produktioun: {YELLOW}Erweidert (duebel){}{}{BLACK}Fir dësen Niveau ze halen, liwwer {SIGNED_WORD} Eenheete Gidder innerhalb dräi Méint, oder {SIGNED_WORD} Eenheete Gidder fir eng véierfach Produktioun
 STR_PORT_PRODUCTION_4X                                                          :{BLACK}Aktuell Produktioun: {YELLOW}Enorm (véierfach){}{}{BLACK}Fir dësen Niveau ze halen, liwwer {SIGNED_WORD} Eenheete Gidder innerhalb dräi Méint
 STR_GENERIC_NEWLINE                                                             :{}
