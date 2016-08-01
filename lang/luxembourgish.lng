@@ -23,12 +23,13 @@ STR_PARAM_NAME_PRIMARY_LEVEL2_REQUIREMENT                                       
 STR_PARAM_DESC_PRIMARY_LEVEL_REQUIREMENT                                        :Baurenhäff, Minen an ähnlech Industrien wäerten hier Produktioun verbesseren, als éischt op {SILVER}Erweidert{BLACK}, an dann op {SILVER}Extrem{BLACK}, wa genuch Këschte geliwwert ginn.{}{}D'Standardwäerter si gutt, mee falls néideg, kënnen se geännert ginn.{}{}Wuerewäerter fir Industrien vum Typ "Hafen", sinn 8x déi hei agestallte Wäerter.
 STR_PARAM_NAME_PRIMARY_LEVEL1_BONUS                                             :Erweiderte Primärproduktiounsniveau (%)
 STR_PARAM_NAME_PRIMARY_LEVEL2_BONUS                                             :Extreme Primärproduktiounsniveau (%)
+STR_PARAM_DESC_PRIMARY_LEVEL_BONUS                                              :Produktioun op Häff, Minnen an ähnlëchen Industrien déi d'Beliwwerungsbedéngungen erfëllen  (als Prozentsaz vum Produktiounswert {SILVER}Normal {BLACK}).
 
 STR_PARAM_VALUE_ECONOMIES_BASIC_TEMPERATE                                       :Geméissegt Klima (Einfach)
 STR_PARAM_VALUE_ECONOMIES_BASIC_ARCTIC                                          :Arktesch (Einfach)
 STR_PARAM_VALUE_ECONOMIES_BASIC_TROPIC                                          :Tropesch (Einfach)
 STR_PARAM_VALUE_ECONOMIES_FIRS                                                  :Extrem
-STR_PARAM_VALUE_ECONOMIES_MISTAH_KURTZ                                          :Häerz vun der Däischtert
+STR_PARAM_VALUE_ECONOMIES_MISTAH_KURTZ                                          :An engem waarme Land
 
 STR_CARGO_NAME_ALCOHOL                                                          :Alkohol
 STR_CARGO_NAME_BAUXITE                                                          :Bauxit
@@ -139,7 +140,7 @@ STR_ERR_INCOMPATIBLE_SET                                                        
 STR_ERR_INCOMPATIBLE_PARAM_CANSET                                               :{ORANGE}E02: {YELLOW}Inkompatibele Parameter: {ORANGE}CanSet Parameter 2 muss 0 sinn fir mat FIRS ze fonktionéieren. {YELLOW}Lies de FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 STR_ERR_INCOMPATIBLE_PARAM_CITYSET                                              :{ORANGE}E02: {YELLOW}Inkompatibele Parameter: {ORANGE}NA City Set Parameter 2 muss 0 sinn, fir mat FIRS ze fonktionéieren. {YELLOW}Lies de FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 STR_ERR_INCOMPATIBLE_SET_TTRS_VERSION                                           :{ORANGE}E04: {YELLOW}Inkompatibel Versioun: {ORANGE}Total Town Replacement Set muss Versioun 3.11 oder méi nei sinn. {YELLOW}Lies de FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
-STR_ERR_OPENTTD_VERSION                                                         :{ORANGE}E00: FIRS braucht OpenTTD 1.2.0 / trunk r22780 oder méi héich. {YELLOW}Lies de FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
+STR_ERR_OPENTTD_VERSION                                                         :{ORANGE}E00: FIRS braucht OpenTTD 1.6.0 / trunk r27279 oder méi héich. {YELLOW}Lies de FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
 
 STR_ERR_LOCATION_NOT_ABOVE_SNOWLINE                                             :muss ënnert der Schnéilinn gebaut ginn.
 STR_ERR_LOCATION_NOT_ON_WATER                                                   :dierf net op Waasser gebaut ginn.
@@ -147,14 +148,14 @@ STR_ERR_LOCATION_NOT_IN_DESERT                                                  
 STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE                                             :kann net op schiefen Häng gebaut ginn.
 STR_ERR_LOCATION_LIMIT_1_PER_TOWN                                               :nëmmen eng Industrie vun dësem Typ ass pro Stad erlabt
 
-STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}Produktioun:{} 2t pro 8t geliwwertem Bauxit{} 2t pro 8,000l geliwwerte Chemikalien{} 4t pro 8t geliwwertem Schrott{}{}Produktioun geet an d'Lut wann zwee oder méi Gidder innerhalb engem Mount zesumme geliwwert ginn.
+STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}Produktioun:{} 2t pro 8t geliwwertem Bauxit{} 2t pro 8,000l geliwwerte Chemikalien{} 4t pro 8t geliwwertem Schrott{}{}Produktioun geet an d'Lut wann zwee oder méi Gidder innerhalb dräi Méint zesumme geliwwert ginn.
 STR_EXTRA_BIOREFINERY                                                           :{BLACK}Produktioun:{}  6,000l pro 8t geliwwertem Kar{}  6,000l pro 8t geliwwertem Zocker
-STR_EXTRA_BREWERY                                                               :{BLACK}Produktioun:{}  3,000l pro 8 Këschten geliwwertem Handwierksgeschier{} {STRING} {STRING}{}Produktioun geet an d'Lut wann Handwierksgeschier innerhalb engem Mount mat anere Gidder geliwwert ginn.
+STR_EXTRA_BREWERY                                                               :{BLACK}Produktioun:{}  3,000l pro 8 Këschten geliwwertem Handwierksgeschier{} {STRING} {STRING}{}Produktioun geet an d'Lut wann Handwierksgeschier innerhalb dräi Méint mat anere Gidder geliwwert ginn.
 STR_EXTRA_BREWERY_FRUIT_SUBSTR                                                  :5,000l pro 8t geliwwerte Friichten{}
 STR_EXTRA_BREWERY_GRAIN_SUBSTR                                                  :5,000l pro 8t geliwwertem Kar{}
 STR_EXTRA_BREWERY_MAIZE_SUBSTR                                                  :5,000l pro 8t geliwwertem Mais{}
 STR_EXTRA_BRICKWORKS                                                            :{BLACK}Produktioun:{} 2t pro 8t geliwwerter Kuel{} 2t pro 8t geliwwertem Sand{} 4t pro 8t geliwwertem Toun{}{}Produktioun geet an d'Lut wann zwee oder méi Gidder innerhalb dräi Méint zesumme geliwwert ginn.
-STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Produktioun:{}  2t pro 8t geliwwerter Kuel{}  2t pro 8t geliwwertem Toun{}  4t pro 8t geliwwerten Steng{}{}Produktioun geet an d'Lut wann zwee oder méi Gidder innerhalb engem Mount zesumme geliwwert ginn.
+STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Produktioun:{} {STRING} 2t pro 8t geliwwertem Toun{}  4t pro 8t geliwwerte Steng{}{}Produktioun geet an d'Lut wann zwee oder méi Gidder innerhalb dräi Méint zesumme geliwwert ginn.
 STR_EXTRA_CEMENT_PLANT_COAL_SUBSTR                                              :2t pro 8t geliwwerter Kuel{}
 STR_EXTRA_CEMENT_PLANT_PETROL_SUBSTR                                            :2t pro 8,000l geliwwertem Petrol{}
 STR_EXTRA_CHEMICAL_PLANT                                                        :{BLACK}Produktioun:{} 6,000l pro 8,000l geliwwertem Ueleg{} 6,000l pro 8t geliwwerten Nitrater
@@ -169,15 +170,15 @@ STR_EXTRA_FLOUR_MILL_MAIZE_SUBSTR                                               
 STR_EXTRA_FOOD_PROCESSING_PLANT                                                 :{BLACK}Produktioun:{} {STRING} 6t pro 8t geliwwerte Bounen
 STR_EXTRA_FOOD_PROCESSING_PLANT_BEANS_SUBSTR                                    :6t pro 8t geliwwerte Bounen{}
 STR_EXTRA_FOOD_PROCESSING_PLANT_NUTS_SUBSTR                                     :6t pro 8t geliwwerten Nëss{}
-STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Produktioun:{} 3t pro 8 geliwwerte Këschte mat Handwierksgeschier{} 5t pro 8t geliwwerten Holzbrieder{}{}Produktioun geet an d'Lut wa béid Gidder innerhalb engem Mount zesumme geliwwert ginn.
+STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Produktioun:{} 3 Këschte pro 8 geliwwerte Këschte mat Handwierksgeschier{} 5 Këschte pro 8t geliwwerten Holzbrieder{}{}Produktioun geet an d'Lut wa béid Gidder innerhalb dräi Méint zesumme geliwwert ginn.
 STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Produzéiert gliese Saachen wéi Fläschen, Schosselen an Fënsteren.{}{}Produktioun:{}  6t pro 8t geliwwertem Sand{}  2t pro 8,000l geliwwerten Chemikalen{}{}Produktioun geet an d'Lut wa béid Gidder innerhalb dräi Méint zesumme geliwwert ginn.
-STR_EXTRA_IRON_WORKS                                                            :{BLACK}Produktioun:{}  3t pro 8t geliwwertem Eisenäerz{}  3t pro 8t geliwwerten Wollballen{}  2t pro 8t geliwwertem Sand{}{}Produktioun geet an d'Lut wann zwee oder méi Gidder innerhalb engem Mount zesumme geliwwert ginn.
+STR_EXTRA_IRON_WORKS                                                            :{BLACK}Produktioun:{}  3t pro 8t geliwwertem Eisenäerz{}  3t pro 8t geliwwerten Wollballen{}  2t pro 8t geliwwertem Sand{}{}Produktioun geet an d'Lut wann zwee oder méi Gidder innerhalb dräi Méint zesumme geliwwert ginn.
 STR_EXTRA_LIME_KILN                                                             :{BLACK}Produktioun:{} 3t pro 8t geliwwerte Steng{} 3t pro 8t geliwwerte Kuelen{}{}Produktioun geet an d'Lut wa béid Gidder innerhalb dräi Méint zesumme geliwwert ginn.
 STR_EXTRA_LUMBER_YARD                                                           :{BLACK}Produzéiert holze Saachen wéi Potoën a Glänner.{}{}Produktioun:{}  2t pro 8,000l geliwwerte Chemikalen{}  6t pro 8t geliwwerten Holzbrieder{}{}Produktioun geet an d'Lut wa béid Gidder innerhalb dräi Méint zesumme geliwwert ginn.
 STR_EXTRA_MACHINE_SHOP                                                          :{BLACK}Baut Maschinen an mécht de Vidange.{}{}Produktioun:{} 8 Këschte pro 8,000l geliwwertem Pëtrol{} 8 Këschte pro 8t geliwwertem Metall
 STR_EXTRA_MEAT_PACKER                                                           :{BLACK}Produktioun:{} 3t pro 8 geliwwerte Këschte mat Handwierksgeschier{}  5t pro 8t geliwwertem Véi{}{}Produktioun geet an d'Lut wa béid Gidder innerhalb dräi Méint zesumme geliwwert ginn.
-STR_EXTRA_METAL_FABRICATION_PLANT                                               :{BLACK}Produzéiert verarbescht Metallsaachen.{}{}Produktioun:{} 2 Këschte pro 8,000l geliwwerte Chemikalien{} 6t pro 8t geliwwertem Metall{}{}Produktioun geet an d'Lut wa béid Gidder innerhalb engem Mount zesumme geliwwert ginn.
-STR_EXTRA_METAL_FOUNDRY                                                         :{BLACK}Produzéiert Metallsaachen wéi Dousen, Geschier an Haushaltsutensilien.{}{}Produktioun:{}  2 Këschte pro 8,000l geliwwerte Chemikalien{}  6 Këschte pro 8t geliwwertem Metall{}{}Produktioun geet an d'Lut wa béid Gidder innerhalb engem Mount zesumme geliwwert ginn.
+STR_EXTRA_METAL_FABRICATION_PLANT                                               :{BLACK}Produzéiert verarbescht Metallsaachen.{}{}Produktioun:{} 2t pro 8,000l geliwwerte Chemikalien{} 6t pro 8t geliwwertem Metall{}{}Produktioun geet an d'Lut wa béid Gidder innerhalb dräi Méint zesumme geliwwert ginn.
+STR_EXTRA_METAL_FOUNDRY                                                         :{BLACK}Produzéiert Metallsaachen wéi Dousen, Geschier an Haushaltsutensilien.{}{}Produktioun:{}  2 Këschte pro 8,000l geliwwerte Chemikalien{}  6 Këschte pro 8t geliwwertem Metall{}{}Produktioun geet an d'Lut wa béid Gidder innerhalb dräi Méint zesumme geliwwert ginn.
 STR_EXTRA_OIL_REFINERY                                                          :{BLACK}Verschafft Réiueleg zu Pëtrol an Chemikalien.{}{}Produktioun:{}  6,000l pro geliwwerten 8,000l
 STR_EXTRA_PAPER_MILL                                                            :{BLACK}Zerfasert Holz fir doraus Pabeier an Kartong ze man.{}{}Produktioun:{} 4 Këschte pro 8t geliwwertem Holz{} 2 Këschte pro 8t geliwwertem Toun{} 2 Këschten pro 8,000l geliwwerte Chemikalien{}{}Produktioun geet an d'Lut wann zwee oder méi Gidder innerhalb dräi Méint zesumme geliwwert ginn.
 STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}Produzéiert Plastiksaache wéi Verpackungen an Haushaltsartikelen.{}{}Produktioun:{} {STRING} {STRING}
@@ -188,12 +189,12 @@ STR_EXTRA_RECYCLING_PLANT                                                       
 STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}D'Produktioun ass proportional zur Awunnerzuel vun der Stad.
 STR_EXTRA_SAWMILL                                                               :{BLACK}Schneid Beem.{}{}Produktioun:{}  6t pro 8t geliwwerte Beem
 STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Produzéiert Metallwueren wéi Geschier, Pléi, Paarten, Schëppen an Huffeisen.{}{}Produktioun:{}  8 Këschte pro 8t geliwwertem Metall
-STR_EXTRA_STEELMILL                                                             :{BLACK}Produktioun:{} 3t pro 8t geliwwertem Eisenäerz{} 2t pro 8t geliwwerter Kuel{} 3t pro 8t geliwwertem Schrott{}{}Produktioun geet an d'Lut wann zwee oder méi Gidder innerhalb engem Mount zesumme geliwwert ginn.
+STR_EXTRA_STEELMILL                                                             :{BLACK}Produktioun:{} 3t pro 8t geliwwertem Eisenäerz{} 2t pro 8t geliwwerter Kuel{} 3t pro 8t geliwwertem Schrott{}{}Produktioun geet an d'Lut wann zwee oder méi Gidder innerhalb dräi Méint zesumme geliwwert ginn.
 STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Produktioun:{}  3t pro 8 geliwwerte Këschte mat Handwierksgeschier{}  5t pro 8t geliwwertem Zocker{}{}Produktioun geet an d'Lut wa béid Gidder innerhalb dräi Méint zesumme geliwwert ginn.
 STR_EXTRA_SUPPLY_YARD                                                           :{BLACK}Produktioun:{}  8 Këschte pro 8 geliwwerte Wuerekëschten{} 8 Këschte pro 8,000l geliwwertem Petrol{}  {STRING}
 STR_EXTRA_SUPPLY_YARD_VEHICLES_SUBSTR                                           :8 Këschte pro 8 geliwwerte Gefierer
 STR_EXTRA_SUPPLY_YARD_BUILDING_MATERIALS_SUBSTR                                 :8 Këschte pro 8t geliwwertem Baumaterial
-STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Produktioun:{} 3 Këschte pro 8 geliwwerte Këschte mat Handwierksgeschier{} {STRING} {STRING}{}Produktioun geet an d'Lut wann Handwierksgeschier innerhalb engem Mount mat anere Gidder geliwwert ginn.
+STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Produktioun:{} 3 Këschte pro 8 geliwwerte Këschte mat Handwierksgeschier{} {STRING} {STRING}{}Produktioun geet an d'Lut wann Handwierksgeschier innerhalb dräi Méint mat anere Gidder geliwwert ginn.
 STR_EXTRA_TEXTILE_MILL_WOOL_SUBSTR                                              :5 Këschte pro 8 geliwwerte Wollballen{}
 STR_EXTRA_TEXTILE_MILL_PLANT_FIBRES_SUBSTR                                      :5 Këschte pro 8 geliwwerte Balle Planzefaser{}
 STR_EXTRA_TYRE_PLANT                                                            :{BLACK}Produktioun:{} 6 Këschten pro 8,000l geliwwertem Gummi{} 2 Këschten pro 8,000l geliwwerte Chemikalien{}{}Produktioun geet an d'Lut wa béid Gidder innerhalb dräi Méint zesumme geliwwert ginn.
