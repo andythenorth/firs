@@ -89,7 +89,7 @@ STR_CARGO_UNIT_METAL                                                            
 STR_CARGO_UNIT_MILK                                                             :{VOLUME} melk
 STR_CARGO_UNIT_NITRATES                                                         :{WEIGHT} nitrater
 STR_CARGO_UNIT_NUTS                                                             :{SIGNED_WORD} sekk{P 0 "" er}  nøtter
-STR_CARGO_UNIT_MNSP                                                             :{SIGNED_WORD} kasse{P 0 "" r} emballasje
+STR_CARGO_UNIT_MNSP                                                             :{SIGNED_WORD} kasse{P 0 "" r} produksjonsutstyr
 STR_CARGO_UNIT_PETROL                                                           :{VOLUME} bensin
 STR_CARGO_UNIT_PHOSPHATE                                                        :{WEIGHT} fosfat
 STR_CARGO_UNIT_PYRITE_ORE                                                       :{WEIGHT} pyrittmalm
@@ -152,7 +152,7 @@ STR_ERR_LOCATION_LIMIT_1_PER_TOWN                                               
 
 STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}Vareproduksjon:{}  2t pr 8t bauksitt levert{}  2t pr 8.000l kjemikalier levert{}  4t pr 8t skrapmetall levert{}{}Produksjonen øker om to eller fler vareslag leveres innen tre måneder etter hverandre.
 STR_EXTRA_BIOREFINERY                                                           :{BLACK}Vareproduksjon:{} 6.000l pr 8t korn levert{} 6.000l pr 8t sukker levert
-STR_EXTRA_BREWERY                                                               :{BLACK}Vareproduksjon:{} 3.000l pr 8 kasser emballasje levert{} {STRING} {STRING}{}Produksjonen øker om produksjonutstyr og andre vareslag blir levert innen tre måneder etter hverandre.
+STR_EXTRA_BREWERY                                                               :{BLACK}Vareproduksjon:{} 3.000l pr 8 kasser produksjonsutstyr levert{} {STRING} {STRING}{}Produksjonen øker om produksjonutstyr og andre vareslag blir levert innen tre måneder etter hverandre.
 STR_EXTRA_BREWERY_FRUIT_SUBSTR                                                  :5.000l pr. 8t frukt levert{}
 STR_EXTRA_BREWERY_GRAIN_SUBSTR                                                  :5.000l pr 8t korn levert{}
 STR_EXTRA_BREWERY_MAIZE_SUBSTR                                                  :5.000l pr 8t mais levert{}
@@ -196,7 +196,7 @@ STR_EXTRA_SUGAR_REFINERY                                                        
 STR_EXTRA_SUPPLY_YARD                                                           :{BLACK}Vareproduksjon:{}  8 kasser pr 8 kasser gods levert{} 8 kasser pr 8.000l bensin levert{}  {STRING}
 STR_EXTRA_SUPPLY_YARD_VEHICLES_SUBSTR                                           :8 kasser pr 8 kjøretøy levert
 STR_EXTRA_SUPPLY_YARD_BUILDING_MATERIALS_SUBSTR                                 :8 kasser pr 8t byggematerialer levert
-STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Vareproduksjon:{}  3 kasser pr 8 kasser produksjonutstyr levert{} {STRING} {STRING}{}Produksjonen øker hvis emballasje leveres innen tre måneder før eller etter andre vareslag.
+STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Vareproduksjon:{}  3 kasser pr 8 kasser produksjonutstyr levert{} {STRING} {STRING}{}Produksjonen øker hvis produksjonsutstyr leveres innen tre måneder før eller etter andre vareslag.
 STR_EXTRA_TEXTILE_MILL_WOOL_SUBSTR                                              :5 kasser pr 8 baller ull levert{}
 STR_EXTRA_TEXTILE_MILL_PLANT_FIBRES_SUBSTR                                      :5 kasser pr 8 baller plantefiber levert{}
 STR_EXTRA_TYRE_PLANT                                                            :{BLACK}Vareproduksjon:{}  6 kasser pr 8.000l gummi levert{}  2 kasser pr 8.000l kjemikalier levert{}{}Produksjonen øker om begge varene leveres innen tre måneder etter hverandre.
