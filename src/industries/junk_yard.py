@@ -31,7 +31,6 @@ industry = IndustryPrimaryExtractive(id='junk_yard',
                     intro_year=1850 )
 
 industry.economy_variations['FIRS'].enabled = True
-industry.economy_variations['BASIC_ARCTIC'].enabled = True
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True
 
 industry.add_tile(id='junk_yard_tile_1',

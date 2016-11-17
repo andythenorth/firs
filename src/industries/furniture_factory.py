@@ -32,6 +32,7 @@ industry = IndustrySecondary(id='furniture_factory',
                     extra_text_industry='STR_EXTRA_FURNITURE_FACTORY' )
 
 industry.economy_variations['FIRS'].enabled = True
+industry.economy_variations['BASIC_ARCTIC'].enabled = True
 
 industry.add_tile(id='furniture_factory_tile_1',
                   location_checks=TileLocationChecks(require_effectively_flat=True,

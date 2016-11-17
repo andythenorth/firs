@@ -34,6 +34,11 @@ industry.economy_variations['MISTAH_KURTZ'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].accept_cargo_types = ['DIAM', 'JAVA', 'RUBR']
 industry.economy_variations['MISTAH_KURTZ'].prod_cargo_types = ['ENSP', 'FMSP']
 
+industry.economy_variations['BASIC_ARCTIC'].enabled = True
+industry.economy_variations['BASIC_ARCTIC'].accept_cargo_types = ['GOLD', 'BOOM']
+industry.economy_variations['BASIC_ARCTIC'].prod_cargo_types = ['BEER']
+industry.economy_variations['BASIC_ARCTIC'].prod_multiplier = '[12]'
+
 industry.add_tile(id='trading_post_tile_1',
                   land_shape_flags='bitmask(LSF_ONLY_ON_FLAT_LAND)',
                   location_checks=TileLocationChecks(always_allow_founder=False))

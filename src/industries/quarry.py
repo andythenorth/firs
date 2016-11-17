@@ -35,8 +35,6 @@ industry = IndustryPrimaryExtractive(id='quarry',
                     template="refactor_primary_waterpit.pypnml" )
 
 industry.economy_variations['FIRS'].enabled = True
-industry.economy_variations['BASIC_ARCTIC'].enabled = True
-industry.economy_variations['BASIC_ARCTIC'].prod_cargo_types = ['SAND']
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
 
 # 2 tiles for this industry: pit outer tile cannot be on slopes; pit inner tiles and processor tiles can be

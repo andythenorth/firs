@@ -30,6 +30,7 @@ industry = IndustrySecondary(id='sawmill',
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
+industry.economy_variations['BASIC_ARCTIC'].enabled = True
 
 industry.add_tile(id='sawmill_tile_1',
                   location_checks=TileLocationChecks(disallow_industry_adjacent=True))

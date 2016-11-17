@@ -43,8 +43,14 @@ edible_oil.cargo.register()
 from cargos import engineering_supplies
 engineering_supplies.cargo.register()
 
+from cargos import explosives
+explosives.cargo.register()
+
 from cargos import farm_supplies
 farm_supplies.cargo.register()
+
+from cargos import fertiliser
+fertiliser.cargo.register()
 
 from cargos import fish
 fish.cargo.register()
@@ -54,6 +60,9 @@ food.cargo.register()
 
 from cargos import fruits
 fruits.cargo.register()
+
+from cargos import gold
+gold.cargo.register()
 
 from cargos import goods
 goods.cargo.register()
@@ -112,6 +121,9 @@ phosphate.cargo.register()
 from cargos import plant_fibres
 plant_fibres.cargo.register()
 
+from cargos import potash
+potash.cargo.register()
+
 from cargos import pyrite_ore
 pyrite_ore.cargo.register()
 
@@ -129,6 +141,9 @@ scrap_metal.cargo.register()
 
 from cargos import stone
 stone.cargo.register()
+
+from cargos import sulphur
+sulphur.cargo.register()
 
 from cargos import sugar
 sugar.cargo.register()

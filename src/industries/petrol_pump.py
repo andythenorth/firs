@@ -34,7 +34,6 @@ industry = IndustryTertiary(id='petrol_pump',
                     intro_year=1900 )
 
 industry.economy_variations['FIRS'].enabled = True
-industry.economy_variations['BASIC_ARCTIC'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].prob_random = '8'
 industry.economy_variations['MISTAH_KURTZ'].prob_in_game = '8'

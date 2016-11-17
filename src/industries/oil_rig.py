@@ -24,7 +24,6 @@ industry = IndustryPrimaryExtractive(id='oil_rig',
                     intro_year=1967)
 
 industry.economy_variations['FIRS'].enabled = True
-industry.economy_variations['BASIC_ARCTIC'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
 
 # industry uses layouts and sprites from default game, no custom layouts etc

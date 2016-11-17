@@ -37,9 +37,6 @@ industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True
 industry.economy_variations['BASIC_TEMPERATE'].prod_cargo_types = ['GOOD', 'MNSP']
 
-industry.economy_variations['BASIC_ARCTIC'].enabled = True
-industry.economy_variations['BASIC_ARCTIC'].prod_cargo_types = ['GOOD', 'VPTS']
-
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
 
 industry.add_tile(id='glass_works_tile_1',
