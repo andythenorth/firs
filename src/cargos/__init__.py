@@ -97,6 +97,9 @@ metal.cargo.register()
 from cargos import milk
 milk.cargo.register()
 
+from cargos import nickel
+nickel.cargo.register()
+
 from cargos import nitrates
 nitrates.cargo.register()
 

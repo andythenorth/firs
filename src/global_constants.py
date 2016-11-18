@@ -75,7 +75,7 @@ industry_numeric_ids = dict(coal_mine = 0,
                             phosphate_mine = 73,
                             liquids_terminal = 74,
                             manganese_mine = 75,
-                            fishing_village = 76)
+                            potash_mine = 76)
 #127 is last ID to be used (128 industry limit, zero-based)
 
 

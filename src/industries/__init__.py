@@ -67,12 +67,6 @@ from industries import fibre_crop_farm
 fibre_crop_farm.industry.register()
 """
 
-"""
-# not currently used
-from industries import fishing_village
-fishing_village.industry.register()
-"""
-
 from industries import flour_mill
 flour_mill.industry.register()
 
@@ -219,6 +213,9 @@ paper_mill.industry.register()
 
 from industries import phosphate_mine
 phosphate_mine.industry.register()
+
+from industries import potash_mine
+potash_mine.industry.register()
 
 from industries import pyrite_mine
 pyrite_mine.industry.register()
