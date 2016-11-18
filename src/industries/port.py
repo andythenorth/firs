@@ -42,8 +42,8 @@ industry.economy_variations['BASIC_TEMPERATE'].prod_multiplier = '[19, 0]'
 
 industry.economy_variations['BASIC_ARCTIC'].enabled = True
 industry.economy_variations['BASIC_ARCTIC'].accept_cargo_types = ['PAPR', 'NICK', 'BOOM']
-industry.economy_variations['BASIC_ARCTIC'].prod_cargo_types = ['MNSP']
-industry.economy_variations['BASIC_ARCTIC'].prod_multiplier = '[7]'
+industry.economy_variations['BASIC_ARCTIC'].prod_cargo_types = ['ENSP', 'MNSP']
+industry.economy_variations['BASIC_ARCTIC'].prod_multiplier = '[9, 12]'
 
 industry.economy_variations['BASIC_TROPIC'].enabled = True
 industry.economy_variations['BASIC_TROPIC'].accept_cargo_types = ['COPR', 'JAVA', 'WOOL']

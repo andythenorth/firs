@@ -8,7 +8,7 @@
 from industry import IndustrySecondary, TileLocationChecks, IndustryLocationChecks
 
 industry = IndustrySecondary(id='supply_yard',
-                    processed_cargos_and_output_ratios=[('BOOM', 8), ('FERT', 8), ('GOOD', 8)],
+                    processed_cargos_and_output_ratios=[('BOOM', 8), ('GOOD', 8)],
                     prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL',
                     prod_cargo_types=['FMSP', 'ENSP'],
                     layouts='AUTO',
@@ -31,7 +31,6 @@ industry = IndustrySecondary(id='supply_yard',
                     intro_year=1800,
                     extra_text_industry='STR_EXTRA_SUPPLY_YARD, string(STR_EXTRA_SUPPLY_YARD_VEHICLES_SUBSTR)')
 
-industry.economy_variations['BASIC_ARCTIC'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].processed_cargos_and_output_ratios = [('BDMT', 8), ('PETR', 8), ('GOOD', 8)]
 industry.economy_variations['MISTAH_KURTZ'].extra_text_industry = 'STR_EXTRA_SUPPLY_YARD, string(STR_EXTRA_SUPPLY_YARD_BUILDING_MATERIALS_SUBSTR)'
