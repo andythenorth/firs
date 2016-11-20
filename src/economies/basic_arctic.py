@@ -23,4 +23,5 @@ economy = Economy(id = "BASIC_ARCTIC",
                             'grain',
                             'manufacturing_supplies',
                             'sulphur',
+                            'fertiliser',
                             'wood'])
