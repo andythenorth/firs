@@ -25,6 +25,7 @@ industry = IndustryPrimaryExtractive(id='iron_ore_mine',
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True
+industry.economy_variations['STEELTOWN'].enabled = True
 
 # industry uses layouts and sprites from default game, no custom layouts etc
 

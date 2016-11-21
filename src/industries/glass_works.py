@@ -32,12 +32,11 @@ industry = IndustrySecondary(id='glass_works',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
                     extra_text_industry='STR_EXTRA_GLASS_WORKS' )
 
-industry.economy_variations['FIRS'].enabled = True
-
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True
 industry.economy_variations['BASIC_TEMPERATE'].prod_cargo_types = ['GOOD', 'MNSP']
-
+industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
+industry.economy_variations['STEELTOWN'].enabled = True
 
 industry.add_tile(id='glass_works_tile_1',
                   animation_length=71,

@@ -32,8 +32,7 @@ industry = IndustrySecondary(id='tyre_plant',
                     extra_text_industry='STR_EXTRA_TYRE_PLANT',
                     intro_year=1832 )
 
-# currently enabled in no economies
-#industry.economy_variations['BASIC_ARCTIC'].enabled = True
+industry.economy_variations['STEELTOWN'].enabled = True
 
 industry.add_tile(id='tyre_plant_tile_1',
                   animation_length=71,

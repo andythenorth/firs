@@ -32,6 +32,7 @@ industry = IndustryPrimaryExtractive(id='junk_yard',
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True
+industry.economy_variations['STEELTOWN'].enabled = True
 
 industry.add_tile(id='junk_yard_tile_1',
                   location_checks=TileLocationChecks(disallow_steep_slopes=True,

@@ -33,6 +33,7 @@ industry = IndustrySecondary(id='metal_fabrication_plant',
                     intro_year=1832 )
 
 industry.economy_variations['FIRS'].enabled = True
+industry.economy_variations['STEELTOWN'].enabled = True
 
 industry.add_tile(id='metal_fabrication_plant_tile_1',
                   animation_length=71,

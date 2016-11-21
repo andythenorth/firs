@@ -33,9 +33,9 @@ industry = IndustrySecondary(id='metal_workshop',
                     intro_year=1800)
 
 industry.economy_variations['FIRS'].enabled = True
-industry.economy_variations['BASIC_TEMPERATE'].enabled = True
-
 industry.economy_variations['FIRS'].intro_year = 1762
+industry.economy_variations['BASIC_TEMPERATE'].enabled = True
+industry.economy_variations['STEELTOWN'].enabled = True
 
 industry.add_tile(id='metal_workshop_tile_1',
                   animation_length=47,

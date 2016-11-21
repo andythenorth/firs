@@ -31,6 +31,7 @@ industry = IndustryPrimaryExtractive(id='dredging_site',
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True
+industry.economy_variations['STEELTOWN'].enabled = True
 
 industry.add_tile(id='dredging_site_tile_1',
                   location_checks=TileLocationChecks(disallow_industry_adjacent=True))

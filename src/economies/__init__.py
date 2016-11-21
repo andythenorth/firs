@@ -17,3 +17,6 @@ mistah_kurtz.economy.register()
 
 from economies import firs
 firs.economy.register()
+
+from economies import steeltown
+steeltown.economy.register()
