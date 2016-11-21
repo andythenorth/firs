@@ -38,7 +38,6 @@ industry = IndustrySecondary(id='brewery',
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True
-industry.economy_variations['BASIC_ARCTIC'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
 
 industry.economy_variations['BASIC_TEMPERATE'].extra_text_industry = 'STR_EXTRA_BREWERY, string(STR_EXTRA_BREWERY_FRUIT_SUBSTR)'

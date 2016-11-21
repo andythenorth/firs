@@ -142,9 +142,6 @@ power_plant.industry.register()
 from industries import ranch
 ranch.industry.register()
 
-from industries import reindeer_farm
-reindeer_farm.industry.register()
-
 from industries import recycling_depot
 recycling_depot.industry.register()
 

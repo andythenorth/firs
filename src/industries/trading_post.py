@@ -31,8 +31,8 @@ industry = IndustryPrimaryPort(id='trading_post',
                     override_default_construction_states=True)
 
 industry.economy_variations['BASIC_ARCTIC'].enabled = True
-industry.economy_variations['BASIC_ARCTIC'].accept_cargo_types = ['BOOM', 'GOOD']
-industry.economy_variations['BASIC_ARCTIC'].prod_cargo_types = ['FMSP']
+industry.economy_variations['BASIC_ARCTIC'].accept_cargo_types = ['BOOM']
+industry.economy_variations['BASIC_ARCTIC'].prod_cargo_types = ['FMSP', 'BEER']
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].accept_cargo_types = ['DIAM', 'JAVA', 'RUBR']
 industry.economy_variations['MISTAH_KURTZ'].prod_cargo_types = ['ENSP', 'FMSP']
