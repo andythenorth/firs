@@ -142,6 +142,9 @@ sand.cargo.register()
 from cargos import scrap_metal
 scrap_metal.cargo.register()
 
+from cargos import steel
+steel.cargo.register()
+
 from cargos import stone
 stone.cargo.register()
 
