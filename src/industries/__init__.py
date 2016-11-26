@@ -16,6 +16,9 @@ from industries import bauxite_mine
 bauxite_mine.industry.register()
 """
 
+from industries import basic_oxygen_furnace
+basic_oxygen_furnace.industry.register()
+
 from industries import biorefinery
 biorefinery.industry.register()
 
@@ -226,8 +229,8 @@ pyrite_smelter.industry.register()
 from industries import sawmill
 sawmill.industry.register()
 
-from industries import steel_mill
-steel_mill.industry.register()
+from industries import blast_furnace
+blast_furnace.industry.register()
 
 from industries import supply_yard
 supply_yard.industry.register()

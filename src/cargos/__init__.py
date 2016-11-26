@@ -7,6 +7,9 @@ alcohol.cargo.register()
 from cargos import bauxite
 bauxite.cargo.register()
 
+from cargos import beans
+beans.cargo.register()
+
 from cargos import building_materials
 building_materials.cargo.register()
 
@@ -16,9 +19,6 @@ cassava.cargo.register()
 from cargos import chemicals
 chemicals.cargo.register()
 
-from cargos import beans
-beans.cargo.register()
-
 from cargos import clay
 clay.cargo.register()
 
@@ -27,6 +27,9 @@ coal.cargo.register()
 
 from cargos import coffee
 coffee.cargo.register()
+
+from cargos import coke
+coke.cargo.register()
 
 from cargos import copper
 copper.cargo.register()
@@ -121,6 +124,9 @@ petrol.cargo.register()
 from cargos import phosphate
 phosphate.cargo.register()
 
+from cargos import pig_iron
+pig_iron.cargo.register()
+
 from cargos import plant_fibres
 plant_fibres.cargo.register()
 
@@ -129,6 +135,9 @@ potash.cargo.register()
 
 from cargos import pyrite_ore
 pyrite_ore.cargo.register()
+
+from cargos import quicklime
+quicklime.cargo.register()
 
 from cargos import recyclables
 recyclables.cargo.register()

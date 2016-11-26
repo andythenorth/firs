@@ -49,6 +49,7 @@ STR_CARGO_NAME_FISH                                                             
 STR_CARGO_NAME_FARM_SUPPLIES                                                    :Farm Supplies
 STR_CARGO_NAME_FERTILISER                                                       :Fertiliser
 STR_CARGO_NAME_FRUITS                                                           :Fruit
+STR_CARGO_NAME_QUICKLIME                                                        :Quicklime
 STR_CARGO_NAME_LUMBER                                                           :Timber
 STR_CARGO_NAME_METAL                                                            :Metal
 STR_CARGO_NAME_MILK                                                             :Milk
@@ -59,6 +60,7 @@ STR_CARGO_NAME_NITRATES                                                         
 STR_CARGO_NAME_NUTS                                                             :Nuts
 STR_CARGO_NAME_PETROL                                                           :Petroleum Fuels
 STR_CARGO_NAME_PHOSPHATE                                                        :Phosphate
+STR_CARGO_NAME_PIG_IRON                                                         :Pig Iron
 STR_CARGO_NAME_POTASH                                                           :Potash
 STR_CARGO_NAME_PYRITE_ORE                                                       :Pyrite Ore
 STR_CARGO_NAME_RECYCLABLES                                                      :Recyclables
@@ -100,8 +102,10 @@ STR_CARGO_UNIT_NUTS                                                             
 STR_CARGO_UNIT_MNSP                                                             :{SIGNED_WORD} crate{P 0 "" s} of manufacturing supplies
 STR_CARGO_UNIT_PETROL                                                           :{VOLUME} of petroleum fuels
 STR_CARGO_UNIT_PHOSPHATE                                                        :{WEIGHT} of phosphate
+STR_CARGO_UNIT_PIG_IRON                                                         :{WEIGHT} of pig iron
 STR_CARGO_UNIT_POTASH                                                           :{WEIGHT} of potash
 STR_CARGO_UNIT_PYRITE_ORE                                                       :{WEIGHT} of pyrite ore
+STR_CARGO_UNIT_QUICKLIME                                                        :{WEIGHT} of quicklime
 STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} of recyclables
 STR_CARGO_UNIT_SAND                                                             :{WEIGHT} of sand
 STR_CARGO_UNIT_SCRAP_METAL                                                      :{WEIGHT} of scrap metal
@@ -139,9 +143,11 @@ STR_CID_NICKEL                                                                  
 STR_CID_NITRATES                                                                :{TINYFONT}NI
 STR_CID_NUTS                                                                    :{TINYFONT}NT
 STR_CID_PETROL                                                                  :{TINYFONT}PT
+STR_CID_PIG_IRON                                                                :{TINYFONT}PI
 STR_CID_PHOSPHATE                                                               :{TINYFONT}PH
 STR_CID_POTASH                                                                  :{TINYFONT}PA
 STR_CID_PYRITE_ORE                                                              :{TINYFONT}PY
+STR_CID_QUICKLIME                                                               :{TINYFONT}QL
 STR_CID_RECYCLABLES                                                             :{TINYFONT}RC
 STR_CID_SAND                                                                    :{TINYFONT}SA
 STR_CID_SCRAP_METAL                                                             :{TINYFONT}SM
@@ -168,6 +174,7 @@ STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE                                             
 STR_ERR_LOCATION_LIMIT_1_PER_TOWN                                               :only one industry of this type allowed per town.
 
 STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}Cargo production:{}  2t per 8t bauxite delivered{}  2t per 8,000l chemicals delivered{}  4t per 8t scrap metal delivered{}{}Production steps up if two or more cargos are delivered within three months of each other.
+STR_EXTRA_BASIC_OXYGEN_FURNACE                                                  :!!! NEEDS EXTRA TEXT STRING
 STR_EXTRA_BIOREFINERY                                                           :{BLACK}Cargo production:{}  6,000l per 8t grain delivered{}  6,000l per 8t sugar delivered
 STR_EXTRA_BREWERY                                                               :{BLACK}Cargo production:{}  3,000l per 8 crates manufacturing supplies delivered{} {STRING} {STRING}{}Production steps up if manufacturing supplies delivered within three months of other cargos.
 STR_EXTRA_BREWERY_FRUIT_SUBSTR                                                  :5,000l per 8t fruit delivered{}
@@ -255,8 +262,10 @@ STR_STATION                                                                     
 STR_IND_ALUMINIUM_PLANT                                                         :Aluminium Plant
 STR_IND_ARABLE_FARM                                                             :Arable Farm
 STR_IND_BASICFARM                                                               :Farm
+STR_IND_BASIC_OXYGEN_FURNACE                                                    :Basic Oxygen Furnace
 STR_IND_BAUXITE_MINE                                                            :Bauxite Mine
 STR_IND_BIOREFINERY                                                             :Biorefinery
+STR_IND_BLAST_FURNACE                                                           :Blast Furnace
 STR_IND_BREWERY                                                                 :Brewery
 STR_IND_BREWERY_CIDER_MILL                                                      :Cider Mill
 STR_IND_BRICK_WORKS                                                             :Brick Works
