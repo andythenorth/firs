@@ -28,5 +28,6 @@ economy = Economy(id = "STEELTOWN",
                             'quicklime',
                             'building_materials',
                             'scrap_metal',
+                            'alcohol',
                             'vehicle_parts',
                             'vehicles'])
