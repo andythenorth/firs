@@ -33,7 +33,6 @@ industry = IndustrySecondary(id='coke_oven',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
                     extra_text_industry='STR_EXTRA_COKE_OVEN')
 
-industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['STEELTOWN'].enabled = True
 industry.economy_variations['STEELTOWN'].prod_cargo_types=['COKE']
 

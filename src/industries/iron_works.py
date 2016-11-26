@@ -34,8 +34,6 @@ industry = IndustrySecondary(id='iron_works',
                     expiry_year=1901 )
 
 industry.economy_variations['FIRS'].enabled = True
-industry.economy_variations['STEELTOWN'].enabled = True
-industry.economy_variations['STEELTOWN'].prod_cargo_types = ['IRON']
 
 # not animated tiles
 industry.add_tile(id='iron_works_tile_1',

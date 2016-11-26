@@ -29,5 +29,4 @@ economy = Economy(id = "STEELTOWN",
                             'building_materials',
                             'scrap_metal',
                             'vehicle_parts',
-                            'vehicles',
-                            'wood'])
+                            'vehicles'])
