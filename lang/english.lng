@@ -40,6 +40,7 @@ STR_CARGO_NAME_CASSAVA                                                          
 STR_CARGO_NAME_CHEMICALS                                                        :Chemicals
 STR_CARGO_NAME_CLAY                                                             :Clay
 STR_CARGO_NAME_COFFEE                                                           :Coffee
+STR_CARGO_NAME_COKE                                                             :Coke
 STR_CARGO_NAME_COPPER                                                           :Copper
 STR_CARGO_NAME_EDIBLE_OIL                                                       :Edible Oil
 STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :Engineering Supplies
@@ -83,6 +84,7 @@ STR_CARGO_UNIT_BUILDING_MATERIALS                                               
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} of chemicals
 STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} of clay
 STR_CARGO_UNIT_COFFEE                                                           :{SIGNED_WORD} sack{P 0 "" s} of coffee
+STR_CARGO_UNIT_COKE                                                             :{WEIGHT} of coke
 STR_CARGO_UNIT_COPPER                                                           :{WEIGHT} of copper
 STR_CARGO_UNIT_EDIBLE_OIL                                                       :{VOLUME} of edible oil
 STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} crate{P 0 "" s} of engineering supplies
@@ -126,6 +128,7 @@ STR_CID_CASSAVA                                                                 
 STR_CID_CHEMICALS                                                               :{TINYFONT}CH
 STR_CID_CLAY                                                                    :{TINYFONT}CY
 STR_CID_COFFEE                                                                  :{TINYFONT}CF
+STR_CID_COKE                                                                    :{TINYFONT}CK
 STR_CID_COPPER                                                                  :{TINYFONT}CR
 STR_CID_EDIBLE_OIL                                                              :{TINYFONT}EO
 STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}ES
@@ -185,6 +188,7 @@ STR_EXTRA_CEMENT_PLANT                                                          
 STR_EXTRA_CEMENT_PLANT_COAL_SUBSTR                                              :2t per 8t coal delivered{}
 STR_EXTRA_CEMENT_PLANT_PETROL_SUBSTR                                            :2t per 8,000l petroleum fuels delivered{}
 STR_EXTRA_CHEMICAL_PLANT                                                        :{BLACK}Cargo production:{}  6,000l per 8,000l oil delivered{}  6,000l per 8t nitrates delivered
+STR_EXTRA_COKE_OVEN                                                             :{BLACK}Cargo production:{}  2t per 8t coal delivered{}  2t per 8t sand delivered{}  4t per 8t clay delivered{}{}Production steps up if two or more cargos are delivered within three months of each other.
 STR_EXTRA_COPPER_REFINERY                                                       :{BLACK}Cargo production:{}  5t per 8t copper ore delivered{}  3t per 8,000l chemicals delivered{}{}Production steps up if two or more cargos are delivered within three months of each other.
 STR_EXTRA_DAIRY                                                                 :{BLACK}Cargo production:{}  3t per 8 crates manufacturing supplies delivered{}  5t per 8,000l milk delivered{}{}Production steps up if both cargos are delivered within three months of each other.
 STR_EXTRA_FERTILIZER_PLANT                                                      :{BLACK}Cargo production:{}  8 crates per 8,000l chemicals delivered
@@ -275,6 +279,7 @@ STR_IND_CEMENT_PLANT                                                            
 STR_IND_CHEMICAL_PLANT                                                          :Chemical Plant
 STR_IND_CLAY_PIT                                                                :Clay Pit
 STR_IND_COFFEE_ESTATE                                                           :Coffee Estate
+STR_IND_COKE_OVEN                                                               :Coke Oven
 STR_IND_COPPER_REFINERY                                                         :Copper Refinery
 STR_IND_FIBRE_CROP_FARM                                                         :Fibre Crop Farm
 STR_IND_DAIRY                                                                   :Dairy

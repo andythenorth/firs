@@ -43,6 +43,9 @@ chemical_plant.industry.register()
 from industries import coffee_estate
 coffee_estate.industry.register()
 
+from industries import coke_oven
+coke_oven.industry.register()
+
 from industries import copper_mine
 copper_mine.industry.register()
 
