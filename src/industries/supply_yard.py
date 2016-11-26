@@ -34,9 +34,6 @@ industry = IndustrySecondary(id='supply_yard',
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].processed_cargos_and_output_ratios = [('BDMT', 8), ('PETR', 8), ('GOOD', 8)]
 industry.economy_variations['MISTAH_KURTZ'].extra_text_industry = 'STR_EXTRA_SUPPLY_YARD, string(STR_EXTRA_SUPPLY_YARD_BUILDING_MATERIALS_SUBSTR)'
-industry.economy_variations['STEELTOWN'].enabled = True
-industry.economy_variations['STEELTOWN'].processed_cargos_and_output_ratios = [('VEHI', 8), ('PETR', 8), ('BDMT', 8)]
-industry.economy_variations['STEELTOWN'].extra_text_industry = 'STR_EXTRA_SUPPLY_YARD, string(STR_EXTRA_SUPPLY_YARD_BUILDING_MATERIALS_SUBSTR)'
 
 industry.add_tile(id='supply_yard_tile_1',
                   animation_length=71,

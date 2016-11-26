@@ -67,6 +67,7 @@ STR_CARGO_NAME_PYRITE_ORE                                                       
 STR_CARGO_NAME_RECYCLABLES                                                      :Recyclables
 STR_CARGO_NAME_SAND                                                             :Sand
 STR_CARGO_NAME_SCRAP_METAL                                                      :Scrap Metal
+STR_CARGO_NAME_SLAG                                                             :Slag
 STR_CARGO_NAME_STEEL                                                            :Steel
 STR_CARGO_NAME_STONE                                                            :Stone
 STR_CARGO_NAME_SUGAR_BEET                                                       :Sugar Beet
@@ -111,6 +112,7 @@ STR_CARGO_UNIT_QUICKLIME                                                        
 STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} of recyclables
 STR_CARGO_UNIT_SAND                                                             :{WEIGHT} of sand
 STR_CARGO_UNIT_SCRAP_METAL                                                      :{WEIGHT} of scrap metal
+STR_CARGO_UNIT_SLAG                                                             :{WEIGHT} of slag
 STR_CARGO_UNIT_STEEL                                                            :{WEIGHT} of steel
 STR_CARGO_UNIT_STONE                                                            :{WEIGHT} of stone
 STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} of sugar beet
@@ -154,6 +156,7 @@ STR_CID_QUICKLIME                                                               
 STR_CID_RECYCLABLES                                                             :{TINYFONT}RC
 STR_CID_SAND                                                                    :{TINYFONT}SA
 STR_CID_SCRAP_METAL                                                             :{TINYFONT}SM
+STR_CID_SLAG                                                                    :{TINYFONT}SG
 STR_CID_STEEL                                                                   :{TINYFONT}SL
 STR_CID_STONE                                                                   :{TINYFONT}ST
 STR_CID_SUGAR_BEET                                                              :{TINYFONT}SB
@@ -193,6 +196,7 @@ STR_EXTRA_COPPER_REFINERY                                                       
 STR_EXTRA_DAIRY                                                                 :{BLACK}Cargo production:{}  3t per 8 crates manufacturing supplies delivered{}  5t per 8,000l milk delivered{}{}Production steps up if both cargos are delivered within three months of each other.
 STR_EXTRA_ELECTRIC_ARC_FURNACE                                                  :{BLACK}Cargo production:{}  3 crates per 8 crates manufacturing supplies delivered{}  5 crates per 8t timber delivered{}{}Production steps up if both cargos are delivered within three months of each other.
 STR_EXTRA_FERTILIZER_PLANT                                                      :{BLACK}Cargo production:{}  8 crates per 8,000l chemicals delivered
+STR_EXTRA_FACTORY                                                               :{BLACK}Cargo production:{}  3 crates per 8 crates manufacturing supplies delivered{}  5 crates per 8t timber delivered{}{}Production steps up if both cargos are delivered within three months of each other.
 STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Cargo production:{}  3t per 8 crates manufacturing supplies delivered{}  5t per 8t fish delivered{}{}Production steps up if both cargos are delivered within three months of each other.
 STR_EXTRA_FLOUR_MILL                                                            :{BLACK}Cargo production:{}  3t per 8 crates manufacturing supplies delivered{}  {STRING} {STRING} {}Production steps up if manufacturing supplies delivered within three months of other cargos.
 STR_EXTRA_FLOUR_MILL_GRAIN_SUBSTR                                               :5t per 8t grain delivered{}
@@ -219,6 +223,7 @@ STR_EXTRA_PYRITE_SMELTER                                                        
 STR_EXTRA_RECYCLING_PLANT                                                       :{BLACK}Processes recyclables for reuse.{}{}Cargo production:{}  6t per 8t recyclables delivered
 STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}Production is proportional to town population.
 STR_EXTRA_SAWMILL                                                               :{BLACK}Chops wood.{}{}Cargo production:{}  6t per 8t wood delivered
+STR_EXTRA_SLAG_GRINDING_PLANT                                                   :{BLACK}Chops wood.{}{}Cargo production:{}  6t per 8t wood delivered
 STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Produces metal items like tools, ploughs, gates, shovels and horseshoes.{}{}Cargo production:{}  8 crates per 8t metal delivered
 STR_EXTRA_STEELMILL                                                             :{BLACK}Cargo production:{}  3t per 8t iron ore delivered{}  2t per 8t coal delivered{}  3t per 8t scrap metal delivered{}{}Production steps up if two or more cargos are delivered within three months of each other.
 STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Cargo production:{}  3t per 8 crates manufacturing supplies delivered{}  5t per 8t sugar delivered{}{}Production steps up if both cargos are delivered within three months of each other.
@@ -251,7 +256,6 @@ STR_FUND_SUGAR_PLANTATION                                                       
 STR_FUND_FIBRE_CROP_FARM                                                        :{}{BLACK}Location: {YELLOW}Cannot be funded on snow or in deserts.
 STR_FUND_FOREST                                                                 :{}{BLACK}Location: {YELLOW}Cannot be funded in deserts.
 STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}Location: {YELLOW}Cannot be funded on snow.
-STR_FUND_REINDEER_FARM                                                          :{}{BLACK}Location: {YELLOW}Cannot be funded in deserts.
 STR_FUND_RUBBER_PLANTATION                                                      :{}{BLACK}Location: {YELLOW}Cannot be funded on snow or in deserts.
 STR_FUND_VINEYARD                                                               :{}{BLACK}Location: {YELLOW}Cannot be funded on snow or in deserts.
 
@@ -287,6 +291,7 @@ STR_IND_DAIRY                                                                   
 STR_IND_DAIRY_FARM                                                              :Dairy Farm
 STR_IND_DREDGING_SITE                                                           :Dredging Site
 STR_IND_ELECTRIC_ARC_FURNACE                                                    :Electric Arc Furnace
+STR_IND_FACTORY                                                                 :Factory
 STR_IND_FERTILISER_PLANT                                                        :Fertiliser Plant
 STR_IND_FERTILISER_AND_EXPLOSIVES_PLANT                                         :Fertiliser and Explosives Plant
 STR_IND_FISHING_GROUND                                                          :Fishing Grounds
@@ -326,6 +331,7 @@ STR_IND_RECYCLING_DEPOT                                                         
 STR_IND_RECYCLING_PLANT                                                         :Recycling Plant
 STR_IND_REINDEER_FARM                                                           :Reindeer Farm
 STR_IND_SHEEPFARM                                                               :Sheep Farm
+STR_IND_SLAG_GRINDING_PLANT                                                     :Slag Grinding Plant
 STR_IND_SMITHY_FORGE                                                            :Smithy Forge
 STR_IND_STOCKYARD                                                               :Stockyard
 STR_IND_SUGAR_PLANTATION                                                        :Sugar Plantation
@@ -335,6 +341,7 @@ STR_IND_TEXTILE_MILL                                                            
 STR_IND_TRADING_POST                                                            :Trading Post
 STR_IND_TYRE_PLANT                                                              :Tyre Plant
 STR_IND_VEHICLE_FACTORY                                                         :Vehicle Factory
+STR_IND_VEHICLE_DEALER                                                          :Vehicle Dealer
 STR_IND_VINEYARD                                                                :Vineyard
 
 STR_STATION_ANIMALS                                                             :Horse Market

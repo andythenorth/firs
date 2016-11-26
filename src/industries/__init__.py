@@ -163,6 +163,9 @@ rubber_plantation.industry.register()
 from industries import sheep_farm
 sheep_farm.industry.register()
 
+from industries import slag_grinding_plant
+slag_grinding_plant.industry.register()
+
 from industries import smithy_forge
 smithy_forge.industry.register()
 
@@ -186,6 +189,9 @@ trading_post.industry.register()
 
 from industries import clay_pit
 clay_pit.industry.register()
+
+from industries import factory
+factory.industry.register()
 
 from industries import fishing_grounds
 fishing_grounds.industry.register()
@@ -246,6 +252,9 @@ tyre_plant.industry.register()
 
 from industries import vehicle_factory
 vehicle_factory.industry.register()
+
+from industries import vehicle_dealer
+vehicle_dealer.industry.register()
 
 from industries import vineyard
 vineyard.industry.register()

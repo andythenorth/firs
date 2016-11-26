@@ -42,7 +42,7 @@ industry.economy_variations['BASIC_TEMPERATE'].intro_year = 1800
 industry.economy_variations['STEELTOWN'].enabled = True
 industry.economy_variations['STEELTOWN'].name = 'string(STR_IND_BLAST_FURNACE)'
 industry.economy_variations['STEELTOWN'].processed_cargos_and_output_ratios = [('IORE', 3), ('COKE', 3), ('GRVL', 2)]
-industry.economy_variations['STEELTOWN'].prod_cargo_types = ['IRON']
+industry.economy_variations['STEELTOWN'].prod_cargo_types = ['IRON', 'SLAG']
 
 industry.add_tile(id='blast_furnace_tile_1',
                   animation_length=7,
