@@ -34,6 +34,7 @@ industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].prob_random = '14'
 industry.economy_variations['STEELTOWN'].enabled = True
+industry.economy_variations['STEELTOWN'].accept_cargo_types = ['BDMT']
 
 industry.add_tile(id='builders_yard_tile_1',
                   location_checks=TileLocationChecks(require_houses_nearby=True,

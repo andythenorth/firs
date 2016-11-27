@@ -33,6 +33,8 @@ industry = IndustrySecondary(id='pipe_mill',
                     intro_year=1832 )
 
 industry.economy_variations['STEELTOWN'].enabled = True
+industry.economy_variations['STEELTOWN'].prod_cargo_types = ['BDMT']
+
 
 industry.add_tile(id='pipe_mill_tile_1',
                   animation_length=71,
