@@ -36,7 +36,7 @@ industry = IndustrySecondary(id='lime_kiln',
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['STEELTOWN'].enabled = True
-industry.economy_variations['STEELTOWN'].prod_cargo_types=['QLME', 'FMSP']
+industry.economy_variations['STEELTOWN'].prod_cargo_types = ['QLME']
 
 industry.add_tile(id='lime_kiln_tile_1',
                   animation_length=7,
