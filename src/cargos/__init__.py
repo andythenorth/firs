@@ -103,6 +103,9 @@ manganese.cargo.register()
 from cargos import manufacturing_supplies
 manufacturing_supplies.cargo.register()
 
+from cargos import marine_supplies
+marine_supplies.cargo.register()
+
 from cargos import metal
 metal.cargo.register()
 

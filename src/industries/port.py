@@ -56,7 +56,7 @@ industry.economy_variations['MISTAH_KURTZ'].prod_cargo_types = ['GOOD', 'MNSP']
 industry.economy_variations['BASIC_TROPIC'].prod_multiplier = '[14, 12]'
 
 industry.economy_variations['STEELTOWN'].enabled = True
-industry.economy_variations['STEELTOWN'].accept_cargo_types = ['VEHI', 'ENSP']
+industry.economy_variations['STEELTOWN'].accept_cargo_types = ['VEHI', 'SESP']
 industry.economy_variations['STEELTOWN'].prod_cargo_types = ['BEER', 'FOOD']
 industry.economy_variations['STEELTOWN'].prod_multiplier = '[14, 12]'
 
