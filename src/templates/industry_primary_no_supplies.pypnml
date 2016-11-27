@@ -1,0 +1,53 @@
+/*
+ * This file is part of FIRS industry set.
+ * FIRS industry set is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 2.
+ * FIRS industry set is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS industry set. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+#define THIS_ID(...) ${industry.id}_ ## __VA_ARGS__
+
+/* ******************************************************************
+ * Definition of the industry tile, its callbacks, and graphics chain
+ * ******************************************************************/
+
+<tal:include metal:use-macro="load: spritesets.pynml" />
+
+<tal:include metal:use-macro="load: spritelayouts.pynml" />
+
+<tal:include metal:use-macro="load: graphics_switches.pynml" />
+
+<tal:include metal:use-macro="load: tile_location_checks.pynml" />
+
+<tal:include metal:use-macro="load: tile_animation_switches.pynml" />
+
+<tal:include metal:use-macro="load: tile_properties.pynml" />
+
+
+/* *************************************************
+ * Definition of the industry
+ * *************************************************/
+
+<tal:include metal:use-macro="load: layouts.pynml" />
+
+<tal:include metal:use-macro="load: check_availability.pynml" />
+
+<tal:include metal:use-macro="load: industry_location_checks.pynml" />
+
+<tal:include metal:use-macro="load: industry_properties.pynml" />
+
+<!--! graphics block defined explicitly per industry subclass, to avoid too much fiddly conditional stuff -->
+<!--! no economy support currently -->
+item(FEAT_INDUSTRIES, ${industry.id}, ${industry.get_numeric_id()}) {
+	graphics {
+		construction_probability:${industry.id}_check_availability;
+        build_prod_change:       randomise_primary_production_on_build;
+		location_check:          ${industry.id}_check_location;
+		monthly_prod_change:     return CB_RESULT_IND_PROD_NO_CHANGE;
+		random_prod_change:      return CB_RESULT_IND_PROD_NO_CHANGE;
+//		extra_text_industry:     // no extra text. No production increase by means of FMSP
+		colour:                  switch_colour;
+	}
+}
+
+#include "../../src/templates/undefs.pnml"

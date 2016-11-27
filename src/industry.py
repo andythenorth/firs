@@ -795,7 +795,6 @@ class IndustryPrimary(Industry):
         self.template = kwargs.get('template', 'industry_primary.pypnml')
         self.supply_requirements = None # default None, set appropriately by subclasses
 
-
 class IndustryPrimaryExtractive(IndustryPrimary):
     """
         Industry that is extractive AND has production boosted by delivery of ENSP (mines and similar)
@@ -832,6 +831,13 @@ class IndustryPrimaryPort(IndustryPrimary):
         kwargs['extra_text_industry'] = True # slight hax, actual text string is determined by templated cb
         super(IndustryPrimaryPort, self).__init__(**kwargs)
         self.supply_requirements = [0, 'PORT', 8] # janky use of a un-named list for historical reasons (2nd item is string prefix, 3rd is multiplier of requirements parameters)
+
+
+class IndustryPrimaryNoSupplies(Industry):
+    """ Industry that does not accept supplies and does not change production amounts during game """
+    def __init__(self, **kwargs):
+        super(IndustryPrimaryNoSupplies, self).__init__(**kwargs)
+        self.template = kwargs.get('template', 'industry_primary_no_supplies.pypnml')
 
 
 class IndustryPrimaryTownProducer(Industry):
