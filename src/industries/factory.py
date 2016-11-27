@@ -30,8 +30,6 @@ industry = IndustrySecondary(id='factory',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
                     extra_text_industry='STR_EXTRA_FACTORY' )
 
-industry.economy_variations['STEELTOWN'].enabled = True
-
 industry.add_tile(id='factory_tile_1',
                   location_checks=TileLocationChecks(require_effectively_flat=True,
                                                      disallow_industry_adjacent=True))
