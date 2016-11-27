@@ -8,7 +8,7 @@
 from industry import IndustryPrimaryPort, TileLocationChecks, IndustryLocationChecks
 
 industry = IndustryPrimaryPort(id='ore_terminal',
-                    accept_cargo_types=['ENSP', 'SESP'],
+                    accept_cargo_types=['SESP'],
                     prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL',
                     prod_cargo_types=['MNO2', 'AORE'],
                     layouts='AUTO',
