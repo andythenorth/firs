@@ -133,6 +133,9 @@ phosphate.cargo.register()
 from cargos import pig_iron
 pig_iron.cargo.register()
 
+from cargos import pipe
+pipe.cargo.register()
+
 from cargos import plant_fibres
 plant_fibres.cargo.register()
 

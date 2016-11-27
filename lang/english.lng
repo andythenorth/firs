@@ -64,6 +64,7 @@ STR_CARGO_NAME_NUTS                                                             
 STR_CARGO_NAME_PETROL                                                           :Petroleum Fuels
 STR_CARGO_NAME_PHOSPHATE                                                        :Phosphate
 STR_CARGO_NAME_PIG_IRON                                                         :Pig Iron
+STR_CARGO_NAME_PIPE                                                             :Pipe
 STR_CARGO_NAME_POTASH                                                           :Potash
 STR_CARGO_NAME_POWERTRAIN_COMPONENTS                                            :Powertrain Components
 STR_CARGO_NAME_PYRITE_ORE                                                       :Pyrite Ore
@@ -111,6 +112,7 @@ STR_CARGO_UNIT_MNSP                                                             
 STR_CARGO_UNIT_PETROL                                                           :{VOLUME} of petroleum fuels
 STR_CARGO_UNIT_PHOSPHATE                                                        :{WEIGHT} of phosphate
 STR_CARGO_UNIT_PIG_IRON                                                         :{WEIGHT} of pig iron
+STR_CARGO_UNIT_PIPE                                                             :{WEIGHT} of pipe
 STR_CARGO_UNIT_POTASH                                                           :{WEIGHT} of potash
 STR_CARGO_UNIT_POWERTRAIN_COMPONENTS                                            :{SIGNED_WORD} crate{P 0 "" s} of powertrain components
 STR_CARGO_UNIT_PYRITE_ORE                                                       :{WEIGHT} of pyrite ore
@@ -157,6 +159,7 @@ STR_CID_NITRATES                                                                
 STR_CID_NUTS                                                                    :{TINYFONT}NT
 STR_CID_PETROL                                                                  :{TINYFONT}PT
 STR_CID_PIG_IRON                                                                :{TINYFONT}PI
+STR_CID_PIPE                                                                    :{TINYFONT}PP
 STR_CID_PHOSPHATE                                                               :{TINYFONT}PH
 STR_CID_POTASH                                                                  :{TINYFONT}PA
 STR_CID_POWERTRAIN_COMPONENTS                                                   :{TINYFONT}PC
@@ -215,6 +218,7 @@ STR_EXTRA_FOOD_PROCESSING_PLANT                                                 
 STR_EXTRA_FOOD_PROCESSING_PLANT_BEANS_SUBSTR                                    :6t per 8t beans delivered{}
 STR_EXTRA_FOOD_PROCESSING_PLANT_NUTS_SUBSTR                                     :6t per 8t nuts delivered{}
 STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Cargo production:{}  3 crates per 8 crates manufacturing supplies delivered{}  5 crates per 8t timber delivered{}{}Production steps up if both cargos are delivered within three months of each other.
+STR_EXTRA_GALVANISING_PLANT                                                     :!!! needs extra string
 STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Produces glass items such as bottles, jars and window panes.{}{}Cargo production:{}  6t per 8t sand delivered{}  2t per 8,000l chemicals delivered{}{}Production steps up if both cargos are delivered within three months of each other.
 STR_EXTRA_IRON_WORKS                                                            :{BLACK}Cargo production:{}  3t per 8t iron ore delivered{}  3t per 8t wood delivered{}  2t per 8t sand delivered{}{}Production steps up if two or more cargos are delivered within three months of each other.
 STR_EXTRA_LIME_KILN                                                             :{BLACK}Cargo production:{}  3t per 8t stone delivered{}  3t per 8t coal delivered{}{}Production steps up if both cargos are delivered within three months of each other.
@@ -225,6 +229,7 @@ STR_EXTRA_METAL_FABRICATION_PLANT                                               
 STR_EXTRA_METAL_FOUNDRY                                                         :{BLACK}Produces plated metal items such as tin cans, hardware and household goods.{}{}Cargo production:{}  2 crates per 8,000l chemicals delivered{}  6 crates per 8t metal delivered{}{}Production steps up if both cargos are delivered within three months of each other.
 STR_EXTRA_OIL_REFINERY                                                          :{BLACK}Processes crude oil into petroleum fuels and chemicals.{}{}Cargo production:{}  6,000l per 8,000l delivered
 STR_EXTRA_PAPER_MILL                                                            :{BLACK}Pulps wood to produce paper and cardboard.{}{}Cargo production:{}  4 crates per 8t wood delivered{}  2 crates per 8t clay delivered{}  2 crates per 8,000l chemicals delivered{}{}Production steps up if two or more cargos are delivered within three months of each other.
+STR_EXTRA_PIPE_MILL                                                             :!!! Extra text string needed
 STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}Produces plastic items such as packaging and household goods.{}{}Cargo production:{} {STRING} {STRING}
 STR_EXTRA_PLASTICS_PLANT_CHEMICALS_SUBSTR                                       :6 crates per 8,000l chemicals delivered{}
 STR_EXTRA_PLASTICS_PLANT_PLANT_FIBRES_SUBSTR                                    :6 crates per 8 bales plant fibres delivered{}
@@ -310,6 +315,7 @@ STR_IND_FLOUR_MILL                                                              
 STR_IND_FOOD_MARKET                                                             :Grocer's Shop
 STR_IND_FOOD_PROCESSOR                                                          :Food Processing Plant
 STR_IND_FURNITURE_FACTORY                                                       :Furniture Factory
+STR_IND_GALVANISING_PLANT                                                       :Galvanising Plant
 STR_IND_GENERAL_STORE                                                           :General Store
 STR_IND_GLASS_WORKS                                                             :Glass Works
 STR_IND_HARDWARE_STORE                                                          :Hardware Store
@@ -326,8 +332,11 @@ STR_IND_METAL_FOUNDRY                                                           
 STR_IND_MIXEDFARM                                                               :Mixed Farm
 STR_IND_NITRATE_MINE                                                            :Nitrate Mine
 STR_IND_ORCHARD_PIGGERY                                                         :Orchard and Piggery
+STR_IND_ORE_TERMINAL                                                            :Ore Terminal
 STR_IND_PETROLPUMP                                                              :Petrol Station
+STR_IND_PETROCHEMICAL_TERMINAL                                                  :Petrochemicals Terminal
 STR_IND_PHOSPHATE_MINE                                                          :Phosphate Mine
+STR_IND_PIPE_MILL                                                               :Pipe Mill
 STR_IND_PLASTICS_PLANT                                                          :Plastics Plant
 STR_IND_PORT                                                                    :Port
 STR_IND_POTASH_MINE                                                             :Potash Mine

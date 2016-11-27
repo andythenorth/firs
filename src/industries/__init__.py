@@ -226,11 +226,17 @@ oil_refinery.industry.register()
 from industries import oil_rig
 oil_rig.industry.register()
 
+from industries import ore_terminal
+ore_terminal.industry.register()
+
 from industries import paper_mill
 paper_mill.industry.register()
 
 from industries import phosphate_mine
 phosphate_mine.industry.register()
+
+from industries import pipe_mill
+pipe_mill.industry.register()
 
 from industries import potash_mine
 potash_mine.industry.register()
