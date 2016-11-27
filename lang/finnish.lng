@@ -134,6 +134,70 @@ STR_ERR_LOCATION_NOT_IN_DESERT                                                  
 STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE                                             :ei voida sijoittaa jyrkkiin rinteisiin.
 STR_ERR_LOCATION_LIMIT_1_PER_TOWN                                               :yhtä kaupunkia kohden sallitaan vain yksi tämän tyypin teollisuus.
 
+STR_IND_ALUMINIUM_PLANT                                                         :Alumiinitehdas
+STR_IND_ARABLE_FARM                                                             :Viljelytila
+STR_IND_BASICFARM                                                               :Maatila
+STR_IND_BAUXITE_MINE                                                            :Bauksiittikaivos
+STR_IND_BIOREFINERY                                                             :Biojalostamo
+STR_IND_BREWERY                                                                 :Panimo
+STR_IND_BREWERY_CIDER_MILL                                                      :Panimo
+STR_IND_BRICK_WORKS                                                             :Tiilitehdas
+STR_IND_BUILDERS_YARD                                                           :Rakennustarvikevarasto
+STR_IND_BULK_TERMINAL                                                           :Bulkkiterminaali
+STR_IND_CEMENT_PLANT                                                            :Sementtitehdas
+STR_IND_CHEMICAL_PLANT                                                          :Kemiantehdas
+STR_IND_CLAY_PIT                                                                :Savenottoalue
+STR_IND_COFFEE_ESTATE                                                           :Kahvitila
+STR_IND_COPPER_REFINERY                                                         :Kuparinjalostamo
+STR_IND_FIBRE_CROP_FARM                                                         :Kasvikuitutila
+STR_IND_DAIRY                                                                   :Meijeri
+STR_IND_DREDGING_SITE                                                           :Ruoppausalue
+STR_IND_FERTILISER_PLANT                                                        :Lannoitetehdas
+STR_IND_FISHING_GROUND                                                          :Kalastusalue
+STR_IND_FISHING_HARBOUR                                                         :Kalasatama
+STR_IND_FISHING_VILLAGE                                                         :Kalastajakylä
+STR_IND_FLOUR_MILL                                                              :Jauhomylly
+STR_IND_FOOD_MARKET                                                             :Ruokakauppa
+STR_IND_FOOD_PROCESSOR                                                          :Ruokatehdas
+STR_IND_FURNITURE_FACTORY                                                       :Huonekalutehdas
+STR_IND_GENERAL_STORE                                                           :Sekatavarakauppa
+STR_IND_GLASS_WORKS                                                             :Lasitehdas
+STR_IND_HARDWARE_STORE                                                          :Rautakauppa
+STR_IND_HOTEL                                                                   :Hotelli
+STR_IND_IRON_WORKS                                                              :Rautaruukki
+STR_IND_JUNKYARD                                                                :Romuttamo
+STR_IND_LIME_KILN                                                               :Kalkkiuuni
+STR_IND_LUMBER_YARD                                                             :Taapeli
+STR_IND_MACHINE_SHOP                                                            :Konepaja
+STR_IND_MANGANESE_MINE                                                          :Mangaanikaivos
+STR_IND_METAL_FABRICATION_PLANT                                                 :Metallituotetehdas
+STR_IND_METAL_FOUNDRY                                                           :Metallipaja
+STR_IND_MIXEDFARM                                                               :Maatila
+STR_IND_NITRATE_MINE                                                            :Nitraattikaivos
+STR_IND_ORCHARD_PIGGERY                                                         :Hedelmätarha ja sikala
+STR_IND_PETROLPUMP                                                              :Huoltoasema
+STR_IND_PHOSPHATE_MINE                                                          :Fosfaattikaivos
+STR_IND_PLASTICS_PLANT                                                          :Muovitehdas
+STR_IND_PORT                                                                    :Satama
+STR_IND_PYRITE_MINE                                                             :Pyriittikaivos
+STR_IND_PYRITE_SMELTER                                                          :Pyriittipasuttamo
+STR_IND_POWER_PLANT                                                             :Voimalaitos
+STR_IND_QUARRY                                                                  :Hiekanottoalue
+STR_IND_RANCH                                                                   :Karjatila
+STR_IND_RECYCLING_DEPOT                                                         :Kierrätyskeskus
+STR_IND_RECYCLING_PLANT                                                         :Kierrätyslaitos
+STR_IND_SHEEPFARM                                                               :Lammastila
+STR_IND_SMITHY_FORGE                                                            :Takomo
+STR_IND_STOCKYARD                                                               :Teurastamo
+STR_IND_SUGAR_PLANTATION                                                        :Sokeriplantaasi
+STR_IND_SUGAR_REFINERY                                                          :Sokerinjalostamo
+STR_IND_SUPPLY_YARD                                                             :Tarvikevarasto
+STR_IND_TEXTILE_MILL                                                            :Tekstiilitehdas
+STR_IND_TRADING_POST                                                            :Kauppa-asema
+STR_IND_TYRE_PLANT                                                              :Rengastehdas
+STR_IND_VEHICLE_FACTORY                                                         :Ajoneuvotehdas
+STR_IND_VINEYARD                                                                :Viinitarha
+
 STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}Rahdin tuotanto:{}  2t per 8t kuljetettua bauksiittia{}  2t per 8000 litraa kuljetettuja kemikaaleja{} 4t per 8t kuljetettua metalliromua{}{}Tuotanto kasvaa jos kahta tai useampaa rahtia kuljetetaan kolmen kuukauden aikana.
 STR_EXTRA_BIOREFINERY                                                           :{BLACK}Valmistaa viljasta ja sokerista bensiiniä ja kemikaaleja.{}{}6t tuotantoa per 8t kuljetettu.
 STR_EXTRA_BREWERY                                                               :{BLACK}Rahdin tuotanto:{} 3,000l per 8 laatikkoa kuljetettuja tuotantotarvikkeita{} {STRING} {STRING}{}Tuotanto kasvaa, jos tuotantotarvikkeita kuljetetaan kolmen kuukauden sisällä muista rahdeista.
@@ -207,78 +271,11 @@ STR_FUND_FRUIT_PLANTATION                                                       
 STR_FUND_RUBBER_PLANTATION                                                      :{}{BLACK}Sijainti: {YELLOW}Ei voida rahoittaa lumelle tai aavikolle.
 STR_FUND_VINEYARD                                                               :{}{BLACK}Sijainti: {YELLOW}Ei voida rahoittaa lumelle tai aavikolle.
 
-
 STR_FUND_AVAILABLE_FROM                                                         :{}{BLACK}Saatavilla alkaen: {YELLOW}{COMMA}
-
 STR_FUND_AVAILABLE_UNTIL                                                        :{}{BLACK}Ei saatavilla alkaen: {YELLOW}{COMMA}
-
 
 STR_TOWN                                                                        :{STRING}
 STR_STATION                                                                     :{STRING} {STRING}
-
-STR_IND_ALUMINIUM_PLANT                                                         :Alumiinitehdas
-STR_IND_ARABLE_FARM                                                             :Viljelytila
-STR_IND_BASICFARM                                                               :Maatila
-STR_IND_BAUXITE_MINE                                                            :Bauksiittikaivos
-STR_IND_BIOREFINERY                                                             :Biojalostamo
-STR_IND_BREWERY                                                                 :Panimo
-STR_IND_BREWERY_CIDER_MILL                                                      :Panimo
-STR_IND_BRICK_WORKS                                                             :Tiilitehdas
-STR_IND_BUILDERS_YARD                                                           :Rakennustarvikevarasto
-STR_IND_BULK_TERMINAL                                                           :Bulkkiterminaali
-STR_IND_CEMENT_PLANT                                                            :Sementtitehdas
-STR_IND_CHEMICAL_PLANT                                                          :Kemiantehdas
-STR_IND_CLAY_PIT                                                                :Savenottoalue
-STR_IND_COFFEE_ESTATE                                                           :Kahvitila
-STR_IND_COPPER_REFINERY                                                         :Kuparinjalostamo
-STR_IND_FIBRE_CROP_FARM                                                         :Kasvikuitutila
-STR_IND_DAIRY                                                                   :Meijeri
-STR_IND_DREDGING_SITE                                                           :Ruoppausalue
-STR_IND_FERTILISER_PLANT                                                        :Lannoitetehdas
-STR_IND_FISHING_GROUND                                                          :Kalastusalue
-STR_IND_FISHING_HARBOUR                                                         :Kalasatama
-STR_IND_FISHING_VILLAGE                                                         :Kalastajakylä
-STR_IND_FLOUR_MILL                                                              :Jauhomylly
-STR_IND_FOOD_MARKET                                                             :Ruokakauppa
-STR_IND_FOOD_PROCESSOR                                                          :Ruokatehdas
-STR_IND_FURNITURE_FACTORY                                                       :Huonekalutehdas
-STR_IND_GENERAL_STORE                                                           :Sekatavarakauppa
-STR_IND_GLASS_WORKS                                                             :Lasitehdas
-STR_IND_HARDWARE_STORE                                                          :Rautakauppa
-STR_IND_HOTEL                                                                   :Hotelli
-STR_IND_IRON_WORKS                                                              :Rautaruukki
-STR_IND_JUNKYARD                                                                :Romuttamo
-STR_IND_LIME_KILN                                                               :Kalkkiuuni
-STR_IND_LUMBER_YARD                                                             :Taapeli
-STR_IND_MACHINE_SHOP                                                            :Konepaja
-STR_IND_MANGANESE_MINE                                                          :Mangaanikaivos
-STR_IND_METAL_FABRICATION_PLANT                                                 :Metallituotetehdas
-STR_IND_METAL_FOUNDRY                                                           :Metallipaja
-STR_IND_MIXEDFARM                                                               :Maatila
-STR_IND_NITRATE_MINE                                                            :Nitraattikaivos
-STR_IND_ORCHARD_PIGGERY                                                         :Hedelmätarha ja sikala
-STR_IND_PETROLPUMP                                                              :Huoltoasema
-STR_IND_PHOSPHATE_MINE                                                          :Fosfaattikaivos
-STR_IND_PLASTICS_PLANT                                                          :Muovitehdas
-STR_IND_PORT                                                                    :Satama
-STR_IND_PYRITE_MINE                                                             :Pyriittikaivos
-STR_IND_PYRITE_SMELTER                                                          :Pyriittipasuttamo
-STR_IND_POWER_PLANT                                                             :Voimalaitos
-STR_IND_QUARRY                                                                  :Hiekanottoalue
-STR_IND_RANCH                                                                   :Karjatila
-STR_IND_RECYCLING_DEPOT                                                         :Kierrätyskeskus
-STR_IND_RECYCLING_PLANT                                                         :Kierrätyslaitos
-STR_IND_SHEEPFARM                                                               :Lammastila
-STR_IND_SMITHY_FORGE                                                            :Takomo
-STR_IND_STOCKYARD                                                               :Teurastamo
-STR_IND_SUGAR_PLANTATION                                                        :Sokeriplantaasi
-STR_IND_SUGAR_REFINERY                                                          :Sokerinjalostamo
-STR_IND_SUPPLY_YARD                                                             :Tarvikevarasto
-STR_IND_TEXTILE_MILL                                                            :Tekstiilitehdas
-STR_IND_TRADING_POST                                                            :Kauppa-asema
-STR_IND_TYRE_PLANT                                                              :Rengastehdas
-STR_IND_VEHICLE_FACTORY                                                         :Ajoneuvotehdas
-STR_IND_VINEYARD                                                                :Viinitarha
 
 STR_STATION_ANIMALS                                                             :, hevostori
 STR_STATION_FARM                                                                :, tila

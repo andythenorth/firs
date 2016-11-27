@@ -106,6 +106,45 @@ STR_ERR_LOCATION_NOT_IN_DESERT                                                  
 STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE                                             :nemôže byť umiestnená na strmom svahu.
 STR_ERR_LOCATION_LIMIT_1_PER_TOWN                                               :len jeden typ tohto priemyslu je povolený v meste.
 
+STR_IND_ALUMINIUM_PLANT                                                         :Závod na výrobu hliníka
+STR_IND_ARABLE_FARM                                                             :Orná pôda
+STR_IND_BASICFARM                                                               :Farma
+STR_IND_BAUXITE_MINE                                                            :Bauxitová baňa
+STR_IND_BIOREFINERY                                                             :Biorafinéria
+STR_IND_BREWERY                                                                 :Pivovar
+STR_IND_BRICK_WORKS                                                             :Tehelňa
+STR_IND_BUILDERS_YARD                                                           :Stavebniny
+STR_IND_CEMENT_PLANT                                                            :Cementáreň
+STR_IND_CLAY_PIT                                                                :Hlinená baňa
+STR_IND_DAIRY                                                                   :Mliekareň
+STR_IND_DREDGING_SITE                                                           :Bagrovisko
+STR_IND_FERTILISER_PLANT                                                        :Závod na výrobu hnojív
+STR_IND_FISHING_GROUND                                                          :Lovisko rýb
+STR_IND_FISHING_HARBOUR                                                         :Rybí prístav
+STR_IND_FOOD_MARKET                                                             :Obchod s potravinami
+STR_IND_FURNITURE_FACTORY                                                       :Závod na výrobu nábytku
+STR_IND_GLASS_WORKS                                                             :Skláreň
+STR_IND_HARDWARE_STORE                                                          :Železiarstvo
+STR_IND_HOTEL                                                                   :Hotel
+STR_IND_IRON_WORKS                                                              :Železiareň
+STR_IND_JUNKYARD                                                                :Smetisko
+STR_IND_LIME_KILN                                                               :Vápenka
+STR_IND_LUMBER_YARD                                                             :Obchod s drevom
+STR_IND_MACHINE_SHOP                                                            :Strojársky závod
+STR_IND_METAL_FABRICATION_PLANT                                                 :Kovovýrobný závod
+STR_IND_METAL_FOUNDRY                                                           :Kovodielňa
+STR_IND_MIXEDFARM                                                               :Zmiešaná farma
+STR_IND_PETROLPUMP                                                              :Čerpacia stanica
+STR_IND_PLASTICS_PLANT                                                          :Závod na výrobu plastu
+STR_IND_QUARRY                                                                  :Lom
+STR_IND_RECYCLING_DEPOT                                                         :Recyklačná skládka
+STR_IND_RECYCLING_PLANT                                                         :Závod na recykláciu
+STR_IND_SHEEPFARM                                                               :Ovčia farma
+STR_IND_SMITHY_FORGE                                                            :Kováčska dielňa
+STR_IND_STOCKYARD                                                               :Bitúnok
+STR_IND_SUGAR_REFINERY                                                          :Cukrovar
+STR_IND_TEXTILE_MILL                                                            :Odevný závod
+
 STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}Produkcia tovaru:{}  2t na 8t dodaného bauxitu{}  2t na 8,000l dodaných chemikálií{}  4t na 8t dodaného kovového šrotu{}{}Produkcia sa zvyšuje, ak sú doručené dva alebo viac typov tovaru počas mesiaca.
 STR_EXTRA_BIOREFINERY                                                           :{BLACK}Produkcia tovaru:{}  6,000l na 8t dodaného obilia{}  6,000l na 8t dodaného cukru
 STR_EXTRA_BRICKWORKS                                                            :{BLACK}Produkcia tovaru:{}  2t na 8t dodaného uhlia{}  2t na 8t dodaného piesku{}  4t na 8t dodanej hliny{}{}Produkcia sa zvyšuje, ak sú dodané dva alebo viac typov tovaru počas jedného mesiaca.
@@ -148,51 +187,9 @@ STR_FUND_SUGAR_PLANTATION                                                       
 STR_FUND_FOREST                                                                 :{}{BLACK}Umiestnenie: {YELLOW}Nemôže byť založený na púšti.
 STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}Umiestnenie: {YELLOW}Nemôže byť založená na snehu.
 
-
 STR_FUND_AVAILABLE_FROM                                                         :{}{BLACK}Dostupné od: {YELLOW}{COMMA}
-
 STR_FUND_AVAILABLE_UNTIL                                                        :{}{BLACK}Nedostupné po: {YELLOW}{COMMA}
-
 
 STR_TOWN                                                                        :{STRING}
 STR_STATION                                                                     :{STRING} {STRING}
-
-STR_IND_ALUMINIUM_PLANT                                                         :Závod na výrobu hliníka
-STR_IND_ARABLE_FARM                                                             :Orná pôda
-STR_IND_BASICFARM                                                               :Farma
-STR_IND_BAUXITE_MINE                                                            :Bauxitová baňa
-STR_IND_BIOREFINERY                                                             :Biorafinéria
-STR_IND_BREWERY                                                                 :Pivovar
-STR_IND_BRICK_WORKS                                                             :Tehelňa
-STR_IND_BUILDERS_YARD                                                           :Stavebniny
-STR_IND_CEMENT_PLANT                                                            :Cementáreň
-STR_IND_CLAY_PIT                                                                :Hlinená baňa
-STR_IND_DAIRY                                                                   :Mliekareň
-STR_IND_DREDGING_SITE                                                           :Bagrovisko
-STR_IND_FERTILISER_PLANT                                                        :Závod na výrobu hnojív
-STR_IND_FISHING_GROUND                                                          :Lovisko rýb
-STR_IND_FISHING_HARBOUR                                                         :Rybí prístav
-STR_IND_FOOD_MARKET                                                             :Obchod s potravinami
-STR_IND_FURNITURE_FACTORY                                                       :Závod na výrobu nábytku
-STR_IND_GLASS_WORKS                                                             :Skláreň
-STR_IND_HARDWARE_STORE                                                          :Železiarstvo
-STR_IND_HOTEL                                                                   :Hotel
-STR_IND_IRON_WORKS                                                              :Železiareň
-STR_IND_JUNKYARD                                                                :Smetisko
-STR_IND_LIME_KILN                                                               :Vápenka
-STR_IND_LUMBER_YARD                                                             :Obchod s drevom
-STR_IND_MACHINE_SHOP                                                            :Strojársky závod
-STR_IND_METAL_FABRICATION_PLANT                                                 :Kovovýrobný závod
-STR_IND_METAL_FOUNDRY                                                           :Kovodielňa
-STR_IND_MIXEDFARM                                                               :Zmiešaná farma
-STR_IND_PETROLPUMP                                                              :Čerpacia stanica
-STR_IND_PLASTICS_PLANT                                                          :Závod na výrobu plastu
-STR_IND_QUARRY                                                                  :Lom
-STR_IND_RECYCLING_DEPOT                                                         :Recyklačná skládka
-STR_IND_RECYCLING_PLANT                                                         :Závod na recykláciu
-STR_IND_SHEEPFARM                                                               :Ovčia farma
-STR_IND_SMITHY_FORGE                                                            :Kováčska dielňa
-STR_IND_STOCKYARD                                                               :Bitúnok
-STR_IND_SUGAR_REFINERY                                                          :Cukrovar
-STR_IND_TEXTILE_MILL                                                            :Odevný závod
 

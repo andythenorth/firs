@@ -108,6 +108,55 @@ STR_ERR_LOCATION_NOT_IN_DESERT                                                  
 STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE                                             :kan ikke placeres på skrå felter.
 STR_ERR_LOCATION_LIMIT_1_PER_TOWN                                               :kun en industri af denne type tilladt pr. by.
 
+STR_IND_ALUMINIUM_PLANT                                                         :Aluminiumsværk
+STR_IND_ARABLE_FARM                                                             :Jordbrugsgård
+STR_IND_BASICFARM                                                               :Bondegård
+STR_IND_BAUXITE_MINE                                                            :Bauxitmine
+STR_IND_BIOREFINERY                                                             :Bioraffinaderi
+STR_IND_BREWERY                                                                 :Bryggeri
+STR_IND_BREWERY_CIDER_MILL                                                      :Cider bryggeri
+STR_IND_BRICK_WORKS                                                             :Teglværk
+STR_IND_BUILDERS_YARD                                                           :Byggeplads
+STR_IND_BULK_TERMINAL                                                           :Bulk terminal
+STR_IND_CEMENT_PLANT                                                            :Cementfabrik
+STR_IND_CLAY_PIT                                                                :Lergrav
+STR_IND_COFFEE_ESTATE                                                           :Kaffeplantage
+STR_IND_FIBRE_CROP_FARM                                                         :Fibreafgrødegård
+STR_IND_DAIRY                                                                   :Mejeri
+STR_IND_DREDGING_SITE                                                           :Uddybningssted
+STR_IND_FERTILISER_PLANT                                                        :Gødningsfabrik
+STR_IND_FISHING_GROUND                                                          :Fiskeriområder
+STR_IND_FISHING_HARBOUR                                                         :Fiskerihavn
+STR_IND_FOOD_MARKET                                                             :Fødevarebutik
+STR_IND_FURNITURE_FACTORY                                                       :Møbelfabrik
+STR_IND_GENERAL_STORE                                                           :Butik
+STR_IND_GLASS_WORKS                                                             :Glasværk
+STR_IND_HARDWARE_STORE                                                          :Isenkræmmer
+STR_IND_HOTEL                                                                   :Hotel
+STR_IND_IRON_WORKS                                                              :Stålværk
+STR_IND_JUNKYARD                                                                :Skrotplads
+STR_IND_LIME_KILN                                                               :Kalkbrænderi
+STR_IND_LUMBER_YARD                                                             :Tømmerplads
+STR_IND_MACHINE_SHOP                                                            :Maskinfabrik
+STR_IND_METAL_FABRICATION_PLANT                                                 :Metalvarefabrik
+STR_IND_METAL_FOUNDRY                                                           :Metalstøberi
+STR_IND_MIXEDFARM                                                               :Bondegård
+STR_IND_ORCHARD_PIGGERY                                                         :Frugthave og svinestald
+STR_IND_PETROLPUMP                                                              :Tankstation
+STR_IND_PLASTICS_PLANT                                                          :Plastikfabrik
+STR_IND_PORT                                                                    :Havn
+STR_IND_QUARRY                                                                  :Grusgrav
+STR_IND_RANCH                                                                   :Ranch
+STR_IND_RECYCLING_DEPOT                                                         :Genbrugsstation
+STR_IND_RECYCLING_PLANT                                                         :Genanvendingsanlæg
+STR_IND_SHEEPFARM                                                               :Fårefarm
+STR_IND_SMITHY_FORGE                                                            :Smedie
+STR_IND_STOCKYARD                                                               :Slagteri
+STR_IND_SUGAR_PLANTATION                                                        :Sukkerplantage
+STR_IND_SUGAR_REFINERY                                                          :Sukkerfabrik
+STR_IND_TEXTILE_MILL                                                            :Tekstilfabrik
+STR_IND_TRADING_POST                                                            :Handelsstation
+
 STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}Fragt produktion:{}  2t per 8t bauxit afleveret{}  2t per 8,000l kemikalier afleveret{}  4t per 8t skrotmetal afleveret{}{}Produktionen stiger hvis to eller flere fragttyper leveres i samme måned.
 STR_EXTRA_BIOREFINERY                                                           :{BLACK}Fragt produktion:{}  6,000l per 8t korn afleveret{}  6,000l per 8t sukker afleveret
 STR_EXTRA_BREWERY                                                               :{BLACK}Fragt produktion:{}  3,000l per 8 kasser konstruktionsmaterialer afleveret{} {STRING} {STRING}{}Produktionen stiger hvis konstruktionsmaterialer afleveres i samme måneder som andre fragttyper.
@@ -164,63 +213,11 @@ STR_FUND_FOREST                                                                 
 STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}Placering: {YELLOW}Kan ikke bygges i sne.
 STR_FUND_RUBBER_PLANTATION                                                      :{}{BLACK}Placering: {YELLOW}Kan ikke bygges i sne eller i ørkener.
 
-
 STR_FUND_AVAILABLE_FROM                                                         :{}{BLACK}Tilgængelig fra: {YELLOW}{COMMA}
-
 STR_FUND_AVAILABLE_UNTIL                                                        :{}{BLACK}Ikke tilgængelig efter: {YELLOW}{COMMA}
-
 
 STR_TOWN                                                                        :{STRING}
 STR_STATION                                                                     :{STRING} {STRING}
-
-STR_IND_ALUMINIUM_PLANT                                                         :Aluminiumsværk
-STR_IND_ARABLE_FARM                                                             :Jordbrugsgård
-STR_IND_BASICFARM                                                               :Bondegård
-STR_IND_BAUXITE_MINE                                                            :Bauxitmine
-STR_IND_BIOREFINERY                                                             :Bioraffinaderi
-STR_IND_BREWERY                                                                 :Bryggeri
-STR_IND_BREWERY_CIDER_MILL                                                      :Cider bryggeri
-STR_IND_BRICK_WORKS                                                             :Teglværk
-STR_IND_BUILDERS_YARD                                                           :Byggeplads
-STR_IND_BULK_TERMINAL                                                           :Bulk terminal
-STR_IND_CEMENT_PLANT                                                            :Cementfabrik
-STR_IND_CLAY_PIT                                                                :Lergrav
-STR_IND_COFFEE_ESTATE                                                           :Kaffeplantage
-STR_IND_FIBRE_CROP_FARM                                                         :Fibreafgrødegård
-STR_IND_DAIRY                                                                   :Mejeri
-STR_IND_DREDGING_SITE                                                           :Uddybningssted
-STR_IND_FERTILISER_PLANT                                                        :Gødningsfabrik
-STR_IND_FISHING_GROUND                                                          :Fiskeriområder
-STR_IND_FISHING_HARBOUR                                                         :Fiskerihavn
-STR_IND_FOOD_MARKET                                                             :Fødevarebutik
-STR_IND_FURNITURE_FACTORY                                                       :Møbelfabrik
-STR_IND_GENERAL_STORE                                                           :Butik
-STR_IND_GLASS_WORKS                                                             :Glasværk
-STR_IND_HARDWARE_STORE                                                          :Isenkræmmer
-STR_IND_HOTEL                                                                   :Hotel
-STR_IND_IRON_WORKS                                                              :Stålværk
-STR_IND_JUNKYARD                                                                :Skrotplads
-STR_IND_LIME_KILN                                                               :Kalkbrænderi
-STR_IND_LUMBER_YARD                                                             :Tømmerplads
-STR_IND_MACHINE_SHOP                                                            :Maskinfabrik
-STR_IND_METAL_FABRICATION_PLANT                                                 :Metalvarefabrik
-STR_IND_METAL_FOUNDRY                                                           :Metalstøberi
-STR_IND_MIXEDFARM                                                               :Bondegård
-STR_IND_ORCHARD_PIGGERY                                                         :Frugthave og svinestald
-STR_IND_PETROLPUMP                                                              :Tankstation
-STR_IND_PLASTICS_PLANT                                                          :Plastikfabrik
-STR_IND_PORT                                                                    :Havn
-STR_IND_QUARRY                                                                  :Grusgrav
-STR_IND_RANCH                                                                   :Ranch
-STR_IND_RECYCLING_DEPOT                                                         :Genbrugsstation
-STR_IND_RECYCLING_PLANT                                                         :Genanvendingsanlæg
-STR_IND_SHEEPFARM                                                               :Fårefarm
-STR_IND_SMITHY_FORGE                                                            :Smedie
-STR_IND_STOCKYARD                                                               :Slagteri
-STR_IND_SUGAR_PLANTATION                                                        :Sukkerplantage
-STR_IND_SUGAR_REFINERY                                                          :Sukkerfabrik
-STR_IND_TEXTILE_MILL                                                            :Tekstilfabrik
-STR_IND_TRADING_POST                                                            :Handelsstation
 
 STR_STATION_ANIMALS                                                             :Hestemarked
 STR_STATION_FARM                                                                :Gård

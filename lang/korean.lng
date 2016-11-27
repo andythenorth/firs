@@ -149,6 +149,71 @@ STR_ERR_LOCATION_NOT_IN_DESERT                                                  
 STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE                                             :가파른 경사 위에 지을 수 없습니다.
 STR_ERR_LOCATION_LIMIT_1_PER_TOWN                                               :이 종류의 산업 시설은 한 도시에 하나만 지을 수 있습니다.
 
+STR_IND_ALUMINIUM_PLANT                                                         :알루미늄 제련소
+STR_IND_ARABLE_FARM                                                             :경작 농장
+STR_IND_BASICFARM                                                               :농장
+STR_IND_BAUXITE_MINE                                                            :보크사이트 광산
+STR_IND_BIOREFINERY                                                             :바이오 리파이너리
+STR_IND_BREWERY                                                                 :양조장
+STR_IND_BREWERY_CIDER_MILL                                                      :과실주 양조장
+STR_IND_BRICK_WORKS                                                             :벽돌 공장
+STR_IND_BUILDERS_YARD                                                           :공사장
+STR_IND_BULK_TERMINAL                                                           :선적하물 터미널
+STR_IND_CEMENT_PLANT                                                            :시멘트 공장
+STR_IND_CHEMICAL_PLANT                                                          :화학 제품 공장
+STR_IND_CLAY_PIT                                                                :점토 채취장
+STR_IND_COFFEE_ESTATE                                                           :커피 농장
+STR_IND_COPPER_REFINERY                                                         :구리 정제 공장
+STR_IND_FIBRE_CROP_FARM                                                         :섬유 작물 농장
+STR_IND_DAIRY                                                                   :유제품 회사
+STR_IND_DREDGING_SITE                                                           :준설 부지
+STR_IND_FERTILISER_PLANT                                                        :비료 공장
+STR_IND_FISHING_GROUND                                                          :어장
+STR_IND_FISHING_HARBOUR                                                         :어항
+STR_IND_FISHING_VILLAGE                                                         :어촌
+STR_IND_FLOUR_MILL                                                              :제분소
+STR_IND_FOOD_MARKET                                                             :반찬 가게
+STR_IND_FOOD_PROCESSOR                                                          :식품 공장
+STR_IND_FURNITURE_FACTORY                                                       :가구 공장
+STR_IND_GENERAL_STORE                                                           :일반 상점
+STR_IND_GLASS_WORKS                                                             :유리 공장
+STR_IND_HARDWARE_STORE                                                          :철물점
+STR_IND_HOTEL                                                                   :호텔
+STR_IND_IRON_WORKS                                                              :제철소
+STR_IND_JUNKYARD                                                                :고철 집적소
+STR_IND_LIME_KILN                                                               :석회 가마
+STR_IND_LIQUIDS_TERMINAL                                                        :유류 터미널
+STR_IND_LUMBER_YARD                                                             :저목장
+STR_IND_MACHINE_SHOP                                                            :기계 상점
+STR_IND_MANGANESE_MINE                                                          :망가니즈 광산
+STR_IND_METAL_FABRICATION_PLANT                                                 :금속 제조 공장
+STR_IND_METAL_FOUNDRY                                                           :금속 주물 공장
+STR_IND_MIXEDFARM                                                               :혼합 농장
+STR_IND_NITRATE_MINE                                                            :질산염 광산
+STR_IND_ORCHARD_PIGGERY                                                         :과수원 및 양돈장
+STR_IND_PETROLPUMP                                                              :주유소
+STR_IND_PHOSPHATE_MINE                                                          :인산염 광산
+STR_IND_PLASTICS_PLANT                                                          :플라스틱 공장
+STR_IND_PORT                                                                    :항구
+STR_IND_PYRITE_MINE                                                             :황철석 광산
+STR_IND_PYRITE_SMELTER                                                          :황철석 용광로
+STR_IND_POWER_PLANT                                                             :발전소
+STR_IND_QUARRY                                                                  :채석장
+STR_IND_RANCH                                                                   :목장
+STR_IND_RECYCLING_DEPOT                                                         :재활용품 창고
+STR_IND_RECYCLING_PLANT                                                         :재활용품 처리 공장
+STR_IND_SHEEPFARM                                                               :목양장
+STR_IND_SMITHY_FORGE                                                            :대장간
+STR_IND_STOCKYARD                                                               :가축 수용소
+STR_IND_SUGAR_PLANTATION                                                        :설탕 플랜테이션
+STR_IND_SUGAR_REFINERY                                                          :제당소
+STR_IND_SUPPLY_YARD                                                             :물류창고
+STR_IND_TEXTILE_MILL                                                            :방직 공장
+STR_IND_TRADING_POST                                                            :교역소
+STR_IND_TYRE_PLANT                                                              :타이어 공장
+STR_IND_VEHICLE_FACTORY                                                         :자동차 공장
+STR_IND_VINEYARD                                                                :포도원
+
 STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}화물 생산량:{} 보크사이트 8톤 수송시 2톤{} 화학 약품 8,000L 수송시 2톤{} 고철 8톤 수송시 4톤{}{}둘 또는 그 이상의 화물이 3개월 이내에 수송되면 생산량이 증가합니다.
 STR_EXTRA_BIOREFINERY                                                           :{BLACK}화물 생산량:{} 곡물 8톤 수송시 6,000L{} 설탕 8톤 수송시 6,000L
 STR_EXTRA_BREWERY                                                               :{BLACK}화물 생산량:{} 제조 비품 8상자 수송시 3,000L{} {STRING} {STRING}{}다른 화물의 3개월 이내에 제조 비품이 수송되면 생산량이 증가합니다.
@@ -224,79 +289,11 @@ STR_FUND_FRUIT_PLANTATION                                                       
 STR_FUND_RUBBER_PLANTATION                                                      :{}{BLACK}위치: {YELLOW}눈이나 사막 위에 세울 수 없습니다.
 STR_FUND_VINEYARD                                                               :{}{BLACK}위치: {YELLOW}눈이나 사막 위에 세울 수 없습니다.
 
-
 STR_FUND_AVAILABLE_FROM                                                         :{}{YELLOW}{COMMA}{BLACK}부터 사용 가능
-
 STR_FUND_AVAILABLE_UNTIL                                                        :{}{YELLOW}{COMMA} {BLACK}이후 사용 불가능
-
 
 STR_TOWN                                                                        :{STRING}
 STR_STATION                                                                     :{STRING} {STRING}
-
-STR_IND_ALUMINIUM_PLANT                                                         :알루미늄 제련소
-STR_IND_ARABLE_FARM                                                             :경작 농장
-STR_IND_BASICFARM                                                               :농장
-STR_IND_BAUXITE_MINE                                                            :보크사이트 광산
-STR_IND_BIOREFINERY                                                             :바이오 리파이너리
-STR_IND_BREWERY                                                                 :양조장
-STR_IND_BREWERY_CIDER_MILL                                                      :과실주 양조장
-STR_IND_BRICK_WORKS                                                             :벽돌 공장
-STR_IND_BUILDERS_YARD                                                           :공사장
-STR_IND_BULK_TERMINAL                                                           :선적하물 터미널
-STR_IND_CEMENT_PLANT                                                            :시멘트 공장
-STR_IND_CHEMICAL_PLANT                                                          :화학 제품 공장
-STR_IND_CLAY_PIT                                                                :점토 채취장
-STR_IND_COFFEE_ESTATE                                                           :커피 농장
-STR_IND_COPPER_REFINERY                                                         :구리 정제 공장
-STR_IND_FIBRE_CROP_FARM                                                         :섬유 작물 농장
-STR_IND_DAIRY                                                                   :유제품 회사
-STR_IND_DREDGING_SITE                                                           :준설 부지
-STR_IND_FERTILISER_PLANT                                                        :비료 공장
-STR_IND_FISHING_GROUND                                                          :어장
-STR_IND_FISHING_HARBOUR                                                         :어항
-STR_IND_FISHING_VILLAGE                                                         :어촌
-STR_IND_FLOUR_MILL                                                              :제분소
-STR_IND_FOOD_MARKET                                                             :반찬 가게
-STR_IND_FOOD_PROCESSOR                                                          :식품 공장
-STR_IND_FURNITURE_FACTORY                                                       :가구 공장
-STR_IND_GENERAL_STORE                                                           :일반 상점
-STR_IND_GLASS_WORKS                                                             :유리 공장
-STR_IND_HARDWARE_STORE                                                          :철물점
-STR_IND_HOTEL                                                                   :호텔
-STR_IND_IRON_WORKS                                                              :제철소
-STR_IND_JUNKYARD                                                                :고철 집적소
-STR_IND_LIME_KILN                                                               :석회 가마
-STR_IND_LIQUIDS_TERMINAL                                                        :유류 터미널
-STR_IND_LUMBER_YARD                                                             :저목장
-STR_IND_MACHINE_SHOP                                                            :기계 상점
-STR_IND_MANGANESE_MINE                                                          :망가니즈 광산
-STR_IND_METAL_FABRICATION_PLANT                                                 :금속 제조 공장
-STR_IND_METAL_FOUNDRY                                                           :금속 주물 공장
-STR_IND_MIXEDFARM                                                               :혼합 농장
-STR_IND_NITRATE_MINE                                                            :질산염 광산
-STR_IND_ORCHARD_PIGGERY                                                         :과수원 및 양돈장
-STR_IND_PETROLPUMP                                                              :주유소
-STR_IND_PHOSPHATE_MINE                                                          :인산염 광산
-STR_IND_PLASTICS_PLANT                                                          :플라스틱 공장
-STR_IND_PORT                                                                    :항구
-STR_IND_PYRITE_MINE                                                             :황철석 광산
-STR_IND_PYRITE_SMELTER                                                          :황철석 용광로
-STR_IND_POWER_PLANT                                                             :발전소
-STR_IND_QUARRY                                                                  :채석장
-STR_IND_RANCH                                                                   :목장
-STR_IND_RECYCLING_DEPOT                                                         :재활용품 창고
-STR_IND_RECYCLING_PLANT                                                         :재활용품 처리 공장
-STR_IND_SHEEPFARM                                                               :목양장
-STR_IND_SMITHY_FORGE                                                            :대장간
-STR_IND_STOCKYARD                                                               :가축 수용소
-STR_IND_SUGAR_PLANTATION                                                        :설탕 플랜테이션
-STR_IND_SUGAR_REFINERY                                                          :제당소
-STR_IND_SUPPLY_YARD                                                             :물류창고
-STR_IND_TEXTILE_MILL                                                            :방직 공장
-STR_IND_TRADING_POST                                                            :교역소
-STR_IND_TYRE_PLANT                                                              :타이어 공장
-STR_IND_VEHICLE_FACTORY                                                         :자동차 공장
-STR_IND_VINEYARD                                                                :포도원
 
 STR_STATION_ANIMALS                                                             :마시장
 STR_STATION_FARM                                                                :장원

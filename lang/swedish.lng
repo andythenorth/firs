@@ -148,6 +148,71 @@ STR_ERR_LOCATION_NOT_IN_DESERT                                                  
 STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE                                             :kan inte placeras på branta sluttningar.
 STR_ERR_LOCATION_LIMIT_1_PER_TOWN                                               :bara en industri av den här typen är tillåten per stad.
 
+STR_IND_ALUMINIUM_PLANT                                                         :Aluminiumverk
+STR_IND_ARABLE_FARM                                                             :Jordbruk
+STR_IND_BASICFARM                                                               :Bondgård
+STR_IND_BAUXITE_MINE                                                            :Bauxitgruva
+STR_IND_BIOREFINERY                                                             :Bioraffinaderi
+STR_IND_BREWERY                                                                 :Bryggeri
+STR_IND_BREWERY_CIDER_MILL                                                      :Musteri
+STR_IND_BRICK_WORKS                                                             :Tegelbruk
+STR_IND_BUILDERS_YARD                                                           :Byggföretag
+STR_IND_BULK_TERMINAL                                                           :Bulkhamn
+STR_IND_CEMENT_PLANT                                                            :Cementfabrik
+STR_IND_CHEMICAL_PLANT                                                          :Kemisk fabrik
+STR_IND_CLAY_PIT                                                                :Lertäkt
+STR_IND_COFFEE_ESTATE                                                           :Kaffeplantage
+STR_IND_COPPER_REFINERY                                                         :Kopparraffinaderi
+STR_IND_FIBRE_CROP_FARM                                                         :Växtfibergård
+STR_IND_DAIRY                                                                   :Mejeri
+STR_IND_DREDGING_SITE                                                           :Mudderverk
+STR_IND_FERTILISER_PLANT                                                        :Gödningsfabrik
+STR_IND_FISHING_GROUND                                                          :Fångstområde
+STR_IND_FISHING_HARBOUR                                                         :Fiskehamn
+STR_IND_FISHING_VILLAGE                                                         :Fiskeby
+STR_IND_FLOUR_MILL                                                              :Mjölkvarn
+STR_IND_FOOD_MARKET                                                             :Matbutik
+STR_IND_FOOD_PROCESSOR                                                          :Livsmedelstillverkningsfabrik
+STR_IND_FURNITURE_FACTORY                                                       :Möbelfabrik
+STR_IND_GENERAL_STORE                                                           :Affär
+STR_IND_GLASS_WORKS                                                             :Glasbruk
+STR_IND_HARDWARE_STORE                                                          :Byggvaruhus
+STR_IND_HOTEL                                                                   :Hotell
+STR_IND_IRON_WORKS                                                              :Järnverk
+STR_IND_JUNKYARD                                                                :Skrotupplag
+STR_IND_LIME_KILN                                                               :Kalkbruk
+STR_IND_LIQUIDS_TERMINAL                                                        :Vätsketerminal
+STR_IND_LUMBER_YARD                                                             :Brädgård
+STR_IND_MACHINE_SHOP                                                            :Maskinfabrik
+STR_IND_MANGANESE_MINE                                                          :Mangangruva
+STR_IND_METAL_FABRICATION_PLANT                                                 :Plåtverkstad
+STR_IND_METAL_FOUNDRY                                                           :Metallgjuteri
+STR_IND_MIXEDFARM                                                               :Blandjordbruk
+STR_IND_NITRATE_MINE                                                            :Nitratgruva
+STR_IND_ORCHARD_PIGGERY                                                         :Fruktträdgård och svinfarm
+STR_IND_PETROLPUMP                                                              :Bensinstation
+STR_IND_PHOSPHATE_MINE                                                          :Fosfatgruva
+STR_IND_PLASTICS_PLANT                                                          :Plastfabrik
+STR_IND_PORT                                                                    :Handelshamn
+STR_IND_PYRITE_MINE                                                             :Pyritgruva
+STR_IND_PYRITE_SMELTER                                                          :Pyritsmältverk
+STR_IND_POWER_PLANT                                                             :Kraftverk
+STR_IND_QUARRY                                                                  :Grustäkt
+STR_IND_RANCH                                                                   :Ranch
+STR_IND_RECYCLING_DEPOT                                                         :Återvinningsstation
+STR_IND_RECYCLING_PLANT                                                         :Återvinningsanläggning
+STR_IND_SHEEPFARM                                                               :Fårfarm
+STR_IND_SMITHY_FORGE                                                            :Smedja
+STR_IND_STOCKYARD                                                               :Slakteri
+STR_IND_SUGAR_PLANTATION                                                        :Sockerodling
+STR_IND_SUGAR_REFINERY                                                          :Sockerbruk
+STR_IND_SUPPLY_YARD                                                             :Materielförråd
+STR_IND_TEXTILE_MILL                                                            :Textilfabrik
+STR_IND_TRADING_POST                                                            :Handelshamn
+STR_IND_TYRE_PLANT                                                              :Däcksfabrik
+STR_IND_VEHICLE_FACTORY                                                         :Fordonsfabrik
+STR_IND_VINEYARD                                                                :Vingård
+
 STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}Lastproduktion:{}  2 t per 8 t levererad bauxit{}  2 t per 8,000l levererade kemikalier{}  4 t per 8 t levererat metallskrot{}{}Produktionen ökar om två eller flera godstyper levereras inom tre månader av varandra.
 STR_EXTRA_BIOREFINERY                                                           :{BLACK}Lastproduktion:{} 6,000l per 8t levererad spannmål{} 6,000l per 8t levererat socker
 STR_EXTRA_BREWERY                                                               :{BLACK}Varuproduktion:{} 3,000l per 8 lådor levererat produktionsmateriel{} {STRING} {STRING}{}Produktionen ökar om produktionsmateriel levereras inom tre månader av andra godstyper.
@@ -223,79 +288,11 @@ STR_FUND_FRUIT_PLANTATION                                                       
 STR_FUND_RUBBER_PLANTATION                                                      :{}{BLACK}Placering: {YELLOW}Kan inte byggas på snö eller i öknar.
 STR_FUND_VINEYARD                                                               :{}{BLACK}Placering: {YELLOW}Kan inte byggas på snö eller i öknar.
 
-
 STR_FUND_AVAILABLE_FROM                                                         :{}{BLACK}Tillgänglig från: {YELLOW}{COMMA}
-
 STR_FUND_AVAILABLE_UNTIL                                                        :{}{BLACK}Ej tillgänglig efter: {YELLOW}{COMMA}
-
 
 STR_TOWN                                                                        :{STRING}
 STR_STATION                                                                     :{STRING} {STRING}
-
-STR_IND_ALUMINIUM_PLANT                                                         :Aluminiumverk
-STR_IND_ARABLE_FARM                                                             :Jordbruk
-STR_IND_BASICFARM                                                               :Bondgård
-STR_IND_BAUXITE_MINE                                                            :Bauxitgruva
-STR_IND_BIOREFINERY                                                             :Bioraffinaderi
-STR_IND_BREWERY                                                                 :Bryggeri
-STR_IND_BREWERY_CIDER_MILL                                                      :Musteri
-STR_IND_BRICK_WORKS                                                             :Tegelbruk
-STR_IND_BUILDERS_YARD                                                           :Byggföretag
-STR_IND_BULK_TERMINAL                                                           :Bulkhamn
-STR_IND_CEMENT_PLANT                                                            :Cementfabrik
-STR_IND_CHEMICAL_PLANT                                                          :Kemisk fabrik
-STR_IND_CLAY_PIT                                                                :Lertäkt
-STR_IND_COFFEE_ESTATE                                                           :Kaffeplantage
-STR_IND_COPPER_REFINERY                                                         :Kopparraffinaderi
-STR_IND_FIBRE_CROP_FARM                                                         :Växtfibergård
-STR_IND_DAIRY                                                                   :Mejeri
-STR_IND_DREDGING_SITE                                                           :Mudderverk
-STR_IND_FERTILISER_PLANT                                                        :Gödningsfabrik
-STR_IND_FISHING_GROUND                                                          :Fångstområde
-STR_IND_FISHING_HARBOUR                                                         :Fiskehamn
-STR_IND_FISHING_VILLAGE                                                         :Fiskeby
-STR_IND_FLOUR_MILL                                                              :Mjölkvarn
-STR_IND_FOOD_MARKET                                                             :Matbutik
-STR_IND_FOOD_PROCESSOR                                                          :Livsmedelstillverkningsfabrik
-STR_IND_FURNITURE_FACTORY                                                       :Möbelfabrik
-STR_IND_GENERAL_STORE                                                           :Affär
-STR_IND_GLASS_WORKS                                                             :Glasbruk
-STR_IND_HARDWARE_STORE                                                          :Byggvaruhus
-STR_IND_HOTEL                                                                   :Hotell
-STR_IND_IRON_WORKS                                                              :Järnverk
-STR_IND_JUNKYARD                                                                :Skrotupplag
-STR_IND_LIME_KILN                                                               :Kalkbruk
-STR_IND_LIQUIDS_TERMINAL                                                        :Vätsketerminal
-STR_IND_LUMBER_YARD                                                             :Brädgård
-STR_IND_MACHINE_SHOP                                                            :Maskinfabrik
-STR_IND_MANGANESE_MINE                                                          :Mangangruva
-STR_IND_METAL_FABRICATION_PLANT                                                 :Plåtverkstad
-STR_IND_METAL_FOUNDRY                                                           :Metallgjuteri
-STR_IND_MIXEDFARM                                                               :Blandjordbruk
-STR_IND_NITRATE_MINE                                                            :Nitratgruva
-STR_IND_ORCHARD_PIGGERY                                                         :Fruktträdgård och svinfarm
-STR_IND_PETROLPUMP                                                              :Bensinstation
-STR_IND_PHOSPHATE_MINE                                                          :Fosfatgruva
-STR_IND_PLASTICS_PLANT                                                          :Plastfabrik
-STR_IND_PORT                                                                    :Handelshamn
-STR_IND_PYRITE_MINE                                                             :Pyritgruva
-STR_IND_PYRITE_SMELTER                                                          :Pyritsmältverk
-STR_IND_POWER_PLANT                                                             :Kraftverk
-STR_IND_QUARRY                                                                  :Grustäkt
-STR_IND_RANCH                                                                   :Ranch
-STR_IND_RECYCLING_DEPOT                                                         :Återvinningsstation
-STR_IND_RECYCLING_PLANT                                                         :Återvinningsanläggning
-STR_IND_SHEEPFARM                                                               :Fårfarm
-STR_IND_SMITHY_FORGE                                                            :Smedja
-STR_IND_STOCKYARD                                                               :Slakteri
-STR_IND_SUGAR_PLANTATION                                                        :Sockerodling
-STR_IND_SUGAR_REFINERY                                                          :Sockerbruk
-STR_IND_SUPPLY_YARD                                                             :Materielförråd
-STR_IND_TEXTILE_MILL                                                            :Textilfabrik
-STR_IND_TRADING_POST                                                            :Handelshamn
-STR_IND_TYRE_PLANT                                                              :Däcksfabrik
-STR_IND_VEHICLE_FACTORY                                                         :Fordonsfabrik
-STR_IND_VINEYARD                                                                :Vingård
 
 STR_STATION_ANIMALS                                                             :Hästmarknad
 STR_STATION_FARM                                                                :Herrgård

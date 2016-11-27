@@ -148,6 +148,71 @@ STR_ERR_LOCATION_NOT_IN_DESERT                                                  
 STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE                                             :不能置于陡坡
 STR_ERR_LOCATION_LIMIT_1_PER_TOWN                                               :每城镇只允许一个该类工业
 
+STR_IND_ALUMINIUM_PLANT                                                         :电解铝厂
+STR_IND_ARABLE_FARM                                                             :种植园
+STR_IND_BASICFARM                                                               :农场
+STR_IND_BAUXITE_MINE                                                            :铝土矿
+STR_IND_BIOREFINERY                                                             :生物炼制厂
+STR_IND_BREWERY                                                                 :酿酒厂
+STR_IND_BREWERY_CIDER_MILL                                                      :苹果酒厂
+STR_IND_BRICK_WORKS                                                             :砖厂
+STR_IND_BUILDERS_YARD                                                           :建筑工地
+STR_IND_BULK_TERMINAL                                                           :散装码头
+STR_IND_CEMENT_PLANT                                                            :水泥厂
+STR_IND_CHEMICAL_PLANT                                                          :化工厂
+STR_IND_CLAY_PIT                                                                :粘土矿坑
+STR_IND_COFFEE_ESTATE                                                           :咖啡种植园
+STR_IND_COPPER_REFINERY                                                         :炼铜厂
+STR_IND_FIBRE_CROP_FARM                                                         :纤维作物种植场
+STR_IND_DAIRY                                                                   :乳品厂
+STR_IND_DREDGING_SITE                                                           :疏浚区
+STR_IND_FERTILISER_PLANT                                                        :化肥厂
+STR_IND_FISHING_GROUND                                                          :渔场
+STR_IND_FISHING_HARBOUR                                                         :渔港
+STR_IND_FISHING_VILLAGE                                                         :渔村
+STR_IND_FLOUR_MILL                                                              :磨坊
+STR_IND_FOOD_MARKET                                                             :杂货店
+STR_IND_FOOD_PROCESSOR                                                          :食品加工厂
+STR_IND_FURNITURE_FACTORY                                                       :家具厂
+STR_IND_GENERAL_STORE                                                           :综合商店
+STR_IND_GLASS_WORKS                                                             :玻璃制品厂
+STR_IND_HARDWARE_STORE                                                          :五金工具店
+STR_IND_HOTEL                                                                   :旅店
+STR_IND_IRON_WORKS                                                              :炼铁厂
+STR_IND_JUNKYARD                                                                :废料场
+STR_IND_LIME_KILN                                                               :石灰窑
+STR_IND_LIQUIDS_TERMINAL                                                        :油品码头
+STR_IND_LUMBER_YARD                                                             :木材加工厂
+STR_IND_MACHINE_SHOP                                                            :机械厂
+STR_IND_MANGANESE_MINE                                                          :锰矿
+STR_IND_METAL_FABRICATION_PLANT                                                 :金属加工厂
+STR_IND_METAL_FOUNDRY                                                           :金工工坊
+STR_IND_MIXEDFARM                                                               :综合农场
+STR_IND_NITRATE_MINE                                                            :硝酸盐矿山
+STR_IND_ORCHARD_PIGGERY                                                         :生态农场
+STR_IND_PETROLPUMP                                                              :加油站
+STR_IND_PHOSPHATE_MINE                                                          :磷矿山
+STR_IND_PLASTICS_PLANT                                                          :塑料厂
+STR_IND_PORT                                                                    :港口
+STR_IND_PYRITE_MINE                                                             :黄铁矿山
+STR_IND_PYRITE_SMELTER                                                          :黄铁矿冶炼厂
+STR_IND_POWER_PLANT                                                             :发电厂
+STR_IND_QUARRY                                                                  :采石场
+STR_IND_RANCH                                                                   :大牧场
+STR_IND_RECYCLING_DEPOT                                                         :回收站
+STR_IND_RECYCLING_PLANT                                                         :回收厂
+STR_IND_SHEEPFARM                                                               :牧羊场
+STR_IND_SMITHY_FORGE                                                            :铁匠铺
+STR_IND_STOCKYARD                                                               :肉联厂
+STR_IND_SUGAR_PLANTATION                                                        :糖料种植园
+STR_IND_SUGAR_REFINERY                                                          :制糖厂
+STR_IND_SUPPLY_YARD                                                             :供货场
+STR_IND_TEXTILE_MILL                                                            :纺织厂
+STR_IND_TRADING_POST                                                            :贸易站
+STR_IND_TYRE_PLANT                                                              :轮胎工厂
+STR_IND_VEHICLE_FACTORY                                                         :车辆厂
+STR_IND_VINEYARD                                                                :葡萄园
+
 STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}货物生产率:{}  每8吨铝土矿生产2吨{}  每8,000升化工品生产2吨{}  每8吨废金属生产4吨{}{}如果3个月内交付两种或者以上货物，则产量上升。
 STR_EXTRA_BIOREFINERY                                                           :{BLACK}货物生产率:{}  每8吨谷物生产6,000升{}  每8吨糖生产6,000升
 STR_EXTRA_BREWERY                                                               :{BLACK}货物生产率:{}  每8箱工业物资生产3,000升{} {STRING} {STRING}{}如果3个月内同时交付了工业物资和其他货物，则产量上升。
@@ -223,79 +288,11 @@ STR_FUND_FRUIT_PLANTATION                                                       
 STR_FUND_RUBBER_PLANTATION                                                      :{}{BLACK}位置: {YELLOW}不得修建于雪地或者沙漠。
 STR_FUND_VINEYARD                                                               :{}{BLACK}位置: {YELLOW}不得修建于雪地或者沙漠。.
 
-
 STR_FUND_AVAILABLE_FROM                                                         :{}{BLACK}起始于: {YELLOW}{COMMA}
-
 STR_FUND_AVAILABLE_UNTIL                                                        :{}{BLACK}终结于: {YELLOW}{COMMA}
-
 
 STR_TOWN                                                                        :{STRING}
 STR_STATION                                                                     :{STRING} {STRING}
-
-STR_IND_ALUMINIUM_PLANT                                                         :电解铝厂
-STR_IND_ARABLE_FARM                                                             :种植园
-STR_IND_BASICFARM                                                               :农场
-STR_IND_BAUXITE_MINE                                                            :铝土矿
-STR_IND_BIOREFINERY                                                             :生物炼制厂
-STR_IND_BREWERY                                                                 :酿酒厂
-STR_IND_BREWERY_CIDER_MILL                                                      :苹果酒厂
-STR_IND_BRICK_WORKS                                                             :砖厂
-STR_IND_BUILDERS_YARD                                                           :建筑工地
-STR_IND_BULK_TERMINAL                                                           :散装码头
-STR_IND_CEMENT_PLANT                                                            :水泥厂
-STR_IND_CHEMICAL_PLANT                                                          :化工厂
-STR_IND_CLAY_PIT                                                                :粘土矿坑
-STR_IND_COFFEE_ESTATE                                                           :咖啡种植园
-STR_IND_COPPER_REFINERY                                                         :炼铜厂
-STR_IND_FIBRE_CROP_FARM                                                         :纤维作物种植场
-STR_IND_DAIRY                                                                   :乳品厂
-STR_IND_DREDGING_SITE                                                           :疏浚区
-STR_IND_FERTILISER_PLANT                                                        :化肥厂
-STR_IND_FISHING_GROUND                                                          :渔场
-STR_IND_FISHING_HARBOUR                                                         :渔港
-STR_IND_FISHING_VILLAGE                                                         :渔村
-STR_IND_FLOUR_MILL                                                              :磨坊
-STR_IND_FOOD_MARKET                                                             :杂货店
-STR_IND_FOOD_PROCESSOR                                                          :食品加工厂
-STR_IND_FURNITURE_FACTORY                                                       :家具厂
-STR_IND_GENERAL_STORE                                                           :综合商店
-STR_IND_GLASS_WORKS                                                             :玻璃制品厂
-STR_IND_HARDWARE_STORE                                                          :五金工具店
-STR_IND_HOTEL                                                                   :旅店
-STR_IND_IRON_WORKS                                                              :炼铁厂
-STR_IND_JUNKYARD                                                                :废料场
-STR_IND_LIME_KILN                                                               :石灰窑
-STR_IND_LIQUIDS_TERMINAL                                                        :油品码头
-STR_IND_LUMBER_YARD                                                             :木材加工厂
-STR_IND_MACHINE_SHOP                                                            :机械厂
-STR_IND_MANGANESE_MINE                                                          :锰矿
-STR_IND_METAL_FABRICATION_PLANT                                                 :金属加工厂
-STR_IND_METAL_FOUNDRY                                                           :金工工坊
-STR_IND_MIXEDFARM                                                               :综合农场
-STR_IND_NITRATE_MINE                                                            :硝酸盐矿山
-STR_IND_ORCHARD_PIGGERY                                                         :生态农场
-STR_IND_PETROLPUMP                                                              :加油站
-STR_IND_PHOSPHATE_MINE                                                          :磷矿山
-STR_IND_PLASTICS_PLANT                                                          :塑料厂
-STR_IND_PORT                                                                    :港口
-STR_IND_PYRITE_MINE                                                             :黄铁矿山
-STR_IND_PYRITE_SMELTER                                                          :黄铁矿冶炼厂
-STR_IND_POWER_PLANT                                                             :发电厂
-STR_IND_QUARRY                                                                  :采石场
-STR_IND_RANCH                                                                   :大牧场
-STR_IND_RECYCLING_DEPOT                                                         :回收站
-STR_IND_RECYCLING_PLANT                                                         :回收厂
-STR_IND_SHEEPFARM                                                               :牧羊场
-STR_IND_SMITHY_FORGE                                                            :铁匠铺
-STR_IND_STOCKYARD                                                               :肉联厂
-STR_IND_SUGAR_PLANTATION                                                        :糖料种植园
-STR_IND_SUGAR_REFINERY                                                          :制糖厂
-STR_IND_SUPPLY_YARD                                                             :供货场
-STR_IND_TEXTILE_MILL                                                            :纺织厂
-STR_IND_TRADING_POST                                                            :贸易站
-STR_IND_TYRE_PLANT                                                              :轮胎工厂
-STR_IND_VEHICLE_FACTORY                                                         :车辆厂
-STR_IND_VINEYARD                                                                :葡萄园
 
 STR_STATION_ANIMALS                                                             :马市
 STR_STATION_FARM                                                                :庄园

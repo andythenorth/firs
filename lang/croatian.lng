@@ -42,6 +42,7 @@ STR_CARGO_NAME_CASSAVA                                                          
 STR_CARGO_NAME_CHEMICALS                                                        :Kemikalije
 STR_CARGO_NAME_CLAY                                                             :Glina
 STR_CARGO_NAME_COFFEE                                                           :Kava
+STR_CARGO_NAME_COKE                                                             :Koks
 STR_CARGO_NAME_COPPER                                                           :Bakar
 STR_CARGO_NAME_EDIBLE_OIL                                                       :Jestivo ulje
 STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :Inžinjerske potrepštine
@@ -51,6 +52,7 @@ STR_CARGO_NAME_FISH                                                             
 STR_CARGO_NAME_FARM_SUPPLIES                                                    :Poljoprivredne potrepštine
 STR_CARGO_NAME_FERTILISER                                                       :Gnojivo
 STR_CARGO_NAME_FRUITS                                                           :Voće
+STR_CARGO_NAME_QUICKLIME                                                        :Živo vapno
 STR_CARGO_NAME_LUMBER                                                           :Drvo
 STR_CARGO_NAME_METAL                                                            :Metal
 STR_CARGO_NAME_MILK                                                             :Mlijeko
@@ -61,11 +63,13 @@ STR_CARGO_NAME_NITRATES                                                         
 STR_CARGO_NAME_NUTS                                                             :Orasi
 STR_CARGO_NAME_PETROL                                                           :Benzin
 STR_CARGO_NAME_PHOSPHATE                                                        :Fosfati
+STR_CARGO_NAME_PIG_IRON                                                         :Sirovo željezo
 STR_CARGO_NAME_POTASH                                                           :Potaša
 STR_CARGO_NAME_PYRITE_ORE                                                       :Pirit
 STR_CARGO_NAME_RECYCLABLES                                                      :Reciklažni materijal
 STR_CARGO_NAME_SAND                                                             :Pijesak
 STR_CARGO_NAME_SCRAP_METAL                                                      :Otpadni metal
+STR_CARGO_NAME_STEEL                                                            :Čelik
 STR_CARGO_NAME_STONE                                                            :Kamen
 STR_CARGO_NAME_SUGAR_BEET                                                       :Šećerna repa
 STR_CARGO_NAME_SUGARCANE                                                        :Šećerna trska
@@ -82,6 +86,7 @@ STR_CARGO_UNIT_BUILDING_MATERIALS                                               
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} kemikalija
 STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} gline
 STR_CARGO_UNIT_COFFEE                                                           :{SIGNED_WORD} vreć{P a e e} kave
+STR_CARGO_UNIT_COKE                                                             :{WEIGHT} koksa
 STR_CARGO_UNIT_COPPER                                                           :{WEIGHT} bakra
 STR_CARGO_UNIT_EDIBLE_OIL                                                       :{VOLUME} jestivog ulja
 STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} kutij{P 0 a e e} inžinjerskih potrepština
@@ -101,11 +106,14 @@ STR_CARGO_UNIT_NUTS                                                             
 STR_CARGO_UNIT_MNSP                                                             :{SIGNED_WORD} kutij{P 0 a e e} proizvodnih potrepština
 STR_CARGO_UNIT_PETROL                                                           :{VOLUME} benzina
 STR_CARGO_UNIT_PHOSPHATE                                                        :{WEIGHT} fosfata
+STR_CARGO_UNIT_PIG_IRON                                                         :{WEIGHT} sirovog željeza
 STR_CARGO_UNIT_POTASH                                                           :{WEIGHT} potaša
 STR_CARGO_UNIT_PYRITE_ORE                                                       :{WEIGHT} pirita
+STR_CARGO_UNIT_QUICKLIME                                                        :{WEIGHT} živog vapna
 STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} reciklažnog materijala
 STR_CARGO_UNIT_SAND                                                             :{WEIGHT} pijeska
 STR_CARGO_UNIT_SCRAP_METAL                                                      :{WEIGHT} otpadnog metala
+STR_CARGO_UNIT_STEEL                                                            :{WEIGHT} čelika
 STR_CARGO_UNIT_STONE                                                            :{WEIGHT} kamena
 STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} šećerne repe
 STR_CARGO_UNIT_SUGARCANE                                                        :{WEIGHT} šećerne trske
@@ -122,6 +130,7 @@ STR_CID_CASSAVA                                                                 
 STR_CID_CHEMICALS                                                               :{TINYFONT}CH
 STR_CID_CLAY                                                                    :{TINYFONT}CL
 STR_CID_COFFEE                                                                  :{TINYFONT}CF
+STR_CID_COKE                                                                    :{TINYFONT}KK
 STR_CID_COPPER                                                                  :{TINYFONT}CR
 STR_CID_EDIBLE_OIL                                                              :{TINYFONT}EO
 STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}ES
@@ -139,12 +148,15 @@ STR_CID_NICKEL                                                                  
 STR_CID_NITRATES                                                                :{TINYFONT}NI
 STR_CID_NUTS                                                                    :{TINYFONT}NT
 STR_CID_PETROL                                                                  :{TINYFONT}PT
+STR_CID_PIG_IRON                                                                :{TINYFONT}SŽ
 STR_CID_PHOSPHATE                                                               :{TINYFONT}PH
 STR_CID_POTASH                                                                  :{TINYFONT}PA
 STR_CID_PYRITE_ORE                                                              :{TINYFONT}PY
+STR_CID_QUICKLIME                                                               :{TINYFONT}ŽV
 STR_CID_RECYCLABLES                                                             :{TINYFONT}RC
 STR_CID_SAND                                                                    :{TINYFONT}SA
 STR_CID_SCRAP_METAL                                                             :{TINYFONT}SM
+STR_CID_STEEL                                                                   :{TINYFONT}ČE
 STR_CID_STONE                                                                   :{TINYFONT}ST
 STR_CID_SUGAR_BEET                                                              :{TINYFONT}SB
 STR_CID_SUGARCANE                                                               :{TINYFONT}SC
@@ -166,7 +178,81 @@ STR_ERR_LOCATION_NOT_IN_DESERT                                                  
 STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE                                             :ne može biti smješteno na nagibima.
 STR_ERR_LOCATION_LIMIT_1_PER_TOWN                                               :dozvoljena je samo jedna industrija ovog tipa po gradu.
 
+STR_IND_ALUMINIUM_PLANT                                                         :Ljevaonica aluminija
+STR_IND_ARABLE_FARM                                                             :Obradiva farma
+STR_IND_BASICFARM                                                               :Farma
+STR_IND_BASIC_OXYGEN_FURNACE                                                    :Oksidacijska peć
+STR_IND_BAUXITE_MINE                                                            :Rudnik boksita
+STR_IND_BIOREFINERY                                                             :Biorafinerija
+STR_IND_BLAST_FURNACE                                                           :Visoka peć
+STR_IND_BREWERY                                                                 :Pivovara
+STR_IND_BREWERY_CIDER_MILL                                                      :Mlin za jabukovaču
+STR_IND_BRICK_WORKS                                                             :Ciglana
+STR_IND_BUILDERS_YARD                                                           :Građevinsko dvorište
+STR_IND_BULK_TERMINAL                                                           :Terminal za rasuti teret
+STR_IND_CEMENT_PLANT                                                            :Cementara
+STR_IND_CHEMICAL_PLANT                                                          :Kemijsko postrojenje
+STR_IND_CLAY_PIT                                                                :Kop gline
+STR_IND_COFFEE_ESTATE                                                           :Plantaža kave
+STR_IND_COKE_OVEN                                                               :Koksna peć
+STR_IND_COPPER_REFINERY                                                         :Rafinerija bakra
+STR_IND_FIBRE_CROP_FARM                                                         :Farma vlaknastih usjeva
+STR_IND_DAIRY                                                                   :Mljekara
+STR_IND_DAIRY_FARM                                                              :Mliječna farma
+STR_IND_DREDGING_SITE                                                           :Jaružalište
+STR_IND_ELECTRIC_ARC_FURNACE                                                    :Elektrolučna peć
+STR_IND_FERTILISER_PLANT                                                        :Tvornica gnojiva
+STR_IND_FERTILISER_AND_EXPLOSIVES_PLANT                                         :Tvornica gnojiva i eksploziva
+STR_IND_FISHING_GROUND                                                          :Ribarsko polje
+STR_IND_FISHING_HARBOUR                                                         :Ribarska luka
+STR_IND_FISHING_VILLAGE                                                         :Ribarsko naselje
+STR_IND_FLOUR_MILL                                                              :Mlin za brašno
+STR_IND_FOOD_MARKET                                                             :Prehrambena tržnica
+STR_IND_FOOD_PROCESSOR                                                          :Tvornica za preradu hrane
+STR_IND_FURNITURE_FACTORY                                                       :Tvornica namještaja
+STR_IND_GENERAL_STORE                                                           :Trgovina općom robom
+STR_IND_GLASS_WORKS                                                             :Staklarna
+STR_IND_HARDWARE_STORE                                                          :Trgovina opremom
+STR_IND_HOTEL                                                                   :Hotel
+STR_IND_IRON_WORKS                                                              :Željezara
+STR_IND_JUNKYARD                                                                :Odlagalište otpada
+STR_IND_LIME_KILN                                                               :Vapnara
+STR_IND_LIQUIDS_TERMINAL                                                        :Terminal za tekuće terete
+STR_IND_LUMBER_YARD                                                             :Pilana
+STR_IND_MACHINE_SHOP                                                            :Trgovina strojevima
+STR_IND_MANGANESE_MINE                                                          :Rudnik mangana
+STR_IND_METAL_FABRICATION_PLANT                                                 :Postrojenje za izradu metala
+STR_IND_METAL_FOUNDRY                                                           :Ljevaonica metala
+STR_IND_MIXEDFARM                                                               :Miješana farma
+STR_IND_NITRATE_MINE                                                            :Rudnik nitrata
+STR_IND_ORCHARD_PIGGERY                                                         :Voćnjak i svinjac
+STR_IND_PETROLPUMP                                                              :Benzinska pumpa
+STR_IND_PHOSPHATE_MINE                                                          :Rudnik fosfata
+STR_IND_PLASTICS_PLANT                                                          :Tvornica plastike
+STR_IND_PORT                                                                    :Luka
+STR_IND_POTASH_MINE                                                             :Rudnik potaše
+STR_IND_PYRITE_MINE                                                             :Rudnik pirita
+STR_IND_PYRITE_SMELTER                                                          :Talionica pirita
+STR_IND_POWER_PLANT                                                             :Elektrana
+STR_IND_QUARRY                                                                  :Kamenolom
+STR_IND_RANCH                                                                   :Ranč
+STR_IND_RECYCLING_DEPOT                                                         :Reciklažno dvorište
+STR_IND_RECYCLING_PLANT                                                         :Reciklažna tvornica
+STR_IND_REINDEER_FARM                                                           :Farma sobova
+STR_IND_SHEEPFARM                                                               :Ovčja farma
+STR_IND_SMITHY_FORGE                                                            :Kovačnica
+STR_IND_STOCKYARD                                                               :Stočno dvorište
+STR_IND_SUGAR_PLANTATION                                                        :Plantaža šećera
+STR_IND_SUGAR_REFINERY                                                          :Šećerana
+STR_IND_SUPPLY_YARD                                                             :Dostavno skladište
+STR_IND_TEXTILE_MILL                                                            :Tvornica tekstila
+STR_IND_TRADING_POST                                                            :Trgovačka kuća
+STR_IND_TYRE_PLANT                                                              :Tvornica guma
+STR_IND_VEHICLE_FACTORY                                                         :Tvornica vozila
+STR_IND_VINEYARD                                                                :Vinograd
+
 STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}Proizvodnja tereta:{} 2t od 8t dostavljenog boksita{} 2t od 8,000l dostavljenih kemikalija{} 4t od 8t dostavljenog otpadnog metala{}{}Proizvodnja se povećava ako su dva ili više tereta dostavljena unutar 3 mjeseca jedan od drugog.
+STR_EXTRA_BASIC_OXYGEN_FURNACE                                                  :!!! TREBA DODATNI TEKST
 STR_EXTRA_BIOREFINERY                                                           :{BLACK}Prerađuje žito i šecer u benzin i kemikalije.{}{}6t proizvedeno od 8t dostavljenog.
 STR_EXTRA_BREWERY                                                               :{BLACK}Proizvodnja tereta:{} 3,000l od 8 dostavljenih kutija proizvodnih potrepština{} {STRING} {STRING}{}Proizvodnja se povećava ako su proizvodne potrepštine dostavljene unutar 3 mjeseca od dostave drugih tereta.
 STR_EXTRA_BREWERY_FRUIT_SUBSTR                                                  :5,000l od 8t dostavljenog voća{}
@@ -177,8 +263,10 @@ STR_EXTRA_CEMENT_PLANT                                                          
 STR_EXTRA_CEMENT_PLANT_COAL_SUBSTR                                              :2t od 8t dostavljenog ugljena{}
 STR_EXTRA_CEMENT_PLANT_PETROL_SUBSTR                                            :2t od 8,000l dostavljenog benzina{}
 STR_EXTRA_CHEMICAL_PLANT                                                        :{BLACK}Proizvodnja tereta:{} 6,000l od 8,000l dostavljene nafte{} 6,000l od 8t dostavljenih nitrata
+STR_EXTRA_COKE_OVEN                                                             :{BLACK}Proizvodnja tereta:{} 2t od 8t dostavljenog ugljena{} 2t od 8t dostavljenog pijeska{} 4t od 8t dostavljene gline{}{}Proizvodnja se povećava ako su dva ili više tereta dostavljena unutar 3 mjeseca jedan od drugog.
 STR_EXTRA_COPPER_REFINERY                                                       :{BLACK}Proizvodnja tereta:{}  5t od 8t dostavljenog bakra{}  3t od 8,000l dostavljenih kemikalija{}{}Proizvodnja se povećava ako su dva ili više tereta dostavljena unutar 3 mjeseca jedan od drugog.
 STR_EXTRA_DAIRY                                                                 :{BLACK}Proizvodnja tereta:{}  3t od 8t dostavljenih proizvodnih potrepština{}  5t od 8t dostavljenog mlijeka{}{}Povećanje na 8t od 8t ako oba tereta budu dostavljena unutar 3 mjeseca jedan od drugog.
+STR_EXTRA_ELECTRIC_ARC_FURNACE                                                  :{BLACK}Proizvodnja tereta:{} 3 kutije od 8 kutija dostavljenih proizvodnih potrepština{} 5 kutija od 8t dostavljenog drva{}{}Proizvodnja se povećava ako su oba tereta dostavljena unutar 3 mjeseca jedan od drugog.
 STR_EXTRA_FERTILIZER_PLANT                                                      :{BLACK}Proizvodnja tereta:{}  8 kutija od 8,000l dostavljenih kemikalija
 STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Proizvodnja tereta:{} 3t od 8 kutija dostavljenih proizvodnih potrepština{} 5t od 8t dostavljene ribe{}{}Proizvodnja se povećava ako su oba tereta dostavljena unutar 3 mjeseca jedan od drugog.
 STR_EXTRA_FLOUR_MILL                                                            :{BLACK}Proizvodnja tereta:{} 3t od 8t dostavljenih proizvodnih potrepština{} {STRING} {STRING}{}Proizvodnja se povećava ako su proizvodne potrepštine dostavljena unutar 3 mjeseca od drugih tereta.
@@ -238,87 +326,14 @@ STR_FUND_SUGAR_PLANTATION                                                       
 STR_FUND_FIBRE_CROP_FARM                                                        :{}{BLACK}Lokacija: {YELLOW}Ne može biti financirano na snijegu ili u pustinjama.
 STR_FUND_FOREST                                                                 :{}{BLACK}Lokacija: {YELLOW}Ne može se financirati u pustinji.
 STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}Lokacija: {YELLOW}Ne može se financirati na snijegu.
-STR_FUND_REINDEER_FARM                                                          :{}{BLACK}Lokacija: {YELLOW}Ne može biti financirano u pustinjama.
 STR_FUND_RUBBER_PLANTATION                                                      :{}{BLACK}Lokacija: {YELLOW}Ne može biti financirano na snijegu ili u pustinjama.
 STR_FUND_VINEYARD                                                               :{}{BLACK}Lokacija: {YELLOW}Ne može biti financirano na snijegu ili u pustinjama.
 
-
 STR_FUND_AVAILABLE_FROM                                                         :{}{BLACK}Dostupno od: {YELLOW}{COMMA}
-
 STR_FUND_AVAILABLE_UNTIL                                                        :{}{BLACK}Nije dostupno nakon: {YELLOW}{COMMA}
-
 
 STR_TOWN                                                                        :{STRING}
 STR_STATION                                                                     :{STRING} {STRING}
-
-STR_IND_ALUMINIUM_PLANT                                                         :Ljevaonica aluminija
-STR_IND_ARABLE_FARM                                                             :Obradiva farma
-STR_IND_BASICFARM                                                               :Farma
-STR_IND_BAUXITE_MINE                                                            :Rudnik boksita
-STR_IND_BIOREFINERY                                                             :Biorafinerija
-STR_IND_BREWERY                                                                 :Pivovara
-STR_IND_BREWERY_CIDER_MILL                                                      :Mlin za jabukovaču
-STR_IND_BRICK_WORKS                                                             :Ciglana
-STR_IND_BUILDERS_YARD                                                           :Građevinsko dvorište
-STR_IND_BULK_TERMINAL                                                           :Terminal za rasuti teret
-STR_IND_CEMENT_PLANT                                                            :Cementara
-STR_IND_CHEMICAL_PLANT                                                          :Kemijsko postrojenje
-STR_IND_CLAY_PIT                                                                :Kop gline
-STR_IND_COFFEE_ESTATE                                                           :Plantaža kave
-STR_IND_COPPER_REFINERY                                                         :Rafinerija bakra
-STR_IND_FIBRE_CROP_FARM                                                         :Farma vlaknastih usjeva
-STR_IND_DAIRY                                                                   :Mljekara
-STR_IND_DAIRY_FARM                                                              :Mliječna farma
-STR_IND_DREDGING_SITE                                                           :Jaružalište
-STR_IND_FERTILISER_PLANT                                                        :Tvornica gnojiva
-STR_IND_FERTILISER_AND_EXPLOSIVES_PLANT                                         :Tvornica gnojiva i eksploziva
-STR_IND_FISHING_GROUND                                                          :Ribarsko polje
-STR_IND_FISHING_HARBOUR                                                         :Ribarska luka
-STR_IND_FISHING_VILLAGE                                                         :Ribarsko naselje
-STR_IND_FLOUR_MILL                                                              :Mlin za brašno
-STR_IND_FOOD_MARKET                                                             :Prehrambena tržnica
-STR_IND_FOOD_PROCESSOR                                                          :Tvornica za preradu hrane
-STR_IND_FURNITURE_FACTORY                                                       :Tvornica namještaja
-STR_IND_GENERAL_STORE                                                           :Trgovina općom robom
-STR_IND_GLASS_WORKS                                                             :Staklarna
-STR_IND_HARDWARE_STORE                                                          :Trgovina opremom
-STR_IND_HOTEL                                                                   :Hotel
-STR_IND_IRON_WORKS                                                              :Željezara
-STR_IND_JUNKYARD                                                                :Odlagalište otpada
-STR_IND_LIME_KILN                                                               :Vapnara
-STR_IND_LIQUIDS_TERMINAL                                                        :Terminal za tekuće terete
-STR_IND_LUMBER_YARD                                                             :Pilana
-STR_IND_MACHINE_SHOP                                                            :Trgovina strojevima
-STR_IND_MANGANESE_MINE                                                          :Rudnik mangana
-STR_IND_METAL_FABRICATION_PLANT                                                 :Postrojenje za izradu metala
-STR_IND_METAL_FOUNDRY                                                           :Ljevaonica metala
-STR_IND_MIXEDFARM                                                               :Miješana farma
-STR_IND_NITRATE_MINE                                                            :Rudnik nitrata
-STR_IND_ORCHARD_PIGGERY                                                         :Voćnjak i svinjac
-STR_IND_PETROLPUMP                                                              :Benzinska pumpa
-STR_IND_PHOSPHATE_MINE                                                          :Rudnik fosfata
-STR_IND_PLASTICS_PLANT                                                          :Tvornica plastike
-STR_IND_PORT                                                                    :Luka
-STR_IND_POTASH_MINE                                                             :Rudnik potaše
-STR_IND_PYRITE_MINE                                                             :Rudnik pirita
-STR_IND_PYRITE_SMELTER                                                          :Talionica pirita
-STR_IND_POWER_PLANT                                                             :Elektrana
-STR_IND_QUARRY                                                                  :Kamenolom
-STR_IND_RANCH                                                                   :Ranč
-STR_IND_RECYCLING_DEPOT                                                         :Reciklažno dvorište
-STR_IND_RECYCLING_PLANT                                                         :Reciklažna tvornica
-STR_IND_REINDEER_FARM                                                           :Farma sobova
-STR_IND_SHEEPFARM                                                               :Ovčja farma
-STR_IND_SMITHY_FORGE                                                            :Kovačnica
-STR_IND_STOCKYARD                                                               :Stočno dvorište
-STR_IND_SUGAR_PLANTATION                                                        :Plantaža šećera
-STR_IND_SUGAR_REFINERY                                                          :Šećerana
-STR_IND_SUPPLY_YARD                                                             :Dostavno skladište
-STR_IND_TEXTILE_MILL                                                            :Tvornica tekstila
-STR_IND_TRADING_POST                                                            :Trgovačka kuća
-STR_IND_TYRE_PLANT                                                              :Tvornica guma
-STR_IND_VEHICLE_FACTORY                                                         :Tvornica vozila
-STR_IND_VINEYARD                                                                :Vinograd
 
 STR_STATION_ANIMALS                                                             :Tržnica konja
 STR_STATION_FARM                                                                :Imanje

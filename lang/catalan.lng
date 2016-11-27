@@ -118,6 +118,60 @@ STR_ERR_LOCATION_NOT_IN_DESERT                                                  
 STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE                                             :no es pot situar en terreny inclinat.
 STR_ERR_LOCATION_LIMIT_1_PER_TOWN                                               :només es permet una indústria d'aquest tipus a cada població.
 
+STR_IND_ALUMINIUM_PLANT                                                         :{G=Femenin}Planta d'alumini
+STR_IND_ARABLE_FARM                                                             :{G=Femenin}Granja de conreu
+STR_IND_BASICFARM                                                               :{G=Femenin}Granja
+STR_IND_BAUXITE_MINE                                                            :{G=Femenin}Mina de bauxita
+STR_IND_BIOREFINERY                                                             :{G=Femenin}Biorefineria
+STR_IND_BREWERY                                                                 :{G=Femenin}Cerveseria
+STR_IND_BREWERY_CIDER_MILL                                                      :Molí de sidra
+STR_IND_BRICK_WORKS                                                             :{G=Femenin}Fàbrica de maons
+STR_IND_BUILDERS_YARD                                                           :{G=Femenin}Constructora
+STR_IND_BULK_TERMINAL                                                           :Terminal de mercaderies voluminoses
+STR_IND_CEMENT_PLANT                                                            :{G=Femenin}Fàbrica de ciment
+STR_IND_CHEMICAL_PLANT                                                          :{G=Femenin}Planta química
+STR_IND_CLAY_PIT                                                                :{G=Femenin}Argilera
+STR_IND_COFFEE_ESTATE                                                           :Hisenda de cafè
+STR_IND_FIBRE_CROP_FARM                                                         :Granja de cultius de fibres vegetals
+STR_IND_DAIRY                                                                   :{G=Femenin}Indústria làctia
+STR_IND_DREDGING_SITE                                                           :{G=Femenin}Zona de dragatge
+STR_IND_FERTILISER_PLANT                                                        :{G=Femenin}Fàbrica de fertilitzant
+STR_IND_FISHING_GROUND                                                          :{G=Masculin}Calador de pesca
+STR_IND_FISHING_HARBOUR                                                         :{G=Masculin}Port pesquer
+STR_IND_FOOD_MARKET                                                             :{G=Masculin}Mercat
+STR_IND_FOOD_PROCESSOR                                                          :{G=Femenin}Planta de processament d'aliments
+STR_IND_FURNITURE_FACTORY                                                       :{G=Femenin}Fàbrica de mobles
+STR_IND_GENERAL_STORE                                                           :Petit comerç
+STR_IND_GLASS_WORKS                                                             :{G=Femenin}Vidrieria
+STR_IND_HARDWARE_STORE                                                          :{G=Femenin}Ferreteria
+STR_IND_HOTEL                                                                   :{G=Masculin}Hotel
+STR_IND_IRON_WORKS                                                              :{G=Femenin}Farga
+STR_IND_JUNKYARD                                                                :{G=Masculin}Desballestador
+STR_IND_LIME_KILN                                                               :{G=Masculin}Forn de calç
+STR_IND_LUMBER_YARD                                                             :{G=Femenin}Fusteria
+STR_IND_MACHINE_SHOP                                                            :{G=Femenin}Fàbrica de maquinària
+STR_IND_METAL_FABRICATION_PLANT                                                 :{G=Femenin}Indústria metal·lúrgica
+STR_IND_METAL_FOUNDRY                                                           :{G=Femenin}Foneria
+STR_IND_MIXEDFARM                                                               :{G=Femenin}Granja mixta
+STR_IND_NITRATE_MINE                                                            :{G=Femenin}Mina de nitrats
+STR_IND_ORCHARD_PIGGERY                                                         :Arbres fruiters i granja de porcs
+STR_IND_PETROLPUMP                                                              :{G=Femenin}Gasolinera
+STR_IND_PLASTICS_PLANT                                                          :{G=Femenin}Fàbrica de plàstics
+STR_IND_PORT                                                                    :{G=Masculin}Port
+STR_IND_POWER_PLANT                                                             :{G=Femenin}Central elèctrica
+STR_IND_QUARRY                                                                  :{G=Femenin}Pedrera
+STR_IND_RANCH                                                                   :Ranxo
+STR_IND_RECYCLING_DEPOT                                                         :{G=Femenin}Deixalleria
+STR_IND_RECYCLING_PLANT                                                         :{G=Femenin}Planta de reciclatge
+STR_IND_SHEEPFARM                                                               :{G=Femenin}Granja ovina
+STR_IND_SMITHY_FORGE                                                            :{G=Femenin}Ferreria
+STR_IND_STOCKYARD                                                               :{G=Masculin}Escorxador
+STR_IND_SUGAR_PLANTATION                                                        :{G=Femenin}Plantació de sucre
+STR_IND_SUGAR_REFINERY                                                          :{G=Femenin}Sucreria
+STR_IND_TEXTILE_MILL                                                            :{G=Femenin}Fàbrica tèxtil
+STR_IND_TRADING_POST                                                            :Botiga de queviures
+STR_IND_VEHICLE_FACTORY                                                         :Fàbrica de vehicles
+
 STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}Producció:{} 2 t per cada 8 t de bauxita{}  2 t per cada 8.000 L de productes químics{}  4 t per cada 8 t de ferralla{}{}La producció augmenta si es reben dues o més càrregues en intervals menors a tres mesos.
 STR_EXTRA_BIOREFINERY                                                           :{BLACK}Producció:{} 6.000 L per cada 8 t de gra{}  6.000 L per cada 8 t de sucre o remolatxa
 STR_EXTRA_BREWERY                                                               :{BLACK}Producció:{} 3.000 L per cada 8 caixes de subministraments{} {STRING} {STRING}{}La producció augmenta si es reben caixes de subministraments en intervals menors a tres mesos.
@@ -178,68 +232,11 @@ STR_FUND_FOREST                                                                 
 STR_FUND_FRUIT_PLANTATION                                                       :{}{BLACK}Localització: {YELLOW}No es pot situar a la neu.
 STR_FUND_RUBBER_PLANTATION                                                      :{}{BLACK}Ubicació: {YELLOW}No es pot fundar en terreny nevat ni en deserts.
 
-
 STR_FUND_AVAILABLE_FROM                                                         :{}{BLACK}Disponible des de: {YELLOW}{COMMA}
-
 STR_FUND_AVAILABLE_UNTIL                                                        :{}{BLACK}No disponible després de: {YELLOW}{COMMA}
-
 
 STR_TOWN                                                                        :{STRING}
 STR_STATION                                                                     :{STRING} {STRING}
-
-STR_IND_ALUMINIUM_PLANT                                                         :{G=Femenin}Planta d'alumini
-STR_IND_ARABLE_FARM                                                             :{G=Femenin}Granja de conreu
-STR_IND_BASICFARM                                                               :{G=Femenin}Granja
-STR_IND_BAUXITE_MINE                                                            :{G=Femenin}Mina de bauxita
-STR_IND_BIOREFINERY                                                             :{G=Femenin}Biorefineria
-STR_IND_BREWERY                                                                 :{G=Femenin}Cerveseria
-STR_IND_BREWERY_CIDER_MILL                                                      :Molí de sidra
-STR_IND_BRICK_WORKS                                                             :{G=Femenin}Fàbrica de maons
-STR_IND_BUILDERS_YARD                                                           :{G=Femenin}Constructora
-STR_IND_BULK_TERMINAL                                                           :Terminal de mercaderies voluminoses
-STR_IND_CEMENT_PLANT                                                            :{G=Femenin}Fàbrica de ciment
-STR_IND_CHEMICAL_PLANT                                                          :{G=Femenin}Planta química
-STR_IND_CLAY_PIT                                                                :{G=Femenin}Argilera
-STR_IND_COFFEE_ESTATE                                                           :Hisenda de cafè
-STR_IND_FIBRE_CROP_FARM                                                         :Granja de cultius de fibres vegetals
-STR_IND_DAIRY                                                                   :{G=Femenin}Indústria làctia
-STR_IND_DREDGING_SITE                                                           :{G=Femenin}Zona de dragatge
-STR_IND_FERTILISER_PLANT                                                        :{G=Femenin}Fàbrica de fertilitzant
-STR_IND_FISHING_GROUND                                                          :{G=Masculin}Calador de pesca
-STR_IND_FISHING_HARBOUR                                                         :{G=Masculin}Port pesquer
-STR_IND_FOOD_MARKET                                                             :{G=Masculin}Mercat
-STR_IND_FOOD_PROCESSOR                                                          :{G=Femenin}Planta de processament d'aliments
-STR_IND_FURNITURE_FACTORY                                                       :{G=Femenin}Fàbrica de mobles
-STR_IND_GENERAL_STORE                                                           :Petit comerç
-STR_IND_GLASS_WORKS                                                             :{G=Femenin}Vidrieria
-STR_IND_HARDWARE_STORE                                                          :{G=Femenin}Ferreteria
-STR_IND_HOTEL                                                                   :{G=Masculin}Hotel
-STR_IND_IRON_WORKS                                                              :{G=Femenin}Farga
-STR_IND_JUNKYARD                                                                :{G=Masculin}Desballestador
-STR_IND_LIME_KILN                                                               :{G=Masculin}Forn de calç
-STR_IND_LUMBER_YARD                                                             :{G=Femenin}Fusteria
-STR_IND_MACHINE_SHOP                                                            :{G=Femenin}Fàbrica de maquinària
-STR_IND_METAL_FABRICATION_PLANT                                                 :{G=Femenin}Indústria metal·lúrgica
-STR_IND_METAL_FOUNDRY                                                           :{G=Femenin}Foneria
-STR_IND_MIXEDFARM                                                               :{G=Femenin}Granja mixta
-STR_IND_NITRATE_MINE                                                            :{G=Femenin}Mina de nitrats
-STR_IND_ORCHARD_PIGGERY                                                         :Arbres fruiters i granja de porcs
-STR_IND_PETROLPUMP                                                              :{G=Femenin}Gasolinera
-STR_IND_PLASTICS_PLANT                                                          :{G=Femenin}Fàbrica de plàstics
-STR_IND_PORT                                                                    :{G=Masculin}Port
-STR_IND_POWER_PLANT                                                             :{G=Femenin}Central elèctrica
-STR_IND_QUARRY                                                                  :{G=Femenin}Pedrera
-STR_IND_RANCH                                                                   :Ranxo
-STR_IND_RECYCLING_DEPOT                                                         :{G=Femenin}Deixalleria
-STR_IND_RECYCLING_PLANT                                                         :{G=Femenin}Planta de reciclatge
-STR_IND_SHEEPFARM                                                               :{G=Femenin}Granja ovina
-STR_IND_SMITHY_FORGE                                                            :{G=Femenin}Ferreria
-STR_IND_STOCKYARD                                                               :{G=Masculin}Escorxador
-STR_IND_SUGAR_PLANTATION                                                        :{G=Femenin}Plantació de sucre
-STR_IND_SUGAR_REFINERY                                                          :{G=Femenin}Sucreria
-STR_IND_TEXTILE_MILL                                                            :{G=Femenin}Fàbrica tèxtil
-STR_IND_TRADING_POST                                                            :Botiga de queviures
-STR_IND_VEHICLE_FACTORY                                                         :Fàbrica de vehicles
 
 STR_STATION_ANIMALS                                                             :Mercat de cavalls
 STR_STATION_FARM                                                                :Mansió

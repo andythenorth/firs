@@ -149,6 +149,71 @@ STR_ERR_LOCATION_NOT_IN_DESERT                                                  
 STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE                                             :ne peut pas être placé sur des pentes abruptes.
 STR_ERR_LOCATION_LIMIT_1_PER_TOWN                                               :une seule industrie de ce type par ville.
 
+STR_IND_ALUMINIUM_PLANT                                                         :Usine d'aluminium
+STR_IND_ARABLE_FARM                                                             :Ferme céréalière
+STR_IND_BASICFARM                                                               :Ferme
+STR_IND_BAUXITE_MINE                                                            :Mine de bauxite
+STR_IND_BIOREFINERY                                                             :Bioraffinerie
+STR_IND_BREWERY                                                                 :Brasserie
+STR_IND_BREWERY_CIDER_MILL                                                      :Cidrerie
+STR_IND_BRICK_WORKS                                                             :Briqueterie
+STR_IND_BUILDERS_YARD                                                           :Chantier de construction
+STR_IND_BULK_TERMINAL                                                           :Port de commerce
+STR_IND_CEMENT_PLANT                                                            :Cimenterie
+STR_IND_CHEMICAL_PLANT                                                          :Usine chimique
+STR_IND_CLAY_PIT                                                                :Carrière d'argile
+STR_IND_COFFEE_ESTATE                                                           :Plantation de café
+STR_IND_COPPER_REFINERY                                                         :Raffinerie de cuivre
+STR_IND_FIBRE_CROP_FARM                                                         :Exploitation de plantes à fibres
+STR_IND_DAIRY                                                                   :Laiterie
+STR_IND_DREDGING_SITE                                                           :Site de dragage
+STR_IND_FERTILISER_PLANT                                                        :Usine d'engrais chimiques
+STR_IND_FISHING_GROUND                                                          :Zone de pêche
+STR_IND_FISHING_HARBOUR                                                         :Port de pêche
+STR_IND_FISHING_VILLAGE                                                         :Village de pêcheurs
+STR_IND_FLOUR_MILL                                                              :Moulin à farine
+STR_IND_FOOD_MARKET                                                             :Magasin d'alimentation
+STR_IND_FOOD_PROCESSOR                                                          :Usine agroalimentaire
+STR_IND_FURNITURE_FACTORY                                                       :Fabrique de meubles
+STR_IND_GENERAL_STORE                                                           :Magasin
+STR_IND_GLASS_WORKS                                                             :Verrerie
+STR_IND_HARDWARE_STORE                                                          :Quincaillerie
+STR_IND_HOTEL                                                                   :Hôtel
+STR_IND_IRON_WORKS                                                              :Haut fourneau
+STR_IND_JUNKYARD                                                                :Marchand de ferraille
+STR_IND_LIME_KILN                                                               :Four à chaux
+STR_IND_LIQUIDS_TERMINAL                                                        :Terminal de vracs liquides
+STR_IND_LUMBER_YARD                                                             :Dépôt de bois
+STR_IND_MACHINE_SHOP                                                            :Atelier mécanique
+STR_IND_MANGANESE_MINE                                                          :Mine de manganèse
+STR_IND_METAL_FABRICATION_PLANT                                                 :Usine métallurgique
+STR_IND_METAL_FOUNDRY                                                           :Fonderie
+STR_IND_MIXEDFARM                                                               :Exploitation agricole mixte
+STR_IND_NITRATE_MINE                                                            :Mine de nitrates
+STR_IND_ORCHARD_PIGGERY                                                         :Verger et élevage de cochons
+STR_IND_PETROLPUMP                                                              :Station-service
+STR_IND_PHOSPHATE_MINE                                                          :Mine de phosphate
+STR_IND_PLASTICS_PLANT                                                          :Usine de plastique
+STR_IND_PORT                                                                    :Port
+STR_IND_PYRITE_MINE                                                             :Mine de pyrite
+STR_IND_PYRITE_SMELTER                                                          :Fonderie de pyrite
+STR_IND_POWER_PLANT                                                             :Centrale électrique
+STR_IND_QUARRY                                                                  :Carrière
+STR_IND_RANCH                                                                   :Ranch
+STR_IND_RECYCLING_DEPOT                                                         :Centre de tri des déchets
+STR_IND_RECYCLING_PLANT                                                         :Usine de recyclage
+STR_IND_SHEEPFARM                                                               :Élevage ovin
+STR_IND_SMITHY_FORGE                                                            :Forge
+STR_IND_STOCKYARD                                                               :Boucherie industrielle
+STR_IND_SUGAR_PLANTATION                                                        :Plantation sucrière
+STR_IND_SUGAR_REFINERY                                                          :Raffinerie de sucre
+STR_IND_SUPPLY_YARD                                                             :Coopérative d'approvisionnement
+STR_IND_TEXTILE_MILL                                                            :Usine textile
+STR_IND_TRADING_POST                                                            :Comptoir commercial
+STR_IND_TYRE_PLANT                                                              :Usine de pneus
+STR_IND_VEHICLE_FACTORY                                                         :Usine de véhicules
+STR_IND_VINEYARD                                                                :Vignoble
+
 STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}Marchandises produites{NBSP}:{}  2{NBSP}t pour 8{NBSP}t de bauxite livrées{}  2{NBSP}t pour 8{NBSP}000{NBSP}L de produits chimiques livrés{}  4{NBSP}t pour 8{NBSP}t de ferraille livrées{}{}La production augmente si deux matières premières (ou plus) sont livrées à moins de trois mois d'intervalle.
 STR_EXTRA_BIOREFINERY                                                           :{BLACK}Marchandises produites{NBSP}:{}  6{NBSP}000{NBSP}L pour 8{NBSP}t de céréales livrées{}  6{NBSP}000{NBSP}L pour 8{NBSP}t de sucre livrées
 STR_EXTRA_BREWERY                                                               :{BLACK}Marchandises produites{NBSP}:{}  3{NBSP}000{NBSP}L pour 8 caisses de fournitures industrielles livrées{} {STRING} {STRING}{}La production augmente si des fournitures industrielles sont livrées à moins de trois mois d'intervalle d'autres matières premières.
@@ -224,79 +289,11 @@ STR_FUND_FRUIT_PLANTATION                                                       
 STR_FUND_RUBBER_PLANTATION                                                      :{}{BLACK}Emplacement{NBSP}: {YELLOW}Ne peut pas être construite sur de la neige ni dans le désert.
 STR_FUND_VINEYARD                                                               :{}{BLACK}Emplacement{NBSP}: {YELLOW}Ne peut pas être construit sur de la neige ni dans le désert.
 
-
 STR_FUND_AVAILABLE_FROM                                                         :{}{BLACK}Disponible à partir de{NBSP}:{NBSP}{YELLOW}{COMMA}
-
 STR_FUND_AVAILABLE_UNTIL                                                        :{}{BLACK}Plus disponible après{NBSP}:{NBSP}{YELLOW}{COMMA}
-
 
 STR_TOWN                                                                        :{STRING}
 STR_STATION                                                                     :{STRING} {STRING}
-
-STR_IND_ALUMINIUM_PLANT                                                         :Usine d'aluminium
-STR_IND_ARABLE_FARM                                                             :Ferme céréalière
-STR_IND_BASICFARM                                                               :Ferme
-STR_IND_BAUXITE_MINE                                                            :Mine de bauxite
-STR_IND_BIOREFINERY                                                             :Bioraffinerie
-STR_IND_BREWERY                                                                 :Brasserie
-STR_IND_BREWERY_CIDER_MILL                                                      :Cidrerie
-STR_IND_BRICK_WORKS                                                             :Briqueterie
-STR_IND_BUILDERS_YARD                                                           :Chantier de construction
-STR_IND_BULK_TERMINAL                                                           :Port de commerce
-STR_IND_CEMENT_PLANT                                                            :Cimenterie
-STR_IND_CHEMICAL_PLANT                                                          :Usine chimique
-STR_IND_CLAY_PIT                                                                :Carrière d'argile
-STR_IND_COFFEE_ESTATE                                                           :Plantation de café
-STR_IND_COPPER_REFINERY                                                         :Raffinerie de cuivre
-STR_IND_FIBRE_CROP_FARM                                                         :Exploitation de plantes à fibres
-STR_IND_DAIRY                                                                   :Laiterie
-STR_IND_DREDGING_SITE                                                           :Site de dragage
-STR_IND_FERTILISER_PLANT                                                        :Usine d'engrais chimiques
-STR_IND_FISHING_GROUND                                                          :Zone de pêche
-STR_IND_FISHING_HARBOUR                                                         :Port de pêche
-STR_IND_FISHING_VILLAGE                                                         :Village de pêcheurs
-STR_IND_FLOUR_MILL                                                              :Moulin à farine
-STR_IND_FOOD_MARKET                                                             :Magasin d'alimentation
-STR_IND_FOOD_PROCESSOR                                                          :Usine agroalimentaire
-STR_IND_FURNITURE_FACTORY                                                       :Fabrique de meubles
-STR_IND_GENERAL_STORE                                                           :Magasin
-STR_IND_GLASS_WORKS                                                             :Verrerie
-STR_IND_HARDWARE_STORE                                                          :Quincaillerie
-STR_IND_HOTEL                                                                   :Hôtel
-STR_IND_IRON_WORKS                                                              :Haut fourneau
-STR_IND_JUNKYARD                                                                :Marchand de ferraille
-STR_IND_LIME_KILN                                                               :Four à chaux
-STR_IND_LIQUIDS_TERMINAL                                                        :Terminal de vracs liquides
-STR_IND_LUMBER_YARD                                                             :Dépôt de bois
-STR_IND_MACHINE_SHOP                                                            :Atelier mécanique
-STR_IND_MANGANESE_MINE                                                          :Mine de manganèse
-STR_IND_METAL_FABRICATION_PLANT                                                 :Usine métallurgique
-STR_IND_METAL_FOUNDRY                                                           :Fonderie
-STR_IND_MIXEDFARM                                                               :Exploitation agricole mixte
-STR_IND_NITRATE_MINE                                                            :Mine de nitrates
-STR_IND_ORCHARD_PIGGERY                                                         :Verger et élevage de cochons
-STR_IND_PETROLPUMP                                                              :Station-service
-STR_IND_PHOSPHATE_MINE                                                          :Mine de phosphate
-STR_IND_PLASTICS_PLANT                                                          :Usine de plastique
-STR_IND_PORT                                                                    :Port
-STR_IND_PYRITE_MINE                                                             :Mine de pyrite
-STR_IND_PYRITE_SMELTER                                                          :Fonderie de pyrite
-STR_IND_POWER_PLANT                                                             :Centrale électrique
-STR_IND_QUARRY                                                                  :Carrière
-STR_IND_RANCH                                                                   :Ranch
-STR_IND_RECYCLING_DEPOT                                                         :Centre de tri des déchets
-STR_IND_RECYCLING_PLANT                                                         :Usine de recyclage
-STR_IND_SHEEPFARM                                                               :Élevage ovin
-STR_IND_SMITHY_FORGE                                                            :Forge
-STR_IND_STOCKYARD                                                               :Boucherie industrielle
-STR_IND_SUGAR_PLANTATION                                                        :Plantation sucrière
-STR_IND_SUGAR_REFINERY                                                          :Raffinerie de sucre
-STR_IND_SUPPLY_YARD                                                             :Coopérative d'approvisionnement
-STR_IND_TEXTILE_MILL                                                            :Usine textile
-STR_IND_TRADING_POST                                                            :Comptoir commercial
-STR_IND_TYRE_PLANT                                                              :Usine de pneus
-STR_IND_VEHICLE_FACTORY                                                         :Usine de véhicules
-STR_IND_VINEYARD                                                                :Vignoble
 
 STR_STATION_ANIMALS                                                             :Marché aux bestiaux
 STR_STATION_FARM                                                                :Mas

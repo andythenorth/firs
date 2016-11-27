@@ -148,6 +148,71 @@ STR_ERR_LOCATION_NOT_IN_DESERT                                                  
 STR_ERR_LOCATION_NOT_ON_STEEP_SLOPE                                             :不能置於陡坡
 STR_ERR_LOCATION_LIMIT_1_PER_TOWN                                               :每座城鎮只能建造一座此類別的工業設施
 
+STR_IND_ALUMINIUM_PLANT                                                         :電解鋁廠
+STR_IND_ARABLE_FARM                                                             :種植園
+STR_IND_BASICFARM                                                               :農場
+STR_IND_BAUXITE_MINE                                                            :鋁土礦
+STR_IND_BIOREFINERY                                                             :生物煉制廠
+STR_IND_BREWERY                                                                 :釀酒廠
+STR_IND_BREWERY_CIDER_MILL                                                      :蘋果酒廠
+STR_IND_BRICK_WORKS                                                             :磚廠
+STR_IND_BUILDERS_YARD                                                           :建築工地
+STR_IND_BULK_TERMINAL                                                           :重型貨運站
+STR_IND_CEMENT_PLANT                                                            :水泥廠
+STR_IND_CHEMICAL_PLANT                                                          :化工廠
+STR_IND_CLAY_PIT                                                                :粘土礦坑
+STR_IND_COFFEE_ESTATE                                                           :咖啡園
+STR_IND_COPPER_REFINERY                                                         :煉銅廠
+STR_IND_FIBRE_CROP_FARM                                                         :纖維作物農場
+STR_IND_DAIRY                                                                   :乳品廠
+STR_IND_DREDGING_SITE                                                           :疏浚區
+STR_IND_FERTILISER_PLANT                                                        :化肥廠
+STR_IND_FISHING_GROUND                                                          :漁場
+STR_IND_FISHING_HARBOUR                                                         :漁港
+STR_IND_FISHING_VILLAGE                                                         :漁村
+STR_IND_FLOUR_MILL                                                              :磨坊
+STR_IND_FOOD_MARKET                                                             :雜貨店
+STR_IND_FOOD_PROCESSOR                                                          :食品加工廠
+STR_IND_FURNITURE_FACTORY                                                       :家具廠
+STR_IND_GENERAL_STORE                                                           :綜合商店
+STR_IND_GLASS_WORKS                                                             :玻璃制品廠
+STR_IND_HARDWARE_STORE                                                          :五金工具店
+STR_IND_HOTEL                                                                   :旅店
+STR_IND_IRON_WORKS                                                              :煉鐵廠
+STR_IND_JUNKYARD                                                                :廢料場
+STR_IND_LIME_KILN                                                               :石灰窯
+STR_IND_LIQUIDS_TERMINAL                                                        :油類貨運站
+STR_IND_LUMBER_YARD                                                             :木材加工廠
+STR_IND_MACHINE_SHOP                                                            :機械廠
+STR_IND_MANGANESE_MINE                                                          :錳礦山
+STR_IND_METAL_FABRICATION_PLANT                                                 :金屬加工廠
+STR_IND_METAL_FOUNDRY                                                           :金工工坊
+STR_IND_MIXEDFARM                                                               :綜合農場
+STR_IND_NITRATE_MINE                                                            :硝酸礦
+STR_IND_ORCHARD_PIGGERY                                                         :生態農場
+STR_IND_PETROLPUMP                                                              :加油站
+STR_IND_PHOSPHATE_MINE                                                          :磷礦山
+STR_IND_PLASTICS_PLANT                                                          :塑料廠
+STR_IND_PORT                                                                    :港口
+STR_IND_PYRITE_MINE                                                             :黃鐵礦山
+STR_IND_PYRITE_SMELTER                                                          :黃鐵礦冶煉廠
+STR_IND_POWER_PLANT                                                             :發電廠
+STR_IND_QUARRY                                                                  :采石場
+STR_IND_RANCH                                                                   :大牧場
+STR_IND_RECYCLING_DEPOT                                                         :回收站
+STR_IND_RECYCLING_PLANT                                                         :回收廠
+STR_IND_SHEEPFARM                                                               :牧羊場
+STR_IND_SMITHY_FORGE                                                            :鐵匠鋪
+STR_IND_STOCKYARD                                                               :肉聯廠
+STR_IND_SUGAR_PLANTATION                                                        :糖料種植園
+STR_IND_SUGAR_REFINERY                                                          :制糖廠
+STR_IND_SUPPLY_YARD                                                             :供應場
+STR_IND_TEXTILE_MILL                                                            :紡織廠
+STR_IND_TRADING_POST                                                            :貿易站
+STR_IND_TYRE_PLANT                                                              :車胎廠
+STR_IND_VEHICLE_FACTORY                                                         :汽車製造廠
+STR_IND_VINEYARD                                                                :葡萄園
+
 STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}貨物生產率:{}  每8噸鋁土礦生產2噸{}  每8,000升化工品生產2噸{}  每8噸廢金屬生產4噸{}{}如果三個月內交付兩種或者以上貨物，則產量上升。
 STR_EXTRA_BIOREFINERY                                                           :{BLACK}貨物生產率:{}  每8噸穀物生產6,000升{}  每8噸糖生產6,000升
 STR_EXTRA_BREWERY                                                               :{BLACK}貨物生產率:{}  每8箱工業物資生產3,000升{} {STRING} {STRING}{}如果三個月內同時交付了工業物資和其他貨物，則產量上升。
@@ -223,79 +288,11 @@ STR_FUND_FRUIT_PLANTATION                                                       
 STR_FUND_RUBBER_PLANTATION                                                      :{}{BLACK}位置: {YELLOW}不得修建於雪地或者沙漠。
 STR_FUND_VINEYARD                                                               :{}{BLACK}位置: {YELLOW}不得修建於雪地或者沙漠。
 
-
 STR_FUND_AVAILABLE_FROM                                                         :{}{BLACK}起始於: {YELLOW}{COMMA}
-
 STR_FUND_AVAILABLE_UNTIL                                                        :{}{BLACK}終結於: {YELLOW}{COMMA}
-
 
 STR_TOWN                                                                        :{STRING}
 STR_STATION                                                                     :{STRING} {STRING}
-
-STR_IND_ALUMINIUM_PLANT                                                         :電解鋁廠
-STR_IND_ARABLE_FARM                                                             :種植園
-STR_IND_BASICFARM                                                               :農場
-STR_IND_BAUXITE_MINE                                                            :鋁土礦
-STR_IND_BIOREFINERY                                                             :生物煉制廠
-STR_IND_BREWERY                                                                 :釀酒廠
-STR_IND_BREWERY_CIDER_MILL                                                      :蘋果酒廠
-STR_IND_BRICK_WORKS                                                             :磚廠
-STR_IND_BUILDERS_YARD                                                           :建築工地
-STR_IND_BULK_TERMINAL                                                           :重型貨運站
-STR_IND_CEMENT_PLANT                                                            :水泥廠
-STR_IND_CHEMICAL_PLANT                                                          :化工廠
-STR_IND_CLAY_PIT                                                                :粘土礦坑
-STR_IND_COFFEE_ESTATE                                                           :咖啡園
-STR_IND_COPPER_REFINERY                                                         :煉銅廠
-STR_IND_FIBRE_CROP_FARM                                                         :纖維作物農場
-STR_IND_DAIRY                                                                   :乳品廠
-STR_IND_DREDGING_SITE                                                           :疏浚區
-STR_IND_FERTILISER_PLANT                                                        :化肥廠
-STR_IND_FISHING_GROUND                                                          :漁場
-STR_IND_FISHING_HARBOUR                                                         :漁港
-STR_IND_FISHING_VILLAGE                                                         :漁村
-STR_IND_FLOUR_MILL                                                              :磨坊
-STR_IND_FOOD_MARKET                                                             :雜貨店
-STR_IND_FOOD_PROCESSOR                                                          :食品加工廠
-STR_IND_FURNITURE_FACTORY                                                       :家具廠
-STR_IND_GENERAL_STORE                                                           :綜合商店
-STR_IND_GLASS_WORKS                                                             :玻璃制品廠
-STR_IND_HARDWARE_STORE                                                          :五金工具店
-STR_IND_HOTEL                                                                   :旅店
-STR_IND_IRON_WORKS                                                              :煉鐵廠
-STR_IND_JUNKYARD                                                                :廢料場
-STR_IND_LIME_KILN                                                               :石灰窯
-STR_IND_LIQUIDS_TERMINAL                                                        :油類貨運站
-STR_IND_LUMBER_YARD                                                             :木材加工廠
-STR_IND_MACHINE_SHOP                                                            :機械廠
-STR_IND_MANGANESE_MINE                                                          :錳礦山
-STR_IND_METAL_FABRICATION_PLANT                                                 :金屬加工廠
-STR_IND_METAL_FOUNDRY                                                           :金工工坊
-STR_IND_MIXEDFARM                                                               :綜合農場
-STR_IND_NITRATE_MINE                                                            :硝酸礦
-STR_IND_ORCHARD_PIGGERY                                                         :生態農場
-STR_IND_PETROLPUMP                                                              :加油站
-STR_IND_PHOSPHATE_MINE                                                          :磷礦山
-STR_IND_PLASTICS_PLANT                                                          :塑料廠
-STR_IND_PORT                                                                    :港口
-STR_IND_PYRITE_MINE                                                             :黃鐵礦山
-STR_IND_PYRITE_SMELTER                                                          :黃鐵礦冶煉廠
-STR_IND_POWER_PLANT                                                             :發電廠
-STR_IND_QUARRY                                                                  :采石場
-STR_IND_RANCH                                                                   :大牧場
-STR_IND_RECYCLING_DEPOT                                                         :回收站
-STR_IND_RECYCLING_PLANT                                                         :回收廠
-STR_IND_SHEEPFARM                                                               :牧羊場
-STR_IND_SMITHY_FORGE                                                            :鐵匠鋪
-STR_IND_STOCKYARD                                                               :肉聯廠
-STR_IND_SUGAR_PLANTATION                                                        :糖料種植園
-STR_IND_SUGAR_REFINERY                                                          :制糖廠
-STR_IND_SUPPLY_YARD                                                             :供應場
-STR_IND_TEXTILE_MILL                                                            :紡織廠
-STR_IND_TRADING_POST                                                            :貿易站
-STR_IND_TYRE_PLANT                                                              :車胎廠
-STR_IND_VEHICLE_FACTORY                                                         :汽車製造廠
-STR_IND_VINEYARD                                                                :葡萄園
 
 STR_STATION_ANIMALS                                                             :馬市
 STR_STATION_FARM                                                                :莊園
