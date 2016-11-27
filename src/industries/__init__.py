@@ -22,6 +22,9 @@ basic_oxygen_furnace.industry.register()
 from industries import biorefinery
 biorefinery.industry.register()
 
+from industries import blast_furnace
+blast_furnace.industry.register()
+
 from industries import brewery
 brewery.industry.register()
 
@@ -250,8 +253,8 @@ pyrite_smelter.industry.register()
 from industries import sawmill
 sawmill.industry.register()
 
-from industries import blast_furnace
-blast_furnace.industry.register()
+from industries import shipyard
+shipyard.industry.register()
 
 from industries import supply_yard
 supply_yard.industry.register()

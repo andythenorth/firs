@@ -36,7 +36,7 @@ industry.economy_variations['MISTAH_KURTZ'].prod_cargo_types = ['PETR', 'RFPR']
 industry.economy_variations['MISTAH_KURTZ'].prod_multiplier = '[7, 11]'
 industry.economy_variations['STEELTOWN'].enabled = True
 industry.economy_variations['STEELTOWN'].name = 'string(STR_IND_PETROCHEMICAL_TERMINAL)'
-industry.economy_variations['STEELTOWN'].accept_cargo_types = ['PIPE', 'ENSP']
+industry.economy_variations['STEELTOWN'].accept_cargo_types = ['ENSP', 'PIPE']
 industry.economy_variations['STEELTOWN'].prod_cargo_types = ['PETR', 'RFPR']
 industry.economy_variations['STEELTOWN'].prod_multiplier = '[9, 19]'
 
