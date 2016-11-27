@@ -35,7 +35,7 @@ industry = IndustrySecondary(id='plastics_plant',
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['STEELTOWN'].enabled = True
 industry.economy_variations['STEELTOWN'].processed_cargos_and_output_ratios=[('RFPR', 6)]
-industry.economy_variations['STEELTOWN'].prod_cargo_types=['MNSP', 'VPTS']
+industry.economy_variations['STEELTOWN'].prod_cargo_types=['GOOD', 'VPTS']
 industry.economy_variations['STEELTOWN'].extra_text_industry='STR_EXTRA_PLASTICS_PLANT, string(STR_EXTRA_PLASTICS_PLANT_CHEMICALS_SUBSTR), string(STR_EMPTY)'
 
 industry.add_tile(id='plastics_plant_tile_1',

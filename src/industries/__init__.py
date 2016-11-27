@@ -190,8 +190,11 @@ trading_post.industry.register()
 from industries import clay_pit
 clay_pit.industry.register()
 
+"""
+# not currently used
 from industries import factory
 factory.industry.register()
+"""
 
 from industries import fishing_grounds
 fishing_grounds.industry.register()

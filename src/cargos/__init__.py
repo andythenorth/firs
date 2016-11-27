@@ -4,6 +4,9 @@ registered_cargos = []
 from cargos import alcohol
 alcohol.cargo.register()
 
+from cargos import base_metals
+base_metals.cargo.register()
+
 from cargos import bauxite
 bauxite.cargo.register()
 
@@ -63,6 +66,9 @@ food.cargo.register()
 
 from cargos import fruits
 fruits.cargo.register()
+
+from cargos import galvanised_steel
+galvanised_steel.cargo.register()
 
 from cargos import gold
 gold.cargo.register()
