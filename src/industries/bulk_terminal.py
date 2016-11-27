@@ -57,7 +57,7 @@ industry.economy_variations['MISTAH_KURTZ'].prod_cargo_types = ['RFPR', 'FMSP']
 industry.economy_variations['MISTAH_KURTZ'].prod_multiplier = '[12, 12]'
 
 industry.economy_variations['STEELTOWN'].enabled = True
-industry.economy_variations['STEELTOWN'].accept_cargo_types = ['FMSP']
+industry.economy_variations['STEELTOWN'].accept_cargo_types = ['FMSP', 'SESP']
 industry.economy_variations['STEELTOWN'].prod_cargo_types = ['BASE', 'RUBR']
 industry.economy_variations['STEELTOWN'].prod_multiplier = '[7, 19]'
 

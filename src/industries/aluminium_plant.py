@@ -36,6 +36,7 @@ industry = IndustrySecondary(id='aluminium_plant',
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['STEELTOWN'].enabled = True
+industry.economy_variations['STEELTOWN'].processed_cargos_and_output_ratios = [('AORE', 2), ('QLME', 2), ('SCMT', 4)]
 industry.economy_variations['STEELTOWN'].prod_cargo_types = ['ALUM']
 
 industry.add_tile(id='aluminium_plant_tile_1',
