@@ -33,7 +33,6 @@ industry = IndustrySecondary(id='chemical_plant',
                     extra_text_industry='STR_EXTRA_CHEMICAL_PLANT' )
 
 industry.economy_variations['BASIC_TROPIC'].enabled = True
-industry.economy_variations['STEELTOWN'].enabled = True
 
 industry.add_tile(id='chemical_plant_tile_1',
                   animation_length=7,
