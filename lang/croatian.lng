@@ -35,6 +35,8 @@ STR_PARAM_VALUE_ECONOMIES_MISTAH_KURTZ                                          
 STR_PARAM_VALUE_ECONOMIES_STEELTOWN                                             :Grad od Čelika
 
 STR_CARGO_NAME_ALCOHOL                                                          :Alkohol
+STR_CARGO_NAME_ALUMINIUM                                                        :Aluminij
+STR_CARGO_NAME_BASE_METALS                                                      :Bazni metali
 STR_CARGO_NAME_BAUXITE                                                          :Boksit
 STR_CARGO_NAME_BEANS                                                            :Grah
 STR_CARGO_NAME_BUILDING_MATERIALS                                               :Građevni materijal
@@ -52,23 +54,28 @@ STR_CARGO_NAME_FISH                                                             
 STR_CARGO_NAME_FARM_SUPPLIES                                                    :Poljoprivredne potrepštine
 STR_CARGO_NAME_FERTILISER                                                       :Gnojivo
 STR_CARGO_NAME_FRUITS                                                           :Voće
+STR_CARGO_NAME_GALVANISED_STEEL                                                 :Galvanizirani čelik
 STR_CARGO_NAME_QUICKLIME                                                        :Živo vapno
 STR_CARGO_NAME_LUMBER                                                           :Drvo
 STR_CARGO_NAME_METAL                                                            :Metal
 STR_CARGO_NAME_MILK                                                             :Mlijeko
 STR_CARGO_NAME_MANGANESE                                                        :Mangan
 STR_CARGO_NAME_MANUFACTURING_SUPPLIES                                           :Proizvodne potrepštine
+STR_CARGO_NAME_MARINE_SUPPLIES                                                  :Brodske potrepštine
 STR_CARGO_NAME_NICKEL                                                           :Nikl
 STR_CARGO_NAME_NITRATES                                                         :Nitrati
 STR_CARGO_NAME_NUTS                                                             :Orasi
 STR_CARGO_NAME_PETROL                                                           :Benzin
 STR_CARGO_NAME_PHOSPHATE                                                        :Fosfati
 STR_CARGO_NAME_PIG_IRON                                                         :Sirovo željezo
+STR_CARGO_NAME_PIPE                                                             :Cijevi
 STR_CARGO_NAME_POTASH                                                           :Potaša
+STR_CARGO_NAME_POWERTRAIN_COMPONENTS                                            :Motorni dijelovi
 STR_CARGO_NAME_PYRITE_ORE                                                       :Pirit
 STR_CARGO_NAME_RECYCLABLES                                                      :Reciklažni materijal
 STR_CARGO_NAME_SAND                                                             :Pijesak
 STR_CARGO_NAME_SCRAP_METAL                                                      :Otpadni metal
+STR_CARGO_NAME_SLAG                                                             :Šljaka
 STR_CARGO_NAME_STEEL                                                            :Čelik
 STR_CARGO_NAME_STONE                                                            :Kamen
 STR_CARGO_NAME_SUGAR_BEET                                                       :Šećerna repa
@@ -79,7 +86,9 @@ STR_CARGO_NAME_VEHICLES                                                         
 STR_CARGO_NAME_WOOL                                                             :Vuna
 
 STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} alkohola
+STR_CARGO_UNIT_ALUMINIUM                                                        :{WEIGHT} aluminija
 STR_CARGO_UNIT_BAUXITE                                                          :{WEIGHT} boksita
+STR_CARGO_UNIT_BASE_METALS                                                      :{WEIGHT} baznih metala
 STR_CARGO_UNIT_BEANS                                                            :{WEIGHT} graha
 STR_CARGO_UNIT_CASSAVA                                                          :{WEIGHT} manioke
 STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WEIGHT} građevnog materijala
@@ -96,8 +105,10 @@ STR_CARGO_UNIT_FIBRES                                                           
 STR_CARGO_UNIT_FISH                                                             :{WEIGHT} ribe
 STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} kutij{P 0 a e e} poljoprivrednih potrepština
 STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} voća
+STR_CARGO_UNIT_GALVANISED_STEEL                                                 :{WEIGHT} galvaniziranog čelika
 STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} drva
 STR_CARGO_UNIT_MANGANESE                                                        :{WEIGHT} mangana
+STR_CARGO_UNIT_MARINE_SUPPLIES                                                  :{SIGNED_WORD} kutij{P 0 a e e} brodskih potrepština
 STR_CARGO_UNIT_METAL                                                            :{WEIGHT} metala
 STR_CARGO_UNIT_MILK                                                             :{VOLUME} mlijeka
 STR_CARGO_UNIT_NICKEL                                                           :{WEIGHT} nikla
@@ -107,12 +118,15 @@ STR_CARGO_UNIT_MNSP                                                             
 STR_CARGO_UNIT_PETROL                                                           :{VOLUME} benzina
 STR_CARGO_UNIT_PHOSPHATE                                                        :{WEIGHT} fosfata
 STR_CARGO_UNIT_PIG_IRON                                                         :{WEIGHT} sirovog željeza
+STR_CARGO_UNIT_PIPE                                                             :{WEIGHT} cijevi
 STR_CARGO_UNIT_POTASH                                                           :{WEIGHT} potaša
+STR_CARGO_UNIT_POWERTRAIN_COMPONENTS                                            :{SIGNED_WORD} kutij{P 0 a e e} motornih dijelova
 STR_CARGO_UNIT_PYRITE_ORE                                                       :{WEIGHT} pirita
 STR_CARGO_UNIT_QUICKLIME                                                        :{WEIGHT} živog vapna
 STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} reciklažnog materijala
 STR_CARGO_UNIT_SAND                                                             :{WEIGHT} pijeska
 STR_CARGO_UNIT_SCRAP_METAL                                                      :{WEIGHT} otpadnog metala
+STR_CARGO_UNIT_SLAG                                                             :{WEIGHT} šljake
 STR_CARGO_UNIT_STEEL                                                            :{WEIGHT} čelika
 STR_CARGO_UNIT_STONE                                                            :{WEIGHT} kamena
 STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} šećerne repe
@@ -123,47 +137,54 @@ STR_CARGO_UNIT_VEHICLES                                                         
 STR_CARGO_UNIT_WOOL                                                             :{SIGNED_WORD} bal{P 0 a e e} vune
 
 STR_CID_ALCOHOL                                                                 :{TINYFONT}AL
-STR_CID_BAUXITE                                                                 :{TINYFONT}BX
-STR_CID_BEANS                                                                   :{TINYFONT}BN
-STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}BM
-STR_CID_CASSAVA                                                                 :{TINYFONT}CA
-STR_CID_CHEMICALS                                                               :{TINYFONT}CH
-STR_CID_CLAY                                                                    :{TINYFONT}CL
-STR_CID_COFFEE                                                                  :{TINYFONT}CF
+STR_CID_ALUMINIUM                                                               :{TINYFONT}AM
+STR_CID_BASE_METALS                                                             :{TINYFONT}BM
+STR_CID_BAUXITE                                                                 :{TINYFONT}BK
+STR_CID_BEANS                                                                   :{TINYFONT}GH
+STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}GM
+STR_CID_CASSAVA                                                                 :{TINYFONT}MA
+STR_CID_CHEMICALS                                                               :{TINYFONT}KM
+STR_CID_CLAY                                                                    :{TINYFONT}GL
+STR_CID_COFFEE                                                                  :{TINYFONT}KV
 STR_CID_COKE                                                                    :{TINYFONT}KK
-STR_CID_COPPER                                                                  :{TINYFONT}CR
-STR_CID_EDIBLE_OIL                                                              :{TINYFONT}EO
-STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}ES
+STR_CID_COPPER                                                                  :{TINYFONT}BA
+STR_CID_EDIBLE_OIL                                                              :{TINYFONT}JU
+STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}IP
 STR_CID_EXPLOSIVES                                                              :{TINYFONT}EX
-STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}FS
-STR_CID_FERTILISER                                                              :{TINYFONT}FL
-STR_CID_FIBRES                                                                  :{TINYFONT}PF
-STR_CID_FISH                                                                    :{TINYFONT}FI
-STR_CID_LUMBER                                                                  :{TINYFONT}LU
+STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}AP
+STR_CID_FERTILISER                                                              :{TINYFONT}GN
+STR_CID_FIBRES                                                                  :{TINYFONT}BV
+STR_CID_FISH                                                                    :{TINYFONT}RI
+STR_CID_GALVANISED_STEEL                                                        :{TINYFONT}GČ
+STR_CID_LUMBER                                                                  :{TINYFONT}DR
 STR_CID_MANGANESE                                                               :{TINYFONT}MN
-STR_CID_MANUFACTURING_SUPPLIES                                                  :{TINYFONT}MS
+STR_CID_MANUFACTURING_SUPPLIES                                                  :{TINYFONT}PP
+STR_CID_MARINE_SUPPLIES                                                         :{TINYFONT}BP
 STR_CID_METAL                                                                   :{TINYFONT}ML
 STR_CID_MILK                                                                    :{TINYFONT}MK
 STR_CID_NICKEL                                                                  :{TINYFONT}NK
 STR_CID_NITRATES                                                                :{TINYFONT}NI
-STR_CID_NUTS                                                                    :{TINYFONT}NT
-STR_CID_PETROL                                                                  :{TINYFONT}PT
+STR_CID_NUTS                                                                    :{TINYFONT}OR
+STR_CID_PETROL                                                                  :{TINYFONT}BE
 STR_CID_PIG_IRON                                                                :{TINYFONT}SŽ
-STR_CID_PHOSPHATE                                                               :{TINYFONT}PH
+STR_CID_PIPE                                                                    :{TINYFONT}CI
+STR_CID_PHOSPHATE                                                               :{TINYFONT}FO
 STR_CID_POTASH                                                                  :{TINYFONT}PA
-STR_CID_PYRITE_ORE                                                              :{TINYFONT}PY
+STR_CID_POWERTRAIN_COMPONENTS                                                   :{TINYFONT}MD
+STR_CID_PYRITE_ORE                                                              :{TINYFONT}PR
 STR_CID_QUICKLIME                                                               :{TINYFONT}ŽV
-STR_CID_RECYCLABLES                                                             :{TINYFONT}RC
-STR_CID_SAND                                                                    :{TINYFONT}SA
-STR_CID_SCRAP_METAL                                                             :{TINYFONT}SM
+STR_CID_RECYCLABLES                                                             :{TINYFONT}RM
+STR_CID_SAND                                                                    :{TINYFONT}PI
+STR_CID_SCRAP_METAL                                                             :{TINYFONT}OM
+STR_CID_SLAG                                                                    :{TINYFONT}ŠLJ
 STR_CID_STEEL                                                                   :{TINYFONT}ČE
-STR_CID_STONE                                                                   :{TINYFONT}ST
-STR_CID_SUGAR_BEET                                                              :{TINYFONT}SB
-STR_CID_SUGARCANE                                                               :{TINYFONT}SC
+STR_CID_STONE                                                                   :{TINYFONT}KA
+STR_CID_SUGAR_BEET                                                              :{TINYFONT}ŠR
+STR_CID_SUGARCANE                                                               :{TINYFONT}ŠT
 STR_CID_SULPHUR                                                                 :{TINYFONT}SU
-STR_CID_VEHICLE_PARTS                                                           :{TINYFONT}VP
-STR_CID_VEHICLES                                                                :{TINYFONT}VS
-STR_CID_WOOL                                                                    :{TINYFONT}WL
+STR_CID_VEHICLE_PARTS                                                           :{TINYFONT}DV
+STR_CID_VEHICLES                                                                :{TINYFONT}VO
+STR_CID_WOOL                                                                    :{TINYFONT}VU
 
 STR_ERR_CLIMATE_TOYLAND                                                         :{ORANGE}FIRS nije predviđen za korištenje u Zemlji igračaka
 STR_ERR_INCOMPATIBLE_SET                                                        :{ORANGE}E01: {YELLOW}Nekompatibilni set: {ORANGE}{STRING} {YELLOW}Provjerite FIRS ReadMe: {ORANGE}{}http://bundles.openttdcoop.org/firs/releases/readme.txt
@@ -201,6 +222,7 @@ STR_IND_DAIRY                                                                   
 STR_IND_DAIRY_FARM                                                              :Mliječna farma
 STR_IND_DREDGING_SITE                                                           :Jaružalište
 STR_IND_ELECTRIC_ARC_FURNACE                                                    :Elektrolučna peć
+STR_IND_FACTORY                                                                 :Tvornica
 STR_IND_FERTILISER_PLANT                                                        :Tvornica gnojiva
 STR_IND_FERTILISER_AND_EXPLOSIVES_PLANT                                         :Tvornica gnojiva i eksploziva
 STR_IND_FISHING_GROUND                                                          :Ribarsko polje
@@ -210,6 +232,7 @@ STR_IND_FLOUR_MILL                                                              
 STR_IND_FOOD_MARKET                                                             :Prehrambena tržnica
 STR_IND_FOOD_PROCESSOR                                                          :Tvornica za preradu hrane
 STR_IND_FURNITURE_FACTORY                                                       :Tvornica namještaja
+STR_IND_GALVANISING_PLANT                                                       :Postrojenje za galvanizaciju
 STR_IND_GENERAL_STORE                                                           :Trgovina općom robom
 STR_IND_GLASS_WORKS                                                             :Staklarna
 STR_IND_HARDWARE_STORE                                                          :Trgovina opremom
@@ -226,8 +249,11 @@ STR_IND_METAL_FOUNDRY                                                           
 STR_IND_MIXEDFARM                                                               :Miješana farma
 STR_IND_NITRATE_MINE                                                            :Rudnik nitrata
 STR_IND_ORCHARD_PIGGERY                                                         :Voćnjak i svinjac
+STR_IND_ORE_TERMINAL                                                            :Terminal za rudaču
 STR_IND_PETROLPUMP                                                              :Benzinska pumpa
+STR_IND_PETROCHEMICAL_TERMINAL                                                  :Petrokemijski terminal
 STR_IND_PHOSPHATE_MINE                                                          :Rudnik fosfata
+STR_IND_PIPE_MILL                                                               :Tvornica cijevi
 STR_IND_PLASTICS_PLANT                                                          :Tvornica plastike
 STR_IND_PORT                                                                    :Luka
 STR_IND_POTASH_MINE                                                             :Rudnik potaše
@@ -240,6 +266,8 @@ STR_IND_RECYCLING_DEPOT                                                         
 STR_IND_RECYCLING_PLANT                                                         :Reciklažna tvornica
 STR_IND_REINDEER_FARM                                                           :Farma sobova
 STR_IND_SHEEPFARM                                                               :Ovčja farma
+STR_IND_SHIPYARD                                                                :Brodogradilište
+STR_IND_SLAG_GRINDING_PLANT                                                     :Postrojenje za mljevenje šljake
 STR_IND_SMITHY_FORGE                                                            :Kovačnica
 STR_IND_STOCKYARD                                                               :Stočno dvorište
 STR_IND_SUGAR_PLANTATION                                                        :Plantaža šećera
@@ -249,6 +277,7 @@ STR_IND_TEXTILE_MILL                                                            
 STR_IND_TRADING_POST                                                            :Trgovačka kuća
 STR_IND_TYRE_PLANT                                                              :Tvornica guma
 STR_IND_VEHICLE_FACTORY                                                         :Tvornica vozila
+STR_IND_VEHICLE_DEALER                                                          :Salon vozila
 STR_IND_VINEYARD                                                                :Vinograd
 
 STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}Proizvodnja tereta:{} 2t od 8t dostavljenog boksita{} 2t od 8,000l dostavljenih kemikalija{} 4t od 8t dostavljenog otpadnog metala{}{}Proizvodnja se povećava ako su dva ili više tereta dostavljena unutar 3 mjeseca jedan od drugog.
@@ -268,6 +297,7 @@ STR_EXTRA_COPPER_REFINERY                                                       
 STR_EXTRA_DAIRY                                                                 :{BLACK}Proizvodnja tereta:{}  3t od 8t dostavljenih proizvodnih potrepština{}  5t od 8t dostavljenog mlijeka{}{}Povećanje na 8t od 8t ako oba tereta budu dostavljena unutar 3 mjeseca jedan od drugog.
 STR_EXTRA_ELECTRIC_ARC_FURNACE                                                  :{BLACK}Proizvodnja tereta:{} 3 kutije od 8 kutija dostavljenih proizvodnih potrepština{} 5 kutija od 8t dostavljenog drva{}{}Proizvodnja se povećava ako su oba tereta dostavljena unutar 3 mjeseca jedan od drugog.
 STR_EXTRA_FERTILIZER_PLANT                                                      :{BLACK}Proizvodnja tereta:{}  8 kutija od 8,000l dostavljenih kemikalija
+STR_EXTRA_FACTORY                                                               :{BLACK}Proizvodnja tereta:{} 3 kutije od 8 kutija dostavljenih proizvodnih potrepština{} 5 kutija od 8t dostavljenog drva{}{}Proizvodnja se povećava ako su oba tereta dostavljena unutar 3 mjeseca jedan od drugog.
 STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Proizvodnja tereta:{} 3t od 8 kutija dostavljenih proizvodnih potrepština{} 5t od 8t dostavljene ribe{}{}Proizvodnja se povećava ako su oba tereta dostavljena unutar 3 mjeseca jedan od drugog.
 STR_EXTRA_FLOUR_MILL                                                            :{BLACK}Proizvodnja tereta:{} 3t od 8t dostavljenih proizvodnih potrepština{} {STRING} {STRING}{}Proizvodnja se povećava ako su proizvodne potrepštine dostavljena unutar 3 mjeseca od drugih tereta.
 STR_EXTRA_FLOUR_MILL_GRAIN_SUBSTR                                               :5t od 8t dostavljenog žita{}
@@ -277,6 +307,7 @@ STR_EXTRA_FOOD_PROCESSING_PLANT                                                 
 STR_EXTRA_FOOD_PROCESSING_PLANT_BEANS_SUBSTR                                    :6t od 8t dostavljenog graha{}
 STR_EXTRA_FOOD_PROCESSING_PLANT_NUTS_SUBSTR                                     :6t od 8t dostavljenih oraha{}
 STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Proizvodnja tereta:{} 3 kutije od 8 kutija dostavljenih proizvodnih potrepština{} 5 kutija od 8t dostavljenog drva{}{}Proizvodnja se povećava ako su oba tereta dostavljena unutar 3 mjeseca jedan od drugog.
+STR_EXTRA_GALVANISING_PLANT                                                     :!!! treba dodatni tekst
 STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Proizvodi staklene predmete kao boce, staklenke i prozorska okna.{}{}{BLACK}Proizvodnja tereta:{} 6t od 8t dostavljenog pijeska{} 2t od 8,000l dostavljenih kemikalija{}{}Proizvodnja se povećava ako su oba tereta dostavljena unutar 3 mjeseca jedan od drugog.
 STR_EXTRA_IRON_WORKS                                                            :{BLACK}Proizvodnja tereta:{} 3t od 8t dostavljene željezne rude{} 3t od 8t dostavljenog drva{} 2t od 8t dostavljenog pijeska{}{}Proizvodnja se povećava ako su dva ili više tereta dostavljena unutar 3 mjeseca jedan od drugog.
 STR_EXTRA_LIME_KILN                                                             :{BLACK}Proizvodnja tereta:{} 3t od 8t dostavljenog kamena{} 3t od 8t dostavljenog ugljena{}{}Proizvodnja se povećava ako su oba tereta dostavljena unutar 3 mjeseca jedan od drugog.
@@ -287,6 +318,7 @@ STR_EXTRA_METAL_FABRICATION_PLANT                                               
 STR_EXTRA_METAL_FOUNDRY                                                         :{BLACK}Proizvodi metalne proizvode kao limenke, alate i kućanske potrepštine.{}{}Proizvodnja tereta:{} 2 kutije od 8000l dostavljenih kemikalija{} 6 kutija od 8t dostavljenog metala{}{}Proizvodnja se povećava ako su oba tereta dostavljena unutar 3 mjeseca jedan od drugog.
 STR_EXTRA_OIL_REFINERY                                                          :{BLACK}Prerađuje sirovu naftu u benzin i kemikalije.{}{}Proizvodnja tereta:{} 6,000l od 8,000l dostavljenog
 STR_EXTRA_PAPER_MILL                                                            :{BLACK}Gnječi drvo za proizvodnju papira i kartona.{}{}{BLACK}Proizvodnja tereta:{} 4 kutije od 8t dostavljenog drva{} 2 kutije od 8t dostavljene gline{}  2 kutije od 8,000l dostavljenih kemikalija{}{}Proizvodnja se povećava ako su dva ili više tereta dostavljena unutar 3 mjeseca jedan od drugog.
+STR_EXTRA_PIPE_MILL                                                             :!!! Treba dodatni tekst
 STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}Proizvodi plastične predmete kao pakiranja i kućanske proizvode.{}{}Proizvodnja tereta:{} {STRING} {STRING}
 STR_EXTRA_PLASTICS_PLANT_CHEMICALS_SUBSTR                                       :6 kutija od 8,000l dostavljenih kemikalija{}
 STR_EXTRA_PLASTICS_PLANT_PLANT_FIBRES_SUBSTR                                    :6 kutija od 8 dostavljenih bala biljnih vlakna{}
@@ -294,6 +326,8 @@ STR_EXTRA_PYRITE_SMELTER                                                        
 STR_EXTRA_RECYCLING_PLANT                                                       :{BLACK}Prerađuje reciklažni materijal za ponovno korištenje u proizvodnji.{}{}6t od 8t dostavljenog reciklažnog materijala
 STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}Proizvodnja je proporcionalna populaciji grada.
 STR_EXTRA_SAWMILL                                                               :{BLACK}Pili i reže drva.{}{}Proizvodnja tereta:{} 6t od 8t dostavljenog drva
+STR_EXTRA_SHIPYARD                                                              :!!! Treba dodatni tekst
+STR_EXTRA_SLAG_GRINDING_PLANT                                                   :{BLACK}Pili i reže drva.{}{}Proizvodnja tereta:{} 6t od 8t dostavljenog drva
 STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Proizvodi metalne proizvode kao alate, plugove, vrata, lopate i potkove.{}{}Proizvodnja tereta:{} 5t od 8t dostavljenog metala
 STR_EXTRA_STEELMILL                                                             :{BLACK}Proizvodnja tereta:{} 3t od 8t dostavljene željezne rude{} 2t od 8t dostavljenog ugljena{} 3t od 8t dostavljenog otpadnog metala{}{}Proizvodnja se povećava ako su dva ili više tereta  dostavljena unutar 3 mjeseca jedan od drugog.
 STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Proizvodnja tereta:{} 3t od 8 kutija dostavljenih proizvodnih potrepština{} 5t od 8t dostavljenog šećera{}{}Proizvodnja se povećava ako su oba tereta dostavljena unutar 3 mjeseca jedan od drugog.
