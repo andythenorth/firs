@@ -18,26 +18,6 @@
  * var_production_span
  *
  * Needed defines in the industry's pnml which uses this template.
- * THIS_NUM_OUTPUT_CARGOS             number of output cargos
- *
- * The sum of the following should not exceed MAX_SUM_PROD_RATIO (see below):
- * THIS_PROD_RATIO_CARGO1         output per MAX_SUM_PROD_RATIO units input
- * THIS_PROD_RATIO_CARGO2         output per MAX_SUM_PROD_RATIO units input
- * THIS_PROD_RATIO_CARGO3         output per MAX_SUM_PROD_RATIO units input
- *
- * How cargos boost eachother (give in units of 1/MAX_SUM_PROD_RATIO)
- * It should be noted that THIS_PROD_RATIO_CARGO1 + THIS_BOOST_21 + THIS_BOOST_31 never should exceed MAX_SUM_PROD_RATIO
- * and similar for the other two cargos
- *
- * ! IMPORTANT ! - there is no support for varying ratios by economy.
- * The cargos can be varied, but the ratios are constant across all economies for each industry.
- *
- * THIS_BOOST_12
- * THIS_BOOST_13
- * THIS_BOOST_21
- * THIS_BOOST_23
- * THIS_BOOST_31
- * THIS_BOOST_32
  *
  * PRODUCTION_SPAN           time span which is considered for production ratios
  *
@@ -51,18 +31,6 @@
 #define var_received_timely_2       1
 #define var_received_timely_3       2
 #define var_num_output_cargos       3
-
-/* for secondary production template */
-#define THIS_NUM_OUTPUT_CARGOS    ${industry.get_num_output_cargos()}
-#define THIS_PROD_RATIO_CARGO1    ${industry.get_prod_ratio(1)}
-#define THIS_PROD_RATIO_CARGO2    ${industry.get_prod_ratio(2)}
-#define THIS_PROD_RATIO_CARGO3    ${industry.get_prod_ratio(3)}
-#define THIS_BOOST_12             ${industry.get_boost(1,2)}
-#define THIS_BOOST_13             ${industry.get_boost(1,3)}
-#define THIS_BOOST_21             ${industry.get_boost(2,1)}
-#define THIS_BOOST_23             ${industry.get_boost(2,3)}
-#define THIS_BOOST_31             ${industry.get_boost(3,1)}
-#define THIS_BOOST_32             ${industry.get_boost(3,2)}
 
 produce (${industry.id}_simple_produce, waiting_cargo_1, waiting_cargo_2, waiting_cargo_3,
 			LOAD_PERM(var_leftover_cargo_1) / MAX_SUM_PROD_RATIO / LOAD_TEMP(var_num_output_cargos) * LOAD_PERM(var_ratio_cargo_1) +
@@ -82,7 +50,7 @@ produce (${industry.id}_simple_produce, waiting_cargo_1, waiting_cargo_2, waitin
 );
 
 switch(FEAT_INDUSTRIES, SELF, ${industry.id}_num_output_cargos, [STORE_TEMP(${industry.get_expression_for_num_output_cargos_per_economy()}, var_num_output_cargos)]) {
-	${industry.id}_simple_produce;
+    ${industry.id}_simple_produce;
 }
 
 switch (FEAT_INDUSTRIES, SELF, ${industry.id}_produce,
@@ -105,19 +73,19 @@ switch (FEAT_INDUSTRIES, SELF, ${industry.id}_produce,
 			STORE_TEMP( (current_date - LOAD_PERM(var_date_received_3)) <= PRODUCTION_SPAN, var_received_timely_3),
 
 			/* Calculate current production ratios for the individual cargos */
-			STORE_PERM( THIS_PROD_RATIO_CARGO1 +
-			            LOAD_TEMP(var_received_timely_2) * THIS_BOOST_21 +
-			            LOAD_TEMP(var_received_timely_3) * THIS_BOOST_31,
+			STORE_PERM( ${industry.get_prod_ratio(1)} +
+			            LOAD_TEMP(var_received_timely_2) * ${industry.get_boost(2,1)} +
+			            LOAD_TEMP(var_received_timely_3) * ${industry.get_boost(3,1)},
 			    var_ratio_cargo_1
 			),
-			STORE_PERM( THIS_PROD_RATIO_CARGO2 +
-			            LOAD_TEMP(var_received_timely_1) * THIS_BOOST_12 +
-			            LOAD_TEMP(var_received_timely_3) * THIS_BOOST_32,
+			STORE_PERM( ${industry.get_prod_ratio(2)} +
+			            LOAD_TEMP(var_received_timely_1) * ${industry.get_boost(1,2)} +
+			            LOAD_TEMP(var_received_timely_3) * ${industry.get_boost(3,2)},
 			    var_ratio_cargo_2
 			),
-			STORE_PERM( THIS_PROD_RATIO_CARGO3 +
-			            LOAD_TEMP(var_received_timely_1) * THIS_BOOST_13 +
-			            LOAD_TEMP(var_received_timely_2) * THIS_BOOST_23,
+			STORE_PERM( ${industry.get_prod_ratio(3)} +
+			            LOAD_TEMP(var_received_timely_1) * ${industry.get_boost(1,3)} +
+			            LOAD_TEMP(var_received_timely_2) * ${industry.get_boost(2,3)},
 			    var_ratio_cargo_3
 			),
 
