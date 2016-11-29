@@ -862,14 +862,11 @@ class IndustrySecondary(Industry):
         self.combined_cargos_boost_prod = kwargs.get('combined_cargos_boost_prod', False)
         self.mnsp_boosts_production_jank = kwargs.get('mnsp_boosts_production_jank', False) # jank jank jank
 
-    def get_prod_ratio(self, cargo_num):
-        # there is no support for varying prod_ratio by economy, and I don't intend to provide any
-        # it would require the CPP templating for secondary production to be rewritten, and that is not necessary currently
-        # prod_ratios must be constant across all economies for each industry
-        if cargo_num > len(self.get_property('processed_cargos_and_output_ratios', None)):
+    def get_prod_ratio(self, cargo_num, economy):
+        if cargo_num > len(self.get_property('processed_cargos_and_output_ratios', economy)):
             return 0
         else:
-            return self.get_property('processed_cargos_and_output_ratios', None)[cargo_num - 1][1]
+            return self.get_property('processed_cargos_and_output_ratios', economy)[cargo_num - 1][1]
 
     def get_accept_cargo_types(self, economy):
         # method used here for (1) guarding against invalid values (2) so that it can be over-ridden by industry subclasses as needed
@@ -879,23 +876,22 @@ class IndustrySecondary(Industry):
             utils.echo_message("Too many accepted cargos defined for " + self.id + ' in economy ' + economy.id)
         return accept_cargo_types
 
-    def get_boost(self, supplied_cargo_num, boosted_cargo_num):
+    def get_boost(self, supplied_cargo_num, boosted_cargo_num, economy):
         # jank for MNSP first, this is due to design choices I now regret :|
         # some industries boost only in combination with MNSP, rather than any/all accepted cargos, ugh
-        # there is no support for varying boost behaviour by economy, and no intention to provide it (limited by CPP templating that I don't want to rewrite)
         if self.mnsp_boosts_production_jank:
-            if self.get_property('processed_cargos_and_output_ratios', None)[supplied_cargo_num - 1][0] == 'MNSP':
-                return self.get_prod_ratio(supplied_cargo_num)
-            elif self.get_property('processed_cargos_and_output_ratios', None)[boosted_cargo_num - 1][0] == 'MNSP':
-                return self.get_prod_ratio(supplied_cargo_num)
+            if self.get_property('processed_cargos_and_output_ratios', economy)[supplied_cargo_num - 1][0] == 'MNSP':
+                return self.get_prod_ratio(supplied_cargo_num, economy)
+            elif self.get_property('processed_cargos_and_output_ratios', economy)[boosted_cargo_num - 1][0] == 'MNSP':
+                return self.get_prod_ratio(supplied_cargo_num, economy)
             else:
                 return 0
         # not jank, proper
         if self.combined_cargos_boost_prod:
-            if boosted_cargo_num > len(self.get_property('processed_cargos_and_output_ratios', None)):
+            if boosted_cargo_num > len(self.get_property('processed_cargos_and_output_ratios', economy)):
                 return 0
             else:
-                return self.get_prod_ratio(supplied_cargo_num)
+                return self.get_prod_ratio(supplied_cargo_num, economy)
         return 0
 
 

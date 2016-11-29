@@ -53,50 +53,58 @@ switch(FEAT_INDUSTRIES, SELF, ${industry.id}_num_output_cargos, [STORE_TEMP(${in
     ${industry.id}_simple_produce;
 }
 
-switch (FEAT_INDUSTRIES, SELF, ${industry.id}_produce,
-			[
-			/* Update the 'last delivery date' for the three input cargos */
-			STORE_PERM( max(LOAD_PERM(var_date_received_1),(waiting_cargo_1 > 0) * current_date), var_date_received_1),
-			STORE_PERM( max(LOAD_PERM(var_date_received_2),(waiting_cargo_2 > 0) * current_date), var_date_received_2),
-			STORE_PERM( max(LOAD_PERM(var_date_received_3),(waiting_cargo_3 > 0) * current_date), var_date_received_3),
-			/* Reset the closure countdown */
-			STORE_PERM( (waiting_cargo_1 == 0 && waiting_cargo_2 == 0 && waiting_cargo_3 == 0) * LOAD_PERM(var_closure_counter), var_closure_counter),
+<tal:economies repeat="economy economies">
+    switch (FEAT_INDUSTRIES, SELF, ${industry.id}_produce_economy_${economy.numeric_id},
+            [
+            /* Update the 'last delivery date' for the three input cargos */
+            STORE_PERM( max(LOAD_PERM(var_date_received_1),(waiting_cargo_1 > 0) * current_date), var_date_received_1),
+            STORE_PERM( max(LOAD_PERM(var_date_received_2),(waiting_cargo_2 > 0) * current_date), var_date_received_2),
+            STORE_PERM( max(LOAD_PERM(var_date_received_3),(waiting_cargo_3 > 0) * current_date), var_date_received_3),
+            /* Reset the closure countdown */
+            STORE_PERM( (waiting_cargo_1 == 0 && waiting_cargo_2 == 0 && waiting_cargo_3 == 0) * LOAD_PERM(var_closure_counter), var_closure_counter),
 
-			/* Store the delivered cargo permanently (for debugging purposes only, reset at beginning of month) */
-			STORE_PERM( LOAD_PERM(var_input_cargo_1) + waiting_cargo_1, var_input_cargo_1),
-			STORE_PERM( LOAD_PERM(var_input_cargo_2) + waiting_cargo_2, var_input_cargo_2),
-			STORE_PERM( LOAD_PERM(var_input_cargo_3) + waiting_cargo_3, var_input_cargo_3),
+            /* Store the delivered cargo permanently (for debugging purposes only, reset at beginning of month) */
+            STORE_PERM( LOAD_PERM(var_input_cargo_1) + waiting_cargo_1, var_input_cargo_1),
+            STORE_PERM( LOAD_PERM(var_input_cargo_2) + waiting_cargo_2, var_input_cargo_2),
+            STORE_PERM( LOAD_PERM(var_input_cargo_3) + waiting_cargo_3, var_input_cargo_3),
 
-			/* Check whether the cargos were delivered within the time frame to be considered delivered concurrently */
-			STORE_TEMP( (current_date - LOAD_PERM(var_date_received_1)) <= PRODUCTION_SPAN, var_received_timely_1),
-			STORE_TEMP( (current_date - LOAD_PERM(var_date_received_2)) <= PRODUCTION_SPAN, var_received_timely_2),
-			STORE_TEMP( (current_date - LOAD_PERM(var_date_received_3)) <= PRODUCTION_SPAN, var_received_timely_3),
+            /* Check whether the cargos were delivered within the time frame to be considered delivered concurrently */
+            STORE_TEMP( (current_date - LOAD_PERM(var_date_received_1)) <= PRODUCTION_SPAN, var_received_timely_1),
+            STORE_TEMP( (current_date - LOAD_PERM(var_date_received_2)) <= PRODUCTION_SPAN, var_received_timely_2),
+            STORE_TEMP( (current_date - LOAD_PERM(var_date_received_3)) <= PRODUCTION_SPAN, var_received_timely_3),
 
-			/* Calculate current production ratios for the individual cargos */
-			STORE_PERM( ${industry.get_prod_ratio(1)} +
-			            LOAD_TEMP(var_received_timely_2) * ${industry.get_boost(2,1)} +
-			            LOAD_TEMP(var_received_timely_3) * ${industry.get_boost(3,1)},
-			    var_ratio_cargo_1
-			),
-			STORE_PERM( ${industry.get_prod_ratio(2)} +
-			            LOAD_TEMP(var_received_timely_1) * ${industry.get_boost(1,2)} +
-			            LOAD_TEMP(var_received_timely_3) * ${industry.get_boost(3,2)},
-			    var_ratio_cargo_2
-			),
-			STORE_PERM( ${industry.get_prod_ratio(3)} +
-			            LOAD_TEMP(var_received_timely_1) * ${industry.get_boost(1,3)} +
-			            LOAD_TEMP(var_received_timely_2) * ${industry.get_boost(2,3)},
-			    var_ratio_cargo_3
-			),
+            /* Calculate current production ratios for the individual cargos */
+            STORE_PERM( ${industry.get_prod_ratio(1,economy)} +
+                        LOAD_TEMP(var_received_timely_2) * ${industry.get_boost(2,1,economy)} +
+                        LOAD_TEMP(var_received_timely_3) * ${industry.get_boost(3,1,economy)},
+                var_ratio_cargo_1
+            ),
+            STORE_PERM( ${industry.get_prod_ratio(2,economy)} +
+                        LOAD_TEMP(var_received_timely_1) * ${industry.get_boost(1,2,economy)} +
+                        LOAD_TEMP(var_received_timely_3) * ${industry.get_boost(3,2,economy)},
+                var_ratio_cargo_2
+            ),
+            STORE_PERM( ${industry.get_prod_ratio(3,economy)} +
+                        LOAD_TEMP(var_received_timely_1) * ${industry.get_boost(1,3,economy)} +
+                        LOAD_TEMP(var_received_timely_2) * ${industry.get_boost(2,3,economy)},
+                var_ratio_cargo_3
+            ),
 
-			/* Add the remainder to the current leftover cargos */
-			STORE_PERM( LOAD_PERM(var_leftover_cargo_1) + waiting_cargo_1, var_leftover_cargo_1),
-			STORE_PERM( LOAD_PERM(var_leftover_cargo_2) + waiting_cargo_2, var_leftover_cargo_2),
-			STORE_PERM( LOAD_PERM(var_leftover_cargo_3) + waiting_cargo_3, var_leftover_cargo_3),
+            /* Add the remainder to the current leftover cargos */
+            STORE_PERM( LOAD_PERM(var_leftover_cargo_1) + waiting_cargo_1, var_leftover_cargo_1),
+            STORE_PERM( LOAD_PERM(var_leftover_cargo_2) + waiting_cargo_2, var_leftover_cargo_2),
+            STORE_PERM( LOAD_PERM(var_leftover_cargo_3) + waiting_cargo_3, var_leftover_cargo_3),
 
-			1
-			]) {
-	${industry.id}_num_output_cargos;
+            1
+            ]) {
+        ${industry.id}_num_output_cargos;
+    }
+</tal:economies>
+
+switch (FEAT_INDUSTRIES, SELF, ${industry.id}_produce, economy) {
+    <tal:economies repeat="economy economies">
+        ${economy.numeric_id}: ${industry.id}_produce_economy_${economy.numeric_id};
+    </tal:economies>
 }
 
 #undef MAX_SUM_PROD_RATIO
