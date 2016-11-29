@@ -9,6 +9,7 @@ from industry import IndustrySecondary, TileLocationChecks, IndustryLocationChec
 
 industry = IndustrySecondary(id='fertiliser_plant',
                     processed_cargos_and_output_ratios=[('RFPR', 8)],
+                    combined_cargos_boost_prod=True,
                     prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL',
                     prod_cargo_types=['FMSP'],
                     layouts='AUTO',
@@ -30,7 +31,7 @@ industry = IndustrySecondary(id='fertiliser_plant',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
                     extra_text_industry='STR_EXTRA_FERTILIZER_PLANT',
                     intro_year=1890,
-                    graphics_change_dates = [1952] )
+                    graphics_change_dates=[1952])
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_ARCTIC'].enabled = True

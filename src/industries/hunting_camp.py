@@ -68,46 +68,6 @@ spriteset_2_ground = industry.add_spriteset(
     sprites = [(80, 70, 64, 52, -31, -21)],
     zextent = 32
 )
-spriteset_3 = industry.add_spriteset(
-    id = 'hunting_camp_spriteset_3',
-    sprites = [(150, 10, 64, 52, -31, -21)],
-    zextent = 32
-)
-spriteset_3_ground = industry.add_spriteset(
-    id = 'hunting_camp_spriteset_3_ground',
-    sprites = [(150, 70, 64, 52, -31, -21)],
-    zextent = 32
-)
-spriteset_4 = industry.add_spriteset(
-    id = 'hunting_camp_spriteset_4',
-    sprites = [(220, 10, 64, 52, -31, -21)],
-    zextent = 32
-)
-spriteset_4_ground = industry.add_spriteset(
-    id = 'hunting_camp_spriteset_4_ground',
-    sprites = [(220, 70, 64, 52, -31, -21)],
-    zextent = 32
-)
-spriteset_5 = industry.add_spriteset(
-    id = 'hunting_camp_spriteset_5',
-    sprites = [(290, 10, 64, 52, -31, -21)],
-    zextent = 32
-)
-spriteset_6 = industry.add_spriteset(
-    id = 'hunting_camp_spriteset_6',
-    sprites = [(360, 10, 64, 52, -31, -21)],
-    zextent = 32
-)
-spriteset_7 = industry.add_spriteset(
-    id = 'hunting_camp_spriteset_7',
-    sprites = [(430, 10, 64, 52, -31, -21)],
-    zextent = 32
-)
-spriteset_8 = industry.add_spriteset(
-    id = 'hunting_camp_spriteset_8',
-    sprites = [(500, 10, 64, 52, -31, -21)],
-    zextent = 32
-)
 
 industry.add_spritelayout(
     id = 'hunting_camp_spritelayout_1',
@@ -126,78 +86,32 @@ industry.add_spritelayout(
 industry.add_spritelayout(
     id = 'hunting_camp_spritelayout_3',
     ground_sprite = sprite_ground_mud,
-    ground_overlay = spriteset_3_ground,
-    building_sprites = [spriteset_3],
-)
-industry.add_spritelayout(
-    id = 'hunting_camp_spritelayout_4',
-    ground_sprite = spriteset_ground,
-    ground_overlay = spriteset_4_ground,
-    building_sprites = [spriteset_4],
-    terrain_aware_ground = True
-)
-industry.add_spritelayout(
-    id = 'hunting_camp_spritelayout_5',
-    ground_sprite = spriteset_ground,
-    ground_overlay = spriteset_ground_overlay,
-    building_sprites = [spriteset_5],
-    terrain_aware_ground = True
-)
-industry.add_spritelayout(
-    id = 'hunting_camp_spritelayout_6',
-    ground_sprite = spriteset_ground,
-    ground_overlay = spriteset_ground_overlay,
-    building_sprites = [spriteset_6],
-    terrain_aware_ground = True
-)
-industry.add_spritelayout(
-    id = 'hunting_camp_spritelayout_7',
-    ground_sprite = spriteset_ground,
-    ground_overlay = spriteset_ground_overlay,
-    building_sprites = [spriteset_7],
-    terrain_aware_ground = True
-)
-industry.add_spritelayout(
-    id = 'hunting_camp_spritelayout_8',
-    ground_sprite = spriteset_ground,
-    ground_overlay = spriteset_ground_overlay,
-    building_sprites = [spriteset_8],
+    ground_overlay = sprite_ground_mud,
+    building_sprites = [],
     terrain_aware_ground = True
 )
 
 industry.add_industry_layout(
     id = 'hunting_camp_industry_layout_1',
-    layout = [(0, 2, 'hunting_camp_tile_1', 'hunting_camp_spritelayout_8'),
-              (0, 3, 'hunting_camp_tile_1', 'hunting_camp_spritelayout_3'),
+    layout = [(0, 1, 'hunting_camp_tile_1', 'hunting_camp_spritelayout_3'),
+              (0, 2, 'hunting_camp_tile_1', 'hunting_camp_spritelayout_1'),
               (1, 0, 'hunting_camp_tile_1', 'hunting_camp_spritelayout_2'),
-              (2, 0, 'hunting_camp_tile_1', 'hunting_camp_spritelayout_1'),
-              (2, 2, 'hunting_camp_tile_1', 'hunting_camp_spritelayout_5'),
-              (2, 3, 'hunting_camp_tile_1', 'hunting_camp_spritelayout_7'),
-              (3, 2, 'hunting_camp_tile_1', 'hunting_camp_spritelayout_6'),
-              (3, 3, 'hunting_camp_tile_1', 'hunting_camp_spritelayout_4'),
+              (1, 2, 'hunting_camp_tile_1', 'hunting_camp_spritelayout_2'),
     ]
 )
 industry.add_industry_layout(
     id = 'hunting_camp_industry_layout_2',
-    layout = [(0, 0, 'hunting_camp_tile_1', 'hunting_camp_spritelayout_4'),
-              (0, 2, 'hunting_camp_tile_1', 'hunting_camp_spritelayout_7'),
-              (0, 3, 'hunting_camp_tile_1', 'hunting_camp_spritelayout_6'),
-              (1, 0, 'hunting_camp_tile_1', 'hunting_camp_spritelayout_5'),
-              (1, 3, 'hunting_camp_tile_1', 'hunting_camp_spritelayout_1'),
-              (2, 0, 'hunting_camp_tile_1', 'hunting_camp_spritelayout_8'),
-              (2, 1, 'hunting_camp_tile_1', 'hunting_camp_spritelayout_3'),
-              (2, 2, 'hunting_camp_tile_1', 'hunting_camp_spritelayout_2'),
+    layout = [(0, 0, 'hunting_camp_tile_1', 'hunting_camp_spritelayout_2'),
+              (0, 1, 'hunting_camp_tile_1', 'hunting_camp_spritelayout_2'),
+              (0, 2, 'hunting_camp_tile_1', 'hunting_camp_spritelayout_1'),
+              (1, 0, 'hunting_camp_tile_1', 'hunting_camp_spritelayout_3'),
     ]
 )
 industry.add_industry_layout(
     id = 'hunting_camp_industry_layout_3',
-    layout = [(0, 0, 'hunting_camp_tile_1', 'hunting_camp_spritelayout_8'),
+    layout = [(0, 0, 'hunting_camp_tile_1', 'hunting_camp_spritelayout_2'),
               (0, 1, 'hunting_camp_tile_1', 'hunting_camp_spritelayout_1'),
-              (0, 2, 'hunting_camp_tile_1', 'hunting_camp_spritelayout_5'),
               (1, 0, 'hunting_camp_tile_1', 'hunting_camp_spritelayout_2'),
               (1, 2, 'hunting_camp_tile_1', 'hunting_camp_spritelayout_3'),
-              (2, 0, 'hunting_camp_tile_1', 'hunting_camp_spritelayout_7'),
-              (3, 0, 'hunting_camp_tile_1', 'hunting_camp_spritelayout_4'),
-              (3, 2, 'hunting_camp_tile_1', 'hunting_camp_spritelayout_6'),
     ]
 )

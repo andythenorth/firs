@@ -862,10 +862,6 @@ class IndustrySecondary(Industry):
         self.combined_cargos_boost_prod = kwargs.get('combined_cargos_boost_prod', False)
         self.mnsp_boosts_production_jank = kwargs.get('mnsp_boosts_production_jank', False) # jank jank jank
 
-    def get_num_output_cargos(self):
-        # !! no economy support currently, CPP templating doesn't handle it, but will be needed after snakebite
-        return len(self.get_property('prod_cargo_types', None))
-
     def get_prod_ratio(self, cargo_num):
         # there is no support for varying prod_ratio by economy, and I don't intend to provide any
         # it would require the CPP templating for secondary production to be rewritten, and that is not necessary currently
