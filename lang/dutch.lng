@@ -30,8 +30,11 @@ STR_PARAM_VALUE_ECONOMIES_BASIC_ARCTIC                                          
 STR_PARAM_VALUE_ECONOMIES_BASIC_TROPIC                                          :Basiseconomie voor het subtropisch klimaat
 STR_PARAM_VALUE_ECONOMIES_FIRS                                                  :eXXtreem
 STR_PARAM_VALUE_ECONOMIES_MISTAH_KURTZ                                          :In een heet land
+STR_PARAM_VALUE_ECONOMIES_STEELTOWN                                             :Staalstad
 
 STR_CARGO_NAME_ALCOHOL                                                          :Alcohol
+STR_CARGO_NAME_ALUMINIUM                                                        :Aluminium
+STR_CARGO_NAME_BASE_METALS                                                      :Onedele metalen
 STR_CARGO_NAME_BAUXITE                                                          :Bauxiet
 STR_CARGO_NAME_BEANS                                                            :Bonen
 STR_CARGO_NAME_BUILDING_MATERIALS                                               :Bouwmaterialen
@@ -39,69 +42,101 @@ STR_CARGO_NAME_CASSAVA                                                          
 STR_CARGO_NAME_CHEMICALS                                                        :Chemicaliën
 STR_CARGO_NAME_CLAY                                                             :Klei
 STR_CARGO_NAME_COFFEE                                                           :Koffie
+STR_CARGO_NAME_COKE                                                             :Cokes
 STR_CARGO_NAME_COPPER                                                           :Kopererts
 STR_CARGO_NAME_EDIBLE_OIL                                                       :Eetbare olie
 STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :Constructiematerialen
+STR_CARGO_NAME_EXPLOSIVES                                                       :Explosieven
 STR_CARGO_NAME_FIBRES                                                           :Katoen
 STR_CARGO_NAME_FISH                                                             :Vis
 STR_CARGO_NAME_FARM_SUPPLIES                                                    :Landbouwmaterialen
+STR_CARGO_NAME_FERTILISER                                                       :Kunstmest
 STR_CARGO_NAME_FRUITS                                                           :Groente en fruit
+STR_CARGO_NAME_GALVANISED_STEEL                                                 :Gegalvaniseerd staal
+STR_CARGO_NAME_QUICKLIME                                                        :Calciumoxide
 STR_CARGO_NAME_LUMBER                                                           :Gezaagd hout
 STR_CARGO_NAME_METAL                                                            :Metaal
 STR_CARGO_NAME_MILK                                                             :Melk
 STR_CARGO_NAME_MANGANESE                                                        :Mangaan
 STR_CARGO_NAME_MANUFACTURING_SUPPLIES                                           :Productiematerialen
+STR_CARGO_NAME_MARINE_SUPPLIES                                                  :Scheepsmaterialen
+STR_CARGO_NAME_NICKEL                                                           :Nikkel
 STR_CARGO_NAME_NITRATES                                                         :Nitraten
 STR_CARGO_NAME_NUTS                                                             :Noten
 STR_CARGO_NAME_PETROL                                                           :Benzine
 STR_CARGO_NAME_PHOSPHATE                                                        :Fosfaat
+STR_CARGO_NAME_PIG_IRON                                                         :Ruwijzer
+STR_CARGO_NAME_PIPE                                                             :Pijp
+STR_CARGO_NAME_POTASH                                                           :Potas
+STR_CARGO_NAME_POWERTRAIN_COMPONENTS                                            :Aandrijflijn componenten
 STR_CARGO_NAME_PYRITE_ORE                                                       :Pyriet
 STR_CARGO_NAME_RECYCLABLES                                                      :Kringloopgoederen
 STR_CARGO_NAME_SAND                                                             :Zand
 STR_CARGO_NAME_SCRAP_METAL                                                      :Schroot
+STR_CARGO_NAME_SLAG                                                             :Slak
+STR_CARGO_NAME_STEEL                                                            :Staal
 STR_CARGO_NAME_STONE                                                            :Grind
 STR_CARGO_NAME_SUGAR_BEET                                                       :Suikerbieten
 STR_CARGO_NAME_SUGARCANE                                                        :Suikerriet
+STR_CARGO_NAME_SULPHUR                                                          :Zwavel
 STR_CARGO_NAME_VEHICLE_PARTS                                                    :Voertuigonderdelen
 STR_CARGO_NAME_VEHICLES                                                         :Voertuigen
 STR_CARGO_NAME_WOOL                                                             :Wol
 
 STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} alcohol
+STR_CARGO_UNIT_ALUMINIUM                                                        :{WEIGHT} aluminium
 STR_CARGO_UNIT_BAUXITE                                                          :{WEIGHT} bauxiet
+STR_CARGO_UNIT_BASE_METALS                                                      :{WEIGHT} onedele metalen
 STR_CARGO_UNIT_BEANS                                                            :{WEIGHT} van bonen
 STR_CARGO_UNIT_CASSAVA                                                          :{WEIGHT} cassava
 STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WEIGHT} bouwmaterialen
 STR_CARGO_UNIT_CHEMICALS                                                        :{VOLUME} chemicaliën
 STR_CARGO_UNIT_CLAY                                                             :{WEIGHT} klei
 STR_CARGO_UNIT_COFFEE                                                           :{SIGNED_WORD} zak{P 0 "" ken} koffie
+STR_CARGO_UNIT_COKE                                                             :{WEIGHT} cokes
 STR_CARGO_UNIT_COPPER                                                           :{WEIGHT} kopererts
 STR_CARGO_UNIT_EDIBLE_OIL                                                       :{VOLUME} eetbare olie
 STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} krat{P 0 "" ten} constructiematerialen
+STR_CARGO_UNIT_EXPLOSIVES                                                       :{SIGNED_WORD} krat{P 0 "" ten} explosieven
+STR_CARGO_UNIT_FERTILISER                                                       :{WEIGHT} kunstmest
 STR_CARGO_UNIT_FIBRES                                                           :{SIGNED_WORD} ba{P 0 al len} katoen
 STR_CARGO_UNIT_FISH                                                             :{WEIGHT} vis
 STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} krat{P 0 "" ten} landbouwmaterialen
 STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} groente en fruit
+STR_CARGO_UNIT_GALVANISED_STEEL                                                 :{WEIGHT} gegalvaniseerd staal
 STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} gezaagd hout
 STR_CARGO_UNIT_MANGANESE                                                        :{WEIGHT} mangaan
+STR_CARGO_UNIT_MARINE_SUPPLIES                                                  :{SIGNED_WORD} krat{P 0 "" ten} scheepsmaterialen
 STR_CARGO_UNIT_METAL                                                            :{WEIGHT} metaal
 STR_CARGO_UNIT_MILK                                                             :{VOLUME} melk
+STR_CARGO_UNIT_NICKEL                                                           :{WEIGHT} nikkel
 STR_CARGO_UNIT_NITRATES                                                         :{WEIGHT} nitraten
 STR_CARGO_UNIT_NUTS                                                             :{SIGNED_WORD} zak{P 0 "" ken} noten
 STR_CARGO_UNIT_MNSP                                                             :{SIGNED_WORD} krat{P 0 "" ten} productiematerialen
 STR_CARGO_UNIT_PETROL                                                           :{VOLUME} benzine
 STR_CARGO_UNIT_PHOSPHATE                                                        :{WEIGHT} fosfaat
+STR_CARGO_UNIT_PIG_IRON                                                         :{WEIGHT} ruwijzer
+STR_CARGO_UNIT_PIPE                                                             :{WEIGHT} pijp
+STR_CARGO_UNIT_POTASH                                                           :{WEIGHT} potas
+STR_CARGO_UNIT_POWERTRAIN_COMPONENTS                                            :{SIGNED_WORD} krat{P "" ten} aandrijflijn componenten
 STR_CARGO_UNIT_PYRITE_ORE                                                       :{WEIGHT} pyriet
+STR_CARGO_UNIT_QUICKLIME                                                        :{WEIGHT} calciumoxide
 STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} kringloopgoederen
 STR_CARGO_UNIT_SAND                                                             :{WEIGHT} zand
 STR_CARGO_UNIT_SCRAP_METAL                                                      :{WEIGHT} schroot
+STR_CARGO_UNIT_SLAG                                                             :{WEIGHT} slak
+STR_CARGO_UNIT_STEEL                                                            :{WEIGHT} staal
 STR_CARGO_UNIT_STONE                                                            :{WEIGHT} grind
 STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} suikerbieten
 STR_CARGO_UNIT_SUGARCANE                                                        :{WEIGHT} suikerriet
+STR_CARGO_UNIT_SULPHUR                                                          :{WEIGHT} zwavel
 STR_CARGO_UNIT_VEHICLE_PARTS                                                    :{SIGNED_WORD} krat{P 0 "" ten} voertuigonderdelen
 STR_CARGO_UNIT_VEHICLES                                                         :{SIGNED_WORD} voertuig{P 0 "" en}
 STR_CARGO_UNIT_WOOL                                                             :{SIGNED_WORD} ba{P 0 al len} wol
 
 STR_CID_ALCOHOL                                                                 :{TINYFONT}AL
+STR_CID_ALUMINIUM                                                               :{TINYFONT}AM
+STR_CID_BASE_METALS                                                             :{TINYFONT}OM
 STR_CID_BAUXITE                                                                 :{TINYFONT}BX
 STR_CID_BEANS                                                                   :{TINYFONT}BN
 STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}BM
@@ -109,28 +144,42 @@ STR_CID_CASSAVA                                                                 
 STR_CID_CHEMICALS                                                               :{TINYFONT}CM
 STR_CID_CLAY                                                                    :{TINYFONT}KL
 STR_CID_COFFEE                                                                  :{TINYFONT}KF
+STR_CID_COKE                                                                    :{TINYFONT}CK
 STR_CID_COPPER                                                                  :{TINYFONT}KR
 STR_CID_EDIBLE_OIL                                                              :{TINYFONT}EO
 STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}CH
+STR_CID_EXPLOSIVES                                                              :{TINYFONT}EX
 STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}LH
+STR_CID_FERTILISER                                                              :{TINYFONT}KM
 STR_CID_FIBRES                                                                  :{TINYFONT}KT
 STR_CID_FISH                                                                    :{TINYFONT}VS
+STR_CID_GALVANISED_STEEL                                                        :{TINYFONT}GS
 STR_CID_LUMBER                                                                  :{TINYFONT}HT
 STR_CID_MANGANESE                                                               :{TINYFONT}MN
 STR_CID_MANUFACTURING_SUPPLIES                                                  :{TINYFONT}PH
+STR_CID_MARINE_SUPPLIES                                                         :{TINYFONT}SM
 STR_CID_METAL                                                                   :{TINYFONT}MT
 STR_CID_MILK                                                                    :{TINYFONT}ML
+STR_CID_NICKEL                                                                  :{TINYFONT}NK
 STR_CID_NITRATES                                                                :{TINYFONT}NI
 STR_CID_NUTS                                                                    :{TINYFONT}NT
 STR_CID_PETROL                                                                  :{TINYFONT}BZ
+STR_CID_PIG_IRON                                                                :{TINYFONT}RY
+STR_CID_PIPE                                                                    :{TINYFONT}PP
 STR_CID_PHOSPHATE                                                               :{TINYFONT}FF
+STR_CID_POTASH                                                                  :{TINYFONT}PA
+STR_CID_POWERTRAIN_COMPONENTS                                                   :{TINYFONT}DL
 STR_CID_PYRITE_ORE                                                              :{TINYFONT}PY
+STR_CID_QUICKLIME                                                               :{TINYFONT}CO
 STR_CID_RECYCLABLES                                                             :{TINYFONT}KG
 STR_CID_SAND                                                                    :{TINYFONT}ZD
 STR_CID_SCRAP_METAL                                                             :{TINYFONT}ST
+STR_CID_SLAG                                                                    :{TINYFONT}SK
+STR_CID_STEEL                                                                   :{TINYFONT}SL
 STR_CID_STONE                                                                   :{TINYFONT}GD
 STR_CID_SUGAR_BEET                                                              :{TINYFONT}SB
 STR_CID_SUGARCANE                                                               :{TINYFONT}SR
+STR_CID_SULPHUR                                                                 :{TINYFONT}ZW
 STR_CID_VEHICLE_PARTS                                                           :{TINYFONT}VO
 STR_CID_VEHICLES                                                                :{TINYFONT}VN
 STR_CID_WOOL                                                                    :{TINYFONT}WL
@@ -151,8 +200,10 @@ STR_ERR_LOCATION_LIMIT_1_PER_TOWN                                               
 STR_IND_ALUMINIUM_PLANT                                                         :Aluminiumfabriek
 STR_IND_ARABLE_FARM                                                             :Landbouw boerenbedrijf
 STR_IND_BASICFARM                                                               :Boerenbedrijf
+STR_IND_BASIC_OXYGEN_FURNACE                                                    :Oxystaalfabriek
 STR_IND_BAUXITE_MINE                                                            :Bauxietmijn
 STR_IND_BIOREFINERY                                                             :Bioraffinaderij
+STR_IND_BLAST_FURNACE                                                           :Hoogoven
 STR_IND_BREWERY                                                                 :Brouwerij
 STR_IND_BREWERY_CIDER_MILL                                                      :Fruitbierbrouwerij
 STR_IND_BRICK_WORKS                                                             :Steenfabriek
@@ -162,11 +213,16 @@ STR_IND_CEMENT_PLANT                                                            
 STR_IND_CHEMICAL_PLANT                                                          :Chemische fabriek
 STR_IND_CLAY_PIT                                                                :Kleiwinning
 STR_IND_COFFEE_ESTATE                                                           :Koffieplantage
+STR_IND_COKE_OVEN                                                               :Cokesoven
 STR_IND_COPPER_REFINERY                                                         :Kopererts raffinaderij
 STR_IND_FIBRE_CROP_FARM                                                         :Vlasboerderij
 STR_IND_DAIRY                                                                   :Zuivelfabriek
+STR_IND_DAIRY_FARM                                                              :Veehouderij
 STR_IND_DREDGING_SITE                                                           :Baggermolen
+STR_IND_ELECTRIC_ARC_FURNACE                                                    :Electrischeboogoven
+STR_IND_FACTORY                                                                 :Fabriek
 STR_IND_FERTILISER_PLANT                                                        :Kunstmestfabriek
+STR_IND_FERTILISER_AND_EXPLOSIVES_PLANT                                         :Kunstmest en explosieven fabriek
 STR_IND_FISHING_GROUND                                                          :Visgebied
 STR_IND_FISHING_HARBOUR                                                         :Vissershaven
 STR_IND_FISHING_VILLAGE                                                         :Visdorp
@@ -174,10 +230,12 @@ STR_IND_FLOUR_MILL                                                              
 STR_IND_FOOD_MARKET                                                             :Kruidenier
 STR_IND_FOOD_PROCESSOR                                                          :Voedselfabriek
 STR_IND_FURNITURE_FACTORY                                                       :Meubelfabriek
+STR_IND_GALVANISING_PLANT                                                       :Galvanisatie fabriek
 STR_IND_GENERAL_STORE                                                           :Winkel
 STR_IND_GLASS_WORKS                                                             :Glasfabriek
 STR_IND_HARDWARE_STORE                                                          :IJzerhandel
 STR_IND_HOTEL                                                                   :Hotel
+STR_IND_HUNTING_CAMP                                                            :Jagerskamp
 STR_IND_IRON_WORKS                                                              :IJzeroven
 STR_IND_JUNKYARD                                                                :Schroothoop
 STR_IND_LIME_KILN                                                               :Kalkoven
@@ -190,10 +248,14 @@ STR_IND_METAL_FOUNDRY                                                           
 STR_IND_MIXEDFARM                                                               :Gemengd boerenbedrijf
 STR_IND_NITRATE_MINE                                                            :Nitraatmijn
 STR_IND_ORCHARD_PIGGERY                                                         :Boomgaard en varkensstallen
+STR_IND_ORE_TERMINAL                                                            :Ertsterminal
 STR_IND_PETROLPUMP                                                              :Tankstation
+STR_IND_PETROCHEMICAL_TERMINAL                                                  :Petrochemische terminal
 STR_IND_PHOSPHATE_MINE                                                          :Fosfaatmijn
+STR_IND_PIPE_MILL                                                               :Pijpmolen
 STR_IND_PLASTICS_PLANT                                                          :Kunststoffabriek
 STR_IND_PORT                                                                    :Haven
+STR_IND_POTASH_MINE                                                             :Potasmijn
 STR_IND_PYRITE_MINE                                                             :Pyrietmijn
 STR_IND_PYRITE_SMELTER                                                          :Pyrietmenger
 STR_IND_POWER_PLANT                                                             :Energiecentrale
@@ -201,7 +263,10 @@ STR_IND_QUARRY                                                                  
 STR_IND_RANCH                                                                   :Ranch
 STR_IND_RECYCLING_DEPOT                                                         :Kringloopwinkel
 STR_IND_RECYCLING_PLANT                                                         :Recyclingfabriek
+STR_IND_REINDEER_FARM                                                           :Rendier boerderij
 STR_IND_SHEEPFARM                                                               :Schapenhouderij
+STR_IND_SHIPYARD                                                                :Scheepswerf
+STR_IND_SLAG_GRINDING_PLANT                                                     :Slakmaalfabriek
 STR_IND_SMITHY_FORGE                                                            :Smederij
 STR_IND_STOCKYARD                                                               :Slachterij
 STR_IND_SUGAR_PLANTATION                                                        :Suikerplantage
@@ -211,9 +276,11 @@ STR_IND_TEXTILE_MILL                                                            
 STR_IND_TRADING_POST                                                            :Handelspost
 STR_IND_TYRE_PLANT                                                              :Bandenfabriek
 STR_IND_VEHICLE_FACTORY                                                         :Autofabriek
+STR_IND_VEHICLE_DEALER                                                          :Autodealer
 STR_IND_VINEYARD                                                                :Wijngaard
 
 STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}Productie:{}  2t voor iedere 8t afgeleverd bauxiet{}  2t voor iedere 8.000l afgeleverde chemicaliën{} 4t voor iedere 8t afgeleverd schroot{}{}Productie wordt verhoogd als twee of meer vrachtsoorten binnen drie maanden van elkaar worden afgeleverd.
+STR_EXTRA_BASIC_OXYGEN_FURNACE                                                  :Meer tekst nodig!!
 STR_EXTRA_BIOREFINERY                                                           :{BLACK}Productie:{}  6.000l voor iedere 8t afgeleverd graan{}  6.000l voor iedere 8t afgeleverde suiker
 STR_EXTRA_BREWERY                                                               :{BLACK}Productie:{}  3.000l voor iedere 8 kratten afgeleverde productiematerialen{} {STRING} {STRING}{}Productie wordt verhoogd als productiematerialen binnen drie maanden van andere vracht worden afgeleverd.
 STR_EXTRA_BREWERY_FRUIT_SUBSTR                                                  :5.000l voor iedere 8t afgeleverd groente en fruit{}
@@ -224,9 +291,12 @@ STR_EXTRA_CEMENT_PLANT                                                          
 STR_EXTRA_CEMENT_PLANT_COAL_SUBSTR                                              :2t voor iedere 8t afgeleverde kolen{}
 STR_EXTRA_CEMENT_PLANT_PETROL_SUBSTR                                            :2t voor iedere 8,000l afgeleverde benzine{}
 STR_EXTRA_CHEMICAL_PLANT                                                        :{BLACK}Productie:{} 6.000l voor iedere 8.000l afgeleverde olie{} 6.000l voor iedere 8t afgeleverde nitraten
+STR_EXTRA_COKE_OVEN                                                             :{BLACK}Productie:{} 2t voor iedere 8t afgeleverde kolen{} 2t voor iedere 8t afgeleverd zand{} 4t voor iedere 8t afgeleverd klei{}{}Productie wordt verhoogd als twee of meer vrachtsoorten binnen drie maanden van elkaar worden afgeleverd.
 STR_EXTRA_COPPER_REFINERY                                                       :{BLACK}Productie:{} 5t voor iedere 8t afgeleverd kopererts{} 3t voor iedere 8.000l afgeleverde chemicaliën{}{}Productie wordt verhoogd als twee of meer vrachtsoorten binnen drie maanden van elkaar worden afgeleverd.
 STR_EXTRA_DAIRY                                                                 :{BLACK}Productie:{}  3t voor iedere 8 kratten afgeleverde productiematerialen{}  5t voor iedere 8.000l afgeleverde melk{}{}Productie wordt verhoogd als beide vrachtsoorten binnen drie maanden van elkaar worden afgeleverd.
+STR_EXTRA_ELECTRIC_ARC_FURNACE                                                  :{BLACK}Productie:{} 3 kratten voor iedere 8 kratten afgeleverde productiematerialen{} 5 kratten voor iedere 8t afgeleverd gezaagd hout{}{}Productie wordt verhoogd als beide vrachtsoorten binnen drie maanden van elkaar worden afgeleverd.
 STR_EXTRA_FERTILIZER_PLANT                                                      :{BLACK}Productie:{}  8 kratten voor iedere 8.000l afgeleverde chemicaliën
+STR_EXTRA_FACTORY                                                               :{BLACK}Productie:{} 3 kratten voor iedere 8 kratten afgeleverde productiematerialen{} 5 kratten voor iedere 8t afgeleverd gezaagd hout{}{}Productie wordt verhoogd als beide vrachtsoorten binnen drie maanden van elkaar worden afgeleverd.
 STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Productie:{}  3t voor iedere 8 kratten afgeleverde productiematerialen{}  5t voor iedere 8t afgeleverd vis{}{}Productie wordt verhoogd als beide vrachtsoorten binnen drie maanden van elkaar worden afgeleverd.
 STR_EXTRA_FLOUR_MILL                                                            :{BLACK}Productie:{} 3t voor iedere 8 kratten afgeleverde productiematerialen{} {STRING} {STRING}{}Productie wordt verhoogd als productiematerialen binnen drie maanden van de andere goederen worden afgeleverd.
 STR_EXTRA_FLOUR_MILL_GRAIN_SUBSTR                                               :5t voor iedere 8t afgeleverd graan{}
@@ -236,6 +306,7 @@ STR_EXTRA_FOOD_PROCESSING_PLANT                                                 
 STR_EXTRA_FOOD_PROCESSING_PLANT_BEANS_SUBSTR                                    :6t voor iedere 8t afgeleverde bonen{}
 STR_EXTRA_FOOD_PROCESSING_PLANT_NUTS_SUBSTR                                     :6t voor iedere afgeleverde 8t noten{}
 STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Productie:{}  3 kratten voor iedere 8 kratten afgeleverde productiematerialen{}  5 kratten voor iedere 8t afgeleverd gezaagd hout{}{}Productie wordt verhoogd als beide vrachtsoorten binnen drie maanden van elkaar worden afgeleverd.
+STR_EXTRA_GALVANISING_PLANT                                                     :Meer tekst nodig!!
 STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Maakt glasproducten zoals flessen, potten, en vensterglas.{}{}Productie:{} 6t voor iedere 8t afgeleverd zand{} 2t voor iedere 8.000l afgeleverde chemicaliën{}{}Productie wordt verhoogd als beide vrachtsoorten binnen drie maanden van elkaar worden afgeleverd.
 STR_EXTRA_IRON_WORKS                                                            :{BLACK}Productie:{}  3t voor iedere 8t afgeleverd ijzererts{}  3t voor iedere 8t afgeleverd hout{}  2t voor iedere 8t afgeleverd zand{}{}Productie wordt verhoogd als beide vrachtsoorten binnen drie maanden van elkaar worden afgeleverd.
 STR_EXTRA_LIME_KILN                                                             :{BLACK}Productie:{}  3t voor iedere 8t afgeleverd grind{}  3t voor iedere 8t afgeleverde kolen{}{}Productie wordt verhoogd als beide vrachtsoorten binnen drie maanden van elkaar worden afgeleverd.
@@ -246,6 +317,7 @@ STR_EXTRA_METAL_FABRICATION_PLANT                                               
 STR_EXTRA_METAL_FOUNDRY                                                         :{BLACK}Maakt mataalproducten uit metalen platen zoals blikken en huishoudartikelen.{}{}Productie:{} 2 kratten voor iedere 8.000l afgeleverde chemicaliën{} 6 kratten voor iedere 8t afgeleverd metaal{}{}Productie wordt verhoogd als beide vrachtsoorten binnen drie maanden van elkaar worden afgeleverd.
 STR_EXTRA_OIL_REFINERY                                                          :{BLACK}Verwerkt ruwe olie tot benzine en chemicaliën.{}{}Productie:{} 6.000l voor iedere 8.000l afgeleverde benzine
 STR_EXTRA_PAPER_MILL                                                            :{BLACK}Maakt papier en karton uit houtpulp.{}{}Productie:{}  4 kratten voor iedere 8t afgeleverd hout{} 2 kratten voor iedere 8t afgeleverde klei{} 2 kratten voor iedere 8.000l afgeleverde chemicaliën{}{}Productie wordt verhoogd als twee of meer vrachtsoorten binnen drie maanden van elkaar worden afgeleverd.
+STR_EXTRA_PIPE_MILL                                                             :Nog een tekst nodig!!
 STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}Maakt plasticproducten zoals verpakkingen en huishoudartikelen.{}{}Productie:{} {STRING} {STRING}
 STR_EXTRA_PLASTICS_PLANT_CHEMICALS_SUBSTR                                       :6 kratten voor iedere 8.000l afgeleverde chemicaliën{}
 STR_EXTRA_PLASTICS_PLANT_PLANT_FIBRES_SUBSTR                                    :6 kratten voor iedere 8 balen afgeleverd katoen{}
@@ -253,6 +325,8 @@ STR_EXTRA_PYRITE_SMELTER                                                        
 STR_EXTRA_RECYCLING_PLANT                                                       :{BLACK}Verwerkt kringloopgoederen.{}{}Productie:{} 6t productie voor iedere 8t afgeleverde kringloopgoederen
 STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}Productie is evenredig met het aantal inwoners in the stad.
 STR_EXTRA_SAWMILL                                                               :{BLACK}Zaagt hout.{}{}Productie:{} 6t voor iedere 8t afgeleverd hout
+STR_EXTRA_SHIPYARD                                                              :meer tekst nodig
+STR_EXTRA_SLAG_GRINDING_PLANT                                                   :{BLACK}Vermaalt slak.{}{}Productie:{} 6t voor iedere 8t afgeleverd slak
 STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Maakt smeedijzeren produkten zoals hekken, roosters, gereedschappen, ploegen, scheppen en hoefijzers.{}{}Productie:{} 8t voor iedere 8t afgeleverd metaal
 STR_EXTRA_STEELMILL                                                             :{BLACK}Productie:{}  3t voor iedere 8t afgeleverd ijzererts{}  2t voor iedere 8t afgeleverde kolen{}  3t voor iedere 8t afgeleverd schroot{}{}Productie wordt verhoogd als twee of meer vrachtsoorten binnen drie maanden van elkaar worden afgeleverd.
 STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Productie:{}  3t voor iedere 8 kratten afgeleverde productiematerialen{}  5t voor iedere 8t afgeleverd suikerriet{}{}Productie wordt verhoogd tot 8t voor iedere 8t als beide vrachtsoorten binnen drie maanden van elkaar worden afgeleverd.

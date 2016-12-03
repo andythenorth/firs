@@ -36,6 +36,7 @@ STR_PARAM_VALUE_ECONOMIES_STEELTOWN                                             
 
 STR_CARGO_NAME_ALCOHOL                                                          :Alkohol
 STR_CARGO_NAME_ALUMINIUM                                                        :Aluminium
+STR_CARGO_NAME_BASE_METALS                                                      :Basismetaller
 STR_CARGO_NAME_BAUXITE                                                          :Bauksitt
 STR_CARGO_NAME_BEANS                                                            :Bønner
 STR_CARGO_NAME_BUILDING_MATERIALS                                               :Byggematerialer
@@ -47,27 +48,34 @@ STR_CARGO_NAME_COKE                                                             
 STR_CARGO_NAME_COPPER                                                           :Kobber
 STR_CARGO_NAME_EDIBLE_OIL                                                       :Matolje
 STR_CARGO_NAME_ENGINEERING_SUPPLIES                                             :Anleggsutstyr
+STR_CARGO_NAME_EXPLOSIVES                                                       :Sprengstoff
 STR_CARGO_NAME_FIBRES                                                           :Plantefiber
 STR_CARGO_NAME_FISH                                                             :Fisk
 STR_CARGO_NAME_FARM_SUPPLIES                                                    :Gårdsutstyr
+STR_CARGO_NAME_FERTILISER                                                       :Gjødsel
 STR_CARGO_NAME_FRUITS                                                           :Frukt
 STR_CARGO_NAME_GALVANISED_STEEL                                                 :Galvanisert stål
+STR_CARGO_NAME_QUICKLIME                                                        :Ulesket kalk
 STR_CARGO_NAME_LUMBER                                                           :Trelast
 STR_CARGO_NAME_METAL                                                            :Metall
 STR_CARGO_NAME_MILK                                                             :Melk
 STR_CARGO_NAME_MANGANESE                                                        :Mangan
-STR_CARGO_NAME_MANUFACTURING_SUPPLIES                                           :Produksjonsutstyr
+STR_CARGO_NAME_MANUFACTURING_SUPPLIES                                           :Manufakturutstyr
 STR_CARGO_NAME_MARINE_SUPPLIES                                                  :Marint utstyr
 STR_CARGO_NAME_NICKEL                                                           :Nikkel
 STR_CARGO_NAME_NITRATES                                                         :Nitrater
 STR_CARGO_NAME_NUTS                                                             :Nøtter
 STR_CARGO_NAME_PETROL                                                           :Bensin
 STR_CARGO_NAME_PHOSPHATE                                                        :Fosfat
+STR_CARGO_NAME_PIG_IRON                                                         :Råjern
 STR_CARGO_NAME_PIPE                                                             :Rør
+STR_CARGO_NAME_POTASH                                                           :Kalium
+STR_CARGO_NAME_POWERTRAIN_COMPONENTS                                            :Krafttogdeler
 STR_CARGO_NAME_PYRITE_ORE                                                       :Pyrittmalm
 STR_CARGO_NAME_RECYCLABLES                                                      :Gjenvinningsgods
 STR_CARGO_NAME_SAND                                                             :Sand
 STR_CARGO_NAME_SCRAP_METAL                                                      :Skrapmetall
+STR_CARGO_NAME_SLAG                                                             :Slagg
 STR_CARGO_NAME_STEEL                                                            :Stål
 STR_CARGO_NAME_STONE                                                            :Stein
 STR_CARGO_NAME_SUGAR_BEET                                                       :Sukkerroe
@@ -78,6 +86,7 @@ STR_CARGO_NAME_VEHICLES                                                         
 STR_CARGO_NAME_WOOL                                                             :Ull
 
 STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} alkohol
+STR_CARGO_UNIT_ALUMINIUM                                                        :{WEIGHT} aluminium
 STR_CARGO_UNIT_BAUXITE                                                          :{WEIGHT} bauksitt
 STR_CARGO_UNIT_BASE_METALS                                                      :{WEIGHT} basismetaller
 STR_CARGO_UNIT_BEANS                                                            :{WEIGHT} bønner
@@ -90,22 +99,30 @@ STR_CARGO_UNIT_COKE                                                             
 STR_CARGO_UNIT_COPPER                                                           :{WEIGHT} kobber
 STR_CARGO_UNIT_EDIBLE_OIL                                                       :{VOLUME} matolje
 STR_CARGO_UNIT_ENGINEERING_SUPPLIES                                             :{SIGNED_WORD} kasse{P 0 "" r} anleggsutstyr
+STR_CARGO_UNIT_EXPLOSIVES                                                       :{SIGNED_WORD} kasse{P 0 "" r} sprengstoff
 STR_CARGO_UNIT_FERTILISER                                                       :{WEIGHT} gjødsel
 STR_CARGO_UNIT_FIBRES                                                           :{SIGNED_WORD} balle{P 0 "" r} plantefiber
 STR_CARGO_UNIT_FISH                                                             :{WEIGHT} fisk
 STR_CARGO_UNIT_FMSP                                                             :{SIGNED_WORD} kasse{P 0 "" r} gårdsutstyr
 STR_CARGO_UNIT_FRUITS                                                           :{WEIGHT} frukt
+STR_CARGO_UNIT_GALVANISED_STEEL                                                 :{WEIGHT} galvanisert stål
 STR_CARGO_UNIT_LUMBER                                                           :{WEIGHT} trelast
 STR_CARGO_UNIT_MANGANESE                                                        :{WEIGHT} mangan
+STR_CARGO_UNIT_MARINE_SUPPLIES                                                  :{SIGNED_WORD} kasse{P 0 "" r} marint utstyr
 STR_CARGO_UNIT_METAL                                                            :{WEIGHT} metall
 STR_CARGO_UNIT_MILK                                                             :{VOLUME} melk
+STR_CARGO_UNIT_NICKEL                                                           :{WEIGHT} nikkel
 STR_CARGO_UNIT_NITRATES                                                         :{WEIGHT} nitrater
 STR_CARGO_UNIT_NUTS                                                             :{SIGNED_WORD} sekk{P 0 "" er}  nøtter
-STR_CARGO_UNIT_MNSP                                                             :{SIGNED_WORD} kasse{P 0 "" r} produksjonsutstyr
+STR_CARGO_UNIT_MNSP                                                             :{SIGNED_WORD} kasse{P 0 "" r} manufakturutstyr
 STR_CARGO_UNIT_PETROL                                                           :{VOLUME} bensin
 STR_CARGO_UNIT_PHOSPHATE                                                        :{WEIGHT} fosfat
 STR_CARGO_UNIT_PIG_IRON                                                         :{WEIGHT} råjern
+STR_CARGO_UNIT_PIPE                                                             :{WEIGHT} rør
+STR_CARGO_UNIT_POTASH                                                           :{WEIGHT} kalium
+STR_CARGO_UNIT_POWERTRAIN_COMPONENTS                                            :{SIGNED_WORD} kasse{P 0 "" r} krafttogdeler
 STR_CARGO_UNIT_PYRITE_ORE                                                       :{WEIGHT} pyrittmalm
+STR_CARGO_UNIT_QUICKLIME                                                        :{WEIGHT} ulesket kalk
 STR_CARGO_UNIT_RECYCLABLES                                                      :{WEIGHT} gjenvinningsgods
 STR_CARGO_UNIT_SAND                                                             :{WEIGHT} sand
 STR_CARGO_UNIT_SCRAP_METAL                                                      :{WEIGHT} skrapmetall
@@ -114,12 +131,14 @@ STR_CARGO_UNIT_STEEL                                                            
 STR_CARGO_UNIT_STONE                                                            :{WEIGHT} stein
 STR_CARGO_UNIT_SUGAR_BEET                                                       :{WEIGHT} sukkerroe
 STR_CARGO_UNIT_SUGARCANE                                                        :{WEIGHT} sukkerrør
+STR_CARGO_UNIT_SULPHUR                                                          :{WEIGHT} svovel
 STR_CARGO_UNIT_VEHICLE_PARTS                                                    :{SIGNED_WORD} kasse{P 0 "" r} kjøretøydeler
 STR_CARGO_UNIT_VEHICLES                                                         :{SIGNED_WORD} kjøretøy
 STR_CARGO_UNIT_WOOL                                                             :{SIGNED_WORD} balle{P 0 "" r} ull
 
 STR_CID_ALCOHOL                                                                 :{TINYFONT}AL
 STR_CID_ALUMINIUM                                                               :{TINYFONT}AM
+STR_CID_BASE_METALS                                                             :{TINYFONT}BA
 STR_CID_BAUXITE                                                                 :{TINYFONT}BX
 STR_CID_BEANS                                                                   :{TINYFONT}BN
 STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}BM
@@ -127,29 +146,38 @@ STR_CID_CASSAVA                                                                 
 STR_CID_CHEMICALS                                                               :{TINYFONT}CH
 STR_CID_CLAY                                                                    :{TINYFONT}CY
 STR_CID_COFFEE                                                                  :{TINYFONT}CF
+STR_CID_COKE                                                                    :{TINYFONT}CK
 STR_CID_COPPER                                                                  :{TINYFONT}CR
 STR_CID_EDIBLE_OIL                                                              :{TINYFONT}EO
 STR_CID_ENGINEERING_SUPPLIES                                                    :{TINYFONT}ES
+STR_CID_EXPLOSIVES                                                              :{TINYFONT}EX
 STR_CID_FARM_SUPPLIES                                                           :{TINYFONT}FS
 STR_CID_FERTILISER                                                              :{TINYFONT}FL
 STR_CID_FIBRES                                                                  :{TINYFONT}PF
 STR_CID_FISH                                                                    :{TINYFONT}FI
+STR_CID_GALVANISED_STEEL                                                        :{TINYFONT}GS
 STR_CID_LUMBER                                                                  :{TINYFONT}LU
 STR_CID_MANGANESE                                                               :{TINYFONT}MN
 STR_CID_MANUFACTURING_SUPPLIES                                                  :{TINYFONT}MS
+STR_CID_MARINE_SUPPLIES                                                         :{TINYFONT}MA
 STR_CID_METAL                                                                   :{TINYFONT}MT
 STR_CID_MILK                                                                    :{TINYFONT}MK
 STR_CID_NICKEL                                                                  :{TINYFONT}NK
 STR_CID_NITRATES                                                                :{TINYFONT}NI
 STR_CID_NUTS                                                                    :{TINYFONT}NT
 STR_CID_PETROL                                                                  :{TINYFONT}PT
+STR_CID_PIG_IRON                                                                :{TINYFONT}PI
+STR_CID_PIPE                                                                    :{TINYFONT}PP
 STR_CID_PHOSPHATE                                                               :{TINYFONT}PH
+STR_CID_POTASH                                                                  :{TINYFONT}PA
 STR_CID_POWERTRAIN_COMPONENTS                                                   :{TINYFONT}PC
 STR_CID_PYRITE_ORE                                                              :{TINYFONT}PY
 STR_CID_QUICKLIME                                                               :{TINYFONT}QL
 STR_CID_RECYCLABLES                                                             :{TINYFONT}RC
 STR_CID_SAND                                                                    :{TINYFONT}SA
 STR_CID_SCRAP_METAL                                                             :{TINYFONT}SM
+STR_CID_SLAG                                                                    :{TINYFONT}SG
+STR_CID_STEEL                                                                   :{TINYFONT}SL
 STR_CID_STONE                                                                   :{TINYFONT}ST
 STR_CID_SUGAR_BEET                                                              :{TINYFONT}SB
 STR_CID_SUGARCANE                                                               :{TINYFONT}SC
@@ -174,10 +202,10 @@ STR_ERR_LOCATION_LIMIT_1_PER_TOWN                                               
 STR_IND_ALUMINIUM_PLANT                                                         :{G=neuter}Aluminiumsverk
 STR_IND_ARABLE_FARM                                                             :{G=masculine}Jordbruksgård
 STR_IND_BASICFARM                                                               :{G=masculine}Gård
-STR_IND_BASIC_OXYGEN_FURNACE                                                    :Enkel oksygenovn
+STR_IND_BASIC_OXYGEN_FURNACE                                                    :{G=masculine}Enkel smelteovn
 STR_IND_BAUXITE_MINE                                                            :{G=feminine}Bauksittgruve
 STR_IND_BIOREFINERY                                                             :{G=neuter}Bioraffineri
-STR_IND_BLAST_FURNACE                                                           :Blåseovn
+STR_IND_BLAST_FURNACE                                                           :{G=masculine}Blåseovn
 STR_IND_BREWERY                                                                 :{G=neuter}Bryggeri
 STR_IND_BREWERY_CIDER_MILL                                                      :{G=neuter}Siderbryggeri
 STR_IND_BRICK_WORKS                                                             :{G=neuter}Teglverk
@@ -187,11 +215,16 @@ STR_IND_CEMENT_PLANT                                                            
 STR_IND_CHEMICAL_PLANT                                                          :{G=masculine}Kjemisk fabrikk
 STR_IND_CLAY_PIT                                                                :{G=feminine}Leirgruve
 STR_IND_COFFEE_ESTATE                                                           :{G=masculine}Kaffeplantasje
+STR_IND_COKE_OVEN                                                               :{G=masculine}Koksovn
 STR_IND_COPPER_REFINERY                                                         :{G=neuter}Kobberraffineri
 STR_IND_FIBRE_CROP_FARM                                                         :{G=masculine}Gård med fibervekster
 STR_IND_DAIRY                                                                   :{G=neuter}Meieri
+STR_IND_DAIRY_FARM                                                              :{G=masculine}Melkegård
 STR_IND_DREDGING_SITE                                                           :{G=masculine}Mudderbanke
+STR_IND_ELECTRIC_ARC_FURNACE                                                    :{G=masculine}Elektrobueovn
+STR_IND_FACTORY                                                                 :{G=neuter}Fabrikk
 STR_IND_FERTILISER_PLANT                                                        :{G=masculine}Gjødselfabrikk
+STR_IND_FERTILISER_AND_EXPLOSIVES_PLANT                                         :{G=masculine}Gjødsel og sprengstoff-fabrikk
 STR_IND_FISHING_GROUND                                                          :{G=masculine}Fiskebanke
 STR_IND_FISHING_HARBOUR                                                         :{G=feminine}Fiskehavn
 STR_IND_FISHING_VILLAGE                                                         :{G=masculine}Fiskerlandsby
@@ -199,10 +232,12 @@ STR_IND_FLOUR_MILL                                                              
 STR_IND_FOOD_MARKET                                                             :{G=masculine}Matbutikk
 STR_IND_FOOD_PROCESSOR                                                          :{G=masculine}Hermetikkfabrikk
 STR_IND_FURNITURE_FACTORY                                                       :{G=masculine}Møbelfabrikk
+STR_IND_GALVANISING_PLANT                                                       :{G=neuter}Galvaniseringsverk
 STR_IND_GENERAL_STORE                                                           :{G=masculine}Landhandel
 STR_IND_GLASS_WORKS                                                             :{G=neuter}Glassverk
 STR_IND_HARDWARE_STORE                                                          :{G=masculine}Jernvarehandel
 STR_IND_HOTEL                                                                   :{G=neuter}Hotell
+STR_IND_HUNTING_CAMP                                                            :{G=masculine}Jaktleir
 STR_IND_IRON_WORKS                                                              :{G=neuter}Jernverk
 STR_IND_JUNKYARD                                                                :{G=masculine}Skraphandel
 STR_IND_LIME_KILN                                                               :{G=masculine}Kalkovn
@@ -215,14 +250,14 @@ STR_IND_METAL_FOUNDRY                                                           
 STR_IND_MIXEDFARM                                                               :{G=masculine}Blandingsgård
 STR_IND_NITRATE_MINE                                                            :{G=feminine}Nitratgruve
 STR_IND_ORCHARD_PIGGERY                                                         :{G=masculine}Frukt- og grisegård
-STR_IND_ORE_TERMINAL                                                            :Malmterminal
+STR_IND_ORE_TERMINAL                                                            :{G=masculine}Malmterminal
 STR_IND_PETROLPUMP                                                              :{G=masculine}Bensinstasjon
 STR_IND_PETROCHEMICAL_TERMINAL                                                  :{G=masculine}Petrokjemihavn
 STR_IND_PHOSPHATE_MINE                                                          :{G=feminine}Fosfatgruve
-STR_IND_PIPE_MILL                                                               :Rørverk
+STR_IND_PIPE_MILL                                                               :{G=neuter}Rørverk
 STR_IND_PLASTICS_PLANT                                                          :{G=masculine}Plastfabrikk
 STR_IND_PORT                                                                    :{G=feminine}Havn
-STR_IND_POTASH_MINE                                                             :Kaliumgruve
+STR_IND_POTASH_MINE                                                             :{G=feminine}Kaliumgruve
 STR_IND_PYRITE_MINE                                                             :{G=feminine}Pyrittgruve
 STR_IND_PYRITE_SMELTER                                                          :{G=neuter}Pyrittverk
 STR_IND_POWER_PLANT                                                             :{G=neuter}Kraftverk
@@ -230,9 +265,10 @@ STR_IND_QUARRY                                                                  
 STR_IND_RANCH                                                                   :{G=masculine}Ranch
 STR_IND_RECYCLING_DEPOT                                                         :{G=masculine}Miljøstasjon
 STR_IND_RECYCLING_PLANT                                                         :{G=neuter}Gjenvinningsverk
-STR_IND_REINDEER_FARM                                                           :Reinsdyrgård
+STR_IND_REINDEER_FARM                                                           :{G=masculine}Reinsdyrdrift
 STR_IND_SHEEPFARM                                                               :{G=masculine}Sauegård
-STR_IND_SLAG_GRINDING_PLANT                                                     :Slaggknuseverk
+STR_IND_SHIPYARD                                                                :{G=neuter}Skipsverft
+STR_IND_SLAG_GRINDING_PLANT                                                     :{G=neuter}Slaggknuseverk
 STR_IND_SMITHY_FORGE                                                            :{G=feminine}Smie
 STR_IND_STOCKYARD                                                               :{G=neuter}Slakteri
 STR_IND_SUGAR_PLANTATION                                                        :{G=masculine}Sukkerplantasje
@@ -242,40 +278,43 @@ STR_IND_TEXTILE_MILL                                                            
 STR_IND_TRADING_POST                                                            :{G=masculine}Handelsstasjon
 STR_IND_TYRE_PLANT                                                              :{G=masculine}Dekkfabrikk
 STR_IND_VEHICLE_FACTORY                                                         :{G=masculine}Kjøretøyfabrikk
-STR_IND_VEHICLE_DEALER                                                          :Kjøretøyforretning
+STR_IND_VEHICLE_DEALER                                                          :{G=masculine}Kjøretøyforretning
 STR_IND_VINEYARD                                                                :{G=masculine}Vingård
 
 STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}Vareproduksjon:{}  2t pr 8t bauksitt levert{}  2t pr 8.000l kjemikalier levert{}  4t pr 8t skrapmetall levert{}{}Produksjonen øker om to eller fler vareslag leveres innen tre måneder etter hverandre.
+STR_EXTRA_BASIC_OXYGEN_FURNACE                                                  :!!! NEEDS EXTRA TEXT STRING
 STR_EXTRA_BIOREFINERY                                                           :{BLACK}Vareproduksjon:{} 6.000l pr 8t korn levert{} 6.000l pr 8t sukker levert
-STR_EXTRA_BREWERY                                                               :{BLACK}Vareproduksjon:{} 3.000l pr 8 kasser produksjonsutstyr levert{} {STRING} {STRING}{}Produksjonen øker om produksjonutstyr og andre vareslag blir levert innen tre måneder etter hverandre.
+STR_EXTRA_BREWERY                                                               :{BLACK}Vareproduksjon:{} 3.000l pr 8 kasser manufakturutstyr levert{} {STRING} {STRING}{}Produksjonen øker om manufakturutstyr og andre vareslag blir levert innen tre måneder etter hverandre.
 STR_EXTRA_BREWERY_FRUIT_SUBSTR                                                  :5.000l pr. 8t frukt levert{}
 STR_EXTRA_BREWERY_GRAIN_SUBSTR                                                  :5.000l pr 8t korn levert{}
 STR_EXTRA_BREWERY_MAIZE_SUBSTR                                                  :5.000l pr 8t mais levert{}
 STR_EXTRA_BRICKWORKS                                                            :{BLACK}Vareproduksjon:{}  2t pr 8t kull levert{}  2t pr 8t sand levert{}  4t pr 8t leire levert{}{}Produksjonen øker om to eller fler vareslag leveres innen tre måneder etter hverandre.
-STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Vareproduksjon:{} {STRING}  2t pr 8t leire levert{}  2t per 8t stein levert{}{}Produksjonen øker om to eller fler vareslag leveres innen tre måneder etter hverandre.
+STR_EXTRA_CEMENT_PLANT                                                          :{BLACK}Vareproduksjon:{} {STRING}  2t pr 8t leire levert{}  4t pr 8t stein levert{}{}Produksjonen øker om to eller fler vareslag leveres innen tre måneder etter hverandre.
 STR_EXTRA_CEMENT_PLANT_COAL_SUBSTR                                              :2t pr 8t kull levert{}
 STR_EXTRA_CEMENT_PLANT_PETROL_SUBSTR                                            :2t pr 8.000l bensin levert{}
 STR_EXTRA_CHEMICAL_PLANT                                                        :{BLACK}Vareproduksjon:{}  6.000l per 8.000l olje levert{}  6.000l per 8t nitrater levert
 STR_EXTRA_COKE_OVEN                                                             :{BLACK}Vareproduksjon:{} 2t pr 8t kull levert{} 2t pr 8t sand levert{} 4t pr 8t leire levert{}{}Produksjonen øker om to eller fler vareslag leveres innen tre måneder etter hverandre.
 STR_EXTRA_COPPER_REFINERY                                                       :{BLACK}Vareproduksjon:{}  5t pr 8t kobbermalm levert{}  3t pr 8.000l kjemikalier levert{}{}Produksjonen øker om begge vareslag leveres innen tre måneder etter hverandre.
-STR_EXTRA_DAIRY                                                                 :{BLACK}Vareproduksjon:{} 3t pr 8 kasser produksjonsutstyr levert{} 5t pr 8.000l melk levert{}{}Produksjonen øker om begge varene blir levert innen tre måneder etter hverandre.
-STR_EXTRA_ELECTRIC_ARC_FURNACE                                                  :{BLACK}Vareproduksjon:{} 3t pr 8 kasser produksjonsutstyr levert{} 5t per 8t trelast levert{}{}Produksjonen øker om begge varene leveres innen tre måneder etter hverandre.
+STR_EXTRA_DAIRY                                                                 :{BLACK}Vareproduksjon:{} 3t pr 8 kasser manufakturutstyr levert{} 5t pr 8.000l melk levert{}{}Produksjonen øker om begge varene blir levert innen tre måneder etter hverandre.
+STR_EXTRA_ELECTRIC_ARC_FURNACE                                                  :{BLACK}Vareproduksjon:{} 3t pr 8 kasser manufakturutstyr levert{} 5t per 8t trelast levert{}{}Produksjonen øker om begge varene leveres innen tre måneder etter hverandre.
 STR_EXTRA_FERTILIZER_PLANT                                                      :{BLACK}Vareproduksjon:{}  8 kasser pr 8.000l kjemikalier levert
-STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Vareproduksjon:{}  3t pr 8 kasser produksjonsutstyr levert{}  5t pr 8t fisk levert{}{}Produksjonen øker om begge varene leveres innen tre måneder etter hverandre.
-STR_EXTRA_FLOUR_MILL                                                            :{BLACK}Vareproduksjon:{}  3t pr 8 kasser produksjonsutstyr levert{}{STRING} {STRING}{}Produksjonen øker hvis produksjonsutstyr blir levert innen tre måneder før eller etter andre vareslag.
+STR_EXTRA_FACTORY                                                               :{BLACK}Vareproduksjon:{} 3t pr 8 kasser manufakturutstyr levert{} 5t per 8t trelast levert{}{}Produksjonen øker om begge varene leveres innen tre måneder etter hverandre.
+STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Vareproduksjon:{}  3t pr 8 kasser manufakturutstyr levert{}  5t pr 8t fisk levert{}{}Produksjonen øker om begge varene leveres innen tre måneder etter hverandre.
+STR_EXTRA_FLOUR_MILL                                                            :{BLACK}Vareproduksjon:{}  3t pr 8 kasser manufakturutstyr levert{}{STRING} {STRING}{}Produksjonen øker hvis manufakturutstyr blir levert innen tre måneder før eller etter andre vareslag.
 STR_EXTRA_FLOUR_MILL_GRAIN_SUBSTR                                               :5t pr 8t korn levert{}
 STR_EXTRA_FLOUR_MILL_CASSAVA_SUBSTR                                             :5t pr 8t kassava levert{}
 STR_EXTRA_FLOUR_MILL_MAIZE_SUBSTR                                               :5t pr 8t mais levert{}
 STR_EXTRA_FOOD_PROCESSING_PLANT                                                 :{BLACK}Vareproduksjon:{}  {STRING}  6t per 8t frukt levert
 STR_EXTRA_FOOD_PROCESSING_PLANT_BEANS_SUBSTR                                    :6t pr 8t bønner levert{}
 STR_EXTRA_FOOD_PROCESSING_PLANT_NUTS_SUBSTR                                     :6t pr 8t nøtter levert{}
-STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Vareproduksjon:{}  3t pr 8 kasser produksjonsutstyr levert{}  5t per 8t trelast levert{}{}Produksjonen øker om begge varene leveres innen tre måneder etter hverandre.
+STR_EXTRA_FURNITURE_FACTORY                                                     :{BLACK}Vareproduksjon:{}  3t pr 8 kasser manufakturutstyr levert{}  5t per 8t trelast levert{}{}Produksjonen øker om begge varene leveres innen tre måneder etter hverandre.
+STR_EXTRA_GALVANISING_PLANT                                                     :!!! needs extra string
 STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Produserer glassvarer som flasker, krukker og vindusruter.{}{}Vareproduksjon:{}  6t pr 8t sand levert{}  2t pr 8.000l kjemikalier levert{}{}Produksjonen øker om begge varene leveres innen tre måneder etter hverandre.
 STR_EXTRA_IRON_WORKS                                                            :{BLACK}Vareproduksjon:{} 3t pr 8t jernmalm levert{} 3t pr 8t tømmer levert{} 2t pr 8t sand levert{}{}Produksjonen øker dersom to eller fler vareslag blir levert  innen tre måneder etter hverandre.
 STR_EXTRA_LIME_KILN                                                             :{BLACK}Vareproduksjon:{}  3t pr 8t stein levert{}  3t pr 8t kull levert{}{}Produksjonen øker dersom begge varene blir levert innen tre måneder etter hverandre.
 STR_EXTRA_LUMBER_YARD                                                           :{BLACK}Lager slike ting som stolper og gjerdestolper.{}{}Vareproduksjon:{}  2t pr 8.000l kjemikalier levert{}  6t pr 8t trelast levert{}{}Produksjonen øker dersom begge varene blir levert innen tre måneder etter hverandre.
 STR_EXTRA_MACHINE_SHOP                                                          :{BLACK}Bygger og vedlikeholder maskineri.{}{}Vareproduksjon:{}  8 kasser pr 8.000l bensin levert{}  8 kasser pr 8t metall levert
-STR_EXTRA_MEAT_PACKER                                                           :{BLACK}Vareproduksjon:{} 3t pr 8 kasser produksjonsutstyr levert{} 5t pr 8 enheter buskap levert{}{}Produksjonen øker om begge varene blir levert innen tre måneder etter hverandre.
+STR_EXTRA_MEAT_PACKER                                                           :{BLACK}Vareproduksjon:{} 3t pr 8 kasser manufakturutstyr levert{} 5t pr 8 enheter buskap levert{}{}Produksjonen øker om begge varene blir levert innen tre måneder etter hverandre.
 STR_EXTRA_METAL_FABRICATION_PLANT                                               :{BLACK}Produserer lakkerte metalldeler.{}{}Vareproduksjon:{}  2t pr 8.000l kjemikalier levert{}  6t pr 8t metall levert{}{}Produksjonen øker dersom begge varene blir levert innen tre måneder etter hverandre.
 STR_EXTRA_METAL_FOUNDRY                                                         :{BLACK}Lager varer som hermetikkbokser og jernvarer.{}{}Vareproduksjon:{}  2 kasser pr 8.000l kjemikalier levert{}  6 kasser pr 8t metall levert{}{}Produksjonen øker dersom begge varene blir levert innen tre måneder etter hverandre.
 STR_EXTRA_OIL_REFINERY                                                          :{BLACK}Bearbeider råolje til bensin og kjemikalier.{}{}Vareproduksjon:{} 6.000l pr 8.000l levert
@@ -288,14 +327,15 @@ STR_EXTRA_PYRITE_SMELTER                                                        
 STR_EXTRA_RECYCLING_PLANT                                                       :{BLACK}Bearbeider gjenvinningsgods for ombruk.{}{}Vareproduksjon:{} 6t pr 8t gjenvinningsgods levert
 STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}Produksjonen er proporsjonal med byens innbyggertall.
 STR_EXTRA_SAWMILL                                                               :{BLACK}Sager tømmer.{}{}Vareproduksjon:{}  6t pr 8t tømmer levert
+STR_EXTRA_SHIPYARD                                                              :!!! Extra text string needed
 STR_EXTRA_SLAG_GRINDING_PLANT                                                   :{BLACK}Sager tømmer.{}{}Vareproduksjon:{} 6t pr 8t tømmer levert
 STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Produserer metallting som verktøy, ploger, porter, spader og hestesko.{}{}Vareproduksjon:{}  8 kasser pr 8t metall levert
-STR_EXTRA_STEELMILL                                                             :{BLACK}Vareproduksjon:{}  2t pr 8t jernmalm levert{}  2t pr 8t kull levert{}  4t pr 8t skrapmetall levert{}{}Produksjonen øker om to eller fler varer leveres under tre måneder etter hverandre.
-STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Vareproduksjon:{}  3t pr 8 kasser produksjonsutstyr levert{}  5t pr 8t sukker levert{}{}Produksjonen øker dersom begge varene blir levert under tre måneder etter hverandre.
+STR_EXTRA_STEELMILL                                                             :{BLACK}Vareproduksjon:{}  3t pr 8t jernmalm levert{}  2t pr 8t kull levert{}  3t pr 8t skrapmetall levert{}{}Produksjonen øker om to eller fler varer leveres under tre måneder etter hverandre.
+STR_EXTRA_SUGAR_REFINERY                                                        :{BLACK}Vareproduksjon:{}  3t pr 8 kasser manufakturutstyr levert{}  5t pr 8t sukker levert{}{}Produksjonen øker dersom begge varene blir levert under tre måneder etter hverandre.
 STR_EXTRA_SUPPLY_YARD                                                           :{BLACK}Vareproduksjon:{}  8 kasser pr 8 kasser gods levert{} 8 kasser pr 8.000l bensin levert{}  {STRING}
 STR_EXTRA_SUPPLY_YARD_VEHICLES_SUBSTR                                           :8 kasser pr 8 kjøretøy levert
 STR_EXTRA_SUPPLY_YARD_BUILDING_MATERIALS_SUBSTR                                 :8 kasser pr 8t byggematerialer levert
-STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Vareproduksjon:{}  3 kasser pr 8 kasser produksjonutstyr levert{} {STRING} {STRING}{}Produksjonen øker hvis produksjonsutstyr leveres innen tre måneder før eller etter andre vareslag.
+STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Vareproduksjon:{}  3 kasser pr 8 kasser manufakturutstyr levert{} {STRING} {STRING}{}Produksjonen øker hvis manufakturutstyr leveres innen tre måneder før eller etter andre vareslag.
 STR_EXTRA_TEXTILE_MILL_WOOL_SUBSTR                                              :5 kasser pr 8 baller ull levert{}
 STR_EXTRA_TEXTILE_MILL_PLANT_FIBRES_SUBSTR                                      :5 kasser pr 8 baller plantefiber levert{}
 STR_EXTRA_TYRE_PLANT                                                            :{BLACK}Vareproduksjon:{}  6 kasser pr 8.000l gummi levert{}  2 kasser pr 8.000l kjemikalier levert{}{}Produksjonen øker om begge varene leveres innen tre måneder etter hverandre.
