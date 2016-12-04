@@ -73,8 +73,10 @@ fruits.cargo.register()
 from cargos import galvanised_steel
 galvanised_steel.cargo.register()
 
+"""
 from cargos import gold
 gold.cargo.register()
+"""
 
 from cargos import goods
 goods.cargo.register()
