@@ -59,7 +59,7 @@ industry.economy_variations['MISTAH_KURTZ'].prod_multiplier = '[12, 12]'
 industry.economy_variations['STEELTOWN'].enabled = True
 industry.economy_variations['STEELTOWN'].accept_cargo_types = ['FMSP', 'SESP']
 industry.economy_variations['STEELTOWN'].prod_cargo_types = ['BASE', 'RUBR']
-industry.economy_variations['STEELTOWN'].prod_multiplier = '[7, 19]'
+industry.economy_variations['STEELTOWN'].prod_multiplier = '[16, 16]'
 
 industry.add_tile(id='bulk_terminal_tile_1',
                   land_shape_flags='bitmask(LSF_ONLY_ON_FLAT_LAND)',
