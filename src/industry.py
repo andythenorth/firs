@@ -662,6 +662,9 @@ class Industry(object):
 
         return 'return ' + result[0]
 
+    def get_extra_text_industry(self, economy=None):
+        return self.get_property('extra_text_fund', economy)
+
     def get_intro_year(self, economy):
         # simple wrapper to get_property(), which sanitises intro_year from None to 0 if unspecified by economy
         result = self.get_property('intro_year', economy)
