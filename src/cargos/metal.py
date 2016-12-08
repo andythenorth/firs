@@ -11,7 +11,7 @@ cargo = Cargo(id = 'metal',
               cargo_payment_list_colour = '10',
               is_freight = '1',
               cargo_classes = 'bitmask(CC_PIECE_GOODS)',
-              cargo_label = 'STEL', # generic metal abuses the default 'stel' label for easy vehicle set support
+              cargo_label = 'METL',
               town_growth_effect = 'TOWNGROWTH_NONE',
               town_growth_multiplier = '1.0',
               units_of_cargo = '80',
