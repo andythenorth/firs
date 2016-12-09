@@ -6,6 +6,7 @@
 """
 
 from collections import deque
+from string import Template # python builtin templater might be used in some utility cases
 
 import os.path
 currentdir = os.curdir
@@ -23,6 +24,7 @@ industry_templates = PageTemplateLoader(os.path.join(src_path, 'industries'), fo
 
 from economies import registered_economies
 from industries import registered_industries
+from cargos import registered_cargos
 
 def get_another_industry(id):
     # utility function so that we can provide numeric ids in nml output, rather than relying identifiers
@@ -662,8 +664,53 @@ class Industry(object):
 
         return 'return ' + result[0]
 
+    def get_cargo_objects_from_labels(self, cargo_list):
+        # utility to get a cargo using just the label (which is what the industry defintion relies on)
+        # possibly duplicated in render_docs, but that's fine, no clear need to consolidate this, easier to read here
+        result = []
+        for cargo_label in cargo_list:
+            for cargo in registered_cargos:
+                if cargo_label == cargo.cargo_label:
+                    result.append(cargo)
+        return result
+
     def get_extra_text_industry(self, economy=None):
-        return self.get_property('extra_text_fund', economy)
+        # looks messy, but saves a lot of work for translators by automating 'amount produced per amount delivered' strings for industry window text
+        accept_cargos = self.get_cargo_objects_from_labels(self.get_accept_cargo_types(economy))
+        prod_cargos = self.get_cargo_objects_from_labels(self.get_prod_cargo_types(economy))
+        if len(accept_cargos) > 3:
+            # guard
+            print(self.id, len(accept_cargos), self.get_accept_cargo_types(economy), 'Cargo labels must be unique per cargo, cannot be reused')
+
+        cargo_details = []
+        cargo_details_template = Template("STR_EXTRA_TEXT_SECONDARY_CARGO_SUBSTR_DETAIL, ${prod_cargo_type_name}, ${accept_cargo_type_name}")
+        for cargo in accept_cargos:
+            cargo_details.append(cargo_details_template.substitute(prod_cargo_type_name='string(STR_EMPTY)',
+                                                                   accept_cargo_type_name='string(STR_EMPTY)'))
+
+        if len(accept_cargos) == 1:
+            cargo_prod_template = Template(
+                "STR_EXTRA_TEXT_SECONDARY_CARGO_SUBSTR_ONE_INPUT, string(${cargo_1_detail})"
+            )
+            cargo_prod_substring = cargo_prod_template.substitute(cargo_1_detail=cargo_details[0])
+        if len(accept_cargos) == 2:
+            cargo_prod_template = Template(
+                "STR_EXTRA_TEXT_SECONDARY_CARGO_SUBSTR_TWO_INPUTS, string(${cargo_1_detail}), string(${cargo_2_detail})"
+            )
+            cargo_prod_substring = cargo_prod_template.substitute(cargo_1_detail=cargo_details[0],
+                                                                  cargo_2_detail=cargo_details[1])
+        if len(accept_cargos) == 3:
+            cargo_prod_template = Template(
+                "STR_EXTRA_TEXT_SECONDARY_CARGO_SUBSTR_THREE_INPUTS, string(${cargo_1_detail}), string(${cargo_2_detail}), string(${cargo_3_detail})"
+            )
+            cargo_prod_substring = cargo_prod_template.substitute(cargo_1_detail=cargo_details[0],
+                                                                  cargo_2_detail=cargo_details[1],
+                                                                  cargo_3_detail=cargo_details[2])
+        extra_text_template = Template(
+            "string(STR_EXTRA_TEXT_SECONDARY, string(${cargo_prod_substring}), string(${extra_text_industry}))"
+        )
+        return extra_text_template.substitute(extra_text_industry=self.get_property('extra_text_industry', economy),
+                                              cargo_prod_substring=cargo_prod_substring)
 
     def get_intro_year(self, economy):
         # simple wrapper to get_property(), which sanitises intro_year from None to 0 if unspecified by economy

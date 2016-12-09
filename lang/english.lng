@@ -339,6 +339,12 @@ STR_EXTRA_TEXTILE_MILL_PLANT_FIBRES_SUBSTR                                      
 STR_EXTRA_TYRE_PLANT                                                            :{BLACK}Cargo production:{}  6 crates per 8,000l rubber delivered{}  2 crates per 8,000l chemicals delivered{}{}Production steps up if both cargos are delivered within three months of each other.
 STR_EXTRA_VEHICLE_FACTORY                                                       :{BLACK}Cargo production:{}  3 vehicles per 8 crates vehicle parts delivered{}  3 vehicles per 8t metal delivered{}  2 vehicles per 8,000l chemicals delivered{}{}Production steps up if two or more cargos are delivered within three months of each other.
 
+
+STR_EXTRA_TEXT_SECONDARY                                                        :{BLACK}{STRING}{}{}Cargo production:{STRING}
+STR_EXTRA_TEXT_SECONDARY_CARGO_SUBSTR_ONE_INPUT                                 :{STRING}{}
+STR_EXTRA_TEXT_SECONDARY_CARGO_SUBSTR_TWO_INPUTS                                :{STRING}{}{STRING}{}
+STR_EXTRA_TEXT_SECONDARY_CARGO_SUBSTR_THREE_INPUTS                              :{STRING}{}{STRING}{}{STRING}{}
+STR_EXTRA_TEXT_SECONDARY_CARGO_SUBSTR_DETAIL                                    :{STRING} per {STRING} delivered
 STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ DEBUG ------------{}Production this month:{}Cargo 1: {WHITE}{COMMA}{BLACK}{}Cargo 2: {WHITE}{COMMA}{BLACK}{}Days since last delivery: {WHITE}{COMMA}{BLACK}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Maximum production reached
 STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Current production: {YELLOW}Normal {}{}{BLACK}For {WHITE}Enhanced {BLACK}production deliver {SIGNED_WORD} crates of supplies within three months{}For {WHITE}Gung-ho {BLACK}production deliver {SIGNED_WORD} crates
