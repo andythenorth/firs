@@ -15,19 +15,21 @@
  * THIS_STR_EXTRA_TEXT         normal extra text without debugging
  */
 
-<!--! make the switches conditional on industry being active in economy, return 'CB_RESULT_NO_TEXT' when disabled -->
-
 <tal:economies repeat="economy economies">
-    switch (FEAT_INDUSTRIES, SELF, ${industry.id}_extra_text_non_debug_${economy.id},
-            [${industry.get_expression_for_extra_text_industry_cargo_details(economy)}]) {
-        return ${industry.get_extra_text_string(economy)};
-    }
+    <tal:industry_on_or_off condition="industry.get_property('enabled', economy) == True">
+        switch (FEAT_INDUSTRIES, SELF, ${industry.id}_extra_text_non_debug_${economy.id},
+                [${industry.get_expression_for_extra_text_industry_cargo_details(economy)}]) {
+            return ${industry.get_extra_text_string(economy)};
+        }
+    </tal:industry_on_or_off>
 </tal:economies>
 
 
 switch (FEAT_INDUSTRIES, SELF, ${industry.id}_extra_text_non_debug, economy) {
     <tal:economies repeat="economy economies">
-        ${economy.numeric_id}: ${industry.id}_extra_text_non_debug_${economy.id};
+        <tal:industry_on_or_off condition="industry.get_property('enabled', economy) == True">
+            ${economy.numeric_id}: ${industry.id}_extra_text_non_debug_${economy.id};
+        </tal:industry_on_or_off>
     </tal:economies>
 }
 
