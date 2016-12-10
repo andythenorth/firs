@@ -674,11 +674,6 @@ class Industry(object):
                     result.append(cargo)
         return result
 
-    def get_cargo_name_from_label(self, cargo_objects, label):
-        for cargo in cargo_objects:
-            if cargo.cargo_label == label:
-                return cargo.type_name
-
     def get_expression_for_extra_text_industry_cargo_details(self, economy):
         # looks messy, but saves a lot of work for translators by automating 'amount produced per amount delivered' strings for industry window text
         accept_cargos_as_objects = self.get_cargo_objects_from_labels(self.get_accept_cargo_types(economy))
@@ -689,21 +684,13 @@ class Industry(object):
             # guard
             print(self.id, len(accept_cargos_as_objects), self.get_accept_cargo_types(economy), 'Cargo labels must be unique per cargo, cannot be reused')
 
-        #print(accept_cargos_as_objects, self.get_property('processed_cargos_and_output_ratios', economy))
         cargo_details = []
         for cargo, prod_ratio in accept_cargos_with_ratios:
             result = {}
             result['prod_cargo'] = prod_cargos[0] # we use the first produced cargo as a proxy, even where there are 2
             result['prod_ratio'] = prod_ratio
             result['input_amount'] = 8 # always 8 eh?
-            result['accept_cargo'] = cargo
-            result['accept_cargo_name'] = self.get_cargo_name_from_label(accept_cargos_as_objects, cargo)
-            """
-            for i in accept_cargos_with_ratios:
-                print(i)
-                if i[0] == cargo.cargo_label:
-                    print(i[1])
-            """
+            result['accept_cargo_name'] = cargo
             cargo_details.append(result)
 
         if len(accept_cargos_as_objects) == 1:
@@ -712,9 +699,9 @@ class Industry(object):
                 "STORE_TEMP(string(STR_EXTRA_TEXT_SECONDARY_CARGO_SUBSTR_DETAIL) | " \
                 "${cargo_1_details['prod_cargo']} << 16, 257), " \
                 "STORE_TEMP(${cargo_1_details['prod_ratio']} | " \
-                "${cargo_1_details['accept_cargo']} << 16, 258), " \
-                "STORE_TEMP(${cargo_1_details['input_amount']} | " \
-                "${cargo_1_details['accept_cargo_name']} << 16, 259)")
+                "${cargo_1_details['accept_cargo_name']} << 16, 258), " \
+                "STORE_TEMP(${cargo_1_details['input_amount']}, 259)"
+            )
             cargo_prod_substring_expression = cargo_prod_template(cargo_1_details=cargo_details[0])
         if len(accept_cargos_as_objects) == 2:
             cargo_prod_string = 'STR_EXTRA_TEXT_SECONDARY_CARGO_SUBSTR_TWO_INPUTS'
