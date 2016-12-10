@@ -672,6 +672,9 @@ class Industry(object):
             extra_text_string = 'STR_EXTRA_TEXT_SECONDARY_TWO_INPUTS'
         if len(accept_cargos_with_ratios) == 3:
             extra_text_string = 'STR_EXTRA_TEXT_SECONDARY_THREE_INPUTS'
+        # there is faff here assembling compile time strings for industry general info, whilst text stack handles cargo production ratio info
+        # this is because compile time strings barf on 'TTD_XXX' strings...
+        # ...meanwhile text stack only has 24 bytes, and all are consumed by cargo ratio info (and it can't be packed tighter afaict)
         return 'string(' + extra_text_string + ', string(' + self.get_property('extra_text_industry', economy) + '))'
 
     def get_expression_for_extra_text_industry_cargo_details(self, economy):
