@@ -664,26 +664,21 @@ class Industry(object):
 
         return 'return ' + result[0]
 
-    def get_cargo_objects_from_labels(self, cargo_list):
-        # utility to get a cargo using just the label (which is what the industry defintion relies on)
-        # possibly duplicated in render_docs, but that's fine, no clear need to consolidate this, easier to read here
-        result = []
-        for cargo_label in cargo_list:
-            for cargo in registered_cargos:
-                if cargo_label == cargo.cargo_label:
-                    result.append(cargo)
-        return result
+    def get_extra_text_string(self, economy):
+        accept_cargos_with_ratios = self.get_property('processed_cargos_and_output_ratios', economy)
+        if len(accept_cargos_with_ratios) == 1:
+            extra_text_string = 'STR_EXTRA_TEXT_SECONDARY_ONE_INPUT'
+        if len(accept_cargos_with_ratios) == 2:
+            extra_text_string = 'STR_EXTRA_TEXT_SECONDARY_TWO_INPUTS'
+        if len(accept_cargos_with_ratios) == 3:
+            extra_text_string = 'STR_EXTRA_TEXT_SECONDARY_THREE_INPUTS'
+        return 'string(' + extra_text_string + ', string(' + self.get_property('extra_text_industry', economy) + '))'
 
     def get_expression_for_extra_text_industry_cargo_details(self, economy):
         # looks messy, but saves a lot of work for translators by automating 'amount produced per amount delivered' strings for industry window text
-        accept_cargos_as_objects = self.get_cargo_objects_from_labels(self.get_accept_cargo_types(economy))
+        # GOTCHA: there are only 6 dword registers (12 words) available on the text stack, so limit on how many substrings can be used here
         accept_cargos_with_ratios = self.get_property('processed_cargos_and_output_ratios', economy)
         prod_cargos = self.get_prod_cargo_types(economy)
-        prod_cargo_objects = self.get_cargo_objects_from_labels(prod_cargos)
-        if len(accept_cargos_as_objects) > 3:
-            # guard
-            print(self.id, len(accept_cargos_as_objects), self.get_accept_cargo_types(economy), 'Cargo labels must be unique per cargo, cannot be reused')
-
         cargo_details = []
         for cargo, prod_ratio in accept_cargos_with_ratios:
             result = {}
@@ -692,54 +687,49 @@ class Industry(object):
             result['input_amount'] = 8 # always 8 eh?
             result['accept_cargo'] = cargo
             cargo_details.append(result)
-        print(cargo_details)
 
-        if len(accept_cargos_as_objects) == 1:
-            cargo_prod_string = 'STR_EXTRA_TEXT_SECONDARY_CARGO_SUBSTR_ONE_INPUT'
-            cargo_prod_template = PageTemplate(
-                "STORE_TEMP(string(STR_EXTRA_TEXT_SECONDARY_CARGO_SUBSTR_DETAIL) | " \
-                "${cargo_1_details['prod_cargo']} << 16, 257), " \
-                "STORE_TEMP(${cargo_1_details['prod_ratio']} | " \
-                "${cargo_1_details['accept_cargo']} << 16, 258), " \
-                "STORE_TEMP(${cargo_1_details['input_amount']}, 259)"
+        # marginally easier to just duplicate these templates for the 3 cases, compared to making a generic loop thing
+        # !! they could be now made generic eh?
+        if len(accept_cargos_with_ratios) == 1:
+            extra_text_template = PageTemplate(
+                "STORE_TEMP(${cargo_1_details['prod_cargo']} | " \
+                "${cargo_1_details['prod_ratio']} << 16, 256), " \
+                "STORE_TEMP(${cargo_1_details['accept_cargo']} | " \
+                "${cargo_1_details['input_amount']} << 16, 257), "
             )
-            cargo_prod_substring_expression = cargo_prod_template(cargo_1_details=cargo_details[0])
-        if len(accept_cargos_as_objects) == 2:
-            cargo_prod_string = 'STR_EXTRA_TEXT_SECONDARY_CARGO_SUBSTR_TWO_INPUTS'
-            cargo_prod_template = PageTemplate(
-                "STORE_TEMP(string(STR_EXTRA_TEXT_SECONDARY_CARGO_SUBSTR_DETAIL) | " \
-                "${cargo_1_details['prod_cargo']} << 16, 257), " \
-                "STORE_TEMP(${cargo_1_details['prod_ratio']} | " \
-                "${cargo_1_details['accept_cargo']} << 16, 258), " \
-                "STORE_TEMP(${cargo_1_details['input_amount']} | " \
-                "string(STR_EXTRA_TEXT_SECONDARY_CARGO_SUBSTR_DETAIL) << 16, 259), " \
+            extra_text_expression = extra_text_template(cargo_1_details=cargo_details[0])
+        if len(accept_cargos_with_ratios) == 2:
+            extra_text_template = PageTemplate(
+                "STORE_TEMP(${cargo_1_details['prod_cargo']} | " \
+                "${cargo_1_details['prod_ratio']} << 16, 256), " \
+                "STORE_TEMP(${cargo_1_details['accept_cargo']} | " \
+                "${cargo_1_details['input_amount']} << 16, 257), "
                 "STORE_TEMP(${cargo_2_details['prod_cargo']} | " \
-                "${cargo_2_details['prod_ratio']} << 16, 260), " \
+                "${cargo_2_details['prod_ratio']} << 16, 258), " \
                 "STORE_TEMP(${cargo_2_details['accept_cargo']} | " \
-                "${cargo_2_details['input_amount']} << 16, 261)" \
+                "${cargo_2_details['input_amount']} << 16, 259), "
             )
-            cargo_prod_substring_expression = cargo_prod_template(cargo_1_details=cargo_details[0],
-                                                                  cargo_2_details=cargo_details[1])
-        if len(accept_cargos_as_objects) == 3:
-            cargo_prod_string = 'STR_EXTRA_TEXT_SECONDARY_CARGO_SUBSTR_THREE_INPUTS'
-            cargo_prod_template = PageTemplate(
-                "STORE_TEMP(string(STR_EXTRA_TEXT_SECONDARY_CARGO_SUBSTR_DETAIL) | " \
-                "${cargo_1_details['prod_cargo']} << 16, 257), " \
-                "STORE_TEMP(${cargo_1_details['prod_ratio']} | " \
-                "${cargo_1_details['accept_cargo']} << 16, 258), " \
-                "STORE_TEMP(${cargo_1_details['input_amount']} | " \
-                "string(STR_EXTRA_TEXT_SECONDARY_CARGO_SUBSTR_DETAIL) << 16, 259)"
+            extra_text_expression = extra_text_template(cargo_1_details=cargo_details[0],
+                                                        cargo_2_details=cargo_details[1])
+        if len(accept_cargos_with_ratios) == 3:
+            extra_text_template = PageTemplate(
+                "STORE_TEMP(${cargo_1_details['prod_cargo']} | " \
+                "${cargo_1_details['prod_ratio']} << 16, 256), " \
+                "STORE_TEMP(${cargo_1_details['accept_cargo']} | " \
+                "${cargo_1_details['input_amount']} << 16, 257), "
+                "STORE_TEMP(${cargo_2_details['prod_cargo']} | " \
+                "${cargo_2_details['prod_ratio']} << 16, 258), " \
+                "STORE_TEMP(${cargo_2_details['accept_cargo']} | " \
+                "${cargo_2_details['input_amount']} << 16, 259), "
+                "STORE_TEMP(${cargo_3_details['prod_cargo']} | " \
+                "${cargo_3_details['prod_ratio']} << 16, 260), " \
+                "STORE_TEMP(${cargo_3_details['accept_cargo']} | " \
+                "${cargo_3_details['input_amount']} << 16, 261), "
             )
-            cargo_prod_substring_expression = cargo_prod_template(cargo_1_details=cargo_details[0],
-                                                                  cargo_2_details=cargo_details[1],
-                                                                  cargo_3_details=cargo_details[2])
-        extra_text_template = Template(
-            "STORE_TEMP(string(${extra_text_industry}) | string(${cargo_prod_string}) << 16, 256)"
-        )
-        extra_text_expression = extra_text_template.substitute(extra_text_industry=self.get_property('extra_text_industry', economy),
-                                                               cargo_prod_string=cargo_prod_string)
-        return extra_text_expression + ',' + cargo_prod_substring_expression
-
+            extra_text_expression = extra_text_template(cargo_1_details=cargo_details[0],
+                                                        cargo_2_details=cargo_details[1],
+                                                        cargo_3_details=cargo_details[2])
+        return extra_text_expression
 
     def get_intro_year(self, economy):
         # simple wrapper to get_property(), which sanitises intro_year from None to 0 if unspecified by economy
