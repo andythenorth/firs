@@ -15,12 +15,22 @@
  * THIS_STR_EXTRA_TEXT         normal extra text without debugging
  */
 
+<tal:economies repeat="economy economies">
+    switch (FEAT_INDUSTRIES, SELF, ${industry.id}_extra_text_non_debug_${economy.id}_2,
+            [${industry.get_expression_for_extra_text_industry_cargo_details(economy)}]) {
+        return string(STR_EXTRA_TEXT_SECONDARY);
+    }
+
+    switch (FEAT_INDUSTRIES, SELF, ${industry.id}_extra_text_non_debug_${economy.id}, economy) {
+        ${industry.id}_extra_text_non_debug_${economy.id}_2;
+    }
+</tal:economies>
+
 
 switch (FEAT_INDUSTRIES, SELF, ${industry.id}_extra_text_non_debug, economy) {
-    <tal:build_economies repeat="economy economies">
-    ${economy.numeric_id}: ${industry.get_extra_text_industry(economy)};
-    </tal:build_economies>
-	return ${industry.get_extra_text_industry()};
+    <tal:economies repeat="economy economies">
+        ${economy.numeric_id}: ${industry.id}_extra_text_non_debug_${economy.id};
+    </tal:economies>
 }
 
 switch (FEAT_INDUSTRIES, SELF, ${industry.id}_extra_text, [

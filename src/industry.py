@@ -674,7 +674,7 @@ class Industry(object):
                     result.append(cargo)
         return result
 
-    def get_extra_text_industry(self, economy=None):
+    def get_expression_for_extra_text_industry_cargo_details(self, economy):
         # looks messy, but saves a lot of work for translators by automating 'amount produced per amount delivered' strings for industry window text
         accept_cargos = self.get_cargo_objects_from_labels(self.get_accept_cargo_types(economy))
         prod_cargos = self.get_cargo_objects_from_labels(self.get_prod_cargo_types(economy))
@@ -689,28 +689,33 @@ class Industry(object):
                                                                    accept_cargo_type_name='string(STR_EMPTY)'))
 
         if len(accept_cargos) == 1:
+            cargo_prod_string = 'STR_EXTRA_TEXT_SECONDARY_CARGO_SUBSTR_ONE_INPUT'
             cargo_prod_template = Template(
-                "STR_EXTRA_TEXT_SECONDARY_CARGO_SUBSTR_ONE_INPUT, string(${cargo_1_detail})"
+                "STORE_TEMP(string(STR_EXTRA_TEXT_SECONDARY_CARGO_SUBSTR_DETAIL), 257)"
             )
-            cargo_prod_substring = cargo_prod_template.substitute(cargo_1_detail=cargo_details[0])
+            cargo_prod_substring_expression = cargo_prod_template.substitute(cargo_1_detail=cargo_details[0])
         if len(accept_cargos) == 2:
+            cargo_prod_string = 'STR_EXTRA_TEXT_SECONDARY_CARGO_SUBSTR_TWO_INPUTS'
             cargo_prod_template = Template(
-                "STR_EXTRA_TEXT_SECONDARY_CARGO_SUBSTR_TWO_INPUTS, string(${cargo_1_detail}), string(${cargo_2_detail})"
+                "STORE_TEMP(string(STR_EXTRA_TEXT_SECONDARY_CARGO_SUBSTR_DETAIL) | string(STR_EXTRA_TEXT_SECONDARY_CARGO_SUBSTR_DETAIL) << 16, 257)"
             )
-            cargo_prod_substring = cargo_prod_template.substitute(cargo_1_detail=cargo_details[0],
+            cargo_prod_substring_expression = cargo_prod_template.substitute(cargo_1_detail=cargo_details[0],
                                                                   cargo_2_detail=cargo_details[1])
         if len(accept_cargos) == 3:
+            cargo_prod_string = 'STR_EXTRA_TEXT_SECONDARY_CARGO_SUBSTR_THREE_INPUTS'
             cargo_prod_template = Template(
-                "STR_EXTRA_TEXT_SECONDARY_CARGO_SUBSTR_THREE_INPUTS, string(${cargo_1_detail}), string(${cargo_2_detail}), string(${cargo_3_detail})"
+                "STORE_TEMP(string(STR_EXTRA_TEXT_SECONDARY_CARGO_SUBSTR_DETAIL) | string(STR_EXTRA_TEXT_SECONDARY_CARGO_SUBSTR_DETAIL) << 16, 257), STORE_TEMP(string(STR_EXTRA_TEXT_SECONDARY_CARGO_SUBSTR_DETAIL), 258)"
             )
-            cargo_prod_substring = cargo_prod_template.substitute(cargo_1_detail=cargo_details[0],
+            cargo_prod_substring_expression = cargo_prod_template.substitute(cargo_1_detail=cargo_details[0],
                                                                   cargo_2_detail=cargo_details[1],
                                                                   cargo_3_detail=cargo_details[2])
         extra_text_template = Template(
-            "string(STR_EXTRA_TEXT_SECONDARY, string(${cargo_prod_substring}), string(${extra_text_industry}))"
+            "STORE_TEMP(string(${extra_text_industry}) | string(${cargo_prod_string}) << 16, 256)"
         )
-        return extra_text_template.substitute(extra_text_industry=self.get_property('extra_text_industry', economy),
-                                              cargo_prod_substring=cargo_prod_substring)
+        extra_text_expression = extra_text_template.substitute(extra_text_industry=self.get_property('extra_text_industry', economy),
+                                                               cargo_prod_string=cargo_prod_string)
+        return extra_text_expression + ',' + cargo_prod_substring_expression
+
 
     def get_intro_year(self, economy):
         # simple wrapper to get_property(), which sanitises intro_year from None to 0 if unspecified by economy
