@@ -342,11 +342,11 @@ STR_EXTRA_VEHICLE_FACTORY                                                       
 
 STR_TEST_1                                                                      :Test 1 {STRING}
 STR_TEST_2                                                                      :Test 2
-STR_EXTRA_TEXT_SECONDARY                                                        :{BLACK}{STRING}{}{}Cargo production:{STRING}{STRING}
-STR_EXTRA_TEXT_SECONDARY_CARGO_SUBSTR_ONE_INPUT                                 :{BLACK}{}  {STRING}
-STR_EXTRA_TEXT_SECONDARY_CARGO_SUBSTR_TWO_INPUTS                                :{GOLD}[TWO INPUTS]{BLACK}{STRING}{}{STRING}{}
-STR_EXTRA_TEXT_SECONDARY_CARGO_SUBSTR_THREE_INPUTS                              :{GOLD}[THREE INPUTS]{BLACK}{STRING}{}{STRING}{}{STRING}{}
-STR_EXTRA_TEXT_SECONDARY_CARGO_SUBSTR_DETAIL                                    :{CARGO_SHORT} per {CARGO_LONG} delivered
+STR_EXTRA_TEXT_SECONDARY                                                        :{BLACK}{STRING}{}{}Cargo production:{}{STRING}
+STR_EXTRA_TEXT_SECONDARY_CARGO_SUBSTR_ONE_INPUT                                 :{BLACK}{STRING}
+STR_EXTRA_TEXT_SECONDARY_CARGO_SUBSTR_TWO_INPUTS                                :{BLACK}{STRING}{STRING}
+STR_EXTRA_TEXT_SECONDARY_CARGO_SUBSTR_THREE_INPUTS                              :{BLACK}{STRING}{STRING}{STRING}
+STR_EXTRA_TEXT_SECONDARY_CARGO_SUBSTR_DETAIL                                    :  {CARGO_SHORT} per {CARGO_LONG} delivered{}
 STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ DEBUG ------------{}Production this month:{}Cargo 1: {WHITE}{COMMA}{BLACK}{}Cargo 2: {WHITE}{COMMA}{BLACK}{}Days since last delivery: {WHITE}{COMMA}{BLACK}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Maximum production reached
 STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Current production: {YELLOW}Normal {}{}{BLACK}For {WHITE}Enhanced {BLACK}production deliver {SIGNED_WORD} crates of supplies within three months{}For {WHITE}Gung-ho {BLACK}production deliver {SIGNED_WORD} crates

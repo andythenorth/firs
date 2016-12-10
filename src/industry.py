@@ -690,8 +690,9 @@ class Industry(object):
             result['prod_cargo'] = prod_cargos[0] # we use the first produced cargo as a proxy, even where there are 2
             result['prod_ratio'] = prod_ratio
             result['input_amount'] = 8 # always 8 eh?
-            result['accept_cargo_name'] = cargo
+            result['accept_cargo'] = cargo
             cargo_details.append(result)
+        print(cargo_details)
 
         if len(accept_cargos_as_objects) == 1:
             cargo_prod_string = 'STR_EXTRA_TEXT_SECONDARY_CARGO_SUBSTR_ONE_INPUT'
@@ -699,28 +700,39 @@ class Industry(object):
                 "STORE_TEMP(string(STR_EXTRA_TEXT_SECONDARY_CARGO_SUBSTR_DETAIL) | " \
                 "${cargo_1_details['prod_cargo']} << 16, 257), " \
                 "STORE_TEMP(${cargo_1_details['prod_ratio']} | " \
-                "${cargo_1_details['accept_cargo_name']} << 16, 258), " \
+                "${cargo_1_details['accept_cargo']} << 16, 258), " \
                 "STORE_TEMP(${cargo_1_details['input_amount']}, 259)"
             )
             cargo_prod_substring_expression = cargo_prod_template(cargo_1_details=cargo_details[0])
         if len(accept_cargos_as_objects) == 2:
             cargo_prod_string = 'STR_EXTRA_TEXT_SECONDARY_CARGO_SUBSTR_TWO_INPUTS'
-            cargo_prod_template = Template(
+            cargo_prod_template = PageTemplate(
                 "STORE_TEMP(string(STR_EXTRA_TEXT_SECONDARY_CARGO_SUBSTR_DETAIL) | " \
-                "string(STR_EXTRA_TEXT_SECONDARY_CARGO_SUBSTR_DETAIL) << 16, 257)"
+                "${cargo_1_details['prod_cargo']} << 16, 257), " \
+                "STORE_TEMP(${cargo_1_details['prod_ratio']} | " \
+                "${cargo_1_details['accept_cargo']} << 16, 258), " \
+                "STORE_TEMP(${cargo_1_details['input_amount']} | " \
+                "string(STR_EXTRA_TEXT_SECONDARY_CARGO_SUBSTR_DETAIL) << 16, 259), " \
+                "STORE_TEMP(${cargo_2_details['prod_cargo']} | " \
+                "${cargo_2_details['prod_ratio']} << 16, 260), " \
+                "STORE_TEMP(${cargo_2_details['accept_cargo']} | " \
+                "${cargo_2_details['input_amount']} << 16, 261)" \
             )
-            cargo_prod_substring_expression = cargo_prod_template.substitute(cargo_1_detail=cargo_details[0],
-                                                                             cargo_2_detail=cargo_details[1])
+            cargo_prod_substring_expression = cargo_prod_template(cargo_1_details=cargo_details[0],
+                                                                  cargo_2_details=cargo_details[1])
         if len(accept_cargos_as_objects) == 3:
             cargo_prod_string = 'STR_EXTRA_TEXT_SECONDARY_CARGO_SUBSTR_THREE_INPUTS'
-            cargo_prod_template = Template(
+            cargo_prod_template = PageTemplate(
                 "STORE_TEMP(string(STR_EXTRA_TEXT_SECONDARY_CARGO_SUBSTR_DETAIL) | " \
-                "string(STR_EXTRA_TEXT_SECONDARY_CARGO_SUBSTR_DETAIL) << 16, 257), " \
-                "STORE_TEMP(string(STR_EXTRA_TEXT_SECONDARY_CARGO_SUBSTR_DETAIL), 258)"
+                "${cargo_1_details['prod_cargo']} << 16, 257), " \
+                "STORE_TEMP(${cargo_1_details['prod_ratio']} | " \
+                "${cargo_1_details['accept_cargo']} << 16, 258), " \
+                "STORE_TEMP(${cargo_1_details['input_amount']} | " \
+                "string(STR_EXTRA_TEXT_SECONDARY_CARGO_SUBSTR_DETAIL) << 16, 259)"
             )
-            cargo_prod_substring_expression = cargo_prod_template.substitute(cargo_1_detail=cargo_details[0],
-                                                                             cargo_2_detail=cargo_details[1],
-                                                                             cargo_3_detail=cargo_details[2])
+            cargo_prod_substring_expression = cargo_prod_template(cargo_1_details=cargo_details[0],
+                                                                  cargo_2_details=cargo_details[1],
+                                                                  cargo_3_details=cargo_details[2])
         extra_text_template = Template(
             "STORE_TEMP(string(${extra_text_industry}) | string(${cargo_prod_string}) << 16, 256)"
         )
