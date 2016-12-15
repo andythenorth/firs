@@ -28,8 +28,7 @@ industry = IndustrySecondary(id='furniture_factory',
                     name='string(STR_IND_FURNITURE_FACTORY)',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_INDUSTRY_ESTATE))',
                     fund_cost_multiplier='95',
-                    closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
-                    extra_text_industry='STR_EXTRA_FURNITURE_FACTORY' )
+                    closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS')
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_ARCTIC'].enabled = True

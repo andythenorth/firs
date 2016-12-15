@@ -32,14 +32,12 @@ industry = IndustrySecondary(id='flour_mill',
                     name='string(STR_IND_FLOUR_MILL)',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_MILL))',
                     fund_cost_multiplier='50',
-                    closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
-                    extra_text_industry='STR_EXTRA_FLOUR_MILL, string(STR_EXTRA_FLOUR_MILL_GRAIN_SUBSTR), string(STR_EMPTY)')
+                    closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS')
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_TROPIC'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].processed_cargos_and_output_ratios = [('MNSP', 3), ('CASS', 5), ('MAIZ', 5)]
-industry.economy_variations['MISTAH_KURTZ'].extra_text_industry = 'STR_EXTRA_FLOUR_MILL, string(STR_EXTRA_FLOUR_MILL_CASSAVA_SUBSTR), string(STR_EXTRA_FLOUR_MILL_MAIZE_SUBSTR)'
 
 industry.add_tile(id='flour_mill_tile_1',
                   animation_length=6,

@@ -27,14 +27,12 @@ industry = IndustrySecondary(id='food_processor',
                     name='TTD_STR_INDUSTRY_NAME_FOOD_PROCESSING_PLANT',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_IND_FOOD_PROCESSOR))',
                     fund_cost_multiplier='65',
-                    closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
-                    extra_text_industry='STR_EXTRA_FOOD_PROCESSING_PLANT, string(STR_EXTRA_FOOD_PROCESSING_PLANT_BEANS_SUBSTR)')
+                    closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS')
 
 industry.economy_variations['BASIC_TROPIC'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
 industry.economy_variations['MISTAH_KURTZ'].processed_cargos_and_output_ratios = [('NUTS', 6), ('FRUT', 6)]
 industry.economy_variations['MISTAH_KURTZ'].prod_cargo_types = ['EOIL', 'FOOD']
-industry.economy_variations['MISTAH_KURTZ'].extra_text_industry = 'STR_EXTRA_FOOD_PROCESSING_PLANT, string(STR_EXTRA_FOOD_PROCESSING_PLANT_NUTS_SUBSTR)'
 
 industry.add_tile(id='food_processor_tile_1',
                   location_checks=TileLocationChecks(require_effectively_flat=True,

@@ -31,8 +31,7 @@ industry = IndustrySecondary(id='brick_works',
                     name='string(STR_IND_BRICK_WORKS)',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_MILL))',
                     fund_cost_multiplier='120',
-                    closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
-                    extra_text_industry='STR_EXTRA_BRICKWORKS' )
+                    closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS')
 
 industry.economy_variations['FIRS'].enabled = True
 

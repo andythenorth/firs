@@ -534,7 +534,7 @@ class IndustryProperties(object):
         self.enabled = kwargs.get('enabled', False)
         self.processed_cargos_and_output_ratios = kwargs.get('processed_cargos_and_output_ratios', None)
         self.override_default_construction_states = kwargs.get('override_default_construction_states', False)
-        self.extra_text_industry = kwargs.get('extra_text_industry', None) # value is string(s) to return for corresponding nml cb
+        self.extra_text_industry = kwargs.get('extra_text_industry', 'STR_EMPTY') # value is string(s) to return for corresponding nml cb
         self.extra_text_fund = kwargs.get('extra_text_fund', None)
         # nml properties we want to prevent being set for one reason or another
         if 'conflicting_ind_types' in kwargs:
