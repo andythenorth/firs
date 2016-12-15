@@ -282,7 +282,7 @@ STR_IND_VINEYARD                                                                
 STR_EXTRA_ALUMINUM_PLANT                                                        :{BLACK}Cargo production:{}  2t per 8t bauxite delivered{}  2t per 8,000l chemicals delivered{}  4t per 8t scrap metal delivered{}{}Production steps up if two or more cargos are delivered within three months of each other.
 STR_EXTRA_BASIC_OXYGEN_FURNACE                                                  :!!! NEEDS EXTRA TEXT STRING
 STR_EXTRA_BIOREFINERY                                                           :{BLACK}Cargo production:{}  6,000l per 8t grain delivered{}  6,000l per 8t sugar beet delivered
-STR_EXTRA_BREWERY                                                               :{BLACK}Cargo production:{}  3,000l per 8 crates manufacturing supplies delivered{} {STRING} {STRING}{}Production steps up if manufacturing supplies delivered within three months of other cargos.
+STR_EXTRA_BREWERY                                                               :{BLACK}Cargo production:{}  3,000l per 8 crates manufacturing supplies delivered{} {STRING} {STRING}
 STR_EXTRA_BREWERY_FRUIT_SUBSTR                                                  :5,000l per 8t fruit delivered{}
 STR_EXTRA_BREWERY_GRAIN_SUBSTR                                                  :5,000l per 8t grain delivered{}
 STR_EXTRA_BREWERY_MAIZE_SUBSTR                                                  :5,000l per 8t maize delivered{}
@@ -298,7 +298,7 @@ STR_EXTRA_ELECTRIC_ARC_FURNACE                                                  
 STR_EXTRA_FERTILIZER_PLANT                                                      :{BLACK}Cargo production:{}  8 crates per 8,000l chemicals delivered
 STR_EXTRA_FACTORY                                                               :{BLACK}Cargo production:{}  3 crates per 8 crates manufacturing supplies delivered{}  5 crates per 8t timber delivered{}{}Production steps up if both cargos are delivered within three months of each other.
 STR_EXTRA_FISHING_HARBOUR                                                       :{BLACK}Cargo production:{}  3t per 8 crates manufacturing supplies delivered{}  5t per 8t fish delivered{}{}Production steps up if both cargos are delivered within three months of each other.
-STR_EXTRA_FLOUR_MILL                                                            :{BLACK}Cargo production:{}  3t per 8 crates manufacturing supplies delivered{}  {STRING} {STRING} {}Production steps up if manufacturing supplies delivered within three months of other cargos.
+STR_EXTRA_FLOUR_MILL                                                            :{BLACK}Cargo production:{}  3t per 8 crates manufacturing supplies delivered{}  {STRING} {STRING}
 STR_EXTRA_FLOUR_MILL_GRAIN_SUBSTR                                               :5t per 8t grain delivered{}
 STR_EXTRA_FLOUR_MILL_CASSAVA_SUBSTR                                             :5t per 8t cassava delivered{}
 STR_EXTRA_FLOUR_MILL_MAIZE_SUBSTR                                               :5t per 8t maize delivered{}
@@ -333,15 +333,16 @@ STR_EXTRA_SUGAR_REFINERY                                                        
 STR_EXTRA_SUPPLY_YARD                                                           :{BLACK}Cargo production:{}  8 crates per 8 crates goods delivered{} 8 crates per 8,000l petroleum fuels delivered{}  {STRING}
 STR_EXTRA_SUPPLY_YARD_VEHICLES_SUBSTR                                           :8 crates per 8 vehicles delivered
 STR_EXTRA_SUPPLY_YARD_BUILDING_MATERIALS_SUBSTR                                 :8 crates per 8t building materials delivered
-STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Cargo production:{}  3 crates per 8 crates manufacturing supplies delivered{} {STRING} {STRING} {}Production steps up if manufacturing supplies delivered within three months of other cargos.
+STR_EXTRA_TEXTILE_MILL                                                          :{BLACK}Cargo production:{}  3 crates per 8 crates manufacturing supplies delivered{} {STRING} {STRING}
 STR_EXTRA_TEXTILE_MILL_WOOL_SUBSTR                                              :5 crates per 8 bales wool delivered{}
 STR_EXTRA_TEXTILE_MILL_PLANT_FIBRES_SUBSTR                                      :5 crates per 8 bales plant fibres delivered{}
 STR_EXTRA_TYRE_PLANT                                                            :{BLACK}Cargo production:{}  6 crates per 8,000l rubber delivered{}  2 crates per 8,000l chemicals delivered{}{}Production steps up if both cargos are delivered within three months of each other.
 STR_EXTRA_VEHICLE_FACTORY                                                       :{BLACK}Cargo production:{}  3 vehicles per 8 crates vehicle parts delivered{}  3 vehicles per 8t metal delivered{}  2 vehicles per 8,000l chemicals delivered{}{}Production steps up if two or more cargos are delivered within three months of each other.
 
-STR_EXTRA_TEXT_SECONDARY_ONE_INPUT                                              :{BLACK}{STRING}{}{}Cargo production:{}  {CARGO_SHORT} per {CARGO_LONG} delivered{}{}{GOLD}[Prod Info]
-STR_EXTRA_TEXT_SECONDARY_TWO_INPUTS                                             :{BLACK}{STRING}{}{}Cargo production:{}  {CARGO_SHORT} per {CARGO_LONG} delivered{}  {CARGO_SHORT} per {CARGO_LONG} delivered{}{}{GOLD}[Prod Info]
-STR_EXTRA_TEXT_SECONDARY_THREE_INPUTS                                           :{BLACK}{STRING}{}{}Cargo production:{}  {CARGO_SHORT} per {CARGO_LONG} delivered{}  {CARGO_SHORT} per {CARGO_LONG} delivered{}  {CARGO_SHORT} per {CARGO_LONG} delivered{}{}{GOLD}[Prod Info]
+STR_EXTRA_TEXT_SECONDARY_MNSP_BOOST                                             :{BLACK}Production steps up if manufacturing supplies delivered within three months of other cargos.
+STR_EXTRA_TEXT_SECONDARY_ONE_INPUT                                              :{BLACK}{STRING}{}{}Cargo production:{}  {CARGO_SHORT} per {CARGO_LONG} delivered{}{}{GOLD}{STRING}
+STR_EXTRA_TEXT_SECONDARY_TWO_INPUTS                                             :{BLACK}{STRING}{}{}Cargo production:{}  {CARGO_SHORT} per {CARGO_LONG} delivered{}  {CARGO_SHORT} per {CARGO_LONG} delivered{}{}{GOLD}{STRING}
+STR_EXTRA_TEXT_SECONDARY_THREE_INPUTS                                           :{BLACK}{STRING}{}{}Cargo production:{}  {CARGO_SHORT} per {CARGO_LONG} delivered{}  {CARGO_SHORT} per {CARGO_LONG} delivered{}  {CARGO_SHORT} per {CARGO_LONG} delivered{}{}{GOLD}{STRING}
 STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ DEBUG ------------{}Production this month:{}Cargo 1: {WHITE}{COMMA}{BLACK}{}Cargo 2: {WHITE}{COMMA}{BLACK}{}Days since last delivery: {WHITE}{COMMA}{BLACK}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Maximum production reached
 STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Current production: {YELLOW}Normal {}{}{BLACK}For {WHITE}Enhanced {BLACK}production deliver {SIGNED_WORD} crates of supplies within three months{}For {WHITE}Gung-ho {BLACK}production deliver {SIGNED_WORD} crates
