@@ -30,7 +30,6 @@ industry = IndustrySecondary(id='copper_refinery',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_POWERHUNGRY))',
                     fund_cost_multiplier='200',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
-                    extra_text_industry='STR_EXTRA_COPPER_REFINERY',
                     intro_year=1800,
                     graphics_change_dates = [] )
 

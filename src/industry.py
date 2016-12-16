@@ -534,7 +534,7 @@ class IndustryProperties(object):
         self.enabled = kwargs.get('enabled', False)
         self.processed_cargos_and_output_ratios = kwargs.get('processed_cargos_and_output_ratios', None)
         self.override_default_construction_states = kwargs.get('override_default_construction_states', False)
-        self.extra_text_industry = kwargs.get('extra_text_industry', 'STR_EMPTY') # value is string(s) to return for corresponding nml cb
+        self.extra_text_industry = kwargs.get('extra_text_industry', None) # value is string(s) to return for corresponding nml cb
         self.extra_text_fund = kwargs.get('extra_text_fund', None)
         # nml properties we want to prevent being set for one reason or another
         if 'conflicting_ind_types' in kwargs:
@@ -675,7 +675,10 @@ class Industry(object):
         # there is faff here assembling compile time strings for industry general info, whilst text stack handles cargo production ratio info
         # this is because compile time strings barf on 'TTD_XXX' strings...
         # ...meanwhile text stack only has 24 bytes, and all are consumed by cargo ratio info (and it can't be packed tighter afaict)
-        return 'string(' + extra_text_string + ', string(' + self.get_property('extra_text_industry', economy) + '))'
+        extra_text_industry = self.get_property('extra_text_industry', economy)
+        if extra_text_industry is None or extra_text_industry is True:
+            extra_text_industry = 'STR_EMPTY'
+        return 'string(' + extra_text_string + ', string(' + extra_text_industry + '))'
 
     def get_expression_for_extra_text_industry_cargo_details(self, economy):
         # looks messy, but saves a lot of work for translators by automating 'amount produced per amount delivered' strings for industry window text

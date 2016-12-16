@@ -31,7 +31,6 @@ industry = IndustrySecondary(id='lime_kiln',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_PIT))',
                     fund_cost_multiplier='45',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
-                    extra_text_industry='STR_EXTRA_LIME_KILN',
                     graphics_change_dates = [1952, 1978] )
 
 industry.economy_variations['FIRS'].enabled = True

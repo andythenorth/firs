@@ -25,11 +25,11 @@ industry = IndustrySecondary(id='metal_workshop',
                     location_checks=IndustryLocationChecks(incompatible={'metal_workshop': 56}),
                     remove_cost_multiplier='0',
                     prospect_chance='0.75',
-                    name='string(STR_IND_METAL_FOUNDRY)',
+                    name='string(STR_IND_METAL_WORKSHOP)',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_INDUSTRY_ESTATE))',
                     fund_cost_multiplier='120',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
-                    extra_text_industry='STR_EXTRA_METAL_FOUNDRY',
+                    extra_text_industry='STR_EXTRA_METAL_WORKSHOP',
                     intro_year=1800)
 
 industry.economy_variations['FIRS'].enabled = True
