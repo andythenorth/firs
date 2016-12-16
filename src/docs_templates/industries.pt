@@ -51,6 +51,7 @@
                                             </tal:no_cargos>
                                         </td>
                                     </tr>
+                                    <tr>
                                         <th nowrap="true" style="text-align:right; font-weight:normal;">Produces:</th>
                                         <td>
                                             <tal:cargos repeat="cargo doc_helper.cargos_produced_by_industry(industry, economy)">
@@ -60,6 +61,15 @@
                                                 <span class="muted">Nothing</span>
                                             </tal:no_cargos>
                                         </td>
+                                    </tr>
+                                    <tr tal:condition="industry.get_property('processed_cargos_and_output_ratios', economy) is not None">
+                                        <th nowrap="true" style="width:120px; text-align:right; font-weight:normal;">Ratios:</th>
+                                        <td class="muted">
+                                            <small>
+                                                ${', '.join([str(x) + ' ' + str(y) for x, y in industry.get_property('processed_cargos_and_output_ratios', economy)])}
+                                            </small>
+                                        </td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </tal:industry_cargos>
