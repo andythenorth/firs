@@ -29,14 +29,13 @@ industry = IndustrySecondary(id='plastics_plant',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_IND_PLASTICS_PLANT))',
                     fund_cost_multiplier='125',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
-                    extra_text_industry='STR_EXTRA_PLASTICS_PLANT, string(STR_EXTRA_PLASTICS_PLANT_CHEMICALS_SUBSTR), string(STR_EXTRA_PLASTICS_PLANT_PLANT_FIBRES_SUBSTR)',
+                    extra_text_industry='STR_EXTRA_PLASTICS_PLANT',
                     intro_year='1931' )
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['STEELTOWN'].enabled = True
 industry.economy_variations['STEELTOWN'].processed_cargos_and_output_ratios=[('RFPR', 6)]
 industry.economy_variations['STEELTOWN'].prod_cargo_types=['GOOD', 'VPTS']
-industry.economy_variations['STEELTOWN'].extra_text_industry='STR_EXTRA_PLASTICS_PLANT, string(STR_EXTRA_PLASTICS_PLANT_CHEMICALS_SUBSTR), string(STR_EMPTY)'
 
 industry.add_tile(id='plastics_plant_tile_1',
                   location_checks=TileLocationChecks(require_effectively_flat=True,
