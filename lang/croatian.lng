@@ -6,7 +6,7 @@
 STR_GRF_DESC                                                                    :{ORANGE}FIRS Zamjenski Industrijski Set{}{BLACK}Od {SILVER}andythenorth{BLACK} i {SILVER}FooBar{BLACK}.{}{BLACK}'1,000 obaveza i dalje...'{BLACK}{}{}Website: {SILVER}www.tt-foundry.com/sets/FIRS{BLACK}.Licenca: {SILVER}GPL v2{BLACK}.Posebne zahvale {SILVER}Ammler{BLACK}, {SILVER}Core Xii{BLACK}, {SILVER}Irwe{BLACK}, {SILVER}planetmaker{BLACK} i {SILVER}Zephyris{BLACK}.Koristi dijelove od {SILVER}eGRVTS{BLACK}, {SILVER}ISR{BLACK} i {SILVER}OpenGFX{BLACK}.
 STR_GRF_NAME                                                                    :{TITLE}
 STR_GRF_URL                                                                     :http://bundles.openttdcoop.org/firs/releases/LATEST/docs/
-STR_EMPTY                                                                       :{}
+STR_EMPTY                                                                       :.
 
 STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :Najveća udaljenost ribarskih polja, naftnih platformi i jaružališta od obale u poljima.
 STR_PARAM_DESC_DEBUG                                                            :Samo za programere
@@ -246,6 +246,7 @@ STR_IND_LUMBER_YARD                                                             
 STR_IND_MACHINE_SHOP                                                            :Trgovina strojevima
 STR_IND_MANGANESE_MINE                                                          :Rudnik mangana
 STR_IND_METAL_FABRICATION_PLANT                                                 :Postrojenje za izradu metala
+STR_IND_METAL_WORKSHOP                                                          :Radionica za metal
 STR_IND_MIXEDFARM                                                               :Miješana farma
 STR_IND_NITRATE_MINE                                                            :Rudnik nitrata
 STR_IND_ORCHARD_PIGGERY                                                         :Voćnjak i svinjac
@@ -280,22 +281,26 @@ STR_IND_VEHICLE_FACTORY                                                         
 STR_IND_VEHICLE_DEALER                                                          :Salon vozila
 STR_IND_VINEYARD                                                                :Vinograd
 
-STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Proizvodi staklene predmete kao boce, staklenke i prozorska okna.{}{}{BLACK}Proizvodnja tereta:{} 6t od 8t dostavljenog pijeska{} 2t od 8,000l dostavljenih kemikalija{}{}Proizvodnja se povećava ako su oba tereta dostavljena unutar 3 mjeseca jedan od drugog.
-STR_EXTRA_LUMBER_YARD                                                           :{BLACK}Proizvodi predmete kao stupove i ograde.{}{}{BLACK}Proizvodnja tereta:{} 2t od 8000l dostavljenih kemikalija{} 6t od 8t dostavljenog drva{}{}Proizvodnja se povećava ako su oba tereta dostavljena unutar 3 mjeseca jedan od drugog.
-STR_EXTRA_MACHINE_SHOP                                                          :{BLACK}Proizvodi i servisira strojeve.{}{}Proizvodnja tereta:{} 8 kutija od 8,000l dostavljenog benzina{} 8 kutija od 8t dostavljenog metala
-STR_EXTRA_METAL_FABRICATION_PLANT                                               :{BLACK}Proizvodi dijelove od obojenog metala.{}{}Proizvodnja tereta:{} 2t od 8,000l dostavljenih kemikalija{} 6t od 8t dostavljenog metala{}{}Proizvodnja se povećava ako su oba tereta dostavljena unutar 3 mjeseca jedan od drugog.
-STR_EXTRA_OIL_REFINERY                                                          :{BLACK}Prerađuje sirovu naftu u benzin i kemikalije.{}{}Proizvodnja tereta:{} 6,000l od 8,000l dostavljenog
-STR_EXTRA_PAPER_MILL                                                            :{BLACK}Gnječi drvo za proizvodnju papira i kartona.{}{}{BLACK}Proizvodnja tereta:{} 4 kutije od 8t dostavljenog drva{} 2 kutije od 8t dostavljene gline{}  2 kutije od 8,000l dostavljenih kemikalija{}{}Proizvodnja se povećava ako su dva ili više tereta dostavljena unutar 3 mjeseca jedan od drugog.
-STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}Proizvodi plastične predmete kao pakiranja i kućanske proizvode.{}{}Proizvodnja tereta:{} {STRING} {STRING}
-STR_EXTRA_PYRITE_SMELTER                                                        :{BLACK}Prerađuje pirit u metal i kemikalije.{}{}Proizvodnja tereta:{} 4t metala i 4,000l kemikalija od 8t dostavljenog pirita
-STR_EXTRA_RECYCLING_PLANT                                                       :{BLACK}Prerađuje reciklažni materijal za ponovno korištenje u proizvodnji.{}{}6t od 8t dostavljenog reciklažnog materijala
+STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Proizvodi staklene predmete kao boce, staklenke i prozorska okna.
+STR_EXTRA_LUMBER_YARD                                                           :{BLACK}Proizvodi predmete kao stupove i ograde.
+STR_EXTRA_MACHINE_SHOP                                                          :{BLACK}Proizvodi i servisira strojeve.
+STR_EXTRA_METAL_FABRICATION_PLANT                                               :{BLACK}Proizvodi dijelove od obojenog metala.
+STR_EXTRA_METAL_WORKSHOP                                                        :{BLACK}Proizvodi proizvode od pocinčanog metala kao konzerve, željezariju i kućanske proizvode.
+STR_EXTRA_OIL_REFINERY                                                          :{BLACK}Prerađuje sirovu naftu u benzin i kemikalije.
+STR_EXTRA_PAPER_MILL                                                            :{BLACK}Gnječi drvo za proizvodnju papira i kartona.
+STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}Proizvodi plastične predmete kao pakiranja i kućanske proizvode.
+STR_EXTRA_PYRITE_SMELTER                                                        :{BLACK}Prerađuje pirit u metal i kemikalije.
+STR_EXTRA_RECYCLING_PLANT                                                       :{BLACK}Prerađuje reciklažni materijal za ponovno korištenje.
 STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}Proizvodnja je proporcionalna populaciji grada.
-STR_EXTRA_SAWMILL                                                               :{BLACK}Pili i reže drva.{}{}Proizvodnja tereta:{} 6t od 8t dostavljenog drva
-STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Proizvodi metalne proizvode kao alate, plugove, vrata, lopate i potkove.{}{}Proizvodnja tereta:{} 5t od 8t dostavljenog metala
+STR_EXTRA_SAWMILL                                                               :{BLACK}Pili i reže drva.
+STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Proizvodi metalne proizvode kao alate, plugove, vrata, lopate i potkove.
 
-STR_EXTRA_TEXT_SECONDARY_ONE_INPUT                                              :{BLACK}{STRING}{}{}Proizvodnja tereta:{}  {CARGO_SHORT} od {CARGO_LONG} dostavljenog{}{}{GOLD}[Prod Info]
-STR_EXTRA_TEXT_SECONDARY_TWO_INPUTS                                             :{BLACK}{STRING}{}{}Proizvodnja tereta:{}  {CARGO_SHORT} od {CARGO_LONG} dostavljenog{}  {CARGO_SHORT} od {CARGO_LONG} dostavljenog{}{}{GOLD}[Prod Info]
-STR_EXTRA_TEXT_SECONDARY_THREE_INPUTS                                           :{BLACK}{STRING}{}{}Proizvodnja tereta:{}  {CARGO_SHORT} od {CARGO_LONG} dostavljenog{}  {CARGO_SHORT} od {CARGO_LONG} dostavljenog{}  {CARGO_SHORT} od {CARGO_LONG} dostavljenog{}{}{GOLD}[Prod Info]
+STR_EXTRA_TEXT_SECONDARY_TWO_CARGO_BOOST                                        :{}{}Proizvodnja se povećava ako se oba tereta dostave unutar tri mjeseca jedan od drugog.
+STR_EXTRA_TEXT_SECONDARY_THREE_CARGO_BOOST                                      :{}{}Proizvodnja se povećava ako se dva ili više tereta dostave unutar tri mjeseca jedan od drugog.
+STR_EXTRA_TEXT_SECONDARY_MNSP_BOOST                                             :{BLACK}Proizvodnja se povećava ako se proizvodne potrepštine dostave unutar tri mjeseca od dostave drugih tereta.
+STR_EXTRA_TEXT_SECONDARY_ONE_INPUT                                              :{BLACK}{STRING}{}{}Proizvodnja tereta:{}  {CARGO_SHORT} od {CARGO_LONG} dostavljenog{}{}{GOLD}{STRING}
+STR_EXTRA_TEXT_SECONDARY_TWO_INPUTS                                             :{BLACK}{STRING}{}{}Proizvodnja tereta:{}  {CARGO_SHORT} od {CARGO_LONG} dostavljenog{}  {CARGO_SHORT} od {CARGO_LONG} dostavljenog{}{}{GOLD}{STRING}
+STR_EXTRA_TEXT_SECONDARY_THREE_INPUTS                                           :{BLACK}{STRING}{}Proizvodnja tereta:{}  {CARGO_SHORT} od {CARGO_LONG} dostavljenog{}  {CARGO_SHORT} od {CARGO_LONG} dostavljenog{}  {CARGO_SHORT} od {CARGO_LONG} dostavljenog{}{}{GOLD}{STRING}
 STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ ISPRAVLJANJE ------------{}Proizvodnja ovog mjeseca:{}Teret 1: {WHITE}{COMMA}{BLACK}{}Teret 2: {WHITE}{COMMA}{BLACK}{}Dana od posljednje dostave: {WHITE}{COMMA}{BLACK}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Dostignuta maksimalna proizvodnja
 STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Trenutna proizvodnja: {YELLOW}Normalna{}{}{BLACK}Za povećavanje proizvodnje na {WHITE}Unaprijeđenu{BLACK} dostavite {SIGNED_WORD} kutija potrepština unutar tri mjeseca{}Za povećavanje proizvodnje na {WHITE}Masovnu{BLACK} dostavite {SIGNED_WORD} kutija

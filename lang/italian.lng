@@ -246,6 +246,7 @@ STR_IND_LUMBER_YARD                                                             
 STR_IND_MACHINE_SHOP                                                            :{G=f}Fabbrica di macchinari
 STR_IND_MANGANESE_MINE                                                          :{G=f}Miniera di manganese
 STR_IND_METAL_FABRICATION_PLANT                                                 :{G=f}Fabbrica di prodotti in metallo
+STR_IND_METAL_WORKSHOP                                                          :Fabbrica metallurgica
 STR_IND_MIXEDFARM                                                               :{G=f}Azienda agricola
 STR_IND_NITRATE_MINE                                                            :{G=f}Miniera di nitrati
 STR_IND_ORCHARD_PIGGERY                                                         :{G=m}Frutteto e porcile
@@ -280,22 +281,26 @@ STR_IND_VEHICLE_FACTORY                                                         
 STR_IND_VEHICLE_DEALER                                                          :Rivenditore di veicoli
 STR_IND_VINEYARD                                                                :{G=f}Vigna
 
-STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Produce oggetti in vetro come bottiglie, vasi e finestre.{}{}Produzione:{}  6t ogni 8t di sabbia consegnate{}  2t ogni 8000l di prodotti chimici consegnati{}{}La produzione aumenta se entrambe le merci sono consegnate entro un intervallo inferiore a tre mesi.
-STR_EXTRA_LUMBER_YARD                                                           :{BLACK}Costruisce oggetti come palizzate, steccati o pali.{}{}Produzione:{}  2t ogni 8t di prodotti chimici consegnate{}  6t ogni 8t di prodotti in legno consegnate{}{}La produzione aumenta se entrambe le merci sono consegnate entro un intervallo inferiore a tre mesi.
-STR_EXTRA_MACHINE_SHOP                                                          :{BLACK}Costruisce e ripara macchinari.{}{}Produzione:{}  8 casse ogni 8000l di carburante consegnati{}  8 casse ogni 8t di metalli consegnate.
-STR_EXTRA_METAL_FABRICATION_PLANT                                               :{BLACK}Produce parti meccaniche di metallo.{}{}Produzione:{}  2t ogni 8000l di prodotti chimici consegnati{}  6t ogni 8t di metalli consegnate{}{}La produzione aumenta se entrambe le merci sono consegnate entro un intervallo inferiore a tre mesi.
-STR_EXTRA_OIL_REFINERY                                                          :{BLACK}Lavora il petrolio per produrre carburanti e prodotti chimici.{}{}Produzione:{}6000l ogni 8000l consegnati
-STR_EXTRA_PAPER_MILL                                                            :{BLACK}Tritura la legna per produrre carta e imballaggi.{}{}Produzione:{}  4t ogni 8t di legname consegnate{}  2t ogni 8t d'argilla consegnate{}  2t ogni 8000l di prodotti chimici consegnati{}{}La produzione aumenta se due o più tipi di merci sono consegnate entro un intervallo inferiore a tre mesi.
-STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}Costruisce prodotti in plastica come imballaggi e prodotti di consumo.{}{}Prodouzione:{} {STRING} {STRING}
-STR_EXTRA_PYRITE_SMELTER                                                        :{BLACK}Trasforma il minerale di pirite in prodotti metallici e chimici.{}{}Produzione:{}  4t di metalli e 4000l di prodotti chimici pgni 8t di minerale di pirite consegnate
-STR_EXTRA_RECYCLING_PLANT                                                       :{BLACK}Lavora i prodotti da riciclare garantendo un loro riutilizzo industriale.{}{}Produzione:{}  6t di produzione ogni 8t consegnate.
+STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Produce oggetti in vetro come bottiglie, vasi e finestre.
+STR_EXTRA_LUMBER_YARD                                                           :{BLACK}Costruisce oggetti come palizzate, steccati o pali.
+STR_EXTRA_MACHINE_SHOP                                                          :{BLACK}Costruisce e ripara macchinari.
+STR_EXTRA_METAL_FABRICATION_PLANT                                               :{BLACK}Produce parti meccaniche di metallo.
+STR_EXTRA_METAL_WORKSHOP                                                        :{BLACK}Produce oggetti di metallo placato come lattine, ferramenta e prodotti di consumo.
+STR_EXTRA_OIL_REFINERY                                                          :{BLACK}Lavora il petrolio per produrre carburanti e prodotti chimici.
+STR_EXTRA_PAPER_MILL                                                            :{BLACK}Tritura la legna per produrre carta e imballaggi.
+STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}Costruisce prodotti in plastica come imballaggi e prodotti di consumo.
+STR_EXTRA_PYRITE_SMELTER                                                        :{BLACK}Trasforma il minerale di pirite in prodotti metallici e chimici.
+STR_EXTRA_RECYCLING_PLANT                                                       :{BLACK}Lavora i prodotti da riciclare garantendo un loro riutilizzo industriale.
 STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}La quantità di prodotto dipende dalle dimensioni della città.
-STR_EXTRA_SAWMILL                                                               :{BLACK}Taglia la legna.{}{}Produzione:{}   6t ogni 8t di legna consegnate.
-STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Costruisce oggetti metallici come attrezzi edili e agricoli, e ferri di cavallo.{}{}Produzione:{}  8 casse ogni 8t di metalli consegnate.
+STR_EXTRA_SAWMILL                                                               :{BLACK}Taglia la legna.
+STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Costruisce oggetti metallici come attrezzi edili e agricoli, e ferri di cavallo.
 
-STR_EXTRA_TEXT_SECONDARY_ONE_INPUT                                              :{BLACK}{STRING}{}{}Produzione:{}  {CARGO_SHORT} da {CARGO_LONG} consegnati{}{}{GOLD}[Prod Info]
-STR_EXTRA_TEXT_SECONDARY_TWO_INPUTS                                             :{BLACK}{STRING}{}{}Produzione:{}  {CARGO_SHORT} da {CARGO_LONG} consegnati{}  {CARGO_SHORT} da {CARGO_LONG} consegnati{}{}{GOLD}[Prod Info]
-STR_EXTRA_TEXT_SECONDARY_THREE_INPUTS                                           :{BLACK}{STRING}{}{}Produzione:{}  {CARGO_SHORT} da {CARGO_LONG} consegnati{}  {CARGO_SHORT} da {CARGO_LONG} consegnati{}  {CARGO_SHORT} da {CARGO_LONG} consegnati{}{}{GOLD}[Prod Info]
+STR_EXTRA_TEXT_SECONDARY_TWO_CARGO_BOOST                                        :{}{}La produzione incrementa consegnando entrambe le merci entro 3 mesi una dall'altra.
+STR_EXTRA_TEXT_SECONDARY_THREE_CARGO_BOOST                                      :{}{}La produzione incrementa consegnando due o più merci entro 3 mesi una dall'altra.
+STR_EXTRA_TEXT_SECONDARY_MNSP_BOOST                                             :{BLACK}La produzione incrementa consegnando le forniture entro 3 mesi dall'altre merci
+STR_EXTRA_TEXT_SECONDARY_ONE_INPUT                                              :{BLACK}{STRING}{}{}Produzione:{}  {CARGO_SHORT} da {CARGO_LONG} consegnati{}{}{GOLD}{STRING}
+STR_EXTRA_TEXT_SECONDARY_TWO_INPUTS                                             :{BLACK}{STRING}{}{}Produzione:{}  {CARGO_SHORT} da {CARGO_LONG} consegnati{}  {CARGO_SHORT} da {CARGO_LONG} consegnati{}{}{GOLD}{STRING}
+STR_EXTRA_TEXT_SECONDARY_THREE_INPUTS                                           :{BLACK}{STRING}{}{}Produzione:{}  {CARGO_SHORT} da {CARGO_LONG} consegnati{}  {CARGO_SHORT} da {CARGO_LONG} consegnati{}  {CARGO_SHORT} da {CARGO_LONG} consegnati{}{}{GOLD}{STRING}
 STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ DEBUG ------------{}Produzione questo mese:{}Prodotto 1: {WHITE}{COMMA}{BLACK}{}Prodotto 2: {WHITE}{COMMA}{BLACK}{}Giorni trascorsi dall'ultima consegna: {WHITE}{COMMA}{BLACK}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Livello massimo di produzione raggiunto
 STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Produzione attuale: {YELLOW}Normale{}{}{BLACK}Il livello di produzione {WHITE}Elevato {BLACK} si raggiunge consegnando {SIGNED_WORD} casse di forniture entro 3 mesi{}Per salire al livello {WHITE}Gung ho {BLACK} si devono consegnare {SIGNED_WORD} casse
