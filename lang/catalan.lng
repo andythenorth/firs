@@ -7,12 +7,10 @@ STR_GRF_NAME                                                                    
 STR_GRF_URL                                                                     :http://bundles.openttdcoop.org/firs/releases/LATEST/docs/
 
 STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :Màxima distància en caselles des de caladors de pesca, plataformes petrolíferes i zones de dragatge fins la costa.
-STR_PARAM_DESC_DEBUG                                                            :Només per a desenvolupadors
 STR_PARAM_DESC_ECONOMIES                                                        :Cada model d'economia ofereix una combinació diferent de càrregues i indústries.{}{}Per als jugadors que cerquin un estil de joc senzill, les economies "bàsiques" contenen menys tipus d'indústries i de càrregues.
 STR_PARAM_DESC_NO_OPENINGS                                                      :Per defecte, durant el joc s'aniran obrint noves indústries.{}{}Si activeu l'impediment d'aparició d'indústries, no se n'obriran durant el joc, i els jugadors no podran financiar-ne ni prospeccionar-ne de noves.
 STR_PARAM_DESC_SECONDARY_NEVER_CLOSE                                            :Per defecte, les indústries secundàries de FIRS mai no tanquen.{}{}Si activeu el tancament de secundàries, les indústries secundàries poden tancar si no reben càrrega durant un llarg període. Les indústries primàries no tancaran mai a FIRS i no es veuen afectades per aquest paràmetre.
 STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY                                   :Màxima distància a la costa en caselles per a les indústries marines
-STR_PARAM_NAME_DEBUG                                                            :Mostra textos de depuració
 STR_PARAM_NAME_ECONOMIES                                                        :Economia
 STR_PARAM_NAME_NO_OPENINGS                                                      :Impedeix l'aparició d'indústries durant el joc
 STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            :Permet el tancament d'indústries secundàries
@@ -183,7 +181,6 @@ STR_EXTRA_RECYCLING_DEPOT                                                       
 STR_EXTRA_SAWMILL                                                               :{BLACK}Talla la fusta.{}{}Producció:{} 6 t per cada 8 t de fusta
 STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Produeix objectes de metall com ara pales, aixades, eines, portes i ferradures.{}{}Producció:{} 8 caixes per cada 8 t de metall
 
-STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ DEBUG ------------{}Producció d'aquest mes:{}Càrrega 1: {WHITE}{COMMA}{BLACK}{}Càrrega 2: {WHITE}{COMMA}{BLACK}{}Dies des de la darrera entrega: {WHITE}{COMMA}{BLACK}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Assolit el màxim de producció
 STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Producció actual: {YELLOW}normal{}{}{BLACK}Per a doblar la producció cal que lliureu {SIGNED_WORD} caixes de subministraments en tres mesos (o {SIGNED_WORD} caixes per a producció quàdruple)
 STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Producció actual: {YELLOW}millorada (doble){}{}{BLACK}Per a mantenir aquest nivell cal que lliureu {SIGNED_WORD} caixes de subministraments en tres mesos, o {SIGNED_WORD} caixes per aconseguir producció quàdruple

@@ -7,12 +7,10 @@ STR_GRF_URL                                                                     
 STR_EMPTY                                                                       :{}
 
 STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :Maximale afstand tot de kust in tegels voor visgebieden en baggermolens.
-STR_PARAM_DESC_DEBUG                                                            :Alleen voor ontwikkelaars.
 STR_PARAM_DESC_ECONOMIES                                                        :Elke economie heeft een andere combinatie van goederen en industrieën.{}{}Voor spelers die een eenvoudig spelverloop willen zijn er {SILVER}basis{BLACK} economieën die minder industrieën en goederen bevatten.{}{}De FIRS website (Engelstalig) geeft gedetailleerde informatie over elke economie.
 STR_PARAM_DESC_NO_OPENINGS                                                      :Normaal worden er nieuwe industrieën gebouwd tijdens het spel.{}{}Als {SILVER}voorkom bouwen van nieuwe industrieën{BLACK} aan staat, worden geen nieuwe industrieën gebouwd tijdens het spel. Spelers kunnen nieuwe industrieën ook niet kopen of proberen.
 STR_PARAM_DESC_SECONDARY_NEVER_CLOSE                                            :Standaard sluiten secundaire industrieën nooit.{}{}Als sluiten van secundaire industrieën is ingeschakeld kunnen secundaire industrieën sluiten als er lange tijd geen vracht is getransporteerd. Primaire industrieën sluiten nooit in FIRS en worden niet beïnvloed.
 STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY                                   :Maximale afstand tot de kust in tegels voor zee-industrieën
-STR_PARAM_NAME_DEBUG                                                            :Laat debug-informatie zien
 STR_PARAM_NAME_ECONOMIES                                                        :Economie
 STR_PARAM_NAME_NO_OPENINGS                                                      :Voorkom bouwen van nieuwe industrieën tijdens het spel
 STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            :Secundaire industrieën kunnen sluiten
@@ -291,7 +289,6 @@ STR_EXTRA_RECYCLING_DEPOT                                                       
 STR_EXTRA_SAWMILL                                                               :{BLACK}Zaagt hout.{}{}Productie:{} 6t voor iedere 8t afgeleverd hout
 STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Maakt smeedijzeren produkten zoals hekken, roosters, gereedschappen, ploegen, scheppen en hoefijzers.{}{}Productie:{} 8t voor iedere 8t afgeleverd metaal
 
-STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ DEBUG ------------{}productie deze maand:{}Goederen 1: {WHITE}{COMMA}{BLACK}{}Goederen 2: {WHITE}{COMMA}{BLACK}{}Dagen sinds laatste levering: {WHITE}{COMMA}{BLACK}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Maximale productiecapaciteit bereikt.
 STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Huidige productie: {YELLOW}Normaal{}{}{BLACK}Lever binnen drie maanden {SIGNED_WORD} eenheden vracht om {WHITE}verhoogd{BLACK} productieniveau te verkrijgen{}Lever {SIGNED_WORD} eenheden vracht voor {WHITE}gepassioneerde{BLACK} productie
 STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Huidige productie: {YELLOW}Verhoogd{}{}{BLACK}Lever binnen drie maanden {SIGNED_WORD} kratten constructie-, landbouw- of productiematerialen af om dit productieniveau te handhaven{}Voor {WHITE}gepassioneerde{BLACK} productie, lever {SIGNED_WORD} eenheden

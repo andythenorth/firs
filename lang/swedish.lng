@@ -7,12 +7,10 @@ STR_GRF_URL                                                                     
 STR_EMPTY                                                                       :{}
 
 STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :Maximalt avstånd mellan fångstområden, oljeriggar och mudderverk, och kusten, i antal rutor.
-STR_PARAM_DESC_DEBUG                                                            :Endast för utvecklare
 STR_PARAM_DESC_ECONOMIES                                                        :Varje ekonomi har egen kombination av godstyper och industrier.{}{}För spelare som vill ha en mer okomplicerad spelupplevelse innehåller {SILVER}bas{BLACK}-ekonomierna färre industrier och godstyper än andra FIRS-ekonomier.{}{}Detaljerad information om varje ekonomityp finns på FIRS hemsida.
 STR_PARAM_DESC_NO_OPENINGS                                                      :FIRS är förinställt att låta nya industrier öppna under spelets gång.{}{}Om {SILVER}förhindra öppning{BLACK} slås på kommer inga industrier öppnas och spelare kommer inte ha möjlighet att bygga eller prospektera för nya industrier.
 STR_PARAM_DESC_SECONDARY_NEVER_CLOSE                                            :FIRS är förinställt att aldrig låta de sekundära industrierna stänga.{}{}Om stängning av sekundära slås på kan sekundära industrier komma att stänga om inga varor transporteras under en längre tid.  Primära industrier stänger aldrig i FIRS och påverkas inte av denna inställning.
 STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY                                   :Maximalt avstånd mellan kusten och marina industrier, i antal rutor
-STR_PARAM_NAME_DEBUG                                                            :Visa felsökningstexter
 STR_PARAM_NAME_ECONOMIES                                                        :Ekonomi
 STR_PARAM_NAME_NO_OPENINGS                                                      :Förhindra att industrier öppnar under spelets gång
 STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            :Tillåt sekundära industrier att stänga
@@ -225,7 +223,6 @@ STR_EXTRA_RECYCLING_DEPOT                                                       
 STR_EXTRA_SAWMILL                                                               :{BLACK}Sågar upp timmer.{}{}Lastproduktion:{}  6t per 8t levererat timmer
 STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Producerar metallföremål som redskap, plogar, grindar, skyfflar och hästskor.{}{}Lastproduktion:{} 8 lådor per 8t levererad metall
 
-STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ FELSÖKNING ------------{}Produktion denna månad:{}Last 1: {WHITE}{COMMA}{BLACK}{}Last 2: {WHITE}{COMMA}{BLACK}{}Dagar sedan senaste leverans: {WHITE}{COMMA}{BLACK}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Maximal produktion uppnådd
 STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Nuvarande produktion: {YELLOW}Normal{}{}{BLACK}Leverera {SIGNED_WORD} lådor med materiel inom tre månader för {WHITE}Förhöjd{BLACK} produktion{}Leverera  {SIGNED_WORD} lådor för {WHITE}Gung-ho {BLACK}produktion
 STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Nuvarande produktion: {YELLOW}Förhöjd{}{}{BLACK}Leverera {SIGNED_WORD} lådor med materiel inom tre månader för att behålla den här nivån{}Leverera {SIGNED_WORD}  lådor för {WHITE}Gung-ho {BLACK}produktion

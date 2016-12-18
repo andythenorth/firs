@@ -7,12 +7,10 @@ STR_GRF_NAME                                                                    
 STR_GRF_URL                                                                     :http://bundles.openttdcoop.org/firs/releases/LATEST/docs/
 
 STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :A distância máxima da costa de zonas de pesca, plataformas de petróleo e campos de dragagem em blocos.
-STR_PARAM_DESC_DEBUG                                                            :Somente para desenvolvedores
 STR_PARAM_DESC_ECONOMIES                                                        :Cada economia fornece uma combinação diferente de cargas e indústrias.{}{}Para os jogadores que querem uma jogabilidade simples, economias 'Básica' contém menos indústrias e cargas do que outras economias da FIRS.
 STR_PARAM_DESC_NO_OPENINGS                                                      :Por padrão, novas indústrias abrirão durante o jogo.{}{}Se 'impedir abertura' estiver habilitado, indústrias não abrirão durante o jogo e os jogadores não serão capazes de fundar ou prospectar indústrias.
 STR_PARAM_DESC_SECONDARY_NEVER_CLOSE                                            :Por definição, indústrias secundárias FIRS nunca encerram.{}{}Se o encerramento secundário estiver habilitado, indústrias secundárias poderão encerrar se não houver carga transportada por um longo período. Indústrias primárias nunca encerram em FIRS e não são afectadas por esta configuração.
 STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY                                   :Distância máxima costeira das indústrias marinhas em blocos
-STR_PARAM_NAME_DEBUG                                                            :Mostrar textos de depuração
 STR_PARAM_NAME_ECONOMIES                                                        :Economia
 STR_PARAM_NAME_NO_OPENINGS                                                      :Impedir abertura de indústrias durante o jogo
 STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            :Permitir fechamento de indústrias secundárias
@@ -169,7 +167,6 @@ STR_EXTRA_RECYCLING_DEPOT                                                       
 STR_EXTRA_SAWMILL                                                               :{BLACK}Corta madeira.{}{}Produção:{}  6t por 8t de madeira entregues
 STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Produz artigos de metal, como ferramentas, arados, portões, pás e ferraduras.{}{}Produção:{}  8t por 8t de metal entregues
 
-STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ DEPURADOR ------------{}Produção este mês:{}Carga 1: {WHITE}{COMMA}{BLACK}{}Carga 2: {WHITE}{COMMA}{BLACK}{}Dias desde a última entrega: {WHITE}{COMMA}{BLACK}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Produção máxima alcançada
 STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Produção atual: {YELLOW}Normal{}{}{BLACK}Para duplicar a produção entregar {SIGNED_WORD} unidades de carga dentro de três meses (ou {SIGNED_WORD} unidades de carga para quadruplicar a produção)
 STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Produção atual: {YELLOW}Aprimorado (duplica){}{}{BLACK}Para manter este nível, entregar {SIGNED_WORD} unidades de carga dentro de três meses, ou {SIGNED_WORD} unidades de carga para quadruplicar a produção

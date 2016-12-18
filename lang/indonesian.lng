@@ -6,12 +6,10 @@ STR_GRF_NAME                                                                    
 STR_GRF_URL                                                                     :http://bundles.openttdcoop.org/firs/releases/LATEST/docs/
 
 STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :Jarak maksimal untuk area tangkapan ikan, anjungan lepas pantai dan pengerukan pasir laut dari pantai dalam petak.
-STR_PARAM_DESC_DEBUG                                                            :Hanya untuk pengembang / developer
 STR_PARAM_DESC_ECONOMIES                                                        :Setiap ekonomi menyediakan campuran kargo dan industri yang berbeda.{}{}Untuk pemain yang mau main yang gampang, ekonomi 'Dasar' berisi industri dan kargo lebih kurang daripada ekonomi FIRS yang lain.
 STR_PARAM_DESC_NO_OPENINGS                                                      :Secara normal, industri baru akan dibuat dalam permainan.{}{}Jika diaktifkan tidak ada industri dibuat dalam permainan, dan pemain tidak akan bisa membiayai atau memprospek industri.
 STR_PARAM_DESC_SECONDARY_NEVER_CLOSE                                            :Secara normal, industri sekunder dalam FIRS tidak akan tutup.{}{}Jika diaktifkan, industri sekunder mungkin tutup jika tidak ada kargo diantarkan untuk waktu lama.
 STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY                                   :Jarak terjauh untuk industri lepas pantai dari garis pantai dalam blok area
-STR_PARAM_NAME_DEBUG                                                            :Perlihatkan teks debug
 STR_PARAM_NAME_ECONOMIES                                                        :Sistem Ekonomi
 STR_PARAM_NAME_NO_OPENINGS                                                      :Tiadakan pembukaan industri baru
 STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            :Izinkan pabrik sekunder tutup
@@ -168,7 +166,6 @@ STR_EXTRA_RECYCLING_DEPOT                                                       
 STR_EXTRA_SAWMILL                                                               :{BLACK}Memotong kayu.{}{}6t diproduksi setiap 8t diantarkan.
 STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Memproduksi alat besi seperti alat perkakas, bajak, pintu pagar, sekop dan tapal kuda.{}{}8t diproduksi setiap 8t diantarkan.
 
-STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ DEBUG ------------{}Produksi bulan ini:{}Kargo 1: {WHITE}{COMMA}{BLACK}{}Kargo 2: {WHITE}{COMMA}{BLACK}{}Lama waktu sejak pengantaran terakhir: {WHITE}{COMMA}{BLACK}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Batas produksi maksimal tercapai
 STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Produksi sekarang: {YELLOW}Normal{}{}{BLACK}Untuk menggandakan produksi antarkan {SIGNED_WORD} peti alat dalam tiga bulan (atau {SIGNED_WORD} peti untuk produksi empat kali lipat)
 STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Produksi sekarang: {YELLOW}Naikkan (ganda){}{}{BLACK}Untuk meneruskan tingkat ini, antarkan {SIGNED_WORD} peti alat dalam tiga bulan, atau {SIGNED_WORD} peti alat untuk naikkan ke produksi empat kali lipat

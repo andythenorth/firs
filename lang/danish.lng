@@ -6,12 +6,10 @@ STR_GRF_NAME                                                                    
 STR_GRF_URL                                                                     :http://bundles.openttdcoop.org/firs/releases/LATEST/docs/
 
 STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :Maksimal afstand mellem fiskeområder, boreplatforme og uddybningssteder og kysten i felter.
-STR_PARAM_DESC_DEBUG                                                            :Kun for udviklere
 STR_PARAM_DESC_ECONOMIES                                                        :Hver økonomi har sin egen kombination af godstyper og industrier.{}{}"Basis" økonomien indeholder færre industrier og godstyper end andre FIRS økonomier, og er velegnet for nye spillere, eller spillere der ønsker et mere simpelt gameplay.
 STR_PARAM_DESC_NO_OPENINGS                                                      :Som standard vil nye FIRS-industrier åbne i løbet af spillet.{}{}hvis 'Forhindre industrier i at åbne under spillet' er slået til, vil industrier ikke åbne i løbet af spillet, og spillere vil heller ikke kunne bygge nye industrier.
 STR_PARAM_DESC_SECONDARY_NEVER_CLOSE                                            :Som standard vil FIRS-industrierne ikke lukke i løbet af spillet.{}{}Hvis 'Tillad sekundære industrier at lukke' er slået til, vil sekundære industrier kunne lukke såfremt ingen varer er leveret i en længere periode. Primære industrier vil andre kunne lukke i FIRS og påvirkes ikke af denne indstilling.
 STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY                                   :Maksimal afstand mellem kysten og marine industrier, i felter
-STR_PARAM_NAME_DEBUG                                                            :Vis debug informationer
 STR_PARAM_NAME_ECONOMIES                                                        :Økonomi
 STR_PARAM_NAME_NO_OPENINGS                                                      :Forhindre industrier i at åbne under spillet
 STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            :Tillad sekundære industrier at lukke
@@ -168,7 +166,6 @@ STR_EXTRA_RECYCLING_DEPOT                                                       
 STR_EXTRA_SAWMILL                                                               :{BLACK}Saver træ.{}{}Fragt produktion:{}  6t per 8t træ afleveret
 STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Producerer metalvarer såsom værktøj, plove, porte, skovle og hestesko.{}{}Fragt produktion:{}  8 kasser per 8t metal afleveret
 
-STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ DEBUG ------------{}Produktion denne måned:{}Fragt 1: {WHITE}{COMMA}{BLACK}{}Fragt 2: {WHITE}{COMMA}{BLACK}{}Dage siden sidste aflevering: {WHITE}{COMMA}{BLACK}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Maksimal produktion opnået
 STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Nuværrende produktion: {YELLOW}Normal{}{}{BLACK}For at fordoble produktionen, aflever {SIGNED_WORD} kasser materialer (or {SIGNED_WORD} kasser for firedobble produktionen)
 STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Nuværrende produktion: {YELLOW}Forbedret (dobbelt){}{}{BLACK}For at fastholde dette niveau, aflever {SIGNED_WORD} kasser materialer inden tre måneder, eller {SIGNED_WORD} kasser for at firedobble produktionen

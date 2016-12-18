@@ -9,12 +9,10 @@ STR_GRF_URL                                                                     
 STR_EMPTY                                                                       :{}
 
 STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :Største avstand for fiskebanker, oljeplattformer og mudderbanker fra kysten (i brikker).
-STR_PARAM_DESC_DEBUG                                                            :Bare for utviklere
 STR_PARAM_DESC_ECONOMIES                                                        :Hver økonomi tilbyr en ulik kombinasjon av varer og industrier.{}{}For spillere som ønsker et enklere spill, har {SILVER}basis{BLACK}økonomiene færre industrier og varer enn andre økonomier.{}{}Nettstedet for FIRS har detaljert informasjon om hver enkelt økonomi.
 STR_PARAM_DESC_NO_OPENINGS                                                      :Som standard vil nye industrier åpne i løpet av spillet.{}{}Hvis {SILVER}Forhindre at industrier åpner{BLACK} er slått på, vil ikke nye industrier åpne i løpet av spillet, og spillere kan ikke finansiere eller prospektere nye industrier.
 STR_PARAM_DESC_SECONDARY_NEVER_CLOSE                                            :Som standard vil FIRS sekundærindustrier aldri stenge.{}{}Om sekundær stenging slåes på, kan sekundærindustrier stenge hvis de ikke får varer på lang tid. Primærindustrier stenger aldri i FIRS, og påvirkes ikke av denne innstillingen.
 STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY                                   :Største avstand fra kysten for marine industrier (i brikker).
-STR_PARAM_NAME_DEBUG                                                            :Vis debug tekst
 STR_PARAM_NAME_ECONOMIES                                                        :Økonomi
 STR_PARAM_NAME_NO_OPENINGS                                                      :Forhindre at industrier åpner under spillet
 STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            :Tillat sekundære industrier å stenge
@@ -293,7 +291,6 @@ STR_EXTRA_RECYCLING_DEPOT                                                       
 STR_EXTRA_SAWMILL                                                               :{BLACK}Sager tømmer.{}{}Vareproduksjon:{}  6t pr 8t tømmer levert
 STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Produserer metallting som verktøy, ploger, porter, spader og hestesko.{}{}Vareproduksjon:{}  8 kasser pr 8t metall levert
 
-STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ DEBUG ------------{}Produksjon denne måneden:{}Vare 1: {WHITE}{COMMA}{BLACK}{}Vare 2: {WHITE}{COMMA}{BLACK}{}Dager siden forrige levering: {WHITE}{COMMA}{BLACK}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Maksimal produksjon oppnådd
 STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Produserer nå: {YELLOW}Normal{}{}{BLACK}For {WHITE}Forbedret produksjon{BLACK} må du levere {SIGNED_WORD} kasser utstyr innen tre måneder{}For {WHITE}Gung-ho {BLACK}produksjon lever {SIGNED_WORD} kasser
 STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Produserer nå: {YELLOW}Forbedret{}{}{BLACK}For å opprettholde dette nivået, lever {SIGNED_WORD} kasser utstyr innen tre måneder{}For {WHITE}Gung-ho {BLACK}produksjon lever {SIGNED_WORD} kasser

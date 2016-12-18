@@ -8,12 +8,10 @@ STR_GRF_URL                                                                     
 STR_EMPTY                                                                       :{}
 
 STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :Distancia máxima de las zonas de pesca, plataformas petrolíferas y zonas de dragado a la costa, indicado en casillas.
-STR_PARAM_DESC_DEBUG                                                            :Sólo para desarrolladores
 STR_PARAM_DESC_ECONOMIES                                                        :Cada economía proporciona una combinación diferente de cargas e industrias.{}{}Para los jugadores que quieran partidas simples, las economías {SILVER}Básicas {BLACK}contienen menos industrias y cargas que el resto de economías de FIRS.{}{}La página web de FIRS proporciona información detallada acerca de cada economía.
 STR_PARAM_DESC_NO_OPENINGS                                                      :Por defecto, se crearán nuevas industrias durante la partida.{}{}Si está activada {SILVER}la "Prevención de apertura" {BLACK}no se crearán nuevas industrias durante la partida, y los jugadores no podrán fundar o prospectar industrias.
 STR_PARAM_DESC_SECONDARY_NEVER_CLOSE                                            :Por defecto, las industrias secundarias nunca cierran en FIRS.{}{}Si esta opción es activada, las industrias secundarias pueden cerrar si no se les entrega carga durante mucho tiempo. Las industrias primarias nunca cierran en FIRS y no se ven afectadas por esta opción.
 STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY                                   :Distancia máxima a la costa para las industrias marítimas, indicada en casillas
-STR_PARAM_NAME_DEBUG                                                            :Mostrar textos de depuración
 STR_PARAM_NAME_ECONOMIES                                                        :Economía
 STR_PARAM_NAME_NO_OPENINGS                                                      :Prevenir construcción de nuevas industrias durante el juego
 STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            :Permitir cierre de industrias secundarias
@@ -228,7 +226,6 @@ STR_EXTRA_RECYCLING_DEPOT                                                       
 STR_EXTRA_SAWMILL                                                               :{BLACK}Aserradero.{}{}Producción:{} 6t por cada 8t de madera entregadas
 STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Produce objetos de metal forjado como herramientas, puertas, útiles de labranza, palas y herraduras.{}{}Producción:{} 8 cajas por cada 8t de metal entregadas
 
-STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ DEBUG ------------{}Producción este mes:{}Carga 1: {WHITE}{COMMA}{BLACK}{}Carga 2: {WHITE}{COMMA}{BLACK}{}Días desde la última entrega: {WHITE}{COMMA}{BLACK}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Producción máxima alcanzada
 STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Producción actual: {YELLOW}Normal{}{}{BLACK}Para una producción {WHITE}Mejorada{BLACK} entrega {SIGNED_WORD} cajas de suministros en un intervalo de tres meses{}Para la producción {WHITE}Gung-ho{BLACK} entrega {SIGNED_WORD} cajas
 STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Producción actual: {YELLOW}Mejorada{}{}{BLACK}Para mantener este nivel de producción es necesario entregar {SIGNED_WORD} cajas de suministros en un intervalo de tres meses{}Para la producción {WHITE}Gung-ho {BLACK}entrega {SIGNED_WORD} cajas

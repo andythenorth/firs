@@ -8,12 +8,10 @@ STR_GRF_NAME                                                                    
 STR_GRF_URL                                                                     :http://bundles.openttdcoop.org/firs/releases/LATEST/docs/
 
 STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :Najveća udaljenost ribarskih lovišta i iskopa od obale mereno u pločicama
-STR_PARAM_DESC_DEBUG                                                            :Samo za programere.
 STR_PARAM_DESC_ECONOMIES                                                        :Svaka ekonomija nudi različite kombinacije tovara i industrija.{}{}Za igrače koji žele jednostavniju igru, {SILVER}bazične{BLACK} ekonomije sadrže manji broj industrija i tovara od ostalih FIRS ekonomija.{}{} FIRS vebsajt pruža detaljne informacije o svakoj ekonomiji.
 STR_PARAM_DESC_NO_OPENINGS                                                      :Po podrazumevanoj vrednosti, nove industrije biti će otvarane za vreme igre.{}{}Ako {SILVER} je uključeno {BLACK} "zabrani otvaranje", industrije neće biti otvarane za vreme igre, i igrači neće biti u mogućnosti finansirati otvaranje ili istraživanje nove industrije
 STR_PARAM_DESC_SECONDARY_NEVER_CLOSE                                            :Po podrazumevanoj vrednosti, sekundarne industrije se nikada neće zatvoriti.{}{}Ako je dozvoljeno zatvaranje sekundarnih industrija, zatvaraće se ukoliko se na duži period ne preuzme tovar.
 STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY                                   :Najveća udaljenost fabrika na vodi od obale
-STR_PARAM_NAME_DEBUG                                                            :Prikaži unutrašnje podatke
 STR_PARAM_NAME_ECONOMIES                                                        :Ekonomija
 STR_PARAM_NAME_NO_OPENINGS                                                      :Zabranjena izgradnja fabrika (nedovršeno)
 STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            :Dozvoljeno zatvaranje sekundarnih industrija
@@ -226,7 +224,6 @@ STR_EXTRA_RECYCLING_DEPOT                                                       
 STR_EXTRA_SAWMILL                                                               :{BLACK}Priprema drva za upotrebu.{}{}6t proizvoda po 8t isporučenog tovara.
 STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Proizvodi robu od metala kao što su alatke, lopate, potkovice, plugovi i gvozdene kapije.{}{}5t proizvoda po 8t isporučenog tovara.
 
-STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ KOREKCIJA ------------{}Proizvodnja ovog meseca:{}Tovar 1: {WHITE}{COMMA}{BLACK}{}Tovar 2: {WHITE}{COMMA}{BLACK}{}Dana od zadnje isporuke: {WHITE}{COMMA}{BLACK}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Dostignut je najviši nivo proizvodnje
 STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Trenutna proizvodnja: {YELLOW}Normalna{}{}{BLACK}Za povećanje nivoa proizvodnje na {WHITE}poboljšani {BLACK} isporučite {SIGNED_WORD} sanduka proizvodnog materijala u roku od tri meseca{}Za povećanje nivoa proizvodnje na {WHITE}masovni {BLACK}isporučite {SIGNED_WORD} sanduka proizvodnog materijala
 STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Trenutna proizvodnja: {YELLOW}Poboljšana{}{}{BLACK}Za zadržavanje ovog nivoa proizvodnje, isporučite{SIGNED_WORD} sanduka proizvodnog materijala u roku od tri meseca{}Za povećanje nivoa proizvodnje na {WHITE}masovni {BLACK}isporučite {SIGNED_WORD} sanduka

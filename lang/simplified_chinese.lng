@@ -7,12 +7,10 @@ STR_GRF_URL                                                                     
 STR_EMPTY                                                                       :{}
 
 STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :渔场、钻井平台、疏浚区距离海岸的最大距离。
-STR_PARAM_DESC_DEBUG                                                            :仅适用于开发者
 STR_PARAM_DESC_ECONOMIES                                                        :每种经济模式对应不同的货物和工业组合。{}{}休闲玩家可以选择简单模式，{SILVER}'基础'{BLACK}经济模式的货物和工业种类比'FIRS'经济模式的种类要少。{}{}FIRS主页提供了每种经济模式更详细的介绍。
 STR_PARAM_DESC_NO_OPENINGS                                                      :默认的, 游戏进行时，可以新建工业.{}{}如果{SILVER}阻止新建 {BLACK}选项打开，则在游戏时不能新建工业。
 STR_PARAM_DESC_SECONDARY_NEVER_CLOSE                                            :FIRS次要工业默认不会倒闭。{}{}在本选项打开的情况下，如果长时间不运货，次要工业可能会倒闭。基本工业在FIRS里永远不会关闭，并且不受此选项影响。
 STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY                                   :海洋产业距离海岸的最大距离。
-STR_PARAM_NAME_DEBUG                                                            :显示debug文本
 STR_PARAM_NAME_ECONOMIES                                                        :经济
 STR_PARAM_NAME_NO_OPENINGS                                                      :游戏进行时禁止新建工业
 STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            :允许次要工业关闭
@@ -254,7 +252,6 @@ STR_EXTRA_RECYCLING_DEPOT                                                       
 STR_EXTRA_SAWMILL                                                               :{BLACK}加工原木成木料。{}{}货物生产率:{}  每8吨原木生产6吨
 STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}生产金属制品如工具、犁、门、锹和马蹄铁等。{}{}货物生产率:{}  每8吨金属生产8箱
 
-STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ DEBUG ------------{}Production this month:{}Cargo 1: {WHITE}{COMMA}{BLACK}{}Cargo 2: {WHITE}{COMMA}{BLACK}{}Days since last delivery: {WHITE}{COMMA}{BLACK}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}达到最大产量
 STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}当前产率: {YELLOW}标准{}{}{BLACK}为达到{WHITE}增强{BLACK}需三个月内交付 {SIGNED_WORD}箱物资。{}为达到{WHITE}工合 {BLACK}需交付 {SIGNED_WORD} 箱
 STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}当前产率: {YELLOW}增强{}{}{BLACK}为保持此水准，需三个月内交付 {SIGNED_WORD}{}为保持{WHITE}工合 {BLACK}需交付 {SIGNED_WORD}箱

@@ -7,12 +7,10 @@ STR_GRF_NAME                                                                    
 STR_GRF_URL                                                                     :http://bundles.openttdcoop.org/firs/releases/LATEST/docs/
 
 STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :Die maksimum afstand teëls wat die vis waters, oliebore en baggerwerk-terreine van die kus af is.
-STR_PARAM_DESC_DEBUG                                                            :Vir developers alleenlik
 STR_PARAM_DESC_ECONOMIES                                                        :Elke ekonomie bied 'n ander kombinasie van vragte en nywerhede.{}{} Vir spelers wat 'n eenvoudige spel wil hê, 'basiese' ekonomie bevat minder nywerhede en vragte as ander FIRS ekonomieë.
 STR_PARAM_DESC_NO_OPENINGS                                                      :By verstek, nuwe nywerhede sal begin tydens spel.{} Indien 'n "verhoed die opening" aangeskakel is sal nywerhede nie oopmaak tydens die spel nie, en die spelers sal nie in staat wees om die vooruitsig vir nywerhede te bevonds nie.
 STR_PARAM_DESC_SECONDARY_NEVER_CLOSE                                            :By verstek, FIRS sekondêre nywerhede sal nooit toemaak{}{} Indien sekondêre sluiting aangeskakel is, sal sekondêre nywerhede sluit indien daar geen vrag vervoer word vir 'n lang tyd.
 STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY                                   :Maksimum kus afstand van mariene nywerhede in teëls
-STR_PARAM_NAME_DEBUG                                                            :Wys debug teks
 STR_PARAM_NAME_ECONOMIES                                                        :Ekonomie
 STR_PARAM_NAME_NO_OPENINGS                                                      :Verhoed dat nywerhede oop maak tydens die spel
 STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            :Laat sekondere nywerhede toe om te sluit.
@@ -187,7 +185,6 @@ STR_EXTRA_RECYCLING_DEPOT                                                       
 STR_EXTRA_SAWMILL                                                               :{BLACK}Kap hout.{}{}6t produksie per 8t afgelewer.
 STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Produseer metaal items soos gereedskap, ploeë, hekke, skoppe en perdeskoene.{}{}8t produksie per 8t afgelewer.
 
-STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ DEBUG ------------{}Produksie die maand:{}Vrag 1: {WHITE}{COMMA}{BLACK}{}Vrag 2: {WHITE}{COMMA}{BLACK}{}Dae sedert laaste aflewering: {WHITE}{COMMA}{BLACK}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Maksimum produksie beryk
 STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Huidige produksie: {YELLOW}Normaal{}{}{BLACK}Om die vlak te verhoog, Lewer {SIGNED_WORD} eenhede vrag af binne drie maande (of {SIGNED_WORD}eenhede vrag om produksie viervoudig te verhoog)
 STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Huidige produksie: {YELLOW}Verbeterde (dubbel){}{}{BLACK}Om hierdie vlak te handhaaf, lewer {SIGNED_WORD} kratte voorraad af binne drie maande, of {SIGNED_WORD} kratte voorraad om produksie viervoudig te verhoog

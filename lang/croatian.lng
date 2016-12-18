@@ -9,12 +9,10 @@ STR_GRF_URL                                                                     
 STR_EMPTY                                                                       :.
 
 STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :Najveća udaljenost ribarskih polja, naftnih platformi i jaružališta od obale u poljima.
-STR_PARAM_DESC_DEBUG                                                            :Samo za programere
 STR_PARAM_DESC_ECONOMIES                                                        :Svaka ekonomija daje različite kombinacije tereta i industrija.{}{}Za igrače koji žele jednostavnost igre, {SILVER}Osnovne {BLACK} ekonomije imaju manje industrija i tereta nego druge FIRS ekonomije.{}{}Na FIRS web stranici se nalaze detaljne informacije o svakoj vrsti ekonomije.
 STR_PARAM_DESC_NO_OPENINGS                                                      :Po osnovnoj postavci, tijekom igre neće se otvarati nove industrije.{}{}Ako je {SILVER}"spriječi otvaranje" {BLACK} uključeno, industrije se neće otvarati tijekom igre, a igrači neće moći financirati ili istraživati nove industrije.
 STR_PARAM_DESC_SECONDARY_NEVER_CLOSE                                            :Po standardnim postavkama, FIRS sekundarne industrije se neće nikada zatvarati.{}{}Ako se uključi zatvaranje sekundarnih industrija, one se mogu zatvoriti ako se nikakav teret ne preveze tijekom dužeg vremena.
 STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY                                   :Najveća udaljenost od obale za pomorske industrije u poljima
-STR_PARAM_NAME_DEBUG                                                            :Prikaži tekst ispravljanja
 STR_PARAM_NAME_ECONOMIES                                                        :Ekonomija
 STR_PARAM_NAME_NO_OPENINGS                                                      :Zabrani otvaranje novih industrija tijekom igre
 STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            :Dozvoli zatvaranje sekundarnih industrija
@@ -301,7 +299,6 @@ STR_EXTRA_TEXT_SECONDARY_MNSP_BOOST                                             
 STR_EXTRA_TEXT_SECONDARY_ONE_INPUT                                              :{BLACK}{STRING}{}{}Proizvodnja tereta:{}  {CARGO_SHORT} od {CARGO_LONG} dostavljenog{}{}{GOLD}{STRING}
 STR_EXTRA_TEXT_SECONDARY_TWO_INPUTS                                             :{BLACK}{STRING}{}{}Proizvodnja tereta:{}  {CARGO_SHORT} od {CARGO_LONG} dostavljenog{}  {CARGO_SHORT} od {CARGO_LONG} dostavljenog{}{}{GOLD}{STRING}
 STR_EXTRA_TEXT_SECONDARY_THREE_INPUTS                                           :{BLACK}{STRING}{}Proizvodnja tereta:{}  {CARGO_SHORT} od {CARGO_LONG} dostavljenog{}  {CARGO_SHORT} od {CARGO_LONG} dostavljenog{}  {CARGO_SHORT} od {CARGO_LONG} dostavljenog{}{}{GOLD}{STRING}
-STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ ISPRAVLJANJE ------------{}Proizvodnja ovog mjeseca:{}Teret 1: {WHITE}{COMMA}{BLACK}{}Teret 2: {WHITE}{COMMA}{BLACK}{}Dana od posljednje dostave: {WHITE}{COMMA}{BLACK}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Dostignuta maksimalna proizvodnja
 STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Trenutna proizvodnja: {YELLOW}Normalna{}{}{BLACK}Za povećavanje proizvodnje na {WHITE}Unaprijeđenu{BLACK} dostavite {SIGNED_WORD} kutija potrepština unutar tri mjeseca{}Za povećavanje proizvodnje na {WHITE}Masovnu{BLACK} dostavite {SIGNED_WORD} kutija
 STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Trenutna proizvodnja: {YELLOW}Unaprijeđena{}{}{BLACK}Za zadržavanje ovog nivoa, dostavite {SIGNED_WORD} kutija potrepština unutar tri mjeseca{}Za povećavanje proizvodnje na {WHITE}Masovnu{BLACK} dostavite {SIGNED_WORD} kutija

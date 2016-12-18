@@ -7,12 +7,10 @@ STR_GRF_NAME                                                                    
 STR_GRF_URL                                                                     :http://bundles.openttdcoop.org/firs/releases/LATEST/docs/
 
 STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :A halászterületek, olajfúró tornyok és mederkotrások maximális távolsága a parttól.
-STR_PARAM_DESC_DEBUG                                                            :Csak fejlesztőknek
 STR_PARAM_DESC_ECONOMIES                                                        :Az egyes gazdaságokban különféle rakományok és gazdasági épületek érhetőek el.{}{}Az egyszerűbb játékmenet érdekében az 'alap' gazdaságok kevesebb rakományt és gazdasági épületet tartalmaznak, mint a FIRS gazdaság.
 STR_PARAM_DESC_NO_OPENINGS                                                      :Hatására nem fognak új gazdasági épületek épülni a játék folyamán.{}A játékosok sem fognak tudni új gazdasági épületeket építtetni.{}A gazdasági épületeket a térképgenerátor fogja elhelyezni a játék elején, a beállításoktól függően.
 STR_PARAM_DESC_SECONDARY_NEVER_CLOSE                                            :Alapértelmezésben a FIRS másodlagos gazdasági épületei nem zárnak be.{}{}Ha ez a beállítás be van kapcsolva, a másodlagos gazdasági épületek bezárhatnak, ha sokáig nem érkezik hozzájuk szállítmány. Az elsődleges gazdasági épületek sosem zárnak be a FIRS-ben, ez a beállítás nem befolyásolja őket.
 STR_PARAM_NAME_COAST_DISTANCE_MARINE_INDUSTRY                                   :Tengeri gazdasági létesítmények maximális távolsága a parttól
-STR_PARAM_NAME_DEBUG                                                            :Debug szövegek mutatása
 STR_PARAM_NAME_ECONOMIES                                                        :Gazdaság
 STR_PARAM_NAME_NO_OPENINGS                                                      :Új gazdasági épületek nyitásának meggátlása
 STR_PARAM_NAME_SECONDARY_NEVER_CLOSE                                            :Másodlagos gazdasági épületek bezárásának engedélyezése
@@ -264,7 +262,6 @@ STR_EXTRA_RECYCLING_DEPOT                                                       
 STR_EXTRA_SAWMILL                                                               :{BLACK}Feldolgozza a kivágott fákat.{}{}{BLACK}Termelés:{}  6 tonna termelés 8 tonna fa szállítása esetén.
 STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Fémeszközöket, például szerszámokat és patkókat gyárt.{}{}{BLACK}Termelés:{}  8 láda termelés 8 tonna fém szállítása esetén.
 
-STR_EXTRA_TEXT_DEBUG_SECONDARY                                                  :{BLACK}------------ DEBUG ------------{}Termelés ebben a hónapban:{}1. rakomány: {WHITE}{COMMA}{BLACK}{}2. rakomány: {WHITE}{COMMA}{BLACK}{}Eltelt napok az utolsó szállítmány óta: {WHITE}{COMMA}{BLACK}
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Elérte a maximális termelést
 STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Jelenlegi termelés: {YELLOW}alapszintű{}{}{BLACK}A termelés megduplázásához {SIGNED_WORD} láda segédeszköz szállítása szükséges 3 hónapon belül (vagy {SIGNED_WORD} láda a termelés megnégyszerezéséhez)
 STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Jelenlegi termelés: {YELLOW}megnövekedett (kétszeres){}{}{BLACK}A szint fenntartásához {SIGNED_WORD} láda segédeszköz szállítása szükséges 3 hónapon belül, vagy {SIGNED_WORD} láda a négyszeres szint eléréséhez
