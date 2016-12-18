@@ -52,9 +52,7 @@
                     random_prod_change:       check_secondary_closure;
                     location_check:           ${industry.id}_check_location;
                     extra_text_fund:          ${industry.get_extra_text_fund(economy)};
-                    <tal:extra_text_industry condition="industry.get_property('extra_text_industry', economy) is not None">
-                        extra_text_industry:      ${industry.id}_extra_text;
-                    </tal:extra_text_industry>
+                    extra_text_industry:      ${industry.id}_extra_text;
                     colour:                   switch_colour;
                 }
             }

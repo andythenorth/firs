@@ -98,13 +98,6 @@ grf {
 			};
 		}
 	}
-	param 3 {
-		show_debug_texts {
-			name: string(STR_PARAM_NAME_DEBUG);
-			desc: string(STR_PARAM_DESC_DEBUG);
-			type: bool;
-		}
-	}
 }
 
 basecost {

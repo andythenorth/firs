@@ -7,12 +7,6 @@
 
 /*
  * This template prints extra texts in the industry view
- *
- * The displayed text differs whether debugging is enabled or not
- *
- * Required defines in the industry's pnml file:
- *
- * THIS_STR_EXTRA_TEXT         normal extra text without debugging
  */
 
 <tal:economies repeat="economy economies">
@@ -25,17 +19,10 @@
 </tal:economies>
 
 
-switch (FEAT_INDUSTRIES, SELF, ${industry.id}_extra_text_non_debug, economy) {
+switch (FEAT_INDUSTRIES, SELF, ${industry.id}_extra_text, economy) {
     <tal:economies repeat="economy economies">
         <tal:industry_on_or_off condition="industry.get_property('enabled', economy) == True">
             ${economy.numeric_id}: ${industry.id}_extra_text_non_debug_${economy.id};
         </tal:industry_on_or_off>
     </tal:economies>
-}
-
-switch (FEAT_INDUSTRIES, SELF, ${industry.id}_extra_text, [
-			show_debug_texts
-			]) {
-	1: switch_extra_text_debug;
-	${industry.id}_extra_text_non_debug;
 }
