@@ -6,7 +6,7 @@
 STR_GRF_DESC                                                                    :{ORANGE}FIRS Industry Replacement Set{}{BLACK}Autorzy: andythenorth, FooBar, planetmaker, Terkhen, Yexo i inni. {SILVER}Więcej informacji w pliku readme. {BLACK}Licencja: GPL v2.
 STR_GRF_NAME                                                                    :{TITLE}
 STR_GRF_URL                                                                     :http://bundles.openttdcoop.org/firs/releases/LATEST/docs/
-STR_EMPTY                                                                       :{}
+STR_EMPTY                                                                       :
 
 STR_PARAM_DESC_COAST_DISTANCE_MARINE_INDUSTRY                                   :Maksymalna odległość od linii brzegowej dla łowisk, platform wiertniczych i pogłębiarek.
 STR_PARAM_DESC_ECONOMIES                                                        :Każda z dostępnych w FIRS ekonomii oferuje inną kombinację towarów i fabryk.{}{}Dla graczy preferujących proste zasady gry zalecany jest wybór ekonomii {SILVER}Zwykła. {BLACK}Zawiera ona mniej fabryk i towarów niż inne ekonomie FIRS.{}{}Strona internetowa FIRS zawiera szczegółowe informacje na temat każdej z ekonomii.
@@ -422,18 +422,18 @@ STR_IND_VINEYARD.c                                                              
 STR_IND_VINEYARD.d                                                              :winnicy
 STR_IND_VINEYARD.n                                                              :winnicą
 
-STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Produkuje szklane przedmioty takie jak butelki, słoiki i szyby.{}{}{BLACK}Produkcja:{}  6t na 8t dostarczonego piasku{}  2t na 8,000l dostarczonych chemikaliów{}{}Produkcja wzrasta, gdy oba surowce są dostarczane w ciągu trzech miesięcy od siebie.
-STR_EXTRA_LUMBER_YARD                                                           :{BLACK}Produkuje rzeczy takie jak płoty i słupki ogrodzeniowe.{}{}Produkcja:{}  2t na 8,000l dostarczonych chemikaliów{}  6t na 8t dostarczonych desek{}{}Produkcja wzrasta, gdy oba surowce są dostarczane w ciągu trzech miesięcy od siebie.
-STR_EXTRA_MACHINE_SHOP                                                          :{BLACK}Wytwarza i serwisuje różnego rodzaju maszyny.{}{}Produkcja:{}  8 skrzyń na 8,000l dostarczonych paliw ropopochodnych{}  8 skrzyń na 8t dostarczonego metalu
-STR_EXTRA_METAL_FABRICATION_PLANT                                               :{BLACK}Produkują armaturę i różne elementy malowane.{}{}{BLACK}Produkcja:{}  2t na 8,000l dostarczonych chemikaliów{}  6t na 8t dostarczonego metalu{}{}Produkcja wzrasta, gdy oba surowce są dostarczane w ciągu trzech miesięcy od siebie.
-STR_EXTRA_OIL_REFINERY                                                          :{BLACK}Przetwarza surową ropę na paliwa ropopochodne i chemikalia.{}{}Produkcja:{}  6,000l na 8,000l surowców
-STR_EXTRA_PAPER_MILL                                                            :{BLACK}Przerabia drewno na papier i karton.{}{}Produkcja:{}  4 skrzynie na 8t dostarczonego drewna{}  2 skrzynie na 8t dostarczonej gliny{}  2 skrzynie na 8,000l dostarczonych chemikaliów{}{}Produkcja wzrasta, gdy dwa lub więcej surowców dostarczanych jest w ciągu trzech miesięcy od siebie.
-STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}Produkuje artykuły plastikowe na użytek przedsiębiorstw i gospodarstw domowych.{}{}Produkcja:{}  {STRING}  {STRING}
-STR_EXTRA_PYRITE_SMELTER                                                        :{BLACK}Przetwarza rudę pirytu na metal i chemikalia.{}{}Produkcja:{}  4t metalu i 4,000l chemikaliów na 8t dostarczonej rudy pirytu
-STR_EXTRA_RECYCLING_PLANT                                                       :{BLACK}Przerabia surowce wtórne do ponownego wykorzystania.{}{}Produkcja:{}  6t na 8t dostarczonych surowców wtórnych.
+STR_EXTRA_GLASS_WORKS                                                           :{BLACK}Produkuje szklane przedmioty takie jak butelki, słoiki i szyby.
+STR_EXTRA_LUMBER_YARD                                                           :{BLACK}Produkuje przedmioty takie jak płoty i słupki ogrodzeniowe.
+STR_EXTRA_MACHINE_SHOP                                                          :{BLACK}Wytwarza i serwisuje różnego rodzaju maszyny.
+STR_EXTRA_METAL_FABRICATION_PLANT                                               :{BLACK}Produkują armaturę i różne elementy malowane.
+STR_EXTRA_OIL_REFINERY                                                          :{BLACK}Przetwarza surową ropę na paliwa ropopochodne i chemikalia.
+STR_EXTRA_PAPER_MILL                                                            :{BLACK}Przerabia drewno na papier i karton.
+STR_EXTRA_PLASTICS_PLANT                                                        :{BLACK}Produkuje artykuły plastikowe na użytek przedsiębiorstw i gospodarstw domowych.
+STR_EXTRA_PYRITE_SMELTER                                                        :{BLACK}Przetwarza rudę pirytu na metal i chemikalia.
+STR_EXTRA_RECYCLING_PLANT                                                       :{BLACK}Przerabia surowce wtórne do ponownego wykorzystania.
 STR_EXTRA_RECYCLING_DEPOT                                                       :{BLACK}Produkcja jest proporcjonalna do populacji miasta.
-STR_EXTRA_SAWMILL                                                               :{BLACK}Tnie drewno.{}{}Produkcja:{}  6t na 8t dostarczonego drewna
-STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Produkuje metalowe przedmioty takie jak narzędzia, pługi, bramy, łopaty oraz podkowy.{}{}Produkcja:{}  8 skrzyń na 8t dostarczonego metalu
+STR_EXTRA_SAWMILL                                                               :{BLACK}Tnie drewno.
+STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Produkuje metalowe przedmioty takie jak narzędzia, pługi, bramy, łopaty oraz podkowy.
 
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Osiągnięto maksymalny poziom produkcji
 STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Aktualna produkcja: {YELLOW}normalna{}{}{BLACK}Dla {WHITE}zwiększonej {BLACK}produkcji, dostarcz {SIGNED_WORD} skrzyń zaopatrzenia w ciągu 3 miesięcy{}Dla {WHITE}niewiarygodnej {BLACK}produkcji dostarcz {SIGNED_WORD} skrzyń
