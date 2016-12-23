@@ -686,7 +686,7 @@ class Industry(object):
 
         extra_text_template = PageTemplate(
             "STORE_TEMP(${cargo_label} | " \
-            "(current_date - LOAD_PERM(var_date_received_${cargo_num}) > 90 ? 90 : current_date - LOAD_PERM(var_date_received_${cargo_num})) << 16, ${255 + cargo_num})"
+            "(current_date - LOAD_PERM(var_date_received_${cargo_num}) > 90 ? string(STR_EXTRA_TEXT_SECONDARY_CARGO_REQUIRED) : string(STR_EXTRA_TEXT_SECONDARY_CARGO_DELIVERED)) << 16, ${255 + cargo_num})"
         )
         extra_text_expressions = []
         for i in range (len(accept_cargos_with_ratios)):
