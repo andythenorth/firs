@@ -681,53 +681,19 @@ class Industry(object):
         return 'string(' + extra_text_string + ', string(' + extra_text_industry + '))'
 
     def get_expression_for_extra_text_industry_cargo_details(self, economy):
-        # looks messy, but saves a lot of work for translators by automating 'amount produced per amount delivered' strings for industry window text
-        # GOTCHA: there are only 6 dword registers (12 words) available on the text stack, so limit on how many substrings can be used here
         accept_cargos_with_ratios = self.get_property('processed_cargos_and_output_ratios', economy)
-        prod_cargos = self.get_prod_cargo_types(economy)
-        cargo_details = []
-        for cargo, prod_ratio in accept_cargos_with_ratios:
-            result = {}
-            # !! some of this can likely be removed after changing format of industry extra text
-            result['prod_cargo'] = prod_cargos[0] # we use the first produced cargo as a proxy, even where there are 2
-            result['prod_ratio'] = prod_ratio
-            result['input_amount'] = 8 # always 8 eh?
-            for cargo_obj in registered_cargos:
-                if cargo_obj.cargo_label == cargo:
-                    #result['accept_cargo'] = cargo_obj.type_name
-                    result['accept_cargo'] = cargo
-            cargo_details.append(result)
+        prod_cargos = self.get_prod_cargo_types(economy) # !! might be needed to get the number of produced cargos - or delete if not
 
-        # marginally easier to just duplicate these templates for the 3 cases, compared to making a generic loop thing
-        # !! they could be now made generic eh?
-        if len(accept_cargos_with_ratios) == 1:
-            extra_text_template = PageTemplate(
-                "STORE_TEMP(${cargo_1_details['accept_cargo']} | " \
-                "(current_date - LOAD_PERM(var_date_received_1) > 90 ? 90 : current_date - LOAD_PERM(var_date_received_1)) << 16, 256)"
-            )
-            extra_text_expression = extra_text_template(cargo_1_details=cargo_details[0])
-        if len(accept_cargos_with_ratios) == 2:
-            extra_text_template = PageTemplate(
-                "STORE_TEMP(${cargo_1_details['accept_cargo']} | " \
-                "current_date - LOAD_PERM(var_date_received_1) << 16, 256), " \
-                "STORE_TEMP(${cargo_2_details['accept_cargo']} | " \
-                "current_date - LOAD_PERM(var_date_received_2) << 16, 257)"
-            )
-            extra_text_expression = extra_text_template(cargo_1_details=cargo_details[0],
-                                                        cargo_2_details=cargo_details[1])
-        if len(accept_cargos_with_ratios) == 3:
-            extra_text_template = PageTemplate(
-                "STORE_TEMP(${cargo_1_details['accept_cargo']} | " \
-                "current_date - LOAD_PERM(var_date_received_1) << 16, 256), " \
-                "STORE_TEMP(${cargo_2_details['accept_cargo']} | " \
-                "current_date - LOAD_PERM(var_date_received_2) << 16, 257), " \
-                "STORE_TEMP(${cargo_3_details['accept_cargo']} | " \
-                "current_date - LOAD_PERM(var_date_received_3) << 16, 258)"
-            )
-            extra_text_expression = extra_text_template(cargo_1_details=cargo_details[0],
-                                                        cargo_2_details=cargo_details[1],
-                                                        cargo_3_details=cargo_details[2])
-        return extra_text_expression
+        extra_text_template = PageTemplate(
+            "STORE_TEMP(${cargo_label} | " \
+            "(current_date - LOAD_PERM(var_date_received_${cargo_num}) > 90 ? 90 : current_date - LOAD_PERM(var_date_received_${cargo_num})) << 16, ${255 + cargo_num})"
+        )
+        extra_text_expressions = []
+        for i in range (len(accept_cargos_with_ratios)):
+            extra_text_expressions.append(extra_text_template(cargo_label=accept_cargos_with_ratios[i][0],
+                                                              cargo_num=i+1))
+        result = ', '.join(extra_text_expressions)
+        return result
 
     def get_intro_year(self, economy):
         # simple wrapper to get_property(), which sanitises intro_year from None to 0 if unspecified by economy
