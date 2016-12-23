@@ -688,49 +688,41 @@ class Industry(object):
         cargo_details = []
         for cargo, prod_ratio in accept_cargos_with_ratios:
             result = {}
+            # !! some of this can likely be removed after changing format of industry extra text
             result['prod_cargo'] = prod_cargos[0] # we use the first produced cargo as a proxy, even where there are 2
             result['prod_ratio'] = prod_ratio
             result['input_amount'] = 8 # always 8 eh?
-            result['accept_cargo'] = cargo
+            for cargo_obj in registered_cargos:
+                if cargo_obj.cargo_label == cargo:
+                    #result['accept_cargo'] = cargo_obj.type_name
+                    result['accept_cargo'] = cargo
             cargo_details.append(result)
 
         # marginally easier to just duplicate these templates for the 3 cases, compared to making a generic loop thing
         # !! they could be now made generic eh?
         if len(accept_cargos_with_ratios) == 1:
             extra_text_template = PageTemplate(
-                "STORE_TEMP(${cargo_1_details['prod_cargo']} | " \
-                "${cargo_1_details['prod_ratio']} << 16, 256), " \
                 "STORE_TEMP(${cargo_1_details['accept_cargo']} | " \
-                "${cargo_1_details['input_amount']} << 16, 257), "
+                "(current_date - LOAD_PERM(var_date_received_1) > 90 ? 90 : current_date - LOAD_PERM(var_date_received_1)) << 16, 256)"
             )
             extra_text_expression = extra_text_template(cargo_1_details=cargo_details[0])
         if len(accept_cargos_with_ratios) == 2:
             extra_text_template = PageTemplate(
-                "STORE_TEMP(${cargo_1_details['prod_cargo']} | " \
-                "${cargo_1_details['prod_ratio']} << 16, 256), " \
                 "STORE_TEMP(${cargo_1_details['accept_cargo']} | " \
-                "${cargo_1_details['input_amount']} << 16, 257), "
-                "STORE_TEMP(${cargo_2_details['prod_cargo']} | " \
-                "${cargo_2_details['prod_ratio']} << 16, 258), " \
+                "current_date - LOAD_PERM(var_date_received_1) << 16, 256), " \
                 "STORE_TEMP(${cargo_2_details['accept_cargo']} | " \
-                "${cargo_2_details['input_amount']} << 16, 259), "
+                "current_date - LOAD_PERM(var_date_received_2) << 16, 257)"
             )
             extra_text_expression = extra_text_template(cargo_1_details=cargo_details[0],
                                                         cargo_2_details=cargo_details[1])
         if len(accept_cargos_with_ratios) == 3:
             extra_text_template = PageTemplate(
-                "STORE_TEMP(${cargo_1_details['prod_cargo']} | " \
-                "${cargo_1_details['prod_ratio']} << 16, 256), " \
                 "STORE_TEMP(${cargo_1_details['accept_cargo']} | " \
-                "${cargo_1_details['input_amount']} << 16, 257), "
-                "STORE_TEMP(${cargo_2_details['prod_cargo']} | " \
-                "${cargo_2_details['prod_ratio']} << 16, 258), " \
+                "current_date - LOAD_PERM(var_date_received_1) << 16, 256), " \
                 "STORE_TEMP(${cargo_2_details['accept_cargo']} | " \
-                "${cargo_2_details['input_amount']} << 16, 259), "
-                "STORE_TEMP(${cargo_3_details['prod_cargo']} | " \
-                "${cargo_3_details['prod_ratio']} << 16, 260), " \
+                "current_date - LOAD_PERM(var_date_received_2) << 16, 257), " \
                 "STORE_TEMP(${cargo_3_details['accept_cargo']} | " \
-                "${cargo_3_details['input_amount']} << 16, 261), "
+                "current_date - LOAD_PERM(var_date_received_3) << 16, 258)"
             )
             extra_text_expression = extra_text_template(cargo_1_details=cargo_details[0],
                                                         cargo_2_details=cargo_details[1],

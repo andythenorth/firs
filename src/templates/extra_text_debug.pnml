@@ -1,0 +1,17 @@
+/*
+ * This file is part of FIRS industry set.
+ * FIRS industry set is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 2.
+ * FIRS industry set is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with FIRS industry set. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/* First fill the stack for the string parameters before actually
+ * returning the string
+ */
+switch (FEAT_INDUSTRIES, SELF, switch_extra_text_debug, [
+			STORE_TEMP(produced_this_month_1,256),
+			STORE_TEMP(produced_this_month_2,257),
+			STORE_TEMP(current_date - max( max(LOAD_PERM(var_date_received_1), LOAD_PERM(var_date_received_2)), LOAD_PERM(var_date_received_3)), 258)
+			]) {
+	return string(STR_EXTRA_TEXT_DEBUG_SECONDARY);
+}

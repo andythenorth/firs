@@ -11,7 +11,7 @@
 
 <tal:economies repeat="economy economies">
     <tal:industry_on_or_off condition="industry.get_property('enabled', economy) == True">
-        switch (FEAT_INDUSTRIES, SELF, ${industry.id}_extra_text_non_debug_${economy.id},
+        switch (FEAT_INDUSTRIES, SELF, ${industry.id}_extra_text_${economy.id},
                 [${industry.get_expression_for_extra_text_industry_cargo_details(economy)}]) {
             return ${industry.get_extra_text_string(economy)};
         }
@@ -22,7 +22,7 @@
 switch (FEAT_INDUSTRIES, SELF, ${industry.id}_extra_text, economy) {
     <tal:economies repeat="economy economies">
         <tal:industry_on_or_off condition="industry.get_property('enabled', economy) == True">
-            ${economy.numeric_id}: ${industry.id}_extra_text_non_debug_${economy.id};
+            ${economy.numeric_id}: ${industry.id}_extra_text_${economy.id};
         </tal:industry_on_or_off>
     </tal:economies>
 }
