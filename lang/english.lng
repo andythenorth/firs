@@ -291,14 +291,14 @@ STR_EXTRA_RECYCLING_DEPOT                                                       
 STR_EXTRA_SAWMILL                                                               :{BLACK}Chops wood.
 STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Produces metal items like tools, ploughs, gates, shovels and horseshoes.
 
-STR_EXTRA_TEXT_SECONDARY_CARGO_REQUIRED                                         :{BLACK}(Needed)
-STR_EXTRA_TEXT_SECONDARY_CARGO_DELIVERED                                        :{BLACK}(Supplied within last 90 days)
+STR_EXTRA_TEXT_SECONDARY_CARGO_REQUIRED                                         :{BLACK}(needed)
+STR_EXTRA_TEXT_SECONDARY_CARGO_DELIVERED                                        :{BLACK}(supplied within last three months)
 STR_EXTRA_TEXT_SECONDARY_TWO_CARGO_BOOST                                        :{}{}Production steps up if both cargos are delivered within three months of each other.
 STR_EXTRA_TEXT_SECONDARY_THREE_CARGO_BOOST                                      :{}{}Production steps up if two or more cargos are delivered within three months of each other.
 STR_EXTRA_TEXT_SECONDARY_MNSP_BOOST                                             :{BLACK}Production steps up if manufacturing supplies delivered within three months of other cargos.
 STR_EXTRA_TEXT_SECONDARY_ONE_INPUT                                              :{BLACK}{STRING}{}Requires:{}  {YELLOW}{CARGO_NAME} {STRING}
-STR_EXTRA_TEXT_SECONDARY_TWO_INPUTS                                             :{BLACK}{STRING}{}Requires:{}  {YELLOW}{CARGO_NAME} {STRING}{}  {YELLOW}{CARGO_NAME} {STRING}{}{}{BLACK}Current efficiency: {YELLOW}appalling{}{BLACK}Deliver both cargo types at least every 90 days for maximum efficiency
-STR_EXTRA_TEXT_SECONDARY_THREE_INPUTS                                           :{BLACK}{STRING}{}Requires:{}  {YELLOW}{CARGO_NAME} {STRING}{}  {YELLOW}{CARGO_NAME} {STRING}{}  {YELLOW}{CARGO_NAME} {STRING}{}{}{BLACK}Current efficiency: {YELLOW}appalling{}{BLACK}Deliver all 3 cargo types at least every 90 days for maximum efficiency
+STR_EXTRA_TEXT_SECONDARY_TWO_INPUTS                                             :{BLACK}{STRING}{}Requires:{}  {YELLOW}{CARGO_NAME} {STRING}{}  {YELLOW}{CARGO_NAME} {STRING}{}{}{BLACK}Current efficiency: {YELLOW}Not producing{}{BLACK}For {WHITE}Maximum {BLACK}efficiency deliver both cargo types within three months
+STR_EXTRA_TEXT_SECONDARY_THREE_INPUTS                                           :{BLACK}{STRING}{}Requires:{}  {YELLOW}{CARGO_NAME} {STRING}{}  {YELLOW}{CARGO_NAME} {STRING}{}  {YELLOW}{CARGO_NAME} {STRING}{}{}{BLACK}Current efficiency: {YELLOW}Zero{}{BLACK}For {WHITE}Maximum {BLACK}efficiency deliver all 3 cargo types within three months
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Maximum production reached
 STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Current production: {YELLOW}Normal {}{}{BLACK}For {WHITE}Enhanced {BLACK}production deliver {SIGNED_WORD} crates of supplies within three months{}For {WHITE}Gung-ho {BLACK}production deliver {SIGNED_WORD} crates
 STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Current production: {YELLOW}Enhanced {}{}{BLACK}To keep this level, deliver {SIGNED_WORD} crates of supplies within three months{}For {WHITE}Gung-ho {BLACK}production deliver {SIGNED_WORD} crates
