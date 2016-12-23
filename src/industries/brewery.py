@@ -8,8 +8,8 @@
 from industry import IndustrySecondary, TileLocationChecks, IndustryLocationChecks
 
 industry = IndustrySecondary(id='brewery',
-                    processed_cargos_and_output_ratios=[('MNSP', 3), ('FRUT', 5), ('GRAI', 5)],
-                    mnsp_boosts_production_jank=True, # this is jank we have to live with
+                    processed_cargos_and_output_ratios=[('MNSP', 2), ('FRUT', 3), ('GRAI', 3)],
+                    combined_cargos_boost_prod=True,
                     prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL',
                     prod_cargo_types=['BEER'],
                     layouts='AUTO',
@@ -38,8 +38,9 @@ industry = IndustrySecondary(id='brewery',
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True
 industry.economy_variations['BASIC_TEMPERATE'].name = 'string(STR_IND_BREWERY_CIDER_MILL)'
+industry.economy_variations['BASIC_TEMPERATE'].processed_cargos_and_output_ratios = [('MNSP', 2), ('FRUT', 6)]
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
-industry.economy_variations['MISTAH_KURTZ'].processed_cargos_and_output_ratios = [('MNSP', 3), ('FRUT', 5), ('MAIZ', 5)]
+industry.economy_variations['MISTAH_KURTZ'].processed_cargos_and_output_ratios = [('MNSP', 2), ('FRUT', 3), ('MAIZ', 3)]
 
 industry.add_tile(id='brewery_tile_1',
                   animation_length=6,

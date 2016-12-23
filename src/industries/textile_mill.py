@@ -8,8 +8,8 @@
 from industry import IndustrySecondary, TileLocationChecks, IndustryLocationChecks
 
 industry = IndustrySecondary(id='textile_mill',
-                    processed_cargos_and_output_ratios=[('MNSP', 3), ('WOOL', 5), ('FICR', 5)],
-                    mnsp_boosts_production_jank=True, # this is jank we have to live with
+                    processed_cargos_and_output_ratios=[('MNSP', 2), ('WOOL', 3), ('FICR', 3)],
+                    combined_cargos_boost_prod=True,
                     prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL',
                     prod_cargo_types=['GOOD'],
                     layouts='AUTO',

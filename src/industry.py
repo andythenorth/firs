@@ -910,16 +910,6 @@ class IndustrySecondary(Industry):
         return accept_cargo_types
 
     def get_boost(self, supplied_cargo_num, boosted_cargo_num, economy):
-        # jank for MNSP first, this is due to design choices I now regret :|
-        # some industries boost only in combination with MNSP, rather than any/all accepted cargos, ugh
-        if self.mnsp_boosts_production_jank:
-            if self.get_property('processed_cargos_and_output_ratios', economy)[supplied_cargo_num - 1][0] == 'MNSP':
-                return self.get_prod_ratio(supplied_cargo_num, economy)
-            elif self.get_property('processed_cargos_and_output_ratios', economy)[boosted_cargo_num - 1][0] == 'MNSP':
-                return self.get_prod_ratio(supplied_cargo_num, economy)
-            else:
-                return 0
-        # not jank, proper
         if self.combined_cargos_boost_prod:
             if boosted_cargo_num > len(self.get_property('processed_cargos_and_output_ratios', economy)):
                 return 0
