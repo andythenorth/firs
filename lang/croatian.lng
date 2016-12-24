@@ -293,12 +293,14 @@ STR_EXTRA_RECYCLING_DEPOT                                                       
 STR_EXTRA_SAWMILL                                                               :{BLACK}Pili i reže drva.
 STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}Proizvodi metalne proizvode kao alate, plugove, vrata, lopate i potkove.
 
+STR_EXTRA_TEXT_SECONDARY_CARGO_REQUIRED                                         :{BLACK}(potrebno)
+STR_EXTRA_TEXT_SECONDARY_CARGO_DELIVERED                                        :{BLACK}(dostavljeno unutar tri mjeseca)
 STR_EXTRA_TEXT_SECONDARY_TWO_CARGO_BOOST                                        :{}{}Proizvodnja se povećava ako se oba tereta dostave unutar tri mjeseca jedan od drugog.
 STR_EXTRA_TEXT_SECONDARY_THREE_CARGO_BOOST                                      :{}{}Proizvodnja se povećava ako se dva ili više tereta dostave unutar tri mjeseca jedan od drugog.
 STR_EXTRA_TEXT_SECONDARY_MNSP_BOOST                                             :{BLACK}Proizvodnja se povećava ako se proizvodne potrepštine dostave unutar tri mjeseca od dostave drugih tereta.
-STR_EXTRA_TEXT_SECONDARY_ONE_INPUT                                              :{BLACK}{STRING}{}{}Proizvodnja tereta:{}  {CARGO_SHORT} od {CARGO_LONG} dostavljenog{}{}{GOLD}{STRING}
-STR_EXTRA_TEXT_SECONDARY_TWO_INPUTS                                             :{BLACK}{STRING}{}{}Proizvodnja tereta:{}  {CARGO_SHORT} od {CARGO_LONG} dostavljenog{}  {CARGO_SHORT} od {CARGO_LONG} dostavljenog{}{}{GOLD}{STRING}
-STR_EXTRA_TEXT_SECONDARY_THREE_INPUTS                                           :{BLACK}{STRING}{}Proizvodnja tereta:{}  {CARGO_SHORT} od {CARGO_LONG} dostavljenog{}  {CARGO_SHORT} od {CARGO_LONG} dostavljenog{}  {CARGO_SHORT} od {CARGO_LONG} dostavljenog{}{}{GOLD}{STRING}
+STR_EXTRA_TEXT_SECONDARY_ONE_INPUT                                              :{BLACK}{STRING}{}Potrebuje:{}  {YELLOW}{CARGO_NAME} {STRING}
+STR_EXTRA_TEXT_SECONDARY_TWO_INPUTS                                             :{BLACK}{STRING}{}Potrebuje:{}  {YELLOW}{CARGO_NAME} {STRING}{}  {YELLOW}{CARGO_NAME} {STRING}{}{}{BLACK}Trenutna efikasnost: {YELLOW}Ne proizvodi{}{BLACK}Za {WHITE}Najveću {BLACK}efikasnost dostavite oba tereta unutar tri mjeseca jedan od drugoga
+STR_EXTRA_TEXT_SECONDARY_THREE_INPUTS                                           :{BLACK}{STRING}{}Potrebuje:{}  {YELLOW}{CARGO_NAME} {STRING}{}  {YELLOW}{CARGO_NAME} {STRING}{}  {YELLOW}{CARGO_NAME} {STRING}{}{}{BLACK}Trenutna efikasnost: {YELLOW}Nula{}{BLACK}Za {WHITE}Najveću {BLACK}efikasnost dostavite sva tri tereta unutar tri mjeseca jedan od drugoga
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}Dostignuta maksimalna proizvodnja
 STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}Trenutna proizvodnja: {YELLOW}Normalna{}{}{BLACK}Za povećavanje proizvodnje na {WHITE}Unaprijeđenu{BLACK} dostavite {SIGNED_WORD} kutija potrepština unutar tri mjeseca{}Za povećavanje proizvodnje na {WHITE}Masovnu{BLACK} dostavite {SIGNED_WORD} kutija
 STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}Trenutna proizvodnja: {YELLOW}Unaprijeđena{}{}{BLACK}Za zadržavanje ovog nivoa, dostavite {SIGNED_WORD} kutija potrepština unutar tri mjeseca{}Za povećavanje proizvodnje na {WHITE}Masovnu{BLACK} dostavite {SIGNED_WORD} kutija
