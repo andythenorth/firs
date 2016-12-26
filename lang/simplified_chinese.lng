@@ -291,12 +291,14 @@ STR_EXTRA_RECYCLING_DEPOT                                                       
 STR_EXTRA_SAWMILL                                                               :{BLACK}加工原木.
 STR_EXTRA_SMITHY_FORGE                                                          :{BLACK}生产金属制品如工具、犁、门、锹和马蹄铁等。
 
+STR_EXTRA_TEXT_SECONDARY_CARGO_REQUIRED                                         :{BLACK}(需要)
+STR_EXTRA_TEXT_SECONDARY_CARGO_DELIVERED                                        :{BLACK}(上三个月内得到过供应)
 STR_EXTRA_TEXT_SECONDARY_TWO_CARGO_BOOST                                        :{}{}如果3个月内所有货物都能供应，则产率提升。
 STR_EXTRA_TEXT_SECONDARY_THREE_CARGO_BOOST                                      :{}{}如果3个月内2种或以上货物交付，则产率提升。
 STR_EXTRA_TEXT_SECONDARY_MNSP_BOOST                                             :{BLACK}如果3个月内伴随其他货物的交付，同时也交付了工业物资，则产率提升。
-STR_EXTRA_TEXT_SECONDARY_ONE_INPUT                                              :{BLACK}{STRING}{}{}{GOLD}  {CARGO_NAME}: {UNSIGNED_WORD}
-STR_EXTRA_TEXT_SECONDARY_TWO_INPUTS                                             :{BLACK}{STRING}{}{}{GOLD}  {CARGO_NAME}: {UNSIGNED_WORD}{}  {CARGO_NAME}: {UNSIGNED_WORD}
-STR_EXTRA_TEXT_SECONDARY_THREE_INPUTS                                           :{BLACK}{STRING}{}{}{GOLD}  {CARGO_NAME}: {UNSIGNED_WORD}{}  {CARGO_NAME}: {UNSIGNED_WORD}{}  {CARGO_NAME}: {UNSIGNED_WORD}
+STR_EXTRA_TEXT_SECONDARY_ONE_INPUT                                              :{BLACK}{STRING}{}需要:{}  {YELLOW}{CARGO_NAME} {STRING}
+STR_EXTRA_TEXT_SECONDARY_TWO_INPUTS                                             :{BLACK}{STRING}{}需要:{}  {YELLOW}{CARGO_NAME} {STRING}{}  {YELLOW}{CARGO_NAME} {STRING}{}{}{BLACK}当前效率: {YELLOW}无生产{}{BLACK}为 {WHITE}最高{BLACK}效率，需要3个月内交付所有货物。
+STR_EXTRA_TEXT_SECONDARY_THREE_INPUTS                                           :{BLACK}{STRING}{}需要:{}  {YELLOW}{CARGO_NAME} {STRING}{}  {YELLOW}{CARGO_NAME} {STRING}{}  {YELLOW}{CARGO_NAME} {STRING}{}{}{BLACK}当前效率: {YELLOW}0{}{BLACK}为达到 {WHITE}最高 {BLACK}效率，需要在3个月内交付所有3种货物。
 STR_EXTRA_MAX_PRODUCTION                                                        :{BLACK}达到最大产量
 STR_PRIMARY_PRODUCTION_1X                                                       :{BLACK}当前产率: {YELLOW}标准{}{}{BLACK}为达到{WHITE}增强{BLACK}需三个月内交付 {SIGNED_WORD}箱物资。{}为达到{WHITE}工合 {BLACK}需交付 {SIGNED_WORD} 箱
 STR_PRIMARY_PRODUCTION_2X                                                       :{BLACK}当前产率: {YELLOW}增强{}{}{BLACK}为保持此水准，需三个月内交付 {SIGNED_WORD}{}为保持{WHITE}工合 {BLACK}需交付 {SIGNED_WORD}箱
