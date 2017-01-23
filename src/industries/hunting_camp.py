@@ -26,7 +26,7 @@ industry = IndustryPrimaryNoSupplies(id='hunting_camp',
                     remove_cost_multiplier='0',
                     prospect_chance='0.75',
                     name='string(STR_IND_HUNTING_CAMP)',
-                    nearby_station_name='string(STR_STATION, string(STR_TOWN))',
+                    nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_HUNTING_CAMP))',
                     fund_cost_multiplier='88',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS')
 
