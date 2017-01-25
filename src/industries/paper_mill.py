@@ -33,8 +33,8 @@ industry = IndustrySecondary(id='paper_mill',
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_ARCTIC'].enabled = True
-industry.economy_variations['BASIC_ARCTIC'].prod_cargo_types=['PAPR']
-industry.economy_variations['BASIC_ARCTIC'].processed_cargos_and_output_ratios = [('CLAY', 2), ('WOOD', 4), ('SULP', 2)]
+industry.economy_variations['BASIC_ARCTIC'].prod_cargo_types = ['PAPR']
+industry.economy_variations['BASIC_ARCTIC'].processed_cargos_and_output_ratios = [('CLAY', 2), ('PULP', 4), ('SULP', 2)]
 
 # industry uses layouts and sprites from default game, no custom layouts etc
 

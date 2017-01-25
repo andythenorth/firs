@@ -156,6 +156,9 @@ powertrain_components.cargo.register()
 from cargos import pyrite_ore
 pyrite_ore.cargo.register()
 
+from cargos import pulpwood
+pulpwood.cargo.register()
+
 from cargos import quicklime
 quicklime.cargo.register()
 
