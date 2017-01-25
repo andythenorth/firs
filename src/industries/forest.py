@@ -30,6 +30,8 @@ industry = IndustryPrimaryOrganic(id='forest',
 
 industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['BASIC_ARCTIC'].enabled = True
+industry.economy_variations['BASIC_ARCTIC'].prod_cargo_types = ['WOOD', 'PULP']
+industry.economy_variations['BASIC_ARCTIC'].prod_multiplier = '[18, 18]'
 industry.economy_variations['MISTAH_KURTZ'].enabled = True
 
 # industry uses layouts and sprites from default game, no custom layouts etc
