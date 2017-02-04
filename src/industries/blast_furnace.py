@@ -30,7 +30,7 @@ industry = IndustrySecondary(id='blast_furnace',
                     remove_cost_multiplier='0',
                     name='TTD_STR_INDUSTRY_NAME_STEEL_MILL', # default to steel mill
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_POWERHUNGRY))',
-                    fund_cost_multiplier='200',
+                    fund_cost_multiplier='190',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
                     intro_year=1850)
 

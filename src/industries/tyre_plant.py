@@ -27,7 +27,7 @@ industry = IndustrySecondary(id='tyre_plant',
                     prospect_chance='0.75',
                     name='string(STR_IND_TYRE_PLANT)',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_HEAVY_INDUSTRY))',
-                    fund_cost_multiplier='120',
+                    fund_cost_multiplier='130',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
                     intro_year=1832 )
 

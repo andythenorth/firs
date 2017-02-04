@@ -26,10 +26,9 @@ industry = IndustrySecondary(id='coke_oven',
                                                                          'coal_mine': 16,
                                                                          'quarry': 16}),
                     remove_cost_multiplier='0',
-                    prospect_chance='0.75',
                     name='string(STR_IND_COKE_OVEN)',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_PIT))',
-                    fund_cost_multiplier='45',
+                    fund_cost_multiplier='120',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS')
 
 industry.economy_variations['STEELTOWN'].enabled = True

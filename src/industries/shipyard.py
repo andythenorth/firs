@@ -27,7 +27,7 @@ industry = IndustrySecondary(id='shipyard',
                     prospect_chance='0.75',
                     name='string(STR_IND_SHIPYARD)',
                     nearby_station_name='string(STR_STATION, string(STR_TOWN), string(STR_STATION_FISHMARKET))',
-                    fund_cost_multiplier='150',
+                    fund_cost_multiplier='100',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
                     override_default_construction_states=True)
 
