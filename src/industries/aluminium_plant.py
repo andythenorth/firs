@@ -34,9 +34,6 @@ industry = IndustrySecondary(id='aluminium_plant',
                     graphics_change_dates = [1942, 1980] )
 
 industry.economy_variations['FIRS'].enabled = True
-industry.economy_variations['STEELTOWN'].enabled = True
-industry.economy_variations['STEELTOWN'].processed_cargos_and_output_ratios = [('AORE', 4), ('RFPR', 2), ('BASE', 2)]
-industry.economy_variations['STEELTOWN'].prod_cargo_types = ['ALUM']
 
 industry.add_tile(id='aluminium_plant_tile_1',
                   animation_length=47,

@@ -36,7 +36,7 @@ industry.economy_variations['FIRS'].enabled = True
 industry.economy_variations['FIRS'].intro_year = 1762
 industry.economy_variations['BASIC_TEMPERATE'].enabled = True
 industry.economy_variations['STEELTOWN'].enabled = True
-industry.economy_variations['STEELTOWN'].processed_cargos_and_output_ratios = [('STEL', 2), ('IRON', 3), ('ALUM', 2)]
+industry.economy_variations['STEELTOWN'].processed_cargos_and_output_ratios = [('STEL', 4), ('IRON', 4)]
 industry.economy_variations['STEELTOWN'].prod_cargo_types = ['GOOD', 'POWR']
 
 industry.add_tile(id='metal_workshop_tile_1',
