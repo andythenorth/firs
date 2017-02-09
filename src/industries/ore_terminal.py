@@ -10,7 +10,7 @@ from industry import IndustryPrimaryPort, TileLocationChecks, IndustryLocationCh
 industry = IndustryPrimaryPort(id='ore_terminal',
                     accept_cargo_types=['SESP'],
                     prod_increase_msg='TTD_STR_NEWS_INDUSTRY_PRODUCTION_INCREASE_GENERAL',
-                    prod_cargo_types=['MNO2', 'AORE'],
+                    prod_cargo_types=['MNO2'],
                     layouts='AUTO',
                     prob_in_game='2',
                     prob_random='6',
@@ -30,7 +30,8 @@ industry = IndustryPrimaryPort(id='ore_terminal',
                     closure_msg='TTD_STR_NEWS_INDUSTRY_CLOSURE_SUPPLY_PROBLEMS',
                     override_default_construction_states=True)
 
-industry.economy_variations['STEELTOWN'].enabled = True
+# not currently in use
+#industry.economy_variations['STEELTOWN'].enabled = True
 
 industry.add_tile(id='ore_terminal_tile_1',
                   land_shape_flags='bitmask(LSF_ONLY_ON_FLAT_LAND)',
