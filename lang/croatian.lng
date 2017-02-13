@@ -34,7 +34,7 @@ STR_PARAM_VALUE_ECONOMIES_STEELTOWN                                             
 
 STR_CARGO_NAME_ALCOHOL                                                          :Alkohol
 STR_CARGO_NAME_ALUMINIUM                                                        :Aluminij
-STR_CARGO_NAME_BASE_METALS                                                      :Bazni metali
+STR_CARGO_NAME_NON_FERROUS_METALS                                               :Ne-željezni metali
 STR_CARGO_NAME_BAUXITE                                                          :Boksit
 STR_CARGO_NAME_BEANS                                                            :Grah
 STR_CARGO_NAME_BUILDING_MATERIALS                                               :Građevni materijal
@@ -52,7 +52,7 @@ STR_CARGO_NAME_FISH                                                             
 STR_CARGO_NAME_FARM_SUPPLIES                                                    :Poljoprivredne potrepštine
 STR_CARGO_NAME_FERTILISER                                                       :Gnojivo
 STR_CARGO_NAME_FRUITS                                                           :Voće
-STR_CARGO_NAME_GALVANISED_STEEL                                                 :Galvanizirani čelik
+STR_CARGO_NAME_GALVANISED_STEEL                                                 :Karoserija vozila
 STR_CARGO_NAME_QUICKLIME                                                        :Živo vapno
 STR_CARGO_NAME_LUMBER                                                           :Drvo
 STR_CARGO_NAME_METAL                                                            :Metal
@@ -87,7 +87,6 @@ STR_CARGO_NAME_WOOL                                                             
 STR_CARGO_UNIT_ALCOHOL                                                          :{VOLUME} alkohola
 STR_CARGO_UNIT_ALUMINIUM                                                        :{WEIGHT} aluminija
 STR_CARGO_UNIT_BAUXITE                                                          :{WEIGHT} boksita
-STR_CARGO_UNIT_BASE_METALS                                                      :{WEIGHT} baznih metala
 STR_CARGO_UNIT_BEANS                                                            :{WEIGHT} graha
 STR_CARGO_UNIT_CASSAVA                                                          :{WEIGHT} manioke
 STR_CARGO_UNIT_BUILDING_MATERIALS                                               :{WEIGHT} građevnog materijala
@@ -112,6 +111,7 @@ STR_CARGO_UNIT_METAL                                                            
 STR_CARGO_UNIT_MILK                                                             :{VOLUME} mlijeka
 STR_CARGO_UNIT_NICKEL                                                           :{WEIGHT} nikla
 STR_CARGO_UNIT_NITRATES                                                         :{WEIGHT} nitrata
+STR_CARGO_UNIT_NON_FERROUS_METALS                                               :{WEIGHT} ne-željeznih metala
 STR_CARGO_UNIT_NUTS                                                             :{SIGNED_WORD} vreć{P a e e} oraha
 STR_CARGO_UNIT_MNSP                                                             :{SIGNED_WORD} kutij{P 0 a e e} proizvodnih potrepština
 STR_CARGO_UNIT_PETROL                                                           :{VOLUME} benzina
@@ -138,7 +138,6 @@ STR_CARGO_UNIT_WOOL                                                             
 
 STR_CID_ALCOHOL                                                                 :{TINYFONT}AL
 STR_CID_ALUMINIUM                                                               :{TINYFONT}AM
-STR_CID_BASE_METALS                                                             :{TINYFONT}BM
 STR_CID_BAUXITE                                                                 :{TINYFONT}BK
 STR_CID_BEANS                                                                   :{TINYFONT}GH
 STR_CID_BUILDING_MATERIALS                                                      :{TINYFONT}GM
@@ -164,6 +163,7 @@ STR_CID_METAL                                                                   
 STR_CID_MILK                                                                    :{TINYFONT}MK
 STR_CID_NICKEL                                                                  :{TINYFONT}NK
 STR_CID_NITRATES                                                                :{TINYFONT}NI
+STR_CID_NON_FERROUS_METALS                                                      :{TINYFONT}ŽM
 STR_CID_NUTS                                                                    :{TINYFONT}OR
 STR_CID_PETROL                                                                  :{TINYFONT}BE
 STR_CID_PIG_IRON                                                                :{TINYFONT}SŽ
@@ -233,7 +233,6 @@ STR_IND_FLOUR_MILL                                                              
 STR_IND_FOOD_MARKET                                                             :Prehrambena tržnica
 STR_IND_FOOD_PROCESSOR                                                          :Tvornica za preradu hrane
 STR_IND_FURNITURE_FACTORY                                                       :Tvornica namještaja
-STR_IND_GALVANISING_PLANT                                                       :Postrojenje za galvanizaciju
 STR_IND_GENERAL_STORE                                                           :Trgovina općom robom
 STR_IND_GLASS_WORKS                                                             :Staklarna
 STR_IND_HARDWARE_STORE                                                          :Trgovina opremom
